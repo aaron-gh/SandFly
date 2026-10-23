@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Fort</string>
-    <string name="notification_shake_2">Mitjana</string>
+    <string name="notification_shake_2">Mitjà</string>
     <string name="notification_shake_1">Suau</string>
     <string name="notification_media_skip">No llegir</string>
     <string name="notification_media_pause">Pausa els mitjans mentre llegeix</string>
@@ -22,10 +22,10 @@
     <string name="notification_words_title">Paraules i substitucions</string>
     <string name="notification_kinds_title">Tipus de notificacions</string>
     <string name="notification_when_title">Quan llegir</string>
-    <string name="notification_rules_title">Normes</string>
+    <string name="notification_rules_title">Regles</string>
     <string name="notification_repeats_title">Repeticions</string>
     <string name="notification_stop_title">Deixa de llegir</string>
-    <string name="notification_schedules_title">Resum i temps</string>
+    <string name="notification_schedules_title">Resum i hora</string>
     <string name="notification_history_title">Historial de notificacions</string>
     <string name="notification_test_title">Envia una notificació de prova</string>
     <string name="notification_automation_title">Automatització</string>
@@ -100,8 +100,8 @@
     <string name="notification_skip_prefix_summary">Com ara el nom d\'un grup en un xat</string>
     <string name="notification_prefix_memory_title">Quant de temps per recordar el prefix del text</string>
     <string name="notification_access_summary">Necessari per deixar de llegir una notificació ignorada i per als resums</string>
-    <string name="notification_shake_title">Agitar per aturar-se</string>
-    <string name="notification_shake_strength_title">Intensitat de sacsejada</string>
+    <string name="notification_shake_title">Sacseja per aturar</string>
+    <string name="notification_shake_strength_title">Força de la sacsejada</string>
     <string name="notification_wave_title">Moveu la mà per deixar de llegir</string>
     <string name="notification_wave_summary">Moure la mà sobre el sensor de proximitat</string>
     <string name="notification_pocket_title">Mode butxaca</string>
@@ -121,7 +121,7 @@
     <string name="notification_summary_no_access">L\'accés a les notificacions està desactivat</string>
     <string name="notification_summary_morning">Bon dia.</string>
     <string name="notification_summary_afternoon">Bona tarda.</string>
-    <string name="notification_summary_evening">Bona tarda.</string>
+    <string name="notification_summary_evening">Bon vespre.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Anuncis de l\'hora</string>
@@ -202,7 +202,7 @@
     <string name="notification_outcome_call">Anunciat com a trucada telefònica entrant</string>
     <string name="notification_rule_add">Afegeix una regla</string>
     <string name="notification_rule_from_template">Afegiu una regla des d\'una plantilla</string>
-    <string name="notification_rules_category">Normes</string>
+    <string name="notification_rules_category">Regles</string>
     <string name="notification_rules_empty">Sense regles</string>
     <string name="notification_rule_name">Nom</string>
     <string name="notification_rule_untitled">Regla</string>

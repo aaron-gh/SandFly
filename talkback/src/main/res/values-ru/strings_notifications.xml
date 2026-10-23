@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Сильный</string>
     <string name="notification_shake_2">Средний</string>
-    <string name="notification_shake_1">Нежный</string>
+    <string name="notification_shake_1">Слабое</string>
     <string name="notification_media_skip">Не читать</string>
     <string name="notification_media_pause">Приостановите воспроизведение мультимедиа во время чтения</string>
     <string name="notification_media_read">Читать</string>
@@ -24,8 +24,8 @@
     <string name="notification_when_title">Когда читать</string>
     <string name="notification_rules_title">Правила</string>
     <string name="notification_repeats_title">Повторы</string>
-    <string name="notification_stop_title">Хватит читать</string>
-    <string name="notification_schedules_title">Итог и время</string>
+    <string name="notification_stop_title">Остановка чтения</string>
+    <string name="notification_schedules_title">Сводка и время</string>
     <string name="notification_history_title">История уведомлений</string>
     <string name="notification_test_title">Отправить тестовое уведомление</string>
     <string name="notification_automation_title">Автоматизация</string>
@@ -60,13 +60,13 @@
     <string name="notification_delay_title">Задержка перед чтением</string>
     <string name="notification_queue_title">Когда прочитано другое уведомление</string>
     <string name="notification_repeat_minutes_title">Читать еще раз, пока экран не включится</string>
-    <string name="notification_skip_media_title">Пропустить медиаплееры</string>
-    <string name="notification_skip_ongoing_title">Пропустить текущие уведомления</string>
+    <string name="notification_skip_media_title">Пропускать медиаплееры</string>
+    <string name="notification_skip_ongoing_title">Пропускать постоянные уведомления</string>
     <string name="notification_skip_ongoing_summary">Например, навигация и таймеры</string>
     <string name="notification_skip_foreground_title">Пропустить уведомления запущенных приложений</string>
     <string name="notification_skip_foreground_summary">Например, VPN или диктофон.</string>
-    <string name="notification_skip_progress_title">Пропустить уведомления о прогрессе</string>
-    <string name="notification_skip_group_summaries_title">Пропустить сводку группы</string>
+    <string name="notification_skip_progress_title">Пропускать уведомления о ходе выполнения</string>
+    <string name="notification_skip_group_summaries_title">Пропускать сводки групп</string>
     <string name="notification_skip_group_summaries_summary">Например, «3 новых сообщения».</string>
     <string name="notification_skip_low_priority_title">Пропускать уведомления с низким приоритетом</string>
     <string name="notification_skip_system_title">Пропускать системные уведомления</string>
@@ -203,7 +203,7 @@
     <string name="notification_rule_add">Добавить правило</string>
     <string name="notification_rule_from_template">Добавить правило из шаблона</string>
     <string name="notification_rules_category">Правила</string>
-    <string name="notification_rules_empty">Никаких правил</string>
+    <string name="notification_rules_empty">Нет правил</string>
     <string name="notification_rule_name">Название</string>
     <string name="notification_rule_untitled">Правило</string>
     <string name="notification_rule_enabled">Включено</string>

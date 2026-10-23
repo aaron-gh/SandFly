@@ -61,7 +61,7 @@
     <string name="notification_queue_title">മറ്റൊരു അറിയിപ്പ് വായിക്കുമ്പോൾ</string>
     <string name="notification_repeat_minutes_title">സ്‌ക്രീൻ ഓണാകുന്നത് വരെ വീണ്ടും വായിക്കുക</string>
     <string name="notification_skip_media_title">മീഡിയ പ്ലെയറുകൾ ഒഴിവാക്കുക</string>
-    <string name="notification_skip_ongoing_title">നിലവിലുള്ള അറിയിപ്പുകൾ ഒഴിവാക്കുക</string>
+    <string name="notification_skip_ongoing_title">തുടർച്ചയായ അറിയിപ്പുകൾ ഒഴിവാക്കുക</string>
     <string name="notification_skip_ongoing_summary">നാവിഗേഷനും ടൈമറുകളും പോലെ</string>
     <string name="notification_skip_foreground_title">റൺ ചെയ്യുന്ന ആപ്പ് അറിയിപ്പുകൾ ഒഴിവാക്കുക</string>
     <string name="notification_skip_foreground_summary">VPN അല്ലെങ്കിൽ ഓഡിയോ റെക്കോർഡർ പോലെ</string>
@@ -205,7 +205,7 @@
     <string name="notification_rules_category">നിയമങ്ങൾ</string>
     <string name="notification_rules_empty">നിയമങ്ങളൊന്നുമില്ല</string>
     <string name="notification_rule_name">പേര്</string>
-    <string name="notification_rule_untitled">ഭരണം</string>
+    <string name="notification_rule_untitled">നിയമം</string>
     <string name="notification_rule_enabled">ഓണാണ്</string>
     <string name="notification_rule_match">വ്യവസ്ഥകൾ</string>
     <string name="notification_rule_match_all">എല്ലാ വ്യവസ്ഥകളും പാലിക്കണം</string>
@@ -301,9 +301,9 @@
     <string name="notification_on">ഓണാണ്</string>
     <string name="notification_never_again">SandFly പുനരാരംഭിക്കുന്നത് വരെ</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">അറിയിപ്പുകൾ ഉറക്കെ വായിക്കുന്നു</string>
-    <string name="notification_speech_now_on">അറിയിപ്പുകൾ ഉച്ചത്തിൽ വായിക്കുന്നത് പ്രവർത്തനക്ഷമമാക്കി</string>
-    <string name="notification_speech_now_off">ഉറക്കെയുള്ള അറിയിപ്പുകൾ വായിക്കുന്നത് പ്രവർത്തനരഹിതമാക്കി</string>
+    <string name="notification_speech_tile_label">അറിയിപ്പുകൾ വായിക്കൽ</string>
+    <string name="notification_speech_now_on">അറിയിപ്പ് വായന ഓണാണ്</string>
+    <string name="notification_speech_now_off">അറിയിപ്പ് വായന ഓഫാണ്</string>
     <string name="notification_no_last_notification">അറിയിപ്പൊന്നും വായിച്ചില്ല</string>
     <string name="shortcut_read_notifications">അറിയിപ്പുകൾ വായിക്കുക</string>
     <string name="shortcut_toggle_notification_speech">അറിയിപ്പ് പ്രസംഗം ഓൺ അല്ലെങ്കിൽ ഓഫ്</string>

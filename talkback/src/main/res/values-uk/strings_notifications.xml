@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Сильний</string>
     <string name="notification_shake_2">Середній</string>
-    <string name="notification_shake_1">Ніжний</string>
+    <string name="notification_shake_1">Слабке</string>
     <string name="notification_media_skip">Не читати</string>
     <string name="notification_media_pause">Зупиніть медіа під час читання</string>
     <string name="notification_media_read">Читати</string>
@@ -24,8 +24,8 @@
     <string name="notification_when_title">Коли читати</string>
     <string name="notification_rules_title">Правила</string>
     <string name="notification_repeats_title">Повтори</string>
-    <string name="notification_stop_title">Перестаньте читати</string>
-    <string name="notification_schedules_title">Підсумок і час</string>
+    <string name="notification_stop_title">Зупинка читання</string>
+    <string name="notification_schedules_title">Зведення і час</string>
     <string name="notification_history_title">Історія сповіщень</string>
     <string name="notification_test_title">Надіслати тестове сповіщення</string>
     <string name="notification_automation_title">Автоматизація</string>
@@ -60,16 +60,16 @@
     <string name="notification_delay_title">Затримка перед читанням</string>
     <string name="notification_queue_title">Коли прочитано інше сповіщення</string>
     <string name="notification_repeat_minutes_title">Прочитайте ще раз, доки не засвітиться екран</string>
-    <string name="notification_skip_media_title">Пропустити медіаплеєри</string>
-    <string name="notification_skip_ongoing_title">Пропустити поточні сповіщення</string>
+    <string name="notification_skip_media_title">Пропускати медіаплеєри</string>
+    <string name="notification_skip_ongoing_title">Пропускати постійні сповіщення</string>
     <string name="notification_skip_ongoing_summary">Такі як навігація та таймери</string>
     <string name="notification_skip_foreground_title">Пропустити сповіщення про запущену програму</string>
     <string name="notification_skip_foreground_summary">Наприклад, VPN або аудіозаписувач</string>
-    <string name="notification_skip_progress_title">Пропустити сповіщення про прогрес</string>
+    <string name="notification_skip_progress_title">Пропускати сповіщення про хід виконання</string>
     <string name="notification_skip_group_summaries_title">Пропускати підсумки груп</string>
     <string name="notification_skip_group_summaries_summary">Наприклад, «3 нових повідомлення»</string>
     <string name="notification_skip_low_priority_title">Пропустити низькопріоритетні сповіщення</string>
-    <string name="notification_skip_system_title">Пропустити системні сповіщення</string>
+    <string name="notification_skip_system_title">Пропускати системні сповіщення</string>
     <string name="notification_screen_on_title">Поки екран увімкнено</string>
     <string name="notification_screen_off_title">Поки екран вимкнено</string>
     <string name="notification_locked_title">Поки телефон заблоковано</string>
@@ -120,8 +120,8 @@
     <string name="notification_summary_needs_sandfly">Увімкніть SandFly, щоб прочитати сповіщення</string>
     <string name="notification_summary_no_access">Доступ до сповіщень вимкнено</string>
     <string name="notification_summary_morning">Доброго ранку</string>
-    <string name="notification_summary_afternoon">Доброго дня</string>
-    <string name="notification_summary_evening">Добрий вечір</string>
+    <string name="notification_summary_afternoon">Доброго дня.</string>
+    <string name="notification_summary_evening">Добрий вечір.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Оголошення часу</string>
@@ -301,7 +301,7 @@
     <string name="notification_on">Увімкнено</string>
     <string name="notification_never_again">До перезавантаження SandFly</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">Читання повідомлень вголос</string>
+    <string name="notification_speech_tile_label">Читання сповіщень вголос</string>
     <string name="notification_speech_now_on">Читання сповіщень вголос увімкнено</string>
     <string name="notification_speech_now_off">Читання сповіщень вголос вимкнено</string>
     <string name="notification_no_last_notification">Жодне сповіщення не було прочитано</string>

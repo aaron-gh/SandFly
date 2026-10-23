@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="notification_shake_3">Iqinile</string>
+    <string name="notification_shake_3">Kakhulu</string>
     <string name="notification_shake_2">Maphakathi</string>
     <string name="notification_shake_1">Emnene</string>
     <string name="notification_media_skip">Ungafundi</string>
@@ -100,8 +100,8 @@
     <string name="notification_skip_prefix_summary">Njengegama leqembu engxoxweni</string>
     <string name="notification_prefix_memory_title">Isikhathi esingakanani ukukhumbula isiqalo sombhalo</string>
     <string name="notification_access_summary">Kudingeka ukuze kumiswe ukufunda isaziso esicashisiwe kanye nezifinyezo</string>
-    <string name="notification_shake_title">Shake ukuze ume</string>
-    <string name="notification_shake_strength_title">Amandla okuzamazama</string>
+    <string name="notification_shake_title">Nyakazisa ukuze kume</string>
+    <string name="notification_shake_strength_title">Amandla okunyakazisa</string>
     <string name="notification_wave_title">Nyakazisa isandla ukuze uyeke ukufunda</string>
     <string name="notification_wave_summary">Ukuhambisa isandla phezu kwenzwa eseduze</string>
     <string name="notification_pocket_title">Imodi yesikhwama</string>
@@ -205,7 +205,7 @@
     <string name="notification_rules_category">Imithetho</string>
     <string name="notification_rules_empty">Ayikho imithetho</string>
     <string name="notification_rule_name">Igama</string>
-    <string name="notification_rule_untitled">Ukubusa</string>
+    <string name="notification_rule_untitled">Umthetho</string>
     <string name="notification_rule_enabled">Kuvuliwe</string>
     <string name="notification_rule_match">Imibandela</string>
     <string name="notification_rule_match_all">Zonke izimo kufanele zaneliswe</string>
@@ -301,9 +301,9 @@
     <string name="notification_on">Kuvuliwe</string>
     <string name="notification_never_again">Kuze SandFly iqale kabusha</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">Ifunda izaziso ngokuzwakalayo</string>
-    <string name="notification_speech_now_on">Izaziso zokufunda ngokuzwakalayo zinikwe amandla</string>
-    <string name="notification_speech_now_off">Ukufunda ngokuphimisela kukhutshaziwe</string>
+    <string name="notification_speech_tile_label">Ukufunda izaziso</string>
+    <string name="notification_speech_now_on">Ukufundwa kwezaziso kuvuliwe</string>
+    <string name="notification_speech_now_off">Ukufundwa kwezaziso kuvaliwe</string>
     <string name="notification_no_last_notification">Asikho isaziso esifundiwe</string>
     <string name="shortcut_read_notifications">Funda izaziso</string>
     <string name="shortcut_toggle_notification_speech">Inkulumo yesaziso ivuliwe noma ivaliwe</string>

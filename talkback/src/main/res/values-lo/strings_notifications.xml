@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="notification_shake_3">ເຂັ້ມແຂງ</string>
-    <string name="notification_shake_2">ຂະຫນາດກາງ</string>
-    <string name="notification_shake_1">ອ່ອນໂຍນ</string>
+    <string name="notification_shake_3">ແຮງ</string>
+    <string name="notification_shake_2">ປານກາງ</string>
+    <string name="notification_shake_1">ເບົາ</string>
     <string name="notification_media_skip">ບໍ່ອ່ານ</string>
     <string name="notification_media_pause">ຢຸດສື່ໃນຂະນະທີ່ອ່ານ</string>
     <string name="notification_media_read">ອ່ານ</string>
@@ -60,7 +60,7 @@
     <string name="notification_delay_title">ລໍຖ້າກ່ອນອ່ານ</string>
     <string name="notification_queue_title">ເມື່ອການແຈ້ງເຕືອນອື່ນຖືກອ່ານ</string>
     <string name="notification_repeat_minutes_title">ອ່ານອີກຄັ້ງຈົນກ່ວາໜ້າຈໍເປີດ</string>
-    <string name="notification_skip_media_title">ຂ້າມເຄື່ອງຫຼິ້ນສື່</string>
+    <string name="notification_skip_media_title">ຂ້າມເຄື່ອງຫຼິ້ນມີເດຍ</string>
     <string name="notification_skip_ongoing_title">ຂ້າມການແຈ້ງເຕືອນຢ່າງຕໍ່ເນື່ອງ</string>
     <string name="notification_skip_ongoing_summary">ເຊັ່ນການນໍາທາງ ແລະເຄື່ອງຈັບເວລາ</string>
     <string name="notification_skip_foreground_title">ຂ້າມການແຈ້ງເຕືອນແອັບ</string>
@@ -301,7 +301,7 @@
     <string name="notification_on">ເປີດ</string>
     <string name="notification_never_again">ຈົນກ່ວາ SandFly ຣີສະຕາດ</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">ກຳລັງອ່ານການແຈ້ງເຕືອນດັງໆ</string>
+    <string name="notification_speech_tile_label">ການອ່ານການແຈ້ງເຕືອນ</string>
     <string name="notification_speech_now_on">ເປີດການອ່ານການແຈ້ງເຕືອນດັງໆ</string>
     <string name="notification_speech_now_off">ປິດການອ່ານການແຈ້ງເຕືອນດັງໆ</string>
     <string name="notification_no_last_notification">ບໍ່ມີການອ່ານການແຈ້ງເຕືອນ</string>

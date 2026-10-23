@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Јака</string>
     <string name="notification_shake_2">Средње</string>
-    <string name="notification_shake_1">Нежно</string>
+    <string name="notification_shake_1">Лагано</string>
     <string name="notification_media_skip">Не читај</string>
     <string name="notification_media_pause">Паузирајте медије док читате</string>
     <string name="notification_media_read">Читај</string>
@@ -24,7 +24,7 @@
     <string name="notification_when_title">Када читати</string>
     <string name="notification_rules_title">Правила</string>
     <string name="notification_repeats_title">Понављања</string>
-    <string name="notification_stop_title">Престани да читаш</string>
+    <string name="notification_stop_title">Заустављање читања</string>
     <string name="notification_schedules_title">Резиме и време</string>
     <string name="notification_history_title">Историја обавештења</string>
     <string name="notification_test_title">Пошаљите обавештење о тестирању</string>
@@ -60,12 +60,12 @@
     <string name="notification_delay_title">Чекање пре читања</string>
     <string name="notification_queue_title">Када се прочита друго обавештење</string>
     <string name="notification_repeat_minutes_title">Читајте поново док се екран не укључи</string>
-    <string name="notification_skip_media_title">Прескочите медијске плејере</string>
-    <string name="notification_skip_ongoing_title">Прескочите текућа обавештења</string>
+    <string name="notification_skip_media_title">Прескочи медијске плејере</string>
+    <string name="notification_skip_ongoing_title">Прескочи трајна обавештења</string>
     <string name="notification_skip_ongoing_summary">Као што су навигација и тајмери</string>
     <string name="notification_skip_foreground_title">Прескочи обавештења покренутих апликација</string>
     <string name="notification_skip_foreground_summary">Као што је VPN или аудио снимач</string>
-    <string name="notification_skip_progress_title">Прескочите обавештења о напретку</string>
+    <string name="notification_skip_progress_title">Прескочи обавештења о напретку</string>
     <string name="notification_skip_group_summaries_title">Прескочи групне резимее</string>
     <string name="notification_skip_group_summaries_summary">Као што су „3 нове поруке“</string>
     <string name="notification_skip_low_priority_title">Прескочите обавештења ниског приоритета</string>
@@ -100,8 +100,8 @@
     <string name="notification_skip_prefix_summary">Као што је име групе у ћаскању</string>
     <string name="notification_prefix_memory_title">Колико дуго треба запамтити текстуални префикс</string>
     <string name="notification_access_summary">Потребно је да престанете да читате одбачено обавештење и за резиме</string>
-    <string name="notification_shake_title">Протресите да престанете</string>
-    <string name="notification_shake_strength_title">Интензитет потресања</string>
+    <string name="notification_shake_title">Протреси за заустављање</string>
+    <string name="notification_shake_strength_title">Јачина протресања</string>
     <string name="notification_wave_title">Одмахните руком да престанете да читате</string>
     <string name="notification_wave_summary">Померање руке преко сензора близине</string>
     <string name="notification_pocket_title">Џепни режим</string>

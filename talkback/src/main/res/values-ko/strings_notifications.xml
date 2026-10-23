@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="notification_shake_3">강한</string>
+    <string name="notification_shake_3">강하게</string>
     <string name="notification_shake_2">중간</string>
-    <string name="notification_shake_1">온화한</string>
+    <string name="notification_shake_1">약하게</string>
     <string name="notification_media_skip">읽지 않음</string>
     <string name="notification_media_pause">읽는 동안 미디어를 일시 중지하세요.</string>
     <string name="notification_media_read">읽기</string>
@@ -100,8 +100,8 @@
     <string name="notification_skip_prefix_summary">채팅의 그룹 이름 등</string>
     <string name="notification_prefix_memory_title">텍스트 접두어를 기억하는 기간</string>
     <string name="notification_access_summary">닫은 알림 및 요약 읽기를 중지하는 데 필요함</string>
-    <string name="notification_shake_title">흔들어서 멈추세요</string>
-    <string name="notification_shake_strength_title">흔들리는 강도</string>
+    <string name="notification_shake_title">흔들어서 중지</string>
+    <string name="notification_shake_strength_title">흔들기 강도</string>
     <string name="notification_wave_title">읽기를 중단하려면 손을 흔들어주세요.</string>
     <string name="notification_wave_summary">근접 센서 위로 손을 움직이기</string>
     <string name="notification_pocket_title">포켓 모드</string>
@@ -120,8 +120,8 @@
     <string name="notification_summary_needs_sandfly">알림을 읽으려면 SandFly를 켜세요.</string>
     <string name="notification_summary_no_access">알림 액세스가 사용 중지되었습니다.</string>
     <string name="notification_summary_morning">좋은 아침입니다.</string>
-    <string name="notification_summary_afternoon">좋은 오후에요.</string>
-    <string name="notification_summary_evening">좋은 저녁이에요.</string>
+    <string name="notification_summary_afternoon">안녕하세요.</string>
+    <string name="notification_summary_evening">안녕하세요.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">시간 알림</string>
@@ -302,8 +302,8 @@
     <string name="notification_never_again">SandFly가 다시 시작될 때까지</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
     <string name="notification_speech_tile_label">알림을 소리내어 읽기</string>
-    <string name="notification_speech_now_on">알림 소리내어 읽기가 활성화되었습니다.</string>
-    <string name="notification_speech_now_off">알림 소리내어 읽기가 비활성화되었습니다.</string>
+    <string name="notification_speech_now_on">알림 읽기 켜짐</string>
+    <string name="notification_speech_now_off">알림 읽기 꺼짐</string>
     <string name="notification_no_last_notification">읽은 알림이 없습니다.</string>
     <string name="shortcut_read_notifications">알림 읽기</string>
     <string name="shortcut_toggle_notification_speech">알림 음성 켜기 또는 끄기</string>

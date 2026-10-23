@@ -24,7 +24,7 @@
     <string name="notification_when_title">מתי לקרוא</string>
     <string name="notification_rules_title">כללים</string>
     <string name="notification_repeats_title">חזרות</string>
-    <string name="notification_stop_title">תפסיק לקרוא</string>
+    <string name="notification_stop_title">עצירת ההקראה</string>
     <string name="notification_schedules_title">סיכום וזמן</string>
     <string name="notification_history_title">היסטוריית התראות</string>
     <string name="notification_test_title">שלח הודעת בדיקה</string>
@@ -60,16 +60,16 @@
     <string name="notification_delay_title">המתנה לפני הקראה</string>
     <string name="notification_queue_title">כאשר הודעה נוספת נקראת</string>
     <string name="notification_repeat_minutes_title">קרא שוב עד שהמסך נדלק</string>
-    <string name="notification_skip_media_title">דלג על נגני מדיה</string>
-    <string name="notification_skip_ongoing_title">דלג על הודעות מתמשכות</string>
+    <string name="notification_skip_media_title">דילוג על נגני מדיה</string>
+    <string name="notification_skip_ongoing_title">דילוג על התראות מתמשכות</string>
     <string name="notification_skip_ongoing_summary">כגון ניווט וטיימרים</string>
     <string name="notification_skip_foreground_title">דלג על הפעלת הודעות אפליקציה</string>
     <string name="notification_skip_foreground_summary">כגון VPN או מקליט שמע</string>
     <string name="notification_skip_progress_title">דלג על הודעות התקדמות</string>
-    <string name="notification_skip_group_summaries_title">דלג על סיכומי קבוצות</string>
+    <string name="notification_skip_group_summaries_title">דילוג על סיכומי קבוצות</string>
     <string name="notification_skip_group_summaries_summary">כמו \"3 הודעות חדשות\"</string>
     <string name="notification_skip_low_priority_title">דלג על התראות בעדיפות נמוכה</string>
-    <string name="notification_skip_system_title">דלג על הודעות מערכת</string>
+    <string name="notification_skip_system_title">דילוג על התראות מערכת</string>
     <string name="notification_screen_on_title">בזמן שהמסך דולק</string>
     <string name="notification_screen_off_title">בזמן שהמסך כבוי</string>
     <string name="notification_locked_title">בזמן שהטלפון נעול</string>
@@ -101,7 +101,7 @@
     <string name="notification_prefix_memory_title">כמה זמן לזכור את קידומת הטקסט</string>
     <string name="notification_access_summary">נדרש להפסיק לקרוא הודעה שנפסלה ולסיכומים</string>
     <string name="notification_shake_title">לנער כדי לעצור</string>
-    <string name="notification_shake_strength_title">עוצמת רועד</string>
+    <string name="notification_shake_strength_title">עוצמת הניעור</string>
     <string name="notification_wave_title">הניפו יד כדי להפסיק לקרוא</string>
     <string name="notification_wave_summary">העברת יד מעל חיישן הקרבה</string>
     <string name="notification_pocket_title">מצב כיס</string>
@@ -203,7 +203,7 @@
     <string name="notification_rule_add">הוספת כלל</string>
     <string name="notification_rule_from_template">הוסף כלל מתבנית</string>
     <string name="notification_rules_category">כללים</string>
-    <string name="notification_rules_empty">אין חוקים</string>
+    <string name="notification_rules_empty">אין כללים</string>
     <string name="notification_rule_name">שם</string>
     <string name="notification_rule_untitled">כלל</string>
     <string name="notification_rule_enabled">מופעל</string>

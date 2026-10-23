@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">ଶକ୍ତିଶାଳୀ</string>
     <string name="notification_shake_2">ମଧ୍ୟମ</string>
-    <string name="notification_shake_1">ଭଦ୍ର</string>
+    <string name="notification_shake_1">ହାଲୁକା</string>
     <string name="notification_media_skip">ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_media_pause">ପ reading ିବା ସମୟରେ ମିଡିଆକୁ ବିରତି ଦିଅନ୍ତୁ</string>
     <string name="notification_media_read">ପଢ଼ନ୍ତୁ</string>
@@ -24,7 +24,7 @@
     <string name="notification_when_title">କେତେବେଳେ ପ read ିବେ</string>
     <string name="notification_rules_title">ନିୟମ</string>
     <string name="notification_repeats_title">ପୁନରାବୃତ୍ତି</string>
-    <string name="notification_stop_title">ପ reading ିବା ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="notification_stop_title">ପଢ଼ିବା ବନ୍ଦ</string>
     <string name="notification_schedules_title">ସାରାଂଶ ଏବଂ ସମୟ</string>
     <string name="notification_history_title">ବିଜ୍ଞପ୍ତି ଇତିହାସ</string>
     <string name="notification_test_title">ଏକ ପରୀକ୍ଷା ବିଜ୍ଞପ୍ତି ପଠାନ୍ତୁ</string>
@@ -60,16 +60,16 @@
     <string name="notification_delay_title">ପଢ଼ିବା ପୂର୍ବରୁ ଅପେକ୍ଷା</string>
     <string name="notification_queue_title">ଯେତେବେଳେ ଅନ୍ୟ ଏକ ବିଜ୍ଞପ୍ତି ପ read ଼ାଯାଏ</string>
     <string name="notification_repeat_minutes_title">ସ୍କ୍ରିନ୍ ଅନ୍ ନହେବା ପର୍ଯ୍ୟନ୍ତ ପୁନର୍ବାର ପ Read ନ୍ତୁ</string>
-    <string name="notification_skip_media_title">ମିଡିଆ ପ୍ଲେୟାରକୁ ଏଡ଼ାଇଦିଅ</string>
-    <string name="notification_skip_ongoing_title">ଚାଲୁଥିବା ବିଜ୍ଞପ୍ତିକୁ ଏଡ଼ାଇଦିଅ</string>
+    <string name="notification_skip_media_title">ମିଡିଆ ପ୍ଲେୟାର ଛାଡ଼ନ୍ତୁ</string>
+    <string name="notification_skip_ongoing_title">ଚାଲୁଥିବା ବିଜ୍ଞପ୍ତି ଛାଡ଼ନ୍ତୁ</string>
     <string name="notification_skip_ongoing_summary">ଯେପରିକି ନାଭିଗେସନ୍ ଏବଂ ଟାଇମର୍</string>
     <string name="notification_skip_foreground_title">ଚାଲୁଥିବା ଆପ୍ ବିଜ୍ଞପ୍ତିକୁ ଛାଡିଦିଅ</string>
     <string name="notification_skip_foreground_summary">ଯେପରିକି VPN କିମ୍ବା ଏକ ଅଡିଓ ରେକର୍ଡର୍</string>
-    <string name="notification_skip_progress_title">ପ୍ରଗତି ବିଜ୍ଞପ୍ତିକୁ ଛାଡିଦିଅ</string>
-    <string name="notification_skip_group_summaries_title">ଗୋଷ୍ଠୀ ସାରାଂଶକୁ ଏଡ଼ାଇଦିଅ</string>
+    <string name="notification_skip_progress_title">ପ୍ରଗତି ବିଜ୍ଞପ୍ତି ଛାଡ଼ନ୍ତୁ</string>
+    <string name="notification_skip_group_summaries_title">ଗୋଷ୍ଠୀ ସାରାଂଶ ଛାଡ଼ନ୍ତୁ</string>
     <string name="notification_skip_group_summaries_summary">ଯେପରିକି “3 ନୂତନ ବାର୍ତ୍ତା”</string>
     <string name="notification_skip_low_priority_title">ନିମ୍ନ ପ୍ରାଥମିକତା ବିଜ୍ଞପ୍ତିକୁ ଏଡ଼ାଇଦିଅ</string>
-    <string name="notification_skip_system_title">ସିଷ୍ଟମ୍ ବିଜ୍ଞପ୍ତିକୁ ଛାଡିଦିଅ</string>
+    <string name="notification_skip_system_title">ସିଷ୍ଟମ୍ ବିଜ୍ଞପ୍ତି ଛାଡ଼ନ୍ତୁ</string>
     <string name="notification_screen_on_title">ସ୍କ୍ରିନ୍ ଅନ୍ ଥିବାବେଳେ</string>
     <string name="notification_screen_off_title">ଯେତେବେଳେ ସ୍କ୍ରିନ୍ ବନ୍ଦ ଅଛି</string>
     <string name="notification_locked_title">ଯେତେବେଳେ ଫୋନ୍ ଲକ୍ ହୋଇଛି</string>
@@ -101,7 +101,7 @@
     <string name="notification_prefix_memory_title">ପାଠ୍ୟ ଉପସର୍ଗକୁ କେତେ ଦିନ ମନେରଖିବାକୁ</string>
     <string name="notification_access_summary">ଏକ ବରଖାସ୍ତ ବିଜ୍ଞପ୍ତି ଏବଂ ସାରାଂଶ ପାଇଁ ପ reading ିବା ବନ୍ଦ କରିବା ଆବଶ୍ୟକ</string>
     <string name="notification_shake_title">ବନ୍ଦ କରିବାକୁ ହଲାନ୍ତୁ</string>
-    <string name="notification_shake_strength_title">କମ୍ପନ ତୀବ୍ରତା</string>
+    <string name="notification_shake_strength_title">ହଲାଇବାର ତୀବ୍ରତା</string>
     <string name="notification_wave_title">ପ reading ିବା ବନ୍ଦ କରିବା ପାଇଁ ହାତ ବୁଲାନ୍ତୁ</string>
     <string name="notification_wave_summary">ନିକଟତର ସେନସର ଉପରେ ହାତ ବୁଲାଇବା</string>
     <string name="notification_pocket_title">ପକେଟ୍ ମୋଡ୍</string>
@@ -120,8 +120,8 @@
     <string name="notification_summary_needs_sandfly">ବିଜ୍ଞପ୍ତି ପ read ିବା ପାଇଁ SandFly ଟର୍ନ୍ ଅନ୍ କରନ୍ତୁ</string>
     <string name="notification_summary_no_access">ବିଜ୍ଞପ୍ତି ପ୍ରବେଶ ବନ୍ଦ ଅଛି</string>
     <string name="notification_summary_morning">ଶୁଭ ସକାଳ।</string>
-    <string name="notification_summary_afternoon">ଶୁଭ ଅପରାହ୍ନ |</string>
-    <string name="notification_summary_evening">ଶୁଭ ସନ୍ଧ୍ୟା |</string>
+    <string name="notification_summary_afternoon">ଶୁଭ ଅପରାହ୍ନ।</string>
+    <string name="notification_summary_evening">ଶୁଭ ସନ୍ଧ୍ୟା।</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">ସମୟ ଘୋଷଣା</string>
@@ -301,9 +301,9 @@
     <string name="notification_on">ଚାଲୁ ଅଛି</string>
     <string name="notification_never_again">SandFly ପୁନଃଆରମ୍ଭ ନହେବା ପର୍ଯ୍ୟନ୍ତ</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">ଉଚ୍ଚ ସ୍ୱରରେ ବିଜ୍ଞପ୍ତି ପ Reading ିବା</string>
-    <string name="notification_speech_now_on">ଉଚ୍ଚ ସ୍ୱରରେ ବିଜ୍ଞପ୍ତି ପ Reading ିବା ସକ୍ଷମ</string>
-    <string name="notification_speech_now_off">ଉଚ୍ଚ ସ୍ୱରରେ ବିଜ୍ଞପ୍ତି ପ Reading ିବା ଅକ୍ଷମ</string>
+    <string name="notification_speech_tile_label">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା</string>
+    <string name="notification_speech_now_on">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ଚାଲୁ</string>
+    <string name="notification_speech_now_off">ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ବନ୍ଦ</string>
     <string name="notification_no_last_notification">କୌଣସି ବିଜ୍ଞପ୍ତି ପ read ାଗଲା ନାହିଁ</string>
     <string name="shortcut_read_notifications">ବିଜ୍ଞପ୍ତିଗୁଡିକ ପ Read ନ୍ତୁ</string>
     <string name="shortcut_toggle_notification_speech">ଅନ କିମ୍ବା ଅଫ୍ ବିଜ୍ଞପ୍ତି ବକ୍ତବ୍ୟ</string>

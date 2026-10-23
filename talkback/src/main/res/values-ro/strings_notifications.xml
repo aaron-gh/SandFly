@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Puternic</string>
     <string name="notification_shake_2">Mediu</string>
-    <string name="notification_shake_1">Blând</string>
+    <string name="notification_shake_1">Ușor</string>
     <string name="notification_media_skip">Nu citi</string>
     <string name="notification_media_pause">Întrerupeți media în timp ce citiți</string>
     <string name="notification_media_read">Citește</string>
@@ -24,8 +24,8 @@
     <string name="notification_when_title">Când să citești</string>
     <string name="notification_rules_title">Reguli</string>
     <string name="notification_repeats_title">Repetări</string>
-    <string name="notification_stop_title">Nu mai citi</string>
-    <string name="notification_schedules_title">Rezumat și timp</string>
+    <string name="notification_stop_title">Oprirea citirii</string>
+    <string name="notification_schedules_title">Rezumat și oră</string>
     <string name="notification_history_title">Istoricul notificărilor</string>
     <string name="notification_test_title">Trimiteți o notificare de testare</string>
     <string name="notification_automation_title">Automatizare</string>
@@ -100,8 +100,8 @@
     <string name="notification_skip_prefix_summary">Cum ar fi numele unui grup dintr-un chat</string>
     <string name="notification_prefix_memory_title">Cât timp să vă amintiți prefixul textului</string>
     <string name="notification_access_summary">Este necesar să nu mai citiți o notificare respinsă și pentru rezumate</string>
-    <string name="notification_shake_title">Agitați pentru a opri</string>
-    <string name="notification_shake_strength_title">Intensitatea tremuratului</string>
+    <string name="notification_shake_title">Agită pentru a opri</string>
+    <string name="notification_shake_strength_title">Intensitatea scuturării</string>
     <string name="notification_wave_title">Adu mâna pentru a nu mai citi</string>
     <string name="notification_wave_summary">Trecând o mână peste senzorul de proximitate</string>
     <string name="notification_pocket_title">Mod buzunar</string>
@@ -203,9 +203,9 @@
     <string name="notification_rule_add">Adaugă o regulă</string>
     <string name="notification_rule_from_template">Adăugați o regulă dintr-un șablon</string>
     <string name="notification_rules_category">Reguli</string>
-    <string name="notification_rules_empty">Fara reguli</string>
+    <string name="notification_rules_empty">Fără reguli</string>
     <string name="notification_rule_name">Nume</string>
-    <string name="notification_rule_untitled">Regula</string>
+    <string name="notification_rule_untitled">Regulă</string>
     <string name="notification_rule_enabled">Activată</string>
     <string name="notification_rule_match">Condiții</string>
     <string name="notification_rule_match_all">Toate condițiile trebuie îndeplinite</string>

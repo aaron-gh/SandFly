@@ -24,7 +24,7 @@
     <string name="notification_when_title">چه زمانی بخوانیم</string>
     <string name="notification_rules_title">قوانین</string>
     <string name="notification_repeats_title">تکرارها</string>
-    <string name="notification_stop_title">خواندن را متوقف کنید</string>
+    <string name="notification_stop_title">توقف خواندن</string>
     <string name="notification_schedules_title">خلاصه و زمان</string>
     <string name="notification_history_title">تاریخچه اعلان</string>
     <string name="notification_test_title">یک اعلان آزمایشی ارسال کنید</string>
@@ -60,13 +60,13 @@
     <string name="notification_delay_title">انتظار قبل از خواندن</string>
     <string name="notification_queue_title">وقتی اعلان دیگری خوانده می شود</string>
     <string name="notification_repeat_minutes_title">دوباره بخوانید تا صفحه روشن شود</string>
-    <string name="notification_skip_media_title">از پخش کننده های رسانه رد شوید</string>
+    <string name="notification_skip_media_title">رد شدن از پخش‌کننده‌های رسانه</string>
     <string name="notification_skip_ongoing_title">رد شدن از اعلان‌های جاری</string>
     <string name="notification_skip_ongoing_summary">مانند ناوبری و تایمر</string>
     <string name="notification_skip_foreground_title">رد شدن از اجرای اعلان‌های برنامه</string>
     <string name="notification_skip_foreground_summary">مانند VPN یا ضبط کننده</string>
     <string name="notification_skip_progress_title">رد شدن از اعلان‌های پیشرفت</string>
-    <string name="notification_skip_group_summaries_title">از خلاصه‌های گروهی بگذرید</string>
+    <string name="notification_skip_group_summaries_title">رد شدن از خلاصه‌های گروهی</string>
     <string name="notification_skip_group_summaries_summary">مانند \"3 پیام جدید\"</string>
     <string name="notification_skip_low_priority_title">رد شدن از اعلان‌های با اولویت پایین</string>
     <string name="notification_skip_system_title">رد شدن از اعلان های سیستم</string>
@@ -101,7 +101,7 @@
     <string name="notification_prefix_memory_title">چه مدت باید پیشوند متن را به خاطر بسپارید</string>
     <string name="notification_access_summary">برای توقف خواندن اعلان رد شده و برای خلاصه‌ها لازم است</string>
     <string name="notification_shake_title">تکان دهید تا متوقف شود</string>
-    <string name="notification_shake_strength_title">شدت لرزش</string>
+    <string name="notification_shake_strength_title">شدت تکان دادن</string>
     <string name="notification_wave_title">برای توقف خواندن دست تکان دهید</string>
     <string name="notification_wave_summary">حرکت دادن دست روی سنسور مجاورت</string>
     <string name="notification_pocket_title">حالت جیبی</string>
@@ -120,8 +120,8 @@
     <string name="notification_summary_needs_sandfly">برای خواندن اعلان‌ها، SandFly را روشن کنید</string>
     <string name="notification_summary_no_access">دسترسی به اعلان خاموش است</string>
     <string name="notification_summary_morning">صبح بخیر</string>
-    <string name="notification_summary_afternoon">ظهر بخیر</string>
-    <string name="notification_summary_evening">عصر بخیر</string>
+    <string name="notification_summary_afternoon">بعدازظهر بخیر.</string>
+    <string name="notification_summary_evening">عصر بخیر.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">اعلام زمان</string>

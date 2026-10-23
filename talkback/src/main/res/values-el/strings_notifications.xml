@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Δυνατός</string>
     <string name="notification_shake_2">Μεσαίο</string>
-    <string name="notification_shake_1">Ευγενική</string>
+    <string name="notification_shake_1">Απαλό</string>
     <string name="notification_media_skip">Χωρίς ανάγνωση</string>
     <string name="notification_media_pause">Παύση των μέσων κατά την ανάγνωση</string>
     <string name="notification_media_read">Ανάγνωση</string>
@@ -24,8 +24,8 @@
     <string name="notification_when_title">Πότε να διαβάσετε</string>
     <string name="notification_rules_title">Κανόνες</string>
     <string name="notification_repeats_title">Επαναλήψεις</string>
-    <string name="notification_stop_title">Σταμάτα να διαβάζεις</string>
-    <string name="notification_schedules_title">Περίληψη και χρόνος</string>
+    <string name="notification_stop_title">Διακοπή ανάγνωσης</string>
+    <string name="notification_schedules_title">Σύνοψη και ώρα</string>
     <string name="notification_history_title">Ιστορικό ειδοποιήσεων</string>
     <string name="notification_test_title">Στείλτε μια ειδοποίηση δοκιμής</string>
     <string name="notification_automation_title">Αυτοματοποίηση</string>
@@ -120,7 +120,7 @@
     <string name="notification_summary_needs_sandfly">Ενεργοποιήστε το SandFly για να διαβάσετε τις ειδοποιήσεις</string>
     <string name="notification_summary_no_access">Η πρόσβαση σε ειδοποιήσεις είναι ανενεργή</string>
     <string name="notification_summary_morning">Καλημέρα.</string>
-    <string name="notification_summary_afternoon">Καλημέρα.</string>
+    <string name="notification_summary_afternoon">Καλό απόγευμα.</string>
     <string name="notification_summary_evening">Καλησπέρα.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>

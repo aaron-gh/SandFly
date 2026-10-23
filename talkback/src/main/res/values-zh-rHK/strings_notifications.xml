@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">強</string>
     <string name="notification_shake_2">中等</string>
-    <string name="notification_shake_1">溫柔</string>
+    <string name="notification_shake_1">輕</string>
     <string name="notification_media_skip">不朗讀</string>
     <string name="notification_media_pause">閱讀時暫停媒體</string>
     <string name="notification_media_read">朗讀</string>
@@ -24,7 +24,7 @@
     <string name="notification_when_title">何時閱讀</string>
     <string name="notification_rules_title">規則</string>
     <string name="notification_repeats_title">重複</string>
-    <string name="notification_stop_title">停止閱讀</string>
+    <string name="notification_stop_title">停止朗讀</string>
     <string name="notification_schedules_title">摘要及時間</string>
     <string name="notification_history_title">通知歷史記錄</string>
     <string name="notification_test_title">發送測試通知</string>
@@ -40,7 +40,7 @@
     <string name="notification_voice_sandfly">SandFly的聲音</string>
     <string name="notification_detect_language_title">偵測語言</string>
     <string name="notification_detect_language_summary">用其編寫的語言說出每個通知。需要在文字轉語音設定中自動切換語言。</string>
-    <string name="notification_sound_before_title">通知前有聲音</string>
+    <string name="notification_sound_before_title">通知前的提示音</string>
     <string name="notification_category_text">文字</string>
     <string name="notification_remove_emoji_title">省略表情符號</string>
     <string name="notification_lowercase_title">將大寫字母讀作單字</string>
@@ -61,7 +61,7 @@
     <string name="notification_queue_title">當閱讀另一個通知時</string>
     <string name="notification_repeat_minutes_title">再次閱讀直至螢幕亮起</string>
     <string name="notification_skip_media_title">跳過媒體播放器</string>
-    <string name="notification_skip_ongoing_title">跳過正在進行的通知</string>
+    <string name="notification_skip_ongoing_title">跳過常駐通知</string>
     <string name="notification_skip_ongoing_summary">例如導航和計時器</string>
     <string name="notification_skip_foreground_title">跳過正在運行的應用程式通知</string>
     <string name="notification_skip_foreground_summary">例如VPN或錄音機</string>
@@ -101,7 +101,7 @@
     <string name="notification_prefix_memory_title">记住文本前缀多长时间</string>
     <string name="notification_access_summary">需要停止阅读已驳回的通知并获取摘要</string>
     <string name="notification_shake_title">搖晃即可停止</string>
-    <string name="notification_shake_strength_title">震動強度</string>
+    <string name="notification_shake_strength_title">搖晃強度</string>
     <string name="notification_wave_title">揮手停止閱讀</string>
     <string name="notification_wave_summary">将手移到接近传感器上</string>
     <string name="notification_pocket_title">口袋模式</string>
@@ -120,8 +120,8 @@
     <string name="notification_summary_needs_sandfly">打开 SandFly 即可阅读通知</string>
     <string name="notification_summary_no_access">通知訪問已關閉</string>
     <string name="notification_summary_morning">早安。</string>
-    <string name="notification_summary_afternoon">午安.</string>
-    <string name="notification_summary_evening">晚安.</string>
+    <string name="notification_summary_afternoon">午安。</string>
+    <string name="notification_summary_evening">晚上好。</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">報時</string>
@@ -301,9 +301,9 @@
     <string name="notification_on">開啟</string>
     <string name="notification_never_again">直到SandFly重新啟動</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">大聲朗讀通知</string>
-    <string name="notification_speech_now_on">已啟用大聲朗讀通知</string>
-    <string name="notification_speech_now_off">大聲朗讀通知已停用</string>
+    <string name="notification_speech_tile_label">通知朗讀</string>
+    <string name="notification_speech_now_on">通知朗讀已開啟</string>
+    <string name="notification_speech_now_off">通知朗讀已關閉</string>
     <string name="notification_no_last_notification">沒有閱讀任何通知</string>
     <string name="shortcut_read_notifications">閱讀通知</string>
     <string name="shortcut_toggle_notification_speech">通知語音開啟或關閉</string>

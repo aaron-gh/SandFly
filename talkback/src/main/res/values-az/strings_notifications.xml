@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Güclü</string>
     <string name="notification_shake_2">Orta</string>
-    <string name="notification_shake_1">Zərif</string>
+    <string name="notification_shake_1">Yüngül</string>
     <string name="notification_media_skip">Oxuma</string>
     <string name="notification_media_pause">Oxuyarkən mediaya fasilə verin</string>
     <string name="notification_media_read">Oxu</string>
@@ -24,7 +24,7 @@
     <string name="notification_when_title">Nə vaxt oxumaq</string>
     <string name="notification_rules_title">Qaydalar</string>
     <string name="notification_repeats_title">Təkrarlar</string>
-    <string name="notification_stop_title">Oxumağı dayandırın</string>
+    <string name="notification_stop_title">Oxumanı dayandırmaq</string>
     <string name="notification_schedules_title">Xülasə və vaxt</string>
     <string name="notification_history_title">Bildiriş tarixçəsi</string>
     <string name="notification_test_title">Test bildirişi göndərin</string>
@@ -60,16 +60,16 @@
     <string name="notification_delay_title">Oxumadan əvvəl gözləmə</string>
     <string name="notification_queue_title">Başqa bildiriş oxunduqda</string>
     <string name="notification_repeat_minutes_title">Ekran açılana qədər yenidən oxuyun</string>
-    <string name="notification_skip_media_title">Media pleyerlərini keçin</string>
-    <string name="notification_skip_ongoing_title">Davam edən bildirişləri keçin</string>
+    <string name="notification_skip_media_title">Media pleyerlərini keç</string>
+    <string name="notification_skip_ongoing_title">Davam edən bildirişləri keç</string>
     <string name="notification_skip_ongoing_summary">Naviqasiya və taymerlər kimi</string>
     <string name="notification_skip_foreground_title">Çalışan proqram bildirişlərini atlayın</string>
     <string name="notification_skip_foreground_summary">VPN və ya səs yazıcısı kimi</string>
-    <string name="notification_skip_progress_title">Tərəqqi bildirişlərini atlayın</string>
-    <string name="notification_skip_group_summaries_title">Qrup xülasələrini atlayın</string>
+    <string name="notification_skip_progress_title">Gedişat bildirişlərini keç</string>
+    <string name="notification_skip_group_summaries_title">Qrup xülasələrini atla</string>
     <string name="notification_skip_group_summaries_summary">\"3 yeni mesaj\" kimi</string>
     <string name="notification_skip_low_priority_title">Aşağı prioritet bildirişləri keçin</string>
-    <string name="notification_skip_system_title">Sistem bildirişlərini atlayın</string>
+    <string name="notification_skip_system_title">Sistem bildirişlərini keç</string>
     <string name="notification_screen_on_title">Ekran açıq olarkən</string>
     <string name="notification_screen_off_title">Ekran sönük ikən</string>
     <string name="notification_locked_title">Telefon kilidli olarkən</string>
@@ -100,8 +100,8 @@
     <string name="notification_skip_prefix_summary">Söhbətdəki qrupun adı kimi</string>
     <string name="notification_prefix_memory_title">Mətn prefiksini nə qədər yadda saxlamaq lazımdır</string>
     <string name="notification_access_summary">Rədd edilmiş bildirişi oxumağı dayandırmaq və xülasələr üçün lazımdır</string>
-    <string name="notification_shake_title">Dayanmaq üçün silkələyin</string>
-    <string name="notification_shake_strength_title">Sarsıntı intensivliyi</string>
+    <string name="notification_shake_title">Dayandırmaq üçün silkələ</string>
+    <string name="notification_shake_strength_title">Silkələmə gücü</string>
     <string name="notification_wave_title">Oxumağı dayandırmaq üçün əlinizi yelləyin</string>
     <string name="notification_wave_summary">Əlinizi yaxınlıq sensoru üzərində hərəkət etdirin</string>
     <string name="notification_pocket_title">Cib rejimi</string>

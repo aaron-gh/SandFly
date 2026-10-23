@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Erős</string>
     <string name="notification_shake_2">Közepes</string>
-    <string name="notification_shake_1">Szelíd</string>
+    <string name="notification_shake_1">Gyenge</string>
     <string name="notification_media_skip">Ne olvassa fel</string>
     <string name="notification_media_pause">Olvasás közben szüneteltesse a médiát</string>
     <string name="notification_media_read">Felolvasás</string>
@@ -24,7 +24,7 @@
     <string name="notification_when_title">Mikor kell olvasni</string>
     <string name="notification_rules_title">Szabályok</string>
     <string name="notification_repeats_title">Ismétlődések</string>
-    <string name="notification_stop_title">Hagyd abba az olvasást</string>
+    <string name="notification_stop_title">Felolvasás leállítása</string>
     <string name="notification_schedules_title">Összegzés és idő</string>
     <string name="notification_history_title">Értesítési előzmények</string>
     <string name="notification_test_title">Tesztértesítés küldése</string>
@@ -61,15 +61,15 @@
     <string name="notification_queue_title">Amikor egy másik értesítést olvas</string>
     <string name="notification_repeat_minutes_title">Olvassa el újra, amíg a képernyő be nem kapcsol</string>
     <string name="notification_skip_media_title">Médialejátszók kihagyása</string>
-    <string name="notification_skip_ongoing_title">A folyamatban lévő értesítések kihagyása</string>
+    <string name="notification_skip_ongoing_title">Folyamatos értesítések kihagyása</string>
     <string name="notification_skip_ongoing_summary">Ilyen például a navigáció és az időzítők</string>
     <string name="notification_skip_foreground_title">A futó alkalmazások értesítéseinek kihagyása</string>
     <string name="notification_skip_foreground_summary">Például egy VPN vagy egy hangrögzítő</string>
-    <string name="notification_skip_progress_title">Az előrehaladásról szóló értesítések kihagyása</string>
+    <string name="notification_skip_progress_title">Folyamatjelző értesítések kihagyása</string>
     <string name="notification_skip_group_summaries_title">Csoportos összefoglalók kihagyása</string>
     <string name="notification_skip_group_summaries_summary">Például „3 új üzenet”</string>
     <string name="notification_skip_low_priority_title">Az alacsony prioritású értesítések kihagyása</string>
-    <string name="notification_skip_system_title">A rendszerértesítések kihagyása</string>
+    <string name="notification_skip_system_title">Rendszerértesítések kihagyása</string>
     <string name="notification_screen_on_title">Amíg a képernyő be van kapcsolva</string>
     <string name="notification_screen_off_title">Amíg a képernyő ki van kapcsolva</string>
     <string name="notification_locked_title">Amíg a telefon le van zárva</string>
@@ -100,8 +100,8 @@
     <string name="notification_skip_prefix_summary">Például egy csoport neve egy chatben</string>
     <string name="notification_prefix_memory_title">Mennyi ideig kell emlékezni a szöveg előtagjára</string>
     <string name="notification_access_summary">Szükség van az elutasított értesítések olvasásának abbahagyásához és az összefoglalókhoz</string>
-    <string name="notification_shake_title">Rázza meg a leállításhoz</string>
-    <string name="notification_shake_strength_title">Remegés intenzitása</string>
+    <string name="notification_shake_title">Rázás a leállításhoz</string>
+    <string name="notification_shake_strength_title">Rázás erőssége</string>
     <string name="notification_wave_title">Intse meg a kezét, hogy abbahagyja az olvasást</string>
     <string name="notification_wave_summary">Egy kéz mozgatása a közelségérzékelőn</string>
     <string name="notification_pocket_title">Zsebmód</string>

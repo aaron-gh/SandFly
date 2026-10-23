@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Forte</string>
     <string name="notification_shake_2">Medio</string>
-    <string name="notification_shake_1">Gentile</string>
+    <string name="notification_shake_1">Leggero</string>
     <string name="notification_media_skip">Non leggere</string>
     <string name="notification_media_pause">Metti in pausa i contenuti multimediali durante la lettura</string>
     <string name="notification_media_read">Leggi</string>
@@ -24,7 +24,7 @@
     <string name="notification_when_title">Quando leggere</string>
     <string name="notification_rules_title">Regole</string>
     <string name="notification_repeats_title">Ripetizioni</string>
-    <string name="notification_stop_title">Smetti di leggere</string>
+    <string name="notification_stop_title">Interrompere la lettura</string>
     <string name="notification_schedules_title">Riepilogo e ora</string>
     <string name="notification_history_title">Cronologia delle notifiche</string>
     <string name="notification_test_title">Invia una notifica di prova</string>
@@ -100,8 +100,8 @@
     <string name="notification_skip_prefix_summary">Come il nome di un gruppo in una chat</string>
     <string name="notification_prefix_memory_title">Per quanto tempo ricordare il prefisso del testo</string>
     <string name="notification_access_summary">Necessario per interrompere la lettura di una notifica respinta e per i riepiloghi</string>
-    <string name="notification_shake_title">Agitare per fermare</string>
-    <string name="notification_shake_strength_title">Intensità tremante</string>
+    <string name="notification_shake_title">Scuoti per fermare</string>
+    <string name="notification_shake_strength_title">Intensità dello scuotimento</string>
     <string name="notification_wave_title">Agita una mano per interrompere la lettura</string>
     <string name="notification_wave_summary">Passare una mano sul sensore di prossimità</string>
     <string name="notification_pocket_title">Modalità tasca</string>
@@ -301,7 +301,7 @@
     <string name="notification_on">Attivato</string>
     <string name="notification_never_again">Fino al riavvio di SandFly</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">Leggere le notifiche ad alta voce</string>
+    <string name="notification_speech_tile_label">Lettura delle notifiche</string>
     <string name="notification_speech_now_on">Lettura delle notifiche ad alta voce abilitata</string>
     <string name="notification_speech_now_off">Lettura delle notifiche ad alta voce disabilitata</string>
     <string name="notification_no_last_notification">Nessuna notifica è stata letta</string>

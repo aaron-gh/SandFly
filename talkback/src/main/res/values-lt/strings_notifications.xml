@@ -24,7 +24,7 @@
     <string name="notification_when_title">Kada skaityti</string>
     <string name="notification_rules_title">Taisyklės</string>
     <string name="notification_repeats_title">Pasikartojimai</string>
-    <string name="notification_stop_title">Nustokite skaityti</string>
+    <string name="notification_stop_title">Skaitymo stabdymas</string>
     <string name="notification_schedules_title">Santrauka ir laikas</string>
     <string name="notification_history_title">Pranešimų istorija</string>
     <string name="notification_test_title">Siųsti pranešimą apie bandymą</string>
@@ -60,12 +60,12 @@
     <string name="notification_delay_title">Laukti prieš skaitant</string>
     <string name="notification_queue_title">Kai skaitomas kitas pranešimas</string>
     <string name="notification_repeat_minutes_title">Skaitykite dar kartą, kol ekranas įsijungs</string>
-    <string name="notification_skip_media_title">Praleiskite medijos leistuvus</string>
-    <string name="notification_skip_ongoing_title">Praleiskite vykstančius pranešimus</string>
+    <string name="notification_skip_media_title">Praleisti medijos leistuvus</string>
+    <string name="notification_skip_ongoing_title">Praleisti nuolatinius pranešimus</string>
     <string name="notification_skip_ongoing_summary">Tokie kaip navigacija ir laikmačiai</string>
     <string name="notification_skip_foreground_title">Praleiskite veikiančių programų pranešimus</string>
     <string name="notification_skip_foreground_summary">Pavyzdžiui, VPN arba garso įrašymo įrenginį</string>
-    <string name="notification_skip_progress_title">Praleiskite progreso pranešimus</string>
+    <string name="notification_skip_progress_title">Praleisti eigos pranešimus</string>
     <string name="notification_skip_group_summaries_title">Praleisti grupių santraukas</string>
     <string name="notification_skip_group_summaries_summary">Pavyzdžiui, „3 nauji pranešimai“</string>
     <string name="notification_skip_low_priority_title">Praleiskite žemo prioriteto pranešimus</string>
@@ -101,7 +101,7 @@
     <string name="notification_prefix_memory_title">Kiek laiko atsiminti teksto priešdėlį</string>
     <string name="notification_access_summary">Reikalingas norint nustoti skaityti atmestą pranešimą ir suvestines</string>
     <string name="notification_shake_title">Papurtykite, kad sustotų</string>
-    <string name="notification_shake_strength_title">Drebėjimo intensyvumas</string>
+    <string name="notification_shake_strength_title">Purtymo stiprumas</string>
     <string name="notification_wave_title">Pamojuokite ranka, kad nustotumėte skaityti</string>
     <string name="notification_wave_summary">Perkelkite ranką virš artumo jutiklio</string>
     <string name="notification_pocket_title">Kišeninis režimas</string>
@@ -203,7 +203,7 @@
     <string name="notification_rule_add">Pridėti taisyklę</string>
     <string name="notification_rule_from_template">Pridėkite taisyklę iš šablono</string>
     <string name="notification_rules_category">Taisyklės</string>
-    <string name="notification_rules_empty">Jokių taisyklių</string>
+    <string name="notification_rules_empty">Taisyklių nėra</string>
     <string name="notification_rule_name">Pavadinimas</string>
     <string name="notification_rule_untitled">Taisyklė</string>
     <string name="notification_rule_enabled">Įjungta</string>

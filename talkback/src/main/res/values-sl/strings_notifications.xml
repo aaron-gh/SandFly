@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Močna</string>
     <string name="notification_shake_2">Srednje</string>
-    <string name="notification_shake_1">Nežno</string>
+    <string name="notification_shake_1">Rahlo</string>
     <string name="notification_media_skip">Ne beri</string>
     <string name="notification_media_pause">Začasno ustavite predstavnost med branjem</string>
     <string name="notification_media_read">Beri</string>
@@ -24,7 +24,7 @@
     <string name="notification_when_title">Kdaj brati</string>
     <string name="notification_rules_title">Pravila</string>
     <string name="notification_repeats_title">Ponovitve</string>
-    <string name="notification_stop_title">Nehajte brati</string>
+    <string name="notification_stop_title">Ustavitev branja</string>
     <string name="notification_schedules_title">Povzetek in čas</string>
     <string name="notification_history_title">Zgodovina obvestil</string>
     <string name="notification_test_title">Pošlji testno obvestilo</string>
@@ -61,7 +61,7 @@
     <string name="notification_queue_title">Ko je prebrano drugo obvestilo</string>
     <string name="notification_repeat_minutes_title">Preberite znova, dokler se zaslon ne vklopi</string>
     <string name="notification_skip_media_title">Preskoči medijske predvajalnike</string>
-    <string name="notification_skip_ongoing_title">Preskoči tekoča obvestila</string>
+    <string name="notification_skip_ongoing_title">Preskoči trajna obvestila</string>
     <string name="notification_skip_ongoing_summary">Na primer navigacija in časovniki</string>
     <string name="notification_skip_foreground_title">Preskoči obvestila zagnanih aplikacij</string>
     <string name="notification_skip_foreground_summary">Na primer VPN ali snemalnik zvoka</string>
@@ -100,7 +100,7 @@
     <string name="notification_skip_prefix_summary">Na primer ime skupine v klepetu</string>
     <string name="notification_prefix_memory_title">Kako dolgo si je treba zapomniti besedilno predpono</string>
     <string name="notification_access_summary">Potreben za prenehanje branja opuščenega obvestila in za povzetke</string>
-    <string name="notification_shake_title">Stresite, da se ustavite</string>
+    <string name="notification_shake_title">Stresi za ustavitev</string>
     <string name="notification_shake_strength_title">Intenzivnost tresenja</string>
     <string name="notification_wave_title">Zamahnite z roko, da nehate brati</string>
     <string name="notification_wave_summary">Premikanje roke nad senzorjem bližine</string>
@@ -120,8 +120,8 @@
     <string name="notification_summary_needs_sandfly">Vklopite SandFly za branje obvestil</string>
     <string name="notification_summary_no_access">Dostop do obvestil je izklopljen</string>
     <string name="notification_summary_morning">Dobro jutro</string>
-    <string name="notification_summary_afternoon">Dober dan</string>
-    <string name="notification_summary_evening">Dober večer</string>
+    <string name="notification_summary_afternoon">Dober dan.</string>
+    <string name="notification_summary_evening">Dober večer.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Napovedovanje časa</string>

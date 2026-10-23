@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">ძლიერი</string>
     <string name="notification_shake_2">საშუალო</string>
-    <string name="notification_shake_1">ნაზი</string>
+    <string name="notification_shake_1">მსუბუქი</string>
     <string name="notification_media_skip">არ წაიკითხოს</string>
     <string name="notification_media_pause">შეაჩერეთ მედია კითხვისას</string>
     <string name="notification_media_read">წაკითხვა</string>
@@ -24,7 +24,7 @@
     <string name="notification_when_title">როდის წაიკითხოს</string>
     <string name="notification_rules_title">წესები</string>
     <string name="notification_repeats_title">გამეორებები</string>
-    <string name="notification_stop_title">შეწყვიტე კითხვა</string>
+    <string name="notification_stop_title">კითხვის შეწყვეტა</string>
     <string name="notification_schedules_title">შეჯამება და დრო</string>
     <string name="notification_history_title">შეტყობინებების ისტორია</string>
     <string name="notification_test_title">გაგზავნეთ ტესტის შეტყობინება</string>
@@ -60,13 +60,13 @@
     <string name="notification_delay_title">ლოდინი წაკითხვამდე</string>
     <string name="notification_queue_title">როდესაც სხვა შეტყობინება იკითხება</string>
     <string name="notification_repeat_minutes_title">ხელახლა წაიკითხეთ სანამ ეკრანი არ ჩაირთვება</string>
-    <string name="notification_skip_media_title">გამოტოვეთ მედია ფლეერები</string>
-    <string name="notification_skip_ongoing_title">გამოტოვეთ მიმდინარე შეტყობინებები</string>
+    <string name="notification_skip_media_title">მედიაფლეერების გამოტოვება</string>
+    <string name="notification_skip_ongoing_title">მუდმივი შეტყობინებების გამოტოვება</string>
     <string name="notification_skip_ongoing_summary">როგორიცაა ნავიგაცია და ტაიმერები</string>
     <string name="notification_skip_foreground_title">გამოტოვეთ გაშვებული აპლიკაციის შეტყობინებები</string>
     <string name="notification_skip_foreground_summary">როგორიცაა VPN ან აუდიო ჩამწერი</string>
     <string name="notification_skip_progress_title">პროგრესის შეტყობინებების გამოტოვება</string>
-    <string name="notification_skip_group_summaries_title">გამოტოვეთ ჯგუფის შეჯამებები</string>
+    <string name="notification_skip_group_summaries_title">ჯგუფის შეჯამებების გამოტოვება</string>
     <string name="notification_skip_group_summaries_summary">როგორიცაა \"3 ახალი შეტყობინება\"</string>
     <string name="notification_skip_low_priority_title">გამოტოვეთ დაბალი პრიორიტეტული შეტყობინებები</string>
     <string name="notification_skip_system_title">სისტემის შეტყობინებების გამოტოვება</string>
@@ -203,7 +203,7 @@
     <string name="notification_rule_add">წესის დამატება</string>
     <string name="notification_rule_from_template">დაამატეთ წესი შაბლონიდან</string>
     <string name="notification_rules_category">წესები</string>
-    <string name="notification_rules_empty">არანაირი წესები</string>
+    <string name="notification_rules_empty">წესები არ არის</string>
     <string name="notification_rule_name">სახელი</string>
     <string name="notification_rule_untitled">წესი</string>
     <string name="notification_rule_enabled">ჩართულია</string>

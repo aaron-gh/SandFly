@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Силен</string>
     <string name="notification_shake_2">Средно</string>
-    <string name="notification_shake_1">Нежни</string>
+    <string name="notification_shake_1">Слабо</string>
     <string name="notification_media_skip">Не читај</string>
     <string name="notification_media_pause">Паузирајте го медиумот додека читате</string>
     <string name="notification_media_read">Читај</string>
@@ -24,7 +24,7 @@
     <string name="notification_when_title">Кога да читате</string>
     <string name="notification_rules_title">Правила</string>
     <string name="notification_repeats_title">Повторувања</string>
-    <string name="notification_stop_title">Престанете да читате</string>
+    <string name="notification_stop_title">Запирање на читањето</string>
     <string name="notification_schedules_title">Резиме и време</string>
     <string name="notification_history_title">Историја на известувања</string>
     <string name="notification_test_title">Испратете известување за тест</string>
@@ -61,15 +61,15 @@
     <string name="notification_queue_title">Кога ќе се прочита друго известување</string>
     <string name="notification_repeat_minutes_title">Прочитајте повторно додека не се вклучи екранот</string>
     <string name="notification_skip_media_title">Прескокни медиа плеери</string>
-    <string name="notification_skip_ongoing_title">Прескокнете ги тековните известувања</string>
+    <string name="notification_skip_ongoing_title">Прескокни ги трајните известувања</string>
     <string name="notification_skip_ongoing_summary">Како навигација и тајмери</string>
     <string name="notification_skip_foreground_title">Прескокнете ги известувањата за активните апликации</string>
     <string name="notification_skip_foreground_summary">Како што е VPN или аудио рекордер</string>
-    <string name="notification_skip_progress_title">Прескокнете ги известувањата за напредок</string>
-    <string name="notification_skip_group_summaries_title">Прескокнете групни резимеа</string>
+    <string name="notification_skip_progress_title">Прескокни ги известувањата за напредок</string>
+    <string name="notification_skip_group_summaries_title">Прескокни групни резимеа</string>
     <string name="notification_skip_group_summaries_summary">Како „3 нови пораки“</string>
     <string name="notification_skip_low_priority_title">Прескокнете ги известувањата со низок приоритет</string>
-    <string name="notification_skip_system_title">Прескокнете ги системските известувања</string>
+    <string name="notification_skip_system_title">Прескокни ги системските известувања</string>
     <string name="notification_screen_on_title">Додека екранот е вклучен</string>
     <string name="notification_screen_off_title">Додека екранот е исклучен</string>
     <string name="notification_locked_title">Додека телефонот е заклучен</string>
@@ -100,7 +100,7 @@
     <string name="notification_skip_prefix_summary">Како што е името на групата во разговор</string>
     <string name="notification_prefix_memory_title">Колку долго да се запамети префиксот на текстот</string>
     <string name="notification_access_summary">Потребно е да престане да чита отфрлено известување и за резимеа</string>
-    <string name="notification_shake_title">Протресете за да престанете</string>
+    <string name="notification_shake_title">Протреси за запирање</string>
     <string name="notification_shake_strength_title">Интензитетот на тресење</string>
     <string name="notification_wave_title">Мавтајте со рака за да престанете да читате</string>
     <string name="notification_wave_summary">Поместување на раката преку сензорот за близина</string>

@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Моцны</string>
     <string name="notification_shake_2">Сярэдні</string>
-    <string name="notification_shake_1">Пяшчотны</string>
+    <string name="notification_shake_1">Слабы</string>
     <string name="notification_media_skip">Не чытаць</string>
     <string name="notification_media_pause">Прыпыніце мультымедыя падчас чытання</string>
     <string name="notification_media_read">Чытаць</string>
@@ -25,7 +25,7 @@
     <string name="notification_rules_title">Правілы</string>
     <string name="notification_repeats_title">Паўторы</string>
     <string name="notification_stop_title">Перастаць чытаць</string>
-    <string name="notification_schedules_title">Кароткі змест і час</string>
+    <string name="notification_schedules_title">Зводка і час</string>
     <string name="notification_history_title">Гісторыя апавяшчэнняў</string>
     <string name="notification_test_title">Адправіць тэставае апавяшчэнне</string>
     <string name="notification_automation_title">Аўтаматызацыя</string>
@@ -61,11 +61,11 @@
     <string name="notification_queue_title">Калі чытаецца іншае апавяшчэнне</string>
     <string name="notification_repeat_minutes_title">Прачытайце яшчэ раз, пакуль экран не ўключыцца</string>
     <string name="notification_skip_media_title">Прапусціць медыяплэеры</string>
-    <string name="notification_skip_ongoing_title">Прапусціць бягучыя апавяшчэнні</string>
+    <string name="notification_skip_ongoing_title">Прапускаць пастаянныя апавяшчэнні</string>
     <string name="notification_skip_ongoing_summary">Такія як навігацыя і таймеры</string>
     <string name="notification_skip_foreground_title">Прапусціць апавяшчэнні аб запушчаных праграмах</string>
     <string name="notification_skip_foreground_summary">Напрыклад, VPN або дыктафон</string>
-    <string name="notification_skip_progress_title">Прапусціць апавяшчэнні аб прагрэсе</string>
+    <string name="notification_skip_progress_title">Прапускаць апавяшчэнні пра ход выканання</string>
     <string name="notification_skip_group_summaries_title">Прапусціць групавыя зводкі</string>
     <string name="notification_skip_group_summaries_summary">Напрыклад, «3 новыя паведамленні»</string>
     <string name="notification_skip_low_priority_title">Прапусціць апавяшчэнні з нізкім прыярытэтам</string>
@@ -101,7 +101,7 @@
     <string name="notification_prefix_memory_title">Як доўга запамінаць тэкставы прэфікс</string>
     <string name="notification_access_summary">Неабходна, каб спыніць чытанне адхіленага апавяшчэння і для зводак</string>
     <string name="notification_shake_title">Падтрасіце, каб спыніць</string>
-    <string name="notification_shake_strength_title">Інтэнсіўнасць трасяніны</string>
+    <string name="notification_shake_strength_title">Сіла страсання</string>
     <string name="notification_wave_title">Махай рукой, каб спыніць чытанне</string>
     <string name="notification_wave_summary">Правядзенне рукой над датчыкам набліжэння</string>
     <string name="notification_pocket_title">Кішэнны рэжым</string>

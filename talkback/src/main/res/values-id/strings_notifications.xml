@@ -17,7 +17,7 @@
     <string name="notification_url_domain">Baca situsnya saja</string>
     <string name="notification_url_full">Baca seluruh tautan</string>
     <string name="notification_category_title">Notifikasi</string>
-    <string name="notification_reading_title">Membaca notifikasi dengan keras</string>
+    <string name="notification_reading_title">Pembacaan notifikasi</string>
     <string name="notification_apps_title">Aplikasi</string>
     <string name="notification_words_title">Kata-kata dan penggantinya</string>
     <string name="notification_kinds_title">Jenis notifikasi</string>
@@ -65,7 +65,7 @@
     <string name="notification_skip_ongoing_summary">Seperti navigasi dan pengatur waktu</string>
     <string name="notification_skip_foreground_title">Lewati menjalankan notifikasi aplikasi</string>
     <string name="notification_skip_foreground_summary">Seperti VPN atau perekam audio</string>
-    <string name="notification_skip_progress_title">Lewati pemberitahuan kemajuan</string>
+    <string name="notification_skip_progress_title">Lewati notifikasi progres</string>
     <string name="notification_skip_group_summaries_title">Lewati ringkasan grup</string>
     <string name="notification_skip_group_summaries_summary">Seperti “3 pesan baru”</string>
     <string name="notification_skip_low_priority_title">Lewati notifikasi prioritas rendah</string>
@@ -101,7 +101,7 @@
     <string name="notification_prefix_memory_title">Berapa lama untuk mengingat awalan teks</string>
     <string name="notification_access_summary">Diperlukan untuk berhenti membaca notifikasi yang ditutup dan untuk ringkasan</string>
     <string name="notification_shake_title">Kocok untuk berhenti</string>
-    <string name="notification_shake_strength_title">Intensitas gemetar</string>
+    <string name="notification_shake_strength_title">Kekuatan guncangan</string>
     <string name="notification_wave_title">Lambaikan tangan untuk berhenti membaca</string>
     <string name="notification_wave_summary">Menggerakan tangan di atas sensor jarak</string>
     <string name="notification_pocket_title">Modus saku</string>
@@ -301,9 +301,9 @@
     <string name="notification_on">Aktif</string>
     <string name="notification_never_again">Hingga SandFly dimulai ulang</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">Membaca notifikasi dengan keras</string>
-    <string name="notification_speech_now_on">Membaca notifikasi dengan keras diaktifkan</string>
-    <string name="notification_speech_now_off">Membaca notifikasi dengan keras dinonaktifkan</string>
+    <string name="notification_speech_tile_label">Pembacaan notifikasi</string>
+    <string name="notification_speech_now_on">Pembacaan notifikasi diaktifkan</string>
+    <string name="notification_speech_now_off">Pembacaan notifikasi dinonaktifkan</string>
     <string name="notification_no_last_notification">Tidak ada pemberitahuan yang dibaca</string>
     <string name="shortcut_read_notifications">Baca notifikasi</string>
     <string name="shortcut_toggle_notification_speech">Ucapan notifikasi aktif atau nonaktif</string>

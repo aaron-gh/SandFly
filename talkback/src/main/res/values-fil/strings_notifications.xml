@@ -61,11 +61,11 @@
     <string name="notification_queue_title">Kapag binasa ang isa pang notification</string>
     <string name="notification_repeat_minutes_title">Basahin muli hanggang sa mag-on ang screen</string>
     <string name="notification_skip_media_title">Laktawan ang mga media player</string>
-    <string name="notification_skip_ongoing_title">Laktawan ang mga kasalukuyang notification</string>
+    <string name="notification_skip_ongoing_title">Laktawan ang mga tuloy-tuloy na notification</string>
     <string name="notification_skip_ongoing_summary">Gaya ng nabigasyon at mga timer</string>
     <string name="notification_skip_foreground_title">Laktawan ang pagpapatakbo ng mga notification ng app</string>
     <string name="notification_skip_foreground_summary">Gaya ng VPN o isang recorder</string>
-    <string name="notification_skip_progress_title">Laktawan ang mga abiso sa pag-unlad</string>
+    <string name="notification_skip_progress_title">Laktawan ang mga notification ng progreso</string>
     <string name="notification_skip_group_summaries_title">Laktawan ang mga buod ng pangkat</string>
     <string name="notification_skip_group_summaries_summary">Gaya ng \"3 bagong mensahe\"</string>
     <string name="notification_skip_low_priority_title">Laktawan ang mga notification na mababa ang priyoridad</string>
@@ -100,7 +100,7 @@
     <string name="notification_skip_prefix_summary">Gaya ng pangalan ng isang grupo sa isang chat</string>
     <string name="notification_prefix_memory_title">Gaano katagal dapat tandaan ang prefix ng teksto</string>
     <string name="notification_access_summary">Kailangang ihinto ang pagbabasa ng na-dismiss na notification at para sa mga buod</string>
-    <string name="notification_shake_title">Umiling para huminto</string>
+    <string name="notification_shake_title">Alugin para ihinto</string>
     <string name="notification_shake_strength_title">Lakas ng pag-alog</string>
     <string name="notification_wave_title">Iwagayway ang kamay para tumigil sa pagbabasa</string>
     <string name="notification_wave_summary">Paglipat ng kamay sa proximity sensor</string>
@@ -203,7 +203,7 @@
     <string name="notification_rule_add">Magdagdag ng panuntunan</string>
     <string name="notification_rule_from_template">Magdagdag ng panuntunan mula sa isang template</string>
     <string name="notification_rules_category">Mga tuntunin</string>
-    <string name="notification_rules_empty">Walang rules</string>
+    <string name="notification_rules_empty">Walang panuntunan</string>
     <string name="notification_rule_name">Pangalan</string>
     <string name="notification_rule_untitled">Panuntunan</string>
     <string name="notification_rule_enabled">Naka-on</string>
@@ -301,7 +301,7 @@
     <string name="notification_on">Naka-on</string>
     <string name="notification_never_again">Hanggang mag-restart ang SandFly</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">Binabasa nang malakas ang mga notification</string>
+    <string name="notification_speech_tile_label">Pagbasa ng mga notification</string>
     <string name="notification_speech_now_on">Naka-enable ang pagbabasa ng mga notification nang malakas</string>
     <string name="notification_speech_now_off">Na-disable ang pagbabasa ng mga notification nang malakas</string>
     <string name="notification_no_last_notification">Walang nabasang notification</string>

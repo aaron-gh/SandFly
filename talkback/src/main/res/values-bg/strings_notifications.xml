@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Силен</string>
     <string name="notification_shake_2">Среден</string>
-    <string name="notification_shake_1">Нежен</string>
+    <string name="notification_shake_1">Слаб</string>
     <string name="notification_media_skip">Без четене</string>
     <string name="notification_media_pause">Поставете медията на пауза, докато четете</string>
     <string name="notification_media_read">Четене</string>
@@ -24,8 +24,8 @@
     <string name="notification_when_title">Кога да чета</string>
     <string name="notification_rules_title">Правила</string>
     <string name="notification_repeats_title">Повторения</string>
-    <string name="notification_stop_title">Спрете да четете</string>
-    <string name="notification_schedules_title">Резюме и време</string>
+    <string name="notification_stop_title">Спиране на четенето</string>
+    <string name="notification_schedules_title">Обобщение и час</string>
     <string name="notification_history_title">История на известията</string>
     <string name="notification_test_title">Изпратете тестово известие</string>
     <string name="notification_automation_title">Автоматизация</string>
@@ -61,11 +61,11 @@
     <string name="notification_queue_title">Когато бъде прочетено друго известие</string>
     <string name="notification_repeat_minutes_title">Прочетете отново, докато екранът се включи</string>
     <string name="notification_skip_media_title">Пропускане на медийни плейъри</string>
-    <string name="notification_skip_ongoing_title">Пропуснете текущите известия</string>
+    <string name="notification_skip_ongoing_title">Пропускане на постоянните известия</string>
     <string name="notification_skip_ongoing_summary">Като навигация и таймери</string>
     <string name="notification_skip_foreground_title">Пропуснете известията за работещи приложения</string>
     <string name="notification_skip_foreground_summary">Като например VPN или рекордер</string>
-    <string name="notification_skip_progress_title">Пропуснете известията за напредък</string>
+    <string name="notification_skip_progress_title">Пропускане на известията за напредък</string>
     <string name="notification_skip_group_summaries_title">Пропускане на групови обобщения</string>
     <string name="notification_skip_group_summaries_summary">Като например „3 нови съобщения“</string>
     <string name="notification_skip_low_priority_title">Пропуснете известията с нисък приоритет</string>
@@ -101,7 +101,7 @@
     <string name="notification_prefix_memory_title">Колко дълго да запомните текстовия префикс</string>
     <string name="notification_access_summary">Необходимо е за спиране на четенето на отхвърлено известие и за обобщения</string>
     <string name="notification_shake_title">Разклатете, за да спрете</string>
-    <string name="notification_shake_strength_title">Интензивност на треперене</string>
+    <string name="notification_shake_strength_title">Сила на разклащане</string>
     <string name="notification_wave_title">Махнете с ръка, за да спрете да четете</string>
     <string name="notification_wave_summary">Преместване на ръка върху сензора за близост</string>
     <string name="notification_pocket_title">Джобен режим</string>
@@ -120,8 +120,8 @@
     <string name="notification_summary_needs_sandfly">Включете SandFly, за да четете известия</string>
     <string name="notification_summary_no_access">Достъпът до известията е изключен</string>
     <string name="notification_summary_morning">Добро утро</string>
-    <string name="notification_summary_afternoon">Добър ден</string>
-    <string name="notification_summary_evening">Добър вечер</string>
+    <string name="notification_summary_afternoon">Добър ден.</string>
+    <string name="notification_summary_evening">Добър вечер.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Съобщаване на часа</string>

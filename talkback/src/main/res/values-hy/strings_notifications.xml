@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Ուժեղ</string>
     <string name="notification_shake_2">Միջին</string>
-    <string name="notification_shake_1">Նուրբ</string>
+    <string name="notification_shake_1">Թեթև</string>
     <string name="notification_media_skip">Չկարդալ</string>
     <string name="notification_media_pause">Դադարեցրեք մեդիան կարդալիս</string>
     <string name="notification_media_read">Կարդալ</string>
@@ -24,7 +24,7 @@
     <string name="notification_when_title">Երբ կարդալ</string>
     <string name="notification_rules_title">Կանոններ</string>
     <string name="notification_repeats_title">Կրկնություններ</string>
-    <string name="notification_stop_title">Դադարեք կարդալ</string>
+    <string name="notification_stop_title">Կարդալու դադարեցում</string>
     <string name="notification_schedules_title">Ամփոփում և ժամանակ</string>
     <string name="notification_history_title">Ծանուցումների պատմություն</string>
     <string name="notification_test_title">Ուղարկեք թեստի ծանուցում</string>
@@ -40,7 +40,7 @@
     <string name="notification_voice_sandfly">SandFly-ի ձայնը</string>
     <string name="notification_detect_language_title">Հայտնաբերել լեզուն</string>
     <string name="notification_detect_language_summary">Յուրաքանչյուր ծանուցում ասեք այն լեզվով, որով գրված է: Անհրաժեշտ է ավտոմատ կերպով փոխել լեզուն «Տեքստ-խոսք» կարգավորումներում:</string>
-    <string name="notification_sound_before_title">Ձայնը ծանուցումներից առաջ</string>
+    <string name="notification_sound_before_title">Ձայն ծանուցումներից առաջ</string>
     <string name="notification_category_text">Տեքստ</string>
     <string name="notification_remove_emoji_title">Բաց թողնել էմոջիները</string>
     <string name="notification_lowercase_title">Կարդացեք մեծատառերը որպես բառեր</string>
@@ -203,7 +203,7 @@
     <string name="notification_rule_add">Ավելացնել կանոն</string>
     <string name="notification_rule_from_template">Կաղապարից կանոն ավելացրեք</string>
     <string name="notification_rules_category">Կանոններ</string>
-    <string name="notification_rules_empty">Ոչ մի կանոն</string>
+    <string name="notification_rules_empty">Կանոններ չկան</string>
     <string name="notification_rule_name">Անուն</string>
     <string name="notification_rule_untitled">Կանոն</string>
     <string name="notification_rule_enabled">Միացված է</string>

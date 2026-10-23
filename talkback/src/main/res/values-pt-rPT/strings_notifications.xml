@@ -24,8 +24,8 @@
     <string name="notification_when_title">Quando ler</string>
     <string name="notification_rules_title">Regras</string>
     <string name="notification_repeats_title">Repetições</string>
-    <string name="notification_stop_title">Pare de ler</string>
-    <string name="notification_schedules_title">Resumo e tempo</string>
+    <string name="notification_stop_title">Parar a leitura</string>
+    <string name="notification_schedules_title">Resumo e hora</string>
     <string name="notification_history_title">Histórico de notificações</string>
     <string name="notification_test_title">Envie uma notificação de teste</string>
     <string name="notification_automation_title">Automatização</string>
@@ -60,7 +60,7 @@
     <string name="notification_delay_title">Esperar antes de ler</string>
     <string name="notification_queue_title">Quando outra notificação é lida</string>
     <string name="notification_repeat_minutes_title">Leia novamente até a tela ligar</string>
-    <string name="notification_skip_media_title">Ignorar reprodutores de mídia</string>
+    <string name="notification_skip_media_title">Ignorar leitores de multimédia</string>
     <string name="notification_skip_ongoing_title">Ignorar notificações em andamento</string>
     <string name="notification_skip_ongoing_summary">Como navegação e temporizadores</string>
     <string name="notification_skip_foreground_title">Pular notificações de aplicativos em execução</string>
@@ -167,7 +167,7 @@
     <string name="notification_history_priority_app">Ler <xliff:g id="app" example="Chat">%1$s</xliff:g> primeiro</string>
     <string name="notification_history_block_similar">Não leia notificações como esta</string>
     <string name="notification_history_copy">Copiar</string>
-    <string name="notification_saved">Salvo</string>
+    <string name="notification_saved">Guardado</string>
     <string name="notification_copied">Copiado</string>
     <string name="notification_outcome_read">Lida</string>
     <string name="notification_outcome_stopped">Interrompida durante a leitura</string>
@@ -301,9 +301,9 @@
     <string name="notification_on">Ativado</string>
     <string name="notification_never_again">Até o SandFly reiniciar</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">Lendo notificações em voz alta</string>
-    <string name="notification_speech_now_on">Ler notificações em voz alta ativada</string>
-    <string name="notification_speech_now_off">Ler notificações em voz alta desativada</string>
+    <string name="notification_speech_tile_label">Leitura de notificações</string>
+    <string name="notification_speech_now_on">Leitura de notificações ativada</string>
+    <string name="notification_speech_now_off">Leitura de notificações desativada</string>
     <string name="notification_no_last_notification">Nenhuma notificação foi lida</string>
     <string name="shortcut_read_notifications">Ler notificações</string>
     <string name="shortcut_toggle_notification_speech">Fala de notificação ativada ou desativada</string>

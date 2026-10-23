@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Forte</string>
     <string name="notification_shake_2">Medio</string>
-    <string name="notification_shake_1">Gentil</string>
+    <string name="notification_shake_1">Suave</string>
     <string name="notification_media_skip">Non ler</string>
     <string name="notification_media_pause">Pausa os medios mentres le</string>
     <string name="notification_media_read">Ler</string>
@@ -25,7 +25,7 @@
     <string name="notification_rules_title">Regras</string>
     <string name="notification_repeats_title">Repeticións</string>
     <string name="notification_stop_title">Deixa de ler</string>
-    <string name="notification_schedules_title">Resumo e tempo</string>
+    <string name="notification_schedules_title">Resumo e hora</string>
     <string name="notification_history_title">Historial de notificacións</string>
     <string name="notification_test_title">Enviar unha notificación de proba</string>
     <string name="notification_automation_title">Automatización</string>
@@ -61,7 +61,7 @@
     <string name="notification_queue_title">Cando se le outra notificación</string>
     <string name="notification_repeat_minutes_title">Le de novo ata que se acenda a pantalla</string>
     <string name="notification_skip_media_title">Saltar reprodutores multimedia</string>
-    <string name="notification_skip_ongoing_title">Omita as notificacións en curso</string>
+    <string name="notification_skip_ongoing_title">Omitir as notificacións en curso</string>
     <string name="notification_skip_ongoing_summary">Como navegación e temporizadores</string>
     <string name="notification_skip_foreground_title">Omita as notificacións da aplicación en execución</string>
     <string name="notification_skip_foreground_summary">Como un VPN ou unha gravadora</string>
@@ -101,7 +101,7 @@
     <string name="notification_prefix_memory_title">Canto tempo hai que lembrar o prefixo do texto</string>
     <string name="notification_access_summary">Necesítase para deixar de ler unha notificación ignorada e para obter resumos</string>
     <string name="notification_shake_title">Axita para parar</string>
-    <string name="notification_shake_strength_title">Intensidade de axitación</string>
+    <string name="notification_shake_strength_title">Forza da axitación</string>
     <string name="notification_wave_title">Axita a man para deixar de ler</string>
     <string name="notification_wave_summary">Movendo unha man sobre o sensor de proximidade</string>
     <string name="notification_pocket_title">Modo peto</string>
@@ -301,7 +301,7 @@
     <string name="notification_on">Activado</string>
     <string name="notification_never_again">Ata que se reinicie SandFly</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">Lendo notificacións en voz alta</string>
+    <string name="notification_speech_tile_label">Lectura de notificacións</string>
     <string name="notification_speech_now_on">Activada a lectura de notificacións en voz alta</string>
     <string name="notification_speech_now_off">Desactivouse a lectura de notificacións en voz alta</string>
     <string name="notification_no_last_notification">Non se leu ningunha notificación</string>
