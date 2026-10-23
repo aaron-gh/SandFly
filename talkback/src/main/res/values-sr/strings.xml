@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Шаљите дугачак текст реченицу по реченицу</string>
+    <string name="title_pref_speak_in_phrases">Шаљи дугачак текст реченицу по реченицу</string>
     <string name="summary_pref_speak_in_phrases">За говорне машине које се споро заустављају, као што је Грипхон, тако да превлачење у страну зауставља дугачак текст одједном. Многи мотори паузирају дуже између реченица које се шаљу засебно, па оставите ово искључено ако ваша брзо стане.</string>
     <string name="battery_optimization_notification_title">Оптимизација батерије може да заустави SandFly</string>
     <string name="battery_optimization_notification_text">На овом телефону, уштеда батерије може да се заустави SandFly након што се екран искључи, тако да утихне док се поново не покрене. Додирните да бисте отворили оптимизацију батерије, изаберите Све апликације, пронађите SandFly и изаберите Не оптимизуј.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">Аутоматски мењај дијалект</string>
     <string name="category_collapsed">Скупљени одељак</string>
     <string name="category_expanded">Проширени одељак</string>
-    <string name="title_pref_speak_nav_bar_buttons">Изговарајте дугмад на траци за навигацију</string>
+    <string name="title_pref_speak_nav_bar_buttons">Изговарај дугмад на траци за навигацију</string>
     <string name="summary_pref_speak_nav_bar_buttons">Са подизањем за активирање на траци за навигацију, изговорите дугме које притисне додир, на пример Назад или Почетна.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Батерија <xliff:g id="battery_level" example="73">%1$s</xliff:g> процената</string>
@@ -1382,12 +1382,12 @@
     <string name="title_pref_reserve_vibration_watch_gestures">Резервиши покрете за Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Зауставља SandFly руковање једним и двоструким додирима са два прста тако да их Самсунг Vibration Watch може користити. Омогућите Vibration Watch у подешавањима приступачности вашег сата.</string>
     <string name="shortcut_reserved_for_vibration_watch">Резервисано за Vibration Watch у напредним подешавањима</string>
-    <string name="title_pref_speakerphone_away_from_ear">Звучник када је удаљен од уха</string>
+    <string name="title_pref_speakerphone_away_from_ear">Звучник када телефон није уз уво</string>
     <string name="summary_pref_speakerphone_away_from_ear">Током позива, пребацује се на звучник када одвојите телефон од уха и враћа се на слушалицу када га поново држите.</string>
     <string name="summary_pref_speakerphone_needs_permission">Потребна је дозвола коју Android не даје читачима екрана. Да бисте то одобрили, покрените ову команду са adb or Shizuku, then come back to this screen: %1$s</string>
     <string name="action_copy_command">Копирај команду</string>
     <string name="command_copied">Команда је копирана</string>
-    <string name="title_pref_speech_control">Нека друге апликације говоре</string>
+    <string name="title_pref_speech_control">Дозволи другим апликацијама да говоре</string>
     <string name="summary_pref_speech_control">Апликације које дозволите могу да изговоре текст вашим гласом SandFly. Ништа се не говори док је уређај закључан.</string>
     <string name="title_pref_speech_control_sound">Пустите звук пре него што друге апликације проговоре</string>
     <string name="speech_control_apps_category">Апликације</string>
@@ -1640,8 +1640,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">Дугачко превлачење нагоре од доње ивице</string>
     <string name="title_pref_shortcut_edge_top_left_down">Превуците надоле од горе лево</string>
     <string name="title_pref_shortcut_edge_top_right_down">Превуците надоле од горе десно</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Дуго превуците надоле од горњег левог врха</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Дуго превуците надоле од горњег десног</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Дугачко превлачење надоле од горе лево</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Дугачко превлачење надоле од горе десно</string>
     <string name="title_pref_shortcut_edge_left_top_right">Превуците удесно са леве ивице, горње половине</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Дугачко превлачење десно од леве ивице, горње половине</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Превуците удесно са леве ивице, доње половине</string>
@@ -1734,7 +1734,7 @@
     <string name="template_item_details_order_picked_up">Подигнуто: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Испуштено <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly каже детаље ставке овим редоследом. Да бисте га променили, додирните и држите детаљ, а затим га превуците нагоре или надоле. Са укљученим SandFly, двапут додирните и задржите, а затим превуците. Такође можете користити акције Помери нагоре и Помери надоле.</string>
-    <string name="title_pref_speak_items_before_scroll">Изговорите ставке пре него што се помакну у приказ</string>
+    <string name="title_pref_speak_items_before_scroll">Изговарај ставке пре него што се помакну у приказ</string>
     <string name="gemini_error_api_key">Gemini није прихватио АПИ кључ. Проверите кључ у подешавањима аутоматских описа.</string>
     <string name="gemini_error_quota">Ограничење употребе вашег Gemini АПИ кључа је достигнуто. Покушајте поново касније.</string>
     <string name="gemini_error_busy">Gemini је тренутно заузет. Покушајте поново за тренутак.</string>

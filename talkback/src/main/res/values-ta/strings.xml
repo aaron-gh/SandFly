@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">ஒரு நேரத்தில் ஒரு வாக்கியத்தை நீண்ட உரையை அனுப்பவும்</string>
+    <string name="title_pref_speak_in_phrases">நீண்ட உரையை ஒவ்வொரு வாக்கியமாக அனுப்பு</string>
     <string name="summary_pref_speak_in_phrases">க்ரிஃபோன் போன்ற பேச்சு இயந்திரங்கள் மெதுவாக நிறுத்தப்படும், எனவே ஸ்வைப் செய்வது நீண்ட உரையை ஒரே நேரத்தில் நிறுத்துகிறது. பல என்ஜின்கள் தனித்தனியாக அனுப்பப்பட்ட வாக்கியங்களுக்கு இடையில் நீண்ட நேரம் இடைநிறுத்தப்படுகின்றன, எனவே உங்களுடையது விரைவாக நிறுத்தப்பட்டால் இதை நிறுத்தவும்.</string>
     <string name="battery_optimization_notification_title">பேட்டரி மேம்படுத்தல் SandFly-ஐ நிறுத்தக்கூடும்</string>
     <string name="battery_optimization_notification_text">இந்த மொபைலில், ஸ்கிரீன் ஆஃப் ஆன பிறகு பேட்டரி சேமிப்பானால் SandFlyஐ நிறுத்த முடியும், எனவே அது மறுதொடக்கம் செய்யப்படும் வரை அமைதியாக இருக்கும். பேட்டரி மேம்படுத்தலைத் திறக்க தட்டவும், எல்லா பயன்பாடுகளையும் தேர்வு செய்யவும், SandFlyஐக் கண்டறிந்து, மேம்படுத்த வேண்டாம் என்பதைத் தேர்ந்தெடுக்கவும்.</string>
@@ -1387,7 +1387,7 @@
     <string name="summary_pref_speakerphone_needs_permission">ஸ்க்ரீன் ரீடர்களுக்கு Android வழங்காத அனுமதி தேவை. அதை வழங்க, இந்த கட்டளையை adb or Shizuku, then come back to this screen: %1$s உடன் இயக்கவும்</string>
     <string name="action_copy_command">கட்டளையை நகலெடுக்கவும்</string>
     <string name="command_copied">கட்டளை நகலெடுக்கப்பட்டது</string>
-    <string name="title_pref_speech_control">மற்ற ஆப்ஸ் பேசட்டும்</string>
+    <string name="title_pref_speech_control">பிற ஆப்ஸைப் பேச அனுமதி</string>
     <string name="summary_pref_speech_control">நீங்கள் அனுமதிக்கும் பயன்பாடுகள் உங்கள் SandFly குரலில் உரையைக் கூறலாம். சாதனம் பூட்டப்பட்டிருக்கும் போது எதுவும் கூறப்படவில்லை.</string>
     <string name="title_pref_speech_control_sound">பிற பயன்பாடுகள் பேசுவதற்கு முன் ஒலியை இயக்கவும்</string>
     <string name="speech_control_apps_category">ஆப்ஸ்</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up">எடுக்கப்பட்டது <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> விடப்பட்டது. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly இந்த வரிசையில் ஒரு பொருளின் விவரங்களைக் கூறுகிறது. அதை மாற்ற, ஒரு விவரத்தைத் தொட்டுப் பிடிக்கவும், பின்னர் அதை மேலே அல்லது கீழே இழுக்கவும். SandFly இயக்கத்தில், இருமுறை தட்டிப் பிடித்து, பிறகு இழுக்கவும். மூவ் அப் மற்றும் மூவ் டவுன் செயல்களையும் பயன்படுத்தலாம்.</string>
-    <string name="title_pref_speak_items_before_scroll">உருப்படிகள் பார்வைக்கு உருட்டும் முன் அவற்றைப் பேசவும்</string>
+    <string name="title_pref_speak_items_before_scroll">உருப்படிகள் உருட்டப்பட்டுத் தெரியும் முன் அவற்றைச் சொல்</string>
     <string name="gemini_error_api_key">Gemini API விசையை ஏற்கவில்லை. தானியங்கு விளக்க அமைப்புகளில் விசையைச் சரிபார்க்கவும்.</string>
     <string name="gemini_error_quota">உங்கள் Gemini API விசைக்கான பயன்பாட்டு வரம்பை அடைந்து விட்டது. பிறகு முயற்சிக்கவும்.</string>
     <string name="gemini_error_busy">Gemini இப்போது பிஸியாக உள்ளது. சிறிது நேரத்தில் மீண்டும் முயற்சிக்கவும்.</string>

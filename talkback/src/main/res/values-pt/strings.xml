@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Envie um texto longo, uma frase de cada vez</string>
+    <string name="title_pref_speak_in_phrases">Enviar texto longo uma frase de cada vez</string>
     <string name="summary_pref_speak_in_phrases">Para mecanismos de fala que demoram para parar, como o Gryphon, deslizar para longe interrompe o texto longo de uma só vez. Muitos mecanismos pausam mais entre as frases enviadas separadamente, então deixe essa opção desativada se o seu parar rapidamente.</string>
     <string name="battery_optimization_notification_title">A otimização da bateria pode parar SandFly</string>
     <string name="battery_optimization_notification_text">Neste telefone, a economia de bateria pode parar SandFly depois que a tela é desligada, ficando em silêncio até ser reiniciado. Toque para abrir a otimização da bateria, escolha Todos os aplicativos, encontre SandFly e escolha Não otimizar.</string>
@@ -1387,7 +1387,7 @@
     <string name="summary_pref_speakerphone_needs_permission">Precisa de uma permissão que Android não concede aos leitores de tela. Para concedê-lo, execute este comando com adb or Shizuku, then come back to this screen: %1$s</string>
     <string name="action_copy_command">Copiar comando</string>
     <string name="command_copied">Comando copiado</string>
-    <string name="title_pref_speech_control">Deixe outros aplicativos falarem</string>
+    <string name="title_pref_speech_control">Permitir que outros apps falem</string>
     <string name="summary_pref_speech_control">Os aplicativos que você permite podem dizer texto em sua voz SandFly. Nada é dito enquanto o dispositivo está bloqueado.</string>
     <string name="title_pref_speech_control_sound">Reproduzir um som antes que outros aplicativos falem</string>
     <string name="speech_control_apps_category">Aplicativos</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> selecionado para mover. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> solto. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly indica os detalhes de um item nesta ordem. Para alterá-lo, toque e segure um detalhe e arraste-o para cima ou para baixo. Com SandFly ativado, toque duas vezes e segure e arraste. Você também pode usar as ações Mover para cima e Mover para baixo.</string>
-    <string name="title_pref_speak_items_before_scroll">Fale os itens antes que eles apareçam</string>
+    <string name="title_pref_speak_items_before_scroll">Falar itens antes que apareçam ao rolar</string>
     <string name="gemini_error_api_key">Gemini não aceitou a chave API. Verifique a chave nas configurações de descrições automáticas.</string>
     <string name="gemini_error_quota">O limite de uso da sua chave API Gemini foi atingido. Tente novamente mais tarde.</string>
     <string name="gemini_error_busy">Gemini está ocupado agora. Tente novamente em alguns instantes.</string>

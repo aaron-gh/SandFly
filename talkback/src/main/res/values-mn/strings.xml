@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Нэг удаад урт текстийг өгүүлбэр илгээнэ үү</string>
+    <string name="title_pref_speak_in_phrases">Урт текстийг өгүүлбэр өгүүлбэрээр илгээх</string>
     <string name="summary_pref_speak_in_phrases">Gryphon зэрэг удаан зогсдог ярианы хөдөлгүүрүүдийн хувьд шударснаар урт текстийг нэг дор зогсооно. Олон хөдөлгүүрүүд тусад нь илгээсэн өгүүлбэрүүдийн хооронд удаан зогсдог тул таных хурдан зогсвол үүнийг унтраа.</string>
     <string name="battery_optimization_notification_title">Батерейг оновчлох нь SandFly-г зогсоох боломжтой</string>
     <string name="battery_optimization_notification_text">Энэ утасны зай хэмнэгч дэлгэц унтарсны дараа SandFly зогсох боломжтой тул дахин асаах хүртэл чимээгүй болно. Батарейны оновчлолыг нээхийн тулд товшоод, Бүх програмыг сонгоод, SandFly-г олоод \"Бүү оновчтой\"-г сонгоно уу.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">Аялгууг автоматаар солих</string>
     <string name="category_collapsed">Хураагдсан хэсэг</string>
     <string name="category_expanded">Өргөтгөсөн хэсэг</string>
-    <string name="title_pref_speak_nav_bar_buttons">Навигацийн самбарын товчлууруудыг ярина уу</string>
+    <string name="title_pref_speak_nav_bar_buttons">Навигацийн самбарын товчлууруудыг хэлэх</string>
     <string name="summary_pref_speak_nav_bar_buttons">Навигацийн талбар дээр идэвхжүүлэхийн тулд өргөх товчлуураар Буцах эсвэл Нүүр гэх мэт товшилтоор дарах товчлуурыг хэлнэ үү.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Батерей <xliff:g id="battery_level" example="73">%1$s</xliff:g> хувь</string>
@@ -1387,7 +1387,7 @@
     <string name="summary_pref_speakerphone_needs_permission">Дэлгэц уншигчдад Android өгдөггүй зөвшөөрөл шаардлагатай. Үүнийг зөвшөөрөхийн тулд энэ тушаалыг adb or Shizuku, then come back to this screen: %1$s ашиглан ажиллуулна уу.</string>
     <string name="action_copy_command">Тушаалыг хуулах</string>
     <string name="command_copied">Командыг хуулсан</string>
-    <string name="title_pref_speech_control">Бусад апп-уудыг ярихыг зөвшөөрнө үү</string>
+    <string name="title_pref_speech_control">Бусад аппад ярихыг зөвшөөрөх</string>
     <string name="summary_pref_speech_control">Таны зөвшөөрсөн програмууд таны SandFly хоолойгоор текст хэлэх боломжтой. Төхөөрөмж түгжигдсэн үед юу ч хэлэхгүй.</string>
     <string name="title_pref_speech_control_sound">Бусад програмыг ярихаас өмнө дуу тоглуулаарай</string>
     <string name="speech_control_apps_category">Аппууд</string>
@@ -1557,7 +1557,7 @@
     <string name="value_audio_output_device_wired_headphones">Утастай чихэвч</string>
     <string name="value_audio_output_device_usb_headset">USB чихэвч</string>
     <string name="value_audio_output_device_usb_device">USB аудио төхөөрөмж</string>
-    <string name="title_pref_speaker_devices">Эдгээр төхөөрөмжтэй утасны чанга яригч</string>
+    <string name="title_pref_speaker_devices">Эдгээр төхөөрөмж холбогдсон үед утасны чанга яригч</string>
     <string name="summary_pref_speaker_devices_none">Байхгүй</string>
     <string name="summary_pref_speaker_devices_no_devices">Bluetooth эсвэл утастай төхөөрөмж хараахан холбогдоогүй байна</string>
     <string name="pref_reduce_window_delay_summary">SandFly нь хөдөлгөөнт дүрс унтраалттай үед шинэ дэлгэцийг илүү хурдан уншдаг. Энэ нь утасны хөдөлгөөнт дүрсийг бүхэлд нь унтраадаг.</string>
@@ -1636,8 +1636,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">Доод ирмэгээс дээш урт шудрах</string>
     <string name="title_pref_shortcut_edge_top_left_down">Зүүн дээд хэсгээс доош шударна уу</string>
     <string name="title_pref_shortcut_edge_top_right_down">Баруун дээд хэсгээс доош шударна уу</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Зүүн дээд хэсгээс доош удаан шударна уу</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Баруун дээд хэсгээс доош шударна уу</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Зүүн дээд хэсгээс доош урт шудрах</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Баруун дээд хэсгээс доош урт шудрах</string>
     <string name="title_pref_shortcut_edge_left_top_right">Зүүн ирмэгийн дээд хагасаас баруун тийш шудрах</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Зүүн захаас баруун тийш урт шудар, дээд тал нь</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Зүүн ирмэгийн доод хагасаас баруун тийш шудрах</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> авсан. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> тавигдсан. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly нь тухайн зүйлийн дэлгэрэнгүйг энэ дарааллаар заана. Үүнийг өөрчлөхийн тулд тодорхой зүйлийг удаан дарж, дээш эсвэл доош чирнэ үү. SandFly асаалттай үед давхар товшоод удаан дараад чирнэ үү. Та мөн дээш, доош зөөх үйлдлүүдийг ашиглаж болно.</string>
-    <string name="title_pref_speak_items_before_scroll">Зүйлүүдийг харагдуулахын өмнө ярина уу</string>
+    <string name="title_pref_speak_items_before_scroll">Зүйлсийг харагдахаас өмнө хэлэх</string>
     <string name="gemini_error_api_key">Gemini API түлхүүрийг хүлээн аваагүй. Автомат тайлбарын тохиргооны товчлуурыг шалгана уу.</string>
     <string name="gemini_error_quota">Таны Gemini API түлхүүрийн хэрэглээний хязгаарт хүрсэн байна. Дараа дахин оролдоно уу.</string>
     <string name="gemini_error_busy">Gemini яг одоо завгүй байна. Хэсэг хугацааны дараа дахин оролдоно уу.</string>

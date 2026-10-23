@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">שלח טקסט ארוך משפט בכל פעם</string>
+    <string name="title_pref_speak_in_phrases">שליחת טקסט ארוך משפט אחר משפט</string>
     <string name="summary_pref_speak_in_phrases">עבור מנועי דיבור שאיטיים לעצור, כגון Gryphon, אז החלקה משם עוצרת טקסט ארוך בבת אחת. מנועים רבים עוצרים זמן רב יותר בין משפט שנשלח בנפרד, אז השאר את זה כבוי אם שלך מפסיק במהירות.</string>
     <string name="battery_optimization_notification_title">אופטימיזציה של הסוללה עלולה לעצור את SandFly</string>
     <string name="battery_optimization_notification_text">בטלפון זה, חיסכון הסוללה יכול להפסיק SandFly לאחר כיבוי המסך, כך שהוא משתתק עד שהוא מופעל מחדש. הקש כדי לפתוח את אופטימיזציית הסוללה, בחר כל האפליקציות, מצא את SandFly ובחר אל תבצע אופטימיזציה.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">החלפת ניב אוטומטית</string>
     <string name="category_collapsed">קטע מכווץ</string>
     <string name="category_expanded">קטע מורחב</string>
-    <string name="title_pref_speak_nav_bar_buttons">דיבור לחצני סרגל הניווט</string>
+    <string name="title_pref_speak_nav_bar_buttons">הקראת לחצני סרגל הניווט</string>
     <string name="summary_pref_speak_nav_bar_buttons">עם הרמה להפעלה בסרגל הניווט, אמור את הלחצן שעליו לוחצת הקשה, כגון חזרה או בית.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">סוללה <xliff:g id="battery_level" example="73">%1$s</xliff:g> אחוז</string>
@@ -1382,12 +1382,12 @@
     <string name="title_pref_reserve_vibration_watch_gestures">שמירת תנועות עבור Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">מפסיק SandFly לטפל בשתי אצבעות בודדות וכפולות כדי שסמסונג Vibration Watch תוכל להשתמש בהן. הפעל את Vibration Watch בהגדרות הנגישות של השעון שלך.</string>
     <string name="shortcut_reserved_for_vibration_watch">שמור עבור Vibration Watch בהגדרות מתקדמות</string>
-    <string name="title_pref_speakerphone_away_from_ear">רמקול כשהוא רחוק מהאוזן</string>
+    <string name="title_pref_speakerphone_away_from_ear">רמקול כשהטלפון רחוק מהאוזן</string>
     <string name="summary_pref_speakerphone_away_from_ear">במהלך שיחה, עובר לרמקול כאשר אתה מרחיק את הטלפון מהאוזן, וחוזר לאפרכסת כאשר אתה מחזיק אותה שוב.</string>
     <string name="summary_pref_speakerphone_needs_permission">צריך הרשאה ש-Android לא נותנת לקוראי מסך. כדי להעניק זאת, הפעל פקודה זו עם adb or Shizuku, then come back to this screen: %1$s</string>
     <string name="action_copy_command">העתק פקודה</string>
     <string name="command_copied">הפקודה הועתקה</string>
-    <string name="title_pref_speech_control">תן לאפליקציות אחרות לדבר</string>
+    <string name="title_pref_speech_control">מתן אפשרות לאפליקציות אחרות לדבר</string>
     <string name="summary_pref_speech_control">אפליקציות שאתה מתיר יכולות לומר טקסט בקולך SandFly. שום דבר לא נאמר בזמן שהמכשיר נעול.</string>
     <string name="title_pref_speech_control_sound">השמע צליל לפני שאפליקציות אחרות מדברות</string>
     <string name="speech_control_apps_category">אפליקציות</string>
@@ -1639,9 +1639,9 @@
     <string name="title_pref_shortcut_edge_bottom_up">החלק למעלה מהקצה התחתון</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">החלקה ארוכה למעלה מהקצה התחתון</string>
     <string name="title_pref_shortcut_edge_top_left_down">החלק למטה משמאל למעלה</string>
-    <string name="title_pref_shortcut_edge_top_right_down">החלק למטה מהפינה השמאלית העליונה</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">החלק מטה משמאל למעלה</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">החלק ארוכות למטה מהפינה השמאלית העליונה</string>
+    <string name="title_pref_shortcut_edge_top_right_down">החלקה למטה מהפינה הימנית העליונה</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">החלקה ארוכה למטה משמאל למעלה</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">החלקה ארוכה למטה מהפינה הימנית העליונה</string>
     <string name="title_pref_shortcut_edge_left_top_right">החלק ימינה מהקצה השמאלי, החצי העליון</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">החלקה ארוכה ימינה מהקצה השמאלי, החצי העליון</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">החלק ימינה מהקצה השמאלי, החצי התחתון</string>
@@ -1734,7 +1734,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> הורם. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">שוחרר: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly אומר פרטי פריט בהזמנה זו. כדי לשנות אותו, גע והחזק בפרט ולאחר מכן גרור אותו למעלה או למטה. עם SandFly מופעל, הקש פעמיים והחזק ואז גרור. אתה יכול גם להשתמש בפעולות העבר למעלה והזז למטה.</string>
-    <string name="title_pref_speak_items_before_scroll">אמור פריטים לפני שהם גוללים לתצוגה</string>
+    <string name="title_pref_speak_items_before_scroll">הקראת פריטים לפני שהם נגללים לתצוגה</string>
     <string name="gemini_error_api_key">Gemini לא קיבל את מפתח ה-API. סמן את המפתח בהגדרות תיאורים אוטומטיים.</string>
     <string name="gemini_error_quota">הגעת למגבלת השימוש עבור מפתח ה-API שלך Gemini. נסה שוב מאוחר יותר.</string>
     <string name="gemini_error_busy">Gemini עסוק כרגע. נסה שוב בעוד רגע.</string>

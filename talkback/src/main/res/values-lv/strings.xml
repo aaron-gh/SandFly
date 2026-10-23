@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Sūtiet garu tekstu pa teikumu vienlaikus</string>
+    <string name="title_pref_speak_in_phrases">Sūtīt garu tekstu pa vienam teikumam</string>
     <string name="summary_pref_speak_in_phrases">Runas programmām, kas lēnām apstājas, piemēram, Gryphon, tāpēc, vilkjot prom, garš teksts tiek apturēts uzreiz. Daudzi dzinēji ietur ilgāku pauzi starp atsevišķi nosūtītiem teikumiem, tāpēc atstājiet šo opciju, ja jūsu darbība ātri apstājas.</string>
     <string name="battery_optimization_notification_title">Akumulatora optimizācija var apturēt SandFly</string>
     <string name="battery_optimization_notification_text">Šajā tālrunī akumulatora jaudas taupīšanas režīms var apturēt SandFly pēc ekrāna izslēgšanas, tāpēc tas apklust, līdz tiek restartēts. Pieskarieties, lai atvērtu akumulatora optimizāciju, izvēlieties Visas lietotnes, atrodiet SandFly un izvēlieties Neoptimizēt.</string>
@@ -1358,7 +1358,7 @@
     <string name="title_pref_switch_dialects">Automātiski pārslēgt dialektu</string>
     <string name="category_collapsed">Sakļauta sadaļa</string>
     <string name="category_expanded">Izvērsta sadaļa</string>
-    <string name="title_pref_speak_nav_bar_buttons">Izrunājiet navigācijas joslas pogas</string>
+    <string name="title_pref_speak_nav_bar_buttons">Izrunāt navigācijas joslas pogas</string>
     <string name="summary_pref_speak_nav_bar_buttons">Kad navigācijas joslā aktivizētu pacelšanas taustiņu, pasakiet pogu, ko nospiež pieskāriens, piemēram, Atpakaļ vai Sākums.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Akumulators <xliff:g id="battery_level" example="73">%1$s</xliff:g> procenti</string>
@@ -1388,7 +1388,7 @@
     <string name="summary_pref_speakerphone_needs_permission">Nepieciešama atļauja, ko Android nedod ekrāna lasītājiem. Lai to piešķirtu, palaidiet šo komandu ar adb or Shizuku, then come back to this screen: %1$s</string>
     <string name="action_copy_command">Kopēt komandu</string>
     <string name="command_copied">Komanda ir nokopēta</string>
-    <string name="title_pref_speech_control">Ļaujiet citām lietotnēm runāt</string>
+    <string name="title_pref_speech_control">Ļaut citām lietotnēm runāt</string>
     <string name="summary_pref_speech_control">Atļautās lietotnes var teikt tekstu jūsu SandFly balsī. Kamēr ierīce ir bloķēta, nekas netiek teikts.</string>
     <string name="title_pref_speech_control_sound">Atskaņojiet skaņu, pirms sāk runāt citas lietotnes</string>
     <string name="speech_control_apps_category">Lietotnes</string>
@@ -1641,8 +1641,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">Garš vilkums uz augšu no apakšējās malas</string>
     <string name="title_pref_shortcut_edge_top_left_down">Velciet uz leju no augšējās kreisās puses</string>
     <string name="title_pref_shortcut_edge_top_right_down">Velciet uz leju no augšējās labās puses</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Ilgi velciet uz leju no augšējās kreisās puses</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Ilgi velciet uz leju no augšējās labās puses</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Garš vilkums uz leju no augšējās kreisās puses</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Garš vilkums uz leju no augšējās labās puses</string>
     <string name="title_pref_shortcut_edge_left_top_right">Velciet pa labi no kreisās malas, augšējās puses</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Gari velciet pa labi no kreisās malas, augšējās puses</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Velciet pa labi no kreisās malas, apakšējās puses</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_picked_up">Paņemts: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Nomests: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly norāda preces informāciju šādā secībā. Lai to mainītu, pieskarieties detaļai un turiet to, pēc tam velciet to uz augšu vai uz leju. Kad SandFly ir ieslēgts, veiciet dubultskārienu un turiet, pēc tam velciet. Varat arī izmantot darbības Pārvietot uz augšu un Pārvietot uz leju.</string>
-    <string name="title_pref_speak_items_before_scroll">Izrunājiet vienumus, pirms tie ritina skatā</string>
+    <string name="title_pref_speak_items_before_scroll">Izrunāt vienumus, pirms tie tiek ritināti skatā</string>
     <string name="gemini_error_api_key">Gemini nepieņēma API atslēgu. Pārbaudiet atslēgu sadaļā Automātiskie apraksti.</string>
     <string name="gemini_error_quota">Ir sasniegts jūsu Gemini API atslēgas lietošanas ierobežojums. Vēlāk mēģiniet vēlreiz.</string>
     <string name="gemini_error_busy">Gemini šobrīd ir aizņemts. Pēc brīža mēģiniet vēlreiz.</string>

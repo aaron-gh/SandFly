@@ -1346,7 +1346,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">一次发送一个句子的长文本</string>
+    <string name="title_pref_speak_in_phrases">長文字逐句傳送</string>
     <string name="summary_pref_speak_in_phrases">對於停止速度較慢的語音引擎（例如 Gryphon），因此向遠處滑動會立即停止長文字。許多引擎在單獨發送的句子之間暫停時間較長，因此如果您的引擎停止得很快，請將其關閉。</string>
     <string name="battery_optimization_notification_title">電池優化可能會停止 SandFly</string>
     <string name="battery_optimization_notification_text">在這款手機上，省電模式可以在螢幕關閉後停止SandFly，因此在重新啟動之前會保持沉默。點擊開啟電池優化，選擇所有應用，找到 SandFly 並選擇不優化。</string>
@@ -1381,12 +1381,12 @@
     <string name="title_pref_reserve_vibration_watch_gestures">預留Vibration Watch的手勢</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">停止 SandFly 處理兩指點擊和雙擊，以便 Samsung Vibration Watch 可以使用它們。在手錶的輔助使用設定中啟用 Vibration Watch。</string>
     <string name="shortcut_reserved_for_vibration_watch">為進階設定中的Vibration Watch保留</string>
-    <string name="title_pref_speakerphone_away_from_ear">揚聲器遠離您的耳朵時</string>
+    <string name="title_pref_speakerphone_away_from_ear">手機離開耳邊時使用揚聲器</string>
     <string name="summary_pref_speakerphone_away_from_ear">通話期間，當您將手機從耳邊拿開時，會切換到揚聲器；當您再次拿起手機時，會切換到聽筒。</string>
     <string name="summary_pref_speakerphone_needs_permission">需要 Android 未授予螢幕閱讀器的權限。要授予它，請使用 adb or Shizuku, then come back to this screen: %1$s 運行此命令</string>
     <string name="action_copy_command">複製指令</string>
     <string name="command_copied">命令已複製</string>
-    <string name="title_pref_speech_control">讓其他應用程式說話</string>
+    <string name="title_pref_speech_control">允許其他應用程式朗讀</string>
     <string name="summary_pref_speech_control">您允許的應用程式可以用您的 SandFly 聲音說出文字。設備鎖定時不會說話。</string>
     <string name="title_pref_speech_control_sound">在其他應用程式說話之前播放聲音</string>
     <string name="speech_control_apps_category">應用程式</string>
@@ -1556,7 +1556,7 @@
     <string name="value_audio_output_device_wired_headphones">有線耳機</string>
     <string name="value_audio_output_device_usb_headset">USB耳機</string>
     <string name="value_audio_output_device_usb_device">USB 音訊裝置</string>
-    <string name="title_pref_speaker_devices">配備這些裝置的手機揚聲器</string>
+    <string name="title_pref_speaker_devices">連接這些裝置時使用手機揚聲器</string>
     <string name="summary_pref_speaker_devices_none">無</string>
     <string name="summary_pref_speaker_devices_no_devices">尚未連接Bluetooth或有線設備</string>
     <string name="pref_reduce_window_delay_summary">動畫關閉時，SandFly 可以更快地讀取新畫面。這會關閉整支手機的動畫。</string>
@@ -1636,7 +1636,7 @@
     <string name="title_pref_shortcut_edge_top_left_down">從左上角向下滑動</string>
     <string name="title_pref_shortcut_edge_top_right_down">從右上角向下滑動</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">從左上角向下長滑動</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">從右上角向下長掃</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">從右上角向下長滑動</string>
     <string name="title_pref_shortcut_edge_left_top_right">從左邊緣向右滑動，上半部分</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">從左邊緣向右長滑動，上半部分</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">從左邊緣、下半部向右滑動</string>
@@ -1729,7 +1729,7 @@
     <string name="template_item_details_order_picked_up">已拿起<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">已放下<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly 表示此訂單中商品的詳細資訊。要更改它，請觸摸並按住某個細節，然後向上或向下拖曳它。啟用 SandFly 後，雙擊並按住，然後拖曳。您也可以使用“上移”和“下移”操作。</string>
-    <string name="title_pref_speak_items_before_scroll">在項目滾動到視圖中之前先說出它們</string>
+    <string name="title_pref_speak_items_before_scroll">在項目捲動到畫面中之前先讀出</string>
     <string name="gemini_error_api_key">Gemini 不接受 API 金鑰。檢查自動描述設定中的鍵。</string>
     <string name="gemini_error_quota">您的 Gemini API 金鑰已達到使用限制。稍後再試。</string>
     <string name="gemini_error_busy">Gemini現在很忙。稍後再試一次。</string>

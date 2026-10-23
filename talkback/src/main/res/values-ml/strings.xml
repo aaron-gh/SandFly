@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">ഒരു സമയം ഒരു വാചകം നീളമുള്ള വാചകം അയയ്ക്കുക</string>
+    <string name="title_pref_speak_in_phrases">നീളമുള്ള ടെക്സ്റ്റ് ഓരോ വാക്യമായി അയയ്ക്കുക</string>
     <string name="summary_pref_speak_in_phrases">Gryphon പോലെയുള്ള സ്‌പീച്ച് എഞ്ചിനുകൾ നിർത്താൻ സാവധാനമുള്ളതിനാൽ സ്വൈപ്പുചെയ്യുന്നത് നീളമുള്ള ടെക്‌സ്‌റ്റ് ഒറ്റയടിക്ക് നിർത്തുന്നു. പല എഞ്ചിനുകളും വെവ്വേറെ അയയ്‌ക്കുന്ന വാക്യങ്ങൾക്കിടയിൽ കൂടുതൽ സമയം നിർത്തുന്നു, അതിനാൽ നിങ്ങളുടേത് പെട്ടെന്ന് നിർത്തുകയാണെങ്കിൽ ഇത് ഒഴിവാക്കുക.</string>
     <string name="battery_optimization_notification_title">ബാറ്ററി ഒപ്റ്റിമൈസേഷൻ SandFly നിർത്തിയേക്കാം</string>
     <string name="battery_optimization_notification_text">ഈ ഫോണിൽ, സ്‌ക്രീൻ ഓഫായതിന് ശേഷം ബാറ്ററി സേവറിന് SandFly നിർത്താനാകും, അതിനാൽ അത് പുനരാരംഭിക്കുന്നത് വരെ നിശബ്ദമായിരിക്കും. ബാറ്ററി ഒപ്റ്റിമൈസേഷൻ തുറക്കാൻ ടാപ്പ് ചെയ്യുക, എല്ലാ ആപ്പുകളും തിരഞ്ഞെടുക്കുക, SandFly കണ്ടെത്തി ഒപ്റ്റിമൈസ് ചെയ്യരുത് തിരഞ്ഞെടുക്കുക.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">പ്രാദേശിക ഭാഷ സ്വയമേവ മാറ്റുക</string>
     <string name="category_collapsed">ചുരുക്കിയ വിഭാഗം</string>
     <string name="category_expanded">വിപുലീകരിച്ച വിഭാഗം</string>
-    <string name="title_pref_speak_nav_bar_buttons">നാവിഗേഷൻ ബാർ ബട്ടണുകൾ സംസാരിക്കുക</string>
+    <string name="title_pref_speak_nav_bar_buttons">നാവിഗേഷൻ ബാർ ബട്ടണുകൾ പറയുക</string>
     <string name="summary_pref_speak_nav_bar_buttons">നാവിഗേഷൻ ബാറിൽ സജീവമാക്കാൻ ലിഫ്റ്റ് ഉപയോഗിച്ച്, ബാക്ക് അല്ലെങ്കിൽ ഹോം പോലുള്ള ഒരു ടാപ്പ് അമർത്തുന്ന ബട്ടൺ പറയുക.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">ബാറ്ററി <xliff:g id="battery_level" example="73">%1$s</xliff:g> ശതമാനം</string>
@@ -1557,7 +1557,7 @@
     <string name="value_audio_output_device_wired_headphones">വയർഡ് ഹെഡ്‌ഫോണുകൾ</string>
     <string name="value_audio_output_device_usb_headset">USB ഹെഡ്‌സെറ്റ്</string>
     <string name="value_audio_output_device_usb_device">USB ഓഡിയോ ഉപകരണം</string>
-    <string name="title_pref_speaker_devices">ഈ ഉപകരണങ്ങളുള്ള ഫോൺ സ്പീക്കർ</string>
+    <string name="title_pref_speaker_devices">ഈ ഉപകരണങ്ങൾ കണക്റ്റ് ചെയ്യുമ്പോൾ ഫോൺ സ്പീക്കർ</string>
     <string name="summary_pref_speaker_devices_none">ഒന്നുമില്ല</string>
     <string name="summary_pref_speaker_devices_no_devices">ഇതുവരെ Bluetooth അല്ലെങ്കിൽ വയർഡ് ഉപകരണങ്ങളൊന്നും കണക്‌റ്റ് ചെയ്‌തിട്ടില്ല</string>
     <string name="pref_reduce_window_delay_summary">ആനിമേഷനുകൾ ഓഫായിരിക്കുമ്പോൾ SandFly പുതിയ സ്ക്രീനുകൾ വേഗത്തിൽ വായിക്കുന്നു. ഇത് മുഴുവൻ ഫോണിനുമുള്ള ആനിമേഷനുകൾ ഓഫാക്കുന്നു.</string>
@@ -1636,8 +1636,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">താഴത്തെ അരികിൽ നിന്ന് മുകളിലേക്ക് നീണ്ട സ്വൈപ്പ്</string>
     <string name="title_pref_shortcut_edge_top_left_down">മുകളിൽ ഇടത് നിന്ന് താഴേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
     <string name="title_pref_shortcut_edge_top_right_down">മുകളിൽ വലത് നിന്ന് താഴേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">മുകളിൽ ഇടതുവശത്ത് നിന്ന് താഴേക്ക് ദീർഘനേരം സ്വൈപ്പ് ചെയ്യുക</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">മുകളിൽ വലതുവശത്ത് നിന്ന് താഴേക്ക് ദീർഘനേരം സ്വൈപ്പ് ചെയ്യുക</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">മുകളിൽ ഇടതുവശത്ത് നിന്ന് താഴേക്ക് നീണ്ട സ്വൈപ്പ്</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">മുകളിൽ വലതുവശത്ത് നിന്ന് താഴേക്ക് നീണ്ട സ്വൈപ്പ്</string>
     <string name="title_pref_shortcut_edge_left_top_right">ഇടത് അരികിൽ നിന്ന് വലത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക, മുകളിൽ പകുതി</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">ഇടത് അരികിൽ നിന്ന് വലത്തേക്ക് നീണ്ട സ്വൈപ്പ്, മുകളിൽ പകുതി</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">ഇടത് അരികിൽ നിന്ന് വലത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക, താഴെ പകുതി</string>

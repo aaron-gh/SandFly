@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Узун текстти бир убакта жөнөтүңүз</string>
+    <string name="title_pref_speak_in_phrases">Узун текстти сүйлөм-сүйлөм менен жөнөтүү</string>
     <string name="summary_pref_speak_in_phrases">Gryphon сыяктуу жай токтогон сүйлөө кыймылдаткычтары үчүн сүрүп коюу узун текстти дароо токтотот. Көптөгөн кыймылдаткычтар өзүнчө жөнөтүлгөн сүйлөмдөрдүн ортосунда узагыраак тыныгууда, андыктан сиздики тез токтоп калса, муну өчүрүп коюңуз.</string>
     <string name="battery_optimization_notification_title">Батареяны оптималдаштыруу SandFly\'ды токтотушу мүмкүн</string>
     <string name="battery_optimization_notification_text">Бул телефондо батареяны үнөмдөгүч экран өчкөндөн кийин SandFly токтоп калышы мүмкүн, андыктан ал кайра күйгүзүлгөнгө чейин унчукпай калат. Батареяны оптималдаштырууну ачуу үчүн таптап, Бардык колдонмолорду тандап, SandFly табыңыз жана Оптимизациялоону тандаңыз.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">Диалекти автоматтык түрдө которуу</string>
     <string name="category_collapsed">Жыйыштырылган бөлүм</string>
     <string name="category_expanded">Кеңейтилген бөлүм</string>
-    <string name="title_pref_speak_nav_bar_buttons">Чабыттоо тилкесинин баскычтарын сүйлө</string>
+    <string name="title_pref_speak_nav_bar_buttons">Чабыттоо тилкесинин баскычтарын айтуу</string>
     <string name="summary_pref_speak_nav_bar_buttons">Чабыттоо тилкесинде жандыруу үчүн көтөрүү менен, Артка же Үй сыяктуу таптоо басылган баскычты айтыңыз.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Батарея <xliff:g id="battery_level" example="73">%1$s</xliff:g> пайыз</string>
@@ -1382,12 +1382,12 @@
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch үчүн жаңсоолорду камдоо</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch аларды колдонушу үчүн SandFly эки манжа менен бир жана эки жолу басууну токтотот. Саатыңыздын атайын мүмкүнчүлүктөр жөндөөлөрүнөн Vibration Watch иштетиңиз.</string>
     <string name="shortcut_reserved_for_vibration_watch">Өркүндөтүлгөн жөндөөлөрдөгү Vibration Watch үчүн сакталган</string>
-    <string name="title_pref_speakerphone_away_from_ear">Кулагыңыздан алыс болгондо сүйлөңүз</string>
+    <string name="title_pref_speakerphone_away_from_ear">Телефон кулактан алыс болгондо динамик</string>
     <string name="summary_pref_speakerphone_away_from_ear">Чалуу учурунда телефонду кулагыңыздан алганыңызда динамикке, кайра көтөргөнүңүздө кайра наушникке өтөт.</string>
     <string name="summary_pref_speakerphone_needs_permission">Экрандагы окурмандарга Android бербеген уруксат керек. Аны берүү үчүн, бул буйрукту adb or Shizuku, then come back to this screen: %1$s менен иштетиңиз</string>
     <string name="action_copy_command">Буйрукту көчүрүү</string>
     <string name="command_copied">Буйрук көчүрүлдү</string>
-    <string name="title_pref_speech_control">Башка колдонмолорго сүйлөөгө уруксат бериңиз</string>
+    <string name="title_pref_speech_control">Башка колдонмолорго сүйлөөгө уруксат берүү</string>
     <string name="summary_pref_speech_control">Сиз уруксат берген колдонмолор текстти SandFly үнүңүз менен айта алышат. Түзмөк кулпуланып турганда эч нерсе айтылбайт.</string>
     <string name="title_pref_speech_control_sound">Башка колдонмолор сүйлөй электе үндү ойнотуңуз</string>
     <string name="speech_control_apps_category">Колдонмолор</string>
@@ -1636,8 +1636,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">Төмөнкү четинен өйдө узун сүрүү</string>
     <string name="title_pref_shortcut_edge_top_left_down">Жогорку сол жактан ылдый сүрүңүз</string>
     <string name="title_pref_shortcut_edge_top_right_down">Жогорку оң тараптан ылдый сүрүңүз</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Жогорку сол жактан ылдый сүрүп коюңуз</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Жогорку оң жактан ылдый сүрүп коюңуз</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Жогорку сол жактан ылдый узун сүрүү</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Жогорку оң жактан ылдый узун сүрүү</string>
     <string name="title_pref_shortcut_edge_left_top_right">Сол четинен, үстүнкү жарымынан оңго сүрүңүз</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Сол четинен, үстүнкү жарымынан оңго узакка сүрүңүз</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Сол четинен, ылдыйкы жарымынан оңго сүрүңүз</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> көтөрүлдү. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> коюлду. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly буюмдун чоо-жайын ушул тартипте айтат. Аны өзгөртүү үчүн деталга тийип, кармап туруңуз, андан кийин аны өйдө же ылдый сүйрөңүз. SandFly күйгүзүлгөндө, эки жолу таптап, кармап туруңуз, анан сүйрөңүз. Сиз ошондой эле өйдө жана ылдый жылдыруу аракеттерин колдоно аласыз.</string>
-    <string name="title_pref_speak_items_before_scroll">Элементтер көрүнүшкө жылардан мурун сүйлөңүз</string>
+    <string name="title_pref_speak_items_before_scroll">Элементтерди көрүнүшкө жылганга чейин айтуу</string>
     <string name="gemini_error_api_key">Gemini API ачкычын кабыл алган жок. Автоматтык сүрөттөмөлөр жөндөөлөрүндөгү ачкычты текшериңиз.</string>
     <string name="gemini_error_quota">Gemini API ачкычыңыздын колдонуу чегине жеттиңиз. Кийинчерээк кайра аракет кылыңыз.</string>
     <string name="gemini_error_busy">Gemini азыр бош эмес. Бир аздан кийин кайталап көрүңүз.</string>

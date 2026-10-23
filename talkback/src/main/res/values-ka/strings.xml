@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">გაგზავნეთ გრძელი ტექსტი წინადადება ერთდროულად</string>
+    <string name="title_pref_speak_in_phrases">გრძელი ტექსტის წინადადებებად გაგზავნა</string>
     <string name="summary_pref_speak_in_phrases">მეტყველების ძრავებისთვის, რომლებიც ნელა ჩერდებიან, მაგალითად, Gryphon, ასე რომ, გადაფურცვლა ერთდროულად აჩერებს გრძელ ტექსტს. ბევრი ძრავა უფრო დიდხანს ჩერდება ცალ-ცალკე გაგზავნილ წინადადებებს შორის, ასე რომ, გამორთეთ ეს, თუ თქვენი სწრაფად გაჩერდება.</string>
     <string name="battery_optimization_notification_title">ბატარეის ოპტიმიზაციამ შეიძლება SandFly შეაჩეროს</string>
     <string name="battery_optimization_notification_text">ამ ტელეფონზე ბატარეის დამზოგი შეიძლება შეწყდეს SandFly ეკრანის გამორთვის შემდეგ, ასე რომ, ის ჩუმდება, სანამ არ გადაიტვირთება. შეეხეთ ბატარეის ოპტიმიზაციის გასახსნელად, აირჩიეთ ყველა აპი, იპოვეთ SandFly და აირჩიეთ არ მოხდეს ოპტიმიზაცია.</string>
@@ -1387,7 +1387,7 @@
     <string name="summary_pref_speakerphone_needs_permission">საჭიროებს ნებართვას, რომელსაც Android არ აძლევს ეკრანის წამკითხველებს. მის გასაცემად, გაუშვით ეს ბრძანება adb or Shizuku, then come back to this screen: %1$s-ით</string>
     <string name="action_copy_command">დააკოპირეთ ბრძანება</string>
     <string name="command_copied">ბრძანება დაკოპირებულია</string>
-    <string name="title_pref_speech_control">მიეცით საშუალება სხვა აპებს ისაუბრონ</string>
+    <string name="title_pref_speech_control">სხვა აპებისთვის საუბრის დაშვება</string>
     <string name="summary_pref_speech_control">აპებს, რომლებსაც თქვენ დაუშვებთ, შეუძლიათ ტექსტის წარმოთქმა თქვენი SandFly ხმით. არაფერია ნათქვამი, სანამ მოწყობილობა დაბლოკილია.</string>
     <string name="title_pref_speech_control_sound">დაუკარით ხმა სხვა აპების გამოსვლამდე</string>
     <string name="speech_control_apps_category">აპები</string>
@@ -1635,9 +1635,9 @@
     <string name="title_pref_shortcut_edge_bottom_up">გადაფურცლეთ ზემოთ ქვედა კიდიდან</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">გრძელი გადაფურცვლა ზემოთ ქვედა კიდიდან</string>
     <string name="title_pref_shortcut_edge_top_left_down">ზედა მარცხენა მხრიდან ქვემოთ გადაფურცვლა</string>
-    <string name="title_pref_shortcut_edge_top_right_down">გადაფურცლეთ ზემოდან მარჯვნივ</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">დიდხანს გადაფურცლეთ ქვემოთ ზემოდან მარცხნივ</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">დიდხანს გადაფურცლეთ ქვემოთ ზემოდან მარჯვნივ</string>
+    <string name="title_pref_shortcut_edge_top_right_down">ზედა მარჯვენა მხრიდან ქვემოთ გადაფურცვლა</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">გრძელი გადაფურცვლა ქვემოთ ზედა მარცხენა მხრიდან</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">გრძელი გადაფურცვლა ქვემოთ ზედა მარჯვენა მხრიდან</string>
     <string name="title_pref_shortcut_edge_left_top_right">გადაფურცლეთ მარჯვნივ მარცხენა კიდიდან, ზედა ნახევრიდან</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">დიდხანს გადაფურცლეთ მარჯვნივ მარცხენა კიდიდან, ზედა ნახევარი</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">გადაფურცლეთ მარჯვნივ მარცხენა კიდიდან, ქვედა ნახევრიდან</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up">აღებულია: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">ჩაგდებულია: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ამბობს ნივთის დეტალებს ამ თანმიმდევრობით. მის შესაცვლელად, ხანგრძლივად შეეხეთ დეტალს, შემდეგ გადაიტანეთ ზემოთ ან ქვემოთ. თუ SandFly ჩართულია, ორმაგად შეეხეთ და ხანგრძლივად, შემდეგ გადაიტანეთ. თქვენ ასევე შეგიძლიათ გამოიყენოთ მოქმედებები გადაადგილება ზემოთ და გადაადგილება ქვემოთ.</string>
-    <string name="title_pref_speak_items_before_scroll">თქვით ერთეულები, სანამ ხედში გადაინაცვლებენ</string>
+    <string name="title_pref_speak_items_before_scroll">ელემენტების წარმოთქმა, სანამ ხედში გადაინაცვლებენ</string>
     <string name="gemini_error_api_key">Gemini არ მიიღო API გასაღები. შეამოწმეთ გასაღები ავტომატური აღწერილობების პარამეტრებში.</string>
     <string name="gemini_error_quota">თქვენი Gemini API გასაღების გამოყენების ლიმიტი მიღწეულია. სცადეთ მოგვიანებით.</string>
     <string name="gemini_error_busy">Gemini ახლა დაკავებულია. სცადეთ ხელახლა რამდენიმე წუთში.</string>

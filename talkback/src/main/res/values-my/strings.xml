@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">တစ်ကြိမ်လျှင် စာကြောင်းရှည် ပို့ပါ</string>
+    <string name="title_pref_speak_in_phrases">စာသားရှည်ကို တစ်ကြိမ်လျှင် စာကြောင်းတစ်ကြောင်းစီ ပို့ရန်</string>
     <string name="summary_pref_speak_in_phrases">Gryphon ကဲ့သို့သော ရပ်တန့်ရန် နှေးကွေးသော စကားသံအင်ဂျင်များအတွက်၊ ထို့ကြောင့် အဝေးသို့ ပွတ်ဆွဲခြင်းသည် စာသားအရှည်ကြီးကို တစ်ပြိုင်နက် ရပ်တန့်စေသည်။ သီးခြားစီ ပေးပို့သော စာကြောင်းများကြားတွင် အင်ဂျင်အများအပြား ရပ်နားထားသောကြောင့် အမြန်ရပ်ပါက ၎င်းကို ချန်ထားပါ။</string>
     <string name="battery_optimization_notification_title">ဘက်ထရီ ပိုကောင်းအောင်ပြုလုပ်ခြင်းက SandFly ကို ရပ်စေနိုင်သည်</string>
     <string name="battery_optimization_notification_text">ဤဖုန်းတွင်၊ မျက်နှာပြင်ပိတ်ပြီးနောက် ဘက်ထရီအားချွေတာသူသည် SandFly ရပ်တန့်နိုင်သည်၊ ထို့ကြောင့် ၎င်းသည် ပြန်လည်စတင်သည်အထိ အသံတိတ်သွားပါသည်။ ဘက်ထရီ ပိုမိုကောင်းမွန်အောင် ပြုလုပ်ခြင်းကို ဖွင့်ရန် တို့ပါ၊ အက်ပ်များအားလုံး ကို ရွေးချယ်ပါ၊ SandFly ကို ရှာပြီး အကောင်းဆုံးဖြစ်အောင် မလုပ်ပါ ကို ရွေးပါ။</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">ဒေသိယစကား အလိုအလျောက်ပြောင်းပါ</string>
     <string name="category_collapsed">ခေါက်ထားသည့်အပိုင်း</string>
     <string name="category_expanded">အပိုင်းကို တိုးချဲ့ထားသည်</string>
-    <string name="title_pref_speak_nav_bar_buttons">လမ်းကြောင်းပြဘားခလုတ်များကို ပြောပါ</string>
+    <string name="title_pref_speak_nav_bar_buttons">လမ်းကြောင်းပြဘား ခလုတ်များကို ပြောရန်</string>
     <string name="summary_pref_speak_nav_bar_buttons">လမ်းညွှန်ဘားတွင် အသက်သွင်းရန် lift ဖြင့် Back သို့မဟုတ် Home ကဲ့သို့ နှိပ်လိုက်သည့်ခလုတ်ကို ပြောပါ။</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">ဘက်ထရီ <xliff:g id="battery_level" example="73">%1$s</xliff:g> ရာခိုင်နှုန်း</string>
@@ -1387,7 +1387,7 @@
     <string name="summary_pref_speakerphone_needs_permission">စခရင်ဖတ်သူများကို Android မပေးသော ခွင့်ပြုချက် လိုအပ်သည်။ ၎င်းကိုခွင့်ပြုရန်၊ ဤအမိန့်ကို adb or Shizuku, then come back to this screen: %1$s ဖြင့် လုပ်ဆောင်ပါ</string>
     <string name="action_copy_command">အမိန့်ကို ကူးယူပါ</string>
     <string name="command_copied">အမိန့်ကို ကူးယူထားသည်</string>
-    <string name="title_pref_speech_control">အခြားအက်ပ်များကို စကားပြောစေပါ</string>
+    <string name="title_pref_speech_control">အခြားအက်ပ်များကို စကားပြောခွင့်ပြုရန်</string>
     <string name="summary_pref_speech_control">သင်ခွင့်ပြုသောအက်ပ်များသည် သင့် SandFly အသံဖြင့် စာသားပြောနိုင်သည်။ စက်ပစ္စည်းကို လော့ခ်ချထားစဉ်တွင် ဘာမျှ မပြောပါ။</string>
     <string name="title_pref_speech_control_sound">အခြားအက်ပ်များ စကားမပြောမီ အသံဖွင့်ပါ</string>
     <string name="speech_control_apps_category">အက်ပ်များ</string>
@@ -1557,7 +1557,7 @@
     <string name="value_audio_output_device_wired_headphones">ကြိုးတပ်နားကြပ်များ</string>
     <string name="value_audio_output_device_usb_headset">USB နားကြပ်</string>
     <string name="value_audio_output_device_usb_device">USB အသံကိရိယာ</string>
-    <string name="title_pref_speaker_devices">ဤစက်ပစ္စည်းများဖြင့် ဖုန်းစပီကာ</string>
+    <string name="title_pref_speaker_devices">ဤစက်ပစ္စည်းများ ချိတ်ဆက်ထားစဉ် ဖုန်းစပီကာ</string>
     <string name="summary_pref_speaker_devices_none">မရှိ</string>
     <string name="summary_pref_speaker_devices_no_devices">Bluetooth သို့မဟုတ် ကြိုးတပ်ကိရိယာများ မချိတ်ဆက်ရသေးပါ</string>
     <string name="pref_reduce_window_delay_summary">အန်နီမေးရှင်းများကို ပိတ်ထားသည့်အခါ SandFly မျက်နှာပြင်အသစ်များကို ပိုမိုမြန်ဆန်စွာဖတ်သည်။ ၎င်းက ဖုန်းတစ်ခုလုံးအတွက် ကာတွန်းများကို ပိတ်ပေးသည်။</string>
@@ -1636,8 +1636,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">အောက်ခြေအစွန်းမှ အပေါ်သို့ ရှည်ရှည် ပွတ်ဆွဲရန်</string>
     <string name="title_pref_shortcut_edge_top_left_down">ဘယ်ဘက်ထိပ်မှ အောက်သို့ ပွတ်ဆွဲပါ</string>
     <string name="title_pref_shortcut_edge_top_right_down">အပေါ်ညာဘက်မှ အောက်သို့ ပွတ်ဆွဲပါ</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">ဘယ်ဘက်အပေါ်မှ အောက်ကို အကြာကြီးပွတ်ဆွဲပါ</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">ညာဘက်အပေါ်မှ အောက်ကို အကြာကြီးပွတ်ဆွဲပါ</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">ဘယ်ဘက်အပေါ်မှ အောက်သို့ ရှည်ရှည် ပွတ်ဆွဲရန်</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">ညာဘက်အပေါ်မှ အောက်သို့ ရှည်ရှည် ပွတ်ဆွဲရန်</string>
     <string name="title_pref_shortcut_edge_left_top_right">ဘယ်ဘက်အစွန်းမှ ညာဘက်သို့ ပွတ်ဆွဲပါ၊ အပေါ်တစ်ပိုင်း</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">ဘယ်ဘက်အစွန်းမှ ညာဘက်ကို အကြာကြီးပွတ်ဆွဲပါ၊ အပေါ်ဘက်တစ်ခြမ်း</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">ဘယ်ဘက်အစွန်းမှ ညာဘက်သို့ ပွတ်ဆွဲပါ၊ အောက်ခြေတစ်ဝက်</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ကောက်ယူခဲ့သည်။ <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ကို ချထားသည်။ <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ဤမှာယူမှုတွင် ပစ္စည်းတစ်ခု၏အသေးစိတ်အချက်အလက်များကို ပြောပါသည်။ ၎င်းကိုပြောင်းလဲရန်၊ အသေးစိတ်ကိုထိ၍ ဖိထားပါ၊ ထို့နောက် ၎င်းကို အပေါ် သို့မဟုတ် အောက်သို့ ဆွဲချပါ။ SandFly ဖွင့်ထားခြင်းဖြင့် နှစ်ချက်တို့ပြီး ဖိထားပါ၊ ထို့နောက် ဆွဲယူပါ။ Move up and Move down လုပ်ဆောင်ချက်များကိုလည်း သုံးနိုင်သည်။</string>
-    <string name="title_pref_speak_items_before_scroll">မြင်ကွင်းထဲသို့ မရွေ့မီ အကြောင်းအရာများကို ပြောဆိုပါ</string>
+    <string name="title_pref_speak_items_before_scroll">မြင်ကွင်းထဲ မရွေ့မီ အရာများကို ပြောရန်</string>
     <string name="gemini_error_api_key">Gemini API ကီးကို လက်မခံပါ။ အလိုအလျောက်ဖော်ပြချက်ဆက်တင်များတွင် သော့ကိုစစ်ဆေးပါ။</string>
     <string name="gemini_error_quota">သင်၏ Gemini API သော့အတွက် အသုံးပြုမှုကန့်သတ်ချက် ပြည့်သွားပါပြီ။ နောက်မှ ထပ်စမ်းကြည့်ပါ။</string>
     <string name="gemini_error_busy">Gemini အခု အလုပ်ရှုပ်နေတယ်။ ခဏအကြာတွင် ထပ်စမ်းကြည့်ပါ။</string>

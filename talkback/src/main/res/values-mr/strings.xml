@@ -1350,7 +1350,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">एका वेळी एक वाक्य लांब मजकूर पाठवा</string>
+    <string name="title_pref_speak_in_phrases">लांब मजकूर एकावेळी एक वाक्य पाठवा</string>
     <string name="summary_pref_speak_in_phrases">स्पीच इंजिनसाठी जे थांबण्यास धीमे आहेत, जसे की ग्रिफॉन, म्हणून स्वाइप केल्याने लांब मजकूर एकाच वेळी थांबतो. अनेक इंजिन स्वतंत्रपणे पाठवलेल्या वाक्यांमध्ये जास्त वेळ थांबतात, त्यामुळे तुमचे त्वरीत थांबल्यास हे बंद करा.</string>
     <string name="battery_optimization_notification_title">बॅटरी ऑप्टिमायझेशन SandFly थांबवू शकते</string>
     <string name="battery_optimization_notification_text">या फोनवर, स्क्रीन बंद झाल्यानंतर बॅटरी सेव्हर SandFly थांबू शकतो, त्यामुळे तो रीस्टार्ट होईपर्यंत तो शांत होतो. बॅटरी ऑप्टिमायझेशन उघडण्यासाठी टॅप करा, सर्व ॲप्स निवडा, SandFly शोधा आणि ऑप्टिमाइझ करू नका निवडा.</string>
@@ -1638,9 +1638,9 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="title_pref_shortcut_edge_bottom_up">खालच्या काठावरुन वर स्वाइप करा</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">खालच्या काठावरुन वर लांब स्वाइप करा</string>
     <string name="title_pref_shortcut_edge_top_left_down">वरच्या डावीकडून खाली स्वाइप करा</string>
-    <string name="title_pref_shortcut_edge_top_right_down">वरून उजवीकडे खाली स्वाइप करा</string>
+    <string name="title_pref_shortcut_edge_top_right_down">वरच्या उजवीकडून खाली स्वाइप करा</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">वरच्या डावीकडून खाली लांब स्वाइप करा</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">वरून उजवीकडे लांब स्वाइप करा</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">वरच्या उजवीकडून खाली लांब स्वाइप करा</string>
     <string name="title_pref_shortcut_edge_left_top_right">डाव्या काठावरुन उजवीकडे स्वाइप करा, वरचा अर्धा भाग</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">डाव्या काठावरुन उजवीकडे लांब स्वाइप करा, वरच्या अर्ध्या</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">डाव्या काठावरुन उजवीकडे स्वाइप करा, खालचा अर्धा</string>
@@ -1733,7 +1733,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> उचलले. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> सोडले. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly या क्रमाने आयटमचे तपशील सांगतात. ते बदलण्यासाठी, तपशीलाला स्पर्श करा आणि धरून ठेवा, नंतर ते वर किंवा खाली ड्रॅग करा. SandFly चालू असताना, दोनदा टॅप करा आणि धरून ठेवा, नंतर ड्रॅग करा. तुम्ही वर हलवा आणि खाली हलवा क्रिया देखील वापरू शकता.</string>
-    <string name="title_pref_speak_items_before_scroll">आयटम दृश्यात स्क्रोल करण्यापूर्वी ते बोला</string>
+    <string name="title_pref_speak_items_before_scroll">आयटम स्क्रोल होऊन दिसण्यापूर्वी बोला</string>
     <string name="gemini_error_api_key">Gemini ने API की स्वीकारली नाही. स्वयंचलित वर्णन सेटिंग्जमध्ये की तपासा.</string>
     <string name="gemini_error_quota">तुमच्या Gemini API की वापरण्याची मर्यादा गाठली आहे. नंतर पुन्हा प्रयत्न करा.</string>
     <string name="gemini_error_busy">Gemini सध्या व्यस्त आहे. काही क्षणात पुन्हा प्रयत्न करा.</string>

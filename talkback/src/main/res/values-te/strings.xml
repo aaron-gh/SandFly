@@ -1338,7 +1338,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">ఒక సమయంలో ఒక వాక్యాన్ని దీర్ఘ వచనాన్ని పంపండి</string>
+    <string name="title_pref_speak_in_phrases">పొడవైన వచనాన్ని ఒక్కో వాక్యంగా పంపు</string>
     <string name="summary_pref_speak_in_phrases">Gryphon వంటి స్పీచ్ ఇంజిన్‌ల కోసం నెమ్మదిగా ఆగిపోతుంది, కాబట్టి దూరంగా స్వైప్ చేయడం వల్ల పొడవైన వచనం ఒకేసారి ఆగిపోతుంది. చాలా ఇంజిన్‌లు విడిగా పంపిన వాక్యాల మధ్య ఎక్కువసేపు పాజ్ చేస్తాయి, కాబట్టి మీది త్వరగా ఆగిపోతే దీన్ని నిలిపివేయండి.</string>
     <string name="battery_optimization_notification_title">బ్యాటరీ ఆప్టిమైజేషన్ SandFlyను ఆపవచ్చు</string>
     <string name="battery_optimization_notification_text">ఈ ఫోన్‌లో, స్క్రీన్ ఆఫ్ అయిన తర్వాత బ్యాటరీ సేవర్ SandFlyని ఆపివేయగలదు, కనుక ఇది రీస్టార్ట్ అయ్యే వరకు నిశ్శబ్దంగా ఉంటుంది. బ్యాటరీ ఆప్టిమైజేషన్‌ని తెరవడానికి నొక్కండి, అన్ని యాప్‌లను ఎంచుకోండి, SandFlyని కనుగొని, ఆప్టిమైజ్ చేయవద్దు ఎంచుకోండి.</string>
@@ -1348,7 +1348,7 @@
     <string name="title_pref_switch_dialects">మాండలికాన్ని స్వయంచాలకంగా మార్చండి</string>
     <string name="category_collapsed">కుదించబడిన విభాగం</string>
     <string name="category_expanded">విస్తరించిన విభాగం</string>
-    <string name="title_pref_speak_nav_bar_buttons">నావిగేషన్ బార్ బటన్‌లను మాట్లాడండి</string>
+    <string name="title_pref_speak_nav_bar_buttons">నావిగేషన్ బార్ బటన్‌లను చెప్పు</string>
     <string name="summary_pref_speak_nav_bar_buttons">నావిగేషన్ బార్‌లో యాక్టివేట్ చేయడానికి లిఫ్ట్‌తో, బ్యాక్ లేదా హోమ్ వంటి ట్యాప్ నొక్కిన బటన్‌ని చెప్పండి.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">బ్యాటరీ <xliff:g id="battery_level" example="73">%1$s</xliff:g> శాతం</string>
@@ -1378,7 +1378,7 @@
     <string name="summary_pref_speakerphone_needs_permission">స్క్రీన్ రీడర్‌లకు Android ఇవ్వని అనుమతి అవసరం. దీన్ని మంజూరు చేయడానికి, ఈ ఆదేశాన్ని adb or Shizuku, then come back to this screen: %1$sతో అమలు చేయండి</string>
     <string name="action_copy_command">ఆదేశాన్ని కాపీ చేయండి</string>
     <string name="command_copied">కమాండ్ కాపీ చేయబడింది</string>
-    <string name="title_pref_speech_control">ఇతర యాప్‌లను మాట్లాడనివ్వండి</string>
+    <string name="title_pref_speech_control">ఇతర యాప్‌లను మాట్లాడనివ్వు</string>
     <string name="summary_pref_speech_control">మీరు అనుమతించే యాప్‌లు మీ SandFly వాయిస్‌లో వచనాన్ని చెప్పగలవు. పరికరం లాక్ చేయబడినప్పుడు ఏమీ చెప్పలేదు.</string>
     <string name="title_pref_speech_control_sound">ఇతర యాప్‌లు మాట్లాడే ముందు సౌండ్ ప్లే చేయండి</string>
     <string name="speech_control_apps_category">యాప్‌లు</string>
@@ -1721,7 +1721,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ఎత్తబడింది. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> వదిలివేయబడింది. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ఈ క్రమంలో ఒక వస్తువు వివరాలను చెబుతుంది. దాన్ని మార్చడానికి, ఒక వివరాలను నొక్కి పట్టుకోండి, ఆపై దాన్ని పైకి లేదా క్రిందికి లాగండి. SandFly ఆన్‌తో, రెండుసార్లు నొక్కి పట్టుకోండి, ఆపై లాగండి. మీరు మూవ్ అప్ మరియు మూవ్ డౌన్ చర్యలను కూడా ఉపయోగించవచ్చు.</string>
-    <string name="title_pref_speak_items_before_scroll">అంశాలు వీక్షణలోకి స్క్రోల్ చేయడానికి ముందు వాటిని మాట్లాడండి</string>
+    <string name="title_pref_speak_items_before_scroll">అంశాలు స్క్రోల్ అయ్యి కనిపించే ముందే వాటిని చెప్పు</string>
     <string name="gemini_error_api_key">Gemini API కీని అంగీకరించలేదు. స్వయంచాలక వివరణల సెట్టింగ్‌లలో కీని తనిఖీ చేయండి.</string>
     <string name="gemini_error_quota">మీ Gemini API కీ వినియోగ పరిమితిని చేరుకున్నారు. తర్వాత మళ్లీ ప్రయత్నించండి.</string>
     <string name="gemini_error_busy">Gemini ప్రస్తుతం బిజీగా ఉన్నారు. క్షణంలో మళ్లీ ప్రయత్నించండి.</string>

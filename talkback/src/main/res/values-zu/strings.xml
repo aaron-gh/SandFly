@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Thumela umbhalo omude umusho ngesikhathi</string>
+    <string name="title_pref_speak_in_phrases">Thumela umbhalo omude umusho owodwa ngesikhathi</string>
     <string name="summary_pref_speak_in_phrases">Ezinjinini zenkulumo eziphuza ukuma, njenge-Gryphon, ngakho ukuswayipha kumisa umbhalo omude ngesikhathi esisodwa. Izinjini eziningi ziyama isikhathi eside phakathi kwemisho ethunyelwe ngokwehlukana, ngakho yeka lokhu uma eyakho ima ngokushesha.</string>
     <string name="battery_optimization_notification_title">Ukuthuthukisa ibhethri kungamisa SandFly</string>
     <string name="battery_optimization_notification_text">Kule foni, isilondolozi sebhethri singama SandFly ngemva kokuba isikrini sivaliwe, ngakho siyathula size siqaliswe kabusha. Thepha ukuze uvule ukulungiselelwa kwebhethri, khetha Zonke izinhlelo zokusebenza, thola SandFly bese ukhetha okuthi Ungalungiseleli.</string>
@@ -1557,7 +1557,7 @@
     <string name="value_audio_output_device_wired_headphones">Ama-headphone anentambo</string>
     <string name="value_audio_output_device_usb_headset">USB ihedisethi</string>
     <string name="value_audio_output_device_usb_device">Idivayisi yomsindo ye-USB</string>
-    <string name="title_pref_speaker_devices">Isipikha sefoni esinalawa madivayisi</string>
+    <string name="title_pref_speaker_devices">Isipikha sefoni uma kuxhunywe lawa madivayisi</string>
     <string name="summary_pref_speaker_devices_none">Lutho</string>
     <string name="summary_pref_speaker_devices_no_devices">Awekho amadivayisi e-Bluetooth noma anentambo axhunyiwe okwamanje</string>
     <string name="pref_reduce_window_delay_summary">SandFly ifunda izikrini ezintsha ngokushesha uma ukugqwayiza kuvaliwe. Lokhu kuvala ukugqwayiza kwayo yonke ifoni.</string>
@@ -1636,8 +1636,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">Swayipha kude uye phezulu kusukela onqenqemeni olungezansi</string>
     <string name="title_pref_shortcut_edge_top_left_down">Swayiphela phansi kusukela phezulu kwesokunxele</string>
     <string name="title_pref_shortcut_edge_top_right_down">Swayiphela phansi kusukela phezulu kwesokudla</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Swayiphela phansi isikhathi eside ukusuka phezulu kwesokunxele</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Swayiphela isikhathi eside phansi kusukela phezulu kwesokudla</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Swayipha kude uye phansi kusukela phezulu kwesokunxele</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Swayipha kude uye phansi kusukela phezulu kwesokudla</string>
     <string name="title_pref_shortcut_edge_left_top_right">Swayiphela kwesokudla ukusuka onqenqemeni lwesokunxele, uhhafu ophezulu</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Swayiphela isikhathi eside kwesokudla ukusuka onqenqemeni lwesokunxele, uhhafu ophezulu</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Swayiphela kwesokudla ukusuka onqenqemeni lwesokunxele, uhhafu ongezansi</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up">Ithathiwe <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Kuyekelwe <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly isho imininingwane yento ngalolu hlelo. Ukuze uyishintshe, thinta futhi ubambe imininingwane, bese uyihudulela phezulu noma phansi. Ngokuvula okuthi SandFly, thepha kabili bese ubamba, bese uyahudula. Ungasebenzisa futhi izenzo zokuthi Hambisa phezulu futhi Hambisa phansi.</string>
-    <string name="title_pref_speak_items_before_scroll">Khuluma izinto ngaphambi kokuthi ziskrole ekubukeni</string>
+    <string name="title_pref_speak_items_before_scroll">Isho izinto ngaphambi kokuba ziskrolelwe ekubukeni</string>
     <string name="gemini_error_api_key">Gemini ayizange yamukele ukhiye we-API. Hlola ukhiye kuzilungiselelo zezincazelo ezizenzakalelayo.</string>
     <string name="gemini_error_quota">Umkhawulo wokusetshenziswa wokhiye wakho we-API Gemini ufinyelelwe. Zama futhi emuva kwesikhathi.</string>
     <string name="gemini_error_busy">Gemini imatasa njengamanje. Zama futhi ngemva kwesikhashana.</string>

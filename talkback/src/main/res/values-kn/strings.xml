@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">ಒಂದು ಸಮಯದಲ್ಲಿ ಒಂದು ವಾಕ್ಯವನ್ನು ದೀರ್ಘ ಪಠ್ಯವನ್ನು ಕಳುಹಿಸಿ</string>
+    <string name="title_pref_speak_in_phrases">ದೀರ್ಘ ಪಠ್ಯವನ್ನು ಒಂದೊಂದೇ ವಾಕ್ಯವಾಗಿ ಕಳುಹಿಸಿ</string>
     <string name="summary_pref_speak_in_phrases">ಗ್ರಿಫೊನ್‌ನಂತಹ ನಿಧಾನಗತಿಯ ಸ್ಪೀಚ್ ಇಂಜಿನ್‌ಗಳಿಗೆ ಸ್ವೈಪ್ ಮಾಡುವುದರಿಂದ ಉದ್ದವಾದ ಪಠ್ಯವನ್ನು ಏಕಕಾಲದಲ್ಲಿ ನಿಲ್ಲಿಸಲಾಗುತ್ತದೆ. ಅನೇಕ ಎಂಜಿನ್‌ಗಳು ಪ್ರತ್ಯೇಕವಾಗಿ ಕಳುಹಿಸಲಾದ ವಾಕ್ಯಗಳ ನಡುವೆ ಹೆಚ್ಚು ಸಮಯ ವಿರಾಮಗೊಳಿಸುತ್ತವೆ, ಆದ್ದರಿಂದ ನಿಮ್ಮದು ತ್ವರಿತವಾಗಿ ನಿಂತರೆ ಇದನ್ನು ಬಿಟ್ಟುಬಿಡಿ.</string>
     <string name="battery_optimization_notification_title">ಬ್ಯಾಟರಿ ಆಪ್ಟಿಮೈಸೇಶನ್ SandFly ಅನ್ನು ನಿಲ್ಲಿಸಬಹುದು</string>
     <string name="battery_optimization_notification_text">ಈ ಫೋನ್‌ನಲ್ಲಿ, ಪರದೆಯು ಆಫ್ ಆದ ನಂತರ ಬ್ಯಾಟರಿ ಸೇವರ್ SandFly ಅನ್ನು ನಿಲ್ಲಿಸಬಹುದು, ಆದ್ದರಿಂದ ಅದನ್ನು ಮರುಪ್ರಾರಂಭಿಸುವವರೆಗೆ ಅದು ಮೌನವಾಗಿರುತ್ತದೆ. ಬ್ಯಾಟರಿ ಆಪ್ಟಿಮೈಸೇಶನ್ ತೆರೆಯಲು ಟ್ಯಾಪ್ ಮಾಡಿ, ಎಲ್ಲಾ ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ, SandFly ಅನ್ನು ಹುಡುಕಿ ಮತ್ತು ಆಪ್ಟಿಮೈಜ್ ಮಾಡಬೇಡಿ ಆಯ್ಕೆಮಾಡಿ.</string>
@@ -1358,7 +1358,7 @@
     <string name="title_pref_switch_dialects">ಉಪಭಾಷೆಯನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಬದಲಿಸಿ</string>
     <string name="category_collapsed">ಕುಗ್ಗಿಸಿದ ವಿಭಾಗ</string>
     <string name="category_expanded">ವಿಸ್ತೃತ ವಿಭಾಗ</string>
-    <string name="title_pref_speak_nav_bar_buttons">ನ್ಯಾವಿಗೇಶನ್ ಬಾರ್ ಬಟನ್‌ಗಳನ್ನು ಮಾತನಾಡಿ</string>
+    <string name="title_pref_speak_nav_bar_buttons">ನ್ಯಾವಿಗೇಶನ್ ಬಾರ್ ಬಟನ್‌ಗಳನ್ನು ಹೇಳಿ</string>
     <string name="summary_pref_speak_nav_bar_buttons">ನ್ಯಾವಿಗೇಶನ್ ಬಾರ್‌ನಲ್ಲಿ ಸಕ್ರಿಯಗೊಳಿಸಲು ಲಿಫ್ಟ್‌ನೊಂದಿಗೆ, ಬ್ಯಾಕ್ ಅಥವಾ ಹೋಮ್‌ನಂತಹ ಟ್ಯಾಪ್ ಪ್ರೆಸ್ ಮಾಡುವ ಬಟನ್ ಅನ್ನು ಹೇಳಿ.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">ಬ್ಯಾಟರಿ <xliff:g id="battery_level" example="73">%1$s</xliff:g> ಶೇಕಡಾ</string>
@@ -1388,7 +1388,7 @@
     <string name="summary_pref_speakerphone_needs_permission">ಸ್ಕ್ರೀನ್ ರೀಡರ್‌ಗಳಿಗೆ Android ನೀಡದ ಅನುಮತಿಯ ಅಗತ್ಯವಿದೆ. ಅದನ್ನು ನೀಡಲು, ಈ ಆಜ್ಞೆಯನ್ನು adb or Shizuku, then come back to this screen: %1$s ನೊಂದಿಗೆ ಚಲಾಯಿಸಿ</string>
     <string name="action_copy_command">ಆಜ್ಞೆಯನ್ನು ನಕಲಿಸಿ</string>
     <string name="command_copied">ಆಜ್ಞೆಯನ್ನು ನಕಲಿಸಲಾಗಿದೆ</string>
-    <string name="title_pref_speech_control">ಇತರ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಮಾತನಾಡಲಿ</string>
+    <string name="title_pref_speech_control">ಇತರ ಆ್ಯಪ್‌ಗಳಿಗೆ ಮಾತನಾಡಲು ಅನುಮತಿಸಿ</string>
     <string name="summary_pref_speech_control">ನೀವು ಅನುಮತಿಸುವ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ನಿಮ್ಮ SandFly ಧ್ವನಿಯಲ್ಲಿ ಪಠ್ಯವನ್ನು ಹೇಳಬಹುದು. ಸಾಧನವು ಲಾಕ್ ಆಗಿರುವಾಗ ಏನನ್ನೂ ಹೇಳಲಾಗುವುದಿಲ್ಲ.</string>
     <string name="title_pref_speech_control_sound">ಇತರ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು ಮಾತನಾಡುವ ಮೊದಲು ಧ್ವನಿಯನ್ನು ಪ್ಲೇ ಮಾಡಿ</string>
     <string name="speech_control_apps_category">ಆ್ಯಪ್‌ಗಳು</string>
@@ -1731,7 +1731,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ತೆಗೆದುಕೊಳ್ಳಲಾಗಿದೆ. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ಬಿಡಲಾಗಿದೆ. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ಈ ಕ್ರಮದಲ್ಲಿ ಐಟಂನ ವಿವರಗಳನ್ನು ಹೇಳುತ್ತದೆ. ಅದನ್ನು ಬದಲಾಯಿಸಲು, ವಿವರವನ್ನು ಸ್ಪರ್ಶಿಸಿ ಮತ್ತು ಹಿಡಿದುಕೊಳ್ಳಿ, ನಂತರ ಅದನ್ನು ಮೇಲಕ್ಕೆ ಅಥವಾ ಕೆಳಕ್ಕೆ ಎಳೆಯಿರಿ. SandFly ಆನ್‌ನೊಂದಿಗೆ, ಡಬಲ್-ಟ್ಯಾಪ್ ಮಾಡಿ ಮತ್ತು ಹಿಡಿದುಕೊಳ್ಳಿ, ನಂತರ ಎಳೆಯಿರಿ. ನೀವು ಮೂವ್ ಅಪ್ ಮತ್ತು ಮೂವ್ ಡೌನ್ ಕ್ರಿಯೆಗಳನ್ನು ಸಹ ಬಳಸಬಹುದು.</string>
-    <string name="title_pref_speak_items_before_scroll">ಐಟಂಗಳು ವೀಕ್ಷಣೆಗೆ ಸ್ಕ್ರಾಲ್ ಮಾಡುವ ಮೊದಲು ಅವುಗಳನ್ನು ಮಾತನಾಡಿ</string>
+    <string name="title_pref_speak_items_before_scroll">ಐಟಂಗಳು ವೀಕ್ಷಣೆಗೆ ಸ್ಕ್ರಾಲ್ ಆಗುವ ಮೊದಲು ಅವುಗಳನ್ನು ಹೇಳಿ</string>
     <string name="gemini_error_api_key">Gemini API ಕೀಯನ್ನು ಸ್ವೀಕರಿಸಲಿಲ್ಲ. ಸ್ವಯಂಚಾಲಿತ ವಿವರಣೆ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಕೀಯನ್ನು ಪರಿಶೀಲಿಸಿ.</string>
     <string name="gemini_error_quota">ನಿಮ್ಮ Gemini API ಕೀಗೆ ಬಳಕೆಯ ಮಿತಿಯನ್ನು ತಲುಪಲಾಗಿದೆ. ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="gemini_error_busy">Gemini ಇದೀಗ ಕಾರ್ಯನಿರತವಾಗಿದೆ. ಒಂದು ಕ್ಷಣದಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>

@@ -1557,7 +1557,7 @@
     <string name="value_audio_output_device_wired_headphones">កាសស្តាប់ត្រចៀកមានខ្សែ</string>
     <string name="value_audio_output_device_usb_headset">កាសស្តាប់ត្រចៀក USB</string>
     <string name="value_audio_output_device_usb_device">ឧបករណ៍អូឌីយ៉ូ USB</string>
-    <string name="title_pref_speaker_devices">ឧបករណ៍បំពងសម្លេងទូរស័ព្ទជាមួយឧបករណ៍ទាំងនេះ</string>
+    <string name="title_pref_speaker_devices">ឧបករណ៍បំពងសំឡេងទូរសព្ទ ពេលភ្ជាប់ឧបករណ៍ទាំងនេះ</string>
     <string name="summary_pref_speaker_devices_none">គ្មាន</string>
     <string name="summary_pref_speaker_devices_no_devices">មិនទាន់បានភ្ជាប់ឧបករណ៍ Bluetooth ឬមានខ្សែនៅឡើយទេ</string>
     <string name="pref_reduce_window_delay_summary">SandFly អានអេក្រង់ថ្មីបានលឿនជាងមុន នៅពេលដែលចលនាបិទ។ វាបិទចលនាសម្រាប់ទូរស័ព្ទទាំងមូល។</string>
@@ -1636,8 +1636,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">អូសវែងឡើងលើពីគែមខាងក្រោម</string>
     <string name="title_pref_shortcut_edge_top_left_down">អូសចុះក្រោមពីកំពូលឆ្វេង</string>
     <string name="title_pref_shortcut_edge_top_right_down">អូសចុះក្រោមពីខាងស្តាំខាងលើ</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">អូសយូរចុះពីកំពូលឆ្វេង</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">អូសយូរចុះពីខាងស្ដាំកំពូល</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">អូសវែងចុះពីខាងឆ្វេងខាងលើ</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">អូសវែងចុះពីខាងស្ដាំខាងលើ</string>
     <string name="title_pref_shortcut_edge_left_top_right">អូសទៅស្តាំពីគែមខាងឆ្វេង ពាក់កណ្តាលខាងលើ</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">អូសយូរទៅស្តាំពីគែមខាងឆ្វេង ពាក់កណ្តាលខាងលើ</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">អូសទៅស្តាំពីគែមខាងឆ្វេង ពាក់កណ្តាលខាងក្រោម</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up">រើសបាន <xliff:g id="detail" example="Name">%1$s</xliff:g>។ <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">ទម្លាក់ <xliff:g id="detail" example="Name">%1$s</xliff:g>។ <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly និយាយព័ត៌មានលម្អិតរបស់ធាតុនៅក្នុងលំដាប់នេះ។ ដើម្បីផ្លាស់ប្តូរវា សូមប៉ះព័ត៌មានលម្អិតមួយឱ្យជាប់ បន្ទាប់មកអូសវាឡើងលើ ឬចុះក្រោម។ ជាមួយនឹងការបើក SandFly ចុចពីរដងឱ្យជាប់ រួចអូស។ អ្នកក៏អាចប្រើសកម្មភាពផ្លាស់ទីឡើងលើ និងផ្លាស់ទីចុះក្រោមផងដែរ។</string>
-    <string name="title_pref_speak_items_before_scroll">និយាយធាតុមុនពេលពួកគេរំកិលចូលមើល</string>
+    <string name="title_pref_speak_items_before_scroll">និយាយធាតុមុនពេលវារំកិលចូលក្នុងទិដ្ឋភាព</string>
     <string name="gemini_error_api_key">Gemini មិនទទួលយកសោ API ទេ។ ពិនិត្យមើលសោនៅក្នុងការកំណត់ការពិពណ៌នាដោយស្វ័យប្រវត្តិ។</string>
     <string name="gemini_error_quota">ដែនកំណត់នៃការប្រើប្រាស់សម្រាប់សោ Gemini API របស់អ្នកត្រូវបានឈានដល់។ ព្យាយាមម្តងទៀតនៅពេលក្រោយ។</string>
     <string name="gemini_error_busy">Gemini ពេលនេះរវល់។ ព្យាយាមម្តងទៀតក្នុងពេលបន្តិចទៀត។</string>

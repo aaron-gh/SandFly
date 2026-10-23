@@ -1344,7 +1344,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">長いテキストを一度に 1 文ずつ送信する</string>
+    <string name="title_pref_speak_in_phrases">長いテキストを 1 文ずつ送信</string>
     <string name="summary_pref_speak_in_phrases">Gryphon などの音声エンジンの場合、停止が遅いため、スワイプすると長いテキストが一度に停止します。多くのエンジンは、別々に送信されるセンテンスの間に一時停止時間が長くなるため、エンジンがすぐに停止する場合は、これをオフのままにしておきます。</string>
     <string name="battery_optimization_notification_title">バッテリーの最適化によって SandFly が停止することがあります</string>
     <string name="battery_optimization_notification_text">この携帯電話では、画面がオフになった後にバッテリー セーバーによって SandFly が停止されるため、再起動されるまで静かになります。タップしてバッテリーの最適化を開き、[すべてのアプリ] を選択して、SandFly を見つけて、[最適化しない] を選択します。</string>
@@ -1379,12 +1379,12 @@
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch 用にジェスチャーを確保</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly による 2 本指のシングルタップとダブルタップの処理を停止し、Samsung Vibration Watch が使用できるようにします。ウォッチのアクセシビリティ設定で Vibration Watch を有効にします。</string>
     <string name="shortcut_reserved_for_vibration_watch">詳細設定の Vibration Watch 用に予約されています</string>
-    <string name="title_pref_speakerphone_away_from_ear">スピーカーを耳から離したとき</string>
+    <string name="title_pref_speakerphone_away_from_ear">耳から離したときにスピーカー</string>
     <string name="summary_pref_speakerphone_away_from_ear">通話中に電話機を耳から離すとスピーカーに切り替わり、再び持ち上げると受話口に戻ります。</string>
     <string name="summary_pref_speakerphone_needs_permission">Android がスクリーン リーダーに与えない許可が必要です。許可するには、adb or Shizuku, then come back to this screen: %1$s を指定してこのコマンドを実行します</string>
     <string name="action_copy_command">コマンドをコピー</string>
     <string name="command_copied">コマンドがコピーされました</string>
-    <string name="title_pref_speech_control">他のアプリに話しかけてもらう</string>
+    <string name="title_pref_speech_control">他のアプリの読み上げを許可</string>
     <string name="summary_pref_speech_control">許可したアプリは、SandFly の声でテキストを話すことができます。デバイスがロックされている間は何も言われません。</string>
     <string name="title_pref_speech_control_sound">他のアプリが話す前にサウンドを再生する</string>
     <string name="speech_control_apps_category">アプリ</string>
@@ -1554,7 +1554,7 @@
     <string name="value_audio_output_device_wired_headphones">有線ヘッドフォン</string>
     <string name="value_audio_output_device_usb_headset">USB ヘッドセット</string>
     <string name="value_audio_output_device_usb_device">USB オーディオデバイス</string>
-    <string name="title_pref_speaker_devices">これらのデバイスを備えた電話スピーカー</string>
+    <string name="title_pref_speaker_devices">これらのデバイスの接続時はスマートフォンのスピーカー</string>
     <string name="summary_pref_speaker_devices_none">なし</string>
     <string name="summary_pref_speaker_devices_no_devices">Bluetooth または有線デバイスがまだ接続されていません</string>
     <string name="pref_reduce_window_delay_summary">SandFly は、アニメーションがオフのときに新しい画面をより速く読み取ります。これにより、電話全体のアニメーションがオフになります。</string>

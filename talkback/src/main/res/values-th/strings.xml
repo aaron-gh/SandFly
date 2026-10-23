@@ -1388,7 +1388,7 @@
     <string name="summary_pref_speakerphone_needs_permission">ต้องการการอนุญาตที่ Android ไม่ได้มอบให้กับโปรแกรมอ่านหน้าจอ หากต้องการอนุญาต ให้รันคำสั่งนี้ด้วย adb or Shizuku, then come back to this screen: %1$s</string>
     <string name="action_copy_command">คัดลอกคำสั่ง</string>
     <string name="command_copied">คัดลอกคำสั่งแล้ว</string>
-    <string name="title_pref_speech_control">ให้แอปอื่นๆ พูด</string>
+    <string name="title_pref_speech_control">อนุญาตให้แอปอื่นพูด</string>
     <string name="summary_pref_speech_control">แอปที่คุณอนุญาตสามารถพูดข้อความด้วยเสียง SandFly ของคุณได้ ไม่มีการพูดอะไรในขณะที่อุปกรณ์ถูกล็อค</string>
     <string name="title_pref_speech_control_sound">เล่นเสียงก่อนที่แอปอื่นจะพูด</string>
     <string name="speech_control_apps_category">แอป</string>
@@ -1558,7 +1558,7 @@
     <string name="value_audio_output_device_wired_headphones">หูฟังแบบมีสาย</string>
     <string name="value_audio_output_device_usb_headset">ชุดหูฟัง USB</string>
     <string name="value_audio_output_device_usb_device">อุปกรณ์เสียง USB</string>
-    <string name="title_pref_speaker_devices">ลำโพงโทรศัพท์กับอุปกรณ์เหล่านี้</string>
+    <string name="title_pref_speaker_devices">ลำโพงโทรศัพท์เมื่อเชื่อมต่ออุปกรณ์เหล่านี้</string>
     <string name="summary_pref_speaker_devices_none">ไม่มี</string>
     <string name="summary_pref_speaker_devices_no_devices">ยังไม่ได้เชื่อมต่ออุปกรณ์ Bluetooth หรือแบบมีสาย</string>
     <string name="pref_reduce_window_delay_summary">SandFly อ่านหน้าจอใหม่เร็วขึ้นเมื่อปิดภาพเคลื่อนไหว การดำเนินการนี้จะปิดภาพเคลื่อนไหวสำหรับโทรศัพท์ทั้งหมด</string>
@@ -1637,8 +1637,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">ปัดขึ้นยาวจากขอบด้านล่าง</string>
     <string name="title_pref_shortcut_edge_top_left_down">ปัดลงจากซ้ายบน</string>
     <string name="title_pref_shortcut_edge_top_right_down">ปัดลงจากด้านบนขวา</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">ปัดลงจากซ้ายบนค้างไว้</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">ปัดลงจากขวาบนค้างไว้</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">ปัดลงยาวจากซ้ายบน</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">ปัดลงยาวจากขวาบน</string>
     <string name="title_pref_shortcut_edge_left_top_right">ปัดไปทางขวาจากขอบซ้ายครึ่งบน</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">ปัดไปทางขวายาวๆ จากขอบซ้าย ครึ่งบน</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">ปัดไปทางขวาจากขอบซ้ายครึ่งล่าง</string>
@@ -1731,7 +1731,7 @@
     <string name="template_item_details_order_picked_up">หยิบ <xliff:g id="detail" example="Name">%1$s</xliff:g> ขึ้นมาแล้ว <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">วาง <xliff:g id="detail" example="Name">%1$s</xliff:g> แล้ว <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ระบุรายละเอียดของรายการในคำสั่งซื้อนี้ หากต้องการเปลี่ยน ให้แตะรายละเอียดค้างไว้ จากนั้นลากขึ้นหรือลง เมื่อเปิด SandFly ให้แตะสองครั้งค้างไว้แล้วลาก คุณยังสามารถใช้การกระทำเลื่อนขึ้นและเลื่อนลงได้</string>
-    <string name="title_pref_speak_items_before_scroll">พูดรายการก่อนที่จะเลื่อนเข้าสู่มุมมอง</string>
+    <string name="title_pref_speak_items_before_scroll">พูดรายการก่อนที่จะเลื่อนเข้ามาในมุมมอง</string>
     <string name="gemini_error_api_key">Gemini ไม่ยอมรับคีย์ API ตรวจสอบกุญแจในการตั้งค่าคำอธิบายอัตโนมัติ</string>
     <string name="gemini_error_quota">ถึงขีดจำกัดการใช้งานสำหรับคีย์ Gemini API ของคุณแล้ว ลองอีกครั้งในภายหลัง</string>
     <string name="gemini_error_busy">Gemini ไม่ว่างในขณะนี้ โปรดลองอีกครั้งในอีกสักครู่</string>

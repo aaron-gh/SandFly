@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Trimiteți text lung o propoziție la un moment dat</string>
+    <string name="title_pref_speak_in_phrases">Trimite textul lung câte o propoziție</string>
     <string name="summary_pref_speak_in_phrases">Pentru motoarele de vorbire care se opresc lent, cum ar fi Gryphon, prin urmare, glisarea oprește simultan textul lung. Multe motoare fac o pauză mai lungă între propoziții trimise separat, așa că oprește această opțiune dacă a ta se oprește rapid.</string>
     <string name="battery_optimization_notification_title">Optimizarea bateriei poate opri SandFly</string>
     <string name="battery_optimization_notification_text">Pe acest telefon, economizorul bateriei se poate opri SandFly după ce ecranul se stinge, așa că tace până când este repornit. Atingeți pentru a deschide Optimizarea bateriei, alegeți Toate aplicațiile, găsiți SandFly și alegeți Nu optimizați.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">Schimbă automat dialectul</string>
     <string name="category_collapsed">Secțiune restrânsă</string>
     <string name="category_expanded">Secțiune extinsă</string>
-    <string name="title_pref_speak_nav_bar_buttons">Rostiți butoanele barei de navigare</string>
+    <string name="title_pref_speak_nav_bar_buttons">Rostește butoanele barei de navigare</string>
     <string name="summary_pref_speak_nav_bar_buttons">Cu lift pentru a activa pe bara de navigare, rostiți butonul pe care îl apăsați o atingere, cum ar fi Înapoi sau Acasă.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Bateria <xliff:g id="battery_level" example="73">%1$s</xliff:g> la sută</string>
@@ -1382,7 +1382,7 @@
     <string name="title_pref_reserve_vibration_watch_gestures">Rezervă gesturi pentru Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Oprește SandFly manipularea atingerilor simple și duble cu două degete, astfel încât Samsung Vibration Watch să le poată folosi. Activați Vibration Watch în setările de accesibilitate ale ceasului dvs.</string>
     <string name="shortcut_reserved_for_vibration_watch">Rezervat pentru Vibration Watch în Setări avansate</string>
-    <string name="title_pref_speakerphone_away_from_ear">Difuzor când este departe de urechea ta</string>
+    <string name="title_pref_speakerphone_away_from_ear">Difuzor când telefonul e departe de ureche</string>
     <string name="summary_pref_speakerphone_away_from_ear">În timpul unui apel, comută la difuzor când scoateți telefonul de la ureche și înapoi la cască când îl țineți din nou sus.</string>
     <string name="summary_pref_speakerphone_needs_permission">Are nevoie de o permisiune pe care Android nu o acordă cititorilor de ecran. Pentru a o acorda, rulați această comandă cu adb or Shizuku, then come back to this screen: %1$s</string>
     <string name="action_copy_command">Copiază comanda</string>
@@ -1734,7 +1734,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ridicat. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Plasat: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly spune detaliile unui articol în această ordine. Pentru a-l schimba, atingeți lung un detaliu, apoi trageți-l în sus sau în jos. Cu SandFly activat, atingeți de două ori și mențineți apăsat, apoi trageți. De asemenea, puteți utiliza acțiunile Mutare în sus și Mutare în jos.</string>
-    <string name="title_pref_speak_items_before_scroll">Rostiți elementele înainte ca acestea să defileze la vedere</string>
+    <string name="title_pref_speak_items_before_scroll">Rostește elementele înainte să fie derulate în vizualizare</string>
     <string name="gemini_error_api_key">Gemini nu a acceptat cheia API. Verificați cheia în setările descrierilor automate.</string>
     <string name="gemini_error_quota">Limita de utilizare pentru cheia dvs. API Gemini a fost atinsă. Încercați din nou mai târziu.</string>
     <string name="gemini_error_busy">Gemini este ocupat acum. Încercați din nou peste un moment.</string>

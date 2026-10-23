@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">긴 문자를 한 번에 한 문장씩 보내세요</string>
+    <string name="title_pref_speak_in_phrases">긴 텍스트를 한 문장씩 보내기</string>
     <string name="summary_pref_speak_in_phrases">Gryphon과 같이 중지 속도가 느린 음성 엔진의 경우 스와이프하면 긴 텍스트가 한 번에 중지됩니다. 많은 엔진이 별도로 전송된 문장 사이에 더 오랫동안 일시 중지하므로 문장이 빠르게 중지되는 경우 이 기능을 해제해 두세요.</string>
     <string name="battery_optimization_notification_title">배터리 최적화로 SandFly가 중지될 수 있음</string>
     <string name="battery_optimization_notification_text">이 휴대전화에서는 화면이 꺼진 후 배터리 절약 모드가 SandFly 중지될 수 있으므로 다시 시작할 때까지 무음으로 유지됩니다. 탭하여 배터리 최적화를 열고 모든 앱을 선택한 다음 SandFly를 찾아 최적화하지 않음을 선택하세요.</string>
@@ -1387,7 +1387,7 @@
     <string name="summary_pref_speakerphone_needs_permission">Android 화면 판독기에는 부여되지 않는 권한이 필요합니다. 이를 부여하려면 adb or Shizuku, then come back to this screen: %1$s와 함께 이 명령을 실행하세요.</string>
     <string name="action_copy_command">명령어 복사</string>
     <string name="command_copied">명령이 복사되었습니다.</string>
-    <string name="title_pref_speech_control">다른 앱이 말하게 하세요</string>
+    <string name="title_pref_speech_control">다른 앱의 음성 출력 허용</string>
     <string name="summary_pref_speech_control">허용한 앱은 SandFly 음성으로 텍스트를 말할 수 있습니다. 장치가 잠겨 있는 동안에는 아무 말도 하지 않습니다.</string>
     <string name="title_pref_speech_control_sound">다른 앱이 말하기 전에 소리 재생</string>
     <string name="speech_control_apps_category">앱</string>
@@ -1557,7 +1557,7 @@
     <string name="value_audio_output_device_wired_headphones">유선 헤드폰</string>
     <string name="value_audio_output_device_usb_headset">USB 헤드셋</string>
     <string name="value_audio_output_device_usb_device">USB 오디오 장치</string>
-    <string name="title_pref_speaker_devices">이 장치를 갖춘 전화 스피커</string>
+    <string name="title_pref_speaker_devices">이 기기 연결 시 휴대전화 스피커 사용</string>
     <string name="summary_pref_speaker_devices_none">없음</string>
     <string name="summary_pref_speaker_devices_no_devices">아직 Bluetooth 또는 유선 기기가 연결되지 않았습니다.</string>
     <string name="pref_reduce_window_delay_summary">SandFly 애니메이션이 꺼지면 새 화면을 더 빠르게 읽습니다. 그러면 전체 전화기의 애니메이션이 꺼집니다.</string>
@@ -1635,7 +1635,7 @@
     <string name="title_pref_shortcut_edge_bottom_up">하단 가장자리에서 위로 스와이프</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">하단 가장자리에서 위로 길게 스와이프</string>
     <string name="title_pref_shortcut_edge_top_left_down">왼쪽 상단에서 아래로 스와이프</string>
-    <string name="title_pref_shortcut_edge_top_right_down">오른쪽 상단에서 아래로 스와이프하세요.</string>
+    <string name="title_pref_shortcut_edge_top_right_down">오른쪽 상단에서 아래로 스와이프</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">왼쪽 상단에서 아래로 길게 스와이프</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">오른쪽 상단에서 아래로 길게 스와이프</string>
     <string name="title_pref_shortcut_edge_left_top_right">왼쪽 가장자리, 위쪽 절반에서 오른쪽으로 스와이프</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> 항목을 들어 올림. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> 놓음. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly는 해당 주문의 항목 세부정보를 나타냅니다. 변경하려면 세부정보를 길게 터치한 후 위나 아래로 드래그하세요. SandFly를 켠 상태에서 두 번 탭하고 누른 다음 드래그합니다. 위로 이동 및 아래로 이동 작업을 사용할 수도 있습니다.</string>
-    <string name="title_pref_speak_items_before_scroll">스크롤하여 보기 전에 항목을 말하세요.</string>
+    <string name="title_pref_speak_items_before_scroll">스크롤되어 표시되기 전에 항목 말하기</string>
     <string name="gemini_error_api_key">Gemini API 키를 수락하지 않았습니다. 자동 설명 설정에서 키를 확인하세요.</string>
     <string name="gemini_error_quota">Gemini API 키의 사용 제한에 도달했습니다. 나중에 다시 시도하세요.</string>
     <string name="gemini_error_busy">Gemini 지금은 바빠요. 잠시 후에 다시 시도해 보세요.</string>

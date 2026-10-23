@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">වරකට වාක්‍යයක් දිගු අකුරු යවන්න</string>
+    <string name="title_pref_speak_in_phrases">දිගු පෙළ වරකට එක් වාක්‍යයක් ලෙස යවන්න</string>
     <string name="summary_pref_speak_in_phrases">Gryphon වැනි කථන යන්ත්‍ර නැවැත්වීමට ප්‍රමාද වන බැවින් ඉවතට ස්වයිප් කිරීම දිගු අකුරු එකවර නතර කරයි. බොහෝ එන්ජින් වෙන වෙනම යවන ලද වාක්‍ය අතර දිගු විරාමයක් ලබා දෙයි, එබැවින් ඔබේ එක ඉක්මනින් නතර වුවහොත් මෙය ක්‍රියා විරහිත කරන්න.</string>
     <string name="battery_optimization_notification_title">බැටරි ප්‍රශස්තකරණය SandFly නැවැත්විය හැක</string>
     <string name="battery_optimization_notification_text">මෙම දුරකථනයේ, තිරය ක්‍රියා විරහිත වූ පසු බැටරි සුරැකුමට SandFly නැවැත්විය හැක, එබැවින් එය නැවත ආරම්භ වන තෙක් එය නිශ්ශබ්ද වේ. බැටරි ප්‍රශස්තිකරණය විවෘත කිරීමට තට්ටු කරන්න, සියලුම යෙදුම් තෝරන්න, SandFly සොයාගෙන ප්‍රශස්ත නොකරන්න තෝරන්න.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">උපභාෂාව ස්වයංක්‍රීයව මාරු කරන්න</string>
     <string name="category_collapsed">හකුළන ලද කොටස</string>
     <string name="category_expanded">පුළුල් කරන ලද කොටස</string>
-    <string name="title_pref_speak_nav_bar_buttons">සංචාලන තීරු බොත්තම් කථා කරන්න</string>
+    <string name="title_pref_speak_nav_bar_buttons">සංචාලන තීරු බොත්තම් කියන්න</string>
     <string name="summary_pref_speak_nav_bar_buttons">සංචාලන තීරුව මත සක්‍රිය කිරීමට සෝපානය සමඟින්, ආපසු හෝ නිවස වැනි ටැප් එකක් එබූ බොත්තම කියන්න.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">බැටරිය සියයට <xliff:g id="battery_level" example="73">%1$s</xliff:g></string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> ඔසවන ලදී. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> අතහැරියා. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly මෙම අනුපිළිවෙලෙහි අයිතමයක විස්තර පවසයි. එය වෙනස් කිරීමට, විස්තරයක් ස්පර්ශ කර අල්ලාගෙන, පසුව එය ඉහළට හෝ පහළට අදින්න. SandFly සක්‍රීයව, දෙවරක් තට්ටු කර අල්ලාගෙන, පසුව අදින්න. ඔබට Move up සහ Move down යන ක්‍රියා ද භාවිතා කළ හැක.</string>
-    <string name="title_pref_speak_items_before_scroll">අයිතම බැලීමට පෙර ඒවා කථා කරන්න</string>
+    <string name="title_pref_speak_items_before_scroll">අයිතම අනුචලනය වී පෙනීමට පෙර ඒවා කියන්න</string>
     <string name="gemini_error_api_key">Gemini API යතුර පිළිගත්තේ නැත. ස්වයංක්‍රීය විස්තර සැකසුම් තුළ යතුර පරීක්ෂා කරන්න.</string>
     <string name="gemini_error_quota">ඔබගේ Gemini API යතුර සඳහා භාවිත සීමාව ළඟා වී ඇත. පසුව නැවත උත්සාහ කරන්න.</string>
     <string name="gemini_error_busy">Gemini දැන් කාර්ය බහුලයි. මොහොතකින් නැවත උත්සාහ කරන්න.</string>

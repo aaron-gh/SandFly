@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Испратете долга текстуална реченица во исто време</string>
+    <string name="title_pref_speak_in_phrases">Испраќај долг текст реченица по реченица</string>
     <string name="summary_pref_speak_in_phrases">За говорните мотори кои бавно запираат, како што е Gryphon, така што со лизгање настрана се запира долгиот текст одеднаш. Многу мотори паузираат подолго помеѓу речениците испратени одделно, затоа исклучете го ова ако вашата брзо престане.</string>
     <string name="battery_optimization_notification_title">Оптимизацијата на батеријата може да запре SandFly</string>
     <string name="battery_optimization_notification_text">На овој телефон, заштедата на батеријата може да престане SandFly откако екранот ќе се исклучи, така што тивко се додека не се рестартира. Допрете за да ја отворите оптимизацијата на батеријата, изберете Сите апликации, пронајдете SandFly и изберете Не оптимизирај.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">Автоматски менувај дијалект</string>
     <string name="category_collapsed">Собран дел</string>
     <string name="category_expanded">Проширен дел</string>
-    <string name="title_pref_speak_nav_bar_buttons">Зборувајте копчиња на лентата за навигација</string>
+    <string name="title_pref_speak_nav_bar_buttons">Изговарај ги копчињата на лентата за навигација</string>
     <string name="summary_pref_speak_nav_bar_buttons">Со лифт за активирање на лентата за навигација, кажете го копчето што ќе го притисне допирот, како што се Назад или Дома.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Батерија <xliff:g id="battery_level" example="73">%1$s</xliff:g> проценти</string>
@@ -1382,12 +1382,12 @@
     <string name="title_pref_reserve_vibration_watch_gestures">Резервирај ги гестовите за Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Престанува SandFly да ракува со единечни и двојни допири со два прста за да може Samsung Vibration Watch да ги користи. Овозможете Vibration Watch во поставките за пристапност на часовникот.</string>
     <string name="shortcut_reserved_for_vibration_watch">Резервирано за Vibration Watch во Напредни поставки</string>
-    <string name="title_pref_speakerphone_away_from_ear">Звучник кога е далеку од вашето уво</string>
+    <string name="title_pref_speakerphone_away_from_ear">Звучник кога телефонот е далеку од увото</string>
     <string name="summary_pref_speakerphone_away_from_ear">За време на повик, се префрла на звучникот кога ќе го тргнете телефонот од увото и се враќа на слушалката кога повторно ќе го држите нагоре.</string>
     <string name="summary_pref_speakerphone_needs_permission">Потребна е дозвола што Android не ја дава на читателите на екранот. За да го дадете, извршете ја оваа команда со adb or Shizuku, then come back to this screen: %1$s</string>
     <string name="action_copy_command">Копирај команда</string>
     <string name="command_copied">Командата е копирана</string>
-    <string name="title_pref_speech_control">Оставете ги другите апликации да зборуваат</string>
+    <string name="title_pref_speech_control">Дозволи другите апликации да зборуваат</string>
     <string name="summary_pref_speech_control">Апликациите што ги дозволувате може да кажат текст со вашиот глас SandFly. Ништо не се кажува додека уредот е заклучен.</string>
     <string name="title_pref_speech_control_sound">Пуштете звук пред да зборуваат другите апликации</string>
     <string name="speech_control_apps_category">Апликации</string>
@@ -1636,8 +1636,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">Долго повлекување нагоре од долниот раб</string>
     <string name="title_pref_shortcut_edge_top_left_down">Повлечете надолу од горе лево</string>
     <string name="title_pref_shortcut_edge_top_right_down">Повлечете надолу од горниот десен агол</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Долго лизгајте надолу од горе лево</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Долго лизгајте надолу од горе десно</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Долго повлекување надолу од горе лево</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Долго повлекување надолу од горе десно</string>
     <string name="title_pref_shortcut_edge_left_top_right">Повлечете надесно од левиот раб, горната половина</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Долго поминете десно од левиот раб, горната половина</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Повлечете надесно од левиот раб, долната половина</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up">Подигнато: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Пуштено: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ги кажува деталите за ставката по овој редослед. За да го промените, допрете и задржете некој детал, па повлечете го нагоре или надолу. Со вклучено SandFly, допрете двапати и задржете, па повлечете. Можете исто така да ги користите дејствата Премести нагоре и Премести надолу.</string>
-    <string name="title_pref_speak_items_before_scroll">Зборувајте ставки пред да се прелистат во поглед</string>
+    <string name="title_pref_speak_items_before_scroll">Изговарај ставки пред да се лизнат во приказ</string>
     <string name="gemini_error_api_key">Gemini не го прифати клучот API. Проверете го клучот во поставките за автоматски описи.</string>
     <string name="gemini_error_quota">Ограничувањето за користење на вашиот клуч API Gemini е достигнато. Обидете се повторно подоцна.</string>
     <string name="gemini_error_busy">Gemini е зафатен во моментов. Обидете се повторно за момент.</string>

@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Tuma sentensi ndefu kwa wakati mmoja</string>
+    <string name="title_pref_speak_in_phrases">Tuma maandishi marefu sentensi moja kwa wakati</string>
     <string name="summary_pref_speak_in_phrases">Kwa injini za usemi ambazo zina polepole kusimama, kama vile Gryphon, kwa hivyo kutelezesha kidole mbali husimamisha maandishi marefu mara moja. Injini nyingi husimama kwa muda mrefu kati ya sentensi zilizotumwa kando, kwa hivyo acha hii ikiwa yako itasimama haraka.</string>
     <string name="battery_optimization_notification_title">Uboreshaji wa betri unaweza kusimamisha SandFly</string>
     <string name="battery_optimization_notification_text">Kwenye simu hii, kiokoa betri kinaweza kusimama SandFly baada ya skrini kuzima, kwa hivyo itanyamaza hadi iwashwe tena. Gusa ili ufungue uboreshaji wa betri, chagua Programu Zote, pata SandFly na uchague Usiboresha.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">Badili lahaja kiotomatiki</string>
     <string name="category_collapsed">Sehemu iliyokunjwa</string>
     <string name="category_expanded">Sehemu iliyopanuliwa</string>
-    <string name="title_pref_speak_nav_bar_buttons">Ongea vitufe vya upau wa kusogeza</string>
+    <string name="title_pref_speak_nav_bar_buttons">Tamka vitufe vya upau wa kusogeza</string>
     <string name="summary_pref_speak_nav_bar_buttons">Kwa lifti ili kuwezesha kwenye upau wa kusogeza, sema kitufe ambacho mguso unabonyeza, kama vile Nyuma au Nyumbani.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Betri <xliff:g id="battery_level" example="73">%1$s</xliff:g> asilimia</string>
@@ -1557,7 +1557,7 @@
     <string name="value_audio_output_device_wired_headphones">Vipokea sauti vinavyobanwa kichwani vyenye waya</string>
     <string name="value_audio_output_device_usb_headset">Vifaa vya sauti vya USB</string>
     <string name="value_audio_output_device_usb_device">Kifaa cha sauti cha USB</string>
-    <string name="title_pref_speaker_devices">Spika ya simu yenye vifaa hivi</string>
+    <string name="title_pref_speaker_devices">Spika ya simu vifaa hivi vikiunganishwa</string>
     <string name="summary_pref_speaker_devices_none">Hamna</string>
     <string name="summary_pref_speaker_devices_no_devices">Bado hakuna vifaa vya Bluetooth au vya waya vilivyounganishwa</string>
     <string name="pref_reduce_window_delay_summary">SandFly husoma skrini mpya haraka wakati uhuishaji umezimwa. Hii huzima uhuishaji kwa simu nzima.</string>
@@ -1636,8 +1636,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">Telezesha kidole mbali juu kutoka ukingo wa chini</string>
     <string name="title_pref_shortcut_edge_top_left_down">Telezesha kidole chini kutoka juu kushoto</string>
     <string name="title_pref_shortcut_edge_top_right_down">Telezesha kidole chini kutoka juu kulia</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Telezesha kidole kwa muda mrefu chini kutoka juu kushoto</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Telezesha kidole kwa muda mrefu chini kutoka juu kulia</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Telezesha kidole mbali chini kutoka juu kushoto</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Telezesha kidole mbali chini kutoka juu kulia</string>
     <string name="title_pref_shortcut_edge_left_top_right">Telezesha kidole kulia kutoka ukingo wa kushoto, nusu ya juu</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Telezesha kidole kwa muda mrefu kulia kutoka ukingo wa kushoto, nusu ya juu</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Telezesha kidole kulia kutoka ukingo wa kushoto, nusu ya chini</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up">Imechukuliwa <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Imeachiliwa <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly inasema maelezo ya kipengee kwa mpangilio huu. Ili kuibadilisha, gusa na ushikilie maelezo, kisha yaburute juu au chini. Ukiwasha SandFly, gusa mara mbili na ushikilie, kisha uburute. Unaweza pia kutumia vitendo vya Sogeza juu na Sogeza chini.</string>
-    <string name="title_pref_speak_items_before_scroll">Zungumza vipengee kabla ya kusogeza kwenye mwonekano</string>
+    <string name="title_pref_speak_items_before_scroll">Tamka vipengee kabla havijasogezwa kwenye mwonekano</string>
     <string name="gemini_error_api_key">Gemini haikukubali ufunguo wa API. Angalia ufunguo katika mipangilio ya maelezo ya Kiotomatiki.</string>
     <string name="gemini_error_quota">Kikomo cha matumizi ya ufunguo wako wa Gemini API kimefikiwa. Jaribu tena baadaye.</string>
     <string name="gemini_error_busy">Gemini ina shughuli nyingi sasa hivi. Jaribu tena baada ya muda mfupi.</string>

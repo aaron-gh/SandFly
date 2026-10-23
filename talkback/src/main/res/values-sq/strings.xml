@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Dërgoni tekst të gjatë një fjali në të njëjtën kohë</string>
+    <string name="title_pref_speak_in_phrases">Dërgo tekstin e gjatë fjali pas fjalie</string>
     <string name="summary_pref_speak_in_phrases">Për motorët e të folurit që ndalojnë ngadalë, si p.sh. Gryphon, kështu që rrëshqitja larg ndalon menjëherë tekstin e gjatë. Shumë motorë ndalojnë më gjatë midis fjalive të dërguara veçmas, kështu që lëreni këtë nëse e juaja ndalon shpejt.</string>
     <string name="battery_optimization_notification_title">Optimizimi i baterisë mund të ndalojë SandFly</string>
     <string name="battery_optimization_notification_text">Në këtë telefon, kursyesi i baterisë mund të ndalojë SandFly pasi ekrani fiket, kështu që bie në heshtje derisa të rindizet. Prekni për të hapur optimizimin e baterisë, zgjidhni Të gjitha aplikacionet, gjeni SandFly dhe zgjidhni Mos optimizo.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">Ndërro automatikisht dialektin</string>
     <string name="category_collapsed">Seksioni i palosur</string>
     <string name="category_expanded">Seksioni i zgjeruar</string>
-    <string name="title_pref_speak_nav_bar_buttons">Flisni butonat e shiritit të navigimit</string>
+    <string name="title_pref_speak_nav_bar_buttons">Thuaj butonat e shiritit të navigimit</string>
     <string name="summary_pref_speak_nav_bar_buttons">Me ngritjen për t\'u aktivizuar në shiritin e navigimit, thoni butonin që shtyp një trokitje, si p.sh. Prapa ose Home.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Bateria <xliff:g id="battery_level" example="73">%1$s</xliff:g> përqind</string>
@@ -1387,7 +1387,7 @@
     <string name="summary_pref_speakerphone_needs_permission">Nevojë për një leje që Android nuk ua jep lexuesve të ekranit. Për ta dhënë atë, ekzekutoni këtë komandë me adb or Shizuku, then come back to this screen: %1$s</string>
     <string name="action_copy_command">Kopjo komandën</string>
     <string name="command_copied">Komanda u kopjua</string>
-    <string name="title_pref_speech_control">Lërini aplikacionet e tjera të flasin</string>
+    <string name="title_pref_speech_control">Lejo aplikacionet e tjera të flasin</string>
     <string name="summary_pref_speech_control">Aplikacionet që ju lejoni mund të thonë tekst me zërin tuaj SandFly. Asgjë nuk thuhet ndërsa pajisja është e kyçur.</string>
     <string name="title_pref_speech_control_sound">Luaj një tingull përpara se të flasin aplikacionet e tjera</string>
     <string name="speech_control_apps_category">Aplikacionet</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up">U mor: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">U lëshua <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly thotë detajet e një artikulli në këtë renditje. Për ta ndryshuar, prekni dhe mbani një detaj dhe më pas tërhiqeni lart ose poshtë. Me SandFly të aktivizuar, prekni dy herë dhe mbani, më pas zvarriteni. Mund të përdorni gjithashtu veprimet Lëviz lart dhe Lëviz poshtë.</string>
-    <string name="title_pref_speak_items_before_scroll">Flisni artikujt përpara se të lëvizin në pamje</string>
+    <string name="title_pref_speak_items_before_scroll">Thuaj artikujt përpara se të lëvizin në pamje</string>
     <string name="gemini_error_api_key">Gemini nuk e pranoi çelësin API. Kontrolloni çelësin te cilësimet e përshkrimeve automatike.</string>
     <string name="gemini_error_quota">Kufiri i përdorimit për çelësin tuaj API Gemini është arritur. Provo sërish më vonë.</string>
     <string name="gemini_error_busy">Gemini është i zënë për momentin. Provo sërish pas një momenti.</string>

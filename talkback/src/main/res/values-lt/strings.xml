@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Vienu sakiniu siųskite ilgą tekstą</string>
+    <string name="title_pref_speak_in_phrases">Siųsti ilgą tekstą po vieną sakinį</string>
     <string name="summary_pref_speak_in_phrases">Kalbos varikliuose, kurie lėtai sustoja, pvz., Gryphon, todėl perbraukus tolyn ilgas tekstas sustabdomas iš karto. Daugelis variklių daro ilgesnę pauzę tarp atskirai siunčiamų sakinių, todėl palikite tai išjungti, jei jūsiškis greitai sustoja.</string>
     <string name="battery_optimization_notification_title">Akumuliatoriaus optimizavimas gali sustabdyti SandFly</string>
     <string name="battery_optimization_notification_text">Šiame telefone akumuliatoriaus tausojimo priemonė gali sustoti SandFly, kai ekranas išsijungia, todėl nutyla, kol bus paleistas iš naujo. Palieskite, kad atidarytumėte akumuliatoriaus optimizavimą, pasirinkite Visos programos, raskite SandFly ir pasirinkite Neoptimizuoti.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">Automatiškai perjungti tarmę</string>
     <string name="category_collapsed">Sutrauktas skyrius</string>
     <string name="category_expanded">Išplėstas skyrius</string>
-    <string name="title_pref_speak_nav_bar_buttons">Ištarkite naršymo juostos mygtukus</string>
+    <string name="title_pref_speak_nav_bar_buttons">Ištarti naršymo juostos mygtukus</string>
     <string name="summary_pref_speak_nav_bar_buttons">Naršymo juostoje suaktyvinę pakėlimą pasakykite mygtuką, kurį paspaudžia bakstelėjimas, pvz., Atgal arba Home.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Baterija <xliff:g id="battery_level" example="73">%1$s</xliff:g> proc</string>
@@ -1387,7 +1387,7 @@
     <string name="summary_pref_speakerphone_needs_permission">Reikia leidimo, kurio Android nesuteikia ekrano skaitytuvams. Norėdami tai suteikti, paleiskite šią komandą su adb or Shizuku, then come back to this screen: %1$s</string>
     <string name="action_copy_command">Kopijuoti komandą</string>
     <string name="command_copied">Komanda nukopijuota</string>
-    <string name="title_pref_speech_control">Leiskite kalbėti kitoms programoms</string>
+    <string name="title_pref_speech_control">Leisti kitoms programoms kalbėti</string>
     <string name="summary_pref_speech_control">Programos, kurias leidžiate, gali pasakyti tekstą jūsų SandFly balsu. Kol įrenginys užrakintas, nieko nesakoma.</string>
     <string name="title_pref_speech_control_sound">Leiskite garsą prieš kalbėdami kitoms programoms</string>
     <string name="speech_control_apps_category">Programos</string>
@@ -1643,9 +1643,9 @@
     <string name="title_pref_shortcut_edge_bottom_up">Braukite aukštyn nuo apatinio krašto</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Ilgas braukimas aukštyn nuo apatinio krašto</string>
     <string name="title_pref_shortcut_edge_top_left_down">Braukite žemyn nuo viršutinio kairiojo krašto</string>
-    <string name="title_pref_shortcut_edge_top_right_down">Braukite žemyn iš viršaus dešinėje</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Ilgai braukite žemyn iš viršaus į kairę</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Ilgai braukite žemyn iš viršaus dešinėje</string>
+    <string name="title_pref_shortcut_edge_top_right_down">Braukite žemyn nuo viršutinio dešiniojo krašto</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Ilgas braukimas žemyn nuo viršutinio kairiojo krašto</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Ilgas braukimas žemyn nuo viršutinio dešiniojo krašto</string>
     <string name="title_pref_shortcut_edge_left_top_right">Braukite dešinėn nuo kairiojo krašto, viršutinės pusės</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Ilgai braukite dešinėn nuo kairiojo krašto, viršutinės pusės</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Braukite dešinėn nuo kairiojo krašto, apatinės pusės</string>
@@ -1738,7 +1738,7 @@
     <string name="template_item_details_order_picked_up">Paimta: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Paleista: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly nurodo išsamią prekės informaciją šia tvarka. Norėdami ją pakeisti, palieskite ir palaikykite detalę, tada vilkite ją aukštyn arba žemyn. Įjungę SandFly dukart bakstelėkite ir palaikykite, tada vilkite. Taip pat galite naudoti veiksmus Perkelti aukštyn ir Perkelti žemyn.</string>
-    <string name="title_pref_speak_items_before_scroll">Ištarkite elementus prieš jiems pasirodant</string>
+    <string name="title_pref_speak_items_before_scroll">Ištarti elementus, kol jie dar neslinkti į rodinį</string>
     <string name="gemini_error_api_key">Gemini nepriėmė API rakto. Patikrinkite raktą automatinių aprašų nustatymuose.</string>
     <string name="gemini_error_quota">Pasiektas jūsų Gemini API rakto naudojimo limitas. Vėliau bandykite dar kartą.</string>
     <string name="gemini_error_busy">Gemini šiuo metu yra užimtas. Po akimirkos bandykite dar kartą.</string>

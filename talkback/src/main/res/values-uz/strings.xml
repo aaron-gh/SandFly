@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Bir vaqtning o\'zida uzun matnli jumla yuboring</string>
+    <string name="title_pref_speak_in_phrases">Uzun matnni gapma-gap yuborish</string>
     <string name="summary_pref_speak_in_phrases">Gryphon kabi sekin toʻxtaydigan nutq mexanizmlari uchun surish uzoq matnni birdaniga toʻxtatadi. Ko\'pgina dvigatellar alohida yuborilgan jumlalar orasida uzoqroq pauza qiladi, shuning uchun sizniki tezda to\'xtab qolsa, buni o\'chirib qo\'ying.</string>
     <string name="battery_optimization_notification_title">Batareyani optimallashtirish SandFly ishini toʻxtatishi mumkin</string>
     <string name="battery_optimization_notification_text">Bu telefonda batareya tejamkori ekran oʻchgandan soʻng SandFly toʻxtashi mumkin, shuning uchun u qayta ishga tushmaguncha jim turadi. Batareyani optimallashtirishni ochish uchun bosing, “Barcha ilovalar” bandini tanlang, SandFly-ni toping va “Optimallashtirmang” bandini tanlang.</string>
@@ -1357,7 +1357,7 @@
     <string name="title_pref_switch_dialects">Dialektni avtomatik almashtirish</string>
     <string name="category_collapsed">Yigʻilgan boʻlim</string>
     <string name="category_expanded">Kengaytirilgan bo\'lim</string>
-    <string name="title_pref_speak_nav_bar_buttons">Navigatsiya paneli tugmalarini gapiring</string>
+    <string name="title_pref_speak_nav_bar_buttons">Navigatsiya paneli tugmalarini aytish</string>
     <string name="summary_pref_speak_nav_bar_buttons">Navigatsiya panelida faollashtirish uchun ko‘targich bilan “Orqaga” yoki “Uyga” kabi bosgan tugmani ayting.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Batareya quvvati <xliff:g id="battery_level" example="73">%1$s</xliff:g> foiz</string>
@@ -1382,12 +1382,12 @@
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch uchun imo-ishoralarni zaxiralash</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch ulardan foydalanishi uchun SandFly ikki barmoq bilan bir va ikki marta teginishni toʻxtatadi. Soatingizning maxsus imkoniyatlar sozlamalarida Vibration Watch ni yoqing.</string>
     <string name="shortcut_reserved_for_vibration_watch">Kengaytirilgan sozlamalarda Vibration Watch uchun band qilingan</string>
-    <string name="title_pref_speakerphone_away_from_ear">Qulog\'ingizdan uzoqda bo\'lganda karnay</string>
+    <string name="title_pref_speakerphone_away_from_ear">Telefon quloqdan uzoqlashganda dinamik</string>
     <string name="summary_pref_speakerphone_away_from_ear">Qo\'ng\'iroq paytida telefonni qulog\'ingizdan olib qo\'yganingizda karnayga, yana ushlab turganingizda esa eshitish vositasiga qaytadi.</string>
     <string name="summary_pref_speakerphone_needs_permission">Android ekranni oʻqiydiganlarga ruxsat bermaydi. Uni berish uchun ushbu buyruqni adb or Shizuku, then come back to this screen: %1$s bilan bajaring</string>
     <string name="action_copy_command">Buyruqni nusxalash</string>
     <string name="command_copied">Buyruq nusxalandi</string>
-    <string name="title_pref_speech_control">Boshqa ilovalarga gapirishga ruxsat bering</string>
+    <string name="title_pref_speech_control">Boshqa ilovalarga gapirishga ruxsat berish</string>
     <string name="summary_pref_speech_control">Siz ruxsat bergan ilovalar SandFly ovozingiz bilan matn aytishi mumkin. Qurilma qulflanganda hech narsa aytilmaydi.</string>
     <string name="title_pref_speech_control_sound">Boshqa ilovalar gapirishdan oldin ovozni ijro eting</string>
     <string name="speech_control_apps_category">Ilovalar</string>
@@ -1636,8 +1636,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">Pastki chetidan yuqoriga uzun suring</string>
     <string name="title_pref_shortcut_edge_top_left_down">Yuqori chapdan pastga suring</string>
     <string name="title_pref_shortcut_edge_top_right_down">Yuqori oʻngdan pastga suring</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Yuqori chapdan pastga uzoq suring</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Yuqori oʻngdan pastga uzoq suring</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Yuqori chapdan pastga uzun suring</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Yuqori oʻngdan pastga uzun suring</string>
     <string name="title_pref_shortcut_edge_left_top_right">Chap chetidan, yuqori yarmidan o\'ngga suring</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Chap chetidan, yuqori yarmidan o\'ngga uzoq suring</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Chap chetidan, pastki yarmidan o\'ngga suring</string>
@@ -1730,7 +1730,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> olindi. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> qoʻyildi. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly bu tartibda element tafsilotlarini aytadi. Uni oʻzgartirish uchun tafsilotni bosing va ushlab turing, soʻng uni yuqoriga yoki pastga torting. SandFly yoqilgan boʻlsa, ikki marta bosing va ushlab turing, soʻngra sudrab turing. Yuqoriga siljitish va pastga siljitish amallaridan ham foydalanishingiz mumkin.</string>
-    <string name="title_pref_speak_items_before_scroll">Koʻrinishga oʻtishdan oldin elementlarni gapiring</string>
+    <string name="title_pref_speak_items_before_scroll">Elementlarni koʻrinishga aylantirilishidan oldin aytish</string>
     <string name="gemini_error_api_key">Gemini API kalitini qabul qilmadi. Avtomatik tavsiflar sozlamalarida kalitni tekshiring.</string>
     <string name="gemini_error_quota">Gemini API kalitingizdan foydalanish chegarasiga yetdi. Keyinroq qayta urinib ko‘ring.</string>
     <string name="gemini_error_busy">Gemini hozir band. Birozdan keyin qayta urinib ko‘ring.</string>

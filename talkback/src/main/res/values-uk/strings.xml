@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Надсилайте довгий текст по реченням за раз</string>
+    <string name="title_pref_speak_in_phrases">Надсилати довгий текст по одному реченню</string>
     <string name="summary_pref_speak_in_phrases">Для мовних механізмів, які повільно зупиняються, наприклад Gryphon, проведення пальцем убік зупиняє довгий текст одразу. Багато механізмів роблять довшу паузу між реченнями, надісланими окремо, тому вимкніть цю функцію, якщо ваша швидко зупиняється.</string>
     <string name="battery_optimization_notification_title">Оптимізація батареї може зупинити SandFly</string>
     <string name="battery_optimization_notification_text">На цьому телефоні режим економії заряду акумулятора може припинитися SandFly після вимкнення екрана, тому він замовкає, доки не буде перезапущено. Торкніться, щоб відкрити оптимізацію акумулятора, виберіть Усі програми, знайдіть SandFly та виберіть Не оптимізувати.</string>
@@ -1387,7 +1387,7 @@
     <string name="summary_pref_speakerphone_needs_permission">Потрібен дозвіл, який Android не надає програмам зчитування з екрана. Щоб надати його, запустіть цю команду з adb or Shizuku, then come back to this screen: %1$s</string>
     <string name="action_copy_command">Копіювати команду</string>
     <string name="command_copied">Команду скопійовано</string>
-    <string name="title_pref_speech_control">Нехай інші програми говорять</string>
+    <string name="title_pref_speech_control">Дозволити іншим програмам озвучувати текст</string>
     <string name="summary_pref_speech_control">Додатки, яким ви дозволите, можуть промовляти текст вашим голосом SandFly. Нічого не вимовляється, поки пристрій заблоковано.</string>
     <string name="title_pref_speech_control_sound">Відтворення звуку до того, як інші програми говорять</string>
     <string name="speech_control_apps_category">Додатки</string>
@@ -1644,8 +1644,8 @@
     <string name="title_pref_shortcut_edge_bottom_long_up">Довге проведення вгору від нижнього краю</string>
     <string name="title_pref_shortcut_edge_top_left_down">Проведіть пальцем вниз від верхнього лівого кута</string>
     <string name="title_pref_shortcut_edge_top_right_down">Проведіть пальцем вниз від правого верхнього кута</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Довго проведіть пальцем вниз з верхнього лівого кута</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Довге гортання зверху вниз праворуч</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Довге проведення вниз від верхнього лівого кута</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Довге проведення вниз від верхнього правого кута</string>
     <string name="title_pref_shortcut_edge_left_top_right">Проведіть праворуч від лівого краю, верхньої половини</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Довге гортання праворуч від лівого краю, верхня половина</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Проведіть праворуч від лівого краю, нижньої половини</string>
@@ -1738,7 +1738,7 @@
     <string name="template_item_details_order_picked_up">Взято: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Відпущено: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly говорить деталі елемента в цьому порядку. Щоб змінити його, натисніть і утримуйте деталь, а потім перетягніть її вгору або вниз. Коли SandFly увімкнено, двічі торкніться й утримуйте, а потім перетягніть. Ви також можете використовувати дії «Перемістити вгору» та «Перемістити вниз».</string>
-    <string name="title_pref_speak_items_before_scroll">Продиктуйте елементи, перш ніж вони прокрутяться до поля зору</string>
+    <string name="title_pref_speak_items_before_scroll">Озвучувати елементи до їх прокручування в поле зору</string>
     <string name="gemini_error_api_key">Gemini не прийняв ключ API. Перевірте ключ у налаштуваннях автоматичних описів.</string>
     <string name="gemini_error_quota">Досягнуто ліміту використання для вашого ключа Gemini API. Повторіть спробу пізніше.</string>
     <string name="gemini_error_busy">Gemini зараз зайнятий. Повторіть спробу за мить.</string>
