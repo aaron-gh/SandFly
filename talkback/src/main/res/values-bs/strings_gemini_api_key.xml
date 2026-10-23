@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">Sačuvaj</string>
     <string name="gemini_api_key_get">Nabavi ključ</string>
     <string name="gemini_api_terms_link">Dodatni uslovi korištenja usluge Gemini API</string>
+    <string name="title_pref_gemini_model">Gemini model</string>
+    <string name="gemini_model_automatic">Automatski</string>
+    <string name="summary_pref_gemini_model_automatic">Automatski: Gemini Flash, zatim Flash-Lite kada je Flash zauzet</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, zatim Flash-Lite kada je zauzet</string>
+    <string name="gemini_model_loading">Preuzimanje modela…</string>
+    <string name="gemini_model_list_failed">Nije moguće nabaviti modele: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Prvo postavite Gemini API ključ</string>
+    <string name="ai_service_address_hint">Adresa, kao što je https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Model</string>
+    <string name="ai_service_address_invalid">Adresa mora početi sa https://. Ništa nije sačuvano.</string>
+    <string name="dialog_message_ai_service_consent">Slike i snimci ekrana se šalju na <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> da budu opisani, što traje nekoliko sekundi. Primjenjuju se njegovi vlastiti uslovi i politika privatnosti. Generativna AI je eksperimentalna, tako da će praviti greške.</string>
+    <string name="ai_service_error_api_key">AI usluga nije prihvatila API ključ. Provjerite njegove postavke u Automatskim opisima.</string>
+    <string name="ai_service_error_quota">Dosegnuto je ograničenje upotrebe AI usluge. Pokušajte ponovo kasnije.</string>
+    <string name="ai_service_error_busy">AI usluga je trenutno zauzeta. Pokušajte ponovo za trenutak.</string>
+    <string name="ai_service_error_timeout">AI servisu je trebalo predugo da odgovori. Pokušajte ponovo.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Nema</string>
+    <string name="ai_service_not_set_up">Nijedna AI usluga nije u upotrebi. Postavite jedan ili odaberite jedan u postavkama automatskih opisa.</string>
+    <string name="ai_provider_none_set_up">Nije postavljena nikakva AI usluga. Postavite jedan u njegovim postavkama ispod.</string>
+    <string name="ai_provider_other">Ostala usluga</string>
+    <string name="title_pref_category_ai_services">AI usluge</string>
+    <string name="title_pref_ai_provider">AI usluga</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> postavke</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nije postavljeno</string>
+    <string name="ai_provider_in_use">U upotrebi</string>
+    <string name="ai_provider_not_set_up">Nije postavljeno</string>
+    <string name="ai_provider_not_ready">Prvo odaberite model</string>
+    <string name="ai_provider_address">Adresa</string>
+    <string name="ai_provider_address_message">Adresa usluge sa OpenAI-kompatibilnim chat API-jem i unosom slike, kao što je https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Nije postavljeno</string>
+    <string name="ai_provider_set">Konfigurisano</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API ključ</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> model</string>
+    <string name="ai_provider_choose_model">Nije izabrano</string>
+    <string name="ai_provider_key_message">Zalijepite svoj <xliff:g id="service" example="Claude">%1$s</xliff:g> API ključ. Da biste ga uklonili, obrišite polje i sačuvajte. Slike i ekrani koje opisujete šalju se na <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Prvo postavite <xliff:g id="service" example="Claude">%1$s</xliff:g> API ključ</string>
+    <string name="ai_provider_needs_address">Prvo postavite adresu</string>
+    <string name="ai_provider_enter_model">Unesite naziv modela</string>
 </resources>
