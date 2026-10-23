@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">ແປ້ນພິມຮາດແວອັກສອນນູນ</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">ບໍ່ສາມາດໃຊ້ແປ້ນພິມອັກສອນນູນ TalkBack ໄດ້</string>
-  <string name="bd_ime_disabled_dialog_title">ເປີດໃຊ້ແປ້ນພິມອັກສອນນູນ TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">ບໍ່ສາມາດໃຊ້ແປ້ນພິມອັກສອນນູນ SandFly ໄດ້</string>
+  <string name="bd_ime_disabled_dialog_title">ເປີດໃຊ້ແປ້ນພິມອັກສອນນູນ SandFly</string>
   <string name="bd_ime_disabled_dialog_message">ເພື່ອໃຊ້ຈໍສະແດງຜົນຕົວໜັງສືນູນຂອງທ່ານສຳລັບການພິມ, ໃຫ້ໄປຫາການຕັ້ງຄ່າການປ້ອນຂໍ້ມູນເພື່ອເປີດໃຊ້ມັນ</string>
   <string name="bd_ime_disabled_dialog_title_positive">ການຕັ້ງຄ່າການປ້ອນຂໍ້ມູນ</string>
   <string name="bd_ime_not_default_dialog_title">ສະຫຼັບວິທີການປ້ອນຂໍ້ມູນຂອງທ່ານ</string>
-  <string name="bd_ime_not_default_dialog_message">ເພື່ອສືບຕໍ່ການພິມ, ໃຫ້ຕັ້ງແປ້ນພິມອັກສອນນູນ TalkBack ເປັນວິທີການປ້ອນຂໍ້ມູນຂອງທ່ານ</string>
+  <string name="bd_ime_not_default_dialog_message">ເພື່ອສືບຕໍ່ການພິມ, ໃຫ້ຕັ້ງແປ້ນພິມອັກສອນນູນ SandFly ເປັນວິທີການປ້ອນຂໍ້ມູນຂອງທ່ານ</string>
   <string name="bd_ime_not_default_dialog_positive">ສະຫຼັບການປ້ອນຂໍ້ມູນ</string>
   <string name="type_unlabeled">ບໍ່ມີປ້າຍກຳກັບ</string>
   <string name="type_unlabeled_edittext">ກ່ອງແກ້ໄຂທີ່ບໍ່ມີປ້າຍກຳກັບ</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">ເລື່ອນຊ້າຍ</string>
   <string name="overlay_pan_right_button">ເລື່ອນຂວາ</string>
   <string name="bd_preferences_title">ຈໍສະແດງຜົນຕົວອັກສອນນູນ</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">ເພື່ອໃຊ້ຈໍສະແດງຜົນອັກສອນນູນ, ໃຫ້ເປີດໃຊ້ TalkBack ກ່ອນ</string>
-  <string name="bd_preferences_banner_talkback_off_button">ໄປຫາ TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">ເພື່ອໃຊ້ຈໍສະແດງຜົນອັກສອນນູນ, ໃຫ້ເປີດໃຊ້ SandFly ກ່ອນ</string>
+  <string name="bd_preferences_banner_talkback_off_button">ໄປຫາ SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">ເພື່ອໃຊ້ຈໍສະແດງຜົນອັກສອນນູນ, ໃຫ້ເປີດໃຊ້ Bluetooth ກ່ອນ</string>
   <string name="bd_preferences_banner_bluetooth_off_button">ເປີດໃຊ້ Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">ເພື່ອໃຊ້ຈໍສະແດງຜົນອັກສອນນູນ, %s ຕ້ອງການສິດເຂົ້າເຖິງອຸປະກອນທີ່ຢູ່ໃກ້ຄຽງ</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">ເພື່ອໃຊ້ໂໝດທ່ອງເວັບ, ທ່ານຈະຕ້ອງສະຫຼັບຈາກແຜນທີ່ປຸ່ມເລີ່ມຕົ້ນໄປເປັນແຜນທີ່ປຸ່ມທີ່ປັບປຸງໃຫ້ດີຂຶ້ນ. ການປ່ຽນແປງນີ້ຈະອັບເດດຄຳສັ່ງຂອງຈໍສະແດງຜົນຕົວອັກສອນນູນບາງຢ່າງຂອງທ່ານ</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">ການຕັ້ງຄ່າ</string>
   <string name="bd_command_change_dialog_title">ມີການອັບເດດຄຳສັ່ງບາງລາຍການ</string>
-  <string name="bd_command_change_dialog_message">ຄຳສັ່ງຈໍສະແດງຜົນຕົວອັກສອນນູນເຫຼົ່ານີ້ໄດ້ຮັບການອັບເດດໃນ TalkBack ເວີຊັນນີ້:\n\n• ລາຍການກ່ອນໜ້າ: ກົດຈຸດ 1, 7\n\n• ລາຍການຖັດໄປ: ກົດຈຸດ 4, 8\n\n• ຕົວຄວບຄຸມການອ່ານກ່ອນໜ້າ: ກົດຈຸດ 2, 3, 7, 8\n\n• ຕົວຄວບຄຸມການອ່ານຖັດໄປ: ກົດຈຸດ 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">ຄຳສັ່ງຈໍສະແດງຜົນຕົວອັກສອນນູນເຫຼົ່ານີ້ໄດ້ຮັບການອັບເດດໃນ SandFly ເວີຊັນນີ້:\n\n• ລາຍການກ່ອນໜ້າ: ກົດຈຸດ 1, 7\n\n• ລາຍການຖັດໄປ: ກົດຈຸດ 4, 8\n\n• ຕົວຄວບຄຸມການອ່ານກ່ອນໜ້າ: ກົດຈຸດ 2, 3, 7, 8\n\n• ຕົວຄວບຄຸມການອ່ານຖັດໄປ: ກົດຈຸດ 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">ອັກສອນນູນແບບຫຍໍ້</string>
   <string name="bd_preference_braille_uncontracted">ອັກສອນນູນແບບເຕັມ</string>
   <string name="bd_braille_grade_tips">ເພື່ອສະຫຼັບໄປມາລະຫວ່າງແບບຫຍໍ້ ແລະ ແບບເຕັມຢ່າງວ່ອງໄວໂດຍໃຊ້ຈໍສະແດງຜົນຕົວອັກສອນນູນ, ໃຫ້ກົດ ຍະຫວ່າງ ແລະ ດັອດ 1, 2, 4 ແລະ 5.\n\nຄຳສັ່ງນີ້ຈະໃຊ້ໄດ້ຫາກທ່ານກຳລັງໃຊ້ພາສາທີ່ມີອັກສອນນູນທັງສອງລະດັບ.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">ການຍ້າຍໄປມາລະຫວ່າງລາຍການຕ່າງໆ</string>
   <string name="bd_commands_bindings_category_system_actions_title">ຄຳສັ່ງລະບົບ</string>
   <string name="bd_commands_bindings_category_system_actions_summary">ກັບຄືນ, ໜ້າຫຼັກ, ການແຈ້ງເຕືອນ ແລະ ອື່ນໆ</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">ຄຸນສົມບັດ TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">ເມນູ ແລະ ການຕັ້ງຄ່າ TalkBack</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">ຄຸນສົມບັດ SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly ເມນູ ແລະການຕັ້ງຄ່າ</string>
   <string name="bd_commands_bindings_category_braille_settings_title">ການຕັ້ງຄ່າອັກສອນນູນ</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ພາສາ ແລະ ການຕັ້ງຄ່າອັກສອນນູນ</string>
   <string name="bd_commands_bindings_category_text_editing_title">ການແກ້ໄຂຂໍ້ຄວາມ</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">ເປີດແອັບທັງໝົດ</string>
   <string name="bd_cmd_toggle_screen_search">ເປີດການຊອກຫາໃນໜ້າຈໍ</string>
   <string name="bd_cmd_edit_custom_label">ແກ້ໄຂປ້າຍກຳກັບແບບກຳນົດເອງ</string>
-  <string name="bd_cmd_open_talkback_menu">ເປີດເມນູ TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">ເປີດ ຫຼື ປິດການເວົ້າ TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">ເປີດເມນູ SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">ເປີດ ຫຼື ປິດການເວົ້າ SandFly</string>
   <string name="bd_cmd_read_stop">ຢຸດການອ່ານ</string>
-  <string name="bd_cmd_talkback_settings">ເປີດການຕັ້ງຄ່າ TalkBack</string>
+  <string name="bd_cmd_talkback_settings">ເປີດການຕັ້ງຄ່າ SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">ປ່ຽນເປັນພາສາການພິມຖັດໄປ</string>
   <string name="bd_cmd_switch_to_next_output_language">ປ່ຽນເປັນພາສາທີ່ໃຊ້ອ່ານຖັດໄປ</string>
   <string name="bd_cmd_toggle_contracted_mode">ສະຫຼັບລະຫວ່າງແບບຫຍໍ້ ແລະ ແບບເຕັມ</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">ທ່ານສາມາດນຳທາງໄປຫາສ່ວນຕ່າງໆຂອງໜ້າເວັບໄດ້ຢ່າງວ່ອງໄວໂດຍໃຊ້ຄຳສັ່ງເຂົ້າສູ່ໂໝດທ່ອງເວັບ, ຈາກນັ້ນພິມຕົວອັກສອນ ຫຼື ຕົວເລກທາງລັດຕໍ່ໄປນີ້\n\nທ່ານຍັງສາມາດໃຊ້ທາງລັດເຫຼົ່ານີ້ໄດ້ໂດຍບໍ່ຕ້ອງເຂົ້າສູ່ໂໝດທ່ອງເວັບ, ແຕ່ທ່ານຈະຕ້ອງເພີ່ມຈຸດ 8 ໃສ່ໃນຄຳສັ່ງ \"ຕໍ່ໄປ\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">ການນຳທາງຕາຕະລາງ</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">ປິດການຕັ້ງຄ່າຈໍສະແດງຜົນຕົວໜັງສືນູນບໍ?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">ທ່ານສາມາດເປີດໃຊ້ມັນຄືນໃໝ່ຕອນໃດກໍໄດ້ໃນການຕັ້ງຄ່າ TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">ທ່ານສາມາດເປີດໃຊ້ມັນຄືນໃໝ່ຕອນໃດກໍໄດ້ໃນການຕັ້ງຄ່າ SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">ປິດໄວ້</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">ບໍ່ສາມາດໃຊ້ບາງຄຳສັ່ງໄດ້</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">ບໍ່ສາມາດໃຊ້ຄຳສັ່ງສຳລັບການນຳທາງ, ການຕັ້ງຄ່າອັກສອນນູນ ແລະ ຄຸນສົມບັດບາງຢ່າງຂອງ TalkBack ໄດ້ໃນຂະນະທີ່ພິມ ຫຼື ແກ້ໄຂ.\n\nເພື່ອໃຊ້ຄຳສັ່ງເຫຼົ່ານີ້, ໃຫ້ປິດແປ້ນພິມກ່ອນ.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">ບໍ່ສາມາດໃຊ້ຄຳສັ່ງສຳລັບການນຳທາງ, ການຕັ້ງຄ່າອັກສອນນູນ ແລະ ຄຸນສົມບັດບາງຢ່າງຂອງ SandFly ໄດ້ໃນຂະນະທີ່ພິມ ຫຼື ແກ້ໄຂ.\n\nເພື່ອໃຊ້ຄຳສັ່ງເຫຼົ່ານີ້, ໃຫ້ປິດແປ້ນພິມກ່ອນ.</string>
   <string name="bd_caption_tutorial_dialog_title">ຄຳບັນຍາຍຢູ່ຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານ</string>
   <string name="bd_caption_tutorial_dialog_message">ເພື່ອສະແດງ ຫຼື ເຊື່ອງຄຳບັນຍາຍສຳລັບວິດີໂອນີ້, ໃຫ້ກົດຍະຫວ່າງ ແລະ ຈຸດ 1, 4, 7, 8.\n\nເພື່ອສະແດງຄຳບັນຍາຍອັດຕະໂນມັດສຳລັບສື່ທີ່ຮອງຮັບ, ໃຫ້ເປີດການສະແດງຄຳບັນຍາຍຢູ່ຈໍສະແດງຜົນຕົວອັກສອນນູນໃນການຕັ້ງຄ່າ.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">ສະແດງຂໍ້ຄວາມນີ້ສະເໝີເມື່ອຄຳບັນຍາຍມີໃຫ້</string>
   <string name="bd_usb_connect_dialog_title">ເຊື່ອມຕໍ່ຈໍສະແດງຜົນຕົວອັກສອນນູນໄປໃສ່ USB ແລ້ວ</string>
-  <string name="bd_usb_connect_dialog_message">ແບັດເຕີຣີ %s ຂອງທ່ານກຳລັງສາກໄຟຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານຢູ່.\n\nຫາກທ່ານຕ້ອງການສະຫຼັບໄປໃຊ້ Bluetooth, ໃຫ້ຕັດການເຊື່ອມຕໍ່ USB ຫຼື USB hub ຂອງທ່ານແລ້ວເຂົ້າໄປການຕັ້ງຄ່າ &gt; ຈໍສະແດງຜົນຕົວອັກສອນນູນ.</string>
+  <string name="bd_usb_connect_dialog_message">ແບດເຕີຣີ້ຂອງ %s ກໍາລັງສາກໃຫ້ຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານ.\n\nຖ້າທ່ານຕ້ອງການສະຫຼັບໄປໃຊ້ Bluetooth, ຕັດການເຊື່ອມຕໍ່ USB ຫຼື USB hub ຂອງທ່ານ ແລ້ວໄປທີ່ການຕັ້ງຄ່າ SandFly &gt; ຈໍສະແດງຜົນ Braille.</string>
   <string name="bd_device">ໂທລະສັບ</string>
   <string name="bd_battery_low_dialog_title">%s ແບັດເຕີຣີຕ່ຳ</string>
   <string name="bd_battery_low_dialog_message">ແບັດເຕີຣີ %s ຂອງທ່ານກຳລັງສາກໄຟຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານຢູ່.\n\nເພື່ອປະຢັດແບັດເຕີຣີ:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">ລຶບລ້າງທັງໝົດ</string>
   <string name="popup_message_history_empty">ຫວ່າງເປົ່າ</string>
   <string name="popup_message_history_consent_dialog_title">ເປີດໃຊ້ປະຫວັດຂໍ້ຄວາມຢູ່ອຸປະກອນບໍ?</string>
-  <string name="popup_message_history_consent_dialog_msg">ນີ້ຈະຈັດເກັບຂໍ້ຄວາມບາງຢ່າງ, ເຊັ່ນ: ການແຈ້ງເຕືອນ ແລະ ໂມງປຸກ, ໃນ TalkBack. ທ່ານສາມາດປ່ຽນການຕັ້ງຄ່ານີ້ຕອນໃດກໍໄດ້.</string>
+  <string name="popup_message_history_consent_dialog_msg">ນີ້ຈະຈັດເກັບຂໍ້ຄວາມບາງຢ່າງ, ເຊັ່ນ: ການແຈ້ງເຕືອນ ແລະ ໂມງປຸກ, ໃນ SandFly. ທ່ານສາມາດປ່ຽນການຕັ້ງຄ່ານີ້ຕອນໃດກໍໄດ້.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ເປີດໃຊ້</string>
   <string name="popup_message_history_consent_dialog_negative_btn">ບໍ່, ຂອບໃຈ</string>
+    <string name="external_display_channel">ການສະແດງຕົວອັກສອນນູນຈາກແອັບອື່ນ</string>
+    <string name="external_display_ask_title">ອະນຸຍາດໃຫ້ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ເປັນຈໍສະແດງຜົນອັກສອນນູນສຳລັບ SandFly ບໍ?</string>
+    <string name="external_display_ask_text">SandFly ຈະບໍ່ໃຊ້ມັນຈົນກວ່າເຈົ້າຈະອະນຸຍາດ.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ຈະສາມາດອ່ານທຸກຢ່າງ SandFly ສະແດງເປັນຕົວອັກສອນນູນ, ເຊິ່ງສາມາດເປັນອັນໃດກໍໄດ້ຢູ່ໃນໜ້າຈໍ, ລວມທັງຂໍ້ຄວາມ ແລະສິ່ງທີ່ທ່ານພິມ. ມັນຍັງຈະສາມາດຄວບຄຸມອຸປະກອນຂອງທ່ານໄດ້ຕາມທີ່ທ່ານສາມາດເຮັດໄດ້ດ້ວຍຈໍສະແດງຜົນຕົວອັກສອນນູນ: ພິມ, ເປີດແອັບ ແລະ ແລ່ນຄຳສັ່ງ SandFly ໃດໜຶ່ງ. ອະນຸຍາດສະເພາະແອັບທີ່ທ່ານເຊື່ອຖືເທົ່ານັ້ນ.</string>
+    <string name="external_display_allow">ອະນຸຍາດ</string>
+    <string name="external_display_deny">ບໍ່ອະນຸຍາດໃຫ້</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ແມ່ນການສະແດງຕົວອັກສອນນູນຂອງທ່ານ</string>
+    <string name="external_display_in_use_text">ໃນຂະນະທີ່ SandFly ໃຊ້ມັນ, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ສາມາດອ່ານໜ້າຈໍ ແລະ ຄວບຄຸມອຸປະກອນໄດ້.</string>
+    <string name="external_displays_title">ສະແດງຈາກແອັບອື່ນ</string>
+    <string name="external_displays_summary">ແອັບທີ່ທ່ານອະນຸຍາດສາມາດເປັນການສະແດງຕົວອັກສອນນູນສຳລັບ SandFly. ແອັບທີ່ເປັນຈໍສະແດງຜົນອັກສອນນູນສາມາດອ່ານໜ້າຈໍ ແລະຄວບຄຸມອຸປະກອນໄດ້.</string>
+    <string name="external_displays_none">ບໍ່ມີແອັບຯໃດສາມາດເປັນການສະແດງຕົວອັກສອນນູນໄດ້.</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">ແປ້ນພິມອັກສອນນູນ TalkBack</string>
+  <string name="braille_ime_service_name">ແປ້ນພິມອັກສອນນູນ SandFly</string>
   <string name="braille_ime_bd_mode_name">ອິນພຸດຈໍສະແດງຜົນຕົວໜັງສືນູນ</string>
   <string name="switch_to_tabletop_announcement">ໂໝດຕັ້ງໂຕະ. ວາງອຸປະກອນຂອງທ່ານໂດຍໃຫ້ຊ່ອງສາກໄຟຢູ່ທາງຊ້າຍ.</string>
   <string name="calibration_tip_announcement">ເພື່ອອັບເດດຕຳແໜ່ງດັອດ, ໃຫ້ໃຊ້ %d ນິ້ວກົດຄ້າງໄວ້.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">ສະຫຼັບໄປໃຊ້ອັກສອນນູນແບບບໍ່ຫຍໍ້ແລ້ວ</string>
   <string name="braille_ime_displayed_name">ແປ້ນພິມອັກສອນນູນ</string>
   <string name="multiple_languages_braille_ime_displayed_name">ແປ້ນພິມອັກສອນນູນ, %s</string>
-  <string name="input_view_caption">ແປ້ນພິມອັກສອນນູນ TalkBack - ສຳລັບການຊ່ວຍເຫຼືອ, ກະລຸນາໄປທີ່ g.co/help/braille</string>
+  <string name="input_view_caption">ແປ້ນພິມອັກສອນນູນ SandFly - ສຳລັບການຊ່ວຍເຫຼືອ, ກະລຸນາໄປທີ່ g.co/help/braille</string>
   <string name="perform_action_next">ຕໍ່ໄປ</string>
   <string name="perform_action_submitting">ກຳລັງສົ່ງຂໍ້ຄວາມ</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">ການອັບເດດຕຳແໜ່ງຂອງຈຸດ. ທຳອິດ, ມາບັນທຶກຈຸດຢູ່ %s ຂອງທ່ານກ່ອນ.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">ເພື່ອປ່ຽນພາສາຂອງທ່ານໃນລະຫວ່າງທີ່ກຳລັງພິມດ້ວຍແປ້ນພິມອັກສອນນູນ, ໃຫ້ປັດຂຶ້ນດ້ວຍ 3 ນິ້ວ. ຈາກນັ້ນເລືອກ \"ສະຫຼັບໄປຫາພາສາຕໍ່ໄປ\".</string>
   <string name="title_pref_accumulate_presses">ຮວມຈຸດທີ່ກົດໄວ້ທັງໝົດ</string>
   <string name="summary_pref_accumulate_presses">ແຕ່ລະຈຸດທີ່ກົດເປັນສ່ວນໜຶ່ງຂອງອິນພຸດ, ເຖິງແມ່ນວ່າຈະປ່ອຍຈຸດນັ້ນກ່ອນຈຸດອື່ນ</string>
-  <string name="title_pref_reverse_dots">ຈຸດແບບຍ້ອນກັບ</string>
-  <string name="summary_pref_reverse_dots">ສະຫຼັບຕຳແໜ່ງຈຸດ ເຊັ່ນ: ເພື່ອໃຫ້ຈຸດ 1 ແລະ ຈຸດ 4 ສະຫຼັບບ່ອນກັນ</string>
+  <string name="title_pref_reverse_dots">ສະຫຼັບຈຸດຊ້າຍ ແລະຂວາ</string>
+  <string name="summary_pref_reverse_dots">ຈຸດ 1, 2, ແລະ 3 ການຄ້າທີ່ມີຈຸດ 4, 5, ແລະ 6</string>
   <string name="bd_preference_braille_contracted">ອັກສອນນູນແບບຫຍໍ້</string>
   <string name="bd_preference_braille_uncontracted">ອັກສອນນູນແບບເຕັມ</string>
   <string name="context_menu_title">ຕົວເລືອກແປ້ນພິມຕົວອັກສອນນູນ</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">ແປ້ນພິມ</string>
   <string name="not_enough_touch_points_dialog_title">ອຸປະກອນຂອງທ່ານບໍ່ຮອງຮັບແປ້ນພິມຕົວອັກສອນນູນ</string>
   <string name="not_enough_touch_points_dialog_message">ອຸປະກອນຂອງທ່ານບໍ່ຮອງຮັບຈຸດສຳຜັດພຽງພໍ. ສຳລັບຂໍ້ມູນເພີ່ມເຕີມ, ໃຫ້ຕິດຕໍ່ຜູ້ຜະລິດອຸປະກອນ.</string>
-  <string name="talkback_off_dialog_title">ເປີດໃຊ້ TalkBack ເພື່ອໃຊ້ແປ້ນພິມຕົວອັກສອນນູນ</string>
+  <string name="talkback_off_dialog_title">ເປີດໃຊ້ SandFly ເພື່ອໃຊ້ແປ້ນພິມຕົວອັກສອນນູນ</string>
   <string name="talkback_off_dialog_positive_button">ເປີດໃຊ້ໄດ້ໃນການຕັ້ງຄ່າການຊ່ວຍເຂົ້າເຖິງ</string>
-  <string name="talkback_suspend_dialog_title">ສືບຕໍ່ TalkBack ເພື່ອໃຊ້ແປ້ນພິມອັກສອນນູນ</string>
-  <string name="talkback_off_or_suspend_dialog_message">ເມື່ອເປີດໃຊ້ TalkBack ແລ້ວ, ທ່ານຈະສາມາດແຕະໜ້າຈໍຂອງທ່ານເພື່ອພິມຕົວອັກສອນນູນໄດ້.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">ເປີດ TalkBack ເພື່ອປ່ຽນທ່າທາງ</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack ປິດຢູ່. ໃຫ້ເປີດໃຊ້ມັນເພື່ອປ່ຽນທ່າທາງແປ້ນພິມອັກສອນນູນ.</string>
+  <string name="talkback_suspend_dialog_title">ສືບຕໍ່ SandFly ເພື່ອໃຊ້ແປ້ນພິມອັກສອນນູນ</string>
+  <string name="talkback_off_or_suspend_dialog_message">ເມື່ອເປີດໃຊ້ SandFly ແລ້ວ, ທ່ານຈະສາມາດແຕະໜ້າຈໍຂອງທ່ານເພື່ອພິມຕົວອັກສອນນູນໄດ້.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">ເປີດ SandFly ເພື່ອປ່ຽນທ່າທາງ</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly ປິດຢູ່. ໃຫ້ເປີດໃຊ້ມັນເພື່ອປ່ຽນທ່າທາງແປ້ນພິມອັກສອນນູນ.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">ເຂົ້າໄປການຕັ້ງຄ່າ</string>
   <string name="reset_gestures_dialog_title">ຣີເຊັດທ່າທາງທັງໝົດບໍ?</string>
   <string name="reset_gestures_dialog_message">ທ່າທາງແປ້ນພິມອັກສອນນູນທັງໝົດຈະຖືກຣີເຊັດເປັນຄ່າເລີ່ມຕົ້ນ</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">ຣີເຊັດເປັນຄ່າເລີ່ມຕົ້ນ</string>
   <string name="custom_gestures_dialog_remove_button">ລຶບທ່າທາງອອກ</string>
   <string name="change_gestures_dialog_message_title">ວິທີປ່ຽນທ່າທາງ</string>
-  <string name="change_gestures_dialog_message">ຢູ່ໜ້າຈໍຕໍ່ໄປ, ແປ້ນພິມອັກສອນນູນຈະເປີດຂຶ້ນ ແລະ ທ່ານຈະບໍ່ສາມາດໃຊ້ທ່າທາງ TalkBack ໄດ້.\n\nເມື່ອແປ້ນພິມອັກສອນນູນເປີດຂຶ້ນ, ໃຫ້ເຮັດທ່າທາງທີ່ທ່ານຕ້ອງການໃຊ້ ຫຼື ເພື່ອປິດແປ້ນພິມອັກສອນນູນ ແລະ ຍົກເລີກການປ່ຽນທ່າທາງ, ໃຫ້ປັດລົງດ້ວຍ 2 ນິ້ວ.\n\nເບິ່ງທ່າທາງທີ່ສາມາດໃຊ້ໄດ້\n</string>
+  <string name="change_gestures_dialog_message">ຢູ່ໜ້າຈໍຕໍ່ໄປ, ແປ້ນພິມອັກສອນນູນຈະເປີດຂຶ້ນ ແລະ ທ່ານຈະບໍ່ສາມາດໃຊ້ທ່າທາງ SandFly ໄດ້.\n\nເມື່ອແປ້ນພິມອັກສອນນູນເປີດຂຶ້ນ, ໃຫ້ເຮັດທ່າທາງທີ່ທ່ານຕ້ອງການໃຊ້ ຫຼື ເພື່ອປິດແປ້ນພິມອັກສອນນູນ ແລະ ຍົກເລີກການປ່ຽນທ່າທາງ, ໃຫ້ປັດລົງດ້ວຍ 2 ນິ້ວ.\n\nເບິ່ງທ່າທາງທີ່ສາມາດໃຊ້ໄດ້\n</string>
   <string name="change_gestures_dialog_message_link">ເບິ່ງທ່າທາງທີ່ສາມາດໃຊ້ໄດ້</string>
   <string name="change_gestures_dialog_dont_show_checkbox">ບໍ່ຕ້ອງສະແດງຂໍ້ຄວາມນີ້ອີກ</string>
   <string name="change_gestures_dialog_positive_button">ສືບຕໍ່</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">ບໍ່ໃຊ້</string>
   <string name="next_keyboard">ແປ້ນພິມຕໍ່ໄປ</string>
   <string name="braille_tutorial_title">ການສອນການນຳໃຊ້ແປ້ນພິມຕົວອັກສອນນູນ</string>
-  <string name="tutorial_intro_description">ດ້ວຍແປ້ນພິມອັກສອນນູນ, ທ່ານສາມາດແຕະໃສ່ໜ້າຈໍຂອງທ່ານເພື່ອໃສ່ອັກສອນນູນ 6 ຈຸດໄດ້.\n\nທ່ານກຳລັງໃຊ້ອັກສອນນູນພາສາອັງກິດແບບຮວມ. ເພື່ອສະຫຼັບພາສາການພິມຂອງທ່ານ, ໃຫ້ໄປທີ່ການຕັ້ງຄ່າ TalkBack.\n\nເພື່ອພິມອັກສອນນູນ, ທ່ານຈະຕ້ອງຖື ແລະ ໃຊ້ໂທລະສັບຂອງທ່ານດ້ວຍວິທີອື່ນ.</string>
+  <string name="tutorial_intro_description">ດ້ວຍແປ້ນພິມອັກສອນນູນ, ທ່ານສາມາດແຕະໃສ່ໜ້າຈໍຂອງທ່ານເພື່ອໃສ່ອັກສອນນູນ 6 ຈຸດໄດ້.\n\nທ່ານກຳລັງໃຊ້ອັກສອນນູນພາສາອັງກິດແບບຮວມ. ເພື່ອສະຫຼັບພາສາການພິມຂອງທ່ານ, ໃຫ້ໄປທີ່ການຕັ້ງຄ່າ SandFly.\n\nເພື່ອພິມອັກສອນນູນ, ທ່ານຈະຕ້ອງຖື ແລະ ໃຊ້ໂທລະສັບຂອງທ່ານດ້ວຍວິທີອື່ນ.</string>
   <string name="next_step">ຕໍ່ໄປ</string>
   <string name="leave_keyboard">ອອກຈາກແປ້ນພິມຕົວອັກສອນນູນ</string>
-  <string name="hold_six_fingers_description">ທ່ານຈະບໍ່ສາມາດໃຊ້ທ່າທາງ TalkBack ແບບປົກກະຕິໄດ້ໃນແປ້ນພິມອັກສອນນູນ.\n\nເພື່ອເລີ່ມຕົ້ນ, ໃຫ້ຕັ້ງຄ່າຕຳແໜ່ງຂອງຈຸດອັກສອນນູນ 6 ຈຸດເມື່ອທ່ານພິມ.</string>
-  <string name="rotate_orientation_description_1">ເລີ່ມຕົ້ນຕອນນີ້, ທ່ານຈະບໍ່ສາມາດໃຊ້ທ່າທາງ TalkBack ແບບທຳມະດາໄດ້ອີກ. TalkBack ຈະບໍ່ສາມາດໃຊ້ໄດ້ໃນລະຫວ່າງການນຳໃຊ້ແປ້ນພິມຕົວອັກສອນນູນ.</string>
+  <string name="hold_six_fingers_description">ທ່ານຈະບໍ່ສາມາດໃຊ້ທ່າທາງ SandFly ແບບປົກກະຕິໄດ້ໃນແປ້ນພິມອັກສອນນູນ.\n\nເພື່ອເລີ່ມຕົ້ນ, ໃຫ້ຕັ້ງຄ່າຕຳແໜ່ງຂອງຈຸດອັກສອນນູນ 6 ຈຸດເມື່ອທ່ານພິມ.</string>
+  <string name="rotate_orientation_description_1">ເລີ່ມຕົ້ນຕອນນີ້, ທ່ານຈະບໍ່ສາມາດໃຊ້ທ່າທາງ SandFly ແບບທຳມະດາໄດ້ອີກ. SandFly ຈະບໍ່ສາມາດໃຊ້ໄດ້ໃນລະຫວ່າງການນຳໃຊ້ແປ້ນພິມຕົວອັກສອນນູນ.</string>
   <string name="rotate_orientation_description_2">ເພື່ອເລີ່ມຕົ້ນ, ໃຫ້ຖືໂທລະສັບຂອງທ່ານໄວ້ແບບນີ້, ໂດຍປິ່ນໜ້າຈໍອອກຈາກຕົວທ່ານ.</string>
   <string name="tap_to_continue">ແຕະສອງເທື່ອຢູ່ບ່ອນໃດກໍໄດ້ເພື່ອດຳເນີນການຕໍ່</string>
   <string name="instruction_type_letter_a">ໃຊ້ນິ້ວຊີ້ຊ້າຍແຕະຈຸດ 1 ເພື່ອພິມຕົວອັກສອນ \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">ຍ້າຍເຄີເຊີໄປໜ້າແລ້ວ</string>
   <string name="result_swipe_down_2_fingers">ເຊື່ອງແປ້ນພິມ</string>
   <string name="result_swipe_down_3_fingers">ແປ້ນພິມຕໍ່ໄປ</string>
-  <string name="rotate_orientation_announcement">ເລີ່ມຕົ້ນຕອນນີ້, ທ່ານຈະບໍ່ສາມາດໃຊ້ທ່າທາງ TalkBack ແບບທຳມະດາໄດ້ອີກ. ບໍ່ສາມາດໃຊ້ TalkBack ໄດ້ໃນເວລາທີ່ກຳລັງໃຊ້ແປ້ນພິມອັກສອນນູນ.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">ເລີ່ມຕົ້ນຕອນນີ້, ທ່ານຈະບໍ່ສາມາດໃຊ້ທ່າທາງ SandFly ແບບທຳມະດາໄດ້ອີກ. ບໍ່ສາມາດໃຊ້ SandFly ໄດ້ໃນເວລາທີ່ກຳລັງໃຊ້ແປ້ນພິມອັກສອນນູນ.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">ທຳອິດ, ໃຫ້ປິ່ນໜ້າຈໍອອກຈາກຕົວທ່ານ.\n\nຕໍ່ໄປ, ໃຫ້ອຽງໂທລະສັບໃຫ້ຢູ່ໃນແນວນອນ. ຄວນໃຊ້ທັງສອງມືຈັບປາຍທາງຊ້າຍ ແລະ ຂວາຂອງໂທລະສັບໃຫ້ໝັ້ນຄົງ. ຄວນໃຊ້ມືຂວາຈັບສ່ວນປາຍຂອງຜອດ USB ໄວ້. ວາງນິ້ວຊີ້, ນິ້ວກາງ ແລະ ນິ້ວນາງທັງ 3 ນິ້ວຢູ່ໜ້າຈໍ ແລະ ໃຊ້ນິ້ວກ້ອຍກັບນິ້ວໂປ້ຮອງໂທລະສັບໄວ້.\n\nເມື່ອພ້ອມແລ້ວ, ໃຫ້ແຕະໜ້າຈໍສອງເທື່ອເພື່ອດຳເນີນການຕໍ່.\n\nເພື່ອອອກຈາກແປ້ນພິມຕົວອັກສອນນູນ, ໃຫ້ປັດລົງໄປຫາພື້ນທາງລຸ່ມດ້ວຍ 3 ນິ້ວ. ນີ້ຈະເປັນການສະຫຼັບກັບໄປຫາແປ້ນພິມເດີມຂອງທ່ານ.</string>
   <string name="rotate_orientation_continue_announcement">ໂທລະສັບຂອງທ່ານຢູ່ໃນແນວຕັ້ງຢູ່. ເພື່ອສືບຕໍ່, ໃຫ້ໝຸນໂທລະສັບຂອງທ່ານເປັນແນວນອນເພື່ອໃຫ້ລວງຍາວຢູ່ທາງລຸ່ມ. ຈາກນັ້ນປິ່ນໜ້າຈໍອອກຈາກຕົວທ່ານ. ເມື່ອພ້ອມແລ້ວ, ໃຫ້ແຕະສອງເທື່ອໃສ່ໜ້າຈໍເພື່ອດຳເນີນການຕໍ່.</string>
   <string name="type_letter_a_announcement">ໃຫ້ປິ່ນໜ້າຈໍອອກຈາກຕົວທ່ານໄວ້. ໃຊ້ມືທັງສອງຈັບປາຍທາງຊ້າຍ ແລະ ຂວາຂອງໂທລະສັບໂດຍໃຫ້ນິ້ວຊີ້, ນິ້ວກາງ ແລະ ນິ້ວນາງຂອງມືແຕ່ລະຂ້າງສາມາດແຕະໜ້າຈໍໄດ້.\n\nນິ້ວຊີ້ຊ້າຍຄວນຢູ່ທີ່ຈຸດ 1. ຕອນນີ້, ໃຫ້ແຕະຈຸດ 1 ເພື່ອພິມຕົວອັກສອນ \"A\".</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">ເພື່ອສະຫຼັບໄປໃຊ້ແປ້ນພິມອື່ນຂອງທ່ານ, ໃຫ້ປັດລົງດ້ວຍ 3 ນິ້ວ. ລອງໃຊ້ມັນດຽວນີ້.</string>
   <string name="swipe_down_3_fingers_completed_announcement">ແປ້ນພິມຕໍ່ໄປ. ໂດຍປົກກະຕິ, ນີ້ຈະເປັນການສະຫຼັບໄປໃຊ້ແປ້ນພິມຕໍ່ໄປ. ຕອນນີ້, ທ່ານຈະຢູ່ໃນແປ້ນພິມຕົວອັກສອນນູນເນື່ອງຈາກທ່າຍັງຄົງຢູ່ໃນການສອນການນຳໃຊ້ຢູ່.</string>
   <string name="swipe_up_3_fingers_announcement">ນອກຈາກນັ້ນ, ທ່ານຍັງສາມາດພິມໃນໂໝດຕັ້ງໂຕະໄດ້ໂດຍການວາງໂທລະສັບຂອງທ່ານໄວ້ໜ້າໂຕະນຳ. ເພື່ອສຳເລັດການສອນການນຳໃຊ້, ໃຫ້ປັດຂຶ້ນດ້ວຍ 3 ນິ້ວແລ້ວຊອກຫາຕົວເລືອກການສຳເລັດການສອນນຳໃຊ້</string>
-  <string name="open_context_menu_announcement">ເມນູຕົວເລືອກນີ້ເປີດຢູ່. ປີ້ນໂທລະສັບຂອງທ່ານກັບມາເພື່ອໃຫ້ມັນຫັນມາຫາທ່ານແລ້ວຖືມັນຕາມປົກກະຕິ. ຕອນນີ້ທ່ານຈະໃຊ້ທ່າທາງສຳຜັດ TalkBack ຕາມປົກກະຕິເພື່ອໄປຫາສ່ວນຕ່າງໆໄດ້. ປັດຂວາເພື່ອເບິ່ງຕົວເລືອກເພີ່ມເຕີມ.</string>
+  <string name="open_context_menu_announcement">ເມນູຕົວເລືອກນີ້ເປີດຢູ່. ປີ້ນໂທລະສັບຂອງທ່ານກັບມາເພື່ອໃຫ້ມັນຫັນມາຫາທ່ານແລ້ວຖືມັນຕາມປົກກະຕິ. ຕອນນີ້ທ່ານຈະໃຊ້ທ່າທາງສຳຜັດ SandFly ຕາມປົກກະຕິເພື່ອໄປຫາສ່ວນຕ່າງໆໄດ້. ປັດຂວາເພື່ອເບິ່ງຕົວເລືອກເພີ່ມເຕີມ.</string>
   <string name="hold_six_fingers_announcement">%s\nວາງອຸປະກອນຂອງທ່ານນອນຮາບໄວ້ຢູ່ໂຕະ. ຈາກນັ້ນ, ແຕະໜ້າຈໍຄ້າງໄວ້ດ້ວຍນິ້ວກາງ 3 ນິ້ວໂດຍໃຊ້ມືແຕ່ລະຂ້າງໃນຕຳແໜ່ງທີ່ທ່ານພິມແລ້ວສະບາຍ.</string>
   <string name="hold_six_fingers_inactive_announcement">ວາງອຸປະກອນຂອງທ່ານໄວ້ໂຕະ. ຈາກນັ້ນ, ແຕະໜ້າຈໍຄ້າງໄວ້ດ້ວຍນິ້ວກາງ 3 ນິ້ວໂດຍໃຊ້ມືແຕ່ລະຂ້າງໃນຕຳແໜ່ງທີ່ທ່ານພິມແລ້ວສະບາຍ.</string>
   <string name="finish_tutorial_announcement">ກຳລັງສະແດງແປ້ນພິມຕົວອັກສອນນູນ. ໝຸນໂທລະສັບຂອງທ່ານໃຫ້ໜ້າຈໍປິ່ນອອກຈາກຕົວທ່ານ. ໝຸນໂທລະສັບລວງນອນເປັນຕຳແໜ່ງລວງນອນ. ຈາກນັ້ນເລີ່ມການພິມ.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">ທ່າທາງນີ້ໃຊ້ສຳລັບ \"%1$s\" ແລະ ບໍ່ສາມາດປ່ຽນແປງໄດ້. ລອງໃຊ້ທ່າທາງອື່ນ. %2$s</string>
   <string name="custom_gesture_cannot_used">ບໍ່ສາມາດໃຊ້ທ່າທາງນີ້ໄດ້</string>
   <string name="custom_gesture_no_gesture">ບໍ່ມີການເຮັດທ່າທາງ</string>
-  <string name="custom_gesture_try_another">ລອງໃຊ້ທ່າທາງອື່ນ. ເພື່ອເບິ່ງລາຍຊື່ທ່າທາງທັງໝົດທີ່ໃຊ້ໄດ້, ໃຫ້ເຂົ້າໄປສູນຊ່ວຍເຫຼືອແປ້ນພິມອັກສອນນູນຂອງ TalkBack. %s</string>
+  <string name="custom_gesture_try_another">ລອງໃຊ້ທ່າທາງອື່ນ. ເພື່ອເບິ່ງລາຍຊື່ທ່າທາງທັງໝົດທີ່ໃຊ້ໄດ້, ໃຫ້ເຂົ້າໄປສູນຊ່ວຍເຫຼືອແປ້ນພິມອັກສອນນູນຂອງ SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">ທ່າທາງບໍ່ກົງກັນ</string>
   <string name="custom_gesture_perform_again">ເຮັດທ່າທາງທີ່ທ່ານຕ້ອງການໃຊ້ອີກຄັ້ງ. %s</string>
+    <string name="tabletop_port_left_announcement">ໂໝດຕັ້ງໂຕະ, ຊ່ອງສາກໄຟຢູ່ເບື້ອງຊ້າຍ</string>
+    <string name="tabletop_port_right_announcement">ໂໝດຕັ້ງໂຕະ, ຊ່ອງສາກໄຟຢູ່ເບື້ອງຂວາ</string>
+    <string name="screen_away_port_right_announcement">ໂໝດນອກໜ້າຈໍ, ຊ່ອງສາກໄຟຢູ່ເບື້ອງຂວາ</string>
+    <string name="screen_away_port_left_announcement">ໂໝດນອກໜ້າຈໍ, ຊ່ອງສາກໄຟຢູ່ເບື້ອງຊ້າຍ</string>
+    <string name="screen_toward_announcement">ຫນ້າຈໍໄປຫາທ່ານ</string>
+    <string name="screen_toward_port_left_announcement">ໜ້າຈໍໄປຫາທ່ານ, ຊ່ອງສາກໄຟຢູ່ເບື້ອງຊ້າຍ</string>
+    <string name="screen_toward_port_right_announcement">ໜ້າຈໍໄປຫາທ່ານ, ຊ່ອງສາກໄຟຢູ່ເບື້ອງຂວາ</string>
+    <string name="screen_toward_port_down_announcement">ໜ້າຈໍມາຫາທ່ານ, ພອດສາກໄຟຊີ້ລົງລຸ່ມ</string>
+    <string name="screen_toward_port_up_announcement">ໜ້າຈໍມາຫາທ່ານ, ພອດສາກໄຟຊີ້ຂຶ້ນ</string>
+    <string name="port_right_announcement">ພອດສາກໄຟຢູ່ເບື້ອງຂວາ</string>
+    <string name="port_left_announcement">ພອດສາກໄຟຢູ່ເບື້ອງຊ້າຍ</string>
+    <string name="tabletop_port_near_announcement">ໂໝດຕັ້ງໂຕະ, ພອດສາກໄຟໄປຫາທ່ານ</string>
+    <string name="tabletop_port_far_announcement">ໂໝດຕັ້ງໂຕະ, ຊ່ອງສາກໄຟຢູ່ຫ່າງຈາກເຈົ້າ</string>
+    <string name="screen_away_port_down_announcement">ໂໝດນອກໜ້າຈໍ, ຊ່ອງສາກໄຟຊີ້ລົງ</string>
+    <string name="screen_away_port_up_announcement">ໂໝດນອກໜ້າຈໍ, ຊ່ອງສາກໄຟຊີ້ຂຶ້ນ</string>
+    <string name="port_near_announcement">ພອດສາກໄຟໄປຫາທ່ານ</string>
+    <string name="port_far_announcement">ພອດສາກໄຟຢູ່ຫ່າງຈາກທ່ານ</string>
+    <string name="port_down_announcement">ຊ່ອງສາກໄຟຊີ້ລົງ</string>
+    <string name="port_up_announcement">ພອດສາກໄຟຊີ້ຂຶ້ນ</string>
+    <string name="orientation_locked_announcement">ລັອກທິດທາງ</string>
+    <string name="orientation_locked_port_announcement">ລັອກທິດທາງ. %1$s</string>
+    <string name="orientation_unlocked_announcement">ປົດລັອກປະຖົມນິເທດແລ້ວ</string>
+    <string name="switch_to_language_contracted_announcement">ສະຫຼັບໄປຫາ %s ແລ້ວ, ອັກສອນນູນແບບຫຍໍ້</string>
+    <string name="switch_to_language_uncontracted_announcement">ສະຫຼັບໄປຫາ %s ແລ້ວ, ອັກສອນນູນແບບເຕັມ</string>
+    <string name="title_pref_flip_dots_vertically">ສະຫຼັບຈຸດເທິງ ແລະລຸ່ມ</string>
+    <string name="summary_pref_flip_dots_vertically">ຈຸດ 1 ຊື້ຂາຍກັບຈຸດ 3, ແລະຈຸດ 4 ກັບຈຸດ 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">ແທັບເລັດຍົກຂຶ້ນໜ້າອອກໄປ</string>
+    <string name="summary_pref_tablet_held_up_faces_away">ເມື່ອປິດ, ແທັບເລັດ ຫຼືໂທລະສັບທີ່ເປີດອອກຈະໃຊ້ຮູບແບບແທັບເລັດ, ຫັນໜ້າໄປຫາທ່ານ</string>
+    <string name="title_pref_typing_sounds">ສຽງພິມ</string>
+    <string name="summary_pref_typing_sounds">ຫຼິ້ນຄລິກແປ້ນພິມເມື່ອທ່ານພິມຕົວອັກສອນ, ຍະຫວ່າງ, ແຖວໃໝ່ ຫຼືລຶບ</string>
+    <string name="skip_tutorial">ຂ້າມການສອນ</string>
 </resources>
