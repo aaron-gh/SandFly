@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Tema bunyi</string>
+    <string name="summary_pref_sound_themes">Pasang dan pilih set bunyi dan getaran, gantikan bunyi tunggal dengan bunyi anda sendiri dan hidupkan bunyi kawalan dan getaran serta audio 3D.</string>
+    <string name="sound_themes_installed_category">Tema yang dipasang</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">Bunyi dan getaran SandFly sendiri, dan sebarang bunyi anda sendiri.</string>
+    <string name="sound_theme_in_use">Sedang digunakan</string>
+    <string name="sound_theme_by">Oleh <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Lesen: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> bunyi.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> bunyi.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> getaran.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> getaran.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Menghidupkan bunyi kawalan dan getaran.</string>
+    <string name="sound_theme_control_sounds_off">Mematikan bunyi kawalan dan getaran.</string>
+    <string name="sound_theme_use">Gunakan tema ini</string>
+    <string name="sound_theme_about">Mengenai tema ini</string>
+    <string name="sound_theme_export">Simpan sebagai fail tema</string>
+    <string name="sound_theme_remove">Alih keluar</string>
+    <string name="sound_theme_remove_confirm">Alih keluar tema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Alih keluar</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Menyimpan tema, dengan <xliff:g id="count" example="1">%d</xliff:g> bunyi.</item>
+        <item quantity="other">Menyimpan tema, dengan <xliff:g id="count" example="13">%d</xliff:g> bunyi.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly tidak dapat menyimpan fail tema.</string>
+    <string name="sound_theme_no_picker">Tiada apl pada peranti ini untuk memilih fail.</string>
+    <string name="sound_theme_settings_category">Tetapan <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Bunyi</string>
+    <string name="summary_pref_theme_sounds">Gantikan mana-mana bunyi tema ini dengan fail bunyi anda sendiri.</string>
+    <string name="sound_themes_install_category">Pasang tema</string>
+    <string name="title_pref_sound_theme_install_file">Daripada fail</string>
+    <string name="summary_pref_sound_theme_install_file">Fail tema ialah fail ZIP. Anda juga boleh membukanya, atau berkongsinya, dengan SandFly daripada apl lain.</string>
+    <string name="title_pref_sound_theme_install_link">Dari pautan</string>
+    <string name="summary_pref_sound_theme_install_link">Pautan ke fail tema, atau ke repositori GitHub dengan tema di dalamnya. Anda juga boleh berkongsi pautan dengan SandFly dari penyemak imbas anda.</string>
+    <string name="title_pref_sound_theme_install_source">Dari sumber</string>
+    <string name="summary_pref_sound_theme_install_source">Fail tema dalam repositori pada GitHub, GitLab, Codeberg, Gitea atau Bitbucket.</string>
+    <string name="sound_theme_sources">Sumber tema bunyi</string>
+    <string name="sound_theme_source_empty">Tiada tema bunyi dalam sumber ini</string>
+    <string name="sound_theme_source_failed">Tidak dapat memuatkan tema bunyi. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Tema bunyi yang dipasang daripadanya kekal dipasang.</string>
+    <string name="sound_theme_link_message">Masukkan atau tampal pautan ke fail tema, atau ke repositori GitHub dengan tema di dalamnya.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Pasang tema bunyi</string>
+    <string name="sound_theme_install_reading">Membaca tema bunyi</string>
+    <string name="sound_theme_install_title">Pasang <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Pasang dan gunakan</string>
+    <string name="sound_theme_install">Pasang</string>
+    <string name="sound_theme_install_replaces">Ini menggantikan tema yang dipasang dengan nama yang sama.</string>
+    <string name="sound_theme_install_skipped">Ditinggalkan:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Dipasang <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Dipasang <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Ia sedang digunakan sekarang.</string>
+    <string name="sound_theme_install_nothing">Tiada tema bunyi untuk dipasang.</string>
+    <string name="sound_theme_install_not_a_theme">Ini bukan tema bunyi SandFly boleh menggunakan: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly tidak dapat memasang tema bunyi. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Pautan ke tema bunyi mesti bermula dengan https.</string>
+    <string name="title_pref_theme_sounds_of">Bunyi <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Gunakan bunyi SandFly untuk semua</string>
+    <string name="theme_sounds_reset_confirm">Alih keluar semua bunyi tema ini dan gunakan bunyi SandFly?</string>
+    <string name="theme_sounds_reset_button">Alih keluar</string>
+    <string name="theme_sounds_category">Bunyi</string>
+    <string name="theme_sound_summary_default">Bunyi SandFly</string>
+    <string name="theme_sound_summary_custom">Bunyi tema</string>
+    <string name="theme_sound_summary_none">Tiada bunyi. Bunyi fokus dimainkan.</string>
+    <string name="theme_sound_summary_android_keyboard">Bunyi papan kekunci Android</string>
+    <string name="theme_sound_use_android_keyboard">Gunakan bunyi papan kekunci Android</string>
+    <string name="theme_sound_braille_character">Papan kekunci Braille: menaip aksara</string>
+    <string name="theme_sound_braille_space">Papan kekunci braille: ruang</string>
+    <string name="theme_sound_braille_delete">Papan kekunci Braille: padam</string>
+    <string name="theme_sound_braille_new_line">Papan kekunci Braille: baris baharu</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Pilih fail bunyi</string>
+    <string name="theme_sound_preview">Pratonton</string>
+    <string name="theme_sound_none">Tiada bunyi</string>
+    <string name="theme_sound_summary_no_sound">Tiada bunyi</string>
+    <string name="theme_sound_action_set_none">Tetapkan kepada tiada bunyi</string>
+    <string name="theme_sound_use_default">Gunakan bunyi SandFly</string>
+    <string name="theme_sound_remove">Keluarkan bunyi</string>
+    <string name="theme_sound_too_large">Fail itu terlalu besar. Satu bunyi boleh mencapai sehingga 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly tidak dapat memainkan fail itu. Pilih bunyi WAV, OGG, MP3 atau FLAC.</string>
+    <string name="theme_sound_failed">SandFly tidak dapat membaca fail itu.</string>
+</resources>

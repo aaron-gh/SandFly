@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Papan kekunci braille TalkBack</string>
+  <string name="braille_ime_service_name">Papan kekunci braille SandFly</string>
   <string name="braille_ime_bd_mode_name">Input paparan braille</string>
   <string name="switch_to_tabletop_announcement">Mod atas meja. Letakkan peranti anda dengan port pengecasan di sebelah kiri.</string>
   <string name="calibration_tip_announcement">Untuk mengemaskinikan kedudukan titik, tahan dengan %d jari.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Bertukar kepada braille panjang</string>
   <string name="braille_ime_displayed_name">papan kekunci braille</string>
   <string name="multiple_languages_braille_ime_displayed_name">papan kekunci braille, %s</string>
-  <string name="input_view_caption">Papan kekunci braille TalkBack - untuk mendapatkan bantuan, lawati g.co/help/braille</string>
+  <string name="input_view_caption">Papan kekunci braille SandFly - untuk mendapatkan bantuan, lawati g.co/help/braille</string>
   <string name="perform_action_next">Seterusnya</string>
   <string name="perform_action_submitting">Menyerahkan teks</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Mengemaskinikan kedudukan titik. Mula-mula, rakam titik pada %s anda.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Untuk menukar bahasa anda semasa menaip menggunakan papan kekunci braille, leret ke atas menggunakan 3 jari. Kemudian pilih \"tukar kepada bahasa seterusnya\".</string>
   <string name="title_pref_accumulate_presses">Termasuk semua titik yang ditekan</string>
   <string name="summary_pref_accumulate_presses">Setiap titik yang ditekan ialah sebahagian drpd input, walaupun titik itu dilepaskan sblm titik lain</string>
-  <string name="title_pref_reverse_dots">Terbalikkan titik</string>
-  <string name="summary_pref_reverse_dots">Tukar kedudukan titik supaya titik 1 dan 4 mengambil tempat satu sama lain, contohnya</string>
+  <string name="title_pref_reverse_dots">Tukar titik kiri dan kanan</string>
+  <string name="summary_pref_reverse_dots">Titik 1, 2, dan 3 bertukar tempat dengan titik 4, 5, dan 6</string>
   <string name="bd_preference_braille_contracted">Braille singkat</string>
   <string name="bd_preference_braille_uncontracted">Braille tidak singkat</string>
   <string name="context_menu_title">Pilihan papan kekunci Braille</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Papan kekunci</string>
   <string name="not_enough_touch_points_dialog_title">Peranti anda tidak menyokong papan kekunci braille</string>
   <string name="not_enough_touch_points_dialog_message">Peranti anda tidak menyokong bilangan titik sentuh yang mencukupi. Untuk mendapatkan maklumat lanjut, hubungi pengilang peranti anda.</string>
-  <string name="talkback_off_dialog_title">Hidupkan TalkBack untuk menggunakan papan kekunci braille</string>
+  <string name="talkback_off_dialog_title">Hidupkan SandFly untuk menggunakan papan kekunci braille</string>
   <string name="talkback_off_dialog_positive_button">Hidupkan tetapan kebolehaksesan</string>
-  <string name="talkback_suspend_dialog_title">Sambung semula TalkBack untuk menggunakan papan kekunci braille</string>
-  <string name="talkback_off_or_suspend_dialog_message">Apabila TalkBack dihidupkan, anda boleh mengetik skrin untuk memasukkan simbol braille.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Hidupkan TalkBack untuk menukar gerak isyarat</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack dimatikan. Hidupkan ciri ini untuk menukar gerak isyarat papan kekunci Braille.</string>
+  <string name="talkback_suspend_dialog_title">Sambung semula SandFly untuk menggunakan papan kekunci braille</string>
+  <string name="talkback_off_or_suspend_dialog_message">Apabila SandFly dihidupkan, anda boleh mengetik skrin untuk memasukkan simbol braille.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Hidupkan SandFly untuk menukar gerak isyarat</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly dimatikan. Hidupkan ciri ini untuk menukar gerak isyarat papan kekunci Braille.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Akses Tetapan</string>
   <string name="reset_gestures_dialog_title">Tetapkan semula semua gerak isyarat?</string>
   <string name="reset_gestures_dialog_message">Semua gerak isyarat papan kekunci Braille akan ditetapkan semula kepada lalai</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Tetapkan semula kepada lalai</string>
   <string name="custom_gestures_dialog_remove_button">Alih keluar gerak isyarat</string>
   <string name="change_gestures_dialog_message_title">Cara menukar gerak isyarat</string>
-  <string name="change_gestures_dialog_message">Pada skrin seterusnya, papan kekunci Braille akan dibuka dan anda tidak akan dapat menggunakan gerak isyarat TalkBack.\n\nApabila papan kekunci Braille dibuka, lakukan gerak isyarat yang mahu anda gunakan atau untuk menutup papan kekunci Braille dan membatalkan perubahan gerak isyarat, leret ke bawah menggunakan 2 jari.\n\nLihat gerak isyarat yang tersedia \n</string>
+  <string name="change_gestures_dialog_message">Pada skrin seterusnya, papan kekunci Braille akan dibuka dan anda tidak akan dapat menggunakan gerak isyarat SandFly.\n\nApabila papan kekunci Braille dibuka, lakukan gerak isyarat yang mahu anda gunakan atau untuk menutup papan kekunci Braille dan membatalkan perubahan gerak isyarat, leret ke bawah menggunakan 2 jari.\n\nLihat gerak isyarat yang tersedia \n</string>
   <string name="change_gestures_dialog_message_link">Lihat gerak isyarat yang tersedia</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Jangan tunjukkan mesej ini lagi</string>
   <string name="change_gestures_dialog_positive_button">Teruskan</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Jangan gunakan</string>
   <string name="next_keyboard">Papan kekunci seterusnya</string>
   <string name="braille_tutorial_title">Tutorial papan kekunci Braille</string>
-  <string name="tutorial_intro_description">Dengan papan kekunci braille, anda boleh mengetik skrin untuk memasukkan braille 6 titik.\n\nAnda menggunakan Unified English Braille. Untuk menukar bahasa menaip anda, pergi ke tetapan TalkBack.\n\nUntuk menaip braille, anda perlu memegang dan menggunakan telefon anda dengan cara yang berbeza.</string>
+  <string name="tutorial_intro_description">Dengan papan kekunci braille, anda boleh mengetik skrin untuk memasukkan braille 6 titik.\n\nAnda menggunakan Unified English Braille. Untuk menukar bahasa menaip anda, pergi ke tetapan SandFly.\n\nUntuk menaip braille, anda perlu memegang dan menggunakan telefon anda dengan cara yang berbeza.</string>
   <string name="next_step">Seterusnya</string>
   <string name="leave_keyboard">Tinggalkan papan kekunci braille</string>
-  <string name="hold_six_fingers_description">Anda tidak dapat menggunakan gerak isyarat TalkBack biasa dalam papan kekunci braille.\n\nUntuk memulakan, mari sediakan kedudukan 6 titik braille apabila anda menaip.</string>
-  <string name="rotate_orientation_description_1">Mulai sekarang, anda tidak akan dapat menggunakan gerak isyarat biasa TalkBack. TalkBack tidak tersedia semasa menggunakan papan kekunci braille.</string>
+  <string name="hold_six_fingers_description">Anda tidak dapat menggunakan gerak isyarat SandFly biasa dalam papan kekunci braille.\n\nUntuk memulakan, mari sediakan kedudukan 6 titik braille apabila anda menaip.</string>
+  <string name="rotate_orientation_description_1">Mulai sekarang, anda tidak akan dapat menggunakan gerak isyarat biasa SandFly. SandFly tidak tersedia semasa menggunakan papan kekunci braille.</string>
   <string name="rotate_orientation_description_2">Untuk bermula, pegang telefon anda seperti ini, dengan skrin membelakangi anda.</string>
   <string name="tap_to_continue">Dwiketik di mana-mana untuk meneruskan tutorial</string>
   <string name="instruction_type_letter_a">Ketik titik 1 dengan jari telunjuk kiri anda untuk menaip huruf \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">TELAH GERAKKAN KURSOR KE HADAPAN</string>
   <string name="result_swipe_down_2_fingers">SEMBUNYIKAN PAPAN KEKUNCI</string>
   <string name="result_swipe_down_3_fingers">PAPAN KEKUNCI SETERUSNYA</string>
-  <string name="rotate_orientation_announcement">Mulai sekarang, anda tidak akan dapat menggunakan gerak isyarat TalkBack yang biasa. TalkBack tidak tersedia semasa menggunakan papan kekunci braille.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Mulai sekarang, anda tidak akan dapat menggunakan gerak isyarat SandFly yang biasa. SandFly tidak tersedia semasa menggunakan papan kekunci braille.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Mula-mula, pusingkan telefon anda supaya skrin membelakangi anda.\n\nSeterusnya, putarkan telefon secara mendatar kepada kedudukan landskap. Tangan anda seharusnya mencengkam kedua-dua hujung pendek telefon. Tangan kanan anda seharusnya memegang hujung yang terdapat port USB. Letakkan 3 jari tengah anda pada skrin dan gunakan jari kelengkeng serta ibu jari untuk menyokong telefon.\n\nSetelah bersedia, dwiketik skrin untuk meneruskan penggunaan.\n\nUntuk keluar daripada papan kekunci braille, leret ke arah lantai di sebelah bawah menggunakan 3 jari. Tindakan ini menukar papan kekunci kembali kepada papan kekunci asal.</string>
   <string name="rotate_orientation_continue_announcement">Telefon anda dalam kedudukan menegak. Untuk meneruskan, pusingkan telefon secara mendatar supaya bahagian panjang terletak di sebelah bawah. Kemudian, pusingkan skrin supaya membelakangi anda. Apabila anda bersedia, dwiketik skrin untuk meneruskan.</string>
   <string name="type_letter_a_announcement">Pastikan skrin membelakangi anda. Pegang telefon anda menggunakan kedua-dua tangan pada hujung pendek telefon, supaya 3 jari tengah setiap tangan dapat menyentuh skrin.\n\nJari telunjuk kiri anda seharusnya berada pada titik 1. Sekarang, ketik titik 1 untuk menaip huruf “A”.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Untuk bertukar kepada papan kekunci anda yang lain, leret ke bawah menggunakan 3 jari. Cubalah sekarang.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Papan kekunci seterusnya Biasanya, tindakan ini akan menukar papan kekunci kepada papan kekunci yang seterusnya. Pada masa ini, anda kekal menggunakan papan kekunci braille kerana anda masih dalam tutorial.</string>
   <string name="swipe_up_3_fingers_announcement">Anda juga boleh menaip dalam mod atas meja dengan meletakkan telefon anda mendatar atas meja. Untuk menyelesaikan tutorial, leret ke atas dengan 3 jari dan cari pilihan selesai tutorial</string>
-  <string name="open_context_menu_announcement">Menu pilihan dibuka. Terbalikkan telefon anda supaya telefon itu berhadapan dengan anda dan pegang telefon seperti biasa. Kini, anda boleh menggunakan gerak isyarat TalkBack biasa untuk menavigasi. Leret ke kanan untuk melihat lebih banyak pilihan.</string>
+  <string name="open_context_menu_announcement">Menu pilihan dibuka. Terbalikkan telefon anda supaya telefon itu berhadapan dengan anda dan pegang telefon seperti biasa. Kini, anda boleh menggunakan gerak isyarat SandFly biasa untuk menavigasi. Leret ke kanan untuk melihat lebih banyak pilihan.</string>
   <string name="hold_six_fingers_announcement">%s\nLetakkan peranti anda mendatar di atas meja. Kemudian, sentuh dan tahan skrin dengan 3 jari tengah setiap tangan dalam kedudukan yang selesa untuk anda taip.</string>
   <string name="hold_six_fingers_inactive_announcement">Letakkan peranti anda mendatar di atas meja. Kemudian, sentuh dan tahan skrin dengan 3 jari tengah setiap tangan dalam kedudukan yang selesa untuk anda taip.</string>
   <string name="finish_tutorial_announcement">Menunjukkan papan kekunci braille. Pusingkan telefon anda supaya skrin membelakangi anda. Pusingkan telefon secara mendatar kepada kedudukan landskap. Kemudian, mula taip.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Gerak isyarat ini digunakan untuk \"%1$s\" dan tidak dapat diubah. Cuba gerak isyarat lain. %2$s</string>
   <string name="custom_gesture_cannot_used">Gerak isyarat ini tidak dapat digunakan</string>
   <string name="custom_gesture_no_gesture">Tiada gerak isyarat dilakukan</string>
-  <string name="custom_gesture_try_another">Cuba gerak isyarat lain. Untuk melihat senarai semua gerak isyarat yang tersedia, akses pusat bantuan papan kekunci braille TalkBack. %s</string>
+  <string name="custom_gesture_try_another">Cuba gerak isyarat lain. Untuk melihat senarai semua gerak isyarat yang tersedia, akses pusat bantuan papan kekunci braille SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Gerak isyarat tidak sepadan</string>
   <string name="custom_gesture_perform_again">Lakukan gerak isyarat yang mahu anda gunakan sekali lagi. %s</string>
+    <string name="tabletop_port_left_announcement">Mod atas meja, port pengecasan di sebelah kiri</string>
+    <string name="tabletop_port_right_announcement">Mod atas meja, port pengecasan di sebelah kanan</string>
+    <string name="screen_away_port_right_announcement">Mod skrin jauh, port pengecasan di sebelah kanan</string>
+    <string name="screen_away_port_left_announcement">Mod skrin jauh, port pengecasan di sebelah kiri</string>
+    <string name="screen_toward_announcement">Skrin ke arah anda</string>
+    <string name="screen_toward_port_left_announcement">Skrin ke arah anda, port pengecasan di sebelah kiri</string>
+    <string name="screen_toward_port_right_announcement">Skrin ke arah anda, port pengecasan di sebelah kanan</string>
+    <string name="screen_toward_port_down_announcement">Skrin ke arah anda, port pengecasan menghala ke bawah</string>
+    <string name="screen_toward_port_up_announcement">Skrin ke arah anda, port pengecasan menghala ke atas</string>
+    <string name="port_right_announcement">Port pengecasan di sebelah kanan</string>
+    <string name="port_left_announcement">Port pengecasan di sebelah kiri</string>
+    <string name="tabletop_port_near_announcement">Mod atas meja, port pengecasan ke arah anda</string>
+    <string name="tabletop_port_far_announcement">Mod atas meja, mengecas port dari anda</string>
+    <string name="screen_away_port_down_announcement">Mod skrin jauh, port pengecasan menghala ke bawah</string>
+    <string name="screen_away_port_up_announcement">Mod skrin jauh, port pengecasan menghala ke atas</string>
+    <string name="port_near_announcement">Port pengecasan ke arah anda</string>
+    <string name="port_far_announcement">Mengecas port jauh daripada anda</string>
+    <string name="port_down_announcement">Port pengecasan menunjuk ke bawah</string>
+    <string name="port_up_announcement">Port pengecasan menghala ke atas</string>
+    <string name="orientation_locked_announcement">Orientasi dikunci</string>
+    <string name="orientation_locked_port_announcement">Orientasi dikunci. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientasi dibuka</string>
+    <string name="switch_to_language_contracted_announcement">Bertukar kepada %s, Braille singkat</string>
+    <string name="switch_to_language_uncontracted_announcement">Bertukar kepada %s, Braille tidak singkat</string>
+    <string name="title_pref_flip_dots_vertically">Tukar titik atas dan bawah</string>
+    <string name="summary_pref_flip_dots_vertically">Titik 1 menukar tempat dengan titik 3 dan titik 4 dengan titik 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tablet mengangkat muka</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Apabila dimatikan, tablet atau telefon yang tidak dilipat dipegang menggunakan reka letak atas meja, menghadap anda</string>
+    <string name="title_pref_typing_sounds">Menaip bunyi</string>
+    <string name="summary_pref_typing_sounds">Mainkan klik papan kekunci apabila anda menaip aksara, ruang, baris baharu atau padam</string>
+    <string name="skip_tutorial">Langkau tutorial</string>
 </resources>
