@@ -1304,7 +1304,7 @@
     <string name="summary_selector_switch_tts_engine">Comutați între motoarele de vorbire instalate</string>
     <string name="title_selector_voice_profile">Profil vocal</string>
     <string name="title_pref_voice_profiles">Profiluri vocale</string>
-    <string name="voice_profile_default">SandFly implicit</string>
+    <string name="voice_profile_default">Implicit SandFly</string>
     <string name="voice_profile_in_use">În uz: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Limba vorbită nu este disponibilă în timpul utilizării unui profil vocal</string>
     <string name="speech_engine_unavailable_with_profile">Motorul de vorbire nu este disponibil în timp ce utilizați un profil vocal</string>
@@ -1324,8 +1324,8 @@
     <string name="voice_profile_loading">Se încarcă</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, neinstalat</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Mișcă-te în sus</string>
-    <string name="voice_profile_move_down">Deplasați-vă în jos</string>
+    <string name="voice_profile_move_up">Mută în sus</string>
+    <string name="voice_profile_move_down">Mută în jos</string>
     <string name="voice_profile_rename">Redenumiți</string>
     <string name="voice_profile_moved_above">Mutat deasupra <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Mutat sub <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1362,7 +1362,7 @@
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Bateria <xliff:g id="battery_level" example="73">%1$s</xliff:g> la sută</string>
     <string name="template_battery_level_unknown">Nivelul bateriei necunoscut</string>
-    <string name="value_charger_connected">Încărcătorul conectat</string>
+    <string name="value_charger_connected">Încărcător conectat</string>
     <string name="title_pref_screen_announcements">Ecran pornit și oprit</string>
     <string name="summary_pref_screen_announcements">Alegeți ce spune SandFly când ecranul se stinge sau pornește și când telefonul este deblocat</string>
     <string name="title_screen_announcements_screen_off">Când ecranul se stinge</string>
@@ -1556,11 +1556,11 @@
     <string name="value_audio_output_device_speaker">Difuzor telefon</string>
     <string name="value_audio_output_device_bluetooth_or_wired">Dispozitiv Bluetooth conectat sau cu fir</string>
     <string name="value_audio_output_device_disconnected">deconectat</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth dispozitiv audio</string>
+    <string name="value_audio_output_device_bluetooth_default">Dispozitiv audio Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Căști cu fir</string>
     <string name="value_audio_output_device_wired_headphones">Căști cu fir</string>
-    <string name="value_audio_output_device_usb_headset">USB căști</string>
-    <string name="value_audio_output_device_usb_device">USB dispozitiv audio</string>
+    <string name="value_audio_output_device_usb_headset">Căști USB</string>
+    <string name="value_audio_output_device_usb_device">Dispozitiv audio USB</string>
     <string name="title_pref_speaker_devices">Difuzor telefon cu aceste dispozitive</string>
     <string name="summary_pref_speaker_devices_none">Fără</string>
     <string name="summary_pref_speaker_devices_no_devices">Niciun dispozitiv Bluetooth sau cu fir conectat încă</string>

@@ -1324,8 +1324,8 @@
     <string name="voice_profile_loading">පූරණය වෙමින්</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, ස්ථාපනය කර නැත</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">ඉහළට ගමන් කරන්න</string>
-    <string name="voice_profile_move_down">පහළට ගමන් කරන්න</string>
+    <string name="voice_profile_move_up">ඉහළට ගෙන යන්න</string>
+    <string name="voice_profile_move_down">පහළට ගෙන යන්න</string>
     <string name="voice_profile_rename">නැවත නම් කරන්න</string>
     <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g> ඉහළින් ගෙන යන ලදී</string>
     <string name="voice_profile_moved_below"><xliff:g id="name" example="Reading">%1$s</xliff:g> පහතින් ගෙන යන ලදී</string>
@@ -1585,10 +1585,10 @@
     <string name="summary_pref_handwriting_keyboard">Android හි යතුරුපුවරු සැකසුම් තුළ SandFly අත් අකුරු ක්‍රියාත්මක කරන්න</string>
     <string name="title_pref_handwriting_wait">ලිවීමෙන් පසු රැඳී සිටීම</string>
     <string name="value_handwriting_wait_200">තත්පර 0.2</string>
-    <string name="value_handwriting_wait_300">තත්පර 0.3 යි</string>
-    <string name="value_handwriting_wait_400">තත්පර 0.4 යි</string>
+    <string name="value_handwriting_wait_300">තත්පර 0.3</string>
+    <string name="value_handwriting_wait_400">තත්පර 0.4</string>
     <string name="value_handwriting_wait_500">තත්පර 0.5</string>
-    <string name="value_handwriting_wait_600">තත්පර 0.6 යි</string>
+    <string name="value_handwriting_wait_600">තත්පර 0.6</string>
     <string name="value_handwriting_wait_800">තත්පර 0.8</string>
     <string name="value_handwriting_wait_1000">තත්පර 1</string>
     <string name="handwriting_keyboard_name">SandFly අත් අකුරු</string>
@@ -1663,18 +1663,18 @@
     <string name="value_distance_30mm">3 සෙ.මී</string>
     <string name="value_distance_40mm">4 සෙ.මී</string>
     <string name="value_distance_50mm">5 සෙ.මී</string>
-    <string name="value_rotor_step_15">අංශක 15 යි</string>
-    <string name="value_rotor_step_20">අංශක 20 යි</string>
+    <string name="value_rotor_step_15">අංශක 15</string>
+    <string name="value_rotor_step_20">අංශක 20</string>
     <string name="value_rotor_step_30">අංශක 30 (පෙරනිමි)</string>
-    <string name="value_rotor_step_45">අංශක 45 යි</string>
-    <string name="value_rotor_step_60">අංශක 60 යි</string>
+    <string name="value_rotor_step_45">අංශක 45</string>
+    <string name="value_rotor_step_60">අංශක 60</string>
     <string name="title_pref_low_latency_audio">අඩු ප්‍රමාද ශ්‍රව්‍ය</string>
     <string name="summary_pref_low_latency_audio">දුරකථනයේ වේගවත්ම ශ්‍රව්‍ය මාර්ගය හරහා SandFly හි ශබ්ද සහ කථනය වාදනය කරන්න, එවිට ඔබට ඒවා ඉක්මනින් ඇසේ. කථනය හෝ ශබ්දය කැඩී ගියහොත් හෝ වැරදි ලෙස ඇසෙන්නේ නම් එය ක්‍රියා විරහිත කරන්න.</string>
     <string name="value_focus_delay_200ms_default">තත්පර 0.2 (පෙරනිමිය)</string>
-    <string name="value_focus_delay_300ms">තත්පර 0.3 යි</string>
+    <string name="value_focus_delay_300ms">තත්පර 0.3</string>
     <string name="title_pref_lift_to_activate">සක්‍රිය කිරීමට ඔසවන්න</string>
     <string name="summary_support_change_lift_to_activate">ඔබේ ඇඟිල්ල එසවීමෙන් අයිතමයක් සක්රිය කරන ස්ථානය වෙනස් කරන්න</string>
-    <string name="value_lift_to_activate_disabled">ආබාධිතයි</string>
+    <string name="value_lift_to_activate_disabled">අක්‍රියයි</string>
     <string name="value_lift_to_activate_navigation_bar">සංචාලන තීරුවේ පමණි</string>
     <string name="value_lift_to_activate_entire_screen">මුළු තිරය</string>
     <string name="template_lift_to_activate_changed">සක්‍රිය කිරීමට එසවීම: <xliff:g id="mode">%1$s</xliff:g></string>

@@ -1304,7 +1304,7 @@
     <string name="summary_selector_switch_tts_engine">Kaloni midis motorëve të instaluar të të folurit</string>
     <string name="title_selector_voice_profile">Profili i zërit</string>
     <string name="title_pref_voice_profiles">Profilet e zërit</string>
-    <string name="voice_profile_default">SandFly e paracaktuar</string>
+    <string name="voice_profile_default">Parazgjedhja e SandFly</string>
     <string name="voice_profile_in_use">Në përdorim: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Gjuha e folur nuk ofrohet gjatë përdorimit të një profili zanor</string>
     <string name="speech_engine_unavailable_with_profile">Motori i të folurit nuk ofrohet gjatë përdorimit të një profili zanor</string>
@@ -1324,8 +1324,8 @@
     <string name="voice_profile_loading">Po ngarkohet</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, i pa instaluar</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Lëvizni lart</string>
-    <string name="voice_profile_move_down">Lëvizni poshtë</string>
+    <string name="voice_profile_move_up">Zhvendos lart</string>
+    <string name="voice_profile_move_down">Zhvendos poshtë</string>
     <string name="voice_profile_rename">Riemërto</string>
     <string name="voice_profile_moved_above">Lëvizur mbi <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Lëvizur më poshtë <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1552,11 +1552,11 @@
     <string name="value_audio_output_device_speaker">Altoparlanti i telefonit</string>
     <string name="value_audio_output_device_bluetooth_or_wired">Pajisja Bluetooth e lidhur ose me kabllo</string>
     <string name="value_audio_output_device_disconnected">shkëputur</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth pajisje audio</string>
+    <string name="value_audio_output_device_bluetooth_default">Pajisje audio Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Kufje me tela</string>
     <string name="value_audio_output_device_wired_headphones">Kufje me tela</string>
-    <string name="value_audio_output_device_usb_headset">USB kufje</string>
-    <string name="value_audio_output_device_usb_device">USB pajisje audio</string>
+    <string name="value_audio_output_device_usb_headset">Kufje USB</string>
+    <string name="value_audio_output_device_usb_device">Pajisje audio USB</string>
     <string name="title_pref_speaker_devices">Altoparlanti i telefonit me këto pajisje</string>
     <string name="summary_pref_speaker_devices_none">Asnjë</string>
     <string name="summary_pref_speaker_devices_no_devices">Nuk janë lidhur ende pajisje Bluetooth ose me kabllo</string>
@@ -1674,7 +1674,7 @@
     <string name="value_focus_delay_300ms">0.3 sekonda</string>
     <string name="title_pref_lift_to_activate">Ngrini për ta aktivizuar</string>
     <string name="summary_support_change_lift_to_activate">Ndryshoni vendin ku ngritja e gishtit aktivizon një artikull</string>
-    <string name="value_lift_to_activate_disabled">I paaftë</string>
+    <string name="value_lift_to_activate_disabled">Joaktive</string>
     <string name="value_lift_to_activate_navigation_bar">Vetëm në shiritin e navigimit</string>
     <string name="value_lift_to_activate_entire_screen">I gjithë ekrani</string>
     <string name="template_lift_to_activate_changed">Ngrini për të aktivizuar: <xliff:g id="mode">%1$s</xliff:g></string>

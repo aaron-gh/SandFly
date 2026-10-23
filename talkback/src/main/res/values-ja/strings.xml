@@ -1546,9 +1546,9 @@
     <string name="title_pref_audio_output_device">音声出力デバイス</string>
     <string name="dialog_title_audio_output_device">SandFly サウンドを再生する場所を選択してください</string>
     <string name="value_audio_output_device_default">システムのデフォルト</string>
-    <string name="value_audio_output_device_speaker">電話スピーカー</string>
+    <string name="value_audio_output_device_speaker">スマートフォンのスピーカー</string>
     <string name="value_audio_output_device_bluetooth_or_wired">接続されたBluetoothデバイスまたは有線</string>
-    <string name="value_audio_output_device_disconnected">切断された</string>
+    <string name="value_audio_output_device_disconnected">切断済み</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth オーディオデバイス</string>
     <string name="value_audio_output_device_wired_headset">有線ヘッドセット</string>
     <string name="value_audio_output_device_wired_headphones">有線ヘッドフォン</string>
@@ -1671,7 +1671,7 @@
     <string name="value_focus_delay_300ms">0.3秒</string>
     <string name="title_pref_lift_to_activate">指を離して有効化</string>
     <string name="summary_support_change_lift_to_activate">指を離すとアイテムがアクティブになる場所を変更する</string>
-    <string name="value_lift_to_activate_disabled">障害者</string>
+    <string name="value_lift_to_activate_disabled">無効</string>
     <string name="value_lift_to_activate_navigation_bar">ナビゲーションバーのみ</string>
     <string name="value_lift_to_activate_entire_screen">画面全体</string>
     <string name="template_lift_to_activate_changed">持ち上げてアクティブにします: <xliff:g id="mode">%1$s</xliff:g></string>

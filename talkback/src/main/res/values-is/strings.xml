@@ -1548,15 +1548,15 @@
     <string name="title_pref_vibration_strength">Titringsstyrkur</string>
     <string name="title_pref_audio_output_device">Hljóðúttakstæki</string>
     <string name="dialog_title_audio_output_device">Veldu hvar á að spila SandFly hljóð</string>
-    <string name="value_audio_output_device_default">Sjálfgefið kerfi</string>
-    <string name="value_audio_output_device_speaker">Hátalari í síma</string>
+    <string name="value_audio_output_device_default">Sjálfgefið í kerfinu</string>
+    <string name="value_audio_output_device_speaker">Símahátalari</string>
     <string name="value_audio_output_device_bluetooth_or_wired">Tengt Bluetooth tæki eða með snúru</string>
     <string name="value_audio_output_device_disconnected">ótengdur</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth hljóðtæki</string>
+    <string name="value_audio_output_device_bluetooth_default">Bluetooth-hljóðtæki</string>
     <string name="value_audio_output_device_wired_headset">Höfuðtól með snúru</string>
     <string name="value_audio_output_device_wired_headphones">Heyrnartól með snúru</string>
-    <string name="value_audio_output_device_usb_headset">USB heyrnartól</string>
-    <string name="value_audio_output_device_usb_device">USB hljóðtæki</string>
+    <string name="value_audio_output_device_usb_headset">USB-höfuðtól</string>
+    <string name="value_audio_output_device_usb_device">USB-hljóðtæki</string>
     <string name="title_pref_speaker_devices">Símahátalari með þessum tækjum</string>
     <string name="summary_pref_speaker_devices_none">Engin</string>
     <string name="summary_pref_speaker_devices_no_devices">Engin Bluetooth eða hlerunartæki tengd ennþá</string>
@@ -1674,7 +1674,7 @@
     <string name="value_focus_delay_300ms">0,3 sekúndur</string>
     <string name="title_pref_lift_to_activate">Lyftu til að virkja</string>
     <string name="summary_support_change_lift_to_activate">Breyttu því hvar hlutur virkjar með því að lyfta fingri</string>
-    <string name="value_lift_to_activate_disabled">Öryrkjar</string>
+    <string name="value_lift_to_activate_disabled">Óvirkt</string>
     <string name="value_lift_to_activate_navigation_bar">Aðeins á siglingastikunni</string>
     <string name="value_lift_to_activate_entire_screen">Allur skjárinn</string>
     <string name="template_lift_to_activate_changed">Lyftu til að virkja: <xliff:g id="mode">%1$s</xliff:g></string>

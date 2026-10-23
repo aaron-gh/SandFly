@@ -1304,7 +1304,7 @@
     <string name="summary_selector_switch_tts_engine">מעבר בין מנועי דיבור מותקנים</string>
     <string name="title_selector_voice_profile">פרופיל קול</string>
     <string name="title_pref_voice_profiles">פרופילי קול</string>
-    <string name="voice_profile_default">SandFly ברירת מחדל</string>
+    <string name="voice_profile_default">ברירת המחדל של SandFly</string>
     <string name="voice_profile_in_use">בשימוש: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">השפה המדוברת אינה זמינה בעת שימוש בפרופיל קולי</string>
     <string name="speech_engine_unavailable_with_profile">מנוע דיבור אינו זמין בעת שימוש בפרופיל קולי</string>
@@ -1324,8 +1324,8 @@
     <string name="voice_profile_loading">בטעינה</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, לא מותקן</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">לזוז למעלה</string>
-    <string name="voice_profile_move_down">לזוז למטה</string>
+    <string name="voice_profile_move_up">העברה למעלה</string>
+    <string name="voice_profile_move_down">העברה למטה</string>
     <string name="voice_profile_rename">שנה שם</string>
     <string name="voice_profile_moved_above">עבר מעל <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">הועבר למטה <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1556,11 +1556,11 @@
     <string name="value_audio_output_device_speaker">רמקול טלפון</string>
     <string name="value_audio_output_device_bluetooth_or_wired">מכשיר Bluetooth מחובר או חוטי</string>
     <string name="value_audio_output_device_disconnected">מנותק</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth מכשיר שמע</string>
+    <string name="value_audio_output_device_bluetooth_default">מכשיר שמע Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">אוזניות קוויות</string>
     <string name="value_audio_output_device_wired_headphones">אוזניות חוטיות</string>
     <string name="value_audio_output_device_usb_headset">אוזניות USB</string>
-    <string name="value_audio_output_device_usb_device">USB מכשיר שמע</string>
+    <string name="value_audio_output_device_usb_device">מכשיר שמע USB</string>
     <string name="title_pref_speaker_devices">רמקול טלפון עם מכשירים אלה</string>
     <string name="summary_pref_speaker_devices_none">ללא</string>
     <string name="summary_pref_speaker_devices_no_devices">לא מחוברים עדיין מכשירים Bluetooth או קוויים</string>

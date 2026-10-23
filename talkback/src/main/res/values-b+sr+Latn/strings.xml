@@ -1304,7 +1304,7 @@
     <string name="summary_selector_switch_tts_engine">Prebacivanje između instaliranih govornih mašina</string>
     <string name="title_selector_voice_profile">Glasovni profil</string>
     <string name="title_pref_voice_profiles">Glasovni profili</string>
-    <string name="voice_profile_default">SandFly podrazumevano</string>
+    <string name="voice_profile_default">Podrazumevano za SandFly</string>
     <string name="voice_profile_in_use">U upotrebi: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Govorni jezik je nedostupan dok se koristi glasovni profil</string>
     <string name="speech_engine_unavailable_with_profile">Govorni mehanizam nije dostupan dok koristite glasovni profil</string>
@@ -1324,8 +1324,8 @@
     <string name="voice_profile_loading">Učitava se</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, nije instalirano</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Pomeri se gore</string>
-    <string name="voice_profile_move_down">Pomeri se dole</string>
+    <string name="voice_profile_move_up">Pomeri nagore</string>
+    <string name="voice_profile_move_down">Pomeri nadole</string>
     <string name="voice_profile_rename">Preimenuj</string>
     <string name="voice_profile_moved_above">Premešteno iznad <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Premešteno ispod <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1552,7 +1552,7 @@
     <string name="title_pref_vibration_strength">Snaga vibracija</string>
     <string name="title_pref_audio_output_device">Audio izlazni uređaj</string>
     <string name="dialog_title_audio_output_device">Izaberite gde da pustite zvuk SandFly</string>
-    <string name="value_audio_output_device_default">Sistem podrazumevano</string>
+    <string name="value_audio_output_device_default">Podrazumevano za sistem</string>
     <string name="value_audio_output_device_speaker">Telefonski zvučnik</string>
     <string name="value_audio_output_device_bluetooth_or_wired">Povezani Bluetooth uređaj ili ožičeni</string>
     <string name="value_audio_output_device_disconnected">isključen</string>

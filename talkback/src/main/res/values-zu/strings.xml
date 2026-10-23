@@ -1304,7 +1304,7 @@
     <string name="summary_selector_switch_tts_engine">Shintsha phakathi kwezinjini zokukhuluma ezifakiwe</string>
     <string name="title_selector_voice_profile">Iphrofayili yezwi</string>
     <string name="title_pref_voice_profiles">Amaphrofayili ezwi</string>
-    <string name="voice_profile_default">SandFly okuzenzakalelayo</string>
+    <string name="voice_profile_default">Okuzenzakalelayo kwe-SandFly</string>
     <string name="voice_profile_in_use">Iyasebenza: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Ulimi olukhulunywayo alutholakali ngenkathi usebenzisa iphrofayela yezwi</string>
     <string name="speech_engine_unavailable_with_profile">Injini yenkulumo ayitholakali ngenkathi usebenzisa iphrofayela yezwi</string>
@@ -1325,7 +1325,7 @@
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, ayifakiwe</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
     <string name="voice_profile_move_up">Hambisa phezulu</string>
-    <string name="voice_profile_move_down">Hamba phansi</string>
+    <string name="voice_profile_move_down">Hambisa phansi</string>
     <string name="voice_profile_rename">Qamba kabusha</string>
     <string name="voice_profile_moved_above">Kuhanjiswe ngenhla <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Kuhanjiswe ngezansi <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1552,11 +1552,11 @@
     <string name="value_audio_output_device_speaker">Isipikha sefoni</string>
     <string name="value_audio_output_device_bluetooth_or_wired">Ixhunyiwe Bluetooth idivayisi noma intambo</string>
     <string name="value_audio_output_device_disconnected">inqanyuliwe</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth idivayisi yomsindo</string>
+    <string name="value_audio_output_device_bluetooth_default">Idivayisi yomsindo ye-Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Ihedisethi enezintambo</string>
     <string name="value_audio_output_device_wired_headphones">Ama-headphone anentambo</string>
     <string name="value_audio_output_device_usb_headset">USB ihedisethi</string>
-    <string name="value_audio_output_device_usb_device">USB idivayisi yomsindo</string>
+    <string name="value_audio_output_device_usb_device">Idivayisi yomsindo ye-USB</string>
     <string name="title_pref_speaker_devices">Isipikha sefoni esinalawa madivayisi</string>
     <string name="summary_pref_speaker_devices_none">Lutho</string>
     <string name="summary_pref_speaker_devices_no_devices">Cha Bluetooth noma amadivayisi anentambo axhunyiwe okwamanje</string>
@@ -1663,11 +1663,11 @@
     <string name="value_distance_30mm">3 cm</string>
     <string name="value_distance_40mm">4 cm</string>
     <string name="value_distance_50mm">5 cm</string>
-    <string name="value_rotor_step_15">15 degrees</string>
-    <string name="value_rotor_step_20">20 degrees</string>
-    <string name="value_rotor_step_30">30 degrees (okuzenzakalelayo)</string>
-    <string name="value_rotor_step_45">45 degrees</string>
-    <string name="value_rotor_step_60">60 degrees</string>
+    <string name="value_rotor_step_15">amadigri angu-15</string>
+    <string name="value_rotor_step_20">amadigri angu-20</string>
+    <string name="value_rotor_step_30">amadigri angu-30 (okuzenzakalelayo)</string>
+    <string name="value_rotor_step_45">amadigri angu-45</string>
+    <string name="value_rotor_step_60">amadigri angu-60</string>
     <string name="title_pref_low_latency_audio">Umsindo wokubambezeleka okuphansi</string>
     <string name="summary_pref_low_latency_audio">Dlala imisindo nenkulumo SandFly ngokusebenzisa indlela yomsindo eshesha kakhulu yefoni, ukuze uyizwe ngokushesha. Yivale uma inkulumo noma imisindo iphuka noma izwakala ingalungile.</string>
     <string name="value_focus_delay_200ms_default">0.2 amasekhondi (okuzenzakalelayo)</string>

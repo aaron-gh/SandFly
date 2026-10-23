@@ -1304,7 +1304,7 @@
     <string name="summary_selector_switch_tts_engine">Passa da un motore vocale installato all\'altro</string>
     <string name="title_selector_voice_profile">Profilo vocale</string>
     <string name="title_pref_voice_profiles">Profili vocali</string>
-    <string name="voice_profile_default">SandFly predefinito</string>
+    <string name="voice_profile_default">Predefinito di SandFly</string>
     <string name="voice_profile_in_use">In uso: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Lingua parlata non disponibile durante l\'utilizzo di un profilo vocale</string>
     <string name="speech_engine_unavailable_with_profile">Motore vocale non disponibile durante l\'utilizzo di un profilo vocale</string>
@@ -1324,12 +1324,12 @@
     <string name="voice_profile_loading">Caricamento</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, non installato</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Vai su</string>
-    <string name="voice_profile_move_down">Spostati giù</string>
+    <string name="voice_profile_move_up">Sposta su</string>
+    <string name="voice_profile_move_down">Sposta giù</string>
     <string name="voice_profile_rename">Rinominare</string>
     <string name="voice_profile_moved_above">Spostato sopra <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Spostato sotto <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> cancellato</string>
+    <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> eliminato</string>
     <string name="title_pref_delete_voice_profile">Elimina il profilo vocale</string>
     <string name="voice_profile_delete_confirm">Eliminare <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Elimina</string>
@@ -1552,11 +1552,11 @@
     <string name="value_audio_output_device_speaker">Altoparlante del telefono</string>
     <string name="value_audio_output_device_bluetooth_or_wired">Dispositivo connesso Bluetooth o cablato</string>
     <string name="value_audio_output_device_disconnected">disconnesso</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth dispositivo audio</string>
+    <string name="value_audio_output_device_bluetooth_default">Dispositivo audio Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Auricolare cablato</string>
     <string name="value_audio_output_device_wired_headphones">Cuffie cablate</string>
-    <string name="value_audio_output_device_usb_headset">USB cuffia</string>
-    <string name="value_audio_output_device_usb_device">USB dispositivo audio</string>
+    <string name="value_audio_output_device_usb_headset">Cuffie USB</string>
+    <string name="value_audio_output_device_usb_device">Dispositivo audio USB</string>
     <string name="title_pref_speaker_devices">Altoparlante del telefono con questi dispositivi</string>
     <string name="summary_pref_speaker_devices_none">Nessuna</string>
     <string name="summary_pref_speaker_devices_no_devices">Nessun Bluetooth o dispositivo cablato ancora collegato</string>

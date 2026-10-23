@@ -1304,7 +1304,7 @@
     <string name="summary_selector_switch_tts_engine">Preklapljanje med nameščenimi govornimi mehanizmi</string>
     <string name="title_selector_voice_profile">Glasovni profil</string>
     <string name="title_pref_voice_profiles">Glasovni profili</string>
-    <string name="voice_profile_default">SandFly privzeto</string>
+    <string name="voice_profile_default">Privzeto za SandFly</string>
     <string name="voice_profile_in_use">V uporabi: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Med uporabo glasovnega profila govorni jezik ni na voljo</string>
     <string name="speech_engine_unavailable_with_profile">Govorni mehanizem med uporabo glasovnega profila ni na voljo</string>
@@ -1324,8 +1324,8 @@
     <string name="voice_profile_loading">Nalaganje</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, ni nameščen</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Premakni se navzgor</string>
-    <string name="voice_profile_move_down">Premakni se navzdol</string>
+    <string name="voice_profile_move_up">Premakni navzgor</string>
+    <string name="voice_profile_move_down">Premakni navzdol</string>
     <string name="voice_profile_rename">Preimenuj</string>
     <string name="voice_profile_moved_above">Premaknjeno nad <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Premaknjeno pod <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1560,11 +1560,11 @@
     <string name="value_audio_output_device_speaker">Telefonski zvočnik</string>
     <string name="value_audio_output_device_bluetooth_or_wired">Povezana naprava Bluetooth ali žično</string>
     <string name="value_audio_output_device_disconnected">odklopljen</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth zvočna naprava</string>
+    <string name="value_audio_output_device_bluetooth_default">Zvočna naprava Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Žične slušalke</string>
     <string name="value_audio_output_device_wired_headphones">Žične slušalke</string>
     <string name="value_audio_output_device_usb_headset">USB slušalke</string>
-    <string name="value_audio_output_device_usb_device">USB zvočna naprava</string>
+    <string name="value_audio_output_device_usb_device">Zvočna naprava USB</string>
     <string name="title_pref_speaker_devices">Telefonski zvočnik s temi napravami</string>
     <string name="summary_pref_speaker_devices_none">Brez</string>
     <string name="summary_pref_speaker_devices_no_devices">Nobena Bluetooth ali žična naprava še ni povezana</string>

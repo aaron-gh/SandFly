@@ -1551,12 +1551,12 @@
     <string name="value_audio_output_device_default">系統預設</string>
     <string name="value_audio_output_device_speaker">手機揚聲器</string>
     <string name="value_audio_output_device_bluetooth_or_wired">連接Bluetooth設備或有線</string>
-    <string name="value_audio_output_device_disconnected">斷開連接</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth 音訊設備</string>
+    <string name="value_audio_output_device_disconnected">已中斷連線</string>
+    <string name="value_audio_output_device_bluetooth_default">Bluetooth 音訊裝置</string>
     <string name="value_audio_output_device_wired_headset">有線耳機</string>
     <string name="value_audio_output_device_wired_headphones">有線耳機</string>
     <string name="value_audio_output_device_usb_headset">USB耳機</string>
-    <string name="value_audio_output_device_usb_device">USB 音訊設備</string>
+    <string name="value_audio_output_device_usb_device">USB 音訊裝置</string>
     <string name="title_pref_speaker_devices">配備這些裝置的手機揚聲器</string>
     <string name="summary_pref_speaker_devices_none">無</string>
     <string name="summary_pref_speaker_devices_no_devices">尚未連接Bluetooth或有線設備</string>
@@ -1656,9 +1656,9 @@
     <string name="title_pref_rotor_step_degrees">轉子每步轉數</string>
     <string name="title_pref_edge_first_click_mm">到第一次點擊的距離</string>
     <string name="title_pref_edge_second_click_mm">第一次點擊到第二次點擊的距離</string>
-    <string name="value_distance_5mm">0.5厘米</string>
+    <string name="value_distance_5mm">0.5公分</string>
     <string name="value_distance_10mm">1公分</string>
-    <string name="value_distance_15mm">1.5厘米</string>
+    <string name="value_distance_15mm">1.5公分</string>
     <string name="value_distance_20mm">2公分</string>
     <string name="value_distance_30mm">3公分</string>
     <string name="value_distance_40mm">4公分</string>
@@ -1674,7 +1674,7 @@
     <string name="value_focus_delay_300ms">0.3秒</string>
     <string name="title_pref_lift_to_activate">放開手指即啟用</string>
     <string name="summary_support_change_lift_to_activate">更改抬起手指以啟動項目的位置</string>
-    <string name="value_lift_to_activate_disabled">殘障人士</string>
+    <string name="value_lift_to_activate_disabled">已停用</string>
     <string name="value_lift_to_activate_navigation_bar">僅在導覽列上</string>
     <string name="value_lift_to_activate_entire_screen">全螢幕</string>
     <string name="template_lift_to_activate_changed">抬起激活：<xliff:g id="mode">%1$s</xliff:g></string>
