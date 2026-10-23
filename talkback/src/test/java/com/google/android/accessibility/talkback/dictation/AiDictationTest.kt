@@ -36,5 +36,8 @@ class AiDictationTest {
     assertTrue(prompt.contains("\"\"\"thanks for the help\"\"\""))
     assertTrue(prompt.contains("Dear Sam,\"\"\""))
     assertTrue(!prompt.contains("x".repeat(301)))
+    // Rambler's cleanup, not only punctuation.
+    assertTrue(prompt.contains("filler words"))
+    assertTrue(prompt.contains("keep only the correction"))
   }
 }
