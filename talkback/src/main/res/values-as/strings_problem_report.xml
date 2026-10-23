@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">মতামত পঠিয়াওক</string>
+    <string name="title_pref_problem_report_type">প্ৰতিক্ৰিয়াৰ ধৰণ</string>
+    <string name="title_pref_problem_report_area">এলেকা</string>
+    <string name="title_pref_problem_report_title">শিৰোনাম</string>
+    <string name="title_pref_problem_report_app">App য\'ত হয়</string>
+    <string name="title_pref_problem_report_description">বিৱৰণ</string>
+    <string name="dialog_message_problem_report_description">কি হয় আৰু আপুনি কি আশা কৰিছিল।</string>
+    <string name="title_pref_problem_report_steps">বংশবৃদ্ধিৰ পদক্ষেপ</string>
+    <string name="title_pref_problem_report_email">উত্তৰৰ বাবে ইমেইল কৰক</string>
+    <string name="title_pref_problem_report_device">ডিভাইচৰ তথ্য অন্তৰ্ভুক্ত কৰক</string>
+    <string name="title_pref_problem_report_log">SandFly লগ অন্তৰ্ভুক্ত কৰক</string>
+    <string name="summary_pref_problem_report_log">পৰ্দাৰ পৰা লিখা থাকিব পাৰে</string>
+    <string name="title_pref_problem_report_send">পঠিয়াওক</string>
+    <string name="summary_pref_problem_report_sending">পঠিয়াইছে</string>
+    <string name="problem_report_missing_fields">এটা শিৰোনাম আৰু এটা বিৱৰণ দিয়ক।</string>
+    <string name="problem_report_invalid_email">এটা বৈধ ইমেইল ঠিকনা দিয়ক।</string>
+    <string name="problem_report_sent">মতামত প্ৰেৰণ কৰা হৈছে।</string>
+    <string name="problem_report_rate_limited">অত্যধিক মতামত প্ৰেৰণ কৰা হৈছে। পিছত আকৌ চেষ্টা কৰক।</string>
+    <string name="problem_report_no_connection">মতামত প্ৰেৰণ কৰা হোৱা নাই। ইণ্টাৰনেট সংযোগ পৰীক্ষা কৰক।</string>
+    <string name="problem_report_not_sent">মতামত প্ৰেৰণ কৰা হোৱা নাই। পিছত আকৌ চেষ্টা কৰক।</string>
+    <string-array name="problem_report_type_entries">
+        <item>ভুল আচৰণ</item>
+        <item>ক্ৰেচ</item>
+        <item>লেহেমীয়া বা সঁহাৰি নিদিয়া</item>
+        <item>পৰামৰ্শ</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>বক্তৃতা</item>
+        <item>আঙুলিৰ স্পৰ্শৰে নিৰ্দেশসমূহ</item>
+        <item>স্পৰ্শ অন্বেষণ</item>
+        <item>পঢ়া নিয়ন্ত্ৰণ আৰু মেনুসমূহ</item>
+        <item>টাইপিং আৰু কিবৰ্ড</item>
+        <item>ব্ৰেইল কীব\'র্ড</item>
+        <item>ব্ৰেইল ডিছপ্লে’</item>
+        <item>শব্দ আৰু কম্পন</item>
+        <item>জাননী</item>
+        <item>ৱেব বিষয়বস্তু</item>
+        <item>স্ক্ৰিপ্ট</item>
+        <item>ছেটিং</item>
+        <item>আপডেটসমূহ</item>
+        <item>অন্য</item>
+    </string-array>
+    <string name="title_report_new">মতামত পঠিয়াওক</string>
+    <string name="title_report_inbox">ইনবক্স</string>
+    <string name="title_report_drafts">খচৰা</string>
+    <string name="report_inbox_empty">কোনো মতামত প্ৰেৰণ কৰা হোৱা নাই</string>
+    <string name="report_drafts_empty">কোনো খচৰা নাই</string>
+    <string name="report_just_now">মাত্ৰ এতিয়াই</string>
+    <string name="report_untitled">শিৰোনামহীন</string>
+    <string name="report_draft_summary">সলনি কৰা হৈছে <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">পঠিয়াইছে <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> টা নতুন উত্তৰ</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> টা নতুন উত্তৰ</item>
+    </plurals>
+    <string name="report_status_changed">অৱস্থা সলনি কৰা হৈছে</string>
+    <string name="report_status_open">খোলা</string>
+    <string name="report_status_completed">বন্ধ, সম্পূৰ্ণ</string>
+    <string name="report_status_not_planned">বন্ধ, পৰিকল্পিত নহয়</string>
+    <string name="report_status_duplicate">বন্ধ, ডুপ্লিকেট</string>
+    <string name="report_status_unknown">আঁতৰোৱা হৈছে</string>
+    <string name="title_report_status">অৱস্থা</string>
+    <string name="title_report_your_report">আপোনাৰ মতামত</string>
+    <string name="title_report_messages">বাৰ্তাসমূহ</string>
+    <string name="report_message_from_developer">ডেভেলপাৰ, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">আপুনি, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">উত্তৰ দিয়ক</string>
+    <string name="title_report_reply_text">আপোনাৰ উত্তৰ</string>
+    <string name="title_report_send_reply">উত্তৰ পঠাওক</string>
+    <string name="report_reply_sent">উত্তৰ প্ৰেৰণ কৰা হৈছে।</string>
+    <string name="report_reply_not_sent">উত্তৰ প্ৰেৰণ কৰা হোৱা নাই। পিছত আকৌ চেষ্টা কৰক।</string>
+    <string name="title_report_remove">ইনবক্সৰ পৰা আঁতৰাই দিয়ক</string>
+    <string name="dialog_title_report_remove">এই মতামত ইনবক্সৰ পৰা আঁতৰাবনে?</string>
+    <string name="dialog_message_report_remove">ইয়াৰ উত্তৰ আৰু এই ফোনত নাপাব।</string>
+    <string name="title_report_delete_draft">খচৰা মচি পেলাওক</string>
+    <string name="dialog_title_report_delete_draft">এই খচৰাটো মচি পেলাওক?</string>
+    <string name="button_report_delete">মচক</string>
+    <string name="report_missing">এই মতামত আৰু ইনবক্সত নাই।</string>
+    <string name="notification_channel_problem_reports">প্ৰতিক্ৰিয়াৰ উত্তৰ</string>
+    <string name="report_notification_reply">উত্তৰ দিয়ক <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>

@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">শক্তিশালী</string>
+    <string name="notification_shake_2">মধ্যমীয়া</string>
+    <string name="notification_shake_1">কোমল</string>
+    <string name="notification_media_skip">উচ্চস্বৰে পঢ়িব নালাগে</string>
+    <string name="notification_media_pause">পঢ়ি থাকোঁতে মিডিয়াটো থমকি ৰ’ব</string>
+    <string name="notification_media_read">উচ্চস্বৰে পঢ়ক</string>
+    <string name="notification_headphones_only_without">কেৱল হেডফোন অবিহনে</string>
+    <string name="notification_headphones_only_with">কেৱল হেডফোনৰ সৈতে</string>
+    <string name="notification_headphones_always">হেডফোনৰ সৈতে বা অবিহনে উচ্চস্বৰে পঢ়ক</string>
+    <string name="notification_queue_skip">নতুন জাননীখন উচ্চস্বৰে পঢ়িব নালাগে</string>
+    <string name="notification_queue_interrupt">উচ্চস্বৰে পঢ়া অধিসূচনাত বাধা দিয়ক</string>
+    <string name="notification_queue_queue">বৰ্তমানৰ অধিসূচনাৰ পিছত উচ্চস্বৰে পঢ়ক</string>
+    <string name="notification_url_omit">এৰি দিয়ক</string>
+    <string name="notification_url_replace">তলৰ লিখনীটো কওক</string>
+    <string name="notification_url_domain">কেৱল চাইটটো পঢ়ক</string>
+    <string name="notification_url_full">গোটেই লিংকটো পঢ়ক</string>
+    <string name="notification_category_title">জাননী</string>
+    <string name="notification_reading_title">জাননীবোৰ উচ্চস্বৰে পঢ়া</string>
+    <string name="notification_apps_title">এপ্‌সমূহ</string>
+    <string name="notification_words_title">শব্দ আৰু প্ৰতিস্থাপন</string>
+    <string name="notification_kinds_title">প্ৰকাৰৰ জাননী</string>
+    <string name="notification_when_title">কেতিয়া পঢ়িব লাগে</string>
+    <string name="notification_rules_title">নিয়ম</string>
+    <string name="notification_repeats_title">পুনৰাবৃত্তি কৰে</string>
+    <string name="notification_stop_title">পঢ়া বন্ধ কৰক</string>
+    <string name="notification_schedules_title">সাৰাংশ আৰু সময়</string>
+    <string name="notification_history_title">অধিসূচনাৰ ইতিহাস</string>
+    <string name="notification_test_title">পৰীক্ষাৰ জাননী প্ৰেৰণ কৰক</string>
+    <string name="notification_automation_title">অটোমেচন</string>
+    <string name="notification_automation_allowed_title">অটোমেচন এপসমূহৰ অনুমতি দিয়ক</string>
+    <string name="notification_category_said">কি কোৱা হৈছে</string>
+    <string name="notification_format_title">বক্তৃতা বিন্যাস</string>
+    <string name="notification_format_message">স্থানধাৰী: {app}, {title}, {text}, {content} (গোটেই পাঠ), {bigtext}, {subtext}, {ticker}, {category} আৰু {time}।</string>
+    <string name="notification_private_format_title">ব্যক্তিগত জাননীত কোৱা হৈছে</string>
+    <string name="notification_private_format_message">ব্যক্তিগত অধিসূচনাৰ বিষয়বস্তুৰ ঠাইত কোৱা হৈছে। প্লেচহোল্ডাৰ: {app}, {category} আৰু {time}।</string>
+    <string name="notification_category_voice">কণ্ঠ</string>
+    <string name="notification_voice_title">কণ্ঠ</string>
+    <string name="notification_voice_sandfly">SandFly ৰ মাত</string>
+    <string name="notification_detect_language_title">ভাষা ধৰা পেলাওক</string>
+    <string name="notification_detect_language_summary">প্ৰতিটো জাননী ই লিখা ভাষাত কওক। প্ৰয়োজনসমূহ লিখনী-ৰ পৰা-বাক্য সংহতিসমূহত স্বয়ংক্ৰিয়ভাৱে ভাষা সলনি কৰক।</string>
+    <string name="notification_sound_before_title">জাননীৰ আগতে শব্দ</string>
+    <string name="notification_category_text">পাঠ</string>
+    <string name="notification_remove_emoji_title">ইমোজি এৰি দিয়ক</string>
+    <string name="notification_lowercase_title">ডাঙৰ আখৰবোৰ শব্দ হিচাপে পঢ়ক</string>
+    <string name="notification_lowercase_summary">কিছুমান বাক্য ইঞ্জিনত আখৰ আখৰকৈ ডাঙৰ আখৰেৰে শব্দৰ বানান কৰা হয়</string>
+    <string name="notification_separate_digits_title">দীঘল সংখ্যাবোৰ অংকৰ পিছত অংক পঢ়ক</string>
+    <string name="notification_separate_digits_summary">যেনে ক’ড আৰু ফোন নম্বৰ</string>
+    <string name="notification_min_digits_title">দীঘলীয়া সংখ্যাত নূন্যতম সংখ্যা</string>
+    <string name="notification_urls_title">লিংকসমূহ</string>
+    <string name="notification_url_text_title">এটা লিংকৰ ঠাইত কোৱা হৈছে</string>
+    <string name="notification_skip_empty_title">কোনো লিখনী নথকা জাননীসমূহ এৰি দিয়ক</string>
+    <string name="notification_category_length">দৈৰ্ঘ্য</string>
+    <string name="notification_max_words_title">সৰ্বাধিক শব্দৰ সংখ্যা</string>
+    <string name="notification_max_sentences_title">সৰ্বাধিক বাক্যৰ সংখ্যা</string>
+    <string name="notification_max_characters_title">সৰ্বাধিক সংখ্যক লিখনী আখৰ</string>
+    <string name="notification_max_seconds_title">পিছত পঢ়া বন্ধ কৰক</string>
+    <string name="notification_category_timing">সময়</string>
+    <string name="notification_delay_title">পঢ়াৰ আগতে অপেক্ষা কৰক</string>
+    <string name="notification_queue_title">যেতিয়া আন এটা জাননী পঢ়া হয়</string>
+    <string name="notification_repeat_minutes_title">পৰ্দা অন নোহোৱালৈকে পুনৰ পঢ়ক</string>
+    <string name="notification_skip_media_title">মিডিয়া প্লেয়াৰ এৰি দিয়ক</string>
+    <string name="notification_skip_ongoing_title">চলি থকা জাননীসমূহ এৰি দিয়ক</string>
+    <string name="notification_skip_ongoing_summary">যেনে নেভিগেচন আৰু টাইমাৰ</string>
+    <string name="notification_skip_foreground_title">এপ জাননী চলোৱা এৰি দিয়ক</string>
+    <string name="notification_skip_foreground_summary">যেনে VPN বা ৰেকৰ্ডাৰ</string>
+    <string name="notification_skip_progress_title">অগ্ৰগতিৰ জাননীসমূহ এৰি দিয়ক</string>
+    <string name="notification_skip_group_summaries_title">গোটৰ সাৰাংশ এৰি দিয়ক</string>
+    <string name="notification_skip_group_summaries_summary">যেনে “৩টা নতুন বাৰ্তা”</string>
+    <string name="notification_skip_low_priority_title">কম অগ্ৰাধিকাৰ থকা জাননীসমূহ এৰি দিয়ক</string>
+    <string name="notification_skip_system_title">চিস্টেম জাননীসমূহ এৰি দিয়ক</string>
+    <string name="notification_screen_on_title">পৰ্দাখন অন হৈ থকাৰ সময়ত</string>
+    <string name="notification_screen_off_title">পৰ্দা বন্ধ হৈ থকাৰ সময়ত</string>
+    <string name="notification_locked_title">ফোনটো লক হৈ থকাৰ সময়ত</string>
+    <string name="notification_headphones_title">হেডফোন</string>
+    <string name="notification_media_title">সংবাদ মাধ্যমে খেলি থকাৰ সময়ত</string>
+    <string name="notification_dnd_title">অসুবিধা নিদিব</string>
+    <string name="notification_dnd_none">কোনো জাননী উচ্চস্বৰে পঢ়িব নালাগে</string>
+    <string name="notification_dnd_allowed">বিঘ্নিত নকৰিব অৱস্থাৰ দ্বাৰা অনুমোদিত জাননীসমূহ পঢ়ক</string>
+    <string name="notification_dnd_all">সকলো পঢ়ক</string>
+    <string name="notification_touch_title">পৰ্দাখন স্পৰ্শ কৰাৰ সময়ত</string>
+    <string name="notification_touch_read">লগে লগে পঢ়ক</string>
+    <string name="notification_touch_after">স্পৰ্শ শেষ হ’লে পঢ়ক</string>
+    <string name="notification_touch_skip">উচ্চস্বৰে পঢ়িব নালাগে</string>
+    <string name="notification_during_calls_title">কলৰ সময়ত</string>
+    <string name="notification_honour_silent_title">চাইলেণ্ট মোডত নহয়</string>
+    <string name="notification_honour_vibrate_title">ভাইব্ৰেট মোডত নহয়</string>
+    <string name="notification_skip_in_car_title">গাড়ীৰ মোডত নহয়</string>
+    <string name="notification_skip_in_car_summary">যেনে Android Auto ৰ সৈতে, যিয়ে সেইবোৰ নিজেই পঢ়ে</string>
+    <string name="notification_category_quiet_hours">নিস্তব্ধ ঘন্টা</string>
+    <string name="notification_quiet_hours_title">নিস্তব্ধ ঘন্টা</string>
+    <string name="notification_quiet_start_title">আৰম্ভ কৰক</string>
+    <string name="notification_quiet_end_title">শেষ</string>
+    <string name="notification_repeat_seconds_title">ৰ বাবে একেটা জাননী এৰি দিয়ক</string>
+    <string name="notification_numbers_alike_title">বিভিন্ন সংখ্যাক একে বুলি গণ্য কৰক</string>
+    <string name="notification_numbers_alike_summary">যেনে এটা ডাউনলোডৰ শতাংশ</string>
+    <string name="notification_cooldown_title">এটা এপৰ জাননীৰ মাজৰ সময়</string>
+    <string name="notification_skip_prefix_title">এটা পুনৰাবৃত্তিমূলক লিখনী উপসৰ্গ বাদ দিয়ক</string>
+    <string name="notification_skip_prefix_summary">যেনে আড্ডাত এটা গোটৰ নাম</string>
+    <string name="notification_prefix_memory_title">লিখনী উপসৰ্গটো কিমান দিনলৈ মনত ৰাখিব লাগে</string>
+    <string name="notification_access_summary">চাকৰিৰ পৰা বৰ্খাস্ত কৰা জাননী পঢ়া বন্ধ কৰাৰ প্ৰয়োজন আৰু সাৰাংশৰ বাবে</string>
+    <string name="notification_shake_title">বন্ধ কৰিবলৈ জোকাৰি দিয়ক</string>
+    <string name="notification_shake_strength_title">জোকাৰণিৰ তীব্ৰতা</string>
+    <string name="notification_wave_title">পঢ়া বন্ধ কৰিবলৈ হাত জোকাৰিব</string>
+    <string name="notification_wave_summary">প্ৰক্সিমিটি চেন্সৰৰ ওপৰেৰে হাত এখন লৰচৰ কৰা</string>
+    <string name="notification_pocket_title">পকেট মোড</string>
+    <string name="notification_pocket_summary">পকেটৰ দৰে পঢ়া আৰম্ভ হ’লে ঢাকি ৰখা চেন্সৰে ইয়াক বন্ধ নকৰে</string>
+    <string name="notification_volume_keys_title">দুয়োটা আয়তন কি\' টিপক</string>
+    <string name="notification_dismiss_title">অধিসূচনা খাৰিজ হ’লে পঢ়া বন্ধ কৰক</string>
+    <string name="notification_watch_dismiss_title">লগতে যেতিয়া স্মাৰ্টৱাচত জাননীখন খাৰিজ কৰা হয়</string>
+    <string name="notification_app_cancel_title">এপটোৱে জাননীটো আঁতৰাই দিলে পঢ়া বন্ধ কৰক</string>
+    <string name="notification_category_summary">সাৰাংশ</string>
+    <string name="notification_summary_now_title">এতিয়াই জাননী পঢ়ক</string>
+    <string name="notification_summary_daily_title">প্ৰতিদিনে জাননী পঢ়ক</string>
+    <string name="notification_summary_time_title">সময়</string>
+    <string name="notification_summary_newest_first_title">নতুন প্ৰথম</string>
+    <string name="notification_summary_name_title">তোমাৰ নাম</string>
+    <string name="notification_summary_gap_title">জাননীসমূহৰ মাজত থমকি ৰওক</string>
+    <string name="notification_summary_needs_sandfly">জাননীসমূহ পঢ়িবলৈ SandFly অন কৰক</string>
+    <string name="notification_summary_no_access">জাননীৰ এক্সেছ অফ আছে</string>
+    <string name="notification_summary_morning">শুভ ৰাতিপুৱা।</string>
+    <string name="notification_summary_afternoon">শুভ আবেলি।</string>
+    <string name="notification_summary_evening">শুভ সন্ধিয়া।</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">সময়ৰ ঘোষণা</string>
+    <string name="notification_clock_interval_title">সময় কওক প্ৰতি</string>
+    <string name="notification_clock_format_title">সময়ৰ ফৰ্মেট</string>
+    <string name="notification_clock_format_message">প্লেচহোল্ডাৰ: {time}, {date} আৰু {battery} (বেটাৰীৰ শতাংশ)।</string>
+    <string name="notification_clock_format_default">ইয়াৰ {time}</string>
+    <string name="notification_clock_exact_title">সঠিক সময়</string>
+    <string name="notification_clock_exact_summary">এলাৰ্ম আৰু সোঁৱৰাই দিয়াৰ প্ৰয়োজন। অন্যথা সময় এক মিনিট পৰ্যন্ত দেৰিকৈ ক’ব পাৰি।</string>
+    <string name="notification_other_apps_title">অন্যান্য এপ</string>
+    <string name="notification_apps_category">এপ্‌সমূহ</string>
+    <string name="notification_apps_loading">এপসমূহ লোড কৰা হৈছে</string>
+    <string name="notification_app_mode_title">জাননী</string>
+    <string name="notification_app_mode_default">আন এপসমূহৰ দৰে</string>
+    <string name="notification_app_mode_read">উচ্চস্বৰে পঢ়ক</string>
+    <string name="notification_app_mode_private">কেৱল এপৰ নাম</string>
+    <string name="notification_app_mode_priority">প্ৰথমে পঢ়ক</string>
+    <string name="notification_app_mode_ignore">উচ্চস্বৰে পঢ়িব নালাগে</string>
+    <string name="notification_app_name_title">কথিত নাম</string>
+    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> বুলি কোৱা হৈছে।</string>
+    <string name="notification_app_reset">ৰিছেট কৰক</string>
+    <string name="notification_required_title">কেৱল জাননীসমূহ পঢ়ক</string>
+    <string name="notification_blocked_title">ৰ সৈতে জাননী পঢ়িব নালাগে</string>
+    <string name="notification_private_title">কেৱল এপৰ নামটো পঢ়ক</string>
+    <string name="notification_replacements_title">বেলেগকৈ কওক</string>
+    <string name="notification_add_word">এটা শব্দ যোগ কৰক</string>
+    <string name="notification_add_replacement">ইয়াৰ সলনি এটা যোগ কৰক</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> হিচাপে <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">পাঠ</string>
+    <string name="notification_replace_with">কওক যেনে</string>
+    <string name="notification_whole_words">কেৱল গোটেই শব্দ</string>
+    <string name="notification_regex">নিয়মিত প্ৰকাশ</string>
+    <string name="notification_enter_text">এটা লিখনী দিয়ক</string>
+    <string name="notification_invalid_regex">বৈধ নিয়মীয়া অভিব্যক্তি নহয়</string>
+    <string name="notification_edit">সম্পাদনা কৰক</string>
+    <string name="notification_remove">আঁতৰাওক</string>
+    <string name="notification_history_keep">অধিসূচনাৰ ইতিহাস সংৰক্ষণ কৰক</string>
+    <string name="notification_history_clear">ইতিহাস পৰিষ্কাৰ কৰক</string>
+    <string name="notification_history_category">জাননী</string>
+    <string name="notification_history_empty">কোনো জাননী নাই</string>
+    <string name="notification_history_ignore_app">পঢ়িব নালাগে <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">কেৱল <xliff:g id="app" example="Chat">%1$s</xliff:g> ৰ নাম পঢ়ক ৷</string>
+    <string name="notification_history_priority_app">প্ৰথমে <xliff:g id="app" example="Chat">%1$s</xliff:g> পঢ়ক</string>
+    <string name="notification_history_block_similar">এনেদৰে নটিফিকেচন পঢ়িব নালাগে</string>
+    <string name="notification_history_copy">প্ৰতিলিপি কৰক</string>
+    <string name="notification_saved">সংৰক্ষণ কৰা হৈছে</string>
+    <string name="notification_copied">কপি কৰা হৈছে</string>
+    <string name="notification_outcome_read">সফলতাৰে উচ্চস্বৰে পঢ়ক</string>
+    <string name="notification_outcome_stopped">পঢ়ি থাকোঁতে ৰৈ গ’ল</string>
+    <string name="notification_outcome_speech_off">পঢ়া নাই: অধিসূচনাৰ ভাষণ বন্ধ</string>
+    <string name="notification_outcome_dnd">পঢ়া নহয়: অশান্তি নকৰিব</string>
+    <string name="notification_outcome_touching">পঢ়া নাই: পৰ্দাখন স্পৰ্শ কৰা হৈছিল</string>
+    <string name="notification_outcome_app">পঢ়া নহয়: এপ</string>
+    <string name="notification_outcome_ongoing">পঢ়া নাই: চলি আছে</string>
+    <string name="notification_outcome_foreground">পঢ়া নাই: চলি থকা এপ</string>
+    <string name="notification_outcome_low_priority">পঢ়া নহয়: কম অগ্ৰাধিকাৰ</string>
+    <string name="notification_outcome_system">পঢ়া নহয়: ব্যৱস্থা</string>
+    <string name="notification_outcome_media">পঢ়া নাই: মিডিয়া প্লেয়াৰ</string>
+    <string name="notification_outcome_group_summary">পঢ়া নহয়: গোটৰ সাৰাংশ</string>
+    <string name="notification_outcome_progress">পঢ়া নহয়: অগ্ৰগতি</string>
+    <string name="notification_outcome_required">পঢ়া নাই: প্ৰয়োজনীয় শব্দ নোহোৱা হৈছে</string>
+    <string name="notification_outcome_blocked">পঢ়া নহয়: ব্লক কৰা শব্দ</string>
+    <string name="notification_outcome_empty">পঢ়া নাই: কোনো লিখনী নাই</string>
+    <string name="notification_outcome_repeat">পঢ়া নহয়: পুনৰাবৃত্তি কৰক</string>
+    <string name="notification_outcome_cooldown">উচ্চস্বৰে পঢ়া নহয়: এই এপৰ পৰা আন এটা জাননী অতি শেহতীয়াকৈ পঢ়া হৈছিল</string>
+    <string name="notification_outcome_quiet_hours">পঢ়া নাই: নিস্তব্ধ ঘণ্টা</string>
+    <string name="notification_outcome_screen_on">পঢ়া নহয়: পৰ্দা অন</string>
+    <string name="notification_outcome_screen_off">পঢ়া নহয়: পৰ্দা বন্ধ</string>
+    <string name="notification_outcome_locked">পঢ়া নাই: লক কৰা হৈছে</string>
+    <string name="notification_outcome_headphones">পঢ়া নাই: হেডফোন সংযোগ কৰা হৈছে</string>
+    <string name="notification_outcome_no_headphones">পঢ়া নাই: হেডফোন নাই</string>
+    <string name="notification_outcome_silent">পঢ়া নহয়: নিৰৱ অৱস্থা</string>
+    <string name="notification_outcome_vibrate">পঢ়া নহয়: কম্পন ধৰণ</string>
+    <string name="notification_outcome_media_playing">পঢ়া নহয়: মিডিয়া খেলা</string>
+    <string name="notification_outcome_car">পঢ়া নহয়: গাড়ীৰ মোড</string>
+    <string name="notification_outcome_rule">পঢ়া নহয়: নিয়ম</string>
+    <string name="notification_outcome_busy">পঢ়া নাই: আন এটা জাননী পঢ়া হ’ল</string>
+    <string name="notification_outcome_call">অহা ফোন কল হিচাপে ঘোষণা কৰা হৈছে</string>
+    <string name="notification_rule_add">এটা নিয়ম যোগ কৰক</string>
+    <string name="notification_rule_from_template">এটা সাঁচৰ পৰা এটা নিয়ম যোগ কৰক</string>
+    <string name="notification_rules_category">নিয়ম</string>
+    <string name="notification_rules_empty">কোনো নিয়ম নাই</string>
+    <string name="notification_rule_name">নাম</string>
+    <string name="notification_rule_untitled">নিয়ম</string>
+    <string name="notification_rule_enabled">অন হৈ গ’ল</string>
+    <string name="notification_rule_match">চৰ্তসমূহ</string>
+    <string name="notification_rule_match_all">সকলো চৰ্ত পূৰণ কৰিব লাগিব</string>
+    <string name="notification_rule_match_any">অন্ততঃ এটা চৰ্ত পূৰণ কৰিব লাগিব</string>
+    <string name="notification_rule_conditions">কেতিয়া</string>
+    <string name="notification_rule_actions">তাৰ পিছত</string>
+    <string name="notification_rule_add_condition">এটা চৰ্ত যোগ কৰক</string>
+    <string name="notification_rule_add_action">এটা কাৰ্য্য যোগ কৰক</string>
+    <string name="notification_rule_invert">চৰ্তটো ওলোটা কৰক</string>
+    <string name="notification_rule_delete">নিয়মটো মচি পেলাওক</string>
+    <string name="notification_rule_delete_confirm">মচি পেলাওক <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_always">সদায়</string>
+    <string name="notification_rule_no_actions">একো নহয়</string>
+    <string name="notification_rule_and">" আৰু "</string>
+    <string name="notification_rule_or">" বা \" \"। "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">কেৱল হেডফোনৰ সৈতে</string>
+    <string name="notification_template_night">ৰাতি নিস্তব্ধ</string>
+    <string name="notification_template_screen_off">কেৱল পৰ্দা বন্ধ হৈ থাকিলে</string>
+    <string name="notification_template_locked_private">কেৱল ফোনটো লক হৈ থকাৰ সময়ত এপৰ নাম</string>
+    <string name="notification_template_short_on_battery">চাৰ্জ নকৰাৰ সময়ত চমুকৈ পঢ়ক</string>
+    <string name="notification_type_bluetooth">Bluetooth ডিভাইচ</string>
+    <string name="notification_type_wired">তাঁৰযুক্ত হেডফ’ন</string>
+    <string name="notification_type_wifi">Wi-Fi নেটৱৰ্ক</string>
+    <string name="notification_type_time">দিনৰ সময়</string>
+    <string name="notification_type_screen">স্ক্ৰীন অন আছে</string>
+    <string name="notification_type_locked">ফোন লক</string>
+    <string name="notification_type_from_app">এটা এপৰ পৰা জাননী</string>
+    <string name="notification_type_foreground">অগ্ৰভূমিত এপ</string>
+    <string name="notification_type_contains">জাননীত আছে</string>
+    <string name="notification_type_battery">বেটাৰীৰ স্তৰ তলত</string>
+    <string name="notification_type_charging">চাৰ্জিং</string>
+    <string name="notification_type_landscape">লেণ্ডস্কে’প</string>
+    <string name="notification_type_silent">নিস্তব্ধ বা কম্পন মোড</string>
+    <string name="notification_type_media">মিডিয়া খেলা</string>
+    <string name="notification_bluetooth_any">যিকোনো ডিভাইচ</string>
+    <string name="notification_wifi_hint">নেটৱাৰ্কৰ নাম</string>
+    <string name="notification_choose_app">এটা এপ বাছক</string>
+    <string name="notification_time_start">পৰা</string>
+    <string name="notification_time_end">যেতিয়ালৈকে</string>
+    <string name="notification_time_days">দিন</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ৰ পৰা <xliff:g id="end" example="07:00">%2$s</xliff:g> লৈ</string>
+    <string name="notification_permission_needed">SandFly এই অৱস্থাৰ বাবে সেই অনুমতিৰ প্ৰয়োজন</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> সংযোগ কৰা হৈছে</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> সংযোগ কৰা হোৱা নাই</string>
+    <string name="notification_cond_bluetooth_any">এটা Bluetooth অডিঅ\' ডিভাইচ সংযোগ কৰা হৈছে</string>
+    <string name="notification_cond_bluetooth_any_not">কোনো Bluetooth অডিঅ\' ডিভাইচ সংযোগ কৰা হোৱা নাই</string>
+    <string name="notification_cond_wired">তাঁৰযুক্ত হেডফোন সংযোগ কৰা হৈছে</string>
+    <string name="notification_cond_wired_not">তাঁৰযুক্ত হেডফোন সংযোগ কৰা হোৱা নাই</string>
+    <string name="notification_cond_battery_below">বেটাৰী <xliff:g id="percent" example="20">%1$d</xliff:g> শতাংশৰ তলত</string>
+    <string name="notification_cond_battery_below_not">বেটাৰী <xliff:g id="percent" example="20">%1$d</xliff:g> শতাংশ বা তাতকৈ অধিক</string>
+    <string name="notification_cond_charging">ফোনটো চাৰ্জ হৈ আছে</string>
+    <string name="notification_cond_charging_not">ফোনটো চাৰ্জ হোৱা নাই</string>
+    <string name="notification_cond_locked">ফোনটো লক হৈ আছে</string>
+    <string name="notification_cond_locked_not">ফোনটো আনলক হৈ আছে</string>
+    <string name="notification_cond_screen_on">স্ক্ৰীণখন অন হৈ আছে</string>
+    <string name="notification_cond_screen_on_not">স্ক্ৰীণখন বন্ধ হৈ আছে</string>
+    <string name="notification_cond_landscape">পৰ্দাখন লেণ্ডস্কেপত</string>
+    <string name="notification_cond_landscape_not">পৰ্দাখন প’ৰ্ট্ৰেইটত</string>
+    <string name="notification_cond_time">সময় <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> ।</string>
+    <string name="notification_cond_time_not">সময় <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> নহয়।</string>
+    <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> ৰ সৈতে সংযুক্ত</string>
+    <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> ৰ সৈতে সংযোগ কৰা হোৱা নাই।</string>
+    <string name="notification_cond_wifi_any">Wi-Fi ৰ সৈতে সংযুক্ত</string>
+    <string name="notification_cond_wifi_any_not">Wi-Fi ৰ সৈতে সংযোগ কৰা হোৱা নাই।</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> আগভাগত আছে</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> সন্মুখত নাই</string>
+    <string name="notification_cond_from">অধিসূচনা <xliff:g id="app" example="Chat">%1$s</xliff:g> ৰ পৰা।</string>
+    <string name="notification_cond_from_not">অধিসূচনা <xliff:g id="app" example="Chat">%1$s</xliff:g> ৰ পৰা নহয়।</string>
+    <string name="notification_cond_contains">অধিসূচনাত <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">জাননীত <xliff:g id="text" example="urgent">%1$s</xliff:g> নাই।</string>
+    <string name="notification_cond_silent">ৰিংগাৰটো নিস্তব্ধ বা কম্পন হয়</string>
+    <string name="notification_cond_silent_not">ৰিংগাৰটো বাজি উঠে</string>
+    <string name="notification_cond_media">মিডিয়া খেলিছে</string>
+    <string name="notification_cond_media_not">কোনো মিডিয়া খেলা নাই</string>
+    <string name="notification_action_skip">পঢ়িব নালাগে</string>
+    <string name="notification_action_private">কেৱল এপৰ নামটোহে পঢ়ক</string>
+    <string name="notification_action_not_private">ব্যক্তিগত হ’লেও সম্পূৰ্ণকৈ পঢ়ক</string>
+    <string name="notification_action_format">এটা বক্তৃতা বিন্যাস ব্যৱহাৰ কৰক</string>
+    <string name="notification_action_max_words">কেইবাটাও শব্দলৈকে পঢ়ক</string>
+    <string name="notification_action_no_limit">দৈৰ্ঘ্যৰ সীমা অবিহনে পঢ়ক</string>
+    <string name="notification_action_keep_emoji">ইমোজি ৰাখক</string>
+    <string name="notification_action_keep_numbers">সংখ্যাবোৰ একেলগে ৰাখক</string>
+    <string name="notification_action_priority">প্ৰথমে পঢ়ক</string>
+    <string name="notification_action_always_read">নিস্তব্ধ সময়ত বা অন্যান্য নিষিদ্ধ সময়তো জাননীসমূহ উচ্চস্বৰে পঢ়ক</string>
+    <string name="notification_action_voice">ভইচ প্ৰফাইলৰ সৈতে পঢ়ক</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ৰ সৈতে পঢ়ক</string>
+    <string name="notification_action_voice_sandfly">SandFlyৰ মাতেৰে পঢ়ক</string>
+    <string name="notification_voice_removed">ভইচ প্ৰফাইল আঁতৰোৱা হৈছে</string>
+    <string name="notification_action_format_value">বক্তৃতা বিন্যাস ব্যৱহাৰ কৰক <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> লৈকে পঢ়ক</string>
+    <string name="notification_off">অফ</string>
+    <string name="notification_on">অন</string>
+    <string name="notification_never_again">SandFly পুনৰাৰম্ভ নোহোৱালৈকে</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">জাননীবোৰ উচ্চস্বৰে পঢ়া</string>
+    <string name="notification_speech_now_on">জাননীসমূহ উচ্চস্বৰে পঢ়া সক্ৰিয় কৰা হৈছে</string>
+    <string name="notification_speech_now_off">জাননীসমূহ উচ্চস্বৰে পঢ়া নিষ্ক্ৰিয় কৰা হৈছে</string>
+    <string name="notification_no_last_notification">কোনো জাননী পঢ়া নহ’ল</string>
+    <string name="shortcut_read_notifications">জাননীসমূহ পঢ়ক</string>
+    <string name="shortcut_toggle_notification_speech">অধিসূচনা ভাষণ অন বা অফ</string>
+    <string name="shortcut_read_last_notification">শেষৰ জাননীটো আকৌ পঢ়ক</string>
+    <string name="shortcut_stop_notification">জাননী পঢ়া বন্ধ কৰক</string>
+    <string name="notification_test_posting">৫ ছেকেণ্ডৰ পিছত এটা পৰীক্ষাৰ অধিসূচনা আহিব</string>
+    <string name="notification_test_not_allowed">প্ৰথমে SandFly ক জাননী দেখুৱাবলৈ অনুমতি দিয়ক</string>
+    <string name="notification_test_content_title">SandFly পৰীক্ষা</string>
+    <string name="notification_test_content_text">এইটো এটা পৰীক্ষামূলক অধিসূচনা, আপোনাৰ অধিসূচনা সংহতিসমূহৰ সৈতে পঢ়ক। ১২৩৪৫৬ নম্বৰত</string>
+    <string name="notification_automation_on">জাননীসমূহ উচ্চস্বৰে পঢ়া সামৰ্থবান কৰক</string>
+    <string name="notification_automation_off">উচ্চস্বৰে পঢ়া জাননীসমূহ নিষ্ক্ৰিয় কৰক</string>
+    <string name="notification_automation_toggle">জাননীসমূহ উচ্চস্বৰে পঢ়া সামৰ্থবান বা নিষ্ক্ৰিয় কৰক</string>
+    <string name="notification_automation_stop">জাননী পঢ়া বন্ধ কৰক</string>
+    <string name="notification_automation_read_all">জাননীসমূহ পঢ়ক</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ছেকেণ্ড</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ছেকেণ্ড</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> মিনিট</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> মিনিট</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ঘণ্টা</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ঘন্টা</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> শব্দ</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> শব্দ</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> বাক্য</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> টা বাক্য</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> টা লিখনী আখৰ</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> টা লিখনী আখৰ</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> অংক</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> টা অংক</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">আপোনাৰ <xliff:g id="count" example="1">%d</xliff:g> টা জাননী আছে।</item>
+        <item quantity="other">আপোনাৰ <xliff:g id="count" example="5">%d</xliff:g> টা জাননী আছে।</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">গ্ৰেনুলাৰ সম্পাদনা</string>
+    <string name="granular_editing_split_by">দ্বাৰা বিভক্ত: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">দ্বাৰা বিভক্ত</string>
+    <string name="granular_editing_characters">বর্ণসমূহ</string>
+    <string name="granular_editing_words">শব্দসমূহ</string>
+    <string name="granular_editing_sentences">বাক্য</string>
+    <string name="granular_editing_lines">শাৰীসমূহ</string>
+    <string name="granular_editing_paragraphs">পেৰাগ্ৰাফসমূহ</string>
+    <string name="granular_editing_space">স্পেচ</string>
+    <string name="granular_editing_new_line">নতুন ৰেখা</string>
+    <string name="granular_editing_tab">টেব আখৰ</string>
+    <string name="granular_editing_empty">কোনো লিখনী নাই। শেষত লিখনী যোগ কৰক ব্যৱহাৰ কৰক, অধিকত।</string>
+    <string name="granular_editing_edit">সম্পাদনা কৰক</string>
+    <string name="granular_editing_insert_before">আগতে সন্নিবিষ্ট কৰক</string>
+    <string name="granular_editing_insert_after">পিছত সন্নিবিষ্ট কৰক</string>
+    <string name="granular_editing_delete">মচক</string>
+    <string name="granular_editing_select">বাছনি কৰক</string>
+    <string name="granular_editing_unselect">নিৰ্বাচন নকৰিব</string>
+    <string name="granular_editing_selected">নিৰ্বাচিত কৰা হৈছে</string>
+    <string name="granular_editing_save">ছেভ কৰক</string>
+    <string name="granular_editing_more">অধিক</string>
+    <string name="granular_editing_undo">পূৰ্বৱৰ্তী অৱস্থালৈ ঘূৰাই আনিব</string>
+    <string name="granular_editing_redo">শেষৰ অনডন সম্পাদনা পুনৰ কৰক</string>
+    <string name="granular_editing_find">বিচাৰক</string>
+    <string name="granular_editing_find_next">পৰৱৰ্তী বিচাৰি উলিয়াওক</string>
+    <string name="granular_editing_replace">সলনি কৰক</string>
+    <string name="granular_editing_replace_with">ৰ সৈতে সলনি কৰক</string>
+    <string name="granular_editing_replace_all">সকলো সলনি কৰক</string>
+    <string name="granular_editing_add_at_end">শেষত লিখনী যোগ কৰক</string>
+    <string name="granular_editing_clear_selection">বাছনি মচক</string>
+    <string name="granular_editing_cut_selected">নিৰ্বাচিত লিখনী কাটি পেলাওক</string>
+    <string name="granular_editing_delete_selected">নিৰ্বাচিত মচি পেলাওক</string>
+    <string name="granular_editing_copied">কপি কৰা হৈছে</string>
+    <string name="granular_editing_deleted">মচি পেলোৱা হৈছে</string>
+    <string name="granular_editing_not_found">পোৱা নাযায়</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> সলনি কৰা হৈছে</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> সলনি কৰা হৈছে</item>
+    </plurals>
+    <string name="granular_editing_save_changes">পৰিবৰ্তনসমূহ সংৰক্ষণ কৰক?</string>
+    <string name="granular_editing_copy_changes">পৰিৱৰ্তিত লিখনী কপি কৰক?</string>
+    <string name="granular_editing_discard">বাতিল কৰক</string>
+    <string name="granular_editing_keep_editing">সম্পাদনা কৰি থাকক</string>
+    <string name="granular_editing_not_saved">সংৰক্ষণ কৰা হোৱা নাই: লিখনী ক্ষেত্ৰখন নাইকিয়া হৈ গৈছে। লিখনী কপি কৰা হৈছে।</string>
+    <string name="granular_editing_no_text">সম্পাদনা কৰিবলৈ কোনো লিখনী নাই</string>
+    <string name="granular_editing_password">পাছৱৰ্ড ক্ষেত্ৰত উপলব্ধ নহয়</string>
+</resources>
