@@ -17,10 +17,10 @@
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> tebranishlar.</item>
     </plurals>
     <string name="sound_theme_control_sounds_on">Boshqarish tovushlari va tebranishlarini yoqadi.</string>
-    <string name="sound_theme_control_sounds_off">Boshqarish tovushlari va tebranishlarni o\'chiradi.</string>
+    <string name="sound_theme_control_sounds_off">Boshqarish tovushlari va tebranishlarini oʻchiradi.</string>
     <string name="sound_theme_use">Ushbu mavzudan foydalanish</string>
     <string name="sound_theme_about">Ushbu mavzu haqida</string>
-    <string name="sound_theme_export">Mavzu fayli sifatida saqlang</string>
+    <string name="sound_theme_export">Mavzu fayli sifatida saqlash</string>
     <string name="sound_theme_remove">O\'chirish</string>
     <string name="sound_theme_remove_confirm"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> mavzusi olib tashlansinmi?</string>
     <string name="sound_theme_remove_button">O\'chirish</string>
@@ -47,7 +47,7 @@
     <string name="sound_theme_link_message">Mavzu fayliga yoki unda mavzu boʻlgan GitHub omboriga havolani kiriting yoki joylashtiring.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Ovoz mavzusini oʻrnatish</string>
-    <string name="sound_theme_install_reading">Ovoz mavzusini o\'qish</string>
+    <string name="sound_theme_install_reading">Ovoz mavzusi oʻqilmoqda</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> oʻrnatilsinmi?</string>
     <string name="sound_theme_install_and_use">O\'rnatish va ishlatish</string>
     <string name="sound_theme_install">O\'rnatish</string>
@@ -55,9 +55,9 @@
     <string name="sound_theme_install_skipped">Tashlab ketildi:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> oʻrnatildi.</string>
     <string name="sound_theme_installed_in_use">Oʻrnatilgan <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. U hozir foydalanilmoqda.</string>
-    <string name="sound_theme_install_nothing">O\'rnatish uchun ovozli mavzu yo\'q.</string>
+    <string name="sound_theme_install_nothing">Oʻrnatish uchun ovozli mavzu yoʻq.</string>
     <string name="sound_theme_install_not_a_theme">Bu ovozli mavzu emas SandFly foydalanishi mumkin: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
-    <string name="sound_theme_install_failed">SandFly ovoz mavzusini oʻrnatib boʻlmadi. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_failed">SandFly ovoz mavzusini oʻrnata olmadi. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">Ovozli mavzularga havolalar https bilan boshlanishi kerak.</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> tovushlari</string>
     <string name="title_pref_theme_sounds_reset">SandFly tovushlaridan hamma uchun foydalaning</string>

@@ -13,7 +13,7 @@
     <string name="scripts_none">कुनै स्क्रिप्ट स्थापना गरिएको छैन</string>
     <string name="scripts_all_off">सबै स्क्रिप्टहरू बन्द गर्नुहोस्</string>
     <string name="scripts_all_off_summary">स्क्रिप्टहरू स्थापित रहन्छन् र तिनीहरूको आफ्नै स्विचहरू राख्नुहोस्। सबै स्क्रिप्टहरू खोल्नुहोस् वा बन्द गर्नुहोस् इशाराले पनि त्यस्तै गर्छ।</string>
-    <string name="shortcut_toggle_scripts">सबै स्क्रिप्टहरू खोल्नुहोस् वा बन्द गर्नुहोस्</string>
+    <string name="shortcut_toggle_scripts">सबै स्क्रिप्टहरू सक्रिय वा निष्क्रिय गर्नुहोस्</string>
     <string name="scripts_now_off">स्क्रिप्ट बन्द</string>
     <string name="scripts_now_on">स्क्रिप्टहरू सक्रिय छन्</string>
     <string name="scripts_unavailable">यस डिभाइसमा स्क्रिप्टहरू उपलब्ध छैनन्</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> लिपि अद्यावधिक गरियो: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> लिपिहरू अद्यावधिक गरियो: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">अपडेटहरू अपडेटहरू अन्तर्गत सूचीबद्ध छन्</string>
+    <string name="scripts_updates_to_approve">अपडेटहरू “अपडेटहरू” अन्तर्गत सूचीबद्ध छन्</string>
     <string name="scripts_update_check_failed">केही स्रोतहरू जाँच गर्न सकिएन</string>
     <string name="scripts_up_to_date">सबै स्क्रिप्टहरू अद्यावधिक छन्</string>
 </resources>

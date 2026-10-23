@@ -18,11 +18,11 @@
         <item quantity="two"><xliff:g id="count" example="13">%d</xliff:g> רעידות.</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> רעידות.</item>
     </plurals>
-    <string name="sound_theme_control_sounds_on">מפעיל את צלילי השליטה והרעידות.</string>
-    <string name="sound_theme_control_sounds_off">מכבה את צלילי השליטה והרעידות.</string>
+    <string name="sound_theme_control_sounds_on">מפעיל את הצלילים והרטט של פקדים.</string>
+    <string name="sound_theme_control_sounds_off">מכבה את הצלילים והרטט של פקדים.</string>
     <string name="sound_theme_use">שימוש בערכת הנושא הזו</string>
     <string name="sound_theme_about">על ערכת הנושא הזו</string>
-    <string name="sound_theme_export">שמור כקובץ ערכת נושא</string>
+    <string name="sound_theme_export">שמירה כקובץ ערכת נושא</string>
     <string name="sound_theme_remove">הסרה</string>
     <string name="sound_theme_remove_confirm">להסיר את ערכת הנושא <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_remove_button">הסרה</string>
@@ -31,7 +31,7 @@
         <item quantity="two">הנושא נשמר עם <xliff:g id="count" example="13">%d</xliff:g> צלילים.</item>
         <item quantity="other">הנושא נשמר עם <xliff:g id="count" example="13">%d</xliff:g> צלילים.</item>
     </plurals>
-    <string name="sound_theme_export_failed">SandFly לא הצליח לשמור את קובץ העיצוב.</string>
+    <string name="sound_theme_export_failed">SandFly לא הצליח לשמור את קובץ ערכת הנושא.</string>
     <string name="sound_theme_no_picker">אין אפליקציה במכשיר הזה שאפשר לבחור איתה קבצים.</string>
     <string name="sound_theme_settings_category">הגדרות של <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">צלילים</string>
@@ -50,7 +50,7 @@
     <string name="sound_theme_link_message">הזן או הדבק קישור לקובץ ערכת נושא, או למאגר GitHub עם ערכת נושא בתוכו.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">התקנת ערכת נושא של צלילים</string>
-    <string name="sound_theme_install_reading">קריאת נושא הסאונד</string>
+    <string name="sound_theme_install_reading">קורא את ערכת הנושא לצלילים</string>
     <string name="sound_theme_install_title">להתקין את <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_install_and_use">התקנה ושימוש</string>
     <string name="sound_theme_install">התקנה</string>
@@ -58,10 +58,10 @@
     <string name="sound_theme_install_skipped">לא נכללו:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> הותקנה.</string>
     <string name="sound_theme_installed_in_use">מותקן <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. זה בשימוש עכשיו.</string>
-    <string name="sound_theme_install_nothing">אין ערכת נושא קול להתקין.</string>
+    <string name="sound_theme_install_nothing">אין ערכת נושא לצלילים להתקנה.</string>
     <string name="sound_theme_install_not_a_theme">זה לא נושא סאונד SandFly יכול להשתמש ב: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
-    <string name="sound_theme_install_failed">SandFly לא הצליח להתקין את ערכת נושא הסאונד. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_install_https_only">קישורים לנושאים של סאונד חייבים להתחיל ב-https.</string>
+    <string name="sound_theme_install_failed">SandFly לא הצליח להתקין את ערכת הנושא לצלילים. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">קישורים לערכות נושא לצלילים חייבים להתחיל ב-https.</string>
     <string name="title_pref_theme_sounds_of">צלילים של <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds_reset">השתמש בצלילים של SandFly לכולם</string>
     <string name="theme_sounds_reset_confirm">האם להסיר את כל הצלילים של ערכת הנושא הזה ולהשתמש בצלילים של SandFly?</string>

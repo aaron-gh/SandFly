@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">స్క్రిప్ట్‌లు</string>
-    <string name="summary_pref_scripts">యాప్‌లలో SandFly ఎలా పని చేయాలో మార్చండి</string>
+    <string name="summary_pref_scripts">యాప్‌లలో SandFly పని చేసే విధానాన్ని మార్చండి</string>
     <string name="script_import">స్క్రిప్ట్‌ను దిగుమతి చేయండి</string>
     <string name="script_install_label">SandFly స్క్రిప్ట్‌ను ఇన్‌స్టాల్ చేయండి</string>
     <string name="script_import_nothing">ఇన్‌స్టాల్ చేయడానికి స్క్రిప్ట్ ఫైల్ ఏదీ లేదు.</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> స్క్రిప్ట్ నవీకరించబడింది: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> స్క్రిప్ట్‌లు నవీకరించబడ్డాయి: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">నవీకరణలు నవీకరణల క్రింద జాబితా చేయబడ్డాయి</string>
+    <string name="scripts_updates_to_approve">నవీకరణలు “నవీకరణలు” కింద జాబితా చేయబడ్డాయి</string>
     <string name="scripts_update_check_failed">కొన్ని మూలాధారాలను తనిఖీ చేయడం సాధ్యపడలేదు</string>
     <string name="scripts_up_to_date">అన్ని స్క్రిప్ట్‌లు తాజాగా ఉన్నాయి</string>
 </resources>

@@ -16,11 +16,11 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ვიბრაცია.</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ვიბრაცია.</item>
     </plurals>
-    <string name="sound_theme_control_sounds_on">ჩართავს საკონტროლო ხმებს და ვიბრაციას.</string>
-    <string name="sound_theme_control_sounds_off">გამორთავს საკონტროლო ხმებს და ვიბრაციას.</string>
+    <string name="sound_theme_control_sounds_on">ჩართავს მართვის ელემენტების ხმებს და ვიბრაციას.</string>
+    <string name="sound_theme_control_sounds_off">გამორთავს მართვის ელემენტების ხმებს და ვიბრაციას.</string>
     <string name="sound_theme_use">ამ თემის გამოყენება</string>
     <string name="sound_theme_about">ამ თემის შესახებ</string>
-    <string name="sound_theme_export">შეინახეთ როგორც თემატური ფაილი</string>
+    <string name="sound_theme_export">თემის ფაილად შენახვა</string>
     <string name="sound_theme_remove">ამოღება</string>
     <string name="sound_theme_remove_confirm">წაშალოთ თემა <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_remove_button">ამოღება</string>
@@ -47,7 +47,7 @@
     <string name="sound_theme_link_message">შეიყვანეთ ან ჩასვით ბმული თემის ფაილზე, ან GitHub საცავში, რომელშიც თემაა.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">ხმის თემის ინსტალაცია</string>
-    <string name="sound_theme_install_reading">ხმის თემის კითხვა</string>
+    <string name="sound_theme_install_reading">მიმდინარეობს ხმის თემის წაკითხვა</string>
     <string name="sound_theme_install_title">დაინსტალირდეს <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_install_and_use">ინსტალაცია და გამოყენება</string>
     <string name="sound_theme_install">ინსტალაცია</string>

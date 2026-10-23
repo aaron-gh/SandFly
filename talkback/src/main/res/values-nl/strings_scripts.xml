@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Scripts</string>
-    <string name="summary_pref_scripts">Wijzig hoe SandFly werkt in apps</string>
+    <string name="summary_pref_scripts">Wijzigen hoe SandFly werkt in apps</string>
     <string name="script_import">Script importeren</string>
     <string name="script_install_label">SandFly-script installeren</string>
     <string name="script_import_nothing">Er is geen scriptbestand om te installeren.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">Geen scripts geïnstalleerd</string>
     <string name="scripts_all_off">Alle scripts uitschakelen</string>
     <string name="scripts_all_off_summary">Scripts blijven geïnstalleerd en behouden hun eigen schakelaars. Het gebaar Alle scripts in- of uitschakelen doet hetzelfde.</string>
-    <string name="shortcut_toggle_scripts">Schakel alle scripts in of uit</string>
+    <string name="shortcut_toggle_scripts">Alle scripts in- of uitschakelen</string>
     <string name="scripts_now_off">Scripts uitgeschakeld</string>
     <string name="scripts_now_on">Scripts aan</string>
     <string name="scripts_unavailable">Scripts zijn niet beschikbaar op dit apparaat</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> script bijgewerkt: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> scripts bijgewerkt: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Updates worden vermeld onder Updates</string>
+    <string name="scripts_updates_to_approve">Updates worden vermeld onder ‘Updates’</string>
     <string name="scripts_update_check_failed">Sommige bronnen konden niet worden gecontroleerd</string>
     <string name="scripts_up_to_date">Alle scripts zijn up-to-date</string>
 </resources>

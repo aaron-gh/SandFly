@@ -16,11 +16,11 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> कम्पन।</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> कम्पनहरू।</item>
     </plurals>
-    <string name="sound_theme_control_sounds_on">नियन्त्रण ध्वनि र कम्पन खोल्छ।</string>
+    <string name="sound_theme_control_sounds_on">नियन्त्रण ध्वनि र कम्पन सक्रिय गर्छ।</string>
     <string name="sound_theme_control_sounds_off">नियन्त्रण ध्वनि र कम्पन बन्द गर्छ।</string>
     <string name="sound_theme_use">यो थिम प्रयोग गर्नुहोस्</string>
     <string name="sound_theme_about">यो थिमको बारेमा</string>
-    <string name="sound_theme_export">विषयवस्तु फाइलको रूपमा बचत गर्नुहोस्</string>
+    <string name="sound_theme_export">थिम फाइलको रूपमा सेभ गर्नुहोस्</string>
     <string name="sound_theme_remove">हटाउनुहोस्</string>
     <string name="sound_theme_remove_confirm">विषयवस्तु <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> हटाउने हो?</string>
     <string name="sound_theme_remove_button">हटाउनुहोस्</string>
@@ -28,7 +28,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ध्वनिको साथ, विषयवस्तु सुरक्षित गरियो।</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ध्वनिहरूको साथ, विषयवस्तु सुरक्षित गरियो।</item>
     </plurals>
-    <string name="sound_theme_export_failed">SandFly विषयवस्तु फाइल बचत गर्न सकेन।</string>
+    <string name="sound_theme_export_failed">SandFly ले थिम फाइल सेभ गर्न सकेन।</string>
     <string name="sound_theme_no_picker">यस यन्त्रमा फाइलहरू छनौट गर्न कुनै एप छैन।</string>
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> को सेटिङहरू</string>
     <string name="title_pref_theme_sounds">ध्वनिहरू</string>
@@ -47,7 +47,7 @@
     <string name="sound_theme_link_message">विषयवस्तु फाइलमा लिङ्क प्रविष्ट गर्नुहोस् वा टाँस्नुहोस्, वा यसमा विषयवस्तु भएको GitHub भण्डारमा।</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">ध्वनि थिम स्थापना गर्नुहोस्</string>
-    <string name="sound_theme_install_reading">ध्वनि विषयवस्तु पढ्दै</string>
+    <string name="sound_theme_install_reading">ध्वनि थिम पढ्दै</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> स्थापना गर्ने?</string>
     <string name="sound_theme_install_and_use">स्थापना र प्रयोग गर्नुहोस्</string>
     <string name="sound_theme_install">स्थापना गर्नुहोस्</string>
@@ -55,10 +55,10 @@
     <string name="sound_theme_install_skipped">छोडिएको:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> स्थापना गरियो।</string>
     <string name="sound_theme_installed_in_use">स्थापना गरिएको <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>। यो अहिले प्रयोगमा छ।</string>
-    <string name="sound_theme_install_nothing">स्थापना गर्न कुनै ध्वनि विषयवस्तु छैन।</string>
+    <string name="sound_theme_install_nothing">स्थापना गर्न कुनै ध्वनि थिम छैन।</string>
     <string name="sound_theme_install_not_a_theme">यो ध्वनि विषयवस्तु होइन SandFly ले प्रयोग गर्न सक्छ: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>।</string>
-    <string name="sound_theme_install_failed">SandFly ध्वनि विषयवस्तु स्थापना गर्न सकेन। <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_install_https_only">ध्वनि विषयवस्तुहरूको लिङ्कहरू https बाट सुरु हुनुपर्छ।</string>
+    <string name="sound_theme_install_failed">SandFly ले ध्वनि थिम स्थापना गर्न सकेन। <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">ध्वनि थिमका लिङ्कहरू https बाट सुरु हुनुपर्छ।</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> का ध्वनिहरू</string>
     <string name="title_pref_theme_sounds_reset">सबैका लागि SandFly को आवाजहरू प्रयोग गर्नुहोस्</string>
     <string name="theme_sounds_reset_confirm">यो विषयवस्तुका सबै आवाजहरू हटाएर SandFly को आफ्नै प्रयोग गर्ने हो?</string>

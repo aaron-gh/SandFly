@@ -28,7 +28,7 @@
         <item quantity="one">테마를 사운드 <xliff:g id="count" example="1">%d</xliff:g>개로 저장했습니다.</item>
         <item quantity="other">테마를 <xliff:g id="count" example="13">%d</xliff:g>개의 소리로 저장했습니다.</item>
     </plurals>
-    <string name="sound_theme_export_failed">SandFly 테마 파일을 저장할 수 없습니다.</string>
+    <string name="sound_theme_export_failed">SandFly에서 테마 파일을 저장하지 못했습니다.</string>
     <string name="sound_theme_no_picker">이 기기에는 파일을 선택할 수 있는 앱이 없습니다.</string>
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 설정</string>
     <string name="title_pref_theme_sounds">소리</string>
@@ -47,7 +47,7 @@
     <string name="sound_theme_link_message">테마 파일이나 테마가 포함된 GitHub 저장소에 대한 링크를 입력하거나 붙여넣으세요.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">사운드 테마 설치</string>
-    <string name="sound_theme_install_reading">사운드 테마 읽기</string>
+    <string name="sound_theme_install_reading">사운드 테마 읽는 중</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>을(를) 설치할까요?</string>
     <string name="sound_theme_install_and_use">설치 및 사용</string>
     <string name="sound_theme_install">설치</string>
@@ -57,7 +57,7 @@
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 설치됨. 현재 사용되고 있습니다.</string>
     <string name="sound_theme_install_nothing">설치할 사운드 테마가 없습니다.</string>
     <string name="sound_theme_install_not_a_theme">이것은 사운드 테마가 아닙니다. SandFly는 다음을 사용할 수 있습니다: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
-    <string name="sound_theme_install_failed">SandFly 사운드 테마를 설치할 수 없습니다. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_failed">SandFly에서 사운드 테마를 설치하지 못했습니다. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">사운드 테마 링크는 https로 시작해야 합니다.</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 소리</string>
     <string name="title_pref_theme_sounds_reset">모두에게 SandFly의 소리를 사용하세요</string>

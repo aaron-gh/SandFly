@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Скриптүүд</string>
-    <string name="summary_pref_scripts">SandFly програмууд дээр хэрхэн ажилладгийг өөрчлөх</string>
+    <string name="summary_pref_scripts">SandFly-н апп дотор ажиллах байдлыг өөрчлөх</string>
     <string name="script_import">Скрипт импортлох</string>
     <string name="script_install_label">SandFly скрипт суулгах</string>
     <string name="script_import_nothing">Суулгах скрипт файл алга.</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> скрипт шинэчлэгдсэн: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> скрипт шинэчлэгдсэн: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Шинэчлэлтүүдийг Шинэчлэлтүүд доор жагсаав</string>
+    <string name="scripts_updates_to_approve">Шинэчлэлтүүд “Шинэчлэлтүүд” хэсэгт жагсаагдсан</string>
     <string name="scripts_update_check_failed">Зарим эх сурвалжийг шалгаж чадаагүй</string>
     <string name="scripts_up_to_date">Бүх скриптүүд шинэчлэгдсэн</string>
 </resources>

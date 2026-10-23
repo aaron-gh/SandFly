@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Skriptá</string>
-    <string name="summary_pref_scripts">Zmeňte spôsob fungovania SandFly v aplikáciách</string>
+    <string name="summary_pref_scripts">Zmena fungovania SandFly v aplikáciách</string>
     <string name="script_import">Importovať skript</string>
     <string name="script_install_label">Nainštalovať skript SandFly</string>
     <string name="script_import_nothing">Neexistuje žiadny súbor skriptu na inštaláciu.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">Nie sú nainštalované žiadne skripty</string>
     <string name="scripts_all_off">Vypnúť všetky skripty</string>
     <string name="scripts_all_off_summary">Skripty zostanú nainštalované a ponechávajú si svoje vlastné prepínače. Gesto Zapnúť alebo vypnúť všetky skripty robí to isté.</string>
-    <string name="shortcut_toggle_scripts">Zapnite alebo vypnite všetky skripty</string>
+    <string name="shortcut_toggle_scripts">Zapnúť alebo vypnúť všetky skripty</string>
     <string name="scripts_now_off">Skripty sú vypnuté</string>
     <string name="scripts_now_on">Skripty zapnuté</string>
     <string name="scripts_unavailable">Skripty nie sú v tomto zariadení k dispozícii</string>
@@ -149,7 +149,7 @@
         <item quantity="many">Aktualizované skripty <xliff:g id="count" example="2">%1$d</xliff:g>: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> aktualizovaných skriptov: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Aktualizácie sú uvedené v časti Aktualizácie</string>
+    <string name="scripts_updates_to_approve">Aktualizácie sú uvedené v časti „Aktualizácie“</string>
     <string name="scripts_update_check_failed">Niektoré zdroje nebolo možné skontrolovať</string>
     <string name="scripts_up_to_date">Všetky skripty sú aktuálne</string>
 </resources>

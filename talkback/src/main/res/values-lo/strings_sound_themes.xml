@@ -16,11 +16,11 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>ການສັ່ນສະເທືອນ.</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g>ການສັ່ນສະເທືອນ.</item>
     </plurals>
-    <string name="sound_theme_control_sounds_on">ເປີດການຄວບຄຸມສຽງ ແລະການສັ່ນສະເທືອນ.</string>
-    <string name="sound_theme_control_sounds_off">ປິດການຄວບຄຸມສຽງ ແລະ vibrations.</string>
+    <string name="sound_theme_control_sounds_on">ເປີດສຽງ ແລະ ການສັ່ນຂອງຕົວຄວບຄຸມ.</string>
+    <string name="sound_theme_control_sounds_off">ປິດສຽງ ແລະ ການສັ່ນຂອງຕົວຄວບຄຸມ.</string>
     <string name="sound_theme_use">ໃຊ້ຮູບແບບນີ້</string>
     <string name="sound_theme_about">ກ່ຽວກັບຮູບແບບນີ້</string>
-    <string name="sound_theme_export">ບັນທຶກເປັນໄຟລ໌ຫົວຂໍ້</string>
+    <string name="sound_theme_export">ບັນທຶກເປັນໄຟລ໌ຮູບແບບ</string>
     <string name="sound_theme_remove">ເອົາອອກ</string>
     <string name="sound_theme_remove_confirm">ລຶບຮູບແບບສີສັນ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ອອກບໍ?</string>
     <string name="sound_theme_remove_button">ເອົາອອກ</string>
@@ -28,7 +28,7 @@
         <item quantity="one">ບັນທຶກຫົວຂໍ້, ດ້ວຍສຽງ <xliff:g id="count" example="1">%d</xliff:g>.</item>
         <item quantity="other">ບັນທຶກຫົວຂໍ້, ດ້ວຍສຽງ <xliff:g id="count" example="13">%d</xliff:g>.</item>
     </plurals>
-    <string name="sound_theme_export_failed">SandFly ບໍ່ສາມາດບັນທຶກໄຟລ໌ຮູບແບບສີສັນໄດ້.</string>
+    <string name="sound_theme_export_failed">SandFly ບໍ່ສາມາດບັນທຶກໄຟລ໌ຮູບແບບໄດ້.</string>
     <string name="sound_theme_no_picker">ບໍ່ມີແອັບຯໃນອຸປະກອນນີ້ເພື່ອເລືອກໄຟລ໌ດ້ວຍ.</string>
     <string name="sound_theme_settings_category">ການຕັ້ງຄ່າ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">ສຽງ</string>
@@ -47,7 +47,7 @@
     <string name="sound_theme_link_message">ໃສ່ ຫຼືວາງລິ້ງໄປຫາໄຟລ໌ຮູບແບບສີສັນ ຫຼືໃສ່ບ່ອນເກັບຂໍ້ມູນ GitHub ທີ່ມີຮູບແບບສີສັນຢູ່ໃນນັ້ນ.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">ຕິດຕັ້ງຮູບແບບສຽງ</string>
-    <string name="sound_theme_install_reading">ການອ່ານຫົວຂໍ້ສຽງ</string>
+    <string name="sound_theme_install_reading">ກຳລັງອ່ານຮູບແບບສຽງ</string>
     <string name="sound_theme_install_title">ຕິດຕັ້ງ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ບໍ?</string>
     <string name="sound_theme_install_and_use">ຕິດຕັ້ງແລະນໍາໃຊ້</string>
     <string name="sound_theme_install">ຕິດຕັ້ງ</string>
@@ -57,8 +57,8 @@
     <string name="sound_theme_installed_in_use">ຕິດຕັ້ງ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. ມັນຖືກນໍາໃຊ້ໃນປັດຈຸບັນ.</string>
     <string name="sound_theme_install_nothing">ບໍ່ມີຮູບແບບສຽງທີ່ຈະຕິດຕັ້ງ.</string>
     <string name="sound_theme_install_not_a_theme">ນີ້ບໍ່ແມ່ນຫົວຂໍ້ສຽງ SandFly ສາມາດໃຊ້: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
-    <string name="sound_theme_install_failed">SandFly ບໍ່ສາມາດຕິດຕັ້ງຮູບແບບສີສັນສຽງໄດ້. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_install_https_only">ລິ້ງໄປຫາຫົວຂໍ້ສຽງຕ້ອງເລີ່ມຕົ້ນດ້ວຍ https.</string>
+    <string name="sound_theme_install_failed">SandFly ບໍ່ສາມາດຕິດຕັ້ງຮູບແບບສຽງໄດ້. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">ລິ້ງໄປຫາຮູບແບບສຽງຕ້ອງເລີ່ມຕົ້ນດ້ວຍ https.</string>
     <string name="title_pref_theme_sounds_of">ສຽງຂອງ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds_reset">ໃຊ້ສຽງຂອງ SandFly ສໍາລັບທຸກຄົນ</string>
     <string name="theme_sounds_reset_confirm">ລຶບສຽງທັງໝົດຂອງຮູບແບບສີສັນນີ້ອອກ ແລະໃຊ້ SandFly ເປັນຂອງຕົນເອງບໍ?</string>

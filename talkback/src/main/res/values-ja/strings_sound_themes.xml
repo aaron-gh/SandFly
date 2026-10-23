@@ -16,8 +16,8 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>振動。</item>
         <item quantity="other">振動<xliff:g id="count" example="13">%d</xliff:g>。</item>
     </plurals>
-    <string name="sound_theme_control_sounds_on">制御音と振動をオンにします。</string>
-    <string name="sound_theme_control_sounds_off">制御音と振動をオフにします。</string>
+    <string name="sound_theme_control_sounds_on">コントロールの音と振動をオンにします。</string>
+    <string name="sound_theme_control_sounds_off">コントロールの音と振動をオフにします。</string>
     <string name="sound_theme_use">このテーマを使用</string>
     <string name="sound_theme_about">このテーマについて</string>
     <string name="sound_theme_export">テーマファイルとして保存</string>
@@ -28,7 +28,7 @@
         <item quantity="one">テーマを <xliff:g id="count" example="1">%d</xliff:g> サウンドで保存しました。</item>
         <item quantity="other">サウンドを <xliff:g id="count" example="13">%d</xliff:g> にしてテーマを保存しました。</item>
     </plurals>
-    <string name="sound_theme_export_failed">SandFly テーマファイルを保存できませんでした。</string>
+    <string name="sound_theme_export_failed">SandFly はテーマファイルを保存できませんでした。</string>
     <string name="sound_theme_no_picker">このデバイスにはファイルを選択できるアプリがありません。</string>
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>の設定</string>
     <string name="title_pref_theme_sounds">サウンド</string>
@@ -47,7 +47,7 @@
     <string name="sound_theme_link_message">テーマ ファイル、またはテーマが含まれる GitHub リポジトリへのリンクを入力または貼り付けます。</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">サウンドテーマをインストール</string>
-    <string name="sound_theme_install_reading">サウンドテーマを読む</string>
+    <string name="sound_theme_install_reading">サウンドテーマを読み込み中</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>をインストールしますか?</string>
     <string name="sound_theme_install_and_use">インストールして使用</string>
     <string name="sound_theme_install">インストール</string>
@@ -57,8 +57,8 @@
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> がインストールされました。現在使用中です。</string>
     <string name="sound_theme_install_nothing">インストールするサウンドテーマがありません。</string>
     <string name="sound_theme_install_not_a_theme">これはサウンドテーマではありません SandFly は、<xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g> を使用できます。</string>
-    <string name="sound_theme_install_failed">SandFly はサウンドテーマをインストールできませんでした。 <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_install_https_only">サウンド テーマへのリンクは https で始まる必要があります。</string>
+    <string name="sound_theme_install_failed">SandFly はサウンドテーマをインストールできませんでした。<xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">サウンドテーマへのリンクは https で始まる必要があります。</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> のサウンド</string>
     <string name="title_pref_theme_sounds_reset">すべてにSandFlyの音を使用</string>
     <string name="theme_sounds_reset_confirm">このテーマのサウンドをすべて削除して、SandFly 独自のサウンドを使用しますか?</string>

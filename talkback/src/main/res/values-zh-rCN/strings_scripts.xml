@@ -26,7 +26,7 @@
     <!-- Summary of the switch that turns every script off. [CHAR LIMIT=NONE] -->
     <string name="scripts_all_off_summary">脚本保持安装并保留各自的开关。“一键开关所有脚本”手势作用相同。</string>
     <!-- Gesture and keyboard action that turns every script off, or back on. [CHAR LIMIT=NONE] -->
-    <string name="shortcut_toggle_scripts">一键开关所有脚本</string>
+    <string name="shortcut_toggle_scripts">开启或关闭所有脚本</string>
     <!-- Spoken when every script was turned off. [CHAR LIMIT=NONE] -->
     <string name="scripts_now_off">脚本已关闭</string>
     <!-- Spoken when scripts were turned back on. [CHAR LIMIT=NONE] -->
@@ -292,7 +292,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> 脚本更新：<xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> 脚本更新：<xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">更新列在更新下</string>
+    <string name="scripts_updates_to_approve">更新列在“更新”下</string>
     <string name="scripts_update_check_failed">有些来源无法检查</string>
     <string name="scripts_up_to_date">所有脚本都是最新的</string>
 </resources>

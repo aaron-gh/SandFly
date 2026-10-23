@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Скрипттер</string>
-    <string name="summary_pref_scripts">SandFly колдонмолордо кантип иштээрин өзгөртүңүз</string>
+    <string name="summary_pref_scripts">SandFly’дын колдонмолордогу иштешин өзгөртүү</string>
     <string name="script_import">Скриптти импорттоо</string>
     <string name="script_install_label">SandFly скриптин орнотуу</string>
     <string name="script_import_nothing">Орнотуу үчүн скрипт файлы жок.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">Скрипт орнотулган жок</string>
     <string name="scripts_all_off">Бардык скрипттерди өчүрүү</string>
     <string name="scripts_all_off_summary">Скрипттер орнотулуп, өздөрүнүн которгучтарын сакташат. Бардык скрипттерди күйгүзүү же өчүрүү жаңсоосу да ушундай кылат.</string>
-    <string name="shortcut_toggle_scripts">Бардык скрипттерди күйгүзүңүз же өчүрүңүз</string>
+    <string name="shortcut_toggle_scripts">Бардык скрипттерди күйгүзүү же өчүрүү</string>
     <string name="scripts_now_off">Скрипттер өчүрүлгөн</string>
     <string name="scripts_now_on">Скрипттер күйүк</string>
     <string name="scripts_unavailable">Скрипттер бул түзмөктө жеткиликтүү эмес</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> скрипт жаңыртылды: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> скрипт жаңыртылды: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Жаңыртуулар Жаңыртуулар астында тизмеленген</string>
+    <string name="scripts_updates_to_approve">Жаңыртуулар «Жаңыртуулар» бөлүмүндө көрсөтүлгөн</string>
     <string name="scripts_update_check_failed">Кээ бир булактарды текшерүү мүмкүн болгон жок</string>
     <string name="scripts_up_to_date">Бардык скрипттер жаңыртылган</string>
 </resources>

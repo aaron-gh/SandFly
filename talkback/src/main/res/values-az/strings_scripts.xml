@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Skriptlər</string>
-    <string name="summary_pref_scripts">SandFly-ın tətbiqlərdə işləməsini dəyişin</string>
+    <string name="summary_pref_scripts">SandFly-ın tətbiqlərdə işləməsini dəyiş</string>
     <string name="script_import">Skripti import et</string>
     <string name="script_install_label">SandFly skriptini quraşdır</string>
     <string name="script_import_nothing">Quraşdırmaq üçün skript faylı yoxdur.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">Quraşdırılmış skript yoxdur</string>
     <string name="scripts_all_off">Bütün skriptləri deaktiv et</string>
     <string name="scripts_all_off_summary">Skriptlər quraşdırılmış qalır və öz açarlarını saxlayır. \"Bütün skriptləri aktiv və ya deaktiv edin\" jesti eyni işi görür.</string>
-    <string name="shortcut_toggle_scripts">Bütün skriptləri aktiv və ya deaktiv edin</string>
+    <string name="shortcut_toggle_scripts">Bütün skriptləri aktiv və ya deaktiv et</string>
     <string name="scripts_now_off">Skriptlər deaktivdir</string>
     <string name="scripts_now_on">Skriptlər aktivdir</string>
     <string name="scripts_unavailable">Skriptlər bu cihazda əlçatan deyil</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> skript yeniləndi: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skript yeniləndi: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Yeniləmələr Yeniləmələr altında verilmişdir</string>
+    <string name="scripts_updates_to_approve">Yeniləmələr “Yeniləmələr” bölməsində göstərilir</string>
     <string name="scripts_update_check_failed">Bəzi mənbələri yoxlamaq mümkün olmadı</string>
     <string name="scripts_up_to_date">Bütün skriptlər yenilənib</string>
 </resources>

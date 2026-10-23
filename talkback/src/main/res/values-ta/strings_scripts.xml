@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">ஸ்கிரிப்டுகள்</string>
-    <string name="summary_pref_scripts">பயன்பாடுகளில் SandFly எவ்வாறு செயல்படுகிறது என்பதை மாற்றவும்</string>
+    <string name="summary_pref_scripts">ஆப்ஸில் SandFly செயல்படும் விதத்தை மாற்றவும்</string>
     <string name="script_import">ஸ்கிரிப்டை இறக்குமதி செய்யவும்</string>
     <string name="script_install_label">SandFly ஸ்கிரிப்டை நிறுவவும்</string>
     <string name="script_import_nothing">நிறுவுவதற்கு ஸ்கிரிப்ட் கோப்பு எதுவும் இல்லை.</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ஸ்கிரிப்ட் புதுப்பிக்கப்பட்டது: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ஸ்கிரிப்டுகள் புதுப்பிக்கப்பட்டன: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">புதுப்பிப்புகளின் கீழ் புதுப்பிப்புகள் பட்டியலிடப்பட்டுள்ளன</string>
+    <string name="scripts_updates_to_approve">புதுப்பிப்புகள் “புதுப்பிப்புகள்” என்பதன் கீழ் பட்டியலிடப்பட்டுள்ளன</string>
     <string name="scripts_update_check_failed">சில ஆதாரங்களைச் சரிபார்க்க முடியவில்லை</string>
     <string name="scripts_up_to_date">அனைத்து ஸ்கிரிப்ட்களும் புதுப்பித்த நிலையில் உள்ளன</string>
 </resources>

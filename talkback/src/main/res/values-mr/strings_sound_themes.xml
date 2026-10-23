@@ -28,7 +28,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> आवाजासह थीम सेव्ह केली.</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> आवाजांसह थीम सेव्ह केली.</item>
     </plurals>
-    <string name="sound_theme_export_failed">SandFly थीम फाइल सेव्ह करू शकलो नाही.</string>
+    <string name="sound_theme_export_failed">SandFly ला थीम फाइल सेव्ह करता आली नाही.</string>
     <string name="sound_theme_no_picker">फाइल्स निवडण्यासाठी या डिव्हाइसवर कोणतेही ॲप नाही.</string>
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> च्या सेटिंग्ज</string>
     <string name="title_pref_theme_sounds">आवाज</string>
@@ -57,7 +57,7 @@
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> स्थापित केले. ते आता वापरात आहे.</string>
     <string name="sound_theme_install_nothing">स्थापित करण्यासाठी कोणतीही ध्वनी थीम नाही.</string>
     <string name="sound_theme_install_not_a_theme">ही ध्वनी थीम नाही SandFly वापरू शकते: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
-    <string name="sound_theme_install_failed">SandFly ध्वनी थीम स्थापित करू शकलो नाही. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_failed">SandFly ला ध्वनी थीम स्थापित करता आली नाही. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">ध्वनी थीमचे दुवे https ने सुरू होणे आवश्यक आहे.</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> चे आवाज</string>
     <string name="title_pref_theme_sounds_reset">सर्वांसाठी SandFly चे आवाज वापरा</string>

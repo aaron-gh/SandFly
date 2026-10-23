@@ -16,8 +16,8 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> чичиргээ.</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> чичиргээ.</item>
     </plurals>
-    <string name="sound_theme_control_sounds_on">Хяналтын дуу чимээ болон чичиргээг асаана.</string>
-    <string name="sound_theme_control_sounds_off">Хяналтын дуу чимээ, чичиргээг унтраана.</string>
+    <string name="sound_theme_control_sounds_on">Удирдлагын элементийн дуу, чичиргээг асаана.</string>
+    <string name="sound_theme_control_sounds_off">Удирдлагын элементийн дуу, чичиргээг унтраана.</string>
     <string name="sound_theme_use">Энэ дууны загварыг ашиглах</string>
     <string name="sound_theme_about">Энэ дууны загварын тухай</string>
     <string name="sound_theme_export">Сэдвийн файл болгон хадгалах</string>
@@ -28,7 +28,7 @@
         <item quantity="one">Загварыг <xliff:g id="count" example="1">%d</xliff:g> дуугаар хадгалсан.</item>
         <item quantity="other">Загварыг <xliff:g id="count" example="13">%d</xliff:g> дуутай хадгалсан.</item>
     </plurals>
-    <string name="sound_theme_export_failed">SandFly загвар файлыг хадгалж чадсангүй.</string>
+    <string name="sound_theme_export_failed">SandFly сэдвийн файлыг хадгалж чадсангүй.</string>
     <string name="sound_theme_no_picker">Энэ төхөөрөмж дээр файл сонгох програм байхгүй байна.</string>
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>-ийн тохиргоо</string>
     <string name="title_pref_theme_sounds">Дуунууд</string>
@@ -57,7 +57,7 @@
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> суулгасан. Энэ нь одоо ашиглагдаж байна.</string>
     <string name="sound_theme_install_nothing">Суулгах дууны сэдэв алга.</string>
     <string name="sound_theme_install_not_a_theme">Энэ нь SandFly ашиглах боломжтой дууны сэдэв биш юм: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
-    <string name="sound_theme_install_failed">SandFly дууны загварыг суулгаж чадсангүй. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_failed">SandFly дууны сэдвийг суулгаж чадсангүй. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">Дууны сэдвүүдийн холбоос https-ээр эхлэх ёстой.</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>-ын дуунууд</string>
     <string name="title_pref_theme_sounds_reset">SandFly-ийн дууг бүх хүнд ашиглаарай</string>

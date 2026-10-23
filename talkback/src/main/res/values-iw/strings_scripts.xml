@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">סקריפטים</string>
-    <string name="summary_pref_scripts">שנה את אופן הפעולה של SandFly באפליקציות</string>
+    <string name="summary_pref_scripts">שינוי אופן הפעולה של SandFly באפליקציות</string>
     <string name="script_import">ייבוא סקריפט</string>
     <string name="script_install_label">התקנת סקריפט של SandFly</string>
     <string name="script_import_nothing">אין קובץ סקריפט להתקנה.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">לא מותקנים סקריפטים</string>
     <string name="scripts_all_off">כיבוי כל הסקריפטים</string>
     <string name="scripts_all_off_summary">סקריפטים נשארים מותקנים ושומרים על המתגים שלהם. המחוות הפעלה או כיבוי של כל הסקריפטים עושה את אותו הדבר.</string>
-    <string name="shortcut_toggle_scripts">הפעל או כבה את כל הסקריפטים</string>
+    <string name="shortcut_toggle_scripts">הפעלה או כיבוי של כל הסקריפטים</string>
     <string name="scripts_now_off">סקריפטים כבויים</string>
     <string name="scripts_now_on">סקריפטים פועלים</string>
     <string name="scripts_unavailable">סקריפטים אינם זמינים במכשיר זה</string>
@@ -148,7 +148,7 @@
         <item quantity="two"><xliff:g id="count" example="2">%1$d</xliff:g> סקריפטים עודכנו: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> סקריפטים עודכנו: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">עדכונים מפורטים תחת עדכונים</string>
+    <string name="scripts_updates_to_approve">העדכונים מופיעים בקטע “עדכונים”</string>
     <string name="scripts_update_check_failed">לא ניתן היה לבדוק חלק מהמקורות</string>
     <string name="scripts_up_to_date">כל הסקריפטים מעודכנים</string>
 </resources>

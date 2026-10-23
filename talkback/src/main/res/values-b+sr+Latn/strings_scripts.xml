@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Skripte</string>
-    <string name="summary_pref_scripts">Promenite kako SandFly funkcioniše u aplikacijama</string>
+    <string name="summary_pref_scripts">Promena rada SandFly-a u aplikacijama</string>
     <string name="script_import">Uvezi skriptu</string>
     <string name="script_install_label">Instaliraj SandFly skriptu</string>
     <string name="script_import_nothing">Ne postoji datoteka skripte za instaliranje.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">Nema instaliranih skripti</string>
     <string name="scripts_all_off">Isključi sve skripte</string>
     <string name="scripts_all_off_summary">Skripte ostaju instalirane i zadržavaju sopstvene prekidače. Gest Uključi ili isključi sve skripte radi isto.</string>
-    <string name="shortcut_toggle_scripts">Uključite ili isključite sve skripte</string>
+    <string name="shortcut_toggle_scripts">Uključivanje ili isključivanje svih skripti</string>
     <string name="scripts_now_off">Skripte isključene</string>
     <string name="scripts_now_on">Skripte uključene</string>
     <string name="scripts_unavailable">Skripte nisu dostupne na ovom uređaju</string>
@@ -148,7 +148,7 @@
         <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> skripte ažurirane: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ažuriranih skripti: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Ažuriranja su navedena pod Ažuriranja</string>
+    <string name="scripts_updates_to_approve">Ažuriranja su navedena u odeljku „Ažuriranja“</string>
     <string name="scripts_update_check_failed">Neki izvori se nisu mogli proveriti</string>
     <string name="scripts_up_to_date">Sve skripte su ažurirane</string>
 </resources>

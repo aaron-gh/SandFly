@@ -13,7 +13,7 @@
     <string name="scripts_none">未安裝任何指令碼</string>
     <string name="scripts_all_off">關閉所有指令碼</string>
     <string name="scripts_all_off_summary">腳本保持安裝狀態並保留自己的開關。開啟或關閉所有腳本手勢的作用相同。</string>
-    <string name="shortcut_toggle_scripts">開啟或關閉所有腳本</string>
+    <string name="shortcut_toggle_scripts">開啟或關閉所有指令碼</string>
     <string name="scripts_now_off">指令碼已關閉</string>
     <string name="scripts_now_on">指令碼已開啟</string>
     <string name="scripts_unavailable">此裝置不支援指令碼</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> 腳本更新：<xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> 腳本更新：<xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">更新列在更新下</string>
+    <string name="scripts_updates_to_approve">更新列在「更新」下</string>
     <string name="scripts_update_check_failed">有些來源無法檢查</string>
     <string name="scripts_up_to_date">所有指令碼都是最新的</string>
 </resources>

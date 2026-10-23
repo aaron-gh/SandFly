@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Komut dosyaları</string>
-    <string name="summary_pref_scripts">SandFly\'nin uygulamalarda çalışma şeklini değiştirin</string>
+    <string name="summary_pref_scripts">SandFly\'ın uygulamalarda çalışma şeklini değiştir</string>
     <string name="script_import">Komut dosyasını içe aktar</string>
     <string name="script_install_label">SandFly betiğini yükle</string>
     <string name="script_import_nothing">Yüklenecek bir betik dosyası yok.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">Hiçbir komut dosyası yüklü değil</string>
     <string name="scripts_all_off">Tüm betikleri kapat</string>
     <string name="scripts_all_off_summary">Komut dosyaları yüklü kalır ve kendi anahtarlarını korur. Tüm komut dosyalarını aç veya kapat hareketi de aynısını yapar.</string>
-    <string name="shortcut_toggle_scripts">Tüm komut dosyalarını açma veya kapatma</string>
+    <string name="shortcut_toggle_scripts">Tüm betikleri açma veya kapatma</string>
     <string name="scripts_now_off">Komut dosyaları kapalı</string>
     <string name="scripts_now_on">Komut dosyaları açık</string>
     <string name="scripts_unavailable">Betikler bu cihazda kullanılamıyor</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> komut dosyası güncellendi: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> komut dosyası güncellendi: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Güncellemeler Güncellemeler altında listelenir</string>
+    <string name="scripts_updates_to_approve">Güncellemeler “Güncellemeler” bölümünde listelenir</string>
     <string name="scripts_update_check_failed">Bazı kaynaklar kontrol edilemedi</string>
     <string name="scripts_up_to_date">Tüm betikler güncel</string>
 </resources>

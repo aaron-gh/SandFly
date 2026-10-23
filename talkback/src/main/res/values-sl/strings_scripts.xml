@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Skripte</string>
-    <string name="summary_pref_scripts">Spremenite način delovanja SandFly v aplikacijah</string>
+    <string name="summary_pref_scripts">Spreminjanje delovanja SandFly v aplikacijah</string>
     <string name="script_import">Uvozi skript</string>
     <string name="script_install_label">Namesti skript SandFly</string>
     <string name="script_import_nothing">Ni skriptne datoteke za namestitev.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">Ni nameščenih skriptov</string>
     <string name="scripts_all_off">Izklop vseh skriptov</string>
     <string name="scripts_all_off_summary">Skripti ostanejo nameščeni in ohranijo lastna stikala. Poteza Vklopi ali izklopi vse skripte naredi enako.</string>
-    <string name="shortcut_toggle_scripts">Vklopite ali izklopite vse skripte</string>
+    <string name="shortcut_toggle_scripts">Vklop ali izklop vseh skriptov</string>
     <string name="scripts_now_off">Skripti izključeni</string>
     <string name="scripts_now_on">Skripte vklopljene</string>
     <string name="scripts_unavailable">Skripti niso na voljo v tej napravi</string>
@@ -149,7 +149,7 @@
         <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> skripti posodobljeni: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> posodobljenih skriptov: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Posodobitve so navedene pod Posodobitve</string>
+    <string name="scripts_updates_to_approve">Posodobitve so navedene v razdelku »Posodobitve«</string>
     <string name="scripts_update_check_failed">Nekaterih virov ni bilo mogoče preveriti</string>
     <string name="scripts_up_to_date">Vsi skripti so posodobljeni</string>
 </resources>

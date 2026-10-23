@@ -28,7 +28,7 @@
         <item quantity="one">Het thema opgeslagen, met <xliff:g id="count" example="1">%d</xliff:g> geluid.</item>
         <item quantity="other">Het thema opgeslagen, met <xliff:g id="count" example="13">%d</xliff:g>-geluiden.</item>
     </plurals>
-    <string name="sound_theme_export_failed">SandFly kan het themabestand niet opslaan.</string>
+    <string name="sound_theme_export_failed">SandFly kon het themabestand niet opslaan.</string>
     <string name="sound_theme_no_picker">Er is geen app op dit apparaat om bestanden mee te kiezen.</string>
     <string name="sound_theme_settings_category">Instellingen van <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">Geluiden</string>
@@ -47,7 +47,7 @@
     <string name="sound_theme_link_message">Voer een link in of plak deze naar een themabestand, of naar een GitHub repository met een thema erin.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Geluidsthema installeren</string>
-    <string name="sound_theme_install_reading">Het thema geluid lezen</string>
+    <string name="sound_theme_install_reading">Geluidsthema lezen</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> installeren?</string>
     <string name="sound_theme_install_and_use">Installeren en gebruiken</string>
     <string name="sound_theme_install">Installeren</string>
@@ -57,7 +57,7 @@
     <string name="sound_theme_installed_in_use">Geïnstalleerd <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Het is nu in gebruik.</string>
     <string name="sound_theme_install_nothing">Er is geen geluidsthema om te installeren.</string>
     <string name="sound_theme_install_not_a_theme">Dit is geen goed thema dat SandFly kan gebruiken: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
-    <string name="sound_theme_install_failed">SandFly kan het geluidsthema niet installeren. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_failed">SandFly kon het geluidsthema niet installeren. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">Links naar geluidsthema\'s moeten beginnen met https.</string>
     <string name="title_pref_theme_sounds_of">Geluiden van <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds_reset">Gebruik de geluiden van SandFly voor iedereen</string>

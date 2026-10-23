@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Scenarijai</string>
-    <string name="summary_pref_scripts">Pakeiskite, kaip SandFly veikia programose</string>
+    <string name="summary_pref_scripts">Keisti, kaip SandFly veikia programose</string>
     <string name="script_import">Importuoti scenarijų</string>
     <string name="script_install_label">Įdiegti SandFly scenarijų</string>
     <string name="script_import_nothing">Nėra scenarijaus failo, kurį būtų galima įdiegti.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">Jokių scenarijų neįdiegta</string>
     <string name="scripts_all_off">Išjungti visus scenarijus</string>
     <string name="scripts_all_off_summary">Scenarijai lieka įdiegti ir turi savo jungiklius. Tą patį daro ir gestas Įjungti arba išjungti visus scenarijus.</string>
-    <string name="shortcut_toggle_scripts">Įjunkite arba išjunkite visus scenarijus</string>
+    <string name="shortcut_toggle_scripts">Įjungti arba išjungti visus scenarijus</string>
     <string name="scripts_now_off">Scenarijai išjungti</string>
     <string name="scripts_now_on">Scenarijai įjungti</string>
     <string name="scripts_unavailable">Šiame įrenginyje scenarijai nepasiekiami</string>
@@ -149,7 +149,7 @@
         <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> scenarijai atnaujinti: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> scenarijai atnaujinti: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Atnaujinimai pateikiami skiltyje Atnaujinimai</string>
+    <string name="scripts_updates_to_approve">Naujiniai pateikiami skiltyje „Atnaujinimai“</string>
     <string name="scripts_update_check_failed">Kai kurių šaltinių patikrinti nepavyko</string>
     <string name="scripts_up_to_date">Visi scenarijai yra atnaujinti</string>
 </resources>

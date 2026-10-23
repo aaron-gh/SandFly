@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Скрипте</string>
-    <string name="summary_pref_scripts">Промените како SandFly функционише у апликацијама</string>
+    <string name="summary_pref_scripts">Промена рада SandFly-а у апликацијама</string>
     <string name="script_import">Увези скрипту</string>
     <string name="script_install_label">Инсталирај SandFly скрипту</string>
     <string name="script_import_nothing">Не постоји датотека скрипте за инсталирање.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">Нема инсталираних скрипти</string>
     <string name="scripts_all_off">Искључи све скрипте</string>
     <string name="scripts_all_off_summary">Скрипте остају инсталиране и задржавају сопствене прекидаче. Гест Укључи или искључи све скрипте ради исто.</string>
-    <string name="shortcut_toggle_scripts">Укључите или искључите све скрипте</string>
+    <string name="shortcut_toggle_scripts">Укључивање или искључивање свих скрипти</string>
     <string name="scripts_now_off">Скрипте искључене</string>
     <string name="scripts_now_on">Скрипте укључене</string>
     <string name="scripts_unavailable">Скрипте нису доступне на овом уређају</string>
@@ -148,7 +148,7 @@
         <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> скрипте ажуриране: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ажурираних скрипти: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Ажурирања су наведена под Ажурирања</string>
+    <string name="scripts_updates_to_approve">Ажурирања су наведена у одељку „Ажурирања“</string>
     <string name="scripts_update_check_failed">Неки извори се нису могли проверити</string>
     <string name="scripts_up_to_date">Све скрипте су ажуриране</string>
 </resources>

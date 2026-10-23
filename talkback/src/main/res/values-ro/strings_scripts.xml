@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Scripturi</string>
-    <string name="summary_pref_scripts">Schimbați modul în care funcționează SandFly în aplicații</string>
+    <string name="summary_pref_scripts">Modifică modul în care funcționează SandFly în aplicații</string>
     <string name="script_import">Importă un script</string>
     <string name="script_install_label">Instalează scriptul SandFly</string>
     <string name="script_import_nothing">Nu există niciun fișier script de instalat.</string>
@@ -13,7 +13,7 @@
     <string name="scripts_none">Nu există scripturi instalate</string>
     <string name="scripts_all_off">Dezactivează toate scripturile</string>
     <string name="scripts_all_off_summary">Scripturile rămân instalate și își păstrează propriile comutatoare. Gestul Porniți sau dezactivați toate scripturile face același lucru.</string>
-    <string name="shortcut_toggle_scripts">Activați sau dezactivați toate scripturile</string>
+    <string name="shortcut_toggle_scripts">Activează sau dezactivează toate scripturile</string>
     <string name="scripts_now_off">Scripturi dezactivate</string>
     <string name="scripts_now_on">Scripturi activate</string>
     <string name="scripts_unavailable">Scripturile nu sunt disponibile pe acest dispozitiv</string>
@@ -148,7 +148,7 @@
         <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> scripturi actualizate: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> de scripturi actualizate: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Actualizările sunt listate sub Actualizări</string>
+    <string name="scripts_updates_to_approve">Actualizările sunt listate la „Actualizări”</string>
     <string name="scripts_update_check_failed">Unele surse nu au putut fi verificate</string>
     <string name="scripts_up_to_date">Toate scripturile sunt la zi</string>
 </resources>

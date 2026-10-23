@@ -20,8 +20,8 @@
         <item quantity="many"><xliff:g id="count" example="13">%d</xliff:g> vibrácií.</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> vibrácií.</item>
     </plurals>
-    <string name="sound_theme_control_sounds_on">Zapne ovládacie zvuky a vibrácie.</string>
-    <string name="sound_theme_control_sounds_off">Vypne zvuky ovládania a vibrácie.</string>
+    <string name="sound_theme_control_sounds_on">Zapne zvuky a vibrácie ovládacích prvkov.</string>
+    <string name="sound_theme_control_sounds_off">Vypne zvuky a vibrácie ovládacích prvkov.</string>
     <string name="sound_theme_use">Použiť túto tému</string>
     <string name="sound_theme_about">O tejto téme</string>
     <string name="sound_theme_export">Uložiť ako súbor témy</string>
@@ -61,7 +61,7 @@
     <string name="sound_theme_install_skipped">Vynechané:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">Téma <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> je nainštalovaná.</string>
     <string name="sound_theme_installed_in_use">Nainštalované <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Teraz sa používa.</string>
-    <string name="sound_theme_install_nothing">Nie je potrebné nainštalovať žiadnu zvukovú tému.</string>
+    <string name="sound_theme_install_nothing">Nie je k dispozícii žiadna zvuková téma na inštaláciu.</string>
     <string name="sound_theme_install_not_a_theme">Toto nie je zvuková téma SandFly môže použiť: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly nemohol nainštalovať zvukovú tému. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">Odkazy na zvukové motívy musia začínať https.</string>

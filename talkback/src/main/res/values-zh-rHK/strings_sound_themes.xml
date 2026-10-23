@@ -16,11 +16,11 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>振動。</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> 振動。</item>
     </plurals>
-    <string name="sound_theme_control_sounds_on">打開控制聲音和振動。</string>
-    <string name="sound_theme_control_sounds_off">關閉控制聲音和振動。</string>
+    <string name="sound_theme_control_sounds_on">開啟控制項的音效和震動。</string>
+    <string name="sound_theme_control_sounds_off">關閉控制項的音效和震動。</string>
     <string name="sound_theme_use">使用這個主題</string>
     <string name="sound_theme_about">關於這個主題</string>
-    <string name="sound_theme_export">另存為主題文件</string>
+    <string name="sound_theme_export">另存為主題檔案</string>
     <string name="sound_theme_remove">移除</string>
     <string name="sound_theme_remove_confirm">刪除主題<xliff:g id="theme" example="Unspoken">%1$s</xliff:g>？</string>
     <string name="sound_theme_remove_button">移除</string>
@@ -47,7 +47,7 @@
     <string name="sound_theme_link_message">輸入或貼上指向主題檔案或其中包含主題的 GitHub 儲存庫的連結。</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">安裝聲音主題</string>
-    <string name="sound_theme_install_reading">讀聲音主題</string>
+    <string name="sound_theme_install_reading">正在讀取聲音主題</string>
     <string name="sound_theme_install_title">安裝<xliff:g id="theme" example="Unspoken">%1$s</xliff:g>？</string>
     <string name="sound_theme_install_and_use">安裝與使用</string>
     <string name="sound_theme_install">安裝</string>
@@ -57,7 +57,7 @@
     <string name="sound_theme_installed_in_use">已安裝<xliff:g id="theme" example="Unspoken">%1$s</xliff:g>。現在正在使用中。</string>
     <string name="sound_theme_install_nothing">沒有要安裝的聲音主題。</string>
     <string name="sound_theme_install_not_a_theme">這不是聲音主題SandFly可以使用：<xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>。</string>
-    <string name="sound_theme_install_failed">SandFly 無法安裝聲音主題。 <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_failed">SandFly 無法安裝聲音主題。<xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">聲音主題的連結必須以 https 開頭。</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>的聲音</string>
     <string name="title_pref_theme_sounds_reset">為所有人使用 SandFly 的聲音</string>

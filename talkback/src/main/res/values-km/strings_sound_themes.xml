@@ -16,11 +16,11 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> រំញ័រ។</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> រំញ័រ។</item>
     </plurals>
-    <string name="sound_theme_control_sounds_on">បើកការបញ្ជាសំឡេង និងរំញ័រ។</string>
-    <string name="sound_theme_control_sounds_off">បិទសំឡេងបញ្ជា និងរំញ័រ។</string>
+    <string name="sound_theme_control_sounds_on">បើកសំឡេង និងរំញ័ររបស់ធាតុបញ្ជា។</string>
+    <string name="sound_theme_control_sounds_off">បិទសំឡេង និងរំញ័ររបស់ធាតុបញ្ជា។</string>
     <string name="sound_theme_use">ប្រើរចនាប័ទ្មនេះ</string>
     <string name="sound_theme_about">អំពីរចនាប័ទ្មនេះ</string>
-    <string name="sound_theme_export">រក្សាទុកជាឯកសារប្រធានបទ</string>
+    <string name="sound_theme_export">រក្សាទុកជាឯកសាររចនាប័ទ្ម</string>
     <string name="sound_theme_remove">ដកចេញ</string>
     <string name="sound_theme_remove_confirm">លុបប្រធានបទ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_remove_button">ដកចេញ</string>
@@ -28,7 +28,7 @@
         <item quantity="one">បានរក្សាទុកប្រធានបទដោយមាន <xliff:g id="count" example="1">%d</xliff:g> សំឡេង។</item>
         <item quantity="other">បានរក្សាទុកប្រធានបទដោយមាន <xliff:g id="count" example="13">%d</xliff:g> សំឡេង។</item>
     </plurals>
-    <string name="sound_theme_export_failed">SandFly មិនអាចរក្សាទុកឯកសារស្បែកបានទេ។</string>
+    <string name="sound_theme_export_failed">SandFly មិនអាចរក្សាទុកឯកសាររចនាប័ទ្មបានទេ។</string>
     <string name="sound_theme_no_picker">មិនមានកម្មវិធីនៅលើឧបករណ៍នេះដើម្បីជ្រើសរើសឯកសារជាមួយទេ។</string>
     <string name="sound_theme_settings_category">ការកំណត់ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">សំឡេង</string>
@@ -47,7 +47,7 @@
     <string name="sound_theme_link_message">បញ្ចូល ឬបិទភ្ជាប់តំណទៅឯកសារប្រធានបទ ឬទៅកាន់ឃ្លាំង GitHub ដែលមានរូបរាងនៅក្នុងវា។</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">ដំឡើងរចនាប័ទ្មសំឡេង</string>
-    <string name="sound_theme_install_reading">ការអានប្រធានបទសំឡេង</string>
+    <string name="sound_theme_install_reading">កំពុងអានរចនាប័ទ្មសំឡេង</string>
     <string name="sound_theme_install_title">ដំឡើង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_install_and_use">ដំឡើងនិងប្រើប្រាស់</string>
     <string name="sound_theme_install">ដំឡើង</string>
@@ -55,10 +55,10 @@
     <string name="sound_theme_install_skipped">បានរំលង៖\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">បានដំឡើង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>។</string>
     <string name="sound_theme_installed_in_use">បានដំឡើង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>។ វាត្រូវបានប្រើឥឡូវនេះ។</string>
-    <string name="sound_theme_install_nothing">មិនមានរូបរាងសំឡេងដើម្បីដំឡើងទេ។</string>
+    <string name="sound_theme_install_nothing">មិនមានរចនាប័ទ្មសំឡេងសម្រាប់ដំឡើងទេ។</string>
     <string name="sound_theme_install_not_a_theme">នេះមិនមែនជាប្រធានបទសំឡេងទេ SandFlyអាចប្រើ៖ <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>។</string>
-    <string name="sound_theme_install_failed">SandFly មិនអាចដំឡើងរូបរាងសំឡេងបានទេ។ <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_install_https_only">តំណភ្ជាប់ទៅកាន់ស្បែកសំឡេងត្រូវតែចាប់ផ្តើមដោយ https ។</string>
+    <string name="sound_theme_install_failed">SandFly មិនអាចដំឡើងរចនាប័ទ្មសំឡេងបានទេ។ <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">តំណទៅរចនាប័ទ្មសំឡេងត្រូវតែចាប់ផ្តើមដោយ https។</string>
     <string name="title_pref_theme_sounds_of">សំឡេង <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds_reset">ប្រើសំឡេងរបស់ SandFly សម្រាប់ទាំងអស់គ្នា</string>
     <string name="theme_sounds_reset_confirm">លុបសំឡេងទាំងអស់នៃរចនាប័ទ្មនេះ ហើយប្រើ SandFly ផ្ទាល់ខ្លួនមែនទេ?</string>
