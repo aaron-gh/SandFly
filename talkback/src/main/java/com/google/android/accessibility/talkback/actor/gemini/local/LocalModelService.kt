@@ -29,6 +29,7 @@ import android.os.Messenger
 import android.os.RemoteException
 import android.util.Log
 import com.google.android.accessibility.talkback.acceleration.Accelerators
+import com.google.android.accessibility.talkback.report.ProblemReportSender
 import java.io.File
 import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicInteger
@@ -57,6 +58,8 @@ class LocalModelService : Service() {
   override fun onCreate() {
     super.onCreate()
     instances.incrementAndGet()
+    // So that a problem report includes this process's log, where the model's errors are.
+    ProblemReportSender.rememberProcess(this, "ondeviceai")
     ipcThread = HandlerThread("on-device-ai-ipc").apply { start() }
     messenger =
       Messenger(

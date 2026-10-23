@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.report
 
+import android.app.ActivityManager
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
@@ -25,6 +26,7 @@ import androidx.annotation.VisibleForTesting
 import androidx.annotation.WorkerThread
 import com.google.android.accessibility.talkback.update.UpdateChecker
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.io.File
 import java.io.IOException
 import java.net.HttpURLConnection
 import org.json.JSONArray
@@ -58,6 +60,13 @@ object ProblemReportSender {
   private const val HTTP_CREATED = 201
   private const val HTTP_TOO_MANY_REQUESTS = 429
   private const val LOG_LINES = 1000
+
+  /** The most lines and characters of the log of each of SandFly's other processes. */
+  private const val OTHER_LOG_LINES = 300
+  private const val MAX_OTHER_LOG = 12_000
+
+  /** The folder of the IDs of SandFly's other processes, by process name. */
+  private const val PROCESS_IDS_DIR = "process-ids"
   private const val LOG_TIMEOUT_SECONDS = 5L
 
   // One thread at most, which ends when idle.
@@ -229,20 +238,64 @@ object ProblemReportSender {
   /** The most of an answer that is read: 20 threads of up to 100 messages. */
   private const val MAX_ANSWER_BYTES = 4 * 1024 * 1024
 
-  /** The log, after SandFly's last crash if there was one, which the log doesn't reach back to. */
+  /**
+   * The log, after SandFly's last crash if there was one, which the log doesn't reach back to, and
+   * then the ends of the logs of SandFly's other processes, such as the one that runs on-device AI.
+   */
   @WorkerThread
   private fun logWithCrash(context: Context): String? {
     val crash = CrashLog.read(context)
-    val log = readLog()
-    if (crash == null) return log
-    val head = "Last crash:\n$crash\n\nLog:\n"
-    // The crash, then as much of the end of the log as fits.
-    return head + log.orEmpty().takeLast((ProblemReport.MAX_LOG - head.length).coerceAtLeast(0))
+    val others = otherProcessLogs(context)
+    val log = readLog(Process.myPid(), LOG_LINES)
+    if (crash == null && others.isEmpty()) return log
+    val head = if (crash == null) "" else "Last crash:\n$crash\n\nLog:\n"
+    // The crash, as much of the end of the log as fits, and the other processes' logs.
+    val room = (ProblemReport.MAX_LOG - head.length - others.length).coerceAtLeast(0)
+    return head + log.orEmpty().takeLast(room) + others
   }
 
-  /** The last lines of this process's log, or null if logcat cannot be run. */
+  /**
+   * Remembers this process's ID under its name, so that a report includes its log even after it
+   * has ended. Call it when one of SandFly's other processes starts, such as on-device AI's.
+   */
+  @JvmStatic
+  fun rememberProcess(context: Context, name: String) {
+    try {
+      val dir = File(context.noBackupFilesDir, PROCESS_IDS_DIR).apply { mkdirs() }
+      File(dir, name).writeText(Process.myPid().toString())
+    } catch (e: IOException) {
+      LogUtils.w(TAG, "Cannot remember the process %s: %s", name, e)
+    }
+  }
+
+  /** The ends of the logs of SandFly's processes other than this one, each under its name. */
   @WorkerThread
-  private fun readLog(): String? {
+  private fun otherProcessLogs(context: Context): String {
+    val pids = LinkedHashMap<Int, String>()
+    // Processes that ran since, whose logs are still in the log buffer if they have ended.
+    File(context.noBackupFilesDir, PROCESS_IDS_DIR).listFiles()?.forEach { file ->
+      file.readText().trim().toIntOrNull()?.let { pids[it] = file.name }
+    }
+    try {
+      context.getSystemService(ActivityManager::class.java)?.runningAppProcesses?.forEach {
+        if (it.processName.startsWith(context.packageName)) pids[it.pid] = it.processName
+      }
+    } catch (e: RuntimeException) {
+      LogUtils.w(TAG, "Cannot list SandFly's processes: %s", e)
+    }
+    pids.remove(Process.myPid())
+    val logs = StringBuilder()
+    for ((pid, name) in pids) {
+      val log = readLog(pid, OTHER_LOG_LINES)?.takeIf { it.isNotBlank() } ?: continue
+      logs.append("\n\nLog of ").append(name).append(":\n")
+      logs.append(log.takeLast(MAX_OTHER_LOG))
+    }
+    return logs.toString()
+  }
+
+  /** The last [lines] lines of the log of process [pid], or null if logcat cannot be run. */
+  @WorkerThread
+  private fun readLog(pid: Int, lines: Int): String? {
     val process =
       try {
         ProcessBuilder(
@@ -251,9 +304,9 @@ object ProblemReportSender {
             "-v",
             "threadtime",
             "-t",
-            LOG_LINES.toString(),
+            lines.toString(),
             "--pid",
-            Process.myPid().toString(),
+            pid.toString(),
           )
           .redirectErrorStream(true)
           .start()
