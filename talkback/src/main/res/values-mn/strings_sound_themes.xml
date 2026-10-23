@@ -33,14 +33,14 @@
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>-ийн тохиргоо</string>
     <string name="title_pref_theme_sounds">Дуу</string>
     <string name="summary_pref_theme_sounds">Энэ загварын дууг өөрийн дууны файлаар солино уу.</string>
-    <string name="sound_themes_install_category">Загвар суулгана уу</string>
+    <string name="sound_themes_install_category">Загвар суулгах</string>
     <string name="title_pref_sound_theme_install_file">Файлаас</string>
     <string name="summary_pref_sound_theme_install_file">Сэдвийн файл нь ZIP файл юм. Та мөн нэгийг нээх эсвэл өөр програмын SandFly-тэй хуваалцах боломжтой.</string>
     <string name="title_pref_sound_theme_install_link">Холбоосоос</string>
     <string name="summary_pref_sound_theme_install_link">Сэдвийн файл эсвэл дотор нь сэдэвтэй GitHub репозиторын холбоос. Та мөн хөтөчөөсөө SandFly-тэй холбоосыг хуваалцаж болно.</string>
     <string name="title_pref_sound_theme_install_source">Эх сурвалжаас</string>
     <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea эсвэл Bitbucket дээрх репозитор дахь загвар файлууд.</string>
-    <string name="sound_theme_sources">Дууны сэдвийн эх сурвалж</string>
+    <string name="sound_theme_sources">Дууны загварын эх сурвалж</string>
     <string name="sound_theme_source_empty">Энэ эх сурвалжид дууны сэдэв алга</string>
     <string name="sound_theme_source_failed">Дууны загваруудыг ачаалж чадсангүй. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">Үүнээс суулгасан дууны загварууд суулгасан хэвээр байна.</string>
@@ -65,21 +65,21 @@
     <string name="theme_sounds_reset_button">Устгах</string>
     <string name="theme_sounds_category">Дуу</string>
     <string name="theme_sound_summary_default">SandFly-ийн дуу</string>
-    <string name="theme_sound_summary_custom">Сэдвийн дуу</string>
+    <string name="theme_sound_summary_custom">Загварын дуу</string>
     <string name="theme_sound_summary_none">Дуу алга. Фокусын дуу тоглодог.</string>
     <string name="theme_sound_summary_android_keyboard">Android-ийн гарны дуу</string>
     <string name="theme_sound_use_android_keyboard">Android-ийн гарын дууг ашиглана уу</string>
     <string name="theme_sound_braille_character">Брайл гар: тэмдэгт бичих</string>
     <string name="theme_sound_braille_space">Брайл гар: зай</string>
-    <string name="theme_sound_braille_delete">Брайл гар: устгах</string>
+    <string name="theme_sound_braille_delete">Брайл гар: устгал</string>
     <string name="theme_sound_braille_new_line">Брайл гар: шинэ мөр</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">Дууны файлыг сонгоно уу</string>
-    <string name="theme_sound_preview">Урьдчилан харах</string>
-    <string name="theme_sound_none">Дуу алга</string>
-    <string name="theme_sound_summary_no_sound">Дуу алга</string>
+    <string name="theme_sound_preview">Сонсох</string>
+    <string name="theme_sound_none">Дуугүй</string>
+    <string name="theme_sound_summary_no_sound">Дуугүй</string>
     <string name="theme_sound_action_set_none">Дуугүй горимд тохируулна уу</string>
-    <string name="theme_sound_use_default">SandFly-ийн дууг ашиглана уу</string>
+    <string name="theme_sound_use_default">SandFly-ийн дууг ашиглах</string>
     <string name="theme_sound_remove">Дууг арилгах</string>
     <string name="theme_sound_too_large">Энэ файл хэтэрхий том байна. Дууны хэмжээ 5 МБ хүртэл байж болно.</string>
     <string name="theme_sound_not_audio">SandFly тэр файлыг тоглуулах боломжгүй. WAV, OGG, MP3 эсвэл FLAC дууг сонгоно уу.</string>

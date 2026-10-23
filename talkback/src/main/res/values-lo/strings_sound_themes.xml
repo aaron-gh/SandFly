@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">ຫົວຂໍ້ສຽງ</string>
     <string name="summary_pref_sound_themes">ຕິດຕັ້ງແລະເລືອກຊຸດຂອງສຽງແລະການສັ່ນສະເທືອນ, ທົດແທນສຽງດຽວດ້ວຍຂອງທ່ານເອງ, ແລະເປີດການຄວບຄຸມສຽງແລະການສັ່ນສະເທືອນແລະສຽງ 3D.</string>
-    <string name="sound_themes_installed_category">ຮູບແບບສີສັນທີ່ຕິດຕັ້ງແລ້ວ</string>
+    <string name="sound_themes_installed_category">ຮູບແບບທີ່ຕິດຕັ້ງແລ້ວ</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">ສຽງ ແລະ ການສັ່ນສະເທືອນຂອງ SandFly, ແລະສຽງຕ່າງໆຂອງເຈົ້າເອງ.</string>
     <string name="sound_theme_in_use">ໃຊ້ຢູ່</string>
@@ -18,7 +18,7 @@
     </plurals>
     <string name="sound_theme_control_sounds_on">ເປີດການຄວບຄຸມສຽງ ແລະການສັ່ນສະເທືອນ.</string>
     <string name="sound_theme_control_sounds_off">ປິດການຄວບຄຸມສຽງ ແລະ vibrations.</string>
-    <string name="sound_theme_use">ໃຊ້ຫົວຂໍ້ນີ້</string>
+    <string name="sound_theme_use">ໃຊ້ຮູບແບບນີ້</string>
     <string name="sound_theme_about">ກ່ຽວກັບຮູບແບບນີ້</string>
     <string name="sound_theme_export">ບັນທຶກເປັນໄຟລ໌ຫົວຂໍ້</string>
     <string name="sound_theme_remove">ເອົາອອກ</string>
@@ -40,7 +40,7 @@
     <string name="summary_pref_sound_theme_install_link">ລິ້ງໄປຫາໄຟລ໌ຮູບແບບສີສັນ ຫຼືໄປຫາບ່ອນເກັບຂໍ້ມູນ GitHub ທີ່ມີຮູບແບບສີສັນຢູ່ໃນນັ້ນ. ນອກນັ້ນທ່ານຍັງສາມາດແບ່ງປັນການເຊື່ອມຕໍ່ກັບ SandFly ຈາກຕົວທ່ອງເວັບຂອງທ່ານ.</string>
     <string name="title_pref_sound_theme_install_source">ຈາກແຫຼ່ງ</string>
     <string name="summary_pref_sound_theme_install_source">ໄຟລ໌ຫົວຂໍ້ຢູ່ໃນບ່ອນເກັບມ້ຽນໃນ GitHub, GitLab, Codeberg, Gitea ຫຼື Bitbucket.</string>
-    <string name="sound_theme_sources">ແຫຼ່ງຫົວຂໍ້ສຽງ</string>
+    <string name="sound_theme_sources">ແຫຼ່ງຮູບແບບສຽງ</string>
     <string name="sound_theme_source_empty">ບໍ່ມີຫົວຂໍ້ສຽງໃນແຫຼ່ງນີ້</string>
     <string name="sound_theme_source_failed">ບໍ່ສາມາດໂຫຼດຮູບແບບສີສັນສຽງໄດ້. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">ຫົວຂໍ້ສຽງທີ່ຕິດຕັ້ງຈາກມັນຍັງຄົງຕິດຕັ້ງຢູ່.</string>
@@ -65,17 +65,17 @@
     <string name="theme_sounds_reset_button">ເອົາອອກ</string>
     <string name="theme_sounds_category">ສຽງ</string>
     <string name="theme_sound_summary_default">ສຽງຂອງ SandFly</string>
-    <string name="theme_sound_summary_custom">ສຽງຫົວຂໍ້</string>
+    <string name="theme_sound_summary_custom">ສຽງຮູບແບບ</string>
     <string name="theme_sound_summary_none">ບໍ່ມີສຽງ. ສຽງທີ່ເນັ້ນໃສ່.</string>
     <string name="theme_sound_summary_android_keyboard">ສຽງແປ້ນພິມຂອງ Android</string>
     <string name="theme_sound_use_android_keyboard">ໃຊ້ສຽງແປ້ນພິມຂອງ Android</string>
     <string name="theme_sound_braille_character">ແປ້ນພິມອັກສອນນູນ: ພິມຕົວອັກສອນ</string>
     <string name="theme_sound_braille_space">ແປ້ນພິມອັກສອນນູນ: ຊ່ອງ</string>
-    <string name="theme_sound_braille_delete">ແປ້ນພິມອັກສອນນູນ: ລຶບ</string>
+    <string name="theme_sound_braille_delete">ແປ້ນພິມອັກສອນນູນ: ການລຶບ</string>
     <string name="theme_sound_braille_new_line">ແປ້ນພິມອັກສອນນູນ: ແຖວໃໝ່</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">ເລືອກໄຟລ໌ສຽງ</string>
-    <string name="theme_sound_preview">ສະແດງຕົວຢ່າງ</string>
+    <string name="theme_sound_preview">ຟັງ</string>
     <string name="theme_sound_none">ບໍ່ມີສຽງ</string>
     <string name="theme_sound_summary_no_sound">ບໍ່ມີສຽງ</string>
     <string name="theme_sound_action_set_none">ຕັ້ງໃຫ້ບໍ່ມີສຽງ</string>

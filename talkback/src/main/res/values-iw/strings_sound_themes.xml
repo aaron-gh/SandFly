@@ -20,7 +20,7 @@
     </plurals>
     <string name="sound_theme_control_sounds_on">מפעיל את צלילי השליטה והרעידות.</string>
     <string name="sound_theme_control_sounds_off">מכבה את צלילי השליטה והרעידות.</string>
-    <string name="sound_theme_use">השתמש בנושא זה</string>
+    <string name="sound_theme_use">שימוש בערכת הנושא הזו</string>
     <string name="sound_theme_about">על ערכת הנושא הזו</string>
     <string name="sound_theme_export">שמור כקובץ ערכת נושא</string>
     <string name="sound_theme_remove">הסרה</string>
@@ -36,14 +36,14 @@
     <string name="sound_theme_settings_category">הגדרות של <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">צלילים</string>
     <string name="summary_pref_theme_sounds">החלף כל צליל של נושא זה בקובץ קול משלך.</string>
-    <string name="sound_themes_install_category">התקן ערכת נושא</string>
+    <string name="sound_themes_install_category">התקנת ערכת נושא</string>
     <string name="title_pref_sound_theme_install_file">מתוך קובץ</string>
     <string name="summary_pref_sound_theme_install_file">קובץ ערכת נושא הוא קובץ ZIP. אתה יכול גם לפתוח אחד, או לשתף אותו, עם SandFly מאפליקציה אחרת.</string>
     <string name="title_pref_sound_theme_install_link">מתוך קישור</string>
     <string name="summary_pref_sound_theme_install_link">קישור לקובץ ערכת נושא, או למאגר GitHub עם ערכת נושא בתוכו. אתה יכול גם לשתף קישור עם SandFly מהדפדפן שלך.</string>
     <string name="title_pref_sound_theme_install_source">ממקור</string>
     <string name="summary_pref_sound_theme_install_source">קבצי ערכות נושא במאגר ב-GitHub, GitLab, Codeberg, Gitea או Bitbucket.</string>
-    <string name="sound_theme_sources">מקורות נושא קול</string>
+    <string name="sound_theme_sources">מקורות של ערכות נושא לצלילים</string>
     <string name="sound_theme_source_empty">אין ערכות נושא קול במקור זה</string>
     <string name="sound_theme_source_failed">לא ניתן לטעון ערכות נושא של סאונד. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">ערכות נושא של סאונד שהותקנו ממנו יישארו מותקנים.</string>
@@ -68,22 +68,22 @@
     <string name="theme_sounds_reset_button">הסר</string>
     <string name="theme_sounds_category">צלילים</string>
     <string name="theme_sound_summary_default">הצליל של SandFly</string>
-    <string name="theme_sound_summary_custom">צליל נושא</string>
+    <string name="theme_sound_summary_custom">צליל ערכת הנושא</string>
     <string name="theme_sound_summary_none">אין קול. צליל המיקוד מתנגן.</string>
     <string name="theme_sound_summary_android_keyboard">צליל המקלדת של Android</string>
     <string name="theme_sound_use_android_keyboard">השתמש בצליל המקלדת של Android</string>
     <string name="theme_sound_braille_character">מקלדת ברייל: הקלדת תו</string>
     <string name="theme_sound_braille_space">מקלדת ברייל: רווח</string>
-    <string name="theme_sound_braille_delete">מקלדת ברייל: מחק</string>
+    <string name="theme_sound_braille_delete">מקלדת ברייל: מחיקה</string>
     <string name="theme_sound_braille_new_line">מקלדת ברייל: שורה חדשה</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">בחר קובץ קול</string>
-    <string name="theme_sound_preview">תצוגה מקדימה</string>
-    <string name="theme_sound_none">אין קול</string>
-    <string name="theme_sound_summary_no_sound">אין קול</string>
+    <string name="theme_sound_preview">השמעה</string>
+    <string name="theme_sound_none">ללא צליל</string>
+    <string name="theme_sound_summary_no_sound">ללא צליל</string>
     <string name="theme_sound_action_set_none">מוגדר ללא צליל</string>
-    <string name="theme_sound_use_default">השתמש בצליל של SandFly</string>
-    <string name="theme_sound_remove">הסר את הצליל</string>
+    <string name="theme_sound_use_default">שימוש בצליל של SandFly</string>
+    <string name="theme_sound_remove">הסרת הצליל</string>
     <string name="theme_sound_too_large">הקובץ הזה גדול מדי. צליל יכול להיות עד 5MB.</string>
     <string name="theme_sound_not_audio">SandFly לא יכול להפעיל את הקובץ הזה. בחר צליל WAV, OGG, MP3 או FLAC.</string>
     <string name="theme_sound_failed">SandFly לא הצליח לקרוא את הקובץ הזה.</string>

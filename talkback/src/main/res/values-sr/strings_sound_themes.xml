@@ -20,7 +20,7 @@
     </plurals>
     <string name="sound_theme_control_sounds_on">Укључује контролне звукове и вибрације.</string>
     <string name="sound_theme_control_sounds_off">Искључује контролне звукове и вибрације.</string>
-    <string name="sound_theme_use">Користите ову тему</string>
+    <string name="sound_theme_use">Користи ову тему</string>
     <string name="sound_theme_about">О овој теми</string>
     <string name="sound_theme_export">Сачувај као датотеку теме</string>
     <string name="sound_theme_remove">Уклони</string>
@@ -33,10 +33,10 @@
     </plurals>
     <string name="sound_theme_export_failed">SandFly није могао да сачува датотеку теме.</string>
     <string name="sound_theme_no_picker">На овом уређају нема апликације за одабир датотека.</string>
-    <string name="sound_theme_settings_category">Подешавања од <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="sound_theme_settings_category">Подешавања теме <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">Звукови</string>
     <string name="summary_pref_theme_sounds">Замените било који звук ове теме сопственом звучном датотеком.</string>
-    <string name="sound_themes_install_category">Инсталирајте тему</string>
+    <string name="sound_themes_install_category">Инсталирај тему</string>
     <string name="title_pref_sound_theme_install_file">Из датотеке</string>
     <string name="summary_pref_sound_theme_install_file">Датотека теме је ЗИП датотека. Такође можете отворити једну или је поделити са SandFly из друге апликације.</string>
     <string name="title_pref_sound_theme_install_link">Са везе</string>
@@ -78,12 +78,12 @@
     <string name="theme_sound_braille_new_line">Брајева тастатура: нова линија</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">Изаберите звучну датотеку</string>
-    <string name="theme_sound_preview">Преглед</string>
-    <string name="theme_sound_none">Нема звука</string>
-    <string name="theme_sound_summary_no_sound">Нема звука</string>
+    <string name="theme_sound_preview">Преслушај</string>
+    <string name="theme_sound_none">Без звука</string>
+    <string name="theme_sound_summary_no_sound">Без звука</string>
     <string name="theme_sound_action_set_none">Подесите на без звука</string>
-    <string name="theme_sound_use_default">Користите звук SandFly</string>
-    <string name="theme_sound_remove">Уклоните звук</string>
+    <string name="theme_sound_use_default">Користи звук SandFly</string>
+    <string name="theme_sound_remove">Уклони звук</string>
     <string name="theme_sound_too_large">Тај фајл је превелик. Звук може бити до 5 МБ.</string>
     <string name="theme_sound_not_audio">SandFly не може да пусти ту датотеку. Изаберите ВАВ, ОГГ, МП3 или ФЛАЦ звук.</string>
     <string name="theme_sound_failed">SandFly није могао да прочита ту датотеку.</string>
