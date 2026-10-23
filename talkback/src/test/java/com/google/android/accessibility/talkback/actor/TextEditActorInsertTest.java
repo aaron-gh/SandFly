@@ -17,18 +17,22 @@
 package com.google.android.accessibility.talkback.actor;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.EditText;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.Performance.EventId;
+import com.google.android.accessibility.talkback.dictation.AiDictation;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.Shadows;
+import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
 @RunWith(RobolectricTestRunner.class)
@@ -41,12 +45,18 @@ public class TextEditActorInsertTest {
 
   private void checkInsertion(
       String original, boolean showingHint, int start, int end, String expected, int cursor) {
+    checkInsertion(original, showingHint, true, true, start, end, expected, cursor);
+  }
+
+  private void checkInsertion(
+      String original, boolean showingHint, boolean selectable, boolean cursorSucceeds,
+      int start, int end, String expected, int cursor) {
     TestService service = Robolectric.buildService(TestService.class).get();
     TextEditActor actor = new TextEditActor(service, null, null, null, null, null, null) {
       @Override
       public boolean moveCursor(AccessibilityNodeInfoCompat node, int position, EventId eventId) {
         assertEquals(cursor, position);
-        return true;
+        return cursorSucceeds;
       }
     };
     AccessibilityNodeInfo node = AccessibilityNodeInfo.obtain();
@@ -55,6 +65,11 @@ public class TextEditActorInsertTest {
     node.setText(original);
     node.setShowingHintText(showingHint);
     node.setTextSelection(start, end);
+    if (selectable) node.addAction(AccessibilityNodeInfo.ACTION_SET_SELECTION);
+    if (!selectable) {
+      assertEquals("", AiDictation.Companion.textBeforeCursor(AccessibilityNodeInfoCompat.wrap(node)));
+      assertEquals("", AiDictation.Companion.textAfterCursor(AccessibilityNodeInfoCompat.wrap(node)));
+    }
     String[] written = {null};
     Shadows.shadowOf(node).setOnPerformActionListener((action, args) -> {
       assertEquals(AccessibilityNodeInfo.ACTION_SET_TEXT, action);
@@ -64,6 +79,34 @@ public class TextEditActorInsertTest {
     });
     assertTrue(actor.insert(AccessibilityNodeInfoCompat.wrap(node), "Did you book that lunch?", null));
     assertEquals(expected, written[0]);
+  }
+
+  @Test
+  public void emptyTelegramStyleFieldDoesNotOfferSelectionOrHintMetadata() {
+    EditText field = new EditText(RuntimeEnvironment.getApplication()) {
+      @Override
+      public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
+        super.onInitializeAccessibilityNodeInfo(info);
+        if (getText().length() == 0) info.setText("Message");
+      }
+    };
+    AccessibilityNodeInfo node = field.createAccessibilityNodeInfo();
+    assertEquals("Message", node.getText().toString());
+    assertEquals(null, node.getHintText());
+    assertFalse(node.isShowingHintText());
+    assertEquals(0, node.getActions() & AccessibilityNodeInfo.ACTION_SET_SELECTION);
+    assertEquals("", AiDictation.Companion.textBeforeCursor(AccessibilityNodeInfoCompat.wrap(node)));
+    assertEquals("", AiDictation.Companion.textAfterCursor(AccessibilityNodeInfoCompat.wrap(node)));
+  }
+
+  @Test
+  public void telegramPlaceholderWithoutHintFlagIsNotInserted() {
+    checkInsertion("Message", false, false, true, 0, 0, "Did you book that lunch?", 24);
+  }
+
+  @Test
+  public void successfulInsertionIsNotReportedAsFailureWhenCursorMoveFails() {
+    checkInsertion("Message", false, false, false, 0, 0, "Did you book that lunch?", 24);
   }
 
   @Test

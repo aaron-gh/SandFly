@@ -34,6 +34,7 @@ import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.Gemini
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager
 import com.google.android.accessibility.talkback.utils.SpeechRecognizerPerformer
 import com.google.android.accessibility.talkback.utils.SpeechRecognizerPerformer.SpeechRecognizerRequester
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.Role
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -245,14 +246,14 @@ class AiDictation(
     private const val SPEECH_DELAY_MS = 100
 
     fun textBeforeCursor(node: AccessibilityNodeInfoCompat): String {
-      if (node.isShowingHintText) return ""
+      if (node.isShowingHintText || AccessibilityNodeInfoUtils.isEmptyEditTextRegardlessOfHint(node)) return ""
       val text = node.text?.toString() ?: return ""
       val cursor = node.textSelectionStart.takeIf { it in 0..text.length } ?: text.length
       return text.substring(0, cursor)
     }
 
     fun textAfterCursor(node: AccessibilityNodeInfoCompat): String {
-      if (node.isShowingHintText) return ""
+      if (node.isShowingHintText || AccessibilityNodeInfoUtils.isEmptyEditTextRegardlessOfHint(node)) return ""
       val text = node.text?.toString() ?: return ""
       val cursor = node.textSelectionEnd.takeIf { it in 0..text.length } ?: text.length
       return text.substring(cursor)

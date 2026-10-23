@@ -623,9 +623,12 @@ public class TextEditActor implements VoiceDictationDelegate {
     CharSequence hintText = node.getHintText();
     // There is a low probability that the content of the input field is totally the same with the
     // hint text. In that case the current input field will be overridden by the inserted text.
-    // Some apps expose the placeholder as text and set only the showing-hint flag, without
-    // providing hintText. It must not become part of the value passed to ACTION_SET_TEXT.
-    if (node.isShowingHintText() || TextUtils.equals(currentText, hintText)) {
+    // Some apps expose the placeholder as text without hintText, and Telegram also omits the
+    // showing-hint flag. Empty EditTexts don't offer text selection. Their placeholders must not
+    // become part of the value passed to ACTION_SET_TEXT.
+    if (node.isShowingHintText()
+        || AccessibilityNodeInfoUtils.isEmptyEditTextRegardlessOfHint(node)
+        || TextUtils.equals(currentText, hintText)) {
       currentText = null;
     }
 
@@ -649,8 +652,12 @@ public class TextEditActor implements VoiceDictationDelegate {
       return false;
     }
 
-    // Move cursor to end of inserted text.
-    return moveCursor(node, selectionStart + textToInsert.length(), eventId);
+    // Setting text can change the actions offered by an empty field. Refresh before moving the
+    // cursor, but don't report that typing failed when only this cursor move failed.
+    if (node.refresh()) {
+      moveCursor(node, selectionStart + textToInsert.length(), eventId);
+    }
+    return true;
   }
 
   /**
