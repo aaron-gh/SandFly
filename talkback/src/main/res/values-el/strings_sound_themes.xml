@@ -78,4 +78,10 @@
     <string name="theme_sound_too_large">Το αρχείο είναι πολύ μεγάλο. Ένας ήχος μπορεί να είναι έως 5 MB.</string>
     <string name="theme_sound_not_audio">Το SandFly δεν μπορεί να αναπαραγάγει αυτό το αρχείο. Επιλέξτε ήχο WAV, OGG, MP3 ή FLAC.</string>
     <string name="theme_sound_failed">Το SandFly δεν μπόρεσε να διαβάσει αυτό το αρχείο.</string>
+    <string name="title_pref_sound_theme_install_source">Από πηγή</string>
+    <string name="summary_pref_sound_theme_install_source">Αρχεία θεμάτων σε ένα αποθετήριο στις GitHub, GitLab, Codeberg, Gitea ή Bitbucket.</string>
+    <string name="sound_theme_sources">Πηγές θεμάτων ήχου</string>
+    <string name="sound_theme_source_empty">Δεν υπάρχουν θέματα ήχου σε αυτήν την πηγή</string>
+    <string name="sound_theme_source_failed">Δεν ήταν δυνατή η φόρτωση θεμάτων ήχου. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Τα θέματα ήχου που έχουν εγκατασταθεί από αυτό παραμένουν εγκατεστημένα.</string>
 </resources>
