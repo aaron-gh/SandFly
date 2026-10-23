@@ -17,7 +17,7 @@
     <string name="scripts_now_off">სკრიპტები გამორთულია</string>
     <string name="scripts_now_on">სკრიპტები ჩართულია</string>
     <string name="scripts_unavailable">სკრიპტები მიუწვდომელია ამ მოწყობილობაზე</string>
-    <string name="script_add_example">დაამატეთ სკრიპტის მაგალითი</string>
+    <string name="script_add_example">სკრიპტის მაგალითის დამატება</string>
     <string name="script_add_example_summary">ამბობს თითოეული აპის სახელს, რომელზედაც გადახვალთ. სკრიპტი საიდანაც უნდა დავიწყოთ.</string>
     <string name="script_state_on">ჩართული</string>
     <string name="script_state_off">გამორთული</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">სჭირდება სკრიპტის API <xliff:g id="needed">%1$d</xliff:g> ან უფრო ახალი. ამ SandFly აქვს <xliff:g id="current">%2$d</xliff:g>, ამიტომ ნაწილები შეიძლება არ იმუშაოს.</string>
     <string name="script_api_untested">დატესტილია სკრიპტის API <xliff:g id="tested">%1$d</xliff:g>-მდე. ამ SandFly აქვს <xliff:g id="current">%2$d</xliff:g>, ამიტომ შეიძლება არ იმუშაოს ისე, როგორც მოსალოდნელი იყო.</string>
     <string name="script_state_incompatible">შეიძლება არ იმუშაოს ამ SandFly</string>
-    <string name="script_api_range">სკრიპტის API <xliff:g id="min">%1$d</xliff:g> <xliff:g id="tested">%2$d</xliff:g>-მდე</string>
+    <string name="script_api_range">სკრიპტის API <xliff:g id="min">%1$d</xliff:g>-დან <xliff:g id="tested">%2$d</xliff:g>-მდე</string>
     <string name="script_compatibility_title">თავსებადობა</string>
     <string name="script_install_anyway">მაინც დაინსტალირება</string>
     <string name="script_update_anyway">მაინც განახლება</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_turn_off">გამორთვა</string>
     <string name="script_binding_restore">ნაგულისხმევი პარამეტრების აღდგენა</string>
     <string name="script_binding_restored">ნაგულისხმევი პარამეტრები აღდგენილია</string>
-    <string name="script_binding_perform">შეასრულეთ ჟესტები ან კლავიშები</string>
+    <string name="script_binding_perform">შეასრულეთ ჟესტი ან დააჭირეთ კლავიშებს</string>
     <string name="script_binding_perform_summary">მიანიჭეთ შემდეგი ჟესტი, ან ღილაკები დაჭერით SandFly მოდიფიკატორით</string>
     <string name="script_binding_perform_message">გააკეთეთ ჟესტი ან დააჭირეთ კლავიშებს.</string>
     <string name="script_binding_assign_title">მივანიჭოთ <xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g>-ს?</string>
@@ -120,7 +120,7 @@
     <string name="script_binding_choose_gesture">ჟესტის არჩევა</string>
     <string name="script_binding_type_keys">კლავიშების აკრეფა</string>
     <string name="script_binding_type_keys_summary">მოიწონეთ sf+shift+n, ან sf+t, წმ</string>
-    <string name="script_binding_bad_keys">ამ გასაღებების გამოყენება შეუძლებელია. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">ამ კლავიშების გამოყენება შეუძლებელია. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">ამატებს:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">სკრიპტის წყაროები</string>

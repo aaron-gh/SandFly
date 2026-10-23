@@ -17,7 +17,7 @@
     <string name="scripts_now_off">Komut dosyaları kapalı</string>
     <string name="scripts_now_on">Komut dosyaları açık</string>
     <string name="scripts_unavailable">Komut dosyaları bu cihazda mevcut değil</string>
-    <string name="script_add_example">Örnek betiği ekleyin</string>
+    <string name="script_add_example">Örnek betiği ekle</string>
     <string name="script_add_example_summary">Geçiş yaptığınız her uygulamanın adını söyler. Başlamak için bir komut dosyası.</string>
     <string name="script_state_on">Açık</string>
     <string name="script_state_off">Kapalı</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">Komut dosyası API\'si <xliff:g id="needed">%1$d</xliff:g> veya üzeri gerekiyor. Bu SandFly\'de <xliff:g id="current">%2$d</xliff:g> var, dolayısıyla parçalar çalışmayabilir.</string>
     <string name="script_api_untested">API <xliff:g id="tested">%1$d</xliff:g> komut dosyasına kadar test edildi. Bu SandFly\'de <xliff:g id="current">%2$d</xliff:g> var, dolayısıyla beklendiği gibi çalışmayabilir.</string>
     <string name="script_state_incompatible">Bununla çalışmayabilir SandFly</string>
-    <string name="script_api_range">Komut Dosyası API\'si <xliff:g id="min">%1$d</xliff:g> ila <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">Betik API\'si <xliff:g id="min">%1$d</xliff:g> ile <xliff:g id="tested">%2$d</xliff:g> arası</string>
     <string name="script_compatibility_title">Uyumluluk</string>
     <string name="script_install_anyway">Yine de yükle</string>
     <string name="script_update_anyway">Yine de güncelle</string>
@@ -112,15 +112,15 @@
     <string name="script_binding_turn_off">Kapat</string>
     <string name="script_binding_restore">Varsayılanları geri yükle</string>
     <string name="script_binding_restored">Varsayılanlar geri yüklendi</string>
-    <string name="script_binding_perform">Hareketi veya tuşları gerçekleştirin</string>
+    <string name="script_binding_perform">Hareketi yapın veya tuşlara basın</string>
     <string name="script_binding_perform_summary">Sonraki hareketi veya SandFly değiştiricisiyle basılan tuşları atayın</string>
     <string name="script_binding_perform_message">Hareketi yapın veya tuşlara basın.</string>
-    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g>\'e atansın mı?</string>
+    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>, <xliff:g id="command">%2$s</xliff:g> komutuna atansın mı?</string>
     <string name="script_binding_assign">Ata</string>
     <string name="script_binding_choose_gesture">Hareket seç</string>
     <string name="script_binding_type_keys">Tuşları yazın</string>
     <string name="script_binding_type_keys_summary">Sf+shift+n, veya sf+t, gibi</string>
-    <string name="script_binding_bad_keys">Bu anahtarları kullanamıyorum. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">Bu tuşlar kullanılamaz. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Şunları ekliyor:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Komut dosyası kaynakları</string>

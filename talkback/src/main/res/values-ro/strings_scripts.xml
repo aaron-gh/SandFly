@@ -17,7 +17,7 @@
     <string name="scripts_now_off">Scripturi dezactivate</string>
     <string name="scripts_now_on">Scripturi activate</string>
     <string name="scripts_unavailable">Scripturile nu sunt disponibile pe acest dispozitiv</string>
-    <string name="script_add_example">Adăugați exemplul de script</string>
+    <string name="script_add_example">Adaugă scriptul exemplu</string>
     <string name="script_add_example_summary">Spune numele fiecărei aplicații la care comutați. Un script de la care să începi.</string>
     <string name="script_state_on">Activat</string>
     <string name="script_state_off">Dezactivat</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">Necesita script API <xliff:g id="needed">%1$d</xliff:g> sau o versiune ulterioară. Acest SandFly are <xliff:g id="current">%2$d</xliff:g>, deci piesele pot să nu funcționeze.</string>
     <string name="script_api_untested">Testat până la script API <xliff:g id="tested">%1$d</xliff:g>. Acest SandFly are <xliff:g id="current">%2$d</xliff:g>, deci este posibil să nu funcționeze așa cum era de așteptat.</string>
     <string name="script_state_incompatible">Este posibil să nu funcționeze cu aceasta SandFly</string>
-    <string name="script_api_range">Script API de la <xliff:g id="min">%1$d</xliff:g> la <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">API pentru scripturi de la <xliff:g id="min">%1$d</xliff:g> la <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Compatibilitate</string>
     <string name="script_install_anyway">Instalează oricum</string>
     <string name="script_update_anyway">Actualizează oricum</string>
@@ -112,15 +112,15 @@
     <string name="script_binding_turn_off">Dezactivează</string>
     <string name="script_binding_restore">Restabilește valorile implicite</string>
     <string name="script_binding_restored">Valorile implicite au fost restaurate</string>
-    <string name="script_binding_perform">Efectuați gesturi sau taste</string>
+    <string name="script_binding_perform">Efectuați gestul sau apăsați tastele</string>
     <string name="script_binding_perform_summary">Atribuiți următorul gest sau tastele apăsate cu modificatorul SandFly</string>
     <string name="script_binding_perform_message">Faceți gestul sau apăsați tastele.</string>
-    <string name="script_binding_assign_title">Atribuiți <xliff:g id="binding">%1$s</xliff:g> la <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign_title">Atribuiți <xliff:g id="binding">%1$s</xliff:g> comenzii <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Atribuie</string>
     <string name="script_binding_choose_gesture">Alege gestul</string>
     <string name="script_binding_type_keys">Tastează tastele</string>
     <string name="script_binding_type_keys_summary">Ca sf+shift+n, sau sf+t, s</string>
-    <string name="script_binding_bad_keys">Nu pot folosi aceste taste. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">Aceste taste nu pot fi folosite. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Adaugă:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Surse de script</string>

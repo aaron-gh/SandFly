@@ -17,7 +17,7 @@
     <string name="scripts_now_off">စခရစ်များ ပိတ်ထားသည်</string>
     <string name="scripts_now_on">စခရစ်များ ဖွင့်ထားသည်</string>
     <string name="scripts_unavailable">Script များကို ဤစက်ပစ္စည်းတွင် မရရှိနိုင်ပါ</string>
-    <string name="script_add_example">ဥပမာ script ကိုထည့်ပါ</string>
+    <string name="script_add_example">ဥပမာ စခရစ်ကို ထည့်ရန်</string>
     <string name="script_add_example_summary">သင်ပြောင်းထားသော အက်ပ်တစ်ခုစီ၏ အမည်ကို ပြောပါ။ စတင်ရန် ဇာတ်ညွှန်းတစ်ခု။</string>
     <string name="script_state_on">ဖွင့်</string>
     <string name="script_state_off">ပိတ်</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">script API <xliff:g id="needed">%1$d</xliff:g> သို့မဟုတ် နောက်ပိုင်းတွင် လိုအပ်သည်။ ဤ SandFlyတွင် <xliff:g id="current">%2$d</xliff:g> ပါရှိသောကြောင့် အစိတ်အပိုင်းများ အလုပ်မဖြစ်နိုင်ပါ။</string>
     <string name="script_api_untested">script API <xliff:g id="tested">%1$d</xliff:g> အထိ စမ်းသပ်ခဲ့သည်။ ဤ SandFlyတွင် <xliff:g id="current">%2$d</xliff:g> ပါရှိသောကြောင့် ၎င်းသည် မျှော်လင့်ထားသလို အလုပ်မဖြစ်နိုင်ပါ။</string>
     <string name="script_state_incompatible">ဒီ SandFly နဲ့ အလုပ်မဖြစ်နိုင်ပါ</string>
-    <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g>မှ <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">စခရစ် API <xliff:g id="min">%1$d</xliff:g> မှ <xliff:g id="tested">%2$d</xliff:g> အထိ</string>
     <string name="script_compatibility_title">လိုက်ဖက်မှု</string>
     <string name="script_install_anyway">မည်သို့ပင်ဖြစ်စေ ထည့်သွင်းပါ</string>
     <string name="script_update_anyway">မည်သို့ပင်ဖြစ်စေ အပ်ဒိတ်လုပ်ရန်</string>
@@ -112,15 +112,15 @@
     <string name="script_binding_turn_off">ပိတ်ရန်</string>
     <string name="script_binding_restore">မူရင်းများကို ပြန်ယူပါ</string>
     <string name="script_binding_restored">ပုံသေများကို ပြန်လည်ရယူခဲ့သည်</string>
-    <string name="script_binding_perform">လက်ဟန်ခြေဟန် သို့မဟုတ် သော့များလုပ်ဆောင်ပါ</string>
+    <string name="script_binding_perform">လက်ဟန် လုပ်ပါ သို့မဟုတ် ခလုတ်များ နှိပ်ပါ</string>
     <string name="script_binding_perform_summary">နောက်လက်ဟန်ကို သတ်မှတ်ပါ သို့မဟုတ် SandFly မွမ်းမံမှုဖြင့် နှိပ်ထားသော ခလုတ်များ</string>
     <string name="script_binding_perform_message">လက်ဟန်လုပ်ပါ သို့မဟုတ် ခလုတ်များကို နှိပ်ပါ။</string>
-    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>ကို <xliff:g id="command">%2$s</xliff:g>ကို သတ်မှတ်မလား။</string>
+    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> ကို <xliff:g id="command">%2$s</xliff:g> တွင် သတ်မှတ်မလား။</string>
     <string name="script_binding_assign">သတ်မှတ်ရန်</string>
     <string name="script_binding_choose_gesture">လက်ဟန်ခြေဟန်ကို ရွေးပါ</string>
     <string name="script_binding_type_keys">ခလုတ်များ ရိုက်ရန်</string>
     <string name="script_binding_type_keys_summary">sf+shift+n, သို့မဟုတ် sf+t, s ကဲ့သို့</string>
-    <string name="script_binding_bad_keys">ဤသော့များကို သုံး၍မရပါ။ <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">ဤခလုတ်များကို သုံး၍မရပါ။ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">ထည့်သွင်းမည့်အရာများ-</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">စခရစ် ရင်းမြစ်များ</string>

@@ -17,7 +17,7 @@
     <string name="scripts_now_off">Skriptet joaktive</string>
     <string name="scripts_now_on">Skriptet aktive</string>
     <string name="scripts_unavailable">Skriptet nuk ofrohen në këtë pajisje</string>
-    <string name="script_add_example">Shtoni shembullin e skenarit</string>
+    <string name="script_add_example">Shto skriptin shembull</string>
     <string name="script_add_example_summary">Thotë emrin e çdo aplikacioni ku kaloni. Një skenar për të filluar.</string>
     <string name="script_state_on">Aktive</string>
     <string name="script_state_off">Joaktive</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">Ka nevojë për API të skriptit <xliff:g id="needed">%1$d</xliff:g> ose më vonë. Ky SandFly ka <xliff:g id="current">%2$d</xliff:g>, kështu që pjesët mund të mos funksionojnë.</string>
     <string name="script_api_untested">Testuar deri në API të skriptit <xliff:g id="tested">%1$d</xliff:g>. Ky SandFly ka <xliff:g id="current">%2$d</xliff:g>, kështu që mund të mos funksionojë siç pritej.</string>
     <string name="script_state_incompatible">Mund të mos funksionojë me këtë SandFly</string>
-    <string name="script_api_range">API-ja e skriptit <xliff:g id="min">%1$d</xliff:g> në <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">API e skripteve <xliff:g id="min">%1$d</xliff:g> deri në <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Përputhshmëria</string>
     <string name="script_install_anyway">Instalo gjithsesi</string>
     <string name="script_update_anyway">Përditëso gjithsesi</string>
@@ -112,15 +112,15 @@
     <string name="script_binding_turn_off">Çaktivizo</string>
     <string name="script_binding_restore">Rikthe standardet</string>
     <string name="script_binding_restored">Parazgjedhjet u rivendosën</string>
-    <string name="script_binding_perform">Kryeni gjeste ose çelësa</string>
+    <string name="script_binding_perform">Kryeni gjestin ose shtypni tastet</string>
     <string name="script_binding_perform_summary">Caktoni gjestin ose butonat e ardhshëm të shtypur me modifikuesin SandFly</string>
     <string name="script_binding_perform_message">Bëni gjestin ose shtypni tastet.</string>
-    <string name="script_binding_assign_title">Cakto <xliff:g id="binding">%1$s</xliff:g> në <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign_title">Të caktohet <xliff:g id="binding">%1$s</xliff:g> për <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Cakto</string>
     <string name="script_binding_choose_gesture">Zgjidh gjestin</string>
     <string name="script_binding_type_keys">Shkruaj tastet</string>
     <string name="script_binding_type_keys_summary">Pëlqejeni sf+shift+n, ose sf+t, s</string>
-    <string name="script_binding_bad_keys">Nuk mund të përdoren këta çelësa. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">Këta tastë nuk mund të përdoren. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Ai shton:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Burimet e skriptit</string>

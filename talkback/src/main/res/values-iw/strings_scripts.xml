@@ -17,7 +17,7 @@
     <string name="scripts_now_off">סקריפטים כבויים</string>
     <string name="scripts_now_on">סקריפטים פועלים</string>
     <string name="scripts_unavailable">סקריפטים אינם זמינים במכשיר זה</string>
-    <string name="script_add_example">הוסף את הסקריפט לדוגמה</string>
+    <string name="script_add_example">הוספת סקריפט לדוגמה</string>
     <string name="script_add_example_summary">אומר את השם של כל אפליקציה שאליה אתה עובר. תסריט להתחיל ממנו.</string>
     <string name="script_state_on">מצב פעיל</string>
     <string name="script_state_off">מצב מושבת</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">צריך script API <xliff:g id="needed">%1$d</xliff:g> ואילך. ל-SandFly הזה יש <xliff:g id="current">%2$d</xliff:g>, כך שחלקים עשויים שלא לעבוד.</string>
     <string name="script_api_untested">נבדק עד לסקריפט API <xliff:g id="tested">%1$d</xliff:g>. ל-SandFly הזה יש <xliff:g id="current">%2$d</xliff:g>, אז ייתכן שהוא לא יעבוד כמצופה.</string>
     <string name="script_state_incompatible">אולי לא יעבוד עם זה SandFly</string>
-    <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> עד <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">API של סקריפטים מ-<xliff:g id="min">%1$d</xliff:g> עד <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">תאימות</string>
     <string name="script_install_anyway">התקנה בכל זאת</string>
     <string name="script_update_anyway">לעדכן בכל זאת</string>
@@ -112,15 +112,15 @@
     <string name="script_binding_turn_off">השבתה</string>
     <string name="script_binding_restore">שחזור ברירות המחדל</string>
     <string name="script_binding_restored">ברירות המחדל שוחזרו</string>
-    <string name="script_binding_perform">בצע מחווה או מקשים</string>
+    <string name="script_binding_perform">יש לבצע תנועה או ללחוץ על מקשים</string>
     <string name="script_binding_perform_summary">הקצה את המחווה הבאה, או את המקשים שנלחצו עם השינוי SandFly</string>
     <string name="script_binding_perform_message">בצע את המחווה או לחץ על המקשים.</string>
-    <string name="script_binding_assign_title">להקצות <xliff:g id="binding">%1$s</xliff:g> ל<xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign_title">להקצות את <xliff:g id="binding">%1$s</xliff:g> ל-<xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">הקצאה</string>
     <string name="script_binding_choose_gesture">בחירת מחווה</string>
     <string name="script_binding_type_keys">הקלדת מקשים</string>
     <string name="script_binding_type_keys_summary">כמו sf+shift+n, או sf+t, s</string>
-    <string name="script_binding_bad_keys">לא יכול להשתמש במפתחות האלה. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">לא ניתן להשתמש במקשים האלה. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">זה מוסיף:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">מקורות סקריפטים</string>

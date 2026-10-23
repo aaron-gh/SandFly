@@ -17,7 +17,7 @@
     <string name="scripts_now_off">Скрипти вимкнено</string>
     <string name="scripts_now_on">Скрипти увімкнено</string>
     <string name="scripts_unavailable">Сценарії недоступні на цьому пристрої</string>
-    <string name="script_add_example">Додайте приклад сценарію</string>
+    <string name="script_add_example">Додати приклад скрипту</string>
     <string name="script_add_example_summary">Вимовляє назву кожної програми, на яку ви переходите. Сценарій для початку.</string>
     <string name="script_state_on">Увімкнено</string>
     <string name="script_state_off">Вимкнено</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">Потрібен API сценарію <xliff:g id="needed">%1$d</xliff:g> або новішої версії. Цей SandFly має <xliff:g id="current">%2$d</xliff:g>, тому деталі можуть не працювати.</string>
     <string name="script_api_untested">Перевірено до API сценарію <xliff:g id="tested">%1$d</xliff:g>. Цей SandFly має <xliff:g id="current">%2$d</xliff:g>, тому він може працювати не так, як очікувалося.</string>
     <string name="script_state_incompatible">Може не працювати з цим SandFly</string>
-    <string name="script_api_range">API сценарію від <xliff:g id="min">%1$d</xliff:g> до <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">API скриптів від <xliff:g id="min">%1$d</xliff:g> до <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Сумісність</string>
     <string name="script_install_anyway">Однаково встановити</string>
     <string name="script_update_anyway">Все одно оновити</string>
@@ -112,15 +112,15 @@
     <string name="script_binding_turn_off">Вимкнути</string>
     <string name="script_binding_restore">Відновити налаштування за замовчуванням</string>
     <string name="script_binding_restored">Стандартні параметри відновлено</string>
-    <string name="script_binding_perform">Виконайте жест або клавіші</string>
+    <string name="script_binding_perform">Виконайте жест або натисніть клавіші</string>
     <string name="script_binding_perform_summary">Призначте наступний жест або натиснуті клавіші з модифікатором SandFly</string>
     <string name="script_binding_perform_message">Зробіть жест або натисніть клавіші.</string>
-    <string name="script_binding_assign_title">Призначити <xliff:g id="binding">%1$s</xliff:g> до <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign_title">Призначити <xliff:g id="binding">%1$s</xliff:g> для <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Призначити</string>
     <string name="script_binding_choose_gesture">Вибрати жест</string>
     <string name="script_binding_type_keys">Ввести клавіші</string>
     <string name="script_binding_type_keys_summary">Як sf+shift+n, або sf+t, s</string>
-    <string name="script_binding_bad_keys">Не можна використовувати ці ключі. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">Ці клавіші не можна використовувати. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Він додає:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Джерела скриптів</string>

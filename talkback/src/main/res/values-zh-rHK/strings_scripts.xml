@@ -79,7 +79,7 @@
     <string name="script_api_too_old">需要腳本 API <xliff:g id="needed">%1$d</xliff:g> 或更高版本。这个SandFly有<xliff:g id="current">%2$d</xliff:g>，所以零件可能无法工作。</string>
     <string name="script_api_untested">已測試腳本 API <xliff:g id="tested">%1$d</xliff:g>。这个SandFly有<xliff:g id="current">%2$d</xliff:g>，所以它可能无法按预期工作。</string>
     <string name="script_state_incompatible">可能不適用於此SandFly</string>
-    <string name="script_api_range">腳本 API <xliff:g id="min">%1$d</xliff:g> 到 <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">腳本 API <xliff:g id="min">%1$d</xliff:g> 至 <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">相容性</string>
     <string name="script_install_anyway">仍要安裝</string>
     <string name="script_update_anyway">仍要更新</string>
@@ -115,12 +115,12 @@
     <string name="script_binding_perform">執行手勢或按鍵</string>
     <string name="script_binding_perform_summary">指定下一個手勢，或使用 SandFly 修飾符按下的按鍵</string>
     <string name="script_binding_perform_message">做出手勢或按下按鍵。</string>
-    <string name="script_binding_assign_title">將<xliff:g id="binding">%1$s</xliff:g>賦值給<xliff:g id="command">%2$s</xliff:g>？</string>
+    <string name="script_binding_assign_title">將 <xliff:g id="binding">%1$s</xliff:g> 指派給 <xliff:g id="command">%2$s</xliff:g>？</string>
     <string name="script_binding_assign">分配</string>
     <string name="script_binding_choose_gesture">選擇手勢</string>
     <string name="script_binding_type_keys">鍵入按鍵</string>
     <string name="script_binding_type_keys_summary">就像 sf+shift+n, 或 sf+t, s</string>
-    <string name="script_binding_bad_keys">無法使用這些鍵。 <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">無法使用這些按鍵。<xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">會新增：</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">指令碼來源</string>

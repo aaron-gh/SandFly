@@ -17,7 +17,7 @@
     <string name="scripts_now_off">Скрипттер өшірулі</string>
     <string name="scripts_now_on">Скрипттер қосулы</string>
     <string name="scripts_unavailable">Бұл құрылғыда сценарийлер қолжетімді емес</string>
-    <string name="script_add_example">Мысал сценарийін қосыңыз</string>
+    <string name="script_add_example">Мысал скриптін қосу</string>
     <string name="script_add_example_summary">Сіз ауысатын әрбір қолданбаның атын айтады. Бастау үшін сценарий.</string>
     <string name="script_state_on">Қосулы</string>
     <string name="script_state_off">Өшірулі</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">Скрипт API <xliff:g id="needed">%1$d</xliff:g> немесе одан кейінгі нұсқасы қажет. Бұл SandFly ішінде <xliff:g id="current">%2$d</xliff:g> бар, сондықтан бөліктер жұмыс істемеуі мүмкін.</string>
     <string name="script_api_untested">API <xliff:g id="tested">%1$d</xliff:g> сценарийіне дейін сыналған. Бұл SandFly параметрінде <xliff:g id="current">%2$d</xliff:g> бар, сондықтан ол күткендей жұмыс істемеуі мүмкін.</string>
     <string name="script_state_incompatible">Мұнымен жұмыс істемеуі мүмкін SandFly</string>
-    <string name="script_api_range">Сценарий API <xliff:g id="min">%1$d</xliff:g> - <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">Скрипт API <xliff:g id="min">%1$d</xliff:g> – <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Үйлесімділік</string>
     <string name="script_install_anyway">Бәрібір орнату</string>
     <string name="script_update_anyway">Бәрібір жаңарту</string>
@@ -112,15 +112,15 @@
     <string name="script_binding_turn_off">Өшіру</string>
     <string name="script_binding_restore">Әдепкі мәндерді қалпына келтіру</string>
     <string name="script_binding_restored">Әдепкілер қалпына келтірілді</string>
-    <string name="script_binding_perform">Қимыл немесе пернелерді орындаңыз</string>
+    <string name="script_binding_perform">Қимыл жасаңыз немесе пернелерді басыңыз</string>
     <string name="script_binding_perform_summary">Келесі қимылды немесе SandFly модификаторымен басылған пернелерді тағайындаңыз</string>
     <string name="script_binding_perform_message">Қимыл жасаңыз немесе пернелерді басыңыз.</string>
-    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g> тағайындалсын ба?</string>
+    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g> командасына тағайындалсын ба?</string>
     <string name="script_binding_assign">Тағайындау</string>
     <string name="script_binding_choose_gesture">Қимылды таңдау</string>
     <string name="script_binding_type_keys">Пернелерді теру</string>
     <string name="script_binding_type_keys_summary">Sf+shift+n, немесе sf+t, с сияқты</string>
-    <string name="script_binding_bad_keys">Бұл кілттерді пайдалану мүмкін емес. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">Бұл пернелерді пайдалану мүмкін емес. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Ол қосады:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Скрипт көздері</string>

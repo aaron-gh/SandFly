@@ -79,7 +79,7 @@
     <string name="script_api_too_old">ຕ້ອງການ script API <xliff:g id="needed">%1$d</xliff:g> ຫຼືຫຼັງຈາກນັ້ນ. ນີ້ SandFly ມີ <xliff:g id="current">%2$d</xliff:g>, ດັ່ງນັ້ນບາງສ່ວນອາດຈະບໍ່ເຮັດວຽກ.</string>
     <string name="script_api_untested">ທົດສອບເຖິງ script API <xliff:g id="tested">%1$d</xliff:g>. ນີ້ SandFly ມີ <xliff:g id="current">%2$d</xliff:g>, ສະນັ້ນມັນອາດຈະບໍ່ເຮັດວຽກຕາມທີ່ຄາດໄວ້.</string>
     <string name="script_state_incompatible">ອາດຈະໃຊ້ບໍ່ໄດ້ກັບສິ່ງນີ້SandFly</string>
-    <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> ຫາ <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">API ສະຄຣິບ <xliff:g id="min">%1$d</xliff:g> ຫາ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">ຄວາມເຂົ້າກັນໄດ້</string>
     <string name="script_install_anyway">ຕິດຕັ້ງຕໍ່</string>
     <string name="script_update_anyway">ອັບເດດຢູ່ດີ</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_turn_off">ປິດ</string>
     <string name="script_binding_restore">ຟື້ນຟູຄ່າເລີ່ມຕົ້ນ</string>
     <string name="script_binding_restored">ຟື້ນຟູຄ່າເລີ່ມຕົ້ນແລ້ວ</string>
-    <string name="script_binding_perform">ປະຕິບັດ gesture ຫຼືກະແຈ</string>
+    <string name="script_binding_perform">ເຮັດທ່າທາງ ຫຼື ກົດປຸ່ມ</string>
     <string name="script_binding_perform_summary">ກຳນົດທ່າທາງຕໍ່ໄປ, ຫຼືກົດປຸ່ມທີ່ກົດດ້ວຍຕົວປັບປ່ຽນ SandFly</string>
     <string name="script_binding_perform_message">ເຮັດທ່າທາງ ຫຼືກົດປຸ່ມ.</string>
     <string name="script_binding_assign_title">ກຳນົດ <xliff:g id="binding">%1$s</xliff:g> ໃຫ້ <xliff:g id="command">%2$s</xliff:g> ບໍ?</string>
@@ -120,7 +120,7 @@
     <string name="script_binding_choose_gesture">ເລືອກທ່າທາງ</string>
     <string name="script_binding_type_keys">ພິມປຸ່ມ</string>
     <string name="script_binding_type_keys_summary">ມັກ sf+shift+n, ຫຼື sf+t, s</string>
-    <string name="script_binding_bad_keys">ບໍ່ສາມາດໃຊ້ກະແຈເຫຼົ່ານີ້ໄດ້. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">ບໍ່ສາມາດໃຊ້ປຸ່ມເຫຼົ່ານີ້ໄດ້. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">ມັນເພີ່ມ:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">ແຫຼ່ງສະຄຣິບ</string>

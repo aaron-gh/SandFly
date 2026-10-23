@@ -79,7 +79,7 @@
     <string name="script_api_too_old">Trenger script API <xliff:g id="needed">%1$d</xliff:g> eller nyere. Denne SandFly har <xliff:g id="current">%2$d</xliff:g>, så det kan hende at deler ikke fungerer.</string>
     <string name="script_api_untested">Testet opp til script API <xliff:g id="tested">%1$d</xliff:g>. Denne SandFly har <xliff:g id="current">%2$d</xliff:g>, så den fungerer kanskje ikke som forventet.</string>
     <string name="script_state_incompatible">Fungerer kanskje ikke med denne SandFly</string>
-    <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> til <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">Skript-API <xliff:g id="min">%1$d</xliff:g> til <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Kompatibilitet</string>
     <string name="script_install_anyway">Installer uansett</string>
     <string name="script_update_anyway">Oppdater uansett</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_turn_off">Slå av</string>
     <string name="script_binding_restore">Gjenopprett standardinnstillinger</string>
     <string name="script_binding_restored">Standarder gjenopprettet</string>
-    <string name="script_binding_perform">Utfør bevegelser eller taster</string>
+    <string name="script_binding_perform">Utfør en bevegelse eller trykk på taster</string>
     <string name="script_binding_perform_summary">Tilordne neste bevegelse, eller taster trykket med SandFly-modifikatoren</string>
     <string name="script_binding_perform_message">Gjør bevegelsen eller trykk på tastene.</string>
     <string name="script_binding_assign_title">Tilordne <xliff:g id="binding">%1$s</xliff:g> til <xliff:g id="command">%2$s</xliff:g>?</string>
@@ -120,7 +120,7 @@
     <string name="script_binding_choose_gesture">Velg gest</string>
     <string name="script_binding_type_keys">Skriv inn taster</string>
     <string name="script_binding_type_keys_summary">Som sf+shift+n, eller sf+t, s</string>
-    <string name="script_binding_bad_keys">Kan ikke bruke disse nøklene. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">Disse tastene kan ikke brukes. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Den legger til:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Skriptkilder</string>

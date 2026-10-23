@@ -17,7 +17,7 @@
     <string name="scripts_now_off">Skripte isključene</string>
     <string name="scripts_now_on">Skripte uključene</string>
     <string name="scripts_unavailable">Skripte nisu dostupne na ovom uređaju</string>
-    <string name="script_add_example">Dodajte primer skripte</string>
+    <string name="script_add_example">Dodaj primer skripte</string>
     <string name="script_add_example_summary">Izgovara naziv svake aplikacije na koju prelazite. Skripta od koje treba početi.</string>
     <string name="script_state_on">Uključeno</string>
     <string name="script_state_off">Isključeno</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">Potreban je API za skripte <xliff:g id="needed">%1$d</xliff:g> ili noviji. Ovaj SandFly ima <xliff:g id="current">%2$d</xliff:g>, tako da delovi možda neće raditi.</string>
     <string name="script_api_untested">Testirano do API-ja skripte <xliff:g id="tested">%1$d</xliff:g>. Ovaj SandFly ima <xliff:g id="current">%2$d</xliff:g>, tako da možda neće raditi kako se očekivalo.</string>
     <string name="script_state_incompatible">Možda ne radi sa ovim SandFly</string>
-    <string name="script_api_range">API skripte <xliff:g id="min">%1$d</xliff:g> do <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">API za skripte od <xliff:g id="min">%1$d</xliff:g> do <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Kompatibilnost</string>
     <string name="script_install_anyway">Instaliraj svejedno</string>
     <string name="script_update_anyway">Ipak ažuriraj</string>
@@ -112,15 +112,15 @@
     <string name="script_binding_turn_off">Isključi</string>
     <string name="script_binding_restore">Vrati podrazumevane vrednosti</string>
     <string name="script_binding_restored">Podrazumevane vrednosti su vraćene</string>
-    <string name="script_binding_perform">Izvršite pokrete ili tastere</string>
+    <string name="script_binding_perform">Izvedite pokret ili pritisnite tastere</string>
     <string name="script_binding_perform_summary">Dodelite sledeći pokret ili tastere pritisnute sa modifikatorom SandFly</string>
     <string name="script_binding_perform_message">Napravite pokret ili pritisnite tastere.</string>
-    <string name="script_binding_assign_title">Dodeliti <xliff:g id="binding">%1$s</xliff:g> na <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign_title">Dodeliti <xliff:g id="binding">%1$s</xliff:g> komandi <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Dodeli</string>
     <string name="script_binding_choose_gesture">Izaberi gest</string>
     <string name="script_binding_type_keys">Ukucaj tastere</string>
     <string name="script_binding_type_keys_summary">Kao sf+shift+n, ili sf+t, s</string>
-    <string name="script_binding_bad_keys">Ne mogu da koristim ove ključeve. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">Ovi tasteri ne mogu da se koriste. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Dodaje:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Izvori skripte</string>

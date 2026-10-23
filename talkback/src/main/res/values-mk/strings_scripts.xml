@@ -17,7 +17,7 @@
     <string name="scripts_now_off">Скриптите се исклучени</string>
     <string name="scripts_now_on">Скриптите се вклучени</string>
     <string name="scripts_unavailable">Скриптите не се достапни на овој уред</string>
-    <string name="script_add_example">Додадете го примерот на скрипта</string>
+    <string name="script_add_example">Додај пример-скрипта</string>
     <string name="script_add_example_summary">Го кажува името на секоја апликација на која се префрлате. Скрипта за почеток.</string>
     <string name="script_state_on">Вклучено</string>
     <string name="script_state_off">Исклучено</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">Потребно е API на скрипта <xliff:g id="needed">%1$d</xliff:g> или понова верзија. Овој SandFly има <xliff:g id="current">%2$d</xliff:g>, така што деловите може да не работат.</string>
     <string name="script_api_untested">Тестирано до скрипта API <xliff:g id="tested">%1$d</xliff:g>. Ова SandFly има <xliff:g id="current">%2$d</xliff:g>, така што можеби нема да работи како што се очекуваше.</string>
     <string name="script_state_incompatible">Може да не работи со ова SandFly</string>
-    <string name="script_api_range">АПИ на скрипта <xliff:g id="min">%1$d</xliff:g> до <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_range">API за скрипти <xliff:g id="min">%1$d</xliff:g> до <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Компатибилност</string>
     <string name="script_install_anyway">Сепак инсталирај</string>
     <string name="script_update_anyway">Сепак ажурирај</string>
@@ -112,15 +112,15 @@
     <string name="script_binding_turn_off">Исклучи</string>
     <string name="script_binding_restore">Врати ги стандардните вредности</string>
     <string name="script_binding_restored">Стандардните вредности се обновени</string>
-    <string name="script_binding_perform">Изведете гест или копчиња</string>
+    <string name="script_binding_perform">Изведете гест или притиснете копчиња</string>
     <string name="script_binding_perform_summary">Доделете го следниот гест или копчињата притиснати со модификаторот SandFly</string>
     <string name="script_binding_perform_message">Направете гест или притиснете ги копчињата.</string>
-    <string name="script_binding_assign_title">Доделете <xliff:g id="binding">%1$s</xliff:g> на <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign_title">Да се додели <xliff:g id="binding">%1$s</xliff:g> на <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Додели</string>
     <string name="script_binding_choose_gesture">Избери гест</string>
     <string name="script_binding_type_keys">Внеси копчиња</string>
     <string name="script_binding_type_keys_summary">Како sf+shift+n, или sf+t, s</string>
-    <string name="script_binding_bad_keys">Не може да се користат овие клучеви. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">Овие копчиња не може да се користат. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Додава:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Извори на скрипти</string>
