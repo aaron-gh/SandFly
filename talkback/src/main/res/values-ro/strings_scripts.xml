@@ -19,9 +19,9 @@
     <string name="scripts_unavailable">Scripturile nu sunt disponibile pe acest dispozitiv</string>
     <string name="script_add_example">Adăugați exemplul de script</string>
     <string name="script_add_example_summary">Spune numele fiecărei aplicații la care comutați. Un script de la care să începi.</string>
-    <string name="script_state_on">Activată</string>
-    <string name="script_state_off">Dezactivată</string>
-    <string name="script_runs_in">Se rulează în <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_state_on">Activat</string>
+    <string name="script_state_off">Dezactivat</string>
+    <string name="script_runs_in">Rulează în <xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">Se rulează în toate aplicațiile</string>
     <string name="script_version">Versiunea <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">De <xliff:g id="author">%1$s</xliff:g></string>
@@ -124,19 +124,19 @@
     <string name="script_install_adds">Adaugă:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Surse de script</string>
-    <string name="script_sources_none">Nu au adăugat surse</string>
-    <string name="script_source_add">Adăugați sursa</string>
-    <string name="script_source_add_button">Adăugați</string>
+    <string name="script_sources_none">Nu au fost adăugate surse</string>
+    <string name="script_source_add">Adaugă sursă</string>
+    <string name="script_source_add_button">Adaugă</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">Nu adresa unui depozit pe GitHub, GitLab, Codeberg, Gitea sau Bitbucket.</string>
     <string name="script_source_exists">Această sursă este deja adăugată.</string>
     <string name="script_source_loading">Se încarcă</string>
     <string name="script_source_empty">Nu există scripturi în această sursă</string>
     <string name="script_source_failed">Nu s-au putut încărca scripturile. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_source_retry">Încercați din nou</string>
+    <string name="script_source_retry">Încearcă din nou</string>
     <string name="script_source_downloading">Se descarcă <xliff:g id="name">%1$s</xliff:g></string>
-    <string name="script_source_remove">Eliminați sursa</string>
-    <string name="script_source_remove_title">Eliminați <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_source_remove">Elimină sursa</string>
+    <string name="script_source_remove_title">Elimini <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Scripturile instalate din acesta rămân instalate.</string>
     <string name="scripts_auto_update">Actualizați automat scripturile</string>
     <string name="scripts_check_updates">Verificați actualizările</string>

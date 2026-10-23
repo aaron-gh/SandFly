@@ -21,7 +21,7 @@
     <string name="script_add_example_summary">तपाईंले स्विच गर्नुहुने प्रत्येक एपको नाम भन्नुहुन्छ। बाट सुरु गर्न को लागी एक स्क्रिप्ट।</string>
     <string name="script_state_on">अन</string>
     <string name="script_state_off">अफ</string>
-    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g> मा दौडिन्छ</string>
+    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g> मा चल्छ</string>
     <string name="script_runs_everywhere">सबै एपहरूमा चल्छ</string>
     <string name="script_version">संस्करण <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author"><xliff:g id="author">%1$s</xliff:g> द्वारा</string>
@@ -95,7 +95,7 @@
     <string name="shortcut_copy_screen_tree">स्क्रिन ट्री प्रतिलिपि गर्नुहोस्</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> वस्तुहरू प्रतिलिपि गरियो</string>
     <string name="script_tree_none">प्रतिलिपि गर्न कुनै विन्डो छैन</string>
-    <string name="script_tree_clip_label">पर्दा रूख</string>
+    <string name="script_tree_clip_label">स्क्रिन ट्री</string>
     <string name="summary_copy_screen_tree_menu">स्क्रिप्ट लेख्नका लागि स्क्रिनमा रहेका सबै वस्तुहरूलाई JSON को रूपमा प्रतिलिपि गर्नुहोस्</string>
     <string name="script_inspect_clip_label">वस्तु विवरण</string>
     <string name="summary_inspect_item_menu">स्क्रिप्टहरू लेख्नको लागि, तपाईंले प्रयोग गर्नुभएको वस्तुको विवरणहरू भन्नुहोस् र प्रतिलिपि गर्नुहोस्</string>
@@ -123,7 +123,7 @@
     <string name="script_binding_bad_keys">यी कुञ्जीहरू प्रयोग गर्न सकिँदैन। <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">यसले थप्छ:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
-    <string name="script_sources">लिपि स्रोतहरू</string>
+    <string name="script_sources">स्क्रिप्ट स्रोतहरू</string>
     <string name="script_sources_none">कुनै स्रोत थपिएको छैन</string>
     <string name="script_source_add">स्रोत थप्नुहोस्</string>
     <string name="script_source_add_button">थप्नुहोस्</string>
@@ -134,7 +134,7 @@
     <string name="script_source_empty">यस स्रोतमा कुनै लिपिहरू छैनन्</string>
     <string name="script_source_failed">लिपिहरू लोड गर्न सकिएन। <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">पुन: प्रयास गर्नुहोस्</string>
-    <string name="script_source_downloading">डाउनलोड गर्दै <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> डाउनलोड हुँदैछ</string>
     <string name="script_source_remove">स्रोत हटाउनुहोस्</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> हटाउने हो?</string>
     <string name="script_source_remove_message">यसबाट स्थापित लिपिहरू स्थापित रहन्छन्।</string>

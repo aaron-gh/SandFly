@@ -95,7 +95,7 @@
     <string name="shortcut_copy_screen_tree">පිටපත් තිර ගස</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> අයිතම පිටපත් කරන ලදී</string>
     <string name="script_tree_none">පිටපත් කිරීමට කවුළුවක් නැත</string>
-    <string name="script_tree_clip_label">තිර ගස</string>
+    <string name="script_tree_clip_label">තිර ට්‍රී</string>
     <string name="summary_copy_screen_tree_menu">ස්ක්‍රිප්ට් ලිවීම සඳහා තිරයේ ඇති සියලුම අයිතම JSON ලෙස පිටපත් කරන්න</string>
     <string name="script_inspect_clip_label">අයිතම විස්තර</string>
     <string name="summary_inspect_item_menu">ස්ක්‍රිප්ට් ලිවීම සඳහා ඔබ සිටි අයිතමයේ විස්තර කියන්න සහ පිටපත් කරන්න</string>
@@ -125,7 +125,7 @@
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">ස්ක්‍රිප්ට් මූලාශ්‍ර</string>
     <string name="script_sources_none">මූලාශ්‍ර එකතු කර නැත</string>
-    <string name="script_source_add">මූලාශ්රය එකතු කරන්න</string>
+    <string name="script_source_add">මූලාශ්‍රය එකතු කරන්න</string>
     <string name="script_source_add_button">එකතු කරන්න</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea හෝ Bitbucket හි ගබඩාවක ලිපිනය නොවේ.</string>
@@ -134,8 +134,8 @@
     <string name="script_source_empty">මෙම මූලාශ්‍රයේ ස්ක්‍රිප්ට් නැත</string>
     <string name="script_source_failed">ස්ක්‍රිප්ට් පූරණය කළ නොහැකි විය. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">නැවත උත්සාහ කරන්න</string>
-    <string name="script_source_downloading">බාගත කරමින් <xliff:g id="name">%1$s</xliff:g></string>
-    <string name="script_source_remove">මූලාශ්රය ඉවත් කරන්න</string>
+    <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> බාගත වෙමින්</string>
+    <string name="script_source_remove">මූලාශ්‍රය ඉවත් කරන්න</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> ඉවත් කරන්නද?</string>
     <string name="script_source_remove_message">එයින් ස්ථාපනය කර ඇති ස්ක්‍රිප්ට් ස්ථාපනය කර ඇත.</string>
     <string name="scripts_auto_update">ස්ක්‍රිප්ට් ස්වයංක්‍රීයව යාවත්කාලීන කරන්න</string>

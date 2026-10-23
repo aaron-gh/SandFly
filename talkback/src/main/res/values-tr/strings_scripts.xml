@@ -21,7 +21,7 @@
     <string name="script_add_example_summary">Geçiş yaptığınız her uygulamanın adını söyler. Başlamak için bir komut dosyası.</string>
     <string name="script_state_on">Açık</string>
     <string name="script_state_off">Kapalı</string>
-    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g>\'de çalışır</string>
+    <string name="script_runs_in">Çalıştığı uygulamalar: <xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">Tüm uygulamalarda çalışır</string>
     <string name="script_version">Sürüm <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author"><xliff:g id="author">%1$s</xliff:g> tarafından</string>
@@ -134,7 +134,7 @@
     <string name="script_source_empty">Bu kaynakta komut dosyası yok</string>
     <string name="script_source_failed">Komut dosyaları yüklenemedi. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">Tekrar dene</string>
-    <string name="script_source_downloading">İndiriliyor <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> indiriliyor</string>
     <string name="script_source_remove">Kaynağı kaldır</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> kaldırılsın mı?</string>
     <string name="script_source_remove_message">Buradan yüklenen komut dosyaları yüklü kalır.</string>

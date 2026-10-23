@@ -21,7 +21,7 @@
     <string name="script_add_example_summary">אומר את השם של כל אפליקציה שאליה אתה עובר. תסריט להתחיל ממנו.</string>
     <string name="script_state_on">מצב פעיל</string>
     <string name="script_state_off">מצב מושבת</string>
-    <string name="script_runs_in">פועל בעוד <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_in">פועל ב-<xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">פועל בכל האפליקציות</string>
     <string name="script_version">גרסה <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">מאת <xliff:g id="author">%1$s</xliff:g></string>
@@ -123,19 +123,19 @@
     <string name="script_binding_bad_keys">לא יכול להשתמש במפתחות האלה. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">זה מוסיף:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
-    <string name="script_sources">מקורות תסריט</string>
+    <string name="script_sources">מקורות סקריפטים</string>
     <string name="script_sources_none">לא נוספו מקורות</string>
-    <string name="script_source_add">הוסף מקור</string>
-    <string name="script_source_add_button">הוסף</string>
+    <string name="script_source_add">הוספת מקור</string>
+    <string name="script_source_add_button">הוספה</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">לא הכתובת של מאגר ב-GitHub, GitLab, Codeberg, Gitea או Bitbucket.</string>
     <string name="script_source_exists">מקור זה כבר נוסף.</string>
     <string name="script_source_loading">בטעינה</string>
     <string name="script_source_empty">אין סקריפטים במקור זה</string>
     <string name="script_source_failed">לא ניתן לטעון סקריפטים. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_source_retry">נסה שוב</string>
+    <string name="script_source_retry">ניסיון חוזר</string>
     <string name="script_source_downloading">מוריד את <xliff:g id="name">%1$s</xliff:g></string>
-    <string name="script_source_remove">הסר מקור</string>
+    <string name="script_source_remove">הסרת מקור</string>
     <string name="script_source_remove_title">להסיר את <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">סקריפטים שהותקנו ממנו נשארים מותקנים.</string>
     <string name="scripts_auto_update">עדכן סקריפטים באופן אוטומטי</string>

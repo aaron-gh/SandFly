@@ -95,7 +95,7 @@
     <string name="shortcut_copy_screen_tree">မျက်နှာပြင်သစ်ပင်ကို ကူးယူပါ</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ပစ္စည်းများကို ကူးယူထားသည်</string>
     <string name="script_tree_none">ကူးယူရန် ဝင်းဒိုးမရှိပါ</string>
-    <string name="script_tree_clip_label">မြင်ကွင်းသစ်ပင်</string>
+    <string name="script_tree_clip_label">မျက်နှာပြင် ဖွဲ့စည်းပုံ</string>
     <string name="summary_copy_screen_tree_menu">ဇာတ်ညွှန်းရေးရန်အတွက် စခရင်ပေါ်ရှိ အရာအားလုံးကို JSON အဖြစ် ကူးယူပါ</string>
     <string name="script_inspect_clip_label">အရာ၏ အသေးစိတ်</string>
     <string name="summary_inspect_item_menu">ဇာတ်ညွှန်းရေးရန်အတွက် သင်အသုံးပြုခဲ့သည့် အကြောင်းအရာအသေးစိတ်များကို ပြောပြီး မိတ္တူကူးပါ</string>
@@ -123,14 +123,14 @@
     <string name="script_binding_bad_keys">ဤသော့များကို သုံး၍မရပါ။ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">ထည့်သွင်းမည့်အရာများ-</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
-    <string name="script_sources">ဇာတ်ညွှန်းရင်းမြစ်များ</string>
+    <string name="script_sources">စခရစ် ရင်းမြစ်များ</string>
     <string name="script_sources_none">ရင်းမြစ်များ ထည့်မထားပါ</string>
     <string name="script_source_add">အရင်းအမြစ်ထည့်ပါ</string>
     <string name="script_source_add_button">ထည့်ပါ</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">GitHub၊ GitLab၊ Codeberg၊ Gitea သို့မဟုတ် Bitbucket ရှိ သိုလှောင်မှု၏လိပ်စာမဟုတ်ပါ။</string>
     <string name="script_source_exists">ဤအရင်းအမြစ်ကို ထည့်သွင်းပြီးဖြစ်သည်။</string>
-    <string name="script_source_loading">ဖွင့်နေသည်</string>
+    <string name="script_source_loading">တင်နေသည်</string>
     <string name="script_source_empty">ဤအရင်းအမြစ်တွင် script များမရှိပါ</string>
     <string name="script_source_failed">ဇာတ်ညွှန်းများကို တင်၍မရပါ။ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">ထပ်ကြိုးစားပါ</string>

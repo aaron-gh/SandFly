@@ -21,7 +21,7 @@
     <string name="script_add_example_summary">Siz oʻtadigan har bir ilovaning nomini aytadi. Boshlash uchun skript.</string>
     <string name="script_state_on">Yoniq</string>
     <string name="script_state_off">Oʻchiq</string>
-    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g> da ishlaydi</string>
+    <string name="script_runs_in">Ishlaydigan ilovalar: <xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">Barcha ilovalarda ishlaydi</string>
     <string name="script_version">Versiya <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author"><xliff:g id="author">%1$s</xliff:g> tomonidan</string>
@@ -125,7 +125,7 @@
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Skript manbalari</string>
     <string name="script_sources_none">Hech qanday manba qo\'shilmagan</string>
-    <string name="script_source_add">Manba qo\'shing</string>
+    <string name="script_source_add">Manba qoʻshish</string>
     <string name="script_source_add_button">Qo\'shish</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea yoki Bitbucketdagi ombor manzili emas.</string>
@@ -133,9 +133,9 @@
     <string name="script_source_loading">Yuklanmoqda</string>
     <string name="script_source_empty">Ushbu manbada skriptlar yo\'q</string>
     <string name="script_source_failed">Skriptlarni yuklab bo‘lmadi. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_source_retry">Qayta urinib koʻring</string>
-    <string name="script_source_downloading">Yuklab olinmoqda <xliff:g id="name">%1$s</xliff:g></string>
-    <string name="script_source_remove">Manbani olib tashlang</string>
+    <string name="script_source_retry">Qayta urinish</string>
+    <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> yuklab olinmoqda</string>
+    <string name="script_source_remove">Manbani olib tashlash</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> olib tashlansinmi?</string>
     <string name="script_source_remove_message">Undan o\'rnatilgan skriptlar o\'rnatilgan bo\'lib qoladi.</string>
     <string name="scripts_auto_update">Skriptlarni avtomatik yangilash</string>

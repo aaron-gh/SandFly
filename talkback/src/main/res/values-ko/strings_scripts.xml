@@ -66,7 +66,7 @@
     <string name="script_log">로그</string>
     <string name="script_log_summary">SandFly 시작 이후 출력 및 오류</string>
     <string name="script_clear_storage">저장된 데이터 지우기</string>
-    <string name="script_storage_cleared">저장된 데이터가 삭제되었습니다.</string>
+    <string name="script_storage_cleared">저장된 데이터 삭제됨</string>
     <string name="script_remove">제거</string>
     <string name="script_remove_title"><xliff:g id="name">%1$s</xliff:g>을(를) 삭제하시겠습니까?</string>
     <string name="script_remove_message">코드, 데이터 및 설정을 삭제합니다.</string>
@@ -133,10 +133,10 @@
     <string name="script_source_loading">로드 중</string>
     <string name="script_source_empty">이 소스에는 스크립트가 없습니다.</string>
     <string name="script_source_failed">스크립트를 로드할 수 없습니다. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_source_retry">다시 시도하세요</string>
-    <string name="script_source_downloading">다운로드 중 <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_retry">다시 시도</string>
+    <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> 다운로드 중</string>
     <string name="script_source_remove">소스 삭제</string>
-    <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g>을 삭제하시겠습니까?</string>
+    <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g>을(를) 삭제하시겠습니까?</string>
     <string name="script_source_remove_message">설치된 스크립트는 설치된 상태로 유지됩니다.</string>
     <string name="scripts_auto_update">자동으로 스크립트 업데이트</string>
     <string name="scripts_check_updates">업데이트 확인</string>

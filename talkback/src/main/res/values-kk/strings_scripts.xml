@@ -123,9 +123,9 @@
     <string name="script_binding_bad_keys">Бұл кілттерді пайдалану мүмкін емес. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Ол қосады:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
-    <string name="script_sources">Сценарий көздері</string>
+    <string name="script_sources">Скрипт көздері</string>
     <string name="script_sources_none">Дереккөздер қосылмаған</string>
-    <string name="script_source_add">Дереккөзді қосыңыз</string>
+    <string name="script_source_add">Дереккөз қосу</string>
     <string name="script_source_add_button">Қосу</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea немесе Bitbucket репозиторийінің мекенжайы емес.</string>
@@ -133,8 +133,8 @@
     <string name="script_source_loading">Жүктелуде</string>
     <string name="script_source_empty">Бұл дереккөзде сценарийлер жоқ</string>
     <string name="script_source_failed">Скрипттерді жүктеу мүмкін болмады. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_source_retry">Қайталап көріңіз</string>
-    <string name="script_source_downloading">Жүктеп алынуда <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_retry">Қайталау</string>
+    <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> жүктеп алынуда</string>
     <string name="script_source_remove">Дереккөзді жою</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> жою керек пе?</string>
     <string name="script_source_remove_message">Одан орнатылған сценарийлер орнатылған күйінде қалады.</string>

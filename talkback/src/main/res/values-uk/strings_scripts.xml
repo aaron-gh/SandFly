@@ -95,7 +95,7 @@
     <string name="shortcut_copy_screen_tree">Копіювати дерево екрана</string>
     <string name="script_tree_copied">Скопійовано <xliff:g id="count">%1$d</xliff:g> елементів</string>
     <string name="script_tree_none">Немає вікна для копіювання</string>
-    <string name="script_tree_clip_label">Екранне дерево</string>
+    <string name="script_tree_clip_label">Дерево екрана</string>
     <string name="summary_copy_screen_tree_menu">Скопіюйте всі елементи на екрані як JSON, для написання сценаріїв</string>
     <string name="script_inspect_clip_label">Відомості про елемент</string>
     <string name="summary_inspect_item_menu">Скажіть і скопіюйте деталі елемента, на якому ви були, для написання сценаріїв</string>
@@ -123,9 +123,9 @@
     <string name="script_binding_bad_keys">Не можна використовувати ці ключі. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Він додає:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
-    <string name="script_sources">Джерела сценарію</string>
+    <string name="script_sources">Джерела скриптів</string>
     <string name="script_sources_none">Жодних джерел не додано</string>
-    <string name="script_source_add">Додайте джерело</string>
+    <string name="script_source_add">Додати джерело</string>
     <string name="script_source_add_button">Додати</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">Це не адреса сховища на GitHub, GitLab, Codeberg, Gitea або Bitbucket.</string>
@@ -133,7 +133,7 @@
     <string name="script_source_loading">Завантаження</string>
     <string name="script_source_empty">У цьому джерелі немає сценаріїв</string>
     <string name="script_source_failed">Не вдалося завантажити сценарії. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_source_retry">Спробуйте знову</string>
+    <string name="script_source_retry">Спробувати ще раз</string>
     <string name="script_source_downloading">Завантаження <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">Видалити джерело</string>
     <string name="script_source_remove_title">Видалити <xliff:g id="name">%1$s</xliff:g>?</string>

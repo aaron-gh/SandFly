@@ -21,7 +21,7 @@
     <string name="script_add_example_summary">說出您切換到的每個應用程式的名稱。從一個腳本開始。</string>
     <string name="script_state_on">開啟</string>
     <string name="script_state_off">關閉</string>
-    <string name="script_runs_in">運行於 <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_in">在 <xliff:g id="apps">%1$s</xliff:g> 中執行</string>
     <string name="script_runs_everywhere">在所有應用程式中運行</string>
     <string name="script_version">版本<xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">作者：<xliff:g id="author">%1$s</xliff:g></string>
@@ -66,7 +66,7 @@
     <string name="script_log">紀錄</string>
     <string name="script_log_summary">自 SandFly 開始以來的輸出與錯誤</string>
     <string name="script_clear_storage">清除儲存的資料</string>
-    <string name="script_storage_cleared">儲存的資料被清除</string>
+    <string name="script_storage_cleared">已清除儲存的資料</string>
     <string name="script_remove">刪除</string>
     <string name="script_remove_title">刪除<xliff:g id="name">%1$s</xliff:g>？</string>
     <string name="script_remove_message">刪除其代碼、資料和設定。</string>
@@ -123,10 +123,10 @@
     <string name="script_binding_bad_keys">無法使用這些鍵。 <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">會新增：</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
-    <string name="script_sources">腳本來源</string>
+    <string name="script_sources">指令碼來源</string>
     <string name="script_sources_none">未添加來源</string>
-    <string name="script_source_add">添加來源</string>
-    <string name="script_source_add_button">添加</string>
+    <string name="script_source_add">新增來源</string>
+    <string name="script_source_add_button">新增</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">不是 GitHub、GitLab、Codeberg、Gitea 或 Bitbucket 上的儲存庫位址。</string>
     <string name="script_source_exists">該來源已新增。</string>
