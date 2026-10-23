@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Teme sonore</string>
+    <string name="summary_pref_sound_themes">Instalați și alegeți seturi de sunete și vibrații, înlocuiți sunete individuale cu ale dvs. și activați controlul sunetelor și vibrațiilor și audio 3D.</string>
+    <string name="sound_themes_installed_category">Teme instalate</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">Sunetele și vibrațiile proprii ale lui SandFly și orice sunete proprii.</string>
+    <string name="sound_theme_in_use">În uz</string>
+    <string name="sound_theme_by">Până la <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Licență: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sunet.</item>
+        <item quantity="few"><xliff:g id="count" example="13">%d</xliff:g> sunete.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> de sunete.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> vibratie.</item>
+        <item quantity="few"><xliff:g id="count" example="13">%d</xliff:g> vibratii.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> de vibrații.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Activează sunetele și vibrațiile de control.</string>
+    <string name="sound_theme_control_sounds_off">Oprește sunetele și vibrațiile de control.</string>
+    <string name="sound_theme_use">Utilizați această temă</string>
+    <string name="sound_theme_about">Despre această temă</string>
+    <string name="sound_theme_export">Salvați ca fișier temă</string>
+    <string name="sound_theme_remove">Eliminați</string>
+    <string name="sound_theme_remove_confirm">Eliminați tema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Eliminați</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">S-a salvat tema, cu <xliff:g id="count" example="1">%d</xliff:g> sunet.</item>
+        <item quantity="few">A salvat tema, cu <xliff:g id="count" example="13">%d</xliff:g> sunete.</item>
+        <item quantity="other">A salvat tema, cu <xliff:g id="count" example="13">%d</xliff:g> de sunete.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly nu a putut salva fișierul cu tema.</string>
+    <string name="sound_theme_no_picker">Nu există nicio aplicație pe acest dispozitiv pentru a alege fișierele.</string>
+    <string name="sound_theme_settings_category">Setări pentru <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Sunete</string>
+    <string name="summary_pref_theme_sounds">Înlocuiți orice sunet al acestei teme cu un fișier de sunet propriu.</string>
+    <string name="sound_themes_install_category">Instalați o temă</string>
+    <string name="title_pref_sound_theme_install_file">Dintr-un dosar</string>
+    <string name="summary_pref_sound_theme_install_file">Un fișier temă este un fișier ZIP. De asemenea, puteți deschide unul sau îl puteți partaja cu SandFly dintr-o altă aplicație.</string>
+    <string name="title_pref_sound_theme_install_link">Dintr-un link</string>
+    <string name="summary_pref_sound_theme_install_link">Un link către un fișier temă sau către un depozit GitHub cu o temă în el. De asemenea, puteți partaja un link cu SandFly din browser.</string>
+    <string name="title_pref_sound_theme_install_source">Dintr-o sursă</string>
+    <string name="summary_pref_sound_theme_install_source">Fișierele teme într-un depozit pe GitHub, GitLab, Codeberg, Gitea sau Bitbucket.</string>
+    <string name="sound_theme_sources">Surse tematice de sunet</string>
+    <string name="sound_theme_source_empty">Nu există teme sonore în această sursă</string>
+    <string name="sound_theme_source_failed">Nu s-au putut încărca teme de sunet. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Temele de sunet instalate din acesta rămân instalate.</string>
+    <string name="sound_theme_link_message">Introduceți sau inserați un link către un fișier temă sau către un depozit GitHub cu o temă în el.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Instalați tema sonoră</string>
+    <string name="sound_theme_install_reading">Citirea temei sonore</string>
+    <string name="sound_theme_install_title">Instalați <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Instalați și utilizați</string>
+    <string name="sound_theme_install">Instalați</string>
+    <string name="sound_theme_install_replaces">Aceasta înlocuiește tema instalată cu același nume.</string>
+    <string name="sound_theme_install_skipped">Omis:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Instalat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Instalat <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Este în uz acum.</string>
+    <string name="sound_theme_install_nothing">Nu există nicio temă de sunet de instalat.</string>
+    <string name="sound_theme_install_not_a_theme">Aceasta nu este o temă sonoră SandFly poate folosi: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly nu a putut instala tema de sunet. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Linkurile către teme de sunet trebuie să înceapă cu https.</string>
+    <string name="title_pref_theme_sounds_of">Sunete de <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Folosiți sunetele lui SandFly pentru toți</string>
+    <string name="theme_sounds_reset_confirm">Eliminați toate sunetele acestei teme și folosiți sunetele SandFly?</string>
+    <string name="theme_sounds_reset_button">Eliminați</string>
+    <string name="theme_sounds_category">Sunete</string>
+    <string name="theme_sound_summary_default">Sunetul lui SandFly</string>
+    <string name="theme_sound_summary_custom">Sunetul temei</string>
+    <string name="theme_sound_summary_none">Nici un sunet. Se aude sunetul de focalizare.</string>
+    <string name="theme_sound_summary_android_keyboard">Sunetul tastaturii lui Android</string>
+    <string name="theme_sound_use_android_keyboard">Folosiți sunetul tastaturii lui Android</string>
+    <string name="theme_sound_braille_character">Tastatură Braille: introducerea unui caracter</string>
+    <string name="theme_sound_braille_space">Tastatură Braille: spațiu</string>
+    <string name="theme_sound_braille_delete">Tastatură Braille: ștergere</string>
+    <string name="theme_sound_braille_new_line">Tastatură Braille: linie nouă</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Alegeți un fișier de sunet</string>
+    <string name="theme_sound_preview">Previzualizează</string>
+    <string name="theme_sound_none">Nici un sunet</string>
+    <string name="theme_sound_summary_no_sound">Nici un sunet</string>
+    <string name="theme_sound_action_set_none">Setați la nici un sunet</string>
+    <string name="theme_sound_use_default">Folosiți sunetul lui SandFly</string>
+    <string name="theme_sound_remove">Eliminați sunetul</string>
+    <string name="theme_sound_too_large">Fișierul este prea mare. Un sunet poate avea până la 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly nu poate reda acel fișier. Alegeți un sunet WAV, OGG, MP3 sau FLAC.</string>
+    <string name="theme_sound_failed">SandFly nu a putut citi acel fișier.</string>
+</resources>

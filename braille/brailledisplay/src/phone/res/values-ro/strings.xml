@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Tastatură hardware Braille</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">Tastatura Braille TalkBack nu este disponibilă</string>
-  <string name="bd_ime_disabled_dialog_title">Activează tastatura Braille TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">Tastatura Braille SandFly nu este disponibilă</string>
+  <string name="bd_ime_disabled_dialog_title">Activează tastatura Braille SandFly</string>
   <string name="bd_ime_disabled_dialog_message">Ca să folosești afișajul Braille pentru introducerea textului, accesează setările de introducere a textului și activează-l</string>
   <string name="bd_ime_disabled_dialog_title_positive">Setări de introducere a textului</string>
   <string name="bd_ime_not_default_dialog_title">Schimbă metoda de introducere de text</string>
-  <string name="bd_ime_not_default_dialog_message">Pentru a introduce text în continuare, setează tastatura Braille TalkBack ca metodă de introducere de text</string>
+  <string name="bd_ime_not_default_dialog_message">Pentru a introduce text în continuare, setează tastatura Braille SandFly ca metodă de introducere de text</string>
   <string name="bd_ime_not_default_dialog_positive">Schimbă metoda de introducere</string>
   <string name="type_unlabeled">Fără etichetă</string>
   <string name="type_unlabeled_edittext">Casetă de editare neetichetată</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Deplasează la stânga</string>
   <string name="overlay_pan_right_button">Deplasează la dreapta</string>
   <string name="bd_preferences_title">Afișaj Braille</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Pentru a folosi afișajul Braille, mai întâi activează TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Accesează TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Pentru a folosi afișajul Braille, mai întâi activează SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Accesează SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Pentru a folosi afișajul Braille, mai întâi activează Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Activează Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Pentru a folosi afișajul Braille, %s are nevoie de acces la dispozitivele din apropiere</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Pentru a folosi modul de navigare, va trebui să treci de la configurarea de taste prestabilită la cea îmbunătățită. Această modificare va actualiza unele dintre comenzile afișajului Braille</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Setări</string>
   <string name="bd_command_change_dialog_title">Unele comenzi au fost actualizate</string>
-  <string name="bd_command_change_dialog_message">Următoarele comenzi pentru afișajul Braille au fost actualizate în această versiune TalkBack:\n\n• elementul anterior: apasă pe punctele 1 și 7;\n\n• elementul următor: apasă pe punctele 4 și 8;\n\n• comanda pentru citire anterioară: apasă pe punctele 2, 3, 7 și 8;\n\n• comanda pentru citire următoare: apasă pe punctele 5, 6, 7 și 8.</string>
+  <string name="bd_command_change_dialog_message">Următoarele comenzi pentru afișajul Braille au fost actualizate în această versiune SandFly:\n\n• elementul anterior: apasă pe punctele 1 și 7;\n\n• elementul următor: apasă pe punctele 4 și 8;\n\n• comanda pentru citire anterioară: apasă pe punctele 2, 3, 7 și 8;\n\n• comanda pentru citire următoare: apasă pe punctele 5, 6, 7 și 8.</string>
   <string name="bd_preference_braille_contracted">Braille contractat</string>
   <string name="bd_preference_braille_uncontracted">Braille necontractat</string>
   <string name="bd_braille_grade_tips">Ca să comuți rapid între varianta contractată și cea necontractată pe un afișaj Braille, apasă tasta de spațiu și punctele 1, 2, 4, 5.\n\nAceastă comandă funcționează dacă folosești o limbă cu ambele grade Braille.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Deplasare între elemente</string>
   <string name="bd_commands_bindings_category_system_actions_title">Acțiuni asupra sistemului</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Înapoi, ecran de pornire, notificări și altele</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">Funcții TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Meniuri și setări Talkback</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">Funcții SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly meniuri și setări</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Setări Braille</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Limba și setările Braille</string>
   <string name="bd_commands_bindings_category_text_editing_title">Editarea textului</string>
@@ -221,10 +221,10 @@
   <string name="bd_cmd_global_all_apps">Deschide toate aplicațiile</string>
   <string name="bd_cmd_toggle_screen_search">Deschide căutarea pe ecran</string>
   <string name="bd_cmd_edit_custom_label">Editează eticheta personalizată</string>
-  <string name="bd_cmd_open_talkback_menu">Deschide meniul TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">Activează sau dezactivează vorbirea în TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">Deschide meniul SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">Activează sau dezactivează vorbirea în SandFly</string>
   <string name="bd_cmd_read_stop">Oprește citirea</string>
-  <string name="bd_cmd_talkback_settings">Deschide setările TalkBack</string>
+  <string name="bd_cmd_talkback_settings">Deschide setările SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Treci la următoarea limbă în care se introduce textul</string>
   <string name="bd_cmd_switch_to_next_output_language">Treci la următoarea limbă de lectură</string>
   <string name="bd_cmd_toggle_contracted_mode">Schimbă între contractat și necontractat</string>
@@ -297,15 +297,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Poți naviga rapid în paginile web folosind comanda pentru intrarea în modul de navigare, apoi tastând următoarele comenzi rapide cu litere sau cifre\n\nAceste comenzi rapide pot fi folosite și fără a intra în modul de navigare, dar va trebui să adaugi punctul 8 la comenzile de tip Înainte</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Navigare în tabel</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Dezactivezi setarea afișajului Braille?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">O poți reactiva oricând din setările TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">O poți reactiva oricând din setările SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Dezactivează</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Unele comenzi nu sunt disponibile</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Comenzile de navigare, setările Braille și unele funcții TalkBack nu sunt disponibile în timpul tastării sau editării.\n\nPentru a le folosi, închide tastatura.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Comenzile de navigare, setările Braille și unele funcții SandFly nu sunt disponibile în timpul tastării sau editării.\n\nPentru a le folosi, închide tastatura.</string>
   <string name="bd_caption_tutorial_dialog_title">Subtitrări pe afișajul Braille</string>
   <string name="bd_caption_tutorial_dialog_message">Pentru a afișa sau a ascunde subtitrările pentru videoclip, apasă pe tasta de spațiu și pe punctele 1, 4, 7, 8.\n\nPentru a afișa automat subtitrări pentru conținutul media acceptat, activează Afișează subtitrări pe afișajul Braille în Setări.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Afișează acest mesaj întotdeauna când sunt disponibile subtitrări</string>
   <string name="bd_usb_connect_dialog_title">Afișajul Braille este conectat la portul USB</string>
-  <string name="bd_usb_connect_dialog_message">Bateria %s încarcă afișajul Braille.\n\nDacă trebuie să treci la Bluetooth, deconectează afișajul de la portul USB sau hubul USB și accesează Setările TalkBack &gt; Afișaj Braille.</string>
+  <string name="bd_usb_connect_dialog_message">Bateria %s încarcă afișajul Braille.\n\nDacă trebuie să treci la Bluetooth, deconectează afișajul de la portul USB sau hubul USB și accesează Setările SandFly &gt; Afișaj Braille.</string>
   <string name="bd_device">telefon</string>
   <string name="bd_battery_low_dialog_title">Nivel scăzut al bateriei %s</string>
   <string name="bd_battery_low_dialog_message">Bateria %s încarcă afișajul braille.\n\nCa să economisești baterie:\n\n
@@ -317,7 +317,18 @@
   <string name="popup_message_history_clear">Șterge tot</string>
   <string name="popup_message_history_empty">Fără conținut</string>
   <string name="popup_message_history_consent_dialog_title">Activezi istoricul mesajelor pe dispozitiv?</string>
-  <string name="popup_message_history_consent_dialog_msg">Astfel, unele mesaje, cum ar fi notificările și alarmele, vor fi stocate în TalkBack. Poți modifica oricând această setare.</string>
+  <string name="popup_message_history_consent_dialog_msg">Astfel, unele mesaje, cum ar fi notificările și alarmele, vor fi stocate în SandFly. Poți modifica oricând această setare.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Activează</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nu, mulțumesc</string>
+    <string name="external_display_channel">Afișează Braille din alte aplicații</string>
+    <string name="external_display_ask_title">Permiteți ca <xliff:g id="app" example="Notetaker">%1$s</xliff:g> să fie un afișaj braille pentru SandFly?</string>
+    <string name="external_display_ask_text">SandFly nu îl va folosi până când nu o permiteți.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> va putea citi tot ce se afișează SandFly în braille, care poate fi orice pe ecran, inclusiv mesajele și ceea ce tastați. De asemenea, va putea controla dispozitivul dvs. după cum puteți cu un afișaj braille: tastați, deschideți aplicații și rulați orice comandă SandFly. Permiteți numai aplicațiile în care aveți încredere.</string>
+    <string name="external_display_allow">Permite</string>
+    <string name="external_display_deny">Nu permite</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> este afișajul tău braille</string>
+    <string name="external_display_in_use_text">În timp ce SandFly îl folosește, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> poate citi ecranul și controla dispozitivul.</string>
+    <string name="external_displays_title">Afișează din alte aplicații</string>
+    <string name="external_displays_summary">Aplicațiile pe care le permiteți pot fi afișaje braille pentru SandFly. O aplicație care este un afișaj braille poate citi ecranul și controla dispozitivul.</string>
+    <string name="external_displays_none">Nicio aplicație nu poate fi afișaj braille.</string>
 </resources>

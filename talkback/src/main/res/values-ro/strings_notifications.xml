@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">Puternic</string>
+    <string name="notification_shake_2">Mediu</string>
+    <string name="notification_shake_1">Blând</string>
+    <string name="notification_media_skip">Nu citiți cu voce tare</string>
+    <string name="notification_media_pause">Întrerupeți media în timp ce citiți</string>
+    <string name="notification_media_read">Citiți cu voce tare</string>
+    <string name="notification_headphones_only_without">Doar fără căști</string>
+    <string name="notification_headphones_only_with">Doar cu căști</string>
+    <string name="notification_headphones_always">Citiți cu voce tare cu sau fără căști</string>
+    <string name="notification_queue_skip">Nu citiți cu voce tare noua notificare</string>
+    <string name="notification_queue_interrupt">Întrerupeți notificarea citită cu voce tare</string>
+    <string name="notification_queue_queue">Citiți cu voce tare după notificarea curentă</string>
+    <string name="notification_url_omit">Lasă afară</string>
+    <string name="notification_url_replace">Spune textul de mai jos</string>
+    <string name="notification_url_domain">Citiți doar site-ul</string>
+    <string name="notification_url_full">Citiți întregul link</string>
+    <string name="notification_category_title">Notificări</string>
+    <string name="notification_reading_title">Citirea notificărilor cu voce tare</string>
+    <string name="notification_apps_title">Aplicații</string>
+    <string name="notification_words_title">Cuvinte și înlocuiri</string>
+    <string name="notification_kinds_title">Tipuri de notificări</string>
+    <string name="notification_when_title">Când să citești</string>
+    <string name="notification_rules_title">Reguli</string>
+    <string name="notification_repeats_title">Se repetă</string>
+    <string name="notification_stop_title">Nu mai citi</string>
+    <string name="notification_schedules_title">Rezumat și timp</string>
+    <string name="notification_history_title">Istoricul notificărilor</string>
+    <string name="notification_test_title">Trimiteți o notificare de testare</string>
+    <string name="notification_automation_title">Automatizare</string>
+    <string name="notification_automation_allowed_title">Permite aplicații de automatizare</string>
+    <string name="notification_category_said">Ce se spune</string>
+    <string name="notification_format_title">Formatul vorbirii</string>
+    <string name="notification_format_message">Substituenți: {app}, {title}, {text}, {content} (întregul text), {bigtext}, {subtext}, {ticker}, {category} și {time}.</string>
+    <string name="notification_private_format_title">Notificările private spun</string>
+    <string name="notification_private_format_message">A spus în locul conținutului unei notificări private. Substituenți: {app}, {category} și {time}.</string>
+    <string name="notification_category_voice">Vocea</string>
+    <string name="notification_voice_title">Vocea</string>
+    <string name="notification_voice_sandfly">Vocea lui SandFly</string>
+    <string name="notification_detect_language_title">Detectează limba</string>
+    <string name="notification_detect_language_summary">Rostiți fiecare notificare în limba în care este scrisă. Necesită Schimbați automat limba în setările Text-to-speech.</string>
+    <string name="notification_sound_before_title">Sunet înainte de notificări</string>
+    <string name="notification_category_text">Text</string>
+    <string name="notification_remove_emoji_title">Omite emoji-ul</string>
+    <string name="notification_lowercase_title">Citiți majusculele ca cuvinte</string>
+    <string name="notification_lowercase_summary">Unele motoare de sinteză vocală rostesc pe litere cuvintele scrise cu majuscule.</string>
+    <string name="notification_separate_digits_title">Citiți numere lungi cifră cu cifră</string>
+    <string name="notification_separate_digits_summary">Cum ar fi coduri și numere de telefon</string>
+    <string name="notification_min_digits_title">Cifre minime într-un număr lung</string>
+    <string name="notification_urls_title">Linkuri</string>
+    <string name="notification_url_text_title">S-a spus în locul unui link</string>
+    <string name="notification_skip_empty_title">Omite notificările fără text</string>
+    <string name="notification_category_length">Lungimea</string>
+    <string name="notification_max_words_title">Număr maxim de cuvinte</string>
+    <string name="notification_max_sentences_title">Numărul maxim de propoziții</string>
+    <string name="notification_max_characters_title">Numărul maxim de caractere text</string>
+    <string name="notification_max_seconds_title">Nu mai citi după</string>
+    <string name="notification_category_timing">Timpul</string>
+    <string name="notification_delay_title">Așteptați înainte de a citi</string>
+    <string name="notification_queue_title">Când se citește o altă notificare</string>
+    <string name="notification_repeat_minutes_title">Citiți din nou până când ecranul se aprinde</string>
+    <string name="notification_skip_media_title">Omite playerele media</string>
+    <string name="notification_skip_ongoing_title">Omite notificările în curs</string>
+    <string name="notification_skip_ongoing_summary">Cum ar fi navigarea și cronometrele</string>
+    <string name="notification_skip_foreground_title">Omite notificările aplicației care rulează</string>
+    <string name="notification_skip_foreground_summary">Cum ar fi un VPN sau un recorder audio</string>
+    <string name="notification_skip_progress_title">Omite notificările de progres</string>
+    <string name="notification_skip_group_summaries_title">Omite rezumatele grupului</string>
+    <string name="notification_skip_group_summaries_summary">Cum ar fi „3 mesaje noi”</string>
+    <string name="notification_skip_low_priority_title">Omite notificările cu prioritate scăzută</string>
+    <string name="notification_skip_system_title">Omite notificările de sistem</string>
+    <string name="notification_screen_on_title">În timp ce ecranul este pornit</string>
+    <string name="notification_screen_off_title">În timp ce ecranul este oprit</string>
+    <string name="notification_locked_title">În timp ce telefonul este blocat</string>
+    <string name="notification_headphones_title">Căști</string>
+    <string name="notification_media_title">În timp ce media rulează</string>
+    <string name="notification_dnd_title">Nu deranja</string>
+    <string name="notification_dnd_none">Nu citiți nicio notificare cu voce tare</string>
+    <string name="notification_dnd_allowed">Citiți notificările permise de modul Nu deranja</string>
+    <string name="notification_dnd_all">Citiți tot</string>
+    <string name="notification_touch_title">În timp ce ecranul este atins</string>
+    <string name="notification_touch_read">Citiți imediat</string>
+    <string name="notification_touch_after">Citiți când atingerea se termină</string>
+    <string name="notification_touch_skip">Nu citiți cu voce tare</string>
+    <string name="notification_during_calls_title">În timpul apelurilor</string>
+    <string name="notification_honour_silent_title">Nu în modul silențios</string>
+    <string name="notification_honour_vibrate_title">Nu în modul vibrație</string>
+    <string name="notification_skip_in_car_title">Nu în modul mașină</string>
+    <string name="notification_skip_in_car_summary">Cum ar fi cu Android Auto, care le citește singur</string>
+    <string name="notification_category_quiet_hours">Ore liniștite</string>
+    <string name="notification_quiet_hours_title">Ore liniștite</string>
+    <string name="notification_quiet_start_title">Începeți</string>
+    <string name="notification_quiet_end_title">Sfârșit</string>
+    <string name="notification_repeat_seconds_title">Sari peste aceeasi notificare pentru</string>
+    <string name="notification_numbers_alike_title">Tratați numere diferite ca fiind identice</string>
+    <string name="notification_numbers_alike_summary">Cum ar fi procentul de descărcare</string>
+    <string name="notification_cooldown_title">Timpul dintre notificările unei aplicații</string>
+    <string name="notification_skip_prefix_title">Omiteți un prefix text repetat</string>
+    <string name="notification_skip_prefix_summary">Cum ar fi numele unui grup dintr-un chat</string>
+    <string name="notification_prefix_memory_title">Cât timp să vă amintiți prefixul textului</string>
+    <string name="notification_access_summary">Este necesar să nu mai citiți o notificare respinsă și pentru rezumate</string>
+    <string name="notification_shake_title">Agitați pentru a opri</string>
+    <string name="notification_shake_strength_title">Intensitatea tremuratului</string>
+    <string name="notification_wave_title">Adu mâna pentru a nu mai citi</string>
+    <string name="notification_wave_summary">Trecând o mână peste senzorul de proximitate</string>
+    <string name="notification_pocket_title">Modul de buzunar</string>
+    <string name="notification_pocket_summary">Un senzor care este acoperit când începe citirea, ca într-un buzunar, nu îl oprește</string>
+    <string name="notification_volume_keys_title">Apăsați ambele taste de volum</string>
+    <string name="notification_dismiss_title">Opriți citirea când notificarea este închisă</string>
+    <string name="notification_watch_dismiss_title">De asemenea, atunci când notificarea este respinsă pe un smartwatch</string>
+    <string name="notification_app_cancel_title">Nu mai citiți când aplicația elimină notificarea</string>
+    <string name="notification_category_summary">Rezumat</string>
+    <string name="notification_summary_now_title">Citiți notificările acum</string>
+    <string name="notification_summary_daily_title">Citiți notificările în fiecare zi</string>
+    <string name="notification_summary_time_title">Timpul</string>
+    <string name="notification_summary_newest_first_title">Cel mai nou primul</string>
+    <string name="notification_summary_name_title">Numele tău</string>
+    <string name="notification_summary_gap_title">Întrerupeți între notificări</string>
+    <string name="notification_summary_needs_sandfly">Activați SandFly pentru a citi notificările</string>
+    <string name="notification_summary_no_access">Accesul la notificări este dezactivat</string>
+    <string name="notification_summary_morning">Bună dimineața.</string>
+    <string name="notification_summary_afternoon">Bună ziua.</string>
+    <string name="notification_summary_evening">Bună seara.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">Anunțuri de timp</string>
+    <string name="notification_clock_interval_title">Spune timpul de fiecare dată</string>
+    <string name="notification_clock_format_title">Formatul orei</string>
+    <string name="notification_clock_format_message">Substituenți: {time}, {date} și {battery} (procentul bateriei).</string>
+    <string name="notification_clock_format_default">Este {time}</string>
+    <string name="notification_clock_exact_title">Orele exacte</string>
+    <string name="notification_clock_exact_summary">Are nevoie de alarme și mementouri. În caz contrar, timpul poate fi spus cu până la un minut întârziere.</string>
+    <string name="notification_other_apps_title">Alte aplicații</string>
+    <string name="notification_apps_category">Aplicații</string>
+    <string name="notification_apps_loading">Se încarcă aplicații</string>
+    <string name="notification_app_mode_title">Notificări</string>
+    <string name="notification_app_mode_default">Ca și alte aplicații</string>
+    <string name="notification_app_mode_read">Citiți cu voce tare</string>
+    <string name="notification_app_mode_private">Numai numele aplicației</string>
+    <string name="notification_app_mode_priority">Citiți mai întâi</string>
+    <string name="notification_app_mode_ignore">Nu citiți cu voce tare</string>
+    <string name="notification_app_name_title">Nume rostit</string>
+    <string name="notification_app_said_as">spus ca <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">Resetează</string>
+    <string name="notification_required_title">Citește doar notificările cu</string>
+    <string name="notification_blocked_title">Nu citi notificările cu</string>
+    <string name="notification_private_title">Citiți numai numele aplicației pentru</string>
+    <string name="notification_replacements_title">Spune altfel</string>
+    <string name="notification_add_word">Adaugă un cuvânt</string>
+    <string name="notification_add_replacement">Adăugați un înlocuitor</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ca <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">Text</string>
+    <string name="notification_replace_with">Spune ca</string>
+    <string name="notification_whole_words">Numai cuvinte întregi</string>
+    <string name="notification_regex">Expresia regulată</string>
+    <string name="notification_enter_text">Introduceți un text</string>
+    <string name="notification_invalid_regex">Nu este o expresie regulată validă</string>
+    <string name="notification_edit">Editați</string>
+    <string name="notification_remove">Eliminați</string>
+    <string name="notification_history_keep">Salvați istoricul notificărilor</string>
+    <string name="notification_history_clear">Ștergeți istoricul</string>
+    <string name="notification_history_category">Notificări</string>
+    <string name="notification_history_empty">Fără notificări</string>
+    <string name="notification_history_ignore_app">Nu citi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Citiți numai numele lui <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Citiți mai întâi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_block_similar">Nu citi notificări de genul acesta</string>
+    <string name="notification_history_copy">Copiază</string>
+    <string name="notification_saved">Salvat</string>
+    <string name="notification_copied">Copiat</string>
+    <string name="notification_outcome_read">Citiți cu voce tare cu succes</string>
+    <string name="notification_outcome_stopped">S-a oprit în timpul citirii</string>
+    <string name="notification_outcome_speech_off">Nu citit: discursul de notificare este dezactivat</string>
+    <string name="notification_outcome_dnd">Nu se citește: Nu deranja</string>
+    <string name="notification_outcome_touching">Nu citit: ecranul a fost atins</string>
+    <string name="notification_outcome_app">Nu se citește: aplicație</string>
+    <string name="notification_outcome_ongoing">Nu citit: în curs</string>
+    <string name="notification_outcome_foreground">Nu se citește: rulează aplicația</string>
+    <string name="notification_outcome_low_priority">Nu citit: prioritate scăzută</string>
+    <string name="notification_outcome_system">Nu se citește: sistem</string>
+    <string name="notification_outcome_media">Nu citit: media player</string>
+    <string name="notification_outcome_group_summary">Nu citit: rezumatul grupului</string>
+    <string name="notification_outcome_progress">Nu citit: progres</string>
+    <string name="notification_outcome_required">Nu citit: lipsesc cuvintele obligatorii</string>
+    <string name="notification_outcome_blocked">Nu citit: cuvânt blocat</string>
+    <string name="notification_outcome_empty">Nu citit: fără text</string>
+    <string name="notification_outcome_repeat">Nu citit: repeta</string>
+    <string name="notification_outcome_cooldown">Nu citit cu voce tare: o altă notificare de la această aplicație a fost citită prea recent</string>
+    <string name="notification_outcome_quiet_hours">Nu citit: ore liniștite</string>
+    <string name="notification_outcome_screen_on">Nu citit: ecran aprins</string>
+    <string name="notification_outcome_screen_off">Nu citit: ecranul este oprit</string>
+    <string name="notification_outcome_locked">Nu se citește: blocat</string>
+    <string name="notification_outcome_headphones">Nu se citește: căștile conectate</string>
+    <string name="notification_outcome_no_headphones">Nu citit: fără căști</string>
+    <string name="notification_outcome_silent">Nu se citește: modul silentios</string>
+    <string name="notification_outcome_vibrate">Nu se citește: modul vibrație</string>
+    <string name="notification_outcome_media_playing">Nu citit: redare media</string>
+    <string name="notification_outcome_car">Nu se citește: modul mașină</string>
+    <string name="notification_outcome_rule">Nu se citește: regulă</string>
+    <string name="notification_outcome_busy">Nu citit: a fost citită o altă notificare</string>
+    <string name="notification_outcome_call">Anunțat ca un apel telefonic primit</string>
+    <string name="notification_rule_add">Adăugați o regulă</string>
+    <string name="notification_rule_from_template">Adăugați o regulă dintr-un șablon</string>
+    <string name="notification_rules_category">Reguli</string>
+    <string name="notification_rules_empty">Fara reguli</string>
+    <string name="notification_rule_name">Nume</string>
+    <string name="notification_rule_untitled">Regula</string>
+    <string name="notification_rule_enabled">Pornit</string>
+    <string name="notification_rule_match">Condiții</string>
+    <string name="notification_rule_match_all">Toate condițiile trebuie îndeplinite</string>
+    <string name="notification_rule_match_any">Trebuie îndeplinită cel puțin o condiție</string>
+    <string name="notification_rule_conditions">Când</string>
+    <string name="notification_rule_actions">Apoi</string>
+    <string name="notification_rule_add_condition">Adăugați o condiție</string>
+    <string name="notification_rule_add_action">Adăugați o acțiune</string>
+    <string name="notification_rule_invert">Inversați starea</string>
+    <string name="notification_rule_delete">Ștergeți regula</string>
+    <string name="notification_rule_delete_confirm">Ștergeți <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_always">Întotdeauna</string>
+    <string name="notification_rule_no_actions">nu se intampla nimic</string>
+    <string name="notification_rule_and">" și "</string>
+    <string name="notification_rule_or">" sau "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">Doar cu căști</string>
+    <string name="notification_template_night">Tacut noaptea</string>
+    <string name="notification_template_screen_off">Doar cu ecranul oprit</string>
+    <string name="notification_template_locked_private">Doar numele aplicației când telefonul este blocat</string>
+    <string name="notification_template_short_on_battery">Citiți pe scurt când nu se încarcă</string>
+    <string name="notification_type_bluetooth">Bluetooth dispozitiv</string>
+    <string name="notification_type_wired">Căști cu fir</string>
+    <string name="notification_type_wifi">Wi-Fi rețea</string>
+    <string name="notification_type_time">Ora zilei</string>
+    <string name="notification_type_screen">Ecranul aprins</string>
+    <string name="notification_type_locked">Telefon blocat</string>
+    <string name="notification_type_from_app">Notificare de la o aplicație</string>
+    <string name="notification_type_foreground">Aplicația în prim-plan</string>
+    <string name="notification_type_contains">Notificarea conține</string>
+    <string name="notification_type_battery">Nivelul bateriei mai jos</string>
+    <string name="notification_type_charging">Încărcare</string>
+    <string name="notification_type_landscape">Peisaj</string>
+    <string name="notification_type_silent">Mod silențios sau vibrație</string>
+    <string name="notification_type_media">Redare media</string>
+    <string name="notification_bluetooth_any">Orice dispozitiv</string>
+    <string name="notification_wifi_hint">Numele rețelei</string>
+    <string name="notification_choose_app">Alegeți o aplicație</string>
+    <string name="notification_time_start">De la</string>
+    <string name="notification_time_end">Până când</string>
+    <string name="notification_time_days">Zile</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> până la <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly are nevoie de această permisiune pentru această condiție</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> este conectat</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> nu este conectat</string>
+    <string name="notification_cond_bluetooth_any">Este conectat un dispozitiv audio Bluetooth</string>
+    <string name="notification_cond_bluetooth_any_not">Nu este conectat niciun dispozitiv audio Bluetooth</string>
+    <string name="notification_cond_wired">Căștile cu fir sunt conectate</string>
+    <string name="notification_cond_wired_not">Căștile cu fir nu sunt conectate</string>
+    <string name="notification_cond_battery_below">Bateria este sub <xliff:g id="percent" example="20">%1$d</xliff:g> la sută</string>
+    <string name="notification_cond_battery_below_not">Bateria este la <xliff:g id="percent" example="20">%1$d</xliff:g> la sută sau mai mult</string>
+    <string name="notification_cond_charging">Telefonul se încarcă</string>
+    <string name="notification_cond_charging_not">Telefonul nu se încarcă</string>
+    <string name="notification_cond_locked">Telefonul este blocat</string>
+    <string name="notification_cond_locked_not">Telefonul este deblocat</string>
+    <string name="notification_cond_screen_on">Ecranul este pornit</string>
+    <string name="notification_cond_screen_on_not">Ecranul este oprit</string>
+    <string name="notification_cond_landscape">Ecranul este peisaj</string>
+    <string name="notification_cond_landscape_not">Ecranul este portret</string>
+    <string name="notification_cond_time">Ora este <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Ora nu este <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">Conectat la <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">Nu este conectat la <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_any">Conectat la Wi-Fi</string>
+    <string name="notification_cond_wifi_any_not">Nu este conectat la Wi-Fi</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> este în față</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nu este în față</string>
+    <string name="notification_cond_from">Notificarea este de la <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Notificarea nu este de la <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Notificarea conține <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Notificarea nu conține <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Soneria este silențioasă sau vibrează</string>
+    <string name="notification_cond_silent_not">Soneria sună</string>
+    <string name="notification_cond_media">Media rulează</string>
+    <string name="notification_cond_media_not">Nu se redă niciun conținut media</string>
+    <string name="notification_action_skip">nu citi</string>
+    <string name="notification_action_private">citește doar numele aplicației</string>
+    <string name="notification_action_not_private">citit integral, chiar daca privat</string>
+    <string name="notification_action_format">utilizați un format de vorbire</string>
+    <string name="notification_action_max_words">citește până la un număr de cuvinte</string>
+    <string name="notification_action_no_limit">citit fără limite de lungime</string>
+    <string name="notification_action_keep_emoji">păstrați emoji</string>
+    <string name="notification_action_keep_numbers">păstrați numerele împreună</string>
+    <string name="notification_action_priority">citeste mai intai</string>
+    <string name="notification_action_always_read">Citiți notificările cu voce tare chiar și în timpul orelor de liniște sau în alte ore restrictive</string>
+    <string name="notification_action_voice">citiți cu un profil vocal</string>
+    <string name="notification_action_voice_value">citiți cu <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">citește cu vocea lui SandFly</string>
+    <string name="notification_voice_removed">Profilul vocal a fost eliminat</string>
+    <string name="notification_action_format_value">utilizați formatul de vorbire <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">citește până la <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">Dezactivată</string>
+    <string name="notification_on">Activată</string>
+    <string name="notification_never_again">Până când SandFly repornește</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">Citirea notificărilor cu voce tare</string>
+    <string name="notification_speech_now_on">Citirea notificărilor cu voce tare activată</string>
+    <string name="notification_speech_now_off">Citirea notificărilor cu voce tare dezactivată</string>
+    <string name="notification_no_last_notification">Nu a fost citită nicio notificare</string>
+    <string name="shortcut_read_notifications">Citiți notificările</string>
+    <string name="shortcut_toggle_notification_speech">Discursul de notificare activat sau dezactivat</string>
+    <string name="shortcut_read_last_notification">Citiți din nou ultima notificare</string>
+    <string name="shortcut_stop_notification">Nu mai citiți notificarea</string>
+    <string name="notification_test_posting">Urmează o notificare de testare în 5 secunde</string>
+    <string name="notification_test_not_allowed">Permiteți SandFly să afișeze mai întâi notificările</string>
+    <string name="notification_test_content_title">SandFly test</string>
+    <string name="notification_test_content_text">Aceasta este o notificare de testare, citită împreună cu setările de notificare. 123456</string>
+    <string name="notification_automation_on">Activați citirea notificărilor cu voce tare</string>
+    <string name="notification_automation_off">Dezactivează citirea notificărilor cu voce tare</string>
+    <string name="notification_automation_toggle">Activați sau dezactivați citirea notificărilor cu voce tare</string>
+    <string name="notification_automation_stop">Opriți citirea notificării</string>
+    <string name="notification_automation_read_all">Citiți notificările</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> secundă</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> secunde</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> de secunde</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minut</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> minute</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> de minute</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> oră</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> ore</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> de ore</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> cuvânt</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> cuvinte</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> de cuvinte</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> propoziție</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> propoziții</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> de propoziții</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> caracter text</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> caractere text</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> de caractere text</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> cifră</item>
+        <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> cifre</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> de cifre</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">Ai <xliff:g id="count" example="1">%d</xliff:g> notificare.</item>
+        <item quantity="few">Ai <xliff:g id="count" example="5">%d</xliff:g> notificări.</item>
+        <item quantity="other">Ai <xliff:g id="count" example="5">%d</xliff:g> de notificări.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>
