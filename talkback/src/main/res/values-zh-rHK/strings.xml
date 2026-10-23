@@ -1379,7 +1379,7 @@
     <string name="title_pref_navigation">導覽方式</string>
     <string name="title_pref_category_more">更多</string>
     <string name="title_pref_reserve_vibration_watch_gestures">預留Vibration Watch的手勢</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">停止 SandFly 處理兩指點擊和雙擊，以便 Samsung Vibration Watch 可以使用它們。在手錶的輔助使用設定中啟用 Vibration Watch。</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly 會停止處理兩指輕按一下和兩下，讓 Samsung Vibration Watch 可以使用這些手勢。請在手錶的無障礙設定中啟用 Vibration Watch。</string>
     <string name="shortcut_reserved_for_vibration_watch">為進階設定中的Vibration Watch保留</string>
     <string name="title_pref_speakerphone_away_from_ear">手機離開耳邊時使用揚聲器</string>
     <string name="summary_pref_speakerphone_away_from_ear">通話期間，當您將手機從耳邊拿開時，會切換到揚聲器；當您再次拿起手機時，會切換到聽筒。</string>
@@ -1432,7 +1432,7 @@
     <string name="title_pref_notification_parts">通知詳情</string>
     <string name="title_pref_play_installer">顯示為從 Google Play 安裝</string>
     <string name="summary_pref_play_installer">告訴其他應用程式 SandFly 是從 Google Play 安裝的。某些應用程式 (例如部分銀行應用程式) 會關閉從其他來源安裝的無障礙服務。需要 Shizuku，且只會變更其他應用程式所知的 SandFly 安裝來源。</string>
-    <string name="summary_pref_play_installer_pending">已打開，但 Google Play 尚未記錄為安裝程式。當 Shizuku 可用時，SandFly 設定它。</string>
+    <string name="summary_pref_play_installer_pending">已開啟，但 Google Play 尚未記錄為安裝來源。Shizuku 可用時，SandFly 會進行設定。</string>
     <string name="notification_part_title">標題</string>
     <string name="notification_part_text">文字</string>
     <string name="notification_part_app">應用程式名稱</string>
