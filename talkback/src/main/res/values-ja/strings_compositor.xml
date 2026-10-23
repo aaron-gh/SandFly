@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack on</string>
-  <string name="talkback_disabled">TalkBack: OFF</string>
+  <string name="talkback_on">SandFly on</string>
+  <string name="talkback_disabled">SandFly: OFF</string>
   <string name="notification_type_beginning_of_field">項目の先頭</string>
   <string name="notification_type_end_of_field">項目の末尾</string>
   <string name="notification_type_selection_mode_on">選択モードは ON です</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">ドラッグを開始しました</string>
   <string name="drag_dropped">ドラッグした項目をドロップしました</string>
   <string name="drag_cancelled">ドラッグをキャンセルしました</string>
+    <string name="template_brightness_changed">明るさ <xliff:g id="percent">%1$d</xliff:g> パーセント。</string>
+    <string name="brightness_needs_permission">システム設定を変更して明るさを変更できるようにします。</string>
+    <string name="brightness_adaptive_on">明るさを変更するには、明るさの調整をオフにします。</string>
+    <string name="telegram_replying_to"><xliff:g id="name" example="Ronan">%1$s</xliff:g> への返信: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>

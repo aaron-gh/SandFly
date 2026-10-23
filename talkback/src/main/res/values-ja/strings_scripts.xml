@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">スクリプト</string>
+    <string name="summary_pref_scripts">アプリでの SandFly の動作を変更する</string>
+    <string name="script_import">インポートスクリプト</string>
+    <string name="script_install_label">SandFly スクリプトをインストールする</string>
+    <string name="script_import_nothing">インストールするスクリプト ファイルはありません。</string>
+    <string name="script_import_cannot_open">ファイルを開けませんでした。</string>
+    <string name="script_import_repository">このリンクはリポジトリ全体へのリンクです。必要なスクリプトを開いて、そのリンクを共有します。</string>
+    <string name="script_import_summary">.lua ファイル、または main.lua を含む .zip</string>
+    <string name="scripts_category_app">アプリスクリプト</string>
+    <string name="scripts_category_global">グローバルプラグイン</string>
+    <string name="scripts_none">スクリプトがインストールされていません</string>
+    <string name="scripts_all_off">すべてのスクリプトをオフにする</string>
+    <string name="scripts_all_off_summary">スクリプトはインストールされたままで、独自のスイッチを保持します。 「すべてのスクリプトをオンまたはオフにする」ジェスチャでも同様のことが行われます。</string>
+    <string name="shortcut_toggle_scripts">すべてのスクリプトをオンまたはオフにする</string>
+    <string name="scripts_now_off">スクリプトはオフです</string>
+    <string name="scripts_now_on">スクリプトオン</string>
+    <string name="scripts_unavailable">このデバイスではスクリプトを使用できません</string>
+    <string name="script_add_example">サンプルスクリプトを追加する</string>
+    <string name="script_add_example_summary">切り替える各アプリの名前が読み上げられます。開始するスクリプト。</string>
+    <string name="script_state_on">ON</string>
+    <string name="script_state_off">OFF</string>
+    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g>で実行</string>
+    <string name="script_runs_everywhere">すべてのアプリで実行</string>
+    <string name="script_version">バージョン <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author"><xliff:g id="author">%1$s</xliff:g> までに</string>
+    <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g>をインストールしますか?</string>
+    <string name="script_install_can">次のことが可能です。</string>
+    <string name="script_install_no_permissions">権限は必要ありません。</string>
+    <string name="script_install_button">インストール</string>
+    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> を <xliff:g id="version">%2$s</xliff:g> に更新しますか?</string>
+    <string name="script_update_new_permissions">新しい権限:</string>
+    <string name="script_update_button">アップデート</string>
+    <string name="script_update_replaces">これにより、バージョン <xliff:g id="version">%1$s</xliff:g> が <xliff:g id="author">%2$s</xliff:g> に置き換えられ、そのデータと設定が保持されます。</string>
+    <string name="script_update_other_author">新しいものは、別の作者である<xliff:g id="author">%1$s</xliff:g>によるものです。信頼できる場合にのみ更新してください。</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> がインストールされました</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> が <xliff:g id="version">%2$s</xliff:g> に更新されました</string>
+    <string name="script_import_failed">インポートに失敗しました。 <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>。信頼できるスクリプトのみを許可します。</string>
+    <string name="script_permission_screen">画面を読んでください</string>
+    <string name="script_permission_actions">クリック、スクロール、入力、フォーカスの移動</string>
+    <string name="script_permission_speech">SandFlyのスピーチを聞いて変える</string>
+    <string name="script_permission_passwords">パスワードフィールドの読み取り</string>
+    <string name="script_permission_input">ジェスチャー、キー、メニュー項目、読み取りコントロールを追加する</string>
+    <string name="script_permission_network">インターネットを使用する</string>
+    <string name="script_permission_clipboard">クリップボードの読み取りと変更</string>
+    <string name="script_permission_system">戻ったり自宅に戻ったり、通知やアプリを開いたりする</string>
+    <string name="script_permission_notifications">音声通知の読み取りと変更</string>
+    <string name="script_permission_events">タイピングを含むすべてのアプリのすべてのアクティビティを表示</string>
+    <string name="script_permission_dialogs">任意のアプリ上にダイアログを表示する</string>
+    <string name="script_permission_java">すべてのアプリで、SandFly のすべてのアクセス権を使用して Java コードを実行します</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">ON にする</string>
+    <string name="script_permissions_title">権限</string>
+    <string name="script_permissions_none">なし</string>
+    <string name="script_settings_category">設定</string>
+    <string name="script_list_filter">フィルター</string>
+    <string name="script_button_off">まずスクリプトをオンにしてください</string>
+    <string name="script_permissions_summary">1 つをオフにすると、必要な部分が停止します。</string>
+    <string name="script_install_permissions_note">これらは後でオフにすることができます。</string>
+    <string name="script_manage_category">管理する</string>
+    <string name="script_move_up">早めに実行する</string>
+    <string name="script_move_down">後で実行</string>
+    <string name="script_order_summary">同じスピーチを変更するスクリプトの順序。アプリスクリプトが最初に実行されます。</string>
+    <string name="script_log">ログ</string>
+    <string name="script_log_summary">SandFly 開始以降の出力とエラー</string>
+    <string name="script_clear_storage">保存されたデータをクリアする</string>
+    <string name="script_storage_cleared">保存されたデータが消去されました</string>
+    <string name="script_remove">削除</string>
+    <string name="script_remove_title"><xliff:g id="name">%1$s</xliff:g> を削除しますか?</string>
+    <string name="script_remove_message">コード、データ、設定を削除します。</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> が削除されました</string>
+    <string name="script_log_empty">ログが空です</string>
+    <string name="script_log_clear">ログをクリアする</string>
+    <string name="script_log_copy">ログのコピー</string>
+    <string name="script_log_copied">ログがコピーされました</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">スクリプト API <xliff:g id="needed">%1$d</xliff:g> 以降が必要です。このSandFlyには<xliff:g id="current">%2$d</xliff:g>があるため、部品が動作しない可能性があります。</string>
+    <string name="script_api_untested">スクリプト API <xliff:g id="tested">%1$d</xliff:g> までテスト済み。このSandFlyには<xliff:g id="current">%2$d</xliff:g>があるため、期待どおりに動作しない可能性があります。</string>
+    <string name="script_state_incompatible">これでは動作しない可能性があります SandFly</string>
+    <string name="script_api_range">スクリプト API <xliff:g id="min">%1$d</xliff:g> ～ <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">互換性</string>
+    <string name="script_install_anyway">とにかくインストールする</string>
+    <string name="script_update_anyway">とにかくアップデートする</string>
+    <string name="script_homepage">ホームページを開く</string>
+    <string name="script_homepage_confirm_title">このアドレスを開いてください?</string>
+    <string name="script_homepage_open">開く</string>
+    <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> 開けないアプリはありません</string>
+    <string name="script_turned_off">エラーが繰り返された後、<xliff:g id="name">%1$s</xliff:g> がオフになりました。スクリプトのログを参照してください。</string>
+    <string name="shortcut_inspect_item">フォーカスされた項目を検査する</string>
+    <string name="script_inspect_no_item">フォーカスのある項目はありません</string>
+    <string name="script_inspect_copied">コピーされました。 <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">ID がないため、ルールで名前を付けることはできません。コピーされました。 <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">画面ツリーのコピー</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> アイテムをコピーしました</string>
+    <string name="script_tree_none">コピーするウィンドウがありません</string>
+    <string name="script_tree_clip_label">スクリーンツリー</string>
+    <string name="summary_copy_screen_tree_menu">スクリプトを記述するために、画面上のすべての項目を JSON としてコピーします</string>
+    <string name="script_inspect_clip_label">商品詳細</string>
+    <string name="summary_inspect_item_menu">スクリプトを作成するために、使用していたアイテムの詳細を話してコピーします</string>
+    <string name="script_keys_backtalk_modifier">SandFly 修飾子</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>、次に <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">コマンド</string>
+    <string name="script_commands_summary">実行中のスクリプトのジェスチャとキーは SandFly の前に来ます。 SandFly を維持するには、1 つをオフにします。</string>
+    <string name="script_binding_gesture">ジェスチャー: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">キー: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">SandFlyメニュー</string>
+    <string name="script_binding_control">読み上げコントロール</string>
+    <string name="script_binding_none">なし</string>
+    <string name="script_binding_turn_on">ON にする</string>
+    <string name="script_binding_turn_off">OFF にする</string>
+    <string name="script_binding_restore">デフォルトに戻す</string>
+    <string name="script_binding_restored">デフォルトの復元</string>
+    <string name="script_binding_perform">ジェスチャーまたはキーを実行する</string>
+    <string name="script_binding_perform_summary">次のジェスチャ、または SandFly 修飾子を使用して押されたキーを割り当てます</string>
+    <string name="script_binding_perform_message">ジェスチャーを行うか、キーを押します。</string>
+    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>を<xliff:g id="command">%2$s</xliff:g>に割り当てますか?</string>
+    <string name="script_binding_assign">割り当てる</string>
+    <string name="script_binding_choose_gesture">ジェスチャーを選択</string>
+    <string name="script_binding_type_keys">キーを入力します</string>
+    <string name="script_binding_type_keys_summary">Sf+shift+n, または sf+t, 秒のように</string>
+    <string name="script_binding_bad_keys">これらのキーは使用できません。 <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">さらに次のように付け加えます。</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">スクリプトソース</string>
+    <string name="script_sources_none">ソースは追加されていません</string>
+    <string name="script_source_add">ソースを追加</string>
+    <string name="script_source_add_button">追加</string>
+    <string name="script_source_hint">github.com/owner/リポジトリ</string>
+    <string name="script_source_invalid">GitHub、GitLab、Codeberg、Gitea、または Bitbucket のリポジトリのアドレスではありません。</string>
+    <string name="script_source_exists">このソースはすでに追加されています。</string>
+    <string name="script_source_loading">読み込み中</string>
+    <string name="script_source_empty">このソースにはスクリプトがありません</string>
+    <string name="script_source_failed">スクリプトをロードできませんでした。 <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">もう一度試してください</string>
+    <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> をダウンロード中</string>
+    <string name="script_source_remove">ソースを削除する</string>
+    <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> を削除しますか?</string>
+    <string name="script_source_remove_message">そこからインストールされたスクリプトはインストールされたままになります。</string>
+    <string name="scripts_auto_update">スクリプトを自動的に更新する</string>
+    <string name="scripts_check_updates">アップデートをチェックする</string>
+    <string name="scripts_checking_updates">アップデートをチェック中…</string>
+    <string name="scripts_updates_category">アップデート</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> 件のスクリプトが更新されました: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> 個のスクリプトが更新されました: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">アップデートは「アップデート」の下にリストされます</string>
+    <string name="scripts_update_check_failed">一部のソースを確認できませんでした</string>
+    <string name="scripts_up_to_date">すべてのスクリプトは最新です</string>
+</resources>

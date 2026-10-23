@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">音と振動をコントロールする</string>
+    <string name="summary_pref_control_sounds">Unspoken が NVDA で行うように、ボタン、チェックボックス、編集フィールド、リスト項目などの各種類のコントロールに、フォーカスの音と振動の代わりに、テーマからの独自のサウンドと振動を与えます。音は画面上のコントロールがある場所から聞こえますが、SandFly ではそれがどのようなコントロールであるかは省略されています。</string>
+    <string name="title_pref_control_sounds_speak_roles">まだコントロールの種類を言う</string>
+    <string name="summary_pref_control_sounds_speak_roles">コントロール音が鳴ったら、ボタンなどのコントロールの種類を言います。これはすべてのサウンドテーマに当てはまります。</string>
+    <string name="title_pref_control_sounds_3d">3Dオーディオ</string>
+    <string name="pref_control_sounds_3d_headphones">ヘッドフォン付き</string>
+    <string name="pref_control_sounds_3d_always">いつも</string>
+    <string name="pref_control_sounds_3d_never">決して、左右だけ</string>
+    <string name="individual_sound_control_button">サウンドコントロール：ボタン</string>
+    <string name="individual_sound_control_checkbox">サウンドの制御: チェックボックス</string>
+    <string name="individual_sound_control_radio_button">サウンドの制御：ラジオボタン</string>
+    <string name="individual_sound_control_edit_text">コントロールサウンド：編集フィールド</string>
+    <string name="individual_sound_control_combo_box">サウンドの制御: ドロップダウン リスト</string>
+    <string name="individual_sound_control_slider">コントロール音：スライダー</string>
+    <string name="individual_sound_control_link">コントロールサウンド：リンク</string>
+    <string name="individual_sound_control_image">制御音：映像</string>
+    <string name="individual_sound_control_clock">制御音：時計</string>
+    <string name="individual_sound_control_tab">コントロールサウンド：タブ</string>
+    <string name="individual_sound_control_menu_item">サウンドコントロール：メニュー項目</string>
+    <string name="individual_sound_control_list_item">コントロールサウンド：リスト項目</string>
+    <string name="individual_sound_control_tree_item">コントロールサウンド：ツリーアイテム</string>
+</resources>

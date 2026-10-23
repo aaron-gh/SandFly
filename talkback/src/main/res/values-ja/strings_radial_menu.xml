@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_radial_menu">円形メニュー</string>
+    <string name="summary_pref_radial_menu">SandFly メニューを画面の中央に円として表示します。項目までスライドし、持ち上げて選択します。</string>
+    <string name="template_radial_menu_submenu"><xliff:g id="title" example="Navigation">%1$s</xliff:g>メニュー</string>
+    <string name="radial_menu_cancel">キャンセル</string>
+    <string name="radial_menu_closed">メニューは終了しました</string>
+    <string name="hint_radial_menu">画面の中央をタッチして項目に向かってスライドし、持ち上げて項目を選択します。中央を持ち上げて閉じます。</string>
+</resources>
