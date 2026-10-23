@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Aby zmieniać język podczas pisania przy użyciu klawiatury brajlowskiej, otwórz menu opcji, przesuwając w górę 3 palcami. Następnie wybierz opcję „Przełącz na następny język”.</string>
   <string name="title_pref_accumulate_presses">Uwzględniaj wszystkie naciśnięte punkty</string>
   <string name="summary_pref_accumulate_presses">Każdy naciśnięty punkt jest uwzględniany, nawet jeśli przestajesz go naciskać przed pozostałymi</string>
-  <string name="title_pref_reverse_dots">Odwróć punkty</string>
-  <string name="summary_pref_reverse_dots">Zmień położenie punktów, np. zamień miejscami punkty 1 i 4</string>
+  <string name="title_pref_reverse_dots">Zamień lewe i prawe kropki</string>
+  <string name="summary_pref_reverse_dots">Punkty 1, 2 i 3 zamień miejscami z punktami 4, 5 i 6</string>
   <string name="bd_preference_braille_contracted">Brajl skrótowy</string>
   <string name="bd_preference_braille_uncontracted">Brajl integralny</string>
   <string name="context_menu_title">Opcje klawiatury brajlowskiej</string>
@@ -206,4 +206,6 @@
   <string name="custom_gesture_try_another">Spróbuj wykonać inny gest. Aby zobaczyć listę wszystkich dostępnych gestów, otwórz Centrum pomocy klawiatury brajlowskiej SandFly. %s</string>
   <string name="custom_gesture_no_match">Gesty są niezgodne</string>
   <string name="custom_gesture_perform_again">Wykonaj ponownie gest, którego chcesz używać. %s</string>
+    <string name="switch_to_language_contracted_announcement">Przełączono na: %s, Brajl skrótowy</string>
+    <string name="switch_to_language_uncontracted_announcement">Przełączono na: %s, Brajl integralny</string>
 </resources>

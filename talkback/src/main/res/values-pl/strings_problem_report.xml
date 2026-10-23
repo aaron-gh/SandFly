@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Prześlij opinię</string>
+    <string name="title_pref_problem_report_type">Rodzaj informacji zwrotnej</string>
+    <string name="title_pref_problem_report_area">Obszar</string>
+    <string name="title_pref_problem_report_title">Tytuł</string>
+    <string name="title_pref_problem_report_app">Aplikacja, w której to się dzieje</string>
+    <string name="title_pref_problem_report_description">Opis</string>
+    <string name="dialog_message_problem_report_description">Co się stanie i czego się spodziewałeś.</string>
+    <string name="title_pref_problem_report_steps">Kroki prowadzące do odtworzenia problemu z oprogramowaniem</string>
+    <string name="title_pref_problem_report_email">Odpowiedzi e-mailem</string>
+    <string name="title_pref_problem_report_device">Dołącz informacje o urządzeniu</string>
+    <string name="title_pref_problem_report_log">Dołącz dziennik SandFly</string>
+    <string name="summary_pref_problem_report_log">Może zawierać tekst z ekranu</string>
+    <string name="title_pref_problem_report_send">Wyślij</string>
+    <string name="summary_pref_problem_report_sending">Wysyłanie</string>
+    <string name="problem_report_missing_fields">Wpisz tytuł i opis.</string>
+    <string name="problem_report_invalid_email">Wpisz prawidłowy adres e-mail.</string>
+    <string name="problem_report_sent">Opinia została wysłana.</string>
+    <string name="problem_report_rate_limited">Wysłano zbyt wiele opinii. Spróbuj ponownie później.</string>
+    <string name="problem_report_no_connection">Opinia nie została wysłana. Sprawdź połączenie internetowe.</string>
+    <string name="problem_report_not_sent">Opinia nie została wysłana. Spróbuj ponownie później.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Niewłaściwe zachowanie</item>
+        <item>Awaria</item>
+        <item>Powolny lub brak reakcji</item>
+        <item>Sugestia</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Mowa</item>
+        <item>Gesty</item>
+        <item>Dotknij eksploracji</item>
+        <item>Czytanie elementów sterujących i menu</item>
+        <item>Pisanie i klawiatury</item>
+        <item>Klawiatura brajlowska</item>
+        <item>Monitor brajlowski</item>
+        <item>Dźwięki i wibracje</item>
+        <item>Powiadomienia</item>
+        <item>Treści internetowe</item>
+        <item>Skrypty</item>
+        <item>Ustawienia</item>
+        <item>Aktualizacje</item>
+        <item>Inne</item>
+    </string-array>
+    <string name="title_report_new">Prześlij opinię</string>
+    <string name="title_report_inbox">Skrzynka odbiorcza</string>
+    <string name="title_report_drafts">Szkice</string>
+    <string name="report_inbox_empty">Nie wysłano żadnej opinii</string>
+    <string name="report_drafts_empty">Żadnych przeciągów</string>
+    <string name="report_just_now">właśnie teraz</string>
+    <string name="report_untitled">Bez tytułu</string>
+    <string name="report_draft_summary">Zmieniono <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">wysłane <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> nowa odpowiedź</item>
+        <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> nowe odpowiedzi</item>
+        <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> nowych odpowiedzi</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> nowe odpowiedzi</item>
+    </plurals>
+    <string name="report_status_changed">stan uległ zmianie</string>
+    <string name="report_status_open">Otwarty problem</string>
+    <string name="report_status_completed">Zamknięte, zakończone</string>
+    <string name="report_status_not_planned">Zamknięte, nieplanowane</string>
+    <string name="report_status_duplicate">Zamknięte, duplikat</string>
+    <string name="report_status_unknown">Usunięto</string>
+    <string name="title_report_status">Stan</string>
+    <string name="title_report_your_report">Twoja opinia</string>
+    <string name="title_report_messages">Wiadomości</string>
+    <string name="report_message_from_developer">Deweloper, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Ty, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Odpowiedz</string>
+    <string name="title_report_reply_text">Twoja odpowiedź</string>
+    <string name="title_report_send_reply">Wyślij odpowiedź</string>
+    <string name="report_reply_sent">Odpowiedź wysłana.</string>
+    <string name="report_reply_not_sent">Odpowiedź nie została wysłana. Spróbuj ponownie później.</string>
+    <string name="title_report_remove">Usuń ze skrzynki odbiorczej</string>
+    <string name="dialog_title_report_remove">Usunąć tę opinię ze skrzynki odbiorczej?</string>
+    <string name="dialog_message_report_remove">Odpowiedzi na to pytanie nie będą już docierać do tego telefonu.</string>
+    <string name="title_report_delete_draft">Usuń wersję roboczą</string>
+    <string name="dialog_title_report_delete_draft">Usunąć tę wersję roboczą?</string>
+    <string name="button_report_delete">Usuń</string>
+    <string name="report_missing">Ta opinia nie znajduje się już w skrzynce odbiorczej.</string>
+    <string name="notification_channel_problem_reports">Odpowiedzi na opinie</string>
+    <string name="report_notification_reply">Odpowiedz na <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
