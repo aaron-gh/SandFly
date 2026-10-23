@@ -82,7 +82,7 @@
     <string name="notification_touch_title">画面をタッチしている間</string>
     <string name="notification_touch_read">すぐに読み上げる</string>
     <string name="notification_touch_after">タッチ終了時に読み上げる</string>
-    <string name="notification_touch_skip">声に出して読まないでください</string>
+    <string name="notification_touch_skip">読み上げない</string>
     <string name="notification_during_calls_title">通話中</string>
     <string name="notification_honour_silent_title">サイレントモードではありません</string>
     <string name="notification_honour_vibrate_title">振動モードではありません</string>
@@ -232,11 +232,11 @@
     <string name="notification_type_wifi">Wi-Fiネットワーク</string>
     <string name="notification_type_time">時刻</string>
     <string name="notification_type_screen">画面オン</string>
-    <string name="notification_type_locked">携帯電話がロックされています</string>
+    <string name="notification_type_locked">スマートフォンのロック中</string>
     <string name="notification_type_from_app">アプリからの通知</string>
     <string name="notification_type_foreground">フォアグラウンドのアプリ</string>
-    <string name="notification_type_contains">通知内容</string>
-    <string name="notification_type_battery">バッテリー残量が以下です</string>
+    <string name="notification_type_contains">通知に次を含む</string>
+    <string name="notification_type_battery">バッテリー残量が次より少ない</string>
     <string name="notification_type_charging">充電中</string>
     <string name="notification_type_landscape">横向き</string>
     <string name="notification_type_silent">サイレントモードまたはバイブレーションモード</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">音声プロファイルで読む</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>で読み上げる</string>
     <string name="notification_action_voice_sandfly">SandFlyの声で読みます</string>
-    <string name="notification_voice_removed">音声プロファイルが削除されました</string>
+    <string name="notification_voice_removed">削除された音声プロファイル</string>
     <string name="notification_action_format_value">音声形式 <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> を使用してください</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>まで読んでください</string>
     <string name="notification_off">オフ</string>

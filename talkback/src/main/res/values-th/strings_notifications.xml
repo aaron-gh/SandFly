@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">อย่าอ่านออกเสียงการแจ้งเตือนใหม่</string>
     <string name="notification_queue_interrupt">ขัดจังหวะ</string>
     <string name="notification_queue_queue">อ่านต่อจากนั้น</string>
-    <string name="notification_url_omit">ออกไป</string>
+    <string name="notification_url_omit">ข้าม</string>
     <string name="notification_url_replace">พูดข้อความด้านล่างนี้</string>
     <string name="notification_url_domain">อ่านเว็บไซต์เท่านั้น</string>
     <string name="notification_url_full">อ่านลิงค์ทั้งหมด</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">ในขณะที่สัมผัสหน้าจอ</string>
     <string name="notification_touch_read">อ่านทันที</string>
     <string name="notification_touch_after">อ่านเมื่อการสัมผัสสิ้นสุดลง</string>
-    <string name="notification_touch_skip">อย่าอ่านออกเสียง</string>
+    <string name="notification_touch_skip">ไม่อ่าน</string>
     <string name="notification_during_calls_title">ระหว่างการโทร</string>
     <string name="notification_honour_silent_title">ไม่ได้อยู่ในโหมดเงียบ</string>
     <string name="notification_honour_vibrate_title">ไม่ได้อยู่ในโหมดสั่น</string>
@@ -227,9 +227,9 @@
     <string name="notification_template_screen_off">พอปิดหน้าจอเท่านั้น</string>
     <string name="notification_template_locked_private">เฉพาะชื่อแอปเมื่อโทรศัพท์ถูกล็อค</string>
     <string name="notification_template_short_on_battery">อ่านสั้นๆ เมื่อไม่ได้ชาร์จ</string>
-    <string name="notification_type_bluetooth">Bluetooth อุปกรณ์</string>
+    <string name="notification_type_bluetooth">อุปกรณ์ Bluetooth</string>
     <string name="notification_type_wired">หูฟังแบบมีสาย</string>
-    <string name="notification_type_wifi">Wi-Fi เครือข่าย</string>
+    <string name="notification_type_wifi">เครือข่าย Wi-Fi</string>
     <string name="notification_type_time">เวลาของวัน</string>
     <string name="notification_type_screen">เปิดหน้าจอ</string>
     <string name="notification_type_locked">โทรศัพท์ถูกล็อค</string>

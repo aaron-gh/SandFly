@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Μην διαβάζετε τη νέα ειδοποίηση δυνατά</string>
     <string name="notification_queue_interrupt">Διακοπή</string>
     <string name="notification_queue_queue">Ανάγνωση μετά</string>
-    <string name="notification_url_omit">Αφήστε έξω</string>
+    <string name="notification_url_omit">Παράλειψη</string>
     <string name="notification_url_replace">Πείτε το παρακάτω κείμενο</string>
     <string name="notification_url_domain">Διαβάστε μόνο τον ιστότοπο</string>
     <string name="notification_url_full">Διαβάστε ολόκληρο τον σύνδεσμο</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Ενώ αγγίζεται η οθόνη</string>
     <string name="notification_touch_read">Άμεση ανάγνωση</string>
     <string name="notification_touch_after">Διαβάστε όταν τελειώσει η αφή</string>
-    <string name="notification_touch_skip">Μην διαβάζετε δυνατά</string>
+    <string name="notification_touch_skip">Χωρίς ανάγνωση</string>
     <string name="notification_during_calls_title">Κατά τη διάρκεια των κλήσεων</string>
     <string name="notification_honour_silent_title">Όχι σε αθόρυβη λειτουργία</string>
     <string name="notification_honour_vibrate_title">Όχι σε λειτουργία δόνησης</string>
@@ -227,16 +227,16 @@
     <string name="notification_template_screen_off">Μόνο με σβηστή οθόνη</string>
     <string name="notification_template_locked_private">Μόνο το όνομα της εφαρμογής όταν το τηλέφωνο είναι κλειδωμένο</string>
     <string name="notification_template_short_on_battery">Διαβάστε σύντομα όταν δεν φορτίζετε</string>
-    <string name="notification_type_bluetooth">Bluetooth συσκευή</string>
+    <string name="notification_type_bluetooth">Συσκευή Bluetooth</string>
     <string name="notification_type_wired">Ενσύρματα ακουστικά</string>
-    <string name="notification_type_wifi">Wi-Fi δίκτυο</string>
+    <string name="notification_type_wifi">Δίκτυο Wi-Fi</string>
     <string name="notification_type_time">Ώρα της ημέρας</string>
     <string name="notification_type_screen">Οθόνη ενεργή</string>
     <string name="notification_type_locked">Τηλέφωνο κλειδωμένο</string>
     <string name="notification_type_from_app">Ειδοποίηση από μια εφαρμογή</string>
     <string name="notification_type_foreground">Εφαρμογή σε πρώτο πλάνο</string>
     <string name="notification_type_contains">Η ειδοποίηση περιέχει</string>
-    <string name="notification_type_battery">Επίπεδο μπαταρίας κάτω</string>
+    <string name="notification_type_battery">Επίπεδο μπαταρίας κάτω από</string>
     <string name="notification_type_charging">Φόρτιση</string>
     <string name="notification_type_landscape">Οριζόντια</string>
     <string name="notification_type_silent">Λειτουργία αθόρυβης ή δόνησης</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">ανάγνωση με φωνητικό προφίλ</string>
     <string name="notification_action_voice_value">ανάγνωση με <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">διαβάστε με τη φωνή του SandFly</string>
-    <string name="notification_voice_removed">Καταργήθηκε το φωνητικό προφίλ</string>
+    <string name="notification_voice_removed">Καταργημένο φωνητικό προφίλ</string>
     <string name="notification_action_format_value">χρησιμοποιήστε τη μορφή ομιλίας <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">διαβάστε μέχρι <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Ανενεργό</string>

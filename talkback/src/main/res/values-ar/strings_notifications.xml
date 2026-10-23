@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">لا تقرأ الإشعار الجديد بصوت عالٍ</string>
     <string name="notification_queue_interrupt">مقاطعته</string>
     <string name="notification_queue_queue">القراءة بعده</string>
-    <string name="notification_url_omit">اترك خارجا</string>
+    <string name="notification_url_omit">حذف</string>
     <string name="notification_url_replace">قل النص أدناه</string>
     <string name="notification_url_domain">إقرأ الموقع فقط</string>
     <string name="notification_url_full">إقرأ الرابط كاملا</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">بينما يتم لمس الشاشة</string>
     <string name="notification_touch_read">اقرأ على الفور</string>
     <string name="notification_touch_after">اقرأ عندما تنتهي اللمسة</string>
-    <string name="notification_touch_skip">لا تقرأ بصوت عال</string>
+    <string name="notification_touch_skip">عدم القراءة</string>
     <string name="notification_during_calls_title">أثناء المكالمات</string>
     <string name="notification_honour_silent_title">ليس في الوضع الصامت</string>
     <string name="notification_honour_vibrate_title">ليس في وضع الاهتزاز</string>
@@ -227,11 +227,11 @@
     <string name="notification_template_screen_off">فقط مع إيقاف تشغيل الشاشة</string>
     <string name="notification_template_locked_private">اسم التطبيق فقط عندما يكون الهاتف مقفلاً</string>
     <string name="notification_template_short_on_battery">اقرأ لفترة وجيزة عند عدم الشحن</string>
-    <string name="notification_type_bluetooth">Bluetooth الجهاز</string>
+    <string name="notification_type_bluetooth">جهاز Bluetooth</string>
     <string name="notification_type_wired">سمّاعات رأس سلكية</string>
-    <string name="notification_type_wifi">Wi-Fi الشبكة</string>
+    <string name="notification_type_wifi">شبكة Wi-Fi</string>
     <string name="notification_type_time">الوقت من اليوم</string>
-    <string name="notification_type_screen">الشاشة قيد التفعيل</string>
+    <string name="notification_type_screen">تشغيل الشاشة</string>
     <string name="notification_type_locked">الهاتف مغلق</string>
     <string name="notification_type_from_app">إشعار من التطبيق</string>
     <string name="notification_type_foreground">التطبيق في المقدمة</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">قراءة مع ملف تعريف صوتي</string>
     <string name="notification_action_voice_value">القراءة باستخدام <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">اقرأ بصوت SandFly</string>
-    <string name="notification_voice_removed">تمت إزالة الملف الصوتي</string>
+    <string name="notification_voice_removed">ملف صوتي محذوف</string>
     <string name="notification_action_format_value">استخدم تنسيق الكلام <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">اقرأ حتى <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">غير مفعَّل</string>

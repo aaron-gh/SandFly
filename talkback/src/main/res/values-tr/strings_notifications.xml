@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Yeni bildirimi yüksek sesle okumayın</string>
     <string name="notification_queue_interrupt">Yarıda kes</string>
     <string name="notification_queue_queue">Ardından oku</string>
-    <string name="notification_url_omit">Dışarıda bırak</string>
+    <string name="notification_url_omit">Atla</string>
     <string name="notification_url_replace">Aşağıdaki metni söyle</string>
     <string name="notification_url_domain">Yalnızca siteyi okuyun</string>
     <string name="notification_url_full">Bağlantının tamamını okuyun</string>
@@ -48,7 +48,7 @@
     <string name="notification_separate_digits_title">Uzun sayıları basamak basamak oku</string>
     <string name="notification_separate_digits_summary">Kodlar ve telefon numaraları gibi</string>
     <string name="notification_min_digits_title">Uzun bir sayıdaki minimum basamaklar</string>
-    <string name="notification_urls_title">Bağlantı</string>
+    <string name="notification_urls_title">Bağlantılar</string>
     <string name="notification_url_text_title">Bağlantı yerine söylendi</string>
     <string name="notification_skip_empty_title">Metin içermeyen bildirimleri atla</string>
     <string name="notification_category_length">Uzunluk</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Ekrana dokunulduğunda</string>
     <string name="notification_touch_read">Hemen oku</string>
     <string name="notification_touch_after">Dokunma bittiğinde okuyun</string>
-    <string name="notification_touch_skip">Yüksek sesle okumayın</string>
+    <string name="notification_touch_skip">Okuma</string>
     <string name="notification_during_calls_title">Aramalar sırasında</string>
     <string name="notification_honour_silent_title">Sessiz modda değil</string>
     <string name="notification_honour_vibrate_title">Titreşim modunda değil</string>
@@ -229,15 +229,15 @@
     <string name="notification_template_short_on_battery">Şarj olmadığında kısaca okuyun</string>
     <string name="notification_type_bluetooth">Bluetooth cihaz</string>
     <string name="notification_type_wired">Kablolu kulaklıklar</string>
-    <string name="notification_type_wifi">Wi-Fi ağ</string>
+    <string name="notification_type_wifi">Wi-Fi ağı</string>
     <string name="notification_type_time">Günün saati</string>
     <string name="notification_type_screen">Ekran açık</string>
-    <string name="notification_type_locked">Telefon kilitlendi</string>
+    <string name="notification_type_locked">Telefon kilitli</string>
     <string name="notification_type_from_app">Bir uygulamadan bildirim</string>
     <string name="notification_type_foreground">Uygulama ön planda</string>
-    <string name="notification_type_contains">Bildirim şunları içerir:</string>
-    <string name="notification_type_battery">Pil seviyesi aşağıda</string>
-    <string name="notification_type_charging">Şarj etme</string>
+    <string name="notification_type_contains">Bildirim şunu içerir</string>
+    <string name="notification_type_battery">Pil seviyesi şunun altında</string>
+    <string name="notification_type_charging">Şarj oluyor</string>
     <string name="notification_type_landscape">Yatay</string>
     <string name="notification_type_silent">Sessiz veya titreşim modu</string>
     <string name="notification_type_media">Medya oynatma</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">sesli profille oku</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ile oku</string>
     <string name="notification_action_voice_sandfly">SandFly\'nin sesiyle okuyun</string>
-    <string name="notification_voice_removed">Ses profili kaldırıldı</string>
+    <string name="notification_voice_removed">Kaldırılan ses profili</string>
     <string name="notification_action_format_value">konuşma biçimini kullanın <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>\'a kadar okuyun</string>
     <string name="notification_off">Kapalı</string>

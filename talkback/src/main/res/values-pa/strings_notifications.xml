@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">ਨਵੀਂ ਸੂਚਨਾ ਨੂੰ ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਨਾ ਪੜ੍ਹੋ</string>
     <string name="notification_queue_interrupt">ਰੋਕੋ</string>
     <string name="notification_queue_queue">ਉਸ ਤੋਂ ਬਾਅਦ ਪੜ੍ਹੋ</string>
-    <string name="notification_url_omit">ਛੱਡੋ</string>
+    <string name="notification_url_omit">ਛੱਡ ਦਿਓ</string>
     <string name="notification_url_replace">ਹੇਠਾਂ ਦਿੱਤੇ ਪਾਠ ਨੂੰ ਕਹੋ</string>
     <string name="notification_url_domain">ਸਿਰਫ ਸਾਈਟ ਨੂੰ ਪੜ੍ਹੋ</string>
     <string name="notification_url_full">ਪੂਰਾ ਲਿੰਕ ਪੜ੍ਹੋ</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">ਜਦੋਂ ਕਿ ਸਕਰੀਨ ਨੂੰ ਛੂਹਿਆ ਜਾਂਦਾ ਹੈ</string>
     <string name="notification_touch_read">ਤੁਰੰਤ ਪੜ੍ਹੋ</string>
     <string name="notification_touch_after">ਜਦੋਂ ਛੋਹਣਾ ਖਤਮ ਹੁੰਦਾ ਹੈ ਤਾਂ ਪੜ੍ਹੋ</string>
-    <string name="notification_touch_skip">ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਨਾ ਪੜ੍ਹੋ</string>
+    <string name="notification_touch_skip">ਨਾ ਪੜ੍ਹੋ</string>
     <string name="notification_during_calls_title">ਕਾਲਾਂ ਦੌਰਾਨ</string>
     <string name="notification_honour_silent_title">ਸਾਈਲੈਂਟ ਮੋਡ ਵਿੱਚ ਨਹੀਂ</string>
     <string name="notification_honour_vibrate_title">ਵਾਈਬ੍ਰੇਟ ਮੋਡ ਵਿੱਚ ਨਹੀਂ</string>
@@ -232,10 +232,10 @@
     <string name="notification_type_wifi">Wi-Fi ਨੈੱਟਵਰਕ</string>
     <string name="notification_type_time">ਦਿਨ ਦਾ ਸਮਾਂ</string>
     <string name="notification_type_screen">ਸਕ੍ਰੀਨ ਚਾਲੂ ਹੈ</string>
-    <string name="notification_type_locked">ਫ਼ੋਨ ਬੰਦ ਹੈ</string>
+    <string name="notification_type_locked">ਫ਼ੋਨ ਲਾਕ ਹੈ</string>
     <string name="notification_type_from_app">ਇੱਕ ਐਪ ਤੋਂ ਸੂਚਨਾ</string>
     <string name="notification_type_foreground">ਫੋਰਗਰਾਉਂਡ ਵਿੱਚ ਐਪ</string>
-    <string name="notification_type_contains">ਨੋਟੀਫਿਕੇਸ਼ਨ ਸ਼ਾਮਲ ਹੈ</string>
+    <string name="notification_type_contains">ਸੂਚਨਾ ਵਿੱਚ ਹੈ</string>
     <string name="notification_type_battery">ਬੈਟਰੀ ਪੱਧਰ ਹੇਠਾਂ</string>
     <string name="notification_type_charging">ਚਾਰਜ ਹੋ ਰਿਹਾ ਹੈ</string>
     <string name="notification_type_landscape">ਲੈਂਡਸਕੇਪ</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">ਇੱਕ ਵੌਇਸ ਪ੍ਰੋਫਾਈਲ ਨਾਲ ਪੜ੍ਹੋ</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ਨਾਲ ਪੜ੍ਹੋ</string>
     <string name="notification_action_voice_sandfly">SandFly ਦੀ ਆਵਾਜ਼ ਨਾਲ ਪੜ੍ਹੋ</string>
-    <string name="notification_voice_removed">ਵੌਇਸ ਪ੍ਰੋਫਾਈਲ ਹਟਾਇਆ ਗਿਆ</string>
+    <string name="notification_voice_removed">ਹਟਾਇਆ ਗਿਆ ਵੌਇਸ ਪ੍ਰੋਫਾਈਲ</string>
     <string name="notification_action_format_value">ਸਪੀਚ ਫਾਰਮੈਟ ਦੀ ਵਰਤੋਂ ਕਰੋ <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> ਤੱਕ ਪੜ੍ਹੋ</string>
     <string name="notification_off">ਬੰਦ ਹੈ</string>

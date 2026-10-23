@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Пока к экрану прикасаются</string>
     <string name="notification_touch_read">Читать сразу</string>
     <string name="notification_touch_after">Читать, когда сенсорный экран закончится</string>
-    <string name="notification_touch_skip">Не читайте вслух</string>
+    <string name="notification_touch_skip">Не читать</string>
     <string name="notification_during_calls_title">Во время звонков</string>
     <string name="notification_honour_silent_title">Не в беззвучном режиме</string>
     <string name="notification_honour_vibrate_title">Не в режиме вибрации</string>
@@ -227,9 +227,9 @@
     <string name="notification_template_screen_off">Только с выключенным экраном</string>
     <string name="notification_template_locked_private">Только название приложения, когда телефон заблокирован</string>
     <string name="notification_template_short_on_battery">Прочтите кратко, когда не заряжается</string>
-    <string name="notification_type_bluetooth">Bluetooth устройство</string>
+    <string name="notification_type_bluetooth">Устройство Bluetooth</string>
     <string name="notification_type_wired">Проводные наушники</string>
-    <string name="notification_type_wifi">Wi-Fi сеть</string>
+    <string name="notification_type_wifi">Сеть Wi-Fi</string>
     <string name="notification_type_time">Время суток</string>
     <string name="notification_type_screen">Экран включен</string>
     <string name="notification_type_locked">Телефон заблокирован</string>
@@ -238,9 +238,9 @@
     <string name="notification_type_contains">Уведомление содержит</string>
     <string name="notification_type_battery">Уровень заряда батареи ниже</string>
     <string name="notification_type_charging">Зарядка</string>
-    <string name="notification_type_landscape">Горизонтальная ориентация.</string>
+    <string name="notification_type_landscape">Горизонтальная ориентация</string>
     <string name="notification_type_silent">Тихий режим или режим вибрации</string>
-    <string name="notification_type_media">Медиа-игра</string>
+    <string name="notification_type_media">Воспроизведение медиа</string>
     <string name="notification_bluetooth_any">Любое устройство</string>
     <string name="notification_wifi_hint">Имя сети</string>
     <string name="notification_choose_app">Выберите приложение</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">читать с голосовым профилем</string>
     <string name="notification_action_voice_value">читать с <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">читать голосом SandFly</string>
-    <string name="notification_voice_removed">Удален голосовой профиль</string>
+    <string name="notification_voice_removed">Удалённый голосовой профиль</string>
     <string name="notification_action_format_value">используйте формат речи <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">читать до <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Отключён</string>

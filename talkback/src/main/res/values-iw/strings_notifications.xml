@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">אל תקראו את ההודעה החדשה בקול רם</string>
     <string name="notification_queue_interrupt">קטיעה</string>
     <string name="notification_queue_queue">הקראה אחריה</string>
-    <string name="notification_url_omit">תשאיר בחוץ</string>
+    <string name="notification_url_omit">השמטה</string>
     <string name="notification_url_replace">אמור את הטקסט למטה</string>
     <string name="notification_url_domain">קרא את האתר בלבד</string>
     <string name="notification_url_full">קרא את כל הקישור</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">בזמן שנוגעים במסך</string>
     <string name="notification_touch_read">הקראה מיידית</string>
     <string name="notification_touch_after">קרא כאשר המגע מסתיים</string>
-    <string name="notification_touch_skip">אל תקראו בקול רם</string>
+    <string name="notification_touch_skip">לא להקריא</string>
     <string name="notification_during_calls_title">במהלך שיחות</string>
     <string name="notification_honour_silent_title">לא במצב שקט</string>
     <string name="notification_honour_vibrate_title">לא במצב רטט</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">לקרוא עם פרופיל קולי</string>
     <string name="notification_action_voice_value">הקראה עם <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">קרא בקול של SandFly</string>
-    <string name="notification_voice_removed">הפרופיל הקולי הוסר</string>
+    <string name="notification_voice_removed">פרופיל קולי שהוסר</string>
     <string name="notification_action_format_value">השתמש בפורמט הדיבור <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">קרא עד <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">מצב מושבת</string>

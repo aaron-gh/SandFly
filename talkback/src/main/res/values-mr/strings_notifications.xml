@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">नवीन सूचना मोठ्याने वाचू नका</string>
     <string name="notification_queue_interrupt">व्यत्यय आणा</string>
     <string name="notification_queue_queue">नंतर वाचा</string>
-    <string name="notification_url_omit">बाहेर सोडा</string>
+    <string name="notification_url_omit">वगळा</string>
     <string name="notification_url_replace">खालील मजकूर सांगा</string>
     <string name="notification_url_domain">फक्त साइट वाचा</string>
     <string name="notification_url_full">संपूर्ण लिंक वाचा</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">स्क्रीनला स्पर्श करताना</string>
     <string name="notification_touch_read">लगेच वाचा</string>
     <string name="notification_touch_after">स्पर्श संपल्यावर वाचा</string>
-    <string name="notification_touch_skip">मोठ्याने वाचू नका</string>
+    <string name="notification_touch_skip">वाचू नका</string>
     <string name="notification_during_calls_title">कॉल दरम्यान</string>
     <string name="notification_honour_silent_title">सायलेंट मोडमध्ये नाही</string>
     <string name="notification_honour_vibrate_title">व्हायब्रेट मोडमध्ये नाही</string>
@@ -232,7 +232,7 @@
     <string name="notification_type_wifi">Wi-Fi नेटवर्क</string>
     <string name="notification_type_time">दिवसाची वेळ</string>
     <string name="notification_type_screen">स्क्रीन चालू</string>
-    <string name="notification_type_locked">फोन लॉक केला</string>
+    <string name="notification_type_locked">फोन लॉक आहे</string>
     <string name="notification_type_from_app">ॲपवरून सूचना</string>
     <string name="notification_type_foreground">अग्रभागी ॲप</string>
     <string name="notification_type_contains">अधिसूचनेत समाविष्ट आहे</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">व्हॉइस प्रोफाइलसह वाचा</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> सह वाचा</string>
     <string name="notification_action_voice_sandfly">SandFly च्या आवाजाने वाचा</string>
-    <string name="notification_voice_removed">व्हॉइस प्रोफाइल काढले</string>
+    <string name="notification_voice_removed">काढलेले व्हॉइस प्रोफाइल</string>
     <string name="notification_action_format_value">स्पीच फॉरमॅट <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> वापरा</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> पर्यंत वाचा</string>
     <string name="notification_off">बंद आहे</string>

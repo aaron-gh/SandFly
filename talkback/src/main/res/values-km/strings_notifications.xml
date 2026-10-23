@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">កុំអានការជូនដំណឹងថ្មីឲ្យឮៗ</string>
     <string name="notification_queue_interrupt">រំខាន</string>
     <string name="notification_queue_queue">អានបន្ទាប់</string>
-    <string name="notification_url_omit">ចាកចេញ</string>
+    <string name="notification_url_omit">រំលង</string>
     <string name="notification_url_replace">និយាយអត្ថបទខាងក្រោម</string>
     <string name="notification_url_domain">អានគេហទំព័រតែប៉ុណ្ណោះ</string>
     <string name="notification_url_full">អានតំណទាំងមូល</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">ខណៈពេលដែលអេក្រង់ត្រូវបានប៉ះ</string>
     <string name="notification_touch_read">អានភ្លាមៗ</string>
     <string name="notification_touch_after">អាននៅពេលដែលការប៉ះបញ្ចប់</string>
-    <string name="notification_touch_skip">កុំអានឱ្យខ្លាំង</string>
+    <string name="notification_touch_skip">កុំអាន</string>
     <string name="notification_during_calls_title">កំឡុងពេលហៅទូរសព្ទ</string>
     <string name="notification_honour_silent_title">មិននៅក្នុងរបៀបស្ងាត់</string>
     <string name="notification_honour_vibrate_title">មិននៅក្នុងរបៀបញ័រទេ</string>
@@ -227,9 +227,9 @@
     <string name="notification_template_screen_off">មានតែអេក្រង់បិទប៉ុណ្ណោះ</string>
     <string name="notification_template_locked_private">មានតែឈ្មោះកម្មវិធីប៉ុណ្ណោះនៅពេលដែលទូរស័ព្ទត្រូវបានចាក់សោ</string>
     <string name="notification_template_short_on_battery">អានខ្លីៗពេលមិនសាក</string>
-    <string name="notification_type_bluetooth">ឧបករណ៍Bluetooth</string>
+    <string name="notification_type_bluetooth">ឧបករណ៍ Bluetooth</string>
     <string name="notification_type_wired">កាសស្តាប់ត្រចៀកមានខ្សែ</string>
-    <string name="notification_type_wifi">Wi-Fiបណ្តាញ</string>
+    <string name="notification_type_wifi">បណ្តាញ Wi-Fi</string>
     <string name="notification_type_time">ពេលវេលានៃថ្ងៃ</string>
     <string name="notification_type_screen">អេក្រង់បើក</string>
     <string name="notification_type_locked">ទូរស័ព្ទជាប់សោ</string>
@@ -240,7 +240,7 @@
     <string name="notification_type_charging">សាកថ្ម</string>
     <string name="notification_type_landscape">ផ្ដេក</string>
     <string name="notification_type_silent">របៀបស្ងាត់ ឬញ័រ</string>
-    <string name="notification_type_media">ការលេងប្រព័ន្ធផ្សព្វផ្សាយ</string>
+    <string name="notification_type_media">ការចាក់មេឌៀ</string>
     <string name="notification_bluetooth_any">ឧបករណ៍ណាមួយ</string>
     <string name="notification_wifi_hint">ឈ្មោះបណ្តាញ</string>
     <string name="notification_choose_app">ជ្រើសរើសកម្មវិធីមួយ</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">អានជាមួយទម្រង់សំឡេង</string>
     <string name="notification_action_voice_value">អានជាមួយ <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">អានជាមួយសំឡេងរបស់ SandFly</string>
-    <string name="notification_voice_removed">បានលុបកម្រងព័ត៌មានសំឡេង</string>
+    <string name="notification_voice_removed">កម្រងព័ត៌មានសំឡេងដែលបានលុប</string>
     <string name="notification_action_format_value">ប្រើទម្រង់សុន្ទរកថា <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">អានរហូតដល់ <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">បិទ</string>

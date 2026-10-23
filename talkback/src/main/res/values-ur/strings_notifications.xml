@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">نئے نوٹیفکیشن کو بلند آواز سے نہ پڑھیں</string>
     <string name="notification_queue_interrupt">روکیں</string>
     <string name="notification_queue_queue">اس کے بعد پڑھیں</string>
-    <string name="notification_url_omit">چھوڑ دو</string>
+    <string name="notification_url_omit">چھوڑ دیں</string>
     <string name="notification_url_replace">نیچے کا متن کہیں</string>
     <string name="notification_url_domain">صرف سائٹ پڑھیں</string>
     <string name="notification_url_full">پورا لنک پڑھیں</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">جبکہ سکرین کو ٹچ کیا جاتا ہے</string>
     <string name="notification_touch_read">فوراً پڑھیں</string>
     <string name="notification_touch_after">ٹچ ختم ہونے پر پڑھیں</string>
-    <string name="notification_touch_skip">بلند آواز سے نہ پڑھیں</string>
+    <string name="notification_touch_skip">نہ پڑھیں</string>
     <string name="notification_during_calls_title">کالز کے دوران</string>
     <string name="notification_honour_silent_title">خاموش موڈ میں نہیں</string>
     <string name="notification_honour_vibrate_title">وائبریٹ موڈ میں نہیں</string>
@@ -232,10 +232,10 @@
     <string name="notification_type_wifi">Wi-Fi نیٹ ورک</string>
     <string name="notification_type_time">دن کا وقت</string>
     <string name="notification_type_screen">اسکرین آن</string>
-    <string name="notification_type_locked">فون بند</string>
+    <string name="notification_type_locked">فون لاک ہے</string>
     <string name="notification_type_from_app">ایپ سے اطلاع</string>
     <string name="notification_type_foreground">ایپ پیش منظر میں</string>
-    <string name="notification_type_contains">نوٹیفکیشن پر مشتمل ہے</string>
+    <string name="notification_type_contains">اطلاع میں شامل ہے</string>
     <string name="notification_type_battery">بیٹری کی سطح نیچے</string>
     <string name="notification_type_charging">چارج ہو رہا ہے</string>
     <string name="notification_type_landscape">لینڈ اسکیپ</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">صوتی پروفائل کے ساتھ پڑھیں</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> کے ساتھ پڑھیں</string>
     <string name="notification_action_voice_sandfly">SandFly کی آواز کے ساتھ پڑھیں</string>
-    <string name="notification_voice_removed">صوتی پروفائل ہٹا دیا گیا</string>
+    <string name="notification_voice_removed">ہٹایا گیا صوتی پروفائل</string>
     <string name="notification_action_format_value">تقریر کی شکل <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> استعمال کریں</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> تک پڑھیں</string>
     <string name="notification_off">آف ہے</string>

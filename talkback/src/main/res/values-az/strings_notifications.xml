@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Yeni bildirişi ucadan oxumayın</string>
     <string name="notification_queue_interrupt">Kəs</string>
     <string name="notification_queue_queue">Ondan sonra oxu</string>
-    <string name="notification_url_omit">Buraxın</string>
+    <string name="notification_url_omit">Ötür</string>
     <string name="notification_url_replace">Aşağıdakı mətni deyin</string>
     <string name="notification_url_domain">Yalnız saytı oxuyun</string>
     <string name="notification_url_full">Bütün linki oxuyun</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Ekrana toxunduqda</string>
     <string name="notification_touch_read">Dərhal oxu</string>
     <string name="notification_touch_after">Toxunma bitdikdə oxuyun</string>
-    <string name="notification_touch_skip">Ucadan oxumayın</string>
+    <string name="notification_touch_skip">Oxuma</string>
     <string name="notification_during_calls_title">Zənglər zamanı</string>
     <string name="notification_honour_silent_title">Səssiz rejimdə deyil</string>
     <string name="notification_honour_vibrate_title">Vibrasiya rejimində deyil</string>
@@ -237,10 +237,10 @@
     <string name="notification_type_foreground">Proqram ön planda</string>
     <string name="notification_type_contains">Bildiriş ehtiva edir</string>
     <string name="notification_type_battery">Batareya səviyyəsi bundan aşağıdır</string>
-    <string name="notification_type_charging">Doldurulur</string>
-    <string name="notification_type_landscape">Peyzaj</string>
+    <string name="notification_type_charging">Şarj olunur</string>
+    <string name="notification_type_landscape">Üfüqi</string>
     <string name="notification_type_silent">Səssiz və ya vibrasiya rejimi</string>
-    <string name="notification_type_media">Media oynayır</string>
+    <string name="notification_type_media">Media oxudulur</string>
     <string name="notification_bluetooth_any">İstənilən cihaz</string>
     <string name="notification_wifi_hint">Şəbəkə adı</string>
     <string name="notification_choose_app">Proqram seçin</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">səs profili ilə oxuyun</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ilə oxuyun</string>
     <string name="notification_action_voice_sandfly">SandFly səsi ilə oxuyun</string>
-    <string name="notification_voice_removed">Səs profili silindi</string>
+    <string name="notification_voice_removed">Silinmiş səs profili</string>
     <string name="notification_action_format_value">nitq formatından istifadə edin <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>-a qədər oxuyun</string>
     <string name="notification_off">Deaktiv</string>

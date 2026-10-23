@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Не читайте нове сповіщення вголос</string>
     <string name="notification_queue_interrupt">Перервати</string>
     <string name="notification_queue_queue">Читати після нього</string>
-    <string name="notification_url_omit">Виключити</string>
+    <string name="notification_url_omit">Пропускати</string>
     <string name="notification_url_replace">Промовте текст нижче</string>
     <string name="notification_url_domain">Читати тільки сайт</string>
     <string name="notification_url_full">Прочитайте все посилання</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Під час торкання екрана</string>
     <string name="notification_touch_read">Читати відразу</string>
     <string name="notification_touch_after">Прочитайте, коли дотик закінчується</string>
-    <string name="notification_touch_skip">Не читайте вголос</string>
+    <string name="notification_touch_skip">Не читати</string>
     <string name="notification_during_calls_title">Під час дзвінків</string>
     <string name="notification_honour_silent_title">Не в беззвучному режимі</string>
     <string name="notification_honour_vibrate_title">Не в режимі вібросигналу</string>
@@ -231,7 +231,7 @@
     <string name="notification_type_wired">Дротові навушники</string>
     <string name="notification_type_wifi">Мережа Wi-Fi</string>
     <string name="notification_type_time">Час доби</string>
-    <string name="notification_type_screen">Екран включений</string>
+    <string name="notification_type_screen">Екран увімкнено</string>
     <string name="notification_type_locked">Телефон заблоковано</string>
     <string name="notification_type_from_app">Сповіщення від програми</string>
     <string name="notification_type_foreground">Програма на передньому плані</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">читати за допомогою голосового профілю</string>
     <string name="notification_action_voice_value">читати з <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">читати голосом SandFly</string>
-    <string name="notification_voice_removed">Видалено голосовий профіль</string>
+    <string name="notification_voice_removed">Видалений голосовий профіль</string>
     <string name="notification_action_format_value">використовувати формат мовлення <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">читати до <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Вимкнено</string>

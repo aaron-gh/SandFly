@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">புதிய அறிவிப்பை சத்தமாக படிக்க வேண்டாம்</string>
     <string name="notification_queue_interrupt">குறுக்கிடு</string>
     <string name="notification_queue_queue">அதன் பிறகு படி</string>
-    <string name="notification_url_omit">வெளியே விடுங்கள்</string>
+    <string name="notification_url_omit">தவிர்</string>
     <string name="notification_url_replace">கீழே உள்ள உரையைச் சொல்லுங்கள்</string>
     <string name="notification_url_domain">தளத்தை மட்டும் படிக்கவும்</string>
     <string name="notification_url_full">முழு இணைப்பையும் படிக்கவும்</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">திரையைத் தொட்டபோது</string>
     <string name="notification_touch_read">உடனே படி</string>
     <string name="notification_touch_after">தொடுதல் முடிந்ததும் படிக்கவும்</string>
-    <string name="notification_touch_skip">சத்தமாக படிக்க வேண்டாம்</string>
+    <string name="notification_touch_skip">படிக்க வேண்டாம்</string>
     <string name="notification_during_calls_title">அழைப்புகளின் போது</string>
     <string name="notification_honour_silent_title">அமைதியான முறையில் இல்லை</string>
     <string name="notification_honour_vibrate_title">அதிர்வு முறையில் இல்லை</string>
@@ -240,7 +240,7 @@
     <string name="notification_type_charging">சார்ஜ் செய்கிறது</string>
     <string name="notification_type_landscape">அகலமாக</string>
     <string name="notification_type_silent">சைலண்ட் அல்லது அதிர்வு முறை</string>
-    <string name="notification_type_media">மீடியா விளையாடுகிறது</string>
+    <string name="notification_type_media">மீடியா இயங்குகிறது</string>
     <string name="notification_bluetooth_any">எந்த சாதனமும்</string>
     <string name="notification_wifi_hint">நெட்வொர்க் பெயர்</string>
     <string name="notification_choose_app">பயன்பாட்டைத் தேர்வு செய்யவும்</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">குரல் சுயவிவரத்துடன் படிக்கவும்</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> உடன் படிக்கவும்</string>
     <string name="notification_action_voice_sandfly">SandFly இன் குரலுடன் படிக்கவும்</string>
-    <string name="notification_voice_removed">குரல் சுயவிவரம் அகற்றப்பட்டது</string>
+    <string name="notification_voice_removed">அகற்றப்பட்ட குரல் சுயவிவரம்</string>
     <string name="notification_action_format_value">பேச்சு வடிவத்தைப் பயன்படுத்தவும் <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> வரை படிக்கவும்</string>
     <string name="notification_off">முடக்கப்பட்டுள்ளது</string>

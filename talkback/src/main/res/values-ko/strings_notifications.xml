@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">새 알림을 소리내어 읽지 마세요.</string>
     <string name="notification_queue_interrupt">중단</string>
     <string name="notification_queue_queue">다음에 읽기</string>
-    <string name="notification_url_omit">나가다</string>
+    <string name="notification_url_omit">생략</string>
     <string name="notification_url_replace">아래 텍스트를 말해보세요.</string>
     <string name="notification_url_domain">사이트만 읽기</string>
     <string name="notification_url_full">전체 링크 읽기</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">화면을 터치하는 동안</string>
     <string name="notification_touch_read">바로 읽기</string>
     <string name="notification_touch_after">터치가 끝나면 읽기</string>
-    <string name="notification_touch_skip">큰 소리로 읽지 마세요</string>
+    <string name="notification_touch_skip">읽지 않음</string>
     <string name="notification_during_calls_title">통화 중</string>
     <string name="notification_honour_silent_title">무음 모드가 아님</string>
     <string name="notification_honour_vibrate_title">진동 모드가 아닙니다.</string>
@@ -232,11 +232,11 @@
     <string name="notification_type_wifi">Wi-Fi 네트워크</string>
     <string name="notification_type_time">하루 중 시간</string>
     <string name="notification_type_screen">화면 켜짐</string>
-    <string name="notification_type_locked">전화기가 잠겼습니다.</string>
+    <string name="notification_type_locked">휴대전화 잠김</string>
     <string name="notification_type_from_app">앱에서 알림</string>
     <string name="notification_type_foreground">포그라운드에 있는 앱</string>
-    <string name="notification_type_contains">알림에는 다음이 포함됩니다.</string>
-    <string name="notification_type_battery">아래 배터리 잔량</string>
+    <string name="notification_type_contains">알림 내용 포함</string>
+    <string name="notification_type_battery">배터리 잔량 미만</string>
     <string name="notification_type_charging">충전 중</string>
     <string name="notification_type_landscape">가로</string>
     <string name="notification_type_silent">무음 또는 진동 모드</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">음성 프로필로 읽기</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>로 읽기</string>
     <string name="notification_action_voice_sandfly">SandFly 목소리로 읽어주세요</string>
-    <string name="notification_voice_removed">음성 프로필이 삭제되었습니다.</string>
+    <string name="notification_voice_removed">삭제된 음성 프로필</string>
     <string name="notification_action_format_value">음성 형식을 사용하세요 <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>까지 읽어보세요</string>
     <string name="notification_off">사용 안함</string>

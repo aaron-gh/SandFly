@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">No llegiu la nova notificació en veu alta</string>
     <string name="notification_queue_interrupt">Interromp-la</string>
     <string name="notification_queue_queue">Llegeix-la després</string>
-    <string name="notification_url_omit">Deixa fora</string>
+    <string name="notification_url_omit">Omet</string>
     <string name="notification_url_replace">Digues el text a continuació</string>
     <string name="notification_url_domain">Llegiu només el lloc</string>
     <string name="notification_url_full">Llegeix l\'enllaç sencer</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Mentre es toca la pantalla</string>
     <string name="notification_touch_read">Llegeix de seguida</string>
     <string name="notification_touch_after">Llegeix quan acabi el tacte</string>
-    <string name="notification_touch_skip">No llegiu en veu alta</string>
+    <string name="notification_touch_skip">No llegir</string>
     <string name="notification_during_calls_title">Durant les trucades</string>
     <string name="notification_honour_silent_title">No en mode silenciós</string>
     <string name="notification_honour_vibrate_title">No en mode de vibració</string>
@@ -227,20 +227,20 @@
     <string name="notification_template_screen_off">Només amb la pantalla apagada</string>
     <string name="notification_template_locked_private">Només el nom de l\'aplicació quan el telèfon està bloquejat</string>
     <string name="notification_template_short_on_battery">Llegeix breument quan no es carrega</string>
-    <string name="notification_type_bluetooth">Bluetooth dispositiu</string>
+    <string name="notification_type_bluetooth">Dispositiu Bluetooth</string>
     <string name="notification_type_wired">Auriculars amb cable</string>
-    <string name="notification_type_wifi">Wi-Fi xarxa</string>
+    <string name="notification_type_wifi">Xarxa Wi-Fi</string>
     <string name="notification_type_time">Hora del dia</string>
     <string name="notification_type_screen">Pantalla activada</string>
     <string name="notification_type_locked">Telèfon bloquejat</string>
     <string name="notification_type_from_app">Notificació des d\'una aplicació</string>
     <string name="notification_type_foreground">Aplicació en primer pla</string>
     <string name="notification_type_contains">La notificació conté</string>
-    <string name="notification_type_battery">Nivell de bateria per sota</string>
+    <string name="notification_type_battery">Nivell de bateria per sota de</string>
     <string name="notification_type_charging">Carregant</string>
     <string name="notification_type_landscape">Horitzontal</string>
     <string name="notification_type_silent">Mode silenciós o vibració</string>
-    <string name="notification_type_media">Reproducció de mitjans</string>
+    <string name="notification_type_media">Reproducció multimèdia</string>
     <string name="notification_bluetooth_any">Qualsevol dispositiu</string>
     <string name="notification_wifi_hint">Nom de la xarxa</string>
     <string name="notification_choose_app">Trieu una aplicació</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">llegir amb un perfil de veu</string>
     <string name="notification_action_voice_value">llegir amb <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">llegir amb la veu de SandFly</string>
-    <string name="notification_voice_removed">S\'ha eliminat el perfil de veu</string>
+    <string name="notification_voice_removed">Perfil de veu eliminat</string>
     <string name="notification_action_format_value">utilitzar el format de veu <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">llegir fins a <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Desactivat</string>

@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Մի՛ կարդացեք նոր ծանուցումը բարձրաձայն</string>
     <string name="notification_queue_interrupt">Ընդհատել</string>
     <string name="notification_queue_queue">Կարդալ դրանից հետո</string>
-    <string name="notification_url_omit">Բաց թողեք</string>
+    <string name="notification_url_omit">Բաց թողնել</string>
     <string name="notification_url_replace">Ասա ստորև տեքստը</string>
     <string name="notification_url_domain">Կարդացեք միայն կայքը</string>
     <string name="notification_url_full">Կարդացեք ամբողջ հղումը</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Մինչ էկրանը հպվում է</string>
     <string name="notification_touch_read">Կարդալ անմիջապես</string>
     <string name="notification_touch_after">Կարդացեք, երբ հպումն ավարտվում է</string>
-    <string name="notification_touch_skip">Մի կարդացեք բարձրաձայն</string>
+    <string name="notification_touch_skip">Չկարդալ</string>
     <string name="notification_during_calls_title">Զանգերի ժամանակ</string>
     <string name="notification_honour_silent_title">Ոչ լուռ ռեժիմում</string>
     <string name="notification_honour_vibrate_title">Վիբրացիոն ռեժիմում չէ</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">կարդալ ձայնային պրոֆիլով</string>
     <string name="notification_action_voice_value">կարդալ <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> պրոֆիլով</string>
     <string name="notification_action_voice_sandfly">կարդալ SandFly-ի ձայնով</string>
-    <string name="notification_voice_removed">Ձայնային պրոֆիլը հեռացվեց</string>
+    <string name="notification_voice_removed">Հեռացված ձայնային պրոֆիլ</string>
     <string name="notification_action_format_value">օգտագործել խոսքի ձևաչափը <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">կարդալ մինչև <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Անջատված</string>

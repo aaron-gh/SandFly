@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Жаңа хабарландыруды дауыстап оқымаңыз</string>
     <string name="notification_queue_interrupt">Үзу</string>
     <string name="notification_queue_queue">Одан кейін оқу</string>
-    <string name="notification_url_omit">Шығу</string>
+    <string name="notification_url_omit">Өткізіп жіберу</string>
     <string name="notification_url_replace">Төмендегі мәтінді айтыңыз</string>
     <string name="notification_url_domain">Тек сайтты оқыңыз</string>
     <string name="notification_url_full">Толық сілтемені оқыңыз</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Экран түртілген кезде</string>
     <string name="notification_touch_read">Бірден оқу</string>
     <string name="notification_touch_after">Түрту аяқталған кезде оқыңыз</string>
-    <string name="notification_touch_skip">Дауыстап оқымаңыз</string>
+    <string name="notification_touch_skip">Оқымау</string>
     <string name="notification_during_calls_title">Қоңыраулар кезінде</string>
     <string name="notification_honour_silent_title">Үнсіз режимде емес</string>
     <string name="notification_honour_vibrate_title">Діріл режимінде емес</string>
@@ -234,11 +234,11 @@
     <string name="notification_type_screen">Экран қосулы</string>
     <string name="notification_type_locked">Телефон құлыптаулы</string>
     <string name="notification_type_from_app">Қолданбадан хабарландыру</string>
-    <string name="notification_type_foreground">Қолданба алдыңғы қатарда</string>
+    <string name="notification_type_foreground">Қолданба алдыңғы планда</string>
     <string name="notification_type_contains">Хабарламада бар</string>
-    <string name="notification_type_battery">Батарея деңгейі төмен</string>
+    <string name="notification_type_battery">Батарея деңгейі мынадан төмен</string>
     <string name="notification_type_charging">Зарядталуда</string>
-    <string name="notification_type_landscape">Пейзаждық</string>
+    <string name="notification_type_landscape">Көлденең</string>
     <string name="notification_type_silent">Үнсіз немесе діріл режимі</string>
     <string name="notification_type_media">Медиа ойнату</string>
     <string name="notification_bluetooth_any">Кез келген құрылғы</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">дауыс профилімен оқыңыз</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> арқылы оқу</string>
     <string name="notification_action_voice_sandfly">SandFly дауысымен оқыңыз</string>
-    <string name="notification_voice_removed">Дауыс профилі жойылды</string>
+    <string name="notification_voice_removed">Жойылған дауыс профилі</string>
     <string name="notification_action_format_value">сөйлеу пішімін пайдаланыңыз <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> дейін оқу</string>
     <string name="notification_off">Өшірулі</string>

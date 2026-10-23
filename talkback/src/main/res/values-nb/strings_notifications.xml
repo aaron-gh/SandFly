@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Mens skjermen berøres</string>
     <string name="notification_touch_read">Les med en gang</string>
     <string name="notification_touch_after">Les når berøringen slutter</string>
-    <string name="notification_touch_skip">Ikke les høyt</string>
+    <string name="notification_touch_skip">Ikke les</string>
     <string name="notification_during_calls_title">Under samtaler</string>
     <string name="notification_honour_silent_title">Ikke i stille modus</string>
     <string name="notification_honour_vibrate_title">Ikke i vibrasjonsmodus</string>
@@ -227,9 +227,9 @@
     <string name="notification_template_screen_off">Bare med skjermen av</string>
     <string name="notification_template_locked_private">Bare appnavnet når telefonen er låst</string>
     <string name="notification_template_short_on_battery">Les kort når du ikke lader</string>
-    <string name="notification_type_bluetooth">Bluetooth enhet</string>
+    <string name="notification_type_bluetooth">Bluetooth-enhet</string>
     <string name="notification_type_wired">Kablede hodetelefoner</string>
-    <string name="notification_type_wifi">Wi-Fi nettverk</string>
+    <string name="notification_type_wifi">Wi-Fi-nettverk</string>
     <string name="notification_type_time">Tid på døgnet</string>
     <string name="notification_type_screen">Skjerm på</string>
     <string name="notification_type_locked">Telefonen er låst</string>
@@ -240,7 +240,7 @@
     <string name="notification_type_charging">Lader</string>
     <string name="notification_type_landscape">Liggende</string>
     <string name="notification_type_silent">Stille- eller vibrasjonsmodus</string>
-    <string name="notification_type_media">Media spiller</string>
+    <string name="notification_type_media">Medieavspilling</string>
     <string name="notification_bluetooth_any">Enhver enhet</string>
     <string name="notification_wifi_hint">Nettverksnavn</string>
     <string name="notification_choose_app">Velg en app</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">lese med en stemmeprofil</string>
     <string name="notification_action_voice_value">les med <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">les med SandFlys stemme</string>
-    <string name="notification_voice_removed">Fjernet taleprofil</string>
+    <string name="notification_voice_removed">Fjernet stemmeprofil</string>
     <string name="notification_action_format_value">bruk taleformatet <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">les opp til <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Av</string>

@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">නව දැනුම්දීම ශබ්ද නඟා කියවන්න එපා</string>
     <string name="notification_queue_interrupt">බාධා කරන්න</string>
     <string name="notification_queue_queue">පසුව කියවන්න</string>
-    <string name="notification_url_omit">අතහරින්න</string>
+    <string name="notification_url_omit">මඟ හරින්න</string>
     <string name="notification_url_replace">පහත පාඨය කියන්න</string>
     <string name="notification_url_domain">අඩවිය පමණක් කියවන්න</string>
     <string name="notification_url_full">සම්පූර්ණ සබැඳිය කියවන්න</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">තිරය ස්පර්ශ කරන අතරතුර</string>
     <string name="notification_touch_read">වහාම කියවන්න</string>
     <string name="notification_touch_after">ස්පර්ශය අවසන් වූ විට කියවන්න</string>
-    <string name="notification_touch_skip">ශබ්ද නඟා කියවන්න එපා</string>
+    <string name="notification_touch_skip">කියවන්න එපා</string>
     <string name="notification_during_calls_title">ඇමතුම් අතරතුර</string>
     <string name="notification_honour_silent_title">නිහඬ මාදිලියේ නොවේ</string>
     <string name="notification_honour_vibrate_title">කම්පන මාදිලියේ නොවේ</string>
@@ -235,9 +235,9 @@
     <string name="notification_type_locked">දුරකථනය අගුළු දමා ඇත</string>
     <string name="notification_type_from_app">යෙදුමකින් දැනුම්දීම</string>
     <string name="notification_type_foreground">පෙරබිමෙහි යෙදුම</string>
-    <string name="notification_type_contains">දැනුම්දීමේ අඩංගු වේ</string>
+    <string name="notification_type_contains">දැනුම්දීමේ අඩංගු</string>
     <string name="notification_type_battery">බැටරි මට්ටම පහතින්</string>
-    <string name="notification_type_charging">අයකිරීම</string>
+    <string name="notification_type_charging">ආරෝපණය වෙමින්</string>
     <string name="notification_type_landscape">තිරස් දර්ශනය</string>
     <string name="notification_type_silent">නිහඬ හෝ කම්පන මාදිලිය</string>
     <string name="notification_type_media">මාධ්‍ය වාදනය</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">හඬ පැතිකඩක් සමඟ කියවන්න</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> සමඟ කියවන්න</string>
     <string name="notification_action_voice_sandfly">SandFlyගේ කටහඬින් කියවන්න</string>
-    <string name="notification_voice_removed">හඬ පැතිකඩ ඉවත් කරන ලදී</string>
+    <string name="notification_voice_removed">ඉවත් කළ හඬ පැතිකඩ</string>
     <string name="notification_action_format_value">කථන ආකෘතිය භාවිතා කරන්න <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> දක්වා කියවන්න</string>
     <string name="notification_off">ක්‍රියාවිරහිතයි</string>

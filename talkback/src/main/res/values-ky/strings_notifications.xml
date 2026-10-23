@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Жаңы эскертмени үн чыгарып окубаңыз</string>
     <string name="notification_queue_interrupt">Үзүү</string>
     <string name="notification_queue_queue">Андан кийин окуу</string>
-    <string name="notification_url_omit">Чыгыңыз</string>
+    <string name="notification_url_omit">Өткөрүп жиберүү</string>
     <string name="notification_url_replace">Төмөндөгү текстти айт</string>
     <string name="notification_url_domain">Сайтты гана оку</string>
     <string name="notification_url_full">Толук шилтемени окуңуз</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Экранга тийип жатканда</string>
     <string name="notification_touch_read">Дароо окуу</string>
     <string name="notification_touch_after">Тийүү аяктаганда окуңуз</string>
-    <string name="notification_touch_skip">Үн чыгарып окуба</string>
+    <string name="notification_touch_skip">Окубоо</string>
     <string name="notification_during_calls_title">Чалуулар учурунда</string>
     <string name="notification_honour_silent_title">Үнсүз режимде эмес</string>
     <string name="notification_honour_vibrate_title">Дирилдөө режиминде эмес</string>
@@ -235,8 +235,8 @@
     <string name="notification_type_locked">Телефон кулпуланган</string>
     <string name="notification_type_from_app">Колдонмодон эскертме</string>
     <string name="notification_type_foreground">Колдонмо алдыңкы планда</string>
-    <string name="notification_type_contains">Эскертме камтылган</string>
-    <string name="notification_type_battery">Батареянын деңгээли төмөн</string>
+    <string name="notification_type_contains">Билдирмеде бар</string>
+    <string name="notification_type_battery">Батареянын деңгээли мындан төмөн</string>
     <string name="notification_type_charging">Заряддоо</string>
     <string name="notification_type_landscape">Туурасынан</string>
     <string name="notification_type_silent">Үнсүз же титирөө режими</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">үн профили менен окуу</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> менен окуу</string>
     <string name="notification_action_voice_sandfly">SandFly үнү менен окуу</string>
-    <string name="notification_voice_removed">Үн профили өчүрүлдү</string>
+    <string name="notification_voice_removed">Өчүрүлгөн үн профили</string>
     <string name="notification_action_format_value">сүйлөө форматын колдонуу <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> чейин окуу</string>
     <string name="notification_off">Өчүк</string>

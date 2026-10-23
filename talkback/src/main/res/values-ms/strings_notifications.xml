@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Jangan baca pemberitahuan baharu dengan kuat</string>
     <string name="notification_queue_interrupt">Ganggu</string>
     <string name="notification_queue_queue">Baca selepasnya</string>
-    <string name="notification_url_omit">Tinggalkan</string>
+    <string name="notification_url_omit">Abaikan</string>
     <string name="notification_url_replace">Sebutkan teks di bawah</string>
     <string name="notification_url_domain">Baca laman web sahaja</string>
     <string name="notification_url_full">Baca keseluruhan pautan</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Sambil skrin disentuh</string>
     <string name="notification_touch_read">Baca segera</string>
     <string name="notification_touch_after">Baca apabila sentuhan tamat</string>
-    <string name="notification_touch_skip">Jangan baca kuat-kuat</string>
+    <string name="notification_touch_skip">Jangan baca</string>
     <string name="notification_during_calls_title">Semasa panggilan</string>
     <string name="notification_honour_silent_title">Bukan dalam mod senyap</string>
     <string name="notification_honour_vibrate_title">Bukan dalam mod getar</string>
@@ -227,10 +227,10 @@
     <string name="notification_template_screen_off">Hanya dengan skrin dimatikan</string>
     <string name="notification_template_locked_private">Hanya nama aplikasi apabila telefon dikunci</string>
     <string name="notification_template_short_on_battery">Baca secara ringkas apabila tidak mengecas</string>
-    <string name="notification_type_bluetooth">Bluetooth peranti</string>
+    <string name="notification_type_bluetooth">Peranti Bluetooth</string>
     <string name="notification_type_wired">Fon kepala berwayar</string>
-    <string name="notification_type_wifi">Wi-Fi rangkaian</string>
-    <string name="notification_type_time">Masa hari</string>
+    <string name="notification_type_wifi">Rangkaian Wi-Fi</string>
+    <string name="notification_type_time">Masa dalam sehari</string>
     <string name="notification_type_screen">Skrin dihidupkan</string>
     <string name="notification_type_locked">Telefon dikunci</string>
     <string name="notification_type_from_app">Pemberitahuan daripada apl</string>
@@ -240,7 +240,7 @@
     <string name="notification_type_charging">Mengecas</string>
     <string name="notification_type_landscape">Landskap</string>
     <string name="notification_type_silent">Mod senyap atau bergetar</string>
-    <string name="notification_type_media">Media bermain</string>
+    <string name="notification_type_media">Media dimainkan</string>
     <string name="notification_bluetooth_any">Mana-mana peranti</string>
     <string name="notification_wifi_hint">Nama rangkaian</string>
     <string name="notification_choose_app">Pilih apl</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">baca dengan profil suara</string>
     <string name="notification_action_voice_value">baca dengan <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">baca dengan suara SandFly</string>
-    <string name="notification_voice_removed">Profil suara dialih keluar</string>
+    <string name="notification_voice_removed">Profil suara yang dialih keluar</string>
     <string name="notification_action_format_value">gunakan format ucapan <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">baca sehingga <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Mati</string>

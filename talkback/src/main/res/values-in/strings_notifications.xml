@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Jangan membaca notifikasi baru dengan keras</string>
     <string name="notification_queue_interrupt">Interupsi</string>
     <string name="notification_queue_queue">Baca setelahnya</string>
-    <string name="notification_url_omit">Tinggalkan</string>
+    <string name="notification_url_omit">Lewati</string>
     <string name="notification_url_replace">Ucapkan teks di bawah ini</string>
     <string name="notification_url_domain">Baca situsnya saja</string>
     <string name="notification_url_full">Baca seluruh tautan</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Saat layar disentuh</string>
     <string name="notification_touch_read">Baca segera</string>
     <string name="notification_touch_after">Baca ketika sentuhan berakhir</string>
-    <string name="notification_touch_skip">Jangan membaca dengan suara keras</string>
+    <string name="notification_touch_skip">Jangan baca</string>
     <string name="notification_during_calls_title">Selama panggilan</string>
     <string name="notification_honour_silent_title">Tidak dalam mode senyap</string>
     <string name="notification_honour_vibrate_title">Tidak dalam mode getar</string>
@@ -227,10 +227,10 @@
     <string name="notification_template_screen_off">Hanya dengan layar mati</string>
     <string name="notification_template_locked_private">Hanya nama aplikasi saat ponsel terkunci</string>
     <string name="notification_template_short_on_battery">Baca sebentar saat tidak mengisi daya</string>
-    <string name="notification_type_bluetooth">Bluetooth perangkat</string>
+    <string name="notification_type_bluetooth">Perangkat Bluetooth</string>
     <string name="notification_type_wired">Headphone berkabel</string>
-    <string name="notification_type_wifi">Wi-Fi jaringan</string>
-    <string name="notification_type_time">Waktu hari ini</string>
+    <string name="notification_type_wifi">Jaringan Wi-Fi</string>
+    <string name="notification_type_time">Waktu dalam sehari</string>
     <string name="notification_type_screen">Layar menyala</string>
     <string name="notification_type_locked">Telepon terkunci</string>
     <string name="notification_type_from_app">Pemberitahuan dari suatu aplikasi</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">membaca dengan profil suara</string>
     <string name="notification_action_voice_value">baca dengan <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">membaca dengan suara SandFly</string>
-    <string name="notification_voice_removed">Profil suara dihapus</string>
+    <string name="notification_voice_removed">Profil suara yang dihapus</string>
     <string name="notification_action_format_value">gunakan format ucapan <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">baca hingga <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Nonaktif</string>

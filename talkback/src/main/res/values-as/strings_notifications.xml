@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">নতুন জাননীখন উচ্চস্বৰে পঢ়িব নালাগে</string>
     <string name="notification_queue_interrupt">বাধা দিয়ক</string>
     <string name="notification_queue_queue">পিছত পঢ়ক</string>
-    <string name="notification_url_omit">এৰি দিয়ক</string>
+    <string name="notification_url_omit">বাদ দিয়ক</string>
     <string name="notification_url_replace">তলৰ লিখনীটো কওক</string>
     <string name="notification_url_domain">কেৱল চাইটটো পঢ়ক</string>
     <string name="notification_url_full">গোটেই লিংকটো পঢ়ক</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">পৰ্দাখন স্পৰ্শ কৰাৰ সময়ত</string>
     <string name="notification_touch_read">লগে লগে পঢ়ক</string>
     <string name="notification_touch_after">স্পৰ্শ শেষ হ’লে পঢ়ক</string>
-    <string name="notification_touch_skip">উচ্চস্বৰে পঢ়িব নালাগে</string>
+    <string name="notification_touch_skip">নপঢ়িব</string>
     <string name="notification_during_calls_title">কলৰ সময়ত</string>
     <string name="notification_honour_silent_title">চাইলেণ্ট মোডত নহয়</string>
     <string name="notification_honour_vibrate_title">ভাইব্ৰেট মোডত নহয়</string>
@@ -240,7 +240,7 @@
     <string name="notification_type_charging">চাৰ্জিং</string>
     <string name="notification_type_landscape">লেণ্ডস্কে’প</string>
     <string name="notification_type_silent">নিস্তব্ধ বা কম্পন মোড</string>
-    <string name="notification_type_media">মিডিয়া খেলা</string>
+    <string name="notification_type_media">মিডিয়া চলি থকা</string>
     <string name="notification_bluetooth_any">যিকোনো ডিভাইচ</string>
     <string name="notification_wifi_hint">নেটৱাৰ্কৰ নাম</string>
     <string name="notification_choose_app">এটা এপ বাছক</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">ভইচ প্ৰফাইলৰ সৈতে পঢ়ক</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ৰ সৈতে পঢ়ক</string>
     <string name="notification_action_voice_sandfly">SandFlyৰ মাতেৰে পঢ়ক</string>
-    <string name="notification_voice_removed">ভইচ প্ৰফাইল আঁতৰোৱা হৈছে</string>
+    <string name="notification_voice_removed">আঁতৰোৱা ভইচ প্ৰফাইল</string>
     <string name="notification_action_format_value">বক্তৃতা বিন্যাস ব্যৱহাৰ কৰক <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> লৈকে পঢ়ক</string>
     <string name="notification_off">অফ</string>

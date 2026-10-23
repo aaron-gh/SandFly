@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Läs inte den nya aviseringen högt</string>
     <string name="notification_queue_interrupt">Avbryt</string>
     <string name="notification_queue_queue">Läs efteråt</string>
-    <string name="notification_url_omit">Lämna ute</string>
+    <string name="notification_url_omit">Utelämna</string>
     <string name="notification_url_replace">Säg texten nedan</string>
     <string name="notification_url_domain">Läs endast webbplatsen</string>
     <string name="notification_url_full">Läs hela länken</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Medan skärmen pekas</string>
     <string name="notification_touch_read">Läs direkt</string>
     <string name="notification_touch_after">Läs när beröringen slutar</string>
-    <string name="notification_touch_skip">Läs inte högt</string>
+    <string name="notification_touch_skip">Läs inte</string>
     <string name="notification_during_calls_title">Under samtal</string>
     <string name="notification_honour_silent_title">Inte i tyst läge</string>
     <string name="notification_honour_vibrate_title">Inte i vibrationsläge</string>
@@ -227,20 +227,20 @@
     <string name="notification_template_screen_off">Bara med skärmen avstängd</string>
     <string name="notification_template_locked_private">Endast appnamnet när telefonen är låst</string>
     <string name="notification_template_short_on_battery">Läs kort när du inte laddar</string>
-    <string name="notification_type_bluetooth">Bluetooth enhet</string>
+    <string name="notification_type_bluetooth">Bluetooth-enhet</string>
     <string name="notification_type_wired">Trådbundna hörlurar</string>
-    <string name="notification_type_wifi">Wi-Fi nätverk</string>
+    <string name="notification_type_wifi">Wi-Fi-nätverk</string>
     <string name="notification_type_time">Tid på dygnet</string>
     <string name="notification_type_screen">Skärmen på</string>
     <string name="notification_type_locked">Telefonen låst</string>
     <string name="notification_type_from_app">Avisering från en app</string>
     <string name="notification_type_foreground">App i förgrunden</string>
-    <string name="notification_type_contains">Anmälan innehåller</string>
+    <string name="notification_type_contains">Aviseringen innehåller</string>
     <string name="notification_type_battery">Batterinivå under</string>
     <string name="notification_type_charging">Laddar</string>
     <string name="notification_type_landscape">Liggande</string>
     <string name="notification_type_silent">Tyst eller vibrerande läge</string>
-    <string name="notification_type_media">Media spelar</string>
+    <string name="notification_type_media">Mediauppspelning</string>
     <string name="notification_bluetooth_any">Vilken enhet som helst</string>
     <string name="notification_wifi_hint">Nätverksnamn</string>
     <string name="notification_choose_app">Välj en app</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">läsa med en röstprofil</string>
     <string name="notification_action_voice_value">läs med <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">läsa med SandFlys röst</string>
-    <string name="notification_voice_removed">Har tagit bort röstprofilen</string>
+    <string name="notification_voice_removed">Borttagen röstprofil</string>
     <string name="notification_action_format_value">använd talformatet <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">läs upp till <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Av</string>

@@ -82,7 +82,7 @@
     <string name="notification_touch_title">當觸摸螢幕時</string>
     <string name="notification_touch_read">立即朗讀</string>
     <string name="notification_touch_after">觸摸結束時讀取</string>
-    <string name="notification_touch_skip">不要大聲朗讀</string>
+    <string name="notification_touch_skip">不朗讀</string>
     <string name="notification_during_calls_title">通話期間</string>
     <string name="notification_honour_silent_title">不在靜音模式下</string>
     <string name="notification_honour_vibrate_title">未處於振動模式</string>
@@ -227,14 +227,14 @@
     <string name="notification_template_screen_off">僅在螢幕關閉時</string>
     <string name="notification_template_locked_private">手機鎖定時僅顯示應用程式名稱</string>
     <string name="notification_template_short_on_battery">不充電時簡單閱讀</string>
-    <string name="notification_type_bluetooth">Bluetooth設備</string>
+    <string name="notification_type_bluetooth">藍牙裝置</string>
     <string name="notification_type_wired">有線耳機</string>
     <string name="notification_type_wifi">Wi-Fi網絡</string>
     <string name="notification_type_time">一天中的時間</string>
     <string name="notification_type_screen">螢幕開啟</string>
     <string name="notification_type_locked">手機已鎖定</string>
     <string name="notification_type_from_app">來自應用程式的通知</string>
-    <string name="notification_type_foreground">應用程式在前台</string>
+    <string name="notification_type_foreground">前景應用程式</string>
     <string name="notification_type_contains">通知包含</string>
     <string name="notification_type_battery">電池電量低於</string>
     <string name="notification_type_charging">充電</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">使用語音設定檔閱讀</string>
     <string name="notification_action_voice_value">使用 <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> 朗讀</string>
     <string name="notification_action_voice_sandfly">用SandFly的聲音朗讀</string>
-    <string name="notification_voice_removed">刪除了語音配置文件</string>
+    <string name="notification_voice_removed">已刪除的語音設定檔</string>
     <string name="notification_action_format_value">使用語音格式<xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">讀至<xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">關閉</string>

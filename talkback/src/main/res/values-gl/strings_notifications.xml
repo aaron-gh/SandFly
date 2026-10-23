@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Non leas a nova notificación en voz alta</string>
     <string name="notification_queue_interrupt">Interrompela</string>
     <string name="notification_queue_queue">Ler despois</string>
-    <string name="notification_url_omit">Deixa fóra</string>
+    <string name="notification_url_omit">Omitir</string>
     <string name="notification_url_replace">Di o texto a continuación</string>
     <string name="notification_url_domain">Le só o sitio</string>
     <string name="notification_url_full">Le a ligazón completa</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Mentres se toca a pantalla</string>
     <string name="notification_touch_read">Ler de inmediato</string>
     <string name="notification_touch_after">Le cando remate o toque</string>
-    <string name="notification_touch_skip">Non leas en voz alta</string>
+    <string name="notification_touch_skip">Non ler</string>
     <string name="notification_during_calls_title">Durante as chamadas</string>
     <string name="notification_honour_silent_title">Non en modo silencioso</string>
     <string name="notification_honour_vibrate_title">Non está en modo vibración</string>
@@ -227,9 +227,9 @@
     <string name="notification_template_screen_off">Só coa pantalla apagada</string>
     <string name="notification_template_locked_private">Só o nome da aplicación cando o teléfono está bloqueado</string>
     <string name="notification_template_short_on_battery">Lea brevemente cando non se está cargando</string>
-    <string name="notification_type_bluetooth">Bluetooth dispositivo</string>
+    <string name="notification_type_bluetooth">Dispositivo Bluetooth</string>
     <string name="notification_type_wired">Auriculares con cable</string>
-    <string name="notification_type_wifi">Wi-Fi rede</string>
+    <string name="notification_type_wifi">Rede Wi-Fi</string>
     <string name="notification_type_time">Hora do día</string>
     <string name="notification_type_screen">Pantalla acendida</string>
     <string name="notification_type_locked">Teléfono bloqueado</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">ler cun perfil de voz</string>
     <string name="notification_action_voice_value">ler con <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">ler coa voz de SandFly</string>
-    <string name="notification_voice_removed">Eliminouse o perfil de voz</string>
+    <string name="notification_voice_removed">Perfil de voz eliminado</string>
     <string name="notification_action_format_value">usar o formato de voz <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">ler ata <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Desactivado</string>

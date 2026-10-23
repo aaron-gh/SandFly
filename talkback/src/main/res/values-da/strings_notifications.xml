@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Læs ikke den nye notifikation højt</string>
     <string name="notification_queue_interrupt">Afbryd</string>
     <string name="notification_queue_queue">Læs bagefter</string>
-    <string name="notification_url_omit">Lad være</string>
+    <string name="notification_url_omit">Udelad</string>
     <string name="notification_url_replace">Sig teksten nedenfor</string>
     <string name="notification_url_domain">Læs kun siden</string>
     <string name="notification_url_full">Læs hele linket</string>
@@ -48,7 +48,7 @@
     <string name="notification_separate_digits_title">Læs lange tal ciffer for ciffer</string>
     <string name="notification_separate_digits_summary">Såsom koder og telefonnumre</string>
     <string name="notification_min_digits_title">Minimumcifre i et langt tal</string>
-    <string name="notification_urls_title">Link</string>
+    <string name="notification_urls_title">Links</string>
     <string name="notification_url_text_title">Sagt i stedet for et link</string>
     <string name="notification_skip_empty_title">Spring notifikationer over uden tekst</string>
     <string name="notification_category_length">Længde</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Mens skærmen berøres</string>
     <string name="notification_touch_read">Læs med det samme</string>
     <string name="notification_touch_after">Læs, når berøringen slutter</string>
-    <string name="notification_touch_skip">Læs ikke højt</string>
+    <string name="notification_touch_skip">Læs ikke</string>
     <string name="notification_during_calls_title">Under opkald</string>
     <string name="notification_honour_silent_title">Ikke i lydløs tilstand</string>
     <string name="notification_honour_vibrate_title">Ikke i vibrationstilstand</string>
@@ -227,15 +227,15 @@
     <string name="notification_template_screen_off">Kun med slukket skærm</string>
     <string name="notification_template_locked_private">Kun appnavnet, når telefonen er låst</string>
     <string name="notification_template_short_on_battery">Læs kort, når du ikke oplader</string>
-    <string name="notification_type_bluetooth">Bluetooth enhed</string>
+    <string name="notification_type_bluetooth">Bluetooth-enhed</string>
     <string name="notification_type_wired">Hovedtelefoner med ledning</string>
-    <string name="notification_type_wifi">Wi-Fi netværk</string>
+    <string name="notification_type_wifi">Wi-Fi-netværk</string>
     <string name="notification_type_time">Tid på dagen</string>
     <string name="notification_type_screen">Skærm tændt</string>
     <string name="notification_type_locked">Telefon låst</string>
     <string name="notification_type_from_app">Meddelelse fra en app</string>
     <string name="notification_type_foreground">App i forgrunden</string>
-    <string name="notification_type_contains">Meddelelse indeholder</string>
+    <string name="notification_type_contains">Notifikationen indeholder</string>
     <string name="notification_type_battery">Batteriniveau under</string>
     <string name="notification_type_charging">Opladning</string>
     <string name="notification_type_landscape">Liggende</string>

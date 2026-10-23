@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Ekki lesa nýju tilkynninguna upphátt</string>
     <string name="notification_queue_interrupt">Trufla</string>
     <string name="notification_queue_queue">Lesa á eftir</string>
-    <string name="notification_url_omit">Slepptu</string>
+    <string name="notification_url_omit">Sleppa</string>
     <string name="notification_url_replace">Segðu textann hér að neðan</string>
     <string name="notification_url_domain">Lestu aðeins síðuna</string>
     <string name="notification_url_full">Lestu allan hlekkinn</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Á meðan snert er á skjánum</string>
     <string name="notification_touch_read">Lesa strax</string>
     <string name="notification_touch_after">Lestu þegar snertingunni lýkur</string>
-    <string name="notification_touch_skip">Ekki lesa upphátt</string>
+    <string name="notification_touch_skip">Ekki lesa</string>
     <string name="notification_during_calls_title">Meðan á símtölum stendur</string>
     <string name="notification_honour_silent_title">Ekki í hljóðlausri stillingu</string>
     <string name="notification_honour_vibrate_title">Ekki í titringsstillingu</string>
@@ -229,18 +229,18 @@
     <string name="notification_template_short_on_battery">Lestu stuttlega þegar ekki er hlaðið</string>
     <string name="notification_type_bluetooth">Bluetooth tæki</string>
     <string name="notification_type_wired">Heyrnartól með snúru</string>
-    <string name="notification_type_wifi">Wi-Fi net</string>
+    <string name="notification_type_wifi">Wi-Fi-net</string>
     <string name="notification_type_time">Tími dags</string>
     <string name="notification_type_screen">Skjár á</string>
     <string name="notification_type_locked">Sími læstur</string>
     <string name="notification_type_from_app">Tilkynning frá appi</string>
     <string name="notification_type_foreground">App í forgrunni</string>
     <string name="notification_type_contains">Tilkynning inniheldur</string>
-    <string name="notification_type_battery">Rafhlöðustig fyrir neðan</string>
+    <string name="notification_type_battery">Rafhlöðustig undir</string>
     <string name="notification_type_charging">Hleðsla</string>
     <string name="notification_type_landscape">Langsnið</string>
     <string name="notification_type_silent">Hljóðlaus eða titringsstilling</string>
-    <string name="notification_type_media">Fjölmiðlar í spilun</string>
+    <string name="notification_type_media">Margmiðlunarefni í spilun</string>
     <string name="notification_bluetooth_any">Hvaða tæki sem er</string>
     <string name="notification_wifi_hint">Nafn nets</string>
     <string name="notification_choose_app">Veldu app</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">lesið með raddsniði</string>
     <string name="notification_action_voice_value">lesið með <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">lesið með rödd SandFly</string>
-    <string name="notification_voice_removed">Raddsnið fjarlægt</string>
+    <string name="notification_voice_removed">Fjarlægt raddsnið</string>
     <string name="notification_action_format_value">notaðu talsniðið <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">lestu allt að <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Slökkt</string>

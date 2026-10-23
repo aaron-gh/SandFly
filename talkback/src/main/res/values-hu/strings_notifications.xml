@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Ne olvassa fel hangosan az új értesítést</string>
     <string name="notification_queue_interrupt">Megszakítás</string>
     <string name="notification_queue_queue">Felolvasás utána</string>
-    <string name="notification_url_omit">Hagyd ki</string>
+    <string name="notification_url_omit">Kihagyás</string>
     <string name="notification_url_replace">Mondja el az alábbi szöveget</string>
     <string name="notification_url_domain">Csak olvassa el az oldalt</string>
     <string name="notification_url_full">Olvasd el a teljes linket</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Miközben megérinti a képernyőt</string>
     <string name="notification_touch_read">Azonnali felolvasás</string>
     <string name="notification_touch_after">Olvassa el, amikor az érintés véget ér</string>
-    <string name="notification_touch_skip">Ne olvass fel hangosan</string>
+    <string name="notification_touch_skip">Ne olvassa fel</string>
     <string name="notification_during_calls_title">Hívások közben</string>
     <string name="notification_honour_silent_title">Nem néma üzemmódban</string>
     <string name="notification_honour_vibrate_title">Nem rezgő módban</string>
@@ -236,7 +236,7 @@
     <string name="notification_type_from_app">Értesítés egy alkalmazásból</string>
     <string name="notification_type_foreground">App az előtérben</string>
     <string name="notification_type_contains">Az értesítés tartalmazza</string>
-    <string name="notification_type_battery">Az akkumulátor töltöttségi szintje alatta</string>
+    <string name="notification_type_battery">Akkumulátorszint ez alatt</string>
     <string name="notification_type_charging">Töltés</string>
     <string name="notification_type_landscape">Fekvő</string>
     <string name="notification_type_silent">Néma vagy rezgő mód</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">hangprofillal olvasni</string>
     <string name="notification_action_voice_value">felolvasás ezzel: <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">olvasni SandFly hangjával</string>
-    <string name="notification_voice_removed">Hangprofil eltávolítva</string>
+    <string name="notification_voice_removed">Eltávolított hangprofil</string>
     <string name="notification_action_format_value">használja a <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> beszédformátumot</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>-ig olvassa el</string>
     <string name="notification_off">Ki</string>

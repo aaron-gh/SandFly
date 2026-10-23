@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Mos e lexoni me zë të lartë njoftimin e ri</string>
     <string name="notification_queue_interrupt">Ndërprite</string>
     <string name="notification_queue_queue">Lexo pas tij</string>
-    <string name="notification_url_omit">Lëreni jashtë</string>
+    <string name="notification_url_omit">Anashkalo</string>
     <string name="notification_url_replace">Thuaj tekstin më poshtë</string>
     <string name="notification_url_domain">Lexoni vetëm faqen</string>
     <string name="notification_url_full">Lexoni të gjithë lidhjen</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Ndërsa ekrani preket</string>
     <string name="notification_touch_read">Lexo menjëherë</string>
     <string name="notification_touch_after">Lexoni kur prekja përfundon</string>
-    <string name="notification_touch_skip">Mos lexoni me zë</string>
+    <string name="notification_touch_skip">Mos lexo</string>
     <string name="notification_during_calls_title">Gjatë thirrjeve</string>
     <string name="notification_honour_silent_title">Jo në modalitetin e heshtur</string>
     <string name="notification_honour_vibrate_title">Jo në modalitetin e vibrimit</string>
@@ -227,7 +227,7 @@
     <string name="notification_template_screen_off">Vetëm me ekran të fikur</string>
     <string name="notification_template_locked_private">Vetëm emri i aplikacionit kur telefoni është i kyçur</string>
     <string name="notification_template_short_on_battery">Lexoni shkurt kur nuk karikoni</string>
-    <string name="notification_type_bluetooth">Bluetooth pajisje</string>
+    <string name="notification_type_bluetooth">Pajisje Bluetooth</string>
     <string name="notification_type_wired">Kufje me tela</string>
     <string name="notification_type_wifi">Rrjeti Wi-Fi</string>
     <string name="notification_type_time">Koha e ditës</string>
@@ -237,7 +237,7 @@
     <string name="notification_type_foreground">Aplikacioni në plan të parë</string>
     <string name="notification_type_contains">Njoftimi përmban</string>
     <string name="notification_type_battery">Niveli i baterisë më poshtë</string>
-    <string name="notification_type_charging">Ngarkimi</string>
+    <string name="notification_type_charging">Po karikohet</string>
     <string name="notification_type_landscape">Horizontalisht</string>
     <string name="notification_type_silent">Modaliteti i heshtur ose i dridhjes</string>
     <string name="notification_type_media">Media po luhet</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">lexoni me një profil zanor</string>
     <string name="notification_action_voice_value">lexo me <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">lexo me zërin e SandFly</string>
-    <string name="notification_voice_removed">Profili i zërit u hoq</string>
+    <string name="notification_voice_removed">Profil zëri i hequr</string>
     <string name="notification_action_format_value">përdorni formatin e të folurit <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">lexoni deri në <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Joaktive</string>

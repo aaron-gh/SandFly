@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Ekraani puudutamise ajal</string>
     <string name="notification_touch_read">Loe kohe</string>
     <string name="notification_touch_after">Lugege, kui puudutus lõpeb</string>
-    <string name="notification_touch_skip">Ärge lugege ette</string>
+    <string name="notification_touch_skip">Ära loe</string>
     <string name="notification_during_calls_title">Kõnede ajal</string>
     <string name="notification_honour_silent_title">Mitte vaikses režiimis</string>
     <string name="notification_honour_vibrate_title">Pole vibratsioonirežiimis</string>
@@ -227,15 +227,15 @@
     <string name="notification_template_screen_off">Ainult väljalülitatud ekraaniga</string>
     <string name="notification_template_locked_private">Ainult rakenduse nimi, kui telefon on lukus</string>
     <string name="notification_template_short_on_battery">Lugege lühidalt, kui te ei laadi</string>
-    <string name="notification_type_bluetooth">Bluetooth seade</string>
+    <string name="notification_type_bluetooth">Bluetooth-seade</string>
     <string name="notification_type_wired">Juhtmega kõrvaklapid</string>
-    <string name="notification_type_wifi">Wi-Fi võrk</string>
+    <string name="notification_type_wifi">WiFi-võrk</string>
     <string name="notification_type_time">Kellaaeg</string>
     <string name="notification_type_screen">Ekraan on sees</string>
     <string name="notification_type_locked">Telefon lukus</string>
     <string name="notification_type_from_app">Märguanne rakendusest</string>
     <string name="notification_type_foreground">Rakendus esiplaanil</string>
-    <string name="notification_type_contains">Teade sisaldab</string>
+    <string name="notification_type_contains">Märguanne sisaldab</string>
     <string name="notification_type_battery">Aku tase allpool</string>
     <string name="notification_type_charging">Laadimine</string>
     <string name="notification_type_landscape">Horisontaalpaigutus</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">lugeda hääleprofiiliga</string>
     <string name="notification_action_voice_value">loe profiiliga <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">loe SandFly häälega</string>
-    <string name="notification_voice_removed">Häälprofiil eemaldati</string>
+    <string name="notification_voice_removed">Eemaldatud häälprofiil</string>
     <string name="notification_action_format_value">kasutage kõnevormingut <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">loe kuni <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Väljas</string>

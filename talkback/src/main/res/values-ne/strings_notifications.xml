@@ -82,7 +82,7 @@
     <string name="notification_touch_title">जब स्क्रिन छोएको छ</string>
     <string name="notification_touch_read">तुरुन्तै पढ्नुहोस्</string>
     <string name="notification_touch_after">जब स्पर्श समाप्त हुन्छ पढ्नुहोस्</string>
-    <string name="notification_touch_skip">ठूलो स्वरले नपढ्नुहोस्</string>
+    <string name="notification_touch_skip">नपढ्नुहोस्</string>
     <string name="notification_during_calls_title">कलको समयमा</string>
     <string name="notification_honour_silent_title">मौन मोडमा छैन</string>
     <string name="notification_honour_vibrate_title">भाइब्रेट मोडमा छैन</string>
@@ -228,17 +228,17 @@
     <string name="notification_template_locked_private">फोन लक हुँदा मात्र एप नाम</string>
     <string name="notification_template_short_on_battery">चार्ज नगर्दा संक्षिप्त पढ्नुहोस्</string>
     <string name="notification_type_bluetooth">Bluetooth यन्त्र</string>
-    <string name="notification_type_wired">तार हेडफोनहरू</string>
+    <string name="notification_type_wired">तारयुक्त हेडफोन</string>
     <string name="notification_type_wifi">Wi-Fi नेटवर्क</string>
     <string name="notification_type_time">दिन को समय</string>
     <string name="notification_type_screen">स्क्रिन अन</string>
-    <string name="notification_type_locked">फोन लक भयो</string>
+    <string name="notification_type_locked">फोन लक छ</string>
     <string name="notification_type_from_app">एउटा एपबाट सूचना</string>
     <string name="notification_type_foreground">अग्रभूमिमा एप</string>
-    <string name="notification_type_contains">सूचना समावेश छ</string>
+    <string name="notification_type_contains">सूचनामा छ</string>
     <string name="notification_type_battery">ब्याट्री स्तर तल</string>
     <string name="notification_type_charging">चार्ज गर्दै</string>
-    <string name="notification_type_landscape">परिदृश्य</string>
+    <string name="notification_type_landscape">ल्यान्डस्केप</string>
     <string name="notification_type_silent">मौन वा कम्पन मोड</string>
     <string name="notification_type_media">मिडिया प्ले</string>
     <string name="notification_bluetooth_any">कुनै पनि उपकरण</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">आवाज प्रोफाइल संग पढ्नुहोस्</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> संग पढ्नुहोस्</string>
     <string name="notification_action_voice_sandfly">SandFly को आवाज संग पढ्नुहोस्</string>
-    <string name="notification_voice_removed">आवाज प्रोफाइल हटाइयो</string>
+    <string name="notification_voice_removed">हटाइएको आवाज प्रोफाइल</string>
     <string name="notification_action_format_value">भाषण ढाँचा <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> प्रयोग गर्नुहोस्</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> सम्म पढ्नुहोस्</string>
     <string name="notification_off">अफ</string>

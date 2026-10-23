@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">ຢ່າອ່ານການແຈ້ງເຕືອນໃໝ່ດັງໆ</string>
     <string name="notification_queue_interrupt">ຂັດຈັງຫວະ</string>
     <string name="notification_queue_queue">ອ່ານຫຼັງຈາກນັ້ນ</string>
-    <string name="notification_url_omit">ອອກໄປ</string>
+    <string name="notification_url_omit">ຂ້າມ</string>
     <string name="notification_url_replace">ເວົ້າຂໍ້ຄວາມຂ້າງລຸ່ມນີ້</string>
     <string name="notification_url_domain">ອ່ານເວັບໄຊເທົ່ານັ້ນ</string>
     <string name="notification_url_full">ອ່ານການເຊື່ອມຕໍ່ທັງຫມົດ</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">ໃນຂະນະທີ່ຫນ້າຈໍຖືກສໍາພັດ</string>
     <string name="notification_touch_read">ອ່ານທັນທີ</string>
     <string name="notification_touch_after">ອ່ານເມື່ອການສໍາພັດສິ້ນສຸດລົງ</string>
-    <string name="notification_touch_skip">ຢ່າອ່ານດັງໆ</string>
+    <string name="notification_touch_skip">ບໍ່ອ່ານ</string>
     <string name="notification_during_calls_title">ໃນລະຫວ່າງການໂທ</string>
     <string name="notification_honour_silent_title">ບໍ່ຢູ່ໃນໂໝດງຽບ</string>
     <string name="notification_honour_vibrate_title">ບໍ່ຢູ່ໃນໂໝດສັ່ນ</string>
@@ -227,20 +227,20 @@
     <string name="notification_template_screen_off">ພຽງແຕ່ປິດຫນ້າຈໍ</string>
     <string name="notification_template_locked_private">ພຽງແຕ່ຊື່ແອັບຯເມື່ອໂທລະສັບຖືກລັອກ</string>
     <string name="notification_template_short_on_battery">ອ່ານສັ້ນໆເມື່ອບໍ່ໄດ້ສາກໄຟ</string>
-    <string name="notification_type_bluetooth">Bluetoothອຸປະກອນ</string>
+    <string name="notification_type_bluetooth">ອຸປະກອນ Bluetooth</string>
     <string name="notification_type_wired">ຫູຟັງແບບມີສາຍ</string>
-    <string name="notification_type_wifi">Wi-Fi ເຄືອຂ່າຍ</string>
+    <string name="notification_type_wifi">ເຄືອຂ່າຍ Wi-Fi</string>
     <string name="notification_type_time">ເວລາຂອງມື້</string>
     <string name="notification_type_screen">ໜ້າຈໍເປີດ</string>
     <string name="notification_type_locked">ໂທລະສັບຖືກລັອກ</string>
     <string name="notification_type_from_app">ການແຈ້ງເຕືອນຈາກແອັບ</string>
     <string name="notification_type_foreground">ແອັບຢູ່ດ້ານໜ້າ</string>
     <string name="notification_type_contains">ການແຈ້ງເຕືອນປະກອບດ້ວຍ</string>
-    <string name="notification_type_battery">ລະດັບຫມໍ້ໄຟຂ້າງລຸ່ມນີ້</string>
+    <string name="notification_type_battery">ລະດັບແບັດເຕີຣີຕ່ຳກວ່າ</string>
     <string name="notification_type_charging">ກຳລັງສາກໄຟ</string>
     <string name="notification_type_landscape">ລວງນອນ</string>
     <string name="notification_type_silent">ໂໝດງຽບ ຫຼືສັ່ນ</string>
-    <string name="notification_type_media">ການ​ຫຼິ້ນ​ສື່​ມວນ​ຊົນ​</string>
+    <string name="notification_type_media">ກຳລັງຫຼິ້ນມີເດຍ</string>
     <string name="notification_bluetooth_any">ອຸປະກອນໃດໆ</string>
     <string name="notification_wifi_hint">ຊື່ເຄືອຂ່າຍ</string>
     <string name="notification_choose_app">ເລືອກແອັບ</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">ອ່ານດ້ວຍໂປຣໄຟລ໌ສຽງ</string>
     <string name="notification_action_voice_value">ອ່ານດ້ວຍ <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">ອ່ານດ້ວຍສຽງຂອງ SandFly</string>
-    <string name="notification_voice_removed">ລຶບໂປຣໄຟລ໌ສຽງອອກແລ້ວ</string>
+    <string name="notification_voice_removed">ໂປຣໄຟລ໌ສຽງທີ່ລຶບແລ້ວ</string>
     <string name="notification_action_format_value">ໃຊ້ຮູບແບບສຽງເວົ້າ <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">ອ່ານໄດ້ເຖິງ <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">ປິດ</string>

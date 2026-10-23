@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">नए नोटिफिकेशन को जोर से न पढ़ें</string>
     <string name="notification_queue_interrupt">बीच में रोकें</string>
     <string name="notification_queue_queue">उसके बाद पढ़ें</string>
-    <string name="notification_url_omit">छोड़ो</string>
+    <string name="notification_url_omit">छोड़ें</string>
     <string name="notification_url_replace">नीचे दिया गया पाठ बोलें</string>
     <string name="notification_url_domain">केवल साइट पढ़ें</string>
     <string name="notification_url_full">पूरा लिंक पढ़ें</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">जबकि स्क्रीन को छुआ गया है</string>
     <string name="notification_touch_read">तुरंत पढ़ें</string>
     <string name="notification_touch_after">स्पर्श समाप्त होने पर पढ़ें</string>
-    <string name="notification_touch_skip">जोर से मत पढ़ो</string>
+    <string name="notification_touch_skip">न पढ़ें</string>
     <string name="notification_during_calls_title">कॉल के दौरान</string>
     <string name="notification_honour_silent_title">साइलेंट मोड में नहीं</string>
     <string name="notification_honour_vibrate_title">कंपन मोड में नहीं</string>
@@ -232,10 +232,10 @@
     <string name="notification_type_wifi">Wi-Fi नेटवर्क</string>
     <string name="notification_type_time">दिन का समय</string>
     <string name="notification_type_screen">स्क्रीन चालू</string>
-    <string name="notification_type_locked">फ़ोन लॉक हो गया</string>
+    <string name="notification_type_locked">फ़ोन लॉक है</string>
     <string name="notification_type_from_app">किसी ऐप से अधिसूचना</string>
     <string name="notification_type_foreground">अग्रभूमि में ऐप</string>
-    <string name="notification_type_contains">अधिसूचना शामिल है</string>
+    <string name="notification_type_contains">सूचना में शामिल है</string>
     <string name="notification_type_battery">बैटरी स्तर नीचे</string>
     <string name="notification_type_charging">चार्जिंग</string>
     <string name="notification_type_landscape">लैंडस्केप</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">वॉइस प्रोफ़ाइल के साथ पढ़ें</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> के साथ पढ़ें</string>
     <string name="notification_action_voice_sandfly">SandFly की आवाज के साथ पढ़ें</string>
-    <string name="notification_voice_removed">वॉइस प्रोफ़ाइल हटा दी गई</string>
+    <string name="notification_voice_removed">हटाई गई वॉइस प्रोफ़ाइल</string>
     <string name="notification_action_format_value">भाषण प्रारूप का उपयोग करें <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> तक पढ़ें</string>
     <string name="notification_off">बंद</string>

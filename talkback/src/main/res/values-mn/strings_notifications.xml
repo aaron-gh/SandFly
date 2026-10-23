@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Дэлгэцэнд хүрч байхад</string>
     <string name="notification_touch_read">Шууд унших</string>
     <string name="notification_touch_after">Мэдрэлт дуусах үед уншина уу</string>
-    <string name="notification_touch_skip">Чанга уншиж болохгүй</string>
+    <string name="notification_touch_skip">Уншихгүй</string>
     <string name="notification_during_calls_title">Дуудлагын үеэр</string>
     <string name="notification_honour_silent_title">Чимээгүй горимд биш</string>
     <string name="notification_honour_vibrate_title">Чичиргээний горимд биш</string>
@@ -236,11 +236,11 @@
     <string name="notification_type_from_app">Аппликешны мэдэгдэл</string>
     <string name="notification_type_foreground">Аппликешн урд талд</string>
     <string name="notification_type_contains">Мэдэгдэл агуулж байна</string>
-    <string name="notification_type_battery">Батерейны түвшин доогуур байна</string>
+    <string name="notification_type_battery">Батерейны түвшин үүнээс доош</string>
     <string name="notification_type_charging">Цэнэглэж байна</string>
     <string name="notification_type_landscape">Хэвтээ</string>
     <string name="notification_type_silent">Чимээгүй эсвэл чичиргээний горим</string>
-    <string name="notification_type_media">Медиа тоглож байна</string>
+    <string name="notification_type_media">Медиа тоглуулж байна</string>
     <string name="notification_bluetooth_any">Ямар ч төхөөрөмж</string>
     <string name="notification_wifi_hint">Сүлжээний нэр</string>
     <string name="notification_choose_app">Апп сонгоно уу</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">дуут профайл ашиглан уншина уу</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> профайлаар унших</string>
     <string name="notification_action_voice_sandfly">SandFly-ийн хоолойгоор уншина уу</string>
-    <string name="notification_voice_removed">Дуут профайлыг устгасан</string>
+    <string name="notification_voice_removed">Устгагдсан дуут профайл</string>
     <string name="notification_action_format_value">ярианы форматыг ашиглах <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> хүртэл унших</string>
     <string name="notification_off">Унтраалттай</string>

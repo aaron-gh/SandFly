@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">નવી સૂચના મોટેથી વાંચશો નહીં</string>
     <string name="notification_queue_interrupt">અટકાવો</string>
     <string name="notification_queue_queue">પછી વાંચો</string>
-    <string name="notification_url_omit">છોડો</string>
+    <string name="notification_url_omit">છોડી દો</string>
     <string name="notification_url_replace">નીચેનું લખાણ કહો</string>
     <string name="notification_url_domain">ફક્ત સાઇટ વાંચો</string>
     <string name="notification_url_full">આખી લિંક વાંચો</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">જ્યારે સ્ક્રીનને ટચ કરવામાં આવે છે</string>
     <string name="notification_touch_read">તરત જ વાંચો</string>
     <string name="notification_touch_after">જ્યારે સ્પર્શ સમાપ્ત થાય ત્યારે વાંચો</string>
-    <string name="notification_touch_skip">મોટેથી વાંચશો નહીં</string>
+    <string name="notification_touch_skip">વાંચશો નહીં</string>
     <string name="notification_during_calls_title">કોલ્સ દરમિયાન</string>
     <string name="notification_honour_silent_title">સાયલન્ટ મોડમાં નથી</string>
     <string name="notification_honour_vibrate_title">વાઇબ્રેટ મોડમાં નથી</string>
@@ -236,11 +236,11 @@
     <string name="notification_type_from_app">એપ્લિકેશન તરફથી સૂચના</string>
     <string name="notification_type_foreground">અગ્રભાગમાં એપ્લિકેશન</string>
     <string name="notification_type_contains">સૂચના સમાવે છે</string>
-    <string name="notification_type_battery">નીચે બેટરી સ્તર</string>
+    <string name="notification_type_battery">બેટરી સ્તર આનાથી ઓછું</string>
     <string name="notification_type_charging">ચાર્જિંગ</string>
     <string name="notification_type_landscape">લેન્ડસ્કેપ</string>
     <string name="notification_type_silent">મૌન અથવા વાઇબ્રેટ મોડ</string>
-    <string name="notification_type_media">મીડિયા રમી રહ્યું છે</string>
+    <string name="notification_type_media">મીડિયા ચાલી રહ્યું છે</string>
     <string name="notification_bluetooth_any">કોઈપણ ઉપકરણ</string>
     <string name="notification_wifi_hint">નેટવર્ક નામ</string>
     <string name="notification_choose_app">એક એપ્લિકેશન પસંદ કરો</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">વૉઇસ પ્રોફાઇલ સાથે વાંચો</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> સાથે વાંચો</string>
     <string name="notification_action_voice_sandfly">SandFly ના અવાજ સાથે વાંચો</string>
-    <string name="notification_voice_removed">વૉઇસ પ્રોફાઇલ દૂર કરી</string>
+    <string name="notification_voice_removed">દૂર કરેલી વૉઇસ પ્રોફાઇલ</string>
     <string name="notification_action_format_value">સ્પીચ ફોર્મેટનો ઉપયોગ કરો <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> સુધી વાંચો</string>
     <string name="notification_off">બંધ</string>

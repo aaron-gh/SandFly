@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">اعلان جدید را با صدای بلند نخوانید</string>
     <string name="notification_queue_interrupt">قطع کردن</string>
     <string name="notification_queue_queue">خواندن پس از آن</string>
-    <string name="notification_url_omit">کنار گذاشتن</string>
+    <string name="notification_url_omit">حذف</string>
     <string name="notification_url_replace">متن زیر را بگویید</string>
     <string name="notification_url_domain">فقط سایت را بخوانید</string>
     <string name="notification_url_full">لینک کامل را بخوانید</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">در حالی که صفحه نمایش لمس می شود</string>
     <string name="notification_touch_read">خواندن فوری</string>
     <string name="notification_touch_after">وقتی لمس تمام شد بخوانید</string>
-    <string name="notification_touch_skip">با صدای بلند نخوانید</string>
+    <string name="notification_touch_skip">خوانده نشود</string>
     <string name="notification_during_calls_title">در طول تماس</string>
     <string name="notification_honour_silent_title">در حالت بی صدا نیست</string>
     <string name="notification_honour_vibrate_title">در حالت ویبره نیست</string>
@@ -237,7 +237,7 @@
     <string name="notification_type_foreground">برنامه در پیش زمینه</string>
     <string name="notification_type_contains">اعلان شامل</string>
     <string name="notification_type_battery">سطح باتری کمتر از</string>
-    <string name="notification_type_charging">شارژ کردن</string>
+    <string name="notification_type_charging">در حال شارژ</string>
     <string name="notification_type_landscape">افقی</string>
     <string name="notification_type_silent">حالت بی صدا یا ارتعاشی</string>
     <string name="notification_type_media">پخش رسانه</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">با نمایه صوتی بخوانید</string>
     <string name="notification_action_voice_value">با <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> بخوانید</string>
     <string name="notification_action_voice_sandfly">با صدای SandFly بخوانید</string>
-    <string name="notification_voice_removed">نمایه صوتی حذف شد</string>
+    <string name="notification_voice_removed">نمایه صوتی حذف‌شده</string>
     <string name="notification_action_format_value">از قالب گفتار استفاده کنید <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">تا <xliff:g id="words" example="10 words">%1$s</xliff:g> بخوانید</string>
     <string name="notification_off">خاموش</string>

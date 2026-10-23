@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Kun näyttöä kosketetaan</string>
     <string name="notification_touch_read">Lue heti</string>
     <string name="notification_touch_after">Lue, kun kosketus päättyy</string>
-    <string name="notification_touch_skip">Älä lue ääneen</string>
+    <string name="notification_touch_skip">Älä lue</string>
     <string name="notification_during_calls_title">Puheluiden aikana</string>
     <string name="notification_honour_silent_title">Ei äänettömässä tilassa</string>
     <string name="notification_honour_vibrate_title">Ei värinätilassa</string>
@@ -227,9 +227,9 @@
     <string name="notification_template_screen_off">Vain näytön ollessa pois päältä</string>
     <string name="notification_template_locked_private">Vain sovelluksen nimi, kun puhelin on lukittu</string>
     <string name="notification_template_short_on_battery">Lyhyt, kun laite ei lataudu</string>
-    <string name="notification_type_bluetooth">Bluetooth laite</string>
+    <string name="notification_type_bluetooth">Bluetooth-laite</string>
     <string name="notification_type_wired">Johdolliset kuulokkeet</string>
-    <string name="notification_type_wifi">Wi-Fi verkkoon</string>
+    <string name="notification_type_wifi">Wi-Fi-verkko</string>
     <string name="notification_type_time">Kellonaika</string>
     <string name="notification_type_screen">Näyttö päällä</string>
     <string name="notification_type_locked">Puhelin lukittu</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">lukea ääniprofiililla</string>
     <string name="notification_action_voice_value">lue profiililla <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">lukea SandFly äänellä</string>
-    <string name="notification_voice_removed">Ääniprofiili poistettu</string>
+    <string name="notification_voice_removed">Poistettu ääniprofiili</string>
     <string name="notification_action_format_value">käytä puhemuotoa <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">lue <xliff:g id="words" example="10 words">%1$s</xliff:g> asti</string>
     <string name="notification_off">Pois päältä</string>

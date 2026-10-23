@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Lees de nieuwe melding niet hardop voor</string>
     <string name="notification_queue_interrupt">Onderbreken</string>
     <string name="notification_queue_queue">Erna voorlezen</string>
-    <string name="notification_url_omit">Laat weg</string>
+    <string name="notification_url_omit">Weglaten</string>
     <string name="notification_url_replace">Spreek de onderstaande tekst uit</string>
     <string name="notification_url_domain">Lees alleen de site</string>
     <string name="notification_url_full">Lees de hele link</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Terwijl het scherm wordt aangeraakt</string>
     <string name="notification_touch_read">Lees meteen</string>
     <string name="notification_touch_after">Lees wanneer de aanraking eindigt</string>
-    <string name="notification_touch_skip">Lees niet hardop</string>
+    <string name="notification_touch_skip">Niet lezen</string>
     <string name="notification_during_calls_title">Tijdens gesprekken</string>
     <string name="notification_honour_silent_title">Niet in stille modus</string>
     <string name="notification_honour_vibrate_title">Niet in trilmodus</string>
@@ -227,16 +227,16 @@
     <string name="notification_template_screen_off">Alleen als het scherm uit staat</string>
     <string name="notification_template_locked_private">Alleen de app-naam wanneer de telefoon is vergrendeld</string>
     <string name="notification_template_short_on_battery">Kort lezen wanneer niet wordt opgeladen</string>
-    <string name="notification_type_bluetooth">Bluetooth apparaat</string>
+    <string name="notification_type_bluetooth">Bluetooth-apparaat</string>
     <string name="notification_type_wired">Bedrade hoofdtelefoon</string>
-    <string name="notification_type_wifi">Wi-Fi netwerk</string>
+    <string name="notification_type_wifi">Wifi-netwerk</string>
     <string name="notification_type_time">Tijd van de dag</string>
     <string name="notification_type_screen">Scherm aan</string>
     <string name="notification_type_locked">Telefoon vergrendeld</string>
     <string name="notification_type_from_app">Melding vanuit een app</string>
     <string name="notification_type_foreground">App op de voorgrond</string>
-    <string name="notification_type_contains">Kennisgeving bevat</string>
-    <string name="notification_type_battery">Batterijniveau hieronder</string>
+    <string name="notification_type_contains">Melding bevat</string>
+    <string name="notification_type_battery">Batterijniveau lager dan</string>
     <string name="notification_type_charging">Opladen</string>
     <string name="notification_type_landscape">Liggend</string>
     <string name="notification_type_silent">Stille of trilmodus</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">lezen met een stemprofiel</string>
     <string name="notification_action_voice_value">lees met <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">lees met de stem van SandFly</string>
-    <string name="notification_voice_removed">Spraakprofiel verwijderd</string>
+    <string name="notification_voice_removed">Verwijderd stemprofiel</string>
     <string name="notification_action_format_value">gebruik het spraakformaat <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">lees tot <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Uit</string>

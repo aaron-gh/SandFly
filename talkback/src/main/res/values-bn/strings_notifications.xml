@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">নতুন বিজ্ঞপ্তি জোরে জোরে পড়বেন না</string>
     <string name="notification_queue_interrupt">বাধা দিন</string>
     <string name="notification_queue_queue">পরে পড়ুন</string>
-    <string name="notification_url_omit">ছেড়ে দাও</string>
+    <string name="notification_url_omit">বাদ দিন</string>
     <string name="notification_url_replace">নিচের লেখাটি বলুন</string>
     <string name="notification_url_domain">শুধুমাত্র সাইট পড়ুন</string>
     <string name="notification_url_full">পুরো লিঙ্ক পড়ুন</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">যখন পর্দা স্পর্শ করা হয়</string>
     <string name="notification_touch_read">এখুনি পড়ুন</string>
     <string name="notification_touch_after">স্পর্শ শেষ হলে পড়ুন</string>
-    <string name="notification_touch_skip">জোরে জোরে পড়বেন না</string>
+    <string name="notification_touch_skip">পড়বেন না</string>
     <string name="notification_during_calls_title">কল চলাকালীন</string>
     <string name="notification_honour_silent_title">সাইলেন্ট মোডে নয়</string>
     <string name="notification_honour_vibrate_title">ভাইব্রেট মোডে নেই</string>
@@ -235,7 +235,7 @@
     <string name="notification_type_locked">ফোন লক</string>
     <string name="notification_type_from_app">একটি অ্যাপ থেকে বিজ্ঞপ্তি</string>
     <string name="notification_type_foreground">অগ্রভাগে অ্যাপ</string>
-    <string name="notification_type_contains">বিজ্ঞপ্তি রয়েছে</string>
+    <string name="notification_type_contains">বিজ্ঞপ্তিতে আছে</string>
     <string name="notification_type_battery">ব্যাটারির স্তর নীচে</string>
     <string name="notification_type_charging">চার্জিং</string>
     <string name="notification_type_landscape">ল্যান্ডস্কেপ</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">ভয়েস প্রোফাইল দিয়ে পড়ুন</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> দিয়ে পড়ুন</string>
     <string name="notification_action_voice_sandfly">SandFly এর কণ্ঠে পড়ুন</string>
-    <string name="notification_voice_removed">ভয়েস প্রোফাইল সরানো হয়েছে</string>
+    <string name="notification_voice_removed">সরানো ভয়েস প্রোফাইল</string>
     <string name="notification_action_format_value">বক্তৃতা বিন্যাস <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> ব্যবহার করুন</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> পর্যন্ত পড়ুন</string>
     <string name="notification_off">বন্ধ</string>

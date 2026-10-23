@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Yangi bildirishnomani ovoz chiqarib o\'qimang</string>
     <string name="notification_queue_interrupt">Toʻxtatish</string>
     <string name="notification_queue_queue">Undan keyin oʻqish</string>
-    <string name="notification_url_omit">Tashlab qo\'ying</string>
+    <string name="notification_url_omit">Oʻtkazib yuborish</string>
     <string name="notification_url_replace">Quyidagi matnni ayting</string>
     <string name="notification_url_domain">Faqat saytni o\'qing</string>
     <string name="notification_url_full">To\'liq havolani o\'qing</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Ekranga tegilganda</string>
     <string name="notification_touch_read">Darhol oʻqish</string>
     <string name="notification_touch_after">Tegish tugashi bilan o\'qing</string>
-    <string name="notification_touch_skip">Ovoz chiqarib o\'qimang</string>
+    <string name="notification_touch_skip">Oʻqimaslik</string>
     <string name="notification_during_calls_title">Qo\'ng\'iroqlar paytida</string>
     <string name="notification_honour_silent_title">Ovozsiz rejimda emas</string>
     <string name="notification_honour_vibrate_title">Vibratsiyali rejimda emas</string>
@@ -228,15 +228,15 @@
     <string name="notification_template_locked_private">Telefon qulflanganda faqat ilova nomi</string>
     <string name="notification_template_short_on_battery">Zaryad qilmaganda qisqacha o\'qing</string>
     <string name="notification_type_bluetooth">Bluetooth qurilma</string>
-    <string name="notification_type_wired">Simli minigarnituralar</string>
+    <string name="notification_type_wired">Simli quloqchinlar</string>
     <string name="notification_type_wifi">Wi-Fi tarmoq</string>
     <string name="notification_type_time">Kun vaqti</string>
     <string name="notification_type_screen">Ekran yoqilgan</string>
     <string name="notification_type_locked">Telefon qulflangan</string>
     <string name="notification_type_from_app">Ilovadan bildirishnoma</string>
     <string name="notification_type_foreground">Ilova oldingi planda</string>
-    <string name="notification_type_contains">Bildirishnoma mavjud</string>
-    <string name="notification_type_battery">Batareya darajasi past</string>
+    <string name="notification_type_contains">Bildirishnomada bor</string>
+    <string name="notification_type_battery">Batareya darajasi quyidagidan past</string>
     <string name="notification_type_charging">Zaryadlanmoqda</string>
     <string name="notification_type_landscape">Yotiq</string>
     <string name="notification_type_silent">Ovozsiz yoki tebranish rejimi</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">ovozli profil bilan o\'qing</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> bilan oʻqish</string>
     <string name="notification_action_voice_sandfly">SandFly ovozi bilan o\'qing</string>
-    <string name="notification_voice_removed">Ovozli profil olib tashlandi</string>
+    <string name="notification_voice_removed">Olib tashlangan ovoz profili</string>
     <string name="notification_action_format_value">nutq formatidan foydalaning <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> gacha o\'qing</string>
     <string name="notification_off">Oʻchiq</string>

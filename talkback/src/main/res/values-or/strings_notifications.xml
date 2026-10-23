@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">ନୂତନ ବିଜ୍ଞପ୍ତିକୁ ଉଚ୍ଚ ସ୍ୱରରେ ପ read ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_queue_interrupt">ବାଧା ଦିଅନ୍ତୁ</string>
     <string name="notification_queue_queue">ପରେ ପଢ଼ନ୍ତୁ</string>
-    <string name="notification_url_omit">ଛାଡିଦିଅ</string>
+    <string name="notification_url_omit">ବାଦ ଦିଅନ୍ତୁ</string>
     <string name="notification_url_replace">ନିମ୍ନରେ ଲେଖା କୁହନ୍ତୁ</string>
     <string name="notification_url_domain">କେବଳ ସାଇଟ୍ ପ Read ନ୍ତୁ</string>
     <string name="notification_url_full">ପୁରା ଲିଙ୍କ୍ ପ Read ନ୍ତୁ</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">ଯେତେବେଳେ ସ୍କ୍ରିନ୍ ସ୍ପର୍ଶ ହୁଏ</string>
     <string name="notification_touch_read">ତୁରନ୍ତ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_touch_after">ସ୍ପର୍ଶ ସମାପ୍ତ ହେଲେ ପ Read ନ୍ତୁ</string>
-    <string name="notification_touch_skip">ଉଚ୍ଚ ସ୍ୱରରେ ପ read ଼ନ୍ତୁ ନାହିଁ</string>
+    <string name="notification_touch_skip">ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_during_calls_title">କଲ୍ ସମୟରେ</string>
     <string name="notification_honour_silent_title">ନୀରବ ମୋଡରେ ନୁହେଁ</string>
     <string name="notification_honour_vibrate_title">କମ୍ପନ ମୋଡରେ ନୁହେଁ</string>
@@ -236,11 +236,11 @@
     <string name="notification_type_from_app">ଏକ ଆପରୁ ବିଜ୍ଞପ୍ତି</string>
     <string name="notification_type_foreground">ଅଗ୍ରଭାଗରେ ଆପ୍</string>
     <string name="notification_type_contains">ବିଜ୍ଞପ୍ତି ଧାରଣ କରେ</string>
-    <string name="notification_type_battery">ନିମ୍ନରେ ବ୍ୟାଟେରୀ ସ୍ତର</string>
+    <string name="notification_type_battery">ବ୍ୟାଟେରୀ ସ୍ତର ଏହାଠାରୁ କମ୍</string>
     <string name="notification_type_charging">ଚାର୍ଜିଂ</string>
     <string name="notification_type_landscape">ଲ୍ୟାଣ୍ଡସ୍କେପ୍</string>
     <string name="notification_type_silent">ନୀରବ କିମ୍ବା କମ୍ପନ ମୋଡ୍</string>
-    <string name="notification_type_media">ମିଡିଆ ଖେଳିବା</string>
+    <string name="notification_type_media">ମିଡିଆ ଚାଲୁଛି</string>
     <string name="notification_bluetooth_any">ଯେକୌଣସି ଉପକରଣ</string>
     <string name="notification_wifi_hint">ନେଟୱର୍କ ନାମ</string>
     <string name="notification_choose_app">ଏକ ଆପ୍ ବାଛନ୍ତୁ</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">ଏକ ସ୍ୱର ପ୍ରୋଫାଇଲ୍ ସହିତ ପ read ଼ନ୍ତୁ</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ସହିତ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_action_voice_sandfly">SandFly ର ସ୍ୱର ସହିତ ପ read ଼</string>
-    <string name="notification_voice_removed">ଭଏସ୍ ପ୍ରୋଫାଇଲ୍ ଅପସାରିତ ହୋଇଛି</string>
+    <string name="notification_voice_removed">ଅପସାରିତ ଭଏସ୍ ପ୍ରୋଫାଇଲ୍</string>
     <string name="notification_action_format_value">ବକ୍ତବ୍ୟ ଫର୍ମାଟ୍ <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> ପର୍ଯ୍ୟନ୍ତ ପ read ନ୍ତୁ</string>
     <string name="notification_off">ବନ୍ଦ ଅଛି</string>

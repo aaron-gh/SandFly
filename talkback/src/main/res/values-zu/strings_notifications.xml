@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">Ungafundi isaziso esisha uphimisele</string>
     <string name="notification_queue_interrupt">Phazamisa</string>
     <string name="notification_queue_queue">Funda ngemva kwalokho</string>
-    <string name="notification_url_omit">Shiya ngaphandle</string>
+    <string name="notification_url_omit">Yeqa</string>
     <string name="notification_url_replace">Yisho umbhalo ongezansi</string>
     <string name="notification_url_domain">Funda isayithi kuphela</string>
     <string name="notification_url_full">Funda sonke isixhumanisi</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">Ngenkathi isikrini sithintwa</string>
     <string name="notification_touch_read">Funda ngaso leso sikhathi</string>
     <string name="notification_touch_after">Funda uma ukuthinta kuphela</string>
-    <string name="notification_touch_skip">Ungafundi uphimisele</string>
+    <string name="notification_touch_skip">Ungafundi</string>
     <string name="notification_during_calls_title">Ngesikhathi sezingcingo</string>
     <string name="notification_honour_silent_title">Hhayi kumodi yokuthula</string>
     <string name="notification_honour_vibrate_title">Hhayi kumodi yokudlidliza</string>
@@ -227,12 +227,12 @@
     <string name="notification_template_screen_off">Isikrini sicinyiwe kuphela</string>
     <string name="notification_template_locked_private">Igama lohlelo lokusebenza kuphela uma ifoni ivaliwe</string>
     <string name="notification_template_short_on_battery">Funda kafushane uma ungakhokhisi</string>
-    <string name="notification_type_bluetooth">Bluetooth idivayisi</string>
+    <string name="notification_type_bluetooth">Idivayisi ye-Bluetooth</string>
     <string name="notification_type_wired">Ama-headphone anentambo</string>
-    <string name="notification_type_wifi">Wi-Fi inethiwekhi</string>
+    <string name="notification_type_wifi">Inethiwekhi ye-Wi-Fi</string>
     <string name="notification_type_time">Isikhathi sosuku</string>
     <string name="notification_type_screen">Isikrini sivuliwe</string>
-    <string name="notification_type_locked">Ifoni ivaliwe</string>
+    <string name="notification_type_locked">Ifoni ikhiyiwe</string>
     <string name="notification_type_from_app">Isaziso esiphuma kuhlelo lokusebenza</string>
     <string name="notification_type_foreground">Uhlelo lokusebenza ngaphambili</string>
     <string name="notification_type_contains">Isaziso siqukethe</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">funda ngephrofayili yezwi</string>
     <string name="notification_action_voice_value">funda no-<xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">funda ngezwi lika-SandFly</string>
-    <string name="notification_voice_removed">Susa iphrofayela yezwi</string>
+    <string name="notification_voice_removed">Iphrofayela yezwi esusiwe</string>
     <string name="notification_action_format_value">sebenzisa ifomethi yenkulumo <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">funda kufika ku-<xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Kuvaliwe</string>

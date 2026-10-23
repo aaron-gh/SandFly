@@ -12,7 +12,7 @@
     <string name="notification_queue_skip">သတိပေးချက်အသစ်ကို အသံထွက်မဖတ်ပါနှင့်</string>
     <string name="notification_queue_interrupt">ကြားဖြတ်ရန်</string>
     <string name="notification_queue_queue">ပြီးမှ ဖတ်ရန်</string>
-    <string name="notification_url_omit">ထွက်သွားပါ</string>
+    <string name="notification_url_omit">ချန်ထားရန်</string>
     <string name="notification_url_replace">အောက်ပါစာသားကိုပြောပါ</string>
     <string name="notification_url_domain">ဆိုဒ်ကိုသာဖတ်ပါ</string>
     <string name="notification_url_full">လင့်ခ်တစ်ခုလုံးကို ဖတ်ပါ</string>
@@ -82,7 +82,7 @@
     <string name="notification_touch_title">မျက်နှာပြင်ကို ထိနေချိန်</string>
     <string name="notification_touch_read">ချက်ချင်းဖတ်ပါ</string>
     <string name="notification_touch_after">ထိတွေ့မှု ပြီးဆုံးသည့်အခါ ဖတ်ပါ</string>
-    <string name="notification_touch_skip">အသံထွက်မဖတ်ပါနှင့်</string>
+    <string name="notification_touch_skip">မဖတ်ရန်</string>
     <string name="notification_during_calls_title">ဖုန်းခေါ်ဆိုနေစဉ်</string>
     <string name="notification_honour_silent_title">အသံတိတ်မုဒ်တွင် မရှိပါ</string>
     <string name="notification_honour_vibrate_title">တုန်ခါမှုမုဒ်တွင် မရှိပါ</string>
@@ -231,16 +231,16 @@
     <string name="notification_type_wired">ကြိုးတပ်နားကြပ်များ</string>
     <string name="notification_type_wifi">Wi-Fi ကွန်ရက်</string>
     <string name="notification_type_time">နေ့အချိန်</string>
-    <string name="notification_type_screen">မျက်နှာပြင်ဖွင့်ပါ</string>
+    <string name="notification_type_screen">မျက်နှာပြင် ဖွင့်ထားသည်</string>
     <string name="notification_type_locked">ဖုန်းသော့ခတ်ထားသည်</string>
     <string name="notification_type_from_app">အက်ပ်တစ်ခုမှ အသိပေးချက်</string>
-    <string name="notification_type_foreground">အက်ပ်သည် နောက်ခံတွင်ရှိသည်</string>
-    <string name="notification_type_contains">အသိပေးချက်ပါရှိသည်</string>
+    <string name="notification_type_foreground">အက်ပ် ရှေ့တွင်ရှိသည်</string>
+    <string name="notification_type_contains">အကြောင်းကြားချက်တွင် ပါဝင်သည်</string>
     <string name="notification_type_battery">ဘက်ထရီအဆင့်အောက်</string>
     <string name="notification_type_charging">အားသွင်းခြင်း</string>
     <string name="notification_type_landscape">ဘေးတိုက်</string>
     <string name="notification_type_silent">အသံတိတ် သို့မဟုတ် တုန်ခါမှုမုဒ်</string>
-    <string name="notification_type_media">မီဒီယာကစားခြင်း</string>
+    <string name="notification_type_media">မီဒီယာ ဖွင့်နေခြင်း</string>
     <string name="notification_bluetooth_any">စက်ပစ္စည်းတစ်ခုခု</string>
     <string name="notification_wifi_hint">ကွန်ရက်အမည်</string>
     <string name="notification_choose_app">အက်ပ်တစ်ခုကို ရွေးပါ</string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">အသံဖိုင်ဖြင့်ဖတ်ပါ</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ဖြင့်ဖတ်ပါ</string>
     <string name="notification_action_voice_sandfly">SandFly အသံဖြင့် ဖတ်ပါ</string>
-    <string name="notification_voice_removed">အသံပရိုဖိုင်ကို ဖယ်ရှားခဲ့သည်</string>
+    <string name="notification_voice_removed">ဖယ်ရှားထားသော အသံပရိုဖိုင်</string>
     <string name="notification_action_format_value">စကားပြောဖော်မတ် <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> ကိုသုံးပါ</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> အထိဖတ်ပါ</string>
     <string name="notification_off">ပိတ်</string>
