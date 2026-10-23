@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">စာရိုက်နည်း</string>
   <string name="title_pref_typing_long_tap_duration">စာရိုက်စဉ် တို့ထိ၍ ဖိထားမှု ကြာချိန်</string>
   <string name="title_pref_touch_explore_timeout">စာရိုက်သွင်းမှု ကြန့်ကြာချိန်</string>
-  <string name="message_pref_touch_explore_latency">ကီးဘုတ်ကိုထိပြီးနောက် ပိုတိုသောနှောင့်နှေးခြင်းသည် SandFly စကားပြောဆိုခြင်းကို ပိုမိုမြန်ဆန်စေသည်။\n\n နှောင့်နှေးမှုကို ရွေးပါ</string>
+  <string name="message_pref_touch_explore_latency">နှောင့်နှေးချိန် တိုလေ ကီးဘုတ်ကို ထိပြီးနောက် SandFly စောစော ပြောလေ ဖြစ်သည်။\n\nနှောင့်နှေးချိန် ရွေးပါ</string>
   <string name="title_pref_touch_focus_timeout">ပြရန်စောင့်ရချိန်</string>
   <string name="title_pref_talkback_gesture_detection">SandFly ရှိ လက်ဟန်များ စီမံရန်</string>
   <string name="toast_pref_talkback_gesture_detection">ဆက်တင်စတင်ရန် SandFly ပိတ်၍ ပြန်ဖွင့်နိုင်သည်။</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">အများသုံးနိုင်မှု အသံ</string>
   <string name="title_pref_touch_explore_latency">စာရိုက်သွင်းမှု ကြန့်ကြာချိန်</string>
   <string name="title_pref_touch_focus_latency">ရွေးချယ်မှုနှောင့်နှေးခြင်း</string>
-  <string name="message_pref_touch_focus_latency">ပိုတိုသောနှောင့်နှေးခြင်းသည် SandFly စခရင်ကိုထိပြီးနောက် မြန်စေသည်</string>
+  <string name="message_pref_touch_focus_latency">နှောင့်နှေးချိန် တိုလေ မျက်နှာပြင်ကို ထိပြီးနောက် SandFly စောစော ပြောလေ ဖြစ်သည်</string>
   <string name="message_pref_typing_method_prefix">စာရိုက်ချိန်နှောင့်နှေးမှု အနည်းဆုံးဖြစ်စေရန်အတွက် “ကီးရွေးရန် လက်ချောင်းဖြင့် ဖိထားပြီး လွှတ်လိုက်ပါ” ကို ရွေးပါ</string>
   <string name="message_pref_typing_method_postfix">အချိန်မရွေး စာရိုက်ရန်အတွက် ဖိရွေးပြီး စာရိုက်ခြင်းကိုလည်း သုံးနိုင်သည်။ လုပ်နည်းမှာ ကီးတစ်ခုခုကိုရွေးရန် လက်တစ်ချောင်းဖြင့် ဖိထားပြီး ဖန်သားပြင်ကို တို့ရန် အခြားလက်တစ်ချောင်းသုံးပါ။</string>
   <string name="title_pref_talkback_speech_rate">စကားပြောနှုန်း</string>
@@ -904,7 +904,7 @@
   <string name="split_tap_everywhere_title">နေရာတိုင်းတွင် ဖိရွေးပြီး စာရိုက်ခြင်း</string>
   <string name="split_tap_everywhere_text">ကီးဘုတ်ပြင်ပတွင်ပင် အရာများကိုစတင်ရန် ဖိရွေးပြီး စာရိုက်ခြင်းကို နေရာတိုင်း၌ သုံးနိုင်ပါပြီ။ ၎င်းကိုသုံးရန် စခရင်ကို လက်တစ်ချောင်းဖြင့် ထိတွေ့ပြီးနောက် ပထမလက်ချောင်းကို မမြှောက်ဘဲ လောလောဆယ် အထူးပြထားသော အရာကို စတင်ရန် အခြားလက်ချောင်းဖြင့် စခရင်ကို တို့ပါ။</string>
   <string name="keyboard_enhanced_keymap_title">ကီးဘုတ်- အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံ</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly ယခုတွင် ညွှန်ကြားချက်အသစ်များနှင့် ဖြတ်လမ်းလင့်ခ်များစွာပါဝင်သည့် ရုပ်ပိုင်းဆိုင်ရာကီးဘုတ်များအတွက် \"အဆင့်မြင့်သောကီးမြေပုံ\" ရှိသည်။ ဤအဆင့်မြှင့်တင်မှုတွင် ရုပ်ပိုင်းဆိုင်ရာကီးဘုတ်များကို အားကိုးသော SandFly အသုံးပြုသူများအတွက် ပိုမိုထိရောက်သော ဝဘ်လမ်းညွှန်ခြင်း၊ လမ်းကြောင်းပြခြင်းနှင့် အပြန်အလှန်အကျိုးသက်ရောက်မှုအတွက် \"browse mode\" ပါဝင်သည်။ သင်သည် <xliff:g id="settings_path">%1$s</xliff:g>တွင် \"အဆင့်မြှင့်ထားသော သော့မြေပုံ\" သို့ ပြောင်းနိုင်သည်။\n\n သင်သည် မျက်မမြင်စာကြည့်မျက်နှာပြင်ကို အသုံးပြုပါက၊ သင်၏ Braille ဖန်သားပြင်မှ အကြောင်းအရာများကို တိုက်ရိုက်ဖြတ်ကျော်ရန် ဘရောက်ဆာမုဒ် ဖြတ်လမ်းအသစ်များကိုလည်း အသုံးပြုနိုင်သည်။ ဤပြောင်းလဲမှုကို လိုက်လျောညီထွေဖြစ်စေရန်အတွက် မျက်မမြင်စာမျက်မမြင်ဖြတ်လမ်းအချို့ကို ပြောင်းလဲခဲ့သည်။ <xliff:g id="braille_display_settings_path">%2$s</xliff:g>တွင် မျက်မမြင်စာမျက်မမြင်ဖြတ်လမ်းများအားလုံးကို ကြည့်ရှုနိုင်ပါသည်။</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly တွင် ယခု ရုပ်ပိုင်းဆိုင်ရာ ကီးဘုတ်များအတွက် “အဆင့်မြင့်ကီးမြေပုံ” ရှိပြီး ညွှန်ကြားချက်နှင့် ဖြတ်လမ်းအသစ်များစွာ ပါဝင်သည်။ ၎င်းတွင် “ဘရောက်စ်မုဒ်” ပါဝင်ပြီး ရုပ်ပိုင်းဆိုင်ရာ ကီးဘုတ်သုံးသော SandFly အသုံးပြုသူများအတွက် ဝဘ်တွင် သွားလာခြင်းနှင့် တုံ့ပြန်ခြင်းကို ပိုမိုထိရောက်လွယ်ကူစေသည်။ <xliff:g id="settings_path">%1$s</xliff:g> တွင် “အဆင့်မြင့်ကီးမြေပုံ” သို့ ပြောင်းနိုင်သည်။\n\nမျက်မမြင်စာဖတ်ကိရိယာ သုံးပါက ဘရောက်စ်မုဒ်၏ ဖြတ်လမ်းအသစ်များဖြင့် အကြောင်းအရာများကို ကိရိယာမှ တိုက်ရိုက် ဖြတ်သွားနိုင်သည်။ ဤပြောင်းလဲမှုအတွက် မျက်မမြင်စာဖတ်ကိရိယာ ဖြတ်လမ်းအချို့ကို ပြောင်းထားသည်။ ဖြတ်လမ်းအားလုံး၏ စာရင်းကို <xliff:g id="braille_display_settings_path">%2$s</xliff:g> တွင် ကြည့်နိုင်သည်။</string>
   <string name="keyboard_shortcuts_link">SandFly ဆက်တင်များ &gt; လက်ကွက်ဖြတ်လမ်းများ</string>
   <string name="keyboard_shortcuts_link_tts">SandFly ဆက်တင်များ ထို့နောက် လက်ကွက်ဖြတ်လမ်းများ</string>
   <string name="braille_display_settings_link">မျက်မမြင်စာဖတ်ကိရိယာ ဆက်တင်များ</string>

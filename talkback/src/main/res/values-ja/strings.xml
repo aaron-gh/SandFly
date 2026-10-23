@@ -317,7 +317,7 @@
   <string name="title_pref_typing_confirmation">入力方法</string>
   <string name="title_pref_typing_long_tap_duration">入力時に長押しする時間</string>
   <string name="title_pref_touch_explore_timeout">入力フォーカス遅延</string>
-  <string name="message_pref_touch_explore_latency">遅延を短くすると、キーボードに触れた後、SandFly が早く話します。\n\n 遅延を選択してください</string>
+  <string name="message_pref_touch_explore_latency">遅延を短くすると、キーボードに触れてから SandFly が読み上げるまでの時間が短くなります。\n\n遅延を選択</string>
   <string name="title_pref_touch_focus_timeout">フォーカス遅延</string>
   <string name="title_pref_talkback_gesture_detection">SandFly でジェスチャーを処理する</string>
   <string name="toast_pref_talkback_gesture_detection">設定を有効にするには、SandFly をオフにして再度オンにします。</string>
@@ -754,7 +754,7 @@
   <string name="title_pref_a11y_volume">ユーザー補助機能の音量</string>
   <string name="title_pref_touch_explore_latency">入力フォーカス遅延</string>
   <string name="title_pref_touch_focus_latency">フォーカス遅延</string>
-  <string name="message_pref_touch_focus_latency">遅延を短くすると、画面をタッチした後、SandFly が早く話します</string>
+  <string name="message_pref_touch_focus_latency">遅延を短くすると、画面に触れてから SandFly が読み上げるまでの時間が短くなります</string>
   <string name="message_pref_typing_method_prefix">入力時の遅延を最小限に抑えるには、[指でキーを選択してから離す] を選択します</string>
   <string name="message_pref_typing_method_postfix">また、いつでもスプリット タップを使用して入力できます。これを行うには、1 本の指でキーのいずれかを長押しし、別の指で画面をタップします。</string>
   <string name="title_pref_talkback_speech_rate">音声の速度</string>
@@ -903,7 +903,7 @@
   <string name="split_tap_everywhere_title">どこでもスプリット タップ</string>
   <string name="split_tap_everywhere_text">スプリット タップをどこでも使用して項目を有効にできるようになりました。キーボード以外でも使用できます。使用するには、1 本の指で画面上の項目を探し、その指を置いたまま別の指で画面をタップすると、現在フォーカスのある項目が有効になります。</string>
   <string name="keyboard_enhanced_keymap_title">キーボード: 拡張キーマップ</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly には、さまざまな新しいコマンドとショートカットを備えた物理キーボード用の「拡張キーマップ」が追加されました。この機能強化には、Web ナビゲーションをより効率化し、物理キーボードに依存する SandFly ユーザーのナビゲーションと対話を合理化するための「ブラウズ モード」が含まれています。 <xliff:g id="settings_path">%1$s</xliff:g>.\n\nで「拡張キーマップ」に切り替えることができます。点字ディスプレイを使用している場合は、新しい参照モードのショートカットを使用して、点字ディスプレイから直接コンテンツを移動することもできます。この変更に対応するために、点字表示のショートカットの一部が変更されました。 <xliff:g id="braille_display_settings_path">%2$s</xliff:g> ですべての点字表示ショートカットのリストを確認できます。</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly に、物理キーボード用の「拡張キーマップ」が追加されました。さまざまな新しいコマンドとショートカットを利用できます。この機能には、ウェブを効率よく移動できる「ブラウズモード」が含まれており、物理キーボードを使う SandFly ユーザーの操作が簡単になります。「拡張キーマップ」には <xliff:g id="settings_path">%1$s</xliff:g> で切り替えられます。\n\n点字ディスプレイを使用している場合は、ブラウズモードの新しいショートカットで、点字ディスプレイから直接コンテンツ内を移動することもできます。この変更に合わせて、点字ディスプレイのショートカットの一部が変更されました。点字ディスプレイのショートカットの一覧は <xliff:g id="braille_display_settings_path">%2$s</xliff:g> で確認できます。</string>
   <string name="keyboard_shortcuts_link">[SandFly の設定] &gt; [キーボード ショートカット] で</string>
   <string name="keyboard_shortcuts_link_tts">[SandFly の設定]、[キーボード ショートカット] の順に選択して</string>
   <string name="braille_display_settings_link">点字ディスプレイの設定</string>

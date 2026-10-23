@@ -2192,7 +2192,7 @@
     <string name="title_pref_speaker_devices">连接这些设备时使用手机扬声器</string>
     <string name="summary_pref_speaker_devices_none">无</string>
     <string name="summary_pref_speaker_devices_no_devices">尚未连接Bluetooth或有线设备</string>
-    <string name="message_pref_touch_explore_latency">较短的延迟使SandFly在您触摸键盘后更快说话。\n\n选择延迟</string>
+    <string name="message_pref_touch_explore_latency">延迟越短，SandFly 在您触摸键盘后就会越快开始朗读。\n\n选择延迟</string>
     <string name="shortcut_title_open_app">打开应用程序</string>
     <string name="shortcut_open_app">打开<xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">滚动到顶部</string>
@@ -2302,7 +2302,7 @@
     <string name="title_keyboard_echo_handwriting_keyboard">手写键盘输入回声</string>
     <string name="title_keyboard_echo_braille_display">盲文显示器输入回声</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="keyboard_enhanced_keymap_text">SandFly 现在拥有适用于物理键盘的“增强型键盘映射”，其中包含各种新命令和快捷键。此增强功能包括“浏览模式”，可实现更高效的 Web 导航，为依赖物理键盘的 SandFly 用户简化导航和交互。您可以切换到 <xliff:g id="settings_path">%1$s</xliff:g>.\n\n中的“增强型键盘映射”。如果您使用盲文显示器，您还可以使用新的浏览模式快捷方式直接从盲文显示器浏览内容。一些盲文显示快捷方式已更改以适应此更改。您可以在<xliff:g id="braille_display_settings_path">%2$s</xliff:g>中查看所有盲文显示器快捷方式的列表。</string>
+    <string name="keyboard_enhanced_keymap_text">SandFly 现在为实体键盘提供“增强型按键映射”，其中包含多种新命令和快捷键。它包括“浏览模式”，可让使用实体键盘的 SandFly 用户更高效地浏览网页并与内容互动。您可以在 <xliff:g id="settings_path">%1$s</xliff:g> 中切换到“增强型按键映射”。\n\n如果您使用盲文显示器，还可以使用新的浏览模式快捷键直接从盲文显示器浏览内容。为配合此变化，部分盲文显示器快捷键已更改。您可以在 <xliff:g id="braille_display_settings_path">%2$s</xliff:g> 中查看所有盲文显示器快捷键的列表。</string>
     <string name="image_qna_ask_by_voice">通过语音询问</string>
     <string name="image_qna_stop_listening">停止聆听</string>
     <string name="image_qna_type_question">输入问题</string>

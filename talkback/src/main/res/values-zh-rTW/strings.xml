@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">打字方法</string>
   <string name="title_pref_typing_long_tap_duration">輸入時的按住延遲時間</string>
   <string name="title_pref_touch_explore_timeout">輸入焦點延遲</string>
-  <string name="message_pref_touch_explore_latency">較短的延遲使SandFly在您觸摸鍵盤後更快說話。 \n\n選擇延遲</string>
+  <string name="message_pref_touch_explore_latency">延遲越短，SandFly 在你觸碰鍵盤後就會越快開始朗讀。\n\n選擇延遲</string>
   <string name="title_pref_touch_focus_timeout">焦點延遲</string>
   <string name="title_pref_talkback_gesture_detection">在 SandFly 中處理手勢</string>
   <string name="toast_pref_talkback_gesture_detection">將 SandFly 關閉再重新開啟，即可啟動設定。</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">無障礙工具音量</string>
   <string name="title_pref_touch_explore_latency">輸入焦點延遲</string>
   <string name="title_pref_touch_focus_latency">焦點延遲</string>
-  <string name="message_pref_touch_focus_latency">較短的延遲使SandFly在觸摸螢幕後更快說話</string>
+  <string name="message_pref_touch_focus_latency">延遲越短，SandFly 在你觸碰螢幕後就會越快開始朗讀</string>
   <string name="message_pref_typing_method_prefix">如要盡可能縮短輸入延遲時間，請選擇「用手指按住任何要選取的鍵，然後放開」</string>
   <string name="message_pref_typing_method_postfix">你也可以隨時使用多指輕觸功能輸入文字，方式如下：用一指按住任何鍵，再用另一指輕觸螢幕。</string>
   <string name="title_pref_talkback_speech_rate">語音速率</string>
@@ -904,7 +904,7 @@
   <string name="split_tap_everywhere_title">處處都能多指輕觸</string>
   <string name="split_tap_everywhere_text">現在處處都能使用多指輕觸功能啟動項目，即使在鍵盤以外的地方也沒問題。使用方式：用一指瀏覽螢幕並按住不放，再用另外一指輕觸螢幕，就能啟動目前焦點所在的項目。</string>
   <string name="keyboard_enhanced_keymap_title">鍵盤：強化版按鍵對應配置</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly 現在擁有適用於實體鍵盤的“增強型鍵盤映射”，其中包含各種新命令和快捷鍵。此增強功能包括“瀏覽模式”，可實現更有效率的 Web 導航，為依賴實體鍵盤的 SandFly 使用者簡化導航和互動。您可以切換到 <xliff:g id="settings_path">%1$s</xliff:g>.\n\n中的「增強型鍵盤映射」。如果您使用點字顯示器，您也可以使用新的瀏覽模式捷徑直接從點字顯示器瀏覽內容。一些點字顯示快捷方式已更改以適應此更改。您可以在<xliff:g id="braille_display_settings_path">%2$s</xliff:g>中查看所有點字顯示器捷徑的清單。</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly 現在為實體鍵盤提供「強化版按鍵對應配置」，當中包含多種新指令和快速鍵。它包括「瀏覽模式」，讓使用實體鍵盤的 SandFly 使用者能更有效率地瀏覽網頁及與內容互動。你可以在 <xliff:g id="settings_path">%1$s</xliff:g> 中切換至「強化版按鍵對應配置」。\n\n如果你使用點字顯示器，也可以使用新的瀏覽模式快速鍵，直接從點字顯示器瀏覽內容。為配合這項變更，部分點字顯示器快速鍵已變更。你可以在 <xliff:g id="braille_display_settings_path">%2$s</xliff:g> 中查看所有點字顯示器快速鍵的清單。</string>
   <string name="keyboard_shortcuts_link">「SandFly 設定」&gt;「鍵盤快速鍵」</string>
   <string name="keyboard_shortcuts_link_tts">「SandFly 設定」和「鍵盤快速鍵」</string>
   <string name="braille_display_settings_link">點字顯示器設定</string>

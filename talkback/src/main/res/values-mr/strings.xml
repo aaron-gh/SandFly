@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">टायपिंग पद्धत</string>
   <string name="title_pref_typing_long_tap_duration">टाइप करताना स्क्रीनवर विलंबला स्पर्श करून धरून ठेवा</string>
   <string name="title_pref_touch_explore_timeout">टाइप करताना फोकसमध्ये होणारा विलंब</string>
-  <string name="message_pref_touch_explore_latency">आपण कीबोर्डला स्पर्श केल्यानंतर थोडा विलंब SandFly लवकर बोलू शकतो.\n\nविलंब निवडा</string>
+  <string name="message_pref_touch_explore_latency">विलंब कमी असल्यास, तुम्ही कीबोर्डला स्पर्श केल्यानंतर SandFly लवकर बोलते.\n\nविलंब निवडा</string>
   <string name="title_pref_touch_focus_timeout">फोकसमध्ये होणारा विलंब</string>
   <string name="title_pref_talkback_gesture_detection">SandFly मधील हँडल जेश्चर</string>
   <string name="toast_pref_talkback_gesture_detection">सेटिंग अ‍ॅक्टिव्हेट करण्यासाठी SandFly बंद करा आणि नंतर पुन्हा सुरू करा.</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">अ‍ॅक्सेसिबिलिटी व्हॉल्यूम</string>
   <string name="title_pref_touch_explore_latency">टाइप करताना फोकसमध्ये होणारा विलंब</string>
   <string name="title_pref_touch_focus_latency">फोकसमध्ये होणारा विलंब</string>
-  <string name="message_pref_touch_focus_latency">तुम्ही स्क्रीनला स्पर्श केल्यानंतर थोडा विलंब SandFly लवकर बोलू शकतो</string>
+  <string name="message_pref_touch_focus_latency">विलंब कमी असल्यास, तुम्ही स्क्रीनला स्पर्श केल्यानंतर SandFly लवकर बोलते</string>
   <string name="message_pref_typing_method_prefix">टाइप करताना होणारा उशीर कमी करण्यासाठी, \"कोणतीही की निवडण्याकरिता त्यावर बोट धरून ठेवा, त्यानंतर ते उचला\" निवडा</string>
   <string name="message_pref_typing_method_postfix">तुम्ही कधीही टाइप करण्यासाठी स्प्लिट टॅपदेखील वापरू शकता. हे करण्यासाठी, कोणतीही की निवडण्याकरिता एक बोट धरून ठेवा आणि स्क्रीनवर टॅप करण्यासाठी दुसरे बोट वापरा.</string>
   <string name="title_pref_talkback_speech_rate">स्पीच रेट</string>
@@ -904,7 +904,7 @@
   <string name="split_tap_everywhere_title">सर्व ठिकाणी स्प्लिट-टॅप करा</string>
   <string name="split_tap_everywhere_text">तुम्ही आता कीबोर्डच्या बाहेरदेखील आयटम अ‍ॅक्टिव्हेट करण्यासाठी सर्व ठिकाणी स्प्लिट-टॅप वापरू शकता. ते वापरण्यासाठी, एका बोटाने स्क्रीन एक्सप्लोर करा, त्यानंतर पहिले बोट न उचलता, सध्या फोकस केलेला आयटम ॲक्टिव्हेट करण्यासाठी दुसऱ्या बोटाने स्क्रीनवर टॅप करा.</string>
   <string name="keyboard_enhanced_keymap_title">कीबोर्ड: वर्धित कीमॅप</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly मध्ये आता भौतिक कीबोर्डसाठी \"उन्नत की-मॅप\" आहे, ज्यामध्ये विविध प्रकारचे नवीन आदेश आणि शॉर्टकट आहेत. या सुधारणामध्ये अधिक कार्यक्षम वेब नेव्हिगेशन, सुव्यवस्थित नेव्हिगेशन आणि SandFly वापरकर्त्यांसाठी संवाद साधण्यासाठी \"ब्राउझ मोड\" समाविष्ट आहे जे भौतिक कीबोर्डवर अवलंबून आहेत. तुम्ही <xliff:g id="settings_path">%1$s</xliff:g>.\n\n मधील \"वर्धित कीमॅप\" वर स्विच करू शकता, जर तुम्ही ब्रेल डिस्प्ले वापरत असाल, तर तुम्ही तुमच्या ब्रेल डिस्प्लेवरून थेट सामग्रीमधून मार्गक्रमण करण्यासाठी नवीन ब्राउझ मोड शॉर्टकट देखील वापरू शकता. हा बदल सामावून घेण्यासाठी काही ब्रेल डिस्प्ले शॉर्टकट बदलण्यात आले. तुम्ही सर्व ब्रेल डिस्प्ले शॉर्टकटची सूची <xliff:g id="braille_display_settings_path">%2$s</xliff:g> मध्ये पाहू शकता.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly मध्ये आता प्रत्यक्ष कीबोर्डसाठी “वर्धित कीमॅप” आहे, ज्यामध्ये अनेक नवीन कमांड आणि शॉर्टकट आहेत. यात “ब्राउझ मोड” समाविष्ट आहे, जो प्रत्यक्ष कीबोर्ड वापरणाऱ्या SandFly वापरकर्त्यांसाठी वेब नेव्हिगेशन आणि संवाद अधिक कार्यक्षम आणि सोपा करतो. तुम्ही <xliff:g id="settings_path">%1$s</xliff:g> मध्ये “वर्धित कीमॅप” वर स्विच करू शकता.\n\nतुम्ही ब्रेल डिस्प्ले वापरत असल्यास, तुमच्या ब्रेल डिस्प्लेवरून थेट आशयातून जाण्यासाठी ब्राउझ मोडचे नवीन शॉर्टकटदेखील वापरू शकता. या बदलासाठी ब्रेल डिस्प्लेचे काही शॉर्टकट बदलण्यात आले आहेत. सर्व ब्रेल डिस्प्ले शॉर्टकटची सूची तुम्ही <xliff:g id="braille_display_settings_path">%2$s</xliff:g> मध्ये पाहू शकता.</string>
   <string name="keyboard_shortcuts_link">SandFly सेटिंग्ज &gt; कीबोर्ड शॉर्टकट</string>
   <string name="keyboard_shortcuts_link_tts">SandFly सेटिंग्ज, त्यानंतर कीबोर्ड शॉर्टकट</string>
   <string name="braille_display_settings_link">ब्रेल डिस्प्ले सेटिंग्ज</string>

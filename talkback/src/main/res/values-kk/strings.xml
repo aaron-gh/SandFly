@@ -13,7 +13,7 @@
   <string name="label_manager_summary_title">Арнаулы белгілерді басқару</string>
   <string name="label_manager_package_title">%1$s үшін белгілерді басқару</string>
   <string name="manage_label">Белгілерді басқару</string>
-  <string name="label_manager_no_packages_message">Қазіргі уақытта реттелетін белгілер жоқ\n\n<b>Теңшелетін белгіні қалай жасауға болады</b>\nБелгіленбеген кескінге өтіп, SandFly мәзірінен белгіні қосыңыз</string>
+  <string name="label_manager_no_packages_message">Қазір теңшелетін белгілер жоқ\n\n<b>Теңшелетін белгіні қалай жасауға болады</b>\nБелгісіз кескінге өтіп, SandFly мәзірінен белгі қосыңыз</string>
   <string name="label_manager_timestamp_text">Соңғы өзгерту: %1$s</string>
   <string name="search_mode_cancel">Іздеуден бас тартылды.</string>
   <string name="notification_type_status_started">Басталды</string>
@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">Теру әдісі</string>
   <string name="title_pref_typing_long_tap_duration">Теру кезіндегі басып тұру кідірісі</string>
   <string name="title_pref_touch_explore_timeout">Теруді ерекшелеу кідірісі</string>
-  <string name="message_pref_touch_explore_latency">Қысқа кідіріс пернетақтаны түрткеннен кейін SandFly тезірек сөйлейді.\n\nКідірісті таңдаңыз</string>
+  <string name="message_pref_touch_explore_latency">Кідіріс неғұрлым қысқа болса, пернетақтаны түрткеннен кейін SandFly соғұрлым тезірек сөйлейді.\n\nКідірісті таңдаңыз</string>
   <string name="title_pref_touch_focus_timeout">Ерекшелеу кідірісі</string>
   <string name="title_pref_talkback_gesture_detection">SandFly функциясында қимылды анықтау параметрін іске қосу</string>
   <string name="toast_pref_talkback_gesture_detection">Параметрді іске қосу үшін SandFly функциясын өшіріп қосыңыз.</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">Арнайы мүмкіндіктер дыбыс деңгейі</string>
   <string name="title_pref_touch_explore_latency">Теруді ерекшелеу кідірісі</string>
   <string name="title_pref_touch_focus_latency">Ерекшелеу кідірісі</string>
-  <string name="message_pref_touch_focus_latency">Қысқа кідіріс экранды түрткеннен кейін SandFly тезірек сөйлейді</string>
+  <string name="message_pref_touch_focus_latency">Кідіріс неғұрлым қысқа болса, экранды түрткеннен кейін SandFly соғұрлым тезірек сөйлейді</string>
   <string name="message_pref_typing_method_prefix">Терген кезде кідіріс уақыты барынша аз болуы үшін, \"Кез келген пернені ұстап тұру және жіберу\" опциясын таңдаңыз.</string>
   <string name="message_pref_typing_method_postfix">Кез келген уақытта теру үшін екі саусақпен енгізу функциясын пайдалануға да болады. Ол үшін бір саусақпен кез келген пернені басып тұрып, екінші саусақпен экранды түртіңіз.</string>
   <string name="title_pref_talkback_speech_rate">Сөйлеу жылдамдығы</string>

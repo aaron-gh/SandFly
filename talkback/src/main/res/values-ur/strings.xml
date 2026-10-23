@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">ٹائپنگ کا طریقہ</string>
   <string name="title_pref_typing_long_tap_duration">ٹائپ کرتے وقت ٹچ کرکے دبائے رکھنے کی تاخیر</string>
   <string name="title_pref_touch_explore_timeout">ٹائپنگ فوکس میں تاخیر</string>
-  <string name="message_pref_touch_explore_latency">کی بورڈ کو چھونے کے بعد ایک چھوٹی تاخیر SandFly جلد بولتی ہے۔\n\n تاخیر کا انتخاب کریں</string>
+  <string name="message_pref_touch_explore_latency">تاخیر کم ہونے پر، کی بورڈ کو چھونے کے بعد SandFly جلد بولتا ہے۔\n\nتاخیر منتخب کریں</string>
   <string name="title_pref_touch_focus_timeout">فوکس میں تاخیر</string>
   <string name="title_pref_talkback_gesture_detection">‏SandFly میں اشاروں کو ہینڈل کریں</string>
   <string name="toast_pref_talkback_gesture_detection">‏ترتیب کو فعال کرنے کے لیے SandFly کو آف کریں اور پھر دوبارہ آن کریں۔</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">ایکسیسبیلٹی والیوم</string>
   <string name="title_pref_touch_explore_latency">ٹائپنگ فوکس میں تاخیر</string>
   <string name="title_pref_touch_focus_latency">فوکس میں تاخیر</string>
-  <string name="message_pref_touch_focus_latency">ایک چھوٹی سی تاخیر آپ کے اسکرین کو چھونے کے بعد SandFly جلد بولتی ہے</string>
+  <string name="message_pref_touch_focus_latency">تاخیر کم ہونے پر، اسکرین کو چھونے کے بعد SandFly جلد بولتا ہے</string>
   <string name="message_pref_typing_method_prefix">ٹائپ کرتے وقت سب سے کم تاخیر کے لیے، \"کسی کلید کو منتخب کرنے کیلئے انگلی رکھیں، پھر اٹھائیں\" کا انتخاب کریں</string>
   <string name="message_pref_typing_method_postfix">آپ کسی بھی وقت ٹائپ کرنے کے لیے اسپلٹ ٹیپ کا استعمال بھی کر سکتے ہیں۔ ایسا کرنے کے لیے، کسی بھی کلید کو منتخب کرنے کے لیے ایک انگلی رکھیں، اور اسکرین پر تھپتھپانے کے لیے دوسری انگلی کا استعمال کریں۔</string>
   <string name="title_pref_talkback_speech_rate">اسپیچ کی شرح</string>
@@ -904,7 +904,7 @@
   <string name="split_tap_everywhere_title">ہر جگہ اسپلٹ تھپتھپائیں</string>
   <string name="split_tap_everywhere_text">اب آپ آئٹمز کو فعال کرنے کے لیے ہر جگہ اسپلٹ تھپتھپاہٹ کا استعمال کر سکتے ہیں، یہاں تک کہ کی بورڈ کے باہر بھی۔ اسے استعمال کرنے کے لیے، ایک انگلی سے اسکرین کو دریافت کریں، پھر پہلی انگلی کو اٹھائے بغیر، فی الحال فوکس کردہ آئٹم کو فعال کرنے کے لیے دوسری انگلی سے اسکرین پر تھپتھپائیں۔</string>
   <string name="keyboard_enhanced_keymap_title">کی بورڈ: بہتر کردہ کی میپ</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly میں اب فزیکل کی بورڈز کے لیے ایک \"Enhansed keymap\" ہے، جس میں مختلف قسم کے نئے کمانڈز اور شارٹ کٹس شامل ہیں۔ اس اضافہ میں زیادہ موثر ویب نیویگیشن کے لیے ایک \"براؤز موڈ\" شامل ہے، نیویگیشن کو ہموار کرنا اور SandFly صارفین کے لیے تعامل جو کہ فزیکل کی بورڈز پر انحصار کرتے ہیں۔ آپ <xliff:g id="settings_path">%1$s</xliff:g>.\n\n میں \"Enhanced keymap\" پر سوئچ کر سکتے ہیں اگر آپ بریل ڈسپلے استعمال کرتے ہیں، تو آپ براؤز موڈ کے نئے شارٹ کٹس کو بھی براہ راست اپنے بریل ڈسپلے سے مواد کو عبور کرنے کے لیے استعمال کر سکتے ہیں۔ اس تبدیلی کو ایڈجسٹ کرنے کے لیے بریل ڈسپلے کے کچھ شارٹ کٹس تبدیل کیے گئے تھے۔ آپ تمام بریل ڈسپلے شارٹ کٹس کی فہرست <xliff:g id="braille_display_settings_path">%2$s</xliff:g> میں دیکھ سکتے ہیں۔</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly میں اب فزیکل کی بورڈز کے لیے “بہتر کی میپ” موجود ہے، جس میں کئی نئی کمانڈز اور شارٹ کٹس شامل ہیں۔ اس میں “براؤز وضع” شامل ہے، جو فزیکل کی بورڈ استعمال کرنے والے SandFly صارفین کے لیے ویب نیویگیشن اور تعامل کو زیادہ مؤثر اور آسان بناتی ہے۔ آپ <xliff:g id="settings_path">%1$s</xliff:g> میں “بہتر کی میپ” پر سوئچ کر سکتے ہیں۔\n\nاگر آپ بریل ڈسپلے استعمال کرتے ہیں، تو آپ اپنے بریل ڈسپلے سے براہ راست مواد میں آگے بڑھنے کے لیے براؤز وضع کے نئے شارٹ کٹس بھی استعمال کر سکتے ہیں۔ اس تبدیلی کی وجہ سے بریل ڈسپلے کے کچھ شارٹ کٹس تبدیل کیے گئے ہیں۔ آپ تمام بریل ڈسپلے شارٹ کٹس کی فہرست <xliff:g id="braille_display_settings_path">%2$s</xliff:g> میں دیکھ سکتے ہیں۔</string>
   <string name="keyboard_shortcuts_link">‏‫SandFly کی ترتیبات &gt; کی بورڈ شارٹ کٹس</string>
   <string name="keyboard_shortcuts_link_tts">‏‫SandFly کی ترتیبات پھر کی بورڈ شارٹ کٹس</string>
   <string name="braille_display_settings_link">بریل ڈسپلے کی ترتیبات</string>

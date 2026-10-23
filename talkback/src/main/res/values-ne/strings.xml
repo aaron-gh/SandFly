@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">टाइपिङ विधि</string>
   <string name="title_pref_typing_long_tap_duration">टाइप गर्ने क्रममा \"टच एन्ड होल्ड\" को डिले</string>
   <string name="title_pref_touch_explore_timeout">टाइपिङ फोकस डिले</string>
-  <string name="message_pref_touch_explore_latency">छोटो ढिलाइले SandFly तपाईंले किबोर्ड छोएपछि चाँडै बोल्छ।\n\nढिलाइ छान्नुहोस्</string>
+  <string name="message_pref_touch_explore_latency">ढिलाइ छोटो भए, तपाईंले किबोर्ड छोएपछि SandFly चाँडै बोल्छ।\n\nढिलाइ छान्नुहोस्</string>
   <string name="title_pref_touch_focus_timeout">फोकस डिले</string>
   <string name="title_pref_talkback_gesture_detection">SandFly मा गई जेस्चर व्यवस्थापन गर्नुहोस्</string>
   <string name="toast_pref_talkback_gesture_detection">यो सेटिङ एक्टिभेट गर्न SandFly अफ गरी फेरि अन गर्नुहोस्।</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">सर्वसुलभता सेवाको भोल्युम</string>
   <string name="title_pref_touch_explore_latency">टाइपिङ फोकस डिले</string>
   <string name="title_pref_touch_focus_latency">फोकस डिले</string>
-  <string name="message_pref_touch_focus_latency">छोटो ढिलाइले SandFly तपाईंले स्क्रिन छोएपछि चाँडै बोल्छ</string>
+  <string name="message_pref_touch_focus_latency">ढिलाइ छोटो भए, तपाईंले स्क्रिन छोएपछि SandFly चाँडै बोल्छ</string>
   <string name="message_pref_typing_method_prefix">टाइप गर्दा हुने ढिलाइ सबैभन्दा न्यून बनाउन \"कुनै की चयन गर्न औँलाले उक्त कीमा थिचिराख्नुहोस् अनि औँला उठाउनुहोस्\" छनौट गर्नुहोस्</string>
   <string name="message_pref_typing_method_postfix">तपाईं जुनसुकै बेला स्प्लिट ट्याप प्रयोग गरेर पनि टाइप गर्न सक्नुहुन्छ। यसो गर्न एउटा औँलाले कुनै कीमा थिचिराखेर उक्त की चयन गर्नुहोस् अनि अर्को औँला प्रयोग गरी स्क्रिनमा ट्याप गर्नुहोस्।</string>
   <string name="title_pref_talkback_speech_rate">बोल्ने गति</string>
@@ -905,7 +905,7 @@
   <string name="split_tap_everywhere_title">सबैतिर स्प्लिट-ट्याप गर्नुहोस्</string>
   <string name="split_tap_everywhere_text">तपाईं अब किबोर्डबाहिरका साथै सबैतिर स्प्लिट ट्याप प्रयोग गरी वस्तुहरू एक्टिभेट गर्न सक्नुहुन्छ। यो सुविधा प्रयोग गर्न एउटा औँलाले स्क्रिन प्रयोग गर्नुहोस् अनि पहिलो औँला नउठाइकन हाल फोकस गरिएको वस्तु एक्टिभेट गर्न अर्को औँलाले स्क्रिनमा ट्याप गर्नुहोस्।</string>
   <string name="keyboard_enhanced_keymap_title">किबोर्ड: परिष्कृत किम्याप</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly मा अब भौतिक किबोर्डहरूको लागि \"परिष्कृत कीम्याप\" छ, विभिन्न प्रकारका नयाँ आदेशहरू र सर्टकटहरू प्रस्तुत गर्दै। यो वृद्धिले थप कुशल वेब नेभिगेसन, स्ट्रिमलाइनिङ नेभिगेसन र SandFly प्रयोगकर्ताहरूका लागि अन्तरक्रियाको लागि \"ब्राउज मोड\" समावेश गर्दछ जो भौतिक किबोर्डहरूमा निर्भर छन्। तपाईं <xliff:g id="settings_path">%1$s</xliff:g>.\n\n मा \"परिष्कृत कीम्याप\" मा स्विच गर्न सक्नुहुन्छ यदि तपाईंले ब्रेल डिस्प्ले प्रयोग गर्नुहुन्छ भने, तपाईंले आफ्नो ब्रेल डिस्प्लेबाट सीधै सामग्री मार्फत पार गर्न नयाँ ब्राउज मोड सर्टकटहरू पनि प्रयोग गर्न सक्नुहुन्छ। यस परिवर्तनलाई समायोजन गर्न केही ब्रेल डिस्प्ले सर्टकटहरू परिवर्तन गरियो। तपाईंले <xliff:g id="braille_display_settings_path">%2$s</xliff:g> मा सबै ब्रेल डिस्प्ले सर्टकटहरूको सूची हेर्न सक्नुहुन्छ।</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly मा अब भौतिक किबोर्डका लागि “परिष्कृत किम्याप” छ, जसमा धेरै नयाँ आदेश र सर्टकटहरू छन्। यसमा “ब्राउज मोड” समावेश छ, जसले भौतिक किबोर्ड प्रयोग गर्ने SandFly प्रयोगकर्ताका लागि वेब नेभिगेसन र अन्तरक्रिया अझ प्रभावकारी र सजिलो बनाउँछ। तपाईं <xliff:g id="settings_path">%1$s</xliff:g> मा “परिष्कृत किम्याप” मा स्विच गर्न सक्नुहुन्छ।\n\nतपाईं ब्रेल डिस्प्ले प्रयोग गर्नुहुन्छ भने, आफ्नो ब्रेल डिस्प्लेबाटै सामग्रीमा अघि बढ्न ब्राउज मोडका नयाँ सर्टकटहरू पनि प्रयोग गर्न सक्नुहुन्छ। यो परिवर्तन मिलाउन ब्रेल डिस्प्लेका केही सर्टकटहरू परिवर्तन गरिएका छन्। तपाईं सबै ब्रेल डिस्प्ले सर्टकटहरूको सूची <xliff:g id="braille_display_settings_path">%2$s</xliff:g> मा हेर्न सक्नुहुन्छ।</string>
   <string name="keyboard_shortcuts_link">SandFly का सेटिङ &gt; किबोर्डका सर्टकटहरू</string>
   <string name="keyboard_shortcuts_link_tts">SandFly का सेटिङ अनि किबोर्डका सर्टकटहरू</string>
   <string name="braille_display_settings_link">ब्रेल डिस्प्लेसम्बन्धी सेटिङ</string>

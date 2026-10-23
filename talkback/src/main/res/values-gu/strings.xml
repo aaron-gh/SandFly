@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">ઍક્સેસિબિલિટી વૉલ્યૂમ</string>
   <string name="title_pref_touch_explore_latency">ટાઇપિંગ ફોકસમાં વિલંબ</string>
   <string name="title_pref_touch_focus_latency">ફોકસમાં વિલંબ</string>
-  <string name="message_pref_touch_focus_latency">તમે સ્ક્રીનને ટચ કરો તે પછી થોડો વિલંબ SandFly જલ્દી બોલે છે</string>
+  <string name="message_pref_touch_focus_latency">વિલંબ ઓછો હોય, તો તમે સ્ક્રીનને ટચ કરો તે પછી SandFly વહેલું બોલે છે</string>
   <string name="message_pref_typing_method_prefix">ટાઇપ કરતી વખતે ઓછામાં ઓછા વિલંબ માટે, \"કોઈપણ કી પસંદ કરવા માટે તેને આંગળીથી દબાવી રાખો, પછી ઉપાડી લો\" પસંદ કરો</string>
   <string name="message_pref_typing_method_postfix">તમે કોઈપણ સમયે ટાઇપ કરવા માટે સ્પ્લિટ ટૅપનો ઉપયોગ પણ કરી શકો છો. આમ કરવા, કોઈપણ કી પસંદ કરવા માટે એક આંગળી દબાવી રાખો અને સ્ક્રીન પર ટૅપ કરવા માટે બીજી આંગળીનો ઉપયોગ કરો.</string>
   <string name="title_pref_talkback_speech_rate">સ્પીચ રેટ</string>
@@ -856,7 +856,7 @@
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">અન્ય ઍપ આ સંકેતનો ઉપયોગ ફોન કૉલનો જવાબ આપવા કે કૉલ સમાપ્ત કરવા જેવી વસ્તુઓ માટે કરી શકે છે. આ સંકેતની સુવિધા બધી ઍપમાં નથી હોતી.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">મીડિયા થોભાવ્યું છે અથવા ચાલી રહ્યું છે. સામાન્ય રીતે, આ હાલનો વીડિયો અથવા મ્યુઝિક થોભાવશે અથવા ચલાવશે. ચાલુ રાખવા માટે જમણી બાજુ સ્વાઇપ કરો.</string>
   <string name="new_shortcut_gesture_stop_speech_text">SandFlyને હંગામીરૂપે વાત કરવાથી રોકવા માટે, 2 આંગળી વડે ટૅપ કરો.</string>
-  <string name="new_shortcut_gesture_stop_speech_announcement">SandFly બોલવાનું બંધ થયું. સામાન્ય રીતે, આ વર્તમાન શબ્દસમૂહને બંધ કરશે જે SandFly કહે છે. ચાલુ રાખવા માટે જમણે સ્વાઇપ કરો.</string>
+  <string name="new_shortcut_gesture_stop_speech_announcement">SandFly નું બોલવાનું બંધ થયું. સામાન્ય રીતે, આનાથી SandFly હાલમાં જે વાક્ય બોલી રહ્યું હોય તે બંધ થાય છે. ચાલુ રાખવા માટે જમણે સ્વાઇપ કરો.</string>
   <string name="new_shortcut_gesture_copy_text_text">ટેક્સ્ટ કૉપિ કરવા માટે, 3 આંગળી વડે બે વાર ટૅપ કરો.</string>
   <string name="new_shortcut_gesture_copy_text_announcement">ટેક્સ્ટ કૉપિ કરી. સામાન્ય રીતે, આ તમે પસંદ કરેલી ટેક્સ્ટને કૉપિ કરશે. ચાલુ રાખવા માટે જમણી બાજુ સ્વાઇપ કરો.</string>
   <string name="new_shortcut_gesture_paste_text_text">ટેક્સ્ટ પેસ્ટ કરવા માટે, 3 આંગળી વડે ત્રણ વાર ટૅપ કરો.</string>
@@ -904,7 +904,7 @@
   <string name="split_tap_everywhere_title">દરેક જગ્યાએ સ્પ્લિટ-ટૅપ</string>
   <string name="split_tap_everywhere_text">હવે તમે કીબોર્ડની બહાર પણ, આઇટમ સક્રિય કરવા માટે દરેક જગ્યાએ સ્પ્લિટ ટૅપનો ઉપયોગ કરી શકો છો. તેનો ઉપયોગ કરવા માટે, એક આંગળી વડે સ્ક્રીન પર શોધખોળ કરો, પછી પહેલી આંગળી ઉઠાવ્યા વિના, હાલમાં ફોકસ કરેલી આઇટમને સક્રિય કરવા માટે બીજી આંગળી વડે સ્ક્રીન પર ટૅપ કરો.</string>
   <string name="keyboard_enhanced_keymap_title">કીબોર્ડ: બહેતર કીમૅપ</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly હવે ભૌતિક કીબોર્ડ માટે \"ઉન્નત કીમેપ\" ધરાવે છે, જેમાં વિવિધ પ્રકારના નવા આદેશો અને શૉર્ટકટ્સ છે. આ ઉન્નતીકરણમાં વધુ કાર્યક્ષમ વેબ નેવિગેશન માટે \"બ્રાઉઝ મોડ\"નો સમાવેશ થાય છે, નેવિગેશનને સુવ્યવસ્થિત કરવું અને SandFly વપરાશકર્તાઓ માટે ક્રિયાપ્રતિક્રિયા કે જેઓ ભૌતિક કીબોર્ડ પર આધાર રાખે છે. તમે <xliff:g id="settings_path">%1$s</xliff:g>.\n\nમાં \"ઉન્નત કીમેપ\" પર સ્વિચ કરી શકો છો, જો તમે બ્રેઈલ ડિસ્પ્લેનો ઉપયોગ કરો છો, તો તમે તમારા બ્રેઈલ ડિસ્પ્લેમાંથી સીધા જ સામગ્રીમાંથી પસાર થવા માટે નવા બ્રાઉઝ મોડ શૉર્ટકટનો પણ ઉપયોગ કરી શકો છો. આ ફેરફારને સમાવવા માટે કેટલાક બ્રેઇલ ડિસ્પ્લે શોર્ટકટ્સ બદલવામાં આવ્યા હતા. તમે <xliff:g id="braille_display_settings_path">%2$s</xliff:g> માં તમામ બ્રેઈલ ડિસ્પ્લે શોર્ટકટ્સની સૂચિ જોઈ શકો છો.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly માં હવે ભૌતિક કીબોર્ડ માટે “બહેતર બનાવેલો કીમૅપ” છે, જેમાં ઘણા નવા આદેશો અને શૉર્ટકટ છે. તેમાં “બ્રાઉઝ મોડ” પણ છે, જે ભૌતિક કીબોર્ડ વાપરતા SandFly વપરાશકર્તાઓ માટે વેબ નેવિગેશન અને ક્રિયાપ્રતિક્રિયાને વધુ ઝડપી અને સરળ બનાવે છે. તમે <xliff:g id="settings_path">%1$s</xliff:g> માં “બહેતર બનાવેલો કીમૅપ” પર સ્વિચ કરી શકો છો.\n\nજો તમે બ્રેઇલ ડિસ્પ્લે વાપરતા હો, તો તમે તમારા બ્રેઇલ ડિસ્પ્લેથી સીધા જ કન્ટેન્ટમાં આગળ વધવા માટે બ્રાઉઝ મોડના નવા શૉર્ટકટ પણ વાપરી શકો છો. આ ફેરફાર માટે બ્રેઇલ ડિસ્પ્લેના કેટલાક શૉર્ટકટ બદલવામાં આવ્યા છે. તમે બ્રેઇલ ડિસ્પ્લેના બધા શૉર્ટકટની સૂચિ <xliff:g id="braille_display_settings_path">%2$s</xliff:g> માં જોઈ શકો છો.</string>
   <string name="keyboard_shortcuts_link">SandFlyના સેટિંગ &gt; કીબોર્ડ શૉર્ટકટ</string>
   <string name="keyboard_shortcuts_link_tts">SandFlyના સેટિંગ પછી કીબોર્ડ શૉર્ટકટ</string>
   <string name="braille_display_settings_link">બ્રેઇલ ડિસ્પ્લેના સેટિંગ</string>

@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">Yozish usuli</string>
   <string name="title_pref_typing_long_tap_duration">Yozayotganda kechikish tugmasini bosib turing</string>
   <string name="title_pref_touch_explore_timeout">Matn kiritishdagi fokusda kechikish</string>
-  <string name="message_pref_touch_explore_latency">Qisqaroq kechikish SandFly klaviaturani bosgandan keyin tezroq gapiradi.\n\nKechikishni tanlang</string>
+  <string name="message_pref_touch_explore_latency">Kechikish qanchalik qisqa boʻlsa, klaviaturaga tekkaningizdan keyin SandFly shunchalik tez gapiradi.\n\nKechikishni tanlang</string>
   <string name="title_pref_touch_focus_timeout">Fokus kechikishi</string>
   <string name="title_pref_talkback_gesture_detection">SandFly| funksiyasida imo-ishoralarni aniqlashni yoqish</string>
   <string name="toast_pref_talkback_gesture_detection">O\'zgarishlar kuchga kirishi uchun SandFly funksiyasini qayta ishga tushiring.</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">Maxsus imkoniyatlarda tovush balandligi</string>
   <string name="title_pref_touch_explore_latency">Matn kiritishdagi fokusda kechikish</string>
   <string name="title_pref_touch_focus_latency">Fokus kechikishi</string>
-  <string name="message_pref_touch_focus_latency">Qisqaroq kechikish SandFly ni ekranga tegizishingizdan keyin tezroq gapiradi</string>
+  <string name="message_pref_touch_focus_latency">Kechikish qanchalik qisqa boʻlsa, ekranga tekkaningizdan keyin SandFly shunchalik tez gapiradi</string>
   <string name="message_pref_typing_method_prefix">Matn yozishda eng kam kechikish uchun “Biror tugmani tanlash uchun barmoq bilan bosib, keyin koʻtarish” bandini tanlang</string>
   <string name="message_pref_typing_method_postfix">Shuningdek, istalgan payt yozish uchun ajratib bosish imkoniyatini ishlatish mumkin. Buning uchun istalgan tugmani tanlagani bitta barmogʻingizni bosib turib, boshqa barmoq bilan ekranga tegining.</string>
   <string name="title_pref_talkback_speech_rate">Nutq tezligi</string>
@@ -904,7 +904,7 @@
   <string name="split_tap_everywhere_title">Hamma joyda ajratib bosish</string>
   <string name="split_tap_everywhere_text">Endi klaviaturadan tashqarida ham elementlarni faollashtirish uchun istalgan joyda ajratib bosishingiz mumkin. Funksiyadan foydalanish uchun ekranni bitta barmoq bilan tekshiring, keyin birinchi barmoqni koʻtarmasdan, hozir fokuslangan elementni faollashtirish uchun boshqa barmoq bilan ekranga tegining.</string>
   <string name="keyboard_enhanced_keymap_title">Klaviatura: Yaxshilangan terilma</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly endi jismoniy klaviaturalar uchun turli xil yangi buyruqlar va yorliqlardan iborat “Kengaytirilgan klaviatura xaritasi”ga ega. Ushbu yaxshilanish yanada samaraliroq veb-navigatsiya, navigatsiyani soddalashtirish va jismoniy klaviaturalarga tayanadigan SandFly foydalanuvchilar uchun o\'zaro ta\'sir qilish uchun \"ko\'rib chiqish rejimini\" o\'z ichiga oladi. <xliff:g id="settings_path">%1$s</xliff:g>.\n\nAgar siz Brayl displeyidan foydalansangiz, Brayl displeyingizdagi kontentni toʻgʻridan-toʻgʻri aylantirish uchun yangi koʻrib chiqish rejimi yorliqlaridan ham foydalanishingiz mumkin. Brayl displeyidagi ba\'zi yorliqlar ushbu o\'zgarishga moslashish uchun o\'zgartirildi. Brayl yozuvidagi barcha yorliqlar roʻyxatini <xliff:g id="braille_display_settings_path">%2$s</xliff:g> da koʻrishingiz mumkin.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly’da endi jismoniy klaviaturalar uchun “Yaxshilangan terilma” bor, unda koʻplab yangi buyruqlar va tezkor tugmalar mavjud. Unga “Kezish rejimi” ham kiradi, u jismoniy klaviaturadan foydalanadigan SandFly foydalanuvchilari uchun vebda harakatlanish va oʻzaro ishlashni samaraliroq va soddaroq qiladi. “Yaxshilangan terilma”ga <xliff:g id="settings_path">%1$s</xliff:g> boʻlimida oʻtishingiz mumkin.\n\nAgar brayl displeydan foydalansangiz, kezish rejimining yangi tezkor tugmalari bilan kontent boʻylab toʻgʻridan-toʻgʻri brayl displeydan harakatlanishingiz ham mumkin. Shu oʻzgarish tufayli brayl displeyning ayrim tezkor tugmalari oʻzgartirildi. Brayl displeyning barcha tezkor tugmalari roʻyxatini <xliff:g id="braille_display_settings_path">%2$s</xliff:g> boʻlimida koʻrishingiz mumkin.</string>
   <string name="keyboard_shortcuts_link">SandFly sozlamalari &gt; Tezkor tugmalar</string>
   <string name="keyboard_shortcuts_link_tts">SandFly sozlamalari, Tezkor tugmalar</string>
   <string name="braille_display_settings_link">Brayl ekrani sozlamalari</string>
@@ -1544,7 +1544,7 @@
     <string name="quick_settings_removed">%1$s olib tashlandi</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly yoqilgan. Oʻchirish uchun 2 barmogʻingizni ekranda 5 soniya ushlab turing. Bu xabarni koʻrsatishni toʻxtatish uchun SandFly sozlamalari &gt; Qoʻshimcha sozlamalar &gt; SandFly oʻchirish boʻyicha koʻrsatmalarni koʻrsatish-ni oʻchiring.</string>
     <string name="edge_gestures_title">Chetlar</string>
-    <string name="keycombo_menu_other_toggle_browse_mode_extra">Ko\'rib chiqish rejimini yoqish yoki o\'chirish uchun yana bir yorliq</string>
+    <string name="keycombo_menu_other_toggle_browse_mode_extra">Koʻrib chiqish rejimini yoqish yoki oʻchirish uchun yana bir tezkor tugma</string>
     <string name="title_pref_vibration_strength">Tebranish kuchi</string>
     <string name="title_pref_audio_output_device">Ovoz chiqarish qurilmasi</string>
     <string name="dialog_title_audio_output_device">SandFly ovozi qayerda ijro etilishini tanlang</string>
