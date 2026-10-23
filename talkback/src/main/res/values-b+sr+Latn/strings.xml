@@ -1751,6 +1751,18 @@
     <string name="dictation_nothing_recognized">Ništa nije prepoznato</string>
     <string name="dictation_unavailable">Prepoznavanje govora nije dostupno</string>
     <string name="dictation_field_gone">Polje za tekst je zatvoreno. Ništa nije otkucano.</string>
+    <string name="dictation_transcription_failed">Govor nije pretvoren u tekst. Ništa nije otkucano.</string>
+    <string name="title_pref_dictation">Diktiranje</string>
+    <string name="title_pref_dictation_recognition">Prepoznavanje govora</string>
+    <string name="dictation_recognition_automatic">Automatski</string>
+    <string name="dictation_recognition_android">Android prepoznavanje govora</string>
+    <string name="dictation_recognition_automatic_using">Automatski: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, potreban je Gemini API ključ</string>
+    <string name="dictation_whisper_needs_model">Whisper, potreban je preuzeti model</string>
+    <string name="title_pref_whisper_models">Whisper modeli</string>
+    <string name="dictation_whisper_use">Koristi</string>
+    <string name="title_pref_dictation_ai_service">AI usluga za diktiranje</string>
+    <string name="dictation_ai_same">Isto kao za automatske opise</string>
     <string name="title_pref_browse_mode_per_app">Zapamtite režim pregledanja u svakoj aplikaciji</string>
     <string name="title_pref_export_settings">Izvezite podešavanja</string>
     <string name="title_pref_import_settings">Uvezite podešavanja</string>

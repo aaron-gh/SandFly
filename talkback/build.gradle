@@ -25,6 +25,8 @@ dependencies {
     phoneRuntimeOnly "party.iroiro.luajava:android:${libs.versions.luajava.get()}:lua54@aar"
     testPhoneRuntimeOnly "party.iroiro.luajava:lua54-platform:${libs.versions.luajava.get()}:natives-desktop"
     implementation libs.litertlm
+    // Dictation with Whisper on the phone.
+    phoneImplementation project(':whisper')
     // Grants the permissions that settings need through Shizuku, when it is installed and running.
     implementation libs.shizuku.api
     implementation libs.shizuku.provider

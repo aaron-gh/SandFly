@@ -1565,6 +1565,18 @@
     <string name="dictation_nothing_recognized">Nic nebylo rozpoznáno</string>
     <string name="dictation_unavailable">Rozpoznávání řeči není k dispozici</string>
     <string name="dictation_field_gone">Textové pole uzavřeno. Nic nebylo napsáno.</string>
+    <string name="dictation_transcription_failed">Řeč nebyla přepsána. Nic nebylo napsáno.</string>
+    <string name="title_pref_dictation">Diktování</string>
+    <string name="title_pref_dictation_recognition">Rozpoznávání řeči</string>
+    <string name="dictation_recognition_automatic">Automaticky</string>
+    <string name="dictation_recognition_android">Rozpoznávání řeči Android</string>
+    <string name="dictation_recognition_automatic_using">Automaticky: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, vyžaduje klíč API Gemini</string>
+    <string name="dictation_whisper_needs_model">Whisper, vyžaduje stažený model</string>
+    <string name="title_pref_whisper_models">Modely Whisper</string>
+    <string name="dictation_whisper_use">Použít</string>
+    <string name="title_pref_dictation_ai_service">Služba AI pro diktování</string>
+    <string name="dictation_ai_same">Stejná jako pro automatické popisy</string>
     <string name="title_pref_browse_mode_per_app">Pamatovat režim procházení v každé aplikaci</string>
     <string name="title_pref_export_settings">Export nastavení</string>
     <string name="title_pref_import_settings">Importovat nastavení</string>

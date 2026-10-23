@@ -16,10 +16,14 @@
 
 package com.google.android.accessibility.talkback.dictation
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Handler
 import android.os.Looper
 import android.speech.SpeechRecognizer
+import androidx.core.content.ContextCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Feedback.EditText.Action.INSERT
 import com.google.android.accessibility.talkback.Feedback.Speech.Action.SILENCE
@@ -28,12 +32,14 @@ import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.actor.gemini.AiProvider
-import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.ErrorReason
-import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.FinishReason
-import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.GeminiResponseListener
+import com.google.android.accessibility.talkback.actor.gemini.AiService
+import com.google.android.accessibility.talkback.actor.gemini.GeminiApiKey
+import com.google.android.accessibility.talkback.actor.gemini.GeminiModel
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager
-import com.google.android.accessibility.talkback.utils.SpeechRecognizerPerformer
-import com.google.android.accessibility.talkback.utils.SpeechRecognizerPerformer.SpeechRecognizerRequester
+import com.google.android.accessibility.talkback.actor.gemini.progress.DefaultProgressToneProvider
+import com.google.android.accessibility.talkback.actor.gemini.progress.ProgressTonePlayer
+import com.google.android.accessibility.talkback.dictation.DictationSettings.Recognition
+import com.google.android.accessibility.talkback.permission.PermissionUtils
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.Role
@@ -41,136 +47,176 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.io.IOException
+import java.util.Locale
+import java.util.concurrent.Executors
 
 /**
- * Dictate: types what the user says into the focused text field. Android's speech recognition
- * turns the speech into text, then, when Correct dictation with AI is on and an AI service is in
- * use, the service corrects its punctuation, capital letters and misrecognized words before it is
- * typed.
+ * Dictate: types what the user says into the focused text field. The gesture starts recording and
+ * the same gesture stops it; nothing stops it in between. The speech is then recognized as
+ * Dictation settings say: by Rambler (Gemini 3.5 Transcribe), Whisper on the phone, or Android's
+ * speech recognition. When Correct dictation with AI is on, the AI service chosen for dictation
+ * corrects the text of Whisper and Android speech recognition before it is typed; Rambler's text
+ * needs no correction.
  */
 class AiDictation(
   private val service: TalkBackService,
   private val pipeline: Pipeline.FeedbackReturner,
-) : SpeechRecognizerRequester {
-  private val recognizer =
-    SpeechRecognizerPerformer(service, MAX_LISTENING_MS, /* partialResultFastFeedback= */ false)
-      .also { it.setListener(this) }
+) {
+  private enum class Phase {
+    IDLE,
+    RECORDING,
+    /** Recording ended; the speech is being recognized or corrected. */
+    WORKING,
+  }
+
+  private val prefs = SharedPreferencesUtils.getSharedPreferences(service)
   private val handler = Handler(Looper.getMainLooper())
+  private val worker =
+    Executors.newSingleThreadExecutor { Thread(it, "dictation").apply { isDaemon = true } }
+  private val tones =
+    ProgressTonePlayer(
+      DefaultProgressToneProvider(),
+      { tone -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, tone.tone) },
+      { WORK_TONES_MS },
+      {},
+    )
+  private var phase = Phase.IDLE
   private var field: AccessibilityNodeInfoCompat? = null
-  private var listening = false
-  /** Counts corrections, so that an answer to one that was given up on is ignored. */
+  private var recognition = Recognition.ANDROID
+  private var capture: AudioCapture? = null
+  private var continuous: ContinuousRecognition? = null
+  @Volatile private var transcriber: SpeechTranscriber? = null
+  /** Counts dictations, so that the result of one that was given up on is ignored. */
   private var generation = 0
   /** Types the recognized text when the correction takes too long, or null when none waits. */
   private var giveUp: Runnable? = null
 
   /**
-   * Starts listening for text to type into [node], or stops when it is already listening. While a
+   * Starts recording for text to type into [node], or stops recording when it is on. While a
    * correction is awaited, types the recognized text at once instead.
    */
   fun start(node: AccessibilityNodeInfoCompat?): Boolean {
-    if (listening) {
-      recognizer.stopListening()
-      return true
-    }
-    giveUp?.let {
-      handler.removeCallbacks(it)
-      it.run()
-      return true
+    when (phase) {
+      Phase.RECORDING -> {
+        stopRecording()
+        return true
+      }
+      Phase.WORKING -> {
+        giveUp?.let {
+          handler.removeCallbacks(it)
+          it.run()
+        }
+        return true
+      }
+      Phase.IDLE -> {}
     }
     if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
       speak(service.getString(R.string.not_editable))
       return false
     }
+    if (
+      ContextCompat.checkSelfPermission(service, Manifest.permission.RECORD_AUDIO) !=
+        PackageManager.PERMISSION_GRANTED
+    ) {
+      PermissionUtils.requestPermissions(service, Manifest.permission.RECORD_AUDIO)
+      return false
+    }
+    recognition = DictationSettings.effectiveRecognition(service, prefs)
+    val started =
+      if (recognition == Recognition.ANDROID) {
+        val request = generation
+        ContinuousRecognition(
+            service,
+            onDone = { text -> if (request == generation) recognized(text, cleaned = false) },
+            onFailed = { error -> if (request == generation) recognitionFailed(error) },
+          )
+          .takeIf { it.start() }
+          ?.also { continuous = it } != null
+      } else {
+        AudioCapture(onLimit = { handler.post { if (phase == Phase.RECORDING) stopRecording() } })
+          .takeIf { it.start() }
+          ?.also { capture = it } != null
+      }
+    if (!started) {
+      speak(service.getString(R.string.dictation_unavailable))
+      return false
+    }
     field = node
-    recognizer.doListening()
+    phase = Phase.RECORDING
+    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_up))
+    // Speech would be recorded with the user's.
+    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(SILENCE))
     return true
   }
 
-  override fun onResult(command: String, isPartialResult: Boolean): Boolean {
-    val target = field ?: return true
-    field = null
-    val heard = command.trim()
-    if (heard.isEmpty()) return true
-    // A dictated password stays on the phone.
-    val actor = service.geminiActor
-    if (target.isPassword || actor == null || !correctsWithAi()) {
-      type(target, heard)
-      return true
+  private fun stopRecording() {
+    phase = Phase.WORKING
+    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
+    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
+    continuous?.let {
+      continuous = null
+      it.stop()
+      return
+    }
+    val pcm = capture?.stop() ?: ByteArray(0)
+    capture = null
+    if (!AudioCapture.hasSpeechLength(pcm)) {
+      recognized("", cleaned = false)
+      return
     }
     val request = ++generation
-    val fallback = Runnable {
-      if (request != generation) return@Runnable
-      generation++
-      giveUp = null
-      LogUtils.w(TAG, "No correction in time, typing the recognized text")
-      speak(service.getString(R.string.dictation_not_corrected))
-      type(target, heard)
-    }
-    giveUp = fallback
-    handler.postDelayed(fallback, CORRECTION_TIMEOUT_MS)
-    actor.requestText(
-      prompt(textBeforeCursor(target), heard),
-      object : GeminiResponseListener {
-        override fun onResponse(finishReason: FinishReason, response: String?) {
-          if (!takeAnswer(request, fallback)) return
-          val corrected = if (finishReason == FinishReason.STOP) response?.let(::cleanUp) else null
-          if (corrected != null && isCorrection(heard, corrected)) {
-            type(target, corrected)
-          } else {
-            LogUtils.w(TAG, "No correction (%s), typing the recognized text", finishReason)
-            speak(
-              response?.takeIf { finishReason != FinishReason.STOP }
-                ?: service.getString(R.string.dictation_not_corrected)
-            )
-            type(target, heard)
-          }
+    val used = recognition
+    tones.play(/* playTone= */ true, /* delayPlayTone= */ true)
+    worker.execute {
+      val result =
+        try {
+          transcribe(used, pcm)
+        } catch (e: Exception) {
+          LogUtils.e(TAG, "Transcription failed: %s", e)
+          null
+        } catch (e: OutOfMemoryError) {
+          LogUtils.e(TAG, "Transcription failed: %s", e)
+          null
         }
-
-        override fun onError(errorReason: ErrorReason) {
-          if (!takeAnswer(request, fallback)) return
-          LogUtils.w(TAG, "No correction (%s), typing the recognized text", errorReason)
-          if (errorReason != ErrorReason.JOB_CANCELLED) {
-            speak(service.getString(R.string.dictation_not_corrected))
-          }
-          type(target, heard)
+      handler.post {
+        if (request != generation) return@post
+        tones.stop()
+        if (result == null) {
+          finish()
+          speak(service.getString(R.string.dictation_transcription_failed))
+        } else {
+          recognized(result.first, cleaned = result.second)
         }
-      },
-    )
-    return true
-  }
-
-  /** Whether the answer to [request] is still awaited; if so, it is the one used. */
-  private fun takeAnswer(request: Int, fallback: Runnable): Boolean {
-    if (request != generation) return false
-    generation++
-    handler.removeCallbacks(fallback)
-    giveUp = null
-    return true
-  }
-
-  override fun onFeedbackEvent(eventId: Int) {
-    when (eventId) {
-      SpeechRecognizerRequester.EVENT_START_LISTENING -> {
-        listening = true
-        pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_up))
-        pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(SILENCE))
       }
-      SpeechRecognizerRequester.EVENT_STOP_LISTENING -> {
-        listening = false
-        pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
-        pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
-      }
-      SpeechRecognizerRequester.EVENT_MIC_PERMISSION_NOT_GRANTED ->
-        speak(service.getString(R.string.voice_commands_no_mic_permissions))
-      SpeechRecognizerRequester.EVENT_PLATFORM_NOT_SUPPORT,
-      SpeechRecognizerRequester.EVENT_FEATURE_UNAVAILABLE ->
-        speak(service.getString(R.string.dictation_unavailable))
-      else -> {}
     }
   }
 
-  override fun onError(error: Int) {
-    field = null
+  /**
+   * Recognizes the speech in [pcm] with [used], or with Whisper when Rambler fails. Returns the
+   * text and whether it is already cleaned up, or null when it couldn't be recognized.
+   */
+  private fun transcribe(used: Recognition, pcm: ByteArray): Pair<String, Boolean>? {
+    if (used == Recognition.RAMBLER) {
+      try {
+        return DictationRequests.transcribe(DictationSettings.ramblerKey(prefs), AudioCapture.toWav(pcm)) to
+          true
+      } catch (e: IOException) {
+        LogUtils.w(TAG, "Rambler failed: %s", e)
+      }
+    }
+    val model = WhisperModels.get(service).activeModel() ?: return null
+    val whisper = WhisperEngines.transcriber(WhisperModels.get(service).file(model)) ?: return null
+    transcriber = whisper
+    try {
+      return whisper.transcribe(AudioCapture.toFloats(pcm), whisperLanguage())?.let { it to false }
+    } finally {
+      transcriber = null
+    }
+  }
+
+  private fun recognitionFailed(error: Int) {
+    finish()
     speak(
       service.getString(
         when (error) {
@@ -183,32 +229,129 @@ class AiDictation(
     )
   }
 
-  /** Stops listening, as when SandFly turns off. */
-  fun shutdown() {
-    field = null
-    generation++
-    giveUp?.let { handler.removeCallbacks(it) }
-    giveUp = null
-    recognizer.reset()
+  /** Types [text], recognized from the user's speech, after correcting it when that is on. */
+  private fun recognized(text: String, cleaned: Boolean) {
+    val target = field
+    val heard = text.trim()
+    if (target == null || heard.isEmpty()) {
+      finish()
+      speak(service.getString(R.string.dictation_nothing_recognized))
+      return
+    }
+    // A dictated password stays on the phone.
+    val corrector =
+      if (cleaned || target.isPassword || !DictationSettings.correctsWithAi(service, prefs)) null
+      else DictationSettings.correctingService(service, prefs)
+    if (corrector == null) {
+      finish()
+      type(target, heard)
+      return
+    }
+    val request = ++generation
+    val fallback = Runnable {
+      if (request != generation) return@Runnable
+      generation++
+      LogUtils.w(TAG, "No correction in time, typing the recognized text")
+      finish()
+      speak(service.getString(R.string.dictation_not_corrected))
+      type(target, heard)
+    }
+    giveUp = fallback
+    handler.postDelayed(fallback, correctionTimeoutMs(corrector))
+    tones.play(/* playTone= */ true, /* delayPlayTone= */ false)
+    val prompt = prompt(textBeforeCursor(target), heard)
+    worker.execute {
+      val answer =
+        try {
+          correct(corrector, prompt)
+        } catch (e: Exception) {
+          LogUtils.w(TAG, "No correction: %s", e)
+          null
+        } catch (e: OutOfMemoryError) {
+          LogUtils.w(TAG, "No correction: %s", e)
+          null
+        }
+      handler.post {
+        if (request != generation) return@post
+        generation++
+        handler.removeCallbacks(fallback)
+        finish()
+        val corrected = answer?.let(::cleanUp)
+        if (corrected != null && isCorrection(heard, corrected)) {
+          type(target, corrected)
+        } else {
+          speak(service.getString(R.string.dictation_not_corrected))
+          type(target, heard)
+        }
+      }
+    }
   }
 
-  private fun correctsWithAi(): Boolean {
-    val prefs = SharedPreferencesUtils.getSharedPreferences(service)
-    if (
-      !prefs.getBoolean(
-        service.getString(R.string.pref_ai_dictation_key),
-        service.resources.getBoolean(R.bool.pref_ai_dictation_default),
-      )
-    ) {
-      return false
+  /** Asks [corrector], an [AiProvider] id or [DictationSettings.AI_DEVICE], to answer [prompt]. */
+  private fun correct(corrector: String, prompt: String): String? {
+    if (corrector == DictationSettings.AI_DEVICE) {
+      return LocalModelManager.get(service).llm()?.generate(prompt, null)
     }
-    val provider = AiProvider.active(prefs)
-    return (provider != AiProvider.NONE && provider.isReady(prefs)) ||
-      LocalModelManager.get(service).answersRequests()
+    val provider = AiProvider.of(corrector) ?: return null
+    if (provider == AiProvider.GEMINI) {
+      val key = GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY)
+      var failure: IOException? = null
+      // The next model is asked when one is busy, as for descriptions.
+      for (model in GeminiModel.chain(prefs)) {
+        try {
+          return DictationRequests.askGemini(key, model, prompt)
+        } catch (e: DictationRequests.HttpException) {
+          if (e.code != HTTP_TOO_MANY_REQUESTS && e.code != HTTP_UNAVAILABLE) throw e
+          failure = e
+        }
+      }
+      throw failure ?: IOException("No Gemini model")
+    }
+    return DictationRequests.askChat(
+      AiService.chatUrl(provider.addressOf(prefs)),
+      provider.apiKey(prefs),
+      provider.model(prefs),
+      prompt,
+    )
   }
+
+  private fun correctionTimeoutMs(corrector: String): Long =
+    if (corrector == DictationSettings.AI_DEVICE) DEVICE_CORRECTION_TIMEOUT_MS else CORRECTION_TIMEOUT_MS
+
+  private fun finish() {
+    phase = Phase.IDLE
+    giveUp = null
+    tones.stop()
+  }
+
+  /** Stops recording and drops what was recorded, as when SandFly turns off. */
+  fun shutdown() {
+    generation++
+    giveUp?.let { handler.removeCallbacks(it) }
+    continuous?.cancel()
+    continuous = null
+    capture?.stop()
+    capture = null
+    transcriber?.cancel()
+    if (phase == Phase.RECORDING) pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
+    field = null
+    finish()
+  }
+
+  /** The language Whisper is told the speech is in: the phone's. */
+  private fun whisperLanguage(): String =
+    when (val language = Locale.getDefault().language) {
+      "iw" -> "he"
+      "in" -> "id"
+      "ji" -> "yi"
+      "fil" -> "tl"
+      "nb" -> "no"
+      else -> language
+    }
 
   /** Types [text] at the cursor, with the spaces it needs beside the text around it. */
   private fun type(target: AccessibilityNodeInfoCompat, text: String) {
+    field = null
     if (text.isEmpty()) return
     if (
       !target.refresh() ||
@@ -226,23 +369,27 @@ class AiDictation(
     pipeline.returnFeedback(
       EVENT_ID_UNTRACKED,
       Feedback.speech(
-        text,
-        SpeakOptions.create()
-          .setFlags(FeedbackItem.FLAG_NO_HISTORY or FeedbackItem.FLAG_FORCE_FEEDBACK_ALL),
-      )
-        // After speech is no longer silenced for listening, as voice commands do.
+          text,
+          SpeakOptions.create()
+            .setFlags(FeedbackItem.FLAG_NO_HISTORY or FeedbackItem.FLAG_FORCE_FEEDBACK_ALL),
+        )
+        // After speech is no longer silenced for recording, as voice commands do.
         .setDelayMs(SPEECH_DELAY_MS),
     )
   }
 
   internal companion object {
     private const val TAG = "AiDictation"
-    /** Listening stops after this long without speech recognition results. */
-    private const val MAX_LISTENING_MS = 30_000
+    /** How long progress tones play while speech is recognized or corrected. */
+    private const val WORK_TONES_MS = 10 * 60_000L
+    private const val HTTP_TOO_MANY_REQUESTS = 429
+    private const val HTTP_UNAVAILABLE = 503
     /** How much of the text before the cursor the AI service gets, for context. */
     private const val CONTEXT_CHARACTERS = 300
     /** The recognized text is typed when the correction takes longer than this. */
     private const val CORRECTION_TIMEOUT_MS = 20_000L
+    /** A model on the phone is slower than one in the cloud. */
+    private const val DEVICE_CORRECTION_TIMEOUT_MS = 60_000L
     private const val SPEECH_DELAY_MS = 100
 
     fun textBeforeCursor(node: AccessibilityNodeInfoCompat): String {

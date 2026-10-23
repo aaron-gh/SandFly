@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Τίποτα δεν αναγνωρίζεται</string>
     <string name="dictation_unavailable">Η αναγνώριση ομιλίας δεν είναι διαθέσιμη</string>
     <string name="dictation_field_gone">Το πεδίο κειμένου έκλεισε. Τίποτα πληκτρολογημένο.</string>
+    <string name="dictation_transcription_failed">Η ομιλία δεν μεταγράφηκε. Δεν πληκτρολογήθηκε τίποτα.</string>
+    <string name="title_pref_dictation">Υπαγόρευση</string>
+    <string name="title_pref_dictation_recognition">Αναγνώριση ομιλίας</string>
+    <string name="dictation_recognition_automatic">Αυτόματα</string>
+    <string name="dictation_recognition_android">Αναγνώριση ομιλίας Android</string>
+    <string name="dictation_recognition_automatic_using">Αυτόματα: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, χρειάζεται κλειδί API Gemini</string>
+    <string name="dictation_whisper_needs_model">Whisper, χρειάζεται μοντέλο που έχει ληφθεί</string>
+    <string name="title_pref_whisper_models">Μοντέλα Whisper</string>
+    <string name="dictation_whisper_use">Χρήση</string>
+    <string name="title_pref_dictation_ai_service">Υπηρεσία AI για υπαγόρευση</string>
+    <string name="dictation_ai_same">Ίδια με τις αυτόματες περιγραφές</string>
     <string name="title_pref_browse_mode_per_app">Απομνημόνευση λειτουργίας περιήγησης ανά εφαρμογή</string>
     <string name="title_pref_export_settings">Εξαγωγή ρυθμίσεων</string>
     <string name="title_pref_import_settings">Ρυθμίσεις εισαγωγής</string>

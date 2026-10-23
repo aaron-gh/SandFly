@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">ምንም የታወቀ ነገር የለም።</string>
     <string name="dictation_unavailable">የንግግር ማወቂያ የለም።</string>
     <string name="dictation_field_gone">የጽሑፍ መስክ ተዘግቷል። ምንም የተተየበ የለም።</string>
+    <string name="dictation_transcription_failed">ንግግሩ ወደ ጽሑፍ አልተቀየረም። ምንም የተተየበ የለም።</string>
+    <string name="title_pref_dictation">በቃል ማስጻፍ</string>
+    <string name="title_pref_dictation_recognition">የንግግር ማወቂያ</string>
+    <string name="dictation_recognition_automatic">አውቶማቲክ</string>
+    <string name="dictation_recognition_android">የAndroid ንግግር ማወቂያ</string>
+    <string name="dictation_recognition_automatic_using">አውቶማቲክ፦ <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler፣ Gemini API ቁልፍ ያስፈልገዋል</string>
+    <string name="dictation_whisper_needs_model">Whisper፣ የወረደ ሞዴል ያስፈልገዋል</string>
+    <string name="title_pref_whisper_models">የWhisper ሞዴሎች</string>
+    <string name="dictation_whisper_use">ተጠቀም</string>
+    <string name="title_pref_dictation_ai_service">ለበቃል ማስጻፍ የAI አገልግሎት</string>
+    <string name="dictation_ai_same">ከራስ-ሰር መግለጫዎች ጋር ተመሳሳይ</string>
     <string name="title_pref_browse_mode_per_app">በእያንዳንዱ መተግበሪያ ውስጥ የአሰሳ ሁነታን ያስታውሱ</string>
     <string name="title_pref_export_settings">ቅንጅቶችን ወደ ውጪ ላክ</string>
     <string name="title_pref_import_settings">አስመጣ ቅንብሮች</string>

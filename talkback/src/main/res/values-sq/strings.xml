@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Asgjë nuk u njoh</string>
     <string name="dictation_unavailable">Njohja e të folurit nuk ofrohet</string>
     <string name="dictation_field_gone">Fusha e tekstit u mbyll. Asgjë e shtypur.</string>
+    <string name="dictation_transcription_failed">E folura nuk u transkriptua. Asgjë e shtypur.</string>
+    <string name="title_pref_dictation">Diktimi</string>
+    <string name="title_pref_dictation_recognition">Njohja e të folurit</string>
+    <string name="dictation_recognition_automatic">Automatik</string>
+    <string name="dictation_recognition_android">Njohja e të folurit e Android</string>
+    <string name="dictation_recognition_automatic_using">Automatik: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, kërkon një çelës Gemini API</string>
+    <string name="dictation_whisper_needs_model">Whisper, kërkon një model të shkarkuar</string>
+    <string name="title_pref_whisper_models">Modelet Whisper</string>
+    <string name="dictation_whisper_use">Përdor</string>
+    <string name="title_pref_dictation_ai_service">Shërbimi i AI për diktimin</string>
+    <string name="dictation_ai_same">I njëjti si për përshkrimet automatike</string>
     <string name="title_pref_browse_mode_per_app">Mos harroni mënyrën e shfletimit në çdo aplikacion</string>
     <string name="title_pref_export_settings">Cilësimet e eksportit</string>
     <string name="title_pref_import_settings">Cilësimet e importit</string>

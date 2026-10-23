@@ -1753,6 +1753,18 @@
     <string name="dictation_nothing_recognized">Нічога не распазналі</string>
     <string name="dictation_unavailable">Распазнаванне маўлення недаступнае</string>
     <string name="dictation_field_gone">Тэкставае поле закрыта. Нічога не надрукавана.</string>
+    <string name="dictation_transcription_failed">Маўленне не ператворана ў тэкст. Нічога не надрукавана.</string>
+    <string name="title_pref_dictation">Дыктоўка</string>
+    <string name="title_pref_dictation_recognition">Распазнаванне маўлення</string>
+    <string name="dictation_recognition_automatic">Аўтаматычна</string>
+    <string name="dictation_recognition_android">Распазнаванне маўлення Android</string>
+    <string name="dictation_recognition_automatic_using">Аўтаматычна: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, патрэбны ключ API Gemini</string>
+    <string name="dictation_whisper_needs_model">Whisper, патрэбна спампаваная мадэль</string>
+    <string name="title_pref_whisper_models">Мадэлі Whisper</string>
+    <string name="dictation_whisper_use">Выкарыстоўваць</string>
+    <string name="title_pref_dictation_ai_service">Сэрвіс штучнага інтэлекту для дыктоўкі</string>
+    <string name="dictation_ai_same">Той жа, што для аўтаматычных апісанняў</string>
     <string name="title_pref_browse_mode_per_app">Запомніце рэжым прагляду ў кожнай праграме</string>
     <string name="title_pref_export_settings">Экспарт параметраў</string>
     <string name="title_pref_import_settings">Налады імпарту</string>

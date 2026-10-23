@@ -1744,6 +1744,18 @@
     <string name="dictation_nothing_recognized">何も認識されませんでした</string>
     <string name="dictation_unavailable">音声認識は利用できません</string>
     <string name="dictation_field_gone">テキストフィールドが閉じられました。何も入力されていません。</string>
+    <string name="dictation_transcription_failed">音声を文字に変換できませんでした。何も入力されていません。</string>
+    <string name="title_pref_dictation">音声入力</string>
+    <string name="title_pref_dictation_recognition">音声認識</string>
+    <string name="dictation_recognition_automatic">自動</string>
+    <string name="dictation_recognition_android">Android の音声認識</string>
+    <string name="dictation_recognition_automatic_using">自動: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler、Gemini API キーが必要です</string>
+    <string name="dictation_whisper_needs_model">Whisper、モデルのダウンロードが必要です</string>
+    <string name="title_pref_whisper_models">Whisper モデル</string>
+    <string name="dictation_whisper_use">使用</string>
+    <string name="title_pref_dictation_ai_service">音声入力用の AI サービス</string>
+    <string name="dictation_ai_same">説明の自動読み上げと同じ</string>
     <string name="title_pref_browse_mode_per_app">各アプリのブラウズモードを記憶する</string>
     <string name="title_pref_export_settings">設定のエクスポート</string>
     <string name="title_pref_import_settings">インポート設定</string>

@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Юу ч танигдаагүй</string>
     <string name="dictation_unavailable">Яриа таних боломжгүй</string>
     <string name="dictation_field_gone">Текстийн талбар хаагдсан. Юу ч бичээгүй.</string>
+    <string name="dictation_transcription_failed">Яриаг текст болгоогүй. Юу ч бичээгүй.</string>
+    <string name="title_pref_dictation">Хэлж бичүүлэх</string>
+    <string name="title_pref_dictation_recognition">Яриа таних</string>
+    <string name="dictation_recognition_automatic">Автомат</string>
+    <string name="dictation_recognition_android">Android-ын яриа таних</string>
+    <string name="dictation_recognition_automatic_using">Автомат: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, Gemini API түлхүүр шаардлагатай</string>
+    <string name="dictation_whisper_needs_model">Whisper, татаж авсан загвар шаардлагатай</string>
+    <string name="title_pref_whisper_models">Whisper загварууд</string>
+    <string name="dictation_whisper_use">Ашиглах</string>
+    <string name="title_pref_dictation_ai_service">Хэлж бичүүлэхэд зориулсан AI үйлчилгээ</string>
+    <string name="dictation_ai_same">Автомат тайлбаруудынхтай ижил</string>
     <string name="title_pref_browse_mode_per_app">Апп тус бүрийн хайлтын горимыг санаарай</string>
     <string name="title_pref_export_settings">Экспортын тохиргоо</string>
     <string name="title_pref_import_settings">Импортын тохиргоо</string>

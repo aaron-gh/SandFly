@@ -1755,6 +1755,18 @@
     <string name="dictation_nothing_recognized">Nieko nepripažino</string>
     <string name="dictation_unavailable">Kalbos atpažinimas nepasiekiamas</string>
     <string name="dictation_field_gone">Teksto laukas uždarytas. Nieko neįrašyta.</string>
+    <string name="dictation_transcription_failed">Kalba nebuvo transkribuota. Nieko neįrašyta.</string>
+    <string name="title_pref_dictation">Diktavimas</string>
+    <string name="title_pref_dictation_recognition">Kalbos atpažinimas</string>
+    <string name="dictation_recognition_automatic">Automatinis</string>
+    <string name="dictation_recognition_android">„Android“ kalbos atpažinimas</string>
+    <string name="dictation_recognition_automatic_using">Automatinis: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, reikia Gemini API rakto</string>
+    <string name="dictation_whisper_needs_model">Whisper, reikia atsisiųsto modelio</string>
+    <string name="title_pref_whisper_models">Whisper modeliai</string>
+    <string name="dictation_whisper_use">Naudoti</string>
+    <string name="title_pref_dictation_ai_service">AI paslauga diktavimui</string>
+    <string name="dictation_ai_same">Ta pati kaip automatiniams aprašams</string>
     <string name="title_pref_browse_mode_per_app">Prisiminkite naršymo režimą kiekvienoje programoje</string>
     <string name="title_pref_export_settings">Eksportuoti nustatymus</string>
     <string name="title_pref_import_settings">Importuoti nustatymus</string>

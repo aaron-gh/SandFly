@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Inget känt igen</string>
     <string name="dictation_unavailable">Taligenkänning inte tillgänglig</string>
     <string name="dictation_field_gone">Textfältet stängt. Inget skrivit.</string>
+    <string name="dictation_transcription_failed">Talet transkriberades inte. Inget skrivet.</string>
+    <string name="title_pref_dictation">Diktering</string>
+    <string name="title_pref_dictation_recognition">Taligenkänning</string>
+    <string name="dictation_recognition_automatic">Automatiskt</string>
+    <string name="dictation_recognition_android">Androids taligenkänning</string>
+    <string name="dictation_recognition_automatic_using">Automatiskt: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, behöver en Gemini API-nyckel</string>
+    <string name="dictation_whisper_needs_model">Whisper, behöver en nedladdad modell</string>
+    <string name="title_pref_whisper_models">Whisper-modeller</string>
+    <string name="dictation_whisper_use">Använd</string>
+    <string name="title_pref_dictation_ai_service">AI-tjänst för diktering</string>
+    <string name="dictation_ai_same">Samma som för automatiska beskrivningar</string>
     <string name="title_pref_browse_mode_per_app">Kom ihåg bläddringsläget i varje app</string>
     <string name="title_pref_export_settings">Exportera inställningar</string>
     <string name="title_pref_import_settings">Importera inställningar</string>

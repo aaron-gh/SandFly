@@ -1747,6 +1747,18 @@
     <string name="dictation_nothing_recognized">Nothing recognised</string>
     <string name="dictation_unavailable">Speech recognition unavailable</string>
     <string name="dictation_field_gone">Text field closed. Nothing typed.</string>
+    <string name="dictation_transcription_failed">Speech not transcribed. Nothing typed.</string>
+    <string name="title_pref_dictation">Dictation</string>
+    <string name="title_pref_dictation_recognition">Speech recognition</string>
+    <string name="dictation_recognition_automatic">Automatic</string>
+    <string name="dictation_recognition_android">Android speech recognition</string>
+    <string name="dictation_recognition_automatic_using">Automatic: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, needs a Gemini API key</string>
+    <string name="dictation_whisper_needs_model">Whisper, needs a downloaded model</string>
+    <string name="title_pref_whisper_models">Whisper models</string>
+    <string name="dictation_whisper_use">Use</string>
+    <string name="title_pref_dictation_ai_service">AI service for dictation</string>
+    <string name="dictation_ai_same">Same as automatic descriptions</string>
     <string name="title_pref_browse_mode_per_app">Remember browse mode in each app</string>
     <string name="title_pref_export_settings">Export settings</string>
     <string name="title_pref_import_settings">Import settings</string>

@@ -1,0 +1,24 @@
+plugins {
+    id 'com.android.library'
+}
+
+apply from: "../shared.gradle"
+
+// Speech recognition on the phone with whisper.cpp, for Dictate.
+android {
+    namespace = "com.google.android.accessibility.whisper"
+    ndkVersion = "27.3.13750724"
+    defaultConfig {
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_STL=c++_static"
+            }
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path = file('src/main/cpp/CMakeLists.txt')
+            version = "3.22.1"
+        }
+    }
+}

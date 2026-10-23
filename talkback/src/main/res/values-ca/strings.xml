@@ -1751,6 +1751,18 @@
     <string name="dictation_nothing_recognized">Res reconegut</string>
     <string name="dictation_unavailable">El reconeixement de veu no està disponible</string>
     <string name="dictation_field_gone">Camp de text tancat. Res escrit.</string>
+    <string name="dictation_transcription_failed">No s’ha transcrit la veu. No s’ha escrit res.</string>
+    <string name="title_pref_dictation">Dictat</string>
+    <string name="title_pref_dictation_recognition">Reconeixement de veu</string>
+    <string name="dictation_recognition_automatic">Automàtic</string>
+    <string name="dictation_recognition_android">Reconeixement de veu d’Android</string>
+    <string name="dictation_recognition_automatic_using">Automàtic: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
+    <string name="dictation_rambler_needs_key">Rambler, necessita una clau d’API de Gemini</string>
+    <string name="dictation_whisper_needs_model">Whisper, necessita un model baixat</string>
+    <string name="title_pref_whisper_models">Models de Whisper</string>
+    <string name="dictation_whisper_use">Utilitza</string>
+    <string name="title_pref_dictation_ai_service">Servei d’IA per al dictat</string>
+    <string name="dictation_ai_same">El mateix que les descripcions automàtiques</string>
     <string name="title_pref_browse_mode_per_app">Recordeu el mode de navegació a cada aplicació</string>
     <string name="title_pref_export_settings">Exporta la configuració</string>
     <string name="title_pref_import_settings">Importa la configuració</string>
