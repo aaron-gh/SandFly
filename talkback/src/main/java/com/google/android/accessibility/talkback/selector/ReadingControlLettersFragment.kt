@@ -23,6 +23,7 @@ import androidx.preference.PreferenceGroup
 import androidx.preference.TwoStatePreference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -43,7 +44,9 @@ class ReadingControlLettersFragment : TalkbackBaseFragment() {
     val screen = preferenceManager.createPreferenceScreen(context)
     // The Reading controls screen has each control's name, keyed by its switch's key.
     val controls = preferenceManager.inflateFromResource(context, R.xml.selector_menu_preferences, null)
-    val settings = Setting.values().associateBy { getString(it.prefKeyResId) }
+    // Without the controls that the Reading controls screen hides on this device.
+    TalkBackPreferenceFilter(context).filterPreferences(controls)
+    val settings = SelectorController.SELECTOR_SETTINGS.associateBy { getString(it.prefKeyResId) }
     for (control in switches(controls)) {
       val setting = settings[control.key] ?: continue
       screen.addPreference(
