@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Звукові теми</string>
+    <string name="summary_pref_sound_themes">Встановлюйте та вибирайте набори звуків і вібрації, замінюйте окремі звуки на власні, увімкніть керування звуками та вібрацією та 3D-аудіо.</string>
+    <string name="sound_themes_installed_category">Встановлені теми</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">Власні звуки та вібрації SandFly, а також будь-які власні звуки.</string>
+    <string name="sound_theme_in_use">У користуванні</string>
+    <string name="sound_theme_by">Від <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Ліцензія: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> звук.</item>
+        <item quantity="few"><xliff:g id="count" example="13">%d</xliff:g> звуки.</item>
+        <item quantity="many"><xliff:g id="count" example="13">%d</xliff:g> звуків.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> звуки.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> вібрація.</item>
+        <item quantity="few"><xliff:g id="count" example="13">%d</xliff:g> вібрації.</item>
+        <item quantity="many"><xliff:g id="count" example="13">%d</xliff:g> вібрацій.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> вібрації.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Вмикає звук керування та вібрацію.</string>
+    <string name="sound_theme_control_sounds_off">Вимкнення звуків управління та вібрації.</string>
+    <string name="sound_theme_use">Використовуйте цю тему</string>
+    <string name="sound_theme_about">Про цю тему</string>
+    <string name="sound_theme_export">Зберегти як файл теми</string>
+    <string name="sound_theme_remove">Видалити</string>
+    <string name="sound_theme_remove_confirm">Видалити тему <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Видалити</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Зберегла тему, з <xliff:g id="count" example="1">%d</xliff:g> звуком.</item>
+        <item quantity="few">Зберегла тему, з <xliff:g id="count" example="13">%d</xliff:g> звуками.</item>
+        <item quantity="many">Збережено тему, з <xliff:g id="count" example="13">%d</xliff:g> звуками.</item>
+        <item quantity="other">Зберегла тему, з <xliff:g id="count" example="13">%d</xliff:g> звуками.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly не вдалося зберегти файл теми.</string>
+    <string name="sound_theme_no_picker">На цьому пристрої немає програми для вибору файлів.</string>
+    <string name="sound_theme_settings_category">Налаштування <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Звуки</string>
+    <string name="summary_pref_theme_sounds">Замініть будь-який звук цієї теми власним звуковим файлом.</string>
+    <string name="sound_themes_install_category">Встановити тему</string>
+    <string name="title_pref_sound_theme_install_file">З файлу</string>
+    <string name="summary_pref_sound_theme_install_file">Файл теми — це ZIP-файл. Ви також можете відкрити його або поділитися ним із SandFly з іншої програми.</string>
+    <string name="title_pref_sound_theme_install_link">З посилання</string>
+    <string name="summary_pref_sound_theme_install_link">Посилання на файл теми або на репозиторій GitHub із темою в ньому. Ви також можете поділитися посиланням із SandFly у своєму браузері.</string>
+    <string name="title_pref_sound_theme_install_source">З джерела</string>
+    <string name="summary_pref_sound_theme_install_source">Файли тем у репозиторії на GitHub, GitLab, Codeberg, Gitea або Bitbucket.</string>
+    <string name="sound_theme_sources">Джерела звукових тем</string>
+    <string name="sound_theme_source_empty">У цьому джерелі немає звукових тем</string>
+    <string name="sound_theme_source_failed">Не вдалося завантажити звукові теми. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Звукові теми, встановлені з нього, залишаються встановленими.</string>
+    <string name="sound_theme_link_message">Введіть або вставте посилання на файл теми або на репозиторій GitHub із темою.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Встановити звукову тему</string>
+    <string name="sound_theme_install_reading">Читання звукової теми</string>
+    <string name="sound_theme_install_title">Встановити <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Встановити та використовувати</string>
+    <string name="sound_theme_install">Встановити</string>
+    <string name="sound_theme_install_replaces">Це замінює встановлену тему з такою ж назвою.</string>
+    <string name="sound_theme_install_skipped">Пропущено: \n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Встановлено <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Встановлено <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Зараз використовується.</string>
+    <string name="sound_theme_install_nothing">Немає звукової теми для встановлення.</string>
+    <string name="sound_theme_install_not_a_theme">Це не звукова тема, яку SandFly може використовувати: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly не вдалося встановити звукову тему. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Посилання на звукові теми мають починатися з https.</string>
+    <string name="title_pref_theme_sounds_of">Звуки <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Використовуйте звуки SandFly для всіх</string>
+    <string name="theme_sounds_reset_confirm">Видалити всі звуки цієї теми та використовувати власні звуки SandFly?</string>
+    <string name="theme_sounds_reset_button">Видалити</string>
+    <string name="theme_sounds_category">Звуки</string>
+    <string name="theme_sound_summary_default">Звук SandFly</string>
+    <string name="theme_sound_summary_custom">Звук теми</string>
+    <string name="theme_sound_summary_none">Ні звуку. Відтворюється звук фокусування.</string>
+    <string name="theme_sound_summary_android_keyboard">Звук клавіатури Android</string>
+    <string name="theme_sound_use_android_keyboard">Використовуйте звук клавіатури Android</string>
+    <string name="theme_sound_braille_character">Клавіатура Брайля: введення символу</string>
+    <string name="theme_sound_braille_space">Клавіатура Брайля: пробіл</string>
+    <string name="theme_sound_braille_delete">Клавіатура Брайля: видалити</string>
+    <string name="theme_sound_braille_new_line">Клавіатура Брайля: новий рядок</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Виберіть звуковий файл</string>
+    <string name="theme_sound_preview">Попередній перегляд</string>
+    <string name="theme_sound_none">Ні звуку</string>
+    <string name="theme_sound_summary_no_sound">Ні звуку</string>
+    <string name="theme_sound_action_set_none">Встановити відсутність звуку</string>
+    <string name="theme_sound_use_default">Використовуйте звук SandFly</string>
+    <string name="theme_sound_remove">Прибрати звук</string>
+    <string name="theme_sound_too_large">Цей файл завеликий. Звук може бути до 5 Мб.</string>
+    <string name="theme_sound_not_audio">SandFly не може відтворити цей файл. Виберіть звук WAV, OGG, MP3 або FLAC.</string>
+    <string name="theme_sound_failed">SandFly не вдалося прочитати цей файл.</string>
+</resources>
