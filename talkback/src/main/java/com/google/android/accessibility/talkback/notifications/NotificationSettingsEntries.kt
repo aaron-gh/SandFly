@@ -30,7 +30,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.utils.NotificationUtils
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-/** The test notification and automation entries of the Notifications settings category. */
+/** The test notification and automation entries of the Notifications settings screen. */
 @SuppressLint("MissingPermission")
 object NotificationSettingsEntries {
   private const val TEST_DELAY_MS = 5_000L
