@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">‏لوحة مفاتيح برايل TalkBack</string>
+  <string name="braille_ime_service_name">‏لوحة مفاتيح برايل SandFly</string>
   <string name="braille_ime_bd_mode_name">إدخال النصوص على جهاز عرض بلغة برايل</string>
   <string name="switch_to_tabletop_announcement">وضع \"الشاشة المسطحة\": ضَع الجهاز بشكل مسطح واحرِص على أن يكون منفذ الشحن إلى جهة اليسار.</string>
   <string name="tabletop_port_left_announcement">وضع سطح الطاولة، منفذ الشحن على اليسار</string>
@@ -32,7 +32,7 @@
   <string name="switched_to_uncontracted_announcement">تم التبديل إلى لغة برايل غير المختصرة.</string>
   <string name="braille_ime_displayed_name">لوحة مفاتيح برايل</string>
   <string name="multiple_languages_braille_ime_displayed_name">لوحة مفاتيح برايل، %s</string>
-  <string name="input_view_caption">‏لوحة مفاتيح برايل في TalkBack - للحصول على مساعدة، يُرجى الانتقال إلى g.co/help/braille.</string>
+  <string name="input_view_caption">‏لوحة مفاتيح برايل في SandFly - للحصول على مساعدة، يُرجى الانتقال إلى g.co/help/braille.</string>
   <string name="perform_action_next">التالي</string>
   <string name="perform_action_submitting">إرسال النص</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">تعديل موضع النقاط: لنسجّل أولاً موضع النقاط على %s.</string>
@@ -67,8 +67,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">لتغيير اللغة أثناء الكتابة باستخدام لوحة برايل، مرِّر سريعًا للأعلى باستخدام 3 أصابع ثم اختَر \"التبديل إلى اللغة التالية\".</string>
   <string name="title_pref_accumulate_presses">تضمين كل النقاط التي تم الضغط عليها</string>
   <string name="summary_pref_accumulate_presses">كل نقطة يتم الضغط عليها هي جزء من الإدخال حتى إذا تم تحريرها قبل النقاط الأخرى</string>
-  <string name="title_pref_reverse_dots">عكس النقاط</string>
-  <string name="summary_pref_reverse_dots">تبديل مواضع النقاط: مثلاً يتم تبديل النقطة رقم \"1\" مع النقطة رقم \"4\"</string>
+  <string name="title_pref_reverse_dots">تبديل النقاط اليمنى واليسرى</string>
+  <string name="summary_pref_reverse_dots">تتبادل النقاط 1 و2 و3 أماكنها مع النقاط 4 و5 و6</string>
   <string name="title_pref_flip_dots_vertically">تبديل النقاط العلوية والسفلية</string>
   <string name="summary_pref_flip_dots_vertically">تتبادل النقطة 1 مكانها مع النقطة 3، والنقطة 4 مع النقطة 6</string>
   <string name="title_pref_tablet_held_up_faces_away">الجهاز اللوحي المرفوع يتّجه بعيدًا</string>
@@ -129,12 +129,12 @@
   <string name="bk_pref_category_title_keyboard">لوحة المفاتيح</string>
   <string name="not_enough_touch_points_dialog_title">جهازك غير متوافق مع لوحة مفاتيح برايل.</string>
   <string name="not_enough_touch_points_dialog_message">لا يتّسع جهازك لنقاط لمس كافية. لمزيد من المعلومات، يُرجى التواصل مع الشركة المصنّعة لجهازك.</string>
-  <string name="talkback_off_dialog_title">‏تفعيل TalkBack لاستخدام لوحة مفاتيح برايل</string>
+  <string name="talkback_off_dialog_title">‏تفعيل SandFly لاستخدام لوحة مفاتيح برايل</string>
   <string name="talkback_off_dialog_positive_button">تفعيل الميزة في إعدادات سهولة الاستخدام</string>
-  <string name="talkback_suspend_dialog_title">‏استئناف تفعيل ميزة TalkBack لاستخدام لوحة مفاتيح برايل</string>
-  <string name="talkback_off_or_suspend_dialog_message">‏عندما تكون ميزة TalkBack مفعَّلة، يمكنك النقر على الشاشة لإدخال رموز برايل.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">‏تفعيل TalkBack لتغيير الإيماءة</string>
-  <string name="talkback_off_custom_gestures_dialog_message">‏ميزة TalkBack غير مفعَّلة. يمكنك تفعيلها لتغيير إيماءات لوحة مفاتيح برايل.</string>
+  <string name="talkback_suspend_dialog_title">‏استئناف تفعيل ميزة SandFly لاستخدام لوحة مفاتيح برايل</string>
+  <string name="talkback_off_or_suspend_dialog_message">‏عندما تكون ميزة SandFly مفعَّلة، يمكنك النقر على الشاشة لإدخال رموز برايل.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">‏تفعيل SandFly لتغيير الإيماءة</string>
+  <string name="talkback_off_custom_gestures_dialog_message">‏ميزة SandFly غير مفعَّلة. يمكنك تفعيلها لتغيير إيماءات لوحة مفاتيح برايل.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">الانتقال إلى الإعدادات</string>
   <string name="reset_gestures_dialog_title">هل المطلوب إعادة ضبط جميع الإيماءات؟</string>
   <string name="reset_gestures_dialog_message">ستتم إعادة ضبط جميع إيماءات لوحة مفاتيح برايل على الإعدادات التلقائية</string>
@@ -149,7 +149,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">إعادة الضبط على الإعدادات التلقائية</string>
   <string name="custom_gestures_dialog_remove_button">إزالة الإيماءة</string>
   <string name="change_gestures_dialog_message_title">كيفية تغيير إيماءة</string>
-  <string name="change_gestures_dialog_message">‏في الشاشة التالية، سيتم فتح لوحة مفاتيح برايل ولن يعود بإمكانك استخدام إيماءات TalkBack.\n\nبعد فتح لوحة مفاتيح برايل، يمكنك تنفيذ الإيماءة المراد استخدامها، أو إغلاق لوحة مفاتيح برايل وإلغاء تغيير الإيماءات من خلال التمرير سريعًا للأسفل بإصبعين.\n\nيمكنك الاطّلاع على الإيماءات المتاحة\n</string>
+  <string name="change_gestures_dialog_message">‏في الشاشة التالية، سيتم فتح لوحة مفاتيح برايل ولن يعود بإمكانك استخدام إيماءات SandFly.\n\nبعد فتح لوحة مفاتيح برايل، يمكنك تنفيذ الإيماءة المراد استخدامها، أو إغلاق لوحة مفاتيح برايل وإلغاء تغيير الإيماءات من خلال التمرير سريعًا للأسفل بإصبعين.\n\nيمكنك الاطّلاع على الإيماءات المتاحة\n</string>
   <string name="change_gestures_dialog_message_link">الاطّلاع على الإيماءات المتاحة</string>
   <string name="change_gestures_dialog_dont_show_checkbox">عدم إظهار هذه الرسالة مرة أخرى</string>
   <string name="change_gestures_dialog_positive_button">متابعة</string>
@@ -161,12 +161,12 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">عدم الاستخدام</string>
   <string name="next_keyboard">لوحة المفاتيح التالية</string>
   <string name="braille_tutorial_title">الدليل التوجيهي للوحة مفاتيح برايل</string>
-  <string name="tutorial_intro_description">‏باستخدام لوحة مفاتيح برايل، يمكنك النقر على الشاشة لإدخال رموز برايل المكونة من 6 نقاط.\n\nأنت تستخدم لغة برايل الإنجليزية الموحدة. لتبديل لغة الكتابة، انتقِل إلى إعدادات TalkBack.‏\n\nللكتابة بلغة برايل، يجب مسك الهاتف واستخدامه بطريقة مختلفة.</string>
+  <string name="tutorial_intro_description">‏باستخدام لوحة مفاتيح برايل، يمكنك النقر على الشاشة لإدخال رموز برايل المكونة من 6 نقاط.\n\nأنت تستخدم لغة برايل الإنجليزية الموحدة. لتبديل لغة الكتابة، انتقِل إلى إعدادات SandFly.‏\n\nللكتابة بلغة برايل، يجب مسك الهاتف واستخدامه بطريقة مختلفة.</string>
   <string name="next_step">الخطوة التالية</string>
   <string name="leave_keyboard">مغادرة لوحة مفاتيح برايل</string>
   <string name="skip_tutorial">تخطّي الدليل التوجيهي</string>
-  <string name="hold_six_fingers_description">‏لن تتمكن من استخدام إيماءات TalkBack المعتادة في لوحة مفاتيح برايل\n\n.للبدء، يجب ضبط موضع 6 نقاط للغة برايل عند الكتابة.</string>
-  <string name="rotate_orientation_description_1">‏اعتبارًا من الآن، لن تتمكن من استخدام إيماءات TalkBack العادية. ميزة TalkBack غير متاحة أثناء استخدام لوحة مفاتيح برايل.</string>
+  <string name="hold_six_fingers_description">‏لن تتمكن من استخدام إيماءات SandFly المعتادة في لوحة مفاتيح برايل\n\n.للبدء، يجب ضبط موضع 6 نقاط للغة برايل عند الكتابة.</string>
+  <string name="rotate_orientation_description_1">‏اعتبارًا من الآن، لن تتمكن من استخدام إيماءات SandFly العادية. ميزة SandFly غير متاحة أثناء استخدام لوحة مفاتيح برايل.</string>
   <string name="rotate_orientation_description_2">للبدء، امسِك هاتفك بهذه الطريقة بحيث لا تكون الشاشة مواجهة لك.</string>
   <string name="tap_to_continue">انقر مرتين في أي مكان للمتابعة.</string>
   <string name="instruction_type_letter_a">‏انقر على النقطة رقم \"1\" بإصبع السبابة الأيسر لكتابة الحرف \"A\".</string>
@@ -184,7 +184,7 @@
   <string name="result_swipe_down">تم نقل المؤشر للأمام.</string>
   <string name="result_swipe_down_2_fingers">إخفاء لوحة المفاتيح</string>
   <string name="result_swipe_down_3_fingers">لوحة المفاتيح التالية</string>
-  <string name="rotate_orientation_announcement">‏اعتبارًا من الآن، لا يمكن استخدام إيماءات TalkBack العادية لأنّ ميزة TalkBack غير متاحة أثناء استخدام لوحة مفاتيح برايل.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">‏اعتبارًا من الآن، لا يمكن استخدام إيماءات SandFly العادية لأنّ ميزة SandFly غير متاحة أثناء استخدام لوحة مفاتيح برايل.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">‏أولاً، يجب قلب الهاتف بحيث لا تكون الشاشة مواجهة لحامل الجهاز.\n\nبعد ذلك، يُرجى حمل الهاتف أفقيًا. يجب إمساك الهاتف من أقصى الجانبين، على أن تكون يدك اليمنى من الجانب المزوّد بمنفذ USB. يُرجى وضع الأصابع الثلاثة الوسطى على الشاشة، واستخدام الخنصر والإبهام لتثبيت الهاتف.\n\nبعد ذلك، يكفي النقر مرتين على الشاشة للمتابعة.\n\nلإغلاق لوحة مفاتيح برايل، يُرجى التمرير سريعًا للأسفل بثلاثة أصابع. سيؤدي هذا الإجراء إلى العودة إلى لوحة المفاتيح الأصلية.</string>
   <string name="rotate_orientation_continue_announcement">هاتفك في الوضع الرأسي. للمتابعة، قم بتدوير الهاتف أفقيًا بحيث يكون الجانب الطويل في الأسفل ثم قم بتدوير الشاشة مع توجيهها بعيدًا عنك. عندما تكون مستعدًا، انقر مرتين على الشاشة للمتابعة.</string>
   <string name="type_letter_a_announcement">‏وجِّه الشاشة بحيث لا تكون مواجهة لك. امسِك الهاتف بيديك الاثنتَين عند الحافتين القصيرتَين للهاتف بحيث تتمكن الأصابع الثلاثة الوسطى من كل يد من لمس الشاشة.\n\nيجب أن يكون إصبع السبابة الأيسر على النقطة رقم \"1\". والآن انقر على النقطة رقم \"1\" لكتابة الحرف \"A\".</string>
@@ -200,7 +200,7 @@
   <string name="swipe_down_3_fingers_announcement">للتبديل إلى لوحة مفاتيح أخرى، مرّر سريعًا للأسفل بثلاثة أصابع. جرِّب الآن.</string>
   <string name="swipe_down_3_fingers_completed_announcement">لوحة المفاتيح التالية: سيؤدي هذا الإجراء عادةً إلى التبديل إلى لوحة المفاتيح التالية. في الوقت الحالي، لن تغادر لوحة مفاتيح برايل لأنك لا تزال في الدليل التوجيهي.</string>
   <string name="swipe_up_3_fingers_announcement">يمكنك أيضًا الكتابة في وضع \"الشاشة المسطحة\" عن طريق وضع هاتفك مسطحًا على طاولة. لإنهاء الدليل التوجيهي، مرِّر سريعًا للأعلى بثلاثة أصابع وابحث عن خيار إنهائه.</string>
-  <string name="open_context_menu_announcement">‏تم فتح قائمة الخيارات. أدِر هاتفك مرة أخرى بحيث تكون الشاشة مواجهة لك وامسِكه بطريقة طبيعية. يمكنك الآن استخدام الإيماءات العادية في TalkBack للتنقل. مرِّر سريعًا لليسار لعرض المزيد من الخيارات.</string>
+  <string name="open_context_menu_announcement">‏تم فتح قائمة الخيارات. أدِر هاتفك مرة أخرى بحيث تكون الشاشة مواجهة لك وامسِكه بطريقة طبيعية. يمكنك الآن استخدام الإيماءات العادية في SandFly للتنقل. مرِّر سريعًا لليسار لعرض المزيد من الخيارات.</string>
   <string name="hold_six_fingers_announcement">‏%s\nضَع جهازك بشكل مسطح على الطاولة ثم انقر مع الاستمرار على الشاشة بأصابعك الثلاثة الوسطى في كل يد في الموضع الذي يريحك في الكتابة.</string>
   <string name="hold_six_fingers_inactive_announcement">ضَع جهازك بشكل مسطح على الطاولة ثم انقر مع الاستمرار على الشاشة بأصابعك الثلاثة الوسطى في كل يد في الموضع الذي يريحك في الكتابة.</string>
   <string name="finish_tutorial_announcement">إظهار لوحة مفاتيح برايل: يجب قلب الهاتف بحيث لا تكون الشاشة مواجهة لك. بعد ذلك، يُرجى حمل الهاتف أفقيًا ثم بدء الكتابة.</string>
@@ -232,7 +232,9 @@
   <string name="custom_gesture_conflict_try_another">يتم استخدام هذه الإيماءة في \"%1$s\" ولا يمكن تغييرها. يُرجى تجربة إيماءة أخرى. %2$s</string>
   <string name="custom_gesture_cannot_used">لا يمكن استخدام هذه الإيماءة</string>
   <string name="custom_gesture_no_gesture">لم يتم تنفيذ أي إيماءة</string>
-  <string name="custom_gesture_try_another">‏يُرجى تجربة إيماءة أخرى. وللاطّلاع على قائمة بجميع الإيماءات المتاحة، يمكن الانتقال إلى مركز مساعدة لوحة مفاتيح برايل في TalkBack. %s</string>
+  <string name="custom_gesture_try_another">‏يُرجى تجربة إيماءة أخرى. وللاطّلاع على قائمة بجميع الإيماءات المتاحة، يمكن الانتقال إلى مركز مساعدة لوحة مفاتيح برايل في SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">الإيماءات غير متطابقة</string>
   <string name="custom_gesture_perform_again">يُرجى تنفيذ الإيماءة المراد استخدامها مرة أخرى. %s</string>
+    <string name="switch_to_language_contracted_announcement">تم التبديل إلى %s.، لغة برايل المختصرة</string>
+    <string name="switch_to_language_uncontracted_announcement">تم التبديل إلى %s.، لغة برايل غير المختصرة</string>
 </resources>

@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">لوحة مفاتيح جهاز برايل</string>
   <string name="bd_application_name">‏خدمات تسهيل استخدام Android</string>
-  <string name="bd_ime_unavailable_activity_name">‏لوحة مفاتيح برايل TalkBack غير متاحة</string>
-  <string name="bd_ime_disabled_dialog_title">‏تفعيل لوحة مفاتيح برايل TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">‏لوحة مفاتيح برايل SandFly غير متاحة</string>
+  <string name="bd_ime_disabled_dialog_title">‏تفعيل لوحة مفاتيح برايل SandFly</string>
   <string name="bd_ime_disabled_dialog_message">لاستخدام جهاز عرض بلغة برايل في الكتابة، انتقِل إلى إعدادات الإدخال لتفعيله.</string>
   <string name="bd_ime_disabled_dialog_title_positive">إعدادات الإدخال</string>
   <string name="bd_ime_not_default_dialog_title">تبديل أسلوب الإدخال</string>
-  <string name="bd_ime_not_default_dialog_message">‏لمواصلة الكتابة، اختَر لوحة مفاتيح برايل TalkBack كأسلوب الإدخال المراد استخدامه.</string>
+  <string name="bd_ime_not_default_dialog_message">‏لمواصلة الكتابة، اختَر لوحة مفاتيح برايل SandFly كأسلوب الإدخال المراد استخدامه.</string>
   <string name="bd_ime_not_default_dialog_positive">تبديل أسلوب الإدخال</string>
   <string name="type_unlabeled">غير مصنّف</string>
   <string name="type_unlabeled_edittext">مربّع تعديل غير مُصنَّف</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">التحريك لليسار</string>
   <string name="overlay_pan_right_button">التحريك لليمين</string>
   <string name="bd_preferences_title">جهاز عرض بلغة برايل</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">‏لاستخدام جهاز عرض بلغة برايل، عليك أولاً تفعيل ميزة TalkBack.</string>
-  <string name="bd_preferences_banner_talkback_off_button">‏الانتقال إلى TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">‏لاستخدام جهاز عرض بلغة برايل، عليك أولاً تفعيل ميزة SandFly.</string>
+  <string name="bd_preferences_banner_talkback_off_button">‏الانتقال إلى SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">لاستخدام جهاز عرض بلغة برايل، عليك أولاً تفعيل البلوتوث.</string>
   <string name="bd_preferences_banner_bluetooth_off_button">تفعيل البلوتوث</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">لاستخدام جهاز عرض بلغة برايل، يجب منح \"%s\" إذنًا بالوصول إلى الأجهزة المجاورة.</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">لاستخدام \"وضع التصفّح\"، عليك التبديل من خريطة المفاتيح التلقائية إلى خريطة المفاتيح المحسّنة. وسيؤدي هذا التغيير إلى تعديل بعض أوامر جهاز العرض بلغة برايل.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">الإعدادات</string>
   <string name="bd_command_change_dialog_title">تم تعديل بعض الأوامر</string>
-  <string name="bd_command_change_dialog_message">‏تم تعديل أوامر أجهزة العرض بلغة برايل التالية في إصدار TalkBack هذا:\n\n• العنصر السابق: اضغط على النقاط 1 و7\n\n• العنصر التالي: اضغط على 4 و8\n\n• العنصر السابق للتحكّم في القراءة: اضغط على 2 و3 و7 و8\n\n• العنصر التالي للتحكّم في القراءة: اضغط على 5 و6 و7 و8</string>
+  <string name="bd_command_change_dialog_message">‏تم تعديل أوامر أجهزة العرض بلغة برايل التالية في إصدار SandFly هذا:\n\n• العنصر السابق: اضغط على النقاط 1 و7\n\n• العنصر التالي: اضغط على 4 و8\n\n• العنصر السابق للتحكّم في القراءة: اضغط على 2 و3 و7 و8\n\n• العنصر التالي للتحكّم في القراءة: اضغط على 5 و6 و7 و8</string>
   <string name="bd_preference_braille_contracted">لغة برايل المختصرة</string>
   <string name="bd_preference_braille_uncontracted">لغة برايل غير المختصرة</string>
   <string name="bd_braille_grade_tips">‏للتبديل سريعًا بين لغة برايل المختصرة ولغة برايل غير المختصرة باستخدام جهاز عرض بلغة برايل، اضغط على مفتاح المسافة والنقاط 1 و2 و4 و5.\n\nيعمل هذا الأمر إذا كنت تستخدم لغة تتضمّن كلتا درجتَي لغة برايل.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">التنقّل بين العناصر</string>
   <string name="bd_commands_bindings_category_system_actions_title">إجراءات النظام</string>
   <string name="bd_commands_bindings_category_system_actions_summary">الرجوع والشاشة الرئيسية والإشعارات وغيرها</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">‏ميزات TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">‏قوائم TalkBack وإعداداتها</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">‏ميزات SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">قوائم SandFly وإعداداته</string>
   <string name="bd_commands_bindings_category_braille_settings_title">إعدادات لغة برايل</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">لغة برايل وإعداداتها</string>
   <string name="bd_commands_bindings_category_text_editing_title">تعديل النصوص</string>
@@ -227,10 +227,10 @@
   <string name="bd_cmd_global_all_apps">فتح كل التطبيقات</string>
   <string name="bd_cmd_toggle_screen_search">فتح ميزة \"البحث المباشر\"</string>
   <string name="bd_cmd_edit_custom_label">تعديل التصنيف المخصّص</string>
-  <string name="bd_cmd_open_talkback_menu">‏فتح قائمة TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">‏تفعيل كلام TalkBack أو إيقافه</string>
+  <string name="bd_cmd_open_talkback_menu">‏فتح قائمة SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">‏تفعيل كلام SandFly أو إيقافه</string>
   <string name="bd_cmd_read_stop">إيقاف القراءة</string>
-  <string name="bd_cmd_talkback_settings">‏فتح إعدادات TalkBack</string>
+  <string name="bd_cmd_talkback_settings">‏فتح إعدادات SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">التبديل إلى لغة الكتابة التالية</string>
   <string name="bd_cmd_switch_to_next_output_language">التبديل إلى لغة القراءة التالية</string>
   <string name="bd_cmd_toggle_contracted_mode">التبديل بين الطريقة المختصرة وغير المختصرة</string>
@@ -303,15 +303,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">‏يمكنك التنقّل بين صفحات الويب بسرعة باستخدام أمر الدخول إلى \"وضع التصفّح\"، ثم كتابة اختصارات الأحرف أو الأرقام التالية\n\nيمكن أيضًا استخدام هذه الاختصارات بدون الدخول إلى \"وضع التصفّح\"، ولكن عليك إضافة النقطة 8 إلى أوامر \"التالي\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">التنقّل في الجدول</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">هل تريد إيقاف إعدادات جهاز العرض بلغة برايل؟</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">‏يمكنك تفعيل إعدادات جهاز العرض بلغة برايل مرة أخرى في أي وقت من خلال إعدادات TalkBack.</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">‏يمكنك تفعيل إعدادات جهاز العرض بلغة برايل مرة أخرى في أي وقت من خلال إعدادات SandFly.</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">إيقاف</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">بعض الطلبات غير متاحة</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">‏لا تتوفّر طلبات التنقّل وإعدادات برايل وبعض ميزات TalkBack أثناء الكتابة أو التعديل.\n\nلاستخدام هذه الطلبات، أغلِق لوحة المفاتيح أولاً.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">‏لا تتوفّر طلبات التنقّل وإعدادات برايل وبعض ميزات SandFly أثناء الكتابة أو التعديل.\n\nلاستخدام هذه الطلبات، أغلِق لوحة المفاتيح أولاً.</string>
   <string name="bd_caption_tutorial_dialog_title">الترجمة والشرح على جهاز العرض بلغة برايل</string>
   <string name="bd_caption_tutorial_dialog_message">‏يرجى الضغط على مفتاح المسافة والنقاط 1 و4 و7 و8 لعرض أو إخفاء الترجمة والشرح للفيديو.\n\nلعرضهما تلقائيًا للوسائط المتوافقة، يجب تفعيل \"عرض الترجمة والشرح على جهاز العرض بلغة برايل\" ضِمن \"الإعدادات\".</string>
   <string name="bd_caption_tutorial_dialog_checkbox">عرض هذه الرسالة دائمًا عند توفُّر الترجمة والشرح</string>
   <string name="bd_usb_connect_dialog_title">‏جهاز العرض بلغة برايل متصل بمنفذ USB</string>
-  <string name="bd_usb_connect_dialog_message">‏تشحن بطارية %s جهاز العرض بلغة برايل.\n\nإذا أردت الانتقال إلى البلوتوث، عليك فصل وحدة USB أو موزّع USB والانتقال إلى إعدادات TalkBack &gt; جهاز العرض بلغة برايل.</string>
+  <string name="bd_usb_connect_dialog_message">‏تشحن بطارية %s جهاز العرض بلغة برايل.\n\nإذا أردت الانتقال إلى البلوتوث، عليك فصل وحدة USB أو موزّع USB والانتقال إلى إعدادات SandFly &gt; جهاز العرض بلغة برايل.</string>
   <string name="bd_device">الهاتف</string>
   <string name="bd_battery_low_dialog_title">طاقة البطارية منخفضة في %s</string>
   <string name="bd_battery_low_dialog_message">‏تشحن بطارية %s جهاز العرض بلغة برايل.\n\nلتوفير استهلاك البطارية، اتّبِع الخطوات التالية:\n\n
@@ -323,7 +323,18 @@
   <string name="popup_message_history_clear">محو الكل</string>
   <string name="popup_message_history_empty">فارغة</string>
   <string name="popup_message_history_consent_dialog_title">هل المطلوب تفعيل سجلّ الرسائل على الجهاز؟</string>
-  <string name="popup_message_history_consent_dialog_msg">‏سيؤدي هذا إلى تخزين بعض الرسائل، مثل الإشعارات والتنبيهات، في TalkBack. يمكنك تغيير هذه الإعدادات متى شئت.</string>
+  <string name="popup_message_history_consent_dialog_msg">‏سيؤدي هذا إلى تخزين بعض الرسائل، مثل الإشعارات والتنبيهات، في SandFly. يمكنك تغيير هذه الإعدادات متى شئت.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">تفعيل</string>
   <string name="popup_message_history_consent_dialog_negative_btn">لا، شكرًا</string>
+    <string name="external_display_channel">شاشات برايل من تطبيقات أخرى</string>
+    <string name="external_display_ask_title">هل تريد السماح لتطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> بالعمل كشاشة برايل لتطبيق SandFly؟</string>
+    <string name="external_display_ask_text">لن يستخدمه SandFly إلا بعد السماح بذلك.</string>
+    <string name="external_display_warning">سيتمكّن تطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> من قراءة كل ما يعرضه SandFly بطريقة برايل، وقد يشمل ذلك أي محتوى على الشاشة، بما في ذلك الرسائل وما تكتبه. وسيتمكّن أيضًا من التحكّم في جهازك كما تفعل باستخدام شاشة برايل: الكتابة وفتح التطبيقات وتنفيذ أي أمر من أوامر SandFly. اسمح فقط للتطبيقات التي تثق بها.</string>
+    <string name="external_display_allow">السماح</string>
+    <string name="external_display_deny">عدم السماح</string>
+    <string name="external_display_in_use_title">تطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> هو شاشة برايل الخاصة بك</string>
+    <string name="external_display_in_use_text">أثناء استخدام SandFly له، يمكن لتطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> قراءة الشاشة والتحكّم في الجهاز.</string>
+    <string name="external_displays_title">شاشات من تطبيقات أخرى</string>
+    <string name="external_displays_summary">يمكن للتطبيقات التي تسمح لها أن تعمل كشاشات برايل لتطبيق SandFly. ويمكن للتطبيق الذي يعمل كشاشة برايل قراءة الشاشة والتحكّم في الجهاز.</string>
+    <string name="external_displays_none">لا يُسمح لأي تطبيق بالعمل كشاشة برايل.</string>
 </resources>
