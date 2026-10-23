@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">Gem</string>
     <string name="gemini_api_key_get">Hent en nøgle</string>
     <string name="gemini_api_terms_link">Yderligere servicevilkår for Gemini API</string>
+    <string name="title_pref_gemini_model">Gemini model</string>
+    <string name="gemini_model_automatic">Automatisk</string>
+    <string name="summary_pref_gemini_model_automatic">Automatisk: Gemini Flash, derefter Flash-Lite, når Flash er optaget</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, derefter Flash-Lite, når den er optaget</string>
+    <string name="gemini_model_loading">Henter modellerne...</string>
+    <string name="gemini_model_list_failed">Kunne ikke hente modellerne: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Indstil først en Gemini API-nøgle</string>
+    <string name="ai_service_address_hint">Adresse, såsom https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Model</string>
+    <string name="ai_service_address_invalid">Adressen skal starte med https://. Intet blev gemt.</string>
+    <string name="dialog_message_ai_service_consent">Billeder og skærmbilleder sendes til <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> for at blive beskrevet, hvilket tager flere sekunder. Dets egne vilkår og privatlivspolitik gælder. Generativ AI er eksperimentel, så den vil lave fejl.</string>
+    <string name="ai_service_error_api_key">AI-tjenesten accepterede ikke API-nøglen. Tjek dens indstillinger i Automatiske beskrivelser.</string>
+    <string name="ai_service_error_quota">Brugsgrænsen for AI-tjenesten er nået. Prøv igen senere.</string>
+    <string name="ai_service_error_busy">AI-tjenesten er optaget lige nu. Prøv igen om et øjeblik.</string>
+    <string name="ai_service_error_timeout">AI-tjenesten tog for lang tid at svare. Prøv igen.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Ingen</string>
+    <string name="ai_service_not_set_up">Ingen AI-tjeneste er i brug. Konfigurer en eller vælg en i indstillingerne for Automatiske beskrivelser.</string>
+    <string name="ai_provider_none_set_up">Ingen AI-tjeneste er konfigureret. Indstil en i indstillingerne nedenfor.</string>
+    <string name="ai_provider_other">Anden service</string>
+    <string name="title_pref_category_ai_services">AI-tjenester</string>
+    <string name="title_pref_ai_provider">AI-tjeneste</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> indstillinger</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ikke sat op</string>
+    <string name="ai_provider_in_use">I brug</string>
+    <string name="ai_provider_not_set_up">Ikke sat op</string>
+    <string name="ai_provider_not_ready">Vælg først en model</string>
+    <string name="ai_provider_address">Adresse</string>
+    <string name="ai_provider_address_message">Adressen på en tjeneste med en OpenAI-kompatibel chat-API og billedinput, såsom https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Ikke indstillet</string>
+    <string name="ai_provider_set">Konfigureret</string>
+    <string name="title_pref_gemini_api_key_of">API-nøgle til <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> model</string>
+    <string name="ai_provider_choose_model">Ikke valgt</string>
+    <string name="ai_provider_key_message">Indsæt din API-nøgle til <xliff:g id="service" example="Claude">%1$s</xliff:g>. Fjern den ved at rydde feltet og gemme. Billeder og skærme, du beder om beskrivelser af, sendes til <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Indstil <xliff:g id="service" example="Claude">%1$s</xliff:g> API-nøglen først</string>
+    <string name="ai_provider_needs_address">Indstil adressen først</string>
+    <string name="ai_provider_enter_model">Indtast et modelnavn</string>
 </resources>
