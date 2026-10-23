@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">صفحه‌کلید سخت‌افزاری بریل</string>
   <string name="bd_application_name">‏مجموعه دسترس‌پذیری Android</string>
-  <string name="bd_ime_unavailable_activity_name">‏صفحه‌کلید بریل TalkBack دردسترس نیست</string>
-  <string name="bd_ime_disabled_dialog_title">‏روشن کردن صفحه‌کلید بریل TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">‏صفحه‌کلید بریل SandFly دردسترس نیست</string>
+  <string name="bd_ime_disabled_dialog_title">‏روشن کردن صفحه‌کلید بریل SandFly</string>
   <string name="bd_ime_disabled_dialog_message">جهت استفاده از نمایشگر بریل برای تایپ کردن، به تنظیمات ورودی بروید و آن را روشن کنید</string>
   <string name="bd_ime_disabled_dialog_title_positive">تنظیمات ورودی</string>
   <string name="bd_ime_not_default_dialog_title">عوض کردن روش ورودی</string>
-  <string name="bd_ime_not_default_dialog_message">‏برای اینکه به تایپ کردن ادامه دهید، صفحه‌کلید بریل TalkBack را به‌عنوان روش ورودی تنظیم کنید</string>
+  <string name="bd_ime_not_default_dialog_message">‏برای اینکه به تایپ کردن ادامه دهید، صفحه‌کلید بریل SandFly را به‌عنوان روش ورودی تنظیم کنید</string>
   <string name="bd_ime_not_default_dialog_positive">عوض کردن ورودی</string>
   <string name="type_unlabeled">بدون برچسب</string>
   <string name="type_unlabeled_edittext">چارگوش ویرایش بدون برچسب</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">حرکت دادن به چپ</string>
   <string name="overlay_pan_right_button">حرکت دادن به راست</string>
   <string name="bd_preferences_title">نمایشگر بریل</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">‏برای استفاده از نمایشگر بریل، ابتدا TalkBack را روشن کنید</string>
-  <string name="bd_preferences_banner_talkback_off_button">‏رفتن به TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">‏برای استفاده از نمایشگر بریل، ابتدا SandFly را روشن کنید</string>
+  <string name="bd_preferences_banner_talkback_off_button">‏رفتن به SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">برای استفاده از نمایشگر بریل، ابتدا بلوتوث را روشن کنید</string>
   <string name="bd_preferences_banner_bluetooth_off_button">روشن کردن بلوتوث</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">برای استفاده از نمایشگر بریل، %s نیاز دارد به دستگاه‌های اطراف دسترسی داشته باشد</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">برای استفاده از «حالت مرور»، باید از نقشه‌کلید پیش‌فرض به نقشه‌کلید بهبودیافته بروید. این تغییر باعث به‌روز شدن برخی‌از فرمان‌های نمایشگر بریل خواهد شد</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">تنظیمات</string>
   <string name="bd_command_change_dialog_title">برخی‌از فرمان‌ها به‌روز شده‌اند</string>
-  <string name="bd_command_change_dialog_message">‏این فرمان‌های نمایشگر بریل در این نسخه TalkBack به‌روز شده‌اند:\n\n• مورد قبلی: نقطه‌های ۱، ۷ را فشار دهید\n\n• مورد بعدی: نقطه‌های ۴، ۸ را فشار دهید\n\n• کنترل خواندن قبلی: نقطه‌های ۲، ۳، ۷، ۸ را فشار دهید\n\n• کنترل خواندن بعدی: نقطه‌های ۵، ۶، ۷، ۸ را فشار دهید</string>
+  <string name="bd_command_change_dialog_message">‏این فرمان‌های نمایشگر بریل در این نسخه SandFly به‌روز شده‌اند:\n\n• مورد قبلی: نقطه‌های ۱، ۷ را فشار دهید\n\n• مورد بعدی: نقطه‌های ۴، ۸ را فشار دهید\n\n• کنترل خواندن قبلی: نقطه‌های ۲، ۳، ۷، ۸ را فشار دهید\n\n• کنترل خواندن بعدی: نقطه‌های ۵، ۶، ۷، ۸ را فشار دهید</string>
   <string name="bd_preference_braille_contracted">بریل اختصاری</string>
   <string name="bd_preference_braille_uncontracted">بریل غیراختصاری</string>
   <string name="bd_braille_grade_tips">‏برای جابه‌جایی سریع بین استفاده اختصاری و غیراختصاری از نمایشگر بریل، کلید فاصله و نقطه‌های ۱، ۲، ۴، و ۵ را فشار دهید.\n\nاگر از زبانی با هر دو درجه بریل استفاده می‌کنید، این فرمان کار می‌کند.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">حرکت کردن بین موارد</string>
   <string name="bd_commands_bindings_category_system_actions_title">کنش‌های سیستم</string>
   <string name="bd_commands_bindings_category_system_actions_summary">برگشتنن، صفحه اصلی، اعلان‌ها، و غیره</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">‏ویژگی‌های TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">‏منوها و تنظیمات Talkback</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">‏ویژگی‌های SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">منوها و تنظیمات SandFly</string>
   <string name="bd_commands_bindings_category_braille_settings_title">تنظیمات بریل</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">زبان و تنظیمات بریل</string>
   <string name="bd_commands_bindings_category_text_editing_title">ویرایش نوشتار</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">باز کردن همه برنامه‌ها</string>
   <string name="bd_cmd_toggle_screen_search">باز کردن جستجوی صفحه</string>
   <string name="bd_cmd_edit_custom_label">ویرایش برچسب سفارشی</string>
-  <string name="bd_cmd_open_talkback_menu">‏باز کردن منو TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">‏روشن یا خاموش کردن گفتار TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">‏باز کردن منو SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">‏روشن یا خاموش کردن گفتار SandFly</string>
   <string name="bd_cmd_read_stop">توقف خواندن</string>
-  <string name="bd_cmd_talkback_settings">‏باز کردن تنظیمات TalkBack</string>
+  <string name="bd_cmd_talkback_settings">‏باز کردن تنظیمات SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">رفتن به زبان تایپ بعدی</string>
   <string name="bd_cmd_switch_to_next_output_language">رفتن به زبان خواندن بعدی</string>
   <string name="bd_cmd_toggle_contracted_mode">جابه‌جایی بین اختصاری و غیراختصاری</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">‏بااستفاده از دستور برای وارد شدن به حالت مرور، می‌توانید صفحات وب را به‌سرعت پیمایش کنید، سپس میان‌برهای حرفی یا عددی زیر را تایپ کنید\n\nاین میان‌برها را می‌توان بدون وارد شدن به حالت مرور نیز استفاده کرد، اما باید نقطه ۸ را به دستورات «بعدی» اضافه کنید</string>
   <string name="bd_cmd_subcategory_title_web_navigation">پیمایش جدول</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">تنظیم نمایشگر بریل خاموش شود؟</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">‏هروقت بخواهید می‌توانید این ویژگی را در تنظیمات TalkBack دوباره روشن کنید</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">‏هروقت بخواهید می‌توانید این ویژگی را در تنظیمات SandFly دوباره روشن کنید</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">خاموش شود</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">برخی‌از فرمان‌ها دردسترس نیست</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">‏درحین تایپ یا ویرایش کردن، فرمان‌های مربوط به پیمایش، تنظیمات بریل، و برخی‌از ویژگی‌های TalkBack دردسترس نیست.\n\nبرای استفاده از این فرمان‌ها، ابتدا صفحه‌کلید را ببندید.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">‏درحین تایپ یا ویرایش کردن، فرمان‌های مربوط به پیمایش، تنظیمات بریل، و برخی‌از ویژگی‌های SandFly دردسترس نیست.\n\nبرای استفاده از این فرمان‌ها، ابتدا صفحه‌کلید را ببندید.</string>
   <string name="bd_caption_tutorial_dialog_title">زیرنویس ناشنوایان در نمایشگر بریل</string>
   <string name="bd_caption_tutorial_dialog_message">‏برای نمایش دادن یا پنهان کردن زیرنویس ناشنوایان برای این ویدیو، فاصله و نقطه‌های ۱، ۴، ۷، ۸ را فشار دهید.\n\nبرای نمایش خودکار زیرنویس ناشنوایان برای رسانه‌های پشتیبانی‌شده، در «تنظیمات» گزینه «نمایش زیرنویس ناشنوایان در نمایشگر بریل» را روشن کنید.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">همیشه وقتی زیرنویس ناشنوایان دردسترس است این پیام نشان داده شود</string>
   <string name="bd_usb_connect_dialog_title">‏نمایشگر بریل به USB متصل است</string>
-  <string name="bd_usb_connect_dialog_message">‏باتری %s درحال شارژ کردن نمایشگر بریل است.\n\nاگر می‌خواهید از بلوتوث استفاده کنید، USB یا هاب USB را جدا کنید و به «تنظیمات TalkBack &gt; نمایشگر بریل» بروید.</string>
+  <string name="bd_usb_connect_dialog_message">‏باتری %s درحال شارژ کردن نمایشگر بریل است.\n\nاگر می‌خواهید از بلوتوث استفاده کنید، USB یا هاب USB را جدا کنید و به «تنظیمات SandFly &gt; نمایشگر بریل» بروید.</string>
   <string name="bd_device">تلفن</string>
   <string name="bd_battery_low_dialog_title">باتری %s ضعیف است</string>
   <string name="bd_battery_low_dialog_message">‏باتری %s درحال شارژ کردن نمایشگر بریل است.\n\nبرای صرفه‌جویی در مصرف باتری:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">پاک کردن همه</string>
   <string name="popup_message_history_empty">خالی</string>
   <string name="popup_message_history_consent_dialog_title">سابقه پیام دستگاه روشن شود؟</string>
-  <string name="popup_message_history_consent_dialog_msg">‏با این کار برخی پیام‌ها، مانند اعلان‌ها و زنگ‌های هشدار، در TalkBack ذخیره می‌شوند. هروقت خواستید می‌توانید این تنظیم را تغییر دهید.</string>
+  <string name="popup_message_history_consent_dialog_msg">‏با این کار برخی پیام‌ها، مانند اعلان‌ها و زنگ‌های هشدار، در SandFly ذخیره می‌شوند. هروقت خواستید می‌توانید این تنظیم را تغییر دهید.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">روشن کردن</string>
   <string name="popup_message_history_consent_dialog_negative_btn">نه متشکرم</string>
+    <string name="external_display_channel">نمایشگرهای بریل از برنامه‌های دیگر</string>
+    <string name="external_display_ask_title">به <xliff:g id="app" example="Notetaker">%1$s</xliff:g> اجازه می‌دهید نمایشگر بریل SandFly باشد؟</string>
+    <string name="external_display_ask_text">SandFly تا زمانی که اجازه ندهید از آن استفاده نمی‌کند.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> می‌تواند هر چیزی را که SandFly به بریل نشان می‌دهد بخواند؛ این می‌تواند هر محتوایی روی صفحه، از جمله پیام‌ها و آنچه تایپ می‌کنید، باشد. همچنین می‌تواند مانند یک نمایشگر بریل دستگاه شما را کنترل کند: تایپ کند، برنامه‌ها را باز کند و هر دستور SandFly را اجرا کند. فقط به برنامه‌هایی که به آن‌ها اعتماد دارید اجازه دهید.</string>
+    <string name="external_display_allow">اجازه دادن</string>
+    <string name="external_display_deny">اجازه ندادن</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> نمایشگر بریل شماست</string>
+    <string name="external_display_in_use_text">وقتی SandFly از آن استفاده می‌کند، <xliff:g id="app" example="Notetaker">%1$s</xliff:g> می‌تواند صفحه را بخواند و دستگاه را کنترل کند.</string>
+    <string name="external_displays_title">نمایشگرهای برنامه‌های دیگر</string>
+    <string name="external_displays_summary">برنامه‌هایی که به آن‌ها اجازه می‌دهید می‌توانند نمایشگر بریل SandFly باشند. برنامه‌ای که نمایشگر بریل است می‌تواند صفحه را بخواند و دستگاه را کنترل کند.</string>
+    <string name="external_displays_none">هیچ برنامه‌ای اجازه ندارد نمایشگر بریل باشد.</string>
 </resources>

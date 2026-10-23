@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">ارسال بازخورد</string>
+    <string name="title_pref_problem_report_type">نوع بازخورد</string>
+    <string name="title_pref_problem_report_area">منطقه</string>
+    <string name="title_pref_problem_report_title">عنوان</string>
+    <string name="title_pref_problem_report_app">برنامه جایی که اتفاق می افتد</string>
+    <string name="title_pref_problem_report_description">توضیحات</string>
+    <string name="dialog_message_problem_report_description">چه اتفاقی می افتد و انتظار شما چیست.</string>
+    <string name="title_pref_problem_report_steps">مراحل تکثیر</string>
+    <string name="title_pref_problem_report_email">ایمیل برای پاسخ</string>
+    <string name="title_pref_problem_report_device">شامل اطلاعات دستگاه</string>
+    <string name="title_pref_problem_report_log">شامل گزارش SandFly</string>
+    <string name="summary_pref_problem_report_log">ممکن است حاوی متنی از صفحه باشد</string>
+    <string name="title_pref_problem_report_send">ارسال</string>
+    <string name="summary_pref_problem_report_sending">ارسال می شود</string>
+    <string name="problem_report_missing_fields">عنوان و توضیحات را وارد کنید.</string>
+    <string name="problem_report_invalid_email">یک آدرس ایمیل معتبر وارد کنید.</string>
+    <string name="problem_report_sent">بازخورد ارسال شد.</string>
+    <string name="problem_report_rate_limited">بازخورد بسیار زیادی ارسال شد. بعداً دوباره امتحان کنید.</string>
+    <string name="problem_report_no_connection">بازخورد ارسال نشد. اتصال اینترنت را بررسی کنید.</string>
+    <string name="problem_report_not_sent">بازخورد ارسال نشد. بعداً دوباره امتحان کنید.</string>
+    <string-array name="problem_report_type_entries">
+        <item>رفتار نادرست</item>
+        <item>سقوط</item>
+        <item>کند یا بی پاسخ</item>
+        <item>پیشنهاد</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>گفتار</item>
+        <item>اشاره‌ها</item>
+        <item>کاوش را لمس کنید</item>
+        <item>خواندن کنترل ها و منوها</item>
+        <item>تایپ و صفحه کلید</item>
+        <item>صفحه‌کلید بریل</item>
+        <item>نمایشگر بریل</item>
+        <item>صداها و ارتعاش</item>
+        <item>اعلان‌ها</item>
+        <item>محتوای وب</item>
+        <item>اسکریپت‌ها</item>
+        <item>تنظیمات</item>
+        <item>به روز رسانی ها</item>
+        <item>غیره</item>
+    </string-array>
+    <string name="title_report_new">ارسال بازخورد</string>
+    <string name="title_report_inbox">صندوق ورودی</string>
+    <string name="title_report_drafts">پیش نویس ها</string>
+    <string name="report_inbox_empty">بازخوردی ارسال نشد</string>
+    <string name="report_drafts_empty">بدون پیش نویس</string>
+    <string name="report_just_now">همین الان</string>
+    <string name="report_untitled">بدون عنوان</string>
+    <string name="report_draft_summary">تغییر کرد <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">ارسال شد <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> پاسخ جدید</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> پاسخ جدید</item>
+    </plurals>
+    <string name="report_status_changed">وضعیت تغییر کرد</string>
+    <string name="report_status_open">باز</string>
+    <string name="report_status_completed">بسته شد، تکمیل شد</string>
+    <string name="report_status_not_planned">بسته است، برنامه ریزی نشده است</string>
+    <string name="report_status_duplicate">بسته، تکراری</string>
+    <string name="report_status_unknown">حذف شد</string>
+    <string name="title_report_status">وضعیت</string>
+    <string name="title_report_your_report">بازخورد شما</string>
+    <string name="title_report_messages">پیام ها</string>
+    <string name="report_message_from_developer">توسعه دهنده، <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">شما، <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">پاسخ دهید</string>
+    <string name="title_report_reply_text">پاسخ شما</string>
+    <string name="title_report_send_reply">ارسال پاسخ</string>
+    <string name="report_reply_sent">پاسخ ارسال شد.</string>
+    <string name="report_reply_not_sent">پاسخ ارسال نشد بعداً دوباره امتحان کنید.</string>
+    <string name="title_report_remove">حذف از صندوق ورودی</string>
+    <string name="dialog_title_report_remove">این بازخورد از صندوق ورودی حذف شود؟</string>
+    <string name="dialog_message_report_remove">پاسخ به آن دیگر به این تلفن نمی رسد.</string>
+    <string name="title_report_delete_draft">حذف پیش نویس</string>
+    <string name="dialog_title_report_delete_draft">این پیش نویس حذف شود؟</string>
+    <string name="button_report_delete">حذف</string>
+    <string name="report_missing">این بازخورد دیگر در صندوق ورودی نیست.</string>
+    <string name="notification_channel_problem_reports">پاسخ های بازخورد</string>
+    <string name="report_notification_reply">پاسخ به <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>

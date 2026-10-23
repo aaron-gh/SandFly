@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">ذخیره</string>
     <string name="gemini_api_key_get">دریافت کلید</string>
     <string name="gemini_api_terms_link">‏شرایط خدمات تکمیلی Gemini API</string>
+    <string name="title_pref_gemini_model">مدل Gemini</string>
+    <string name="gemini_model_automatic">خودکار</string>
+    <string name="summary_pref_gemini_model_automatic">خودکار: Gemini Flash، سپس Flash-Lite وقتی Flash مشغول است</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>، سپس Flash-Lite وقتی مشغول است</string>
+    <string name="gemini_model_loading">دریافت مدل های …</string>
+    <string name="gemini_model_list_failed">نمی توان مدل ها را دریافت کرد: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">ابتدا یک کلید API Gemini تنظیم کنید</string>
+    <string name="ai_service_address_hint">آدرس، مانند https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">مدل</string>
+    <string name="ai_service_address_invalid">آدرس باید با https://. شروع شود هیچ چیز ذخیره نشد.</string>
+    <string name="dialog_message_ai_service_consent">تصاویر و اسکرین شات ها برای توضیح به <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ارسال می شوند که چند ثانیه طول می کشد. شرایط و سیاست حفظ حریم خصوصی آن اعمال می شود. هوش مصنوعی مولد آزمایشی است، بنابراین اشتباه می کند.</string>
+    <string name="ai_service_error_api_key">سرویس هوش مصنوعی کلید API را نپذیرفت. تنظیمات آن را در توضیحات خودکار بررسی کنید.</string>
+    <string name="ai_service_error_quota">محدودیت استفاده از سرویس هوش مصنوعی رسیده است. بعداً دوباره امتحان کنید.</string>
+    <string name="ai_service_error_busy">سرویس هوش مصنوعی در حال حاضر مشغول است. یک لحظه دیگر دوباره امتحان کنید.</string>
+    <string name="ai_service_error_timeout">پاسخگویی سرویس هوش مصنوعی خیلی طول کشید. دوباره امتحان کنید.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">هیچ‌کدام</string>
+    <string name="ai_service_not_set_up">هیچ سرویس هوش مصنوعی در حال استفاده نیست. یکی را تنظیم کنید یا در تنظیمات توضیحات خودکار یکی را انتخاب کنید.</string>
+    <string name="ai_provider_none_set_up">هیچ سرویس هوش مصنوعی راه اندازی نشده است. یکی را در تنظیمات آن در زیر تنظیم کنید.</string>
+    <string name="ai_provider_other">خدمات دیگر</string>
+    <string name="title_pref_category_ai_services">خدمات هوش مصنوعی</string>
+    <string name="title_pref_ai_provider">سرویس هوش مصنوعی</string>
+    <string name="title_ai_provider_settings">تنظیمات <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>، تنظیم نشده است</string>
+    <string name="ai_provider_in_use">درحال استفاده</string>
+    <string name="ai_provider_not_set_up">تنظیم نشده است</string>
+    <string name="ai_provider_not_ready">ابتدا یک مدل را انتخاب کنید</string>
+    <string name="ai_provider_address">آدرس</string>
+    <string name="ai_provider_address_message">آدرس سرویسی با API چت سازگار با OpenAI و ورودی تصویر، مانند https://example.com/v1.</string>
+    <string name="ai_provider_not_set">تنظیم نشده است</string>
+    <string name="ai_provider_set">پیکربندی شده است</string>
+    <string name="title_pref_gemini_api_key_of">کلید API سرویس <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">مدل <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_choose_model">انتخاب نشده است</string>
+    <string name="ai_provider_key_message">کلید API سرویس <xliff:g id="service" example="Claude">%1$s</xliff:g> خود را جای‌گذاری کنید. برای حذف آن، کادر را پاک و ذخیره کنید. تصاویر و صفحه‌هایی که توصیف می‌کنید به <xliff:g id="service" example="Claude">%1$s</xliff:g> ارسال می‌شوند.</string>
+    <string name="ai_provider_needs_key">ابتدا کلید <xliff:g id="service" example="Claude">%1$s</xliff:g> API را تنظیم کنید</string>
+    <string name="ai_provider_needs_address">ابتدا آدرس را تنظیم کنید</string>
+    <string name="ai_provider_enter_model">نام مدل را وارد کنید</string>
 </resources>
