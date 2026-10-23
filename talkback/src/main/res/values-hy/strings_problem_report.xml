@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Կարծիք հայտնել</string>
+    <string name="title_pref_problem_report_type">Հետադարձ կապի տեսակը</string>
+    <string name="title_pref_problem_report_area">Տարածք</string>
+    <string name="title_pref_problem_report_title">Վերնագիր</string>
+    <string name="title_pref_problem_report_app">Հավելված, որտեղ դա տեղի է ունենում</string>
+    <string name="title_pref_problem_report_description">Նկարագրություն</string>
+    <string name="dialog_message_problem_report_description">Ինչ է տեղի ունենում և ինչ էիք սպասում:</string>
+    <string name="title_pref_problem_report_steps">Ծրագրային խնդիրը վերարտադրելու քայլեր</string>
+    <string name="title_pref_problem_report_email">Պատասխանների համար էլ</string>
+    <string name="title_pref_problem_report_device">Ներառեք սարքի մասին տեղեկությունները</string>
+    <string name="title_pref_problem_report_log">Ներառեք SandFly մատյան</string>
+    <string name="summary_pref_problem_report_log">Կարող է պարունակել տեքստ էկրանից</string>
+    <string name="title_pref_problem_report_send">Ուղարկել</string>
+    <string name="summary_pref_problem_report_sending">Ուղարկում</string>
+    <string name="problem_report_missing_fields">Մուտքագրեք վերնագիր և նկարագրություն:</string>
+    <string name="problem_report_invalid_email">Մուտքագրեք վավեր էլփոստի հասցե:</string>
+    <string name="problem_report_sent">Հետադարձ կապ ուղարկվեց:</string>
+    <string name="problem_report_rate_limited">Չափազանց շատ արձագանք ուղարկվեց: Փորձեք ավելի ուշ:</string>
+    <string name="problem_report_no_connection">Հետադարձ կապ չի ուղարկվել: Ստուգեք ինտերնետ կապը:</string>
+    <string name="problem_report_not_sent">Հետադարձ կապ չի ուղարկվել: Փորձեք ավելի ուշ:</string>
+    <string-array name="problem_report_type_entries">
+        <item>Սխալ վարքագիծ</item>
+        <item>Վթար</item>
+        <item>Դանդաղ կամ անպատասխան</item>
+        <item>Առաջարկություն</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Ելույթ</item>
+        <item>Ժեստեր</item>
+        <item>Հպման հետախուզում</item>
+        <item>Ընթերցանության կարգավորիչներ և ընտրացանկեր</item>
+        <item>Մուտքագրում և ստեղնաշարեր</item>
+        <item>Բրայլյան ստեղնաշար</item>
+        <item>Բրայլյան էկրան</item>
+        <item>Ձայններ և թրթռում</item>
+        <item>Ծանուցումներ</item>
+        <item>Վեբ բովանդակություն</item>
+        <item>Սցենարներ</item>
+        <item>Կարգավորումներ</item>
+        <item>Թարմացումներ</item>
+        <item>Այլ</item>
+    </string-array>
+    <string name="title_report_new">Կարծիք հայտնել</string>
+    <string name="title_report_inbox">Մուտքի արկղ</string>
+    <string name="title_report_drafts">Սևագրեր</string>
+    <string name="report_inbox_empty">Ոչ մի արձագանք չի ուղարկվել</string>
+    <string name="report_drafts_empty">Սևագրեր չկան</string>
+    <string name="report_just_now">հենց հիմա</string>
+    <string name="report_untitled">Անվերնագիր</string>
+    <string name="report_draft_summary">Փոխվել է <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">ուղարկված է <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> նոր պատասխան</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> նոր պատասխաններ</item>
+    </plurals>
+    <string name="report_status_changed">կարգավիճակը փոխվել է</string>
+    <string name="report_status_open">Բաց թողարկում</string>
+    <string name="report_status_completed">Փակված, ավարտված</string>
+    <string name="report_status_not_planned">Փակ, պլանավորված չէ</string>
+    <string name="report_status_duplicate">Փակ, կրկնօրինակ</string>
+    <string name="report_status_unknown">Հեռացված է</string>
+    <string name="title_report_status">Կարգավիճակ</string>
+    <string name="title_report_your_report">Ձեր կարծիքը</string>
+    <string name="title_report_messages">Հաղորդագրություններ</string>
+    <string name="report_message_from_developer">Մշակող, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Դուք, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Պատասխանել</string>
+    <string name="title_report_reply_text">Ձեր պատասխանը</string>
+    <string name="title_report_send_reply">Պատասխան ուղարկել</string>
+    <string name="report_reply_sent">Պատասխանն ուղարկվեց։</string>
+    <string name="report_reply_not_sent">Պատասխանը չի ուղարկվել: Փորձեք ավելի ուշ:</string>
+    <string name="title_report_remove">Հեռացնել մուտքի արկղից</string>
+    <string name="dialog_title_report_remove">Հեռացնե՞լ այս կարծիքը մուտքի արկղից:</string>
+    <string name="dialog_message_report_remove">Դրա պատասխաններն այլևս չեն հասնի այս հեռախոսին:</string>
+    <string name="title_report_delete_draft">Ջնջել սևագիրը</string>
+    <string name="dialog_title_report_delete_draft">Ջնջե՞լ այս սևագիրը</string>
+    <string name="button_report_delete">Ջնջել</string>
+    <string name="report_missing">Այս կարծիքն այլևս մուտքի արկղում չէ:</string>
+    <string name="notification_channel_problem_reports">Հետադարձ պատասխաններ</string>
+    <string name="report_notification_reply">Պատասխանել <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>-ին</string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Դադարեցնել SandFly-ը</string>
+    <string name="summary_pause_backtalk">Անջատել խոսքը, ժեստերը և հպումով ուսումնասիրումը, մինչև SandFly-ը վերսկսեք</string>
+    <string name="keycombo_menu_global_pause_backtalk">Դադարեցնել կամ վերսկսել SandFly-ը</string>
+    <string name="backtalk_paused">SandFly-ը դադարեցվեց</string>
+    <string name="backtalk_resumed">SandFly-ը վերսկսվեց</string>
+    <string name="notification_title_backtalk_paused">SandFly-ը դադարեցված է</string>
+    <string name="notification_message_backtalk_paused">Հպեք՝ վերսկսելու համար</string>
+    <string name="notification_channel_backtalk_paused">SandFly-ը դադարեցված է</string>
+    <string name="dialog_title_pause_backtalk">Դադարեցնե՞լ SandFly-ը</string>
+    <string name="dialog_button_pause_backtalk">Դադարեցնել</string>
+    <string name="dialog_message_pause_backtalk">Երբ SandFly-ը դադարեցված է, այն չի հնչեցնում տեքստը և չի արձագանքում ժեստերին, իսկ էկրանն աշխատում է այնպես, ինչպես առանց էկրանի ընթերցիչի։</string>
+    <string name="message_resume_keyguard">Վերսկսելու համար հպեք «SandFly-ը դադարեցված է» ծանուցմանը, արագ 3 անգամ սեղմեք ձայնի իջեցման կոճակը կամ կողպեք և արթնացրեք հեռախոսը, որպեսզի կողպէկրանը բացվի։</string>
+    <string name="message_resume_screen_on">Վերսկսելու համար հպեք «SandFly-ը դադարեցված է» ծանուցմանը, արագ 3 անգամ սեղմեք ձայնի իջեցման կոճակը կամ անջատեք և նորից միացրեք էկրանը։</string>
+    <string name="message_resume_manual">Վերսկսելու համար հպեք «SandFly-ը դադարեցված է» ծանուցմանը կամ արագ 3 անգամ սեղմեք ձայնի իջեցման կոճակը։</string>
+    <string name="message_resume_key_combo">Կարող եք նաև սեղմել <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>։</string>
+    <string name="title_pref_resume_backtalk">Վերսկսել SandFly-ը</string>
+    <string name="value_resume_keyguard">Երբ կողպէկրանը բացվում է</string>
+    <string name="value_resume_screen_on">Երբ էկրանը միանում է</string>
+    <string name="value_resume_manual">Միայն ծանուցումից կամ դյուրանցումից</string>
+</resources>

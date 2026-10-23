@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Բրայլյան սարքակազմային ստեղնաշար</string>
   <string name="bd_application_name">Android-ի հատուկ գործառույթներ</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack-ի բրայլյան ստեղնաշարը հասանելի չէ</string>
-  <string name="bd_ime_disabled_dialog_title">Միացրեք TalkBack-ի բրայլյան ստեղնաշարը</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly-ի բրայլյան ստեղնաշարը հասանելի չէ</string>
+  <string name="bd_ime_disabled_dialog_title">Միացրեք SandFly-ի բրայլյան ստեղնաշարը</string>
   <string name="bd_ime_disabled_dialog_message">Բրայլյան էկրանի միջոցով տեքստ մուտքագրելու համար անցեք ներածման կարգավորումներ և միացրեք այն։</string>
   <string name="bd_ime_disabled_dialog_title_positive">Ներածման կարգավորումներ</string>
   <string name="bd_ime_not_default_dialog_title">Փոխեք ներածման եղանակը</string>
-  <string name="bd_ime_not_default_dialog_message">Մուտքագրումը շարունակելու համար որպես ներածման եղանակ սահմանեք TalkBack-ի բրայլյան ստեղնաշարը</string>
+  <string name="bd_ime_not_default_dialog_message">Մուտքագրումը շարունակելու համար որպես ներածման եղանակ սահմանեք SandFly-ի բրայլյան ստեղնաշարը</string>
   <string name="bd_ime_not_default_dialog_positive">Փոխել ներածման եղանակը</string>
   <string name="type_unlabeled">Չպիտակված</string>
   <string name="type_unlabeled_edittext">Առանց պիտակի խմբագրման դաշտ</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Տեղաշարժել ձախ</string>
   <string name="overlay_pan_right_button">Տեղաշարժել աջ</string>
   <string name="bd_preferences_title">Բրայլյան էկրան</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Բրայլյան էկրանն օգտագործելու համար նախ միացրեք TalkBack-ը</string>
-  <string name="bd_preferences_banner_talkback_off_button">Անցնել TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Բրայլյան էկրանն օգտագործելու համար նախ միացրեք SandFly-ը</string>
+  <string name="bd_preferences_banner_talkback_off_button">Անցնել SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Բրայլյան էկրանն օգտագործելու համար նախ միացրեք Bluetooth-ը</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Միացնել Bluetooth-ը</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Բրայլյան էկրանն օգտագործելու համար %s հավելվածին անհրաժեշտ է մոտակա սարքերը տեսնելու թույլտվություն</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Դիտարկման ռեժիմն օգտագործելու համար ձեզ անհրաժեշտ է ստեղների կանխադրված շարվածքից անցնել բարելավված շարվածքին։ Բրայլյան էկրանի համար որոշ հրամաններ կփոփոխվեն։</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Կարգավորումներ</string>
   <string name="bd_command_change_dialog_title">Որոշ հրահանգներ թարմացվել են</string>
-  <string name="bd_command_change_dialog_message">Բրայլյան էկրանի այս հրամանները թարմացվել են TalkBack-ի այս տարբերակում․\n\n• Նախորդ տարրը՝ սեղմեք կետ 1-ը և 7-ը\n\n• Հաջորդ տարրը՝ սեղմեք կետ 4-ը և 8-ը\n\n• Ընթերցման կառավարման նախորդ տարրը՝ սեղմեք կետ 2-ը, 3-ը, 7-ը և 8-ը\n\n• Ընթերցման կառավարման հաջորդ տարրը՝ սեղմեք կետ 5-ը, 6-ը, 7-ը և 8-ը</string>
+  <string name="bd_command_change_dialog_message">Բրայլյան էկրանի այս հրամանները թարմացվել են SandFly-ի այս տարբերակում․\n\n• Նախորդ տարրը՝ սեղմեք կետ 1-ը և 7-ը\n\n• Հաջորդ տարրը՝ սեղմեք կետ 4-ը և 8-ը\n\n• Ընթերցման կառավարման նախորդ տարրը՝ սեղմեք կետ 2-ը, 3-ը, 7-ը և 8-ը\n\n• Ընթերցման կառավարման հաջորդ տարրը՝ սեղմեք կետ 5-ը, 6-ը, 7-ը և 8-ը</string>
   <string name="bd_preference_braille_contracted">Կրճատված տառատեսակ</string>
   <string name="bd_preference_braille_uncontracted">Չկրճատված տառատեսակ</string>
   <string name="bd_braille_grade_tips">Բրայլյան էկրանի միջոցով բրայլյան գրերի կրճատված ռեժիմը միացնելու կամ անջատելու համար սեղմեք բացատը և 1, 2, 4, 5 կետերը։\n\nԱյս հրամանը կաշխատի, եթե դուք օգտագործում եք լեզու, որը բրայլյան երկու տառատեսակներն էլ ունի։</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Անցում տարրերի միջև</string>
   <string name="bd_commands_bindings_category_system_actions_title">Համակարգային գործողություններ</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Հետ գնալ, հիմնական էկրան և այլն</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack-ի գործառույթներ</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback-ի ընտրացանկեր և կարգավորումներ</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-ի գործառույթներ</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly ընտրացանկերը և կարգավորումները</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Բրայլյան կարգավորումներ</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Բրայլյան գրերի լեզու և կարգավորումներ</string>
   <string name="bd_commands_bindings_category_text_editing_title">Տեքստի խմբագրում</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Բացել բոլոր հավելվածների ցանկը</string>
   <string name="bd_cmd_toggle_screen_search">Բացել էկրանից որոնումը</string>
   <string name="bd_cmd_edit_custom_label">Փոփոխել հատուկ պիտակը</string>
-  <string name="bd_cmd_open_talkback_menu">Բացել TalkBack-ի ընտրացանկը</string>
-  <string name="bd_cmd_toggle_voice_feedback">Միացնել/անջատել TalkBack-ի խոսքը</string>
+  <string name="bd_cmd_open_talkback_menu">Բացել SandFly-ի ընտրացանկը</string>
+  <string name="bd_cmd_toggle_voice_feedback">Միացնել/անջատել SandFly-ի խոսքը</string>
   <string name="bd_cmd_read_stop">Կանգնեցնել ընթերցումը</string>
-  <string name="bd_cmd_talkback_settings">Բացել TalkBack-ի կարգավորումները</string>
+  <string name="bd_cmd_talkback_settings">Բացել SandFly-ի կարգավորումները</string>
   <string name="bd_cmd_switch_to_next_input_language">Անցնել մուտքագրման հաջորդ լեզվին</string>
   <string name="bd_cmd_switch_to_next_output_language">Անցնել ընթերցման հաջորդ լեզվին</string>
   <string name="bd_cmd_toggle_contracted_mode">Միացնել/անջատել կրճատված ռեժիմը</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Արագ բացեք վեբ էջերը՝ օգտագործելով դիտարկման ռեժիմին անցնելու հրահանգը, ապա մուտքագրելով ստեղնաշարի ստորև դյուրանցումները\n\nԴյուրանցումները նաև կարելի է օգտագործել՝ առանց անցնելու դիտարկման ռեժիմին, սակայն ավելացնելով կետ 8-ը «Հաջորդ» հրահանգներին</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Նավիգացիան աղյուսակում</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Անջատե՞լ բրայլյան էկրանի կարգավորումը</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Ցանկացած ժամանակ կարող եք TalkBack-ի կարգավորումներում այն նորից միացնել</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Ցանկացած ժամանակ կարող եք SandFly-ի կարգավորումներում այն նորից միացնել</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Անջատել</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Որոշ հրահանգներ հասանելի չեն</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Նավիգացիայի համար հրամանները, բրայլյան գրերի կարգավորումները և TalkBack-ի որոշ կարգավորումներ հասանելի չեն տպելու կամ խմբագրելու ժամանակ։\n\nԱյդ հրամաններն օգտագործելու համար նախ փակեք ստեղնաշարը։</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Նավիգացիայի համար հրամանները, բրայլյան գրերի կարգավորումները և SandFly-ի որոշ կարգավորումներ հասանելի չեն տպելու կամ խմբագրելու ժամանակ։\n\nԱյդ հրամաններն օգտագործելու համար նախ փակեք ստեղնաշարը։</string>
   <string name="bd_caption_tutorial_dialog_title">Ենթագրերը ձեր բրայլյան էկրանին</string>
   <string name="bd_caption_tutorial_dialog_message">Այս տեսանյութի ենթագրերը ցուցադրելու/թաքցնելու համար սեղմեք բացատ և 1, 4, 7, 8 կետերը։\n\nԱջակցվող մեդիա նյութերի ենթագրերն ավտոմատ ցուցադրելու համար կարգավորումներում միացրեք համապատասխան պարամետրը։</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Միշտ ցույց տալ այս հաղորդագրությունը, երբ ենթագրերը հասանելի են</string>
   <string name="bd_usb_connect_dialog_title">Բրայլյան էկրանը միացված է USB-ի միջոցով</string>
-  <string name="bd_usb_connect_dialog_message">Ձեր սարքի (%s) մարտկոցը լիցքավորում է ձեր բրայլյան էկրանը։\n\nԵթե ձեզ անհրաժեշտ է միանալ Bluetooth-ին, անջատեք USB-ն կամ USB հանգույցը և անցեք TalkBack-ի կարգավորումներ &gt; Բրայլյան էկրան։</string>
+  <string name="bd_usb_connect_dialog_message">Ձեր սարքի (%s) մարտկոցը լիցքավորում է ձեր բրայլյան էկրանը։\n\nԵթե ձեզ անհրաժեշտ է միանալ Bluetooth-ին, անջատեք USB-ն կամ USB հանգույցը և անցեք SandFly-ի կարգավորումներ &gt; Բրայլյան էկրան։</string>
   <string name="bd_device">հեռախոս</string>
   <string name="bd_battery_low_dialog_title">Սարքի (%s) մարտկոցի լիցքը քիչ է</string>
   <string name="bd_battery_low_dialog_message">Ձեր սարքի (%s) մարտկոցը լիցքավորում է ձեր բրայլյան էկրանը։\n\nՄարտկոցի լիցքը խնայելու համար՝\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Մաքրել բոլորը</string>
   <string name="popup_message_history_empty">Դատարկ է</string>
   <string name="popup_message_history_consent_dialog_title">Միացնե՞լ սարքի հաղորդագրությունների պատմությունը։</string>
-  <string name="popup_message_history_consent_dialog_msg">Սա TalkBack-ում կպահի որոշ հաղորդագրություններ, օրինակ՝ ծանուցումները և ահազանգերը։ Դուք ցանկացած պահի կարող եք փոխել այս կարգավորումը։</string>
+  <string name="popup_message_history_consent_dialog_msg">Սա SandFly-ում կպահի որոշ հաղորդագրություններ, օրինակ՝ ծանուցումները և ահազանգերը։ Դուք ցանկացած պահի կարող եք փոխել այս կարգավորումը։</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Միացնել</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Ոչ, շնորհակալություն</string>
+    <string name="external_display_channel">Բրայլի տառատեսակներ այլ հավելվածներից</string>
+    <string name="external_display_ask_title">Թույլատրե՞լ <xliff:g id="app" example="Notetaker">%1$s</xliff:g>-ին լինել բրայլյան էկրան SandFly համար:</string>
+    <string name="external_display_ask_text">SandFly այն չի օգտագործի, քանի դեռ դուք թույլ չեք տվել:</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>-ը կկարողանա կարդալ ամեն ինչ SandFly շոուները բրայլյան գրառմամբ, որը կարող է լինել էկրանի ցանկացած բան, ներառյալ հաղորդագրությունները և ձեր մուտքագրածը: Այն նաև կկարողանա կառավարել ձեր սարքը, ինչպես կարող եք բրայլյան էկրանով. մուտքագրեք, բացեք հավելվածները և գործարկեք ցանկացած SandFly հրաման: Թույլատրել միայն այն հավելվածները, որոնց վստահում եք:</string>
+    <string name="external_display_allow">Թույլատրել</string>
+    <string name="external_display_deny">Թույլ մի տվեք</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ձեր բրայլյան էկրանն է</string>
+    <string name="external_display_in_use_text">Մինչ SandFly այն օգտագործում է, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> կարող է կարդալ էկրանը և կառավարել սարքը:</string>
+    <string name="external_displays_title">Ցուցադրվում են այլ հավելվածներից</string>
+    <string name="external_displays_summary">Հավելվածները, որոնք դուք թույլատրում եք, կարող են լինել բրայլյան էկրան SandFly համար: Հավելվածը, որը բրայլյան էկրան է, կարող է կարդալ էկրանը և կառավարել սարքը:</string>
+    <string name="external_displays_none">Ոչ մի հավելված չի կարող լինել բրայլյան էկրան:</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack-ը միացած է</string>
-  <string name="talkback_disabled">TalkBack-ն անջատված է</string>
+  <string name="talkback_on">SandFly-ը միացած է</string>
+  <string name="talkback_disabled">SandFly-ն անջատված է</string>
   <string name="notification_type_beginning_of_field">Դաշտի սկիզբը</string>
   <string name="notification_type_end_of_field">Դաշտի վերջը</string>
   <string name="notification_type_selection_mode_on">Ընտրության ռեժիմը միացված է</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">Քաշումը սկսվեց</string>
   <string name="drag_dropped">Քաշած տարրը գցվեց</string>
   <string name="drag_cancelled">Քաշումը չեղարկվեց</string>
+    <string name="template_brightness_changed">Պայծառություն՝ <xliff:g id="percent">%1$d</xliff:g> տոկոս։</string>
+    <string name="brightness_needs_permission">Պայծառությունը փոխելու համար թույլատրեք համակարգի կարգավորումների փոփոխումը։</string>
+    <string name="brightness_adaptive_on">Պայծառությունը փոխելու համար անջատեք հարմարվող պայծառությունը։</string>
+    <string name="telegram_replying_to">պատասխանելով <xliff:g id="name" example="Ronan">%1$s</xliff:g>՝ <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>

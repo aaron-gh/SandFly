@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Սկրիպտներ</string>
+    <string name="summary_pref_scripts">Փոխել SandFly-ի աշխատանքը հավելվածներում</string>
+    <string name="script_import">Ներմուծել սկրիպտ</string>
+    <string name="script_install_label">Տեղադրել SandFly-ի սկրիպտ</string>
+    <string name="script_import_nothing">Տեղադրելու սկրիպտի ֆայլ չկա։</string>
+    <string name="script_import_cannot_open">Չհաջողվեց բացել ֆայլը։</string>
+    <string name="script_import_repository">Այս հղումը ամբողջ պահոցի հղում է։ Բացեք անհրաժեշտ սկրիպտը, ապա ուղարկեք դրա հղումը։</string>
+    <string name="script_import_summary">.lua ֆայլ կամ main.lua պարունակող .zip ֆայլ</string>
+    <string name="scripts_category_app">Հավելվածների սկրիպտներ</string>
+    <string name="scripts_category_global">Ընդհանուր պլագիններ</string>
+    <string name="scripts_none">Տեղադրված սկրիպտներ չկան</string>
+    <string name="scripts_all_off">Անջատել բոլոր սկրիպտները</string>
+    <string name="scripts_all_off_summary">Սկրիպտները մնում են տեղադրված և պահպանում են իրենց փոխանջատիչները։ «Միացնել կամ անջատել բոլոր սկրիպտները» ժեստը նույնն է անում։</string>
+    <string name="shortcut_toggle_scripts">Միացնել կամ անջատել բոլոր սկրիպտները</string>
+    <string name="scripts_now_off">Սկրիպտներն անջատված են</string>
+    <string name="scripts_now_on">Սկրիպտները միացված են</string>
+    <string name="scripts_unavailable">Սկրիպտներն այս սարքում հասանելի չեն</string>
+    <string name="script_add_example">Ավելացնել օրինակ սկրիպտը</string>
+    <string name="script_add_example_summary">Հնչեցնում է յուրաքանչյուր հավելվածի անունը, որին անցնում եք։ Սկրիպտ՝ որպես մեկնակետ։</string>
+    <string name="script_state_on">Միացված է</string>
+    <string name="script_state_off">Անջատված է</string>
+    <string name="script_runs_in">Աշխատում է՝ <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">Աշխատում է բոլոր հավելվածներում</string>
+    <string name="script_version">Տարբերակ <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author">Հեղինակ՝ <xliff:g id="author">%1$s</xliff:g></string>
+    <string name="script_install_title">Տեղադրե՞լ <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_install_can">Այն կարող է՝</string>
+    <string name="script_install_no_permissions">Թույլտվություններ պետք չեն։</string>
+    <string name="script_install_button">Տեղադրել</string>
+    <string name="script_update_title">Թարմացնե՞լ <xliff:g id="name">%1$s</xliff:g>-ը մինչև <xliff:g id="version">%2$s</xliff:g> տարբերակ</string>
+    <string name="script_update_new_permissions">Նոր թույլտվություններ՝</string>
+    <string name="script_update_button">Թարմացնել</string>
+    <string name="script_update_replaces">Սա կփոխարինի <xliff:g id="version">%1$s</xliff:g> տարբերակը (հեղինակ՝ <xliff:g id="author">%2$s</xliff:g>) և կպահպանի դրա տվյալներն ու կարգավորումները։</string>
+    <string name="script_update_other_author">Նորի հեղինակը <xliff:g id="author">%1$s</xliff:g>-ն է՝ այլ հեղինակ։ Թարմացրեք միայն, եթե վստահում եք դրան։</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g>-ը տեղադրվեց</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>-ը թարմացվեց մինչև <xliff:g id="version">%2$s</xliff:g> տարբերակ</string>
+    <string name="script_import_failed">Ներմուծումը ձախողվեց։ <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>։ Թույլատրեք միայն վստահելի սկրիպտների համար։</string>
+    <string name="script_permission_screen">Կարդալ էկրանը</string>
+    <string name="script_permission_actions">Սեղմել, ոլորել, մուտքագրել և տեղափոխել ֆոկուսը</string>
+    <string name="script_permission_speech">Ստանալ և փոխել SandFly-ի խոսքը</string>
+    <string name="script_permission_passwords">Կարդալ գաղտնաբառի դաշտերը</string>
+    <string name="script_permission_input">Ավելացնել ժեստեր, ստեղներ, ընտրացանկի տարրեր և ընթերցման կառավարման տարրեր</string>
+    <string name="script_permission_network">Օգտագործել ինտերնետը</string>
+    <string name="script_permission_clipboard">Կարդալ և փոխել սեղմատախտակը</string>
+    <string name="script_permission_system">Հետ գնալ կամ անցնել գլխավոր էկրան, բացել ծանուցումները և հավելվածները</string>
+    <string name="script_permission_notifications">Կարդալ և փոխել հնչեցվող ծանուցումները</string>
+    <string name="script_permission_events">Տեսնել բոլոր գործողությունները ցանկացած հավելվածում, ներառյալ մուտքագրումը</string>
+    <string name="script_permission_dialogs">Ցուցադրել երկխոսության պատուհաններ ցանկացած հավելվածի վրա</string>
+    <string name="script_permission_java">Գործարկել Java կոդ SandFly-ի բոլոր թույլտվություններով՝ բոլոր հավելվածներում</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>՝ <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">Միացնել</string>
+    <string name="script_permissions_title">Թույլտվություններ</string>
+    <string name="script_permissions_none">Չկան</string>
+    <string name="script_settings_category">Կարգավորումներ</string>
+    <string name="script_list_filter">Զտիչ</string>
+    <string name="script_button_off">Նախ միացրեք սկրիպտը</string>
+    <string name="script_permissions_summary">Թույլտվությունն անջատելիս դադարում են աշխատել այն մասերը, որոնց այն անհրաժեշտ է։</string>
+    <string name="script_install_permissions_note">Հետագայում կարող եք դրանք անջատել։</string>
+    <string name="script_manage_category">Կառավարում</string>
+    <string name="script_move_up">Գործարկել ավելի վաղ</string>
+    <string name="script_move_down">Գործարկել ավելի ուշ</string>
+    <string name="script_order_summary">Նույն խոսքը փոխող սկրիպտների հերթականությունը։ Հավելվածների սկրիպտները գործարկվում են առաջինը։</string>
+    <string name="script_log">Մատյան</string>
+    <string name="script_log_summary">Ելքը և սխալները SandFly-ի գործարկումից ի վեր</string>
+    <string name="script_clear_storage">Մաքրել պահված տվյալները</string>
+    <string name="script_storage_cleared">Պահված տվյալները մաքրվեցին</string>
+    <string name="script_remove">Հեռացնել</string>
+    <string name="script_remove_title">Հեռացնե՞լ <xliff:g id="name">%1$s</xliff:g>-ը</string>
+    <string name="script_remove_message">Կջնջվեն դրա կոդը, տվյալները և կարգավորումները։</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g>-ը հեռացվեց</string>
+    <string name="script_log_empty">Մատյանը դատարկ է</string>
+    <string name="script_log_clear">Մաքրել մատյանը</string>
+    <string name="script_log_copy">Պատճենել մատյանը</string>
+    <string name="script_log_copied">Մատյանը պատճենվեց</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Անհրաժեշտ է սկրիպտների API <xliff:g id="needed">%1$d</xliff:g> կամ ավելի նոր տարբերակ։ SandFly-ի այս տարբերակն ունի <xliff:g id="current">%2$d</xliff:g>, ուստի որոշ մասեր կարող են չաշխատել։</string>
+    <string name="script_api_untested">Փորձարկված է մինչև սկրիպտների API <xliff:g id="tested">%1$d</xliff:g>։ SandFly-ի այս տարբերակն ունի <xliff:g id="current">%2$d</xliff:g>, ուստի այն կարող է աշխատել ոչ ինչպես սպասվում է։</string>
+    <string name="script_state_incompatible">Կարող է չաշխատել SandFly-ի այս տարբերակի հետ</string>
+    <string name="script_api_range">Սկրիպտների API <xliff:g id="min">%1$d</xliff:g>–<xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Համատեղելիություն</string>
+    <string name="script_install_anyway">Տեղադրել, միևնույն է</string>
+    <string name="script_update_anyway">Թարմացնել, միևնույն է</string>
+    <string name="script_homepage">Բացել կայքէջը</string>
+    <string name="script_homepage_confirm_title">Բացե՞լ այս հասցեն</string>
+    <string name="script_homepage_open">Բացել</string>
+    <string name="script_homepage_failed">Ոչ մի հավելված չի կարող բացել <xliff:g id="address">%1$s</xliff:g>-ը</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g>-ն անջատվեց կրկնվող սխալների պատճառով։ Տես դրա մատյանը «Սկրիպտներ» բաժնում։</string>
+    <string name="shortcut_inspect_item">Զննել ընտրված տարրը</string>
+    <string name="script_inspect_no_item">Ընտրված տարր չկա</string>
+    <string name="script_inspect_copied">Պատճենվեց։ <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Id չկա, ուստի կանոնները չեն կարող դրան հղում անել։ Պատճենվեց։ <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Պատճենել էկրանի ծառը</string>
+    <string name="script_tree_copied">Պատճենվեց <xliff:g id="count">%1$d</xliff:g> տարր</string>
+    <string name="script_tree_none">Պատճենելու պատուհան չկա</string>
+    <string name="script_tree_clip_label">Էկրանի ծառ</string>
+    <string name="summary_copy_screen_tree_menu">Պատճենել էկրանի բոլոր տարրերը JSON ձևաչափով՝ սկրիպտներ գրելու համար</string>
+    <string name="script_inspect_clip_label">Տարրի մանրամասներ</string>
+    <string name="summary_inspect_item_menu">Հնչեցնել և պատճենել ընտրված տարրի մանրամասները՝ սկրիպտներ գրելու համար</string>
+    <string name="script_keys_backtalk_modifier">SandFly-ի կերպափոխիչ ստեղն</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ապա <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Հրամաններ</string>
+    <string name="script_commands_summary">Աշխատող սկրիպտի ժեստերն ու ստեղները գերակայում են SandFly-ի ժեստերի ու ստեղների նկատմամբ։ Անջատեք դրանցից որևէ մեկը՝ SandFly-ինը պահպանելու համար։</string>
+    <string name="script_binding_gesture">Ժեստ՝ <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Ստեղներ՝ <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">SandFly-ի ընտրացանկ</string>
+    <string name="script_binding_control">Ընթերցման կառավարման տարրեր</string>
+    <string name="script_binding_none">Չկա</string>
+    <string name="script_binding_turn_on">Միացնել</string>
+    <string name="script_binding_turn_off">Անջատել</string>
+    <string name="script_binding_restore">Վերականգնել կանխադրվածները</string>
+    <string name="script_binding_restored">Կանխադրվածները վերականգնվեցին</string>
+    <string name="script_binding_perform">Կատարել ժեստ կամ սեղմել ստեղներ</string>
+    <string name="script_binding_perform_summary">Նշանակել հաջորդ ժեստը կամ SandFly-ի կերպափոխիչ ստեղնի հետ սեղմված ստեղները</string>
+    <string name="script_binding_perform_message">Կատարեք ժեստը կամ սեղմեք ստեղները։</string>
+    <string name="script_binding_assign_title">Նշանակե՞լ <xliff:g id="binding">%1$s</xliff:g>-ը <xliff:g id="command">%2$s</xliff:g> հրամանին</string>
+    <string name="script_binding_assign">Նշանակել</string>
+    <string name="script_binding_choose_gesture">Ընտրել ժեստ</string>
+    <string name="script_binding_type_keys">Մուտքագրել ստեղներ</string>
+    <string name="script_binding_type_keys_summary">Օրինակ՝ sf+shift+n կամ sf+t, s</string>
+    <string name="script_binding_bad_keys">Այս ստեղները հնարավոր չէ օգտագործել։ <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Այն ավելացնում է՝</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>՝ <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">Սկրիպտների աղբյուրներ</string>
+    <string name="script_sources_none">Աղբյուրներ ավելացված չեն</string>
+    <string name="script_source_add">Ավելացնել աղբյուր</string>
+    <string name="script_source_add_button">Ավելացնել</string>
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <string name="script_source_invalid">Սա GitHub-ի, GitLab-ի, Codeberg-ի, Gitea-ի կամ Bitbucket-ի պահոցի հասցե չէ։</string>
+    <string name="script_source_exists">Այս աղբյուրն արդեն ավելացված է։</string>
+    <string name="script_source_loading">Բեռնում</string>
+    <string name="script_source_empty">Այս աղբյուրում սկրիպտներ չկան</string>
+    <string name="script_source_failed">Չհաջողվեց բեռնել սկրիպտները։ <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">Նորից փորձել</string>
+    <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g>-ի ներբեռնում</string>
+    <string name="script_source_remove">Հեռացնել աղբյուրը</string>
+    <string name="script_source_remove_title">Հեռացնե՞լ <xliff:g id="name">%1$s</xliff:g>-ը</string>
+    <string name="script_source_remove_message">Դրանից տեղադրված սկրիպտները կմնան տեղադրված։</string>
+    <string name="scripts_auto_update">Թարմացրեք սցենարները ինքնաբերաբար</string>
+    <string name="scripts_check_updates">Ստուգեք թարմացումների համար</string>
+    <string name="scripts_checking_updates">Թարմացումների ստուգում…</string>
+    <string name="scripts_updates_category">Թարմացումներ</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> սկրիպտը թարմացվել է՝ <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> սկրիպտները թարմացվել են՝ <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Թարմացումները նշված են Թարմացումների տակ</string>
+    <string name="scripts_update_check_failed">Որոշ աղբյուրներ չհաջողվեց ստուգել</string>
+    <string name="scripts_up_to_date">Բոլոր սցենարները թարմացված են</string>
+</resources>

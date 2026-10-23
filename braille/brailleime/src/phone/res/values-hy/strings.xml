@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack-ի բրայլյան ստեղնաշար</string>
+  <string name="braille_ime_service_name">SandFly-ի բրայլյան ստեղնաշար</string>
   <string name="braille_ime_bd_mode_name">Ներածում բրայլյան էկրանի միջոցով</string>
   <string name="switch_to_tabletop_announcement">Սեղանի ռեժիմ։ Դրեք ձեր սարքը լիցքավորման միացքով դեպի ձախ։</string>
   <string name="calibration_tip_announcement">Կետերի դիրքը թարմացնելու համար %d մատը սեղմած պահեք էկրանին։</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Միացված է բրայլյան ստեղնաշարի հիմնական ռեժիմը</string>
   <string name="braille_ime_displayed_name">Բրայլյան ստեղնաշար</string>
   <string name="multiple_languages_braille_ime_displayed_name">Բրայլյան ստեղնաշար, %s</string>
-  <string name="input_view_caption">TalkBack-ի բրայլյան ստեղնաշարի մասին մանրամասն տեղեկությունների համար անցեք g.co/help/braille էջ։</string>
+  <string name="input_view_caption">SandFly-ի բրայլյան ստեղնաշարի մասին մանրամասն տեղեկությունների համար անցեք g.co/help/braille էջ։</string>
   <string name="perform_action_next">Առաջ</string>
   <string name="perform_action_submitting">Տեքստն ուղարկվում է</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Ինչպես թարմացնել կետերի դիրքը։ Նախ եկեք գրանցեք ձեր %sի կետերը։</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Բրայլյան ստեղնաշարով տեքստ մուտքագրելիս լեզուն փոխելու համար 3 մատը սահեցրեք վերև, ապա ընտրեք «անցնել հաջորդ լեզվին»։</string>
   <string name="title_pref_accumulate_presses">Ներառել սեղմված բոլոր կետերը</string>
   <string name="summary_pref_accumulate_presses">Մուտքագրելիս ներառել սեղմված բոլոր կետերը, նույնիսկ եթե մի կետը բաց է թողնվել մյուսից առաջ։</string>
-  <string name="title_pref_reverse_dots">Կետերի հակառակ հերթականություն</string>
-  <string name="summary_pref_reverse_dots">Փոխարինել կետերը՝ օրինակ այնպես, որ 1-ն ու 4-ը տեղերով փոխվեն</string>
+  <string name="title_pref_reverse_dots">Փոխեք ձախ և աջ կետերը</string>
+  <string name="summary_pref_reverse_dots">1-ին, 2-րդ և 3-րդ կետերը փոխանակվում են 4-րդ, 5-րդ և 6-րդ կետերով</string>
   <string name="bd_preference_braille_contracted">Կրճատված տառատեսակ</string>
   <string name="bd_preference_braille_uncontracted">Չկրճատված տառատեսակ</string>
   <string name="context_menu_title">Բրայլյան ստեղնաշարի տարբերակներ</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Ստեղնաշար</string>
   <string name="not_enough_touch_points_dialog_title">Ձեր սարքում չի աջակցվում բրայլյան ստեղնաշար</string>
   <string name="not_enough_touch_points_dialog_message">Ձեր սարքում սեղմման կետերի քանակը բավարար չէ։ Լրացուցիչ տեղեկությունների համար կապվեք սարքի արտադրողի հետ։</string>
-  <string name="talkback_off_dialog_title">Բրայլյան ստեղնաշարն օգտագործելու համար միացրեք TalkBack-ը</string>
+  <string name="talkback_off_dialog_title">Բրայլյան ստեղնաշարն օգտագործելու համար միացրեք SandFly-ը</string>
   <string name="talkback_off_dialog_positive_button">Միացրեք այն հատուկ գործառույթների կարգավորումներում</string>
-  <string name="talkback_suspend_dialog_title">Բրայլյան ստեղնաշարն օգտագործելու համար նորից միացրեք TalkBack-ը</string>
-  <string name="talkback_off_or_suspend_dialog_message">Երբ TalkBack-ը միացված է, դուք կարող եք հպել ձեր էկրանին և մուտքագրել բրայլյան գրանշանները։</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Ժեստը փոխելու համար միացրեք TalkBack-ը</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack-ն անջատված է։ Բրայլյան ստեղնաշարի ժեստերը փոխելու համար միացրեք TalkBack-ը։</string>
+  <string name="talkback_suspend_dialog_title">Բրայլյան ստեղնաշարն օգտագործելու համար նորից միացրեք SandFly-ը</string>
+  <string name="talkback_off_or_suspend_dialog_message">Երբ SandFly-ը միացված է, դուք կարող եք հպել ձեր էկրանին և մուտքագրել բրայլյան գրանշանները։</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Ժեստը փոխելու համար միացրեք SandFly-ը</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly-ն անջատված է։ Բրայլյան ստեղնաշարի ժեստերը փոխելու համար միացրեք SandFly-ը։</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Անցնել Կարգավորումներ</string>
   <string name="reset_gestures_dialog_title">Զրոյացնե՞լ բոլոր ժեստերը</string>
   <string name="reset_gestures_dialog_message">Բրայլյան ստեղնաշարի բոլոր ժեստերը կզրոյացվեն</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Վերականգնել կանխադրվածը</string>
   <string name="custom_gestures_dialog_remove_button">Հեռացնել ժեստը</string>
   <string name="change_gestures_dialog_message_title">Ինչպես ժեստ փոխել</string>
-  <string name="change_gestures_dialog_message">Հաջորդ էկրանին կհայտնվի բրայլյան ստեղնաշարը, և դուք չեք կարողանա օգտագործել TalkBack-ի ժեստերը։\n\nՀենց որ ստեղնաշարը հայտնվի, կատարեք այն ժեստը, որը ցանկանում եք օգտագործել։ Ստեղնաշարը փակելու և ժեստի փոփոխությունը չեղարկելու համար երկու մատը սահեցրեք ներքև։\n\nnՏեսնել հասանելի ժեստերը\n</string>
+  <string name="change_gestures_dialog_message">Հաջորդ էկրանին կհայտնվի բրայլյան ստեղնաշարը, և դուք չեք կարողանա օգտագործել SandFly-ի ժեստերը։\n\nՀենց որ ստեղնաշարը հայտնվի, կատարեք այն ժեստը, որը ցանկանում եք օգտագործել։ Ստեղնաշարը փակելու և ժեստի փոփոխությունը չեղարկելու համար երկու մատը սահեցրեք ներքև։\n\nnՏեսնել հասանելի ժեստերը\n</string>
   <string name="change_gestures_dialog_message_link">Տեսնել հասանելի ժեստերը</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Այլևս չցուցադրել այս հաղորդագրությունը</string>
   <string name="change_gestures_dialog_positive_button">Շարունակել</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Չօգտագործել</string>
   <string name="next_keyboard">Հաջորդ ստեղնաշարը</string>
   <string name="braille_tutorial_title">Բրայլյան ստեղնաշարի ուղեցույց</string>
-  <string name="tutorial_intro_description">Բրայլյան ստեղնաշարի օգնությամբ կարող եք հպել ձեր էկրանին՝ 6-կետանոց բրայլյան գրանշաններ մուտքագրելու համար։\n\nԴուք օգտագործում եք Unified English Braille տարբերակը։ Մուտքագրման լեզուն փոխելու համար անցեք TalkBack-ի կարգավորումներ։\n\nԲրայլյան գրերով մուտքագրելու համար պետք է այլ կերպ պահեք և օգտագործեք հեռախոսը։</string>
+  <string name="tutorial_intro_description">Բրայլյան ստեղնաշարի օգնությամբ կարող եք հպել ձեր էկրանին՝ 6-կետանոց բրայլյան գրանշաններ մուտքագրելու համար։\n\nԴուք օգտագործում եք Unified English Braille տարբերակը։ Մուտքագրման լեզուն փոխելու համար անցեք SandFly-ի կարգավորումներ։\n\nԲրայլյան գրերով մուտքագրելու համար պետք է այլ կերպ պահեք և օգտագործեք հեռախոսը։</string>
   <string name="next_step">Առաջ</string>
   <string name="leave_keyboard">Դուրս գալ բրայլյան ստեղնաշարից</string>
-  <string name="hold_six_fingers_description">Դուք չեք կարողանա օգտագործել TalkBack-ի սովորական ժեստերը բրայլյան ստեղնաշարի միջոցով։\n\nԵկեք կարգավորենք մուտքագրման համար անհրաժեշտ 6 բրայլյան կետերի դիրքը։</string>
-  <string name="rotate_orientation_description_1">Դուք այժմ չեք կարող օգտագործել TalkBack-ի սովորական ժեստերը։ Բրայլյան ստեղնաշարն օգտագործելու ժամանակ TalkBack-ը հասանելի չէ։</string>
+  <string name="hold_six_fingers_description">Դուք չեք կարողանա օգտագործել SandFly-ի սովորական ժեստերը բրայլյան ստեղնաշարի միջոցով։\n\nԵկեք կարգավորենք մուտքագրման համար անհրաժեշտ 6 բրայլյան կետերի դիրքը։</string>
+  <string name="rotate_orientation_description_1">Դուք այժմ չեք կարող օգտագործել SandFly-ի սովորական ժեստերը։ Բրայլյան ստեղնաշարն օգտագործելու ժամանակ SandFly-ը հասանելի չէ։</string>
   <string name="rotate_orientation_description_2">Պտտեք հեռախոսի էկրանը հակառակ ուղղությամբ և բռնեք այնպես, ինչպես ցուցադրված է նկարում։</string>
   <string name="tap_to_continue">Կրկնակի հպեք՝ շարունակելու համար</string>
   <string name="instruction_type_letter_a">A տառը մուտքագրելու համար ձախ ձեռքի ցուցամատով հպեք կետ 1-ին</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">ՆՇՈՐԴԸ ՏԵՂԱՓՈԽՎԵՑ ԱՌԱՋ</string>
   <string name="result_swipe_down_2_fingers">ԹԱՔՑՆԵԼ ՍՏԵՂՆԱՇԱՐԸ</string>
   <string name="result_swipe_down_3_fingers">ՀԱՋՈՐԴ ՍՏԵՂՆԱՇԱՐԸ</string>
-  <string name="rotate_orientation_announcement">Դուք այժմ չեք կարող օգտագործել TalkBack-ի սովորական ժեստերը։ Բրայլյան ստեղնաշարն օգտագործելու ժամանակ TalkBack-ը հասանելի չէ։\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Դուք այժմ չեք կարող օգտագործել SandFly-ի սովորական ժեստերը։ Բրայլյան ստեղնաշարն օգտագործելու ժամանակ SandFly-ը հասանելի չէ։\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Նախ պտտեք հեռախոսի էկրանը հակառակ ուղղությամբ։\n\nԱյնուհետև փոխեք հեռախոսի դիրքը հորիզոնականի՝ բռնելով դրա երկու կարճ եզրերից։ Աջ ձեռքով պետք է բռնած լինեք USB միացքով եզրը։ Ձեր ցուցամատը, միջնամատն ու մատնեմատը միաժամանակ հպեք էկրանին՝ պահելով հեռախոսը ճկույթով և բութ մատով։\n\nԵրբ պատրաստ լինեք շարունակել, կրկնակի հպեք էկրանին։\n\nԲրայլյան ստեղնաշարը փակելու համար 3 մատը սահեցրեք վերևից ներքև (դեպի հատակը)։ Այդպիսով դուք կանցնեք սովորական ստեղնաշարին։</string>
   <string name="rotate_orientation_continue_announcement">Հեռախոսը ուղղաձիգ դիրքով է։ Շարունակելու համար հեռախոսը բռնեք հորիզոնական դիրքով։ Ապա պտտեք հեռախոսը հակառակ ուղղությամբ։ Երբ պատրաստ լինեք, շարունակելու համար կրկնակի հպեք էկրանին։</string>
   <string name="type_letter_a_announcement">Պահեք հեռախոսը հակառակ ուղղությամբ։ Բռնեք հեռախոսի երկու կարճ եզրերից այնպես, որ ցուցամատով, միջնամատով և մատնեմատով միաժամանակ կարողանաք հպել էկրանին։\n\nՁախ ձեռքի ցուցամատը պետք է գտնվի կետ 1-ի վրա։ A տառը մուտքագրելու համար հպեք կետ 1-ին։</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Հաջորդ էկրան անցնելու համար 3 մատը սահեցրեք ներքև։ Փորձեք հիմա։</string>
   <string name="swipe_down_3_fingers_completed_announcement">Հաջորդ ստեղնաշարը։ Այս գործողությամբ սովորաբար կարելի է անցնել հաջորդ ստեղնաշարին։ Այս անգամ բրայլյան ստեղնաշարը բացված կմնա, քանի որ դուք դեռ ուղեցույցում եք։</string>
   <string name="swipe_up_3_fingers_announcement">Դուք նաև կարող եք մուտքագրել սեղանի ռեժիմում՝ հեռախոսը դնելով սեղանին։ Ուղեցույցը փակելու համար 3 մատը սահեցրեք վերև և գտեք «Փակել ուղեցույցը» տարբերակը։</string>
-  <string name="open_context_menu_announcement">Կարգավորումների ընտրացանկը բաց է։ Շրջեք հեռախոսն ու բռնեք այն սովորական դիրքով։ Նավիգացիայի համար այժմ կարող եք օգտագործել TalkBack-ի սովորական ժեստերը։ Մատը սահեցրեք աջ՝ ավելի շատ տարբերակներ տեսնելու համար։</string>
+  <string name="open_context_menu_announcement">Կարգավորումների ընտրացանկը բաց է։ Շրջեք հեռախոսն ու բռնեք այն սովորական դիրքով։ Նավիգացիայի համար այժմ կարող եք օգտագործել SandFly-ի սովորական ժեստերը։ Մատը սահեցրեք աջ՝ ավելի շատ տարբերակներ տեսնելու համար։</string>
   <string name="hold_six_fingers_announcement">%s\nՍարքը դրեք սեղանին։ Յուրաքանչյուր ձեռքի 3 մեջտեղի մատով սեղմած պահեք էկրանը մուտքագրման համար ձեզ հարմար դիրքով։</string>
   <string name="hold_six_fingers_inactive_announcement">Սարքը դրեք սեղանին։ Յուրաքանչյուր ձեռքի 3 մեջտեղի մատով սեղմած պահեք էկրանը մուտքագրման համար ձեզ հարմար դիրքով։</string>
   <string name="finish_tutorial_announcement">Ցուցադրվում է բրայլյան ստեղնաշարը։ Պտտեք հեռախոսի էկրանը հակառակ ուղղությամբ։ Փոխեք հեռախոսի դիրքը հորիզոնականի։ Ապա սկսեք մուտքագրել։</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Այս ժեստն օգտագործվում է «%1$s» գործողության համար և չի կարող փոխվել։ Փորձեք այլ ժեստ։ %2$s</string>
   <string name="custom_gesture_cannot_used">Այս ժեստը հնարավոր չէ օգտագործել</string>
   <string name="custom_gesture_no_gesture">Ժեստը չի հայտնաբերվել</string>
-  <string name="custom_gesture_try_another">Փորձեք այլ ժեստ։ Բոլոր հասանելի ժեստերի ցանկը տեսնելու համար անցեք TalkBack-ի բրայլյան ստեղնաշարի օգնության կենտրոն։ %s</string>
+  <string name="custom_gesture_try_another">Փորձեք այլ ժեստ։ Բոլոր հասանելի ժեստերի ցանկը տեսնելու համար անցեք SandFly-ի բրայլյան ստեղնաշարի օգնության կենտրոն։ <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Ժեստերը չեն համընկել</string>
   <string name="custom_gesture_perform_again">Կատարեք ժեստը, որն ուզում եք նորից օգտագործել։ %s</string>
+    <string name="tabletop_port_left_announcement">Սեղանի ռեժիմ, լիցքավորման միացք ձախ կողմում</string>
+    <string name="tabletop_port_right_announcement">Սեղանի ռեժիմ, լիցքավորման միացք աջ կողմում</string>
+    <string name="screen_away_port_right_announcement">Էկրանից հեռու ռեժիմ, լիցքավորման միացքը աջ կողմում</string>
+    <string name="screen_away_port_left_announcement">Էկրանից հեռու ռեժիմ, լիցքավորման միացք ձախ կողմում</string>
+    <string name="screen_toward_announcement">Էկրան դեպի ձեզ</string>
+    <string name="screen_toward_port_left_announcement">Էկրանը դեպի ձեզ, լիցքավորման միացքը ձախ կողմում</string>
+    <string name="screen_toward_port_right_announcement">Էկրանը դեպի ձեզ, լիցքավորման միացքը՝ աջ կողմում</string>
+    <string name="screen_toward_port_down_announcement">Էկրանը դեպի ձեզ, լիցքավորման միացքը՝ դեպի ներքև</string>
+    <string name="screen_toward_port_up_announcement">Էկրանը դեպի ձեզ, լիցքավորման միացքը՝ դեպի վեր</string>
+    <string name="port_right_announcement">Լիցքավորման պորտը աջ կողմում</string>
+    <string name="port_left_announcement">Լիցքավորման միացք ձախ կողմում</string>
+    <string name="tabletop_port_near_announcement">Սեղանի ռեժիմ, լիցքավորման միացք դեպի ձեզ</string>
+    <string name="tabletop_port_far_announcement">Սեղանի ռեժիմ, լիցքավորման միացք ձեզանից հեռու</string>
+    <string name="screen_away_port_down_announcement">Էկրանից հեռու ռեժիմ, լիցքավորման միացքը դեպի ներքև</string>
+    <string name="screen_away_port_up_announcement">Էկրանից հեռու ռեժիմ, լիցքավորման միացքը՝ ուղղված դեպի վեր</string>
+    <string name="port_near_announcement">Լիցքավորման միացք դեպի ձեզ</string>
+    <string name="port_far_announcement">Լիցքավորման նավահանգիստը հեռու է ձեզանից</string>
+    <string name="port_down_announcement">Լիցքավորման նավահանգիստը՝ ուղղված դեպի ներքև</string>
+    <string name="port_up_announcement">Լիցքավորման նավահանգիստը ուղղված է դեպի վեր</string>
+    <string name="orientation_locked_announcement">Կողմնորոշումը կողպված է</string>
+    <string name="orientation_locked_port_announcement">Կողմնորոշումը կողպված է: %1$s</string>
+    <string name="orientation_unlocked_announcement">Կողմնորոշումն ապակողպված է</string>
+    <string name="switch_to_language_contracted_announcement">Անցում կատարվեց %s լեզվին, Կրճատված տառատեսակ</string>
+    <string name="switch_to_language_uncontracted_announcement">Անցում կատարվեց %s լեզվին, Չկրճատված տառատեսակ</string>
+    <string name="title_pref_flip_dots_vertically">Փոխարինեք վերևի և ներքևի կետերը</string>
+    <string name="summary_pref_flip_dots_vertically">Կետ 1-ը փոխարինում է 3-րդ կետով, իսկ 4-րդ կետը՝ 6-ով</string>
+    <string name="title_pref_tablet_held_up_faces_away">Պլանշետը դեմքերը հեռու պահեց</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Երբ անջատված է, պլանշետը կամ բացված հեռախոսը, որը պահված է, օգտագործում է սեղանի դասավորությունը՝ ձեր դեմքով</string>
+    <string name="title_pref_typing_sounds">Մուտքագրման հնչյուններ</string>
+    <string name="summary_pref_typing_sounds">Նվագարկեք ստեղնաշարի սեղմումները, երբ մուտքագրեք նիշ, բացատ, նոր տող կամ ջնջեք</string>
+    <string name="skip_tutorial">Բաց թողնել ձեռնարկը</string>
 </resources>
