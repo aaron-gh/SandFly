@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack မျက်မမြင်စာရေးစနစ် လက်ကွက်</string>
+  <string name="braille_ime_service_name">SandFly မျက်မမြင်စာရေးစနစ် လက်ကွက်</string>
   <string name="braille_ime_bd_mode_name">မျက်မမြင်စာဖတ်ကိရိယာ ထည့်သွင်းစနစ်</string>
   <string name="switch_to_tabletop_announcement">စားပွဲတင်မုဒ်။ အားသွင်းပို့တ်ကို ဘယ်ဘက်တွင်ထား၍ သင့်စက်ကိုတင်ပါ။</string>
   <string name="calibration_tip_announcement">ဒေါ့(တ်)တည်နေရာကို အပ်ဒိတ်လုပ်ရန် လက်ချောင်း %d ချောင်းနှင့် ဖိထားပါ။</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">ချုံ့မထားသော မျက်မမြင်စာရေးစနစ်သို့ ပြောင်းလိုက်ပါပြီ</string>
   <string name="braille_ime_displayed_name">မျက်မမြင်စာရေးစနစ် လက်ကွက်</string>
   <string name="multiple_languages_braille_ime_displayed_name">မျက်မမြင်စာရေးစနစ် လက်ကွက်၊ %s</string>
-  <string name="input_view_caption">TalkBack မျက်မမြင်စာရေးစနစ် လက်ကွက် - အကူအညီရယူရန် g.co/help/braille သို့သွားပါ</string>
+  <string name="input_view_caption">SandFly မျက်မမြင်စာရေးစနစ် လက်ကွက် - အကူအညီရယူရန် g.co/help/braille သို့သွားပါ</string>
   <string name="perform_action_next">ရှေ့သို့</string>
   <string name="perform_action_submitting">စာသား ပို့နေသည်</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">ဒေါ့(တ်)တည်နေရာကို အပ်ဒိတ်လုပ်နေသည်။ ပထမဦးစွာ သင့် %s ရှိ ဒေါ့(တ်)များကို မှတ်တမ်းတင်ကြပါစို့။</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">မျက်မမြင်စာရေးစနစ်သုံးကီးဘုတ်ဖြင့် စာရိုက်နေစဉ် ဘာသာစကားပြောင်းရန် လက် ၃ ချောင်းဖြင့် အပေါ်သို့ပွတ်ဆွဲပါ။ ထို့နောက် “ဘာသာစကားနောက်တစ်ခုပြောင်းရန်” ရွေးပါ။</string>
   <string name="title_pref_accumulate_presses">နှိပ်ထားသော အစက်များ အားလုံးပါဝင်သည်</string>
   <string name="summary_pref_accumulate_presses">နှိပ်ထားသော အစက်တစ်ခုချင်းစီကို အခြားအစက် မတိုင်မီ ပြန်လွှတ်လိုက်သည့်တိုင် ထည့်သွင်းမှုတွင် ပါဝင်သည်</string>
-  <string name="title_pref_reverse_dots">ပြောင်းပြန် အစက်များ</string>
-  <string name="summary_pref_reverse_dots">အစက်များကို နေရာပြောင်းနိုင်သည်၊ ဥပမာ အစက် ၁ နှင့် ၄ ကို နေရာလဲလှယ်နိုင်သည်</string>
+  <string name="title_pref_reverse_dots">ဘယ်နှင့်ညာ အစက်များကို လဲလှယ်ပါ။</string>
+  <string name="summary_pref_reverse_dots">အစက် 1၊ 2၊ နှင့် 3 သည် အစက် 4၊ 5၊ နှင့် 6 ဖြင့် အရောင်းအ၀ယ်လုပ်သည့်နေရာများ</string>
   <string name="bd_preference_braille_contracted">ချုံ့ထားသော မျက်မမြင်စာရေးစနစ်</string>
   <string name="bd_preference_braille_uncontracted">မျက်မမြင်စာရေးစနစ် အရှည်</string>
   <string name="context_menu_title">မျက်မမြင်စာရေးစနစ် လက်ကွက် ရွေးချယ်မှုများ</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">ကီးဘုတ်</string>
   <string name="not_enough_touch_points_dialog_title">သင့်စက်က မျက်မမြင်စာရေးစနစ် လက်ကွက်ကို မပံ့ပိုးပါ</string>
   <string name="not_enough_touch_points_dialog_message">သင့်စက်က လုံလောက်သော တို့ထိမှုအမှတ်ကို မပံ့ပိုးပါ။ နောက်ထပ် အချက်အလက်များအတွက် သင်၏ စက်ပစ္စည်း ထုတ်လုပ်သူထံ ဆက်သွယ်ပါ။</string>
-  <string name="talkback_off_dialog_title">မျက်မမြင်စာရေးစနစ် လက်ကွက်ကို အသုံးပြုရန် TalkBack ကို ဖွင့်ပါ</string>
+  <string name="talkback_off_dialog_title">မျက်မမြင်စာရေးစနစ် လက်ကွက်ကို အသုံးပြုရန် SandFly ကို ဖွင့်ပါ</string>
   <string name="talkback_off_dialog_positive_button">အသုံးလွယ်မှု ဆက်တင်များ တွင် ဖွင့်ရန်</string>
-  <string name="talkback_suspend_dialog_title">မျက်မမြင်စာရေးစနစ် လက်ကွက် အသုံးပြုရန် TalkBack ကို ဆက်သုံးခြင်း</string>
-  <string name="talkback_off_or_suspend_dialog_message">TalkBack ကို ဖွင့်ထားသည့်အခါ မျက်မမြင်စာရေးစနစ် သင်္ကေတများထည့်ရန် သင့်ဖန်သားပြင်ကို တို့နိုင်သည်။</string>
-  <string name="talkback_off_custom_gestures_dialog_title">လက်ဟန်ပြောင်းရန် TalkBack ကို ဖွင့်ပါ</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack ပိတ်နေသည်။ မျက်မမြင်စာရေးစနစ်ကီးဘုတ် လက်ဟန်များပြောင်းရန် ၎င်းကို ဖွင့်ပါ။</string>
+  <string name="talkback_suspend_dialog_title">မျက်မမြင်စာရေးစနစ် လက်ကွက် အသုံးပြုရန် SandFly ကို ဆက်သုံးခြင်း</string>
+  <string name="talkback_off_or_suspend_dialog_message">SandFly ကို ဖွင့်ထားသည့်အခါ မျက်မမြင်စာရေးစနစ် သင်္ကေတများထည့်ရန် သင့်ဖန်သားပြင်ကို တို့နိုင်သည်။</string>
+  <string name="talkback_off_custom_gestures_dialog_title">လက်ဟန်ပြောင်းရန် SandFly ကို ဖွင့်ပါ</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly ပိတ်နေသည်။ မျက်မမြင်စာရေးစနစ်ကီးဘုတ် လက်ဟန်များပြောင်းရန် ၎င်းကို ဖွင့်ပါ။</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">ဆက်တင်များသို့ သွားရန်</string>
   <string name="reset_gestures_dialog_title">လက်ဟန်အားလုံးကို ပြင်ဆင်သတ်မှတ်မလား။</string>
   <string name="reset_gestures_dialog_message">မျက်မမြင်စာရေးစနစ်ကီးဘုတ် လက်ဟန်များကို မူရင်းသို့ ပြင်ဆင်သတ်မှတ်ပါမည်</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">မူရင်းအတိုင်း ပြင်ဆင်သတ်မှတ်ရန်</string>
   <string name="custom_gestures_dialog_remove_button">လက်ဟန် ဖယ်ရှားရန်</string>
   <string name="change_gestures_dialog_message_title">လက်ဟန်ပြောင်းနည်း</string>
-  <string name="change_gestures_dialog_message">လာမည့်စခရင်တွင် မျက်မမြင်စာရေးစနစ်ကီးဘုတ် ပွင့်လာမည်ဖြစ်ပြီး TalkBack လက်ဟန်များကို သုံးနိုင်တော့မည်မဟုတ်ပါ။\n\nမျက်မမြင်စာရေးစနစ်ကီးဘုတ် ပွင့်လာသည့်အခါ သုံးလိုသောလက်ဟန်ကို ပြပါ (သို့) မျက်မမြင်စာရေးစနစ်ကီးဘုတ်ကို ပိတ်ပြီး လက်ဟန်ပြောင်းလဲမှုကို ပယ်ဖျက်ရန် လက် ၂ ချောင်းဖြင့် အောက်သို့ပွတ်ဆွဲပါ။\n\nရနိုင်သော လက်ဟန်များကို ကြည့်ပါ\n</string>
+  <string name="change_gestures_dialog_message">လာမည့်စခရင်တွင် မျက်မမြင်စာရေးစနစ်ကီးဘုတ် ပွင့်လာမည်ဖြစ်ပြီး SandFly လက်ဟန်များကို သုံးနိုင်တော့မည်မဟုတ်ပါ။\n\nမျက်မမြင်စာရေးစနစ်ကီးဘုတ် ပွင့်လာသည့်အခါ သုံးလိုသောလက်ဟန်ကို ပြပါ (သို့) မျက်မမြင်စာရေးစနစ်ကီးဘုတ်ကို ပိတ်ပြီး လက်ဟန်ပြောင်းလဲမှုကို ပယ်ဖျက်ရန် လက် ၂ ချောင်းဖြင့် အောက်သို့ပွတ်ဆွဲပါ။\n\nရနိုင်သော လက်ဟန်များကို ကြည့်ပါ\n</string>
   <string name="change_gestures_dialog_message_link">ရနိုင်သော လက်ဟန်များကို ကြည့်ရန်</string>
   <string name="change_gestures_dialog_dont_show_checkbox">ဤမက်ဆေ့ဂျ်ကို ထပ်မပြပါနှင့်</string>
   <string name="change_gestures_dialog_positive_button">ရှေ့ဆက်ရန်</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">အသုံးမပြုပါနှင့်</string>
   <string name="next_keyboard">နောက်လက်ကွက်</string>
   <string name="braille_tutorial_title">မျက်မမြင်စာရေးစနစ် လက်ကွက် သရုပ်ပြရန်</string>
-  <string name="tutorial_intro_description">မျက်မမြင်စာရေးစနစ် လက်ကွက်တွင် အစက် ၆ စက်သုံး မျက်မမြင်စာရေးစနစ်ထည့်ရန် သင့်ဖန်သားပြင်ကို တို့နိုင်သည်။\n\nUnified English Braille ကို အသုံးပြုနေသည်။ စာရိုက်သည့်ဘာသာစကားပြောင်းရန် TalkBack ဆက်တင်များသို့ သွားပါ။\n\nမျက်မမြင်စာရေးစနစ်ဖြင့် စာရိုက်ရာတွင် သင့်ဖုန်းကို အခြားပုံစံဖြင့် ကိုင်တွယ်အသုံးပြုရန် လိုအပ်သည်။</string>
+  <string name="tutorial_intro_description">မျက်မမြင်စာရေးစနစ် လက်ကွက်တွင် အစက် ၆ စက်သုံး မျက်မမြင်စာရေးစနစ်ထည့်ရန် သင့်ဖန်သားပြင်ကို တို့နိုင်သည်။\n\nUnified English Braille ကို အသုံးပြုနေသည်။ စာရိုက်သည့်ဘာသာစကားပြောင်းရန် SandFly ဆက်တင်များသို့ သွားပါ။\n\nမျက်မမြင်စာရေးစနစ်ဖြင့် စာရိုက်ရာတွင် သင့်ဖုန်းကို အခြားပုံစံဖြင့် ကိုင်တွယ်အသုံးပြုရန် လိုအပ်သည်။</string>
   <string name="next_step">ရှေ့သို့</string>
   <string name="leave_keyboard">မျက်မမြင်စာရေးစနစ် လက်ကွက်မှ ထွက်ပါ</string>
-  <string name="hold_six_fingers_description">မျက်မမြင်စာကီးဘုတ်တွင် ပုံမှန် TalkBack လက်ဟန်များကို သုံး၍မရနိုင်ပါ။\n\nစတင်ရန်အတွက် သင်စာရိုက်သောအခါ မျက်မမြင်ဒေါ့(တ်) ၆ ခု၏တည်နေရာကို စနစ်ထည့်သွင်းပါ။</string>
-  <string name="rotate_orientation_description_1">ယခုအချိန်မှစ၍ သင်၏ ပုံမှန် TalkBack လက်ဟန်များကို သင်အသုံးပြုနိုင်မည် မဟုတ်ပါ။ မျက်မမြင်စာရေးစနစ် လက်ကွက်ကို အသုံးပြုနေစဉ် TalkBack ကို အသုံးပြု၍ မရပါ။</string>
+  <string name="hold_six_fingers_description">မျက်မမြင်စာကီးဘုတ်တွင် ပုံမှန် SandFly လက်ဟန်များကို သုံး၍မရနိုင်ပါ။\n\nစတင်ရန်အတွက် သင်စာရိုက်သောအခါ မျက်မမြင်ဒေါ့(တ်) ၆ ခု၏တည်နေရာကို စနစ်ထည့်သွင်းပါ။</string>
+  <string name="rotate_orientation_description_1">ယခုအချိန်မှစ၍ သင်၏ ပုံမှန် SandFly လက်ဟန်များကို သင်အသုံးပြုနိုင်မည် မဟုတ်ပါ။ မျက်မမြင်စာရေးစနစ် လက်ကွက်ကို အသုံးပြုနေစဉ် SandFly ကို အသုံးပြု၍ မရပါ။</string>
   <string name="rotate_orientation_description_2">စတင်ရန် သင့်ဖုန်းကို ယခုကဲ့သို့ စခရင်ကို အခြားတစ်ဘက်သို့ လှည့်၍ ကိုင်ပါ။</string>
   <string name="tap_to_continue">ရှေ့ဆက်ရန် မည်သည့်နေရာကိုမဆို နှစ်ချက်တို့ပါ</string>
   <string name="instruction_type_letter_a">\"A\" စာလုံးရိုက်ရန် သင်၏ ဘယ်လက်ညှိုးဖြင့် အစက် ၁ ကို တို့ပါ</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">ကာဆာ ရှေ့သို့ရွှေ့လိုက်သည်</string>
   <string name="result_swipe_down_2_fingers">လက်ကွက် ဝှက်ခြင်း</string>
   <string name="result_swipe_down_3_fingers">နောက်လက်ကွက်</string>
-  <string name="rotate_orientation_announcement">ယခုအချိန်မှစ၍ သင်၏ ပုံမှန် TalkBack လက်ဟန်များကို အသုံးပြုနိုင်မည် မဟုတ်ပါ။ မျက်မမြင်စာရေးစနစ် လက်ကွက် အသုံးပြုနေစဉ်တွင် TalkBack ကို မရနိုင်ပါ။\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">ယခုအချိန်မှစ၍ သင်၏ ပုံမှန် SandFly လက်ဟန်များကို အသုံးပြုနိုင်မည် မဟုတ်ပါ။ မျက်မမြင်စာရေးစနစ် လက်ကွက် အသုံးပြုနေစဉ်တွင် SandFly ကို မရနိုင်ပါ။\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">ပထမဦးစွာ ဖုန်း၏ဖန်သားပြင်ကို အခြားတစ်ဘက်သို့ မျက်နှာမူလိုက်ပါ။\n\nထို့နောက် အလျားလိုက်ဖြစ်ရန် သင့်ဖုန်းကို ရေပြင်ညီအတိုင်း လှည့်ပါ။ သင့်လက်များက ဖုန်းအနားစွန်းများကို ဆုပ်ကိုင်ထားရပါမည်။ သင့်ညာဘက်လက်က USB ပို့တ်ဘက် အစွန်းကို ကိုင်ထားရမည်။ သင်၏အလယ်လက်ချောင်း ၃ ချောင်းကို ဖန်သားပြင်ပေါ်တွင်တင်၍ လက်သန်း၊ လက်မတို့ဖြင့် ဖုန်းကိုထိန်းထားပါ။\n\nအသင့်ဖြစ်သည့်အခါ ရှေ့ဆက်ရန် ဖန်သားပြင်ကို နှစ်ချက်တို့ပါ။\n\nမျက်မမြင်စာရေးစနစ်လက်ကွက်မှ ထွက်ရန် လက် ၃ ချောင်းဖြင့် အောက်ဘက်သို့ ပွတ်ဆွဲပါ။ ၎င်းက သင်၏ မူလလက်ကွက်သို့ ပြန်ပြောင်းပေးပါသည်။</string>
   <string name="rotate_orientation_continue_announcement">သင့်ဖုန်းက ဒေါင်လိုက်ပုံစံ ဖြစ်နေသည်။ ရှေ့ဆက်ရန် ဖုန်းကို အလျားလိုက် လှည့်၍ ပိုရှည်သည့်ဘက်ကို အောက်ခြေတွင်ထားပါ။ ပြီးလျှင် စခရင်ကို သင်၏ အခြားတစ်ဘက်သို့ လှည့်ပါ။ သင် အဆင်သင့်ဖြစ်သည့်အခါ ရှေ့ဆက်ရန် စခရင်ကို နှစ်ချက်တို့ပါ။</string>
   <string name="type_letter_a_announcement">စခရင်ကို သင်၏ အခြားတစ်ဘက်သို့ လှည့်ထားပါ။ သင့်ဖုန်းကို လက်နှစ်ဘက်ဖြင့် အစွန်းများကို ကိုင်ထား၍ လက်တစ်ဘက်စီ၏ အလယ်လက် ၃ ချောင်းဖြင့် စခရင်ကို ထိထားပါ။\n\nသင်၏ ဘယ်ဘက် လက်ညှိုးက အစက် ၁ ပေါ်တွင် ရှိနေရပါမည်။ ပြီးလျှင် “A” စာလုံးရိုက်ရန် အစက် ၁ ကို တို့ပါ။</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">သင်၏ အခြားလက်ကွက်သို့ ပြောင်းရန် လက် ၃ ချောင်းဖြင့် အောက်သို့ ပွတ်ဆွဲပါ။ ယခုပဲ စမ်းကြည့်လိုက်ပါ။</string>
   <string name="swipe_down_3_fingers_completed_announcement">နောက်လက်ကွက်။ ပုံမှန်အားဖြင့် ယင်းက နောက်လက်ကွက်သို့ ပြောင်းပေးပါသည်။ ယခုအကြိမ်တွင် သင်က သရုပ်ပြမှုတွင် ရှိနေသေးသဖြင့် မျက်မမြင်စာရေးစနစ် လက်ကွက်တွင်သာ ဆက်ရှိနေပါသည်။</string>
   <string name="swipe_up_3_fingers_announcement">သင့်ဖုန်းကို စားပွဲပေါ်တွင် အပြားလိုက်တင်ခြင်းဖြင့် စားပွဲတင်မုဒ်တွင်လည်း စာရိုက်နိုင်သည်။ ရှင်းလင်းပို့ချချက်ကို အပြီးသတ်ရန် လက်ချောင်း ၃ ချောင်းဖြင့် အပေါ်သို့ပွတ်ဆွဲပြီး ရှင်းလင်းပို့ချချက် အပြီးသတ်ရန် ရွေးစရာကိုရှာပါ</string>
-  <string name="open_context_menu_announcement">ရွေးစရာများမီနူးကို ဖွင့်ထားသည်။ ဖုန်းကို သင့်ဆီသို့ မျက်နှာမူစေရန် လှန်လိုက်ပြီး ပုံမှန်အတိုင်း ကိုင်ထားပါ။ လမ်းညွှန်ရန် ပုံမှန် TalkBack လက်ဟန်များကို ယခု အသုံးပြုနိုင်ပါပြီ။ နောက်ထပ်ရွေးစရာများကိုကြည့်ရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
+  <string name="open_context_menu_announcement">ရွေးစရာများမီနူးကို ဖွင့်ထားသည်။ ဖုန်းကို သင့်ဆီသို့ မျက်နှာမူစေရန် လှန်လိုက်ပြီး ပုံမှန်အတိုင်း ကိုင်ထားပါ။ လမ်းညွှန်ရန် ပုံမှန် SandFly လက်ဟန်များကို ယခု အသုံးပြုနိုင်ပါပြီ။ နောက်ထပ်ရွေးစရာများကိုကြည့်ရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
   <string name="hold_six_fingers_announcement">%s\nသင့်စက်ကို စားပွဲပေါ်တွင် အပြားလိုက်တင်ပါ။ ထို့နောက် သင်စာရိုက်၍အဆင်ပြေမည့် အနေအထားတစ်ခုဖြင့် လက်တစ်ဖက်စီ၏ အလယ်လက်ချောင်း ၃ ချောင်းကို ဖန်သားပြင်ပေါ်တွင် ထိထားပါ။</string>
   <string name="hold_six_fingers_inactive_announcement">သင့်စက်ကို စားပွဲပေါ်တွင် အပြားလိုက်တင်ပါ။ ထို့နောက် သင်စာရိုက်၍အဆင်ပြေမည့် အနေအထားတစ်ခုဖြင့် လက်တစ်ဖက်စီ၏ အလယ်လက်ချောင်း ၃ ချောင်းကို ဖန်သားပြင်ပေါ်တွင် ထိထားပါ။</string>
   <string name="finish_tutorial_announcement">မျက်မမြင်စာရေးစနစ် လက်ကွက်ကို ပြနေသည်။ သင်၏ အခြားတစ်ဘက်သို့ ဖုန်းကိုလှည့်ပါ။ အလျားလိုက်ဖြစ်ရန် သင့်ဖုန်းကို လှည့်ပါ။ ထို့နောက် စာစရိုက်ပါ။</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">ဤလက်ဟန်ကို “%1$s” အတွက် သုံးထားပြီး ပြောင်း၍မရပါ။ လက်ဟန်နောက်တစ်ခုကို စမ်းကြည့်ပါ။ %2$s</string>
   <string name="custom_gesture_cannot_used">ဤလက်ဟန်ကို သုံး၍မရပါ</string>
   <string name="custom_gesture_no_gesture">မည်သည့်လက်ဟန်မျှ လုပ်ဆောင်မထားပါ</string>
-  <string name="custom_gesture_try_another">လက်ဟန်နောက်တစ်ခုကို စမ်းကြည့်ပါ။ ရနိုင်သော လက်ဟန်အားလုံးစာရင်းကို ကြည့်ရန်အတွက် ‘TalkBack မျက်မမြင်စာရေးစနစ် ကီးဘုတ် ကူညီရေးဌာန’ သို့ သွားပါ။ %s</string>
+  <string name="custom_gesture_try_another">လက်ဟန်နောက်တစ်ခုကို စမ်းကြည့်ပါ။ ရနိုင်သော လက်ဟန်အားလုံးစာရင်းကို ကြည့်ရန်အတွက် ‘SandFly မျက်မမြင်စာရေးစနစ် ကီးဘုတ် ကူညီရေးဌာန’ သို့ သွားပါ။ <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">လက်ဟန်များ မကိုက်ညီပါ</string>
   <string name="custom_gesture_perform_again">သင်အသုံးပြုလိုသည့် လက်ဟန်ကို ထပ်မံလုပ်ဆောင်ပါ။ %s</string>
+    <string name="tabletop_port_left_announcement">ဘယ်ဘက်ရှိ စားပွဲတင်မုဒ်၊ အားသွင်းပေါက်</string>
+    <string name="tabletop_port_right_announcement">တက်ဘလက်မုဒ်၊ ညာဘက်ရှိ အားသွင်းပေါက်</string>
+    <string name="screen_away_port_right_announcement">မျက်နှာပြင်အဝေးမုဒ်၊ ညာဘက်ရှိ အားသွင်းပေါက်</string>
+    <string name="screen_away_port_left_announcement">မျက်နှာပြင်အဝေးမုဒ်၊ ဘယ်ဘက်ရှိ အားသွင်းပေါက်</string>
+    <string name="screen_toward_announcement">သင့်ဆီသို့ ရင်ဖွင့်ပါ။</string>
+    <string name="screen_toward_port_left_announcement">ဘယ်ဘက်ရှိ အားသွင်းပေါက်ကို သင့်ဆီသို့ ဦးတည်သည့် မျက်နှာပြင်</string>
+    <string name="screen_toward_port_right_announcement">သင့်ဆီသို့ မျက်နှာပြင်၊ ညာဘက်တွင် အားသွင်းပေါက်</string>
+    <string name="screen_toward_port_down_announcement">အားသွင်းပေါက်ကို အောက်သို့ညွှန်ပြနေသော သင့်ဆီသို့ မျက်နှာပြင်</string>
+    <string name="screen_toward_port_up_announcement">အားသွင်းပေါက်ကို အပေါ်သို့ ညွှန်ပြနေသည့် သင့်ဆီသို့ မျက်နှာပြင်</string>
+    <string name="port_right_announcement">ညာဘက်တွင် အားသွင်းပေါက်</string>
+    <string name="port_left_announcement">ဘယ်ဘက်တွင် အားသွင်းပေါက်</string>
+    <string name="tabletop_port_near_announcement">တက်ဘလက်မုဒ်၊ သင့်ဆီသို့ အားသွင်းပေါက်</string>
+    <string name="tabletop_port_far_announcement">စားပွဲတင်မုဒ်၊ အားသွင်းပေါက်ကို သင်နှင့်ဝေးရာ</string>
+    <string name="screen_away_port_down_announcement">မျက်နှာပြင်အဝေးမှမုဒ်၊ အားသွင်းပေါက်ကို အောက်သို့ညွှန်ပြသည်။</string>
+    <string name="screen_away_port_up_announcement">မျက်နှာပြင်အဝေးမုဒ်၊ အားသွင်းပေါက်ကို အပေါ်သို့ညွှန်ပြနေသည်။</string>
+    <string name="port_near_announcement">သင့်ဆီသို့ အားသွင်းပေါက်</string>
+    <string name="port_far_announcement">အားသွင်းပေါက်ကို သင်နှင့်ဝေးရာသို့ ပို့ပါ။</string>
+    <string name="port_down_announcement">အားသွင်းပေါက်ကို အောက်သို့ညွှန်ပြသည်။</string>
+    <string name="port_up_announcement">အားသွင်းပေါက်ကို ညွှန်ပြသည်။</string>
+    <string name="orientation_locked_announcement">ဦးတည်ချက်ကို သော့ခတ်ထားသည်။</string>
+    <string name="orientation_locked_port_announcement">ဦးတည်ချက်ကို သော့ခတ်ထားသည်။ %1$s</string>
+    <string name="orientation_unlocked_announcement">ဦးတည်ချက်ကို လော့ခ်ဖွင့်ထားသည်။</string>
+    <string name="switch_to_language_contracted_announcement">%s သို့ ပြောင်းလိုက်သည်, ချုံ့ထားသော မျက်မမြင်စာရေးစနစ်</string>
+    <string name="switch_to_language_uncontracted_announcement">%s သို့ ပြောင်းလိုက်သည်, မျက်မမြင်စာရေးစနစ် အရှည်</string>
+    <string name="title_pref_flip_dots_vertically">အပေါ်နှင့်အောက် အစက်များကို လဲလှယ်ပါ။</string>
+    <string name="summary_pref_flip_dots_vertically">Dot 1 သည် အစက် 3 နှင့် အစက် 4 ကို အစက် 6 ဖြင့် ရောင်းဝယ်သည်</string>
+    <string name="title_pref_tablet_held_up_faces_away">တက်ဘလက်သည် မျက်နှာများကို ခွာထားသည်။</string>
+    <string name="summary_pref_tablet_held_up_faces_away">ပိတ်သည့်အခါတွင်၊ တက်ဘလက် သို့မဟုတ် ခေါက်ထားသောဖုန်းသည် သင့်မျက်နှာစာတွင် တက်ဘလက်ပုံစံကို အသုံးပြုသည်။</string>
+    <string name="title_pref_typing_sounds">စာရိုက်သံများ</string>
+    <string name="summary_pref_typing_sounds">စာလုံးတစ်လုံး၊ နေရာလွတ်၊ စာကြောင်းအသစ် သို့မဟုတ် ဖျက်သည့်အခါတွင် ကီးဘုတ်ကလစ်များကို ဖွင့်ပါ။</string>
+    <string name="skip_tutorial">သင်ခန်းစာကို ကျော်ပါ။</string>
 </resources>

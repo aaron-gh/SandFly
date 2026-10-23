@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">အခြေနေကိုပြောပါ။</string>
+    <string name="template_status_bars"><xliff:g id="max_level" example="4">%2$d</xliff:g>ဘားများထဲမှ <xliff:g id="level" example="3">%1$d</xliff:g></string>
+    <string name="status_wifi_off">Wi-Fi ပိတ်သည်။</string>
+    <string name="status_wifi_not_connected">Wi-Fi မချိတ်ဆက်ပါ။</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">မိုဘိုင်း</string>
+    <string name="status_mobile_no_service">မိုဘိုင်းဝန်ဆောင်မှုမရှိပါ။</string>
+    <string name="status_do_not_disturb">မနှောင့်ယှက်ပါနဲ့။</string>
+    <string name="status_ringer_vibrate">တုန်ခါသည်။</string>
+    <string name="status_ringer_silent">အသံတိတ်</string>
+    <string name="status_airplane_mode">လေယာဉ်ပျံမုဒ်</string>
+    <string name="title_pref_status_readout">အခြေအနေကိုဖတ်ပါ။</string>
+    <string name="status_item_time">အချိန်</string>
+    <string name="status_item_time_summary">လက်ရှိအချိန်</string>
+    <string name="status_item_battery">ဘက်ထရီ</string>
+    <string name="status_item_battery_summary">ဘက်ထရီအဆင့်၊ အားသွင်းမှု၊ နှင့် ဘက်ထရီချွေတာမှု</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">ကွန်ရက်အမည်နှင့် အချက်ပြစွမ်းအား</string>
+    <string name="status_item_mobile">မိုဘိုင်းကွန်ရက်</string>
+    <string name="status_item_mobile_summary">ဝန်ဆောင်မှုပေးသူ၊ ကွန်ရက်အမျိုးအစား၊ နှင့် အချက်ပြစွမ်းအား</string>
+    <string name="status_item_ringer">ဖုန်းမြည်သံနှင့် မနှောင့်ယှက်ရပါ။</string>
+    <string name="status_item_ringer_summary">ဖုန်းမြည်ရန် မသတ်မှတ်ထားချိန် သို့မဟုတ် \'မနှောင့်ယှက်ရ\' ကို ဖွင့်ထားမှသာ</string>
+    <string name="status_item_airplane_mode">လေယာဉ်ပျံမုဒ်</string>
+    <string name="status_item_airplane_mode_summary">လေယာဉ်ပျံမုဒ်ကို ဖွင့်ထားမှသာ</string>
+</resources>

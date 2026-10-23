@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">မျက်မမြင်စာရေးစနစ် ဟာ့ဒ်ဝဲကီးဘုတ်</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack မျက်မမြင်စာရေးစနစ်သုံးကီးဘုတ် မရနိုင်ပါ</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack မျက်မမြင်စာရေးစနစ်သုံးကီးဘုတ် ဖွင့်ပါ</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly မျက်မမြင်စာရေးစနစ်သုံးကီးဘုတ် မရနိုင်ပါ</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly မျက်မမြင်စာရေးစနစ်သုံးကီးဘုတ် ဖွင့်ပါ</string>
   <string name="bd_ime_disabled_dialog_message">သင့်မျက်မမြင်စာဖတ်ကိရိယာကို စာရိုက်ရာတွင်သုံးရန် လက်ကွက် ဆက်တင်များတွင် ၎င်းကို ဖွင့်ပါ</string>
   <string name="bd_ime_disabled_dialog_title_positive">လက်ကွက် ဆက်တင်များ</string>
   <string name="bd_ime_not_default_dialog_title">လက်ကွက်ကို ပြောင်းပါ</string>
-  <string name="bd_ime_not_default_dialog_message">ဆက်လက်၍ စာရိုက်ရန် မျက်မမြင်စာရေးစနစ်သုံးကီးဘုတ်ကို သင့်လက်ကွက်အဖြစ် သတ်မှတ်ပါ</string>
+  <string name="bd_ime_not_default_dialog_message">ဆက်ရိုက်ရန်၊ SandFly မျက်မမြင်စာရိုက်ကီးဘုတ်ကို သင်၏ထည့်သွင်းမှုနည်းလမ်းအဖြစ် သတ်မှတ်ပါ။</string>
   <string name="bd_ime_not_default_dialog_positive">လက်ကွက်ပြောင်းရန်</string>
   <string name="type_unlabeled">အညွှန်းတပ်မထားပါ</string>
   <string name="type_unlabeled_edittext">အညွှန်းတပ်မထားသော တည်းဖြတ်ရန် အကွက်</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">ဘယ်သို့ရွှေ့ကြည့်ရန်</string>
   <string name="overlay_pan_right_button">ညာသို့ရွှေ့ကြည့်ရန်</string>
   <string name="bd_preferences_title">မျက်မမြင်စာဖတ်ကိရိယာ</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">မျက်မမြင်စာဖတ်ကိရိယာသုံးရန် TalkBack အရင်ဖွင့်ပါ</string>
-  <string name="bd_preferences_banner_talkback_off_button">Talkback သို့ သွားရန်</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">မျက်မမြင်စာဖတ်ကိရိယာသုံးရန် SandFly အရင်ဖွင့်ပါ</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFly သို့ သွားပါ</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">မျက်မမြင်စာဖတ်ကိရိယာသုံးရန် ဘလူးတုသ် အရင်ဖွင့်ပါ</string>
   <string name="bd_preferences_banner_bluetooth_off_button">ဘလူးတုသ် ဖွင့်ရန်</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">မျက်မမြင်စာဖတ်ကိရိယာသုံးရန် %s က အနီးတစ်ဝိုက်ရှိစက်များကို သုံးခွင့်လိုအပ်သည်</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">ဘရောက်စ်မုဒ်သုံးရန် မူရင်းကီးမြေပုံမှ အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံသို့ ပြောင်းရပါမည်။ ဤအပြောင်းအလဲသည် သင်၏ မျက်မမြင်စာဖတ်ကိရိယာ ကွန်မန်းအချို့ကို အပ်ဒိတ်လုပ်ပါမည်</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">ဆက်တင်များ</string>
   <string name="bd_command_change_dialog_title">ကွန်မန်းအချို့ကို အပ်ဒိတ်လုပ်ထားသည်</string>
-  <string name="bd_command_change_dialog_message">ဤ TalkBack ဗားရှင်း၌ မျက်မမြင်စာဖတ်ကိရိယာကွန်မန်း အပ်ဒိတ်ရှိ-\n\n• ယခင်ဖိုင်- ဒေါ့(တ်) ၁၊ ၇ ကိုနှိပ်\n\n• နောက်ဖိုင်- ဒေါ့(တ်) ၄၊ ၈ ကိုနှိပ်\n\n• ယခင်စာဖတ်ထိန်းချုပ်မှု- ဒေါ့(တ်) ၂၊ ၃၊ ၇၊ ၈ ကိုနှိပ်\n\n• နောက်စာဖတ်ထိန်းချုပ်မှု- ဒေါ့(တ်) ၅၊ ၆၊ ၇၊ ၈ ကိုနှိပ်</string>
+  <string name="bd_command_change_dialog_message">ဤ SandFly ဗားရှင်း၌ မျက်မမြင်စာဖတ်ကိရိယာကွန်မန်း အပ်ဒိတ်ရှိ-\n\n• ယခင်ဖိုင်- ဒေါ့(တ်) ၁၊ ၇ ကိုနှိပ်\n\n• နောက်ဖိုင်- ဒေါ့(တ်) ၄၊ ၈ ကိုနှိပ်\n\n• ယခင်စာဖတ်ထိန်းချုပ်မှု- ဒေါ့(တ်) ၂၊ ၃၊ ၇၊ ၈ ကိုနှိပ်\n\n• နောက်စာဖတ်ထိန်းချုပ်မှု- ဒေါ့(တ်) ၅၊ ၆၊ ၇၊ ၈ ကိုနှိပ်</string>
   <string name="bd_preference_braille_contracted">ချုံ့ထားသော မျက်မမြင်စာရေးစနစ်</string>
   <string name="bd_preference_braille_uncontracted">မျက်မမြင်စာရေးစနစ် အရှည်</string>
   <string name="bd_braille_grade_tips">ချုံ့ထားသောနှင့် ချုံ့မထားသော မျက်မမြင်စာရေးစနစ်အကြား မျက်မမြင်စာဖတ်ကိရိယာသုံး၍ အမြန်ပြောင်းရန် နေရာခြားခလုတ် နှင့် အစက် ၁၊ ၂၊ ၄၊ ၅ နှိပ်ပါ။\n\nသင်သည် မျက်မမြင်စာရေးစနစ် အဆင့်နှစ်ဆင့်လုံးပါသည့် ဘာသာစကားကို အသုံးပြုပါက ဤကွန်မန်းသည် အလုပ်လုပ်သည်။</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">တစ်ခုနှင့်တစ်ခုကြား ရွှေ့ခြင်း</string>
   <string name="bd_commands_bindings_category_system_actions_title">စနစ် လုပ်ဆောင်ချက်များ</string>
   <string name="bd_commands_bindings_category_system_actions_summary">နောက်သို့၊ ပင်မစာမျက်နှာ၊ အကြောင်းကြားချက် စသည်</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack ဝန်ဆောင်မှုများ</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback မီနူးနှင့် ဆက်တင်များ</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly ဝန်ဆောင်မှုများ</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly မီနူးများနှင့် ဆက်တင်များ</string>
   <string name="bd_commands_bindings_category_braille_settings_title">မျက်မမြင်စာရေးစနစ် ဆက်တင်များ</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">မျက်မမြင်စာရေးစနစ် ဘာသာစကားနှင့် ဆက်တင်များ</string>
   <string name="bd_commands_bindings_category_text_editing_title">စာသား တည်းဖြတ်ခြင်း</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">အက်ပ်အားလုံး ဖွင့်ရန်</string>
   <string name="bd_cmd_toggle_screen_search">မြင်လွှာတွင်ရှာဖွေခြင်း ဖွင့်ရန်</string>
   <string name="bd_cmd_edit_custom_label">စိတ်ကြိုက်အညွန်း ပြင်ဆင်ရန်</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack မီနူး ဖွင့်ရန်</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack စကားသံ ဖွင့် (သို့) ပိတ်ရန်</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly မီနူး ဖွင့်ရန်</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly စကားသံ ဖွင့် (သို့) ပိတ်ရန်</string>
   <string name="bd_cmd_read_stop">ဖတ်နေသည်ကို ရပ်ရန်</string>
-  <string name="bd_cmd_talkback_settings">TalkBack ဆက်တင်များ ဖွင့်ရန်</string>
+  <string name="bd_cmd_talkback_settings">SandFly ဆက်တင်များ ဖွင့်ရန်</string>
   <string name="bd_cmd_switch_to_next_input_language">အသုံးပြုသည့် ဘာသာစကား နောက်တစ်ခု ပြောင်းရန်</string>
   <string name="bd_cmd_switch_to_next_output_language">ဖတ်ရှုသည့် ဘာသာစကား နောက်တစ်ခု ပြောင်းရန်</string>
   <string name="bd_cmd_toggle_contracted_mode">ချုံ့ထားသည့်မုဒ်နှင့် မချုံ့ထားသည့်မုဒ်အကြား ပြောင်းရန်</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">ဘရောက်စ်မုဒ်ကိုဝင်ရန် ကွန်မန်းသုံးပြီးနောက် အောက်ပါစာလုံး / နံပါတ်ဖြတ်လမ်းများကို ရိုက်ခြင်းဖြင့် အင်တာနက်စာမျက်နှာများ၌ အမြန်ရွှေ့ကြည့်နိုင်သည်\n\nဖြတ်လမ်းကို ဘရောက်စ်မုဒ်သို့ မဝင်ဘဲ သုံးနိုင်သော်လည်း “ရှေ့သို့” ကွန်မန်းများ၌ ဒေါ့(တ်) ၈ ထည့်ရမည်</string>
   <string name="bd_cmd_subcategory_title_web_navigation">ဇယား၌ရွှေ့ကြည့်ခြင်း</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">မျက်မမြင်စာဖတ်ကိရိယာ ဆက်တင် ပိတ်မလား။</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">TalkBack ဆက်တင်များတွင် ၎င်းကို အချိန်မရွေး ပြန်ဖွင့်နိုင်သည်</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">SandFly ဆက်တင်များတွင် ၎င်းကို အချိန်မရွေး ပြန်ဖွင့်နိုင်သည်</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">ပိတ်ရန်</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">အချို့ကွန်မန်းများ မရနိုင်ပါ</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">လမ်းညွှန်ခြင်း၊ မျက်မမြင်စာရေးစနစ် ဆက်တင်နှင့် TalkBack ဝန်ဆောင်မှုအချို့အတွက် ကွန်မန်းများကို စာရိုက် (သို့) တည်းဖြတ်နေစဉ် မရနိုင်ပါ။\n\n၎င်းကွန်မန်းများသုံးရန် ကီးဘုတ်အရင်ပိတ်ပါ။</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">လမ်းညွှန်ခြင်း၊ မျက်မမြင်စာရေးစနစ် ဆက်တင်နှင့် SandFly ဝန်ဆောင်မှုအချို့အတွက် ကွန်မန်းများကို စာရိုက် (သို့) တည်းဖြတ်နေစဉ် မရနိုင်ပါ။\n\n၎င်းကွန်မန်းများသုံးရန် ကီးဘုတ်အရင်ပိတ်ပါ။</string>
   <string name="bd_caption_tutorial_dialog_title">သင့်မျက်မမြင်စာဖတ်ကိရိယာရှိ စာတန်းများ</string>
   <string name="bd_caption_tutorial_dialog_message">ဤဗီဒီယိုတွင် စာတန်းပြရန်၊ ဖျောက်ရန် နေရာခြားခလုတ်နှင့် ဒေါ့(တ်) ၁၊ ၄၊ ၇၊ ၈ နှိပ်ပါ။\n\nပံ့ပိုးထားသော မီဒီယာအတွက် စာတန်းအော်တိုပြရန် ဆက်တင်များရှိ မျက်မမြင်စာဖတ်ကိရိယာတွင် ‘စာတန်းများပြပါ’ ကိုဖွင့်ပါ။</string>
   <string name="bd_caption_tutorial_dialog_checkbox">စာတန်းများ ရနိုင်သည့်အခါ ဤမက်ဆေ့ဂျ်ကို အမြဲပြပါ</string>
   <string name="bd_usb_connect_dialog_title">မျက်မမြင်စာဖတ်ကိရိယာကို USB နှင့် ချိတ်ဆက်ထားသည်</string>
-  <string name="bd_usb_connect_dialog_message">သင့် %s ၏ ဘက်ထရီက မျက်မမြင်စာဖတ်ကိရိယာကို အားသွင်းနေသည်။\n\nဘလူးတုသ်သို့ ပြောင်းရန်လိုအပ်ပါက USB (သို့) USB ပလတ်ခုံကို ချိတ်ဆက်မှုဖြုတ်ပြီး TalkBack ဆက်တင်များ &gt; မျက်မမြင်စာဖတ်ကိရိယာသို့ သွားပါ။</string>
+  <string name="bd_usb_connect_dialog_message">သင့် %s ၏ ဘက်ထရီက မျက်မမြင်စာဖတ်ကိရိယာကို အားသွင်းနေသည်။\n\nဘလူးတုသ်သို့ ပြောင်းရန်လိုအပ်ပါက USB (သို့) USB ပလတ်ခုံကို ချိတ်ဆက်မှုဖြုတ်ပြီး SandFly ဆက်တင်များ &gt; မျက်မမြင်စာဖတ်ကိရိယာသို့ သွားပါ။</string>
   <string name="bd_device">ဖုန်း</string>
   <string name="bd_battery_low_dialog_title">%s ဘက်ထရီအားနည်းနေသည်</string>
   <string name="bd_battery_low_dialog_message">သင့် %s ၏ ဘက်ထရီက မျက်မမြင်စာဖတ်ကိရိယာကို အားသွင်းနေသည်။\n\nဘက်ထရီချွေတာရန်-\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">အားလုံး ဖယ်ရှားရန်</string>
   <string name="popup_message_history_empty">အလွတ်</string>
   <string name="popup_message_history_consent_dialog_title">စက်မက်ဆေ့ဂျ်မှတ်တမ်း ဖွင့်မလား။</string>
-  <string name="popup_message_history_consent_dialog_msg">၎င်းသည် Talkback တွင် အကြောင်းကြားချက်နှင့် နှိုးစက်များကဲ့သို့သော မက်ဆေ့ဂျ်အချို့ကို သိမ်းပါမည်။ ဤဆက်တင်ကို အချိန်မရွေးပြောင်းနိုင်သည်။</string>
+  <string name="popup_message_history_consent_dialog_msg">၎င်းသည် SandFlyတွင် အကြောင်းကြားချက်များနှင့် နှိုးစက်များကဲ့သို့သော မက်ဆေ့ဂျ်အချို့ကို သိမ်းဆည်းမည်ဖြစ်သည်။ သင်သည် ဤဆက်တင်ကို အချိန်မရွေး ပြောင်းလဲနိုင်သည်။</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ဖွင့်ရန်</string>
   <string name="popup_message_history_consent_dialog_negative_btn">မလိုပါ</string>
+    <string name="external_display_channel">အခြားအက်ပ်များမှ မျက်မမြင်များကို ပြသသည်။</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>ကို SandFly အတွက် မျက်မမြင်စာအဖြစ် ပြသခွင့်ပြုမလား။</string>
+    <string name="external_display_ask_text">SandFly သင်ခွင့်ပြုသည့်တိုင်အောင် ၎င်းကိုအသုံးမပြုပါ။</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> သည် SandFly မျက်မမြင်စာဖြင့်ပြသသည့်အရာအားလုံးကို ဖတ်နိုင်မည်ဖြစ်ပြီး၊ ၎င်းသည် မက်ဆေ့ချ်များနှင့် သင်ရိုက်ထည့်သောအရာအပါအဝင် စခရင်ပေါ်ရှိ မည်သည့်အရာမဆို ဖြစ်နိုင်သည်။ ၎င်းသည် မျက်မမြင်မျက်နှာပြင်ဖြင့် သင့်စက်ပစ္စည်းကို ထိန်းချုပ်နိုင်သည်- အက်ပ်များကို ရိုက်ထည့်ပါ၊ ဖွင့်ကာ SandFly မည်သည့်အမိန့်ကိုမဆို လုပ်ဆောင်နိုင်သည်။ သင်ယုံကြည်ရသောအက်ပ်များကိုသာ ခွင့်ပြုပါ။</string>
+    <string name="external_display_allow">ခွင့်ပြုပါ။</string>
+    <string name="external_display_deny">ခွင့်မပြုပါနှင့်</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> သည် သင်၏ မျက်မမြင်စာ မျက်နှာစာဖြစ်သည်။</string>
+    <string name="external_display_in_use_text">SandFly အသုံးပြုနေစဉ်၊ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> မျက်နှာပြင်ကို ဖတ်ပြီး စက်ပစ္စည်းကို ထိန်းချုပ်နိုင်သည်။</string>
+    <string name="external_displays_title">အခြားအက်ပ်များမှပြသသည်။</string>
+    <string name="external_displays_summary">သင်ခွင့်ပြုသောအက်ပ်များသည် SandFlyအတွက် မျက်မမြင်စာများပြသနိုင်သည်။ မျက်မမြင်စာဖြင့်ပြသသည့်အက်ပ်တစ်ခုသည် မျက်နှာပြင်ကိုဖတ်နိုင်ပြီး စက်ပစ္စည်းကို ထိန်းချုပ်နိုင်သည်။</string>
+    <string name="external_displays_none">မည်သည့်အက်ပ်မှ မျက်မမြင်စာဖြင့် ပြသနိုင်သည်</string>
 </resources>
