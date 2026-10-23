@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">Desa</string>
     <string name="gemini_api_key_get">Obtén una clau</string>
     <string name="gemini_api_terms_link">Condicions del servei addicionals de l\'API de Gemini</string>
+    <string name="title_pref_gemini_model">Model Gemini</string>
+    <string name="gemini_model_automatic">Automàtic</string>
+    <string name="summary_pref_gemini_model_automatic">Automàtic: Gemini Flash, després Flash-Lite quan Flash està ocupat</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, després Flash-Lite quan estigui ocupat</string>
+    <string name="gemini_model_loading">Aconseguint els models...</string>
+    <string name="gemini_model_list_failed">No s\'han pogut obtenir els models: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Primer establiu una clau API Gemini</string>
+    <string name="ai_service_address_hint">Adreça, com ara https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Model</string>
+    <string name="ai_service_address_invalid">L\'adreça ha de començar per https://. No s\'ha desat res.</string>
+    <string name="dialog_message_ai_service_consent">Les imatges i les captures de pantalla s\'envien a <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> per ser descrites, cosa que triga uns quants segons. S\'apliquen els seus propis termes i política de privadesa. La IA generativa és experimental, per la qual cosa cometrà errors.</string>
+    <string name="ai_service_error_api_key">El servei d\'IA no va acceptar la clau de l\'API. Comproveu la seva configuració a Descripcions automàtiques.</string>
+    <string name="ai_service_error_quota">S\'ha assolit el límit d\'ús del servei d\'IA. Torna-ho a provar més tard.</string>
+    <string name="ai_service_error_busy">El servei d\'IA està ocupat ara mateix. Torna-ho a provar d\'aquí a un moment.</string>
+    <string name="ai_service_error_timeout">El servei d\'IA va trigar massa a respondre. Torna-ho a provar.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Cap</string>
+    <string name="ai_service_not_set_up">No s\'utilitza cap servei d\'IA. Configureu-ne un o trieu-ne un a la configuració de descripcions automàtiques.</string>
+    <string name="ai_provider_none_set_up">No s\'ha configurat cap servei d\'IA. Configureu-ne un a la seva configuració a continuació.</string>
+    <string name="ai_provider_other">Un altre servei</string>
+    <string name="title_pref_category_ai_services">Serveis d\'IA</string>
+    <string name="title_pref_ai_provider">Servei d\'IA</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> configuració</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, no configurat</string>
+    <string name="ai_provider_in_use">En ús</string>
+    <string name="ai_provider_not_set_up">No configurat</string>
+    <string name="ai_provider_not_ready">Trieu primer un model</string>
+    <string name="ai_provider_address">Adreça</string>
+    <string name="ai_provider_address_message">L\'adreça d\'un servei amb una API de xat compatible amb OpenAI i una entrada d\'imatge, com ara https://example.com/v1.</string>
+    <string name="ai_provider_not_set">No configurat</string>
+    <string name="ai_provider_set">Configurat</string>
+    <string name="title_pref_gemini_api_key_of">Clau d’API de <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">model <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_choose_model">No escollit</string>
+    <string name="ai_provider_key_message">Enganxeu la vostra clau d’API de <xliff:g id="service" example="Claude">%1$s</xliff:g>. Per eliminar-la, buideu el camp i deseu. Les imatges i pantalles que demaneu descriure s’envien a <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Configureu primer la clau API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_needs_address">Establiu primer l\'adreça</string>
+    <string name="ai_provider_enter_model">Introduïu un nom de model</string>
 </resources>
