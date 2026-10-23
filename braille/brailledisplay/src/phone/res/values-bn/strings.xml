@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">ব্রেইল হার্ডওয়্যার কীবোর্ড</string>
   <string name="bd_application_name">Android অ্যাক্সেসেবিলিটি স্যুট</string>
-  <string name="bd_ime_unavailable_activity_name">\'টকব্যাক\' ব্রেইল কীবোর্ড উপলভ্য নেই</string>
-  <string name="bd_ime_disabled_dialog_title">\'টকব্যাক\' ব্রেইল কীবোর্ড চালু করুন</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly ব্রেইল কীবোর্ড উপলভ্য নয়</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly ব্রেইল কীবোর্ড চালু করুন</string>
   <string name="bd_ime_disabled_dialog_message">টাইপ করার জন্য ব্রেইল প্রদর্শন ব্যবহার করতে, ইনপুট সেটিংসে গিয়ে এটি চালু করুন</string>
   <string name="bd_ime_disabled_dialog_title_positive">ইনপুট সেটিংস</string>
   <string name="bd_ime_not_default_dialog_title">ইনপুট পদ্ধতি পাল্টান</string>
-  <string name="bd_ime_not_default_dialog_message">টাইপ করা চালিয়ে যেতে, ইনপুট পদ্ধতি হিসেবে \'টকব্যাক\' ব্রেইল কীবোর্ড সেট করুন</string>
+  <string name="bd_ime_not_default_dialog_message">টাইপ চালিয়ে যেতে SandFly ব্রেইল কীবোর্ডকে আপনার ইনপুট পদ্ধতি হিসেবে সেট করুন</string>
   <string name="bd_ime_not_default_dialog_positive">ইনপুট পাল্টান</string>
   <string name="type_unlabeled">লেবেল দেওয়া নেই</string>
   <string name="type_unlabeled_edittext">লেবেল ছাড়া এডিট বক্স</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">বাঁদিকে প্যান করুন</string>
   <string name="overlay_pan_right_button">ডানদিকে প্যান করুন</string>
   <string name="bd_preferences_title">ব্রেইল ডিসপ্লে</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">ব্রেইল প্রদর্শন ব্যবহার করতে, প্রথমে \'টকব্যাক\' চালু করুন</string>
-  <string name="bd_preferences_banner_talkback_off_button">\'টকব্যাক\' ফিচারে যান</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">ব্রেইল ডিসপ্লে ব্যবহার করতে প্রথমে SandFly চালু করুন</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFly-এ যান</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">ব্রেইল ডিসপ্লে ব্যবহার করতে, প্রথমে ব্লুটুথ চালু করুন</string>
   <string name="bd_preferences_banner_bluetooth_off_button">ব্লুটুথ চালু করুন</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">ব্রেইল প্রদর্শন ব্যবহার করতে, %sকে আশেপাশের ডিভাইস অ্যাক্সেস করতে দিতে হবে</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">ব্রাউজ মোড ব্যবহার করতে, আপনাকে ডিফল্ট কী-ম্যাপ থেকে উন্নত কী-ম্যাপে পাল্টে নিতে হবে। এই পরিবর্তনের ফলে আপনার ব্রেইল ডিসপ্লের কিছু কমান্ড আপডেট হয়ে যাবে</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">সেটিংস</string>
   <string name="bd_command_change_dialog_title">কিছু কমান্ড আপডেট করা হয়েছে</string>
-  <string name="bd_command_change_dialog_message">এই টকব্যাকের ভার্সনে এইসব ব্রেইল ডিসপ্লে কমান্ড আপডেট করা হয়েছে:\n\n• আগের আইটেম: ডট ১, ৭ প্রেস করুন\n\n• পরের আইটেম: ডট ৪, ৮ প্রেস করুন\n\n• আগের রিডিং কন্ট্রোল: ডট ২, ৩, ৭, ৮ প্রেস করুন\n\n• পরের রিডিং কন্ট্রোল: ডট ৫, ৬, ৭, ৮ প্রেস করুন</string>
+  <string name="bd_command_change_dialog_message">এই SandFly সংস্করণে ব্রেইল ডিসপ্লের কমান্ডগুলো আপডেট করা হয়েছে:\n\n• আগের আইটেম: ১, ৭ নম্বর ডট চাপুন\n\n• পরের আইটেম: ৪, ৮ নম্বর ডট চাপুন\n\n• আগের রিডিং কন্ট্রোল: ২, ৩, ৭, ৮ নম্বর ডট চাপুন\n\n• পরের রিডিং কন্ট্রোল: ৫, ৬, ৭, ৮ নম্বর ডট চাপুন</string>
   <string name="bd_preference_braille_contracted">কনট্র্যাক্টেড ব্রেইল</string>
   <string name="bd_preference_braille_uncontracted">আনকনট্র্যাক্টেড ব্রেইল</string>
   <string name="bd_braille_grade_tips">ব্রেইল প্রদর্শন ব্যবহার করে কনট্র্যাক্টেড এবং আনকন্ট্র্যাক্টেড বিকল্পের মধ্যে অদলবদল করতে প্রেস করুন স্পেস এবং ডট ১, ২, ৪ এবং ৫।\n\nআপনি উভয় ব্রেইল গ্রেডের ভাষা ব্যবহার করলে এই কমান্ড কাজ করে।</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">আইটেমের মধ্যে পরিবর্তন করা</string>
   <string name="bd_commands_bindings_category_system_actions_title">সিস্টেম অ্যাকশন</string>
   <string name="bd_commands_bindings_category_system_actions_summary">ফিরে যাওয়া, হোম, বিজ্ঞপ্তি ও আরও অনেক কিছু</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">\'টকব্যাক\' ফিচার</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">\'টকব্যাক\' মেনু ও সেটিংস</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-এর সুবিধা</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly মেনু ও সেটিংস</string>
   <string name="bd_commands_bindings_category_braille_settings_title">ব্রেইল সেটিংস</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ব্রেইলের ভাষা ও সেটিংস</string>
   <string name="bd_commands_bindings_category_text_editing_title">টেক্সট এডিটিং</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">সবকটি অ্যাপ খুলুন</string>
   <string name="bd_cmd_toggle_screen_search">\'স্ক্রিনে সার্চ করুন\' বিকল্প খুলুন</string>
   <string name="bd_cmd_edit_custom_label">কাস্টম লেবেল এডিট করুন</string>
-  <string name="bd_cmd_open_talkback_menu">টকব্যাক মেনু খুলুন</string>
-  <string name="bd_cmd_toggle_voice_feedback">টকব্যাক স্পিচ চালু বা বন্ধ করুন</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly মেনু খুলুন</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly-এর কথা বলা চালু বা বন্ধ করুন</string>
   <string name="bd_cmd_read_stop">পড়া বন্ধ করুন</string>
-  <string name="bd_cmd_talkback_settings">টকব্যাক সেটিংস খুলুন</string>
+  <string name="bd_cmd_talkback_settings">SandFly সেটিংস খুলুন</string>
   <string name="bd_cmd_switch_to_next_input_language">পরবর্তী \'টাইপ করার ভাষা\'য় পরিবর্তন করুন</string>
   <string name="bd_cmd_switch_to_next_output_language">পরবর্তী \'পড়ার ভাষা\'য় পরিবর্তিত করুন</string>
   <string name="bd_cmd_toggle_contracted_mode">কনট্রাক্টেড ও আনকনট্রাক্টেড মোডের মধ্যে একটি থেকে অন্যটিতে পাল্টে নিন</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">আপনি দ্রুত ওয়েব পেজ নেভিগেট করতে পারবেন। এরজন্য ব্রাউজ মোডে যাওয়ার কমান্ড ব্যবহার করুন। তারপরে নিম্নলিখিত অক্ষর বা নম্বরের শর্টকাট টাইপ করুন\n\nএইসব শর্টকাট ব্রাউজ মোডে প্রবেশ না করেও ব্যবহার করা যেতে পারে, তবে আপনাকে \"পরবর্তী\" কমান্ডে ডট ৮ যোগ করতে হবে</string>
   <string name="bd_cmd_subcategory_title_web_navigation">টেবিল নেভিগেশন</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">ব্রেইল প্রদর্শন সেটিং বন্ধ করতে চান?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">\'টকব্যাক\' সেটিংস থেকে আপনি যেকোনও সময় এটি আবার চালু করতে পারবেন</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">SandFly সেটিংসে যেকোনো সময় এটি আবার চালু করতে পারেন</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">বন্ধ করুন</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">কিছু কমান্ড উপলভ্য নেই</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">টাইপ বা এডিট করার সময় নেভিগেশন সংক্রান্ত কমান্ড, ব্রেইল সেটিংস ও কিছু \'টকব্যাক\' ফিচার উপলভ্য হয় না।\n\nএইসব কমান্ড ব্যবহার করতে, প্রথমে কীবোর্ড বন্ধ করুন।</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">টাইপ বা সম্পাদনার সময় নেভিগেশন কমান্ড, ব্রেইল সেটিংস এবং SandFly-এর কিছু সুবিধা উপলভ্য থাকে না।\n\nএই কমান্ডগুলো ব্যবহার করতে প্রথমে কীবোর্ড বন্ধ করুন।</string>
   <string name="bd_caption_tutorial_dialog_title">আপনার ব্রেইল ডিসপ্লেতে ক্যাপশন</string>
   <string name="bd_caption_tutorial_dialog_message">এই ভিডিওর জন্য ক্যাপশন দেখাতে বা লুকাতে স্পেস ও ১, ৪, ৭, ৮ ডট প্রেস করুন।\n\nযেসব মিডিয়া কাজ করে তার জন্য অটোমেটিক ক্যাপশন দেখতে, \'সেটিংস\' থেকে ব্রেইল ডিসপ্লেতে ক্যাপশন \'দেখুন\' বিকল্প চালু করুন।</string>
   <string name="bd_caption_tutorial_dialog_checkbox">ক্যাপশন উপলভ্য থাকলে এই মেসেজ যেকোনও সময়ে দেখুন</string>
   <string name="bd_usb_connect_dialog_title">ব্রেইল ডিসপ্লে ইউএসবির সাথে কানেক্ট করা হয়েছে</string>
-  <string name="bd_usb_connect_dialog_message">আপনার %s-এর ব্যাটারি ব্রেইল ডিসপ্লে চার্জ করছে।\n\nব্লুটুথে পরিবর্তন করার প্রয়োজন হলে, ইউএসবি বা ইউএসবি হাব ডিসকানেক্ট করুন ও \'টকব্যাক সেটিংস &gt; ব্রেইল ডিসপ্লেতে\' যান।</string>
+  <string name="bd_usb_connect_dialog_message">আপনার %s-এর ব্যাটারি ব্রেইল ডিসপ্লে চার্জ করছে।\n\nBluetooth-এ যেতে USB বা USB হাব বিচ্ছিন্ন করুন এবং SandFly সেটিংস &gt; ব্রেইল ডিসপ্লেতে যান।</string>
   <string name="bd_device">ফোন</string>
   <string name="bd_battery_low_dialog_title">%s-এ চার্জ কম আছে</string>
   <string name="bd_battery_low_dialog_message">আপনার %s-এর ব্যাটারি ব্রেইল ডিসপ্লে চার্জ করছে।\n\nব্যাটারির চার্জ বাঁচাতে:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">সব মুছে দিন</string>
   <string name="popup_message_history_empty">কোনও রেকর্ড নেই</string>
   <string name="popup_message_history_consent_dialog_title">ডিভাইসের মেসেজ ইতিহাস চালু করতে চান?</string>
-  <string name="popup_message_history_consent_dialog_msg">এটি করলে টকব্যাকে কিছু মেসেজ যেমন বিজ্ঞপ্তি ও অ্যালার্ম সেভ হবে। আপনি যেকোনও সময় এই সেটিং বন্ধ করতে পারবেন।</string>
+  <string name="popup_message_history_consent_dialog_msg">এতে বিজ্ঞপ্তি ও অ্যালার্মের মতো কিছু বার্তা SandFly-এ সংরক্ষণ করা হবে। যেকোনো সময় এই সেটিং বদলাতে পারেন।</string>
   <string name="popup_message_history_consent_dialog_positive_btn">চালু করুন</string>
   <string name="popup_message_history_consent_dialog_negative_btn">না থাক</string>
+    <string name="external_display_channel">অন্য অ্যাপের ব্রেইল ডিসপ্লে</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>-কে SandFly-এর ব্রেইল ডিসপ্লে হিসেবে অনুমতি দেবেন?</string>
+    <string name="external_display_ask_text">আপনি অনুমতি না দেওয়া পর্যন্ত SandFly এটি ব্যবহার করবে না।</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly ব্রেইলে যা দেখায় তা পড়তে পারবে, যার মধ্যে স্ক্রিনের যেকোনো বিষয়, বার্তা এবং আপনার টাইপ করা লেখা অন্তর্ভুক্ত। ব্রেইল ডিসপ্লের মতো এটি আপনার ডিভাইস নিয়ন্ত্রণও করতে পারবে: টাইপ করা, অ্যাপ খোলা এবং যেকোনো SandFly কমান্ড চালানো। শুধু বিশ্বাসযোগ্য অ্যাপকেই অনুমতি দিন।</string>
+    <string name="external_display_allow">অনুমতি দিন</string>
+    <string name="external_display_deny">অনুমতি দেবেন না</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> আপনার ব্রেইল ডিসপ্লে</string>
+    <string name="external_display_in_use_text">SandFly এটি ব্যবহার করার সময় <xliff:g id="app" example="Notetaker">%1$s</xliff:g> স্ক্রিন পড়তে এবং ডিভাইস নিয়ন্ত্রণ করতে পারবে।</string>
+    <string name="external_displays_title">অন্য অ্যাপের ডিসপ্লে</string>
+    <string name="external_displays_summary">আপনার অনুমতি দেওয়া অ্যাপগুলো SandFly-এর ব্রেইল ডিসপ্লে হতে পারে। ব্রেইল ডিসপ্লে হিসেবে কাজ করা অ্যাপ স্ক্রিন পড়তে এবং ডিভাইস নিয়ন্ত্রণ করতে পারে।</string>
+    <string name="external_displays_none">কোনো অ্যাপ ব্রেইল ডিসপ্লে হতে পারবে না।</string>
 </resources>
