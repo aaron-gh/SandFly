@@ -138,4 +138,16 @@
     <string name="script_source_remove">Quitar fonte</string>
     <string name="script_source_remove_title">Queres quitar <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Os scripts instalados desde ela seguen instalados.</string>
+    <string name="scripts_auto_update">Actualiza os scripts automaticamente</string>
+    <string name="scripts_check_updates">Buscar actualizacións</string>
+    <string name="scripts_checking_updates">Buscando actualizacións...</string>
+    <string name="scripts_updates_category">Actualizacións</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> script actualizado: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> scripts actualizados: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">As actualizacións están listadas en Actualizacións</string>
+    <string name="scripts_update_check_failed">Non se puideron comprobar algunhas fontes</string>
+    <string name="scripts_up_to_date">Todos os guións están actualizados</string>
 </resources>
