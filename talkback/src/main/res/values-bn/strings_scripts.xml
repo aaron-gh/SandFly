@@ -138,4 +138,16 @@
     <string name="script_source_remove">উৎস সরান</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> সরাবেন?</string>
     <string name="script_source_remove_message">এখান থেকে ইনস্টল করা স্ক্রিপ্টগুলি ইনস্টল থাকবে।</string>
+    <string name="scripts_auto_update">স্বয়ংক্রিয়ভাবে স্ক্রিপ্ট আপডেট করুন</string>
+    <string name="scripts_check_updates">আপডেট চেক করুন</string>
+    <string name="scripts_checking_updates">আপডেটের জন্য পরীক্ষা করা হচ্ছে...</string>
+    <string name="scripts_updates_category">আপডেট</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g>টি স্ক্রিপ্ট আপডেট করা হয়েছে: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g>টি স্ক্রিপ্ট আপডেট করা হয়েছে: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">আপডেটের অধীনে তালিকাভুক্ত করা হয়</string>
+    <string name="scripts_update_check_failed">কিছু উৎস চেক করা যায়নি</string>
+    <string name="scripts_up_to_date">সমস্ত স্ক্রিপ্ট আপ টু ডেট</string>
 </resources>
