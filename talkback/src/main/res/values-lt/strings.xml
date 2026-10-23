@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Kalbėjimo variklis nepasiekiamas naudojant balso profilį</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, naudojamas</string>
     <string name="no_voice_profiles">Nėra balso profilių</string>
-    <string name="shortcut_voice_profiles">Pasirinkite balso profilį</string>
+    <string name="shortcut_voice_profiles">Pasirinkti balso profilį</string>
     <string name="shortcut_previous_voice_profile">Ankstesnis balso profilis</string>
     <string name="shortcut_next_voice_profile">Kitas balso profilis</string>
     <string name="title_pref_voice_profile_in_use">Naudojamas balso profilis</string>
@@ -1483,7 +1483,7 @@
     <string name="quick_settings_media_volume">Medijos garsumas</string>
     <string name="quick_settings_call_volume">Skambučio garsumas</string>
     <string name="quick_settings_ring_volume">Skambučio garsumas</string>
-    <string name="quick_settings_notification_volume">Pranešimų apimtis</string>
+    <string name="quick_settings_notification_volume">Pranešimų garsumas</string>
     <string name="quick_settings_alarm_volume">Žadintuvo garsumas</string>
     <string name="quick_settings_accessibility_volume">Pritaikomumo garsumas</string>
     <string name="quick_settings_system_volume">Sistemos garso garsumas</string>
@@ -1497,10 +1497,10 @@
     <string name="quick_settings_screen_timeout">Ekrano skirtasis laikas</string>
     <string name="quick_settings_font_size">Šrifto dydis</string>
     <string name="quick_settings_media">Medija</string>
-    <string name="quick_settings_no_media">Nėra žiniasklaidos</string>
+    <string name="quick_settings_no_media">Nėra medijos</string>
     <string name="quick_settings_media_output">Medijos išvestis</string>
     <string name="quick_settings_next_alarm">Kitas žadintuvas</string>
-    <string name="quick_settings_no_alarm">Nėra signalizacijos</string>
+    <string name="quick_settings_no_alarm">Nėra žadintuvo</string>
     <string name="quick_settings_settings">Nustatymai</string>
     <string name="quick_settings_power_menu">Maitinimo meniu</string>
     <string name="quick_settings_add_system_tile">Pridėti sistemos plytelę</string>
@@ -1524,14 +1524,14 @@
     <string name="quick_settings_battery_charging">%1$s, įkraunama</string>
     <string name="quick_settings_battery_full">%1$s, įkrautas</string>
     <string name="quick_settings_sound">Garsas</string>
-    <string name="quick_settings_vibrate">Vibruoti</string>
+    <string name="quick_settings_vibrate">Vibravimas</string>
     <string name="quick_settings_mute">Nutildyti</string>
-    <string name="quick_settings_on">Įjungti</string>
+    <string name="quick_settings_on">Įjungta</string>
     <string name="quick_settings_off">Išjungta</string>
     <string name="quick_settings_unavailable">Nepasiekiamas</string>
     <string name="quick_settings_edit">Redaguoti</string>
     <string name="quick_settings_system">Greiti sistemos nustatymai</string>
-    <string name="quick_settings_open_settings">Atidarykite nustatymus</string>
+    <string name="quick_settings_open_settings">Atidaryti nustatymus</string>
     <string name="quick_settings_add_control">Pridėti valdiklį</string>
     <string name="quick_settings_add_tile">Pridėti programos plytelę</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1572,9 +1572,9 @@
     <string name="dialog_message_detailed_ai_description">Pasirinkti vaizdai siunčiami į Google Gemini API, kad juos būtų galima aprašyti. Įjungus įrenginio AI, jie aprašomi šiame telefone ir nėra siunčiami.\n\nTurėdamas nemokamą API raktą, Google gali pasilikti tai, ką gauna, naudoti jį produktams tobulinti ir reikalauti, kad žmonės jį peržiūrėtų. Generatyvusis AI yra eksperimentinis, todėl pridarys klaidų. Taikomas <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_detailed_ai_promotion">Išsamūs vaizdų aprašymai pateikiami naudojant generatyvųjį AI. Pasirinkti vaizdai siunčiami į Google Gemini API, kad juos būtų galima aprašyti. Įjungus įrenginio AI, jie aprašomi šiame telefone ir nėra siunčiami.\n\nTurėdamas nemokamą API raktą, Google gali pasilikti tai, ką gauna, naudoti jį produktams tobulinti ir reikalauti, kad žmonės jį peržiūrėtų. Generatyvusis AI yra eksperimentinis, todėl pridarys klaidų. Išsamius vaizdų aprašymus galite bet kada išjungti SandFly nustatymuose.\n\nTaikomas <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_screen_overview_promotion">Ekrano ekrano kopija siunčiama į Google Gemini API, kuri turi būti aprašyta. Tai užtrunka kelias sekundes. Įjungus įrenginio AI, jis aprašomas šiame telefone ir nėra siunčiamas.\n\nTurėdamas nemokamą API raktą, Google gali pasilikti tai, ką gauna, naudoti jį produktams tobulinti ir reikalauti, kad žmonės jį peržiūrėtų. Generatyvusis AI yra eksperimentinis, todėl pridarys klaidų. Taikomas <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Atidarykite programą</string>
+    <string name="shortcut_title_open_app">Atidaryti programą</string>
     <string name="shortcut_open_app">Atidaryti <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Slinkite į viršų</string>
+    <string name="shortcut_scroll_to_top">Slinkti į viršų</string>
     <string name="shortcut_write_reading_control">Parašykite skaitymo valdiklio raidę</string>
     <string name="title_pref_reading_control_letters">Ranka rašytos abėcėlės raidės</string>
     <string name="reading_control_letter_none">Nėra</string>
@@ -1619,14 +1619,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> iš <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Tuščias tekstas</string>
     <string name="handwriting_not_available">Rašysenos atpažinimo funkcija šiame įrenginyje nepasiekiama</string>
-    <string name="shortcut_scroll_to_bottom">Slinkite į apačią</string>
+    <string name="shortcut_scroll_to_bottom">Slinkti į apačią</string>
     <string name="shortcut_refresh">Atnaujinti</string>
     <string name="shortcut_system_notifications">Sistemos pranešimų skydelis</string>
     <string name="shortcut_system_quick_settings">Greiti sistemos nustatymai</string>
     <string name="shortcut_lock_screen">Užrakinkite įrenginio ekraną</string>
     <string name="shortcut_power_menu">Maitinimo meniu</string>
-    <string name="shortcut_increase_media_volume">Padidinkite medijos garsumą</string>
-    <string name="shortcut_decrease_media_volume">Sumažinkite medijos garsumą</string>
+    <string name="shortcut_increase_media_volume">Padidinti medijos garsumą</string>
+    <string name="shortcut_decrease_media_volume">Sumažinti medijos garsumą</string>
     <string name="title_clear_selection">Išvalyti pasirinkimą</string>
     <string name="title_pref_brightness">Ryškumas</string>
     <string name="summary_support_change_brightness">Padidinkite arba sumažinkite ekrano ryškumą, net kai ekranas paslėptas</string>

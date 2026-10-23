@@ -1338,9 +1338,9 @@
     <string name="title_pref_speech_stream">Styrkur tals</string>
     <string name="summary_selector_speech_stream">Skiptu á milli aðgengis, fjölmiðla, hringingar og hringingar</string>
     <string name="speech_stream_accessibility">Hljóðstyrkur aðgengis</string>
-    <string name="speech_stream_media">Fjölmiðlamagn</string>
-    <string name="speech_stream_ring">Hringstyrkur</string>
-    <string name="speech_stream_call">Hljóðstyrkur hringingar, heyrnartól</string>
+    <string name="speech_stream_media">Hljóðstyrkur margmiðlunar</string>
+    <string name="speech_stream_ring">Hljóðstyrkur hringingar</string>
+    <string name="speech_stream_call">Hljóðstyrkur símtala, hlust</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1480,8 +1480,8 @@
     <string name="quick_settings_adaptive_brightness">Aðlagandi birtustig</string>
     <string name="quick_settings_media_volume">Hljóðstyrkur margmiðlunar</string>
     <string name="quick_settings_call_volume">Hljóðstyrkur símtala</string>
-    <string name="quick_settings_ring_volume">Hringstyrkur</string>
-    <string name="quick_settings_notification_volume">Hljóðstyrk tilkynninga</string>
+    <string name="quick_settings_ring_volume">Hljóðstyrkur hringingar</string>
+    <string name="quick_settings_notification_volume">Hljóðstyrkur tilkynninga</string>
     <string name="quick_settings_alarm_volume">Hljóðstyrkur vekjara</string>
     <string name="quick_settings_accessibility_volume">Hljóðstyrkur aðgengis</string>
     <string name="quick_settings_system_volume">Hljóðstyrkur kerfisins</string>
@@ -1495,12 +1495,12 @@
     <string name="quick_settings_screen_timeout">Tímamörk skjásins</string>
     <string name="quick_settings_font_size">Leturstærð</string>
     <string name="quick_settings_media">Margmiðlun</string>
-    <string name="quick_settings_no_media">Engir fjölmiðlar</string>
+    <string name="quick_settings_no_media">Engin margmiðlun</string>
     <string name="quick_settings_media_output">Margmiðlunarúttak</string>
     <string name="quick_settings_next_alarm">Næsti vekjari</string>
-    <string name="quick_settings_no_alarm">Engin viðvörun</string>
+    <string name="quick_settings_no_alarm">Enginn vekjari</string>
     <string name="quick_settings_settings">Stillingar</string>
-    <string name="quick_settings_power_menu">Power valmynd</string>
+    <string name="quick_settings_power_menu">Aflrofavalmynd</string>
     <string name="quick_settings_add_system_tile">Bæta við kerfisreit</string>
     <string name="quick_settings_no_system_tiles">Engar kerfisflísar til að bæta við</string>
     <string name="quick_settings_tile_not_found">%1$s er ekki í flýtistillingum kerfisins</string>
@@ -1525,7 +1525,7 @@
     <string name="quick_settings_unavailable">Ekki tiltækt</string>
     <string name="quick_settings_edit">Breyta</string>
     <string name="quick_settings_system">Flýtistillingar kerfisins</string>
-    <string name="quick_settings_open_settings">Opnaðu stillingar</string>
+    <string name="quick_settings_open_settings">Opna stillingar</string>
     <string name="quick_settings_add_control">Bæta við stýringu</string>
     <string name="quick_settings_add_tile">Bæta við forritsreit</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1541,7 +1541,7 @@
     </plurals>
     <string name="quick_settings_remove">Fjarlægja</string>
     <string name="quick_settings_added">%1$s bætt við</string>
-    <string name="quick_settings_removed">%1$s fjarlægð</string>
+    <string name="quick_settings_removed">%1$s fjarlægt</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly á. Haltu tveimur fingrum á skjánum í 5 sekúndur til að slökkva. Til að hætta að sýna þessi skilaboð skaltu slökkva á SandFly stillingum &gt; Ítarlegar stillingar &gt; Sýna leiðbeiningar um að slökkva á SandFly.</string>
     <string name="edge_gestures_title">Brúnir</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Önnur flýtileið til að kveikja eða slökkva á vafraham</string>
@@ -1565,8 +1565,8 @@
     <string name="dialog_message_detailed_ai_promotion">Nákvæmar myndlýsingar eru knúnar fram af generative AI. Valdar myndir eru sendar til Google Gemini API til að lýsa. Þegar kveikt er á gervigreind í tækinu er þeim lýst í þessum síma í staðinn og þeim er ekki sent.\n\nMeð ókeypis API lykli getur Google haldið því sem það tekur við, notað það til að bæta vörur sínar og látið fólk endurskoða það. Generative AI er tilraunastarfsemi, svo það mun gera mistök. Þú getur slökkt á nákvæmum myndlýsingum hvenær sem er í SandFly stillingum.\n\n <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gilda.</string>
     <string name="dialog_message_screen_overview_promotion">Skjáskot af skjánum er sent á Google Gemini API til að lýsa, sem tekur nokkrar sekúndur. Þegar kveikt er á gervigreind í tækinu er því lýst í þessum síma í staðinn og er ekki sendur.\n\nMeð ókeypis API lykli getur Google haldið því sem það tekur við, notað það til að bæta vörur sínar og látið fólk skoða það. Generative AI er tilraunastarfsemi, svo það mun gera mistök. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gilda.</string>
     <string name="shortcut_title_open_app">Opna app</string>
-    <string name="shortcut_open_app">Opið <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Skrunaðu efst</string>
+    <string name="shortcut_open_app">Opna <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_scroll_to_top">Fletta efst</string>
     <string name="shortcut_write_reading_control">Skrifaðu bókstaf lestrarstýringar</string>
     <string name="title_pref_reading_control_letters">Handskrifaðir stafrófsstafir</string>
     <string name="reading_control_letter_none">Engin</string>
@@ -1611,14 +1611,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> af <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Tómur texti</string>
     <string name="handwriting_not_available">Handskriftargreining er ekki í boði á þessu tæki.</string>
-    <string name="shortcut_scroll_to_bottom">Skrunaðu til botns</string>
+    <string name="shortcut_scroll_to_bottom">Fletta neðst</string>
     <string name="shortcut_refresh">Endurnýja</string>
-    <string name="shortcut_system_notifications">Kerfistilkynningarskuggi</string>
+    <string name="shortcut_system_notifications">Tilkynningasvæði kerfisins</string>
     <string name="shortcut_system_quick_settings">Flýtistillingar kerfisins</string>
-    <string name="shortcut_lock_screen">Læstu skjá tækisins</string>
-    <string name="shortcut_power_menu">Power valmynd</string>
-    <string name="shortcut_increase_media_volume">Auka hljóðstyrk fjölmiðla</string>
-    <string name="shortcut_decrease_media_volume">Minnka hljóðstyrk fjölmiðla</string>
+    <string name="shortcut_lock_screen">Læsa skjánum</string>
+    <string name="shortcut_power_menu">Aflrofavalmynd</string>
+    <string name="shortcut_increase_media_volume">Auka hljóðstyrk margmiðlunar</string>
+    <string name="shortcut_decrease_media_volume">Minnka hljóðstyrk margmiðlunar</string>
     <string name="title_clear_selection">Hreinsa val</string>
     <string name="title_pref_brightness">Birtustig</string>
     <string name="summary_support_change_brightness">Auka eða minnka birtustig skjásins, jafnvel þegar skjárinn er falinn</string>
@@ -1741,7 +1741,7 @@
     <string name="image_qna_ask_by_voice">Spyrðu með rödd</string>
     <string name="image_qna_stop_listening">Hættu að hlusta</string>
     <string name="image_qna_type_question">Sláðu inn spurningu</string>
-    <string name="shortcut_dictate">Lesa upp</string>
+    <string name="shortcut_dictate">Lesa fyrir</string>
     <string name="title_pref_ai_dictation">Rétt fyrirmæli með gervigreind</string>
     <string name="dictation_not_corrected">Ekki leiðrétt. Skrifað sem viðurkennt.</string>
     <string name="dictation_nothing_recognized">Ekkert greindist</string>

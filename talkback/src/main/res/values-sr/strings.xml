@@ -386,7 +386,7 @@
   <string name="shortcut_notifications">Обавештења</string>
   <string name="shortcut_quick_settings">Брза подешавања</string>
   <string name="shortcut_show_custom_actions">Приказује прилагођене радње</string>
-  <string name="shortcut_talkback_breakout">Отвара SandFly мени</string>
+  <string name="shortcut_talkback_breakout">Отвори SandFly мени</string>
   <string name="shortcut_pause_or_resume_feedback">Паузирј или настави говор</string>
   <string name="shortcut_toggle_voice_feedback">Укључи или искључи говор</string>
   <string name="shortcut_read_from_top">Читај од врха</string>
@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Говорни механизам није доступан док користите гласовни профил</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, у употреби</string>
     <string name="no_voice_profiles">Нема гласовних профила</string>
-    <string name="shortcut_voice_profiles">Изаберите гласовни профил</string>
+    <string name="shortcut_voice_profiles">Изабери гласовни профил</string>
     <string name="shortcut_previous_voice_profile">Претходни гласовни профил</string>
     <string name="shortcut_next_voice_profile">Следећи гласовни профил</string>
     <string name="title_pref_voice_profile_in_use">Гласовни профил је у употреби</string>
@@ -1338,7 +1338,7 @@
     <string name="title_pref_speech_stream">Јачина звука говора</string>
     <string name="summary_selector_speech_stream">Пребацивање између приступачности, медија, звона и јачине звука позива</string>
     <string name="speech_stream_accessibility">Јачина звука за приступачност</string>
-    <string name="speech_stream_media">Јачина медија</string>
+    <string name="speech_stream_media">Јачина звука медија</string>
     <string name="speech_stream_ring">Јачина звона</string>
     <string name="speech_stream_call">Јачина звука позива, слушалица</string>
     <string-array name="pref_speech_stream_entries">
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title">Дозволити <xliff:g id="app" example="Tasker">%1$s</xliff:g> да говори кроз SandFly?</string>
     <string name="speech_control_ask_text">Може да изговори текст вашим гласом SandFly. Ово можете променити у Напредним подешавањима.</string>
     <string name="speech_control_allow">Дозволи</string>
-    <string name="speech_control_deny">Не дозволите</string>
+    <string name="speech_control_deny">Не дозволи</string>
     <string name="permission_speak_label">говор преко SandFly-а</string>
     <string name="permission_speak_description">Дозвољава апликацији да тражи да каже текст вашим гласом SandFly. SandFly вас пита пре него што апликација може да говори.</string>
     <string name="permission_braille_display_label">тражи да буде Брајев екран за SandFly</string>
@@ -1482,7 +1482,7 @@
     <string name="quick_settings_media_volume">Јачина звука медија</string>
     <string name="quick_settings_call_volume">Јачина звука позива</string>
     <string name="quick_settings_ring_volume">Јачина звона</string>
-    <string name="quick_settings_notification_volume">Јачина обавештења</string>
+    <string name="quick_settings_notification_volume">Јачина звука обавештења</string>
     <string name="quick_settings_alarm_volume">Јачина звука аларма</string>
     <string name="quick_settings_accessibility_volume">Јачина звука за приступачност</string>
     <string name="quick_settings_system_volume">Јачина звука система</string>
@@ -1521,14 +1521,14 @@
     <string name="quick_settings_battery_charging">%1$s, пуњење</string>
     <string name="quick_settings_battery_full">%1$s, напуњено</string>
     <string name="quick_settings_sound">Звук</string>
-    <string name="quick_settings_vibrate">Вибрирај</string>
+    <string name="quick_settings_vibrate">Вибрација</string>
     <string name="quick_settings_mute">Без звука</string>
     <string name="quick_settings_on">Укључено</string>
     <string name="quick_settings_off">Искључено</string>
     <string name="quick_settings_unavailable">Недоступно</string>
     <string name="quick_settings_edit">Уреди</string>
     <string name="quick_settings_system">Брза подешавања система</string>
-    <string name="quick_settings_open_settings">Отворите подешавања</string>
+    <string name="quick_settings_open_settings">Отвори подешавања</string>
     <string name="quick_settings_add_control">Додај контролу</string>
     <string name="quick_settings_add_tile">Додај плочицу апликације</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1568,9 +1568,9 @@
     <string name="dialog_message_detailed_ai_description">Одабране слике се шаљу на Google АПИ Gemini ради описа. Када је укључена вештачка интелигенција на уређају, они су описани на овом телефону и не шаљу се.\n\nСа бесплатним АПИ кључем, Google може да задржи оно што прими, да га користи за побољшање својих производа и да људи прегледају. Генеративна АИ је експериментална, тако да ће правити грешке. Примењује се <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_detailed_ai_promotion">Детаљне описе слика покреће генеративна АИ. Одабране слике се шаљу на Google АПИ Gemini ради описа. Када је укључена вештачка интелигенција на уређају, они су описани на овом телефону и не шаљу се.\n\nСа бесплатним АПИ кључем, Google може да задржи оно што прими, да га користи за побољшање својих производа и да људи прегледају. Генеративна АИ је експериментална, тако да ће правити грешке. Детаљне описе слика можете да искључите било када у подешавањима SandFly.\n\nПримењују се <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_screen_overview_promotion">Снимак екрана се шаље Google АПИ-ју Gemini да буде описан, што траје неколико секунди. Када је укључена вештачка интелигенција на уређају, она је уместо тога описана на овом телефону и не шаље се.\n\nСа бесплатним АПИ кључем, Google може да задржи оно што прими, да га користи за побољшање својих производа и да га људи прегледају. Генеративна АИ је експериментална, тако да ће правити грешке. Примењује се <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Отворите апликацију</string>
-    <string name="shortcut_open_app">Отворено <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Померите се до врха</string>
+    <string name="shortcut_title_open_app">Отвори апликацију</string>
+    <string name="shortcut_open_app">Отвори <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_scroll_to_top">Помери до врха</string>
     <string name="shortcut_write_reading_control">Напишите слово контроле читања</string>
     <string name="title_pref_reading_control_letters">Рукописна слова абецеде</string>
     <string name="reading_control_letter_none">Ништа</string>
@@ -1615,14 +1615,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> од <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Празан текст</string>
     <string name="handwriting_not_available">Препознавање рукописа није доступно на овом уређају</string>
-    <string name="shortcut_scroll_to_bottom">Померите се до дна</string>
+    <string name="shortcut_scroll_to_bottom">Помери до дна</string>
     <string name="shortcut_refresh">Освежи</string>
-    <string name="shortcut_system_notifications">Сенка за системска обавештења</string>
+    <string name="shortcut_system_notifications">Панел са обавештењима система</string>
     <string name="shortcut_system_quick_settings">Брза подешавања система</string>
     <string name="shortcut_lock_screen">Закључајте екран уређаја</string>
     <string name="shortcut_power_menu">Мени за напајање</string>
-    <string name="shortcut_increase_media_volume">Повећајте јачину медија</string>
-    <string name="shortcut_decrease_media_volume">Смањите јачину медија</string>
+    <string name="shortcut_increase_media_volume">Повећај јачину звука медија</string>
+    <string name="shortcut_decrease_media_volume">Смањи јачину звука медија</string>
     <string name="title_clear_selection">Обриши избор</string>
     <string name="title_pref_brightness">Осветљеност</string>
     <string name="summary_support_change_brightness">Повећајте или смањите осветљеност екрана, чак и када је екран сакривен</string>

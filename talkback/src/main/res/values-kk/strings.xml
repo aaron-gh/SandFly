@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Дауыс профилін пайдалану кезінде сөйлеу механизмі қолжетімсіз</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, пайдалануда</string>
     <string name="no_voice_profiles">Дауыстық профильдер жоқ</string>
-    <string name="shortcut_voice_profiles">Дауыс профилін таңдаңыз</string>
+    <string name="shortcut_voice_profiles">Дауыс профилін таңдау</string>
     <string name="shortcut_previous_voice_profile">Алдыңғы дауыс профилі</string>
     <string name="shortcut_next_voice_profile">Келесі дауыс профилі</string>
     <string name="title_pref_voice_profile_in_use">Дауыс профилі қолданылуда</string>
@@ -1340,7 +1340,7 @@
     <string name="speech_stream_accessibility">Арнайы мүмкіндіктер дыбыс деңгейі</string>
     <string name="speech_stream_media">Медиа дыбыс деңгейі</string>
     <string name="speech_stream_ring">Қоңыраудың дыбыс деңгейі</string>
-    <string name="speech_stream_call">Қоңыраудың дыбыс деңгейі, құлаққап</string>
+    <string name="speech_stream_call">Қоңырау дыбысы, сөйлесу динамигі</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1394,8 +1394,8 @@
     <string name="speech_control_no_apps">Әзірге ешбір қолданба сөйлеуді сұраған жоқ.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> SandFly арқылы сөйлеуге рұқсат етілсін бе?</string>
     <string name="speech_control_ask_text">Ол мәтінді SandFly дауысыңызбен айта алады. Мұны Кеңейтілген параметрлерде өзгертуге болады.</string>
-    <string name="speech_control_allow">Рұқсат етіңіз</string>
-    <string name="speech_control_deny">Рұқсат етпеңіз</string>
+    <string name="speech_control_allow">Рұқсат ету</string>
+    <string name="speech_control_deny">Рұқсат етпеу</string>
     <string name="permission_speak_label">SandFly арқылы сөйлеу</string>
     <string name="permission_speak_description">Қолданба мәтінді SandFly дауысыңызбен айтуды сұрауға мүмкіндік береді. SandFly қолданба сөйлей алмас бұрын сізден сұрайды.</string>
     <string name="permission_braille_display_label">SandFly үшін брайль дисплейі болуды сұрау</string>
@@ -1481,7 +1481,7 @@
     <string name="quick_settings_media_volume">Медиа дыбыс деңгейі</string>
     <string name="quick_settings_call_volume">Қоңырау дыбысы</string>
     <string name="quick_settings_ring_volume">Қоңыраудың дыбыс деңгейі</string>
-    <string name="quick_settings_notification_volume">Хабарландыру көлемі</string>
+    <string name="quick_settings_notification_volume">Хабарландыру дыбысы</string>
     <string name="quick_settings_alarm_volume">Оятқыш дыбыс деңгейі</string>
     <string name="quick_settings_accessibility_volume">Арнайы мүмкіндіктер дыбыс деңгейі</string>
     <string name="quick_settings_system_volume">Жүйе дыбысының дыбыс деңгейі</string>
@@ -1495,10 +1495,10 @@
     <string name="quick_settings_screen_timeout">Экранның күту уақыты</string>
     <string name="quick_settings_font_size">Қаріп өлшемі</string>
     <string name="quick_settings_media">Мультимедиа</string>
-    <string name="quick_settings_no_media">БАҚ жоқ</string>
+    <string name="quick_settings_no_media">Мультимедиа жоқ</string>
     <string name="quick_settings_media_output">Медиа шығысы</string>
     <string name="quick_settings_next_alarm">Келесі оятқыш</string>
-    <string name="quick_settings_no_alarm">Дабыл жоқ</string>
+    <string name="quick_settings_no_alarm">Оятқыш жоқ</string>
     <string name="quick_settings_settings">Параметрлер</string>
     <string name="quick_settings_power_menu">Қуат мәзірі</string>
     <string name="quick_settings_add_system_tile">Жүйе бөлшегін қосу</string>
@@ -1525,7 +1525,7 @@
     <string name="quick_settings_unavailable">Қолжетімсіз</string>
     <string name="quick_settings_edit">Өңдеу</string>
     <string name="quick_settings_system">Жүйенің жылдам параметрлері</string>
-    <string name="quick_settings_open_settings">Параметрлерді ашыңыз</string>
+    <string name="quick_settings_open_settings">Параметрлерді ашу</string>
     <string name="quick_settings_add_control">Басқару элементін қосу</string>
     <string name="quick_settings_add_tile">Қолданба бөлшегін қосу</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1564,9 +1564,9 @@
     <string name="dialog_message_detailed_ai_description">Таңдалған кескіндер сипатталу үшін Google Gemini API-ге жіберіледі. Құрылғыдағы AI қосулы болса, олар оның орнына осы телефонда сипатталады және жіберілмейді.\n\nТегін API кілті арқылы Google алғанын сақтай алады, өнімдерін жақсарту үшін пайдалана алады және адамдар оны қарап шығуы мүмкін. Генеративті AI эксперименталды, сондықтан ол қателіктер жібереді. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> қолданылады.</string>
     <string name="dialog_message_detailed_ai_promotion">Кескіннің егжей-тегжейлі сипаттамалары генеративті AI арқылы қамтамасыз етілген. Таңдалған кескіндер сипатталу үшін Google Gemini API-ге жіберіледі. Құрылғыдағы AI қосулы болса, олар оның орнына осы телефонда сипатталады және жіберілмейді.\n\nТегін API кілті арқылы Google алғанын сақтай алады, өнімдерін жақсарту үшін пайдалана алады және адамдар оны қарап шығуы мүмкін. Генеративті AI эксперименталды, сондықтан ол қателіктер жібереді. Толық сурет сипаттамаларын кез келген уақытта SandFly параметрлерінде өшіруге болады.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> қолданылады.</string>
     <string name="dialog_message_screen_overview_promotion">Экранның скриншоты сипатталу үшін Google Gemini API-ге жіберіледі, бұл бірнеше секундты алады. Құрылғыдағы AI қосулы болса, оның орнына ол осы телефонда сипатталады және жіберілмейді.\n\nТегін API кілті арқылы Google алғанын сақтай алады, оны өнімдерін жақсарту үшін пайдалана алады және адамдар оны қарап шығуы мүмкін. Генеративті AI эксперименталды, сондықтан ол қателіктер жібереді. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> қолданылады.</string>
-    <string name="shortcut_title_open_app">Қолданбаны ашыңыз</string>
+    <string name="shortcut_title_open_app">Қолданбаны ашу</string>
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ашу</string>
-    <string name="shortcut_scroll_to_top">Жоғарыға жылжытыңыз</string>
+    <string name="shortcut_scroll_to_top">Басына айналдыру</string>
     <string name="shortcut_write_reading_control">Оқуды бақылау әрпін жазыңыз</string>
     <string name="title_pref_reading_control_letters">Қолмен жазылған алфавит әріптері</string>
     <string name="reading_control_letter_none">Жоқ</string>
@@ -1611,14 +1611,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g>/<xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Бос мәтін</string>
     <string name="handwriting_not_available">Бұл құрылғыда қолжазбаны тану мүмкін емес</string>
-    <string name="shortcut_scroll_to_bottom">Төменге жылжытыңыз</string>
+    <string name="shortcut_scroll_to_bottom">Соңына айналдыру</string>
     <string name="shortcut_refresh">Жаңарту</string>
-    <string name="shortcut_system_notifications">Жүйе хабарландыруының көлеңкесі</string>
+    <string name="shortcut_system_notifications">Жүйе хабарландыруларының тақтасы</string>
     <string name="shortcut_system_quick_settings">Жүйенің жылдам параметрлері</string>
-    <string name="shortcut_lock_screen">Құрылғы экранын құлыптаңыз</string>
+    <string name="shortcut_lock_screen">Экранды құлыптау</string>
     <string name="shortcut_power_menu">Қуат мәзірі</string>
-    <string name="shortcut_increase_media_volume">Мультимедиа дыбысын арттырыңыз</string>
-    <string name="shortcut_decrease_media_volume">Мультимедиа дыбысын азайтыңыз</string>
+    <string name="shortcut_increase_media_volume">Мультимедиа дыбысын арттыру</string>
+    <string name="shortcut_decrease_media_volume">Мультимедиа дыбысын азайту</string>
     <string name="title_clear_selection">Таңдауды тазалау</string>
     <string name="title_pref_brightness">Жарықтық</string>
     <string name="summary_support_change_brightness">Экран жасырын болса да, экран жарықтығын арттырыңыз немесе азайтыңыз</string>

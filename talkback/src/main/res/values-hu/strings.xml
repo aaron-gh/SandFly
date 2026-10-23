@@ -1340,7 +1340,7 @@
     <string name="speech_stream_accessibility">Kisegítő lehetőségek hangereje</string>
     <string name="speech_stream_media">Média hangereje</string>
     <string name="speech_stream_ring">Csengetés hangereje</string>
-    <string name="speech_stream_call">Hívás hangereje, fülhallgató</string>
+    <string name="speech_stream_call">Hívás hangereje, fülhangszóró</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1394,8 +1394,8 @@
     <string name="speech_control_no_apps">Egyetlen alkalmazás sem kért még felszólalást.</string>
     <string name="speech_control_ask_title">Engedélyezi a <xliff:g id="app" example="Tasker">%1$s</xliff:g> számára, hogy az SandFly-n keresztül beszéljen?</string>
     <string name="speech_control_ask_text">Szöveget tud mondani az Ön SandFly hangján. Ezt a Speciális beállításokban módosíthatja.</string>
-    <string name="speech_control_allow">Engedélyezze</string>
-    <string name="speech_control_deny">Ne engedd</string>
+    <string name="speech_control_allow">Engedélyezés</string>
+    <string name="speech_control_deny">Tiltás</string>
     <string name="permission_speak_label">beszéd a SandFly segítségével</string>
     <string name="permission_speak_description">Lehetővé teszi, hogy az alkalmazás szöveget mondjon az Ön SandFly hangján. SandFly megkérdezi, mielőtt az alkalmazás beszélni tudna.</string>
     <string name="permission_braille_display_label">kérje, hogy legyen Braille-kijelző a SandFly számára</string>
@@ -1468,7 +1468,7 @@
     <string name="quick_settings_hotspot">Hotspot</string>
     <string name="quick_settings_airplane_mode">Repülőgép üzemmód</string>
     <string name="quick_settings_do_not_disturb">Ne zavarjanak</string>
-    <string name="quick_settings_sound_mode">Hang mód</string>
+    <string name="quick_settings_sound_mode">Hangmód</string>
     <string name="quick_settings_flashlight">Zseblámpa</string>
     <string name="quick_settings_flashlight_brightness">Zseblámpa fényereje</string>
     <string name="quick_settings_location">Helymeghatározás</string>
@@ -1492,13 +1492,13 @@
     <string name="quick_settings_color_correction">Színkorrekció</string>
     <string name="quick_settings_microphone_access">Mikrofon-hozzáférés</string>
     <string name="quick_settings_camera_access">Kamera-hozzáférés</string>
-    <string name="quick_settings_screen_timeout">Képernyő időtúllépése</string>
+    <string name="quick_settings_screen_timeout">Képernyő kikapcsolási ideje</string>
     <string name="quick_settings_font_size">Betűméret</string>
     <string name="quick_settings_media">Média</string>
     <string name="quick_settings_no_media">Nincs média</string>
     <string name="quick_settings_media_output">Médiakimenet</string>
     <string name="quick_settings_next_alarm">Következő ébresztés</string>
-    <string name="quick_settings_no_alarm">Nincs riasztás</string>
+    <string name="quick_settings_no_alarm">Nincs ébresztés</string>
     <string name="quick_settings_settings">Beállítások</string>
     <string name="quick_settings_power_menu">Tápellátás menü</string>
     <string name="quick_settings_add_system_tile">Rendszercsempe hozzáadása</string>
@@ -1524,8 +1524,8 @@
     <string name="quick_settings_off">Ki</string>
     <string name="quick_settings_unavailable">Nem elérhető</string>
     <string name="quick_settings_edit">Szerkesztés</string>
-    <string name="quick_settings_system">Rendszer gyorsbeállítások</string>
-    <string name="quick_settings_open_settings">Nyissa meg a beállításokat</string>
+    <string name="quick_settings_system">Rendszer-gyorsbeállítások</string>
+    <string name="quick_settings_open_settings">Beállítások megnyitása</string>
     <string name="quick_settings_add_control">Vezérlés hozzáadása</string>
     <string name="quick_settings_add_tile">Alkalmazáscsempe hozzáadása</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1539,7 +1539,7 @@
         <item quantity="one">%d másik elem áthelyezve</item>
         <item quantity="other">%d másik elem áthelyezve</item>
     </plurals>
-    <string name="quick_settings_remove">Távolítsa el</string>
+    <string name="quick_settings_remove">Eltávolítás</string>
     <string name="quick_settings_added">%1$s hozzáadva</string>
     <string name="quick_settings_removed">%1$s eltávolítva</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly bekapcsolva. A kikapcsoláshoz tartsa két ujját a képernyőn 5 másodpercig. Az üzenet megjelenítésének leállításához kapcsolja ki a SandFly beállítások &gt; Speciális beállítások &gt; Útmutató a SandFly kikapcsolásához.</string>
@@ -1564,9 +1564,9 @@
     <string name="dialog_message_detailed_ai_description">A kiválasztott képeket a rendszer elküldi a Google Gemini API-jára, hogy leírjuk. Ha az eszközön lévő mesterséges intelligencia be van kapcsolva, ezek helyett ezen a telefonon íródnak le, és nem küldik el őket.\n\nAz ingyenes API-kulccsal a Google megtarthatja, amit kapott, felhasználhatja termékei fejlesztésére, és az emberek felülvizsgálhatják azt. A generatív mesterséges intelligencia kísérleti jellegű, ezért hibákat követ el. Az <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> érvényes.</string>
     <string name="dialog_message_detailed_ai_promotion">A részletes képleírásokat a generatív mesterséges intelligencia szolgáltatja. A kiválasztott képeket a rendszer elküldi a Google Gemini API-jára, hogy leírjuk. Ha az eszközön lévő mesterséges intelligencia be van kapcsolva, ezek helyett ezen a telefonon íródnak le, és nem küldik el őket.\n\nAz ingyenes API-kulccsal a Google megtarthatja, amit kapott, felhasználhatja termékei fejlesztésére, és az emberek felülvizsgálhatják azt. A generatív mesterséges intelligencia kísérleti jellegű, ezért hibákat követ el. A részletes képleírásokat bármikor kikapcsolhatja az SandFly beállításokban.\n\nA <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> érvényes.</string>
     <string name="dialog_message_screen_overview_promotion">A képernyőről készült képernyőkép elküldésre kerül a Google Gemini API-jának leírásra, ami néhány másodpercet vesz igénybe. Ha az eszközön lévő mesterséges intelligencia be van kapcsolva, ezt a telefon leírja, és nem küldi el.\n\nAz ingyenes API-kulccsal a Google megtarthatja, amit kapott, felhasználhatja termékei fejlesztésére, és az emberek felülvizsgálhatják. A generatív mesterséges intelligencia kísérleti jellegű, ezért hibákat követ el. Az <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> érvényes.</string>
-    <string name="shortcut_title_open_app">Nyissa meg az alkalmazást</string>
-    <string name="shortcut_open_app">Megnyitás <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Görgessen a tetejére</string>
+    <string name="shortcut_title_open_app">Alkalmazás megnyitása</string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> megnyitása</string>
+    <string name="shortcut_scroll_to_top">Görgetés a tetejére</string>
     <string name="shortcut_write_reading_control">Írja be az olvasási vezérlő betűjét!</string>
     <string name="title_pref_reading_control_letters">Kézzel írt ábécé betűi</string>
     <string name="reading_control_letter_none">Nincs</string>
@@ -1611,14 +1611,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> / <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Üres szöveg</string>
     <string name="handwriting_not_available">A kézírás-felismerés nem érhető el ezen az eszközön</string>
-    <string name="shortcut_scroll_to_bottom">Görgessen lefelé</string>
+    <string name="shortcut_scroll_to_bottom">Görgetés az aljára</string>
     <string name="shortcut_refresh">Frissítés</string>
-    <string name="shortcut_system_notifications">Rendszer értesítési felület</string>
-    <string name="shortcut_system_quick_settings">Rendszer gyorsbeállítások</string>
-    <string name="shortcut_lock_screen">Zárja le az eszköz képernyőjét</string>
+    <string name="shortcut_system_notifications">Rendszerértesítési sáv</string>
+    <string name="shortcut_system_quick_settings">Rendszer-gyorsbeállítások</string>
+    <string name="shortcut_lock_screen">Képernyő lezárása</string>
     <string name="shortcut_power_menu">Tápellátás menü</string>
-    <string name="shortcut_increase_media_volume">Növelje a média hangerejét</string>
-    <string name="shortcut_decrease_media_volume">Csökkentse a média hangerejét</string>
+    <string name="shortcut_increase_media_volume">Médiahangerő növelése</string>
+    <string name="shortcut_decrease_media_volume">Médiahangerő csökkentése</string>
     <string name="title_clear_selection">Kiválasztás törlése</string>
     <string name="title_pref_brightness">Fényerő</string>
     <string name="summary_support_change_brightness">Növelje vagy csökkentse a képernyő fényerejét, még akkor is, ha a képernyő el van rejtve</string>

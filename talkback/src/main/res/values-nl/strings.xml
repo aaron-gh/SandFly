@@ -1340,7 +1340,7 @@
     <string name="speech_stream_accessibility">Toegankelijkheidsvolume</string>
     <string name="speech_stream_media">Mediavolume</string>
     <string name="speech_stream_ring">Belvolume</string>
-    <string name="speech_stream_call">Belvolume, oortje</string>
+    <string name="speech_stream_call">Gespreksvolume, oorspeaker</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1500,7 +1500,7 @@
     <string name="quick_settings_next_alarm">Volgende alarm</string>
     <string name="quick_settings_no_alarm">Geen wekker</string>
     <string name="quick_settings_settings">Instellingen</string>
-    <string name="quick_settings_power_menu">Vermogensmenu</string>
+    <string name="quick_settings_power_menu">Aan/uit-menu</string>
     <string name="quick_settings_add_system_tile">Systeemtegel toevoegen</string>
     <string name="quick_settings_no_system_tiles">Er zijn geen systeemtegels om toe te voegen</string>
     <string name="quick_settings_tile_not_found">%1$s staat niet in de snelle instellingen van het systeem</string>
@@ -1524,7 +1524,7 @@
     <string name="quick_settings_off">Uit</string>
     <string name="quick_settings_unavailable">Niet beschikbaar</string>
     <string name="quick_settings_edit">Bewerken</string>
-    <string name="quick_settings_system">Systeem snelle instellingen</string>
+    <string name="quick_settings_system">Snelle instellingen van systeem</string>
     <string name="quick_settings_open_settings">Instellingen openen</string>
     <string name="quick_settings_add_control">Bedieningselement toevoegen</string>
     <string name="quick_settings_add_tile">App-tegel toevoegen</string>
@@ -1564,9 +1564,9 @@
     <string name="dialog_message_detailed_ai_description">Geselecteerde afbeeldingen worden naar de Gemini API van Google gestuurd om te worden beschreven. Als AI op het apparaat is ingeschakeld, worden ze in plaats daarvan op deze telefoon beschreven en niet verzonden.\n\nMet een gratis API-sleutel kan Google behouden wat het ontvangt, het gebruiken om zijn producten te verbeteren en mensen het te laten beoordelen. Generatieve AI is experimenteel en zal dus fouten maken. De <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> zijn van toepassing.</string>
     <string name="dialog_message_detailed_ai_promotion">Gedetailleerde beeldbeschrijvingen worden mogelijk gemaakt door generatieve AI. Geselecteerde afbeeldingen worden naar de Gemini API van Google gestuurd om te worden beschreven. Als AI op het apparaat is ingeschakeld, worden ze in plaats daarvan op deze telefoon beschreven en niet verzonden.\n\nMet een gratis API-sleutel kan Google behouden wat het ontvangt, het gebruiken om zijn producten te verbeteren en mensen het te laten beoordelen. Generatieve AI is experimenteel en zal dus fouten maken. Je kunt gedetailleerde afbeeldingsbeschrijvingen op elk gewenst moment uitschakelen in de instellingen SandFly.\n\nDe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> is van toepassing.</string>
     <string name="dialog_message_screen_overview_promotion">Er wordt een screenshot van het scherm naar de Gemini API van Google gestuurd om te worden beschreven, wat enkele seconden duurt. Als AI op het apparaat is ingeschakeld, wordt het in plaats daarvan op deze telefoon beschreven en niet verzonden.\n\nMet een gratis API-sleutel kan Google behouden wat het ontvangt, het gebruiken om zijn producten te verbeteren en mensen het te laten beoordelen. Generatieve AI is experimenteel en zal dus fouten maken. De <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> zijn van toepassing.</string>
-    <string name="shortcut_title_open_app">Applicatie openen</string>
-    <string name="shortcut_open_app">Open <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Scroll naar boven</string>
+    <string name="shortcut_title_open_app">App openen</string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> openen</string>
+    <string name="shortcut_scroll_to_top">Naar boven scrollen</string>
     <string name="shortcut_write_reading_control">Schrijf de letter van een leescontrole</string>
     <string name="title_pref_reading_control_letters">Handgeschreven Alfabetletters</string>
     <string name="reading_control_letter_none">Geen</string>
@@ -1611,14 +1611,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> of <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Lege tekst</string>
     <string name="handwriting_not_available">Handschriftherkenning is niet beschikbaar op dit apparaat</string>
-    <string name="shortcut_scroll_to_bottom">Scroll naar beneden</string>
+    <string name="shortcut_scroll_to_bottom">Naar beneden scrollen</string>
     <string name="shortcut_refresh">Vernieuwen</string>
-    <string name="shortcut_system_notifications">Systeemmeldingsschaduw</string>
-    <string name="shortcut_system_quick_settings">Systeem snelle instellingen</string>
+    <string name="shortcut_system_notifications">Meldingenpaneel van systeem</string>
+    <string name="shortcut_system_quick_settings">Snelle instellingen van systeem</string>
     <string name="shortcut_lock_screen">Vergrendel het apparaatscherm</string>
-    <string name="shortcut_power_menu">Vermogensmenu</string>
-    <string name="shortcut_increase_media_volume">Verhoog het mediavolume</string>
-    <string name="shortcut_decrease_media_volume">Verlaag het mediavolume</string>
+    <string name="shortcut_power_menu">Aan/uit-menu</string>
+    <string name="shortcut_increase_media_volume">Mediavolume verhogen</string>
+    <string name="shortcut_decrease_media_volume">Mediavolume verlagen</string>
     <string name="title_clear_selection">Duidelijke selectie</string>
     <string name="title_pref_brightness">Helderheid</string>
     <string name="summary_support_change_brightness">Verhoog of verlaag de helderheid van het scherm, zelfs als het scherm verborgen is</string>

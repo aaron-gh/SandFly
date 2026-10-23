@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">מנוע דיבור אינו זמין בעת שימוש בפרופיל קולי</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, בשימוש</string>
     <string name="no_voice_profiles">אין פרופילים קוליים</string>
-    <string name="shortcut_voice_profiles">בחר פרופיל קולי</string>
+    <string name="shortcut_voice_profiles">בחירת פרופיל קולי</string>
     <string name="shortcut_previous_voice_profile">פרופיל קול קודם</string>
     <string name="shortcut_next_voice_profile">פרופיל הקול הבא</string>
     <string name="title_pref_voice_profile_in_use">פרופיל קול בשימוש</string>
@@ -1338,9 +1338,9 @@
     <string name="title_pref_speech_stream">עוצמת קול דיבור</string>
     <string name="summary_selector_speech_stream">מעבר בין עוצמת הנגישות, המדיה, הצלצול והשיחות</string>
     <string name="speech_stream_accessibility">עוצמת הקול לנגישות</string>
-    <string name="speech_stream_media">נפח מדיה</string>
+    <string name="speech_stream_media">עוצמת הקול של המדיה</string>
     <string name="speech_stream_ring">עוצמת הצלצול</string>
-    <string name="speech_stream_call">עוצמת קול, אוזנייה</string>
+    <string name="speech_stream_call">עוצמת קול שיחה, אפרכסת</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1469,7 +1469,7 @@
     <string name="quick_settings_hotspot">נקודה לשיתוף אינטרנט</string>
     <string name="quick_settings_airplane_mode">מצב מטוס</string>
     <string name="quick_settings_do_not_disturb">אל תפריע</string>
-    <string name="quick_settings_sound_mode">מצב סאונד</string>
+    <string name="quick_settings_sound_mode">מצב צליל</string>
     <string name="quick_settings_flashlight">פנס</string>
     <string name="quick_settings_flashlight_brightness">בהירות פנס</string>
     <string name="quick_settings_location">מיקום</string>
@@ -1482,7 +1482,7 @@
     <string name="quick_settings_media_volume">עוצמת הקול של המדיה</string>
     <string name="quick_settings_call_volume">עוצמת הקול של השיחה</string>
     <string name="quick_settings_ring_volume">עוצמת הצלצול</string>
-    <string name="quick_settings_notification_volume">נפח הודעות</string>
+    <string name="quick_settings_notification_volume">עוצמת הקול של ההתראות</string>
     <string name="quick_settings_alarm_volume">עוצמת השעון המעורר</string>
     <string name="quick_settings_accessibility_volume">עוצמת הקול לנגישות</string>
     <string name="quick_settings_system_volume">עוצמת השמע של המערכת</string>
@@ -1496,10 +1496,10 @@
     <string name="quick_settings_screen_timeout">פסק זמן מסך</string>
     <string name="quick_settings_font_size">גודל גופן</string>
     <string name="quick_settings_media">מדיה</string>
-    <string name="quick_settings_no_media">אין תקשורת</string>
+    <string name="quick_settings_no_media">אין מדיה</string>
     <string name="quick_settings_media_output">פלט מדיה</string>
     <string name="quick_settings_next_alarm">השעון המעורר הבא</string>
-    <string name="quick_settings_no_alarm">אין אזעקה</string>
+    <string name="quick_settings_no_alarm">אין שעון מעורר</string>
     <string name="quick_settings_settings">הגדרות</string>
     <string name="quick_settings_power_menu">תפריט הפעלה</string>
     <string name="quick_settings_add_system_tile">הוספת משבצת מערכת</string>
@@ -1528,7 +1528,7 @@
     <string name="quick_settings_unavailable">לא זמין</string>
     <string name="quick_settings_edit">עריכה</string>
     <string name="quick_settings_system">הגדרות מהירות של המערכת</string>
-    <string name="quick_settings_open_settings">פתח את ההגדרות</string>
+    <string name="quick_settings_open_settings">פתיחת ההגדרות</string>
     <string name="quick_settings_add_control">הוספת פקד</string>
     <string name="quick_settings_add_tile">הוספת משבצת אפליקציה</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1543,7 +1543,7 @@
         <item quantity="two">%d פריטים נוספים הועברו</item>
         <item quantity="other">%d פריטים נוספים הועברו</item>
     </plurals>
-    <string name="quick_settings_remove">הסר</string>
+    <string name="quick_settings_remove">הסרה</string>
     <string name="quick_settings_added">%1$s נוסף</string>
     <string name="quick_settings_removed">%1$s הוסר</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly פועל. החזק 2 אצבעות על המסך למשך 5 שניות כדי לכבות. כדי להפסיק את הצגת ההודעה הזו, כבה את הגדרות SandFly &gt; הגדרות מתקדמות &gt; הצג הוראות לכיבוי SandFly.</string>
@@ -1568,9 +1568,9 @@
     <string name="dialog_message_detailed_ai_description">תמונות נבחרות נשלחות אל ה-API של Gemini של Google לתיאור. כאשר AI במכשיר מופעל, הם מתוארים בטלפון זה במקום זאת ואינם נשלחים.\n\nעם מפתח API בחינם, Google עשוי לשמור את מה שהוא מקבל, להשתמש בו כדי לשפר את המוצרים שלו ולבקש מאנשים לבדוק אותו. AI גנרטיבי הוא ניסיוני, אז הוא יעשה טעויות. ה-<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> חלים.</string>
     <string name="dialog_message_detailed_ai_promotion">תיאורי תמונה מפורטים מופעלים על ידי AI גנרטיבי. תמונות נבחרות נשלחות אל ה-API של Gemini של Google לתיאור. כאשר AI במכשיר מופעל, הם מתוארים בטלפון זה במקום זאת ואינם נשלחים.\n\nעם מפתח API בחינם, Google עשוי לשמור את מה שהוא מקבל, להשתמש בו כדי לשפר את המוצרים שלו ולבקש מאנשים לבדוק אותו. AI גנרטיבי הוא ניסיוני, אז הוא יעשה טעויות. אתה יכול לכבות תיאורי תמונה מפורטים בכל עת בהגדרות SandFly.\n\nה- <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> חלים.</string>
     <string name="dialog_message_screen_overview_promotion">צילום מסך נשלח אל ה-API של Gemini מבית Google לצורך תיאור, שנמשך כמה שניות. כאשר AI במכשיר מופעל, התיאור מתבצע בטלפון הזה והתמונה אינה נשלחת.\n\nעם מפתח API בחינם, Google עשוי לשמור את מה שהוא מקבל, להשתמש בו כדי לשפר את המוצרים שלו ולבקש מאנשים לבדוק אותו. AI גנרטיבי הוא ניסיוני, אז הוא יעשה טעויות. ה-<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> חלים.</string>
-    <string name="shortcut_title_open_app">פתח את האפליקציה</string>
-    <string name="shortcut_open_app">פתוח <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">גלול למעלה</string>
+    <string name="shortcut_title_open_app">פתיחת אפליקציה</string>
+    <string name="shortcut_open_app">פתיחת <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_scroll_to_top">גלילה להתחלה</string>
     <string name="shortcut_write_reading_control">כתוב את האות של בקרת קריאה</string>
     <string name="title_pref_reading_control_letters">אותיות אלפבית בכתב יד</string>
     <string name="reading_control_letter_none">ללא</string>
@@ -1615,14 +1615,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> מתוך <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">טקסט ריק</string>
     <string name="handwriting_not_available">זיהוי כתב יד אינו זמין במכשיר זה</string>
-    <string name="shortcut_scroll_to_bottom">גלול למטה</string>
-    <string name="shortcut_refresh">רענן</string>
-    <string name="shortcut_system_notifications">גוון התראות מערכת</string>
+    <string name="shortcut_scroll_to_bottom">גלילה לסוף</string>
+    <string name="shortcut_refresh">רענון</string>
+    <string name="shortcut_system_notifications">לוח ההתראות של המערכת</string>
     <string name="shortcut_system_quick_settings">הגדרות מהירות של המערכת</string>
     <string name="shortcut_lock_screen">נעל את מסך המכשיר</string>
     <string name="shortcut_power_menu">תפריט הפעלה</string>
-    <string name="shortcut_increase_media_volume">הגבר את עוצמת הקול של המדיה</string>
-    <string name="shortcut_decrease_media_volume">הורד את עוצמת הקול של המדיה</string>
+    <string name="shortcut_increase_media_volume">הגברת עוצמת הקול של המדיה</string>
+    <string name="shortcut_decrease_media_volume">הנמכת עוצמת הקול של המדיה</string>
     <string name="title_clear_selection">נקה בחירה</string>
     <string name="title_pref_brightness">בהירות</string>
     <string name="summary_support_change_brightness">הגדל או הקטנת בהירות המסך, גם כשהמסך מוסתר</string>

@@ -1340,7 +1340,7 @@
     <string name="speech_stream_accessibility">접근성 볼륨</string>
     <string name="speech_stream_media">미디어 볼륨</string>
     <string name="speech_stream_ring">벨소리 볼륨</string>
-    <string name="speech_stream_call">통화음량, 이어폰</string>
+    <string name="speech_stream_call">통화 음량, 수화부</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1492,7 +1492,7 @@
     <string name="quick_settings_color_correction">색상 보정</string>
     <string name="quick_settings_microphone_access">마이크 액세스</string>
     <string name="quick_settings_camera_access">카메라 액세스</string>
-    <string name="quick_settings_screen_timeout">화면 시간 초과</string>
+    <string name="quick_settings_screen_timeout">화면 자동 꺼짐</string>
     <string name="quick_settings_font_size">글꼴 크기</string>
     <string name="quick_settings_media">미디어</string>
     <string name="quick_settings_no_media">미디어 없음</string>
@@ -1565,7 +1565,7 @@
     <string name="dialog_message_detailed_ai_promotion">상세한 이미지 설명은 생성 AI를 기반으로 합니다. 선택된 이미지는 Google의 Gemini API로 전송되어 설명됩니다. 온디바이스 AI를 켜면 해당 내용이 이 휴대전화에서 대신 설명되고 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google가 수신한 내용을 보관하고 제품 개선에 사용하며 사람들이 검토하도록 할 수 있습니다. 생성 AI는 실험적이므로 실수를 할 수 있습니다. SandFly 설정에서 언제든지 자세한 이미지 설명을 끌 수 있습니다.\n\n <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>가 적용됩니다.</string>
     <string name="dialog_message_screen_overview_promotion">설명을 위해 화면의 스크린샷이 Google의 Gemini API로 전송되는데, 이 작업에는 몇 초가 걸립니다. 온디바이스 AI가 켜져 있으면 이 휴대전화에서 대신 설명되고 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google가 수신한 내용을 보관하고 제품 개선에 사용하며 사람들이 검토하도록 할 수 있습니다. 생성 AI는 실험적이므로 실수를 할 수 있습니다. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>가 적용됩니다.</string>
     <string name="shortcut_title_open_app">앱 열기</string>
-    <string name="shortcut_open_app">오픈 <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> 열기</string>
     <string name="shortcut_scroll_to_top">맨 위로 스크롤</string>
     <string name="shortcut_write_reading_control">읽기 제어 문자 쓰기</string>
     <string name="title_pref_reading_control_letters">손으로 쓴 알파벳 글자</string>
@@ -1741,7 +1741,7 @@
     <string name="image_qna_ask_by_voice">음성으로 물어보세요</string>
     <string name="image_qna_stop_listening">듣기 중지</string>
     <string name="image_qna_type_question">질문을 입력하세요</string>
-    <string name="shortcut_dictate">기록</string>
+    <string name="shortcut_dictate">받아쓰기</string>
     <string name="title_pref_ai_dictation">AI로 올바른 받아쓰기</string>
     <string name="dictation_not_corrected">수정되지 않았습니다. 인식된 대로 입력되었습니다.</string>
     <string name="dictation_nothing_recognized">아무것도 인식되지 않았습니다</string>
@@ -1768,6 +1768,6 @@
     <string name="title_pref_import_settings">가져오기 설정</string>
     <string name="settings_export_done">설정을 내보냈습니다. API 키는 포함되지 않습니다.</string>
     <string name="settings_export_failed">설정을 내보낼 수 없습니다.</string>
-    <string name="settings_import_done">가져온 설정</string>
+    <string name="settings_import_done">설정을 가져왔습니다</string>
     <string name="settings_import_failed">이 파일은 SandFly 또는 Backtalk 설정 파일이 아니거나 읽을 수 없습니다.</string>
 </resources>

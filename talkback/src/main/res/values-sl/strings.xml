@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Govorni mehanizem med uporabo glasovnega profila ni na voljo</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, v uporabi</string>
     <string name="no_voice_profiles">Brez glasovnih profilov</string>
-    <string name="shortcut_voice_profiles">Izberite glasovni profil</string>
+    <string name="shortcut_voice_profiles">Izberi glasovni profil</string>
     <string name="shortcut_previous_voice_profile">Prejšnji glasovni profil</string>
     <string name="shortcut_next_voice_profile">Naslednji glasovni profil</string>
     <string name="title_pref_voice_profile_in_use">Glasovni profil v uporabi</string>
@@ -1524,14 +1524,14 @@
     <string name="quick_settings_battery_charging">%1$s, polnjenje</string>
     <string name="quick_settings_battery_full">%1$s, napolnjena</string>
     <string name="quick_settings_sound">Zvok</string>
-    <string name="quick_settings_vibrate">Vibriraj</string>
+    <string name="quick_settings_vibrate">Vibriranje</string>
     <string name="quick_settings_mute">Utišano</string>
     <string name="quick_settings_on">Vklopljeno</string>
     <string name="quick_settings_off">Izklopljeno</string>
     <string name="quick_settings_unavailable">Ni na voljo</string>
     <string name="quick_settings_edit">Uredi</string>
     <string name="quick_settings_system">Sistemske hitre nastavitve</string>
-    <string name="quick_settings_open_settings">Odprite nastavitve</string>
+    <string name="quick_settings_open_settings">Odpri nastavitve</string>
     <string name="quick_settings_add_control">Dodaj kontrolnik</string>
     <string name="quick_settings_add_tile">Dodaj ploščico aplikacije</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1574,7 +1574,7 @@
     <string name="dialog_message_screen_overview_promotion">Posnetek zaslona se pošlje API-ju Gemini Google v opis, kar traja nekaj sekund. Če je vklopljena umetna inteligenca v napravi, je namesto tega opisana v tem telefonu in ni poslana.\n\nZ brezplačnim ključem API lahko Google obdrži prejeto, ga uporabi za izboljšanje svojih izdelkov in naroči ljudem, da ga pregledajo. Generativni AI je eksperimentalen, zato bo delal napake. Velja <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="shortcut_title_open_app">Odpri aplikacijo</string>
     <string name="shortcut_open_app">Odpri <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Pomaknite se na vrh</string>
+    <string name="shortcut_scroll_to_top">Pomakni na vrh</string>
     <string name="shortcut_write_reading_control">Napišite črko kontrole branja</string>
     <string name="title_pref_reading_control_letters">Ročno napisane črke abecede</string>
     <string name="reading_control_letter_none">Brez</string>
@@ -1619,14 +1619,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> od <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Prazno besedilo</string>
     <string name="handwriting_not_available">Prepoznavanje rokopisa ni na voljo v tej napravi</string>
-    <string name="shortcut_scroll_to_bottom">Pomaknite se na dno</string>
+    <string name="shortcut_scroll_to_bottom">Pomakni na dno</string>
     <string name="shortcut_refresh">Osveži</string>
     <string name="shortcut_system_notifications">Zaslon sistemskih obvestil</string>
     <string name="shortcut_system_quick_settings">Sistemske hitre nastavitve</string>
     <string name="shortcut_lock_screen">Zaklenite zaslon naprave</string>
     <string name="shortcut_power_menu">Meni napajanja</string>
     <string name="shortcut_increase_media_volume">Povečaj glasnost predstavnosti</string>
-    <string name="shortcut_decrease_media_volume">Zmanjšajte glasnost predstavnosti</string>
+    <string name="shortcut_decrease_media_volume">Zmanjšaj glasnost predstavnosti</string>
     <string name="title_clear_selection">Počisti izbiro</string>
     <string name="title_pref_brightness">Svetlost</string>
     <string name="summary_support_change_brightness">Povečajte ali zmanjšajte svetlost zaslona, tudi če je zaslon skrit</string>
@@ -1776,6 +1776,6 @@
     <string name="title_pref_import_settings">Import settings</string>
     <string name="settings_export_done">Nastavitve izvožene. API keys are not included</string>
     <string name="settings_export_failed">Nastavitev ni bilo mogoče izvoziti</string>
-    <string name="settings_import_done">Settings imported</string>
+    <string name="settings_import_done">Nastavitve so uvožene</string>
     <string name="settings_import_failed">Ta datoteka ni datoteka z nastavitvami SandFly ali Backtalk ali je ni bilo mogoče prebrati</string>
 </resources>

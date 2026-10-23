@@ -1562,7 +1562,7 @@
     <string name="title_pref_speech_stream">Сила на звука на говора</string>
     <string name="summary_selector_speech_stream">Превключвайте между силата на звука на достъпността, медиите, звънене и повикване</string>
     <string name="speech_stream_accessibility">Сила на звука за усл. за достъпност</string>
-    <string name="speech_stream_media">Мултимедия</string>
+    <string name="speech_stream_media">Сила на звука на мултимедията</string>
     <string name="speech_stream_ring">Сила на звънене</string>
     <string name="speech_stream_call">Сила на звука на разговора, слушалка</string>
     <string-array name="pref_speech_stream_entries">
@@ -1598,7 +1598,7 @@
     <string name="quick_settings_media_volume">Сила на звука на мултимедията</string>
     <string name="quick_settings_call_volume">Сила на звука на разговора</string>
     <string name="quick_settings_ring_volume">Сила на звънене</string>
-    <string name="quick_settings_notification_volume">Обем на известията</string>
+    <string name="quick_settings_notification_volume">Сила на звука на известията</string>
     <string name="quick_settings_alarm_volume">Сила на звука на будилника</string>
     <string name="quick_settings_accessibility_volume">Сила на звука за усл. за достъпност</string>
     <string name="quick_settings_system_volume">Сила на системния звук</string>
@@ -1642,7 +1642,7 @@
     <string name="quick_settings_unavailable">Недостъпен</string>
     <string name="quick_settings_edit">Редактиране</string>
     <string name="quick_settings_system">Системни бързи настройки</string>
-    <string name="quick_settings_open_settings">Отворете настройките</string>
+    <string name="quick_settings_open_settings">Отваряне на настройките</string>
     <string name="quick_settings_add_control">Добавяне на контрола</string>
     <string name="quick_settings_add_tile">Добавяне на плочка на приложение</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1661,7 +1661,7 @@
     <string name="quick_settings_removed">%1$s премахнат</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Друг пряк път за включване или изключване на режима на сърфиране</string>
     <string name="title_pref_vibration_strength">Сила на вибрациите</string>
-    <string name="shortcut_scroll_to_top">Превъртете до върха</string>
+    <string name="shortcut_scroll_to_top">Превъртане до началото</string>
     <string name="shortcut_write_reading_control">Напишете буквата на контрола за четене</string>
     <string name="title_pref_reading_control_letters">Ръкописни букви</string>
     <string name="reading_control_letter_none">Няма</string>
@@ -1706,13 +1706,13 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> от <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Празен текст</string>
     <string name="handwriting_not_available">Разпознаването на ръкописен текст не е налично на това устройство</string>
-    <string name="shortcut_scroll_to_bottom">Превъртете надолу</string>
+    <string name="shortcut_scroll_to_bottom">Превъртане до края</string>
     <string name="shortcut_refresh">Опресняване</string>
     <string name="shortcut_system_quick_settings">Системни бързи настройки</string>
     <string name="shortcut_lock_screen">Заключете екрана на устройството</string>
     <string name="shortcut_power_menu">Меню за захранване</string>
-    <string name="shortcut_increase_media_volume">Увеличете силата на звука на мултимедията</string>
-    <string name="shortcut_decrease_media_volume">Намалете силата на звука на мултимедията</string>
+    <string name="shortcut_increase_media_volume">Увеличаване на силата на звука на мултимедията</string>
+    <string name="shortcut_decrease_media_volume">Намаляване на силата на звука на мултимедията</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Плъзнете дълго надолу от горния ляв ъгъл</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Плъзнете дълго надолу от горния десен ъгъл</string>
     <string name="title_pref_shortcut_edge_left_top_right">Плъзнете надясно от левия край, горната половина</string>

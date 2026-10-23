@@ -1562,8 +1562,8 @@
     <string name="title_pref_speech_stream">Spraakvolume</string>
     <string name="summary_selector_speech_stream">Wissel tussen die toeganklikheid-, media-, lui- en oproepvolumes</string>
     <string name="speech_stream_accessibility">Toeganklikheidsvolume</string>
-    <string name="speech_stream_media">Media volume</string>
-    <string name="speech_stream_ring">Ring volume</string>
+    <string name="speech_stream_media">Mediavolume</string>
+    <string name="speech_stream_ring">Luivolume</string>
     <string name="speech_stream_call">Oproepvolume, gehoorstuk</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
@@ -1597,8 +1597,8 @@
     <string name="quick_settings_adaptive_brightness">Aanpasbare helderheid</string>
     <string name="quick_settings_media_volume">Mediavolume</string>
     <string name="quick_settings_call_volume">Oproepvolume</string>
-    <string name="quick_settings_ring_volume">Ring volume</string>
-    <string name="quick_settings_notification_volume">Kennisgewing volume</string>
+    <string name="quick_settings_ring_volume">Luivolume</string>
+    <string name="quick_settings_notification_volume">Kennisgewingvolume</string>
     <string name="quick_settings_alarm_volume">Alarmvolume</string>
     <string name="quick_settings_accessibility_volume">Toeganklikheidsvolume</string>
     <string name="quick_settings_system_volume">Stelselklankvolume</string>
@@ -1617,7 +1617,7 @@
     <string name="quick_settings_next_alarm">Volgende alarm</string>
     <string name="quick_settings_no_alarm">Geen alarm nie</string>
     <string name="quick_settings_settings">Instellings</string>
-    <string name="quick_settings_power_menu">Krag spyskaart</string>
+    <string name="quick_settings_power_menu">Aan/af-kieslys</string>
     <string name="quick_settings_add_system_tile">Voeg stelselteël by</string>
     <string name="quick_settings_no_system_tiles">Geen stelselteëls om by te voeg nie</string>
     <string name="quick_settings_tile_not_found">%1$s is nie in die stelsel se vinnige instellings nie</string>
@@ -1641,7 +1641,7 @@
     <string name="quick_settings_off">Af</string>
     <string name="quick_settings_unavailable">Onbeskikbaar</string>
     <string name="quick_settings_edit">Wysig</string>
-    <string name="quick_settings_system">Stelsel vinnige instellings</string>
+    <string name="quick_settings_system">Stelsel se kitsinstellings</string>
     <string name="quick_settings_open_settings">Maak instellings oop</string>
     <string name="quick_settings_add_control">Voeg beheer by</string>
     <string name="quick_settings_add_tile">Voeg app-teël by</string>
@@ -1708,9 +1708,9 @@
     <string name="handwriting_not_available">Handskrifherkenning is nie op hierdie toestel beskikbaar nie</string>
     <string name="shortcut_scroll_to_bottom">Blaai na onder</string>
     <string name="shortcut_refresh">Verfris</string>
-    <string name="shortcut_system_quick_settings">Stelsel vinnige instellings</string>
+    <string name="shortcut_system_quick_settings">Stelsel se kitsinstellings</string>
     <string name="shortcut_lock_screen">Sluit die toestelskerm</string>
-    <string name="shortcut_power_menu">Krag spyskaart</string>
+    <string name="shortcut_power_menu">Aan/af-kieslys</string>
     <string name="shortcut_increase_media_volume">Verhoog mediavolume</string>
     <string name="shortcut_decrease_media_volume">Verminder mediavolume</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Swiep lank af van links bo</string>

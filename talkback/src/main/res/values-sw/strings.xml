@@ -1338,9 +1338,9 @@
     <string name="title_pref_speech_stream">Sauti ya utamkaji</string>
     <string name="summary_selector_speech_stream">Badilisha kati ya ufikiaji, midia, sauti za simu na kupiga simu</string>
     <string name="speech_stream_accessibility">Sauti ya zana za ufikivu</string>
-    <string name="speech_stream_media">Kiasi cha media</string>
-    <string name="speech_stream_ring">Sauti ya pete</string>
-    <string name="speech_stream_call">Wito sauti, sikio</string>
+    <string name="speech_stream_media">Sauti ya media</string>
+    <string name="speech_stream_ring">Sauti ya mlio</string>
+    <string name="speech_stream_call">Sauti ya simu, spika ya sikio</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1480,11 +1480,11 @@
     <string name="quick_settings_adaptive_brightness">Mwangaza unaobadilika</string>
     <string name="quick_settings_media_volume">Sauti ya media</string>
     <string name="quick_settings_call_volume">Sauti ya simu</string>
-    <string name="quick_settings_ring_volume">Sauti ya pete</string>
-    <string name="quick_settings_notification_volume">Kiasi cha arifa</string>
+    <string name="quick_settings_ring_volume">Sauti ya mlio</string>
+    <string name="quick_settings_notification_volume">Sauti ya arifa</string>
     <string name="quick_settings_alarm_volume">Sauti ya kengele</string>
     <string name="quick_settings_accessibility_volume">Sauti ya zana za ufikivu</string>
-    <string name="quick_settings_system_volume">Kiasi cha sauti ya mfumo</string>
+    <string name="quick_settings_system_volume">Sauti ya mfumo</string>
     <string name="quick_settings_data_saver">Kiokoa data</string>
     <string name="quick_settings_night_light">Nuru ya Usiku</string>
     <string name="quick_settings_extra_dim">Ufifishaji zaidi</string>
@@ -1495,12 +1495,12 @@
     <string name="quick_settings_screen_timeout">Muda wa skrini kuisha</string>
     <string name="quick_settings_font_size">Ukubwa wa herufi</string>
     <string name="quick_settings_media">Maudhui</string>
-    <string name="quick_settings_no_media">Hakuna vyombo vya habari</string>
+    <string name="quick_settings_no_media">Hakuna maudhui</string>
     <string name="quick_settings_media_output">Pato la media</string>
     <string name="quick_settings_next_alarm">Kengele inayofuata</string>
     <string name="quick_settings_no_alarm">Hakuna kengele</string>
     <string name="quick_settings_settings">Mipangilio</string>
-    <string name="quick_settings_power_menu">Menyu ya nguvu</string>
+    <string name="quick_settings_power_menu">Menyu ya kuwasha/kuzima</string>
     <string name="quick_settings_add_system_tile">Ongeza kigae cha mfumo</string>
     <string name="quick_settings_no_system_tiles">Hakuna vigae vya mfumo vya kuongeza</string>
     <string name="quick_settings_tile_not_found">%1$s haipo katika mipangilio ya haraka ya mfumo</string>
@@ -1520,7 +1520,7 @@
     <string name="quick_settings_sound">Mlio</string>
     <string name="quick_settings_vibrate">Tetema</string>
     <string name="quick_settings_mute">Nyamazisha</string>
-    <string name="quick_settings_on">Washa</string>
+    <string name="quick_settings_on">Imewashwa</string>
     <string name="quick_settings_off">Zima</string>
     <string name="quick_settings_unavailable">Haipatikani</string>
     <string name="quick_settings_edit">Hariri</string>
@@ -1613,10 +1613,10 @@
     <string name="handwriting_not_available">Utambuzi wa mwandiko haupatikani kwenye kifaa hiki</string>
     <string name="shortcut_scroll_to_bottom">Tembeza hadi chini</string>
     <string name="shortcut_refresh">Onyesha upya</string>
-    <string name="shortcut_system_notifications">Kivuli cha arifa ya mfumo</string>
+    <string name="shortcut_system_notifications">Sehemu ya arifa za mfumo</string>
     <string name="shortcut_system_quick_settings">Mipangilio ya haraka ya mfumo</string>
     <string name="shortcut_lock_screen">Funga skrini ya kifaa</string>
-    <string name="shortcut_power_menu">Menyu ya nguvu</string>
+    <string name="shortcut_power_menu">Menyu ya kuwasha/kuzima</string>
     <string name="shortcut_increase_media_volume">Ongeza sauti ya media</string>
     <string name="shortcut_decrease_media_volume">Punguza sauti ya media</string>
     <string name="title_clear_selection">Futa uteuzi</string>

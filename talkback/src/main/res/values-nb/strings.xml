@@ -1311,7 +1311,7 @@
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, i bruk</string>
     <string name="no_voice_profiles">Ingen taleprofiler</string>
     <string name="shortcut_voice_profiles">Velg stemmeprofil</string>
-    <string name="shortcut_previous_voice_profile">Tidligere taleprofil</string>
+    <string name="shortcut_previous_voice_profile">Forrige taleprofil</string>
     <string name="shortcut_next_voice_profile">Neste taleprofil</string>
     <string name="title_pref_voice_profile_in_use">Stemmeprofil i bruk</string>
     <string name="title_pref_add_voice_profile">Legg til taleprofil</string>
@@ -1340,7 +1340,7 @@
     <string name="speech_stream_accessibility">Tilgjengelighetsvolum</string>
     <string name="speech_stream_media">Medievolum</string>
     <string name="speech_stream_ring">Ringevolum</string>
-    <string name="speech_stream_call">Samtalevolum, øretelefon</string>
+    <string name="speech_stream_call">Samtalevolum, ørehøyttaler</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title">Vil du la <xliff:g id="app" example="Tasker">%1$s</xliff:g> snakke gjennom SandFly?</string>
     <string name="speech_control_ask_text">Den kan si tekst med din SandFly-stemme. Du kan endre dette i Avanserte innstillinger.</string>
     <string name="speech_control_allow">Tillat</string>
-    <string name="speech_control_deny">ikke tillat</string>
+    <string name="speech_control_deny">Ikke tillat</string>
     <string name="permission_speak_label">snakke gjennom SandFly</string>
     <string name="permission_speak_description">Lar appen be om å si tekst med SandFly stemmen din. SandFly spør deg før appen kan snakke.</string>
     <string name="permission_braille_display_label">be om å være en leselist for SandFly</string>
@@ -1461,7 +1461,7 @@
     </plurals>
     <string name="title_pref_quick_settings">Bruk hurtiginnstillingene til SandFly</string>
     <string name="title_pref_quick_settings_items">Hurtiginnstillingspanel</string>
-    <string name="quick_settings_title">Raske innstillinger</string>
+    <string name="quick_settings_title">Hurtiginnstillinger</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">Mobildata</string>
@@ -1613,7 +1613,7 @@
     <string name="handwriting_not_available">Håndskriftsgjenkjenning er ikke tilgjengelig på denne enheten</string>
     <string name="shortcut_scroll_to_bottom">Rull til bunnen</string>
     <string name="shortcut_refresh">Oppdater</string>
-    <string name="shortcut_system_notifications">Systemvarslingsskygge</string>
+    <string name="shortcut_system_notifications">Systemets varselpanel</string>
     <string name="shortcut_system_quick_settings">Hurtiginnstillinger for systemet</string>
     <string name="shortcut_lock_screen">Lås enhetens skjerm</string>
     <string name="shortcut_power_menu">Strømmeny</string>

@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Mecanismo de fala indisponível ao usar um perfil de voz</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, em uso</string>
     <string name="no_voice_profiles">Sem perfis de voz</string>
-    <string name="shortcut_voice_profiles">Escolha o perfil de voz</string>
+    <string name="shortcut_voice_profiles">Escolher perfil de voz</string>
     <string name="shortcut_previous_voice_profile">Perfil de voz anterior</string>
     <string name="shortcut_next_voice_profile">Próximo perfil de voz</string>
     <string name="title_pref_voice_profile_in_use">Perfil de voz em uso</string>
@@ -1338,9 +1338,9 @@
     <string name="title_pref_speech_stream">Volume da voz</string>
     <string name="summary_selector_speech_stream">Alternar entre os volumes de acessibilidade, mídia, toque e chamada</string>
     <string name="speech_stream_accessibility">Volume da Acessibilidade</string>
-    <string name="speech_stream_media">Volume de mídia</string>
+    <string name="speech_stream_media">Volume de multimédia</string>
     <string name="speech_stream_ring">Volume do toque</string>
-    <string name="speech_stream_call">Volume da chamada, fone de ouvido</string>
+    <string name="speech_stream_call">Volume da chamada, auscultador</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title">Permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale através de SandFly?</string>
     <string name="speech_control_ask_text">Ele pode dizer texto na sua voz SandFly. Você pode alterar isso nas configurações avançadas.</string>
     <string name="speech_control_allow">Permitir</string>
-    <string name="speech_control_deny">Não permita</string>
+    <string name="speech_control_deny">Não permitir</string>
     <string name="permission_speak_label">falar pelo SandFly</string>
     <string name="permission_speak_description">Permite que o aplicativo peça para dizer o texto na sua voz SandFly. SandFly pergunta antes que o aplicativo possa falar.</string>
     <string name="permission_braille_display_label">peça para ser um display braille para SandFly</string>
@@ -1461,7 +1461,7 @@
     </plurals>
     <string name="title_pref_quick_settings">Use as configurações rápidas de SandFly</string>
     <string name="title_pref_quick_settings_items">Painel de configurações rápidas</string>
-    <string name="quick_settings_title">Configurações rápidas</string>
+    <string name="quick_settings_title">Definições rápidas</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">Dados móveis</string>
@@ -1492,15 +1492,15 @@
     <string name="quick_settings_color_correction">Correção de cor</string>
     <string name="quick_settings_microphone_access">Acesso ao microfone</string>
     <string name="quick_settings_camera_access">Acesso à câmara</string>
-    <string name="quick_settings_screen_timeout">Tempo limite da tela</string>
+    <string name="quick_settings_screen_timeout">Tempo limite do ecrã</string>
     <string name="quick_settings_font_size">Tamanho da fonte</string>
     <string name="quick_settings_media">Multimédia</string>
-    <string name="quick_settings_no_media">Sem mídia</string>
+    <string name="quick_settings_no_media">Sem multimédia</string>
     <string name="quick_settings_media_output">Saída de multimédia</string>
     <string name="quick_settings_next_alarm">Próximo alarme</string>
     <string name="quick_settings_no_alarm">Sem alarme</string>
     <string name="quick_settings_settings">Definições</string>
-    <string name="quick_settings_power_menu">Menu de energia</string>
+    <string name="quick_settings_power_menu">Menu ligar/desligar</string>
     <string name="quick_settings_add_system_tile">Adicionar bloco do sistema</string>
     <string name="quick_settings_no_system_tiles">Nenhum bloco de sistema para adicionar</string>
     <string name="quick_settings_tile_not_found">%1$s não está nas configurações rápidas do sistema</string>
@@ -1520,12 +1520,12 @@
     <string name="quick_settings_sound">Som</string>
     <string name="quick_settings_vibrate">Vibrar</string>
     <string name="quick_settings_mute">Mudo</string>
-    <string name="quick_settings_on">Ativar</string>
+    <string name="quick_settings_on">Ativado</string>
     <string name="quick_settings_off">Desativado</string>
     <string name="quick_settings_unavailable">Indisponível</string>
     <string name="quick_settings_edit">Editar</string>
-    <string name="quick_settings_system">Configurações rápidas do sistema</string>
-    <string name="quick_settings_open_settings">Abrir configurações</string>
+    <string name="quick_settings_system">Definições rápidas do sistema</string>
+    <string name="quick_settings_open_settings">Abrir definições</string>
     <string name="quick_settings_add_control">Adicionar controlo</string>
     <string name="quick_settings_add_tile">Adicionar bloco de aplicação</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1564,9 +1564,9 @@
     <string name="dialog_message_detailed_ai_description">As imagens selecionadas são enviadas para a API Gemini de Google para serem descritas. Com a IA no dispositivo ativada, eles são descritos neste telefone e não são enviados.\n\nCom uma chave de API gratuita, Google pode manter o que recebe, usá-lo para melhorar seus produtos e fazer com que as pessoas o revisem. A IA generativa é experimental, por isso cometerá erros. O <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplica.</string>
     <string name="dialog_message_detailed_ai_promotion">Descrições detalhadas de imagens são alimentadas por IA generativa. As imagens selecionadas são enviadas para a API Gemini de Google para serem descritas. Com a IA no dispositivo ativada, eles são descritos neste telefone e não são enviados.\n\nCom uma chave de API gratuita, Google pode manter o que recebe, usá-lo para melhorar seus produtos e fazer com que as pessoas o revisem. A IA generativa é experimental, por isso cometerá erros. Você pode desativar as descrições detalhadas das imagens a qualquer momento nas configurações SandFly.\n\nO <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplica.</string>
     <string name="dialog_message_screen_overview_promotion">Uma captura de tela da tela é enviada para a API Gemini de Google para ser descrita, o que leva vários segundos. Com a IA no dispositivo ativada, ela é descrita neste telefone e não é enviada.\n\nCom uma chave de API gratuita, Google pode manter o que recebe, usá-lo para melhorar seus produtos e fazer com que as pessoas o revisem. A IA generativa é experimental, por isso cometerá erros. O <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplica.</string>
-    <string name="shortcut_title_open_app">Abrir aplicativo</string>
+    <string name="shortcut_title_open_app">Abrir aplicação</string>
     <string name="shortcut_open_app">Abrir <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Role para cima</string>
+    <string name="shortcut_scroll_to_top">Deslocar para o início</string>
     <string name="shortcut_write_reading_control">Escreva a letra de um controle de leitura</string>
     <string name="title_pref_reading_control_letters">Letras do alfabeto manuscritas</string>
     <string name="reading_control_letter_none">Nenhum</string>
@@ -1611,14 +1611,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> de <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Texto vazio</string>
     <string name="handwriting_not_available">O reconhecimento de escrita não está disponível neste dispositivo</string>
-    <string name="shortcut_scroll_to_bottom">Role para baixo</string>
+    <string name="shortcut_scroll_to_bottom">Deslocar para o fim</string>
     <string name="shortcut_refresh">Atualizar</string>
-    <string name="shortcut_system_notifications">Sombra de notificação do sistema</string>
-    <string name="shortcut_system_quick_settings">Configurações rápidas do sistema</string>
+    <string name="shortcut_system_notifications">Painel de notificações do sistema</string>
+    <string name="shortcut_system_quick_settings">Definições rápidas do sistema</string>
     <string name="shortcut_lock_screen">Bloquear a tela do dispositivo</string>
-    <string name="shortcut_power_menu">Menu de energia</string>
-    <string name="shortcut_increase_media_volume">Aumentar o volume da mídia</string>
-    <string name="shortcut_decrease_media_volume">Diminuir o volume da mídia</string>
+    <string name="shortcut_power_menu">Menu ligar/desligar</string>
+    <string name="shortcut_increase_media_volume">Aumentar o volume de multimédia</string>
+    <string name="shortcut_decrease_media_volume">Diminuir o volume de multimédia</string>
     <string name="title_clear_selection">Limpar seleção</string>
     <string name="title_pref_brightness">Brilho</string>
     <string name="summary_support_change_brightness">Aumente ou diminua o brilho da tela, mesmo quando a tela estiver oculta</string>
@@ -1768,6 +1768,6 @@
     <string name="title_pref_import_settings">Importar configurações</string>
     <string name="settings_export_done">Configurações exportadas. As chaves de API não estão incluídas</string>
     <string name="settings_export_failed">Não foi possível exportar as configurações</string>
-    <string name="settings_import_done">Configurações importadas</string>
+    <string name="settings_import_done">Definições importadas</string>
     <string name="settings_import_failed">Este arquivo não é um arquivo de configurações SandFly ou Backtalk ou não pôde ser lido</string>
 </resources>

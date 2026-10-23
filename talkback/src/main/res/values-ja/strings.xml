@@ -1307,8 +1307,8 @@
     <string name="speech_engine_unavailable_with_profile">音声プロファイルの使用中は音声エンジンを使用できません</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>、使用中</string>
     <string name="no_voice_profiles">音声プロファイルはありません</string>
-    <string name="shortcut_voice_profiles">音声プロファイルを選択する</string>
-    <string name="shortcut_previous_voice_profile">以前の音声プロファイル</string>
+    <string name="shortcut_voice_profiles">音声プロファイルを選択</string>
+    <string name="shortcut_previous_voice_profile">前の音声プロファイル</string>
     <string name="shortcut_next_voice_profile">次の音声プロファイル</string>
     <string name="title_pref_voice_profile_in_use">使用中の音声プロファイル</string>
     <string name="title_pref_add_voice_profile">音声プロファイルを追加する</string>
@@ -1335,7 +1335,7 @@
     <string name="title_pref_speech_stream">読み上げの音量</string>
     <string name="summary_selector_speech_stream">アクセシビリティ、メディア、着信音、通話音量を切り替える</string>
     <string name="speech_stream_accessibility">ユーザー補助機能の音量</string>
-    <string name="speech_stream_media">メディアのボリューム</string>
+    <string name="speech_stream_media">メディアの音量</string>
     <string name="speech_stream_ring">着信音量</string>
     <string name="speech_stream_call">通話音量、受話口</string>
     <string-array name="pref_speech_stream_entries">
@@ -1392,7 +1392,7 @@
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> が SandFly を通して話すことを許可しますか?</string>
     <string name="speech_control_ask_text">あなたのSandFlyの声でテキストを言うことができます。これは詳細設定で変更できます。</string>
     <string name="speech_control_allow">許可する</string>
-    <string name="speech_control_deny">許可しないでください</string>
+    <string name="speech_control_deny">許可しない</string>
     <string name="permission_speak_label">SandFly を通して読み上げる</string>
     <string name="permission_speak_description">アプリにあなたのSandFlyの声でテキストを言うように要求させます。アプリが話す前に、SandFly が質問します。</string>
     <string name="permission_braille_display_label">SandFly の点字ディスプレイになるよう依頼してください</string>
@@ -1478,7 +1478,7 @@
     <string name="quick_settings_media_volume">メディアの音量</string>
     <string name="quick_settings_call_volume">通話音量</string>
     <string name="quick_settings_ring_volume">着信音量</string>
-    <string name="quick_settings_notification_volume">通知量</string>
+    <string name="quick_settings_notification_volume">通知音量</string>
     <string name="quick_settings_alarm_volume">アラーム音量</string>
     <string name="quick_settings_accessibility_volume">ユーザー補助機能の音量</string>
     <string name="quick_settings_system_volume">システムオーディオの音量</string>
@@ -1515,9 +1515,9 @@
     <string name="quick_settings_battery_charging">%1$s、充電中</string>
     <string name="quick_settings_battery_full">%1$s、充電済み</string>
     <string name="quick_settings_sound">音</string>
-    <string name="quick_settings_vibrate">振動する</string>
+    <string name="quick_settings_vibrate">バイブレーション</string>
     <string name="quick_settings_mute">ミュート</string>
-    <string name="quick_settings_on">ON</string>
+    <string name="quick_settings_on">オン</string>
     <string name="quick_settings_off">オフ</string>
     <string name="quick_settings_unavailable">利用不可</string>
     <string name="quick_settings_edit">編集</string>
@@ -1562,7 +1562,7 @@
     <string name="dialog_message_detailed_ai_promotion">詳細な画像の説明は、生成 AI によって強化されています。選択された画像はGoogleのGemini APIに送信されて記述されます。オンデバイス AI がオンになっている場合、それらは代わりにこの携帯電話上で説明され、送信されません。\n\n無料の API キーを使用すると、Google は受け取ったものを保持し、製品の改善に使用して、人々にレビューしてもらうことができます。生成 AI は実験的なものであるため、間違いを犯す可能性があります。 SandFly 設定でいつでも詳細な画像の説明をオフにできます。\n\n <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> が適用されます。</string>
     <string name="dialog_message_screen_overview_promotion">画面のスクリーンショットがGoogleのGemini APIに送信され、説明されます。これには数秒かかります。オンデバイス AI がオンになっていると、代わりにこの携帯電話に記述され、送信されません。\n\n無料の API キーを使用すると、Google は受信したものを保持し、製品の改善に使用して、人々にレビューしてもらうことができます。生成 AI は実験的なものであるため、間違いを犯す可能性があります。 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> が適用されます。</string>
     <string name="shortcut_title_open_app">アプリを開く</string>
-    <string name="shortcut_open_app">オープン<xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> を開く</string>
     <string name="shortcut_scroll_to_top">一番上までスクロール</string>
     <string name="shortcut_write_reading_control">読み取りコントロールの文字を書く</string>
     <string name="title_pref_reading_control_letters">手書きのアルファベット文字</string>
@@ -1609,12 +1609,12 @@
     <string name="handwriting_empty">空のテキスト</string>
     <string name="handwriting_not_available">このデバイスでは手書き認識は利用できません</string>
     <string name="shortcut_scroll_to_bottom">一番下までスクロール</string>
-    <string name="shortcut_refresh">リフレッシュ</string>
-    <string name="shortcut_system_notifications">システム通知シェード</string>
+    <string name="shortcut_refresh">更新</string>
+    <string name="shortcut_system_notifications">システムの通知パネル</string>
     <string name="shortcut_system_quick_settings">システムクイック設定</string>
     <string name="shortcut_lock_screen">デバイスの画面をロックする</string>
     <string name="shortcut_power_menu">電源メニュー</string>
-    <string name="shortcut_increase_media_volume">メディアの音量を増やす</string>
+    <string name="shortcut_increase_media_volume">メディアの音量を上げる</string>
     <string name="shortcut_decrease_media_volume">メディアの音量を下げる</string>
     <string name="title_clear_selection">選択をクリア</string>
     <string name="title_pref_brightness">明るさ</string>
@@ -1765,6 +1765,6 @@
     <string name="title_pref_import_settings">インポート設定</string>
     <string name="settings_export_done">設定がエクスポートされました。 APIキーは含まれていません</string>
     <string name="settings_export_failed">設定をエクスポートできませんでした</string>
-    <string name="settings_import_done">インポートされた設定</string>
+    <string name="settings_import_done">設定をインポートしました</string>
     <string name="settings_import_failed">このファイルはSandFly または Backtalk 設定ファイルではないか、読み取れませんでした</string>
 </resources>

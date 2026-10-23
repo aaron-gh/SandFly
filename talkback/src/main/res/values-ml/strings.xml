@@ -1492,10 +1492,10 @@
     <string name="quick_settings_color_correction">വർണ്ണ തിരുത്തൽ</string>
     <string name="quick_settings_microphone_access">മൈക്രോഫോൺ ആക്സസ്</string>
     <string name="quick_settings_camera_access">ക്യാമറ ആക്സസ്</string>
-    <string name="quick_settings_screen_timeout">സ്‌ക്രീൻ കാലഹരണപ്പെട്ടു</string>
+    <string name="quick_settings_screen_timeout">സ്‌ക്രീൻ ടൈംഔട്ട്</string>
     <string name="quick_settings_font_size">ഫോണ്ട് വലിപ്പം</string>
     <string name="quick_settings_media">മീഡിയ</string>
-    <string name="quick_settings_no_media">മാധ്യമങ്ങളില്ല</string>
+    <string name="quick_settings_no_media">മീഡിയ ഇല്ല</string>
     <string name="quick_settings_media_output">മീഡിയ ഔട്ട്പുട്ട്</string>
     <string name="quick_settings_next_alarm">അടുത്ത അലാറം</string>
     <string name="quick_settings_no_alarm">അലാറം ഇല്ല</string>
@@ -1518,7 +1518,7 @@
     <string name="quick_settings_battery_charging">%1$s, ചാർജ് ചെയ്യുന്നു</string>
     <string name="quick_settings_battery_full">%1$s, ചാർജ്ജ് ചെയ്തു</string>
     <string name="quick_settings_sound">ശബ്‌ദം</string>
-    <string name="quick_settings_vibrate">വൈബ്രേറ്റ് ചെയ്യുക</string>
+    <string name="quick_settings_vibrate">വൈബ്രേറ്റ്</string>
     <string name="quick_settings_mute">നിശബ്ദമാക്കുക</string>
     <string name="quick_settings_on">ഓണാണ്</string>
     <string name="quick_settings_off">ഓഫാണ്</string>
@@ -1565,7 +1565,7 @@
     <string name="dialog_message_detailed_ai_promotion">വിശദമായ ചിത്ര വിവരണങ്ങൾ ജനറേറ്റീവ് AI ആണ് നൽകുന്നത്. തിരഞ്ഞെടുത്ത ചിത്രങ്ങൾ വിവരിക്കുന്നതിനായി Google-ൻ്റെ Gemini API-ലേക്ക് അയച്ചു. ഉപകരണത്തിൽ AI ഓൺ ചെയ്‌തിരിക്കുന്നതിനാൽ, പകരം അവ ഈ ഫോണിൽ വിവരിച്ചിരിക്കുന്നു, അയയ്‌ക്കില്ല.\n\nഒരു സൗജന്യ API കീ ഉപയോഗിച്ച്, Google അതിന് ലഭിക്കുന്നത് സൂക്ഷിക്കുകയും ഉൽപ്പന്നങ്ങൾ മെച്ചപ്പെടുത്താൻ അത് ഉപയോഗിക്കുകയും ആളുകൾ അത് അവലോകനം ചെയ്യുകയും ചെയ്യാം. ജനറേറ്റീവ് AI പരീക്ഷണാത്മകമാണ്, അതിനാൽ അത് തെറ്റുകൾ വരുത്തും. നിങ്ങൾക്ക് എപ്പോൾ വേണമെങ്കിലും SandFly ക്രമീകരണങ്ങളിൽ വിശദമായ ചിത്ര വിവരണങ്ങൾ ഓഫാക്കാം.\n\nThe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> ബാധകമാണ്.</string>
     <string name="dialog_message_screen_overview_promotion">സ്‌ക്രീനിൻ്റെ ഒരു സ്‌ക്രീൻഷോട്ട് വിവരിക്കുന്നതിന് Google-ൻ്റെ Gemini API-ലേക്ക് അയയ്‌ക്കുന്നു, ഇതിന് കുറച്ച് നിമിഷങ്ങൾ എടുക്കും. ഉപകരണത്തിൽ AI ഓൺ ചെയ്‌തിരിക്കുന്നതിനാൽ, പകരം ഈ ഫോണിൽ ഇത് വിവരിച്ചിരിക്കുന്നു, അയയ്‌ക്കില്ല.\n\nഒരു സൗജന്യ API കീ ഉപയോഗിച്ച്, Google അതിന് ലഭിക്കുന്നത് സൂക്ഷിക്കുകയും ഉൽപ്പന്നങ്ങൾ മെച്ചപ്പെടുത്താൻ അത് ഉപയോഗിക്കുകയും ആളുകൾ അത് അവലോകനം ചെയ്യുകയും ചെയ്യാം. ജനറേറ്റീവ് AI പരീക്ഷണാത്മകമാണ്, അതിനാൽ അത് തെറ്റുകൾ വരുത്തും. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> ബാധകമാണ്.</string>
     <string name="shortcut_title_open_app">ആപ്പ് തുറക്കുക</string>
-    <string name="shortcut_open_app">തുറക്കുക <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> തുറക്കുക</string>
     <string name="shortcut_scroll_to_top">മുകളിലേക്ക് സ്ക്രോൾ ചെയ്യുക</string>
     <string name="shortcut_write_reading_control">ഒരു വായനാ നിയന്ത്രണത്തിൻ്റെ കത്ത് എഴുതുക</string>
     <string name="title_pref_reading_control_letters">കൈയക്ഷര അക്ഷരങ്ങൾ</string>
@@ -1613,7 +1613,7 @@
     <string name="handwriting_not_available">ഈ ഉപകരണത്തിൽ കൈയക്ഷരം തിരിച്ചറിയൽ ലഭ്യമല്ല</string>
     <string name="shortcut_scroll_to_bottom">താഴേക്ക് സ്ക്രോൾ ചെയ്യുക</string>
     <string name="shortcut_refresh">പുതുക്കുക</string>
-    <string name="shortcut_system_notifications">സിസ്റ്റം അറിയിപ്പ് ഷേഡ്</string>
+    <string name="shortcut_system_notifications">സിസ്റ്റം അറിയിപ്പ് പാനൽ</string>
     <string name="shortcut_system_quick_settings">സിസ്റ്റം ദ്രുത ക്രമീകരണങ്ങൾ</string>
     <string name="shortcut_lock_screen">ഉപകരണ സ്ക്രീൻ ലോക്ക് ചെയ്യുക</string>
     <string name="shortcut_power_menu">പവർ മെനു</string>
@@ -1741,7 +1741,7 @@
     <string name="image_qna_ask_by_voice">ശബ്ദത്തിലൂടെ ചോദിക്കുക</string>
     <string name="image_qna_stop_listening">കേൾക്കുന്നത് നിർത്തുക</string>
     <string name="image_qna_type_question">ഒരു ചോദ്യം ടൈപ്പ് ചെയ്യുക</string>
-    <string name="shortcut_dictate">പറയുക</string>
+    <string name="shortcut_dictate">പറഞ്ഞ് എഴുതിക്കുക</string>
     <string name="title_pref_ai_dictation">AI ഉപയോഗിച്ചുള്ള ശരിയായ നിർദ്ദേശം</string>
     <string name="dictation_not_corrected">തിരുത്തിയിട്ടില്ല. തിരിച്ചറിഞ്ഞതായി ടൈപ്പ് ചെയ്തു.</string>
     <string name="dictation_nothing_recognized">ഒന്നും തിരിച്ചറിഞ്ഞില്ല</string>

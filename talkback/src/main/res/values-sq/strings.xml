@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Motori i të folurit nuk ofrohet gjatë përdorimit të një profili zanor</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, në përdorim</string>
     <string name="no_voice_profiles">Nuk ka profile zanore</string>
-    <string name="shortcut_voice_profiles">Zgjidhni profilin e zërit</string>
+    <string name="shortcut_voice_profiles">Zgjidh profilin e zërit</string>
     <string name="shortcut_previous_voice_profile">Profili i mëparshëm i zërit</string>
     <string name="shortcut_next_voice_profile">Profili tjetër i zërit</string>
     <string name="title_pref_voice_profile_in_use">Profili zanor në përdorim</string>
@@ -1339,8 +1339,8 @@
     <string name="summary_selector_speech_stream">Kaloni midis volumit të aksesueshmërisë, medias, ziles dhe thirrjeve</string>
     <string name="speech_stream_accessibility">Volumi i qasshmërisë</string>
     <string name="speech_stream_media">Volumi i medias</string>
-    <string name="speech_stream_ring">Vëllimi i unazës</string>
-    <string name="speech_stream_call">Volumi i thirrjes, kufja</string>
+    <string name="speech_stream_ring">Volumi i ziles</string>
+    <string name="speech_stream_call">Volumi i thirrjes, altoparlanti i veshit</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title">Të lejohet <xliff:g id="app" example="Tasker">%1$s</xliff:g> të flasë përmes SandFly?</string>
     <string name="speech_control_ask_text">Mund të thotë tekst me zërin tuaj SandFly. Këtë mund ta ndryshoni te Cilësimet e avancuara.</string>
     <string name="speech_control_allow">Lejo</string>
-    <string name="speech_control_deny">Mos lejoni</string>
+    <string name="speech_control_deny">Mos lejo</string>
     <string name="permission_speak_label">të folurit përmes SandFly</string>
     <string name="permission_speak_description">Lejon aplikacionin të kërkojë të thotë tekst me zërin tuaj SandFly. SandFly ju pyet përpara se aplikacioni të mund të flasë.</string>
     <string name="permission_braille_display_label">kërkoni të jetë një ekran braille për SandFly</string>
@@ -1480,8 +1480,8 @@
     <string name="quick_settings_adaptive_brightness">Shkëlqim përshtatës</string>
     <string name="quick_settings_media_volume">Volumi i medias</string>
     <string name="quick_settings_call_volume">Volumi i thirrjes</string>
-    <string name="quick_settings_ring_volume">Vëllimi i unazës</string>
-    <string name="quick_settings_notification_volume">Vëllimi i njoftimit</string>
+    <string name="quick_settings_ring_volume">Volumi i ziles</string>
+    <string name="quick_settings_notification_volume">Volumi i njoftimeve</string>
     <string name="quick_settings_alarm_volume">Volumi i alarmit</string>
     <string name="quick_settings_accessibility_volume">Volumi i qasshmërisë</string>
     <string name="quick_settings_system_volume">Volumi i zërit të sistemit</string>
@@ -1492,7 +1492,7 @@
     <string name="quick_settings_color_correction">Korrigjimi i ngjyrës</string>
     <string name="quick_settings_microphone_access">Qasje në mikrofon</string>
     <string name="quick_settings_camera_access">Qasja në kamerë</string>
-    <string name="quick_settings_screen_timeout">Koha e fundit e ekranit</string>
+    <string name="quick_settings_screen_timeout">Koha e fikjes së ekranit</string>
     <string name="quick_settings_font_size">Madhësia e shkronjave</string>
     <string name="quick_settings_media">Media</string>
     <string name="quick_settings_no_media">Asnjë media</string>
@@ -1500,7 +1500,7 @@
     <string name="quick_settings_next_alarm">Alarmi i radhës</string>
     <string name="quick_settings_no_alarm">Asnjë alarm</string>
     <string name="quick_settings_settings">Cilësimet</string>
-    <string name="quick_settings_power_menu">Menuja e energjisë</string>
+    <string name="quick_settings_power_menu">Menyja e fikjes</string>
     <string name="quick_settings_add_system_tile">Shto pllakën e sistemit</string>
     <string name="quick_settings_no_system_tiles">Nuk ka pllaka sistemi për të shtuar</string>
     <string name="quick_settings_tile_not_found">%1$s nuk është në cilësimet e shpejta të sistemit</string>
@@ -1541,7 +1541,7 @@
     </plurals>
     <string name="quick_settings_remove">Hiq</string>
     <string name="quick_settings_added">%1$s u shtua</string>
-    <string name="quick_settings_removed">%1$s hequr</string>
+    <string name="quick_settings_removed">%1$s u hoq</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aktiv. Mbani 2 gishta në ekran për 5 sekonda për ta fikur. Për të ndaluar shfaqjen e këtij mesazhi, çaktivizoni cilësimet SandFly &gt; Cilësimet e avancuara &gt; Shfaq udhëzimet për çaktivizimin e SandFly.</string>
     <string name="edge_gestures_title">Skajet</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Një tjetër shkurtore për të aktivizuar ose çaktivizuar modalitetin e shfletimit</string>
@@ -1565,8 +1565,8 @@
     <string name="dialog_message_detailed_ai_promotion">Përshkrimet e detajuara të imazheve mundësohen nga AI gjeneruese. Imazhet e përzgjedhura dërgohen në API-në Google të Gemini për t\'u përshkruar. Me AI në pajisje të aktivizuar, ato përshkruhen në këtë telefon dhe nuk dërgohen.\n\nMe një çelës falas API, Google mund të mbajë atë që merr, ta përdorë për të përmirësuar produktet e tij dhe t\'i bëjë njerëzit ta shqyrtojnë atë. AI gjeneruese është eksperimentale, kështu që do të bëjë gabime. Mund të çaktivizoni përshkrimet e detajuara të imazheve në çdo kohë te cilësimet SandFly.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> zbatohet.</string>
     <string name="dialog_message_screen_overview_promotion">Një pamje e ekranit dërgohet në API-në Gemini të Google për t\'u përshkruar, e cila zgjat disa sekonda. Me AI në pajisje të aktivizuar, ajo përshkruhet në këtë telefon dhe nuk dërgohet.\n\nMe një çelës API falas, Google mund të mbajë atë që merr, ta përdorë për të përmirësuar produktet e tij dhe t\'i bëjë njerëzit ta shqyrtojnë atë. AI gjeneruese është eksperimentale, kështu që do të bëjë gabime. Zbatohet <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="shortcut_title_open_app">Hap aplikacionin</string>
-    <string name="shortcut_open_app">Hapur <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Lëvizni në krye</string>
+    <string name="shortcut_open_app">Hap <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_scroll_to_top">Lëviz në krye</string>
     <string name="shortcut_write_reading_control">Shkruani letrën e një kontrolli leximi</string>
     <string name="title_pref_reading_control_letters">Shkronjat e alfabetit të shkruara me dorë</string>
     <string name="reading_control_letter_none">Asnjë</string>
@@ -1611,12 +1611,12 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> nga <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Tekst bosh</string>
     <string name="handwriting_not_available">Njohja e shkrimit të dorës nuk disponohet në këtë pajisje</string>
-    <string name="shortcut_scroll_to_bottom">Lëvizni në fund</string>
+    <string name="shortcut_scroll_to_bottom">Lëviz në fund</string>
     <string name="shortcut_refresh">Rifresko</string>
-    <string name="shortcut_system_notifications">Hija e njoftimit të sistemit</string>
+    <string name="shortcut_system_notifications">Paneli i njoftimeve të sistemit</string>
     <string name="shortcut_system_quick_settings">Cilësimet e shpejta të sistemit</string>
     <string name="shortcut_lock_screen">Blloko ekranin e pajisjes</string>
-    <string name="shortcut_power_menu">Menuja e energjisë</string>
+    <string name="shortcut_power_menu">Menyja e fikjes</string>
     <string name="shortcut_increase_media_volume">Rrit volumin e medias</string>
     <string name="shortcut_decrease_media_volume">Ul volumin e medias</string>
     <string name="title_clear_selection">Pastro përzgjedhjen</string>

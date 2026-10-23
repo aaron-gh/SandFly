@@ -1338,9 +1338,9 @@
     <string name="title_pref_speech_stream">ລະດັບສຽງ​ຂອງການເວົ້າ</string>
     <string name="summary_selector_speech_stream">ສະຫຼັບລະຫວ່າງການຊ່ວຍເຂົ້າເຖິງ, ມີເດຍ, ສຽງດັງ ແລະປະລິມານການໂທ</string>
     <string name="speech_stream_accessibility">ລະດັບສຽງການຊ່ວຍເຂົ້າເຖິງ</string>
-    <string name="speech_stream_media">ປະລິມານສື່</string>
-    <string name="speech_stream_ring">ລະດັບສຽງຂອງວົງແຫວນ</string>
-    <string name="speech_stream_call">ປະລິມານການໂທ, ຫູຟັງ</string>
+    <string name="speech_stream_media">ລະດັບສຽງມີເດຍ</string>
+    <string name="speech_stream_ring">ລະດັບສຽງເອີ້ນເຂົ້າ</string>
+    <string name="speech_stream_call">ລະດັບສຽງການໂທ, ລຳໂພງຫູ</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title">ອະນຸຍາດໃຫ້<xliff:g id="app" example="Tasker">%1$s</xliff:g>ເວົ້າຜ່ານSandFly?</string>
     <string name="speech_control_ask_text">ມັນສາມາດເວົ້າຂໍ້ຄວາມໃນສຽງ SandFly ຂອງເຈົ້າ. ທ່ານສາມາດປ່ຽນສິ່ງນີ້ໄດ້ໃນການຕັ້ງຄ່າຂັ້ນສູງ.</string>
     <string name="speech_control_allow">ອະນຸຍາດ</string>
-    <string name="speech_control_deny">ບໍ່ອະນຸຍາດໃຫ້</string>
+    <string name="speech_control_deny">ບໍ່ອະນຸຍາດ</string>
     <string name="permission_speak_label">ເວົ້າຜ່ານ SandFly</string>
     <string name="permission_speak_description">ໃຫ້ແອັບຯຮ້ອງຂໍໃຫ້ເວົ້າຂໍ້ຄວາມໃນສຽງ SandFly ຂອງທ່ານ. SandFly ຖາມເຈົ້າກ່ອນທີ່ແອັບຈະເວົ້າໄດ້.</string>
     <string name="permission_braille_display_label">ຂໍໃຫ້ເປັນການສະແດງຕົວອັກສອນນູນສໍາລັບ SandFly</string>
@@ -1480,8 +1480,8 @@
     <string name="quick_settings_adaptive_brightness">ຄວາມສະຫວ່າງແບບປັບຕົວໄດ້</string>
     <string name="quick_settings_media_volume">ລະດັບສຽງມີເດຍ</string>
     <string name="quick_settings_call_volume">ລະດັບສຽງການໂທ</string>
-    <string name="quick_settings_ring_volume">ລະດັບສຽງຂອງວົງແຫວນ</string>
-    <string name="quick_settings_notification_volume">ປະລິມານການແຈ້ງເຕືອນ</string>
+    <string name="quick_settings_ring_volume">ລະດັບສຽງເອີ້ນເຂົ້າ</string>
+    <string name="quick_settings_notification_volume">ລະດັບສຽງການແຈ້ງເຕືອນ</string>
     <string name="quick_settings_alarm_volume">ລະດັບສຽງປຸກ</string>
     <string name="quick_settings_accessibility_volume">ລະດັບສຽງການຊ່ວຍເຂົ້າເຖິງ</string>
     <string name="quick_settings_system_volume">ລະດັບສຽງຂອງລະບົບ</string>
@@ -1495,12 +1495,12 @@
     <string name="quick_settings_screen_timeout">ໝົດເວລາໜ້າຈໍ</string>
     <string name="quick_settings_font_size">ຂະຫນາດຕົວອັກສອນ</string>
     <string name="quick_settings_media">ມີເດຍ</string>
-    <string name="quick_settings_no_media">ບໍ່ມີສື່</string>
+    <string name="quick_settings_no_media">ບໍ່ມີມີເດຍ</string>
     <string name="quick_settings_media_output">ເອົາພຸດມີເດຍ</string>
     <string name="quick_settings_next_alarm">ປຸກຕໍ່ໄປ</string>
-    <string name="quick_settings_no_alarm">ບໍ່ມີສັນຍານເຕືອນ</string>
+    <string name="quick_settings_no_alarm">ບໍ່ມີໂມງປຸກ</string>
     <string name="quick_settings_settings">ການຕັ້ງຄ່າ</string>
-    <string name="quick_settings_power_menu">ເມນູພະລັງງານ</string>
+    <string name="quick_settings_power_menu">ເມນູເປີດປິດ</string>
     <string name="quick_settings_add_system_tile">ເພີ່ມປຸ່ມລະບົບ</string>
     <string name="quick_settings_no_system_tiles">ບໍ່ມີແຜ່ນລະບົບໃຫ້ເພີ່ມ</string>
     <string name="quick_settings_tile_not_found">%1$s ບໍ່ຢູ່ໃນການຕັ້ງຄ່າດ່ວນຂອງລະບົບ</string>
@@ -1541,7 +1541,7 @@
     </plurals>
     <string name="quick_settings_remove">ເອົາອອກ</string>
     <string name="quick_settings_added">ເພີ່ມ %1$s ແລ້ວ</string>
-    <string name="quick_settings_removed">%1$sເອົາອອກ</string>
+    <string name="quick_settings_removed">ເອົາ %1$s ອອກແລ້ວ</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ເປີດ. ຖື 2 ນິ້ວເທິງໜ້າຈໍເປັນເວລາ 5 ວິນາທີເພື່ອປິດ. ເພື່ອຢຸດການສະແດງຂໍ້ຄວາມນີ້, ປິດການຕັ້ງຄ່າ SandFly &gt; ການຕັ້ງຄ່າຂັ້ນສູງ &gt; ສະແດງຄໍາແນະນໍາສໍາລັບການປິດ SandFly.</string>
     <string name="edge_gestures_title">ຂອບ</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ທາງລັດອື່ນເພື່ອເປີດ ຫຼືປິດໂໝດທ່ອງເວັບ</string>
@@ -1613,12 +1613,12 @@
     <string name="handwriting_not_available">ການຮັບຮູ້ການຂຽນດ້ວຍມືບໍ່ສາມາດໃຊ້ໄດ້ໃນອຸປະກອນນີ້</string>
     <string name="shortcut_scroll_to_bottom">ເລື່ອນລົງລຸ່ມສຸດ</string>
     <string name="shortcut_refresh">ໂຫຼດຂໍ້ມູນຄືນໃໝ່</string>
-    <string name="shortcut_system_notifications">ຮົ່ມການແຈ້ງເຕືອນລະບົບ</string>
+    <string name="shortcut_system_notifications">ແຜງແຈ້ງເຕືອນລະບົບ</string>
     <string name="shortcut_system_quick_settings">ການຕັ້ງຄ່າດ່ວນຂອງລະບົບ</string>
     <string name="shortcut_lock_screen">ລັອກໜ້າຈໍອຸປະກອນ</string>
-    <string name="shortcut_power_menu">ເມນູພະລັງງານ</string>
-    <string name="shortcut_increase_media_volume">ເພີ່ມປະລິມານສື່</string>
-    <string name="shortcut_decrease_media_volume">ຫຼຸດປະລິມານສື່</string>
+    <string name="shortcut_power_menu">ເມນູເປີດປິດ</string>
+    <string name="shortcut_increase_media_volume">ເພີ່ມລະດັບສຽງມີເດຍ</string>
+    <string name="shortcut_decrease_media_volume">ຫຼຸດລະດັບສຽງມີເດຍ</string>
     <string name="title_clear_selection">ລຶບການເລືອກ</string>
     <string name="title_pref_brightness">ຄວາມສະຫວ່າງ</string>
     <string name="summary_support_change_brightness">ເພີ່ມ ຫຼື ຫຼຸດຄວາມສະຫວ່າງໜ້າຈໍ, ເຖິງແມ່ນວ່າຈະເຊື່ອງໄວ້ໜ້າຈໍກໍຕາມ</string>
@@ -1741,7 +1741,7 @@
     <string name="image_qna_ask_by_voice">ຖາມດ້ວຍສຽງ</string>
     <string name="image_qna_stop_listening">ຢຸດຟັງ</string>
     <string name="image_qna_type_question">ພິມຄຳຖາມ</string>
-    <string name="shortcut_dictate">ສັ່ງດ້ວຍສຽງ</string>
+    <string name="shortcut_dictate">ພິມດ້ວຍສຽງ</string>
     <string name="title_pref_ai_dictation">ການສັ່ງໃຫ້ຖືກຕ້ອງດ້ວຍ AI</string>
     <string name="dictation_not_corrected">ບໍ່ໄດ້ແກ້ໄຂ. ພິມເປັນທີ່ຮັບຮູ້.</string>
     <string name="dictation_nothing_recognized">ບໍ່ສາມາດຈຳແນກຫຍັງໄດ້</string>

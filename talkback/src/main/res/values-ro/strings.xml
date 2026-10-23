@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Motorul de vorbire nu este disponibil în timp ce utilizați un profil vocal</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, în uz</string>
     <string name="no_voice_profiles">Fără profiluri vocale</string>
-    <string name="shortcut_voice_profiles">Alegeți profilul vocal</string>
+    <string name="shortcut_voice_profiles">Alege profilul vocal</string>
     <string name="shortcut_previous_voice_profile">Profilul vocal anterior</string>
     <string name="shortcut_next_voice_profile">Următorul profil vocal</string>
     <string name="title_pref_voice_profile_in_use">Profil vocal în uz</string>
@@ -1340,7 +1340,7 @@
     <string name="speech_stream_accessibility">Volumul pentru Accesibilitate</string>
     <string name="speech_stream_media">Volumul media</string>
     <string name="speech_stream_ring">Volumul soneriei</string>
-    <string name="speech_stream_call">Volumul apelului, căștile</string>
+    <string name="speech_stream_call">Volumul apelului, difuzorul pentru ureche</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1501,7 +1501,7 @@
     <string name="quick_settings_next_alarm">Următoarea alarmă</string>
     <string name="quick_settings_no_alarm">Fără alarmă</string>
     <string name="quick_settings_settings">Setări</string>
-    <string name="quick_settings_power_menu">Meniul Power</string>
+    <string name="quick_settings_power_menu">Meniul de pornire</string>
     <string name="quick_settings_add_system_tile">Adaugă un panou de sistem</string>
     <string name="quick_settings_no_system_tiles">Nu există piese de sistem de adăugat</string>
     <string name="quick_settings_tile_not_found">%1$s nu se află în setările rapide ale sistemului</string>
@@ -1521,14 +1521,14 @@
     <string name="quick_settings_battery_charging">%1$s, se încarcă</string>
     <string name="quick_settings_battery_full">%1$s, încărcat</string>
     <string name="quick_settings_sound">Sunet</string>
-    <string name="quick_settings_vibrate">Vibrați</string>
+    <string name="quick_settings_vibrate">Vibrații</string>
     <string name="quick_settings_mute">Mut</string>
     <string name="quick_settings_on">Activată</string>
     <string name="quick_settings_off">Dezactivată</string>
     <string name="quick_settings_unavailable">Indisponibil</string>
     <string name="quick_settings_edit">Editează</string>
     <string name="quick_settings_system">Setări rapide ale sistemului</string>
-    <string name="quick_settings_open_settings">Deschideți setările</string>
+    <string name="quick_settings_open_settings">Deschide setările</string>
     <string name="quick_settings_add_control">Adaugă element de control</string>
     <string name="quick_settings_add_tile">Adaugă panoul aplicației</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1543,7 +1543,7 @@
         <item quantity="few">%d alte articole mutate</item>
         <item quantity="other">Alte %d de articole mutate</item>
     </plurals>
-    <string name="quick_settings_remove">Eliminați</string>
+    <string name="quick_settings_remove">Elimină</string>
     <string name="quick_settings_added">%1$s adăugat</string>
     <string name="quick_settings_removed">%1$s eliminat</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly activat. Țineți 2 degete pe ecran timp de 5 secunde pentru a opri. Pentru a nu mai afișa acest mesaj, dezactivați SandFly setări &gt; Setări avansate &gt; Afișați instrucțiuni pentru dezactivarea SandFly.</string>
@@ -1568,9 +1568,9 @@
     <string name="dialog_message_detailed_ai_description">Imaginile selectate sunt trimise la Google API-ul Gemini pentru a fi descrise. Cu IA pe dispozitiv activată, acestea sunt descrise pe acest telefon și nu sunt trimise.\n\nCu o cheie API gratuită, Google poate păstra ceea ce primește, îl poate folosi pentru a-și îmbunătăți produsele și îi poate solicita pe oameni să îl revizuiască. AI generativă este experimentală, așa că va face greșeli. Se aplică <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_detailed_ai_promotion">Descrierile detaliate ale imaginilor sunt alimentate de AI generativ. Imaginile selectate sunt trimise la Google API-ul Gemini pentru a fi descrise. Cu IA pe dispozitiv activată, acestea sunt descrise pe acest telefon și nu sunt trimise.\n\nCu o cheie API gratuită, Google poate păstra ceea ce primește, îl poate folosi pentru a-și îmbunătăți produsele și îi poate solicita pe oameni să îl revizuiască. AI generativă este experimentală, așa că va face greșeli. Puteți dezactiva oricând descrierile detaliate ale imaginilor din setările SandFly.\n\nSe aplică <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_screen_overview_promotion">O captură de ecran a ecranului este trimisă către API-ul Gemini al lui Google pentru a fi descrisă, ceea ce durează câteva secunde. Cu AI pe dispozitiv activat, este descris pe acest telefon și nu este trimis.\n\nCu o cheie API gratuită, Google poate păstra ceea ce primește, îl poate folosi pentru a-și îmbunătăți produsele și îi poate solicita pe oameni să-l examineze. AI generativă este experimentală, așa că va face greșeli. Se aplică <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Deschideți aplicația</string>
+    <string name="shortcut_title_open_app">Deschide aplicația</string>
     <string name="shortcut_open_app">Deschide <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Derulați în sus</string>
+    <string name="shortcut_scroll_to_top">Derulează la început</string>
     <string name="shortcut_write_reading_control">Scrieți litera unui control de citire</string>
     <string name="title_pref_reading_control_letters">Litere alfabetului scris de mână</string>
     <string name="reading_control_letter_none">Fără</string>
@@ -1615,14 +1615,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> din <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Text gol</string>
     <string name="handwriting_not_available">Recunoașterea scrisului de mână nu este disponibilă pe acest dispozitiv</string>
-    <string name="shortcut_scroll_to_bottom">Derulați în jos</string>
-    <string name="shortcut_refresh">Reîmprospătați</string>
-    <string name="shortcut_system_notifications">Umbră de notificare de sistem</string>
+    <string name="shortcut_scroll_to_bottom">Derulează la final</string>
+    <string name="shortcut_refresh">Reîmprospătează</string>
+    <string name="shortcut_system_notifications">Panoul de notificări al sistemului</string>
     <string name="shortcut_system_quick_settings">Setări rapide ale sistemului</string>
     <string name="shortcut_lock_screen">Blocați ecranul dispozitivului</string>
-    <string name="shortcut_power_menu">Meniul Power</string>
-    <string name="shortcut_increase_media_volume">Măriți volumul media</string>
-    <string name="shortcut_decrease_media_volume">Reduceți volumul media</string>
+    <string name="shortcut_power_menu">Meniul de pornire</string>
+    <string name="shortcut_increase_media_volume">Mărește volumul media</string>
+    <string name="shortcut_decrease_media_volume">Redu volumul media</string>
     <string name="title_clear_selection">Ștergeți selecția</string>
     <string name="title_pref_brightness">Luminozitate</string>
     <string name="summary_support_change_brightness">Măriți sau micșorați luminozitatea ecranului, chiar și atunci când ecranul este ascuns</string>

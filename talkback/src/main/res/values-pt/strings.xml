@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Mecanismo de fala indisponível ao usar um perfil de voz</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, em uso</string>
     <string name="no_voice_profiles">Sem perfis de voz</string>
-    <string name="shortcut_voice_profiles">Escolha o perfil de voz</string>
+    <string name="shortcut_voice_profiles">Escolher perfil de voz</string>
     <string name="shortcut_previous_voice_profile">Perfil de voz anterior</string>
     <string name="shortcut_next_voice_profile">Próximo perfil de voz</string>
     <string name="title_pref_voice_profile_in_use">Perfil de voz em uso</string>
@@ -1340,7 +1340,7 @@
     <string name="speech_stream_accessibility">Volume de acessibilidade</string>
     <string name="speech_stream_media">Volume de mídia</string>
     <string name="speech_stream_ring">Volume do toque</string>
-    <string name="speech_stream_call">Volume da chamada, fone de ouvido</string>
+    <string name="speech_stream_call">Volume da chamada, receptor</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title">Permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale através de SandFly?</string>
     <string name="speech_control_ask_text">Ele pode dizer texto na sua voz SandFly. Você pode alterar isso nas configurações avançadas.</string>
     <string name="speech_control_allow">Permitir</string>
-    <string name="speech_control_deny">Não permita</string>
+    <string name="speech_control_deny">Não permitir</string>
     <string name="permission_speak_label">falar pelo SandFly</string>
     <string name="permission_speak_description">Permite que o aplicativo peça para dizer o texto na sua voz SandFly. SandFly pergunta antes que o aplicativo possa falar.</string>
     <string name="permission_braille_display_label">peça para ser um display braille para SandFly</string>
@@ -1500,7 +1500,7 @@
     <string name="quick_settings_next_alarm">Próximo alarme</string>
     <string name="quick_settings_no_alarm">Sem alarme</string>
     <string name="quick_settings_settings">Configurações</string>
-    <string name="quick_settings_power_menu">Menu de energia</string>
+    <string name="quick_settings_power_menu">Menu liga/desliga</string>
     <string name="quick_settings_add_system_tile">Adicionar bloco do sistema</string>
     <string name="quick_settings_no_system_tiles">Nenhum bloco de sistema para adicionar</string>
     <string name="quick_settings_tile_not_found">%1$s não está nas configurações rápidas do sistema</string>
@@ -1520,7 +1520,7 @@
     <string name="quick_settings_sound">Som</string>
     <string name="quick_settings_vibrate">Vibrar</string>
     <string name="quick_settings_mute">Mudo</string>
-    <string name="quick_settings_on">Ativar</string>
+    <string name="quick_settings_on">Ativado</string>
     <string name="quick_settings_off">Desativado</string>
     <string name="quick_settings_unavailable">Indisponível</string>
     <string name="quick_settings_edit">Editar</string>
@@ -1613,10 +1613,10 @@
     <string name="handwriting_not_available">O reconhecimento de escrita não está disponível neste dispositivo</string>
     <string name="shortcut_scroll_to_bottom">Role para baixo</string>
     <string name="shortcut_refresh">Atualizar</string>
-    <string name="shortcut_system_notifications">Sombra de notificação do sistema</string>
+    <string name="shortcut_system_notifications">Aba de notificações do sistema</string>
     <string name="shortcut_system_quick_settings">Configurações rápidas do sistema</string>
     <string name="shortcut_lock_screen">Bloquear a tela do dispositivo</string>
-    <string name="shortcut_power_menu">Menu de energia</string>
+    <string name="shortcut_power_menu">Menu liga/desliga</string>
     <string name="shortcut_increase_media_volume">Aumentar o volume da mídia</string>
     <string name="shortcut_decrease_media_volume">Diminuir o volume da mídia</string>
     <string name="title_clear_selection">Limpar seleção</string>

@@ -1495,10 +1495,10 @@
     <string name="quick_settings_screen_timeout">Timeout dello schermo</string>
     <string name="quick_settings_font_size">Dimensione del carattere</string>
     <string name="quick_settings_media">Media</string>
-    <string name="quick_settings_no_media">Nessun supporto</string>
+    <string name="quick_settings_no_media">Nessun contenuto multimediale</string>
     <string name="quick_settings_media_output">Uscita multimediale</string>
     <string name="quick_settings_next_alarm">Prossima sveglia</string>
-    <string name="quick_settings_no_alarm">Nessun allarme</string>
+    <string name="quick_settings_no_alarm">Nessuna sveglia</string>
     <string name="quick_settings_settings">Impostazioni</string>
     <string name="quick_settings_power_menu">Menù di alimentazione</string>
     <string name="quick_settings_add_system_tile">Aggiungi riquadro di sistema</string>
@@ -1518,9 +1518,9 @@
     <string name="quick_settings_battery_charging">%1$s, in carica</string>
     <string name="quick_settings_battery_full">%1$s, carico</string>
     <string name="quick_settings_sound">Suono</string>
-    <string name="quick_settings_vibrate">Vibrare</string>
+    <string name="quick_settings_vibrate">Vibrazione</string>
     <string name="quick_settings_mute">Muto</string>
-    <string name="quick_settings_on">Attiva</string>
+    <string name="quick_settings_on">Attivato</string>
     <string name="quick_settings_off">Disattivato</string>
     <string name="quick_settings_unavailable">Non disponibile</string>
     <string name="quick_settings_edit">Modifica</string>
@@ -1565,7 +1565,7 @@
     <string name="dialog_message_detailed_ai_promotion">Le descrizioni dettagliate delle immagini sono basate sull\'intelligenza artificiale generativa. Le immagini selezionate vengono inviate all\'API Gemini di Google per essere descritte. Con l\'intelligenza artificiale sul dispositivo attivata, vengono invece descritti su questo telefono e non vengono inviati.\n\nCon una chiave API gratuita, Google può conservare ciò che riceve, usarlo per migliorare i suoi prodotti e chiedere alle persone di recensirlo. L’intelligenza artificiale generativa è sperimentale, quindi commetterà errori. Puoi disattivare le descrizioni dettagliate delle immagini in qualsiasi momento nelle impostazioni SandFly.\n\nSi applica <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_screen_overview_promotion">Uno screenshot dello schermo viene inviato all\'API Gemini di Google per essere descritto, l\'operazione richiede diversi secondi. Con l\'intelligenza artificiale sul dispositivo attivata, viene invece descritto su questo telefono e non viene inviato.\n\nCon una chiave API gratuita, Google può conservare ciò che riceve, usarlo per migliorare i suoi prodotti e chiedere alle persone di recensirlo. L’intelligenza artificiale generativa è sperimentale, quindi commetterà errori. Si applica il <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="shortcut_title_open_app">Apri l\'app</string>
-    <string name="shortcut_open_app">Aperto <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app">Apri <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Scorri verso l\'alto</string>
     <string name="shortcut_write_reading_control">Scrivere la lettera di un controllo di lettura</string>
     <string name="title_pref_reading_control_letters">Lettere dell\'alfabeto scritte a mano</string>
@@ -1613,12 +1613,12 @@
     <string name="handwriting_not_available">Il riconoscimento della grafia non è disponibile su questo dispositivo</string>
     <string name="shortcut_scroll_to_bottom">Scorri fino in fondo</string>
     <string name="shortcut_refresh">Aggiorna</string>
-    <string name="shortcut_system_notifications">Schermata di notifica del sistema</string>
+    <string name="shortcut_system_notifications">Area notifiche di sistema</string>
     <string name="shortcut_system_quick_settings">Impostazioni rapide del sistema</string>
     <string name="shortcut_lock_screen">Blocca lo schermo del dispositivo</string>
     <string name="shortcut_power_menu">Menù di alimentazione</string>
-    <string name="shortcut_increase_media_volume">Aumenta il volume dei contenuti multimediali</string>
-    <string name="shortcut_decrease_media_volume">Diminuire il volume dei contenuti multimediali</string>
+    <string name="shortcut_increase_media_volume">Alza il volume multimediale</string>
+    <string name="shortcut_decrease_media_volume">Abbassa il volume multimediale</string>
     <string name="title_clear_selection">Cancella selezione</string>
     <string name="title_pref_brightness">Luminosità</string>
     <string name="summary_support_change_brightness">Aumenta o diminuisce la luminosità dello schermo, anche quando lo schermo è nascosto</string>

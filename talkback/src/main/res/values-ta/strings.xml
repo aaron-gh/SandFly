@@ -1338,8 +1338,8 @@
     <string name="title_pref_speech_stream">பேச்சு ஒலியளவு</string>
     <string name="summary_selector_speech_stream">அணுகல்தன்மை, மீடியா, ரிங் மற்றும் அழைப்பு தொகுதிகளுக்கு இடையில் மாறவும்</string>
     <string name="speech_stream_accessibility">அணுகல்தன்மைக்கான ஒலியளவு</string>
-    <string name="speech_stream_media">மீடியா தொகுதி</string>
-    <string name="speech_stream_ring">மோதிர அளவு</string>
+    <string name="speech_stream_media">மீடியா ஒலியளவு</string>
+    <string name="speech_stream_ring">ரிங் ஒலியளவு</string>
     <string name="speech_stream_call">அழைப்பு ஒலி, இயர்பீஸ்</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
@@ -1480,8 +1480,8 @@
     <string name="quick_settings_adaptive_brightness">தகவமைப்பு பிரகாசம்</string>
     <string name="quick_settings_media_volume">மீடியா ஒலியளவு</string>
     <string name="quick_settings_call_volume">அழைப்பு ஒலியளவு</string>
-    <string name="quick_settings_ring_volume">மோதிர அளவு</string>
-    <string name="quick_settings_notification_volume">அறிவிப்பு அளவு</string>
+    <string name="quick_settings_ring_volume">ரிங் ஒலியளவு</string>
+    <string name="quick_settings_notification_volume">அறிவிப்பு ஒலியளவு</string>
     <string name="quick_settings_alarm_volume">அலாரம் ஒலியளவு</string>
     <string name="quick_settings_accessibility_volume">அணுகல்தன்மைக்கான ஒலியளவு</string>
     <string name="quick_settings_system_volume">சிஸ்டம் ஆடியோ வால்யூம்</string>
@@ -1492,10 +1492,10 @@
     <string name="quick_settings_color_correction">வண்ண திருத்தம்</string>
     <string name="quick_settings_microphone_access">மைக்ரோஃபோன் அணுகல்</string>
     <string name="quick_settings_camera_access">கேமரா அணுகல்</string>
-    <string name="quick_settings_screen_timeout">திரை நேரம் முடிந்தது</string>
+    <string name="quick_settings_screen_timeout">திரை அணையும் நேரம்</string>
     <string name="quick_settings_font_size">எழுத்துரு அளவு</string>
     <string name="quick_settings_media">மீடியா</string>
-    <string name="quick_settings_no_media">ஊடகம் இல்லை</string>
+    <string name="quick_settings_no_media">மீடியா இல்லை</string>
     <string name="quick_settings_media_output">மீடியா அவுட்புட்</string>
     <string name="quick_settings_next_alarm">அடுத்த அலாரம்</string>
     <string name="quick_settings_no_alarm">அலாரம் இல்லை</string>
@@ -1565,7 +1565,7 @@
     <string name="dialog_message_detailed_ai_promotion">விரிவான பட விளக்கங்கள் உருவாக்கும் AI மூலம் இயக்கப்படுகிறது. தேர்ந்தெடுக்கப்பட்ட படங்கள் விவரிக்கப்பட Google இன் Gemini API க்கு அனுப்பப்படும். சாதனத்தில் AI இயக்கப்பட்டிருந்தால், அதற்குப் பதிலாக அவை இந்த மொபைலில் விவரிக்கப்பட்டு அனுப்பப்படவில்லை.\n\nஇலவச API விசையுடன், Google தான் பெறுவதை வைத்திருக்கலாம், அதன் தயாரிப்புகளை மேம்படுத்த அதைப் பயன்படுத்தலாம் மற்றும் மக்கள் அதை மதிப்பாய்வு செய்யலாம். ஜெனரேட்டிவ் AI சோதனையானது, எனவே அது தவறுகளை செய்யும். SandFly அமைப்புகளில் எப்போது வேண்டுமானாலும் விரிவான பட விளக்கங்களை முடக்கலாம்.\n\nThe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> பொருந்தும்.</string>
     <string name="dialog_message_screen_overview_promotion">திரையின் ஸ்கிரீன்ஷாட் விவரிக்கப்படுவதற்கு Google இன் Gemini API க்கு அனுப்பப்படுகிறது, இதற்கு பல வினாடிகள் ஆகும். சாதனத்தில் AI இயக்கப்பட்டிருந்தால், அதற்குப் பதிலாக இந்த மொபைலில் அது விவரிக்கப்பட்டு அனுப்பப்படவில்லை.\n\nஇலவச API விசையுடன், Google பெறுவதை வைத்துக்கொள்ளலாம், அதன் தயாரிப்புகளை மேம்படுத்த அதைப் பயன்படுத்தலாம், மேலும் மக்கள் அதை மதிப்பாய்வு செய்யலாம். ஜெனரேட்டிவ் AI சோதனையானது, எனவே அது தவறுகளை செய்யும். <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> பொருந்தும்.</string>
     <string name="shortcut_title_open_app">பயன்பாட்டைத் திறக்கவும்</string>
-    <string name="shortcut_open_app">திற <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ஐத் திற</string>
     <string name="shortcut_scroll_to_top">மேலே உருட்டவும்</string>
     <string name="shortcut_write_reading_control">வாசிப்பு கட்டுப்பாட்டின் கடிதத்தை எழுதுங்கள்</string>
     <string name="title_pref_reading_control_letters">கையால் எழுதப்பட்ட எழுத்துக்கள்</string>
@@ -1613,12 +1613,12 @@
     <string name="handwriting_not_available">இந்தச் சாதனத்தில் கையெழுத்து அங்கீகாரம் இல்லை</string>
     <string name="shortcut_scroll_to_bottom">கீழே உருட்டவும்</string>
     <string name="shortcut_refresh">புதுப்பிக்கவும்</string>
-    <string name="shortcut_system_notifications">கணினி அறிவிப்பு நிழல்</string>
+    <string name="shortcut_system_notifications">கணினி அறிவிப்புப் பேனல்</string>
     <string name="shortcut_system_quick_settings">கணினி விரைவான அமைப்புகள்</string>
     <string name="shortcut_lock_screen">சாதனத் திரையைப் பூட்டு</string>
     <string name="shortcut_power_menu">பவர் மெனு</string>
     <string name="shortcut_increase_media_volume">மீடியா ஒலியளவை அதிகரிக்கவும்</string>
-    <string name="shortcut_decrease_media_volume">ஊடக அளவைக் குறைக்கவும்</string>
+    <string name="shortcut_decrease_media_volume">மீடியா ஒலியளவைக் குறைக்கவும்</string>
     <string name="title_clear_selection">தெளிவான தேர்வு</string>
     <string name="title_pref_brightness">பிரகாசம்</string>
     <string name="summary_support_change_brightness">திரை மறைந்திருந்தாலும் கூட, திரையின் பிரகாசத்தை அதிகரிக்கவும் அல்லது குறைக்கவும்</string>
@@ -1741,7 +1741,7 @@
     <string name="image_qna_ask_by_voice">குரல் மூலம் கேளுங்கள்</string>
     <string name="image_qna_stop_listening">கேட்பதை நிறுத்து</string>
     <string name="image_qna_type_question">கேள்வியைத் தட்டச்சு செய்யவும்</string>
-    <string name="shortcut_dictate">ஒவ்வொரு வார்த்தையாகச் சொல்</string>
+    <string name="shortcut_dictate">சொல்லி எழுதவும்</string>
     <string name="title_pref_ai_dictation">AI உடன் சரியான டிக்டேஷன்</string>
     <string name="dictation_not_corrected">சரி செய்யப்படவில்லை. அங்கீகரிக்கப்பட்டதாக தட்டச்சு செய்யப்பட்டுள்ளது.</string>
     <string name="dictation_nothing_recognized">எதுவும் கண்டறியப்படவில்லை</string>

@@ -1338,9 +1338,9 @@
     <string name="title_pref_speech_stream">កម្រិតសំឡេងការនិយាយ</string>
     <string name="summary_selector_speech_stream">ប្តូររវាងលទ្ធភាពប្រើប្រាស់ ប្រព័ន្ធផ្សព្វផ្សាយ សំឡេងរោទ៍ និងកម្រិតសំឡេងហៅទូរសព្ទ</string>
     <string name="speech_stream_accessibility">កម្រិតសំឡេងភាពងាយស្រួល</string>
-    <string name="speech_stream_media">បរិមាណប្រព័ន្ធផ្សព្វផ្សាយ</string>
+    <string name="speech_stream_media">កម្រិតសំឡេងមេឌៀ</string>
     <string name="speech_stream_ring">កម្រិតសំឡេងរោទ៍</string>
-    <string name="speech_stream_call">កម្រិតសំឡេងហៅ, កាសស្តាប់ត្រចៀក</string>
+    <string name="speech_stream_call">កម្រិតសំឡេងហៅ, ឧបករណ៍បំពងសំឡេងត្រចៀក</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1495,7 +1495,7 @@
     <string name="quick_settings_screen_timeout">អស់ពេលអេក្រង់</string>
     <string name="quick_settings_font_size">ទំហំពុម្ពអក្សរ</string>
     <string name="quick_settings_media">មេឌៀ</string>
-    <string name="quick_settings_no_media">គ្មានប្រព័ន្ធផ្សព្វផ្សាយទេ</string>
+    <string name="quick_settings_no_media">គ្មានមេឌៀ</string>
     <string name="quick_settings_media_output">លទ្ធផលមេឌៀ</string>
     <string name="quick_settings_next_alarm">ម៉ោងរោទ៍បន្ទាប់</string>
     <string name="quick_settings_no_alarm">គ្មានសំឡេងរោទិ៍</string>
@@ -1525,7 +1525,7 @@
     <string name="quick_settings_unavailable">មិនអាចប្រើបាន</string>
     <string name="quick_settings_edit">កែសម្រួល</string>
     <string name="quick_settings_system">ការកំណត់រហ័សរបស់ប្រព័ន្ធ</string>
-    <string name="quick_settings_open_settings">Open settings</string>
+    <string name="quick_settings_open_settings">បើកការកំណត់</string>
     <string name="quick_settings_add_control">បន្ថែមការគ្រប់គ្រង</string>
     <string name="quick_settings_add_tile">បន្ថែមផ្ទាំងកម្មវិធី</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1541,7 +1541,7 @@
     </plurals>
     <string name="quick_settings_remove">ដកចេញ</string>
     <string name="quick_settings_added">បានបន្ថែម %1$s</string>
-    <string name="quick_settings_removed">%1$s ដកចេញ</string>
+    <string name="quick_settings_removed">បានដក %1$s ចេញ</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly បើក។ សង្កត់ម្រាមដៃ 2 នៅលើអេក្រង់រយៈពេល 5 វិនាទីដើម្បីបិទ។ ដើម្បីបញ្ឈប់ការបង្ហាញសារនេះ សូមបិទ SandFly ការកំណត់ &gt; ការកំណត់កម្រិតខ្ពស់ &gt; បង្ហាញការណែនាំសម្រាប់ការបិទ SandFly។</string>
     <string name="edge_gestures_title">គែម</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ផ្លូវកាត់មួយទៀតដើម្បីបើក ឬបិទមុខងាររុករក</string>
@@ -1613,11 +1613,11 @@
     <string name="handwriting_not_available">ការទទួលស្គាល់ការសរសេរដោយដៃមិនមាននៅលើឧបករណ៍នេះទេ</string>
     <string name="shortcut_scroll_to_bottom">រំកិលទៅបាត</string>
     <string name="shortcut_refresh">ធ្វើឱ្យស្រស់</string>
-    <string name="shortcut_system_notifications">ម្លប់ជូនដំណឹងប្រព័ន្ធ</string>
+    <string name="shortcut_system_notifications">ផ្ទាំងជូនដំណឹងរបស់ប្រព័ន្ធ</string>
     <string name="shortcut_system_quick_settings">ការកំណត់រហ័សរបស់ប្រព័ន្ធ</string>
     <string name="shortcut_lock_screen">ចាក់សោអេក្រង់ឧបករណ៍</string>
     <string name="shortcut_power_menu">ម៉ឺនុយថាមពល</string>
-    <string name="shortcut_increase_media_volume">បង្កើនបរិមាណប្រព័ន្ធផ្សព្វផ្សាយ</string>
+    <string name="shortcut_increase_media_volume">បង្កើនកម្រិតសំឡេងមេឌៀ</string>
     <string name="shortcut_decrease_media_volume">បន្ថយកម្រិតសំឡេងមេឌៀ</string>
     <string name="title_clear_selection">ជម្រះការជ្រើសរើស</string>
     <string name="title_pref_brightness">ពន្លឺ</string>

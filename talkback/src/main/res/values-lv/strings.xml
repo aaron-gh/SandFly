@@ -1311,7 +1311,7 @@
     <string name="speech_engine_unavailable_with_profile">Balss profila izmantošanas laikā runas programma nav pieejama</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, tiek lietots</string>
     <string name="no_voice_profiles">Nav balss profilu</string>
-    <string name="shortcut_voice_profiles">Izvēlieties balss profilu</string>
+    <string name="shortcut_voice_profiles">Izvēlēties balss profilu</string>
     <string name="shortcut_previous_voice_profile">Iepriekšējais balss profils</string>
     <string name="shortcut_next_voice_profile">Nākamais balss profils</string>
     <string name="title_pref_voice_profile_in_use">Tiek izmantots balss profils</string>
@@ -1339,7 +1339,7 @@
     <string name="title_pref_speech_stream">Runas skaļums</string>
     <string name="summary_selector_speech_stream">Pārslēdzieties starp pieejamības, multivides, zvana un zvanu skaļumiem</string>
     <string name="speech_stream_accessibility">Pieejamības paziņojumu skaļums</string>
-    <string name="speech_stream_media">Multivides apjoms</string>
+    <string name="speech_stream_media">Multivides skaļums</string>
     <string name="speech_stream_ring">Zvana skaļums</string>
     <string name="speech_stream_call">Zvana skaļums, klausule</string>
     <string-array name="pref_speech_stream_entries">
@@ -1396,7 +1396,7 @@
     <string name="speech_control_ask_title">Vai atļaut <xliff:g id="app" example="Tasker">%1$s</xliff:g> runāt caur SandFly?</string>
     <string name="speech_control_ask_text">Tas var pateikt tekstu jūsu SandFly balsī. To var mainīt sadaļā Papildu iestatījumi.</string>
     <string name="speech_control_allow">Atļaut</string>
-    <string name="speech_control_deny">Neļauj</string>
+    <string name="speech_control_deny">Neatļaut</string>
     <string name="permission_speak_label">runāt caur SandFly</string>
     <string name="permission_speak_description">Ļauj lietotnei lūgt pateikt tekstu jūsu SandFly balsī. SandFly jautā, pirms lietotne var runāt.</string>
     <string name="permission_braille_display_label">lūgt Braila displeju SandFly</string>
@@ -1483,7 +1483,7 @@
     <string name="quick_settings_media_volume">Multivides skaļums</string>
     <string name="quick_settings_call_volume">Zvana skaļums</string>
     <string name="quick_settings_ring_volume">Zvana skaļums</string>
-    <string name="quick_settings_notification_volume">Paziņojumu apjoms</string>
+    <string name="quick_settings_notification_volume">Paziņojumu skaļums</string>
     <string name="quick_settings_alarm_volume">Modinātāja skaļums</string>
     <string name="quick_settings_accessibility_volume">Pieejamības paziņojumu skaļums</string>
     <string name="quick_settings_system_volume">Sistēmas audio skaļums</string>
@@ -1522,14 +1522,14 @@
     <string name="quick_settings_battery_charging">%1$s, notiek uzlāde</string>
     <string name="quick_settings_battery_full">%1$s, uzlādēts</string>
     <string name="quick_settings_sound">Skaņa</string>
-    <string name="quick_settings_vibrate">Vibrēt</string>
+    <string name="quick_settings_vibrate">Vibrācija</string>
     <string name="quick_settings_mute">Izslēgt skaņu</string>
-    <string name="quick_settings_on">Ieslēgt</string>
+    <string name="quick_settings_on">Ieslēgts</string>
     <string name="quick_settings_off">Izslēgts</string>
     <string name="quick_settings_unavailable">Nav pieejams</string>
     <string name="quick_settings_edit">Rediģēt</string>
     <string name="quick_settings_system">Sistēmas ātrie iestatījumi</string>
-    <string name="quick_settings_open_settings">Atveriet iestatījumus</string>
+    <string name="quick_settings_open_settings">Atvērt iestatījumus</string>
     <string name="quick_settings_add_control">Pievienot vadīklu</string>
     <string name="quick_settings_add_tile">Pievienojiet lietotnes elementu</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1569,9 +1569,9 @@
     <string name="dialog_message_detailed_ai_description">Atlasītie attēli tiek nosūtīti uz Google Gemini API, lai tos aprakstītu. Ja ierīcē ir ieslēgts AI, tie tiek aprakstīti šajā tālrunī un netiek sūtīti.\n\nAr bezmaksas API atslēgu Google var paturēt saņemto informāciju, izmantot to savu produktu uzlabošanai un likt cilvēkiem to pārskatīt. Ģeneratīvais AI ir eksperimentāls, tāpēc tas pieļaus kļūdas. Piemēro <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_detailed_ai_promotion">Detalizētus attēlu aprakstus nodrošina ģeneratīvais AI. Atlasītie attēli tiek nosūtīti uz Google Gemini API, lai tos aprakstītu. Ja ierīcē ir ieslēgts AI, tie tiek aprakstīti šajā tālrunī un netiek sūtīti.\n\nAr bezmaksas API atslēgu Google var paturēt saņemto informāciju, izmantot to savu produktu uzlabošanai un likt cilvēkiem to pārskatīt. Ģeneratīvais AI ir eksperimentāls, tāpēc tas pieļaus kļūdas. Detalizētus attēlu aprakstus jebkurā laikā varat izslēgt SandFly iestatījumos.\n\nIr spēkā <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_screen_overview_promotion">Ekrāna ekrānuzņēmums tiek nosūtīts uz Google API Gemini, lai to aprakstītu. Tas aizņem vairākas sekundes. Ja ierīcē ir ieslēgts mākslīgais intelekts, tas tiek aprakstīts šajā tālrunī un netiek nosūtīts.\n\nAr bezmaksas API atslēgu Google var paturēt saņemto informāciju, izmantot to savu produktu uzlabošanai un likt cilvēkiem to pārskatīt. Ģeneratīvais AI ir eksperimentāls, tāpēc tas pieļaus kļūdas. Piemēro <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Atveriet lietotni</string>
+    <string name="shortcut_title_open_app">Atvērt lietotni</string>
     <string name="shortcut_open_app">Atvērt <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Ritiniet uz augšu</string>
+    <string name="shortcut_scroll_to_top">Ritināt uz sākumu</string>
     <string name="shortcut_write_reading_control">Uzrakstiet lasīšanas vadīklas burtu</string>
     <string name="title_pref_reading_control_letters">Ar roku rakstīti alfabēta burti</string>
     <string name="reading_control_letter_none">Nav</string>
@@ -1616,14 +1616,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> no <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Tukšs teksts</string>
     <string name="handwriting_not_available">Rokraksta atpazīšana šajā ierīcē nav pieejama</string>
-    <string name="shortcut_scroll_to_bottom">Ritiniet uz leju</string>
+    <string name="shortcut_scroll_to_bottom">Ritināt uz beigām</string>
     <string name="shortcut_refresh">Atsvaidzināt</string>
     <string name="shortcut_system_notifications">Sistēmas paziņojumu panelis</string>
     <string name="shortcut_system_quick_settings">Sistēmas ātrie iestatījumi</string>
     <string name="shortcut_lock_screen">Bloķējiet ierīces ekrānu</string>
     <string name="shortcut_power_menu">Barošanas izvēlne</string>
-    <string name="shortcut_increase_media_volume">Palieliniet multivides skaļumu</string>
-    <string name="shortcut_decrease_media_volume">Samaziniet multivides skaļumu</string>
+    <string name="shortcut_increase_media_volume">Palielināt multivides skaļumu</string>
+    <string name="shortcut_decrease_media_volume">Samazināt multivides skaļumu</string>
     <string name="title_clear_selection">Notīrīt atlasi</string>
     <string name="title_pref_brightness">Spilgtums</string>
     <string name="summary_support_change_brightness">Palieliniet vai samaziniet ekrāna spilgtumu, pat ja ekrāns ir paslēpts</string>

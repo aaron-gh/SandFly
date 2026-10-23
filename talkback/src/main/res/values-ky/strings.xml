@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Үн профилин колдонууда кеп кыймылдаткычы жеткиликсиз</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, колдонууда</string>
     <string name="no_voice_profiles">Үн профилдери жок</string>
-    <string name="shortcut_voice_profiles">Үн профилин тандаңыз</string>
+    <string name="shortcut_voice_profiles">Үн профилин тандоо</string>
     <string name="shortcut_previous_voice_profile">Мурунку үн профили</string>
     <string name="shortcut_next_voice_profile">Кийинки үн профили</string>
     <string name="title_pref_voice_profile_in_use">Үн профили колдонулууда</string>
@@ -1338,9 +1338,9 @@
     <string name="title_pref_speech_stream">Кептин катуулугу</string>
     <string name="summary_selector_speech_stream">Атайын мүмкүнчүлүктөр, медиа, шыңгыроо жана чалуу көлөмүнүн ортосунда которуштуруу</string>
     <string name="speech_stream_accessibility">Атайын мүмкүнчүлүктөрдүн үнүнүн катуулугу</string>
-    <string name="speech_stream_media">Медиа көлөмү</string>
-    <string name="speech_stream_ring">Шыңгырдын көлөмү</string>
-    <string name="speech_stream_call">Чалуу үнүнүн көлөмү, наушник</string>
+    <string name="speech_stream_media">Медианын үнү</string>
+    <string name="speech_stream_ring">Шыңгырдын үнү</string>
+    <string name="speech_stream_call">Чалуунун үнү, кулак динамиги</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> SandFly аркылуу сүйлөөгө уруксат бересизби?</string>
     <string name="speech_control_ask_text">Ал текстти SandFly үнүңүз менен айта алат. Муну Өркүндөтүлгөн жөндөөлөрдөн өзгөртө аласыз.</string>
     <string name="speech_control_allow">Уруксат берүү</string>
-    <string name="speech_control_deny">Уруксат бербе</string>
+    <string name="speech_control_deny">Уруксат бербөө</string>
     <string name="permission_speak_label">SandFly аркылуу сүйлөө</string>
     <string name="permission_speak_description">Колдонмого текстти SandFly үнүңүз менен айтууга уруксат берет. SandFly колдонмо сүйлөй электе сизден сурайт.</string>
     <string name="permission_braille_display_label">SandFly үчүн брайл дисплейи болууну сурануу</string>
@@ -1480,11 +1480,11 @@
     <string name="quick_settings_adaptive_brightness">Адаптивдүү жарыктык</string>
     <string name="quick_settings_media_volume">Медианын үнү</string>
     <string name="quick_settings_call_volume">Чалуунун үнү</string>
-    <string name="quick_settings_ring_volume">Шыңгырдын көлөмү</string>
-    <string name="quick_settings_notification_volume">Эскертме көлөмү</string>
+    <string name="quick_settings_ring_volume">Шыңгырдын үнү</string>
+    <string name="quick_settings_notification_volume">Эскертменин үнү</string>
     <string name="quick_settings_alarm_volume">Ойготкучтун үнү</string>
     <string name="quick_settings_accessibility_volume">Атайын мүмкүнчүлүктөрдүн үнүнүн катуулугу</string>
-    <string name="quick_settings_system_volume">Системанын аудио көлөмү</string>
+    <string name="quick_settings_system_volume">Системанын үнү</string>
     <string name="quick_settings_data_saver">Трафикти үнөмдөө</string>
     <string name="quick_settings_night_light">Түнкү жарык</string>
     <string name="quick_settings_extra_dim">Кошумча күңүрт</string>
@@ -1492,13 +1492,13 @@
     <string name="quick_settings_color_correction">Түстү оңдоо</string>
     <string name="quick_settings_microphone_access">Микрофонду колдонуу мүмкүнчүлүгү</string>
     <string name="quick_settings_camera_access">Камераны колдонуу мүмкүнчүлүгү</string>
-    <string name="quick_settings_screen_timeout">Экранды күтүү</string>
+    <string name="quick_settings_screen_timeout">Экрандын өчүү убактысы</string>
     <string name="quick_settings_font_size">Арип өлчөмү</string>
     <string name="quick_settings_media">Медиа</string>
-    <string name="quick_settings_no_media">ЖМК жок</string>
+    <string name="quick_settings_no_media">Медиа жок</string>
     <string name="quick_settings_media_output">Медиа чыгаруу</string>
     <string name="quick_settings_next_alarm">Кийинки ойготкуч</string>
-    <string name="quick_settings_no_alarm">Сигнал жок</string>
+    <string name="quick_settings_no_alarm">Ойготкуч жок</string>
     <string name="quick_settings_settings">Параметрлер</string>
     <string name="quick_settings_power_menu">Кубат менюсу</string>
     <string name="quick_settings_add_system_tile">Системалык плитканы кошуу</string>
@@ -1525,7 +1525,7 @@
     <string name="quick_settings_unavailable">Жеткиликсиз</string>
     <string name="quick_settings_edit">Түзөтүү</string>
     <string name="quick_settings_system">Системанын тез орнотуулары</string>
-    <string name="quick_settings_open_settings">Жөндөөлөрдү ачыңыз</string>
+    <string name="quick_settings_open_settings">Жөндөөлөрдү ачуу</string>
     <string name="quick_settings_add_control">Башкаруу кошуу</string>
     <string name="quick_settings_add_tile">Колдонмонун мозаикасын кошуу</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1566,7 +1566,7 @@
     <string name="dialog_message_screen_overview_promotion">Экрандын скриншоту сүрөттөлүш үчүн Googleнын Gemini API\'сине жөнөтүлөт, ал бир нече секундду талап кылат. Түзмөктөгү AI күйгүзүлгөндө, анын ордуна бул телефондо сүрөттөлөт жана жөнөтүлбөйт.\n\nАкысыз API ачкычы менен Google алганын сактап, өнүмдөрүн жакшыртуу үчүн колдонуп, адамдар аны карап чыгышы мүмкүн. Генеративдик AI эксперименталдык, ошондуктан ката кетирет. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> колдонулат.</string>
     <string name="shortcut_title_open_app">Колдонмону ачуу</string>
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ачуу</string>
-    <string name="shortcut_scroll_to_top">Үстүнө сыдырыңыз</string>
+    <string name="shortcut_scroll_to_top">Өйдө сыдыруу</string>
     <string name="shortcut_write_reading_control">Окууну башкаруунун тамгасын жазыңыз</string>
     <string name="title_pref_reading_control_letters">Кол жазма алфавит тамгалары</string>
     <string name="reading_control_letter_none">Жок</string>
@@ -1611,14 +1611,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> ичинен <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Бош текст</string>
     <string name="handwriting_not_available">Колжазманы таануу бул түзмөктө жеткиликтүү эмес</string>
-    <string name="shortcut_scroll_to_bottom">Төмөнгө сыдырыңыз</string>
+    <string name="shortcut_scroll_to_bottom">Ылдыйга сыдыруу</string>
     <string name="shortcut_refresh">Жаңылоо</string>
-    <string name="shortcut_system_notifications">Системанын эскертме көлөкөсү</string>
+    <string name="shortcut_system_notifications">Системанын эскертмелер панели</string>
     <string name="shortcut_system_quick_settings">Системанын тез орнотуулары</string>
     <string name="shortcut_lock_screen">Түзмөктүн экранын кулпулоо</string>
     <string name="shortcut_power_menu">Кубат менюсу</string>
     <string name="shortcut_increase_media_volume">Медиа үнүн жогорулатуу</string>
-    <string name="shortcut_decrease_media_volume">Медиа үнүн азайтыңыз</string>
+    <string name="shortcut_decrease_media_volume">Медиа үнүн азайтуу</string>
     <string name="title_clear_selection">Тандоону тазалоо</string>
     <string name="title_pref_brightness">Жарыктык</string>
     <string name="summary_support_change_brightness">Экран жашырылган учурда да экрандын жарыктыгын көбөйтүңүз же азайтыңыз</string>

@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Система мовлення недоступна під час використання голосового профілю</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, використовується</string>
     <string name="no_voice_profiles">Немає голосових профілів</string>
-    <string name="shortcut_voice_profiles">Виберіть голосовий профіль</string>
+    <string name="shortcut_voice_profiles">Вибрати голосовий профіль</string>
     <string name="shortcut_previous_voice_profile">Попередній голосовий профіль</string>
     <string name="shortcut_next_voice_profile">Наступний голосовий профіль</string>
     <string name="title_pref_voice_profile_in_use">Використовується голосовий профіль</string>
@@ -1340,7 +1340,7 @@
     <string name="speech_stream_accessibility">Спеціальні можливості: гучність</string>
     <string name="speech_stream_media">Гучність медіа</string>
     <string name="speech_stream_ring">Гучність дзвінка</string>
-    <string name="speech_stream_call">Гучність дзвінка, динамік</string>
+    <string name="speech_stream_call">Гучність розмови, розмовний динамік</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1500,7 +1500,7 @@
     <string name="quick_settings_no_media">Немає медіа</string>
     <string name="quick_settings_media_output">Вихід мультимедіа</string>
     <string name="quick_settings_next_alarm">Наступний будильник</string>
-    <string name="quick_settings_no_alarm">Немає сигналізації</string>
+    <string name="quick_settings_no_alarm">Немає будильника</string>
     <string name="quick_settings_settings">Налаштування</string>
     <string name="quick_settings_power_menu">Меню живлення</string>
     <string name="quick_settings_add_system_tile">Додати плитку системи</string>
@@ -1524,14 +1524,14 @@
     <string name="quick_settings_battery_charging">%1$s, зарядка</string>
     <string name="quick_settings_battery_full">%1$s, заряджено</string>
     <string name="quick_settings_sound">Звук</string>
-    <string name="quick_settings_vibrate">Вібрувати</string>
+    <string name="quick_settings_vibrate">Вібрація</string>
     <string name="quick_settings_mute">Вимкнути звук</string>
-    <string name="quick_settings_on">Увімкнути</string>
+    <string name="quick_settings_on">Увімкнено</string>
     <string name="quick_settings_off">Вимкнено</string>
     <string name="quick_settings_unavailable">Недоступний</string>
     <string name="quick_settings_edit">Редагувати</string>
     <string name="quick_settings_system">Швидкі налаштування системи</string>
-    <string name="quick_settings_open_settings">Відкрийте налаштування</string>
+    <string name="quick_settings_open_settings">Відкрити налаштування</string>
     <string name="quick_settings_add_control">Додати елемент керування</string>
     <string name="quick_settings_add_tile">Додати плитку програми</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1572,9 +1572,9 @@
     <string name="dialog_message_detailed_ai_description">Вибрані зображення надсилаються до API Gemini Google для опису. Якщо на пристрої ввімкнено штучний інтелект, вони описуються на цьому телефоні й не надсилаються.\n\nЗ безкоштовним ключем API Google може зберігати те, що отримує, використовувати для покращення своїх продуктів і спонукати людей переглядати його. Генеративний ШІ є експериментальним, тому він допускатиме помилки. Застосовується <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_detailed_ai_promotion">Детальні описи зображень створені за допомогою генеративного штучного інтелекту. Вибрані зображення надсилаються до API Gemini Google для опису. Якщо на пристрої ввімкнено штучний інтелект, вони описуються на цьому телефоні й не надсилаються.\n\nЗ безкоштовним ключем API Google може зберігати те, що отримує, використовувати для покращення своїх продуктів і спонукати людей переглядати його. Генеративний ШІ є експериментальним, тому він допускатиме помилки. Ви можете будь-коли вимкнути детальні описи зображень у налаштуваннях SandFly.\n\nЗастосовується <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_screen_overview_promotion">Знімок екрана надсилається до API Gemini Google для опису, що займає кілька секунд. Якщо на пристрої ввімкнено штучний інтелект, він описується на цьому телефоні й не надсилається.\n\nЗ безкоштовним ключем API Google може зберігати те, що отримує, використовувати для покращення своїх продуктів і спонукати людей переглядати його. Генеративний ШІ є експериментальним, тому він допускатиме помилки. Застосовується <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Відкрийте програму</string>
+    <string name="shortcut_title_open_app">Відкрити програму</string>
     <string name="shortcut_open_app">Відкрити <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Прокрутіть до верху</string>
+    <string name="shortcut_scroll_to_top">Прокрутити вгору</string>
     <string name="shortcut_write_reading_control">Напишіть букву контролю читання</string>
     <string name="title_pref_reading_control_letters">Рукописні букви алфавіту</string>
     <string name="reading_control_letter_none">Немає</string>
@@ -1619,7 +1619,7 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> з <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Порожній текст</string>
     <string name="handwriting_not_available">Розпізнавання рукописного тексту недоступне на цьому пристрої</string>
-    <string name="shortcut_scroll_to_bottom">Прокрутіть вниз</string>
+    <string name="shortcut_scroll_to_bottom">Прокрутити вниз</string>
     <string name="shortcut_refresh">Оновити</string>
     <string name="shortcut_system_notifications">Панель сповіщень системи</string>
     <string name="shortcut_system_quick_settings">Швидкі налаштування системи</string>

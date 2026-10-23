@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">მეტყველების მექანიზმი მიუწვდომელია ხმოვანი პროფილის გამოყენებისას</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, გამოიყენება</string>
     <string name="no_voice_profiles">ხმოვანი პროფილები არ არის</string>
-    <string name="shortcut_voice_profiles">აირჩიეთ ხმოვანი პროფილი</string>
+    <string name="shortcut_voice_profiles">ხმოვანი პროფილის არჩევა</string>
     <string name="shortcut_previous_voice_profile">წინა ხმის პროფილი</string>
     <string name="shortcut_next_voice_profile">შემდეგი ხმის პროფილი</string>
     <string name="title_pref_voice_profile_in_use">ხმოვანი პროფილი გამოიყენება</string>
@@ -1338,9 +1338,9 @@
     <string name="title_pref_speech_stream">წარმოთქმის ხმის დონე</string>
     <string name="summary_selector_speech_stream">გადართეთ ხელმისაწვდომობის, მედიის, ზარის და ზარის ხმებს შორის</string>
     <string name="speech_stream_accessibility">მისაწვდომობის ხმის სიმძლავრე</string>
-    <string name="speech_stream_media">მედიის მოცულობა</string>
-    <string name="speech_stream_ring">ბეჭდის მოცულობა</string>
-    <string name="speech_stream_call">ზარის ხმა, ყურსასმენი</string>
+    <string name="speech_stream_media">მედიის ხმა</string>
+    <string name="speech_stream_ring">ზარის ხმა</string>
+    <string name="speech_stream_call">ზარის ხმა, საყურე დინამიკი</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1480,11 +1480,11 @@
     <string name="quick_settings_adaptive_brightness">ადაპტური სიკაშკაშე</string>
     <string name="quick_settings_media_volume">მედიის ხმა</string>
     <string name="quick_settings_call_volume">ზარის ხმა</string>
-    <string name="quick_settings_ring_volume">ბეჭდის მოცულობა</string>
-    <string name="quick_settings_notification_volume">შეტყობინებების მოცულობა</string>
+    <string name="quick_settings_ring_volume">ზარის ხმა</string>
+    <string name="quick_settings_notification_volume">შეტყობინებების ხმა</string>
     <string name="quick_settings_alarm_volume">მაღვიძარას ხმა</string>
     <string name="quick_settings_accessibility_volume">მისაწვდომობის ხმის სიმძლავრე</string>
-    <string name="quick_settings_system_volume">სისტემის აუდიო მოცულობა</string>
+    <string name="quick_settings_system_volume">სისტემის ხმა</string>
     <string name="quick_settings_data_saver">მონაცემთა დამზოგავი</string>
     <string name="quick_settings_night_light">ღამის სინათლე</string>
     <string name="quick_settings_extra_dim">დამატებითი დაბნელება</string>
@@ -1492,13 +1492,13 @@
     <string name="quick_settings_color_correction">ფერის კორექცია</string>
     <string name="quick_settings_microphone_access">მიკროფონის წვდომა</string>
     <string name="quick_settings_camera_access">კამერაზე წვდომა</string>
-    <string name="quick_settings_screen_timeout">ეკრანის დრო ამოიწურა</string>
+    <string name="quick_settings_screen_timeout">ეკრანის დროის ლიმიტი</string>
     <string name="quick_settings_font_size">შრიფტის ზომა</string>
     <string name="quick_settings_media">მედია</string>
-    <string name="quick_settings_no_media">არანაირი მედია</string>
+    <string name="quick_settings_no_media">მედია არ არის</string>
     <string name="quick_settings_media_output">მედია გამომავალი</string>
     <string name="quick_settings_next_alarm">შემდეგი მაღვიძარა</string>
-    <string name="quick_settings_no_alarm">განგაში არ არის</string>
+    <string name="quick_settings_no_alarm">მაღვიძარა არ არის</string>
     <string name="quick_settings_settings">პარამეტრები</string>
     <string name="quick_settings_power_menu">დენის მენიუ</string>
     <string name="quick_settings_add_system_tile">სისტემის მოზაიკის დამატება</string>
@@ -1525,7 +1525,7 @@
     <string name="quick_settings_unavailable">მიუწვდომელია</string>
     <string name="quick_settings_edit">რედაქტირება</string>
     <string name="quick_settings_system">სისტემის სწრაფი პარამეტრები</string>
-    <string name="quick_settings_open_settings">გახსენით პარამეტრები</string>
+    <string name="quick_settings_open_settings">პარამეტრების გახსნა</string>
     <string name="quick_settings_add_control">მართვის ელემენტის დამატება</string>
     <string name="quick_settings_add_tile">აპის მოზაიკის დამატება</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1564,9 +1564,9 @@
     <string name="dialog_message_detailed_ai_description">არჩეული სურათები იგზავნება Google-ის Gemini API-ზე, რათა აღწეროთ. როდესაც მოწყობილობაზე AI ჩართულია, ისინი აღწერენ ამ ტელეფონზე და არ იგზავნება.\n\nუფასო API გასაღებით, Google შეუძლია შეინახოს ის, რასაც იღებს, გამოიყენოს ის თავისი პროდუქტების გასაუმჯობესებლად და ხალხის მიერ გადახედოს მას. გენერაციული AI ექსპერიმენტულია, ამიტომ შეცდომებს დაუშვებს. მოქმედებს <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_detailed_ai_promotion">დეტალური სურათების აღწერილობები უზრუნველყოფილია გენერაციული AI-ით. არჩეული სურათები იგზავნება Google-ის Gemini API-ზე, რათა აღწეროთ. როდესაც მოწყობილობაზე AI ჩართულია, ისინი აღწერენ ამ ტელეფონზე და არ იგზავნება.\n\nუფასო API გასაღებით, Google შეუძლია შეინახოს ის, რასაც იღებს, გამოიყენოს ის თავისი პროდუქტების გასაუმჯობესებლად და ხალხის მიერ გადახედოს მას. გენერაციული AI ექსპერიმენტულია, ამიტომ შეცდომებს დაუშვებს. სურათის დეტალური აღწერილობის გამორთვა ნებისმიერ დროს შეგიძლიათ SandFly პარამეტრებიდან.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> მოქმედებს.</string>
     <string name="dialog_message_screen_overview_promotion">ეკრანის სკრინშოტი იგზავნება Google-ის Gemini API-ზე დასახასიათებლად, რასაც რამდენიმე წამი სჭირდება. როდესაც მოწყობილობაზე AI ჩართულია, ის აღწერილია ამ ტელეფონზე და არ იგზავნება.\n\nუფასო API გასაღებით, Google შეუძლია შეინახოს ის, რასაც იღებს, გამოიყენოს ის თავისი პროდუქტების გასაუმჯობესებლად და ადამიანებმა გადახედონ მას. გენერაციული AI ექსპერიმენტულია, ამიტომ შეცდომებს დაუშვებს. მოქმედებს <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">გახსენით აპლიკაცია</string>
+    <string name="shortcut_title_open_app">აპის გახსნა</string>
     <string name="shortcut_open_app">გახსნა <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">გადაახვიეთ ზევით</string>
+    <string name="shortcut_scroll_to_top">თავში გადახვევა</string>
     <string name="shortcut_write_reading_control">დაწერეთ კითხვის კონტროლის წერილი</string>
     <string name="title_pref_reading_control_letters">ხელნაწერი ანბანის ასოები</string>
     <string name="reading_control_letter_none">არცერთი</string>
@@ -1611,11 +1611,11 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> <xliff:g id="count" example="5">%3$d</xliff:g>-დან</string>
     <string name="handwriting_empty">ცარიელი ტექსტი</string>
     <string name="handwriting_not_available">ამ მოწყობილობაზე ხელნაწერის ამოცნობა მიუწვდომელია</string>
-    <string name="shortcut_scroll_to_bottom">გადაახვიეთ ბოლოში</string>
-    <string name="shortcut_refresh">განაახლეთ</string>
-    <string name="shortcut_system_notifications">სისტემის შეტყობინებების ჩრდილი</string>
+    <string name="shortcut_scroll_to_bottom">ბოლოში გადახვევა</string>
+    <string name="shortcut_refresh">განახლება</string>
+    <string name="shortcut_system_notifications">სისტემის შეტყობინებების პანელი</string>
     <string name="shortcut_system_quick_settings">სისტემის სწრაფი პარამეტრები</string>
-    <string name="shortcut_lock_screen">ჩაკეტეთ მოწყობილობის ეკრანი</string>
+    <string name="shortcut_lock_screen">ეკრანის ჩაკეტვა</string>
     <string name="shortcut_power_menu">დენის მენიუ</string>
     <string name="shortcut_increase_media_volume">მედიის ხმის გაზრდა</string>
     <string name="shortcut_decrease_media_volume">მედიის ხმის შემცირება</string>

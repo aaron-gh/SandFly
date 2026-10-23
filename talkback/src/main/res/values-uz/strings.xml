@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Ovozli profildan foydalanilganda nutq mexanizmi ishlamaydi</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, foydalanilmoqda</string>
     <string name="no_voice_profiles">Ovozli profil yo\'q</string>
-    <string name="shortcut_voice_profiles">Ovozli profilni tanlang</string>
+    <string name="shortcut_voice_profiles">Ovozli profilni tanlash</string>
     <string name="shortcut_previous_voice_profile">Oldingi ovozli profil</string>
     <string name="shortcut_next_voice_profile">Keyingi ovozli profil</string>
     <string name="title_pref_voice_profile_in_use">Amaldagi ovozli profil</string>
@@ -1340,7 +1340,7 @@
     <string name="speech_stream_accessibility">Maxsus imkoniyatlarda tovush balandligi</string>
     <string name="speech_stream_media">Media ovozi</string>
     <string name="speech_stream_ring">Qo\'ng\'iroq tovushi</string>
-    <string name="speech_stream_call">Qo\'ng\'iroq balandligi, eshitish vositasi</string>
+    <string name="speech_stream_call">Qoʻngʻiroq ovozi, quloq karnayi</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1394,8 +1394,8 @@
     <string name="speech_control_no_apps">Hech qanday ilova hali gapirishni soʻramagan.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ga SandFly orqali gapirishga ruxsat berilsinmi?</string>
     <string name="speech_control_ask_text">U SandFly ovozingiz bilan matnni aytishi mumkin. Buni Kengaytirilgan sozlamalarda o\'zgartirishingiz mumkin.</string>
-    <string name="speech_control_allow">Ruxsat bering</string>
-    <string name="speech_control_deny">Ruxsat bermang</string>
+    <string name="speech_control_allow">Ruxsat berish</string>
+    <string name="speech_control_deny">Ruxsat bermaslik</string>
     <string name="permission_speak_label">SandFly orqali gapirish</string>
     <string name="permission_speak_description">Ilovaga SandFly ovozingiz bilan matn aytishni soʻrashiga ruxsat beradi. SandFly ilova gapirishdan oldin sizdan soʻraydi.</string>
     <string name="permission_braille_display_label">SandFly uchun brayl displey bo\'lishni so\'rang</string>
@@ -1481,7 +1481,7 @@
     <string name="quick_settings_media_volume">Media ovozi</string>
     <string name="quick_settings_call_volume">Qo\'ng\'iroq balandligi</string>
     <string name="quick_settings_ring_volume">Qo\'ng\'iroq tovushi</string>
-    <string name="quick_settings_notification_volume">Bildirishnomalar hajmi</string>
+    <string name="quick_settings_notification_volume">Bildirishnoma ovozi</string>
     <string name="quick_settings_alarm_volume">Budilnik ovozi</string>
     <string name="quick_settings_accessibility_volume">Maxsus imkoniyatlarda tovush balandligi</string>
     <string name="quick_settings_system_volume">Tizim ovoz balandligi</string>
@@ -1492,13 +1492,13 @@
     <string name="quick_settings_color_correction">Rangni tuzatish</string>
     <string name="quick_settings_microphone_access">Mikrofonga kirish</string>
     <string name="quick_settings_camera_access">Kameraga kirish</string>
-    <string name="quick_settings_screen_timeout">Ekran vaqti tugashi</string>
+    <string name="quick_settings_screen_timeout">Ekranning oʻchish vaqti</string>
     <string name="quick_settings_font_size">Shrift hajmi</string>
     <string name="quick_settings_media">Media</string>
-    <string name="quick_settings_no_media">OAV yo\'q</string>
+    <string name="quick_settings_no_media">Media yoʻq</string>
     <string name="quick_settings_media_output">Media chiqishi</string>
     <string name="quick_settings_next_alarm">Keyingi budilnik</string>
-    <string name="quick_settings_no_alarm">Signal yo‘q</string>
+    <string name="quick_settings_no_alarm">Budilnik yoʻq</string>
     <string name="quick_settings_settings">Sozlamalar</string>
     <string name="quick_settings_power_menu">Quvvat menyusi</string>
     <string name="quick_settings_add_system_tile">Tizim tugmasini qoʻshish</string>
@@ -1524,8 +1524,8 @@
     <string name="quick_settings_off">Oʻchiq</string>
     <string name="quick_settings_unavailable">Mavjud emas</string>
     <string name="quick_settings_edit">Tahrirlash</string>
-    <string name="quick_settings_system">Tez tizim sozlamalari</string>
-    <string name="quick_settings_open_settings">Sozlamalarni oching</string>
+    <string name="quick_settings_system">Tizimning tezkor sozlamalari</string>
+    <string name="quick_settings_open_settings">Sozlamalarni ochish</string>
     <string name="quick_settings_add_control">Boshqaruv elementini qoʻshish</string>
     <string name="quick_settings_add_tile">Ilova tugmasini qoʻshish</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1564,9 +1564,9 @@
     <string name="dialog_message_detailed_ai_description">Tanlangan rasmlar tasvirlash uchun Google Gemini API-ga yuboriladi. Qurilmadagi sunʼiy intellekt yoqilgan boʻlsa, ular bu telefonda tasvirlanadi va yuborilmaydi.\n\nBepul API kaliti bilan Google olgan narsasini saqlab qolishi, mahsulotlarini yaxshilash uchun foydalanishi va odamlar uni koʻrib chiqishiga majbur qilishi mumkin. Generativ AI eksperimentaldir, shuning uchun u xato qiladi. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> amal qiladi.</string>
     <string name="dialog_message_detailed_ai_promotion">Batafsil tasvir tavsiflari generativ AI tomonidan quvvatlanadi. Tanlangan rasmlar tasvirlash uchun Google Gemini API-ga yuboriladi. Qurilmadagi sunʼiy intellekt yoqilgan boʻlsa, ular bu telefonda tasvirlanadi va yuborilmaydi.\n\nBepul API kaliti bilan Google olgan narsasini saqlab qolishi, mahsulotlarini yaxshilash uchun foydalanishi va odamlar uni koʻrib chiqishiga majbur qilishi mumkin. Generativ AI eksperimentaldir, shuning uchun u xato qiladi. Batafsil tasvir tavsiflarini istalgan vaqtda SandFly sozlamalarida oʻchirib qoʻyishingiz mumkin.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> amal qiladi.</string>
     <string name="dialog_message_screen_overview_promotion">Ekranning skrinshoti tasvirlash uchun Google Gemini API-ga yuboriladi, bu bir necha soniya davom etadi. Qurilmadagi sunʼiy intellekt yoqilgan boʻlsa, uning oʻrniga bu telefonda tasvirlanadi va yuborilmaydi.\n\nBepul API kaliti bilan Google olgan narsasini saqlab qolishi, mahsulotlarini yaxshilashda foydalanishi va odamlar uni koʻrib chiqishiga majbur qilishi mumkin. Generativ AI eksperimentaldir, shuning uchun u xato qiladi. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> amal qiladi.</string>
-    <string name="shortcut_title_open_app">Ilovani oching</string>
-    <string name="shortcut_open_app">Ochish <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Yuqoriga aylantiring</string>
+    <string name="shortcut_title_open_app">Ilovani ochish</string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ilovasini ochish</string>
+    <string name="shortcut_scroll_to_top">Yuqoriga aylantirish</string>
     <string name="shortcut_write_reading_control">O\'qish nazoratining harfini yozing</string>
     <string name="title_pref_reading_control_letters">Qo\'lda yozilgan alifbo harflari</string>
     <string name="reading_control_letter_none">Hech qanday</string>
@@ -1611,14 +1611,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> / <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Bo\'sh matn</string>
     <string name="handwriting_not_available">Bu qurilmada qo‘l yozuvini tanib bo‘lmaydi</string>
-    <string name="shortcut_scroll_to_bottom">Pastga aylantiring</string>
+    <string name="shortcut_scroll_to_bottom">Pastga aylantirish</string>
     <string name="shortcut_refresh">Yangilash</string>
-    <string name="shortcut_system_notifications">Tizim bildirishnomasi soyasi</string>
-    <string name="shortcut_system_quick_settings">Tez tizim sozlamalari</string>
+    <string name="shortcut_system_notifications">Tizim bildirishnomalar paneli</string>
+    <string name="shortcut_system_quick_settings">Tizimning tezkor sozlamalari</string>
     <string name="shortcut_lock_screen">Qurilma ekranini qulflang</string>
     <string name="shortcut_power_menu">Quvvat menyusi</string>
-    <string name="shortcut_increase_media_volume">Media ovozini oshiring</string>
-    <string name="shortcut_decrease_media_volume">Media tovushini kamaytiring</string>
+    <string name="shortcut_increase_media_volume">Media ovozini oshirish</string>
+    <string name="shortcut_decrease_media_volume">Media ovozini pasaytirish</string>
     <string name="title_clear_selection">Tanlovni tozalash</string>
     <string name="title_pref_brightness">Yorqinlik</string>
     <string name="summary_support_change_brightness">Ekran yashirin bo\'lsa ham, ekran yorqinligini oshiring yoki kamaytiring</string>
@@ -1741,7 +1741,7 @@
     <string name="image_qna_ask_by_voice">Ovoz bilan so\'rang</string>
     <string name="image_qna_stop_listening">Tinglashni toʻxtatish</string>
     <string name="image_qna_type_question">Savol yozing</string>
-    <string name="shortcut_dictate">Oʻqib berish</string>
+    <string name="shortcut_dictate">Ovoz bilan yozish</string>
     <string name="title_pref_ai_dictation">AI bilan to\'g\'ri diktant</string>
     <string name="dictation_not_corrected">Tuzatilmagan. Taniqli sifatida kiritildi.</string>
     <string name="dictation_nothing_recognized">Hech narsa aniqlanmadi</string>

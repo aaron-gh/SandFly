@@ -1339,8 +1339,8 @@
     <string name="title_pref_speech_stream">ಧ್ವನಿ ವಾಲ್ಯೂಮ್‌</string>
     <string name="summary_selector_speech_stream">ಪ್ರವೇಶಿಸುವಿಕೆ, ಮಾಧ್ಯಮ, ರಿಂಗ್ ಮತ್ತು ಕರೆ ಸಂಪುಟಗಳ ನಡುವೆ ಬದಲಿಸಿ</string>
     <string name="speech_stream_accessibility">ಆ್ಯಕ್ಸೆಸಿಬಿಲಿಟಿ ವಾಲ್ಯೂಮ್‌</string>
-    <string name="speech_stream_media">ಮಾಧ್ಯಮ ಪರಿಮಾಣ</string>
-    <string name="speech_stream_ring">ರಿಂಗ್ ಪರಿಮಾಣ</string>
+    <string name="speech_stream_media">ಮೀಡಿಯಾ ವಾಲ್ಯೂಮ್</string>
+    <string name="speech_stream_ring">ರಿಂಗ್ ವಾಲ್ಯೂಮ್</string>
     <string name="speech_stream_call">ಕರೆ ವಾಲ್ಯೂಮ್, ಇಯರ್‌ಪೀಸ್</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
@@ -1481,8 +1481,8 @@
     <string name="quick_settings_adaptive_brightness">ಹೊಂದಾಣಿಕೆಯ ಹೊಳಪು</string>
     <string name="quick_settings_media_volume">ಮೀಡಿಯಾ ವಾಲ್ಯೂಮ್</string>
     <string name="quick_settings_call_volume">ಕರೆ ವಾಲ್ಯೂಮ್</string>
-    <string name="quick_settings_ring_volume">ರಿಂಗ್ ಪರಿಮಾಣ</string>
-    <string name="quick_settings_notification_volume">ಅಧಿಸೂಚನೆ ಪರಿಮಾಣ</string>
+    <string name="quick_settings_ring_volume">ರಿಂಗ್ ವಾಲ್ಯೂಮ್</string>
+    <string name="quick_settings_notification_volume">ಅಧಿಸೂಚನೆ ವಾಲ್ಯೂಮ್</string>
     <string name="quick_settings_alarm_volume">ಅಲಾರಾಂ ವಾಲ್ಯೂಮ್</string>
     <string name="quick_settings_accessibility_volume">ಆ್ಯಕ್ಸೆಸಿಬಿಲಿಟಿ ವಾಲ್ಯೂಮ್‌</string>
     <string name="quick_settings_system_volume">ಸಿಸ್ಟಮ್ ಆಡಿಯೊ ವಾಲ್ಯೂಮ್</string>
@@ -1493,10 +1493,10 @@
     <string name="quick_settings_color_correction">ಬಣ್ಣ ತಿದ್ದುಪಡಿ</string>
     <string name="quick_settings_microphone_access">ಮೈಕ್ರೊಫೋನ್ ಪ್ರವೇಶ</string>
     <string name="quick_settings_camera_access">ಕ್ಯಾಮರಾ ಪ್ರವೇಶ</string>
-    <string name="quick_settings_screen_timeout">ಪರದೆಯ ಅವಧಿ ಮೀರಿದೆ</string>
+    <string name="quick_settings_screen_timeout">ಸ್ಕ್ರೀನ್ ಟೈಮ್‌ಔಟ್</string>
     <string name="quick_settings_font_size">ಫಾಂಟ್ ಗಾತ್ರ</string>
     <string name="quick_settings_media">ಮೀಡಿಯಾ</string>
-    <string name="quick_settings_no_media">ಮಾಧ್ಯಮವಿಲ್ಲ</string>
+    <string name="quick_settings_no_media">ಮೀಡಿಯಾ ಇಲ್ಲ</string>
     <string name="quick_settings_media_output">ಮೀಡಿಯಾ ಔಟ್‌ಪುಟ್</string>
     <string name="quick_settings_next_alarm">ಮುಂದಿನ ಅಲಾರಾಂ</string>
     <string name="quick_settings_no_alarm">ಅಲಾರಾಂ ಇಲ್ಲ</string>
@@ -1521,7 +1521,7 @@
     <string name="quick_settings_sound">ಧ್ವನಿ</string>
     <string name="quick_settings_vibrate">ವೈಬ್ರೇಟ್</string>
     <string name="quick_settings_mute">ಮ್ಯೂಟ್ ಮಾಡಿ</string>
-    <string name="quick_settings_on">ಆನ್ ಮಾಡಿ</string>
+    <string name="quick_settings_on">ಆನ್</string>
     <string name="quick_settings_off">ಆಫ್</string>
     <string name="quick_settings_unavailable">ಲಭ್ಯವಿಲ್ಲ</string>
     <string name="quick_settings_edit">ಸಂಪಾದಿಸು</string>
@@ -1566,7 +1566,7 @@
     <string name="dialog_message_detailed_ai_promotion">ವಿವರವಾದ ಚಿತ್ರ ವಿವರಣೆಗಳು ಉತ್ಪಾದಕ AI ನಿಂದ ಚಾಲಿತವಾಗಿವೆ. ಆಯ್ಕೆಮಾಡಿದ ಚಿತ್ರಗಳನ್ನು ವಿವರಿಸಲು Google ನ Gemini API ಗೆ ಕಳುಹಿಸಲಾಗಿದೆ. ಸಾಧನದಲ್ಲಿ AI ಆನ್ ಆಗಿರುವುದರಿಂದ, ಅವುಗಳನ್ನು ಈ ಫೋನ್‌ನಲ್ಲಿ ವಿವರಿಸಲಾಗಿದೆ ಮತ್ತು ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ.\n\nಉಚಿತ API ಕೀಲಿಯೊಂದಿಗೆ, Google ತಾನು ಸ್ವೀಕರಿಸುವದನ್ನು ಇಟ್ಟುಕೊಳ್ಳಬಹುದು, ಅದರ ಉತ್ಪನ್ನಗಳನ್ನು ಸುಧಾರಿಸಲು ಅದನ್ನು ಬಳಸಬಹುದು ಮತ್ತು ಜನರು ಅದನ್ನು ಪರಿಶೀಲಿಸಬಹುದು. ಜನರೇಟಿವ್ AI ಪ್ರಾಯೋಗಿಕವಾಗಿದೆ, ಆದ್ದರಿಂದ ಇದು ತಪ್ಪುಗಳನ್ನು ಮಾಡುತ್ತದೆ. ನೀವು SandFly ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಯಾವಾಗ ಬೇಕಾದರೂ ವಿವರವಾದ ಚಿತ್ರ ವಿವರಣೆಯನ್ನು ಆಫ್ ಮಾಡಬಹುದು.\n\nThe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> ಅನ್ವಯಿಸುತ್ತದೆ.</string>
     <string name="dialog_message_screen_overview_promotion">ಪರದೆಯ ಸ್ಕ್ರೀನ್‌ಶಾಟ್ ಅನ್ನು ವಿವರಿಸಲು Google ನ Gemini API ಗೆ ಕಳುಹಿಸಲಾಗುತ್ತದೆ, ಇದು ಹಲವಾರು ಸೆಕೆಂಡುಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ. ಆನ್-ಡಿವೈಸ್ AI ಆನ್ ಆಗಿರುವುದರಿಂದ, ಅದನ್ನು ಈ ಫೋನ್‌ನಲ್ಲಿ ವಿವರಿಸಲಾಗಿದೆ ಮತ್ತು ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ.\n\nಉಚಿತ API ಕೀಲಿಯೊಂದಿಗೆ, Google ತಾನು ಸ್ವೀಕರಿಸುವುದನ್ನು ಉಳಿಸಿಕೊಳ್ಳಬಹುದು, ಅದರ ಉತ್ಪನ್ನಗಳನ್ನು ಸುಧಾರಿಸಲು ಅದನ್ನು ಬಳಸಬಹುದು ಮತ್ತು ಜನರು ಅದನ್ನು ಪರಿಶೀಲಿಸಬಹುದು. ಜನರೇಟಿವ್ AI ಪ್ರಾಯೋಗಿಕವಾಗಿದೆ, ಆದ್ದರಿಂದ ಇದು ತಪ್ಪುಗಳನ್ನು ಮಾಡುತ್ತದೆ. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> ಅನ್ವಯಿಸುತ್ತದೆ.</string>
     <string name="shortcut_title_open_app">ಅಪ್ಲಿಕೇಶನ್ ತೆರೆಯಿರಿ</string>
-    <string name="shortcut_open_app">ತೆರೆಯಿರಿ <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ತೆರೆಯಿರಿ</string>
     <string name="shortcut_scroll_to_top">ಮೇಲಕ್ಕೆ ಸ್ಕ್ರಾಲ್ ಮಾಡಿ</string>
     <string name="shortcut_write_reading_control">ಓದುವ ನಿಯಂತ್ರಣದ ಪತ್ರವನ್ನು ಬರೆಯಿರಿ</string>
     <string name="title_pref_reading_control_letters">ಕೈಬರಹದ ವರ್ಣಮಾಲೆಯ ಅಕ್ಷರಗಳು</string>
@@ -1614,12 +1614,12 @@
     <string name="handwriting_not_available">ಈ ಸಾಧನದಲ್ಲಿ ಕೈಬರಹ ಗುರುತಿಸುವಿಕೆ ಲಭ್ಯವಿಲ್ಲ</string>
     <string name="shortcut_scroll_to_bottom">ಕೆಳಕ್ಕೆ ಸ್ಕ್ರಾಲ್ ಮಾಡಿ</string>
     <string name="shortcut_refresh">ರಿಫ್ರೆಶ್ ಮಾಡಿ</string>
-    <string name="shortcut_system_notifications">ಸಿಸ್ಟಂ ಅಧಿಸೂಚನೆ ನೆರಳು</string>
+    <string name="shortcut_system_notifications">ಸಿಸ್ಟಂ ಅಧಿಸೂಚನೆ ಪ್ಯಾನೆಲ್</string>
     <string name="shortcut_system_quick_settings">ಸಿಸ್ಟಮ್ ತ್ವರಿತ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
     <string name="shortcut_lock_screen">ಸಾಧನದ ಪರದೆಯನ್ನು ಲಾಕ್ ಮಾಡಿ</string>
     <string name="shortcut_power_menu">ಪವರ್ ಮೆನು</string>
-    <string name="shortcut_increase_media_volume">ಮಾಧ್ಯಮದ ಪರಿಮಾಣವನ್ನು ಹೆಚ್ಚಿಸಿ</string>
-    <string name="shortcut_decrease_media_volume">ಮಾಧ್ಯಮದ ಪರಿಮಾಣವನ್ನು ಕಡಿಮೆ ಮಾಡಿ</string>
+    <string name="shortcut_increase_media_volume">ಮೀಡಿಯಾ ವಾಲ್ಯೂಮ್ ಹೆಚ್ಚಿಸಿ</string>
+    <string name="shortcut_decrease_media_volume">ಮೀಡಿಯಾ ವಾಲ್ಯೂಮ್ ಕಡಿಮೆ ಮಾಡಿ</string>
     <string name="title_clear_selection">ಆಯ್ಕೆಯನ್ನು ತೆರವುಗೊಳಿಸಿ</string>
     <string name="title_pref_brightness">ಹೊಳಪು</string>
     <string name="summary_support_change_brightness">ಪರದೆಯನ್ನು ಮರೆಮಾಡಿದಾಗಲೂ ಸಹ ಪರದೆಯ ಹೊಳಪನ್ನು ಹೆಚ್ಚಿಸಿ ಅಥವಾ ಕಡಿಮೆ ಮಾಡಿ</string>

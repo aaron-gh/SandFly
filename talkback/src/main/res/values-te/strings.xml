@@ -1483,7 +1483,7 @@
     <string name="quick_settings_color_correction">రంగు దిద్దుబాటు</string>
     <string name="quick_settings_microphone_access">మైక్రోఫోన్ యాక్సెస్</string>
     <string name="quick_settings_camera_access">కెమెరా యాక్సెస్</string>
-    <string name="quick_settings_screen_timeout">స్క్రీన్ సమయం ముగిసింది</string>
+    <string name="quick_settings_screen_timeout">స్క్రీన్ టైమ్అవుట్</string>
     <string name="quick_settings_font_size">ఫాంట్ పరిమాణం</string>
     <string name="quick_settings_media">మీడియా</string>
     <string name="quick_settings_no_media">మీడియా లేదు</string>
@@ -1509,7 +1509,7 @@
     <string name="quick_settings_battery_charging">%1$s, ఛార్జింగ్</string>
     <string name="quick_settings_battery_full">%1$s, ఛార్జ్ చేయబడింది</string>
     <string name="quick_settings_sound">సౌండ్</string>
-    <string name="quick_settings_vibrate">కంపించు</string>
+    <string name="quick_settings_vibrate">వైబ్రేట్</string>
     <string name="quick_settings_mute">మ్యూట్ చేయండి</string>
     <string name="quick_settings_on">ఆన్‌లో ఉంది</string>
     <string name="quick_settings_off">ఆఫ్‌లో ఉంది</string>
@@ -1556,7 +1556,7 @@
     <string name="dialog_message_detailed_ai_promotion">వివరణాత్మక చిత్ర వివరణలు ఉత్పాదక AI ద్వారా అందించబడతాయి. ఎంచుకున్న చిత్రాలు వివరించడానికి Google యొక్క Gemini APIకి పంపబడతాయి. పరికరంలో AI ఆన్ చేయబడినందున, అవి ఈ ఫోన్‌లో వివరించబడ్డాయి మరియు పంపబడవు.\n\nఉచిత API కీతో, Google అది స్వీకరించిన వాటిని ఉంచవచ్చు, దాని ఉత్పత్తులను మెరుగుపరచడానికి దాన్ని ఉపయోగించవచ్చు మరియు వ్యక్తులను సమీక్షించవచ్చు. ఉత్పాదక AI ప్రయోగాత్మకమైనది, కాబట్టి ఇది తప్పులు చేస్తుంది. మీరు SandFly సెట్టింగ్‌లలో ఎప్పుడైనా వివరణాత్మక చిత్ర వివరణలను ఆఫ్ చేయవచ్చు.\n\nThe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> వర్తిస్తాయి.</string>
     <string name="dialog_message_screen_overview_promotion">స్క్రీన్ యొక్క స్క్రీన్‌షాట్ వివరించడానికి Google యొక్క Gemini APIకి పంపబడుతుంది, దీనికి చాలా సెకన్ల సమయం పడుతుంది. పరికరంలో AI ఆన్ చేయబడినందున, ఇది ఈ ఫోన్‌లో వివరించబడింది మరియు పంపబడదు.\n\nఉచిత API కీతో, Google అది స్వీకరించిన వాటిని ఉంచవచ్చు, దాని ఉత్పత్తులను మెరుగుపరచడానికి దాన్ని ఉపయోగించవచ్చు మరియు వ్యక్తులను సమీక్షించవచ్చు. ఉత్పాదక AI ప్రయోగాత్మకమైనది, కాబట్టి ఇది తప్పులు చేస్తుంది. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> వర్తిస్తుంది.</string>
     <string name="shortcut_title_open_app">యాప్‌ని తెరవండి</string>
-    <string name="shortcut_open_app">తెరవండి <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ను తెరవండి</string>
     <string name="shortcut_scroll_to_top">పైకి స్క్రోల్ చేయండి</string>
     <string name="shortcut_write_reading_control">పఠన నియంత్రణ లేఖను వ్రాయండి</string>
     <string name="title_pref_reading_control_letters">చేతితో వ్రాసిన వర్ణమాల అక్షరాలు</string>
@@ -1604,7 +1604,7 @@
     <string name="handwriting_not_available">ఈ పరికరంలో చేతివ్రాత గుర్తింపు అందుబాటులో లేదు</string>
     <string name="shortcut_scroll_to_bottom">దిగువకు స్క్రోల్ చేయండి</string>
     <string name="shortcut_refresh">రిఫ్రెష్ చేయండి</string>
-    <string name="shortcut_system_notifications">సిస్టమ్ నోటిఫికేషన్ షేడ్</string>
+    <string name="shortcut_system_notifications">సిస్టమ్ నోటిఫికేషన్ ప్యానెల్</string>
     <string name="shortcut_system_quick_settings">సిస్టమ్ త్వరిత సెట్టింగ్‌లు</string>
     <string name="shortcut_lock_screen">పరికర స్క్రీన్‌ను లాక్ చేయండి</string>
     <string name="shortcut_power_menu">పవర్ మెను</string>
@@ -1732,7 +1732,7 @@
     <string name="image_qna_ask_by_voice">వాయిస్ ద్వారా అడగండి</string>
     <string name="image_qna_stop_listening">వినడం ఆపు</string>
     <string name="image_qna_type_question">ప్రశ్నను టైప్ చేయండి</string>
-    <string name="shortcut_dictate">ఆజ్ఞాపించు</string>
+    <string name="shortcut_dictate">మాట్లాడి టైప్ చేయండి</string>
     <string name="title_pref_ai_dictation">AIతో సరైన డిక్టేషన్</string>
     <string name="dictation_not_corrected">సరిదిద్దలేదు. గుర్తించబడినట్లుగా టైప్ చేయబడింది.</string>
     <string name="dictation_nothing_recognized">ఏదీ గుర్తించబడలేదు</string>

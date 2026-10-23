@@ -1562,7 +1562,7 @@
     <string name="title_pref_speech_stream">Kõne helitugevus</string>
     <string name="summary_selector_speech_stream">Lülitage juurdepääsetavuse, meedia, helina ja kõne helitugevuse vahel</string>
     <string name="speech_stream_accessibility">Juurdepääsufunktsioonide helitugevus</string>
-    <string name="speech_stream_media">Meedia maht</string>
+    <string name="speech_stream_media">Meedia helitugevus</string>
     <string name="speech_stream_ring">Helina helitugevus</string>
     <string name="speech_stream_call">Kõne helitugevus, kuular</string>
     <string-array name="pref_speech_stream_entries">
@@ -1598,7 +1598,7 @@
     <string name="quick_settings_media_volume">Meedia helitugevus</string>
     <string name="quick_settings_call_volume">Kõne helitugevus</string>
     <string name="quick_settings_ring_volume">Helina helitugevus</string>
-    <string name="quick_settings_notification_volume">Teavituse maht</string>
+    <string name="quick_settings_notification_volume">Märguannete helitugevus</string>
     <string name="quick_settings_alarm_volume">Äratuse helitugevus</string>
     <string name="quick_settings_accessibility_volume">Juurdepääsufunktsioonide helitugevus</string>
     <string name="quick_settings_system_volume">Süsteemi helitugevus</string>
@@ -1661,7 +1661,7 @@
     <string name="quick_settings_removed">%1$s eemaldatud</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Veel üks otsetee sirvimisrežiimi sisse- või väljalülitamiseks</string>
     <string name="title_pref_vibration_strength">Vibratsiooni tugevus</string>
-    <string name="shortcut_scroll_to_top">Kerige üles</string>
+    <string name="shortcut_scroll_to_top">Keri algusesse</string>
     <string name="shortcut_write_reading_control">Kirjutage lugemise juhtelemendi täht</string>
     <string name="title_pref_reading_control_letters">Käsitsi kirjutatud tähed</string>
     <string name="reading_control_letter_none">Puudub</string>
@@ -1706,13 +1706,13 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> / <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Tühi tekst</string>
     <string name="handwriting_not_available">Käsikirjatuvastus pole selles seadmes saadaval</string>
-    <string name="shortcut_scroll_to_bottom">Kerige alla</string>
+    <string name="shortcut_scroll_to_bottom">Keri lõppu</string>
     <string name="shortcut_refresh">Värskenda</string>
     <string name="shortcut_system_quick_settings">Süsteemi kiirseaded</string>
     <string name="shortcut_lock_screen">Lukustage seadme ekraan</string>
     <string name="shortcut_power_menu">Toitemenüü</string>
-    <string name="shortcut_increase_media_volume">Suurendage meediumi helitugevust</string>
-    <string name="shortcut_decrease_media_volume">Meediumi helitugevuse vähendamine</string>
+    <string name="shortcut_increase_media_volume">Meedia helitugevuse suurendamine</string>
+    <string name="shortcut_decrease_media_volume">Meedia helitugevuse vähendamine</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Pühkige pikalt vasakult ülaosast alla</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Pühkige pikalt paremalt ülaosast alla</string>
     <string name="title_pref_shortcut_edge_left_top_right">Pühkige vasakult servast paremale, ülemine pool</string>

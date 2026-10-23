@@ -1311,8 +1311,8 @@
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g> အသုံးပြုနေပါသည်</string>
     <string name="no_voice_profiles">အသံပရိုဖိုင် မရှိပါ</string>
     <string name="shortcut_voice_profiles">အသံပရိုဖိုင်ကို ရွေးပါ</string>
-    <string name="shortcut_previous_voice_profile">ယခင်အသံဖိုင်</string>
-    <string name="shortcut_next_voice_profile">နောက်တစ်ခုကတော့ အသံဖိုင်နော်</string>
+    <string name="shortcut_previous_voice_profile">ယခင် အသံပရိုဖိုင်</string>
+    <string name="shortcut_next_voice_profile">နောက်ထပ် အသံပရိုဖိုင်</string>
     <string name="title_pref_voice_profile_in_use">အသံပရိုဖိုင်ကို အသုံးပြုထားသည်</string>
     <string name="title_pref_add_voice_profile">အသံပရိုဖိုင်ကို ထည့်ပါ</string>
     <string name="voice_profile_new_name">အသံပရိုဖိုင် <xliff:g id="number" example="2">%1$d</xliff:g></string>
@@ -1339,8 +1339,8 @@
     <string name="summary_selector_speech_stream">အများသုံးစွဲနိုင်မှု၊ မီဒီယာ၊ ဖုန်းမြည်သံနှင့် ခေါ်ဆိုမှုပမာဏများအကြား ပြောင်းပါ</string>
     <string name="speech_stream_accessibility">အများသုံးနိုင်မှု အသံ</string>
     <string name="speech_stream_media">မီဒီယာအသံအတိုးအကျယ်</string>
-    <string name="speech_stream_ring">အသံအတိုးအကျယ်</string>
-    <string name="speech_stream_call">ခေါ်ဆိုမှုအသံအတိုးအကျယ်၊ နားကြပ်</string>
+    <string name="speech_stream_ring">ဖုန်းမြည်သံ အတိုးအကျယ်</string>
+    <string name="speech_stream_call">ခေါ်ဆိုမှုအသံအတိုးအကျယ်၊ နားကပ်စပီကာ</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ကို SandFly မှတဆင့် ပြောခွင့်ပြုမလား။</string>
     <string name="speech_control_ask_text">၎င်းသည် သင်၏ SandFly အသံဖြင့် စာသားကို ပြောနိုင်သည်။ ၎င်းကို အဆင့်မြင့်ဆက်တင်များတွင် သင်ပြောင်းနိုင်သည်။</string>
     <string name="speech_control_allow">ခွင့်ပြုပါ</string>
-    <string name="speech_control_deny">ခွင့်မပြုပါနှင့်</string>
+    <string name="speech_control_deny">ခွင့်မပြုပါ</string>
     <string name="permission_speak_label">SandFly မှတစ်ဆင့် ပြောဆိုခြင်း</string>
     <string name="permission_speak_description">အက်ပ်အား သင်၏ SandFly အသံဖြင့် စာသားပြောခိုင်းစေပါ။ SandFly အက်ပ်က စကားမပြောမီ သင့်ကိုမေးသည်။</string>
     <string name="permission_braille_display_label">SandFly အတွက် မျက်မမြင်စာအဖြစ် ပြသရန် တောင်းဆိုပါ</string>
@@ -1480,8 +1480,8 @@
     <string name="quick_settings_adaptive_brightness">အလိုက်သင့်တောက်ပ</string>
     <string name="quick_settings_media_volume">မီဒီယာအသံအတိုးအကျယ်</string>
     <string name="quick_settings_call_volume">ခေါ်ဆိုမှု အသံအတိုးအကျယ်</string>
-    <string name="quick_settings_ring_volume">အသံအတိုးအကျယ်</string>
-    <string name="quick_settings_notification_volume">အကြောင်းကြားချက် ပမာဏ</string>
+    <string name="quick_settings_ring_volume">ဖုန်းမြည်သံ အတိုးအကျယ်</string>
+    <string name="quick_settings_notification_volume">အကြောင်းကြားချက် အသံအတိုးအကျယ်</string>
     <string name="quick_settings_alarm_volume">နှိုးစက်အသံအတိုးအကျယ်</string>
     <string name="quick_settings_accessibility_volume">အများသုံးနိုင်မှု အသံ</string>
     <string name="quick_settings_system_volume">စနစ်အသံအတိုးအကျယ်</string>
@@ -1518,7 +1518,7 @@
     <string name="quick_settings_battery_charging">%1$s၊ အားသွင်းနေသည်</string>
     <string name="quick_settings_battery_full">%1$s၊ အားပြည့်သည်</string>
     <string name="quick_settings_sound">အသံ</string>
-    <string name="quick_settings_vibrate">တုန်ခါသည်</string>
+    <string name="quick_settings_vibrate">တုန်ခါမှု</string>
     <string name="quick_settings_mute">အသံတိတ်</string>
     <string name="quick_settings_on">ဖွင့်</string>
     <string name="quick_settings_off">ပိတ်</string>
@@ -1565,8 +1565,8 @@
     <string name="dialog_message_detailed_ai_promotion">အသေးစိတ်ပုံဖော်ပြချက်များကို Generative AI မှ ပံ့ပိုးထားပါသည်။ ဖော်ပြရန်အတွက် ရွေးချယ်ထားသော ပုံများကို Google ၏ Gemini API သို့ ပေးပို့သည်။ On-device AI ကို ဖွင့်ထားခြင်းဖြင့် ၎င်းတို့ကို ဤဖုန်းတွင် ဖော်ပြထားပြီး ပေးပို့ခြင်းမပြုပါ။\n\n အခမဲ့ API သော့ဖြင့်၊ Google ရရှိသောအရာများကို သိမ်းဆည်းထားနိုင်ပြီး ၎င်း၏ထုတ်ကုန်များကို ပိုမိုကောင်းမွန်လာစေရန် ၎င်းကို အသုံးပြုကာ ၎င်းကို လူများမှ ပြန်လည်သုံးသပ်စေမည်ဖြစ်သည်။ Generative AI သည် စမ်းသပ်ဆဲဖြစ်သောကြောင့် အမှားအယွင်းများ ရှိလာမည်ဖြစ်သည်။ အသေးစိတ်ပုံဖော်ပြချက်များကို SandFly ဆက်တင်များတွင် အချိန်မရွေး ပိတ်နိုင်သည်။\n\n အဆိုပါ <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> အကျုံးဝင်သည်။</string>
     <string name="dialog_message_screen_overview_promotion">မျက်နှာပြင်၏ ဖန်သားပြင်ဓာတ်ပုံကို ဖော်ပြရန်အတွက် Google ၏ Gemini API သို့ ပေးပို့ပြီး စက္ကန့်များစွာကြာသည်။ On-device AI ကိုဖွင့်ထားသဖြင့် ၎င်းအစား ၎င်းကို ဤဖုန်းတွင်ဖော်ပြထားပြီး ပေးပို့ခြင်းမပြုပါ။\n\n အခမဲ့ API သော့ဖြင့်၊ Google ရရှိသောအရာများကို သိမ်းဆည်းထားနိုင်ပြီး ၎င်း၏ထုတ်ကုန်များကို ပိုမိုကောင်းမွန်လာစေရန် ၎င်းကိုအသုံးပြုကာ ၎င်းကိုလူများမှ ပြန်လည်သုံးသပ်စေမည်ဖြစ်သည်။ Generative AI သည် စမ်းသပ်ဆဲဖြစ်သောကြောင့် အမှားအယွင်းများ ရှိလာမည်ဖြစ်သည်။ <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> လျှောက်ထားနိုင်ပါသည်။</string>
     <string name="shortcut_title_open_app">အက်ပ်ကိုဖွင့်ပါ</string>
-    <string name="shortcut_open_app">ဖွင့်ပါ <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">အပေါ်မှလှိမ့်ပါ</string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ကို ဖွင့်ပါ</string>
+    <string name="shortcut_scroll_to_top">အပေါ်ဆုံးသို့ လှိမ့်ပါ</string>
     <string name="shortcut_write_reading_control">စာကို ရေးချပြီး စာဖတ်ခြင်းကို ထိန်းချုပ်ပါ</string>
     <string name="title_pref_reading_control_letters">လက်ရေး အက္ခရာ စာလုံးများ</string>
     <string name="reading_control_letter_none">မရှိ</string>
@@ -1612,12 +1612,12 @@
     <string name="handwriting_empty">ဗလာစာသား</string>
     <string name="handwriting_not_available">ဤစက်ပစ္စည်းတွင် လက်ရေးဖြင့် အသိအမှတ်ပြုခြင်းကို မရရှိနိုင်ပါ</string>
     <string name="shortcut_scroll_to_bottom">အောက်ခြေသို့ဆင်းပါ</string>
-    <string name="shortcut_refresh">ပြန်လည်စတင်ပါ</string>
-    <string name="shortcut_system_notifications">စနစ်သတိပေးချက်အရိပ်</string>
+    <string name="shortcut_refresh">ပြန်လည်ဆန်းသစ်ပါ</string>
+    <string name="shortcut_system_notifications">စနစ် အကြောင်းကြားချက် အကန့်</string>
     <string name="shortcut_system_quick_settings">စနစ်အမြန်ဆက်တင်များ</string>
     <string name="shortcut_lock_screen">စက်မျက်နှာပြင်ကို လော့ခ်ချပါ</string>
     <string name="shortcut_power_menu">ပါဝါမီနူး</string>
-    <string name="shortcut_increase_media_volume">မီဒီယာ ပမာဏကို တိုးမြှင့်ပါ</string>
+    <string name="shortcut_increase_media_volume">မီဒီယာအသံကို တိုးပါ</string>
     <string name="shortcut_decrease_media_volume">မီဒီယာအသံကို လျှော့ပါ</string>
     <string name="title_clear_selection">ရွေးချယ်မှုကို ရှင်းလင်းပါ</string>
     <string name="title_pref_brightness">တောက်ပမှု</string>

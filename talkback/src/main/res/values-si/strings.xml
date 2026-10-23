@@ -1338,8 +1338,8 @@
     <string name="title_pref_speech_stream">කථන ශබ්ද තීව්‍රතාවය</string>
     <string name="summary_selector_speech_stream">ප්‍රවේශ්‍යතාව, මාධ්‍ය, නාද සහ ඇමතුම් පරිමාවන් අතර මාරු වන්න</string>
     <string name="speech_stream_accessibility">ප්‍රවේශ්‍යතා හඬ පරිමාව</string>
-    <string name="speech_stream_media">මාධ්ය පරිමාව</string>
-    <string name="speech_stream_ring">මුදු පරිමාව</string>
+    <string name="speech_stream_media">මාධ්‍ය හඬ පරිමාව</string>
+    <string name="speech_stream_ring">නාද හඬ පරිමාව</string>
     <string name="speech_stream_call">ඇමතුම් පරිමාව, ඉයර්පීස්</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
@@ -1480,11 +1480,11 @@
     <string name="quick_settings_adaptive_brightness">අනුවර්තන දීප්තිය</string>
     <string name="quick_settings_media_volume">මාධ්‍ය හඬ පරිමාව</string>
     <string name="quick_settings_call_volume">ඇමතුම් හඬ පරිමාව</string>
-    <string name="quick_settings_ring_volume">මුදු පරිමාව</string>
-    <string name="quick_settings_notification_volume">දැනුම්දීම් පරිමාව</string>
+    <string name="quick_settings_ring_volume">නාද හඬ පරිමාව</string>
+    <string name="quick_settings_notification_volume">දැනුම්දීම් හඬ පරිමාව</string>
     <string name="quick_settings_alarm_volume">එලාම් හඬ පරිමාව</string>
     <string name="quick_settings_accessibility_volume">ප්‍රවේශ්‍යතා හඬ පරිමාව</string>
-    <string name="quick_settings_system_volume">පද්ධතියේ ශ්රව්ය පරිමාව</string>
+    <string name="quick_settings_system_volume">පද්ධතියේ ශ්‍රව්‍ය පරිමාව</string>
     <string name="quick_settings_data_saver">දත්ත සුරැකීම</string>
     <string name="quick_settings_night_light">රාත්‍රී ආලෝකය</string>
     <string name="quick_settings_extra_dim">අමතර අඳුරු</string>
@@ -1498,7 +1498,7 @@
     <string name="quick_settings_no_media">මාධ්‍ය නැත</string>
     <string name="quick_settings_media_output">මාධ්‍ය ප්‍රතිදානය</string>
     <string name="quick_settings_next_alarm">ඊළඟ එලාම් එක</string>
-    <string name="quick_settings_no_alarm">අනතුරු ඇඟවීමක් නැත</string>
+    <string name="quick_settings_no_alarm">එලාම් නැත</string>
     <string name="quick_settings_settings">සැකසීම්</string>
     <string name="quick_settings_power_menu">බල මෙනුව</string>
     <string name="quick_settings_add_system_tile">පද්ධති ටයිල් එකතු කරන්න</string>
@@ -1518,7 +1518,7 @@
     <string name="quick_settings_battery_charging">%1$s, ආරෝපණය වෙමින්</string>
     <string name="quick_settings_battery_full">%1$s, ආරෝපිතයි</string>
     <string name="quick_settings_sound">ශබ්දය</string>
-    <string name="quick_settings_vibrate">කම්පනය කරන්න</string>
+    <string name="quick_settings_vibrate">කම්පනය</string>
     <string name="quick_settings_mute">නිහඬ කරන්න</string>
     <string name="quick_settings_on">ක්‍රියාත්මකයි</string>
     <string name="quick_settings_off">ක්‍රියාවිරහිතයි</string>
@@ -1565,7 +1565,7 @@
     <string name="dialog_message_detailed_ai_promotion">සවිස්තරාත්මක රූප විස්තර ජනක AI මගින් බල ගැන්වේ. තෝරාගත් පින්තූර විස්තර කිරීමට Google හි Gemini API වෙත යවනු ලැබේ. උපාංගය මත AI ක්‍රියාත්මක වීමත් සමඟ, ඒවා මෙම දුරකථනයේ විස්තර කර ඇති අතර ඒවා නොයවනු ලැබේ.\n\nනොමිලේ API යතුරක් සමඟින්, Google හට ලැබෙන දේ තබා ගැනීමටත්, එහි නිෂ්පාදන වැඩිදියුණු කිරීමට එය භාවිත කිරීමටත්, මිනිසුන් එය සමාලෝචනය කිරීමටත් ඉඩ ඇත. උත්පාදක AI පර්යේෂණාත්මක ය, එබැවින් එය වැරදි සිදු කරනු ඇත. ඔබට SandFly සැකසීම් තුළ ඕනෑම වේලාවක සවිස්තරාත්මක රූප විස්තර අක්‍රිය කළ හැක.\n\nThe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> අදාළ වේ.</string>
     <string name="dialog_message_screen_overview_promotion">තිරයේ තිර රුවක් විස්තර කිරීම සඳහා Google හි Gemini API වෙත යවනු ලැබේ, එය තත්පර කිහිපයක් ගතවේ. උපාංගය මත AI ක්‍රියාත්මක කර ඇති විට, එය ඒ වෙනුවට මෙම දුරකථනයේ විස්තර කර ඇති අතර යවන්නේ නැත.\n\nනොමිලේ API යතුරක් සමඟින්, Google හට ලැබෙන දේ තබා ගැනීමටත්, එහි නිෂ්පාදන වැඩිදියුණු කිරීමට එය භාවිත කිරීමටත්, මිනිසුන් එය සමාලෝචනය කිරීමටත් ඉඩ ඇත. උත්පාදක AI පර්යේෂණාත්මක ය, එබැවින් එය වැරදි සිදු කරනු ඇත. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> අදාළ වේ.</string>
     <string name="shortcut_title_open_app">යෙදුම විවෘත කරන්න</string>
-    <string name="shortcut_open_app">විවෘත <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> විවෘත කරන්න</string>
     <string name="shortcut_scroll_to_top">ඉහළට අනුචලනය කරන්න</string>
     <string name="shortcut_write_reading_control">කියවීමේ පාලනයක ලිපියක් ලියන්න</string>
     <string name="title_pref_reading_control_letters">අතින් ලියන ලද හෝඩියේ අකුරු</string>
@@ -1613,12 +1613,12 @@
     <string name="handwriting_not_available">මෙම උපාංගයේ අත් අකුරු හඳුනාගැනීමක් නොමැත</string>
     <string name="shortcut_scroll_to_bottom">පහළට අනුචලනය කරන්න</string>
     <string name="shortcut_refresh">නැවුම් කරන්න</string>
-    <string name="shortcut_system_notifications">පද්ධති දැනුම්දීම් සෙවන</string>
+    <string name="shortcut_system_notifications">පද්ධති දැනුම්දීම් පැනලය</string>
     <string name="shortcut_system_quick_settings">පද්ධති ඉක්මන් සැකසුම්</string>
     <string name="shortcut_lock_screen">උපාංග තිරය අගුළු දමන්න</string>
     <string name="shortcut_power_menu">බල මෙනුව</string>
-    <string name="shortcut_increase_media_volume">මාධ්ය පරිමාව වැඩි කරන්න</string>
-    <string name="shortcut_decrease_media_volume">මාධ්ය පරිමාව අඩු කරන්න</string>
+    <string name="shortcut_increase_media_volume">මාධ්‍ය පරිමාව වැඩි කරන්න</string>
+    <string name="shortcut_decrease_media_volume">මාධ්‍ය පරිමාව අඩු කරන්න</string>
     <string name="title_clear_selection">පැහැදිලි තේරීම</string>
     <string name="title_pref_brightness">දීප්තිය</string>
     <string name="summary_support_change_brightness">තිරය සැඟවී ඇති විට පවා තිරයේ දීප්තිය වැඩි කිරීම හෝ අඩු කිරීම</string>
@@ -1741,7 +1741,7 @@
     <string name="image_qna_ask_by_voice">හඬින් විමසන්න</string>
     <string name="image_qna_stop_listening">සවන් දීම නවත්වන්න</string>
     <string name="image_qna_type_question">ප්‍රශ්නයක් ටයිප් කරන්න</string>
-    <string name="shortcut_dictate">කියවන විට ලියන්න</string>
+    <string name="shortcut_dictate">කියමින් ලියවන්න</string>
     <string name="title_pref_ai_dictation">AI සමඟ නිවැරදි උපදෙස්</string>
     <string name="dictation_not_corrected">නිවැරදි කර නැත. හඳුනාගත් ලෙස ටයිප් කර ඇත.</string>
     <string name="dictation_nothing_recognized">කිසිවක් හඳුනාගෙන නැත</string>

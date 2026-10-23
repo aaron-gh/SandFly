@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Дуут профайлыг ашиглах үед ярианы систем боломжгүй</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, ашиглаж байна</string>
     <string name="no_voice_profiles">Дуут профайл байхгүй</string>
-    <string name="shortcut_voice_profiles">Дуут профайлыг сонгоно уу</string>
+    <string name="shortcut_voice_profiles">Дуут профайл сонгох</string>
     <string name="shortcut_previous_voice_profile">Өмнөх дуут профайл</string>
     <string name="shortcut_next_voice_profile">Дараагийн дуут профайл</string>
     <string name="title_pref_voice_profile_in_use">Дуут профайлыг ашиглаж байна</string>
@@ -1338,9 +1338,9 @@
     <string name="title_pref_speech_stream">Дууны түвшин</string>
     <string name="summary_selector_speech_stream">Хүртээмж, медиа, хонх болон дуудлагын дууны хооронд сэлгэнэ үү</string>
     <string name="speech_stream_accessibility">Хандалтын дууны түвшин</string>
-    <string name="speech_stream_media">Хэвлэл мэдээллийн хэмжээ</string>
-    <string name="speech_stream_ring">Хонхны дууны хэмжээ</string>
-    <string name="speech_stream_call">Дуудлагын хэмжээ, чихэвч</string>
+    <string name="speech_stream_media">Медиагийн дууны түвшин</string>
+    <string name="speech_stream_ring">Хонхны дууны түвшин</string>
+    <string name="speech_stream_call">Дуудлагын дууны түвшин, чихний чанга яригч</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g>-д SandFly-ээр ярихыг зөвшөөрөх үү?</string>
     <string name="speech_control_ask_text">Энэ нь таны SandFly хоолойгоор текст хэлэх боломжтой. Та үүнийг Нарийвчилсан тохиргооноос өөрчилж болно.</string>
     <string name="speech_control_allow">Зөвшөөрөх</string>
-    <string name="speech_control_deny">Бүү зөвшөөр</string>
+    <string name="speech_control_deny">Зөвшөөрөхгүй</string>
     <string name="permission_speak_label">SandFly дамжуулан ярих</string>
     <string name="permission_speak_description">Апп нь таны SandFly хоолойгоор текст хэлэхийг хүсэх боломжийг олгоно. SandFly програмыг ярихаас өмнө танаас асууна.</string>
     <string name="permission_braille_display_label">SandFly-ийн брайл дэлгэц байхыг хүсэх</string>
@@ -1480,11 +1480,11 @@
     <string name="quick_settings_adaptive_brightness">Дасан зохицох гэрэл</string>
     <string name="quick_settings_media_volume">Медиагийн дууны түвшин</string>
     <string name="quick_settings_call_volume">Дуудлагын дууны түвшин</string>
-    <string name="quick_settings_ring_volume">Хонхны дууны хэмжээ</string>
-    <string name="quick_settings_notification_volume">Мэдэгдлийн хэмжээ</string>
+    <string name="quick_settings_ring_volume">Хонхны дууны түвшин</string>
+    <string name="quick_settings_notification_volume">Мэдэгдлийн дууны түвшин</string>
     <string name="quick_settings_alarm_volume">Сэрүүлгийн дууны түвшин</string>
     <string name="quick_settings_accessibility_volume">Хандалтын дууны түвшин</string>
-    <string name="quick_settings_system_volume">Системийн дууны хэмжээ</string>
+    <string name="quick_settings_system_volume">Системийн дууны түвшин</string>
     <string name="quick_settings_data_saver">Өгөгдөл хэмнэгч</string>
     <string name="quick_settings_night_light">Шөнийн гэрэл</string>
     <string name="quick_settings_extra_dim">Хэт бүдэг</string>
@@ -1492,15 +1492,15 @@
     <string name="quick_settings_color_correction">Өнгөний засвар</string>
     <string name="quick_settings_microphone_access">Микрофонд хандах</string>
     <string name="quick_settings_camera_access">Камерт хандах</string>
-    <string name="quick_settings_screen_timeout">Дэлгэцийн завсарлага</string>
+    <string name="quick_settings_screen_timeout">Дэлгэц унтрах хугацаа</string>
     <string name="quick_settings_font_size">Фонтын хэмжээ</string>
     <string name="quick_settings_media">Медиа</string>
-    <string name="quick_settings_no_media">Хэвлэл мэдээлэл байхгүй</string>
+    <string name="quick_settings_no_media">Медиа байхгүй</string>
     <string name="quick_settings_media_output">Медиа гаралт</string>
     <string name="quick_settings_next_alarm">Дараагийн сэрүүлэг</string>
     <string name="quick_settings_no_alarm">Сэрүүлэг байхгүй</string>
     <string name="quick_settings_settings">Тохиргоо</string>
-    <string name="quick_settings_power_menu">Эрчим хүчний цэс</string>
+    <string name="quick_settings_power_menu">Асаах/унтраах цэс</string>
     <string name="quick_settings_add_system_tile">Системийн товчлуур нэмэх</string>
     <string name="quick_settings_no_system_tiles">Нэмэх системийн хавтан байхгүй</string>
     <string name="quick_settings_tile_not_found">%1$s нь системийн хурдан тохиргоонд байхгүй байна</string>
@@ -1520,7 +1520,7 @@
     <string name="quick_settings_sound">Дуу</string>
     <string name="quick_settings_vibrate">Чичиргээ</string>
     <string name="quick_settings_mute">Дууг хаах</string>
-    <string name="quick_settings_on">Асаах</string>
+    <string name="quick_settings_on">Асаалттай</string>
     <string name="quick_settings_off">Унтраалттай</string>
     <string name="quick_settings_unavailable">Боломжгүй</string>
     <string name="quick_settings_edit">Засварлах</string>
@@ -1569,7 +1569,7 @@
     <string name="shortcut_scroll_to_top">Дээд талд гүйлгэх</string>
     <string name="shortcut_write_reading_control">Унших хяналтын үсгийг бичнэ үү</string>
     <string name="title_pref_reading_control_letters">Гараар бичсэн цагаан толгойн үсэг</string>
-    <string name="reading_control_letter_none">Хоосон</string>
+    <string name="reading_control_letter_none">Байхгүй</string>
     <string name="handwriting_prompt">Цагаан толгойн үсэг бич</string>
     <string name="handwriting_closed">Гар бичмэл хаагдлаа</string>
     <string name="handwriting_no_match">Унших хяналт <xliff:g id="letter" example="Q">%1$s</xliff:g>-ээр эхэлдэггүй</string>
@@ -1613,12 +1613,12 @@
     <string name="handwriting_not_available">Энэ төхөөрөмж дээр гар бичмэлийг таних боломжгүй</string>
     <string name="shortcut_scroll_to_bottom">Доош гүйлгэх</string>
     <string name="shortcut_refresh">Сэргээх</string>
-    <string name="shortcut_system_notifications">Системийн мэдэгдлийн сүүдэр</string>
+    <string name="shortcut_system_notifications">Системийн мэдэгдлийн самбар</string>
     <string name="shortcut_system_quick_settings">Системийн хурдан тохиргоо</string>
     <string name="shortcut_lock_screen">Төхөөрөмжийн дэлгэцийг түгжих</string>
-    <string name="shortcut_power_menu">Эрчим хүчний цэс</string>
-    <string name="shortcut_increase_media_volume">Хэвлэл мэдээллийн хэмжээг нэмэгдүүлэх</string>
-    <string name="shortcut_decrease_media_volume">Медиа дууны хэмжээг багасгах</string>
+    <string name="shortcut_power_menu">Асаах/унтраах цэс</string>
+    <string name="shortcut_increase_media_volume">Медиагийн дууг нэмэх</string>
+    <string name="shortcut_decrease_media_volume">Медиагийн дууг багасгах</string>
     <string name="title_clear_selection">Сонголтыг арилгах</string>
     <string name="title_pref_brightness">Гэрэлтүүлэг</string>
     <string name="summary_support_change_brightness">Дэлгэц нуугдсан байсан ч дэлгэцийн тод байдлыг нэмэгдүүлэх эсвэл багасгах</string>

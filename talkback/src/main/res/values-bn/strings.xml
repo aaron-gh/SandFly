@@ -1462,7 +1462,7 @@
     <string name="dialog_message_screen_overview_promotion">বিবরণ পেতে স্ক্রিনের একটি স্ক্রিনশট Google-এর Gemini API-তে পাঠানো হয়, যাতে কয়েক সেকেন্ড সময় লাগে। ডিভাইসে থাকা AI চালু থাকলে, বিবরণ এই ফোনেই তৈরি হয় এবং স্ক্রিনশট পাঠানো হয় না।\n\nবিনামূল্যের API কী ব্যবহার করলে, Google যা পায় তা রেখে দিতে, নিজের প্রোডাক্ট উন্নত করতে ব্যবহার করতে এবং লোক দিয়ে পর্যালোচনা করাতে পারে। জেনারেটিভ AI পরীক্ষামূলক লেভেলে রয়েছে, তাই এটি ভুল করবে। <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> প্রযোজ্য।</string>
     <string name="shortcut_title_open_app">অ্যাপ খুলুন</string>
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> খুলুন</string>
-    <string name="shortcut_system_notifications">সিস্টেমের বিজ্ঞপ্তি শেড</string>
+    <string name="shortcut_system_notifications">সিস্টেম বিজ্ঞপ্তি প্যানেল</string>
     <string name="title_clear_selection">বেছে নেওয়া টেক্সট সরান</string>
     <string name="title_pref_brightness">উজ্জ্বলতা</string>
     <string name="summary_support_change_brightness">স্ক্রিন লুকানো থাকলেও স্ক্রিনের উজ্জ্বলতা বাড়ায় অথবা কমায়</string>
@@ -1741,7 +1741,7 @@
     <string name="image_qna_ask_by_voice">কণ্ঠে জিজ্ঞাসা করুন</string>
     <string name="image_qna_stop_listening">শোনা বন্ধ করুন</string>
     <string name="image_qna_type_question">একটি প্রশ্ন টাইপ করুন</string>
-    <string name="shortcut_dictate">নির্দেশ</string>
+    <string name="shortcut_dictate">ডিকটেট করুন</string>
     <string name="title_pref_ai_dictation">AI এর সাথে সঠিক ডিকশন</string>
     <string name="dictation_not_corrected">সংশোধন করা হয়নি। স্বীকৃত হিসাবে টাইপ করুন.</string>
     <string name="dictation_nothing_recognized">কিছুই শনাক্ত হয়নি</string>
@@ -1768,6 +1768,6 @@
     <string name="title_pref_import_settings">সেটিংস আমদানি করুন</string>
     <string name="settings_export_done">সেটিংস এক্সপোর্ট করা হয়েছে। API কী অন্তর্ভুক্ত করা হয় না</string>
     <string name="settings_export_failed">সেটিংস এক্সপোর্ট করা যায়নি</string>
-    <string name="settings_import_done">সেটিংস আমদানি করা হয়েছে৷</string>
+    <string name="settings_import_done">সেটিংস ইমপোর্ট করা হয়েছে</string>
     <string name="settings_import_failed">এই ফাইলটি একটি SandFly বা Backtalk সেটিংস ফাইল নয়, বা পড়া যাবে না</string>
 </resources>

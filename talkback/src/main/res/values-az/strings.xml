@@ -1562,9 +1562,9 @@
     <string name="title_pref_speech_stream">Nitqin səs həcmi</string>
     <string name="summary_selector_speech_stream">Əlçatanlıq, media, zəng və zəng həcmləri arasında keçid edin</string>
     <string name="speech_stream_accessibility">Əlçatımlılıq səsi</string>
-    <string name="speech_stream_media">Media həcmi</string>
-    <string name="speech_stream_ring">Zəngin həcmi</string>
-    <string name="speech_stream_call">Zəng səsi, qulaqlıq</string>
+    <string name="speech_stream_media">Media səsi</string>
+    <string name="speech_stream_ring">Zəng səsi</string>
+    <string name="speech_stream_call">Zəng səsi, qulaq dinamiki</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1578,7 +1578,7 @@
     <string name="notification_list_show_less">Daha az göstər</string>
     <string name="title_pref_quick_settings">SandFly-nin sürətli parametrlərindən istifadə edin</string>
     <string name="title_pref_quick_settings_items">Sürətli parametrlər paneli</string>
-    <string name="quick_settings_title">Sürətli Ayarlar</string>
+    <string name="quick_settings_title">Sürətli ayarlar</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">Mobil data</string>
@@ -1597,11 +1597,11 @@
     <string name="quick_settings_adaptive_brightness">Adaptiv parlaqlıq</string>
     <string name="quick_settings_media_volume">Media səsi</string>
     <string name="quick_settings_call_volume">Zəng səsi</string>
-    <string name="quick_settings_ring_volume">Zəngin həcmi</string>
-    <string name="quick_settings_notification_volume">Bildiriş həcmi</string>
+    <string name="quick_settings_ring_volume">Zəng səsi</string>
+    <string name="quick_settings_notification_volume">Bildiriş səsi</string>
     <string name="quick_settings_alarm_volume">Zəngli saatın səs səviyyəsi</string>
     <string name="quick_settings_accessibility_volume">Əlçatımlılıq səsi</string>
-    <string name="quick_settings_system_volume">Sistem audio həcmi</string>
+    <string name="quick_settings_system_volume">Sistem səsi</string>
     <string name="quick_settings_data_saver">Trafikə qənaət</string>
     <string name="quick_settings_night_light">Gecə işığı</string>
     <string name="quick_settings_extra_dim">Əlavə tutqun</string>
@@ -1609,13 +1609,13 @@
     <string name="quick_settings_color_correction">Rəng korreksiyası</string>
     <string name="quick_settings_microphone_access">Mikrofona giriş</string>
     <string name="quick_settings_camera_access">Kameraya giriş</string>
-    <string name="quick_settings_screen_timeout">Ekran fasiləsi</string>
+    <string name="quick_settings_screen_timeout">Ekranın sönmə vaxtı</string>
     <string name="quick_settings_font_size">Şrift ölçüsü</string>
     <string name="quick_settings_media">Media</string>
     <string name="quick_settings_no_media">Media yoxdur</string>
     <string name="quick_settings_media_output">Media çıxışı</string>
     <string name="quick_settings_next_alarm">Növbəti zəngli saat</string>
-    <string name="quick_settings_no_alarm">Siqnal yoxdur</string>
+    <string name="quick_settings_no_alarm">Zəngli saat yoxdur</string>
     <string name="quick_settings_settings">Ayarlar</string>
     <string name="quick_settings_power_menu">Güc menyusu</string>
     <string name="quick_settings_add_system_tile">Sistem xanasını əlavə edin</string>
@@ -1656,12 +1656,12 @@
         <item quantity="one">Digər %d element köçürüldü</item>
         <item quantity="other">%d digər element köçürüldü</item>
     </plurals>
-    <string name="quick_settings_remove">Silin</string>
+    <string name="quick_settings_remove">Sil</string>
     <string name="quick_settings_added">%1$s əlavə edildi</string>
     <string name="quick_settings_removed">%1$s silindi</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Baxış rejimini yandırmaq və ya söndürmək üçün başqa bir qısayol</string>
     <string name="title_pref_vibration_strength">Vibrasiya gücü</string>
-    <string name="shortcut_scroll_to_top">Yuxarıya sürüşdürün</string>
+    <string name="shortcut_scroll_to_top">Yuxarıya sürüşdür</string>
     <string name="shortcut_write_reading_control">Oxu nəzarətinin hərfini yazın</string>
     <string name="title_pref_reading_control_letters">Əl ilə hərf yazmaq</string>
     <string name="reading_control_letter_none">Yoxdur</string>
@@ -1706,13 +1706,13 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g>/<xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Boş mətn</string>
     <string name="handwriting_not_available">Əl yazısının tanınması bu cihazda mövcud deyil</string>
-    <string name="shortcut_scroll_to_bottom">Aşağıya sürüşdürün</string>
+    <string name="shortcut_scroll_to_bottom">Aşağıya sürüşdür</string>
     <string name="shortcut_refresh">Yeniləyin</string>
     <string name="shortcut_system_quick_settings">Sistemin sürətli parametrləri</string>
     <string name="shortcut_lock_screen">Cihaz ekranını kilidləyin</string>
     <string name="shortcut_power_menu">Güc menyusu</string>
-    <string name="shortcut_increase_media_volume">Media həcmini artırın</string>
-    <string name="shortcut_decrease_media_volume">Media həcmini azaldın</string>
+    <string name="shortcut_increase_media_volume">Media səsini artırın</string>
+    <string name="shortcut_decrease_media_volume">Media səsini azaldın</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Yuxarı soldan aşağıya uzun sürüşdürün</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Yuxarı sağdan aşağı uzun sürüşdürün</string>
     <string name="title_pref_shortcut_edge_left_top_right">Sol kənardan, yuxarı yarısından sağa sürüşdürün</string>

@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Pri používaní hlasového profilu je rečový modul nedostupný</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, používa sa</string>
     <string name="no_voice_profiles">Žiadne hlasové profily</string>
-    <string name="shortcut_voice_profiles">Vyberte hlasový profil</string>
+    <string name="shortcut_voice_profiles">Vybrať hlasový profil</string>
     <string name="shortcut_previous_voice_profile">Predchádzajúci hlasový profil</string>
     <string name="shortcut_next_voice_profile">Ďalší hlasový profil</string>
     <string name="title_pref_voice_profile_in_use">Používa sa hlasový profil</string>
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title">Povoliť <xliff:g id="app" example="Tasker">%1$s</xliff:g> hovoriť cez SandFly?</string>
     <string name="speech_control_ask_text">Môže povedať text vaším hlasom SandFly. Môžete to zmeniť v rozšírených nastaveniach.</string>
     <string name="speech_control_allow">Povoliť</string>
-    <string name="speech_control_deny">Nedovoľte</string>
+    <string name="speech_control_deny">Nepovoliť</string>
     <string name="permission_speak_label">hovorenie cez SandFly</string>
     <string name="permission_speak_description">Umožňuje aplikácii požiadať o vyslovenie textu vaším hlasom SandFly. SandFly sa vás opýta skôr, ako môže aplikácia hovoriť.</string>
     <string name="permission_braille_display_label">požiadať o zobrazenie Braillovho písma pre SandFly</string>
@@ -1500,7 +1500,7 @@
     <string name="quick_settings_no_media">Žiadne médiá</string>
     <string name="quick_settings_media_output">Výstup médií</string>
     <string name="quick_settings_next_alarm">Ďalší budík</string>
-    <string name="quick_settings_no_alarm">Žiadny alarm</string>
+    <string name="quick_settings_no_alarm">Žiadny budík</string>
     <string name="quick_settings_settings">Nastavenia</string>
     <string name="quick_settings_power_menu">Ponuka napájania</string>
     <string name="quick_settings_add_system_tile">Pridať dlaždicu systému</string>
@@ -1524,14 +1524,14 @@
     <string name="quick_settings_battery_charging">%1$s, nabíjanie</string>
     <string name="quick_settings_battery_full">%1$s, nabité</string>
     <string name="quick_settings_sound">Zvuk</string>
-    <string name="quick_settings_vibrate">Vibrovať</string>
+    <string name="quick_settings_vibrate">Vibrovanie</string>
     <string name="quick_settings_mute">Stlmiť</string>
     <string name="quick_settings_on">Zapnuté</string>
     <string name="quick_settings_off">Vypnuté</string>
     <string name="quick_settings_unavailable">Nedostupné</string>
     <string name="quick_settings_edit">Upraviť</string>
     <string name="quick_settings_system">Rýchle nastavenia systému</string>
-    <string name="quick_settings_open_settings">Otvorte nastavenia</string>
+    <string name="quick_settings_open_settings">Otvoriť nastavenia</string>
     <string name="quick_settings_add_control">Pridať ovládací prvok</string>
     <string name="quick_settings_add_tile">Pridať dlaždicu aplikácie</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1572,9 +1572,9 @@
     <string name="dialog_message_detailed_ai_description">Vybrané obrázky sa odošlú do Gemini API Google, aby boli opísané. So zapnutou AI na zariadení sú namiesto toho popísané na tomto telefóne a neodosielajú sa.\n\nS bezplatným API kľúčom si môže Google ponechať to, čo dostane, použiť to na zlepšenie svojich produktov a nechať ľudí, aby to skontrolovali. Generatívna AI je experimentálna, takže bude robiť chyby. Platí <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_detailed_ai_promotion">Podrobné popisy obrázkov poháňa generatívna AI. Vybrané obrázky sa odošlú do Gemini API Google, aby boli opísané. So zapnutou AI na zariadení sú namiesto toho popísané na tomto telefóne a neodosielajú sa.\n\nS bezplatným API kľúčom si môže Google ponechať to, čo dostane, použiť to na zlepšenie svojich produktov a nechať ľudí, aby to skontrolovali. Generatívna AI je experimentálna, takže bude robiť chyby. Podrobné popisy obrázkov môžete kedykoľvek vypnúť v nastaveniach SandFly.\n\nPlatí <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_screen_overview_promotion">Snímka obrazovky sa odošle do API Google Gemini, aby bola opísaná, čo trvá niekoľko sekúnd. Keď je zapnutá AI na zariadení, je popísaná na tomto telefóne a neodosiela sa.\n\nS bezplatným API kľúčom si Google môže ponechať to, čo dostane, použiť to na zlepšenie svojich produktov a nechať ľudí, aby to skontrolovali. Generatívna AI je experimentálna, takže bude robiť chyby. Platí <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Otvorte aplikáciu</string>
+    <string name="shortcut_title_open_app">Otvoriť aplikáciu</string>
     <string name="shortcut_open_app">Otvoriť <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Prejdite na začiatok</string>
+    <string name="shortcut_scroll_to_top">Prejsť na začiatok</string>
     <string name="shortcut_write_reading_control">Napíšte písmeno kontroly čítania</string>
     <string name="title_pref_reading_control_letters">Ručne písané písmená abecedy</string>
     <string name="reading_control_letter_none">Žiadne</string>
@@ -1619,14 +1619,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> z <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Prázdny text</string>
     <string name="handwriting_not_available">Na tomto zariadení nie je k dispozícii rozpoznávanie rukou písaného textu</string>
-    <string name="shortcut_scroll_to_bottom">Prejdite nadol</string>
+    <string name="shortcut_scroll_to_bottom">Prejsť na koniec</string>
     <string name="shortcut_refresh">Obnoviť</string>
-    <string name="shortcut_system_notifications">Odtieň upozornení systému</string>
+    <string name="shortcut_system_notifications">Panel upozornení systému</string>
     <string name="shortcut_system_quick_settings">Rýchle nastavenia systému</string>
     <string name="shortcut_lock_screen">Uzamknite obrazovku zariadenia</string>
     <string name="shortcut_power_menu">Ponuka napájania</string>
-    <string name="shortcut_increase_media_volume">Zvýšte hlasitosť médií</string>
-    <string name="shortcut_decrease_media_volume">Znížte hlasitosť médií</string>
+    <string name="shortcut_increase_media_volume">Zvýšiť hlasitosť médií</string>
+    <string name="shortcut_decrease_media_volume">Znížiť hlasitosť médií</string>
     <string name="title_clear_selection">Vymazať výber</string>
     <string name="title_pref_brightness">Jas</string>
     <string name="summary_support_change_brightness">Zvýšte alebo znížte jas obrazovky, aj keď je obrazovka skrytá</string>

@@ -1338,9 +1338,9 @@
     <string name="title_pref_speech_stream">Արտասանության բարձրություն</string>
     <string name="summary_selector_speech_stream">Անցեք հասանելիության, մեդիայի, զանգի և զանգի ձայների միջև</string>
     <string name="speech_stream_accessibility">Հատուկ գործառույթների ձայնի ուժգնություն</string>
-    <string name="speech_stream_media">Մեդիա ծավալը</string>
-    <string name="speech_stream_ring">Օղակի ծավալը</string>
-    <string name="speech_stream_call">Զանգի ձայնը, ականջակալը</string>
+    <string name="speech_stream_media">Մեդիայի ձայնի ուժգնություն</string>
+    <string name="speech_stream_ring">Զանգի ձայնի ուժգնություն</string>
+    <string name="speech_stream_call">Զանգի ձայնը, լսափող</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1395,7 +1395,7 @@
     <string name="speech_control_ask_title">Թույլատրե՞լ <xliff:g id="app" example="Tasker">%1$s</xliff:g>-ին խոսել SandFly-ի միջոցով:</string>
     <string name="speech_control_ask_text">Այն կարող է տեքստ ասել ձեր SandFly ձայնով: Դուք կարող եք սա փոխել Ընդլայնված կարգավորումներում:</string>
     <string name="speech_control_allow">Թույլատրել</string>
-    <string name="speech_control_deny">Թույլ մի տվեք</string>
+    <string name="speech_control_deny">Չթույլատրել</string>
     <string name="permission_speak_label">խոսել SandFly-ի միջոցով</string>
     <string name="permission_speak_description">Թույլ է տալիս հավելվածին խնդրել տեքստ ասել ձեր SandFly ձայնով: SandFly հարցնում է ձեզ, նախքան հավելվածը կարող է խոսել:</string>
     <string name="permission_braille_display_label">խնդրեք լինել բրայլյան էկրան SandFly համար</string>
@@ -1480,11 +1480,11 @@
     <string name="quick_settings_adaptive_brightness">Հարմարվողական պայծառություն</string>
     <string name="quick_settings_media_volume">Մեդիայի ձայնի ուժգնություն</string>
     <string name="quick_settings_call_volume">Զանգի ձայնի ուժգնություն</string>
-    <string name="quick_settings_ring_volume">Օղակի ծավալը</string>
-    <string name="quick_settings_notification_volume">Ծանուցման ծավալը</string>
+    <string name="quick_settings_ring_volume">Զանգի ձայնի ուժգնություն</string>
+    <string name="quick_settings_notification_volume">Ծանուցումների ձայնի ուժգնություն</string>
     <string name="quick_settings_alarm_volume">Զարթուցիչի ձայնը</string>
     <string name="quick_settings_accessibility_volume">Հատուկ գործառույթների ձայնի ուժգնություն</string>
-    <string name="quick_settings_system_volume">Համակարգի աուդիո ծավալը</string>
+    <string name="quick_settings_system_volume">Համակարգի ձայնի ուժգնություն</string>
     <string name="quick_settings_data_saver">Տվյալների խնայող</string>
     <string name="quick_settings_night_light">Գիշերային լույս</string>
     <string name="quick_settings_extra_dim">Լրացուցիչ մթություն</string>
@@ -1492,15 +1492,15 @@
     <string name="quick_settings_color_correction">Գույնի ուղղում</string>
     <string name="quick_settings_microphone_access">Միկրոֆոնի հասանելիություն</string>
     <string name="quick_settings_camera_access">Տեսախցիկի հասանելիություն</string>
-    <string name="quick_settings_screen_timeout">Էկրանի ժամանակի ընդհատում</string>
+    <string name="quick_settings_screen_timeout">Էկրանի անջատման ժամանակը</string>
     <string name="quick_settings_font_size">Տառատեսակի չափը</string>
     <string name="quick_settings_media">Մեդիա</string>
-    <string name="quick_settings_no_media">Ոչ մի լրատվամիջոց</string>
+    <string name="quick_settings_no_media">Մեդիա չկա</string>
     <string name="quick_settings_media_output">Մեդիա ելք</string>
     <string name="quick_settings_next_alarm">Հաջորդ զարթուցիչը</string>
-    <string name="quick_settings_no_alarm">Ոչ մի ահազանգ</string>
+    <string name="quick_settings_no_alarm">Զարթուցիչ չկա</string>
     <string name="quick_settings_settings">Կարգավորումներ</string>
-    <string name="quick_settings_power_menu">Power menu</string>
+    <string name="quick_settings_power_menu">Սնուցման ընտրացանկ</string>
     <string name="quick_settings_add_system_tile">Ավելացնել համակարգային սալիկ</string>
     <string name="quick_settings_no_system_tiles">Համակարգային սալիկներ չկան ավելացնելու</string>
     <string name="quick_settings_tile_not_found">%1$s-ը համակարգի արագ կարգավորումներում չէ</string>
@@ -1518,14 +1518,14 @@
     <string name="quick_settings_battery_charging">%1$s, լիցքավորում</string>
     <string name="quick_settings_battery_full">%1$s, լիցքավորված</string>
     <string name="quick_settings_sound">Ձայն</string>
-    <string name="quick_settings_vibrate">Թրթռալ</string>
+    <string name="quick_settings_vibrate">Թրթռոց</string>
     <string name="quick_settings_mute">Խլացնել</string>
-    <string name="quick_settings_on">Միացնել</string>
+    <string name="quick_settings_on">Միացված</string>
     <string name="quick_settings_off">Անջատված</string>
     <string name="quick_settings_unavailable">Անհասանելի է</string>
     <string name="quick_settings_edit">Խմբագրել</string>
     <string name="quick_settings_system">Համակարգի արագ կարգավորումներ</string>
-    <string name="quick_settings_open_settings">Բացեք կարգավորումները</string>
+    <string name="quick_settings_open_settings">Բացել կարգավորումները</string>
     <string name="quick_settings_add_control">Ավելացնել կառավարման տարր</string>
     <string name="quick_settings_add_tile">Ավելացնել հավելվածի սալիկ</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1564,12 +1564,12 @@
     <string name="dialog_message_detailed_ai_description">Ընտրված պատկերներն ուղարկվում են Google-ի Gemini API՝ նկարագրվելու համար: Երբ սարքում AI-ն միացված է, դրանք նկարագրված են այս հեռախոսում և չեն ուղարկվում:\n\nԱնվճար API բանալիով Google կարող է պահել այն, ինչ ստանում է, օգտագործել այն իր արտադրանքը բարելավելու համար և մարդկանց առաջարկել վերանայել այն: Generative AI-ն փորձնական է, ուստի սխալներ թույլ կտա: Կիրառվում է <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>:</string>
     <string name="dialog_message_detailed_ai_promotion">Պատկերների մանրամասն նկարագրությունները ստեղծվում են գեներատիվ AI-ի միջոցով: Ընտրված պատկերներն ուղարկվում են Google-ի Gemini API՝ նկարագրվելու համար: Երբ սարքում AI-ն միացված է, դրանք նկարագրված են այս հեռախոսում և չեն ուղարկվում:\n\nԱնվճար API բանալիով Google կարող է պահել այն, ինչ ստանում է, օգտագործել այն իր արտադրանքը բարելավելու համար և մարդկանց առաջարկել վերանայել այն: Generative AI-ն փորձնական է, ուստի սխալներ թույլ կտա: Դուք ցանկացած ժամանակ կարող եք անջատել պատկերների մանրամասն նկարագրությունը SandFly կարգավորումներում:\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>-ը կիրառվում է:</string>
     <string name="dialog_message_screen_overview_promotion">Էկրանի սքրինշոթն ուղարկվում է Google-ի Gemini API՝ նկարագրվելու համար, որը տևում է մի քանի վայրկյան: Եթե ​​սարքում AI-ն միացված է, այն նկարագրված է այս հեռախոսում և չի ուղարկվում:\n\nԱնվճար API բանալիով Google կարող է պահել այն, ինչ ստանում է, օգտագործել այն իր արտադրանքը բարելավելու համար և մարդկանց առաջարկել վերանայել այն: Generative AI-ն փորձնական է, ուստի սխալներ թույլ կտա: Կիրառվում է <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>:</string>
-    <string name="shortcut_title_open_app">Բացեք հավելվածը</string>
+    <string name="shortcut_title_open_app">Բացել հավելվածը</string>
     <string name="shortcut_open_app">Բացել <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Ոլորեք դեպի վերև</string>
+    <string name="shortcut_scroll_to_top">Ոլորել վերև</string>
     <string name="shortcut_write_reading_control">Գրեք ընթերցման հսկողության տառը</string>
     <string name="title_pref_reading_control_letters">Այբուբենի ձեռագիր տառեր</string>
-    <string name="reading_control_letter_none">Միացված չէ</string>
+    <string name="reading_control_letter_none">Ոչ մեկը</string>
     <string name="handwriting_prompt">Գրեք այբուբենի տառ</string>
     <string name="handwriting_closed">Ձեռագիրը փակվեց</string>
     <string name="handwriting_no_match">Ընթերցանության ոչ մի կառավարում չի սկսվում <xliff:g id="letter" example="Q">%1$s</xliff:g>-ով</string>
@@ -1611,14 +1611,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> <xliff:g id="count" example="5">%3$d</xliff:g>-ից</string>
     <string name="handwriting_empty">Դատարկ տեքստ</string>
     <string name="handwriting_not_available">Ձեռագրի ճանաչումը հասանելի չէ այս սարքում</string>
-    <string name="shortcut_scroll_to_bottom">Ոլորեք դեպի ներքև</string>
+    <string name="shortcut_scroll_to_bottom">Ոլորել ներքև</string>
     <string name="shortcut_refresh">Թարմացնել</string>
-    <string name="shortcut_system_notifications">Համակարգի ծանուցման երանգ</string>
+    <string name="shortcut_system_notifications">Համակարգի ծանուցումների վահանակ</string>
     <string name="shortcut_system_quick_settings">Համակարգի արագ կարգավորումներ</string>
     <string name="shortcut_lock_screen">Կողպել սարքի էկրանը</string>
-    <string name="shortcut_power_menu">Power menu</string>
-    <string name="shortcut_increase_media_volume">Բարձրացնել լրատվամիջոցների ծավալը</string>
-    <string name="shortcut_decrease_media_volume">Նվազեցնել մեդիայի ծավալը</string>
+    <string name="shortcut_power_menu">Սնուցման ընտրացանկ</string>
+    <string name="shortcut_increase_media_volume">Բարձրացնել մեդիայի ձայնը</string>
+    <string name="shortcut_decrease_media_volume">Նվազեցնել մեդիայի ձայնը</string>
     <string name="title_clear_selection">Մաքրել ընտրությունը</string>
     <string name="title_pref_brightness">Պայծառություն</string>
     <string name="summary_support_change_brightness">Բարձրացնել կամ նվազեցնել էկրանի պայծառությունը, նույնիսկ երբ էկրանը թաքնված է</string>

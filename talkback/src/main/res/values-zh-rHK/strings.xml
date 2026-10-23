@@ -1310,8 +1310,8 @@
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>，使用中</string>
     <string name="no_voice_profiles">沒有語音設定檔</string>
     <string name="shortcut_voice_profiles">選擇語音設定檔</string>
-    <string name="shortcut_previous_voice_profile">以前的语音配置文件</string>
-    <string name="shortcut_next_voice_profile">下一个语音配置文件</string>
+    <string name="shortcut_previous_voice_profile">上一個語音設定檔</string>
+    <string name="shortcut_next_voice_profile">下一個語音設定檔</string>
     <string name="title_pref_voice_profile_in_use">正在使用的语音配置文件</string>
     <string name="title_pref_add_voice_profile">新增語音設定檔</string>
     <string name="voice_profile_new_name">语音配置文件<xliff:g id="number" example="2">%1$d</xliff:g></string>
@@ -1497,7 +1497,7 @@
     <string name="quick_settings_no_media">沒有媒體</string>
     <string name="quick_settings_media_output">媒體輸出</string>
     <string name="quick_settings_next_alarm">下一個鬧鐘</string>
-    <string name="quick_settings_no_alarm">無警報</string>
+    <string name="quick_settings_no_alarm">沒有鬧鐘</string>
     <string name="quick_settings_settings">設定</string>
     <string name="quick_settings_power_menu">電源選單</string>
     <string name="quick_settings_add_system_tile">新增系統磁貼</string>
@@ -1538,7 +1538,7 @@
         <item quantity="one">%d 其他项目已移动</item>
         <item quantity="other">%d 其他物品已移动</item>
     </plurals>
-    <string name="quick_settings_remove">刪除</string>
+    <string name="quick_settings_remove">移除</string>
     <string name="quick_settings_added">已新增%1$s</string>
     <string name="quick_settings_removed">%1$s 已刪除</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly 開啟。將 2 根手指按住螢幕 5 秒鐘即可關閉。若要停止顯示此訊息，請關閉 SandFly 設定 &gt; 進階設定 &gt; 顯示關閉 SandFly 的說明。</string>
@@ -1563,8 +1563,8 @@
     <string name="dialog_message_detailed_ai_description">選定的圖像將發送到 Google 的 Gemini API 進行描述。啟用裝置上 AI 後，它們會在此手機上進行描述，並且不會發送。 \n\n使用免費的 API 金鑰，Google 可以保留其收到的內容，用它來改進其產品，並讓人們對其進行審查。生成式人工智慧是實驗性的，所以它會犯錯。 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> 適用。</string>
     <string name="dialog_message_detailed_ai_promotion">詳細的圖像描述由生成式人工智慧提供支援。選定的圖像將發送到 Google 的 Gemini API 進行描述。啟用裝置上 AI 後，它們會在此手機上進行描述，並且不會發送。 \n\n使用免費的 API 金鑰，Google 可以保留其收到的內容，用它來改進其產品，並讓人們對其進行審查。生成式人工智慧是實驗性的，所以它會犯錯。您可以隨時在SandFly設定中關閉詳細影像描述。 \n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>適用。</string>
     <string name="dialog_message_screen_overview_promotion">螢幕截圖被傳送到Google的Gemini API進行描述，這需要幾秒鐘的時間。啟用裝置上 AI 後，它會在此手機上進行描述，並且不會發送。 \n\n使用免費的 API 金鑰，Google 可以保留其收到的內容，用它來改進其產品，並讓人們審查它。生成式人工智慧是實驗性的，所以它會犯錯。 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> 適用。</string>
-    <string name="shortcut_title_open_app">打開應用程式</string>
-    <string name="shortcut_open_app">打開<xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_title_open_app">開啟應用程式</string>
+    <string name="shortcut_open_app">開啟<xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">捲動到頂部</string>
     <string name="shortcut_write_reading_control">寫一個讀控制項的字母</string>
     <string name="title_pref_reading_control_letters">手寫字母</string>
@@ -1767,6 +1767,6 @@
     <string name="title_pref_import_settings">導入設定</string>
     <string name="settings_export_done">導出設定。不包括 API 金鑰</string>
     <string name="settings_export_failed">無法匯出設定</string>
-    <string name="settings_import_done">導入的設定</string>
+    <string name="settings_import_done">已匯入設定</string>
     <string name="settings_import_failed">該文件不是SandFly或Backtalk設定文件，或無法讀取</string>
 </resources>

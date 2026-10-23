@@ -386,7 +386,7 @@
   <string name="shortcut_notifications">Известувања</string>
   <string name="shortcut_quick_settings">Брзи поставки</string>
   <string name="shortcut_show_custom_actions">Прикажи ги приспособените дејства</string>
-  <string name="shortcut_talkback_breakout">Го отвора менито на SandFly</string>
+  <string name="shortcut_talkback_breakout">Отвори го менито на SandFly</string>
   <string name="shortcut_pause_or_resume_feedback">Паузирај го или продолжи го говорот</string>
   <string name="shortcut_toggle_voice_feedback">Вклучи го или исклучи го говорот</string>
   <string name="shortcut_read_from_top">Читај од врвот</string>
@@ -1310,7 +1310,7 @@
     <string name="speech_engine_unavailable_with_profile">Моторот за говор е недостапен додека се користи гласовен профил</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, во употреба</string>
     <string name="no_voice_profiles">Нема гласовни профили</string>
-    <string name="shortcut_voice_profiles">Изберете гласовен профил</string>
+    <string name="shortcut_voice_profiles">Избери гласовен профил</string>
     <string name="shortcut_previous_voice_profile">Претходен гласовен профил</string>
     <string name="shortcut_next_voice_profile">Следен гласовен профил</string>
     <string name="title_pref_voice_profile_in_use">Гласовен профил во употреба</string>
@@ -1339,8 +1339,8 @@
     <string name="summary_selector_speech_stream">Префрлете се помеѓу јачината на звукот за пристапност, медиуми, ѕвонење и повици</string>
     <string name="speech_stream_accessibility">Јачина на звукот за пристапност</string>
     <string name="speech_stream_media">Јачина на звук на медиумите</string>
-    <string name="speech_stream_ring">Јачина на прстен</string>
-    <string name="speech_stream_call">Јачина на повици, слушалка</string>
+    <string name="speech_stream_ring">Јачина на ѕвонење</string>
+    <string name="speech_stream_call">Јачина на звук на повик, слушалка</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1480,7 +1480,7 @@
     <string name="quick_settings_adaptive_brightness">Адаптивна осветленост</string>
     <string name="quick_settings_media_volume">Јачина на звук на медиумите</string>
     <string name="quick_settings_call_volume">Јачина на звук на повик</string>
-    <string name="quick_settings_ring_volume">Јачина на прстен</string>
+    <string name="quick_settings_ring_volume">Јачина на ѕвонење</string>
     <string name="quick_settings_notification_volume">Јачина на звук на известување</string>
     <string name="quick_settings_alarm_volume">Јачина на аларм</string>
     <string name="quick_settings_accessibility_volume">Јачина на звукот за пристапност</string>
@@ -1525,7 +1525,7 @@
     <string name="quick_settings_unavailable">Недостапно</string>
     <string name="quick_settings_edit">Уреди</string>
     <string name="quick_settings_system">Системски брзи поставки</string>
-    <string name="quick_settings_open_settings">Отворете ги поставките</string>
+    <string name="quick_settings_open_settings">Отвори ги поставките</string>
     <string name="quick_settings_add_control">Додај контрола</string>
     <string name="quick_settings_add_tile">Додај плочка за апликација</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
@@ -1541,7 +1541,7 @@
     </plurals>
     <string name="quick_settings_remove">Отстрани</string>
     <string name="quick_settings_added">%1$s додадено</string>
-    <string name="quick_settings_removed">%1$s отстранети</string>
+    <string name="quick_settings_removed">Отстрането: %1$s</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly вклучен. Држете 2 прста на екранот 5 секунди за да го исклучите. За да престанете да ја прикажувате оваа порака, исклучете ги поставките SandFly &gt; Напредни поставки &gt; Прикажи инструкции за исклучување на SandFly.</string>
     <string name="edge_gestures_title">Рабови</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Друга кратенка за вклучување или исклучување на режимот на прелистување</string>
@@ -1564,9 +1564,9 @@
     <string name="dialog_message_detailed_ai_description">Избраните слики се испраќаат до Gemini API на Google за да бидат опишани. Со вклучена вештачка интелигенција на уред, тие се опишани на овој телефон и не се испраќаат.\n\nСо бесплатен клуч API, Google може да го задржи она што го добива, да го користи за да ги подобри своите производи и да ги натера луѓето да го прегледуваат. Генеративната вештачка интелигенција е експериментална, така што ќе прави грешки. Се применуваат <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_detailed_ai_promotion">Деталните описи на слики се напојуваат со генеративна вештачка интелигенција. Избраните слики се испраќаат до Gemini API на Google за да бидат опишани. Со вклучена вештачка интелигенција на уред, тие се опишани на овој телефон и не се испраќаат.\n\nСо бесплатен клуч API, Google може да го задржи она што го добива, да го користи за да ги подобри своите производи и да ги натера луѓето да го прегледуваат. Генеративната вештачка интелигенција е експериментална, така што ќе прави грешки. Може да ги исклучите деталните описи на слики во секое време во поставките SandFly.\n\nВажат <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="dialog_message_screen_overview_promotion">Слика од екранот се испраќа до Gemini API на Google за да се опише, што трае неколку секунди. Со вклучена вештачка интелигенција на уред, таа е опишана на овој телефон и не се испраќа.\n\nСо бесплатен клуч API, Google може да го задржи она што го прима, да го користи за да ги подобри своите производи и да ги натера луѓето да го прегледуваат. Генеративната вештачка интелигенција е експериментална, така што ќе прави грешки. Се применуваат <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Отворете ја апликацијата</string>
+    <string name="shortcut_title_open_app">Отвори апликација</string>
     <string name="shortcut_open_app">Отвори <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Скролувајте до врвот</string>
+    <string name="shortcut_scroll_to_top">Лизгај до врвот</string>
     <string name="shortcut_write_reading_control">Напишете ја буквата од контролата за читање</string>
     <string name="title_pref_reading_control_letters">Рачно напишани букви од азбуката</string>
     <string name="reading_control_letter_none">Нема</string>
@@ -1611,14 +1611,14 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> од <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Празен текст</string>
     <string name="handwriting_not_available">Препознавањето на ракопис не е достапно на овој уред</string>
-    <string name="shortcut_scroll_to_bottom">Скролувајте до дното</string>
+    <string name="shortcut_scroll_to_bottom">Лизгај до дното</string>
     <string name="shortcut_refresh">Освежи</string>
-    <string name="shortcut_system_notifications">Сенка за известување за системот</string>
+    <string name="shortcut_system_notifications">Панел за известувања на системот</string>
     <string name="shortcut_system_quick_settings">Системски брзи поставки</string>
     <string name="shortcut_lock_screen">Заклучете го екранот на уредот</string>
     <string name="shortcut_power_menu">Мени за напојување</string>
-    <string name="shortcut_increase_media_volume">Зголемете ја јачината на звукот на медиумите</string>
-    <string name="shortcut_decrease_media_volume">Намалете ја јачината на звукот на медиумот</string>
+    <string name="shortcut_increase_media_volume">Зголеми ја јачината на звукот на медиумите</string>
+    <string name="shortcut_decrease_media_volume">Намали ја јачината на звукот на медиумите</string>
     <string name="title_clear_selection">Исчистете го изборот</string>
     <string name="title_pref_brightness">Осветленост</string>
     <string name="summary_support_change_brightness">Зголемете или намалете ја осветленоста на екранот, дури и кога екранот е скриен</string>
