@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini ukhiye we-API</string>
+    <string name="summary_pref_gemini_api_key_built_in">Ukusebenzisa ukhiye owakhelwe kulolu hlelo lokusebenza</string>
+    <string name="gemini_api_key_dialog_message">Thola ukhiye we-API wamahhala ku-Google AI Studio, ku-aistudio.google.com/apikey, bese unamathisele lapha. Ukuze ususe ukhiye wakho, sula inkambu bese ulondoloza.\n\nIzithombe nezikrini ozichazayo zithunyelwa ku-Google. Esigabeni samahhala, Google singazisebenzisa ukuthuthukisa imikhiqizo yayo.</string>
+    <string name="gemini_api_key_hint">Ukhiye we-API</string>
+    <string name="gemini_api_key_save">Londoloza</string>
+    <string name="gemini_api_key_get">Thola ukhiye</string>
+    <string name="title_pref_gemini_model">Gemini imodeli</string>
+    <string name="gemini_model_automatic">Okuzenzakalelayo</string>
+    <string name="summary_pref_gemini_model_automatic">Kuyazenzakalela: Gemini Flash, bese kuba iFlash-Lite uma iFlash imatasa</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, bese kuba i-Flash-Lite uma imatasa</string>
+    <string name="gemini_model_loading">Ithola amamodeli...</string>
+    <string name="gemini_model_list_failed">Ayikwazanga ukuthola amamodeli: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Setha ukhiye we-Gemini API kuqala</string>
+    <string name="gemini_api_terms_link">Gemini Imigomo Yesevisi Eyengeziwe ye-API</string>
+    <string name="ai_service_address_hint">Ikheli, njengokuthi https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Imodeli</string>
+    <string name="ai_service_address_invalid">Ikheli kufanele liqale ngokuthi https://. Akukho lutho olulondoloziwe.</string>
+    <string name="dialog_message_ai_service_consent">Izithombe nezithombe-skrini zithunyelwa ku-<xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ukuze kuchazwe, okuthatha imizuzwana embalwa. Kusebenza imigomo nenqubomgomo yobumfihlo yayo. I-Generative AI iwukuhlola, ngakho izokwenza amaphutha.</string>
+    <string name="ai_service_error_api_key">Isevisi ye-AI ayizange yamukele ukhiye we-API. Hlola izilungiselelo zayo ezincazelweni ezizenzakalelayo.</string>
+    <string name="ai_service_error_quota">Umkhawulo wokusetshenziswa kwesevisi ye-AI ufinyelelwe. Zama futhi emuva kwesikhathi.</string>
+    <string name="ai_service_error_busy">Isevisi ye-AI imatasa njengamanje. Zama futhi ngemva kwesikhashana.</string>
+    <string name="ai_service_error_timeout">Isevisi ye-AI ithathe isikhathi eside kakhulu ukuphendula. Zama futhi.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Lutho</string>
+    <string name="ai_service_not_set_up">Ayikho isevisi ye-AI esebenzayo. Setha eyodwa noma khetha eyodwa kuzilungiselelo zezincazelo ezizenzakalelayo.</string>
+    <string name="ai_provider_none_set_up">Ayikho isevisi ye-AI esethiwe. Setha eyodwa kuzilungiselelo zayo ngezansi.</string>
+    <string name="ai_provider_other">Enye isevisi</string>
+    <string name="title_pref_category_ai_services">Amasevisi e-AI</string>
+    <string name="title_pref_ai_provider">Isevisi ye-AI</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> izilungiselelo</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, akusethiwe</string>
+    <string name="ai_provider_in_use">Iyasetshenziswa</string>
+    <string name="ai_provider_not_set_up">Akusethiwe</string>
+    <string name="ai_provider_not_ready">Khetha imodeli kuqala</string>
+    <string name="ai_provider_address">Ikheli</string>
+    <string name="ai_provider_address_message">Ikheli lesevisi eline-API yengxoxo ehambisanayo OpenAI kanye nokufaka isithombe, okufana nokuthi https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Akusethiwe</string>
+    <string name="ai_provider_set">Kulungisiwe</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ukhiye we-API</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> imodeli</string>
+    <string name="ai_provider_choose_model">Akukhethiwe</string>
+    <string name="ai_provider_key_message">Namathisela ukhiye wakho we-API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Ukuze uyisuse, sula inkambu bese ulondoloza. Izithombe nezikrini ozichazayo zithunyelwa ku-<xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Setha ukhiye we-<xliff:g id="service" example="Claude">%1$s</xliff:g> API kuqala</string>
+    <string name="ai_provider_needs_address">Setha ikheli kuqala</string>
+    <string name="ai_provider_enter_model">Faka igama lemodeli</string>
+</resources>

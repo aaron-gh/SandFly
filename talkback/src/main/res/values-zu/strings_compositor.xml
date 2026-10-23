@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">I-TalkBack ivuliwe</string>
-  <string name="talkback_disabled">I-TalkBack ivaliwe</string>
+  <string name="talkback_on">I-SandFly ivuliwe</string>
+  <string name="talkback_disabled">I-SandFly ivaliwe</string>
   <string name="notification_type_beginning_of_field">Ukuqala kwenkambu</string>
   <string name="notification_type_end_of_field">Ukuphela kwenkambu</string>
   <string name="notification_type_selection_mode_on">Imodi yokukhetha ivuliwe</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">Ukuhudula kuqalile</string>
   <string name="drag_dropped">Into ehuduliwe yehlisiwe</string>
   <string name="drag_cancelled">Ukuhudula kukhanseliwe</string>
+    <string name="template_brightness_changed">Ukukhanya <xliff:g id="percent">%1$d</xliff:g> iphesenti.</string>
+    <string name="brightness_needs_permission">Vumela ukulungisa izilungiselelo zesistimu ukuze ushintshe ukukhanya.</string>
+    <string name="brightness_adaptive_on">Vala ukukhanya okuguqukayo ukuze ushintshe ukukhanya.</string>
+    <string name="telegram_replying_to">ukuphendula ku-<xliff:g id="name" example="Ronan">%1$s</xliff:g>: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>
