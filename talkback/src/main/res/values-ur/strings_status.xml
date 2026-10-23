@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">سٹیٹس بولیں۔</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> از <xliff:g id="max_level" example="4">%2$d</xliff:g> بارز</string>
+    <string name="status_wifi_off">Wi-Fi چھوٹ</string>
+    <string name="status_wifi_not_connected">Wi-Fi منسلک نہیں ہے۔</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">موبائل</string>
+    <string name="status_mobile_no_service">کوئی موبائل سروس نہیں۔</string>
+    <string name="status_do_not_disturb">ڈسٹرب نہ کریں۔</string>
+    <string name="status_ringer_vibrate">کمپن</string>
+    <string name="status_ringer_silent">خاموش</string>
+    <string name="status_airplane_mode">ہوائی جہاز کا موڈ</string>
+    <string name="title_pref_status_readout">اسٹیٹس ریڈ آؤٹ</string>
+    <string name="status_item_time">وقت</string>
+    <string name="status_item_time_summary">موجودہ وقت</string>
+    <string name="status_item_battery">بیٹری</string>
+    <string name="status_item_battery_summary">بیٹری کی سطح، چارجنگ، اور بیٹری سیور</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">نیٹ ورک کا نام اور سگنل کی طاقت</string>
+    <string name="status_item_mobile">موبائل نیٹ ورک</string>
+    <string name="status_item_mobile_summary">کیریئر، نیٹ ورک کی قسم، اور سگنل کی طاقت</string>
+    <string name="status_item_ringer">رنگر اور ڈسٹرب نہ کریں۔</string>
+    <string name="status_item_ringer_summary">صرف اس وقت جب رنگر بجنے پر سیٹ نہ ہو، یا ڈسٹرب نہ کریں آن ہو۔</string>
+    <string name="status_item_airplane_mode">ہوائی جہاز کا موڈ</string>
+    <string name="status_item_airplane_mode_summary">صرف اس وقت جب ہوائی جہاز کا موڈ آن ہو۔</string>
+</resources>
