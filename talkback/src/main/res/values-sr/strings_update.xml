@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_check_for_updates">Провери ажурирања</string>
-    <string name="summary_pref_check_for_updates_version">Верзија <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, верзија <xliff:g id="build" example="96">%2$d</xliff:g></string>
-    <string name="title_pref_auto_update_check">Аутоматски провери ажурирања</string>
+    <string name="summary_pref_check_for_updates_version">Верзија <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, међуверзија <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Аутоматски проверавај ажурирања</string>
     <string name="summary_pref_auto_update_check">Проверите једном дневно и прикажите обавештење када је нова верзија доступна</string>
     <string name="title_pref_dev_builds">Развојне верзије</string>
     <string name="update_notification_title">Доступно је ажурирање за SandFly</string>
     <string name="update_notification_text">Израда <xliff:g id="build" example="97">%1$d</xliff:g>. Додирните да бисте инсталирали.</string>
-    <string name="update_dialog_title">Доступна је верзија SandFly <xliff:g id="build" example="97">%1$d</xliff:g></string>
+    <string name="update_dialog_title">Доступна је међуверзија SandFly-а <xliff:g id="build" example="97">%1$d</xliff:g></string>
     <string name="update_dialog_install">Инсталирај</string>
     <string name="update_checking">Провера ажурирања</string>
     <string name="update_up_to_date">SandFly је ажуриран</string>

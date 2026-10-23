@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_check_for_updates">Periksa pembaruan</string>
-    <string name="summary_pref_check_for_updates_version">Versi <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, versi <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="summary_pref_check_for_updates_version">Versi <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
     <string name="title_pref_auto_update_check">Periksa pembaruan secara otomatis</string>
     <string name="summary_pref_auto_update_check">Periksa sekali sehari dan tampilkan pemberitahuan ketika versi baru tersedia</string>
     <string name="title_pref_dev_builds">Build pengembangan</string>
@@ -13,7 +13,7 @@
     <string name="update_up_to_date">SandFly terkini</string>
     <string name="update_check_failed">Tidak dapat memeriksa pembaruan</string>
     <string name="update_downloading">Mengunduh pembaruan</string>
-    <string name="update_already_downloading">Pembaruan sudah diunduh</string>
+    <string name="update_already_downloading">Pembaruan sedang diunduh</string>
     <string name="update_ready_title">Pembaruan SandFly telah diunduh</string>
     <string name="update_ready_text">Ketuk untuk menginstal.</string>
     <string name="update_install_failed">Tidak dapat menginstal pembaruan</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="shortcut_announce_status">הקראת סטטוס</string>
-    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> מתוך <xliff:g id="max_level" example="4">%2$d</xliff:g> תיבות</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> מתוך <xliff:g id="max_level" example="4">%2$d</xliff:g> פסים</string>
     <string name="status_wifi_off">Wi-Fi כבוי</string>
     <string name="status_wifi_not_connected">Wi-Fi לא מחובר</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
@@ -22,7 +22,7 @@
     <string name="status_item_wifi_summary">שם הרשת ועוצמת האות</string>
     <string name="status_item_mobile">רשת סלולרית</string>
     <string name="status_item_mobile_summary">ספק, סוג רשת ועוצמת אות</string>
-    <string name="status_item_ringer">צלצול ואסור להפריע</string>
+    <string name="status_item_ringer">מצב צלצול ו“אל תפריע”</string>
     <string name="status_item_ringer_summary">רק כאשר הצלצול אינו מוגדר לצלצול, או \'נא לא להפריע\' מופעל</string>
     <string name="status_item_airplane_mode">מצב מטוס</string>
     <string name="status_item_airplane_mode_summary">רק כאשר מצב טיסה מופעל</string>
