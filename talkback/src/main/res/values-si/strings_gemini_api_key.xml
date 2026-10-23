@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API යතුර</string>
+    <string name="summary_pref_gemini_api_key_built_in">මෙම යෙදුම තුළ ගොඩනගා ඇති යතුර භාවිතා කිරීම</string>
+    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey හිදී Google AI Studio වෙතින් නොමිලේ API යතුරක් ලබා ගෙන එය මෙහි අලවන්න. ඔබගේ යතුර ඉවත් කිරීමට, ක්ෂේත්‍රය හිස් කර සුරකින්න.\n\nඔබ විස්තර කරන පින්තූර සහ තිර Google වෙත යවනු ලැබේ. නිදහස් ස්ථරයේ, Google හට එහි නිෂ්පාදන වැඩිදියුණු කිරීමට ඒවා භාවිතා කළ හැක.</string>
+    <string name="gemini_api_key_hint">API යතුර</string>
+    <string name="gemini_api_key_save">සුරකින්න</string>
+    <string name="gemini_api_key_get">යතුරක් ගන්න</string>
+    <string name="title_pref_gemini_model">Gemini ආකෘතිය</string>
+    <string name="gemini_model_automatic">ස්වයංක්රීය</string>
+    <string name="summary_pref_gemini_model_automatic">ස්වයංක්‍රීය: Gemini ෆ්ලෑෂ්, පසුව ෆ්ලෑෂ් කාර්යබහුල විට ෆ්ලෑෂ්-ලයිට්</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, පසුව එය කාර්යබහුල වූ විට Flash-Lite</string>
+    <string name="gemini_model_loading">ආකෘති ලබා ගනිමින්...</string>
+    <string name="gemini_model_list_failed">මාදිලි ලබා ගැනීමට නොහැකි විය: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">පළමුව Gemini API යතුරක් සකසන්න</string>
+    <string name="gemini_api_terms_link">Gemini API අමතර සේවා කොන්දේසි</string>
+    <string name="ai_service_address_hint">ලිපිනය, https://openrouter.ai/api/v1 වැනි</string>
+    <string name="ai_service_model_hint">ආකෘතිය</string>
+    <string name="ai_service_address_invalid">ලිපිනය https://. වලින් ආරම්භ විය යුතුය කිසිවක් සුරැකී නැත.</string>
+    <string name="dialog_message_ai_service_consent">පින්තූර සහ තිරපිටපත් විස්තර කිරීමට <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> වෙත යවනු ලැබේ, එයට තත්පර කිහිපයක් ගතවේ. එහිම නියමයන් සහ රහස්‍යතා ප්‍රතිපත්තිය අදාළ වේ. උත්පාදක AI පර්යේෂණාත්මක ය, එබැවින් එය වැරදි සිදු කරනු ඇත.</string>
+    <string name="ai_service_error_api_key">AI සේවාව API යතුර පිළිගත්තේ නැත. ස්වයංක්‍රීය විස්තර තුළ එහි සැකසුම් පරීක්ෂා කරන්න.</string>
+    <string name="ai_service_error_quota">AI සේවාවේ භාවිත සීමාව ළඟා වී ඇත. පසුව නැවත උත්සාහ කරන්න.</string>
+    <string name="ai_service_error_busy">AI සේවාව දැන් කාර්ය බහුලයි. මොහොතකින් නැවත උත්සාහ කරන්න.</string>
+    <string name="ai_service_error_timeout">AI සේවාව පිළිතුරු දීමට බොහෝ කාලයක් ගත විය. නැවත උත්සාහ කරන්න.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">කිසිවක් නැත</string>
+    <string name="ai_service_not_set_up">AI සේවාවක් භාවිතයේ නැත. එකක් සකසන්න හෝ ස්වයංක්‍රීය විස්තර සැකසීම් තුළ එකක් තෝරන්න.</string>
+    <string name="ai_provider_none_set_up">AI සේවාවක් පිහිටුවා නැත. පහත එහි සැකසුම් තුළ එකක් සකසන්න.</string>
+    <string name="ai_provider_other">වෙනත් සේවාවක්</string>
+    <string name="title_pref_category_ai_services">AI සේවා</string>
+    <string name="title_pref_ai_provider">AI සේවාව</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> සැකසුම්</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, පිහිටුවා නැත</string>
+    <string name="ai_provider_in_use">භාවිතයේ පවතී</string>
+    <string name="ai_provider_not_set_up">පිහිටුවා නැත</string>
+    <string name="ai_provider_not_ready">මුලින්ම ආකෘතියක් තෝරන්න</string>
+    <string name="ai_provider_address">ලිපිනය</string>
+    <string name="ai_provider_address_message">https://example.com/v1. වැනි OpenAI-අනුකූල කතාබස් API සහ රූප ආදානය සහිත සේවාවක ලිපිනය</string>
+    <string name="ai_provider_not_set">සකසා නැත</string>
+    <string name="ai_provider_set">වින්‍යාස කර ඇත</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API යතුර</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ආකෘතිය</string>
+    <string name="ai_provider_choose_model">තෝරා නැත</string>
+    <string name="ai_provider_key_message">ඔබගේ <xliff:g id="service" example="Claude">%1$s</xliff:g> API යතුර අලවන්න. එය ඉවත් කිරීමට, ක්ෂේත්රය හිස් කර සුරකින්න. ඔබ විස්තර කරන පින්තූර සහ තිර <xliff:g id="service" example="Claude">%1$s</xliff:g> වෙත යවනු ලැබේ.</string>
+    <string name="ai_provider_needs_key">පළමුව <xliff:g id="service" example="Claude">%1$s</xliff:g> API යතුර සකසන්න</string>
+    <string name="ai_provider_needs_address">මුලින්ම ලිපිනය සකසන්න</string>
+    <string name="ai_provider_enter_model">ආදර්ශ නාමයක් ඇතුළත් කරන්න</string>
+</resources>

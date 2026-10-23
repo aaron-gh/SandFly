@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">ශබ්ද තේමාවන්</string>
+    <string name="summary_pref_sound_themes">ශබ්ද සහ කම්පන කට්ටල ස්ථාපනය කර තෝරන්න, තනි ශබ්ද වෙනුවට ඔබේම ශබ්ද, සහ පාලන ශබ්ද සහ කම්පන සහ ත්‍රිමාණ ශ්‍රව්‍ය ක්‍රියාත්මක කරන්න.</string>
+    <string name="sound_themes_installed_category">ස්ථාපිත තේමාවන්</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFlyගේම ශබ්ද සහ කම්පන, සහ ඔබේම ඕනෑම ශබ්දයක්.</string>
+    <string name="sound_theme_in_use">භාවිතයේ පවතී</string>
+    <string name="sound_theme_by"><xliff:g id="author" example="Bryan Smart">%1$s</xliff:g> විසින්</string>
+    <string name="sound_theme_license">බලපත්රය: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ශබ්දය.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ශබ්ද.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> කම්පනය.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> කම්පන.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">පාලන ශබ්ද සහ කම්පන ක්‍රියාත්මක කරයි.</string>
+    <string name="sound_theme_control_sounds_off">පාලන ශබ්ද සහ කම්පන අක්‍රිය කරයි.</string>
+    <string name="sound_theme_use">මෙම තේමාව භාවිතා කරන්න</string>
+    <string name="sound_theme_about">මෙම තේමාව ගැන</string>
+    <string name="sound_theme_export">තේමා ගොනුවක් ලෙස සුරකින්න</string>
+    <string name="sound_theme_remove">ඉවත් කරන්න</string>
+    <string name="sound_theme_remove_confirm"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> තේමාව ඉවත් කරන්නද?</string>
+    <string name="sound_theme_remove_button">ඉවත් කරන්න</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ශබ්දය සමඟ තේමාව සුරකින ලදී.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ශබ්ද සමඟ තේමාව සුරකින ලදී.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly තේමා ගොනුව සුරැකීමට නොහැකි විය.</string>
+    <string name="sound_theme_no_picker">මෙම උපාංගයේ ගොනු තේරීමට යෙදුමක් නොමැත.</string>
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> හි සැකසීම්</string>
+    <string name="title_pref_theme_sounds">ශබ්ද</string>
+    <string name="summary_pref_theme_sounds">මෙම තේමාවේ ඕනෑම ශබ්දයක් ඔබේම ශබ්ද ගොනුවක් සමඟ ප්‍රතිස්ථාපනය කරන්න.</string>
+    <string name="sound_themes_install_category">තේමාවක් ස්ථාපනය කරන්න</string>
+    <string name="title_pref_sound_theme_install_file">ගොනුවකින්</string>
+    <string name="summary_pref_sound_theme_install_file">තේමා ගොනුවක් යනු ZIP ගොනුවකි. ඔබට වෙනත් යෙදුමකින් SandFly සමඟ එකක් විවෘත කිරීමට හෝ බෙදා ගැනීමටද හැකිය.</string>
+    <string name="title_pref_sound_theme_install_link">ලින්ක් එකකින්</string>
+    <string name="summary_pref_sound_theme_install_link">තේමා ගොනුවකට සබැඳියක්, හෝ එහි තේමාවක් සහිත GitHub ගබඩාවකට. ඔබට ඔබේ බ්‍රවුසරයෙන් SandFly සමඟ සබැඳියක් ද බෙදා ගත හැක.</string>
+    <string name="title_pref_sound_theme_install_source">මූලාශ්‍රයකින්</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea හෝ Bitbucket මත ගබඩාවක තේමා ගොනු.</string>
+    <string name="sound_theme_sources">ශබ්ද තේමා මූලාශ්ර</string>
+    <string name="sound_theme_source_empty">මෙම මූලාශ්‍රයේ ශබ්ද තේමාවන් නොමැත</string>
+    <string name="sound_theme_source_failed">ශබ්ද තේමා පූරණය කළ නොහැකි විය. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">එයින් ස්ථාපනය කර ඇති ශබ්ද තේමාවන් ස්ථාපනය කර ඇත.</string>
+    <string name="sound_theme_link_message">තේමා ගොනුවකට හෝ තේමාවක් සහිත GitHub ගබඩාවකට සබැඳියක් ඇතුළු කරන්න හෝ අලවන්න.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">ශබ්ද තේමාව ස්ථාපනය කරන්න</string>
+    <string name="sound_theme_install_reading">ශබ්ද තේමාව කියවීම</string>
+    <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ස්ථාපනය කරන්නද?</string>
+    <string name="sound_theme_install_and_use">ස්ථාපනය කර භාවිතා කරන්න</string>
+    <string name="sound_theme_install">ස්ථාපනය කරන්න</string>
+    <string name="sound_theme_install_replaces">මෙය එකම නමේ ස්ථාපිත තේමාව ප්‍රතිස්ථාපනය කරයි.</string>
+    <string name="sound_theme_install_skipped">අත්හැර දමා ඇත:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ස්ථාපනය කර ඇත.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ස්ථාපනය කර ඇත. එය දැන් භාවිතයේ පවතී.</string>
+    <string name="sound_theme_install_nothing">ස්ථාපනය කිරීමට ශබ්ද තේමාවක් නොමැත.</string>
+    <string name="sound_theme_install_not_a_theme">මෙය SandFly භාවිතා කළ හැකි ශබ්ද තේමාවක් නොවේ: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly හට ශබ්ද තේමාව ස්ථාපනය කිරීමට නොහැකි විය. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">ශබ්ද තේමා වෙත සබැඳි https වලින් ආරම්භ විය යුතුය.</string>
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ශබ්ද</string>
+    <string name="title_pref_theme_sounds_reset">සියල්ල සඳහා SandFly ගේ ශබ්ද භාවිතා කරන්න</string>
+    <string name="theme_sounds_reset_confirm">මෙම තේමාවේ සියලුම ශබ්ද ඉවත් කර SandFly ගේම භාවිතා කරන්නද?</string>
+    <string name="theme_sounds_reset_button">ඉවත් කරන්න</string>
+    <string name="theme_sounds_category">ශබ්ද</string>
+    <string name="theme_sound_summary_default">SandFly ගේ ශබ්දය</string>
+    <string name="theme_sound_summary_custom">තේමා ශබ්දය</string>
+    <string name="theme_sound_summary_none">ශබ්දයක් නැත. නාභිගත ශබ්දය වාදනය වේ.</string>
+    <string name="theme_sound_summary_android_keyboard">Android හි යතුරුපුවරු ශබ්දය</string>
+    <string name="theme_sound_use_android_keyboard">Android හි යතුරුපුවරු ශබ්දය භාවිතා කරන්න</string>
+    <string name="theme_sound_braille_character">බ්රේල් යතුරු පුවරුව: අක්ෂරයක් ටයිප් කිරීම</string>
+    <string name="theme_sound_braille_space">බ්රේල් යතුරු පුවරුව: අවකාශය</string>
+    <string name="theme_sound_braille_delete">බ්රේල් යතුරු පුවරුව: මකන්න</string>
+    <string name="theme_sound_braille_new_line">බ්රේල් යතුරු පුවරුව: නව රේඛාව</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">ශබ්ද ගොනුවක් තෝරන්න</string>
+    <string name="theme_sound_preview">පෙරදසුන</string>
+    <string name="theme_sound_none">ශබ්දයක් නැත</string>
+    <string name="theme_sound_summary_no_sound">ශබ්දයක් නැත</string>
+    <string name="theme_sound_action_set_none">ශබ්දයක් නොමැති ලෙස සකසා ඇත</string>
+    <string name="theme_sound_use_default">SandFly ගේ ශබ්දය භාවිතා කරන්න</string>
+    <string name="theme_sound_remove">ශබ්දය ඉවත් කරන්න</string>
+    <string name="theme_sound_too_large">එම ගොනුව ඉතා විශාලයි. ශබ්දයක් 5 MB දක්වා විය හැකිය.</string>
+    <string name="theme_sound_not_audio">SandFly හට එම ගොනුව වාදනය කළ නොහැක. WAV, OGG, MP3 හෝ FLAC ශබ්දයක් තෝරන්න.</string>
+    <string name="theme_sound_failed">SandFly හට එම ගොනුව කියවිය නොහැකි විය.</string>
+</resources>
