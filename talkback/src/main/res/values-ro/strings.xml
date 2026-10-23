@@ -1349,7 +1349,7 @@
     </string-array>
     <string name="title_pref_speak_in_phrases">Trimiteți text lung o propoziție la un moment dat</string>
     <string name="summary_pref_speak_in_phrases">Pentru motoarele de vorbire care se opresc lent, cum ar fi Gryphon, prin urmare, glisarea oprește simultan textul lung. Multe motoare fac o pauză mai lungă între propoziții trimise separat, așa că oprește această opțiune dacă a ta se oprește rapid.</string>
-    <string name="battery_optimization_notification_title">Optimizarea bateriei se poate opri SandFly</string>
+    <string name="battery_optimization_notification_title">Optimizarea bateriei poate opri SandFly</string>
     <string name="battery_optimization_notification_text">Pe acest telefon, economizorul bateriei se poate opri SandFly după ce ecranul se stinge, așa că tace până când este repornit. Atingeți pentru a deschide Optimizarea bateriei, alegeți Toate aplicațiile, găsiți SandFly și alegeți Nu optimizați.</string>
     <string name="title_pref_mute_speech_while_recording">Silențios în timpul înregistrării</string>
     <string name="summary_pref_mute_speech_while_recording">În timp ce o aplicație înregistrează fără căștile conectate, SandFly vorbește doar ca răspuns la gesturile, tastele și tastarea dvs. și rămâne tăcută pentru lucruri precum notificări, astfel încât acestea să nu fie înregistrate.</string>
@@ -1551,7 +1551,7 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">O altă comandă rapidă pentru a activa sau dezactiva modul de navigare</string>
     <string name="title_pref_vibration_strength">Intensitatea vibrațiilor</string>
     <string name="title_pref_audio_output_device">Dispozitiv de ieșire audio</string>
-    <string name="dialog_title_audio_output_device">Alegeți unde să redați sunetul SandFly</string>
+    <string name="dialog_title_audio_output_device">Alege unde se redă sunetul SandFly</string>
     <string name="value_audio_output_device_default">Implicit de sistem</string>
     <string name="value_audio_output_device_speaker">Difuzor telefon</string>
     <string name="value_audio_output_device_bluetooth_or_wired">Dispozitiv Bluetooth conectat sau cu fir</string>
@@ -1747,10 +1747,10 @@
     <string name="image_qna_type_question">Introduceți o întrebare</string>
     <string name="shortcut_dictate">Dictează</string>
     <string name="title_pref_ai_dictation">Dictarea corectă cu AI</string>
-    <string name="dictation_not_corrected">Nu corectat. Tastat ca fiind recunoscut.</string>
+    <string name="dictation_not_corrected">Necorectat. Scris așa cum a fost recunoscut.</string>
     <string name="dictation_nothing_recognized">Nu s-a recunoscut nimic</string>
     <string name="dictation_unavailable">Recunoașterea vorbirii nu este disponibilă</string>
-    <string name="dictation_field_gone">Câmp de text închis. Nimic scris.</string>
+    <string name="dictation_field_gone">Câmp de text închis. Nu s-a scris nimic.</string>
     <string name="dictation_transcription_failed">Vorbirea nu a fost transcrisă. Nimic scris.</string>
     <string name="title_pref_dictation">Dictare</string>
     <string name="title_pref_dictation_rambler_live">Transcriere live Rambler</string>

@@ -1348,7 +1348,7 @@
     </string-array>
     <string name="title_pref_speak_in_phrases">ଏକ ସମୟରେ ଲମ୍ବା ପାଠ ପଠାନ୍ତୁ</string>
     <string name="summary_pref_speak_in_phrases">ବକ୍ତବ୍ୟ ଇଞ୍ଜିନ୍ ପାଇଁ, ଯେପରିକି ଗ୍ରିଫନ୍ ବନ୍ଦ କରିବାକୁ ମନ୍ଥର, ତେଣୁ ସ୍ୱିପ୍ କରିବା ଏକକାଳୀନ ଲମ୍ବା ପାଠକୁ ବନ୍ଦ କରିଦିଏ | ଅନେକ ଇଞ୍ଜିନ୍ ପୃଥକ ଭାବରେ ପଠାଯାଇଥିବା ବାକ୍ୟ ମଧ୍ୟରେ ଅଧିକ ସମୟ ବିରାମ ଦିଅନ୍ତି, ତେଣୁ ଯଦି ତୁମର ଶୀଘ୍ର ବନ୍ଦ ହୋଇଯାଏ ତେବେ ଏହାକୁ ଛାଡିଦିଅ |</string>
-    <string name="battery_optimization_notification_title">ବ୍ୟାଟେରୀ ଅପ୍ଟିମାଇଜେସନ୍ SandFly stop ବନ୍ଦ କରିପାରେ</string>
+    <string name="battery_optimization_notification_title">ବ୍ୟାଟେରୀ ଅପ୍ଟିମାଇଜେସନ୍ SandFlyକୁ ବନ୍ଦ କରିପାରେ</string>
     <string name="battery_optimization_notification_text">ଏହି ଫୋନରେ, ବ୍ୟାଟେରୀ ସେଭର୍ ସ୍କ୍ରିନ୍ ବନ୍ଦ ହେବା ପରେ SandFly stop ବନ୍ଦ କରିପାରେ, ତେଣୁ ଏହା ପୁନ art ଆରମ୍ଭ ହେବା ପର୍ଯ୍ୟନ୍ତ ଚୁପ୍ ହୋଇଯାଏ | ବ୍ୟାଟେରୀ ଅପ୍ଟିମାଇଜେସନ୍ ଖୋଲିବାକୁ ଟ୍ୟାପ୍ କରନ୍ତୁ, ସମସ୍ତ ଆପ୍ ବାଛନ୍ତୁ, SandFly find ସନ୍ଧାନ କରନ୍ତୁ ଏବଂ ଅପ୍ଟିମାଇଜ୍ କରନ୍ତୁ ନାହିଁ ବାଛନ୍ତୁ |</string>
     <string name="title_pref_mute_speech_while_recording">ରେକର୍ଡିଂ କରିବା ସମୟରେ ଶାନ୍ତ</string>
     <string name="summary_pref_mute_speech_while_recording">ଯେତେବେଳେ ହେଡଫୋନ୍ ସଂଯୁକ୍ତ ବିନା ଏକ ଆପ୍ ରେକର୍ଡ କରେ, SandFly କେବଳ ଆପଣଙ୍କ ଅଙ୍ଗଭଙ୍ଗୀ, ଚାବି ଏବଂ ଟାଇପିଂର ଉତ୍ତରରେ କହିଥାଏ, ଏବଂ ବିଜ୍ଞପ୍ତି ପରି ଜିନିଷ ପାଇଁ ଚୁପ୍ ରହିଥାଏ, ଯାହା ଦ୍ recorded ାରା ସେଗୁଡିକ ରେକର୍ଡ ହୋଇନଥାଏ |</string>
@@ -1546,7 +1546,7 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ବ୍ରାଉଜ୍ ମୋଡ୍ ଅନ୍ କିମ୍ବା ଅଫ୍ କରିବାକୁ ଅନ୍ୟ ଏକ ସର୍ଟକଟ୍</string>
     <string name="title_pref_vibration_strength">କମ୍ପନ ଶକ୍ତି</string>
     <string name="title_pref_audio_output_device">ଅଡିଓ ଆଉଟପୁଟ୍ ଉପକରଣ</string>
-    <string name="dialog_title_audio_output_device">SandFly ଧ୍ୱନି କେଉଁଠାରେ ଖେଳିବାକୁ ବାଛନ୍ତୁ</string>
+    <string name="dialog_title_audio_output_device">SandFly ଧ୍ୱନି କେଉଁଠି ଚଲାଇବେ ବାଛନ୍ତୁ</string>
     <string name="value_audio_output_device_default">ସିଷ୍ଟମ୍ ଡିଫଲ୍ଟ</string>
     <string name="value_audio_output_device_speaker">ଫୋନ୍ ସ୍ପିକର</string>
     <string name="value_audio_output_device_bluetooth_or_wired">ସଂଯୁକ୍ତ Bluetooth ଉପକରଣ କିମ୍ବା ତାରଯୁକ୍ତ</string>
@@ -1742,10 +1742,10 @@
     <string name="image_qna_type_question">ଏକ ପ୍ରଶ୍ନ ଟାଇପ୍ କରନ୍ତୁ</string>
     <string name="shortcut_dictate">କହି ଲେଖାନ୍ତୁ</string>
     <string name="title_pref_ai_dictation">AI ସହିତ ସଠିକ୍ ନିର୍ଦ୍ଦେଶନା</string>
-    <string name="dictation_not_corrected">ସଂଶୋଧିତ ନୁହେଁ | ଚିହ୍ନିତ ଭାବରେ ଟାଇପ୍ ହୋଇଛି |</string>
+    <string name="dictation_not_corrected">ସଂଶୋଧିତ ହୋଇନାହିଁ। ଚିହ୍ନଟ ହେବା ଅନୁସାରେ ଟାଇପ୍ ହୋଇଛି।</string>
     <string name="dictation_nothing_recognized">କିଛି ଚିହ୍ନିତ ହେଲା ନାହିଁ</string>
     <string name="dictation_unavailable">ସ୍ପିଚ୍ ରିକଗ୍ନିସନ୍ ଉପଲବ୍ଧ ନାହିଁ</string>
-    <string name="dictation_field_gone">ପାଠ୍ୟ କ୍ଷେତ୍ର ବନ୍ଦ | କିଛି ଟାଇପ୍ ହୋଇନାହିଁ |</string>
+    <string name="dictation_field_gone">ପାଠ୍ୟ କ୍ଷେତ୍ର ବନ୍ଦ ହେଲା। କିଛି ଟାଇପ୍ ହୋଇନାହିଁ।</string>
     <string name="dictation_transcription_failed">କଥାକୁ ଟେକ୍ସଟରେ ପରିବର୍ତ୍ତନ କରାଯାଇନାହିଁ। କିଛି ଟାଇପ୍ ହୋଇନାହିଁ।</string>
     <string name="title_pref_dictation">ଡିକ୍ଟେସନ୍</string>
     <string name="title_pref_dictation_rambler_live">Rambler ଲାଇଭ୍ ଟ୍ରାନ୍ସକ୍ରିପସନ୍</string>

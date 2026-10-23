@@ -789,7 +789,7 @@
   <string name="dialog_title_voice_commands">音声コマンドを使って SandFly を制御する</string>
   <string name="dialog_message_voice_commands">音声で次のような操作を行えます。\n\n• コピーする\n• フォーカスした項目以降を読み上げる\n• [保存したものを] 探す\n• [速く] 話す\n• SandFly の設定\n\n 「<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>」と言うと、利用できるすべての音声コマンドが表示されます</string>
   <string name="start_voice_command">音声コマンドを使用する</string>
-  <string name="dialog_title_pass_through_mode">SandFly をスキップしてシステム ジェスチャーを使用</string>
+  <string name="dialog_title_pass_through_mode">SandFly のジェスチャーをスキップしてシステム ジェスチャーを使用</string>
   <string name="dialog_message_pass_through_mode">チャイムが聞こえたら、SandFly でサポートされていないシステム ジェスチャーを使用できます。これは、パススルー ジェスチャーとも呼ばれています。</string>
   <string name="dialog_title_voice_input_download">音声入力を使用するには Gboard を更新してください</string>
   <string name="dialog_message_voice_input_download">Gboard がアクティブなときに 2 本の指でダブルタップして、音声入力を ON にできるようになりました。この操作を使用するには、Gboard を最新バージョンに更新する必要があります。</string>
@@ -1346,7 +1346,7 @@
     </string-array>
     <string name="title_pref_speak_in_phrases">長いテキストを一度に 1 文ずつ送信する</string>
     <string name="summary_pref_speak_in_phrases">Gryphon などの音声エンジンの場合、停止が遅いため、スワイプすると長いテキストが一度に停止します。多くのエンジンは、別々に送信されるセンテンスの間に一時停止時間が長くなるため、エンジンがすぐに停止する場合は、これをオフのままにしておきます。</string>
-    <string name="battery_optimization_notification_title">バッテリーの最適化が停止する可能性があります SandFly</string>
+    <string name="battery_optimization_notification_title">バッテリーの最適化によって SandFly が停止することがあります</string>
     <string name="battery_optimization_notification_text">この携帯電話では、画面がオフになった後にバッテリー セーバーによって SandFly が停止されるため、再起動されるまで静かになります。タップしてバッテリーの最適化を開き、[すべてのアプリ] を選択して、SandFly を見つけて、[最適化しない] を選択します。</string>
     <string name="title_pref_mute_speech_while_recording">録音中は読み上げない</string>
     <string name="summary_pref_mute_speech_while_recording">ヘッドフォンが接続されていない状態でアプリが録音している間、SandFly はジェスチャー、キー、入力に応じて話すだけで、通知などの場合は沈黙を保つため、録音されません。</string>
@@ -1544,7 +1544,7 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ブラウズ モードをオンまたはオフにする別のショートカット</string>
     <string name="title_pref_vibration_strength">振動強度</string>
     <string name="title_pref_audio_output_device">音声出力デバイス</string>
-    <string name="dialog_title_audio_output_device">SandFly サウンドを再生する場所を選択してください</string>
+    <string name="dialog_title_audio_output_device">SandFly のサウンドを再生する場所を選択</string>
     <string name="value_audio_output_device_default">システムのデフォルト</string>
     <string name="value_audio_output_device_speaker">スマートフォンのスピーカー</string>
     <string name="value_audio_output_device_bluetooth_or_wired">接続されたBluetoothデバイスまたは有線</string>

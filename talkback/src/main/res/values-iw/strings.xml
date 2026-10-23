@@ -1349,7 +1349,7 @@
     </string-array>
     <string name="title_pref_speak_in_phrases">שלח טקסט ארוך משפט בכל פעם</string>
     <string name="summary_pref_speak_in_phrases">עבור מנועי דיבור שאיטיים לעצור, כגון Gryphon, אז החלקה משם עוצרת טקסט ארוך בבת אחת. מנועים רבים עוצרים זמן רב יותר בין משפט שנשלח בנפרד, אז השאר את זה כבוי אם שלך מפסיק במהירות.</string>
-    <string name="battery_optimization_notification_title">אופטימיזציה של הסוללה יכולה להפסיק SandFly</string>
+    <string name="battery_optimization_notification_title">אופטימיזציה של הסוללה עלולה לעצור את SandFly</string>
     <string name="battery_optimization_notification_text">בטלפון זה, חיסכון הסוללה יכול להפסיק SandFly לאחר כיבוי המסך, כך שהוא משתתק עד שהוא מופעל מחדש. הקש כדי לפתוח את אופטימיזציית הסוללה, בחר כל האפליקציות, מצא את SandFly ובחר אל תבצע אופטימיזציה.</string>
     <string name="title_pref_mute_speech_while_recording">שקט בזמן ההקלטה</string>
     <string name="summary_pref_mute_speech_while_recording">בעוד אפליקציה מקליטה ללא אוזניות מחוברות, SandFly מדבר רק בתגובה למחוות, למקשים והקלדה שלך, ונשאר שקט לדברים כמו התראות, כך שהם לא מוקלטים.</string>
@@ -1551,7 +1551,7 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">קיצור דרך נוסף להפעלה או כיבוי של מצב עיון</string>
     <string name="title_pref_vibration_strength">חוזק רטט</string>
     <string name="title_pref_audio_output_device">התקן פלט אודיו</string>
-    <string name="dialog_title_audio_output_device">בחר היכן להשמיע צליל SandFly</string>
+    <string name="dialog_title_audio_output_device">בחירת מיקום השמעת הצלילים של SandFly</string>
     <string name="value_audio_output_device_default">ברירת המחדל של המערכת</string>
     <string name="value_audio_output_device_speaker">רמקול טלפון</string>
     <string name="value_audio_output_device_bluetooth_or_wired">מכשיר Bluetooth מחובר או חוטי</string>
@@ -1747,10 +1747,10 @@
     <string name="image_qna_type_question">הקלד שאלה</string>
     <string name="shortcut_dictate">הכתבה</string>
     <string name="title_pref_ai_dictation">הכתבה נכונה עם AI</string>
-    <string name="dictation_not_corrected">לא תוקן. הוקלדו כמוהו.</string>
+    <string name="dictation_not_corrected">לא תוקן. הוקלד כפי שזוהה.</string>
     <string name="dictation_nothing_recognized">לא זוהה דבר</string>
     <string name="dictation_unavailable">זיהוי דיבור אינו זמין</string>
-    <string name="dictation_field_gone">שדה הטקסט נסגר. שום דבר לא מודפס.</string>
+    <string name="dictation_field_gone">שדה הטקסט נסגר. לא הוקלד דבר.</string>
     <string name="dictation_transcription_failed">הדיבור לא תומלל. שום דבר לא הוקלד.</string>
     <string name="title_pref_dictation">הכתבה</string>
     <string name="title_pref_dictation_rambler_live">תמלול חי של Rambler</string>

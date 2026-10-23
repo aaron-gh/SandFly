@@ -1350,7 +1350,7 @@
     </string-array>
     <string name="title_pref_speak_in_phrases">ส่งข้อความยาวทีละประโยค</string>
     <string name="summary_pref_speak_in_phrases">สำหรับกลไกเสียงพูดที่หยุดช้า เช่น กริฟฟอน การปัดออกไปจะหยุดข้อความยาวๆ ในคราวเดียว กลไกหลายตัวหยุดนานขึ้นระหว่างประโยคที่ส่งแยกกัน ดังนั้นไม่ต้องสนใจหากคุณหยุดอย่างรวดเร็ว</string>
-    <string name="battery_optimization_notification_title">การเพิ่มประสิทธิภาพแบตเตอรี่สามารถหยุด SandFly</string>
+    <string name="battery_optimization_notification_title">การเพิ่มประสิทธิภาพแบตเตอรี่อาจหยุด SandFly</string>
     <string name="battery_optimization_notification_text">ในโทรศัพท์เครื่องนี้ โหมดประหยัดแบตเตอรี่สามารถหยุดที่ SandFly หลังจากที่หน้าจอปิด ดังนั้นจึงจะปิดเสียงไว้จนกว่าจะรีสตาร์ท แตะเพื่อเปิดการเพิ่มประสิทธิภาพแบตเตอรี่ เลือกแอปทั้งหมด ค้นหา SandFly และเลือกไม่ปรับให้เหมาะสม</string>
     <string name="title_pref_mute_speech_while_recording">เงียบขณะบันทึก</string>
     <string name="summary_pref_mute_speech_while_recording">ในขณะที่แอปบันทึกโดยไม่ต้องเชื่อมต่อหูฟัง SandFly พูดเฉพาะตอบรับท่าทาง ปุ่ม และการพิมพ์ของคุณเท่านั้น และเงียบไว้สำหรับสิ่งต่างๆ เช่น การแจ้งเตือน เพื่อไม่ให้มีการบันทึก</string>
@@ -1744,10 +1744,10 @@
     <string name="image_qna_type_question">พิมพ์คำถาม</string>
     <string name="shortcut_dictate">พิมพ์ตามเสียงอ่าน</string>
     <string name="title_pref_ai_dictation">การเขียนตามคำบอกที่ถูกต้องด้วย AI</string>
-    <string name="dictation_not_corrected">ไม่ได้รับการแก้ไข. พิมพ์ว่าได้รับการยอมรับแล้ว</string>
+    <string name="dictation_not_corrected">ไม่ได้แก้ไข พิมพ์ตามที่จดจำได้</string>
     <string name="dictation_nothing_recognized">ไม่รู้จำอะไรเลย</string>
     <string name="dictation_unavailable">การรู้จำเสียงไม่พร้อมใช้งาน</string>
-    <string name="dictation_field_gone">ช่องข้อความปิดแล้ว ไม่มีอะไรพิมพ์</string>
+    <string name="dictation_field_gone">ช่องข้อความปิดแล้ว ไม่ได้พิมพ์อะไร</string>
     <string name="dictation_transcription_failed">ไม่ได้ถอดเสียงพูดเป็นข้อความ ไม่มีอะไรพิมพ์</string>
     <string name="title_pref_dictation">การพิมพ์ตามเสียงพูด</string>
     <string name="title_pref_dictation_rambler_live">การถอดเสียงสดของ Rambler</string>

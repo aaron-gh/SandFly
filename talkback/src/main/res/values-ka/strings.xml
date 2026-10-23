@@ -1349,7 +1349,7 @@
     </string-array>
     <string name="title_pref_speak_in_phrases">გაგზავნეთ გრძელი ტექსტი წინადადება ერთდროულად</string>
     <string name="summary_pref_speak_in_phrases">მეტყველების ძრავებისთვის, რომლებიც ნელა ჩერდებიან, მაგალითად, Gryphon, ასე რომ, გადაფურცვლა ერთდროულად აჩერებს გრძელ ტექსტს. ბევრი ძრავა უფრო დიდხანს ჩერდება ცალ-ცალკე გაგზავნილ წინადადებებს შორის, ასე რომ, გამორთეთ ეს, თუ თქვენი სწრაფად გაჩერდება.</string>
-    <string name="battery_optimization_notification_title">ბატარეის ოპტიმიზაცია შეიძლება შეწყდეს SandFly</string>
+    <string name="battery_optimization_notification_title">ბატარეის ოპტიმიზაციამ შეიძლება SandFly შეაჩეროს</string>
     <string name="battery_optimization_notification_text">ამ ტელეფონზე ბატარეის დამზოგი შეიძლება შეწყდეს SandFly ეკრანის გამორთვის შემდეგ, ასე რომ, ის ჩუმდება, სანამ არ გადაიტვირთება. შეეხეთ ბატარეის ოპტიმიზაციის გასახსნელად, აირჩიეთ ყველა აპი, იპოვეთ SandFly და აირჩიეთ არ მოხდეს ოპტიმიზაცია.</string>
     <string name="title_pref_mute_speech_while_recording">ჩუმად ჩაწერისას</string>
     <string name="summary_pref_mute_speech_while_recording">სანამ აპი ჩაწერს ყურსასმენების გარეშე, SandFly საუბრობს მხოლოდ თქვენი ჟესტების, კლავიშებისა და აკრეფის პასუხად და ჩუმად რჩება ისეთი რაღაცეებისთვის, როგორიცაა შეტყობინებები, რათა არ ჩაიწეროს.</string>
@@ -1547,7 +1547,7 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">დათვალიერების რეჟიმის ჩართვის ან გამორთვის კიდევ ერთი მალსახმობი</string>
     <string name="title_pref_vibration_strength">ვიბრაციის სიძლიერე</string>
     <string name="title_pref_audio_output_device">აუდიო გამომავალი მოწყობილობა</string>
-    <string name="dialog_title_audio_output_device">აირჩიეთ სად უნდა დაკვრა SandFly ხმა</string>
+    <string name="dialog_title_audio_output_device">აირჩიეთ, სად დაუკრას SandFly-ის ხმა</string>
     <string name="value_audio_output_device_default">სისტემის ნაგულისხმევი</string>
     <string name="value_audio_output_device_speaker">ტელეფონის სპიკერი</string>
     <string name="value_audio_output_device_bluetooth_or_wired">დაკავშირებული Bluetooth მოწყობილობა ან სადენიანი</string>
@@ -1743,10 +1743,10 @@
     <string name="image_qna_type_question">ჩაწერეთ შეკითხვა</string>
     <string name="shortcut_dictate">კარნახი</string>
     <string name="title_pref_ai_dictation">სწორი კარნახი AI-ით</string>
-    <string name="dictation_not_corrected">არ არის გასწორებული. აკრეფილი როგორც აღიარებული.</string>
+    <string name="dictation_not_corrected">არ გასწორდა. აიკრიფა ისე, როგორც ამოიცნო.</string>
     <string name="dictation_nothing_recognized">ვერაფერი ამოიცნო</string>
     <string name="dictation_unavailable">მეტყველების ამოცნობა მიუწვდომელია</string>
-    <string name="dictation_field_gone">ტექსტის ველი დახურულია. არაფერი აკრეფილი.</string>
+    <string name="dictation_field_gone">ტექსტის ველი დაიხურა. არაფერი აკრეფილა.</string>
     <string name="dictation_transcription_failed">მეტყველება ტექსტად არ გარდაიქმნა. არაფერი აკრეფილა.</string>
     <string name="title_pref_dictation">კარნახი</string>
     <string name="title_pref_dictation_rambler_live">Rambler-ის პირდაპირი ტრანსკრიფცია</string>
