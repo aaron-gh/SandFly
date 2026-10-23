@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Dispositivo desbloqueado.</string>
   <string name="title_pref_speech_volume">Volume da fala</string>
   <string name="title_pref_verbose_scroll_announcement">Sempre falar o número de itens na lista</string>
-  <string name="summary_pref_verbose_scroll_announcement">Diga quais itens estão sendo exibidos após cada rolagem</string>
+  <string name="summary_pref_verbose_scroll_announcement">Diz quais itens estão sendo exibidos após cada rolagem</string>
   <string name="title_pref_cover_proximity_sensor">Cobrir sensor de proximidade para interromper a fala</string>
   <string name="title_pref_phonetic_letters">Falar letras com exemplos</string>
   <string name="summary_pref_phonetic_letters">Ao selecionar teclas ou navegar pelos caracteres, você ouvirá um exemplo junto a cada letra, como \"h, hotel\"</string>
@@ -1559,7 +1559,7 @@
     <string name="value_audio_output_device_usb_device">Dispositivo de áudio USB</string>
     <string name="title_pref_speaker_devices">Alto-falante do telefone com esses dispositivos</string>
     <string name="summary_pref_speaker_devices_none">Nenhum</string>
-    <string name="summary_pref_speaker_devices_no_devices">Nenhum Bluetooth ou dispositivo com fio conectado ainda</string>
+    <string name="summary_pref_speaker_devices_no_devices">Nenhum dispositivo Bluetooth ou com fio conectado ainda</string>
     <string name="pref_reduce_window_delay_summary">SandFly lê novas telas mais rapidamente quando as animações estão desativadas. Isso desativa as animações de todo o telefone.</string>
     <string name="dialog_message_detailed_ai_description">As imagens selecionadas são enviadas para a API Gemini de Google para serem descritas. Com a IA no dispositivo ativada, eles são descritos neste telefone e não são enviados.\n\nCom uma chave de API gratuita, Google pode manter o que recebe, usá-lo para melhorar seus produtos e fazer com que as pessoas o revisem. A IA generativa é experimental, por isso cometerá erros. O <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplica.</string>
     <string name="dialog_message_detailed_ai_promotion">Descrições detalhadas de imagens são alimentadas por IA generativa. As imagens selecionadas são enviadas para a API Gemini de Google para serem descritas. Com a IA no dispositivo ativada, eles são descritos neste telefone e não são enviados.\n\nCom uma chave de API gratuita, Google pode manter o que recebe, usá-lo para melhorar seus produtos e fazer com que as pessoas o revisem. A IA generativa é experimental, por isso cometerá erros. Você pode desativar as descrições detalhadas das imagens a qualquer momento nas configurações SandFly.\n\nO <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplica.</string>
@@ -1582,7 +1582,7 @@
     <string name="handwriting_download_failed">Não foi possível fazer o download do reconhecimento de escrita manual. Verifique a conexão com a internet.</string>
     <string name="handwriting_unsupported_language">O reconhecimento de escrita não está disponível neste idioma</string>
     <string name="title_pref_handwriting_keyboard">Teclado de escrita manual</string>
-    <string name="summary_pref_handwriting_keyboard">Ative a escrita manual SandFly nas configurações do teclado de Android</string>
+    <string name="summary_pref_handwriting_keyboard">Ative a escrita manual do SandFly nas configurações do teclado do Android</string>
     <string name="title_pref_handwriting_wait">Espera após escrever</string>
     <string name="value_handwriting_wait_200">0,2 segundos</string>
     <string name="value_handwriting_wait_300">0,3 segundos</string>

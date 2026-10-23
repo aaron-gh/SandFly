@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Tæki tekið úr lás.</string>
   <string name="title_pref_speech_volume">Styrkur tals</string>
   <string name="title_pref_verbose_scroll_announcement">Alltaf lesa upp fjölda listaatriða</string>
-  <string name="summary_pref_verbose_scroll_announcement">Segðu hvaða atriði eru að birtast eftir hverja flettu</string>
+  <string name="summary_pref_verbose_scroll_announcement">Segir hvaða atriði birtast eftir hverja flettingu</string>
   <string name="title_pref_cover_proximity_sensor">Hylja nándarskynjara til að stöðva tal</string>
   <string name="title_pref_phonetic_letters">Lesa upp tölustafi með dæmum</string>
   <string name="summary_pref_phonetic_letters">Þegar þú velur lyklaborðshnappa eða flettir eftir stöfum heyrir þú dæmi með hverjum bókstaf, eins og „h, hótel“</string>
@@ -504,7 +504,7 @@
   <string name="summary_read_from_current">Lesa öll atriði á skjánum og byrja á því sem er í fókus</string>
   <string name="summary_copy_last_spoken_phrase">Afrita síðustu setninguna sem SandFly sagði á klippiborðið svo að þú getir límt textann</string>
   <string name="summary_spell_last_spoken_phrase">Lesa upp hvern staf í síðustu setningunni sem SandFly sagði</string>
-  <string name="summary_repeat_last_spoken_phrase">Heyra síðustu setninguna sem SandFly sagði aftur</string>
+  <string name="summary_repeat_last_spoken_phrase">Heyra aftur síðustu setninguna sem SandFly sagði</string>
   <string name="summary_perform_screen_search">Sláðu inn leitarorð til að finna textann á skjánum</string>
   <string name="summary_voice_commands">Stjórnaðu SandFly með röddinni</string>
   <string name="summary_show_hide_screen">Feldu skjáinn svo hann sé ekki sýnilegur öðrum á almenningsstöðum. Þegar skjárinn hefur verið falinn er hægt að setja hann aftur í venjulega stillingu.</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">Talvélin les</string>
     <string name="emoji_speech_names">Lesið af SandFly</string>
     <string name="emoji_speech_none">Engin</string>
-    <string name="summary_selector_menu_emoji">Breyttu því hvernig emoji eru lesin</string>
+    <string name="summary_selector_menu_emoji">Breyta því hvernig emoji eru lesin</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Telja endurtekin emoji</string>
     <string name="emoji_repeat_count_off">Slökkt</string>
@@ -1559,7 +1559,7 @@
     <string name="value_audio_output_device_usb_device">USB-hljóðtæki</string>
     <string name="title_pref_speaker_devices">Símahátalari með þessum tækjum</string>
     <string name="summary_pref_speaker_devices_none">Engin</string>
-    <string name="summary_pref_speaker_devices_no_devices">Engin Bluetooth eða hlerunartæki tengd ennþá</string>
+    <string name="summary_pref_speaker_devices_no_devices">Engin Bluetooth- eða snúrutæki tengd ennþá</string>
     <string name="pref_reduce_window_delay_summary">SandFly les nýja skjái hraðar þegar slökkt er á hreyfimyndum. Þetta slekkur á hreyfimyndum fyrir allan símann.</string>
     <string name="dialog_message_detailed_ai_description">Valdar myndir eru sendar til Google Gemini API til að lýsa. Þegar kveikt er á gervigreind í tækinu er þeim lýst í þessum síma í staðinn og þeim er ekki sent.\n\nMeð ókeypis API lykli getur Google haldið því sem það tekur við, notað það til að bæta vörur sínar og látið fólk endurskoða það. Generative AI er tilraunastarfsemi, svo það mun gera mistök. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gilda.</string>
     <string name="dialog_message_detailed_ai_promotion">Nákvæmar myndlýsingar eru knúnar fram af generative AI. Valdar myndir eru sendar til Google Gemini API til að lýsa. Þegar kveikt er á gervigreind í tækinu er þeim lýst í þessum síma í staðinn og þeim er ekki sent.\n\nMeð ókeypis API lykli getur Google haldið því sem það tekur við, notað það til að bæta vörur sínar og látið fólk endurskoða það. Generative AI er tilraunastarfsemi, svo það mun gera mistök. Þú getur slökkt á nákvæmum myndlýsingum hvenær sem er í SandFly stillingum.\n\n <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gilda.</string>
@@ -1673,7 +1673,7 @@
     <string name="value_focus_delay_200ms_default">0,2 sekúndur (sjálfgefið)</string>
     <string name="value_focus_delay_300ms">0,3 sekúndur</string>
     <string name="title_pref_lift_to_activate">Lyftu til að virkja</string>
-    <string name="summary_support_change_lift_to_activate">Breyttu því hvar hlutur virkjar með því að lyfta fingri</string>
+    <string name="summary_support_change_lift_to_activate">Breyta því hvar lyfting fingurs virkjar atriði</string>
     <string name="value_lift_to_activate_disabled">Óvirkt</string>
     <string name="value_lift_to_activate_navigation_bar">Aðeins á siglingastikunni</string>
     <string name="value_lift_to_activate_entire_screen">Allur skjárinn</string>

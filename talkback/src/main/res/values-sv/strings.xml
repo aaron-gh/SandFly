@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Enheten är upplåst.</string>
   <string name="title_pref_speech_volume">Talvolym</string>
   <string name="title_pref_verbose_scroll_announcement">Läs alltid upp antalet listposter</string>
-  <string name="summary_pref_verbose_scroll_announcement">Säg vilka objekt som visas efter varje rullning</string>
+  <string name="summary_pref_verbose_scroll_announcement">Säger vilka objekt som visas efter varje rullning</string>
   <string name="title_pref_cover_proximity_sensor">Täck närhetssensorn för att stänga av talet</string>
   <string name="title_pref_phonetic_letters">Läs upp bokstäver med exempel</string>
   <string name="summary_pref_phonetic_letters">När du väljer tangenter eller navigerar med tecken får du ett exempel uppläst med varje bokstav, till exempel ”h, hotell”</string>
@@ -504,7 +504,7 @@
   <string name="summary_read_from_current">Läs upp allt på skärmen från och med objektet i fokus</string>
   <string name="summary_copy_last_spoken_phrase">Kopiera det senaste som lästes upp med SandFly till Urklipp så att du kan klistra in texten</string>
   <string name="summary_spell_last_spoken_phrase">Få det senaste som lästes upp med SandFly uppläst bokstav för bokstav</string>
-  <string name="summary_repeat_last_spoken_phrase">Få det senaste som lästes upp med SandFly uppläst en gång till</string>
+  <string name="summary_repeat_last_spoken_phrase">Hör det senaste SandFly sa igen</string>
   <string name="summary_perform_screen_search">Ange det som du vill söka efter på skärmen</string>
   <string name="summary_voice_commands">Styr SandFly med rösten</string>
   <string name="summary_show_hide_screen">Dölj skärmen så att andra omkring dig inte kan se den. Du kan återställa skärmen när du har dolt den.</string>
@@ -1559,7 +1559,7 @@
     <string name="value_audio_output_device_usb_device">USB-ljudenhet</string>
     <string name="title_pref_speaker_devices">Telefonhögtalare med dessa enheter</string>
     <string name="summary_pref_speaker_devices_none">Inget</string>
-    <string name="summary_pref_speaker_devices_no_devices">Inga Bluetooth eller trådbundna enheter anslutna ännu</string>
+    <string name="summary_pref_speaker_devices_no_devices">Inga Bluetooth- eller trådbundna enheter anslutna ännu</string>
     <string name="pref_reduce_window_delay_summary">SandFly läser nya skärmar snabbare när animationer är avstängda. Detta stänger av animationer för hela telefonen.</string>
     <string name="dialog_message_detailed_ai_description">Utvalda bilder skickas till Googles Gemini API för att beskrivas. Med On-device AI påslagen beskrivs de på den här telefonen istället och skickas inte.\n\nMed en gratis API-nyckel kan Google behålla vad den tar emot, använda den för att förbättra sina produkter och låta folk granska den. Generativ AI är experimentell, så det kommer att göra misstag. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gäller.</string>
     <string name="dialog_message_detailed_ai_promotion">Detaljerade bildbeskrivningar drivs av generativ AI. Utvalda bilder skickas till Googles Gemini API för att beskrivas. Med On-device AI påslagen beskrivs de på den här telefonen istället och skickas inte.\n\nMed en gratis API-nyckel kan Google behålla vad den tar emot, använda den för att förbättra sina produkter och låta folk granska den. Generativ AI är experimentell, så det kommer att göra misstag. Du kan stänga av detaljerade bildbeskrivningar när som helst i SandFly-inställningarna.\n\nDen <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gäller.</string>
@@ -1582,7 +1582,7 @@
     <string name="handwriting_download_failed">Det gick inte att ladda ned handskriftsigenkänning. Kontrollera internetanslutningen.</string>
     <string name="handwriting_unsupported_language">Handskriftsigenkänning är inte tillgängligt på detta språk</string>
     <string name="title_pref_handwriting_keyboard">Handskriftstangentbord</string>
-    <string name="summary_pref_handwriting_keyboard">Aktivera SandFly handskrift i Androids tangentbordsinställningar</string>
+    <string name="summary_pref_handwriting_keyboard">Aktivera SandFly-handskrift i Androids tangentbordsinställningar</string>
     <string name="title_pref_handwriting_wait">Väntetid efter skrivning</string>
     <string name="value_handwriting_wait_200">0,2 sekunder</string>
     <string name="value_handwriting_wait_300">0,3 sekunder</string>
@@ -1673,7 +1673,7 @@
     <string name="value_focus_delay_200ms_default">0,2 sekunder (standard)</string>
     <string name="value_focus_delay_300ms">0,3 sekunder</string>
     <string name="title_pref_lift_to_activate">Lyft för att aktivera</string>
-    <string name="summary_support_change_lift_to_activate">Ändra var ett föremål aktiveras genom att lyfta fingret</string>
+    <string name="summary_support_change_lift_to_activate">Ändra var lyft finger aktiverar ett objekt</string>
     <string name="value_lift_to_activate_disabled">Inaktiverad</string>
     <string name="value_lift_to_activate_navigation_bar">Endast på navigeringsfältet</string>
     <string name="value_lift_to_activate_entire_screen">Hela skärmen</string>

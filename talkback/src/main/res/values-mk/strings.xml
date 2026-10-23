@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Уредот е отклучен.</string>
   <string name="title_pref_speech_volume">Јачина на говор</string>
   <string name="title_pref_verbose_scroll_announcement">Секогаш изговарај го бројот на ставки во список</string>
-  <string name="summary_pref_verbose_scroll_announcement">Кажете кои ставки се прикажуваат после секое лизгање</string>
+  <string name="summary_pref_verbose_scroll_announcement">По секое лизгање кажува кои ставки се прикажани</string>
   <string name="title_pref_cover_proximity_sensor">Покривање на сензорот за близина го запира говорот</string>
   <string name="title_pref_phonetic_letters">Изговарај ги буквите со примери</string>
   <string name="summary_pref_phonetic_letters">Ако изберете копчиња на тастатура или се навигирате според знак, ќе слушнете пример со секоја од буквите, како „h, hotel“ (х, хотел)</string>
@@ -1301,7 +1301,7 @@
     <string name="title_selector_vertical_navigation">Вертикална навигација</string>
     <string name="summary_selector_vertical_navigation">Префрлете се на ставката подолу или над, покрај другите ставки од редот</string>
     <string name="title_selector_switch_tts_engine">Мотор за говор</string>
-    <string name="summary_selector_switch_tts_engine">Префрлете се помеѓу инсталираните мотори за говор</string>
+    <string name="summary_selector_switch_tts_engine">Префрлање меѓу инсталираните мотори за говор</string>
     <string name="title_selector_voice_profile">Гласовен профил</string>
     <string name="title_pref_voice_profiles">Гласовни профили</string>
     <string name="voice_profile_default">Стандардно на SandFly</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">Чита говорниот мотор</string>
     <string name="emoji_speech_names">Чита SandFly</string>
     <string name="emoji_speech_none">Нема</string>
-    <string name="summary_selector_menu_emoji">Променете како се читаат емотиконите</string>
+    <string name="summary_selector_menu_emoji">Промени како се читаат емоџијата</string>
     <string name="emoji_speech_state">Емоџи: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Брои ги повторените емотикони</string>
     <string name="emoji_repeat_count_off">Исклучено</string>
@@ -1673,7 +1673,7 @@
     <string name="value_focus_delay_200ms_default">0,2 секунди (стандардно)</string>
     <string name="value_focus_delay_300ms">0,3 секунди</string>
     <string name="title_pref_lift_to_activate">Подигнете за да го активирате</string>
-    <string name="summary_support_change_lift_to_activate">Променете каде со подигнување на прстот се активира ставка</string>
+    <string name="summary_support_change_lift_to_activate">Промени каде подигнувањето на прстот активира ставка</string>
     <string name="value_lift_to_activate_disabled">Оневозможено</string>
     <string name="value_lift_to_activate_navigation_bar">Само на лентата за навигација</string>
     <string name="value_lift_to_activate_entire_screen">Цел екран</string>

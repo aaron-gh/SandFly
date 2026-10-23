@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Peranti dibuka kunci.</string>
   <string name="title_pref_speech_volume">Kelantangan pertuturan</string>
   <string name="title_pref_verbose_scroll_announcement">Sentiasa sebut bilangan item senarai</string>
-  <string name="summary_pref_verbose_scroll_announcement">Sebut item mana yang ditunjukkan selepas setiap tatal</string>
+  <string name="summary_pref_verbose_scroll_announcement">Menyebut item yang ditunjukkan selepas setiap tatal</string>
   <string name="title_pref_cover_proximity_sensor">Tutup penderia kehampiran untuk menghentikan pertuturan</string>
   <string name="title_pref_phonetic_letters">Sebut huruf dengan contoh</string>
   <string name="summary_pref_phonetic_letters">Apabila anda memilih kekunci papan kekunci atau menavigasi mengikut aksara, anda akan mendengar contoh bersama setiap huruf, seperti, \"h, hotel\"</string>
@@ -1559,7 +1559,7 @@
     <string name="value_audio_output_device_usb_device">Peranti audio USB</string>
     <string name="title_pref_speaker_devices">Pembesar suara telefon dengan peranti ini</string>
     <string name="summary_pref_speaker_devices_none">Tiada</string>
-    <string name="summary_pref_speaker_devices_no_devices">Tiada Bluetooth atau peranti berwayar disambungkan lagi</string>
+    <string name="summary_pref_speaker_devices_no_devices">Tiada peranti Bluetooth atau berwayar disambungkan lagi</string>
     <string name="pref_reduce_window_delay_summary">SandFly membaca skrin baharu dengan lebih pantas apabila animasi dimatikan. Ini mematikan animasi untuk keseluruhan telefon.</string>
     <string name="dialog_message_detailed_ai_description">Imej yang dipilih dihantar ke Google\'s Gemini API untuk diterangkan. Dengan AI pada peranti dihidupkan, ia diterangkan pada telefon ini dan tidak dihantar.\n\nDengan kunci API percuma, Google boleh menyimpan perkara yang diterima, menggunakannya untuk menambah baik produknya dan meminta orang ramai menyemaknya. AI Generatif adalah eksperimen, jadi ia akan membuat kesilapan. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> terpakai.</string>
     <string name="dialog_message_detailed_ai_promotion">Penerangan imej terperinci dikuasakan oleh AI generatif. Imej yang dipilih dihantar ke Google\'s Gemini API untuk diterangkan. Dengan AI pada peranti dihidupkan, ia diterangkan pada telefon ini dan tidak dihantar.\n\nDengan kunci API percuma, Google boleh menyimpan perkara yang diterima, menggunakannya untuk menambah baik produknya dan meminta orang ramai menyemaknya. AI Generatif adalah eksperimen, jadi ia akan membuat kesilapan. Anda boleh mematikan penerangan imej terperinci pada bila-bila masa dalam tetapan SandFly.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> digunakan.</string>
@@ -1582,7 +1582,7 @@
     <string name="handwriting_download_failed">Pengecaman tulisan tangan tidak dapat dimuat turun. Semak sambungan internet.</string>
     <string name="handwriting_unsupported_language">Pengecaman tulisan tangan tidak tersedia dalam bahasa ini</string>
     <string name="title_pref_handwriting_keyboard">Papan kekunci tulisan tangan</string>
-    <string name="summary_pref_handwriting_keyboard">Hidupkan SandFly tulisan tangan dalam tetapan papan kekunci Android</string>
+    <string name="summary_pref_handwriting_keyboard">Hidupkan tulisan tangan SandFly dalam tetapan papan kekunci Android</string>
     <string name="title_pref_handwriting_wait">Tunggu selepas menulis</string>
     <string name="value_handwriting_wait_200">0.2 saat</string>
     <string name="value_handwriting_wait_300">0.3 saat</string>

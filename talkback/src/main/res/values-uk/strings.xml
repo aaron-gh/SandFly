@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Пристрій розблоковано.</string>
   <string name="title_pref_speech_volume">Гучність мовлення</string>
   <string name="title_pref_verbose_scroll_announcement">Завжди озвучувати кількість елементів списку</string>
-  <string name="summary_pref_verbose_scroll_announcement">Скажіть, які елементи відображаються після кожного прокручування</string>
+  <string name="summary_pref_verbose_scroll_announcement">Після кожного прокручування озвучує, які елементи показано</string>
   <string name="title_pref_cover_proximity_sensor">Зупиняти озвучення, коли прикрито датчик відстані</string>
   <string name="title_pref_phonetic_letters">Озвучення літер із прикладами</string>
   <string name="summary_pref_phonetic_letters">Вибираючи клавіші клавіатури або переходячи між окремими символами, ви чутимете кожну літеру з прикладом, як-от: \"г, готель\"</string>
@@ -1306,7 +1306,7 @@
     <string name="title_pref_voice_profiles">Голосові профілі</string>
     <string name="voice_profile_default">SandFly за замовчуванням</string>
     <string name="voice_profile_in_use">У використанні: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="spoken_language_unavailable_with_profile">Розмова недоступна під час використання голосового профілю</string>
+    <string name="spoken_language_unavailable_with_profile">Мова озвучення недоступна під час використання голосового профілю</string>
     <string name="speech_engine_unavailable_with_profile">Система мовлення недоступна під час використання голосового профілю</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, використовується</string>
     <string name="no_voice_profiles">Немає голосових профілів</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">Читає синтезатор мовлення</string>
     <string name="emoji_speech_names">Читає SandFly</string>
     <string name="emoji_speech_none">Немає</string>
-    <string name="summary_selector_menu_emoji">Змініть спосіб читання емодзі</string>
+    <string name="summary_selector_menu_emoji">Змінити спосіб читання емодзі</string>
     <string name="emoji_speech_state">Емодзі: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Підраховувати повторювані емодзі</string>
     <string name="emoji_repeat_count_off">Вимкнено</string>
@@ -1681,7 +1681,7 @@
     <string name="value_focus_delay_200ms_default">0,2 секунди (за замовчуванням)</string>
     <string name="value_focus_delay_300ms">0,3 секунди</string>
     <string name="title_pref_lift_to_activate">Активація після підняття пальця</string>
-    <string name="summary_support_change_lift_to_activate">Змініть, де підняття пальця активує елемент</string>
+    <string name="summary_support_change_lift_to_activate">Змінити, де підняття пальця активує елемент</string>
     <string name="value_lift_to_activate_disabled">Вимкнено</string>
     <string name="value_lift_to_activate_navigation_bar">Тільки на панелі навігації</string>
     <string name="value_lift_to_activate_entire_screen">Весь екран</string>

@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">ปลดล็อกอุปกรณ์แล้ว</string>
   <string name="title_pref_speech_volume">ระดับเสียงพูด</string>
   <string name="title_pref_verbose_scroll_announcement">พูดจำนวนรายการในลิสต์เสมอ</string>
-  <string name="summary_pref_verbose_scroll_announcement">บอกว่ารายการใดที่แสดงหลังจากการเลื่อนทุกครั้ง</string>
+  <string name="summary_pref_verbose_scroll_announcement">บอกว่ารายการใดแสดงอยู่หลังการเลื่อนแต่ละครั้ง</string>
   <string name="title_pref_cover_proximity_sensor">ปิดพร็อกซิมิตีเซ็นเซอร์เพื่อหยุดเสียงพูด</string>
   <string name="title_pref_phonetic_letters">พูดตัวอักษรพร้อมตัวอย่าง</string>
   <string name="summary_pref_phonetic_letters">เมื่อเลือกปุ่มบนแป้นพิมพ์หรือไปตามอักขระทีละตัว คุณจะได้ยินตัวอย่างพร้อมทั้งตัวอักษรแต่ละตัว เช่น \"h, hotel\"</string>
@@ -1583,7 +1583,7 @@
     <string name="handwriting_download_failed">ไม่สามารถดาวน์โหลดการรู้จำลายมือได้ ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต</string>
     <string name="handwriting_unsupported_language">การรู้จำลายมือไม่พร้อมใช้งานในภาษานี้</string>
     <string name="title_pref_handwriting_keyboard">แป้นพิมพ์เขียนด้วยลายมือ</string>
-    <string name="summary_pref_handwriting_keyboard">เปิด SandFly การเขียนด้วยลายมือในการตั้งค่าแป้นพิมพ์ของ Android</string>
+    <string name="summary_pref_handwriting_keyboard">เปิดการเขียนด้วยลายมือของ SandFly ในการตั้งค่าแป้นพิมพ์ของ Android</string>
     <string name="title_pref_handwriting_wait">เวลารอหลังเขียน</string>
     <string name="value_handwriting_wait_200">0.2 วินาที</string>
     <string name="value_handwriting_wait_300">0.3 วินาที</string>
@@ -1674,7 +1674,7 @@
     <string name="value_focus_delay_200ms_default">0.2 วินาที (ค่าเริ่มต้น)</string>
     <string name="value_focus_delay_300ms">0.3 วินาที</string>
     <string name="title_pref_lift_to_activate">ยกเพื่อเปิดใช้งาน</string>
-    <string name="summary_support_change_lift_to_activate">เปลี่ยนตำแหน่งการยกนิ้วของคุณเพื่อเปิดใช้งานรายการ</string>
+    <string name="summary_support_change_lift_to_activate">เปลี่ยนตำแหน่งที่การยกนิ้วจะเปิดใช้งานรายการ</string>
     <string name="value_lift_to_activate_disabled">ปิดการใช้งาน</string>
     <string name="value_lift_to_activate_navigation_bar">บนแถบนำทางเท่านั้น</string>
     <string name="value_lift_to_activate_entire_screen">ทั้งหน้าจอ</string>

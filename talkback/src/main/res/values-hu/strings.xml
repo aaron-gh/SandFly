@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Eszköz feloldva.</string>
   <string name="title_pref_speech_volume">Beszéd hangereje</string>
   <string name="title_pref_verbose_scroll_announcement">A listaelemek számának kimondása minden alkalommal</string>
-  <string name="summary_pref_verbose_scroll_announcement">Mondja meg, hogy mely elemek jelennek meg minden görgetés után</string>
+  <string name="summary_pref_verbose_scroll_announcement">Minden görgetés után kimondja, mely elemek láthatók</string>
   <string name="title_pref_cover_proximity_sensor">Közelségérzékelő letakarása a beszéd befejezéséhez</string>
   <string name="title_pref_phonetic_letters">Betűk kimondása példákkal</string>
   <string name="summary_pref_phonetic_letters">Amikor kiválasztja a billentyűzet gombjait, vagy karakterenként navigál, példát hallhat az egyes betűknél (például „h, hotel”)</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">A beszédmotor olvassa fel</string>
     <string name="emoji_speech_names">A SandFly olvassa fel</string>
     <string name="emoji_speech_none">Nincs</string>
-    <string name="summary_selector_menu_emoji">Módosítsa a hangulatjelek olvasásának módját</string>
+    <string name="summary_selector_menu_emoji">A hangulatjelek felolvasási módjának módosítása</string>
     <string name="emoji_speech_state">Hangulatjel: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Ismétlődő hangulatjelek számolása</string>
     <string name="emoji_repeat_count_off">Ki</string>
@@ -1673,7 +1673,7 @@
     <string name="value_focus_delay_200ms_default">0,2 másodperc (alapértelmezett)</string>
     <string name="value_focus_delay_300ms">0,3 másodperc</string>
     <string name="title_pref_lift_to_activate">Aktiválás az ujj felemelésével</string>
-    <string name="summary_support_change_lift_to_activate">Módosíthatja, hogy az ujj felemelésével hol aktiváljon egy elemet</string>
+    <string name="summary_support_change_lift_to_activate">Annak módosítása, hogy hol aktiválja az elemet az ujj felemelése</string>
     <string name="value_lift_to_activate_disabled">Letiltva</string>
     <string name="value_lift_to_activate_navigation_bar">Csak a navigációs sávon</string>
     <string name="value_lift_to_activate_entire_screen">A teljes képernyő</string>

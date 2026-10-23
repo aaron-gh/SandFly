@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Төхөөрөмж нээгдсэн.</string>
   <string name="title_pref_speech_volume">Дууны түвшин</string>
   <string name="title_pref_verbose_scroll_announcement">Жагсаалтын зүйлийн дугаарыг үргэлж унших</string>
-  <string name="summary_pref_verbose_scroll_announcement">Гүйлгэх бүрийн дараа ямар зүйл гарч байгааг хэлээрэй</string>
+  <string name="summary_pref_verbose_scroll_announcement">Гүйлгэх бүрийн дараа ямар зүйлс харагдаж байгааг хэлнэ</string>
   <string name="title_pref_cover_proximity_sensor">Яриаг зогсоохын тулд зай мэдрэгчийг халхална уу</string>
   <string name="title_pref_phonetic_letters">Үсгийг жишээтэй унших</string>
   <string name="summary_pref_phonetic_letters">Та гарын товч сонгох эсвэл тэмдэгтээр шилжих үедээ \"h, hotel\" гэх мэтээр үсэг бүрийн хамт жишээ сонсоно</string>
@@ -504,7 +504,7 @@
   <string name="summary_read_from_current">Сонгосон зүйлээс эхэлж, дэлгэц дээрх бүх зүйлийг уншина уу</string>
   <string name="summary_copy_last_spoken_phrase">Та SandFly-н хэлсэн сүүлийн хэллэгийг түр санах ойд хуулснаар текстийг буулгах боломжтой болно</string>
   <string name="summary_spell_last_spoken_phrase">SandFly-н хэлсэн сүүлийн хэллэгийн үсэг тус бүрийг үсэглэх</string>
-  <string name="summary_repeat_last_spoken_phrase">SandFly-н дахин хэлсэн сүүлийн хэллэгийг сонсох</string>
+  <string name="summary_repeat_last_spoken_phrase">SandFly-н хэлсэн сүүлийн хэллэгийг дахин сонсох</string>
   <string name="summary_perform_screen_search">Дэлгэц дээрх уг текстийг олохын тулд хайлтын үгийг оруулна уу</string>
   <string name="summary_voice_commands">SandFly-г дуу хоолойгоороо хянах</string>
   <string name="summary_show_hide_screen">Дэлгэцийг нууснаар таны дэлгэц олон нийтийн газарт бусдад харагдахгүй. Дэлгэцээ нуусны дараа үүнийг хэвийн төлөвт буцаана уу.</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">Ярианы хөдөлгүүр уншина</string>
     <string name="emoji_speech_names">SandFly уншина</string>
     <string name="emoji_speech_none">Уншихгүй</string>
-    <string name="summary_selector_menu_emoji">Эможи хэрхэн уншихыг өөрчил</string>
+    <string name="summary_selector_menu_emoji">Эможи унших аргыг өөрчлөх</string>
     <string name="emoji_speech_state">Эможи: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Давтагдсан эможи тоолох</string>
     <string name="emoji_repeat_count_off">Унтраалттай</string>

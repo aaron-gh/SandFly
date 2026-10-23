@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">기기가 잠금 해제되었습니다.</string>
   <string name="title_pref_speech_volume">음성 볼륨</string>
   <string name="title_pref_verbose_scroll_announcement">목록의 항목 개수 항상 소리 내어 읽기</string>
-  <string name="summary_pref_verbose_scroll_announcement">스크롤할 때마다 어떤 항목이 표시되는지 말해보세요.</string>
+  <string name="summary_pref_verbose_scroll_announcement">스크롤할 때마다 표시되는 항목을 말합니다</string>
   <string name="title_pref_cover_proximity_sensor">근접 센서를 덮어 음성 출력 중지</string>
   <string name="title_pref_phonetic_letters">예시와 함께 글자 소리 내어 읽기</string>
   <string name="summary_pref_phonetic_letters">키보드 키를 선택하거나 글자 단위로 탐색할 때 \'호텔의 호\'와 같이 글자와 예시를 함께 듣습니다.</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">음성 엔진이 읽음</string>
     <string name="emoji_speech_names">SandFly에서 읽기</string>
     <string name="emoji_speech_none">없음</string>
-    <string name="summary_selector_menu_emoji">이모티콘을 읽는 방법 변경</string>
+    <string name="summary_selector_menu_emoji">이모티콘 읽는 방법 변경</string>
     <string name="emoji_speech_state">이모티콘: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">반복되는 이모티콘 개수 세기</string>
     <string name="emoji_repeat_count_off">사용 안함</string>
@@ -1582,7 +1582,7 @@
     <string name="handwriting_download_failed">필기 인식을 다운로드할 수 없습니다. 인터넷 연결을 확인하세요.</string>
     <string name="handwriting_unsupported_language">이 언어에서는 필기 인식을 사용할 수 없습니다.</string>
     <string name="title_pref_handwriting_keyboard">필기 키보드</string>
-    <string name="summary_pref_handwriting_keyboard">Android 키보드 설정에서 SandFly 필기 기능을 켜세요</string>
+    <string name="summary_pref_handwriting_keyboard">Android 키보드 설정에서 SandFly 필기를 켜세요</string>
     <string name="title_pref_handwriting_wait">필기 후 대기 시간</string>
     <string name="value_handwriting_wait_200">0.2초</string>
     <string name="value_handwriting_wait_300">0.3초</string>

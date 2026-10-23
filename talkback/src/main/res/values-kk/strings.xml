@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Құрылғының бекітпесі ашылды.</string>
   <string name="title_pref_speech_volume">Сөздің дыбыс деңгейі</string>
   <string name="title_pref_verbose_scroll_announcement">Тізім элементтерінің санын әрдайым дыбыстау</string>
-  <string name="summary_pref_verbose_scroll_announcement">Әрбір айналдырудан кейін қай элементтер көрсетілетінін айтыңыз</string>
+  <string name="summary_pref_verbose_scroll_announcement">Әр айналдырудан кейін қай элементтер көрсетілгенін айтады</string>
   <string name="title_pref_cover_proximity_sensor">Дыбыстауды тоқтату үшін қашықтық сенсорын жабу</string>
   <string name="title_pref_phonetic_letters">Әріптерді мысалдармен дыбыстау</string>
   <string name="summary_pref_phonetic_letters">Пернетақтаның пернелерін таңдағанда немесе таңбаға өткен кезде, әр әріпке бір мысал дыбысталады (мысалы, \"қ, қонақүй\").</string>
@@ -1301,7 +1301,7 @@
     <string name="title_selector_vertical_navigation">Тік навигация</string>
     <string name="summary_selector_vertical_navigation">Төмендегі немесе жоғарыдағы элементке өтіп, жолдың басқа элементтерінен өтіңіз</string>
     <string name="title_selector_switch_tts_engine">Сөйлеу механизмі</string>
-    <string name="summary_selector_switch_tts_engine">Орнатылған сөйлеу қозғалтқыштары арасында ауысу</string>
+    <string name="summary_selector_switch_tts_engine">Орнатылған сөйлеу механизмдері арасында ауысу</string>
     <string name="title_selector_voice_profile">Дауыс профилі</string>
     <string name="title_pref_voice_profiles">Дауыс профильдері</string>
     <string name="voice_profile_default">SandFly әдепкі</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">Сөйлеу механизмі оқиды</string>
     <string name="emoji_speech_names">SandFly оқиды</string>
     <string name="emoji_speech_none">Жоқ</string>
-    <string name="summary_selector_menu_emoji">Эмодзилерді оқу әдісін өзгертіңіз</string>
+    <string name="summary_selector_menu_emoji">Эмодзилерді оқу әдісін өзгерту</string>
     <string name="emoji_speech_state">Эмодзи: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Қайталанатын эмодзилерді санау</string>
     <string name="emoji_repeat_count_off">Өшірулі</string>
@@ -1582,7 +1582,7 @@
     <string name="handwriting_download_failed">Қолжазбаны тану мүмкіндігін жүктеп алу мүмкін болмады. Интернет байланысын тексеріңіз.</string>
     <string name="handwriting_unsupported_language">Қолжазбаны тану бұл тілде қолжетімді емес</string>
     <string name="title_pref_handwriting_keyboard">Қолжазба пернетақтасы</string>
-    <string name="summary_pref_handwriting_keyboard">Android пернетақта параметрлерінде SandFly қолжазбаны қосыңыз</string>
+    <string name="summary_pref_handwriting_keyboard">Android пернетақта параметрлерінде SandFly қолжазбасын қосыңыз</string>
     <string name="title_pref_handwriting_wait">Жазғаннан кейін күтіңіз</string>
     <string name="value_handwriting_wait_200">0,2 секунд</string>
     <string name="value_handwriting_wait_300">0,3 секунд</string>
@@ -1673,7 +1673,7 @@
     <string name="value_focus_delay_200ms_default">0,2 секунд (әдепкі)</string>
     <string name="value_focus_delay_300ms">0,3 секунд</string>
     <string name="title_pref_lift_to_activate">Іске қосу үшін көтеріңіз</string>
-    <string name="summary_support_change_lift_to_activate">Саусақты көтеру элементті белсендіретін жерді өзгертіңіз</string>
+    <string name="summary_support_change_lift_to_activate">Саусақты көтергенде элемент қай жерде іске қосылатынын өзгерту</string>
     <string name="value_lift_to_activate_disabled">Өшірілген</string>
     <string name="value_lift_to_activate_navigation_bar">Тек шарлау жолағында</string>
     <string name="value_lift_to_activate_entire_screen">Бүкіл экран</string>

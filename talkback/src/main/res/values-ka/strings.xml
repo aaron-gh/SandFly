@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">მოწყობილობა განბლოკილია.</string>
   <string name="title_pref_speech_volume">წარმოთქმის ხმის დონე</string>
   <string name="title_pref_verbose_scroll_announcement">სიის პუნქტის ნომრების ყოველთვის წარმოთქმა</string>
-  <string name="summary_pref_verbose_scroll_announcement">თქვით, რომელი ელემენტებია ნაჩვენები ყოველი გადახვევის შემდეგ</string>
+  <string name="summary_pref_verbose_scroll_announcement">ყოველი გადახვევის შემდეგ ამბობს, რომელი ელემენტებია ნაჩვენები</string>
   <string name="title_pref_cover_proximity_sensor">სიახლოვის სენსორის დაფარვა მეტყველების შესაწყვეტად</string>
   <string name="title_pref_phonetic_letters">ასოების წარმოთქმა მაგალითებით</string>
   <string name="summary_pref_phonetic_letters">კლავიატურის კლავიშების არჩევისას ან სიმბოლოებით ნავიგაციისას, თითოეულ ასოსთან ერთად მაგალითს გაიგონებთ, მაგალითად, „h, hotel“</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">კითხულობს მეტყველების ძრავა</string>
     <string name="emoji_speech_names">კითხულობს SandFly</string>
     <string name="emoji_speech_none">არცერთი</string>
-    <string name="summary_selector_menu_emoji">შეცვალეთ როგორ იკითხება emoji</string>
+    <string name="summary_selector_menu_emoji">emoji-ს წაკითხვის წესის შეცვლა</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">განმეორებადი emoji-ების დათვლა</string>
     <string name="emoji_repeat_count_off">გამორთული</string>
@@ -1673,7 +1673,7 @@
     <string name="value_focus_delay_200ms_default">0.2 წამი (ნაგულისხმევი)</string>
     <string name="value_focus_delay_300ms">0.3 წამი</string>
     <string name="title_pref_lift_to_activate">აწიეთ გასააქტიურებლად</string>
-    <string name="summary_support_change_lift_to_activate">შეცვალეთ ადგილი, სადაც თითის აწევა ააქტიურებს ელემენტს</string>
+    <string name="summary_support_change_lift_to_activate">იმის შეცვლა, სად ააქტიურებს ელემენტს თითის აწევა</string>
     <string name="value_lift_to_activate_disabled">გამორთულია</string>
     <string name="value_lift_to_activate_navigation_bar">მხოლოდ ნავიგაციის ზოლზე</string>
     <string name="value_lift_to_activate_entire_screen">მთელი ეკრანი</string>

@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">נעילת המכשיר בוטלה.</string>
   <string name="title_pref_speech_volume">עוצמת קול דיבור</string>
   <string name="title_pref_verbose_scroll_announcement">הקראת מספר הפריטים ברשימה תמיד</string>
-  <string name="summary_pref_verbose_scroll_announcement">אמור אילו פריטים מוצגים לאחר כל גלילה</string>
+  <string name="summary_pref_verbose_scroll_announcement">הקראת הפריטים המוצגים אחרי כל גלילה</string>
   <string name="title_pref_cover_proximity_sensor">כיסוי של חיישן הקירבה יפסיק את הדיבור</string>
   <string name="title_pref_phonetic_letters">הקראת אותיות עם דוגמאות</string>
   <string name="summary_pref_phonetic_letters">כשבוחרים מקשים במקלדת או מנווטים לפי תו, שומעים דוגמה למילה אחרי כל אות, למשל \"מ\', מלון\"</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">מנוע הדיבור מקריא</string>
     <string name="emoji_speech_names">הקראה על ידי SandFly</string>
     <string name="emoji_speech_none">ללא</string>
-    <string name="summary_selector_menu_emoji">שנה את אופן קריאת האמוג\'י</string>
+    <string name="summary_selector_menu_emoji">שינוי אופן הקריאה של אמוג\'י</string>
     <string name="emoji_speech_state">אמוג\'י: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">ספירת אמוג\'י חוזרים</string>
     <string name="emoji_repeat_count_off">מצב מושבת</string>
@@ -1586,7 +1586,7 @@
     <string name="handwriting_download_failed">לא ניתן היה להוריד את זיהוי כתב היד. בדוק את החיבור לאינטרנט.</string>
     <string name="handwriting_unsupported_language">זיהוי כתב יד אינו זמין בשפה זו</string>
     <string name="title_pref_handwriting_keyboard">מקלדת כתב יד</string>
-    <string name="summary_pref_handwriting_keyboard">הפעל את כתב יד SandFly בהגדרות המקלדת של Android</string>
+    <string name="summary_pref_handwriting_keyboard">יש להפעיל את כתב היד של SandFly בהגדרות המקלדת של Android</string>
     <string name="title_pref_handwriting_wait">המתנה אחרי כתיבה</string>
     <string name="value_handwriting_wait_200">‫0.2 שניות</string>
     <string name="value_handwriting_wait_300">0.3 שניות</string>
@@ -1677,7 +1677,7 @@
     <string name="value_focus_delay_200ms_default">0.2 שניות (ברירת מחדל)</string>
     <string name="value_focus_delay_300ms">0.3 שניות</string>
     <string name="title_pref_lift_to_activate">הפעלה בהרמת האצבע</string>
-    <string name="summary_support_change_lift_to_activate">שנה את המקום שבו הרמת האצבע מפעילה פריט</string>
+    <string name="summary_support_change_lift_to_activate">שינוי המקום שבו הרמת האצבע מפעילה פריט</string>
     <string name="value_lift_to_activate_disabled">מושבת</string>
     <string name="value_lift_to_activate_navigation_bar">רק בסרגל הניווט</string>
     <string name="value_lift_to_activate_entire_screen">מסך שלם</string>

@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">裝置已解鎖。</string>
   <string name="title_pref_speech_volume">語音音量</string>
   <string name="title_pref_verbose_scroll_announcement">一律讀出清單項目數量</string>
-  <string name="summary_pref_verbose_scroll_announcement">說出每次滾動後顯示哪些項目</string>
+  <string name="summary_pref_verbose_scroll_announcement">每次捲動後說出顯示的項目</string>
   <string name="title_pref_cover_proximity_sensor">遮蓋鄰近感應器來停止語音內容</string>
   <string name="title_pref_phonetic_letters">讀出字母及例子</string>
   <string name="summary_pref_phonetic_letters">當你選擇鍵盤按鍵或按字元導覽時，系統會讀出每個字母及例子，例如「h，hotel」</string>
@@ -1305,7 +1305,7 @@
     <string name="title_pref_voice_profiles">語音設定檔</string>
     <string name="voice_profile_default">SandFly 預設</string>
     <string name="voice_profile_in_use">使用中：<xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="spoken_language_unavailable_with_profile">使用語音設定檔時無法使用語音</string>
+    <string name="spoken_language_unavailable_with_profile">使用語音設定檔時無法變更朗讀語言</string>
     <string name="speech_engine_unavailable_with_profile">使用語音設定檔時語音引擎不可用</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>，使用中</string>
     <string name="no_voice_profiles">沒有語音設定檔</string>
@@ -1408,7 +1408,7 @@
     <string name="emoji_speech_engine">由語音引擎朗讀</string>
     <string name="emoji_speech_names">由 SandFly 朗讀</string>
     <string name="emoji_speech_none">無</string>
-    <string name="summary_selector_menu_emoji">更改表情符號的讀取方式</string>
+    <string name="summary_selector_menu_emoji">更改表情符號的朗讀方式</string>
     <string name="emoji_speech_state">表情符號：<xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">計算重複的表情符號</string>
     <string name="emoji_repeat_count_off">關閉</string>

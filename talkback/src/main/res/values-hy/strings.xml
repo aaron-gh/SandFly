@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Սարքն ապակողպված է:</string>
   <string name="title_pref_speech_volume">Արտասանության բարձրություն</string>
   <string name="title_pref_verbose_scroll_announcement">Միշտ հնչեցնել ցանկի կետերի թիվը</string>
-  <string name="summary_pref_verbose_scroll_announcement">Ասեք, թե որ տարրերն են ցուցադրվում յուրաքանչյուր ոլորումից հետո</string>
+  <string name="summary_pref_verbose_scroll_announcement">Յուրաքանչյուր ոլորումից հետո ասում է, թե որ տարրերն են ցուցադրվում</string>
   <string name="title_pref_cover_proximity_sensor">Դադարեցնել խոսքը, երբ հեռավորության սենսորը ծածկված է</string>
   <string name="title_pref_phonetic_letters">Հնչեցնել տառերը օրինակներով</string>
   <string name="summary_pref_phonetic_letters">Երբ ստեղնաշարի վրա սեղմեք ստեղներ կամ անցնեք մի նիշից մյուսը, յուրաքանչյուր տառի հետ կհնչի նաև օրինակ (ինչպես՝ «h, hotel»)։</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">Կարդացվում է խոսքի սինթեզիչով</string>
     <string name="emoji_speech_names">Կարդում է SandFly-ը</string>
     <string name="emoji_speech_none">Ոչ մեկը</string>
-    <string name="summary_selector_menu_emoji">Փոխեք էմոջիների ընթերցման եղանակը</string>
+    <string name="summary_selector_menu_emoji">Փոխել էմոջիների ընթերցման եղանակը</string>
     <string name="emoji_speech_state">Էմոջի՝ <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Կրկնվող էմոջիների հաշվում</string>
     <string name="emoji_repeat_count_off">Անջատված</string>
@@ -1673,7 +1673,7 @@
     <string name="value_focus_delay_200ms_default">0,2 վայրկյան (կանխադրված)</string>
     <string name="value_focus_delay_300ms">0.3 վայրկյան</string>
     <string name="title_pref_lift_to_activate">Բարձրացրեք՝ ակտիվացնելու համար</string>
-    <string name="summary_support_change_lift_to_activate">Փոխեք այն վայրը, որտեղ ձեր մատը բարձրացնելը ակտիվացնում է տարրը</string>
+    <string name="summary_support_change_lift_to_activate">Փոխել, թե որտեղ է մատը բարձրացնելը ակտիվացնում տարրը</string>
     <string name="value_lift_to_activate_disabled">Անջատված</string>
     <string name="value_lift_to_activate_navigation_bar">Միայն նավիգացիոն տողի վրա</string>
     <string name="value_lift_to_activate_entire_screen">Ամբողջ էկրանը</string>

@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Zariadenie bolo odomknuté</string>
   <string name="title_pref_speech_volume">Hlasitosť reči</string>
   <string name="title_pref_verbose_scroll_announcement">Vždy vyslovovať počet položiek zoznamu</string>
-  <string name="summary_pref_verbose_scroll_announcement">Povedzte, ktoré položky sa zobrazujú po každom rolovaní</string>
+  <string name="summary_pref_verbose_scroll_announcement">Po každom posunutí povie, ktoré položky sa zobrazujú</string>
   <string name="title_pref_cover_proximity_sensor">Zastaviť reč zakrytím senzora blízkosti</string>
   <string name="title_pref_phonetic_letters">Vyslovovať písmená s príkladmi</string>
   <string name="summary_pref_phonetic_letters">Keď vyberiete klávesy alebo navigáciu podľa znakov, s každým písmenom zaznie aj príklad. Ak napríklad vyberiete h, začujete „hotel“.</string>
@@ -1301,7 +1301,7 @@
     <string name="title_selector_vertical_navigation">Vertikálna navigácia</string>
     <string name="summary_selector_vertical_navigation">Prejdite na položku pod alebo nad, za ostatné položky v riadku</string>
     <string name="title_selector_switch_tts_engine">Hlasový modul</string>
-    <string name="summary_selector_switch_tts_engine">Prepínajte medzi nainštalovanými rečovými nástrojmi</string>
+    <string name="summary_selector_switch_tts_engine">Prepínať medzi nainštalovanými rečovými nástrojmi</string>
     <string name="title_selector_voice_profile">Hlasový profil</string>
     <string name="title_pref_voice_profiles">Hlasové profily</string>
     <string name="voice_profile_default">Predvolený SandFly</string>
@@ -1409,7 +1409,7 @@
     <string name="emoji_speech_engine">Číta rečový nástroj</string>
     <string name="emoji_speech_names">Číta SandFly</string>
     <string name="emoji_speech_none">Žiadne</string>
-    <string name="summary_selector_menu_emoji">Zmeňte spôsob čítania emodži</string>
+    <string name="summary_selector_menu_emoji">Zmeniť spôsob čítania emodži</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Počítať opakované emotikony</string>
     <string name="emoji_repeat_count_off">Vypnuté</string>
@@ -1681,7 +1681,7 @@
     <string name="value_focus_delay_200ms_default">0,2 sekundy (predvolené)</string>
     <string name="value_focus_delay_300ms">0,3 sekundy</string>
     <string name="title_pref_lift_to_activate">Aktivovať zdvihnutím prsta</string>
-    <string name="summary_support_change_lift_to_activate">Zmeňte miesto, kde sa položka aktivuje zdvihnutím prsta</string>
+    <string name="summary_support_change_lift_to_activate">Zmeniť, kde zdvihnutie prsta aktivuje položku</string>
     <string name="value_lift_to_activate_disabled">Zakázané</string>
     <string name="value_lift_to_activate_navigation_bar">Iba na navigačnom paneli</string>
     <string name="value_lift_to_activate_entire_screen">Celá obrazovka</string>

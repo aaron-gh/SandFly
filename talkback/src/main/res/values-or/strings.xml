@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">ଡିଭାଇସ୍‌ ଅନଲକ୍‌ ଅଛି</string>
   <string name="title_pref_speech_volume">କଥା ଭଲ୍ୟୁମ୍‌</string>
   <string name="title_pref_verbose_scroll_announcement">ସର୍ବଦା ତାଲିକାଭୁକ୍ତ ଆଇଟମଗୁଡ଼ିକର ସଂଖ୍ୟା କୁହନ୍ତୁ</string>
-  <string name="summary_pref_verbose_scroll_announcement">ପ୍ରତ୍ୟେକ ସ୍କ୍ରୋଲ୍ ପରେ କେଉଁ ଆଇଟମ୍ ଗୁଡିକ ଦେଖାଉଛି କୁହନ୍ତୁ</string>
+  <string name="summary_pref_verbose_scroll_announcement">ପ୍ରତ୍ୟେକ ସ୍କ୍ରୋଲ୍ ପରେ କେଉଁ ଆଇଟମ୍ ଦେଖାଯାଉଛି କହେ</string>
   <string name="title_pref_cover_proximity_sensor">ସ୍ପିଚ ବନ୍ଦ କରିବା ପାଇଁ ପ୍ରୋକ୍ସିମିଟୀ ସେନ୍ସର କଭର କରନ୍ତୁ</string>
   <string name="title_pref_phonetic_letters">ଉଦାହରଣ ସହ ଅକ୍ଷର କୁହନ୍ତୁ</string>
   <string name="summary_pref_phonetic_letters">ଆପଣ କୀବୋର୍ଡ କୀ ଚୟନ କିମ୍ବା କେରେକ୍ଟର ଅନୁସାରେ ନାଭିଗେଟ କଲେ, ଆପଣ \"h, ହୋଟେଲ\" ପରି ପ୍ରତ୍ୟେକ ଅକ୍ଷର ସହିତ ଏକ ଉଦାହରଣ ଶୁଣିବେ</string>
@@ -504,7 +504,7 @@
   <string name="summary_read_from_current">ଫୋକସ କରାଯାଇଥିବା ଆଇଟମରୁ ଆରମ୍ଭ କରି, ସ୍କ୍ରିନରେ ଥିବା ସମସ୍ତ ଆଇଟମକୁ ପଢ଼ନ୍ତୁ</string>
   <string name="summary_copy_last_spoken_phrase">SandFly କହିଥିବା ଗତ ବାକ୍ୟାଂଶକୁ କ୍ଲିପବୋର୍ଡକୁ କପି କରନ୍ତୁ ଯାହା ଫଳରେ ଆପଣ ଟେକ୍ସଟକୁ ପେଷ୍ଟ କରିପାରିବେ</string>
   <string name="summary_spell_last_spoken_phrase">SandFly କହିଥିବା ଗତଥରର ବାକ୍ୟାଂଶର ପ୍ରତ୍ୟେକ ଅକ୍ଷରକୁ ଉଚ୍ଚାରଣ କରନ୍ତୁ</string>
-  <string name="summary_repeat_last_spoken_phrase">SandFly ପୁଣି କହିଥିବା ଗତଥରର ବାକ୍ୟାଂଶକୁ ଶୁଣନ୍ତୁ</string>
+  <string name="summary_repeat_last_spoken_phrase">SandFly ଶେଷରେ କହିଥିବା ବାକ୍ୟାଂଶକୁ ପୁଣି ଶୁଣନ୍ତୁ</string>
   <string name="summary_perform_screen_search">ସ୍କ୍ରିନରେ ସେହି ଟେକ୍ସଟକୁ ଖୋଜିବା ପାଇଁ ଏକ ସର୍ଚ୍ଚ ଶବ୍ଦ ଲେଖନ୍ତୁ</string>
   <string name="summary_voice_commands">ଆପଣଙ୍କ ଭଏସ ମାଧ୍ୟମରେ SandFlyକୁ ନିୟନ୍ତ୍ରଣ କରନ୍ତୁ</string>
   <string name="summary_show_hide_screen">ଡିସପ୍ଲେ ଲୁଚାନ୍ତୁ ଯାହା ଫଳରେ ସାର୍ବଜନୀନ ସ୍ଥାନଗୁଡ଼ିକରେ ଆପଣଙ୍କ ସ୍କ୍ରିନ୍ ଅନ୍ୟମାନଙ୍କୁ ଦେଖାଯିବ ନାହିଁ। ଆପଣଙ୍କ ସ୍କ୍ରିନ୍ ଲୁଚାଇବା ପରେ, ଏହାକୁ ସାମାନ୍ୟ ସ୍ଥିତିକୁ ଫେରାନ୍ତୁ।</string>
@@ -1300,12 +1300,12 @@
     <string name="title_selector_vertical_navigation">ଭୂଲମ୍ବ ନାଭିଗେସନ୍</string>
     <string name="summary_selector_vertical_navigation">ଧାଡିର ଅନ୍ୟ ଆଇଟମଗୁଡିକ ଅତୀତ କିମ୍ବା ତଳେ ଥିବା ଆଇଟମକୁ ଯାଆନ୍ତୁ</string>
     <string name="title_selector_switch_tts_engine">ସ୍ପିଚ୍ ଇଞ୍ଜିନ୍</string>
-    <string name="summary_selector_switch_tts_engine">ସଂସ୍ଥାପିତ ବକ୍ତବ୍ୟ ଇଞ୍ଜିନ୍ ମଧ୍ୟରେ ସୁଇଚ୍ କରନ୍ତୁ</string>
+    <string name="summary_selector_switch_tts_engine">ସଂସ୍ଥାପିତ ସ୍ପିଚ୍ ଇଞ୍ଜିନ୍ ମଧ୍ୟରେ ସୁଇଚ୍ କରନ୍ତୁ</string>
     <string name="title_selector_voice_profile">ଭଏସ୍ ପ୍ରୋଫାଇଲ୍</string>
     <string name="title_pref_voice_profiles">ଭଏସ୍ ପ୍ରୋଫାଇଲ୍</string>
     <string name="voice_profile_default">SandFly ଡିଫଲ୍ଟ</string>
     <string name="voice_profile_in_use">ବ୍ୟବହାରରେ: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="spoken_language_unavailable_with_profile">ଏକ ଭଏସ୍ ପ୍ରୋଫାଇଲ୍ ବ୍ୟବହାର କରିବା ସମୟରେ ସ୍ପୋକେନ୍ ଭାଷା ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="spoken_language_unavailable_with_profile">ଏକ ଭଏସ୍ ପ୍ରୋଫାଇଲ୍ ବ୍ୟବହାର କରିବା ସମୟରେ କଥିତ ଭାଷା ଉପଲବ୍ଧ ନାହିଁ</string>
     <string name="speech_engine_unavailable_with_profile">ଏକ ଭଏସ୍ ପ୍ରୋଫାଇଲ୍ ବ୍ୟବହାର କରିବା ସମୟରେ ସ୍ପିଚ୍ ଇଞ୍ଜିନ୍ ଉପଲବ୍ଧ ନାହିଁ</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, ବ୍ୟବହାରରେ</string>
     <string name="no_voice_profiles">କୌଣସି ସ୍ୱର ପ୍ରୋଫାଇଲ୍ ନାହିଁ</string>
@@ -1408,7 +1408,7 @@
     <string name="emoji_speech_engine">ସ୍ପିଚ୍ ଇଞ୍ଜିନ୍ ପଢ଼େ</string>
     <string name="emoji_speech_names">SandFly ପଢ଼େ</string>
     <string name="emoji_speech_none">କିଛି ନାହିଁ</string>
-    <string name="summary_selector_menu_emoji">ଇମୋଜି କିପରି ପ read ାଯାଏ ତାହା ପରିବର୍ତ୍ତନ କରନ୍ତୁ</string>
+    <string name="summary_selector_menu_emoji">ଇମୋଜି କିପରି ପଢ଼ାଯାଏ ତାହା ପରିବର୍ତ୍ତନ କରନ୍ତୁ</string>
     <string name="emoji_speech_state">ଇମୋଜି: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">ବାରମ୍ବାର ଇମୋଜି ଗଣନା କରନ୍ତୁ</string>
     <string name="emoji_repeat_count_off">ବନ୍ଦ ଅଛି</string>
