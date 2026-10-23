@@ -1313,7 +1313,7 @@
     <string name="shortcut_voice_profiles">選擇語音設定檔</string>
     <string name="shortcut_previous_voice_profile">上一個語音設定檔</string>
     <string name="shortcut_next_voice_profile">下一個語音設定檔</string>
-    <string name="title_pref_voice_profile_in_use">正在使用的语音配置文件</string>
+    <string name="title_pref_voice_profile_in_use">使用中的語音設定檔</string>
     <string name="title_pref_add_voice_profile">新增語音設定檔</string>
     <string name="voice_profile_new_name">語音設定檔 <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">语音配置文件已称为 <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1389,7 +1389,7 @@
     <string name="command_copied">命令已複製</string>
     <string name="title_pref_speech_control">允許其他應用程式朗讀</string>
     <string name="summary_pref_speech_control">您允許的應用程式可以用您的 SandFly 聲音說出文字。設備鎖定時不會說話。</string>
-    <string name="title_pref_speech_control_sound">在其他應用程式說話之前播放聲音</string>
+    <string name="title_pref_speech_control_sound">其他應用程式朗讀前播放提示音</string>
     <string name="speech_control_apps_category">應用程式</string>
     <string name="speech_control_no_apps">尚未有應用程式要求朗讀。</string>
     <string name="speech_control_ask_title">允許<xliff:g id="app" example="Tasker">%1$s</xliff:g>透過SandFly說話嗎？</string>
@@ -1694,7 +1694,7 @@
     <string name="window_names_never">永不</string>
     <string name="title_pref_selector_links_controls_web_only">連結和控制項僅限網頁內容</string>
     <string name="title_pref_selector_auto_switch">自動切換朗讀控制項</string>
-    <string name="title_pref_touch_stops_speech">觸碰螢幕時停止講話</string>
+    <string name="title_pref_touch_stops_speech">觸碰螢幕時停止朗讀</string>
     <string name="title_pref_focus_new_windows">將焦點移至新視窗</string>
     <string name="title_pref_volume_keys_adjust_sliders">音量鍵調整滑桿</string>
     <string name="summary_pref_volume_keys_adjust_sliders">當滑桿獲得焦點時，音量增加和減少會更改其值而不是音量</string>
