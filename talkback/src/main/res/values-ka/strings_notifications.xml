@@ -20,7 +20,7 @@
     <string name="notification_reading_title">შეტყობინებების ხმამაღლა კითხვა</string>
     <string name="notification_apps_title">აპები</string>
     <string name="notification_words_title">სიტყვები და ჩანაცვლებები</string>
-    <string name="notification_kinds_title">სახის შეტყობინებები</string>
+    <string name="notification_kinds_title">შეტყობინებების სახეები</string>
     <string name="notification_when_title">როდის წაიკითხოს</string>
     <string name="notification_rules_title">წესები</string>
     <string name="notification_repeats_title">მეორდება</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">სიტყვების მაქსიმალური რაოდენობა</string>
     <string name="notification_max_sentences_title">წინადადებების მაქსიმალური რაოდენობა</string>
     <string name="notification_max_characters_title">ტექსტის სიმბოლოების მაქსიმალური რაოდენობა</string>
-    <string name="notification_max_seconds_title">შემდეგ შეწყვიტე კითხვა</string>
+    <string name="notification_max_seconds_title">წაკითხვის შეწყვეტა</string>
     <string name="notification_category_timing">დრო</string>
-    <string name="notification_delay_title">დაელოდეთ სანამ წაიკითხავთ</string>
+    <string name="notification_delay_title">ლოდინი წაკითხვამდე</string>
     <string name="notification_queue_title">როდესაც სხვა შეტყობინება იკითხება</string>
     <string name="notification_repeat_minutes_title">ხელახლა წაიკითხეთ სანამ ეკრანი არ ჩაირთვება</string>
     <string name="notification_skip_media_title">გამოტოვეთ მედია ფლეერები</string>
@@ -76,9 +76,9 @@
     <string name="notification_headphones_title">ყურსასმენები</string>
     <string name="notification_media_title">სანამ მედია თამაშობს</string>
     <string name="notification_dnd_title">არ შემაწუხო</string>
-    <string name="notification_dnd_none">არ წაიკითხოთ შეტყობინებები ხმამაღლა</string>
+    <string name="notification_dnd_none">არცერთი არ წაიკითხოს</string>
     <string name="notification_dnd_allowed">„არ შემაწუხოთ“ რეჟიმით დაშვებული შეტყობინებების წაკითხვა</string>
-    <string name="notification_dnd_all">წაიკითხეთ ყველა</string>
+    <string name="notification_dnd_all">ყველას წაკითხვა</string>
     <string name="notification_touch_title">ეკრანზე შეხებისას</string>
     <string name="notification_touch_read">წაიკითხეთ მაშინვე</string>
     <string name="notification_touch_after">წაიკითხეთ, როდესაც შეხება დასრულდება</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">ჯიბის რეჟიმი</string>
     <string name="notification_pocket_summary">სენსორი, რომელიც დაფარულია კითხვის დაწყებისას, როგორც ჯიბეში, არ აჩერებს მას</string>
     <string name="notification_volume_keys_title">დააჭირეთ ხმის ორივე ღილაკს</string>
-    <string name="notification_dismiss_title">შეწყვიტე კითხვა, როდესაც შეტყობინება გაუქმებულია</string>
+    <string name="notification_dismiss_title">შეწყვეტა დახურვისას</string>
     <string name="notification_watch_dismiss_title">ასევე, როდესაც შეტყობინება გაუქმებულია სმარტ საათზე</string>
     <string name="notification_app_cancel_title">შეწყვიტე კითხვა, როდესაც აპი წაშლის შეტყობინებას</string>
     <string name="notification_category_summary">შეჯამება</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">თქვით დრო ყოველ ჯერზე</string>
     <string name="notification_clock_format_title">დროის ფორმატი</string>
     <string name="notification_clock_format_message">ჩანაცვლების ადგილები: {time}, {date} და {battery} (ბატარეის პროცენტი).</string>
-    <string name="notification_clock_format_default">ეს არის {time}</string>
+    <string name="notification_clock_format_default">ახლა {time}-ია</string>
     <string name="notification_clock_exact_title">ზუსტი დრო</string>
     <string name="notification_clock_exact_summary">სჭირდება სიგნალიზაცია და შეხსენებები. წინააღმდეგ შემთხვევაში დრო შეიძლება ითქვას ერთი წუთით დაგვიანებით.</string>
     <string name="notification_other_apps_title">სხვა აპლიკაციები</string>
@@ -159,12 +159,12 @@
     <string name="notification_edit">რედაქტირება</string>
     <string name="notification_remove">ამოღება</string>
     <string name="notification_history_keep">შეტყობინებების ისტორიის შენახვა</string>
-    <string name="notification_history_clear">გაასუფთავეთ ისტორია</string>
+    <string name="notification_history_clear">ისტორიის გასუფთავება</string>
     <string name="notification_history_category">შეტყობინებები</string>
     <string name="notification_history_empty">არ არის შეტყობინებები</string>
-    <string name="notification_history_ignore_app">არ წაიკითხო <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app">არ წაიკითხოს <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">წაიკითხეთ მხოლოდ <xliff:g id="app" example="Chat">%1$s</xliff:g> სახელი</string>
-    <string name="notification_history_priority_app">ჯერ წაიკითხეთ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g>-ის პირველად წაკითხვა</string>
     <string name="notification_history_block_similar">არ წაიკითხოთ მსგავსი შეტყობინებები</string>
     <string name="notification_history_copy">კოპირება</string>
     <string name="notification_saved">შენახულია</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">შეტყობინება შეიცავს <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">შეტყობინება არ შეიცავს <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">რინგერი დუმს ან ვიბრირებს</string>
-    <string name="notification_cond_silent_not">რინგერი რეკავს</string>
+    <string name="notification_cond_silent_not">ზარის ხმა ჩართულია</string>
     <string name="notification_cond_media">მედია უკრავს</string>
     <string name="notification_cond_media_not">მედია არ უკრავს</string>
     <string name="notification_action_skip">არ წაიკითხო</string>

@@ -31,7 +31,7 @@
     <string name="notification_automation_title">स्वचालन</string>
     <string name="notification_automation_allowed_title">स्वचालन एपहरूलाई अनुमति दिनुहोस्</string>
     <string name="notification_category_said">के पढिन्छ</string>
-    <string name="notification_format_title">भाषण ढाँचा</string>
+    <string name="notification_format_title">बोलाइको ढाँचा</string>
     <string name="notification_format_message">प्लेसहोल्डरहरू: {app}, {title}, {text}, {content} (पूरा पाठ), {bigtext}, {subtext}, {ticker}, {category} र {time}।</string>
     <string name="notification_private_format_title">निजी सूचनाहरू भन्छन्</string>
     <string name="notification_private_format_message">एक निजी सूचना को सामग्री को स्थान मा भने। प्लेसहोल्डरहरू: {app}, {category} र {time}।</string>
@@ -55,7 +55,7 @@
     <string name="notification_max_words_title">शब्दहरूको अधिकतम संख्या</string>
     <string name="notification_max_sentences_title">वाक्यहरूको अधिकतम संख्या</string>
     <string name="notification_max_characters_title">पाठ वर्णहरूको अधिकतम संख्या</string>
-    <string name="notification_max_seconds_title">पछि पढ्न रोक्नुहोस्</string>
+    <string name="notification_max_seconds_title">यति समयपछि पढ्न रोक्नुहोस्</string>
     <string name="notification_category_timing">समय</string>
     <string name="notification_delay_title">पढ्नु अघि पर्खनुहोस्</string>
     <string name="notification_queue_title">जब अर्को सूचना पढिन्छ</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">हेडफोनहरू</string>
     <string name="notification_media_title">मिडियाले खेल्दा</string>
     <string name="notification_dnd_title">डिस्टर्ब नगर्नुहोस्</string>
-    <string name="notification_dnd_none">कुनै पनि सूचनाहरू ठूलो स्वरमा नपढ्नुहोस्</string>
+    <string name="notification_dnd_none">कुनै नपढ्नुहोस्</string>
     <string name="notification_dnd_allowed">डिस्टर्ब नगर्ने मोडद्वारा अनुमति दिइएको सूचनाहरू पढ्नुहोस्</string>
     <string name="notification_dnd_all">सबै पढ्नुहोस्</string>
     <string name="notification_touch_title">जब स्क्रिन छोएको छ</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">पकेट मोड</string>
     <string name="notification_pocket_summary">पढाइ सुरु गर्दा कभर गरिएको सेन्सर, पकेटमा जस्तै, यसलाई रोक्दैन</string>
     <string name="notification_volume_keys_title">दुबै भोल्युम कुञ्जीहरू थिच्नुहोस्</string>
-    <string name="notification_dismiss_title">सूचना खारेज हुँदा पढ्न रोक्नुहोस्</string>
+    <string name="notification_dismiss_title">खारेज गर्दा रोक्नुहोस्</string>
     <string name="notification_watch_dismiss_title">साथै स्मार्टवाचमा सूचना खारेज हुँदा</string>
     <string name="notification_app_cancel_title">एपले सूचना हटाउँदा पढ्न रोक्नुहोस्</string>
     <string name="notification_category_summary">सारांश</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">प्रत्येक समय भन्नुहोस्</string>
     <string name="notification_clock_format_title">समयको फर्म्याट</string>
     <string name="notification_clock_format_message">प्लेसहोल्डरहरू: {time}, {date} र {battery} (ब्याट्री प्रतिशत)।</string>
-    <string name="notification_clock_format_default">यो {time} छ</string>
+    <string name="notification_clock_format_default">अहिले {time} भयो</string>
     <string name="notification_clock_exact_title">सही समय</string>
     <string name="notification_clock_exact_summary">अलार्म र रिमाइन्डरहरू चाहिन्छ। अन्यथा समय एक मिनेट ढिलो भन्न सकिन्छ।</string>
     <string name="notification_other_apps_title">अन्य एपहरू</string>
@@ -267,9 +267,9 @@
     <string name="notification_cond_landscape_not">स्क्रिन पोर्ट्रेटमा छ</string>
     <string name="notification_cond_time">समय <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> छ</string>
     <string name="notification_cond_time_not">समय <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> होइन</string>
-    <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> मा जडान गरियो</string>
+    <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> मा जडान छ</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> मा जोडिएको छैन</string>
-    <string name="notification_cond_wifi_any">Wi-Fi मा जडान गरियो</string>
+    <string name="notification_cond_wifi_any">Wi-Fi मा जडान छ</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi मा जोडिएको छैन</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> अगाडि छ</string>
     <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> अगाडि छैन</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">सूचनामा <xliff:g id="text" example="urgent">%1$s</xliff:g> समावेश छ</string>
     <string name="notification_cond_contains_not">सूचनामा <xliff:g id="text" example="urgent">%1$s</xliff:g> समावेश छैन</string>
     <string name="notification_cond_silent">घण्टी मौन छ वा कम्पन हुन्छ</string>
-    <string name="notification_cond_silent_not">घण्टी बज्छ</string>
+    <string name="notification_cond_silent_not">रिङ्गर अन छ</string>
     <string name="notification_cond_media">मिडिया चलिरहेको छ</string>
     <string name="notification_cond_media_not">कुनै मिडिया चलिरहेको छैन</string>
     <string name="notification_action_skip">नपढ्नुहोस्</string>

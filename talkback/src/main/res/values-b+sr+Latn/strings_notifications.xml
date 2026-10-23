@@ -38,7 +38,7 @@
     <string name="notification_category_voice">Glas</string>
     <string name="notification_voice_title">Glas</string>
     <string name="notification_voice_sandfly">SandFly-ov glas</string>
-    <string name="notification_detect_language_title">Otkrijte jezik</string>
+    <string name="notification_detect_language_title">Otkrij jezik</string>
     <string name="notification_detect_language_summary">Izgovorite svako obaveštenje na jeziku na kojem je napisano. Potrebno je automatski menjati jezik u podešavanjima pretvaranja teksta u govor.</string>
     <string name="notification_sound_before_title">Zvuk pre obaveštenja</string>
     <string name="notification_category_text">Tekst</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Maksimalan broj reči</string>
     <string name="notification_max_sentences_title">Maksimalan broj rečenica</string>
     <string name="notification_max_characters_title">Maksimalan broj tekstualnih znakova</string>
-    <string name="notification_max_seconds_title">Prestani da čitaš posle</string>
+    <string name="notification_max_seconds_title">Prestani da čitaš nakon</string>
     <string name="notification_category_timing">Vreme</string>
-    <string name="notification_delay_title">Sačekajte pre čitanja</string>
+    <string name="notification_delay_title">Čekanje pre čitanja</string>
     <string name="notification_queue_title">Kada se pročita drugo obaveštenje</string>
     <string name="notification_repeat_minutes_title">Čitajte ponovo dok se ekran ne uključi</string>
     <string name="notification_skip_media_title">Preskočite medijske plejere</string>
@@ -76,9 +76,9 @@
     <string name="notification_headphones_title">Slušalice</string>
     <string name="notification_media_title">Dok se mediji reprodukuju</string>
     <string name="notification_dnd_title">Ne uznemiravaj</string>
-    <string name="notification_dnd_none">Ne čitajte nikakva obaveštenja naglas</string>
+    <string name="notification_dnd_none">Ne čitaj nijedno</string>
     <string name="notification_dnd_allowed">Pročitajte obaveštenja koja dozvoljava režim Ne uznemiravaj</string>
-    <string name="notification_dnd_all">Pročitajte sve</string>
+    <string name="notification_dnd_all">Čitaj sve</string>
     <string name="notification_touch_title">Dok se dodiruje ekran</string>
     <string name="notification_touch_read">Čitajte odmah</string>
     <string name="notification_touch_after">Pročitajte kada se dodir završi</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Džepni režim</string>
     <string name="notification_pocket_summary">Senzor koji je prekriven kada čitanje počne, kao u džepu, ne zaustavlja ga</string>
     <string name="notification_volume_keys_title">Pritisnite oba tastera za jačinu zvuka</string>
-    <string name="notification_dismiss_title">Zaustavite čitanje kada se obaveštenje zatvori</string>
+    <string name="notification_dismiss_title">Zaustavi pri zatvaranju</string>
     <string name="notification_watch_dismiss_title">Takođe kada je obaveštenje odbačeno na pametnom satu</string>
     <string name="notification_app_cancel_title">Prestanite da čitate kada aplikacija ukloni obaveštenje</string>
     <string name="notification_category_summary">Rezime</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Reci vreme svaki</string>
     <string name="notification_clock_format_title">Format vremena</string>
     <string name="notification_clock_format_message">Čuvari mesta: {time}, {date} i {battery} (procenat baterije).</string>
-    <string name="notification_clock_format_default">{time} je</string>
+    <string name="notification_clock_format_default">Sada je {time}</string>
     <string name="notification_clock_exact_title">Tačna vremena</string>
     <string name="notification_clock_exact_summary">Potrebni su alarmi i podsetnici. U suprotnom se može reći da vreme kasni i do jednog minuta.</string>
     <string name="notification_other_apps_title">Druge aplikacije</string>
@@ -158,13 +158,13 @@
     <string name="notification_invalid_regex">Nije važeći regularni izraz</string>
     <string name="notification_edit">Uredi</string>
     <string name="notification_remove">Ukloni</string>
-    <string name="notification_history_keep">Sačuvajte istoriju obaveštenja</string>
-    <string name="notification_history_clear">Očistite istoriju</string>
+    <string name="notification_history_keep">Čuvaj istoriju obaveštenja</string>
+    <string name="notification_history_clear">Obriši istoriju</string>
     <string name="notification_history_category">Obaveštenja</string>
     <string name="notification_history_empty">Nema obaveštenja</string>
     <string name="notification_history_ignore_app">Ne čitaj <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Pročitaj samo ime <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_priority_app">Prvo pročitajte <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Čitaj <xliff:g id="app" example="Chat">%1$s</xliff:g> prvo</string>
     <string name="notification_history_block_similar">Ne čitajte ovakva obaveštenja</string>
     <string name="notification_history_copy">Kopiraj</string>
     <string name="notification_saved">Sačuvano</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">Obaveštenje sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Obaveštenje ne sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Zvono je tiho ili vibrira</string>
-    <string name="notification_cond_silent_not">Zvono zvoni</string>
-    <string name="notification_cond_media">Mediji sviraju</string>
+    <string name="notification_cond_silent_not">Zvono je uključeno</string>
+    <string name="notification_cond_media">Reprodukuje se medijski sadržaj</string>
     <string name="notification_cond_media_not">Nema medija</string>
     <string name="notification_action_skip">ne čitaj</string>
     <string name="notification_action_private">pročitajte samo naziv aplikacije</string>

@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Maximálny počet slov</string>
     <string name="notification_max_sentences_title">Maximálny počet viet</string>
     <string name="notification_max_characters_title">Maximálny počet textových znakov</string>
-    <string name="notification_max_seconds_title">Potom prestaňte čítať</string>
+    <string name="notification_max_seconds_title">Prestať čítať po</string>
     <string name="notification_category_timing">Načasovanie</string>
-    <string name="notification_delay_title">Pred čítaním počkajte</string>
+    <string name="notification_delay_title">Čakanie pred čítaním</string>
     <string name="notification_queue_title">Keď sa prečíta ďalšie upozornenie</string>
     <string name="notification_repeat_minutes_title">Čítajte znova, kým sa obrazovka nezapne</string>
     <string name="notification_skip_media_title">Preskočiť prehrávače médií</string>
@@ -76,9 +76,9 @@
     <string name="notification_headphones_title">Slúchadlá</string>
     <string name="notification_media_title">Kým sa hrajú médiá</string>
     <string name="notification_dnd_title">Nerušiť</string>
-    <string name="notification_dnd_none">Nečítajte žiadne upozornenia nahlas</string>
+    <string name="notification_dnd_none">Nečítať žiadne</string>
     <string name="notification_dnd_allowed">Čítanie upozornení povolené režimom Nerušiť</string>
-    <string name="notification_dnd_all">Prečítajte si všetko</string>
+    <string name="notification_dnd_all">Čítať všetko</string>
     <string name="notification_touch_title">Kým sa dotknete obrazovky</string>
     <string name="notification_touch_read">Prečítajte si hneď</string>
     <string name="notification_touch_after">Prečítajte si, keď dotyk skončí</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Vreckový režim</string>
     <string name="notification_pocket_summary">Senzor, ktorý je pri spustení čítania zakrytý, ako vo vrecku, ho nezastaví</string>
     <string name="notification_volume_keys_title">Stlačte obe tlačidlá hlasitosti</string>
-    <string name="notification_dismiss_title">Po zrušení upozornenia prestaňte čítať</string>
+    <string name="notification_dismiss_title">Zastaviť po zavretí</string>
     <string name="notification_watch_dismiss_title">Aj pri zrušení upozornenia na inteligentných hodinkách</string>
     <string name="notification_app_cancel_title">Keď aplikácia odstráni upozornenie, prestaňte čítať</string>
     <string name="notification_category_summary">Zhrnutie</string>
@@ -162,9 +162,9 @@
     <string name="notification_history_clear">Vymazať históriu</string>
     <string name="notification_history_category">Upozornenia</string>
     <string name="notification_history_empty">Žiadne upozornenia</string>
-    <string name="notification_history_ignore_app">Nečítaj <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app">Nečítať <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Čítať iba meno <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_priority_app">Najprv si prečítajte <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Čítať <xliff:g id="app" example="Chat">%1$s</xliff:g> ako prvé</string>
     <string name="notification_history_block_similar">Takéto upozornenia nečítajte</string>
     <string name="notification_history_copy">Skopírovať</string>
     <string name="notification_saved">Uložené</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">Oznámenie obsahuje <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Oznámenie neobsahuje <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Zvonenie je tiché alebo vibruje</string>
-    <string name="notification_cond_silent_not">Zvonenie zvoní</string>
+    <string name="notification_cond_silent_not">Zvonenie je zapnuté</string>
     <string name="notification_cond_media">Prehrávajú sa médiá</string>
     <string name="notification_cond_media_not">Neprehrávajú sa žiadne médiá</string>
     <string name="notification_action_skip">nečítaj</string>

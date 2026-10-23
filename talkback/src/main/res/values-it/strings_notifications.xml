@@ -31,7 +31,7 @@
     <string name="notification_automation_title">Automazione</string>
     <string name="notification_automation_allowed_title">Consenti app di automazione</string>
     <string name="notification_category_said">Ciò che viene detto</string>
-    <string name="notification_format_title">Formato del discorso</string>
+    <string name="notification_format_title">Formato della lettura</string>
     <string name="notification_format_message">Segnaposto: {app}, {title}, {text}, {content} (l\'intero testo), {bigtext}, {subtext}, {ticker}, {category} e {time}.</string>
     <string name="notification_private_format_title">Le notifiche private dicono</string>
     <string name="notification_private_format_message">Detto al posto del contenuto di una notifica privata. Segnaposto: {app}, {category} e {time}.</string>
@@ -57,7 +57,7 @@
     <string name="notification_max_characters_title">Numero massimo di caratteri di testo</string>
     <string name="notification_max_seconds_title">Smetti di leggere dopo</string>
     <string name="notification_category_timing">Tempistica</string>
-    <string name="notification_delay_title">Aspetta prima di leggere</string>
+    <string name="notification_delay_title">Attesa prima della lettura</string>
     <string name="notification_queue_title">Quando viene letta un\'altra notifica</string>
     <string name="notification_repeat_minutes_title">Leggi di nuovo finché lo schermo non si accende</string>
     <string name="notification_skip_media_title">Salta i lettori multimediali</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Cuffie</string>
     <string name="notification_media_title">Mentre i media giocano</string>
     <string name="notification_dnd_title">Non disturbare</string>
-    <string name="notification_dnd_none">Non leggere le notifiche ad alta voce</string>
+    <string name="notification_dnd_none">Non leggere nessuna</string>
     <string name="notification_dnd_allowed">Leggi le notifiche consentite dalla modalità Non disturbare</string>
     <string name="notification_dnd_all">Leggi tutto</string>
     <string name="notification_touch_title">Mentre lo schermo viene toccato</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Modalità tascabile</string>
     <string name="notification_pocket_summary">Un sensore che viene coperto quando inizia la lettura, come in una tasca, non la ferma</string>
     <string name="notification_volume_keys_title">Premi entrambi i tasti del volume</string>
-    <string name="notification_dismiss_title">Smetti di leggere quando la notifica viene respinta</string>
+    <string name="notification_dismiss_title">Interrompi all\'eliminazione</string>
     <string name="notification_watch_dismiss_title">Anche quando la notifica viene respinta su uno smartwatch</string>
     <string name="notification_app_cancel_title">Smetti di leggere quando l\'app rimuove la notifica</string>
     <string name="notification_category_summary">Riepilogo</string>
@@ -128,8 +128,8 @@
     <string name="notification_clock_interval_title">Di\' l\'ora ogni</string>
     <string name="notification_clock_format_title">Formato ora</string>
     <string name="notification_clock_format_message">Segnaposto: {time}, {date} e {battery} (la percentuale della batteria).</string>
-    <string name="notification_clock_format_default">È {time}</string>
-    <string name="notification_clock_exact_title">Tempi esatti</string>
+    <string name="notification_clock_format_default">Sono le {time}</string>
+    <string name="notification_clock_exact_title">Orari esatti</string>
     <string name="notification_clock_exact_summary">Ha bisogno di allarmi e promemoria. Altrimenti l\'orario può essere annunciato fino a un minuto in ritardo.</string>
     <string name="notification_other_apps_title">Altre app</string>
     <string name="notification_apps_category">App</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">La notifica contiene <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">La notifica non contiene <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">La suoneria è silenziosa o vibra</string>
-    <string name="notification_cond_silent_not">La suoneria suona</string>
-    <string name="notification_cond_media">Il supporto è in riproduzione</string>
+    <string name="notification_cond_silent_not">La suoneria è attiva</string>
+    <string name="notification_cond_media">Contenuti multimediali in riproduzione</string>
     <string name="notification_cond_media_not">Nessun supporto viene riprodotto</string>
     <string name="notification_action_skip">non leggere</string>
     <string name="notification_action_private">leggere solo il nome dell\'app</string>

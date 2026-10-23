@@ -20,7 +20,7 @@
     <string name="notification_reading_title">Reading notifications aloud</string>
     <string name="notification_apps_title">Appar</string>
     <string name="notification_words_title">Ord och ersättare</string>
-    <string name="notification_kinds_title">Typer av meddelanden</string>
+    <string name="notification_kinds_title">Typer av aviseringar</string>
     <string name="notification_when_title">När ska man läsa</string>
     <string name="notification_rules_title">Regler</string>
     <string name="notification_repeats_title">Upprepas</string>
@@ -57,7 +57,7 @@
     <string name="notification_max_characters_title">Maximalt antal texttecken</string>
     <string name="notification_max_seconds_title">Sluta läsa efter</string>
     <string name="notification_category_timing">Timing</string>
-    <string name="notification_delay_title">Vänta innan du läser</string>
+    <string name="notification_delay_title">Vänta innan läsning</string>
     <string name="notification_queue_title">När ett annat meddelande läses</string>
     <string name="notification_repeat_minutes_title">Läs igen tills skärmen slås på</string>
     <string name="notification_skip_media_title">Hoppa över mediaspelare</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Hörlurar</string>
     <string name="notification_media_title">Medan media spelas</string>
     <string name="notification_dnd_title">Stör ej</string>
-    <string name="notification_dnd_none">Läs inga aviseringar högt</string>
+    <string name="notification_dnd_none">Läs inga</string>
     <string name="notification_dnd_allowed">Läs aviseringar som är tillåtna i Stör ej-läget</string>
     <string name="notification_dnd_all">Läs allt</string>
     <string name="notification_touch_title">Medan skärmen pekas</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Säg tid varje</string>
     <string name="notification_clock_format_title">Tidsformat</string>
     <string name="notification_clock_format_message">Platshållare: {time}, {date} och {battery} (batteriprocenten).</string>
-    <string name="notification_clock_format_default">Det är {time}</string>
+    <string name="notification_clock_format_default">Klockan är {time}</string>
     <string name="notification_clock_exact_title">Exakta tider</string>
     <string name="notification_clock_exact_summary">Behöver larm och påminnelser. Annars kan tiden sägas upp till en minut för sent.</string>
     <string name="notification_other_apps_title">Andra appar</string>
@@ -168,7 +168,7 @@
     <string name="notification_history_block_similar">Läs inte sådana här meddelanden</string>
     <string name="notification_history_copy">Kopiera</string>
     <string name="notification_saved">Sparad</string>
-    <string name="notification_copied">Kopierade</string>
+    <string name="notification_copied">Kopierat</string>
     <string name="notification_outcome_read">Läs högt framgångsrikt</string>
     <string name="notification_outcome_stopped">Stoppade under läsning</string>
     <string name="notification_outcome_speech_off">Ej läst: meddelandetal är avstängt</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">Aviseringen innehåller <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Aviseringen innehåller inte <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Ringsignalen är tyst eller vibrerar</string>
-    <string name="notification_cond_silent_not">Ringaren ringer</string>
+    <string name="notification_cond_silent_not">Ringsignalen är på</string>
     <string name="notification_cond_media">Media spelas upp</string>
     <string name="notification_cond_media_not">Ingen media spelas upp</string>
     <string name="notification_action_skip">läs inte</string>

@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Največje število besed</string>
     <string name="notification_max_sentences_title">Največje število stavkov</string>
     <string name="notification_max_characters_title">Največje število besedilnih znakov</string>
-    <string name="notification_max_seconds_title">Po tem prenehajte brati</string>
+    <string name="notification_max_seconds_title">Prenehaj brati po</string>
     <string name="notification_category_timing">Časovna razporeditev</string>
-    <string name="notification_delay_title">Pred branjem počakajte</string>
+    <string name="notification_delay_title">Čakanje pred branjem</string>
     <string name="notification_queue_title">Ko je prebrano drugo obvestilo</string>
     <string name="notification_repeat_minutes_title">Preberite znova, dokler se zaslon ne vklopi</string>
     <string name="notification_skip_media_title">Preskoči medijske predvajalnike</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Slušalke</string>
     <string name="notification_media_title">Med predvajanjem medijev</string>
     <string name="notification_dnd_title">Ne moti</string>
-    <string name="notification_dnd_none">Ne berite nobenih obvestil na glas</string>
+    <string name="notification_dnd_none">Ne beri nobenega</string>
     <string name="notification_dnd_allowed">Branje obvestil, ki jih dovoljuje način Ne moti</string>
     <string name="notification_dnd_all">Preberi vse</string>
     <string name="notification_touch_title">Ko se dotaknete zaslona</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Žepni način</string>
     <string name="notification_pocket_summary">Senzor, ki je ob začetku branja pokrit, kot v žepu, tega ne ustavi</string>
     <string name="notification_volume_keys_title">Pritisnite obe tipki za glasnost</string>
-    <string name="notification_dismiss_title">Nehajte brati, ko je obvestilo opuščeno</string>
+    <string name="notification_dismiss_title">Ustavi ob opustitvi</string>
     <string name="notification_watch_dismiss_title">Tudi, ko je obvestilo opuščeno na pametni uri</string>
     <string name="notification_app_cancel_title">Nehajte brati, ko aplikacija odstrani obvestilo</string>
     <string name="notification_category_summary">Povzetek</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Vsakič povejte čas</string>
     <string name="notification_clock_format_title">Oblika zapisa ure</string>
     <string name="notification_clock_format_message">Oznake mesta: {time}, {date} in {battery} (odstotek baterije).</string>
-    <string name="notification_clock_format_default">Je {time}</string>
+    <string name="notification_clock_format_default">Ura je {time}</string>
     <string name="notification_clock_exact_title">Točni časi</string>
     <string name="notification_clock_exact_summary">Potrebuje alarme in opomnike. V nasprotnem primeru je čas lahko prikazan z zamudo do minute.</string>
     <string name="notification_other_apps_title">Druge aplikacije</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">Obvestilo vsebuje <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Obvestilo ne vsebuje <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Zvonjenje je tiho ali vibrira</string>
-    <string name="notification_cond_silent_not">Zvonec zazvoni</string>
+    <string name="notification_cond_silent_not">Zvonjenje je vklopljeno</string>
     <string name="notification_cond_media">Mediji se predvajajo</string>
     <string name="notification_cond_media_not">Noben medij se ne predvaja</string>
     <string name="notification_action_skip">ne beri</string>

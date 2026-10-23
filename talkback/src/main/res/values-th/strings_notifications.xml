@@ -6,7 +6,7 @@
     <string name="notification_media_skip">อย่าอ่านออกเสียง</string>
     <string name="notification_media_pause">หยุดสื่อชั่วคราวขณะอ่าน</string>
     <string name="notification_media_read">อ่านออกเสียง</string>
-    <string name="notification_headphones_only_without">ไม่มีหูฟังเท่านั้น</string>
+    <string name="notification_headphones_only_without">เฉพาะเมื่อไม่ใช้หูฟัง</string>
     <string name="notification_headphones_only_with">ด้วยหูฟังเท่านั้น</string>
     <string name="notification_headphones_always">อ่านออกเสียงโดยมีหรือไม่มีหูฟัง</string>
     <string name="notification_queue_skip">อย่าอ่านออกเสียงการแจ้งเตือนใหม่</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">จำนวนคำสูงสุด</string>
     <string name="notification_max_sentences_title">จำนวนประโยคสูงสุด</string>
     <string name="notification_max_characters_title">จำนวนอักขระข้อความสูงสุด</string>
-    <string name="notification_max_seconds_title">หยุดอ่านทีหลัง</string>
+    <string name="notification_max_seconds_title">หยุดอ่านหลังจาก</string>
     <string name="notification_category_timing">เวลา</string>
-    <string name="notification_delay_title">รออ่านก่อนครับ</string>
+    <string name="notification_delay_title">เวลารอก่อนอ่าน</string>
     <string name="notification_queue_title">เมื่อมีการอ่านการแจ้งเตือนอื่น</string>
     <string name="notification_repeat_minutes_title">อ่านอีกครั้งจนกระทั่งหน้าจอเปิดขึ้น</string>
     <string name="notification_skip_media_title">ข้ามเครื่องเล่นสื่อ</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">หูฟัง</string>
     <string name="notification_media_title">ขณะที่สื่อกำลังเล่นอยู่</string>
     <string name="notification_dnd_title">ห้ามรบกวน</string>
-    <string name="notification_dnd_none">อย่าอ่านออกเสียงการแจ้งเตือนใดๆ</string>
+    <string name="notification_dnd_none">ไม่อ่านเลย</string>
     <string name="notification_dnd_allowed">อ่านการแจ้งเตือนที่อนุญาตโดยโหมดห้ามรบกวน</string>
     <string name="notification_dnd_all">อ่านทั้งหมด</string>
     <string name="notification_touch_title">ในขณะที่สัมผัสหน้าจอ</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">บอกเวลาทุกครั้ง</string>
     <string name="notification_clock_format_title">รูปแบบเวลา</string>
     <string name="notification_clock_format_message">ตัวยึด: {time}, {date} และ {battery} (เปอร์เซ็นต์แบตเตอรี่)</string>
-    <string name="notification_clock_format_default">มันคือ {time}</string>
+    <string name="notification_clock_format_default">ขณะนี้เวลา {time}</string>
     <string name="notification_clock_exact_title">เวลาที่แน่นอน</string>
     <string name="notification_clock_exact_summary">ต้องการสัญญาณเตือนและการแจ้งเตือน มิฉะนั้นอาจกล่าวได้ว่าสายไปหนึ่งนาที</string>
     <string name="notification_other_apps_title">แอพอื่นๆ</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">การแจ้งเตือนมี <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">การแจ้งเตือนไม่มี <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">เสียงเรียกเข้าเงียบหรือสั่น</string>
-    <string name="notification_cond_silent_not">เสียงกริ่งดังขึ้น</string>
+    <string name="notification_cond_silent_not">เปิดเสียงเรียกเข้าอยู่</string>
     <string name="notification_cond_media">กำลังเล่นสื่อ</string>
     <string name="notification_cond_media_not">ไม่มีสื่อกำลังเล่น</string>
     <string name="notification_action_skip">อย่าอ่าน</string>

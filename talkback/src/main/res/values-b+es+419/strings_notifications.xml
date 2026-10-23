@@ -7,7 +7,7 @@
     <string name="notification_media_pause">Pausar la reproducción multimedia durante la lectura</string>
     <string name="notification_media_read">Leer</string>
     <string name="notification_headphones_only_without">Solo sin auriculares</string>
-    <string name="notification_headphones_only_with">Sólo con auriculares</string>
+    <string name="notification_headphones_only_with">Solo con auriculares</string>
     <string name="notification_headphones_always">Leer con o sin auriculares</string>
     <string name="notification_queue_skip">No leer la nueva notificación</string>
     <string name="notification_queue_interrupt">Interrumpir la notificación actual</string>
@@ -57,7 +57,7 @@
     <string name="notification_max_characters_title">Número máximo de caracteres</string>
     <string name="notification_max_seconds_title">Detener la lectura después de</string>
     <string name="notification_category_timing">Tiempos</string>
-    <string name="notification_delay_title">Espera antes de leer</string>
+    <string name="notification_delay_title">Esperar antes de leer</string>
     <string name="notification_queue_title">Cuando se lee otra notificación</string>
     <string name="notification_repeat_minutes_title">Leer de nuevo hasta que se encienda la pantalla.</string>
     <string name="notification_skip_media_title">Saltar reproductores multimedia</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">La notificación contiene <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">La notificación no contiene <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">El timbre está en silencio o vibra.</string>
-    <string name="notification_cond_silent_not">Suena el timbre</string>
-    <string name="notification_cond_media">Los medios se están reproduciendo.</string>
+    <string name="notification_cond_silent_not">El modo de sonido está activado</string>
+    <string name="notification_cond_media">Se está reproduciendo contenido multimedia</string>
     <string name="notification_cond_media_not">No se reproduce ningún medio</string>
     <string name="notification_action_skip">no leer</string>
     <string name="notification_action_private">leer solo el nombre de la aplicación</string>

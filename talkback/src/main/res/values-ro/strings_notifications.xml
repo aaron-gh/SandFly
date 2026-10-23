@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Număr maxim de cuvinte</string>
     <string name="notification_max_sentences_title">Numărul maxim de propoziții</string>
     <string name="notification_max_characters_title">Numărul maxim de caractere text</string>
-    <string name="notification_max_seconds_title">Nu mai citi după</string>
+    <string name="notification_max_seconds_title">Oprește citirea după</string>
     <string name="notification_category_timing">Momentul citirii</string>
-    <string name="notification_delay_title">Așteptați înainte de a citi</string>
+    <string name="notification_delay_title">Așteptare înainte de citire</string>
     <string name="notification_queue_title">Când se citește o altă notificare</string>
     <string name="notification_repeat_minutes_title">Citiți din nou până când ecranul se aprinde</string>
     <string name="notification_skip_media_title">Omite playerele media</string>
@@ -76,9 +76,9 @@
     <string name="notification_headphones_title">Căști</string>
     <string name="notification_media_title">În timp ce media rulează</string>
     <string name="notification_dnd_title">Nu deranja</string>
-    <string name="notification_dnd_none">Nu citiți nicio notificare cu voce tare</string>
+    <string name="notification_dnd_none">Nu citi niciuna</string>
     <string name="notification_dnd_allowed">Citiți notificările permise de modul Nu deranja</string>
-    <string name="notification_dnd_all">Citiți tot</string>
+    <string name="notification_dnd_all">Citește tot</string>
     <string name="notification_touch_title">În timp ce ecranul este atins</string>
     <string name="notification_touch_read">Citiți imediat</string>
     <string name="notification_touch_after">Citiți când atingerea se termină</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Modul de buzunar</string>
     <string name="notification_pocket_summary">Un senzor care este acoperit când începe citirea, ca într-un buzunar, nu îl oprește</string>
     <string name="notification_volume_keys_title">Apăsați ambele taste de volum</string>
-    <string name="notification_dismiss_title">Opriți citirea când notificarea este închisă</string>
+    <string name="notification_dismiss_title">Oprește la închidere</string>
     <string name="notification_watch_dismiss_title">De asemenea, atunci când notificarea este respinsă pe un smartwatch</string>
     <string name="notification_app_cancel_title">Nu mai citiți când aplicația elimină notificarea</string>
     <string name="notification_category_summary">Rezumat</string>
@@ -128,8 +128,8 @@
     <string name="notification_clock_interval_title">Spune timpul de fiecare dată</string>
     <string name="notification_clock_format_title">Formatul orei</string>
     <string name="notification_clock_format_message">Substituenți: {time}, {date} și {battery} (procentul bateriei).</string>
-    <string name="notification_clock_format_default">Este {time}</string>
-    <string name="notification_clock_exact_title">Orele exacte</string>
+    <string name="notification_clock_format_default">Este ora {time}</string>
+    <string name="notification_clock_exact_title">Ore exacte</string>
     <string name="notification_clock_exact_summary">Are nevoie de alarme și mementouri. În caz contrar, timpul poate fi spus cu până la un minut întârziere.</string>
     <string name="notification_other_apps_title">Alte aplicații</string>
     <string name="notification_apps_category">Aplicații</string>
@@ -156,15 +156,15 @@
     <string name="notification_regex">Expresia regulată</string>
     <string name="notification_enter_text">Introduceți un text</string>
     <string name="notification_invalid_regex">Nu este o expresie regulată validă</string>
-    <string name="notification_edit">Editați</string>
+    <string name="notification_edit">Editează</string>
     <string name="notification_remove">Eliminați</string>
-    <string name="notification_history_keep">Salvați istoricul notificărilor</string>
-    <string name="notification_history_clear">Ștergeți istoricul</string>
+    <string name="notification_history_keep">Păstrează istoricul notificărilor</string>
+    <string name="notification_history_clear">Șterge istoricul</string>
     <string name="notification_history_category">Notificări</string>
     <string name="notification_history_empty">Fără notificări</string>
     <string name="notification_history_ignore_app">Nu citi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Citiți numai numele lui <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_priority_app">Citiți mai întâi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Citește întâi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_block_similar">Nu citi notificări de genul acesta</string>
     <string name="notification_history_copy">Copiază</string>
     <string name="notification_saved">Salvat</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">Notificarea conține <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Notificarea nu conține <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Soneria este silențioasă sau vibrează</string>
-    <string name="notification_cond_silent_not">Soneria sună</string>
+    <string name="notification_cond_silent_not">Soneria este activată</string>
     <string name="notification_cond_media">Media rulează</string>
     <string name="notification_cond_media_not">Nu se redă niciun conținut media</string>
     <string name="notification_action_skip">nu citi</string>

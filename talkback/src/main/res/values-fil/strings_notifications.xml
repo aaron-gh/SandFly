@@ -6,8 +6,8 @@
     <string name="notification_media_skip">Huwag basahin nang malakas</string>
     <string name="notification_media_pause">I-pause ang media habang nagbabasa</string>
     <string name="notification_media_read">Basahin nang malakas</string>
-    <string name="notification_headphones_only_without">Tanging walang headphones</string>
-    <string name="notification_headphones_only_with">May headphones lang</string>
+    <string name="notification_headphones_only_without">Kapag walang headphones lang</string>
+    <string name="notification_headphones_only_with">Kapag may headphones lang</string>
     <string name="notification_headphones_always">Magbasa nang malakas nang may headphone o walang</string>
     <string name="notification_queue_skip">Huwag basahin nang malakas ang bagong notification</string>
     <string name="notification_queue_interrupt">Abalahin ang notification na binabasa nang malakas</string>
@@ -26,7 +26,7 @@
     <string name="notification_repeats_title">Umuulit</string>
     <string name="notification_stop_title">Itigil ang pagbabasa</string>
     <string name="notification_schedules_title">Buod at oras</string>
-    <string name="notification_history_title">Kasaysayan ng abiso</string>
+    <string name="notification_history_title">Kasaysayan ng notification</string>
     <string name="notification_test_title">Magpadala ng test notification</string>
     <string name="notification_automation_title">Automation</string>
     <string name="notification_automation_allowed_title">Payagan ang mga automation app</string>
@@ -76,14 +76,14 @@
     <string name="notification_headphones_title">Mga headphone</string>
     <string name="notification_media_title">Habang naglalaro ang media</string>
     <string name="notification_dnd_title">Huwag Istorbohin</string>
-    <string name="notification_dnd_none">Huwag basahin nang malakas ang anumang notification</string>
+    <string name="notification_dnd_none">Walang babasahin</string>
     <string name="notification_dnd_allowed">Basahin ang mga notification na pinapayagan ng Do Not Disturb mode</string>
     <string name="notification_dnd_all">Basahin lahat</string>
     <string name="notification_touch_title">Habang hinawakan ang screen</string>
     <string name="notification_touch_read">Basahin agad</string>
     <string name="notification_touch_after">Basahin kapag natapos na ang pagpindot</string>
     <string name="notification_touch_skip">Huwag basahin nang malakas</string>
-    <string name="notification_during_calls_title">Habang tumatawag</string>
+    <string name="notification_during_calls_title">Habang may tawag</string>
     <string name="notification_honour_silent_title">Wala sa silent mode</string>
     <string name="notification_honour_vibrate_title">Wala sa vibrate mode</string>
     <string name="notification_skip_in_car_title">Wala sa car mode</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Pocket mode</string>
     <string name="notification_pocket_summary">Ang isang sensor na natatakpan kapag nagsimula ang pagbabasa, tulad ng sa isang bulsa, ay hindi humihinto dito</string>
     <string name="notification_volume_keys_title">Pindutin ang parehong volume key</string>
-    <string name="notification_dismiss_title">Itigil ang pagbabasa kapag na-dismiss ang notification</string>
+    <string name="notification_dismiss_title">Ihinto kapag na-dismiss</string>
     <string name="notification_watch_dismiss_title">Gayundin kapag na-dismiss ang notification sa isang smartwatch</string>
     <string name="notification_app_cancel_title">Itigil ang pagbabasa kapag inalis ng app ang notification</string>
     <string name="notification_category_summary">Buod</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Sabihin ang oras sa bawat</string>
     <string name="notification_clock_format_title">Format ng oras</string>
     <string name="notification_clock_format_message">Mga placeholder: {time}, {date} at {battery} (ang porsyento ng baterya).</string>
-    <string name="notification_clock_format_default">Ito ay {time}</string>
+    <string name="notification_clock_format_default">{time} na</string>
     <string name="notification_clock_exact_title">Mga eksaktong oras</string>
     <string name="notification_clock_exact_summary">Nangangailangan ng mga Alarm at paalala. Kung hindi, ang oras ay masasabing huli ng isang minuto.</string>
     <string name="notification_other_apps_title">Iba pang mga app</string>
@@ -160,7 +160,7 @@
     <string name="notification_remove">Alisin</string>
     <string name="notification_history_keep">I-save ang kasaysayan ng notification</string>
     <string name="notification_history_clear">I-clear ang kasaysayan</string>
-    <string name="notification_history_category">Mga Notification</string>
+    <string name="notification_history_category">Mga notification</string>
     <string name="notification_history_empty">Walang notification</string>
     <string name="notification_history_ignore_app">Huwag basahin <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Basahin lamang ang pangalan ng <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">Ang notification ay naglalaman ng <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Ang notification ay hindi naglalaman ng <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Ang ring ay tahimik o nag-vibrate</string>
-    <string name="notification_cond_silent_not">Tumunog ang ring</string>
-    <string name="notification_cond_media">Naglalaro ang media</string>
+    <string name="notification_cond_silent_not">Naka-on ang ringer</string>
+    <string name="notification_cond_media">Nagpe-play ang media</string>
     <string name="notification_cond_media_not">Walang nagpe-play na media</string>
     <string name="notification_action_skip">huwag basahin</string>
     <string name="notification_action_private">basahin lamang ang pangalan ng app</string>

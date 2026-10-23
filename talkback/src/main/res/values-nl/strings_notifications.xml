@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Maximaal aantal woorden</string>
     <string name="notification_max_sentences_title">Maximaal aantal zinnen</string>
     <string name="notification_max_characters_title">Maximaal aantal teksttekens</string>
-    <string name="notification_max_seconds_title">Stop daarna met lezen</string>
+    <string name="notification_max_seconds_title">Stoppen met lezen na</string>
     <string name="notification_category_timing">Tijdstip</string>
-    <string name="notification_delay_title">Wacht voordat u gaat lezen</string>
+    <string name="notification_delay_title">Wachten voor voorlezen</string>
     <string name="notification_queue_title">Wanneer een andere melding wordt gelezen</string>
     <string name="notification_repeat_minutes_title">Lees opnieuw totdat het scherm wordt ingeschakeld</string>
     <string name="notification_skip_media_title">Mediaspelers overslaan</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Koptelefoon</string>
     <string name="notification_media_title">Terwijl de media speelt</string>
     <string name="notification_dnd_title">Niet storen</string>
-    <string name="notification_dnd_none">Lees geen meldingen hardop</string>
+    <string name="notification_dnd_none">Niets lezen</string>
     <string name="notification_dnd_allowed">Lees meldingen toegestaan door de modus Niet storen</string>
     <string name="notification_dnd_all">Lees alles</string>
     <string name="notification_touch_title">Terwijl het scherm wordt aangeraakt</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Zakmodus</string>
     <string name="notification_pocket_summary">Een sensor die wordt afgedekt wanneer het lezen begint, zoals in een zak, houdt het lezen niet tegen</string>
     <string name="notification_volume_keys_title">Druk op beide volumetoetsen</string>
-    <string name="notification_dismiss_title">Stop met lezen wanneer de melding wordt afgewezen</string>
+    <string name="notification_dismiss_title">Stoppen bij sluiten</string>
     <string name="notification_watch_dismiss_title">Ook wanneer de melding op een smartwatch wordt afgewezen</string>
     <string name="notification_app_cancel_title">Stop met lezen wanneer de app de melding verwijdert</string>
     <string name="notification_category_summary">Samenvatting</string>
@@ -158,11 +158,11 @@
     <string name="notification_invalid_regex">Geen geldige reguliere expressie</string>
     <string name="notification_edit">Bewerken</string>
     <string name="notification_remove">Verwijderen</string>
-    <string name="notification_history_keep">Bewaar meldingsgeschiedenis</string>
-    <string name="notification_history_clear">Wis de geschiedenis</string>
+    <string name="notification_history_keep">Meldingsgeschiedenis bewaren</string>
+    <string name="notification_history_clear">Geschiedenis wissen</string>
     <string name="notification_history_category">Meldingen</string>
     <string name="notification_history_empty">Geen meldingen</string>
-    <string name="notification_history_ignore_app">Lees <xliff:g id="app" example="Chat">%1$s</xliff:g> niet</string>
+    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> niet lezen</string>
     <string name="notification_history_private_app">Lees alleen de naam van <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Lees eerst <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_block_similar">Lees dit soort meldingen niet</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">De melding bevat <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">De melding bevat geen <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Het belsignaal is stil of trilt</string>
-    <string name="notification_cond_silent_not">De bel gaat</string>
+    <string name="notification_cond_silent_not">Belgeluid staat aan</string>
     <string name="notification_cond_media">Media worden afgespeeld</string>
     <string name="notification_cond_media_not">Er worden geen media afgespeeld</string>
     <string name="notification_action_skip">niet lezen</string>

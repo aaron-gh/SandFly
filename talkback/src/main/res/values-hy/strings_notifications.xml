@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Բառերի առավելագույն քանակը</string>
     <string name="notification_max_sentences_title">Նախադասությունների առավելագույն քանակը</string>
     <string name="notification_max_characters_title">Տեքստի նիշերի առավելագույն քանակը</string>
-    <string name="notification_max_seconds_title">Դադարեցրեք կարդալ հետո</string>
+    <string name="notification_max_seconds_title">Դադարեցնել կարդալը</string>
     <string name="notification_category_timing">Ժամանակ</string>
-    <string name="notification_delay_title">Սպասեք կարդալուց առաջ</string>
+    <string name="notification_delay_title">Սպասում կարդալուց առաջ</string>
     <string name="notification_queue_title">Երբ կարդացվում է մեկ այլ ծանուցում</string>
     <string name="notification_repeat_minutes_title">Կրկին կարդացեք, մինչև էկրանը միանա</string>
     <string name="notification_skip_media_title">Բաց թողնել մեդիա նվագարկիչները</string>
@@ -76,9 +76,9 @@
     <string name="notification_headphones_title">Ականջակալներ</string>
     <string name="notification_media_title">Մինչ լրատվամիջոցները խաղում են</string>
     <string name="notification_dnd_title">Չանհանգստացնել</string>
-    <string name="notification_dnd_none">Բարձրաձայն մի կարդացեք որևէ ծանուցում</string>
+    <string name="notification_dnd_none">Չկարդալ ոչ մեկը</string>
     <string name="notification_dnd_allowed">Կարդացեք «Չանհանգստացնել» ռեժիմով թույլատրված ծանուցումները</string>
-    <string name="notification_dnd_all">Կարդացեք բոլորը</string>
+    <string name="notification_dnd_all">Կարդալ բոլորը</string>
     <string name="notification_touch_title">Մինչ էկրանը հպվում է</string>
     <string name="notification_touch_read">Կարդացեք անմիջապես</string>
     <string name="notification_touch_after">Կարդացեք, երբ հպումն ավարտվում է</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Գրպանի ռեժիմ</string>
     <string name="notification_pocket_summary">Սենսորը, որը ծածկված է ընթերցանության սկզբում, ինչպես գրպանում, չի կանգնեցնում այն</string>
     <string name="notification_volume_keys_title">Սեղմեք ձայնի երկու ստեղները</string>
-    <string name="notification_dismiss_title">Դադարեցրեք կարդալը, երբ ծանուցումը չեղարկվի</string>
+    <string name="notification_dismiss_title">Դադարեցնել փակելիս</string>
     <string name="notification_watch_dismiss_title">Նաև, երբ ծանուցումն անջատվում է խելացի ժամացույցի վրա</string>
     <string name="notification_app_cancel_title">Դադարեցրեք կարդալ, երբ հավելվածը հեռացնում է ծանուցումը</string>
     <string name="notification_category_summary">Ամփոփում</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Ամեն անգամ ասեք ժամանակը</string>
     <string name="notification_clock_format_title">Ժամանակի ձևաչափ</string>
     <string name="notification_clock_format_message">Տեղապահներ՝ {time}, {date} և {battery} (մարտկոցի տոկոսը):</string>
-    <string name="notification_clock_format_default">{time} է</string>
+    <string name="notification_clock_format_default">Ժամը {time} է</string>
     <string name="notification_clock_exact_title">Ճշգրիտ ժամանակներ</string>
     <string name="notification_clock_exact_summary">Անհրաժեշտ է ահազանգեր և հիշեցումներ: Հակառակ դեպքում ժամը կարելի է ասել մինչև մեկ րոպե ուշացումով։</string>
     <string name="notification_other_apps_title">Այլ հավելվածներ</string>
@@ -158,13 +158,13 @@
     <string name="notification_invalid_regex">Վավեր կանոնավոր արտահայտություն չէ</string>
     <string name="notification_edit">Խմբագրել</string>
     <string name="notification_remove">Հեռացնել</string>
-    <string name="notification_history_keep">Պահպանեք ծանուցումների պատմությունը</string>
+    <string name="notification_history_keep">Պահել ծանուցումների պատմությունը</string>
     <string name="notification_history_clear">Մաքրել պատմությունը</string>
     <string name="notification_history_category">Ծանուցումներ</string>
     <string name="notification_history_empty">Ծանուցումներ չկան</string>
-    <string name="notification_history_ignore_app">Մի կարդա <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app">Չկարդալ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Կարդացեք միայն <xliff:g id="app" example="Chat">%1$s</xliff:g> անունը</string>
-    <string name="notification_history_priority_app">Նախ կարդացեք <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Կարդալ <xliff:g id="app" example="Chat">%1$s</xliff:g> առաջինը</string>
     <string name="notification_history_block_similar">Մի կարդա նման ծանուցումները</string>
     <string name="notification_history_copy">Պատճենել</string>
     <string name="notification_saved">Պահպանված է</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">Ծանուցումը պարունակում է <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Ծանուցումը չի պարունակում <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Զանգը լուռ է կամ թրթռում է</string>
-    <string name="notification_cond_silent_not">Զանգահարողը զանգում է</string>
-    <string name="notification_cond_media">Լրատվամիջոցները խաղում են</string>
+    <string name="notification_cond_silent_not">Զանգը միացված է</string>
+    <string name="notification_cond_media">Մեդիան նվագարկվում է</string>
     <string name="notification_cond_media_not">Ոչ մի մեդիա չի խաղում</string>
     <string name="notification_action_skip">մի կարդա</string>
     <string name="notification_action_private">կարդալ միայն հավելվածի անունը</string>

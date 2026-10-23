@@ -38,7 +38,7 @@
     <string name="notification_category_voice">Veu</string>
     <string name="notification_voice_title">Veu</string>
     <string name="notification_voice_sandfly">La veu de SandFly</string>
-    <string name="notification_detect_language_title">Detectar el llenguatge</string>
+    <string name="notification_detect_language_title">Detecta l\'idioma</string>
     <string name="notification_detect_language_summary">Digueu cada notificació en l\'idioma en què està escrita. Cal canviar d\'idioma automàticament a la configuració de text a veu.</string>
     <string name="notification_sound_before_title">So abans de les notificacions</string>
     <string name="notification_category_text">Text</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Nombre màxim de paraules</string>
     <string name="notification_max_sentences_title">Nombre màxim de frases</string>
     <string name="notification_max_characters_title">Nombre màxim de caràcters de text</string>
-    <string name="notification_max_seconds_title">Deixa de llegir després</string>
+    <string name="notification_max_seconds_title">Deixa de llegir després de</string>
     <string name="notification_category_timing">Temporització</string>
-    <string name="notification_delay_title">Espereu abans de llegir</string>
+    <string name="notification_delay_title">Espera abans de llegir</string>
     <string name="notification_queue_title">Quan es llegeix una altra notificació</string>
     <string name="notification_repeat_minutes_title">Torna a llegir fins que s\'encengui la pantalla</string>
     <string name="notification_skip_media_title">Omet els reproductors multimèdia</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Auriculars</string>
     <string name="notification_media_title">Mentre reprodueixen els mitjans</string>
     <string name="notification_dnd_title">No molestis</string>
-    <string name="notification_dnd_none">No llegiu cap notificació en veu alta</string>
+    <string name="notification_dnd_none">No en llegeixis cap</string>
     <string name="notification_dnd_allowed">Llegeix les notificacions permeses pel mode No Molestis</string>
     <string name="notification_dnd_all">Llegeix-ho tot</string>
     <string name="notification_touch_title">Mentre es toca la pantalla</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Mode de butxaca</string>
     <string name="notification_pocket_summary">Un sensor que es tapa quan comença la lectura, com en una butxaca, no l\'atura</string>
     <string name="notification_volume_keys_title">Premeu les dues tecles de volum</string>
-    <string name="notification_dismiss_title">Deixeu de llegir quan es descarti la notificació</string>
+    <string name="notification_dismiss_title">Atura en descartar</string>
     <string name="notification_watch_dismiss_title">També quan la notificació es descarta en un rellotge intel·ligent</string>
     <string name="notification_app_cancel_title">Deixeu de llegir quan l\'aplicació suprimi la notificació</string>
     <string name="notification_category_summary">Resum</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Digues l\'hora cada cop</string>
     <string name="notification_clock_format_title">Format d\'hora</string>
     <string name="notification_clock_format_message">Marcadors de posició: {time}, {date} i {battery} (el percentatge de la bateria).</string>
-    <string name="notification_clock_format_default">És {time}</string>
+    <string name="notification_clock_format_default">Són les {time}</string>
     <string name="notification_clock_exact_title">Hores exactes</string>
     <string name="notification_clock_exact_summary">Necessita alarmes i recordatoris. En cas contrari, el temps es pot dir fins a un minut tard.</string>
     <string name="notification_other_apps_title">Altres aplicacions</string>
@@ -162,9 +162,9 @@
     <string name="notification_history_clear">Esborra l\'historial</string>
     <string name="notification_history_category">Notificacions</string>
     <string name="notification_history_empty">No hi ha cap notificació</string>
-    <string name="notification_history_ignore_app">No llegiu <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app">No llegeixis <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Llegiu només el nom de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_priority_app">Llegiu primer <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Llegeix primer <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_block_similar">No llegiu notificacions com aquesta</string>
     <string name="notification_history_copy">Copia</string>
     <string name="notification_saved">Desat</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">La notificació conté <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">La notificació no conté <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">El timbre està en silenci o vibra</string>
-    <string name="notification_cond_silent_not">Sona el timbre</string>
-    <string name="notification_cond_media">Es reprodueixen els mitjans</string>
+    <string name="notification_cond_silent_not">El so de trucada està activat</string>
+    <string name="notification_cond_media">S\'està reproduint contingut multimèdia</string>
     <string name="notification_cond_media_not">No s\'està reproduint cap mitjà</string>
     <string name="notification_action_skip">no llegeixis</string>
     <string name="notification_action_private">llegir només el nom de l\'aplicació</string>

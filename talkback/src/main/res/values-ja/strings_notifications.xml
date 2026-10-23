@@ -6,8 +6,8 @@
     <string name="notification_media_skip">声に出して読まないでください</string>
     <string name="notification_media_pause">読書中にメディアを一時停止する</string>
     <string name="notification_media_read">声に出して読む</string>
-    <string name="notification_headphones_only_without">ヘッドフォンなしの場合のみ</string>
-    <string name="notification_headphones_only_with">ヘッドフォンのみで</string>
+    <string name="notification_headphones_only_without">ヘッドフォン未使用時のみ</string>
+    <string name="notification_headphones_only_with">ヘッドフォン使用時のみ</string>
     <string name="notification_headphones_always">ヘッドフォンの有無にかかわらず読み上げてください</string>
     <string name="notification_queue_skip">新しい通知を読み上げないでください</string>
     <string name="notification_queue_interrupt">読み上げ中の通知を中断します</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">最大単語数</string>
     <string name="notification_max_sentences_title">最大文数</string>
     <string name="notification_max_characters_title">テキストの最大文字数</string>
-    <string name="notification_max_seconds_title">次の場合は読むのをやめてください</string>
+    <string name="notification_max_seconds_title">読み上げを停止するまでの時間</string>
     <string name="notification_category_timing">タイミング</string>
-    <string name="notification_delay_title">読む前に待ってください</string>
+    <string name="notification_delay_title">読み上げ前の待機時間</string>
     <string name="notification_queue_title">別の通知を読んだとき</string>
     <string name="notification_repeat_minutes_title">画面がオンになるまでもう一度読みます</string>
     <string name="notification_skip_media_title">メディアプレーヤーをスキップする</string>
@@ -75,8 +75,8 @@
     <string name="notification_locked_title">携帯電話がロックされている間</string>
     <string name="notification_headphones_title">ヘッドフォン</string>
     <string name="notification_media_title">メディアの再生中</string>
-    <string name="notification_dnd_title">邪魔しないでください</string>
-    <string name="notification_dnd_none">通知を読み上げないでください</string>
+    <string name="notification_dnd_title">サイレント モード</string>
+    <string name="notification_dnd_none">読み上げない</string>
     <string name="notification_dnd_allowed">おやすみモードで許可された通知の読み取り</string>
     <string name="notification_dnd_all">すべて読む</string>
     <string name="notification_touch_title">画面をタッチしている間</string>
@@ -158,17 +158,17 @@
     <string name="notification_invalid_regex">有効な正規表現ではありません</string>
     <string name="notification_edit">編集</string>
     <string name="notification_remove">削除</string>
-    <string name="notification_history_keep">通知履歴を保存する</string>
-    <string name="notification_history_clear">履歴をクリアする</string>
+    <string name="notification_history_keep">通知履歴を保存</string>
+    <string name="notification_history_clear">履歴を消去</string>
     <string name="notification_history_category">通知</string>
     <string name="notification_history_empty">通知はありません</string>
-    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g>は読まないでください</string>
+    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> を読み上げない</string>
     <string name="notification_history_private_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> の名前のみを読み取ります</string>
-    <string name="notification_history_priority_app">最初に<xliff:g id="app" example="Chat">%1$s</xliff:g>をお読みください</string>
+    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> を最初に読み上げる</string>
     <string name="notification_history_block_similar">このような通知は読まないでください</string>
     <string name="notification_history_copy">コピー</string>
     <string name="notification_saved">保存されました</string>
-    <string name="notification_copied">コピーされました</string>
+    <string name="notification_copied">コピーしました</string>
     <string name="notification_outcome_read">正常に読み上げました</string>
     <string name="notification_outcome_stopped">読み取り中に停止しました</string>
     <string name="notification_outcome_speech_off">未読: 通知音声がオフになっています</string>
@@ -243,13 +243,13 @@
     <string name="notification_type_media">メディアの再生</string>
     <string name="notification_bluetooth_any">すべてのデバイス</string>
     <string name="notification_wifi_hint">ネットワーク名</string>
-    <string name="notification_choose_app">アプリを選択してください</string>
+    <string name="notification_choose_app">アプリを選択</string>
     <string name="notification_time_start">から</string>
     <string name="notification_time_end">まで</string>
     <string name="notification_time_days">日数</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> から <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly はこの条件に対してその許可が必要です</string>
-    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> が接続されました</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> が接続中</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> が接続されていません</string>
     <string name="notification_cond_bluetooth_any">Bluetooth オーディオデバイスが接続されています</string>
     <string name="notification_cond_bluetooth_any_not">Bluetooth オーディオデバイスが接続されていません</string>
@@ -267,9 +267,9 @@
     <string name="notification_cond_landscape_not">画面が縦長になっている</string>
     <string name="notification_cond_time">時刻は<xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g>です</string>
     <string name="notification_cond_time_not">時間は<xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g>ではありません</string>
-    <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> に接続されました</string>
+    <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> に接続中</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> に接続されていません</string>
-    <string name="notification_cond_wifi_any">Wi-Fi に接続されました</string>
+    <string name="notification_cond_wifi_any">Wi-Fi に接続中</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi に接続されていません</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g>が前にあります</string>
     <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g>が前にいない</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">通知には <xliff:g id="text" example="urgent">%1$s</xliff:g> が含まれています</string>
     <string name="notification_cond_contains_not">通知には <xliff:g id="text" example="urgent">%1$s</xliff:g> が含まれていません</string>
     <string name="notification_cond_silent">着信音が鳴らない、または振動する</string>
-    <string name="notification_cond_silent_not">着信音が鳴る</string>
-    <string name="notification_cond_media">メディアが再生中です</string>
+    <string name="notification_cond_silent_not">着信音がオン</string>
+    <string name="notification_cond_media">メディアの再生中</string>
     <string name="notification_cond_media_not">再生中のメディアがありません</string>
     <string name="notification_action_skip">読み上げない</string>
     <string name="notification_action_private">アプリ名のみを読み取ります</string>

@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Maksimalus žodžių skaičius</string>
     <string name="notification_max_sentences_title">Maksimalus sakinių skaičius</string>
     <string name="notification_max_characters_title">Maksimalus teksto simbolių skaičius</string>
-    <string name="notification_max_seconds_title">Nustokite skaityti po to</string>
+    <string name="notification_max_seconds_title">Nustoti skaityti po</string>
     <string name="notification_category_timing">Laikas</string>
-    <string name="notification_delay_title">Palaukite prieš skaitydami</string>
+    <string name="notification_delay_title">Laukti prieš skaitant</string>
     <string name="notification_queue_title">Kai skaitomas kitas pranešimas</string>
     <string name="notification_repeat_minutes_title">Skaitykite dar kartą, kol ekranas įsijungs</string>
     <string name="notification_skip_media_title">Praleiskite medijos leistuvus</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Ausinės</string>
     <string name="notification_media_title">Kol groja žiniasklaida</string>
     <string name="notification_dnd_title">Netrukdyti</string>
-    <string name="notification_dnd_none">Neskaitykite jokių pranešimų garsiai</string>
+    <string name="notification_dnd_none">Neskaityti jokių</string>
     <string name="notification_dnd_allowed">Skaitykite pranešimus, leidžiamus režimu Netrukdyti</string>
     <string name="notification_dnd_all">Skaityti viską</string>
     <string name="notification_touch_title">Kol paliečiamas ekranas</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Kišeninis režimas</string>
     <string name="notification_pocket_summary">Sensorius, kuris uždengiamas pradėjus skaityti, kaip kišenėje, jo nestabdo</string>
     <string name="notification_volume_keys_title">Paspauskite abu garsumo klavišus</string>
-    <string name="notification_dismiss_title">Nustokite skaityti, kai pranešimas bus atmestas</string>
+    <string name="notification_dismiss_title">Sustabdyti atsisakius</string>
     <string name="notification_watch_dismiss_title">Taip pat kai pranešimas atmetamas išmaniajame laikrodyje</string>
     <string name="notification_app_cancel_title">Nustokite skaityti, kai programa pašalins pranešimą</string>
     <string name="notification_category_summary">Santrauka</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Kaskart sakyk laiką</string>
     <string name="notification_clock_format_title">Laiko formatas</string>
     <string name="notification_clock_format_message">Vietos žymos: {time}, {date} ir {battery} (akumuliatoriaus procentas).</string>
-    <string name="notification_clock_format_default">Tai {time}</string>
+    <string name="notification_clock_format_default">Dabar {time}</string>
     <string name="notification_clock_exact_title">Tikslūs laikai</string>
     <string name="notification_clock_exact_summary">Reikia pavojaus signalų ir priminimų. Priešingu atveju laikas gali būti pavėluotas iki minutės.</string>
     <string name="notification_other_apps_title">Kitos programos</string>
@@ -162,9 +162,9 @@
     <string name="notification_history_clear">Išvalyti istoriją</string>
     <string name="notification_history_category">Pranešimai</string>
     <string name="notification_history_empty">Jokių pranešimų</string>
-    <string name="notification_history_ignore_app">Neskaitykite <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app">Neskaityti <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Skaityti tik <xliff:g id="app" example="Chat">%1$s</xliff:g> pavadinimą</string>
-    <string name="notification_history_priority_app">Pirmiausia perskaitykite <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Skaityti <xliff:g id="app" example="Chat">%1$s</xliff:g> pirmiausia</string>
     <string name="notification_history_block_similar">Neskaitykite tokių pranešimų</string>
     <string name="notification_history_copy">Kopijuoti</string>
     <string name="notification_saved">Išsaugota</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">Pranešime yra <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Pranešime nėra <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Skambutis tyli arba vibruoja</string>
-    <string name="notification_cond_silent_not">Suskamba skambutis</string>
+    <string name="notification_cond_silent_not">Skambutis įjungtas</string>
     <string name="notification_cond_media">Groja medija</string>
     <string name="notification_cond_media_not">Neleidžiama jokia medija</string>
     <string name="notification_action_skip">neskaityk</string>

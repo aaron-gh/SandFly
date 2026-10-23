@@ -31,7 +31,7 @@
     <string name="notification_automation_title">स्वचालन</string>
     <string name="notification_automation_allowed_title">स्वचालन ऐप्स को अनुमति दें</string>
     <string name="notification_category_said">क्या पढ़ा जाता है</string>
-    <string name="notification_format_title">भाषण प्रारूप</string>
+    <string name="notification_format_title">बोलने का फ़ॉर्मैट</string>
     <string name="notification_format_message">प्लेसहोल्डर: {app}, {title}, {text}, {content} (संपूर्ण पाठ), {bigtext}, {subtext}, {ticker}, {category} और {time}।</string>
     <string name="notification_private_format_title">निजी सूचनाएं कहती हैं</string>
     <string name="notification_private_format_message">एक निजी अधिसूचना की सामग्री के स्थान पर कहा गया। प्लेसहोल्डर: {app}, {category} और {time}।</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">शब्दों की अधिकतम संख्या</string>
     <string name="notification_max_sentences_title">वाक्यों की अधिकतम संख्या</string>
     <string name="notification_max_characters_title">पाठ वर्णों की अधिकतम संख्या</string>
-    <string name="notification_max_seconds_title">इसके बाद पढ़ना बंद करें</string>
+    <string name="notification_max_seconds_title">इतने समय बाद पढ़ना बंद करें</string>
     <string name="notification_category_timing">समय</string>
-    <string name="notification_delay_title">पढ़ने से पहले प्रतीक्षा करें</string>
+    <string name="notification_delay_title">पढ़ने से पहले इंतज़ार</string>
     <string name="notification_queue_title">जब कोई अन्य अधिसूचना पढ़ी जाती है</string>
     <string name="notification_repeat_minutes_title">स्क्रीन चालू होने तक दोबारा पढ़ें</string>
     <string name="notification_skip_media_title">मीडिया प्लेयर छोड़ें</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">हेडफोन</string>
     <string name="notification_media_title">जबकि मीडिया खेलता है</string>
     <string name="notification_dnd_title">परेशान न करें</string>
-    <string name="notification_dnd_none">किसी भी नोटिफिकेशन को जोर से न पढ़ें</string>
+    <string name="notification_dnd_none">कोई न पढ़ें</string>
     <string name="notification_dnd_allowed">डू नॉट डिस्टर्ब मोड द्वारा अनुमत सूचनाएं पढ़ें</string>
     <string name="notification_dnd_all">सभी पढ़ें</string>
     <string name="notification_touch_title">जबकि स्क्रीन को छुआ गया है</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">पॉकेट मोड</string>
     <string name="notification_pocket_summary">एक सेंसर जो रीडिंग शुरू होने पर ढका हुआ होता है, जैसे जेब में होता है, वह इसे रोकता नहीं है</string>
     <string name="notification_volume_keys_title">दोनों वॉल्यूम कुंजियाँ दबाएँ</string>
-    <string name="notification_dismiss_title">अधिसूचना खारिज होने पर पढ़ना बंद कर दें</string>
+    <string name="notification_dismiss_title">खारिज करने पर रोकें</string>
     <string name="notification_watch_dismiss_title">इसके अलावा जब अधिसूचना स्मार्टवॉच पर खारिज कर दी जाती है</string>
     <string name="notification_app_cancel_title">जब ऐप नोटिफिकेशन हटा दे तो पढ़ना बंद कर दें</string>
     <string name="notification_category_summary">सारांश</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">प्रत्येक समय बोलें</string>
     <string name="notification_clock_format_title">टाइम फ़ॉर्मैट</string>
     <string name="notification_clock_format_message">प्लेसहोल्डर: {time}, {date} और {battery} (बैटरी प्रतिशत)।</string>
-    <string name="notification_clock_format_default">यह {time} है</string>
+    <string name="notification_clock_format_default">समय {time} है</string>
     <string name="notification_clock_exact_title">सटीक समय</string>
     <string name="notification_clock_exact_summary">अलार्म और अनुस्मारक की आवश्यकता है। अन्यथा समय एक मिनट तक विलंब कहा जा सकता है।</string>
     <string name="notification_other_apps_title">अन्य ऐप्स</string>
@@ -154,21 +154,21 @@
     <string name="notification_replace_with">जैसे कहो</string>
     <string name="notification_whole_words">केवल पूरे शब्द</string>
     <string name="notification_regex">नियमित अभिव्यक्ति</string>
-    <string name="notification_enter_text">एक पाठ दर्ज करें</string>
+    <string name="notification_enter_text">टेक्स्ट डालें</string>
     <string name="notification_invalid_regex">वैध नियमित अभिव्यक्ति नहीं है</string>
     <string name="notification_edit">संपादित करें</string>
     <string name="notification_remove">हटाएं</string>
-    <string name="notification_history_keep">अधिसूचना इतिहास सहेजें</string>
+    <string name="notification_history_keep">सूचना इतिहास रखें</string>
     <string name="notification_history_clear">इतिहास साफ़ करें</string>
     <string name="notification_history_category">सूचनाएं</string>
     <string name="notification_history_empty">कोई सूचना नहीं</string>
-    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> मत पढ़ो</string>
+    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> न पढ़ें</string>
     <string name="notification_history_private_app">केवल <xliff:g id="app" example="Chat">%1$s</xliff:g> का नाम पढ़ें</string>
     <string name="notification_history_priority_app">पहले <xliff:g id="app" example="Chat">%1$s</xliff:g> पढ़ें</string>
     <string name="notification_history_block_similar">इस तरह के नोटिफिकेशन न पढ़ें</string>
     <string name="notification_history_copy">कॉपी करें</string>
     <string name="notification_saved">सहेजा गया</string>
-    <string name="notification_copied">नकल की गई</string>
+    <string name="notification_copied">कॉपी किया गया</string>
     <string name="notification_outcome_read">सफलतापूर्वक ज़ोर से पढ़ें</string>
     <string name="notification_outcome_stopped">पढ़ते-पढ़ते रुक गया</string>
     <string name="notification_outcome_speech_off">पढ़ा नहीं गया: अधिसूचना भाषण बंद है</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">अधिसूचना में <xliff:g id="text" example="urgent">%1$s</xliff:g> शामिल है</string>
     <string name="notification_cond_contains_not">अधिसूचना में <xliff:g id="text" example="urgent">%1$s</xliff:g> शामिल नहीं है</string>
     <string name="notification_cond_silent">घंटी बजाने वाला शांत है या कंपन करता है</string>
-    <string name="notification_cond_silent_not">घंटी बजती है</string>
-    <string name="notification_cond_media">मीडिया खेल रहा है</string>
+    <string name="notification_cond_silent_not">रिंगर चालू है</string>
+    <string name="notification_cond_media">मीडिया चल रहा है</string>
     <string name="notification_cond_media_not">कोई मीडिया नहीं चल रहा</string>
     <string name="notification_action_skip">न पढ़ें</string>
     <string name="notification_action_private">केवल ऐप का नाम पढ़ें</string>

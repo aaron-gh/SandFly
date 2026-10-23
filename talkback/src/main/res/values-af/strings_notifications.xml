@@ -55,7 +55,7 @@
     <string name="notification_max_words_title">Maksimum aantal woorde</string>
     <string name="notification_max_sentences_title">Maksimum aantal sinne</string>
     <string name="notification_max_characters_title">Maksimum aantal tekskarakters</string>
-    <string name="notification_max_seconds_title">Hou op lees daarna</string>
+    <string name="notification_max_seconds_title">Hou op lees na</string>
     <string name="notification_category_timing">Tydsberekening</string>
     <string name="notification_delay_title">Wag voor lees</string>
     <string name="notification_queue_title">Wanneer \'n ander kennisgewing gelees word</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Oorfone</string>
     <string name="notification_media_title">Terwyl media speel</string>
     <string name="notification_dnd_title">Moenie Steur Nie</string>
-    <string name="notification_dnd_none">Moenie enige kennisgewings hardop lees nie</string>
+    <string name="notification_dnd_none">Lees niks nie</string>
     <string name="notification_dnd_allowed">Lees kennisgewings wat deur Moenie Steur Nie-modus toegelaat word nie</string>
     <string name="notification_dnd_all">Lees alles</string>
     <string name="notification_touch_title">Terwyl die skerm aangeraak word</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Sakmodus</string>
     <string name="notification_pocket_summary">\'n Sensor wat bedek is wanneer lees begin, soos in \'n sak, stop dit nie</string>
     <string name="notification_volume_keys_title">Druk albei volumesleutels</string>
-    <string name="notification_dismiss_title">Hou op lees wanneer die kennisgewing verwerp word</string>
+    <string name="notification_dismiss_title">Stop wanneer verwyder</string>
     <string name="notification_watch_dismiss_title">Ook wanneer die kennisgewing op \'n slimhorlosie verwerp word</string>
     <string name="notification_app_cancel_title">Hou op lees wanneer die toepassing die kennisgewing verwyder</string>
     <string name="notification_category_summary">Opsomming</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">Die kennisgewing bevat <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Die kennisgewing bevat nie <xliff:g id="text" example="urgent">%1$s</xliff:g> nie</string>
     <string name="notification_cond_silent">Die luier is stil of vibreer</string>
-    <string name="notification_cond_silent_not">Die luier lui</string>
+    <string name="notification_cond_silent_not">Die luitoon is aan</string>
     <string name="notification_cond_media">Media speel</string>
     <string name="notification_cond_media_not">Geen media speel nie</string>
     <string name="notification_action_skip">lees nie</string>

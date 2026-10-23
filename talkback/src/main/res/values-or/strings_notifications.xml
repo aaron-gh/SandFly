@@ -31,7 +31,7 @@
     <string name="notification_automation_title">ସ୍ୱୟଂଚାଳନ</string>
     <string name="notification_automation_allowed_title">ସ୍ୱୟଂଚାଳିତ ଆପ୍ସକୁ ଅନୁମତି ଦିଅନ୍ତୁ</string>
     <string name="notification_category_said">କ’ଣ କୁହାଯାଏ</string>
-    <string name="notification_format_title">ବକ୍ତବ୍ୟ ଫର୍ମାଟ୍</string>
+    <string name="notification_format_title">କହିବା ଫର୍ମାଟ୍</string>
     <string name="notification_format_message">ସ୍ଥାନଧାରୀ: {app}, {title}, {text}, {content} (ପୁରା ପାଠ), {bigtext}, {subtext}, {ticker}, {category} ଏବଂ {time} |</string>
     <string name="notification_private_format_title">ବ୍ୟକ୍ତିଗତ ବିଜ୍ଞପ୍ତିରେ କୁହାଯାଇଛି</string>
     <string name="notification_private_format_message">ଏକ ବ୍ୟକ୍ତିଗତ ବିଜ୍ଞପ୍ତିର ବିଷୟବସ୍ତୁ ସ୍ଥାନରେ କହିଲା | ସ୍ଥାନଧାରୀ: {app}, {category} ଏବଂ {time} |</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">ଶବ୍ଦର ସର୍ବାଧିକ ସଂଖ୍ୟା</string>
     <string name="notification_max_sentences_title">ବାକ୍ୟର ସର୍ବାଧିକ ସଂଖ୍ୟା</string>
     <string name="notification_max_characters_title">ପାଠ୍ୟ ଅକ୍ଷରର ସର୍ବାଧିକ ସଂଖ୍ୟା</string>
-    <string name="notification_max_seconds_title">ପରେ ପ reading ିବା ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="notification_max_seconds_title">ଏତେ ସମୟ ପରେ ପଢ଼ିବା ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="notification_category_timing">ସମୟ</string>
-    <string name="notification_delay_title">ପ reading ିବା ପୂର୍ବରୁ ଅପେକ୍ଷା କର</string>
+    <string name="notification_delay_title">ପଢ଼ିବା ପୂର୍ବରୁ ଅପେକ୍ଷା</string>
     <string name="notification_queue_title">ଯେତେବେଳେ ଅନ୍ୟ ଏକ ବିଜ୍ଞପ୍ତି ପ read ଼ାଯାଏ</string>
     <string name="notification_repeat_minutes_title">ସ୍କ୍ରିନ୍ ଅନ୍ ନହେବା ପର୍ଯ୍ୟନ୍ତ ପୁନର୍ବାର ପ Read ନ୍ତୁ</string>
     <string name="notification_skip_media_title">ମିଡିଆ ପ୍ଲେୟାରକୁ ଏଡ଼ାଇଦିଅ</string>
@@ -75,10 +75,10 @@
     <string name="notification_locked_title">ଯେତେବେଳେ ଫୋନ୍ ଲକ୍ ହୋଇଛି</string>
     <string name="notification_headphones_title">ହେଡଫୋନ୍</string>
     <string name="notification_media_title">ଯେତେବେଳେ ମିଡିଆ ଖେଳୁଛି</string>
-    <string name="notification_dnd_title">ବ୍ୟସ୍ତ ହୁଅନ୍ତୁ ନାହିଁ</string>
-    <string name="notification_dnd_none">ଉଚ୍ଚ ସ୍ୱରରେ କୌଣସି ବିଜ୍ଞପ୍ତି ପ read ନ୍ତୁ ନାହିଁ</string>
+    <string name="notification_dnd_title">ବିରକ୍ତ କରନ୍ତୁ ନାହିଁ</string>
+    <string name="notification_dnd_none">କିଛି ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_dnd_allowed">ବିଭ୍ରାନ୍ତିକର ମୋଡ୍ ଦ୍ୱାରା ଅନୁମୋଦିତ ବିଜ୍ଞପ୍ତିଗୁଡିକ ପ Read ନ୍ତୁ</string>
-    <string name="notification_dnd_all">ସମସ୍ତ ପ Read ନ୍ତୁ</string>
+    <string name="notification_dnd_all">ସବୁ ପଢ଼ନ୍ତୁ</string>
     <string name="notification_touch_title">ଯେତେବେଳେ ସ୍କ୍ରିନ୍ ସ୍ପର୍ଶ ହୁଏ</string>
     <string name="notification_touch_read">ତୁରନ୍ତ ପ Read ଼</string>
     <string name="notification_touch_after">ସ୍ପର୍ଶ ସମାପ୍ତ ହେଲେ ପ Read ନ୍ତୁ</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">ପକେଟ୍ ମୋଡ୍</string>
     <string name="notification_pocket_summary">ପ reading ିବା ଆରମ୍ଭ ହେବା ସମୟରେ ଆବୃତ ହୋଇଥିବା ଏକ ସେନ୍ସର, ପକେଟ ପରି, ଏହାକୁ ବନ୍ଦ କରେ ନାହିଁ</string>
     <string name="notification_volume_keys_title">ଉଭୟ ଭଲ୍ୟୁମ୍ କୀ ଦବାନ୍ତୁ</string>
-    <string name="notification_dismiss_title">ବିଜ୍ଞପ୍ତି ଖାରଜ ହୋଇଗଲେ ପ reading ିବା ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="notification_dismiss_title">ଖାରଜ ହେଲେ ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="notification_watch_dismiss_title">ଏକ ସ୍ମାର୍ଟ ୱାଚ୍ ଉପରେ ମଧ୍ୟ ବିଜ୍ଞପ୍ତି ଖାରଜ ହୋଇଯାଏ</string>
     <string name="notification_app_cancel_title">ଯେତେବେଳେ ଆପ୍ ବିଜ୍ଞପ୍ତିକୁ ଅପସାରଣ କରେ ପ reading ିବା ବନ୍ଦ କର</string>
     <string name="notification_category_summary">ସାରାଂଶ</string>
@@ -128,8 +128,8 @@
     <string name="notification_clock_interval_title">ପ୍ରତ୍ୟେକ ସମୟ କୁହନ୍ତୁ</string>
     <string name="notification_clock_format_title">ସମୟ ଫର୍ମାଟ</string>
     <string name="notification_clock_format_message">ସ୍ଥାନଧାରୀ: {time}, {date} ଏବଂ {battery} (ବ୍ୟାଟେରୀ ପ୍ରତିଶତ) |</string>
-    <string name="notification_clock_format_default">ଏହା {time}</string>
-    <string name="notification_clock_exact_title">ପ୍ରକୃତ ସମୟ</string>
+    <string name="notification_clock_format_default">ଏବେ {time}</string>
+    <string name="notification_clock_exact_title">ସଠିକ୍ ସମୟ</string>
     <string name="notification_clock_exact_summary">ଆଲାର୍ମ ଏବଂ ସ୍ମାରକପତ୍ର ଆବଶ୍ୟକ କରେ | ନଚେତ୍ ସମୟ ଏକ ମିନିଟ୍ ବିଳମ୍ବ ପର୍ଯ୍ୟନ୍ତ କୁହାଯାଇପାରେ |</string>
     <string name="notification_other_apps_title">ଅନ୍ୟାନ୍ୟ ଆପ୍ସ</string>
     <string name="notification_apps_category">ଆପଗୁଡ଼ିକ</string>
@@ -159,12 +159,12 @@
     <string name="notification_edit">ସଂପାଦନା କରନ୍ତୁ</string>
     <string name="notification_remove">ଅପସାରଣ କରନ୍ତୁ</string>
     <string name="notification_history_keep">ବିଜ୍ଞପ୍ତି ଇତିହାସ ସଞ୍ଚୟ କରନ୍ତୁ</string>
-    <string name="notification_history_clear">ଇତିହାସ ସଫା କର</string>
+    <string name="notification_history_clear">ଇତିହାସ ସଫା କରନ୍ତୁ</string>
     <string name="notification_history_category">ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ</string>
     <string name="notification_history_empty">କୌଣସି ବିଜ୍ଞପ୍ତି ନାହିଁ</string>
-    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> ପ read ନ୍ତୁ ନାହିଁ</string>
+    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_history_private_app">କେବଳ <xliff:g id="app" example="Chat">%1$s</xliff:g> ର ନାମ ପ Read ନ୍ତୁ</string>
-    <string name="notification_history_priority_app">ପ୍ରଥମେ <xliff:g id="app" example="Chat">%1$s</xliff:g> ପ Read ନ୍ତୁ</string>
+    <string name="notification_history_priority_app">ପ୍ରଥମେ <xliff:g id="app" example="Chat">%1$s</xliff:g> ପଢ଼ନ୍ତୁ</string>
     <string name="notification_history_block_similar">ଏହିପରି ବିଜ୍ଞପ୍ତି ପ read ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_history_copy">କପି କରନ୍ତୁ</string>
     <string name="notification_saved">ସଞ୍ଚୟ ହୋଇଛି</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">ବିଜ୍ଞପ୍ତିରେ <xliff:g id="text" example="urgent">%1$s</xliff:g> ଅଛି</string>
     <string name="notification_cond_contains_not">ବିଜ୍ଞପ୍ତିରେ <xliff:g id="text" example="urgent">%1$s</xliff:g> contain ନାହିଁ</string>
     <string name="notification_cond_silent">ରିଙ୍ଗର୍ ନୀରବ କିମ୍ବା କମ୍ପିତ</string>
-    <string name="notification_cond_silent_not">ରିଙ୍ଗର୍ ବାଜୁଛି</string>
-    <string name="notification_cond_media">ମିଡିଆ ଖେଳୁଛି</string>
+    <string name="notification_cond_silent_not">ରିଙ୍ଗର୍ ଚାଲୁ ଅଛି</string>
+    <string name="notification_cond_media">ମିଡିଆ ଚାଲୁଛି</string>
     <string name="notification_cond_media_not">କୌଣସି ମିଡିଆ ଖେଳୁନାହିଁ</string>
     <string name="notification_action_skip">ପଢ଼ନ୍ତୁ ନାହିଁ</string>
     <string name="notification_action_private">କେବଳ ଆପ୍ ନାମ ପ read ଼ନ୍ତୁ</string>

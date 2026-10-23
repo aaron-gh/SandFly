@@ -55,7 +55,7 @@
     <string name="notification_max_words_title">ಪದಗಳ ಗರಿಷ್ಠ ಸಂಖ್ಯೆ</string>
     <string name="notification_max_sentences_title">ವಾಕ್ಯಗಳ ಗರಿಷ್ಠ ಸಂಖ್ಯೆ</string>
     <string name="notification_max_characters_title">ಪಠ್ಯ ಅಕ್ಷರಗಳ ಗರಿಷ್ಠ ಸಂಖ್ಯೆ</string>
-    <string name="notification_max_seconds_title">ನಂತರ ಓದುವುದನ್ನು ನಿಲ್ಲಿಸಿ</string>
+    <string name="notification_max_seconds_title">ಇಷ್ಟು ಸಮಯದ ನಂತರ ಓದುವುದನ್ನು ನಿಲ್ಲಿಸಿ</string>
     <string name="notification_category_timing">ಟೈಮಿಂಗ್</string>
     <string name="notification_delay_title">ಓದುವ ಮೊದಲು ನಿರೀಕ್ಷಿಸಿ</string>
     <string name="notification_queue_title">ಮತ್ತೊಂದು ಅಧಿಸೂಚನೆಯನ್ನು ಓದಿದಾಗ</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">ಹೆಡ್‌ಫೋನ್‌ಗಳು</string>
     <string name="notification_media_title">ಮಾಧ್ಯಮಗಳು ಆಡುತ್ತಿರುವಾಗ</string>
     <string name="notification_dnd_title">ಅಡಚಣೆ ಮಾಡಬೇಡಿ</string>
-    <string name="notification_dnd_none">ಯಾವುದೇ ಅಧಿಸೂಚನೆಗಳನ್ನು ಜೋರಾಗಿ ಓದಬೇಡಿ</string>
+    <string name="notification_dnd_none">ಯಾವುದನ್ನೂ ಓದಬೇಡಿ</string>
     <string name="notification_dnd_allowed">ಅಡಚಣೆ ಮಾಡಬೇಡಿ ಮೋಡ್‌ನಿಂದ ಅನುಮತಿಸಲಾದ ಅಧಿಸೂಚನೆಗಳನ್ನು ಓದಿ</string>
     <string name="notification_dnd_all">ಎಲ್ಲಾ ಓದಿ</string>
     <string name="notification_touch_title">ಪರದೆಯನ್ನು ಸ್ಪರ್ಶಿಸಿದಾಗ</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">ಪಾಕೆಟ್ ಮೋಡ್</string>
     <string name="notification_pocket_summary">ಜೇಬಿನಲ್ಲಿರುವಂತೆ ಓದುವಿಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸಿದಾಗ ಆವರಿಸಿರುವ ಸಂವೇದಕವು ಅದನ್ನು ನಿಲ್ಲಿಸುವುದಿಲ್ಲ</string>
     <string name="notification_volume_keys_title">ಎರಡೂ ವಾಲ್ಯೂಮ್ ಕೀಗಳನ್ನು ಒತ್ತಿರಿ</string>
-    <string name="notification_dismiss_title">ಅಧಿಸೂಚನೆಯನ್ನು ವಜಾಗೊಳಿಸಿದಾಗ ಓದುವುದನ್ನು ನಿಲ್ಲಿಸಿ</string>
+    <string name="notification_dismiss_title">ವಜಾಗೊಳಿಸಿದಾಗ ನಿಲ್ಲಿಸಿ</string>
     <string name="notification_watch_dismiss_title">ಸ್ಮಾರ್ಟ್ ವಾಚ್‌ನಲ್ಲಿ ಅಧಿಸೂಚನೆಯನ್ನು ವಜಾಗೊಳಿಸಿದಾಗ</string>
     <string name="notification_app_cancel_title">ಅಪ್ಲಿಕೇಶನ್ ಅಧಿಸೂಚನೆಯನ್ನು ತೆಗೆದುಹಾಕಿದಾಗ ಓದುವುದನ್ನು ನಿಲ್ಲಿಸಿ</string>
     <string name="notification_category_summary">ಸಾರಾಂಶ</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">ಪ್ರತಿ ಸಮಯವನ್ನು ಹೇಳಿ</string>
     <string name="notification_clock_format_title">ಸಮಯದ ಫಾರ್ಮ್ಯಾಟ್</string>
     <string name="notification_clock_format_message">ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್‌ಗಳು: {time}, {date} ಮತ್ತು {battery} (ಬ್ಯಾಟರಿ ಶೇಕಡಾವಾರು).</string>
-    <string name="notification_clock_format_default">ಇದು {time}</string>
+    <string name="notification_clock_format_default">ಈಗ {time}</string>
     <string name="notification_clock_exact_title">ನಿಖರವಾದ ಸಮಯಗಳು</string>
     <string name="notification_clock_exact_summary">ಎಚ್ಚರಿಕೆಗಳು ಮತ್ತು ಜ್ಞಾಪನೆಗಳ ಅಗತ್ಯವಿದೆ. ಇಲ್ಲದಿದ್ದರೆ ಸಮಯವನ್ನು ಒಂದು ನಿಮಿಷ ತಡವಾಗಿ ಹೇಳಬಹುದು.</string>
     <string name="notification_other_apps_title">ಇತರ ಅಪ್ಲಿಕೇಶನ್‌ಗಳು</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">ಅಧಿಸೂಚನೆಯು <xliff:g id="text" example="urgent">%1$s</xliff:g> ಅನ್ನು ಒಳಗೊಂಡಿದೆ</string>
     <string name="notification_cond_contains_not">ಅಧಿಸೂಚನೆಯು <xliff:g id="text" example="urgent">%1$s</xliff:g> ಅನ್ನು ಒಳಗೊಂಡಿಲ್ಲ</string>
     <string name="notification_cond_silent">ರಿಂಗರ್ ಮೌನವಾಗಿದೆ ಅಥವಾ ಕಂಪಿಸುತ್ತದೆ</string>
-    <string name="notification_cond_silent_not">ರಿಂಗರ್ ಉಂಗುರಗಳು</string>
-    <string name="notification_cond_media">ಮಾಧ್ಯಮಗಳು ಆಡುತ್ತಿವೆ</string>
+    <string name="notification_cond_silent_not">ರಿಂಗರ್ ಆನ್ ಆಗಿದೆ</string>
+    <string name="notification_cond_media">ಮೀಡಿಯಾ ಪ್ಲೇ ಆಗುತ್ತಿದೆ</string>
     <string name="notification_cond_media_not">ಯಾವುದೇ ಮಾಧ್ಯಮ ಪ್ಲೇ ಆಗುತ್ತಿಲ್ಲ</string>
     <string name="notification_action_skip">ಓದಬೇಡ</string>
     <string name="notification_action_private">ಅಪ್ಲಿಕೇಶನ್ ಹೆಸರನ್ನು ಮಾತ್ರ ಓದಿ</string>

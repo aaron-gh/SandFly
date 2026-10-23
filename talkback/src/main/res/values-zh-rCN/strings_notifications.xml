@@ -243,7 +243,7 @@
     <string name="notification_type_media">媒体播放</string>
     <string name="notification_bluetooth_any">任何设备</string>
     <string name="notification_wifi_hint">网络名称</string>
-    <string name="notification_choose_app">选择一个应用程序</string>
+    <string name="notification_choose_app">选择应用</string>
     <string name="notification_time_start">从</string>
     <string name="notification_time_end">至</string>
     <string name="notification_time_days">天数</string>
@@ -267,9 +267,9 @@
     <string name="notification_cond_landscape_not">屏幕为纵向</string>
     <string name="notification_cond_time">时间是<xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">时间不是<xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
-    <string name="notification_cond_wifi">连接到<xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">已连接到 <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">未连接至 <xliff:g id="network" example="Home">%1$s</xliff:g></string>
-    <string name="notification_cond_wifi_any">连接到Wi-Fi</string>
+    <string name="notification_cond_wifi_any">已连接到 Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">未连接至 Wi-Fi</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> 在前台运行</string>
     <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> 未在前台运行</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">通知包含<xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">通知不包含<xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">铃声静音或振动</string>
-    <string name="notification_cond_silent_not">铃声响起</string>
+    <string name="notification_cond_silent_not">响铃已开启</string>
     <string name="notification_cond_media">媒体正在播放</string>
     <string name="notification_cond_media_not">没有媒体正在播放</string>
     <string name="notification_action_skip">不朗读</string>

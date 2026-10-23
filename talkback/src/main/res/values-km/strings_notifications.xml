@@ -76,9 +76,9 @@
     <string name="notification_headphones_title">កាស</string>
     <string name="notification_media_title">ខណៈពេលដែលប្រព័ន្ធផ្សព្វផ្សាយកំពុងលេង</string>
     <string name="notification_dnd_title">កុំរំខាន</string>
-    <string name="notification_dnd_none">កុំអានការជូនដំណឹងឱ្យឮៗ</string>
+    <string name="notification_dnd_none">កុំអានអ្វីទាំងអស់</string>
     <string name="notification_dnd_allowed">អានការជូនដំណឹងដែលអនុញ្ញាតដោយមុខងារកុំរំខាន</string>
-    <string name="notification_dnd_all">អានទាំងអស់គ្នា</string>
+    <string name="notification_dnd_all">អានទាំងអស់</string>
     <string name="notification_touch_title">ខណៈពេលដែលអេក្រង់ត្រូវបានប៉ះ</string>
     <string name="notification_touch_read">អានភ្លាមៗ</string>
     <string name="notification_touch_after">អាននៅពេលដែលការប៉ះបញ្ចប់</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">របៀបហោប៉ៅ</string>
     <string name="notification_pocket_summary">ឧបករណ៍ចាប់សញ្ញាដែលត្រូវបានគ្របដណ្តប់នៅពេលដែលការអានចាប់ផ្តើម ដូចជានៅក្នុងហោប៉ៅ មិនបញ្ឈប់វាទេ</string>
     <string name="notification_volume_keys_title">ចុចគ្រាប់ចុចកម្រិតសំឡេងទាំងពីរ</string>
-    <string name="notification_dismiss_title">ឈប់អាននៅពេលដែលការជូនដំណឹងត្រូវបានច្រានចោល</string>
+    <string name="notification_dismiss_title">ឈប់ពេលច្រានចោល</string>
     <string name="notification_watch_dismiss_title">ផងដែរនៅពេលដែលការជូនដំណឹងត្រូវបានច្រានចោលនៅលើនាឡិកាឆ្លាតវៃ</string>
     <string name="notification_app_cancel_title">ឈប់អាននៅពេលដែលកម្មវិធីលុបការជូនដំណឹង</string>
     <string name="notification_category_summary">សង្ខេប</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">និយាយរាល់ពេល</string>
     <string name="notification_clock_format_title">ទម្រង់ម៉ោង</string>
     <string name="notification_clock_format_message">កន្លែងដាក់៖ {time}, {date} និង {battery} (ភាគរយថ្ម)។</string>
-    <string name="notification_clock_format_default">វា{time}</string>
+    <string name="notification_clock_format_default">ឥឡូវម៉ោង {time}</string>
     <string name="notification_clock_exact_title">ពេលវេលាពិតប្រាកដ</string>
     <string name="notification_clock_exact_summary">ត្រូវការសំឡេងរោទិ៍ និងការរំលឹក។ បើមិនដូច្នោះទេពេលវេលាអាចនិយាយបានរហូតដល់មួយនាទីយឺត។</string>
     <string name="notification_other_apps_title">កម្មវិធីផ្សេងទៀត</string>
@@ -162,13 +162,13 @@
     <string name="notification_history_clear">ជម្រះប្រវត្តិ</string>
     <string name="notification_history_category">ការជូនដំណឹង</string>
     <string name="notification_history_empty">គ្មានការជូនដំណឹងទេ</string>
-    <string name="notification_history_ignore_app">កុំអាន<xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app">កុំអាន <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">អានតែឈ្មោះ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">អាន <xliff:g id="app" example="Chat">%1$s</xliff:g> មុនគេ</string>
     <string name="notification_history_block_similar">កុំអានការជូនដំណឹងដូចនេះ</string>
     <string name="notification_history_copy">ចម្លង</string>
     <string name="notification_saved">បានរក្សាទុក</string>
-    <string name="notification_copied">ចម្លង</string>
+    <string name="notification_copied">បានចម្លង</string>
     <string name="notification_outcome_read">អានឮៗដោយជោគជ័យ</string>
     <string name="notification_outcome_stopped">ឈប់ពេលអាន</string>
     <string name="notification_outcome_speech_off">មិនបានអាន៖ ការនិយាយការជូនដំណឹងត្រូវបានបិទ</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">ការជូនដំណឹងមាន <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">ការជូនដំណឹងមិនមាន <xliff:g id="text" example="urgent">%1$s</xliff:g> ទេ</string>
     <string name="notification_cond_silent">សំឡេងរោទ៍នៅស្ងៀម ឬញ័រ</string>
-    <string name="notification_cond_silent_not">សំឡេងរោទ៍</string>
-    <string name="notification_cond_media">ប្រព័ន្ធផ្សព្វផ្សាយកំពុងលេង</string>
+    <string name="notification_cond_silent_not">សំឡេងរោទ៍បើក</string>
+    <string name="notification_cond_media">មេឌៀកំពុងចាក់</string>
     <string name="notification_cond_media_not">គ្មានប្រព័ន្ធផ្សព្វផ្សាយកំពុងលេងទេ</string>
     <string name="notification_action_skip">កុំអាន</string>
     <string name="notification_action_private">អានតែឈ្មោះកម្មវិធី</string>

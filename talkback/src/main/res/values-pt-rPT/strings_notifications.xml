@@ -6,8 +6,8 @@
     <string name="notification_media_skip">Não leia em voz alta</string>
     <string name="notification_media_pause">Pause a mídia durante a leitura</string>
     <string name="notification_media_read">Leia em voz alta</string>
-    <string name="notification_headphones_only_without">Somente sem fones de ouvido</string>
-    <string name="notification_headphones_only_with">Somente com fones de ouvido</string>
+    <string name="notification_headphones_only_without">Apenas sem auscultadores</string>
+    <string name="notification_headphones_only_with">Apenas com auscultadores</string>
     <string name="notification_headphones_always">Leia em voz alta com ou sem fones de ouvido</string>
     <string name="notification_queue_skip">Não leia a nova notificação em voz alta</string>
     <string name="notification_queue_interrupt">Interromper a notificação que está sendo lida em voz alta</string>
@@ -38,7 +38,7 @@
     <string name="notification_category_voice">Voz</string>
     <string name="notification_voice_title">Voz</string>
     <string name="notification_voice_sandfly">Voz de SandFly</string>
-    <string name="notification_detect_language_title">Detectar idioma</string>
+    <string name="notification_detect_language_title">Detetar idioma</string>
     <string name="notification_detect_language_summary">Diga cada notificação no idioma em que está escrita. É necessário mudar o idioma automaticamente nas configurações de conversão de texto em fala.</string>
     <string name="notification_sound_before_title">Som antes das notificações</string>
     <string name="notification_category_text">Texto</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Número máximo de palavras</string>
     <string name="notification_max_sentences_title">Número máximo de frases</string>
     <string name="notification_max_characters_title">Número máximo de caracteres de texto</string>
-    <string name="notification_max_seconds_title">Pare de ler depois</string>
+    <string name="notification_max_seconds_title">Parar de ler após</string>
     <string name="notification_category_timing">Tempo</string>
-    <string name="notification_delay_title">Espere antes de ler</string>
+    <string name="notification_delay_title">Esperar antes de ler</string>
     <string name="notification_queue_title">Quando outra notificação é lida</string>
     <string name="notification_repeat_minutes_title">Leia novamente até a tela ligar</string>
     <string name="notification_skip_media_title">Ignorar reprodutores de mídia</string>
@@ -73,12 +73,12 @@
     <string name="notification_screen_on_title">Enquanto a tela estiver ligada</string>
     <string name="notification_screen_off_title">Enquanto a tela está desligada</string>
     <string name="notification_locked_title">Enquanto o telefone está bloqueado</string>
-    <string name="notification_headphones_title">Fones de ouvido</string>
+    <string name="notification_headphones_title">Auscultadores</string>
     <string name="notification_media_title">Enquanto a mídia é reproduzida</string>
-    <string name="notification_dnd_title">Não perturbe</string>
-    <string name="notification_dnd_none">Não leia nenhuma notificação em voz alta</string>
+    <string name="notification_dnd_title">Não incomodar</string>
+    <string name="notification_dnd_none">Não ler nenhuma</string>
     <string name="notification_dnd_allowed">Ler notificações permitidas pelo modo Não perturbe</string>
-    <string name="notification_dnd_all">Leia tudo</string>
+    <string name="notification_dnd_all">Ler tudo</string>
     <string name="notification_touch_title">Enquanto a tela é tocada</string>
     <string name="notification_touch_read">Leia imediatamente</string>
     <string name="notification_touch_after">Leia quando o toque terminar</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Modo de bolso</string>
     <string name="notification_pocket_summary">Um sensor que fica coberto quando a leitura começa, como se fosse um bolso, não a interrompe</string>
     <string name="notification_volume_keys_title">Pressione ambas as teclas de volume</string>
-    <string name="notification_dismiss_title">Pare de ler quando a notificação for dispensada</string>
+    <string name="notification_dismiss_title">Parar ao ignorar</string>
     <string name="notification_watch_dismiss_title">Além disso, quando a notificação é dispensada em um smartwatch</string>
     <string name="notification_app_cancel_title">Pare de ler quando o aplicativo remover a notificação</string>
     <string name="notification_category_summary">Resumo</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Diga a hora toda</string>
     <string name="notification_clock_format_title">Formato de hora</string>
     <string name="notification_clock_format_message">Espaços reservados: {time}, {date} e {battery} (a porcentagem da bateria).</string>
-    <string name="notification_clock_format_default">É {time}</string>
+    <string name="notification_clock_format_default">São {time}</string>
     <string name="notification_clock_exact_title">Horários exatos</string>
     <string name="notification_clock_exact_summary">Precisa de alarmes e lembretes. Caso contrário, a hora pode ser informada com até um minuto de atraso.</string>
     <string name="notification_other_apps_title">Outros aplicativos</string>
@@ -154,17 +154,17 @@
     <string name="notification_replace_with">Diga como</string>
     <string name="notification_whole_words">Somente palavras inteiras</string>
     <string name="notification_regex">Expressão regular</string>
-    <string name="notification_enter_text">Digite um texto</string>
+    <string name="notification_enter_text">Introduza um texto</string>
     <string name="notification_invalid_regex">Não é uma expressão regular válida</string>
     <string name="notification_edit">Editar</string>
     <string name="notification_remove">Remover</string>
-    <string name="notification_history_keep">Salvar histórico de notificações</string>
-    <string name="notification_history_clear">Limpe o histórico</string>
+    <string name="notification_history_keep">Guardar histórico de notificações</string>
+    <string name="notification_history_clear">Limpar o histórico</string>
     <string name="notification_history_category">Notificações</string>
     <string name="notification_history_empty">Sem notificações</string>
-    <string name="notification_history_ignore_app">Não leia <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app">Não ler <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Leia apenas o nome de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_priority_app">Leia <xliff:g id="app" example="Chat">%1$s</xliff:g> primeiro</string>
+    <string name="notification_history_priority_app">Ler <xliff:g id="app" example="Chat">%1$s</xliff:g> primeiro</string>
     <string name="notification_history_block_similar">Não leia notificações como esta</string>
     <string name="notification_history_copy">Copiar</string>
     <string name="notification_saved">Salvo</string>
@@ -243,7 +243,7 @@
     <string name="notification_type_media">Reprodução de mídia</string>
     <string name="notification_bluetooth_any">Qualquer dispositivo</string>
     <string name="notification_wifi_hint">Nome da rede</string>
-    <string name="notification_choose_app">Escolha um aplicativo</string>
+    <string name="notification_choose_app">Escolha uma aplicação</string>
     <string name="notification_time_start">De</string>
     <string name="notification_time_end">Até</string>
     <string name="notification_time_days">Dias</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">A notificação contém <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">A notificação não contém <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">A campainha está silenciosa ou vibra</string>
-    <string name="notification_cond_silent_not">A campainha toca</string>
-    <string name="notification_cond_media">A mídia está tocando</string>
+    <string name="notification_cond_silent_not">O toque está ativado</string>
+    <string name="notification_cond_media">Está a ser reproduzido conteúdo multimédia</string>
     <string name="notification_cond_media_not">Nenhuma mídia está sendo reproduzida</string>
     <string name="notification_action_skip">não ler</string>
     <string name="notification_action_private">leia apenas o nome do aplicativo</string>

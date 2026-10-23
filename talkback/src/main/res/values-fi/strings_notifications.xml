@@ -20,7 +20,7 @@
     <string name="notification_reading_title">Ilmoitusten lukeminen ääneen</string>
     <string name="notification_apps_title">Sovellukset</string>
     <string name="notification_words_title">Sanat ja korvaukset</string>
-    <string name="notification_kinds_title">Erilaisia ilmoituksia</string>
+    <string name="notification_kinds_title">Ilmoitustyypit</string>
     <string name="notification_when_title">Milloin lukea</string>
     <string name="notification_rules_title">Säännöt</string>
     <string name="notification_repeats_title">Toistaa</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Sanojen enimmäismäärä</string>
     <string name="notification_max_sentences_title">Virkkeiden enimmäismäärä</string>
     <string name="notification_max_characters_title">Tekstin merkkien enimmäismäärä</string>
-    <string name="notification_max_seconds_title">Lopeta lukeminen sen jälkeen</string>
+    <string name="notification_max_seconds_title">Lopeta lukeminen, kun kulunut</string>
     <string name="notification_category_timing">Ajoitus</string>
-    <string name="notification_delay_title">Odota ennen kuin luet</string>
+    <string name="notification_delay_title">Odotus ennen lukemista</string>
     <string name="notification_queue_title">Kun toinen ilmoitus luetaan</string>
     <string name="notification_repeat_minutes_title">Lue uudelleen, kunnes näyttö syttyy</string>
     <string name="notification_skip_media_title">Ohita mediasoittimet</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Kuulokkeet</string>
     <string name="notification_media_title">Median toiston aikana</string>
     <string name="notification_dnd_title">Älä häiritse</string>
-    <string name="notification_dnd_none">Älä lue ilmoituksia ääneen</string>
+    <string name="notification_dnd_none">Älä lue mitään</string>
     <string name="notification_dnd_allowed">Lue Älä häiritse -tilan sallimia ilmoituksia</string>
     <string name="notification_dnd_all">Lue kaikki</string>
     <string name="notification_touch_title">Kun näyttöä kosketetaan</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Taskutila</string>
     <string name="notification_pocket_summary">Lukemisen alkaessa peitetty anturi, kuten taskussa, ei estä sitä</string>
     <string name="notification_volume_keys_title">Paina molempia äänenvoimakkuusnäppäimiä</string>
-    <string name="notification_dismiss_title">Lopeta lukeminen, kun ilmoitus hylätään</string>
+    <string name="notification_dismiss_title">Lopeta, kun ohitetaan</string>
     <string name="notification_watch_dismiss_title">Myös silloin, kun ilmoitus hylätään älykellossa</string>
     <string name="notification_app_cancel_title">Lopeta lukeminen, kun sovellus poistaa ilmoituksen</string>
     <string name="notification_category_summary">Yhteenveto</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Sano aika joka kerta</string>
     <string name="notification_clock_format_title">Ajan esitystapa</string>
     <string name="notification_clock_format_message">Paikkamerkit: {time}, {date} ja {battery} (akun prosenttiosuus).</string>
-    <string name="notification_clock_format_default">Se on {time}</string>
+    <string name="notification_clock_format_default">Kello on {time}</string>
     <string name="notification_clock_exact_title">Tarkat ajat</string>
     <string name="notification_clock_exact_summary">Tarvitsee hälytyksiä ja muistutuksia. Muuten aika voidaan sanoa jopa minuutin myöhässä.</string>
     <string name="notification_other_apps_title">Muut sovellukset</string>
@@ -269,7 +269,7 @@
     <string name="notification_cond_time_not">Kello ei ole <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Yhdistetty verkkoon <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Ei yhdistetty verkkoon <xliff:g id="network" example="Home">%1$s</xliff:g></string>
-    <string name="notification_cond_wifi_any">Yhdistetty verkkoon Wi-Fi</string>
+    <string name="notification_cond_wifi_any">Yhdistetty Wi-Fi-verkkoon</string>
     <string name="notification_cond_wifi_any_not">Ei yhdistetty Wi-Fi-verkkoon</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> on etualalla</string>
     <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ei ole edessä</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">Ilmoitus sisältää <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Ilmoitus ei sisällä <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Soittoääni on äänetön tai värisee</string>
-    <string name="notification_cond_silent_not">Soittoääni soi</string>
-    <string name="notification_cond_media">Media toistetaan</string>
+    <string name="notification_cond_silent_not">Soittoääni on päällä</string>
+    <string name="notification_cond_media">Mediaa toistetaan</string>
     <string name="notification_cond_media_not">Mediaa ei toisteta</string>
     <string name="notification_action_skip">älä lue</string>
     <string name="notification_action_private">lue vain sovelluksen nimi</string>

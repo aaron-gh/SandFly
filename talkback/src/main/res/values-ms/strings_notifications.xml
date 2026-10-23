@@ -20,7 +20,7 @@
     <string name="notification_reading_title">Membaca pemberitahuan dengan kuat</string>
     <string name="notification_apps_title">Apl</string>
     <string name="notification_words_title">Perkataan dan penggantian</string>
-    <string name="notification_kinds_title">Macam-macam pemberitahuan</string>
+    <string name="notification_kinds_title">Jenis pemberitahuan</string>
     <string name="notification_when_title">Bila nak baca</string>
     <string name="notification_rules_title">Peraturan</string>
     <string name="notification_repeats_title">Berulang</string>
@@ -55,7 +55,7 @@
     <string name="notification_max_words_title">Bilangan maksimum perkataan</string>
     <string name="notification_max_sentences_title">Bilangan ayat maksimum</string>
     <string name="notification_max_characters_title">Bilangan maksimum aksara teks</string>
-    <string name="notification_max_seconds_title">Berhenti membaca selepas itu</string>
+    <string name="notification_max_seconds_title">Berhenti membaca selepas</string>
     <string name="notification_category_timing">Masa</string>
     <string name="notification_delay_title">Tunggu sebelum membaca</string>
     <string name="notification_queue_title">Apabila pemberitahuan lain dibaca</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Fon kepala</string>
     <string name="notification_media_title">Semasa media bermain</string>
     <string name="notification_dnd_title">Jangan Ganggu</string>
-    <string name="notification_dnd_none">Jangan baca sebarang pemberitahuan dengan kuat</string>
+    <string name="notification_dnd_none">Jangan baca apa-apa</string>
     <string name="notification_dnd_allowed">Baca pemberitahuan yang dibenarkan oleh mod Jangan Ganggu</string>
     <string name="notification_dnd_all">Baca semua</string>
     <string name="notification_touch_title">Sambil skrin disentuh</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Mod poket</string>
     <string name="notification_pocket_summary">Sensor yang dilindungi apabila membaca bermula, seperti dalam poket, tidak menghalangnya</string>
     <string name="notification_volume_keys_title">Tekan kedua-dua kekunci kelantangan</string>
-    <string name="notification_dismiss_title">Berhenti membaca apabila pemberitahuan diketepikan</string>
+    <string name="notification_dismiss_title">Berhenti apabila diketepikan</string>
     <string name="notification_watch_dismiss_title">Juga apabila pemberitahuan diketepikan pada jam tangan pintar</string>
     <string name="notification_app_cancel_title">Berhenti membaca apabila apl mengalih keluar pemberitahuan</string>
     <string name="notification_category_summary">Ringkasan</string>
@@ -128,8 +128,8 @@
     <string name="notification_clock_interval_title">Sebutkan masa setiap</string>
     <string name="notification_clock_format_title">Format waktu</string>
     <string name="notification_clock_format_message">Pemegang tempat: {time}, {date} dan {battery} (peratusan bateri).</string>
-    <string name="notification_clock_format_default">Ia {time}</string>
-    <string name="notification_clock_exact_title">Masa yang tepat</string>
+    <string name="notification_clock_format_default">Sekarang pukul {time}</string>
+    <string name="notification_clock_exact_title">Masa tepat</string>
     <string name="notification_clock_exact_summary">Memerlukan Penggera dan peringatan. Jika tidak masa boleh dikatakan lewat satu minit.</string>
     <string name="notification_other_apps_title">Apl lain</string>
     <string name="notification_apps_category">Apl</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">Pemberitahuan mengandungi <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Pemberitahuan tidak mengandungi <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Dering senyap atau bergetar</string>
-    <string name="notification_cond_silent_not">Deringan berbunyi</string>
-    <string name="notification_cond_media">Media sedang bermain</string>
+    <string name="notification_cond_silent_not">Pendering dihidupkan</string>
+    <string name="notification_cond_media">Media sedang dimainkan</string>
     <string name="notification_cond_media_not">Tiada media yang dimainkan</string>
     <string name="notification_action_skip">jangan baca</string>
     <string name="notification_action_private">baca nama apl sahaja</string>

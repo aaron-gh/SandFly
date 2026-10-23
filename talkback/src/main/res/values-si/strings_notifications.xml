@@ -55,7 +55,7 @@
     <string name="notification_max_words_title">උපරිම වචන ගණන</string>
     <string name="notification_max_sentences_title">උපරිම වාක්‍ය සංඛ්‍යාව</string>
     <string name="notification_max_characters_title">උපරිම පෙළ අකුරු ගණන</string>
-    <string name="notification_max_seconds_title">පසුව කියවීම නවත්වන්න</string>
+    <string name="notification_max_seconds_title">මෙපමණ කාලයකට පසු කියවීම නවත්වන්න</string>
     <string name="notification_category_timing">කාල නිර්ණය</string>
     <string name="notification_delay_title">කියවීමට පෙර රැඳී සිටින්න</string>
     <string name="notification_queue_title">වෙනත් දැනුම්දීමක් කියවන විට</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">හෙඩ්ෆෝන්</string>
     <string name="notification_media_title">මාධ්‍ය වාදනය කරන අතරතුර</string>
     <string name="notification_dnd_title">බාධා නොකරන්න</string>
-    <string name="notification_dnd_none">කිසිදු දැනුම්දීමක් ශබ්ද නඟා කියවන්න එපා</string>
+    <string name="notification_dnd_none">කිසිවක් කියවන්න එපා</string>
     <string name="notification_dnd_allowed">බාධා නොකරන්න ප්‍රකාරය මගින් අවසර දී ඇති දැනුම්දීම් කියවන්න</string>
     <string name="notification_dnd_all">සියල්ල කියවන්න</string>
     <string name="notification_touch_title">තිරය ස්පර්ශ කරන අතරතුර</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">පොකට් මාදිලිය</string>
     <string name="notification_pocket_summary">කියවීම ආරම්භ වන විට ආවරණය කර ඇති සංවේදකයක්, සාක්කුවක මෙන්, එය නවත්වන්නේ නැත</string>
     <string name="notification_volume_keys_title">වෙළුම් යතුරු දෙකම ඔබන්න</string>
-    <string name="notification_dismiss_title">දැනුම්දීම ඉවත දැමූ විට කියවීම නවත්වන්න</string>
+    <string name="notification_dismiss_title">ඉවත දැමූ විට නවත්වන්න</string>
     <string name="notification_watch_dismiss_title">ස්මාර්ට් ඔරලෝසුවක දැනුම්දීම ඉවත දැමූ විටද</string>
     <string name="notification_app_cancel_title">යෙදුම දැනුම්දීම ඉවත් කරන විට කියවීම නවත්වන්න</string>
     <string name="notification_category_summary">සාරාංශය</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">හැම වෙලාවෙම වෙලාව කියන්න</string>
     <string name="notification_clock_format_title">වේලා ආකෘතිය</string>
     <string name="notification_clock_format_message">ස්ථාන දරන්නන්: {time}, {date} සහ {battery} (බැටරි ප්‍රතිශතය).</string>
-    <string name="notification_clock_format_default">එය {time}</string>
+    <string name="notification_clock_format_default">දැන් වේලාව {time}</string>
     <string name="notification_clock_exact_title">නියම වේලාවන්</string>
     <string name="notification_clock_exact_summary">අනතුරු ඇඟවීම් සහ මතක් කිරීම් අවශ්‍යයි. එසේ නොමැතිනම් විනාඩියක් ප්‍රමාද වන තෙක් කාලය පැවසිය හැකිය.</string>
     <string name="notification_other_apps_title">වෙනත් යෙදුම්</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">දැනුම්දීමේ <xliff:g id="text" example="urgent">%1$s</xliff:g> අඩංගු වේ</string>
     <string name="notification_cond_contains_not">දැනුම්දීමේ <xliff:g id="text" example="urgent">%1$s</xliff:g> අඩංගු නොවේ</string>
     <string name="notification_cond_silent">නාද කරන්නා නිශ්ශබ්ද හෝ කම්පනය වේ</string>
-    <string name="notification_cond_silent_not">නාද නාද වේ</string>
-    <string name="notification_cond_media">මාධ්‍ය සෙල්ලම් කරනවා</string>
+    <string name="notification_cond_silent_not">නාදකය ක්‍රියාත්මකයි</string>
+    <string name="notification_cond_media">මාධ්‍ය වාදනය වෙමින්</string>
     <string name="notification_cond_media_not">කිසිම මාධ්‍යයක් සෙල්ලම් කරන්නේ නැහැ</string>
     <string name="notification_action_skip">කියවන්න එපා</string>
     <string name="notification_action_private">යෙදුමේ නම පමණක් කියවන්න</string>

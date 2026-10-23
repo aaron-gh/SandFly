@@ -31,7 +31,7 @@
     <string name="notification_automation_title">Automatyzacja</string>
     <string name="notification_automation_allowed_title">Zezwól aplikacjom do automatyzacji</string>
     <string name="notification_category_said">Co jest czytane</string>
-    <string name="notification_format_title">Speech format</string>
+    <string name="notification_format_title">Format mowy</string>
     <string name="notification_format_message">Symbole zastępcze: {app}, {title}, {text}, {content} (cały tekst), {bigtext}, {subtext}, {ticker}, {category} i {time}.</string>
     <string name="notification_private_format_title">Prywatne powiadomienia mówią</string>
     <string name="notification_private_format_message">Podane zamiast treści prywatnego powiadomienia. Symbole zastępcze: {app}, {category} i {time}.</string>
@@ -57,7 +57,7 @@
     <string name="notification_max_characters_title">Maksymalna liczba znaków tekstowych</string>
     <string name="notification_max_seconds_title">Przestań czytać po</string>
     <string name="notification_category_timing">Czas</string>
-    <string name="notification_delay_title">Poczekaj zanim przeczytasz</string>
+    <string name="notification_delay_title">Czekaj przed odczytaniem</string>
     <string name="notification_queue_title">Kiedy zostanie odczytane kolejne powiadomienie</string>
     <string name="notification_repeat_minutes_title">Przeczytaj ponownie, aż ekran się włączy</string>
     <string name="notification_skip_media_title">Pomiń odtwarzacze multimedialne</string>
@@ -76,9 +76,9 @@
     <string name="notification_headphones_title">Słuchawki</string>
     <string name="notification_media_title">Podczas odtwarzania multimediów</string>
     <string name="notification_dnd_title">Nie przeszkadzać</string>
-    <string name="notification_dnd_none">Nie czytaj na głos żadnych powiadomień</string>
+    <string name="notification_dnd_none">Nie czytaj żadnych</string>
     <string name="notification_dnd_allowed">Czytaj powiadomienia dozwolone w trybie Nie przeszkadzać</string>
-    <string name="notification_dnd_all">Przeczytaj wszystko</string>
+    <string name="notification_dnd_all">Czytaj wszystkie</string>
     <string name="notification_touch_title">Podczas dotykania ekranu</string>
     <string name="notification_touch_read">Przeczytaj od razu</string>
     <string name="notification_touch_after">Przeczytaj, kiedy dotyk się zakończy</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Tryb kieszonkowy</string>
     <string name="notification_pocket_summary">Czujnik zakryty na początku odczytu, jak w kieszeni, nie zatrzymuje go</string>
     <string name="notification_volume_keys_title">Naciśnij oba klawisze głośności</string>
-    <string name="notification_dismiss_title">Przestań czytać, gdy powiadomienie zostanie odrzucone</string>
+    <string name="notification_dismiss_title">Zatrzymaj po odrzuceniu</string>
     <string name="notification_watch_dismiss_title">Również wtedy, gdy powiadomienie zostanie odrzucone na smartwatchu</string>
     <string name="notification_app_cancel_title">Przestań czytać, gdy aplikacja usunie powiadomienie</string>
     <string name="notification_category_summary">Podsumowanie</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Powiedz godzinę za każdym razem</string>
     <string name="notification_clock_format_title">Format godziny</string>
     <string name="notification_clock_format_message">Elementy zastępcze: {time}, {date} i {battery} (procent baterii).</string>
-    <string name="notification_clock_format_default">Jest {time}</string>
+    <string name="notification_clock_format_default">Jest godzina {time}</string>
     <string name="notification_clock_exact_title">Dokładne czasy</string>
     <string name="notification_clock_exact_summary">Potrzebuje alarmów i przypomnień. W przeciwnym razie czas może być spóźniony nawet o minutę.</string>
     <string name="notification_other_apps_title">Inne aplikacje</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">Powiadomienie zawiera <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Powiadomienie nie zawiera <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Dzwonek jest cichy lub wibruje</string>
-    <string name="notification_cond_silent_not">Dzwoni dzwonek</string>
-    <string name="notification_cond_media">Odtwarzają multimedia</string>
+    <string name="notification_cond_silent_not">Dzwonek jest włączony</string>
+    <string name="notification_cond_media">Odtwarzane są multimedia</string>
     <string name="notification_cond_media_not">Żadne multimedia nie są odtwarzane</string>
     <string name="notification_action_skip">nie czytaj</string>
     <string name="notification_action_private">czytaj tylko nazwę aplikacji</string>

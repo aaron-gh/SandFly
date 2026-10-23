@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Максимальное количество слов</string>
     <string name="notification_max_sentences_title">Максимальное количество предложений</string>
     <string name="notification_max_characters_title">Максимальное количество текстовых символов</string>
-    <string name="notification_max_seconds_title">Перестаньте читать после</string>
+    <string name="notification_max_seconds_title">Прекращать чтение через</string>
     <string name="notification_category_timing">Время</string>
-    <string name="notification_delay_title">Подождите, прежде чем читать</string>
+    <string name="notification_delay_title">Задержка перед чтением</string>
     <string name="notification_queue_title">Когда прочитано другое уведомление</string>
     <string name="notification_repeat_minutes_title">Читать еще раз, пока экран не включится</string>
     <string name="notification_skip_media_title">Пропустить медиаплееры</string>
@@ -76,9 +76,9 @@
     <string name="notification_headphones_title">Наушники</string>
     <string name="notification_media_title">Пока СМИ играют</string>
     <string name="notification_dnd_title">Не беспокоить</string>
-    <string name="notification_dnd_none">Не читайте уведомления вслух</string>
+    <string name="notification_dnd_none">Не читать ни одного</string>
     <string name="notification_dnd_allowed">Чтение уведомлений, разрешенных режимом «Не беспокоить»</string>
-    <string name="notification_dnd_all">Прочитать все</string>
+    <string name="notification_dnd_all">Читать все</string>
     <string name="notification_touch_title">Пока к экрану прикасаются</string>
     <string name="notification_touch_read">Читать прямо сейчас</string>
     <string name="notification_touch_after">Читать, когда сенсорный экран закончится</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Карманный режим</string>
     <string name="notification_pocket_summary">Датчик, который прикрывается при начале чтения, как в кармане, не останавливает его</string>
     <string name="notification_volume_keys_title">Нажмите обе клавиши громкости</string>
-    <string name="notification_dismiss_title">Прекратите чтение, когда уведомление будет закрыто</string>
+    <string name="notification_dismiss_title">Останавливать при закрытии</string>
     <string name="notification_watch_dismiss_title">Также, когда уведомление закрывается на умных часах</string>
     <string name="notification_app_cancel_title">Прекратите читать, когда приложение удалит уведомление</string>
     <string name="notification_category_summary">Сводка</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Произносите время каждый</string>
     <string name="notification_clock_format_title">Формат времени</string>
     <string name="notification_clock_format_message">Заполнители: {time}, {date} и {battery} (процент заряда батареи).</string>
-    <string name="notification_clock_format_default">Это {time}</string>
+    <string name="notification_clock_format_default">Сейчас {time}</string>
     <string name="notification_clock_exact_title">Точное время</string>
     <string name="notification_clock_exact_summary">Нужны сигналы тревоги и напоминания. В противном случае время может быть указано с опозданием до минуты.</string>
     <string name="notification_other_apps_title">Другие приложения</string>
@@ -164,7 +164,7 @@
     <string name="notification_history_empty">Нет уведомлений</string>
     <string name="notification_history_ignore_app">Не читать <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Читать только имя <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_priority_app">Сначала прочтите <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Читать <xliff:g id="app" example="Chat">%1$s</xliff:g> первым</string>
     <string name="notification_history_block_similar">Не читайте такие уведомления</string>
     <string name="notification_history_copy">Скопировать</string>
     <string name="notification_saved">Сохранено</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">Уведомление содержит <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Уведомление не содержит <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Звонок молчит или вибрирует</string>
-    <string name="notification_cond_silent_not">Звонок звонит</string>
-    <string name="notification_cond_media">Медиа играет</string>
+    <string name="notification_cond_silent_not">Звонок включён</string>
+    <string name="notification_cond_media">Воспроизводится медиаконтент</string>
     <string name="notification_cond_media_not">Ни один носитель не воспроизводится</string>
     <string name="notification_action_skip">не читай</string>
     <string name="notification_action_private">читать только название приложения</string>

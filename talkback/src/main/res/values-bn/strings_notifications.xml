@@ -20,7 +20,7 @@
     <string name="notification_reading_title">উচ্চস্বরে বিজ্ঞপ্তি পড়া</string>
     <string name="notification_apps_title">অ্যাপ</string>
     <string name="notification_words_title">শব্দ এবং প্রতিস্থাপন</string>
-    <string name="notification_kinds_title">বিজ্ঞপ্তি ধরনের</string>
+    <string name="notification_kinds_title">বিজ্ঞপ্তির ধরন</string>
     <string name="notification_when_title">কখন পড়তে হবে</string>
     <string name="notification_rules_title">নিয়ম</string>
     <string name="notification_repeats_title">পুনরাবৃত্তি করে</string>
@@ -31,7 +31,7 @@
     <string name="notification_automation_title">অটোমেশন</string>
     <string name="notification_automation_allowed_title">অটোমেশন অ্যাপের অনুমতি দিন</string>
     <string name="notification_category_said">যা বলা হয়</string>
-    <string name="notification_format_title">বক্তৃতা বিন্যাস</string>
+    <string name="notification_format_title">বলার ফর্ম্যাট</string>
     <string name="notification_format_message">স্থানধারক: {app}, {title}, {text}, {content} (পুরো লেখা), {bigtext}, {subtext}, {ticker}, {category} এবং {time}।</string>
     <string name="notification_private_format_title">ব্যক্তিগত বিজ্ঞপ্তি বলে</string>
     <string name="notification_private_format_message">একটি ব্যক্তিগত বিজ্ঞপ্তি এর বিষয়বস্তুর জায়গায় বলেন. স্থানধারক: {app}, {category} এবং {time}।</string>
@@ -55,7 +55,7 @@
     <string name="notification_max_words_title">শব্দের সর্বোচ্চ সংখ্যা</string>
     <string name="notification_max_sentences_title">বাক্যের সর্বোচ্চ সংখ্যা</string>
     <string name="notification_max_characters_title">পাঠ্য অক্ষরের সর্বাধিক সংখ্যা</string>
-    <string name="notification_max_seconds_title">পরে পড়া বন্ধ করুন</string>
+    <string name="notification_max_seconds_title">এত সময় পরে পড়া বন্ধ</string>
     <string name="notification_category_timing">টাইমিং</string>
     <string name="notification_delay_title">পড়ার আগে অপেক্ষা করুন</string>
     <string name="notification_queue_title">যখন আরেকটি বিজ্ঞপ্তি পড়া হয়</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">হেডফোন</string>
     <string name="notification_media_title">যখন মিডিয়া বাজছে</string>
     <string name="notification_dnd_title">বিরক্ত করবে না</string>
-    <string name="notification_dnd_none">উচ্চস্বরে কোনো বিজ্ঞপ্তি পড়বেন না</string>
+    <string name="notification_dnd_none">কোনোটিই পড়বেন না</string>
     <string name="notification_dnd_allowed">বিরক্ত করবেন না মোড দ্বারা অনুমোদিত বিজ্ঞপ্তিগুলি পড়ুন৷</string>
     <string name="notification_dnd_all">সব পড়ুন</string>
     <string name="notification_touch_title">যখন পর্দা স্পর্শ করা হয়</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">পকেট মোড</string>
     <string name="notification_pocket_summary">পড়া শুরু করার সময় একটি সেন্সর আবৃত থাকে, যেমন পকেটে থাকে, এটি বন্ধ করে না</string>
     <string name="notification_volume_keys_title">উভয় ভলিউম কী টিপুন</string>
-    <string name="notification_dismiss_title">বিজ্ঞপ্তি খারিজ হয়ে গেলে পড়া বন্ধ করুন</string>
+    <string name="notification_dismiss_title">খারিজ করলে বন্ধ করুন</string>
     <string name="notification_watch_dismiss_title">এছাড়াও যখন একটি স্মার্টওয়াচে বিজ্ঞপ্তিটি খারিজ করা হয়</string>
     <string name="notification_app_cancel_title">অ্যাপটি বিজ্ঞপ্তিটি সরিয়ে দিলে পড়া বন্ধ করুন</string>
     <string name="notification_category_summary">সারাংশ</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">প্রতিবার সময় বলুন</string>
     <string name="notification_clock_format_title">সময়ের ফর্ম্যাট</string>
     <string name="notification_clock_format_message">স্থানধারক: {time}, {date} এবং {battery} (ব্যাটারি শতাংশ)।</string>
-    <string name="notification_clock_format_default">এটা {time}</string>
+    <string name="notification_clock_format_default">এখন {time}</string>
     <string name="notification_clock_exact_title">সঠিক সময়</string>
     <string name="notification_clock_exact_summary">অ্যালার্ম এবং অনুস্মারক প্রয়োজন. অন্যথায় সময় এক মিনিট দেরি বলা যেতে পারে।</string>
     <string name="notification_other_apps_title">অন্যান্য অ্যাপ</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">বিজ্ঞপ্তিতে রয়েছে <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">বিজ্ঞপ্তিতে <xliff:g id="text" example="urgent">%1$s</xliff:g> নেই</string>
     <string name="notification_cond_silent">রিংগার নীরব বা কম্পিত হয়</string>
-    <string name="notification_cond_silent_not">রিংগার বেজে ওঠে</string>
+    <string name="notification_cond_silent_not">রিংগার চালু আছে</string>
     <string name="notification_cond_media">মিডিয়া বাজছে</string>
     <string name="notification_cond_media_not">কোনো মিডিয়া চলছে না</string>
     <string name="notification_action_skip">পড়বেন না</string>

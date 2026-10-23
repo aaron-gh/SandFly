@@ -20,7 +20,7 @@
     <string name="notification_reading_title">জাননীবোৰ উচ্চস্বৰে পঢ়া</string>
     <string name="notification_apps_title">এপ্‌সমূহ</string>
     <string name="notification_words_title">শব্দ আৰু প্ৰতিস্থাপন</string>
-    <string name="notification_kinds_title">প্ৰকাৰৰ জাননী</string>
+    <string name="notification_kinds_title">জাননীৰ প্ৰকাৰ</string>
     <string name="notification_when_title">কেতিয়া পঢ়িব লাগে</string>
     <string name="notification_rules_title">নিয়ম</string>
     <string name="notification_repeats_title">পুনৰাবৃত্তি কৰে</string>
@@ -31,7 +31,7 @@
     <string name="notification_automation_title">অটোমেচন</string>
     <string name="notification_automation_allowed_title">অটোমেচন এপসমূহৰ অনুমতি দিয়ক</string>
     <string name="notification_category_said">কি কোৱা হৈছে</string>
-    <string name="notification_format_title">বক্তৃতা বিন্যাস</string>
+    <string name="notification_format_title">কোৱাৰ ফৰ্মেট</string>
     <string name="notification_format_message">স্থানধাৰী: {app}, {title}, {text}, {content} (গোটেই পাঠ), {bigtext}, {subtext}, {ticker}, {category} আৰু {time}।</string>
     <string name="notification_private_format_title">ব্যক্তিগত জাননীত কোৱা হৈছে</string>
     <string name="notification_private_format_message">ব্যক্তিগত অধিসূচনাৰ বিষয়বস্তুৰ ঠাইত কোৱা হৈছে। প্লেচহোল্ডাৰ: {app}, {category} আৰু {time}।</string>
@@ -55,7 +55,7 @@
     <string name="notification_max_words_title">সৰ্বাধিক শব্দৰ সংখ্যা</string>
     <string name="notification_max_sentences_title">সৰ্বাধিক বাক্যৰ সংখ্যা</string>
     <string name="notification_max_characters_title">সৰ্বাধিক সংখ্যক লিখনী আখৰ</string>
-    <string name="notification_max_seconds_title">পিছত পঢ়া বন্ধ কৰক</string>
+    <string name="notification_max_seconds_title">ইমান সময়ৰ পিছত পঢ়া বন্ধ</string>
     <string name="notification_category_timing">সময়</string>
     <string name="notification_delay_title">পঢ়াৰ আগতে অপেক্ষা কৰক</string>
     <string name="notification_queue_title">যেতিয়া আন এটা জাননী পঢ়া হয়</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">হেডফোন</string>
     <string name="notification_media_title">সংবাদ মাধ্যমে খেলি থকাৰ সময়ত</string>
     <string name="notification_dnd_title">অসুবিধা নিদিব</string>
-    <string name="notification_dnd_none">কোনো জাননী উচ্চস্বৰে পঢ়িব নালাগে</string>
+    <string name="notification_dnd_none">একো নপঢ়িব</string>
     <string name="notification_dnd_allowed">বিঘ্নিত নকৰিব অৱস্থাৰ দ্বাৰা অনুমোদিত জাননীসমূহ পঢ়ক</string>
     <string name="notification_dnd_all">সকলো পঢ়ক</string>
     <string name="notification_touch_title">পৰ্দাখন স্পৰ্শ কৰাৰ সময়ত</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">পকেট মোড</string>
     <string name="notification_pocket_summary">পকেটৰ দৰে পঢ়া আৰম্ভ হ’লে ঢাকি ৰখা চেন্সৰে ইয়াক বন্ধ নকৰে</string>
     <string name="notification_volume_keys_title">দুয়োটা আয়তন কি\' টিপক</string>
-    <string name="notification_dismiss_title">অধিসূচনা খাৰিজ হ’লে পঢ়া বন্ধ কৰক</string>
+    <string name="notification_dismiss_title">খাৰিজ কৰিলে বন্ধ কৰক</string>
     <string name="notification_watch_dismiss_title">লগতে যেতিয়া স্মাৰ্টৱাচত জাননীখন খাৰিজ কৰা হয়</string>
     <string name="notification_app_cancel_title">এপটোৱে জাননীটো আঁতৰাই দিলে পঢ়া বন্ধ কৰক</string>
     <string name="notification_category_summary">সাৰাংশ</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">সময় কওক প্ৰতি</string>
     <string name="notification_clock_format_title">সময়ৰ ফৰ্মেট</string>
     <string name="notification_clock_format_message">প্লেচহোল্ডাৰ: {time}, {date} আৰু {battery} (বেটাৰীৰ শতাংশ)।</string>
-    <string name="notification_clock_format_default">ইয়াৰ {time}</string>
+    <string name="notification_clock_format_default">এতিয়া {time}</string>
     <string name="notification_clock_exact_title">সঠিক সময়</string>
     <string name="notification_clock_exact_summary">এলাৰ্ম আৰু সোঁৱৰাই দিয়াৰ প্ৰয়োজন। অন্যথা সময় এক মিনিট পৰ্যন্ত দেৰিকৈ ক’ব পাৰি।</string>
     <string name="notification_other_apps_title">অন্যান্য এপ</string>
@@ -162,7 +162,7 @@
     <string name="notification_history_clear">ইতিহাস পৰিষ্কাৰ কৰক</string>
     <string name="notification_history_category">জাননী</string>
     <string name="notification_history_empty">কোনো জাননী নাই</string>
-    <string name="notification_history_ignore_app">পঢ়িব নালাগে <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> নপঢ়িব</string>
     <string name="notification_history_private_app">কেৱল <xliff:g id="app" example="Chat">%1$s</xliff:g> ৰ নাম পঢ়ক ৷</string>
     <string name="notification_history_priority_app">প্ৰথমে <xliff:g id="app" example="Chat">%1$s</xliff:g> পঢ়ক</string>
     <string name="notification_history_block_similar">এনেদৰে নটিফিকেচন পঢ়িব নালাগে</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">অধিসূচনাত <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">জাননীত <xliff:g id="text" example="urgent">%1$s</xliff:g> নাই</string>
     <string name="notification_cond_silent">ৰিংগাৰটো নিস্তব্ধ বা কম্পন হয়</string>
-    <string name="notification_cond_silent_not">ৰিংগাৰটো বাজি উঠে</string>
-    <string name="notification_cond_media">মিডিয়া খেলিছে</string>
+    <string name="notification_cond_silent_not">ৰিংগাৰ অন আছে</string>
+    <string name="notification_cond_media">মিডিয়া চলি আছে</string>
     <string name="notification_cond_media_not">কোনো মিডিয়া খেলা নাই</string>
     <string name="notification_action_skip">পঢ়িব নালাগে</string>
     <string name="notification_action_private">কেৱল এপৰ নামটোহে পঢ়ক</string>

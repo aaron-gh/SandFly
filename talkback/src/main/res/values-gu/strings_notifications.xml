@@ -20,7 +20,7 @@
     <string name="notification_reading_title">સૂચનાઓ મોટેથી વાંચવી</string>
     <string name="notification_apps_title">ઍપ</string>
     <string name="notification_words_title">શબ્દો અને બદલીઓ</string>
-    <string name="notification_kinds_title">પ્રકારની સૂચનાઓ</string>
+    <string name="notification_kinds_title">સૂચનાઓના પ્રકાર</string>
     <string name="notification_when_title">ક્યારે વાંચવું</string>
     <string name="notification_rules_title">નિયમો</string>
     <string name="notification_repeats_title">પુનરાવર્તિત થાય છે</string>
@@ -31,7 +31,7 @@
     <string name="notification_automation_title">ઓટોમેશન</string>
     <string name="notification_automation_allowed_title">ઑટોમેશન ઍપને મંજૂરી આપો</string>
     <string name="notification_category_said">શું કહેવાય છે</string>
-    <string name="notification_format_title">ભાષણ ફોર્મેટ</string>
+    <string name="notification_format_title">બોલવાનું ફૉર્મેટ</string>
     <string name="notification_format_message">પ્લેસહોલ્ડર્સ: {app}, {title}, {text}, {content} (સમગ્ર ટેક્સ્ટ), {bigtext}, {subtext}, {ticker}, {category} અને {time}.</string>
     <string name="notification_private_format_title">ખાનગી સૂચનાઓ કહે છે</string>
     <string name="notification_private_format_message">ખાનગી સૂચનાની સામગ્રીના સ્થાને કહ્યું. પ્લેસહોલ્ડર્સ: {app}, {category} અને {time}.</string>
@@ -55,7 +55,7 @@
     <string name="notification_max_words_title">શબ્દોની મહત્તમ સંખ્યા</string>
     <string name="notification_max_sentences_title">વાક્યોની મહત્તમ સંખ્યા</string>
     <string name="notification_max_characters_title">ટેક્સ્ટ અક્ષરોની મહત્તમ સંખ્યા</string>
-    <string name="notification_max_seconds_title">પછી વાંચવાનું બંધ કરો</string>
+    <string name="notification_max_seconds_title">આટલા સમય પછી વાંચવાનું બંધ કરો</string>
     <string name="notification_category_timing">સમય</string>
     <string name="notification_delay_title">વાંચતા પહેલા રાહ જુઓ</string>
     <string name="notification_queue_title">જ્યારે બીજી સૂચના વાંચવામાં આવે છે</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">હેડફોન</string>
     <string name="notification_media_title">જ્યારે મીડિયા ચાલે છે</string>
     <string name="notification_dnd_title">ડુ નોટ ડિસ્ટર્બ</string>
-    <string name="notification_dnd_none">કોઈપણ સૂચના મોટેથી વાંચશો નહીં</string>
+    <string name="notification_dnd_none">એક પણ ન વાંચો</string>
     <string name="notification_dnd_allowed">ડુ નોટ ડિસ્ટર્બ મોડ દ્વારા મંજૂર સૂચનાઓ વાંચો</string>
     <string name="notification_dnd_all">બધા વાંચો</string>
     <string name="notification_touch_title">જ્યારે સ્ક્રીનને ટચ કરવામાં આવે છે</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">પોકેટ મોડ</string>
     <string name="notification_pocket_summary">એક સેન્સર કે જે વાંચન શરૂ થાય ત્યારે આવરી લેવામાં આવે છે, જેમ કે ખિસ્સામાં હોય છે, તેને બંધ કરતું નથી</string>
     <string name="notification_volume_keys_title">બંને વોલ્યુમ કી દબાવો</string>
-    <string name="notification_dismiss_title">જ્યારે સૂચના કાઢી નાખવામાં આવે ત્યારે વાંચવાનું બંધ કરો</string>
+    <string name="notification_dismiss_title">કાઢી નાખતાં બંધ કરો</string>
     <string name="notification_watch_dismiss_title">તેમજ જ્યારે સ્માર્ટવોચ પર નોટિફિકેશન ડિસમિસ થાય છે</string>
     <string name="notification_app_cancel_title">જ્યારે એપ્લિકેશન સૂચનાને દૂર કરે ત્યારે વાંચવાનું બંધ કરો</string>
     <string name="notification_category_summary">સારાંશ</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">દરેક સમય કહો</string>
     <string name="notification_clock_format_title">સમયનું ફૉર્મેટ</string>
     <string name="notification_clock_format_message">પ્લેસહોલ્ડર્સ: {time}, {date} અને {battery} (બેટરી ટકાવારી).</string>
-    <string name="notification_clock_format_default">તે {time} છે</string>
+    <string name="notification_clock_format_default">અત્યારે {time} છે</string>
     <string name="notification_clock_exact_title">ચોક્કસ સમય</string>
     <string name="notification_clock_exact_summary">એલાર્મ અને રીમાઇન્ડર્સની જરૂર છે. અન્યથા સમય એક મિનિટ મોડો કહી શકાય.</string>
     <string name="notification_other_apps_title">અન્ય એપ્લિકેશનો</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">સૂચનામાં <xliff:g id="text" example="urgent">%1$s</xliff:g> છે</string>
     <string name="notification_cond_contains_not">સૂચનામાં <xliff:g id="text" example="urgent">%1$s</xliff:g> શામેલ નથી</string>
     <string name="notification_cond_silent">રિંગર શાંત છે અથવા વાઇબ્રેટ કરે છે</string>
-    <string name="notification_cond_silent_not">રિંગર વાગે છે</string>
+    <string name="notification_cond_silent_not">રિંગર ચાલુ છે</string>
     <string name="notification_cond_media">મીડિયા ચાલી રહ્યું છે</string>
     <string name="notification_cond_media_not">કોઈ મીડિયા ચાલતું નથી</string>
     <string name="notification_action_skip">વાંચશો નહીં</string>

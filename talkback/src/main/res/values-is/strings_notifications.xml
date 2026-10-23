@@ -31,14 +31,14 @@
     <string name="notification_automation_title">Sjálfvirkni</string>
     <string name="notification_automation_allowed_title">Leyfa sjálfvirkniforrit</string>
     <string name="notification_category_said">Hvað er sagt</string>
-    <string name="notification_format_title">Ræðusnið</string>
+    <string name="notification_format_title">Talsnið</string>
     <string name="notification_format_message">Staðfestar: {app}, {title}, {text}, {content} (allur textinn), {bigtext}, {subtext}, {ticker}, {category} og {time}.</string>
     <string name="notification_private_format_title">Einkatilkynningar segja</string>
     <string name="notification_private_format_message">Sagt í stað innihalds einkatilkynningar. Staðfestar: {app}, {category} og {time}.</string>
     <string name="notification_category_voice">Rödd</string>
     <string name="notification_voice_title">Rödd</string>
     <string name="notification_voice_sandfly">Rödd SandFly</string>
-    <string name="notification_detect_language_title">Finndu tungumál</string>
+    <string name="notification_detect_language_title">Greina tungumál</string>
     <string name="notification_detect_language_summary">Segðu hverja tilkynningu á því tungumáli sem hún er skrifuð á. Þarfir Skiptu um tungumál sjálfkrafa í texta-í-tal stillingum.</string>
     <string name="notification_sound_before_title">Hljóð fyrir tilkynningar</string>
     <string name="notification_category_text">Texti</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Hámarksfjöldi orða</string>
     <string name="notification_max_sentences_title">Hámarksfjöldi setninga</string>
     <string name="notification_max_characters_title">Hámarksfjöldi textastafa</string>
-    <string name="notification_max_seconds_title">Hættu að lesa á eftir</string>
+    <string name="notification_max_seconds_title">Hætta lestri eftir</string>
     <string name="notification_category_timing">Tímasetning</string>
-    <string name="notification_delay_title">Bíddu áður en þú lest</string>
+    <string name="notification_delay_title">Bið fyrir lestur</string>
     <string name="notification_queue_title">Þegar önnur tilkynning er lesin</string>
     <string name="notification_repeat_minutes_title">Lestu aftur þar til kveikt er á skjánum</string>
     <string name="notification_skip_media_title">Slepptu fjölmiðlaspilurum</string>
@@ -76,9 +76,9 @@
     <string name="notification_headphones_title">Heyrnartól</string>
     <string name="notification_media_title">Á meðan fjölmiðlar spila</string>
     <string name="notification_dnd_title">Ekki trufla</string>
-    <string name="notification_dnd_none">Ekki lesa neinar tilkynningar upphátt</string>
+    <string name="notification_dnd_none">Lesa ekkert</string>
     <string name="notification_dnd_allowed">Lestu tilkynningar sem leyfðar eru með Ekki trufla stillingu</string>
-    <string name="notification_dnd_all">Lestu allt</string>
+    <string name="notification_dnd_all">Lesa allt</string>
     <string name="notification_touch_title">Á meðan snert er á skjánum</string>
     <string name="notification_touch_read">Lestu strax</string>
     <string name="notification_touch_after">Lestu þegar snertingunni lýkur</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Vasastilling</string>
     <string name="notification_pocket_summary">Skynjari sem er hulinn þegar lestur hefst, eins og í vasa, stoppar hann ekki</string>
     <string name="notification_volume_keys_title">Ýttu á báða hljóðstyrkstakkana</string>
-    <string name="notification_dismiss_title">Hættu að lesa þegar tilkynningunni er vísað frá</string>
+    <string name="notification_dismiss_title">Stöðva þegar hunsað</string>
     <string name="notification_watch_dismiss_title">Einnig þegar tilkynningunni er vísað frá á snjallúri</string>
     <string name="notification_app_cancel_title">Hættu að lesa þegar appið fjarlægir tilkynninguna</string>
     <string name="notification_category_summary">Samantekt</string>
@@ -129,7 +129,7 @@
     <string name="notification_clock_format_title">Tímasnið</string>
     <string name="notification_clock_format_message">Staðfestar: {time}, {date} og {battery} (rafhlöðuprósentan).</string>
     <string name="notification_clock_format_default">Það er {time}</string>
-    <string name="notification_clock_exact_title">Nákvæmar tímar</string>
+    <string name="notification_clock_exact_title">Nákvæmir tímar</string>
     <string name="notification_clock_exact_summary">Þarfnast viðvörunar og áminningar. Annars má segja að tíminn sé allt að mínútu of seint.</string>
     <string name="notification_other_apps_title">Önnur forrit</string>
     <string name="notification_apps_category">Forrit</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">Tilkynningin inniheldur <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Tilkynningin inniheldur ekki <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Hringjarinn er hljóður eða titrar</string>
-    <string name="notification_cond_silent_not">Hringjarinn hringir</string>
-    <string name="notification_cond_media">Fjölmiðlar eru að spila</string>
+    <string name="notification_cond_silent_not">Hringing er virk</string>
+    <string name="notification_cond_media">Margmiðlunarefni er í spilun</string>
     <string name="notification_cond_media_not">Enginn miðill er í spilun</string>
     <string name="notification_action_skip">ekki lesa</string>
     <string name="notification_action_private">lestu aðeins nafn appsins</string>

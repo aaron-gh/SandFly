@@ -55,7 +55,7 @@
     <string name="notification_max_words_title">வார்த்தைகளின் அதிகபட்ச எண்ணிக்கை</string>
     <string name="notification_max_sentences_title">வாக்கியங்களின் அதிகபட்ச எண்ணிக்கை</string>
     <string name="notification_max_characters_title">உரை எழுத்துகளின் அதிகபட்ச எண்ணிக்கை</string>
-    <string name="notification_max_seconds_title">பிறகு படிப்பதை நிறுத்துங்கள்</string>
+    <string name="notification_max_seconds_title">இவ்வளவு நேரத்திற்குப் பிறகு படிப்பதை நிறுத்து</string>
     <string name="notification_category_timing">டைமிங்</string>
     <string name="notification_delay_title">படிக்கும் முன் காத்திருங்கள்</string>
     <string name="notification_queue_title">மற்றொரு அறிவிப்பைப் படிக்கும்போது</string>
@@ -75,10 +75,10 @@
     <string name="notification_locked_title">தொலைபேசி பூட்டப்பட்டிருக்கும் போது</string>
     <string name="notification_headphones_title">ஹெட்ஃபோன்கள்</string>
     <string name="notification_media_title">ஊடகங்கள் விளையாடும் போது</string>
-    <string name="notification_dnd_title">தொந்தரவு செய்யாதே</string>
-    <string name="notification_dnd_none">எந்த அறிவிப்புகளையும் சத்தமாக படிக்க வேண்டாம்</string>
+    <string name="notification_dnd_title">தொந்தரவு செய்ய வேண்டாம்</string>
+    <string name="notification_dnd_none">எதையும் படிக்க வேண்டாம்</string>
     <string name="notification_dnd_allowed">தொந்தரவு செய்யாத பயன்முறையின் மூலம் அனுமதிக்கப்பட்ட அறிவிப்புகளைப் படிக்கவும்</string>
-    <string name="notification_dnd_all">அனைத்தையும் படியுங்கள்</string>
+    <string name="notification_dnd_all">அனைத்தையும் படி</string>
     <string name="notification_touch_title">திரையைத் தொட்டபோது</string>
     <string name="notification_touch_read">உடனே படியுங்கள்</string>
     <string name="notification_touch_after">தொடுதல் முடிந்ததும் படிக்கவும்</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">ஒவ்வொரு நேரத்தையும் சொல்லுங்கள்</string>
     <string name="notification_clock_format_title">நேர வடிவம்</string>
     <string name="notification_clock_format_message">பெட்டிகள்: {time}, {date} மற்றும் {battery} (பேட்டரி சதவீதம்).</string>
-    <string name="notification_clock_format_default">இது {time}</string>
+    <string name="notification_clock_format_default">இப்போது {time}</string>
     <string name="notification_clock_exact_title">சரியான நேரங்கள்</string>
     <string name="notification_clock_exact_summary">அலாரங்கள் மற்றும் நினைவூட்டல்கள் தேவை. மற்றபடி நேரத்தை ஒரு நிமிடம் தாமதமாகச் சொல்லலாம்.</string>
     <string name="notification_other_apps_title">பிற பயன்பாடுகள்</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">அறிவிப்பில் <xliff:g id="text" example="urgent">%1$s</xliff:g> உள்ளது</string>
     <string name="notification_cond_contains_not">அறிவிப்பில் <xliff:g id="text" example="urgent">%1$s</xliff:g> இல்லை</string>
     <string name="notification_cond_silent">ரிங்கர் அமைதியாக இருக்கிறது அல்லது அதிர்கிறது</string>
-    <string name="notification_cond_silent_not">ரிங்கர் ஒலிக்கிறது</string>
-    <string name="notification_cond_media">மீடியா விளையாடுகிறது</string>
+    <string name="notification_cond_silent_not">ரிங்கர் இயக்கத்தில் உள்ளது</string>
+    <string name="notification_cond_media">மீடியா இயங்குகிறது</string>
     <string name="notification_cond_media_not">எந்த ஊடகமும் விளையாடவில்லை</string>
     <string name="notification_action_skip">படிக்க வேண்டாம்</string>
     <string name="notification_action_private">பயன்பாட்டின் பெயரை மட்டும் படிக்கவும்</string>

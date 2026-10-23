@@ -38,7 +38,7 @@
     <string name="notification_category_voice">Voz</string>
     <string name="notification_voice_title">Voz</string>
     <string name="notification_voice_sandfly">Voz de SandFly</string>
-    <string name="notification_detect_language_title">Detectar a linguaxe</string>
+    <string name="notification_detect_language_title">Detectar o idioma</string>
     <string name="notification_detect_language_summary">Di cada notificación no idioma no que está escrita. É necesario Cambiar o idioma automaticamente na configuración de texto a voz.</string>
     <string name="notification_sound_before_title">Son antes das notificacións</string>
     <string name="notification_category_text">Texto</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Número máximo de palabras</string>
     <string name="notification_max_sentences_title">Número máximo de frases</string>
     <string name="notification_max_characters_title">Número máximo de caracteres de texto</string>
-    <string name="notification_max_seconds_title">Deixa de ler despois</string>
+    <string name="notification_max_seconds_title">Deixar de ler despois de</string>
     <string name="notification_category_timing">Temporalización</string>
-    <string name="notification_delay_title">Agarda antes de ler</string>
+    <string name="notification_delay_title">Agardar antes de ler</string>
     <string name="notification_queue_title">Cando se le outra notificación</string>
     <string name="notification_repeat_minutes_title">Le de novo ata que se acenda a pantalla</string>
     <string name="notification_skip_media_title">Saltar reprodutores multimedia</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Auriculares</string>
     <string name="notification_media_title">Mentres reproducen medios</string>
     <string name="notification_dnd_title">Non molestar</string>
-    <string name="notification_dnd_none">Non lea ningunha notificación en voz alta</string>
+    <string name="notification_dnd_none">Non ler ningunha</string>
     <string name="notification_dnd_allowed">Le as notificacións permitidas polo modo Non molestar</string>
     <string name="notification_dnd_all">Ler todo</string>
     <string name="notification_touch_title">Mentres se toca a pantalla</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Di a hora cada</string>
     <string name="notification_clock_format_title">Formato de hora</string>
     <string name="notification_clock_format_message">Marcadores de posición: {time}, {date} e {battery} (a porcentaxe de batería).</string>
-    <string name="notification_clock_format_default">É {time}</string>
+    <string name="notification_clock_format_default">Son as {time}</string>
     <string name="notification_clock_exact_title">Horas exactas</string>
     <string name="notification_clock_exact_summary">Necesita alarmas e recordatorios. Se non, o tempo pódese dicir ata un minuto tarde.</string>
     <string name="notification_other_apps_title">Outras aplicacións</string>
@@ -162,9 +162,9 @@
     <string name="notification_history_clear">Borrar o historial</string>
     <string name="notification_history_category">Notificacións</string>
     <string name="notification_history_empty">Non hai notificacións</string>
-    <string name="notification_history_ignore_app">Non leas <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app">Non ler <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">Le só o nome de <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_priority_app">Le primeiro <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Ler primeiro <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_block_similar">Non leas notificacións como esta</string>
     <string name="notification_history_copy">Copiar</string>
     <string name="notification_saved">Gardado</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">A notificación contén <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">A notificación non contén <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">O timbre está en silencio ou vibra</string>
-    <string name="notification_cond_silent_not">Soa o timbre</string>
-    <string name="notification_cond_media">Están reproducindo medios</string>
+    <string name="notification_cond_silent_not">O ton de chamada está activado</string>
+    <string name="notification_cond_media">Estase reproducindo contido multimedia</string>
     <string name="notification_cond_media_not">Non se reproduce ningún medio</string>
     <string name="notification_action_skip">non leas</string>
     <string name="notification_action_private">ler só o nome da aplicación</string>

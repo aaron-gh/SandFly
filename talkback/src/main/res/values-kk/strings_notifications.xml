@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Сөздердің максималды саны</string>
     <string name="notification_max_sentences_title">Сөйлемдердің максималды саны</string>
     <string name="notification_max_characters_title">Мәтін таңбаларының максималды саны</string>
-    <string name="notification_max_seconds_title">Кейін оқуды тоқтатыңыз</string>
+    <string name="notification_max_seconds_title">Оқуды тоқтату уақыты</string>
     <string name="notification_category_timing">Уақыт</string>
-    <string name="notification_delay_title">Оқпас бұрын күтіңіз</string>
+    <string name="notification_delay_title">Оқу алдындағы күту</string>
     <string name="notification_queue_title">Басқа хабарландыру оқылғанда</string>
     <string name="notification_repeat_minutes_title">Экран қосылғанша қайта оқыңыз</string>
     <string name="notification_skip_media_title">Медиа ойнатқыштарды өткізіп жіберіңіз</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Құлаққаптар</string>
     <string name="notification_media_title">Медиа ойнату кезінде</string>
     <string name="notification_dnd_title">Мазаламау</string>
-    <string name="notification_dnd_none">Хабарландыруларды дауыстап оқымаңыз</string>
+    <string name="notification_dnd_none">Ешқайсысын оқымау</string>
     <string name="notification_dnd_allowed">Мазаламау режимі рұқсат еткен хабарландыруларды оқу</string>
     <string name="notification_dnd_all">Барлығын оқы</string>
     <string name="notification_touch_title">Экран түртілген кезде</string>
@@ -128,8 +128,8 @@
     <string name="notification_clock_interval_title">Әр уақытты айтыңыз</string>
     <string name="notification_clock_format_title">Уақыт форматы</string>
     <string name="notification_clock_format_message">Толтырғыштар: {time}, {date} және {battery} (батарея пайызы).</string>
-    <string name="notification_clock_format_default">Бұл {time}</string>
-    <string name="notification_clock_exact_title">Нақты уақыттары</string>
+    <string name="notification_clock_format_default">Қазір {time}</string>
+    <string name="notification_clock_exact_title">Нақты уақыт</string>
     <string name="notification_clock_exact_summary">Дабылдар мен еске салғыштар қажет. Әйтпесе, уақытты бір минутқа дейін кеш айтуға болады.</string>
     <string name="notification_other_apps_title">Басқа қолданбалар</string>
     <string name="notification_apps_category">Қолданбалар</string>
@@ -158,17 +158,17 @@
     <string name="notification_invalid_regex">Жарамды тұрақты өрнек емес</string>
     <string name="notification_edit">Өңдеу</string>
     <string name="notification_remove">Жою</string>
-    <string name="notification_history_keep">Хабарландыру тарихын сақтаңыз</string>
-    <string name="notification_history_clear">Тарихты тазалаңыз</string>
+    <string name="notification_history_keep">Хабарландыру тарихын сақтау</string>
+    <string name="notification_history_clear">Тарихты тазалау</string>
     <string name="notification_history_category">Хабарландырулар</string>
     <string name="notification_history_empty">Хабарландырулар жоқ</string>
-    <string name="notification_history_ignore_app">Оқымаңыз <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> оқымау</string>
     <string name="notification_history_private_app">Тек <xliff:g id="app" example="Chat">%1$s</xliff:g> атын оқыңыз</string>
-    <string name="notification_history_priority_app">Алдымен <xliff:g id="app" example="Chat">%1$s</xliff:g> оқыңыз</string>
+    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> алдымен оқу</string>
     <string name="notification_history_block_similar">Мұндай хабарландыруларды оқымаңыз</string>
     <string name="notification_history_copy">Көшіру</string>
     <string name="notification_saved">Сақталды</string>
-    <string name="notification_copied">Көшірілген</string>
+    <string name="notification_copied">Көшірілді</string>
     <string name="notification_outcome_read">Дауыстап оқыңыз</string>
     <string name="notification_outcome_stopped">Оқу кезінде тоқтады</string>
     <string name="notification_outcome_speech_off">Оқылмаған: хабарландыру сөзі өшірулі</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">Хабарламада <xliff:g id="text" example="urgent">%1$s</xliff:g> бар</string>
     <string name="notification_cond_contains_not">Хабарландыруда <xliff:g id="text" example="urgent">%1$s</xliff:g> жоқ</string>
     <string name="notification_cond_silent">Қоңырау үнсіз немесе дірілдейді</string>
-    <string name="notification_cond_silent_not">Қоңырау соғылады</string>
+    <string name="notification_cond_silent_not">Қоңырау дыбысы қосулы</string>
     <string name="notification_cond_media">Медиа ойнатуда</string>
     <string name="notification_cond_media_not">Ешбір медиа ойнатылмайды</string>
     <string name="notification_action_skip">оқыма</string>

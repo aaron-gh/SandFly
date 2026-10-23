@@ -20,13 +20,13 @@
     <string name="notification_reading_title">קריאת התראות בקול</string>
     <string name="notification_apps_title">אפליקציות</string>
     <string name="notification_words_title">מילים והחלפות</string>
-    <string name="notification_kinds_title">סוגי הודעות</string>
+    <string name="notification_kinds_title">סוגי התראות</string>
     <string name="notification_when_title">מתי לקרוא</string>
     <string name="notification_rules_title">כללים</string>
     <string name="notification_repeats_title">חוזר</string>
     <string name="notification_stop_title">תפסיק לקרוא</string>
     <string name="notification_schedules_title">סיכום וזמן</string>
-    <string name="notification_history_title">היסטוריית הודעות</string>
+    <string name="notification_history_title">היסטוריית התראות</string>
     <string name="notification_test_title">שלח הודעת בדיקה</string>
     <string name="notification_automation_title">אוטומציה</string>
     <string name="notification_automation_allowed_title">אפשר אפליקציות אוטומציה</string>
@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">מספר מקסימלי של מילים</string>
     <string name="notification_max_sentences_title">מספר משפטים מקסימלי</string>
     <string name="notification_max_characters_title">מספר מקסימלי של תווי טקסט</string>
-    <string name="notification_max_seconds_title">תפסיק לקרוא אחרי</string>
+    <string name="notification_max_seconds_title">הפסקת ההקראה אחרי</string>
     <string name="notification_category_timing">תזמון</string>
-    <string name="notification_delay_title">המתן לפני הקריאה</string>
+    <string name="notification_delay_title">המתנה לפני הקראה</string>
     <string name="notification_queue_title">כאשר הודעה נוספת נקראת</string>
     <string name="notification_repeat_minutes_title">קרא שוב עד שהמסך נדלק</string>
     <string name="notification_skip_media_title">דלג על נגני מדיה</string>
@@ -76,9 +76,9 @@
     <string name="notification_headphones_title">אוזניות</string>
     <string name="notification_media_title">בזמן שהמדיה מתנגנת</string>
     <string name="notification_dnd_title">אל תפריע</string>
-    <string name="notification_dnd_none">אל תקראו הודעות בקול רם</string>
+    <string name="notification_dnd_none">לא להקריא אף אחת</string>
     <string name="notification_dnd_allowed">קרא הודעות המותרות במצב \'נא לא להפריע\'</string>
-    <string name="notification_dnd_all">קרא הכל</string>
+    <string name="notification_dnd_all">הקראת הכול</string>
     <string name="notification_touch_title">בזמן שנוגעים במסך</string>
     <string name="notification_touch_read">קרא מיד</string>
     <string name="notification_touch_after">קרא כאשר המגע מסתיים</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">מצב כיס</string>
     <string name="notification_pocket_summary">חיישן שמכוסה בעת תחילת הקריאה, כמו בכיס, לא עוצר אותו</string>
     <string name="notification_volume_keys_title">לחץ על שני מקשי עוצמת הקול</string>
-    <string name="notification_dismiss_title">הפסק לקרוא כאשר ההודעה נמחקת</string>
+    <string name="notification_dismiss_title">עצירה כשההתראה נסגרת</string>
     <string name="notification_watch_dismiss_title">גם כאשר ההודעה נמחקת בשעון חכם</string>
     <string name="notification_app_cancel_title">הפסק לקרוא כאשר האפליקציה מסירה את ההודעה</string>
     <string name="notification_category_summary">סיכום</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">תגיד את השעה כל פעם</string>
     <string name="notification_clock_format_title">פורמט השעה</string>
     <string name="notification_clock_format_message">מצייני מיקום: {time}, {date} ו-{battery} (אחוז הסוללה).</string>
-    <string name="notification_clock_format_default">זה {time}</string>
+    <string name="notification_clock_format_default">השעה {time}</string>
     <string name="notification_clock_exact_title">זמנים מדויקים</string>
     <string name="notification_clock_exact_summary">צריך אזעקות ותזכורות. אחרת ניתן לומר את השעה באיחור של עד דקה.</string>
     <string name="notification_other_apps_title">אפליקציות אחרות</string>
@@ -156,15 +156,15 @@
     <string name="notification_regex">ביטוי רגיל</string>
     <string name="notification_enter_text">הזן טקסט</string>
     <string name="notification_invalid_regex">לא ביטוי רגולרי חוקי</string>
-    <string name="notification_edit">ערוך</string>
+    <string name="notification_edit">עריכה</string>
     <string name="notification_remove">הסר</string>
-    <string name="notification_history_keep">שמור היסטוריית הודעות</string>
-    <string name="notification_history_clear">נקה את ההיסטוריה</string>
+    <string name="notification_history_keep">שמירת היסטוריית התראות</string>
+    <string name="notification_history_clear">ניקוי ההיסטוריה</string>
     <string name="notification_history_category">התראות</string>
-    <string name="notification_history_empty">אין הודעות</string>
-    <string name="notification_history_ignore_app">אל תקראו <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_empty">אין התראות</string>
+    <string name="notification_history_ignore_app">לא להקריא את <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_private_app">קרא רק את השם של <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_priority_app">קרא תחילה את <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">הקראת <xliff:g id="app" example="Chat">%1$s</xliff:g> ראשונה</string>
     <string name="notification_history_block_similar">אל תקראו הודעות כאלה</string>
     <string name="notification_history_copy">העתקה</string>
     <string name="notification_saved">נשמר</string>
@@ -267,9 +267,9 @@
     <string name="notification_cond_landscape_not">המסך לאורך</string>
     <string name="notification_cond_time">השעה היא <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">השעה היא לא <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
-    <string name="notification_cond_wifi">מחובר ל<xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">מחובר ל-<xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">לא מחובר ל<xliff:g id="network" example="Home">%1$s</xliff:g></string>
-    <string name="notification_cond_wifi_any">מחובר לWi-Fi</string>
+    <string name="notification_cond_wifi_any">מחובר ל-Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">לא מחובר לWi-Fi</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> נמצא מקדימה</string>
     <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> אינו מקדימה</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">ההודעה מכילה <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">ההודעה לא מכילה <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">הצלצול שקט או רוטט</string>
-    <string name="notification_cond_silent_not">הצלצול מצלצל</string>
+    <string name="notification_cond_silent_not">הצלצול מופעל</string>
     <string name="notification_cond_media">המדיה מתנגנת</string>
     <string name="notification_cond_media_not">שום מדיה לא מתנגנת</string>
     <string name="notification_action_skip">לא לקרוא</string>

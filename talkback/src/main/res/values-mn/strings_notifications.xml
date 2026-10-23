@@ -55,9 +55,9 @@
     <string name="notification_max_words_title">Үгийн хамгийн их тоо</string>
     <string name="notification_max_sentences_title">Өгүүлбэрийн дээд тоо</string>
     <string name="notification_max_characters_title">Текст тэмдэгтүүдийн хамгийн их тоо</string>
-    <string name="notification_max_seconds_title">Дараа нь уншихаа боль</string>
+    <string name="notification_max_seconds_title">Унших хугацааны дээд хязгаар</string>
     <string name="notification_category_timing">Хугацаа</string>
-    <string name="notification_delay_title">Уншихаасаа өмнө хүлээнэ үү</string>
+    <string name="notification_delay_title">Уншихын өмнөх хүлээлт</string>
     <string name="notification_queue_title">Өөр мэдэгдэл унших үед</string>
     <string name="notification_repeat_minutes_title">Дэлгэц асах хүртэл дахин уншина уу</string>
     <string name="notification_skip_media_title">Медиа тоглуулагчийг алгасах</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Чихэвч</string>
     <string name="notification_media_title">Медиа тоглож байх үед</string>
     <string name="notification_dnd_title">Бүү саад бол</string>
-    <string name="notification_dnd_none">Ямар ч мэдэгдлийг чангаар уншиж болохгүй</string>
+    <string name="notification_dnd_none">Алийг нь ч уншихгүй</string>
     <string name="notification_dnd_allowed">Бүү саад бол горимын зөвшөөрөгдсөн мэдэгдлүүдийг уншина уу</string>
     <string name="notification_dnd_all">Бүгдийг унш</string>
     <string name="notification_touch_title">Дэлгэцэнд хүрч байхад</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">Халаасны горим</string>
     <string name="notification_pocket_summary">Уншиж эхлэхэд халаасанд байдаг шиг тагласан мэдрэгч нь үүнийг зогсоохгүй</string>
     <string name="notification_volume_keys_title">Дууны түвшний товчлуурыг хоёуланг нь дар</string>
-    <string name="notification_dismiss_title">Мэдэгдэл хаагдсан үед уншихаа зогсоо</string>
+    <string name="notification_dismiss_title">Хаахад зогсоох</string>
     <string name="notification_watch_dismiss_title">Мөн ухаалаг цаг дээр мэдэгдэл хаагдах үед</string>
     <string name="notification_app_cancel_title">Апп мэдэгдлийг устгах үед уншихаа зогсоо</string>
     <string name="notification_category_summary">Хураангуй</string>
@@ -128,8 +128,8 @@
     <string name="notification_clock_interval_title">Цаг бүрийг хэлээрэй</string>
     <string name="notification_clock_format_title">Цагийн формат</string>
     <string name="notification_clock_format_message">Орлуулагч: {time}, {date} болон {battery} (батарейны хувь).</string>
-    <string name="notification_clock_format_default">Энэ бол {time}</string>
-    <string name="notification_clock_exact_title">Яг цаг хугацаа</string>
+    <string name="notification_clock_format_default">Одоо {time}</string>
+    <string name="notification_clock_exact_title">Яг цаг</string>
     <string name="notification_clock_exact_summary">Сэрүүлэг, сануулагч хэрэгтэй. Үгүй бол цагийг минут хүртэл хоцорч хэлж болно.</string>
     <string name="notification_other_apps_title">Бусад програмууд</string>
     <string name="notification_apps_category">Аппууд</string>
@@ -159,12 +159,12 @@
     <string name="notification_edit">Засварлах</string>
     <string name="notification_remove">Устгах</string>
     <string name="notification_history_keep">Мэдэгдлийн түүхийг хадгалах</string>
-    <string name="notification_history_clear">Түүхийг цэвэрлэ</string>
+    <string name="notification_history_clear">Түүхийг цэвэрлэх</string>
     <string name="notification_history_category">Мэдэгдлүүд</string>
     <string name="notification_history_empty">Мэдэгдэл алга</string>
     <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g>-г бүү унш</string>
     <string name="notification_history_private_app">Зөвхөн <xliff:g id="app" example="Chat">%1$s</xliff:g>-н нэрийг уншина уу</string>
-    <string name="notification_history_priority_app">Эхлээд <xliff:g id="app" example="Chat">%1$s</xliff:g> уншина уу</string>
+    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g>-г эхэлж унших</string>
     <string name="notification_history_block_similar">Ийм мэдэгдлийг бүү унш</string>
     <string name="notification_history_copy">Хуулах</string>
     <string name="notification_saved">Хадгалсан</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">Мэдэгдэлд <xliff:g id="text" example="urgent">%1$s</xliff:g> орсон байна</string>
     <string name="notification_cond_contains_not">Мэдэгдэлд <xliff:g id="text" example="urgent">%1$s</xliff:g> байхгүй байна</string>
     <string name="notification_cond_silent">Хонхны дуу чимээгүй эсвэл чичирч байна</string>
-    <string name="notification_cond_silent_not">Хонхны дуу хангинаж байна</string>
-    <string name="notification_cond_media">Медиа тоглож байна</string>
+    <string name="notification_cond_silent_not">Хонхны дуу асаалттай</string>
+    <string name="notification_cond_media">Медиа тоглуулж байна</string>
     <string name="notification_cond_media_not">Ямар ч медиа тоглуулахгүй байна</string>
     <string name="notification_action_skip">битгий унш</string>
     <string name="notification_action_private">зөвхөн програмын нэрийг уншина уу</string>

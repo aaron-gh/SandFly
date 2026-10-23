@@ -55,7 +55,7 @@
     <string name="notification_max_words_title">ਸ਼ਬਦਾਂ ਦੀ ਅਧਿਕਤਮ ਸੰਖਿਆ</string>
     <string name="notification_max_sentences_title">ਵਾਕਾਂ ਦੀ ਅਧਿਕਤਮ ਸੰਖਿਆ</string>
     <string name="notification_max_characters_title">ਟੈਕਸਟ ਅੱਖਰਾਂ ਦੀ ਅਧਿਕਤਮ ਸੰਖਿਆ</string>
-    <string name="notification_max_seconds_title">ਬਾਅਦ ਵਿੱਚ ਪੜ੍ਹਨਾ ਬੰਦ ਕਰੋ</string>
+    <string name="notification_max_seconds_title">ਇੰਨੇ ਸਮੇਂ ਬਾਅਦ ਪੜ੍ਹਨਾ ਬੰਦ ਕਰੋ</string>
     <string name="notification_category_timing">ਸਮਾਂ</string>
     <string name="notification_delay_title">ਪੜ੍ਹਨ ਤੋਂ ਪਹਿਲਾਂ ਉਡੀਕ ਕਰੋ</string>
     <string name="notification_queue_title">ਜਦੋਂ ਕੋਈ ਹੋਰ ਸੂਚਨਾ ਪੜ੍ਹੀ ਜਾਂਦੀ ਹੈ</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">ਹੈੱਡਫੋਨ</string>
     <string name="notification_media_title">ਜਦੋਂ ਕਿ ਮੀਡੀਆ ਖੇਡਦਾ ਹੈ</string>
     <string name="notification_dnd_title">ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ</string>
-    <string name="notification_dnd_none">ਕਿਸੇ ਵੀ ਸੂਚਨਾ ਨੂੰ ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਨਾ ਪੜ੍ਹੋ</string>
+    <string name="notification_dnd_none">ਕੋਈ ਨਾ ਪੜ੍ਹੋ</string>
     <string name="notification_dnd_allowed">\'ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ\' ਮੋਡ ਦੁਆਰਾ ਮਨਜ਼ੂਰ ਸੂਚਨਾਵਾਂ ਪੜ੍ਹੋ</string>
     <string name="notification_dnd_all">ਸਾਰੇ ਪੜ੍ਹੋ</string>
     <string name="notification_touch_title">ਜਦੋਂ ਕਿ ਸਕਰੀਨ ਨੂੰ ਛੂਹਿਆ ਜਾਂਦਾ ਹੈ</string>
@@ -107,7 +107,7 @@
     <string name="notification_pocket_title">ਜੇਬ ਮੋਡ</string>
     <string name="notification_pocket_summary">ਇੱਕ ਸੈਂਸਰ ਜੋ ਪੜ੍ਹਨਾ ਸ਼ੁਰੂ ਹੋਣ \'ਤੇ ਕਵਰ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਜਿਵੇਂ ਕਿ ਜੇਬ ਵਿੱਚ ਹੁੰਦਾ ਹੈ, ਇਸਨੂੰ ਰੋਕਦਾ ਨਹੀਂ ਹੈ</string>
     <string name="notification_volume_keys_title">ਦੋਵੇਂ ਵਾਲੀਅਮ ਕੁੰਜੀਆਂ ਦਬਾਓ</string>
-    <string name="notification_dismiss_title">ਨੋਟੀਫਿਕੇਸ਼ਨ ਖਾਰਜ ਹੋਣ \'ਤੇ ਪੜ੍ਹਨਾ ਬੰਦ ਕਰੋ</string>
+    <string name="notification_dismiss_title">ਖਾਰਜ ਕਰਨ \'ਤੇ ਰੋਕੋ</string>
     <string name="notification_watch_dismiss_title">ਨਾਲ ਹੀ ਜਦੋਂ ਸਮਾਰਟਵਾਚ \'ਤੇ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨੂੰ ਖਾਰਜ ਕੀਤਾ ਜਾਂਦਾ ਹੈ</string>
     <string name="notification_app_cancel_title">ਜਦੋਂ ਐਪ ਨੋਟੀਫਿਕੇਸ਼ਨ ਨੂੰ ਹਟਾ ਦਿੰਦਾ ਹੈ ਤਾਂ ਪੜ੍ਹਨਾ ਬੰਦ ਕਰੋ</string>
     <string name="notification_category_summary">ਸੰਖੇਪ</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">ਹਰ ਵਾਰ ਵਾਰ ਕਹੋ</string>
     <string name="notification_clock_format_title">ਸਮਾਂ ਫਾਰਮੈਟ</string>
     <string name="notification_clock_format_message">ਪਲੇਸਹੋਲਡਰ: {time}, {date} ਅਤੇ {battery} (ਬੈਟਰੀ ਪ੍ਰਤੀਸ਼ਤ)।</string>
-    <string name="notification_clock_format_default">ਇਹ {time} ਹੈ</string>
+    <string name="notification_clock_format_default">ਸਮਾਂ {time}</string>
     <string name="notification_clock_exact_title">ਸਹੀ ਸਮੇਂ</string>
     <string name="notification_clock_exact_summary">ਅਲਾਰਮ ਅਤੇ ਰੀਮਾਈਂਡਰ ਦੀ ਲੋੜ ਹੈ। ਨਹੀਂ ਤਾਂ ਸਮਾਂ ਇੱਕ ਮਿੰਟ ਤੱਕ ਲੇਟ ਕਿਹਾ ਜਾ ਸਕਦਾ ਹੈ।</string>
     <string name="notification_other_apps_title">ਹੋਰ ਐਪਾਂ</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_contains">ਸੂਚਨਾ ਵਿੱਚ <xliff:g id="text" example="urgent">%1$s</xliff:g> ਸ਼ਾਮਲ ਹੈ</string>
     <string name="notification_cond_contains_not">ਸੂਚਨਾ ਵਿੱਚ <xliff:g id="text" example="urgent">%1$s</xliff:g> ਸ਼ਾਮਲ ਨਹੀਂ ਹੈ</string>
     <string name="notification_cond_silent">ਰਿੰਗਰ ਚੁੱਪ ਹੈ ਜਾਂ ਕੰਬਦਾ ਹੈ</string>
-    <string name="notification_cond_silent_not">ਰਿੰਗਰ ਵੱਜਦਾ ਹੈ</string>
+    <string name="notification_cond_silent_not">ਰਿੰਗਰ ਚਾਲੂ ਹੈ</string>
     <string name="notification_cond_media">ਮੀਡੀਆ ਚੱਲ ਰਿਹਾ ਹੈ</string>
     <string name="notification_cond_media_not">ਕੋਈ ਮੀਡੀਆ ਨਹੀਂ ਚੱਲ ਰਿਹਾ</string>
     <string name="notification_action_skip">ਨਾ ਪੜ੍ਹੋ</string>

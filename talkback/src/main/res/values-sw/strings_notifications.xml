@@ -6,7 +6,7 @@
     <string name="notification_media_skip">Usisome kwa sauti</string>
     <string name="notification_media_pause">Sitisha media unaposoma</string>
     <string name="notification_media_read">Soma kwa sauti</string>
-    <string name="notification_headphones_only_without">Bila vichwa vya sauti pekee</string>
+    <string name="notification_headphones_only_without">Bila vipokea sauti vya kichwani pekee</string>
     <string name="notification_headphones_only_with">Na vipokea sauti vinavyobanwa kichwani pekee</string>
     <string name="notification_headphones_always">Soma kwa sauti ukiwa na au bila vipokea sauti vinavyobanwa kichwani</string>
     <string name="notification_queue_skip">Usisome arifa mpya kwa sauti</string>
@@ -31,7 +31,7 @@
     <string name="notification_automation_title">Uendeshaji otomatiki</string>
     <string name="notification_automation_allowed_title">Ruhusu programu za otomatiki</string>
     <string name="notification_category_said">Kinachosemwa</string>
-    <string name="notification_format_title">Umbizo la hotuba</string>
+    <string name="notification_format_title">Umbizo la matamshi</string>
     <string name="notification_format_message">Vishika nafasi: {app}, {title}, {text}, {content} (maandishi yote), {bigtext}, {subtext}, {ticker}, {category} na {time}.</string>
     <string name="notification_private_format_title">Arifa za kibinafsi zinasema</string>
     <string name="notification_private_format_message">Ilisema badala ya maudhui ya arifa ya kibinafsi. Vishika nafasi: {app}, {category} na {time}.</string>
@@ -76,7 +76,7 @@
     <string name="notification_headphones_title">Vipokea sauti vya masikioni</string>
     <string name="notification_media_title">Wakati vyombo vya habari vinacheza</string>
     <string name="notification_dnd_title">Usinisumbue</string>
-    <string name="notification_dnd_none">Usisome arifa zozote kwa sauti</string>
+    <string name="notification_dnd_none">Usisome yoyote</string>
     <string name="notification_dnd_allowed">Soma arifa zinazoruhusiwa na hali ya Usinisumbue</string>
     <string name="notification_dnd_all">Soma yote</string>
     <string name="notification_touch_title">Wakati skrini imeguswa</string>
@@ -128,7 +128,7 @@
     <string name="notification_clock_interval_title">Sema kila wakati</string>
     <string name="notification_clock_format_title">Mfumo wa saa</string>
     <string name="notification_clock_format_message">Vishika nafasi: {time}, {date} na {battery} (asilimia ya betri).</string>
-    <string name="notification_clock_format_default">Ni {time}</string>
+    <string name="notification_clock_format_default">Ni saa {time}</string>
     <string name="notification_clock_exact_title">Nyakati kamili</string>
     <string name="notification_clock_exact_summary">Inahitaji Kengele na vikumbusho. Vinginevyo wakati unaweza kusemwa hadi kuchelewa kwa dakika.</string>
     <string name="notification_other_apps_title">Programu zingine</string>
@@ -278,8 +278,8 @@
     <string name="notification_cond_contains">Arifa ina <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Arifa haina <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Mlio ni kimya au hutetemeka</string>
-    <string name="notification_cond_silent_not">Mlio hupiga</string>
-    <string name="notification_cond_media">Vyombo vya habari vinacheza</string>
+    <string name="notification_cond_silent_not">Mlio umewashwa</string>
+    <string name="notification_cond_media">Maudhui yanacheza</string>
     <string name="notification_cond_media_not">Hakuna media inayocheza</string>
     <string name="notification_action_skip">usisome</string>
     <string name="notification_action_private">soma tu jina la programu</string>
