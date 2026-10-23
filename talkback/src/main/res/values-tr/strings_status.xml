@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Durumu konuş</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> / <xliff:g id="max_level" example="4">%2$d</xliff:g> çubuk</string>
+    <string name="status_wifi_off">Wi-Fi kapalı</string>
+    <string name="status_wifi_not_connected">Wi-Fi bağlı değil</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Mobil</string>
+    <string name="status_mobile_no_service">Mobil hizmet yok</string>
+    <string name="status_do_not_disturb">Rahatsız Etmeyin</string>
+    <string name="status_ringer_vibrate">Titreşim</string>
+    <string name="status_ringer_silent">Sessiz</string>
+    <string name="status_airplane_mode">Uçak modu</string>
+    <string name="title_pref_status_readout">Durum okuma</string>
+    <string name="status_item_time">Zaman</string>
+    <string name="status_item_time_summary">Şimdiki zaman</string>
+    <string name="status_item_battery">Pil</string>
+    <string name="status_item_battery_summary">Pil seviyesi, şarj etme ve pil tasarrufu</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">Ağ adı ve sinyal gücü</string>
+    <string name="status_item_mobile">Mobil ağ</string>
+    <string name="status_item_mobile_summary">Operatör, ağ türü ve sinyal gücü</string>
+    <string name="status_item_ringer">Zil ve Rahatsız Etmeyin</string>
+    <string name="status_item_ringer_summary">Yalnızca zil sesi çalmaya ayarlanmadığında veya Rahatsız Etmeyin özelliği açık olduğunda</string>
+    <string name="status_item_airplane_mode">Uçak modu</string>
+    <string name="status_item_airplane_mode_summary">Yalnızca uçak modu açıkken</string>
+</resources>

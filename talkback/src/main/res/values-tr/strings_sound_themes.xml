@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Ses temaları</string>
+    <string name="summary_pref_sound_themes">Ses ve titreşim kümelerini yükleyip seçin, tek sesleri kendi seslerinizle değiştirin ve kontrol seslerini, titreşimlerini ve 3D sesi açın.</string>
+    <string name="sound_themes_installed_category">Yüklü temalar</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly\'in kendi sesleri ve titreşimleri ve kendi sesleriniz.</string>
+    <string name="sound_theme_in_use">Kullanımda</string>
+    <string name="sound_theme_by">Tarafından <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Lisans: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ses.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ses.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> titreşim.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> titreşim.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Kontrol seslerini ve titreşimleri açar.</string>
+    <string name="sound_theme_control_sounds_off">Kontrol seslerini ve titreşimleri kapatır.</string>
+    <string name="sound_theme_use">Bu temayı kullan</string>
+    <string name="sound_theme_about">Bu tema hakkında</string>
+    <string name="sound_theme_export">Tema dosyası olarak kaydet</string>
+    <string name="sound_theme_remove">Kaldır</string>
+    <string name="sound_theme_remove_confirm"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> teması kaldırılsın mı?</string>
+    <string name="sound_theme_remove_button">Kaldır</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Tema <xliff:g id="count" example="1">%d</xliff:g> ses ile kaydedildi.</item>
+        <item quantity="other">Tema <xliff:g id="count" example="13">%d</xliff:g> ses ile kaydedildi.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly tema dosyası kaydedilemedi.</string>
+    <string name="sound_theme_no_picker">Bu cihazda dosya seçebileceğiniz bir uygulama yok.</string>
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ayarları</string>
+    <string name="title_pref_theme_sounds">Sesler</string>
+    <string name="summary_pref_theme_sounds">Bu temanın herhangi bir sesini kendi ses dosyanızla değiştirin.</string>
+    <string name="sound_themes_install_category">Bir tema yükleyin</string>
+    <string name="title_pref_sound_theme_install_file">Bir dosyadan</string>
+    <string name="summary_pref_sound_theme_install_file">Tema dosyası bir ZIP dosyasıdır. Ayrıca başka bir uygulamadan SandFly ile bir tanesini açabilir veya paylaşabilirsiniz.</string>
+    <string name="title_pref_sound_theme_install_link">Bir bağlantıdan</string>
+    <string name="summary_pref_sound_theme_install_link">Bir tema dosyasına veya içinde tema bulunan GitHub deposuna bağlantı. Ayrıca tarayıcınızdan SandFly ile bağlantı paylaşabilirsiniz.</string>
+    <string name="title_pref_sound_theme_install_source">Bir kaynaktan</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea veya Bitbucket\'teki bir depodaki tema dosyaları.</string>
+    <string name="sound_theme_sources">Ses teması kaynakları</string>
+    <string name="sound_theme_source_empty">Bu kaynakta ses teması yok</string>
+    <string name="sound_theme_source_failed">Ses temaları yüklenemedi. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Buradan yüklenen ses temaları yüklü kalır.</string>
+    <string name="sound_theme_link_message">Bir tema dosyasına veya içinde tema bulunan bir GitHub deposuna bağlantı girin veya yapıştırın.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Ses temasını yükleyin</string>
+    <string name="sound_theme_install_reading">Ses temasını okuma</string>
+    <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> yüklensin mi?</string>
+    <string name="sound_theme_install_and_use">Kurulum ve kullanım</string>
+    <string name="sound_theme_install">Yükle</string>
+    <string name="sound_theme_install_replaces">Bu, aynı adı taşıyan yüklü temanın yerini alır.</string>
+    <string name="sound_theme_install_skipped">Dışarıda bırakılanlar:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> kuruldu.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> kuruldu. Şu anda kullanımda.</string>
+    <string name="sound_theme_install_nothing">Yüklenecek ses teması yok.</string>
+    <string name="sound_theme_install_not_a_theme">Bu SandFly\'nin kullanabileceği bir ses teması değildir: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly ses teması yüklenemedi. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Ses temalarına olan bağlantılar https ile başlamalıdır.</string>
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> sesleri</string>
+    <string name="title_pref_theme_sounds_reset">Herkes için SandFly\'nin seslerini kullan</string>
+    <string name="theme_sounds_reset_confirm">Bu temanın tüm sesleri kaldırılsın ve SandFly’ın kendi sesleri kullanılsın mı?</string>
+    <string name="theme_sounds_reset_button">Kaldır</string>
+    <string name="theme_sounds_category">Sesler</string>
+    <string name="theme_sound_summary_default">SandFly\'in sesi</string>
+    <string name="theme_sound_summary_custom">Tema sesi</string>
+    <string name="theme_sound_summary_none">Ses yok. Odaklanma sesi çalınır.</string>
+    <string name="theme_sound_summary_android_keyboard">Android\'in klavye sesi</string>
+    <string name="theme_sound_use_android_keyboard">Android\'nin klavye sesini kullan</string>
+    <string name="theme_sound_braille_character">Braille klavye: bir karakter yazma</string>
+    <string name="theme_sound_braille_space">Braille klavye: boşluk</string>
+    <string name="theme_sound_braille_delete">Braille klavye: sil</string>
+    <string name="theme_sound_braille_new_line">Braille klavye: yeni satır</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Bir ses dosyası seçin</string>
+    <string name="theme_sound_preview">Önizle</string>
+    <string name="theme_sound_none">Ses yok</string>
+    <string name="theme_sound_summary_no_sound">Ses yok</string>
+    <string name="theme_sound_action_set_none">Ses yok olarak ayarla</string>
+    <string name="theme_sound_use_default">SandFly\'nin sesini kullan</string>
+    <string name="theme_sound_remove">Sesi kaldır</string>
+    <string name="theme_sound_too_large">Bu dosya çok büyük. Bir ses 5 MB\'a kadar olabilir.</string>
+    <string name="theme_sound_not_audio">SandFly bu dosyayı oynatamıyor. Bir WAV, OGG, MP3 veya FLAC sesi seçin.</string>
+    <string name="theme_sound_failed">SandFly bu dosyayı okuyamadı.</string>
+</resources>
