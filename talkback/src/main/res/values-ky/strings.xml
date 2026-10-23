@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">Бийик нотага өзгөртүү</string>
   <string name="capital_letters_sound_feedback">Үнүн чыгаруу</string>
   <string name="title_pref_a11y_hints">Айтып туруу</string>
-  <string name="summary_pref_a11y_hints">Бир нерсе сүрөттөлгөндөн кийин, аны кантип колдонуу керектигин айтыңыз</string>
+  <string name="summary_pref_a11y_hints">Элемент сүрөттөлгөндөн кийин аны кантип колдонууну айтуу</string>
   <string name="pref_speak_container_element_positions_title">Кеп контейнери жөнүндө маалымат</string>
   <string name="pref_speak_time_title">Убакытты айтуу</string>
   <string name="pref_speak_time_summary">Экранды күйгүзгөнүңүздө</string>
@@ -502,7 +502,7 @@
   <string name="summary_granularity">Символдор, сөздөр, саптар ж.б. боюнча окулат</string>
   <string name="summary_read_from_top">Экрандагы бардык нерселер башынан баштап окулат</string>
   <string name="summary_read_from_current">Экрандагы тандалган нерседен баштап баары окулат</string>
-  <string name="summary_copy_last_spoken_phrase">Текстти чаптоо үчүн акыркы SandFly фразасын алмашуу буферине көчүрүңүз</string>
+  <string name="summary_copy_last_spoken_phrase">SandFly айткан акыркы фразаны текстти чаптоо үчүн алмашуу буферине көчүрүү</string>
   <string name="summary_spell_last_spoken_phrase">SandFly айткан акыркы сүйлөм тамгалап айтылат</string>
   <string name="summary_repeat_last_spoken_phrase">SandFly айткан акыркы сүйлөм кайталанат</string>
   <string name="summary_perform_screen_search">Экранда изделе турган текстти киргизесиз</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">\"Түзмөктүн кулпусу ачылды\" деп айтуу</string>
     <string name="title_pref_announce_time">Убакыт</string>
     <string name="title_pref_announce_ringer_mode">Коңгуроо режими</string>
-    <string name="summary_pref_announce_ringer_mode">Коңгуроо титирөө же унчукпай коюуга качан коюлганын айтыңыз</string>
+    <string name="summary_pref_announce_ringer_mode">Коңгуроо дирилдөөгө же үнсүз режимге коюлганда айтуу</string>
     <string name="title_pref_category_feedback">Кайтарым байланыш</string>
     <string name="title_pref_category_typing_and_braille">Терүү жана брайль</string>
     <string name="title_pref_category_apps">Колдонмолор</string>
@@ -1684,9 +1684,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP уруксатысыз SandFly тийүү менен изилдөө тыгылып калышы мүмкүн деп гана айта алат. Аны оңдоо үчүн төмөнкүнү иштетиңиз: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Сенсордук изилдөөнү оңдоо</string>
     <string name="stuck_touch_exploration_fixed">Тийип изилдөө оңдолду</string>
-    <string name="stuck_touch_exploration_not_fixed">Сенсордук чалгындоо дагы эле токтоп турат. Аны оңдоо үчүн телефонду өчүрүп күйгүзүңүз.</string>
-    <string name="stuck_touch_exploration_restart">Тийип изилдөө тыгылып калышы мүмкүн. Аны оңдоо үчүн телефонду өчүрүп күйгүзүңүз.</string>
-    <string name="stuck_touch_exploration_grant_dump">Тийип изилдөө тыгылып калышы мүмкүн. Аны оңдоо үчүн телефонду өчүрүп күйгүзүңүз же SandFlyге DUMP уруксатын АӨБ менен бериңиз, ал аны оңдой алат.</string>
+    <string name="stuck_touch_exploration_not_fixed">«Тийип изилдөө» дагы эле тыгылып турат. Оңдоо үчүн телефонду өчүрүп күйгүзүңүз.</string>
+    <string name="stuck_touch_exploration_restart">«Тийип изилдөө» тыгылып калышы мүмкүн. Оңдоо үчүн телефонду өчүрүп күйгүзүңүз.</string>
+    <string name="stuck_touch_exploration_grant_dump">«Тийип изилдөө» тыгылып калышы мүмкүн. Оңдоо үчүн телефонду өчүрүп күйгүзүңүз же SandFly оңдой алышы үчүн ага ADB аркылуу DUMP уруксатын бериңиз.</string>
     <string name="title_pref_window_names">Терезе аттары</string>
     <string name="window_names_always">Ар дайым</string>
     <string name="window_names_until_first_item">Ар дайым, биринчи элемент үзөт</string>

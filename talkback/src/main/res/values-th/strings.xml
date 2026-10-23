@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">เปลี่ยนระดับเสียงสูงต่ำ</string>
   <string name="capital_letters_sound_feedback">เปิดเสียง</string>
   <string name="title_pref_a11y_hints">พูดคำแนะนำการใช้งาน</string>
-  <string name="summary_pref_a11y_hints">หลังจากอธิบายรายการแล้ว ให้พูดวิธีใช้งาน</string>
+  <string name="summary_pref_a11y_hints">หลังจากอธิบายรายการแล้ว จะบอกวิธีใช้งาน</string>
   <string name="pref_speak_container_element_positions_title">อ่านข้อมูลคอนเทนเนอร์</string>
   <string name="pref_speak_time_title">พูดบอกเวลา</string>
   <string name="pref_speak_time_summary">เมื่อคุณเปิดหน้าจอ</string>
@@ -1687,7 +1687,7 @@
     <string name="stuck_touch_exploration_fixed">การสำรวจแบบสัมผัสได้รับการแก้ไขแล้ว</string>
     <string name="stuck_touch_exploration_not_fixed">การสำรวจด้วยการสัมผัสยังคงค้างอยู่ รีสตาร์ทโทรศัพท์เพื่อแก้ไข</string>
     <string name="stuck_touch_exploration_restart">การสำรวจด้วยการสัมผัสอาจค้างอยู่ รีสตาร์ทโทรศัพท์เพื่อแก้ไข</string>
-    <string name="stuck_touch_exploration_grant_dump">การสำรวจด้วยการสัมผัสอาจค้างอยู่ รีสตาร์ทโทรศัพท์เพื่อแก้ไข หรือให้สิทธิ์ SandFly DUMP กับ ADB เพื่อให้สามารถแก้ไขได้</string>
+    <string name="stuck_touch_exploration_grant_dump">การแตะเพื่อสำรวจอาจค้างอยู่ รีสตาร์ทโทรศัพท์เพื่อแก้ไข หรือให้สิทธิ์ DUMP แก่ SandFly ผ่าน ADB เพื่อให้ SandFly แก้ไขได้</string>
     <string name="title_pref_window_names">ชื่อหน้าต่าง</string>
     <string name="window_names_always">เสมอ</string>
     <string name="window_names_until_first_item">เสมอ หยุดเมื่อถึงรายการแรก</string>

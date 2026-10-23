@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">പിച്ച് മാറ്റുക</string>
   <string name="capital_letters_sound_feedback">ശബ്‌ദം പ്ലേ ചെയ്യുക</string>
   <string name="title_pref_a11y_hints">ഉപയോഗ സൂചനകൾ പറഞ്ഞുതരിക</string>
-  <string name="summary_pref_a11y_hints">ഒരു ഇനം വിവരിച്ച ശേഷം, അത് എങ്ങനെ ഉപയോഗിക്കണമെന്ന് പറയുക</string>
+  <string name="summary_pref_a11y_hints">ഒരു ഇനം വിവരിച്ച ശേഷം, അത് എങ്ങനെ ഉപയോഗിക്കാമെന്ന് പറയും</string>
   <string name="pref_speak_container_element_positions_title">കണ്ടെയ്‌നർ വിവരങ്ങൾ സംസാരിക്കുക</string>
   <string name="pref_speak_time_title">സമയം പറയുക</string>
   <string name="pref_speak_time_summary">നിങ്ങൾ സ്ക്രീൻ ഓണാക്കുമ്പോൾ</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">\"ഉപകരണം അൺലോക്ക് ചെയ്തു\" എന്ന് പറയുക</string>
     <string name="title_pref_announce_time">സമയം</string>
     <string name="title_pref_announce_ringer_mode">റിംഗർ മോഡ്</string>
-    <string name="summary_pref_announce_ringer_mode">റിംഗർ വൈബ്രേറ്റുചെയ്യാനോ നിശബ്ദമാക്കാനോ സജ്ജമാക്കുമ്പോൾ പറയുക</string>
+    <string name="summary_pref_announce_ringer_mode">റിംഗർ വൈബ്രേറ്റ് അല്ലെങ്കിൽ നിശബ്‌ദമായി സജ്ജമാക്കുമ്പോൾ പറയും</string>
     <string name="title_pref_category_feedback">പ്രതികരണം</string>
     <string name="title_pref_category_typing_and_braille">ടൈപ്പിംഗും ബ്രെയ്‌ലിയും</string>
     <string name="title_pref_category_apps">ആപ്പുകൾ</string>
@@ -1684,9 +1684,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP അനുമതിയില്ലാതെ, ടച്ച് പര്യവേക്ഷണം തടസ്സപ്പെട്ടേക്കാം എന്ന് മാത്രമേ SandFly ന് പറയാൻ കഴിയൂ. ഇത് പരിഹരിക്കാൻ അനുവദിക്കുന്നതിന്, റൺ ചെയ്യുക: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ടച്ച് പര്യവേക്ഷണം പരിഹരിക്കുന്നു</string>
     <string name="stuck_touch_exploration_fixed">ടച്ച് പര്യവേക്ഷണം പരിഹരിച്ചു</string>
-    <string name="stuck_touch_exploration_not_fixed">ടച്ച് പര്യവേക്ഷണം ഇപ്പോഴും കുടുങ്ങിക്കിടക്കുകയാണ്. അത് പരിഹരിക്കാൻ ഫോൺ റീസ്റ്റാർട്ട് ചെയ്യുക.</string>
-    <string name="stuck_touch_exploration_restart">ടച്ച് പര്യവേക്ഷണം തടസ്സപ്പെട്ടേക്കാം. അത് പരിഹരിക്കാൻ ഫോൺ റീസ്റ്റാർട്ട് ചെയ്യുക.</string>
-    <string name="stuck_touch_exploration_grant_dump">ടച്ച് പര്യവേക്ഷണം തടസ്സപ്പെട്ടേക്കാം. അത് പരിഹരിക്കാൻ ഫോൺ റീസ്‌റ്റാർട്ട് ചെയ്യുക, അല്ലെങ്കിൽ എഡിബിക്ക് SandFly DUMP അനുമതി നൽകുക, അതുവഴി അത് പരിഹരിക്കാനാകും.</string>
+    <string name="stuck_touch_exploration_not_fixed">ടച്ച് വഴി അടുത്തറിയൽ ഇപ്പോഴും കുടുങ്ങിയിരിക്കുന്നു. പരിഹരിക്കാൻ ഫോൺ റീസ്റ്റാർട്ട് ചെയ്യുക.</string>
+    <string name="stuck_touch_exploration_restart">ടച്ച് വഴി അടുത്തറിയൽ കുടുങ്ങിയിരിക്കാം. പരിഹരിക്കാൻ ഫോൺ റീസ്റ്റാർട്ട് ചെയ്യുക.</string>
+    <string name="stuck_touch_exploration_grant_dump">ടച്ച് വഴി അടുത്തറിയൽ കുടുങ്ങിയിരിക്കാം. പരിഹരിക്കാൻ ഫോൺ റീസ്റ്റാർട്ട് ചെയ്യുക, അല്ലെങ്കിൽ SandFly-ക്ക് അത് പരിഹരിക്കാനാകാൻ ADB ഉപയോഗിച്ച് DUMP അനുമതി നൽകുക.</string>
     <string name="title_pref_window_names">വിൻഡോ പേരുകൾ</string>
     <string name="window_names_always">എപ്പോഴും</string>
     <string name="window_names_until_first_item">എല്ലായ്‌പ്പോഴും, ആദ്യ ഇനത്തിൽ നിർത്തുന്നു</string>

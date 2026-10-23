@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">ಪಿಚ್ ಬದಲಾಯಿಸಿ</string>
   <string name="capital_letters_sound_feedback">ಧ್ವನಿ ಪ್ಲೇ ಮಾಡಿ</string>
   <string name="title_pref_a11y_hints">ಬಳಕೆಯ ಸುಳಿವುಗಳನ್ನು ಹೇಳಿ</string>
-  <string name="summary_pref_a11y_hints">ಐಟಂ ಅನ್ನು ವಿವರಿಸಿದ ನಂತರ, ಅದನ್ನು ಹೇಗೆ ಬಳಸುವುದು ಎಂದು ಹೇಳಿ</string>
+  <string name="summary_pref_a11y_hints">ಐಟಂ ಅನ್ನು ವಿವರಿಸಿದ ನಂತರ, ಅದನ್ನು ಹೇಗೆ ಬಳಸುವುದು ಎಂದು ಹೇಳುತ್ತದೆ</string>
   <string name="pref_speak_container_element_positions_title">ಕಂಟೇನರ್ ಮಾಹಿತಿಯನ್ನು ಮಾತನಾಡಿ</string>
   <string name="pref_speak_time_title">ಮಾತನಾಡುವ ಸಮಯ</string>
   <string name="pref_speak_time_summary">ನೀವು ಸ್ಕ್ರೀನ್ ಅನ್ನು ಆನ್ ಮಾಡಿದಾಗ</string>
@@ -1373,7 +1373,7 @@
     <string name="title_pref_say_device_unlocked">\"ಸಾಧನವನ್ನು ಅನ್‌ಲಾಕ್ ಮಾಡಲಾಗಿದೆ\" ಎಂದು ಹೇಳಿ</string>
     <string name="title_pref_announce_time">ಸಮಯ</string>
     <string name="title_pref_announce_ringer_mode">ರಿಂಗರ್ ಮೋಡ್</string>
-    <string name="summary_pref_announce_ringer_mode">ರಿಂಗರ್ ಅನ್ನು ಯಾವಾಗ ಕಂಪಿಸಲು ಅಥವಾ ಮೌನವಾಗಿ ಹೊಂದಿಸಲಾಗಿದೆ ಎಂದು ಹೇಳಿ</string>
+    <string name="summary_pref_announce_ringer_mode">ರಿಂಗರ್ ಅನ್ನು ವೈಬ್ರೇಟ್ ಅಥವಾ ಸೈಲೆಂಟ್‌ಗೆ ಹೊಂದಿಸಿದಾಗ ಹೇಳುತ್ತದೆ</string>
     <string name="title_pref_category_feedback">ಪ್ರತಿಕ್ರಿಯೆ</string>
     <string name="title_pref_category_typing_and_braille">ಟೈಪಿಂಗ್ ಮತ್ತು ಬ್ರೈಲ್</string>
     <string name="title_pref_category_apps">ಆ್ಯಪ್‌ಗಳು</string>
@@ -1687,7 +1687,7 @@
     <string name="stuck_touch_exploration_fixed">ಸ್ಪರ್ಶ ಪರಿಶೋಧನೆ ನಿವಾರಿಸಲಾಗಿದೆ</string>
     <string name="stuck_touch_exploration_not_fixed">ಸ್ಪರ್ಶ ಪರಿಶೋಧನೆ ಇನ್ನೂ ಅಂಟಿಕೊಂಡಿದೆ. ಅದನ್ನು ಸರಿಪಡಿಸಲು ಫೋನ್ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ.</string>
     <string name="stuck_touch_exploration_restart">ಸ್ಪರ್ಶ ಪರಿಶೋಧನೆಯು ಅಂಟಿಕೊಂಡಿರಬಹುದು. ಅದನ್ನು ಸರಿಪಡಿಸಲು ಫೋನ್ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ.</string>
-    <string name="stuck_touch_exploration_grant_dump">ಸ್ಪರ್ಶ ಪರಿಶೋಧನೆಯು ಅಂಟಿಕೊಂಡಿರಬಹುದು. ಅದನ್ನು ಸರಿಪಡಿಸಲು ಫೋನ್ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ ಅಥವಾ ಅದನ್ನು ಸರಿಪಡಿಸಲು ADB ಯೊಂದಿಗೆ SandFly DUMP ಅನುಮತಿಯನ್ನು ನೀಡಿ.</string>
+    <string name="stuck_touch_exploration_grant_dump">ಸ್ಪರ್ಶದ ಮೂಲಕ ಎಕ್ಸ್‌ಪ್ಲೋರ್ ಮಾಡುವುದು ಸಿಲುಕಿರಬಹುದು. ಸರಿಪಡಿಸಲು ಫೋನ್ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ, ಅಥವಾ SandFly ಸರಿಪಡಿಸಲು ಸಾಧ್ಯವಾಗುವಂತೆ ADB ಮೂಲಕ SandFly ಗೆ DUMP ಅನುಮತಿ ನೀಡಿ.</string>
     <string name="title_pref_window_names">ವಿಂಡೋ ಹೆಸರುಗಳು</string>
     <string name="window_names_always">ಯಾವಾಗಲೂ</string>
     <string name="window_names_until_first_item">ಯಾವಾಗಲೂ, ಮೊದಲ ಐಟಂ ಬಂದಾಗ ನಿಲ್ಲುತ್ತದೆ</string>

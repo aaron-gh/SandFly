@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">Badilisha sauti</string>
   <string name="capital_letters_sound_feedback">Cheza sauti</string>
   <string name="title_pref_a11y_hints">Tamka vidokezo vya matumizi</string>
-  <string name="summary_pref_a11y_hints">Baada ya kipengee kuelezewa, sema jinsi ya kuitumia</string>
+  <string name="summary_pref_a11y_hints">Baada ya kipengee kuelezwa, kusema jinsi ya kukitumia</string>
   <string name="pref_speak_container_element_positions_title">Tamka maelezo ya metadata</string>
   <string name="pref_speak_time_title">Tamka wakati</string>
   <string name="pref_speak_time_summary">Unapowasha skrini</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">Sema \"Kifaa kimefunguliwa\"</string>
     <string name="title_pref_announce_time">Muda</string>
     <string name="title_pref_announce_ringer_mode">Hali ya mlio</string>
-    <string name="summary_pref_announce_ringer_mode">Sema wakati mlio umewekwa ili kutetema au kunyamaza</string>
+    <string name="summary_pref_announce_ringer_mode">Kusema mlio unapowekwa kutetema au kimya</string>
     <string name="title_pref_category_feedback">Mwitikio</string>
     <string name="title_pref_category_typing_and_braille">Kuandika na braille</string>
     <string name="title_pref_category_apps">Programu</string>
@@ -1393,7 +1393,7 @@
     <string name="speech_control_apps_category">Programu</string>
     <string name="speech_control_no_apps">Bado hakuna programu ambazo zimeomba kuzungumza.</string>
     <string name="speech_control_ask_title">Ungependa kuruhusu <xliff:g id="app" example="Tasker">%1$s</xliff:g> izungumze kupitia SandFly?</string>
-    <string name="speech_control_ask_text">Inaweza kusema maandishi kwa sauti SandFly yako. Unaweza kubadilisha hii katika Mipangilio ya Kina.</string>
+    <string name="speech_control_ask_text">Inaweza kusema maandishi kwa sauti yako ya SandFly. Unaweza kubadilisha hili katika Mipangilio ya kina.</string>
     <string name="speech_control_allow">Ruhusu</string>
     <string name="speech_control_deny">Usiruhusu</string>
     <string name="permission_speak_label">zungumza kupitia SandFly</string>
@@ -1686,7 +1686,7 @@
     <string name="stuck_touch_exploration_fixed">Ugunduzi kwa kugusa umerekebishwa</string>
     <string name="stuck_touch_exploration_not_fixed">Ugunduzi wa kugusa bado umekwama. Anzisha tena simu ili kuirekebisha.</string>
     <string name="stuck_touch_exploration_restart">Ugunduzi wa kugusa unaweza kukwama. Anzisha tena simu ili kuirekebisha.</string>
-    <string name="stuck_touch_exploration_grant_dump">Ugunduzi wa kugusa unaweza kukwama. Zima kisha uwashe simu ili kuirekebisha, au toa SandFly ruhusa ya DUMP na ADB ili iweze kuirekebisha.</string>
+    <string name="stuck_touch_exploration_grant_dump">Kuchunguza kwa kugusa huenda kumekwama. Zima kisha uwashe simu ili kurekebisha, au ipe SandFly ruhusa ya DUMP kupitia ADB ili iweze kurekebisha.</string>
     <string name="title_pref_window_names">Majina ya madirisha</string>
     <string name="window_names_always">Daima</string>
     <string name="window_names_until_first_item">Kila wakati, hukatizwa na kipengee cha kwanza</string>
@@ -1769,5 +1769,5 @@
     <string name="settings_export_done">Mipangilio imetumwa. Funguo za API hazijajumuishwa</string>
     <string name="settings_export_failed">Mipangilio haikuweza kutumwa</string>
     <string name="settings_import_done">Mipangilio imeingizwa</string>
-    <string name="settings_import_failed">Faili hii si SandFly au Backtalk faili ya mipangilio, au haikuweza kusomeka.</string>
+    <string name="settings_import_failed">Faili hii si faili ya mipangilio ya SandFly au Backtalk, au haikuweza kusomwa</string>
 </resources>

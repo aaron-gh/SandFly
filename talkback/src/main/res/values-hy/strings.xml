@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">Փոխել ձայնի տեմբրը</string>
   <string name="capital_letters_sound_feedback">Նվագարկել ձայնային ազդանշանը</string>
   <string name="title_pref_a11y_hints">Հնչեցնել օգտագործման առաջարկները</string>
-  <string name="summary_pref_a11y_hints">Նյութի նկարագրությունից հետո ասեք, թե ինչպես օգտագործել այն</string>
+  <string name="summary_pref_a11y_hints">Տարրի նկարագրությունից հետո ասել, թե ինչպես օգտագործել այն</string>
   <string name="pref_speak_container_element_positions_title">Հնչեցնել կոնտեյներների տեղեկությունները</string>
   <string name="pref_speak_time_title">Հնչեցնել ժամանակը</string>
   <string name="pref_speak_time_summary">Երբ դուք միացնում եք էկրանը</string>
@@ -1684,9 +1684,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Առանց DUMP թույլտվության, SandFly կարող է միայն ասել, որ հպման հետախուզումը կարող է խրված լինել: Որպեսզի դա շտկվի, գործարկեք՝ adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission:DUMP</string>
     <string name="stuck_touch_exploration_fixing">Հպումով ուսումնասիրության շտկում</string>
     <string name="stuck_touch_exploration_fixed">Հպումով ուսումնասիրությունը շտկվեց</string>
-    <string name="stuck_touch_exploration_not_fixed">Հպման հետախուզումը դեռ խրված է: Վերագործարկեք հեռախոսը՝ այն շտկելու համար:</string>
-    <string name="stuck_touch_exploration_restart">Հպման հետախուզումը կարող է խրված լինել: Վերագործարկեք հեռախոսը՝ այն շտկելու համար:</string>
-    <string name="stuck_touch_exploration_grant_dump">Հպման հետախուզումը կարող է խրված լինել: Վերագործարկեք հեռախոսը՝ այն շտկելու համար կամ SandFly տրամադրեք DUMP թույլտվությունը ԱԶԲ-ի հետ, որպեսզի այն կարողանա շտկել այն:</string>
+    <string name="stuck_touch_exploration_not_fixed">«Հպումով ուսումնասիրումը» դեռ կախված է։ Վերագործարկեք հեռախոսը՝ խնդիրը շտկելու համար։</string>
+    <string name="stuck_touch_exploration_restart">«Հպումով ուսումնասիրումը» կարող է կախված լինել։ Վերագործարկեք հեռախոսը՝ խնդիրը շտկելու համար։</string>
+    <string name="stuck_touch_exploration_grant_dump">«Հպումով ուսումնասիրումը» կարող է կախված լինել։ Վերագործարկեք հեռախոսը կամ ADB-ով SandFly-ին տրամադրեք DUMP թույլտվությունը, որպեսզի այն կարողանա շտկել խնդիրը։</string>
     <string name="title_pref_window_names">Պատուհանների անունները</string>
     <string name="window_names_always">Միշտ</string>
     <string name="window_names_until_first_item">Միշտ, ընդհատվում է առաջին տարրով</string>

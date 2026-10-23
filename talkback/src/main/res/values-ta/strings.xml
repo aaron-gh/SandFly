@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">வாசிப்பின் வேகத்தை மாற்று</string>
   <string name="capital_letters_sound_feedback">ஒலியை இயக்கு</string>
   <string name="title_pref_a11y_hints">உபயோகக் குறிப்பைப் படி</string>
-  <string name="summary_pref_a11y_hints">ஒரு பொருளை விவரித்த பிறகு, அதை எப்படி பயன்படுத்துவது என்று சொல்லுங்கள்</string>
+  <string name="summary_pref_a11y_hints">ஒரு உருப்படியை விவரித்த பிறகு, அதை எப்படிப் பயன்படுத்துவது என்று சொல்லும்</string>
   <string name="pref_speak_container_element_positions_title">கண்டெய்னர் தகவல்களைப் படி</string>
   <string name="pref_speak_time_title">நேரத்தை வாசித்தல்</string>
   <string name="pref_speak_time_summary">திரையை இயக்கும்போது</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">\"சாதனம் திறக்கப்பட்டது\" என்று கூறவும்</string>
     <string name="title_pref_announce_time">நேரம்</string>
     <string name="title_pref_announce_ringer_mode">ரிங்கர் முறை</string>
-    <string name="summary_pref_announce_ringer_mode">ரிங்கர் எப்போது அதிர்வுறும் அல்லது அமைதியாக இருக்கும் என்று கூறவும்</string>
+    <string name="summary_pref_announce_ringer_mode">ரிங்கர் அதிர்வு அல்லது சைலன்ட்டுக்கு அமைக்கப்படும்போது சொல்லும்</string>
     <string name="title_pref_category_feedback">பின்னூட்டம்</string>
     <string name="title_pref_category_typing_and_braille">தட்டச்சு மற்றும் பிரெய்லி</string>
     <string name="title_pref_category_apps">ஆப்ஸ்</string>
@@ -1686,7 +1686,7 @@
     <string name="stuck_touch_exploration_fixed">தொடு ஆய்வு சரி செய்யப்பட்டது</string>
     <string name="stuck_touch_exploration_not_fixed">தொடு ஆய்வு இன்னும் சிக்கியுள்ளது. அதை சரிசெய்ய தொலைபேசியை மறுதொடக்கம் செய்யவும்.</string>
     <string name="stuck_touch_exploration_restart">தொடு ஆய்வு சிக்கியிருக்கலாம். அதை சரிசெய்ய தொலைபேசியை மறுதொடக்கம் செய்யவும்.</string>
-    <string name="stuck_touch_exploration_grant_dump">தொடு ஆய்வு சிக்கியிருக்கலாம். அதைச் சரிசெய்ய மொபைலை மறுதொடக்கம் செய்யவும் அல்லது SandFly DUMP அனுமதியை ADBயிடம் வழங்கவும்.</string>
+    <string name="stuck_touch_exploration_grant_dump">தொடுவதன் மூலம் அறிதல் சிக்கியிருக்கலாம். சரிசெய்ய மொபைலை மீண்டும் தொடங்கவும் அல்லது SandFly அதைச் சரிசெய்ய ADB மூலம் SandFlyக்கு DUMP அனுமதியை வழங்கவும்.</string>
     <string name="title_pref_window_names">சாளர பெயர்கள்</string>
     <string name="window_names_always">எப்போதும்</string>
     <string name="window_names_until_first_item">எப்போதும், முதல் உருப்படியில் நிறுத்தப்படும்</string>

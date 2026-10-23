@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">પિચ બદલો</string>
   <string name="capital_letters_sound_feedback">સાઉન્ડ વગાડો</string>
   <string name="title_pref_a11y_hints">વપરાશ માટેની હિન્ટ બોલો</string>
-  <string name="summary_pref_a11y_hints">આઇટમનું વર્ણન કર્યા પછી, તેનો ઉપયોગ કેવી રીતે કરવો તે કહો</string>
+  <string name="summary_pref_a11y_hints">આઇટમનું વર્ણન કર્યા પછી તેનો ઉપયોગ કેવી રીતે કરવો તે જણાવવું</string>
   <string name="pref_speak_container_element_positions_title">કન્ટેનરમાં રહેલી માહિતી બોલો</string>
   <string name="pref_speak_time_title">સમય જણાવો</string>
   <string name="pref_speak_time_summary">તમે સ્ક્રીન ચાલુ કરો ત્યારે</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">\"ઉપકરણ અનલૉક કર્યું\" બોલો</string>
     <string name="title_pref_announce_time">સમય</string>
     <string name="title_pref_announce_ringer_mode">રિંગર મોડ</string>
-    <string name="summary_pref_announce_ringer_mode">રિંગર વાઇબ્રેટ અથવા શાંત પર સેટ હોય ત્યારે બોલો</string>
+    <string name="summary_pref_announce_ringer_mode">રિંગર વાઇબ્રેટ અથવા સાયલન્ટ પર સેટ થાય ત્યારે જણાવવું</string>
     <string name="title_pref_category_feedback">પ્રતિસાદ</string>
     <string name="title_pref_category_typing_and_braille">ટાઇપિંગ અને બ્રેઇલ</string>
     <string name="title_pref_category_apps">ઍપ</string>
@@ -1685,8 +1685,8 @@
     <string name="stuck_touch_exploration_fixing">ટચ એક્સપ્લોરેશન ઠીક કરી રહ્યાં છીએ</string>
     <string name="stuck_touch_exploration_fixed">ટચ એક્સપ્લોરેશન ઠીક કર્યું</string>
     <string name="stuck_touch_exploration_not_fixed">સ્પર્શની શોધખોળ હજુ અટકેલી છે. તેને ઠીક કરવા માટે ફોનને રીસ્ટાર્ટ કરો.</string>
-    <string name="stuck_touch_exploration_restart">ટચ એક્સપ્લોરેશન અટકી શકે છે. તેને ઠીક કરવા માટે ફોનને રીસ્ટાર્ટ કરો.</string>
-    <string name="stuck_touch_exploration_grant_dump">ટચ એક્સપ્લોરેશન અટકી શકે છે. ફોનને ઠીક કરવા માટે તેને પુનઃપ્રારંભ કરો અથવા ADB સાથે SandFly DUMP પરવાનગી આપો જેથી તે તેને ઠીક કરી શકે.</string>
+    <string name="stuck_touch_exploration_restart">સ્પર્શ કરીને શોધખોળ અટકી ગઈ હોઈ શકે છે. તેને ઠીક કરવા માટે ફોન રીસ્ટાર્ટ કરો.</string>
+    <string name="stuck_touch_exploration_grant_dump">સ્પર્શ કરીને શોધખોળ અટકી ગઈ હોઈ શકે છે. તેને ઠીક કરવા માટે ફોન રીસ્ટાર્ટ કરો, અથવા SandFly તેને ઠીક કરી શકે તે માટે ADB વડે SandFlyને DUMP પરવાનગી આપો.</string>
     <string name="title_pref_window_names">વિન્ડો નામો</string>
     <string name="window_names_always">હંમેશા</string>
     <string name="window_names_until_first_item">હંમેશા, પ્રથમ આઇટમ આવતાં બંધ</string>

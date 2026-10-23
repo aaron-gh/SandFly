@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">ਪਿੱਚ ਬਦਲੋ</string>
   <string name="capital_letters_sound_feedback">ਧੁਨੀ ਵਜਾਓ</string>
   <string name="title_pref_a11y_hints">ਵਰਤੋਂ ਸੰਕੇਤ ਬੋਲੋ</string>
-  <string name="summary_pref_a11y_hints">ਇੱਕ ਆਈਟਮ ਦੇ ਵਰਣਨ ਤੋਂ ਬਾਅਦ, ਦੱਸੋ ਕਿ ਇਸਨੂੰ ਕਿਵੇਂ ਵਰਤਣਾ ਹੈ</string>
+  <string name="summary_pref_a11y_hints">ਆਈਟਮ ਦਾ ਵਰਣਨ ਕਰਨ ਤੋਂ ਬਾਅਦ, ਦੱਸਦਾ ਹੈ ਕਿ ਇਸਨੂੰ ਕਿਵੇਂ ਵਰਤਣਾ ਹੈ</string>
   <string name="pref_speak_container_element_positions_title">ਕੰਟੇਨਰ ਜਾਣਕਾਰੀ ਬੋਲੋ</string>
   <string name="pref_speak_time_title">ਬੋਲ ਕੇ ਸਮਾਂ ਦੱਸੋ</string>
   <string name="pref_speak_time_summary">ਜਦੋਂ ਤੁਸੀਂ ਸਕ੍ਰੀਨ ਚਾਲੂ ਕਰਦੇ ਹੋ</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">\"ਡਿਵਾਈਸ ਅਨਲੌਕ\" ਕਹੋ</string>
     <string name="title_pref_announce_time">ਸਮਾਂ</string>
     <string name="title_pref_announce_ringer_mode">ਰਿੰਗਰ ਮੋਡ</string>
-    <string name="summary_pref_announce_ringer_mode">ਕਹੋ ਜਦੋਂ ਰਿੰਗਰ ਵਾਈਬ੍ਰੇਟ ਜਾਂ ਸਾਈਲੈਂਟ \'ਤੇ ਸੈੱਟ ਹੋਵੇ</string>
+    <string name="summary_pref_announce_ringer_mode">ਜਦੋਂ ਰਿੰਗਰ ਵਾਈਬ੍ਰੇਟ ਜਾਂ ਸਾਈਲੈਂਟ \'ਤੇ ਸੈੱਟ ਹੁੰਦਾ ਹੈ ਤਾਂ ਦੱਸਦਾ ਹੈ</string>
     <string name="title_pref_category_feedback">ਫੀਡਬੈਕ</string>
     <string name="title_pref_category_typing_and_braille">ਟਾਈਪਿੰਗ ਅਤੇ ਬਰੇਲ</string>
     <string name="title_pref_category_apps">ਐਪਾਂ</string>
@@ -1686,7 +1686,7 @@
     <string name="stuck_touch_exploration_fixed">ਟਚ ਐਕਸਪਲੋਰੇਸ਼ਨ ਠੀਕ ਕੀਤਾ ਗਿਆ</string>
     <string name="stuck_touch_exploration_not_fixed">ਸਪਰਸ਼ ਖੋਜ ਅਜੇ ਵੀ ਰੁਕੀ ਹੋਈ ਹੈ। ਇਸ ਨੂੰ ਠੀਕ ਕਰਨ ਲਈ ਫ਼ੋਨ ਰੀਸਟਾਰਟ ਕਰੋ।</string>
     <string name="stuck_touch_exploration_restart">ਸਪਰਸ਼ ਖੋਜ ਅਟਕ ਸਕਦੀ ਹੈ। ਇਸ ਨੂੰ ਠੀਕ ਕਰਨ ਲਈ ਫ਼ੋਨ ਰੀਸਟਾਰਟ ਕਰੋ।</string>
-    <string name="stuck_touch_exploration_grant_dump">ਸਪਰਸ਼ ਖੋਜ ਅਟਕ ਸਕਦੀ ਹੈ। ਇਸ ਨੂੰ ਠੀਕ ਕਰਨ ਲਈ ਫ਼ੋਨ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੋ, ਜਾਂ ADB ਨਾਲ SandFly DUMP ਇਜਾਜ਼ਤ ਦਿਓ ਤਾਂ ਜੋ ਇਹ ਇਸਨੂੰ ਠੀਕ ਕਰ ਸਕੇ।</string>
+    <string name="stuck_touch_exploration_grant_dump">ਸਪਰਸ਼ ਰਾਹੀਂ ਪੜਚੋਲ ਅਟਕ ਗਈ ਹੋ ਸਕਦੀ ਹੈ। ਇਸਨੂੰ ਠੀਕ ਕਰਨ ਲਈ ਫ਼ੋਨ ਰੀਸਟਾਰਟ ਕਰੋ, ਜਾਂ ADB ਨਾਲ SandFly ਨੂੰ DUMP ਇਜਾਜ਼ਤ ਦਿਓ ਤਾਂ ਜੋ SandFly ਇਸਨੂੰ ਠੀਕ ਕਰ ਸਕੇ।</string>
     <string name="title_pref_window_names">ਵਿੰਡੋ ਦੇ ਨਾਮ</string>
     <string name="window_names_always">ਹਮੇਸ਼ਾ</string>
     <string name="window_names_until_first_item">ਹਮੇਸ਼ਾ, ਪਹਿਲੀ ਆਈਟਮ \'ਤੇ ਰੁਕਦਾ ਹੈ</string>

@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">အသံအနိမ့်အမြင့် ပြောင်းရန်</string>
   <string name="capital_letters_sound_feedback">အသံဖွင့်ရန်</string>
   <string name="title_pref_a11y_hints">အသုံးပြုရေး အကြံပေးချက်များကို ပြောပေးရန်</string>
-  <string name="summary_pref_a11y_hints">ပစ္စည်းတစ်ခုကို ဖော်ပြပြီးပါက ၎င်းကို အသုံးပြုပုံကို ပြောပြပါ</string>
+  <string name="summary_pref_a11y_hints">အကြောင်းအရာကို ဖော်ပြပြီးနောက် အသုံးပြုပုံကို ပြောသည်</string>
   <string name="pref_speak_container_element_positions_title">အကွက်အချက်အလက်ကို ဖတ်ပြရန်</string>
   <string name="pref_speak_time_title">အချိန်ပြောရန်</string>
   <string name="pref_speak_time_summary">ဖန်သားပြင်ဖွင့်ထားသောအခါ</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">\"စက်ပစ္စည်း လော့ခ်ဖွင့်ထားသည်\" ဟုပြောပါ</string>
     <string name="title_pref_announce_time">အချိန်</string>
     <string name="title_pref_announce_ringer_mode">ဖုန်းမြည်သံမုဒ်</string>
-    <string name="summary_pref_announce_ringer_mode">ဖုန်းမြည်သံကို တုန်ခါရန် သို့မဟုတ် အသံတိတ်ရန် သတ်မှတ်ထားသည့်အခါ ပြောပါ</string>
+    <string name="summary_pref_announce_ringer_mode">ဖုန်းမြည်သံကို တုန်ခါမှု သို့မဟုတ် အသံတိတ် အဖြစ် သတ်မှတ်သည့်အခါ ပြောသည်</string>
     <string name="title_pref_category_feedback">တုံ့ပြန်ချက်</string>
     <string name="title_pref_category_typing_and_braille">စာရိုက်ခြင်းနှင့် မျက်မမြင်စာ</string>
     <string name="title_pref_category_apps">အက်ပ်များ</string>
@@ -1686,7 +1686,7 @@
     <string name="stuck_touch_exploration_fixed">ထိတွေ့စူးစမ်းမှုကို ပြင်ဆင်ပြီးပါပြီ</string>
     <string name="stuck_touch_exploration_not_fixed">ထိတွေ့စူးစမ်းမှုမှာ ရပ်တန့်နေဆဲဖြစ်သည်။ ပြုပြင်ရန် ဖုန်းကို ပြန်လည်စတင်ပါ။</string>
     <string name="stuck_touch_exploration_restart">ထိတွေ့စူးစမ်းမှု ရပ်တန့်သွားနိုင်သည်။ ပြုပြင်ရန် ဖုန်းကို ပြန်လည်စတင်ပါ။</string>
-    <string name="stuck_touch_exploration_grant_dump">ထိတွေ့စူးစမ်းမှု ရပ်တန့်သွားနိုင်သည်။ ပြုပြင်ရန် ဖုန်းကို ပြန်လည်စတင်ပါ သို့မဟုတ် ပြုပြင်နိုင်စေရန် ADB ထံ SandFly ခွင့်ပြုချက် DUMP ခွင့်ပြုပါ။</string>
+    <string name="stuck_touch_exploration_grant_dump">တို့ထိလျက် စူးစမ်းခြင်း ရပ်နေနိုင်သည်။ ပြင်ရန် ဖုန်းကို ပြန်စပါ၊ သို့မဟုတ် SandFly က ပြင်နိုင်ရန် ADB ဖြင့် SandFly ကို DUMP ခွင့်ပြုချက် ပေးပါ။</string>
     <string name="title_pref_window_names">ဝင်းဒိုး အမည်များ</string>
     <string name="window_names_always">အမြဲတမ်း</string>
     <string name="window_names_until_first_item">အမြဲ၊ ပထမအရာရောက်လျှင် ရပ်သည်</string>

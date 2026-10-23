@@ -2283,9 +2283,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">没有DUMP的许可，SandFly只能说触摸探索可能会卡住。要让它修复它，请运行： adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">修复触摸探索</string>
     <string name="stuck_touch_exploration_fixed">触摸探索已修复</string>
-    <string name="stuck_touch_exploration_not_fixed">触摸探索仍无响应。请重启手机以修复。</string>
-    <string name="stuck_touch_exploration_restart">触摸探索可能会卡住。重新启动手机即可修复。</string>
-    <string name="stuck_touch_exploration_grant_dump">触摸探索可能会卡住。重启手机即可修复，或者通过ADB授予SandFlyDUMP权限即可修复。</string>
+    <string name="stuck_touch_exploration_not_fixed">触摸浏览仍然卡住。请重启手机以修复。</string>
+    <string name="stuck_touch_exploration_restart">触摸浏览可能卡住了。请重启手机以修复。</string>
+    <string name="stuck_touch_exploration_grant_dump">触摸浏览可能卡住了。请重启手机以修复，或通过 ADB 向 SandFly 授予 DUMP 权限，以便 SandFly 进行修复。</string>
     <string name="title_pref_window_names">窗口名称</string>
     <string name="window_names_always">始终</string>
     <string name="window_names_until_first_item">始终朗读，首个项目打断时停止</string>
@@ -2334,5 +2334,5 @@
     <string name="settings_export_done">设置已导出。不包含 API 密钥</string>
     <string name="settings_export_failed">无法导出设置</string>
     <string name="settings_import_done">设置已导入</string>
-    <string name="settings_import_failed">该文件不是SandFly或Backtalk设置文件，或者无法读取</string>
+    <string name="settings_import_failed">该文件不是 SandFly 或 Backtalk 设置文件，或者无法读取</string>
 </resources>

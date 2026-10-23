@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">Hangmagasság módosítása</string>
   <string name="capital_letters_sound_feedback">Hang lejátszása</string>
   <string name="title_pref_a11y_hints">Használati tippek kimondása</string>
-  <string name="summary_pref_a11y_hints">Egy elem leírása után mondja el, hogyan kell használni</string>
+  <string name="summary_pref_a11y_hints">Az elem leírása után a használatának bemondása</string>
   <string name="pref_speak_container_element_positions_title">Beszéd tárolóadatai</string>
   <string name="pref_speak_time_title">Az idő kimondása</string>
   <string name="pref_speak_time_summary">A képernyő bekapcsolásakor</string>
@@ -358,7 +358,7 @@
   <string name="screen_dimmed">Képernyő elrejtve</string>
   <string name="screen_brightness_restored">Képernyő megjelenítve</string>
   <string name="screen_dimming_exit_instruction_line1">A SandFly kisegítő szolgáltatás elrejtette a képernyőt</string>
-  <string name="screen_dimming_exit_instruction_line2">Ennek megváltoztatásához nyomja meg a <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> gombot az SandFly menü megnyitásához, válassza a „<xliff:g id="menu item" example="show screen">%2$s</xliff:g>” lehetőséget, majd koppintson duplán.</string>
+  <string name="screen_dimming_exit_instruction_line2">Ennek módosításához nyissa meg a SandFly menüt ezzel: <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g>, válassza a „<xliff:g id="menu item" example="show screen">%2$s</xliff:g>” lehetőséget, majd koppintson duplán.</string>
   <string name="shortcut_title_basic_navigation">Alapvető navigáció</string>
   <string name="shortcut_title_system_actions">Rendszerműveletek</string>
   <string name="shortcut_title_reading_control">Olvasás</string>
@@ -1686,7 +1686,7 @@
     <string name="stuck_touch_exploration_fixed">Az érintéses felfedezés javítva</string>
     <string name="stuck_touch_exploration_not_fixed">Az érintéssel történő felfedezés továbbra is elakadt. A javításhoz indítsa újra a telefont.</string>
     <string name="stuck_touch_exploration_restart">Előfordulhat, hogy az érintéssel történő felfedezés elakadt. A javításhoz indítsa újra a telefont.</string>
-    <string name="stuck_touch_exploration_grant_dump">Előfordulhat, hogy az érintéssel történő felfedezés elakadt. Indítsa újra a telefont a javításhoz, vagy adja meg SandFly az DUMP engedélyt az ADB-vel, hogy kijavíthassa.</string>
+    <string name="stuck_touch_exploration_grant_dump">Előfordulhat, hogy a felfedezés érintéssel elakadt. A javításhoz indítsa újra a telefont, vagy adja meg a SandFly-nak a DUMP engedélyt ADB-vel, hogy kijavíthassa.</string>
     <string name="title_pref_window_names">Ablaknevek</string>
     <string name="window_names_always">Mindig</string>
     <string name="window_names_until_first_item">Mindig, az első elem megszakítja</string>

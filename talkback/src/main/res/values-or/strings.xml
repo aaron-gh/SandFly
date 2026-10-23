@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">ପିଚ୍ ପରିବର୍ତ୍ତନ କରନ୍ତୁ</string>
   <string name="capital_letters_sound_feedback">ସାଉଣ୍ଡ ଚଲାନ୍ତୁ</string>
   <string name="title_pref_a11y_hints">ବ୍ୟବହାର ସୂଚନା କୁହନ୍ତୁ</string>
-  <string name="summary_pref_a11y_hints">ଏକ ଆଇଟମ୍ ବର୍ଣ୍ଣନା ହେବା ପରେ, ଏହାକୁ କିପରି ବ୍ୟବହାର କରାଯିବ କୁହନ୍ତୁ</string>
+  <string name="summary_pref_a11y_hints">ଏକ ଆଇଟମ୍ ବର୍ଣ୍ଣନା ପରେ, ଏହାକୁ କିପରି ବ୍ୟବହାର କରିବେ କହେ</string>
   <string name="pref_speak_container_element_positions_title">କଣ୍ଟେନରର ସୂଚନା କୁହନ୍ତୁ</string>
   <string name="pref_speak_time_title">ସମୟ କୁହ</string>
   <string name="pref_speak_time_summary">ଆପଣ ସ୍କ୍ରିନରେ ଚାଲୁ କରିବା ସମୟରେ</string>
@@ -1371,7 +1371,7 @@
     <string name="title_pref_say_device_unlocked">କୁହନ୍ତୁ \"ଡିଭାଇସ୍ ଅନଲକ୍\"</string>
     <string name="title_pref_announce_time">ସମୟ</string>
     <string name="title_pref_announce_ringer_mode">ରିଙ୍ଗର୍ ମୋଡ୍</string>
-    <string name="summary_pref_announce_ringer_mode">ଯେତେବେଳେ ରିଙ୍ଗର କମ୍ପିବା କିମ୍ବା ନୀରବ ହେବାକୁ ସେଟ୍ ହୋଇଛି କୁହନ୍ତୁ</string>
+    <string name="summary_pref_announce_ringer_mode">ରିଙ୍ଗର କମ୍ପନ କିମ୍ବା ନୀରବରେ ସେଟ୍ ହେଲେ କହେ</string>
     <string name="title_pref_category_feedback">ଫିଡବ୍ୟାକ୍</string>
     <string name="title_pref_category_typing_and_braille">ଟାଇପିଂ ଏବଂ ବ୍ରେଲି</string>
     <string name="title_pref_category_apps">ଆପଗୁଡ଼ିକ</string>
@@ -1392,7 +1392,7 @@
     <string name="speech_control_apps_category">ଆପଗୁଡ଼ିକ</string>
     <string name="speech_control_no_apps">କୌଣସି ଆପ୍ ଏପର୍ଯ୍ୟନ୍ତ କହିବାକୁ ଅନୁରୋଧ କରିନାହିଁ।</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> କୁ SandFly ମାଧ୍ୟମରେ କହିବାକୁ ଅନୁମତି ଦେବେ?</string>
-    <string name="speech_control_ask_text">ଏହା ତୁମର SandFly ସ୍ୱରରେ ପାଠ କହିପାରେ | ଉନ୍ନତ ସେଟିଙ୍ଗରେ ଆପଣ ଏହାକୁ ପରିବର୍ତ୍ତନ କରିପାରିବେ |</string>
+    <string name="speech_control_ask_text">ଏହା ଆପଣଙ୍କ SandFly ସ୍ୱରରେ ଟେକ୍ସଟ୍ କହିପାରେ। ଆପଣ ଏହାକୁ ଉନ୍ନତ ସେଟିଂସରେ ବଦଳାଇପାରିବେ।</string>
     <string name="speech_control_allow">ଅନୁମତି ଦିଅନ୍ତୁ</string>
     <string name="speech_control_deny">ଅନୁମତି ଦିଅନ୍ତୁ ନାହିଁ</string>
     <string name="permission_speak_label">SandFly ମାଧ୍ୟମରେ କହିବା</string>
@@ -1683,9 +1683,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ଅନୁମତି ବିନା, SandFly କେବଳ କହିପାରେ ଯେ ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଅଟକି ଯାଇପାରେ | ଏହାକୁ ଠିକ୍ କରିବାକୁ, ଚଲାନ୍ତୁ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଠିକ୍ କରାଯାଉଛି</string>
     <string name="stuck_touch_exploration_fixed">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଠିକ୍ ହୋଇଛି</string>
-    <string name="stuck_touch_exploration_not_fixed">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଏପର୍ଯ୍ୟନ୍ତ ଅଟକି ରହିଛି | ଏହାକୁ ଠିକ କରିବା ପାଇଁ ଫୋନକୁ ପୁନ Rest ଆରମ୍ଭ କରନ୍ତୁ |</string>
-    <string name="stuck_touch_exploration_restart">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଅଟକି ଯାଇପାରେ | ଏହାକୁ ଠିକ କରିବା ପାଇଁ ଫୋନକୁ ପୁନ Rest ଆରମ୍ଭ କରନ୍ତୁ |</string>
-    <string name="stuck_touch_exploration_grant_dump">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଅଟକି ଯାଇପାରେ | ଏହାକୁ ଠିକ କରିବା ପାଇଁ ଫୋନକୁ ପୁନ Rest ଆରମ୍ଭ କରନ୍ତୁ, କିମ୍ବା SandFly କୁ ADB ସହିତ DUMP ଅନୁମତି ଦିଅନ୍ତୁ ଯାହା ଦ୍ it ାରା ଏହା ଠିକ ହୋଇପାରିବ |</string>
+    <string name="stuck_touch_exploration_not_fixed">ସ୍ପର୍ଶ ଦ୍ୱାରା ଅନ୍ୱେଷଣ ଏପର୍ଯ୍ୟନ୍ତ ଅଟକି ରହିଛି। ଠିକ୍ କରିବା ପାଇଁ ଫୋନ୍ ରିଷ୍ଟାର୍ଟ କରନ୍ତୁ।</string>
+    <string name="stuck_touch_exploration_restart">ସ୍ପର୍ଶ ଦ୍ୱାରା ଅନ୍ୱେଷଣ ଅଟକି ଯାଇଥାଇପାରେ। ଠିକ୍ କରିବା ପାଇଁ ଫୋନ୍ ରିଷ୍ଟାର୍ଟ କରନ୍ତୁ।</string>
+    <string name="stuck_touch_exploration_grant_dump">ସ୍ପର୍ଶ ଦ୍ୱାରା ଅନ୍ୱେଷଣ ଅଟକି ଯାଇଥାଇପାରେ। ଠିକ୍ କରିବା ପାଇଁ ଫୋନ୍ ରିଷ୍ଟାର୍ଟ କରନ୍ତୁ, କିମ୍ବା SandFly ଏହାକୁ ଠିକ୍ କରିପାରିବା ପାଇଁ ADB ଦ୍ୱାରା SandFly କୁ DUMP ଅନୁମତି ଦିଅନ୍ତୁ।</string>
     <string name="title_pref_window_names">ୱିଣ୍ଡୋ ନାମଗୁଡିକ</string>
     <string name="window_names_always">ସର୍ବଦା</string>
     <string name="window_names_until_first_item">ସର୍ବଦା, ପ୍ରଥମ ଆଇଟମ୍‌ରେ ବନ୍ଦ ହୁଏ</string>
@@ -1768,5 +1768,5 @@
     <string name="settings_export_done">ସେଟିଂସ ରପ୍ତାନି ହେଲା। API କି ଅନ୍ତର୍ଭୁକ୍ତ ନୁହେଁ</string>
     <string name="settings_export_failed">ସେଟିଂସମୂହ ରପ୍ତାନି ହୋଇପାରିଲା ନାହିଁ</string>
     <string name="settings_import_done">ସେଟିଂସମୂହ ଆମଦାନୀ ହୋଇଛି</string>
-    <string name="settings_import_failed">ଏହି ଫାଇଲ୍ SandFly କିମ୍ବା Backtalk ସେଟିଙ୍ଗ୍ ଫାଇଲ୍ ନୁହେଁ, କିମ୍ବା ପ read ିହେବ ନାହିଁ</string>
+    <string name="settings_import_failed">ଏହି ଫାଇଲ୍ SandFly କିମ୍ବା Backtalk ସେଟିଂସ ଫାଇଲ୍ ନୁହେଁ, କିମ୍ବା ପଢ଼ିହେଲା ନାହିଁ</string>
 </resources>

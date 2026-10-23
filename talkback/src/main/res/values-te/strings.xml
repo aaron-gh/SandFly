@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">పిచ్‌ను మార్చండి</string>
   <string name="capital_letters_sound_feedback">శబ్దాన్ని ప్లే చేయండి</string>
   <string name="title_pref_a11y_hints">వినియోగ సూచనలు చదివి వినిపించాలి</string>
-  <string name="summary_pref_a11y_hints">ఒక అంశాన్ని వివరించిన తర్వాత, దానిని ఎలా ఉపయోగించాలో చెప్పండి</string>
+  <string name="summary_pref_a11y_hints">ఒక అంశాన్ని వివరించిన తర్వాత, దాన్ని ఎలా ఉపయోగించాలో చెబుతుంది</string>
   <string name="pref_speak_container_element_positions_title">కంటెయినర్ సమాచారాన్ని చదివి వినిపించాలి</string>
   <string name="pref_speak_time_title">సమయాన్ని చెప్పడం</string>
   <string name="pref_speak_time_summary">మీరు స్క్రీన్‌ను ఆన్ చేసినప్పుడు</string>
@@ -1363,7 +1363,7 @@
     <string name="title_pref_say_device_unlocked">\"పరికరం అన్‌లాక్ చేయబడింది\" అని చెప్పండి</string>
     <string name="title_pref_announce_time">సమయం</string>
     <string name="title_pref_announce_ringer_mode">రింగర్ మోడ్</string>
-    <string name="summary_pref_announce_ringer_mode">రింగర్ వైబ్రేట్ లేదా నిశ్శబ్దంగా సెట్ చేయబడినప్పుడు చెప్పండి</string>
+    <string name="summary_pref_announce_ringer_mode">రింగర్ వైబ్రేట్ లేదా సైలెంట్‌కు సెట్ చేసినప్పుడు చెబుతుంది</string>
     <string name="title_pref_category_feedback">ఫీడ్‌బ్యాక్</string>
     <string name="title_pref_category_typing_and_braille">టైపింగ్ మరియు బ్రెయిలీ</string>
     <string name="title_pref_category_apps">యాప్‌లు</string>
@@ -1676,8 +1676,8 @@
     <string name="stuck_touch_exploration_fixing">టచ్ అన్వేషణను పరిష్కరించడం</string>
     <string name="stuck_touch_exploration_fixed">టచ్ అన్వేషణ పరిష్కరించబడింది</string>
     <string name="stuck_touch_exploration_not_fixed">టచ్ అన్వేషణ ఇప్పటికీ నిలిచిపోయింది. దాన్ని పరిష్కరించడానికి ఫోన్‌ని రీస్టార్ట్ చేయండి.</string>
-    <string name="stuck_touch_exploration_restart">టచ్ అన్వేషణ కష్టం కావచ్చు. దాన్ని పరిష్కరించడానికి ఫోన్‌ని రీస్టార్ట్ చేయండి.</string>
-    <string name="stuck_touch_exploration_grant_dump">టచ్ అన్వేషణ కష్టం కావచ్చు. దాన్ని పరిష్కరించడానికి ఫోన్‌ను పునఃప్రారంభించండి లేదా ADBతో SandFly DUMP అనుమతిని మంజూరు చేయండి, తద్వారా దాన్ని పరిష్కరించవచ్చు.</string>
+    <string name="stuck_touch_exploration_restart">తాకడం ద్వారా పరిశీలించడం నిలిచిపోయి ఉండవచ్చు. పరిష్కరించడానికి ఫోన్‌ను రీస్టార్ట్ చేయండి.</string>
+    <string name="stuck_touch_exploration_grant_dump">తాకడం ద్వారా పరిశీలించడం నిలిచిపోయి ఉండవచ్చు. పరిష్కరించడానికి ఫోన్‌ను రీస్టార్ట్ చేయండి, లేదా SandFly దాన్ని పరిష్కరించేలా ADBతో SandFlyకి DUMP అనుమతి ఇవ్వండి.</string>
     <string name="title_pref_window_names">విండో పేర్లు</string>
     <string name="window_names_always">ఎల్లప్పుడూ</string>
     <string name="window_names_until_first_item">ఎల్లప్పుడూ, మొదటి అంశం వద్ద ఆగుతుంది</string>

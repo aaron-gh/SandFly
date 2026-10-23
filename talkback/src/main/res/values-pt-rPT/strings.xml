@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">Alterar o tom</string>
   <string name="capital_letters_sound_feedback">Reproduzir som</string>
   <string name="title_pref_a11y_hints">Dizer sugestões de utilização</string>
-  <string name="summary_pref_a11y_hints">Depois que um item for descrito, diga como usá-lo</string>
+  <string name="summary_pref_a11y_hints">Depois de descrever um item, dizer como usá-lo</string>
   <string name="pref_speak_container_element_positions_title">Ler informações do contentor em voz alta</string>
   <string name="pref_speak_time_title">Dizer as horas</string>
   <string name="pref_speak_time_summary">Quando ativa o ecrã</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">Falar \"Dispositivo desbloqueado\"</string>
     <string name="title_pref_announce_time">Hora</string>
     <string name="title_pref_announce_ringer_mode">Modo de campainha</string>
-    <string name="summary_pref_announce_ringer_mode">Diga quando a campainha está definida para vibrar ou silenciar</string>
+    <string name="summary_pref_announce_ringer_mode">Avisar quando o toque estiver definido para vibrar ou silencioso</string>
     <string name="title_pref_category_feedback">Retorno</string>
     <string name="title_pref_category_typing_and_braille">Digitação e braille</string>
     <string name="title_pref_category_apps">Aplicativos</string>
@@ -1393,7 +1393,7 @@
     <string name="speech_control_apps_category">Aplicativos</string>
     <string name="speech_control_no_apps">Nenhuma aplicação pediu para falar ainda.</string>
     <string name="speech_control_ask_title">Permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale através do SandFly?</string>
-    <string name="speech_control_ask_text">Ele pode dizer texto na sua voz SandFly. Você pode alterar isso nas configurações avançadas.</string>
+    <string name="speech_control_ask_text">A app pode dizer texto com a sua voz do SandFly. Pode alterar isto nas definições avançadas.</string>
     <string name="speech_control_allow">Permitir</string>
     <string name="speech_control_deny">Não permitir</string>
     <string name="permission_speak_label">falar pelo SandFly</string>
@@ -1684,9 +1684,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Sem a permissão DUMP, SandFly só pode dizer que a exploração por toque pode travar. Para permitir que isso seja corrigido, execute: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Corrigindo a exploração de toque</string>
     <string name="stuck_touch_exploration_fixed">Exploração de toque corrigida</string>
-    <string name="stuck_touch_exploration_not_fixed">A exploração por toque ainda está travada. Reinicie o telefone para consertar.</string>
-    <string name="stuck_touch_exploration_restart">A exploração por toque pode travar. Reinicie o telefone para consertar.</string>
-    <string name="stuck_touch_exploration_grant_dump">A exploração por toque pode travar. Reinicie o telefone para consertar ou conceda SandFly a permissão DUMP ao ADB para que ele possa consertar.</string>
+    <string name="stuck_touch_exploration_not_fixed">A exploração através do toque continua bloqueada. Reinicie o telemóvel para resolver.</string>
+    <string name="stuck_touch_exploration_restart">A exploração através do toque pode estar bloqueada. Reinicie o telemóvel para resolver.</string>
+    <string name="stuck_touch_exploration_grant_dump">A exploração através do toque pode estar bloqueada. Reinicie o telemóvel para resolver ou conceda ao SandFly a autorização DUMP através do ADB para que possa resolver.</string>
     <string name="title_pref_window_names">Nomes de janelas</string>
     <string name="window_names_always">Sempre</string>
     <string name="window_names_until_first_item">Sempre, interrompido pelo primeiro item</string>

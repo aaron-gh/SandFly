@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">Promenite visinu glasa</string>
   <string name="capital_letters_sound_feedback">Pusti zvuk</string>
   <string name="title_pref_a11y_hints">Izgovaraj savete o korišćenju</string>
-  <string name="summary_pref_a11y_hints">Nakon što je stavka opisana, recite kako da je koristite</string>
+  <string name="summary_pref_a11y_hints">Nakon opisa stavke izgovaranje načina upotrebe</string>
   <string name="pref_speak_container_element_positions_title">Izgovaraj informacije o kontejneru</string>
   <string name="pref_speak_time_title">Izgovori vreme</string>
   <string name="pref_speak_time_summary">Kada uključite ekran</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">Izgovori „Uređaj je otključan“</string>
     <string name="title_pref_announce_time">Vreme</string>
     <string name="title_pref_announce_ringer_mode">Režim zvona</string>
-    <string name="summary_pref_announce_ringer_mode">Recite kada je zvono podešeno da vibrira ili nečujno</string>
+    <string name="summary_pref_announce_ringer_mode">Izgovaranje kada je zvono podešeno na vibraciju ili nečujno</string>
     <string name="title_pref_category_feedback">Povratne informacije</string>
     <string name="title_pref_category_typing_and_braille">Kucanje i brajevo pismo</string>
     <string name="title_pref_category_apps">Aplikacije</string>
@@ -1690,7 +1690,7 @@
     <string name="stuck_touch_exploration_fixed">Istraživanje dodirom je ispravljeno</string>
     <string name="stuck_touch_exploration_not_fixed">Istraživanje dodirom je i dalje zaglavljeno. Ponovo pokrenite telefon da biste to popravili.</string>
     <string name="stuck_touch_exploration_restart">Istraživanje dodirom je možda zaglavljeno. Ponovo pokrenite telefon da biste to popravili.</string>
-    <string name="stuck_touch_exploration_grant_dump">Istraživanje dodirom je možda zaglavljeno. Ponovo pokrenite telefon da biste to popravili ili dajte SandFly dozvolu DUMP sa ADB-om kako bi to mogao da popravi.</string>
+    <string name="stuck_touch_exploration_grant_dump">Istraživanje dodirom je možda zaglavljeno. Ponovo pokrenite telefon da biste to popravili ili dajte SandFly-u dozvolu DUMP pomoću ADB-a da bi mogao to da popravi.</string>
     <string name="title_pref_window_names">Imena prozora</string>
     <string name="window_names_always">Uvek</string>
     <string name="window_names_until_first_item">Uvek, prekida ih prva stavka</string>

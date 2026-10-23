@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">ピッチを変更する</string>
   <string name="capital_letters_sound_feedback">音を鳴らす</string>
   <string name="title_pref_a11y_hints">使用に関するヒントを読み上げる</string>
-  <string name="summary_pref_a11y_hints">アイテムについて説明した後、その使用方法を説明します</string>
+  <string name="summary_pref_a11y_hints">項目の説明の後に使い方を読み上げる</string>
   <string name="pref_speak_container_element_positions_title">コンテナ情報を読み上げる</string>
   <string name="pref_speak_time_title">時刻を読み上げる</string>
   <string name="pref_speak_time_summary">画面を ON にしたとき</string>
@@ -1369,7 +1369,7 @@
     <string name="title_pref_say_device_unlocked">「デバイスのロックが解除されました」と読み上げる</string>
     <string name="title_pref_announce_time">時刻</string>
     <string name="title_pref_announce_ringer_mode">着信音モード</string>
-    <string name="summary_pref_announce_ringer_mode">着信音が振動またはサイレントに設定されているときに言ってください</string>
+    <string name="summary_pref_announce_ringer_mode">着信音がバイブレーションまたはサイレントに設定されたときに読み上げる</string>
     <string name="title_pref_category_feedback">フィードバック</string>
     <string name="title_pref_category_typing_and_braille">タイピングと点字</string>
     <string name="title_pref_category_apps">アプリ</string>
@@ -1390,7 +1390,7 @@
     <string name="speech_control_apps_category">アプリ</string>
     <string name="speech_control_no_apps">まだ読み上げをリクエストしたアプリはありません。</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> が SandFly を通して話すことを許可しますか?</string>
-    <string name="speech_control_ask_text">あなたのSandFlyの声でテキストを言うことができます。これは詳細設定で変更できます。</string>
+    <string name="speech_control_ask_text">SandFly の音声でテキストを読み上げることができます。これは詳細設定で変更できます。</string>
     <string name="speech_control_allow">許可する</string>
     <string name="speech_control_deny">許可しない</string>
     <string name="permission_speak_label">SandFly を通して読み上げる</string>
@@ -1681,9 +1681,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP の許可がなければ、SandFly はタッチ探索がスタックする可能性があるとしか言えません。それを修正するには、次を実行します: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">タッチ探索を修正しています</string>
     <string name="stuck_touch_exploration_fixed">タッチ探索が修正されました</string>
-    <string name="stuck_touch_exploration_not_fixed">タッチ探索はまだスタックしています。電話機を再起動して問題を解決します。</string>
-    <string name="stuck_touch_exploration_restart">タッチ探索がスタックする可能性があります。電話機を再起動して問題を解決します。</string>
-    <string name="stuck_touch_exploration_grant_dump">タッチ探索がスタックする可能性があります。電話機を再起動して問題を修正するか、修正できるように ADB で SandFly に DUMP 権限を付与します。</string>
+    <string name="stuck_touch_exploration_not_fixed">タッチガイドがまだ応答していません。修正するにはスマートフォンを再起動してください。</string>
+    <string name="stuck_touch_exploration_restart">タッチガイドが応答しなくなっている可能性があります。修正するにはスマートフォンを再起動してください。</string>
+    <string name="stuck_touch_exploration_grant_dump">タッチガイドが応答しなくなっている可能性があります。修正するには、スマートフォンを再起動するか、SandFly が修正できるように ADB で DUMP 権限を付与してください。</string>
     <string name="title_pref_window_names">ウィンドウ名</string>
     <string name="window_names_always">常に</string>
     <string name="window_names_until_first_item">常に（最初の項目で中断）</string>
@@ -1766,5 +1766,5 @@
     <string name="settings_export_done">設定をエクスポートしました。API キーは含まれていません</string>
     <string name="settings_export_failed">設定をエクスポートできませんでした</string>
     <string name="settings_import_done">設定をインポートしました</string>
-    <string name="settings_import_failed">このファイルはSandFly または Backtalk 設定ファイルではないか、読み取れませんでした</string>
+    <string name="settings_import_failed">このファイルは SandFly または Backtalk の設定ファイルではないか、読み取れませんでした</string>
 </resources>

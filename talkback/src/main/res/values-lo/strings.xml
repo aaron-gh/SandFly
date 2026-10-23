@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">ປ່ຽນລະດັບສຽງ</string>
   <string name="capital_letters_sound_feedback">ຫຼິ້ນສຽງ</string>
   <string name="title_pref_a11y_hints">ເວົ້າ​ຄຳ​ໄບ້​ການ​ໃຊ້</string>
-  <string name="summary_pref_a11y_hints">ຫຼັງຈາກລາຍການຖືກອະທິບາຍ, ໃຫ້ເວົ້າວິທີໃຊ້ມັນ</string>
+  <string name="summary_pref_a11y_hints">ບອກວິທີໃຊ້ຫຼັງຈາກອະທິບາຍລາຍການແລ້ວ</string>
   <string name="pref_speak_container_element_positions_title">ເວົ້າຂໍ້ມູນກ່ອງບັນຈຸ</string>
   <string name="pref_speak_time_title">ບອກເວລາ</string>
   <string name="pref_speak_time_summary">ເມື່ອທ່ານເປີດໜ້າຈໍ</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">ເວົ້າວ່າ \"ອຸປະກອນປົດລັອກແລ້ວ\"</string>
     <string name="title_pref_announce_time">ເວລາ</string>
     <string name="title_pref_announce_ringer_mode">ໂໝດສຽງ</string>
-    <string name="summary_pref_announce_ringer_mode">ເວົ້າເມື່ອສຽງດັງຖືກຕັ້ງໃຫ້ສັ່ນ ຫຼືງຽບ</string>
+    <string name="summary_pref_announce_ringer_mode">ບອກເມື່ອຕັ້ງສຽງເອີ້ນເຂົ້າເປັນສັ່ນ ຫຼື ງຽບ</string>
     <string name="title_pref_category_feedback">ການຕອບສະໜອງ</string>
     <string name="title_pref_category_typing_and_braille">ການພິມ ແລະອັກສອນນູນ</string>
     <string name="title_pref_category_apps">ແອັບ</string>
@@ -1393,7 +1393,7 @@
     <string name="speech_control_apps_category">ແອັບ</string>
     <string name="speech_control_no_apps">ບໍ່ມີແອັບໃດທີ່ຂໍໃຫ້ເວົ້າເທື່ອ.</string>
     <string name="speech_control_ask_title">ອະນຸຍາດໃຫ້ <xliff:g id="app" example="Tasker">%1$s</xliff:g> ເວົ້າຜ່ານ SandFly ບໍ?</string>
-    <string name="speech_control_ask_text">ມັນສາມາດເວົ້າຂໍ້ຄວາມໃນສຽງ SandFly ຂອງເຈົ້າ. ທ່ານສາມາດປ່ຽນສິ່ງນີ້ໄດ້ໃນການຕັ້ງຄ່າຂັ້ນສູງ.</string>
+    <string name="speech_control_ask_text">ແອັບນີ້ສາມາດເວົ້າຂໍ້ຄວາມດ້ວຍສຽງ SandFly ຂອງທ່ານ. ທ່ານສາມາດປ່ຽນສິ່ງນີ້ໄດ້ໃນການຕັ້ງຄ່າຂັ້ນສູງ.</string>
     <string name="speech_control_allow">ອະນຸຍາດ</string>
     <string name="speech_control_deny">ບໍ່ອະນຸຍາດ</string>
     <string name="permission_speak_label">ເວົ້າຜ່ານ SandFly</string>
@@ -1686,7 +1686,7 @@
     <string name="stuck_touch_exploration_fixed">ແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດແລ້ວ</string>
     <string name="stuck_touch_exploration_not_fixed">ການສໍາຫຼວດສໍາພັດຍັງຕິດຢູ່. ຣີສະຕາດໂທລະສັບເພື່ອແກ້ໄຂມັນ.</string>
     <string name="stuck_touch_exploration_restart">ການສໍາຫຼວດສໍາຜັດອາດຈະຕິດຢູ່. ຣີສະຕາດໂທລະສັບເພື່ອແກ້ໄຂມັນ.</string>
-    <string name="stuck_touch_exploration_grant_dump">ການສໍາຫຼວດສໍາຜັດອາດຈະຕິດຢູ່. ຣີສະຕາດໂທລະສັບເພື່ອແກ້ໄຂ, ຫຼືໃຫ້ SandFly DUMP ອະນຸຍາດກັບ ADB ເພື່ອໃຫ້ມັນສາມາດແກ້ໄຂໄດ້.</string>
+    <string name="stuck_touch_exploration_grant_dump">ການສຳຫຼວດໂດຍການສຳຜັດອາດຄ້າງຢູ່. ຣີສະຕາດໂທລະສັບເພື່ອແກ້ໄຂ ຫຼື ໃຫ້ສິດ DUMP ແກ່ SandFly ຜ່ານ ADB ເພື່ອໃຫ້ SandFly ແກ້ໄຂໄດ້.</string>
     <string name="title_pref_window_names">ຊື່ປ່ອງຢ້ຽມ</string>
     <string name="window_names_always">ສະເໝີ</string>
     <string name="window_names_until_first_item">ສະເໝີ, ຢຸດເມື່ອຮອດລາຍການທຳອິດ</string>

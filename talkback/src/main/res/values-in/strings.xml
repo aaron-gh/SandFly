@@ -1684,9 +1684,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Tanpa izin DUMP, SandFly hanya dapat mengatakan bahwa eksplorasi sentuh mungkin terhenti. Untuk memperbaikinya, jalankan: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Memperbaiki eksplorasi sentuhan</string>
     <string name="stuck_touch_exploration_fixed">Eksplorasi sentuh diperbaiki</string>
-    <string name="stuck_touch_exploration_not_fixed">Eksplorasi sentuhan masih terhenti. Nyalakan ulang ponsel untuk memperbaikinya.</string>
-    <string name="stuck_touch_exploration_restart">Eksplorasi sentuhan mungkin terhenti. Nyalakan ulang ponsel untuk memperbaikinya.</string>
-    <string name="stuck_touch_exploration_grant_dump">Eksplorasi sentuhan mungkin terhenti. Nyalakan ulang ponsel untuk memperbaikinya, atau berikan SandFly izin DUMP kepada ADB agar dapat memperbaikinya.</string>
+    <string name="stuck_touch_exploration_not_fixed">Jelajahi dengan sentuhan masih macet. Mulai ulang ponsel untuk memperbaikinya.</string>
+    <string name="stuck_touch_exploration_restart">Jelajahi dengan sentuhan mungkin macet. Mulai ulang ponsel untuk memperbaikinya.</string>
+    <string name="stuck_touch_exploration_grant_dump">Jelajahi dengan sentuhan mungkin macet. Mulai ulang ponsel untuk memperbaikinya, atau berikan izin DUMP kepada SandFly melalui ADB agar SandFly dapat memperbaikinya.</string>
     <string name="title_pref_window_names">Nama jendela</string>
     <string name="window_names_always">Selalu</string>
     <string name="window_names_until_first_item">Selalu, dihentikan oleh item pertama</string>

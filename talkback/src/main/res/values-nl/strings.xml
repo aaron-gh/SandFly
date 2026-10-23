@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">Toonhoogte wijzigen</string>
   <string name="capital_letters_sound_feedback">Geluid afspelen</string>
   <string name="title_pref_a11y_hints">Gebruikstips uitspreken</string>
-  <string name="summary_pref_a11y_hints">Nadat een item is beschreven, zegt u hoe u het moet gebruiken</string>
+  <string name="summary_pref_a11y_hints">Na de beschrijving van een item zeggen hoe je het gebruikt</string>
   <string name="pref_speak_container_element_positions_title">Containerinformatie uitspreken</string>
   <string name="pref_speak_time_title">Tijd uitspreken</string>
   <string name="pref_speak_time_summary">Als je het scherm aanzet</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">\'Apparaat ontgrendeld\' uitspreken</string>
     <string name="title_pref_announce_time">Tijdstip</string>
     <string name="title_pref_announce_ringer_mode">Belmodus</string>
-    <string name="summary_pref_announce_ringer_mode">Zeg wanneer het belsignaal is ingesteld op trillen of stil</string>
+    <string name="summary_pref_announce_ringer_mode">Melden wanneer het belsignaal op trillen of stil staat</string>
     <string name="title_pref_category_feedback">Feedback</string>
     <string name="title_pref_category_typing_and_braille">Typen en braille</string>
     <string name="title_pref_category_apps">Apps</string>
@@ -1393,7 +1393,7 @@
     <string name="speech_control_apps_category">Apps</string>
     <string name="speech_control_no_apps">Nog geen apps hebben gevraagd om te spreken.</string>
     <string name="speech_control_ask_title">Toestaan dat <xliff:g id="app" example="Tasker">%1$s</xliff:g> via SandFly spreekt?</string>
-    <string name="speech_control_ask_text">Het kan tekst zeggen met uw SandFly-stem. Je kunt dit wijzigen in Geavanceerde instellingen.</string>
+    <string name="speech_control_ask_text">De app kan tekst uitspreken met je SandFly-stem. Je kunt dit wijzigen in Geavanceerde instellingen.</string>
     <string name="speech_control_allow">Toestaan</string>
     <string name="speech_control_deny">Niet toestaan</string>
     <string name="permission_speak_label">spreken via SandFly</string>
@@ -1686,7 +1686,7 @@
     <string name="stuck_touch_exploration_fixed">Aanraakverkenning opgelost</string>
     <string name="stuck_touch_exploration_not_fixed">Aanraakverkenning loopt nog steeds vast. Start de telefoon opnieuw op om het probleem te verhelpen.</string>
     <string name="stuck_touch_exploration_restart">Aanraakverkenning loopt mogelijk vast. Start de telefoon opnieuw op om het probleem te verhelpen.</string>
-    <string name="stuck_touch_exploration_grant_dump">Aanraakverkenning loopt mogelijk vast. Start de telefoon opnieuw op om het probleem te repareren, of verleen SandFly de DUMP toestemming bij ADB zodat het probleem kan worden opgelost.</string>
+    <string name="stuck_touch_exploration_grant_dump">Verkennen via aanraking loopt mogelijk vast. Start de telefoon opnieuw op om dit op te lossen, of geef SandFly via ADB de DUMP-machtiging zodat SandFly het kan oplossen.</string>
     <string name="title_pref_window_names">Vensternamen</string>
     <string name="window_names_always">Altijd</string>
     <string name="window_names_until_first_item">Altijd, onderbroken door het eerste item</string>
@@ -1769,5 +1769,5 @@
     <string name="settings_export_done">Instellingen geëxporteerd. API-sleutels zijn niet inbegrepen</string>
     <string name="settings_export_failed">Instellingen konden niet worden geëxporteerd</string>
     <string name="settings_import_done">Instellingen geïmporteerd</string>
-    <string name="settings_import_failed">Dit bestand is geen SandFly of Backtalk instellingenbestand, of kon niet worden gelezen</string>
+    <string name="settings_import_failed">Dit bestand is geen SandFly- of Backtalk-instellingenbestand, of het kon niet worden gelezen</string>
 </resources>

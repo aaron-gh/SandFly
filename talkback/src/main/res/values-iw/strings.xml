@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">שינוי גובה הצליל</string>
   <string name="capital_letters_sound_feedback">השמעת צליל</string>
   <string name="title_pref_a11y_hints">אמירה בקול של טיפים לשימוש</string>
-  <string name="summary_pref_a11y_hints">לאחר תיאור פריט, אמור כיצד להשתמש בו</string>
+  <string name="summary_pref_a11y_hints">אחרי תיאור פריט, הקראת הסבר איך להשתמש בו</string>
   <string name="pref_speak_container_element_positions_title">הקראה של פרטי המאגר</string>
   <string name="pref_speak_time_title">הקראת השעה</string>
   <string name="pref_speak_time_summary">כשמפעילים את המסך</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">הקראת \"המכשיר נפתח\"</string>
     <string name="title_pref_announce_time">זמן</string>
     <string name="title_pref_announce_ringer_mode">מצב צלצול</string>
-    <string name="summary_pref_announce_ringer_mode">אמור מתי הצלצול מוגדר לרטוט או שקט</string>
+    <string name="summary_pref_announce_ringer_mode">הקראה כשהצלצול מוגדר לרטט או למצב שקט</string>
     <string name="title_pref_category_feedback">משוב</string>
     <string name="title_pref_category_typing_and_braille">הקלדה וברייל</string>
     <string name="title_pref_category_apps">אפליקציות</string>
@@ -1393,7 +1393,7 @@
     <string name="speech_control_apps_category">אפליקציות</string>
     <string name="speech_control_no_apps">אף אפליקציה לא ביקשה לדבר עדיין.</string>
     <string name="speech_control_ask_title">לאפשר ל-<xliff:g id="app" example="Tasker">%1$s</xliff:g> לדבר דרך SandFly?</string>
-    <string name="speech_control_ask_text">זה יכול להגיד טקסט בקולך SandFly. אתה יכול לשנות זאת בהגדרות מתקדמות.</string>
+    <string name="speech_control_ask_text">האפליקציה יכולה להקריא טקסט בקול של SandFly. אפשר לשנות זאת בהגדרות המתקדמות.</string>
     <string name="speech_control_allow">אפשר</string>
     <string name="speech_control_deny">אל תאפשר</string>
     <string name="permission_speak_label">דיבור דרך SandFly</string>

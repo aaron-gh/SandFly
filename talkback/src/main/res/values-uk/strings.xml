@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">Змінювати висоту звуку</string>
   <string name="capital_letters_sound_feedback">Відтворювати звуковий сигнал</string>
   <string name="title_pref_a11y_hints">Увімкнути голосові підказки</string>
-  <string name="summary_pref_a11y_hints">Після опису предмета скажіть, як ним користуватися</string>
+  <string name="summary_pref_a11y_hints">Після опису елемента повідомляти, як ним користуватися</string>
   <string name="pref_speak_container_element_positions_title">Озвучувати інформацію про контейнер</string>
   <string name="pref_speak_time_title">Озвучувати час</string>
   <string name="pref_speak_time_summary">Коли ви вмикаєте екран</string>
@@ -502,7 +502,7 @@
   <string name="summary_granularity">Читати по символах, словах, рядках тощо</string>
   <string name="summary_read_from_top">Озвучити всі елементи на екрані зверху вниз</string>
   <string name="summary_read_from_current">Озвучувати всі об’єкти на екрані, починаючи від виділеного</string>
-  <string name="summary_copy_last_spoken_phrase">Скопіюйте останню фразу SandFly у буфер обміну, щоб можна було вставити текст</string>
+  <string name="summary_copy_last_spoken_phrase">Копіювання останньої фрази SandFly у буфер обміну, щоб вставити текст</string>
   <string name="summary_spell_last_spoken_phrase">Назвіть букви останньої фрази, яку сказав SandFly</string>
   <string name="summary_repeat_last_spoken_phrase">Послухайте останню фразу, яку сказав SandFly</string>
   <string name="summary_perform_screen_search">Знайти на екрані текст за пошуковим запитом</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">Промовляти \"Пристрій розблоковано\"</string>
     <string name="title_pref_announce_time">Час</string>
     <string name="title_pref_announce_ringer_mode">Режим дзвінка</string>
-    <string name="summary_pref_announce_ringer_mode">Скажіть, коли дзвінок налаштовано на вібрацію або без звуку</string>
+    <string name="summary_pref_announce_ringer_mode">Повідомляти, коли дзвінок налаштовано на вібрацію чи беззвучний режим</string>
     <string name="title_pref_category_feedback">Зворотний зв\'язок</string>
     <string name="title_pref_category_typing_and_braille">Введення та шрифт Брайля</string>
     <string name="title_pref_category_apps">Додатки</string>

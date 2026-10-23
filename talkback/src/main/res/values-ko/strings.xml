@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">음높이 변경</string>
   <string name="capital_letters_sound_feedback">소리 재생</string>
   <string name="title_pref_a11y_hints">사용 힌트 소리 내어 읽기</string>
-  <string name="summary_pref_a11y_hints">항목을 설명한 후 사용 방법을 말하세요.</string>
+  <string name="summary_pref_a11y_hints">항목을 설명한 후 사용 방법 말하기</string>
   <string name="pref_speak_container_element_positions_title">컨테이너 정보 소리 내어 읽기</string>
   <string name="pref_speak_time_title">음성 시간 알림</string>
   <string name="pref_speak_time_summary">화면을 켤 때</string>
@@ -1684,9 +1684,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP 권한이 없으면 SandFly는 터치 탐색이 중단될 수 있다고만 말할 수 있습니다. 문제를 해결하려면 다음을 실행하세요: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">터치 탐색 수정 중</string>
     <string name="stuck_touch_exploration_fixed">터치 탐색이 수정되었습니다.</string>
-    <string name="stuck_touch_exploration_not_fixed">터치 탐색이 여전히 중단되었습니다. 문제를 해결하려면 전화를 다시 시작하세요.</string>
-    <string name="stuck_touch_exploration_restart">터치 탐색이 중단될 수 있습니다. 문제를 해결하려면 전화를 다시 시작하세요.</string>
-    <string name="stuck_touch_exploration_grant_dump">터치 탐색이 중단될 수 있습니다. 문제를 해결하려면 휴대전화를 다시 시작하거나 ADB에 SandFly DUMP 권한을 부여하여 문제를 해결하세요.</string>
+    <string name="stuck_touch_exploration_not_fixed">터치하여 탐색이 여전히 멈춰 있습니다. 해결하려면 휴대전화를 다시 시작하세요.</string>
+    <string name="stuck_touch_exploration_restart">터치하여 탐색이 멈췄을 수 있습니다. 해결하려면 휴대전화를 다시 시작하세요.</string>
+    <string name="stuck_touch_exploration_grant_dump">터치하여 탐색이 멈췄을 수 있습니다. 해결하려면 휴대전화를 다시 시작하거나, SandFly가 해결할 수 있도록 ADB로 SandFly에 DUMP 권한을 부여하세요.</string>
     <string name="title_pref_window_names">창 이름</string>
     <string name="window_names_always">항상</string>
     <string name="window_names_until_first_item">항상 첫 번째 항목에서 잘림</string>
@@ -1769,5 +1769,5 @@
     <string name="settings_export_done">설정을 내보냈습니다. API 키는 포함되지 않습니다.</string>
     <string name="settings_export_failed">설정을 내보낼 수 없습니다.</string>
     <string name="settings_import_done">설정을 가져왔습니다</string>
-    <string name="settings_import_failed">이 파일은 SandFly 또는 Backtalk 설정 파일이 아니거나 읽을 수 없습니다.</string>
+    <string name="settings_import_failed">이 파일은 SandFly 또는 Backtalk 설정 파일이 아니거나 읽을 수 없습니다</string>
 </resources>

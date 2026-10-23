@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">پِچ تبدیل کریں</string>
   <string name="capital_letters_sound_feedback">آواز چلائیں</string>
   <string name="title_pref_a11y_hints">استعمال کے اشارے بولیں</string>
-  <string name="summary_pref_a11y_hints">کسی چیز کے بیان ہونے کے بعد، اسے استعمال کرنے کا طریقہ بتائیں</string>
+  <string name="summary_pref_a11y_hints">کسی آئٹم کی وضاحت کے بعد اس کے استعمال کا طریقہ بتاتا ہے</string>
   <string name="pref_speak_container_element_positions_title">کنٹینر کی معلومات بولیں</string>
   <string name="pref_speak_time_title">بول کر وقت بتانے کی سہولت</string>
   <string name="pref_speak_time_summary">اسکرین آن کرنے پر</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">بولیں \"ڈیوائس غیر مقفل ہے\"</string>
     <string name="title_pref_announce_time">وقت</string>
     <string name="title_pref_announce_ringer_mode">رنگر موڈ</string>
-    <string name="summary_pref_announce_ringer_mode">جب رنگر کمپن یا خاموش ہونے پر سیٹ ہو تو کہیں</string>
+    <string name="summary_pref_announce_ringer_mode">رنگر وائبریٹ یا خاموش پر سیٹ ہونے پر بتاتا ہے</string>
     <string name="title_pref_category_feedback">فیڈبیک</string>
     <string name="title_pref_category_typing_and_braille">ٹائپنگ اور بریل</string>
     <string name="title_pref_category_apps">ایپس</string>
@@ -1684,9 +1684,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP اجازت کے بغیر، SandFly صرف یہ کہہ سکتا ہے کہ ٹچ ایکسپلوریشن پھنس سکتی ہے۔ اسے ٹھیک کرنے کے لیے چلائیں: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ٹچ ایکسپلوریشن کو ٹھیک کرنا</string>
     <string name="stuck_touch_exploration_fixed">ٹچ ایکسپلوریشن ٹھیک ہو گئی</string>
-    <string name="stuck_touch_exploration_not_fixed">ٹچ ایکسپلوریشن ابھی بھی رکی ہوئی ہے۔ فون کو ٹھیک کرنے کے لیے اسے دوبارہ شروع کریں۔</string>
-    <string name="stuck_touch_exploration_restart">ٹچ ایکسپلوریشن پھنس سکتی ہے۔ فون کو ٹھیک کرنے کے لیے اسے دوبارہ شروع کریں۔</string>
-    <string name="stuck_touch_exploration_grant_dump">ٹچ ایکسپلوریشن پھنس سکتی ہے۔ فون کو ٹھیک کرنے کے لیے اسے دوبارہ شروع کریں، یا ADB کے ساتھ SandFly DUMP اجازت دیں تاکہ وہ اسے ٹھیک کر سکے۔</string>
+    <string name="stuck_touch_exploration_not_fixed">ٹچ کرکے دریافت کریں ابھی بھی اٹکا ہوا ہے۔ اسے ٹھیک کرنے کے لیے فون ری اسٹارٹ کریں۔</string>
+    <string name="stuck_touch_exploration_restart">ٹچ کرکے دریافت کریں اٹک گیا ہو سکتا ہے۔ اسے ٹھیک کرنے کے لیے فون ری اسٹارٹ کریں۔</string>
+    <string name="stuck_touch_exploration_grant_dump">ٹچ کرکے دریافت کریں اٹک گیا ہو سکتا ہے۔ اسے ٹھیک کرنے کے لیے فون ری اسٹارٹ کریں، یا ADB کے ذریعے SandFly کو DUMP اجازت دیں تاکہ وہ اسے ٹھیک کر سکے۔</string>
     <string name="title_pref_window_names">ونڈو کے نام</string>
     <string name="window_names_always">ہمیشہ</string>
     <string name="window_names_until_first_item">ہمیشہ، پہلی آئٹم پر رک جاتا ہے</string>

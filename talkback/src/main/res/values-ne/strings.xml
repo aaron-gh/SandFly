@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">आवाजको तीक्ष्णता बदल्नुहोस्</string>
   <string name="capital_letters_sound_feedback">साउन्ड बजाउनुहोस्</string>
   <string name="title_pref_a11y_hints">प्रयोग गर्न विधि बताउनुहोस्</string>
-  <string name="summary_pref_a11y_hints">एक वस्तु वर्णन गरिसकेपछि, यसलाई कसरी प्रयोग गर्ने भन्नुहोस्</string>
+  <string name="summary_pref_a11y_hints">वस्तुको वर्णनपछि यसलाई कसरी प्रयोग गर्ने भनेर बताउँछ</string>
   <string name="pref_speak_container_element_positions_title">कन्टेनरमा भएको जानकारी पढेर सुनाउनुहोस्</string>
   <string name="pref_speak_time_title">बोलेर समय बताउनुहोस्</string>
   <string name="pref_speak_time_summary">तपाईंले स्क्रिन अन गर्दा</string>
@@ -1373,7 +1373,7 @@
     <string name="title_pref_say_device_unlocked">\"उपकरण अनलक\" भन्नुहोस्</string>
     <string name="title_pref_announce_time">समय</string>
     <string name="title_pref_announce_ringer_mode">घण्टी मोड</string>
-    <string name="summary_pref_announce_ringer_mode">रिङ्गर कम्पन वा मौनमा सेट हुँदा भन्नुहोस्</string>
+    <string name="summary_pref_announce_ringer_mode">रिङ्गर कम्पन वा मौनमा सेट हुँदा बताउँछ</string>
     <string name="title_pref_category_feedback">प्रतिक्रिया</string>
     <string name="title_pref_category_typing_and_braille">टाइपिङ र ब्रेल</string>
     <string name="title_pref_category_apps">एपहरू</string>
@@ -1687,7 +1687,7 @@
     <string name="stuck_touch_exploration_fixed">टच अन्वेषण ठीक भयो</string>
     <string name="stuck_touch_exploration_not_fixed">स्पर्श अन्वेषण अझै रोकिएको छ। यसलाई ठीक गर्न फोन रिस्टार्ट गर्नुहोस्।</string>
     <string name="stuck_touch_exploration_restart">टच अन्वेषण अड्किएको हुन सक्छ। यसलाई ठीक गर्न फोन रिस्टार्ट गर्नुहोस्।</string>
-    <string name="stuck_touch_exploration_grant_dump">टच अन्वेषण अड्किएको हुन सक्छ। यसलाई ठीक गर्न फोन रिस्टार्ट गर्नुहोस्, वा ADB लाई SandFly DUMP अनुमति दिनुहोस् ताकि यसले यसलाई ठीक गर्न सक्छ।</string>
+    <string name="stuck_touch_exploration_grant_dump">छोएर अन्वेषण अड्किएको हुन सक्छ। ठीक गर्न फोन रिस्टार्ट गर्नुहोस्, वा SandFly ले ठीक गर्न सकोस् भनेर ADB प्रयोग गरी SandFly लाई DUMP अनुमति दिनुहोस्।</string>
     <string name="title_pref_window_names">विन्डो नामहरू</string>
     <string name="window_names_always">सधैं</string>
     <string name="window_names_until_first_item">सधैं, पहिलो वस्तुमा रोकिन्छ</string>

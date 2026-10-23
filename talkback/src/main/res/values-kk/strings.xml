@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">Дауыс тембрін өзгерту</string>
   <string name="capital_letters_sound_feedback">Дыбысты ойнату</string>
   <string name="title_pref_a11y_hints">Пайдалану туралы кеңестерді дауыстап айту</string>
-  <string name="summary_pref_a11y_hints">Элементті сипаттағаннан кейін оны қалай пайдалану керектігін айтыңыз</string>
+  <string name="summary_pref_a11y_hints">Элемент сипатталғаннан кейін оны пайдалану жолын айту</string>
   <string name="pref_speak_container_element_positions_title">Контейнер ақпаратын дауыстап айту</string>
   <string name="pref_speak_time_title">Сөйлеу уақыты</string>
   <string name="pref_speak_time_summary">Сіз экранды қосқан кезде</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">\"Құрылғы құлпы ашылды\" деп айту</string>
     <string name="title_pref_announce_time">Уақыт</string>
     <string name="title_pref_announce_ringer_mode">Қоңырау режимі</string>
-    <string name="summary_pref_announce_ringer_mode">Қоңырау діріл немесе дыбыссыз күйге орнатылғанын айтыңыз</string>
+    <string name="summary_pref_announce_ringer_mode">Қоңырау діріл немесе дыбыссыз күйге қойылғанда айту</string>
     <string name="title_pref_category_feedback">Кері байланыс</string>
     <string name="title_pref_category_typing_and_braille">Теру және брайль</string>
     <string name="title_pref_category_apps">Қолданбалар</string>
@@ -1684,9 +1684,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP рұқсатынсыз SandFly тек сенсорлық барлау тоқтап қалуы мүмкін деп айта алады. Оны түзету үшін мынаны іске қосыңыз: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Сенсорлық барлауды түзету</string>
     <string name="stuck_touch_exploration_fixed">Түрту арқылы зерттеу түзетілді</string>
-    <string name="stuck_touch_exploration_not_fixed">Сенсорлық барлау әлі де тоқтап тұр. Оны түзету үшін телефонды қайта іске қосыңыз.</string>
-    <string name="stuck_touch_exploration_restart">Түрту барлауы тоқтап қалуы мүмкін. Оны түзету үшін телефонды қайта іске қосыңыз.</string>
-    <string name="stuck_touch_exploration_grant_dump">Түрту барлауы тоқтап қалуы мүмкін. Түзету үшін телефонды қайта іске қосыңыз немесе SandFly DUMP рұқсатын АДБ оны түзете алатындай етіп беріңіз.</string>
+    <string name="stuck_touch_exploration_not_fixed">«Түртілген элементтерді дыбыстау» әлі де тоқтап тұр. Түзету үшін телефонды қайта іске қосыңыз.</string>
+    <string name="stuck_touch_exploration_restart">«Түртілген элементтерді дыбыстау» тоқтап қалған болуы мүмкін. Түзету үшін телефонды қайта іске қосыңыз.</string>
+    <string name="stuck_touch_exploration_grant_dump">«Түртілген элементтерді дыбыстау» тоқтап қалған болуы мүмкін. Түзету үшін телефонды қайта іске қосыңыз немесе SandFly түзете алуы үшін оған ADB арқылы DUMP рұқсатын беріңіз.</string>
     <string name="title_pref_window_names">Терезе атаулары</string>
     <string name="window_names_always">Әрқашан</string>
     <string name="window_names_until_first_item">Әрқашан, бірінші элемент үзеді</string>

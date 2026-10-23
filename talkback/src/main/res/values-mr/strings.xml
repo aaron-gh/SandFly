@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">पिच बदला</string>
   <string name="capital_letters_sound_feedback">आवाज प्ले करा</string>
   <string name="title_pref_a11y_hints">वापर सूचना बोला</string>
-  <string name="summary_pref_a11y_hints">आयटमचे वर्णन केल्यानंतर, ते कसे वापरायचे ते सांगा</string>
+  <string name="summary_pref_a11y_hints">आयटमचे वर्णन केल्यानंतर, ते कसे वापरायचे ते सांगते</string>
   <string name="pref_speak_container_element_positions_title">कंटेनरची माहिती बोला</string>
   <string name="pref_speak_time_title">बोलून वेळ सांगा</string>
   <string name="pref_speak_time_summary">तुम्ही स्क्रीन सुरू करता, तेव्हा</string>
@@ -1375,7 +1375,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="title_pref_say_device_unlocked">\"डिव्हाइस अनलॉक केलेले\" म्हणा</string>
     <string name="title_pref_announce_time">वेळ</string>
     <string name="title_pref_announce_ringer_mode">रिंगर मोड</string>
-    <string name="summary_pref_announce_ringer_mode">रिंगर कंपन किंवा मूक वर सेट केव्हा असेल ते सांगा</string>
+    <string name="summary_pref_announce_ringer_mode">रिंगर व्हायब्रेट किंवा सायलंटवर सेट केल्यावर सांगते</string>
     <string name="title_pref_category_feedback">प्रतिसाद</string>
     <string name="title_pref_category_typing_and_braille">टायपिंग आणि ब्रेल</string>
     <string name="title_pref_category_apps">ॲप्स</string>
@@ -1689,7 +1689,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="stuck_touch_exploration_fixed">स्पर्श अन्वेषण दुरुस्त केले</string>
     <string name="stuck_touch_exploration_not_fixed">स्पर्श अन्वेषण अजूनही अडकले आहे. त्याचे निराकरण करण्यासाठी फोन रीस्टार्ट करा.</string>
     <string name="stuck_touch_exploration_restart">स्पर्श अन्वेषण अडकले असेल. त्याचे निराकरण करण्यासाठी फोन रीस्टार्ट करा.</string>
-    <string name="stuck_touch_exploration_grant_dump">स्पर्श अन्वेषण अडकले असेल. त्याचे निराकरण करण्यासाठी फोन रीस्टार्ट करा किंवा ADB ला SandFly DUMP परवानगी द्या जेणेकरून ते त्याचे निराकरण करू शकेल.</string>
+    <string name="stuck_touch_exploration_grant_dump">स्पर्श करून एक्सप्लोर करा अडकले असू शकते. निराकरण करण्यासाठी फोन रीस्टार्ट करा किंवा SandFly ते दुरुस्त करू शकेल यासाठी ADB वापरून SandFly ला DUMP परवानगी द्या.</string>
     <string name="title_pref_window_names">विंडो नावे</string>
     <string name="window_names_always">नेहमी</string>
     <string name="window_names_until_first_item">नेहमी, पहिला आयटम आल्यावर थांबते</string>

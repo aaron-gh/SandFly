@@ -47,7 +47,7 @@
   <string name="capital_letters_change_pitch">Ohangni oʻzgartirish</string>
   <string name="capital_letters_sound_feedback">Jiringlatish</string>
   <string name="title_pref_a11y_hints">Matnni oʻqib berish</string>
-  <string name="summary_pref_a11y_hints">Element tasvirlanganidan keyin uni qanday ishlatishni ayting</string>
+  <string name="summary_pref_a11y_hints">Element tavsiflangandan keyin uni qanday ishlatishni aytish</string>
   <string name="pref_speak_container_element_positions_title">Konteyner maʼlumotlarni ovozli oʻqish</string>
   <string name="pref_speak_time_title">Vaqtni aytish</string>
   <string name="pref_speak_time_summary">Ekranni yoqqaningizda</string>
@@ -502,7 +502,7 @@
   <string name="summary_granularity">Belgi, soʻz, qator va hokazolarni oʻqish</string>
   <string name="summary_read_from_top">Ekrandagi barcha elementlarni tepadan pastga qarab oʻqish</string>
   <string name="summary_read_from_current">Ekrandagi barcha elementlarni fokusga olinganidan boshlab oʻqish</string>
-  <string name="summary_copy_last_spoken_phrase">Matnni joylashtirishingiz uchun oxirgi SandFly iborasini vaqtinchalik xotiraga nusxalang</string>
+  <string name="summary_copy_last_spoken_phrase">SandFly aytgan oxirgi iborani matnni joylash uchun vaqtinchalik xotiraga nusxalash</string>
   <string name="summary_spell_last_spoken_phrase">SandFly aytgan oxirgi iborani harflab talaffuz qilish</string>
   <string name="summary_repeat_last_spoken_phrase">SandFly aytgan oxirgi iborani qaytadan eshitish</string>
   <string name="summary_perform_screen_search">Ekrandagi matnni topish uchun qidiruv soʻrovini kiriting</string>
@@ -1372,7 +1372,7 @@
     <string name="title_pref_say_device_unlocked">“Qurilma qulfdan chiqarildi” deb aytish</string>
     <string name="title_pref_announce_time">Vaqt</string>
     <string name="title_pref_announce_ringer_mode">Qo\'ng\'iroq rejimi</string>
-    <string name="summary_pref_announce_ringer_mode">Qo\'ng\'iroq tovushi tebranish yoki jim bo\'lganda ayting</string>
+    <string name="summary_pref_announce_ringer_mode">Qoʻngʻiroq tebranish yoki ovozsiz rejimga qoʻyilganda aytish</string>
     <string name="title_pref_category_feedback">Javob signallari</string>
     <string name="title_pref_category_typing_and_braille">Matn yozish va brayl</string>
     <string name="title_pref_category_apps">Ilovalar</string>
@@ -1393,7 +1393,7 @@
     <string name="speech_control_apps_category">Ilovalar</string>
     <string name="speech_control_no_apps">Hech qanday ilova hali gapirishni soʻramagan.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ga SandFly orqali gapirishga ruxsat berilsinmi?</string>
-    <string name="speech_control_ask_text">U SandFly ovozingiz bilan matnni aytishi mumkin. Buni Kengaytirilgan sozlamalarda o\'zgartirishingiz mumkin.</string>
+    <string name="speech_control_ask_text">U SandFly ovozingiz bilan matnni aytishi mumkin. Buni Kengaytirilgan sozlamalarda oʻzgartirishingiz mumkin.</string>
     <string name="speech_control_allow">Ruxsat berish</string>
     <string name="speech_control_deny">Ruxsat bermaslik</string>
     <string name="permission_speak_label">SandFly orqali gapirish</string>
@@ -1684,9 +1684,9 @@
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP ruxsatisiz SandFly faqat teginish orqali oʻrganish toʻxtab qolishi mumkinligini aytishi mumkin. Uni tuzatish uchun quyidagi amalni bajaring: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Teginib oʻrganishni tuzatish</string>
     <string name="stuck_touch_exploration_fixed">Teginib oʻrganish tuzatildi</string>
-    <string name="stuck_touch_exploration_not_fixed">Sensorli qidiruv hali ham tiqilib qolgan. Uni tuzatish uchun telefonni qayta ishga tushiring.</string>
-    <string name="stuck_touch_exploration_restart">Tegishli qidiruv tiqilib qolishi mumkin. Uni tuzatish uchun telefonni qayta ishga tushiring.</string>
-    <string name="stuck_touch_exploration_grant_dump">Tegishli qidiruv tiqilib qolishi mumkin. Uni tuzatish uchun telefonni qayta ishga tushiring yoki SandFly ga DUMP ruxsatini bering, shunda u tuzatishi mumkin.</string>
+    <string name="stuck_touch_exploration_not_fixed">Teginib oʻrganish hali ham ishlamayapti. Tuzatish uchun telefonni qayta ishga tushiring.</string>
+    <string name="stuck_touch_exploration_restart">Teginib oʻrganish ishlamay qolgan boʻlishi mumkin. Tuzatish uchun telefonni qayta ishga tushiring.</string>
+    <string name="stuck_touch_exploration_grant_dump">Teginib oʻrganish ishlamay qolgan boʻlishi mumkin. Tuzatish uchun telefonni qayta ishga tushiring yoki SandFly tuzata olishi uchun unga ADB orqali DUMP ruxsatini bering.</string>
     <string name="title_pref_window_names">Oyna nomlari</string>
     <string name="window_names_always">Har doim</string>
     <string name="window_names_until_first_item">Har doim, birinchi element toʻxtatadi</string>
