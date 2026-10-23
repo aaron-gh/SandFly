@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">Gardar</string>
     <string name="gemini_api_key_get">Obter unha clave</string>
     <string name="gemini_api_terms_link">Condicións de servizo adicionais da API de Gemini</string>
+    <string name="title_pref_gemini_model">Modelo Gemini</string>
+    <string name="gemini_model_automatic">Automático</string>
+    <string name="summary_pref_gemini_model_automatic">Automático: Gemini Flash, despois Flash-Lite cando Flash está ocupado</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, despois Flash-Lite cando estea ocupado</string>
+    <string name="gemini_model_loading">Conseguindo modelos...</string>
+    <string name="gemini_model_list_failed">Non se puideron obter os modelos: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Establece primeiro unha clave API Gemini</string>
+    <string name="ai_service_address_hint">Enderezo, como https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Modelo</string>
+    <string name="ai_service_address_invalid">O enderezo debe comezar por https://. Non se gardou nada.</string>
+    <string name="dialog_message_ai_service_consent">As imaxes e as capturas de pantalla envíanse a <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> para ser descritas, o que leva varios segundos. Aplícanse os seus propios termos e política de privacidade. A IA xerativa é experimental, polo que cometerá erros.</string>
+    <string name="ai_service_error_api_key">O servizo de IA non aceptou a clave API. Comprobe a súa configuración en Descricións automáticas.</string>
+    <string name="ai_service_error_quota">Alcanzouse o límite de uso do servizo de IA. Téntao de novo máis tarde.</string>
+    <string name="ai_service_error_busy">O servizo de IA está ocupado agora mesmo. Téntao de novo nun momento.</string>
+    <string name="ai_service_error_timeout">O servizo de IA tardou demasiado en responder. Téntao de novo.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Ningún</string>
+    <string name="ai_service_not_set_up">Non se está a usar ningún servizo de IA. Configura un ou escolle un na configuración das descricións automáticas.</string>
+    <string name="ai_provider_none_set_up">Non hai ningún servizo de IA configurado. Configura un na súa configuración a continuación.</string>
+    <string name="ai_provider_other">Outro servizo</string>
+    <string name="title_pref_category_ai_services">Servizos de IA</string>
+    <string name="title_pref_ai_provider">Servizo de IA</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> configuración</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, non configurado</string>
+    <string name="ai_provider_in_use">En uso</string>
+    <string name="ai_provider_not_set_up">Non configurado</string>
+    <string name="ai_provider_not_ready">Escolla primeiro un modelo</string>
+    <string name="ai_provider_address">Enderezo</string>
+    <string name="ai_provider_address_message">O enderezo dun servizo cunha API de chat e unha entrada de imaxe compatibles con OpenAI, como https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Non definido</string>
+    <string name="ai_provider_set">Configurado</string>
+    <string name="title_pref_gemini_api_key_of">Clave API de <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">Modelo <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_choose_model">Non escollido</string>
+    <string name="ai_provider_key_message">Pega a túa clave API de <xliff:g id="service" example="Claude">%1$s</xliff:g>. Para eliminala, baleira o campo e garda. As imaxes e pantallas que describes envíanse a <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Establece primeiro a clave API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_needs_address">Establece o enderezo primeiro</string>
+    <string name="ai_provider_enter_model">Introduza un nome de modelo</string>
 </resources>
