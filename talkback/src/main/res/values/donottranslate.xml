@@ -1279,6 +1279,10 @@
   <!-- Product names of the speech recognition choices in Dictation settings. -->
   <string name="dictation_recognition_rambler" translatable="false">Rambler (Gemini API)</string>
   <string name="dictation_recognition_whisper" translatable="false">Whisper</string>
+  <!-- Processors that on-device models can run on. -->
+  <string name="processor_cpu" translatable="false">CPU</string>
+  <string name="processor_gpu" translatable="false">GPU</string>
+  <string name="processor_npu" translatable="false">NPU</string>
   <string name="keycombo_shortcut_global_refresh" translatable="false">keycombo_shortcut_global_refresh</string>
   <string name="shortcut_value_scroll_up">SCROLL_UP</string>
   <string name="shortcut_value_scroll_down">SCROLL_DOWN</string>

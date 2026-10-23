@@ -57,10 +57,9 @@
         <item quantity="many">%1$d minuts</item>
         <item quantity="other">%1$d minuts</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Processador</string>
     <string name="pref_on_device_ai_short_prompts">Descripcions de pantalla més breus</string>
     <string name="pref_on_device_ai_short_prompts_summary">Descriu la pantalla demana menys detalls, de manera que respon abans. Desactiva-ho per obtenir descripcions més completes.</string>
-    <string name="pref_on_device_ai_gpu">Utilitza la GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Pot ser més ràpid i utilitzar menys memòria. Si les respostes fallen, desactiva-ho.</string>
     <string name="on_device_ai_error_network">La baixada s\'ha aturat. Comprova la connexió i torna-ho a provar. Continuarà des d\'on s\'ha aturat.</string>
     <string name="on_device_ai_error_http">El servidor de baixada no ha acceptat la sol·licitud. Torna-ho a provar més tard o importa un fitxer.</string>
     <string name="on_device_ai_error_corrupt">El fitxer no coincidia amb el model esperat i s\'ha suprimit. Torna-ho a provar.</string>

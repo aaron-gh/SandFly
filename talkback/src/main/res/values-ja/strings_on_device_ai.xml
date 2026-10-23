@@ -55,10 +55,9 @@
         <item quantity="one">%1$d分</item>
         <item quantity="other">%1$d分</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">プロセッサ</string>
     <string name="pref_on_device_ai_short_prompts">画面の説明を短くする</string>
     <string name="pref_on_device_ai_short_prompts_summary">「説明」画面で要求される詳細が少なくなるため、すぐに回答が得られます。詳しい説明を表示するには、これをオフにします。</string>
-    <string name="pref_on_device_ai_gpu">GPUを使用する</string>
-    <string name="pref_on_device_ai_gpu_summary">より高速になり、使用するメモリも少なくなります。回答が失敗した場合は、これをオフにします。</string>
     <string name="on_device_ai_error_network">ダウンロードが停止しました。接続を確認して、もう一度試してください。止まったところから継続していきます。</string>
     <string name="on_device_ai_error_http">ダウンロード サーバーはリクエストを受け入れませんでした。後でもう一度試すか、代わりにファイルをインポートしてください。</string>
     <string name="on_device_ai_error_corrupt">ファイルは予期されたモデルと一致しなかったため、削除されました。もう一度やり直してください。</string>

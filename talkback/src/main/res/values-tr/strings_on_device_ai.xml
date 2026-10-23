@@ -55,10 +55,9 @@
         <item quantity="one">%1$d dakika</item>
         <item quantity="other">%1$d dakika</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">İşlemci</string>
     <string name="pref_on_device_ai_short_prompts">Daha kısa ekran açıklamaları</string>
     <string name="pref_on_device_ai_short_prompts_summary">Açıklama ekranı daha az ayrıntı sorduğundan daha erken yanıt verir. Daha kapsamlı açıklamalar için bunu kapatın.</string>
-    <string name="pref_on_device_ai_gpu">GPU\'yu kullanın</string>
-    <string name="pref_on_device_ai_gpu_summary">Daha hızlı olabilir ve daha az bellek kullanabilir. Cevaplar başarısız olursa bunu kapatın.</string>
     <string name="on_device_ai_error_network">İndirme durduruldu. Bağlantınızı kontrol edip tekrar deneyin. Durduğu yerden devam edecek.</string>
     <string name="on_device_ai_error_http">İndirme sunucusu isteği kabul etmedi. Daha sonra tekrar deneyin veya bunun yerine bir dosyayı içe aktarın.</string>
     <string name="on_device_ai_error_corrupt">Dosya beklenen modelle eşleşmedi ve silindi. Tekrar deneyin.</string>

@@ -44,7 +44,7 @@ class LocalModelService : Service() {
   private data class Config(
     val path: String,
     val lastModified: Long,
-    val useGpu: Boolean,
+    val processor: OnDeviceAiSettings.Processor,
     val maxTokens: Int?,
   )
 
@@ -135,7 +135,10 @@ class LocalModelService : Service() {
   private fun llmFor(data: Bundle): LiteRtLmLocalLlm {
     val file = File(data.getString(KEY_MODEL_PATH).orEmpty())
     val maxTokens = data.getInt(KEY_MAX_TOKENS, NO_MAX_TOKENS).takeIf { it != NO_MAX_TOKENS }
-    val config = Config(file.path, file.lastModified(), data.getBoolean(KEY_USE_GPU), maxTokens)
+    val processor =
+      OnDeviceAiSettings.Processor.entries.firstOrNull { it.id == data.getString(KEY_PROCESSOR) }
+        ?: OnDeviceAiSettings.Processor.CPU
+    val config = Config(file.path, file.lastModified(), processor, maxTokens)
     llm?.let {
       if (config == llmConfig) return it
       // Forget it before closing it, so that a cancel meanwhile does not go to it.
@@ -147,7 +150,9 @@ class LocalModelService : Service() {
     return LiteRtLmLocalLlm(
         appContext,
         file,
-        config.useGpu,
+        config.processor,
+        // Downloaded the first time the NPU is used.
+        if (processor == OnDeviceAiSettings.Processor.NPU) NpuRuntime.ensure(appContext).path else null,
         maxTokens,
         beforeLoad = { if (checkMemory) checkFreeMemory(appContext, file.length()) },
       )
@@ -200,7 +205,7 @@ class LocalModelService : Service() {
     const val MSG_FAILED = 6
 
     const val KEY_MODEL_PATH = "model_path"
-    const val KEY_USE_GPU = "use_gpu"
+    const val KEY_PROCESSOR = "processor"
     const val KEY_MAX_TOKENS = "max_tokens"
     const val KEY_PROMPT = "prompt"
 

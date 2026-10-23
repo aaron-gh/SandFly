@@ -55,10 +55,9 @@
         <item quantity="one">%1$d minuutti</item>
         <item quantity="other">%1$d minuuttia</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Suoritin</string>
     <string name="pref_on_device_ai_short_prompts">Lyhyemmät näytön kuvaukset</string>
     <string name="pref_on_device_ai_short_prompts_summary">Kuvaile näyttöä pyytää vähemmän yksityiskohtia, joten vastaus tulee nopeammin. Poista tämä käytöstä, jos haluat kattavammat kuvaukset.</string>
-    <string name="pref_on_device_ai_gpu">Käytä grafiikkasuoritinta</string>
-    <string name="pref_on_device_ai_gpu_summary">Voi olla nopeampi ja käyttää vähemmän muistia. Jos vastaukset epäonnistuvat, poista tämä käytöstä.</string>
     <string name="on_device_ai_error_network">Lataus pysähtyi. Tarkista yhteys ja yritä uudelleen. Lataus jatkuu siitä, mihin se pysähtyi.</string>
     <string name="on_device_ai_error_http">Latauspalvelin ei hyväksynyt pyyntöä. Yritä myöhemmin uudelleen tai tuo tiedosto.</string>
     <string name="on_device_ai_error_corrupt">Tiedosto ei vastannut odotettua mallia, ja se poistettiin. Yritä uudelleen.</string>

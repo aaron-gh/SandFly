@@ -64,7 +64,7 @@ class LocalModelManager private constructor(context: Context) {
     Executors.newSingleThreadExecutor { Thread(it, "on-device-ai-close").apply { isDaemon = true } }
   private val llmLock = Any()
   @Volatile private var llm: RemoteLocalLlm? = null
-  private var llmKey: Triple<LocalModel, Boolean, Long>? = null
+  private var llmKey: Triple<LocalModel, OnDeviceAiSettings.Processor, Long>? = null
 
   val store = LocalModelStore(File(appContext.filesDir, "models"))
 
@@ -89,7 +89,7 @@ class LocalModelManager private constructor(context: Context) {
   /** The models to offer on this phone, or all of them when memory limits are ignored. */
   fun availableModels(): List<LocalModel> =
     if (OnDeviceAiSettings.ignoreMemoryLimits(prefs)) {
-      LocalModel.entries
+      LocalModel.choices
     } else {
       OnDeviceAiSettings.modelsFor(totalRamBytes()) { store.isInstalled(it) }
     }
@@ -118,14 +118,21 @@ class LocalModelManager private constructor(context: Context) {
    */
   fun llm(): LocalLlm? {
     val model = activeModel() ?: return null
-    val gpu = OnDeviceAiSettings.useGpu(prefs)
+    // A model built for the NPU runs there; the others on the GPU when it is chosen.
+    val processor =
+      when {
+        model.npuChip != null -> OnDeviceAiSettings.Processor.NPU
+        OnDeviceAiSettings.processor(prefs) == OnDeviceAiSettings.Processor.GPU ->
+          OnDeviceAiSettings.Processor.GPU
+        else -> OnDeviceAiSettings.Processor.CPU
+      }
     val file = store.file(model)
-    val key = Triple(model, gpu, file.lastModified())
+    val key = Triple(model, processor, file.lastModified())
     synchronized(llmLock) {
       val current = llm
       if (current == null || llmKey != key) {
         current?.let { retire(it) }
-        llm = RemoteLocalLlm(appContext, model, file, gpu)
+        llm = RemoteLocalLlm(appContext, model, file, processor)
         llmKey = key
       }
       return llm
@@ -188,15 +195,21 @@ class LocalModelManager private constructor(context: Context) {
             },
             isCancelled = { stopDownload.get() != null },
           )
-      setState(
-        when (result) {
-          ModelDownloader.Result.Done -> State.Idle
-          ModelDownloader.Result.Cancelled -> stopDownload.get() ?: State.Idle
-          is ModelDownloader.Result.Failed -> State.Failed(result.failure)
-        }
-      )
+      // A model for the NPU also needs the NPU's library, fetched now so that it works offline.
+      val runtimeFailed =
+        result == ModelDownloader.Result.Done &&
+          model.npuChip != null &&
+          runCatching { NpuRuntime.ensure(appContext) }.isFailure
+      setState(if (runtimeFailed) State.Failed(ModelFiles.Failure.NETWORK) else stateAfter(result))
     }
   }
+
+  private fun stateAfter(result: ModelDownloader.Result): State =
+    when (result) {
+      ModelDownloader.Result.Done -> State.Idle
+      ModelDownloader.Result.Cancelled -> stopDownload.get() ?: State.Idle
+      is ModelDownloader.Result.Failed -> State.Failed(result.failure)
+    }
 
   fun cancelDownload() {
     stopDownload.set(State.Idle)

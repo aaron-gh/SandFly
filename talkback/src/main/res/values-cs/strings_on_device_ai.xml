@@ -57,10 +57,9 @@
         <item quantity="few">%1$d minuty</item>
         <item quantity="other">%1$d minut</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Procesor</string>
     <string name="pref_on_device_ai_short_prompts">Kratší popisy obrazovky</string>
     <string name="pref_on_device_ai_short_prompts_summary">Popis obrazovky žádá méně podrobností, takže odpoví dříve. Pro podrobnější popisy tuto možnost vypněte.</string>
-    <string name="pref_on_device_ai_gpu">Používat GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Může být rychlejší a využívat méně paměti. Pokud odpovědi selhávají, tuto možnost vypněte.</string>
     <string name="on_device_ai_error_network">Stahování se zastavilo. Zkontrolujte připojení a zkuste to znovu. Bude pokračovat od místa, kde skončilo.</string>
     <string name="on_device_ai_error_http">Server pro stahování požadavek nepřijal. Zkuste to později nebo místo toho importujte soubor.</string>
     <string name="on_device_ai_error_corrupt">Soubor neodpovídal očekávanému modelu a byl smazán. Zkuste to znovu.</string>

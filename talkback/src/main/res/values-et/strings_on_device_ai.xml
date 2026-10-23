@@ -55,10 +55,9 @@
         <item quantity="one">%1$d minut</item>
         <item quantity="other">%1$d minutit</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Protsessor</string>
     <string name="pref_on_device_ai_short_prompts">Lühemad ekraanikirjeldused</string>
     <string name="pref_on_device_ai_short_prompts_summary">Ekraani kirjeldamisel küsitakse vähem üksikasju, seega saabub vastus kiiremini. Põhjalikumate kirjelduste jaoks lülitage see välja.</string>
-    <string name="pref_on_device_ai_gpu">Kasuta GPU-d</string>
-    <string name="pref_on_device_ai_gpu_summary">Võib olla kiirem ja kasutada vähem mälu. Kui vastused ebaõnnestuvad, lülitage see välja.</string>
     <string name="on_device_ai_error_network">Allalaadimine peatus. Kontrollige ühendust ja proovige uuesti. Allalaadimine jätkub kohast, kus see peatus.</string>
     <string name="on_device_ai_error_http">Allalaadimisserver ei aktsepteerinud päringut. Proovige hiljem uuesti või importige selle asemel fail.</string>
     <string name="on_device_ai_error_corrupt">Fail ei vastanud oodatud mudelile ja kustutati. Proovige uuesti.</string>

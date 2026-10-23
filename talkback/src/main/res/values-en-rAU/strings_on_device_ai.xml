@@ -55,10 +55,9 @@
         <item quantity="one">%1$d minute</item>
         <item quantity="other">%1$d minutes</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Processor</string>
     <string name="pref_on_device_ai_short_prompts">Shorter screen descriptions</string>
     <string name="pref_on_device_ai_short_prompts_summary">Describe screen asks for fewer details, so it answers sooner. Turn this off for fuller descriptions.</string>
-    <string name="pref_on_device_ai_gpu">Use the GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Can be faster and use less memory. If answers fail, turn this off.</string>
     <string name="on_device_ai_error_network">The download stopped. Check your connection and try again. It will carry on where it stopped.</string>
     <string name="on_device_ai_error_http">The download server did not accept the request. Try again later, or import a file instead.</string>
     <string name="on_device_ai_error_corrupt">The file did not match the expected model and was deleted. Try again.</string>

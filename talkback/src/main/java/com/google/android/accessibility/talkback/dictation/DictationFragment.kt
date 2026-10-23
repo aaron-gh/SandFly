@@ -48,6 +48,7 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
   private lateinit var aiServicePref: Preference
   private lateinit var googleDownloadPref: Preference
   private val modelPrefs = mutableMapOf<Model, Preference>()
+  private var whisperProcessorPref: Preference? = null
   private var announcedMilestone = -1
   private var downloading: Model? = null
 
@@ -89,6 +90,33 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
       category.addPreference(row)
       modelPrefs[model] = row
     }
+    // Only phones whose GPU Whisper can use have a choice.
+    if (WhisperEngines.gpuAvailable()) {
+      whisperProcessorPref =
+        AccessibilitySuitePreference(context).apply {
+          key = "pref_dictation_whisper_processor"
+          isPersistent = false
+          setTitle(R.string.pref_on_device_ai_processor)
+          setOnPreferenceClickListener {
+            chooseWhisperProcessor()
+            true
+          }
+        }
+      category.addPreference(whisperProcessorPref!!)
+    }
+  }
+
+  private fun chooseWhisperProcessor() {
+    val labels = arrayOf(getString(R.string.processor_cpu), getString(R.string.processor_gpu))
+    AlertDialog.Builder(requireContext())
+      .setTitle(R.string.pref_on_device_ai_processor)
+      .setSingleChoiceItems(labels, if (DictationSettings.whisperOnGpu(prefs)) 1 else 0) { dialog, which ->
+        dialog.dismiss()
+        DictationSettings.setWhisperOnGpu(prefs, which == 1)
+        refresh()
+      }
+      .setNegativeButton(R.string.on_device_ai_cancel, null)
+      .show()
   }
 
   override fun onStart() {
@@ -127,6 +155,8 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
         }
     }
     aiServicePref.summary = aiServiceSummary(context)
+    whisperProcessorPref?.summary =
+      getString(if (DictationSettings.whisperOnGpu(prefs)) R.string.processor_gpu else R.string.processor_cpu)
     announceProgress(state)
   }
 

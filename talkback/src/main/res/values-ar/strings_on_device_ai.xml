@@ -63,10 +63,9 @@
         <item quantity="many">%1$d دقيقة</item>
         <item quantity="other">%1$d دقيقة</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">المعالج</string>
     <string name="pref_on_device_ai_short_prompts">أوصاف أقصر للشاشة</string>
     <string name="pref_on_device_ai_short_prompts_summary">تطلب ميزة \"وصف محتوى الشاشة\" تفاصيل أقل، لذا تقدّم الإجابة بشكل أسرع. أوقِف هذا الإعداد للحصول على أوصاف أكمل.</string>
-    <string name="pref_on_device_ai_gpu">استخدام وحدة معالجة الرسومات</string>
-    <string name="pref_on_device_ai_gpu_summary">قد يكون أسرع ويستخدم ذاكرة أقل. إذا تعذّر الحصول على الإجابات، أوقِف هذا الإعداد.</string>
     <string name="on_device_ai_error_network">توقّف التنزيل. تحقَّق من الاتصال وأعِد المحاولة. سيُستأنف التنزيل من حيث توقّف.</string>
     <string name="on_device_ai_error_http">لم يقبل خادم التنزيل الطلب. أعِد المحاولة لاحقًا، أو استورِد ملفًا بدلاً من ذلك.</string>
     <string name="on_device_ai_error_corrupt">لم يتطابق الملف مع النموذج المتوقّع وتم حذفه. أعِد المحاولة.</string>

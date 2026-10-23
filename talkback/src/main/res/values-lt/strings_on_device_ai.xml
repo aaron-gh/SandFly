@@ -59,10 +59,9 @@
         <item quantity="many">%1$d minučių</item>
         <item quantity="other">%1$d minučių</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Procesorius</string>
     <string name="pref_on_device_ai_short_prompts">Trumpesni ekrano aprašymai</string>
     <string name="pref_on_device_ai_short_prompts_summary">Aprašymo ekrane prašoma pateikti mažiau informacijos, todėl jis atsako greičiau. Išjunkite tai, jei norite gauti išsamesnius aprašymus.</string>
-    <string name="pref_on_device_ai_gpu">Naudokite GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Gali būti greitesnis ir naudoti mažiau atminties. Jei atsakymai nepavyksta, išjunkite šį režimą.</string>
     <string name="on_device_ai_error_network">Atsisiuntimas sustabdytas. Patikrinkite ryšį ir bandykite dar kartą. Jis tęsis ten, kur sustojo.</string>
     <string name="on_device_ai_error_http">The download server did not accept the request. Vėliau bandykite dar kartą arba importuokite failą.</string>
     <string name="on_device_ai_error_corrupt">Failas neatitiko numatyto modelio ir buvo ištrintas. Bandykite dar kartą.</string>

@@ -55,10 +55,9 @@
         <item quantity="one">%1$d minutë</item>
         <item quantity="other">%1$d minuta</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Procesori</string>
     <string name="pref_on_device_ai_short_prompts">Përshkrime më të shkurtra të ekranit</string>
     <string name="pref_on_device_ai_short_prompts_summary">Ekrani i përshkrimit kërkon më pak detaje, kështu që ai përgjigjet më shpejt. Çaktivizo këtë për përshkrime më të plota.</string>
-    <string name="pref_on_device_ai_gpu">Përdorni GPU-në</string>
-    <string name="pref_on_device_ai_gpu_summary">Mund të jetë më i shpejtë dhe të përdorë më pak memorie. Nëse përgjigjet dështojnë, fikeni këtë.</string>
     <string name="on_device_ai_error_network">Shkarkimi u ndal. Kontrollo lidhjen tënde dhe provo sërish. Do të vazhdojë aty ku është ndalur.</string>
     <string name="on_device_ai_error_http">Serveri i shkarkimit nuk e pranoi kërkesën. Provo sërish më vonë ose importo një skedar në vend të kësaj.</string>
     <string name="on_device_ai_error_corrupt">Skedari nuk përputhej me modelin e pritur dhe u fshi. Provo sërish.</string>

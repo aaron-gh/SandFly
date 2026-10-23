@@ -53,10 +53,9 @@
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="other">%1$d phút</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Bộ xử lý</string>
     <string name="pref_on_device_ai_short_prompts">Mô tả màn hình ngắn hơn</string>
     <string name="pref_on_device_ai_short_prompts_summary">Tính năng mô tả màn hình yêu cầu ít chi tiết hơn nên trả lời nhanh hơn. Tắt tuỳ chọn này để có nội dung mô tả đầy đủ hơn.</string>
-    <string name="pref_on_device_ai_gpu">Dùng GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Có thể nhanh hơn và dùng ít bộ nhớ hơn. Nếu không nhận được câu trả lời, hãy tắt tuỳ chọn này.</string>
     <string name="on_device_ai_error_network">Quá trình tải xuống đã dừng. Hãy kiểm tra kết nối rồi thử lại. Quá trình tải sẽ tiếp tục từ chỗ đã dừng.</string>
     <string name="on_device_ai_error_http">Máy chủ tải xuống không chấp nhận yêu cầu. Hãy thử lại sau hoặc nhập một tệp.</string>
     <string name="on_device_ai_error_corrupt">Tệp không khớp với mô hình dự kiến nên đã bị xoá. Hãy thử lại.</string>

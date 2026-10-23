@@ -55,10 +55,9 @@
         <item quantity="one">%1$d Minute</item>
         <item quantity="other">%1$d Minuten</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Prozessor</string>
     <string name="pref_on_device_ai_short_prompts">Kürzere Bildschirmbeschreibungen</string>
     <string name="pref_on_device_ai_short_prompts_summary">„Bildschirminhalt beschreiben“ fordert weniger Details an und antwortet daher schneller. Deaktiviere diese Option für ausführlichere Beschreibungen.</string>
-    <string name="pref_on_device_ai_gpu">GPU verwenden</string>
-    <string name="pref_on_device_ai_gpu_summary">Kann schneller sein und weniger Arbeitsspeicher belegen. Deaktiviere diese Option, wenn Antworten fehlschlagen.</string>
     <string name="on_device_ai_error_network">Der Download wurde unterbrochen. Prüfe deine Verbindung und versuche es noch einmal. Der Download wird an der unterbrochenen Stelle fortgesetzt.</string>
     <string name="on_device_ai_error_http">Der Downloadserver hat die Anfrage nicht angenommen. Versuche es später noch einmal oder importiere stattdessen eine Datei.</string>
     <string name="on_device_ai_error_corrupt">Die Datei entsprach nicht dem erwarteten Modell und wurde gelöscht. Versuche es noch einmal.</string>

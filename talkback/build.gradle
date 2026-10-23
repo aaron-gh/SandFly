@@ -27,6 +27,8 @@ dependencies {
     implementation libs.litertlm
     // Dictation with Whisper on the phone.
     phoneImplementation project(':whisper')
+    // Whisper on Adreno GPUs, loaded only when used there.
+    phoneRuntimeOnly project(':whisperopencl')
     // Grants the permissions that settings need through Shizuku, when it is installed and running.
     implementation libs.shizuku.api
     implementation libs.shizuku.provider

@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.whisper
 
+import android.util.Log
 import java.io.Closeable
 import java.io.File
 import java.io.IOException
@@ -24,7 +25,13 @@ import java.io.IOException
  * A Whisper speech recognition model in whisper.cpp's format, loaded from [file]. Loading and
  * [transcribe] block, so call them off the main thread; [cancel] can be called from any thread.
  */
-class WhisperModel private constructor(private var handle: Long) : Closeable {
+class WhisperModel
+private constructor(
+  private val native: NativeWhisper,
+  private var handle: Long,
+  /** Whether the model runs on the GPU. */
+  val onGpu: Boolean,
+) : Closeable {
   // [transcribe] holds this; [close] waits for it. [handle] itself is guarded by [handleLock], so
   // that [cancel] doesn't wait for the transcription it stops.
   private val transcribeLock = Any()
@@ -38,54 +45,51 @@ class WhisperModel private constructor(private var handle: Long) : Closeable {
     synchronized(transcribeLock) {
       val current = synchronized(handleLock) { handle }
       check(current != 0L) { "Closed" }
-      val bytes = nativeTranscribe(current, samples, language, threads) ?: return null
+      val bytes = native.nativeTranscribe(current, samples, language, threads) ?: return null
       String(bytes, Charsets.UTF_8).trim()
     }
 
   /** Stops [transcribe], which then returns null. */
   fun cancel() {
-    synchronized(handleLock) { if (handle != 0L) nativeCancel(handle) }
+    synchronized(handleLock) { if (handle != 0L) native.nativeCancel(handle) }
   }
 
   override fun close() {
     cancel()
     synchronized(transcribeLock) {
       synchronized(handleLock) {
-        if (handle != 0L) nativeFree(handle)
+        if (handle != 0L) native.nativeFree(handle)
         handle = 0L
       }
     }
   }
 
   companion object {
-    init {
-      System.loadLibrary("sandfly_whisper")
-    }
-
-    @Throws(IOException::class)
-    fun load(file: File): WhisperModel {
-      val handle = nativeLoad(file.absolutePath)
-      if (handle == 0L) throw IOException("Could not load ${file.name}")
-      return WhisperModel(handle)
-    }
+    private const val TAG = "WhisperModel"
 
     /** Whether Whisper knows the language with the two-letter code [code]. */
-    fun isLanguage(code: String): Boolean = code.isNotEmpty() && nativeLanguageId(code) >= 0
+    fun isLanguage(code: String): Boolean =
+      code.isNotEmpty() && WhisperNative.nativeLanguageId(code) >= 0
 
-    @JvmStatic private external fun nativeLanguageId(code: String): Int
-
-    @JvmStatic private external fun nativeLoad(path: String): Long
-
-    @JvmStatic private external fun nativeFree(handle: Long)
-
-    @JvmStatic private external fun nativeCancel(handle: Long)
-
-    @JvmStatic
-    private external fun nativeTranscribe(
-      handle: Long,
-      samples: FloatArray,
-      language: String,
-      threads: Int,
-    ): ByteArray?
+    /**
+     * Loads the model in [file], on the GPU when [gpu] is true and the GPU build can load it, and
+     * otherwise on the CPU.
+     */
+    @Throws(IOException::class)
+    fun load(file: File, gpu: Boolean = false): WhisperModel {
+      if (gpu) {
+        try {
+          val handle = WhisperOpenClNative.nativeLoad(file.absolutePath, true)
+          if (handle != 0L) return WhisperModel(WhisperOpenClNative, handle, onGpu = true)
+          Log.w(TAG, "The GPU build could not load ${file.name}, using the CPU")
+        } catch (e: LinkageError) {
+          // No OpenCL driver, or one too old for the GPU build.
+          Log.w(TAG, "No GPU build: $e")
+        }
+      }
+      val handle = WhisperNative.nativeLoad(file.absolutePath, false)
+      if (handle == 0L) throw IOException("Could not load ${file.name}")
+      return WhisperModel(WhisperNative, handle, onGpu = false)
+    }
   }
 }

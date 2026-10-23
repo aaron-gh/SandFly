@@ -59,10 +59,9 @@
         <item quantity="many">%1$d хвилин</item>
         <item quantity="other">%1$d хвилини</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Процесор</string>
     <string name="pref_on_device_ai_short_prompts">Коротші описи екрана</string>
     <string name="pref_on_device_ai_short_prompts_summary">Екран опису запитує менше деталей, тому відповідає швидше. Вимкніть це, щоб отримати повніший опис.</string>
-    <string name="pref_on_device_ai_gpu">Використовуйте GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Може бути швидшим і використовувати менше пам\'яті. Якщо відповідей немає, вимкніть це.</string>
     <string name="on_device_ai_error_network">Завантаження зупинено. Перевірте підключення та повторіть спробу. Він буде продовжувати там, де зупинився.</string>
     <string name="on_device_ai_error_http">Сервер завантаження не прийняв запит. Спробуйте пізніше або імпортуйте файл.</string>
     <string name="on_device_ai_error_corrupt">Файл не відповідав очікуваній моделі та був видалений. Спробуйте знову.</string>
