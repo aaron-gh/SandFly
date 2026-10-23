@@ -1727,7 +1727,7 @@
     <string name="action_move_up">向上移動</string>
     <string name="action_move_down">下移</string>
     <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> 的位置 <xliff:g id="position" example="2">%1$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up">撿到了<xliff:g id="detail" example="Name">%1$s</xliff:g>。 <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_picked_up">已拿起<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">已放下<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly 表示此訂單中商品的詳細資訊。要更改它，請觸摸並按住某個細節，然後向上或向下拖曳它。啟用 SandFly 後，雙擊並按住，然後拖曳。您也可以使用“上移”和“下移”操作。</string>
     <string name="title_pref_speak_items_before_scroll">在項目滾動到視圖中之前先說出它們</string>
