@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_control_sounds">소리 및 진동 제어</string>
+    <string name="summary_pref_control_sounds">Unspoken이 NVDA에서 하는 것처럼 포커스 사운드 및 진동 대신 버튼, 체크박스, 편집 필드 및 목록 항목과 같은 각 종류의 컨트롤과 테마의 고유한 사운드 및 진동을 제공합니다. 소리는 화면 컨트롤이 있는 곳에서 나오며 SandFly 컨트롤이 어떤 종류인지는 언급하지 않습니다.</string>
+    <string name="title_pref_control_sounds_speak_roles">아직도 통제의 종류를 말해</string>
+    <string name="summary_pref_control_sounds_speak_roles">제어음이 재생되면 버튼과 같이 어떤 종류의 제어인지 알려주세요. 이것은 모든 사운드 테마에 적용됩니다.</string>
+    <string name="title_pref_control_sounds_3d">3D 오디오</string>
+    <string name="pref_control_sounds_3d_headphones">헤드폰 포함</string>
+    <string name="pref_control_sounds_3d_always">항상</string>
+    <string name="pref_control_sounds_3d_never">절대 안함 왼쪽 오른쪽만</string>
+    <string name="individual_sound_control_button">제어 사운드: 버튼</string>
+    <string name="individual_sound_control_checkbox">사운드 제어: 확인란</string>
+    <string name="individual_sound_control_radio_button">제어 사운드: 라디오 버튼</string>
+    <string name="individual_sound_control_edit_text">사운드 제어: 편집 필드</string>
+    <string name="individual_sound_control_combo_box">사운드 제어: 드롭다운 목록</string>
+    <string name="individual_sound_control_slider">제어 사운드: 슬라이더</string>
+    <string name="individual_sound_control_link">제어 사운드: 링크</string>
+    <string name="individual_sound_control_image">제어 사운드: 이미지</string>
+    <string name="individual_sound_control_clock">제어 사운드: 시계</string>
+    <string name="individual_sound_control_tab">사운드 제어: 탭</string>
+    <string name="individual_sound_control_menu_item">사운드 제어: 메뉴 항목</string>
+    <string name="individual_sound_control_list_item">제어 사운드: 목록 항목</string>
+    <string name="individual_sound_control_tree_item">제어 사운드: 트리 항목</string>
+</resources>

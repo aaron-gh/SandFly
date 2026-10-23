@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack 사용</string>
-  <string name="talkback_disabled">TalkBack이 사용 중지됨</string>
+  <string name="talkback_on">SandFly 사용</string>
+  <string name="talkback_disabled">SandFly이 사용 중지됨</string>
   <string name="notification_type_beginning_of_field">입력란의 시작</string>
   <string name="notification_type_end_of_field">입력란의 끝</string>
   <string name="notification_type_selection_mode_on">선택 모드 사용</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">드래그가 시작되었습니다</string>
   <string name="drag_dropped">드래그한 항목이 드롭되었습니다</string>
   <string name="drag_cancelled">드래그가 취소되었습니다</string>
+    <string name="template_brightness_changed">밝기 <xliff:g id="percent">%1$d</xliff:g>퍼센트.</string>
+    <string name="brightness_needs_permission">밝기를 변경하려면 시스템 설정 수정을 허용하세요.</string>
+    <string name="brightness_adaptive_on">밝기를 변경하려면 적응형 밝기를 끄세요.</string>
+    <string name="telegram_replying_to"><xliff:g id="name" example="Ronan">%1$s</xliff:g>에 답장: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>
