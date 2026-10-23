@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Klíč API Gemini</string>
     <string name="summary_pref_gemini_api_key_built_in">Používá se klíč zabudovaný v této aplikaci</string>
     <string name="gemini_api_key_dialog_message">Získejte bezplatný klíč API v Google AI Studio na adrese aistudio.google.com/apikey a vložte jej sem. Chcete-li klíč odebrat, pole vymažte a uložte.\n\nObrázky a obrazovky, které necháte popsat, se odesílají Googlu. V bezplatné úrovni je Google může použít ke zlepšování svých produktů.</string>
     <string name="gemini_api_key_hint">Klíč API</string>
     <string name="gemini_api_key_save">Uložit</string>
     <string name="gemini_api_key_get">Získat klíč</string>
+    <string name="title_pref_gemini_model">Model Gemini</string>
+    <string name="gemini_model_automatic">Automaticky</string>
+    <string name="summary_pref_gemini_model_automatic">Automaticky: Gemini Flash, poté Flash-Lite, když je Flash zaneprázdněn</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, poté Flash-Lite, když je zaneprázdněn</string>
+    <string name="gemini_model_loading">Získávání modelů…</string>
+    <string name="gemini_model_list_failed">Nelze získat modely: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Nejprve nastavte klíč API Gemini</string>
+    <string name="ai_service_address_hint">Adresa, například https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Model</string>
+    <string name="ai_service_address_invalid">Adresa musí začínat https://. Nic nebylo uloženo.</string>
+    <string name="dialog_message_ai_service_consent">Obrázky a snímky obrazovky jsou odeslány na <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> k popisu, což trvá několik sekund. Platí její vlastní podmínky a zásady ochrany osobních údajů. Generativní AI je experimentální, takže bude dělat chyby.</string>
+    <string name="ai_service_error_api_key">Služba AI nepřijala klíč API. Zkontrolujte jeho nastavení v automatických popisech.</string>
+    <string name="ai_service_error_quota">Bylo dosaženo limitu využití služby AI. Zkuste to znovu později.</string>
+    <string name="ai_service_error_busy">Služba AI je právě zaneprázdněna. Zkuste to znovu za chvíli.</string>
+    <string name="ai_service_error_timeout">Služba AI trvala příliš dlouho na odpověď. Zkuste to znovu.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Žádné</string>
+    <string name="ai_service_not_set_up">Není používána žádná služba AI. Nastavte jeden nebo jej vyberte v nastavení automatických popisů.</string>
+    <string name="ai_provider_none_set_up">Není nastavena žádná služba AI. Nastavte si jeden v jeho nastavení níže.</string>
+    <string name="ai_provider_other">Jiná služba</string>
+    <string name="title_pref_category_ai_services">Služby AI</string>
+    <string name="title_pref_ai_provider">Služba AI</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> nastavení</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, není nastaveno</string>
+    <string name="ai_provider_in_use">Používá se</string>
+    <string name="ai_provider_not_set_up">Není nastaveno</string>
+    <string name="ai_provider_not_ready">Nejprve vyberte model</string>
+    <string name="ai_provider_address">Adresa</string>
+    <string name="ai_provider_address_message">Adresa služby s chatovacím API kompatibilním s OpenAI a obrazovým vstupem, jako je https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Nenastaveno</string>
+    <string name="ai_provider_set">Nakonfigurováno</string>
+    <string name="title_pref_gemini_api_key_of">Klíč API pro <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">Model <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_choose_model">Nevybráno</string>
+    <string name="ai_provider_key_message">Vložte svůj klíč API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Chcete-li jej odstranit, vymažte pole a uložte. Obrázky a obrazovky, které popisujete, se odesílají na <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Nejprve nastavte klíč API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_needs_address">Nejprve nastavte adresu</string>
+    <string name="ai_provider_enter_model">Zadejte název modelu</string>
 </resources>
