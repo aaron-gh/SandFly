@@ -6,7 +6,7 @@
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly चे स्वतःचे आवाज आणि कंपन आणि तुमचे स्वतःचे कोणतेही आवाज.</string>
     <string name="sound_theme_in_use">वापरात आहे</string>
-    <string name="sound_theme_by"><xliff:g id="author" example="Bryan Smart">%1$s</xliff:g> ने</string>
+    <string name="sound_theme_by">निर्माते: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">परवाना: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> आवाज.</item>
@@ -46,11 +46,11 @@
     <string name="sound_theme_source_remove_message">त्यातून स्थापित ध्वनी थीम स्थापित राहतात.</string>
     <string name="sound_theme_link_message">थीम फाईलमध्ये किंवा GitHub रिपॉझिटरीमध्ये थीम असलेल्या लिंक एंटर करा किंवा पेस्ट करा.</string>
     <string name="sound_theme_link_hint">https://</string>
-    <string name="sound_theme_install_label">ध्वनी थीम स्थापित करा</string>
+    <string name="sound_theme_install_label">ध्वनी थीम इंस्टॉल करा</string>
     <string name="sound_theme_install_reading">ध्वनी थीम वाचत आहे</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> स्थापित करायचे?</string>
-    <string name="sound_theme_install_and_use">स्थापित करा आणि वापरा</string>
-    <string name="sound_theme_install">स्थापित करा</string>
+    <string name="sound_theme_install_and_use">इंस्टॉल करा आणि वापरा</string>
+    <string name="sound_theme_install">इंस्टॉल करा</string>
     <string name="sound_theme_install_replaces">हे त्याच नावाची स्थापित थीम पुनर्स्थित करते.</string>
     <string name="sound_theme_install_skipped">सोडले:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> स्थापित केले.</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_scripts">腳本</string>
+    <string name="title_pref_scripts">指令碼</string>
     <string name="summary_pref_scripts">更改 SandFly 在應用程式中的工作方式</string>
     <string name="script_import">匯入指令碼</string>
     <string name="script_install_label">安裝 SandFly 指令碼</string>
@@ -88,7 +88,7 @@
     <string name="script_homepage_open">開啟</string>
     <string name="script_homepage_failed">沒有應用程式可以打開<xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> 多次錯誤後關閉。在腳本中查看其日誌。</string>
-    <string name="shortcut_inspect_item">檢查重點項目</string>
+    <string name="shortcut_inspect_item">檢查焦點項目</string>
     <string name="script_inspect_no_item">沒有項目獲得焦點</string>
     <string name="script_inspect_copied">已複製。 <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">沒有 id，所以規則無法命名它。已複製。 <xliff:g id="details">%1$s</xliff:g></string>

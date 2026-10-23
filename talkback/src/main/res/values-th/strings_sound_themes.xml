@@ -5,7 +5,7 @@
     <string name="sound_themes_installed_category">ธีมที่ติดตั้ง</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">เสียงและการสั่นของ SandFly และเสียงของคุณเอง</string>
-    <string name="sound_theme_in_use">ในการใช้งาน</string>
+    <string name="sound_theme_in_use">ใช้งานอยู่</string>
     <string name="sound_theme_by">โดย <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">ใบอนุญาต: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
@@ -48,12 +48,12 @@
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">ติดตั้งธีมเสียง</string>
     <string name="sound_theme_install_reading">การอ่านธีมเสียง</string>
-    <string name="sound_theme_install_title">ติดตั้ง <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_title">ติดตั้ง <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ไหม</string>
     <string name="sound_theme_install_and_use">ติดตั้งและใช้งาน</string>
     <string name="sound_theme_install">ติดตั้ง</string>
     <string name="sound_theme_install_replaces">ซึ่งจะแทนที่ธีมที่ติดตั้งซึ่งมีชื่อเดียวกัน</string>
-    <string name="sound_theme_install_skipped">ซ้าย:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
-    <string name="sound_theme_installed">ติดตั้งแล้ว <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="sound_theme_install_skipped">ข้ามไป:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">ติดตั้ง <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> แล้ว</string>
     <string name="sound_theme_installed_in_use">ติดตั้งแล้ว <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> มันถูกใช้อยู่ในขณะนี้</string>
     <string name="sound_theme_install_nothing">ไม่มีธีมเสียงให้ติดตั้ง</string>
     <string name="sound_theme_install_not_a_theme">นี่ไม่ใช่ธีมเสียง SandFly สามารถใช้: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g></string>

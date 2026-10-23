@@ -6,7 +6,7 @@
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly\'in kendi sesleri ve titreşimleri ve kendi sesleriniz.</string>
     <string name="sound_theme_in_use">Kullanımda</string>
-    <string name="sound_theme_by">Tarafından <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_by">Hazırlayan: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">Lisans: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ses.</item>
@@ -46,10 +46,10 @@
     <string name="sound_theme_source_remove_message">Buradan yüklenen ses temaları yüklü kalır.</string>
     <string name="sound_theme_link_message">Bir tema dosyasına veya içinde tema bulunan bir GitHub deposuna bağlantı girin veya yapıştırın.</string>
     <string name="sound_theme_link_hint">https://</string>
-    <string name="sound_theme_install_label">Ses temasını yükleyin</string>
+    <string name="sound_theme_install_label">Ses temasını yükle</string>
     <string name="sound_theme_install_reading">Ses temasını okuma</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> yüklensin mi?</string>
-    <string name="sound_theme_install_and_use">Kurulum ve kullanım</string>
+    <string name="sound_theme_install_and_use">Yükle ve kullan</string>
     <string name="sound_theme_install">Yükle</string>
     <string name="sound_theme_install_replaces">Bu, aynı adı taşıyan yüklü temanın yerini alır.</string>
     <string name="sound_theme_install_skipped">Dışarıda bırakılanlar:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>

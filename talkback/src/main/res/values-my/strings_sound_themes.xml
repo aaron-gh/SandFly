@@ -6,7 +6,7 @@
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly ၏ကိုယ်ပိုင်အသံများနှင့် တုန်ခါမှုများနှင့် သင့်ကိုယ်ပိုင်အသံများ။</string>
     <string name="sound_theme_in_use">အသုံးပြုနေပါသည်</string>
-    <string name="sound_theme_by"><xliff:g id="author" example="Bryan Smart">%1$s</xliff:g> မှ</string>
+    <string name="sound_theme_by">ဖန်တီးသူ: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">လိုင်စင်- <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> အသံ။</item>
@@ -19,11 +19,11 @@
     <string name="sound_theme_control_sounds_on">ထိန်းချုပ်မှု အသံများနှင့် တုန်ခါမှုများကို ဖွင့်ပါ။</string>
     <string name="sound_theme_control_sounds_off">ထိန်းချုပ်မှု အသံများနှင့် တုန်ခါမှုများကို ပိတ်ပါ။</string>
     <string name="sound_theme_use">ဤအခင်းအကျင်းကို အသုံးပြုပါ</string>
-    <string name="sound_theme_about">ဤအကြောင်းအရာနှင့် ပတ်သက်</string>
+    <string name="sound_theme_about">ဤ အပြင်အဆင်အကြောင်း</string>
     <string name="sound_theme_export">အပြင်အဆင်ဖိုင်အဖြစ် သိမ်းဆည်းပါ</string>
-    <string name="sound_theme_remove">ဖယ်ရှားပါ</string>
+    <string name="sound_theme_remove">ဖယ်ရှားရန်</string>
     <string name="sound_theme_remove_confirm">အပြင်အဆင် <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ကို ဖယ်ရှားမလား။</string>
-    <string name="sound_theme_remove_button">ဖယ်ရှားပါ</string>
+    <string name="sound_theme_remove_button">ဖယ်ရှားရန်</string>
     <plurals name="sound_theme_exported">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> အသံဖြင့် အပြင်အဆင်ကို သိမ်းဆည်းထားသည်။</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> အသံများဖြင့် အပြင်အဆင်ကို သိမ်းဆည်းထားသည်။</item>
@@ -46,13 +46,13 @@
     <string name="sound_theme_source_remove_message">အသံ အပြင်အဆင်များ ထည့်သွင်းပြီး ၎င်းမှ ဆက်၍ တပ်ဆင်ပါ။</string>
     <string name="sound_theme_link_message">အပြင်အဆင်ဖိုင်တစ်ခုသို့ လင့်ခ်တစ်ခုကို ထည့်ပါ သို့မဟုတ် GitHub သိုလှောင်ခန်းသို့ ၎င်းတွင် ဆောင်ပုဒ်တစ်ခု ထည့်ပါ သို့မဟုတ် ကူးထည့်ပါ။</string>
     <string name="sound_theme_link_hint">https://</string>
-    <string name="sound_theme_install_label">အသံအပြင်အဆင်ကို ထည့်သွင်းပါ</string>
+    <string name="sound_theme_install_label">အသံ အပြင်အဆင် ထည့်သွင်းရန်</string>
     <string name="sound_theme_install_reading">အသံအကြောင်းအရာကို ဖတ်ခြင်း</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ထည့်သွင်းမလား။</string>
-    <string name="sound_theme_install_and_use">ထည့်သွင်းပြီး အသုံးပြုပါ</string>
-    <string name="sound_theme_install">တပ်ဆင်ပါ</string>
+    <string name="sound_theme_install_and_use">ထည့်သွင်းပြီး အသုံးပြုရန်</string>
+    <string name="sound_theme_install">ထည့်သွင်းရန်</string>
     <string name="sound_theme_install_replaces">၎င်းသည် အမည်တူထည့်သွင်းထားသည့် အပြင်အဆင်ကို အစားထိုးသည်။</string>
-    <string name="sound_theme_install_skipped">ကျန်ခဲ့သည်-\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_install_skipped">ချန်လှပ်ထားသည်-\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ထည့်သွင်းထားသည်။</string>
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ထည့်သွင်းထားသည်။ ၎င်းကိုယခုအသုံးပြုနေသည်။</string>
     <string name="sound_theme_install_nothing">ထည့်သွင်းရန် အသံအပြင်အဆင်မရှိပါ။</string>

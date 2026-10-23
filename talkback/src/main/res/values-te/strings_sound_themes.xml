@@ -6,7 +6,7 @@
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly యొక్క స్వంత ధ్వనులు మరియు వైబ్రేషన్‌లు మరియు మీ స్వంత శబ్దాలు.</string>
     <string name="sound_theme_in_use">వాడుకలో ఉంది</string>
-    <string name="sound_theme_by"><xliff:g id="author" example="Bryan Smart">%1$s</xliff:g> ద్వారా</string>
+    <string name="sound_theme_by">రూపొందించినవారు: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">లైసెన్స్: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ధ్వని.</item>
@@ -46,14 +46,14 @@
     <string name="sound_theme_source_remove_message">దాని నుండి ఇన్‌స్టాల్ చేయబడిన సౌండ్ థీమ్‌లు ఇన్‌స్టాల్ చేయబడి ఉంటాయి.</string>
     <string name="sound_theme_link_message">థీమ్ ఫైల్‌కు లింక్‌ను నమోదు చేయండి లేదా అతికించండి లేదా అందులో థీమ్‌తో కూడిన GitHub రిపోజిటరీకి.</string>
     <string name="sound_theme_link_hint">https://</string>
-    <string name="sound_theme_install_label">సౌండ్ థీమ్‌ను ఇన్‌స్టాల్ చేయండి</string>
+    <string name="sound_theme_install_label">సౌండ్ థీమ్‌ను ఇన్‌స్టాల్ చేయి</string>
     <string name="sound_theme_install_reading">ధ్వని థీమ్‌ను చదవడం</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>ని ఇన్‌స్టాల్ చేయాలా?</string>
-    <string name="sound_theme_install_and_use">ఇన్‌స్టాల్ చేసి ఉపయోగించుకోండి</string>
-    <string name="sound_theme_install">ఇన్‌స్టాల్ చేయండి</string>
+    <string name="sound_theme_install_and_use">ఇన్‌స్టాల్ చేసి ఉపయోగించు</string>
+    <string name="sound_theme_install">ఇన్‌స్టాల్ చేయి</string>
     <string name="sound_theme_install_replaces">ఇది అదే పేరుతో ఇన్‌స్టాల్ చేయబడిన థీమ్‌ను భర్తీ చేస్తుంది.</string>
     <string name="sound_theme_install_skipped">వదిలివేయబడింది:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
-    <string name="sound_theme_installed">ఇన్‌స్టాల్ చేయబడింది <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ఇన్‌స్టాల్ చేయబడింది.</string>
     <string name="sound_theme_installed_in_use">ఇన్‌స్టాల్ చేయబడింది <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. ఇది ఇప్పుడు వాడుకలో ఉంది.</string>
     <string name="sound_theme_install_nothing">ఇన్‌స్టాల్ చేయడానికి సౌండ్ థీమ్ లేదు.</string>
     <string name="sound_theme_install_not_a_theme">ఇది SandFly ఉపయోగించే సౌండ్ థీమ్ కాదు: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>

@@ -6,7 +6,7 @@
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">Сопствените звуци и вибрации на SandFly и сите ваши звуци.</string>
     <string name="sound_theme_in_use">Во употреба</string>
-    <string name="sound_theme_by">До <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_by">Автор: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">Лиценца: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> звук.</item>
@@ -46,14 +46,14 @@
     <string name="sound_theme_source_remove_message">Звучните теми инсталирани од него остануваат инсталирани.</string>
     <string name="sound_theme_link_message">Внесете или залепете врска до датотека со тема или до складиште GitHub со тема во него.</string>
     <string name="sound_theme_link_hint">https://</string>
-    <string name="sound_theme_install_label">Инсталирајте звучна тема</string>
+    <string name="sound_theme_install_label">Инсталирај звучна тема</string>
     <string name="sound_theme_install_reading">Читање на звучната тема</string>
     <string name="sound_theme_install_title">Да се инсталира <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
-    <string name="sound_theme_install_and_use">Инсталирајте и користете</string>
-    <string name="sound_theme_install">Инсталирајте</string>
+    <string name="sound_theme_install_and_use">Инсталирај и користи</string>
+    <string name="sound_theme_install">Инсталирај</string>
     <string name="sound_theme_install_replaces">Ова ја заменува инсталираната тема со исто име.</string>
     <string name="sound_theme_install_skipped">Изоставено:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
-    <string name="sound_theme_installed">Инсталиран <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> е инсталирана.</string>
     <string name="sound_theme_installed_in_use">Инсталиран <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Сега е во употреба.</string>
     <string name="sound_theme_install_nothing">Нема звучна тема за инсталирање.</string>
     <string name="sound_theme_install_not_a_theme">Ова не е звучна тема SandFly може да се користи: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>

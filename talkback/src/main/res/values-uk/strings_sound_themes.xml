@@ -5,8 +5,8 @@
     <string name="sound_themes_installed_category">Встановлені теми</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">Власні звуки та вібрації SandFly, а також будь-які власні звуки.</string>
-    <string name="sound_theme_in_use">У користуванні</string>
-    <string name="sound_theme_by">Від <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_in_use">Використовується</string>
+    <string name="sound_theme_by">Автор: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">Ліцензія: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> звук.</item>
@@ -58,8 +58,8 @@
     <string name="sound_theme_install_and_use">Встановити та використовувати</string>
     <string name="sound_theme_install">Встановити</string>
     <string name="sound_theme_install_replaces">Це замінює встановлену тему з такою ж назвою.</string>
-    <string name="sound_theme_install_skipped">Пропущено: \n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
-    <string name="sound_theme_installed">Встановлено <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_skipped">Пропущено:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Тему <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> встановлено.</string>
     <string name="sound_theme_installed_in_use">Встановлено <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Зараз використовується.</string>
     <string name="sound_theme_install_nothing">Немає звукової теми для встановлення.</string>
     <string name="sound_theme_install_not_a_theme">Це не звукова тема, яку SandFly може використовувати: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>

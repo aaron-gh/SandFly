@@ -21,11 +21,11 @@
     <string name="sound_theme_control_sounds_on">מפעיל את צלילי השליטה והרעידות.</string>
     <string name="sound_theme_control_sounds_off">מכבה את צלילי השליטה והרעידות.</string>
     <string name="sound_theme_use">השתמש בנושא זה</string>
-    <string name="sound_theme_about">על הנושא הזה</string>
+    <string name="sound_theme_about">על ערכת הנושא הזו</string>
     <string name="sound_theme_export">שמור כקובץ ערכת נושא</string>
-    <string name="sound_theme_remove">הסר</string>
+    <string name="sound_theme_remove">הסרה</string>
     <string name="sound_theme_remove_confirm">להסיר את ערכת הנושא <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
-    <string name="sound_theme_remove_button">הסר</string>
+    <string name="sound_theme_remove_button">הסרה</string>
     <plurals name="sound_theme_exported">
         <item quantity="one">הנושא נשמר עם צליל אחד (<xliff:g id="count" example="1">%d</xliff:g>).</item>
         <item quantity="two">הנושא נשמר עם <xliff:g id="count" example="13">%d</xliff:g> צלילים.</item>
@@ -49,14 +49,14 @@
     <string name="sound_theme_source_remove_message">ערכות נושא של סאונד שהותקנו ממנו יישארו מותקנים.</string>
     <string name="sound_theme_link_message">הזן או הדבק קישור לקובץ ערכת נושא, או למאגר GitHub עם ערכת נושא בתוכו.</string>
     <string name="sound_theme_link_hint">https://</string>
-    <string name="sound_theme_install_label">התקן ערכת נושא קול</string>
+    <string name="sound_theme_install_label">התקנת ערכת נושא של צלילים</string>
     <string name="sound_theme_install_reading">קריאת נושא הסאונד</string>
     <string name="sound_theme_install_title">להתקין את <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
-    <string name="sound_theme_install_and_use">התקן והשתמש</string>
-    <string name="sound_theme_install">התקן</string>
+    <string name="sound_theme_install_and_use">התקנה ושימוש</string>
+    <string name="sound_theme_install">התקנה</string>
     <string name="sound_theme_install_replaces">זה מחליף את ערכת הנושא המותקנת באותו שם.</string>
-    <string name="sound_theme_install_skipped">נותר בחוץ:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
-    <string name="sound_theme_installed">מותקן <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_skipped">לא נכללו:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> הותקנה.</string>
     <string name="sound_theme_installed_in_use">מותקן <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. זה בשימוש עכשיו.</string>
     <string name="sound_theme_install_nothing">אין ערכת נושא קול להתקין.</string>
     <string name="sound_theme_install_not_a_theme">זה לא נושא סאונד SandFly יכול להשתמש ב: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>

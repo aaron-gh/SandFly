@@ -6,7 +6,7 @@
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly-ийн өөрийн дуу чимээ, чичиргээ, өөрийн дуу чимээ.</string>
     <string name="sound_theme_in_use">Ашиглаж байна</string>
-    <string name="sound_theme_by"><xliff:g id="author" example="Bryan Smart">%1$s</xliff:g>-ээр</string>
+    <string name="sound_theme_by">Зохиогч: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">Лиценз: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> дуу.</item>
@@ -46,13 +46,13 @@
     <string name="sound_theme_source_remove_message">Үүнээс суулгасан дууны загварууд суулгасан хэвээр байна.</string>
     <string name="sound_theme_link_message">Сэдвийн файл эсвэл дотор нь сэдэвтэй GitHub репозиторын холбоосыг оруулах буюу буулгана уу.</string>
     <string name="sound_theme_link_hint">https://</string>
-    <string name="sound_theme_install_label">Дууны загварыг суулгана уу</string>
+    <string name="sound_theme_install_label">Дууны загвар суулгах</string>
     <string name="sound_theme_install_reading">Дууны сэдвийг уншиж байна</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> суулгах уу?</string>
     <string name="sound_theme_install_and_use">Суулгах, ашиглах</string>
     <string name="sound_theme_install">Суулгах</string>
     <string name="sound_theme_install_replaces">Энэ нь ижил нэртэй суулгасан сэдвийг орлоно.</string>
-    <string name="sound_theme_install_skipped">Оруулсан: \n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_install_skipped">Орхигдсон:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> суулгасан.</string>
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> суулгасан. Энэ нь одоо ашиглагдаж байна.</string>
     <string name="sound_theme_install_nothing">Суулгах дууны сэдэв алга.</string>
