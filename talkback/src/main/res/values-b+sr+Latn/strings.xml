@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Glasovni profil u upotrebi</string>
     <string name="title_pref_add_voice_profile">Dodaj glasovni profil</string>
     <string name="voice_profile_new_name">Glasovni profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Glasovni profil se već zove <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Glasovni profil sa nazivom <xliff:g id="name" example="Reading">%1$s</xliff:g> već postoji</string>
     <string name="title_pref_voice_profile_name">Naziv</string>
     <string name="title_pref_voice_profile_language">Jezik</string>
     <string name="title_pref_voice_profile_voice">Glas</string>
@@ -1554,7 +1554,7 @@
     <string name="dialog_title_audio_output_device">Izaberite gde se pušta zvuk SandFly-a</string>
     <string name="value_audio_output_device_default">Podrazumevano za sistem</string>
     <string name="value_audio_output_device_speaker">Telefonski zvučnik</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Povezani Bluetooth uređaj ili ožičeni</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Povezani Bluetooth ili žičani uređaj</string>
     <string name="value_audio_output_device_disconnected">isključen</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth audio uređaj</string>
     <string name="value_audio_output_device_wired_headset">Žičane slušalice</string>
@@ -1693,7 +1693,7 @@
     <string name="stuck_touch_exploration_grant_dump">Istraživanje dodirom je možda zaglavljeno. Ponovo pokrenite telefon da biste to popravili ili dajte SandFly dozvolu DUMP sa ADB-om kako bi to mogao da popravi.</string>
     <string name="title_pref_window_names">Imena prozora</string>
     <string name="window_names_always">Uvek</string>
-    <string name="window_names_until_first_item">Uvek, odsečeni po prvoj stavci</string>
+    <string name="window_names_until_first_item">Uvek, prekida ih prva stavka</string>
     <string name="window_names_window_opens">Tek kada se otvori prozor</string>
     <string name="window_names_never">Nikada</string>
     <string name="title_pref_selector_links_controls_web_only">Veze i kontrole samo u veb sadržaju</string>

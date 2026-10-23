@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Kullanılan ses profili</string>
     <string name="title_pref_add_voice_profile">Ses profili ekle</string>
     <string name="voice_profile_new_name">Ses profili <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Bir ses profili zaten çağrıldı <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> adlı bir ses profili zaten var</string>
     <string name="title_pref_voice_profile_name">Ad</string>
     <string name="title_pref_voice_profile_language">Dil</string>
     <string name="title_pref_voice_profile_voice">Ses</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">SandFly sesinin nerede çalınacağını seçin</string>
     <string name="value_audio_output_device_default">Sistem varsayılanı</string>
     <string name="value_audio_output_device_speaker">Telefon hoparlörü</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Bağlı Bluetooth cihaz veya kablolu</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Bağlı Bluetooth veya kablolu cihaz</string>
     <string name="value_audio_output_device_disconnected">bağlantısı kesildi</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth ses cihazı</string>
     <string name="value_audio_output_device_wired_headset">Kablolu kulaklık</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">Dokunarak keşfetme işlemi sıkışmış olabilir. Sorunu düzeltmek için telefonu yeniden başlatın veya düzeltebilmesi için SandFly\'ye ADB ile DUMP iznini verin.</string>
     <string name="title_pref_window_names">Pencere adları</string>
     <string name="window_names_always">Her zaman</string>
-    <string name="window_names_until_first_item">Her zaman ilk öğeden kes</string>
+    <string name="window_names_until_first_item">Her zaman, ilk öğede kesilir</string>
     <string name="window_names_window_opens">Yalnızca bir pencere açıldığında</string>
     <string name="window_names_never">Asla</string>
     <string name="title_pref_selector_links_controls_web_only">Bağlantılar ve Kontroller yalnızca web içeriğinde</string>

@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">ഉപയോഗത്തിലുള്ള വോയ്‌സ് പ്രൊഫൈൽ</string>
     <string name="title_pref_add_voice_profile">വോയ്‌സ് പ്രൊഫൈൽ ചേർക്കുക</string>
     <string name="voice_profile_new_name">വോയിസ് പ്രൊഫൈൽ <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">ഒരു വോയ്‌സ് പ്രൊഫൈലിനെ ഇതിനകം <xliff:g id="name" example="Reading">%1$s</xliff:g> എന്ന് വിളിക്കുന്നു</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> എന്ന പേരിൽ ഒരു വോയ്‌സ് പ്രൊഫൈൽ ഇതിനകം ഉണ്ട്</string>
     <string name="title_pref_voice_profile_name">പേര്</string>
     <string name="title_pref_voice_profile_language">ഭാഷ</string>
     <string name="title_pref_voice_profile_voice">ശബ്ദം</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">SandFly ശബ്ദം എവിടെ പ്ലേ ചെയ്യണമെന്ന് തിരഞ്ഞെടുക്കുക</string>
     <string name="value_audio_output_device_default">സിസ്റ്റം ഡിഫോൾട്ട്</string>
     <string name="value_audio_output_device_speaker">ഫോൺ സ്പീക്കർ</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Bluetooth ഉപകരണം കണക്‌റ്റ് ചെയ്‌തു അല്ലെങ്കിൽ വയർ ചെയ്‌തിരിക്കുന്നു</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">കണക്റ്റ് ചെയ്ത Bluetooth അല്ലെങ്കിൽ വയർഡ് ഉപകരണം</string>
     <string name="value_audio_output_device_disconnected">വിച്ഛേദിച്ചു</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth ഓഡിയോ ഉപകരണം</string>
     <string name="value_audio_output_device_wired_headset">വയർഡ് ഹെഡ്സെറ്റ്</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">ടച്ച് പര്യവേക്ഷണം തടസ്സപ്പെട്ടേക്കാം. അത് പരിഹരിക്കാൻ ഫോൺ റീസ്‌റ്റാർട്ട് ചെയ്യുക, അല്ലെങ്കിൽ എഡിബിക്ക് SandFly DUMP അനുമതി നൽകുക, അതുവഴി അത് പരിഹരിക്കാനാകും.</string>
     <string name="title_pref_window_names">വിൻഡോ പേരുകൾ</string>
     <string name="window_names_always">എപ്പോഴും</string>
-    <string name="window_names_until_first_item">എല്ലായ്പ്പോഴും, ആദ്യ ഇനം മുറിക്കുക</string>
+    <string name="window_names_until_first_item">എല്ലായ്‌പ്പോഴും, ആദ്യ ഇനത്തിൽ നിർത്തുന്നു</string>
     <string name="window_names_window_opens">ഒരു വിൻഡോ തുറക്കുമ്പോൾ മാത്രം</string>
     <string name="window_names_never">ഒരിക്കലുമില്ല</string>
     <string name="title_pref_selector_links_controls_web_only">വെബ് ഉള്ളടക്കത്തിൽ മാത്രം ലിങ്കുകളും നിയന്ത്രണങ്ങളും</string>

@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Profil suara yang digunakan</string>
     <string name="title_pref_add_voice_profile">Tambahkan profil suara</string>
     <string name="voice_profile_new_name">Profil suara <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Profil suara sudah dipanggil <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Sudah ada profil suara bernama <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Nama</string>
     <string name="title_pref_voice_profile_language">Bahasa</string>
     <string name="title_pref_voice_profile_voice">Suara</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">Pilih tempat untuk memainkan bunyi SandFly</string>
     <string name="value_audio_output_device_default">Lalai sistem</string>
     <string name="value_audio_output_device_speaker">Pembesar suara telefon</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Disambungkan Bluetooth peranti atau berwayar</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Peranti Bluetooth atau berwayar yang disambungkan</string>
     <string name="value_audio_output_device_disconnected">terputus</string>
     <string name="value_audio_output_device_bluetooth_default">Peranti audio Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Alat dengar berwayar</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">Penerokaan sentuhan mungkin tersekat. Mulakan semula telefon untuk membaikinya, atau berikan SandFly kebenaran DUMP dengan ADB supaya ia boleh membetulkannya.</string>
     <string name="title_pref_window_names">Nama tetingkap</string>
     <string name="window_names_always">Sentiasa</string>
-    <string name="window_names_until_first_item">Sentiasa, potong dengan item pertama</string>
+    <string name="window_names_until_first_item">Sentiasa, dihentikan oleh item pertama</string>
     <string name="window_names_window_opens">Hanya apabila tingkap dibuka</string>
     <string name="window_names_never">Tidak pernah</string>
     <string name="title_pref_selector_links_controls_web_only">Pautan dan Kawalan hanya dalam kandungan web</string>

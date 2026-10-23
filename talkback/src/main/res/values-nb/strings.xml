@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Stemmeprofil i bruk</string>
     <string name="title_pref_add_voice_profile">Legg til taleprofil</string>
     <string name="voice_profile_new_name">Stemmeprofil <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">En taleprofil kalles allerede <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Det finnes allerede en stemmeprofil som heter <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Navn</string>
     <string name="title_pref_voice_profile_language">Språk</string>
     <string name="title_pref_voice_profile_voice">Stemme</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">Velg hvor SandFly-lyd skal spilles av</string>
     <string name="value_audio_output_device_default">Systemstandard</string>
     <string name="value_audio_output_device_speaker">Telefonhøyttaler</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Tilkoblet Bluetooth enhet eller kablet</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Tilkoblet Bluetooth- eller kablet enhet</string>
     <string name="value_audio_output_device_disconnected">koblet fra</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth-lydenhet</string>
     <string name="value_audio_output_device_wired_headset">Kablet headset</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">Berøringsutforskning kan sitte fast. Start telefonen på nytt for å fikse det, eller gi SandFly tillatelsen DUMP med ADB slik at den kan fikse det.</string>
     <string name="title_pref_window_names">Vindusnavn</string>
     <string name="window_names_always">Alltid</string>
-    <string name="window_names_until_first_item">Alltid, avskåret av det første elementet</string>
+    <string name="window_names_until_first_item">Alltid, avbrutt av det første elementet</string>
     <string name="window_names_window_opens">Bare når et vindu åpnes</string>
     <string name="window_names_never">Aldri</string>
     <string name="title_pref_selector_links_controls_web_only">Lenker og kontroller kun i nettinnhold</string>

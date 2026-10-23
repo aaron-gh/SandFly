@@ -1319,7 +1319,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="title_pref_voice_profile_in_use">वापरात असलेली व्हॉइस प्रोफाइल</string>
     <string name="title_pref_add_voice_profile">व्हॉइस प्रोफाइल जोडा</string>
     <string name="voice_profile_new_name">व्हॉइस प्रोफाइल <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">व्हॉइस प्रोफाइलला आधीच <xliff:g id="name" example="Reading">%1$s</xliff:g> म्हणतात</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> नावाची व्हॉइस प्रोफाइल आधीपासून आहे</string>
     <string name="title_pref_voice_profile_name">नाव</string>
     <string name="title_pref_voice_profile_language">भाषा</string>
     <string name="title_pref_voice_profile_voice">आवाज</string>
@@ -1553,7 +1553,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="dialog_title_audio_output_device">SandFly आवाज कुठे प्ले करायचा ते निवडा</string>
     <string name="value_audio_output_device_default">सिस्टम डीफॉल्ट</string>
     <string name="value_audio_output_device_speaker">फोन स्पीकर</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">कनेक्ट केलेले Bluetooth डिव्हाइस किंवा वायर्ड</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">कनेक्ट केलेले Bluetooth किंवा वायर्ड डिव्हाइस</string>
     <string name="value_audio_output_device_disconnected">डिस्कनेक्ट</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth ऑडिओ डिव्हाइस</string>
     <string name="value_audio_output_device_wired_headset">वायर्ड हेडसेट</string>
@@ -1692,7 +1692,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="stuck_touch_exploration_grant_dump">स्पर्श अन्वेषण अडकले असेल. त्याचे निराकरण करण्यासाठी फोन रीस्टार्ट करा किंवा ADB ला SandFly DUMP परवानगी द्या जेणेकरून ते त्याचे निराकरण करू शकेल.</string>
     <string name="title_pref_window_names">विंडो नावे</string>
     <string name="window_names_always">नेहमी</string>
-    <string name="window_names_until_first_item">नेहमी, पहिल्या आयटमद्वारे कापून टाका</string>
+    <string name="window_names_until_first_item">नेहमी, पहिला आयटम आल्यावर थांबते</string>
     <string name="window_names_window_opens">खिडकी उघडल्यावरच</string>
     <string name="window_names_never">कधीच नाही</string>
     <string name="title_pref_selector_links_controls_web_only">फक्त वेब सामग्रीमध्ये दुवे आणि नियंत्रणे</string>

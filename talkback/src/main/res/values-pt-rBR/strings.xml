@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Perfil de voz em uso</string>
     <string name="title_pref_add_voice_profile">Adicionar perfil de voz</string>
     <string name="voice_profile_new_name">Perfil de voz <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Um perfil de voz já foi chamado <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Já existe um perfil de voz chamado <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Nome</string>
     <string name="title_pref_voice_profile_language">Idioma</string>
     <string name="title_pref_voice_profile_voice">Voz</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">Escolha onde reproduzir o som do SandFly</string>
     <string name="value_audio_output_device_default">Padrão do sistema</string>
     <string name="value_audio_output_device_speaker">Alto-falante do telefone</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Dispositivo Bluetooth conectado ou com fio</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Dispositivo Bluetooth ou com fio conectado</string>
     <string name="value_audio_output_device_disconnected">desconectado</string>
     <string name="value_audio_output_device_bluetooth_default">Dispositivo de áudio Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Fone de ouvido com fio</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">A exploração por toque pode travar. Reinicie o telefone para consertar ou conceda SandFly a permissão DUMP ao ADB para que ele possa consertar.</string>
     <string name="title_pref_window_names">Nomes de janelas</string>
     <string name="window_names_always">Sempre</string>
-    <string name="window_names_until_first_item">Sempre, cortado pelo primeiro item</string>
+    <string name="window_names_until_first_item">Sempre, interrompido pelo primeiro item</string>
     <string name="window_names_window_opens">Somente quando uma janela abre</string>
     <string name="window_names_never">Nunca</string>
     <string name="title_pref_selector_links_controls_web_only">Links e controles apenas em conteúdo da web</string>

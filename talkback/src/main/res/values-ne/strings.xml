@@ -1317,7 +1317,7 @@
     <string name="title_pref_voice_profile_in_use">प्रयोगमा रहेको भ्वाइस प्रोफाइल</string>
     <string name="title_pref_add_voice_profile">आवाज प्रोफाइल थप्नुहोस्</string>
     <string name="voice_profile_new_name">भ्वाइस प्रोफाइल <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">आवाज प्रोफाइल पहिले नै <xliff:g id="name" example="Reading">%1$s</xliff:g> भनिन्छ</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> नामको भ्वाइस प्रोफाइल पहिल्यै छ</string>
     <string name="title_pref_voice_profile_name">नाम</string>
     <string name="title_pref_voice_profile_language">भाषा</string>
     <string name="title_pref_voice_profile_voice">आवाज</string>
@@ -1551,7 +1551,7 @@
     <string name="dialog_title_audio_output_device">SandFly ध्वनि बजाउने ठाउँ छनौट गर्नुहोस्</string>
     <string name="value_audio_output_device_default">प्रणाली पूर्वनिर्धारित</string>
     <string name="value_audio_output_device_speaker">फोन स्पिकर</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">जडान गरिएको Bluetooth उपकरण वा तार</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">जडान गरिएको Bluetooth वा तारयुक्त यन्त्र</string>
     <string name="value_audio_output_device_disconnected">विच्छेद भएको</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth अडियो उपकरण</string>
     <string name="value_audio_output_device_wired_headset">तार भएको हेडसेट</string>
@@ -1690,7 +1690,7 @@
     <string name="stuck_touch_exploration_grant_dump">टच अन्वेषण अड्किएको हुन सक्छ। यसलाई ठीक गर्न फोन रिस्टार्ट गर्नुहोस्, वा ADB लाई SandFly DUMP अनुमति दिनुहोस् ताकि यसले यसलाई ठीक गर्न सक्छ।</string>
     <string name="title_pref_window_names">विन्डो नामहरू</string>
     <string name="window_names_always">सधैं</string>
-    <string name="window_names_until_first_item">सधैं, पहिलो वस्तु द्वारा काट्नुहोस्</string>
+    <string name="window_names_until_first_item">सधैं, पहिलो वस्तुमा रोकिन्छ</string>
     <string name="window_names_window_opens">सञ्झ्याल खुल्दा मात्र</string>
     <string name="window_names_never">कहिल्यै होइन</string>
     <string name="title_pref_selector_links_controls_web_only">वेब सामग्रीमा मात्र लिङ्क र नियन्त्रणहरू</string>

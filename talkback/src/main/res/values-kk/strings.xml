@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Қолданылатын дауыс профилі</string>
     <string name="title_pref_add_voice_profile">Дауыс профилін қосу</string>
     <string name="voice_profile_new_name">Дауыс профилі <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Дауыс профилі әлдеқашан <xliff:g id="name" example="Reading">%1$s</xliff:g> деп аталады</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> атты дауыс профилі бар</string>
     <string name="title_pref_voice_profile_name">Аты</string>
     <string name="title_pref_voice_profile_language">Тіл</string>
     <string name="title_pref_voice_profile_voice">Дауыс</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">SandFly дыбысын ойнату орнын таңдаңыз</string>
     <string name="value_audio_output_device_default">Жүйенің әдепкі мәні</string>
     <string name="value_audio_output_device_speaker">Телефон динамигі</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Қосылған Bluetooth құрылғы немесе сымды</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Қосылған Bluetooth немесе сымды құрылғы</string>
     <string name="value_audio_output_device_disconnected">ажыратылған</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth аудио құрылғысы</string>
     <string name="value_audio_output_device_wired_headset">Сымды құлаққап</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">Түрту барлауы тоқтап қалуы мүмкін. Түзету үшін телефонды қайта іске қосыңыз немесе SandFly DUMP рұқсатын АДБ оны түзете алатындай етіп беріңіз.</string>
     <string name="title_pref_window_names">Терезе атаулары</string>
     <string name="window_names_always">Әрқашан</string>
-    <string name="window_names_until_first_item">Әрқашан бірінші элемент бойынша кесіңіз</string>
+    <string name="window_names_until_first_item">Әрқашан, бірінші элемент үзеді</string>
     <string name="window_names_window_opens">Тек терезе ашылғанда</string>
     <string name="window_names_never">Ешқашан</string>
     <string name="title_pref_selector_links_controls_web_only">Сілтемелер мен басқару элементтері тек веб-мазмұнда</string>

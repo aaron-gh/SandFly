@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Profili zanor në përdorim</string>
     <string name="title_pref_add_voice_profile">Shto profilin e zërit</string>
     <string name="voice_profile_new_name">Profili zanor <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Një profil zanor quhet tashmë <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Ekziston tashmë një profil zanor me emrin <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Emri</string>
     <string name="title_pref_voice_profile_language">Gjuha</string>
     <string name="title_pref_voice_profile_voice">Zëri</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">Zgjidh se ku të luhet tingulli SandFly</string>
     <string name="value_audio_output_device_default">Parazgjedhja e sistemit</string>
     <string name="value_audio_output_device_speaker">Altoparlanti i telefonit</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Pajisja Bluetooth e lidhur ose me kabllo</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Pajisje Bluetooth ose me kabllo e lidhur</string>
     <string name="value_audio_output_device_disconnected">shkëputur</string>
     <string name="value_audio_output_device_bluetooth_default">Pajisje audio Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Kufje me tela</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">Eksplorimi me prekje mund të jetë i bllokuar. Rinisni telefonin për ta rregulluar ose jepni SandFly lejen DUMP me ADB në mënyrë që të mund ta rregullojë.</string>
     <string name="title_pref_window_names">Emrat e dritareve</string>
     <string name="window_names_always">Gjithmonë</string>
-    <string name="window_names_until_first_item">Gjithmonë, të prerë nga artikulli i parë</string>
+    <string name="window_names_until_first_item">Gjithmonë, ndërpritet nga artikulli i parë</string>
     <string name="window_names_window_opens">Vetëm kur hapet një dritare</string>
     <string name="window_names_never">Kurrë</string>
     <string name="title_pref_selector_links_controls_web_only">Lidhjet dhe kontrollet vetëm në përmbajtjen e internetit</string>

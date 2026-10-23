@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">ໂປຣໄຟລ໌ສຽງທີ່ໃຊ້ຢູ່</string>
     <string name="title_pref_add_voice_profile">ເພີ່ມໂປຣໄຟລ໌ສຽງ</string>
     <string name="voice_profile_new_name">ໂປຣໄຟລ໌ສຽງ <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">ໂປຣໄຟລ໌ສຽງຖືກເອີ້ນແລ້ວ <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">ມີໂປຣໄຟລ໌ສຽງຊື່ <xliff:g id="name" example="Reading">%1$s</xliff:g> ແລ້ວ</string>
     <string name="title_pref_voice_profile_name">ຊື່</string>
     <string name="title_pref_voice_profile_language">ພາສາ</string>
     <string name="title_pref_voice_profile_voice">ສຽງ</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">ເລືອກບ່ອນທີ່ຈະຫຼິ້ນສຽງ SandFly</string>
     <string name="value_audio_output_device_default">ຄ່າເລີ່ມຕົ້ນຂອງລະບົບ</string>
     <string name="value_audio_output_device_speaker">ລຳໂພງໂທລະສັບ</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">ເຊື່ອມຕໍ່ Bluetooth ອຸປະກອນ ຫຼື ມີສາຍ</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">ອຸປະກອນ Bluetooth ຫຼື ແບບມີສາຍທີ່ເຊື່ອມຕໍ່ແລ້ວ</string>
     <string name="value_audio_output_device_disconnected">ຕັດການເຊື່ອມຕໍ່</string>
     <string name="value_audio_output_device_bluetooth_default">ອຸປະກອນສຽງ Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">ຊຸດຫູຟັງແບບມີສາຍ</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">ການສໍາຫຼວດສໍາຜັດອາດຈະຕິດຢູ່. ຣີສະຕາດໂທລະສັບເພື່ອແກ້ໄຂ, ຫຼືໃຫ້ SandFly DUMP ອະນຸຍາດກັບ ADB ເພື່ອໃຫ້ມັນສາມາດແກ້ໄຂໄດ້.</string>
     <string name="title_pref_window_names">ຊື່ປ່ອງຢ້ຽມ</string>
     <string name="window_names_always">ສະເໝີ</string>
-    <string name="window_names_until_first_item">ສະເຫມີ, ຕັດອອກໂດຍລາຍການທໍາອິດ</string>
+    <string name="window_names_until_first_item">ສະເໝີ, ຢຸດເມື່ອຮອດລາຍການທຳອິດ</string>
     <string name="window_names_window_opens">ພຽງແຕ່ເມື່ອປ່ອງຢ້ຽມເປີດ</string>
     <string name="window_names_never">ບໍ່ເຄີຍ</string>
     <string name="title_pref_selector_links_controls_web_only">ລິ້ງ ແລະ ຕົວຄວບຄຸມສະເພາະໃນເນື້ອຫາເວັບ</string>

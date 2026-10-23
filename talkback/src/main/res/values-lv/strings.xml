@@ -1317,7 +1317,7 @@
     <string name="title_pref_voice_profile_in_use">Izmantotais balss profils</string>
     <string name="title_pref_add_voice_profile">Pievienot balss profilu</string>
     <string name="voice_profile_new_name">Balss profils <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Balss profils jau tiek saukts <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Balss profils ar nosaukumu <xliff:g id="name" example="Reading">%1$s</xliff:g> jau pastāv</string>
     <string name="title_pref_voice_profile_name">Nosaukums</string>
     <string name="title_pref_voice_profile_language">Valoda</string>
     <string name="title_pref_voice_profile_voice">Balss</string>
@@ -1555,7 +1555,7 @@
     <string name="dialog_title_audio_output_device">Izvēlieties, kur atskaņot SandFly skaņu</string>
     <string name="value_audio_output_device_default">Sistēmas noklusējums</string>
     <string name="value_audio_output_device_speaker">Tālruņa skaļrunis</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Pievienota Bluetooth ierīce vai vadu</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Pievienota Bluetooth vai vadu ierīce</string>
     <string name="value_audio_output_device_disconnected">atvienots</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth audio ierīce</string>
     <string name="value_audio_output_device_wired_headset">Vadu austiņas</string>
@@ -1694,7 +1694,7 @@
     <string name="stuck_touch_exploration_grant_dump">Izpēte ar pieskārienu var būt iestrēgusi. Restartējiet tālruni, lai to labotu, vai piešķiriet SandFly atļauju DUMP ar ADB, lai tas varētu to labot.</string>
     <string name="title_pref_window_names">Logu nosaukumi</string>
     <string name="window_names_always">Vienmēr</string>
-    <string name="window_names_until_first_item">Vienmēr, nogriezts ar pirmo vienumu</string>
+    <string name="window_names_until_first_item">Vienmēr, pārtrauc pirmais vienums</string>
     <string name="window_names_window_opens">Tikai tad, kad atveras logs</string>
     <string name="window_names_never">Nekad</string>
     <string name="title_pref_selector_links_controls_web_only">Saites un vadīklas tikai tīmekļa saturā</string>

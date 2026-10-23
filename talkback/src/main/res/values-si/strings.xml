@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">භාවිතයේ ඇති හඬ පැතිකඩ</string>
     <string name="title_pref_add_voice_profile">හඬ පැතිකඩ එක් කරන්න</string>
     <string name="voice_profile_new_name">හඬ පැතිකඩ <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">හඬ පැතිකඩක් දැනටමත් <xliff:g id="name" example="Reading">%1$s</xliff:g> ලෙස හැඳින්වේ</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> නමින් හඬ පැතිකඩක් දැනටමත් ඇත</string>
     <string name="title_pref_voice_profile_name">නම</string>
     <string name="title_pref_voice_profile_language">භාෂාව</string>
     <string name="title_pref_voice_profile_voice">හඬ</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">SandFly ශබ්දය වාදනය කළ යුතු ස්ථානය තෝරන්න</string>
     <string name="value_audio_output_device_default">පද්ධති පෙරනිමිය</string>
     <string name="value_audio_output_device_speaker">දුරකථන ස්පීකරය</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">සම්බන්ධිත Bluetooth උපාංගය හෝ රැහැන්ගත</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">සම්බන්ධිත Bluetooth හෝ රැහැන්ගත උපාංගය</string>
     <string name="value_audio_output_device_disconnected">විසන්ධි කර ඇත</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth ශ්‍රව්‍ය උපාංගය</string>
     <string name="value_audio_output_device_wired_headset">රැහැන්ගත හෙඩ්සෙට්</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">ස්පර්ශ ගවේෂණය ඇණහිටිය හැක. එය නිවැරදි කිරීමට දුරකථනය නැවත අරඹන්න, නැතහොත් එය නිවැරදි කිරීමට හැකි වන පරිදි SandFly ADB සමඟ DUMP අවසරය ලබා දෙන්න.</string>
     <string name="title_pref_window_names">කවුළු නම්</string>
     <string name="window_names_always">සෑම විටම</string>
-    <string name="window_names_until_first_item">සෑම විටම, පළමු අයිතමයෙන් කපා දමන්න</string>
+    <string name="window_names_until_first_item">සැමවිටම, පළමු අයිතමයෙන් නවතී</string>
     <string name="window_names_window_opens">කවුළුවක් විවෘත වන විට පමණි</string>
     <string name="window_names_never">කිසි විටෙක නැත</string>
     <string name="title_pref_selector_links_controls_web_only">සබැඳි සහ පාලන වෙබ් අන්තර්ගතය තුළ පමණි</string>

@@ -1317,7 +1317,7 @@
     <string name="title_pref_voice_profile_in_use">ಬಳಕೆಯಲ್ಲಿರುವ ಧ್ವನಿ ಪ್ರೊಫೈಲ್</string>
     <string name="title_pref_add_voice_profile">ಧ್ವನಿ ಪ್ರೊಫೈಲ್ ಸೇರಿಸಿ</string>
     <string name="voice_profile_new_name">ಧ್ವನಿ ಪ್ರೊಫೈಲ್ <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">ಧ್ವನಿ ಪ್ರೊಫೈಲ್ ಅನ್ನು ಈಗಾಗಲೇ <xliff:g id="name" example="Reading">%1$s</xliff:g> ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> ಹೆಸರಿನ ಧ್ವನಿ ಪ್ರೊಫೈಲ್ ಈಗಾಗಲೇ ಇದೆ</string>
     <string name="title_pref_voice_profile_name">ಹೆಸರು</string>
     <string name="title_pref_voice_profile_language">ಭಾಷೆ</string>
     <string name="title_pref_voice_profile_voice">ಧ್ವನಿ</string>
@@ -1551,7 +1551,7 @@
     <string name="dialog_title_audio_output_device">SandFly ಧ್ವನಿಯನ್ನು ಎಲ್ಲಿ ಪ್ಲೇ ಮಾಡಬೇಕೆಂದು ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="value_audio_output_device_default">ಸಿಸ್ಟಮ್ ಡೀಫಾಲ್ಟ್</string>
     <string name="value_audio_output_device_speaker">ಫೋನ್ ಸ್ಪೀಕರ್</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Bluetooth ಸಾಧನವನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಿದೆ ಅಥವಾ ವೈರ್ ಮಾಡಲಾಗಿದೆ</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">ಸಂಪರ್ಕಿತ Bluetooth ಅಥವಾ ವೈರ್ಡ್ ಸಾಧನ</string>
     <string name="value_audio_output_device_disconnected">ಸಂಪರ್ಕ ಕಡಿತಗೊಂಡಿದೆ</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth ಆಡಿಯೋ ಸಾಧನ</string>
     <string name="value_audio_output_device_wired_headset">ವೈರ್ಡ್ ಹೆಡ್ಸೆಟ್</string>
@@ -1690,7 +1690,7 @@
     <string name="stuck_touch_exploration_grant_dump">ಸ್ಪರ್ಶ ಪರಿಶೋಧನೆಯು ಅಂಟಿಕೊಂಡಿರಬಹುದು. ಅದನ್ನು ಸರಿಪಡಿಸಲು ಫೋನ್ ಅನ್ನು ಮರುಪ್ರಾರಂಭಿಸಿ ಅಥವಾ ಅದನ್ನು ಸರಿಪಡಿಸಲು ADB ಯೊಂದಿಗೆ SandFly DUMP ಅನುಮತಿಯನ್ನು ನೀಡಿ.</string>
     <string name="title_pref_window_names">ವಿಂಡೋ ಹೆಸರುಗಳು</string>
     <string name="window_names_always">ಯಾವಾಗಲೂ</string>
-    <string name="window_names_until_first_item">ಯಾವಾಗಲೂ, ಮೊದಲ ಐಟಂನಿಂದ ಕತ್ತರಿಸಿ</string>
+    <string name="window_names_until_first_item">ಯಾವಾಗಲೂ, ಮೊದಲ ಐಟಂ ಬಂದಾಗ ನಿಲ್ಲುತ್ತದೆ</string>
     <string name="window_names_window_opens">ವಿಂಡೋ ತೆರೆದಾಗ ಮಾತ್ರ</string>
     <string name="window_names_never">ಎಂದಿಗೂ ಇಲ್ಲ</string>
     <string name="title_pref_selector_links_controls_web_only">ವೆಬ್ ವಿಷಯದಲ್ಲಿ ಮಾತ್ರ ಲಿಂಕ್‌ಗಳು ಮತ್ತು ನಿಯಂತ್ರಣಗಳು</string>

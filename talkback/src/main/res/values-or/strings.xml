@@ -1315,7 +1315,7 @@
     <string name="title_pref_voice_profile_in_use">ବ୍ୟବହାରରେ ଭଏସ୍ ପ୍ରୋଫାଇଲ୍</string>
     <string name="title_pref_add_voice_profile">ଭଏସ୍ ପ୍ରୋଫାଇଲ୍ ଯୋଡନ୍ତୁ</string>
     <string name="voice_profile_new_name">ଭଏସ୍ ପ୍ରୋଫାଇଲ୍ <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">ଏକ ଭଏସ୍ ପ୍ରୋଫାଇଲ୍ ପୂର୍ବରୁ <xliff:g id="name" example="Reading">%1$s</xliff:g> କୁହାଯାଏ</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> ନାମରେ ଏକ ଭଏସ୍ ପ୍ରୋଫାଇଲ୍ ପୂର୍ବରୁ ଅଛି</string>
     <string name="title_pref_voice_profile_name">ନାମ</string>
     <string name="title_pref_voice_profile_language">ଭାଷା</string>
     <string name="title_pref_voice_profile_voice">ସ୍ୱର</string>
@@ -1549,7 +1549,7 @@
     <string name="dialog_title_audio_output_device">SandFly ଧ୍ୱନି କେଉଁଠି ଚଲାଇବେ ବାଛନ୍ତୁ</string>
     <string name="value_audio_output_device_default">ସିଷ୍ଟମ୍ ଡିଫଲ୍ଟ</string>
     <string name="value_audio_output_device_speaker">ଫୋନ୍ ସ୍ପିକର</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">ସଂଯୁକ୍ତ Bluetooth ଉପକରଣ କିମ୍ବା ତାରଯୁକ୍ତ</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">ସଂଯୁକ୍ତ Bluetooth କିମ୍ବା ତାରଯୁକ୍ତ ଉପକରଣ</string>
     <string name="value_audio_output_device_disconnected">ସଂଯୋଗ ବିଚ୍ଛିନ୍ନ ହୋଇଛି</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth ଅଡିଓ ଉପକରଣ</string>
     <string name="value_audio_output_device_wired_headset">ତାରଯୁକ୍ତ ହେଡସେଟ୍</string>
@@ -1688,7 +1688,7 @@
     <string name="stuck_touch_exploration_grant_dump">ସ୍ପର୍ଶ ଅନୁସନ୍ଧାନ ଅଟକି ଯାଇପାରେ | ଏହାକୁ ଠିକ କରିବା ପାଇଁ ଫୋନକୁ ପୁନ Rest ଆରମ୍ଭ କରନ୍ତୁ, କିମ୍ବା SandFly କୁ ADB ସହିତ DUMP ଅନୁମତି ଦିଅନ୍ତୁ ଯାହା ଦ୍ it ାରା ଏହା ଠିକ ହୋଇପାରିବ |</string>
     <string name="title_pref_window_names">ୱିଣ୍ଡୋ ନାମଗୁଡିକ</string>
     <string name="window_names_always">ସର୍ବଦା</string>
-    <string name="window_names_until_first_item">ସର୍ବଦା, ପ୍ରଥମ ଆଇଟମ୍ ଦ୍ୱାରା କାଟିଦିଅ</string>
+    <string name="window_names_until_first_item">ସର୍ବଦା, ପ୍ରଥମ ଆଇଟମ୍‌ରେ ବନ୍ଦ ହୁଏ</string>
     <string name="window_names_window_opens">ଯେତେବେଳେ ଏକ ୱିଣ୍ଡୋ ଖୋଲିବ</string>
     <string name="window_names_never">କଦାପି ନୁହେଁ</string>
     <string name="title_pref_selector_links_controls_web_only">କେବଳ ୱେବ୍ ବିଷୟବସ୍ତୁରେ ଲିଙ୍କ୍ ଏବଂ ନିୟନ୍ତ୍ରଣ</string>

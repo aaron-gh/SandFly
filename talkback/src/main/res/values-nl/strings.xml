@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Stemprofiel in gebruik</string>
     <string name="title_pref_add_voice_profile">Stemprofiel toevoegen</string>
     <string name="voice_profile_new_name">Stemprofiel <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Een stemprofiel heet al <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Er is al een stemprofiel met de naam <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Naam</string>
     <string name="title_pref_voice_profile_language">Taal</string>
     <string name="title_pref_voice_profile_voice">Stem</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">Kies waar SandFly-geluid wordt afgespeeld</string>
     <string name="value_audio_output_device_default">Systeemstandaard</string>
     <string name="value_audio_output_device_speaker">Telefoonluidspreker</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Verbonden Bluetooth apparaat of bedraad</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Verbonden Bluetooth- of bekabeld apparaat</string>
     <string name="value_audio_output_device_disconnected">losgekoppeld</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth-audioapparaat</string>
     <string name="value_audio_output_device_wired_headset">Bedrade hoofdtelefoon</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">Aanraakverkenning loopt mogelijk vast. Start de telefoon opnieuw op om het probleem te repareren, of verleen SandFly de DUMP toestemming bij ADB zodat het probleem kan worden opgelost.</string>
     <string name="title_pref_window_names">Vensternamen</string>
     <string name="window_names_always">Altijd</string>
-    <string name="window_names_until_first_item">Snijd altijd af bij het eerste item</string>
+    <string name="window_names_until_first_item">Altijd, onderbroken door het eerste item</string>
     <string name="window_names_window_opens">Alleen als er een raam opengaat</string>
     <string name="window_names_never">Nooit</string>
     <string name="title_pref_selector_links_controls_web_only">Links en bedieningselementen alleen in webinhoud</string>

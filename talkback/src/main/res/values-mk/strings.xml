@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Гласовен профил во употреба</string>
     <string name="title_pref_add_voice_profile">Додај гласовен профил</string>
     <string name="voice_profile_new_name">Гласовен профил <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Гласовниот профил веќе се нарекува <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Веќе постои гласовен профил со име <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Назив</string>
     <string name="title_pref_voice_profile_language">Јазик</string>
     <string name="title_pref_voice_profile_voice">Глас</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">Изберете каде да се пушта звукот на SandFly</string>
     <string name="value_audio_output_device_default">Стандардно на системот</string>
     <string name="value_audio_output_device_speaker">Телефонски звучник</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Поврзан Bluetooth уред или жичен</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Поврзан Bluetooth или жичен уред</string>
     <string name="value_audio_output_device_disconnected">исклучен</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth аудио уред</string>
     <string name="value_audio_output_device_wired_headset">Жичени слушалки</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">Истражувањето со допир може да е заглавено. Рестартирајте го телефонот за да го поправите или дајте SandFly дозвола DUMP со ADB за да може да го поправи.</string>
     <string name="title_pref_window_names">Имиња на прозорци</string>
     <string name="window_names_always">Секогаш</string>
-    <string name="window_names_until_first_item">Секогаш, отсечени од првата ставка</string>
+    <string name="window_names_until_first_item">Секогаш, прекинато од првата ставка</string>
     <string name="window_names_window_opens">Само кога ќе се отвори прозорец</string>
     <string name="window_names_never">Никогаш</string>
     <string name="title_pref_selector_links_controls_web_only">Врски и контроли само во веб-содржини</string>

@@ -1313,7 +1313,7 @@
     <string name="title_pref_voice_profile_in_use">使用中の音声プロファイル</string>
     <string name="title_pref_add_voice_profile">音声プロファイルを追加</string>
     <string name="voice_profile_new_name">音声プロファイル <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">音声プロファイルはすでに <xliff:g id="name" example="Reading">%1$s</xliff:g> と呼ばれています</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> という名前の音声プロファイルはすでにあります</string>
     <string name="title_pref_voice_profile_name">名前</string>
     <string name="title_pref_voice_profile_language">言語</string>
     <string name="title_pref_voice_profile_voice">音声</string>
@@ -1547,7 +1547,7 @@
     <string name="dialog_title_audio_output_device">SandFly のサウンドを再生する場所を選択</string>
     <string name="value_audio_output_device_default">システムのデフォルト</string>
     <string name="value_audio_output_device_speaker">スマートフォンのスピーカー</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">接続されたBluetoothデバイスまたは有線</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">接続済みの Bluetooth または有線デバイス</string>
     <string name="value_audio_output_device_disconnected">切断済み</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth オーディオデバイス</string>
     <string name="value_audio_output_device_wired_headset">有線ヘッドセット</string>
@@ -1686,7 +1686,7 @@
     <string name="stuck_touch_exploration_grant_dump">タッチ探索がスタックする可能性があります。電話機を再起動して問題を修正するか、修正できるように ADB で SandFly に DUMP 権限を付与します。</string>
     <string name="title_pref_window_names">ウィンドウ名</string>
     <string name="window_names_always">常に</string>
-    <string name="window_names_until_first_item">常に最初の項目で切り取る</string>
+    <string name="window_names_until_first_item">常に（最初の項目で中断）</string>
     <string name="window_names_window_opens">窓が開いているときのみ</string>
     <string name="window_names_never">なし</string>
     <string name="title_pref_selector_links_controls_web_only">リンクとコントロールはウェブ コンテンツのみ</string>

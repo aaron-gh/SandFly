@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">កម្រងព័ត៌មានសំឡេងដែលកំពុងប្រើ</string>
     <string name="title_pref_add_voice_profile">បន្ថែមទម្រង់សំឡេង</string>
     <string name="voice_profile_new_name">កម្រងព័ត៌មានសំឡេង <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">កម្រងព័ត៌មានសំឡេងត្រូវបានហៅរួចហើយ <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">មានកម្រងព័ត៌មានសំឡេងឈ្មោះ <xliff:g id="name" example="Reading">%1$s</xliff:g> រួចហើយ</string>
     <string name="title_pref_voice_profile_name">ឈ្មោះ</string>
     <string name="title_pref_voice_profile_language">ភាសា</string>
     <string name="title_pref_voice_profile_voice">សំឡេង</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">ជ្រើសរើសកន្លែងដែលត្រូវចាក់សំឡេង SandFly</string>
     <string name="value_audio_output_device_default">លំនាំដើមប្រព័ន្ធ</string>
     <string name="value_audio_output_device_speaker">ឧបករណ៍បំពងសម្លេងទូរស័ព្ទ</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">បានភ្ជាប់ឧបករណ៍ Bluetooth ឬមានខ្សែ</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">ឧបករណ៍ Bluetooth ឬមានខ្សែដែលបានភ្ជាប់</string>
     <string name="value_audio_output_device_disconnected">បានផ្ដាច់</string>
     <string name="value_audio_output_device_bluetooth_default">ឧបករណ៍អូឌីយ៉ូ Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">កាសស្តាប់ត្រចៀកមានខ្សែ</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">ការរុករកដោយប៉ះអាចជាប់គាំង។ សូមចាប់ផ្ដើមទូរស័ព្ទឡើងវិញដើម្បីដោះស្រាយ ឬផ្ដល់សិទ្ធិ DUMP ដល់ SandFly តាមរយៈ ADB ដើម្បីឱ្យវាអាចដោះស្រាយបញ្ហាបាន។</string>
     <string name="title_pref_window_names">ឈ្មោះបង្អួច</string>
     <string name="window_names_always">ជានិច្ច</string>
-    <string name="window_names_until_first_item">ជានិច្ច, កាត់ផ្តាច់ដោយធាតុដំបូង</string>
+    <string name="window_names_until_first_item">ជានិច្ច ផ្អាកដោយធាតុដំបូង</string>
     <string name="window_names_window_opens">មានតែនៅពេលដែលបង្អួចបើក</string>
     <string name="window_names_never">មិនដែល</string>
     <string name="title_pref_selector_links_controls_web_only">តំណភ្ជាប់ និងការគ្រប់គ្រងតែនៅក្នុងមាតិកាគេហទំព័រប៉ុណ្ណោះ</string>

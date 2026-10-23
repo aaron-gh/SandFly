@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Naudojamas balso profilis</string>
     <string name="title_pref_add_voice_profile">Pridėti balso profilį</string>
     <string name="voice_profile_new_name">Balso profilis <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Balso profilis jau vadinamas <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Balso profilis pavadinimu <xliff:g id="name" example="Reading">%1$s</xliff:g> jau yra</string>
     <string name="title_pref_voice_profile_name">Pavadinimas</string>
     <string name="title_pref_voice_profile_language">Kalba</string>
     <string name="title_pref_voice_profile_voice">Balsas</string>
@@ -1558,7 +1558,7 @@
     <string name="dialog_title_audio_output_device">Pasirinkite, kur leisti SandFly garsą</string>
     <string name="value_audio_output_device_default">Numatytasis sistemos</string>
     <string name="value_audio_output_device_speaker">Telefono garsiakalbis</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Prijungtas Bluetooth įrenginys arba laidinis</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Prijungtas Bluetooth arba laidinis įrenginys</string>
     <string name="value_audio_output_device_disconnected">atjungtas</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth garso įrenginys</string>
     <string name="value_audio_output_device_wired_headset">Laidinės ausinės</string>
@@ -1697,7 +1697,7 @@
     <string name="stuck_touch_exploration_grant_dump">Naršymas liečiant gali užstrigti. Iš naujo paleiskite telefoną, kad jį ištaisytumėte, arba suteikite SandFly leidimą DUMP su ADB, kad jis galėtų tai ištaisyti.</string>
     <string name="title_pref_window_names">Langų pavadinimai</string>
     <string name="window_names_always">Visada</string>
-    <string name="window_names_until_first_item">Visada, nupjaukite pirmuoju elementu</string>
+    <string name="window_names_until_first_item">Visada, nutraukiama pirmuoju elementu</string>
     <string name="window_names_window_opens">Tik tada, kai atsidaro langas</string>
     <string name="window_names_never">Niekada</string>
     <string name="title_pref_selector_links_controls_web_only">Nuorodos ir valdikliai tik žiniatinklio turinyje</string>

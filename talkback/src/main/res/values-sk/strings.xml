@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Používaný hlasový profil</string>
     <string name="title_pref_add_voice_profile">Pridať hlasový profil</string>
     <string name="voice_profile_new_name">Hlasový profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Hlasový profil sa už volá <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Hlasový profil s názvom <xliff:g id="name" example="Reading">%1$s</xliff:g> už existuje</string>
     <string name="title_pref_voice_profile_name">Názov</string>
     <string name="title_pref_voice_profile_language">Jazyk</string>
     <string name="title_pref_voice_profile_voice">Hlas</string>
@@ -1558,7 +1558,7 @@
     <string name="dialog_title_audio_output_device">Vyberte, kde chcete prehrať zvuk SandFly</string>
     <string name="value_audio_output_device_default">Predvolené nastavenie systému</string>
     <string name="value_audio_output_device_speaker">Reproduktor telefónu</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Pripojené Bluetooth zariadenie alebo káblové</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Pripojené Bluetooth alebo káblové zariadenie</string>
     <string name="value_audio_output_device_disconnected">odpojený</string>
     <string name="value_audio_output_device_bluetooth_default">Zvukové zariadenie Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Káblový headset</string>
@@ -1697,7 +1697,7 @@
     <string name="stuck_touch_exploration_grant_dump">Dotykové skúmanie sa môže zaseknúť. Reštartujte telefón, aby ste to opravili, alebo udeľte SandFly povolenie DUMP s ADB, aby to mohla opraviť.</string>
     <string name="title_pref_window_names">Názvy okien</string>
     <string name="window_names_always">Vždy</string>
-    <string name="window_names_until_first_item">Vždy odrežte pri prvej položke</string>
+    <string name="window_names_until_first_item">Vždy, prerušené prvou položkou</string>
     <string name="window_names_window_opens">Len keď sa otvorí okno</string>
     <string name="window_names_never">Nikdy</string>
     <string name="title_pref_selector_links_controls_web_only">Odkazy a ovládacie prvky iba vo webovom obsahu</string>

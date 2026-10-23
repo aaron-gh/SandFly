@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">استعمال میں صوتی پروفائل</string>
     <string name="title_pref_add_voice_profile">صوتی پروفائل شامل کریں</string>
     <string name="voice_profile_new_name">صوتی پروفائل <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">صوتی پروفائل کو پہلے ہی <xliff:g id="name" example="Reading">%1$s</xliff:g> کہا جاتا ہے</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> نام کا صوتی پروفائل پہلے سے موجود ہے</string>
     <string name="title_pref_voice_profile_name">نام</string>
     <string name="title_pref_voice_profile_language">زبان</string>
     <string name="title_pref_voice_profile_voice">آواز</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">منتخب کریں کہ SandFly آواز کہاں بجانی ہے</string>
     <string name="value_audio_output_device_default">سسٹم ڈیفالٹ</string>
     <string name="value_audio_output_device_speaker">فون اسپیکر</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">منسلک Bluetooth ڈیوائس یا وائرڈ</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">منسلک Bluetooth یا وائرڈ ڈیوائس</string>
     <string name="value_audio_output_device_disconnected">منقطع</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth آڈیو ڈیوائس</string>
     <string name="value_audio_output_device_wired_headset">وائرڈ ہیڈسیٹ</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">ٹچ ایکسپلوریشن پھنس سکتی ہے۔ فون کو ٹھیک کرنے کے لیے اسے دوبارہ شروع کریں، یا ADB کے ساتھ SandFly DUMP اجازت دیں تاکہ وہ اسے ٹھیک کر سکے۔</string>
     <string name="title_pref_window_names">ونڈو کے نام</string>
     <string name="window_names_always">ہمیشہ</string>
-    <string name="window_names_until_first_item">ہمیشہ، پہلی چیز سے کاٹ دیں</string>
+    <string name="window_names_until_first_item">ہمیشہ، پہلی آئٹم پر رک جاتا ہے</string>
     <string name="window_names_window_opens">صرف اس وقت جب کھڑکی کھلتی ہے</string>
     <string name="window_names_never">کبھی نہیں</string>
     <string name="title_pref_selector_links_controls_web_only">لنکس اور کنٹرولز صرف ویب مواد میں</string>

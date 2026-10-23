@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Голосовий профіль, що використовується</string>
     <string name="title_pref_add_voice_profile">Додати голосовий профіль</string>
     <string name="voice_profile_new_name">Голосовий профіль <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Голосовий профіль уже називається <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Голосовий профіль із назвою <xliff:g id="name" example="Reading">%1$s</xliff:g> уже існує</string>
     <string name="title_pref_voice_profile_name">Назва</string>
     <string name="title_pref_voice_profile_language">Мова</string>
     <string name="title_pref_voice_profile_voice">Голос</string>
@@ -1558,7 +1558,7 @@
     <string name="dialog_title_audio_output_device">Виберіть, де відтворювати звук SandFly</string>
     <string name="value_audio_output_device_default">Системне за умовчанням</string>
     <string name="value_audio_output_device_speaker">Динамік телефону</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Підключений пристрій Bluetooth або дротовий</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Підключений Bluetooth- або дротовий пристрій</string>
     <string name="value_audio_output_device_disconnected">відключений</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth аудіопристрій</string>
     <string name="value_audio_output_device_wired_headset">Дротова гарнітура</string>
@@ -1697,7 +1697,7 @@
     <string name="stuck_touch_exploration_grant_dump">Дослідження дотиком може зависнути. Перезапустіть телефон, щоб виправити це, або надайте SandFly дозвіл DUMP за допомогою ADB, щоб він міг це виправити.</string>
     <string name="title_pref_window_names">Назви вікон</string>
     <string name="window_names_always">Завжди</string>
-    <string name="window_names_until_first_item">Завжди відрізайте першим елементом</string>
+    <string name="window_names_until_first_item">Завжди, перериваються першим елементом</string>
     <string name="window_names_window_opens">Тільки коли відчиняється вікно</string>
     <string name="window_names_never">Ніколи</string>
     <string name="title_pref_selector_links_controls_web_only">Посилання та елементи керування лише у веб-контенті</string>

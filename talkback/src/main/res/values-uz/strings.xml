@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Amaldagi ovozli profil</string>
     <string name="title_pref_add_voice_profile">Ovozli profil qoʻshish</string>
     <string name="voice_profile_new_name">Ovozli profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Ovozli profil allaqachon <xliff:g id="name" example="Reading">%1$s</xliff:g> deb nomlangan</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> nomli ovozli profil allaqachon mavjud</string>
     <string name="title_pref_voice_profile_name">Nomi</string>
     <string name="title_pref_voice_profile_language">Til</string>
     <string name="title_pref_voice_profile_voice">Ovoz</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">SandFly ovozi qayerda ijro etilishini tanlang</string>
     <string name="value_audio_output_device_default">Tizim standarti</string>
     <string name="value_audio_output_device_speaker">Telefon karnayi</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Bluetooth qurilma ulangan yoki simli</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Ulangan Bluetooth yoki simli qurilma</string>
     <string name="value_audio_output_device_disconnected">uzilgan</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth audio qurilmasi</string>
     <string name="value_audio_output_device_wired_headset">Simli garnitura</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">Tegishli qidiruv tiqilib qolishi mumkin. Uni tuzatish uchun telefonni qayta ishga tushiring yoki SandFly ga DUMP ruxsatini bering, shunda u tuzatishi mumkin.</string>
     <string name="title_pref_window_names">Oyna nomlari</string>
     <string name="window_names_always">Har doim</string>
-    <string name="window_names_until_first_item">Har doim birinchi element bilan kesib tashlang</string>
+    <string name="window_names_until_first_item">Har doim, birinchi element toʻxtatadi</string>
     <string name="window_names_window_opens">Faqat oyna ochilganda</string>
     <string name="window_names_never">Hech qachon</string>
     <string name="title_pref_selector_links_controls_web_only">Havolalar va boshqaruvlar faqat veb-kontentda</string>

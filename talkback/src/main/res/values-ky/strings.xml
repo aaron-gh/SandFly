@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Колдонулуп жаткан үн профили</string>
     <string name="title_pref_add_voice_profile">Үн профилин кошуу</string>
     <string name="voice_profile_new_name">Үн профили <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Үн профили мурунтан эле <xliff:g id="name" example="Reading">%1$s</xliff:g> деп аталган</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> деген үн профили бар</string>
     <string name="title_pref_voice_profile_name">Аты</string>
     <string name="title_pref_voice_profile_language">Тил</string>
     <string name="title_pref_voice_profile_voice">Үн</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">SandFly үнүн ойнотуучу жерди тандаңыз</string>
     <string name="value_audio_output_device_default">Системанын демейкиси</string>
     <string name="value_audio_output_device_speaker">Телефон динамиги</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Туташтырылган Bluetooth түзмөк же зымдуу</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Туташкан Bluetooth же зымдуу түзмөк</string>
     <string name="value_audio_output_device_disconnected">ажыратылган</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth аудио түзмөк</string>
     <string name="value_audio_output_device_wired_headset">Зымдуу гарнитура</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">Тийип изилдөө тыгылып калышы мүмкүн. Аны оңдоо үчүн телефонду өчүрүп күйгүзүңүз же SandFlyге DUMP уруксатын АӨБ менен бериңиз, ал аны оңдой алат.</string>
     <string name="title_pref_window_names">Терезе аттары</string>
     <string name="window_names_always">Ар дайым</string>
-    <string name="window_names_until_first_item">Ар дайым, биринчи нерсе менен кесип</string>
+    <string name="window_names_until_first_item">Ар дайым, биринчи элемент үзөт</string>
     <string name="window_names_window_opens">Терезе ачылганда гана</string>
     <string name="window_names_never">Эч качан</string>
     <string name="title_pref_selector_links_controls_web_only">Шилтемелер жана башкаруу элементтери веб-контентте гана</string>

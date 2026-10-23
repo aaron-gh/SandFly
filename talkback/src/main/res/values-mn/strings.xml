@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">Ашиглаж буй дуут профайл</string>
     <string name="title_pref_add_voice_profile">Дуут профайл нэмэх</string>
     <string name="voice_profile_new_name">Дуут профайл <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Дуут профайлыг аль хэдийн <xliff:g id="name" example="Reading">%1$s</xliff:g> гэж нэрлэдэг</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> нэртэй дуут профайл аль хэдийн байна</string>
     <string name="title_pref_voice_profile_name">Нэр</string>
     <string name="title_pref_voice_profile_language">Хэл</string>
     <string name="title_pref_voice_profile_voice">Дуу хоолой</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">SandFly дууг хаана тоглуулахаа сонгоно уу</string>
     <string name="value_audio_output_device_default">Системийн өгөгдмөл</string>
     <string name="value_audio_output_device_speaker">Утасны чанга яригч</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Холбогдсон Bluetooth төхөөрөмж эсвэл утастай</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Холбогдсон Bluetooth эсвэл утастай төхөөрөмж</string>
     <string name="value_audio_output_device_disconnected">салгагдсан</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth аудио төхөөрөмж</string>
     <string name="value_audio_output_device_wired_headset">Утастай чихэвч</string>
@@ -1675,7 +1675,7 @@
     <string name="title_pref_lift_to_activate">Хуруугаа өргөж идэвхжүүлэх</string>
     <string name="summary_support_change_lift_to_activate">Хуруугаа өргөснөөр тухайн зүйлийг идэвхжүүлдэг газрыг өөрчлөх</string>
     <string name="value_lift_to_activate_disabled">Идэвхгүй</string>
-    <string name="value_lift_to_activate_navigation_bar">Зөвхөн навигацийн талбар дээр</string>
+    <string name="value_lift_to_activate_navigation_bar">Зөвхөн навигацийн самбар дээр</string>
     <string name="value_lift_to_activate_entire_screen">Бүхэл бүтэн дэлгэц</string>
     <string name="template_lift_to_activate_changed">Хуруугаа өргөж идэвхжүүлэх: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Эхэнд нь буцах</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">Мэдрэгчтэй хайгуул гацсан байж магадгүй. Үүнийг засахын тулд утсаа дахин асаана уу, эсвэл АХБ-нд SandFly-д DUMP зөвшөөрөл өгснөөр утсаа засах боломжтой.</string>
     <string name="title_pref_window_names">Цонхны нэрс</string>
     <string name="window_names_always">Үргэлж</string>
-    <string name="window_names_until_first_item">Үргэлж эхний зүйлээр тасл</string>
+    <string name="window_names_until_first_item">Үргэлж, эхний зүйлээр тасардаг</string>
     <string name="window_names_window_opens">Зөвхөн цонх нээгдэхэд л</string>
     <string name="window_names_never">Хэзээ ч үгүй</string>
     <string name="title_pref_selector_links_controls_web_only">Зөвхөн вэб контент дахь холбоосууд болон хяналтууд</string>

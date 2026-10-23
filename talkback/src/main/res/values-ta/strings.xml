@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">பயன்பாட்டில் உள்ள குரல் சுயவிவரம்</string>
     <string name="title_pref_add_voice_profile">குரல் சுயவிவரத்தைச் சேர்க்கவும்</string>
     <string name="voice_profile_new_name">குரல் சுயவிவரம் <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">குரல் சுயவிவரம் ஏற்கனவே <xliff:g id="name" example="Reading">%1$s</xliff:g> என அழைக்கப்படுகிறது</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> என்ற பெயரில் குரல் சுயவிவரம் ஏற்கனவே உள்ளது</string>
     <string name="title_pref_voice_profile_name">பெயர்</string>
     <string name="title_pref_voice_profile_language">மொழி</string>
     <string name="title_pref_voice_profile_voice">குரல்</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">SandFly ஒலியை எங்கு இயக்க வேண்டும் என்பதைத் தேர்வு செய்யவும்</string>
     <string name="value_audio_output_device_default">கணினி இயல்புநிலை</string>
     <string name="value_audio_output_device_speaker">ஃபோன் ஸ்பீக்கர்</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">இணைக்கப்பட்ட Bluetooth சாதனம் அல்லது கம்பி</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">இணைக்கப்பட்ட Bluetooth அல்லது வயர்டு சாதனம்</string>
     <string name="value_audio_output_device_disconnected">துண்டிக்கப்பட்டது</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth ஆடியோ சாதனம்</string>
     <string name="value_audio_output_device_wired_headset">வயர்டு ஹெட்செட்</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">தொடு ஆய்வு சிக்கியிருக்கலாம். அதைச் சரிசெய்ய மொபைலை மறுதொடக்கம் செய்யவும் அல்லது SandFly DUMP அனுமதியை ADBயிடம் வழங்கவும்.</string>
     <string name="title_pref_window_names">சாளர பெயர்கள்</string>
     <string name="window_names_always">எப்போதும்</string>
-    <string name="window_names_until_first_item">எப்போதும், முதல் உருப்படியால் துண்டிக்கவும்</string>
+    <string name="window_names_until_first_item">எப்போதும், முதல் உருப்படியில் நிறுத்தப்படும்</string>
     <string name="window_names_window_opens">ஒரு சாளரம் திறக்கும் போது மட்டுமே</string>
     <string name="window_names_never">ஒருபோதும் இல்லை</string>
     <string name="title_pref_selector_links_controls_web_only">இணைப்புகள் மற்றும் கட்டுப்பாடுகள் இணைய உள்ளடக்கத்தில் மட்டுமே</string>

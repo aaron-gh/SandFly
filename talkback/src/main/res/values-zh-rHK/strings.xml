@@ -1315,7 +1315,7 @@
     <string name="title_pref_voice_profile_in_use">使用中的語音設定檔</string>
     <string name="title_pref_add_voice_profile">新增語音設定檔</string>
     <string name="voice_profile_new_name">語音設定檔 <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">语音配置文件已称为 <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">已有名為 <xliff:g id="name" example="Reading">%1$s</xliff:g> 的語音設定檔</string>
     <string name="title_pref_voice_profile_name">名稱</string>
     <string name="title_pref_voice_profile_language">語言</string>
     <string name="title_pref_voice_profile_voice">語音</string>
@@ -1549,7 +1549,7 @@
     <string name="dialog_title_audio_output_device">選擇播放SandFly聲音的位置</string>
     <string name="value_audio_output_device_default">系統預設</string>
     <string name="value_audio_output_device_speaker">手機揚聲器</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">連接Bluetooth設備或有線</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">已連接的藍牙或有線裝置</string>
     <string name="value_audio_output_device_disconnected">已中斷連線</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth 音訊裝置</string>
     <string name="value_audio_output_device_wired_headset">有線耳機</string>
@@ -1688,7 +1688,7 @@
     <string name="stuck_touch_exploration_grant_dump">觸摸探索可能會卡住。重新啟動手機即可修復，或透過ADB授予SandFlyDUMP權限即可修復。</string>
     <string name="title_pref_window_names">視窗名稱</string>
     <string name="window_names_always">總是</string>
-    <string name="window_names_until_first_item">總是被第一個項目切斷</string>
+    <string name="window_names_until_first_item">一律讀出，第一個項目出現時停止</string>
     <string name="window_names_window_opens">僅當視窗開啟時</string>
     <string name="window_names_never">永不</string>
     <string name="title_pref_selector_links_controls_web_only">連結和控制項僅限網頁內容</string>

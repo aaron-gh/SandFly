@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">အသုံးပြုနေသော အသံပရိုဖိုင်</string>
     <string name="title_pref_add_voice_profile">အသံပရိုဖိုင်ကို ထည့်ပါ</string>
     <string name="voice_profile_new_name">အသံပရိုဖိုင် <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">အသံပရိုဖိုင်ကို <xliff:g id="name" example="Reading">%1$s</xliff:g> ဟုခေါ်ပြီးဖြစ်သည်</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> အမည်ဖြင့် အသံပရိုဖိုင် ရှိပြီးဖြစ်သည်</string>
     <string name="title_pref_voice_profile_name">နာမည်</string>
     <string name="title_pref_voice_profile_language">ဘာသာစကား</string>
     <string name="title_pref_voice_profile_voice">စကားသံ</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">SandFly အသံဖွင့်ရန်နေရာကို ရွေးပါ</string>
     <string name="value_audio_output_device_default">စနစ် ပုံသေ</string>
     <string name="value_audio_output_device_speaker">ဖုန်းစပီကာ</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Bluetooth စက် သို့မဟုတ် ကြိုးဖြင့် ချိတ်ဆက်ထားသည်</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">ချိတ်ဆက်ထားသော Bluetooth သို့မဟုတ် ကြိုးတပ် စက်</string>
     <string name="value_audio_output_device_disconnected">အဆက်ပြတ်သွားသည်</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth အသံကိရိယာ</string>
     <string name="value_audio_output_device_wired_headset">ကြိုးတပ်နားကြပ်</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">ထိတွေ့စူးစမ်းမှု ရပ်တန့်သွားနိုင်သည်။ ပြုပြင်ရန် ဖုန်းကို ပြန်လည်စတင်ပါ သို့မဟုတ် ပြုပြင်နိုင်စေရန် ADB ထံ SandFly ခွင့်ပြုချက် DUMP ခွင့်ပြုပါ။</string>
     <string name="title_pref_window_names">ဝင်းဒိုး အမည်များ</string>
     <string name="window_names_always">အမြဲတမ်း</string>
-    <string name="window_names_until_first_item">အမြဲတမ်း ပထမအချက်ကို ဖြတ်လိုက်ပါ</string>
+    <string name="window_names_until_first_item">အမြဲ၊ ပထမအရာရောက်လျှင် ရပ်သည်</string>
     <string name="window_names_window_opens">ပြတင်းပေါက်ဖွင့်သည့်အခါမှသာ</string>
     <string name="window_names_never">ဘယ်တော့မှ</string>
     <string name="title_pref_selector_links_controls_web_only">ဝဘ်အကြောင်းအရာတွင်သာ လင့်ခ်များနှင့် ထိန်းချုပ်မှုများ</string>

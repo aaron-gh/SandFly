@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">ਵਰਤੋਂ ਵਿੱਚ ਵੌਇਸ ਪ੍ਰੋਫਾਈਲ</string>
     <string name="title_pref_add_voice_profile">ਵੌਇਸ ਪ੍ਰੋਫਾਈਲ ਸ਼ਾਮਲ ਕਰੋ</string>
     <string name="voice_profile_new_name">ਵੌਇਸ ਪ੍ਰੋਫਾਈਲ <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">ਇੱਕ ਵੌਇਸ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਪਹਿਲਾਂ ਹੀ <xliff:g id="name" example="Reading">%1$s</xliff:g> ਕਿਹਾ ਜਾਂਦਾ ਹੈ</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> ਨਾਮ ਦਾ ਵੌਇਸ ਪ੍ਰੋਫਾਈਲ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ</string>
     <string name="title_pref_voice_profile_name">ਨਾਮ</string>
     <string name="title_pref_voice_profile_language">ਭਾਸ਼ਾ</string>
     <string name="title_pref_voice_profile_voice">ਆਵਾਜ਼</string>
@@ -1550,7 +1550,7 @@
     <string name="dialog_title_audio_output_device">ਚੁਣੋ ਕਿ SandFly ਧੁਨੀ ਕਿੱਥੇ ਚਲਾਉਣੀ ਹੈ</string>
     <string name="value_audio_output_device_default">ਸਿਸਟਮ ਪੂਰਵ-ਨਿਰਧਾਰਤ</string>
     <string name="value_audio_output_device_speaker">ਫ਼ੋਨ ਸਪੀਕਰ</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">ਕਨੈਕਟ ਕੀਤਾ Bluetooth ਡਿਵਾਈਸ ਜਾਂ ਵਾਇਰਡ</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">ਕਨੈਕਟ ਕੀਤਾ Bluetooth ਜਾਂ ਵਾਇਰਡ ਡਿਵਾਈਸ</string>
     <string name="value_audio_output_device_disconnected">ਡਿਸਕਨੈਕਟ ਕੀਤਾ</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth ਆਡੀਓ ਡਿਵਾਈਸ</string>
     <string name="value_audio_output_device_wired_headset">ਵਾਇਰਡ ਹੈੱਡਸੈੱਟ</string>
@@ -1689,7 +1689,7 @@
     <string name="stuck_touch_exploration_grant_dump">ਸਪਰਸ਼ ਖੋਜ ਅਟਕ ਸਕਦੀ ਹੈ। ਇਸ ਨੂੰ ਠੀਕ ਕਰਨ ਲਈ ਫ਼ੋਨ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੋ, ਜਾਂ ADB ਨਾਲ SandFly DUMP ਇਜਾਜ਼ਤ ਦਿਓ ਤਾਂ ਜੋ ਇਹ ਇਸਨੂੰ ਠੀਕ ਕਰ ਸਕੇ।</string>
     <string name="title_pref_window_names">ਵਿੰਡੋ ਦੇ ਨਾਮ</string>
     <string name="window_names_always">ਹਮੇਸ਼ਾ</string>
-    <string name="window_names_until_first_item">ਹਮੇਸ਼ਾ, ਪਹਿਲੀ ਆਈਟਮ ਦੁਆਰਾ ਕੱਟੋ</string>
+    <string name="window_names_until_first_item">ਹਮੇਸ਼ਾ, ਪਹਿਲੀ ਆਈਟਮ \'ਤੇ ਰੁਕਦਾ ਹੈ</string>
     <string name="window_names_window_opens">ਕੇਵਲ ਜਦੋਂ ਇੱਕ ਵਿੰਡੋ ਖੁੱਲ੍ਹਦੀ ਹੈ</string>
     <string name="window_names_never">ਕਦੇ ਨਹੀਂ</string>
     <string name="title_pref_selector_links_controls_web_only">ਲਿੰਕ ਅਤੇ ਨਿਯੰਤਰਣ ਕੇਵਲ ਵੈਬ ਸਮੱਗਰੀ ਵਿੱਚ</string>
