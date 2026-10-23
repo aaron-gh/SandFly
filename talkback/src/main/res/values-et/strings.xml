@@ -1751,6 +1751,9 @@
     <string name="title_pref_dictation">Dikteerimine</string>
     <string name="title_pref_dictation_recognition">Kõnetuvastus</string>
     <string name="dictation_recognition_automatic">Automaatne</string>
+    <string name="dictation_recognition_google">Google’i seadmesisene kõnetuvastus</string>
+    <string name="dictation_google_unavailable">Google’i seadmesisene kõnetuvastus, pole selle keele jaoks saadaval</string>
+    <string name="dictation_google_download">Laadi alla <xliff:g id="language" example="English">%1$s</xliff:g> seadmesiseseks tuvastuseks</string>
     <string name="dictation_recognition_android">Androidi kõnetuvastus</string>
     <string name="dictation_recognition_automatic_using">Automaatne: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler, vajab Gemini API võtit</string>

@@ -1751,6 +1751,9 @@
     <string name="title_pref_dictation">Թելադրություն</string>
     <string name="title_pref_dictation_recognition">Խոսքի ճանաչում</string>
     <string name="dictation_recognition_automatic">Ավտոմատ</string>
+    <string name="dictation_recognition_google">Google-ի խոսքի ճանաչում սարքում</string>
+    <string name="dictation_google_unavailable">Google-ի խոսքի ճանաչում սարքում, հասանելի չէ այս լեզվի համար</string>
+    <string name="dictation_google_download">Ներբեռնել <xliff:g id="language" example="English">%1$s</xliff:g>՝ սարքում ճանաչման համար</string>
     <string name="dictation_recognition_android">Android-ի խոսքի ճանաչում</string>
     <string name="dictation_recognition_automatic_using">Ավտոմատ՝ <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler, անհրաժեշտ է Gemini API-ի բանալի</string>

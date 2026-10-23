@@ -1751,6 +1751,9 @@
     <string name="title_pref_dictation">Dictation</string>
     <string name="title_pref_dictation_recognition">Speech recognition</string>
     <string name="dictation_recognition_automatic">Automatic</string>
+    <string name="dictation_recognition_google">Google on-device speech recognition</string>
+    <string name="dictation_google_unavailable">Google on-device speech recognition, not available for this language</string>
+    <string name="dictation_google_download">Download <xliff:g id="language" example="English">%1$s</xliff:g> for on-device recognition</string>
     <string name="dictation_recognition_android">Android speech recognition</string>
     <string name="dictation_recognition_automatic_using">Automatic: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler, needs a Gemini API key</string>

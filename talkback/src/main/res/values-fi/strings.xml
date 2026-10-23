@@ -1751,6 +1751,9 @@
     <string name="title_pref_dictation">Sanelu</string>
     <string name="title_pref_dictation_recognition">Puheentunnistus</string>
     <string name="dictation_recognition_automatic">Automaattinen</string>
+    <string name="dictation_recognition_google">Googlen laitteen puheentunnistus</string>
+    <string name="dictation_google_unavailable">Googlen laitteen puheentunnistus, ei käytettävissä tälle kielelle</string>
+    <string name="dictation_google_download">Lataa <xliff:g id="language" example="English">%1$s</xliff:g> laitteen tunnistusta varten</string>
     <string name="dictation_recognition_android">Androidin puheentunnistus</string>
     <string name="dictation_recognition_automatic_using">Automaattinen: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler, tarvitsee Gemini API ‑avaimen</string>

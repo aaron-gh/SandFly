@@ -1748,6 +1748,9 @@
     <string name="title_pref_dictation">音声入力</string>
     <string name="title_pref_dictation_recognition">音声認識</string>
     <string name="dictation_recognition_automatic">自動</string>
+    <string name="dictation_recognition_google">Google のオンデバイス音声認識</string>
+    <string name="dictation_google_unavailable">Google のオンデバイス音声認識、この言語では利用できません</string>
+    <string name="dictation_google_download">オンデバイス認識用に<xliff:g id="language" example="English">%1$s</xliff:g>をダウンロード</string>
     <string name="dictation_recognition_android">Android の音声認識</string>
     <string name="dictation_recognition_automatic_using">自動: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler、Gemini API キーが必要です</string>

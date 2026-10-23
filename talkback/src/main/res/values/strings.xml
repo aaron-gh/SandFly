@@ -4421,6 +4421,12 @@
   <string name="title_pref_dictation_recognition">Speech recognition</string>
   <!-- Speech recognition choice: Rambler for languages it supports, then Whisper, then Android speech recognition. [CHAR_LIMIT=NONE] -->
   <string name="dictation_recognition_automatic">Automatic</string>
+  <!-- Speech recognition choice: Google's speech recognition that runs on the phone, from the Speech Recognition & Synthesis app. [CHAR_LIMIT=NONE] -->
+  <string name="dictation_recognition_google">Google on-device speech recognition</string>
+  <!-- Summary of Speech recognition when Google on-device speech recognition is chosen but can't be used: the Speech Recognition & Synthesis app is missing or has no language pack for the phone's language. [CHAR_LIMIT=NONE] -->
+  <string name="dictation_google_unavailable">Google on-device speech recognition, not available for this language</string>
+  <!-- Dictation setting that downloads the phone's language for Google on-device speech recognition, such as "Download English for on-device recognition". [CHAR_LIMIT=NONE] -->
+  <string name="dictation_google_download">Download <xliff:g id="language" example="English">%1$s</xliff:g> for on-device recognition</string>
   <!-- Speech recognition choice: the speech recognition service set in Android's settings. [CHAR_LIMIT=NONE] -->
   <string name="dictation_recognition_android">Android speech recognition</string>
   <!-- Summary of Speech recognition when Automatic is chosen, naming the one used now, such as Rambler or Whisper. [CHAR_LIMIT=NONE] -->

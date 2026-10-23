@@ -122,23 +122,7 @@ class AiDictation(
       PermissionUtils.requestPermissions(service, Manifest.permission.RECORD_AUDIO)
       return false
     }
-    recognition = DictationSettings.effectiveRecognition(service, prefs)
-    val started =
-      if (recognition == Recognition.ANDROID) {
-        val request = generation
-        ContinuousRecognition(
-            service,
-            onDone = { text -> if (request == generation) recognized(text, cleaned = false) },
-            onFailed = { error -> if (request == generation) recognitionFailed(error) },
-          )
-          .takeIf { it.start() }
-          ?.also { continuous = it } != null
-      } else {
-        AudioCapture(onLimit = { handler.post { if (phase == Phase.RECORDING) stopRecording() } })
-          .takeIf { it.start() }
-          ?.also { capture = it } != null
-      }
-    if (!started) {
+    if (!startRecording(DictationSettings.effectiveRecognition(service, prefs))) {
       speak(service.getString(R.string.dictation_unavailable))
       return false
     }
@@ -147,6 +131,29 @@ class AiDictation(
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_up))
     // Speech would be recorded with the user's.
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(SILENCE))
+    return true
+  }
+
+  /** Starts recording for [used]. Returns false when it can't. */
+  private fun startRecording(used: Recognition): Boolean {
+    recognition = used
+    if (used == Recognition.GOOGLE || used == Recognition.ANDROID) {
+      val request = generation
+      val recognizer =
+        ContinuousRecognition(
+          service,
+          if (used == Recognition.GOOGLE) DictationSettings.GOOGLE_SERVICE else null,
+          onDone = { text -> if (request == generation) recognized(text, cleaned = false) },
+          onFailed = { error -> if (request == generation) recognitionFailed(used, error) },
+        )
+      if (!recognizer.start()) return false
+      continuous = recognizer
+      return true
+    }
+    val recorder =
+      AudioCapture(onLimit = { handler.post { if (phase == Phase.RECORDING) stopRecording() } })
+    if (!recorder.start()) return false
+    capture = recorder
     return true
   }
 
@@ -215,7 +222,23 @@ class AiDictation(
     }
   }
 
-  private fun recognitionFailed(error: Int) {
+  private fun recognitionFailed(used: Recognition, error: Int) {
+    continuous = null
+    // Without a language pack for the phone's language, the next way of recognizing takes over,
+    // while recording is still on.
+    if (
+      used == Recognition.GOOGLE &&
+        phase == Phase.RECORDING &&
+        error in LANGUAGE_ERRORS &&
+        startRecording(DictationSettings.effectiveRecognition(service, prefs, skip = Recognition.GOOGLE))
+    ) {
+      LogUtils.w(TAG, "Google on-device recognition has no language pack, using %s", recognition)
+      return
+    }
+    if (phase == Phase.RECORDING) {
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
+    }
     finish()
     speak(
       service.getString(
@@ -319,6 +342,8 @@ class AiDictation(
     if (corrector == DictationSettings.AI_DEVICE) DEVICE_CORRECTION_TIMEOUT_MS else CORRECTION_TIMEOUT_MS
 
   private fun finish() {
+    // For the next dictation: a language pack downloaded since the last one is used from then on.
+    if (phase != Phase.IDLE) GoogleSpeechLanguages.refresh(service)
     phase = Phase.IDLE
     giveUp = null
     tones.stop()
@@ -384,6 +409,8 @@ class AiDictation(
     private const val WORK_TONES_MS = 10 * 60_000L
     private const val HTTP_TOO_MANY_REQUESTS = 429
     private const val HTTP_UNAVAILABLE = 503
+    /** SpeechRecognizer.ERROR_LANGUAGE_NOT_SUPPORTED and ERROR_LANGUAGE_UNAVAILABLE. */
+    private val LANGUAGE_ERRORS = setOf(12, 13)
     /** How much of the text before the cursor the AI service gets, for context. */
     private const val CONTEXT_CHARACTERS = 300
     /** The recognized text is typed when the correction takes longer than this. */

@@ -1755,6 +1755,9 @@
     <string name="title_pref_dictation">Diktiranje</string>
     <string name="title_pref_dictation_recognition">Prepoznavanje govora</string>
     <string name="dictation_recognition_automatic">Automatski</string>
+    <string name="dictation_recognition_google">Google prepoznavanje govora na uređaju</string>
+    <string name="dictation_google_unavailable">Google prepoznavanje govora na uređaju, nije dostupno za ovaj jezik</string>
+    <string name="dictation_google_download">Preuzmi <xliff:g id="language" example="English">%1$s</xliff:g> za prepoznavanje na uređaju</string>
     <string name="dictation_recognition_android">Android prepoznavanje govora</string>
     <string name="dictation_recognition_automatic_using">Automatski: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler, potreban je Gemini API ključ</string>

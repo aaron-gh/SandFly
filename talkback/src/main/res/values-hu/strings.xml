@@ -1751,6 +1751,9 @@
     <string name="title_pref_dictation">Diktálás</string>
     <string name="title_pref_dictation_recognition">Beszédfelismerés</string>
     <string name="dictation_recognition_automatic">Automatikus</string>
+    <string name="dictation_recognition_google">Google eszközön futó beszédfelismerése</string>
+    <string name="dictation_google_unavailable">Google eszközön futó beszédfelismerése, ezen a nyelven nem érhető el</string>
+    <string name="dictation_google_download"><xliff:g id="language" example="English">%1$s</xliff:g> letöltése az eszközön futó felismeréshez</string>
     <string name="dictation_recognition_android">Android beszédfelismerés</string>
     <string name="dictation_recognition_automatic_using">Automatikus: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
     <string name="dictation_rambler_needs_key">Rambler, Gemini API-kulcs szükséges</string>

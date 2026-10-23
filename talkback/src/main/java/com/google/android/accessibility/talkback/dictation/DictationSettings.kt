@@ -16,8 +16,11 @@
 
 package com.google.android.accessibility.talkback.dictation
 
+import android.content.ComponentName
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import android.speech.RecognitionService
 import androidx.core.content.edit
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
@@ -39,9 +42,14 @@ object DictationSettings {
 
   /** How speech becomes text. */
   enum class Recognition(val id: String) {
-    /** Rambler for languages it supports, then Whisper, then Android speech recognition. */
+    /** The first of these that can be used, in this order. */
     AUTOMATIC("automatic"),
-    /** Google's Gemini 3.5 Transcribe, the model behind Gboard's Rambler. */
+    /**
+     * Google's speech recognition on the phone, from the Speech Recognition & Synthesis app, with
+     * the language packs downloaded there. Gboard's voice typing, Rambler included, runs on it.
+     */
+    GOOGLE("google"),
+    /** Google's Gemini 3.5 Transcribe through the Gemini API, the model behind Rambler's cleanup. */
     RAMBLER("rambler"),
     /** Whisper on the phone, with a model downloaded in Dictation settings. */
     WHISPER("whisper"),
@@ -59,6 +67,19 @@ object DictationSettings {
   fun setRecognition(prefs: SharedPreferences, recognition: Recognition) =
     prefs.edit { putString(PREF_RECOGNITION, recognition.id) }
 
+  /** Google's on-device speech recognition service, in the Speech Recognition & Synthesis app. */
+  val GOOGLE_SERVICE =
+    ComponentName(
+      "com.google.android.tts",
+      "com.google.android.apps.speech.tts.googletts.service.GoogleTTSRecognitionService",
+    )
+
+  /** Whether Google's on-device speech recognition is installed. */
+  fun googleInstalled(context: Context): Boolean =
+    context.packageManager
+      .queryIntentServices(Intent(RecognitionService.SERVICE_INTERFACE).setComponent(GOOGLE_SERVICE), 0)
+      .isNotEmpty()
+
   /** The Gemini API key Rambler uses, or empty when there is none. */
   fun ramblerKey(prefs: SharedPreferences): String =
     GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY)
@@ -68,22 +89,33 @@ object DictationSettings {
 
   /**
    * The way speech is recognized now: the chosen one when it can be used, otherwise the first of
-   * Rambler, Whisper and Android speech recognition that can.
+   * Google on-device, Rambler, Whisper and Android speech recognition that can. [skip] is one that
+   * failed, such as Google on-device without a language pack for the phone's language.
    */
-  fun effectiveRecognition(context: Context, prefs: SharedPreferences): Recognition {
-    val whisperReady = WhisperModels.get(context).activeModel() != null
-    val ramblerReady = ramblerKey(prefs).isNotEmpty()
-    return when (recognition(prefs)) {
-      Recognition.RAMBLER -> if (ramblerReady) Recognition.RAMBLER else null
-      Recognition.WHISPER -> if (whisperReady) Recognition.WHISPER else null
-      Recognition.ANDROID -> Recognition.ANDROID
-      Recognition.AUTOMATIC -> null
+  fun effectiveRecognition(
+    context: Context,
+    prefs: SharedPreferences,
+    skip: Recognition? = null,
+  ): Recognition {
+    val usable = { recognition: Recognition ->
+      recognition != skip &&
+        when (recognition) {
+          Recognition.GOOGLE ->
+            googleInstalled(context) && GoogleSpeechLanguages.hasPhoneLanguage() != false
+          Recognition.RAMBLER -> ramblerKey(prefs).isNotEmpty()
+          Recognition.WHISPER -> WhisperModels.get(context).activeModel() != null
+          Recognition.ANDROID -> true
+          Recognition.AUTOMATIC -> false
+        }
     }
-      ?: when {
-        ramblerReady && ramblerSupports(Locale.getDefault()) -> Recognition.RAMBLER
-        whisperReady -> Recognition.WHISPER
-        else -> Recognition.ANDROID
-      }
+    val chosen = recognition(prefs)
+    if (usable(chosen)) return chosen
+    return when {
+      usable(Recognition.GOOGLE) -> Recognition.GOOGLE
+      usable(Recognition.RAMBLER) && ramblerSupports(Locale.getDefault()) -> Recognition.RAMBLER
+      usable(Recognition.WHISPER) -> Recognition.WHISPER
+      else -> Recognition.ANDROID
+    }
   }
 
   fun correctsWithAi(context: Context, prefs: SharedPreferences): Boolean =
