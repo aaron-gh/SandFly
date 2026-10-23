@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">Güçlü</string>
+    <string name="notification_shake_2">Orta</string>
+    <string name="notification_shake_1">Nazik</string>
+    <string name="notification_media_skip">Yüksek sesle okumayın</string>
+    <string name="notification_media_pause">Okurken medyayı duraklatın</string>
+    <string name="notification_media_read">Yüksek sesle oku</string>
+    <string name="notification_headphones_only_without">Yalnızca kulaklık olmadan</string>
+    <string name="notification_headphones_only_with">Yalnızca kulaklıkla</string>
+    <string name="notification_headphones_always">Kulaklıkla veya kulaklıksız yüksek sesle okuyun</string>
+    <string name="notification_queue_skip">Yeni bildirimi yüksek sesle okumayın</string>
+    <string name="notification_queue_interrupt">Bildirimin yüksek sesle okunmasını yarıda kesme</string>
+    <string name="notification_queue_queue">Mevcut bildirimden sonra yüksek sesle oku</string>
+    <string name="notification_url_omit">Dışarıda bırak</string>
+    <string name="notification_url_replace">Aşağıdaki metni söyle</string>
+    <string name="notification_url_domain">Yalnızca siteyi okuyun</string>
+    <string name="notification_url_full">Bağlantının tamamını okuyun</string>
+    <string name="notification_category_title">Bildirimler</string>
+    <string name="notification_reading_title">Bildirimleri yüksek sesle okuma</string>
+    <string name="notification_apps_title">Uygulamalar</string>
+    <string name="notification_words_title">Kelimeler ve değiştirmeler</string>
+    <string name="notification_kinds_title">Bildirim türleri</string>
+    <string name="notification_when_title">Ne zaman okunmalı</string>
+    <string name="notification_rules_title">Kurallar</string>
+    <string name="notification_repeats_title">Tekrarlar</string>
+    <string name="notification_stop_title">Okumayı bırak</string>
+    <string name="notification_schedules_title">Özet ve zaman</string>
+    <string name="notification_history_title">Bildirim geçmişi</string>
+    <string name="notification_test_title">Test bildirimi gönder</string>
+    <string name="notification_automation_title">Otomasyon</string>
+    <string name="notification_automation_allowed_title">Otomasyon uygulamalarına izin ver</string>
+    <string name="notification_category_said">Ne söylendi</string>
+    <string name="notification_format_title">Konuşma formatı</string>
+    <string name="notification_format_message">Yer tutucular: {app}, {title}, {text}, {content} (tüm metin), {bigtext}, {subtext}, {ticker}, {category} ve {time}.</string>
+    <string name="notification_private_format_title">Özel bildirimler diyor ki</string>
+    <string name="notification_private_format_message">Özel bir bildirimin içeriği yerine söylenir. Yer tutucular: {app}, {category} ve {time}.</string>
+    <string name="notification_category_voice">Ses</string>
+    <string name="notification_voice_title">Ses</string>
+    <string name="notification_voice_sandfly">SandFly\'in sesi</string>
+    <string name="notification_detect_language_title">Dili algıla</string>
+    <string name="notification_detect_language_summary">Her bildirimi yazıldığı dilde söyleyin. Metinden konuşmaya ayarlarında dili otomatik olarak değiştirmeniz gerekiyor.</string>
+    <string name="notification_sound_before_title">Bildirimlerden önce ses</string>
+    <string name="notification_category_text">Metin</string>
+    <string name="notification_remove_emoji_title">Emojiyi dışarıda bırak</string>
+    <string name="notification_lowercase_title">Büyük harfleri kelime olarak oku</string>
+    <string name="notification_lowercase_summary">Bazı konuşma motorları büyük harflerle yazılmış sözcükleri harf harf okur.</string>
+    <string name="notification_separate_digits_title">Uzun sayıları basamak basamak oku</string>
+    <string name="notification_separate_digits_summary">Kodlar ve telefon numaraları gibi</string>
+    <string name="notification_min_digits_title">Uzun bir sayıdaki minimum basamaklar</string>
+    <string name="notification_urls_title">Bağlantı</string>
+    <string name="notification_url_text_title">Bağlantı yerine söylendi</string>
+    <string name="notification_skip_empty_title">Metin içermeyen bildirimleri atla</string>
+    <string name="notification_category_length">Uzunluk</string>
+    <string name="notification_max_words_title">Maksimum kelime sayısı</string>
+    <string name="notification_max_sentences_title">Maksimum cümle sayısı</string>
+    <string name="notification_max_characters_title">Maksimum metin karakteri sayısı</string>
+    <string name="notification_max_seconds_title">Bundan sonra okumayı bırak</string>
+    <string name="notification_category_timing">Zamanlama</string>
+    <string name="notification_delay_title">Okumadan önce bekleyin</string>
+    <string name="notification_queue_title">Başka bir bildirim okunduğunda</string>
+    <string name="notification_repeat_minutes_title">Ekran açılıncaya kadar tekrar okuyun</string>
+    <string name="notification_skip_media_title">Medya oynatıcılarını atla</string>
+    <string name="notification_skip_ongoing_title">Devam eden bildirimleri atla</string>
+    <string name="notification_skip_ongoing_summary">Navigasyon ve zamanlayıcılar gibi</string>
+    <string name="notification_skip_foreground_title">Çalışan uygulama bildirimlerini atla</string>
+    <string name="notification_skip_foreground_summary">VPN veya ses kaydedici gibi</string>
+    <string name="notification_skip_progress_title">İlerleme bildirimlerini atla</string>
+    <string name="notification_skip_group_summaries_title">Grup özetlerini atla</string>
+    <string name="notification_skip_group_summaries_summary">“3 yeni mesaj” gibi</string>
+    <string name="notification_skip_low_priority_title">Düşük öncelikli bildirimleri atla</string>
+    <string name="notification_skip_system_title">Sistem bildirimlerini atla</string>
+    <string name="notification_screen_on_title">Ekran açıkken</string>
+    <string name="notification_screen_off_title">Ekran kapalıyken</string>
+    <string name="notification_locked_title">Telefon kilitliyken</string>
+    <string name="notification_headphones_title">Kulaklıklar</string>
+    <string name="notification_media_title">Medya oynatılırken</string>
+    <string name="notification_dnd_title">Rahatsız Etmeyin</string>
+    <string name="notification_dnd_none">Hiçbir bildirimi yüksek sesle okumayın</string>
+    <string name="notification_dnd_allowed">Rahatsız Etmeyin modunun izin verdiği bildirimleri okuyun</string>
+    <string name="notification_dnd_all">Tümünü oku</string>
+    <string name="notification_touch_title">Ekrana dokunulduğunda</string>
+    <string name="notification_touch_read">Hemen okuyun</string>
+    <string name="notification_touch_after">Dokunma bittiğinde okuyun</string>
+    <string name="notification_touch_skip">Yüksek sesle okumayın</string>
+    <string name="notification_during_calls_title">Aramalar sırasında</string>
+    <string name="notification_honour_silent_title">Sessiz modda değil</string>
+    <string name="notification_honour_vibrate_title">Titreşim modunda değil</string>
+    <string name="notification_skip_in_car_title">Araba modunda değil</string>
+    <string name="notification_skip_in_car_summary">Bunları kendisi okuyan Android Auto gibi</string>
+    <string name="notification_category_quiet_hours">Sessiz saatler</string>
+    <string name="notification_quiet_hours_title">Sessiz saatler</string>
+    <string name="notification_quiet_start_title">Başlat</string>
+    <string name="notification_quiet_end_title">Bitiş</string>
+    <string name="notification_repeat_seconds_title">Aynı bildirimi şunun için atla:</string>
+    <string name="notification_numbers_alike_title">Farklı sayıları aynıymış gibi ele alın</string>
+    <string name="notification_numbers_alike_summary">İndirme yüzdesi gibi</string>
+    <string name="notification_cooldown_title">Bir uygulamanın bildirimleri arasındaki süre</string>
+    <string name="notification_skip_prefix_title">Tekrarlanan bir metin önekini atla</string>
+    <string name="notification_skip_prefix_summary">Sohbetteki bir grubun adı gibi</string>
+    <string name="notification_prefix_memory_title">Metin önekini ne kadar süreyle hatırlarım?</string>
+    <string name="notification_access_summary">Reddedilen bir bildirimi ve özetleri okumayı bırakmanız gerekiyor</string>
+    <string name="notification_shake_title">Durdurmak için sallayın</string>
+    <string name="notification_shake_strength_title">Sarsma yoğunluğu</string>
+    <string name="notification_wave_title">Okumayı bırakmak için elinizi sallayın</string>
+    <string name="notification_wave_summary">Elinizi yakınlık sensörü üzerinde hareket ettirme</string>
+    <string name="notification_pocket_title">Cep modu</string>
+    <string name="notification_pocket_summary">Okuma başladığında cepteymiş gibi örtülen sensör, okumayı durdurmaz</string>
+    <string name="notification_volume_keys_title">Her iki ses seviyesi tuşuna da basın</string>
+    <string name="notification_dismiss_title">Bildirim kapatıldığında okumayı durdur</string>
+    <string name="notification_watch_dismiss_title">Ayrıca akıllı saatte bildirim kapatıldığında</string>
+    <string name="notification_app_cancel_title">Uygulama bildirimi kaldırdığında okumayı durdurun</string>
+    <string name="notification_category_summary">Özet</string>
+    <string name="notification_summary_now_title">Bildirimleri şimdi okuyun</string>
+    <string name="notification_summary_daily_title">Her gün bildirimleri okuyun</string>
+    <string name="notification_summary_time_title">Zaman</string>
+    <string name="notification_summary_newest_first_title">Önce en yeni</string>
+    <string name="notification_summary_name_title">Adınız</string>
+    <string name="notification_summary_gap_title">Bildirimler arasında duraklat</string>
+    <string name="notification_summary_needs_sandfly">Bildirimleri okumak için SandFly\'yi açın</string>
+    <string name="notification_summary_no_access">Bildirim erişimi kapalı</string>
+    <string name="notification_summary_morning">Günaydın.</string>
+    <string name="notification_summary_afternoon">Tünaydın.</string>
+    <string name="notification_summary_evening">İyi akşamlar.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">Zaman duyuruları</string>
+    <string name="notification_clock_interval_title">Her seferinde saati söyle</string>
+    <string name="notification_clock_format_title">Saat biçimi</string>
+    <string name="notification_clock_format_message">Yer tutucular: {time}, {date} ve {battery} (pil yüzdesi).</string>
+    <string name="notification_clock_format_default">{time}</string>
+    <string name="notification_clock_exact_title">Tam zamanlar</string>
+    <string name="notification_clock_exact_summary">Alarmlara ve hatırlatıcılara ihtiyaç duyar. Aksi halde süre bir dakikaya kadar geç söylenebilir.</string>
+    <string name="notification_other_apps_title">Diğer uygulamalar</string>
+    <string name="notification_apps_category">Uygulamalar</string>
+    <string name="notification_apps_loading">Uygulamalar yükleniyor</string>
+    <string name="notification_app_mode_title">Bildirimler</string>
+    <string name="notification_app_mode_default">Diğer uygulamalar gibi</string>
+    <string name="notification_app_mode_read">Yüksek sesle oku</string>
+    <string name="notification_app_mode_private">Yalnızca uygulama adı</string>
+    <string name="notification_app_mode_priority">Önce oku</string>
+    <string name="notification_app_mode_ignore">Yüksek sesle okumayın</string>
+    <string name="notification_app_name_title">Sözlü ad</string>
+    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> olarak söylendi</string>
+    <string name="notification_app_reset">Sıfırla</string>
+    <string name="notification_required_title">Yalnızca şununla bildirimleri oku:</string>
+    <string name="notification_blocked_title">Ile bildirimleri okumayın</string>
+    <string name="notification_private_title">Yalnızca uygulama adını okuyun</string>
+    <string name="notification_replacements_title">Farklı söyle</string>
+    <string name="notification_add_word">Bir kelime ekle</string>
+    <string name="notification_add_replacement">Yenisini ekle</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> olarak</string>
+    <string name="notification_replace_find">Metin</string>
+    <string name="notification_replace_with">Şöyle söyle</string>
+    <string name="notification_whole_words">Yalnızca tam kelimeler</string>
+    <string name="notification_regex">Düzenli ifade</string>
+    <string name="notification_enter_text">Bir metin girin</string>
+    <string name="notification_invalid_regex">Geçerli bir normal ifade değil</string>
+    <string name="notification_edit">Düzenle</string>
+    <string name="notification_remove">Kaldır</string>
+    <string name="notification_history_keep">Bildirim geçmişini kaydet</string>
+    <string name="notification_history_clear">Geçmişi temizle</string>
+    <string name="notification_history_category">Bildirimler</string>
+    <string name="notification_history_empty">Bildirim yok</string>
+    <string name="notification_history_ignore_app">Okuma <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app"><xliff:g id="app" example="Chat">%1$s</xliff:g>\'nin yalnızca adını okuyun</string>
+    <string name="notification_history_priority_app">Önce <xliff:g id="app" example="Chat">%1$s</xliff:g>\'yi okuyun</string>
+    <string name="notification_history_block_similar">Bunun gibi bildirimleri okumayın</string>
+    <string name="notification_history_copy">Kopyala</string>
+    <string name="notification_saved">Kaydedildi</string>
+    <string name="notification_copied">Kopyalandı</string>
+    <string name="notification_outcome_read">Başarılı bir şekilde yüksek sesle okuyun</string>
+    <string name="notification_outcome_stopped">Okurken durduruldu</string>
+    <string name="notification_outcome_speech_off">Okunmadı: bildirim konuşması kapalı</string>
+    <string name="notification_outcome_dnd">Okunmadı: Rahatsız Etmeyin</string>
+    <string name="notification_outcome_touching">Okunmadı: ekrana dokunuldu</string>
+    <string name="notification_outcome_app">Okunmadı: uygulama</string>
+    <string name="notification_outcome_ongoing">Okunmadı: devam ediyor</string>
+    <string name="notification_outcome_foreground">Okunmadı: Uygulama çalışıyor</string>
+    <string name="notification_outcome_low_priority">Okunmadı: düşük öncelik</string>
+    <string name="notification_outcome_system">Okunmadı: sistem</string>
+    <string name="notification_outcome_media">Okunmadı: medya oynatıcı</string>
+    <string name="notification_outcome_group_summary">Okunmadı: grup özeti</string>
+    <string name="notification_outcome_progress">Okunmadı: ilerleme</string>
+    <string name="notification_outcome_required">Okunmadı: gerekli kelimeler eksik</string>
+    <string name="notification_outcome_blocked">Okunmadı: engellenen kelime</string>
+    <string name="notification_outcome_empty">Okunmadı: metin yok</string>
+    <string name="notification_outcome_repeat">Okunmadı: tekrarla</string>
+    <string name="notification_outcome_cooldown">Yüksek sesle okunmadı: Bu uygulamadan gelen başka bir bildirim çok yakın zamanda okundu</string>
+    <string name="notification_outcome_quiet_hours">Okunmadı: sessiz saatler</string>
+    <string name="notification_outcome_screen_on">Okunmadı: ekran açık</string>
+    <string name="notification_outcome_screen_off">Okunmadı: ekran kapalı</string>
+    <string name="notification_outcome_locked">Okunmadı: kilitli</string>
+    <string name="notification_outcome_headphones">Okunmadı: kulaklık bağlı</string>
+    <string name="notification_outcome_no_headphones">Okunmadı: kulaklık yok</string>
+    <string name="notification_outcome_silent">Okunmadı: sessiz mod</string>
+    <string name="notification_outcome_vibrate">Okunmadı: titreşim modu</string>
+    <string name="notification_outcome_media_playing">Okunmadı: medya oynatılıyor</string>
+    <string name="notification_outcome_car">Okunmadı: araba modu</string>
+    <string name="notification_outcome_rule">Okunmadı: kural</string>
+    <string name="notification_outcome_busy">Okunmadı: başka bir bildirim okundu</string>
+    <string name="notification_outcome_call">Gelen telefon görüşmesi olarak duyuruldu</string>
+    <string name="notification_rule_add">Kural ekle</string>
+    <string name="notification_rule_from_template">Şablondan kural ekleme</string>
+    <string name="notification_rules_category">Kurallar</string>
+    <string name="notification_rules_empty">Kural yok</string>
+    <string name="notification_rule_name">İsim</string>
+    <string name="notification_rule_untitled">Kural</string>
+    <string name="notification_rule_enabled">Açık</string>
+    <string name="notification_rule_match">Koşullar</string>
+    <string name="notification_rule_match_all">Tüm koşullar yerine getirilmelidir</string>
+    <string name="notification_rule_match_any">En az bir koşul yerine getirilmelidir</string>
+    <string name="notification_rule_conditions">Ne zaman</string>
+    <string name="notification_rule_actions">Sonra</string>
+    <string name="notification_rule_add_condition">Koşul ekle</string>
+    <string name="notification_rule_add_action">Eylem ekle</string>
+    <string name="notification_rule_invert">Durumu tersine çevir</string>
+    <string name="notification_rule_delete">Kuralı sil</string>
+    <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> silinsin mi?</string>
+    <string name="notification_rule_always">Her zaman</string>
+    <string name="notification_rule_no_actions">hiçbir şey olmuyor</string>
+    <string name="notification_rule_and">" ve "</string>
+    <string name="notification_rule_or">" veya "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">Yalnızca kulaklıkla</string>
+    <string name="notification_template_night">Geceleri sessiz</string>
+    <string name="notification_template_screen_off">Yalnızca ekran kapalıyken</string>
+    <string name="notification_template_locked_private">Telefon kilitliyken yalnızca uygulama adı</string>
+    <string name="notification_template_short_on_battery">Şarj olmadığında kısaca okuyun</string>
+    <string name="notification_type_bluetooth">Bluetooth cihaz</string>
+    <string name="notification_type_wired">Kablolu kulaklıklar</string>
+    <string name="notification_type_wifi">Wi-Fi ağ</string>
+    <string name="notification_type_time">Günün saati</string>
+    <string name="notification_type_screen">Ekran açık</string>
+    <string name="notification_type_locked">Telefon kilitlendi</string>
+    <string name="notification_type_from_app">Bir uygulamadan bildirim</string>
+    <string name="notification_type_foreground">Uygulama ön planda</string>
+    <string name="notification_type_contains">Bildirim şunları içerir:</string>
+    <string name="notification_type_battery">Pil seviyesi aşağıda</string>
+    <string name="notification_type_charging">Şarj etme</string>
+    <string name="notification_type_landscape">Yatay</string>
+    <string name="notification_type_silent">Sessiz veya titreşim modu</string>
+    <string name="notification_type_media">Medya oynatma</string>
+    <string name="notification_bluetooth_any">Herhangi bir cihaz</string>
+    <string name="notification_wifi_hint">Ağ adı</string>
+    <string name="notification_choose_app">Bir uygulama seçin</string>
+    <string name="notification_time_start">Gönderen</string>
+    <string name="notification_time_end">Kadar</string>
+    <string name="notification_time_days">Günler</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ila <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly bu durum için bu izne ihtiyaç var</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> bağlı</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> bağlı değil</string>
+    <string name="notification_cond_bluetooth_any">Bir Bluetooth ses cihazı bağlı</string>
+    <string name="notification_cond_bluetooth_any_not">Bluetooth ses cihazı bağlı değil</string>
+    <string name="notification_cond_wired">Kablolu kulaklıklar bağlı</string>
+    <string name="notification_cond_wired_not">Kablolu kulaklıklar bağlı değil</string>
+    <string name="notification_cond_battery_below">Pil yüzde <xliff:g id="percent" example="20">%1$d</xliff:g>\'nin altında</string>
+    <string name="notification_cond_battery_below_not">Pil yüzde <xliff:g id="percent" example="20">%1$d</xliff:g> veya daha fazla durumda</string>
+    <string name="notification_cond_charging">Telefon şarj oluyor</string>
+    <string name="notification_cond_charging_not">Telefon şarj olmuyor</string>
+    <string name="notification_cond_locked">Telefon kilitli</string>
+    <string name="notification_cond_locked_not">Telefonun kilidi açıldı</string>
+    <string name="notification_cond_screen_on">Ekran açık</string>
+    <string name="notification_cond_screen_on_not">Ekran kapalı</string>
+    <string name="notification_cond_landscape">Ekran yatay durumda</string>
+    <string name="notification_cond_landscape_not">Ekran portre modunda</string>
+    <string name="notification_cond_time">Saat <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Zaman <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> değil</string>
+    <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g>\'a bağlanıldı</string>
+    <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g>\'ye bağlı değil</string>
+    <string name="notification_cond_wifi_any">Wi-Fi\'a bağlanıldı</string>
+    <string name="notification_cond_wifi_any_not">Wi-Fi\'ye bağlı değil</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> önde</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> önde değil</string>
+    <string name="notification_cond_from">Bildirim <xliff:g id="app" example="Chat">%1$s</xliff:g> tarihinden itibaren</string>
+    <string name="notification_cond_from_not">Bildirim <xliff:g id="app" example="Chat">%1$s</xliff:g>\'den değil</string>
+    <string name="notification_cond_contains">Bildirim <xliff:g id="text" example="urgent">%1$s</xliff:g> içeriyor</string>
+    <string name="notification_cond_contains_not">Bildirim <xliff:g id="text" example="urgent">%1$s</xliff:g> içermiyor</string>
+    <string name="notification_cond_silent">Zil sesi sessiz veya titriyor</string>
+    <string name="notification_cond_silent_not">Zil çalıyor</string>
+    <string name="notification_cond_media">Medya oynatılıyor</string>
+    <string name="notification_cond_media_not">Hiçbir medya oynatılmıyor</string>
+    <string name="notification_action_skip">okuma</string>
+    <string name="notification_action_private">yalnızca uygulama adını oku</string>
+    <string name="notification_action_not_private">özel olsa bile tamamını okuyun</string>
+    <string name="notification_action_format">konuşma formatı kullan</string>
+    <string name="notification_action_max_words">birkaç kelimeye kadar okuyun</string>
+    <string name="notification_action_no_limit">uzunluk sınırı olmadan oku</string>
+    <string name="notification_action_keep_emoji">emojiyi sakla</string>
+    <string name="notification_action_keep_numbers">sayıları bir arada tut</string>
+    <string name="notification_action_priority">önce oku</string>
+    <string name="notification_action_always_read">Sessiz saatlerde veya diğer kısıtlı zamanlarda bile bildirimleri yüksek sesle okuyun</string>
+    <string name="notification_action_voice">sesli profille oku</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ile oku</string>
+    <string name="notification_action_voice_sandfly">SandFly\'nin sesiyle okuyun</string>
+    <string name="notification_voice_removed">Ses profili kaldırıldı</string>
+    <string name="notification_action_format_value">konuşma biçimini kullanın <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>\'a kadar okuyun</string>
+    <string name="notification_off">Kapalı</string>
+    <string name="notification_on">Açık</string>
+    <string name="notification_never_again">SandFly yeniden başlatılana kadar</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">Bildirimleri yüksek sesle okuma</string>
+    <string name="notification_speech_now_on">Bildirimlerin yüksek sesle okunması etkinleştirildi</string>
+    <string name="notification_speech_now_off">Bildirimlerin sesli okunması devre dışı bırakıldı</string>
+    <string name="notification_no_last_notification">Hiçbir bildirim okunmadı</string>
+    <string name="shortcut_read_notifications">Bildirimleri oku</string>
+    <string name="shortcut_toggle_notification_speech">Bildirim konuşmasını açma veya kapatma</string>
+    <string name="shortcut_read_last_notification">Son bildirimi tekrar okuyun</string>
+    <string name="shortcut_stop_notification">Bildirimi okumayı bırak</string>
+    <string name="notification_test_posting">5 saniye içinde bir test bildirimi gelir</string>
+    <string name="notification_test_not_allowed">Önce SandFly\'nin bildirimleri göstermesine izin ver</string>
+    <string name="notification_test_content_title">SandFly testi</string>
+    <string name="notification_test_content_text">Bu bir test bildirimidir, bildirim ayarlarınızla okuyun. 123456</string>
+    <string name="notification_automation_on">Bildirimlerin yüksek sesle okunmasını etkinleştir</string>
+    <string name="notification_automation_off">Bildirimleri yüksek sesle okumayı devre dışı bırak</string>
+    <string name="notification_automation_toggle">Bildirimlerin sesli okunmasını etkinleştirme veya devre dışı bırakma</string>
+    <string name="notification_automation_stop">Okunan bildirimi durdur</string>
+    <string name="notification_automation_read_all">Bildirimleri oku</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> saniye</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> saniye</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> dakika</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> dakika</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> saat</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> saat</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> kelime</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> kelime</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> cümle</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> cümle</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> metin karakteri</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> metin karakteri</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> haneli</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> hane</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> bildiriminiz var.</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> bildiriminiz var.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>

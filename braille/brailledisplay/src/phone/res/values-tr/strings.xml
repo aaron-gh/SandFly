@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Braille donanım klavyesi</string>
   <string name="bd_application_name">Android Erişilebilirlik Seti</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack braille klavye kullanılamıyor</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack braille klavyesini açın</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly braille klavye kullanılamıyor</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly braille klavyesini açın</string>
   <string name="bd_ime_disabled_dialog_message">Yazma sırasında braille ekranınızı kullanmak için giriş ayarlarına giderek ekranı etkinleştirin</string>
   <string name="bd_ime_disabled_dialog_title_positive">Giriş ayarları</string>
   <string name="bd_ime_not_default_dialog_title">Giriş yönteminizi değiştirin</string>
-  <string name="bd_ime_not_default_dialog_message">Yazmaya devam etmek için TalkBack braille klavyeyi giriş yönteminiz olarak ayarlayın</string>
+  <string name="bd_ime_not_default_dialog_message">Yazmaya devam etmek için SandFly braille klavyeyi giriş yönteminiz olarak ayarlayın</string>
   <string name="bd_ime_not_default_dialog_positive">Anahtar girişi</string>
   <string name="type_unlabeled">Etiketsiz</string>
   <string name="type_unlabeled_edittext">Etiketsiz Düzenleme Kutusu</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Sola kaydır</string>
   <string name="overlay_pan_right_button">Sağa kaydır</string>
   <string name="bd_preferences_title">Braille ekran</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Braille ekranı kullanmak için önce TalkBack\'i açın</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBack\'e git</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Braille ekranı kullanmak için önce SandFly\'i açın</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFly\'e git</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Braille ekranı kullanmak için önce Bluetooth\'u açın</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Bluetooth\'u aç</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Braille ekranı kullanmak için %s uygulamasının yakındaki cihazlara erişmesi gerekiyor</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Tarayıcı modunu kullanmak için varsayılan tuş eşlemeden gelişmiş tuş eşlemeye geçmeniz gerekir. Bu değişiklik, Braille ekran komutlarınızdan bazılarını günceller.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Ayarlar</string>
   <string name="bd_command_change_dialog_title">Bazı komutlar güncellendi</string>
-  <string name="bd_command_change_dialog_message">Bu TalkBack sürümünde güncellenen Braille ekran komutları:\n\n• Önceki öğe: 1, 7. noktalara basın\n\n• Sonraki öğe: 4, 8. noktalara basın\n\n• Önceki okuma kontrolü: 2, 3, 7, 8. noktalara basın\n\n• Sonraki okuma kontrolü: 5, 6, 7, 8. noktalara basın</string>
+  <string name="bd_command_change_dialog_message">Bu SandFly sürümünde güncellenen Braille ekran komutları:\n\n• Önceki öğe: 1, 7. noktalara basın\n\n• Sonraki öğe: 4, 8. noktalara basın\n\n• Önceki okuma kontrolü: 2, 3, 7, 8. noktalara basın\n\n• Sonraki okuma kontrolü: 5, 6, 7, 8. noktalara basın</string>
   <string name="bd_preference_braille_contracted">Kısaltmalı braille</string>
   <string name="bd_preference_braille_uncontracted">Kısaltılmamış Braille</string>
   <string name="bd_braille_grade_tips">Bir braille ekran kullanarak, kısaltmalı braille ile kısaltmasız braille arasında hızlıca geçiş yapmak için boşluğa ve 1, 2, 4 ve 5 noktalarına basın.\n\nHer iki braille derecesini içeren bir dil kullanıyorsanız bu komut çalışır.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Öğeler arasında geçiş yapma</string>
   <string name="bd_commands_bindings_category_system_actions_title">Sistem işlemleri</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Geri, ana sayfa, bildirimler ve daha fazlası</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack özellikleri</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBack menüleri ve ayarları</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly özellikleri</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menüler ve ayarlar</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Braille ayarları</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Braille dili ve ayarları</string>
   <string name="bd_commands_bindings_category_text_editing_title">Metin düzenleme</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Tüm uygulamaları aç</string>
   <string name="bd_cmd_toggle_screen_search">Ekranda aramayı aç</string>
   <string name="bd_cmd_edit_custom_label">Özel etiketi düzenle</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack menüsünü aç</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack konuşmasını aç veya kapat</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly menüsünü aç</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly konuşmasını aç veya kapat</string>
   <string name="bd_cmd_read_stop">Okumayı durdur</string>
-  <string name="bd_cmd_talkback_settings">TalkBack ayarlarını aç</string>
+  <string name="bd_cmd_talkback_settings">SandFly ayarlarını aç</string>
   <string name="bd_cmd_switch_to_next_input_language">Sonraki yazma diline geç</string>
   <string name="bd_cmd_switch_to_next_output_language">Sonraki okuma diline geç</string>
   <string name="bd_cmd_toggle_contracted_mode">Kısaltılmış mod ile kısaltılmamış mod arasında geçiş yap</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Tarayıcı moduna girme komutunu kullandıktan sonra aşağıdaki harf veya sayı kısayollarını yazarak web sayfalarında hızlıca gezinebilirsiniz\n\nBu kısayollar, tarayıcı moduna girmeden de kullanılabilir ancak \"sonraki\" komutlarına 8. noktayı eklemeniz gerekir</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Tabloda gezinme</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Braille ekran ayarı kapatılsın mı?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Bu ayarı istediğiniz zaman TalkBack ayarlarından tekrar açabilirsiniz</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Bu ayarı istediğiniz zaman SandFly ayarlarından tekrar açabilirsiniz</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Kapat</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Bazı komutlar kullanılamıyor</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Gezinme, Braille ayarları ve bazı TalkBack özellikleriyle ilgili komutlar, yazarken veya düzenleme yaparken kullanılamaz.\n\nBu komutları kullanmak için önce klavyeyi kapatın.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Gezinme, Braille ayarları ve bazı SandFly özellikleriyle ilgili komutlar, yazarken veya düzenleme yaparken kullanılamaz.\n\nBu komutları kullanmak için önce klavyeyi kapatın.</string>
   <string name="bd_caption_tutorial_dialog_title">Braille ekranınızda altyazılar</string>
   <string name="bd_caption_tutorial_dialog_message">Video altyazısını göstermek/gizlemek için boşluk tuşuna ve 1, 4, 7, 8. noktalara basın.\n\nDesteklenen medya altyazılarının otomatik gösterilmesi için Ayarlar\'da \"Braille ekranda altyazı göster\"i açın.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Altyazılar mevcut olduğunda bu mesajı her zaman göster</string>
   <string name="bd_usb_connect_dialog_title">Braille ekran, USB\'ye bağlandı</string>
-  <string name="bd_usb_connect_dialog_message">Braille ekranınız %s cihazınızın pil gücü ile şarj oluyor.\n\nBluetooth\'a geçmeniz gerekiyorsa USB\'nizin veya USB çoğaltıcınızın bağlantısını kesin ve TalkBack ayarları &gt; Braille ekran bölümüne gidin.</string>
+  <string name="bd_usb_connect_dialog_message">Braille ekranınız %s cihazınızın pil gücü ile şarj oluyor.\n\nBluetooth\'a geçmeniz gerekiyorsa USB\'nizin veya USB çoğaltıcınızın bağlantısını kesin ve SandFly ayarları &gt; Braille ekran bölümüne gidin.</string>
   <string name="bd_device">telefon</string>
   <string name="bd_battery_low_dialog_title">%s pil düzeyi düşük</string>
   <string name="bd_battery_low_dialog_message">Braille ekranınız %s cihazınızın pil gücü ile şarj oluyor.\n\nPilden tasarruf etmek için:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Tümünü temizle</string>
   <string name="popup_message_history_empty">Boş</string>
   <string name="popup_message_history_consent_dialog_title">Cihazdaki mesaj geçmişi açılsın mı?</string>
-  <string name="popup_message_history_consent_dialog_msg">Bu ayar, bildirimler ve alarmlar gibi bazı mesajları TalkBack\'te depolar. Bu ayarı dilediğiniz zaman değiştirebilirsiniz.</string>
+  <string name="popup_message_history_consent_dialog_msg">Bu ayar, bildirimler ve alarmlar gibi bazı mesajları SandFly\'te depolar. Bu ayarı dilediğiniz zaman değiştirebilirsiniz.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Aç</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Hayır, teşekkürler</string>
+    <string name="external_display_channel">Diğer uygulamalardaki Braille ekranları</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>\'nin SandFly için braille ekranı olmasına izin verilsin mi?</string>
+    <string name="external_display_ask_text">SandFly siz izin verene kadar kullanmayacaksınız.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>, mesajlar ve yazdıklarınız da dahil olmak üzere ekrandaki herhangi bir şey olabilecek, SandFly\'nin braille alfabesiyle gösterdiği her şeyi okuyabilecektir. Ayrıca cihazınızı Braille ekranla olabildiğince kontrol edebilecek: yazın, uygulamaları açın ve herhangi bir SandFly komutunu çalıştırın. Yalnızca güvendiğiniz uygulamalara izin verin.</string>
+    <string name="external_display_allow">İzin ver</string>
+    <string name="external_display_deny">İzin verme</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> sizin braille ekranınızdır</string>
+    <string name="external_display_in_use_text">SandFly bunu kullanırken, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ekranı okuyabilir ve cihazı kontrol edebilir.</string>
+    <string name="external_displays_title">Diğer uygulamalardaki görüntüler</string>
+    <string name="external_displays_summary">İzin verdiğiniz uygulamalar SandFly için braille ekranı olabilir. Braille ekranı olan bir uygulama ekranı okuyabilir ve cihazı kontrol edebilir.</string>
+    <string name="external_displays_none">Hiçbir uygulama braille ekranı olamaz.</string>
 </resources>

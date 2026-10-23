@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Ayrıntılı düzenleme</string>
+    <string name="granular_editing_split_by">Şuna göre böl: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Şuna göre böl:</string>
+    <string name="granular_editing_characters">Karakter</string>
+    <string name="granular_editing_words">Kelime</string>
+    <string name="granular_editing_sentences">Cümleler</string>
+    <string name="granular_editing_lines">Satır</string>
+    <string name="granular_editing_paragraphs">Paragraf</string>
+    <string name="granular_editing_space">Boşluk</string>
+    <string name="granular_editing_new_line">Yeni satır</string>
+    <string name="granular_editing_tab">Sekme karakteri</string>
+    <string name="granular_editing_empty">Metin yok. Diğer\'in sonuna Metin ekle\'yi kullanın.</string>
+    <string name="granular_editing_edit">Düzenle</string>
+    <string name="granular_editing_insert_before">Öncesine ekle</string>
+    <string name="granular_editing_insert_after">Sonrasına ekle</string>
+    <string name="granular_editing_delete">Sil</string>
+    <string name="granular_editing_select">Seç</string>
+    <string name="granular_editing_unselect">Seçimi kaldır</string>
+    <string name="granular_editing_selected">Seçildi</string>
+    <string name="granular_editing_save">Kaydet</string>
+    <string name="granular_editing_more">Daha Fazla</string>
+    <string name="granular_editing_undo">Geri al</string>
+    <string name="granular_editing_redo">Geri alınan son düzenlemeyi yeniden yap</string>
+    <string name="granular_editing_find">Bul</string>
+    <string name="granular_editing_find_next">Sonrakini bul</string>
+    <string name="granular_editing_replace">Değiştir</string>
+    <string name="granular_editing_replace_with">Şununla değiştir:</string>
+    <string name="granular_editing_replace_all">Tümünü değiştir</string>
+    <string name="granular_editing_add_at_end">Metnin sonuna metin ekle</string>
+    <string name="granular_editing_clear_selection">Tüm metnin seçimini kaldır</string>
+    <string name="granular_editing_cut_selected">Seçilen metni kes</string>
+    <string name="granular_editing_delete_selected">Seçileni sil</string>
+    <string name="granular_editing_copied">Kopyalandı</string>
+    <string name="granular_editing_deleted">Silindi</string>
+    <string name="granular_editing_not_found">Bulunamadı</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> değiştirildi</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> değiştirildi</item>
+    </plurals>
+    <string name="granular_editing_save_changes">Değişiklikler kaydedilsin mi?</string>
+    <string name="granular_editing_copy_changes">Değiştirilen metin kopyalansın mı?</string>
+    <string name="granular_editing_discard">At</string>
+    <string name="granular_editing_keep_editing">Düzenlemeye devam et</string>
+    <string name="granular_editing_not_saved">Kaydedilmedi: metin alanı kayboldu. Metin kopyalanır.</string>
+    <string name="granular_editing_no_text">Düzenlenecek metin yok</string>
+    <string name="granular_editing_password">Şifre alanlarında kullanılamaz</string>
+</resources>

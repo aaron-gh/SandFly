@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">TalkBack açık</string>
-  <string name="talkback_disabled">TalkBack kapalı</string>
+  <string name="talkback_on">SandFly açık</string>
+  <string name="talkback_disabled">SandFly kapalı</string>
   <string name="notification_type_beginning_of_field">Alanın başı</string>
   <string name="notification_type_end_of_field">Alanın sonu</string>
   <string name="notification_type_selection_mode_on">Seçim modu açık</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">Sürükleme başlatıldı</string>
   <string name="drag_dropped">Sürüklenen öğe bırakıldı</string>
   <string name="drag_cancelled">Sürükleme iptal edildi</string>
+    <string name="template_brightness_changed">Parlaklık yüzde <xliff:g id="percent">%1$d</xliff:g>.</string>
+    <string name="brightness_needs_permission">Parlaklığı değiştirmek için sistem ayarlarını değiştirmeye izin ver.</string>
+    <string name="brightness_adaptive_on">Parlaklığı değiştirmek için uyarlanabilir parlaklığı kapatın.</string>
+    <string name="telegram_replying_to"><xliff:g id="name" example="Ronan">%1$s</xliff:g>\'e yanıt veriyor: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>
