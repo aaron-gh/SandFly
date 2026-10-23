@@ -138,4 +138,16 @@
     <string name="script_source_remove">Xoá nguồn</string>
     <string name="script_source_remove_title">Xoá <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Các tập lệnh đã cài đặt từ nguồn này vẫn được giữ lại.</string>
+    <string name="scripts_auto_update">Tự động cập nhật tập lệnh</string>
+    <string name="scripts_check_updates">Kiểm tra bản cập nhật</string>
+    <string name="scripts_checking_updates">Đang kiểm tra bản cập nhật…</string>
+    <string name="scripts_updates_category">Bản cập nhật</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one">Đã cập nhật <xliff:g id="count" example="1">%1$d</xliff:g> tập lệnh: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other">Đã cập nhật <xliff:g id="count" example="2">%1$d</xliff:g> tập lệnh: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Các bản cập nhật được liệt kê trong mục Bản cập nhật</string>
+    <string name="scripts_update_check_failed">Không thể kiểm tra một số nguồn</string>
+    <string name="scripts_up_to_date">Tất cả tập lệnh đều đã được cập nhật</string>
 </resources>

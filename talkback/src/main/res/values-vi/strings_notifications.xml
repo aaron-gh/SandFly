@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">Mạnh</string>
+    <string name="notification_shake_2">Vừa</string>
+    <string name="notification_shake_1">Nhẹ</string>
+    <string name="notification_media_skip">Không đọc</string>
+    <string name="notification_media_pause">Tạm dừng nội dung nghe nhìn khi đọc</string>
+    <string name="notification_media_read">Đọc</string>
+    <string name="notification_headphones_only_without">Chỉ khi không dùng tai nghe</string>
+    <string name="notification_headphones_only_with">Chỉ khi dùng tai nghe</string>
+    <string name="notification_headphones_always">Đọc cả khi có và không có tai nghe</string>
+    <string name="notification_queue_skip">Không đọc thông báo mới</string>
+    <string name="notification_queue_interrupt">Ngắt thông báo đang đọc</string>
+    <string name="notification_queue_queue">Đọc sau thông báo đang đọc</string>
+    <string name="notification_url_omit">Bỏ qua</string>
+    <string name="notification_url_replace">Đọc văn bản bên dưới</string>
+    <string name="notification_url_domain">Chỉ đọc tên trang web</string>
+    <string name="notification_url_full">Đọc toàn bộ đường liên kết</string>
+    <string name="notification_category_title">Thông báo</string>
+    <string name="notification_reading_title">Đọc thông báo</string>
+    <string name="notification_apps_title">Ứng dụng</string>
+    <string name="notification_words_title">Từ và nội dung thay thế</string>
+    <string name="notification_kinds_title">Loại thông báo</string>
+    <string name="notification_when_title">Thời điểm đọc</string>
+    <string name="notification_rules_title">Quy tắc</string>
+    <string name="notification_repeats_title">Thông báo lặp lại</string>
+    <string name="notification_stop_title">Dừng đọc</string>
+    <string name="notification_schedules_title">Tổng hợp và thời gian</string>
+    <string name="notification_history_title">Nhật ký</string>
+    <string name="notification_test_title">Gửi thông báo thử</string>
+    <string name="notification_automation_title">Tự động hoá</string>
+    <string name="notification_automation_allowed_title">Cho phép ứng dụng tự động hoá</string>
+    <string name="notification_category_said">Nội dung được đọc</string>
+    <string name="notification_format_title">Định dạng lời đọc</string>
+    <string name="notification_format_message">Biến thay thế: {app}, {title}, {text}, {content} (toàn bộ văn bản), {bigtext}, {subtext}, {ticker}, {category} và {time}.</string>
+    <string name="notification_private_format_title">Nội dung đọc cho thông báo riêng tư</string>
+    <string name="notification_private_format_message">Nội dung được đọc thay cho nội dung của thông báo riêng tư. Biến thay thế: {app}, {category} và {time}.</string>
+    <string name="notification_category_voice">Giọng nói</string>
+    <string name="notification_voice_title">Giọng nói</string>
+    <string name="notification_voice_sandfly">Giọng nói của SandFly</string>
+    <string name="notification_detect_language_title">Phát hiện ngôn ngữ</string>
+    <string name="notification_detect_language_summary">Đọc mỗi thông báo bằng ngôn ngữ của thông báo đó. Cần bật Tự động chuyển đổi ngôn ngữ trong phần cài đặt Chuyển văn bản thành lời nói.</string>
+    <string name="notification_sound_before_title">Âm thanh trước thông báo</string>
+    <string name="notification_category_text">Văn bản</string>
+    <string name="notification_remove_emoji_title">Bỏ qua biểu tượng cảm xúc</string>
+    <string name="notification_lowercase_title">Đọc chữ in hoa thành từ</string>
+    <string name="notification_lowercase_summary">Một số công cụ chuyển văn bản thành lời nói đánh vần từng chữ cái của từ viết hoa</string>
+    <string name="notification_separate_digits_title">Đọc từng chữ số của số dài</string>
+    <string name="notification_separate_digits_summary">Chẳng hạn như mã và số điện thoại</string>
+    <string name="notification_min_digits_title">Số dài có ít nhất</string>
+    <string name="notification_urls_title">Đường liên kết</string>
+    <string name="notification_url_text_title">Nội dung đọc thay cho đường liên kết</string>
+    <string name="notification_skip_empty_title">Bỏ qua thông báo không có văn bản</string>
+    <string name="notification_category_length">Độ dài</string>
+    <string name="notification_max_words_title">Số từ tối đa</string>
+    <string name="notification_max_sentences_title">Số câu tối đa</string>
+    <string name="notification_max_characters_title">Số ký tự tối đa</string>
+    <string name="notification_max_seconds_title">Dừng đọc sau</string>
+    <string name="notification_category_timing">Thời gian</string>
+    <string name="notification_delay_title">Thời gian chờ trước khi đọc</string>
+    <string name="notification_queue_title">Khi đang đọc thông báo khác</string>
+    <string name="notification_repeat_minutes_title">Đọc lại đến khi màn hình bật</string>
+    <string name="notification_skip_media_title">Bỏ qua trình phát nội dung nghe nhìn</string>
+    <string name="notification_skip_ongoing_title">Bỏ qua thông báo liên tục</string>
+    <string name="notification_skip_ongoing_summary">Chẳng hạn như chỉ đường và bộ hẹn giờ</string>
+    <string name="notification_skip_foreground_title">Bỏ qua thông báo ứng dụng đang chạy</string>
+    <string name="notification_skip_foreground_summary">Chẳng hạn như VPN hoặc trình ghi âm</string>
+    <string name="notification_skip_progress_title">Bỏ qua thông báo tiến trình</string>
+    <string name="notification_skip_group_summaries_title">Bỏ qua thông báo tổng hợp nhóm</string>
+    <string name="notification_skip_group_summaries_summary">Chẳng hạn như “3 tin nhắn mới”</string>
+    <string name="notification_skip_low_priority_title">Bỏ qua thông báo có mức ưu tiên thấp</string>
+    <string name="notification_skip_system_title">Bỏ qua thông báo hệ thống</string>
+    <string name="notification_screen_on_title">Khi màn hình bật</string>
+    <string name="notification_screen_off_title">Khi màn hình tắt</string>
+    <string name="notification_locked_title">Khi điện thoại bị khoá</string>
+    <string name="notification_headphones_title">Tai nghe</string>
+    <string name="notification_media_title">Khi đang phát nội dung nghe nhìn</string>
+    <string name="notification_dnd_title">Không làm phiền</string>
+    <string name="notification_dnd_none">Không đọc thông báo nào</string>
+    <string name="notification_dnd_allowed">Đọc thông báo được chế độ Không làm phiền cho phép</string>
+    <string name="notification_dnd_all">Đọc tất cả</string>
+    <string name="notification_touch_title">Khi đang chạm vào màn hình</string>
+    <string name="notification_touch_read">Đọc ngay</string>
+    <string name="notification_touch_after">Đọc khi ngừng chạm</string>
+    <string name="notification_touch_skip">Không đọc</string>
+    <string name="notification_during_calls_title">Trong cuộc gọi</string>
+    <string name="notification_honour_silent_title">Không đọc ở chế độ im lặng</string>
+    <string name="notification_honour_vibrate_title">Không đọc ở chế độ rung</string>
+    <string name="notification_skip_in_car_title">Không đọc ở chế độ ô tô</string>
+    <string name="notification_skip_in_car_summary">Chẳng hạn như khi dùng Android Auto, vốn tự đọc thông báo</string>
+    <string name="notification_category_quiet_hours">Giờ yên lặng</string>
+    <string name="notification_quiet_hours_title">Giờ yên lặng</string>
+    <string name="notification_quiet_start_title">Bắt đầu</string>
+    <string name="notification_quiet_end_title">Kết thúc</string>
+    <string name="notification_repeat_seconds_title">Thời gian bỏ qua thông báo giống nhau</string>
+    <string name="notification_numbers_alike_title">Coi các số khác nhau là giống nhau</string>
+    <string name="notification_numbers_alike_summary">Chẳng hạn như phần trăm tải xuống</string>
+    <string name="notification_cooldown_title">Khoảng cách giữa các thông báo của một ứng dụng</string>
+    <string name="notification_skip_prefix_title">Bỏ qua phần đầu lặp lại</string>
+    <string name="notification_skip_prefix_summary">Chẳng hạn như tên nhóm trong cuộc trò chuyện</string>
+    <string name="notification_prefix_memory_title">Thời gian ghi nhớ phần đầu</string>
+    <string name="notification_access_summary">Cần để dừng đọc thông báo đã bị loại bỏ và để tổng hợp thông báo</string>
+    <string name="notification_shake_title">Lắc để dừng</string>
+    <string name="notification_shake_strength_title">Độ mạnh khi lắc</string>
+    <string name="notification_wave_title">Vẫy tay để dừng</string>
+    <string name="notification_wave_summary">Di chuyển tay qua cảm biến tiệm cận</string>
+    <string name="notification_pocket_title">Chế độ bỏ túi</string>
+    <string name="notification_pocket_summary">Nếu cảm biến đã bị che khi bắt đầu đọc, chẳng hạn như trong túi, việc đọc sẽ không dừng</string>
+    <string name="notification_volume_keys_title">Nhấn cả hai phím âm lượng</string>
+    <string name="notification_dismiss_title">Dừng khi loại bỏ thông báo</string>
+    <string name="notification_watch_dismiss_title">Kể cả khi loại bỏ trên đồng hồ</string>
+    <string name="notification_app_cancel_title">Dừng khi ứng dụng xoá thông báo</string>
+    <string name="notification_category_summary">Tổng hợp</string>
+    <string name="notification_summary_now_title">Đọc thông báo ngay</string>
+    <string name="notification_summary_daily_title">Đọc thông báo hằng ngày</string>
+    <string name="notification_summary_time_title">Thời gian</string>
+    <string name="notification_summary_newest_first_title">Thông báo mới nhất trước</string>
+    <string name="notification_summary_name_title">Tên của bạn</string>
+    <string name="notification_summary_gap_title">Khoảng dừng giữa các thông báo</string>
+    <string name="notification_summary_needs_sandfly">Bật SandFly để đọc thông báo</string>
+    <string name="notification_summary_no_access">Quyền truy cập thông báo đang tắt</string>
+    <string name="notification_summary_morning">Chào buổi sáng.</string>
+    <string name="notification_summary_afternoon">Chào buổi chiều.</string>
+    <string name="notification_summary_evening">Chào buổi tối.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">Thông báo giờ</string>
+    <string name="notification_clock_interval_title">Đọc giờ sau mỗi</string>
+    <string name="notification_clock_format_title">Định dạng giờ</string>
+    <string name="notification_clock_format_message">Biến thay thế: {time}, {date} và {battery} (phần trăm pin).</string>
+    <string name="notification_clock_format_default">Bây giờ là {time}</string>
+    <string name="notification_clock_exact_title">Đọc giờ chính xác</string>
+    <string name="notification_clock_exact_summary">Cần quyền Báo thức và lời nhắc. Nếu không, giờ có thể được đọc chậm tới một phút.</string>
+    <string name="notification_other_apps_title">Ứng dụng khác</string>
+    <string name="notification_apps_category">Ứng dụng</string>
+    <string name="notification_apps_loading">Đang tải ứng dụng</string>
+    <string name="notification_app_mode_title">Thông báo</string>
+    <string name="notification_app_mode_default">Giống các ứng dụng khác</string>
+    <string name="notification_app_mode_read">Đọc</string>
+    <string name="notification_app_mode_private">Chỉ đọc tên ứng dụng</string>
+    <string name="notification_app_mode_priority">Đọc trước</string>
+    <string name="notification_app_mode_ignore">Không đọc</string>
+    <string name="notification_app_name_title">Tên được đọc</string>
+    <string name="notification_app_said_as">đọc là <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">Đặt lại</string>
+    <string name="notification_required_title">Chỉ đọc thông báo có</string>
+    <string name="notification_blocked_title">Không đọc thông báo có</string>
+    <string name="notification_private_title">Chỉ đọc tên ứng dụng đối với</string>
+    <string name="notification_replacements_title">Đọc khác đi</string>
+    <string name="notification_add_word">Thêm từ</string>
+    <string name="notification_add_replacement">Thêm nội dung thay thế</string>
+    <string name="notification_replacement_item">Đọc <xliff:g id="find" example="lol">%1$s</xliff:g> là <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">Văn bản</string>
+    <string name="notification_replace_with">Đọc là</string>
+    <string name="notification_whole_words">Chỉ khớp toàn bộ từ</string>
+    <string name="notification_regex">Biểu thức chính quy</string>
+    <string name="notification_enter_text">Nhập văn bản</string>
+    <string name="notification_invalid_regex">Biểu thức chính quy không hợp lệ</string>
+    <string name="notification_edit">Chỉnh sửa</string>
+    <string name="notification_remove">Xoá</string>
+    <string name="notification_history_keep">Lưu nhật ký</string>
+    <string name="notification_history_clear">Xoá nhật ký</string>
+    <string name="notification_history_category">Thông báo</string>
+    <string name="notification_history_empty">Không có thông báo</string>
+    <string name="notification_history_ignore_app">Không đọc thông báo của <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Chỉ đọc tên của <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Đọc thông báo của <xliff:g id="app" example="Chat">%1$s</xliff:g> trước</string>
+    <string name="notification_history_block_similar">Không đọc thông báo như thế này</string>
+    <string name="notification_history_copy">Sao chép</string>
+    <string name="notification_saved">Đã lưu</string>
+    <string name="notification_copied">Đã sao chép</string>
+    <string name="notification_outcome_read">Đã đọc</string>
+    <string name="notification_outcome_stopped">Đã dừng khi đang đọc</string>
+    <string name="notification_outcome_speech_off">Không đọc: tính năng đọc thông báo đang tắt</string>
+    <string name="notification_outcome_dnd">Không đọc: chế độ Không làm phiền</string>
+    <string name="notification_outcome_touching">Không đọc: đang chạm vào màn hình</string>
+    <string name="notification_outcome_app">Không đọc: ứng dụng bị bỏ qua</string>
+    <string name="notification_outcome_ongoing">Không đọc: thông báo liên tục</string>
+    <string name="notification_outcome_foreground">Không đọc: ứng dụng đang chạy</string>
+    <string name="notification_outcome_low_priority">Không đọc: mức ưu tiên thấp</string>
+    <string name="notification_outcome_system">Không đọc: thông báo hệ thống</string>
+    <string name="notification_outcome_media">Không đọc: trình phát nội dung nghe nhìn</string>
+    <string name="notification_outcome_group_summary">Không đọc: thông báo tổng hợp nhóm</string>
+    <string name="notification_outcome_progress">Không đọc: thông báo tiến trình</string>
+    <string name="notification_outcome_required">Không đọc: thiếu từ bắt buộc</string>
+    <string name="notification_outcome_blocked">Không đọc: có từ bị chặn</string>
+    <string name="notification_outcome_empty">Không đọc: không có văn bản</string>
+    <string name="notification_outcome_repeat">Không đọc: thông báo lặp lại</string>
+    <string name="notification_outcome_cooldown">Không đọc: vừa đọc thông báo của ứng dụng</string>
+    <string name="notification_outcome_quiet_hours">Không đọc: giờ yên lặng</string>
+    <string name="notification_outcome_screen_on">Không đọc: màn hình bật</string>
+    <string name="notification_outcome_screen_off">Không đọc: màn hình tắt</string>
+    <string name="notification_outcome_locked">Không đọc: thiết bị bị khoá</string>
+    <string name="notification_outcome_headphones">Không đọc: đã kết nối tai nghe</string>
+    <string name="notification_outcome_no_headphones">Không đọc: không có tai nghe</string>
+    <string name="notification_outcome_silent">Không đọc: chế độ im lặng</string>
+    <string name="notification_outcome_vibrate">Không đọc: chế độ rung</string>
+    <string name="notification_outcome_media_playing">Không đọc: đang phát nội dung nghe nhìn</string>
+    <string name="notification_outcome_car">Không đọc: chế độ ô tô</string>
+    <string name="notification_outcome_rule">Không đọc: quy tắc</string>
+    <string name="notification_outcome_busy">Không đọc: đang đọc thông báo khác</string>
+    <string name="notification_outcome_call">Đã thông báo như cuộc gọi</string>
+    <string name="notification_rule_add">Thêm quy tắc</string>
+    <string name="notification_rule_from_template">Thêm quy tắc từ mẫu</string>
+    <string name="notification_rules_category">Quy tắc</string>
+    <string name="notification_rules_empty">Không có quy tắc</string>
+    <string name="notification_rule_name">Tên</string>
+    <string name="notification_rule_untitled">Quy tắc</string>
+    <string name="notification_rule_enabled">Đã bật</string>
+    <string name="notification_rule_match">Điều kiện</string>
+    <string name="notification_rule_match_all">Phải đáp ứng tất cả</string>
+    <string name="notification_rule_match_any">Phải đáp ứng ít nhất một điều kiện</string>
+    <string name="notification_rule_conditions">Khi</string>
+    <string name="notification_rule_actions">Thì</string>
+    <string name="notification_rule_add_condition">Thêm điều kiện</string>
+    <string name="notification_rule_add_action">Thêm hành động</string>
+    <string name="notification_rule_invert">Đảo ngược</string>
+    <string name="notification_rule_delete">Xoá quy tắc</string>
+    <string name="notification_rule_delete_confirm">Xoá <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_always">Luôn luôn</string>
+    <string name="notification_rule_no_actions">không thực hiện hành động nào</string>
+    <string name="notification_rule_and">" và "</string>
+    <string name="notification_rule_or">" hoặc "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">Chỉ khi dùng tai nghe</string>
+    <string name="notification_template_night">Im lặng vào ban đêm</string>
+    <string name="notification_template_screen_off">Chỉ khi màn hình tắt</string>
+    <string name="notification_template_locked_private">Chỉ đọc tên ứng dụng khi bị khoá</string>
+    <string name="notification_template_short_on_battery">Đọc ngắn gọn khi không sạc</string>
+    <string name="notification_type_bluetooth">Thiết bị Bluetooth</string>
+    <string name="notification_type_wired">Tai nghe có dây</string>
+    <string name="notification_type_wifi">Mạng Wi-Fi</string>
+    <string name="notification_type_time">Thời gian trong ngày</string>
+    <string name="notification_type_screen">Màn hình bật</string>
+    <string name="notification_type_locked">Điện thoại bị khoá</string>
+    <string name="notification_type_from_app">Thông báo từ ứng dụng</string>
+    <string name="notification_type_foreground">Ứng dụng ở phía trước</string>
+    <string name="notification_type_contains">Thông báo chứa</string>
+    <string name="notification_type_battery">Mức pin dưới</string>
+    <string name="notification_type_charging">Đang sạc</string>
+    <string name="notification_type_landscape">Hướng ngang</string>
+    <string name="notification_type_silent">Chế độ im lặng hoặc rung</string>
+    <string name="notification_type_media">Đang phát nội dung nghe nhìn</string>
+    <string name="notification_bluetooth_any">Thiết bị bất kỳ</string>
+    <string name="notification_wifi_hint">Tên mạng</string>
+    <string name="notification_choose_app">Chọn ứng dụng</string>
+    <string name="notification_time_start">Từ</string>
+    <string name="notification_time_end">Đến</string>
+    <string name="notification_time_days">Ngày</string>
+    <string name="notification_time_range">Từ <xliff:g id="start" example="22:00">%1$s</xliff:g> đến <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly cần quyền đó cho điều kiện này</string>
+    <string name="notification_cond_bluetooth">Đã kết nối <xliff:g id="device" example="Pixel Buds">%1$s</xliff:g></string>
+    <string name="notification_cond_bluetooth_not">Chưa kết nối <xliff:g id="device" example="Pixel Buds">%1$s</xliff:g></string>
+    <string name="notification_cond_bluetooth_any">Đã kết nối thiết bị âm thanh Bluetooth</string>
+    <string name="notification_cond_bluetooth_any_not">Chưa kết nối thiết bị âm thanh Bluetooth</string>
+    <string name="notification_cond_wired">Đã kết nối tai nghe có dây</string>
+    <string name="notification_cond_wired_not">Chưa kết nối tai nghe có dây</string>
+    <string name="notification_cond_battery_below">Mức pin dưới <xliff:g id="percent" example="20">%1$d</xliff:g> phần trăm</string>
+    <string name="notification_cond_battery_below_not">Mức pin từ <xliff:g id="percent" example="20">%1$d</xliff:g> phần trăm trở lên</string>
+    <string name="notification_cond_charging">Điện thoại đang sạc</string>
+    <string name="notification_cond_charging_not">Điện thoại không sạc</string>
+    <string name="notification_cond_locked">Điện thoại bị khoá</string>
+    <string name="notification_cond_locked_not">Điện thoại đã mở khoá</string>
+    <string name="notification_cond_screen_on">Màn hình bật</string>
+    <string name="notification_cond_screen_on_not">Màn hình tắt</string>
+    <string name="notification_cond_landscape">Màn hình ở hướng ngang</string>
+    <string name="notification_cond_landscape_not">Màn hình ở hướng dọc</string>
+    <string name="notification_cond_time">Thời gian là <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Thời gian không phải là <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">Đã kết nối với <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">Chưa kết nối với <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_any">Đã kết nối Wi-Fi</string>
+    <string name="notification_cond_wifi_any_not">Chưa kết nối Wi-Fi</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> đang ở phía trước</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> không ở phía trước</string>
+    <string name="notification_cond_from">Thông báo từ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Thông báo không phải từ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Thông báo chứa <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Thông báo không chứa <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Chuông ở chế độ im lặng hoặc rung</string>
+    <string name="notification_cond_silent_not">Chuông ở chế độ đổ chuông</string>
+    <string name="notification_cond_media">Đang phát nội dung nghe nhìn</string>
+    <string name="notification_cond_media_not">Không phát nội dung nghe nhìn</string>
+    <string name="notification_action_skip">không đọc</string>
+    <string name="notification_action_private">chỉ đọc tên ứng dụng</string>
+    <string name="notification_action_not_private">đọc toàn bộ, kể cả thông báo riêng tư</string>
+    <string name="notification_action_format">dùng định dạng lời đọc</string>
+    <string name="notification_action_max_words">đọc đến số từ được chỉ định</string>
+    <string name="notification_action_no_limit">đọc không giới hạn độ dài</string>
+    <string name="notification_action_keep_emoji">giữ biểu tượng cảm xúc</string>
+    <string name="notification_action_keep_numbers">đọc liền các chữ số</string>
+    <string name="notification_action_priority">đọc trước</string>
+    <string name="notification_action_always_read">đọc cả trong giờ yên lặng và những lúc không đọc thông báo</string>
+    <string name="notification_action_voice">đọc bằng hồ sơ giọng nói</string>
+    <string name="notification_action_voice_value">đọc bằng <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">đọc bằng giọng nói của SandFly</string>
+    <string name="notification_voice_removed">Hồ sơ giọng nói đã bị xoá</string>
+    <string name="notification_action_format_value">dùng định dạng lời đọc <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">đọc tối đa <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">Tắt</string>
+    <string name="notification_on">Bật</string>
+    <string name="notification_never_again">Đến khi SandFly khởi động lại</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">Đọc thông báo</string>
+    <string name="notification_speech_now_on">Đã bật đọc thông báo</string>
+    <string name="notification_speech_now_off">Đã tắt đọc thông báo</string>
+    <string name="notification_no_last_notification">Chưa đọc thông báo nào</string>
+    <string name="shortcut_read_notifications">Đọc thông báo</string>
+    <string name="shortcut_toggle_notification_speech">Bật hoặc tắt đọc thông báo</string>
+    <string name="shortcut_read_last_notification">Đọc lại thông báo gần nhất</string>
+    <string name="shortcut_stop_notification">Dừng đọc thông báo</string>
+    <string name="notification_test_posting">Thông báo thử sẽ xuất hiện sau 5 giây</string>
+    <string name="notification_test_not_allowed">Trước tiên, hãy cho phép SandFly hiển thị thông báo</string>
+    <string name="notification_test_content_title">Thử nghiệm SandFly</string>
+    <string name="notification_test_content_text">Đây là thông báo thử, được đọc theo cài đặt thông báo của bạn. 123456</string>
+    <string name="notification_automation_on">Bật đọc thông báo</string>
+    <string name="notification_automation_off">Tắt đọc thông báo</string>
+    <string name="notification_automation_toggle">Bật hoặc tắt đọc thông báo</string>
+    <string name="notification_automation_stop">Dừng thông báo đang đọc</string>
+    <string name="notification_automation_read_all">Đọc thông báo</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> giây</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> giây</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> phút</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> phút</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> giờ</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> giờ</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> từ</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> từ</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> câu</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> câu</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ký tự</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ký tự</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> chữ số</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> chữ số</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">Bạn có <xliff:g id="count" example="1">%d</xliff:g> thông báo.</item>
+        <item quantity="other">Bạn có <xliff:g id="count" example="5">%d</xliff:g> thông báo.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>

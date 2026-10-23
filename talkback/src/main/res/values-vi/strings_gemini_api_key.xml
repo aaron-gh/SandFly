@@ -15,4 +15,40 @@
     <string name="ai_service_error_quota">Đã đạt đến giới hạn sử dụng của dịch vụ AI. Hãy thử lại sau.</string>
     <string name="ai_service_error_busy">Dịch vụ AI hiện đang bận. Hãy thử lại sau giây lát.</string>
     <string name="ai_service_error_timeout">Dịch vụ AI phản hồi quá lâu. Hãy thử lại.</string>
+    <string name="title_pref_gemini_model">Mô hình Gemini</string>
+    <string name="gemini_model_automatic">Tự động</string>
+    <string name="summary_pref_gemini_model_automatic">Tự động: Gemini Flash, rồi Flash-Lite khi Flash bận</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, rồi Flash-Lite khi mô hình này bận</string>
+    <string name="gemini_model_loading">Đang tải danh sách mô hình…</string>
+    <string name="gemini_model_list_failed">Không thể tải danh sách mô hình: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Hãy đặt khoá API Gemini trước</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Không có</string>
+    <string name="ai_service_not_set_up">Chưa có dịch vụ AI nào được sử dụng. Hãy thiết lập hoặc chọn một dịch vụ trong phần cài đặt Mô tả tự động.</string>
+    <string name="ai_provider_none_set_up">Chưa thiết lập dịch vụ AI nào. Hãy thiết lập một dịch vụ trong phần cài đặt bên dưới.</string>
+    <string name="ai_provider_other">Dịch vụ khác</string>
+    <string name="title_pref_category_ai_services">Dịch vụ AI</string>
+    <string name="title_pref_ai_provider">Dịch vụ AI</string>
+    <string name="title_ai_provider_settings">Cài đặt <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, chưa thiết lập</string>
+    <string name="ai_provider_in_use">Đang sử dụng</string>
+    <string name="ai_provider_not_set_up">Chưa thiết lập</string>
+    <string name="ai_provider_not_ready">Hãy chọn mô hình trước</string>
+    <string name="ai_provider_address">Địa chỉ</string>
+    <string name="ai_provider_address_message">Địa chỉ của dịch vụ có API trò chuyện tương thích với OpenAI và hỗ trợ nhập hình ảnh, chẳng hạn như https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Chưa đặt</string>
+    <string name="ai_provider_set">Đã đặt</string>
+    <string name="title_pref_gemini_api_key_of">Khoá API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">Mô hình <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_choose_model">Chưa chọn</string>
+    <string name="ai_provider_key_message">Dán khoá API <xliff:g id="service" example="Claude">%1$s</xliff:g> của bạn. Để xoá, hãy để trống trường rồi lưu. Hình ảnh và màn hình mà bạn mô tả sẽ được gửi đến <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Hãy đặt khoá API <xliff:g id="service" example="Claude">%1$s</xliff:g> trước</string>
+    <string name="ai_provider_needs_address">Hãy đặt địa chỉ trước</string>
+    <string name="ai_provider_enter_model">Nhập tên mô hình</string>
 </resources>
