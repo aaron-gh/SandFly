@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">Save</string>
     <string name="gemini_api_key_get">Get a key</string>
     <string name="gemini_api_terms_link">Gemini API Additional Terms of Service</string>
+    <string name="title_pref_gemini_model">Gemini model</string>
+    <string name="gemini_model_automatic">Automatic</string>
+    <string name="summary_pref_gemini_model_automatic">Automatic: Gemini Flash, then Flash-Lite when Flash is busy</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, then Flash-Lite when it is busy</string>
+    <string name="gemini_model_loading">Getting the models…</string>
+    <string name="gemini_model_list_failed">Could not get the models: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Set a Gemini API key first</string>
+    <string name="ai_service_address_hint">Address, such as https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Model</string>
+    <string name="ai_service_address_invalid">The address must start with https://. Nothing was saved.</string>
+    <string name="dialog_message_ai_service_consent">Images and screenshots are sent to <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> to be described, which takes several seconds. Its own terms and privacy policy apply. Generative AI is experimental, so it will make mistakes.</string>
+    <string name="ai_service_error_api_key">The AI service didn\'t accept the API key. Check its settings in Automatic descriptions.</string>
+    <string name="ai_service_error_quota">The usage limit of the AI service has been reached. Try again later.</string>
+    <string name="ai_service_error_busy">The AI service is busy right now. Try again in a moment.</string>
+    <string name="ai_service_error_timeout">The AI service took too long to answer. Try again.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">None</string>
+    <string name="ai_service_not_set_up">No AI service is in use. Set one up or choose one in Automatic descriptions settings.</string>
+    <string name="ai_provider_none_set_up">No AI service is set up. Set one up in its settings below.</string>
+    <string name="ai_provider_other">Other service</string>
+    <string name="title_pref_category_ai_services">AI services</string>
+    <string name="title_pref_ai_provider">AI service</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> settings</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, not set up</string>
+    <string name="ai_provider_in_use">In use</string>
+    <string name="ai_provider_not_set_up">Not set up</string>
+    <string name="ai_provider_not_ready">Choose a model first</string>
+    <string name="ai_provider_address">Address</string>
+    <string name="ai_provider_address_message">The address of a service with an OpenAI-compatible chat API and image input, such as https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Not set</string>
+    <string name="ai_provider_set">Set</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API key</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> model</string>
+    <string name="ai_provider_choose_model">Not chosen</string>
+    <string name="ai_provider_key_message">Paste your <xliff:g id="service" example="Claude">%1$s</xliff:g> API key. To remove it, clear the field and save. Images and screens that you describe are sent to <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Set the <xliff:g id="service" example="Claude">%1$s</xliff:g> API key first</string>
+    <string name="ai_provider_needs_address">Set the address first</string>
+    <string name="ai_provider_enter_model">Enter a model name</string>
 </resources>
