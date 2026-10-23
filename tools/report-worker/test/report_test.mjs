@@ -1,7 +1,7 @@
 // Run with macOS JavaScriptCore:
 // /System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Helpers/jsc -m test/report_test.mjs
 
-import { issueBody, labels, logComment, parseReport } from '../src/report.js';
+import { issueBody, labels, logComments, LOG_PART, parseReport } from '../src/report.js';
 
 let failures = 0;
 function check(name, condition) {
@@ -57,8 +57,20 @@ const minimal = parseReport({ type: 'Crash', title: 'T', description: 'D' });
 check('optional fields empty', minimal.area === '' && minimal.device.length === 0);
 check('minimal body', issueBody(minimal) === '**Type:** Crash\n\n### Description\n\nD\n');
 
-const comment = logComment(report);
-check('log fence is longer than any run', comment.includes('`````text\nline one\n````\nline three\n`````\n'));
+const comments = logComments(report);
+check('a short log is one comment', comments.length === 1 && comments[0].includes('\nSandFly log\n'));
+check('log fence is longer than any run', comments[0].includes('`````text\nline one\n````\nline three\n`````\n'));
+
+const line = 'x'.repeat(99) + '\n';
+const longLog = line.repeat(1500);
+const parts = logComments(parseReport({ ...valid, log: longLog }));
+check('a long log is split', parts.length === 3);
+check('parts are numbered', parts[1].includes('SandFly log, part 2 of 3'));
+check('parts fit in a comment', parts.every((part) => part.length < 65536));
+check('parts are cut between lines', parts.every((part) => part.includes('```text\n' + 'x'.repeat(99) + '\n')));
+const kept = parts.map((part) => part.split('```text\n')[1].split('\n```')[0]).join('\n');
+check('parts hold the whole log', kept === longLog.replace(/\n$/, ''));
+check('a part holds at most LOG_PART', kept.length > 2 * LOG_PART);
 
 rejects('missing type', { ...valid, type: undefined }, 'type');
 rejects('unknown type', { ...valid, type: 'Other' }, 'type');
@@ -71,7 +83,7 @@ rejects('number as text', { ...valid, app: 5 }, 'app');
 rejects('bad email', { ...valid, email: 'not an email' }, 'email');
 rejects('device not a list', { ...valid, device: 'x' }, 'device');
 rejects('too many device lines', { ...valid, device: Array(11).fill('x') }, 'device');
-rejects('long log', { ...valid, log: 'x'.repeat(60001) }, 'log');
+rejects('long log', { ...valid, log: 'x'.repeat(400001) }, 'log');
 rejects('array report', [], 'report');
 rejects('null report', null, 'report');
 

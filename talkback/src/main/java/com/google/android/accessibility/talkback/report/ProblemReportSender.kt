@@ -59,11 +59,19 @@ object ProblemReportSender {
   private const val HTTP_OK = 200
   private const val HTTP_CREATED = 201
   private const val HTTP_TOO_MANY_REQUESTS = 429
-  private const val LOG_LINES = 1000
+  private const val LOG_LINES = 10_000
 
   /** The most lines and characters of the log of each of SandFly's other processes. */
-  private const val OTHER_LOG_LINES = 300
-  private const val MAX_OTHER_LOG = 12_000
+  private const val OTHER_LOG_LINES = 3_000
+  private const val MAX_OTHER_LOG = 100_000
+
+  /**
+   * The lowest priority of this process's log lines that a report holds: debug. Verbose lines come
+   * many a second while SandFly reads, and would leave room for only the last second or two.
+   */
+  private const val MAIN_LOG_PRIORITY = "*:D"
+  private const val HTTP_BAD_REQUEST = 400
+  private const val HTTP_TOO_LARGE = 413
 
   /** The folder of the IDs of SandFly's other processes, by process name. */
   private const val PROCESS_IDS_DIR = "process-ids"
@@ -97,7 +105,7 @@ object ProblemReportSender {
     executor.execute {
       val (result, answer) =
         try {
-          post(appContext, REPORT_URL, (if (withLog) report.copy(log = logWithCrash(appContext)) else report).toJson())
+          sendReport(appContext, if (withLog) report.copy(log = logWithCrash(appContext)) else report)
         } catch (e: RuntimeException) {
           LogUtils.e(TAG, "Report not sent: %s", e)
           Result.NOT_SENT to null
@@ -172,13 +180,35 @@ object ProblemReportSender {
     }
   }
 
-  /** Posts [json] to [url], and returns the result and the server's answer. */
+  /**
+   * Sends [report]. A server from before longer logs turns a long one down, so then it is sent
+   * again with the end of the log that such a server takes.
+   */
+  @WorkerThread
+  private fun sendReport(context: Context, report: ProblemReport): Pair<Result, JSONObject?> {
+    val log = report.log
+    if (log == null || log.length <= ProblemReport.OLD_MAX_LOG) {
+      return post(context, REPORT_URL, report.toJson())
+    }
+    var turnedDown = false
+    val sent = post(context, REPORT_URL, report.toJson(), onBadRequest = { turnedDown = true })
+    if (!turnedDown) return sent
+    LogUtils.w(TAG, "The report server turned the long log down; sending a shorter one")
+    val shorter = log.takeLast(ProblemReport.OLD_MAX_LOG).substringAfter('\n')
+    return post(context, REPORT_URL, report.copy(log = shorter).toJson())
+  }
+
+  /**
+   * Posts [json] to [url], and returns the result and the server's answer. [onBadRequest] runs when
+   * the server turns the request down as wrong or too large.
+   */
   @WorkerThread
   private fun post(
     context: Context,
     url: String,
     json: JSONObject,
     success: Int = HTTP_CREATED,
+    onBadRequest: () -> Unit = {},
   ): Pair<Result, JSONObject?> {
     val connection: HttpURLConnection =
       try {
@@ -197,6 +227,7 @@ object ProblemReportSender {
         success -> Result.SENT to readAnswer(connection)
         HTTP_TOO_MANY_REQUESTS -> Result.RATE_LIMITED to null
         else -> {
+          if (code == HTTP_BAD_REQUEST || code == HTTP_TOO_LARGE) onBadRequest()
           LogUtils.w(TAG, "Report server returned %d", code)
           Result.NOT_SENT to null
         }
@@ -246,7 +277,7 @@ object ProblemReportSender {
   private fun logWithCrash(context: Context): String? {
     val crash = CrashLog.read(context)
     val others = otherProcessLogs(context)
-    val log = readLog(Process.myPid(), LOG_LINES)
+    val log = readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)
     if (crash == null && others.isEmpty()) return log
     val head = if (crash == null) "" else "Last crash:\n$crash\n\nLog:\n"
     // The crash, as much of the end of the log as fits, and the other processes' logs.
@@ -293,9 +324,12 @@ object ProblemReportSender {
     return logs.toString()
   }
 
-  /** The last [lines] lines of the log of process [pid], or null if logcat cannot be run. */
+  /**
+   * The last [lines] lines of the log of process [pid], or null if logcat cannot be run, with only
+   * the lines of [priority] or higher, in logcat's filter format, if it isn't null.
+   */
   @WorkerThread
-  private fun readLog(pid: Int, lines: Int): String? {
+  private fun readLog(pid: Int, lines: Int, priority: String? = null): String? {
     val process =
       try {
         ProcessBuilder(
@@ -307,6 +341,7 @@ object ProblemReportSender {
             lines.toString(),
             "--pid",
             pid.toString(),
+            *listOfNotNull(priority).toTypedArray(),
           )
           .redirectErrorStream(true)
           .start()

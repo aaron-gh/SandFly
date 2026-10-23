@@ -63,7 +63,9 @@ data class ProblemReport(
     const val MAX_APP = 100
     const val MAX_TEXT = 10_000
     const val MAX_EMAIL = 254
-    // The server takes 60,000 characters; the rest of the log is cut from the start.
-    const val MAX_LOG = 50_000
+    // The server takes 400,000 characters; the rest of the log is cut from the start.
+    const val MAX_LOG = 400_000
+    // What a server from before that took.
+    const val OLD_MAX_LOG = 50_000
   }
 }
