@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Tastatură Braille TalkBack</string>
+  <string name="braille_ime_service_name">Tastatură Braille SandFly</string>
   <string name="braille_ime_bd_mode_name">Introducerea textului pe afișajul Braille</string>
   <string name="switch_to_tabletop_announcement">Modul Pe masă. Așază dispozitivul cu portul de încărcare spre stânga.</string>
   <string name="calibration_tip_announcement">Ca să actualizezi poziția punctelor, apasă cu %d degete.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">S-a trecut la tastatura Braille necontractată</string>
   <string name="braille_ime_displayed_name">Tastatura Braille</string>
   <string name="multiple_languages_braille_ime_displayed_name">Tastatura Braille, %s</string>
-  <string name="input_view_caption">Tastatura Braille TalkBack – pentru ajutor, accesează g.co/help/Braille</string>
+  <string name="input_view_caption">Tastatura Braille SandFly – pentru ajutor, accesează g.co/help/Braille</string>
   <string name="perform_action_next">Înainte</string>
   <string name="perform_action_submitting">Se trimite textul</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Se actualizează poziția punctului. Mai întâi, să înregistrăm punctele de pe %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Pentru a trece la tastatura Braille în timp ce introduci text, glisează în sus cu trei degete. Apoi selectează Comută la următoarea limbă.</string>
   <string name="title_pref_accumulate_presses">Include toate punctele apăsate</string>
   <string name="summary_pref_accumulate_presses">Fiecare punct apăsat face parte din intrare, chiar dacă este eliberat înaintea altora</string>
-  <string name="title_pref_reverse_dots">Inversează punctele</string>
-  <string name="summary_pref_reverse_dots">Inversează pozițiile punctelor, de exemplu, pentru ca punctele 1 și 4 să facă schimb de locuri</string>
+  <string name="title_pref_reverse_dots">Schimbați punctele din stânga și din dreapta</string>
+  <string name="summary_pref_reverse_dots">Punctele 1, 2 și 3 schimbă locurile cu punctele 4, 5 și 6</string>
   <string name="bd_preference_braille_contracted">Braille contractat</string>
   <string name="bd_preference_braille_uncontracted">Braille necontractat</string>
   <string name="context_menu_title">Opțiuni pentru tastatura Braille</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Tastatură</string>
   <string name="not_enough_touch_points_dialog_title">Dispozitivul tău nu acceptă tastatura Braille</string>
   <string name="not_enough_touch_points_dialog_message">Dispozitivul tău nu acceptă destule puncte tactile. Pentru mai multe informații, contactează producătorul dispozitivului.</string>
-  <string name="talkback_off_dialog_title">Activează TalkBack ca să folosești tastatura Braille</string>
+  <string name="talkback_off_dialog_title">Activează SandFly ca să folosești tastatura Braille</string>
   <string name="talkback_off_dialog_positive_button">Activează în setările de accesibilitate</string>
-  <string name="talkback_suspend_dialog_title">Reia TalkBack ca să folosești tastatura Braille</string>
-  <string name="talkback_off_or_suspend_dialog_message">Când TalkBack este activat, poți atinge ecranul ca să introduci simboluri Braille.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Activează TalkBack pentru a schimba gestul</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack este dezactivat. Activează-l ca să schimbi gesturile pentru tastatura Braille.</string>
+  <string name="talkback_suspend_dialog_title">Reia SandFly ca să folosești tastatura Braille</string>
+  <string name="talkback_off_or_suspend_dialog_message">Când SandFly este activat, poți atinge ecranul ca să introduci simboluri Braille.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Activează SandFly pentru a schimba gestul</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly este dezactivat. Activează-l ca să schimbi gesturile pentru tastatura Braille.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Accesează Setările</string>
   <string name="reset_gestures_dialog_title">Resetezi toate gesturile?</string>
   <string name="reset_gestures_dialog_message">Toate gesturile pentru tastatura Braille vor fi resetate la valorile prestabilite</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Resetează la varianta prestabilită</string>
   <string name="custom_gestures_dialog_remove_button">Elimină gestul</string>
   <string name="change_gestures_dialog_message_title">Cum să schimbi un gest</string>
-  <string name="change_gestures_dialog_message">În ecranul următor, se va deschide tastatura Braille și nu vei putea folosi gesturile TalkBack.\n\nDupă ce se deschide tastatura Braille, fă gestul pe care vrei să-l folosești sau, ca să închizi tastatura Braille și să anulezi schimbarea gestului, glisează în jos cu două degete.\n\nVezi gesturile disponibile.\n</string>
+  <string name="change_gestures_dialog_message">În ecranul următor, se va deschide tastatura Braille și nu vei putea folosi gesturile SandFly.\n\nDupă ce se deschide tastatura Braille, fă gestul pe care vrei să-l folosești sau, ca să închizi tastatura Braille și să anulezi schimbarea gestului, glisează în jos cu două degete.\n\nVezi gesturile disponibile.\n</string>
   <string name="change_gestures_dialog_message_link">Vezi gesturile disponibile</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Nu mai afișa acest mesaj</string>
   <string name="change_gestures_dialog_positive_button">Continuă</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Nu folosi</string>
   <string name="next_keyboard">Următoarea tastatură</string>
   <string name="braille_tutorial_title">Tutorial pentru tastatura Braille</string>
-  <string name="tutorial_intro_description">Cu tastatura Braille, poți atinge ecranul pentru a introduce caractere Braille cu șase puncte.\n\nFolosești Unified English Braille. Ca să schimbi limba de tastare, accesează setările TalkBack.\n\nCa să tastezi în Braille, trebuie să ții și să folosești altfel telefonul.</string>
+  <string name="tutorial_intro_description">Cu tastatura Braille, poți atinge ecranul pentru a introduce caractere Braille cu șase puncte.\n\nFolosești Unified English Braille. Ca să schimbi limba de tastare, accesează setările SandFly.\n\nCa să tastezi în Braille, trebuie să ții și să folosești altfel telefonul.</string>
   <string name="next_step">Înainte</string>
   <string name="leave_keyboard">Părăsește tastatura Braille</string>
-  <string name="hold_six_fingers_description">Nu vei putea folosi gesturi TalkBack obișnuite cu tastatura Braille.\n\nPentru început, să configurăm poziția celor șase puncte Braille când tastezi.</string>
-  <string name="rotate_orientation_description_1">Începând de acum, nu vei mai putea folosi gesturi TalkBack obișnuite. TalkBack nu este disponibil în timp ce folosești tastatura Braille.</string>
+  <string name="hold_six_fingers_description">Nu vei putea folosi gesturi SandFly obișnuite cu tastatura Braille.\n\nPentru început, să configurăm poziția celor șase puncte Braille când tastezi.</string>
+  <string name="rotate_orientation_description_1">Începând de acum, nu vei mai putea folosi gesturi SandFly obișnuite. SandFly nu este disponibil în timp ce folosești tastatura Braille.</string>
   <string name="rotate_orientation_description_2">Pentru început, ține telefonul așa, cu ecranul în direcția opusă ție.</string>
   <string name="tap_to_continue">Atinge de două ori oriunde ca să continui</string>
   <string name="instruction_type_letter_a">Atinge punctul 1 cu arătătorul stâng ca să introduci litera „A”</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">AI MUTAT CURSORUL ÎNAINTE</string>
   <string name="result_swipe_down_2_fingers">ASCUNDE TASTATURA</string>
   <string name="result_swipe_down_3_fingers">URMĂTOAREA TASTATURĂ</string>
-  <string name="rotate_orientation_announcement">Începând de acum, nu vei mai putea folosi gesturi TalkBack obișnuite. TalkBack nu este disponibil în timp ce folosești tastatura Braille.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Începând de acum, nu vei mai putea folosi gesturi SandFly obișnuite. SandFly nu este disponibil în timp ce folosești tastatura Braille.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">În primul rând, ține telefonul cu ecranul în direcția opusă ție.\n\nApoi rotește-l orizontal, în poziția peisaj. Mâinile tale trebuie să țină laturile scurte ale telefonului. Trebuie să ții capătul cu portul USB cu mâna dreaptă. Ține cele trei degete din mijloc pe ecran și folosește degetul mic și cel mare pentru a ține telefonul.\n\nCând ești gata, atinge de două ori ecranul pentru a continua.\n\nCa să ieși din tastatura Braille, glisează în jos spre podea cu trei degete. Astfel, comuți înapoi la tastatura inițială.</string>
   <string name="rotate_orientation_continue_announcement">Telefonul tău este în poziție verticală. Ca să continui, rotește-l orizontal, astfel încât latura lungă să fie în partea de jos. Întoarce ecranul în direcția opusă ție. Când ești gata, atinge de două ori ecranul pentru a continua.</string>
   <string name="type_letter_a_announcement">Ține ecranul în direcția opusă ție. Ține ecranul cu ambele mâini, de laturile scurte ale telefonului, astfel încât să poți atinge ecranul cu cele trei degete din mijloc.\n\nArătătorul stâng trebuie să fie pe punctul 1. Atinge punctul 1 ca să introduci litera „A”.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Ca să treci la cealaltă tastatură, glisează în jos cu trei degete. Încearcă acum.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Următoarea tastatură. De obicei, acest lucru va trece la următoarea tastatură. De data aceasta, rămâi în tastatura Braille, deoarece ești încă în tutorial.</string>
   <string name="swipe_up_3_fingers_announcement">Poți tasta în modul Pe masă și dacă așezi telefonul pe o masă. Ca să termini tutorialul, glisează în sus cu trei degete și găsește opțiunea de terminare a tutorialului</string>
-  <string name="open_context_menu_announcement">Meniul de opțiuni este deschis. Întoarce telefonul cu fața spre tine și ține-l normal. Acum poți folosi gesturi TalkBack obișnuite pentru a naviga. Glisează spre dreapta pentru a vedea mai multe opțiuni.</string>
+  <string name="open_context_menu_announcement">Meniul de opțiuni este deschis. Întoarce telefonul cu fața spre tine și ține-l normal. Acum poți folosi gesturi SandFly obișnuite pentru a naviga. Glisează spre dreapta pentru a vedea mai multe opțiuni.</string>
   <string name="hold_six_fingers_announcement">%s\nAșează dispozitivul pe o masă. Apoi atinge lung ecranul cu cele trei degete din mijloc ale fiecărei mâini, într-o poziție comodă pentru tastat.</string>
   <string name="hold_six_fingers_inactive_announcement">Așează dispozitivul pe o masă. Apoi atinge lung ecranul cu cele trei degete din mijloc ale fiecărei mâini, într-o poziție comodă pentru tastat.</string>
   <string name="finish_tutorial_announcement">Se afișează tastatura Braille. Întoarce telefonul astfel încât ecranul să fie în direcția opusă ție. Rotește telefonul pe orizontală în poziția peisaj. Apoi începe să tastezi.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Gestul este folosit pentru %1$s și nu poate fi modificat. Încearcă alt gest. %2$s</string>
   <string name="custom_gesture_cannot_used">Acest gest nu poate fi folosit</string>
   <string name="custom_gesture_no_gesture">Nu s-a făcut niciun gest</string>
-  <string name="custom_gesture_try_another">Încearcă alt gest. Pentru a vedea lista tuturor gesturilor disponibile, accesează centrul de ajutor pentru tastatura Braille TalkBack. %s</string>
+  <string name="custom_gesture_try_another">Încearcă alt gest. Pentru a vedea lista tuturor gesturilor disponibile, accesează centrul de ajutor pentru tastatura Braille SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Gesturile nu au corespuns</string>
   <string name="custom_gesture_perform_again">Fă gestul pe care vrei să-l folosești din nou. %s</string>
+    <string name="tabletop_port_left_announcement">Modul de masă, port de încărcare în stânga</string>
+    <string name="tabletop_port_right_announcement">Modul de masă, port de încărcare în dreapta</string>
+    <string name="screen_away_port_right_announcement">Mod ecran îndepărtat, port de încărcare în dreapta</string>
+    <string name="screen_away_port_left_announcement">Mod ecran departe, port de încărcare în stânga</string>
+    <string name="screen_toward_announcement">Ecran spre tine</string>
+    <string name="screen_toward_port_left_announcement">Ecranul spre tine, portul de încărcare în stânga</string>
+    <string name="screen_toward_port_right_announcement">Ecranul spre tine, portul de încărcare în dreapta</string>
+    <string name="screen_toward_port_down_announcement">Ecranul spre tine, portul de încărcare îndreptat în jos</string>
+    <string name="screen_toward_port_up_announcement">Ecranul spre tine, portul de încărcare îndreptat în sus</string>
+    <string name="port_right_announcement">Port de încărcare în dreapta</string>
+    <string name="port_left_announcement">Port de încărcare în stânga</string>
+    <string name="tabletop_port_near_announcement">Modul de masă, portul de încărcare către tine</string>
+    <string name="tabletop_port_far_announcement">Modul de masă, portul de încărcare departe de tine</string>
+    <string name="screen_away_port_down_announcement">Modul ecran departe, portul de încărcare îndreptat în jos</string>
+    <string name="screen_away_port_up_announcement">Mod ecran îndepărtat, portul de încărcare îndreptat în sus</string>
+    <string name="port_near_announcement">Port de încărcare către tine</string>
+    <string name="port_far_announcement">Port de încărcare departe de tine</string>
+    <string name="port_down_announcement">Portul de încărcare îndreptat în jos</string>
+    <string name="port_up_announcement">Portul de încărcare îndreptat în sus</string>
+    <string name="orientation_locked_announcement">Orientare blocată</string>
+    <string name="orientation_locked_port_announcement">Orientare blocată. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientare deblocată</string>
+    <string name="switch_to_language_contracted_announcement">Ai trecut la %s, Braille contractat</string>
+    <string name="switch_to_language_uncontracted_announcement">Ai trecut la %s, Braille necontractat</string>
+    <string name="title_pref_flip_dots_vertically">Schimbați punctele de sus și de jos</string>
+    <string name="summary_pref_flip_dots_vertically">Punctul 1 schimbă locurile cu punctul 3 și punctul 4 cu punctul 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tableta ținea cu fețele îndepărtate</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Când este oprit, o tabletă sau un telefon desfășurat ținut în sus folosește aspectul mesei, cu fața către tine</string>
+    <string name="title_pref_typing_sounds">Sunete de tastare</string>
+    <string name="summary_pref_typing_sounds">Redați clicuri de la tastatură atunci când introduceți un caracter, un spațiu, o linie nouă sau ștergeți</string>
+    <string name="skip_tutorial">Sari peste tutorial</string>
 </resources>
