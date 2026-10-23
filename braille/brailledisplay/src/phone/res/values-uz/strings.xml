@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Brayl apparatli klaviaturasi</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack brayl klaviaturasi mavjud emas</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack brayl klaviaturasini yoqish</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly brayl klaviaturasi mavjud emas</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly brayl klaviaturasini yoqish</string>
   <string name="bd_ime_disabled_dialog_message">Yozish uchun brayl ekranidan foydalanishni istasangiz, uni yoqish uchun yozish sozlamalariga kiring</string>
   <string name="bd_ime_disabled_dialog_title_positive">Kiritish sozlamalari</string>
   <string name="bd_ime_not_default_dialog_title">Matn kiritish usuliga oʻtish</string>
-  <string name="bd_ime_not_default_dialog_message">Yozishda davom etish uchun TalkBack brayl klaviaturasini matn kiritish usulini asosiy qilib sozlang</string>
+  <string name="bd_ime_not_default_dialog_message">Yozishda davom etish uchun SandFly brayl klaviaturasini matn kiritish usulini asosiy qilib sozlang</string>
   <string name="bd_ime_not_default_dialog_positive">Matn kiritish usuliga oʻtish</string>
   <string name="type_unlabeled">Yorliqsiz</string>
   <string name="type_unlabeled_edittext">Yorliqsiz tahrirlash maydonchasi</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Chapga siljitish</string>
   <string name="overlay_pan_right_button">Oʻngga siljitish</string>
   <string name="bd_preferences_title">Brayl ekrani</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Brayl ekranidan foydalanish uchun TalkBack funksiyasini yoqing</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBack oynasiga qaytish</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Brayl ekranidan foydalanish uchun SandFly funksiyasini yoqing</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFly oynasiga qaytish</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Brayl ekranidan foydalanish uchun Bluetooth aloqasini yoqing</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Bluetoothni yoqing</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Brayl ekranidan foydalanish uchun %s ilovasiga yaqin-atrofdagi qurilmalarga kirish ruxsatini bering</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Kezish rejimini ishlatish uchun birlamchi terilmadan yaxshilangan terilmaga almashishi kerak. Bunda ayrim brayl yozuvidagi displey buyruqlari yangilanadi</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Sozlamalar</string>
   <string name="bd_command_change_dialog_title">Ayrim buyruqlar yangilandi</string>
-  <string name="bd_command_change_dialog_message">Bu Brayl ekrani buyruqlari TalkBack ilovasining ushbu versiyasida yangilangan:\n\n• Avvalgi element: 1, 7 nuqtalarni bosing\n\n• Keyingi element: 4, 8 nuqtalarni bosing\n\n• Avvalgi oʻqish boshqaruvi: 2, 3, 7, 8 nuqtalarni bosing\n\n• Keyingi oʻqish boshqaruvi: 5, 6, 7, 8 nuqtalarni bosing</string>
+  <string name="bd_command_change_dialog_message">Bu Brayl ekrani buyruqlari SandFly ilovasining ushbu versiyasida yangilangan:\n\n• Avvalgi element: 1, 7 nuqtalarni bosing\n\n• Keyingi element: 4, 8 nuqtalarni bosing\n\n• Avvalgi oʻqish boshqaruvi: 2, 3, 7, 8 nuqtalarni bosing\n\n• Keyingi oʻqish boshqaruvi: 5, 6, 7, 8 nuqtalarni bosing</string>
   <string name="bd_preference_braille_contracted">Qisqartirilgan brayl</string>
   <string name="bd_preference_braille_uncontracted">Qisqartirilmagan brayl</string>
   <string name="bd_braille_grade_tips">Brayl ekrani yordamida qisqartirilgan va qisqartirilmagan orasida tezkor almashtirish uchun boʻsh joy va 1, 2, 4, 5 nuqtalarini bosing.\n\nAgar ikkala brayl darajasiga ega tildan foydalansangiz, bu buyruq ishlaydi.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Elementlar orasida harakatlanish</string>
   <string name="bd_commands_bindings_category_system_actions_title">Tizim amallari</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Orqaga, bosh sahifa, bildirishnomalar va boshqalar</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack funksiyalari</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback menyulari va sozlamalari</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly funksiyalari</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menyular va sozlamalar</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Brayl sozlamalari</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Brayl tili va sozlamalari</string>
   <string name="bd_commands_bindings_category_text_editing_title">Matn tahrirlash</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Barcha ilovalarni ochish</string>
   <string name="bd_cmd_toggle_screen_search">Ekrandan qidirishni ochish</string>
   <string name="bd_cmd_edit_custom_label">Maxsus yorliqni tahrirlash</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack menyusini ochish</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack nutqini yoqish yoki oʻchirish</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly menyusini ochish</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly nutqini yoqish yoki oʻchirish</string>
   <string name="bd_cmd_read_stop">Oʻqishni toʻxtat</string>
-  <string name="bd_cmd_talkback_settings">TalkBack sozlamalarini ochish</string>
+  <string name="bd_cmd_talkback_settings">SandFly sozlamalarini ochish</string>
   <string name="bd_cmd_switch_to_next_input_language">Keyingi matn kiritish tiliga oʻtish</string>
   <string name="bd_cmd_switch_to_next_output_language">Keyingi oʻqish tiliga oʻtish</string>
   <string name="bd_cmd_toggle_contracted_mode">Qisqartirish tugmasi</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Sahifalarni tez kezishda Kezish rejimiga kirish yorligʻi va harf yoki raqamli yorliqdan foydalanish mumkin.\n\nBu yorliqni kezish rejimiga kirmasdan ham ishlatish mumkin, ammo “keyingi” buyruqlarga 8 nuqta kiritish kerak.</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Jadval navigatsiyasi</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Brayl ekrani sozlamasi oʻchirilsinmi?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Siz uni istalgan vaqtda TalkBack sozlamalari orqali yoqishingiz mumkin</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Siz uni istalgan vaqtda SandFly sozlamalari orqali yoqishingiz mumkin</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Oʻchirish</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Ayrim buyruqlar ishlamaydi</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Matn kirayotganda yoki tahrirlayotganda navigatsiya, brayl sozlamalari uchun buyruqlar va ayrim TalkBack funksiyalari ishlamaydi.\n\nBu buyruqlardan foydalanish uchun oldin klaviaturani yoping.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Matn kirayotganda yoki tahrirlayotganda navigatsiya, brayl sozlamalari uchun buyruqlar va ayrim SandFly funksiyalari ishlamaydi.\n\nBu buyruqlardan foydalanish uchun oldin klaviaturani yoping.</string>
   <string name="bd_caption_tutorial_dialog_title">Brayl ekranidagi tagyozuvlar</string>
   <string name="bd_caption_tutorial_dialog_message">Bu video uchun taglavhalarni koʻrsatish yoki berkitish uchun boʻsh joy va 1, 4, 7, 8 nuqtalarini bosing.\n\nMos multimedia uchun tagyozuvlarni avtomatik chiqarish uchun Sozlamalar orqali Brayl ekranida Tagyozuvlarni koʻrsatish sozlamasini yoqing.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Tagyozuvlar mavjud boʻlganda doim bu xabar chiqarilsin</string>
   <string name="bd_usb_connect_dialog_title">Brayl ekrani USB orqali ulandi</string>
-  <string name="bd_usb_connect_dialog_message">%s batareyasi brayl ekraniga quvvatlamoqda.\n\nBluetoothga oʻtishni istasangiz, USB yoki USB habni uzing va TalkBack sozlamalari &gt; Brayl ekrani sahifasini oching.</string>
+  <string name="bd_usb_connect_dialog_message">%s batareyasi brayl ekraniga quvvatlamoqda.\n\nBluetoothga oʻtishni istasangiz, USB yoki USB habni uzing va SandFly sozlamalari &gt; Brayl ekrani sahifasini oching.</string>
   <string name="bd_device">telefon</string>
   <string name="bd_battery_low_dialog_title">Batareya quvvati %s</string>
   <string name="bd_battery_low_dialog_message">%s batareyasi brayl ekranini quvvatlamoqda.\n\nQuvvatni tejash uchun:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Hammasini tozalash</string>
   <string name="popup_message_history_empty">Boʻsh</string>
   <string name="popup_message_history_consent_dialog_title">Qurilma xabarlar tarixi yoqilsinmi?</string>
-  <string name="popup_message_history_consent_dialog_msg">Bu TalkBack funksiyasidagi bildirishnomalar va signallar kabi ayrim xabarlarni saqlaydi. Bu sozlamani istalgan vaqt oʻzgartirish mumkin.</string>
+  <string name="popup_message_history_consent_dialog_msg">Bu SandFly funksiyasidagi bildirishnomalar va signallar kabi ayrim xabarlarni saqlaydi. Bu sozlamani istalgan vaqt oʻzgartirish mumkin.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Yoqish</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Kerak emas</string>
+    <string name="external_display_channel">Brayl displeylari boshqa ilovalardan</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly uchun brayl displey boʻlishiga ruxsat berilsinmi?</string>
+    <string name="external_display_ask_text">SandFly siz ruxsat bermaguningizcha undan foydalanmaydi.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly koʻrsatuvlarini brayl alifbosida oʻqiy oladi, bu ekrandagi har qanday narsa, jumladan, xabarlar va siz yozgan narsalar boʻlishi mumkin. Shuningdek, u brayl displey yordamida qurilmangizni boshqarishi mumkin bo‘ladi: yozing, ilovalarni oching va istalgan SandFly buyrug‘ini bajaring. Faqat siz ishonadigan ilovalarga ruxsat bering.</string>
+    <string name="external_display_allow">Ruxsat bering</string>
+    <string name="external_display_deny">Ruxsat bermang</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> - bu sizning brayl displeyingiz</string>
+    <string name="external_display_in_use_text">SandFly foydalanayotganda, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ekranni o‘qiy oladi va qurilmani boshqara oladi.</string>
+    <string name="external_displays_title">Boshqa ilovalardan ekranlar</string>
+    <string name="external_displays_summary">Siz ruxsat bergan ilovalar SandFly uchun brayl displeylari boʻlishi mumkin. Brayl displeyli ilova ekranni o\'qiy oladi va qurilmani boshqara oladi.</string>
+    <string name="external_displays_none">Hech bir ilova brayl displeylari bo\'la olmaydi.</string>
 </resources>
