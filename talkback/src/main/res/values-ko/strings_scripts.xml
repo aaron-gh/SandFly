@@ -15,7 +15,7 @@
     <string name="scripts_all_off_summary">스크립트는 설치된 상태로 유지되며 자체 스위치를 유지합니다. 모든 스크립트 켜기/끄기 동작도 동일합니다.</string>
     <string name="shortcut_toggle_scripts">모든 스크립트 켜기 또는 끄기</string>
     <string name="scripts_now_off">스크립트 꺼짐</string>
-    <string name="scripts_now_on">스크립트 사용</string>
+    <string name="scripts_now_on">스크립트 켜짐</string>
     <string name="scripts_unavailable">이 기기에서는 스크립트를 사용할 수 없습니다.</string>
     <string name="script_add_example">예제 스크립트 추가</string>
     <string name="script_add_example_summary">전환하는 각 앱의 이름을 말합니다. 시작할 스크립트입니다.</string>
@@ -92,8 +92,8 @@
     <string name="script_inspect_no_item">포커스가 있는 항목이 없습니다.</string>
     <string name="script_inspect_copied">복사되었습니다. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">ID가 없으므로 규칙에 따라 이름을 지정할 수 없습니다. 복사되었습니다. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">복사 화면 트리</string>
-    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> 항목을 복사했습니다.</string>
+    <string name="shortcut_copy_screen_tree">화면 트리 복사</string>
+    <string name="script_tree_copied">항목 <xliff:g id="count">%1$d</xliff:g>개를 복사했습니다</string>
     <string name="script_tree_none">복사할 창이 없습니다.</string>
     <string name="script_tree_clip_label">스크린 트리</string>
     <string name="summary_copy_screen_tree_menu">스크립트 작성을 위해 화면의 모든 항목을 JSON로 복사합니다.</string>

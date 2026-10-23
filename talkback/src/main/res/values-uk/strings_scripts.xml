@@ -8,14 +8,14 @@
     <string name="script_import_cannot_open">Не вдалося відкрити файл.</string>
     <string name="script_import_repository">Це посилання на ціле сховище. Відкрийте потрібний сценарій і поділіться його посиланням.</string>
     <string name="script_import_summary">файл .lua або .zip із main.lua</string>
-    <string name="scripts_category_app">Скрипти додатків</string>
+    <string name="scripts_category_app">Скрипти застосунків</string>
     <string name="scripts_category_global">Глобальні плагіни</string>
     <string name="scripts_none">Скриптів не встановлено</string>
     <string name="scripts_all_off">Вимкніть усі сценарії</string>
     <string name="scripts_all_off_summary">Сценарії залишаються встановленими та зберігають власні перемикачі. Жест «Увімкнути або вимкнути всі сценарії» робить те саме.</string>
     <string name="shortcut_toggle_scripts">Увімкнути або вимкнути всі сценарії</string>
-    <string name="scripts_now_off">Сценарії вимкнено</string>
-    <string name="scripts_now_on">Сценарії увімкнено</string>
+    <string name="scripts_now_off">Скрипти вимкнено</string>
+    <string name="scripts_now_on">Скрипти увімкнено</string>
     <string name="scripts_unavailable">Сценарії недоступні на цьому пристрої</string>
     <string name="script_add_example">Додайте приклад сценарію</string>
     <string name="script_add_example_summary">Вимовляє назву кожної програми, на яку ви переходите. Сценарій для початку.</string>
@@ -31,7 +31,7 @@
     <string name="script_install_button">Встановити</string>
     <string name="script_update_title">Оновити <xliff:g id="name">%1$s</xliff:g> на <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Нові дозволи:</string>
-    <string name="script_update_button">Оновлення</string>
+    <string name="script_update_button">Оновити</string>
     <string name="script_update_replaces">Це замінить версію <xliff:g id="version">%1$s</xliff:g> на <xliff:g id="author">%2$s</xliff:g> та збереже її дані та налаштування.</string>
     <string name="script_update_other_author">Новий автор <xliff:g id="author">%1$s</xliff:g>, інший автор. Оновлюйте, лише якщо ви довіряєте.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> встановлено</string>
@@ -93,7 +93,7 @@
     <string name="script_inspect_copied">Скопійовано. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Немає ідентифікатора, тому правила не можуть його назвати. Скопійовано. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Копіювати дерево екрана</string>
-    <string name="script_tree_copied">Скопійовано <xliff:g id="count">%1$d</xliff:g> елементів</string>
+    <string name="script_tree_copied">Скопійовано елементів: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Немає вікна для копіювання</string>
     <string name="script_tree_clip_label">Дерево екрана</string>
     <string name="summary_copy_screen_tree_menu">Скопіюйте всі елементи на екрані як JSON, для написання сценаріїв</string>
@@ -138,8 +138,8 @@
     <string name="script_source_remove">Видалити джерело</string>
     <string name="script_source_remove_title">Видалити <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Сценарії, встановлені з нього, залишаються встановленими.</string>
-    <string name="scripts_auto_update">Автоматичне оновлення сценаріїв</string>
-    <string name="scripts_check_updates">Перевірте наявність оновлень</string>
+    <string name="scripts_auto_update">Автоматично оновлювати скрипти</string>
+    <string name="scripts_check_updates">Перевірити оновлення</string>
     <string name="scripts_checking_updates">Перевірка оновлень…</string>
     <string name="scripts_updates_category">Оновлення</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>

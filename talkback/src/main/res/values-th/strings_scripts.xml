@@ -9,7 +9,7 @@
     <string name="script_import_repository">ลิงก์นี้ไปยังพื้นที่เก็บข้อมูลทั้งหมด เปิดสคริปต์ที่คุณต้องการ จากนั้นแชร์ลิงก์</string>
     <string name="script_import_summary">ไฟล์ .lua หรือ .zip ด้วย main.lua</string>
     <string name="scripts_category_app">สคริปต์ของแอป</string>
-    <string name="scripts_category_global">ปลั๊กอินทั่วโลก</string>
+    <string name="scripts_category_global">ปลั๊กอินส่วนกลาง</string>
     <string name="scripts_none">ไม่มีการติดตั้งสคริปต์</string>
     <string name="scripts_all_off">ปิดสคริปต์ทั้งหมด</string>
     <string name="scripts_all_off_summary">สคริปต์จะติดตั้งอยู่และเก็บสวิตช์ของตัวเองไว้ ท่าทางการเปิดหรือปิดสคริปต์ทั้งหมดจะทำเช่นเดียวกัน</string>
@@ -82,7 +82,7 @@
     <string name="script_api_range">สคริปต์ API <xliff:g id="min">%1$d</xliff:g> ถึง <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">ความเข้ากันได้</string>
     <string name="script_install_anyway">ติดตั้งต่อไป</string>
-    <string name="script_update_anyway">อัพเดทยังไงก็ได้</string>
+    <string name="script_update_anyway">อัปเดตต่อ</string>
     <string name="script_homepage">เปิดหน้าแรก</string>
     <string name="script_homepage_confirm_title">เปิดที่อยู่นี้ใช่ไหม</string>
     <string name="script_homepage_open">เปิด</string>
@@ -92,7 +92,7 @@
     <string name="script_inspect_no_item">ไม่มีรายการใดมีจุดสนใจ</string>
     <string name="script_inspect_copied">คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">ไม่มีรหัส ดังนั้นกฎจึงไม่สามารถตั้งชื่อได้ คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">คัดลอกแผนผังหน้าจอ</string>
+    <string name="shortcut_copy_screen_tree">คัดลอกโครงสร้างหน้าจอ</string>
     <string name="script_tree_copied">คัดลอก <xliff:g id="count">%1$d</xliff:g> รายการแล้ว</string>
     <string name="script_tree_none">ไม่มีหน้าต่างให้คัดลอก</string>
     <string name="script_tree_clip_label">โครงสร้างหน้าจอ</string>
@@ -141,7 +141,7 @@
     <string name="scripts_auto_update">อัปเดตสคริปต์โดยอัตโนมัติ</string>
     <string name="scripts_check_updates">ตรวจสอบการอัปเดต</string>
     <string name="scripts_checking_updates">กำลังตรวจสอบการอัปเดต...</string>
-    <string name="scripts_updates_category">อัพเดท</string>
+    <string name="scripts_updates_category">อัปเดต</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one">อัปเดตสคริปต์แล้ว <xliff:g id="count" example="1">%1$d</xliff:g> รายการ: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>

@@ -14,8 +14,8 @@
     <string name="scripts_all_off">すべてのスクリプトをオフにする</string>
     <string name="scripts_all_off_summary">スクリプトはインストールされたままで、独自のスイッチを保持します。 「すべてのスクリプトをオンまたはオフにする」ジェスチャでも同様のことが行われます。</string>
     <string name="shortcut_toggle_scripts">すべてのスクリプトをオンまたはオフにする</string>
-    <string name="scripts_now_off">スクリプトはオフです</string>
-    <string name="scripts_now_on">スクリプトオン</string>
+    <string name="scripts_now_off">スクリプト オフ</string>
+    <string name="scripts_now_on">スクリプト オン</string>
     <string name="scripts_unavailable">このデバイスではスクリプトを使用できません</string>
     <string name="script_add_example">サンプルスクリプトを追加する</string>
     <string name="script_add_example_summary">切り替える各アプリの名前が読み上げられます。開始するスクリプト。</string>
@@ -82,7 +82,7 @@
     <string name="script_api_range">スクリプト API <xliff:g id="min">%1$d</xliff:g> ～ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">互換性</string>
     <string name="script_install_anyway">このままインストール</string>
-    <string name="script_update_anyway">とにかくアップデートする</string>
+    <string name="script_update_anyway">このまま更新</string>
     <string name="script_homepage">ホームページを開く</string>
     <string name="script_homepage_confirm_title">このアドレスを開きますか?</string>
     <string name="script_homepage_open">開く</string>
@@ -92,8 +92,8 @@
     <string name="script_inspect_no_item">フォーカスのある項目はありません</string>
     <string name="script_inspect_copied">コピーしました。<xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">ID がないため、ルールで名前を付けることはできません。コピーされました。 <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">画面ツリーのコピー</string>
-    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> アイテムをコピーしました</string>
+    <string name="shortcut_copy_screen_tree">画面ツリーをコピー</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> 個の項目をコピーしました</string>
     <string name="script_tree_none">コピーするウィンドウがありません</string>
     <string name="script_tree_clip_label">スクリーンツリー</string>
     <string name="summary_copy_screen_tree_menu">スクリプトを記述するために、画面上のすべての項目を JSON としてコピーします</string>
@@ -138,8 +138,8 @@
     <string name="script_source_remove">ソースを削除</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> を削除しますか?</string>
     <string name="script_source_remove_message">そこからインストールされたスクリプトはインストールされたままになります。</string>
-    <string name="scripts_auto_update">スクリプトを自動的に更新する</string>
-    <string name="scripts_check_updates">アップデートをチェックする</string>
+    <string name="scripts_auto_update">スクリプトを自動更新</string>
+    <string name="scripts_check_updates">アップデートを確認</string>
     <string name="scripts_checking_updates">アップデートをチェック中…</string>
     <string name="scripts_updates_category">アップデート</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>

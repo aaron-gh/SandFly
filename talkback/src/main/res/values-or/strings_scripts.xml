@@ -15,7 +15,7 @@
     <string name="scripts_all_off_summary">ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ସଂସ୍ଥାପିତ ରୁହନ୍ତି ଏବଂ ସେମାନଙ୍କର ନିଜସ୍ୱ ସୁଇଚ୍ ରଖନ୍ତି | ସମସ୍ତ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକୁ ଟର୍ନ୍ ଅନ୍ କିମ୍ବା ଅଫ୍ ଅଙ୍ଗଭଙ୍ଗୀ ସମାନ କରେ |</string>
     <string name="shortcut_toggle_scripts">ସମସ୍ତ ସ୍କ୍ରିପ୍ଟ ଟର୍ନ୍ ଅନ୍ କିମ୍ବା ଅଫ୍ କରନ୍ତୁ</string>
     <string name="scripts_now_off">ସ୍କ୍ରିପ୍ଟ ବନ୍ଦ</string>
-    <string name="scripts_now_on">ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ</string>
+    <string name="scripts_now_on">ସ୍କ୍ରିପ୍ଟ ଚାଲୁ</string>
     <string name="scripts_unavailable">ଏହି ଡିଭାଇସରେ ସ୍କ୍ରିପ୍ଟ ଉପଲବ୍ଧ ନାହିଁ</string>
     <string name="script_add_example">ଉଦାହରଣ ସ୍କ୍ରିପ୍ଟ ଯୋଡନ୍ତୁ</string>
     <string name="script_add_example_summary">ଆପଣ ସୁଇଚ୍ କରୁଥିବା ପ୍ରତ୍ୟେକ ଆପର ନାମ କୁହନ୍ତି | ଠାରୁ ଆରମ୍ଭ କରିବାକୁ ଏକ ସ୍କ୍ରିପ୍ଟ |</string>
@@ -82,7 +82,7 @@
     <string name="script_api_range">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="min">%1$d</xliff:g> ରୁ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">ସୁସଙ୍ଗତତା</string>
     <string name="script_install_anyway">ଯାହା ବି ହେଉ ସଂସ୍ଥାପନ କରନ୍ତୁ</string>
-    <string name="script_update_anyway">ଯାହା ବି ହେଉ ଅଦ୍ୟତନ କରନ୍ତୁ</string>
+    <string name="script_update_anyway">ତଥାପି ଅପଡେଟ କରନ୍ତୁ</string>
     <string name="script_homepage">ମୂଳପୃଷ୍ଠା ଖୋଲନ୍ତୁ</string>
     <string name="script_homepage_confirm_title">ଏହି ଠିକଣା ଖୋଲିବେ?</string>
     <string name="script_homepage_open">ଖୋଲନ୍ତୁ</string>
@@ -92,8 +92,8 @@
     <string name="script_inspect_no_item">କୌଣସି ବସ୍ତୁର ଫୋକସ୍ ନାହିଁ</string>
     <string name="script_inspect_copied">କପି କରାଯାଇଛି। <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">କୌଣସି id ନାହିଁ, ତେଣୁ ନିୟମ ଏହାର ନାମ ଦେଇପାରିବ ନାହିଁ | କପି କରାଯାଇଛି | <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">ସ୍କ୍ରିନ୍ ଗଛ କପି କରନ୍ତୁ</string>
-    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ଆଇଟମଗୁଡିକ କପି କରାଯାଇଛି</string>
+    <string name="shortcut_copy_screen_tree">ସ୍କ୍ରିନ୍ ଟ୍ରି କପି କରନ୍ତୁ</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g>ଟି ଆଇଟମ କପି କରାଯାଇଛି</string>
     <string name="script_tree_none">କପି କରିବାକୁ କୌଣସି ୱିଣ୍ଡୋ ନାହିଁ</string>
     <string name="script_tree_clip_label">ସ୍କ୍ରିନ୍ ଟ୍ରି</string>
     <string name="summary_copy_screen_tree_menu">ସ୍କ୍ରିପ୍ଟ ଲେଖିବା ପାଇଁ ସ୍କ୍ରିନରେ ଥିବା ସମସ୍ତ ଆଇଟମକୁ JSON ଭାବରେ କପି କରନ୍ତୁ</string>

@@ -9,7 +9,7 @@
     <string name="script_import_repository">Ši nuoroda nukreipta į visą saugyklą. Atidarykite norimą scenarijų, tada bendrinkite jo nuorodą.</string>
     <string name="script_import_summary">.lua failas arba .zip su main.lua</string>
     <string name="scripts_category_app">Programų scenarijai</string>
-    <string name="scripts_category_global">Pasauliniai įskiepiai</string>
+    <string name="scripts_category_global">Bendrieji įskiepiai</string>
     <string name="scripts_none">Jokių scenarijų neįdiegta</string>
     <string name="scripts_all_off">Išjunkite visus scenarijus</string>
     <string name="scripts_all_off_summary">Scenarijai lieka įdiegti ir turi savo jungiklius. Tą patį daro ir gestas Įjungti arba išjungti visus scenarijus.</string>
@@ -82,7 +82,7 @@
     <string name="script_api_range">Scenarijaus API nuo <xliff:g id="min">%1$d</xliff:g> iki <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Suderinamumas</string>
     <string name="script_install_anyway">Vis tiek įdiegti</string>
-    <string name="script_update_anyway">Vis tiek atnaujinkite</string>
+    <string name="script_update_anyway">Vis tiek atnaujinti</string>
     <string name="script_homepage">Atidaryti pagrindinį puslapį</string>
     <string name="script_homepage_confirm_title">Atidaryti šį adresą?</string>
     <string name="script_homepage_open">Atidaryti</string>
@@ -93,7 +93,7 @@
     <string name="script_inspect_copied">Nukopijuota. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Nėra ID, todėl taisyklės negali jo pavadinti. Nukopijuota. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopijuoti ekrano medį</string>
-    <string name="script_tree_copied">Nukopijuota <xliff:g id="count">%1$d</xliff:g> elementų</string>
+    <string name="script_tree_copied">Nukopijuota elementų: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Nėra lango, kurį būtų galima kopijuoti</string>
     <string name="script_tree_clip_label">Ekrano medis</string>
     <string name="summary_copy_screen_tree_menu">Nukopijuokite visus elementus ekrane kaip JSON, kad galėtumėte rašyti scenarijus</string>
@@ -138,8 +138,8 @@
     <string name="script_source_remove">Pašalinti šaltinį</string>
     <string name="script_source_remove_title">Pašalinti <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Iš jo įdiegti scenarijai lieka įdiegti.</string>
-    <string name="scripts_auto_update">Automatiškai atnaujinkite scenarijus</string>
-    <string name="scripts_check_updates">Patikrinkite, ar nėra atnaujinimų</string>
+    <string name="scripts_auto_update">Automatiškai atnaujinti scenarijus</string>
+    <string name="scripts_check_updates">Tikrinti, ar yra naujinių</string>
     <string name="scripts_checking_updates">Tikrinama, ar yra naujinių…</string>
     <string name="scripts_updates_category">Atnaujinimai</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>

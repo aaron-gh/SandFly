@@ -8,14 +8,14 @@
     <string name="script_import_cannot_open">கோப்பை திறக்க முடியவில்லை.</string>
     <string name="script_import_repository">இந்த இணைப்பு முழு களஞ்சியத்திற்கும் உள்ளது. நீங்கள் விரும்பும் ஸ்கிரிப்டைத் திறந்து, அதன் இணைப்பைப் பகிரவும்.</string>
     <string name="script_import_summary">.lua கோப்பு, அல்லது main.lua உடன் .zip</string>
-    <string name="scripts_category_app">பயன்பாட்டு ஸ்கிரிப்டுகள்</string>
-    <string name="scripts_category_global">உலகளாவிய செருகுநிரல்கள்</string>
+    <string name="scripts_category_app">ஆப்ஸ் ஸ்கிரிப்டுகள்</string>
+    <string name="scripts_category_global">பொது செருகுநிரல்கள்</string>
     <string name="scripts_none">ஸ்கிரிப்டுகள் எதுவும் நிறுவப்படவில்லை</string>
     <string name="scripts_all_off">அனைத்து ஸ்கிரிப்ட்களையும் அணைக்கவும்</string>
     <string name="scripts_all_off_summary">ஸ்கிரிப்டுகள் நிறுவப்பட்டிருக்கும் மற்றும் அவற்றின் சொந்த சுவிட்சுகளை வைத்திருக்கும். அனைத்து ஸ்கிரிப்ட்களையும் ஆன் அல்லது ஆஃப் செய்யும் சைகை அதையே செய்கிறது.</string>
     <string name="shortcut_toggle_scripts">அனைத்து ஸ்கிரிப்ட்களையும் ஆன் அல்லது ஆஃப் செய்யவும்</string>
     <string name="scripts_now_off">ஸ்கிரிப்ட்கள் முடக்கப்பட்டுள்ளன</string>
-    <string name="scripts_now_on">ஸ்கிரிப்ட்கள் இயக்கப்படுகின்றன</string>
+    <string name="scripts_now_on">ஸ்கிரிப்ட்கள் இயக்கப்பட்டன</string>
     <string name="scripts_unavailable">இந்தச் சாதனத்தில் ஸ்கிரிப்ட்கள் இல்லை</string>
     <string name="script_add_example">எடுத்துக்காட்டு ஸ்கிரிப்டைச் சேர்க்கவும்</string>
     <string name="script_add_example_summary">நீங்கள் மாற்றும் ஒவ்வொரு ஆப்ஸின் பெயரையும் கூறுகிறது. தொடங்குவதற்கு ஒரு ஸ்கிரிப்ட்.</string>
@@ -82,7 +82,7 @@
     <string name="script_api_range">ஸ்கிரிப்ட் API <xliff:g id="min">%1$d</xliff:g> முதல் <xliff:g id="tested">%2$d</xliff:g> வரை</string>
     <string name="script_compatibility_title">இணக்கத்தன்மை</string>
     <string name="script_install_anyway">எப்படியும் நிறுவவும்</string>
-    <string name="script_update_anyway">எப்படியும் புதுப்பிக்கவும்</string>
+    <string name="script_update_anyway">இருப்பினும் புதுப்பி</string>
     <string name="script_homepage">முகப்புப் பக்கத்தைத் திறக்கவும்</string>
     <string name="script_homepage_confirm_title">இந்த முகவரியைத் திறக்கவா?</string>
     <string name="script_homepage_open">திற</string>
@@ -92,7 +92,7 @@
     <string name="script_inspect_no_item">எந்த பொருளுக்கும் கவனம் இல்லை</string>
     <string name="script_inspect_copied">நகலெடுக்கப்பட்டது. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">ஐடி இல்லை, எனவே விதிகளால் பெயரிட முடியாது. நகலெடுக்கப்பட்டது. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">நகல் திரை மரம்</string>
+    <string name="shortcut_copy_screen_tree">திரை ட்ரீயை நகலெடு</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> உருப்படிகள் நகலெடுக்கப்பட்டன</string>
     <string name="script_tree_none">நகலெடுக்க சாளரம் இல்லை</string>
     <string name="script_tree_clip_label">திரை ட்ரீ</string>

@@ -31,7 +31,7 @@
     <string name="script_install_button">Namesti</string>
     <string name="script_update_title">Posodobiti <xliff:g id="name">%1$s</xliff:g> na <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nova dovoljenja:</string>
-    <string name="script_update_button">Posodobitev</string>
+    <string name="script_update_button">Posodobi</string>
     <string name="script_update_replaces">To zamenja različico <xliff:g id="version">%1$s</xliff:g> z <xliff:g id="author">%2$s</xliff:g> in ohrani njene podatke in nastavitve.</string>
     <string name="script_update_other_author">Nova je od <xliff:g id="author">%1$s</xliff:g>, drugega avtorja. Posodobite le, če mu zaupate.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> nameščen</string>
@@ -93,7 +93,7 @@
     <string name="script_inspect_copied">Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Ni ID-ja, zato ga pravila ne morejo poimenovati. Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopiraj drevo zaslona</string>
-    <string name="script_tree_copied">Kopiranih <xliff:g id="count">%1$d</xliff:g> elementov</string>
+    <string name="script_tree_copied">Kopirani elementi: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Ni okna za kopiranje</string>
     <string name="script_tree_clip_label">Zaslonsko drevo</string>
     <string name="summary_copy_screen_tree_menu">Kopirajte vse elemente na zaslonu kot JSON, za pisanje skriptov</string>
@@ -138,8 +138,8 @@
     <string name="script_source_remove">Odstrani vir</string>
     <string name="script_source_remove_title">Odstraniti <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Skripti, nameščeni iz njega, ostanejo nameščeni.</string>
-    <string name="scripts_auto_update">Samodejno posodobite skripte</string>
-    <string name="scripts_check_updates">Preverite posodobitve</string>
+    <string name="scripts_auto_update">Samodejno posodobi skripte</string>
+    <string name="scripts_check_updates">Preveri posodobitve</string>
     <string name="scripts_checking_updates">Iskanje posodobitev ...</string>
     <string name="scripts_updates_category">Posodobitve</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>

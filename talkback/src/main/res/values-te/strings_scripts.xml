@@ -9,7 +9,7 @@
     <string name="script_import_repository">ఈ లింక్ మొత్తం రిపోజిటరీకి సంబంధించినది. మీకు కావలసిన స్క్రిప్ట్‌ని తెరిచి, దాని లింక్‌ను షేర్ చేయండి.</string>
     <string name="script_import_summary">.lua ఫైల్, లేదా main.luaతో .zip</string>
     <string name="scripts_category_app">యాప్ స్క్రిప్ట్‌లు</string>
-    <string name="scripts_category_global">గ్లోబల్ ప్లగిన్‌లు</string>
+    <string name="scripts_category_global">సాధారణ ప్లగిన్‌లు</string>
     <string name="scripts_none">స్క్రిప్ట్‌లు ఏవీ ఇన్‌స్టాల్ చేయబడలేదు</string>
     <string name="scripts_all_off">అన్ని స్క్రిప్ట్‌లను ఆఫ్ చేయండి</string>
     <string name="scripts_all_off_summary">స్క్రిప్ట్‌లు ఇన్‌స్టాల్ చేయబడి ఉంటాయి మరియు వాటి స్వంత స్విచ్‌లను ఉంచుతాయి. అన్ని స్క్రిప్ట్‌లను ఆన్ లేదా ఆఫ్ చేసే సంజ్ఞ కూడా అదే పని చేస్తుంది.</string>
@@ -31,7 +31,7 @@
     <string name="script_install_button">ఇన్‌స్టాల్ చేయండి</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> నుండి <xliff:g id="version">%2$s</xliff:g>కి అప్‌డేట్ చేయాలా?</string>
     <string name="script_update_new_permissions">కొత్త అనుమతులు:</string>
-    <string name="script_update_button">నవీకరించు</string>
+    <string name="script_update_button">అప్‌డేట్ చేయి</string>
     <string name="script_update_replaces">ఇది వెర్షన్ <xliff:g id="version">%1$s</xliff:g>ని <xliff:g id="author">%2$s</xliff:g> ద్వారా భర్తీ చేస్తుంది మరియు దాని డేటా మరియు సెట్టింగ్‌లను ఉంచుతుంది.</string>
     <string name="script_update_other_author">కొత్తది <xliff:g id="author">%1$s</xliff:g>, వేరే రచయిత. మీరు విశ్వసిస్తే మాత్రమే నవీకరించండి.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ఇన్‌స్టాల్ చేయబడింది</string>
@@ -82,7 +82,7 @@
     <string name="script_api_range">స్క్రిప్ట్ API <xliff:g id="min">%1$d</xliff:g> నుండి <xliff:g id="tested">%2$d</xliff:g> వరకు</string>
     <string name="script_compatibility_title">అనుకూలత</string>
     <string name="script_install_anyway">ఎలాగైనా ఇన్‌స్టాల్ చేయండి</string>
-    <string name="script_update_anyway">ఏమైనప్పటికీ నవీకరించండి</string>
+    <string name="script_update_anyway">అయినా అప్‌డేట్ చేయి</string>
     <string name="script_homepage">హోమ్‌పేజీని తెరవండి</string>
     <string name="script_homepage_confirm_title">ఈ చిరునామాను తెరవాలా?</string>
     <string name="script_homepage_open">తెరవండి</string>
@@ -92,7 +92,7 @@
     <string name="script_inspect_no_item">ఏ వస్తువుకూ ఫోకస్ లేదు</string>
     <string name="script_inspect_copied">కాపీ చేయబడింది. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">ఐడి లేదు, కాబట్టి నియమాలు దీనికి పేరు పెట్టలేవు. కాపీ చేయబడింది. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">కాపీ స్క్రీన్ చెట్టు</string>
+    <string name="shortcut_copy_screen_tree">స్క్రీన్ ట్రీని కాపీ చేయి</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> అంశాలు కాపీ చేయబడ్డాయి</string>
     <string name="script_tree_none">కాపీ చేయడానికి విండో లేదు</string>
     <string name="script_tree_clip_label">స్క్రీన్ ట్రీ</string>
@@ -139,7 +139,7 @@
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g>ని తీసివేయాలా?</string>
     <string name="script_source_remove_message">దాని నుండి ఇన్‌స్టాల్ చేయబడిన స్క్రిప్ట్‌లు ఇన్‌స్టాల్ చేయబడి ఉంటాయి.</string>
     <string name="scripts_auto_update">స్క్రిప్ట్‌లను స్వయంచాలకంగా నవీకరించండి</string>
-    <string name="scripts_check_updates">నవీకరణల కోసం తనిఖీ చేయండి</string>
+    <string name="scripts_check_updates">అప్‌డేట్‌ల కోసం తనిఖీ చేయి</string>
     <string name="scripts_checking_updates">అప్‌డేట్‌ల కోసం తనిఖీ చేస్తోంది…</string>
     <string name="scripts_updates_category">నవీకరణలు</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>

@@ -14,8 +14,8 @@
     <string name="scripts_all_off">Исклучете ги сите скрипти</string>
     <string name="scripts_all_off_summary">Скриптите остануваат инсталирани и ги задржуваат сопствените прекинувачи. Гестот Вклучи или исклучи ги сите скрипти го прави истото.</string>
     <string name="shortcut_toggle_scripts">Вклучете ги или исклучете ги сите скрипти</string>
-    <string name="scripts_now_off">Исклучени скрипти</string>
-    <string name="scripts_now_on">Скрипти на</string>
+    <string name="scripts_now_off">Скриптите се исклучени</string>
+    <string name="scripts_now_on">Скриптите се вклучени</string>
     <string name="scripts_unavailable">Скриптите не се достапни на овој уред</string>
     <string name="script_add_example">Додадете го примерот на скрипта</string>
     <string name="script_add_example_summary">Го кажува името на секоја апликација на која се префрлате. Скрипта за почеток.</string>
@@ -31,7 +31,7 @@
     <string name="script_install_button">Инсталирај</string>
     <string name="script_update_title">Да се ажурира <xliff:g id="name">%1$s</xliff:g> до <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Нови дозволи:</string>
-    <string name="script_update_button">Ажурирање</string>
+    <string name="script_update_button">Ажурирај</string>
     <string name="script_update_replaces">Ова ја заменува верзијата <xliff:g id="version">%1$s</xliff:g> со <xliff:g id="author">%2$s</xliff:g> и ги задржува нејзините податоци и поставки.</string>
     <string name="script_update_other_author">Новиот е од <xliff:g id="author">%1$s</xliff:g>, различен автор. Ажурирајте само ако имате доверба.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> инсталиран</string>
@@ -82,7 +82,7 @@
     <string name="script_api_range">АПИ на скрипта <xliff:g id="min">%1$d</xliff:g> до <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Компатибилност</string>
     <string name="script_install_anyway">Сепак инсталирај</string>
-    <string name="script_update_anyway">Во секој случај, ажурирај</string>
+    <string name="script_update_anyway">Сепак ажурирај</string>
     <string name="script_homepage">Отвори ја почетната страница</string>
     <string name="script_homepage_confirm_title">Да се отвори оваа адреса?</string>
     <string name="script_homepage_open">Отвори</string>
@@ -92,8 +92,8 @@
     <string name="script_inspect_no_item">Ниту една ставка нема фокус</string>
     <string name="script_inspect_copied">Копирано. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Нема ид, така што правилата не можат да го именуваат. Копирано. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">Копирај дрво на екранот</string>
-    <string name="script_tree_copied">Копирани <xliff:g id="count">%1$d</xliff:g> ставки</string>
+    <string name="shortcut_copy_screen_tree">Копирај го дрвото на екранот</string>
+    <string name="script_tree_copied">Копирани ставки: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Нема прозорец за копирање</string>
     <string name="script_tree_clip_label">Дрво на екранот</string>
     <string name="summary_copy_screen_tree_menu">Копирајте ги сите ставки на екранот како JSON, за пишување скрипти</string>
@@ -138,8 +138,8 @@
     <string name="script_source_remove">Отстрани го изворот</string>
     <string name="script_source_remove_title">Да се отстрани <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Скриптите инсталирани од него остануваат инсталирани.</string>
-    <string name="scripts_auto_update">Ажурирајте ги скриптите автоматски</string>
-    <string name="scripts_check_updates">Проверете дали има ажурирања</string>
+    <string name="scripts_auto_update">Автоматски ажурирај ги скриптите</string>
+    <string name="scripts_check_updates">Провери за ажурирања</string>
     <string name="scripts_checking_updates">Се проверува за ажурирања…</string>
     <string name="scripts_updates_category">Ажурирања</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>

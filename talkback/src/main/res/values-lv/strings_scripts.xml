@@ -82,7 +82,7 @@
     <string name="script_api_range">Skripta API no <xliff:g id="min">%1$d</xliff:g> līdz <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Saderība</string>
     <string name="script_install_anyway">Tomēr instalēt</string>
-    <string name="script_update_anyway">Atjauniniet jebkurā gadījumā</string>
+    <string name="script_update_anyway">Tomēr atjaunināt</string>
     <string name="script_homepage">Atvērt mājaslapu</string>
     <string name="script_homepage_confirm_title">Vai atvērt šo adresi?</string>
     <string name="script_homepage_open">Atvērt</string>
@@ -93,7 +93,7 @@
     <string name="script_inspect_copied">Kopēts. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Nav id, tāpēc noteikumi to nevar nosaukt. Kopēts. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopēt ekrāna koku</string>
-    <string name="script_tree_copied">Kopēti <xliff:g id="count">%1$d</xliff:g> vienumi</string>
+    <string name="script_tree_copied">Kopēti vienumi: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Nav loga, ko kopēt</string>
     <string name="script_tree_clip_label">Ekrāna koks</string>
     <string name="summary_copy_screen_tree_menu">Skriptu rakstīšanai kopējiet visus ekrānā redzamos vienumus kā JSON</string>
@@ -138,8 +138,8 @@
     <string name="script_source_remove">Noņemt avotu</string>
     <string name="script_source_remove_title">Vai noņemt <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">No tā instalētie skripti paliek instalēti.</string>
-    <string name="scripts_auto_update">Automātiski atjauniniet skriptus</string>
-    <string name="scripts_check_updates">Pārbaudiet, vai nav atjauninājumu</string>
+    <string name="scripts_auto_update">Automātiski atjaunināt skriptus</string>
+    <string name="scripts_check_updates">Meklēt atjauninājumus</string>
     <string name="scripts_checking_updates">Notiek atjauninājumu pārbaude…</string>
     <string name="scripts_updates_category">Atjauninājumi</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>

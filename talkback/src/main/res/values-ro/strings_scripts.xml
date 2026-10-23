@@ -31,7 +31,7 @@
     <string name="script_install_button">Instalează</string>
     <string name="script_update_title">Actualizați <xliff:g id="name">%1$s</xliff:g> la <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Permisiuni noi:</string>
-    <string name="script_update_button">Actualizare</string>
+    <string name="script_update_button">Actualizează</string>
     <string name="script_update_replaces">Aceasta înlocuiește versiunea <xliff:g id="version">%1$s</xliff:g> cu <xliff:g id="author">%2$s</xliff:g> și își păstrează datele și setările.</string>
     <string name="script_update_other_author">Cel nou este de <xliff:g id="author">%1$s</xliff:g>, un alt autor. Actualizați doar dacă aveți încredere.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> instalat</string>
@@ -82,7 +82,7 @@
     <string name="script_api_range">Script API de la <xliff:g id="min">%1$d</xliff:g> la <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Compatibilitate</string>
     <string name="script_install_anyway">Instalează oricum</string>
-    <string name="script_update_anyway">Actualizați oricum</string>
+    <string name="script_update_anyway">Actualizează oricum</string>
     <string name="script_homepage">Deschide pagina principală</string>
     <string name="script_homepage_confirm_title">Deschizi această adresă?</string>
     <string name="script_homepage_open">Deschide</string>
@@ -92,8 +92,8 @@
     <string name="script_inspect_no_item">Niciun articol nu are focalizare</string>
     <string name="script_inspect_copied">Copiat. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Fără id, așa că regulile nu-l pot denumi. Copiat. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">Copiați arborele ecranului</string>
-    <string name="script_tree_copied">S-au copiat <xliff:g id="count">%1$d</xliff:g> articole</string>
+    <string name="shortcut_copy_screen_tree">Copiază arborele ecranului</string>
+    <string name="script_tree_copied">S-au copiat <xliff:g id="count">%1$d</xliff:g> elemente</string>
     <string name="script_tree_none">Nicio fereastră de copiat</string>
     <string name="script_tree_clip_label">Arborele ecranului</string>
     <string name="summary_copy_screen_tree_menu">Copiați toate elementele de pe ecran ca JSON, pentru a scrie scripturi</string>
@@ -138,8 +138,8 @@
     <string name="script_source_remove">Elimină sursa</string>
     <string name="script_source_remove_title">Elimini <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Scripturile instalate din acesta rămân instalate.</string>
-    <string name="scripts_auto_update">Actualizați automat scripturile</string>
-    <string name="scripts_check_updates">Verificați actualizările</string>
+    <string name="scripts_auto_update">Actualizează automat scripturile</string>
+    <string name="scripts_check_updates">Caută actualizări</string>
     <string name="scripts_checking_updates">Se verifică actualizările...</string>
     <string name="scripts_updates_category">Actualizări</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>

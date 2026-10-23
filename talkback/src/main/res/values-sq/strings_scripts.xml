@@ -14,8 +14,8 @@
     <string name="scripts_all_off">Fikni të gjitha skriptet</string>
     <string name="scripts_all_off_summary">Skriptet qëndrojnë të instaluara dhe mbajnë çelësat e tyre. Gjesti Aktivizo ose çaktivizo të gjitha skriptet bën të njëjtën gjë.</string>
     <string name="shortcut_toggle_scripts">Aktivizo ose çaktivizo të gjitha skriptet</string>
-    <string name="scripts_now_off">Scripts off</string>
-    <string name="scripts_now_on">Skriptet në</string>
+    <string name="scripts_now_off">Skriptet joaktive</string>
+    <string name="scripts_now_on">Skriptet aktive</string>
     <string name="scripts_unavailable">Skriptet nuk ofrohen në këtë pajisje</string>
     <string name="script_add_example">Shtoni shembullin e skenarit</string>
     <string name="script_add_example_summary">Thotë emrin e çdo aplikacioni ku kaloni. Një skenar për të filluar.</string>
@@ -92,8 +92,8 @@
     <string name="script_inspect_no_item">Asnjë artikull nuk ka fokus</string>
     <string name="script_inspect_copied">U kopjua. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Nuk ka id, kështu që rregullat nuk mund ta emërtojnë atë. E kopjuar. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">Kopjoni pemën e ekranit</string>
-    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> artikuj të kopjuar</string>
+    <string name="shortcut_copy_screen_tree">Kopjo pemën e ekranit</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> elemente u kopjuan</string>
     <string name="script_tree_none">Nuk ka dritare për të kopjuar</string>
     <string name="script_tree_clip_label">Pema e ekranit</string>
     <string name="summary_copy_screen_tree_menu">Kopjo të gjithë artikujt në ekran si JSON, për të shkruar skriptet</string>
@@ -138,8 +138,8 @@
     <string name="script_source_remove">Hiq burimin</string>
     <string name="script_source_remove_title">Të hiqet <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Skriptet e instaluara prej tij mbeten të instaluara.</string>
-    <string name="scripts_auto_update">Përditësoni automatikisht skriptet</string>
-    <string name="scripts_check_updates">Kontrolloni për përditësime</string>
+    <string name="scripts_auto_update">Përditëso automatikisht skriptet</string>
+    <string name="scripts_check_updates">Kontrollo për përditësime</string>
     <string name="scripts_checking_updates">Po kontrollon për përditësime…</string>
     <string name="scripts_updates_category">Përditësimet</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
