@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">التحرير الحبيبي</string>
+    <string name="granular_editing_split_by">تقسيم حسب: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">تقسيم بواسطة</string>
+    <string name="granular_editing_characters">الأحرف</string>
+    <string name="granular_editing_words">الكلمات</string>
+    <string name="granular_editing_sentences">الجمل</string>
+    <string name="granular_editing_lines">الأسطر</string>
+    <string name="granular_editing_paragraphs">الفقرات</string>
+    <string name="granular_editing_space">مسافة</string>
+    <string name="granular_editing_new_line">خط جديد</string>
+    <string name="granular_editing_tab">حرف علامة التبويب</string>
+    <string name="granular_editing_empty">لا يوجد نص. استخدم إضافة نص في النهاية، في المزيد.</string>
+    <string name="granular_editing_edit">تحرير</string>
+    <string name="granular_editing_insert_before">أدخل قبل</string>
+    <string name="granular_editing_insert_after">إدراج بعد</string>
+    <string name="granular_editing_delete">حذف</string>
+    <string name="granular_editing_select">تحديد</string>
+    <string name="granular_editing_unselect">قم بإلغاء التحديد</string>
+    <string name="granular_editing_selected">مختارة</string>
+    <string name="granular_editing_save">حفظ</string>
+    <string name="granular_editing_more">المزيد</string>
+    <string name="granular_editing_undo">تراجع</string>
+    <string name="granular_editing_redo">إعادة آخر تعديل تم التراجع عنه</string>
+    <string name="granular_editing_find">بحث</string>
+    <string name="granular_editing_find_next">البحث عن التالي</string>
+    <string name="granular_editing_replace">استبدال</string>
+    <string name="granular_editing_replace_with">استبدل ب</string>
+    <string name="granular_editing_replace_all">استبدال الكل</string>
+    <string name="granular_editing_add_at_end">أضف نصًا في النهاية</string>
+    <string name="granular_editing_clear_selection">محو التحديد</string>
+    <string name="granular_editing_cut_selected">قص النص المحدد</string>
+    <string name="granular_editing_delete_selected">حذف المحدد</string>
+    <string name="granular_editing_copied">منقول</string>
+    <string name="granular_editing_deleted">تم الحذف</string>
+    <string name="granular_editing_not_found">لم يتم العثور عليه</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="zero"><xliff:g id="count" example="3">%d</xliff:g> تم استبداله</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> تم استبداله</item>
+        <item quantity="two"><xliff:g id="count" example="3">%d</xliff:g> استبدال</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> استبدال</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> استبدال</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> استبدال</item>
+    </plurals>
+    <string name="granular_editing_save_changes">هل تريد حفظ التغييرات؟</string>
+    <string name="granular_editing_copy_changes">هل تريد نسخ النص الذي تم تغييره؟</string>
+    <string name="granular_editing_discard">تجاهل</string>
+    <string name="granular_editing_keep_editing">مواصلة التعديل</string>
+    <string name="granular_editing_not_saved">لم يُحفظ: حقل النص لم يعد متاحًا. تم نسخ النص.</string>
+    <string name="granular_editing_no_text">لا يوجد نص لتحريره</string>
+    <string name="granular_editing_password">غير متوفر في حقول كلمة المرور</string>
+</resources>
