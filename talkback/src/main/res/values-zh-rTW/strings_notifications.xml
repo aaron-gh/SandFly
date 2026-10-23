@@ -21,7 +21,7 @@
     <string name="notification_apps_title">應用程式</string>
     <string name="notification_words_title">單字和替換</string>
     <string name="notification_kinds_title">通知種類</string>
-    <string name="notification_when_title">何時閱讀</string>
+    <string name="notification_when_title">朗讀時機</string>
     <string name="notification_rules_title">規則</string>
     <string name="notification_repeats_title">重複</string>
     <string name="notification_stop_title">停止朗讀</string>
@@ -37,7 +37,7 @@
     <string name="notification_private_format_message">表示代替私人通知的內容。佔位符：{app}、{category} 和 {time}。</string>
     <string name="notification_category_voice">語音</string>
     <string name="notification_voice_title">語音</string>
-    <string name="notification_voice_sandfly">SandFly的聲音</string>
+    <string name="notification_voice_sandfly">SandFly的語音</string>
     <string name="notification_detect_language_title">偵測語言</string>
     <string name="notification_detect_language_summary">用其編寫的語言說出每個通知。需要在文字轉語音設定中自動切換語言。</string>
     <string name="notification_sound_before_title">通知前的提示音</string>
@@ -102,7 +102,7 @@
     <string name="notification_access_summary">需要停止阅读已驳回的通知并获取摘要</string>
     <string name="notification_shake_title">搖晃即可停止</string>
     <string name="notification_shake_strength_title">搖晃強度</string>
-    <string name="notification_wave_title">揮手停止閱讀</string>
+    <string name="notification_wave_title">揮手停止</string>
     <string name="notification_wave_summary">将手移到接近传感器上</string>
     <string name="notification_pocket_title">口袋模式</string>
     <string name="notification_pocket_summary">读取开始时被覆盖的传感器（如放在口袋中）不会阻止读取</string>
@@ -305,7 +305,7 @@
     <string name="notification_speech_now_on">通知朗讀已開啟</string>
     <string name="notification_speech_now_off">通知朗讀已關閉</string>
     <string name="notification_no_last_notification">沒有閱讀任何通知</string>
-    <string name="shortcut_read_notifications">閱讀通知</string>
+    <string name="shortcut_read_notifications">朗讀通知</string>
     <string name="shortcut_toggle_notification_speech">通知語音開啟或關閉</string>
     <string name="shortcut_read_last_notification">再次閱讀上次通知</string>
     <string name="shortcut_stop_notification">停止閱讀通知</string>

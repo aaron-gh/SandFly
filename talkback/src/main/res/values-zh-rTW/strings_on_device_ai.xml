@@ -14,7 +14,7 @@
     <string name="on_device_ai_tag_experimental">實驗性的</string>
     <string name="on_device_ai_tag_needs_memory">需要大約 %1$d GB 記憶體。</string>
     <string name="on_device_ai_tag_not_enough_memory">此手機內存不足。</string>
-    <string name="on_device_ai_choose_model">選擇型號</string>
+    <string name="on_device_ai_choose_model">選擇模型</string>
     <string name="on_device_ai_model_too_big">此手機沒有足夠的內存用於該型號。</string>
     <string name="pref_on_device_ai_download">下載模型(%1$s)</string>
     <string name="pref_on_device_ai_download_summary">從 Hugging Face 下載一次。此後，不會透過網路發送任何內容。</string>
@@ -22,8 +22,8 @@
     <string name="pref_on_device_ai_downloading_summary">%1$s。點擊即可停止。如果您再次開始，它會從這裡繼續。</string>
     <string name="on_device_ai_progress_sizes">%1$s / %2$s</string>
     <string name="on_device_ai_progress_with_time">左%1$s、%2$s</string>
-    <string name="on_device_ai_announce_progress">正在下載，%1$d百分比</string>
-    <string name="on_device_ai_announce_done">模型下載</string>
+    <string name="on_device_ai_announce_progress">正在下載，百分之%1$d</string>
+    <string name="on_device_ai_announce_done">模型已下載</string>
     <string name="on_device_ai_notification_channel">設備端AI下載</string>
     <string name="on_device_ai_notification_downloading">下載模型，%1$d%%</string>
     <string name="on_device_ai_notification_done">模型已下載。在設定中開啟裝置上的 AI。</string>

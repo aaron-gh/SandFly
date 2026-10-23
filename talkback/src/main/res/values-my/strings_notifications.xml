@@ -21,7 +21,7 @@
     <string name="notification_apps_title">အက်ပ်များ</string>
     <string name="notification_words_title">စကားလုံးများနှင့် အစားထိုးမှုများ</string>
     <string name="notification_kinds_title">အကြောင်းကြားစာအမျိုးအစားများ</string>
-    <string name="notification_when_title">ဘယ်အချိန်ဖတ်ရမလဲ</string>
+    <string name="notification_when_title">ဖတ်မည့်အချိန်</string>
     <string name="notification_rules_title">စည်းကမ်းများ</string>
     <string name="notification_repeats_title">ထပ်ခါထပ်ခါ ဖြစ်ခြင်း</string>
     <string name="notification_stop_title">ဖတ်ခြင်း ရပ်ရန်</string>
@@ -102,7 +102,7 @@
     <string name="notification_access_summary">ပယ်ချခံထားရသော အကြောင်းကြားစာကို ဖတ်ရှုခြင်းကို ရပ်တန့်ရန်နှင့် အနှစ်ချုပ်များအတွက် လိုအပ်ပါသည်</string>
     <string name="notification_shake_title">ရပ်ရန် လှုပ်ခါပါ</string>
     <string name="notification_shake_strength_title">လှုပ်ခါမှု ပြင်းအား</string>
-    <string name="notification_wave_title">စာဖတ်ခြင်းကို ရပ်ရန် လက်ဝှေ့ယမ်းပါ</string>
+    <string name="notification_wave_title">ရပ်ရန် လက်ဝှေ့ယမ်းပါ</string>
     <string name="notification_wave_summary">proximity sensor ကို လက်ဖြင့် ရွှေ့ပါ</string>
     <string name="notification_pocket_title">အိတ်ကပ်မုဒ်</string>
     <string name="notification_pocket_summary">အိတ်ကပ်ထဲတွင်ကဲ့သို့ စာဖတ်ခြင်းစတင်သောအခါတွင် ဖုံးအုပ်ထားသော အာရုံခံကိရိယာသည် ၎င်းကို မရပ်တန့်ပါ</string>
@@ -152,7 +152,7 @@
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> → <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">စာသား</string>
     <string name="notification_replace_with">ဤသို့ ဖတ်ရန်</string>
-    <string name="notification_whole_words">စကားလုံးတွေချည်းပဲ</string>
+    <string name="notification_whole_words">စကားလုံးအပြည့်သာ</string>
     <string name="notification_regex">Regular expression</string>
     <string name="notification_enter_text">စာသားထည့်ပါ</string>
     <string name="notification_invalid_regex">မှန်ကန်သော ပုံမှန်အသုံးအနှုန်းမဟုတ်ပါ</string>
@@ -305,7 +305,7 @@
     <string name="notification_speech_now_on">အကြောင်းကြားချက် ဖတ်ခြင်း ဖွင့်ထားသည်</string>
     <string name="notification_speech_now_off">အကြောင်းကြားချက် ဖတ်ခြင်း ပိတ်ထားသည်</string>
     <string name="notification_no_last_notification">အကြောင်းကြားစာကို မဖတ်ခဲ့ပါ</string>
-    <string name="shortcut_read_notifications">အသိပေးချက်များကိုဖတ်ပါ</string>
+    <string name="shortcut_read_notifications">အကြောင်းကြားချက်များကို ဖတ်ရန်</string>
     <string name="shortcut_toggle_notification_speech">အကြောင်းကြားချက် မိန့်ခွန်းကို အဖွင့် သို့မဟုတ် ပိတ်ပါ</string>
     <string name="shortcut_read_last_notification">နောက်ဆုံးသတိပေးချက်ကို ထပ်ဖတ်ပါ</string>
     <string name="shortcut_stop_notification">အကြောင်းကြားစာကို ဖတ်ခြင်းကို ရပ်ပါ</string>

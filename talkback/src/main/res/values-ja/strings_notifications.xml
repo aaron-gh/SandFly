@@ -19,9 +19,9 @@
     <string name="notification_category_title">通知</string>
     <string name="notification_reading_title">通知を読み上げる</string>
     <string name="notification_apps_title">アプリ</string>
-    <string name="notification_words_title">言葉と置き換え</string>
+    <string name="notification_words_title">単語と置換</string>
     <string name="notification_kinds_title">通知の種類</string>
-    <string name="notification_when_title">いつ読むべきか</string>
+    <string name="notification_when_title">読み上げるタイミング</string>
     <string name="notification_rules_title">ルール</string>
     <string name="notification_repeats_title">繰り返し</string>
     <string name="notification_stop_title">読み上げの停止</string>
@@ -36,8 +36,8 @@
     <string name="notification_private_format_title">プライベート通知の読み上げ内容</string>
     <string name="notification_private_format_message">非公開通知の内容の代わりに述べられます。プレースホルダー: {app}、{category}、{time}。</string>
     <string name="notification_category_voice">音声</string>
-    <string name="notification_voice_title">声</string>
-    <string name="notification_voice_sandfly">SandFlyの声</string>
+    <string name="notification_voice_title">音声</string>
+    <string name="notification_voice_sandfly">SandFlyの音声</string>
     <string name="notification_detect_language_title">言語の検出</string>
     <string name="notification_detect_language_summary">各通知は、その通知が書かれている言語で読み上げます。テキスト読み上げ設定で言語を自動的に切り替える必要があります。</string>
     <string name="notification_sound_before_title">通知の前に音を鳴らす</string>
@@ -102,7 +102,7 @@
     <string name="notification_access_summary">却下された通知と概要を読むのをやめるために必要</string>
     <string name="notification_shake_title">振って停止</string>
     <string name="notification_shake_strength_title">振る強さ</string>
-    <string name="notification_wave_title">手を振って読書をやめる</string>
+    <string name="notification_wave_title">手を振って停止</string>
     <string name="notification_wave_summary">近接センサーの上に手をかざす</string>
     <string name="notification_pocket_title">ポケットモード</string>
     <string name="notification_pocket_summary">ポケットなどに入れて読み取りを開始するときにセンサーが覆われていても、読み取りは停止しません</string>
