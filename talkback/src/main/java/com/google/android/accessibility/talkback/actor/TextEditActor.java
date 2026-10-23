@@ -623,7 +623,9 @@ public class TextEditActor implements VoiceDictationDelegate {
     CharSequence hintText = node.getHintText();
     // There is a low probability that the content of the input field is totally the same with the
     // hint text. In that case the current input field will be overridden by the inserted text.
-    if (TextUtils.equals(currentText, hintText)) {
+    // Some apps expose the placeholder as text and set only the showing-hint flag, without
+    // providing hintText. It must not become part of the value passed to ACTION_SET_TEXT.
+    if (node.isShowingHintText() || TextUtils.equals(currentText, hintText)) {
       currentText = null;
     }
 
@@ -631,6 +633,8 @@ public class TextEditActor implements VoiceDictationDelegate {
     if (currentText == null) {
       currentText = "";
     }
+    selectionStart = Math.min(selectionStart, currentText.length());
+    selectionEnd = Math.min(selectionEnd, currentText.length());
 
     // Set updated text.
     CharSequence textUpdated =
