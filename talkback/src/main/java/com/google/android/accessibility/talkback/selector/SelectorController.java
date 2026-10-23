@@ -1439,6 +1439,25 @@ public class SelectorController implements UserInputEventListener {
         currentControl != null
             ? settings.size() + controls.indexOf(currentControl)
             : settings.indexOf(getCurrentSetting(context, prefs));
+    // A control given this letter comes first; several with the same letter take turns.
+    if (wanted.length() == 1) {
+      char letterWanted = Character.toUpperCase(wanted.charAt(0));
+      for (int step = 1; step <= size; step++) {
+        int index = Math.floorMod(current + step, size);
+        if (index >= settings.size()) {
+          continue;
+        }
+        Setting setting = settings.get(index);
+        Character assigned = ReadingControlLetters.letterOf(prefs, setting);
+        if (assigned == null || assigned != letterWanted) {
+          continue;
+        }
+        pipeline.returnFeedback(eventId, Feedback.sound(R.id.next_reading_control));
+        setCurrentSetting(eventId, setting, AnnounceType.DESCRIPTION_AND_HINT, false);
+        return getSettingActionDescriptionAndHint(setting, EVENT_ID_UNTRACKED).description;
+      }
+    }
+    // Otherwise, the next control whose name starts with it.
     for (int step = 1; step <= size; step++) {
       int index = Math.floorMod(current + step, size);
       String name =

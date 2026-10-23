@@ -1850,8 +1850,12 @@
     <string name="shortcut_scroll_back">Scroll back</string>
     <!-- Label for the shortcut that scrolls the current list to its start and focuses its first item. [CHAR_LIMIT=40] -->
     <string name="shortcut_scroll_to_top">Scroll to top</string>
-    <!-- Gesture action: the user writes a letter on the screen, and the next reading control whose name starts with it is chosen. [CHAR LIMIT=NONE] -->
+    <!-- Gesture action: the user writes a letter on the screen, and the reading control with that letter, or else the next one whose name starts with it, is chosen. [CHAR LIMIT=NONE] -->
     <string name="shortcut_write_reading_control">Write the letter of a reading control</string>
+    <!-- Reading controls setting: the letter written to choose each reading control. [CHAR LIMIT=40] -->
+    <string name="title_pref_reading_control_letters">Handwriting letters</string>
+    <!-- A reading control with no handwriting letter. [CHAR LIMIT=30] -->
+    <string name="reading_control_letter_none">None</string>
     <!-- Spoken when the screen is ready for a handwritten letter that chooses a reading control. [CHAR LIMIT=NONE] -->
     <string name="handwriting_prompt">Write a letter</string>
     <!-- Spoken when the handwriting surface closes without choosing a reading control. [CHAR LIMIT=NONE] -->
