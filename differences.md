@@ -42,7 +42,7 @@ This setting appears only when SandFly recognizes gestures itself, which require
 
 ### Low-latency audio
 
-Android's usual audio path adds about 60 to 70 ms before a sound or speech reaches the speaker. When you turn on **Controls** > **Touch and activation** > **Reduce delay** > **Low-latency audio**, SandFly plays its sounds and speech through a single fast audio track at your phone's own sample rate. On a Galaxy Z Fold7, this path takes about 21 ms.
+Android's usual audio path adds about 60 to 70 ms before a sound or speech reaches the speaker. When you turn on **Controls** > **Touch and activation** > **Reduce delay** > **Low-latency audio**, SandFly plays its sounds and speech through a single fast audio track at your phone's own sample rate. On a Galaxy Z Fold7, this path takes about 21 ms. The sounds of a sound theme are decoded for it as soon as the theme is chosen or SandFly starts, and over a minute of them stays decoded, so that none waits for its first play or plays the slower usual way.
 
 Low-latency audio also changes how pausing speech works. When you tap with two fingers, speech stops mid-word, and when you resume, it carries on from exactly where it stopped. SandFly holds up to 10 seconds of paused speech.
 

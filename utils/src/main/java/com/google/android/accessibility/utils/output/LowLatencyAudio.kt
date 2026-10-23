@@ -106,8 +106,16 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     track = createTrack()
   }
 
-  /** A short sound, as stereo frames at [rate]. */
-  class Clip internal constructor(internal val frames: FloatArray, internal val rate: Int) {
+  /**
+   * A short sound, as frames of [channels] channels, 1 or 2, at [rate]. A mono sound is kept mono,
+   * which takes half the memory, and plays on both sides.
+   */
+  class Clip
+  internal constructor(
+    internal val frames: FloatArray,
+    internal val rate: Int,
+    internal val channels: Int = 2,
+  ) {
     /** How many samples the clip holds. */
     val size: Int
       get() = frames.size
@@ -124,7 +132,11 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         val out = it.process(decoded.samples)
         out + it.flush()
       }
-    return Clip(toStereo(resampled, decoded.channels), sampleRate)
+    return if (decoded.channels == 1) {
+      Clip(resampled, sampleRate, channels = 1)
+    } else {
+      Clip(toStereo(resampled, decoded.channels), sampleRate)
+    }
   }
 
   /** Plays [clip] at [left] and [right] volumes from 0 to 1, and [rate], 1 for its own speed. */
@@ -707,17 +719,21 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     while (iterator.hasNext()) {
       val playing = iterator.next()
       val frames = playing.clip.frames
-      val total = frames.size / 2
+      val channels = playing.clip.channels
+      // A mono clip reads its one channel for both sides.
+      val right = channels - 1
+      val total = frames.size / channels
       for (i in 0 until burstFrames) {
         val position = playing.position
         val index = position.toInt()
         if (index >= total) break
         val next = minOf(index + 1, total - 1)
         val fraction = (position - index).toFloat()
-        out[i * 2] +=
-          (frames[index * 2] * (1 - fraction) + frames[next * 2] * fraction) * playing.left
+        val at = index * channels
+        val after = next * channels
+        out[i * 2] += (frames[at] * (1 - fraction) + frames[after] * fraction) * playing.left
         out[i * 2 + 1] +=
-          (frames[index * 2 + 1] * (1 - fraction) + frames[next * 2 + 1] * fraction) * playing.right
+          (frames[at + right] * (1 - fraction) + frames[after + right] * fraction) * playing.right
         playing.position += playing.step
       }
       if (playing.position >= total) iterator.remove()
