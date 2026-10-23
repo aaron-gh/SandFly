@@ -155,7 +155,7 @@ class LocalModelService : Service() {
         // Downloaded the first time the NPU is used.
         if (processor == OnDeviceAiSettings.Processor.NPU) {
           val chip = Accelerators.npuChip ?: throw LocalLlmException("No NPU on this phone")
-          NpuRuntime.ensure(appContext, chip).path
+          NpuRuntime.ensure(appContext, chip).also { NpuRuntime.load(it, chip) }.path
         } else {
           null
         },

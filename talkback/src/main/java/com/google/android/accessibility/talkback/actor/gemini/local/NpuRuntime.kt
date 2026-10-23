@@ -53,8 +53,17 @@ object NpuRuntime {
     "https://repo1.maven.org/maven2/com/qualcomm/qti/qnn-runtime/$QNN_VERSION/" +
       "qnn-runtime-$QNN_VERSION.aar"
 
-  /** A library in the 64-bit ARM folder of a package. */
-  private class Library(val packageUrl: String, val name: String, val sha256: String)
+  /**
+   * A library in the 64-bit ARM folder of a package. [preload] marks one that another library
+   * opens by its bare name, which Android looks for only in SandFly's own library folder, so
+   * [load] loads it from the download folder first.
+   */
+  private class Library(
+    val packageUrl: String,
+    val name: String,
+    val sha256: String,
+    val preload: Boolean = false,
+  )
 
   private val TENSOR =
     listOf(
@@ -72,8 +81,18 @@ object NpuRuntime {
         "libLiteRtDispatch_Qualcomm.so",
         "22e2d581555617c4a4dabc46ed74833829816e9cd13a0eea27dd4d2178049751",
       ),
-      Library(QNN_AAR, "libQnnHtp.so", "0d571eca017fa0c36baef5182e0c137d7959db2bff5aea9b0a8cf49377fb1b14"),
-      Library(QNN_AAR, "libQnnSystem.so", "2c3b913e54ec36ad2a75ff8ba392c4689fe44d45a0d06653bbd49cb56eb53971"),
+      Library(
+        QNN_AAR,
+        "libQnnHtp.so",
+        "0d571eca017fa0c36baef5182e0c137d7959db2bff5aea9b0a8cf49377fb1b14",
+        preload = true,
+      ),
+      Library(
+        QNN_AAR,
+        "libQnnSystem.so",
+        "2c3b913e54ec36ad2a75ff8ba392c4689fe44d45a0d06653bbd49cb56eb53971",
+        preload = true,
+      ),
     )
 
   /** The libraries for [chip]'s NPU, or empty when SandFly has none for it. */
@@ -84,13 +103,23 @@ object NpuRuntime {
       Accelerators.SNAPDRAGON_8_ELITE ->
         QUALCOMM_COMMON +
           listOf(
-            Library(QNN_AAR, "libQnnHtpV79Stub.so", "d866680209a48b519f982c77242b0c95ebe7ef7c8e992d91861c198c9cb0e4cc"),
+            Library(
+              QNN_AAR,
+              "libQnnHtpV79Stub.so",
+              "d866680209a48b519f982c77242b0c95ebe7ef7c8e992d91861c198c9cb0e4cc",
+              preload = true,
+            ),
             Library(QNN_AAR, "libQnnHtpV79Skel.so", "9e2a40fbd89f4112b60701fe4805067bae8e7aa96673b6482f5d39bdbd9c77be"),
           )
       Accelerators.SNAPDRAGON_8_ELITE_GEN_5 ->
         QUALCOMM_COMMON +
           listOf(
-            Library(QNN_AAR, "libQnnHtpV81Stub.so", "ef0cc96ab5b4cccce59f1c02d59bb3f288d00f0045d763651ccb35591695ed0b"),
+            Library(
+              QNN_AAR,
+              "libQnnHtpV81Stub.so",
+              "ef0cc96ab5b4cccce59f1c02d59bb3f288d00f0045d763651ccb35591695ed0b",
+              preload = true,
+            ),
             Library(QNN_AAR, "libQnnHtpV81Skel.so", "4f061ffb402588ea619d648733b26c7d5ad3cbe9712715586b76ea94187b3b01"),
           )
       else -> emptyList()
@@ -116,6 +145,22 @@ object NpuRuntime {
       .groupBy { it.packageUrl }
       .forEach { (url, missing) -> extract(url, missing, dir) }
     return dir
+  }
+
+  /**
+   * Loads the libraries for [chip] that are opened by bare name, from the folder that [ensure]
+   * returned, into this process, so that LiteRT-LM's NPU backend finds them. Call it in the process
+   * that runs the model, before the model loads.
+   */
+  @Throws(IOException::class)
+  fun load(dir: File, chip: String) {
+    for (library in librariesFor(chip).filter { it.preload }) {
+      try {
+        System.load(File(dir, library.name).path)
+      } catch (e: UnsatisfiedLinkError) {
+        throw IOException("Could not load ${library.name}: ${e.message}", e)
+      }
+    }
   }
 
   /** Reads the package at [url] once, saving [libraries] from it into [dir]. */
