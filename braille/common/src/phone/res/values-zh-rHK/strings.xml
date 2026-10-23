@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="dont_show_again">不要再顯示此選框</string>
   <string name="number_announcement">數字</string>
   <string name="capitalize_announcement">大楷</string>
@@ -148,4 +148,7 @@
   <string name="bk_gesture_next_suggestion">聽取下一個建議</string>
   <string name="bk_gesture_confirm_spelling_suggestion">確認建議</string>
   <string name="bk_gesture_undo_spelling_suggestion">復原建議</string>
+    <string name="code_user_facing_name_mongolian">蒙古語</string>
+    <string name="bk_gesture_toggle_orientation_lock">鎖定或解鎖方向</string>
+    <string name="bk_gesture_next_braille_table">切換到下一個點字表</string>
 </resources>

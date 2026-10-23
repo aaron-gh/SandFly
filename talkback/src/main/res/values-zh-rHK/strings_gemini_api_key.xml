@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API 金鑰</string>
+    <string name="summary_pref_gemini_api_key_built_in">使用此應用程式內建的金鑰</string>
+    <string name="gemini_api_key_dialog_message">從 Google AI Studio (aistudio.google.com/apikey) 取得免費的 API 金鑰，並將其貼到此處。若要刪除您的密鑰，請清除該欄位並儲存。 \n\n您所描述的影像和螢幕將會傳送到Google。在免費套餐中，Google可以使用它們來改進其產品。</string>
+    <string name="gemini_api_key_hint">API金鑰</string>
+    <string name="gemini_api_key_save">儲存</string>
+    <string name="gemini_api_key_get">取得鑰匙</string>
+    <string name="title_pref_gemini_model">Gemini型號</string>
+    <string name="gemini_model_automatic">自動</string>
+    <string name="summary_pref_gemini_model_automatic">自動：Gemini Flash，當 Flash 忙時則 Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>，忙時則Flash-Lite</string>
+    <string name="gemini_model_loading">取得模型...</string>
+    <string name="gemini_model_list_failed">無法取得模型：<xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">首先設定一個 Gemini API 金鑰</string>
+    <string name="gemini_api_terms_link">Gemini API 附加服務條款</string>
+    <string name="ai_service_address_hint">地址，如https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">型號</string>
+    <string name="ai_service_address_invalid">地址必須以 https://. 開頭 沒有儲存任何內容。</string>
+    <string name="dialog_message_ai_service_consent">圖片和截圖被送到<xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>進行描述，這需要幾秒鐘的時間。適用其自己的條款和隱私權政策。生成式人工智慧是實驗性的，所以它會犯錯。</string>
+    <string name="ai_service_error_api_key">AI 服務不接受 API 金鑰。檢查自動描述中的設定。</string>
+    <string name="ai_service_error_quota">AI服務已達到使用上限。稍後再試。</string>
+    <string name="ai_service_error_busy">AI 服務現在很忙。稍後再試一次。</string>
+    <string name="ai_service_error_timeout">AI 服務回應時間過長。再試一次。</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">無</string>
+    <string name="ai_service_not_set_up">沒有使用任何人工智慧服務。設定一項或在自動描述設定中選擇一項。</string>
+    <string name="ai_provider_none_set_up">未設定AI服務。在下面的設定中進行設定。</string>
+    <string name="ai_provider_other">其他服務</string>
+    <string name="title_pref_category_ai_services">人工智慧服務</string>
+    <string name="title_pref_ai_provider">人工智慧服務</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g>設置</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>，未設定</string>
+    <string name="ai_provider_in_use">使用中</string>
+    <string name="ai_provider_not_set_up">未設定</string>
+    <string name="ai_provider_not_ready">首先選擇型號</string>
+    <string name="ai_provider_address">地址</string>
+    <string name="ai_provider_address_message">具有OpenAI相容聊天API和圖像輸入的服務的位址，例如https://example.com/v1.</string>
+    <string name="ai_provider_not_set">未設定</string>
+    <string name="ai_provider_set">已配置</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 金鑰</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>型號</string>
+    <string name="ai_provider_choose_model">未選擇</string>
+    <string name="ai_provider_key_message">貼上您的 <xliff:g id="service" example="Claude">%1$s</xliff:g> API 金鑰。若要刪除它，請清除該欄位並儲存。您描述的圖像和螢幕將發送至 <xliff:g id="service" example="Claude">%1$s</xliff:g>。</string>
+    <string name="ai_provider_needs_key">首先設定 <xliff:g id="service" example="Claude">%1$s</xliff:g> API 金鑰</string>
+    <string name="ai_provider_needs_address">先設定地址</string>
+    <string name="ai_provider_enter_model">輸入型號名稱</string>
+</resources>
