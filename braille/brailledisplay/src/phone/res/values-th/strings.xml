@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">แป้นพิมพ์อักษรเบรลล์</string>
   <string name="bd_application_name">การช่วยเหลือพิเศษใน Android</string>
-  <string name="bd_ime_unavailable_activity_name">แป้นพิมพ์อักษรเบรลล์ของ TalkBack ไม่พร้อมใช้งาน</string>
-  <string name="bd_ime_disabled_dialog_title">เปิดแป้นพิมพ์อักษรเบรลล์ของ TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">แป้นพิมพ์อักษรเบรลล์ของ SandFly ไม่พร้อมใช้งาน</string>
+  <string name="bd_ime_disabled_dialog_title">เปิดแป้นพิมพ์อักษรเบรลล์ของ SandFly</string>
   <string name="bd_ime_disabled_dialog_message">หากต้องการใช้จอแสดงผลอักษรเบรลล์ในการพิมพ์ ให้ไปที่การตั้งค่าการป้อนข้อมูลเพื่อเปิดเครื่อง</string>
   <string name="bd_ime_disabled_dialog_title_positive">การตั้งค่าการป้อนข้อมูล</string>
   <string name="bd_ime_not_default_dialog_title">เปลี่ยนวิธีการป้อนข้อมูล</string>
-  <string name="bd_ime_not_default_dialog_message">หากต้องการพิมพ์ต่อ ให้ตั้งค่าแป้นพิมพ์อักษรเบรลล์ของ TalkBack เป็นวิธีการป้อนข้อมูล</string>
+  <string name="bd_ime_not_default_dialog_message">หากต้องการพิมพ์ต่อ ให้ตั้งค่าแป้นพิมพ์อักษรเบรลล์ของ SandFly เป็นวิธีการป้อนข้อมูล</string>
   <string name="bd_ime_not_default_dialog_positive">เปลี่ยนการป้อนข้อมูล</string>
   <string name="type_unlabeled">ไม่มีป้ายกำกับ</string>
   <string name="type_unlabeled_edittext">ช่องแก้ไขที่ไม่มีป้ายกำกับ</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">เลื่อนไปทางซ้าย</string>
   <string name="overlay_pan_right_button">เลื่อนไปทางขวา</string>
   <string name="bd_preferences_title">จอแสดงผลอักษรเบรลล์</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">หากต้องการใช้จอแสดงผลอักษรเบรลล์ ให้เปิด TalkBack ก่อน</string>
-  <string name="bd_preferences_banner_talkback_off_button">ไปที่ TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">หากต้องการใช้จอแสดงผลอักษรเบรลล์ ให้เปิด SandFly ก่อน</string>
+  <string name="bd_preferences_banner_talkback_off_button">ไปที่ SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">หากต้องการใช้จอแสดงผลอักษรเบรลล์ ให้เปิดบลูทูธก่อน</string>
   <string name="bd_preferences_banner_bluetooth_off_button">เปิดบลูทูธ</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">หากต้องการใช้จอแสดงผลอักษรเบรลล์ %s ต้องมีสิทธิ์เข้าถึงอุปกรณ์ที่อยู่ใกล้เคียง</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">หากต้องการใช้โหมดอ่าน คุณจะต้องเปลี่ยนจากคีย์แมปเริ่มต้นเป็นคีย์แมปที่ปรับปรุงแล้ว การเปลี่ยนแปลงนี้จะอัปเดตคำสั่งบางอย่างของจอแสดงผลอักษรเบรลล์</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">การตั้งค่า</string>
   <string name="bd_command_change_dialog_title">มีการอัปเดตคำสั่งบางรายการ</string>
-  <string name="bd_command_change_dialog_message">คำสั่งจอแสดงผลอักษรเบรลล์ต่อไปนี้ได้รับการอัปเดตใน TalkBack เวอร์ชันนี้\n\n• รายการก่อนหน้า: กดจุด 1, 7\n\n• รายการถัดไป: กดจุด 4, 8\n\n• การควบคุมการอ่านก่อนหน้า: กดจุด 2, 3, 7, 8\n\n• การควบคุมการอ่านถัดไป: กดจุด 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">คำสั่งจอแสดงผลอักษรเบรลล์ต่อไปนี้ได้รับการอัปเดตใน SandFly เวอร์ชันนี้\n\n• รายการก่อนหน้า: กดจุด 1, 7\n\n• รายการถัดไป: กดจุด 4, 8\n\n• การควบคุมการอ่านก่อนหน้า: กดจุด 2, 3, 7, 8\n\n• การควบคุมการอ่านถัดไป: กดจุด 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">อักษรเบรลล์แบบย่อ</string>
   <string name="bd_preference_braille_uncontracted">อักษรเบรลล์แบบไม่ย่อ</string>
   <string name="bd_braille_grade_tips">หากต้องการสลับระหว่างอักษรเบรลล์แบบย่อกับแบบไม่ย่ออย่างรวดเร็วโดยใช้จอแสดงผลอักษรเบรลล์ ให้กด Space และจุด 1, 2, 4, 5\n\nคำสั่งนี้จะใช้ได้ หากคุณใช้ภาษาที่มีอักษรเบรลล์ทั้งสองเกรด</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">การเปลี่ยนไปมาระหว่างรายการ</string>
   <string name="bd_commands_bindings_category_system_actions_title">การทำงานของระบบ</string>
   <string name="bd_commands_bindings_category_system_actions_summary">กลับ หน้าแรก การแจ้งเตือน และอื่นๆ</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">ฟีเจอร์ TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">เมนู TalkBack และการตั้งค่า</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">ฟีเจอร์ SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly เมนูและการตั้งค่า</string>
   <string name="bd_commands_bindings_category_braille_settings_title">การตั้งค่าอักษรเบรลล์</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ภาษาของอักษรเบรลล์และการตั้งค่า</string>
   <string name="bd_commands_bindings_category_text_editing_title">การแก้ไขข้อความ</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">เปิดแอปทั้งหมด</string>
   <string name="bd_cmd_toggle_screen_search">เปิดการค้นหาในหน้าจอ</string>
   <string name="bd_cmd_edit_custom_label">แก้ไขป้ายกำกับที่กำหนดเอง</string>
-  <string name="bd_cmd_open_talkback_menu">เปิดเมนู TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">เปิดหรือปิดเสียงพูดของ TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">เปิดเมนู SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">เปิดหรือปิดเสียงพูดของ SandFly</string>
   <string name="bd_cmd_read_stop">หยุดอ่าน</string>
-  <string name="bd_cmd_talkback_settings">เปิดการตั้งค่า TalkBack</string>
+  <string name="bd_cmd_talkback_settings">เปิดการตั้งค่า SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">เปลี่ยนเป็นภาษาที่พิมพ์ถัดไป</string>
   <string name="bd_cmd_switch_to_next_output_language">เปลี่ยนเป็นภาษาที่ใช้อ่านถัดไป</string>
   <string name="bd_cmd_toggle_contracted_mode">เปลี่ยนระหว่างรูปย่อและรูปเต็ม</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">ไปที่หน้าเว็บได้อย่างรวดเร็วด้วยคำสั่งเพื่อเข้าสู่โหมดอ่าน แล้วพิมพ์ตัวอักษรหรือตัวเลขต่อไปนี้บนแป้นพิมพ์ลัด\n\nรวมถึงใช้แป้นพิมพ์ลัดได้โดยไม่ต้องเข้าสู่โหมดอ่าน แต่จะต้องเพิ่มจุด 8 ลงในคำสั่ง \"ถัดไป\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">การไปยังส่วนต่างๆ ของตาราง</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">ปิดการตั้งค่าจอแสดงผลอักษรเบรลล์ใช่ไหม</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">คุณเปิดใหม่ได้ทุกเมื่อในการตั้งค่า TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">คุณเปิดใหม่ได้ทุกเมื่อในการตั้งค่า SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">ปิด</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">คำสั่งบางอย่างไม่พร้อมใช้งาน</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">คำสั่งสำหรับการนำทาง การตั้งค่าอักษรเบรลล์ และฟีเจอร์บางอย่างของ TalkBack ไม่พร้อมใช้งานขณะพิมพ์หรือแก้ไข\n\nปิดแป้นพิมพ์ก่อนเพื่อใช้คำสั่งเหล่านี้</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">คำสั่งสำหรับการนำทาง การตั้งค่าอักษรเบรลล์ และฟีเจอร์บางอย่างของ SandFly ไม่พร้อมใช้งานขณะพิมพ์หรือแก้ไข\n\nปิดแป้นพิมพ์ก่อนเพื่อใช้คำสั่งเหล่านี้</string>
   <string name="bd_caption_tutorial_dialog_title">คำบรรยายแทนเสียงบนจอแสดงผลอักษรเบรลล์</string>
   <string name="bd_caption_tutorial_dialog_message">หากต้องการแสดงหรือซ่อนคำบรรยายแทนเสียงสำหรับวิดีโอนี้ ให้กด Space และจุด 1, 4, 7, 8\n\nหากต้องการแสดงคำบรรยายแทนเสียงสำหรับสื่อที่รองรับโดยอัตโนมัติ ให้เปิดใช้ \"แสดงคำบรรยายแทนเสียงบนจอแสดงผลอักษรเบรลล์\" ในการตั้งค่า</string>
   <string name="bd_caption_tutorial_dialog_checkbox">แสดงข้อความนี้เสมอเมื่อมีคําบรรยาย</string>
   <string name="bd_usb_connect_dialog_title">จอแสดงผลอักษรเบรลล์เชื่อมต่อกับ USB แล้ว</string>
-  <string name="bd_usb_connect_dialog_message">แบตเตอรี่ของ %s กำลังชาร์จจอแสดงผลอักษรเบรลล์\n\nหากคุณต้องการเปลี่ยนไปใช้บลูทูธ ให้ยกเลิกการเชื่อมต่อ USB หรือฮับ USB แล้วไปที่การตั้งค่า TalkBack &gt; จอแสดงผลอักษรเบรลล์</string>
+  <string name="bd_usb_connect_dialog_message">แบตเตอรี่ของ %s กำลังชาร์จจอแสดงผลอักษรเบรลล์\n\nหากคุณต้องการเปลี่ยนไปใช้บลูทูธ ให้ยกเลิกการเชื่อมต่อ USB หรือฮับ USB แล้วไปที่การตั้งค่า SandFly &gt; จอแสดงผลอักษรเบรลล์</string>
   <string name="bd_device">โทรศัพท์</string>
   <string name="bd_battery_low_dialog_title">%s แบตเตอรี่ต่ำ</string>
   <string name="bd_battery_low_dialog_message">แบตเตอรี่ของ %s กำลังชาร์จจอแสดงผลอักษรเบรลล์\n\nหากต้องการประหยัดแบตเตอรี่ ให้ดำเนินการดังนี้\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">ล้างทั้งหมด</string>
   <string name="popup_message_history_empty">ว่าง</string>
   <string name="popup_message_history_consent_dialog_title">เปิดประวัติข้อความของอุปกรณ์ไหม</string>
-  <string name="popup_message_history_consent_dialog_msg">การดำเนินการนี้จะจัดเก็บข้อความบางส่วนใน TalkBack เช่น การแจ้งเตือนและการปลุก คุณเปลี่ยนแปลงการตั้งค่านี้ได้ทุกเมื่อ</string>
+  <string name="popup_message_history_consent_dialog_msg">การดำเนินการนี้จะจัดเก็บข้อความบางส่วนใน SandFly เช่น การแจ้งเตือนและการปลุก คุณเปลี่ยนแปลงการตั้งค่านี้ได้ทุกเมื่อ</string>
   <string name="popup_message_history_consent_dialog_positive_btn">เปิด</string>
   <string name="popup_message_history_consent_dialog_negative_btn">ไม่เป็นไร</string>
+    <string name="external_display_channel">การแสดงอักษรเบรลล์จากแอปอื่นๆ</string>
+    <string name="external_display_ask_title">อนุญาตให้ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> เป็นจอแสดงผลอักษรเบรลล์สำหรับ SandFly หรือไม่</string>
+    <string name="external_display_ask_text">SandFly จะไม่ใช้จนกว่าคุณจะอนุญาต</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> จะสามารถอ่านทุกอย่าง SandFly ที่แสดงเป็นอักษรเบรลล์ ซึ่งสามารถเป็นอะไรก็ได้บนหน้าจอ รวมถึงข้อความและสิ่งที่คุณพิมพ์ นอกจากนี้ยังจะสามารถควบคุมอุปกรณ์ของคุณได้มากที่สุดเท่าที่จะเป็นไปได้ด้วยจอแสดงผลอักษรเบรลล์: พิมพ์ เปิดแอป และเรียกใช้คำสั่ง SandFly ใดก็ได้ อนุญาตเฉพาะแอปที่คุณเชื่อถือเท่านั้น</string>
+    <string name="external_display_allow">อนุญาต</string>
+    <string name="external_display_deny">ไม่อนุญาต</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> คือจอแสดงผลอักษรเบรลล์ของคุณ</string>
+    <string name="external_display_in_use_text">ขณะที่ SandFly ใช้ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> สามารถอ่านหน้าจอและควบคุมอุปกรณ์ได้</string>
+    <string name="external_displays_title">แสดงจากแอปอื่น</string>
+    <string name="external_displays_summary">แอปที่คุณอนุญาตสามารถเป็นจอแสดงผลอักษรเบรลล์ได้ในราคา SandFly แอพที่เป็นจอแสดงผลอักษรเบรลล์สามารถอ่านหน้าจอและควบคุมอุปกรณ์ได้</string>
+    <string name="external_displays_none">ไม่มีแอปใดที่สามารถเป็นจอแสดงผลอักษรเบรลล์ได้</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">เปิด TalkBack</string>
-  <string name="talkback_disabled">ปิด TalkBack อยู่</string>
+  <string name="talkback_on">เปิด SandFly</string>
+  <string name="talkback_disabled">ปิด SandFly อยู่</string>
   <string name="notification_type_beginning_of_field">จุดเริ่มต้นของช่อง</string>
   <string name="notification_type_end_of_field">จุดสิ้นสุดของช่อง</string>
   <string name="notification_type_selection_mode_on">โหมดการเลือกเปิดอยู่</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">เริ่มการลากแล้ว</string>
   <string name="drag_dropped">วางรายการที่ลากแล้ว</string>
   <string name="drag_cancelled">ยกเลิกการลากแล้ว</string>
+    <string name="template_brightness_changed">ความสว่าง <xliff:g id="percent">%1$d</xliff:g> เปอร์เซ็นต์</string>
+    <string name="brightness_needs_permission">อนุญาตให้แก้ไขการตั้งค่าระบบเพื่อเปลี่ยนความสว่าง</string>
+    <string name="brightness_adaptive_on">ปิดความสว่างที่ปรับได้เพื่อเปลี่ยนความสว่าง</string>
+    <string name="telegram_replying_to">กำลังตอบกลับ <xliff:g id="name" example="Ronan">%1$s</xliff:g>: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>
