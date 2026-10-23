@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">‏TalkBack بریل کی بورڈ</string>
+  <string name="braille_ime_service_name">‏SandFly بریل کی بورڈ</string>
   <string name="braille_ime_bd_mode_name">بریل ڈسپلے ان پٹ</string>
   <string name="switch_to_tabletop_announcement">ٹیبل ٹاپ وضع۔ بائیں جانب چارجنگ پورٹ کے ساتھ اپنا آلہ رکھیں۔</string>
   <string name="calibration_tip_announcement">ڈاٹ پوزیشن کو اپ ڈیٹ کرنے کیلئے، %d انگلیوں سے دبائے رکھیں۔</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">غیر معاہدہ کردہ بریل پر سوئچ کر دیا گیا</string>
   <string name="braille_ime_displayed_name">بریل کی بورڈ</string>
   <string name="multiple_languages_braille_ime_displayed_name">بریل کی بورڈ، %s</string>
-  <string name="input_view_caption">‏TalkBack بریل کی بورڈ - مدد کے لیے ملاحظہ کریں g.co/help/braille</string>
+  <string name="input_view_caption">‏SandFly بریل کی بورڈ - مدد کے لیے ملاحظہ کریں g.co/help/braille</string>
   <string name="perform_action_next">آگے</string>
   <string name="perform_action_submitting">متن جمع کیا جا رہا ہے</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">ڈاٹ پوزیشن کو اپ ڈیٹ کیا جا رہا ہے۔ پہلے، آئیے آپ کے %s پر ڈاٹس کو ریکارڈ کریں۔</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">بریل کی بورڈ سے ٹائپ کرتے وقت اپنی زبان تبدیل کرنے کے لیے، 3 انگلیوں سے اوپر کی طرف سوائپ کریں۔ پھر \"اگلی زبان پر سوئچ کریں\" کو منتخب کریں۔</string>
   <string name="title_pref_accumulate_presses">تمام دبائے ہوئے ڈاٹس شامل کریں</string>
   <string name="summary_pref_accumulate_presses">ہر دبایا ہوا ڈاٹ ان پٹ کا ایک حصہ ہوتا ہے، اگرچہ ڈاٹ دیگر ڈاٹس سے پہلے ہی ریلیز کیا جاتا ہو</string>
-  <string name="title_pref_reverse_dots">معکوس نقطے</string>
-  <string name="summary_pref_reverse_dots">ڈاٹ پوزیشنوں کو تبدیل کریں، تاکہ ڈاٹس 1 اور 4 ایک دوسرے کی جگہ لے لیں، مثال کے طور پر</string>
+  <string name="title_pref_reverse_dots">بائیں اور دائیں نقطوں کو تبدیل کریں۔</string>
+  <string name="summary_pref_reverse_dots">نقطے 1، 2، اور 3 تجارتی مقامات 4، 5 اور 6 کے ساتھ</string>
   <string name="bd_preference_braille_contracted">معاہدہ کردہ بریل</string>
   <string name="bd_preference_braille_uncontracted">غیر مخفف بریل</string>
   <string name="context_menu_title">بریل کی بورڈ اختیارات</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">کی بورڈ</string>
   <string name="not_enough_touch_points_dialog_title">آپ کا آلہ بریل کی بورڈ کو سپورٹ نہیں کرتا ہے</string>
   <string name="not_enough_touch_points_dialog_message">آپ کا آلہ کافی ٹچ پوائنٹس کو سپورٹ نہیں کرتا ہے۔ مزید معلومات کے لیے، اپنے آلہ کے مینوفیکچرر سے رابطہ کریں۔</string>
-  <string name="talkback_off_dialog_title">‏بریل کی بورڈ استعمال کرنے کے لیے TalkBack کو آن کریں</string>
+  <string name="talkback_off_dialog_title">‏بریل کی بورڈ استعمال کرنے کے لیے SandFly کو آن کریں</string>
   <string name="talkback_off_dialog_positive_button">ایکسیسبیلٹی ترتیبات میں آن کریں</string>
-  <string name="talkback_suspend_dialog_title">‏بریل کی بورڈ استعمال کرنے کے لیے TalkBack دوبارہ شروع کریں</string>
-  <string name="talkback_off_or_suspend_dialog_message">‏جب TalkBack آن ہوتا ہے، تو آپ بریل علامات کو داخل کرنے کے لیے اپنی اسکرین پر تھپتھپا سکتے ہیں۔</string>
-  <string name="talkback_off_custom_gestures_dialog_title">‏اشارہ تبدیل کرنے کے لیے TalkBack آن کریں</string>
-  <string name="talkback_off_custom_gestures_dialog_message">‏‫TalkBack آف ہے۔ بریل کی بورڈ کے اشاروں کو تبدیل کرنے کے لیے اسے آن کریں۔</string>
+  <string name="talkback_suspend_dialog_title">‏بریل کی بورڈ استعمال کرنے کے لیے SandFly دوبارہ شروع کریں</string>
+  <string name="talkback_off_or_suspend_dialog_message">‏جب SandFly آن ہوتا ہے، تو آپ بریل علامات کو داخل کرنے کے لیے اپنی اسکرین پر تھپتھپا سکتے ہیں۔</string>
+  <string name="talkback_off_custom_gestures_dialog_title">‏اشارہ تبدیل کرنے کے لیے SandFly آن کریں</string>
+  <string name="talkback_off_custom_gestures_dialog_message">‏‫SandFly آف ہے۔ بریل کی بورڈ کے اشاروں کو تبدیل کرنے کے لیے اسے آن کریں۔</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">ترتیبات پر جائیں</string>
   <string name="reset_gestures_dialog_title">تمام اشاروں کو ری سیٹ کریں؟</string>
   <string name="reset_gestures_dialog_message">بریل کی بورڈ کے تمام اشارے ڈیفالٹ پر ری سیٹ ہو جائیں گے</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">ڈیفالٹ پر ری سیٹ کریں</string>
   <string name="custom_gestures_dialog_remove_button">اشارہ ہٹائیں</string>
   <string name="change_gestures_dialog_message_title">اشارہ تبدیل کرنے کا طریقہ</string>
-  <string name="change_gestures_dialog_message">‏اگلی اسکرین پر، بریل کی بورڈ کھل جائے گا اور آپ TalkBack کے اشاروں کو استعمال نہیں کر سکیں گے۔‎\n\nبریل کی بورڈ کھلنے پر، وہ اشارہ کریں جسے آپ استعمال کرنا چاہتے ہیں یا بریل کی بورڈ کو بند کرنے اور اشارے کی تبدیلی کو منسوخ کرنے کے لیے، 2 انگلیوں سے نیچے کی طرف سوائپ کریں۔‎\n\nدستیاب اشارے دیکھیں‎\n</string>
+  <string name="change_gestures_dialog_message">‏اگلی اسکرین پر، بریل کی بورڈ کھل جائے گا اور آپ SandFly کے اشاروں کو استعمال نہیں کر سکیں گے۔‎\n\nبریل کی بورڈ کھلنے پر، وہ اشارہ کریں جسے آپ استعمال کرنا چاہتے ہیں یا بریل کی بورڈ کو بند کرنے اور اشارے کی تبدیلی کو منسوخ کرنے کے لیے، 2 انگلیوں سے نیچے کی طرف سوائپ کریں۔‎\n\nدستیاب اشارے دیکھیں‎\n</string>
   <string name="change_gestures_dialog_message_link">دستیاب اشارے دیکھیں</string>
   <string name="change_gestures_dialog_dont_show_checkbox">یہ پیغام دوبارہ نہ دکھائیں</string>
   <string name="change_gestures_dialog_positive_button">جاری رکھیں</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">استعمال نہ کریں</string>
   <string name="next_keyboard">اگلا کی بورڈ</string>
   <string name="braille_tutorial_title">بریل کی بورڈ ٹیوٹوریل</string>
-  <string name="tutorial_intro_description">‏بریل کی بورڈ کی مدد سے، 6 نقطہ بریل درج کرنے کے لیے آپ اپنی اسکرین پر تھپتھپا سکتے ہیں۔\n\nآپ یونیفائیڈ انگریزی بریل استعمال کر رہے ہیں۔ اپنی ٹائپنگ زبان کو سوئچ کرنے کیلئے، TalkBack کی ترتیبات پر جائیں۔\n\nبریل ٹائپ کرنے کیلئے، آپ کو اپنے فون کو مختلف طرح سے پکڑنے اور استعمال کرنے کی ضرورت ہے۔</string>
+  <string name="tutorial_intro_description">‏بریل کی بورڈ کی مدد سے، 6 نقطہ بریل درج کرنے کے لیے آپ اپنی اسکرین پر تھپتھپا سکتے ہیں۔\n\nآپ یونیفائیڈ انگریزی بریل استعمال کر رہے ہیں۔ اپنی ٹائپنگ زبان کو سوئچ کرنے کیلئے، SandFly کی ترتیبات پر جائیں۔\n\nبریل ٹائپ کرنے کیلئے، آپ کو اپنے فون کو مختلف طرح سے پکڑنے اور استعمال کرنے کی ضرورت ہے۔</string>
   <string name="next_step">آگے</string>
   <string name="leave_keyboard">بریل کی بورڈ چھوڑ دیں</string>
-  <string name="hold_six_fingers_description">‏آپ بریل کی بورڈ میں TalkBack کے ریگولر اشاروں کو استعمال نہیں کر سکیں گے۔\n\nشروع کرنے کے لیے، ٹائپ کرتے وقت 6 بریل ڈاٹ کی پوزیشن سیٹ اپ کریں۔</string>
-  <string name="rotate_orientation_description_1">‏اب سے، آپ ریگولر TalkBack اشاروں کو استعمال نہیں کرسکیں گے۔ بریل کی بورڈ استعمال کرتے وقت TalkBack دستیاب نہیں ہوتا۔</string>
+  <string name="hold_six_fingers_description">‏آپ بریل کی بورڈ میں SandFly کے ریگولر اشاروں کو استعمال نہیں کر سکیں گے۔\n\nشروع کرنے کے لیے، ٹائپ کرتے وقت 6 بریل ڈاٹ کی پوزیشن سیٹ اپ کریں۔</string>
+  <string name="rotate_orientation_description_1">‏اب سے، آپ ریگولر SandFly اشاروں کو استعمال نہیں کرسکیں گے۔ بریل کی بورڈ استعمال کرتے وقت SandFly دستیاب نہیں ہوتا۔</string>
   <string name="rotate_orientation_description_2">شروع کرنے کے لئے، اپنے فون کو اس طرح تھامیں، اسکرین کا رخ آپ کے مخالف سمت میں ہو۔</string>
   <string name="tap_to_continue">جاری رکھنے کے لیے کہیں پر بھی دوبار تھپتھپائیں</string>
   <string name="instruction_type_letter_a">‏“A” حرف ٹائپ کرنے کیلئے اپنی بائیں شہادت کی انگلی سے نقطہ 1 پر تھپتھپائیں</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">کرسر کو آگے کی طرف منتقل کریں</string>
   <string name="result_swipe_down_2_fingers">کی بورڈ چھپائیں</string>
   <string name="result_swipe_down_3_fingers">اگلا کی بورڈ</string>
-  <string name="rotate_orientation_announcement">‏اب سے، آپ ریگولر TalkBack اشاروں کو استعمال نہیں کرسکیں گے۔ بریل کی بورڈ استعمال کرنے کے دوران TalkBack دستیاب نہں ہوتا ہے۔n\n\%1$s</string>
+  <string name="rotate_orientation_announcement">‏اب آپ عام SandFly اشارے استعمال نہیں کر سکیں گے۔ بریل کی بورڈ استعمال کرتے وقت SandFly دستیاب نہیں ہے۔\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">‏پہلے اپنے فون کا رخ موڑیں تاکہ اسکرین کا رخ آپ کے مخالف سمت میں ہو۔n\n\پھر، فون کو افقی طور پر لینڈ اسکیپ پوزیشن پر گھمائیں۔ آپ کے ہاتھ فون کے چھوٹے سروں کو گرفت میں رکھنے چاہیے۔ آپ کا دایا ہاتھ USB پورٹ کے اختتام پر پکڑے ہوئے ہونا چاہیے۔ اپنی 3 درمیانی انگلیاں اسکرین پر رکھیں، اور فون کو سپورٹ کرنے کیلئے اپنی چھوٹی انگلی اور انگوٹھے کا استعمال کریں۔n\n\جب آپ تیار ہو تو جاری رکھنے کے لیے اسکرین پر دوبار تھپتھپائیں۔n\n\بریل کی بورڈ سے باہر نکلنے کے لیے، 3 انگلیوں سے زمین کی طرف نیچے سوائپ کریں۔ یہ آپ کے اصل کی بورڈ پر واپس سوئچ کرتا ہے۔</string>
   <string name="rotate_orientation_continue_announcement">آپ کا فون عمودی پوزیشن میں ہے۔ جاری رکھنے کے لیے، اپنے فون کو افقی طور پر گھمائیں تاکہ لمبی سائیڈ نیچے کی طرف ہو۔ پھر اسکرین کو اپنے مخالف سمت میں رکھیں۔ جب آپ تیار ہو تو جاری رکھنے کے لیے اسکرین پر دوبار تھپتھپائیں۔</string>
   <string name="type_letter_a_announcement">‏اسکرین کو اپنے مخالف سمت میں رکھیں۔ فون کے دونوں چھوٹے کناروں پر اپنے فون کو دونوں ہاتھوں میں پکڑے رکھیں، تاکہ ہر ہاتھ کی درمیانی 3 انگلیاں اسکرین کو چھو سکیں۔n\n\آپ کی بائیں شہادت کی انگلی نقطہ 1 پر ہونی چاہیے۔ اب حرف “A” ٹائپ کرنے کے لیے نقطہ 1 پر تھپتھپائیں۔</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">اپنے دوسرے کی بورڈ پر سوئچ کرنے کے لیے، 3 انگلیوں کے ساتھ نیچے سوائپ کریں۔ اسے ابھی آزمائیں۔</string>
   <string name="swipe_down_3_fingers_completed_announcement">اگلا کی بورڈ۔ عموماً، یہ اگلے کی بورڈ پر سوئچ کرے گا۔ اس بار، آپ بریل کی بورڈ میں رہ رہے ہیں کیونکہ آپ ابھی بھی ٹیوٹوریل میں ہیں۔</string>
   <string name="swipe_up_3_fingers_announcement">آپ اپنے فون کو ٹیبل پر سیدھا رکھ کر ٹیبل ٹاپ وضع میں بھی ٹائپ کر سکتے ہیں۔ ٹیوٹوریل ختم کرنے کے لئے، 3 انگلیوں سے سوائپ کریں، اور ٹیوٹوریل ختم کریں کا اختیار تلاش کریں</string>
-  <string name="open_context_menu_announcement">‏اختیارات کا مینیو کھلا ہے۔ اپنے فون کو پلٹائیں تاکہ اس کا رخ آپ کی طرف ہو اور اسے عام طریقے سے پکڑیں۔ اب آپ نیویگیٹ کرنے کیلئے ریگولر TalkBack کے اشاروں کا استعمال کر سکتے ہیں۔ مزید اختیارات دیکھنے کیلئے دائیں طرف سوائپ کریں</string>
+  <string name="open_context_menu_announcement">‏اختیارات کا مینیو کھلا ہے۔ اپنے فون کو پلٹائیں تاکہ اس کا رخ آپ کی طرف ہو اور اسے عام طریقے سے پکڑیں۔ اب آپ نیویگیٹ کرنے کیلئے ریگولر SandFly کے اشاروں کا استعمال کر سکتے ہیں۔ مزید اختیارات دیکھنے کیلئے دائیں طرف سوائپ کریں</string>
   <string name="hold_six_fingers_announcement">‏%s\nاپنے آلے کو ٹیبل پر سیدھا رکھیں۔ اس کے بعد، دونوں ہاتھوں کی درمیانی 3 انگلیوں سے اسکرین کو ایسی پوزیشن میں رکھ کر ٹچ کریں اور دبائے رکھیں جس میں آپ کو ٹائپ کرنا آسان ہو۔</string>
   <string name="hold_six_fingers_inactive_announcement">اپنے آلے کو ایک ٹیبل پر سیدھا رکھیں۔ اس کے بعد، دونوں ہاتھوں کی درمیانی 3 انگلیوں سے اسکرین کو ایسی پوزیشن میں رکھ کر ٹچ کریں اور دبائے رکھیں جس میں آپ کو ٹائپ کرنا آسان ہو۔</string>
   <string name="finish_tutorial_announcement">بریل کی بورڈ دکھایا جا رہا ہے۔ اپنے فون کا رخ موڑیں تاکہ اسکرین کا رخ آپ کی مخالف سمت میں ہو۔ فون کو افقی طور پر لینڈ اسکیپ پوزیشن پر گھمائیں۔ پھر ٹائپ کرنا کوشش کریں۔</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">یہ اشارہ \"%1$s\" کے لیے استعمال کیا جاتا ہے اور اسے تبدیل نہیں کیا جا سکتا۔ کوئی اور اشارہ آزمائیں۔ %2$s</string>
   <string name="custom_gesture_cannot_used">اس اشارے کو استعمال نہیں کیا جا سکتا</string>
   <string name="custom_gesture_no_gesture">کوئی اشارہ انجام نہیں دیا گیا</string>
-  <string name="custom_gesture_try_another">‏کوئی اور اشارہ آزمائیں۔ تمام دستیاب اشاروں کی فہرست دیکھنے کے لیے، TalkBack بریل کی بورڈ ہیلپ سینٹر پر جائیں۔ %s</string>
+  <string name="custom_gesture_try_another">‏کوئی اور اشارہ آزمائیں۔ تمام دستیاب اشاروں کی فہرست دیکھنے کے لیے، SandFly بریل کی بورڈ ہیلپ سینٹر پر جائیں۔ <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">اشارے مماثل نہیں ہوئے</string>
   <string name="custom_gesture_perform_again">وہ اشارہ انجام دیں جسے آپ دوبارہ استعمال کرنا چاہتے ہیں۔ %s</string>
+    <string name="tabletop_port_left_announcement">ٹیبل ٹاپ موڈ، بائیں طرف چارجنگ پورٹ</string>
+    <string name="tabletop_port_right_announcement">ٹیبلٹاپ موڈ، دائیں طرف چارجنگ پورٹ</string>
+    <string name="screen_away_port_right_announcement">اسکرین سے دور موڈ، دائیں طرف چارجنگ پورٹ</string>
+    <string name="screen_away_port_left_announcement">اسکرین سے دور موڈ، بائیں طرف چارجنگ پورٹ</string>
+    <string name="screen_toward_announcement">آپ کی طرف اسکرین</string>
+    <string name="screen_toward_port_left_announcement">آپ کی طرف اسکرین، بائیں طرف چارجنگ پورٹ</string>
+    <string name="screen_toward_port_right_announcement">آپ کی طرف اسکرین، دائیں جانب چارجنگ پورٹ</string>
+    <string name="screen_toward_port_down_announcement">آپ کی طرف اسکرین، چارجنگ پورٹ نیچے کی طرف اشارہ کر رہا ہے۔</string>
+    <string name="screen_toward_port_up_announcement">آپ کی طرف اسکرین، چارجنگ پورٹ اوپر کی طرف اشارہ کر رہا ہے۔</string>
+    <string name="port_right_announcement">دائیں طرف چارجنگ پورٹ</string>
+    <string name="port_left_announcement">بائیں طرف چارجنگ پورٹ</string>
+    <string name="tabletop_port_near_announcement">ٹیبلٹاپ موڈ، آپ کی طرف چارجنگ پورٹ</string>
+    <string name="tabletop_port_far_announcement">ٹیبلٹاپ موڈ، چارجنگ پورٹ آپ سے دور ہے۔</string>
+    <string name="screen_away_port_down_announcement">اسکرین سے دور موڈ، چارجنگ پورٹ نیچے کی طرف اشارہ کر رہا ہے۔</string>
+    <string name="screen_away_port_up_announcement">اسکرین سے دور موڈ، چارجنگ پورٹ پوائنٹ اوپر</string>
+    <string name="port_near_announcement">آپ کی طرف چارجنگ پورٹ</string>
+    <string name="port_far_announcement">چارجنگ پورٹ آپ سے دور ہے۔</string>
+    <string name="port_down_announcement">چارجنگ پورٹ نیچے کی طرف اشارہ کر رہا ہے۔</string>
+    <string name="port_up_announcement">چارجنگ پورٹ اوپر کی طرف اشارہ کر رہا ہے۔</string>
+    <string name="orientation_locked_announcement">واقفیت مقفل ہے۔</string>
+    <string name="orientation_locked_port_announcement">واقفیت مقفل ہے۔ %1$s</string>
+    <string name="orientation_unlocked_announcement">واقفیت غیر مقفل ہو گئی۔</string>
+    <string name="switch_to_language_contracted_announcement">%s پر سوئچ کیا گیا, معاہدہ کردہ بریل</string>
+    <string name="switch_to_language_uncontracted_announcement">%s پر سوئچ کیا گیا, غیر مخفف بریل</string>
+    <string name="title_pref_flip_dots_vertically">اوپر اور نیچے کے نقطوں کو تبدیل کریں۔</string>
+    <string name="summary_pref_flip_dots_vertically">ڈاٹ 1 ڈاٹ 3 کے ساتھ جگہوں کی تجارت کرتا ہے، اور ڈاٹ 4 ڈاٹ 6 کے ساتھ</string>
+    <string name="title_pref_tablet_held_up_faces_away">ٹیبلٹ نے چہرے کو دور رکھا</string>
+    <string name="summary_pref_tablet_held_up_faces_away">آف ہونے پر، ایک ٹیبلیٹ یا کھولا ہوا فون آپ کے سامنے ٹیبل ٹاپ لے آؤٹ کا استعمال کرتا ہے۔</string>
+    <string name="title_pref_typing_sounds">ٹائپنگ کی آوازیں۔</string>
+    <string name="summary_pref_typing_sounds">کی بورڈ کلکس چلائیں جب آپ کریکٹر، اسپیس، نئی لائن ٹائپ کریں یا ڈیلیٹ کریں۔</string>
+    <string name="skip_tutorial">ٹیوٹوریل کو چھوڑیں۔</string>
 </resources>
