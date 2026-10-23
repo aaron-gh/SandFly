@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">API-lykill Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">Notar lykilinn sem er innbyggður í forritið</string>
+    <string name="gemini_api_key_dialog_message">Fáðu ókeypis API-lykil frá Google AI Studio á aistudio.google.com/apikey og límdu hann hér. Til að fjarlægja lykilinn skaltu hreinsa reitinn og vista.\n\nMyndir og skjáir sem þú lætur lýsa eru sendir til Google. Í ókeypis áskriftinni getur Google notað þá til að bæta vörur sínar.</string>
+    <string name="gemini_api_key_hint">API-lykill</string>
+    <string name="gemini_api_key_save">Vista</string>
+    <string name="gemini_api_key_get">Fá lykil</string>
+    <string name="title_pref_gemini_model">Gemini líkan</string>
+    <string name="gemini_model_automatic">Sjálfvirk</string>
+    <string name="summary_pref_gemini_model_automatic">Sjálfvirkt: Gemini Flash, síðan Flash-Lite þegar Flash er upptekið</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, svo Flash-Lite þegar það er upptekið</string>
+    <string name="gemini_model_loading">Að sækja módelin…</string>
+    <string name="gemini_model_list_failed">Gat ekki fengið módelin: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Stilltu Gemini API lykil fyrst</string>
+    <string name="gemini_api_terms_link">Viðbótarþjónustuskilmála Gemini API</string>
+    <string name="ai_service_address_hint">Heimilisfang, eins og https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Fyrirmynd</string>
+    <string name="ai_service_address_invalid">Heimilisfangið verður að byrja á https://. Ekkert var vistað.</string>
+    <string name="dialog_message_ai_service_consent">Myndir og skjámyndir eru sendar á <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> til að lýsa, sem tekur nokkrar sekúndur. Eigin skilmálar þess og persónuverndarstefna gilda. Generative AI er tilraunastarfsemi, svo það mun gera mistök.</string>
+    <string name="ai_service_error_api_key">AI þjónustan samþykkti ekki API lykilinn. Athugaðu stillingar þess í Sjálfvirkar lýsingar.</string>
+    <string name="ai_service_error_quota">Notkunarmörkum gervigreindarþjónustunnar hefur verið náð. Reyndu aftur síðar.</string>
+    <string name="ai_service_error_busy">Gervigreindarþjónustan er upptekin núna. Reyndu aftur eftir augnablik.</string>
+    <string name="ai_service_error_timeout">Gervigreindarþjónustan tók of langan tíma að svara. Reyndu aftur.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Engin</string>
+    <string name="ai_service_not_set_up">Engin gervigreind þjónusta er í notkun. Settu upp einn eða veldu einn í stillingum fyrir sjálfvirkar lýsingar.</string>
+    <string name="ai_provider_none_set_up">Engin gervigreind þjónusta er sett upp. Settu einn upp í stillingum þess hér að neðan.</string>
+    <string name="ai_provider_other">Önnur þjónusta</string>
+    <string name="title_pref_category_ai_services">AI þjónusta</string>
+    <string name="title_pref_ai_provider">AI þjónusta</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> stillingar</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ekki sett upp</string>
+    <string name="ai_provider_in_use">Í notkun</string>
+    <string name="ai_provider_not_set_up">Ekki sett upp</string>
+    <string name="ai_provider_not_ready">Veldu fyrirmynd fyrst</string>
+    <string name="ai_provider_address">Heimilisfang</string>
+    <string name="ai_provider_address_message">Heimilisfang þjónustu með OpenAI-samhæft spjall-API og myndinnsláttur, eins og https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Ekki stillt</string>
+    <string name="ai_provider_set">Stillt</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API lykill</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> líkan</string>
+    <string name="ai_provider_choose_model">Ekki valið</string>
+    <string name="ai_provider_key_message">Límdu <xliff:g id="service" example="Claude">%1$s</xliff:g> API lykilinn þinn. Til að fjarlægja það skaltu hreinsa reitinn og vista. Myndir og skjár sem þú lýsir eru sendar á <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Stilltu <xliff:g id="service" example="Claude">%1$s</xliff:g> API lykilinn fyrst</string>
+    <string name="ai_provider_needs_address">Stilltu heimilisfangið fyrst</string>
+    <string name="ai_provider_enter_model">Sláðu inn heiti líkans</string>
+</resources>

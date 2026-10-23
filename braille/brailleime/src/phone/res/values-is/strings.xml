@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack-blindraleturslyklaborð</string>
+  <string name="braille_ime_service_name">SandFly-blindraleturslyklaborð</string>
   <string name="braille_ime_bd_mode_name">Inntak blindraletursskjás</string>
   <string name="switch_to_tabletop_announcement">Skjá snúið upp. Komdu tækinu fyrir með hleðslutengið vinstra megin.</string>
   <string name="calibration_tip_announcement">Haltu %d fingrum niðri til að uppfæra staðsetningu punkta.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Skipt yfir í venjulegt blindraletur</string>
   <string name="braille_ime_displayed_name">blindraleturslyklaborð</string>
   <string name="multiple_languages_braille_ime_displayed_name">blindraleturslyklaborð, %s</string>
-  <string name="input_view_caption">TalkBack-blindraleturslyklaborð – aðstoð er að finna á g.co/help/braille</string>
+  <string name="input_view_caption">SandFly-blindraleturslyklaborð – aðstoð er að finna á g.co/help/braille</string>
   <string name="perform_action_next">Áfram</string>
   <string name="perform_action_submitting">Sendir texta</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Uppfærir staðsetningu punkta. Fyrst skulum við skrá punkta fyrir %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Til að skipta um tungumál þegar þú skrifar með blindraleturslyklaborðinu skaltu strjúka upp með 3 fingrum. Veldu svo „skipta yfir í næsta tungumál“.</string>
   <string name="title_pref_accumulate_presses">Taka með alla punkta sem ýtt er á</string>
   <string name="summary_pref_accumulate_presses">Hver punktur sem ýtt er á er hluti af inntakinu, jafnvel þótt punktinum sé sleppt á undan öðrum</string>
-  <string name="title_pref_reverse_dots">Punktar í öfugri röð</string>
-  <string name="summary_pref_reverse_dots">Víxla staðsetningu punktanna, svo að punktar 1 og 4 skipta til dæmis um stað</string>
+  <string name="title_pref_reverse_dots">Skiptu um vinstri og hægri punkta</string>
+  <string name="summary_pref_reverse_dots">Punktar 1, 2 og 3 skiptast á við punkta 4, 5 og 6</string>
   <string name="bd_preference_braille_contracted">Stytt blindraletur</string>
   <string name="bd_preference_braille_uncontracted">Óstytt blindraletur</string>
   <string name="context_menu_title">Valmöguleikar blindraleturslyklaborðs</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Lyklaborð</string>
   <string name="not_enough_touch_points_dialog_title">Tækið þitt styður ekki blindraleturslyklaborð</string>
   <string name="not_enough_touch_points_dialog_message">Tækið þitt styður ekki nógu marga snertipunkta. Hafðu samband við framleiðanda tækisins til að fá frekari upplýsingar.</string>
-  <string name="talkback_off_dialog_title">Kveikja á TalkBack til að nota blindraleturslyklaborð</string>
+  <string name="talkback_off_dialog_title">Kveikja á SandFly til að nota blindraleturslyklaborð</string>
   <string name="talkback_off_dialog_positive_button">Kveikja á í aðgengisstillingum</string>
-  <string name="talkback_suspend_dialog_title">Kveiktu aftur á TalkBack til að nota blindraleturslyklaborð</string>
-  <string name="talkback_off_or_suspend_dialog_message">Þegar kveikt er á TalkBack geturðu ýtt á skjáinn til að slá inn blindraletur.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Kveikja á TalkBack til að breyta bendingu</string>
-  <string name="talkback_off_custom_gestures_dialog_message">Slökkt er á TalkBack. Kveiktu á því til að breyta bendingum blindraleturslyklaborðs.</string>
+  <string name="talkback_suspend_dialog_title">Kveiktu aftur á SandFly til að nota blindraleturslyklaborð</string>
+  <string name="talkback_off_or_suspend_dialog_message">Þegar kveikt er á SandFly geturðu ýtt á skjáinn til að slá inn blindraletur.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Kveikja á SandFly til að breyta bendingu</string>
+  <string name="talkback_off_custom_gestures_dialog_message">Slökkt er á SandFly. Kveiktu á því til að breyta bendingum blindraleturslyklaborðs.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Opna stillingar</string>
   <string name="reset_gestures_dialog_title">Endurstilla allar bendingar?</string>
   <string name="reset_gestures_dialog_message">Allar bendingar blindraleturslyklaborðs verða endurstillar sem sjálfgefnar</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Endurstilla á sjálfgefna</string>
   <string name="custom_gestures_dialog_remove_button">Fjarlægja bendingu</string>
   <string name="change_gestures_dialog_message_title">Svona breytirðu bendingu</string>
-  <string name="change_gestures_dialog_message">Á næstu síðu opnast blindraleturslyklaborð og þú munt ekki geta notað TalkBack-bendingar.\n\nÞegar blindraleturslyklaborðið opnast skaltu gera bendinguna sem þú vilt nota eða strjúka niður með tveimur fingrum til að loka blindraleturslyklaborðinu og hætta við að breyta bendingunni.\n\nSjá tiltækar bendingar\n</string>
+  <string name="change_gestures_dialog_message">Á næstu síðu opnast blindraleturslyklaborð og þú munt ekki geta notað SandFly-bendingar.\n\nÞegar blindraleturslyklaborðið opnast skaltu gera bendinguna sem þú vilt nota eða strjúka niður með tveimur fingrum til að loka blindraleturslyklaborðinu og hætta við að breyta bendingunni.\n\nSjá tiltækar bendingar\n</string>
   <string name="change_gestures_dialog_message_link">Sjá tiltækar bendingar</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Ekki sýna þessi skilaboð aftur</string>
   <string name="change_gestures_dialog_positive_button">Halda áfram</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Ekki nota</string>
   <string name="next_keyboard">Næsta lyklaborð</string>
   <string name="braille_tutorial_title">Leiðsögn fyrir blindraleturslyklaborð</string>
-  <string name="tutorial_intro_description">Með blindraleturslyklaborðinu geturðu ýtt á skjáinn til að slá inn 6 punkta blindraletur.\n\nÞú ert að nota samræmt enskt blindraletur. Opnaðu stillingar TalkBack til að skipta um innsláttartungumál.\n\nTil að slá inn blindraletur þarftu að halda á og nota símann þinn á annan hátt en vanalega.</string>
+  <string name="tutorial_intro_description">Með blindraleturslyklaborðinu geturðu ýtt á skjáinn til að slá inn 6 punkta blindraletur.\n\nÞú ert að nota samræmt enskt blindraletur. Opnaðu stillingar SandFly til að skipta um innsláttartungumál.\n\nTil að slá inn blindraletur þarftu að halda á og nota símann þinn á annan hátt en vanalega.</string>
   <string name="next_step">Áfram</string>
   <string name="leave_keyboard">Loka blindraleturslyklaborði</string>
-  <string name="hold_six_fingers_description">Þú getur ekki notað venjulegar TalkBack bendingar með blindraleturslyklaborðinu.\n\nTil að hefjast handa skulum við setja upp staðsetningu blindraleturspunktanna 6 þegar þú skrifar.</string>
-  <string name="rotate_orientation_description_1">Frá og með núna getur þú ekki notað venjulegar TalkBack-bendingar. TalkBack er ekki í boði þegar blindralyklaborð er notað.</string>
+  <string name="hold_six_fingers_description">Þú getur ekki notað venjulegar SandFly bendingar með blindraleturslyklaborðinu.\n\nTil að hefjast handa skulum við setja upp staðsetningu blindraleturspunktanna 6 þegar þú skrifar.</string>
+  <string name="rotate_orientation_description_1">Frá og með núna getur þú ekki notað venjulegar SandFly-bendingar. SandFly er ekki í boði þegar blindralyklaborð er notað.</string>
   <string name="rotate_orientation_description_2">Til að byrja skaltu halda símanum þínum svona og láta skjáinn vísa frá þér.</string>
   <string name="tap_to_continue">Ýttu tvisvar hvar sem er til að halda áfram</string>
   <string name="instruction_type_letter_a">Ýttu á punkt 1 með vinstri vísifingri til að slá inn stafinn „A“</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">FÆRÐI BENDILINN ÁFRAM</string>
   <string name="result_swipe_down_2_fingers">FELA LYKLABORÐ</string>
   <string name="result_swipe_down_3_fingers">NÆSTA LYKLABORÐ</string>
-  <string name="rotate_orientation_announcement">Héðan í frá geturðu ekki notað venjulegar TalkBack-bendingar. TalkBack er ekki í boði þegar blindralyklaborð er notað.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Héðan í frá geturðu ekki notað venjulegar SandFly-bendingar. SandFly er ekki í boði þegar blindralyklaborð er notað.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Byrjaðu á því að snúa símanum þannig að skjárinn vísi frá þér.\n\nÞví næst skaltu snúa símanum lárétt í langsnið. Þú ættir að halda með höndunum utan um stuttu hliðar símans. Hægri höndin ætti að halda á endanum með USB-tenginu. Leggðu miðfingurna þrjá á skjáinn og notaðu litla puttann og þumalinn til að styðja við símann.\n\nÞegar þú ert til skaltu ýta tvisvar á skjáinn til að halda áfram.\n\nTil að loka blindraleturslyklaborðinu skaltu strjúka niður með þremur fingrum. Það skiptir aftur yfir í upprunalega lyklaborðið.</string>
   <string name="rotate_orientation_continue_announcement">Síminn þinn er í lóðréttri stöðu. Til að halda áfram skaltu snúa símanum lárétt þannig að lengri hliðin snúi niður. Snúðu síðan skjánum þannig að hann vísi frá þér. Þegar þú ert til skaltu ýta tvisvar á skjáinn til að halda áfram.</string>
   <string name="type_letter_a_announcement">Láttu skjáinn vísa frá þér. Haltu utan um stuttu hliðar símans með báðum höndum þannig að miðfingurnir þrír á hvorri hönd geti snert skjáinn.\n\nVinstri vísifingurinn ætti að vera á punkti 1. Ýttu á punkt 1 til að slá inn stafinn „A“.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Strjúktu niður með þremur fingrum til að skipta yfir í hitt lyklaborðið þitt. Prófaðu það.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Næsta lyklaborð Yfirleitt skiptir þetta yfir í næsta lyklaborð. Í þetta skipti er blindraleturslyklaborðið enn opið vegna þess að leiðsögnin er enn í gangi.</string>
   <string name="swipe_up_3_fingers_announcement">Þú getur líka skrifað í borðstillingu með því að leggja símann flatan á borð. Til að ljúka leiðsögninni skaltu strjúka upp með þremur fingrum og finna valkostinn til að ljúka leiðsögn</string>
-  <string name="open_context_menu_announcement">Valkostavalmyndin er opin. Snúðu símanum aftur þannig að hann snúi að þér og haltu á honum eins og venjulega. Núna geturðu notað venjulegar TalkBack bendingar til að fletta. Strjúktu til hægri til að sjá fleiri valmöguleika.</string>
+  <string name="open_context_menu_announcement">Valkostavalmyndin er opin. Snúðu símanum aftur þannig að hann snúi að þér og haltu á honum eins og venjulega. Núna geturðu notað venjulegar SandFly bendingar til að fletta. Strjúktu til hægri til að sjá fleiri valmöguleika.</string>
   <string name="hold_six_fingers_announcement">%s\nLeggðu tækið á borð. Haltu svo miðfingrunum þremur á hvorri hendi á skjánum í stöðu sem þér finnst þægilegt að skrifa í.</string>
   <string name="hold_six_fingers_inactive_announcement">Leggðu tækið á borð. Haltu svo miðfingrunum þremur á hvorri hendi á skjánum í stöðu sem þér finnst þægilegt að skrifa í.</string>
   <string name="finish_tutorial_announcement">Blindraleturslyklaborð sýnt. Snúðu símanum svo skjárinn vísi frá þér. Snúðu símanum lárétt í langsnið. Byrjaðu svo að skrifa.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Þessi bending er notuð fyrir „%1$s“ og ekki er hægt að breyta henni. Prófaðu aðra bendingu. %2$s</string>
   <string name="custom_gesture_cannot_used">Ekki er hægt að nota þessa bendingu</string>
   <string name="custom_gesture_no_gesture">Engin bending gerð</string>
-  <string name="custom_gesture_try_another">Prófaðu aðra bendingu. Til að sjá lista með öllum tiltækum bendingum skaltu fara í hjálparmiðstöð TalkBack-blindraleturslyklaborðs. %s</string>
+  <string name="custom_gesture_try_another">Prófaðu aðra bendingu. Til að sjá lista með öllum tiltækum bendingum skaltu fara í hjálparmiðstöð SandFly-blindraleturslyklaborðs. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Bendingar pössuðu ekki saman</string>
   <string name="custom_gesture_perform_again">Gerðu bendinguna sem þú vilt nota aftur. %s</string>
+    <string name="tabletop_port_left_announcement">Borðborðsstilling, hleðslutengi vinstra megin</string>
+    <string name="tabletop_port_right_announcement">Borðborðsstilling, hleðslutengi hægra megin</string>
+    <string name="screen_away_port_right_announcement">Skjálaus stilling, hleðslutengi hægra megin</string>
+    <string name="screen_away_port_left_announcement">Skjálaus stilling, hleðslutengi vinstra megin</string>
+    <string name="screen_toward_announcement">Skjár til þín</string>
+    <string name="screen_toward_port_left_announcement">Skjár í átt að þér, hleðslutengi vinstra megin</string>
+    <string name="screen_toward_port_right_announcement">Skjár í átt að þér, hleðslutengi hægra megin</string>
+    <string name="screen_toward_port_down_announcement">Skjár í átt að þér, hleðslutengi vísar niður</string>
+    <string name="screen_toward_port_up_announcement">Skjár í átt að þér, hleðslutengi vísi upp</string>
+    <string name="port_right_announcement">Hleðslutengi hægra megin</string>
+    <string name="port_left_announcement">Hleðslutengi vinstra megin</string>
+    <string name="tabletop_port_near_announcement">Borðborðsstilling, hleðslutengi í átt að þér</string>
+    <string name="tabletop_port_far_announcement">Borðborðsstilling, hleðslutengi fjarri þér</string>
+    <string name="screen_away_port_down_announcement">Skjálaus stilling, hleðslutengi vísar niður</string>
+    <string name="screen_away_port_up_announcement">Skjálaus stilling, hleðslutengi vísi upp</string>
+    <string name="port_near_announcement">Hleðsluport í átt að þér</string>
+    <string name="port_far_announcement">Hleðslutengi fjarri þér</string>
+    <string name="port_down_announcement">Hleðsluport vísar niður</string>
+    <string name="port_up_announcement">Hleðslutengi vísi upp</string>
+    <string name="orientation_locked_announcement">Stefna læst</string>
+    <string name="orientation_locked_port_announcement">Stefna læst. %1$s</string>
+    <string name="orientation_unlocked_announcement">Stefna ólæst</string>
+    <string name="switch_to_language_contracted_announcement">Skipt yfir í %s, Stytt blindraletur</string>
+    <string name="switch_to_language_uncontracted_announcement">Skipt yfir í %s, Óstytt blindraletur</string>
+    <string name="title_pref_flip_dots_vertically">Skiptu um efstu og neðri punkta</string>
+    <string name="summary_pref_flip_dots_vertically">Punktur 1 skiptir við punkt 3 og punktur 4 með punkti 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Spjaldtölvan hélt andlitunum frá sér</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Þegar slökkt er á henni notar spjaldtölva eða óbrotinn sími sem haldið er uppi borðplötuútlitið sem snýr að þér</string>
+    <string name="title_pref_typing_sounds">Innsláttur hljóð</string>
+    <string name="summary_pref_typing_sounds">Spilaðu lyklaborðssmelli þegar þú skrifar staf, bil, nýja línu eða eyðir</string>
+    <string name="skip_tutorial">Slepptu kennslu</string>
 </resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Lesa upp stöðu</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> af <xliff:g id="max_level" example="4">%2$d</xliff:g> strikum</string>
+    <string name="status_wifi_off">Slökkt á Wi-Fi</string>
+    <string name="status_wifi_not_connected">Wi-Fi ekki tengt</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Farsímakerfi</string>
+    <string name="status_mobile_no_service">Ekkert farsímasamband</string>
+    <string name="status_do_not_disturb">Ónáðið ekki</string>
+    <string name="status_ringer_vibrate">Titringur</string>
+    <string name="status_ringer_silent">Hljóðlaust</string>
+    <string name="status_airplane_mode">Flugstilling</string>
+    <string name="title_pref_status_readout">Upplestur stöðu</string>
+    <string name="status_item_time">Tími</string>
+    <string name="status_item_time_summary">Núverandi tími</string>
+    <string name="status_item_battery">Rafhlaða</string>
+    <string name="status_item_battery_summary">Hleðslustaða rafhlöðu, hleðsla og rafhlöðusparnaður</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">Heiti nets og sendistyrkur</string>
+    <string name="status_item_mobile">Farsímakerfi</string>
+    <string name="status_item_mobile_summary">Símafyrirtæki, gerð nets og sendistyrkur</string>
+    <string name="status_item_ringer">Hringing og Ónáðið ekki</string>
+    <string name="status_item_ringer_summary">Aðeins þegar hringing er ekki stillt á að hringja eða kveikt er á Ónáðið ekki</string>
+    <string name="status_item_airplane_mode">Flugstilling</string>
+    <string name="status_item_airplane_mode_summary">Aðeins þegar kveikt er á flugstillingu</string>
+</resources>
