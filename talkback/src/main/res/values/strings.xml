@@ -4267,14 +4267,16 @@
   <!-- Detailed image description fallback result with a network error. [CHAR_LIMIT=NONE]-->
   <string name="detailed_image_description_fallback_result_network_error"><xliff:g id="fallback_result_network_error" example="Text in image: Hello world!!">%1$s</xliff:g>. Connect to the internet for a more detailed image description.</string>
 
-  <!-- Image Q&A button text. [CHAR_LIMIT=NONE]-->
-  <string name="image_qna_button_text">Ask Gemini</string>
+  <!-- Button that asks the AI service in use a question about the image or screen, spoken. [CHAR_LIMIT=NONE]-->
+  <string name="image_qna_ask_by_voice">Ask by voice</string>
+  <!-- Button that stops listening for a spoken question. [CHAR_LIMIT=NONE]-->
+  <string name="image_qna_stop_listening">Stop listening</string>
   <!-- Image Q&A voice input is listening. [CHAR_LIMIT=NONE]-->
   <string name="image_qna_voice_input_listening">Listening</string>
   <!-- Image Q&A voice input description. [CHAR_LIMIT=NONE]-->
   <string name="image_qna_voice_input_description">Ask about the image</string>
-  <!-- Image Q&A typing button text. [CHAR_LIMIT=NONE]-->
-  <string name="image_qna_typing_button_text">Type question for Gemini</string>
+  <!-- Button and text field for typing a question to the AI service in use about the image or screen. [CHAR_LIMIT=NONE]-->
+  <string name="image_qna_type_question">Type a question</string>
   <!-- Image Q&A button for asking the question. [CHAR_LIMIT=NONE]-->
   <string name="image_qna_send_button_text">Ask</string>
   <!-- Image Q&A button for speaking an question. [CHAR_LIMIT=NONE]-->

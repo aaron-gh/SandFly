@@ -63,8 +63,8 @@
           android:layout_height="match_parent"
           android:layout_weight="3"
           android:inputType="text"
-          android:autofillHints="@string/image_qna_button_text"
-          android:hint="@string/image_qna_typing_button_text"
+          android:autofillHints="@string/image_qna_ask_by_voice"
+          android:hint="@string/image_qna_type_question"
           android:textSize="16sp"/>
 
       <com.google.android.material.button.MaterialButton
@@ -92,7 +92,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_weight="3"
-          android:text="@string/image_qna_typing_button_text"
+          android:text="@string/image_qna_type_question"
           android:textSize="16sp"
           app:iconGravity="textStart"
           app:iconPadding="8dp"
@@ -106,7 +106,7 @@
           android:layout_width="wrap_content"
           android:layout_height="match_parent"
           android:layout_weight="1"
-          android:contentDescription="@string/image_qna_button_text"
+          android:contentDescription="@string/image_qna_ask_by_voice"
           app:iconGravity="textStart"
           app:iconSize="@dimen/bottom_sheet_icon_button_size"
           app:icon="@drawable/ic_mic"

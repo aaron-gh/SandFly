@@ -29,7 +29,6 @@ import androidx.core.net.toUri
 import androidx.preference.Preference
 import androidx.preference.PreferenceScreen
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -38,8 +37,9 @@ import java.io.IOException
 import java.util.concurrent.Executors
 
 /**
- * The settings of one AI service other than Gemini, such as Claude settings: whether to use it,
- * its API key, its model, and for [AiProvider.OTHER] its address.
+ * The settings of one AI service other than Gemini, such as Claude settings: its API key, its
+ * model, and for [AiProvider.OTHER] its address. Once it is set up, it can be chosen as the AI
+ * service.
  */
 class AiProviderFragment : TalkbackBaseFragment() {
   private val provider: AiProvider by lazy {
@@ -59,21 +59,6 @@ class AiProviderFragment : TalkbackBaseFragment() {
   private fun build() {
     val context = requireContext()
     val screen: PreferenceScreen = preferenceManager.createPreferenceScreen(context)
-    val use =
-      AccessibilitySuiteSwitchPreference(context).apply {
-        isPersistent = false
-        isIconSpaceReserved = false
-        title = getString(R.string.ai_provider_use, getString(provider.label))
-        isChecked = AiProvider.active(prefs) == provider && provider.isReady(prefs)
-        // Only a service that is set up can be turned on.
-        isEnabled = isChecked || provider.isReady(prefs)
-        summary = provider.missing(prefs)?.let { missingText(it) }
-        setOnPreferenceChangeListener { _, value ->
-          AiProvider.setActive(prefs, if (value as Boolean) provider else AiProvider.fallback(prefs))
-          true
-        }
-      }
-    screen.addPreference(use)
     if (provider == AiProvider.OTHER) {
       screen.addPreference(
         row(
@@ -159,7 +144,7 @@ class AiProviderFragment : TalkbackBaseFragment() {
         .setView(padded(key))
         .setPositiveButton(R.string.gemini_api_key_save) { _, _ ->
           provider.setApiKey(prefs, key.text.toString())
-          stopIfNotReady()
+          AiProvider.afterSetUpChanged(prefs, provider)
           build()
         }
         .setNegativeButton(android.R.string.cancel, null)
@@ -192,22 +177,12 @@ class AiProviderFragment : TalkbackBaseFragment() {
           Toast.makeText(requireContext(), R.string.ai_service_address_invalid, Toast.LENGTH_LONG).show()
         } else {
           AiProvider.setOtherAddress(prefs, text)
-          stopIfNotReady()
+          AiProvider.afterSetUpChanged(prefs, provider)
           build()
         }
       }
       .setNegativeButton(android.R.string.cancel, null)
       .show()
-  }
-
-  /**
-   * Goes back to Gemini, or to none, when the service in use is no longer set up, such as after its
-   * key is cleared.
-   */
-  private fun stopIfNotReady() {
-    if (AiProvider.active(prefs) == provider && !provider.isReady(prefs)) {
-      AiProvider.setActive(prefs, AiProvider.fallback(prefs))
-    }
   }
 
   /**
@@ -275,7 +250,7 @@ class AiProviderFragment : TalkbackBaseFragment() {
       .setView(padded(model))
       .setPositiveButton(R.string.gemini_api_key_save) { _, _ ->
         provider.setModel(prefs, model.text.toString())
-        stopIfNotReady()
+        AiProvider.afterSetUpChanged(prefs, provider)
         build()
       }
       .setNegativeButton(android.R.string.cancel, null)

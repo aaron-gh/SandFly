@@ -56,8 +56,8 @@
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <!-- The choice of no AI service: images and screens are described on the phone, or only their text is read. [CHAR LIMIT=40] -->
     <string name="ai_provider_none">None</string>
-    <!-- Switch in Gemini settings that makes Gemini the AI service in use. [CHAR LIMIT=50] -->
-    <string name="ai_provider_use_gemini">Use Gemini</string>
+    <!-- Shown when the AI service is to be chosen but none is set up. [CHAR LIMIT=NONE] -->
+    <string name="ai_provider_none_set_up">No AI service is set up. Set one up in its settings below.</string>
     <!-- An AI service at an address the user enters. [CHAR LIMIT=40] -->
     <string name="ai_provider_other">Other service</string>
     <!-- Heading of the AI service settings in Automatic descriptions. [CHAR LIMIT=40] -->
@@ -72,9 +72,7 @@
     <string name="ai_provider_in_use">In use</string>
     <!-- Summary of an AI service's settings entry when it has no model. [CHAR LIMIT=NONE] -->
     <string name="ai_provider_not_set_up">Not set up</string>
-    <!-- Switch on an AI service's settings screen that makes it the one in use. [CHAR LIMIT=50] -->
-    <string name="ai_provider_use">Use <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <!-- Summary of the Use switch while the service has no model, or no address. [CHAR LIMIT=NONE] -->
+    <!-- Summary of a service's model setting while it can't be chosen yet. [CHAR LIMIT=NONE] -->
     <string name="ai_provider_not_ready">Choose a model first</string>
     <!-- Setting: the address of the other AI service. [CHAR LIMIT=40] -->
     <string name="ai_provider_address">Address</string>
@@ -96,8 +94,6 @@
     <string name="ai_provider_needs_key">Set the <xliff:g id="service" example="Claude">%1$s</xliff:g> API key first</string>
     <!-- Shown when the other service's model setting is opened before its address is set. [CHAR LIMIT=NONE] -->
     <string name="ai_provider_needs_address">Set the address first</string>
-    <!-- Shown when the user chooses an AI service that is not set up yet, such as "Set up Claude in Claude settings first". [CHAR LIMIT=NONE] -->
-    <string name="ai_provider_set_up_first">Set up <xliff:g id="service" example="Claude">%1$s</xliff:g> in <xliff:g id="service" example="Claude">%1$s</xliff:g> settings first</string>
     <!-- First item of a service's list of models, to type a model name instead. [CHAR LIMIT=NONE] -->
     <string name="ai_provider_enter_model">Enter a model name</string>
 </resources>

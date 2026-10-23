@@ -40,7 +40,7 @@
           android:paddingTop="@dimen/image_caption_bottom_sheet_padding"
           android:paddingBottom="@dimen/image_caption_bottom_sheet_padding"
           android:src="@drawable/ic_gemini_spark"
-          android:contentDescription="@string/image_qna_button_text"
+          android:contentDescription="@null"
           android:importantForAccessibility="no"/>
 
       <androidx.appcompat.widget.AppCompatTextView
@@ -68,7 +68,7 @@
           android:layout_gravity="center"
           android:paddingBottom="@dimen/image_caption_bottom_sheet_padding"
           android:src="@drawable/ic_voice_input_listening"
-          android:contentDescription="@string/image_qna_button_text"/>
+          android:contentDescription="@string/image_qna_stop_listening"/>
     </LinearLayout>
   </ScrollView>
 
@@ -81,7 +81,7 @@
       android:paddingStart="@dimen/image_caption_bottom_sheet_padding"
       android:paddingEnd="@dimen/image_caption_bottom_sheet_padding"
       android:paddingBottom="@dimen/image_caption_bottom_sheet_padding"
-      android:text="@string/image_qna_typing_button_text"
+      android:text="@string/image_qna_type_question"
       app:iconGravity="textStart"
       app:iconPadding="8dp"
       app:iconSize="36dp"
