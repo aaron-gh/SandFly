@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">Talkback ჩართულია</string>
-  <string name="talkback_disabled">TalkBack გამორთულია</string>
+  <string name="talkback_on">SandFly ჩართულია</string>
+  <string name="talkback_disabled">SandFly გამორთულია</string>
   <string name="notification_type_beginning_of_field">ველის დასაწყისი</string>
   <string name="notification_type_end_of_field">ველის ბოლო</string>
   <string name="notification_type_selection_mode_on">არჩევის რეჟიმი ჩართულია</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">ჩავლება დაიწყო</string>
   <string name="drag_dropped">ჩავლებული ერთეული დავარდა</string>
   <string name="drag_cancelled">ჩავლება გაუქმდა</string>
+    <string name="template_brightness_changed">Სიკაშკაშე <xliff:g id="percent">%1$d</xliff:g> პროცენტი.</string>
+    <string name="brightness_needs_permission">Სიკაშკაშის შესაცვლელად სისტემის პარამეტრების შეცვლის დაშვება.</string>
+    <string name="brightness_adaptive_on">Გამორთეთ ადაპტური სიკაშკაშე სიკაშკაშის შესაცვლელად.</string>
+    <string name="telegram_replying_to">პასუხობს <xliff:g id="name" example="Ronan">%1$s</xliff:g>: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>
