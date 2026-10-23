@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API की</string>
+    <string name="summary_pref_gemini_api_key_built_in">या ॲपमध्ये अंगभूत की वापरणे</string>
+    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey येथे Google AI स्टुडिओ कडून विनामूल्य API की मिळवा आणि ती येथे पेस्ट करा. तुमची की काढण्यासाठी, फील्ड साफ करा आणि सेव्ह करा.\n\nतुम्ही वर्णन केलेल्या इमेज आणि स्क्रीन Google वर पाठवल्या जातात. फ्री टियरवर, Google त्यांची उत्पादने सुधारण्यासाठी त्यांचा वापर करू शकतात.</string>
+    <string name="gemini_api_key_hint">API की</string>
+    <string name="gemini_api_key_save">सेव्ह करा</string>
+    <string name="gemini_api_key_get">एक चावी मिळवा</string>
+    <string name="title_pref_gemini_model">Gemini मॉडेल</string>
+    <string name="gemini_model_automatic">स्वयंचलित</string>
+    <string name="summary_pref_gemini_model_automatic">स्वयंचलित: Gemini फ्लॅश, नंतर फ्लॅश व्यस्त असताना फ्लॅश-लाइट</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, नंतर फ्लॅश-लाइट व्यस्त असताना</string>
+    <string name="gemini_model_loading">मॉडेल्स मिळवत आहे...</string>
+    <string name="gemini_model_list_failed">मॉडेल मिळू शकले नाहीत: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">प्रथम Gemini API की सेट करा</string>
+    <string name="gemini_api_terms_link">Gemini API अतिरिक्त सेवा अटी</string>
+    <string name="ai_service_address_hint">पत्ता, जसे की https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">मॉडेल</string>
+    <string name="ai_service_address_invalid">पत्ता https://. ने सुरू होणे आवश्यक आहे काहीही जतन केलेले नाही.</string>
+    <string name="dialog_message_ai_service_consent">वर्णन करण्यासाठी प्रतिमा आणि स्क्रीनशॉट <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> वर पाठवले जातात, ज्याला काही सेकंद लागतात. त्याच्या स्वतःच्या अटी आणि गोपनीयता धोरण लागू. जनरेटिव्ह एआय प्रायोगिक आहे, त्यामुळे त्यात चुका होतील.</string>
+    <string name="ai_service_error_api_key">AI सेवेने API की स्वीकारली नाही. स्वयंचलित वर्णनांमध्ये त्याची सेटिंग्ज तपासा.</string>
+    <string name="ai_service_error_quota">AI सेवेची वापर मर्यादा गाठली आहे. नंतर पुन्हा प्रयत्न करा.</string>
+    <string name="ai_service_error_busy">एआय सेवा सध्या व्यस्त आहे. काही क्षणात पुन्हा प्रयत्न करा.</string>
+    <string name="ai_service_error_timeout">AI सेवेला उत्तर देण्यासाठी खूप वेळ लागला. पुन्हा प्रयत्न करा.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">कोणतेही नाही</string>
+    <string name="ai_service_not_set_up">कोणतीही AI सेवा वापरात नाही. एक सेट करा किंवा स्वयंचलित वर्णन सेटिंग्जमध्ये एक निवडा.</string>
+    <string name="ai_provider_none_set_up">कोणतीही AI सेवा सेट केलेली नाही. खालील सेटिंग्जमध्ये एक सेट करा.</string>
+    <string name="ai_provider_other">इतर सेवा</string>
+    <string name="title_pref_category_ai_services">एआय सेवा</string>
+    <string name="title_pref_ai_provider">एआय सेवा</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> सेटिंग्ज</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, सेट केलेले नाही</string>
+    <string name="ai_provider_in_use">वापरात आहे</string>
+    <string name="ai_provider_not_set_up">सेट केले नाही</string>
+    <string name="ai_provider_not_ready">प्रथम एक मॉडेल निवडा</string>
+    <string name="ai_provider_address">पत्ता</string>
+    <string name="ai_provider_address_message">OpenAI-सुसंगत चॅट API आणि इमेज इनपुटसह सेवेचा पत्ता, जसे की https://example.com/v1.</string>
+    <string name="ai_provider_not_set">सेट नाही</string>
+    <string name="ai_provider_set">कॉन्फिगर केले</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API की</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> मॉडेल</string>
+    <string name="ai_provider_choose_model">निवडले नाही</string>
+    <string name="ai_provider_key_message">तुमची <xliff:g id="service" example="Claude">%1$s</xliff:g> API की पेस्ट करा. ते काढण्यासाठी, फील्ड साफ करा आणि जतन करा. तुम्ही वर्णन केलेल्या प्रतिमा आणि स्क्रीन <xliff:g id="service" example="Claude">%1$s</xliff:g> वर पाठवल्या जातात.</string>
+    <string name="ai_provider_needs_key">प्रथम <xliff:g id="service" example="Claude">%1$s</xliff:g> API की सेट करा</string>
+    <string name="ai_provider_needs_address">प्रथम पत्ता सेट करा</string>
+    <string name="ai_provider_enter_model">मॉडेलचे नाव एंटर करा</string>
+</resources>
