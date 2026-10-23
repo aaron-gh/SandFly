@@ -55,10 +55,9 @@
         <item quantity="one">%1$d분</item>
         <item quantity="other">%1$d분</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">프로세서</string>
     <string name="pref_on_device_ai_short_prompts">더 짧은 화면 설명</string>
     <string name="pref_on_device_ai_short_prompts_summary">설명 화면에서는 더 적은 세부정보를 요구하므로 더 빨리 답변합니다. 자세한 설명을 보려면 이 기능을 끄세요.</string>
-    <string name="pref_on_device_ai_gpu">GPU 사용</string>
-    <string name="pref_on_device_ai_gpu_summary">더 빠르고 더 적은 메모리를 사용할 수 있습니다. 답변이 실패하면 이 기능을 끄세요.</string>
     <string name="on_device_ai_error_network">다운로드가 중지되었습니다. 연결을 확인하고 다시 시도하세요. 멈춘 곳에서 계속됩니다.</string>
     <string name="on_device_ai_error_http">다운로드 서버가 요청을 수락하지 않았습니다. 나중에 다시 시도하거나 대신 파일을 가져오세요.</string>
     <string name="on_device_ai_error_corrupt">파일이 예상 모델과 일치하지 않아 삭제되었습니다. 다시 시도해 보세요.</string>

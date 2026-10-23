@@ -107,14 +107,13 @@
     <plurals name="on_device_ai_timeout_minutes"><item quantity="other">%1$d 分钟</item></plurals>
 
     <!-- Switch that makes describe screen ask for less detail so it answers sooner. [CHAR LIMIT=60] -->
+    <string name="pref_on_device_ai_processor">处理器</string>
     <string name="pref_on_device_ai_short_prompts">更简短的屏幕描述</string>
     <!-- Summary of that switch. [CHAR LIMIT=NONE] -->
     <string name="pref_on_device_ai_short_prompts_summary">描述屏幕时要求更少的细节，因此回答更快。关闭可获得更完整的描述。</string>
 
     <!-- Switch that runs the model on the GPU. [CHAR LIMIT=60] -->
-    <string name="pref_on_device_ai_gpu">使用 GPU</string>
     <!-- Summary of the GPU switch. [CHAR LIMIT=NONE] -->
-    <string name="pref_on_device_ai_gpu_summary">可能更快且占用更少内存。如果回答失败，请关闭此项。</string>
 
     <!-- Download failed: no network. [CHAR LIMIT=NONE] -->
     <string name="on_device_ai_error_network">下载已停止。请检查网络连接并重试。将从中断处继续。</string>

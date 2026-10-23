@@ -655,6 +655,7 @@ Text that isn't in a text field, such as a message, can be edited and copied but
   - Google on-device and Android speech recognition start again after each pause until the gesture stops them.
   - Automatic uses Google on-device speech recognition when it is installed and has the phone's language, else Rambler when there is a Gemini API key and Rambler knows the phone's language, else Whisper when a model is downloaded, else Android speech recognition. A chosen one that can't be used gives way to the same order. If Google on-device recognition reports a missing language during recording, the next one takes over without stopping. When Rambler doesn't answer, the recording is transcribed with Whisper if a model is downloaded.
 - **Whisper models**: Tiny (32 MB), Base (60 MB), Small (190 MB) and Large v3 Turbo (574 MB), all multilingual and quantized, from Hugging Face, checked against their SHA-256. Tapping a model downloads it (asking first on mobile data), or, once downloaded, offers Use and Delete. The first downloaded model is used. Whisper is told the phone's language when it knows it, else it detects the language.
+- **Processor** under Whisper models (only on phones with an Adreno GPU and an OpenCL driver): CPU or GPU. The GPU build of whisper.cpp is a separate library, loaded only when GPU is chosen; if it can't load, Whisper runs on the CPU.
 - **Correct dictation with AI** (on by default) and **AI service for dictation**: Same as automatic descriptions (the default), any AI service that is set up, or On-device AI when its model is downloaded. So Rambler or Whisper can do the recognition while a different service corrects it, and a different service from the one describing images. The text of Google on-device, Whisper and Android speech recognition goes to that service first, with up to 300 characters of the text before the cursor, to correct punctuation, capital letters and misheard words. Rambler's text isn't sent again. If the service doesn't answer within 20 seconds (60 for on-device AI), or answers with something much longer than what you said, the text is typed as recognized; Dictate performed while it waits does the same at once. Dictation into a password field isn't sent to the service.
 
 Typing into text fields that only accept plain text, such as in Google Contacts, failed with the voice command "type" too; SandFly now sends plain text.
@@ -772,7 +773,7 @@ With Gemini, SandFly asks the model to think as little as it can, and asks Gemin
 
 ### On-device AI
 
-SandFly can describe images and screens with a model that runs on your phone, so nothing is sent to Google or anyone else. For more information, see [On-device AI](README.md#on-device-ai).
+SandFly can describe images and screens with a model that runs on your phone, so nothing is sent to Google or anyone else. For more information, see [On-device AI](README.md#on-device-ai). On phones that have one, **Processor** runs the model on the GPU, or on Google Tensor G5 and G6, on the NPU.
 
 ### Clear error messages
 

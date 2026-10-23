@@ -55,10 +55,9 @@
         <item quantity="one">%1$d menit</item>
         <item quantity="other">%1$d menit</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Prosesor</string>
     <string name="pref_on_device_ai_short_prompts">Deskripsi layar yang lebih singkat</string>
     <string name="pref_on_device_ai_short_prompts_summary">Deskripsikan layar meminta lebih sedikit detail, sehingga jawaban lebih cepat. Nonaktifkan untuk deskripsi yang lebih lengkap.</string>
-    <string name="pref_on_device_ai_gpu">Gunakan GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Dapat lebih cepat dan menggunakan lebih sedikit memori. Jika jawaban gagal, nonaktifkan.</string>
     <string name="on_device_ai_error_network">Download berhenti. Periksa koneksi Anda, lalu coba lagi. Download akan dilanjutkan dari titik terakhir.</string>
     <string name="on_device_ai_error_http">Server download tidak menerima permintaan. Coba lagi nanti, atau impor file.</string>
     <string name="on_device_ai_error_corrupt">File tidak cocok dengan model yang diharapkan dan telah dihapus. Coba lagi.</string>

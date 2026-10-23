@@ -55,10 +55,9 @@
         <item quantity="one">%1$d分鐘</item>
         <item quantity="other">%1$d分鐘</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">處理器</string>
     <string name="pref_on_device_ai_short_prompts">較短的螢幕描述</string>
     <string name="pref_on_device_ai_short_prompts_summary">描述螢幕要求的詳細資訊較少，因此它會更快回答。關閉此功能以獲得更完整的描述。</string>
-    <string name="pref_on_device_ai_gpu">使用GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">可以更快並且使用更少的記憶體。如果答案失敗，請將其關閉。</string>
     <string name="on_device_ai_error_network">下載停止了。檢查您的連線並重試。它將在停止的地方繼續進行。</string>
     <string name="on_device_ai_error_http">下載伺服器未接受請求。稍後重試，或匯入文件。</string>
     <string name="on_device_ai_error_corrupt">該文件與預期模型不匹配，已被刪除。再試一次。</string>

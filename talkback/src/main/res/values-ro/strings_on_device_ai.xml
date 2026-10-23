@@ -57,10 +57,9 @@
         <item quantity="few">%1$d minute</item>
         <item quantity="other">%1$d de minute</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Procesor</string>
     <string name="pref_on_device_ai_short_prompts">Descrieri mai scurte ale ecranului</string>
     <string name="pref_on_device_ai_short_prompts_summary">Ecranul de descriere solicită mai puține detalii, astfel încât să răspundă mai devreme. Dezactivați această opțiune pentru descrieri mai complete.</string>
-    <string name="pref_on_device_ai_gpu">Utilizați GPU-ul</string>
-    <string name="pref_on_device_ai_gpu_summary">Poate fi mai rapid și poate folosi mai puțină memorie. Dacă răspunsurile eșuează, dezactivați acest lucru.</string>
     <string name="on_device_ai_error_network">Descărcarea sa oprit. Verificați conexiunea și încercați din nou. Va continua acolo unde s-a oprit.</string>
     <string name="on_device_ai_error_http">Serverul de descărcare nu a acceptat cererea. Încercați din nou mai târziu sau importați un fișier.</string>
     <string name="on_device_ai_error_corrupt">Fișierul nu se potrivește cu modelul așteptat și a fost șters. Încearcă din nou.</string>

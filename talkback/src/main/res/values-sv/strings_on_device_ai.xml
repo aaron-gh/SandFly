@@ -55,10 +55,9 @@
         <item quantity="one">%1$d minut</item>
         <item quantity="other">%1$d minuter</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Processor</string>
     <string name="pref_on_device_ai_short_prompts">Kortare skärmbeskrivningar</string>
     <string name="pref_on_device_ai_short_prompts_summary">Beskriv skärmen ber om färre detaljer, så den svarar tidigare. Stäng av detta för mer fullständiga beskrivningar.</string>
-    <string name="pref_on_device_ai_gpu">Använd GPU:n</string>
-    <string name="pref_on_device_ai_gpu_summary">Kan vara snabbare och använda mindre minne. Om svaren misslyckas, stäng av detta.</string>
     <string name="on_device_ai_error_network">Nedladdningen avbröts. Kontrollera din anslutning och försök igen. Det kommer att fortsätta där det stannade.</string>
     <string name="on_device_ai_error_http">Nedladdningsservern accepterade inte begäran. Försök igen senare eller importera en fil istället.</string>
     <string name="on_device_ai_error_corrupt">Filen matchade inte den förväntade modellen och raderades. Försök igen.</string>

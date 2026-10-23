@@ -59,10 +59,9 @@
     <item quantity="many">%1$d минут</item>
     <item quantity="other">%1$d минуты</item>
   </plurals>
+  <string name="pref_on_device_ai_processor">Процессор</string>
   <string name="pref_on_device_ai_short_prompts">Краткие описания экрана</string>
   <string name="pref_on_device_ai_short_prompts_summary">Функция описания экрана запрашивает меньше подробностей, чтобы получить ответ быстрее. Отключите этот параметр для более полных описаний.</string>
-  <string name="pref_on_device_ai_gpu">Использовать графический процессор</string>
-  <string name="pref_on_device_ai_gpu_summary">Обработка может быть быстрее и расходовать меньше памяти. Если не удаётся получить ответ, отключите этот параметр.</string>
   <string name="on_device_ai_error_network">Скачивание остановлено. Проверьте подключение и повторите попытку. Скачивание продолжится с места остановки.</string>
   <string name="on_device_ai_error_http">Сервер скачивания не принял запрос. Повторите попытку позже или импортируйте файл.</string>
   <string name="on_device_ai_error_corrupt">Файл не соответствует ожидаемой модели и удалён. Повторите попытку.</string>

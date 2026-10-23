@@ -55,10 +55,9 @@
         <item quantity="one">%1$d মিনিট</item>
         <item quantity="other">%1$d মিনিট</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">প্রসেসর</string>
     <string name="pref_on_device_ai_short_prompts">স্ক্রিনের সংক্ষিপ্ত বিবরণ</string>
     <string name="pref_on_device_ai_short_prompts_summary">\'স্ক্রিনের বিবরণ দিন\' কম বিবরণ চায়, তাই দ্রুত উত্তর দেয়। আরও বিস্তারিত বিবরণের জন্য এটি বন্ধ করুন।</string>
-    <string name="pref_on_device_ai_gpu">GPU ব্যবহার করুন</string>
-    <string name="pref_on_device_ai_gpu_summary">এটি দ্রুততর হতে পারে এবং কম মেমরি ব্যবহার করতে পারে। উত্তর না এলে এটি বন্ধ করুন।</string>
     <string name="on_device_ai_error_network">ডাউনলোড বন্ধ হয়ে গেছে। আপনার কানেকশন চেক করে আবার চেষ্টা করুন। যেখানে বন্ধ হয়েছিল সেখান থেকে চলতে থাকবে।</string>
     <string name="on_device_ai_error_http">ডাউনলোড সার্ভার অনুরোধটি গ্রহণ করেনি। পরে আবার চেষ্টা করুন অথবা তার বদলে একটি ফাইল ইমপোর্ট করুন।</string>
     <string name="on_device_ai_error_corrupt">ফাইলটি প্রত্যাশিত মডেলের সাথে মেলেনি এবং মুছে ফেলা হয়েছে। আবার চেষ্টা করুন।</string>

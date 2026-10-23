@@ -30,7 +30,8 @@ class LocalModelStore(private val dir: File) {
 
   /** The model to run: [preferred] if it is installed, otherwise any installed model. */
   fun installed(preferred: LocalModel?): LocalModel? =
-    listOfNotNull(preferred).plus(LocalModel.entries).firstOrNull { isInstalled(it) }
+    // A model built for an NPU stands in only for itself, since it runs nowhere else.
+    listOfNotNull(preferred).plus(LocalModel.choices).firstOrNull { isInstalled(it) }
 
   fun delete(model: LocalModel) {
     file(model).delete()

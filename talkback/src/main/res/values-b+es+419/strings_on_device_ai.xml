@@ -57,10 +57,9 @@
         <item quantity="many">%1$d minutos</item>
         <item quantity="other">%1$d minutos</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Procesador</string>
     <string name="pref_on_device_ai_short_prompts">Descripciones de pantalla más breves</string>
     <string name="pref_on_device_ai_short_prompts_summary">Describir la pantalla solicita menos detalles para responder antes. Desactívalo para obtener descripciones más completas.</string>
-    <string name="pref_on_device_ai_gpu">Usar la GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Puede ser más rápido y usar menos memoria. Si fallan las respuestas, desactívalo.</string>
     <string name="on_device_ai_error_network">Se detuvo la descarga. Verifica tu conexión y vuelve a intentarlo. Continuará desde donde se detuvo.</string>
     <string name="on_device_ai_error_http">El servidor de descarga no aceptó la solicitud. Vuelve a intentarlo más tarde o importa un archivo.</string>
     <string name="on_device_ai_error_corrupt">El archivo no coincidía con el modelo esperado y se borró. Vuelve a intentarlo.</string>

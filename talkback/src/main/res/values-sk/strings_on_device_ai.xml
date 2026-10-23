@@ -59,10 +59,9 @@
         <item quantity="many">%1$d minúty</item>
         <item quantity="other">%1$d minút</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Procesor</string>
     <string name="pref_on_device_ai_short_prompts">Kratšie popisy obrazovky</string>
     <string name="pref_on_device_ai_short_prompts_summary">Obrazovka s popisom vyžaduje menej podrobností, takže odpovedá skôr. Ak chcete získať podrobnejšie popisy, túto možnosť vypnite.</string>
-    <string name="pref_on_device_ai_gpu">Použite GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Môže byť rýchlejší a používať menej pamäte. Ak odpovede zlyhajú, vypnite to.</string>
     <string name="on_device_ai_error_network">Sťahovanie sa zastavilo. Skontrolujte pripojenie a skúste to znova. Bude pokračovať tam, kde sa zastavil.</string>
     <string name="on_device_ai_error_http">Sťahovací server neprijal požiadavku. Skúste to neskôr alebo namiesto toho importujte súbor.</string>
     <string name="on_device_ai_error_corrupt">Súbor nezodpovedal očakávanému modelu a bol odstránený. Skúste to znova.</string>

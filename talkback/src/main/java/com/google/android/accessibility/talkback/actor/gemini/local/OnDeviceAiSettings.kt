@@ -17,12 +17,15 @@
 package com.google.android.accessibility.talkback.actor.gemini.local
 
 import android.content.SharedPreferences
+import com.google.android.accessibility.talkback.acceleration.Accelerators
 
 /** The settings for running Describe image and Describe screen on the phone instead of the cloud. */
 object OnDeviceAiSettings {
   const val PREF_PROVIDER = "pref_on_device_ai_provider"
   const val PREF_MODEL = "pref_on_device_ai_model"
-  const val PREF_GPU = "pref_on_device_ai_gpu"
+  /** The GPU switch of earlier versions, read once to set [PREF_PROCESSOR]. */
+  private const val PREF_GPU = "pref_on_device_ai_gpu"
+  const val PREF_PROCESSOR = "pref_on_device_ai_processor"
   const val PREF_SHORT_PROMPTS = "pref_on_device_ai_short_prompts"
   const val PREF_TIMEOUT = "pref_on_device_ai_timeout_seconds"
   const val PREF_IGNORE_MEMORY_LIMITS = "pref_on_device_ai_ignore_memory_limits"
@@ -45,7 +48,8 @@ object OnDeviceAiSettings {
    * with [totalRamBytes] of RAM, or Gemma 4 E2B when the RAM is not known.
    */
   fun preferredModel(prefs: SharedPreferences, totalRamBytes: Long? = null): LocalModel =
-    LocalModel.fromId(prefs.getString(PREF_MODEL, null))
+    npuModel().takeIf { processor(prefs) == Processor.NPU }
+      ?: LocalModel.fromId(prefs.getString(PREF_MODEL, null))?.takeIf { it.npuChip == null }
       ?: totalRamBytes?.let { defaultModel(it) }
       ?: LocalModel.E2B
 
@@ -66,7 +70,7 @@ object OnDeviceAiSettings {
    * are already on the phone, so that they can still be chosen or deleted.
    */
   fun modelsFor(totalRamBytes: Long, isInstalled: (LocalModel) -> Boolean): List<LocalModel> =
-    LocalModel.entries.filter { fits(it, totalRamBytes) || isInstalled(it) }
+    LocalModel.choices.filter { fits(it, totalRamBytes) || isInstalled(it) }
 
   /**
    * The model to use when the user has not chosen one: Gemma 4 E2B when it fits, otherwise the
@@ -76,7 +80,7 @@ object OnDeviceAiSettings {
     if (fits(LocalModel.E2B, totalRamBytes)) {
       return LocalModel.E2B
     }
-    return LocalModel.entries
+    return LocalModel.choices
       .filter { fits(it, totalRamBytes) }
       .sortedWith(compareBy<LocalModel> { it.experimental }.thenByDescending { it.sizeBytes })
       .firstOrNull() ?: LocalModel.E2B
@@ -86,11 +90,38 @@ object OnDeviceAiSettings {
     prefs.edit().putString(PREF_MODEL, model.id).apply()
   }
 
-  fun useGpu(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_GPU, false)
-
-  fun setUseGpu(prefs: SharedPreferences, useGpu: Boolean) {
-    prefs.edit().putBoolean(PREF_GPU, useGpu).apply()
+  /** The processors a model can run on. */
+  enum class Processor(val id: String) {
+    CPU("cpu"),
+    /** The GPU, through OpenCL. */
+    GPU("gpu"),
+    /** The NPU of a Google Tensor chip, with the model built for it. */
+    NPU("npu"),
   }
+
+  /** The processors this phone has: the CPU, and the GPU and NPU when models can run on them. */
+  fun availableProcessors(): List<Processor> =
+    listOfNotNull(
+      Processor.CPU,
+      Processor.GPU.takeIf { Accelerators.hasOpenCl },
+      Processor.NPU.takeIf { npuModel() != null },
+    )
+
+  /** The processor the user chose, or the CPU when this phone doesn't have it. */
+  fun processor(prefs: SharedPreferences): Processor {
+    val chosen =
+      Processor.entries.firstOrNull { it.id == prefs.getString(PREF_PROCESSOR, null) }
+        ?: if (prefs.getBoolean(PREF_GPU, false)) Processor.GPU else Processor.CPU
+    return chosen.takeIf { it in availableProcessors() } ?: Processor.CPU
+  }
+
+  fun setProcessor(prefs: SharedPreferences, processor: Processor) {
+    prefs.edit().putString(PREF_PROCESSOR, processor.id).remove(PREF_GPU).apply()
+  }
+
+  /** The model built for this phone's NPU, or null when it has none that a model is built for. */
+  fun npuModel(): LocalModel? =
+    Accelerators.googleTensorNpu?.let { chip -> LocalModel.entries.firstOrNull { it.npuChip == chip } }
 
   /** Whether Describe screen asks for less detail, to answer sooner. Off keeps the full prompt. */
   fun shortPrompts(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_SHORT_PROMPTS, false)

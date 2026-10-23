@@ -29,6 +29,7 @@ import androidx.preference.CheckBoxPreference
 import androidx.preference.Preference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager.State
+import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings.Processor
 import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings.Support
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -47,7 +48,7 @@ class OnDeviceAiFragment : TalkbackBaseFragment() {
   private lateinit var importPref: Preference
   private lateinit var timeoutPref: Preference
   private lateinit var shortPromptsPref: CheckBoxPreference
-  private lateinit var gpuPref: CheckBoxPreference
+  private lateinit var processorPref: Preference
 
   private var lastAnnounced = -1
   private var wasDownloading = false
@@ -111,14 +112,11 @@ class OnDeviceAiFragment : TalkbackBaseFragment() {
         true
       }
     shortPromptsPref.setSummary(R.string.pref_on_device_ai_short_prompts_summary)
-    gpuPref =
-      checkBox(context, OnDeviceAiSettings.PREF_GPU, R.string.pref_on_device_ai_gpu) { useGpu ->
-        OnDeviceAiSettings.setUseGpu(prefs, useGpu)
-        true
-      }
-    gpuPref.setSummary(R.string.pref_on_device_ai_gpu_summary)
+    processorPref = action(context, R.string.pref_on_device_ai_processor) { chooseProcessor() }
+    // Only phones with a GPU or NPU that models can run on have a choice.
+    processorPref.isVisible = OnDeviceAiSettings.availableProcessors().size > 1
 
-    listOf(enablePref, modelPref, statusPref, managePref, importPref, timeoutPref, shortPromptsPref, gpuPref).forEach {
+    listOf(enablePref, modelPref, statusPref, managePref, importPref, timeoutPref, shortPromptsPref, processorPref).forEach {
       screen.addPreference(it)
     }
     preferenceScreen = screen
@@ -156,7 +154,8 @@ class OnDeviceAiFragment : TalkbackBaseFragment() {
 
     modelPref.summary =
       context.getString(R.string.on_device_ai_model_summary, model.name, sizeLabel(model))
-    modelPref.isEnabled = !busy
+    // The NPU runs only the model built for it.
+    modelPref.isEnabled = !busy && OnDeviceAiSettings.processor(prefs) != Processor.NPU
 
     timeoutPref.summary =
       context.getString(
@@ -164,7 +163,7 @@ class OnDeviceAiFragment : TalkbackBaseFragment() {
         timeoutLabel(OnDeviceAiSettings.timeoutSeconds(prefs)),
       )
     shortPromptsPref.isChecked = OnDeviceAiSettings.shortPrompts(prefs)
-    gpuPref.isChecked = OnDeviceAiSettings.useGpu(prefs)
+    processorPref.summary = processorLabel(OnDeviceAiSettings.processor(prefs))
 
     importPref.isEnabled = !busy
 
@@ -282,6 +281,31 @@ class OnDeviceAiFragment : TalkbackBaseFragment() {
       .setNegativeButton(R.string.on_device_ai_cancel, null)
       .show()
   }
+
+  private fun chooseProcessor() {
+    val choices = OnDeviceAiSettings.availableProcessors()
+    AlertDialog.Builder(requireContext())
+      .setTitle(R.string.pref_on_device_ai_processor)
+      .setSingleChoiceItems(
+        choices.map { processorLabel(it) }.toTypedArray(),
+        choices.indexOf(OnDeviceAiSettings.processor(prefs)),
+      ) { dialog, which ->
+        OnDeviceAiSettings.setProcessor(prefs, choices[which])
+        refresh()
+        dialog.dismiss()
+      }
+      .setNegativeButton(R.string.on_device_ai_cancel, null)
+      .show()
+  }
+
+  private fun processorLabel(processor: Processor): String =
+    getString(
+      when (processor) {
+        Processor.CPU -> R.string.processor_cpu
+        Processor.GPU -> R.string.processor_gpu
+        Processor.NPU -> R.string.processor_npu
+      }
+    )
 
   private fun chooseTimeout() {
     val choices = OnDeviceAiSettings.TIMEOUT_CHOICES_SECONDS

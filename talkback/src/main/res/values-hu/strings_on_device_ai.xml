@@ -55,10 +55,9 @@
         <item quantity="one">%1$d perc</item>
         <item quantity="other">%1$d perc</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Processzor</string>
     <string name="pref_on_device_ai_short_prompts">Rövidebb képernyőleírások</string>
     <string name="pref_on_device_ai_short_prompts_summary">A Képernyő leírása kevesebb részletet kér, így hamarabb válaszol. Kapcsolja ki a részletesebb leírásokhoz.</string>
-    <string name="pref_on_device_ai_gpu">A GPU használata</string>
-    <string name="pref_on_device_ai_gpu_summary">Gyorsabb lehet, és kevesebb memóriát használhat. Ha a válaszok nem sikerülnek, kapcsolja ki.</string>
     <string name="on_device_ai_error_network">A letöltés leállt. Ellenőrizze a kapcsolatot, és próbálja újra. Ott folytatódik, ahol leállt.</string>
     <string name="on_device_ai_error_http">A letöltési szerver nem fogadta el a kérést. Próbálja újra később, vagy importáljon inkább egy fájlt.</string>
     <string name="on_device_ai_error_corrupt">A fájl nem egyezett a várt modellel, ezért törölve lett. Próbálja újra.</string>

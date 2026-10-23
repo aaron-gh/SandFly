@@ -12,7 +12,8 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-// JNI for WhisperModel: loads a whisper.cpp model and transcribes 16 kHz mono audio with it.
+// JNI for WhisperModel: loads a whisper.cpp model and transcribes 16 kHz mono audio with it. Built
+// twice: for the CPU, as WhisperNative, and with the OpenCL GPU backend, as WhisperOpenClNative.
 
 #include <android/log.h>
 #include <jni.h>
@@ -21,6 +22,13 @@
 #include <string>
 
 #include "whisper.h"
+
+#ifndef WHISPER_JNI_CLASS
+#define WHISPER_JNI_CLASS WhisperNative
+#endif
+#define JNI_NAME3(cls, fn) Java_com_google_android_accessibility_whisper_##cls##_##fn
+#define JNI_NAME2(cls, fn) JNI_NAME3(cls, fn)
+#define JNI_NAME(fn) JNI_NAME2(WHISPER_JNI_CLASS, fn)
 
 namespace {
 
@@ -48,12 +56,12 @@ bool IsCancelled(void* data) {
 extern "C" {
 
 JNIEXPORT jlong JNICALL
-Java_com_google_android_accessibility_whisper_WhisperModel_nativeLoad(
-    JNIEnv* env, jclass, jstring path) {
+JNI_NAME(nativeLoad)(
+    JNIEnv* env, jobject, jstring path, jboolean gpu) {
   whisper_log_set(Log, nullptr);
   const char* file = env->GetStringUTFChars(path, nullptr);
   whisper_context_params params = whisper_context_default_params();
-  params.use_gpu = false;
+  params.use_gpu = gpu;
   whisper_context* context = whisper_init_from_file_with_params(file, params);
   env->ReleaseStringUTFChars(path, file);
   if (context == nullptr) return 0;
@@ -61,8 +69,8 @@ Java_com_google_android_accessibility_whisper_WhisperModel_nativeLoad(
 }
 
 JNIEXPORT jint JNICALL
-Java_com_google_android_accessibility_whisper_WhisperModel_nativeLanguageId(
-    JNIEnv* env, jclass, jstring code) {
+JNI_NAME(nativeLanguageId)(
+    JNIEnv* env, jobject, jstring code) {
   const char* lang = env->GetStringUTFChars(code, nullptr);
   int id = whisper_lang_id(lang);
   env->ReleaseStringUTFChars(code, lang);
@@ -70,8 +78,8 @@ Java_com_google_android_accessibility_whisper_WhisperModel_nativeLanguageId(
 }
 
 JNIEXPORT void JNICALL
-Java_com_google_android_accessibility_whisper_WhisperModel_nativeFree(
-    JNIEnv*, jclass, jlong handle) {
+JNI_NAME(nativeFree)(
+    JNIEnv*, jobject, jlong handle) {
   auto* model = reinterpret_cast<Model*>(handle);
   if (model == nullptr) return;
   whisper_free(model->context);
@@ -79,8 +87,8 @@ Java_com_google_android_accessibility_whisper_WhisperModel_nativeFree(
 }
 
 JNIEXPORT void JNICALL
-Java_com_google_android_accessibility_whisper_WhisperModel_nativeCancel(
-    JNIEnv*, jclass, jlong handle) {
+JNI_NAME(nativeCancel)(
+    JNIEnv*, jobject, jlong handle) {
   auto* model = reinterpret_cast<Model*>(handle);
   if (model != nullptr) model->cancelled.store(true);
 }
@@ -88,8 +96,8 @@ Java_com_google_android_accessibility_whisper_WhisperModel_nativeCancel(
 // Returns the text as UTF-8, since JNI's own strings can't hold every character, or null when
 // transcription failed or was cancelled.
 JNIEXPORT jbyteArray JNICALL
-Java_com_google_android_accessibility_whisper_WhisperModel_nativeTranscribe(
-    JNIEnv* env, jclass, jlong handle, jfloatArray samples, jstring language, jint threads) {
+JNI_NAME(nativeTranscribe)(
+    JNIEnv* env, jobject, jlong handle, jfloatArray samples, jstring language, jint threads) {
   auto* model = reinterpret_cast<Model*>(handle);
   if (model == nullptr) return nullptr;
   model->cancelled.store(false);

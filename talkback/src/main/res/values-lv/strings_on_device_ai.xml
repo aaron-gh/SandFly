@@ -57,10 +57,9 @@
         <item quantity="one">%1$d minūte</item>
         <item quantity="other">%1$d minūtes</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Procesors</string>
     <string name="pref_on_device_ai_short_prompts">Īsāki ekrāna apraksti</string>
     <string name="pref_on_device_ai_short_prompts_summary">Apraksta ekrānā tiek prasīts mazāk informācijas, lai tas atbildētu ātrāk. Izslēdziet šo opciju, lai iegūtu pilnīgākus aprakstus.</string>
-    <string name="pref_on_device_ai_gpu">Izmantojiet GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Var būt ātrāks un izmantot mazāk atmiņas. Ja atbildes neizdodas, izslēdziet to.</string>
     <string name="on_device_ai_error_network">Lejupielāde tika pārtraukta. Pārbaudiet savienojumu un mēģiniet vēlreiz. Tas turpinās tur, kur apstājās.</string>
     <string name="on_device_ai_error_http">Lejupielādes serveris nepieņēma pieprasījumu. Vēlāk mēģiniet vēlreiz vai importējiet failu.</string>
     <string name="on_device_ai_error_corrupt">Fails neatbilda paredzētajam modelim un tika izdzēsts. Mēģiniet vēlreiz.</string>

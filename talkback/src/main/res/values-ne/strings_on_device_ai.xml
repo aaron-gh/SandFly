@@ -55,10 +55,9 @@
         <item quantity="one">%1$d मिनेट</item>
         <item quantity="other">%1$d मिनेट</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">प्रोसेसर</string>
     <string name="pref_on_device_ai_short_prompts">छोटो स्क्रिन विवरणहरू</string>
     <string name="pref_on_device_ai_short_prompts_summary">वर्णन स्क्रिनले कम विवरणहरूको लागि सोध्छ, त्यसैले यसले चाँडै जवाफ दिन्छ। पूर्ण विवरणहरूको लागि यसलाई बन्द गर्नुहोस्।</string>
-    <string name="pref_on_device_ai_gpu">GPU प्रयोग गर्नुहोस्</string>
-    <string name="pref_on_device_ai_gpu_summary">छिटो र कम मेमोरी प्रयोग गर्न सकिन्छ। यदि जवाफहरू असफल भएमा, यसलाई बन्द गर्नुहोस्।</string>
     <string name="on_device_ai_error_network">डाउनलोड रोकियो। आफ्नो जडान जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्। जहाँ रोकिएको थियो त्यहीँ जारी रहनेछ।</string>
     <string name="on_device_ai_error_http">डाउनलोड सर्भरले अनुरोध स्वीकार गरेन। पछि पुन: प्रयास गर्नुहोस्, वा यसको सट्टा फाइल आयात गर्नुहोस्।</string>
     <string name="on_device_ai_error_corrupt">फाइल अपेक्षित मोडेलसँग मेल खाएन र मेटियो। पुन: प्रयास गर्नुहोस्।</string>

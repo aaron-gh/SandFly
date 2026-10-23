@@ -22,5 +22,7 @@ import java.io.File
 object WhisperEngines {
   @JvmStatic fun isAvailable(): Boolean = false
 
-  fun transcriber(file: File): SpeechTranscriber? = null
+  fun gpuAvailable(): Boolean = false
+
+  fun transcriber(file: File, gpu: Boolean): SpeechTranscriber? = null
 }

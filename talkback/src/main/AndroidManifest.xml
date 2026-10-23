@@ -167,9 +167,12 @@
             android:exported="false"
             android:process=":ondeviceai" />
 
-        <!-- The on-device model can run on the GPU when these are present. -->
+        <!-- On-device models can run on the GPU when these are present: on-device AI and Whisper. -->
         <uses-native-library android:name="libvndksupport.so" android:required="false" />
         <uses-native-library android:name="libOpenCL.so" android:required="false" />
+        <!-- On-device AI can run on the NPU of Google Tensor chips with these. -->
+        <uses-native-library android:name="libedgetpu_litert.so" android:required="false" />
+        <uses-native-library android:name="libedgetpu_util.so" android:required="false" />
 
         <!-- Allows local profiling on release builds -->
         <profileable android:shell="true" />

@@ -57,10 +57,9 @@
         <item quantity="few">%1$d minute</item>
         <item quantity="other">%1$d minuta</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Procesor</string>
     <string name="pref_on_device_ai_short_prompts">Kraći opisi ekrana</string>
     <string name="pref_on_device_ai_short_prompts_summary">Opisivanje ekrana traži manje detalja, pa brže daje odgovor. Isključite za potpunije opise.</string>
-    <string name="pref_on_device_ai_gpu">Koristi GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Može biti brže i koristiti manje memorije. Ako odgovori ne uspijevaju, isključite ovo.</string>
     <string name="on_device_ai_error_network">Preuzimanje je zaustavljeno. Provjerite vezu i pokušajte ponovo. Nastavit će se odakle je stalo.</string>
     <string name="on_device_ai_error_http">Server za preuzimanje nije prihvatio zahtjev. Pokušajte ponovo kasnije ili umjesto toga uvezite fajl.</string>
     <string name="on_device_ai_error_corrupt">Fajl se nije podudarao s očekivanim modelom i izbrisan je. Pokušajte ponovo.</string>

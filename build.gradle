@@ -75,6 +75,9 @@ android {
             // On-device AI only runs on arm64-v8a (see OnDeviceAiSettings), so its 26 MB library
             // would never load on x86_64.
             excludes += ['lib/x86_64/liblitertlm_jni.so']
+            // Whisper's GPU build links against a libOpenCL.so made only for linking. The phone's own
+            // driver must be the one loaded.
+            excludes += ['lib/*/libOpenCL.so']
         }
     }
     lint {

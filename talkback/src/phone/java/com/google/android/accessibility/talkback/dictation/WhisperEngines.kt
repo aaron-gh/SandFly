@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.dictation
 
+import com.google.android.accessibility.talkback.acceleration.Accelerators
 import com.google.android.accessibility.whisper.WhisperModel
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
@@ -28,11 +29,15 @@ object WhisperEngines {
 
   @JvmStatic fun isAvailable(): Boolean = true
 
+  /** Whether Whisper can run on this phone's GPU: an Adreno GPU with an OpenCL driver. */
+  fun gpuAvailable(): Boolean = Accelerators.hasAdrenoOpenCl
+
   /**
-   * Transcribes with the model in [file]. The model is loaded for each transcription and closed
-   * after it, so that it takes no memory between dictations.
+   * Transcribes with the model in [file], on the GPU when [gpu] is true and it can. The model is
+   * loaded for each transcription and closed after it, so that it takes no memory between
+   * dictations.
    */
-  fun transcriber(file: File): SpeechTranscriber? =
+  fun transcriber(file: File, gpu: Boolean): SpeechTranscriber? =
     object : SpeechTranscriber {
       @Volatile private var model: WhisperModel? = null
       @Volatile private var cancelled = false
@@ -41,7 +46,7 @@ object WhisperEngines {
         if (cancelled) return null
         val loaded =
           try {
-            WhisperModel.load(file)
+            WhisperModel.load(file, gpu && gpuAvailable())
           } catch (e: IOException) {
             LogUtils.e(TAG, "Could not load %s: %s", file.name, e)
             return null

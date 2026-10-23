@@ -33,14 +33,12 @@ class OnDeviceAiSettingsTest {
   }
 
   @Test
-  fun providerModelAndGpuAreRemembered() {
+  fun providerAndModelAreRemembered() {
     val prefs = FakeSharedPreferences()
     OnDeviceAiSettings.setOnDevice(prefs, true)
     OnDeviceAiSettings.setPreferredModel(prefs, LocalModel.E4B)
-    OnDeviceAiSettings.setUseGpu(prefs, true)
     assertTrue(OnDeviceAiSettings.isOnDevice(prefs))
     assertEquals(LocalModel.E4B, OnDeviceAiSettings.preferredModel(prefs))
-    assertTrue(OnDeviceAiSettings.useGpu(prefs))
     OnDeviceAiSettings.setOnDevice(prefs, false)
     assertFalse(OnDeviceAiSettings.isOnDevice(prefs))
   }
@@ -76,7 +74,7 @@ class OnDeviceAiSettingsTest {
     val model = OnDeviceAiSettings.defaultModel(4 * gib)
     assertTrue(OnDeviceAiSettings.fits(model, 4 * gib))
     val largest =
-      LocalModel.entries.filter { OnDeviceAiSettings.fits(it, 4 * gib) }.maxOf { it.sizeBytes }
+      LocalModel.choices.filter { OnDeviceAiSettings.fits(it, 4 * gib) }.maxOf { it.sizeBytes }
     assertEquals(largest, model.sizeBytes)
   }
 
@@ -156,5 +154,20 @@ class OnDeviceAiSettingsTest {
     assertFalse(OnDeviceAiSettings.shortPrompts(prefs))
     OnDeviceAiSettings.setShortPrompts(prefs, true)
     assertTrue(OnDeviceAiSettings.shortPrompts(prefs))
+  }
+
+  @Test
+  fun theCpuIsUsedWhereNothingElseCanRunModels() {
+    // The test machine has no OpenCL driver or Tensor NPU that Android lists for apps.
+    val prefs = FakeSharedPreferences()
+    OnDeviceAiSettings.setProcessor(prefs, OnDeviceAiSettings.Processor.GPU)
+    assertEquals(OnDeviceAiSettings.Processor.CPU, OnDeviceAiSettings.processor(prefs))
+    assertEquals(listOf(OnDeviceAiSettings.Processor.CPU), OnDeviceAiSettings.availableProcessors())
+  }
+
+  @Test
+  fun npuModelsAreNotChoices() {
+    assertTrue(LocalModel.choices.none { it.npuChip != null })
+    assertEquals(2, LocalModel.entries.count { it.npuChip != null })
   }
 }

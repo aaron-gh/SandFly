@@ -55,10 +55,9 @@
         <item quantity="one">%1$d минута</item>
         <item quantity="other">%1$d минути</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Процесор</string>
     <string name="pref_on_device_ai_short_prompts">По-кратки описания на екрана</string>
     <string name="pref_on_device_ai_short_prompts_summary">„Описание на екрана“ изисква по-малко подробности, така че отговорът идва по-бързо. Изключете за по-пълни описания.</string>
-    <string name="pref_on_device_ai_gpu">Използване на графичния процесор</string>
-    <string name="pref_on_device_ai_gpu_summary">Може да е по-бързо и да използва по-малко памет. Ако отговорите не успяват, изключете тази настройка.</string>
     <string name="on_device_ai_error_network">Изтеглянето спря. Проверете връзката си и опитайте отново. То ще продължи оттам, където е спряло.</string>
     <string name="on_device_ai_error_http">Сървърът за изтегляне не прие заявката. Опитайте отново по-късно или вместо това импортирайте файл.</string>
     <string name="on_device_ai_error_corrupt">Файлът не съответства на очаквания модел и бе изтрит. Опитайте отново.</string>

@@ -55,10 +55,9 @@
         <item quantity="one">%1$d minutt</item>
         <item quantity="other">%1$d minutter</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">Prosessor</string>
     <string name="pref_on_device_ai_short_prompts">Kortere skjermbeskrivelser</string>
     <string name="pref_on_device_ai_short_prompts_summary">Beskriv skjermen ber om færre detaljer, så den svarer raskere. Slå av dette for mer fullstendige beskrivelser.</string>
-    <string name="pref_on_device_ai_gpu">Bruk GPU</string>
-    <string name="pref_on_device_ai_gpu_summary">Kan være raskere og bruke mindre minne. Hvis svar mislykkes, slå dette av.</string>
     <string name="on_device_ai_error_network">Nedlastingen stoppet. Sjekk tilkoblingen og prøv igjen. Den vil fortsette der den stoppet.</string>
     <string name="on_device_ai_error_http">Nedlastingsserveren godtok ikke forespørselen. Prøv igjen senere, eller importer en fil i stedet.</string>
     <string name="on_device_ai_error_corrupt">Filen samsvarte ikke med den forventede modellen og ble slettet. Prøv igjen.</string>

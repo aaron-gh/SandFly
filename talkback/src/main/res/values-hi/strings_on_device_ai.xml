@@ -55,10 +55,9 @@
         <item quantity="one">%1$d मिनट</item>
         <item quantity="other">%1$d मिनट</item>
     </plurals>
+    <string name="pref_on_device_ai_processor">प्रोसेसर</string>
     <string name="pref_on_device_ai_short_prompts">स्क्रीन के बारे में छोटी जानकारी</string>
     <string name="pref_on_device_ai_short_prompts_summary">\'स्क्रीन के बारे में जानकारी सुनें\' कम जानकारी मांगता है, ताकि जवाब जल्दी मिले. पूरी जानकारी के लिए इसे बंद करें.</string>
-    <string name="pref_on_device_ai_gpu">GPU इस्तेमाल करें</string>
-    <string name="pref_on_device_ai_gpu_summary">यह तेज़ हो सकता है और कम मेमोरी इस्तेमाल कर सकता है. जवाब न मिलें, तो इसे बंद करें.</string>
     <string name="on_device_ai_error_network">डाउनलोड रुक गया. अपना कनेक्शन जांचें और फिर से कोशिश करें. डाउनलोड वहीं से आगे चलेगा जहां रुका था.</string>
     <string name="on_device_ai_error_http">डाउनलोड सर्वर ने अनुरोध स्वीकार नहीं किया. बाद में फिर से कोशिश करें, या इसके बजाय कोई फ़ाइल इंपोर्ट करें.</string>
     <string name="on_device_ai_error_corrupt">फ़ाइल, अनुमानित मॉडल से मेल नहीं खाती थी, इसलिए उसे मिटा दिया गया. फिर से कोशिश करें.</string>
