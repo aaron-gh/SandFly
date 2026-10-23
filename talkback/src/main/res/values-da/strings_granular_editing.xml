@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Granuleret redigering</string>
+    <string name="granular_editing_split_by">Opdelt efter: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Split af</string>
+    <string name="granular_editing_characters">Tegn</string>
+    <string name="granular_editing_words">Ord</string>
+    <string name="granular_editing_sentences">Sætninger</string>
+    <string name="granular_editing_lines">Linjer</string>
+    <string name="granular_editing_paragraphs">Afsnit</string>
+    <string name="granular_editing_space">Mellemrum</string>
+    <string name="granular_editing_new_line">Ny linje</string>
+    <string name="granular_editing_tab">Tabulatortegn</string>
+    <string name="granular_editing_empty">Ingen tekst. Brug Tilføj tekst til sidst i Mere.</string>
+    <string name="granular_editing_edit">Rediger</string>
+    <string name="granular_editing_insert_before">Indsæt før</string>
+    <string name="granular_editing_insert_after">Indsæt efter</string>
+    <string name="granular_editing_delete">Slet</string>
+    <string name="granular_editing_select">Markér</string>
+    <string name="granular_editing_unselect">Fravælg</string>
+    <string name="granular_editing_selected">Valgt</string>
+    <string name="granular_editing_save">Gem</string>
+    <string name="granular_editing_more">Mere</string>
+    <string name="granular_editing_undo">Fortryd</string>
+    <string name="granular_editing_redo">Gentag den sidste fortrydede redigering</string>
+    <string name="granular_editing_find">Find</string>
+    <string name="granular_editing_find_next">Find næste</string>
+    <string name="granular_editing_replace">Udskift</string>
+    <string name="granular_editing_replace_with">Udskift med</string>
+    <string name="granular_editing_replace_all">Udskift alle</string>
+    <string name="granular_editing_add_at_end">Tilføj tekst til sidst</string>
+    <string name="granular_editing_clear_selection">Ryd markering</string>
+    <string name="granular_editing_cut_selected">Klip den markerede tekst</string>
+    <string name="granular_editing_delete_selected">Slet valgte</string>
+    <string name="granular_editing_copied">Kopieret</string>
+    <string name="granular_editing_deleted">Slettet</string>
+    <string name="granular_editing_not_found">Ikke fundet</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> udskiftet</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> udskiftet</item>
+    </plurals>
+    <string name="granular_editing_save_changes">Vil du gemme ændringer?</string>
+    <string name="granular_editing_copy_changes">Vil du kopiere den ændrede tekst?</string>
+    <string name="granular_editing_discard">Kassér</string>
+    <string name="granular_editing_keep_editing">Fortsæt redigering</string>
+    <string name="granular_editing_not_saved">Ikke gemt: tekstfeltet er væk. Teksten er kopieret.</string>
+    <string name="granular_editing_no_text">Ingen tekst at redigere</string>
+    <string name="granular_editing_password">Ikke tilgængelig i adgangskodefelter</string>
+</resources>
