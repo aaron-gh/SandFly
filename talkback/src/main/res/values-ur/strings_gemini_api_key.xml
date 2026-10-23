@@ -5,14 +5,14 @@
     <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey پر Google AI اسٹوڈیو سے مفت API کلید حاصل کریں اور اسے یہاں پیسٹ کریں۔ اپنی کلید کو ہٹانے کے لیے، فیلڈ کو صاف کریں اور محفوظ کریں۔\n\nوہ تصاویر اور اسکرینیں جو آپ بیان کرتے ہیں Google پر بھیجی جاتی ہیں۔ مفت درجے پر، Google اپنی مصنوعات کو بہتر بنانے کے لیے ان کا استعمال کر سکتا ہے۔</string>
     <string name="gemini_api_key_hint">API کلید</string>
     <string name="gemini_api_key_save">محفوظ کریں</string>
-    <string name="gemini_api_key_get">ایک چابی حاصل کریں۔</string>
+    <string name="gemini_api_key_get">ایک چابی حاصل کریں</string>
     <string name="title_pref_gemini_model">Gemini ماڈل</string>
     <string name="gemini_model_automatic">خودکار</string>
-    <string name="summary_pref_gemini_model_automatic">خودکار: Gemini فلیش، پھر فلیش-لائٹ جب فلیش مصروف ہو۔</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>، پھر Flash-Lite جب یہ مصروف ہو۔</string>
+    <string name="summary_pref_gemini_model_automatic">خودکار: Gemini فلیش، پھر فلیش-لائٹ جب فلیش مصروف ہو</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>، پھر Flash-Lite جب یہ مصروف ہو</string>
     <string name="gemini_model_loading">ماڈلز حاصل کر رہے ہیں…</string>
     <string name="gemini_model_list_failed">ماڈلز حاصل نہیں کر سکے: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">پہلے ایک Gemini API کلید سیٹ کریں۔</string>
+    <string name="gemini_model_needs_key">پہلے ایک Gemini API کلید سیٹ کریں</string>
     <string name="gemini_api_terms_link">Gemini API سروس کی اضافی شرائط</string>
     <string name="ai_service_address_hint">پتہ، جیسے https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">ماڈل</string>
@@ -36,19 +36,19 @@
     <string name="title_pref_category_ai_services">AI خدمات</string>
     <string name="title_pref_ai_provider">اے آئی سروس</string>
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> ترتیبات</string>
-    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>، سیٹ اپ نہیں ہے۔</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>، سیٹ اپ نہیں ہے</string>
     <string name="ai_provider_in_use">استعمال میں</string>
     <string name="ai_provider_not_set_up">سیٹ اپ نہیں</string>
-    <string name="ai_provider_not_ready">پہلے ایک ماڈل کا انتخاب کریں۔</string>
+    <string name="ai_provider_not_ready">پہلے ایک ماڈل کا انتخاب کریں</string>
     <string name="ai_provider_address">پتہ</string>
     <string name="ai_provider_address_message">OpenAI-مطابق چیٹ API اور امیج ان پٹ کے ساتھ سروس کا پتہ، جیسے https://example.com/v1.</string>
-    <string name="ai_provider_not_set">سیٹ نہیں ہے۔</string>
+    <string name="ai_provider_not_set">سیٹ نہیں ہے</string>
     <string name="ai_provider_set">تشکیل شدہ</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API کلید</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ماڈل</string>
-    <string name="ai_provider_choose_model">منتخب نہیں کیا گیا۔</string>
+    <string name="ai_provider_choose_model">منتخب نہیں کیا گیا</string>
     <string name="ai_provider_key_message">اپنی <xliff:g id="service" example="Claude">%1$s</xliff:g> API کلید چسپاں کریں۔ اسے ہٹانے کے لیے، فیلڈ کو صاف کریں اور محفوظ کریں۔ وہ تصاویر اور اسکرینیں جو آپ بیان کرتے ہیں <xliff:g id="service" example="Claude">%1$s</xliff:g> پر بھیجی جاتی ہیں۔</string>
-    <string name="ai_provider_needs_key">پہلے <xliff:g id="service" example="Claude">%1$s</xliff:g> API کلید سیٹ کریں۔</string>
-    <string name="ai_provider_needs_address">پہلے ایڈریس سیٹ کریں۔</string>
-    <string name="ai_provider_enter_model">ماڈل کا نام درج کریں۔</string>
+    <string name="ai_provider_needs_key">پہلے <xliff:g id="service" example="Claude">%1$s</xliff:g> API کلید سیٹ کریں</string>
+    <string name="ai_provider_needs_address">پہلے ایڈریس سیٹ کریں</string>
+    <string name="ai_provider_enter_model">ماڈل کا نام درج کریں</string>
 </resources>

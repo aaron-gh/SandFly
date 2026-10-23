@@ -69,7 +69,7 @@
   <string name="summary_pref_allow_frequent_content_change_announcement">ダウンロード、運転ルートの検索などを行っている間の更新を含みます。OFF にしても頻度を下げて更新は読み上げられます。</string>
   <string name="title_pref_explore_by_touch">タッチガイド</string>
   <string name="title_pref_category_controls">コントロール</string>
-  <string name="title_pref_category_reduce_latency_summary">これらの設定により、画面に触れた後の SandFly の反応が速くなります。</string>
+  <string name="title_pref_category_reduce_latency_summary">これらの設定により、画面に触れた後の SandFly の反応が速くなります</string>
   <string name="reset_latency_settings_title">遅延の設定をすべてリセット</string>
   <string name="title_pref_single_tap">シングルタップで有効化</string>
   <string name="summary_pref_single_tap">フォーカスのあるアイテムを 1 回タップすると有効にできます。ダブルタップよりもすばやく操作できます。</string>
@@ -697,7 +697,7 @@
   <string name="dialog_title_diagnosis_mode">診断モードを有効にしますか？</string>
   <string name="dialog_message_diagnosis_mode">診断モードはデバッグをする場合に便利です。診断モードでは 4 本指でのジェスチャー タップをオーバーライドし、画面コンテンツをシステムログに記録します。画面コンテンツには個人情報が含まれる可能性があります。\n\n診断モードを有効にしますか？</string>
   <string name="title_request_phone_permission">スマートフォンへのアクセスを許可しますか？</string>
-  <string name="message_request_phone_permission">これにより、通話中に SandFly からの通知が少なくなります。</string>
+  <string name="message_request_phone_permission">これにより、通話中に SandFly からの通知が少なくなります</string>
   <string name="continue_button">続行</string>
   <string name="links">リンク</string>
   <string name="start_of_page">前の%1$sはありません</string>
@@ -754,7 +754,7 @@
   <string name="title_pref_a11y_volume">ユーザー補助機能の音量</string>
   <string name="title_pref_touch_explore_latency">入力フォーカス遅延</string>
   <string name="title_pref_touch_focus_latency">フォーカス遅延</string>
-  <string name="message_pref_touch_focus_latency">遅延を短くすると、画面をタッチした後、SandFly が早く話します。</string>
+  <string name="message_pref_touch_focus_latency">遅延を短くすると、画面をタッチした後、SandFly が早く話します</string>
   <string name="message_pref_typing_method_prefix">入力時の遅延を最小限に抑えるには、[指でキーを選択してから離す] を選択します</string>
   <string name="message_pref_typing_method_postfix">また、いつでもスプリット タップを使用して入力できます。これを行うには、1 本の指でキーのいずれかを長押しし、別の指で画面をタップします。</string>
   <string name="title_pref_talkback_speech_rate">音声の速度</string>
@@ -1381,7 +1381,7 @@
     <string name="shortcut_reserved_for_vibration_watch">詳細設定の Vibration Watch 用に予約されています</string>
     <string name="title_pref_speakerphone_away_from_ear">スピーカーを耳から離したとき</string>
     <string name="summary_pref_speakerphone_away_from_ear">通話中に電話機を耳から離すとスピーカーに切り替わり、再び持ち上げると受話口に戻ります。</string>
-    <string name="summary_pref_speakerphone_needs_permission">Android がスクリーン リーダーに与えない許可が必要です。許可するには、adb or Shizuku, then come back to this screen: %1$s を指定してこのコマンドを実行します。</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android がスクリーン リーダーに与えない許可が必要です。許可するには、adb or Shizuku, then come back to this screen: %1$s を指定してこのコマンドを実行します</string>
     <string name="action_copy_command">コピーコマンド</string>
     <string name="command_copied">コマンドがコピーされました</string>
     <string name="title_pref_speech_control">他のアプリに話しかけてもらう</string>
@@ -1400,7 +1400,7 @@
     <string name="title_pref_phonetic_letters_mode">文字を音声的に話す</string>
     <string name="phonetic_letters_mode_off">OFF</string>
     <string name="phonetic_letters_mode_after_letter_delay">手紙の後で、「えー、ホテル」のように遅れて</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">手紙の後は、「h ホテル」のように遅延はありません。</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">手紙の後は、「h ホテル」のように遅延はありません</string>
     <string name="phonetic_letters_mode_instead_of_letter">文字の代わりに「ホテル」みたいに</string>
     <string name="title_pref_emoji_speech">絵文字</string>
     <string name="emoji_speech_engine">音声エンジンによる読み上げ</string>
@@ -1618,7 +1618,7 @@
     <string name="shortcut_decrease_media_volume">メディアの音量を下げる</string>
     <string name="title_clear_selection">選択をクリア</string>
     <string name="title_pref_brightness">明るさ</string>
-    <string name="summary_support_change_brightness">画面が隠れている場合でも、画面の明るさを増減します。</string>
+    <string name="summary_support_change_brightness">画面が隠れている場合でも、画面の明るさを増減します</string>
     <string name="title_pref_shortcut_3finger_4tap">3本指で4回タップ</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">2本の指で時計回りに回転させます</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">2本の指で反時計回りに回転</string>

@@ -788,7 +788,7 @@
   <string name="dialog_message_continuous_reading_mode">«ከላይ አንብብ» ወይም «ከተተኮረው ንጥል ጀምሮ አንብብ» ከመረጡ በኋላ አሁንም ጽሑፉ እየተነበበ ሳለ ወደ ቀዳሚው ወይም ቀጣዩ ንጥል መሄድ ይችላሉ። ይህ በቀላሉ ወደኋላ እንዲመለሱ ወይም ወደፊት እንዲዘልሉ ያስችልዎታል።\n\nSandFly በሚናገርበት ጊዜ የድምጹን መጠን ለማስተካከል ድምፅ ጨምር ወይም ድምፅ ቀንስ የሚለውን ቁልፍ ይጫኑ።</string>
   <string name="always_show_this_message_label">ይህን መልዕክት ሁልጊዜ አሳይ</string>
   <string name="dialog_title_voice_commands">SandFlyን ለመቆጣጠር የድምፅ ትዕዛዞችን ይጠቀሙ</string>
-  <string name="dialog_message_voice_commands">ሊሏቸው የሚችሏቸው አንዳንድ ነገሮች እነሆ፦\n\n• ቅዳ\n• ትኩረት ከተሰጠው ንጥል ጀምሮ አንብብ\n• [አስቀምጥ]ን ያግኙ\n• [በፍጥነት] ተናገር\n• የSandFly ቅንብሮች\n\nለሁሉም የድምፅ ትዕዛዞች ዝርዝር «<xliff:g id="voice_help_cmd" example="help">%1$s</xliff:g>» ይበሉ።</string>
+  <string name="dialog_message_voice_commands">ሊሏቸው የሚችሏቸው አንዳንድ ነገሮች እነሆ፦\n\n• ቅዳ\n• ትኩረት ከተሰጠው ንጥል ጀምሮ አንብብ\n• [አስቀምጥ]ን ያግኙ\n• [በፍጥነት] ተናገር\n• የSandFly ቅንብሮች\n\nለሁሉም የድምፅ ትዕዛዞች ዝርዝር «<xliff:g id="voice_help_cmd" example="help">%1$s</xliff:g>» ይበሉ</string>
   <string name="start_voice_command">የድምፅ ትዕዛዞችን ይጠቀሙ</string>
   <string name="dialog_title_pass_through_mode">የሥርዓቱን ምልክቶች ለመጠቀም የSandFly ምልክቶችን ይዝለሉ</string>
   <string name="dialog_message_pass_through_mode">ቃጭል ሲሰሙ በSandFly የማይደገፍ የስርዓት ምልክትን መጠቀም ይችላሉ። ይህ በምልክት ማለፍ በመባል ይታወቃል።</string>
@@ -1199,7 +1199,7 @@
   <string name="confirm_download_all_image_captioning_message">በሚደገፉ መተግበሪያዎች ውስጥ ምስል ወይም አዶ ላይ ሲያተኩሩ አጭር መግለጫ ይሰማሉ</string>
   <string name="confirm_download_checkbox_text">ይህን በድጋሚ አታሳይ</string>
   <string name="confirm_download_positive_button_text">አውርድ</string>
-  <string name="confirm_download_negative_button_hint">SandFly አሁንም በምስሎች ውስጥ ጽሁፍን መግለጽ ይችላል።</string>
+  <string name="confirm_download_negative_button_hint">SandFly አሁንም በምስሎች ውስጥ ጽሁፍን መግለጽ ይችላል</string>
   <string name="downloading_icon_detection_hint">ራስ-ሰር የአዶ መግለጫዎችን በማውረድ ላይ</string>
   <string name="download_icon_detection_successful_hint">የአዶ መግለጫዎች ወርደዋል</string>
   <string name="download_icon_detection_failed_hint">ራስ-ሰር የአዶ መግለጫዎችን ማውረድ አልተቻለም</string>
@@ -1612,15 +1612,15 @@
     <string name="quick_settings_screen_timeout">የማያ ገጽ ጊዜ አለቀ</string>
     <string name="quick_settings_font_size">የቅርጸ ቁምፊ መጠን</string>
     <string name="quick_settings_media">ሚዲያ</string>
-    <string name="quick_settings_no_media">ሚዲያ የለም።</string>
+    <string name="quick_settings_no_media">ሚዲያ የለም</string>
     <string name="quick_settings_media_output">የሚዲያ ውጤት</string>
     <string name="quick_settings_next_alarm">ቀጣይ ማንቂያ</string>
-    <string name="quick_settings_no_alarm">ማንቂያ የለም።</string>
+    <string name="quick_settings_no_alarm">ማንቂያ የለም</string>
     <string name="quick_settings_settings">ቅንብሮች</string>
     <string name="quick_settings_power_menu">የኃይል ምናሌ</string>
     <string name="quick_settings_add_system_tile">የስርዓት ንጣፍ አክል</string>
     <string name="quick_settings_no_system_tiles">ምንም የሚታከሉ የስርዓት ሰቆች የሉም</string>
-    <string name="quick_settings_tile_not_found">%1$s በስርዓቱ ፈጣን መቼቶች ውስጥ የለም።</string>
+    <string name="quick_settings_tile_not_found">%1$s በስርዓቱ ፈጣን መቼቶች ውስጥ የለም</string>
     <string name="quick_settings_never">በጭራሽ</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d ሰከንድ</item>
@@ -1630,7 +1630,7 @@
         <item quantity="one">%d ደቂቃ</item>
         <item quantity="other">%d ደቂቃዎች</item>
     </plurals>
-    <string name="quick_settings_connected">ተገናኝቷል።</string>
+    <string name="quick_settings_connected">ተገናኝቷል</string>
     <string name="quick_settings_battery">ባትሪ</string>
     <string name="quick_settings_battery_charging">%1$s፣ በመሙላት ላይ</string>
     <string name="quick_settings_battery_full">%1$s፣ ተከሷል</string>
@@ -1657,7 +1657,7 @@
         <item quantity="other">%d ሌሎች ነገሮች ተንቀሳቅሰዋል</item>
     </plurals>
     <string name="quick_settings_remove">አስወግድ</string>
-    <string name="quick_settings_added">%1$s ታክሏል።</string>
+    <string name="quick_settings_added">%1$s ታክሏል</string>
     <string name="quick_settings_removed">%1$s ተወግዷል</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">የአሰሳ ሁነታን ለማብራት ወይም ለማጥፋት ሌላ አቋራጭ</string>
     <string name="title_pref_vibration_strength">የንዝረት ጥንካሬ</string>
@@ -1666,10 +1666,10 @@
     <string name="title_pref_reading_control_letters">በእጅ የሚጻፉ ፊደሎች</string>
     <string name="reading_control_letter_none">ምንም</string>
     <string name="handwriting_prompt">ፊደል ጻፍ</string>
-    <string name="handwriting_closed">የእጅ ጽሑፍ ተዘግቷል።</string>
+    <string name="handwriting_closed">የእጅ ጽሑፍ ተዘግቷል</string>
     <string name="handwriting_no_match">ምንም የንባብ ቁጥጥር በ <xliff:g id="letter" example="Q">%1$s</xliff:g> አይጀምርም</string>
-    <string name="handwriting_not_recognized">የእጅ ጽሑፍ አልታወቀም።</string>
-    <string name="handwriting_downloading">የእጅ ጽሑፍ ማወቂያ እየወረደ ነው።</string>
+    <string name="handwriting_not_recognized">የእጅ ጽሑፍ አልታወቀም</string>
+    <string name="handwriting_downloading">የእጅ ጽሑፍ ማወቂያ እየወረደ ነው</string>
     <string name="handwriting_download_title">የእጅ ጽሑፍ ማወቂያ ይውረድ?</string>
     <string name="handwriting_download_message">የእጅ ጽሑፍ በዚህ ስልክ ይታወቃል። የዚህ ቋንቋ ሞዴል፣ ወደ 20 ሜባ አካባቢ፣ ከGoogle አንድ ጊዜ ወርዷል። አንድ መልእክት ሲወርድ ያሳያል።</string>
     <string name="handwriting_download_button">አውርድ</string>
@@ -1744,8 +1744,8 @@
     <string name="shortcut_dictate">በቃል አስጽፍ</string>
     <string name="title_pref_ai_dictation">ከ AI ጋር ትክክለኛ መግለጫ</string>
     <string name="dictation_not_corrected">አልተስተካከለም። እንደታወቀ የተተየበው።</string>
-    <string name="dictation_nothing_recognized">ምንም የታወቀ ነገር የለም።</string>
-    <string name="dictation_unavailable">የንግግር ማወቂያ የለም።</string>
+    <string name="dictation_nothing_recognized">ምንም የታወቀ ነገር የለም</string>
+    <string name="dictation_unavailable">የንግግር ማወቂያ የለም</string>
     <string name="dictation_field_gone">የጽሑፍ መስክ ተዘግቷል። ምንም የተተየበ የለም።</string>
     <string name="dictation_transcription_failed">ንግግሩ ወደ ጽሑፍ አልተቀየረም። ምንም የተተየበ የለም።</string>
     <string name="title_pref_dictation">በቃል ማስጻፍ</string>
@@ -1766,8 +1766,8 @@
     <string name="title_pref_browse_mode_per_app">በእያንዳንዱ መተግበሪያ ውስጥ የአሰሳ ሁነታን ያስታውሱ</string>
     <string name="title_pref_export_settings">ቅንጅቶችን ወደ ውጪ ላክ</string>
     <string name="title_pref_import_settings">አስመጣ ቅንብሮች</string>
-    <string name="settings_export_done">ቅንብሮች ወደ ውጭ ተልከዋል። የኤፒአይ ቁልፎች አልተካተቱም።</string>
+    <string name="settings_export_done">ቅንብሮች ወደ ውጭ ተልከዋል። የኤፒአይ ቁልፎች አልተካተቱም</string>
     <string name="settings_export_failed">ቅንብሮችን ወደ ውጭ መላክ አልተቻለም</string>
-    <string name="settings_import_done">ቅንብሮች መጥተዋል።</string>
+    <string name="settings_import_done">ቅንብሮች መጥተዋል</string>
     <string name="settings_import_failed">ይህ ፋይል SandFly ወይም Backtalk የቅንብር ፋይል አይደለም፣ ወይም ሊነበብ አይችልም</string>
 </resources>
