@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">பிரெய்ல் கீபோர்டு</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack பிரெய்ல் கீபோர்டு கிடைக்கவில்லை</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack பிரெய்ல் கீபோர்டை இயக்குதல்</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly பிரெய்ல் கீபோர்டு கிடைக்கவில்லை</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly பிரெய்ல் கீபோர்டை இயக்குதல்</string>
   <string name="bd_ime_disabled_dialog_message">பிரெய்ல் காட்சியைப் பயன்படுத்தி டைப் செய்ய, உள்ளீட்டு அமைப்புகளுக்குச் சென்று அதை இயக்குங்கள்</string>
   <string name="bd_ime_disabled_dialog_title_positive">உள்ளீட்டு அமைப்புகள்</string>
   <string name="bd_ime_not_default_dialog_title">உள்ளீட்டு முறையை மாற்றுதல்</string>
-  <string name="bd_ime_not_default_dialog_message">தொடர்ந்து டைப் செய்ய, TalkBack பிரெய்ல் கீபோர்டை உங்கள் உள்ளீட்டு முறையாக அமையுங்கள்</string>
+  <string name="bd_ime_not_default_dialog_message">தொடர்ந்து டைப் செய்ய, SandFly பிரெய்ல் கீபோர்டை உங்கள் உள்ளீட்டு முறையாக அமையுங்கள்</string>
   <string name="bd_ime_not_default_dialog_positive">உள்ளீட்டை மாற்றுக</string>
   <string name="type_unlabeled">லேபிளிடப்படாதது</string>
   <string name="type_unlabeled_edittext">லேபிளிடப்படாத திருத்தும் பெட்டி</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">இடப்புறம் நகர்த்து</string>
   <string name="overlay_pan_right_button">வலப்புறம் நகர்த்து</string>
   <string name="bd_preferences_title">பிரெய்ல் காட்சி</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">பிரெய்ல் காட்சியைப் பயன்படுத்த முதலில் TalkBack அம்சத்தை இயக்குங்கள்</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBackக்குச் செல்</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">பிரெய்ல் காட்சியைப் பயன்படுத்த முதலில் SandFly அம்சத்தை இயக்குங்கள்</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFlyக்குச் செல்</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">பிரெய்ல் காட்சியைப் பயன்படுத்த முதலில் புளூடூத்தை இயக்கவும்</string>
   <string name="bd_preferences_banner_bluetooth_off_button">புளூடூத்தை இயக்கு</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">பிரெய்ல் காட்சியைப் பயன்படுத்த, அருகிலுள்ள சாதனங்களுக்கான அணுகல் %sக்குத் தேவை</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">பிரவுசிங் பயன்முறையைப் பயன்படுத்த, இயல்பு கீ-மேப்பிலிருந்து மேம்பட்ட கீ-மேப்புக்கு மாற வேண்டும். இந்த மாற்றம் உங்கள் பிரெய்ல் காட்சி கட்டளைகளில் சிலவற்றைப் புதுப்பிக்கும்.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">அமைப்புகள்</string>
   <string name="bd_command_change_dialog_title">சில கட்டளைகள் புதுப்பிக்கப்பட்டுள்ளன</string>
-  <string name="bd_command_change_dialog_message">இந்த TalkBack பதிப்பில் இந்த பிரெய்ல் காட்சிக் கட்டளைகள் மாற்றப்பட்டுள்ளன:\n\n• முந்தையது: 1, 7 புள்ளிகளை அழுத்தவும்\n\n• அடுத்தது: 4, 8 புள்ளிகளை அழுத்தவும்\n\n• முந்தைய வாசிப்புக் கட்டுப்பாடு: 2, 3, 7, 8 புள்ளிகளை அழுத்தவும்\n\n• அடுத்த வாசிப்புக் கட்டுப்பாடு: 5, 6, 7, 8 புள்ளிகளை அழுத்தவும்</string>
+  <string name="bd_command_change_dialog_message">இந்த SandFly பதிப்பில் இந்த பிரெய்ல் காட்சிக் கட்டளைகள் மாற்றப்பட்டுள்ளன:\n\n• முந்தையது: 1, 7 புள்ளிகளை அழுத்தவும்\n\n• அடுத்தது: 4, 8 புள்ளிகளை அழுத்தவும்\n\n• முந்தைய வாசிப்புக் கட்டுப்பாடு: 2, 3, 7, 8 புள்ளிகளை அழுத்தவும்\n\n• அடுத்த வாசிப்புக் கட்டுப்பாடு: 5, 6, 7, 8 புள்ளிகளை அழுத்தவும்</string>
   <string name="bd_preference_braille_contracted">சுருக்க வடிவப் பிரெய்ல்</string>
   <string name="bd_preference_braille_uncontracted">வழக்கமான வடிவப் பிரெய்ல்</string>
   <string name="bd_braille_grade_tips">பிரெய்ல் காட்சியைப் பயன்படுத்தி சுருக்க வடிவ மற்றும் வழக்கமான வடிவத்திற்கு இடையே விரைவாக மாற்ற, ஸ்பேஸ் பட்டனையும் 1, 2, 4, 5 ஆகிய புள்ளிகளையும் அழுத்துங்கள்.\n\nஇரண்டு பிரெய்ல் கிரேடுகளிலும் உள்ள மொழியைப் பயன்படுத்தினால் இந்தக் கட்டளை வேலை செய்யும்.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">ஒவ்வொன்றுக்கும் இடையே நகர்த்துதல்</string>
   <string name="bd_commands_bindings_category_system_actions_title">சிஸ்டம் செயல்கள்</string>
   <string name="bd_commands_bindings_category_system_actions_summary">பின்செல்லுதல், முகப்பு, அறிவிப்புகள் மற்றும் பல</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack அம்சங்கள்</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback மெனுக்களும் அமைப்புகளும்</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly அம்சங்கள்</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly மெனுக்கள் மற்றும் அமைப்புகள்</string>
   <string name="bd_commands_bindings_category_braille_settings_title">பிரெய்ல் அமைப்புகள்</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">பிரெய்ல் மொழியும் அமைப்புகளும்</string>
   <string name="bd_commands_bindings_category_text_editing_title">வார்த்தையைத் திருத்துதல்</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">அனைத்து ஆப்ஸையும் திற</string>
   <string name="bd_cmd_toggle_screen_search">திரைத் தேடல் அம்சத்தைத் திற</string>
   <string name="bd_cmd_edit_custom_label">பிரத்தியேக லேபிளைத் திருத்து</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack மெனுவைத் திற</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack பேச்சு அம்சத்தை இயக்கு/முடக்கு</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly மெனுவைத் திற</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly பேச்சு அம்சத்தை இயக்கு/முடக்கு</string>
   <string name="bd_cmd_read_stop">படிப்பதை நிறுத்து</string>
-  <string name="bd_cmd_talkback_settings">TalkBack அமைப்புகளைத் திற</string>
+  <string name="bd_cmd_talkback_settings">SandFly அமைப்புகளைத் திற</string>
   <string name="bd_cmd_switch_to_next_input_language">அடுத்த உள்ளிடும் மொழிக்கு மாற்று</string>
   <string name="bd_cmd_switch_to_next_output_language">வாசிப்பதற்கான அடுத்த மொழிக்கு மாற்று</string>
   <string name="bd_cmd_toggle_contracted_mode">சுருக்க வடிவ மற்றும் வழக்கமான வடிவப் பயன்முறைக்கு இடையே மாற்றும்</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">பிரவுசிங் மோடில் நுழைய, கட்டளையைப் பயன்படுத்தி, பின்வரும் எழுத்து/எண் ஷார்ட்கட்களை டைப் செய்து இணையப் பக்கங்களுக்கு விரைவாகச் செல்லலாம்.\n\nஇந்த ஷார்ட்கட்களை பிரவுசிங் மோடில் நுழையாமலும் பயன்படுத்தலாம், ஆனால் \"அடுத்து\" கட்டளைகளில் புள்ளி 8ஐச் சேர்க்க வேண்டும்.</string>
   <string name="bd_cmd_subcategory_title_web_navigation">அட்டவணையில் வழிசெலுத்துதல்</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">பிரெய்ல் காட்சி அமைப்பை முடக்கவா?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">இதை நீங்கள் எப்போது வேண்டுமானாலும் TalkBack அமைப்புகளில் மீண்டும் இயக்கலாம்</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">இதை நீங்கள் எப்போது வேண்டுமானாலும் SandFly அமைப்புகளில் மீண்டும் இயக்கலாம்</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">ஆஃப் செய்</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">சில கட்டளைகள் செயல்படாது</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">டைப்/எடிட் செய்யும்போது வழிசெலுத்தல், பிரெய்ல் அமைப்புகள் &amp; சில TalkBack அம்சங்களுக்கான கட்டளைகள் செயல்படாது.\n\nஇவற்றைப் பயன்படுத்த முதலில் கீபோர்டை மூடுக.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">டைப்/எடிட் செய்யும்போது வழிசெலுத்தல், பிரெய்ல் அமைப்புகள் &amp; சில SandFly அம்சங்களுக்கான கட்டளைகள் செயல்படாது.\n\nஇவற்றைப் பயன்படுத்த முதலில் கீபோர்டை மூடுக.</string>
   <string name="bd_caption_tutorial_dialog_title">பிரெய்ல் காட்சியில் வசனங்கள்</string>
   <string name="bd_caption_tutorial_dialog_message">வசனங்களைக் காட்ட/மறைக்க space பட்டன் &amp; 1, 4, 7, 8 புள்ளிகளை அழுத்தவும்.\n\nஆதரிக்கப்படும் மீடியாவுக்குத் தானாக வசனங்களைக் காட்ட அமைப்புகளில் \'பிரெய்ல் காட்சியில் வசனங்களைக் காட்டு\' என்பதை இயக்கவும்.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">வசனங்கள் கிடைக்கும்போதெல்லாம் இந்த மெசேஜைக் காட்டு</string>
   <string name="bd_usb_connect_dialog_title">பிரெய்ல் டிஸ்ப்ளே USB போர்ட்டில் இணைக்கப்பட்டுள்ளது</string>
-  <string name="bd_usb_connect_dialog_message">உங்கள் %s இன் பேட்டரி பிரெய்ல் காட்சியைச் சார்ஜ் செய்கிறது.\n\nபுளூடூத்திற்கு மாற்ற விரும்பினால் உங்கள் USB அல்லது USB ஹப்பின் இணைப்பை நீக்கிவிட்டு, TalkBack அமைப்புகள் &gt; பிரெய்ல் காட்சி என்பதற்குச் செல்லுங்கள்.</string>
+  <string name="bd_usb_connect_dialog_message">உங்கள் %s இன் பேட்டரி பிரெய்ல் காட்சியைச் சார்ஜ் செய்கிறது.\n\nபுளூடூத்திற்கு மாற்ற விரும்பினால் உங்கள் USB அல்லது USB ஹப்பின் இணைப்பை நீக்கிவிட்டு, SandFly அமைப்புகள் &gt; பிரெய்ல் காட்சி என்பதற்குச் செல்லுங்கள்.</string>
   <string name="bd_device">மொபைல்</string>
   <string name="bd_battery_low_dialog_title">%s பேட்டரி குறைவு</string>
   <string name="bd_battery_low_dialog_message">உங்கள் %s இன் பேட்டரி பிரெய்ல் காட்சியைச் சார்ஜ் செய்கிறது.\n\nபேட்டரியைச் சேமிக்க:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">அனைத்தையும் அழி</string>
   <string name="popup_message_history_empty">காலியாக உள்ளது</string>
   <string name="popup_message_history_consent_dialog_title">சாதனத்தின் மெசேஜ் பதிவுகளை இயக்கவா?</string>
-  <string name="popup_message_history_consent_dialog_msg">இது அறிவிப்புகள், அலாரங்கள் போன்ற சில மெசேஜ்களை TalkBackகில் சேமிக்கும். எப்போது வேண்டுமானாலும் இந்த அமைப்பை மாற்றலாம்.</string>
+  <string name="popup_message_history_consent_dialog_msg">இது அறிவிப்புகள், அலாரங்கள் போன்ற சில மெசேஜ்களை SandFlyகில் சேமிக்கும். எப்போது வேண்டுமானாலும் இந்த அமைப்பை மாற்றலாம்.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ஆன் செய்</string>
   <string name="popup_message_history_consent_dialog_negative_btn">வேண்டாம்</string>
+    <string name="external_display_channel">பிற பயன்பாடுகளிலிருந்து பிரெய்லி காட்சிகள்</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>ஐ SandFlyக்கு பிரெய்லி காட்சியாக அனுமதிக்கவா?</string>
+    <string name="external_display_ask_text">நீங்கள் அனுமதிக்கும் வரை SandFly அதைப் பயன்படுத்தாது.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> பிரெய்லியில் SandFly காண்பிக்கும் அனைத்தையும் படிக்க முடியும், இது திரையில் உள்ள செய்திகள் மற்றும் நீங்கள் தட்டச்சு செய்வது உட்பட எதுவாகவும் இருக்கலாம். பிரெய்ல் டிஸ்ப்ளே மூலம் உங்களால் முடிந்தவரை உங்கள் சாதனத்தை இது கட்டுப்படுத்த முடியும்: தட்டச்சு செய்து, ஆப்ஸைத் திறந்து, எந்த SandFly கட்டளையையும் இயக்கவும். நீங்கள் நம்பும் ஆப்ஸை மட்டும் அனுமதிக்கவும்.</string>
+    <string name="external_display_allow">அனுமதி</string>
+    <string name="external_display_deny">அனுமதிக்காதே</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> என்பது உங்கள் பிரெயில் காட்சி</string>
+    <string name="external_display_in_use_text">SandFly அதைப் பயன்படுத்தும் போது, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ஆல் திரையைப் படித்து சாதனத்தைக் கட்டுப்படுத்த முடியும்.</string>
+    <string name="external_displays_title">பிற பயன்பாடுகளிலிருந்து காட்சிகள்</string>
+    <string name="external_displays_summary">நீங்கள் அனுமதிக்கும் பயன்பாடுகள் SandFlyக்கான பிரெயில் காட்சிகளாக இருக்கலாம். பிரெயில் காட்சியாக இருக்கும் ஆப்ஸ் திரையைப் படித்து சாதனத்தைக் கட்டுப்படுத்தும்.</string>
+    <string name="external_displays_none">எந்தப் பயன்பாடுகளும் பிரெயில் காட்சிகளாக இருக்க முடியாது.</string>
 </resources>
