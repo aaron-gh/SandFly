@@ -55,7 +55,8 @@ internal object DictationRequests {
     val body =
       JSONObject()
         .put("model", RAMBLER_MODEL)
-        // Not kept on Google's servers after the answer.
+        // Not kept as an interaction to look up later. On the free tier, Google may still use the
+        // audio and text to improve its products; on the paid tier it doesn't.
         .put("store", false)
         .put(
           "input",
