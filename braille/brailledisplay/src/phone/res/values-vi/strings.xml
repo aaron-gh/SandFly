@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Bàn phím phần cứng chữ nổi</string>
   <string name="bd_application_name">Bộ hỗ trợ tiếp cận của Android</string>
-  <string name="bd_ime_unavailable_activity_name">Không dùng được bàn phím chữ nổi TalkBack</string>
-  <string name="bd_ime_disabled_dialog_title">Bật bàn phím chữ nổi TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">Không dùng được bàn phím chữ nổi SandFly</string>
+  <string name="bd_ime_disabled_dialog_title">Bật bàn phím chữ nổi SandFly</string>
   <string name="bd_ime_disabled_dialog_message">Để nhập văn bản bằng màn hình chữ nổi, hãy chuyển đến phần cài đặt phương thức nhập rồi bật màn hình chữ nổi</string>
   <string name="bd_ime_disabled_dialog_title_positive">Cài đặt phương thức nhập</string>
   <string name="bd_ime_not_default_dialog_title">Chuyển đổi phương thức nhập</string>
-  <string name="bd_ime_not_default_dialog_message">Để tiếp tục nhập, hãy đặt bàn phím chữ nổi TalkBack làm phương thức nhập</string>
+  <string name="bd_ime_not_default_dialog_message">Để tiếp tục nhập, hãy đặt bàn phím chữ nổi SandFly làm phương thức nhập</string>
   <string name="bd_ime_not_default_dialog_positive">Chuyển đổi phương thức nhập</string>
   <string name="type_unlabeled">Không gắn nhãn</string>
   <string name="type_unlabeled_edittext">Hộp chỉnh sửa không gắn nhãn</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Kéo sang trái</string>
   <string name="overlay_pan_right_button">Kéo sang phải</string>
   <string name="bd_preferences_title">Màn hình chữ nổi</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Để dùng màn hình chữ nổi, trước tiên hãy bật TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Chuyển đến TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Để dùng màn hình chữ nổi, trước tiên hãy bật SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Chuyển đến SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Để dùng màn hình chữ nổi, trước tiên hãy bật Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Bật Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Để dùng màn hình chữ nổi, %s phải có quyền truy cập vào các thiết bị ở gần</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Để dùng chế độ duyệt web, bạn cần chuyển từ sơ đồ bàn phím mặc định sang sơ đồ bàn phím nâng cao. Thay đổi này sẽ cập nhật một số lệnh trên màn hình chữ nổi</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Cài đặt</string>
   <string name="bd_command_change_dialog_title">Một số lệnh đã được cập nhật</string>
-  <string name="bd_command_change_dialog_message">Các lệnh sau đây trên màn hình chữ nổi đã được cập nhật trong phiên bản TalkBack này:\n\n• Mục trước: Nhấn các dấu chấm 1, 7\n\n• Mục tiếp theo: Nhấn các dấu chấm 4, 8\n\n• Chế độ điều khiển chức năng đọc trước: Nhấn các dấu chấm 2, 3, 7, 8\n\n• Chế độ điều khiển chức năng đọc tiếp theo: Nhấn các dấu chấm 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Các lệnh sau đây trên màn hình chữ nổi đã được cập nhật trong phiên bản SandFly này:\n\n• Mục trước: Nhấn các dấu chấm 1, 7\n\n• Mục tiếp theo: Nhấn các dấu chấm 4, 8\n\n• Chế độ điều khiển chức năng đọc trước: Nhấn các dấu chấm 2, 3, 7, 8\n\n• Chế độ điều khiển chức năng đọc tiếp theo: Nhấn các dấu chấm 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Chữ nổi rút gọn</string>
   <string name="bd_preference_braille_uncontracted">Chữ nổi không rút gọn</string>
   <string name="bd_braille_grade_tips">Để chuyển đổi nhanh giữa chế độ rút gọn và không rút gọn bằng màn hình chữ nổi, hãy nhấn dấu cách và các dấu chấm 1, 2, 4, 5.\n\nLệnh này hoạt động nếu bạn đang dùng ngôn ngữ có cả hai cấp chữ nổi.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Di chuyển giữa các mục</string>
   <string name="bd_commands_bindings_category_system_actions_title">Thao tác trên hệ thống</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Quay lại, trang chủ, thông báo và nhiều thao tác khác</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">Các tính năng của TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Các chế độ cài đặt và trình đơn Talkback</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">Các tính năng của SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">Trình đơn và cài đặt SandFly</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Cài đặt chữ nổi</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Các chế độ cài đặt và ngôn ngữ chữ nổi</string>
   <string name="bd_commands_bindings_category_text_editing_title">Chỉnh sửa văn bản</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Mở tất cả ứng dụng</string>
   <string name="bd_cmd_toggle_screen_search">Mở tính năng tìm kiếm trên màn hình</string>
   <string name="bd_cmd_edit_custom_label">Chỉnh sửa nhãn tuỳ chỉnh</string>
-  <string name="bd_cmd_open_talkback_menu">Mở trình đơn TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">Bật hoặc tắt giọng nói của TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">Mở trình đơn SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">Bật hoặc tắt giọng nói của SandFly</string>
   <string name="bd_cmd_read_stop">Dừng đọc</string>
-  <string name="bd_cmd_talkback_settings">Mở phần cài đặt TalkBack</string>
+  <string name="bd_cmd_talkback_settings">Mở phần cài đặt SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Chuyển sang ngôn ngữ nhập tiếp theo</string>
   <string name="bd_cmd_switch_to_next_output_language">Chuyển sang ngôn ngữ đọc tiếp theo</string>
   <string name="bd_cmd_toggle_contracted_mode">Chuyển đổi giữa chế độ rút gọn và không rút gọn</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Bạn có thể di chuyển nhanh giữa các trang web bằng cách dùng lệnh để vào chế độ duyệt web rồi nhập các phím tắt chữ cái/số sau đây\n\nBạn cũng có thể dùng các phím tắt này mà không vào chế độ duyệt web nhưng cần thêm dấu chấm 8 vào lệnh \"tiếp theo\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Thao tác trên bảng</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Tắt chế độ cài đặt màn hình chữ nổi?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Bạn có thể bật lại màn hình chữ nổi bất cứ lúc nào trong phần cài đặt TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Bạn có thể bật lại màn hình chữ nổi bất cứ lúc nào trong phần cài đặt SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Tắt</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Không dùng được một số lệnh</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Không dùng được lệnh cho chế độ điều hướng, phần cài đặt chữ nổi và một số tính năng của TalkBack khi đang nhập hoặc chỉnh sửa.\n\nĐể dùng những lệnh này, trước tiên, hãy đóng bàn phím.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Không dùng được lệnh cho chế độ điều hướng, phần cài đặt chữ nổi và một số tính năng của SandFly khi đang nhập hoặc chỉnh sửa.\n\nĐể dùng những lệnh này, trước tiên, hãy đóng bàn phím.</string>
   <string name="bd_caption_tutorial_dialog_title">Phụ đề trên màn hình chữ nổi</string>
   <string name="bd_caption_tutorial_dialog_message">Để hiện/ẩn phụ đề cho video này, hãy nhấn dấu cách và dấu chấm 1, 4, 7, 8.\n\nĐể tự động hiện phụ đề cho nội dung nghe nhìn được hỗ trợ, hãy bật chế độ Hiện phụ đề trên màn hình chữ nổi ở mục Cài đặt.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Luôn hiện thông báo này khi có phụ đề</string>
   <string name="bd_usb_connect_dialog_title">Màn hình chữ nổi được kết nối với USB</string>
-  <string name="bd_usb_connect_dialog_message">%s của bạn đang sạc pin cho màn hình chữ nổi.\n\nNếu bạn cần chuyển sang Bluetooth, hãy ngắt kết nối USB hoặc bộ chia USB rồi chuyển đến phần Cài đặt TalkBack &gt; Màn hình chữ nổi.</string>
+  <string name="bd_usb_connect_dialog_message">%s của bạn đang sạc pin cho màn hình chữ nổi.\n\nNếu bạn cần chuyển sang Bluetooth, hãy ngắt kết nối USB hoặc bộ chia USB rồi chuyển đến phần Cài đặt SandFly &gt; Màn hình chữ nổi.</string>
   <string name="bd_device">điện thoại</string>
   <string name="bd_battery_low_dialog_title">Pin %s yếu</string>
   <string name="bd_battery_low_dialog_message">%s của bạn đang sạc pin cho màn hình chữ nổi.\n\nCách tiết kiệm pin:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Xoá tất cả</string>
   <string name="popup_message_history_empty">Trống</string>
   <string name="popup_message_history_consent_dialog_title">Bật nhật ký tin nhắn trên thiết bị?</string>
-  <string name="popup_message_history_consent_dialog_msg">Sau khi bạn bật, một số tin nhắn, chẳng hạn như thông báo và chuông báo, sẽ được lưu vào TalkBack. Bạn có thể thay đổi chế độ cài đặt này bất cứ lúc nào.</string>
+  <string name="popup_message_history_consent_dialog_msg">Sau khi bạn bật, một số tin nhắn, chẳng hạn như thông báo và chuông báo, sẽ được lưu vào SandFly. Bạn có thể thay đổi chế độ cài đặt này bất cứ lúc nào.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Bật</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Không, cảm ơn</string>
+    <string name="external_display_channel">Màn hình chữ nổi từ ứng dụng khác</string>
+    <string name="external_display_ask_title">Cho phép <xliff:g id="app" example="Notetaker">%1$s</xliff:g> làm màn hình chữ nổi cho SandFly?</string>
+    <string name="external_display_ask_text">SandFly sẽ không sử dụng ứng dụng này cho đến khi bạn cho phép.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> sẽ có thể đọc mọi thứ SandFly hiển thị bằng chữ nổi, có thể là bất kỳ nội dung nào trên màn hình, bao gồm tin nhắn và nội dung bạn nhập. Ứng dụng này cũng sẽ có thể điều khiển thiết bị như khi bạn dùng màn hình chữ nổi: nhập văn bản, mở ứng dụng và chạy mọi lệnh SandFly. Chỉ cho phép những ứng dụng bạn tin tưởng.</string>
+    <string name="external_display_allow">Cho phép</string>
+    <string name="external_display_deny">Không cho phép</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> là màn hình chữ nổi của bạn</string>
+    <string name="external_display_in_use_text">Trong khi SandFly sử dụng ứng dụng này, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> có thể đọc màn hình và điều khiển thiết bị.</string>
+    <string name="external_displays_title">Màn hình từ ứng dụng khác</string>
+    <string name="external_displays_summary">Các ứng dụng được bạn cho phép có thể làm màn hình chữ nổi cho SandFly. Ứng dụng làm màn hình chữ nổi có thể đọc màn hình và điều khiển thiết bị.</string>
+    <string name="external_displays_none">Không ứng dụng nào được phép làm màn hình chữ nổi.</string>
 </resources>
