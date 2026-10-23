@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">ਦਾਣੇਦਾਰ ਸੰਪਾਦਨ</string>
+    <string name="granular_editing_split_by">ਇਸ ਦੁਆਰਾ ਵੰਡੋ: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">ਦੁਆਰਾ ਵੰਡਿਆ ਗਿਆ</string>
+    <string name="granular_editing_characters">ਅੱਖਰ-ਚਿੰਨ੍ਹ</string>
+    <string name="granular_editing_words">ਸ਼ਬਦ</string>
+    <string name="granular_editing_sentences">ਵਾਕ</string>
+    <string name="granular_editing_lines">ਲਾਈਨਾਂ</string>
+    <string name="granular_editing_paragraphs">ਪੈਰਾਗ੍ਰਾਫ</string>
+    <string name="granular_editing_space">ਸਪੇਸ</string>
+    <string name="granular_editing_new_line">ਨਵੀਂ ਲਾਈਨ</string>
+    <string name="granular_editing_tab">ਟੈਬ ਅੱਖਰ</string>
+    <string name="granular_editing_empty">ਕੋਈ ਲਿਖਤ ਨਹੀਂ। ਹੋਰ ਵਿੱਚ, ਅੰਤ ਵਿੱਚ ਟੈਕਸਟ ਸ਼ਾਮਲ ਕਰੋ ਦੀ ਵਰਤੋਂ ਕਰੋ।</string>
+    <string name="granular_editing_edit">ਸੰਪਾਦਿਤ ਕਰੋ</string>
+    <string name="granular_editing_insert_before">ਅੱਗੇ ਪਾਓ</string>
+    <string name="granular_editing_insert_after">ਦੇ ਬਾਅਦ ਪਾਓ</string>
+    <string name="granular_editing_delete">ਮਿਟਾਓ</string>
+    <string name="granular_editing_select">ਚੁਣੋ</string>
+    <string name="granular_editing_unselect">ਅਣਚੁਣਿਆ ਕਰੋ</string>
+    <string name="granular_editing_selected">ਚੁਣਿਆ ਗਿਆ</string>
+    <string name="granular_editing_save">ਰੱਖਿਅਤ ਕਰੋ</string>
+    <string name="granular_editing_more">ਹੋਰ</string>
+    <string name="granular_editing_undo">ਅਣਡੂ</string>
+    <string name="granular_editing_redo">ਪਿਛਲੇ ਅਣਕੀਤੇ ਸੰਪਾਦਨ ਨੂੰ ਮੁੜ ਕਰੋ</string>
+    <string name="granular_editing_find">ਲੱਭੋ</string>
+    <string name="granular_editing_find_next">ਅਗਲਾ ਲੱਭੋ</string>
+    <string name="granular_editing_replace">ਬਦਲੋ</string>
+    <string name="granular_editing_replace_with">ਨਾਲ ਬਦਲੋ</string>
+    <string name="granular_editing_replace_all">ਸਭ ਨੂੰ ਬਦਲੋ</string>
+    <string name="granular_editing_add_at_end">ਅੰਤ ਵਿੱਚ ਟੈਕਸਟ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="granular_editing_clear_selection">ਸਾਰੇ ਟੈਕਸਟ ਨੂੰ ਅਣਚੁਣਿਆ ਕਰੋ</string>
+    <string name="granular_editing_cut_selected">ਚੁਣੇ ਟੈਕਸਟ ਨੂੰ ਕੱਟੋ</string>
+    <string name="granular_editing_delete_selected">ਚੁਣਿਆ ਮਿਟਾਓ</string>
+    <string name="granular_editing_copied">ਕਾਪੀ ਕੀਤਾ</string>
+    <string name="granular_editing_deleted">ਮਿਟਾਇਆ ਗਿਆ</string>
+    <string name="granular_editing_not_found">ਨਹੀਂ ਮਿਲਿਆ</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ਬਦਲਿਆ ਗਿਆ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ਬਦਲਿਆ ਗਿਆ</item>
+    </plurals>
+    <string name="granular_editing_save_changes">ਕੀ ਤਬਦੀਲੀਆਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨਾ ਹੈ?</string>
+    <string name="granular_editing_copy_changes">ਕੀ ਬਦਲਿਆ ਟੈਕਸਟ ਕਾਪੀ ਕਰਨਾ ਹੈ?</string>
+    <string name="granular_editing_discard">ਰੱਦ ਕਰੋ</string>
+    <string name="granular_editing_keep_editing">ਸੰਪਾਦਨ ਕਰਦੇ ਰਹੋ</string>
+    <string name="granular_editing_not_saved">ਸੰਭਾਲਿਆ ਨਹੀਂ ਗਿਆ: ਟੈਕਸਟ ਖੇਤਰ ਖਤਮ ਹੋ ਗਿਆ ਹੈ। ਟੈਕਸਟ ਦੀ ਨਕਲ ਕੀਤੀ ਗਈ ਹੈ।</string>
+    <string name="granular_editing_no_text">ਸੰਪਾਦਨ ਕਰਨ ਲਈ ਕੋਈ ਲਿਖਤ ਨਹੀਂ ਹੈ</string>
+    <string name="granular_editing_password">ਪਾਸਵਰਡ ਖੇਤਰਾਂ ਵਿੱਚ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+</resources>

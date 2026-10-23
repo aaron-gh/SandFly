@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">ਅੱਪਡੇਟ ਲਈ ਚੈੱਕ ਕਰੋ</string>
+    <string name="summary_pref_check_for_updates_version">ਸੰਸਕਰਣ <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, ਬਿਲਡ <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">ਅੱਪਡੇਟਾਂ ਲਈ ਸਵੈਚਲਿਤ ਤੌਰ \'ਤੇ ਜਾਂਚ ਕਰੋ</string>
+    <string name="summary_pref_auto_update_check">ਦਿਨ ਵਿੱਚ ਇੱਕ ਵਾਰ ਜਾਂਚ ਕਰੋ ਅਤੇ ਇੱਕ ਨਵੀਂ ਬਿਲਡ ਉਪਲਬਧ ਹੋਣ \'ਤੇ ਇੱਕ ਸੂਚਨਾ ਦਿਖਾਓ</string>
+    <string name="title_pref_dev_builds">ਵਿਕਾਸ ਬਣਦਾ ਹੈ</string>
+    <string name="update_notification_title">SandFly ਅੱਪਡੇਟ ਉਪਲਬਧ ਹੈ</string>
+    <string name="update_notification_text">ਬਿਲਡ <xliff:g id="build" example="97">%1$d</xliff:g>। ਸਥਾਪਤ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ।</string>
+    <string name="update_dialog_title">SandFly ਬਿਲਡ <xliff:g id="build" example="97">%1$d</xliff:g> ਉਪਲਬਧ ਹੈ</string>
+    <string name="update_dialog_install">ਇੰਸਟਾਲ ਕਰੋ</string>
+    <string name="update_checking">ਅੱਪਡੇਟ ਲਈ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ</string>
+    <string name="update_up_to_date">SandFly ਅੱਪ ਟੂ ਡੇਟ ਹੈ</string>
+    <string name="update_check_failed">ਅੱਪਡੇਟ ਲਈ ਜਾਂਚ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ</string>
+    <string name="update_downloading">ਅੱਪਡੇਟ ਡਾਊਨਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</string>
+    <string name="update_already_downloading">ਅੱਪਡੇਟ ਪਹਿਲਾਂ ਹੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ</string>
+    <string name="update_ready_title">SandFly ਅੱਪਡੇਟ ਡਾਊਨਲੋਡ ਕੀਤਾ ਗਿਆ</string>
+    <string name="update_ready_text">ਸਥਾਪਤ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ।</string>
+    <string name="update_install_failed">ਅੱਪਡੇਟ ਨੂੰ ਸਥਾਪਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ</string>
+    <string name="update_install_canceled">ਅੱਪਡੇਟ ਰੱਦ ਕੀਤਾ ਗਿਆ</string>
+    <string name="update_allow_install">SandFly ਨੂੰ ਐਪਸ ਸਥਾਪਤ ਕਰਨ ਦਿਓ, ਫਿਰ ਅੱਪਡੇਟ ਦੀ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+</resources>
