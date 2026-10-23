@@ -228,6 +228,7 @@ import com.google.android.accessibility.talkback.monitor.KeyboardLockMonitor;
 import com.google.android.accessibility.talkback.monitor.ProximitySensorMonitor;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
+import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.notifications.NotificationSettings;
 import com.google.android.accessibility.talkback.pause.PauseController;
@@ -1006,6 +1007,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     SpeechControl.detach();
     NotificationReader.detach();
+    NotificationListService.onSandFlyStopped();
 
     if (audioDeviceRouter != null) {
       audioDeviceRouter.shutdown();
@@ -4400,6 +4402,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                   || isMicrophoneActiveAndHeadphoneOff()
                   || isSsbActive()
                   || (!overMedia && isAudioPlaybackActive()));
+      NotificationListService.onSandFlyStarted(this);
     }
     if (scriptHost != null || pipeline == null || !UserManagerCompat.isUserUnlocked(this)) {
       return;
