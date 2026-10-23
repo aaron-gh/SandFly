@@ -138,4 +138,20 @@
     <string name="script_source_remove">إزالة المصدر</string>
     <string name="script_source_remove_title">هل تريد إزالة <xliff:g id="name">%1$s</xliff:g>؟</string>
     <string name="script_source_remove_message">تبقى النصوص البرمجية المثبَّتة منه مثبَّتة.</string>
+    <string name="scripts_auto_update">تحديث البرامج النصية تلقائيا</string>
+    <string name="scripts_check_updates">البحث عن تحديثات</string>
+    <string name="scripts_checking_updates">جارٍ التحقق من وجود تحديثات...</string>
+    <string name="scripts_updates_category">التحديثات</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="zero">تم تحديث <xliff:g id="count" example="2">%1$d</xliff:g> من البرامج النصية: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="one">تم تحديث برنامج نصي واحد: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="two">تم تحديث برنامجين نصيين: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="few">تم تحديث <xliff:g id="count" example="2">%1$d</xliff:g> برامج نصية: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="many">تم تحديث <xliff:g id="count" example="2">%1$d</xliff:g> برنامجًا نصيًا: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="other">تم تحديث <xliff:g id="count" example="2">%1$d</xliff:g> برنامج نصي: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">يتم إدراج التحديثات ضمن التحديثات</string>
+    <string name="scripts_update_check_failed">لا يمكن التحقق من بعض المصادر</string>
+    <string name="scripts_up_to_date">جميع البرامج النصية محدثة</string>
 </resources>
