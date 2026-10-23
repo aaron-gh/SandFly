@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Hardvérová klávesnica s Braillovým písmom</string>
   <string name="bd_application_name">Služby dostupnosti pre Android</string>
-  <string name="bd_ime_unavailable_activity_name">Braillova klávesnica aplikácie TalkBack nie je k dispozícii</string>
-  <string name="bd_ime_disabled_dialog_title">Zapnite Braillovú klávesnicu aplikácie TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">Braillova klávesnica aplikácie SandFly nie je k dispozícii</string>
+  <string name="bd_ime_disabled_dialog_title">Zapnite Braillovú klávesnicu aplikácie SandFly</string>
   <string name="bd_ime_disabled_dialog_message">Ak chcete zadávať pomocou Braillovho displeja, prejdite do nastavení vstupu a zapnite ho</string>
   <string name="bd_ime_disabled_dialog_title_positive">Nastavenia vstupu</string>
   <string name="bd_ime_not_default_dialog_title">Prepnite metódu vstupu</string>
-  <string name="bd_ime_not_default_dialog_message">Ak chcete ďalej zadávať, nastavte si ako metódu vstupu Braillovú klavesnicu aplikácie TalkBack</string>
+  <string name="bd_ime_not_default_dialog_message">Ak chcete ďalej zadávať, nastavte si ako metódu vstupu Braillovú klavesnicu aplikácie SandFly</string>
   <string name="bd_ime_not_default_dialog_positive">Prepnúť vstup</string>
   <string name="type_unlabeled">Neoznačené</string>
   <string name="type_unlabeled_edittext">Neoznačené upravovacie pole</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Posunúť doľava</string>
   <string name="overlay_pan_right_button">Posunúť doprava</string>
   <string name="bd_preferences_title">Braillovský displej</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Ak chcete používať Braillov displej, najprv zapnite TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">Prejsť do aplikácie TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Ak chcete používať Braillov displej, najprv zapnite SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">Prejsť do aplikácie SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Ak chcete používať Braillovský displej, najprv zapnite Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Zapnúť Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Aby mohla používať Braillov displej, potrebuje aplikácia %s prístup k zariadeniam v okolí</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Ak chcete používať režim prehliadania, musíte prepnúť z predvolenej na rozšírenú mapu klávesov. Táto zmena aktualizuje aj niektoré príkazy braillovského displeja.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Nastavenia</string>
   <string name="bd_command_change_dialog_title">Niektoré príkazy boli aktualizované</string>
-  <string name="bd_command_change_dialog_message">Tieto príkazy braillovského displeja boli v tejto verzii aplikácie TalkBack aktualizované:\n\n• Predchádzajúca položka: stlačte body 1 a 7.\n\n• Ďalšia položka: stlačte body 4 a 8.\n\n• Predchádzajúci ovládací prvok čítania: stlačte body 2, 3, 7 a 8.\n\n• Ďalší ovládací prvok čítania: stlačte body 5, 6, 7 a 8.</string>
+  <string name="bd_command_change_dialog_message">Tieto príkazy braillovského displeja boli v tejto verzii aplikácie SandFly aktualizované:\n\n• Predchádzajúca položka: stlačte body 1 a 7.\n\n• Ďalšia položka: stlačte body 4 a 8.\n\n• Predchádzajúci ovládací prvok čítania: stlačte body 2, 3, 7 a 8.\n\n• Ďalší ovládací prvok čítania: stlačte body 5, 6, 7 a 8.</string>
   <string name="bd_preference_braille_contracted">Skrátená forma</string>
   <string name="bd_preference_braille_uncontracted">Neskrátená forma</string>
   <string name="bd_braille_grade_tips">Ak chcete rýchlo prepnúť medzi skrátenou a neskrátenou formou pomocou Braillovho displeja, stlačte medzerník a body 1, 2, 4, 5.\n\nTento príkaz funguje, ak používate jazyk s oboma formami Braillovho písma.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Prechod medzi položkami</string>
   <string name="bd_commands_bindings_category_system_actions_title">Systémové akcie</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Späť, domov, upozornenia a ďalšie</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">Funkcie aplikácie TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Ponuky a nastavenia aplikácie Talkback</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">Funkcie aplikácie SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly ponuky a nastavenia</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Nastavenia Braillovho písma</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Jazyk a nastavenia braillovského displeja</string>
   <string name="bd_commands_bindings_category_text_editing_title">Úprava textu</string>
@@ -223,10 +223,10 @@
   <string name="bd_cmd_global_all_apps">Otvoriť všetky aplikácie</string>
   <string name="bd_cmd_toggle_screen_search">Otvoriť priame vyhľadávanie</string>
   <string name="bd_cmd_edit_custom_label">Upraviť vlastný štítok</string>
-  <string name="bd_cmd_open_talkback_menu">Otvoriť ponuku aplikácie TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">Zapnúť alebo vypnúť reč aplikácie TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">Otvoriť ponuku aplikácie SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">Zapnúť alebo vypnúť reč aplikácie SandFly</string>
   <string name="bd_cmd_read_stop">Prestať čítať</string>
-  <string name="bd_cmd_talkback_settings">Otvoriť nastavenia aplikácie TalkBack</string>
+  <string name="bd_cmd_talkback_settings">Otvoriť nastavenia aplikácie SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Prepnúť na ďalší jazyk zadávania</string>
   <string name="bd_cmd_switch_to_next_output_language">Prepnúť na ďalší jazyk čítania</string>
   <string name="bd_cmd_toggle_contracted_mode">Prepnúť medzi skráteným a neskráteným</string>
@@ -299,15 +299,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Na webových stránkach môžete rýchlo prechádzať pomocou príkazu na prechod do režimu prehliadania a následným zadaním nasledujúcich skratiek s písmenami alebo číslicami.\n\nTieto skratky môžete používať aj bez prechodu do režimu prehliadania, ale k príkazom „ďalej“ budete musieť pridať bod osem.</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Navigácia v tabuľke</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Chcete vypnúť nastavenie Braillovho displeja?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Môžete ho kedykoľvek znova zapnúť v nastavniach aplikácie TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Môžete ho kedykoľvek znova zapnúť v nastavniach aplikácie SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Vypnúť</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Niektoré príkazy nie sú k dispozícii</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Príkazy pre navigáciu, nastavenia Braillovho displeja a niektoré funkcie čítačky TalkBack nie sú pri písaní alebo upravovaní k dispozícii.\n\nAk ich chcete použiť, najprv zavrite klávesnicu.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Príkazy pre navigáciu, nastavenia Braillovho displeja a niektoré funkcie čítačky SandFly nie sú pri písaní alebo upravovaní k dispozícii.\n\nAk ich chcete použiť, najprv zavrite klávesnicu.</string>
   <string name="bd_caption_tutorial_dialog_title">Titulky na braillovskom displeji</string>
   <string name="bd_caption_tutorial_dialog_message">Ak chcete zobraziť alebo skryť titulky k tomuto videu, stlačte medzerník a body 1, 4, 7, 8.\n\nAk chcete autom. zobraz. titulky k podpor. médiám, v nast. braill. displeja zapnite Zobrazovať titulky.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Vždy zobrazovať túto správu, keď sú k dispozícii titulky</string>
   <string name="bd_usb_connect_dialog_title">Braillov displej je pripojený k rozhraniu USB</string>
-  <string name="bd_usb_connect_dialog_message">Braillov displej nabíjate batériou zariadenia %s.\n\nAk potrebujete prepnúť na Bluetooth, odpojte USB či hub USB a prejdite do sekcie Nastavenia aplikácie TalkBack &gt; Braillov displej.</string>
+  <string name="bd_usb_connect_dialog_message">Braillov displej nabíjate batériou zariadenia %s.\n\nAk potrebujete prepnúť na Bluetooth, odpojte USB či hub USB a prejdite do sekcie Nastavenia aplikácie SandFly &gt; Braillov displej.</string>
   <string name="bd_device">telefón</string>
   <string name="bd_battery_low_dialog_title">Nízky stav batérie zariadenia %s</string>
   <string name="bd_battery_low_dialog_message">Braillov displej nabíjate batériou zariadenia %s.\n\nAk chcete ušetriť batériu:\n\n
@@ -319,7 +319,18 @@
   <string name="popup_message_history_clear">Vymazať všetko</string>
   <string name="popup_message_history_empty">Prázdna</string>
   <string name="popup_message_history_consent_dialog_title">Chcete v zariadení zapnúť históriu správ?</string>
-  <string name="popup_message_history_consent_dialog_msg">Niektoré správy, napríklad upozornenia a budíky, sa budú ukladať do funkcie TalkBack. Toto nastavenie môžete kedykoľvek zmeniť</string>
+  <string name="popup_message_history_consent_dialog_msg">Niektoré správy, napríklad upozornenia a budíky, sa budú ukladať do funkcie SandFly. Toto nastavenie môžete kedykoľvek zmeniť</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Zapnúť</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nie, vďaka</string>
+    <string name="external_display_channel">Braillovo písmo z iných aplikácií</string>
+    <string name="external_display_ask_title">Povoliť <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ako Braillovo písmo pre SandFly?</string>
+    <string name="external_display_ask_text">SandFly ho nebude používať, kým to nepovolíte.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> bude môcť čítať všetko, čo zobrazuje SandFly v Braillovom písme, čo môže byť čokoľvek na obrazovke, vrátane správ a toho, čo napíšete. Bude tiež môcť ovládať vaše zariadenie tak, ako to dokážete pomocou Braillovho displeja: píšte, otvárajte aplikácie a spúšťajte ľubovoľný príkaz SandFly. Povoľte iba aplikácie, ktorým dôverujete.</string>
+    <string name="external_display_allow">Povoliť</string>
+    <string name="external_display_deny">Nedovoľte</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> je váš Braillov displej</string>
+    <string name="external_display_in_use_text">Kým ho SandFly používa, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> môže čítať obrazovku a ovládať zariadenie.</string>
+    <string name="external_displays_title">Zobrazuje z iných aplikácií</string>
+    <string name="external_displays_summary">Aplikácie, ktoré povolíte, môžu byť Braillovo písmo pre SandFly. Aplikácia, ktorá je Braillovým displejom, dokáže čítať obrazovku a ovládať zariadenie.</string>
+    <string name="external_displays_none">Žiadna aplikácia nemôže byť Braillovým displejom.</string>
 </resources>
