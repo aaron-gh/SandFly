@@ -28,6 +28,7 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import android.util.Log
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.notifications.NotificationReader
 import com.google.android.accessibility.talkback.notifications.NotificationSettings
 import com.google.android.accessibility.talkback.notifications.SpokenSchedules
@@ -188,17 +189,32 @@ class NotificationListService : NotificationListenerService() {
 
     /**
      * Whether the listener is needed: for SandFly's notification list, or to stop reading a
-     * notification that goes away.
+     * notification that goes away. Only while SandFly is on: a bound listener keeps SandFly's
+     * process running, and with it, the audio and speech engine it held, after SandFly is turned
+     * off, which can leave another screen reader turned on then silent.
      */
     fun isNeeded(context: Context): Boolean =
-      NotificationList.isEnabled(context) ||
-        SystemClock.uptimeMillis() < keepConnectedUntil ||
-        SharedPreferencesUtils.getSharedPreferences(context).let {
-          // With notification speech on, it reads notifications that Android sends no
-          // accessibility event for, such as those on silent channels.
-          NotificationSettings.read(it).let { s -> s.needsListener || s.enabled } ||
-            it.getBoolean(SpokenSchedules.KEY_SUMMARY_DAILY, false)
-        }
+      TalkBackService.getInstance() != null &&
+        (NotificationList.isEnabled(context) ||
+          SystemClock.uptimeMillis() < keepConnectedUntil ||
+          SharedPreferencesUtils.getSharedPreferences(context).let {
+            // With notification speech on, it reads notifications that Android sends no
+            // accessibility event for, such as those on silent channels.
+            NotificationSettings.read(it).let { s -> s.needsListener || s.enabled } ||
+              it.getBoolean(SpokenSchedules.KEY_SUMMARY_DAILY, false)
+          })
+
+    /** Connects the listener when SandFly starts, if it is needed. */
+    @JvmStatic
+    fun onSandFlyStarted(context: Context) {
+      if (instance == null && isNeeded(context)) rebind(context)
+    }
+
+    /** Disconnects the listener when SandFly stops. */
+    @JvmStatic
+    fun onSandFlyStopped() {
+      instance?.unbind()
+    }
 
     private var keepConnectedUntil = 0L
 
