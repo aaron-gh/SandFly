@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Edición granular</string>
+    <string name="granular_editing_split_by">Dividir por: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Dividir por</string>
+    <string name="granular_editing_characters">Caracteres</string>
+    <string name="granular_editing_words">Palabras</string>
+    <string name="granular_editing_sentences">Oraciones</string>
+    <string name="granular_editing_lines">Líneas</string>
+    <string name="granular_editing_paragraphs">Párrafos</string>
+    <string name="granular_editing_space">Espacio</string>
+    <string name="granular_editing_new_line">Nueva línea</string>
+    <string name="granular_editing_tab">Tabulación</string>
+    <string name="granular_editing_empty">Sin texto. Utilice Agregar texto al final, en Más.</string>
+    <string name="granular_editing_edit">Editar</string>
+    <string name="granular_editing_insert_before">Insertar antes</string>
+    <string name="granular_editing_insert_after">Insertar después</string>
+    <string name="granular_editing_delete">Eliminar</string>
+    <string name="granular_editing_select">Seleccionar</string>
+    <string name="granular_editing_unselect">Deseleccionar</string>
+    <string name="granular_editing_selected">Seleccionado</string>
+    <string name="granular_editing_save">Guardar</string>
+    <string name="granular_editing_more">Más</string>
+    <string name="granular_editing_undo">Deshacer</string>
+    <string name="granular_editing_redo">Rehacer</string>
+    <string name="granular_editing_find">Buscar</string>
+    <string name="granular_editing_find_next">Buscar siguiente</string>
+    <string name="granular_editing_replace">Reemplazar</string>
+    <string name="granular_editing_replace_with">Reemplazar con</string>
+    <string name="granular_editing_replace_all">Reemplazar todo</string>
+    <string name="granular_editing_add_at_end">Agregar texto al final</string>
+    <string name="granular_editing_clear_selection">Deseleccionar todo</string>
+    <string name="granular_editing_cut_selected">Cortar selección</string>
+    <string name="granular_editing_delete_selected">Eliminar selección</string>
+    <string name="granular_editing_copied">Copiado</string>
+    <string name="granular_editing_deleted">Eliminado</string>
+    <string name="granular_editing_not_found">No encontrado</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> reemplazado</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> reemplazado</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> reemplazado</item>
+    </plurals>
+    <string name="granular_editing_save_changes">¿Guardar cambios?</string>
+    <string name="granular_editing_copy_changes">¿Copiar el texto modificado?</string>
+    <string name="granular_editing_discard">Descartar</string>
+    <string name="granular_editing_keep_editing">Seguir editando</string>
+    <string name="granular_editing_not_saved">No guardado: el campo de texto desapareció. Se copia el texto.</string>
+    <string name="granular_editing_no_text">No hay texto para editar</string>
+    <string name="granular_editing_password">No disponible en los campos de contraseña</string>
+</resources>
