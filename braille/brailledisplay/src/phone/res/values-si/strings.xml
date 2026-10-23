@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">බ්‍රේල් දෘඪාංග යතුරු පුවරුව</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack බ්‍රේල් යතුරු පුවරුව ලබා ගත නොහැකිය</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack බ්‍රේල් යතුරුපුවරුව ක්‍රියාත්මක කරන්න</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly බ්‍රේල් යතුරු පුවරුව ලබා ගත නොහැකිය</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly බ්‍රේල් යතුරුපුවරුව ක්‍රියාත්මක කරන්න</string>
   <string name="bd_ime_disabled_dialog_message">ටයිප් කිරීම සඳහා ඔබගේ බ්‍රේල් සංදර්ශකය භාවිත කිරීමට, එය ක්‍රියාත්මක කිරීමට ආදාන සැකසීම් වෙත යන්න</string>
   <string name="bd_ime_disabled_dialog_title_positive">ආදාන සැකසීම්</string>
   <string name="bd_ime_not_default_dialog_title">ඔබගේ ආදාන ක්‍රමය මාරු කරන්න</string>
-  <string name="bd_ime_not_default_dialog_message">ටයිප් කිරීම දිගටම කරගෙන යාමට, TalkBack බ්‍රේල් යතුරුපුවරුව ඔබගේ ආදාන ක්‍රමය ලෙස සකසන්න</string>
+  <string name="bd_ime_not_default_dialog_message">ටයිප් කිරීම දිගටම කරගෙන යාමට, SandFly බ්‍රේල් යතුරුපුවරුව ඔබගේ ආදාන ක්‍රමය ලෙස සකසන්න</string>
   <string name="bd_ime_not_default_dialog_positive">ආදානය මාරු කරන්න</string>
   <string name="type_unlabeled">ලේබල් නොකළ</string>
   <string name="type_unlabeled_edittext">ලේබල් නොකළ සංස්කරණ කොටුව</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">වමට පෑන් කරන්න</string>
   <string name="overlay_pan_right_button">දකුණට පෑන් කරන්න</string>
   <string name="bd_preferences_title">බ්‍රේල් සංදර්ශකය</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">බ්‍රේල් සංදර්ශකය භාවිත කිරීමට, පළමුව TalkBack ක්‍රියාත්මක කරන්න</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBack වෙත යන්න</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">බ්‍රේල් සංදර්ශකය භාවිත කිරීමට, පළමුව SandFly ක්‍රියාත්මක කරන්න</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFly වෙත යන්න</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">බ්‍රේල් සංදර්ශකය භාවිත කිරීමට, පළමුව බ්ලූටූත් ක්‍රියාත්මක කරන්න</string>
   <string name="bd_preferences_banner_bluetooth_off_button">බ්ලූටූත් ක්‍රියාත්මක කරන්න</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">බ්‍රේල් සංදර්ශකය භාවිත කිරීමට, %s හට අවට උපාංගවලට ප්‍රවේශය අවශ්‍යයි</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">බ්‍රවුස් මාදිලිය භාවිත කිරීමට, ඔබ පෙරනිමි යතුරු සිතියමේ සිට වැඩිදියුණු කළ යතුරු සිතියම වෙත මාරු විය යුතුය. මෙම වෙනස ඔබේ බ්‍රේල් සංදර්ශක විධාන කිහිපයක් යාවත්කාලීන කරනු ඇත</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">සැකසීම්</string>
   <string name="bd_command_change_dialog_title">සමහර විධාන යාවත්කාලීන කර ඇත</string>
-  <string name="bd_command_change_dialog_message">මෙම TalkBack අනුවාදයේ මෙම බ්‍රේල් සංදර්ශක විධාන යාවත්කාලීන කරන ලදි:\n\n• පෙර අයිතමය: තිත් 1, 7 ඔබන්න\n\n• මීළඟ අයිතමය: තිත් 4, 8 ඔබන්න\n\n• පෙර කියවීමේ පාලනය: තිත් 2, 3, 7, 8 ඔබන්න\n\n• මීළඟ කියවීමේ පාලනය: තිත් 5, 6, 7, 8 ඔබන්න</string>
+  <string name="bd_command_change_dialog_message">මෙම SandFly අනුවාදයේ මෙම බ්‍රේල් සංදර්ශක විධාන යාවත්කාලීන කරන ලදි:\n\n• පෙර අයිතමය: තිත් 1, 7 ඔබන්න\n\n• මීළඟ අයිතමය: තිත් 4, 8 ඔබන්න\n\n• පෙර කියවීමේ පාලනය: තිත් 2, 3, 7, 8 ඔබන්න\n\n• මීළඟ කියවීමේ පාලනය: තිත් 5, 6, 7, 8 ඔබන්න</string>
   <string name="bd_preference_braille_contracted">කොන්ත්‍රාත් බ්‍රේල්</string>
   <string name="bd_preference_braille_uncontracted">කොන්ත්‍රාත් රහිත බ්‍රේල්</string>
   <string name="bd_braille_grade_tips">බ්‍රේල් සංදර්ශකයක් භාවිතයෙන් ලොප් වූ සහ ලොප් නොවූ අතර ඉක්මනින් මාරු වීමට නම්, අවකාශය සහ තිත් 1, 2, 4, 5 ඔබන්න.\n\nඔබ බ්‍රේල් ශ්‍රේණි දෙකම සහිත භාෂාවක් භාවිතා කරන්නේ නම් මෙම විධානය ක්‍රියා කරයි.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">අයිතම අතර ගමන් කිරීම</string>
   <string name="bd_commands_bindings_category_system_actions_title">පද්ධති ක්‍රියා</string>
   <string name="bd_commands_bindings_category_system_actions_summary">ආපසු, නිවහන, දැනුම්දීම් සහ තවත් දේ</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack විශේෂාංග</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Talkback මෙනු සහ සැකසීම්</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly විශේෂාංග</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly මෙනු සහ සැකසුම්</string>
   <string name="bd_commands_bindings_category_braille_settings_title">බ්‍රේල් සැකසීම්</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">බ්‍රේල් භාෂාව සහ සැකසීම්</string>
   <string name="bd_commands_bindings_category_text_editing_title">පෙළ සංස්කරණය</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">සියලු යෙදුම් විවෘත කරන්න</string>
   <string name="bd_cmd_toggle_screen_search">තිර සෙවීම විවෘත කරන්න</string>
   <string name="bd_cmd_edit_custom_label">අභිරුචි ලේබලය සංස්කරණය කරන්න</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack මෙනුව විවෘත කරන්න</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack කථාව ක්‍රියාත්මක හෝ ක්‍රියාවිරහිත කරන්න</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly මෙනුව විවෘත කරන්න</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly කථාව ක්‍රියාත්මක හෝ ක්‍රියාවිරහිත කරන්න</string>
   <string name="bd_cmd_read_stop">කියවීම නවත්වන්න</string>
-  <string name="bd_cmd_talkback_settings">TalkBack සැකසීම් විවෘත කරන්න</string>
+  <string name="bd_cmd_talkback_settings">SandFly සැකසීම් විවෘත කරන්න</string>
   <string name="bd_cmd_switch_to_next_input_language">මීළඟ ටයිප් කිරීමේ භාෂාවට මාරු වන්න</string>
   <string name="bd_cmd_switch_to_next_output_language">මීළඟ කියවීමේ භාෂාවට මාරු වන්න</string>
   <string name="bd_cmd_toggle_contracted_mode">ගිවිසුම්ගත සහ ගිවිසුම්ගත නොවන අතර මාරු වන්න</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">බ්‍රව්සරය මාදිලියට ඇතුළු වීමට විධානය භාවිතා කර, පහත අකුරු හෝ අංක කෙටිමං ටයිප් කිරීමෙන් ඔබට වෙබ් පිටු ඉක්මනින් සැරිසැරීමට හැකිය\n\nමෙම කෙටිමං බ්‍රව්සරය මාදිලියට ඇතුළු නොවී ද භාවිතා කළ හැකිය, නමුත් ඔබට \"මීළඟ\" විධානවලට තිත් 8 එක් කිරීමට අවශ්‍ය වනු ඇත</string>
   <string name="bd_cmd_subcategory_title_web_navigation">වගු සංචාලනය</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">බ්‍රේල් සංදර්ශක සැකසීම් ක්‍රියාවිරහිත කරන්නද?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">ඔබට එය TalkBack සැකසීම් තුළ ඕනෑම වේලාවක නැවත ක්‍රියාත්මක කළ හැකිය</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">ඔබට එය SandFly සැකසීම් තුළ ඕනෑම වේලාවක නැවත ක්‍රියාත්මක කළ හැකිය</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">ක්‍රියාවිරහිත කරන්න</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">සමහර විධාන ලබා ගත නොහැක</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">සංචාලනය, බ්‍රේල් සැකසීම්, සහ සමහර TalkBack විශේෂාංග ටයිප් හෝ සංස්කරණය කරන අතරේ ලබා ගත නොහැක.\n\nමෙම විධාන භාවිතා කිරීම සඳහා, පළමුව යතුරු පුවරුව වසා දමන්න.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">සංචාලනය, බ්‍රේල් සැකසීම්, සහ සමහර SandFly විශේෂාංග ටයිප් හෝ සංස්කරණය කරන අතරේ ලබා ගත නොහැක.\n\nමෙම විධාන භාවිතා කිරීම සඳහා, පළමුව යතුරු පුවරුව වසා දමන්න.</string>
   <string name="bd_caption_tutorial_dialog_title">ඔබේ බ්‍රේල් සංදර්ශකයේ සිරස්තල</string>
   <string name="bd_caption_tutorial_dialog_message">මෙම වීඩියෝව සඳහා සිරස්තල පෙන්වීමට හෝ සැඟවීමට, ඉඩ සහ තිත් 1, 4, 7, 8 ඔබන්න.\n\nසහාය දක්වන මාධ්‍ය සඳහා ස්වයංක්‍රීයව සිරස්තල පෙන්වීමට, සැකසීම් තුළ බ්‍රේල් සංදර්ශකය මත සිරස්තල පෙන්වන්න ක්‍රියාත්මක කරන්න.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">සිරස්තල ඇති විට මෙම පණිවිඩය සැම විට ම පෙන්වන්න</string>
   <string name="bd_usb_connect_dialog_title">බ්‍රේල් සංදර්ශකය USB වෙත සම්බන්ධයි</string>
-  <string name="bd_usb_connect_dialog_message">ඔබේ %sගේ බැටරිය ඔබේ බ්‍රේල් සංදර්ශකය ආරෝපණය කරයි.\n\nඔබට බ්ලූටූත් වෙත මාරු වීමට අවශ්‍ය නම්, ඔබේ USB හෝ USB හබ් විසන්ධි කර TalkBack සැකසීම් &gt; බ්‍රේල් සංදර්ශකය වෙත යන්න.</string>
+  <string name="bd_usb_connect_dialog_message">ඔබේ %sගේ බැටරිය ඔබේ බ්‍රේල් සංදර්ශකය ආරෝපණය කරයි.\n\nඔබට බ්ලූටූත් වෙත මාරු වීමට අවශ්‍ය නම්, ඔබේ USB හෝ USB හබ් විසන්ධි කර SandFly සැකසීම් &gt; බ්‍රේල් සංදර්ශකය වෙත යන්න.</string>
   <string name="bd_device">දුරකථනය</string>
   <string name="bd_battery_low_dialog_title">%s බැටරිය අඩුයි</string>
   <string name="bd_battery_low_dialog_message">ඔබේ %sගේ බැටරිය ඔබේ බ්‍රේල් සංදර්ශකය ආරෝපණය කරයි.\n\nබැටරිය සුරැකීමට:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">සියල්ල හිස් කරන්න</string>
   <string name="popup_message_history_empty">හිස්</string>
   <string name="popup_message_history_consent_dialog_title">උපාංග පණිවිඩ ඉතිහාසය ක්‍රියාත්මක කරන්න ද?</string>
-  <string name="popup_message_history_consent_dialog_msg">මෙය දැනුම්දීම් සහ එලාම් වැනි සමහර පණිවිඩ TalkBack තුළ ගබඩා කරනු ඇත. ඔබට මෙම සැකසීම ඕනෑම වේලාවක වෙනස් කළ හැක.</string>
+  <string name="popup_message_history_consent_dialog_msg">මෙය දැනුම්දීම් සහ එලාම් වැනි සමහර පණිවිඩ SandFly තුළ ගබඩා කරනු ඇත. ඔබට මෙම සැකසීම ඕනෑම වේලාවක වෙනස් කළ හැක.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ක්‍රියාත්මක කරන්න</string>
   <string name="popup_message_history_consent_dialog_negative_btn">එපා ස්තූතියි</string>
+    <string name="external_display_channel">වෙනත් යෙදුම් වලින් බ්‍රේල් සංදර්ශක</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly සඳහා බ්‍රේල් සංදර්ශකයක් වීමට ඉඩ දෙන්නද?</string>
+    <string name="external_display_ask_text">ඔබ එයට ඉඩ දෙන තුරු SandFly එය භාවිතා නොකරනු ඇත.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> හට SandFly බ්‍රේල් මගින් පෙන්වන සෑම දෙයක්ම කියවීමට හැකි වනු ඇත, එය තිරයේ ඇති පණිවිඩ සහ ඔබ ටයිප් කරන දේ ඇතුළුව ඕනෑම දෙයක් විය හැක. බ්‍රේල් සංදර්ශකයක් සමඟ ඔබට හැකි පරිදි ඔබගේ උපාංගය පාලනය කිරීමට ද එයට හැකි වනු ඇත: ටයිප් කරන්න, යෙදුම් විවෘත කරන්න සහ ඕනෑම SandFly විධානයක් ක්‍රියාත්මක කරන්න. ඔබ විශ්වාස කරන යෙදුම් වලට පමණක් ඉඩ දෙන්න.</string>
+    <string name="external_display_allow">ඉඩ දෙන්න</string>
+    <string name="external_display_deny">ඉඩ දෙන්න එපා</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> යනු ඔබේ බ්‍රේල් සංදර්ශකයයි</string>
+    <string name="external_display_in_use_text">SandFly එය භාවිතා කරන අතර, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ට තිරය කියවා උපාංගය පාලනය කළ හැක.</string>
+    <string name="external_displays_title">වෙනත් යෙදුම් වලින් සංදර්ශන</string>
+    <string name="external_displays_summary">ඔබ ඉඩ දෙන යෙදුම් SandFly සඳහා බ්‍රේල් සංදර්ශක විය හැක. බ්‍රේල් සංදර්ශකයක් වන යෙදුමකට තිරය කියවා උපාංගය පාලනය කළ හැක.</string>
+    <string name="external_displays_none">කිසිදු යෙදුම් බ්රේල් සංදර්ශක විය නොහැක.</string>
 </resources>

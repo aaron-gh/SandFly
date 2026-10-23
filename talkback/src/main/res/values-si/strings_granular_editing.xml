@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">කැටිති සංස්කරණය</string>
+    <string name="granular_editing_split_by">බෙදීම: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">විසින් බෙදනු ලැබේ</string>
+    <string name="granular_editing_characters">අනුලකුණු</string>
+    <string name="granular_editing_words">වචන</string>
+    <string name="granular_editing_sentences">වාක්ය</string>
+    <string name="granular_editing_lines">රේඛා</string>
+    <string name="granular_editing_paragraphs">ඡේද</string>
+    <string name="granular_editing_space">අවකාශය</string>
+    <string name="granular_editing_new_line">නව පේළිය</string>
+    <string name="granular_editing_tab">ටැබ් චරිතය</string>
+    <string name="granular_editing_empty">පෙළ නැත. තවත් තුළ, අවසානයේ අකුරු එකතු කරන්න භාවිත කරන්න.</string>
+    <string name="granular_editing_edit">සංස්කරණය කරන්න</string>
+    <string name="granular_editing_insert_before">කලින් ඇතුල් කරන්න</string>
+    <string name="granular_editing_insert_after">පසුව ඇතුල් කරන්න</string>
+    <string name="granular_editing_delete">මකන්න</string>
+    <string name="granular_editing_select">තෝරන්න</string>
+    <string name="granular_editing_unselect">තේරීම ඉවත් කරන්න</string>
+    <string name="granular_editing_selected">තෝරා ගන්නා ලදී</string>
+    <string name="granular_editing_save">සුරකින්න</string>
+    <string name="granular_editing_more">තවත්</string>
+    <string name="granular_editing_undo">අහෝසි කරන්න</string>
+    <string name="granular_editing_redo">අවසන් නොකළ සංස්කරණය නැවත කරන්න</string>
+    <string name="granular_editing_find">සොයන්න</string>
+    <string name="granular_editing_find_next">ඊළඟට සොයන්න</string>
+    <string name="granular_editing_replace">ආදේශ කරන්න</string>
+    <string name="granular_editing_replace_with">සමඟ ප්රතිස්ථාපනය කරන්න</string>
+    <string name="granular_editing_replace_all">සියල්ල ප්රතිස්ථාපනය කරන්න</string>
+    <string name="granular_editing_add_at_end">අවසානයේ පෙළ එක් කරන්න</string>
+    <string name="granular_editing_clear_selection">සියලුම පෙළ තේරීම ඉවත් කරන්න</string>
+    <string name="granular_editing_cut_selected">තෝරාගත් පෙළ කපා දමන්න</string>
+    <string name="granular_editing_delete_selected">තෝරාගත් මකන්න</string>
+    <string name="granular_editing_copied">පිටපත් කර ඇත</string>
+    <string name="granular_editing_deleted">මකා දමන ලදී</string>
+    <string name="granular_editing_not_found">හමු නොවීය</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ප්‍රතිස්ථාපනය කරන ලදී</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ප්‍රතිස්ථාපනය කරන ලදී</item>
+    </plurals>
+    <string name="granular_editing_save_changes">වෙනස්කම් සුරකින්නද?</string>
+    <string name="granular_editing_copy_changes">වෙනස් කළ පෙළ පිටපත් කරන්නද?</string>
+    <string name="granular_editing_discard">ඉවතලන්න</string>
+    <string name="granular_editing_keep_editing">දිගටම සංස්කරණය කරන්න</string>
+    <string name="granular_editing_not_saved">සුරැකී නැත: පෙළ ක්ෂේත්‍රය නැති වී ඇත. පෙළ පිටපත් කර ඇත.</string>
+    <string name="granular_editing_no_text">සංස්කරණය කිරීමට පෙළ නැත</string>
+    <string name="granular_editing_password">මුරපද ක්ෂේත්‍රවල නොමැත</string>
+</resources>
