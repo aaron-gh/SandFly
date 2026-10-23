@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">Spreek status uit</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> van <xliff:g id="max_level" example="4">%2$d</xliff:g> maten</string>
+    <string name="status_wifi_off">Wi-Fi uit</string>
+    <string name="status_wifi_not_connected">Wi-Fi niet verbonden</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">Mobiel</string>
+    <string name="status_mobile_no_service">Geen mobiele service</string>
+    <string name="status_do_not_disturb">Niet storen</string>
+    <string name="status_ringer_vibrate">Trillen</string>
+    <string name="status_ringer_silent">Stil</string>
+    <string name="status_airplane_mode">Vliegtuigmodus</string>
+    <string name="title_pref_status_readout">Statusuitlezing</string>
+    <string name="status_item_time">Tijd</string>
+    <string name="status_item_time_summary">De huidige tijd</string>
+    <string name="status_item_battery">Batterij</string>
+    <string name="status_item_battery_summary">Batterijniveau, opladen en batterijbesparing</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">Netwerknaam en signaalsterkte</string>
+    <string name="status_item_mobile">Mobiel netwerk</string>
+    <string name="status_item_mobile_summary">Provider, netwerktype en signaalsterkte</string>
+    <string name="status_item_ringer">Belsignaal en niet storen</string>
+    <string name="status_item_ringer_summary">Alleen als het belsignaal niet is ingesteld of \'Niet storen\' is ingeschakeld</string>
+    <string name="status_item_airplane_mode">Vliegtuigmodus</string>
+    <string name="status_item_airplane_mode_summary">Alleen als de vliegtuigmodus is ingeschakeld</string>
+</resources>

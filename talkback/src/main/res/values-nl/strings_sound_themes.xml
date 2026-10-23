@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Geluidsthema\'s</string>
+    <string name="summary_pref_sound_themes">Installeer en kies sets met geluiden en trillingen, vervang afzonderlijke geluiden door uw eigen geluiden en schakel bedieningsgeluiden en trillingen en 3D-audio in.</string>
+    <string name="sound_themes_installed_category">Geïnstalleerde thema\'s</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly\'s eigen geluiden en trillingen, en eventuele eigen geluiden.</string>
+    <string name="sound_theme_in_use">In gebruik</string>
+    <string name="sound_theme_by">Door <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Licentie: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> geluid.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> klinkt.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> trillingen.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> trillingen.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Schakelt bedieningsgeluiden en trillingen in.</string>
+    <string name="sound_theme_control_sounds_off">Schakelt bedieningsgeluiden en trillingen uit.</string>
+    <string name="sound_theme_use">Gebruik dit thema</string>
+    <string name="sound_theme_about">Over dit thema</string>
+    <string name="sound_theme_export">Opslaan als themabestand</string>
+    <string name="sound_theme_remove">Verwijderen</string>
+    <string name="sound_theme_remove_confirm">Het thema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> verwijderen?</string>
+    <string name="sound_theme_remove_button">Verwijderen</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Het thema opgeslagen, met <xliff:g id="count" example="1">%d</xliff:g> geluid.</item>
+        <item quantity="other">Het thema opgeslagen, met <xliff:g id="count" example="13">%d</xliff:g>-geluiden.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly kan het themabestand niet opslaan.</string>
+    <string name="sound_theme_no_picker">Er is geen app op dit apparaat om bestanden mee te kiezen.</string>
+    <string name="sound_theme_settings_category">Instellingen van <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Geluiden</string>
+    <string name="summary_pref_theme_sounds">Vervang elk geluid van dit thema door een eigen geluidsbestand.</string>
+    <string name="sound_themes_install_category">Installeer een thema</string>
+    <string name="title_pref_sound_theme_install_file">Uit een bestand</string>
+    <string name="summary_pref_sound_theme_install_file">Een themabestand is een ZIP-bestand. Je kunt er ook een openen of delen met SandFly vanuit een andere app.</string>
+    <string name="title_pref_sound_theme_install_link">Van een koppeling</string>
+    <string name="summary_pref_sound_theme_install_link">Een link naar een themabestand, of naar een GitHub repository met een thema erin. U kunt ook vanuit uw browser een link delen met SandFly.</string>
+    <string name="title_pref_sound_theme_install_source">Van een bron</string>
+    <string name="summary_pref_sound_theme_install_source">Themabestanden in een repository op GitHub, GitLab, Codeberg, Gitea of Bitbucket.</string>
+    <string name="sound_theme_sources">Geluidsthemabronnen</string>
+    <string name="sound_theme_source_empty">Geen geluidsthema\'s in deze bron</string>
+    <string name="sound_theme_source_failed">Kan geluidsthema\'s niet laden. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Geluidsthema\'s die ervan zijn geïnstalleerd, blijven geïnstalleerd.</string>
+    <string name="sound_theme_link_message">Voer een link in of plak deze naar een themabestand, of naar een GitHub repository met een thema erin.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Installeer het geluidsthema</string>
+    <string name="sound_theme_install_reading">Het thema geluid lezen</string>
+    <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> installeren?</string>
+    <string name="sound_theme_install_and_use">Installeren en gebruiken</string>
+    <string name="sound_theme_install">Installeren</string>
+    <string name="sound_theme_install_replaces">Dit vervangt het geïnstalleerde thema met dezelfde naam.</string>
+    <string name="sound_theme_install_skipped">Weggelaten:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Geïnstalleerd <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Geïnstalleerd <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Het is nu in gebruik.</string>
+    <string name="sound_theme_install_nothing">Er is geen geluidsthema om te installeren.</string>
+    <string name="sound_theme_install_not_a_theme">Dit is geen goed thema dat SandFly kan gebruiken: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly kan het geluidsthema niet installeren. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Links naar geluidsthema\'s moeten beginnen met https.</string>
+    <string name="title_pref_theme_sounds_of">Geluiden van <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Gebruik de geluiden van SandFly voor iedereen</string>
+    <string name="theme_sounds_reset_confirm">Alle geluiden van dit thema verwijderen en de eigen geluiden van SandFly gebruiken?</string>
+    <string name="theme_sounds_reset_button">Verwijderen</string>
+    <string name="theme_sounds_category">Geluiden</string>
+    <string name="theme_sound_summary_default">Het geluid van SandFly</string>
+    <string name="theme_sound_summary_custom">Thema geluid</string>
+    <string name="theme_sound_summary_none">Geen geluid. Het focusgeluid wordt afgespeeld.</string>
+    <string name="theme_sound_summary_android_keyboard">Het toetsenbordgeluid van Android</string>
+    <string name="theme_sound_use_android_keyboard">Gebruik het toetsenbordgeluid van Android</string>
+    <string name="theme_sound_braille_character">Brailletoetsenbord: een teken typen</string>
+    <string name="theme_sound_braille_space">Brailletoetsenbord: spatie</string>
+    <string name="theme_sound_braille_delete">Brailletoetsenbord: verwijderen</string>
+    <string name="theme_sound_braille_new_line">Brailletoetsenbord: nieuwe regel</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Kies een geluidsbestand</string>
+    <string name="theme_sound_preview">Voorbeeld</string>
+    <string name="theme_sound_none">Geen geluid</string>
+    <string name="theme_sound_summary_no_sound">Geen geluid</string>
+    <string name="theme_sound_action_set_none">Ingesteld op geen geluid</string>
+    <string name="theme_sound_use_default">Gebruik het geluid van SandFly</string>
+    <string name="theme_sound_remove">Verwijder het geluid</string>
+    <string name="theme_sound_too_large">Dat bestand is te groot. Een geluid kan maximaal 5 MB groot zijn.</string>
+    <string name="theme_sound_not_audio">SandFly kan dat bestand niet afspelen. Kies een WAV-, OGG-, MP3- of FLAC-geluid.</string>
+    <string name="theme_sound_failed">SandFly kon dat bestand niet lezen.</string>
+</resources>

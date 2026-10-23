@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Brailleleesregel</string>
   <string name="bd_application_name">Android Toegankelijkheidstools</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack-brailletoetsenbord niet beschikbaar</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack-brailletoetsenbord aanzetten</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly-brailletoetsenbord niet beschikbaar</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly-brailletoetsenbord aanzetten</string>
   <string name="bd_ime_disabled_dialog_message">Als je de brailleleesregel wilt gebruiken om te typen, ga je naar Invoerinstellingen om deze aan te zetten</string>
   <string name="bd_ime_disabled_dialog_title_positive">Invoerinstellingen</string>
   <string name="bd_ime_not_default_dialog_title">Je invoermethode schakelen</string>
-  <string name="bd_ime_not_default_dialog_message">Als je wilt blijven typen, stel je het TalkBack-brailletoetsenbord in als invoermethode</string>
+  <string name="bd_ime_not_default_dialog_message">Als je wilt blijven typen, stel je het SandFly-brailletoetsenbord in als invoermethode</string>
   <string name="bd_ime_not_default_dialog_positive">Invoer schakelen</string>
   <string name="type_unlabeled">Niet gelabeld</string>
   <string name="type_unlabeled_edittext">Niet-gelabeld bewerkingsvak</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">Naar links draaien</string>
   <string name="overlay_pan_right_button">Naar rechts draaien</string>
   <string name="bd_preferences_title">Brailleleesregel</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">Als je de brailleleesregel wilt gebruiken, zet je eerst TalkBack aan</string>
-  <string name="bd_preferences_banner_talkback_off_button">Naar TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Als je de brailleleesregel wilt gebruiken, zet je eerst SandFly aan</string>
+  <string name="bd_preferences_banner_talkback_off_button">Naar SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Als je de brailleleesregel wilt gebruiken, zet je eerst bluetooth aan</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Bluetooth aanzetten</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">%s heeft toegang tot apparaten in de buurt nodig om de brailleleesregel te gebruiken</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Als je de browsemodus wilt gebruiken, moet je overschakelen van de standaard keymap naar de uitgebreide keymap. Met deze wijziging wordt er voor sommige van je opdrachten voor de brailleleesregel een update gedaan.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Instellingen</string>
   <string name="bd_command_change_dialog_title">Er is voor sommige opdrachten een update gedaan</string>
-  <string name="bd_command_change_dialog_message">Deze opdrachten voor de brailleleesregel zijn gewijzigd in deze versie van TalkBack:\n\n• Vorig item: druk op punten 1, 7\n\n• Volgend item: druk op punten 4, 8\n\n• Vorige leesinstelling: druk op punten 2, 3, 7, 8\n\n• Volgende leesinstelling: druk op punten 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Deze opdrachten voor de brailleleesregel zijn gewijzigd in deze versie van SandFly:\n\n• Vorig item: druk op punten 1, 7\n\n• Volgend item: druk op punten 4, 8\n\n• Vorige leesinstelling: druk op punten 2, 3, 7, 8\n\n• Volgende leesinstelling: druk op punten 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Kortschrift</string>
   <string name="bd_preference_braille_uncontracted">Volledige braille</string>
   <string name="bd_braille_grade_tips">Als je snel wilt schakelen tussen kortschrift en volledige braille met een brailleleesregel, druk je op de spatiebalk en de punten 1, 2, 4, 5.\n\nDeze opdracht werkt als je een taal met beide brailleniveaus gebruikt.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">Navigeren tussen items</string>
   <string name="bd_commands_bindings_category_system_actions_title">Systeemacties</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Terug, start, meldingen en meer</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack-functies</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBack-menu\'s en -instellingen</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-functies</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menu\'s en instellingen</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Braille-instellingen</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Brailletaal en -instellingen</string>
   <string name="bd_commands_bindings_category_text_editing_title">Tekstverwerking</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">Alle apps openen</string>
   <string name="bd_cmd_toggle_screen_search">Schermzoeken openen</string>
   <string name="bd_cmd_edit_custom_label">Aangepast label bewerken</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack-menu openen</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack-spraak aan- of uitzetten</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly-menu openen</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly-spraak aan- of uitzetten</string>
   <string name="bd_cmd_read_stop">Stoppen met lezen</string>
-  <string name="bd_cmd_talkback_settings">TalkBack-instellingen openen</string>
+  <string name="bd_cmd_talkback_settings">SandFly-instellingen openen</string>
   <string name="bd_cmd_switch_to_next_input_language">Overschakelen naar de volgende taal voor typen</string>
   <string name="bd_cmd_switch_to_next_output_language">Overschakelen naar de volgende taal voor lezen</string>
   <string name="bd_cmd_toggle_contracted_mode">Schakelen tussen kortschrift en volledige braille</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Je kunt snel op webpagina\'s navigeren door de opdracht te gebruiken om de browsemodus te openen en dan de volgende letter- of cijfersneltoetsen te typen\n\nJe kunt deze sneltoetsen ook gebruiken zonder de browsemodus te openen, maar dan moet je punt 8 toevoegen aan de volgende opdrachten</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Tabelnavigatie</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Instelling voor brailleleesregel uitzetten?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Je kunt deze altijd weer aanzetten via de TalkBack-instellingen</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Je kunt deze altijd weer aanzetten via de SandFly-instellingen</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Uitzetten</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Bepaalde opdrachten zijn niet beschikbaar</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Opdrachten voor navigatie, braille-instellingen en bepaalde TalkBack-functies zijn niet beschikbaar terwijl je typt of bewerkt.\n\nAls je deze opdrachten wilt gebruiken, sluit je eerst het toetsenbord.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Opdrachten voor navigatie, braille-instellingen en bepaalde SandFly-functies zijn niet beschikbaar terwijl je typt of bewerkt.\n\nAls je deze opdrachten wilt gebruiken, sluit je eerst het toetsenbord.</string>
   <string name="bd_caption_tutorial_dialog_title">Ondertiteling op je brailleleesregel</string>
   <string name="bd_caption_tutorial_dialog_message">Als je ondertiteling voor deze video wilt tonen of verbergen, druk je op de spatiebalk en punten 1, 4, 7, 8.\n\nAls je ondertiteling automatisch wilt tonen voor ondersteunde media, zet je Ondertiteling tonen op brailleleesregel aan in Instellingen.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Dit bericht altijd tonen als ondertiteling beschikbaar is</string>
   <string name="bd_usb_connect_dialog_title">Brailleleesregel aangesloten op USB-poort</string>
-  <string name="bd_usb_connect_dialog_message">De batterij van je %s laadt je brailleleesregel op.\n\nAls je moet overschakelen naar bluetooth, koppel je je USB-poort of USB-hub los en ga je naar Instellingen voor TalkBack &gt; Brailleleesregel.</string>
+  <string name="bd_usb_connect_dialog_message">De batterij van je %s laadt je brailleleesregel op.\n\nAls je moet overschakelen naar bluetooth, koppel je je USB-poort of USB-hub los en ga je naar Instellingen voor SandFly &gt; Brailleleesregel.</string>
   <string name="bd_device">telefoon</string>
   <string name="bd_battery_low_dialog_title">Batterij van %s bijna leeg</string>
   <string name="bd_battery_low_dialog_message">De batterij van je %s laadt je brailleleesregel op.\n\nZo spaar je de batterij:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">Alles wissen</string>
   <string name="popup_message_history_empty">Leeg</string>
   <string name="popup_message_history_consent_dialog_title">Berichtgeschiedenis op het apparaat aanzetten?</string>
-  <string name="popup_message_history_consent_dialog_msg">Hiermee worden sommige berichten, zoals meldingen en wekkers, opgeslagen in TalkBack. Je kunt deze instelling op elk moment aanpassen.</string>
+  <string name="popup_message_history_consent_dialog_msg">Hiermee worden sommige berichten, zoals meldingen en wekkers, opgeslagen in SandFly. Je kunt deze instelling op elk moment aanpassen.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Aanzetten</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nee, bedankt</string>
+    <string name="external_display_channel">Brailleleesregels van andere apps</string>
+    <string name="external_display_ask_title">Toestaan dat <xliff:g id="app" example="Notetaker">%1$s</xliff:g> een brailleleesregel is voor SandFly?</string>
+    <string name="external_display_ask_text">SandFly zal het pas gebruiken als je het toestaat.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> kan alles wat SandFly toont in braille lezen, wat alles op het scherm kan zijn, inclusief berichten en wat u typt. Het zal uw apparaat ook kunnen bedienen zoals u dat kunt met een brailleleesregel: typ, open apps en voer elk SandFly-commando uit. Sta alleen apps toe die u vertrouwt.</string>
+    <string name="external_display_allow">Toestaan</string>
+    <string name="external_display_deny">Niet toestaan</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> is uw brailleleesregel</string>
+    <string name="external_display_in_use_text">Terwijl SandFly het gebruikt, kan <xliff:g id="app" example="Notetaker">%1$s</xliff:g> het scherm lezen en het apparaat bedienen.</string>
+    <string name="external_displays_title">Weergaven van andere apps</string>
+    <string name="external_displays_summary">Apps die u toestaat, kunnen brailleleesregels zijn voor SandFly. Een app die een brailleleesregel is, kan het scherm lezen en het apparaat bedienen.</string>
+    <string name="external_displays_none">Geen enkele app kan een brailleleesregel zijn.</string>
 </resources>

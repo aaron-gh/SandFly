@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack-brailletoetsenbord</string>
+  <string name="braille_ime_service_name">SandFly-brailletoetsenbord</string>
   <string name="braille_ime_bd_mode_name">Invoer via brailleleesregel</string>
   <string name="switch_to_tabletop_announcement">Tafelbladmodus. Leg je apparaat neer met de oplaadpoort naar links.</string>
   <string name="calibration_tip_announcement">Plaats %d vingers om de positie van de punten te updaten.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Overgeschakeld naar braille (volledig)</string>
   <string name="braille_ime_displayed_name">brailletoetsenbord</string>
   <string name="multiple_languages_braille_ime_displayed_name">brailletoetsenbord, %s</string>
-  <string name="input_view_caption">TalkBack-brailletoetsenbord - ga voor hulp naar g.co/help/braille</string>
+  <string name="input_view_caption">SandFly-brailletoetsenbord - ga voor hulp naar g.co/help/braille</string>
   <string name="perform_action_next">Volgende</string>
   <string name="perform_action_submitting">Tekst indienen</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">We updaten de positie van de punten. Eerst nemen we de punten op je %s op.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Als je de taal wilt wijzigen terwijl je typt met het brailletoetsenbord, swipe je met 3 vingers omhoog. Selecteer dan Overschakelen naar volgende taal.</string>
   <string name="title_pref_accumulate_presses">Alle ingedrukte punten opnemen</string>
   <string name="summary_pref_accumulate_presses">Elke ingedrukte punt is onderdeel van de invoer, ook als de punt vóór andere punten is losgelaten</string>
-  <string name="title_pref_reverse_dots">Punten omkeren</string>
-  <string name="summary_pref_reverse_dots">Wissel de puntposities, zodat bijvoorbeeld punt 1 en 4 van plaats wisselen</string>
+  <string name="title_pref_reverse_dots">Verwissel de linker- en rechterpunten</string>
+  <string name="summary_pref_reverse_dots">Punten 1, 2 en 3 wisselen van plaats met punten 4, 5 en 6</string>
   <string name="bd_preference_braille_contracted">Kortschrift</string>
   <string name="bd_preference_braille_uncontracted">Volledige braille</string>
   <string name="context_menu_title">Opties brailletoetsenbord</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Toetsenbord</string>
   <string name="not_enough_touch_points_dialog_title">Je apparaat ondersteunt geen brailletoetsenbord</string>
   <string name="not_enough_touch_points_dialog_message">Je apparaat ondersteunt niet voldoende aanraakpunten. Neem contact op met de fabrikant van het apparaat voor meer informatie.</string>
-  <string name="talkback_off_dialog_title">Zet TalkBack aan om een brailletoetsenbord te gebruiken</string>
+  <string name="talkback_off_dialog_title">Zet SandFly aan om een brailletoetsenbord te gebruiken</string>
   <string name="talkback_off_dialog_positive_button">Aanzetten via instellingen voor toegankelijkheid</string>
-  <string name="talkback_suspend_dialog_title">TalkBack hervatten om het brailletoetsenbord te gebruiken</string>
-  <string name="talkback_off_or_suspend_dialog_message">Als TalkBack aanstaat, kun je op je scherm tikken om brailletekens in te voeren.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Zet TalkBack aan om het gebaar te wijzigen</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack staat uit. Zet het aan om gebaren voor het brailletoetsenbord te wijzigen.</string>
+  <string name="talkback_suspend_dialog_title">SandFly hervatten om het brailletoetsenbord te gebruiken</string>
+  <string name="talkback_off_or_suspend_dialog_message">Als SandFly aanstaat, kun je op je scherm tikken om brailletekens in te voeren.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Zet SandFly aan om het gebaar te wijzigen</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly staat uit. Zet het aan om gebaren voor het brailletoetsenbord te wijzigen.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Naar Instellingen</string>
   <string name="reset_gestures_dialog_title">Alle gebaren resetten?</string>
   <string name="reset_gestures_dialog_message">Alle gebaren van het brailletoetsenbord worden teruggezet naar de standaardinstellingen</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Resetten naar standaard</string>
   <string name="custom_gestures_dialog_remove_button">Gebaar verwijderen</string>
   <string name="change_gestures_dialog_message_title">Een gebaar wijzigen</string>
-  <string name="change_gestures_dialog_message">Op het volgende scherm wordt het brailletoetsenbord geopend en kun je geen TalkBack-gebaren gebruiken.\n\nNadat het brailletoetsenbord is geopend, voer je het gebaar uit dat je wilt gebruiken. Als je het brailletoetsenbord wilt sluiten en de wijziging van het gebaar wilt annuleren, swipe je omlaag met 2 vingers.\n\nBeschikbare gebaren bekijken\n</string>
+  <string name="change_gestures_dialog_message">Op het volgende scherm wordt het brailletoetsenbord geopend en kun je geen SandFly-gebaren gebruiken.\n\nNadat het brailletoetsenbord is geopend, voer je het gebaar uit dat je wilt gebruiken. Als je het brailletoetsenbord wilt sluiten en de wijziging van het gebaar wilt annuleren, swipe je omlaag met 2 vingers.\n\nBeschikbare gebaren bekijken\n</string>
   <string name="change_gestures_dialog_message_link">Beschikbare gebaren bekijken</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Dit bericht niet meer tonen</string>
   <string name="change_gestures_dialog_positive_button">Doorgaan</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Niet gebruiken</string>
   <string name="next_keyboard">Volgend toetsenbord</string>
   <string name="braille_tutorial_title">Tutorial brailletoetsenbord</string>
-  <string name="tutorial_intro_description">Met het brailletoetsenbord kun je op je scherm tikken om zespunts braille op te geven.\n\nJe gebruikt UEB (Unified English Braille). Als je in een andere taal wilt typen, ga je naar de TalkBack-instellingen.\n\nAls je braille wilt typen, moet je je telefoon op een andere manier vasthouden en gebruiken.</string>
+  <string name="tutorial_intro_description">Met het brailletoetsenbord kun je op je scherm tikken om zespunts braille op te geven.\n\nJe gebruikt UEB (Unified English Braille). Als je in een andere taal wilt typen, ga je naar de SandFly-instellingen.\n\nAls je braille wilt typen, moet je je telefoon op een andere manier vasthouden en gebruiken.</string>
   <string name="next_step">Volgende</string>
   <string name="leave_keyboard">Brailletoetsenbord sluiten</string>
-  <string name="hold_six_fingers_description">Je kunt geen reguliere TalkBack-gebaren gebruiken met het brailletoetsenbord.\n\nGa aan de slag door de positie van de zes braillestippen in te stellen als je typt.</string>
-  <string name="rotate_orientation_description_1">Je kunt vanaf nu geen reguliere TalkBack-gebaren gebruiken. TalkBack is niet beschikbaar als je het brailletoetsenbord gebruikt.</string>
+  <string name="hold_six_fingers_description">Je kunt geen reguliere SandFly-gebaren gebruiken met het brailletoetsenbord.\n\nGa aan de slag door de positie van de zes braillestippen in te stellen als je typt.</string>
+  <string name="rotate_orientation_description_1">Je kunt vanaf nu geen reguliere SandFly-gebaren gebruiken. SandFly is niet beschikbaar als je het brailletoetsenbord gebruikt.</string>
   <string name="rotate_orientation_description_2">Begin door je telefoon zo vast te houden, met het scherm van je af gericht.</string>
   <string name="tap_to_continue">Dubbeltik op een willekeurige plek om verder te gaan</string>
   <string name="instruction_type_letter_a">Tik met je linkerwijsvinger op punt 1 om de letter \'A\' te typen</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">CURSOR VOORUIT BEWOGEN</string>
   <string name="result_swipe_down_2_fingers">TOETSENBORD VERBERGEN</string>
   <string name="result_swipe_down_3_fingers">VOLGEND TOETSENBORD</string>
-  <string name="rotate_orientation_announcement">Je kunt vanaf nu geen reguliere TalkBack-gebaren gebruiken. TalkBack is niet beschikbaar als je het brailletoetsenbord gebruikt.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Je kunt vanaf nu geen reguliere SandFly-gebaren gebruiken. SandFly is niet beschikbaar als je het brailletoetsenbord gebruikt.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Draai je telefoon zodat het scherm van je af is gericht.\n\nDraai de telefoon vervolgens horizontaal naar de liggende positie. Houd je telefoon aan de korte kanten vast. Je rechterhand moet de kant met de USB-poort vasthouden. Laat je drie middelste vingers rusten op het scherm en gebruik je pink en duim om de telefoon stevig vast te houden.\n\nAls je klaar bent, dubbeltik je op het scherm om verder te gaan.\n\nAls je het brailletoetsenbord wilt sluiten, swipe je met 3 vingers omlaag. Op die manier wordt het oorspronkelijke toetsenbord weer actief.</string>
   <string name="rotate_orientation_continue_announcement">Je telefoon bevindt zich in de verticale stand. Draai je telefoon horizontaal met de lange kant onderaan om verder te gaan. Zorg vervolgens dat het scherm van je af is gericht. Als je klaar bent, dubbeltik je op het scherm om verder te gaan.</string>
   <string name="type_letter_a_announcement">Zorg dat het scherm van je af is gericht. Houd je telefoon met beide handen vast aan de korte zijden, zodat de middelste 3 vingers van elke hand het scherm kunnen aanraken.\n\nJe linkerwijsvinger moet zich op punt 1 bevinden. Tik nu op punt 1 om de letter \'A\' te typen.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Swipe met 3 vingers omlaag om over te schakelen naar je andere toetsenbord. Probeer het nu.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Volgend toetsenbord. Hiermee ga je doorgaans naar het volgende toetsenbord. Het brailletoetsenbord blijft nu aan omdat de tutorial nog actief is.</string>
   <string name="swipe_up_3_fingers_announcement">Je kunt ook in de tafelbladmodus typen door de telefoon plat op een tafel te leggen. Als je de tutorial wilt voltooien, swipe je met 3 vingers omhoog en zoek je de optie om de tutorial te voltooien.</string>
-  <string name="open_context_menu_announcement">Het menu Opties is geopend. Draai de telefoon weer naar je toe en houd hem normaal vast. Je kunt nu gewone TalkBack-gebaren gebruiken voor navigatie. Swipe naar rechts voor meer opties.</string>
+  <string name="open_context_menu_announcement">Het menu Opties is geopend. Draai de telefoon weer naar je toe en houd hem normaal vast. Je kunt nu gewone SandFly-gebaren gebruiken voor navigatie. Swipe naar rechts voor meer opties.</string>
   <string name="hold_six_fingers_announcement">%s\nLeg het apparaat plat op een tafel. Tik daarna op het scherm en houd dit vast met de middelste 3 vingers van elke hand. Houd de vingers in een positie waarin je prettig kunt typen.</string>
   <string name="hold_six_fingers_inactive_announcement">Leg het apparaat plat op een tafel. Tik daarna op het scherm en houd dit vast met de middelste 3 vingers van elke hand. Houd de vingers in een positie waarin je prettig kunt typen.</string>
   <string name="finish_tutorial_announcement">Brailletoetsenbord wordt getoond. Draai je telefoon zodat het scherm van je af is gericht. Draai de telefoon horizontaal naar de liggende apparaatstand. Begin dan te typen.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Dit gebaar wordt gebruikt voor %1$s en kan niet worden gewijzigd. Probeer een ander gebaar. %2$s</string>
   <string name="custom_gesture_cannot_used">Dit gebaar kan niet worden gebruikt</string>
   <string name="custom_gesture_no_gesture">Geen gebaar uitgevoerd</string>
-  <string name="custom_gesture_try_another">Probeer een ander gebaar. Ga naar het Helpcentrum voor het brailletoetsenbord van TalkBack voor een lijst met alle beschikbare gebaren. %s</string>
+  <string name="custom_gesture_try_another">Probeer een ander gebaar. Ga naar het Helpcentrum voor het brailletoetsenbord van SandFly voor een lijst met alle beschikbare gebaren. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Gebaren komen niet overeen</string>
   <string name="custom_gesture_perform_again">Voer het gebaar dat je wilt gebruiken nog een keer uit. %s</string>
+    <string name="tabletop_port_left_announcement">Tafelmodel, oplaadpoort aan de linkerkant</string>
+    <string name="tabletop_port_right_announcement">Tafelmodel, oplaadpoort aan de rechterkant</string>
+    <string name="screen_away_port_right_announcement">Screen-away-modus, oplaadpoort aan de rechterkant</string>
+    <string name="screen_away_port_left_announcement">Screen-away-modus, oplaadpoort aan de linkerkant</string>
+    <string name="screen_toward_announcement">Scherm naar u toe</string>
+    <string name="screen_toward_port_left_announcement">Scherm naar u toe, oplaadpoort aan de linkerkant</string>
+    <string name="screen_toward_port_right_announcement">Scherm naar u toe, oplaadpoort aan de rechterkant</string>
+    <string name="screen_toward_port_down_announcement">Scherm naar u toe, oplaadpoort naar beneden gericht</string>
+    <string name="screen_toward_port_up_announcement">Scherm naar u toe, oplaadpoort naar boven gericht</string>
+    <string name="port_right_announcement">Oplaadpoort aan de rechterkant</string>
+    <string name="port_left_announcement">Oplaadpoort aan de linkerkant</string>
+    <string name="tabletop_port_near_announcement">Tafelmodel, oplaadpoort naar u toe</string>
+    <string name="tabletop_port_far_announcement">Tafelmodel, oplaadpoort van u af</string>
+    <string name="screen_away_port_down_announcement">Screen-away-modus, oplaadpoort naar beneden gericht</string>
+    <string name="screen_away_port_up_announcement">Screen-away-modus, oplaadpoort naar boven gericht</string>
+    <string name="port_near_announcement">Oplaadpoort naar u toe</string>
+    <string name="port_far_announcement">Oplaadpoort van u af</string>
+    <string name="port_down_announcement">Oplaadpoort naar beneden gericht</string>
+    <string name="port_up_announcement">Oplaadpoort wijst naar boven</string>
+    <string name="orientation_locked_announcement">Oriëntatie vergrendeld</string>
+    <string name="orientation_locked_port_announcement">Oriëntatie vergrendeld. %1$s</string>
+    <string name="orientation_unlocked_announcement">Oriëntatie ontgrendeld</string>
+    <string name="switch_to_language_contracted_announcement">Overgeschakeld naar %s, Kortschrift</string>
+    <string name="switch_to_language_uncontracted_announcement">Overgeschakeld naar %s, Volledige braille</string>
+    <string name="title_pref_flip_dots_vertically">Wissel de bovenste en onderste punten om</string>
+    <string name="summary_pref_flip_dots_vertically">Punt 1 ruilt plaatsen met punt 3, en punt 4 met punt 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tablet omhoog gehouden, gezichten weg</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Wanneer deze is uitgeschakeld, gebruikt een tablet of uitgevouwen telefoon die omhoog wordt gehouden de tafelbladindeling, naar u toe gericht</string>
+    <string name="title_pref_typing_sounds">Typegeluiden</string>
+    <string name="summary_pref_typing_sounds">Speel toetsenbordklikken wanneer u een teken, een spatie, een nieuwe regel typt of verwijdert</string>
+    <string name="skip_tutorial">Handleiding overslaan</string>
 </resources>
