@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">Sterk</string>
+    <string name="notification_shake_2">Medium</string>
+    <string name="notification_shake_1">Sagmoedig</string>
+    <string name="notification_media_skip">Moenie hardop lees nie</string>
+    <string name="notification_media_pause">Onderbreek die media terwyl jy lees</string>
+    <string name="notification_media_read">Lees hardop</string>
+    <string name="notification_headphones_only_without">Slegs sonder oorfone</string>
+    <string name="notification_headphones_only_with">Slegs met oorfone</string>
+    <string name="notification_headphones_always">Lees hardop met of sonder oorfone</string>
+    <string name="notification_queue_skip">Moenie die nuwe kennisgewing hardop lees nie</string>
+    <string name="notification_queue_interrupt">Onderbreek die kennisgewing wat hardop gelees word</string>
+    <string name="notification_queue_queue">Lees hardop na die huidige kennisgewing</string>
+    <string name="notification_url_omit">Los uit</string>
+    <string name="notification_url_replace">Sê die teks hieronder</string>
+    <string name="notification_url_domain">Lees slegs die webwerf</string>
+    <string name="notification_url_full">Lees die hele skakel</string>
+    <string name="notification_category_title">Kennisgewings</string>
+    <string name="notification_reading_title">Lees kennisgewings hardop</string>
+    <string name="notification_apps_title">Toepassings</string>
+    <string name="notification_words_title">Woorde en vervangings</string>
+    <string name="notification_kinds_title">Soorte kennisgewings</string>
+    <string name="notification_when_title">Wanneer om te lees</string>
+    <string name="notification_rules_title">Reëls</string>
+    <string name="notification_repeats_title">Herhaal</string>
+    <string name="notification_stop_title">Hou op lees</string>
+    <string name="notification_schedules_title">Opsomming en tyd</string>
+    <string name="notification_history_title">Kennisgewingsgeskiedenis</string>
+    <string name="notification_test_title">Stuur \'n toetskennisgewing</string>
+    <string name="notification_automation_title">Outomatisering</string>
+    <string name="notification_automation_allowed_title">Laat outomatiseringsprogramme toe</string>
+    <string name="notification_category_said">Wat gesê word</string>
+    <string name="notification_format_title">Spraakformaat</string>
+    <string name="notification_format_message">Plekhouers: {app}, {title}, {text}, {content} (die hele teks), {bigtext}, {subtext}, {ticker}, {category} en {time}.</string>
+    <string name="notification_private_format_title">Private kennisgewings sê</string>
+    <string name="notification_private_format_message">Gesê in die plek van \'n private kennisgewing se inhoud. Plekhouers: {app}, {category} en {time}.</string>
+    <string name="notification_category_voice">Stem</string>
+    <string name="notification_voice_title">Stem</string>
+    <string name="notification_voice_sandfly">SandFly se stem</string>
+    <string name="notification_detect_language_title">Bespeur taal</string>
+    <string name="notification_detect_language_summary">Sê elke kennisgewing in die taal waarin dit geskryf is. Behoeftes Verander taal outomaties in teks-na-spraak-instellings.</string>
+    <string name="notification_sound_before_title">Klank voor kennisgewings</string>
+    <string name="notification_category_text">Teks</string>
+    <string name="notification_remove_emoji_title">Los emoji uit</string>
+    <string name="notification_lowercase_title">Lees hoofletters as woorde</string>
+    <string name="notification_lowercase_summary">Sommige spraakenjins spel woorde in hoofletters letter vir letter</string>
+    <string name="notification_separate_digits_title">Lees lang getalle syfer vir syfer</string>
+    <string name="notification_separate_digits_summary">Soos kodes en telefoonnommers</string>
+    <string name="notification_min_digits_title">Minimum syfers in \'n lang getal</string>
+    <string name="notification_urls_title">Skakels</string>
+    <string name="notification_url_text_title">Gesê in die plek van \'n skakel</string>
+    <string name="notification_skip_empty_title">Slaan kennisgewings oor sonder teks</string>
+    <string name="notification_category_length">Lengte</string>
+    <string name="notification_max_words_title">Maksimum aantal woorde</string>
+    <string name="notification_max_sentences_title">Maksimum aantal sinne</string>
+    <string name="notification_max_characters_title">Maksimum aantal tekskarakters</string>
+    <string name="notification_max_seconds_title">Hou op lees daarna</string>
+    <string name="notification_category_timing">Tydsberekening</string>
+    <string name="notification_delay_title">Wag voor lees</string>
+    <string name="notification_queue_title">Wanneer \'n ander kennisgewing gelees word</string>
+    <string name="notification_repeat_minutes_title">Lees weer totdat die skerm aanskakel</string>
+    <string name="notification_skip_media_title">Slaan mediaspelers oor</string>
+    <string name="notification_skip_ongoing_title">Slaan deurlopende kennisgewings oor</string>
+    <string name="notification_skip_ongoing_summary">Soos navigasie en timers</string>
+    <string name="notification_skip_foreground_title">Slaan lopende programkennisgewings oor</string>
+    <string name="notification_skip_foreground_summary">Soos ’n VPN of ’n klankopnemer</string>
+    <string name="notification_skip_progress_title">Slaan vorderingkennisgewings oor</string>
+    <string name="notification_skip_group_summaries_title">Slaan groepopsommings oor</string>
+    <string name="notification_skip_group_summaries_summary">Soos \"3 nuwe boodskappe\"</string>
+    <string name="notification_skip_low_priority_title">Slaan lae prioriteit kennisgewings oor</string>
+    <string name="notification_skip_system_title">Slaan stelselkennisgewings oor</string>
+    <string name="notification_screen_on_title">Terwyl die skerm aan is</string>
+    <string name="notification_screen_off_title">Terwyl die skerm af is</string>
+    <string name="notification_locked_title">Terwyl die foon gesluit is</string>
+    <string name="notification_headphones_title">Oorfone</string>
+    <string name="notification_media_title">Terwyl media speel</string>
+    <string name="notification_dnd_title">Moenie Steur Nie</string>
+    <string name="notification_dnd_none">Moenie enige kennisgewings hardop lees nie</string>
+    <string name="notification_dnd_allowed">Lees kennisgewings wat deur Moenie Steur Nie-modus toegelaat word nie</string>
+    <string name="notification_dnd_all">Lees alles</string>
+    <string name="notification_touch_title">Terwyl die skerm aangeraak word</string>
+    <string name="notification_touch_read">Lees dadelik</string>
+    <string name="notification_touch_after">Lees wanneer die aanraking eindig</string>
+    <string name="notification_touch_skip">Moenie hardop lees nie</string>
+    <string name="notification_during_calls_title">Tydens oproepe</string>
+    <string name="notification_honour_silent_title">Nie in stil modus nie</string>
+    <string name="notification_honour_vibrate_title">Nie in vibreermodus nie</string>
+    <string name="notification_skip_in_car_title">Nie in motormodus nie</string>
+    <string name="notification_skip_in_car_summary">Soos met Android Auto, wat hulle self lees</string>
+    <string name="notification_category_quiet_hours">Stil ure</string>
+    <string name="notification_quiet_hours_title">Stil ure</string>
+    <string name="notification_quiet_start_title">Begin</string>
+    <string name="notification_quiet_end_title">Einde</string>
+    <string name="notification_repeat_seconds_title">Slaan dieselfde kennisgewing oor vir</string>
+    <string name="notification_numbers_alike_title">Behandel verskillende getalle as identies</string>
+    <string name="notification_numbers_alike_summary">Soos \'n aflaai persentasie</string>
+    <string name="notification_cooldown_title">Tyd tussen \'n program se kennisgewings</string>
+    <string name="notification_skip_prefix_title">Laat \'n herhaalde teksvoorvoegsel weg</string>
+    <string name="notification_skip_prefix_summary">Soos die naam van \'n groep in \'n klets</string>
+    <string name="notification_prefix_memory_title">Hoe lank om die teksvoorvoegsel te onthou</string>
+    <string name="notification_access_summary">Nodig om op te hou om \'n afgekeurde kennisgewing te lees en vir opsommings</string>
+    <string name="notification_shake_title">Skud om te stop</string>
+    <string name="notification_shake_strength_title">Skudsterkte</string>
+    <string name="notification_wave_title">Swaai \'n hand om op te hou lees</string>
+    <string name="notification_wave_summary">Beweeg \'n hand oor die nabyheidsensor</string>
+    <string name="notification_pocket_title">Sakmodus</string>
+    <string name="notification_pocket_summary">\'n Sensor wat bedek is wanneer lees begin, soos in \'n sak, stop dit nie</string>
+    <string name="notification_volume_keys_title">Druk albei volumesleutels</string>
+    <string name="notification_dismiss_title">Hou op lees wanneer die kennisgewing verwerp word</string>
+    <string name="notification_watch_dismiss_title">Ook wanneer die kennisgewing op \'n slimhorlosie verwerp word</string>
+    <string name="notification_app_cancel_title">Hou op lees wanneer die toepassing die kennisgewing verwyder</string>
+    <string name="notification_category_summary">Opsomming</string>
+    <string name="notification_summary_now_title">Lees kennisgewings nou</string>
+    <string name="notification_summary_daily_title">Lees kennisgewings elke dag</string>
+    <string name="notification_summary_time_title">Tyd</string>
+    <string name="notification_summary_newest_first_title">Nuutste eerste</string>
+    <string name="notification_summary_name_title">Jou naam</string>
+    <string name="notification_summary_gap_title">Pouse tussen kennisgewings</string>
+    <string name="notification_summary_needs_sandfly">Skakel SandFly aan om kennisgewings te lees</string>
+    <string name="notification_summary_no_access">Kennisgewingtoegang is af</string>
+    <string name="notification_summary_morning">Goeie môre.</string>
+    <string name="notification_summary_afternoon">Goeie middag.</string>
+    <string name="notification_summary_evening">Goeienaand.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">Tyd aankondigings</string>
+    <string name="notification_clock_interval_title">Sê elke keer die tyd</string>
+    <string name="notification_clock_format_title">Tydformaat</string>
+    <string name="notification_clock_format_message">Plekhouers: {time}, {date} en {battery} (die batterypersentasie).</string>
+    <string name="notification_clock_format_default">Dit is {time}</string>
+    <string name="notification_clock_exact_title">Presiese tye</string>
+    <string name="notification_clock_exact_summary">Benodig alarms en aanmanings. Andersins kan die tyd tot \'n minuut laat gesê word.</string>
+    <string name="notification_other_apps_title">Ander toepassings</string>
+    <string name="notification_apps_category">Toepassings</string>
+    <string name="notification_apps_loading">Laai tans toepassings</string>
+    <string name="notification_app_mode_title">Kennisgewings</string>
+    <string name="notification_app_mode_default">Soos ander toepassings</string>
+    <string name="notification_app_mode_read">Lees hardop</string>
+    <string name="notification_app_mode_private">Slegs programnaam</string>
+    <string name="notification_app_mode_priority">Lees eers</string>
+    <string name="notification_app_mode_ignore">Moenie hardop lees nie</string>
+    <string name="notification_app_name_title">Gesproke naam</string>
+    <string name="notification_app_said_as">gesê as <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">Stel terug</string>
+    <string name="notification_required_title">Lees slegs kennisgewings met</string>
+    <string name="notification_blocked_title">Moenie kennisgewings lees met</string>
+    <string name="notification_private_title">Lees slegs die programnaam vir</string>
+    <string name="notification_replacements_title">Sê anders</string>
+    <string name="notification_add_word">Voeg \'n woord by</string>
+    <string name="notification_add_replacement">Voeg \'n plaasvervanger by</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> as <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">Teks</string>
+    <string name="notification_replace_with">Sê as</string>
+    <string name="notification_whole_words">Slegs hele woorde</string>
+    <string name="notification_regex">Reguliere uitdrukking</string>
+    <string name="notification_enter_text">Voer \'n teks in</string>
+    <string name="notification_invalid_regex">Nie \'n geldige gereelde uitdrukking nie</string>
+    <string name="notification_edit">Wysig</string>
+    <string name="notification_remove">Verwyder</string>
+    <string name="notification_history_keep">Stoor kennisgewinggeskiedenis</string>
+    <string name="notification_history_clear">Vee die geskiedenis uit</string>
+    <string name="notification_history_category">Kennisgewings</string>
+    <string name="notification_history_empty">Geen kennisgewings nie</string>
+    <string name="notification_history_ignore_app">Moenie <xliff:g id="app" example="Chat">%1$s</xliff:g> lees nie</string>
+    <string name="notification_history_private_app">Lees net die naam van <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Lees eers <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_block_similar">Moenie kennisgewings soos hierdie lees nie</string>
+    <string name="notification_history_copy">Kopieer</string>
+    <string name="notification_saved">Gestoor</string>
+    <string name="notification_copied">Gekopieer</string>
+    <string name="notification_outcome_read">Lees hardop suksesvol</string>
+    <string name="notification_outcome_stopped">Gestop tydens lees</string>
+    <string name="notification_outcome_speech_off">Nie gelees nie: kennisgewingspraak is af</string>
+    <string name="notification_outcome_dnd">Nie gelees nie: Moenie Steur Nie</string>
+    <string name="notification_outcome_touching">Nie gelees nie: die skerm is aangeraak</string>
+    <string name="notification_outcome_app">Nie gelees nie: app</string>
+    <string name="notification_outcome_ongoing">Nie gelees nie: aan die gang</string>
+    <string name="notification_outcome_foreground">Nie gelees nie: lopende toepassing</string>
+    <string name="notification_outcome_low_priority">Nie gelees nie: lae prioriteit</string>
+    <string name="notification_outcome_system">Nie gelees nie: stelsel</string>
+    <string name="notification_outcome_media">Nie gelees nie: mediaspeler</string>
+    <string name="notification_outcome_group_summary">Nie gelees nie: groepopsomming</string>
+    <string name="notification_outcome_progress">Nie gelees nie: vordering</string>
+    <string name="notification_outcome_required">Nie gelees nie: vereiste woorde ontbreek</string>
+    <string name="notification_outcome_blocked">Nie gelees nie: geblokkeerde woord</string>
+    <string name="notification_outcome_empty">Nie gelees nie: geen teks</string>
+    <string name="notification_outcome_repeat">Nie gelees nie: herhaal</string>
+    <string name="notification_outcome_cooldown">Nie hardop gelees nie: \'n ander kennisgewing vanaf hierdie toepassing is te onlangs gelees</string>
+    <string name="notification_outcome_quiet_hours">Nie gelees nie: stil ure</string>
+    <string name="notification_outcome_screen_on">Nie gelees nie: skerm aan</string>
+    <string name="notification_outcome_screen_off">Nie gelees nie: skerm af</string>
+    <string name="notification_outcome_locked">Nie gelees nie: gesluit</string>
+    <string name="notification_outcome_headphones">Nie gelees nie: oorfone gekoppel</string>
+    <string name="notification_outcome_no_headphones">Nie gelees nie: geen oorfone</string>
+    <string name="notification_outcome_silent">Nie gelees nie: stil modus</string>
+    <string name="notification_outcome_vibrate">Nie gelees nie: vibreermodus</string>
+    <string name="notification_outcome_media_playing">Nie gelees nie: media speel</string>
+    <string name="notification_outcome_car">Nie gelees nie: motormodus</string>
+    <string name="notification_outcome_rule">Nie gelees nie: reël</string>
+    <string name="notification_outcome_busy">Nie gelees nie: nog \'n kennisgewing is gelees</string>
+    <string name="notification_outcome_call">Aangekondig as \'n inkomende telefoonoproep</string>
+    <string name="notification_rule_add">Voeg \'n reël by</string>
+    <string name="notification_rule_from_template">Voeg \'n reël by \'n sjabloon</string>
+    <string name="notification_rules_category">Reëls</string>
+    <string name="notification_rules_empty">Geen reëls nie</string>
+    <string name="notification_rule_name">Naam</string>
+    <string name="notification_rule_untitled">Reël</string>
+    <string name="notification_rule_enabled">Aangeskakel</string>
+    <string name="notification_rule_match">Voorwaardes</string>
+    <string name="notification_rule_match_all">Alle voorwaardes moet nagekom word</string>
+    <string name="notification_rule_match_any">Ten minste een voorwaarde moet nagekom word</string>
+    <string name="notification_rule_conditions">Wanneer</string>
+    <string name="notification_rule_actions">Toe</string>
+    <string name="notification_rule_add_condition">Voeg \'n voorwaarde by</string>
+    <string name="notification_rule_add_action">Voeg \'n handeling by</string>
+    <string name="notification_rule_invert">Keer die voorwaarde om</string>
+    <string name="notification_rule_delete">Vee die reël uit</string>
+    <string name="notification_rule_delete_confirm">Vee <xliff:g id="rule" example="Night">%1$s</xliff:g> uit?</string>
+    <string name="notification_rule_always">Altyd</string>
+    <string name="notification_rule_no_actions">niks gebeur nie</string>
+    <string name="notification_rule_and">" en "</string>
+    <string name="notification_rule_or">" of "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">Slegs met oorfone</string>
+    <string name="notification_template_night">Stil in die nag</string>
+    <string name="notification_template_screen_off">Slegs met die skerm af</string>
+    <string name="notification_template_locked_private">Slegs die programnaam wanneer die foon gesluit is</string>
+    <string name="notification_template_short_on_battery">Lees kortliks wanneer nie laai nie</string>
+    <string name="notification_type_bluetooth">Bluetooth toestel</string>
+    <string name="notification_type_wired">Bedrade oorfone</string>
+    <string name="notification_type_wifi">Wi-Fi netwerk</string>
+    <string name="notification_type_time">Tyd van die dag</string>
+    <string name="notification_type_screen">Skerm aan</string>
+    <string name="notification_type_locked">Foon gesluit</string>
+    <string name="notification_type_from_app">Kennisgewing vanaf \'n toepassing</string>
+    <string name="notification_type_foreground">Toepassing op die voorgrond</string>
+    <string name="notification_type_contains">Kennisgewing bevat</string>
+    <string name="notification_type_battery">Batteryvlak onder</string>
+    <string name="notification_type_charging">Laai</string>
+    <string name="notification_type_landscape">Landskap</string>
+    <string name="notification_type_silent">Stil- of vibreermodus</string>
+    <string name="notification_type_media">Media speel</string>
+    <string name="notification_bluetooth_any">Enige toestel</string>
+    <string name="notification_wifi_hint">Netwerk naam</string>
+    <string name="notification_choose_app">Kies \'n toepassing</string>
+    <string name="notification_time_start">Van</string>
+    <string name="notification_time_end">Tot</string>
+    <string name="notification_time_days">Dae</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> tot <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly benodig daardie toestemming vir hierdie voorwaarde</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> is gekoppel</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> is nie gekoppel nie</string>
+    <string name="notification_cond_bluetooth_any">\'n Bluetooth oudiotoestel is gekoppel</string>
+    <string name="notification_cond_bluetooth_any_not">Geen Bluetooth oudiotoestel is gekoppel nie</string>
+    <string name="notification_cond_wired">Bedrade oorfone is gekoppel</string>
+    <string name="notification_cond_wired_not">Bedrade oorfone is nie gekoppel nie</string>
+    <string name="notification_cond_battery_below">Die battery is onder <xliff:g id="percent" example="20">%1$d</xliff:g> persent</string>
+    <string name="notification_cond_battery_below_not">Die battery is op <xliff:g id="percent" example="20">%1$d</xliff:g> persent of meer</string>
+    <string name="notification_cond_charging">Die foon is besig om te laai</string>
+    <string name="notification_cond_charging_not">Die foon laai nie</string>
+    <string name="notification_cond_locked">Die foon is gesluit</string>
+    <string name="notification_cond_locked_not">Die foon is ontsluit</string>
+    <string name="notification_cond_screen_on">Die skerm is aan</string>
+    <string name="notification_cond_screen_on_not">Die skerm is af</string>
+    <string name="notification_cond_landscape">Die skerm is in landskap</string>
+    <string name="notification_cond_landscape_not">Die skerm is in portret</string>
+    <string name="notification_cond_time">Die tyd is <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Die tyd is nie <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> nie</string>
+    <string name="notification_cond_wifi">Gekoppel aan <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">Nie gekoppel aan <xliff:g id="network" example="Home">%1$s</xliff:g> nie</string>
+    <string name="notification_cond_wifi_any">Gekoppel aan Wi-Fi</string>
+    <string name="notification_cond_wifi_any_not">Nie gekoppel aan Wi-Fi nie</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> is op die voorgrond</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> is nie voor nie</string>
+    <string name="notification_cond_from">Die kennisgewing is van <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Die kennisgewing is nie van <xliff:g id="app" example="Chat">%1$s</xliff:g> nie</string>
+    <string name="notification_cond_contains">Die kennisgewing bevat <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Die kennisgewing bevat nie <xliff:g id="text" example="urgent">%1$s</xliff:g> nie</string>
+    <string name="notification_cond_silent">Die luier is stil of vibreer</string>
+    <string name="notification_cond_silent_not">Die luier lui</string>
+    <string name="notification_cond_media">Media speel</string>
+    <string name="notification_cond_media_not">Geen media speel nie</string>
+    <string name="notification_action_skip">lees nie</string>
+    <string name="notification_action_private">lees slegs die naam van die toepassing</string>
+    <string name="notification_action_not_private">lees volledig, al is dit privaat</string>
+    <string name="notification_action_format">gebruik \'n spraakformaat</string>
+    <string name="notification_action_max_words">lees tot \'n aantal woorde</string>
+    <string name="notification_action_no_limit">lees sonder lengtebeperkings</string>
+    <string name="notification_action_keep_emoji">hou emoji</string>
+    <string name="notification_action_keep_numbers">hou getalle bymekaar</string>
+    <string name="notification_action_priority">lees eers</string>
+    <string name="notification_action_always_read">Lees kennisgewings hardop selfs tydens stil ure of ander beperkte tye</string>
+    <string name="notification_action_voice">lees met \'n stemprofiel</string>
+    <string name="notification_action_voice_value">lees met <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">lees met SandFly se stem</string>
+    <string name="notification_voice_removed">Stemprofiel verwyder</string>
+    <string name="notification_action_format_value">gebruik die spraakformaat <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">lees tot <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">Af</string>
+    <string name="notification_on">Aan</string>
+    <string name="notification_never_again">Totdat SandFly herbegin</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">Kennisgewings voorlees</string>
+    <string name="notification_speech_now_on">Voorlees van kennisgewings aangeskakel</string>
+    <string name="notification_speech_now_off">Voorlees van kennisgewings afgeskakel</string>
+    <string name="notification_no_last_notification">Geen kennisgewing is gelees nie</string>
+    <string name="shortcut_read_notifications">Lees kennisgewings</string>
+    <string name="shortcut_toggle_notification_speech">Kennisgewingspraak aan of af</string>
+    <string name="shortcut_read_last_notification">Lees die laaste kennisgewing weer</string>
+    <string name="shortcut_stop_notification">Hou op om die kennisgewing te lees</string>
+    <string name="notification_test_posting">\'n Toetskennisgewing volg binne 5 sekondes</string>
+    <string name="notification_test_not_allowed">Laat SandFly toe om eers kennisgewings te wys</string>
+    <string name="notification_test_content_title">SandFly toets</string>
+    <string name="notification_test_content_text">Dit is \'n toetskennisgewing, lees saam met jou kennisgewinginstellings. 123456</string>
+    <string name="notification_automation_on">Aktiveer leeskennisgewings hardop</string>
+    <string name="notification_automation_off">Deaktiveer hardop leeskennisgewings</string>
+    <string name="notification_automation_toggle">Aktiveer of deaktiveer hardop leeskennisgewings</string>
+    <string name="notification_automation_stop">Stop die kennisgewing wat gelees word</string>
+    <string name="notification_automation_read_all">Lees kennisgewings</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekonde</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> sekondes</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuut</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> minute</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> uur</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> uur</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> woord</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> woorde</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sin</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> sinne</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tekskarakter</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> tekskarakters</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> syfer</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> syfers</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">Jy het <xliff:g id="count" example="1">%d</xliff:g> kennisgewing.</item>
+        <item quantity="other">Jy het <xliff:g id="count" example="5">%d</xliff:g> kennisgewings.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>
