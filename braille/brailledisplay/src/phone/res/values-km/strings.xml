@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">ក្ដារចុច​អក្សរស្ទាប</string>
   <string name="bd_application_name">មុខងារភាពងាយស្រួល Android</string>
-  <string name="bd_ime_unavailable_activity_name">មិនអាចប្រើ​ក្ដារចុច​អក្សរស្ទាបរបស់មុខងារ TalkBack ​បានទេ</string>
-  <string name="bd_ime_disabled_dialog_title">​បើកក្ដារចុច​អក្សរស្ទាបរបស់មុខងារ TalkBack</string>
+  <string name="bd_ime_unavailable_activity_name">មិនអាចប្រើក្ដារចុចអក្សរស្ទាបរបស់មុខងារ SandFly បានទេ</string>
+  <string name="bd_ime_disabled_dialog_title">បើកក្ដារចុចអក្សរស្ទាបរបស់មុខងារ SandFly</string>
   <string name="bd_ime_disabled_dialog_message">ដើម្បីប្រើអក្សរប្រៃយ៍របស់អ្នកសម្រាប់ការវាយបញ្ចូល សូមចូលទៅកាន់ការ​កំណត់ការបញ្ចូល ដើម្បីបើកវា</string>
   <string name="bd_ime_disabled_dialog_title_positive">ការកំណត់ការបញ្ចូល</string>
   <string name="bd_ime_not_default_dialog_title">ប្ដូរវិធីសាស្ត្រ​បញ្ចូលរបស់អ្នក</string>
-  <string name="bd_ime_not_default_dialog_message">ដើម្បីបន្តវាយបញ្ចូល សូមកំណត់ក្ដារចុចអក្សរស្ទាបរបស់មុខងារ TalkBack ជាវិធីសាស្ត្រ​បញ្ចូលរបស់អ្នក</string>
+  <string name="bd_ime_not_default_dialog_message">ដើម្បីបន្តវាយបញ្ចូល សូមកំណត់ក្ដារចុចអក្សរស្ទាបរបស់មុខងារ SandFly ជាវិធីសាស្ត្របញ្ចូលរបស់អ្នក</string>
   <string name="bd_ime_not_default_dialog_positive">ប្ដូរការបញ្ចូល</string>
   <string name="type_unlabeled">គ្មានស្លាក</string>
   <string name="type_unlabeled_edittext">ប្រអប់កែ​ដែលគ្មានស្លាក</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">អូសបង្វិលទៅឆ្វេង</string>
   <string name="overlay_pan_right_button">អូសបង្វិលទៅ​ស្ដាំ</string>
   <string name="bd_preferences_title">ឧបករណ៍បង្ហាញអក្សរស្ទាប</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">ដើម្បីប្រើឧបករណ៍បង្ហាញអក្សរស្ទាប សូមបើកមុខងារ TalkBack ជាមុនសិន</string>
-  <string name="bd_preferences_banner_talkback_off_button">ចូលទៅកាន់ TalkBack</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">ដើម្បីប្រើឧបករណ៍បង្ហាញអក្សរស្ទាប សូមបើកមុខងារ SandFly ជាមុនសិន</string>
+  <string name="bd_preferences_banner_talkback_off_button">ចូលទៅកាន់ SandFly</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">ដើម្បីប្រើ​ឧបករណ៍បង្ហាញអក្សរស្ទាប សូមបើក​ប៊្លូធូស​ជាមុនសិន</string>
   <string name="bd_preferences_banner_bluetooth_off_button">បើកប៊្លូធូស</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">ដើម្បីប្រើឧបករណ៍បង្ហាញអក្សរស្ទាប %s ត្រូវការចូលប្រើឧបករណ៍នៅជិត</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">ដើម្បីប្រើមុខងាររុករក អ្នកនឹងត្រូវប្ដូរពីផែនទីគ្រាប់ចុចលំនាំដើមទៅផែនទីគ្រាប់ចុចដែលប្រសើរឡើង។ ការផ្លាស់ប្ដូរនេះនឹងធ្វើបច្ចុប្បន្នភាពឃ្លាបញ្ជាមួយចំនួននៃឧបករណ៍បង្ហាញអក្សរស្ទាបរបស់អ្នក</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">ការកំណត់</string>
   <string name="bd_command_change_dialog_title">ឃ្លាបញ្ជាមួយចំនួនត្រូវបានធ្វើបច្ចុប្បន្នភាព</string>
-  <string name="bd_command_change_dialog_message">ឃ្លាបញ្ជាឧបករណ៍បង្ហាញអក្សរស្ទាបទាំងនេះត្រូវបានធ្វើបច្ចុប្បន្នភាពក្នុងកំណែ TalkBack នេះ៖\n\n• ធាតុមុន៖ ចុចចំណុច 1, 7\n\n• ធាតុបន្ទាប់៖ ចុចចំណុច 4, 8\n\n• ការគ្រប់គ្រងការអានមុន៖ ចុចចំណុច 2, 3, 7, 8\n\n• ការគ្រប់គ្រងការអានបន្ទាប់៖ ចុចចំណុច 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">ឃ្លាបញ្ជាឧបករណ៍បង្ហាញអក្សរស្ទាបទាំងនេះត្រូវបានធ្វើបច្ចុប្បន្នភាពក្នុងកំណែ SandFly នេះ៖\n\n• ធាតុមុន៖ ចុចចំណុច 1, 7\n\n• ធាតុបន្ទាប់៖ ចុចចំណុច 4, 8\n\n• ការគ្រប់គ្រងការអានមុន៖ ចុចចំណុច 2, 3, 7, 8\n\n• ការគ្រប់គ្រងការអានបន្ទាប់៖ ចុចចំណុច 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">អក្សរស្ទាបកម្រិតកាត់</string>
   <string name="bd_preference_braille_uncontracted">អក្សរស្ទាបទម្រង់ពេញ</string>
   <string name="bd_braille_grade_tips">ដើម្បីប្ដូរយ៉ាងរហ័យរវាងអក្សរស្ទាបកម្រិតកាត់ និងកម្រិតពេញដោយឧបករណ៍បង្ហាញអក្សរស្ទាប សូមចុចដកឃ្លា និងចុច 1, 2, 4, 5។\n\nឃ្លាបញ្ជានេះដំណើរការ ប្រសិនបើអ្នកកំពុងប្រើភាសាដែលមានកម្រិតអក្សរស្ទាបទាំងពីរ។</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">ផ្លាស់ទីរវាងធាតុ</string>
   <string name="bd_commands_bindings_category_system_actions_title">សកម្មភាព​ប្រព័ន្ធ</string>
   <string name="bd_commands_bindings_category_system_actions_summary">ត្រឡប់ក្រោយ ទំព័រដើម ការជូនដំណឹង និងច្រើនទៀត</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">មុខងារ TalkBack</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">ម៉ឺនុយ និងការកំណត់ Talkback</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">មុខងារ SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly ម៉ឺនុយ និងការកំណត់</string>
   <string name="bd_commands_bindings_category_braille_settings_title">ការកំណត់អក្សរស្ទាប</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ភាសា​ និង​ការ​កំណត់​​អក្សរ​ស្ទាប</string>
   <string name="bd_commands_bindings_category_text_editing_title">ការកែអក្សរ</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">បើកកម្មវិធីទាំងអស់</string>
   <string name="bd_cmd_toggle_screen_search">បើក​ការស្វែងរក​លើអេក្រង់</string>
   <string name="bd_cmd_edit_custom_label">កែ​ស្លាក​ផ្ទាល់ខ្លួន</string>
-  <string name="bd_cmd_open_talkback_menu">បើកម៉ឺនុយ TalkBack</string>
-  <string name="bd_cmd_toggle_voice_feedback">បើក ឬបិទការនិយាយនៃមុខងារ TalkBack</string>
+  <string name="bd_cmd_open_talkback_menu">បើកម៉ឺនុយ SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">បើក ឬបិទការនិយាយនៃមុខងារ SandFly</string>
   <string name="bd_cmd_read_stop">បញ្ឈប់ការអាន</string>
-  <string name="bd_cmd_talkback_settings">បើកការកំណត់ TalkBack</string>
+  <string name="bd_cmd_talkback_settings">បើកការកំណត់ SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">ប្ដូរទៅភាសា​វាយបញ្ចូលបន្ទាប់</string>
   <string name="bd_cmd_switch_to_next_output_language">ប្ដូរទៅភាសា​អានបន្ទាប់</string>
   <string name="bd_cmd_toggle_contracted_mode">ប្ដូររវាងមុខងារកាត់ និងពេញ</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">អ្នកអាចរុករកទំព័របណ្ដាញយ៉ាងរហ័ស ដោយប្រើឃ្លាបញ្ជា ដើម្បីចូលមុខងាររុករក រួចវាយបញ្ចូលផ្លូវកាត់ជាអក្សរ ឬលេខខាងក្រោម\n\nផ្លូវកាត់ទាំងនេះក៏អាចប្រើដោយមិនបាច់ចូលមុខងាររុករក ប៉ុន្តែអ្នកនឹងត្រូវបញ្ចូលចំណុចលេខ 8 ទៅកាន់ឃ្លាបញ្ជា \"បន្ទាប់\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">ការរុករកក្នុងតារាង</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">បិទការកំណត់ឧបករណ៍បង្ហាញអក្សរស្ទាបឬ?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">អ្នកអាចបើកវាម្ដងទៀតបានគ្រប់ពេលនៅក្នុងការកំណត់មុខងារ TalkBack</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">អ្នកអាចបើកវាម្ដងទៀតបានគ្រប់ពេលនៅក្នុងការកំណត់មុខងារ SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">បិទ</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">មិនអាចប្រើឃ្លាបញ្ជាមួយចំនួនបានទេ</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">មិនអាចប្រើឃ្លាបញ្ជាសម្រាប់ការរុករក ការកំណត់អក្សរស្ទាប និងមុខងារ TalkBack មួយចំនួនបានទេ ពេលកំពុងវាយបញ្ចូល ឬកែ។\n\nដើម្បីប្រើឃ្លាបញ្ជាទាំងនេះ សូមបិទក្ដារចុចជាមុនសិន។</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">មិនអាចប្រើឃ្លាបញ្ជាសម្រាប់ការរុករក ការកំណត់អក្សរស្ទាប និងមុខងារ SandFly មួយចំនួនបានទេ ពេលកំពុងវាយបញ្ចូល ឬកែ។\n\nដើម្បីប្រើឃ្លាបញ្ជាទាំងនេះ សូមបិទក្ដារចុចជាមុនសិន។</string>
   <string name="bd_caption_tutorial_dialog_title">អក្សររត់នៅលើឧបករណ៍បង្ហាញអក្សរស្ទាបរបស់អ្នក</string>
   <string name="bd_caption_tutorial_dialog_message">ដើម្បីបង្ហាញ ឬលាក់អក្សររត់សម្រាប់វីដេអូនេះ សូមចុចដកឃ្លា និងចុច 1, 4, 7, 8។\n\nដើម្បីបង្ហាញអក្សររត់ដោយស្វ័យប្រវត្តិសម្រាប់មេឌៀដែលអាចប្រើបាន សូមបើក \"បង្ហាញអក្សររត់\" នៅលើឧបករណ៍បង្ហាញអក្សរស្ទាបនៅក្នុងការកំណត់។</string>
   <string name="bd_caption_tutorial_dialog_checkbox">បង្ហាញសារនេះជានិច្ច នៅពេលមានអក្សររត់</string>
   <string name="bd_usb_connect_dialog_title">បានភ្ជាប់ឧបករណ៍បង្ហាញអក្សរស្ទាបទៅ USB</string>
-  <string name="bd_usb_connect_dialog_message">ថ្ម %s របស់អ្នកកំពុងសាកឧបករណ៍បង្ហាញអក្សរស្ទាបរបស់អ្នក។\n\nប្រសិនបើអ្នកត្រូវប្ដូរទៅប៊្លូធូស សូមផ្ដាច់ USB ឬដុំបំបែក USB របស់អ្នក រួចចូលទៅកាន់ការកំណត់ TalkBack &gt; ឧបករណ៍បង្ហាញអក្សរស្ទាប។</string>
+  <string name="bd_usb_connect_dialog_message">ថ្ម %s របស់អ្នកកំពុងសាកឧបករណ៍បង្ហាញអក្សរស្ទាបរបស់អ្នក។\n\nប្រសិនបើអ្នកត្រូវប្ដូរទៅប៊្លូធូស សូមផ្ដាច់ USB ឬដុំបំបែក USB របស់អ្នក រួចចូលទៅកាន់ការកំណត់ SandFly &gt; ឧបករណ៍បង្ហាញអក្សរស្ទាប។</string>
   <string name="bd_device">ទូរសព្ទ</string>
   <string name="bd_battery_low_dialog_title">%s ជិតអស់ថ្មហើយ</string>
   <string name="bd_battery_low_dialog_message">ថ្ម %s របស់អ្នក​កំពុង​សាកថ្ម​ឧបករណ៍បង្ហាញអក្សរស្ទាបរបស់អ្នក។\n\nដើម្បី​សន្សំសំចៃ​ថ្ម៖\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">សម្អាត​ទាំងអស់</string>
   <string name="popup_message_history_empty">ទទេ</string>
   <string name="popup_message_history_consent_dialog_title">បើកប្រវត្តិ​សាររបស់ឧបករណ៍ឬ?</string>
-  <string name="popup_message_history_consent_dialog_msg">ការធ្វើបែបនេះនឹងរក្សាទុកសារមួយចំនួន ដូចជាការ​ជូនដំណឹង និងសំឡេងរោទ៍ នៅក្នុង TalkBack។ អ្នកអាចផ្លាស់ប្ដូរការ​កំណត់នេះពេល​ណា​ក៏​បាន។</string>
+  <string name="popup_message_history_consent_dialog_msg">ការធ្វើបែបនេះនឹងរក្សាទុកសារមួយចំនួន ដូចជាការជូនដំណឹង និងសំឡេងរោទ៍ នៅក្នុង SandFly។ អ្នកអាចផ្លាស់ប្ដូរការកំណត់នេះពេលណាក៏បាន។</string>
   <string name="popup_message_history_consent_dialog_positive_btn">បើក</string>
   <string name="popup_message_history_consent_dialog_negative_btn">ទេ អរគុណ</string>
+    <string name="external_display_channel">ការបង្ហាញអក្សរស្ទាបពីកម្មវិធីផ្សេងៗ</string>
+    <string name="external_display_ask_title">អនុញ្ញាតឱ្យ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ជាការបង្ហាញអក្សរស្ទាបសម្រាប់ SandFly?</string>
+    <string name="external_display_ask_text">SandFly នឹងមិនប្រើវាទេ រហូតដល់អ្នកអនុញ្ញាត។</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>នឹងអាចអានអ្វីគ្រប់យ៉ាង SandFly បង្ហាញជាអក្សរស្ទាប ដែលអាចជាអ្វីទាំងអស់នៅលើអេក្រង់ រួមទាំងសារ និងអ្វីដែលអ្នកវាយបញ្ចូល។ វាក៏នឹងអាចគ្រប់គ្រងឧបករណ៍របស់អ្នកតាមដែលអ្នកអាចធ្វើបានជាមួយនឹងការបង្ហាញអក្សរស្ទាប៖ វាយ បើកកម្មវិធី និងដំណើរការពាក្យបញ្ជា SandFly ណាមួយ។ អនុញ្ញាតតែកម្មវិធីដែលអ្នកទុកចិត្តប៉ុណ្ណោះ។</string>
+    <string name="external_display_allow">អនុញ្ញាត</string>
+    <string name="external_display_deny">មិនអនុញ្ញាត</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> គឺជាការបង្ហាញអក្សរស្ទាបរបស់អ្នក។</string>
+    <string name="external_display_in_use_text">ខណៈពេលដែល SandFly ប្រើវា <xliff:g id="app" example="Notetaker">%1$s</xliff:g> អាចអានអេក្រង់ និងគ្រប់គ្រងឧបករណ៍។</string>
+    <string name="external_displays_title">បង្ហាញពីកម្មវិធីផ្សេងៗ</string>
+    <string name="external_displays_summary">កម្មវិធីដែលអ្នកអនុញ្ញាតអាចជាការបង្ហាញអក្សរស្ទាបសម្រាប់ SandFly។ កម្មវិធីដែលជាការបង្ហាញអក្សរស្ទាបអាចអានអេក្រង់ និងគ្រប់គ្រងឧបករណ៍។</string>
+    <string name="external_displays_none">គ្មានកម្មវិធីណាអាចជាការបង្ហាញអក្សរស្ទាបទេ។</string>
 </resources>
