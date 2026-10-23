@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Granular tahrirlash</string>
+    <string name="granular_editing_split_by">Ajratish: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Bo\'linish</string>
+    <string name="granular_editing_characters">Belgilar</string>
+    <string name="granular_editing_words">So‘zlar</string>
+    <string name="granular_editing_sentences">Gaplar</string>
+    <string name="granular_editing_lines">Qatorlar</string>
+    <string name="granular_editing_paragraphs">Xatboshilar</string>
+    <string name="granular_editing_space">Probel</string>
+    <string name="granular_editing_new_line">Yangi chiziq</string>
+    <string name="granular_editing_tab">Tab belgisi</string>
+    <string name="granular_editing_empty">Matn yo\'q. “Ko‘proq” bo‘limida “Matn qo‘shish” tugmasidan foydalaning.</string>
+    <string name="granular_editing_edit">Tahrirlash</string>
+    <string name="granular_editing_insert_before">Oldindan kiriting</string>
+    <string name="granular_editing_insert_after">Keyin kiriting</string>
+    <string name="granular_editing_delete">Oʻchirish</string>
+    <string name="granular_editing_select">Tanlash</string>
+    <string name="granular_editing_unselect">Tanlovni bekor qiling</string>
+    <string name="granular_editing_selected">Tanlangan</string>
+    <string name="granular_editing_save">Saqlash</string>
+    <string name="granular_editing_more">Batafsil</string>
+    <string name="granular_editing_undo">Bekor qilish</string>
+    <string name="granular_editing_redo">Oxirgi bekor qilingan tahrirni takrorlang</string>
+    <string name="granular_editing_find">Topish</string>
+    <string name="granular_editing_find_next">Keyingisini toping</string>
+    <string name="granular_editing_replace">O\'zgartiring</string>
+    <string name="granular_editing_replace_with">bilan almashtiring</string>
+    <string name="granular_editing_replace_all">Hammasini almashtiring</string>
+    <string name="granular_editing_add_at_end">Oxirida matn qo\'shing</string>
+    <string name="granular_editing_clear_selection">Barcha matnni bekor qiling</string>
+    <string name="granular_editing_cut_selected">Tanlangan matnni kesib oling</string>
+    <string name="granular_editing_delete_selected">Tanlangan oʻchirish</string>
+    <string name="granular_editing_copied">Ko‘chirildi</string>
+    <string name="granular_editing_deleted">Oʻchirildi</string>
+    <string name="granular_editing_not_found">Topilmadi</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> almashtirildi</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> almashtirildi</item>
+    </plurals>
+    <string name="granular_editing_save_changes">O\'zgarishlar saqlansinmi?</string>
+    <string name="granular_editing_copy_changes">Oʻzgartirilgan matndan nusxa koʻchirilsinmi?</string>
+    <string name="granular_editing_discard">Bekor qilish</string>
+    <string name="granular_editing_keep_editing">Tahrirlashda davom eting</string>
+    <string name="granular_editing_not_saved">Saqlanmagan: matn maydoni yo\'qolgan. Matn nusxalanadi.</string>
+    <string name="granular_editing_no_text">Tahrirlash uchun matn yo\'q</string>
+    <string name="granular_editing_password">Parol maydonlarida mavjud emas</string>
+</resources>

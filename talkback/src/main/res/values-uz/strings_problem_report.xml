@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Fikr-mulohaza</string>
+    <string name="title_pref_problem_report_type">Fikr-mulohaza turi</string>
+    <string name="title_pref_problem_report_area">Hudud</string>
+    <string name="title_pref_problem_report_title">Sarlavha</string>
+    <string name="title_pref_problem_report_app">Bu sodir bo\'ladigan dastur</string>
+    <string name="title_pref_problem_report_description">Tavsif</string>
+    <string name="dialog_message_problem_report_description">Nima bo\'ladi va siz kutgan narsa.</string>
+    <string name="title_pref_problem_report_steps">Dasturiy ta\'minot muammosini takrorlash qadamlari</string>
+    <string name="title_pref_problem_report_email">Javoblar uchun elektron pochta</string>
+    <string name="title_pref_problem_report_device">Qurilma ma\'lumotlarini kiriting</string>
+    <string name="title_pref_problem_report_log">SandFly jurnalini qo\'shing</string>
+    <string name="summary_pref_problem_report_log">Ekrandagi matnni o\'z ichiga olishi mumkin</string>
+    <string name="title_pref_problem_report_send">Yuborish</string>
+    <string name="summary_pref_problem_report_sending">Yuborilmoqda</string>
+    <string name="problem_report_missing_fields">Sarlavha va tavsifni kiriting.</string>
+    <string name="problem_report_invalid_email">Yaroqli elektron pochta manzilini kiriting.</string>
+    <string name="problem_report_sent">Fikr-mulohaza yuborildi.</string>
+    <string name="problem_report_rate_limited">Juda koʻp fikr-mulohaza yuborildi. Keyinroq qayta urinib ko‘ring.</string>
+    <string name="problem_report_no_connection">Fikr-mulohaza yuborilmadi. Internetga ulanishni tekshiring.</string>
+    <string name="problem_report_not_sent">Fikr-mulohaza yuborilmadi. Keyinroq qayta urinib ko‘ring.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Noto\'g\'ri xatti-harakatlar</item>
+        <item>Halokat</item>
+        <item>Sekin yoki javobsiz</item>
+        <item>Taklif</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Nutq</item>
+        <item>Imo-ishoralar</item>
+        <item>Tekshirish</item>
+        <item>O\'qish boshqaruvlari va menyular</item>
+        <item>Matn yozish va klaviatura</item>
+        <item>Brayl klaviaturasi</item>
+        <item>Brayl ekrani</item>
+        <item>Ovoz va tebranish</item>
+        <item>Bildirishnomalar</item>
+        <item>Veb-kontent</item>
+        <item>Skriptlar</item>
+        <item>Sozlamalar</item>
+        <item>Yangilanishlar</item>
+        <item>Boshqa</item>
+    </string-array>
+    <string name="title_report_new">Fikr-mulohaza</string>
+    <string name="title_report_inbox">Kiruvchi quti</string>
+    <string name="title_report_drafts">Qoralamalar</string>
+    <string name="report_inbox_empty">Hech qanday fikr-mulohaza yuborilmadi</string>
+    <string name="report_drafts_empty">Hech qanday qoralama yoʻq</string>
+    <string name="report_just_now">hozir</string>
+    <string name="report_untitled">Sarlavhasiz</string>
+    <string name="report_draft_summary">Oʻzgartirildi <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">yuborildi <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> yangi javob</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> yangi javoblar</item>
+    </plurals>
+    <string name="report_status_changed">holati o\'zgardi</string>
+    <string name="report_status_open">Ochiq masala</string>
+    <string name="report_status_completed">Yopiq, tugallangan</string>
+    <string name="report_status_not_planned">Yopiq, rejalashtirilmagan</string>
+    <string name="report_status_duplicate">Yopiq, dublikat</string>
+    <string name="report_status_unknown">Oʻchirildi</string>
+    <string name="title_report_status">Status</string>
+    <string name="title_report_your_report">Sizning fikringiz</string>
+    <string name="title_report_messages">Xabarlar</string>
+    <string name="report_message_from_developer">Dasturchi, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Siz, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Javob bering</string>
+    <string name="title_report_reply_text">Sizning javobingiz</string>
+    <string name="title_report_send_reply">Javob yuboring</string>
+    <string name="report_reply_sent">Javob yuborildi.</string>
+    <string name="report_reply_not_sent">Javob yuborilmadi. Keyinroq qayta urinib ko‘ring.</string>
+    <string name="title_report_remove">Kirish qutisidan olib tashlang</string>
+    <string name="dialog_title_report_remove">Ushbu fikr-mulohaza kirish qutisidan olib tashlansinmi?</string>
+    <string name="dialog_message_report_remove">Unga javoblar endi bu telefonga etib bormaydi.</string>
+    <string name="title_report_delete_draft">Qoralamani oʻchirish</string>
+    <string name="dialog_title_report_delete_draft">Bu qoralama oʻchirilsinmi?</string>
+    <string name="button_report_delete">Oʻchirish</string>
+    <string name="report_missing">Bu fikr-mulohaza endi kiruvchi qutida yo‘q.</string>
+    <string name="notification_channel_problem_reports">Fikr-mulohaza javoblari</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ga javob berish</string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>

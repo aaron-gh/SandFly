@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack brayl klaviaturasi</string>
+  <string name="braille_ime_service_name">SandFly brayl klaviaturasi</string>
   <string name="braille_ime_bd_mode_name">Brayl ekranidan matn kiritish</string>
   <string name="switch_to_tabletop_announcement">Stol usti rejimi. Qurilmani quvvatlash porti chapga qaragan holda joylang.</string>
   <string name="calibration_tip_announcement">Nuqta holatini yangilash uchun %d ta barmoq bilan bosib turing.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Qisqartirilmagan Brayl klaviaturasiga almashtirildi</string>
   <string name="braille_ime_displayed_name">brayl klaviaturasi</string>
   <string name="multiple_languages_braille_ime_displayed_name">brayl klaviaturasi, %s</string>
-  <string name="input_view_caption">TalkBack brayl klaviaturasi – batafsil: g.co/help/braille</string>
+  <string name="input_view_caption">SandFly brayl klaviaturasi – batafsil: g.co/help/braille</string>
   <string name="perform_action_next">Keyingisi</string>
   <string name="perform_action_submitting">Matn kiritilmoqda</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Nuqta joylashuvi yangilanmoqda. Avval %sdagi nuqtalarni yozib oling.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Brayl klaviaturasida yozayotganda tilni oʻzgartirish uchun 3 ta barmogʻingiz bilan tepaga suring. Keyin esa “keyingi tilga oʻtish” bandini tanlang.</string>
   <string name="title_pref_accumulate_presses">Barcha bosilgan nuqtalar bilan</string>
   <string name="summary_pref_accumulate_presses">Barcha bosilgan nuqtalar kiritish qismi hisoblanadi, hatto boshqa nuqtalardan oldin boʻshatilsa ham</string>
-  <string name="title_pref_reverse_dots">Teskari nuqtalar</string>
-  <string name="summary_pref_reverse_dots">Nuqtalar joyini almashtiring, masalan 1 va 4-nuqtalarning</string>
+  <string name="title_pref_reverse_dots">Chap va o\'ng nuqtalarni almashtiring</string>
+  <string name="summary_pref_reverse_dots">1, 2 va 3 nuqtalar 4, 5 va 6 nuqtalar bilan savdo qiladi</string>
   <string name="bd_preference_braille_contracted">Qisqartirilgan brayl</string>
   <string name="bd_preference_braille_uncontracted">Qisqartirilmagan brayl</string>
   <string name="context_menu_title">Brayl klaviaturasi sozlamalari</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Klaviatura</string>
   <string name="not_enough_touch_points_dialog_title">Qurilmangizda brayl klaviaturasi ishlamaydi</string>
   <string name="not_enough_touch_points_dialog_message">Qurilmangizda ishlaydigan sensor nuqtalar soni yetarli emas. Batafsil axborot uchun qurilma ishlab chiqaruvchisiga murojaat qiling.</string>
-  <string name="talkback_off_dialog_title">Brayl klaviaturasidan foydalanish uchun TalkBack xizmatini yoqing</string>
+  <string name="talkback_off_dialog_title">Brayl klaviaturasidan foydalanish uchun SandFly xizmatini yoqing</string>
   <string name="talkback_off_dialog_positive_button">Qulayliklar sozlamalaridan yoqing</string>
-  <string name="talkback_suspend_dialog_title">Brayl klaviaturasidan foydalanish uchun TalkBack xizmatini qayta yoqing</string>
-  <string name="talkback_off_or_suspend_dialog_message">TalkBack ishga tushganda Brayl belgilarini kiritish uchun ekranni bosing.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Ishorani oʻzgartirish uchun TalkBack\'ni faollashtiring</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack faolsizlantirilgan. Brayl klaviaturasi ishoralarini oʻzgartirish uchun uni yoqing.</string>
+  <string name="talkback_suspend_dialog_title">Brayl klaviaturasidan foydalanish uchun SandFly xizmatini qayta yoqing</string>
+  <string name="talkback_off_or_suspend_dialog_message">SandFly ishga tushganda Brayl belgilarini kiritish uchun ekranni bosing.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Ishorani oʻzgartirish uchun SandFly\'ni faollashtiring</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly faolsizlantirilgan. Brayl klaviaturasi ishoralarini oʻzgartirish uchun uni yoqing.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Sozlamalarni ochish</string>
   <string name="reset_gestures_dialog_title">Barcha ishoralar asliga qaytarilsinmi?</string>
   <string name="reset_gestures_dialog_message">Barcha brayl klaviaturasi ishoralari birlamchi qiymatiga qaytariladi</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Asliga qaytarish</string>
   <string name="custom_gestures_dialog_remove_button">Ishorani olib tashlash</string>
   <string name="change_gestures_dialog_message_title">Ishorani oʻzgartirish tartibi</string>
-  <string name="change_gestures_dialog_message">Keyingi ekranda brayl klaviaturasi ochiladi va siz TalkBack ishoralarini ishlatishga qaytolmaysiz.\n\nBrayl klaviaturasi ochilgach, siz ishlatishni xohlagan ishorani amalga oshiring yoki brayl klaviaturasini yopish uchun 2 ta barmoq bilan pastga suring.\n\nMavjud ishoralarni bilan tanishing\n</string>
+  <string name="change_gestures_dialog_message">Keyingi ekranda brayl klaviaturasi ochiladi va siz SandFly ishoralarini ishlatishga qaytolmaysiz.\n\nBrayl klaviaturasi ochilgach, siz ishlatishni xohlagan ishorani amalga oshiring yoki brayl klaviaturasini yopish uchun 2 ta barmoq bilan pastga suring.\n\nMavjud ishoralarni bilan tanishing\n</string>
   <string name="change_gestures_dialog_message_link">Mavjud ishoralar</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Bu xabar boshqa chiqmasin</string>
   <string name="change_gestures_dialog_positive_button">Davom etish</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Ishlatilmasin</string>
   <string name="next_keyboard">Keyingi klaviatura</string>
   <string name="braille_tutorial_title">Brayl klaviaturasi darsligi</string>
-  <string name="tutorial_intro_description">Brayl klaviaturasi yordamida ekranni bosib, 6 nuqtali brayl kiritish mumkin.\n\nBirlashtirilgan Ingliz brayl yozuvi ishlatilmoqda. Matn kiritish tilini almashtirish uchun TalkBack sozlamalarini oching.\n\nBrayl yozuvida kiritish uchun telefonni oʻzgacha ushlab, ishlatish kerak boʻladi.</string>
+  <string name="tutorial_intro_description">Brayl klaviaturasi yordamida ekranni bosib, 6 nuqtali brayl kiritish mumkin.\n\nBirlashtirilgan Ingliz brayl yozuvi ishlatilmoqda. Matn kiritish tilini almashtirish uchun SandFly sozlamalarini oching.\n\nBrayl yozuvida kiritish uchun telefonni oʻzgacha ushlab, ishlatish kerak boʻladi.</string>
   <string name="next_step">Keyingisi</string>
   <string name="leave_keyboard">Brayl klaviaturasidan chiqish</string>
-  <string name="hold_six_fingers_description">Brayl klaviaturasida oddiy TalkBack ishoralardan boshqa foydala olmaysiz.\n\nIshni boshlash uchun matn kiritishda 6 nuqtali brayl holatini sozlash kerak.</string>
-  <string name="rotate_orientation_description_1">Endi odatiy TalkBack ishoralarini ishlata olmaysiz. TalkBack funksiyasi brayl klaviaturasi yoniqligida ishlamaydi.</string>
+  <string name="hold_six_fingers_description">Brayl klaviaturasida oddiy SandFly ishoralardan boshqa foydala olmaysiz.\n\nIshni boshlash uchun matn kiritishda 6 nuqtali brayl holatini sozlash kerak.</string>
+  <string name="rotate_orientation_description_1">Endi odatiy SandFly ishoralarini ishlata olmaysiz. SandFly funksiyasi brayl klaviaturasi yoniqligida ishlamaydi.</string>
   <string name="rotate_orientation_description_2">Boshlash uchun telefonni ekrani sizga teskari holatda tuting.</string>
   <string name="tap_to_continue">Davom etish uchun ekranni ikki marta bosing</string>
   <string name="instruction_type_letter_a">“A” harfini kiritish uchun koʻrsatkich barmoq bilan 1-nuqta ustiga bosing</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">KURSORNI OLDINGA SURISH</string>
   <string name="result_swipe_down_2_fingers">KLAVIATURANI YOPISH</string>
   <string name="result_swipe_down_3_fingers">KEYINGI KLAVIATURA</string>
-  <string name="rotate_orientation_announcement">Endi odatiy TalkBack ishoralarini ishlata olmaysiz. TalkBack funksiyasi brayl klaviaturasi yoniqligida ishlamaydi.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Endi odatiy SandFly ishoralarini ishlata olmaysiz. SandFly funksiyasi brayl klaviaturasi yoniqligida ishlamaydi.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Avval telefonni ekrani sizga teskari holatda tuting.\n\nKeyin telefonni gorizontal holatga buring. Qoʻllaringiz bilan telefonning yon chekkalarini ushlang. Oʻng qoʻlingiz USB porti bor chekkani ushlashi kerak. 3-barmoqni ekranga joylang, chimchaloq va bosh barmoqlar telefonni tutib tursin.\n\nTayyor boʻlsangiz, ekranni ikki marta bosing.\n\nBrayl klaviaturasidan chiqish uchun 3 barmoq bilan pastga suring. Bu oddiy klaviaturani qaytaradi.</string>
   <string name="rotate_orientation_continue_announcement">Telefoningiz tik holatda. Davom etish uchun telefonni gorizontal holatga buring. Keyin ekranini sizga teskari holatda tuting. Tayyor boʻlsangiz, ekranni ikki marta bosing.</string>
   <string name="type_letter_a_announcement">Ekran sizga teskari boʻlishi kerak. Qoʻllaringiz bilan telefonning yon chekkalarini ushlang va yon tomonlardan ekranni 3 barmoq bilan tutish kerak\n\nChap koʻrsatkich barmoq 1-nuqtada joylanishi kerak. Endi “A” harfini kiritish uchun 1-nuqta ustiga bosing.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Boshqa klaviaturaga almashtirish uchun 3 barmoq bilan pastga suring. Endi urinib koʻring.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Keyingi klaviatura. Odatda bu keyingi klaviaturaga almashtiradi. Darslik yopilmagani uchun brayl klaviaturasi hali ham ochiq.</string>
   <string name="swipe_up_3_fingers_announcement">Telefoningizni stolga tekis yotqizish orqali stol usti rejimida ham yozishingiz mumkin. Darslikni tamomlash uchun 3 ta barmoq bilan tepaga suring va darslikni tamomlash parametrini toping.</string>
-  <string name="open_context_menu_announcement">Parametrlar menyusi ochiq. Telefonni buring va uni odatdagi kabi tuting. Endi telefonda odatiy TalkBack ishoralaridan foydalanish mumkin. Boshqa parametrlarni koʻrish uchun oʻngga suring.</string>
+  <string name="open_context_menu_announcement">Parametrlar menyusi ochiq. Telefonni buring va uni odatdagi kabi tuting. Endi telefonda odatiy SandFly ishoralaridan foydalanish mumkin. Boshqa parametrlarni koʻrish uchun oʻngga suring.</string>
   <string name="hold_six_fingers_announcement">%s\nQurilmangizni stol ustiga tekis yotqizing. Keyin ekranni har bir qoʻl uchun yozishga qulay holatda oʻrta 3 ta barmoq bilan bosib turing.</string>
   <string name="hold_six_fingers_inactive_announcement">Qurilmangizni stol ustiga tekis yotqizing. Keyin ekranni har bir qoʻl uchun yozishga qulay holatda oʻrta 3 ta barmoq bilan bosib turing.</string>
   <string name="finish_tutorial_announcement">Brayl klaviaturasi chiqarilgan. Telefon ekranini oʻzingizga teskari holatda tuting. Keyin telefonni gorizontal holatga buring. Keyin yozishni boshlang.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Bu ishora “%1$s” uchun ishlatiladi va oʻzgartirish imkonsiz. Boshqa ishorani tanlang. %2$s</string>
   <string name="custom_gesture_cannot_used">Bu ishorani ishlatish imkonsiz</string>
   <string name="custom_gesture_no_gesture">Hech qaysi ishora bajarilmadi</string>
-  <string name="custom_gesture_try_another">Boshqa ishorani tanlang. Barcha mavjud ishoralarni koʻrish uchun TalkBack brayl klaviaturasi yordam markaziga kiring. %s</string>
+  <string name="custom_gesture_try_another">Boshqa ishorani tanlang. Barcha mavjud ishoralarni koʻrish uchun SandFly brayl klaviaturasi yordam markaziga kiring. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Ishoralar mos kelmadi</string>
   <string name="custom_gesture_perform_again">Siz yana ishlatishni xohlagan ishorani bajaring. %s</string>
+    <string name="tabletop_port_left_announcement">Stol usti rejimi, chap tomonda zaryadlash porti</string>
+    <string name="tabletop_port_right_announcement">Stol usti rejimi, o\'ngdagi zaryadlash porti</string>
+    <string name="screen_away_port_right_announcement">Ekrandan uzoqda rejimi, o\'ngdagi zaryadlash porti</string>
+    <string name="screen_away_port_left_announcement">Ekrandan uzoqda rejimi, chap tomonda zaryadlash porti</string>
+    <string name="screen_toward_announcement">Ekran sizga qarab</string>
+    <string name="screen_toward_port_left_announcement">Ekran o\'zingizga, chap tomondagi zaryadlash porti</string>
+    <string name="screen_toward_port_right_announcement">Ekran o\'ng tomonda, zaryadlash porti sizga qarab</string>
+    <string name="screen_toward_port_down_announcement">Ekran sizga qarab, zaryadlash porti pastga qaratilgan</string>
+    <string name="screen_toward_port_up_announcement">Zaryadlash porti yuqoriga qaragan holda ekran sizga qaratiladi</string>
+    <string name="port_right_announcement">O\'ng tomonda zaryadlash porti</string>
+    <string name="port_left_announcement">Chapdagi zaryadlash porti</string>
+    <string name="tabletop_port_near_announcement">Stol usti rejimi, zaryadlash porti sizga qarab</string>
+    <string name="tabletop_port_far_announcement">Stol usti rejimi, zaryadlash porti sizdan uzoqda</string>
+    <string name="screen_away_port_down_announcement">Ekrandan uzoqda rejimi, zaryadlash porti pastga qaragan</string>
+    <string name="screen_away_port_up_announcement">Ekrandan uzoqda rejimi, zaryadlash porti yuqoriga qaratilgan</string>
+    <string name="port_near_announcement">Zaryadlash porti sizga qarab</string>
+    <string name="port_far_announcement">Zaryadlash porti sizdan uzoqda</string>
+    <string name="port_down_announcement">Zaryadlash porti pastga qaratilgan</string>
+    <string name="port_up_announcement">Zaryadlash porti yuqoriga qaratilgan</string>
+    <string name="orientation_locked_announcement">Orientatsiya qulflangan</string>
+    <string name="orientation_locked_port_announcement">Orientatsiya qulflangan. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientatsiya qulfi ochildi</string>
+    <string name="switch_to_language_contracted_announcement">Bunga almashdi: %s, Qisqartirilgan brayl</string>
+    <string name="switch_to_language_uncontracted_announcement">Bunga almashdi: %s, Qisqartirilmagan brayl</string>
+    <string name="title_pref_flip_dots_vertically">Yuqori va pastki nuqtalarni almashtiring</string>
+    <string name="summary_pref_flip_dots_vertically">1-nuqta 3-nuqta bilan joylarni, 4-nuqta esa 6-nuqta bilan savdo qiladi</string>
+    <string name="title_pref_tablet_held_up_faces_away">Planshet yuzlarini uzoqroqqa ko\'tardi</string>
+    <string name="summary_pref_tablet_held_up_faces_away">O\'chiq bo\'lsa, planshet yoki ochilmagan telefon sizga qaragan holda ish stoli tartibidan foydalanadi</string>
+    <string name="title_pref_typing_sounds">Ovozlarni yozish</string>
+    <string name="summary_pref_typing_sounds">Belgi, boʻsh joy, yangi qator kiritganingizda yoki oʻchirganingizda klaviatura chertishlarini ijro eting</string>
+    <string name="skip_tutorial">Qo‘llanmani o‘tkazib yuborish</string>
 </resources>
