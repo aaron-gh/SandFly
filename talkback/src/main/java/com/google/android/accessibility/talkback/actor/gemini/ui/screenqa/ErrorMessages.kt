@@ -39,6 +39,7 @@ private fun getErrorMessageId(error: OverviewResponse.Error): Int {
     }
   } else if (error.errorReason != null) {
     return when (error.errorReason) {
+      ErrorReason.UNSUPPORTED -> R.string.ai_service_not_set_up
       ErrorReason.DISABLED -> R.string.summary_pref_gemini_support_disabled
       ErrorReason.NETWORK_ERROR -> R.string.gemini_network_error
       ErrorReason.NO_IMAGE,

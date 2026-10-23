@@ -43,19 +43,33 @@ class AiServiceTest {
   }
 
   @Test
-  fun geminiIsUsedUntilAnotherServiceIsChosenAndSetUp() {
+  fun aServiceThatIsSetUpIsUsedWhenTheChosenOneIsNot() {
     val prefs = FakeSharedPreferences()
     assertFalse(AiService.isSetUp(prefs))
+    // Gemini, the first choice, has no key, so Claude is used once it is set up.
     AiProvider.CLAUDE.setApiKey(prefs, "key")
-    AiProvider.CLAUDE.setModel(prefs, "claude-model")
     assertFalse(AiService.isSetUp(prefs))
-    AiProvider.setActive(prefs, AiProvider.CLAUDE)
+    AiProvider.CLAUDE.setModel(prefs, "claude-model")
     assertTrue(AiService.isSetUp(prefs))
+    assertEquals(AiProvider.CLAUDE, AiProvider.active(prefs))
     assertEquals("https://api.anthropic.com/v1", AiService.address(prefs))
     assertEquals("claude-model", AiService.model(prefs))
     assertEquals("key", AiService.apiKey(prefs))
     AiProvider.CLAUDE.setModel(prefs, " ")
     assertFalse(AiService.isSetUp(prefs))
+  }
+
+  @Test
+  fun aChosenServiceThatIsSetUpStaysChosen() {
+    val prefs = FakeSharedPreferences()
+    AiProvider.GEMINI.setApiKey(prefs, "gemini-key")
+    AiProvider.CLAUDE.setApiKey(prefs, "key")
+    AiProvider.CLAUDE.setModel(prefs, "claude-model")
+    AiProvider.setActive(prefs, AiProvider.GEMINI)
+    assertEquals(AiProvider.GEMINI, AiProvider.active(prefs))
+    assertFalse(AiService.isSetUp(prefs))
+    AiProvider.setActive(prefs, AiProvider.NONE)
+    assertEquals(AiProvider.NONE, AiProvider.active(prefs))
   }
 
   @Test
