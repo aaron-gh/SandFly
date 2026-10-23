@@ -7,4 +7,48 @@
     <string name="gemini_api_key_save">Yadda saxlayın</string>
     <string name="gemini_api_key_get">Açar əldə edin</string>
     <string name="gemini_api_terms_link">Gemini API Əlavə Xidmət Şərtləri</string>
+    <string name="title_pref_gemini_model">Gemini modeli</string>
+    <string name="gemini_model_automatic">Avtomatik</string>
+    <string name="summary_pref_gemini_model_automatic">Avtomatik: Gemini Flash, sonra Flash məşğul olduqda Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, sonra məşğul olduqda Flash-Lite</string>
+    <string name="gemini_model_loading">Modellər əldə edilir...</string>
+    <string name="gemini_model_list_failed">Modelləri əldə etmək mümkün olmadı: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Əvvəlcə Gemini API açarı təyin edin</string>
+    <string name="ai_service_address_hint">Ünvan, məsələn, https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Model</string>
+    <string name="ai_service_address_invalid">Ünvan https://. ilə başlamalıdır. Heç nə yadda saxlanmayıb.</string>
+    <string name="dialog_message_ai_service_consent">Şəkillər və skrinşotlar təsvir edilmək üçün <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>-a göndərilir ki, bu da bir neçə saniyə çəkir. Onun öz şərtləri və məxfilik siyasəti tətbiq edilir. Generativ AI eksperimentaldır, buna görə də səhvlər edəcək.</string>
+    <string name="ai_service_error_api_key">AI xidməti API açarını qəbul etmədi. Onun parametrlərini Avtomatik təsvirlərdə yoxlayın.</string>
+    <string name="ai_service_error_quota">AI xidmətinin istifadə limitinə çatıldı. Daha sonra yenidən cəhd edin.</string>
+    <string name="ai_service_error_busy">AI xidməti hazırda məşğuldur. Bir an sonra yenidən cəhd edin.</string>
+    <string name="ai_service_error_timeout">AI xidmətinin cavab verməsi çox uzun çəkdi. Yenidən cəhd edin.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Yoxdur</string>
+    <string name="ai_service_not_set_up">Heç bir AI xidməti istifadə edilmir. Avtomatik təsvirlər parametrlərində birini qurun və ya birini seçin.</string>
+    <string name="ai_provider_none_set_up">Heç bir AI xidməti qurulmayıb. Aşağıdakı parametrlərində birini qurun.</string>
+    <string name="ai_provider_other">Digər xidmət</string>
+    <string name="title_pref_category_ai_services">AI xidmətləri</string>
+    <string name="title_pref_ai_provider">AI xidməti</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> parametrləri</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, qurulmayıb</string>
+    <string name="ai_provider_in_use">İstifadədədir</string>
+    <string name="ai_provider_not_set_up">Qurulmayıb</string>
+    <string name="ai_provider_not_ready">Əvvəlcə bir model seçin</string>
+    <string name="ai_provider_address">Ünvan</string>
+    <string name="ai_provider_address_message">OpenAI-uyğun çat API və https://example.com/v1. kimi şəkil daxiletməsi olan xidmətin ünvanı</string>
+    <string name="ai_provider_not_set">Qurulmayıb</string>
+    <string name="ai_provider_set">Konfiqurasiya edilmişdir</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API açarı</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modeli</string>
+    <string name="ai_provider_choose_model">Seçilməyib</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API açarınızı yapışdırın. Onu silmək üçün sahəni təmizləyin və yadda saxlayın. Təsvir etdiyiniz şəkillər və ekranlar <xliff:g id="service" example="Claude">%1$s</xliff:g> ünvanına göndərilir.</string>
+    <string name="ai_provider_needs_key">Əvvəlcə <xliff:g id="service" example="Claude">%1$s</xliff:g> API açarını təyin edin</string>
+    <string name="ai_provider_needs_address">Əvvəlcə ünvanı təyin edin</string>
+    <string name="ai_provider_enter_model">Model adı daxil edin</string>
 </resources>
