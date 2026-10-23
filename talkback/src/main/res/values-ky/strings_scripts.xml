@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_scripts">Сценарийлер</string>
+    <string name="summary_pref_scripts">SandFly колдонмолордо кантип иштээрин өзгөртүңүз</string>
+    <string name="script_import">Скриптти импорттоо</string>
+    <string name="script_install_label">SandFly скриптин орнотуу</string>
+    <string name="script_import_nothing">Орнотуу үчүн скрипт файлы жок.</string>
+    <string name="script_import_cannot_open">Файл ачылбай койду.</string>
+    <string name="script_import_repository">Бул шилтеме бүт репозиторийге. Каалаган скриптти ачып, анын шилтемесин бөлүшүңүз.</string>
+    <string name="script_import_summary">.lua файлы, же main.lua менен .zip</string>
+    <string name="scripts_category_app">Колдонмо скрипттери</string>
+    <string name="scripts_category_global">Глобалдык плагиндер</string>
+    <string name="scripts_none">Скрипт орнотулган жок</string>
+    <string name="scripts_all_off">Бардык скрипттерди өчүрүү</string>
+    <string name="scripts_all_off_summary">Скрипттер орнотулуп, өздөрүнүн которгучтарын сакташат. Бардык скрипттерди күйгүзүү же өчүрүү жаңсоосу да ушундай кылат.</string>
+    <string name="shortcut_toggle_scripts">Бардык скрипттерди күйгүзүңүз же өчүрүңүз</string>
+    <string name="scripts_now_off">Скрипттер өчүрүлгөн</string>
+    <string name="scripts_now_on">Скрипттер күйүк</string>
+    <string name="scripts_unavailable">Скрипттер бул түзмөктө жеткиликтүү эмес</string>
+    <string name="script_add_example">Мисалы скрипт кошуу</string>
+    <string name="script_add_example_summary">Сиз которулган ар бир колдонмонун атын айтат. Баштоо үчүн скрипт.</string>
+    <string name="script_state_on">Күйүк</string>
+    <string name="script_state_off">Өчүк</string>
+    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g> ичинде иштейт</string>
+    <string name="script_runs_everywhere">Бардык колдонмолордо иштейт</string>
+    <string name="script_version">Версия <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="script_author"><xliff:g id="author">%1$s</xliff:g> тарабынан</string>
+    <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> орнотулсунбу?</string>
+    <string name="script_install_can">Бул мүмкүн:</string>
+    <string name="script_install_no_permissions">Уруксаттардын кереги жок.</string>
+    <string name="script_install_button">Орнотуу</string>
+    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g>ге жаңыртылсынбы?</string>
+    <string name="script_update_new_permissions">Жаңы уруксаттар:</string>
+    <string name="script_update_button">Жаңыртуу</string>
+    <string name="script_update_replaces">Бул <xliff:g id="version">%1$s</xliff:g> версиясын <xliff:g id="author">%2$s</xliff:g> менен алмаштырып, анын дайындарын жана жөндөөлөрүн сактайт.</string>
+    <string name="script_update_other_author">Жаңысы <xliff:g id="author">%1$s</xliff:g>, башка автор. Ишенсеңиз гана жаңыртыңыз.</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> орнотулду</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> болуп жаңырды</string>
+    <string name="script_import_failed">Импорттолбой калды. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Ишенимдүү скрипттерге гана уруксат берүү.</string>
+    <string name="script_permission_screen">Экранды оку</string>
+    <string name="script_permission_actions">Басыңыз, сыдырыңыз, териңиз жана фокусту жылдырыңыз</string>
+    <string name="script_permission_speech">SandFlyнын сөзүн угуп, өзгөртүңүз</string>
+    <string name="script_permission_passwords">Сырсөз талааларын окуу</string>
+    <string name="script_permission_input">Жаңсоолорду, баскычтарды, меню элементтерин жана окууну башкаруу элементтерин кошуңуз</string>
+    <string name="script_permission_network">Интернетти колдонуңуз</string>
+    <string name="script_permission_clipboard">Окуу жана алмашуу буферин өзгөртүү</string>
+    <string name="script_permission_system">Артка же үйгө барыңыз, эскертмелерди жана колдонмолорду ачыңыз</string>
+    <string name="script_permission_notifications">Оозеки эскертмелерди окуу жана өзгөртүү</string>
+    <string name="script_permission_events">Ар бир колдонмодогу бардык аракеттерди, анын ичинде терүүнү караңыз</string>
+    <string name="script_permission_dialogs">Диалогдорду каалаган колдонмонун үстүнөн көрсөтүү</string>
+    <string name="script_permission_java">Ар бир колдонмодо Java кодун SandFlyнын бардык мүмкүнчүлүгү менен иштетиңиз</string>
+    <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
+    <string name="script_enabled">Күйгүзүү</string>
+    <string name="script_permissions_title">Уруксаттар</string>
+    <string name="script_permissions_none">Жок</string>
+    <string name="script_settings_category">Параметрлер</string>
+    <string name="script_list_filter">Фильтр</string>
+    <string name="script_button_off">Адегенде скриптти күйгүзүңүз</string>
+    <string name="script_permissions_summary">Бирин өчүрүү керек болгон бөлүктөрүн токтотот.</string>
+    <string name="script_install_permissions_note">Буларды кийинчерээк өчүрө аласыз.</string>
+    <string name="script_manage_category">Башкаруу</string>
+    <string name="script_move_up">Эртерээк чуркагыла</string>
+    <string name="script_move_down">Кийинчерээк иштетүү</string>
+    <string name="script_order_summary">Бир эле кепти өзгөрткөн сценарийлерге заказ бериңиз. Колдонмо скрипттери биринчи иштетилет.</string>
+    <string name="script_log">Log</string>
+    <string name="script_log_summary">SandFly башталгандан берки натыйжалар жана каталар</string>
+    <string name="script_clear_storage">Сакталган маалыматтарды тазалоо</string>
+    <string name="script_storage_cleared">Сакталган дайындар тазаланды</string>
+    <string name="script_remove">Алып салуу</string>
+    <string name="script_remove_title"><xliff:g id="name">%1$s</xliff:g> өчүрүлсүнбү?</string>
+    <string name="script_remove_message">Анын кодун, дайындарын жана жөндөөлөрүн жок кылат.</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> алынып салынды</string>
+    <string name="script_log_empty">Журнал бош</string>
+    <string name="script_log_clear">Журналды тазалоо</string>
+    <string name="script_log_copy">Журналды көчүрүү</string>
+    <string name="script_log_copied">Журнал көчүрүлдү</string>
+    <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
+    <string name="script_api_too_old">Скрипт API <xliff:g id="needed">%1$d</xliff:g> же андан кийинкиси керек. Бул SandFlyде <xliff:g id="current">%2$d</xliff:g> бар, андыктан бөлүктөрү иштебей калышы мүмкүн.</string>
+    <string name="script_api_untested">Скрипт API <xliff:g id="tested">%1$d</xliff:g> чейин сыналган. Бул SandFlyде <xliff:g id="current">%2$d</xliff:g> бар, андыктан ал күтүлгөндөй иштебей калышы мүмкүн.</string>
+    <string name="script_state_incompatible">Бул менен иштебеши мүмкүн SandFly</string>
+    <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> - <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">Шайкештик</string>
+    <string name="script_install_anyway">Баары бир орнотуу</string>
+    <string name="script_update_anyway">Баары бир жаңыртыңыз</string>
+    <string name="script_homepage">Башкы бетти ачуу</string>
+    <string name="script_homepage_confirm_title">Бул дарек ачылсынбы?</string>
+    <string name="script_homepage_open">Open</string>
+    <string name="script_homepage_failed">Бир дагы колдонмо ача албайт <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> turned off after repeated errors. Скрипттерде анын журналын караңыз.</string>
+    <string name="shortcut_inspect_item">Фокусталган нерсени текшерүү</string>
+    <string name="script_inspect_no_item">Эч бир нерседе фокус жок</string>
+    <string name="script_inspect_copied">Көчүрүлгөн. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">No id, so rules can\'t name it. Көчүрүлгөн. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Экран дарагын көчүрүү</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> нерсе көчүрүлдү</string>
+    <string name="script_tree_none">Көчүрүү үчүн терезе жок</string>
+    <string name="script_tree_clip_label">Экран дарагы</string>
+    <string name="summary_copy_screen_tree_menu">Скрипт жазуу үчүн экрандагы бардык элементтерди JSON катары көчүрүңүз</string>
+    <string name="script_inspect_clip_label">Элементтин чоо-жайы</string>
+    <string name="summary_inspect_item_menu">Скрипт жазуу үчүн, сиз болгон нерсенин чоо-жайын айтып, көчүрүңүз</string>
+    <string name="script_keys_backtalk_modifier">SandFly өзгөрткүч</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, андан кийин <xliff:g id="second">%2$s</xliff:g></string>
+    <string name="script_commands_category">Командалар</string>
+    <string name="script_commands_summary">Иштеп жаткан скрипттин жаңсоолору жана баскычтары SandFly\'дан мурун келет. Turn one off to keep SandFly\'s.</string>
+    <string name="script_binding_gesture">Жаңсоо: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Ачкычтар: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">SandFly меню</string>
+    <string name="script_binding_control">Окууну башкаруу элементтери</string>
+    <string name="script_binding_none">Жок</string>
+    <string name="script_binding_turn_on">Күйгүзүү</string>
+    <string name="script_binding_turn_off">Өчүрүү</string>
+    <string name="script_binding_restore">Демейки параметрлерди калыбына келтирүү</string>
+    <string name="script_binding_restored">Демейкилер калыбына келтирилди</string>
+    <string name="script_binding_perform">Жаңсоо же баскычтарды аткарыңыз</string>
+    <string name="script_binding_perform_summary">Кийинки жаңсоону же SandFly өзгөрткүчү менен басылган баскычтарды дайындаңыз</string>
+    <string name="script_binding_perform_message">Жаңсоону аткарыңыз же баскычтарды басыңыз.</string>
+    <string name="script_binding_assign_title">Assign <xliff:g id="binding">%1$s</xliff:g> to <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign">Дайындоо</string>
+    <string name="script_binding_choose_gesture">Жаңсоо тандаңыз</string>
+    <string name="script_binding_type_keys">Ачкычтарды териңиз</string>
+    <string name="script_binding_type_keys_summary">Мисалы, sf+shift+n же sf+t, андан кийин s.</string>
+    <string name="script_binding_bad_keys">Бул ачкычтарды колдонуу мүмкүн эмес. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Ал кошумчалайт:</string>
+    <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
+    <string name="script_sources">Скрипт булактары</string>
+    <string name="script_sources_none">Булак кошулган жок</string>
+    <string name="script_source_add">Булак кошуу</string>
+    <string name="script_source_add_button">Кошуу</string>
+    <string name="script_source_hint">github.com/owner/repository</string>
+    <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea же Bitbucketдеги репозиторийдин дареги эмес.</string>
+    <string name="script_source_exists">Бул булак мурунтан эле кошулган.</string>
+    <string name="script_source_loading">Жүктөлүүдө</string>
+    <string name="script_source_empty">Бул булакта эч кандай скрипт жок</string>
+    <string name="script_source_failed">Скрипттер жүктөлгөн жок. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">Кайра аракет кылыңыз</string>
+    <string name="script_source_downloading">Жүктөлүүдө <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_remove">Булакты алып салуу</string>
+    <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> өчүрүлсүнбү?</string>
+    <string name="script_source_remove_message">Андан орнотулган скрипттер орнотулган бойдон калат.</string>
+    <string name="scripts_auto_update">Скрипттерди автоматтык түрдө жаңыртыңыз</string>
+    <string name="scripts_check_updates">Жаңыртууларды текшериңиз</string>
+    <string name="scripts_checking_updates">Жаңыртуулар текшерилүүдө…</string>
+    <string name="scripts_updates_category">Жаңыртуулар</string>
+    <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
+    <plurals name="scripts_updated">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> скрипт жаңыртылды: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> скрипт жаңыртылды: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+    </plurals>
+    <string name="scripts_updates_to_approve">Жаңыртуулар Жаңыртуулар астында тизмеленген</string>
+    <string name="scripts_update_check_failed">Кээ бир булактарды текшерүү мүмкүн болгон жок</string>
+    <string name="scripts_up_to_date">Бардык сценарийлер жаңыртылган</string>
+</resources>

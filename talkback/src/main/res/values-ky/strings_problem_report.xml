@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Пикир билдирүү</string>
+    <string name="title_pref_problem_report_type">Пикирдин түрү</string>
+    <string name="title_pref_problem_report_area">Район</string>
+    <string name="title_pref_problem_report_title">Title</string>
+    <string name="title_pref_problem_report_app">Колдонмо кайда болот</string>
+    <string name="title_pref_problem_report_description">Description</string>
+    <string name="dialog_message_problem_report_description">Эмне болот жана эмне күттүңүз.</string>
+    <string name="title_pref_problem_report_steps">Программалык камсыздоо маселесин кайра чыгаруу үчүн кадамдар</string>
+    <string name="title_pref_problem_report_email">Жооптор үчүн электрондук почта</string>
+    <string name="title_pref_problem_report_device">Түзмөк маалыматын кошуңуз</string>
+    <string name="title_pref_problem_report_log">SandFly журналын кошуңуз</string>
+    <string name="summary_pref_problem_report_log">Экрандагы текстти камтышы мүмкүн</string>
+    <string name="title_pref_problem_report_send">Жөнөтүү</string>
+    <string name="summary_pref_problem_report_sending">Жөнөтүү</string>
+    <string name="problem_report_missing_fields">Аталышын жана сүрөттөмөсүн киргизиңиз.</string>
+    <string name="problem_report_invalid_email">Жарактуу электрондук почта дарегин киргизиңиз.</string>
+    <string name="problem_report_sent">Пикир жөнөтүлдү.</string>
+    <string name="problem_report_rate_limited">Өтө көп пикир жөнөтүлдү. Кийинчерээк кайра аракет кылыңыз.</string>
+    <string name="problem_report_no_connection">Пикир жөнөтүлгөн жок. Интернет байланышын текшериңиз.</string>
+    <string name="problem_report_not_sent">Пикир жөнөтүлгөн жок. Кийинчерээк кайра аракет кылыңыз.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Туура эмес жүрүм-турум</item>
+        <item>Crash</item>
+        <item>Жай же жооп бербейт</item>
+        <item>Сунуш</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Сүйлөө</item>
+        <item>Жаңсоолор</item>
+        <item>Тийип изилдөө</item>
+        <item>Окуу башкаруу элементтери жана менюлар</item>
+        <item>Терүү жана баскычтоптор</item>
+        <item>Брайль баскычтобу</item>
+        <item>Брайль дисплейи</item>
+        <item>Үндөр жана титирөө</item>
+        <item>Билдирмелер</item>
+        <item>Веб мазмун</item>
+        <item>Сценарийлер</item>
+        <item>Параметрлер</item>
+        <item>Жаңыртуулар</item>
+        <item>Башка</item>
+    </string-array>
+    <string name="title_report_new">Пикир билдирүү</string>
+    <string name="title_report_inbox">Кирүүчү куту</string>
+    <string name="title_report_drafts">Долбоорлор</string>
+    <string name="report_inbox_empty">Пикир жөнөтүлгөн жок</string>
+    <string name="report_drafts_empty">Сомолор жок</string>
+    <string name="report_just_now">азыр эле</string>
+    <string name="report_untitled">Аталышы жок</string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> өзгөртүлдү</string>
+    <string name="report_sent_at">жөнөтүлдү <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> жаңы жооп</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> жаңы жооптор</item>
+    </plurals>
+    <string name="report_status_changed">абалы өзгөрдү</string>
+    <string name="report_status_open">Ачык маселе</string>
+    <string name="report_status_completed">Жабык, бүттү</string>
+    <string name="report_status_not_planned">Жабык, пландалган эмес</string>
+    <string name="report_status_duplicate">Жабык, дубликат</string>
+    <string name="report_status_unknown">Өчүрүлдү</string>
+    <string name="title_report_status">Статус</string>
+    <string name="title_report_your_report">Сиздин пикириңиз</string>
+    <string name="title_report_messages">Кабарлар</string>
+    <string name="report_message_from_developer">Иштеп чыгуучу, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Сиз, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Жооп бер</string>
+    <string name="title_report_reply_text">Сиздин жообуңуз</string>
+    <string name="title_report_send_reply">Жооп жөнөтүү</string>
+    <string name="report_reply_sent">Жооп жөнөтүлдү.</string>
+    <string name="report_reply_not_sent">Жооп жөнөтүлгөн жок. Кийинчерээк кайра аракет кылыңыз.</string>
+    <string name="title_report_remove">Кирүүчү кутудан алып салуу</string>
+    <string name="dialog_title_report_remove">Бул пикир кат келген кутудан өчүрүлсүнбү?</string>
+    <string name="dialog_message_report_remove">Ага жооптор мындан ары бул телефонго жетпейт.</string>
+    <string name="title_report_delete_draft">Долбоорду жок кылуу</string>
+    <string name="dialog_title_report_delete_draft">Бул долбоор жок кылынсынбы?</string>
+    <string name="button_report_delete">Өчүрүү</string>
+    <string name="report_missing">Бул пикир кат кутусунда жок.</string>
+    <string name="notification_channel_problem_reports">Пикир жооптор</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> жооп берүү</string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
