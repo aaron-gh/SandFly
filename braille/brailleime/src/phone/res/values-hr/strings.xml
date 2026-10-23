@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBackova brajična tipkovnica</string>
+  <string name="braille_ime_service_name">SandFlyova brajična tipkovnica</string>
   <string name="braille_ime_bd_mode_name">Unos pomoću brajevog retka</string>
   <string name="switch_to_tabletop_announcement">Stolni način. Položite uređaj tako da je priključak za punjenje lijevo.</string>
   <string name="calibration_tip_announcement">Da biste ažurirali položaj točaka, položite %d prsta na zaslon.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Prebačeno na punu brajicu</string>
   <string name="braille_ime_displayed_name">brajična tipkovnica</string>
   <string name="multiple_languages_braille_ime_displayed_name">brajična tipkovnica, %s</string>
-  <string name="input_view_caption">TalkBackova brajična tipkovnica – pomoć potražite na stranici g.co/help/braille</string>
+  <string name="input_view_caption">SandFlyova brajična tipkovnica – pomoć potražite na stranici g.co/help/braille</string>
   <string name="perform_action_next">Dalje</string>
   <string name="perform_action_submitting">Slanje teksta</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Ažuriranje položaja točaka. Najprije ćemo snimiti točke %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Da biste promijenili jezik tijekom upotrebe brajične tipkovnice, prijeđite trima prstima prema gore. Zatim odaberite \"Prijeđi na sljedeći jezik\".</string>
   <string name="title_pref_accumulate_presses">Uključi sve pritisnute točke</string>
   <string name="summary_pref_accumulate_presses">Svaka pritisnuta točka dio je unosa, čak i ako se otpusti prije drugih točaka</string>
-  <string name="title_pref_reverse_dots">Zamijeni točke</string>
-  <string name="summary_pref_reverse_dots">Zamjenjuju se položaji točaka, na primjer točke 1 i 4 zamjenjuju mjesta</string>
+  <string name="title_pref_reverse_dots">Zamijenite lijeve i desne točke</string>
+  <string name="summary_pref_reverse_dots">Točke 1, 2 i 3 zamjenjuju mjesta s točkama 4, 5 i 6</string>
   <string name="bd_preference_braille_contracted">Kratkopis</string>
   <string name="bd_preference_braille_uncontracted">Puno pismo</string>
   <string name="context_menu_title">Opcije brajične tipkovnice</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Tipkovnica</string>
   <string name="not_enough_touch_points_dialog_title">Vaš uređaj ne podržava brajičnu tipkovnicu</string>
   <string name="not_enough_touch_points_dialog_message">Vaš uređaj ne podržava dovoljno dodirnih točaka. Za više informacija obratite se proizvođaču uređaja.</string>
-  <string name="talkback_off_dialog_title">Uključite TalkBack da biste koristili brajičnu tipkovnicu</string>
+  <string name="talkback_off_dialog_title">Uključite SandFly da biste koristili brajičnu tipkovnicu</string>
   <string name="talkback_off_dialog_positive_button">Uključi u postavkama pristupačnosti</string>
-  <string name="talkback_suspend_dialog_title">Ponovo pokrenite TalkBack da biste koristili brajičnu tipkovnicu</string>
-  <string name="talkback_off_or_suspend_dialog_message">Kad je TalkBack uključen, možete dodirnuti zaslon da biste unosili brajične simbole.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Uključite TalkBack da biste promijenili pokret</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack je isključen. Uključite ga da biste promijenili pokrete za brajičnu tipkovnicu.</string>
+  <string name="talkback_suspend_dialog_title">Ponovo pokrenite SandFly da biste koristili brajičnu tipkovnicu</string>
+  <string name="talkback_off_or_suspend_dialog_message">Kad je SandFly uključen, možete dodirnuti zaslon da biste unosili brajične simbole.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Uključite SandFly da biste promijenili pokret</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly je isključen. Uključite ga da biste promijenili pokrete za brajičnu tipkovnicu.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Postavke</string>
   <string name="reset_gestures_dialog_title">Želite li vratiti sve pokrete na zadano?</string>
   <string name="reset_gestures_dialog_message">Svi pokreti za brajičnu tipkovnicu vratit će se na zadano</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Vraćanje na zadano</string>
   <string name="custom_gestures_dialog_remove_button">Uklanjanje pokreta</string>
   <string name="change_gestures_dialog_message_title">Kako promijeniti pokret</string>
-  <string name="change_gestures_dialog_message">Na sljedećem zaslonu otvorit će se brajična tipkovnica i nećete moći upotrebljavati TalkBackove pokrete.\n\nKad se otvori brajična tipkovnica, izvedite pokret koji želite upotrijebiti ili, da biste zatvorili brajičnu tipkovnicu i poništili promjenu pokreta, prijeđite s dva prsta prema dolje.\n\nPogledajte dostupne pokrete\n</string>
+  <string name="change_gestures_dialog_message">Na sljedećem zaslonu otvorit će se brajična tipkovnica i nećete moći upotrebljavati SandFlyove pokrete.\n\nKad se otvori brajična tipkovnica, izvedite pokret koji želite upotrijebiti ili, da biste zatvorili brajičnu tipkovnicu i poništili promjenu pokreta, prijeđite s dva prsta prema dolje.\n\nPogledajte dostupne pokrete\n</string>
   <string name="change_gestures_dialog_message_link">Pogledajte dostupne pokrete</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Ne prikazuj ponovno ovu poruku</string>
   <string name="change_gestures_dialog_positive_button">Nastavi</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Nemoj koristiti</string>
   <string name="next_keyboard">Sljedeća tipkovnica</string>
   <string name="braille_tutorial_title">Vodič za brajičnu tipkovnicu</string>
-  <string name="tutorial_intro_description">Kad je brajična tipkovnica uključena, možete unositi šestočkastu brajicu dodirivanjem zaslona.\n\nKoristite unificiranu brajicu za engleski jezik. Da biste promijenili jezik pisanja, vratite se na postavke TalkBacka.\n\nDa biste pisali brajicom, telefon trebate držati i koristiti drukčije.</string>
+  <string name="tutorial_intro_description">Kad je brajična tipkovnica uključena, možete unositi šestočkastu brajicu dodirivanjem zaslona.\n\nKoristite unificiranu brajicu za engleski jezik. Da biste promijenili jezik pisanja, vratite se na postavke SandFlya.\n\nDa biste pisali brajicom, telefon trebate držati i koristiti drukčije.</string>
   <string name="next_step">Dalje</string>
   <string name="leave_keyboard">Zatvori brajičnu tipkovnicu</string>
-  <string name="hold_six_fingers_description">Na brajičnoj tipkovnici nećete moći upotrebljavati uobičajene pokrete za TalkBack.\n\nDa biste započeli, trebate postaviti položaj šest točaka brajice za tipkanje.</string>
-  <string name="rotate_orientation_description_1">Odsad nećete moći koristiti uobičajene pokrete za TalkBack. TalkBack nije dostupan tijekom upotrebe brajične tipkovnice.</string>
+  <string name="hold_six_fingers_description">Na brajičnoj tipkovnici nećete moći upotrebljavati uobičajene pokrete za SandFly.\n\nDa biste započeli, trebate postaviti položaj šest točaka brajice za tipkanje.</string>
+  <string name="rotate_orientation_description_1">Odsad nećete moći koristiti uobičajene pokrete za SandFly. SandFly nije dostupan tijekom upotrebe brajične tipkovnice.</string>
   <string name="rotate_orientation_description_2">Za početak telefon držite ovako, tako da je zaslon okrenut od vas.</string>
   <string name="tap_to_continue">Dodirnite dvaput bilo gdje da biste nastavili</string>
   <string name="instruction_type_letter_a">Dodirnite točku 1 lijevim kažiprstom da biste napisali slovo \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">POKAZIVAČ JE POMAKNUT UNAPRIJED</string>
   <string name="result_swipe_down_2_fingers">SAKRIJTE TIPKOVNICU</string>
   <string name="result_swipe_down_3_fingers">SLJEDEĆA TIPKOVNICA</string>
-  <string name="rotate_orientation_announcement">Odsad nećete moći koristiti uobičajene pokrete za TalkBack. TalkBack nije dostupan tijekom upotrebe brajične tipkovnice.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Odsad nećete moći koristiti uobičajene pokrete za SandFly. SandFly nije dostupan tijekom upotrebe brajične tipkovnice.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Najprije okrenite telefon tako da je zaslon okrenut od vas.\n\nZatim zakrenite telefon horizontalno u vodoravni položaj. Rukama biste trebali obuhvaćati kraće krajeve telefona. Desnom rukom trebali biste držati kraj USB priključka. Srednja tri prsta položite na zaslon, a malim prstom i placem pridržavajte telefon.\n\nKad budete spremni, dvaput dodirnite zaslon da biste nastavili.\n\nDa biste zatvorili brajičnu tipkovnicu, s tri prsta prijeđite prema tlu. Time ćete se vratiti na izvornu tipkovnicu.</string>
   <string name="rotate_orientation_continue_announcement">Telefon vam je u okomitom položaju. Da biste nastavili, zakrenite telefon horizontalno tako da dulji kraj bude dolje. Zatim okrenite zaslon od sebe. Kad budete spremni, dvaput dodirnite zaslon da biste nastavili.</string>
   <string name="type_letter_a_announcement">Neka zaslon ostane okrenut od vas. Držite telefon s obje ruke, na kraćim rubovima telefona, tako da srednja tri prsta svake ruke mogu dodirivati zaslon.\n\nLijevi kažiprst treba biti na točki 1. Sad dodirnite točku 1 da biste napisali slovo \"A\".</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Da biste prešli na drugu tipkovnicu, prijeđite prema dolje s tri prsta. Isprobajte odmah.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Sljedeća tipkovnica. Time se obično prelazi na sljedeću tipkovnicu. Ovaj put ostajete na brajičnoj tipkovnici jer je vodič još otvoren.</string>
   <string name="swipe_up_3_fingers_announcement">Možete tipkati i u stolnom načinu, tako što ćete položiti telefon na stol. Da biste zatvorili vodič, prijeđite prema gore s tri prsta i pronađite opciju za zatvaranje vodiča.</string>
-  <string name="open_context_menu_announcement">Otvoren je izbornik opcija. Okrenite telefon kako bi bio okrenut prema vama i držite ga na uobičajen način. Za kretanje sad možete koristiti uobičajene pokrete za TalkBack. Prijeđite prstom udesno da biste vidjeli više opcija.</string>
+  <string name="open_context_menu_announcement">Otvoren je izbornik opcija. Okrenite telefon kako bi bio okrenut prema vama i držite ga na uobičajen način. Za kretanje sad možete koristiti uobičajene pokrete za SandFly. Prijeđite prstom udesno da biste vidjeli više opcija.</string>
   <string name="hold_six_fingers_announcement">%s\nPoložite uređaj na stol. Zatim dodirnite zaslon sa srednja tri prsta obiju ruku i zadržite pritisak na zaslonu u položaju koji vam odgovara za tipkanje.</string>
   <string name="hold_six_fingers_inactive_announcement">Položite uređaj na stol. Zatim dodirnite zaslon sa srednja tri prsta obiju ruku i zadržite pritisak na zaslonu u položaju koji vam odgovara za tipkanje.</string>
   <string name="finish_tutorial_announcement">Prikazuje se brajična tipkovnica. Okrenite telefon tako da je zaslon okrenut od vas. Zakrenite telefon horizontalno u vodoravni položaj. Potom započnite s unosom.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">Taj se pokret upotrebljava za radnju %1$s i ne može se promijeniti. Pokušajte s drugim pokretom. %2$s</string>
   <string name="custom_gesture_cannot_used">Taj se pokret ne može upotrijebiti</string>
   <string name="custom_gesture_no_gesture">Nije izvršen nijedan pokret</string>
-  <string name="custom_gesture_try_another">Pokušajte s drugim pokretom. Da biste vidjeli popis svih dostupnih pokreta, otvorite centar za pomoć za brajičnu tipkovnicu TalkBacka. %s</string>
+  <string name="custom_gesture_try_another">Pokušajte s drugim pokretom. Da biste vidjeli popis svih dostupnih pokreta, otvorite centar za pomoć za brajičnu tipkovnicu SandFlya. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Pokreti se nisu podudarali</string>
   <string name="custom_gesture_perform_again">Ponovno izvršite pokret koji želite upotrijebiti. %s</string>
+    <string name="tabletop_port_left_announcement">Stolni način rada, priključak za punjenje s lijeve strane</string>
+    <string name="tabletop_port_right_announcement">Stolni način rada, priključak za punjenje s desne strane</string>
+    <string name="screen_away_port_right_announcement">Način rada Screen-Away, priključak za punjenje s desne strane</string>
+    <string name="screen_away_port_left_announcement">Način rada Screen-Away, priključak za punjenje s lijeve strane</string>
+    <string name="screen_toward_announcement">Zaslon prema vama</string>
+    <string name="screen_toward_port_left_announcement">Zaslon prema vama, priključak za punjenje lijevo</string>
+    <string name="screen_toward_port_right_announcement">Zaslon prema vama, priključak za punjenje desno</string>
+    <string name="screen_toward_port_down_announcement">Zaslon prema vama, priključak za punjenje usmjeren prema dolje</string>
+    <string name="screen_toward_port_up_announcement">Zaslon prema vama, priključak za punjenje usmjeren prema gore</string>
+    <string name="port_right_announcement">Priključak za punjenje s desne strane</string>
+    <string name="port_left_announcement">Priključak za punjenje s lijeve strane</string>
+    <string name="tabletop_port_near_announcement">Stolni način rada, priključak za punjenje prema vama</string>
+    <string name="tabletop_port_far_announcement">Stolni način rada, priključak za punjenje dalje od vas</string>
+    <string name="screen_away_port_down_announcement">Način odmaknutog zaslona, priključak za punjenje usmjeren prema dolje</string>
+    <string name="screen_away_port_up_announcement">Način rada s ekranom, priključak za punjenje usmjeren prema gore</string>
+    <string name="port_near_announcement">Priključak za punjenje prema vama</string>
+    <string name="port_far_announcement">Priključak za punjenje dalje od vas</string>
+    <string name="port_down_announcement">Priključak za punjenje usmjeren prema dolje</string>
+    <string name="port_up_announcement">Priključak za punjenje usmjeren prema gore</string>
+    <string name="orientation_locked_announcement">Orijentacija zaključana</string>
+    <string name="orientation_locked_port_announcement">Orijentacija zaključana. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orijentacija otključana</string>
+    <string name="switch_to_language_contracted_announcement">Prešli ste na brajicu %s, Kratkopis</string>
+    <string name="switch_to_language_uncontracted_announcement">Prešli ste na brajicu %s, Puno pismo</string>
+    <string name="title_pref_flip_dots_vertically">Zamijenite gornje i donje točke</string>
+    <string name="summary_pref_flip_dots_vertically">Točka 1 mijenja mjesta s točkom 3, a točka 4 s točkom 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tablet je držao okrenut licem u stranu</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Kada je isključen, tablet ili rasklopljeni telefon koji se drži u položaju koristi se kao na stolu, okrenut prema vama</string>
+    <string name="title_pref_typing_sounds">Zvukovi tipkanja</string>
+    <string name="summary_pref_typing_sounds">Reproducirajte klikove tipkovnice kada upisujete znak, razmak, novi redak ili brisanje</string>
+    <string name="skip_tutorial">Preskoči vodič</string>
 </resources>

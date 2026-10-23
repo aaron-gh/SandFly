@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">Pauziraj SandFly</string>
+    <string name="summary_pause_backtalk">Isključuje govor, pokrete i značajku Istraži dodirom dok ne nastavite rad SandFlya</string>
+    <string name="keycombo_menu_global_pause_backtalk">Pauziranje ili nastavak rada SandFlya</string>
+    <string name="backtalk_paused">SandFly je pauziran</string>
+    <string name="backtalk_resumed">SandFly je nastavio s radom</string>
+    <string name="notification_title_backtalk_paused">SandFly je pauziran</string>
+    <string name="notification_message_backtalk_paused">Dodirnite za nastavak</string>
+    <string name="notification_channel_backtalk_paused">SandFly je pauziran</string>
+    <string name="dialog_title_pause_backtalk">Želite li pauzirati SandFly?</string>
+    <string name="dialog_button_pause_backtalk">Pauziraj</string>
+    <string name="dialog_message_pause_backtalk">Dok je SandFly pauziran, ne izgovara ništa i ne reagira na pokrete, a zaslon radi kao da nijedan čitač zaslona nije uključen.</string>
+    <string name="message_resume_keyguard">Za nastavak dodirnite obavijest SandFly je pauziran, brzo triput pritisnite tipku za smanjivanje glasnoće ili zaključajte i probudite telefon tako da se prikaže zaključani zaslon.</string>
+    <string name="message_resume_screen_on">Za nastavak dodirnite obavijest SandFly je pauziran, brzo triput pritisnite tipku za smanjivanje glasnoće ili isključite pa ponovno uključite zaslon.</string>
+    <string name="message_resume_manual">Za nastavak dodirnite obavijest SandFly je pauziran ili brzo triput pritisnite tipku za smanjivanje glasnoće.</string>
+    <string name="message_resume_key_combo">Možete pritisnuti i <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
+    <string name="title_pref_resume_backtalk">Nastavak rada SandFlya</string>
+    <string name="value_resume_keyguard">Kad se prikaže zaključani zaslon</string>
+    <string name="value_resume_screen_on">Kad se zaslon uključi</string>
+    <string name="value_resume_manual">Samo putem obavijesti ili prečaca</string>
+</resources>
