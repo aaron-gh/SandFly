@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">फीडबॅक पाठवा</string>
+    <string name="title_pref_problem_report_type">फीडबॅकचा प्रकार</string>
+    <string name="title_pref_problem_report_area">क्षेत्रफळ</string>
+    <string name="title_pref_problem_report_title">शीर्षक</string>
+    <string name="title_pref_problem_report_app">ॲप जेथे ते घडते</string>
+    <string name="title_pref_problem_report_description">वर्णन</string>
+    <string name="dialog_message_problem_report_description">काय होते आणि आपण काय अपेक्षित आहे.</string>
+    <string name="title_pref_problem_report_steps">सॉफ्टवेअर समस्या पुनरुत्पादित करण्यासाठी पायऱ्या</string>
+    <string name="title_pref_problem_report_email">उत्तरांसाठी ईमेल</string>
+    <string name="title_pref_problem_report_device">डिव्हाइस माहिती समाविष्ट करा</string>
+    <string name="title_pref_problem_report_log">SandFly लॉग समाविष्ट करा</string>
+    <string name="summary_pref_problem_report_log">स्क्रीनवरील मजकूर असू शकतो</string>
+    <string name="title_pref_problem_report_send">पाठवा</string>
+    <string name="summary_pref_problem_report_sending">पाठवत आहे</string>
+    <string name="problem_report_missing_fields">शीर्षक आणि वर्णन प्रविष्ट करा.</string>
+    <string name="problem_report_invalid_email">एक वैध ईमेल पत्ता प्रविष्ट करा.</string>
+    <string name="problem_report_sent">अभिप्राय पाठवला.</string>
+    <string name="problem_report_rate_limited">खूप जास्त फीडबॅक पाठवला. नंतर पुन्हा प्रयत्न करा.</string>
+    <string name="problem_report_no_connection">अभिप्राय पाठवला नाही. इंटरनेट कनेक्शन तपासा.</string>
+    <string name="problem_report_not_sent">अभिप्राय पाठवला नाही. नंतर पुन्हा प्रयत्न करा.</string>
+    <string-array name="problem_report_type_entries">
+        <item>चुकीची वागणूक</item>
+        <item>क्रॅश</item>
+        <item>मंद किंवा प्रतिसाद न देणारा</item>
+        <item>सूचना</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>भाषण</item>
+        <item>जेश्चर</item>
+        <item>स्पर्श अन्वेषण</item>
+        <item>वाचन नियंत्रणे आणि मेनू</item>
+        <item>टायपिंग आणि कीबोर्ड</item>
+        <item>ब्रेल कीबोर्ड</item>
+        <item>ब्रेल डिस्प्ले</item>
+        <item>ध्वनी आणि कंपन</item>
+        <item>सूचना</item>
+        <item>वेब सामग्री</item>
+        <item>स्क्रिप्ट</item>
+        <item>सेटिंग्ज</item>
+        <item>अपडेट्स</item>
+        <item>इतर</item>
+    </string-array>
+    <string name="title_report_new">फीडबॅक पाठवा</string>
+    <string name="title_report_inbox">इनबॉक्स</string>
+    <string name="title_report_drafts">मसुदे</string>
+    <string name="report_inbox_empty">कोणताही अभिप्राय पाठवला नाही</string>
+    <string name="report_drafts_empty">कोणतेही मसुदे नाहीत</string>
+    <string name="report_just_now">आत्ताच</string>
+    <string name="report_untitled">शीर्षकहीन</string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> बदलले</string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> पाठवले</string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> नवीन उत्तर</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> नवीन प्रत्युत्तरे</item>
+    </plurals>
+    <string name="report_status_changed">स्थिती बदलली</string>
+    <string name="report_status_open">खुला मुद्दा</string>
+    <string name="report_status_completed">बंद, पूर्ण</string>
+    <string name="report_status_not_planned">बंद, नियोजित नाही</string>
+    <string name="report_status_duplicate">बंद, डुप्लिकेट</string>
+    <string name="report_status_unknown">काढले</string>
+    <string name="title_report_status">स्थिती</string>
+    <string name="title_report_your_report">तुमचा अभिप्राय</string>
+    <string name="title_report_messages">संदेश</string>
+    <string name="report_message_from_developer">विकसक, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">तुम्ही, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">उत्तर द्या</string>
+    <string name="title_report_reply_text">तुमचे उत्तर</string>
+    <string name="title_report_send_reply">उत्तर पाठवा</string>
+    <string name="report_reply_sent">उत्तर पाठवले.</string>
+    <string name="report_reply_not_sent">उत्तर पाठवले नाही. नंतर पुन्हा प्रयत्न करा.</string>
+    <string name="title_report_remove">इनबॉक्समधून काढा</string>
+    <string name="dialog_title_report_remove">हा फीडबॅक इनबॉक्समधून काढायचा?</string>
+    <string name="dialog_message_report_remove">त्याला उत्तरे यापुढे या फोनवर पोहोचणार नाहीत.</string>
+    <string name="title_report_delete_draft">मसुदा हटवा</string>
+    <string name="dialog_title_report_delete_draft">हा मसुदा हटवायचा?</string>
+    <string name="button_report_delete">हटवा</string>
+    <string name="report_missing">हा फीडबॅक यापुढे इनबॉक्समध्ये नाही.</string>
+    <string name="notification_channel_problem_reports">अभिप्राय प्रत्युत्तरे</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> ला उत्तर द्या</string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>

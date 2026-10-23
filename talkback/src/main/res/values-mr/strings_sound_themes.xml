@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">ध्वनी थीम</string>
+    <string name="summary_pref_sound_themes">ध्वनी आणि कंपनांचे संच स्थापित करा आणि निवडा, एकल ध्वनी तुमच्या स्वतःच्या बरोबर बदला आणि नियंत्रण ध्वनी आणि कंपन आणि 3D ऑडिओ चालू करा.</string>
+    <string name="sound_themes_installed_category">स्थापित थीम</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly चे स्वतःचे आवाज आणि कंपन आणि तुमचे स्वतःचे कोणतेही आवाज.</string>
+    <string name="sound_theme_in_use">वापरात आहे</string>
+    <string name="sound_theme_by"><xliff:g id="author" example="Bryan Smart">%1$s</xliff:g> ने</string>
+    <string name="sound_theme_license">परवाना: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> आवाज.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> आवाज.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> कंपन.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> कंपन.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">नियंत्रण आवाज आणि कंपन चालू करते.</string>
+    <string name="sound_theme_control_sounds_off">नियंत्रण आवाज आणि कंपन बंद करते.</string>
+    <string name="sound_theme_use">ही थीम वापरा</string>
+    <string name="sound_theme_about">या थीम बद्दल</string>
+    <string name="sound_theme_export">थीम फाइल म्हणून सेव्ह करा</string>
+    <string name="sound_theme_remove">काढा</string>
+    <string name="sound_theme_remove_confirm">थीम <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> काढायची?</string>
+    <string name="sound_theme_remove_button">काढा</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> आवाजासह थीम सेव्ह केली.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> आवाजांसह थीम सेव्ह केली.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly थीम फाइल सेव्ह करू शकलो नाही.</string>
+    <string name="sound_theme_no_picker">फाइल्स निवडण्यासाठी या डिव्हाइसवर कोणतेही ॲप नाही.</string>
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> च्या सेटिंग्ज</string>
+    <string name="title_pref_theme_sounds">आवाज</string>
+    <string name="summary_pref_theme_sounds">या थीमचा कोणताही आवाज तुमच्या स्वतःच्या ध्वनी फाइलने बदला.</string>
+    <string name="sound_themes_install_category">थीम स्थापित करा</string>
+    <string name="title_pref_sound_theme_install_file">फाईलमधून</string>
+    <string name="summary_pref_sound_theme_install_file">थीम फाइल ही झिप फाइल असते. तुम्ही दुसऱ्या ॲपवरून SandFly सह एक उघडू शकता किंवा शेअर करू शकता.</string>
+    <string name="title_pref_sound_theme_install_link">एका लिंकवरून</string>
+    <string name="summary_pref_sound_theme_install_link">थीम फाईलचा किंवा GitHub रिपॉझिटरीमध्ये थीम असलेली लिंक. तुम्ही तुमच्या ब्राउझरवरून SandFly सह लिंक देखील शेअर करू शकता.</string>
+    <string name="title_pref_sound_theme_install_source">एका स्त्रोताकडून</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea किंवा Bitbucket वरील रिपॉजिटरीमध्ये थीम फाइल्स.</string>
+    <string name="sound_theme_sources">ध्वनी थीम स्रोत</string>
+    <string name="sound_theme_source_empty">या स्त्रोतामध्ये कोणतीही ध्वनी थीम नाहीत</string>
+    <string name="sound_theme_source_failed">ध्वनी थीम लोड करू शकलो नाही. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">त्यातून स्थापित ध्वनी थीम स्थापित राहतात.</string>
+    <string name="sound_theme_link_message">थीम फाईलमध्ये किंवा GitHub रिपॉझिटरीमध्ये थीम असलेल्या लिंक एंटर करा किंवा पेस्ट करा.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">ध्वनी थीम स्थापित करा</string>
+    <string name="sound_theme_install_reading">ध्वनी थीम वाचत आहे</string>
+    <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> स्थापित करायचे?</string>
+    <string name="sound_theme_install_and_use">स्थापित करा आणि वापरा</string>
+    <string name="sound_theme_install">स्थापित करा</string>
+    <string name="sound_theme_install_replaces">हे त्याच नावाची स्थापित थीम पुनर्स्थित करते.</string>
+    <string name="sound_theme_install_skipped">सोडले:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> स्थापित केले.</string>
+    <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> स्थापित केले. ते आता वापरात आहे.</string>
+    <string name="sound_theme_install_nothing">स्थापित करण्यासाठी कोणतीही ध्वनी थीम नाही.</string>
+    <string name="sound_theme_install_not_a_theme">ही ध्वनी थीम नाही SandFly वापरू शकते: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly ध्वनी थीम स्थापित करू शकलो नाही. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">ध्वनी थीमचे दुवे https ने सुरू होणे आवश्यक आहे.</string>
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> चे आवाज</string>
+    <string name="title_pref_theme_sounds_reset">सर्वांसाठी SandFly चे आवाज वापरा</string>
+    <string name="theme_sounds_reset_confirm">या थीमचे सर्व आवाज काढायचे आणि SandFly चे स्वतःचे वापरायचे?</string>
+    <string name="theme_sounds_reset_button">काढा</string>
+    <string name="theme_sounds_category">आवाज</string>
+    <string name="theme_sound_summary_default">SandFly चा आवाज</string>
+    <string name="theme_sound_summary_custom">थीम आवाज</string>
+    <string name="theme_sound_summary_none">आवाज नाही. फोकस ध्वनी वाजतो.</string>
+    <string name="theme_sound_summary_android_keyboard">Android चा कीबोर्ड आवाज</string>
+    <string name="theme_sound_use_android_keyboard">Android चा कीबोर्ड आवाज वापरा</string>
+    <string name="theme_sound_braille_character">ब्रेल कीबोर्ड: एक वर्ण टाइप करणे</string>
+    <string name="theme_sound_braille_space">ब्रेल कीबोर्ड: जागा</string>
+    <string name="theme_sound_braille_delete">ब्रेल कीबोर्ड: हटवा</string>
+    <string name="theme_sound_braille_new_line">ब्रेल कीबोर्ड: नवीन ओळ</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">ध्वनी फाइल निवडा</string>
+    <string name="theme_sound_preview">पूर्वावलोकन</string>
+    <string name="theme_sound_none">आवाज नाही</string>
+    <string name="theme_sound_summary_no_sound">आवाज नाही</string>
+    <string name="theme_sound_action_set_none">आवाज नाही वर सेट करा</string>
+    <string name="theme_sound_use_default">SandFly चा आवाज वापरा</string>
+    <string name="theme_sound_remove">आवाज काढा</string>
+    <string name="theme_sound_too_large">ती फाईल खूप मोठी आहे. एक आवाज 5 MB पर्यंत असू शकतो.</string>
+    <string name="theme_sound_not_audio">SandFly ती फाइल प्ले करू शकत नाही. WAV, OGG, MP3 किंवा FLAC ध्वनी निवडा.</string>
+    <string name="theme_sound_failed">SandFly ती फाइल वाचू शकली नाही.</string>
+</resources>

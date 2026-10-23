@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pause_backtalk">विराम द्या SandFly</string>
+    <string name="summary_pause_backtalk">तुम्ही SandFly पुन्हा सुरू करेपर्यंत बोलणे, जेश्चर बंद करा आणि स्पर्शाने एक्सप्लोर करा</string>
+    <string name="keycombo_menu_global_pause_backtalk">विराम द्या किंवा पुन्हा सुरू करा SandFly</string>
+    <string name="backtalk_paused">SandFly विराम दिला</string>
+    <string name="backtalk_resumed">SandFly पुन्हा सुरू केले</string>
+    <string name="notification_title_backtalk_paused">SandFly विराम दिला आहे</string>
+    <string name="notification_message_backtalk_paused">पुन्हा सुरू करण्यासाठी टॅप करा</string>
+    <string name="notification_channel_backtalk_paused">SandFly विराम दिला</string>
+    <string name="dialog_title_pause_backtalk">SandFly विराम द्यायचा?</string>
+    <string name="dialog_button_pause_backtalk">थांबवा</string>
+    <string name="dialog_message_pause_backtalk">SandFly विराम दिलेला असताना, तो बोलत नाही किंवा जेश्चरला प्रतिसाद देत नाही आणि स्क्रीन रीडर चालू नसल्याप्रमाणे काम करते.</string>
+    <string name="message_resume_keyguard">पुन्हा सुरू करण्यासाठी, SandFly विराम दिलेल्या नोटिफिकेशनवर टॅप करा, 3 वेळा आवाज कमी करा किंवा फोन लॉक आणि वेक करा जेणेकरून लॉक स्क्रीन दिसेल.</string>
+    <string name="message_resume_screen_on">पुन्हा सुरू करण्यासाठी, SandFly विराम दिलेल्या सूचना टॅप करा, 3 वेळा आवाज कमी करा किंवा स्क्रीन बंद करा आणि पुन्हा चालू करा.</string>
+    <string name="message_resume_manual">पुन्हा सुरू करण्यासाठी, SandFly विराम दिलेल्या सूचना टॅप करा किंवा 3 वेळा झटपट आवाज कमी करा.</string>
+    <string name="message_resume_key_combo">तुम्ही <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> देखील दाबू शकता.</string>
+    <string name="title_pref_resume_backtalk">पुन्हा सुरू करा SandFly</string>
+    <string name="value_resume_keyguard">जेव्हा लॉक स्क्रीन दिसते</string>
+    <string name="value_resume_screen_on">स्क्रीन चालू झाल्यावर</string>
+    <string name="value_resume_manual">केवळ सूचना किंवा शॉर्टकटवरून</string>
+</resources>

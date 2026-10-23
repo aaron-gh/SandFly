@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack ब्रेल कीबोर्ड</string>
+  <string name="braille_ime_service_name">SandFly ब्रेल कीबोर्ड</string>
   <string name="braille_ime_bd_mode_name">ब्रेल प्रदर्शन इनपुट</string>
   <string name="switch_to_tabletop_announcement">टेबलटॉप मोड. तुमचे डिव्हाइस चार्जिंग पोर्टसह डावीकडे ठेवा.</string>
   <string name="calibration_tip_announcement">बिंदूचे स्थान अपडेट करण्यासाठी, %d बोटांनी धरा.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">विस्तारित ब्रेलवर स्विच केला आहे</string>
   <string name="braille_ime_displayed_name">ब्रेल कीबोर्ड</string>
   <string name="multiple_languages_braille_ime_displayed_name">ब्रेल कीबोर्ड, %s</string>
-  <string name="input_view_caption">TalkBack ब्रेल कीबोर्ड - मदतीसाठी, g.co/help/braille येथे भेट द्या</string>
+  <string name="input_view_caption">SandFly ब्रेल कीबोर्ड - मदतीसाठी, g.co/help/braille येथे भेट द्या</string>
   <string name="perform_action_next">पुढील</string>
   <string name="perform_action_submitting">मजकूर सबमिट करत आहे</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">बिंदूचे स्थान अपडेट करत आहे. सर्वप्रथम, तुमच्या %s वर बिंदू रेकॉर्ड करू या.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">ब्रेल कीबोर्ड वापरून टाइप करताना तुमची भाषा बदलण्यासाठी, तीन बोटांनी वरती स्वाइप करा. त्यानंतर \"पुढील भाषेवर स्विच करा\" निवडा.</string>
   <string name="title_pref_accumulate_presses">सर्व प्रेस केलेले बिंदू समाविष्ट करा</string>
   <string name="summary_pref_accumulate_presses">एक बिंदू इतर बिंदूंच्या आधी रिलीझ केला, तरी प्रत्येक प्रेस केलेला बिंदू इनपुटचा भाग असतो</string>
-  <string name="title_pref_reverse_dots">बिंदू उलट करा</string>
-  <string name="summary_pref_reverse_dots">बिंदू १ आणि ४ जागांची अदलाबदल करतील अशा प्रकारे बिंदूंच्या जागा स्वॅप करा, उदाहरणार्थ</string>
+  <string name="title_pref_reverse_dots">डावे आणि उजवे ठिपके स्वॅप करा</string>
+  <string name="summary_pref_reverse_dots">ठिपके 1, 2, आणि 3 बिंदू 4, 5 आणि 6 सह व्यापाराची ठिकाणे</string>
   <string name="bd_preference_braille_contracted">काँट्रॅक्टेड ब्रेल</string>
   <string name="bd_preference_braille_uncontracted">अनकाँट्रॅक्टेड ब्रेल</string>
   <string name="context_menu_title">ब्रेल कीबोर्ड पर्याय</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">कीबोर्ड</string>
   <string name="not_enough_touch_points_dialog_title">तुमचे डिव्हाइस ब्रेल कीबोर्डला सपोर्ट करत नाही</string>
   <string name="not_enough_touch_points_dialog_message">तुमचे डिव्हाइस पुरेशा स्पर्शबिंदूंना सपोर्ट करत नाही. अधिक माहितीसाठी, तुमच्या डिव्हाइस निर्मात्याशी संपर्क साधा.</string>
-  <string name="talkback_off_dialog_title">ब्रेल कीबोर्ड वापरण्यासाठी TalkBack सुरू करा</string>
+  <string name="talkback_off_dialog_title">ब्रेल कीबोर्ड वापरण्यासाठी SandFly सुरू करा</string>
   <string name="talkback_off_dialog_positive_button">अ‍ॅक्सेसिबिलिटी सेटिंग्जमध्ये सुरू करा</string>
-  <string name="talkback_suspend_dialog_title">ब्रेल कीबोर्ड वापरण्यासाठी TalkBack पुन्‍हा सुरू करा</string>
-  <string name="talkback_off_or_suspend_dialog_message">TalkBack सुरू असेल तेव्हा ब्रेल चिन्हे एंटर करण्यासाठी तुम्ही तुमच्या स्क्रीनवर टॅप करू शकता.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">जेश्चर बदलण्यासाठी TalkBack सुरू करणे</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack बंद आहे. ब्रेल कीबोर्ड जेश्चर बदलण्यासाठी ते सुरू करा.</string>
+  <string name="talkback_suspend_dialog_title">ब्रेल कीबोर्ड वापरण्यासाठी SandFly पुन्‍हा सुरू करा</string>
+  <string name="talkback_off_or_suspend_dialog_message">SandFly सुरू असेल तेव्हा ब्रेल चिन्हे एंटर करण्यासाठी तुम्ही तुमच्या स्क्रीनवर टॅप करू शकता.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">जेश्चर बदलण्यासाठी SandFly सुरू करणे</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly बंद आहे. ब्रेल कीबोर्ड जेश्चर बदलण्यासाठी ते सुरू करा.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">सेटिंग्ज वर जा</string>
   <string name="reset_gestures_dialog_title">सर्व जेश्चर रीसेट करायचे आहेत का?</string>
   <string name="reset_gestures_dialog_message">सर्व ब्रेल कीबोर्ड जेश्चर डीफॉल्टवर रीसेट केली जातील</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">डीफॉल्टवर रीसेट करा</string>
   <string name="custom_gestures_dialog_remove_button">जेश्चर काढून टाका</string>
   <string name="change_gestures_dialog_message_title">जेश्चर कसे बदलायचे</string>
-  <string name="change_gestures_dialog_message">पुढील स्क्रीनवर, ब्रेल कीबोर्ड उघडेल आणि तुम्हाला TalkBack जेश्चर वापरता येणार नाहीत.\n\nब्रेल कीबोर्ड उघडल्यावर, तुम्हाला वापरायचे असलेले जेश्चर करा किंवा ब्रेल कीबोर्ड बंद करण्यासाठी आणि जेश्चरमधील बदल रद्द करण्यासाठी दोन बोटांनी खाली स्वाइप करा.\n\nउपलब्ध असलेली जेश्चर पहा\n</string>
+  <string name="change_gestures_dialog_message">पुढील स्क्रीनवर, ब्रेल कीबोर्ड उघडेल आणि तुम्हाला SandFly जेश्चर वापरता येणार नाहीत.\n\nब्रेल कीबोर्ड उघडल्यावर, तुम्हाला वापरायचे असलेले जेश्चर करा किंवा ब्रेल कीबोर्ड बंद करण्यासाठी आणि जेश्चरमधील बदल रद्द करण्यासाठी दोन बोटांनी खाली स्वाइप करा.\n\nउपलब्ध असलेली जेश्चर पहा\n</string>
   <string name="change_gestures_dialog_message_link">उपलब्ध जेश्चर पहा</string>
   <string name="change_gestures_dialog_dont_show_checkbox">हा मेसेज पुन्हा दाखवू नका</string>
   <string name="change_gestures_dialog_positive_button">पुढे सुरू ठेवा</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">वापरू नका</string>
   <string name="next_keyboard">पुढील कीबोर्ड</string>
   <string name="braille_tutorial_title">ब्रेल कीबोर्ड ट्यूटोरियल</string>
-  <string name="tutorial_intro_description">ब्रेल कीबोर्डसोबत, तुम्ही सहा बिंदू ब्रेल एंटर करण्यासाठी तुमच्या स्क्रीनवर टॅप करू शकता.\n\nतुम्ही युनिफाइड इंग्रजी ब्रेल वापरत आहात. तुमची टाइप करण्याची भाषा स्विच करण्यासाठी, TalkBack सेटिंग्ज वर जा.\n\nब्रेल टाइप करण्यासाठी, तुम्हाला तुमचा फोन वेगळ्या प्रकारे धरावा आणि वापरावा लागेल.</string>
+  <string name="tutorial_intro_description">ब्रेल कीबोर्डसोबत, तुम्ही सहा बिंदू ब्रेल एंटर करण्यासाठी तुमच्या स्क्रीनवर टॅप करू शकता.\n\nतुम्ही युनिफाइड इंग्रजी ब्रेल वापरत आहात. तुमची टाइप करण्याची भाषा स्विच करण्यासाठी, SandFly सेटिंग्ज वर जा.\n\nब्रेल टाइप करण्यासाठी, तुम्हाला तुमचा फोन वेगळ्या प्रकारे धरावा आणि वापरावा लागेल.</string>
   <string name="next_step">पुढील</string>
   <string name="leave_keyboard">ब्रेल कीबोर्ड सोडा</string>
-  <string name="hold_six_fingers_description">तुम्ही ब्रेल कीबोर्डमध्ये नेहमीचे TalkBack जेश्चर वापरू शकणार नाही.\n\nसुरुवात करण्यासाठी, तुम्ही टाइप करत असताना सहा ब्रेल बिंदूंचे स्थान सेट अप करूया.</string>
-  <string name="rotate_orientation_description_1">आतापासून, तुम्हाला नेहमीची TalkBack जेश्चर वापरता येणार नाहीत. ब्रेल कीबोर्ड वापरत असताना TalkBack उपलब्ध नाही.</string>
+  <string name="hold_six_fingers_description">तुम्ही ब्रेल कीबोर्डमध्ये नेहमीचे SandFly जेश्चर वापरू शकणार नाही.\n\nसुरुवात करण्यासाठी, तुम्ही टाइप करत असताना सहा ब्रेल बिंदूंचे स्थान सेट अप करूया.</string>
+  <string name="rotate_orientation_description_1">आतापासून, तुम्हाला नेहमीची SandFly जेश्चर वापरता येणार नाहीत. ब्रेल कीबोर्ड वापरत असताना SandFly उपलब्ध नाही.</string>
   <string name="rotate_orientation_description_2">सुरुवात करण्यासाठी, तुमचा फोन स्क्रीन तुमच्यापासून बाहेरच्या दिशेला असेल अशा प्रकारे धरा.</string>
   <string name="tap_to_continue">सुरू ठेवण्यासाठी कुठेही दोनदा टॅप करा</string>
   <string name="instruction_type_letter_a">\"A\" हे अक्षर टाइप करण्यासाठी तुमच्या डाव्या तर्जनीने बिंदू १ वर टॅप करा</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">कर्सर पुढे हलवला</string>
   <string name="result_swipe_down_2_fingers">कीबोर्ड लपवा</string>
   <string name="result_swipe_down_3_fingers">पुढील कीबोर्ड</string>
-  <string name="rotate_orientation_announcement">आतापासून तुम्हाला नेहमीची TalkBack जेश्चर वापरता येणार नाहीत. ब्रेल कीबोर्ड वापरत असताना TalkBack उपलब्ध नाही.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">आतापासून तुम्हाला नेहमीची SandFly जेश्चर वापरता येणार नाहीत. ब्रेल कीबोर्ड वापरत असताना SandFly उपलब्ध नाही.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">आधी तुमची फोन स्क्रीन तुमच्या विरूद्ध दिशेला असेल अशा प्रकारे वळवा.\n\nत्यानंतर फोन आडवा फिरवून लँडस्केप स्थितीत आणा. तुमच्या हातांनी फोनच्या लहान बाजू धरून ठेवली पाहिजे. तुमच्या उजव्या हाताने USB पोर्टचा मागील भाग धरा. तुमची मधील तीन बोटे स्क्रीनवर ठेवा आणि फोनला आधार देण्यासाठी तुमची करंगळी आणि अंगठा वापरा.\n\nतुम्ही तयार असल्यावर सुरू ठेवण्यासाठी स्क्रीनवर दोनदा टॅप करा.\n\nब्रेल कीबोर्डमधून बाहेर पडण्यासाठी तीन बोटांनी खाली स्वाइप करा. हे परत तुमच्या मूळ कीबोर्डवर स्विच करते.</string>
   <string name="rotate_orientation_continue_announcement">तुमचा फोन उभ्या स्थितीत आहे. सुरू ठेवण्यासाठी, तुमचा फोन लांब बाजू तळाशी येईल अशा प्रकारे आडवा फिरवा. त्यानंतर स्क्रीन तुमच्यापासून बाहेरच्या दिशेला वळवा. तुम्ही तयार असल्यावर, सुरू ठेवण्यासाठी स्क्रीनवर दोनदा टॅप करा.</string>
   <string name="type_letter_a_announcement">स्क्रीन तुमच्यापासून बाहेरच्या दिशेला वळवलेली ठेवा. प्रत्येक हाताची मधली तीन बोटे स्क्रीनला स्पर्श करू शकतील अशा प्रकारे तुमचा फोन दोन्ही हातांमध्ये, फोनच्या लहान बाजूंवर धरा.\n\nतुमची डावी तर्जनी बिंदू १ वर असली पाहिजे. आता, \"A\" हे अक्षर टाइप करण्यासाठी बिंदू १ वर टॅप करा.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">तुमच्या दुसर्‍या कीबोर्डवर स्वाइप करण्यासाठी, तीन बोटांनी खाली स्वाइप करा. आता ते करून पहा.</string>
   <string name="swipe_down_3_fingers_completed_announcement">पुढील कीबोर्ड. सहसा, हे पुढील कीबोर्डवर स्विच करेल. या वेळी, तुम्ही अजून ट्युटोरियलमध्ये असल्यामुळे ब्रेल कीबोर्डवर राहिला आहात.</string>
   <string name="swipe_up_3_fingers_announcement">तुम्ही तुमचा फोन टेबलवर सपाट ठेवूनदेखील टेबलटॉप मोडमध्ये टाइप करू शकता. ट्यूटोरियल संपवण्यासाठी तीन बोटांनी वर स्वाइप करा आणि ट्यूटोरियल संपवा पर्याय शोधा</string>
-  <string name="open_context_menu_announcement">पर्याय मेनू खुला आहे. तुमचा फोन तुमच्याकडे फिरवा आणि तो नेहमीप्रमाणे धरा. नेव्हिगेट करण्यासाठी तुम्ही आता नेहमीची TalkBack जेश्चर वापरू शकता. अधिक पर्याय पाहण्यासाठी उजवीकडे स्वाइप करा.</string>
+  <string name="open_context_menu_announcement">पर्याय मेनू खुला आहे. तुमचा फोन तुमच्याकडे फिरवा आणि तो नेहमीप्रमाणे धरा. नेव्हिगेट करण्यासाठी तुम्ही आता नेहमीची SandFly जेश्चर वापरू शकता. अधिक पर्याय पाहण्यासाठी उजवीकडे स्वाइप करा.</string>
   <string name="hold_six_fingers_announcement">%s\nतुमचे डिव्हाइस टेबलवर सपाट ठेवा. त्यानंतर, तुम्हाला टाइप करणे सोईचे होईल अशा स्थितीमध्ये प्रत्येक हाताच्या मधल्या तीन बोटांनी स्क्रीनवर स्‍पर्श करा आणि धरून ठेवा.</string>
   <string name="hold_six_fingers_inactive_announcement">तुमचे डिव्हाइस टेबलवर सपाट ठेवा. त्यानंतर, तुम्हाला टाइप करणे सोईचे होईल अशा स्थितीमध्ये प्रत्येक हाताच्या मधल्या तीन बोटांनी स्क्रीनवर स्‍पर्श करा आणि धरून ठेवा.</string>
   <string name="finish_tutorial_announcement">ब्रेल कीबोर्ड दाखवत आहे. तुमचा फोन वळवा जेणेकरून स्क्रीन तुमच्या विरुद्ध दिशेला असेल. फोन आडवा फिरवून लँडस्केप स्थितीत आणा. त्यानंतर टाइप करणे सुरू करा.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">हे जेश्चर \"%1$s\" साठी वापरले जाते आणि ते बदलले जाऊ शकत नाही. दुसरे जेश्चर वापरून पहा. %2$s</string>
   <string name="custom_gesture_cannot_used">हे जेश्चर वापरले जाऊ शकत नाही</string>
   <string name="custom_gesture_no_gesture">कोणतेही जेश्चर केले नाही</string>
-  <string name="custom_gesture_try_another">दुसरे जेश्चर वापरून पहा. सर्व उपलब्ध जेश्चरची सूची पाहण्यासाठी, TalkBack ब्रेल कीबोर्डच्या मदत केंद्रावर जा. %s</string>
+  <string name="custom_gesture_try_another">दुसरे जेश्चर वापरून पहा. सर्व उपलब्ध जेश्चरची सूची पाहण्यासाठी, SandFly ब्रेल कीबोर्डच्या मदत केंद्रावर जा. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">जेश्चर जुळले नाही</string>
   <string name="custom_gesture_perform_again">तुम्हाला वापरायचे असलेले जेश्चर पुन्हा करा. %s</string>
+    <string name="tabletop_port_left_announcement">टेबलटॉप मोड, डावीकडे चार्जिंग पोर्ट</string>
+    <string name="tabletop_port_right_announcement">टेबलटॉप मोड, उजवीकडे चार्जिंग पोर्ट</string>
+    <string name="screen_away_port_right_announcement">स्क्रीन-अवे मोड, उजवीकडे चार्जिंग पोर्ट</string>
+    <string name="screen_away_port_left_announcement">स्क्रीन-अवे मोड, डावीकडे चार्जिंग पोर्ट</string>
+    <string name="screen_toward_announcement">तुमच्या दिशेने स्क्रीन</string>
+    <string name="screen_toward_port_left_announcement">तुमच्या दिशेने स्क्रीन, डावीकडे चार्जिंग पोर्ट</string>
+    <string name="screen_toward_port_right_announcement">तुमच्या दिशेने स्क्रीन, उजवीकडे चार्जिंग पोर्ट</string>
+    <string name="screen_toward_port_down_announcement">तुमच्या दिशेने स्क्रीन, चार्जिंग पोर्ट खाली पॉइंट करत आहे</string>
+    <string name="screen_toward_port_up_announcement">तुमच्या दिशेने स्क्रीन, चार्जिंग पोर्ट वर पॉइंट करत आहे</string>
+    <string name="port_right_announcement">उजवीकडे चार्जिंग पोर्ट</string>
+    <string name="port_left_announcement">डावीकडे चार्जिंग पोर्ट</string>
+    <string name="tabletop_port_near_announcement">टेबलटॉप मोड, तुमच्या दिशेने चार्जिंग पोर्ट</string>
+    <string name="tabletop_port_far_announcement">टेबलटॉप मोड, चार्जिंग पोर्ट तुमच्यापासून दूर आहे</string>
+    <string name="screen_away_port_down_announcement">स्क्रीन-अवे मोड, चार्जिंग पोर्ट खाली पॉइंट करत आहे</string>
+    <string name="screen_away_port_up_announcement">स्क्रीन-अवे मोड, चार्जिंग पोर्ट पॉइंट अप करत आहे</string>
+    <string name="port_near_announcement">तुमच्या दिशेने चार्जिंग पोर्ट</string>
+    <string name="port_far_announcement">चार्जिंग पोर्ट तुमच्यापासून दूर आहे</string>
+    <string name="port_down_announcement">चार्जिंग पोर्ट खाली पॉइंट करत आहे</string>
+    <string name="port_up_announcement">चार्जिंग पोर्ट वर पॉइंट करत आहे</string>
+    <string name="orientation_locked_announcement">ओरिएंटेशन लॉक केले</string>
+    <string name="orientation_locked_port_announcement">ओरिएंटेशन लॉक केले. %1$s</string>
+    <string name="orientation_unlocked_announcement">ओरिएंटेशन अनलॉक केले</string>
+    <string name="switch_to_language_contracted_announcement">%s वर स्विच केले, काँट्रॅक्टेड ब्रेल</string>
+    <string name="switch_to_language_uncontracted_announcement">%s वर स्विच केले, अनकाँट्रॅक्टेड ब्रेल</string>
+    <string name="title_pref_flip_dots_vertically">वरचे आणि खालचे ठिपके स्वॅप करा</string>
+    <string name="summary_pref_flip_dots_vertically">डॉट 1 डॉट 3 सह ठिकाणे, आणि डॉट 4 डॉट 6 सह व्यापार करतो</string>
+    <string name="title_pref_tablet_held_up_faces_away">टॅब्लेटचे चेहरे दूर ठेवले</string>
+    <string name="summary_pref_tablet_held_up_faces_away">बंद असताना, टॅबलेट किंवा अनफोल्ड केलेला फोन तुमच्यासमोर ठेवून टेबलटॉप लेआउट वापरतो</string>
+    <string name="title_pref_typing_sounds">टायपिंगचा आवाज</string>
+    <string name="summary_pref_typing_sounds">तुम्ही एखादे अक्षर, स्पेस, नवीन ओळ किंवा हटवल्यावर कीबोर्ड क्लिक प्ले करा</string>
+    <string name="skip_tutorial">ट्यूटोरियल वगळा</string>
 </resources>
