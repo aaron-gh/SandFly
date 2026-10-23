@@ -834,6 +834,7 @@ public class DefaultKeyComboModel implements KeyComboModel {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_global_previous_voice_profile));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_global_next_voice_profile));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_global_refresh));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_other_toggle_browse_mode_extra));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_row));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_row));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_column));

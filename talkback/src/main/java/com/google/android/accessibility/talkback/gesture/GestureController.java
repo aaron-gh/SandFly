@@ -123,6 +123,7 @@ import com.google.android.accessibility.talkback.utils.DateTimeUtils;
 import com.google.android.accessibility.talkback.utils.DebugProperties;
 import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
 import com.google.android.accessibility.talkback.utils.GeminiCommandUtils;
+import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
@@ -360,6 +361,9 @@ public class GestureController {
       result = listEdgeScroller.scroll(/* toStart= */ true, eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_to_bottom))) {
       result = listEdgeScroller.scroll(/* toStart= */ false, eventId);
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_browse_mode))) {
+      KeyComboManager keyComboManager = service.getKeyComboManager();
+      result = keyComboManager != null && keyComboManager.toggleBrowseModeByUser();
     } else if (action.equals(service.getString(R.string.shortcut_value_refresh))) {
       result = pullToRefresh.refresh(eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_media_control))) {

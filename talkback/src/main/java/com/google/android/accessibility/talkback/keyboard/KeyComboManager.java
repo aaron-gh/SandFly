@@ -84,6 +84,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Manages state related to detecting key combinations. */
 public class KeyComboManager
@@ -200,6 +201,9 @@ public class KeyComboManager
    * focus leaves the web content.
    */
   private boolean browseModeTurnedOffByUser = false;
+
+  /** The app that accessibility focus was last in. */
+  private @Nullable String focusedPackage;
   private boolean captureTrainingCombos = false;
   private KeyComboModel keyComboModel;
   private int serviceState = SERVICE_STATE_INACTIVE;
@@ -357,6 +361,10 @@ public class KeyComboManager
    */
   @Override
   public void onAccessibilityEvent(AccessibilityEvent event, EventId eventId) {
+    if (isBrowseModeSupported()
+        && event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
+      applyRememberedBrowseMode(event.getPackageName());
+    }
     if (!KeyComboManagerHelper.isSmartBrowseModeEnabled(context) || !isBrowseModeSupported()) {
       LogUtils.d(TAG, "Smart browse mode is not enabled, or browse mode is not supported");
       return;
@@ -515,6 +523,41 @@ public class KeyComboManager
   public void setBrowseModeEnabled(boolean enabled) {
     browseModeTurnedOffByUser = !enabled;
     setBrowseModeEnabledInternal(enabled, /* makeSpeechFeedbackInterruptive= */ true);
+    if (focusedPackage != null) {
+      BrowseModeApps.remember(context, focusedPackage, enabled);
+    }
+  }
+
+  /**
+   * Turns browse mode on or off, as the user asks with a gesture or a shortcut other than Action
+   * twice. Returns false when browse mode isn't available.
+   */
+  public boolean toggleBrowseModeByUser() {
+    if (!isBrowseModeSupported()) {
+      return false;
+    }
+    setBrowseModeEnabled(!isBrowseModeEnabled());
+    return true;
+  }
+
+  /**
+   * When focus moves to another app, sets browse mode as the user last left it there, if
+   * Remember browse mode in each app is on: on, off, or else as smart browse mode decides.
+   */
+  private void applyRememberedBrowseMode(@Nullable CharSequence packageName) {
+    String app = packageName == null ? null : packageName.toString();
+    if (app == null || app.equals(focusedPackage)) {
+      return;
+    }
+    focusedPackage = app;
+    if (!BrowseModeApps.isOn(context)) {
+      return;
+    }
+    Boolean remembered = BrowseModeApps.remembered(context, app);
+    LogUtils.i(TAG, "Browse mode remembered in %s: %s", app, remembered);
+    browseModeTurnedOffByUser = Boolean.FALSE.equals(remembered);
+    setBrowseModeEnabledInternal(
+        Boolean.TRUE.equals(remembered), /* makeSpeechFeedbackInterruptive= */ false);
   }
 
   /**
@@ -1283,8 +1326,12 @@ public class KeyComboManager
     // the a11y focused node is not in a WebView or the a11y focused node falls into the conditions
     // to turn off browse mode.
     if (!AccessibilityNodeInfoUtils.isSelfOrAncestorRoleWebView(sourceNode)) {
-      // Focus left the web content, so the user's choice there no longer applies.
-      browseModeTurnedOffByUser = false;
+      // Focus left the web content, so the user's choice there no longer applies, unless the user
+      // turned browse mode off for this whole app.
+      browseModeTurnedOffByUser =
+          focusedPackage != null
+              && BrowseModeApps.isOn(context)
+              && Boolean.FALSE.equals(BrowseModeApps.remembered(context, focusedPackage));
       return;
     }
     // The user turned browse mode off here, such as to use a control's arrow keys. Moving focus
