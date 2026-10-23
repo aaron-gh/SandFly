@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_problem_report">Адправіць водгук</string>
+    <string name="title_pref_problem_report_type">Тып зваротнай сувязі</string>
+    <string name="title_pref_problem_report_area">Плошча</string>
+    <string name="title_pref_problem_report_title">Загаловак</string>
+    <string name="title_pref_problem_report_app">Прыкладанне, дзе гэта адбываецца</string>
+    <string name="title_pref_problem_report_description">Апісанне</string>
+    <string name="dialog_message_problem_report_description">Што адбываецца і што вы чакалі.</string>
+    <string name="title_pref_problem_report_steps">Крокі для паўтарэння праблемы</string>
+    <string name="title_pref_problem_report_email">Адказаць па электроннай пошце</string>
+    <string name="title_pref_problem_report_device">Уключыце інфармацыю аб прыладзе</string>
+    <string name="title_pref_problem_report_log">Уключыць SandFly журнал</string>
+    <string name="summary_pref_problem_report_log">Можа ўтрымліваць тэкст з экрана</string>
+    <string name="title_pref_problem_report_send">Адправіць</string>
+    <string name="summary_pref_problem_report_sending">Адпраўка</string>
+    <string name="problem_report_missing_fields">Увядзіце назву і апісанне.</string>
+    <string name="problem_report_invalid_email">Увядзіце сапраўдны адрас электроннай пошты.</string>
+    <string name="problem_report_sent">Водгук адпраўлены.</string>
+    <string name="problem_report_rate_limited">Адпраўлена занадта шмат водгукаў. Паўтарыце спробу пазней.</string>
+    <string name="problem_report_no_connection">Водгук не адпраўлены. Праверце інтэрнэт-злучэнне.</string>
+    <string name="problem_report_not_sent">Водгук не адпраўлены. Паўтарыце спробу пазней.</string>
+    <string-array name="problem_report_type_entries">
+        <item>Некарэктныя паводзіны</item>
+        <item>Збой</item>
+        <item>Павольны або не рэагуе</item>
+        <item>Прапанова</item>
+    </string-array>
+    <string-array name="problem_report_area_entries">
+        <item>Гаворка</item>
+        <item>Жэсты</item>
+        <item>Сэнсарнае даследаванне</item>
+        <item>Элементы кіравання чытаннем і меню</item>
+        <item>Набор тэксту і клавіятуры</item>
+        <item>Клавіятура Брайля</item>
+        <item>Брайлеўскі дысплэй</item>
+        <item>Гукі і вібрацыя</item>
+        <item>Апавяшчэнні</item>
+        <item>Вэб-кантэнт</item>
+        <item>Скрыпты</item>
+        <item>Налады</item>
+        <item>Абнаўленні</item>
+        <item>Іншае</item>
+    </string-array>
+    <string name="title_report_new">Адправіць водгук</string>
+    <string name="title_report_inbox">Уваходныя</string>
+    <string name="title_report_drafts">Чарнавікі</string>
+    <string name="report_inbox_empty">Водгук не адпраўлены</string>
+    <string name="report_drafts_empty">Няма скразнякоў</string>
+    <string name="report_just_now">толькі што</string>
+    <string name="report_untitled">Без назвы</string>
+    <string name="report_draft_summary">Зменена <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">адпраўлена <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <plurals name="report_new_replies">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> new reply</item>
+        <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> new replies</item>
+        <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> new replies</item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> new replies</item>
+    </plurals>
+    <string name="report_status_changed">статус зменены</string>
+    <string name="report_status_open">Адкрыта</string>
+    <string name="report_status_completed">Закрыты, завершаны</string>
+    <string name="report_status_not_planned">Закрыты, не плануецца</string>
+    <string name="report_status_duplicate">Закрыты, дублікат</string>
+    <string name="report_status_unknown">Выдалены</string>
+    <string name="title_report_status">Статус</string>
+    <string name="title_report_your_report">Ваш водгук</string>
+    <string name="title_report_messages">Паведамленні</string>
+    <string name="report_message_from_developer">Распрацоўшчык, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Ты, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Адказаць</string>
+    <string name="title_report_reply_text">Ваш адказ</string>
+    <string name="title_report_send_reply">Адправіць адказ</string>
+    <string name="report_reply_sent">Адказ адпраўлены.</string>
+    <string name="report_reply_not_sent">Адказ не адпраўлены. Паўтарыце спробу пазней.</string>
+    <string name="title_report_remove">Выдаліць з паштовай скрыні</string>
+    <string name="dialog_title_report_remove">Выдаліць гэты водгук з паштовай скрыні?</string>
+    <string name="dialog_message_report_remove">Адказы на яго больш не будуць даходзіць на гэты тэлефон.</string>
+    <string name="title_report_delete_draft">Выдаліць чарнавік</string>
+    <string name="dialog_title_report_delete_draft">Выдаліць гэты чарнавік?</string>
+    <string name="button_report_delete">Выдаліць</string>
+    <string name="report_missing">Гэтага водгуку больш няма ў паштовай скрыні.</string>
+    <string name="notification_channel_problem_reports">Адказы на зваротную сувязь</string>
+    <string name="report_notification_reply">Адказаць на <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+</resources>
