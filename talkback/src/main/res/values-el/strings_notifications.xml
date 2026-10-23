@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">Δυνατός</string>
+    <string name="notification_shake_2">Μεσαίο</string>
+    <string name="notification_shake_1">Ευγενική</string>
+    <string name="notification_media_skip">Μην διαβάζετε δυνατά</string>
+    <string name="notification_media_pause">Παύση των μέσων κατά την ανάγνωση</string>
+    <string name="notification_media_read">Διαβάστε δυνατά</string>
+    <string name="notification_headphones_only_without">Μόνο χωρίς ακουστικά</string>
+    <string name="notification_headphones_only_with">Μόνο με ακουστικά</string>
+    <string name="notification_headphones_always">Διαβάστε δυνατά με ή χωρίς ακουστικά</string>
+    <string name="notification_queue_skip">Μην διαβάζετε τη νέα ειδοποίηση δυνατά</string>
+    <string name="notification_queue_interrupt">Διακοπή της ειδοποίησης που διαβάζεται δυνατά</string>
+    <string name="notification_queue_queue">Διαβάστε δυνατά μετά την τρέχουσα ειδοποίηση</string>
+    <string name="notification_url_omit">Αφήστε έξω</string>
+    <string name="notification_url_replace">Πείτε το παρακάτω κείμενο</string>
+    <string name="notification_url_domain">Διαβάστε μόνο τον ιστότοπο</string>
+    <string name="notification_url_full">Διαβάστε ολόκληρο τον σύνδεσμο</string>
+    <string name="notification_category_title">Ειδοποιήσεις</string>
+    <string name="notification_reading_title">Ανάγνωση ειδοποιήσεων φωναχτά</string>
+    <string name="notification_apps_title">Εφαρμογές</string>
+    <string name="notification_words_title">Λέξεις και αντικαταστάσεις</string>
+    <string name="notification_kinds_title">Είδη ειδοποιήσεων</string>
+    <string name="notification_when_title">Πότε να διαβάσετε</string>
+    <string name="notification_rules_title">Κανόνες</string>
+    <string name="notification_repeats_title">Επαναλαμβάνει</string>
+    <string name="notification_stop_title">Σταμάτα να διαβάζεις</string>
+    <string name="notification_schedules_title">Περίληψη και χρόνος</string>
+    <string name="notification_history_title">Ιστορικό ειδοποιήσεων</string>
+    <string name="notification_test_title">Στείλτε μια ειδοποίηση δοκιμής</string>
+    <string name="notification_automation_title">Αυτοματοποίηση</string>
+    <string name="notification_automation_allowed_title">Να επιτρέπονται οι εφαρμογές αυτοματισμού</string>
+    <string name="notification_category_said">Τι λέγεται</string>
+    <string name="notification_format_title">Μορφή ομιλίας</string>
+    <string name="notification_format_message">Placeholders: {app}, {title}, {text}, {content} (όλο το κείμενο), {bigtext}, {subtext}, {ticker}, {category} και {time}.</string>
+    <string name="notification_private_format_title">Ιδιωτικές ειδοποιήσεις λένε</string>
+    <string name="notification_private_format_message">Λέγεται αντί του περιεχομένου μιας ιδιωτικής ειδοποίησης. Placeholders: {app}, {category} και {time}.</string>
+    <string name="notification_category_voice">Φωνή</string>
+    <string name="notification_voice_title">Φωνή</string>
+    <string name="notification_voice_sandfly">Η φωνή του SandFly</string>
+    <string name="notification_detect_language_title">Ανίχνευση γλώσσας</string>
+    <string name="notification_detect_language_summary">Πείτε κάθε ειδοποίηση στη γλώσσα στην οποία είναι γραμμένη. Απαιτείται αυτόματη εναλλαγή γλώσσας στις ρυθμίσεις μετατροπής κειμένου σε ομιλία.</string>
+    <string name="notification_sound_before_title">Ήχος πριν από τις ειδοποιήσεις</string>
+    <string name="notification_category_text">Κείμενο</string>
+    <string name="notification_remove_emoji_title">Αφήστε έξω τα emoji</string>
+    <string name="notification_lowercase_title">Διαβάστε τα κεφαλαία ως λέξεις</string>
+    <string name="notification_lowercase_summary">Ορισμένες μηχανές ομιλίας γράφουν λέξεις με κεφαλαία γράμμα προς γράμμα</string>
+    <string name="notification_separate_digits_title">Ανάγνωση μεγάλων αριθμών ψηφίο προς ψηφίο</string>
+    <string name="notification_separate_digits_summary">Όπως κωδικούς και αριθμούς τηλεφώνου</string>
+    <string name="notification_min_digits_title">Ελάχιστα ψηφία σε μεγάλο αριθμό</string>
+    <string name="notification_urls_title">Σύνδεσμοι</string>
+    <string name="notification_url_text_title">Λέγεται στη θέση ενός συνδέσμου</string>
+    <string name="notification_skip_empty_title">Παράλειψη ειδοποιήσεων χωρίς κείμενο</string>
+    <string name="notification_category_length">Μήκος</string>
+    <string name="notification_max_words_title">Μέγιστος αριθμός λέξεων</string>
+    <string name="notification_max_sentences_title">Μέγιστος αριθμός προτάσεων</string>
+    <string name="notification_max_characters_title">Μέγιστος αριθμός χαρακτήρων κειμένου</string>
+    <string name="notification_max_seconds_title">Σταμάτα να διαβάζεις μετά</string>
+    <string name="notification_category_timing">Χρονομέτρηση</string>
+    <string name="notification_delay_title">Περιμένετε πριν διαβάσετε</string>
+    <string name="notification_queue_title">Όταν διαβάζεται μια άλλη ειδοποίηση</string>
+    <string name="notification_repeat_minutes_title">Διαβάστε ξανά μέχρι να ενεργοποιηθεί η οθόνη</string>
+    <string name="notification_skip_media_title">Παράλειψη προγραμμάτων αναπαραγωγής πολυμέσων</string>
+    <string name="notification_skip_ongoing_title">Παράλειψη συνεχιζόμενων ειδοποιήσεων</string>
+    <string name="notification_skip_ongoing_summary">Όπως πλοήγηση και χρονόμετρα</string>
+    <string name="notification_skip_foreground_title">Παράλειψη ειδοποιήσεων εφαρμογών που εκτελούνται</string>
+    <string name="notification_skip_foreground_summary">Όπως ένα VPN ή μια συσκευή εγγραφής</string>
+    <string name="notification_skip_progress_title">Παράβλεψη ειδοποιήσεων προόδου</string>
+    <string name="notification_skip_group_summaries_title">Παράλειψη περιλήψεων ομάδων</string>
+    <string name="notification_skip_group_summaries_summary">Όπως \"3 νέα μηνύματα\"</string>
+    <string name="notification_skip_low_priority_title">Παράβλεψη ειδοποιήσεων χαμηλής προτεραιότητας</string>
+    <string name="notification_skip_system_title">Παράβλεψη ειδοποιήσεων συστήματος</string>
+    <string name="notification_screen_on_title">Ενώ η οθόνη είναι ενεργοποιημένη</string>
+    <string name="notification_screen_off_title">Ενώ η οθόνη είναι σβηστή</string>
+    <string name="notification_locked_title">Ενώ το τηλέφωνο είναι κλειδωμένο</string>
+    <string name="notification_headphones_title">Ακουστικά</string>
+    <string name="notification_media_title">Κατά την αναπαραγωγή πολυμέσων</string>
+    <string name="notification_dnd_title">Μην ενοχλείτε</string>
+    <string name="notification_dnd_none">Μην διαβάζετε καμία ειδοποίηση δυνατά</string>
+    <string name="notification_dnd_allowed">Διαβάστε τις ειδοποιήσεις που επιτρέπονται από τη λειτουργία Μην ενοχλείτε</string>
+    <string name="notification_dnd_all">Διαβάστε όλα</string>
+    <string name="notification_touch_title">Ενώ αγγίζεται η οθόνη</string>
+    <string name="notification_touch_read">Διαβάστε αμέσως</string>
+    <string name="notification_touch_after">Διαβάστε όταν τελειώσει η αφή</string>
+    <string name="notification_touch_skip">Μην διαβάζετε δυνατά</string>
+    <string name="notification_during_calls_title">Κατά τη διάρκεια των κλήσεων</string>
+    <string name="notification_honour_silent_title">Όχι σε αθόρυβη λειτουργία</string>
+    <string name="notification_honour_vibrate_title">Όχι σε λειτουργία δόνησης</string>
+    <string name="notification_skip_in_car_title">Όχι σε λειτουργία αυτοκινήτου</string>
+    <string name="notification_skip_in_car_summary">Όπως με το Android Auto, που τα διαβάζει μόνο του</string>
+    <string name="notification_category_quiet_hours">Ώρες ησυχίας</string>
+    <string name="notification_quiet_hours_title">Ώρες ησυχίας</string>
+    <string name="notification_quiet_start_title">Έναρξη</string>
+    <string name="notification_quiet_end_title">Τέλος</string>
+    <string name="notification_repeat_seconds_title">Παράλειψη της ίδιας ειδοποίησης για</string>
+    <string name="notification_numbers_alike_title">Αντιμετωπίστε διαφορετικούς αριθμούς ως ίδιους</string>
+    <string name="notification_numbers_alike_summary">Όπως το ποσοστό λήψης</string>
+    <string name="notification_cooldown_title">Χρόνος μεταξύ των ειδοποιήσεων μιας εφαρμογής</string>
+    <string name="notification_skip_prefix_title">Παραλείψτε ένα επαναλαμβανόμενο πρόθεμα κειμένου</string>
+    <string name="notification_skip_prefix_summary">Όπως το όνομα μιας ομάδας σε μια συνομιλία</string>
+    <string name="notification_prefix_memory_title">Πόσο καιρό να θυμάστε το πρόθεμα κειμένου</string>
+    <string name="notification_access_summary">Απαιτείται για να σταματήσει η ανάγνωση μιας ειδοποίησης που απορρίφθηκε και για περιλήψεις</string>
+    <string name="notification_shake_title">Ανακινήστε για να σταματήσει</string>
+    <string name="notification_shake_strength_title">Ένταση ανακίνησης</string>
+    <string name="notification_wave_title">Κουνήστε ένα χέρι για να σταματήσετε να διαβάζετε</string>
+    <string name="notification_wave_summary">Μετακίνηση ενός χεριού πάνω από τον αισθητήρα εγγύτητας</string>
+    <string name="notification_pocket_title">Λειτουργία τσέπης</string>
+    <string name="notification_pocket_summary">Ένας αισθητήρας που καλύπτεται όταν ξεκινά η ανάγνωση, όπως σε μια τσέπη, δεν τον σταματά</string>
+    <string name="notification_volume_keys_title">Πατήστε και τα δύο πλήκτρα έντασης</string>
+    <string name="notification_dismiss_title">Σταματήστε την ανάγνωση όταν η ειδοποίηση απορριφθεί</string>
+    <string name="notification_watch_dismiss_title">Επίσης, όταν η ειδοποίηση απορρίπτεται σε ένα smartwatch</string>
+    <string name="notification_app_cancel_title">Σταματήστε την ανάγνωση όταν η εφαρμογή καταργήσει την ειδοποίηση</string>
+    <string name="notification_category_summary">Περίληψη</string>
+    <string name="notification_summary_now_title">Διαβάστε τις ειδοποιήσεις τώρα</string>
+    <string name="notification_summary_daily_title">Διαβάστε τις ειδοποιήσεις κάθε μέρα</string>
+    <string name="notification_summary_time_title">Ώρα</string>
+    <string name="notification_summary_newest_first_title">Πρώτα τα νεότερα</string>
+    <string name="notification_summary_name_title">Το όνομά σου</string>
+    <string name="notification_summary_gap_title">Παύση μεταξύ των ειδοποιήσεων</string>
+    <string name="notification_summary_needs_sandfly">Ενεργοποιήστε το SandFly για να διαβάσετε τις ειδοποιήσεις</string>
+    <string name="notification_summary_no_access">Η πρόσβαση σε ειδοποιήσεις είναι ανενεργή</string>
+    <string name="notification_summary_morning">Καλημέρα.</string>
+    <string name="notification_summary_afternoon">Καλημέρα.</string>
+    <string name="notification_summary_evening">Καλησπέρα.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">Ανακοινώσεις χρόνου</string>
+    <string name="notification_clock_interval_title">Πείτε την ώρα κάθε</string>
+    <string name="notification_clock_format_title">Μορφή ώρας</string>
+    <string name="notification_clock_format_message">Placeholders: {time}, {date} και {battery} (το ποσοστό της μπαταρίας).</string>
+    <string name="notification_clock_format_default">Είναι {time}</string>
+    <string name="notification_clock_exact_title">Ακριβείς ώρες</string>
+    <string name="notification_clock_exact_summary">Χρειάζεται συναγερμούς και υπενθυμίσεις. Διαφορετικά η ώρα μπορεί να ειπωθεί με καθυστέρηση έως και ένα λεπτό.</string>
+    <string name="notification_other_apps_title">Άλλες εφαρμογές</string>
+    <string name="notification_apps_category">Εφαρμογές</string>
+    <string name="notification_apps_loading">Φόρτωση εφαρμογών</string>
+    <string name="notification_app_mode_title">Ειδοποιήσεις</string>
+    <string name="notification_app_mode_default">Όπως και άλλες εφαρμογές</string>
+    <string name="notification_app_mode_read">Διαβάστε δυνατά</string>
+    <string name="notification_app_mode_private">Μόνο όνομα εφαρμογής</string>
+    <string name="notification_app_mode_priority">Διαβάστε πρώτα</string>
+    <string name="notification_app_mode_ignore">Μην διαβάζετε δυνατά</string>
+    <string name="notification_app_name_title">Προφορικό όνομα</string>
+    <string name="notification_app_said_as">είπε ως <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">Επαναφορά</string>
+    <string name="notification_required_title">Διαβάστε μόνο ειδοποιήσεις με</string>
+    <string name="notification_blocked_title">Μην διαβάζετε ειδοποιήσεις με</string>
+    <string name="notification_private_title">Διαβάστε μόνο το όνομα της εφαρμογής για</string>
+    <string name="notification_replacements_title">Πες διαφορετικά</string>
+    <string name="notification_add_word">Προσθέστε μια λέξη</string>
+    <string name="notification_add_replacement">Προσθέστε μια αντικατάσταση</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> ως <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">Κείμενο</string>
+    <string name="notification_replace_with">Πες ως</string>
+    <string name="notification_whole_words">Ολόκληρες λέξεις μόνο</string>
+    <string name="notification_regex">Τακτική έκφραση</string>
+    <string name="notification_enter_text">Εισαγάγετε ένα κείμενο</string>
+    <string name="notification_invalid_regex">Μη έγκυρη κανονική έκφραση</string>
+    <string name="notification_edit">Επεξεργασία</string>
+    <string name="notification_remove">Κατάργηση</string>
+    <string name="notification_history_keep">Αποθήκευση ιστορικού ειδοποιήσεων</string>
+    <string name="notification_history_clear">Καθαρίστε το ιστορικό</string>
+    <string name="notification_history_category">Ειδοποιήσεις</string>
+    <string name="notification_history_empty">Δεν υπάρχουν ειδοποιήσεις</string>
+    <string name="notification_history_ignore_app">Μην διαβάζετε <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Διαβάστε μόνο το όνομα του <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Διαβάστε πρώτα <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_block_similar">Μην διαβάζετε ειδοποιήσεις όπως αυτή</string>
+    <string name="notification_history_copy">Αντιγραφή</string>
+    <string name="notification_saved">Αποθηκεύτηκε</string>
+    <string name="notification_copied">Αντιγράφηκε</string>
+    <string name="notification_outcome_read">Διαβάστε δυνατά με επιτυχία</string>
+    <string name="notification_outcome_stopped">Σταμάτησε κατά την ανάγνωση</string>
+    <string name="notification_outcome_speech_off">Δεν έχει αναγνωσθεί: η ομιλία ειδοποίησης είναι απενεργοποιημένη</string>
+    <string name="notification_outcome_dnd">Δεν έχει διαβαστεί: Μην ενοχλείτε</string>
+    <string name="notification_outcome_touching">Δεν διαβάστηκε: η οθόνη αγγίχθηκε</string>
+    <string name="notification_outcome_app">Δεν διαβάζεται: εφαρμογή</string>
+    <string name="notification_outcome_ongoing">Δεν διαβάζεται: σε εξέλιξη</string>
+    <string name="notification_outcome_foreground">Δεν διαβάζεται: εκτελούμενη εφαρμογή</string>
+    <string name="notification_outcome_low_priority">Δεν διαβάζεται: χαμηλή προτεραιότητα</string>
+    <string name="notification_outcome_system">Δεν διαβάζεται: σύστημα</string>
+    <string name="notification_outcome_media">Δεν διαβάζεται: media player</string>
+    <string name="notification_outcome_group_summary">Δεν έχει διαβαστεί: περίληψη ομάδας</string>
+    <string name="notification_outcome_progress">Δεν διαβάζεται: πρόοδος</string>
+    <string name="notification_outcome_required">Δεν έχει διαβαστεί: λείπουν απαιτούμενες λέξεις</string>
+    <string name="notification_outcome_blocked">Δεν διαβάζεται: μπλοκαρισμένη λέξη</string>
+    <string name="notification_outcome_empty">Δεν διαβάζεται: χωρίς κείμενο</string>
+    <string name="notification_outcome_repeat">Δεν διαβάζεται: επανάληψη</string>
+    <string name="notification_outcome_cooldown">Δεν διαβάζεται δυνατά: μια άλλη ειδοποίηση από αυτήν την εφαρμογή διαβάστηκε πολύ πρόσφατα</string>
+    <string name="notification_outcome_quiet_hours">Δεν διαβάζεται: ώρες ησυχίας</string>
+    <string name="notification_outcome_screen_on">Δεν διαβάζεται: η οθόνη είναι ενεργοποιημένη</string>
+    <string name="notification_outcome_screen_off">Δεν διαβάζεται: απενεργοποιημένη οθόνη</string>
+    <string name="notification_outcome_locked">Δεν διαβάζεται: κλειδωμένο</string>
+    <string name="notification_outcome_headphones">Δεν διαβάζεται: συνδεδεμένα ακουστικά</string>
+    <string name="notification_outcome_no_headphones">Χωρίς ανάγνωση: χωρίς ακουστικά</string>
+    <string name="notification_outcome_silent">Δεν διαβάζεται: αθόρυβη λειτουργία</string>
+    <string name="notification_outcome_vibrate">Δεν διαβάζεται: λειτουργία δόνησης</string>
+    <string name="notification_outcome_media_playing">Δεν διαβάζεται: αναπαραγωγή πολυμέσων</string>
+    <string name="notification_outcome_car">Δεν διαβάζεται: λειτουργία αυτοκινήτου</string>
+    <string name="notification_outcome_rule">Δεν διαβάζεται: κανόνας</string>
+    <string name="notification_outcome_busy">Δεν αναγνώστηκε: διαβάστηκε άλλη ειδοποίηση</string>
+    <string name="notification_outcome_call">Ανακοινώθηκε ως εισερχόμενο τηλεφώνημα</string>
+    <string name="notification_rule_add">Προσθέστε έναν κανόνα</string>
+    <string name="notification_rule_from_template">Προσθέστε έναν κανόνα από ένα πρότυπο</string>
+    <string name="notification_rules_category">Κανόνες</string>
+    <string name="notification_rules_empty">Χωρίς κανόνες</string>
+    <string name="notification_rule_name">Όνομα</string>
+    <string name="notification_rule_untitled">Κανόνας</string>
+    <string name="notification_rule_enabled">Ενεργοποιημένο</string>
+    <string name="notification_rule_match">Προϋποθέσεις</string>
+    <string name="notification_rule_match_all">Πρέπει να πληρούνται όλες οι προϋποθέσεις</string>
+    <string name="notification_rule_match_any">Πρέπει να πληρούται τουλάχιστον μία προϋπόθεση</string>
+    <string name="notification_rule_conditions">Πότε</string>
+    <string name="notification_rule_actions">Τότε</string>
+    <string name="notification_rule_add_condition">Προσθέστε μια συνθήκη</string>
+    <string name="notification_rule_add_action">Προσθέστε μια ενέργεια</string>
+    <string name="notification_rule_invert">Αντιστρέψτε τη συνθήκη</string>
+    <string name="notification_rule_delete">Διαγράψτε τον κανόνα</string>
+    <string name="notification_rule_delete_confirm">Διαγραφή <xliff:g id="rule" example="Night">%1$s</xliff:g>;</string>
+    <string name="notification_rule_always">Πάντα</string>
+    <string name="notification_rule_no_actions">δεν γίνεται τίποτα</string>
+    <string name="notification_rule_and">" και "</string>
+    <string name="notification_rule_or">" ή "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">Μόνο με ακουστικά</string>
+    <string name="notification_template_night">Σιωπηλός τη νύχτα</string>
+    <string name="notification_template_screen_off">Μόνο με σβηστή οθόνη</string>
+    <string name="notification_template_locked_private">Μόνο το όνομα της εφαρμογής όταν το τηλέφωνο είναι κλειδωμένο</string>
+    <string name="notification_template_short_on_battery">Διαβάστε σύντομα όταν δεν φορτίζετε</string>
+    <string name="notification_type_bluetooth">Bluetooth συσκευή</string>
+    <string name="notification_type_wired">Ενσύρματα ακουστικά</string>
+    <string name="notification_type_wifi">Wi-Fi δίκτυο</string>
+    <string name="notification_type_time">Ώρα της ημέρας</string>
+    <string name="notification_type_screen">Οθόνη ενεργή</string>
+    <string name="notification_type_locked">Τηλέφωνο κλειδωμένο</string>
+    <string name="notification_type_from_app">Ειδοποίηση από μια εφαρμογή</string>
+    <string name="notification_type_foreground">Εφαρμογή σε πρώτο πλάνο</string>
+    <string name="notification_type_contains">Η ειδοποίηση περιέχει</string>
+    <string name="notification_type_battery">Επίπεδο μπαταρίας κάτω</string>
+    <string name="notification_type_charging">Φόρτιση</string>
+    <string name="notification_type_landscape">Οριζόντια</string>
+    <string name="notification_type_silent">Λειτουργία αθόρυβης ή δόνησης</string>
+    <string name="notification_type_media">Αναπαραγωγή πολυμέσων</string>
+    <string name="notification_bluetooth_any">Οποιαδήποτε συσκευή</string>
+    <string name="notification_wifi_hint">Όνομα δικτύου</string>
+    <string name="notification_choose_app">Επιλέξτε μια εφαρμογή</string>
+    <string name="notification_time_start">Από</string>
+    <string name="notification_time_end">Μέχρι</string>
+    <string name="notification_time_days">Μέρες</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> έως <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">Το SandFly χρειάζεται αυτήν την άδεια για αυτήν την κατάσταση</string>
+    <string name="notification_cond_bluetooth">Το <xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> είναι συνδεδεμένο</string>
+    <string name="notification_cond_bluetooth_not">Το <xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> δεν είναι συνδεδεμένο</string>
+    <string name="notification_cond_bluetooth_any">Έχει συνδεθεί μια συσκευή ήχου Bluetooth</string>
+    <string name="notification_cond_bluetooth_any_not">Δεν έχει συνδεθεί Bluetooth συσκευή ήχου</string>
+    <string name="notification_cond_wired">Τα ενσύρματα ακουστικά είναι συνδεδεμένα</string>
+    <string name="notification_cond_wired_not">Τα ενσύρματα ακουστικά δεν είναι συνδεδεμένα</string>
+    <string name="notification_cond_battery_below">Η μπαταρία είναι κάτω από <xliff:g id="percent" example="20">%1$d</xliff:g> τοις εκατό</string>
+    <string name="notification_cond_battery_below_not">Η μπαταρία είναι στο <xliff:g id="percent" example="20">%1$d</xliff:g> τοις εκατό ή περισσότερο</string>
+    <string name="notification_cond_charging">Το τηλέφωνο φορτίζεται</string>
+    <string name="notification_cond_charging_not">Το τηλέφωνο δεν φορτίζει</string>
+    <string name="notification_cond_locked">Το τηλέφωνο είναι κλειδωμένο</string>
+    <string name="notification_cond_locked_not">Το τηλέφωνο είναι ξεκλείδωτο</string>
+    <string name="notification_cond_screen_on">Η οθόνη είναι ενεργοποιημένη</string>
+    <string name="notification_cond_screen_on_not">Η οθόνη είναι σβηστή</string>
+    <string name="notification_cond_landscape">Η οθόνη είναι οριζόντια</string>
+    <string name="notification_cond_landscape_not">Η οθόνη είναι πορτραίτο</string>
+    <string name="notification_cond_time">Η ώρα είναι <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Η ώρα δεν είναι <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">Συνδεδεμένο στο <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">Δεν είναι συνδεδεμένο στο <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_any">Συνδεδεμένο στο Wi-Fi</string>
+    <string name="notification_cond_wifi_any_not">Δεν είναι συνδεδεμένο στο Wi-Fi</string>
+    <string name="notification_cond_foreground">Η εφαρμογή <xliff:g id="app" example="Maps">%1$s</xliff:g> είναι στο προσκήνιο</string>
+    <string name="notification_cond_foreground_not">Το <xliff:g id="app" example="Maps">%1$s</xliff:g> δεν είναι μπροστά</string>
+    <string name="notification_cond_from">Η ειδοποίηση είναι από <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Η ειδοποίηση δεν είναι από <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Η ειδοποίηση περιέχει <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Η ειδοποίηση δεν περιέχει <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Το κουδούνισμα είναι αθόρυβο ή δονείται</string>
+    <string name="notification_cond_silent_not">Κουδουνίζει ο κουδουνιστής</string>
+    <string name="notification_cond_media">Γίνεται αναπαραγωγή πολυμέσων</string>
+    <string name="notification_cond_media_not">Δεν παίζει κανένα μέσο</string>
+    <string name="notification_action_skip">μην διαβάζεις</string>
+    <string name="notification_action_private">διαβάστε μόνο το όνομα της εφαρμογής</string>
+    <string name="notification_action_not_private">διαβάστε πλήρως, ακόμη και αν είναι ιδιωτικό</string>
+    <string name="notification_action_format">χρησιμοποιήστε μια μορφή ομιλίας</string>
+    <string name="notification_action_max_words">διαβάστε μέχρι έναν αριθμό λέξεων</string>
+    <string name="notification_action_no_limit">ανάγνωση χωρίς όρια μήκους</string>
+    <string name="notification_action_keep_emoji">κρατήστε emoji</string>
+    <string name="notification_action_keep_numbers">κρατήστε τους αριθμούς μαζί</string>
+    <string name="notification_action_priority">διαβάστε πρώτα</string>
+    <string name="notification_action_always_read">Διαβάστε δυνατά τις ειδοποιήσεις ακόμα και σε ώρες ησυχίας ή άλλες περιορισμένες ώρες</string>
+    <string name="notification_action_voice">ανάγνωση με φωνητικό προφίλ</string>
+    <string name="notification_action_voice_value">διαβάστε με <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">διαβάστε με τη φωνή του SandFly</string>
+    <string name="notification_voice_removed">Καταργήθηκε το φωνητικό προφίλ</string>
+    <string name="notification_action_format_value">χρησιμοποιήστε τη μορφή ομιλίας <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">διαβάστε μέχρι <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">Ανενεργό</string>
+    <string name="notification_on">Ενεργό</string>
+    <string name="notification_never_again">Έως SandFly επανεκκίνηση</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">Ανάγνωση ειδοποιήσεων φωναχτά</string>
+    <string name="notification_speech_now_on">Ενεργοποιήθηκε η μεγαλόφωνη ανάγνωση ειδοποιήσεων</string>
+    <string name="notification_speech_now_off">Η ανάγνωση ειδοποιήσεων φωναχτά απενεργοποιήθηκε</string>
+    <string name="notification_no_last_notification">Δεν διαβάστηκε καμία ειδοποίηση</string>
+    <string name="shortcut_read_notifications">Διαβάστε τις ειδοποιήσεις</string>
+    <string name="shortcut_toggle_notification_speech">Ενεργοποίηση ή απενεργοποίηση ομιλίας ειδοποίησης</string>
+    <string name="shortcut_read_last_notification">Διαβάστε ξανά την τελευταία ειδοποίηση</string>
+    <string name="shortcut_stop_notification">Σταματήστε να διαβάζετε την ειδοποίηση</string>
+    <string name="notification_test_posting">Ακολουθεί ειδοποίηση δοκιμής σε 5 δευτερόλεπτα</string>
+    <string name="notification_test_not_allowed">Επιτρέψτε στο SandFly να εμφανίζει πρώτα τις ειδοποιήσεις</string>
+    <string name="notification_test_content_title">SandFly δοκιμή</string>
+    <string name="notification_test_content_text">Αυτή είναι μια δοκιμαστική ειδοποίηση, διαβάστε με τις ρυθμίσεις ειδοποιήσεών σας. 123456</string>
+    <string name="notification_automation_on">Ενεργοποίηση φωνητικής ανάγνωσης ειδοποιήσεων</string>
+    <string name="notification_automation_off">Απενεργοποιήστε την ανάγνωση των ειδοποιήσεων δυνατά</string>
+    <string name="notification_automation_toggle">Ενεργοποίηση ή απενεργοποίηση φωνητικής ανάγνωσης ειδοποιήσεων</string>
+    <string name="notification_automation_stop">Σταματήστε την ανάγνωση της ειδοποίησης</string>
+    <string name="notification_automation_read_all">Διαβάστε τις ειδοποιήσεις</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> δευτερόλεπτο</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> δευτερόλεπτα</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> λεπτό</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> λεπτά</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ώρα</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ώρες</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> λέξη</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> λέξεις</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> πρόταση</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> προτάσεις</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> χαρακτήρας κειμένου</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> χαρακτήρες κειμένου</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ψηφίο</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ψηφία</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">Έχετε <xliff:g id="count" example="1">%d</xliff:g> ειδοποίηση.</item>
+        <item quantity="other">Έχετε <xliff:g id="count" example="5">%d</xliff:g> ειδοποιήσεις.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>
