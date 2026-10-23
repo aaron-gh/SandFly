@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">ბრაილის აპარატურული უზრუნველყოფის კლავიატურა</string>
   <string name="bd_application_name">Android მარტ. წვდომა</string>
-  <string name="bd_ime_unavailable_activity_name">TalkBack-ის ბრაილის კლავიატურა მიუწვდომელია</string>
-  <string name="bd_ime_disabled_dialog_title">TalkBack-ის ბრაილის კლავიატურის ჩართვა</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly-ის ბრაილის კლავიატურა მიუწვდომელია</string>
+  <string name="bd_ime_disabled_dialog_title">SandFly-ის ბრაილის კლავიატურის ჩართვა</string>
   <string name="bd_ime_disabled_dialog_message">ტექსტის აკრეფის მიზნით ბრაილის ეკრანის გამოსაყენებლად მის ჩასართავად გადადით შეყვანის პარამეტრებზე</string>
   <string name="bd_ime_disabled_dialog_title_positive">შეყვანის პარამეტრები</string>
   <string name="bd_ime_not_default_dialog_title">შეყვანის მეთოდის შეცვლა</string>
-  <string name="bd_ime_not_default_dialog_message">ტექსტის აკრეფის გასაგრძელებლად, შეყვანის მეთოდად დააყენეთ TalkBack-ის ბრაილის კლავიატურა</string>
+  <string name="bd_ime_not_default_dialog_message">Ტექსტის აკრეფის გასაგრძელებლად, შეყვანის მეთოდად დააყენეთ SandFly-ის ბრაილის კლავიატურა</string>
   <string name="bd_ime_not_default_dialog_positive">შეყვანის შეცვლა</string>
   <string name="type_unlabeled">ლეიბლის გარეშე</string>
   <string name="type_unlabeled_edittext">უწარწერო რედაქტირების ველი</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">მარცხნივ პანირება</string>
   <string name="overlay_pan_right_button">მარჯვნივ პანირება</string>
   <string name="bd_preferences_title">ბრაილის ეკრანი</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">ბრაილის ეკრანის გამოსაყენებლად ჯერ ჩართეთ TalkBack</string>
-  <string name="bd_preferences_banner_talkback_off_button">TalkBack-ზე გადასვლა</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">Ბრაილის ეკრანის გამოსაყენებლად ჯერ ჩართეთ SandFly</string>
+  <string name="bd_preferences_banner_talkback_off_button">SandFly-ზე გადასვლა</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">ბრაილის ეკრანის გამოსაყენებლად ჯერ ჩართეთ Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Bluetooth-ის ჩართვა</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">ბრაილის ეკრანის გამოსაყენებლად %s ახლომახლო მოწყობილობებზე წვდომას საჭიროებს</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">დათვალიერების რეჟიმის გამოსაყენებლად უნდა გადართოთ ნაგულისხმევი კლავიშთა განლაგებიდან გაუმჯობესებულ განლაგებაზე. ეს ცვლილება განაახლებს ბრაილის ეკრანის ზოგიერთ ბრძანებას</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">პარამეტრები</string>
   <string name="bd_command_change_dialog_title">ზოგიერთი ბრძანება განახლდა</string>
-  <string name="bd_command_change_dialog_message">ბრაილის ეკრანის ეს ბრძანებები განახლდა TalkBack-ის ამ ვერსიაში:\n\n• წინა ერთეული: დააჭირეთ წერტილებს 1, 7\n\n• შემდეგი ერთეული: დააჭირეთ წერტილებს 4, 8\n\n• წაკითხვის მართვის წინა საშუალება: დააჭირეთ წერტილებს 2, 3, 7, 8\n\n• კითხვის მართვის შემდეგი საშუალება: დააჭირეთ წერტილებს 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Ბრაილის ეკრანის ეს ბრძანებები განახლდა SandFly-ის ამ ვერსიაში:\n\n• წინა ერთეული: დააჭირეთ წერტილებს 1, 7\n\n• შემდეგი ერთეული: დააჭირეთ წერტილებს 4, 8\n\n• წაკითხვის მართვის წინა საშუალება: დააჭირეთ წერტილებს 2, 3, 7, 8\n\n• კითხვის მართვის შემდეგი საშუალება: დააჭირეთ წერტილებს 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">შეკვეცილი ბრაილი</string>
   <string name="bd_preference_braille_uncontracted">შეუკვეცელი ბრაილი</string>
   <string name="bd_braille_grade_tips">ბრაილის ეკრანის გამოყენებით შემოკლებულსა და შეუმოკლებელს შორის სწრაფად გადასართავად დააჭირეთ შორისის ღილაკს და წერტილებს 1, 2, 4, 5.\n\nეს ბრძანება იმუშავებს, თუ სარგებლობთ ენით, რომელსაც ბრაილის ორივე დონე აქვს.</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">ერთეულებს შორის მოძრაობა</string>
   <string name="bd_commands_bindings_category_system_actions_title">სისტემის მოქმედებები</string>
   <string name="bd_commands_bindings_category_system_actions_summary">უკან, მთავარი ეკრანი, შეტყობინებები და ა.შ.</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">TalkBack-ის ფუნქციები</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">TalkBack მენიუები და პარამეტრები</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">SandFly-ის ფუნქციები</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly მენიუები და პარამეტრები</string>
   <string name="bd_commands_bindings_category_braille_settings_title">ბრაილის პარამეტრები</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ბრაილი და პარამეტრები</string>
   <string name="bd_commands_bindings_category_text_editing_title">ტექსტის რედაქტირება</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">ყველა აპის გახსნა</string>
   <string name="bd_cmd_toggle_screen_search">ეკრანზე ძიების გახსნა</string>
   <string name="bd_cmd_edit_custom_label">მორგებული ლეიბლის რედაქტირება</string>
-  <string name="bd_cmd_open_talkback_menu">TalkBack-ის მენიუს გახსნა</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack მეტყველების ჩართვა ან გამორთვა</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly-ის მენიუს გახსნა</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly მეტყველების ჩართვა ან გამორთვა</string>
   <string name="bd_cmd_read_stop">კითხვის შეწყვეტა</string>
-  <string name="bd_cmd_talkback_settings">TalkBack-ის პარამეტრების გახსნა</string>
+  <string name="bd_cmd_talkback_settings">SandFly-ის პარამეტრების გახსნა</string>
   <string name="bd_cmd_switch_to_next_input_language">აკრეფის შემდეგ ენაზე გადართვა</string>
   <string name="bd_cmd_switch_to_next_output_language">წაკითხვის შემდეგ ენაზე გადასვლა</string>
   <string name="bd_cmd_toggle_contracted_mode">გადართვა კონტრაქტულ და არაკონტრაქტულ შორის</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">ვებგვერდებზე სწრაფი ნავიგაცია შეგიძლიათ დათვალიერების რეჟიმში გადასვლის ბრძანებით და მომდევნო ასოების/რიცხვების მალსახმობების აკრეფით\n\nამ მალსახმობების გამოყენება დათვალიერების რეჟიმის გარეშეც შეიძლება, „შემდეგ“ ბრძანებებზე წერტილი 8-ს დამატებით</string>
   <string name="bd_cmd_subcategory_title_web_navigation">ცხრილის ნავიგაცია</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">გსურთ ბრაილის ეკრანის პარამეტრების გამორთვა?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">მისი ხელახლა ჩართვა ნებისმიერ დროს შეგიძლიათ TalkBack-ის პარამეტრებიდან</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Მისი ხელახლა ჩართვა ნებისმიერ დროს შეგიძლიათ SandFly-ის პარამეტრებიდან</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">გამორთვა</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">ზოგიერთი ბრძანება მიუწვდომელია.</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">ბრძანებები ნავიგაციისთვის, ბრაილის პარამეტრებისთვის და ზოგიერთი TalkBack ფუნქციისთვის მიუწვდომელია ბეჭდვის ან რედაქტირების დროს.\n\nამ ბრძანებების გამოსაყენებლად, თავიდან დახურეთ კლავიატურა.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Ბრძანებები ნავიგაციისთვის, ბრაილის პარამეტრებისთვის და ზოგიერთი SandFly ფუნქციისთვის მიუწვდომელია ბეჭდვის ან რედაქტირების დროს.\n\nამ ბრძანებების გამოსაყენებლად, თავიდან დახურეთ კლავიატურა.</string>
   <string name="bd_caption_tutorial_dialog_title">სუბტიტრები თქვენს ბრაილის ეკრანზე</string>
   <string name="bd_caption_tutorial_dialog_message">ვიდეოს სუბტიტრების საჩვენებლად/დასამალად დააჭირეთ ინტერვალს და 1, 4, 7, 8.\n\nმხარდაჭერილი მედიისთვის სუბტიტრების ავტომატურად საჩვენებლად პარამეტრებში ჩართეთ ბრაილის ეკრანზე სუბტიტრების ჩვენება.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">ამ შეტყობინების ჩვენება ყოველთვის, როდესაც ხელმისაწვდომია სუბტიტრები</string>
   <string name="bd_usb_connect_dialog_title">ბრაილის ეკრანი დაკავშირებულია USB-სთან</string>
-  <string name="bd_usb_connect_dialog_message">თქვენი %s-ის ბატარეა იტენება თქვენს ბრაილის ეკრანზე.\n\nთუ Bluetooth-ზე გადართვა გჭირდებათ, გათიშეთ USB ან USB ჰაბი და გადადით TalkBack-ის პარამეტრებზე &gt; ბრაილის ეკრანზე</string>
+  <string name="bd_usb_connect_dialog_message">Თქვენი %s-ის ბატარეა იტენება თქვენს ბრაილის ეკრანზე.\n\nთუ Bluetooth-ზე გადართვა გჭირდებათ, გათიშეთ USB ან USB ჰაბი და გადადით SandFly-ის პარამეტრებზე &gt; ბრაილის ეკრანზე</string>
   <string name="bd_device">ტელეფონი</string>
   <string name="bd_battery_low_dialog_title">%s ბატარეა იცლება</string>
   <string name="bd_battery_low_dialog_message">თქვენი %s-ის ბატარეა ტენის ბრაილის ეკრანს.\n\nბატარეის დაზოგვისთვის:\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">ყველას გასუფთავება</string>
   <string name="popup_message_history_empty">ცარიელი</string>
   <string name="popup_message_history_consent_dialog_title">გსურთ მოწყობილობის შეტყობინებების ისტორიის ჩართვა?</string>
-  <string name="popup_message_history_consent_dialog_msg">ეს შეინახავს ზოგიერთ შეტყობინებას, როგორიცაა შეტყობინებები და მაღვიძარა, TalkBack-ში. ამ პარამეტრის შეცვლა ნებისმიერ დროს შეგიძლიათ.</string>
+  <string name="popup_message_history_consent_dialog_msg">Ეს შეინახავს ზოგიერთ შეტყობინებას, როგორიცაა შეტყობინებები და მაღვიძარა, SandFly-ში. ამ პარამეტრის შეცვლა ნებისმიერ დროს შეგიძლიათ.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ჩართვა</string>
   <string name="popup_message_history_consent_dialog_negative_btn">არა, გმადლობთ</string>
+    <string name="external_display_channel">Ბრაილის ეკრანები სხვა აპებიდან</string>
+    <string name="external_display_ask_title">Ნება დართოთ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> იყოს ბრაილის ეკრანი SandFly-ისთვის?</string>
+    <string name="external_display_ask_text">SandFly არ გამოიყენებს მას, სანამ არ დაუშვებთ.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> შეძლებს ყველაფრის SandFly შოუს წაკითხვას ბრაილის შრიფტით, რაც შეიძლება იყოს ნებისმიერი ეკრანზე, მათ შორის შეტყობინებები და რასაც აკრეფთ. ის ასევე შეძლებს თქვენი მოწყობილობის მართვას ბრაილის ეკრანის საშუალებით: აკრიფეთ, გახსენით აპლიკაციები და გაუშვით ნებისმიერი SandFly ბრძანება. დაუშვით მხოლოდ აპები, რომლებსაც ენდობით.</string>
+    <string name="external_display_allow">Დაშვება</string>
+    <string name="external_display_deny">Არ დაუშვა</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> არის თქვენი ბრაილის ეკრანი</string>
+    <string name="external_display_in_use_text">Სანამ SandFly იყენებს მას, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> შეუძლია ეკრანის წაკითხვა და მოწყობილობის მართვა.</string>
+    <string name="external_displays_title">Ნაჩვენებია სხვა აპებიდან</string>
+    <string name="external_displays_summary">Აპები, რომლებსაც თქვენ დაუშვებთ, შეიძლება იყოს ბრაილის ეკრანები SandFly. აპს, რომელიც არის ბრაილის ეკრანი, შეუძლია ეკრანის წაკითხვა და მოწყობილობის მართვა.</string>
+    <string name="external_displays_none">Არცერთი აპი არ შეიძლება იყოს ბრაილის ეკრანი.</string>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_check_for_updates">Შეამოწმეთ განახლებები</string>
+    <string name="summary_pref_check_for_updates_version">Ვერსია <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Ავტომატურად შეამოწმეთ განახლებები</string>
+    <string name="summary_pref_auto_update_check">Შეამოწმეთ დღეში ერთხელ და აჩვენეთ შეტყობინება, როდესაც ახალი კონსტრუქცია ხელმისაწვდომია</string>
+    <string name="title_pref_dev_builds">Განვითარება აშენებს</string>
+    <string name="update_notification_title">SandFly განახლება ხელმისაწვდომია</string>
+    <string name="update_notification_text">Აშენება <xliff:g id="build" example="97">%1$d</xliff:g>. შეეხეთ დასაყენებლად.</string>
+    <string name="update_dialog_title">SandFly აშენება <xliff:g id="build" example="97">%1$d</xliff:g> ხელმისაწვდომია</string>
+    <string name="update_dialog_install">Დააინსტალირეთ</string>
+    <string name="update_checking">Მიმდინარეობს განახლებების შემოწმება</string>
+    <string name="update_up_to_date">SandFly განახლებულია</string>
+    <string name="update_check_failed">Განახლებების შემოწმება ვერ მოხერხდა</string>
+    <string name="update_downloading">Მიმდინარეობს განახლების ჩამოტვირთვა</string>
+    <string name="update_already_downloading">Განახლება უკვე იტვირთება</string>
+    <string name="update_ready_title">Ჩამოტვირთულია SandFly განახლება</string>
+    <string name="update_ready_text">Შეეხეთ დასაყენებლად.</string>
+    <string name="update_install_failed">Განახლების დაყენება ვერ მოხერხდა</string>
+    <string name="update_install_canceled">Განახლება გაუქმდა</string>
+    <string name="update_allow_install">Მიეცით SandFly აპების ინსტალაციის უფლება, შემდეგ ხელახლა სცადეთ განახლება</string>
+</resources>

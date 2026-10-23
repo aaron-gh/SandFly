@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_gemini_api_key">Gemini API გასაღები</string>
+    <string name="summary_pref_gemini_api_key_built_in">Ამ აპში ჩაშენებული გასაღების გამოყენებით</string>
+    <string name="gemini_api_key_dialog_message">Მიიღეთ უფასო API გასაღები Google AI Studio-დან aistudio.google.com/apikey და ჩასვით აქ. გასაღების ამოსაღებად გაასუფთავეთ ველი და შეინახეთ.\n\nთქვენ მიერ აღწერილი სურათები და ეკრანები იგზავნება Google-ზე. თავისუფალ დონეზე, Google შეუძლია გამოიყენოს ისინი თავისი პროდუქტების გასაუმჯობესებლად.</string>
+    <string name="gemini_api_key_hint">API გასაღები</string>
+    <string name="gemini_api_key_save">Შენახვა</string>
+    <string name="gemini_api_key_get">Მიიღეთ გასაღები</string>
+    <string name="title_pref_gemini_model">Gemini მოდელი</string>
+    <string name="gemini_model_automatic">Ავტომატური</string>
+    <string name="summary_pref_gemini_model_automatic">Ავტომატური: Gemini Flash, შემდეგ Flash-Lite როცა Flash დაკავებულია</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, შემდეგ Flash-Lite, როცა დაკავებულია</string>
+    <string name="gemini_model_loading">Მოდელების მიღება…</string>
+    <string name="gemini_model_list_failed">Ვერ მივიღე მოდელები: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Ჯერ დააყენეთ Gemini API გასაღები</string>
+    <string name="gemini_api_terms_link">Gemini API მომსახურების დამატებითი პირობები</string>
+    <string name="ai_service_address_hint">Მისამართი, როგორიცაა https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Მოდელი</string>
+    <string name="ai_service_address_invalid">Მისამართი უნდა დაიწყოს https://.-ით არაფერი შენახულა.</string>
+    <string name="dialog_message_ai_service_consent">Სურათები და ეკრანის ანაბეჭდები იგზავნება <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>-ზე აღსაწერად, რასაც რამდენიმე წამი სჭირდება. მოქმედებს მისი საკუთარი პირობები და კონფიდენციალურობის პოლიტიკა. გენერაციული AI ექსპერიმენტულია, ამიტომ შეცდომებს დაუშვებს.</string>
+    <string name="ai_service_error_api_key">AI სერვისმა არ მიიღო API გასაღები. შეამოწმეთ მისი პარამეტრები ავტომატურ აღწერილობებში.</string>
+    <string name="ai_service_error_quota">AI სერვისის გამოყენების ლიმიტი მიღწეულია. სცადეთ მოგვიანებით.</string>
+    <string name="ai_service_error_busy">AI სერვისი ამჟამად დაკავებულია. სცადეთ ხელახლა რამდენიმე წუთში.</string>
+    <string name="ai_service_error_timeout">AI სერვისს ძალიან დიდი დრო დასჭირდა პასუხის გასაცემად. სცადეთ ხელახლა.</string>
+    <string name="ai_provider_gemini">Gemini</string>
+    <string name="ai_provider_claude">Claude</string>
+    <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
+    <string name="ai_provider_mistral">Mistral</string>
+    <string name="ai_provider_groq">Groq</string>
+    <string name="ai_provider_openrouter">OpenRouter</string>
+    <string name="ai_provider_ollama">Ollama Cloud</string>
+    <string name="ai_provider_none">Არცერთი</string>
+    <string name="ai_service_not_set_up">AI სერვისი არ გამოიყენება. დააყენეთ ერთი ან აირჩიეთ ერთი ავტომატური აღწერილობების პარამეტრებში.</string>
+    <string name="ai_provider_none_set_up">AI სერვისი არ არის დაყენებული. დააყენეთ ერთი მის პარამეტრებში ქვემოთ.</string>
+    <string name="ai_provider_other">Სხვა სერვისი</string>
+    <string name="title_pref_category_ai_services">AI სერვისები</string>
+    <string name="title_pref_ai_provider">AI სერვისი</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> პარამეტრები</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, არ არის დაყენებული</string>
+    <string name="ai_provider_in_use">Გამოყენებაში</string>
+    <string name="ai_provider_not_set_up">Არ არის დაყენებული</string>
+    <string name="ai_provider_not_ready">Ჯერ აირჩიეთ მოდელი</string>
+    <string name="ai_provider_address">Მისამართი</string>
+    <string name="ai_provider_address_message">Სერვისის მისამართი OpenAI-თან თავსებადი ჩეთის API-ით და გამოსახულების შეყვანით, როგორიცაა https://example.com/v1.</string>
+    <string name="ai_provider_not_set">Არ არის დაყენებული</string>
+    <string name="ai_provider_set">Კონფიგურირებულია</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API გასაღები</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> მოდელი</string>
+    <string name="ai_provider_choose_model">Არჩეული არ არის</string>
+    <string name="ai_provider_key_message">Ჩასვით თქვენი <xliff:g id="service" example="Claude">%1$s</xliff:g> API გასაღები. მის მოსაშორებლად გაასუფთავეთ ველი და შეინახეთ. თქვენ მიერ აღწერილი სურათები და ეკრანები იგზავნება <xliff:g id="service" example="Claude">%1$s</xliff:g>-ზე.</string>
+    <string name="ai_provider_needs_key">Ჯერ დააყენეთ <xliff:g id="service" example="Claude">%1$s</xliff:g> API გასაღები</string>
+    <string name="ai_provider_needs_address">Ჯერ დააყენეთ მისამართი</string>
+    <string name="ai_provider_enter_model">Შეიყვანეთ მოდელის სახელი</string>
+</resources>
