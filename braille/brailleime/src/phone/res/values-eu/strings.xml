@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack-en braille-teklatua</string>
+  <string name="braille_ime_service_name">SandFly-ren braille-teklatua</string>
   <string name="braille_ime_bd_mode_name">Braille-pantaila bidezko idazketa</string>
   <string name="switch_to_tabletop_announcement">Mahaigaineko modua. Jarri gailua kargatzeko ataka ezkerrean duela.</string>
   <string name="calibration_tip_announcement">Puntuen posizioa eguneratzeko, eduki sakatuta pantaila %d hatzekin.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Oinarrizko braillera aldatu da</string>
   <string name="braille_ime_displayed_name">braille-teklatua</string>
   <string name="multiple_languages_braille_ime_displayed_name">braille-teklatua, %s</string>
-  <string name="input_view_caption">TalkBack-en braille-teklatua: laguntza lortzeko, joan g.co/help/braille helbidera</string>
+  <string name="input_view_caption">SandFly-ren braille-teklatua: laguntza lortzeko, joan g.co/help/braille helbidera</string>
   <string name="perform_action_next">Hurrengoa</string>
   <string name="perform_action_submitting">Testua bidaltzen</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Puntuen posizioa eguneratzen. Hasteko, %s puntuak erregistratuko ditugu.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Braille-teklatuarekin idatzi ahala hizkuntzaz aldatzeko, pasatu hiru hatz gora. Ondoren, hautatu \"Aldatu hurrengo hizkuntzara\".</string>
   <string name="title_pref_accumulate_presses">Sartu sakatutako puntu guztiak</string>
   <string name="summary_pref_accumulate_presses">Sakatutako puntu guztiak dira idatzitako testuaren parte, baita lehenago jaregiten badira ere</string>
-  <string name="title_pref_reverse_dots">Alderantzikatu puntuak</string>
-  <string name="summary_pref_reverse_dots">Aldatu puntuen posizioak; adibidez, trukatu 1 eta 4 puntuen tokiak</string>
+  <string name="title_pref_reverse_dots">Trukatu ezkerreko eta eskuineko puntuak</string>
+  <string name="summary_pref_reverse_dots">1., 2. eta 3. puntuek lekua trukatzen dute 4., 5. eta 6. puntuekin</string>
   <string name="bd_preference_braille_contracted">Braille laburtua</string>
   <string name="bd_preference_braille_uncontracted">Oinarrizko braillea</string>
   <string name="context_menu_title">Braille-teklatuaren aukerak</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Teklatua</string>
   <string name="not_enough_touch_points_dialog_title">Gailuak ez du onartzen braille-teklatua</string>
   <string name="not_enough_touch_points_dialog_message">Gailuak ez ditu onartzen behar adina ukipen-puntu. Informazio gehiago lortzeko, jarri harremanetan gailuaren fabrikatzailearekin.</string>
-  <string name="talkback_off_dialog_title">Braille-teklatua erabiltzeko, aktibatu TalkBack</string>
+  <string name="talkback_off_dialog_title">Braille-teklatua erabiltzeko, aktibatu SandFly</string>
   <string name="talkback_off_dialog_positive_button">Aktibatu erabilerraztasun-ezarpenetan</string>
-  <string name="talkback_suspend_dialog_title">Braille-teklatua erabiltzeko, aktibatu berriro TalkBack</string>
-  <string name="talkback_off_or_suspend_dialog_message">TalkBack aktibatuta dagoenean, sakatu pantaila braille-ikurrak idazteko.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Keinua aldatzeko, aktibatu TalkBack</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack desaktibatuta dago. Aktiba ezazu braille-teklatuaren keinuak aldatzeko.</string>
+  <string name="talkback_suspend_dialog_title">Braille-teklatua erabiltzeko, aktibatu berriro SandFly</string>
+  <string name="talkback_off_or_suspend_dialog_message">SandFly aktibatuta dagoenean, sakatu pantaila braille-ikurrak idazteko.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Keinua aldatzeko, aktibatu SandFly</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly desaktibatuta dago. Aktiba ezazu braille-teklatuaren keinuak aldatzeko.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Joan Ezarpenak atalera</string>
   <string name="reset_gestures_dialog_title">Keinu guztiak berrezarri nahi dituzu?</string>
   <string name="reset_gestures_dialog_message">Braille-teklatuaren keinu guztien balio lehenetsiak berrezarriko dira</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Berrezarri ezarpen lehenetsiak</string>
   <string name="custom_gestures_dialog_remove_button">Kendu keinua</string>
   <string name="change_gestures_dialog_message_title">Keinuak aldatzeko argibideak</string>
-  <string name="change_gestures_dialog_message">Hurrengo pantailan, braille-teklatua irekiko da, eta ezin izango dituzu erabili TalkBack-en keinuak.\n\nBraille-teklatua irekitzen denean, egin erabili nahi duzun keinua. Bestela, braille-teklatua ixteko eta keinuen aldaketa bertan behera uzteko, pasatu 2 hatz behera.\n\nIkusi zein keinu egin ditzakezun\n</string>
+  <string name="change_gestures_dialog_message">Hurrengo pantailan, braille-teklatua irekiko da, eta ezin izango dituzu erabili SandFly-ren keinuak.\n\nBraille-teklatua irekitzen denean, egin erabili nahi duzun keinua. Bestela, braille-teklatua ixteko eta keinuen aldaketa bertan behera uzteko, pasatu 2 hatz behera.\n\nIkusi zein keinu egin ditzakezun\n</string>
   <string name="change_gestures_dialog_message_link">Ikusi zein keinu egin ditzakezun</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Ez erakutsi mezu hau berriro</string>
   <string name="change_gestures_dialog_positive_button">Egin aurrera</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Ez erabili</string>
   <string name="next_keyboard">Hurrengo teklatua</string>
   <string name="braille_tutorial_title">Braille-teklatuaren tutoriala</string>
-  <string name="tutorial_intro_description">Braille-teklatuarekin, sakatu pantaila sei puntuko braille-idazketa erabiltzeko.\n\nBraille ingeles bateratua ari zara erabiltzen. Idazketa-hizkuntza aldatzeko, joan TalkBack-en ezarpenetara.\n\nBraille-ikurrak idazteko, telefonoa beste era batean hartu era erabili behar duzu.</string>
+  <string name="tutorial_intro_description">Braille-teklatuarekin, sakatu pantaila sei puntuko braille-idazketa erabiltzeko.\n\nBraille ingeles bateratua ari zara erabiltzen. Idazketa-hizkuntza aldatzeko, joan SandFly-ren ezarpenetara.\n\nBraille-ikurrak idazteko, telefonoa beste era batean hartu eta erabili behar duzu.</string>
   <string name="next_step">Hurrengoa</string>
   <string name="leave_keyboard">Irten braille-teklatutik</string>
-  <string name="hold_six_fingers_description">Ezingo dituzu erabili TalkBack-en ohiko keinuak braille-teklatuan.\n\nHasteko, idazten duzun bitartean sei braille-puntuak non egongo diren konfiguratuko dugu.</string>
-  <string name="rotate_orientation_description_1">Hemendik aurrera, ezin izango dituzu erabili TalkBack-en ohiko keinuak. TalkBack ez dago erabilgarri braille-teklatua erabiltzen duzun bitartean.</string>
+  <string name="hold_six_fingers_description">Ezingo dituzu erabili SandFly-ren ohiko keinuak braille-teklatuan.\n\nHasteko, idazten duzun bitartean sei braille-puntuak non egongo diren konfiguratuko dugu.</string>
+  <string name="rotate_orientation_description_1">Hemendik aurrera, ezin izango dituzu erabili SandFly-ren ohiko keinuak. SandFly ez dago erabilgarri braille-teklatua erabiltzen duzun bitartean.</string>
   <string name="rotate_orientation_description_2">Hasteko, eutsi honela telefonoari, pantaila aurpegitik aldenduta dagoela.</string>
   <string name="tap_to_continue">Aurrera egiteko, sakatu pantaila birritan</string>
   <string name="instruction_type_letter_a">Sakatu 1 puntua ezkerreko hatz erakuslearekin \"A\" hizkia idazteko</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">ERAMAN DA AURRERA KURTSOREA</string>
   <string name="result_swipe_down_2_fingers">EZKUTATU TEKLATUA</string>
   <string name="result_swipe_down_3_fingers">HURRENGO TEKLATUA</string>
-  <string name="rotate_orientation_announcement">Hemendik aurrera, ezin izango dituzu erabili TalkBack-en ohiko keinuak. TalkBack ez dago erabilgarri braille-teklatua erabiltzen duzun bitartean.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Hemendik aurrera, ezin izango dituzu erabili SandFly-ren ohiko keinuak. SandFly ez dago erabilgarri braille-teklatua erabiltzen duzun bitartean.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Lehendabizi, aldendu pantaila eta jar ezazu aurrez aurre.\n\nGero, jarri telefonoa modu horizontalean. Heldu telefonoari alde laburretatik. Erabili eskuineko eskua USB ataka duen aldeari eusteko. Jarri erdiko hiru hatzak pantailaren gainean, eta erabili hatz txikia eta erpurua telefonoari heltzeko.\n\nPrest zaudenean, sakatu pantaila birritan aurrera egiteko.\n\nBraille-teklatutik irteteko, pasatu hiru hatz behera. Jatorrizko teklatura itzuliko zara horrela.</string>
   <string name="rotate_orientation_continue_announcement">Telefonoa modu bertikalean dago. Aurrera egiteko, biratu telefonoa horizontalki, alde luzea behean utzi arte. Aldendu pantaila eta jar ezazu aurrez aurre. Prest zaudenean, sakatu pantaila birritan aurrera egiteko.</string>
   <string name="type_letter_a_announcement">Aldendu pantaila eta jar ezazu aurrez aurre. Heldu telefonoari bi eskuekin alde laburretatik, esku bakoitzeko erdiko hiru hatzak pantaila ukitzeko moduan gera daitezen.\n\nJarri ezkerreko hatz erakuslea lehenengo puntuan. Sakatu lehenengo puntua \"A\" hizkia idazteko.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Beste teklatu batera aldatzeko, pasatu hiru hatz behera. Proba ezazu.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Hurrengo teklatua. Normalean, hurrengo teklatura eramango zaitu eginbide horrek. Oraindik tutorialean zaudenez, braille-teklatuan geratuko zara oraingo honetan.</string>
   <string name="swipe_up_3_fingers_announcement">Telefonoa mahai baten gainean horizontalki jarrita ere idatz dezakezu mahaigaineko moduan. Tutoriala amaitzeko, pasatu hiru hatz gora, eta bilatu tutoriala amaitzeko aukera.</string>
-  <string name="open_context_menu_announcement">Irekita dago aukeren menua. Irauli telefonoa zuri begira jartzeko eta euts iezaiozu ohi bezala. Orain, TalkBack-en ohiko keinuak erabil ditzakezu nabigatzeko. Pasatu hatza eskuinera aukera gehiago ikusteko.</string>
+  <string name="open_context_menu_announcement">Irekita dago aukeren menua. Irauli telefonoa zuri begira jartzeko eta euts iezaiozu ohi bezala. Orain, SandFly-ren ohiko keinuak erabil ditzakezu nabigatzeko. Pasatu hatza eskuinera aukera gehiago ikusteko.</string>
   <string name="hold_six_fingers_announcement">%s\nJarri gailua mahai baten gainean horizontalki. Ondoren, eduki sakatuta pantaila esku bakoitzeko erdiko hiru hatzekin, idazteko erosoa iruditzen zaizun posizio batean.</string>
   <string name="hold_six_fingers_inactive_announcement">Jarri gailua mahai baten gainean horizontalki. Ondoren, eduki sakatuta pantaila esku bakoitzeko erdiko hiru hatzekin, idazteko erosoa iruditzen zaizun posizio batean.</string>
   <string name="finish_tutorial_announcement">Braille-teklatua ikusgai dago. Aldendu pantaila eta jar ezazu aurrez aurre. Telefonoa horizontalki jartzeko, bira ezazu. Ondoren, hasi idazten.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">\"%1$s\" ekintzarako erabiltzen da keinua, eta ezin da aldatu. Probatu beste keinu bat. %2$s</string>
   <string name="custom_gesture_cannot_used">Ezin da erabili keinu hau</string>
   <string name="custom_gesture_no_gesture">Ez da egin keinurik</string>
-  <string name="custom_gesture_try_another">Probatu beste keinu bat. Erabilgarri dauden keinu guztien zerrenda ikusteko, joan TalkBack-en braille-teklatuaren laguntza-zentrora. %s</string>
+  <string name="custom_gesture_try_another">Probatu beste keinu bat. Erabilgarri dauden keinu guztien zerrenda ikusteko, joan SandFly-ren braille-teklatuaren laguntza-zentrora. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Keinuak ez datoz bat</string>
   <string name="custom_gesture_perform_again">Gauzatu erabili nahi duzun keinua berriro. %s</string>
+    <string name="tabletop_port_left_announcement">Mahai gaineko modua, kargatzeko ataka ezkerrean</string>
+    <string name="tabletop_port_right_announcement">Mahai gaineko modua, kargatzeko ataka eskuinean</string>
+    <string name="screen_away_port_right_announcement">Pantaila zuregandik kanporantz, kargatzeko ataka eskuinean</string>
+    <string name="screen_away_port_left_announcement">Pantaila zuregandik kanporantz, kargatzeko ataka ezkerrean</string>
+    <string name="screen_toward_announcement">Pantaila zuregana begira</string>
+    <string name="screen_toward_port_left_announcement">Pantaila zuregana begira, kargatzeko ataka ezkerrean</string>
+    <string name="screen_toward_port_right_announcement">Pantaila zuregana begira, kargatzeko ataka eskuinean</string>
+    <string name="screen_toward_port_down_announcement">Pantaila zuregana begira, kargatzeko ataka beherantz</string>
+    <string name="screen_toward_port_up_announcement">Pantaila zuregana begira, kargatzeko ataka gorantz</string>
+    <string name="port_right_announcement">Kargatzeko ataka eskuinean</string>
+    <string name="port_left_announcement">Kargatzeko ataka ezkerrean</string>
+    <string name="tabletop_port_near_announcement">Mahai gaineko modua, kargatzeko ataka zuregana</string>
+    <string name="tabletop_port_far_announcement">Mahai gaineko modua, kargatzeko ataka zuregandik kanporantz</string>
+    <string name="screen_away_port_down_announcement">Pantaila zuregandik kanporantz, kargatzeko ataka beherantz</string>
+    <string name="screen_away_port_up_announcement">Pantaila zuregandik kanporantz, kargatzeko ataka gorantz</string>
+    <string name="port_near_announcement">Kargatzeko ataka zuregana</string>
+    <string name="port_far_announcement">Kargatzeko ataka zuregandik kanporantz</string>
+    <string name="port_down_announcement">Kargatzeko ataka beherantz</string>
+    <string name="port_up_announcement">Kargatzeko ataka gorantz</string>
+    <string name="orientation_locked_announcement">Orientazioa blokeatuta</string>
+    <string name="orientation_locked_port_announcement">Orientazioa blokeatuta. %1$s</string>
+    <string name="orientation_unlocked_announcement">Orientazioa desblokeatuta</string>
+    <string name="switch_to_language_contracted_announcement">%s ezarri duzu, Braille laburtua</string>
+    <string name="switch_to_language_uncontracted_announcement">%s ezarri duzu, Oinarrizko braillea</string>
+    <string name="title_pref_flip_dots_vertically">Trukatu goiko eta beheko puntuak</string>
+    <string name="summary_pref_flip_dots_vertically">1. puntuak lekua trukatzen du 3. puntuarekin, eta 4.ak 6.arekin</string>
+    <string name="title_pref_tablet_held_up_faces_away">Zutik eutsitako tabletaren pantaila kanporantz</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Desaktibatuta dagoenean, zutik eutsitako tabletak edo zabaldutako telefonoak mahai gaineko diseinua erabiltzen du, pantaila zuregana begira duela</string>
+    <string name="title_pref_typing_sounds">Idaztean soinuak</string>
+    <string name="summary_pref_typing_sounds">Erreproduzitu teklatuaren klikak karaktereak, zuriuneak edo lerro-jauziak sartzean, edo ezabatzean</string>
+    <string name="skip_tutorial">Saltatu tutoriala</string>
 </resources>

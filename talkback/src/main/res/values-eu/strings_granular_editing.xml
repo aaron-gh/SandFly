@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="granular_editing_title">Edizio zehatza</string>
+    <string name="granular_editing_split_by">Zatitu: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Zatitu</string>
+    <string name="granular_editing_characters">Karaktereak</string>
+    <string name="granular_editing_words">Hitzak</string>
+    <string name="granular_editing_sentences">Esaldiak</string>
+    <string name="granular_editing_lines">Lerroak</string>
+    <string name="granular_editing_paragraphs">Paragrafoak</string>
+    <string name="granular_editing_space">Zuriunea</string>
+    <string name="granular_editing_new_line">Lerro berria</string>
+    <string name="granular_editing_tab">Tabulazio-karakterea</string>
+    <string name="granular_editing_empty">Testurik ez. Erabili Gehitu testua amaieran, Gehiago atalean.</string>
+    <string name="granular_editing_edit">Editatu</string>
+    <string name="granular_editing_insert_before">Txertatu aurretik</string>
+    <string name="granular_editing_insert_after">Txertatu ondoren</string>
+    <string name="granular_editing_delete">Ezabatu</string>
+    <string name="granular_editing_select">Hautatu</string>
+    <string name="granular_editing_unselect">Deshautatu</string>
+    <string name="granular_editing_selected">Hautatuta</string>
+    <string name="granular_editing_save">Gorde</string>
+    <string name="granular_editing_more">Gehiago</string>
+    <string name="granular_editing_undo">Desegin</string>
+    <string name="granular_editing_redo">Berregin desegin den azken aldaketa</string>
+    <string name="granular_editing_find">Bilatu</string>
+    <string name="granular_editing_find_next">Aurkitu hurrengoa</string>
+    <string name="granular_editing_replace">Ordezkatu</string>
+    <string name="granular_editing_replace_with">Ordeztu</string>
+    <string name="granular_editing_replace_all">Ordezkatu guztiak</string>
+    <string name="granular_editing_add_at_end">Gehitu testua amaieran</string>
+    <string name="granular_editing_clear_selection">Garbitu hautapena</string>
+    <string name="granular_editing_cut_selected">Moztu hautatutako testua</string>
+    <string name="granular_editing_delete_selected">Ezabatu hautatutakoa</string>
+    <string name="granular_editing_copied">Kopiatua</string>
+    <string name="granular_editing_deleted">Ezabatu da</string>
+    <string name="granular_editing_not_found">Ez da aurkitu</string>
+    <plurals name="granular_editing_replaced">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ordezkatu</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ordezkatu</item>
+    </plurals>
+    <string name="granular_editing_save_changes">Aldaketak gorde nahi dituzu?</string>
+    <string name="granular_editing_copy_changes">Aldatutako testua kopiatu nahi duzu?</string>
+    <string name="granular_editing_discard">Baztertu</string>
+    <string name="granular_editing_keep_editing">Jarraitu editatzen</string>
+    <string name="granular_editing_not_saved">Ez da gorde: testu-eremua desagertu egin da. Testua kopiatzen da.</string>
+    <string name="granular_editing_no_text">Ez dago editatzeko testurik</string>
+    <string name="granular_editing_password">Ez dago erabilgarri pasahitz eremuetan</string>
+</resources>

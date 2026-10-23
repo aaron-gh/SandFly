@@ -78,4 +78,10 @@
     <string name="theme_sound_too_large">Fitxategi hori handiegia da. Soinuek 5 MB izan ditzakete gehienez.</string>
     <string name="theme_sound_not_audio">SandFly-ek ezin du erreproduzitu fitxategi hori. Aukeratu WAV, OGG, MP3 edo FLAC formatuko soinu bat.</string>
     <string name="theme_sound_failed">SandFly-ek ezin izan du irakurri fitxategi hori.</string>
+    <string name="title_pref_sound_theme_install_source">Iturri batetik</string>
+    <string name="summary_pref_sound_theme_install_source">Gai-fitxategiak GitHub, GitLab, Codeberg, Gitea edo Bitbucket-en biltegi batean.</string>
+    <string name="sound_theme_sources">Soinu gaiaren iturriak</string>
+    <string name="sound_theme_source_empty">Ez dago soinu-gairik iturri honetan</string>
+    <string name="sound_theme_source_failed">Ezin izan dira kargatu soinu-gaiak. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Bertatik instalatutako soinu-gaiak instalatuta geratzen dira.</string>
 </resources>
