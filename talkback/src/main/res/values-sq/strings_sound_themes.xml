@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Temat e zërit</string>
+    <string name="summary_pref_sound_themes">Instaloni dhe zgjidhni grupe tingujsh dhe dridhjesh, zëvendësoni tingujt e vetëm me tuajin dhe aktivizoni kontrollin e tingujve dhe dridhjeve dhe audion 3D.</string>
+    <string name="sound_themes_installed_category">Temat e instaluara</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">Tingujt dhe dridhjet e veta të SandFly dhe çdo tingull tuajin.</string>
+    <string name="sound_theme_in_use">Në përdorim</string>
+    <string name="sound_theme_by">Nga <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Licenca: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> tingull.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> tinguj.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> dridhje.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> dridhje.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Aktivizon tingujt dhe dridhjet e kontrollit.</string>
+    <string name="sound_theme_control_sounds_off">Çaktivizon tingujt e kontrollit dhe dridhjet.</string>
+    <string name="sound_theme_use">Përdorni këtë temë</string>
+    <string name="sound_theme_about">Rreth kësaj teme</string>
+    <string name="sound_theme_export">Ruani si skedar teme</string>
+    <string name="sound_theme_remove">Hiq</string>
+    <string name="sound_theme_remove_confirm">Të hiqet tema <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Hiq</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="one">Tema u ruajt me <xliff:g id="count" example="1">%d</xliff:g> tingull.</item>
+        <item quantity="other">Tema u ruajt me <xliff:g id="count" example="13">%d</xliff:g> tinguj.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly nuk mund ta ruante skedarin e temës.</string>
+    <string name="sound_theme_no_picker">Nuk ka asnjë aplikacion në këtë pajisje për të zgjedhur skedarët.</string>
+    <string name="sound_theme_settings_category">Cilësimet e <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds">Tingujt</string>
+    <string name="summary_pref_theme_sounds">Zëvendësoni çdo tingull të kësaj teme me një skedar zanor tuajin.</string>
+    <string name="sound_themes_install_category">Instaloni një temë</string>
+    <string name="title_pref_sound_theme_install_file">Nga një skedar</string>
+    <string name="summary_pref_sound_theme_install_file">Një skedar teme është një skedar ZIP. Mund ta hapësh gjithashtu një ose ta ndash me SandFly nga një aplikacion tjetër.</string>
+    <string name="title_pref_sound_theme_install_link">Nga një lidhje</string>
+    <string name="summary_pref_sound_theme_install_link">Një lidhje me një skedar teme ose në një depo GitHub me një temë në të. Ju gjithashtu mund të ndani një lidhje me SandFly nga shfletuesi juaj.</string>
+    <string name="title_pref_sound_theme_install_source">Nga një burim</string>
+    <string name="summary_pref_sound_theme_install_source">Skedarët e temave në një depo në GitHub, GitLab, Codeberg, Gitea ose Bitbucket.</string>
+    <string name="sound_theme_sources">Burimet e temave të zërit</string>
+    <string name="sound_theme_source_empty">Nuk ka tema zanore në këtë burim</string>
+    <string name="sound_theme_source_failed">Temat e zërit nuk mund të ngarkoheshin. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Temat zanore të instaluara prej tij qëndrojnë të instaluara.</string>
+    <string name="sound_theme_link_message">Futni ose ngjisni një lidhje në një skedar teme ose në një depo GitHub me një temë në të.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Instaloni temën e zërit</string>
+    <string name="sound_theme_install_reading">Leximi i temës së zërit</string>
+    <string name="sound_theme_install_title">Të instalohet <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Instaloni dhe përdorni</string>
+    <string name="sound_theme_install">Instaloni</string>
+    <string name="sound_theme_install_replaces">Kjo zëvendëson temën e instaluar me të njëjtin emër.</string>
+    <string name="sound_theme_install_skipped">E lënë jashtë: \n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">I instaluar <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">I instaluar <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Është në përdorim tani.</string>
+    <string name="sound_theme_install_nothing">Nuk ka asnjë temë zanore për t\'u instaluar.</string>
+    <string name="sound_theme_install_not_a_theme">Kjo nuk është një temë zanore SandFly mund të përdoret: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly nuk mund ta instalonte temën e zërit. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Lidhjet për temat e zërit duhet të fillojnë me https.</string>
+    <string name="title_pref_theme_sounds_of">Tingujt e <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
+    <string name="title_pref_theme_sounds_reset">Përdorni tingujt e SandFly për të gjithë</string>
+    <string name="theme_sounds_reset_confirm">Të hiqen të gjithë tingujt e kësaj teme dhe të përdoren tingujt e SandFly?</string>
+    <string name="theme_sounds_reset_button">Hiq</string>
+    <string name="theme_sounds_category">Tingujt</string>
+    <string name="theme_sound_summary_default">Tingulli i SandFly</string>
+    <string name="theme_sound_summary_custom">Tingulli i temës</string>
+    <string name="theme_sound_summary_none">Asnjë zë. Tingulli i fokusit luhet.</string>
+    <string name="theme_sound_summary_android_keyboard">Tingulli i tastierës së Android</string>
+    <string name="theme_sound_use_android_keyboard">Përdorni tingullin e tastierës Android</string>
+    <string name="theme_sound_braille_character">Tastiera Braille: shtypja e një karakteri</string>
+    <string name="theme_sound_braille_space">Tastiera Braille: hapësirë</string>
+    <string name="theme_sound_braille_delete">Tastiera Braille: fshi</string>
+    <string name="theme_sound_braille_new_line">Tastiera Braille: linjë e re</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Zgjidhni një skedar zanor</string>
+    <string name="theme_sound_preview">Shiko paraprakisht</string>
+    <string name="theme_sound_none">Asnjë zë</string>
+    <string name="theme_sound_summary_no_sound">Asnjë zë</string>
+    <string name="theme_sound_action_set_none">Vendosur në pa zë</string>
+    <string name="theme_sound_use_default">Përdorni tingullin e SandFly</string>
+    <string name="theme_sound_remove">Hiqni tingullin</string>
+    <string name="theme_sound_too_large">Ai skedar është shumë i madh. Një zë mund të jetë deri në 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly nuk mund ta luajë atë skedar. Zgjidhni një tingull WAV, OGG, MP3 ose FLAC.</string>
+    <string name="theme_sound_failed">SandFly nuk mund ta lexonte atë skedar.</string>
+</resources>

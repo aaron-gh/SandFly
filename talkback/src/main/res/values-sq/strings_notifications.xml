@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="notification_shake_3">I fortë</string>
+    <string name="notification_shake_2">E mesme</string>
+    <string name="notification_shake_1">I butë</string>
+    <string name="notification_media_skip">Mos lexoni me zë</string>
+    <string name="notification_media_pause">Ndaloni median gjatë leximit</string>
+    <string name="notification_media_read">Lexoni me zë të lartë</string>
+    <string name="notification_headphones_only_without">Vetëm pa kufje</string>
+    <string name="notification_headphones_only_with">Vetëm me kufje</string>
+    <string name="notification_headphones_always">Lexoni me zë të lartë me ose pa kufje</string>
+    <string name="notification_queue_skip">Mos e lexoni me zë të lartë njoftimin e ri</string>
+    <string name="notification_queue_interrupt">Ndërprisni njoftimin që lexohet me zë të lartë</string>
+    <string name="notification_queue_queue">Lexoni me zë të lartë pas njoftimit aktual</string>
+    <string name="notification_url_omit">Lëreni jashtë</string>
+    <string name="notification_url_replace">Thuaj tekstin më poshtë</string>
+    <string name="notification_url_domain">Lexoni vetëm faqen</string>
+    <string name="notification_url_full">Lexoni të gjithë lidhjen</string>
+    <string name="notification_category_title">Njoftimet</string>
+    <string name="notification_reading_title">Leximi i njoftimeve me zë të lartë</string>
+    <string name="notification_apps_title">Aplikacionet</string>
+    <string name="notification_words_title">Fjalët dhe zëvendësimet</string>
+    <string name="notification_kinds_title">Llojet e njoftimeve</string>
+    <string name="notification_when_title">Kur duhet lexuar</string>
+    <string name="notification_rules_title">Rregullat</string>
+    <string name="notification_repeats_title">Përsëritet</string>
+    <string name="notification_stop_title">Ndaloni së lexuari</string>
+    <string name="notification_schedules_title">Përmbledhja dhe koha</string>
+    <string name="notification_history_title">Historia e njoftimeve</string>
+    <string name="notification_test_title">Dërgoni një njoftim testimi</string>
+    <string name="notification_automation_title">Automatizimi</string>
+    <string name="notification_automation_allowed_title">Lejo aplikacionet e automatizimit</string>
+    <string name="notification_category_said">Çfarë thuhet</string>
+    <string name="notification_format_title">Formati i të folurit</string>
+    <string name="notification_format_message">Vendmbajtësit: {app}, {title}, {text}, {content} (i gjithë teksti), {bigtext}, {subtext}, {ticker}, {category} dhe {time}.</string>
+    <string name="notification_private_format_title">Njoftimet private thonë</string>
+    <string name="notification_private_format_message">Thuhet në vend të përmbajtjes së një njoftimi privat. Vendmbajtësit: {app}, {category} dhe {time}.</string>
+    <string name="notification_category_voice">Zëri</string>
+    <string name="notification_voice_title">Zëri</string>
+    <string name="notification_voice_sandfly">Zëri i SandFly</string>
+    <string name="notification_detect_language_title">Zbuloni gjuhën</string>
+    <string name="notification_detect_language_summary">Thuaj çdo njoftim në gjuhën në të cilën është shkruar. Duhet të ndërrojë gjuhën automatikisht në cilësimet \"Text-to-speech\".</string>
+    <string name="notification_sound_before_title">Tingulli përpara njoftimeve</string>
+    <string name="notification_category_text">Teksti</string>
+    <string name="notification_remove_emoji_title">Lërini emoji-t</string>
+    <string name="notification_lowercase_title">Lexoni shkronjat e mëdha si fjalë</string>
+    <string name="notification_lowercase_summary">Disa motorë të të folurit i lexojnë shkronjat e fjalëve të shkruara me shkronja të mëdha një nga një.</string>
+    <string name="notification_separate_digits_title">Lexoni numrat e gjatë shifër për shifër</string>
+    <string name="notification_separate_digits_summary">Të tilla si kodet dhe numrat e telefonit</string>
+    <string name="notification_min_digits_title">Shifrat minimale në një numër të gjatë</string>
+    <string name="notification_urls_title">Lidhjet</string>
+    <string name="notification_url_text_title">Thuhet në vend të një lidhjeje</string>
+    <string name="notification_skip_empty_title">Kapërceni njoftimet pa tekst</string>
+    <string name="notification_category_length">Gjatësia</string>
+    <string name="notification_max_words_title">Numri maksimal i fjalëve</string>
+    <string name="notification_max_sentences_title">Numri maksimal i fjalive</string>
+    <string name="notification_max_characters_title">Numri maksimal i karaktereve të tekstit</string>
+    <string name="notification_max_seconds_title">Ndaloni së lexuari më pas</string>
+    <string name="notification_category_timing">Koha</string>
+    <string name="notification_delay_title">Prisni përpara se të lexoni</string>
+    <string name="notification_queue_title">Kur lexohet një njoftim tjetër</string>
+    <string name="notification_repeat_minutes_title">Lexoni përsëri derisa ekrani të ndizet</string>
+    <string name="notification_skip_media_title">Kapërceni luajtësit e mediave</string>
+    <string name="notification_skip_ongoing_title">Kapërceni njoftimet në vazhdim</string>
+    <string name="notification_skip_ongoing_summary">Të tilla si navigimi dhe kohëmatësit</string>
+    <string name="notification_skip_foreground_title">Kapërceni njoftimet e ekzekutimit të aplikacioneve</string>
+    <string name="notification_skip_foreground_summary">Të tilla si një VPN ose një regjistrues audio</string>
+    <string name="notification_skip_progress_title">Kapërceni njoftimet e progresit</string>
+    <string name="notification_skip_group_summaries_title">Kapërceni përmbledhjet e grupeve</string>
+    <string name="notification_skip_group_summaries_summary">Të tilla si \"3 mesazhe të reja\"</string>
+    <string name="notification_skip_low_priority_title">Kapërceni njoftimet me përparësi të ulët</string>
+    <string name="notification_skip_system_title">Kapërceni njoftimet e sistemit</string>
+    <string name="notification_screen_on_title">Ndërsa ekrani është i ndezur</string>
+    <string name="notification_screen_off_title">Ndërsa ekrani është i fikur</string>
+    <string name="notification_locked_title">Ndërsa telefoni është i kyçur</string>
+    <string name="notification_headphones_title">Kufje</string>
+    <string name="notification_media_title">Ndërsa media luan</string>
+    <string name="notification_dnd_title">Mos shqetëso</string>
+    <string name="notification_dnd_none">Mos lexoni asnjë njoftim me zë të lartë</string>
+    <string name="notification_dnd_allowed">Lexoni njoftimet e lejuara nga modaliteti \"Mos shqetëso\".</string>
+    <string name="notification_dnd_all">Lexoni të gjitha</string>
+    <string name="notification_touch_title">Ndërsa ekrani preket</string>
+    <string name="notification_touch_read">Lexoni menjëherë</string>
+    <string name="notification_touch_after">Lexoni kur prekja përfundon</string>
+    <string name="notification_touch_skip">Mos lexoni me zë</string>
+    <string name="notification_during_calls_title">Gjatë thirrjeve</string>
+    <string name="notification_honour_silent_title">Jo në modalitetin e heshtur</string>
+    <string name="notification_honour_vibrate_title">Jo në modalitetin e vibrimit</string>
+    <string name="notification_skip_in_car_title">Jo në modalitetin e makinës</string>
+    <string name="notification_skip_in_car_summary">Të tilla si me Android Auto, që i lexon vetë</string>
+    <string name="notification_category_quiet_hours">Orë të qeta</string>
+    <string name="notification_quiet_hours_title">Orë të qeta</string>
+    <string name="notification_quiet_start_title">Filloni</string>
+    <string name="notification_quiet_end_title">Fund</string>
+    <string name="notification_repeat_seconds_title">Kapërceni të njëjtin njoftim për</string>
+    <string name="notification_numbers_alike_title">Trajtoni numra të ndryshëm si identikë</string>
+    <string name="notification_numbers_alike_summary">Të tilla si përqindja e shkarkimit</string>
+    <string name="notification_cooldown_title">Koha midis njoftimeve të një aplikacioni</string>
+    <string name="notification_skip_prefix_title">Hiqni një parashtesë të përsëritur të tekstit</string>
+    <string name="notification_skip_prefix_summary">Të tilla si emri i një grupi në një bisedë</string>
+    <string name="notification_prefix_memory_title">Sa kohë të mbahet mend parashtesa e tekstit</string>
+    <string name="notification_access_summary">Nevojitet për të ndaluar leximin e një njoftimi të hedhur poshtë dhe për përmbledhjet</string>
+    <string name="notification_shake_title">Shkundni për të ndaluar</string>
+    <string name="notification_shake_strength_title">Intensiteti i lëkundjes</string>
+    <string name="notification_wave_title">Lëvizni dorën për të ndaluar së lexuari</string>
+    <string name="notification_wave_summary">Lëvizja e dorës mbi sensorin e afërsisë</string>
+    <string name="notification_pocket_title">Modaliteti i xhepit</string>
+    <string name="notification_pocket_summary">Një sensor që mbulohet kur fillon leximi, si në një xhep, nuk e ndalon atë</string>
+    <string name="notification_volume_keys_title">Shtypni të dy tastet e volumit</string>
+    <string name="notification_dismiss_title">Ndalo leximin kur njoftimi mbyllet</string>
+    <string name="notification_watch_dismiss_title">Gjithashtu kur njoftimi hidhet në një orë inteligjente</string>
+    <string name="notification_app_cancel_title">Ndalo leximin kur aplikacioni heq njoftimin</string>
+    <string name="notification_category_summary">Përmbledhje</string>
+    <string name="notification_summary_now_title">Lexoni njoftimet tani</string>
+    <string name="notification_summary_daily_title">Lexoni njoftimet çdo ditë</string>
+    <string name="notification_summary_time_title">Koha</string>
+    <string name="notification_summary_newest_first_title">Më të rejat e para</string>
+    <string name="notification_summary_name_title">Emri juaj</string>
+    <string name="notification_summary_gap_title">Ndalo ndërmjet njoftimeve</string>
+    <string name="notification_summary_needs_sandfly">Aktivizo SandFly për të lexuar njoftimet</string>
+    <string name="notification_summary_no_access">Qasja në njoftim është joaktiv</string>
+    <string name="notification_summary_morning">Mirmengjesi.</string>
+    <string name="notification_summary_afternoon">Mirëdita.</string>
+    <string name="notification_summary_evening">Mirëmbrëma.</string>
+    <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
+    <string name="notification_summary_item_format">{app}, {title}, {text}</string>
+    <string name="notification_category_clock">Njoftimet e kohës</string>
+    <string name="notification_clock_interval_title">Thuaj kohën çdo</string>
+    <string name="notification_clock_format_title">Formati i orës</string>
+    <string name="notification_clock_format_message">Vendmbajtësit: {time}, {date} dhe {battery} (përqindja e baterisë).</string>
+    <string name="notification_clock_format_default">Është {time}</string>
+    <string name="notification_clock_exact_title">Orë të sakta</string>
+    <string name="notification_clock_exact_summary">Ka nevojë për alarme dhe përkujtues. Përndryshe koha mund të thuhet deri në një minutë me vonesë.</string>
+    <string name="notification_other_apps_title">Aplikacione të tjera</string>
+    <string name="notification_apps_category">Aplikacionet</string>
+    <string name="notification_apps_loading">Po ngarkon aplikacionet</string>
+    <string name="notification_app_mode_title">Njoftimet</string>
+    <string name="notification_app_mode_default">Si aplikacionet e tjera</string>
+    <string name="notification_app_mode_read">Lexoni me zë të lartë</string>
+    <string name="notification_app_mode_private">Vetëm emri i aplikacionit</string>
+    <string name="notification_app_mode_priority">Lexoni së pari</string>
+    <string name="notification_app_mode_ignore">Mos lexoni me zë</string>
+    <string name="notification_app_name_title">Emri i folur</string>
+    <string name="notification_app_said_as">e thënë si <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_reset">Rivendos</string>
+    <string name="notification_required_title">Lexoni vetëm njoftimet me</string>
+    <string name="notification_blocked_title">Mos i lexoni njoftimet me</string>
+    <string name="notification_private_title">Lexoni vetëm emrin e aplikacionit për</string>
+    <string name="notification_replacements_title">Thuaj ndryshe</string>
+    <string name="notification_add_word">Shtoni një fjalë</string>
+    <string name="notification_add_replacement">Shto një zëvendësim</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> si <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replace_find">Teksti</string>
+    <string name="notification_replace_with">Thuaj si</string>
+    <string name="notification_whole_words">Vetëm fjalë të plota</string>
+    <string name="notification_regex">Shprehje e rregullt</string>
+    <string name="notification_enter_text">Futni një tekst</string>
+    <string name="notification_invalid_regex">Nuk është një shprehje e rregullt e vlefshme</string>
+    <string name="notification_edit">Redakto</string>
+    <string name="notification_remove">Hiq</string>
+    <string name="notification_history_keep">Ruani historikun e njoftimeve</string>
+    <string name="notification_history_clear">Pastro historinë</string>
+    <string name="notification_history_category">Njoftimet</string>
+    <string name="notification_history_empty">Nuk ka njoftime</string>
+    <string name="notification_history_ignore_app">Mos lexo <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Lexo vetëm emrin e <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Së pari lexoni <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_block_similar">Mos lexoni njoftime si ky</string>
+    <string name="notification_history_copy">Kopjo</string>
+    <string name="notification_saved">U ruajt</string>
+    <string name="notification_copied">E kopjuar</string>
+    <string name="notification_outcome_read">Lexoni me sukses me zë të lartë</string>
+    <string name="notification_outcome_stopped">U ndal gjatë leximit</string>
+    <string name="notification_outcome_speech_off">I pa lexuar: fjalimi i njoftimit është joaktiv</string>
+    <string name="notification_outcome_dnd">Pa lexuar: Mos shqetëso</string>
+    <string name="notification_outcome_touching">E pa lexuar: ekrani u prek</string>
+    <string name="notification_outcome_app">Nuk lexohet: aplikacioni</string>
+    <string name="notification_outcome_ongoing">Nuk lexohet: në vazhdim</string>
+    <string name="notification_outcome_foreground">Nuk lexohet: ekzekutimi i aplikacionit</string>
+    <string name="notification_outcome_low_priority">Nuk lexohet: prioritet i ulët</string>
+    <string name="notification_outcome_system">Nuk lexohet: sistemi</string>
+    <string name="notification_outcome_media">Nuk lexohet: media player</string>
+    <string name="notification_outcome_group_summary">Nuk lexohet: përmbledhje grupi</string>
+    <string name="notification_outcome_progress">Nuk lexohet: përparim</string>
+    <string name="notification_outcome_required">Nuk lexohet: mungojnë fjalët e kërkuara</string>
+    <string name="notification_outcome_blocked">E pa lexuar: fjalë e bllokuar</string>
+    <string name="notification_outcome_empty">E pa lexuar: pa tekst</string>
+    <string name="notification_outcome_repeat">Nuk lexohet: përsëris</string>
+    <string name="notification_outcome_cooldown">Nuk lexohet me zë: një njoftim tjetër nga ky aplikacion është lexuar shumë kohët e fundit</string>
+    <string name="notification_outcome_quiet_hours">Nuk lexohet: orë qetësie</string>
+    <string name="notification_outcome_screen_on">Nuk lexohet: ekrani është i ndezur</string>
+    <string name="notification_outcome_screen_off">Nuk lexohet: ekrani fikur</string>
+    <string name="notification_outcome_locked">E pa lexuar: e mbyllur</string>
+    <string name="notification_outcome_headphones">Nuk lexohet: kufjet e lidhura</string>
+    <string name="notification_outcome_no_headphones">E pa lexuar: pa kufje</string>
+    <string name="notification_outcome_silent">Nuk lexohet: modaliteti i heshtur</string>
+    <string name="notification_outcome_vibrate">Nuk lexohet: modaliteti i dridhjes</string>
+    <string name="notification_outcome_media_playing">Nuk lexohet: media po luhet</string>
+    <string name="notification_outcome_car">Nuk lexohet: modaliteti i makinës</string>
+    <string name="notification_outcome_rule">Nuk lexohet: rregull</string>
+    <string name="notification_outcome_busy">E pa lexuar: u lexua një njoftim tjetër</string>
+    <string name="notification_outcome_call">Shpallur si telefonatë hyrëse</string>
+    <string name="notification_rule_add">Shtoni një rregull</string>
+    <string name="notification_rule_from_template">Shtoni një rregull nga një shabllon</string>
+    <string name="notification_rules_category">Rregullat</string>
+    <string name="notification_rules_empty">Nuk ka rregulla</string>
+    <string name="notification_rule_name">Emri</string>
+    <string name="notification_rule_untitled">Rregulli</string>
+    <string name="notification_rule_enabled">I ndezur</string>
+    <string name="notification_rule_match">Kushtet</string>
+    <string name="notification_rule_match_all">Duhet të plotësohen të gjitha kushtet</string>
+    <string name="notification_rule_match_any">Të paktën një kusht duhet të plotësohet</string>
+    <string name="notification_rule_conditions">Kur</string>
+    <string name="notification_rule_actions">Pastaj</string>
+    <string name="notification_rule_add_condition">Shto një kusht</string>
+    <string name="notification_rule_add_action">Shto një veprim</string>
+    <string name="notification_rule_invert">Përmbysni kushtin</string>
+    <string name="notification_rule_delete">Fshi rregullin</string>
+    <string name="notification_rule_delete_confirm">Të fshihet <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
+    <string name="notification_rule_always">Gjithmonë</string>
+    <string name="notification_rule_no_actions">asgjë nuk ndodh</string>
+    <string name="notification_rule_and">" dhe "</string>
+    <string name="notification_rule_or">" ose "</string>
+    <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
+    <string name="notification_template_headphones">Vetëm me kufje</string>
+    <string name="notification_template_night">I heshtur natën</string>
+    <string name="notification_template_screen_off">Vetëm me ekran të fikur</string>
+    <string name="notification_template_locked_private">Vetëm emri i aplikacionit kur telefoni është i kyçur</string>
+    <string name="notification_template_short_on_battery">Lexoni shkurt kur nuk karikoni</string>
+    <string name="notification_type_bluetooth">Bluetooth pajisje</string>
+    <string name="notification_type_wired">Kufje me tela</string>
+    <string name="notification_type_wifi">Rrjeti Wi-Fi</string>
+    <string name="notification_type_time">Koha e ditës</string>
+    <string name="notification_type_screen">Ekrani është i ndezur</string>
+    <string name="notification_type_locked">Telefoni i kyçur</string>
+    <string name="notification_type_from_app">Njoftim nga një aplikacion</string>
+    <string name="notification_type_foreground">Aplikacioni në plan të parë</string>
+    <string name="notification_type_contains">Njoftimi përmban</string>
+    <string name="notification_type_battery">Niveli i baterisë më poshtë</string>
+    <string name="notification_type_charging">Ngarkimi</string>
+    <string name="notification_type_landscape">Horizontalisht</string>
+    <string name="notification_type_silent">Modaliteti i heshtur ose i dridhjes</string>
+    <string name="notification_type_media">Media po luhet</string>
+    <string name="notification_bluetooth_any">Çdo pajisje</string>
+    <string name="notification_wifi_hint">Emri i rrjetit</string>
+    <string name="notification_choose_app">Zgjidhni një aplikacion</string>
+    <string name="notification_time_start">Nga</string>
+    <string name="notification_time_end">Derisa</string>
+    <string name="notification_time_days">Ditët</string>
+    <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> deri në <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
+    <string name="notification_permission_needed">SandFly ka nevojë për atë leje për këtë gjendje</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> është i lidhur</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> nuk është i lidhur</string>
+    <string name="notification_cond_bluetooth_any">Është lidhur një pajisje audio Bluetooth</string>
+    <string name="notification_cond_bluetooth_any_not">Nuk është lidhur asnjë pajisje audio Bluetooth</string>
+    <string name="notification_cond_wired">Kufjet me tela janë të lidhura</string>
+    <string name="notification_cond_wired_not">Kufjet me tela nuk janë të lidhura</string>
+    <string name="notification_cond_battery_below">Bateria është nën <xliff:g id="percent" example="20">%1$d</xliff:g> përqind</string>
+    <string name="notification_cond_battery_below_not">Bateria është në <xliff:g id="percent" example="20">%1$d</xliff:g> përqind ose më shumë</string>
+    <string name="notification_cond_charging">Telefoni është duke u ngarkuar</string>
+    <string name="notification_cond_charging_not">Telefoni nuk po karikohet</string>
+    <string name="notification_cond_locked">Telefoni është i kyçur</string>
+    <string name="notification_cond_locked_not">Telefoni është i shkyçur</string>
+    <string name="notification_cond_screen_on">Ekrani është i ndezur</string>
+    <string name="notification_cond_screen_on_not">Ekrani është i fikur</string>
+    <string name="notification_cond_landscape">Ekrani është në peizazh</string>
+    <string name="notification_cond_landscape_not">Ekrani është në portret</string>
+    <string name="notification_cond_time">Ora është <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Ora nuk është <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi">Lidhur me <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">Nuk është i lidhur me <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_any">Lidhur me Wi-Fi</string>
+    <string name="notification_cond_wifi_any_not">Nuk është i lidhur me Wi-Fi</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> është përpara</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nuk është përpara</string>
+    <string name="notification_cond_from">Njoftimi është nga <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Njoftimi nuk është nga <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Njoftimi përmban <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Njoftimi nuk përmban <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Zilja është e heshtur ose dridhet</string>
+    <string name="notification_cond_silent_not">Kumbon zilja</string>
+    <string name="notification_cond_media">Media është duke luajtur</string>
+    <string name="notification_cond_media_not">Asnjë media nuk po luhet</string>
+    <string name="notification_action_skip">mos lexo</string>
+    <string name="notification_action_private">lexoni vetëm emrin e aplikacionit</string>
+    <string name="notification_action_not_private">lexoni të plotë, edhe nëse private</string>
+    <string name="notification_action_format">përdorni një format të të folurit</string>
+    <string name="notification_action_max_words">lexoni deri në një numër fjalësh</string>
+    <string name="notification_action_no_limit">lexoni pa kufij gjatësie</string>
+    <string name="notification_action_keep_emoji">mbaj emoji</string>
+    <string name="notification_action_keep_numbers">mbani numrat së bashku</string>
+    <string name="notification_action_priority">lexoni së pari</string>
+    <string name="notification_action_always_read">Lexoni me zë të lartë njoftimet edhe gjatë orëve të qetësisë ose në kohë të tjera të kufizuara</string>
+    <string name="notification_action_voice">lexoni me një profil zanor</string>
+    <string name="notification_action_voice_value">lexo me <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">lexo me zërin e SandFly</string>
+    <string name="notification_voice_removed">Profili i zërit u hoq</string>
+    <string name="notification_action_format_value">përdorni formatin e të folurit <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">lexoni deri në <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_off">Joaktive</string>
+    <string name="notification_on">Aktive</string>
+    <string name="notification_never_again">Derisa të rifillojë SandFly</string>
+    <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
+    <string name="notification_speech_tile_label">Leximi i njoftimeve me zë të lartë</string>
+    <string name="notification_speech_now_on">Leximi i njoftimeve me zë të lartë është aktivizuar</string>
+    <string name="notification_speech_now_off">Leximi i njoftimeve me zë është i çaktivizuar</string>
+    <string name="notification_no_last_notification">Nuk u lexua asnjë njoftim</string>
+    <string name="shortcut_read_notifications">Lexoni njoftimet</string>
+    <string name="shortcut_toggle_notification_speech">Aktivizimi ose çaktivizimi i fjalimit të njoftimit</string>
+    <string name="shortcut_read_last_notification">Lexoni sërish njoftimin e fundit</string>
+    <string name="shortcut_stop_notification">Ndalo leximin e njoftimit</string>
+    <string name="notification_test_posting">Pas 5 sekondash vjen një njoftim testimi</string>
+    <string name="notification_test_not_allowed">Lejo që SandFly të shfaqë njoftimet në fillim</string>
+    <string name="notification_test_content_title">SandFly test</string>
+    <string name="notification_test_content_text">Ky është një njoftim provë, lexo me cilësimet e njoftimit. 123456</string>
+    <string name="notification_automation_on">Aktivizo leximin e njoftimeve me zë të lartë</string>
+    <string name="notification_automation_off">Çaktivizo leximin e njoftimeve me zë të lartë</string>
+    <string name="notification_automation_toggle">Aktivizo ose çaktivizo leximin e njoftimeve me zë të lartë</string>
+    <string name="notification_automation_stop">Ndalo leximin e njoftimit</string>
+    <string name="notification_automation_read_all">Lexoni njoftimet</string>
+    <plurals name="notification_seconds">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekondë</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> sekonda</item>
+    </plurals>
+    <plurals name="notification_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minutë</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> minuta</item>
+    </plurals>
+    <plurals name="notification_hours">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> orë</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> orë</item>
+    </plurals>
+    <plurals name="notification_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> fjalë</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> fjalë</item>
+    </plurals>
+    <plurals name="notification_sentences">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> fjali</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> fjali</item>
+    </plurals>
+    <plurals name="notification_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> karakter teksti</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> karaktere teksti</item>
+    </plurals>
+    <plurals name="notification_digits">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> shifër</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> shifra</item>
+    </plurals>
+    <plurals name="notification_summary_count">
+        <item quantity="one">Ju keni <xliff:g id="count" example="1">%d</xliff:g> njoftim.</item>
+        <item quantity="other">Ju keni <xliff:g id="count" example="5">%d</xliff:g> njoftime.</item>
+    </plurals>
+    <string-array name="notification_url_entries">
+        <item>@string/notification_url_full</item>
+        <item>@string/notification_url_domain</item>
+        <item>@string/notification_url_replace</item>
+        <item>@string/notification_url_omit</item>
+    </string-array>
+    <string-array name="notification_queue_entries">
+        <item>@string/notification_queue_queue</item>
+        <item>@string/notification_queue_interrupt</item>
+        <item>@string/notification_queue_skip</item>
+    </string-array>
+    <string-array name="notification_headphones_entries">
+        <item>@string/notification_headphones_always</item>
+        <item>@string/notification_headphones_only_with</item>
+        <item>@string/notification_headphones_only_without</item>
+    </string-array>
+    <string-array name="notification_media_entries">
+        <item>@string/notification_media_read</item>
+        <item>@string/notification_media_pause</item>
+        <item>@string/notification_media_skip</item>
+    </string-array>
+    <string-array name="notification_dnd_entries">
+        <item>@string/notification_dnd_none</item>
+        <item>@string/notification_dnd_allowed</item>
+        <item>@string/notification_dnd_all</item>
+    </string-array>
+    <string-array name="notification_touch_entries">
+        <item>@string/notification_touch_read</item>
+        <item>@string/notification_touch_after</item>
+        <item>@string/notification_touch_skip</item>
+    </string-array>
+    <string-array name="notification_shake_entries">
+        <item>@string/notification_shake_1</item>
+        <item>@string/notification_shake_2</item>
+        <item>@string/notification_shake_3</item>
+    </string-array>
+</resources>
