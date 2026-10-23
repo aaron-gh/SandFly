@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_on">ટૉકબૅક ચાલુ</string>
-  <string name="talkback_disabled">ટૉકબૅક બંધ છે</string>
+  <string name="talkback_on">SandFly ચાલુ</string>
+  <string name="talkback_disabled">SandFly છૂટ</string>
   <string name="notification_type_beginning_of_field">ફીલ્ડની શરૂઆતમાં</string>
   <string name="notification_type_end_of_field">ફીલ્ડના અંત પર</string>
   <string name="notification_type_selection_mode_on">પસંદગી મોડ ચાલુ છે</string>
@@ -190,4 +190,8 @@
   <string name="drag_started">ખેંચવાનું શરૂ કર્યું</string>
   <string name="drag_dropped">ખેંચવામાં આવતી આઇટમ છોડી દીધી</string>
   <string name="drag_cancelled">ખેંચવાનું રદ કર્યું</string>
+    <string name="template_brightness_changed">બ્રાઇટનેસ <xliff:g id="percent">%1$d</xliff:g> ટકા.</string>
+    <string name="brightness_needs_permission">બ્રાઇટનેસ બદલવા માટે, સિસ્ટમ સેટિંગમાં ફેરફાર કરવાની મંજૂરી આપો.</string>
+    <string name="brightness_adaptive_on">બ્રાઇટનેસ બદલવા માટે, અડૅપ્ટિવ બ્રાઇટનેસ બંધ કરો.</string>
+    <string name="telegram_replying_to"><xliff:g id="name" example="Ronan">%1$s</xliff:g> ને જવાબ આપી રહ્યા છીએ: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>

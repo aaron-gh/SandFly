@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBack બ્રેઇલ કીબોર્ડ</string>
+  <string name="braille_ime_service_name">SandFly બ્રેઇલ કીબોર્ડ</string>
   <string name="braille_ime_bd_mode_name">બ્રેઇલ ડિસ્પ્લે પર ટેક્સ્ટનું ઇનપુટ</string>
   <string name="switch_to_tabletop_announcement">ટેબલટોપ મોડ. તમારા ડિવાઇસને એવી રીતે રાખો કે ચાર્જિંગ પોર્ટ ડાબી બાજુએ રહે.</string>
   <string name="calibration_tip_announcement">ડોટની સ્થિતિ અપડેટ કરવા માટે, %d આંગળીથી દબાવી રાખો.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">વિસ્તૃત બ્રેઇલ પર સ્વિચ કર્યું</string>
   <string name="braille_ime_displayed_name">બ્રેઇલ કીબોર્ડ</string>
   <string name="multiple_languages_braille_ime_displayed_name">બ્રેઇલ કીબોર્ડ, %s</string>
-  <string name="input_view_caption">TalkBack બ્રેઇલ કીબોર્ડ - મદદ માટે, g.co/help/brailleની મુલાકાત લો</string>
+  <string name="input_view_caption">SandFly બ્રેઇલ કીબોર્ડ - મદદ માટે, g.co/help/brailleની મુલાકાત લો</string>
   <string name="perform_action_next">આગળ</string>
   <string name="perform_action_submitting">ટેક્સ્ટ સબમિટ કરવી</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">ડોટની સ્થિતિ અપડેટ કરી રહ્યાં છીએ. પહેલાં, આપણે તમારા %s પર ડોટ રેકોર્ડ કરીએ.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">બ્રેઇલ કીબોર્ડ વડે ટાઇપ કરતી વખતે તમારી ભાષા બદલવા માટે, 3 આંગળીઓથી ઉપરની તરફ સ્વાઇપ કરો. પછી \"આગલી ભાષા પર સ્વિચ થાઓ\"ને પસંદ કરો.</string>
   <string name="title_pref_accumulate_presses">બધા દબાવેલા ડૉટને શામેલ કરો</string>
   <string name="summary_pref_accumulate_presses">દરેક દબાવેલો ડૉટ એ ઇનપુટનો ભાગ છે, પછીથી ભલેને ડૉટ, અન્ય ડૉટની પહેલાં છોડી દેવામાં આવ્યો હોય</string>
-  <string name="title_pref_reverse_dots">રિવર્સ ડૉટ</string>
-  <string name="summary_pref_reverse_dots">આનાથી ડૉટની જગ્યાની અદલાબદલી થાય છે, ઉદાહરણ તરીકે, ડૉટ 1 અને 4 સ્થાનની અદલાબદલી કરે છે</string>
+  <string name="title_pref_reverse_dots">ડાબે અને જમણા બિંદુઓને સ્વેપ કરો</string>
+  <string name="summary_pref_reverse_dots">બિંદુઓ 1, 2, અને 3 બિંદુઓ 4, 5 અને 6 સાથે વેપાર સ્થાનો</string>
   <string name="bd_preference_braille_contracted">કોન્ટ્રાક્ટેડ બ્રેઇલ</string>
   <string name="bd_preference_braille_uncontracted">અનકોન્ટ્રાક્ટેડ બ્રેઇલ</string>
   <string name="context_menu_title">બ્રેઇલ કીબોર્ડના વિકલ્પો</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">કીબોર્ડ</string>
   <string name="not_enough_touch_points_dialog_title">તમારા ડિવાઇસમાં બ્રેઇલ કીબોર્ડની સુવિધા ઉપલબ્ધ નથી</string>
   <string name="not_enough_touch_points_dialog_message">તમારા ડિવાઇસમાં પૂરતાં પ્રમાણમાં ટચ પૉઇન્ટ ઉપલબ્ધ નથી. વધુ માહિતી માટે, તમારા ડિવાઇસના નિર્માતાનો સંપર્ક કરો.</string>
-  <string name="talkback_off_dialog_title">બ્રેઇલ કીબોર્ડનો ઉપયોગ કરવા માટે TalkBack ચાલુ કરો</string>
+  <string name="talkback_off_dialog_title">બ્રેઇલ કીબોર્ડનો ઉપયોગ કરવા માટે SandFly ચાલુ કરો</string>
   <string name="talkback_off_dialog_positive_button">ઍક્સેસિબિલિટી સેટિંગમાં ચાલુ કરો</string>
-  <string name="talkback_suspend_dialog_title">બ્રેઇલ કીબોર્ડનો ઉપયોગ કરવા માટે ટૉકબૅક ફરી શરૂ કરો</string>
-  <string name="talkback_off_or_suspend_dialog_message">જ્યારે ટૉકબૅક ચાલુ હોય, ત્યારે તમે બ્રેઇલ પ્રતીકોને દાખલ કરવા માટે તમારી સ્ક્રીન પર ટૅપ કરી શકો છો.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">સંકેતને બદલવા માટે TalkBack ચાલુ કરો</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack બંધ છે. બ્રેઇલ કીબોર્ડ સંકેતોને બદલવા માટે તેને ચાલુ કરો.</string>
+  <string name="talkback_suspend_dialog_title">બ્રેઇલ કીબોર્ડનો ઉપયોગ કરવા માટે SandFly ફરી શરૂ કરો</string>
+  <string name="talkback_off_or_suspend_dialog_message">જ્યારે SandFly ચાલુ હોય, ત્યારે તમે બ્રેઈલ પ્રતીકો દાખલ કરવા માટે તમારી સ્ક્રીનને ટેપ કરી શકો છો.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">સંકેતને બદલવા માટે SandFly ચાલુ કરો</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly બંધ છે. બ્રેઇલ કીબોર્ડ સંકેતોને બદલવા માટે તેને ચાલુ કરો.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">સેટિંગ પર જાઓ</string>
   <string name="reset_gestures_dialog_title">શું બધા સંકેતો રીસેટ કરીએ?</string>
   <string name="reset_gestures_dialog_message">બ્રેઇલ કીબોર્ડના બધા સંકેતોને ડિફૉલ્ટ પર રીસેટ કરવામાં આવશે</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">ડિફૉલ્ટ પર રીસેટ કરો</string>
   <string name="custom_gestures_dialog_remove_button">સંકેત કાઢી નાખો</string>
   <string name="change_gestures_dialog_message_title">સંકેત બદલવાની રીત</string>
-  <string name="change_gestures_dialog_message">આગલી સ્ક્રીન પર, બ્રેઇલ કીબોર્ડ ખૂલશે અને તમે TalkBack સંકેતોનો ઉપયોગ કરી શકશો નહીં.\n\nબ્રેઇલ કીબોર્ડ ખૂલી જાય, ત્યારે તમે ઉપયોગ કરવા માગતા હો, તો સંકેત પર્ફોર્મ કરો અથવા બ્રેઇલ કીબોર્ડ બંધ કરો અને સંકેતનો ફેરફાર રદ કરો, બે આંગળી વડે નીચેની તરફ સ્વાઇપ કરો.\n\nઉપલબ્ધ સંકેતો જુઓ\n</string>
+  <string name="change_gestures_dialog_message">આગલી સ્ક્રીન પર, બ્રેઇલ કીબોર્ડ ખૂલશે અને તમે SandFly સંકેતોનો ઉપયોગ કરી શકશો નહીં.\n\nબ્રેઇલ કીબોર્ડ ખૂલી જાય, ત્યારે તમે ઉપયોગ કરવા માગતા હો, તો સંકેત પર્ફોર્મ કરો અથવા બ્રેઇલ કીબોર્ડ બંધ કરો અને સંકેતનો ફેરફાર રદ કરો, બે આંગળી વડે નીચેની તરફ સ્વાઇપ કરો.\n\nઉપલબ્ધ સંકેતો જુઓ\n</string>
   <string name="change_gestures_dialog_message_link">ઉપલબ્ધ સંકેતો જુઓ</string>
   <string name="change_gestures_dialog_dont_show_checkbox">આ મેસેજ ફરીથી બતાવશો નહીં</string>
   <string name="change_gestures_dialog_positive_button">ચાલુ રાખો</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">ઉપયોગ કરશો નહીં</string>
   <string name="next_keyboard">આગલું કીબોર્ડ</string>
   <string name="braille_tutorial_title">બ્રેઇલ કીબોર્ડનું ટ્યૂટૉરિઅલ</string>
-  <string name="tutorial_intro_description">બ્રેઇલ કીબોર્ડ વડે, તમે 6-ડોટ બ્રેઇલમાં દાખલ થવા માટે તમારી સ્ક્રીન પર ટૅપ કરી શકો છો.\n\nતમે યુનિફાઇડ ઇંગ્લિશ બ્રેઇલનો ઉપયોગ કરી રહ્યાં છો. તમારી ટાઇપિંગની ભાષાને સ્વિચ કરવા માટે, TalkBack સેટિંગ પર જાઓ.\n\nબ્રેઇલમાં ટાઇપ કરવા માટે, તમારે તમારા ફોનને અલગ રીતે પકડીને તેનો ઉપયોગ કરવો પડશે.</string>
+  <string name="tutorial_intro_description">બ્રેઇલ કીબોર્ડ વડે, તમે 6-ડોટ બ્રેઇલમાં દાખલ થવા માટે તમારી સ્ક્રીન પર ટૅપ કરી શકો છો.\n\nતમે યુનિફાઇડ ઇંગ્લિશ બ્રેઇલનો ઉપયોગ કરી રહ્યાં છો. તમારી ટાઇપિંગની ભાષાને સ્વિચ કરવા માટે, SandFly સેટિંગ પર જાઓ.\n\nબ્રેઇલમાં ટાઇપ કરવા માટે, તમારે તમારા ફોનને અલગ રીતે પકડીને તેનો ઉપયોગ કરવો પડશે.</string>
   <string name="next_step">આગળ</string>
   <string name="leave_keyboard">બ્રેઇલ કીબોર્ડ છોડી દો</string>
-  <string name="hold_six_fingers_description">તમે બ્રેઇલ કીબોર્ડમાં નિયમિત TalkBack સંકેતનો ઉપયોગ કરી શકશો નહીં.\n\nશરૂ કરવા માટે તમે ટાઇપ કરો ત્યારે 6 બ્રેઇલ ડોટની સ્થિતિને સેટઅપ કરો.</string>
-  <string name="rotate_orientation_description_1">હવેથી તમે, નિયમિત ટૉકબૅક સંકેતનો ઉપયોગ કરી શકશો નહીં. બ્રેઇલ કીબોર્ડનો ઉપયોગ કરતી વખતે ટૉકબૅક ઉપલબ્ધ નથી.</string>
+  <string name="hold_six_fingers_description">તમે બ્રેઇલ કીબોર્ડમાં નિયમિત SandFly સંકેતનો ઉપયોગ કરી શકશો નહીં.\n\nશરૂ કરવા માટે તમે ટાઇપ કરો ત્યારે 6 બ્રેઇલ ડોટની સ્થિતિને સેટઅપ કરો.</string>
+  <string name="rotate_orientation_description_1">હમણાંથી, તમે નિયમિત SandFly હાવભાવનો ઉપયોગ કરી શકશો નહીં. બ્રેઇલ કીબોર્ડનો ઉપયોગ કરતી વખતે SandFly ઉપલબ્ધ નથી.</string>
   <string name="rotate_orientation_description_2">શરૂ કરવા માટે, તમારા ફોનને એ રીતે પકડો કે તેની સ્ક્રીન તમારાથી દૂર રહે.</string>
   <string name="tap_to_continue">ચાલુ રાખવા માટે ગમે-ત્યાં બે વાર ટૅપ કરો</string>
   <string name="instruction_type_letter_a">અક્ષર \"A\" ટાઇપ કરવા માટે તમારા ડાબા હાથની પહેલી આંગળી વડે ડોટ 1 પર ટૅપ કરો</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">કર્સર આગળ ખસેડ્યું</string>
   <string name="result_swipe_down_2_fingers">કીબોર્ડ છુપાવો</string>
   <string name="result_swipe_down_3_fingers">આગલું કીબોર્ડ</string>
-  <string name="rotate_orientation_announcement">હવેથી તમે, નિયમિત ટૉકબૅક સંકેતનો ઉપયોગ કરી શકશો નહીં. બ્રેઇલ કીબોર્ડનો ઉપયોગ કરતી વખતે ટૉકબૅક ઉપલબ્ધ નથી.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">હમણાંથી, તમે નિયમિત SandFly હાવભાવનો ઉપયોગ કરી શકશો નહીં. બ્રેઈલ કીબોર્ડનો ઉપયોગ કરતી વખતે SandFly ઉપલબ્ધ નથી.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">સૌ પહેલાં, તમારા ફોનને પલટાવો જેથી કરીને સ્ક્રીન તમારાથી દૂર રહે.\n\nત્યાર બાદ, ફોનને આડો ફેરવીને લૅન્ડસ્કેપ સ્થિતિમાં લાવો. તમારા હાથમાં ફોનની ટૂંકી કિનારીઓ પકડમાં આવી જવી જોઈએ. તમારા ડાબા હાથમાં USB પોર્ટ ધરાવતો છેડો હોવો જોઈએ. તમારી 3 વચલી આંગળીને સ્ક્રીન પર મૂકો અને ફોનને પકડવા માટે તમારી ટચલી આંગળી અને અંગુઠાનો ઉપયોગ કરો.\n\nજ્યારે તમે તૈયાર હો, ત્યારે ચાલુ રાખવા માટે સ્ક્રીનને બે વાર ટૅપ કરો.\n\nબ્રેઇલ કીબોર્ડમાંથી બહાર નીકળવા માટે, 3 આંગળી વડે જમીનની તરફ નીચે સ્વાઇપ કરો. આમ કરવાથી તમારા ઑરિજિનલ કીબોર્ડ પર પાછું સ્વિચ થઈ જાય છે.</string>
   <string name="rotate_orientation_continue_announcement">તમારો ફોન ઊભી સ્થિતિમાં છે. ચાલુ રાખવા માટે, તમારા ફોનને આડો ફેરવો જેથી કરીને લાંબી બાજુ તળિયા પર રહે. પછી સ્ક્રીનને તમારાથી દૂર રાખવા માટે પલટાવો. જ્યારે તમે તૈયાર હો, ત્યારે ચાલુ રાખવા માટે સ્ક્રીનને બે વાર ટૅપ કરો.</string>
   <string name="type_letter_a_announcement">સ્ક્રીનવાળો ભાગ તમારાથી વિપરિત દિશામાં રાખો. દરેક હાથની વચલી 3 આંગળીઓ સ્ક્રીનને ટચ કરી શકે તે રીતે તમારા ફોનને બન્ને હાથમાં, ફોનની ટૂંકી કિનારીઓ પર પકડો.\n\nતમારી ડાબી તર્જની આંગળી ડોટ 1 પર હોવી જોઈએ. હવે, અક્ષર “A” ટાઇપ કરવા માટે ડોટ 1 પર ટૅપ કરો.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">તમારા અન્ય કીબોર્ડ પર સ્વિચ કરવા માટે, 3 આંગળી વડે નીચેની તરફ સ્વાઇપ કરો. હમણાં જ અજમાવી જુઓ.</string>
   <string name="swipe_down_3_fingers_completed_announcement">આગલું કીબોર્ડ. સામાન્ય રીતે, આ આગલા કીબોર્ડ પર સ્વિચ કરશે. આ વખતે, તમે બ્રેઇલ કીબોર્ડમાં રહો છો કારણ કે તમે હજીપણ ટ્યૂટૉરિઅલમાં છો.</string>
   <string name="swipe_up_3_fingers_announcement">તમે તમારા ફોનને ટેબલ પર સપાટ રાખીને પણ ટેબલટોપ મોડમાં ટાઇપ કરી શકો છો. ટ્યૂટૉરિઅલને સમાપ્ત કરવા માટે, 3 આંગળી વડે ઉપર સ્વાઇપ કરો અને \"ટ્યૂટૉરિઅલને સમાપ્ત કરો\" વિકલ્પ શોધો</string>
-  <string name="open_context_menu_announcement">\'વિકલ્પો\' મેનૂ ખુલ્લું છે. તમારા ફોનને ફ્લિપ કરીને પલટાવો જેથી તેની સ્ક્રીન તમારી સામે રહે અને તેને સામાન્ય રીતે પકડો. તમે હવે નૅવિગેટ કરવા માટે નિયમિત TalkBack સંકેતોનો ઉપયોગ કરી શકો છો. વધુ વિકલ્પો જોવા માટે, જમણી બાજુએ સ્વાઇપ કરો.</string>
+  <string name="open_context_menu_announcement">\'વિકલ્પો\' મેનૂ ખુલ્લું છે. તમારા ફોનને ફ્લિપ કરીને પલટાવો જેથી તેની સ્ક્રીન તમારી સામે રહે અને તેને સામાન્ય રીતે પકડો. તમે હવે નૅવિગેટ કરવા માટે નિયમિત SandFly સંકેતોનો ઉપયોગ કરી શકો છો. વધુ વિકલ્પો જોવા માટે, જમણી બાજુએ સ્વાઇપ કરો.</string>
   <string name="hold_six_fingers_announcement">%s\nતમારા ડિવાઇસને ટેબલ પર સપાટ રાખો. પછી, ટાઇપ કરવા માટે તમને અનુકૂળ લાગે તે સ્થિતિમાં સ્ક્રીનને દરેક હાથની વચલી 3 આંગળી વડે ટચ કરીને થોડીવાર દબાવી રાખો.</string>
   <string name="hold_six_fingers_inactive_announcement">તમારા ડિવાઇસને ટેબલ પર સપાટ રાખો. પછી, ટાઇપ કરવા માટે તમને અનુકૂળ લાગે તે સ્થિતિમાં સ્ક્રીનને દરેક હાથની વચલી 3 આંગળી વડે ટચ કરીને થોડીવાર દબાવી રાખો.</string>
   <string name="finish_tutorial_announcement">બ્રેઇલ કીબોર્ડ બતાવી રહ્યાં છીએ. તમારા ફોનને પલટાવો જેથી કરીને સ્ક્રીન તમારાથી દૂર અને સામે રહે. ફોનને આડો ફેરવીને લૅન્ડસ્કેપ સ્થિતિમાં લાવો. પછી ટાઇપ કરવાનું શરૂ કરો.</string>
@@ -203,7 +203,38 @@
   <string name="custom_gesture_conflict_try_another">આ સંકેતનો ઉપયોગ \"%1$s\" માટે કરવામાં આવે છે અને તેને બદલી શકાશે નહીં. અન્ય સંકેત અજમાવી જુઓ. %2$s</string>
   <string name="custom_gesture_cannot_used">આ સંકેતનો ઉપયોગ કરી શકાતો નથી</string>
   <string name="custom_gesture_no_gesture">કોઈ સંકેત પર્ફોર્મ કર્યો નથી</string>
-  <string name="custom_gesture_try_another">અન્ય સંકેત અજમાવી જુઓ. બધા ઉપલબ્ધ સંકેતોની સૂચિ જોવા માટે, TalkBack બ્રેઇલ કીબોર્ડના મદદ કેન્દ્ર પર જાઓ. %s</string>
+  <string name="custom_gesture_try_another">અન્ય સંકેત અજમાવી જુઓ. બધા ઉપલબ્ધ સંકેતોની સૂચિ જોવા માટે, SandFly બ્રેઇલ કીબોર્ડના મદદ કેન્દ્ર પર જાઓ. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">સંકેત મેળ ખાતો નથી</string>
   <string name="custom_gesture_perform_again">તમે ફરીથી જેનો ઉપયોગ કરવા માગતા હો, તે સંકેત કરી બતાવો. %s</string>
+    <string name="tabletop_port_left_announcement">ટેબલટૉપ મોડ, ડાબી બાજુએ ચાર્જિંગ પોર્ટ</string>
+    <string name="tabletop_port_right_announcement">ટેબલટૉપ મોડ, જમણી બાજુએ ચાર્જિંગ પોર્ટ</string>
+    <string name="screen_away_port_right_announcement">સ્ક્રીન-અવે મોડ, જમણી બાજુએ ચાર્જિંગ પોર્ટ</string>
+    <string name="screen_away_port_left_announcement">સ્ક્રીન-અવે મોડ, ડાબી બાજુએ ચાર્જિંગ પોર્ટ</string>
+    <string name="screen_toward_announcement">તમારી તરફ સ્ક્રીન</string>
+    <string name="screen_toward_port_left_announcement">તમારી તરફ સ્ક્રીન, ડાબી બાજુએ ચાર્જિંગ પોર્ટ</string>
+    <string name="screen_toward_port_right_announcement">તમારી તરફ સ્ક્રીન, જમણી બાજુએ ચાર્જિંગ પોર્ટ</string>
+    <string name="screen_toward_port_down_announcement">તમારી તરફ સ્ક્રીન, ચાર્જિંગ પોર્ટ નીચે પોઇન્ટ કરે છે</string>
+    <string name="screen_toward_port_up_announcement">તમારી તરફ સ્ક્રીન, ચાર્જિંગ પોર્ટ પોઇન્ટ ઉપર</string>
+    <string name="port_right_announcement">જમણી બાજુએ ચાર્જિંગ પોર્ટ</string>
+    <string name="port_left_announcement">ડાબી બાજુએ ચાર્જિંગ પોર્ટ</string>
+    <string name="tabletop_port_near_announcement">ટેબલટૉપ મોડ, તમારી તરફ ચાર્જિંગ પોર્ટ</string>
+    <string name="tabletop_port_far_announcement">ટેબલટૉપ મોડ, ચાર્જિંગ પોર્ટ તમારાથી દૂર છે</string>
+    <string name="screen_away_port_down_announcement">સ્ક્રીન-અવે મોડ, ચાર્જિંગ પોર્ટ નીચે પોઇન્ટ કરે છે</string>
+    <string name="screen_away_port_up_announcement">સ્ક્રીન-અવે મોડ, ચાર્જિંગ પોર્ટ પોઇન્ટ ઉપર</string>
+    <string name="port_near_announcement">તમારી તરફ ચાર્જિંગ પોર્ટ</string>
+    <string name="port_far_announcement">ચાર્જિંગ પોર્ટ તમારાથી દૂર છે</string>
+    <string name="port_down_announcement">ચાર્જિંગ પોર્ટ નીચે નિર્દેશ કરે છે</string>
+    <string name="port_up_announcement">ચાર્જિંગ પોર્ટ ઉપર નિર્દેશ કરે છે</string>
+    <string name="orientation_locked_announcement">ઓરિએન્ટેશન લૉક કર્યું</string>
+    <string name="orientation_locked_port_announcement">ઓરિએન્ટેશન લૉક કર્યું. %1$s</string>
+    <string name="orientation_unlocked_announcement">ઓરિએન્ટેશન અનલૉક કર્યું</string>
+    <string name="switch_to_language_contracted_announcement">%s પર સ્વિચ કર્યું, કોન્ટ્રાક્ટેડ બ્રેઇલ</string>
+    <string name="switch_to_language_uncontracted_announcement">%s પર સ્વિચ કર્યું, અનકોન્ટ્રાક્ટેડ બ્રેઇલ</string>
+    <string name="title_pref_flip_dots_vertically">ટોચ અને નીચે બિંદુઓ સ્વેપ</string>
+    <string name="summary_pref_flip_dots_vertically">ડોટ 1 ડોટ 3 સાથે સ્થાનો અને ડોટ 4 સાથે ડોટ 6 સાથે વેપાર કરે છે</string>
+    <string name="title_pref_tablet_held_up_faces_away">ટેબ્લેટ ચહેરાને દૂર રાખે છે</string>
+    <string name="summary_pref_tablet_held_up_faces_away">જ્યારે બંધ હોય, ત્યારે ટેબ્લેટ અથવા અનફોલ્ડ કરેલ ફોન તમારી સામે રાખીને ટેબલટૉપ લેઆઉટનો ઉપયોગ કરે છે</string>
+    <string name="title_pref_typing_sounds">ટાઈપ કરવાનો અવાજ</string>
+    <string name="summary_pref_typing_sounds">જ્યારે તમે કોઈ અક્ષર, જગ્યા, નવી લાઇન લખો અથવા કાઢી નાખો ત્યારે કીબોર્ડ ક્લિક વગાડો</string>
+    <string name="skip_tutorial">ટ્યુટોરીયલ છોડો</string>
 </resources>
