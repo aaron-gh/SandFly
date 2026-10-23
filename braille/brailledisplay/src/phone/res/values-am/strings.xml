@@ -2,12 +2,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">የብሬይል ሃርድዌር ቁልፍ ሰሌዳ</string>
   <string name="bd_application_name">Android የተደራሽነት ጥቅል</string>
-  <string name="bd_ime_unavailable_activity_name">የTalkBack ብሬይል ቁልፍ ሰሌዳ አይገኝም</string>
-  <string name="bd_ime_disabled_dialog_title">የTalkBack ብሬይል ቁልፍ ሰሌዳን ያብሩ</string>
+  <string name="bd_ime_unavailable_activity_name">የSandFly ብሬይል ቁልፍ ሰሌዳ አይገኝም</string>
+  <string name="bd_ime_disabled_dialog_title">የSandFly ብሬይል ቁልፍ ሰሌዳን ያብሩ</string>
   <string name="bd_ime_disabled_dialog_message">የብሬይል ማሳያዎን ለመተየብ ለመጠቀም እሱን ለማብራት ወደ የግቤት ቅንብሮች ይሂዱ</string>
   <string name="bd_ime_disabled_dialog_title_positive">የግቤት ቅንብሮች</string>
   <string name="bd_ime_not_default_dialog_title">የግቤት ዘዴዎን ይቀይሩ</string>
-  <string name="bd_ime_not_default_dialog_message">መተየብ ለመቀጠል የTalkBack ብሬይል ቁልፍ ሰሌዳን እንደ የግቤት ዘዴዎ ያቀናብሩ</string>
+  <string name="bd_ime_not_default_dialog_message">መተየብ ለመቀጠል የSandFly ብሬይል ቁልፍ ሰሌዳን እንደ የግቤት ዘዴዎ ያቀናብሩ</string>
   <string name="bd_ime_not_default_dialog_positive">ግቤትን ይቀይሩ</string>
   <string name="type_unlabeled">ያልተሰየመ</string>
   <string name="type_unlabeled_edittext">መሰየሚያ ያልተሰጠው የአርትዖት ሳጥን</string>
@@ -25,8 +25,8 @@
   <string name="overlay_pan_left_button">ወደ ግራ አንፏቅ</string>
   <string name="overlay_pan_right_button">ወደ ቀኝ አንፏቅ</string>
   <string name="bd_preferences_title">የብሬይል ማሳያ</string>
-  <string name="bd_preferences_banner_talkback_off_subtitle">የብሬይል ማሳያን ለመጠቀም መጀመሪያ TalkBackን ያብሩ</string>
-  <string name="bd_preferences_banner_talkback_off_button">ወደ TalkBack ይሂዱ</string>
+  <string name="bd_preferences_banner_talkback_off_subtitle">የብሬይል ማሳያን ለመጠቀም መጀመሪያ SandFlyን ያብሩ</string>
+  <string name="bd_preferences_banner_talkback_off_button">ወደ SandFly ይሂዱ</string>
   <string name="bd_preferences_banner_bluetooth_off_subtitle">የብሬይል ማሳያን ለመጠቀም መጀመሪያ ብሉቱዝን ያብሩ</string>
   <string name="bd_preferences_banner_bluetooth_off_button">ብሉቱዝን አብራ</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">የብሬይል ማሳያን ለመጠቀም %s በአቅራቢያ ያሉ መሣሪያዎችን መድረስ ይኖርበታል</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">የአሰሳ ሁነታን ለመጠቀም ከነባሪው የቁልፍ ካርታ ወደ የተሻሻለው የቁልፍ ካርታ መቀየር ያስፈልግዎታል። ይህ ለውጥ አንዳንድ የብሬይል ማሳያ ትዕዛዞችዎን ያዘምናል</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">ቅንብሮች</string>
   <string name="bd_command_change_dialog_title">አንዳንድ ትዕዛዞች ተዘምነዋል</string>
-  <string name="bd_command_change_dialog_message">እነዚህ የብሬይል ማሳያ ትዕዛዞች በዚህ የTalkBack ሥሪት ውስጥ ተዘምነዋል፦\n\n• ቀዳሚ ንጥል፦ ነጥቦች 1፣ 7ን ይጫኑ\n\n• ቀጣይ ንጥል፦ ነጥቦች 4፣ 8ን ይጫኑ\n\n• ቀዳሚ የንባብ መቆጣጠሪያ፦ ነጥቦች 2፣ 3፣ 7፣ 8ን ይጫኑ\n\n• ቀጣይ የንባብ መቆጣጠሪያ፦ ነጥቦች 5፣ 6፣ 7፣ 8ን ይጫኑ</string>
+  <string name="bd_command_change_dialog_message">እነዚህ የብሬይል ማሳያ ትዕዛዞች በዚህ የSandFly ሥሪት ውስጥ ተዘምነዋል፦\n\n• ቀዳሚ ንጥል፦ ነጥቦች 1፣ 7ን ይጫኑ\n\n• ቀጣይ ንጥል፦ ነጥቦች 4፣ 8ን ይጫኑ\n\n• ቀዳሚ የንባብ መቆጣጠሪያ፦ ነጥቦች 2፣ 3፣ 7፣ 8ን ይጫኑ\n\n• ቀጣይ የንባብ መቆጣጠሪያ፦ ነጥቦች 5፣ 6፣ 7፣ 8ን ይጫኑ</string>
   <string name="bd_preference_braille_contracted">ውል ያለው ብሬይል</string>
   <string name="bd_preference_braille_uncontracted">ውል የሌለው ብሬይል</string>
   <string name="bd_braille_grade_tips">የብሬይል ማሳያን በመጠቀም ውል ባለው እና ውል በሌለው መካከል በፍጥነት ለመቀያየር ክፍተትን እና 1፣ 2፣ 4፣ 5 ነጥቦችን ይጫኑ።\n\nይህ ትዕዛዝ ሁለቱም የብሬይል ደረጃዎች ያሉት ቋንቋ የሚጠቀሙ ከሆነ ይህ ትዕዛዝ ይሰራል።</string>
@@ -71,8 +71,8 @@
   <string name="bd_commands_bindings_category_navigation_summary">በንጥሎች መካከል ማንቀሳቀስ</string>
   <string name="bd_commands_bindings_category_system_actions_title">የሥርዓት እርምጃዎች</string>
   <string name="bd_commands_bindings_category_system_actions_summary">ተመለስ፣ መነሻ፣ ማሳወቂያዎች እና ሌሎችም</string>
-  <string name="bd_commands_bindings_category_talkback_features_title">የTalkBack ባህሪያት</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">የTalkback ምናሌዎች እና ቅንብሮች</string>
+  <string name="bd_commands_bindings_category_talkback_features_title">የSandFly ባህሪያት</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly ምናሌዎች እና መቼቶች</string>
   <string name="bd_commands_bindings_category_braille_settings_title">የብሬይል ቅንብሮች</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">የብሬይል ቋንቋ እና ቅንብሮች</string>
   <string name="bd_commands_bindings_category_text_editing_title">የጽሁፍ አርትዖት</string>
@@ -219,10 +219,10 @@
   <string name="bd_cmd_global_all_apps">ሁሉንም መተግበሪያዎችን ክፈት</string>
   <string name="bd_cmd_toggle_screen_search">የማያ ገፅ ፍለጋን ክፈት</string>
   <string name="bd_cmd_edit_custom_label">ብጁ መለያን አርትዕ አድርግ</string>
-  <string name="bd_cmd_open_talkback_menu">የTalkBack ምናሌን ክፈት</string>
-  <string name="bd_cmd_toggle_voice_feedback">TalkBack ንግግርን አብራ ወይም አጥፋ</string>
+  <string name="bd_cmd_open_talkback_menu">የSandFly ምናሌን ክፈት</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly ንግግርን አብራ ወይም አጥፋ</string>
   <string name="bd_cmd_read_stop">ማንበብ አቁም</string>
-  <string name="bd_cmd_talkback_settings">የTalkBack ቅንብሮችን ክፈት</string>
+  <string name="bd_cmd_talkback_settings">የSandFly ቅንብሮችን ክፈት</string>
   <string name="bd_cmd_switch_to_next_input_language">ወደ ቀጣዩ የትየባ ቋንቋ ቀይር</string>
   <string name="bd_cmd_switch_to_next_output_language">ወደ ቀጣዩ የንባብ ቋንቋ ቀይር</string>
   <string name="bd_cmd_toggle_contracted_mode">በታመቀ እና ባልታመቀ መካከል ቀያይር</string>
@@ -295,15 +295,15 @@
   <string name="bd_cmd_subcategory_web_navigation_description">የአሰሳ ሁነታ ውስጥ ለመግባት ትዕዛዙን በመጠቀም ከዚያ የሚከተሉትን የፊደል ወይም ቁጥር አቋራጮች በመተየብ ድረ-ገፆችን በፍጥነት ማሰስ ይችላሉ።\n\nእንዲሁም እነዚህ አቋራጮች የአሰሳ ሁነታ ውስጥ ሳይገባ ጥቅም ላይ መዋል ይችላሉ፣ ነገር ግን ወደ «ቀጣይ» ትዕዛዞቹ ነጥብ 8 ማከል ያስፈልግዎታል</string>
   <string name="bd_cmd_subcategory_title_web_navigation">የሠንጠረዥ አሰሳ</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">የብሬይል ማሳያ ቅንብር ይጥፋ?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">በማንኛውም ጊዜ በTalkBack ቅንብሮች ውስጥ እንደገና ሊያበሩት ይችላሉ።</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">በማንኛውም ጊዜ በSandFly ቅንብሮች ውስጥ እንደገና ሊያበሩት ይችላሉ።</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">አጥፋ</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">አንዳንድ ትዕዛዞች አይገኙም</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">የማሰስ፣ የብሬይል ቅንብሮች እና የአንዳንድ የTalkBack ባህሪያት ትዕዛዞች በመተየብ ወይም ማርትዕ ጊዜ አይገኙም።\n\nእነዚህን ትዕዛዞች ለመጠቀም መጀመሪያ የቁልፍ ሰሌዳውን ይዝጉ።</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">የማሰስ፣ የብሬይል ቅንብሮች እና የአንዳንድ የSandFly ባህሪያት ትዕዛዞች በመተየብ ወይም ማርትዕ ጊዜ አይገኙም።\n\nእነዚህን ትዕዛዞች ለመጠቀም መጀመሪያ የቁልፍ ሰሌዳውን ይዝጉ።</string>
   <string name="bd_caption_tutorial_dialog_title">በእርስዎ የብሬይል ማሳያ ላይ ያሉ መግለጫ ጽሁፎች</string>
   <string name="bd_caption_tutorial_dialog_message">ለዚህ ቪድዮ መግለጫ ጽሑፎችን ለማሳየት ወይም ለመደበቅ ክፍተት እና ነጥቦች 1፣ 4፣ 7፣ 8 ላይ ይጫኑ።\n\nለሚደገፍ ሚዲያ መግለጫ ጽሑፎችን በራስ-ሰር ለማሳየት በቅንብሮች ውስጥ የብሬይል ማሳያ ላይ መግለጫ ጽሑፎችን አሳይ የሚለውን ያብሩ።</string>
   <string name="bd_caption_tutorial_dialog_checkbox">መግለጫ ጽሑፎች በሚገኙበት ጊዜ ይህን መልዕክት ሁልጊዜ ያሳዩ</string>
   <string name="bd_usb_connect_dialog_title">የብሬል ማሳያ ከዩኤስቢ ጋር ተገናኝቷል</string>
-  <string name="bd_usb_connect_dialog_message">የእርስዎ የ%s ባትሪ የብሬል ማሳያዎን ኃይል በመሙላት ላይ ነው።\n\nወደ ብሉቱዝ መቀየር ካስፈለገዎ የእርስዎን ዩኤስቢ ወይም የዩኤስቢ መገናኛ ግንኙነት ያቋርጡ እና ወደ TalkBack ቅንብሮች &gt; የብሬል ማሳያ ይሂዱ።</string>
+  <string name="bd_usb_connect_dialog_message">የእርስዎ የ%s ባትሪ የብሬል ማሳያዎን ኃይል በመሙላት ላይ ነው።\n\nወደ ብሉቱዝ መቀየር ካስፈለገዎ የእርስዎን ዩኤስቢ ወይም የዩኤስቢ መገናኛ ግንኙነት ያቋርጡ እና ወደ SandFly ቅንብሮች &gt; የብሬል ማሳያ ይሂዱ።</string>
   <string name="bd_device">ስልክ</string>
   <string name="bd_battery_low_dialog_title">%s ባትሪ ዝቅተኛ ነው</string>
   <string name="bd_battery_low_dialog_message">የእርስዎ %s ባትሪ የብሬይል ማሳያዎን ኃይል እየሞላ ነው።\n\nባትሪን ለመቆጠብ፦\n\n
@@ -315,7 +315,18 @@
   <string name="popup_message_history_clear">ሁሉንም አጽዳ</string>
   <string name="popup_message_history_empty">ባዶ</string>
   <string name="popup_message_history_consent_dialog_title">የመሣሪያ የመልዕክት ታሪክ ይብራ?</string>
-  <string name="popup_message_history_consent_dialog_msg">ይሄ እንደ ማሳወቂያዎች እና ማንቂያዎች ያሉ አንዳንድ መልዕክቶችን በTalkBack ውስጥ ያከማቻል። ይህን ቅንብር በማንኛውም ጊዜ መለወጥ ይችላሉ።</string>
+  <string name="popup_message_history_consent_dialog_msg">ይሄ እንደ ማሳወቂያዎች እና ማንቂያዎች ያሉ አንዳንድ መልዕክቶችን በSandFly ውስጥ ያከማቻል። ይህን ቅንብር በማንኛውም ጊዜ መለወጥ ይችላሉ።</string>
   <string name="popup_message_history_consent_dialog_positive_btn">አብራ</string>
   <string name="popup_message_history_consent_dialog_negative_btn">አይ፣ አመሰግናለሁ</string>
+    <string name="external_display_channel">የብሬይል ማሳያዎች ከሌሎች መተግበሪያዎች</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ለSandFly የብሬይል ማሳያ እንዲሆን ፍቀድ?</string>
+    <string name="external_display_ask_text">SandFly እስክትፈቅድ ድረስ አይጠቀምበትም።</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ሁሉንም ነገር ማንበብ ይችላል SandFly ትርኢቶችን በብሬይል፣ ይህም በስክሪኑ ላይ ያለ ማንኛውም ነገር ሊሆን ይችላል፣ መልእክት እና የምትተይቡትን ጨምሮ። እንዲሁም በብሬይል ማሳያ በተቻለዎት መጠን መሳሪያዎን ይቆጣጠራሉ፡ ይተይቡ፣ መተግበሪያዎችን ይክፈቱ እና ማንኛውንም SandFly ትዕዛዝ ያሂዱ። የሚያምኗቸውን መተግበሪያዎች ብቻ ፍቀድ።</string>
+    <string name="external_display_allow">ፍቀድ</string>
+    <string name="external_display_deny">አትፍቀድ</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> የብሬይል ማሳያዎ ነው።</string>
+    <string name="external_display_in_use_text">SandFly ሲጠቀም <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ስክሪኑን ማንበብ እና መሳሪያውን መቆጣጠር ይችላል።</string>
+    <string name="external_displays_title">ከሌሎች መተግበሪያዎች የመጡ ማሳያዎች</string>
+    <string name="external_displays_summary">የሚፈቅዷቸው መተግበሪያዎች ለ SandFly የብሬይል ማሳያ ሊሆኑ ይችላሉ። የብሬይል ማሳያ የሆነ መተግበሪያ ስክሪኑን ማንበብ እና መሳሪያውን መቆጣጠር ይችላል።</string>
+    <string name="external_displays_none">ምንም መተግበሪያዎች የብሬይል ማሳያ ሊሆኑ አይችሉም።</string>
 </resources>
