@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">ШІ на пристрої</string>
     <string name="summary_pref_on_device_ai">Опишіть зображення та опишіть екран із моделлю цього телефону без ключа API</string>
-    <string name="pref_on_device_ai_enable">Використовуйте AI на пристрої</string>
+    <string name="pref_on_device_ai_enable">Використовувати AI на пристрої</string>
     <string name="pref_on_device_ai_enable_summary">Зображення та знімки екрана описуються на цьому телефоні та ніколи не надсилаються на Google. Він працює повільніше, ніж хмара, і споживає більше акумулятора.</string>
     <string name="pref_on_device_ai_enable_needs_model">Спочатку завантажте або імпортуйте модель.</string>
     <string name="pref_on_device_ai_unsupported_cpu">Не доступний. Цей телефон не має 64-розрядного процесора ARM.</string>
@@ -21,7 +21,7 @@
     <string name="pref_on_device_ai_downloading">Завантаження, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. Торкніться, щоб зупинити. Звідси він продовжується, якщо ви починаєте його знову.</string>
     <string name="on_device_ai_progress_sizes">%1$s з %2$s</string>
-    <string name="on_device_ai_progress_with_time">%1$s, %2$s вліво</string>
+    <string name="on_device_ai_progress_with_time">%1$s, залишилося %2$s</string>
     <string name="on_device_ai_announce_progress">Завантаження, %1$d відсотків</string>
     <string name="on_device_ai_announce_done">Модель завантажено</string>
     <string name="on_device_ai_notification_channel">Завантаження AI на пристрій</string>
@@ -30,7 +30,7 @@
     <string name="on_device_ai_notification_failed">Не вдалося завантажити. Відкрийте налаштування, щоб повторити спробу.</string>
     <string name="on_device_ai_notification_paused">Android призупинив завантаження. Відкрийте налаштування, щоб продовжити.</string>
     <string name="pref_on_device_ai_importing">Перевірка файлу моделі</string>
-    <string name="pref_on_device_ai_manage">Керуйте моделями</string>
+    <string name="pref_on_device_ai_manage">Керування моделями</string>
     <string name="pref_on_device_ai_manage_none">Немає завантажених моделей</string>
     <plurals name="on_device_ai_models_downloaded">
         <item quantity="one">Завантажено %1$d модель</item>
@@ -48,7 +48,7 @@
     <string name="manage_models_deleted">%1$s видалено</string>
     <string name="pref_on_device_ai_import">Використовуйте файл моделі зі сховища</string>
     <string name="pref_on_device_ai_import_summary">Виберіть файл Gemma 4 litertlm, який ви вже завантажили.</string>
-    <string name="on_device_ai_import_done">Встановлена модель</string>
+    <string name="on_device_ai_import_done">Модель встановлено</string>
     <string name="on_device_ai_import_failed">Цей файл не підтримується файлом моделі Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Термін для відповідей</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly перестає чекати після цього часу. Опис екрана займає більше часу, ніж опис зображення.</string>

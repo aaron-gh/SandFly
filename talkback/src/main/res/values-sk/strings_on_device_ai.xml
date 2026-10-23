@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">AI na zariadení</string>
     <string name="summary_pref_on_device_ai">Popíšte obrázok a popíšte obrazovku s modelom tohto telefónu bez kľúča API</string>
-    <string name="pref_on_device_ai_enable">Použite AI na zariadení</string>
+    <string name="pref_on_device_ai_enable">Používať AI v zariadení</string>
     <string name="pref_on_device_ai_enable_summary">Obrázky a snímky obrazovky sú popísané na tomto telefóne a nikdy sa neodosielajú na adresu Google. Je pomalší ako cloud a využíva viac batérie.</string>
     <string name="pref_on_device_ai_enable_needs_model">Najprv si stiahnite alebo importujte model.</string>
     <string name="pref_on_device_ai_unsupported_cpu">Nie je k dispozícii. Tento telefón nemá 64-bitový procesor ARM.</string>
@@ -21,7 +21,7 @@
     <string name="pref_on_device_ai_downloading">Sťahovanie, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. Klepnutím zastavíte. Ak to znova spustíte, pokračuje to odtiaľto.</string>
     <string name="on_device_ai_progress_sizes">%1$s z %2$s</string>
-    <string name="on_device_ai_progress_with_time">Zostáva %1$s, %2$s</string>
+    <string name="on_device_ai_progress_with_time">%1$s, zostáva %2$s</string>
     <string name="on_device_ai_announce_progress">Sťahovanie, %1$d percent</string>
     <string name="on_device_ai_announce_done">Model stiahnutý</string>
     <string name="on_device_ai_notification_channel">Sťahovanie AI na zariadení</string>

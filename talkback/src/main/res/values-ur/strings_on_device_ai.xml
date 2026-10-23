@@ -10,18 +10,18 @@
     <string name="pref_on_device_ai_model">ماڈل</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
-    <string name="on_device_ai_tag_downloaded">ڈاؤن لوڈ</string>
+    <string name="on_device_ai_tag_downloaded">ڈاؤن لوڈ شدہ</string>
     <string name="on_device_ai_tag_experimental">تجرباتی</string>
     <string name="on_device_ai_tag_needs_memory">تقریباً %1$d GB میموری کی ضرورت ہے۔</string>
     <string name="on_device_ai_tag_not_enough_memory">اس فون پر کافی میموری نہیں ہے۔</string>
     <string name="on_device_ai_choose_model">ایک ماڈل منتخب کریں</string>
     <string name="on_device_ai_model_too_big">اس فون میں اس ماڈل کے لیے کافی میموری نہیں ہے۔</string>
-    <string name="pref_on_device_ai_download">ڈاؤن لوڈ ماڈل (%1$s)</string>
+    <string name="pref_on_device_ai_download">ماڈل ڈاؤن لوڈ کریں (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">گلے لگانے والے چہرے سے ایک بار ڈاؤن لوڈ کریں۔ اس کے بعد، نیٹ ورک پر کچھ بھی نہیں بھیجا جاتا ہے۔</string>
     <string name="pref_on_device_ai_downloading">ڈاؤن لوڈ ہو رہا ہے، %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s روکنے کے لیے تھپتھپائیں۔ اگر آپ اسے دوبارہ شروع کرتے ہیں تو یہ یہاں سے جاری رہتا ہے۔</string>
-    <string name="on_device_ai_progress_sizes">%1$s از %2$s</string>
-    <string name="on_device_ai_progress_with_time">%1$s، %2$s بائیں</string>
+    <string name="on_device_ai_progress_sizes">%2$s میں سے %1$s</string>
+    <string name="on_device_ai_progress_with_time">%1$s، %2$s باقی</string>
     <string name="on_device_ai_announce_progress">ڈاؤن لوڈ ہو رہا ہے، %1$d فیصد</string>
     <string name="on_device_ai_announce_done">ماڈل ڈاؤن لوڈ ہو گیا</string>
     <string name="on_device_ai_notification_channel">آن ڈیوائس AI ڈاؤن لوڈ</string>
@@ -56,7 +56,7 @@
         <item quantity="other">%1$d منٹ</item>
     </plurals>
     <string name="pref_on_device_ai_processor">پروسیسر</string>
-    <string name="pref_on_device_ai_short_prompts">مختصر اسکرین کی تفصیل</string>
+    <string name="pref_on_device_ai_short_prompts">اسکرین کی مختصر تفصیل</string>
     <string name="pref_on_device_ai_short_prompts_summary">وضاحت کریں اسکرین کم تفصیلات طلب کرتی ہے، لہذا یہ جلد جواب دیتی ہے۔ مکمل تفصیل کے لیے اسے آف کریں۔</string>
     <string name="on_device_ai_error_network">ڈاؤن لوڈ رک گیا۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔ جہاں رکا تھا وہیں چلتا رہے گا۔</string>
     <string name="on_device_ai_error_http">ڈاؤن لوڈ سرور نے درخواست قبول نہیں کی۔ بعد میں دوبارہ کوشش کریں، یا اس کے بجائے فائل درآمد کریں۔</string>

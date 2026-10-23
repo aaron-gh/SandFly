@@ -7,7 +7,7 @@
     <string name="pref_on_device_ai_enable_needs_model">முதலில் ஒரு மாதிரியைப் பதிவிறக்கவும் அல்லது இறக்குமதி செய்யவும்.</string>
     <string name="pref_on_device_ai_unsupported_cpu">கிடைக்கவில்லை. இந்த போனில் 64-பிட் ARM செயலி இல்லை.</string>
     <string name="pref_on_device_ai_not_enough_ram">இந்த மாடலுக்கு கிடைக்கவில்லை. இந்த போனில் போதிய நினைவகம் இல்லை.</string>
-    <string name="pref_on_device_ai_model">மாதிரி</string>
+    <string name="pref_on_device_ai_model">மாடல்</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
     <string name="on_device_ai_tag_downloaded">பதிவிறக்கம் செய்யப்பட்டது</string>
@@ -16,11 +16,11 @@
     <string name="on_device_ai_tag_not_enough_memory">இந்த மொபைலில் போதுமான நினைவகம் இல்லை.</string>
     <string name="on_device_ai_choose_model">ஒரு மாடலைத் தேர்வுசெய்க</string>
     <string name="on_device_ai_model_too_big">இந்த மொபைலில் அந்த மாடலுக்கு போதுமான நினைவகம் இல்லை.</string>
-    <string name="pref_on_device_ai_download">பதிவிறக்க மாதிரி (%1$s)</string>
+    <string name="pref_on_device_ai_download">மாடலைப் பதிவிறக்கு (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">கட்டிப்பிடிக்கும் முகத்திலிருந்து ஒருமுறை பதிவிறக்கம். அதன் பிறகு, நெட்வொர்க்கில் எதுவும் அனுப்பப்படவில்லை.</string>
     <string name="pref_on_device_ai_downloading">பதிவிறக்குகிறது, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. நிறுத்த தட்டவும். நீங்கள் மீண்டும் தொடங்கினால் அது இங்கிருந்து தொடர்கிறது.</string>
-    <string name="on_device_ai_progress_sizes">%1$s of %2$s</string>
+    <string name="on_device_ai_progress_sizes">%2$s இல் %1$s</string>
     <string name="on_device_ai_progress_with_time">%1$s, %2$s மீதமுள்ளது</string>
     <string name="on_device_ai_announce_progress">பதிவிறக்குகிறது, %1$d சதவீதம்</string>
     <string name="on_device_ai_announce_done">மாடல் பதிவிறக்கப்பட்டது</string>
@@ -30,8 +30,8 @@
     <string name="on_device_ai_notification_failed">பதிவிறக்கம் தோல்வியடைந்தது. மீண்டும் முயற்சிக்க, அமைப்புகளைத் திறக்கவும்.</string>
     <string name="on_device_ai_notification_paused">Android பதிவிறக்கத்தை இடைநிறுத்தியது. தொடர அமைப்புகளைத் திறக்கவும்.</string>
     <string name="pref_on_device_ai_importing">மாதிரி கோப்பை சரிபார்க்கிறது</string>
-    <string name="pref_on_device_ai_manage">மாதிரிகளை நிர்வகிக்கவும்</string>
-    <string name="pref_on_device_ai_manage_none">மாதிரிகள் பதிவிறக்கம் செய்யப்படவில்லை</string>
+    <string name="pref_on_device_ai_manage">மாடல்களை நிர்வகி</string>
+    <string name="pref_on_device_ai_manage_none">மாடல்கள் எதுவும் பதிவிறக்கப்படவில்லை</string>
     <plurals name="on_device_ai_models_downloaded">
         <item quantity="one">%1$d மாடல் பதிவிறக்கப்பட்டது</item>
         <item quantity="other">%1$d மாதிரிகள் பதிவிறக்கப்பட்டன</item>
@@ -46,7 +46,7 @@
     <string name="manage_models_deleted">%1$s நீக்கப்பட்டது</string>
     <string name="pref_on_device_ai_import">சேமிப்பகத்திலிருந்து மாதிரி கோப்பைப் பயன்படுத்தவும்</string>
     <string name="pref_on_device_ai_import_summary">நீங்கள் ஏற்கனவே பதிவிறக்கம் செய்துள்ள Gemma 4litlm கோப்பைத் தேர்ந்தெடுக்கவும்.</string>
-    <string name="on_device_ai_import_done">மாதிரி நிறுவப்பட்டது</string>
+    <string name="on_device_ai_import_done">மாடல் நிறுவப்பட்டது</string>
     <string name="on_device_ai_import_failed">அந்த கோப்பு ஆதரிக்கப்படும் Gemma 4 மாதிரி கோப்பு அல்ல.</string>
     <string name="pref_on_device_ai_timeout">பதில்களுக்கான கால வரம்பு</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly நீண்ட காலத்திற்குப் பிறகு காத்திருப்பதை நிறுத்துகிறது. படத்தை விவரிக்கும் திரையை விவரிக்க அதிக நேரம் எடுக்கும்.</string>
@@ -56,7 +56,7 @@
         <item quantity="other">%1$d நிமிடங்கள்</item>
     </plurals>
     <string name="pref_on_device_ai_processor">செயலி</string>
-    <string name="pref_on_device_ai_short_prompts">குறுகிய திரை விளக்கங்கள்</string>
+    <string name="pref_on_device_ai_short_prompts">திரையின் சுருக்கமான விளக்கங்கள்</string>
     <string name="pref_on_device_ai_short_prompts_summary">குறைவான விவரங்களைக் கேட்கும் திரையை விவரிக்கவும், எனவே அது விரைவில் பதிலளிக்கும். முழுமையான விளக்கங்களுக்கு இதை முடக்கவும்.</string>
     <string name="on_device_ai_error_network">பதிவிறக்கம் நிறுத்தப்பட்டது. உங்கள் இணைப்பைச் சரிபார்த்து மீண்டும் முயலவும். அது நின்ற இடத்திலேயே தொடரும்.</string>
     <string name="on_device_ai_error_http">பதிவிறக்க சேவையகம் கோரிக்கையை ஏற்கவில்லை. பிறகு முயற்சிக்கவும் அல்லது அதற்குப் பதிலாக ஒரு கோப்பை இறக்குமதி செய்யவும்.</string>

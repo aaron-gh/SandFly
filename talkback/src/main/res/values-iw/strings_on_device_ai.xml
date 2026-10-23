@@ -2,12 +2,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">AI במכשיר</string>
     <string name="summary_pref_on_device_ai">תאר תמונה ותאר מסך עם דגם בטלפון זה, ללא מפתח API</string>
-    <string name="pref_on_device_ai_enable">השתמש ב-AI במכשיר</string>
+    <string name="pref_on_device_ai_enable">שימוש ב-AI במכשיר</string>
     <string name="pref_on_device_ai_enable_summary">תמונות וצילומי מסך מתוארים בטלפון זה ואינם נשלחים לעולם אל Google. הוא איטי יותר מהענן וצורך יותר סוללה.</string>
     <string name="pref_on_device_ai_enable_needs_model">הורד או ייבא תחילה דגם.</string>
     <string name="pref_on_device_ai_unsupported_cpu">לא זמין. לטלפון הזה אין מעבד ARM של 64 סיביות.</string>
     <string name="pref_on_device_ai_not_enough_ram">לא זמין עבור דגם זה. לטלפון הזה אין מספיק זיכרון.</string>
-    <string name="pref_on_device_ai_model">דגם</string>
+    <string name="pref_on_device_ai_model">מודל</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
     <string name="on_device_ai_tag_downloaded">הורד</string>
@@ -16,7 +16,7 @@
     <string name="on_device_ai_tag_not_enough_memory">אין מספיק זיכרון בטלפון הזה.</string>
     <string name="on_device_ai_choose_model">בחירת מודל</string>
     <string name="on_device_ai_model_too_big">לטלפון הזה אין מספיק זיכרון עבור הדגם הזה.</string>
-    <string name="pref_on_device_ai_download">הורד דגם (%1$s)</string>
+    <string name="pref_on_device_ai_download">הורדת מודל (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">הורדה פעם אחת מ-Huging Face. לאחר מכן, שום דבר לא נשלח דרך הרשת.</string>
     <string name="pref_on_device_ai_downloading">מוריד, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. הקש כדי לעצור. זה ממשיך מכאן אם אתה מתחיל את זה שוב.</string>
@@ -30,8 +30,8 @@
     <string name="on_device_ai_notification_failed">ההורדה נכשלה. פתח את ההגדרות כדי לנסות שוב.</string>
     <string name="on_device_ai_notification_paused">Android השהה את ההורדה. פתח את ההגדרות כדי להמשיך.</string>
     <string name="pref_on_device_ai_importing">בדיקת קובץ הדגם</string>
-    <string name="pref_on_device_ai_manage">ניהול דגמים</string>
-    <string name="pref_on_device_ai_manage_none">לא הורדו דגמים</string>
+    <string name="pref_on_device_ai_manage">ניהול מודלים</string>
+    <string name="pref_on_device_ai_manage_none">לא הורדו מודלים</string>
     <plurals name="on_device_ai_models_downloaded">
         <item quantity="one">%1$d model downloaded</item>
         <item quantity="two">%1$d models downloaded</item>
@@ -47,7 +47,7 @@
     <string name="manage_models_deleted">%1$s נמחק</string>
     <string name="pref_on_device_ai_import">השתמש בקובץ דגם מהאחסון</string>
     <string name="pref_on_device_ai_import_summary">בחר קובץ Gemma 4 litertlm שכבר הורדת.</string>
-    <string name="on_device_ai_import_done">הדגם מותקן</string>
+    <string name="on_device_ai_import_done">המודל הותקן</string>
     <string name="on_device_ai_import_failed">הקובץ הזה אינו קובץ דגם Gemma 4 נתמך.</string>
     <string name="pref_on_device_ai_timeout">מגבלת זמן לתשובות</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly מפסיק לחכות לאחר זמן רב כל כך. מסך תיאור לוקח יותר זמן מאשר תמונה תיאור.</string>

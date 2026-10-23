@@ -16,12 +16,12 @@
     <string name="on_device_ai_tag_not_enough_memory">ບໍ່ມີໜ່ວຍຄວາມຈຳພຽງພໍໃນໂທລະສັບໜ່ວຍນີ້.</string>
     <string name="on_device_ai_choose_model">ເລືອກຕົວແບບ</string>
     <string name="on_device_ai_model_too_big">ໂທລະສັບໜ່ວຍນີ້ບໍ່ມີໜ່ວຍຄວາມຈຳພຽງພໍສຳລັບລຸ້ນນັ້ນ.</string>
-    <string name="pref_on_device_ai_download">ດາວໂຫລດຮູບແບບ (%1$s)</string>
+    <string name="pref_on_device_ai_download">ດາວໂຫຼດຕົວແບບ (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">ດາວໂຫຼດຄັ້ງດຽວຈາກ Hugging Face. ຫຼັງຈາກນັ້ນ, ບໍ່ມີຫຍັງຖືກສົ່ງຜ່ານເຄືອຂ່າຍ.</string>
     <string name="pref_on_device_ai_downloading">ກຳລັງດາວໂຫຼດ, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. ແຕະເພື່ອຢຸດ. ມັນສືບຕໍ່ຈາກນີ້ຖ້າທ່ານເລີ່ມຕົ້ນມັນອີກເທື່ອຫນຶ່ງ.</string>
     <string name="on_device_ai_progress_sizes">%1$s ຈາກ %2$s</string>
-    <string name="on_device_ai_progress_with_time">%1$s, %2$s ຊ້າຍ</string>
+    <string name="on_device_ai_progress_with_time">%1$s, ເຫຼືອ %2$s</string>
     <string name="on_device_ai_announce_progress">ກຳລັງດາວໂຫຼດ, %1$d ເປີເຊັນ</string>
     <string name="on_device_ai_announce_done">ດາວໂຫຼດຕົວແບບແລ້ວ</string>
     <string name="on_device_ai_notification_channel">ດາວໂຫຼດ AI ໃນອຸປະກອນ</string>
@@ -46,7 +46,7 @@
     <string name="manage_models_deleted">%1$s ຖືກລຶບແລ້ວ</string>
     <string name="pref_on_device_ai_import">ໃຊ້ໄຟລ໌ຕົວແບບຈາກບ່ອນເກັບຂໍ້ມູນ</string>
     <string name="pref_on_device_ai_import_summary">ເລືອກໄຟລ໌ Gemma 4 litertlm ທີ່ທ່ານດາວໂຫຼດມາແລ້ວ.</string>
-    <string name="on_device_ai_import_done">ຕົວແບບຕິດຕັ້ງ</string>
+    <string name="on_device_ai_import_done">ຕິດຕັ້ງຕົວແບບແລ້ວ</string>
     <string name="on_device_ai_import_failed">ໄຟລ໌ນັ້ນບໍ່ແມ່ນໄຟລ໌ຮູບແບບ Gemma 4 ທີ່ຮອງຮັບ.</string>
     <string name="pref_on_device_ai_timeout">ກໍານົດເວລາສໍາລັບຄໍາຕອບ</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly ຢຸດລໍຖ້າຫຼັງຈາກດົນນີ້. ໜ້າຈໍອະທິບາຍໃຊ້ເວລາດົນກວ່າການອະທິບາຍພາບ.</string>

@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">AI v napravi</string>
     <string name="summary_pref_on_device_ai">Opišite sliko in opišite zaslon z modelom na tem telefonu, brez ključa API</string>
-    <string name="pref_on_device_ai_enable">Uporabite AI v napravi</string>
+    <string name="pref_on_device_ai_enable">Uporabi AI v napravi</string>
     <string name="pref_on_device_ai_enable_summary">Slike in posnetki zaslona so opisani v tem telefonu in niso nikoli poslani na Google. Je počasnejši od oblaka in porabi več baterije.</string>
     <string name="pref_on_device_ai_enable_needs_model">Najprej prenesite ali uvozite model.</string>
     <string name="pref_on_device_ai_unsupported_cpu">Ni na voljo. Ta telefon nima 64-bitnega procesorja ARM.</string>
@@ -21,7 +21,7 @@
     <string name="pref_on_device_ai_downloading">Prenašanje, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. Tapnite za ustavitev. Od tu se nadaljuje, če ga začnete znova.</string>
     <string name="on_device_ai_progress_sizes">%1$s od %2$s</string>
-    <string name="on_device_ai_progress_with_time">%1$s, %2$s levo</string>
+    <string name="on_device_ai_progress_with_time">%1$s, še %2$s</string>
     <string name="on_device_ai_announce_progress">Prenos, %1$d odstotkov</string>
     <string name="on_device_ai_announce_done">Model prenesen</string>
     <string name="on_device_ai_notification_channel">Prenos AI v napravi</string>

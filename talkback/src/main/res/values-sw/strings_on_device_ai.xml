@@ -7,7 +7,7 @@
     <string name="pref_on_device_ai_enable_needs_model">Pakua au leta modeli kwanza.</string>
     <string name="pref_on_device_ai_unsupported_cpu">Haipatikani. Simu hii haina kichakataji cha 64-bit ARM.</string>
     <string name="pref_on_device_ai_not_enough_ram">Haipatikani kwa mtindo huu. Simu hii haina kumbukumbu ya kutosha.</string>
-    <string name="pref_on_device_ai_model">Mfano</string>
+    <string name="pref_on_device_ai_model">Muundo</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
     <string name="on_device_ai_tag_downloaded">imepakuliwa</string>
@@ -21,16 +21,16 @@
     <string name="pref_on_device_ai_downloading">Inapakua, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. Gusa ili kuacha. Inaendelea kutoka hapa ikiwa utaianzisha tena.</string>
     <string name="on_device_ai_progress_sizes">%1$s ya %2$s</string>
-    <string name="on_device_ai_progress_with_time">%1$s, %2$s kushoto</string>
+    <string name="on_device_ai_progress_with_time">%1$s, zimesalia %2$s</string>
     <string name="on_device_ai_announce_progress">Inapakua, asilimia %1$d</string>
     <string name="on_device_ai_announce_done">Muundo umepakuliwa</string>
-    <string name="on_device_ai_notification_channel">Pakua AI kwenye kifaa</string>
+    <string name="on_device_ai_notification_channel">Upakuaji wa AI kwenye kifaa</string>
     <string name="on_device_ai_notification_downloading">Inapakua muundo, %1$d%%</string>
     <string name="on_device_ai_notification_done">Muundo umepakuliwa. Washa AI kwenye kifaa katika mipangilio.</string>
     <string name="on_device_ai_notification_failed">Upakuaji haukufaulu. Fungua mipangilio ili ujaribu tena.</string>
     <string name="on_device_ai_notification_paused">Android imesitisha upakuaji. Fungua mipangilio ili kuendelea.</string>
     <string name="pref_on_device_ai_importing">Kuangalia faili ya mfano</string>
-    <string name="pref_on_device_ai_manage">Dhibiti mifano</string>
+    <string name="pref_on_device_ai_manage">Dhibiti miundo</string>
     <string name="pref_on_device_ai_manage_none">Hakuna miundo iliyopakuliwa</string>
     <plurals name="on_device_ai_models_downloaded">
         <item quantity="one">Muundo %1$d umepakuliwa</item>
@@ -46,7 +46,7 @@
     <string name="manage_models_deleted">%1$s imefutwa</string>
     <string name="pref_on_device_ai_import">Tumia faili ya mfano kutoka kwa hifadhi</string>
     <string name="pref_on_device_ai_import_summary">Chagua faili ya Gemma 4 litretlm ambayo tayari umepakua.</string>
-    <string name="on_device_ai_import_done">Mfano umewekwa</string>
+    <string name="on_device_ai_import_done">Muundo umesakinishwa</string>
     <string name="on_device_ai_import_failed">Faili hiyo si faili ya muundo wa Gemma 4 inayotumika.</string>
     <string name="pref_on_device_ai_timeout">Kikomo cha muda kwa majibu</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly huacha kusubiri baada ya muda huu. Skrini ya kuelezea inachukua muda mrefu kuliko picha inayoelezea.</string>

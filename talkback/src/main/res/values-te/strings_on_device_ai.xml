@@ -16,11 +16,11 @@
     <string name="on_device_ai_tag_not_enough_memory">ఈ ఫోన్‌లో తగినంత మెమరీ లేదు.</string>
     <string name="on_device_ai_choose_model">మోడల్‌ను ఎంచుకోండి</string>
     <string name="on_device_ai_model_too_big">ఈ ఫోన్‌లో ఆ మోడల్‌కు తగినంత మెమరీ లేదు.</string>
-    <string name="pref_on_device_ai_download">డౌన్‌లోడ్ మోడల్ (%1$s)</string>
+    <string name="pref_on_device_ai_download">మోడల్‌ను డౌన్‌లోడ్ చేయండి (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">హగ్గింగ్ ఫేస్ నుండి ఒకసారి డౌన్‌లోడ్ చేసుకోండి. ఆ తర్వాత, నెట్‌వర్క్ ద్వారా ఏమీ పంపబడదు.</string>
     <string name="pref_on_device_ai_downloading">డౌన్‌లోడ్ చేస్తోంది, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. ఆపడానికి నొక్కండి. మీరు దీన్ని మళ్లీ ప్రారంభిస్తే ఇక్కడ నుండి కొనసాగుతుంది.</string>
-    <string name="on_device_ai_progress_sizes">%1$s of %2$s</string>
+    <string name="on_device_ai_progress_sizes">%2$sలో %1$s</string>
     <string name="on_device_ai_progress_with_time">%1$s, %2$s మిగిలి ఉంది</string>
     <string name="on_device_ai_announce_progress">డౌన్‌లోడ్ అవుతోంది, %1$d శాతం</string>
     <string name="on_device_ai_announce_done">మోడల్ డౌన్‌లోడ్ చేయబడింది</string>
@@ -30,7 +30,7 @@
     <string name="on_device_ai_notification_failed">డౌన్‌లోడ్ విఫలమైంది. మళ్లీ ప్రయత్నించడానికి సెట్టింగ్‌లను తెరవండి.</string>
     <string name="on_device_ai_notification_paused">Android డౌన్‌లోడ్ పాజ్ చేయబడింది. కొనసాగించడానికి సెట్టింగ్‌లను తెరవండి.</string>
     <string name="pref_on_device_ai_importing">మోడల్ ఫైల్‌ని తనిఖీ చేస్తోంది</string>
-    <string name="pref_on_device_ai_manage">నమూనాలను నిర్వహించండి</string>
+    <string name="pref_on_device_ai_manage">మోడల్‌లను నిర్వహించండి</string>
     <string name="pref_on_device_ai_manage_none">మోడల్‌లు ఏవీ డౌన్‌లోడ్ చేయబడలేదు</string>
     <plurals name="on_device_ai_models_downloaded">
         <item quantity="one">%1$d మోడల్ డౌన్‌లోడ్ చేయబడింది</item>
@@ -56,7 +56,7 @@
         <item quantity="other">%1$d నిమిషాలు</item>
     </plurals>
     <string name="pref_on_device_ai_processor">ప్రాసెసర్</string>
-    <string name="pref_on_device_ai_short_prompts">చిన్న స్క్రీన్ వివరణలు</string>
+    <string name="pref_on_device_ai_short_prompts">స్క్రీన్ యొక్క చిన్న వివరణలు</string>
     <string name="pref_on_device_ai_short_prompts_summary">డిస్క్రైబ్ స్క్రీన్ తక్కువ వివరాలను అడుగుతుంది, కనుక ఇది త్వరగా సమాధానం ఇస్తుంది. పూర్తి వివరణల కోసం దీన్ని ఆఫ్ చేయండి.</string>
     <string name="on_device_ai_error_network">డౌన్‌లోడ్ ఆగిపోయింది. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి. ఆగిపోయిన చోటే కొనసాగుతుంది.</string>
     <string name="on_device_ai_error_http">డౌన్‌లోడ్ సర్వర్ అభ్యర్థనను అంగీకరించలేదు. తర్వాత మళ్లీ ప్రయత్నించండి లేదా బదులుగా ఫైల్‌ను దిగుమతి చేయండి.</string>

@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">AI op het apparaat</string>
     <string name="summary_pref_on_device_ai">Beschrijf de afbeelding en beschrijf het scherm met een model op deze telefoon, zonder API-sleutel</string>
-    <string name="pref_on_device_ai_enable">Gebruik AI op het apparaat</string>
+    <string name="pref_on_device_ai_enable">AI op het apparaat gebruiken</string>
     <string name="pref_on_device_ai_enable_summary">Afbeeldingen en schermafbeeldingen worden op deze telefoon beschreven en worden nooit naar Google verzonden. Het is langzamer dan de cloud en gebruikt meer batterij.</string>
     <string name="pref_on_device_ai_enable_needs_model">Download of importeer eerst een model.</string>
     <string name="pref_on_device_ai_unsupported_cpu">Niet beschikbaar. Deze telefoon beschikt niet over een 64-bits ARM-processor.</string>
@@ -30,7 +30,7 @@
     <string name="on_device_ai_notification_failed">Het downloaden is mislukt. Open de instellingen om het opnieuw te proberen.</string>
     <string name="on_device_ai_notification_paused">Android heeft de download gepauzeerd. Open instellingen om door te gaan.</string>
     <string name="pref_on_device_ai_importing">Het modelbestand controleren</string>
-    <string name="pref_on_device_ai_manage">Beheer modellen</string>
+    <string name="pref_on_device_ai_manage">Modellen beheren</string>
     <string name="pref_on_device_ai_manage_none">Geen modellen gedownload</string>
     <plurals name="on_device_ai_models_downloaded">
         <item quantity="one">%1$d model gedownload</item>
