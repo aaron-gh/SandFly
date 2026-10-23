@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_announce_status">स्थिति बोल्नुहोस्</string>
+    <string name="template_status_bars"><xliff:g id="max_level" example="4">%2$d</xliff:g> बारहरूको <xliff:g id="level" example="3">%1$d</xliff:g></string>
+    <string name="status_wifi_off">Wi-Fi बन्द</string>
+    <string name="status_wifi_not_connected">Wi-Fi जडान गरिएको छैन</string>
+    <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
+    <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
+    <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
+    <string name="status_mobile">मोबाइल</string>
+    <string name="status_mobile_no_service">मोबाइल सेवा छैन</string>
+    <string name="status_do_not_disturb">डिस्टर्ब नगर्नुहोस्</string>
+    <string name="status_ringer_vibrate">कम्पन</string>
+    <string name="status_ringer_silent">मौन</string>
+    <string name="status_airplane_mode">हवाइजहाज मोड</string>
+    <string name="title_pref_status_readout">स्थिति पढाइ</string>
+    <string name="status_item_time">समय</string>
+    <string name="status_item_time_summary">वर्तमान समय</string>
+    <string name="status_item_battery">ब्याट्री</string>
+    <string name="status_item_battery_summary">ब्याट्री स्तर, चार्ज, र ब्याट्री सेभर</string>
+    <string name="status_item_wifi">Wi-Fi</string>
+    <string name="status_item_wifi_summary">नेटवर्क नाम र सिग्नल बल</string>
+    <string name="status_item_mobile">मोबाइल नेटवर्क</string>
+    <string name="status_item_mobile_summary">क्यारियर, नेटवर्क प्रकार, र सिग्नल बल</string>
+    <string name="status_item_ringer">घन्टी र बाधा नपुर्याउनुहोस्</string>
+    <string name="status_item_ringer_summary">घण्टी बज्न सेट नभएको वा बाधा नपुऱ्याउने सुविधा अन भएको अवस्थामा मात्र</string>
+    <string name="status_item_airplane_mode">हवाइजहाज मोड</string>
+    <string name="status_item_airplane_mode_summary">हवाईजहाज मोड अन हुँदा मात्र</string>
+</resources>
