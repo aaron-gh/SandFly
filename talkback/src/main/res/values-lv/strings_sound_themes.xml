@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_sound_themes">Skaņu tēmas</string>
+    <string name="summary_pref_sound_themes">Instalējiet un izvēlieties skaņu un vibrāciju kopas, aizstājiet atsevišķas skaņas ar savām un ieslēdziet vadības skaņas un vibrācijas un 3D audio.</string>
+    <string name="sound_themes_installed_category">Instalētas tēmas</string>
+    <string name="sound_theme_backtalk">SandFly</string>
+    <string name="sound_theme_backtalk_description">SandFly paša skaņas un vibrācijas, kā arī visas jūsu skaņas.</string>
+    <string name="sound_theme_in_use">Lietošanā</string>
+    <string name="sound_theme_by">Autors <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
+    <string name="sound_theme_license">Licence: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
+    <plurals name="sound_theme_sounds">
+        <item quantity="zero"><xliff:g id="count" example="13">%d</xliff:g> skaņas.</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> skaņa.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> skaņas.</item>
+    </plurals>
+    <plurals name="sound_theme_vibrations">
+        <item quantity="zero"><xliff:g id="count" example="13">%d</xliff:g> vibrācijas.</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> vibrācija.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> vibrācijas.</item>
+    </plurals>
+    <string name="sound_theme_control_sounds_on">Ieslēdz vadības skaņas un vibrācijas.</string>
+    <string name="sound_theme_control_sounds_off">Izslēdz vadības skaņas un vibrācijas.</string>
+    <string name="sound_theme_use">Izmantojiet šo tēmu</string>
+    <string name="sound_theme_about">Par šo tēmu</string>
+    <string name="sound_theme_export">Saglabāt kā motīva failu</string>
+    <string name="sound_theme_remove">Noņemt</string>
+    <string name="sound_theme_remove_confirm">Vai noņemt motīvu <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_remove_button">Noņemt</string>
+    <plurals name="sound_theme_exported">
+        <item quantity="zero">Saglabāja motīvu ar <xliff:g id="count" example="13">%d</xliff:g> skaņām.</item>
+        <item quantity="one">Saglabāja motīvu ar <xliff:g id="count" example="1">%d</xliff:g> skaņu.</item>
+        <item quantity="other">Saglabāja motīvu ar <xliff:g id="count" example="13">%d</xliff:g> skaņām.</item>
+    </plurals>
+    <string name="sound_theme_export_failed">SandFly nevarēja saglabāt motīva failu.</string>
+    <string name="sound_theme_no_picker">Šajā ierīcē nav nevienas lietotnes, ar kuru izvēlēties failus.</string>
+    <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> iestatījumi</string>
+    <string name="title_pref_theme_sounds">Skaņas</string>
+    <string name="summary_pref_theme_sounds">Aizstājiet jebkuru šī motīva skaņu ar savu skaņas failu.</string>
+    <string name="sound_themes_install_category">Instalējiet motīvu</string>
+    <string name="title_pref_sound_theme_install_file">No faila</string>
+    <string name="summary_pref_sound_theme_install_file">Motīva fails ir ZIP fails. Varat arī to atvērt vai kopīgot ar SandFly no citas lietotnes.</string>
+    <string name="title_pref_sound_theme_install_link">No saites</string>
+    <string name="summary_pref_sound_theme_install_link">Saite uz motīva failu vai GitHub krātuvi ar motīvu. Varat arī koplietot saiti ar SandFly savā pārlūkprogrammā.</string>
+    <string name="title_pref_sound_theme_install_source">No avota</string>
+    <string name="summary_pref_sound_theme_install_source">Motīvu faili repozitorijā uz GitHub, GitLab, Codeberg, Gitea vai Bitbucket.</string>
+    <string name="sound_theme_sources">Skaņas tēmu avoti</string>
+    <string name="sound_theme_source_empty">Šajā avotā nav skaņas tēmu</string>
+    <string name="sound_theme_source_failed">Nevarēja ielādēt skaņas motīvus. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">No tā instalētie skaņas motīvi paliek instalēti.</string>
+    <string name="sound_theme_link_message">Ievadiet vai ielīmējiet saiti uz motīva failu vai GitHub repozitoriju ar motīvu.</string>
+    <string name="sound_theme_link_hint">https://</string>
+    <string name="sound_theme_install_label">Instalējiet skaņas motīvu</string>
+    <string name="sound_theme_install_reading">Skaņas tēmas lasīšana</string>
+    <string name="sound_theme_install_title">Vai instalēt <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
+    <string name="sound_theme_install_and_use">Instalējiet un lietojiet</string>
+    <string name="sound_theme_install">Instalējiet</string>
+    <string name="sound_theme_install_replaces">Tas aizstāj instalēto motīvu ar tādu pašu nosaukumu.</string>
+    <string name="sound_theme_install_skipped">Izlaisti:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_installed">Instalēta <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
+    <string name="sound_theme_installed_in_use">Instalēta <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Tas tiek izmantots tagad.</string>
+    <string name="sound_theme_install_nothing">Nav skaņas motīva, ko instalēt.</string>
+    <string name="sound_theme_install_not_a_theme">Šis nav skaņas motīvs, ko SandFly var izmantot: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly nevarēja instalēt skaņas motīvu. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Saitēm uz skaņas motīviem jāsākas ar https.</string>
+    <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> skaņas</string>
+    <string name="title_pref_theme_sounds_reset">Izmantojiet SandFly skaņas visiem</string>
+    <string name="theme_sounds_reset_confirm">Vai noņemt visas šī motīva skaņas un izmantot SandFly pašas skaņas?</string>
+    <string name="theme_sounds_reset_button">Noņemt</string>
+    <string name="theme_sounds_category">Skaņas</string>
+    <string name="theme_sound_summary_default">SandFly skaņa</string>
+    <string name="theme_sound_summary_custom">Tēmas skaņa</string>
+    <string name="theme_sound_summary_none">Nav skaņas. Tiek atskaņota fokusa skaņa.</string>
+    <string name="theme_sound_summary_android_keyboard">Android tastatūras skaņa</string>
+    <string name="theme_sound_use_android_keyboard">Izmantojiet Android tastatūras skaņu</string>
+    <string name="theme_sound_braille_character">Braila tastatūra: rakstzīmes rakstīšana</string>
+    <string name="theme_sound_braille_space">Braila tastatūra: atstarpe</string>
+    <string name="theme_sound_braille_delete">Braila tastatūra: dzēst</string>
+    <string name="theme_sound_braille_new_line">Braila tastatūra: jauna rinda</string>
+    <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
+    <string name="theme_sound_choose">Izvēlieties skaņas failu</string>
+    <string name="theme_sound_preview">Priekšskatīt</string>
+    <string name="theme_sound_none">Nav skaņas</string>
+    <string name="theme_sound_summary_no_sound">Nav skaņas</string>
+    <string name="theme_sound_action_set_none">Iestatīt bez skaņas</string>
+    <string name="theme_sound_use_default">Izmantojiet SandFly skaņu</string>
+    <string name="theme_sound_remove">Noņemiet skaņu</string>
+    <string name="theme_sound_too_large">Šis fails ir pārāk liels. Skaņa var būt līdz 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly nevar atskaņot šo failu. Izvēlieties WAV, OGG, MP3 vai FLAC skaņu.</string>
+    <string name="theme_sound_failed">SandFly nevarēja nolasīt šo failu.</string>
+</resources>
