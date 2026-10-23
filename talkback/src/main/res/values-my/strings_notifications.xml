@@ -111,12 +111,12 @@
     <string name="notification_watch_dismiss_title">စမတ်နာရီပေါ်တွင် အကြောင်းကြားချက်ကို ပယ်လိုက်သည့်အခါလည်း ဖြစ်သည်</string>
     <string name="notification_app_cancel_title">အက်ပ်က အသိပေးချက်ကို ဖယ်ရှားသည့်အခါ စာဖတ်ခြင်းကို ရပ်ပါ</string>
     <string name="notification_category_summary">အကျဉ်းချုပ်</string>
-    <string name="notification_summary_now_title">အသိပေးချက်များကို ယခုဖတ်ပါ</string>
+    <string name="notification_summary_now_title">အကြောင်းကြားချက်များကို ယခု ဖတ်ရန်</string>
     <string name="notification_summary_daily_title">သတိပေးချက်များကို နေ့တိုင်းဖတ်ပါ</string>
     <string name="notification_summary_time_title">အချိန်</string>
-    <string name="notification_summary_newest_first_title">အသစ်ဆုံး ပထမ</string>
-    <string name="notification_summary_name_title">မင်းနာမည်</string>
-    <string name="notification_summary_gap_title">အကြောင်းကြားချက်များကြားတွင် ခဏရပ်ပါ</string>
+    <string name="notification_summary_newest_first_title">အသစ်ဆုံးကို အရင်</string>
+    <string name="notification_summary_name_title">သင့်အမည်</string>
+    <string name="notification_summary_gap_title">အကြောင်းကြားချက်များကြား ခဏနား</string>
     <string name="notification_summary_needs_sandfly">အသိပေးချက်များကိုဖတ်ရန် SandFly ကိုဖွင့်ပါ</string>
     <string name="notification_summary_no_access">အကြောင်းကြားချက် ဝင်ရောက်ခွင့်ကို ပိတ်ထားသည်</string>
     <string name="notification_summary_morning">မင်္ဂလာနံနက်ခင်းပါ။</string>
@@ -223,7 +223,7 @@
     <string name="notification_rule_or">" သို့မဟုတ် "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">နားကြပ်များဖြင့်သာ</string>
-    <string name="notification_template_night">ညမှာ တိတ်ဆိတ်နေတယ်</string>
+    <string name="notification_template_night">ညအချိန် အသံပိတ်</string>
     <string name="notification_template_screen_off">ဖန်သားပြင်ကို ပိတ်ထားခြင်းဖြင့်သာ</string>
     <string name="notification_template_locked_private">ဖုန်းကို လော့ခ်ချထားသောအခါတွင်သာ အက်ပ်အမည်</string>
     <string name="notification_template_short_on_battery">အားမသွင်းသည့်အခါ အတိုချုံးဖတ်ပါ</string>
@@ -244,8 +244,8 @@
     <string name="notification_bluetooth_any">စက်ပစ္စည်းတစ်ခုခု</string>
     <string name="notification_wifi_hint">ကွန်ရက်အမည်</string>
     <string name="notification_choose_app">အက်ပ်တစ်ခုကို ရွေးပါ</string>
-    <string name="notification_time_start">ထံမှ</string>
-    <string name="notification_time_end">သည်အထိ</string>
+    <string name="notification_time_start">မှ</string>
+    <string name="notification_time_end">အထိ</string>
     <string name="notification_time_days">နေ့ရက်များ</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> မှ <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly ဤအခြေအနေအတွက် ထိုခွင့်ပြုချက် လိုအပ်ပါသည်</string>
@@ -311,7 +311,7 @@
     <string name="shortcut_stop_notification">အကြောင်းကြားစာကို ဖတ်ခြင်းကို ရပ်ပါ</string>
     <string name="notification_test_posting">စမ်းသပ်မှုသတိပေးချက်သည် ၅ စက္ကန့်အတွင်း ထွက်ပေါ်လာသည်</string>
     <string name="notification_test_not_allowed">အကြောင်းကြားချက်များကို ဦးစွာပြသရန် SandFlyအား ခွင့်ပြုပါ</string>
-    <string name="notification_test_content_title">SandFly စာမေးပွဲ</string>
+    <string name="notification_test_content_title">SandFly စမ်းသပ်မှု</string>
     <string name="notification_test_content_text">ဤသည်မှာ စမ်းသပ်မှုသတိပေးချက်ဖြစ်ပြီး၊ သင်၏သတိပေးချက်ဆက်တင်များဖြင့် ဖတ်ပါ။ ၁၂၃၄၅၆</string>
     <string name="notification_automation_on">အကြောင်းကြားချက်များကို ကျယ်လောင်စွာဖတ်ခြင်းကို ဖွင့်ပါ</string>
     <string name="notification_automation_off">ကျယ်လောင်စွာဖတ်ခြင်း အသိပေးချက်များကို ပိတ်ပါ</string>

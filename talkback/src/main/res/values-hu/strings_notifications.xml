@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">Olvassa el a Ne zavarjanak mód által engedélyezett értesítéseket</string>
     <string name="notification_dnd_all">Összes felolvasása</string>
     <string name="notification_touch_title">Miközben megérinti a képernyőt</string>
-    <string name="notification_touch_read">Azonnal olvassa el</string>
+    <string name="notification_touch_read">Azonnali felolvasás</string>
     <string name="notification_touch_after">Olvassa el, amikor az érintés véget ér</string>
     <string name="notification_touch_skip">Ne olvass fel hangosan</string>
     <string name="notification_during_calls_title">Hívások közben</string>
@@ -111,9 +111,9 @@
     <string name="notification_watch_dismiss_title">Akkor is, ha az értesítést elvetik egy okosórán</string>
     <string name="notification_app_cancel_title">Ha az alkalmazás eltávolítja az értesítést, állítsa le az olvasást</string>
     <string name="notification_category_summary">Összegzés</string>
-    <string name="notification_summary_now_title">Olvassa el az értesítéseket most</string>
+    <string name="notification_summary_now_title">Értesítések felolvasása most</string>
     <string name="notification_summary_daily_title">Olvassa el az értesítéseket minden nap</string>
-    <string name="notification_summary_time_title">Idő</string>
+    <string name="notification_summary_time_title">Időpont</string>
     <string name="notification_summary_newest_first_title">Először a legújabb</string>
     <string name="notification_summary_name_title">A neved</string>
     <string name="notification_summary_gap_title">Szünet az értesítések között</string>
@@ -245,7 +245,7 @@
     <string name="notification_wifi_hint">Hálózat neve</string>
     <string name="notification_choose_app">Válasszon egy alkalmazást</string>
     <string name="notification_time_start">-tól</string>
-    <string name="notification_time_end">Amíg</string>
+    <string name="notification_time_end">-ig</string>
     <string name="notification_time_days">Napok</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> - <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">A SandFly-nek szüksége van erre az engedélyre ehhez a feltételhez</string>
@@ -311,7 +311,7 @@
     <string name="shortcut_stop_notification">Hagyja abba az értesítés olvasását</string>
     <string name="notification_test_posting">5 másodpercen belül tesztértesítés érkezik</string>
     <string name="notification_test_not_allowed">Engedélyezze a SandFly számára, hogy először az értesítéseket jelenítse meg</string>
-    <string name="notification_test_content_title">SandFly teszt</string>
+    <string name="notification_test_content_title">SandFly-teszt</string>
     <string name="notification_test_content_text">Ez egy tesztértesítés, olvassa el az értesítési beállításait. 123456</string>
     <string name="notification_automation_on">Az értesítések hangos felolvasásának engedélyezése</string>
     <string name="notification_automation_off">Az értesítések hangos felolvasásának letiltása</string>

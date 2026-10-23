@@ -113,10 +113,10 @@
     <string name="notification_category_summary">Sammanfattning</string>
     <string name="notification_summary_now_title">Läs aviseringar nu</string>
     <string name="notification_summary_daily_title">Läs aviseringar varje dag</string>
-    <string name="notification_summary_time_title">Tid</string>
+    <string name="notification_summary_time_title">Klockslag</string>
     <string name="notification_summary_newest_first_title">Nyaste först</string>
     <string name="notification_summary_name_title">Ditt namn</string>
-    <string name="notification_summary_gap_title">Pausa mellan aviseringar</string>
+    <string name="notification_summary_gap_title">Paus mellan aviseringar</string>
     <string name="notification_summary_needs_sandfly">Slå på SandFly för att läsa aviseringar</string>
     <string name="notification_summary_no_access">Aviseringsåtkomst är avstängd</string>
     <string name="notification_summary_morning">God morgon.</string>
@@ -245,7 +245,7 @@
     <string name="notification_wifi_hint">Nätverksnamn</string>
     <string name="notification_choose_app">Välj en app</string>
     <string name="notification_time_start">Från</string>
-    <string name="notification_time_end">Tills</string>
+    <string name="notification_time_end">Till</string>
     <string name="notification_time_days">Dagar</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> till <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly behöver det tillståndet för detta tillstånd</string>
@@ -311,7 +311,7 @@
     <string name="shortcut_stop_notification">Sluta läsa aviseringen</string>
     <string name="notification_test_posting">Ett testmeddelande följer efter 5 sekunder</string>
     <string name="notification_test_not_allowed">Tillåt SandFly att visa aviseringar först</string>
-    <string name="notification_test_content_title">SandFly test</string>
+    <string name="notification_test_content_title">SandFly-test</string>
     <string name="notification_test_content_text">Detta är en testavisering, läs med dina aviseringsinställningar. 123456</string>
     <string name="notification_automation_on">Aktivera högläsningsaviseringar</string>
     <string name="notification_automation_off">Inaktivera högläsning av meddelanden</string>

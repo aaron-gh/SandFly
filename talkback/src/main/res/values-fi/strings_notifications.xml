@@ -113,7 +113,7 @@
     <string name="notification_category_summary">Yhteenveto</string>
     <string name="notification_summary_now_title">Lue ilmoitukset nyt</string>
     <string name="notification_summary_daily_title">Lue ilmoitukset joka päivä</string>
-    <string name="notification_summary_time_title">Aika</string>
+    <string name="notification_summary_time_title">Kellonaika</string>
     <string name="notification_summary_newest_first_title">Uusin ensin</string>
     <string name="notification_summary_name_title">Sinun nimesi</string>
     <string name="notification_summary_gap_title">Tauko ilmoitusten välillä</string>
@@ -244,9 +244,9 @@
     <string name="notification_bluetooth_any">Mikä tahansa laite</string>
     <string name="notification_wifi_hint">Verkon nimi</string>
     <string name="notification_choose_app">Valitse sovellus</string>
-    <string name="notification_time_start">From</string>
-    <string name="notification_time_end">Kunnes</string>
-    <string name="notification_time_days">Päivää</string>
+    <string name="notification_time_start">Alkaa</string>
+    <string name="notification_time_end">Päättyy</string>
+    <string name="notification_time_days">Päivät</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> - <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly tarvitsee luvan tähän ehtoon</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> on yhdistetty</string>
@@ -311,7 +311,7 @@
     <string name="shortcut_stop_notification">Lopeta ilmoituksen lukeminen</string>
     <string name="notification_test_posting">Testiilmoitus tulee 5 sekunnin kuluttua</string>
     <string name="notification_test_not_allowed">Salli SandFly näyttää ilmoitukset ensin</string>
-    <string name="notification_test_content_title">SandFly testi</string>
+    <string name="notification_test_content_title">SandFly-testi</string>
     <string name="notification_test_content_text">Tämä on testiilmoitus, lue ilmoitusasetuksistasi. 123456</string>
     <string name="notification_automation_on">Ota käyttöön ilmoitusten lukeminen ääneen</string>
     <string name="notification_automation_off">Poista ilmoitusten ääneen lukeminen käytöstä</string>

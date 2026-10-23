@@ -116,7 +116,7 @@
     <string name="notification_summary_time_title">时间</string>
     <string name="notification_summary_newest_first_title">最新的优先</string>
     <string name="notification_summary_name_title">你的名字</string>
-    <string name="notification_summary_gap_title">通知之间暂停</string>
+    <string name="notification_summary_gap_title">通知间隔</string>
     <string name="notification_summary_needs_sandfly">请开启 SandFly 以朗读通知</string>
     <string name="notification_summary_no_access">通知访问已关闭</string>
     <string name="notification_summary_morning">早上好。</string>
@@ -222,8 +222,8 @@
     <string name="notification_rule_and">" 并且 "</string>
     <string name="notification_rule_or">" 或者 "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
-    <string name="notification_template_headphones">仅带耳机</string>
-    <string name="notification_template_night">夜里寂静无声</string>
+    <string name="notification_template_headphones">仅在连接耳机时</string>
+    <string name="notification_template_night">夜间静音</string>
     <string name="notification_template_screen_off">仅在屏幕关闭时</string>
     <string name="notification_template_locked_private">锁屏时只朗读应用名称</string>
     <string name="notification_template_short_on_battery">未充电时简短朗读</string>
@@ -246,7 +246,7 @@
     <string name="notification_choose_app">选择应用</string>
     <string name="notification_time_start">从</string>
     <string name="notification_time_end">至</string>
-    <string name="notification_time_days">天数</string>
+    <string name="notification_time_days">星期</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> 至 <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly 需要此权限才能判断该条件</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g>已连接</string>

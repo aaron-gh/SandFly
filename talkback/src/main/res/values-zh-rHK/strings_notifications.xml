@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">閱讀「請勿打擾」模式允許的通知</string>
     <string name="notification_dnd_all">朗讀全部</string>
     <string name="notification_touch_title">當觸摸螢幕時</string>
-    <string name="notification_touch_read">立即閱讀</string>
+    <string name="notification_touch_read">立即朗讀</string>
     <string name="notification_touch_after">觸摸結束時讀取</string>
     <string name="notification_touch_skip">不要大聲朗讀</string>
     <string name="notification_during_calls_title">通話期間</string>
@@ -111,12 +111,12 @@
     <string name="notification_watch_dismiss_title">此外，當智慧手錶上的通知被取消時</string>
     <string name="notification_app_cancel_title">当应用程序删除通知时停止阅读</string>
     <string name="notification_category_summary">摘要</string>
-    <string name="notification_summary_now_title">立即閱讀通知</string>
+    <string name="notification_summary_now_title">立即朗讀通知</string>
     <string name="notification_summary_daily_title">每天閱讀通知</string>
     <string name="notification_summary_time_title">時間</string>
     <string name="notification_summary_newest_first_title">最新的優先</string>
     <string name="notification_summary_name_title">你的名字</string>
-    <string name="notification_summary_gap_title">通知之間暫停</string>
+    <string name="notification_summary_gap_title">通知間隔</string>
     <string name="notification_summary_needs_sandfly">打开 SandFly 即可阅读通知</string>
     <string name="notification_summary_no_access">通知訪問已關閉</string>
     <string name="notification_summary_morning">早安。</string>
@@ -222,8 +222,8 @@
     <string name="notification_rule_and">" 且 "</string>
     <string name="notification_rule_or">" 或 "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
-    <string name="notification_template_headphones">僅限耳機</string>
-    <string name="notification_template_night">夜裡寂靜無聲</string>
+    <string name="notification_template_headphones">僅在使用耳機時</string>
+    <string name="notification_template_night">夜間靜音</string>
     <string name="notification_template_screen_off">僅在螢幕關閉時</string>
     <string name="notification_template_locked_private">手機鎖定時僅顯示應用程式名稱</string>
     <string name="notification_template_short_on_battery">不充電時簡單閱讀</string>
@@ -244,9 +244,9 @@
     <string name="notification_bluetooth_any">任何裝置</string>
     <string name="notification_wifi_hint">網路名稱</string>
     <string name="notification_choose_app">選擇應用程式</string>
-    <string name="notification_time_start">來自</string>
+    <string name="notification_time_start">從</string>
     <string name="notification_time_end">直到</string>
-    <string name="notification_time_days">天數</string>
+    <string name="notification_time_days">星期</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> 至 <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly 需要取得此條件的許可</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g>已連接</string>

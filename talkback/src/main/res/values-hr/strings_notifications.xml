@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">Čitanje obavijesti koje dopušta način Ne uznemiravaj</string>
     <string name="notification_dnd_all">Čitaj sve</string>
     <string name="notification_touch_title">Dok se ekran dodiruje</string>
-    <string name="notification_touch_read">Čitajte odmah</string>
+    <string name="notification_touch_read">Čitaj odmah</string>
     <string name="notification_touch_after">Čitajte kada dodir završi</string>
     <string name="notification_touch_skip">Nemojte čitati naglas</string>
     <string name="notification_during_calls_title">Tijekom poziva</string>
@@ -111,7 +111,7 @@
     <string name="notification_watch_dismiss_title">Također kada se obavijest odbaci na pametnom satu</string>
     <string name="notification_app_cancel_title">Prestanite čitati kada aplikacija ukloni obavijest</string>
     <string name="notification_category_summary">Sažetak</string>
-    <string name="notification_summary_now_title">Pročitajte obavijesti sada</string>
+    <string name="notification_summary_now_title">Pročitaj obavijesti sada</string>
     <string name="notification_summary_daily_title">Čitajte obavijesti svaki dan</string>
     <string name="notification_summary_time_title">Vrijeme</string>
     <string name="notification_summary_newest_first_title">Prvo najnoviji</string>
@@ -119,7 +119,7 @@
     <string name="notification_summary_gap_title">Pauza između obavijesti</string>
     <string name="notification_summary_needs_sandfly">Uključite SandFly za čitanje obavijesti</string>
     <string name="notification_summary_no_access">Pristup obavijestima je isključen</string>
-    <string name="notification_summary_morning">Dobro jutro</string>
+    <string name="notification_summary_morning">Dobro jutro.</string>
     <string name="notification_summary_afternoon">Dobar dan.</string>
     <string name="notification_summary_evening">Dobra večer.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
@@ -223,7 +223,7 @@
     <string name="notification_rule_or">" ili "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">Samo sa slušalicama</string>
-    <string name="notification_template_night">Tiha noću</string>
+    <string name="notification_template_night">Tišina noću</string>
     <string name="notification_template_screen_off">Samo s isključenim ekranom</string>
     <string name="notification_template_locked_private">Samo naziv aplikacije kada je telefon zaključan</string>
     <string name="notification_template_short_on_battery">Ukratko pročitajte kada se ne puni</string>
@@ -245,8 +245,8 @@
     <string name="notification_wifi_hint">Naziv mreže</string>
     <string name="notification_choose_app">Odaberite aplikaciju</string>
     <string name="notification_time_start">Od</string>
-    <string name="notification_time_end">Sve dok</string>
-    <string name="notification_time_days">Dana</string>
+    <string name="notification_time_end">Do</string>
+    <string name="notification_time_days">Dani</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> do <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly treba to dopuštenje za ovaj uvjet</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> je povezan</string>

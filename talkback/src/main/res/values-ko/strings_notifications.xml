@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">방해 금지 모드에서 허용되는 알림 읽기</string>
     <string name="notification_dnd_all">모두 읽기</string>
     <string name="notification_touch_title">화면을 터치하는 동안</string>
-    <string name="notification_touch_read">바로 읽어보세요</string>
+    <string name="notification_touch_read">바로 읽기</string>
     <string name="notification_touch_after">터치가 끝나면 읽기</string>
     <string name="notification_touch_skip">큰 소리로 읽지 마세요</string>
     <string name="notification_during_calls_title">통화 중</string>
@@ -115,8 +115,8 @@
     <string name="notification_summary_daily_title">매일 알림 읽기</string>
     <string name="notification_summary_time_title">시간</string>
     <string name="notification_summary_newest_first_title">최신순</string>
-    <string name="notification_summary_name_title">당신의 이름</string>
-    <string name="notification_summary_gap_title">알림 사이에 일시중지</string>
+    <string name="notification_summary_name_title">이름</string>
+    <string name="notification_summary_gap_title">알림 간 일시중지</string>
     <string name="notification_summary_needs_sandfly">알림을 읽으려면 SandFly를 켜세요.</string>
     <string name="notification_summary_no_access">알림 액세스가 사용 중지되었습니다.</string>
     <string name="notification_summary_morning">좋은 아침입니다.</string>
@@ -222,8 +222,8 @@
     <string name="notification_rule_and">" 그리고 "</string>
     <string name="notification_rule_or">" 또는 "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
-    <string name="notification_template_headphones">헤드폰만 있으면</string>
-    <string name="notification_template_night">밤에는 조용하다</string>
+    <string name="notification_template_headphones">헤드폰 사용 시에만</string>
+    <string name="notification_template_night">야간 무음</string>
     <string name="notification_template_screen_off">화면이 꺼진 상태에서만</string>
     <string name="notification_template_locked_private">휴대폰이 잠겨 있을 때는 앱 이름만 표시됩니다.</string>
     <string name="notification_template_short_on_battery">충전하지 않을 때는 간략하게 읽어 보세요.</string>
@@ -244,9 +244,9 @@
     <string name="notification_bluetooth_any">모든 장치</string>
     <string name="notification_wifi_hint">네트워크 이름</string>
     <string name="notification_choose_app">앱 선택</string>
-    <string name="notification_time_start">에서</string>
+    <string name="notification_time_start">부터</string>
     <string name="notification_time_end">까지</string>
-    <string name="notification_time_days">일</string>
+    <string name="notification_time_days">요일</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ~ <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly 이 조건에 대한 권한이 필요합니다.</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> 연결됨</string>

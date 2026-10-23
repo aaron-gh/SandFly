@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">Чтение уведомлений, разрешенных режимом «Не беспокоить»</string>
     <string name="notification_dnd_all">Читать все</string>
     <string name="notification_touch_title">Пока к экрану прикасаются</string>
-    <string name="notification_touch_read">Читать прямо сейчас</string>
+    <string name="notification_touch_read">Читать сразу</string>
     <string name="notification_touch_after">Читать, когда сенсорный экран закончится</string>
     <string name="notification_touch_skip">Не читайте вслух</string>
     <string name="notification_during_calls_title">Во время звонков</string>
@@ -223,7 +223,7 @@
     <string name="notification_rule_or">" или "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">Только в наушниках</string>
-    <string name="notification_template_night">Тихая ночь</string>
+    <string name="notification_template_night">Тишина ночью</string>
     <string name="notification_template_screen_off">Только с выключенным экраном</string>
     <string name="notification_template_locked_private">Только название приложения, когда телефон заблокирован</string>
     <string name="notification_template_short_on_battery">Прочтите кратко, когда не заряжается</string>
@@ -245,7 +245,7 @@
     <string name="notification_wifi_hint">Имя сети</string>
     <string name="notification_choose_app">Выберите приложение</string>
     <string name="notification_time_start">От</string>
-    <string name="notification_time_end">До тех пор, пока</string>
+    <string name="notification_time_end">До</string>
     <string name="notification_time_days">Дни</string>
     <string name="notification_time_range">от <xliff:g id="start" example="22:00">%1$s</xliff:g> до <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly требуется это разрешение для этого условия</string>
@@ -311,7 +311,7 @@
     <string name="shortcut_stop_notification">Хватит читать уведомление</string>
     <string name="notification_test_posting">Уведомление о тестировании следует через 5 секунд.</string>
     <string name="notification_test_not_allowed">Разрешить SandFly показывать уведомления первыми</string>
-    <string name="notification_test_content_title">SandFly тест</string>
+    <string name="notification_test_content_title">Тест SandFly</string>
     <string name="notification_test_content_text">Это тестовое уведомление, ознакомьтесь с настройками уведомлений. 123456</string>
     <string name="notification_automation_on">Включить уведомления о чтении вслух</string>
     <string name="notification_automation_off">Отключить уведомления о прочтении вслух</string>

@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">خواندن اعلان‌های مجاز در حالت مزاحم نشوید</string>
     <string name="notification_dnd_all">خواندن همه</string>
     <string name="notification_touch_title">در حالی که صفحه نمایش لمس می شود</string>
-    <string name="notification_touch_read">فورا بخوانید</string>
+    <string name="notification_touch_read">خواندن فوری</string>
     <string name="notification_touch_after">وقتی لمس تمام شد بخوانید</string>
     <string name="notification_touch_skip">با صدای بلند نخوانید</string>
     <string name="notification_during_calls_title">در طول تماس</string>
@@ -111,7 +111,7 @@
     <string name="notification_watch_dismiss_title">همچنین هنگامی که اعلان در ساعت هوشمند رد می شود</string>
     <string name="notification_app_cancel_title">وقتی برنامه اعلان را حذف کرد، خواندن را متوقف کنید</string>
     <string name="notification_category_summary">خلاصه</string>
-    <string name="notification_summary_now_title">اکنون اعلان ها را بخوانید</string>
+    <string name="notification_summary_now_title">خواندن اعلان‌ها اکنون</string>
     <string name="notification_summary_daily_title">هر روز نوتیفیکیشن ها را بخوانید</string>
     <string name="notification_summary_time_title">زمان</string>
     <string name="notification_summary_newest_first_title">اول جدیدترین</string>
@@ -119,7 +119,7 @@
     <string name="notification_summary_gap_title">مکث بین اعلان‌ها</string>
     <string name="notification_summary_needs_sandfly">برای خواندن اعلان‌ها، SandFly را روشن کنید</string>
     <string name="notification_summary_no_access">دسترسی به اعلان خاموش است</string>
-    <string name="notification_summary_morning">صبح بخیر</string>
+    <string name="notification_summary_morning">صبح بخیر.</string>
     <string name="notification_summary_afternoon">بعدازظهر بخیر.</string>
     <string name="notification_summary_evening">عصر بخیر.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
@@ -223,7 +223,7 @@
     <string name="notification_rule_or">" یا "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">فقط با هدفون</string>
-    <string name="notification_template_night">در شب سکوت</string>
+    <string name="notification_template_night">سکوت در شب</string>
     <string name="notification_template_screen_off">فقط با صفحه خاموش</string>
     <string name="notification_template_locked_private">فقط نام برنامه زمانی که گوشی قفل است</string>
     <string name="notification_template_short_on_battery">زمانی که شارژ نمی شود به طور خلاصه بخوانید</string>
@@ -245,7 +245,7 @@
     <string name="notification_wifi_hint">نام شبکه</string>
     <string name="notification_choose_app">یک برنامه را انتخاب کنید</string>
     <string name="notification_time_start">از</string>
-    <string name="notification_time_end">تا اینکه</string>
+    <string name="notification_time_end">تا</string>
     <string name="notification_time_days">روزها</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> تا <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly برای این شرایط به آن اجازه نیاز دارد</string>
@@ -311,7 +311,7 @@
     <string name="shortcut_stop_notification">خواندن اعلان را متوقف کنید</string>
     <string name="notification_test_posting">یک اعلان آزمایشی در 5 ثانیه دنبال می شود</string>
     <string name="notification_test_not_allowed">به SandFly اجازه دهید ابتدا اعلان‌ها را نشان دهد</string>
-    <string name="notification_test_content_title">SandFly تست</string>
+    <string name="notification_test_content_title">آزمایش SandFly</string>
     <string name="notification_test_content_text">این یک اعلان آزمایشی است، با تنظیمات اعلان خود بخوانید. 123456</string>
     <string name="notification_automation_on">خواندن اعلان‌ها را با صدای بلند فعال کنید</string>
     <string name="notification_automation_off">خواندن اعلان‌ها را با صدای بلند غیرفعال کنید</string>

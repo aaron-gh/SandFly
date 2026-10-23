@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">Διαβάστε τις ειδοποιήσεις που επιτρέπονται από τη λειτουργία Μην ενοχλείτε</string>
     <string name="notification_dnd_all">Ανάγνωση όλων</string>
     <string name="notification_touch_title">Ενώ αγγίζεται η οθόνη</string>
-    <string name="notification_touch_read">Διαβάστε αμέσως</string>
+    <string name="notification_touch_read">Άμεση ανάγνωση</string>
     <string name="notification_touch_after">Διαβάστε όταν τελειώσει η αφή</string>
     <string name="notification_touch_skip">Μην διαβάζετε δυνατά</string>
     <string name="notification_during_calls_title">Κατά τη διάρκεια των κλήσεων</string>
@@ -111,11 +111,11 @@
     <string name="notification_watch_dismiss_title">Επίσης, όταν η ειδοποίηση απορρίπτεται σε ένα smartwatch</string>
     <string name="notification_app_cancel_title">Σταματήστε την ανάγνωση όταν η εφαρμογή καταργήσει την ειδοποίηση</string>
     <string name="notification_category_summary">Περίληψη</string>
-    <string name="notification_summary_now_title">Διαβάστε τις ειδοποιήσεις τώρα</string>
+    <string name="notification_summary_now_title">Ανάγνωση ειδοποιήσεων τώρα</string>
     <string name="notification_summary_daily_title">Διαβάστε τις ειδοποιήσεις κάθε μέρα</string>
     <string name="notification_summary_time_title">Ώρα</string>
     <string name="notification_summary_newest_first_title">Πρώτα τα νεότερα</string>
-    <string name="notification_summary_name_title">Το όνομά σου</string>
+    <string name="notification_summary_name_title">Το όνομά σας</string>
     <string name="notification_summary_gap_title">Παύση μεταξύ των ειδοποιήσεων</string>
     <string name="notification_summary_needs_sandfly">Ενεργοποιήστε το SandFly για να διαβάσετε τις ειδοποιήσεις</string>
     <string name="notification_summary_no_access">Η πρόσβαση σε ειδοποιήσεις είναι ανενεργή</string>
@@ -223,7 +223,7 @@
     <string name="notification_rule_or">" ή "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">Μόνο με ακουστικά</string>
-    <string name="notification_template_night">Σιωπηλός τη νύχτα</string>
+    <string name="notification_template_night">Σίγαση τη νύχτα</string>
     <string name="notification_template_screen_off">Μόνο με σβηστή οθόνη</string>
     <string name="notification_template_locked_private">Μόνο το όνομα της εφαρμογής όταν το τηλέφωνο είναι κλειδωμένο</string>
     <string name="notification_template_short_on_battery">Διαβάστε σύντομα όταν δεν φορτίζετε</string>
@@ -246,7 +246,7 @@
     <string name="notification_choose_app">Επιλέξτε μια εφαρμογή</string>
     <string name="notification_time_start">Από</string>
     <string name="notification_time_end">Μέχρι</string>
-    <string name="notification_time_days">Μέρες</string>
+    <string name="notification_time_days">Ημέρες</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> έως <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">Το SandFly χρειάζεται αυτήν την άδεια για αυτήν την κατάσταση</string>
     <string name="notification_cond_bluetooth">Το <xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> είναι συνδεδεμένο</string>
@@ -311,7 +311,7 @@
     <string name="shortcut_stop_notification">Σταματήστε να διαβάζετε την ειδοποίηση</string>
     <string name="notification_test_posting">Ακολουθεί ειδοποίηση δοκιμής σε 5 δευτερόλεπτα</string>
     <string name="notification_test_not_allowed">Επιτρέψτε στο SandFly να εμφανίζει πρώτα τις ειδοποιήσεις</string>
-    <string name="notification_test_content_title">SandFly δοκιμή</string>
+    <string name="notification_test_content_title">Δοκιμή SandFly</string>
     <string name="notification_test_content_text">Αυτή είναι μια δοκιμαστική ειδοποίηση, διαβάστε με τις ρυθμίσεις ειδοποιήσεών σας. 123456</string>
     <string name="notification_automation_on">Ενεργοποίηση φωνητικής ανάγνωσης ειδοποιήσεων</string>
     <string name="notification_automation_off">Απενεργοποιήστε την ανάγνωση των ειδοποιήσεων δυνατά</string>

@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">„არ შემაწუხოთ“ რეჟიმით დაშვებული შეტყობინებების წაკითხვა</string>
     <string name="notification_dnd_all">ყველას წაკითხვა</string>
     <string name="notification_touch_title">ეკრანზე შეხებისას</string>
-    <string name="notification_touch_read">წაიკითხეთ მაშინვე</string>
+    <string name="notification_touch_read">მაშინვე წაკითხვა</string>
     <string name="notification_touch_after">წაიკითხეთ, როდესაც შეხება დასრულდება</string>
     <string name="notification_touch_skip">არ წაიკითხოთ ხმამაღლა</string>
     <string name="notification_during_calls_title">ზარების დროს</string>
@@ -111,11 +111,11 @@
     <string name="notification_watch_dismiss_title">ასევე, როდესაც შეტყობინება გაუქმებულია სმარტ საათზე</string>
     <string name="notification_app_cancel_title">შეწყვიტე კითხვა, როდესაც აპი წაშლის შეტყობინებას</string>
     <string name="notification_category_summary">შეჯამება</string>
-    <string name="notification_summary_now_title">წაიკითხეთ შეტყობინებები ახლა</string>
+    <string name="notification_summary_now_title">შეტყობინებების ახლავე წაკითხვა</string>
     <string name="notification_summary_daily_title">წაიკითხეთ შეტყობინებები ყოველდღე</string>
     <string name="notification_summary_time_title">დრო</string>
     <string name="notification_summary_newest_first_title">ჯერ უახლესი</string>
-    <string name="notification_summary_name_title">შენი სახელი</string>
+    <string name="notification_summary_name_title">თქვენი სახელი</string>
     <string name="notification_summary_gap_title">პაუზა შეტყობინებებს შორის</string>
     <string name="notification_summary_needs_sandfly">ჩართეთ SandFly შეტყობინებების წასაკითხად</string>
     <string name="notification_summary_no_access">შეტყობინებებზე წვდომა გამორთულია</string>
@@ -244,8 +244,8 @@
     <string name="notification_bluetooth_any">ნებისმიერი მოწყობილობა</string>
     <string name="notification_wifi_hint">ქსელის სახელი</string>
     <string name="notification_choose_app">აირჩიეთ აპლიკაცია</string>
-    <string name="notification_time_start">დან</string>
-    <string name="notification_time_end">სანამ</string>
+    <string name="notification_time_start">-დან</string>
+    <string name="notification_time_end">-მდე</string>
     <string name="notification_time_days">დღეები</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g>-დან <xliff:g id="end" example="07:00">%2$s</xliff:g>-მდე</string>
     <string name="notification_permission_needed">SandFly სჭირდება ეს ნებართვა ამ მდგომარეობისთვის</string>

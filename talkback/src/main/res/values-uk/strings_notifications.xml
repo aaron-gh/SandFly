@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">Читати сповіщення, дозволені в режимі «Не турбувати».</string>
     <string name="notification_dnd_all">Читати все</string>
     <string name="notification_touch_title">Під час торкання екрана</string>
-    <string name="notification_touch_read">Читайте відразу</string>
+    <string name="notification_touch_read">Читати відразу</string>
     <string name="notification_touch_after">Прочитайте, коли дотик закінчується</string>
     <string name="notification_touch_skip">Не читайте вголос</string>
     <string name="notification_during_calls_title">Під час дзвінків</string>
@@ -111,15 +111,15 @@
     <string name="notification_watch_dismiss_title">Також коли сповіщення відхилено на смарт-годиннику</string>
     <string name="notification_app_cancel_title">Припиніть читати, коли програма видалить сповіщення</string>
     <string name="notification_category_summary">Зведення</string>
-    <string name="notification_summary_now_title">Прочитайте сповіщення зараз</string>
+    <string name="notification_summary_now_title">Прочитати сповіщення зараз</string>
     <string name="notification_summary_daily_title">Читайте сповіщення щодня</string>
     <string name="notification_summary_time_title">Час</string>
     <string name="notification_summary_newest_first_title">Спочатку найновіші</string>
     <string name="notification_summary_name_title">Ваше ім\'я</string>
-    <string name="notification_summary_gap_title">Пауза між повідомленнями</string>
+    <string name="notification_summary_gap_title">Пауза між сповіщеннями</string>
     <string name="notification_summary_needs_sandfly">Увімкніть SandFly, щоб прочитати сповіщення</string>
     <string name="notification_summary_no_access">Доступ до сповіщень вимкнено</string>
-    <string name="notification_summary_morning">Доброго ранку</string>
+    <string name="notification_summary_morning">Доброго ранку.</string>
     <string name="notification_summary_afternoon">Доброго дня.</string>
     <string name="notification_summary_evening">Добрий вечір.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
@@ -223,7 +223,7 @@
     <string name="notification_rule_or">" або "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">Тільки в навушниках</string>
-    <string name="notification_template_night">Тиха вночі</string>
+    <string name="notification_template_night">Тиша вночі</string>
     <string name="notification_template_screen_off">Тільки з вимкненим екраном</string>
     <string name="notification_template_locked_private">Лише назва програми, коли телефон заблоковано</string>
     <string name="notification_template_short_on_battery">Прочитайте коротко, коли не заряджається</string>
@@ -245,8 +245,8 @@
     <string name="notification_wifi_hint">Назва мережі</string>
     <string name="notification_choose_app">Виберіть програму</string>
     <string name="notification_time_start">Від</string>
-    <string name="notification_time_end">Поки</string>
-    <string name="notification_time_days">Днів</string>
+    <string name="notification_time_end">До</string>
+    <string name="notification_time_days">Дні</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> до <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly потребує такого дозволу для цієї умови</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> підключено</string>
@@ -311,7 +311,7 @@
     <string name="shortcut_stop_notification">Припиніть читати сповіщення</string>
     <string name="notification_test_posting">Через 5 секунд приходить тестове сповіщення</string>
     <string name="notification_test_not_allowed">Дозвольте SandFly спочатку показувати сповіщення</string>
-    <string name="notification_test_content_title">SandFly тест</string>
+    <string name="notification_test_content_title">Тест SandFly</string>
     <string name="notification_test_content_text">Це тестове сповіщення, читайте в налаштуваннях сповіщень. 123456</string>
     <string name="notification_automation_on">Увімкнути читання сповіщень вголос</string>
     <string name="notification_automation_off">Вимкнути читання сповіщень вголос</string>

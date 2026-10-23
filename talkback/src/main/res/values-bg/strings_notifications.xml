@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">Прочетете известията, разрешени от режима „Не безпокойте“.</string>
     <string name="notification_dnd_all">Четене на всички</string>
     <string name="notification_touch_title">Докато екранът е докоснат</string>
-    <string name="notification_touch_read">Прочетете веднага</string>
+    <string name="notification_touch_read">Четене веднага</string>
     <string name="notification_touch_after">Прочетете, когато докосването приключи</string>
     <string name="notification_touch_skip">Не четете на глас</string>
     <string name="notification_during_calls_title">По време на разговори</string>
@@ -111,7 +111,7 @@
     <string name="notification_watch_dismiss_title">Също така, когато известието е отхвърлено на смарт часовник</string>
     <string name="notification_app_cancel_title">Спрете да четете, когато приложението премахне известието</string>
     <string name="notification_category_summary">Резюме</string>
-    <string name="notification_summary_now_title">Прочетете известията сега</string>
+    <string name="notification_summary_now_title">Прочитане на известията сега</string>
     <string name="notification_summary_daily_title">Четете известията всеки ден</string>
     <string name="notification_summary_time_title">Час</string>
     <string name="notification_summary_newest_first_title">Първо най-новите</string>
@@ -119,7 +119,7 @@
     <string name="notification_summary_gap_title">Пауза между известията</string>
     <string name="notification_summary_needs_sandfly">Включете SandFly, за да четете известия</string>
     <string name="notification_summary_no_access">Достъпът до известията е изключен</string>
-    <string name="notification_summary_morning">Добро утро</string>
+    <string name="notification_summary_morning">Добро утро.</string>
     <string name="notification_summary_afternoon">Добър ден.</string>
     <string name="notification_summary_evening">Добър вечер.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
@@ -223,7 +223,7 @@
     <string name="notification_rule_or">" или "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">Само със слушалки</string>
-    <string name="notification_template_night">Тиха през нощта</string>
+    <string name="notification_template_night">Тишина през нощта</string>
     <string name="notification_template_screen_off">Само при изключен екран</string>
     <string name="notification_template_locked_private">Само името на приложението, когато телефонът е заключен</string>
     <string name="notification_template_short_on_battery">Прочетете накратко, когато не се зарежда</string>
@@ -245,7 +245,7 @@
     <string name="notification_wifi_hint">Име на мрежата</string>
     <string name="notification_choose_app">Изберете приложение</string>
     <string name="notification_time_start">От</string>
-    <string name="notification_time_end">Докато</string>
+    <string name="notification_time_end">До</string>
     <string name="notification_time_days">Дни</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> до <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly се нуждае от това разрешение за това условие</string>
@@ -311,7 +311,7 @@
     <string name="shortcut_stop_notification">Спрете да четете известието</string>
     <string name="notification_test_posting">След 5 секунди следва тестово известие</string>
     <string name="notification_test_not_allowed">Разрешете на SandFly първо да показва известия</string>
-    <string name="notification_test_content_title">SandFly тест</string>
+    <string name="notification_test_content_title">Тест на SandFly</string>
     <string name="notification_test_content_text">Това е тестово известие, прочетете с вашите настройки за известяване. 123456</string>
     <string name="notification_automation_on">Разрешете четенето на известия на глас</string>
     <string name="notification_automation_off">Деактивирайте четенето на известия на глас</string>

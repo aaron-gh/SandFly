@@ -80,7 +80,7 @@
     <string name="notification_dnd_allowed">おやすみモードで許可された通知の読み取り</string>
     <string name="notification_dnd_all">すべて読む</string>
     <string name="notification_touch_title">画面をタッチしている間</string>
-    <string name="notification_touch_read">すぐに読んでください</string>
+    <string name="notification_touch_read">すぐに読み上げる</string>
     <string name="notification_touch_after">タッチ終了時に読み上げる</string>
     <string name="notification_touch_skip">声に出して読まないでください</string>
     <string name="notification_during_calls_title">通話中</string>
@@ -111,12 +111,12 @@
     <string name="notification_watch_dismiss_title">スマートウォッチで通知を閉じた場合も</string>
     <string name="notification_app_cancel_title">アプリが通知を削除したら読書を中止する</string>
     <string name="notification_category_summary">概要</string>
-    <string name="notification_summary_now_title">今すぐ通知を読む</string>
+    <string name="notification_summary_now_title">今すぐ通知を読み上げる</string>
     <string name="notification_summary_daily_title">毎日通知を読む</string>
-    <string name="notification_summary_time_title">時間</string>
+    <string name="notification_summary_time_title">時刻</string>
     <string name="notification_summary_newest_first_title">新しい順</string>
-    <string name="notification_summary_name_title">あなたの名前</string>
-    <string name="notification_summary_gap_title">通知の間に一時停止する</string>
+    <string name="notification_summary_name_title">名前</string>
+    <string name="notification_summary_gap_title">通知間の間隔</string>
     <string name="notification_summary_needs_sandfly">通知を読むには SandFly をオンにしてください</string>
     <string name="notification_summary_no_access">通知へのアクセスがオフになっています</string>
     <string name="notification_summary_morning">おはようございます。</string>
@@ -222,8 +222,8 @@
     <string name="notification_rule_and">" かつ "</string>
     <string name="notification_rule_or">" または "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
-    <string name="notification_template_headphones">ヘッドフォンのみで</string>
-    <string name="notification_template_night">夜は静か</string>
+    <string name="notification_template_headphones">ヘッドフォン使用時のみ</string>
+    <string name="notification_template_night">夜間は読み上げない</string>
     <string name="notification_template_screen_off">画面がオフの場合のみ</string>
     <string name="notification_template_locked_private">携帯電話がロックされている場合はアプリ名のみ</string>
     <string name="notification_template_short_on_battery">充電していないときに軽く読んでください</string>
@@ -246,7 +246,7 @@
     <string name="notification_choose_app">アプリを選択</string>
     <string name="notification_time_start">から</string>
     <string name="notification_time_end">まで</string>
-    <string name="notification_time_days">日数</string>
+    <string name="notification_time_days">曜日</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> から <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
     <string name="notification_permission_needed">SandFly はこの条件に対してその許可が必要です</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> が接続中</string>
