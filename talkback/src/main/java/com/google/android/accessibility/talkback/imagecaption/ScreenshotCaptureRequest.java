@@ -19,10 +19,13 @@ package com.google.android.accessibility.talkback.imagecaption;
 import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.AccessibilityService.ScreenshotResult;
 import android.graphics.Bitmap;
+import android.os.Handler;
+import android.os.Looper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.accessibility.utils.screencapture.ScreenshotCapture;
 import com.google.android.accessibility.utils.screencapture.ScreenshotCapture.WindowOrFullScreenScreenshotCallback;
@@ -53,10 +56,17 @@ public class ScreenshotCaptureRequest extends Request {
   /** Maximal caption request execution time. */
   public static final Duration SCREENSHOT_CAPTURE_TIMEOUT_MS = Duration.ofMillis(3000);
 
+  /** How long the app on screen gets to redraw without the focus indicator. */
+  private static final long HIDDEN_FOCUS_REDRAW_MS = 150;
+
   private final AccessibilityService service;
   private final AccessibilityNodeInfoCompat node;
   @NonNull private final OnFinishListener onFinishListener;
   private final boolean isUserRequested;
+  private final Handler handler = new Handler(Looper.getMainLooper());
+  private final Runnable capture = this::capture;
+  // Whether the focus indicator is hidden for this screenshot and must be shown again.
+  private boolean focusHidden;
 
   public ScreenshotCaptureRequest(
       AccessibilityService service,
@@ -75,6 +85,27 @@ public class ScreenshotCaptureRequest extends Request {
   @RequiresApi(api = 30)
   public void perform() {
     setStartTimestamp();
+    // A screenshot the user asked for is described by AI, which takes the focus indicator for a
+    // selection.
+    if (isUserRequested && FocusIndicatorUtils.hideForScreenshot(service)) {
+      focusHidden = true;
+      runTimeoutRunnable();
+      handler.postDelayed(capture, HIDDEN_FOCUS_REDRAW_MS);
+    } else {
+      capture();
+      runTimeoutRunnable();
+    }
+  }
+
+  @Override
+  void cancel() {
+    super.cancel();
+    handler.removeCallbacks(capture);
+    restoreFocus();
+  }
+
+  @RequiresApi(api = 30)
+  private void capture() {
     ScreenshotCapture.takeScreenshotByNode(
         service,
         node,
@@ -91,7 +122,13 @@ public class ScreenshotCaptureRequest extends Request {
             onFinished(getBitmap(), isCaptureByWindow());
           }
         });
-    runTimeoutRunnable();
+  }
+
+  private void restoreFocus() {
+    if (focusHidden) {
+      focusHidden = false;
+      FocusIndicatorUtils.restoreAfterScreenshot(service);
+    }
   }
 
   @Override
@@ -111,6 +148,8 @@ public class ScreenshotCaptureRequest extends Request {
   }
 
   private void onFinished(@Nullable Bitmap screenCapture, boolean capturedByWindow) {
+    handler.removeCallbacks(capture);
+    restoreFocus();
     if (!finish()) {
       // It timed out or was cancelled, and the next request may have started.
       if (screenCapture != null) {
