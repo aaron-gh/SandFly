@@ -24,5 +24,10 @@ object WhisperEngines {
 
   fun gpuAvailable(): Boolean = false
 
-  fun transcriber(file: File, gpu: Boolean, build: String): SpeechTranscriber? = null
+  fun transcriber(
+    file: File,
+    gpu: Boolean,
+    build: String,
+    shortContext: Boolean,
+  ): SpeechTranscriber? = null
 }

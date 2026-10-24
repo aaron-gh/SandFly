@@ -258,6 +258,7 @@ class AiDictation(
         WhisperModels.get(service).file(model),
         DictationSettings.whisperOnGpu(prefs),
         installKey(),
+        model.shortContext,
       ) ?: return null
     transcriber = whisper
     try {

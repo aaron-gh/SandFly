@@ -31,19 +31,28 @@ import java.util.concurrent.CopyOnWriteArraySet
 import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicBoolean
 
+private const val HUGGING_FACE = "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/"
+private const val FUTO = "https://voiceinput.futo.org/VoiceInput/"
+
 /**
  * The Whisper models that Dictate can use on the phone: which are downloaded, the one in use, and
  * the download in progress. One instance lives for the whole process, so a download carries on
  * while Dictation settings are closed.
  */
 class WhisperModels private constructor(context: Context) {
-  /** A Whisper model in whisper.cpp's format, from Hugging Face. All of them know 99 languages. */
+  /**
+   * A Whisper model in whisper.cpp's format: OpenAI's from Hugging Face, which know 99 languages,
+   * and FUTO's, fine-tuned to encode only the spoken audio rather than 30 seconds ([shortContext]),
+   * which is much faster for short dictation. The English ones know only English.
+   */
   enum class Model(
     val id: String,
     val label: String,
     val fileName: String,
     val sizeBytes: Long,
     val sha256: String,
+    private val source: String = HUGGING_FACE,
+    val shortContext: Boolean = false,
   ) {
     TINY(
       "tiny",
@@ -72,10 +81,64 @@ class WhisperModels private constructor(context: Context) {
       "ggml-large-v3-turbo-q5_0.bin",
       574_041_195,
       "394221709cd5ad1f40c46e6031ca61bce88931e6e088c188294c6d5a55ffa7e2",
+    ),
+    FUTO_TINY_EN(
+      "futo-tiny-en",
+      "FUTO Tiny (English)",
+      "tiny_en_acft_q8_0.bin",
+      43_550_795,
+      "4b5480aa1b14a7efc5b578ef176510970a898049671c3cd237285b3e3f6bfbfc",
+      FUTO,
+      shortContext = true,
+    ),
+    FUTO_BASE_EN(
+      "futo-base-en",
+      "FUTO Base (English)",
+      "base_en_acft_q8_0.bin",
+      81_781_811,
+      "e9b4b7b81b8a28769e8aa9962aa39bb9f21b622cf6a63982e93f065ed5caf1c8",
+      FUTO,
+      shortContext = true,
+    ),
+    FUTO_SMALL_EN(
+      "futo-small-en",
+      "FUTO Small (English)",
+      "small_en_acft_q8_0.bin",
+      264_477_561,
+      "58fbe949992dafed917590d58bc12ca577b08b9957f0b3e0d7ee71b64bed3aa8",
+      FUTO,
+      shortContext = true,
+    ),
+    FUTO_TINY(
+      "futo-tiny",
+      "FUTO Tiny",
+      "tiny_acft_q8_0.bin",
+      43_537_450,
+      "07aa4d514144deacf5ffec5cacb36c93dee272fda9e64ac33a801f8cd5cbd953",
+      FUTO,
+      shortContext = true,
+    ),
+    FUTO_BASE(
+      "futo-base",
+      "FUTO Base",
+      "base_acft_q8_0.bin",
+      81_768_602,
+      "e44f352c9aa2c3609dece20c733c4ad4a75c28cd9ab07d005383df55fa96efc4",
+      FUTO,
+      shortContext = true,
+    ),
+    FUTO_SMALL(
+      "futo-small",
+      "FUTO Small",
+      "small_acft_q8_0.bin",
+      264_464_624,
+      "15ef255465a6dc582ecf1ec651a4618c7ee2c18c05570bbe46493d248d465ac4",
+      FUTO,
+      shortContext = true,
     );
 
     val url: String
-      get() = "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/$fileName"
+      get() = source + fileName
 
     companion object {
       fun of(id: String?): Model? = entries.firstOrNull { it.id == id }
