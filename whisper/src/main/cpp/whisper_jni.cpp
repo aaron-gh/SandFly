@@ -97,7 +97,8 @@ JNI_NAME(nativeCancel)(
 // transcription failed or was cancelled.
 JNIEXPORT jbyteArray JNICALL
 JNI_NAME(nativeTranscribe)(
-    JNIEnv* env, jobject, jlong handle, jfloatArray samples, jstring language, jint threads) {
+    JNIEnv* env, jobject, jlong handle, jfloatArray samples, jstring language, jint threads,
+    jint audioContext) {
   auto* model = reinterpret_cast<Model*>(handle);
   if (model == nullptr) return nullptr;
   model->cancelled.store(false);
@@ -115,6 +116,11 @@ JNI_NAME(nativeTranscribe)(
   params.suppress_nst = true;
   params.abort_callback = IsCancelled;
   params.abort_callback_user_data = model;
+  // One pass: a failed one isn't decoded again at higher temperatures, which multiplies the time.
+  params.temperature_inc = 0.0f;
+  params.max_tokens = 256;
+  // 0 for the whole 30 seconds the encoder takes; models fine-tuned for it can take less.
+  params.audio_ctx = audioContext;
 
   jsize count = env->GetArrayLength(samples);
   jfloat* audio = env->GetFloatArrayElements(samples, nullptr);

@@ -39,13 +39,21 @@ private constructor(
 
   /**
    * The text spoken in [samples], 16 kHz mono audio from -1 to 1. [language] is a two-letter code,
-   * or "auto" to detect it. Returns null when cancelled.
+   * or "auto" to detect it. With [shortContext], for models fine-tuned for it, the encoder takes
+   * only as much audio as was spoken rather than 30 seconds. Returns null when cancelled.
    */
-  fun transcribe(samples: FloatArray, language: String, threads: Int): String? =
+  fun transcribe(
+    samples: FloatArray,
+    language: String,
+    threads: Int,
+    shortContext: Boolean = false,
+  ): String? =
     synchronized(transcribeLock) {
       val current = synchronized(handleLock) { handle }
       check(current != 0L) { "Closed" }
-      val bytes = native.nativeTranscribe(current, samples, language, threads) ?: return null
+      val context = if (shortContext) audioContext(samples.size) else 0
+      val bytes =
+        native.nativeTranscribe(current, samples, language, threads, context) ?: return null
       String(bytes, Charsets.UTF_8).trim()
     }
 
@@ -66,6 +74,12 @@ private constructor(
 
   companion object {
     private const val TAG = "WhisperModel"
+
+    /**
+     * The encoder's audio context for [samples] samples: 50 for each second of audio, as the full
+     * 1500 is 30 seconds, with a margin, as FUTO's voice input sets it for these models.
+     */
+    fun audioContext(samples: Int): Int = ((samples + 319) / 320 + 32).coerceIn(160, 1500)
 
     /** Whether Whisper knows the language with the two-letter code [code]. */
     fun isLanguage(code: String): Boolean =

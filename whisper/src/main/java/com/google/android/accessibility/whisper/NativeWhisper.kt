@@ -26,7 +26,13 @@ internal interface NativeWhisper {
 
   fun nativeCancel(handle: Long)
 
-  fun nativeTranscribe(handle: Long, samples: FloatArray, language: String, threads: Int): ByteArray?
+  fun nativeTranscribe(
+    handle: Long,
+    samples: FloatArray,
+    language: String,
+    threads: Int,
+    audioContext: Int,
+  ): ByteArray?
 }
 
 /** whisper.cpp for the CPU, in libsandfly_whisper.so. */
@@ -48,6 +54,7 @@ internal object WhisperNative : NativeWhisper {
     samples: FloatArray,
     language: String,
     threads: Int,
+    audioContext: Int,
   ): ByteArray?
 }
 
@@ -73,5 +80,6 @@ internal object WhisperOpenClNative : NativeWhisper {
     samples: FloatArray,
     language: String,
     threads: Int,
+    audioContext: Int,
   ): ByteArray?
 }

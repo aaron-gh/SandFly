@@ -40,9 +40,15 @@ object WhisperEngines {
   /**
    * Transcribes with the model in [file], on the GPU when [gpu] is true and it can. The model is
    * loaded for each transcription and closed after it, so that it takes no memory between
-   * dictations. [build] tells this install of SandFly from others, as [load] says.
+   * dictations. [build] tells this install of SandFly from others, as [load] says. With
+   * [shortContext], for models fine-tuned for it, only the spoken audio is encoded.
    */
-  fun transcriber(file: File, gpu: Boolean, build: String): SpeechTranscriber? =
+  fun transcriber(
+    file: File,
+    gpu: Boolean,
+    build: String,
+    shortContext: Boolean,
+  ): SpeechTranscriber? =
     object : SpeechTranscriber {
       @Volatile private var model: WhisperModel? = null
       @Volatile private var cancelled = false
@@ -63,7 +69,7 @@ object WhisperEngines {
           val code = if (WhisperModel.isLanguage(language)) language else "auto"
           val threads = Runtime.getRuntime().availableProcessors().coerceIn(1, MAX_THREADS)
           val transcribeStart = SystemClock.elapsedRealtime()
-          val text = loaded.transcribe(samples, code, threads)
+          val text = loaded.transcribe(samples, code, threads, shortContext)
           LogUtils.i(
             TAG,
             "%s on the %s: loaded in %d ms, %d ms of audio transcribed in %d ms",
