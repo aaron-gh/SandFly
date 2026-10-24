@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.dictation
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Handler
+import android.os.SystemClock
 import android.os.Looper
 import android.speech.SpeechRecognizer
 import androidx.core.content.ContextCompat
@@ -336,9 +337,13 @@ class AiDictation(
     tones.play(/* playTone= */ true, /* delayPlayTone= */ false)
     val prompt = prompt(textBeforeCursor(target), heard)
     worker.execute {
+      val start = SystemClock.elapsedRealtime()
       val answer =
         try {
-          correct(corrector, prompt)
+          correct(corrector, prompt).also {
+            val ms = SystemClock.elapsedRealtime() - start
+            LogUtils.i(TAG, "%s answered in %d ms", corrector, ms)
+          }
         } catch (e: Exception) {
           LogUtils.w(TAG, "No correction: %s", e)
           null
