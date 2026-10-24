@@ -1155,9 +1155,9 @@ public class SelectorController implements UserInputEventListener {
     DescriptionAndHint descriptionAndHint = getSettingActionDescriptionAndHint(newSetting, eventId);
 
     // There's no setting needed to handle double-tap by default, reset it once setting changed.
-    // Live recognition takes double-tap only after a swipe up or down chooses a mode.
-    liveRecognitionArmed = false;
-    requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, false);
+    // Live recognition takes double-tap to turn the mode it says on or off.
+    liveRecognitionArmed = newSetting == Setting.LIVE_RECOGNITION;
+    requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, liveRecognitionArmed);
 
     if (TextUtils.isEmpty(descriptionAndHint.description)) {
       return;
@@ -2119,8 +2119,8 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /**
-   * Toggles the chosen live recognition mode, if a swipe up or down chose one since focus last
-   * moved.
+   * Toggles the chosen live recognition mode, if the reading control was chosen or adjusted since
+   * focus last moved.
    */
   public boolean activateLiveRecognition() {
     if (!liveRecognitionArmed || scriptControlKey != null

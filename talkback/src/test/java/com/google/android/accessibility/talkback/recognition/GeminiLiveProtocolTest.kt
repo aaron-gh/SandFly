@@ -61,23 +61,34 @@ class GeminiLiveProtocolTest {
     assertTrue(below.contains("ambiguous or unreadable"))
   }
 
-  @Test fun waitsForTurnCompleteAndDoesNotSpeakAudioOrThoughts() {
+  @Test fun answerIsCompleteAtGenerationCompleteAndAudioAndThoughtsAreNotSpoken() {
     val response = GeminiLiveResponse()
-    assertNull(response.accept(JSONObject("""{"modelTurn":{"parts":[{"inlineData":{"mimeType":"audio/pcm","data":"AAAA"}},{"text":"private reasoning","thought":true}]},"outputTranscription":{"text":"A door "}}""")))
-    assertNull(response.accept(JSONObject("""{"outputTranscription":{"text":"on the left."},"generationComplete":true}""")))
-    assertEquals("A door on the left.", response.accept(JSONObject("""{"turnComplete":true}""")))
-    assertEquals("", response.accept(JSONObject("""{"turnComplete":true}""")))
+    assertFalse(response.accept(JSONObject("""{"modelTurn":{"parts":[{"inlineData":{"mimeType":"audio/pcm","data":"AAAA"}},{"text":"private reasoning","thought":true}]},"outputTranscription":{"text":"A door "}}""")))
+    assertFalse(response.accept(JSONObject("""{"outputTranscription":{"text":"on the left."}}""")))
+    assertTrue(response.accept(JSONObject("""{"generationComplete":true}""")))
+    assertEquals("A door on the left.", response.take())
+    assertEquals("", response.take())
+  }
+
+  @Test fun transcriptAfterTurnCompleteIsPartOfTheAnswer() {
+    val response = GeminiLiveResponse()
+    assertTrue(response.accept(JSONObject("""{"outputTranscription":{"text":"A table "},"turnComplete":true}""")))
+    response.accept(JSONObject("""{"outputTranscription":{"text":"in the middle."}}"""))
+    assertEquals("A table in the middle.", response.take())
   }
 
   @Test fun interruptionDiscardsPartialTranscript() {
     val response = GeminiLiveResponse()
     response.accept(JSONObject("""{"outputTranscription":{"text":"Old scene"}}"""))
     response.accept(JSONObject("""{"interrupted":true}"""))
-    assertEquals("New scene", response.accept(JSONObject("""{"outputTranscription":{"text":"New scene"},"turnComplete":true}""")))
+    response.accept(JSONObject("""{"outputTranscription":{"text":"New scene"},"turnComplete":true}"""))
+    assertEquals("New scene", response.take())
   }
 
   @Test fun transcriptTakesPriorityOverDuplicateTextParts() {
-    assertEquals("A person", GeminiLiveResponse().accept(JSONObject("""{"modelTurn":{"parts":[{"text":"A person"}]},"outputTranscription":{"text":"A person"},"turnComplete":true}""")))
+    val response = GeminiLiveResponse()
+    response.accept(JSONObject("""{"modelTurn":{"parts":[{"text":"A person"}]},"outputTranscription":{"text":"A person"},"turnComplete":true}"""))
+    assertEquals("A person", response.take())
   }
 
   @Test(expected = IllegalStateException::class) fun unboundedResponseIsRejected() {

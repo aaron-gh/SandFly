@@ -20,6 +20,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import com.google.android.accessibility.talkback.R
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -46,17 +47,26 @@ internal class GeminiLiveSession(
   // Volatile so that the camera thread can check canRequest before it encodes a frame.
   @Volatile private var ready = false
   @Volatile private var closed = false
+  /** Whether a frame was sent and its answer isn't complete. */
   @Volatile private var pending = false
+  /** Whether any of the answer to the frame in [pending] came. */
+  private var answerStarted = false
   @Volatile private var lastRequest = -REQUEST_INTERVAL_MS
-  private val timeout = Runnable { fail(R.string.live_recognition_timeout) }
+  private val timeout = Runnable {
+    LogUtils.w(TAG, "No answer in time (ready=%s)", ready)
+    fail(R.string.live_recognition_timeout)
+  }
+  private val finish = Runnable { finishAnswer() }
   private val socket: WebSocket
 
   init {
     handler.postDelayed(timeout, SETUP_TIMEOUT_MS)
     // The key goes in a header rather than the address, which logs show.
     val request = Request.Builder().url(URL).header(API_KEY_HEADER, apiKey).build()
+    LogUtils.i(TAG, "Connecting to %s", GeminiLiveProtocol.MODEL)
     socket = connect(request, object : WebSocketListener() {
       override fun onOpen(webSocket: WebSocket, response: Response) {
+        LogUtils.i(TAG, "Connected, sending setup")
         handler.post {
           if (!closed && !webSocket.send(GeminiLiveProtocol.setup(GeminiLiveProtocol.MODEL, language))) {
             fail(R.string.live_recognition_connection_error)
@@ -66,10 +76,12 @@ internal class GeminiLiveSession(
       override fun onMessage(webSocket: WebSocket, text: String) { receive(text) }
       override fun onMessage(webSocket: WebSocket, bytes: ByteString) { receive(bytes.utf8()) }
       override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
+        LogUtils.w(TAG, "Connection failed: %s, HTTP %s", t.javaClass.simpleName, response?.code())
         handler.post { fail(if (response?.code() in listOf(401, 403))
           R.string.gemini_error_api_key else R.string.live_recognition_connection_error) }
       }
       override fun onClosing(webSocket: WebSocket, code: Int, reason: String) {
+        LogUtils.w(TAG, "Closed by Gemini: %d %s", code, reason)
         webSocket.close(code, null)
         handler.post { fail(closeMessage(code, reason)) }
       }
@@ -86,11 +98,15 @@ internal class GeminiLiveSession(
   fun describe(jpeg: String, modes: Set<RecognitionMode>, pointAbove: Boolean) {
     if (!canRequest() || modes.none { it.cloud }) return
     pending = true
+    answerStarted = false
+    response.clear()
     lastRequest = SystemClock.elapsedRealtime()
     handler.postDelayed(timeout, RESPONSE_TIMEOUT_MS)
+    LogUtils.d(TAG, "Sending a frame, %d bytes, for %s", jpeg.length, modes)
     if (socket.queueSize() > MAX_QUEUED_BYTES ||
         !socket.send(GeminiLiveProtocol.video(jpeg)) ||
         !socket.send(GeminiLiveProtocol.request(modes, pointAbove))) {
+      LogUtils.w(TAG, "Frame not sent, %d bytes queued", socket.queueSize())
       fail(R.string.live_recognition_connection_error)
     }
   }
@@ -101,29 +117,63 @@ internal class GeminiLiveSession(
       try {
         val json = JSONObject(message)
         if (json.has("error")) {
+          LogUtils.w(TAG, "Error from Gemini: %s", json.optJSONObject("error")?.optString("message"))
           fail(R.string.live_recognition_connection_error)
         } else if (json.has("goAway")) {
+          LogUtils.i(TAG, "Gemini is ending the session")
           fail(R.string.live_recognition_session_ended)
         } else if (json.has("setupComplete")) {
+          LogUtils.i(TAG, "Setup complete")
           handler.removeCallbacks(timeout)
           ready = true
           onReady()
         } else {
-          json.optJSONObject("serverContent")?.let { content ->
-            val result = response.accept(content)
-            if (result != null) {
-              val wasPending = pending
-              pending = false
-              handler.removeCallbacks(timeout)
-              // A slow answer must not describe an old frame as the current surroundings.
-              if (wasPending && SystemClock.elapsedRealtime() - lastRequest <= MAX_RESULT_AGE_MS) onResult(result)
-            }
+          val content = json.optJSONObject("serverContent")
+          if (content == null) {
+            LogUtils.v(TAG, "Ignored message: %s", json.keys().asSequence().toList())
+          } else {
+            LogUtils.v(TAG, "Server content: %s", content.keys().asSequence().toList())
+            receiveContent(content)
           }
         }
-      } catch (_: Exception) {
+      } catch (e: Exception) {
+        LogUtils.w(TAG, "Unreadable message: %s", e.javaClass.simpleName)
         fail(R.string.live_recognition_connection_error)
       }
     }
+  }
+
+  /**
+   * Gemini sends the answer, then generationComplete, and ends the turn with turnComplete only
+   * once its audio would have finished playing. The next frame goes as soon as the answer is
+   * complete, so the end of the previous turn, or its interruption by that frame, can come after
+   * it: those are ignored until the new answer starts.
+   */
+  private fun receiveContent(content: JSONObject) {
+    if (!pending) return
+    val partOfAnswer = content.has("modelTurn") || content.has("outputTranscription")
+    if (partOfAnswer && !answerStarted) {
+      answerStarted = true
+      LogUtils.d(TAG, "First answer content %d ms after its frame", SystemClock.elapsedRealtime() - lastRequest)
+    }
+    if (!answerStarted && !content.optBoolean("generationComplete")) return
+    if (response.accept(content)) {
+      LogUtils.d(TAG, "Answer complete %d ms after its frame", SystemClock.elapsedRealtime() - lastRequest)
+      // Transcript that is still on its way is part of the answer.
+      handler.removeCallbacks(finish)
+      handler.postDelayed(finish, SETTLE_MS)
+    }
+  }
+
+  private fun finishAnswer() {
+    if (closed || !pending) return
+    pending = false
+    val result = response.take()
+    handler.removeCallbacks(timeout)
+    val age = SystemClock.elapsedRealtime() - lastRequest
+    LogUtils.d(TAG, "Answer, %d characters, %d ms after its frame", result.length, age)
+    // A slow answer must not describe an old frame as the current surroundings.
+    if (age <= MAX_RESULT_AGE_MS) onResult(result)
   }
 
   /** The Live API closes the session with a reason that names a rejected key or the quota. */
@@ -145,6 +195,7 @@ internal class GeminiLiveSession(
     closed = true
     ready = false
     handler.removeCallbacks(timeout)
+    handler.removeCallbacks(finish)
     socket.cancel()
   }
 
@@ -161,6 +212,9 @@ internal class GeminiLiveSession(
         "google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent"
     private const val API_KEY_HEADER = "x-goog-api-key"
     private const val NORMAL_CLOSURE = 1000
+    /** How long to wait after the end of the turn for transcript still on its way. */
+    private const val SETTLE_MS = 800L
+    private const val TAG = "LiveRecognition"
 
     private val client: OkHttpClient by lazy {
       OkHttpClient.Builder().connectTimeout(15, TimeUnit.SECONDS).pingInterval(20, TimeUnit.SECONDS).build()

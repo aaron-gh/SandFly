@@ -56,7 +56,9 @@ import com.google.android.accessibility.talkback.pause.PauseController
 import com.google.android.accessibility.utils.Performance
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.monitor.RecentUserInput
+import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
@@ -87,7 +89,6 @@ class LiveRecognitionActivity : ComponentActivity() {
   private lateinit var status: TextView
   private var resumed = false
   private var dialogOpen = false
-  private var consentThisVisit = false
   private var pendingPermission: RecognitionMode? = null
   private var initialMode: RecognitionMode? = null
   private var pointAbove = true
@@ -213,14 +214,14 @@ class LiveRecognitionActivity : ComponentActivity() {
         report(R.string.gemini_model_needs_key)
         return
       }
-      if (!consentThisVisit) {
+      if (!prefs.getBoolean(CLOUD_CONSENT_PREF, false)) {
         updateSwitches()
         dialogOpen = true
         AlertDialog.Builder(this).setTitle(R.string.live_recognition_cloud_title)
           .setMessage(R.string.live_recognition_cloud_message)
           .setNegativeButton(android.R.string.cancel, null)
           .setPositiveButton(R.string.live_recognition_send) { _, _ ->
-            consentThisVisit = true
+            prefs.edit().putBoolean(CLOUD_CONSENT_PREF, true).apply()
             dialogOpen = false
             if (resumed) toggle(mode)
           }.setOnDismissListener { dialogOpen = false }.show()
@@ -251,6 +252,7 @@ class LiveRecognitionActivity : ComponentActivity() {
   /** Invalidates old OCR/network callbacks before replacing the enabled modes or camera. */
   private fun reconcile() {
     val token = ++generation
+    LogUtils.i(TAG, "Modes: %s", enabled)
     TalkBackService.getInstance()?.speechController?.stopUtteranceGroup(SpeechController.UTTERANCE_GROUP_LIVE_RECOGNITION)
     session?.close()
     session = null
@@ -326,7 +328,8 @@ class LiveRecognitionActivity : ComponentActivity() {
               Base64.encodeToString(it.toByteArray(), Base64.NO_WRAP)
             }
             handler.post { processFrame(bitmap, jpeg, token, now) }
-          } catch (_: Throwable) {
+          } catch (e: Throwable) {
+            LogUtils.e(TAG, "Frame failed: %s", e.javaClass.simpleName)
             // Includes OutOfMemoryError, which would otherwise stop the screen reader.
             processing.set(false)
             handler.post { if (generation == token) cameraFailed() }
@@ -337,9 +340,15 @@ class LiveRecognitionActivity : ComponentActivity() {
         val camera = provider.bindToLifecycle(this, CameraSelector.DEFAULT_BACK_CAMERA, newPreview, newAnalysis)
         cameraState = camera.cameraInfo.cameraState
         cameraState?.observe(this) { state ->
-          if (generation == token && state.error != null) cameraFailed()
+          if (generation == token && state.error != null) {
+            LogUtils.e(TAG, "Camera error %d", state.error!!.code)
+            cameraFailed()
+          }
         }
-      } catch (_: Exception) { if (generation == token) cameraFailed() }
+      } catch (e: Exception) {
+        LogUtils.e(TAG, "Camera not started: %s", e.javaClass.simpleName)
+        if (generation == token) cameraFailed()
+      }
     }, ContextCompat.getMainExecutor(this))
   }
 
@@ -354,12 +363,15 @@ class LiveRecognitionActivity : ComponentActivity() {
       recognizerUsed = true
       recognizer.process(InputImage.fromBitmap(bitmap, 0))
         .addOnSuccessListener { result ->
+          LogUtils.v(TAG, "Text, %d characters, %d ms after the frame", result.text.length,
+            SystemClock.elapsedRealtime() - capturedAt)
           if (generation == token &&
               SystemClock.elapsedRealtime() - capturedAt <= GeminiLiveSession.MAX_RESULT_AGE_MS) {
             announceResult(SOURCE_TEXT, result.text.take(MAX_TEXT_LENGTH))
           }
         }
-        .addOnFailureListener {
+        .addOnFailureListener { e ->
+          LogUtils.e(TAG, "Text recognition failed: %s", e.javaClass.simpleName)
           if (generation == token) {
             enabled.remove(RecognitionMode.TEXT)
             reconcile()
@@ -381,21 +393,27 @@ class LiveRecognitionActivity : ComponentActivity() {
   }
 
   private fun speakPendingResult(ignoreRecentInput: Boolean = false) {
-    if (!resumed || enabled.isEmpty() || PauseController.isPaused()) return
+    if (!resumed || enabled.isEmpty() || PauseController.isPaused() || pendingResults.isEmpty()) return
     val speech = TalkBackService.getInstance()?.speechController ?: return
     // Keep at most the latest result per source while the user navigates. Never build a speech backlog.
-    if (speech.isSpeaking || (!ignoreRecentInput && RecentUserInput.isRecent())) return
+    if (speech.isSpeaking || (!ignoreRecentInput && RecentUserInput.isRecent())) {
+      LogUtils.v(TAG, "Result waits: speaking=%s", speech.isSpeaking)
+      return
+    }
     val now = SystemClock.elapsedRealtime()
     val iterator = pendingResults.iterator()
     while (iterator.hasNext()) {
       val (source, result) = iterator.next()
       iterator.remove()
-      if (now - result.second <= GeminiLiveSession.MAX_RESULT_AGE_MS &&
+      val age = now - result.second
+      if (age <= GeminiLiveSession.MAX_RESULT_AGE_MS &&
           announcements.shouldSpeak(source, result.first, now)) {
+        LogUtils.d(TAG, "Speaking %s result, %d ms after it came", source, age)
         status.text = result.first
         speak(result.first, false)
         return
       }
+      LogUtils.d(TAG, "Dropped %s result, %d characters, %d ms old", source, result.first.length, age)
     }
   }
 
@@ -403,6 +421,8 @@ class LiveRecognitionActivity : ComponentActivity() {
   private fun speak(text: String, interrupt: Boolean) {
     TalkBackService.getInstance()?.speechController?.speak(text, Performance.EVENT_ID_UNTRACKED,
       SpeechController.SpeakOptions.create()
+        // The user turned recognition on, so it is spoken even while other audio plays.
+        .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)
         .setUtteranceGroup(if (interrupt) SpeechController.UTTERANCE_GROUP_DEFAULT else SpeechController.UTTERANCE_GROUP_LIVE_RECOGNITION)
         .setQueueMode(
         if (interrupt) SpeechController.QUEUE_MODE_INTERRUPT else SpeechController.QUEUE_MODE_QUEUE))
@@ -410,11 +430,14 @@ class LiveRecognitionActivity : ComponentActivity() {
 
   companion object {
     const val EXTRA_MODE = "recognition_mode"
+    /** Whether the user agreed to camera images being sent to Gemini. */
+    private const val CLOUD_CONSENT_PREF = "pref_live_recognition_cloud_consent"
     private const val SOURCE_TEXT = "text"
     private const val SOURCE_GEMINI = "gemini"
     private const val FRAME_INTERVAL_MS = 1_000L
     private const val CHECK_INTERVAL_MS = 500L
     private const val JPEG_QUALITY = 70
     private const val MAX_TEXT_LENGTH = 1_200
+    private const val TAG = "LiveRecognition"
   }
 }

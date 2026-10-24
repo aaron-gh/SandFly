@@ -77,8 +77,13 @@ class GeminiLiveSessionTest {
     session.describe("jpeg", setOf(RecognitionMode.SCENES), true)
     session.describe("second", setOf(RecognitionMode.SCENES), true)
     assertEquals(3, socket.sent.size) // setup, one frame, one prompt
-    receive("""{"serverContent":{"outputTranscription":{"text":"A door"},"turnComplete":true}}""")
-    assertEquals(listOf("A door"), results)
+    receive("""{"serverContent":{"outputTranscription":{"text":"A door"},"generationComplete":true}}""")
+    receive("""{"serverContent":{"outputTranscription":{"text":" on the left"}}}""")
+    assertTrue(results.isEmpty()) // transcript can still come after the answer is complete
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(800))
+    assertEquals(listOf("A door on the left"), results)
+    receive("""{"serverContent":{"turnComplete":true}}""")
+    assertEquals(1, results.size)
     assertFalse(session.canRequest()) // still rate limited after fast response
     shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(4))
     assertTrue(session.canRequest())
@@ -149,12 +154,34 @@ class GeminiLiveSessionTest {
     assertEquals(listOf(R.string.live_recognition_timeout), failures)
   }
 
+  @Test fun nextFrameGoesBeforeTheTurnEndsAndTheOldTurnEndIsIgnored() {
+    val session = connect()
+    receive("""{"setupComplete":{}}""")
+    session.describe("jpeg", setOf(RecognitionMode.SCENES), true)
+    receive("""{"serverContent":{"outputTranscription":{"text":"A chair"}}}""")
+    receive("""{"serverContent":{"generationComplete":true}}""")
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(4))
+    assertEquals(listOf("A chair"), results)
+    // Gemini is still playing its audio of the first answer.
+    assertTrue(session.canRequest())
+    session.describe("second", setOf(RecognitionMode.SCENES), true)
+    receive("""{"serverContent":{"interrupted":true}}""")
+    receive("""{"serverContent":{"turnComplete":true}}""")
+    receive("""{"serverContent":{"outputTranscription":{"text":"A table"}}}""")
+    receive("""{"serverContent":{"generationComplete":true}}""")
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(1))
+    assertEquals(listOf("A chair", "A table"), results)
+    assertTrue(failures.isEmpty())
+    session.close()
+  }
+
   @Test fun slowResponseIsDiscardedAndTheNextFrameCanBeRequested() {
     val session = connect()
     receive("""{"setupComplete":{}}""")
     session.describe("jpeg", setOf(RecognitionMode.PEOPLE), true)
     shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(11))
     receive("""{"serverContent":{"outputTranscription":{"text":"An old scene"},"turnComplete":true}}""")
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(1))
     assertTrue(results.isEmpty())
     assertTrue(session.canRequest())
     assertFalse(socket.cancelled)
