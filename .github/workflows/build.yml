@@ -110,9 +110,10 @@ jobs:
 
   # Publishes the build. A push to master replaces the rolling "dev" pre-release, and a tag
   # v<version> creates the stable release, which becomes the latest release. The in-app updater
-  # reads both. The first line of the notes is "build: <build number>", and each "- <short hash>
-  # <subject>" line is a change, newest first. A stable release also gets the notes in
-  # release-notes/<version>.md, whose list items must start with "* ", not "- ".
+  # reads both. The first line of the notes is "build: <build number>". A development build then
+  # lists its commits, each as a "- <short hash> <subject>" line, newest first. A stable release
+  # has only the notes in release-notes/<version>.md, whose list items must start with "* ", not
+  # "- ", which the updater shows instead of commits.
   publish:
     needs: build
     if: github.event_name == 'push'
@@ -158,23 +159,15 @@ jobs:
 
           if [ "$GITHUB_REF_TYPE" = tag ]; then
             tag=$GITHUB_REF_NAME
-            previous=$(git describe --tags --abbrev=0 --match 'v*' "HEAD^" 2>/dev/null || true)
             notes="release-notes/${tag#v}.md"
             {
               echo "build: $count"
               echo
               if [ -f "$notes" ]; then
                 cat "$notes"
-                echo
-              fi
-              if [ -n "$previous" ]; then
-                echo "Changes since $previous:"
-                echo
-                changes "$previous..HEAD"
               else
-                echo "The first release of SandFly. Latest changes:"
-                echo
-                changes -n 50 HEAD
+                echo "The written notes, $notes, are missing." >&2
+                exit 1
               fi
             } > release-notes.md
             gh release create "$tag" sandfly.apk sandfly-wear.apk --verify-tag --latest \
