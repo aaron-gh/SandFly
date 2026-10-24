@@ -17,7 +17,7 @@
     <string name="ai_service_address_hint">주소(예: https://openrouter.ai/api/v1)</string>
     <string name="ai_service_model_hint">모델</string>
     <string name="ai_service_address_invalid">주소는 https://로 시작해야 합니다. 저장된 내용이 없습니다.</string>
-    <string name="dialog_message_ai_service_consent">설명을 위해 이미지와 스크린샷이 <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>로 전송되는데, 이 작업에는 몇 초가 걸립니다. 자체 약관 및 개인 정보 보호 정책이 적용됩니다. 생성 AI는 실험적이므로 실수를 할 수 있습니다.</string>
+    <string name="dialog_message_ai_service_consent">이미지와 스크린샷은 설명을 위해 <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>(으)로 전송되며, 몇 초가 걸립니다. 해당 서비스의 자체 약관과 개인정보처리방침이 적용됩니다. 생성형 AI는 실험 단계이므로 오류가 있을 수 있습니다.</string>
     <string name="ai_service_error_api_key">AI 서비스가 API 키를 수락하지 않았습니다. 자동 설명에서 설정을 확인하세요.</string>
     <string name="ai_service_error_quota">AI 서비스 이용 한도에 도달했습니다. 나중에 다시 시도하세요.</string>
     <string name="ai_service_error_busy">현재 AI 서비스가 사용 중입니다. 잠시 후에 다시 시도해 보세요.</string>

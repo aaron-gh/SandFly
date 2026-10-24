@@ -17,7 +17,7 @@
     <string name="ai_service_address_hint">Endereço, como https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Modelo</string>
     <string name="ai_service_address_invalid">O endereço deve começar com https://. Nada foi salvo.</string>
-    <string name="dialog_message_ai_service_consent">Imagens e capturas de tela são enviadas para <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> para serem descritas, o que leva vários segundos. Aplicam-se os seus próprios termos e política de privacidade. A IA generativa é experimental, por isso cometerá erros.</string>
+    <string name="dialog_message_ai_service_consent">As imagens e capturas de ecrã são enviadas para <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> para serem descritas, o que demora alguns segundos. Aplicam-se os termos e a política de privacidade do próprio serviço. A IA generativa é experimental, por isso vai cometer erros.</string>
     <string name="ai_service_error_api_key">O serviço de IA não aceitou a chave de API. Verifique suas configurações em Descrições automáticas.</string>
     <string name="ai_service_error_quota">O limite de utilização do serviço de IA foi atingido. Tente novamente mais tarde.</string>
     <string name="ai_service_error_busy">O serviço de IA está ocupado no momento. Tente novamente em alguns instantes.</string>

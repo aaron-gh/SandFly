@@ -17,7 +17,7 @@
     <string name="ai_service_address_hint">Адрес, например https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Модель</string>
     <string name="ai_service_address_invalid">Адрес должен начинаться с https://. Ничего не сохранено.</string>
-    <string name="dialog_message_ai_service_consent">Изображения и скриншоты отправляются на <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для описания, что занимает несколько секунд. Применяются собственные условия и политика конфиденциальности. Генеративный ИИ является экспериментальным, поэтому он будет совершать ошибки.</string>
+    <string name="dialog_message_ai_service_consent">Изображения и скриншоты отправляются в <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для описания, это занимает несколько секунд. Действуют собственные условия и политика конфиденциальности этого сервиса. Генеративный ИИ находится на экспериментальной стадии, поэтому будет ошибаться.</string>
     <string name="ai_service_error_api_key">Сервис ИИ не принял ключ API. Проверьте его настройки в разделе «Автоматические описания».</string>
     <string name="ai_service_error_quota">Достигнут лимит использования службы AI. Повторите попытку позже.</string>
     <string name="ai_service_error_busy">Служба искусственного интеллекта сейчас занята. Повторите попытку через минуту.</string>

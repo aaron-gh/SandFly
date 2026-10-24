@@ -17,7 +17,7 @@
     <string name="ai_service_address_hint">Osoite, kuten https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Malli</string>
     <string name="ai_service_address_invalid">Osoitteen tulee alkaa https://. Mitään ei tallennettu.</string>
-    <string name="dialog_message_ai_service_consent">Kuvat ja kuvakaappaukset lähetetään numeroon <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> kuvattavaksi, mikä kestää useita sekunteja. Sen omat ehdot ja tietosuojakäytäntö ovat voimassa. Generatiivinen tekoäly on kokeellinen, joten se tekee virheitä.</string>
+    <string name="dialog_message_ai_service_consent">Kuvat ja kuvakaappaukset lähetetään kuvattaviksi palveluun <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, mikä kestää useita sekunteja. Palvelun omat ehdot ja tietosuojakäytäntö ovat voimassa. Generatiivinen tekoäly on kokeellinen, joten se tekee virheitä.</string>
     <string name="ai_service_error_api_key">Tekoälypalvelu ei hyväksynyt API-avainta. Tarkista sen asetukset automaattisista kuvauksista.</string>
     <string name="ai_service_error_quota">Tekoälypalvelun käyttöraja on saavutettu. Yritä myöhemmin uudelleen.</string>
     <string name="ai_service_error_busy">Tekoälypalvelu on tällä hetkellä kiireinen. Yritä hetken kuluttua uudelleen.</string>

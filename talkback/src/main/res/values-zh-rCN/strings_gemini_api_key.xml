@@ -24,7 +24,7 @@
     <string name="ai_service_address_hint">地址，例如 https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">模型</string>
     <string name="ai_service_address_invalid">地址必须以 https:// 开头。未保存任何内容。</string>
-    <string name="dialog_message_ai_service_consent">图片和截图被发送到<xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>进行描述，这需要几秒钟的时间。适用其自己的条款和隐私政策。生成式人工智能是实验性的，所以它会犯错误。</string>
+    <string name="dialog_message_ai_service_consent">图片和屏幕截图会发送到 <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> 进行描述，需要几秒钟。适用该服务自己的条款和隐私权政策。生成式 AI 仍处于实验阶段，因此会出错。</string>
     <string name="ai_service_error_api_key">AI 服务未接受 API 密钥。请在“自动描述”中检查其设置。</string>
     <string name="ai_service_error_quota">AI 服务已达到使用上限。请稍后再试。</string>
     <string name="ai_service_error_busy">AI 服务目前繁忙。请稍后再试。</string>

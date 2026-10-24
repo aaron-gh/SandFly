@@ -17,7 +17,7 @@
     <string name="ai_service_address_hint">Адреса, наприклад https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Модель</string>
     <string name="ai_service_address_invalid">Адреса має починатися з https://. Нічого не збережено.</string>
-    <string name="dialog_message_ai_service_consent">Зображення та скріншоти надсилаються на <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для опису, що займає кілька секунд. Застосовуються його власні умови та політика конфіденційності. Генеративний ШІ є експериментальним, тому він допускатиме помилки.</string>
+    <string name="dialog_message_ai_service_consent">Зображення та знімки екрана надсилаються в <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для опису, це триває кілька секунд. Діють власні умови й політика конфіденційності цього сервісу. Генеративний ШІ експериментальний, тому помилятиметься.</string>
     <string name="ai_service_error_api_key">Сервіс AI не прийняв ключ API. Перевірте його налаштування в автоматичних описах.</string>
     <string name="ai_service_error_quota">Досягнуто ліміту використання служби ШІ. Повторіть спробу пізніше.</string>
     <string name="ai_service_error_busy">Служба ШІ зараз зайнята. Повторіть спробу за мить.</string>

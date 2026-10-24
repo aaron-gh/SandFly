@@ -16,7 +16,7 @@
     <string name="ai_service_address_hint">Adresa, například https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Adresa musí začínat https://. Nic nebylo uloženo.</string>
-    <string name="dialog_message_ai_service_consent">Obrázky a snímky obrazovky jsou odeslány na <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> k popisu, což trvá několik sekund. Platí její vlastní podmínky a zásady ochrany osobních údajů. Generativní AI je experimentální, takže bude dělat chyby.</string>
+    <string name="dialog_message_ai_service_consent">Obrázky a snímky obrazovky se k popisu odesílají do služby <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, což trvá několik sekund. Platí vlastní smluvní podmínky a zásady ochrany soukromí této služby. Generativní AI je experimentální, takže bude dělat chyby.</string>
     <string name="ai_service_error_api_key">Služba AI nepřijala klíč API. Zkontrolujte její nastavení v části Automatické popisy.</string>
     <string name="ai_service_error_quota">Bylo dosaženo limitu využití služby AI. Zkuste to znovu později.</string>
     <string name="ai_service_error_busy">Služba AI je právě zaneprázdněna. Zkuste to znovu za chvíli.</string>

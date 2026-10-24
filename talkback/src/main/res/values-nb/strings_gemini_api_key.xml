@@ -17,7 +17,7 @@
     <string name="ai_service_address_hint">Adresse, for eksempel https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Modell</string>
     <string name="ai_service_address_invalid">Adressen må begynne med https://. Ingenting ble lagret.</string>
-    <string name="dialog_message_ai_service_consent">Bilder og skjermbilder sendes til <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> for å bli beskrevet, noe som tar flere sekunder. Dets egne vilkår og personvernregler gjelder. Generativ AI er eksperimentell, så den vil gjøre feil.</string>
+    <string name="dialog_message_ai_service_consent">Bilder og skjermbilder sendes til <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> for å bli beskrevet, noe som tar flere sekunder. Tjenestens egne vilkår og personvernregler gjelder. Generativ AI er eksperimentell og vil derfor gjøre feil.</string>
     <string name="ai_service_error_api_key">AI-tjenesten godtok ikke API-nøkkelen. Sjekk innstillingene i Automatiske beskrivelser.</string>
     <string name="ai_service_error_quota">Bruksgrensen for AI-tjenesten er nådd. Prøv igjen senere.</string>
     <string name="ai_service_error_busy">AI-tjenesten er opptatt akkurat nå. Prøv igjen om et øyeblikk.</string>

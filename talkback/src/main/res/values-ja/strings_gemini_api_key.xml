@@ -17,7 +17,7 @@
     <string name="ai_service_address_hint">アドレス（https://openrouter.ai/api/v1 など）</string>
     <string name="ai_service_model_hint">モデル</string>
     <string name="ai_service_address_invalid">アドレスは https:// で始まる必要があります。何も保存されませんでした。</string>
-    <string name="dialog_message_ai_service_consent">画像とスクリーンショットは説明のために <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> に送信されます。これには数秒かかります。独自の規約とプライバシー ポリシーが適用されます。生成 AI は実験的なものであるため、間違いを犯す可能性があります。</string>
+    <string name="dialog_message_ai_service_consent">画像とスクリーンショットは説明のために <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> に送信され、数秒かかります。そのサービス独自の利用規約とプライバシー ポリシーが適用されます。生成 AI は試験運用中のため、誤りがあります。</string>
     <string name="ai_service_error_api_key">AI サービスは API キーを受け入れませんでした。自動の説明で設定を確認してください。</string>
     <string name="ai_service_error_quota">AIサービスの利用制限に達しました。後でもう一度試してください。</string>
     <string name="ai_service_error_busy">AI サービスは現在ビジー状態です。しばらくしてからもう一度試してください。</string>
