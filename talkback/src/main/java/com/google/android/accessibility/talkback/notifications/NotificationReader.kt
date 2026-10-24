@@ -276,6 +276,7 @@ object NotificationReader {
     val packageName = event.packageName?.toString() ?: return false
     if (readsFromListener() && notification.category != Notification.CATEGORY_CALL) {
       // The listener has the whole notification; the event may have only its public version.
+      LogUtils.d(TAG, "Leaving a notification of %s to the listener", packageName)
       return true
     }
     noteEvent(packageName, notification)
@@ -692,6 +693,7 @@ object NotificationReader {
     }
     if (others.isNotEmpty()) {
       if (!interrupt) {
+        LogUtils.d(TAG, "Holding a notification of %s until another voice finishes", readout.info.packageName)
         while (heldForVoice.size >= MAX_WAITING) heldForVoice.removeAt(0)
         heldForVoice += readout
         return
@@ -724,11 +726,26 @@ object NotificationReader {
 
               override fun onDone(spoken: Boolean) =
                 onDone(readout, if (spoken) SpeechController.STATUS_SPOKEN else SpeechController.STATUS_INTERRUPTED)
+
+              override fun onUnavailable() {
+                if (readout.cancelled) {
+                  onDone(readout, SpeechController.STATUS_INTERRUPTED)
+                  return
+                }
+                LogUtils.w(TAG, "Reading a notification of %s in SandFly's voice", readout.info.packageName)
+                speakInSandFlyVoice(readout, flags, sound = false)
+              }
             },
         )
       }
       return
     }
+    speakInSandFlyVoice(readout, flags, sound = settings.soundBefore)
+  }
+
+  /** Hands [readout], queued, to SandFly's speech with [flags], after a chime if [sound]. */
+  private fun speakInSandFlyVoice(readout: Readout, flags: Int, sound: Boolean) {
+    val feedback = feedback ?: return
     val options =
       SpeakOptions.create()
         .setQueueMode(SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH)
@@ -737,7 +754,7 @@ object NotificationReader {
         .setStartingAction { onStarted(readout) }
         .setCompletedAction { status -> onDone(readout, status) }
     val speech = Feedback.speech(readout.text, options)
-    if (settings.soundBefore) speech.sound(R.raw.chime_down)
+    if (sound) speech.sound(R.raw.chime_down)
     feedback.returnFeedback(EVENT_ID_UNTRACKED, speech)
   }
 
@@ -805,18 +822,16 @@ object NotificationReader {
   }
 
   /**
-   * The voice of the voice profile [id], or null for SandFly's: when [id] is empty, the profile is
-   * gone, or its engine didn't start.
+   * The voice of the voice profile [id], or null for SandFly's: when [id] is empty or the profile is
+   * gone.
    */
   private fun voiceFor(id: String): NotificationVoice? {
     if (id.isEmpty()) return null
-    val voice = voices[id] ?: return null
-    if (voice.failed || voice.currentProfile == null) return null
-    return voice
+    return voices[id]?.takeIf { it.currentProfile != null }
   }
 
   /**
-   * Starts, stops or changes the voices of the voice profiles that the settings read notifications
+   * Sets up, removes or changes the voices of the voice profiles that the settings read notifications
    * with: the one for every notification, and those of apps and rules.
    */
   private fun updateVoices(prefs: SharedPreferences) {
@@ -836,7 +851,7 @@ object NotificationReader {
     for (id in wanted) {
       val profile = VoiceProfiles.read(prefs, id)
       val voice = voices.getOrPut(id) { NotificationVoice(context) }
-      if (voice.currentProfile != profile || voice.failed) voice.use(profile)
+      if (voice.currentProfile != profile) voice.use(profile)
     }
   }
 
