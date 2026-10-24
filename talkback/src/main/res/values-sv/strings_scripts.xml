@@ -12,7 +12,7 @@
     <string name="scripts_category_global">Globala plugins</string>
     <string name="scripts_none">Inga skript installerade</string>
     <string name="scripts_all_off">Stäng av alla skript</string>
-    <string name="scripts_all_off_summary">Skript förblir installerade och behåller sina egna switchar. Gesten Slå på eller av alla skript gör detsamma.</string>
+    <string name="scripts_all_off_summary">Skripten förblir installerade och behåller sina egna reglage. Rörelsen ”Slå på eller av alla skript” gör samma sak.</string>
     <string name="shortcut_toggle_scripts">Slå på eller av alla skript</string>
     <string name="scripts_now_off">Skript av</string>
     <string name="scripts_now_on">Skript på</string>
@@ -96,9 +96,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> objekt kopierade</string>
     <string name="script_tree_none">Inget fönster att kopiera</string>
     <string name="script_tree_clip_label">Skärmträd</string>
-    <string name="summary_copy_screen_tree_menu">Kopiera alla objekt på skärmen som JSON för att skriva skript.</string>
+    <string name="summary_copy_screen_tree_menu">Kopiera alla objekt på skärmen som JSON, för att skriva skript</string>
     <string name="script_inspect_clip_label">Objektdetaljer</string>
-    <string name="summary_inspect_item_menu">Läs upp och kopiera information om objektet du befann dig på, för att skriva skript.</string>
+    <string name="summary_inspect_item_menu">Läsa upp och kopiera information om objektet som senast var i fokus, för att skriva skript</string>
     <string name="script_keys_backtalk_modifier">SandFly-modifierartangent</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, sedan <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Kommandon</string>

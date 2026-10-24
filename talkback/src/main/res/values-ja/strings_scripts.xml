@@ -12,7 +12,7 @@
     <string name="scripts_category_global">グローバルプラグイン</string>
     <string name="scripts_none">スクリプトがインストールされていません</string>
     <string name="scripts_all_off">すべてのスクリプトをオフにする</string>
-    <string name="scripts_all_off_summary">スクリプトはインストールされたままで、独自のスイッチを保持します。 「すべてのスクリプトをオンまたはオフにする」ジェスチャでも同様のことが行われます。</string>
+    <string name="scripts_all_off_summary">スクリプトはインストールされたままで、個別のスイッチも保持されます。[すべてのスクリプトをオンまたはオフにする] ジェスチャーも同じ操作です。</string>
     <string name="shortcut_toggle_scripts">すべてのスクリプトをオンまたはオフにする</string>
     <string name="scripts_now_off">スクリプト オフ</string>
     <string name="scripts_now_on">スクリプト オン</string>
@@ -96,9 +96,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> 個の項目をコピーしました</string>
     <string name="script_tree_none">コピーするウィンドウがありません</string>
     <string name="script_tree_clip_label">スクリーンツリー</string>
-    <string name="summary_copy_screen_tree_menu">スクリプトを記述するために、画面上のすべての項目を JSON としてコピーします</string>
+    <string name="summary_copy_screen_tree_menu">スクリプト作成用に、画面上のすべての項目を JSON としてコピーします</string>
     <string name="script_inspect_clip_label">項目の詳細</string>
-    <string name="summary_inspect_item_menu">スクリプトを作成するために、使用していたアイテムの詳細を話してコピーします</string>
+    <string name="summary_inspect_item_menu">スクリプト作成用に、最後にフォーカスした項目の詳細を読み上げてコピーします</string>
     <string name="script_keys_backtalk_modifier">SandFly 修飾キー</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>、次に <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">コマンド</string>

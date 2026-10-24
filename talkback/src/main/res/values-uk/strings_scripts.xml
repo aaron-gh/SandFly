@@ -12,7 +12,7 @@
     <string name="scripts_category_global">Глобальні плагіни</string>
     <string name="scripts_none">Скриптів не встановлено</string>
     <string name="scripts_all_off">Вимкнути всі скрипти</string>
-    <string name="scripts_all_off_summary">Сценарії залишаються встановленими та зберігають власні перемикачі. Жест «Увімкнути або вимкнути всі сценарії» робить те саме.</string>
+    <string name="scripts_all_off_summary">Скрипти залишаються встановленими й зберігають власні перемикачі. Жест «Увімкнути або вимкнути всі скрипти» робить те саме.</string>
     <string name="shortcut_toggle_scripts">Увімкнути або вимкнути всі скрипти</string>
     <string name="scripts_now_off">Скрипти вимкнено</string>
     <string name="scripts_now_on">Скрипти увімкнено</string>
@@ -96,9 +96,9 @@
     <string name="script_tree_copied">Скопійовано елементів: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Немає вікна для копіювання</string>
     <string name="script_tree_clip_label">Дерево екрана</string>
-    <string name="summary_copy_screen_tree_menu">Скопіюйте всі елементи на екрані як JSON, для написання сценаріїв</string>
+    <string name="summary_copy_screen_tree_menu">Копіювання всіх елементів на екрані у форматі JSON для написання скриптів</string>
     <string name="script_inspect_clip_label">Відомості про елемент</string>
-    <string name="summary_inspect_item_menu">Скажіть і скопіюйте деталі елемента, на якому ви були, для написання сценаріїв</string>
+    <string name="summary_inspect_item_menu">Промовляння й копіювання відомостей про останній елемент у фокусі для написання скриптів</string>
     <string name="script_keys_backtalk_modifier">Клавіша-модифікатор SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, потім <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Команди</string>

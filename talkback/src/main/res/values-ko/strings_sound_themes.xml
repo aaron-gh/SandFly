@@ -4,7 +4,7 @@
     <string name="summary_pref_sound_themes">사운드 및 진동 세트를 설치 및 선택하고, 단일 사운드를 자신의 사운드로 바꾸고, 제어 사운드 및 진동과 3D 오디오를 켭니다.</string>
     <string name="sound_themes_installed_category">설치된 테마</string>
     <string name="sound_theme_backtalk">SandFly</string>
-    <string name="sound_theme_backtalk_description">SandFly 자신만의 소리와 진동, 그리고 나만의 소리.</string>
+    <string name="sound_theme_backtalk_description">SandFly 자체 사운드와 진동, 그리고 직접 추가한 사운드입니다.</string>
     <string name="sound_theme_in_use">사용 중</string>
     <string name="sound_theme_by">제작: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">라이선스: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
@@ -56,7 +56,7 @@
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 설치됨.</string>
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 설치됨. 현재 사용 중입니다.</string>
     <string name="sound_theme_install_nothing">설치할 사운드 테마가 없습니다.</string>
-    <string name="sound_theme_install_not_a_theme">이것은 사운드 테마가 아닙니다. SandFly는 다음을 사용할 수 있습니다: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_not_a_theme">SandFly에서 사용할 수 있는 사운드 테마가 아닙니다: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly에서 사운드 테마를 설치하지 못했습니다. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">사운드 테마 링크는 https로 시작해야 합니다.</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> 소리</string>

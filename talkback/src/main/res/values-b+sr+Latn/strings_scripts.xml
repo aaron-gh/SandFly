@@ -12,7 +12,7 @@
     <string name="scripts_category_global">Globalni dodaci</string>
     <string name="scripts_none">Nema instaliranih skripti</string>
     <string name="scripts_all_off">Isključi sve skripte</string>
-    <string name="scripts_all_off_summary">Skripte ostaju instalirane i zadržavaju sopstvene prekidače. Gest Uključi ili isključi sve skripte radi isto.</string>
+    <string name="scripts_all_off_summary">Skripte ostaju instalirane i zadržavaju svoje prekidače. Pokret „Uključivanje ili isključivanje svih skripti” radi isto.</string>
     <string name="shortcut_toggle_scripts">Uključivanje ili isključivanje svih skripti</string>
     <string name="scripts_now_off">Skripte isključene</string>
     <string name="scripts_now_on">Skripte uključene</string>
@@ -96,9 +96,9 @@
     <string name="script_tree_copied">Kopirane stavke: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Nema prozora za kopiranje</string>
     <string name="script_tree_clip_label">Stablo ekrana</string>
-    <string name="summary_copy_screen_tree_menu">Kopirajte sve stavke na ekranu kao JSON, za pisanje skripti</string>
+    <string name="summary_copy_screen_tree_menu">Kopiranje svih stavki na ekranu kao JSON, za pisanje skripti</string>
     <string name="script_inspect_clip_label">Detalji stavke</string>
-    <string name="summary_inspect_item_menu">Izgovorite i kopirajte detalje stavke na kojoj ste bili, za pisanje skripti</string>
+    <string name="summary_inspect_item_menu">Izgovaranje i kopiranje detalja poslednje fokusirane stavke, za pisanje skripti</string>
     <string name="script_keys_backtalk_modifier">SandFly modifikatorski taster</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, zatim <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komande</string>

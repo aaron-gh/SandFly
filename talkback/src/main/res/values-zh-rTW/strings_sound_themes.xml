@@ -4,7 +4,7 @@
     <string name="summary_pref_sound_themes">安裝並選擇聲音和振動組，用您自己的聲音替換單個聲音，然後打開控制聲音和振動以及 3D 音訊。</string>
     <string name="sound_themes_installed_category">已安裝的主題</string>
     <string name="sound_theme_backtalk">SandFly</string>
-    <string name="sound_theme_backtalk_description">SandFly自己的聲音和振動，以及你自己的任何聲音。</string>
+    <string name="sound_theme_backtalk_description">SandFly 內建的音效和震動，以及你自己的音效。</string>
     <string name="sound_theme_in_use">使用中</string>
     <string name="sound_theme_by">作者：<xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">授權：<xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
@@ -56,7 +56,7 @@
     <string name="sound_theme_installed">已安裝<xliff:g id="theme" example="Unspoken">%1$s</xliff:g>。</string>
     <string name="sound_theme_installed_in_use">已安裝 <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>。現在正在使用中。</string>
     <string name="sound_theme_install_nothing">沒有要安裝的聲音主題。</string>
-    <string name="sound_theme_install_not_a_theme">這不是聲音主題SandFly可以使用：<xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>。</string>
+    <string name="sound_theme_install_not_a_theme">這不是 SandFly 可使用的音效主題：<xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>。</string>
     <string name="sound_theme_install_failed">SandFly 無法安裝聲音主題。<xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">聲音主題的連結必須以 https 開頭。</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>的聲音</string>

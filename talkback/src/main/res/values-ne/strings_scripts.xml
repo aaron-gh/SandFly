@@ -12,7 +12,7 @@
     <string name="scripts_category_global">ग्लोबल प्लगइनहरू</string>
     <string name="scripts_none">कुनै स्क्रिप्ट स्थापना गरिएको छैन</string>
     <string name="scripts_all_off">सबै स्क्रिप्टहरू बन्द गर्नुहोस्</string>
-    <string name="scripts_all_off_summary">स्क्रिप्टहरू स्थापित रहन्छन् र तिनीहरूको आफ्नै स्विचहरू राख्नुहोस्। सबै स्क्रिप्टहरू खोल्नुहोस् वा बन्द गर्नुहोस् इशाराले पनि त्यस्तै गर्छ।</string>
+    <string name="scripts_all_off_summary">स्क्रिप्टहरू इन्स्टल नै रहन्छन् र आफ्नै स्विचहरू राख्छन्। “सबै स्क्रिप्टहरू सक्रिय वा निष्क्रिय गर्नुहोस्” इसाराले पनि यही गर्छ।</string>
     <string name="shortcut_toggle_scripts">सबै स्क्रिप्टहरू सक्रिय वा निष्क्रिय गर्नुहोस्</string>
     <string name="scripts_now_off">स्क्रिप्ट बन्द</string>
     <string name="scripts_now_on">स्क्रिप्टहरू सक्रिय छन्</string>
@@ -96,9 +96,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> वस्तुहरू प्रतिलिपि गरियो</string>
     <string name="script_tree_none">प्रतिलिपि गर्न कुनै विन्डो छैन</string>
     <string name="script_tree_clip_label">स्क्रिन ट्री</string>
-    <string name="summary_copy_screen_tree_menu">स्क्रिप्ट लेख्नका लागि स्क्रिनमा रहेका सबै वस्तुहरूलाई JSON को रूपमा प्रतिलिपि गर्नुहोस्</string>
+    <string name="summary_copy_screen_tree_menu">स्क्रिप्ट लेख्न स्क्रिनका सबै वस्तुहरू JSON का रूपमा प्रतिलिपि गर्ने</string>
     <string name="script_inspect_clip_label">वस्तु विवरण</string>
-    <string name="summary_inspect_item_menu">स्क्रिप्टहरू लेख्नको लागि, तपाईंले प्रयोग गर्नुभएको वस्तुको विवरणहरू भन्नुहोस् र प्रतिलिपि गर्नुहोस्</string>
+    <string name="summary_inspect_item_menu">स्क्रिप्ट लेख्न अन्तिम पटक फोकस गरिएको वस्तुको विवरण भन्ने र प्रतिलिपि गर्ने</string>
     <string name="script_keys_backtalk_modifier">SandFly मोडिफायर कुञ्जी</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, त्यसपछि <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">आदेशहरू</string>

@@ -12,7 +12,7 @@
     <string name="scripts_category_global">ಸಾಮಾನ್ಯ ಪ್ಲಗಿನ್‌ಗಳು</string>
     <string name="scripts_none">ಯಾವುದೇ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಸ್ಥಾಪಿಸಲಾಗಿಲ್ಲ</string>
     <string name="scripts_all_off">ಎಲ್ಲಾ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಆಫ್ ಮಾಡಿ</string>
-    <string name="scripts_all_off_summary">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು ಇನ್‌ಸ್ಟಾಲ್ ಆಗಿರುತ್ತವೆ ಮತ್ತು ತಮ್ಮದೇ ಸ್ವಿಚ್‌ಗಳನ್ನು ಇಟ್ಟುಕೊಳ್ಳುತ್ತವೆ. ಎಲ್ಲಾ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಆನ್ ಅಥವಾ ಆಫ್ ಗೆಸ್ಚರ್ ಅದೇ ರೀತಿ ಮಾಡುತ್ತದೆ.</string>
+    <string name="scripts_all_off_summary">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು ಇನ್‌ಸ್ಟಾಲ್ ಆಗಿಯೇ ಇರುತ್ತವೆ ಮತ್ತು ತಮ್ಮ ಸ್ವಿಚ್‌ಗಳನ್ನು ಉಳಿಸಿಕೊಳ್ಳುತ್ತವೆ. “ಎಲ್ಲಾ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಆನ್ ಅಥವಾ ಆಫ್ ಮಾಡಿ” ಗೆಸ್ಚರ್ ಸಹ ಇದನ್ನೇ ಮಾಡುತ್ತದೆ.</string>
     <string name="shortcut_toggle_scripts">ಎಲ್ಲಾ ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಆನ್ ಅಥವಾ ಆಫ್ ಮಾಡಿ</string>
     <string name="scripts_now_off">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು ಆಫ್ ಆಗಿವೆ</string>
     <string name="scripts_now_on">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು ಆನ್ ಆಗಿವೆ</string>
@@ -96,9 +96,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ಐಟಂಗಳನ್ನು ನಕಲಿಸಲಾಗಿದೆ</string>
     <string name="script_tree_none">ನಕಲಿಸಲು ಯಾವುದೇ ವಿಂಡೋ ಇಲ್ಲ</string>
     <string name="script_tree_clip_label">ಸ್ಕ್ರೀನ್ ಟ್ರೀ</string>
-    <string name="summary_copy_screen_tree_menu">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಬರೆಯಲು ಪರದೆಯ ಮೇಲಿನ ಎಲ್ಲಾ ಐಟಂಗಳನ್ನು JSON ಎಂದು ನಕಲಿಸಿ</string>
+    <string name="summary_copy_screen_tree_menu">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಬರೆಯಲು ಸ್ಕ್ರೀನ್‌ನ ಎಲ್ಲಾ ಐಟಂಗಳನ್ನು JSON ಆಗಿ ನಕಲಿಸುವುದು</string>
     <string name="script_inspect_clip_label">ಐಟಂ ವಿವರಗಳು</string>
-    <string name="summary_inspect_item_menu">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಬರೆಯಲು ನೀವು ಇದ್ದ ಐಟಂನ ವಿವರಗಳನ್ನು ಹೇಳಿ ಮತ್ತು ನಕಲಿಸಿ</string>
+    <string name="summary_inspect_item_menu">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಬರೆಯಲು ಕೊನೆಯದಾಗಿ ಫೋಕಸ್ ಆದ ಐಟಂನ ವಿವರಗಳನ್ನು ಹೇಳುವುದು ಮತ್ತು ನಕಲಿಸುವುದು</string>
     <string name="script_keys_backtalk_modifier">SandFly ಪರಿವರ್ತಕ</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ನಂತರ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ಆಜ್ಞೆಗಳು</string>

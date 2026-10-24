@@ -12,7 +12,7 @@
     <string name="scripts_category_global">全域插件</string>
     <string name="scripts_none">未安裝任何腳本</string>
     <string name="scripts_all_off">關閉所有腳本</string>
-    <string name="scripts_all_off_summary">腳本保持安裝狀態並保留自己的開關。開啟或關閉所有腳本手勢的作用相同。</string>
+    <string name="scripts_all_off_summary">腳本會保持安裝，並保留各自的開關。「開啟或關閉所有腳本」手勢的作用相同。</string>
     <string name="shortcut_toggle_scripts">開啟或關閉所有腳本</string>
     <string name="scripts_now_off">腳本已關閉</string>
     <string name="scripts_now_on">腳本已開啟</string>
@@ -96,9 +96,9 @@
     <string name="script_tree_copied">已複製 <xliff:g id="count">%1$d</xliff:g> 項</string>
     <string name="script_tree_none">沒有可複製的視窗</string>
     <string name="script_tree_clip_label">螢幕樹</string>
-    <string name="summary_copy_screen_tree_menu">將螢幕上的所有項目複製為JSON，用於編寫腳本</string>
+    <string name="summary_copy_screen_tree_menu">將螢幕上的所有項目複製為 JSON，用於編寫腳本</string>
     <string name="script_inspect_clip_label">項目詳細資料</string>
-    <string name="summary_inspect_item_menu">說出並複製您所在項目的詳細信息，以編寫腳本</string>
+    <string name="summary_inspect_item_menu">讀出並複製最後聚焦項目的詳細資料，用於編寫腳本</string>
     <string name="script_keys_backtalk_modifier">SandFly 輔助鍵</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>，然後<xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">命令</string>
