@@ -21,20 +21,20 @@
     <string name="problem_report_no_connection">피드백이 전송되지 않았습니다. 인터넷 연결을 확인하세요.</string>
     <string name="problem_report_not_sent">피드백이 전송되지 않았습니다. 나중에 다시 시도하세요.</string>
     <string-array name="problem_report_type_entries">
-        <item>잘못된 행동</item>
-        <item>충돌</item>
-        <item>느리거나 응답하지 않음</item>
+        <item>잘못된 동작</item>
+        <item>비정상 종료</item>
+        <item>느림 또는 응답 없음</item>
         <item>제안</item>
     </string-array>
     <string-array name="problem_report_area_entries">
-        <item>연설</item>
+        <item>음성</item>
         <item>동작</item>
-        <item>터치 탐색</item>
-        <item>읽기 컨트롤 및 메뉴</item>
-        <item>타이핑과 키보드</item>
+        <item>터치하여 탐색</item>
+        <item>읽기 제어 설정 및 메뉴</item>
+        <item>입력 및 키보드</item>
         <item>점자 키보드</item>
         <item>점자 디스플레이</item>
-        <item>소리와 진동</item>
+        <item>소리 및 진동</item>
         <item>알림</item>
         <item>웹 콘텐츠</item>
         <item>스크립트</item>
