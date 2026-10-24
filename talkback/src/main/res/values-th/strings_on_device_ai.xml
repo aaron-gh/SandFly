@@ -15,7 +15,7 @@
     <string name="on_device_ai_tag_needs_memory">ต้องการหน่วยความจำประมาณ %1$d GB</string>
     <string name="on_device_ai_tag_not_enough_memory">หน่วยความจำไม่เพียงพอในโทรศัพท์เครื่องนี้</string>
     <string name="on_device_ai_choose_model">เลือกโมเดล</string>
-    <string name="on_device_ai_model_too_big">โทรศัพท์เครื่องนี้มีหน่วยความจำไม่เพียงพอสำหรับรุ่นนั้น</string>
+    <string name="on_device_ai_model_too_big">โทรศัพท์เครื่องนี้มีหน่วยความจำไม่พอสำหรับโมเดลนั้น</string>
     <string name="pref_on_device_ai_download">ดาวน์โหลดโมเดล (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">ดาวน์โหลดครั้งเดียวจาก Hugging Face หลังจากนั้นจะไม่มีอะไรถูกส่งผ่านเครือข่าย</string>
     <string name="pref_on_device_ai_downloading">กำลังดาวน์โหลด %1$d%%</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">ยกเลิก</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">ละเว้นขีดจำกัดหน่วยความจำ AI บนอุปกรณ์</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">ช่วยให้คุณสามารถเลือกรุ่นที่ต้องการหน่วยความจำมากกว่าที่โทรศัพท์เครื่องนี้มี และโหลดโดยไม่ต้องตรวจสอบหน่วยความจำว่าง เพื่อทดสอบว่าจะเกิดอะไรขึ้นเมื่อ Android หยุดการทำงาน</string>
-    <string name="on_device_ai_not_enough_memory">หน่วยความจำว่างไม่เพียงพอสำหรับ %1$s ปิดบางแอปหรือเลือกรุ่นที่เล็กกว่าในการตั้งค่า AI บนอุปกรณ์</string>
-    <string name="on_device_ai_stopped">%1$s หยุดทำงาน อาจเป็นเพราะโทรศัพท์มีหน่วยความจำไม่เพียงพอ เลือกรุ่นที่เล็กกว่าในการตั้งค่า AI บนอุปกรณ์</string>
+    <string name="on_device_ai_not_enough_memory">หน่วยความจำว่างไม่พอสำหรับ %1$s ปิดบางแอป หรือเลือกโมเดลที่เล็กกว่าในการตั้งค่า AI บนอุปกรณ์</string>
+    <string name="on_device_ai_stopped">%1$s หยุดทำงาน อาจเป็นเพราะหน่วยความจำของโทรศัพท์หมด เลือกโมเดลที่เล็กกว่าในการตั้งค่า AI บนอุปกรณ์</string>
 </resources>

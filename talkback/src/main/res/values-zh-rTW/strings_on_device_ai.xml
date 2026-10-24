@@ -15,9 +15,9 @@
     <string name="on_device_ai_tag_needs_memory">需要大約 %1$d GB 記憶體。</string>
     <string name="on_device_ai_tag_not_enough_memory">此手機記憶體不足。</string>
     <string name="on_device_ai_choose_model">選擇模型</string>
-    <string name="on_device_ai_model_too_big">此手機沒有足夠的內存用於該型號。</string>
+    <string name="on_device_ai_model_too_big">這支手機的記憶體不足以執行該模型。</string>
     <string name="pref_on_device_ai_download">下載模型（%1$s）</string>
-    <string name="pref_on_device_ai_download_summary">從 Hugging Face 下載一次。此後，不會透過網路發送任何內容。</string>
+    <string name="pref_on_device_ai_download_summary">從 Hugging Face 下載一次。之後不會透過網路傳送任何內容。</string>
     <string name="pref_on_device_ai_downloading">正在下載，%1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s。點擊即可停止。如果您再次開始，它會從這裡繼續。</string>
     <string name="on_device_ai_progress_sizes">%1$s / %2$s</string>
@@ -28,7 +28,7 @@
     <string name="on_device_ai_notification_downloading">正在下載模型，%1$d%%</string>
     <string name="on_device_ai_notification_done">模型已下載。在設定中開啟裝置上的 AI。</string>
     <string name="on_device_ai_notification_failed">下載失敗。請開啟設定重試。</string>
-    <string name="on_device_ai_notification_paused">Android 暫停下載。打開設定以繼續。</string>
+    <string name="on_device_ai_notification_paused">Android 已暫停下載。開啟設定即可繼續。</string>
     <string name="pref_on_device_ai_importing">正在檢查模型檔案</string>
     <string name="pref_on_device_ai_manage">管理模型</string>
     <string name="pref_on_device_ai_manage_none">尚未下載模型</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">取消</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">忽略裝置上的 AI 記憶體限制</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">讓您選擇一個需要比此手機更多內存的型號，並在不檢查可用內存的情況下加載它，以測試當 Android 停止它時會發生什麼。</string>
-    <string name="on_device_ai_not_enough_memory">沒有足夠的可用記憶體用於 %1$s。關閉一些應用程序，或在設備上的 AI 設定中選擇較小的型號。</string>
-    <string name="on_device_ai_stopped">%1$s停止了，可能是因為手機記憶體不足。在裝置上的 AI 設定中選擇較小的模型。</string>
+    <string name="on_device_ai_not_enough_memory">可用記憶體不足以執行 %1$s。請關閉部分應用程式，或在「裝置端 AI」設定中選擇較小的模型。</string>
+    <string name="on_device_ai_stopped">%1$s 已停止，可能是因為手機記憶體不足。請在「裝置端 AI」設定中選擇較小的模型。</string>
 </resources>

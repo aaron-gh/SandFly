@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">ഒരു മോഡൽ തിരഞ്ഞെടുക്കുക</string>
     <string name="on_device_ai_model_too_big">ഈ ഫോണിന് ആ മോഡലിന് ആവശ്യമായ മെമ്മറിയില്ല.</string>
     <string name="pref_on_device_ai_download">മോഡൽ ഡൗൺലോഡ് ചെയ്യുക (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">ഹഗ്ഗിംഗ് ഫേസിൽ നിന്ന് ഒരിക്കൽ ഡൗൺലോഡ് ചെയ്യുക. അതിനുശേഷം, നെറ്റ്‌വർക്കിലൂടെ ഒന്നും അയയ്ക്കില്ല.</string>
+    <string name="pref_on_device_ai_download_summary">Hugging Face-ൽ നിന്ന് ഒരിക്കൽ ഡൗൺലോഡ് ചെയ്യുന്നു. അതിനുശേഷം നെറ്റ്‌വർക്കിലൂടെ ഒന്നും അയയ്ക്കില്ല.</string>
     <string name="pref_on_device_ai_downloading">ഡൗൺലോഡ് ചെയ്യുന്നു, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. നിർത്താൻ ടാപ്പ് ചെയ്യുക. നിങ്ങൾ വീണ്ടും ആരംഭിച്ചാൽ അത് ഇവിടെ നിന്ന് തുടരും.</string>
     <string name="on_device_ai_progress_sizes">%2$s-ൽ %1$s</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">റദ്ദാക്കുക</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">ഉപകരണത്തിലെ AI മെമ്മറി പരിധികൾ അവഗണിക്കുക</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">ഈ ഫോണിന് ഉള്ളതിനേക്കാൾ കൂടുതൽ മെമ്മറി ആവശ്യമുള്ള ഒരു മോഡൽ തിരഞ്ഞെടുക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു, കൂടാതെ Android അത് നിർത്തുമ്പോൾ എന്ത് സംഭവിക്കുമെന്ന് പരിശോധിക്കുന്നതിന് സൗജന്യ മെമ്മറി പരിശോധിക്കാതെ തന്നെ അത് ലോഡ് ചെയ്യുന്നു.</string>
-    <string name="on_device_ai_not_enough_memory">%1$s-ന് മതിയായ സൗജന്യ മെമ്മറി ഇല്ല. ചില ആപ്പുകൾ അടയ്‌ക്കുക, അല്ലെങ്കിൽ ഉപകരണത്തിലെ AI ക്രമീകരണങ്ങളിൽ ഒരു ചെറിയ മോഡൽ തിരഞ്ഞെടുക്കുക.</string>
-    <string name="on_device_ai_stopped">ഫോണിൻ്റെ മെമ്മറി തീർന്നതുകൊണ്ടാകാം %1$s നിർത്തി. ഉപകരണത്തിലെ AI ക്രമീകരണങ്ങളിൽ ഒരു ചെറിയ മോഡൽ തിരഞ്ഞെടുക്കുക.</string>
+    <string name="on_device_ai_not_enough_memory">%1$s-ന് ആവശ്യമായ ഒഴിഞ്ഞ മെമ്മറി ഇല്ല. ചില ആപ്പുകൾ അടയ്ക്കുക, അല്ലെങ്കിൽ “ഉപകരണത്തിലെ AI” ക്രമീകരണത്തിൽ ചെറിയ മോഡൽ തിരഞ്ഞെടുക്കുക.</string>
+    <string name="on_device_ai_stopped">%1$s നിന്നു, ഫോണിന്റെ മെമ്മറി തീർന്നതുകൊണ്ടാകാം. “ഉപകരണത്തിലെ AI” ക്രമീകരണത്തിൽ ചെറിയ മോഡൽ തിരഞ്ഞെടുക്കുക.</string>
 </resources>

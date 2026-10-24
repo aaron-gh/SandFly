@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">ஒரு மாடலைத் தேர்வுசெய்க</string>
     <string name="on_device_ai_model_too_big">இந்த மொபைலில் அந்த மாடலுக்கு போதுமான நினைவகம் இல்லை.</string>
     <string name="pref_on_device_ai_download">மாடலைப் பதிவிறக்கு (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">கட்டிப்பிடிக்கும் முகத்திலிருந்து ஒருமுறை பதிவிறக்கம். அதன் பிறகு, நெட்வொர்க்கில் எதுவும் அனுப்பப்படவில்லை.</string>
+    <string name="pref_on_device_ai_download_summary">Hugging Face-இலிருந்து ஒருமுறை பதிவிறக்கும். அதன் பிறகு நெட்வொர்க் வழியாக எதுவும் அனுப்பப்படாது.</string>
     <string name="pref_on_device_ai_downloading">பதிவிறக்குகிறது, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. நிறுத்த தட்டவும். நீங்கள் மீண்டும் தொடங்கினால் அது இங்கிருந்து தொடர்கிறது.</string>
     <string name="on_device_ai_progress_sizes">%2$s இல் %1$s</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">ரத்துசெய்</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">சாதனத்தில் உள்ள AI நினைவக வரம்புகளைப் புறக்கணிக்கவும்</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Androidஐ நிறுத்தினால் என்ன நடக்கும் என்பதைச் சோதிக்க, இந்த மொபைலில் உள்ளதை விட அதிக நினைவகம் தேவைப்படும் மாடலைத் தேர்வுசெய்து, இலவச நினைவகத்தை சரிபார்க்காமல் ஏற்றுகிறது.</string>
-    <string name="on_device_ai_not_enough_memory">%1$sக்கு போதுமான இலவச நினைவகம் இல்லை. சில ஆப்ஸை மூடவும் அல்லது சாதனத்தில் உள்ள AI அமைப்புகளில் சிறிய மாடலைத் தேர்வு செய்யவும்.</string>
-    <string name="on_device_ai_stopped">%1$s நிறுத்தப்பட்டது, ஒருவேளை ஃபோன் நினைவகம் தீர்ந்துவிட்டதால். சாதனத்தில் உள்ள AI அமைப்புகளில் சிறிய மாடலைத் தேர்வு செய்யவும்.</string>
+    <string name="on_device_ai_not_enough_memory">%1$s-க்குப் போதுமான காலி நினைவகம் இல்லை. சில ஆப்ஸை மூடவும் அல்லது “சாதனத்தில் AI” அமைப்புகளில் சிறிய மாடலைத் தேர்ந்தெடுக்கவும்.</string>
+    <string name="on_device_ai_stopped">%1$s நின்றது, ஃபோனின் நினைவகம் தீர்ந்ததால் இருக்கலாம். “சாதனத்தில் AI” அமைப்புகளில் சிறிய மாடலைத் தேர்ந்தெடுக்கவும்.</string>
 </resources>

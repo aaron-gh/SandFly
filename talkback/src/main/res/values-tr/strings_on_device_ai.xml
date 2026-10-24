@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">Bir model seçin</string>
     <string name="on_device_ai_model_too_big">Bu telefonun söz konusu model için yeterli hafızası yok.</string>
     <string name="pref_on_device_ai_download">Modeli indir (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">Hugging Face\'ten bir kez indirildi. Bundan sonra ağ üzerinden hiçbir şey gönderilmez.</string>
+    <string name="pref_on_device_ai_download_summary">Hugging Face\'ten bir kez indirilir. Bundan sonra ağ üzerinden hiçbir şey gönderilmez.</string>
     <string name="pref_on_device_ai_downloading">İndiriliyor, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. Durdurmak için dokunun. Tekrar başlatırsanız buradan devam eder.</string>
     <string name="on_device_ai_progress_sizes">%1$s / %2$s</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">İptal</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Cihazdaki yapay zekâ bellek sınırlarını yok say</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Bu telefonun sahip olduğundan daha fazla belleğe ihtiyaç duyan bir model seçmenizi ve Android onu durdurduğunda ne olacağını test etmek için boş belleği kontrol etmeden yüklemenizi sağlar.</string>
-    <string name="on_device_ai_not_enough_memory">%1$s için yeterli boş hafıza yok. Bazı uygulamaları kapatın veya Cihazdaki yapay zeka ayarlarında daha küçük bir model seçin.</string>
-    <string name="on_device_ai_stopped">%1$s muhtemelen telefonun hafızasının dolması nedeniyle durdu. Cihazdaki AI ayarlarında daha küçük bir model seçin.</string>
+    <string name="on_device_ai_not_enough_memory">%1$s için yeterli boş bellek yok. Bazı uygulamaları kapatın veya Cihaz içi yapay zeka ayarlarında daha küçük bir model seçin.</string>
+    <string name="on_device_ai_stopped">%1$s durdu; büyük olasılıkla telefonun belleği tükendi. Cihaz içi yapay zeka ayarlarında daha küçük bir model seçin.</string>
 </resources>

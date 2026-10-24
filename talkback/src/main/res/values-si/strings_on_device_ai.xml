@@ -15,7 +15,7 @@
     <string name="on_device_ai_tag_needs_memory">%1$d GB පමණ මතකයක් අවශ්‍යයි.</string>
     <string name="on_device_ai_tag_not_enough_memory">මෙම දුරකථනයේ ප්‍රමාණවත් මතකයක් නොමැත.</string>
     <string name="on_device_ai_choose_model">ආකෘතියක් තෝරන්න</string>
-    <string name="on_device_ai_model_too_big">මෙම දුරකථනයේ එම ආකෘතියට ප්රමාණවත් මතකයක් නොමැත.</string>
+    <string name="on_device_ai_model_too_big">මෙම දුරකථනයේ එම මාදිලිය සඳහා ප්‍රමාණවත් මතකයක් නැත.</string>
     <string name="pref_on_device_ai_download">ආකෘතිය බාගන්න (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">Hugging Face වෙතින් වරක් බාගත කරයි. ඊට පසු, ජාලය හරහා කිසිවක් යවනු නොලැබේ.</string>
     <string name="pref_on_device_ai_downloading">බාගත කරමින්, %1$d%%</string>
@@ -28,7 +28,7 @@
     <string name="on_device_ai_notification_downloading">මොඩලය බාගත කරමින්, %1$d%%</string>
     <string name="on_device_ai_notification_done">මොඩලය බාගත විය. සැකසීම් තුළ උපාංගයේ AI ක්‍රියාත්මක කරන්න.</string>
     <string name="on_device_ai_notification_failed">බාගැනීම අසාර්ථක විය. නැවත උත්සාහ කිරීමට සැකසීම් විවෘත කරන්න.</string>
-    <string name="on_device_ai_notification_paused">Android බාගැනීම විරාම කරන ලදී. කරගෙන යාමට සැකසුම් විවෘත කරන්න.</string>
+    <string name="on_device_ai_notification_paused">Android බාගැනීම විරාම කළේය. දිගටම කරගෙන යාමට සැකසීම් විවෘත කරන්න.</string>
     <string name="pref_on_device_ai_importing">මොඩල ගොනුව පරීක්ෂා කරමින්</string>
     <string name="pref_on_device_ai_manage">ආකෘති කළමනාකරණය කරන්න</string>
     <string name="pref_on_device_ai_manage_none">ආකෘති කිසිවක් බාගත කර නැත</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">අවලංගු කරන්න</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">උපාංගයේ AI මතක සීමාවන් නොසලකා හරින්න</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">ඔබට මෙම දුරකථනයේ ඇති මතකයට වඩා වැඩි මතකයක් අවශ්‍ය වන ආකෘතියක් තෝරා ගැනීමටත්, එය Android නැවැත්වූ විට සිදු වන දේ පරීක්ෂා කිරීමටත්, නිදහස් මතකය පරීක්ෂා නොකර එය පූරණය කිරීමටත් ඉඩ සලසයි.</string>
-    <string name="on_device_ai_not_enough_memory">%1$s සඳහා ප්‍රමාණවත් නිදහස් මතකයක් නොමැත. සමහර යෙදුම් වසන්න, නැතහොත් උපාංග AI සැකසීම් තුළ කුඩා ආකෘතියක් තෝරන්න.</string>
-    <string name="on_device_ai_stopped">%1$s නැවතුනේ, දුරකථනයේ මතකය අවසන් වූ නිසා විය හැක. උපාංගයේ AI සැකසීම් තුළ කුඩා ආකෘතියක් තෝරන්න.</string>
+    <string name="on_device_ai_not_enough_memory">%1$s සඳහා ප්‍රමාණවත් නිදහස් මතකයක් නැත. සමහර යෙදුම් වසන්න, නැතහොත් “උපාංගයේ AI” සැකසීම් තුළ කුඩා මාදිලියක් තෝරන්න.</string>
+    <string name="on_device_ai_stopped">%1$s නැවතුණි, බොහෝ විට දුරකථනයේ මතකය අවසන් වූ නිසා. “උපාංගයේ AI” සැකසීම් තුළ කුඩා මාදිලියක් තෝරන්න.</string>
 </resources>

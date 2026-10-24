@@ -15,9 +15,9 @@
     <string name="on_device_ai_tag_needs_memory">ପ୍ରାୟ %1$d GB ମେମୋରୀ ଆବଶ୍ୟକ।</string>
     <string name="on_device_ai_tag_not_enough_memory">ଏହି ଫୋନରେ ଯଥେଷ୍ଟ ମେମୋରୀ ନାହିଁ।</string>
     <string name="on_device_ai_choose_model">ଏକ ମଡେଲ୍ ବାଛନ୍ତୁ</string>
-    <string name="on_device_ai_model_too_big">ଏହି ଫୋନ୍ ପାଇଁ ସେହି ଫୋନ୍ ପାଇଁ ପର୍ଯ୍ୟାପ୍ତ ସ୍ମୃତି ନାହିଁ |</string>
+    <string name="on_device_ai_model_too_big">ଏହି ଫୋନ୍‌ରେ ସେହି ମଡେଲ୍ ପାଇଁ ଯଥେଷ୍ଟ ମେମୋରୀ ନାହିଁ।</string>
     <string name="pref_on_device_ai_download">ମଡେଲ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">ଆଲିଙ୍ଗନ ଚେହେରାରୁ ଥରେ ଡାଉନଲୋଡ୍ କରନ୍ତୁ | ଏହା ପରେ, ନେଟୱର୍କ ଉପରେ କିଛି ପଠାଯାଏ ନାହିଁ |</string>
+    <string name="pref_on_device_ai_download_summary">Hugging Faceରୁ ଥରେ ଡାଉନଲୋଡ୍ କରେ। ତାପରେ ନେଟୱାର୍କ ଦେଇ କିଛି ପଠାଯାଏ ନାହିଁ।</string>
     <string name="pref_on_device_ai_downloading">ଡାଉନଲୋଡ୍ ହେଉଛି, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s। ବନ୍ଦ କରିବାକୁ ଟ୍ୟାପ୍ କରନ୍ତୁ | ଯଦି ଆପଣ ଏହାକୁ ପୁନର୍ବାର ଆରମ୍ଭ କରନ୍ତି ତେବେ ଏହା ଏଠାରୁ ଚାଲିଥାଏ |</string>
     <string name="on_device_ai_progress_sizes">%2$s ର %1$s</string>
@@ -28,7 +28,7 @@
     <string name="on_device_ai_notification_downloading">ମଡେଲ୍ ଡାଉନଲୋଡ୍ କରୁଛି, %1$d%%</string>
     <string name="on_device_ai_notification_done">ମଡେଲ୍ ଡାଉନଲୋଡ୍ ହୋଇଛି। ସେଟିଂସରେ ଅନ୍-ଡିଭାଇସ୍ AI ଚାଲୁ କରନ୍ତୁ।</string>
     <string name="on_device_ai_notification_failed">ଡାଉନଲୋଡ୍ ବିଫଳ ହେଲା। ପୁଣି ଚେଷ୍ଟା କରିବାକୁ ସେଟିଂସ ଖୋଲନ୍ତୁ।</string>
-    <string name="on_device_ai_notification_paused">Android ଡାଉନଲୋଡ୍ କୁ ବିରତ କଲା | ଜାରି ରଖିବାକୁ ସେଟିଂସମୂହ ଖୋଲନ୍ତୁ |</string>
+    <string name="on_device_ai_notification_paused">Android ଡାଉନଲୋଡ୍ ବିରତ କଲା। ଜାରି ରଖିବାକୁ ସେଟିଂସ ଖୋଲନ୍ତୁ।</string>
     <string name="pref_on_device_ai_importing">ମଡେଲ୍ ଫାଇଲ୍ ଯାଞ୍ଚ କରୁଛି</string>
     <string name="pref_on_device_ai_manage">ମଡେଲଗୁଡିକ ପରିଚାଳନା କରନ୍ତୁ</string>
     <string name="pref_on_device_ai_manage_none">କୌଣସି ମଡେଲ ଡାଉନଲୋଡ୍ ହୋଇନାହିଁ</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">ବାତିଲ କରନ୍ତୁ</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">ଅନ୍-ଡିଭାଇସ୍ AI ମେମୋରୀ ସୀମାକୁ ଅଣଦେଖା କରନ୍ତୁ</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Android ଏହାକୁ ବନ୍ଦ କଲାବେଳେ କଣ ହୁଏ ପରୀକ୍ଷା କରିବାକୁ, ଏହି ଫୋନ୍ ଅପେକ୍ଷା ଅଧିକ ମେମୋରୀ ଆବଶ୍ୟକ କରୁଥିବା ଏକ ମଡେଲ୍ ବାଛିବାକୁ ଦିଅ, ଏବଂ ମାଗଣା ମେମୋରୀ ଯାଞ୍ଚ ନକରି ଏହାକୁ ଲୋଡ୍ କର |</string>
-    <string name="on_device_ai_not_enough_memory">%1$s ପାଇଁ ପର୍ଯ୍ୟାପ୍ତ ମାଗଣା ସ୍ମୃତି ନୁହେଁ | କିଛି ଆପ୍ ବନ୍ଦ କରନ୍ତୁ, କିମ୍ବା ଅନ୍-ଡିଭାଇସ୍ AI ସେଟିଙ୍ଗରେ ଏକ ଛୋଟ ମଡେଲ୍ ବାଛନ୍ତୁ |</string>
-    <string name="on_device_ai_stopped">%1$s ବନ୍ଦ ହୋଇଗଲା, ବୋଧହୁଏ ଫୋନ୍ ମେମୋରୀ ସରିଗଲା | ଅନ୍-ଡିଭାଇସ୍ AI ସେଟିଙ୍ଗରେ ଏକ ଛୋଟ ମଡେଲ୍ ବାଛନ୍ତୁ |</string>
+    <string name="on_device_ai_not_enough_memory">%1$s ପାଇଁ ଯଥେଷ୍ଟ ଖାଲି ମେମୋରୀ ନାହିଁ। କିଛି ଆପ୍ ବନ୍ଦ କରନ୍ତୁ କିମ୍ବା “ଅନ୍-ଡିଭାଇସ୍ AI” ସେଟିଂସରେ ଏକ ଛୋଟ ମଡେଲ୍ ବାଛନ୍ତୁ।</string>
+    <string name="on_device_ai_stopped">%1$s ବନ୍ଦ ହୋଇଗଲା, ସମ୍ଭବତଃ ଫୋନ୍‌ର ମେମୋରୀ ସରିଯିବାରୁ। “ଅନ୍-ଡିଭାଇସ୍ AI” ସେଟିଂସରେ ଏକ ଛୋଟ ମଡେଲ୍ ବାଛନ୍ତୁ।</string>
 </resources>

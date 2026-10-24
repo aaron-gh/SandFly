@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">एउटा मोडेल छान्नुहोस्</string>
     <string name="on_device_ai_model_too_big">यो फोनमा त्यो मोडेलको लागि पर्याप्त मेमोरी छैन।</string>
     <string name="pref_on_device_ai_download">मोडेल डाउनलोड गर्नुहोस् (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">हगिङ फेसबाट एक पटक डाउनलोड गर्नुहोस्। त्यस पछि, नेटवर्कमा केहि पठाइएको छैन।</string>
+    <string name="pref_on_device_ai_download_summary">Hugging Face बाट एक पटक डाउनलोड गर्छ। त्यसपछि नेटवर्कबाट केही पनि पठाइँदैन।</string>
     <string name="pref_on_device_ai_downloading">डाउनलोड गर्दै, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s। रोक्न ट्याप गर्नुहोस्। यदि तपाइँ यसलाई फेरि सुरु गर्नुहुन्छ भने यो यहाँबाट जारी रहन्छ।</string>
     <string name="on_device_ai_progress_sizes">%2$s को %1$s</string>
@@ -28,7 +28,7 @@
     <string name="on_device_ai_notification_downloading">मोडेल डाउनलोड गर्दै, %1$d%%</string>
     <string name="on_device_ai_notification_done">मोडेल डाउनलोड गरियो। सेटिङहरूमा गएर अन-डिभाइस AI खोल्नुहोस्।</string>
     <string name="on_device_ai_notification_failed">डाउनलोड असफल भयो। फेरि प्रयास गर्न सेटिङहरू खोल्नुहोस्।</string>
-    <string name="on_device_ai_notification_paused">Android डाउनलोड रोकियो। जारी राख्न सेटिङहरू खोल्नुहोस्।</string>
+    <string name="on_device_ai_notification_paused">Android ले डाउनलोड रोक्यो। जारी राख्न सेटिङ खोल्नुहोस्।</string>
     <string name="pref_on_device_ai_importing">मोडेल फाइल जाँच गर्दै</string>
     <string name="pref_on_device_ai_manage">मोडेलहरू प्रबन्ध गर्नुहोस्</string>
     <string name="pref_on_device_ai_manage_none">कुनै मोडेलहरू डाउनलोड गरिएको छैन</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">रद्द गर्नुहोस्</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">अन-डिभाइस AI मेमोरी सीमा बेवास्ता गर्ने</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">तपाइँलाई यो फोनको भन्दा धेरै मेमोरी चाहिने मोडेल छनोट गर्न दिन्छ, र Android ले रोक्दा के हुन्छ परीक्षण गर्नको लागि नि:शुल्क मेमोरी जाँच नगरिकन यसलाई लोड गर्दछ।</string>
-    <string name="on_device_ai_not_enough_memory">%1$s को लागि पर्याप्त खाली मेमोरी छैन। केही एपहरू बन्द गर्नुहोस्, वा अन-डिभाइस AI सेटिङहरूमा एउटा सानो मोडेल छनौट गर्नुहोस्।</string>
-    <string name="on_device_ai_stopped">%1$s रोकियो, सायद फोनको मेमोरी सकिएको कारणले। अन-डिभाइस AI सेटिङहरूमा एउटा सानो मोडेल छनौट गर्नुहोस्।</string>
+    <string name="on_device_ai_not_enough_memory">%1$s का लागि पर्याप्त खाली मेमोरी छैन। केही एप बन्द गर्नुहोस् वा “डिभाइसमै चल्ने AI” सेटिङमा सानो मोडेल छान्नुहोस्।</string>
+    <string name="on_device_ai_stopped">%1$s रोकियो, सम्भवतः फोनको मेमोरी सकिएकाले। “डिभाइसमै चल्ने AI” सेटिङमा सानो मोडेल छान्नुहोस्।</string>
 </resources>

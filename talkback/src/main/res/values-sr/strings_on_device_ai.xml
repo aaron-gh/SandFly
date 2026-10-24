@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">Изаберите модел</string>
     <string name="on_device_ai_model_too_big">Овај телефон нема довољно меморије за тај модел.</string>
     <string name="pref_on_device_ai_download">Преузми модел (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">Једном преузима са Хуггинг Фаце. Након тога, ништа се не шаље преко мреже.</string>
+    <string name="pref_on_device_ai_download_summary">Преузима се једном са Hugging Face-а. Након тога се ништа не шаље преко мреже.</string>
     <string name="pref_on_device_ai_downloading">Преузимање, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. Додирните за заустављање. Наставља се одавде ако почнете поново.</string>
     <string name="on_device_ai_progress_sizes">%1$s од %2$s</string>
@@ -72,6 +72,6 @@
     <string name="on_device_ai_cancel">Откажи</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Занемари ограничења меморије за AI на уређају</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Омогућава вам да изаберете модел коме је потребно више меморије него што овај телефон има и учитава га без провере слободне меморије да бисте тестирали шта се дешава када га Android заустави.</string>
-    <string name="on_device_ai_not_enough_memory">Нема довољно слободне меморије за %1$s. Затворите неке апликације или изаберите мањи модел у подешавањима АИ на уређају.</string>
-    <string name="on_device_ai_stopped">%1$s се зауставио, вероватно зато што је телефону понестало меморије. Изаберите мањи модел у подешавањима АИ на уређају.</string>
+    <string name="on_device_ai_not_enough_memory">Нема довољно слободне меморије за %1$s. Затворите неке апликације или изаберите мањи модел у подешавањима „AI на уређају”.</string>
+    <string name="on_device_ai_stopped">%1$s се зауставио, вероватно зато што је телефону понестало меморије. Изаберите мањи модел у подешавањима „AI на уређају”.</string>
 </resources>

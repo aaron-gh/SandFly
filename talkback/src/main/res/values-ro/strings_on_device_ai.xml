@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">Alege un model</string>
     <string name="on_device_ai_model_too_big">Acest telefon nu are suficientă memorie pentru modelul respectiv.</string>
     <string name="pref_on_device_ai_download">Descarcă modelul (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">Descărcări o dată de la Hugging Face. După aceea, nu se trimite nimic prin rețea.</string>
+    <string name="pref_on_device_ai_download_summary">Se descarcă o singură dată de pe Hugging Face. După aceea, nu se trimite nimic prin rețea.</string>
     <string name="pref_on_device_ai_downloading">Se descarcă, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. Atingeți pentru a opri. Continuă de aici dacă o porniți din nou.</string>
     <string name="on_device_ai_progress_sizes">%1$s din %2$s</string>
@@ -72,6 +72,6 @@
     <string name="on_device_ai_cancel">Anulează</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Ignoră limitele de memorie ale AI de pe dispozitiv</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Vă permite să alegeți un model care are nevoie de mai multă memorie decât are acest telefon și să îl încarce fără a verifica dacă există memorie liberă, pentru a testa ce se întâmplă când Android îl oprește.</string>
-    <string name="on_device_ai_not_enough_memory">Nu este suficientă memorie liberă pentru %1$s. Închideți unele aplicații sau alegeți un model mai mic în setările AI pe dispozitiv.</string>
-    <string name="on_device_ai_stopped">%1$s sa oprit, probabil pentru că telefonul a rămas fără memorie. Alegeți un model mai mic în setările AI pe dispozitiv.</string>
+    <string name="on_device_ai_not_enough_memory">Memorie liberă insuficientă pentru %1$s. Închideți câteva aplicații sau alegeți un model mai mic în setările AI pe dispozitiv.</string>
+    <string name="on_device_ai_stopped">%1$s s-a oprit, probabil pentru că telefonul a rămas fără memorie. Alegeți un model mai mic în setările AI pe dispozitiv.</string>
 </resources>

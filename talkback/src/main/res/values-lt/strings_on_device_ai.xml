@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">Pasirinkite modelį</string>
     <string name="on_device_ai_model_too_big">Šiame telefone tam modeliui nepakanka atminties.</string>
     <string name="pref_on_device_ai_download">Atsisiųsti modelį (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">Atsisiųsti vieną kartą iš Hugging Face. Po to per tinklą niekas nesiunčiama.</string>
+    <string name="pref_on_device_ai_download_summary">Vieną kartą atsisiunčiama iš „Hugging Face“. Vėliau tinklu niekas nesiunčiama.</string>
     <string name="pref_on_device_ai_downloading">Atsisiunčiama, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. Bakstelėkite, kad sustabdytumėte. Tai tęsis nuo čia, jei pradėsite iš naujo.</string>
     <string name="on_device_ai_progress_sizes">%1$s iš %2$s</string>
@@ -28,7 +28,7 @@
     <string name="on_device_ai_notification_downloading">Atsisiunčiamas modelis: %1$d%%</string>
     <string name="on_device_ai_notification_done">Modelis atsisiųstas. Nustatymuose įjunkite įrenginio AI.</string>
     <string name="on_device_ai_notification_failed">Atsisiuntimas nepavyko. Atidarykite nustatymus ir bandykite dar kartą.</string>
-    <string name="on_device_ai_notification_paused">Android paused the download. Norėdami tęsti, atidarykite nustatymus.</string>
+    <string name="on_device_ai_notification_paused">Android pristabdė atsisiuntimą. Norėdami tęsti, atidarykite nustatymus.</string>
     <string name="pref_on_device_ai_importing">Modelio failo tikrinimas</string>
     <string name="pref_on_device_ai_manage">Tvarkyti modelius</string>
     <string name="pref_on_device_ai_manage_none">Modelių neatsisiųsta</string>
@@ -74,6 +74,6 @@
     <string name="on_device_ai_cancel">Atšaukti</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Nepaisyti įrenginio AI atminties apribojimų</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Leidžia pasirinkti modelį, kuriam reikia daugiau atminties nei turi šis telefonas, ir įkelti jį netikrindami, ar yra laisvos atminties, kad patikrintumėte, kas nutinka, kai Android jį sustabdo.</string>
-    <string name="on_device_ai_not_enough_memory">Nepakanka laisvos atminties %1$s. Uždarykite kai kurias programas arba pasirinkite mažesnį modelį įrenginio AI nustatymuose.</string>
-    <string name="on_device_ai_stopped">%1$s sustojo, tikriausiai todėl, kad pritrūko telefono atminties. Įrenginio AI nustatymuose pasirinkite mažesnį modelį.</string>
+    <string name="on_device_ai_not_enough_memory">Nepakanka laisvos atminties %1$s. Uždarykite kelias programas arba pasirinkite mažesnį modelį „Įrenginio AI“ nustatymuose.</string>
+    <string name="on_device_ai_stopped">%1$s sustojo, tikriausiai todėl, kad telefonui pritrūko atminties. Pasirinkite mažesnį modelį „Įrenginio AI“ nustatymuose.</string>
 </resources>

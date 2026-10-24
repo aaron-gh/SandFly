@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">Үлгіні таңдаңыз</string>
     <string name="on_device_ai_model_too_big">Бұл телефонда сол модель үшін жады жеткіліксіз.</string>
     <string name="pref_on_device_ai_download">Үлгіні жүктеп алу (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">Hugging Face қолданбасынан бір рет жүктеп алынады. Осыдан кейін желі арқылы ештеңе жіберілмейді.</string>
+    <string name="pref_on_device_ai_download_summary">Hugging Face-тен бір рет жүктеп алынады. Одан кейін желі арқылы ештеңе жіберілмейді.</string>
     <string name="pref_on_device_ai_downloading">Жүктеп алынуда, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. Тоқтату үшін түртіңіз. Қайтадан бастасаңыз, ол осы жерден жалғасады.</string>
     <string name="on_device_ai_progress_sizes">%1$s/%2$s</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">Бас тарту</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Құрылғыдағы AI жады шектеулерін елемеу</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Android тоқтатқанда не болатынын тексеру үшін осы телефондағыдан көбірек жадты қажет ететін үлгіні таңдауға мүмкіндік береді және бос жадты тексермей жүктейді.</string>
-    <string name="on_device_ai_not_enough_memory">%1$s үшін бос жад жеткіліксіз. Кейбір қолданбаларды жабыңыз немесе құрылғыдағы AI параметрлерінде кішірек үлгіні таңдаңыз.</string>
-    <string name="on_device_ai_stopped">%1$s тоқтады, себебі телефонның жады таусылды. Құрылғыдағы AI параметрлерінде кішірек үлгіні таңдаңыз.</string>
+    <string name="on_device_ai_not_enough_memory">%1$s үшін бос жад жеткіліксіз. Кейбір қолданбаларды жабыңыз немесе «Құрылғыдағы AI» параметрлерінен кішірек модель таңдаңыз.</string>
+    <string name="on_device_ai_stopped">%1$s тоқтады, мүмкін телефон жады таусылғандықтан. «Құрылғыдағы AI» параметрлерінен кішірек модель таңдаңыз.</string>
 </resources>

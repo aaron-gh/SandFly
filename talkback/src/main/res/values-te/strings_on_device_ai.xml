@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">మోడల్‌ను ఎంచుకోండి</string>
     <string name="on_device_ai_model_too_big">ఈ ఫోన్‌లో ఆ మోడల్‌కు తగినంత మెమరీ లేదు.</string>
     <string name="pref_on_device_ai_download">మోడల్‌ను డౌన్‌లోడ్ చేయండి (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">హగ్గింగ్ ఫేస్ నుండి ఒకసారి డౌన్‌లోడ్ చేసుకోండి. ఆ తర్వాత, నెట్‌వర్క్ ద్వారా ఏమీ పంపబడదు.</string>
+    <string name="pref_on_device_ai_download_summary">Hugging Face నుండి ఒకసారి డౌన్‌లోడ్ చేస్తుంది. ఆ తర్వాత నెట్‌వర్క్ ద్వారా ఏమీ పంపబడదు.</string>
     <string name="pref_on_device_ai_downloading">డౌన్‌లోడ్ చేస్తోంది, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. ఆపడానికి నొక్కండి. మీరు దీన్ని మళ్లీ ప్రారంభిస్తే ఇక్కడ నుండి కొనసాగుతుంది.</string>
     <string name="on_device_ai_progress_sizes">%2$sలో %1$s</string>
@@ -28,7 +28,7 @@
     <string name="on_device_ai_notification_downloading">మోడల్‌ను డౌన్‌లోడ్ చేస్తోంది, %1$d%%</string>
     <string name="on_device_ai_notification_done">మోడల్ డౌన్‌లోడ్ చేయబడింది. సెట్టింగ్‌లలో ఆన్-డివైస్ AIని ఆన్ చేయండి.</string>
     <string name="on_device_ai_notification_failed">డౌన్‌లోడ్ విఫలమైంది. మళ్లీ ప్రయత్నించడానికి సెట్టింగ్‌లను తెరవండి.</string>
-    <string name="on_device_ai_notification_paused">Android డౌన్‌లోడ్ పాజ్ చేయబడింది. కొనసాగించడానికి సెట్టింగ్‌లను తెరవండి.</string>
+    <string name="on_device_ai_notification_paused">Android డౌన్‌లోడ్‌ను పాజ్ చేసింది. కొనసాగించడానికి సెట్టింగ్‌లను తెరవండి.</string>
     <string name="pref_on_device_ai_importing">మోడల్ ఫైల్‌ని తనిఖీ చేస్తోంది</string>
     <string name="pref_on_device_ai_manage">మోడల్‌లను నిర్వహించండి</string>
     <string name="pref_on_device_ai_manage_none">మోడల్‌లు ఏవీ డౌన్‌లోడ్ చేయబడలేదు</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">రద్దు చేయండి</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">పరికరంలో AI మెమరీ పరిమితులను విస్మరించండి</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Androidని ఆపివేసినప్పుడు ఏమి జరుగుతుందో పరీక్షించడానికి, ఈ ఫోన్‌లో ఉన్న దానికంటే ఎక్కువ మెమరీ అవసరమయ్యే మోడల్‌ని ఎంచుకోవడానికి మిమ్మల్ని అనుమతిస్తుంది మరియు ఉచిత మెమరీని తనిఖీ చేయకుండానే లోడ్ చేస్తుంది.</string>
-    <string name="on_device_ai_not_enough_memory">%1$sకి తగినంత ఉచిత మెమరీ లేదు. కొన్ని యాప్‌లను మూసివేయండి లేదా పరికరంలోని AI సెట్టింగ్‌లలో చిన్న మోడల్‌ని ఎంచుకోండి.</string>
-    <string name="on_device_ai_stopped">%1$s ఆగిపోయింది, బహుశా ఫోన్ మెమరీ అయిపోయినందున. ఆన్-డివైస్ AI సెట్టింగ్‌లలో చిన్న మోడల్‌ని ఎంచుకోండి.</string>
+    <string name="on_device_ai_not_enough_memory">%1$sకి తగినంత ఖాళీ మెమరీ లేదు. కొన్ని యాప్‌లను మూసివేయండి లేదా “పరికరంలో AI” సెట్టింగ్‌లలో చిన్న మోడల్‌ను ఎంచుకోండి.</string>
+    <string name="on_device_ai_stopped">%1$s ఆగిపోయింది, బహుశా ఫోన్ మెమరీ అయిపోయినందున. “పరికరంలో AI” సెట్టింగ్‌లలో చిన్న మోడల్‌ను ఎంచుకోండి.</string>
 </resources>

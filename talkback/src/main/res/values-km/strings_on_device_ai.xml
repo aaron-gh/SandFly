@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">ជ្រើសរើសម៉ូដែល</string>
     <string name="on_device_ai_model_too_big">ទូរសព្ទនេះមិនមានអង្គចងចាំគ្រប់គ្រាន់សម្រាប់ម៉ូដែលនោះទេ។</string>
     <string name="pref_on_device_ai_download">ទាញយកម៉ូដែល (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">ទាញយកម្តងពីឱបមុខ។ បន្ទាប់ពីនោះគ្មានអ្វីត្រូវបានបញ្ជូនតាមបណ្តាញទេ។</string>
+    <string name="pref_on_device_ai_download_summary">ទាញយកម្ដងពី Hugging Face។ បន្ទាប់មក គ្មានអ្វីត្រូវបានផ្ញើតាមបណ្ដាញទេ។</string>
     <string name="pref_on_device_ai_downloading">កំពុងទាញយក %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s។ ប៉ះដើម្បីបញ្ឈប់។ វាបន្តពីទីនេះ ប្រសិនបើអ្នកចាប់ផ្តើមវាម្តងទៀត។</string>
     <string name="on_device_ai_progress_sizes">%1$s នៃ %2$s</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">បោះបង់</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">មិនអើពើដែនកំណត់អង្គចងចាំ AI នៅលើឧបករណ៍</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">អនុញ្ញាតឱ្យអ្នកជ្រើសរើសម៉ូដែលដែលត្រូវការអង្គចងចាំច្រើនជាងទូរស័ព្ទនេះមាន ហើយផ្ទុកវាដោយមិនចាំបាច់ពិនិត្យមើលអង្គចងចាំឥតគិតថ្លៃ ដើម្បីសាកល្បងថាតើមានអ្វីកើតឡើងនៅពេលដែល Android បញ្ឈប់វា។</string>
-    <string name="on_device_ai_not_enough_memory">មិនមានអង្គចងចាំឥតគិតថ្លៃគ្រប់គ្រាន់សម្រាប់ %1$s។ បិទកម្មវិធីមួយចំនួន ឬជ្រើសរើសម៉ូដែលតូចជាងនៅក្នុងការកំណត់ AI នៅលើឧបករណ៍។</string>
-    <string name="on_device_ai_stopped">%1$s ឈប់ ប្រហែលមកពីទូរសព្ទអស់អង្គចងចាំ។ ជ្រើសរើសម៉ូដែលតូចជាងនៅក្នុងការកំណត់ AI នៅលើឧបករណ៍។</string>
+    <string name="on_device_ai_not_enough_memory">អង្គចងចាំទំនេរមិនគ្រប់គ្រាន់សម្រាប់ %1$s ទេ។ បិទកម្មវិធីមួយចំនួន ឬជ្រើសរើសម៉ូដែលតូចជាងនៅក្នុងការកំណត់ AI នៅលើឧបករណ៍។</string>
+    <string name="on_device_ai_stopped">%1$s បានឈប់ ប្រហែលមកពីទូរសព្ទអស់អង្គចងចាំ។ ជ្រើសរើសម៉ូដែលតូចជាងនៅក្នុងការកំណត់ AI នៅលើឧបករណ៍។</string>
 </resources>

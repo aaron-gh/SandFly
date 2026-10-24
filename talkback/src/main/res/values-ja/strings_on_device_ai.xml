@@ -15,9 +15,9 @@
     <string name="on_device_ai_tag_needs_memory">約 %1$d GB のメモリが必要です。</string>
     <string name="on_device_ai_tag_not_enough_memory">このスマートフォンはメモリが不足しています。</string>
     <string name="on_device_ai_choose_model">モデルを選択</string>
-    <string name="on_device_ai_model_too_big">この携帯電話にはそのモデルに対して十分なメモリがありません。</string>
+    <string name="on_device_ai_model_too_big">このスマートフォンには、そのモデルを実行するのに十分なメモリがありません。</string>
     <string name="pref_on_device_ai_download">モデルをダウンロード (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">Hugging Face から 1 回ダウンロードします。その後、ネットワーク上には何も送信されなくなります。</string>
+    <string name="pref_on_device_ai_download_summary">Hugging Face から一度だけダウンロードします。その後は何もネットワーク経由で送信されません。</string>
     <string name="pref_on_device_ai_downloading">ダウンロード中、%1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s。タップして停止します。再度開始すると、ここから続行されます。</string>
     <string name="on_device_ai_progress_sizes">%1$s/%2$s</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">キャンセル</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">デバイス上の AI メモリ制限を無視する</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">この携帯電話に搭載されているメモリよりも多くのメモリを必要とするモデルを選択し、空きメモリをチェックせずにそれをロードし、Android が停止したときに何が起こるかをテストできます。</string>
-    <string name="on_device_ai_not_enough_memory">%1$s の空きメモリが不足しています。いくつかのアプリを閉じるか、オンデバイス AI 設定でより小さいモデルを選択してください。</string>
-    <string name="on_device_ai_stopped">おそらく携帯電話のメモリが不足したため、%1$s が停止しました。オンデバイス AI 設定でより小さいモデルを選択してください。</string>
+    <string name="on_device_ai_not_enough_memory">%1$s に必要な空きメモリが不足しています。一部のアプリを閉じるか、[オンデバイスAI] の設定で小さいモデルを選択してください。</string>
+    <string name="on_device_ai_stopped">%1$s が停止しました。スマートフォンのメモリ不足が原因と考えられます。[オンデバイスAI] の設定で小さいモデルを選択してください。</string>
 </resources>

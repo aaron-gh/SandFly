@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">Modelni tanlang</string>
     <string name="on_device_ai_model_too_big">Bu telefonda ushbu model uchun xotira yetarli emas.</string>
     <string name="pref_on_device_ai_download">Modelni yuklab olish (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">Hugging Face ilovasidan bir marta yuklab olinadi. Shundan so\'ng, tarmoq orqali hech narsa yuborilmaydi.</string>
+    <string name="pref_on_device_ai_download_summary">Hugging Face’dan bir marta yuklab olinadi. Shundan soʻng tarmoq orqali hech narsa yuborilmaydi.</string>
     <string name="pref_on_device_ai_downloading">Yuklab olinmoqda, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. Toʻxtatish uchun bosing. Agar siz uni qaytadan boshlasangiz, u shu yerdan davom etadi.</string>
     <string name="on_device_ai_progress_sizes">%1$s / %2$s</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">Bekor qilish</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Qurilmadagi AI xotira cheklovlarini eʼtiborsiz qoldirish</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Android toʻxtatilganda nima boʻlishini tekshirish uchun ushbu telefondagidan koʻra koʻproq xotira talab qiladigan modelni tanlash va boʻsh xotirani tekshirmasdan yuklash imkonini beradi.</string>
-    <string name="on_device_ai_not_enough_memory">%1$s uchun boʻsh xotira yetarli emas. Ayrim ilovalarni yoping yoki qurilmadagi AI sozlamalarida kichikroq modelni tanlang.</string>
-    <string name="on_device_ai_stopped">%1$s toʻxtadi, ehtimol telefon xotirasi tugab qolgan. Qurilmadagi AI sozlamalarida kichikroq modelni tanlang.</string>
+    <string name="on_device_ai_not_enough_memory">%1$s uchun boʻsh xotira yetarli emas. Baʼzi ilovalarni yoping yoki “Qurilmadagi AI” sozlamalarida kichikroq model tanlang.</string>
+    <string name="on_device_ai_stopped">%1$s toʻxtadi, ehtimol telefon xotirasi tugagani uchun. “Qurilmadagi AI” sozlamalarida kichikroq model tanlang.</string>
 </resources>

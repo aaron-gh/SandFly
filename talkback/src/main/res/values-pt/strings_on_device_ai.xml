@@ -28,7 +28,7 @@
     <string name="on_device_ai_notification_downloading">Baixando o modelo, %1$d%%</string>
     <string name="on_device_ai_notification_done">Modelo baixado. Ative a IA no dispositivo nas configurações.</string>
     <string name="on_device_ai_notification_failed">O download falhou. Abra as configurações para tentar novamente.</string>
-    <string name="on_device_ai_notification_paused">Android pausou o download. Abra as configurações para continuar.</string>
+    <string name="on_device_ai_notification_paused">O Android pausou o download. Abra as configurações para continuar.</string>
     <string name="pref_on_device_ai_importing">Verificando o arquivo do modelo</string>
     <string name="pref_on_device_ai_manage">Gerenciar modelos</string>
     <string name="pref_on_device_ai_manage_none">Nenhum modelo baixado</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">Cancelar</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Ignorar os limites de memória da IA no dispositivo</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Permite escolher um modelo que precisa de mais memória do que este telefone e carrega-o sem verificar a memória livre, para testar o que acontece quando Android o interrompe.</string>
-    <string name="on_device_ai_not_enough_memory">Não há memória livre suficiente para %1$s. Feche alguns aplicativos ou escolha um modelo menor nas configurações de IA no dispositivo.</string>
+    <string name="on_device_ai_not_enough_memory">Não há memória livre suficiente para %1$s. Feche alguns apps ou escolha um modelo menor nas configurações de IA no dispositivo.</string>
     <string name="on_device_ai_stopped">%1$s parou, provavelmente porque o telefone ficou sem memória. Escolha um modelo menor nas configurações de IA no dispositivo.</string>
 </resources>

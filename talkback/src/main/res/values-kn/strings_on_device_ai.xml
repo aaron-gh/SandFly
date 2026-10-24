@@ -17,7 +17,7 @@
     <string name="on_device_ai_choose_model">ಮಾಡೆಲ್ ಆರಿಸಿ</string>
     <string name="on_device_ai_model_too_big">ಈ ಫೋನ್‌ನಲ್ಲಿ ಆ ಮಾದರಿಗೆ ಸಾಕಷ್ಟು ಮೆಮೊರಿ ಇಲ್ಲ.</string>
     <string name="pref_on_device_ai_download">ಮಾಡೆಲ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ (%1$s)</string>
-    <string name="pref_on_device_ai_download_summary">ಹಗ್ಗಿಂಗ್ ಫೇಸ್‌ನಿಂದ ಒಮ್ಮೆ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ. ಅದರ ನಂತರ, ನೆಟ್ವರ್ಕ್ನಲ್ಲಿ ಏನನ್ನೂ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ.</string>
+    <string name="pref_on_device_ai_download_summary">Hugging Face ನಿಂದ ಒಮ್ಮೆ ಡೌನ್‌ಲೋಡ್ ಮಾಡುತ್ತದೆ. ಅದರ ನಂತರ ನೆಟ್‌ವರ್ಕ್ ಮೂಲಕ ಏನನ್ನೂ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ.</string>
     <string name="pref_on_device_ai_downloading">ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ, %1$d%%</string>
     <string name="pref_on_device_ai_downloading_summary">%1$s. ನಿಲ್ಲಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ. ನೀವು ಅದನ್ನು ಮತ್ತೆ ಪ್ರಾರಂಭಿಸಿದರೆ ಅದು ಇಲ್ಲಿಂದ ಮುಂದುವರಿಯುತ್ತದೆ.</string>
     <string name="on_device_ai_progress_sizes">%2$s ರಲ್ಲಿ %1$s</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">ರದ್ದುಮಾಡಿ</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">ಸಾಧನದ AI ಮೆಮೊರಿ ಮಿತಿಗಳನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Android ಅದನ್ನು ನಿಲ್ಲಿಸಿದಾಗ ಏನಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ಪರೀಕ್ಷಿಸಲು, ಈ ಫೋನ್‌ನಲ್ಲಿ ಹೆಚ್ಚು ಮೆಮೊರಿ ಅಗತ್ಯವಿರುವ ಮಾದರಿಯನ್ನು ಆಯ್ಕೆ ಮಾಡಲು ಮತ್ತು ಉಚಿತ ಮೆಮೊರಿಯನ್ನು ಪರಿಶೀಲಿಸದೆಯೇ ಅದನ್ನು ಲೋಡ್ ಮಾಡಲು ನಿಮಗೆ ಅನುಮತಿಸುತ್ತದೆ.</string>
-    <string name="on_device_ai_not_enough_memory">%1$s ಗೆ ಸಾಕಷ್ಟು ಉಚಿತ ಮೆಮೊರಿ ಇಲ್ಲ. ಕೆಲವು ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ಮುಚ್ಚಿ ಅಥವಾ ಸಾಧನದ AI ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಚಿಕ್ಕ ಮಾದರಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.</string>
-    <string name="on_device_ai_stopped">%1$s ನಿಲ್ಲಿಸಲಾಗಿದೆ, ಬಹುಶಃ ಫೋನ್ ಮೆಮೊರಿ ಖಾಲಿಯಾದ ಕಾರಣ. ಸಾಧನದ AI ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಚಿಕ್ಕ ಮಾದರಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.</string>
+    <string name="on_device_ai_not_enough_memory">%1$s ಗೆ ಸಾಕಷ್ಟು ಖಾಲಿ ಮೆಮೊರಿ ಇಲ್ಲ. ಕೆಲವು ಆ್ಯಪ್‌ಗಳನ್ನು ಮುಚ್ಚಿ ಅಥವಾ “ಸಾಧನದಲ್ಲಿ AI” ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಚಿಕ್ಕ ಮಾದರಿಯನ್ನು ಆರಿಸಿ.</string>
+    <string name="on_device_ai_stopped">%1$s ನಿಂತಿತು, ಬಹುಶಃ ಫೋನ್‌ನ ಮೆಮೊರಿ ಖಾಲಿಯಾದ ಕಾರಣ. “ಸಾಧನದಲ್ಲಿ AI” ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಚಿಕ್ಕ ಮಾದರಿಯನ್ನು ಆರಿಸಿ.</string>
 </resources>
