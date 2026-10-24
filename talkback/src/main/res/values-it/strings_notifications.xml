@@ -39,7 +39,7 @@
     <string name="notification_voice_title">Voce</string>
     <string name="notification_voice_sandfly">La voce di SandFly</string>
     <string name="notification_detect_language_title">Rileva la lingua</string>
-    <string name="notification_detect_language_summary">Pronuncia ogni notifica nella lingua in cui è scritta. È necessario cambiare lingua automaticamente nelle impostazioni di sintesi vocale.</string>
+    <string name="notification_detect_language_summary">Legge ogni notifica nella lingua in cui è scritta. Richiede «Cambia lingua automaticamente» in Sintesi vocale.</string>
     <string name="notification_sound_before_title">Suono prima delle notifiche</string>
     <string name="notification_category_text">Testo</string>
     <string name="notification_remove_emoji_title">Ometti le emoji</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Segnaposto: {time}, {date} e {battery} (la percentuale della batteria).</string>
     <string name="notification_clock_format_default">Sono le {time}</string>
     <string name="notification_clock_exact_title">Orari esatti</string>
-    <string name="notification_clock_exact_summary">Ha bisogno di allarmi e promemoria. Altrimenti l\'orario può essere annunciato fino a un minuto in ritardo.</string>
+    <string name="notification_clock_exact_summary">Richiede l\'autorizzazione Sveglie e promemoria. Altrimenti l\'orario può essere annunciato con un minuto di ritardo al massimo.</string>
     <string name="notification_other_apps_title">Altre app</string>
     <string name="notification_apps_category">App</string>
     <string name="notification_apps_loading">Caricamento app</string>

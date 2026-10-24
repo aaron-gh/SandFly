@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">အလိုအလျောက်စနစ်အက်ပ်များကို ခွင့်ပြုပါ</string>
     <string name="notification_category_said">ဖတ်မည့်အရာ</string>
     <string name="notification_format_title">စကားပြောပုံစံ</string>
-    <string name="notification_format_message">နေရာထိုင်ခင်း- {app}၊ {title}၊ {text}၊ {content} (စာသားတစ်ခုလုံး)၊ {bigtext}၊ {subtext}၊ {ticker}၊ {category} နှင့် {time}။</string>
+    <string name="notification_format_message">နေရာယူစာလုံးများ- {app}၊ {title}၊ {text}၊ {content} (စာသားအားလုံး)၊ {bigtext}၊ {subtext}၊ {ticker}၊ {category} နှင့် {time}။</string>
     <string name="notification_private_format_title">ပုဂ္ဂလိက အကြောင်းကြားချက်များအတွက် ဖတ်မည့်အရာ</string>
     <string name="notification_private_format_message">သီးသန့် အသိပေးချက်၏ အကြောင်းအရာ နေရာတွင် ပြောကြားခဲ့ပါသည်။ နေရာထိုင်ခင်း- {app}၊ {category} နှင့် {time}။</string>
     <string name="notification_category_voice">စကားသံ</string>
     <string name="notification_voice_title">စကားသံ</string>
     <string name="notification_voice_sandfly">SandFly အသံ</string>
     <string name="notification_detect_language_title">ဘာသာစကား သိရှိရန်</string>
-    <string name="notification_detect_language_summary">ရေးထားသည့် ဘာသာစကားဖြင့် အသိပေးချက်တစ်ခုစီကို ပြောပါ။ စာသားမှ စကားပြောဆက်တင်များတွင် ဘာသာစကား အလိုအလျောက်ပြောင်းရန် လိုအပ်သည်။</string>
+    <string name="notification_detect_language_summary">အကြောင်းကြားချက်တစ်ခုစီကို ရေးထားသော ဘာသာစကားဖြင့် ပြောသည်။ စာ-မှ-စကား (TTS) ရှိ “ဘာသာစကား အလိုအလျောက်ပြောင်းပါ” လိုအပ်သည်။</string>
     <string name="notification_sound_before_title">အကြောင်းကြားချက်များမတိုင်မီ အသံ</string>
     <string name="notification_category_text">စာသား</string>
     <string name="notification_remove_emoji_title">အီမိုဂျီ ကျော်ရန်</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">နေရာယူ စာသားများ- {time}၊ {date} နှင့် {battery} (ဘက်ထရီ ရာခိုင်နှုန်း)။</string>
     <string name="notification_clock_format_default">အခု {time}</string>
     <string name="notification_clock_exact_title">အချိန်အတိအကျ</string>
-    <string name="notification_clock_exact_summary">နှိုးစက်များနှင့် သတိပေးချက်များ လိုအပ်သည်။ မဟုတ်ရင် အချိန်က တစ်မိနစ်လောက် နောက်ကျသွားနိုင်တယ်။</string>
+    <string name="notification_clock_exact_summary">“နှိုးစက်နှင့် သတိပေးချက်များ” ခွင့်ပြုချက် လိုအပ်သည်။ မဟုတ်ပါက အချိန်ကို တစ်မိနစ်အထိ နောက်ကျပြောနိုင်သည်။</string>
     <string name="notification_other_apps_title">အခြားအက်ပ်များ</string>
     <string name="notification_apps_category">အက်ပ်များ</string>
     <string name="notification_apps_loading">အက်ပ်များကို တင်နေသည်</string>

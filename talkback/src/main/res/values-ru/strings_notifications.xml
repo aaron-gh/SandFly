@@ -39,7 +39,7 @@
     <string name="notification_voice_title">Голос</string>
     <string name="notification_voice_sandfly">Голос SandFly</string>
     <string name="notification_detect_language_title">Определить язык</string>
-    <string name="notification_detect_language_summary">Произносите каждое уведомление на том языке, на котором оно написано. Требуется автоматическое переключение языка в настройках преобразования текста в речь.</string>
+    <string name="notification_detect_language_summary">Каждое уведомление озвучивается на языке, на котором оно написано. Требуется «Автоматически переключать язык» в разделе «Синтез речи».</string>
     <string name="notification_sound_before_title">Звук перед уведомлениями</string>
     <string name="notification_category_text">Текст</string>
     <string name="notification_remove_emoji_title">Пропускать эмодзи</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Заполнители: {time}, {date} и {battery} (процент заряда батареи).</string>
     <string name="notification_clock_format_default">Сейчас {time}</string>
     <string name="notification_clock_exact_title">Точное время</string>
-    <string name="notification_clock_exact_summary">Нужны сигналы тревоги и напоминания. В противном случае время может быть указано с опозданием до минуты.</string>
+    <string name="notification_clock_exact_summary">Требуется разрешение «Будильники и напоминания». Иначе время может озвучиваться с опозданием до минуты.</string>
     <string name="notification_other_apps_title">Другие приложения</string>
     <string name="notification_apps_category">Приложения</string>
     <string name="notification_apps_loading">Загрузка приложений</string>

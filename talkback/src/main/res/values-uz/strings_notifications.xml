@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">Avtomatlashtirish ilovalariga ruxsat berish</string>
     <string name="notification_category_said">Nima deyiladi</string>
     <string name="notification_format_title">Nutq formati</string>
-    <string name="notification_format_message">Oʻrin egalari: {app}, {title}, {text}, {content} (butun matn), {bigtext}, {subtext}, {ticker}, {category} va {time}.</string>
+    <string name="notification_format_message">Oʻrinbosarlar: {app}, {title}, {text}, {content} (butun matn), {bigtext}, {subtext}, {ticker}, {category} va {time}.</string>
     <string name="notification_private_format_title">Shaxsiy bildirishnomalarni oʻqish</string>
     <string name="notification_private_format_message">Shaxsiy bildirishnoma mazmuni oʻrniga aytilgan. Oʻrin egalari: {app}, {category} va {time}.</string>
     <string name="notification_category_voice">Ovoz</string>
     <string name="notification_voice_title">Ovoz</string>
     <string name="notification_voice_sandfly">SandFlyning ovozi</string>
     <string name="notification_detect_language_title">Tilni aniqlash</string>
-    <string name="notification_detect_language_summary">Har bir bildirishnomani u yozilgan tilda ayting. Tilni matndan nutqqa oʻzgartirish sozlamalarida avtomatik ravishda oʻtish kerak.</string>
+    <string name="notification_detect_language_summary">Har bir bildirishnomani u yozilgan tilda aytadi. Matndan nutqqa boʻlimida “Tilni avtomatik almashtirish” kerak.</string>
     <string name="notification_sound_before_title">Bildirishnomalardan oldin ovoz</string>
     <string name="notification_category_text">Matn</string>
     <string name="notification_remove_emoji_title">Emojilarni oʻtkazib yuborish</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Oʻrin tutgichlar: {time}, {date} va {battery} (batareya ulushi).</string>
     <string name="notification_clock_format_default">Hozir {time}</string>
     <string name="notification_clock_exact_title">Aniq vaqtlar</string>
-    <string name="notification_clock_exact_summary">Signal va eslatmalar kerak. Aks holda, vaqt bir daqiqagacha kechikishi mumkin.</string>
+    <string name="notification_clock_exact_summary">“Signal va eslatmalar” ruxsati kerak. Aks holda vaqt bir daqiqagacha kechikib aytilishi mumkin.</string>
     <string name="notification_other_apps_title">Boshqa ilovalar</string>
     <string name="notification_apps_category">Ilovalar</string>
     <string name="notification_apps_loading">Ilovalar yuklanmoqda</string>

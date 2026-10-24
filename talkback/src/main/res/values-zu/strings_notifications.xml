@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">Vumela izinhlelo zokusebenza ezizenzakalelayo</string>
     <string name="notification_category_said">Okushiwoyo</string>
     <string name="notification_format_title">Ifomethi yenkulumo</string>
-    <string name="notification_format_message">Izimeli: {app}, {title}, {text}, {content} (umbhalo wonke), {bigtext}, {subtext}, {ticker}, {category} kanye {time}.</string>
+    <string name="notification_format_message">Izibambi-ndawo: {app}, {title}, {text}, {content} (umbhalo wonke), {bigtext}, {subtext}, {ticker}, {category} kanye no-{time}.</string>
     <string name="notification_private_format_title">Ukufundwa kwezaziso eziyimfihlo</string>
     <string name="notification_private_format_message">Kusho esikhundleni sokuqukethwe kwesaziso esiyimfihlo. Izimeli: {app}, {category} kanye {time}.</string>
     <string name="notification_category_voice">Izwi</string>
     <string name="notification_voice_title">Izwi</string>
     <string name="notification_voice_sandfly">Izwi le-SandFly</string>
     <string name="notification_detect_language_title">Thola ulimi</string>
-    <string name="notification_detect_language_summary">Isho isaziso ngasinye ngolimi esibhalwe ngalo. Idinga Ukushintsha ulimi ngokuzenzakalela kuzilungiselelo zokuguqula umbhalo uye enkulumweni.</string>
+    <string name="notification_detect_language_summary">Isho isaziso ngasinye ngolimi esibhalwe ngalo. Idinga okuthi “Shintsha ulimi ngokuzenzakalelayo” ku-Ukuguqula-umbhalo-ube-inkulumo.</string>
     <string name="notification_sound_before_title">Umsindo ngaphambi kwezaziso</string>
     <string name="notification_category_text">Umbhalo</string>
     <string name="notification_remove_emoji_title">Yeqa i-emoji</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Okokubamba indawo: {time}, {date} kanye no-{battery} (iphesenti lebhethri).</string>
     <string name="notification_clock_format_default">Yisikhathi {time}</string>
     <string name="notification_clock_exact_title">Izikhathi eziqondile</string>
-    <string name="notification_clock_exact_summary">Idinga Ama-alamu nezikhumbuzi. Uma kungenjalo isikhathi singashiwo kuze kufike umzuzu sekwephuzile.</string>
+    <string name="notification_clock_exact_summary">Idinga imvume ethi Ama-alamu nezikhumbuzi. Uma kungenjalo, isikhathi singashiwo sephuzile kuze kufike umzuzu.</string>
     <string name="notification_other_apps_title">Ezinye izinhlelo zokusebenza</string>
     <string name="notification_apps_category">Izinhlelo zokusebenza</string>
     <string name="notification_apps_loading">Ilayisha izinhlelo zokusebenza</string>

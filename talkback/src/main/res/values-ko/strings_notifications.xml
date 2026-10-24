@@ -39,7 +39,7 @@
     <string name="notification_voice_title">음성</string>
     <string name="notification_voice_sandfly">SandFly 목소리</string>
     <string name="notification_detect_language_title">언어 감지</string>
-    <string name="notification_detect_language_summary">각 알림을 작성된 언어로 말하세요. 텍스트 음성 변환 설정에서 언어를 자동으로 전환해야 합니다.</string>
+    <string name="notification_detect_language_summary">각 알림을 작성된 언어로 읽습니다. TTS(텍스트 음성 변환)의 \'자동으로 언어 전환\'이(가) 필요합니다.</string>
     <string name="notification_sound_before_title">알림 전 소리</string>
     <string name="notification_category_text">텍스트</string>
     <string name="notification_remove_emoji_title">이모티콘 제외</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">자리 표시자: {time}, {date} 및 {battery}(배터리 비율).</string>
     <string name="notification_clock_format_default">{time} 입니다</string>
     <string name="notification_clock_exact_title">정확한 시간</string>
-    <string name="notification_clock_exact_summary">알람 및 알림이 필요합니다. 그렇지 않으면 시간이 최대 1분 정도 늦어질 수 있습니다.</string>
+    <string name="notification_clock_exact_summary">\'알람 및 리마인더\' 권한이 필요합니다. 권한이 없으면 시간을 최대 1분 늦게 알릴 수 있습니다.</string>
     <string name="notification_other_apps_title">기타 앱</string>
     <string name="notification_apps_category">앱</string>
     <string name="notification_apps_loading">앱 로드 중</string>

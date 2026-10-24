@@ -39,7 +39,7 @@
     <string name="notification_voice_title">Głos</string>
     <string name="notification_voice_sandfly">Głos SandFly</string>
     <string name="notification_detect_language_title">Wykryj język</string>
-    <string name="notification_detect_language_summary">Wypowiadaj każde powiadomienie w języku, w którym jest napisane. Potrzeby Automatycznie zmień język w ustawieniach zamiany tekstu na mowę.</string>
+    <string name="notification_detect_language_summary">Odczytuje każde powiadomienie w języku, w którym je napisano. Wymaga opcji „Automatycznie przełączaj język” w sekcji Zamiana tekstu na mowę.</string>
     <string name="notification_sound_before_title">Dźwięk przed powiadomieniami</string>
     <string name="notification_category_text">Tekst</string>
     <string name="notification_remove_emoji_title">Pomiń emoji</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Elementy zastępcze: {time}, {date} i {battery} (procent baterii).</string>
     <string name="notification_clock_format_default">Jest godzina {time}</string>
     <string name="notification_clock_exact_title">Dokładne czasy</string>
-    <string name="notification_clock_exact_summary">Potrzebuje alarmów i przypomnień. W przeciwnym razie czas może być spóźniony nawet o minutę.</string>
+    <string name="notification_clock_exact_summary">Wymaga uprawnienia Alarmy i przypomnienia. W przeciwnym razie godzina może być podawana z opóźnieniem do minuty.</string>
     <string name="notification_other_apps_title">Inne aplikacje</string>
     <string name="notification_apps_category">Aplikacje</string>
     <string name="notification_apps_loading">Ładowanie aplikacji</string>

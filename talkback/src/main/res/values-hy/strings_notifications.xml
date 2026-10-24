@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">Թույլատրել ավտոմատացման հավելվածները</string>
     <string name="notification_category_said">Ինչ է կարդացվում</string>
     <string name="notification_format_title">Խոսքի ձևաչափ</string>
-    <string name="notification_format_message">Տեղապահներ՝ {app}, {title}, {text}, {content} (ամբողջ տեքստը), {bigtext}, {subtext}, {ticker}, {category} և {time}:</string>
+    <string name="notification_format_message">Տեղապահներ՝ {app}, {title}, {text}, {content} (ամբողջ տեքստը), {bigtext}, {subtext}, {ticker}, {category} և {time}։</string>
     <string name="notification_private_format_title">Մասնավոր ծանուցումների ընթերցում</string>
     <string name="notification_private_format_message">Ասված է մասնավոր ծանուցման բովանդակության փոխարեն: Տեղապահներ՝ {app}, {category} և {time}:</string>
     <string name="notification_category_voice">Ձայն</string>
     <string name="notification_voice_title">Ձայն</string>
     <string name="notification_voice_sandfly">SandFly-ի ձայնը</string>
     <string name="notification_detect_language_title">Հայտնաբերել լեզուն</string>
-    <string name="notification_detect_language_summary">Յուրաքանչյուր ծանուցում ասեք այն լեզվով, որով գրված է: Անհրաժեշտ է ավտոմատ կերպով փոխել լեզուն «Տեքստ-խոսք» կարգավորումներում:</string>
+    <string name="notification_detect_language_summary">Յուրաքանչյուր ծանուցում կարդում է այն լեզվով, որով գրված է։ Անհրաժեշտ է «Ավտոմատ փոխել լեզուն»-ը «Տեքստի հնչեցում» բաժնում։</string>
     <string name="notification_sound_before_title">Ձայն ծանուցումներից առաջ</string>
     <string name="notification_category_text">Տեքստ</string>
     <string name="notification_remove_emoji_title">Բաց թողնել էմոջիները</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Տեղապահներ՝ {time}, {date} և {battery} (մարտկոցի տոկոսը):</string>
     <string name="notification_clock_format_default">Ժամը {time} է</string>
     <string name="notification_clock_exact_title">Ճշգրիտ ժամանակներ</string>
-    <string name="notification_clock_exact_summary">Անհրաժեշտ է ահազանգեր և հիշեցումներ: Հակառակ դեպքում ժամը կարելի է ասել մինչև մեկ րոպե ուշացումով։</string>
+    <string name="notification_clock_exact_summary">Անհրաժեշտ է «Զարթուցիչներ և հիշեցումներ» թույլտվությունը։ Հակառակ դեպքում ժամը կարող է հնչել մինչև մեկ րոպե ուշացումով։</string>
     <string name="notification_other_apps_title">Այլ հավելվածներ</string>
     <string name="notification_apps_category">Հավելվածներ</string>
     <string name="notification_apps_loading">Հավելվածների բեռնում</string>

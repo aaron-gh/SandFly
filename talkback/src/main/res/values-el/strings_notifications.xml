@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">Να επιτρέπονται οι εφαρμογές αυτοματισμού</string>
     <string name="notification_category_said">Τι λέγεται</string>
     <string name="notification_format_title">Μορφή ομιλίας</string>
-    <string name="notification_format_message">Placeholders: {app}, {title}, {text}, {content} (όλο το κείμενο), {bigtext}, {subtext}, {ticker}, {category} και {time}.</string>
+    <string name="notification_format_message">Σύμβολα κράτησης θέσης: {app}, {title}, {text}, {content} (όλο το κείμενο), {bigtext}, {subtext}, {ticker}, {category} και {time}.</string>
     <string name="notification_private_format_title">Ανάγνωση ιδιωτικών ειδοποιήσεων</string>
     <string name="notification_private_format_message">Λέγεται αντί του περιεχομένου μιας ιδιωτικής ειδοποίησης. Placeholders: {app}, {category} και {time}.</string>
     <string name="notification_category_voice">Φωνή</string>
     <string name="notification_voice_title">Φωνή</string>
     <string name="notification_voice_sandfly">Η φωνή του SandFly</string>
     <string name="notification_detect_language_title">Ανίχνευση γλώσσας</string>
-    <string name="notification_detect_language_summary">Πείτε κάθε ειδοποίηση στη γλώσσα στην οποία είναι γραμμένη. Απαιτείται αυτόματη εναλλαγή γλώσσας στις ρυθμίσεις μετατροπής κειμένου σε ομιλία.</string>
+    <string name="notification_detect_language_summary">Κάθε ειδοποίηση εκφωνείται στη γλώσσα στην οποία είναι γραμμένη. Απαιτεί «Αυτόματη αλλαγή γλώσσας» στο Κείμενο σε ομιλία.</string>
     <string name="notification_sound_before_title">Ήχος πριν από τις ειδοποιήσεις</string>
     <string name="notification_category_text">Κείμενο</string>
     <string name="notification_remove_emoji_title">Παράλειψη emoji</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Σύμβολα κράτησης θέσης: {time}, {date} και {battery} (το ποσοστό της μπαταρίας).</string>
     <string name="notification_clock_format_default">Η ώρα είναι {time}</string>
     <string name="notification_clock_exact_title">Ακριβείς ώρες</string>
-    <string name="notification_clock_exact_summary">Χρειάζεται συναγερμούς και υπενθυμίσεις. Διαφορετικά η ώρα μπορεί να ειπωθεί με καθυστέρηση έως και ένα λεπτό.</string>
+    <string name="notification_clock_exact_summary">Απαιτεί την άδεια «Ξυπνητήρια και υπενθυμίσεις». Διαφορετικά, η ώρα μπορεί να εκφωνείται με καθυστέρηση έως ενός λεπτού.</string>
     <string name="notification_other_apps_title">Άλλες εφαρμογές</string>
     <string name="notification_apps_category">Εφαρμογές</string>
     <string name="notification_apps_loading">Φόρτωση εφαρμογών</string>

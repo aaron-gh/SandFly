@@ -39,7 +39,7 @@
     <string name="notification_voice_title">Röst</string>
     <string name="notification_voice_sandfly">SandFlys röst</string>
     <string name="notification_detect_language_title">Upptäck språk</string>
-    <string name="notification_detect_language_summary">Säg varje avisering på språket den är skriven på. Behov Byt språk automatiskt i text-till-tal-inställningarna.</string>
+    <string name="notification_detect_language_summary">Läser upp varje avisering på det språk den är skriven på. Kräver ”Byt språk automatiskt” under Text till tal.</string>
     <string name="notification_sound_before_title">Ljud före aviseringar</string>
     <string name="notification_category_text">Text</string>
     <string name="notification_remove_emoji_title">Utelämna emoji</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Platshållare: {time}, {date} och {battery} (batteriprocenten).</string>
     <string name="notification_clock_format_default">Klockan är {time}</string>
     <string name="notification_clock_exact_title">Exakta tider</string>
-    <string name="notification_clock_exact_summary">Behöver larm och påminnelser. Annars kan tiden sägas upp till en minut för sent.</string>
+    <string name="notification_clock_exact_summary">Kräver behörigheten Alarm och påminnelser. Annars kan klockslaget sägas upp till en minut för sent.</string>
     <string name="notification_other_apps_title">Andra appar</string>
     <string name="notification_apps_category">Appar</string>
     <string name="notification_apps_loading">Laddar appar</string>

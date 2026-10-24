@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">ସ୍ୱୟଂଚାଳିତ ଆପ୍ସକୁ ଅନୁମତି ଦିଅନ୍ତୁ</string>
     <string name="notification_category_said">କ’ଣ କୁହାଯାଏ</string>
     <string name="notification_format_title">କହିବା ଫର୍ମାଟ୍</string>
-    <string name="notification_format_message">ସ୍ଥାନଧାରୀ: {app}, {title}, {text}, {content} (ପୁରା ପାଠ), {bigtext}, {subtext}, {ticker}, {category} ଏବଂ {time} |</string>
+    <string name="notification_format_message">ପ୍ଲେସହୋଲ୍ଡର୍: {app}, {title}, {text}, {content} (ପୂରା ଟେକ୍ସଟ୍), {bigtext}, {subtext}, {ticker}, {category} ଓ {time}।</string>
     <string name="notification_private_format_title">ବ୍ୟକ୍ତିଗତ ବିଜ୍ଞପ୍ତି ପାଇଁ କ\'ଣ ପଢ଼ାଯାଏ</string>
     <string name="notification_private_format_message">ଏକ ବ୍ୟକ୍ତିଗତ ବିଜ୍ଞପ୍ତିର ବିଷୟବସ୍ତୁ ସ୍ଥାନରେ କହିଲା | ସ୍ଥାନଧାରୀ: {app}, {category} ଏବଂ {time} |</string>
     <string name="notification_category_voice">ସ୍ୱର</string>
     <string name="notification_voice_title">ସ୍ୱର</string>
     <string name="notification_voice_sandfly">SandFly ର ସ୍ୱର</string>
     <string name="notification_detect_language_title">ଭାଷା ଚିହ୍ନଟ କରନ୍ତୁ</string>
-    <string name="notification_detect_language_summary">ଏଥିରେ ଲେଖାଯାଇଥିବା ଭାଷାରେ ପ୍ରତ୍ୟେକ ବିଜ୍ଞପ୍ତିକୁ କୁହନ୍ତୁ | ପାଠ୍ୟ-ଟୁ-ସ୍ପିଚ୍ ସେଟିଂସମୂହରେ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଭାଷା ସୁଇଚ୍ କରିବା ଆବଶ୍ୟକ |</string>
+    <string name="notification_detect_language_summary">ପ୍ରତ୍ୟେକ ବିଜ୍ଞପ୍ତି ଯେଉଁ ଭାଷାରେ ଲେଖାଯାଇଛି ସେହି ଭାଷାରେ କହେ। ଟେକ୍ସଟ-ଟୁ-ସ୍ପିଚରେ “ଭାଷା ସ୍ୱୟଂଚାଳିତ ଭାବରେ ସୁଇଚ୍ କରନ୍ତୁ” ଆବଶ୍ୟକ।</string>
     <string name="notification_sound_before_title">ବିଜ୍ଞପ୍ତି ପୂର୍ବରୁ ଶବ୍ଦ</string>
     <string name="notification_category_text">ପାଠ</string>
     <string name="notification_remove_emoji_title">ଇମୋଜି ଛାଡିଦିଅ</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">ସ୍ଥାନଧାରୀ: {time}, {date} ଏବଂ {battery} (ବ୍ୟାଟେରୀ ପ୍ରତିଶତ) |</string>
     <string name="notification_clock_format_default">ଏବେ {time}</string>
     <string name="notification_clock_exact_title">ସଠିକ୍ ସମୟ</string>
-    <string name="notification_clock_exact_summary">ଆଲାର୍ମ ଏବଂ ସ୍ମାରକପତ୍ର ଆବଶ୍ୟକ କରେ | ନଚେତ୍ ସମୟ ଏକ ମିନିଟ୍ ବିଳମ୍ବ ପର୍ଯ୍ୟନ୍ତ କୁହାଯାଇପାରେ |</string>
+    <string name="notification_clock_exact_summary">“ଆଲାରାମ ଓ ରିମାଇଣ୍ଡର” ଅନୁମତି ଆବଶ୍ୟକ। ନଚେତ୍ ସମୟ ଏକ ମିନିଟ୍ ପର୍ଯ୍ୟନ୍ତ ବିଳମ୍ବରେ କୁହାଯାଇପାରେ।</string>
     <string name="notification_other_apps_title">ଅନ୍ୟାନ୍ୟ ଆପ୍ସ</string>
     <string name="notification_apps_category">ଆପଗୁଡ଼ିକ</string>
     <string name="notification_apps_loading">ଆପ୍ସ ଲୋଡ୍ କରୁଛି</string>

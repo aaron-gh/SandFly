@@ -39,7 +39,7 @@
     <string name="notification_voice_title">Stemme</string>
     <string name="notification_voice_sandfly">SandFly sin stemme</string>
     <string name="notification_detect_language_title">Oppdag språk</string>
-    <string name="notification_detect_language_summary">Si hver melding på språket den er skrevet på. Behov Bytt språk automatisk i Tekst-til-tale-innstillingene.</string>
+    <string name="notification_detect_language_summary">Leser opp hvert varsel på språket det er skrevet på. Krever «Bytt språk automatisk» under Tekst til tale.</string>
     <string name="notification_sound_before_title">Lyd før varsler</string>
     <string name="notification_category_text">Tekst</string>
     <string name="notification_remove_emoji_title">Utelat emoji</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Plassholdere: {time}, {date} og {battery} (batteriprosenten).</string>
     <string name="notification_clock_format_default">Klokken er {time}</string>
     <string name="notification_clock_exact_title">Nøyaktige tider</string>
-    <string name="notification_clock_exact_summary">Trenger alarmer og påminnelser. Ellers kan tiden sies opp til ett minutt for sent.</string>
+    <string name="notification_clock_exact_summary">Krever tillatelsen Alarmer og påminnelser. Ellers kan klokkeslettet bli sagt opptil ett minutt for sent.</string>
     <string name="notification_other_apps_title">Andre apper</string>
     <string name="notification_apps_category">Apper</string>
     <string name="notification_apps_loading">Laster inn apper</string>

@@ -39,7 +39,7 @@
     <string name="notification_voice_title">Hlas</string>
     <string name="notification_voice_sandfly">Hlas SandFly</string>
     <string name="notification_detect_language_title">Zjistit jazyk</string>
-    <string name="notification_detect_language_summary">Každé oznámení vyslovte v jazyce, ve kterém je napsáno. Vyžaduje automaticky přepínat jazyk v nastavení převodu textu na řeč.</string>
+    <string name="notification_detect_language_summary">Každé oznámení se přečte v jazyce, ve kterém je napsané. Vyžaduje „Automaticky přepínat jazyk“ v sekci Převod textu na řeč.</string>
     <string name="notification_sound_before_title">Zvuk před upozorněním</string>
     <string name="notification_category_text">Text</string>
     <string name="notification_remove_emoji_title">Vynechat emoji</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Zástupné symboly: {time}, {date} a {battery} (procento baterie).</string>
     <string name="notification_clock_format_default">Je {time}</string>
     <string name="notification_clock_exact_title">Přesné časy</string>
-    <string name="notification_clock_exact_summary">Potřebuje alarmy a připomenutí. V opačném případě může být čas opožděn až o minutu.</string>
+    <string name="notification_clock_exact_summary">Vyžaduje oprávnění Budíky a připomenutí. Jinak může být čas oznámen až o minutu později.</string>
     <string name="notification_other_apps_title">Jiné aplikace</string>
     <string name="notification_apps_category">Aplikace</string>
     <string name="notification_apps_loading">Načítání aplikací</string>

@@ -39,7 +39,7 @@
     <string name="notification_voice_title">वॉइस</string>
     <string name="notification_voice_sandfly">SandFly की आवाज</string>
     <string name="notification_detect_language_title">भाषा का पता लगाएं</string>
-    <string name="notification_detect_language_summary">प्रत्येक अधिसूचना को उसी भाषा में कहें जिसमें वह लिखी गई है। टेक्स्ट-टू-स्पीच सेटिंग्स में भाषा को स्वचालित रूप से स्विच करने की आवश्यकता है।</string>
+    <string name="notification_detect_language_summary">हर सूचना को उसी भाषा में बोलता है जिसमें वह लिखी गई है। लिखे गए शब्दों को सुनने की सुविधा में “भाषा अपने-आप बदलें” ज़रूरी है।</string>
     <string name="notification_sound_before_title">सूचनाओं से पहले ध्वनि</string>
     <string name="notification_category_text">टेक्स्ट</string>
     <string name="notification_remove_emoji_title">इमोजी छोड़ें</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">प्लेसहोल्डर: {time}, {date} और {battery} (बैटरी प्रतिशत)।</string>
     <string name="notification_clock_format_default">समय {time} है</string>
     <string name="notification_clock_exact_title">सटीक समय</string>
-    <string name="notification_clock_exact_summary">अलार्म और अनुस्मारक की आवश्यकता है। अन्यथा समय एक मिनट तक विलंब कहा जा सकता है।</string>
+    <string name="notification_clock_exact_summary">“अलार्म और रिमाइंडर” की अनुमति ज़रूरी है। ऐसा न होने पर समय एक मिनट तक देर से बोला जा सकता है।</string>
     <string name="notification_other_apps_title">अन्य ऐप्स</string>
     <string name="notification_apps_category">ऐप्लिकेशन</string>
     <string name="notification_apps_loading">ऐप्स लोड हो रहे हैं</string>

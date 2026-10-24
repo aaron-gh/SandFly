@@ -39,7 +39,7 @@
     <string name="notification_voice_title">Hang</string>
     <string name="notification_voice_sandfly">SandFly hangja</string>
     <string name="notification_detect_language_title">Nyelv észlelése</string>
-    <string name="notification_detect_language_summary">Mondjon ki minden értesítést azon a nyelven, amelyen írták. Automatikus nyelvet kell váltani a Szövegfelolvasó beállításoknál.</string>
+    <string name="notification_detect_language_summary">Minden értesítést azon a nyelven olvas fel, amelyen íródott. Ehhez a(z) Szövegfelolvasás „Nyelv automatikus váltása” beállítása szükséges.</string>
     <string name="notification_sound_before_title">Hang az értesítések előtt</string>
     <string name="notification_category_text">Szöveg</string>
     <string name="notification_remove_emoji_title">Emojik kihagyása</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Helyőrzők: {time}, {date} és {battery} (az akkumulátor százalékos aránya).</string>
     <string name="notification_clock_format_default">{time} van</string>
     <string name="notification_clock_exact_title">Pontos időpontok</string>
-    <string name="notification_clock_exact_summary">Riasztásokra és emlékeztetőkre van szüksége. Ellenkező esetben akár egy perc késéssel is megmondható az idő.</string>
+    <string name="notification_clock_exact_summary">Az „Ébresztések és emlékeztetők” engedély szükséges. Enélkül az időt akár egy perc késéssel mondja be.</string>
     <string name="notification_other_apps_title">Egyéb alkalmazások</string>
     <string name="notification_apps_category">Alkalmazások</string>
     <string name="notification_apps_loading">Alkalmazások betöltése</string>

@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">Дозволи апликации за автоматизација</string>
     <string name="notification_category_said">Што се чита</string>
     <string name="notification_format_title">Формат на говор</string>
-    <string name="notification_format_message">Места: {app}, {title}, {text}, {content} (целиот текст), {bigtext}, {subtext}, {ticker}, {category} и {time}.</string>
+    <string name="notification_format_message">Ознаки за место: {app}, {title}, {text}, {content} (целиот текст), {bigtext}, {subtext}, {ticker}, {category} и {time}.</string>
     <string name="notification_private_format_title">Читање на приватни известувања</string>
     <string name="notification_private_format_message">Кажано наместо содржината на приватното известување. Места: {app}, {category} и {time}.</string>
     <string name="notification_category_voice">Глас</string>
     <string name="notification_voice_title">Глас</string>
     <string name="notification_voice_sandfly">Гласот на SandFly</string>
     <string name="notification_detect_language_title">Откриј јазик</string>
-    <string name="notification_detect_language_summary">Кажете го секое известување на јазикот на кој е напишано. Потребно е автоматско менување јазик во поставките за текст во говор.</string>
+    <string name="notification_detect_language_summary">Секое известување се чита на јазикот на кој е напишано. Потребно е „Автоматски менувај јазик“ во „Од текст во говор“.</string>
     <string name="notification_sound_before_title">Звук пред известувања</string>
     <string name="notification_category_text">Текст</string>
     <string name="notification_remove_emoji_title">Изостави емотикони</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Резервирани места: {time}, {date} и {battery} (процентот на батеријата).</string>
     <string name="notification_clock_format_default">Сега е {time}</string>
     <string name="notification_clock_exact_title">Точни времиња</string>
-    <string name="notification_clock_exact_summary">Потребни се аларми и потсетници. Во спротивно времето може да се каже до една минута доцна.</string>
+    <string name="notification_clock_exact_summary">Потребна е дозволата „Аларми и потсетници“. Инаку, времето може да се каже до една минута подоцна.</string>
     <string name="notification_other_apps_title">Други апликации</string>
     <string name="notification_apps_category">Апликации</string>
     <string name="notification_apps_loading">Се вчитуваат апликации</string>

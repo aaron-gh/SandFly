@@ -39,7 +39,7 @@
     <string name="notification_voice_title">Balss</string>
     <string name="notification_voice_sandfly">SandFly balss</string>
     <string name="notification_detect_language_title">Noteikt valodu</string>
-    <string name="notification_detect_language_summary">Izrunājiet katru paziņojumu tajā valodā, kurā tas ir rakstīts. Teksta pārveides runā iestatījumos valoda ir jāmaina automātiski.</string>
+    <string name="notification_detect_language_summary">Katru paziņojumu nolasa tajā valodā, kurā tas ir rakstīts. Nepieciešams iestatījums “Automātiski pārslēgt valodu” sadaļā Teksta pārvēršana runā.</string>
     <string name="notification_sound_before_title">Skaņa pirms paziņojumiem</string>
     <string name="notification_category_text">Teksts</string>
     <string name="notification_remove_emoji_title">Izlaist emocijzīmes</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Vietturi: {time}, {date} un {battery} (akumulatora procentuālais daudzums).</string>
     <string name="notification_clock_format_default">Pulkstenis ir {time}</string>
     <string name="notification_clock_exact_title">Precīzs laiks</string>
-    <string name="notification_clock_exact_summary">Nepieciešami trauksmes signāli un atgādinājumi. Citādi laiks var tikt norādīts pat minūti vēlu.</string>
+    <string name="notification_clock_exact_summary">Nepieciešama atļauja “Signāli un atgādinājumi”. Pretējā gadījumā laiks var tikt izrunāts līdz pat minūtei vēlāk.</string>
     <string name="notification_other_apps_title">Citas lietotnes</string>
     <string name="notification_apps_category">Lietotnes</string>
     <string name="notification_apps_loading">Ielādē lietotnes</string>

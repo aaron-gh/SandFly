@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">தானியங்கு பயன்பாடுகளை அனுமதிக்கவும்</string>
     <string name="notification_category_said">என்ன சொல்லப்படுகிறது</string>
     <string name="notification_format_title">பேச்சு வடிவம்</string>
-    <string name="notification_format_message">பெட்டிகள்: {app}, {title}, {text}, {content} (முழு உரை), {bigtext}, {subtext}, {ticker}, {category} மற்றும் {time}.</string>
+    <string name="notification_format_message">ஒதுக்கிடங்கள்: {app}, {title}, {text}, {content} (முழு உரை), {bigtext}, {subtext}, {ticker}, {category}, {time}.</string>
     <string name="notification_private_format_title">தனிப்பட்ட அறிவிப்புகளுக்குப் படிக்கப்படுவது</string>
     <string name="notification_private_format_message">தனிப்பட்ட அறிவிப்பின் உள்ளடக்கத்திற்குப் பதிலாகக் கூறப்பட்டது. ஒதுக்கிடங்கள்: {app}, {category} மற்றும் {time}.</string>
     <string name="notification_category_voice">குரல்</string>
     <string name="notification_voice_title">குரல்</string>
     <string name="notification_voice_sandfly">SandFly இன் குரல்</string>
     <string name="notification_detect_language_title">மொழியைக் கண்டறியவும்</string>
-    <string name="notification_detect_language_summary">ஒவ்வொரு அறிவிப்பையும் அது எழுதப்பட்ட மொழியில் கூறவும். உரையிலிருந்து பேச்சு அமைப்புகளில் மொழியை தானாக மாற்ற வேண்டும்.</string>
+    <string name="notification_detect_language_summary">ஒவ்வொரு அறிவிப்பையும் அது எழுதப்பட்ட மொழியில் சொல்லும். எழுத்திலிருந்து பேச்சு என்பதில் “மொழியை தானாக மாற்றவும்” தேவை.</string>
     <string name="notification_sound_before_title">அறிவிப்புகளுக்கு முன் ஒலி</string>
     <string name="notification_category_text">உரை</string>
     <string name="notification_remove_emoji_title">ஈமோஜியைத் தவிர்</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">இடஒதுக்கிகள்: {time}, {date} மற்றும் {battery} (பேட்டரி சதவீதம்).</string>
     <string name="notification_clock_format_default">இப்போது {time}</string>
     <string name="notification_clock_exact_title">சரியான நேரங்கள்</string>
-    <string name="notification_clock_exact_summary">அலாரங்கள் மற்றும் நினைவூட்டல்கள் தேவை. மற்றபடி நேரத்தை ஒரு நிமிடம் தாமதமாகச் சொல்லலாம்.</string>
+    <string name="notification_clock_exact_summary">“அலாரங்களும் நினைவூட்டல்களும்” அனுமதி தேவை. இல்லையெனில் நேரம் ஒரு நிமிடம் வரை தாமதமாகச் சொல்லப்படலாம்.</string>
     <string name="notification_other_apps_title">பிற பயன்பாடுகள்</string>
     <string name="notification_apps_category">ஆப்ஸ்</string>
     <string name="notification_apps_loading">பயன்பாடுகளை ஏற்றுகிறது</string>

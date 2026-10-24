@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">አውቶማቲክ መተግበሪያዎችን ፍቀድ</string>
     <string name="notification_category_said">ምን ይባላል</string>
     <string name="notification_format_title">የንግግር ቅርጸት</string>
-    <string name="notification_format_message">ቦታ ያዢዎች፡ {app}፣ {title}፣ {text}፣ {content} (ሙሉውን ጽሑፍ)፣ {bigtext}፣ {subtext}፣ {ticker}፣ {category} እና {time}</string>
+    <string name="notification_format_message">ቦታ ያዢዎች፦ {app}፣ {title}፣ {text}፣ {content} (ሙሉው ጽሑፍ)፣ {bigtext}፣ {subtext}፣ {ticker}፣ {category} እና {time}።</string>
     <string name="notification_private_format_title">ለግል ማሳወቂያዎች የሚነገረው</string>
     <string name="notification_private_format_message">በግል ማሳወቂያ ይዘት ምትክ ተነግሯል። ቦታ ያዢዎች፡ {app}፣ {category} እና {time}።</string>
     <string name="notification_category_voice">ድምፅ</string>
     <string name="notification_voice_title">ድምፅ</string>
     <string name="notification_voice_sandfly">SandFly ድምፅ</string>
     <string name="notification_detect_language_title">ቋንቋን ፈልግ</string>
-    <string name="notification_detect_language_summary">እያንዳንዱን ማስታወቂያ በተፃፈበት ቋንቋ ይናገሩ። ቋንቋን በራስ-ሰር ከጽሁፍ ወደ ንግግር ቅንብሮች መቀየር ያስፈልገዋል።</string>
+    <string name="notification_detect_language_summary">እያንዳንዱን ማሳወቂያ በተጻፈበት ቋንቋ ይናገራል። በከጽሑፍ ወደ ንግግር ውስጥ «ቋንቋን በራስ-ሰር ቀይር»ን ይፈልጋል።</string>
     <string name="notification_sound_before_title">ከማሳወቂያዎች በፊት ድምፅ</string>
     <string name="notification_category_text">ጽሑፍ</string>
     <string name="notification_remove_emoji_title">ስሜት ገላጭ ምስሎችን ይተዉት</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">ቦታ ያዢዎች፡ {time}፣ {date} እና {battery} (የባትሪው መቶኛ)።</string>
     <string name="notification_clock_format_default">አሁን {time} ነው</string>
     <string name="notification_clock_exact_title">ትክክለኛ ጊዜዎች</string>
-    <string name="notification_clock_exact_summary">ማንቂያዎችን እና አስታዋሾችን ይፈልጋል። አለበለዚያ ጊዜው እስከ አንድ ደቂቃ ድረስ ዘግይቷል ሊባል ይችላል.</string>
+    <string name="notification_clock_exact_summary">የ«ማንቂያዎች እና አስታዋሾች» ፈቃድ ያስፈልገዋል። ያለበለዚያ ሰዓቱ እስከ አንድ ደቂቃ ዘግይቶ ሊነገር ይችላል።</string>
     <string name="notification_other_apps_title">ሌሎች መተግበሪያዎች</string>
     <string name="notification_apps_category">መተግበሪያዎች</string>
     <string name="notification_apps_loading">መተግበሪያዎችን በመጫን ላይ</string>

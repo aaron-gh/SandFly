@@ -39,7 +39,7 @@
     <string name="notification_voice_title">ხმა</string>
     <string name="notification_voice_sandfly">SandFly ხმა</string>
     <string name="notification_detect_language_title">ენის ამოცნობა</string>
-    <string name="notification_detect_language_summary">თქვით თითოეული შეტყობინება იმ ენაზე, რომელზედაც არის დაწერილი. საჭიროებს ენის ავტომატურად გადართვას ტექსტის მეტყველების პარამეტრებში.</string>
+    <string name="notification_detect_language_summary">თითოეულ შეტყობინებას კითხულობს იმ ენაზე, რომელზეც დაწერილია. საჭიროა „ენის შეცვლა ავტომატურად“ განყოფილებაში „ტექსტის გახმოვანება“.</string>
     <string name="notification_sound_before_title">ხმა შეტყობინებების წინ</string>
     <string name="notification_category_text">ტექსტი</string>
     <string name="notification_remove_emoji_title">emoji-ის გამოტოვება</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">ჩანაცვლების ადგილები: {time}, {date} და {battery} (ბატარეის პროცენტი).</string>
     <string name="notification_clock_format_default">ახლა {time}-ია</string>
     <string name="notification_clock_exact_title">ზუსტი დრო</string>
-    <string name="notification_clock_exact_summary">სჭირდება სიგნალიზაცია და შეხსენებები. წინააღმდეგ შემთხვევაში დრო შეიძლება ითქვას ერთი წუთით დაგვიანებით.</string>
+    <string name="notification_clock_exact_summary">საჭიროა ნებართვა „მაღვიძარები და შეხსენებები“. წინააღმდეგ შემთხვევაში დრო შეიძლება ერთ წუთამდე დაგვიანებით ითქვას.</string>
     <string name="notification_other_apps_title">სხვა აპლიკაციები</string>
     <string name="notification_apps_category">აპები</string>
     <string name="notification_apps_loading">აპლიკაციების ჩატვირთვა</string>

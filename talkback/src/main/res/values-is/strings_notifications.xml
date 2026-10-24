@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">Leyfa sjálfvirkniforrit</string>
     <string name="notification_category_said">Hvað er sagt</string>
     <string name="notification_format_title">Talsnið</string>
-    <string name="notification_format_message">Staðfestar: {app}, {title}, {text}, {content} (allur textinn), {bigtext}, {subtext}, {ticker}, {category} og {time}.</string>
+    <string name="notification_format_message">Staðgenglar: {app}, {title}, {text}, {content} (allur textinn), {bigtext}, {subtext}, {ticker}, {category} og {time}.</string>
     <string name="notification_private_format_title">Lestur einkatilkynninga</string>
     <string name="notification_private_format_message">Sagt í stað innihalds einkatilkynningar. Staðfestar: {app}, {category} og {time}.</string>
     <string name="notification_category_voice">Rödd</string>
     <string name="notification_voice_title">Rödd</string>
     <string name="notification_voice_sandfly">Rödd SandFly</string>
     <string name="notification_detect_language_title">Greina tungumál</string>
-    <string name="notification_detect_language_summary">Segðu hverja tilkynningu á því tungumáli sem hún er skrifuð á. Þarfir Skiptu um tungumál sjálfkrafa í texta-í-tal stillingum.</string>
+    <string name="notification_detect_language_summary">Les hverja tilkynningu á tungumálinu sem hún er skrifuð á. Krefst „Skipta sjálfkrafa um tungumál“ í Upplestur.</string>
     <string name="notification_sound_before_title">Hljóð fyrir tilkynningar</string>
     <string name="notification_category_text">Texti</string>
     <string name="notification_remove_emoji_title">Sleppa emoji</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Staðgenglar: {time}, {date} og {battery} (hleðsla rafhlöðu í prósentum).</string>
     <string name="notification_clock_format_default">Það er {time}</string>
     <string name="notification_clock_exact_title">Nákvæmir tímar</string>
-    <string name="notification_clock_exact_summary">Þarfnast viðvörunar og áminningar. Annars má segja að tíminn sé allt að mínútu of seint.</string>
+    <string name="notification_clock_exact_summary">Krefst heimildarinnar „Vekjarar og áminningar“. Annars getur tíminn verið lesinn upp allt að mínútu of seint.</string>
     <string name="notification_other_apps_title">Önnur forrit</string>
     <string name="notification_apps_category">Forrit</string>
     <string name="notification_apps_loading">Hleður öppum</string>

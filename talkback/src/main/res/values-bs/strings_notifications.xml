@@ -32,14 +32,14 @@
     <string name="notification_automation_allowed_title">Dozvoli aplikacije za automatizaciju</string>
     <string name="notification_category_said">Šta se čita</string>
     <string name="notification_format_title">Format govora</string>
-    <string name="notification_format_message">Čuvari mesta: {app}, {title}, {text}, {content} (ceo tekst), {bigtext}, {subtext}, {ticker}, {category} i {time}.</string>
+    <string name="notification_format_message">Čuvari mjesta: {app}, {title}, {text}, {content} (cijeli tekst), {bigtext}, {subtext}, {ticker}, {category} i {time}.</string>
     <string name="notification_private_format_title">Čitanje privatnih obavještenja</string>
     <string name="notification_private_format_message">Rečeno umjesto sadržaja privatnog obavještenja. Čuvari mjesta: {app}, {category} i {time}.</string>
     <string name="notification_category_voice">Glas</string>
     <string name="notification_voice_title">Glas</string>
     <string name="notification_voice_sandfly">SandFly-ov glas</string>
     <string name="notification_detect_language_title">Otkrij jezik</string>
-    <string name="notification_detect_language_summary">Izgovorite svako obavještenje na jeziku na kojem je napisano. Potrebno je automatski mijenjati jezik u postavkama za pretvaranje teksta u govor.</string>
+    <string name="notification_detect_language_summary">Svako obavještenje se izgovara na jeziku na kojem je napisano. Potrebno je „Automatski mijenjaj jezik“ u odjeljku Pretvaranje teksta u govor.</string>
     <string name="notification_sound_before_title">Zvuk prije obavještenja</string>
     <string name="notification_category_text">Tekst</string>
     <string name="notification_remove_emoji_title">Izostavi emoji</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Čuvari mjesta: {time}, {date} i {battery} (procenat baterije).</string>
     <string name="notification_clock_format_default">Sada je {time}</string>
     <string name="notification_clock_exact_title">Tačna vremena</string>
-    <string name="notification_clock_exact_summary">Potrebni su alarmi i podsjetnici. Inače se može reći da vrijeme kasni i do jedne minute.</string>
+    <string name="notification_clock_exact_summary">Potrebna je dozvola „Alarmi i podsjetnici“. U suprotnom se vrijeme može izgovoriti sa zakašnjenjem do jedne minute.</string>
     <string name="notification_other_apps_title">Druge aplikacije</string>
     <string name="notification_apps_category">Aplikacije</string>
     <string name="notification_apps_loading">Učitavanje aplikacija</string>

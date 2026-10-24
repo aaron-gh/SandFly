@@ -39,7 +39,7 @@
     <string name="notification_voice_title">Ääni</string>
     <string name="notification_voice_sandfly">SandFlyn ääni</string>
     <string name="notification_detect_language_title">Tunnista kieli</string>
-    <string name="notification_detect_language_summary">Sano jokainen ilmoitus kielellä, jolla ne on kirjoitettu. Kielen vaihto on vaihdettava automaattisesti tekstistä puheeksi -asetuksissa.</string>
+    <string name="notification_detect_language_summary">Lukee jokaisen ilmoituksen sillä kielellä, jolla se on kirjoitettu. Vaatii asetuksen ”Vaihda kieltä automaattisesti” kohdassa Tekstistä puheeksi.</string>
     <string name="notification_sound_before_title">Ääni ennen ilmoituksia</string>
     <string name="notification_category_text">Teksti</string>
     <string name="notification_remove_emoji_title">Jätä emoji pois</string>
@@ -130,7 +130,7 @@
     <string name="notification_clock_format_message">Paikkamerkit: {time}, {date} ja {battery} (akun prosenttiosuus).</string>
     <string name="notification_clock_format_default">Kello on {time}</string>
     <string name="notification_clock_exact_title">Tarkat ajat</string>
-    <string name="notification_clock_exact_summary">Tarvitsee hälytyksiä ja muistutuksia. Muuten aika voidaan sanoa jopa minuutin myöhässä.</string>
+    <string name="notification_clock_exact_summary">Vaatii luvan Herätykset ja muistutukset. Muuten kellonaika voidaan sanoa jopa minuutin myöhässä.</string>
     <string name="notification_other_apps_title">Muut sovellukset</string>
     <string name="notification_apps_category">Sovellukset</string>
     <string name="notification_apps_loading">Ladataan sovelluksia</string>
