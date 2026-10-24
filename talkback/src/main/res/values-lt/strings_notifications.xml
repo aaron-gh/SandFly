@@ -34,7 +34,7 @@
     <string name="notification_format_title">Kalbos formatas</string>
     <string name="notification_format_message">Vietos žymos: {app}, {title}, {text}, {content} (visas tekstas), {bigtext}, {subtext}, {ticker}, {category} ir {time}.</string>
     <string name="notification_private_format_title">Privačių pranešimų skaitymas</string>
-    <string name="notification_private_format_message">Sakyta vietoje privataus pranešimo turinio. Vietos žymos: {app}, {category} ir {time}.</string>
+    <string name="notification_private_format_message">Pasakoma vietoj privataus pranešimo turinio. Vietos žymos: {app}, {category} ir {time}.</string>
     <string name="notification_category_voice">Balsas</string>
     <string name="notification_voice_title">Balsas</string>
     <string name="notification_voice_sandfly">SandFly balsas</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Tekstas</string>
     <string name="notification_remove_emoji_title">Praleisti jaustukus</string>
     <string name="notification_lowercase_title">Didžiąsias raides skaityti kaip žodžius</string>
-    <string name="notification_lowercase_summary">Kai kurie kalbos varikliai rašo žodžius didžiosiomis raidėmis po raidės</string>
+    <string name="notification_lowercase_summary">Kai kurie kalbos varikliai didžiosiomis raidėmis parašytus žodžius taria paraidžiui</string>
     <string name="notification_separate_digits_title">Ilgus skaičius skaityti skaitmenimis</string>
     <string name="notification_separate_digits_summary">Tokie kaip kodai ir telefonų numeriai</string>
     <string name="notification_min_digits_title">Mažiausias skaitmenų skaičius ilgame skaičiuje</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Mostelėti, kad sustotų</string>
     <string name="notification_wave_summary">Ranka pamojuoti virš artumo jutiklio</string>
     <string name="notification_pocket_title">Kišeninis režimas</string>
-    <string name="notification_pocket_summary">Sensorius, kuris uždengiamas pradėjus skaityti, kaip kišenėje, jo nestabdo</string>
+    <string name="notification_pocket_summary">Jei pradedant skaityti jutiklis jau uždengtas, pvz., kišenėje, skaitymas nesustoja</string>
     <string name="notification_volume_keys_title">Abiejų garsumo klavišų paspaudimas</string>
     <string name="notification_dismiss_title">Sustabdyti atsisakius</string>
     <string name="notification_watch_dismiss_title">Taip pat kai pranešimas atmetamas išmaniajame laikrodyje</string>

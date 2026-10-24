@@ -34,7 +34,7 @@
     <string name="notification_format_title">Beszédformátum</string>
     <string name="notification_format_message">Helyőrzők: {app}, {title}, {text}, {content} (a teljes szöveg), {bigtext}, {subtext}, {ticker}, {category} és {time}.</string>
     <string name="notification_private_format_title">Privát értesítések felolvasása</string>
-    <string name="notification_private_format_message">A privát értesítés tartalma helyett. Helyőrzők: {app}, {category} és {time}.</string>
+    <string name="notification_private_format_message">Privát értesítés tartalma helyett hangzik el. Helyőrzők: {app}, {category} és {time}.</string>
     <string name="notification_category_voice">Hang</string>
     <string name="notification_voice_title">Hang</string>
     <string name="notification_voice_sandfly">SandFly hangja</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Szöveg</string>
     <string name="notification_remove_emoji_title">Emojik kihagyása</string>
     <string name="notification_lowercase_title">Nagybetűs szavak felolvasása szóként</string>
-    <string name="notification_lowercase_summary">Egyes beszédmotorok a szavakat nagybetűvel írják betűről betűre</string>
+    <string name="notification_lowercase_summary">Egyes beszédmotorok a csupa nagybetűs szavakat betűnként olvassák fel</string>
     <string name="notification_separate_digits_title">Hosszú számok felolvasása számjegyenként</string>
     <string name="notification_separate_digits_summary">Például kódok és telefonszámok</string>
     <string name="notification_min_digits_title">Hosszú szám legkevesebb számjegye</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Intés a leállításhoz</string>
     <string name="notification_wave_summary">Kéz elhúzása a közelségérzékelő felett</string>
     <string name="notification_pocket_title">Zsebmód</string>
-    <string name="notification_pocket_summary">Az olvasás megkezdésekor letakart érzékelő, mint egy zsebben, nem állítja meg</string>
+    <string name="notification_pocket_summary">Ha az érzékelő az olvasás kezdetekor már le van takarva, például zsebben, a felolvasás nem áll le</string>
     <string name="notification_volume_keys_title">Mindkét hangerőgomb megnyomása</string>
     <string name="notification_dismiss_title">Leállítás elvetéskor</string>
     <string name="notification_watch_dismiss_title">Akkor is, ha az értesítést elvetik egy okosórán</string>

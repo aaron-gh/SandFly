@@ -34,7 +34,7 @@
     <string name="notification_format_title">Format de la parla</string>
     <string name="notification_format_message">Marcadors de posició: {app}, {title}, {text}, {content} (el text sencer), {bigtext}, {subtext}, {ticker}, {category} i {time}.</string>
     <string name="notification_private_format_title">Lectura de les notificacions privades</string>
-    <string name="notification_private_format_message">Dit en lloc del contingut d\'una notificació privada. Marcadors de posició: {app}, {category} i {time}.</string>
+    <string name="notification_private_format_message">Es diu en lloc del contingut d\'una notificació privada. Marcadors de posició: {app}, {category} i {time}.</string>
     <string name="notification_category_voice">Veu</string>
     <string name="notification_voice_title">Veu</string>
     <string name="notification_voice_sandfly">La veu de SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Text</string>
     <string name="notification_remove_emoji_title">Deixa de banda els emojis</string>
     <string name="notification_lowercase_title">Llegeix majúscules com a paraules</string>
-    <string name="notification_lowercase_summary">Alguns motors de parla escriuen paraules en majúscules lletra per lletra</string>
+    <string name="notification_lowercase_summary">Alguns motors de veu lletregen lletra per lletra les paraules escrites en majúscules</string>
     <string name="notification_separate_digits_title">Llegir nombres llargs dígit per dígit</string>
     <string name="notification_separate_digits_summary">Com ara codis i números de telèfon</string>
     <string name="notification_min_digits_title">Nombre mínim de dígits en un número llarg</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Mou la mà per aturar</string>
     <string name="notification_wave_summary">Moure la mà sobre el sensor de proximitat</string>
     <string name="notification_pocket_title">Mode butxaca</string>
-    <string name="notification_pocket_summary">Un sensor que es tapa quan comença la lectura, com en una butxaca, no l\'atura</string>
+    <string name="notification_pocket_summary">Si el sensor ja està tapat quan comença la lectura, com en una butxaca, la lectura no s\'atura</string>
     <string name="notification_volume_keys_title">Prémer les dues tecles de volum</string>
     <string name="notification_dismiss_title">Atura en descartar</string>
     <string name="notification_watch_dismiss_title">També quan la notificació es descarta en un rellotge intel·ligent</string>

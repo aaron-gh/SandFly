@@ -34,7 +34,7 @@
     <string name="notification_format_title">قالب گفتار</string>
     <string name="notification_format_message">متغیرهای مکان: {app}، {title}، {text}، {content} (کل متن)، {bigtext}، {subtext}، {ticker}، {category} و {time}.</string>
     <string name="notification_private_format_title">متن اعلان‌های خصوصی</string>
-    <string name="notification_private_format_message">به جای محتوای اعلان خصوصی گفته شد. مکان‌ها: {app}، {category} و {time}.</string>
+    <string name="notification_private_format_message">به‌جای محتوای اعلان خصوصی گفته می‌شود. متغیرهای مکان: {app}، {category} و {time}.</string>
     <string name="notification_category_voice">صدا</string>
     <string name="notification_voice_title">صدا</string>
     <string name="notification_voice_sandfly">صدای SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">نوشتار</string>
     <string name="notification_remove_emoji_title">حذف ایموجی</string>
     <string name="notification_lowercase_title">خواندن حروف بزرگ به صورت کلمه</string>
-    <string name="notification_lowercase_summary">برخی از موتورهای گفتاری کلمات را با حروف بزرگ املا می کنند</string>
+    <string name="notification_lowercase_summary">برخی موتورهای گفتار کلماتی را که با حروف بزرگ نوشته شده‌اند حرف‌به‌حرف می‌خوانند</string>
     <string name="notification_separate_digits_title">خواندن اعداد طولانی رقم به رقم</string>
     <string name="notification_separate_digits_summary">مانند کد و شماره تلفن</string>
     <string name="notification_min_digits_title">حداقل ارقام در یک عدد طولانی</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">تکان دادن دست برای توقف</string>
     <string name="notification_wave_summary">حرکت دادن دست روی سنسور مجاورت</string>
     <string name="notification_pocket_title">حالت جیبی</string>
-    <string name="notification_pocket_summary">سنسوری که هنگام شروع خواندن پوشانده می شود، مانند یک جیب، آن را متوقف نمی کند</string>
+    <string name="notification_pocket_summary">اگر حسگر هنگام شروع خواندن پوشیده باشد، مثلاً در جیب، خواندن متوقف نمی‌شود</string>
     <string name="notification_volume_keys_title">فشردن هر دو کلید صدا</string>
     <string name="notification_dismiss_title">توقف هنگام رد کردن</string>
     <string name="notification_watch_dismiss_title">همچنین هنگام رد کردن در ساعت</string>

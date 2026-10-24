@@ -34,7 +34,7 @@
     <string name="notification_format_title">Format ucapan</string>
     <string name="notification_format_message">Placeholder: {app}, {title}, {text}, {content} (keseluruhan teks), {bigtext}, {subtext}, {ticker}, {category} dan {time}.</string>
     <string name="notification_private_format_title">Pembacaan notifikasi pribadi</string>
-    <string name="notification_private_format_message">Dikatakan sebagai pengganti konten pemberitahuan pribadi. Placeholder: {app}, {category} dan {time}.</string>
+    <string name="notification_private_format_message">Diucapkan sebagai pengganti isi notifikasi pribadi. Placeholder: {app}, {category}, dan {time}.</string>
     <string name="notification_category_voice">Suara</string>
     <string name="notification_voice_title">Suara</string>
     <string name="notification_voice_sandfly">Suara SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Teks</string>
     <string name="notification_remove_emoji_title">Lewati emoji</string>
     <string name="notification_lowercase_title">Baca huruf kapital sebagai kata-kata</string>
-    <string name="notification_lowercase_summary">Beberapa mesin ucapan mengeja kata dalam huruf kapital huruf demi huruf</string>
+    <string name="notification_lowercase_summary">Beberapa mesin ucapan mengeja kata yang ditulis dengan huruf kapital huruf demi huruf</string>
     <string name="notification_separate_digits_title">Bacakan angka panjang per digit</string>
     <string name="notification_separate_digits_summary">Seperti kode dan nomor telepon</string>
     <string name="notification_min_digits_title">Jumlah digit minimum dalam angka panjang</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Lambaikan tangan untuk berhenti</string>
     <string name="notification_wave_summary">Menggerakan tangan di atas sensor jarak</string>
     <string name="notification_pocket_title">Modus saku</string>
-    <string name="notification_pocket_summary">Sensor yang tertutup saat pembacaan dimulai, seperti di dalam saku, tidak menghentikannya</string>
+    <string name="notification_pocket_summary">Jika sensor sudah tertutup saat pembacaan dimulai, misalnya di saku, pembacaan tidak berhenti</string>
     <string name="notification_volume_keys_title">Tekan kedua tombol volume</string>
     <string name="notification_dismiss_title">Berhenti saat ditutup</string>
     <string name="notification_watch_dismiss_title">Juga ketika notifikasi ditutup di jam tangan pintar</string>

@@ -34,7 +34,7 @@
     <string name="notification_format_title">Runas formāts</string>
     <string name="notification_format_message">Vietturi: {app}, {title}, {text}, {content} (viss teksts), {bigtext}, {subtext}, {ticker}, {category} un {time}.</string>
     <string name="notification_private_format_title">Privāto paziņojumu nolasīšana</string>
-    <string name="notification_private_format_message">Teikts privāta paziņojuma satura vietā. Vietturi: {app}, {category} un {time}.</string>
+    <string name="notification_private_format_message">Tiek izrunāts privāta paziņojuma satura vietā. Vietturi: {app}, {category} un {time}.</string>
     <string name="notification_category_voice">Balss</string>
     <string name="notification_voice_title">Balss</string>
     <string name="notification_voice_sandfly">SandFly balss</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Teksts</string>
     <string name="notification_remove_emoji_title">Izlaist emocijzīmes</string>
     <string name="notification_lowercase_title">Lasīt lielos burtus kā vārdus</string>
-    <string name="notification_lowercase_summary">Dažas runas programmas vārdus raksta ar lielajiem burtiem</string>
+    <string name="notification_lowercase_summary">Dažas runas programmas ar lielajiem burtiem rakstītus vārdus nolasa pa burtam</string>
     <string name="notification_separate_digits_title">Lasīt garus skaitļus pa cipariem</string>
     <string name="notification_separate_digits_summary">Piemēram, kodi un tālruņu numuri</string>
     <string name="notification_min_digits_title">Minimālais ciparu skaits garā skaitlī</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Pamāt, lai apturētu</string>
     <string name="notification_wave_summary">Rokas pārvietošana virs tuvuma sensora</string>
     <string name="notification_pocket_title">Kabatas režīms</string>
-    <string name="notification_pocket_summary">Sensors, kas tiek aizsegts lasīšanas sākumā, kā kabatā, to neaptur</string>
+    <string name="notification_pocket_summary">Ja sensors lasīšanas sākumā jau ir aizsegts, piemēram, kabatā, lasīšana netiek apturēta</string>
     <string name="notification_volume_keys_title">Abu skaļuma taustiņu nospiešana</string>
     <string name="notification_dismiss_title">Apturēt, kad noraidīts</string>
     <string name="notification_watch_dismiss_title">Arī tad, kad paziņojums tiek noraidīts viedpulkstenī</string>

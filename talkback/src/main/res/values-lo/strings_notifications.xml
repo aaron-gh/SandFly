@@ -34,7 +34,7 @@
     <string name="notification_format_title">ຮູບແບບການປາກເວົ້າ</string>
     <string name="notification_format_message">ຕົວຍຶດ: {app}, {title}, {text}, {content} (ຂໍ້ຄວາມທັງໝົດ), {bigtext}, {subtext}, {ticker}, {category} ແລະ {time}.</string>
     <string name="notification_private_format_title">ການອ່ານການແຈ້ງເຕືອນສ່ວນຕົວ</string>
-    <string name="notification_private_format_message">ກ່າວແທນເນື້ອໃນຂອງການແຈ້ງເຕືອນສ່ວນຕົວ. ຕົວຍຶດ: {app}, {category} ແລະ {time}.</string>
+    <string name="notification_private_format_message">ເວົ້າແທນເນື້ອຫາຂອງການແຈ້ງເຕືອນສ່ວນຕົວ. ຕົວຍຶດ: {app}, {category} ແລະ {time}.</string>
     <string name="notification_category_voice">ສຽງ</string>
     <string name="notification_voice_title">ສຽງ</string>
     <string name="notification_voice_sandfly">ສຽງຂອງ SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">ຂໍ້ຄວາມ</string>
     <string name="notification_remove_emoji_title">ຂ້າມ emoji</string>
     <string name="notification_lowercase_title">ອ່ານຕົວພິມໃຫຍ່ເປັນຄໍາສັບ</string>
-    <string name="notification_lowercase_summary">ເຄື່ອງເວົ້າບາງເຄື່ອງສະກົດຄໍາໃນຕົວພິມໃຫຍ່ໂດຍຕົວອັກສອນ</string>
+    <string name="notification_lowercase_summary">ບາງເຄື່ອງຈັກສຽງເວົ້າສະກົດຄຳທີ່ຂຽນເປັນຕົວພິມໃຫຍ່ທີລະຕົວອັກສອນ</string>
     <string name="notification_separate_digits_title">ອ່ານຕົວເລກຍາວເທື່ອລະຫຼັກ</string>
     <string name="notification_separate_digits_summary">ເຊັ່ນ: ລະຫັດ ແລະເບີໂທລະສັບ</string>
     <string name="notification_min_digits_title">ຈຳນວນຫຼັກຕ່ຳສຸດຂອງຕົວເລກຍາວ</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">ໂບກມືເພື່ອຢຸດ</string>
     <string name="notification_wave_summary">ເລື່ອນມືຜ່ານເຊັນເຊີຄວາມໃກ້</string>
     <string name="notification_pocket_title">ໂໝດກະເປົ໋າ</string>
-    <string name="notification_pocket_summary">ເຊັນເຊີທີ່ປົກຄຸມເມື່ອການອ່ານເລີ່ມຕົ້ນ, ຄືກັບຢູ່ໃນຖົງ, ບໍ່ຢຸດມັນ</string>
+    <string name="notification_pocket_summary">ຖ້າເຊັນເຊີຖືກປິດໄວ້ແລ້ວຕອນເລີ່ມອ່ານ ເຊັ່ນ ຢູ່ໃນຖົງ, ການອ່ານຈະບໍ່ຢຸດ</string>
     <string name="notification_volume_keys_title">ກົດທັງສອງປຸ່ມລະດັບສຽງ</string>
     <string name="notification_dismiss_title">ຢຸດການອ່ານເມື່ອການແຈ້ງເຕືອນຖືກປິດ</string>
     <string name="notification_watch_dismiss_title">ເມື່ອປິດຢູ່ໃນໂມງນຳ</string>

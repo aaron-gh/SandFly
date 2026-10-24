@@ -34,7 +34,7 @@
     <string name="notification_format_title">Formato de fala</string>
     <string name="notification_format_message">Marcadores de posición: {app}, {title}, {text}, {content} (todo o texto), {bigtext}, {subtext}, {ticker}, {category} e {time}.</string>
     <string name="notification_private_format_title">Lectura das notificacións privadas</string>
-    <string name="notification_private_format_message">Dito en lugar do contido dunha notificación privada. Marcadores de posición: {app}, {category} e {time}.</string>
+    <string name="notification_private_format_message">Dise en lugar do contido dunha notificación privada. Marcadores de posición: {app}, {category} e {time}.</string>
     <string name="notification_category_voice">Voz</string>
     <string name="notification_voice_title">Voz</string>
     <string name="notification_voice_sandfly">Voz de SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Texto</string>
     <string name="notification_remove_emoji_title">Deixa fóra emoji</string>
     <string name="notification_lowercase_title">Ler maiúsculas como palabras</string>
-    <string name="notification_lowercase_summary">Algúns motores de fala deletrean palabras en maiúscula letra por letra</string>
+    <string name="notification_lowercase_summary">Algúns motores de voz deletrean letra por letra as palabras escritas en maiúsculas</string>
     <string name="notification_separate_digits_title">Ler números longos cifra por cifra</string>
     <string name="notification_separate_digits_summary">Como códigos e números de teléfono</string>
     <string name="notification_min_digits_title">Número mínimo de díxitos nun número longo</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Move a man para parar</string>
     <string name="notification_wave_summary">Mover unha man sobre o sensor de proximidade</string>
     <string name="notification_pocket_title">Modo peto</string>
-    <string name="notification_pocket_summary">Un sensor que se tapa cando comeza a lectura, como nun peto, non o para</string>
+    <string name="notification_pocket_summary">Se o sensor xa está tapado cando comeza a lectura, como nun peto, a lectura non se detén</string>
     <string name="notification_volume_keys_title">Premer as dúas teclas de volume</string>
     <string name="notification_dismiss_title">Deixar de ler ao descartar a notificación</string>
     <string name="notification_watch_dismiss_title">Tamén cando se descarta a notificación nun reloxo intelixente</string>

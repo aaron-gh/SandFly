@@ -34,7 +34,7 @@
     <string name="notification_format_title">Spraakformaat</string>
     <string name="notification_format_message">Plekhouers: {app}, {title}, {text}, {content} (die hele teks), {bigtext}, {subtext}, {ticker}, {category} en {time}.</string>
     <string name="notification_private_format_title">Teks vir private kennisgewings</string>
-    <string name="notification_private_format_message">Gesê in die plek van \'n private kennisgewing se inhoud. Plekhouers: {app}, {category} en {time}.</string>
+    <string name="notification_private_format_message">Word gesê in plaas van ’n private kennisgewing se inhoud. Plekhouers: {app}, {category} en {time}.</string>
     <string name="notification_category_voice">Stem</string>
     <string name="notification_voice_title">Stem</string>
     <string name="notification_voice_sandfly">SandFly se stem</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Teks</string>
     <string name="notification_remove_emoji_title">Los emoji uit</string>
     <string name="notification_lowercase_title">Lees hoofletters as woorde</string>
-    <string name="notification_lowercase_summary">Sommige spraakenjins spel woorde in hoofletters letter vir letter</string>
+    <string name="notification_lowercase_summary">Sommige spraakenjins spel woorde in hoofletters letter vir letter uit</string>
     <string name="notification_separate_digits_title">Lees lang getalle syfer vir syfer</string>
     <string name="notification_separate_digits_summary">Soos kodes en telefoonnommers</string>
     <string name="notification_min_digits_title">Minimum syfers in \'n lang getal</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Waai om te stop</string>
     <string name="notification_wave_summary">Beweeg \'n hand oor die nabyheidsensor</string>
     <string name="notification_pocket_title">Sakmodus</string>
-    <string name="notification_pocket_summary">\'n Sensor wat bedek is wanneer lees begin, soos in \'n sak, stop dit nie</string>
+    <string name="notification_pocket_summary">As die nabyheidsensor reeds bedek is wanneer lees begin, soos in ’n sak, stop lees nie</string>
     <string name="notification_volume_keys_title">Druk albei volumesleutels</string>
     <string name="notification_dismiss_title">Stop wanneer verwyder</string>
     <string name="notification_watch_dismiss_title">Ook wanneer die kennisgewing op \'n slimhorlosie verwerp word</string>

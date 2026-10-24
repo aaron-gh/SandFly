@@ -34,7 +34,7 @@
     <string name="notification_format_title">Format mowy</string>
     <string name="notification_format_message">Symbole zastępcze: {app}, {title}, {text}, {content} (cały tekst), {bigtext}, {subtext}, {ticker}, {category} i {time}.</string>
     <string name="notification_private_format_title">Odczytywanie prywatnych powiadomień</string>
-    <string name="notification_private_format_message">Podane zamiast treści prywatnego powiadomienia. Symbole zastępcze: {app}, {category} i {time}.</string>
+    <string name="notification_private_format_message">Wypowiadane zamiast treści prywatnego powiadomienia. Symbole zastępcze: {app}, {category} i {time}.</string>
     <string name="notification_category_voice">Głos</string>
     <string name="notification_voice_title">Głos</string>
     <string name="notification_voice_sandfly">Głos SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Tekst</string>
     <string name="notification_remove_emoji_title">Pomiń emoji</string>
     <string name="notification_lowercase_title">Czytaj wielkie litery jako słowa</string>
-    <string name="notification_lowercase_summary">Niektóre aparaty mowy zapisują słowa wielką literą</string>
+    <string name="notification_lowercase_summary">Niektóre syntezatory mowy literują słowa zapisane wielkimi literami</string>
     <string name="notification_separate_digits_title">Czytaj długie liczby cyfra po cyfrze</string>
     <string name="notification_separate_digits_summary">Takie jak kody i numery telefonów</string>
     <string name="notification_min_digits_title">Minimalna liczba cyfr w długiej liczbie</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Pomachaj, aby zatrzymać</string>
     <string name="notification_wave_summary">Przesuwanie dłonią po czujniku zbliżeniowym</string>
     <string name="notification_pocket_title">Tryb kieszeni</string>
-    <string name="notification_pocket_summary">Czujnik zakryty na początku odczytu, jak w kieszeni, nie zatrzymuje go</string>
+    <string name="notification_pocket_summary">Jeśli czujnik jest już zakryty, gdy zaczyna się odczytywanie, np. w kieszeni, odczytywanie nie zostaje przerwane</string>
     <string name="notification_volume_keys_title">Naciśnięcie obu klawiszy głośności</string>
     <string name="notification_dismiss_title">Zatrzymaj po odrzuceniu</string>
     <string name="notification_watch_dismiss_title">Również wtedy, gdy powiadomienie zostanie odrzucone na smartwatchu</string>

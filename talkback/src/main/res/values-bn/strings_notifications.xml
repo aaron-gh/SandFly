@@ -34,7 +34,7 @@
     <string name="notification_format_title">বলার ফর্ম্যাট</string>
     <string name="notification_format_message">স্থানধারক: {app}, {title}, {text}, {content} (পুরো লেখা), {bigtext}, {subtext}, {ticker}, {category} এবং {time}।</string>
     <string name="notification_private_format_title">ব্যক্তিগত বিজ্ঞপ্তির জন্য পড়া হয়</string>
-    <string name="notification_private_format_message">একটি ব্যক্তিগত বিজ্ঞপ্তি এর বিষয়বস্তুর জায়গায় বলেন. স্থানধারক: {app}, {category} এবং {time}।</string>
+    <string name="notification_private_format_message">ব্যক্তিগত বিজ্ঞপ্তির বিষয়বস্তুর বদলে বলা হয়। স্থানধারক: {app}, {category} এবং {time}।</string>
     <string name="notification_category_voice">ভয়েস</string>
     <string name="notification_voice_title">ভয়েস</string>
     <string name="notification_voice_sandfly">SandFly এর কন্ঠ</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">টেক্সট</string>
     <string name="notification_remove_emoji_title">ইমোজি বাদ দিন</string>
     <string name="notification_lowercase_title">বড় হাতের অক্ষর শব্দ হিসেবে পড়ুন</string>
-    <string name="notification_lowercase_summary">কিছু স্পিচ ইঞ্জিন বড় অক্ষরে অক্ষরে বর্ণে শব্দ বানান করে</string>
+    <string name="notification_lowercase_summary">কিছু স্পিচ ইঞ্জিন বড় হাতের অক্ষরে লেখা শব্দ অক্ষর ধরে ধরে পড়ে</string>
     <string name="notification_separate_digits_title">দীর্ঘ সংখ্যার প্রতিটি অঙ্ক আলাদা করে পড়ুন</string>
     <string name="notification_separate_digits_summary">যেমন কোড এবং ফোন নম্বর</string>
     <string name="notification_min_digits_title">দীর্ঘ সংখ্যায় ন্যূনতম অঙ্ক</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">থামাতে হাত নাড়ুন</string>
     <string name="notification_wave_summary">প্রক্সিমিটি সেন্সরের উপর একটি হাত সরানো</string>
     <string name="notification_pocket_title">পকেট মোড</string>
-    <string name="notification_pocket_summary">পড়া শুরু করার সময় একটি সেন্সর আবৃত থাকে, যেমন পকেটে থাকে, এটি বন্ধ করে না</string>
+    <string name="notification_pocket_summary">পড়া শুরুর সময় সেন্সর ঢাকা থাকলে, যেমন পকেটে, পড়া থামে না</string>
     <string name="notification_volume_keys_title">উভয় ভলিউম কী টিপুন</string>
     <string name="notification_dismiss_title">খারিজ করলে বন্ধ করুন</string>
     <string name="notification_watch_dismiss_title">ঘড়িতে খারিজ করলেও</string>

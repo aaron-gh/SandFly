@@ -34,7 +34,7 @@
     <string name="notification_format_title">Formato de fala</string>
     <string name="notification_format_message">Espaços reservados: {app}, {title}, {text}, {content} (o texto inteiro), {bigtext}, {subtext}, {ticker}, {category} e {time}.</string>
     <string name="notification_private_format_title">Leitura de notificações privadas</string>
-    <string name="notification_private_format_message">Dito no lugar do conteúdo de uma notificação privada. Espaços reservados: {app}, {category} e {time}.</string>
+    <string name="notification_private_format_message">Falado no lugar do conteúdo de uma notificação privada. Espaços reservados: {app}, {category} e {time}.</string>
     <string name="notification_category_voice">Voz</string>
     <string name="notification_voice_title">Voz</string>
     <string name="notification_voice_sandfly">Voz do SandFly</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Acenar para parar</string>
     <string name="notification_wave_summary">Passar a mão sobre o sensor de proximidade</string>
     <string name="notification_pocket_title">Modo bolso</string>
-    <string name="notification_pocket_summary">Um sensor que fica coberto quando a leitura começa, como se fosse um bolso, não a interrompe</string>
+    <string name="notification_pocket_summary">Se o sensor já estiver coberto quando a leitura começar, como em um bolso, a leitura não para</string>
     <string name="notification_volume_keys_title">Pressionar as duas teclas de volume</string>
     <string name="notification_dismiss_title">Parar ao dispensar</string>
     <string name="notification_watch_dismiss_title">Também quando dispensada em um relógio</string>

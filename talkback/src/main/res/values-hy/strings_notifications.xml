@@ -34,7 +34,7 @@
     <string name="notification_format_title">Խոսքի ձևաչափ</string>
     <string name="notification_format_message">Տեղապահներ՝ {app}, {title}, {text}, {content} (ամբողջ տեքստը), {bigtext}, {subtext}, {ticker}, {category} և {time}։</string>
     <string name="notification_private_format_title">Մասնավոր ծանուցումների ընթերցում</string>
-    <string name="notification_private_format_message">Ասված է մասնավոր ծանուցման բովանդակության փոխարեն: Տեղապահներ՝ {app}, {category} և {time}:</string>
+    <string name="notification_private_format_message">Ասվում է մասնավոր ծանուցման բովանդակության փոխարեն։ Տեղապահներ՝ {app}, {category} և {time}։</string>
     <string name="notification_category_voice">Ձայն</string>
     <string name="notification_voice_title">Ձայն</string>
     <string name="notification_voice_sandfly">SandFly-ի ձայնը</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Տեքստ</string>
     <string name="notification_remove_emoji_title">Բաց թողնել էմոջիները</string>
     <string name="notification_lowercase_title">Կարդալ մեծատառերը որպես բառեր</string>
-    <string name="notification_lowercase_summary">Խոսքի որոշ շարժիչներ տառ առ տառ բառեր են գրում մեծատառով</string>
+    <string name="notification_lowercase_summary">Խոսքի որոշ շարժիչներ մեծատառերով գրված բառերը կարդում են տառ առ տառ</string>
     <string name="notification_separate_digits_title">Կարդալ երկար թվերը թվանշան առ թվանշան</string>
     <string name="notification_separate_digits_summary">Ինչպես օրինակ կոդերը և հեռախոսահամարները</string>
     <string name="notification_min_digits_title">Երկար թվի նվազագույն թվանշանների քանակ</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Թափահարել՝ դադարեցնելու համար</string>
     <string name="notification_wave_summary">Ձեռքի շարժում մոտիկության սենսորի վրայով</string>
     <string name="notification_pocket_title">Գրպանի ռեժիմ</string>
-    <string name="notification_pocket_summary">Սենսորը, որը ծածկված է ընթերցանության սկզբում, ինչպես գրպանում, չի կանգնեցնում այն</string>
+    <string name="notification_pocket_summary">Եթե ընթերցումը սկսելիս սենսորն արդեն ծածկված է, օրինակ՝ գրպանում, ընթերցումը չի դադարում</string>
     <string name="notification_volume_keys_title">Ձայնի երկու կոճակների սեղմում</string>
     <string name="notification_dismiss_title">Դադարեցնել փակելիս</string>
     <string name="notification_watch_dismiss_title">Նաև, երբ ծանուցումը փակվում է ժամացույցում</string>

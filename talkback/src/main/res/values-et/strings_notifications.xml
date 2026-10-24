@@ -34,7 +34,7 @@
     <string name="notification_format_title">Kõnevorming</string>
     <string name="notification_format_message">Kohatäitjad: {app}, {title}, {text}, {content} (kogu tekst), {bigtext}, {subtext}, {ticker}, {category} ja {time}.</string>
     <string name="notification_private_format_title">Privaatsete märguannete ettelugemine</string>
-    <string name="notification_private_format_message">See on öeldud privaatse teatise sisu asemel. Kohatäitjad: {app}, {category} ja {time}.</string>
+    <string name="notification_private_format_message">Öeldakse privaatse märguande sisu asemel. Kohatäitjad: {app}, {category} ja {time}.</string>
     <string name="notification_category_voice">Hääl</string>
     <string name="notification_voice_title">Hääl</string>
     <string name="notification_voice_sandfly">SandFly hääl</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Tekst</string>
     <string name="notification_remove_emoji_title">Jäta emotikonid välja</string>
     <string name="notification_lowercase_title">Loe suurtähti sõnadena</string>
-    <string name="notification_lowercase_summary">Mõned kõnemootorid kirjutavad sõnu suurtähtedega tähthaaval</string>
+    <string name="notification_lowercase_summary">Mõned kõnemootorid loevad suurtähtedega kirjutatud sõnu tähthaaval</string>
     <string name="notification_separate_digits_title">Loe pikki arve numbrite kaupa</string>
     <string name="notification_separate_digits_summary">Näiteks koodid ja telefoninumbrid</string>
     <string name="notification_min_digits_title">Pika arvu vähim numbrite arv</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Peatamiseks lehvita</string>
     <string name="notification_wave_summary">Käe liigutamine lähedusanduri kohal</string>
     <string name="notification_pocket_title">Taskurežiim</string>
-    <string name="notification_pocket_summary">Andur, mis lugemist alustades kinni kaetakse, nagu taskus, seda ei peata</string>
+    <string name="notification_pocket_summary">Kui andur on lugemise alguses juba kaetud, näiteks taskus, lugemine ei peatu</string>
     <string name="notification_volume_keys_title">Mõlema helitugevusklahvi vajutamine</string>
     <string name="notification_dismiss_title">Peata loobumisel</string>
     <string name="notification_watch_dismiss_title">Ka siis, kui märguanne kellas suletakse</string>

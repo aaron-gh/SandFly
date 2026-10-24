@@ -34,7 +34,7 @@
     <string name="notification_format_title">Format ng pagsasalita</string>
     <string name="notification_format_message">Mga Placeholder: {app}, {title}, {text}, {content} (ang buong text), {bigtext}, {subtext}, {ticker}, {category} at {time}.</string>
     <string name="notification_private_format_title">Pagbasa ng mga pribadong notification</string>
-    <string name="notification_private_format_message">Sinabi bilang kapalit ng nilalaman ng pribadong notification. Mga placeholder: {app}, {category} at {time}.</string>
+    <string name="notification_private_format_message">Sinasabi bilang kapalit ng nilalaman ng pribadong notification. Mga Placeholder: {app}, {category} at {time}.</string>
     <string name="notification_category_voice">Boses</string>
     <string name="notification_voice_title">Boses</string>
     <string name="notification_voice_sandfly">Boses ng SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Text</string>
     <string name="notification_remove_emoji_title">Laktawan ang emoji</string>
     <string name="notification_lowercase_title">Basahin ang mga malalaking titik bilang mga salita</string>
-    <string name="notification_lowercase_summary">Ang ilang mga speech engine ay nagbabaybay ng mga salita sa malalaking titik bawat titik</string>
+    <string name="notification_lowercase_summary">Binabaybay ng ilang speech engine nang titik-titik ang mga salitang nakasulat sa malalaking titik</string>
     <string name="notification_separate_digits_title">Basahin ang mahahabang numero digit sa digit</string>
     <string name="notification_separate_digits_summary">Gaya ng mga code at numero ng telepono</string>
     <string name="notification_min_digits_title">Pinakamababang bilang ng digit sa mahabang numero</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Kumaway para ihinto</string>
     <string name="notification_wave_summary">Paglipat ng kamay sa proximity sensor</string>
     <string name="notification_pocket_title">Pocket mode</string>
-    <string name="notification_pocket_summary">Ang isang sensor na natatakpan kapag nagsimula ang pagbabasa, tulad ng sa isang bulsa, ay hindi humihinto dito</string>
+    <string name="notification_pocket_summary">Kung natatakpan na ang sensor pagsimula ng pagbasa, gaya ng sa bulsa, hindi hihinto ang pagbasa</string>
     <string name="notification_volume_keys_title">Pindutin ang parehong volume key</string>
     <string name="notification_dismiss_title">Ihinto kapag na-dismiss</string>
     <string name="notification_watch_dismiss_title">Gayundin kapag na-dismiss ang notification sa isang smartwatch</string>

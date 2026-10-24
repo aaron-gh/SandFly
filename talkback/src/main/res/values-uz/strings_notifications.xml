@@ -34,7 +34,7 @@
     <string name="notification_format_title">Nutq formati</string>
     <string name="notification_format_message">Oʻrinbosarlar: {app}, {title}, {text}, {content} (butun matn), {bigtext}, {subtext}, {ticker}, {category} va {time}.</string>
     <string name="notification_private_format_title">Shaxsiy bildirishnomalarni oʻqish</string>
-    <string name="notification_private_format_message">Shaxsiy bildirishnoma mazmuni oʻrniga aytilgan. Oʻrin egalari: {app}, {category} va {time}.</string>
+    <string name="notification_private_format_message">Shaxsiy bildirishnoma mazmuni oʻrniga aytiladi. Oʻrinbosarlar: {app}, {category} va {time}.</string>
     <string name="notification_category_voice">Ovoz</string>
     <string name="notification_voice_title">Ovoz</string>
     <string name="notification_voice_sandfly">SandFlyning ovozi</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Matn</string>
     <string name="notification_remove_emoji_title">Emojilarni oʻtkazib yuborish</string>
     <string name="notification_lowercase_title">Bosh harflarni soʻz sifatida oʻqish</string>
-    <string name="notification_lowercase_summary">Ba\'zi nutq mexanizmlari katta harflar bilan yozilgan so\'zlarni harfma-harf yozadi</string>
+    <string name="notification_lowercase_summary">Baʼzi nutq sintezatorlari katta harflar bilan yozilgan soʻzlarni harfma-harf oʻqiydi</string>
     <string name="notification_separate_digits_title">Uzun sonlarni raqamma-raqam oʻqish</string>
     <string name="notification_separate_digits_summary">Kodlar va telefon raqamlari kabi</string>
     <string name="notification_min_digits_title">Uzun sondagi raqamlarning eng kam soni</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Toʻxtatish uchun qoʻl silkitish</string>
     <string name="notification_wave_summary">Qo\'lni yaqinlik sensori ustiga siljitish</string>
     <string name="notification_pocket_title">Cho\'ntak rejimi</string>
-    <string name="notification_pocket_summary">Cho\'ntakdagi kabi o\'qish boshlanganda qoplangan sensor uni to\'xtatmaydi</string>
+    <string name="notification_pocket_summary">Oʻqish boshlanganda sensor allaqachon yopiq boʻlsa, masalan, choʻntakda, oʻqish toʻxtamaydi</string>
     <string name="notification_volume_keys_title">Ikkala ovoz tugmasini bosish</string>
     <string name="notification_dismiss_title">Yopilganda to\'xtatish</string>
     <string name="notification_watch_dismiss_title">Soatda yopilganda ham</string>

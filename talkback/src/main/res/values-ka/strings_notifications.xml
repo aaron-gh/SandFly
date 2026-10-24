@@ -34,7 +34,7 @@
     <string name="notification_format_title">მეტყველების ფორმატი</string>
     <string name="notification_format_message">ჩანაცვლების ადგილები: {app}, {title}, {text}, {content} (მთელი ტექსტი), {bigtext}, {subtext}, {ticker}, {category} და {time}.</string>
     <string name="notification_private_format_title">პირადი შეტყობინებების წაკითხვა</string>
-    <string name="notification_private_format_message">ნათქვამია პირადი შეტყობინების შინაარსის ნაცვლად. ადგილის დამცველები: {app}, {category} და {time}.</string>
+    <string name="notification_private_format_message">ითქმის პირადი შეტყობინების შინაარსის ნაცვლად. ჩანაცვლების ადგილები: {app}, {category} და {time}.</string>
     <string name="notification_category_voice">ხმა</string>
     <string name="notification_voice_title">ხმა</string>
     <string name="notification_voice_sandfly">SandFly ხმა</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">ხელის აქნევით შეჩერება</string>
     <string name="notification_wave_summary">სიახლოვის სენსორზე ხელის გადატანა</string>
     <string name="notification_pocket_title">ჯიბის რეჟიმი</string>
-    <string name="notification_pocket_summary">სენსორი, რომელიც დაფარულია კითხვის დაწყებისას, როგორც ჯიბეში, არ აჩერებს მას</string>
+    <string name="notification_pocket_summary">თუ კითხვის დაწყებისას სენსორი უკვე დაფარულია, მაგალითად ჯიბეში, კითხვა არ ჩერდება</string>
     <string name="notification_volume_keys_title">ხმის ორივე ღილაკის დაჭერა</string>
     <string name="notification_dismiss_title">შეწყვეტა დახურვისას</string>
     <string name="notification_watch_dismiss_title">ასევე, როცა შეტყობინება საათზე იხურება</string>

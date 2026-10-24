@@ -34,7 +34,7 @@
     <string name="notification_format_title">बोलाइको ढाँचा</string>
     <string name="notification_format_message">प्लेसहोल्डरहरू: {app}, {title}, {text}, {content} (पूरा पाठ), {bigtext}, {subtext}, {ticker}, {category} र {time}।</string>
     <string name="notification_private_format_title">निजी सूचनाहरूका लागि के पढिन्छ</string>
-    <string name="notification_private_format_message">एक निजी सूचना को सामग्री को स्थान मा भने। प्लेसहोल्डरहरू: {app}, {category} र {time}।</string>
+    <string name="notification_private_format_message">निजी सूचनाको सामग्रीको सट्टा भनिन्छ। प्लेसहोल्डरहरू: {app}, {category} र {time}।</string>
     <string name="notification_category_voice">आवाज</string>
     <string name="notification_voice_title">आवाज</string>
     <string name="notification_voice_sandfly">SandFly को आवाज</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">पाठ</string>
     <string name="notification_remove_emoji_title">इमोजी छोड्नुहोस्</string>
     <string name="notification_lowercase_title">ठूला अक्षरहरूलाई शब्दका रूपमा पढ्नुहोस्</string>
-    <string name="notification_lowercase_summary">केही स्पीच इन्जिनहरूले अक्षरहरू अक्षरमा क्यापिटल अक्षरहरूमा शब्दहरू हिज्जे गर्छन्</string>
+    <string name="notification_lowercase_summary">केही स्पीच इन्जिनले क्यापिटल अक्षरमा लेखिएका शब्दहरू एक-एक अक्षर गरी पढ्छन्</string>
     <string name="notification_separate_digits_title">लामो सङ्ख्या अङ्क-अङ्क गरी पढ्नुहोस्</string>
     <string name="notification_separate_digits_summary">जस्तै कोड र फोन नम्बरहरू</string>
     <string name="notification_min_digits_title">लामो संख्यामा न्यूनतम अंकहरू</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">रोक्न हात हल्लाउनुहोस्</string>
     <string name="notification_wave_summary">निकटता सेन्सरमाथि हात सार्ने</string>
     <string name="notification_pocket_title">पकेट मोड</string>
-    <string name="notification_pocket_summary">पढाइ सुरु गर्दा कभर गरिएको सेन्सर, पकेटमा जस्तै, यसलाई रोक्दैन</string>
+    <string name="notification_pocket_summary">पढ्न सुरु गर्दा सेन्सर पहिल्यै ढाकिएको छ भने, जस्तै खल्तीमा, पढ्ने काम रोकिँदैन</string>
     <string name="notification_volume_keys_title">दुबै भोल्युम कुञ्जीहरू थिच्नुहोस्</string>
     <string name="notification_dismiss_title">खारेज गर्दा रोक्नुहोस्</string>
     <string name="notification_watch_dismiss_title">घडीमा खारेज गर्दा पनि</string>

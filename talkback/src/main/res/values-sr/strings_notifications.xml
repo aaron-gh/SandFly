@@ -34,7 +34,7 @@
     <string name="notification_format_title">Формат говора</string>
     <string name="notification_format_message">Чувари места: {app}, {title}, {text}, {content} (цео текст), {bigtext}, {subtext}, {ticker}, {category} и {time}.</string>
     <string name="notification_private_format_title">Читање приватних обавештења</string>
-    <string name="notification_private_format_message">Речено уместо садржаја приватног обавештења. Чувари места: {app}, {category} и {time}.</string>
+    <string name="notification_private_format_message">Изговара се уместо садржаја приватног обавештења. Чувари места: {app}, {category} и {time}.</string>
     <string name="notification_category_voice">Глас</string>
     <string name="notification_voice_title">Глас</string>
     <string name="notification_voice_sandfly">SandFly-ов глас</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Одмахни за заустављање</string>
     <string name="notification_wave_summary">Померање руке преко сензора близине</string>
     <string name="notification_pocket_title">Џепни режим</string>
-    <string name="notification_pocket_summary">Сензор који је прекривен када читање почне, као у џепу, не зауставља га</string>
+    <string name="notification_pocket_summary">Ако је сензор већ прекривен када читање почне, као у џепу, читање се не зауставља</string>
     <string name="notification_volume_keys_title">Притисак на оба тастера за јачину звука</string>
     <string name="notification_dismiss_title">Заустави при затварању</string>
     <string name="notification_watch_dismiss_title">Такође када је обавештење одбачено на паметном сату</string>

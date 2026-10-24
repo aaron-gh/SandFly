@@ -34,7 +34,7 @@
     <string name="notification_format_title">بولنے کا فارمیٹ</string>
     <string name="notification_format_message">پلیس ہولڈرز: {app}، {title}، {text}، {content} (پورا متن)، {bigtext}، {subtext}، {ticker}، {category} اور {time}۔</string>
     <string name="notification_private_format_title">نجی اطلاعات کے لیے کیا پڑھا جائے</string>
-    <string name="notification_private_format_message">ایک نجی اطلاع کے مواد کی جگہ کہا۔ پلیس ہولڈرز: {app}، {category} اور {time}۔</string>
+    <string name="notification_private_format_message">نجی اطلاع کے مواد کی جگہ بولا جاتا ہے۔ پلیس ہولڈرز: {app}، {category} اور {time}۔</string>
     <string name="notification_category_voice">آواز</string>
     <string name="notification_voice_title">آواز</string>
     <string name="notification_voice_sandfly">SandFly کی آواز</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">متن</string>
     <string name="notification_remove_emoji_title">ایموجی نظرانداز کریں</string>
     <string name="notification_lowercase_title">بڑے حروف کو الفاظ کے طور پر پڑھیں</string>
-    <string name="notification_lowercase_summary">کچھ اسپیچ انجن الفاظ کو بڑے حروف میں حرف بہ حرف ہجے کرتے ہیں</string>
+    <string name="notification_lowercase_summary">کچھ اسپیچ انجن بڑے حروف میں لکھے الفاظ کو حرف بہ حرف پڑھتے ہیں</string>
     <string name="notification_separate_digits_title">لمبے نمبر ہندسہ بہ ہندسہ پڑھیں</string>
     <string name="notification_separate_digits_summary">جیسے کوڈ اور فون نمبر</string>
     <string name="notification_min_digits_title">لمبے نمبر میں کم از کم ہندسے</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">روکنے کے لیے ہاتھ ہلائیں</string>
     <string name="notification_wave_summary">قربت کے سینسر پر ہاتھ پھیرنا</string>
     <string name="notification_pocket_title">جیبی موڈ</string>
-    <string name="notification_pocket_summary">ایک سینسر جو پڑھنا شروع ہونے پر احاطہ کرتا ہے، جیسا کہ جیب میں ہوتا ہے، اسے نہیں روکتا</string>
+    <string name="notification_pocket_summary">اگر پڑھنا شروع ہوتے وقت سینسر پہلے سے ڈھکا ہو، جیسے جیب میں، تو پڑھنا نہیں رکتا</string>
     <string name="notification_volume_keys_title">دونوں والیوم کیز کو دبائیں</string>
     <string name="notification_dismiss_title">نوٹیفکیشن خارج ہونے پر پڑھنا بند کریں</string>
     <string name="notification_watch_dismiss_title">گھڑی پر مسترد کرنے پر بھی</string>

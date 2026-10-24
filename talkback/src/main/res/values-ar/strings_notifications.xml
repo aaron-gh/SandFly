@@ -34,7 +34,7 @@
     <string name="notification_format_title">تنسيق الكلام</string>
     <string name="notification_format_message">العناصر النائبة: {app}، {title}، {text}، {content} (النص بالكامل)، {bigtext}، {subtext}، {ticker}، {category} و{time}.</string>
     <string name="notification_private_format_title">ما يُقال للإشعارات الخاصة</string>
-    <string name="notification_private_format_message">يقال بدلا من محتوى الإخطار الخاص. العناصر النائبة: {app} و{category} و{time}.</string>
+    <string name="notification_private_format_message">يُنطق بدلاً من محتوى الإشعار الخاص. العناصر النائبة: {app} و{category} و{time}.</string>
     <string name="notification_category_voice">الصوت</string>
     <string name="notification_voice_title">الصوت</string>
     <string name="notification_voice_sandfly">صوت SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">النص</string>
     <string name="notification_remove_emoji_title">اترك الرموز التعبيرية</string>
     <string name="notification_lowercase_title">قراءة الكلمات بالأحرف الكبيرة ككلمات</string>
-    <string name="notification_lowercase_summary">تقوم بعض محركات الكلام بتهجئة الكلمات بالأحرف الكبيرة حرفًا بحرف</string>
+    <string name="notification_lowercase_summary">بعض محركات الكلام تتهجّى الكلمات المكتوبة بأحرف كبيرة حرفًا حرفًا</string>
     <string name="notification_separate_digits_title">قراءة الأرقام الطويلة رقما برقم</string>
     <string name="notification_separate_digits_summary">مثل الرموز وأرقام الهواتف</string>
     <string name="notification_min_digits_title">الحد الأدنى من الأرقام في عدد طويل</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">التلويح للإيقاف</string>
     <string name="notification_wave_summary">تحريك اليد على مستشعر القرب</string>
     <string name="notification_pocket_title">وضع الجيب</string>
-    <string name="notification_pocket_summary">المستشعر الذي يتم تغطيته عند بدء القراءة، كما هو الحال في الجيب، لا يوقفها</string>
+    <string name="notification_pocket_summary">إذا كان المستشعر مغطّى عند بدء القراءة، كما في الجيب، فلا تتوقف القراءة</string>
     <string name="notification_volume_keys_title">اضغط على كلا مفتاحي الصوت</string>
     <string name="notification_dismiss_title">الإيقاف عند إزالة الإشعار</string>
     <string name="notification_watch_dismiss_title">أيضًا عند إغلاقه على الساعة</string>

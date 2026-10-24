@@ -34,7 +34,7 @@
     <string name="notification_format_title">Формат речи</string>
     <string name="notification_format_message">Заполнители: {app}, {title}, {text}, {content} (весь текст), {bigtext}, {subtext}, {ticker}, {category} и {time}.</string>
     <string name="notification_private_format_title">Чтение личных уведомлений</string>
-    <string name="notification_private_format_message">Сказано вместо содержания частного уведомления. Заполнители: {app}, {category} и {time}.</string>
+    <string name="notification_private_format_message">Произносится вместо содержимого личного уведомления. Заполнители: {app}, {category} и {time}.</string>
     <string name="notification_category_voice">Голос</string>
     <string name="notification_voice_title">Голос</string>
     <string name="notification_voice_sandfly">Голос SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Текст</string>
     <string name="notification_remove_emoji_title">Пропускать эмодзи</string>
     <string name="notification_lowercase_title">Читать заглавные буквы как слова</string>
-    <string name="notification_lowercase_summary">Некоторые речевые движки пишут слова заглавными буквами по буквам.</string>
+    <string name="notification_lowercase_summary">Некоторые синтезаторы речи читают слова, написанные заглавными буквами, по буквам</string>
     <string name="notification_separate_digits_title">Чтение длинных чисел по цифрам</string>
     <string name="notification_separate_digits_summary">Например, коды и номера телефонов</string>
     <string name="notification_min_digits_title">Минимальное количество цифр в длинном числе</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Взмах рукой для остановки</string>
     <string name="notification_wave_summary">Проведение руки над датчиком приближения</string>
     <string name="notification_pocket_title">Карманный режим</string>
-    <string name="notification_pocket_summary">Датчик, который прикрывается при начале чтения, как в кармане, не останавливает его</string>
+    <string name="notification_pocket_summary">Если датчик уже закрыт в момент начала чтения, например в кармане, чтение не останавливается</string>
     <string name="notification_volume_keys_title">Нажатие обеих клавиш громкости</string>
     <string name="notification_dismiss_title">Останавливать при закрытии</string>
     <string name="notification_watch_dismiss_title">Также при закрытии на часах</string>

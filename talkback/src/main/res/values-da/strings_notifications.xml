@@ -34,7 +34,7 @@
     <string name="notification_format_title">Taleformat</string>
     <string name="notification_format_message">Pladsholdere: {app}, {title}, {text}, {content} (hele teksten), {bigtext}, {subtext}, {ticker}, {category} og {time}.</string>
     <string name="notification_private_format_title">Oplæsning af private notifikationer</string>
-    <string name="notification_private_format_message">Sagt i stedet for en privat notifikations indhold. Pladsholdere: {app}, {category} og {time}.</string>
+    <string name="notification_private_format_message">Siges i stedet for indholdet af en privat notifikation. Pladsholdere: {app}, {category} og {time}.</string>
     <string name="notification_category_voice">Stemme</string>
     <string name="notification_voice_title">Stemme</string>
     <string name="notification_voice_sandfly">SandFlys stemme</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Tekst</string>
     <string name="notification_remove_emoji_title">Udelad emoji</string>
     <string name="notification_lowercase_title">Læs versaler som ord</string>
-    <string name="notification_lowercase_summary">Nogle talemaskiner staver ord med store bogstaver bogstav for bogstav</string>
+    <string name="notification_lowercase_summary">Nogle talemotorer staver ord skrevet med store bogstaver bogstav for bogstav</string>
     <string name="notification_separate_digits_title">Læs lange tal ciffer for ciffer</string>
     <string name="notification_separate_digits_summary">Såsom koder og telefonnumre</string>
     <string name="notification_min_digits_title">Mindste antal cifre i et langt tal</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Vift for at stoppe</string>
     <string name="notification_wave_summary">Bevæge en hånd hen over nærhedssensoren</string>
     <string name="notification_pocket_title">Lommetilstand</string>
-    <string name="notification_pocket_summary">En sensor, der er tildækket, når læsningen starter, som i en lomme, stopper den ikke</string>
+    <string name="notification_pocket_summary">Hvis sensoren allerede er tildækket, når oplæsningen starter, f.eks. i en lomme, stopper den ikke</string>
     <string name="notification_volume_keys_title">Tryk på begge lydstyrketaster</string>
     <string name="notification_dismiss_title">Stop, når den afvises</string>
     <string name="notification_watch_dismiss_title">Også når notifikationen afvises på et smartwatch</string>

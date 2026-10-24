@@ -34,7 +34,7 @@
     <string name="notification_format_title">Talsnið</string>
     <string name="notification_format_message">Staðgenglar: {app}, {title}, {text}, {content} (allur textinn), {bigtext}, {subtext}, {ticker}, {category} og {time}.</string>
     <string name="notification_private_format_title">Lestur einkatilkynninga</string>
-    <string name="notification_private_format_message">Sagt í stað innihalds einkatilkynningar. Staðfestar: {app}, {category} og {time}.</string>
+    <string name="notification_private_format_message">Lesið upp í stað efnis einkatilkynningar. Staðgenglar: {app}, {category} og {time}.</string>
     <string name="notification_category_voice">Rödd</string>
     <string name="notification_voice_title">Rödd</string>
     <string name="notification_voice_sandfly">Rödd SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Texti</string>
     <string name="notification_remove_emoji_title">Sleppa emoji</string>
     <string name="notification_lowercase_title">Lestu hástafi sem orð</string>
-    <string name="notification_lowercase_summary">Sumar talvélar stafa orð með hástöfum staf fyrir staf</string>
+    <string name="notification_lowercase_summary">Sumar talvélar stafa orð sem eru skrifuð með hástöfum staf fyrir staf</string>
     <string name="notification_separate_digits_title">Lesa langar tölur tölustaf fyrir tölustaf</string>
     <string name="notification_separate_digits_summary">Til dæmis kóðar og símanúmer</string>
     <string name="notification_min_digits_title">Lágmarksfjöldi tölustafa í langri tölu</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Veifa til að stöðva</string>
     <string name="notification_wave_summary">Færa hönd yfir nálægðarskynjarann</string>
     <string name="notification_pocket_title">Vasastilling</string>
-    <string name="notification_pocket_summary">Skynjari sem er hulinn þegar lestur hefst, eins og í vasa, stoppar hann ekki</string>
+    <string name="notification_pocket_summary">Ef skynjarinn er þegar hulinn þegar lestur hefst, eins og í vasa, stöðvast lesturinn ekki</string>
     <string name="notification_volume_keys_title">Ýta á báða hljóðstyrkstakkana</string>
     <string name="notification_dismiss_title">Stöðva þegar hunsað</string>
     <string name="notification_watch_dismiss_title">Einnig þegar tilkynningunni er vísað frá á snjallúri</string>

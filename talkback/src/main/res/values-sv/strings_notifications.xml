@@ -34,7 +34,7 @@
     <string name="notification_format_title">Talformat</string>
     <string name="notification_format_message">Platshållare: {app}, {title}, {text}, {content} (hela texten), {bigtext}, {subtext}, {ticker}, {category} och {time}.</string>
     <string name="notification_private_format_title">Privata aviseringar läses upp som</string>
-    <string name="notification_private_format_message">Sagt i stället för innehållet i ett privat meddelande. Placeholders: {app}, {category} and {time}.</string>
+    <string name="notification_private_format_message">Sägs i stället för innehållet i en privat avisering. Platshållare: {app}, {category} och {time}.</string>
     <string name="notification_category_voice">Röst</string>
     <string name="notification_voice_title">Röst</string>
     <string name="notification_voice_sandfly">SandFlys röst</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Vinka för att stoppa</string>
     <string name="notification_wave_summary">Flytta en hand över närhetssensorn</string>
     <string name="notification_pocket_title">Fickläge</string>
-    <string name="notification_pocket_summary">En sensor som är täckt när avläsningen startar, som i en ficka, stoppar den inte</string>
+    <string name="notification_pocket_summary">Om sensorn redan är täckt när uppläsningen börjar, som i en ficka, stoppas inte uppläsningen</string>
     <string name="notification_volume_keys_title">Tryck på båda volymknapparna</string>
     <string name="notification_dismiss_title">Sluta läsa när aviseringen stängs</string>
     <string name="notification_watch_dismiss_title">Även när aviseringen avvisas på en smartklocka</string>

@@ -34,7 +34,7 @@
     <string name="notification_format_title">Oblika govora</string>
     <string name="notification_format_message">Oznake mesta: {app}, {title}, {text}, {content} (celotno besedilo), {bigtext}, {subtext}, {ticker}, {category} in {time}.</string>
     <string name="notification_private_format_title">Branje zasebnih obvestil</string>
-    <string name="notification_private_format_message">Povedano namesto vsebine zasebnega obvestila. Oznake mesta: {app}, {category} in {time}.</string>
+    <string name="notification_private_format_message">Izgovori se namesto vsebine zasebnega obvestila. Oznake mesta: {app}, {category} in {time}.</string>
     <string name="notification_category_voice">Glas</string>
     <string name="notification_voice_title">Glas</string>
     <string name="notification_voice_sandfly">Glas SandFly</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Zamah za ustavitev</string>
     <string name="notification_wave_summary">Premikanje roke nad senzorjem bližine</string>
     <string name="notification_pocket_title">Žepni način</string>
-    <string name="notification_pocket_summary">Senzor, ki je ob začetku branja pokrit, kot v žepu, tega ne ustavi</string>
+    <string name="notification_pocket_summary">Če je senzor ob začetku branja že pokrit, na primer v žepu, se branje ne ustavi</string>
     <string name="notification_volume_keys_title">Pritisk obeh tipk za glasnost</string>
     <string name="notification_dismiss_title">Ustavi ob opustitvi</string>
     <string name="notification_watch_dismiss_title">Tudi, ko je obvestilo opuščeno na pametni uri</string>

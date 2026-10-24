@@ -34,7 +34,7 @@
     <string name="notification_format_title">ទម្រង់នៃការនិយាយ</string>
     <string name="notification_format_message">កន្លែងដាក់ជំនួស៖ {app}, {title}, {text}, {content} (អត្ថបទទាំងមូល), {bigtext}, {subtext}, {ticker}, {category} និង {time}។</string>
     <string name="notification_private_format_title">ការអានការជូនដំណឹងឯកជន</string>
-    <string name="notification_private_format_message">បាននិយាយជំនួសឱ្យខ្លឹមសារនៃការជូនដំណឹងឯកជន។ កន្លែងដាក់៖ {app}, {category} និង {time}។</string>
+    <string name="notification_private_format_message">និយាយជំនួសឱ្យខ្លឹមសារនៃការជូនដំណឹងឯកជន។ កន្លែងដាក់ជំនួស៖ {app}, {category} និង {time}។</string>
     <string name="notification_category_voice">សំឡេង</string>
     <string name="notification_voice_title">សំឡេង</string>
     <string name="notification_voice_sandfly">សំឡេងរបស់ SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">អត្ថបទ</string>
     <string name="notification_remove_emoji_title">រំលង emoji</string>
     <string name="notification_lowercase_title">អានអក្សរធំជាពាក្យ</string>
-    <string name="notification_lowercase_summary">ម៉ាស៊ីននិយាយមួយចំនួនប្រកបពាក្យជាអក្សរធំតាមអក្សរ</string>
+    <string name="notification_lowercase_summary">ម៉ាស៊ីននិយាយខ្លះប្រកបពាក្យដែលសរសេរជាអក្សរធំ ម្ដងមួយតួអក្សរ</string>
     <string name="notification_separate_digits_title">អានលេខវែងម្ដងមួយខ្ទង់</string>
     <string name="notification_separate_digits_summary">ដូចជាលេខកូដ និងលេខទូរស័ព្ទ</string>
     <string name="notification_min_digits_title">ចំនួនខ្ទង់អប្បបរមានៃលេខវែង</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">គ្រវីដៃដើម្បីបញ្ឈប់</string>
     <string name="notification_wave_summary">គ្រវីដៃពីលើឧបករណ៍ចាប់ភាពជិត</string>
     <string name="notification_pocket_title">របៀបហោប៉ៅ</string>
-    <string name="notification_pocket_summary">ឧបករណ៍ចាប់សញ្ញាដែលត្រូវបានគ្របដណ្តប់នៅពេលដែលការអានចាប់ផ្តើម ដូចជានៅក្នុងហោប៉ៅ មិនបញ្ឈប់វាទេ</string>
+    <string name="notification_pocket_summary">ប្រសិនបើឧបករណ៍ចាប់សញ្ញាត្រូវបានគ្របរួចហើយពេលចាប់ផ្ដើមអាន ដូចជានៅក្នុងហោប៉ៅ ការអាននឹងមិនឈប់ទេ</string>
     <string name="notification_volume_keys_title">ចុចគ្រាប់ចុចកម្រិតសំឡេងទាំងពីរ</string>
     <string name="notification_dismiss_title">ឈប់ពេលច្រានចោល</string>
     <string name="notification_watch_dismiss_title">ក៏ដូចគ្នាពេលបិទការជូនដំណឹងនៅលើនាឡិកា</string>

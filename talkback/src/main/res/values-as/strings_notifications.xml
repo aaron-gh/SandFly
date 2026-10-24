@@ -34,7 +34,7 @@
     <string name="notification_format_title">কোৱাৰ ফৰ্মেট</string>
     <string name="notification_format_message">স্থানধাৰী: {app}, {title}, {text}, {content} (গোটেই পাঠ), {bigtext}, {subtext}, {ticker}, {category} আৰু {time}।</string>
     <string name="notification_private_format_title">ব্যক্তিগত জাননীৰ বাবে কোৱা কথা</string>
-    <string name="notification_private_format_message">ব্যক্তিগত অধিসূচনাৰ বিষয়বস্তুৰ ঠাইত কোৱা হৈছে। প্লেচহোল্ডাৰ: {app}, {category} আৰু {time}।</string>
+    <string name="notification_private_format_message">ব্যক্তিগত জাননীৰ বিষয়বস্তুৰ সলনি কোৱা হয়। স্থানধাৰী: {app}, {category} আৰু {time}।</string>
     <string name="notification_category_voice">কণ্ঠ</string>
     <string name="notification_voice_title">কণ্ঠ</string>
     <string name="notification_voice_sandfly">SandFly ৰ মাত</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">পাঠ</string>
     <string name="notification_remove_emoji_title">ইমোজি এৰি দিয়ক</string>
     <string name="notification_lowercase_title">ডাঙৰ আখৰবোৰ শব্দ হিচাপে পঢ়ক</string>
-    <string name="notification_lowercase_summary">কিছুমান বাক্য ইঞ্জিনত আখৰ আখৰকৈ ডাঙৰ আখৰেৰে শব্দৰ বানান কৰা হয়</string>
+    <string name="notification_lowercase_summary">কিছুমান কথন ইঞ্জিনে ডাঙৰ আখৰত লিখা শব্দ আখৰে আখৰে পঢ়ে</string>
     <string name="notification_separate_digits_title">দীঘল সংখ্যা অংকে অংকে পঢ়ক</string>
     <string name="notification_separate_digits_summary">যেনে ক’ড আৰু ফোন নম্বৰ</string>
     <string name="notification_min_digits_title">দীঘল সংখ্যাত নূন্যতম অংক</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">বন্ধ কৰিবলৈ হাত জোকাৰক</string>
     <string name="notification_wave_summary">প্ৰক্সিমিটি চেন্সৰৰ ওপৰেৰে হাত এখন লৰচৰ কৰা</string>
     <string name="notification_pocket_title">পকেট মোড</string>
-    <string name="notification_pocket_summary">পকেটৰ দৰে পঢ়া আৰম্ভ হ’লে ঢাকি ৰখা চেন্সৰে ইয়াক বন্ধ নকৰে</string>
+    <string name="notification_pocket_summary">পঢ়া আৰম্ভ হোৱাৰ সময়ত চেন্সৰ ঢাক খাই থাকিলে, যেনে জেপত, পঢ়া বন্ধ নহয়</string>
     <string name="notification_volume_keys_title">দুয়োটা ভলিউম কী টিপক</string>
     <string name="notification_dismiss_title">খাৰিজ কৰিলে বন্ধ কৰক</string>
     <string name="notification_watch_dismiss_title">ঘড়ীত খাৰিজ কৰিলেও</string>

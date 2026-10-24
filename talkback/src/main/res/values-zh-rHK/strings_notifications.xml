@@ -34,7 +34,7 @@
     <string name="notification_format_title">語音格式</string>
     <string name="notification_format_message">佔位符：{app}、{title}、{text}、{content}（全文）、{bigtext}、{subtext}、{ticker}、{category} 和 {time}。</string>
     <string name="notification_private_format_title">私人通知的朗讀內容</string>
-    <string name="notification_private_format_message">表示代替私人通知的內容。佔位符：{app}、{category} 和 {time}。</string>
+    <string name="notification_private_format_message">代替私人通知的內容讀出。佔位符：{app}、{category} 和 {time}。</string>
     <string name="notification_category_voice">語音</string>
     <string name="notification_voice_title">語音</string>
     <string name="notification_voice_sandfly">SandFly的語音</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">文字</string>
     <string name="notification_remove_emoji_title">省略表情符號</string>
     <string name="notification_lowercase_title">將大寫字母讀作單字</string>
-    <string name="notification_lowercase_summary">有些語音引擎逐個字母拼出大寫字母的單字</string>
+    <string name="notification_lowercase_summary">有些語音引擎會逐個字母讀出全部大寫的字詞</string>
     <string name="notification_separate_digits_title">逐位朗讀長數字</string>
     <string name="notification_separate_digits_summary">例如代碼和電話號碼</string>
     <string name="notification_min_digits_title">長數字的最少位數</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">揮手停止</string>
     <string name="notification_wave_summary">在近距離感應器上方揮手</string>
     <string name="notification_pocket_title">口袋模式</string>
-    <string name="notification_pocket_summary">读取开始时被覆盖的传感器（如放在口袋中）不会阻止读取</string>
+    <string name="notification_pocket_summary">如果開始朗讀時感應器已被遮蓋（例如在口袋裡），朗讀不會停止</string>
     <string name="notification_volume_keys_title">同時按下兩個音量鍵</string>
     <string name="notification_dismiss_title">清除通知時停止</string>
     <string name="notification_watch_dismiss_title">在手錶上清除時也停止</string>

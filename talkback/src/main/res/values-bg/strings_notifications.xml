@@ -34,7 +34,7 @@
     <string name="notification_format_title">Формат на речта</string>
     <string name="notification_format_message">Заместители: {app}, {title}, {text}, {content} (целия текст), {bigtext}, {subtext}, {ticker}, {category} и {time}.</string>
     <string name="notification_private_format_title">Текст за личните известия</string>
-    <string name="notification_private_format_message">Казва се вместо съдържанието на частно известие. Заместители: {app}, {category} и {time}.</string>
+    <string name="notification_private_format_message">Казва се вместо съдържанието на лично известие. Заместители: {app}, {category} и {time}.</string>
     <string name="notification_category_voice">Глас</string>
     <string name="notification_voice_title">Глас</string>
     <string name="notification_voice_sandfly">Гласът на SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Текст</string>
     <string name="notification_remove_emoji_title">Пропускане на емотикони</string>
     <string name="notification_lowercase_title">Четене на главните букви като думи</string>
-    <string name="notification_lowercase_summary">Някои машини за реч изписват думи с главни букви буква по буква</string>
+    <string name="notification_lowercase_summary">Някои синтезатори на реч четат думи, изписани с главни букви, буква по буква</string>
     <string name="notification_separate_digits_title">Четене на дълги числа цифра по цифра</string>
     <string name="notification_separate_digits_summary">Като кодове и телефонни номера</string>
     <string name="notification_min_digits_title">Минимален брой цифри в дълго число</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Махване за спиране</string>
     <string name="notification_wave_summary">Преместване на ръка върху сензора за близост</string>
     <string name="notification_pocket_title">Джобен режим</string>
-    <string name="notification_pocket_summary">Сензор, който се покрива при започване на четенето, като в джоб, не го спира</string>
+    <string name="notification_pocket_summary">Ако сензорът вече е покрит, когато четенето започне, например в джоб, четенето не спира</string>
     <string name="notification_volume_keys_title">Натискане на двата бутона за сила на звука</string>
     <string name="notification_dismiss_title">Спиране при отхвърляне</string>
     <string name="notification_watch_dismiss_title">Също така, когато известието е отхвърлено на смарт часовник</string>

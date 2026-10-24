@@ -34,7 +34,7 @@
     <string name="notification_format_title">Hizketa formatua</string>
     <string name="notification_format_message">Leku-markak: {app}, {title}, {text}, {content} (testu osoa), {bigtext}, {subtext}, {ticker}, {category} eta {time}.</string>
     <string name="notification_private_format_title">Jakinarazpen pribatuen irakurketa</string>
-    <string name="notification_private_format_message">Jakinarazpen pribatu baten edukiaren ordez esana. Leku-markak: {app}, {category} eta {time}.</string>
+    <string name="notification_private_format_message">Jakinarazpen pribatu baten edukiaren ordez esaten da. Leku-markak: {app}, {category} eta {time}.</string>
     <string name="notification_category_voice">Ahotsa</string>
     <string name="notification_voice_title">Ahotsa</string>
     <string name="notification_voice_sandfly">SandFlyren ahotsa</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Testua</string>
     <string name="notification_remove_emoji_title">Utzi emojia kanpoan</string>
     <string name="notification_lowercase_title">Irakurri letra larriak hitz gisa</string>
-    <string name="notification_lowercase_summary">Hizketa-motor batzuek letra larriz letra larriz idazten dituzte hitzak</string>
+    <string name="notification_lowercase_summary">Hizketa-motor batzuek letra larriz idatzitako hitzak letraz letra irakurtzen dituzte</string>
     <string name="notification_separate_digits_title">Irakurri zenbaki luzeak zifraz zifra</string>
     <string name="notification_separate_digits_summary">Hala nola, kodeak eta telefono zenbakiak</string>
     <string name="notification_min_digits_title">Zenbaki luze bateko gutxieneko zifra kopurua</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Egin keinu eskuarekin gelditzeko</string>
     <string name="notification_wave_summary">Esku bat hurbiltasun-sentsorearen gainean mugitzea</string>
     <string name="notification_pocket_title">Poltsiko modua</string>
-    <string name="notification_pocket_summary">Irakurtzen hasten denean estalita dagoen sentsore batek, poltsiko batean bezala, ez du gelditzen</string>
+    <string name="notification_pocket_summary">Irakurtzen hastean sentsorea estalita badago, poltsikoan adibidez, irakurketa ez da gelditzen</string>
     <string name="notification_volume_keys_title">Sakatu bolumen-tekla biak</string>
     <string name="notification_dismiss_title">Gelditu baztertzean</string>
     <string name="notification_watch_dismiss_title">Jakinarazpena erloju adimendun batean baztertzen denean ere</string>

@@ -34,7 +34,7 @@
     <string name="notification_format_title">รูปแบบคำพูด</string>
     <string name="notification_format_message">ตัวยึด: {app}, {title}, {text}, {content} (ข้อความทั้งหมด), {bigtext}, {subtext}, {ticker}, {category} และ {time}</string>
     <string name="notification_private_format_title">การอ่านการแจ้งเตือนส่วนตัว</string>
-    <string name="notification_private_format_message">กล่าวแทนเนื้อหาการแจ้งเตือนส่วนตัว ตัวยึด: {app}, {category} และ {time}</string>
+    <string name="notification_private_format_message">พูดแทนเนื้อหาของการแจ้งเตือนส่วนตัว ตัวยึด: {app}, {category} และ {time}</string>
     <string name="notification_category_voice">เสียง</string>
     <string name="notification_voice_title">เสียง</string>
     <string name="notification_voice_sandfly">เสียงของ SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">ข้อความ</string>
     <string name="notification_remove_emoji_title">ข้ามอีโมจิ</string>
     <string name="notification_lowercase_title">อ่านตัวพิมพ์ใหญ่เป็นคำ</string>
-    <string name="notification_lowercase_summary">โปรแกรมคำพูดบางตัวสะกดคำด้วยตัวพิมพ์ใหญ่ทีละตัวอักษร</string>
+    <string name="notification_lowercase_summary">เอนจินเสียงพูดบางตัวสะกดคำที่เขียนด้วยตัวพิมพ์ใหญ่ทีละตัวอักษร</string>
     <string name="notification_separate_digits_title">อ่านตัวเลขยาวทีละหลัก</string>
     <string name="notification_separate_digits_summary">เช่นรหัสและหมายเลขโทรศัพท์</string>
     <string name="notification_min_digits_title">จำนวนหลักขั้นต่ำของตัวเลขยาว</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">โบกมือเพื่อหยุด</string>
     <string name="notification_wave_summary">เลื่อนมือไปเหนือพรอกซิมิตี้เซนเซอร์</string>
     <string name="notification_pocket_title">โหมดในกระเป๋า</string>
-    <string name="notification_pocket_summary">เซ็นเซอร์ที่ถูกปิดไว้เมื่อเริ่มการอ่านจะไม่หยุดการอ่านเช่นเดียวกับในกระเป๋า</string>
+    <string name="notification_pocket_summary">หากเซ็นเซอร์ถูกปิดอยู่แล้วตอนเริ่มอ่าน เช่น อยู่ในกระเป๋า การอ่านจะไม่หยุด</string>
     <string name="notification_volume_keys_title">กดปุ่มปรับระดับเสียงทั้งสองปุ่ม</string>
     <string name="notification_dismiss_title">หยุดอ่านเมื่อปิดการแจ้งเตือน</string>
     <string name="notification_watch_dismiss_title">รวมถึงเมื่อปิดบนนาฬิกา</string>

@@ -34,7 +34,7 @@
     <string name="notification_format_title">音声フォーマット</string>
     <string name="notification_format_message">プレースホルダー: {app}、{title}、{text}、{content} (全文)、{bigtext}、{subtext}、{ticker}、{category}、{time}。</string>
     <string name="notification_private_format_title">プライベート通知の読み上げ内容</string>
-    <string name="notification_private_format_message">非公開通知の内容の代わりに述べられます。プレースホルダー: {app}、{category}、{time}。</string>
+    <string name="notification_private_format_message">非公開の通知の内容の代わりに読み上げます。プレースホルダー: {app}、{category}、{time}。</string>
     <string name="notification_category_voice">音声</string>
     <string name="notification_voice_title">音声</string>
     <string name="notification_voice_sandfly">SandFlyの音声</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">手を振って停止</string>
     <string name="notification_wave_summary">近接センサーの上に手をかざす</string>
     <string name="notification_pocket_title">ポケットモード</string>
-    <string name="notification_pocket_summary">ポケットなどに入れて読み取りを開始するときにセンサーが覆われていても、読み取りは停止しません</string>
+    <string name="notification_pocket_summary">読み上げ開始時にセンサーがすでに覆われている場合（ポケットの中など）、読み上げは停止しません</string>
     <string name="notification_volume_keys_title">両方の音量キーを押す</string>
     <string name="notification_dismiss_title">通知が閉じられたら読むのをやめる</string>
     <string name="notification_watch_dismiss_title">時計で閉じたときも</string>

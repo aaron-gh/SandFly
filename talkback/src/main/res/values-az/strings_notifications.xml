@@ -34,7 +34,7 @@
     <string name="notification_format_title">Nitq formatı</string>
     <string name="notification_format_message">Yer tutanlar: {app}, {title}, {text}, {content} (bütün mətn), {bigtext}, {subtext}, {ticker}, {category} və {time}.</string>
     <string name="notification_private_format_title">Şəxsi bildirişlər üçün deyilən</string>
-    <string name="notification_private_format_message">Şəxsi bildirişin məzmunu yerinə deyildi. Yer tutanlar: {app}, {category} və {time}.</string>
+    <string name="notification_private_format_message">Şəxsi bildirişin məzmunu əvəzinə deyilir. Yer tutanlar: {app}, {category} və {time}.</string>
     <string name="notification_category_voice">Səs</string>
     <string name="notification_voice_title">Səs</string>
     <string name="notification_voice_sandfly">SandFly səsi</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Mətn</string>
     <string name="notification_remove_emoji_title">Emojiləri ötür</string>
     <string name="notification_lowercase_title">Böyük hərfləri söz kimi oxu</string>
-    <string name="notification_lowercase_summary">Bəzi nitq mühərrikləri sözləri böyük hərflərlə hərflə yazır</string>
+    <string name="notification_lowercase_summary">Bəzi nitq mühərrikləri böyük hərflərlə yazılmış sözləri hərf-hərf oxuyur</string>
     <string name="notification_separate_digits_title">Uzun ədədləri rəqəm-rəqəm oxumaq</string>
     <string name="notification_separate_digits_summary">Kodlar və telefon nömrələri kimi</string>
     <string name="notification_min_digits_title">Uzun ədəddə minimum rəqəm sayı</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Dayandırmaq üçün əl yellə</string>
     <string name="notification_wave_summary">Əli yaxınlıq sensorunun üzərindən keçirmək</string>
     <string name="notification_pocket_title">Cib rejimi</string>
-    <string name="notification_pocket_summary">Oxumağa başlayanda örtülmüş sensor, cibdə olduğu kimi, onu dayandırmır</string>
+    <string name="notification_pocket_summary">Oxuma başlayanda sensor artıq örtülüdürsə, məsələn, cibdə, oxuma dayanmır</string>
     <string name="notification_volume_keys_title">Hər iki səs düyməsini basmaq</string>
     <string name="notification_dismiss_title">Bağlananda dayandır</string>
     <string name="notification_watch_dismiss_title">Saatda bağlandıqda da</string>

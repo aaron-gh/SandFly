@@ -34,7 +34,7 @@
     <string name="notification_format_title">Formát řeči</string>
     <string name="notification_format_message">Zástupné symboly: {app}, {title}, {text}, {content} (celý text), {bigtext}, {subtext}, {ticker}, {category} a {time}.</string>
     <string name="notification_private_format_title">Čtení soukromých oznámení</string>
-    <string name="notification_private_format_message">Řečeno místo obsahu soukromého oznámení. Zástupné symboly: {app}, {category} a {time}.</string>
+    <string name="notification_private_format_message">Vysloví se místo obsahu soukromého oznámení. Zástupné symboly: {app}, {category} a {time}.</string>
     <string name="notification_category_voice">Hlas</string>
     <string name="notification_voice_title">Hlas</string>
     <string name="notification_voice_sandfly">Hlas SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Text</string>
     <string name="notification_remove_emoji_title">Vynechat emoji</string>
     <string name="notification_lowercase_title">Číst velká písmena jako slova</string>
-    <string name="notification_lowercase_summary">Některé hlasové nástroje hláskují slova velkými písmeny písmeno po písmenu</string>
+    <string name="notification_lowercase_summary">Některé hlasové moduly hláskují slova psaná velkými písmeny po písmenech</string>
     <string name="notification_separate_digits_title">Číst dlouhá čísla číslici po číslici</string>
     <string name="notification_separate_digits_summary">Například kódy a telefonní čísla</string>
     <string name="notification_min_digits_title">Minimální počet číslic v dlouhém čísle</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Zastavit mávnutím</string>
     <string name="notification_wave_summary">Pohyb ruky nad senzorem přiblížení</string>
     <string name="notification_pocket_title">Kapesní režim</string>
-    <string name="notification_pocket_summary">Senzor, který je při zahájení čtení zakrytý, jako v kapse, jej nezastaví</string>
+    <string name="notification_pocket_summary">Pokud je senzor při zahájení čtení už zakrytý, například v kapse, čtení se nezastaví</string>
     <string name="notification_volume_keys_title">Stisknutí obou tlačítek hlasitosti</string>
     <string name="notification_dismiss_title">Zastavit po zavření</string>
     <string name="notification_watch_dismiss_title">Také když je oznámení na chytrých hodinkách zrušeno</string>

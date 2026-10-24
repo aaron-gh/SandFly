@@ -34,7 +34,7 @@
     <string name="notification_format_title">စကားပြောပုံစံ</string>
     <string name="notification_format_message">နေရာယူစာလုံးများ- {app}၊ {title}၊ {text}၊ {content} (စာသားအားလုံး)၊ {bigtext}၊ {subtext}၊ {ticker}၊ {category} နှင့် {time}။</string>
     <string name="notification_private_format_title">ပုဂ္ဂလိက အကြောင်းကြားချက်များအတွက် ဖတ်မည့်အရာ</string>
-    <string name="notification_private_format_message">သီးသန့် အသိပေးချက်၏ အကြောင်းအရာ နေရာတွင် ပြောကြားခဲ့ပါသည်။ နေရာထိုင်ခင်း- {app}၊ {category} နှင့် {time}။</string>
+    <string name="notification_private_format_message">သီးသန့်အကြောင်းကြားချက်၏ အကြောင်းအရာအစား ပြောသည်။ နေရာယူစာလုံးများ- {app}၊ {category} နှင့် {time}။</string>
     <string name="notification_category_voice">စကားသံ</string>
     <string name="notification_voice_title">စကားသံ</string>
     <string name="notification_voice_sandfly">SandFly အသံ</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">စာသား</string>
     <string name="notification_remove_emoji_title">အီမိုဂျီ ကျော်ရန်</string>
     <string name="notification_lowercase_title">စာလုံးကြီးများကို စကားလုံးအဖြစ် ဖတ်ရန်</string>
-    <string name="notification_lowercase_summary">အချို့သော စကားပြောအင်ဂျင်များသည် စာလုံးအကြီးများကို အက္ခရာဖြင့် စာလုံးပေါင်းပါသည်</string>
+    <string name="notification_lowercase_summary">စကားသံအင်ဂျင်အချို့သည် စာလုံးကြီးဖြင့်ရေးသော စကားလုံးများကို အက္ခရာတစ်လုံးချင်း ဖတ်သည်</string>
     <string name="notification_separate_digits_title">ရှည်လျားသော ဂဏန်းများကို တစ်လုံးချင်း ဖတ်ရန်</string>
     <string name="notification_separate_digits_summary">ကုဒ်များနှင့် ဖုန်းနံပါတ်များ ကဲ့သို့</string>
     <string name="notification_min_digits_title">ရှည်လျားသော ဂဏန်းတစ်ခု၏ အနည်းဆုံး ဂဏန်းလုံးရေ</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">ရပ်ရန် လက်ဝှေ့ယမ်းပါ</string>
     <string name="notification_wave_summary">အနီးကပ် အာရုံခံကိရိယာပေါ်တွင် လက်ဝှေ့ယမ်းခြင်း</string>
     <string name="notification_pocket_title">အိတ်ကပ်မုဒ်</string>
-    <string name="notification_pocket_summary">အိတ်ကပ်ထဲတွင်ကဲ့သို့ စာဖတ်ခြင်းစတင်သောအခါတွင် ဖုံးအုပ်ထားသော အာရုံခံကိရိယာသည် ၎င်းကို မရပ်တန့်ပါ</string>
+    <string name="notification_pocket_summary">စတင်ဖတ်ချိန်တွင် အာရုံခံကိရိယာ ဖုံးထားပြီးဖြစ်ပါက (ဥပမာ အိတ်ကပ်ထဲ) ဖတ်ခြင်း မရပ်ပါ</string>
     <string name="notification_volume_keys_title">အသံ ခလုတ် နှစ်ခုလုံးကို နှိပ်ရန်</string>
     <string name="notification_dismiss_title">ပယ်လိုက်သောအခါ ရပ်ရန်</string>
     <string name="notification_watch_dismiss_title">နာရီတွင် ပယ်လိုက်သည့်အခါလည်း</string>

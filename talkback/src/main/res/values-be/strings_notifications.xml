@@ -34,7 +34,7 @@
     <string name="notification_format_title">Фармат маўлення</string>
     <string name="notification_format_message">Запаўняльнікі: {app}, {title}, {text}, {content} (увесь тэкст), {bigtext}, {subtext}, {ticker}, {category} і {time}.</string>
     <string name="notification_private_format_title">Што чытаць для прыватных апавяшчэнняў</string>
-    <string name="notification_private_format_message">Сказана замест зместу прыватнага паведамлення. Запаўняльнікі: {app}, {category} і {time}.</string>
+    <string name="notification_private_format_message">Агучваецца замест змесціва прыватнага апавяшчэння. Запаўняльнікі: {app}, {category} і {time}.</string>
     <string name="notification_category_voice">Голас</string>
     <string name="notification_voice_title">Голас</string>
     <string name="notification_voice_sandfly">Голас SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Тэкст</string>
     <string name="notification_remove_emoji_title">Прапускаць эмодзі</string>
     <string name="notification_lowercase_title">Чытаць вялікія літары як словы</string>
-    <string name="notification_lowercase_summary">Некаторыя маўленчыя сістэмы пішуць словы з вялікай літары</string>
+    <string name="notification_lowercase_summary">Некаторыя сінтэзатары маўлення чытаюць словы, напісаныя вялікімі літарамі, па літарах</string>
     <string name="notification_separate_digits_title">Чытаць доўгія лікі па лічбах</string>
     <string name="notification_separate_digits_summary">Такія, як коды і нумары тэлефонаў</string>
     <string name="notification_min_digits_title">Мінімум лічбаў у доўгім ліку</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Махнуць рукой для спынення</string>
     <string name="notification_wave_summary">Правядзенне рукой над датчыкам набліжэння</string>
     <string name="notification_pocket_title">Кішэнны рэжым</string>
-    <string name="notification_pocket_summary">Датчык, які пры пачатку чытання накрываецца, як у кішэні, не спыняе</string>
+    <string name="notification_pocket_summary">Калі датчык ужо закрыты ў момант пачатку чытання, напрыклад у кішэні, чытанне не спыняецца</string>
     <string name="notification_volume_keys_title">Націск абедзвюх клавіш гучнасці</string>
     <string name="notification_dismiss_title">Спыняць пры закрыцці</string>
     <string name="notification_watch_dismiss_title">Таксама пры закрыцці на гадзінніку</string>

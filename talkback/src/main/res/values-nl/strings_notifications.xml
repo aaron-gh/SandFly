@@ -34,7 +34,7 @@
     <string name="notification_format_title">Spraakformaat</string>
     <string name="notification_format_message">Tijdelijke aanduidingen: {app}, {title}, {text}, {content} (de hele tekst), {bigtext}, {subtext}, {ticker}, {category} en {time}.</string>
     <string name="notification_private_format_title">Voorlezen van privémeldingen</string>
-    <string name="notification_private_format_message">Gezegd in plaats van de inhoud van een privémelding. Tijdelijke aanduidingen: {app}, {category} en {time}.</string>
+    <string name="notification_private_format_message">Wordt uitgesproken in plaats van de inhoud van een privémelding. Tijdelijke aanduidingen: {app}, {category} en {time}.</string>
     <string name="notification_category_voice">Stem</string>
     <string name="notification_voice_title">Stem</string>
     <string name="notification_voice_sandfly">SandFly\'s stem</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Tekst</string>
     <string name="notification_remove_emoji_title">Emoji weglaten</string>
     <string name="notification_lowercase_title">Lees hoofdletters als woorden</string>
-    <string name="notification_lowercase_summary">Sommige spraakmachines spellen woorden letter voor letter in hoofdletters</string>
+    <string name="notification_lowercase_summary">Sommige spraakengines spellen woorden in hoofdletters letter voor letter</string>
     <string name="notification_separate_digits_title">Lees lange getallen cijfer voor cijfer</string>
     <string name="notification_separate_digits_summary">Zoals codes en telefoonnummers</string>
     <string name="notification_min_digits_title">Minimaal aantal cijfers in een lang getal</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Zwaaien om te stoppen</string>
     <string name="notification_wave_summary">Een hand over de nabijheidssensor bewegen</string>
     <string name="notification_pocket_title">Zakmodus</string>
-    <string name="notification_pocket_summary">Een sensor die wordt afgedekt wanneer het lezen begint, zoals in een zak, houdt het lezen niet tegen</string>
+    <string name="notification_pocket_summary">Als de sensor al bedekt is wanneer het voorlezen begint, zoals in een zak, stopt het voorlezen niet</string>
     <string name="notification_volume_keys_title">Beide volumetoetsen indrukken</string>
     <string name="notification_dismiss_title">Stoppen bij sluiten</string>
     <string name="notification_watch_dismiss_title">Ook wanneer de melding op een smartwatch wordt afgewezen</string>

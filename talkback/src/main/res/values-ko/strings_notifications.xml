@@ -34,7 +34,7 @@
     <string name="notification_format_title">음성 형식</string>
     <string name="notification_format_message">자리 표시자: {app}, {title}, {text}, {content}(전체 텍스트), {bigtext}, {subtext}, {ticker}, {category} 및 {time}.</string>
     <string name="notification_private_format_title">비공개 알림 내용</string>
-    <string name="notification_private_format_message">비공개 알림의 내용을 대신합니다. 자리 표시자: {app}, {category} 및 {time}.</string>
+    <string name="notification_private_format_message">비공개 알림의 내용 대신 읽습니다. 자리 표시자: {app}, {category}, {time}.</string>
     <string name="notification_category_voice">음성</string>
     <string name="notification_voice_title">음성</string>
     <string name="notification_voice_sandfly">SandFly 목소리</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">텍스트</string>
     <string name="notification_remove_emoji_title">이모티콘 제외</string>
     <string name="notification_lowercase_title">대문자를 단어로 읽기</string>
-    <string name="notification_lowercase_summary">일부 음성 엔진은 단어를 문자별로 대문자로 철자합니다.</string>
+    <string name="notification_lowercase_summary">일부 음성 엔진은 대문자로 쓴 단어를 한 글자씩 읽습니다</string>
     <string name="notification_separate_digits_title">긴 숫자를 자릿수 단위로 읽기</string>
     <string name="notification_separate_digits_summary">코드, 전화번호 등</string>
     <string name="notification_min_digits_title">긴 숫자의 최소 자릿수</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">손을 흔들어 중지</string>
     <string name="notification_wave_summary">근접 센서 위로 손을 움직이기</string>
     <string name="notification_pocket_title">포켓 모드</string>
-    <string name="notification_pocket_summary">읽기가 시작되면 주머니에 넣어두듯이 덮는 센서가 멈추지 않습니다.</string>
+    <string name="notification_pocket_summary">읽기를 시작할 때 센서가 이미 가려져 있으면(예: 주머니 속) 읽기가 중지되지 않습니다</string>
     <string name="notification_volume_keys_title">볼륨 키 두 개 누르기</string>
     <string name="notification_dismiss_title">알림이 해제되면 읽기 중지</string>
     <string name="notification_watch_dismiss_title">시계에서 닫을 때도</string>

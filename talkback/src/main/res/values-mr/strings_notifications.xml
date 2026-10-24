@@ -34,7 +34,7 @@
     <string name="notification_format_title">बोलण्याचा फॉरमॅट</string>
     <string name="notification_format_message">प्लेसहोल्डर: {app}, {title}, {text}, {content} (संपूर्ण मजकूर), {bigtext}, {subtext}, {ticker}, {category} आणि {time}.</string>
     <string name="notification_private_format_title">खाजगी सूचनांसाठी काय वाचले जाते</string>
-    <string name="notification_private_format_message">खाजगी अधिसूचनेच्या सामग्रीच्या जागी सांगितले. प्लेसहोल्डर: {app}, {category} आणि {time}.</string>
+    <string name="notification_private_format_message">खाजगी सूचनेच्या मजकुराऐवजी सांगितले जाते. प्लेसहोल्डर: {app}, {category} आणि {time}.</string>
     <string name="notification_category_voice">आवाज</string>
     <string name="notification_voice_title">आवाज</string>
     <string name="notification_voice_sandfly">SandFly चा आवाज</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">मजकूर</string>
     <string name="notification_remove_emoji_title">इमोजी सोडा</string>
     <string name="notification_lowercase_title">कॅपिटल अक्षरे शब्द म्हणून वाचा</string>
-    <string name="notification_lowercase_summary">काही स्पीच इंजिन अक्षरांद्वारे कॅपिटल अक्षरांमध्ये शब्दांचे स्पेलिंग करतात</string>
+    <string name="notification_lowercase_summary">काही स्पीच इंजिन कॅपिटल अक्षरांत लिहिलेले शब्द एकेक अक्षर करून वाचतात</string>
     <string name="notification_separate_digits_title">लांब संख्या अंक-अंक करून वाचा</string>
     <string name="notification_separate_digits_summary">जसे की कोड आणि फोन नंबर</string>
     <string name="notification_min_digits_title">मोठ्या संख्येतील किमान अंक</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">थांबवण्यासाठी हात हलवा</string>
     <string name="notification_wave_summary">प्रॉक्सिमिटी सेन्सरवरून हात फिरवणे</string>
     <string name="notification_pocket_title">पॉकेट मोड</string>
-    <string name="notification_pocket_summary">वाचन सुरू झाल्यावर झाकलेले सेन्सर, खिशात ठेवल्याप्रमाणे, ते थांबवत नाही</string>
+    <string name="notification_pocket_summary">वाचन सुरू होताना सेन्सर आधीच झाकलेला असल्यास, उदा. खिशात, वाचन थांबत नाही</string>
     <string name="notification_volume_keys_title">दोन्ही व्हॉल्यूम की दाबा</string>
     <string name="notification_dismiss_title">डिसमिस केल्यावर थांबवा</string>
     <string name="notification_watch_dismiss_title">घड्याळावर डिसमिस केल्यावरही</string>

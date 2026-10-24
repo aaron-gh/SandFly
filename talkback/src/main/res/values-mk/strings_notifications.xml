@@ -34,7 +34,7 @@
     <string name="notification_format_title">Формат на говор</string>
     <string name="notification_format_message">Ознаки за место: {app}, {title}, {text}, {content} (целиот текст), {bigtext}, {subtext}, {ticker}, {category} и {time}.</string>
     <string name="notification_private_format_title">Читање на приватни известувања</string>
-    <string name="notification_private_format_message">Кажано наместо содржината на приватното известување. Места: {app}, {category} и {time}.</string>
+    <string name="notification_private_format_message">Се изговара наместо содржината на приватно известување. Ознаки за место: {app}, {category} и {time}.</string>
     <string name="notification_category_voice">Глас</string>
     <string name="notification_voice_title">Глас</string>
     <string name="notification_voice_sandfly">Гласот на SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Текст</string>
     <string name="notification_remove_emoji_title">Изостави емотикони</string>
     <string name="notification_lowercase_title">Читај ги големите букви како зборови</string>
-    <string name="notification_lowercase_summary">Некои говорни машини пишуваат зборови со голема буква по буква</string>
+    <string name="notification_lowercase_summary">Некои говорни мотори зборовите напишани со големи букви ги читаат буква по буква</string>
     <string name="notification_separate_digits_title">Читај ги долгите броеви цифра по цифра</string>
     <string name="notification_separate_digits_summary">Како што се кодови и телефонски броеви</string>
     <string name="notification_min_digits_title">Минимален број цифри во долг број</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Мавни за запирање</string>
     <string name="notification_wave_summary">Поместување на раката преку сензорот за близина</string>
     <string name="notification_pocket_title">Џебен режим</string>
-    <string name="notification_pocket_summary">Сензорот што е покриен кога започнува читањето, како во џеб, не го спречува</string>
+    <string name="notification_pocket_summary">Ако сензорот е веќе покриен кога ќе започне читањето, на пример во џеб, читањето не запира</string>
     <string name="notification_volume_keys_title">Притискање на двете копчиња за јачина на звук</string>
     <string name="notification_dismiss_title">Запри при отфрлање</string>
     <string name="notification_watch_dismiss_title">Исто така, кога известувањето е отфрлено на паметен часовник</string>

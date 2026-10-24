@@ -34,7 +34,7 @@
     <string name="notification_format_title">କହିବା ଫର୍ମାଟ୍</string>
     <string name="notification_format_message">ପ୍ଲେସହୋଲ୍ଡର୍: {app}, {title}, {text}, {content} (ପୂରା ଟେକ୍ସଟ୍), {bigtext}, {subtext}, {ticker}, {category} ଓ {time}।</string>
     <string name="notification_private_format_title">ବ୍ୟକ୍ତିଗତ ବିଜ୍ଞପ୍ତି ପାଇଁ କ\'ଣ ପଢ଼ାଯାଏ</string>
-    <string name="notification_private_format_message">ଏକ ବ୍ୟକ୍ତିଗତ ବିଜ୍ଞପ୍ତିର ବିଷୟବସ୍ତୁ ସ୍ଥାନରେ କହିଲା | ସ୍ଥାନଧାରୀ: {app}, {category} ଏବଂ {time} |</string>
+    <string name="notification_private_format_message">ବ୍ୟକ୍ତିଗତ ବିଜ୍ଞପ୍ତିର ବିଷୟବସ୍ତୁ ବଦଳରେ କୁହାଯାଏ। ପ୍ଲେସହୋଲ୍ଡର୍: {app}, {category} ଓ {time}।</string>
     <string name="notification_category_voice">ସ୍ୱର</string>
     <string name="notification_voice_title">ସ୍ୱର</string>
     <string name="notification_voice_sandfly">SandFly ର ସ୍ୱର</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">ପାଠ</string>
     <string name="notification_remove_emoji_title">ଇମୋଜି ଛାଡିଦିଅ</string>
     <string name="notification_lowercase_title">ବଡ଼ ଅକ୍ଷରକୁ ଶବ୍ଦ ଭାବରେ ପଢ଼ନ୍ତୁ</string>
-    <string name="notification_lowercase_summary">କେତେକ ବକ୍ତବ୍ୟ ଇଞ୍ଜିନ୍ କ୍ୟାପିଟାଲ୍ ଅକ୍ଷରରେ ଅକ୍ଷର ବନାନ କରନ୍ତି</string>
+    <string name="notification_lowercase_summary">କେତେକ ସ୍ପିଚ୍ ଇଞ୍ଜିନ୍ କ୍ୟାପିଟାଲ୍ ଅକ୍ଷରରେ ଲେଖା ଶବ୍ଦକୁ ଅକ୍ଷର ଅକ୍ଷର କରି ପଢ଼ନ୍ତି</string>
     <string name="notification_separate_digits_title">ଲମ୍ବା ସଂଖ୍ୟାକୁ ଅଙ୍କ ଅଙ୍କ କରି ପଢ଼ନ୍ତୁ</string>
     <string name="notification_separate_digits_summary">ଯେପରିକି କୋଡ୍ ଏବଂ ଫୋନ୍ ନମ୍ବର</string>
     <string name="notification_min_digits_title">ଏକ ଲମ୍ବା ସଂଖ୍ୟାରେ ସର୍ବନିମ୍ନ ଅଙ୍କ</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">ବନ୍ଦ କରିବାକୁ ହାତ ହଲାନ୍ତୁ</string>
     <string name="notification_wave_summary">ନିକଟତା ସେନ୍ସର ଉପରେ ହାତ ହଲାଇବା</string>
     <string name="notification_pocket_title">ପକେଟ୍ ମୋଡ୍</string>
-    <string name="notification_pocket_summary">ପ reading ିବା ଆରମ୍ଭ ହେବା ସମୟରେ ଆବୃତ ହୋଇଥିବା ଏକ ସେନ୍ସର, ପକେଟ ପରି, ଏହାକୁ ବନ୍ଦ କରେ ନାହିଁ</string>
+    <string name="notification_pocket_summary">ପଢ଼ିବା ଆରମ୍ଭ ସମୟରେ ସେନ୍ସର୍ ପୂର୍ବରୁ ଢାଙ୍କି ହୋଇଥିଲେ, ଯେପରି ପକେଟରେ, ପଢ଼ିବା ବନ୍ଦ ହୁଏ ନାହିଁ</string>
     <string name="notification_volume_keys_title">ଉଭୟ ଭଲ୍ୟୁମ୍ କୀ ଦବାନ୍ତୁ</string>
     <string name="notification_dismiss_title">ଖାରଜ ହେଲେ ବନ୍ଦ କରନ୍ତୁ</string>
     <string name="notification_watch_dismiss_title">ୱାଚରେ ଖାରଜ କଲେ ମଧ୍ୟ</string>

@@ -34,7 +34,7 @@
     <string name="notification_format_title">बोलने का फ़ॉर्मैट</string>
     <string name="notification_format_message">प्लेसहोल्डर: {app}, {title}, {text}, {content} (संपूर्ण पाठ), {bigtext}, {subtext}, {ticker}, {category} और {time}।</string>
     <string name="notification_private_format_title">निजी सूचनाओं के लिए क्या बोला जाए</string>
-    <string name="notification_private_format_message">एक निजी अधिसूचना की सामग्री के स्थान पर कहा गया। प्लेसहोल्डर: {app}, {category} और {time}।</string>
+    <string name="notification_private_format_message">निजी सूचना की सामग्री की जगह बोला जाता है। प्लेसहोल्डर: {app}, {category} और {time}।</string>
     <string name="notification_category_voice">वॉइस</string>
     <string name="notification_voice_title">वॉइस</string>
     <string name="notification_voice_sandfly">SandFly की आवाज</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">टेक्स्ट</string>
     <string name="notification_remove_emoji_title">इमोजी छोड़ें</string>
     <string name="notification_lowercase_title">बड़े अक्षरों को शब्दों के रूप में पढ़ें</string>
-    <string name="notification_lowercase_summary">कुछ भाषण इंजन बड़े अक्षरों में शब्दों को अक्षर दर अक्षर लिखते हैं</string>
+    <string name="notification_lowercase_summary">कुछ स्पीच इंजन कैपिटल अक्षरों में लिखे शब्दों को एक-एक अक्षर करके पढ़ते हैं</string>
     <string name="notification_separate_digits_title">लंबी संख्याओं को अंक दर अंक पढ़ें</string>
     <string name="notification_separate_digits_summary">जैसे कोड और फ़ोन नंबर</string>
     <string name="notification_min_digits_title">लंबी संख्या में न्यूनतम अंक</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">रोकने के लिए हाथ हिलाएं</string>
     <string name="notification_wave_summary">निकटता सेंसर पर हाथ ले जाना</string>
     <string name="notification_pocket_title">पॉकेट मोड</string>
-    <string name="notification_pocket_summary">एक सेंसर जो रीडिंग शुरू होने पर ढका हुआ होता है, जैसे जेब में होता है, वह इसे रोकता नहीं है</string>
+    <string name="notification_pocket_summary">पढ़ना शुरू होते समय सेंसर पहले से ढका हो, जैसे जेब में, तो पढ़ना नहीं रुकता</string>
     <string name="notification_volume_keys_title">दोनों वॉल्यूम कुंजियाँ दबाएँ</string>
     <string name="notification_dismiss_title">खारिज करने पर रोकें</string>
     <string name="notification_watch_dismiss_title">घड़ी पर खारिज करने पर भी</string>

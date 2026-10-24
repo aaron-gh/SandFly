@@ -34,7 +34,7 @@
     <string name="notification_format_title">Сөйлеу пішімі</string>
     <string name="notification_format_message">Толтырғыштар: {app}, {title}, {text}, {content} (барлық мәтін), {bigtext}, {subtext}, {ticker}, {category} және {time}.</string>
     <string name="notification_private_format_title">Жеке хабарландыруларды оқу</string>
-    <string name="notification_private_format_message">Жеке хабарландыру мазмұнының орнына айтылған. Толтырғыштар: {app}, {category} және {time}.</string>
+    <string name="notification_private_format_message">Жеке хабарландыру мазмұнының орнына айтылады. Толтырғыштар: {app}, {category} және {time}.</string>
     <string name="notification_category_voice">Дауыс</string>
     <string name="notification_voice_title">Дауыс</string>
     <string name="notification_voice_sandfly">SandFly дауысы</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Тоқтату үшін қол бұлғау</string>
     <string name="notification_wave_summary">Қолды жақындық сенсорының үстіне жылжыту</string>
     <string name="notification_pocket_title">Қалта режимі</string>
-    <string name="notification_pocket_summary">Оқу басталған кезде қалтадағыдай жабылған сенсор оны тоқтатпайды</string>
+    <string name="notification_pocket_summary">Оқу басталғанда сенсор жабық тұрса, мысалы қалтада, оқу тоқтамайды</string>
     <string name="notification_volume_keys_title">Екі дыбыс пернесін басу</string>
     <string name="notification_dismiss_title">Хабарландыру жабылғанда оқуды тоқтату</string>
     <string name="notification_watch_dismiss_title">Сағатта жабылғанда да</string>

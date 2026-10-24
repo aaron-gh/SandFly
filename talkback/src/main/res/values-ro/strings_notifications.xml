@@ -34,7 +34,7 @@
     <string name="notification_format_title">Formatul vorbirii</string>
     <string name="notification_format_message">Substituenți: {app}, {title}, {text}, {content} (întregul text), {bigtext}, {subtext}, {ticker}, {category} și {time}.</string>
     <string name="notification_private_format_title">Citirea notificărilor private</string>
-    <string name="notification_private_format_message">A spus în locul conținutului unei notificări private. Substituenți: {app}, {category} și {time}.</string>
+    <string name="notification_private_format_message">Se rostește în locul conținutului unei notificări private. Substituenți: {app}, {category} și {time}.</string>
     <string name="notification_category_voice">Voce</string>
     <string name="notification_voice_title">Voce</string>
     <string name="notification_voice_sandfly">Vocea lui SandFly</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Flutură mâna pentru oprire</string>
     <string name="notification_wave_summary">Trecerea mâinii peste senzorul de proximitate</string>
     <string name="notification_pocket_title">Mod buzunar</string>
-    <string name="notification_pocket_summary">Un senzor care este acoperit când începe citirea, ca într-un buzunar, nu îl oprește</string>
+    <string name="notification_pocket_summary">Dacă senzorul este deja acoperit când începe citirea, ca într-un buzunar, citirea nu se oprește</string>
     <string name="notification_volume_keys_title">Apăsarea ambelor taste de volum</string>
     <string name="notification_dismiss_title">Oprește la închidere</string>
     <string name="notification_watch_dismiss_title">De asemenea, când este respinsă pe un ceas</string>

@@ -34,7 +34,7 @@
     <string name="notification_format_title">פורמט דיבור</string>
     <string name="notification_format_message">מצייני מיקום: {app}, {title}, {text}, {content} (כל הטקסט), {bigtext}, {subtext}, {ticker}, {category} ו-{time}.</string>
     <string name="notification_private_format_title">הקראת התראות פרטיות</string>
-    <string name="notification_private_format_message">נאמר במקום תוכן של הודעה פרטית. מצייני מיקום: {app}, {category} ו-{time}.</string>
+    <string name="notification_private_format_message">מוקרא במקום התוכן של התראה פרטית. מצייני מיקום: {app}, {category} ו-{time}.</string>
     <string name="notification_category_voice">קול</string>
     <string name="notification_voice_title">קול</string>
     <string name="notification_voice_sandfly">הקול של SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">טקסט</string>
     <string name="notification_remove_emoji_title">השמטת אימוג\'י</string>
     <string name="notification_lowercase_title">הקראת אותיות רישיות כמילים</string>
-    <string name="notification_lowercase_summary">מנועי דיבור מסוימים מאייתים מילים באותיות רישיות אות אחר אות</string>
+    <string name="notification_lowercase_summary">חלק ממנועי הדיבור מאייתים אות אחר אות מילים שנכתבו באותיות רישיות</string>
     <string name="notification_separate_digits_title">הקראת מספרים ארוכים ספרה אחר ספרה</string>
     <string name="notification_separate_digits_summary">כמו קודים ומספרי טלפון</string>
     <string name="notification_min_digits_title">ספרות מינימום במספר ארוך</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">נפנוף יד לעצירה</string>
     <string name="notification_wave_summary">העברת יד מעל חיישן הקרבה</string>
     <string name="notification_pocket_title">מצב כיס</string>
-    <string name="notification_pocket_summary">חיישן שמכוסה בעת תחילת הקריאה, כמו בכיס, לא עוצר אותו</string>
+    <string name="notification_pocket_summary">אם החיישן כבר מכוסה כשההקראה מתחילה, למשל בכיס, ההקראה לא נעצרת</string>
     <string name="notification_volume_keys_title">לחיצה על שני מקשי עוצמת הקול</string>
     <string name="notification_dismiss_title">עצירה כשההתראה נסגרת</string>
     <string name="notification_watch_dismiss_title">גם כשההתראה נסגרת בשעון</string>

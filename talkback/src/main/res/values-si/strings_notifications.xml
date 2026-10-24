@@ -34,7 +34,7 @@
     <string name="notification_format_title">කථන ආකෘතිය</string>
     <string name="notification_format_message">ස්ථාන දරන්නන්: {app}, {title}, {text}, {content} (සම්පූර්ණ පෙළ), {bigtext}, {subtext}, {ticker}, {category} සහ {time}.</string>
     <string name="notification_private_format_title">පුද්ගලික දැනුම්දීම් කියවීම</string>
-    <string name="notification_private_format_message">පුද්ගලික දැනුම්දීමක අන්තර්ගතය වෙනුවට කීවේය. ස්ථාන දරන්නන්: {app}, {category} සහ {time}.</string>
+    <string name="notification_private_format_message">පෞද්ගලික දැනුම්දීමක අන්තර්ගතය වෙනුවට කියනු ලැබේ. ස්ථාන දරන්නන්: {app}, {category} සහ {time}.</string>
     <string name="notification_category_voice">හඬ</string>
     <string name="notification_voice_title">හඬ</string>
     <string name="notification_voice_sandfly">SandFly හඬ</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">පෙළ</string>
     <string name="notification_remove_emoji_title">ඉමොජි අතහරින්න</string>
     <string name="notification_lowercase_title">ලොකු අකුරු වචන ලෙස කියවන්න</string>
-    <string name="notification_lowercase_summary">සමහර කථන යන්ත්‍ර අකුරෙන් අකුර ලොකු අකුරින් වචන උච්චාරණය කරයි</string>
+    <string name="notification_lowercase_summary">සමහර කථන එන්ජින් කැපිටල් අකුරින් ලියූ වචන අකුරෙන් අකුර කියවයි</string>
     <string name="notification_separate_digits_title">දිගු අංක ඉලක්කමෙන් ඉලක්කම කියවන්න</string>
     <string name="notification_separate_digits_summary">කේත සහ දුරකථන අංක වැනි</string>
     <string name="notification_min_digits_title">දිගු අංකයක අවම ඉලක්කම්</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">නැවැත්වීමට අත වනන්න</string>
     <string name="notification_wave_summary">සමීප සංවේදකය මත අතක් ගෙන යාම</string>
     <string name="notification_pocket_title">පොකට් මාදිලිය</string>
-    <string name="notification_pocket_summary">කියවීම ආරම්භ වන විට ආවරණය කර ඇති සංවේදකයක්, සාක්කුවක මෙන්, එය නවත්වන්නේ නැත</string>
+    <string name="notification_pocket_summary">කියවීම ආරම්භ වන විට සංවේදකය දැනටමත් ආවරණය වී ඇත්නම්, සාක්කුවක මෙන්, කියවීම නොනවතී</string>
     <string name="notification_volume_keys_title">වෙළුම් යතුරු දෙකම ඔබන්න</string>
     <string name="notification_dismiss_title">ඉවත දැමූ විට නවත්වන්න</string>
     <string name="notification_watch_dismiss_title">ස්මාර්ට් ඔරලෝසුවක දැනුම්දීම ඉවත දැමූ විටද</string>

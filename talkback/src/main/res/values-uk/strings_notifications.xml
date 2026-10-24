@@ -34,7 +34,7 @@
     <string name="notification_format_title">Формат мовлення</string>
     <string name="notification_format_message">Заповнювачі: {app}, {title}, {text}, {content} (весь текст), {bigtext}, {subtext}, {ticker}, {category} та {time}.</string>
     <string name="notification_private_format_title">Читання приватних сповіщень</string>
-    <string name="notification_private_format_message">Сказано замість вмісту приватного сповіщення. Заповнювачі: {app}, {category} і {time}.</string>
+    <string name="notification_private_format_message">Озвучується замість вмісту приватного сповіщення. Заповнювачі: {app}, {category} та {time}.</string>
     <string name="notification_category_voice">Голос</string>
     <string name="notification_voice_title">Голос</string>
     <string name="notification_voice_sandfly">Голос SandFly</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Махнути рукою для зупинки</string>
     <string name="notification_wave_summary">Проведення рукою над датчиком наближення</string>
     <string name="notification_pocket_title">Кишеньковий режим</string>
-    <string name="notification_pocket_summary">Сенсор, який при початку зчитування накривається, як в кишені, не зупиняє</string>
+    <string name="notification_pocket_summary">Якщо датчик уже закритий на початку читання, наприклад у кишені, читання не зупиняється</string>
     <string name="notification_volume_keys_title">Натискання обох клавіш гучності</string>
     <string name="notification_dismiss_title">Припинити читання, коли сповіщення закрито</string>
     <string name="notification_watch_dismiss_title">Також коли закрито на годиннику</string>

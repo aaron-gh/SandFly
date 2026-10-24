@@ -34,7 +34,7 @@
     <string name="notification_format_title">Formát reči</string>
     <string name="notification_format_message">Zástupné symboly: {app}, {title}, {text}, {content} (celý text), {bigtext}, {subtext}, {ticker}, {category} a {time}.</string>
     <string name="notification_private_format_title">Čítanie súkromných upozornení</string>
-    <string name="notification_private_format_message">Uvedené namiesto obsahu súkromného oznámenia. Zástupné symboly: {app}, {category} a {time}.</string>
+    <string name="notification_private_format_message">Vysloví sa namiesto obsahu súkromného upozornenia. Zástupné symboly: {app}, {category} a {time}.</string>
     <string name="notification_category_voice">Hlas</string>
     <string name="notification_voice_title">Hlas</string>
     <string name="notification_voice_sandfly">Hlas SandFly</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Zastaviť mávnutím</string>
     <string name="notification_wave_summary">Presunutie ruky nad senzor priblíženia</string>
     <string name="notification_pocket_title">Vreckový režim</string>
-    <string name="notification_pocket_summary">Senzor, ktorý je pri spustení čítania zakrytý, ako vo vrecku, ho nezastaví</string>
+    <string name="notification_pocket_summary">Ak je senzor na začiatku čítania už zakrytý, napríklad vo vrecku, čítanie sa nezastaví</string>
     <string name="notification_volume_keys_title">Stlačenie oboch tlačidiel hlasitosti</string>
     <string name="notification_dismiss_title">Zastaviť po zavretí</string>
     <string name="notification_watch_dismiss_title">Aj pri zrušení upozornenia na inteligentných hodinkách</string>

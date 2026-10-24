@@ -44,7 +44,7 @@
     <string name="notification_category_text">Texte</string>
     <string name="notification_remove_emoji_title">Omettre les emoji</string>
     <string name="notification_lowercase_title">Lire les majuscules comme des mots</string>
-    <string name="notification_lowercase_summary">Certains moteurs vocaux épellent les mots en majuscules lettre par lettre</string>
+    <string name="notification_lowercase_summary">Certains moteurs vocaux épellent lettre par lettre les mots écrits en majuscules</string>
     <string name="notification_separate_digits_title">Lire les nombres longs chiffre par chiffre</string>
     <string name="notification_separate_digits_summary">Tels que les codes et les numéros de téléphone</string>
     <string name="notification_min_digits_title">Les nombres longs ont au moins</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Passer la main pour arrêter</string>
     <string name="notification_wave_summary">Passer la main sur le capteur de proximité</string>
     <string name="notification_pocket_title">Mode poche</string>
-    <string name="notification_pocket_summary">Un capteur recouvert au démarrage de la lecture, comme dans une poche, ne l\'arrête pas</string>
+    <string name="notification_pocket_summary">Si le capteur est déjà couvert au début de la lecture, comme dans une poche, la lecture ne s\'arrête pas</string>
     <string name="notification_volume_keys_title">Appuyer sur les deux touches de volume</string>
     <string name="notification_dismiss_title">Arrêter quand la notification est supprimée</string>
     <string name="notification_watch_dismiss_title">Aussi lors de la suppression sur une montre</string>

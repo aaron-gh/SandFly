@@ -34,7 +34,7 @@
     <string name="notification_format_title">ਸਪੀਚ ਫਾਰਮੈਟ</string>
     <string name="notification_format_message">ਪਲੇਸਹੋਲਡਰ: {app}, {title}, {text}, {content} (ਪੂਰਾ ਟੈਕਸਟ), {bigtext}, {subtext}, {ticker}, {category} ਅਤੇ {time}।</string>
     <string name="notification_private_format_title">ਨਿੱਜੀ ਸੂਚਨਾਵਾਂ ਲਈ ਕੀ ਪੜ੍ਹਿਆ ਜਾਵੇ</string>
-    <string name="notification_private_format_message">ਇੱਕ ਪ੍ਰਾਈਵੇਟ ਨੋਟੀਫਿਕੇਸ਼ਨ ਦੀ ਸਮੱਗਰੀ ਦੀ ਥਾਂ \'ਤੇ ਕਿਹਾ ਗਿਆ ਹੈ। ਪਲੇਸਹੋਲਡਰ: {app}, {category} ਅਤੇ {time}।</string>
+    <string name="notification_private_format_message">ਨਿੱਜੀ ਸੂਚਨਾ ਦੀ ਸਮੱਗਰੀ ਦੀ ਥਾਂ ਬੋਲਿਆ ਜਾਂਦਾ ਹੈ। ਪਲੇਸਹੋਲਡਰ: {app}, {category} ਅਤੇ {time}।</string>
     <string name="notification_category_voice">ਆਵਾਜ਼</string>
     <string name="notification_voice_title">ਆਵਾਜ਼</string>
     <string name="notification_voice_sandfly">SandFly ਦੀ ਅਵਾਜ਼</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">ਟੈਕਸਟ</string>
     <string name="notification_remove_emoji_title">ਇਮੋਜੀ ਛੱਡੋ</string>
     <string name="notification_lowercase_title">ਵੱਡੇ ਅੱਖਰਾਂ ਨੂੰ ਸ਼ਬਦਾਂ ਵਜੋਂ ਪੜ੍ਹੋ</string>
-    <string name="notification_lowercase_summary">ਕੁਝ ਸਪੀਚ ਇੰਜਣ ਵੱਡੇ ਅੱਖਰਾਂ ਵਿੱਚ ਅੱਖਰਾਂ ਵਿੱਚ ਸ਼ਬਦਾਂ ਦੀ ਸਪੈਲਿੰਗ ਕਰਦੇ ਹਨ</string>
+    <string name="notification_lowercase_summary">ਕੁਝ ਸਪੀਚ ਇੰਜਣ ਵੱਡੇ ਅੱਖਰਾਂ ਵਿੱਚ ਲਿਖੇ ਸ਼ਬਦਾਂ ਨੂੰ ਇੱਕ-ਇੱਕ ਅੱਖਰ ਕਰਕੇ ਪੜ੍ਹਦੇ ਹਨ</string>
     <string name="notification_separate_digits_title">ਲੰਬੇ ਨੰਬਰ ਅੰਕ-ਅੰਕ ਕਰਕੇ ਪੜ੍ਹੋ</string>
     <string name="notification_separate_digits_summary">ਜਿਵੇਂ ਕਿ ਕੋਡ ਅਤੇ ਫ਼ੋਨ ਨੰਬਰ</string>
     <string name="notification_min_digits_title">ਇੱਕ ਲੰਬੀ ਸੰਖਿਆ ਵਿੱਚ ਨਿਊਨਤਮ ਅੰਕ</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">ਰੋਕਣ ਲਈ ਹੱਥ ਹਿਲਾਓ</string>
     <string name="notification_wave_summary">ਨੇੜਤਾ ਸੂਚਕ ਉੱਤੇ ਇੱਕ ਹੱਥ ਹਿਲਾਉਣਾ</string>
     <string name="notification_pocket_title">ਜੇਬ ਮੋਡ</string>
-    <string name="notification_pocket_summary">ਇੱਕ ਸੈਂਸਰ ਜੋ ਪੜ੍ਹਨਾ ਸ਼ੁਰੂ ਹੋਣ \'ਤੇ ਕਵਰ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਜਿਵੇਂ ਕਿ ਜੇਬ ਵਿੱਚ ਹੁੰਦਾ ਹੈ, ਇਸਨੂੰ ਰੋਕਦਾ ਨਹੀਂ ਹੈ</string>
+    <string name="notification_pocket_summary">ਪੜ੍ਹਨਾ ਸ਼ੁਰੂ ਹੋਣ ’ਤੇ ਸੈਂਸਰ ਪਹਿਲਾਂ ਹੀ ਢੱਕਿਆ ਹੋਵੇ, ਜਿਵੇਂ ਜੇਬ ਵਿੱਚ, ਤਾਂ ਪੜ੍ਹਨਾ ਨਹੀਂ ਰੁਕਦਾ</string>
     <string name="notification_volume_keys_title">ਦੋਵੇਂ ਵਾਲੀਅਮ ਕੁੰਜੀਆਂ ਦਬਾਓ</string>
     <string name="notification_dismiss_title">ਖਾਰਜ ਕਰਨ \'ਤੇ ਰੋਕੋ</string>
     <string name="notification_watch_dismiss_title">ਘੜੀ \'ਤੇ ਖਾਰਜ ਕਰਨ \'ਤੇ ਵੀ</string>

@@ -34,7 +34,7 @@
     <string name="notification_format_title">Puhemuoto</string>
     <string name="notification_format_message">Paikkamerkit: {app}, {title}, {text}, {content} (koko teksti), {bigtext}, {subtext}, {ticker}, {category} ja {time}.</string>
     <string name="notification_private_format_title">Yksityisten ilmoitusten lukeminen</string>
-    <string name="notification_private_format_message">Sanotaan yksityisen ilmoituksen sisällön sijasta. Paikkamerkit: {app}, {category} ja {time}.</string>
+    <string name="notification_private_format_message">Sanotaan yksityisen ilmoituksen sisällön sijaan. Paikkamerkit: {app}, {category} ja {time}.</string>
     <string name="notification_category_voice">Ääni</string>
     <string name="notification_voice_title">Ääni</string>
     <string name="notification_voice_sandfly">SandFlyn ääni</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Teksti</string>
     <string name="notification_remove_emoji_title">Jätä emoji pois</string>
     <string name="notification_lowercase_title">Lue isot kirjaimet sanoina</string>
-    <string name="notification_lowercase_summary">Jotkut puhekoneet kirjoittavat sanat isoin kirjaimin kirjain kirjaimelta</string>
+    <string name="notification_lowercase_summary">Jotkin puhemoottorit tavaavat isoilla kirjaimilla kirjoitetut sanat kirjain kerrallaan</string>
     <string name="notification_separate_digits_title">Lue pitkät luvut numero kerrallaan</string>
     <string name="notification_separate_digits_summary">Kuten koodit ja puhelinnumerot</string>
     <string name="notification_min_digits_title">Pitkän luvun vähimmäisnumeromäärä</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Heilauta lopettaaksesi</string>
     <string name="notification_wave_summary">Käden siirtäminen läheisyysanturin yli</string>
     <string name="notification_pocket_title">Taskutila</string>
-    <string name="notification_pocket_summary">Lukemisen alkaessa peitetty anturi, kuten taskussa, ei estä sitä</string>
+    <string name="notification_pocket_summary">Jos anturi on jo peitossa lukemisen alkaessa, esimerkiksi taskussa, lukeminen ei pysähdy</string>
     <string name="notification_volume_keys_title">Paina molempia äänenvoimakkuusnäppäimiä</string>
     <string name="notification_dismiss_title">Lopeta, kun ohitetaan</string>
     <string name="notification_watch_dismiss_title">Myös silloin, kun ilmoitus hylätään älykellossa</string>

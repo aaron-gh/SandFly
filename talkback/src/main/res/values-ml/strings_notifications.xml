@@ -34,7 +34,7 @@
     <string name="notification_format_title">സംഭാഷണ ഫോർമാറ്റ്</string>
     <string name="notification_format_message">പ്ലേസ്‌ഹോൾഡറുകൾ: {app}, {title}, {text}, {content} (മുഴുവൻ വാചകം), {bigtext}, {subtext}, {ticker}, {category}, {time}.</string>
     <string name="notification_private_format_title">സ്വകാര്യ അറിയിപ്പുകൾക്ക് വായിക്കുന്നത്</string>
-    <string name="notification_private_format_message">ഒരു സ്വകാര്യ അറിയിപ്പിൻ്റെ ഉള്ളടക്കത്തിന് പകരം പറഞ്ഞു. പ്ലെയ്‌സ്‌ഹോൾഡറുകൾ: {app}, {category}, {time}.</string>
+    <string name="notification_private_format_message">സ്വകാര്യ അറിയിപ്പിന്റെ ഉള്ളടക്കത്തിന് പകരം പറയുന്നു. പ്ലേസ്‌ഹോൾഡറുകൾ: {app}, {category}, {time}.</string>
     <string name="notification_category_voice">ശബ്ദം</string>
     <string name="notification_voice_title">ശബ്ദം</string>
     <string name="notification_voice_sandfly">SandFly ൻ്റെ ശബ്ദം</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">നിർത്താൻ കൈ വീശുക</string>
     <string name="notification_wave_summary">പ്രോക്സിമിറ്റി സെൻസറിന് മുകളിലൂടെ കൈ ചലിപ്പിക്കൽ</string>
     <string name="notification_pocket_title">പോക്കറ്റ് മോഡ്</string>
-    <string name="notification_pocket_summary">ഒരു പോക്കറ്റിലെന്നപോലെ വായന ആരംഭിക്കുമ്പോൾ മൂടിയിരിക്കുന്ന ഒരു സെൻസർ അത് നിർത്തുന്നില്ല</string>
+    <string name="notification_pocket_summary">വായന തുടങ്ങുമ്പോൾ സെൻസർ ഇതിനകം മറഞ്ഞിരിക്കുകയാണെങ്കിൽ, ഉദാഹരണത്തിന് പോക്കറ്റിൽ, വായന നിൽക്കില്ല</string>
     <string name="notification_volume_keys_title">രണ്ട് വോളിയം കീകളും അമർത്തുക</string>
     <string name="notification_dismiss_title">അടച്ചാൽ നിർത്തുക</string>
     <string name="notification_watch_dismiss_title">വാച്ചിൽ നിരസിക്കുമ്പോഴും</string>

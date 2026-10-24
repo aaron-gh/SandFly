@@ -34,7 +34,7 @@
     <string name="notification_format_title">Format govora</string>
     <string name="notification_format_message">Čuvari mjesta: {app}, {title}, {text}, {content} (cijeli tekst), {bigtext}, {subtext}, {ticker}, {category} i {time}.</string>
     <string name="notification_private_format_title">Čitanje privatnih obavještenja</string>
-    <string name="notification_private_format_message">Rečeno umjesto sadržaja privatnog obavještenja. Čuvari mjesta: {app}, {category} i {time}.</string>
+    <string name="notification_private_format_message">Izgovara se umjesto sadržaja privatnog obavještenja. Čuvari mjesta: {app}, {category} i {time}.</string>
     <string name="notification_category_voice">Glas</string>
     <string name="notification_voice_title">Glas</string>
     <string name="notification_voice_sandfly">SandFly-ov glas</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Tekst</string>
     <string name="notification_remove_emoji_title">Izostavi emoji</string>
     <string name="notification_lowercase_title">Čitaj velika slova kao riječi</string>
-    <string name="notification_lowercase_summary">Neki govorni strojevi izgovaraju riječi velikim slovima slovo po slovo</string>
+    <string name="notification_lowercase_summary">Neki govorni mehanizmi izgovaraju riječi napisane velikim slovima slovo po slovo</string>
     <string name="notification_separate_digits_title">Čitanje dugih brojeva cifru po cifru</string>
     <string name="notification_separate_digits_summary">Kao što su kodovi i brojevi telefona</string>
     <string name="notification_min_digits_title">Minimalni broj cifara u dugom broju</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Odmahni za zaustavljanje</string>
     <string name="notification_wave_summary">Pomicanje ruke preko senzora blizine</string>
     <string name="notification_pocket_title">Džepni način rada</string>
-    <string name="notification_pocket_summary">Senzor koji je prekriven kada čitanje počne, kao u džepu, ne zaustavlja ga</string>
+    <string name="notification_pocket_summary">Ako je senzor već prekriven kada čitanje počne, kao u džepu, čitanje se ne zaustavlja</string>
     <string name="notification_volume_keys_title">Pritisak na obje tipke za jačinu zvuka</string>
     <string name="notification_dismiss_title">Zaustavi pri odbacivanju</string>
     <string name="notification_watch_dismiss_title">Također kada je obavještenje odbačeno na pametnom satu</string>

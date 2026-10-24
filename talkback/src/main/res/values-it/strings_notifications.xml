@@ -34,7 +34,7 @@
     <string name="notification_format_title">Formato della lettura</string>
     <string name="notification_format_message">Segnaposto: {app}, {title}, {text}, {content} (l\'intero testo), {bigtext}, {subtext}, {ticker}, {category} e {time}.</string>
     <string name="notification_private_format_title">Lettura delle notifiche private</string>
-    <string name="notification_private_format_message">Detto al posto del contenuto di una notifica privata. Segnaposto: {app}, {category} e {time}.</string>
+    <string name="notification_private_format_message">Pronunciato al posto del contenuto di una notifica privata. Segnaposto: {app}, {category} e {time}.</string>
     <string name="notification_category_voice">Voce</string>
     <string name="notification_voice_title">Voce</string>
     <string name="notification_voice_sandfly">La voce di SandFly</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">Testo</string>
     <string name="notification_remove_emoji_title">Ometti le emoji</string>
     <string name="notification_lowercase_title">Leggi le maiuscole come parole</string>
-    <string name="notification_lowercase_summary">Alcuni motori vocali pronunciano le parole in maiuscolo lettera per lettera</string>
+    <string name="notification_lowercase_summary">Alcuni motori di sintesi vocale leggono lettera per lettera le parole scritte in maiuscolo</string>
     <string name="notification_separate_digits_title">Leggere numeri lunghi cifra per cifra</string>
     <string name="notification_separate_digits_summary">Come codici e numeri di telefono</string>
     <string name="notification_min_digits_title">Numero minimo di cifre in un numero lungo</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Agita la mano per fermare</string>
     <string name="notification_wave_summary">Passare una mano sul sensore di prossimità</string>
     <string name="notification_pocket_title">Modalità tasca</string>
-    <string name="notification_pocket_summary">Un sensore che viene coperto quando inizia la lettura, come in una tasca, non la ferma</string>
+    <string name="notification_pocket_summary">Se il sensore è già coperto quando inizia la lettura, come in una tasca, la lettura non si interrompe</string>
     <string name="notification_volume_keys_title">Premere entrambi i tasti del volume</string>
     <string name="notification_dismiss_title">Interrompi all\'eliminazione</string>
     <string name="notification_watch_dismiss_title">Anche quando la notifica viene respinta su uno smartwatch</string>

@@ -34,7 +34,7 @@
     <string name="notification_format_title">ಮಾತಿನ ಸ್ವರೂಪ</string>
     <string name="notification_format_message">ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್‌ಗಳು: {app}, {title}, {text}, {content} (ಸಂಪೂರ್ಣ ಪಠ್ಯ), {bigtext}, {subtext}, {ticker}, {category} ಮತ್ತು {time}.</string>
     <string name="notification_private_format_title">ಖಾಸಗಿ ಅಧಿಸೂಚನೆಗಳಿಗೆ ಏನು ಓದಬೇಕು</string>
-    <string name="notification_private_format_message">ಖಾಸಗಿ ಅಧಿಸೂಚನೆಯ ವಿಷಯದ ಸ್ಥಳದಲ್ಲಿ ಹೇಳಲಾಗಿದೆ. ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್‌ಗಳು: {app}, {category} ಮತ್ತು {time}.</string>
+    <string name="notification_private_format_message">ಖಾಸಗಿ ಅಧಿಸೂಚನೆಯ ವಿಷಯದ ಬದಲಿಗೆ ಹೇಳಲಾಗುತ್ತದೆ. ಪ್ಲೇಸ್‌ಹೋಲ್ಡರ್‌ಗಳು: {app}, {category} ಮತ್ತು {time}.</string>
     <string name="notification_category_voice">ಧ್ವನಿ</string>
     <string name="notification_voice_title">ಧ್ವನಿ</string>
     <string name="notification_voice_sandfly">SandFly ಧ್ವನಿ</string>
@@ -44,7 +44,7 @@
     <string name="notification_category_text">ಪಠ್ಯ</string>
     <string name="notification_remove_emoji_title">ಎಮೋಜಿಯನ್ನು ಬಿಟ್ಟುಬಿಡಿ</string>
     <string name="notification_lowercase_title">ದೊಡ್ಡಕ್ಷರಗಳನ್ನು ಪದಗಳಾಗಿ ಓದಿ</string>
-    <string name="notification_lowercase_summary">ಕೆಲವು ಸ್ಪೀಚ್ ಇಂಜಿನ್‌ಗಳು ಅಕ್ಷರದ ಮೂಲಕ ದೊಡ್ಡ ಅಕ್ಷರಗಳಲ್ಲಿ ಪದಗಳನ್ನು ಬರೆಯುತ್ತವೆ</string>
+    <string name="notification_lowercase_summary">ಕೆಲವು ಸ್ಪೀಚ್ ಎಂಜಿನ್‌ಗಳು ದೊಡ್ಡಕ್ಷರದಲ್ಲಿ ಬರೆದ ಪದಗಳನ್ನು ಅಕ್ಷರ ಅಕ್ಷರವಾಗಿ ಓದುತ್ತವೆ</string>
     <string name="notification_separate_digits_title">ದೀರ್ಘ ಸಂಖ್ಯೆಗಳನ್ನು ಅಂಕೆ ಅಂಕೆಯಾಗಿ ಓದಿ</string>
     <string name="notification_separate_digits_summary">ಉದಾಹರಣೆಗೆ ಕೋಡ್‌ಗಳು ಮತ್ತು ಫೋನ್ ಸಂಖ್ಯೆಗಳು</string>
     <string name="notification_min_digits_title">ದೀರ್ಘ ಸಂಖ್ಯೆಯಲ್ಲಿ ಕನಿಷ್ಠ ಅಂಕೆಗಳು</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">ನಿಲ್ಲಿಸಲು ಕೈ ಬೀಸಿ</string>
     <string name="notification_wave_summary">ಸಾಮೀಪ್ಯ ಸಂವೇದಕದ ಮೇಲೆ ಕೈಯನ್ನು ಚಲಿಸುವುದು</string>
     <string name="notification_pocket_title">ಪಾಕೆಟ್ ಮೋಡ್</string>
-    <string name="notification_pocket_summary">ಜೇಬಿನಲ್ಲಿರುವಂತೆ ಓದುವಿಕೆಯನ್ನು ಪ್ರಾರಂಭಿಸಿದಾಗ ಆವರಿಸಿರುವ ಸಂವೇದಕವು ಅದನ್ನು ನಿಲ್ಲಿಸುವುದಿಲ್ಲ</string>
+    <string name="notification_pocket_summary">ಓದುವಿಕೆ ಪ್ರಾರಂಭವಾದಾಗ ಸೆನ್ಸರ್ ಈಗಾಗಲೇ ಮುಚ್ಚಿದ್ದರೆ, ಉದಾಹರಣೆಗೆ ಜೇಬಿನಲ್ಲಿ, ಓದುವಿಕೆ ನಿಲ್ಲುವುದಿಲ್ಲ</string>
     <string name="notification_volume_keys_title">ಎರಡೂ ವಾಲ್ಯೂಮ್ ಕೀಗಳನ್ನು ಒತ್ತಿರಿ</string>
     <string name="notification_dismiss_title">ವಜಾಗೊಳಿಸಿದಾಗ ನಿಲ್ಲಿಸಿ</string>
     <string name="notification_watch_dismiss_title">ವಾಚ್‌ನಲ್ಲಿ ವಜಾಗೊಳಿಸಿದಾಗಲೂ</string>

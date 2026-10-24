@@ -34,7 +34,7 @@
     <string name="notification_format_title">Format govora</string>
     <string name="notification_format_message">Čuvari mesta: {app}, {title}, {text}, {content} (ceo tekst), {bigtext}, {subtext}, {ticker}, {category} i {time}.</string>
     <string name="notification_private_format_title">Čitanje privatnih obaveštenja</string>
-    <string name="notification_private_format_message">Rečeno umesto sadržaja privatnog obaveštenja. Čuvari mesta: {app}, {category} i {time}.</string>
+    <string name="notification_private_format_message">Izgovara se umesto sadržaja privatnog obaveštenja. Čuvari mesta: {app}, {category} i {time}.</string>
     <string name="notification_category_voice">Glas</string>
     <string name="notification_voice_title">Glas</string>
     <string name="notification_voice_sandfly">SandFly-ov glas</string>
@@ -105,7 +105,7 @@
     <string name="notification_wave_title">Odmahni za zaustavljanje</string>
     <string name="notification_wave_summary">Pomeranje ruke preko senzora blizine</string>
     <string name="notification_pocket_title">Džepni režim</string>
-    <string name="notification_pocket_summary">Senzor koji je prekriven kada čitanje počne, kao u džepu, ne zaustavlja ga</string>
+    <string name="notification_pocket_summary">Ako je senzor već prekriven kada čitanje počne, kao u džepu, čitanje se ne zaustavlja</string>
     <string name="notification_volume_keys_title">Pritisak na oba tastera za jačinu zvuka</string>
     <string name="notification_dismiss_title">Zaustavi pri zatvaranju</string>
     <string name="notification_watch_dismiss_title">Takođe kada je obaveštenje odbačeno na pametnom satu</string>
