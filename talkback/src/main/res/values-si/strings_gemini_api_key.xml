@@ -2,13 +2,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API යතුර</string>
     <string name="summary_pref_gemini_api_key_built_in">මෙම යෙදුමට ඇතුළත් යතුර භාවිත කෙරේ</string>
-    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey හිදී Google AI Studio වෙතින් නොමිලේ API යතුරක් ලබා ගෙන එය මෙහි අලවන්න. ඔබගේ යතුර ඉවත් කිරීමට, ක්ෂේත්‍රය හිස් කර සුරකින්න.\n\nඔබ විස්තර කරන පින්තූර සහ තිර Google වෙත යවනු ලැබේ. නිදහස් ස්ථරයේ, Google හට එහි නිෂ්පාදන වැඩිදියුණු කිරීමට ඒවා භාවිතා කළ හැක.</string>
+    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey හි Google AI Studio වෙතින් නොමිලේ API යතුරක් ලබාගෙන මෙහි අලවන්න. යතුර ඉවත් කිරීමට ක්ෂේත්‍රය හිස් කර සුරකින්න.\n\nඔබ විස්තරයක් ඉල්ලන රූප සහ තිර Google වෙත යවනු ලැබේ. නොමිලේ මට්ටමේදී Google හට ඒවා තම නිෂ්පාදන වැඩිදියුණු කිරීමට භාවිත කළ හැක.</string>
     <string name="gemini_api_key_hint">API යතුර</string>
     <string name="gemini_api_key_save">සුරකින්න</string>
     <string name="gemini_api_key_get">යතුරක් ගන්න</string>
     <string name="title_pref_gemini_model">Gemini ආකෘතිය</string>
     <string name="gemini_model_automatic">ස්වයංක්‍රීය</string>
-    <string name="summary_pref_gemini_model_automatic">ස්වයංක්‍රීය: Gemini ෆ්ලෑෂ්, පසුව ෆ්ලෑෂ් කාර්යබහුල විට ෆ්ලෑෂ්-ලයිට්</string>
+    <string name="summary_pref_gemini_model_automatic">ස්වයංක්‍රීය: Gemini Flash, Flash කාර්යබහුල විට Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, පසුව එය කාර්යබහුල වූ විට Flash-Lite</string>
     <string name="gemini_model_loading">ආකෘති ලබා ගනිමින්...</string>
     <string name="gemini_model_list_failed">මොඩල ලබා ගත නොහැකි විය: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>

@@ -2,13 +2,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API 金鑰</string>
     <string name="summary_pref_gemini_api_key_built_in">正在使用此應用程式內建的金鑰</string>
-    <string name="gemini_api_key_dialog_message">從 Google AI Studio (aistudio.google.com/apikey) 取得免費的 API 金鑰，並將其貼到此處。若要刪除您的密鑰，請清除該欄位並儲存。 \n\n您所描述的影像和螢幕將會傳送到Google。在免費套餐中，Google可以使用它們來改進其產品。</string>
+    <string name="gemini_api_key_dialog_message">從 Google AI Studio（aistudio.google.com/apikey）取得免費 API 金鑰，然後貼到這裡。如要移除金鑰，請清空欄位並儲存。\n\n你要求描述的圖片和畫面會傳送至 Google。使用免費方案時，Google 可能會使用這些內容改善其產品。</string>
     <string name="gemini_api_key_hint">API金鑰</string>
     <string name="gemini_api_key_save">儲存</string>
     <string name="gemini_api_key_get">取得金鑰</string>
     <string name="title_pref_gemini_model">Gemini 模型</string>
     <string name="gemini_model_automatic">自動</string>
-    <string name="summary_pref_gemini_model_automatic">自動：Gemini Flash，當 Flash 忙時則 Flash-Lite</string>
+    <string name="summary_pref_gemini_model_automatic">自動：Gemini Flash，Flash 忙碌時改用 Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>，繁忙時改用 Flash-Lite</string>
     <string name="gemini_model_loading">正在取得模型清單…</string>
     <string name="gemini_model_list_failed">無法取得模型：<xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>

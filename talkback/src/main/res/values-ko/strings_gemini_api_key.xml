@@ -2,13 +2,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API 키</string>
     <string name="summary_pref_gemini_api_key_built_in">이 앱에 내장된 키 사용</string>
-    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey의 Google AI Studio에서 무료 API 키를 받아 여기에 붙여넣으세요. 키를 제거하려면 해당 필드를 지우고 저장하세요.\n\n설명하는 이미지와 화면이 Google로 전송됩니다. 무료 등급에서는 Google가 이를 사용하여 제품을 개선할 수 있습니다.</string>
+    <string name="gemini_api_key_dialog_message">Google AI Studio(aistudio.google.com/apikey)에서 무료 API 키를 받아 여기에 붙여넣으세요. 키를 삭제하려면 입력란을 비우고 저장하세요.\n\n설명을 요청한 이미지와 화면은 Google로 전송됩니다. 무료 등급에서는 Google이 이를 자사 제품 개선에 사용할 수 있습니다.</string>
     <string name="gemini_api_key_hint">API 키</string>
     <string name="gemini_api_key_save">저장</string>
     <string name="gemini_api_key_get">키 받기</string>
     <string name="title_pref_gemini_model">Gemini 모델</string>
     <string name="gemini_model_automatic">자동</string>
-    <string name="summary_pref_gemini_model_automatic">자동: Gemini 플래시, 플래시가 사용 중이면 Flash-Lite</string>
+    <string name="summary_pref_gemini_model_automatic">자동: Gemini Flash, Flash가 혼잡하면 Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, 사용량이 많을 때는 Flash-Lite</string>
     <string name="gemini_model_loading">모델을 가져오는 중…</string>
     <string name="gemini_model_list_failed">모델을 가져올 수 없습니다: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>

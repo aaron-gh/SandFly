@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API 附加服务条款</string>
     <string name="title_pref_gemini_model">Gemini 模型</string>
     <string name="gemini_model_automatic">自动</string>
-    <string name="summary_pref_gemini_model_automatic">自动：Gemini Flash，当 Flash 忙时则 Flash-Lite</string>
+    <string name="summary_pref_gemini_model_automatic">自动：Gemini Flash，Flash 繁忙时改用 Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>，繁忙时改用 Flash-Lite</string>
     <string name="gemini_model_loading">正在获取模型列表…</string>
     <string name="gemini_model_list_failed">无法获取模型：<xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>

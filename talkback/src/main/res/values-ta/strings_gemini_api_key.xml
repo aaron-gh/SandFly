@@ -2,13 +2,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API விசை</string>
     <string name="summary_pref_gemini_api_key_built_in">இந்த ஆப்ஸில் உள்ளமைந்த விசை பயன்படுத்தப்படுகிறது</string>
-    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey இல் Google AI ஸ்டுடியோவிலிருந்து இலவச API விசையைப் பெற்று, அதை இங்கே ஒட்டவும். உங்கள் விசையை அகற்ற, புலத்தை அழித்து சேமிக்கவும்.\n\nநீங்கள் விவரிக்கும் படங்கள் மற்றும் திரைகள் Googleக்கு அனுப்பப்படும். இலவச அடுக்கில், Google அதன் தயாரிப்புகளை மேம்படுத்த அவற்றைப் பயன்படுத்தலாம்.</string>
+    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey இல் Google AI Studio-விலிருந்து இலவச API விசையைப் பெற்று இங்கே ஒட்டவும். விசையை அகற்ற, புலத்தைக் காலியாக்கிச் சேமிக்கவும்.\n\nவிளக்கம் கேட்கும் படங்களும் திரைகளும் Google-க்கு அனுப்பப்படும். இலவச நிலையில், Google அவற்றைத் தன் தயாரிப்புகளை மேம்படுத்தப் பயன்படுத்தலாம்.</string>
     <string name="gemini_api_key_hint">API விசை</string>
     <string name="gemini_api_key_save">சேமி</string>
     <string name="gemini_api_key_get">விசையைப் பெறுக</string>
     <string name="title_pref_gemini_model">Gemini மாடல்</string>
     <string name="gemini_model_automatic">தானியங்கி</string>
-    <string name="summary_pref_gemini_model_automatic">தானியங்கு: Gemini ஃப்ளாஷ், பின்னர் ஃப்ளாஷ் பிஸியாக இருக்கும்போது ஃப்ளாஷ்-லைட்</string>
+    <string name="summary_pref_gemini_model_automatic">தானியங்கு: Gemini Flash, Flash பிஸியாக இருந்தால் Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, பிறகு பிஸியாக இருக்கும்போது Flash-Lite</string>
     <string name="gemini_model_loading">மாடல்களைப் பெறுகிறது…</string>
     <string name="gemini_model_list_failed">மாடல்களைப் பெற முடியவில்லை: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>

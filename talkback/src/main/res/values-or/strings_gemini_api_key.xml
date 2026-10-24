@@ -2,13 +2,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API କି</string>
     <string name="summary_pref_gemini_api_key_built_in">ଏହି ଆପରେ ଥିବା କି ବ୍ୟବହାର କରାଯାଉଛି</string>
-    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey ରେ Google AI ଷ୍ଟୁଡିଓରୁ ଏକ ମାଗଣା API ଚାବି ପାଆନ୍ତୁ ଏବଂ ଏହାକୁ ଏଠାରେ ଲେପନ କରନ୍ତୁ | ତୁମର ଚାବି ହଟାଇବା ପାଇଁ, ଫିଲ୍ଡ ସଫା କର ଏବଂ ସେଭ୍ କର | \n\n ଚିତ୍ର ଏବଂ ସ୍କ୍ରିନ୍ ଯାହା ତୁମେ ବର୍ଣ୍ଣନା କର Google କୁ ପଠାଯାଏ | ମାଗଣା ସ୍ତରରେ, Google ଏହାର ଉତ୍ପାଦରେ ଉନ୍ନତି ଆଣିବା ପାଇଁ ସେମାନଙ୍କୁ ବ୍ୟବହାର କରିପାରିବ |</string>
+    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikeyରେ Google AI Studioରୁ ଏକ ମାଗଣା API କୀ ନେଇ ଏଠାରେ ପେଷ୍ଟ କରନ୍ତୁ। କୀ ହଟାଇବାକୁ ଫିଲ୍ଡ ଖାଲି କରି ସେଭ୍ କରନ୍ତୁ।\n\nଆପଣ ବର୍ଣ୍ଣନା ମାଗୁଥିବା ଛବି ଓ ସ୍କ୍ରିନ୍ Googleକୁ ପଠାଯାଏ। ମାଗଣା ସ୍ତରରେ Google ସେଗୁଡ଼ିକୁ ନିଜ ଉତ୍ପାଦ ଉନ୍ନତ କରିବାକୁ ବ୍ୟବହାର କରିପାରେ।</string>
     <string name="gemini_api_key_hint">API କି</string>
     <string name="gemini_api_key_save">ସେଭ କରନ୍ତୁ</string>
     <string name="gemini_api_key_get">କି ପାଆନ୍ତୁ</string>
     <string name="title_pref_gemini_model">Gemini ମଡେଲ୍</string>
     <string name="gemini_model_automatic">ସ୍ୱୟଂଚାଳିତ</string>
-    <string name="summary_pref_gemini_model_automatic">ସ୍ୱୟଂଚାଳିତ: Gemini ଫ୍ଲାସ୍, ତାପରେ ଫ୍ଲାସ୍ ବ୍ୟସ୍ତ ଥିବାବେଳେ ଫ୍ଲାସ୍-ଲାଇଟ୍</string>
+    <string name="summary_pref_gemini_model_automatic">ସ୍ୱୟଂଚାଳିତ: Gemini Flash, Flash ବ୍ୟସ୍ତ ଥିଲେ Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ବ୍ୟସ୍ତ ଥିବାବେଳେ Flash-Lite</string>
     <string name="gemini_model_loading">ମଡେଲଗୁଡ଼ିକ ପାଉଛି…</string>
     <string name="gemini_model_list_failed">ମଡେଲଗୁଡ଼ିକ ପାଇହେଲା ନାହିଁ: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>

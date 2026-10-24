@@ -9,7 +9,7 @@
   <string name="gemini_api_terms_link">Дополнительные условия использования API Gemini</string>
     <string name="title_pref_gemini_model">Модель Gemini</string>
     <string name="gemini_model_automatic">Автоматический</string>
-    <string name="summary_pref_gemini_model_automatic">Автоматически: Gemini Flash, затем Flash-Lite, когда Flash занята.</string>
+    <string name="summary_pref_gemini_model_automatic">Автоматически: Gemini Flash, затем Flash-Lite, если Flash перегружена</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, затем Flash-Lite, когда он занят</string>
     <string name="gemini_model_loading">Получение моделей…</string>
     <string name="gemini_model_list_failed">Не удалось получить модели: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>

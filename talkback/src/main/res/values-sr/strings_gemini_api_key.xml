@@ -2,13 +2,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API кључ</string>
     <string name="summary_pref_gemini_api_key_built_in">Користи се кључ уграђен у ову апликацију</string>
-    <string name="gemini_api_key_dialog_message">Преузмите бесплатни API кључ из Google AI Studio-а, на aistudio.google.com/apikey, и налепите га овде. Да бисте уклонили свој кључ, обришите поље и сачувајте.\n\nСлике и екрани које описујете се шаљу Google-у. На бесплатном нивоу Google их може користити за побољшање својих производа.</string>
+    <string name="gemini_api_key_dialog_message">Набавите бесплатни API кључ у Google AI Studio-у на aistudio.google.com/apikey и налепите га овде. Да бисте уклонили кључ, испразните поље и сачувајте.\n\nСлике и екрани за које тражите опис шаљу се Google-у. У бесплатном нивоу Google може да их користи за побољшање својих производа.</string>
     <string name="gemini_api_key_hint">API кључ</string>
     <string name="gemini_api_key_save">Сачувај</string>
     <string name="gemini_api_key_get">Набави кључ</string>
     <string name="title_pref_gemini_model">Gemini модел</string>
     <string name="gemini_model_automatic">Аутоматски</string>
-    <string name="summary_pref_gemini_model_automatic">Аутоматски: Gemini Фласх, затим Фласх-Лите када је Фласх заузет</string>
+    <string name="summary_pref_gemini_model_automatic">Аутоматски: Gemini Flash, затим Flash-Lite када је Flash заузет</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, затим Flash-Lite када је заузет</string>
     <string name="gemini_model_loading">Добивање модела…</string>
     <string name="gemini_model_list_failed">Није могуће преузети моделе: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
