@@ -3,7 +3,7 @@
     <string name="title_pref_check_for_updates">Жаңыртууларды текшерүү</string>
     <string name="summary_pref_check_for_updates_version">Версия <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, жыйнак <xliff:g id="build" example="96">%2$d</xliff:g></string>
     <string name="title_pref_auto_update_check">Жаңыртууларды автоматтык түрдө текшерүү</string>
-    <string name="summary_pref_auto_update_check">Күнүнө бир жолу текшерип, жаңы түзүлүшү жеткиликтүү болгондо эскертмени көрсөтүңүз</string>
+    <string name="summary_pref_auto_update_check">Күнүнө бир жолу текшерип, жаңы версия чыкканда билдирме көрсөтөт</string>
     <string name="title_pref_dev_builds">Иштеп чыгуу версиялары</string>
     <string name="update_notification_title">SandFly жаңыртуусу жеткиликтүү</string>
     <string name="update_notification_text">Жыйнак <xliff:g id="build" example="97">%1$d</xliff:g>. Орнотуу үчүн таптаңыз.</string>
@@ -18,5 +18,5 @@
     <string name="update_ready_text">Орнотуу үчүн таптаңыз.</string>
     <string name="update_install_failed">Жаңыртуу орнотулбай койду</string>
     <string name="update_install_canceled">Жаңыртуу жокко чыгарылды</string>
-    <string name="update_allow_install">SandFly колдонмосуна колдонмолорду орнотууга уруксат берип, андан соң жаңыртып көрүңүз</string>
+    <string name="update_allow_install">SandFly\'га колдонмо орнотууга уруксат берип, жаңыртууну кайра аракет кылыңыз</string>
 </resources>

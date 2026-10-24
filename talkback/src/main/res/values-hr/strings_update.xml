@@ -3,7 +3,7 @@
     <string name="title_pref_check_for_updates">Provjeri ima li ažuriranja</string>
     <string name="summary_pref_check_for_updates_version">Verzija <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, međuverzija <xliff:g id="build" example="96">%2$d</xliff:g></string>
     <string name="title_pref_auto_update_check">Automatski provjeravaj ažuriranja</string>
-    <string name="summary_pref_auto_update_check">Provjerite jednom dnevno i pokažite obavijest kada nova verzija bude dostupna</string>
+    <string name="summary_pref_auto_update_check">Provjerava jednom dnevno i prikazuje obavijest kada je dostupna nova verzija</string>
     <string name="title_pref_dev_builds">Razvojne verzije</string>
     <string name="update_notification_title">Dostupno je ažuriranje za SandFly</string>
     <string name="update_notification_text">Međuverzija <xliff:g id="build" example="97">%1$d</xliff:g>. Dodirnite za instalaciju.</string>
@@ -18,5 +18,5 @@
     <string name="update_ready_text">Dodirnite za instalaciju.</string>
     <string name="update_install_failed">Nije moguće instalirati ažuriranje</string>
     <string name="update_install_canceled">Ažuriranje otkazano</string>
-    <string name="update_allow_install">Dopustite SandFly da instalira aplikacije, a zatim ponovno pokušajte ažurirati</string>
+    <string name="update_allow_install">Dopustite SandFlyu da instalira aplikacije, a zatim ponovno pokušajte ažurirati</string>
 </resources>

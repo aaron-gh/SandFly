@@ -3,7 +3,7 @@
     <string name="title_pref_check_for_updates">檢查更新</string>
     <string name="summary_pref_check_for_updates_version">版本 <xliff:g id="version" example="0.1.0">%1$s</xliff:g>，組建 <xliff:g id="build" example="96">%2$d</xliff:g></string>
     <string name="title_pref_auto_update_check">自動檢查更新</string>
-    <string name="summary_pref_auto_update_check">每天檢查一次，並在新版本可用時顯示通知</string>
+    <string name="summary_pref_auto_update_check">每日檢查一次，並在有新版本時顯示通知</string>
     <string name="title_pref_dev_builds">開發建置</string>
     <string name="update_notification_title">有可用的 SandFly 更新</string>
     <string name="update_notification_text">組建 <xliff:g id="build" example="97">%1$d</xliff:g>。輕觸即可安裝。</string>
@@ -18,5 +18,5 @@
     <string name="update_ready_text">輕按即可安裝。</string>
     <string name="update_install_failed">無法安裝更新</string>
     <string name="update_install_canceled">更新已取消</string>
-    <string name="update_allow_install">允許 SandFly 安裝應用程序，然後再次嘗試更新</string>
+    <string name="update_allow_install">允許 SandFly 安裝應用程式，然後再試一次更新</string>
 </resources>
