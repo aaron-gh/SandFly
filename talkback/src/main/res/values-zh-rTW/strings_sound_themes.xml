@@ -25,8 +25,8 @@
     <string name="sound_theme_remove_confirm">刪除主題 <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>？</string>
     <string name="sound_theme_remove_button">移除</string>
     <plurals name="sound_theme_exported">
-        <item quantity="one">保存了主題，有<xliff:g id="count" example="1">%d</xliff:g>聲音。</item>
-        <item quantity="other">儲存主題，帶有<xliff:g id="count" example="13">%d</xliff:g>聲音。</item>
+        <item quantity="one">已儲存主題，包含 <xliff:g id="count" example="1">%d</xliff:g> 個音效。</item>
+        <item quantity="other">已儲存主題，包含 <xliff:g id="count" example="13">%d</xliff:g> 個音效。</item>
     </plurals>
     <string name="sound_theme_export_failed">SandFly 無法儲存主題檔案。</string>
     <string name="sound_theme_no_picker">這部裝置上沒有可選擇檔案的應用程式。</string>

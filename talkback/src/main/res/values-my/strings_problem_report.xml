@@ -52,8 +52,8 @@
     <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> ပြောင်းထားသည်</string>
     <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> ပို့ထားသည်</string>
     <plurals name="report_new_replies">
-        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> အကြောင်းပြန်ချက်အသစ်</item>
-        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ပြန်စာအသစ်များ</item>
+        <item quantity="one">ပြန်စာအသစ် <xliff:g id="count" example="1">%1$d</xliff:g> ခု</item>
+        <item quantity="other">ပြန်စာအသစ် <xliff:g id="count" example="2">%1$d</xliff:g> ခု</item>
     </plurals>
     <string name="report_status_changed">အခြေအနေ ပြောင်းထားသည်</string>
     <string name="report_status_open">ဖွင့်ထားသည်</string>

@@ -144,10 +144,10 @@
     <string name="scripts_updates_category">Aktualizácie</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
-        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> aktualizovaný skript: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="one">Aktualizovaný <xliff:g id="count" example="1">%1$d</xliff:g> skript: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="few">Aktualizované <xliff:g id="count" example="2">%1$d</xliff:g> skripty: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
-        <item quantity="many">Aktualizované skripty <xliff:g id="count" example="2">%1$d</xliff:g>: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
-        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> aktualizovaných skriptov: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="many">Aktualizovaného <xliff:g id="count" example="2">%1$d</xliff:g> skriptu: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="other">Aktualizovaných <xliff:g id="count" example="2">%1$d</xliff:g> skriptov: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
     <string name="scripts_updates_to_approve">Aktualizácie sú uvedené v časti „Aktualizácie“</string>
     <string name="scripts_update_check_failed">Niektoré zdroje nebolo možné skontrolovať</string>

@@ -25,8 +25,8 @@
     <string name="sound_theme_remove_confirm">テーマ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> を削除しますか?</string>
     <string name="sound_theme_remove_button">削除</string>
     <plurals name="sound_theme_exported">
-        <item quantity="one">テーマを <xliff:g id="count" example="1">%d</xliff:g> サウンドで保存しました。</item>
-        <item quantity="other">サウンドを <xliff:g id="count" example="13">%d</xliff:g> にしてテーマを保存しました。</item>
+        <item quantity="one">テーマを保存しました（サウンド <xliff:g id="count" example="1">%d</xliff:g> 個）。</item>
+        <item quantity="other">テーマを保存しました（サウンド <xliff:g id="count" example="13">%d</xliff:g> 個）。</item>
     </plurals>
     <string name="sound_theme_export_failed">SandFly はテーマファイルを保存できませんでした。</string>
     <string name="sound_theme_no_picker">このデバイスにはファイルを選択できるアプリがありません。</string>

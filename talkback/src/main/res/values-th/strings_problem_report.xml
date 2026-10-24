@@ -52,8 +52,8 @@
     <string name="report_draft_summary">เปลี่ยนแล้ว <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">ส่งแล้ว <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
-        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ตอบกลับใหม่</item>
-        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ตอบกลับใหม่</item>
+        <item quantity="one">การตอบกลับใหม่ <xliff:g id="count" example="1">%1$d</xliff:g> รายการ</item>
+        <item quantity="other">การตอบกลับใหม่ <xliff:g id="count" example="2">%1$d</xliff:g> รายการ</item>
     </plurals>
     <string name="report_status_changed">สถานะเปลี่ยนไป</string>
     <string name="report_status_open">เปิดอยู่</string>
