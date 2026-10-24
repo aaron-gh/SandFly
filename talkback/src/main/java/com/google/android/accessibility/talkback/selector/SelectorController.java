@@ -631,7 +631,6 @@ public class SelectorController implements UserInputEventListener {
       ImmutableList.of(
           Setting.GRANULARITY_TYPO,
           Setting.ACTIONS,
-          Setting.LIVE_RECOGNITION,
           // Puts table navigation granularities on top of the selector.
           Setting.GRANULARITY_ROW_COLUMN,
           Setting.GRANULARITY_ROW,
@@ -680,6 +679,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.FORMATTING,
           Setting.LANGUAGE,
           // TODO Supports sound feedback and vibration feedback.
+          Setting.LIVE_RECOGNITION,
           Setting.HIDE_SCREEN,
           Setting.AUDIO_FOCUS,
           Setting.SCROLLING_SEQUENTIAL,
@@ -1155,8 +1155,11 @@ public class SelectorController implements UserInputEventListener {
     DescriptionAndHint descriptionAndHint = getSettingActionDescriptionAndHint(newSetting, eventId);
 
     // There's no setting needed to handle double-tap by default, reset it once setting changed.
-    // Live recognition takes double-tap to turn the mode it says on or off.
-    liveRecognitionArmed = newSetting == Setting.LIVE_RECOGNITION;
+    // Live recognition takes double-tap to turn the mode it says on or off, when the user chose
+    // it. Not when it comes back silently after focus moved, or double-tap on the focused item,
+    // such as the Live recognition checkbox in settings, would turn a mode on instead.
+    liveRecognitionArmed =
+        newSetting == Setting.LIVE_RECOGNITION && announceType != AnnounceType.SILENCE;
     requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, liveRecognitionArmed);
 
     if (TextUtils.isEmpty(descriptionAndHint.description)) {
