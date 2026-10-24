@@ -105,6 +105,54 @@ class ScreenOverviewRequesterTest {
   }
 
   @Test
+  fun plainOverviewNamesTheAppAndLeavesOutTheNodes() {
+    var request: JSONObject? = null
+    var result: OverviewResponse? = null
+    val node = AccessibilityNodeInfoCompat.obtain().apply {
+      packageName = "com.tailscale.ipn"
+      text = "Connected"
+      isVisibleToUser = true
+    }
+    ScreenOverviewRequester(
+        style = { PromptStyle.ON_DEVICE_PLAIN },
+        performRequest = { postData, callback ->
+          request = postData
+          callback.onResponse(
+            GeminiResponse.builder()
+              .setText("The Tailscale app shows two connected devices.")
+              .setFinishReason(DataFieldUtils.FINISH_REASON_STOP)
+              .build()
+          )
+        },
+        appName = { if (it == "com.tailscale.ipn") "Tailscale" else null },
+      )
+      .requestOverview(
+        GeminiCommand.ScreenOverview(
+          screenshot = byteArrayOf(1),
+          focusedNode = node,
+          listener =
+            object : GeminiResponseCallback<OverviewResponse> {
+              override fun onResponse(finishReason: FinishReason, response: OverviewResponse) {
+                result = response
+              }
+
+              override fun onError(errorReason: ErrorReason) {}
+            },
+        ),
+        JSONArray(),
+      )
+
+    val prompt = prompt(request!!)
+    assertTrue(prompt.contains("The app is Tailscale."))
+    assertFalse(prompt.contains("Nodes:"))
+    assertFalse(prompt.contains("Connected"))
+    assertEquals(
+      "The Tailscale app shows two connected devices.",
+      (result as OverviewResponse.Success).overview.summary,
+    )
+  }
+
+  @Test
   fun onDeviceStyleStillReadsJson() {
     val (request, result) = ask(PromptStyle.ON_DEVICE, """{"answer": "Two devices."}""")
 

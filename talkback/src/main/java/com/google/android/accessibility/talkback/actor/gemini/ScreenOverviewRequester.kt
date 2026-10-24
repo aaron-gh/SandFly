@@ -51,8 +51,9 @@ internal enum class PromptStyle {
 
   /**
    * A model on the phone that does not keep to a JSON format. Small models such as FastVLM copy the
-   * example answer or write on without end, so they are asked for plain sentences and the shorter
-   * list of the nodes.
+   * example answer or write on without end, so they are asked for plain sentences. For an overview
+   * they get the app's name and no list of the nodes, which they described as made-up things, such
+   * as a web browser's search results. Questions get the shorter list of the nodes.
    */
   ON_DEVICE_PLAIN,
 }
@@ -67,6 +68,8 @@ internal class ScreenOverviewRequester(
   private val performRequest: (JSONObject, GeminiRestResponseCallback) -> Unit,
   /** What to tell the user about a failed request, or null for the general error message. */
   private val describeFailure: (GeminiFailure) -> String? = { null },
+  /** The name of the app with the package name given, or null when it is not known. */
+  private val appName: (CharSequence) -> String? = { null },
 ) {
   private val parser = Parser()
 
@@ -78,9 +81,16 @@ internal class ScreenOverviewRequester(
         PromptStyle.CLOUD -> OVERVIEW_INSTRUCTIONS
         PromptStyle.ON_DEVICE -> ON_DEVICE_OVERVIEW_INSTRUCTIONS
         PromptStyle.ON_DEVICE_SHORT -> SHORT_OVERVIEW_INSTRUCTIONS
-        PromptStyle.ON_DEVICE_PLAIN -> PLAIN_OVERVIEW_INSTRUCTIONS
+        PromptStyle.ON_DEVICE_PLAIN -> null
       }
-    val prompt = "$instructions\n${languageInstruction()}\n\nNodes:\n${nodes(tree, style)}"
+    val prompt =
+      if (instructions == null) {
+        val app = command.focusedNode.packageName?.let(appName)
+        val appLine = if (app.isNullOrBlank()) "" else "The app is $app.\n\n"
+        "$PLAIN_OVERVIEW_START\n\n$appLine$PLAIN_OVERVIEW_INSTRUCTIONS\n${languageInstruction()}"
+      } else {
+        "$instructions\n${languageInstruction()}\n\nNodes:\n${nodes(tree, style)}"
+      }
     send(
       prompt,
       style,
@@ -320,10 +330,10 @@ Reply with only a JSON object with one field, "answer": a short plain answer to 
 Example: {"answer": "The Send button is at the bottom right."}"""
 
     // No example: small models copy it instead of describing the screen.
+    private const val PLAIN_OVERVIEW_START = "You describe a phone screen for a blind person."
     private const val PLAIN_OVERVIEW_INSTRUCTIONS =
-      """You help a blind person who uses a screen reader understand their phone screen. You get a screenshot and a numbered list of the text and controls on the screen.
-
-In 2 to 4 sentences, say what app or screen this is, what it is for, and what is on it. Mention pictures, charts or text in images that the list does not describe. Do not list every item. Reply in plain sentences, not JSON."""
+      "In 2 sentences, say what this screen shows. Only say what you can see. Do not guess. " +
+        "Reply in plain sentences."
 
     private const val PLAIN_QUERY_INSTRUCTIONS =
       """You help a blind person who uses a screen reader understand their phone screen. You get a screenshot, a numbered list of the text and controls on the screen, the conversation so far, and a question.
