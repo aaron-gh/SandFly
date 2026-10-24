@@ -50,6 +50,19 @@ class ScreenTree private constructor(private val nodes: List<AccessibilityNodeIn
       .joinToString(separator = NEWLINE)
   }
 
+  /**
+   * The text of the nodes, each once, shortened like [compactDescription], for a small model to
+   * copy names from.
+   */
+  val texts: List<String> by lazy {
+    nodes
+      .mapNotNull { (it.contentDescription ?: it.text)?.toString()?.trim() }
+      .filter { it.isNotEmpty() }
+      .map { it.take(COMPACT_MAX_LABEL_LENGTH) }
+      .distinct()
+      .take(COMPACT_MAX_LINES)
+  }
+
   // Node numbers are unique across the whole tree, so the window ID is not needed to find a node.
   override fun findNodeById(nodeId: NodeId): AccessibilityNodeInfoCompat? =
     nodes.getOrNull(nodeId.uniqueId)

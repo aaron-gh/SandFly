@@ -33,7 +33,8 @@ import java.util.zip.ZipInputStream
  *
  * - Google Tensor: LiteRT's dispatch library for Tensor.
  * - Snapdragon: LiteRT's dispatch library for Qualcomm, and Qualcomm's QNN runtime for the chip's
- *   Hexagon NPU, the versions Google's FastVLM sample for Qualcomm NPUs uses.
+ *   Hexagon NPU. The dispatch library refuses a QNN runtime older than the QAIRT SDK it was built
+ *   with, which for LiteRT 2.3.0 is QAIRT 2.50.0.
  */
 object NpuRuntime {
   private const val TAG = "NpuRuntime"
@@ -41,7 +42,7 @@ object NpuRuntime {
   private const val TIMEOUT_MS = 30_000
 
   private const val LITERT_VERSION = "2.3.0"
-  private const val QNN_VERSION = "2.45.0"
+  private const val QNN_VERSION = "2.50.0"
   private const val GOOGLE_MAVEN = "https://dl.google.com/android/maven2/com/google/ai/edge/litert"
   private const val TENSOR_AAR =
     "$GOOGLE_MAVEN/litert-npu-runtime-google-tensor/$LITERT_VERSION/" +
@@ -84,13 +85,13 @@ object NpuRuntime {
       Library(
         QNN_AAR,
         "libQnnHtp.so",
-        "0d571eca017fa0c36baef5182e0c137d7959db2bff5aea9b0a8cf49377fb1b14",
+        "30e2981965e687d71626c91397867da81247c639e598f49fa5d139cbb21255d0",
         preload = true,
       ),
       Library(
         QNN_AAR,
         "libQnnSystem.so",
-        "2c3b913e54ec36ad2a75ff8ba392c4689fe44d45a0d06653bbd49cb56eb53971",
+        "ca9e5429c77380e1c3f5a401f00288915ec2f6cc478979bafd57c665391d432f",
         preload = true,
       ),
     )
@@ -106,10 +107,10 @@ object NpuRuntime {
             Library(
               QNN_AAR,
               "libQnnHtpV79Stub.so",
-              "d866680209a48b519f982c77242b0c95ebe7ef7c8e992d91861c198c9cb0e4cc",
+              "d9f5eca67297125c572995526fc97b1c04cf6b8eb14c81eb0cef5115f58aa766",
               preload = true,
             ),
-            Library(QNN_AAR, "libQnnHtpV79Skel.so", "9e2a40fbd89f4112b60701fe4805067bae8e7aa96673b6482f5d39bdbd9c77be"),
+            Library(QNN_AAR, "libQnnHtpV79Skel.so", "860c9d2e7c937c9fb8f8f18daa9a79cab6c566066a2d36f235f6c8708fdc75bd"),
           )
       Accelerators.SNAPDRAGON_8_ELITE_GEN_5 ->
         QUALCOMM_COMMON +
@@ -117,10 +118,10 @@ object NpuRuntime {
             Library(
               QNN_AAR,
               "libQnnHtpV81Stub.so",
-              "ef0cc96ab5b4cccce59f1c02d59bb3f288d00f0045d763651ccb35591695ed0b",
+              "e672e6047088a4440e3027663805b6de7b0531f3e21c45ddb2e19e3f29583d6c",
               preload = true,
             ),
-            Library(QNN_AAR, "libQnnHtpV81Skel.so", "4f061ffb402588ea619d648733b26c7d5ad3cbe9712715586b76ea94187b3b01"),
+            Library(QNN_AAR, "libQnnHtpV81Skel.so", "02047c9fef8a22801c0eefaa79188e87b600372c9813dea3f621ba256d1ddce0"),
           )
       else -> emptyList()
     }
@@ -139,6 +140,7 @@ object NpuRuntime {
     val libraries = librariesFor(chip)
     if (libraries.isEmpty()) throw IOException("No NPU libraries for $chip")
     val dir = directory(context, chip)
+    deleteOtherVersions(context, dir)
     dir.mkdirs()
     libraries
       .filter { !File(dir, it.name).isFile }
@@ -161,6 +163,15 @@ object NpuRuntime {
         throw IOException("Could not load ${library.name}: ${e.message}", e)
       }
     }
+  }
+
+  /** Deletes the folders of other chips and versions, such as those from before an update. */
+  private fun deleteOtherVersions(context: Context, keep: File) {
+    context.filesDir
+      .listFiles { file -> file.isDirectory && file.name.startsWith("npu-") && file != keep }
+      ?.forEach {
+        if (it.deleteRecursively()) Log.i(TAG, "Deleted ${it.name}")
+      }
   }
 
   /** Reads the package at [url] once, saving [libraries] from it into [dir]. */

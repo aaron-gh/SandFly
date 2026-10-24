@@ -44,6 +44,11 @@ data class LocalModel(
   val experimental: Boolean = false,
   /** The chip whose NPU the model is built for, or null for a model that runs on CPU and GPU. */
   val npuChip: String? = null,
+  /**
+   * Whether the model keeps to the JSON format that Describe screen asks for. Others are asked for
+   * plain sentences.
+   */
+  val writesJson: Boolean = false,
 ) {
   val localFileName: String
     get() = localName ?: "$id.litertlm"
@@ -69,6 +74,7 @@ data class LocalModel(
       minTotalRamGib = 6,
       note = "Recommended. Best answers for its size.",
       maxTokens = 6144,
+      writesJson = true,
     ),
     LocalModel(
       id = "e4b",
@@ -81,6 +87,7 @@ data class LocalModel(
       minTotalRamGib = 8,
       note = "Better answers, slower. Needs a phone with a lot of memory.",
       maxTokens = 6144,
+      writesJson = true,
     ),
     LocalModel(
       id = "gemma4-12b",
@@ -93,6 +100,7 @@ data class LocalModel(
       note = "Very large. For phones with 16 GB of memory or more.",
       maxTokens = 6144,
       experimental = true,
+      writesJson = true,
     ),
     LocalModel(
       id = "smolvlm2-500m",
@@ -342,6 +350,7 @@ data class LocalModel(
       note = "Gemma 4 E2B built for the NPU of Google Tensor G5.",
       experimental = true,
       npuChip = Accelerators.TENSOR_G5,
+      writesJson = true,
     ),
     LocalModel(
       id = "e2b-tensor-g6",
@@ -354,6 +363,7 @@ data class LocalModel(
       note = "Gemma 4 E2B built for the NPU of Google Tensor G6.",
       experimental = true,
       npuChip = Accelerators.TENSOR_G6,
+      writesJson = true,
     ),
     LocalModel(
       id = "fastvlm-0.5b-sm8750",

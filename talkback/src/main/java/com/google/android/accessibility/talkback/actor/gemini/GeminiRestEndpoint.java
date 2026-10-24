@@ -23,6 +23,7 @@ import static com.google.android.accessibility.talkback.actor.gemini.GeminiActor
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.util.Base64;
@@ -33,12 +34,14 @@ import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.Gemini
 import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.GeminiResponseListener;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiCommand.CommonRequest;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiRestRequestPerformer.GeminiRestResponseCallback;
+import com.google.android.accessibility.talkback.actor.gemini.local.LocalModel;
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager;
 import com.google.android.accessibility.talkback.actor.gemini.local.OnDeviceAiSettings;
 import com.google.android.accessibility.talkback.actor.gemini.screenqa.OverviewResponse;
 import com.google.android.accessibility.utils.NetworkUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -82,8 +85,13 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
         new ScreenOverviewRequester(
             () -> {
               SharedPreferences settings = SharedPreferencesUtils.getSharedPreferences(context);
-              if (!LocalModelManager.Companion.get(context).answersRequests()) {
+              LocalModelManager localModels = LocalModelManager.Companion.get(context);
+              if (!localModels.answersRequests()) {
                 return PromptStyle.CLOUD;
+              }
+              LocalModel model = localModels.activeModel();
+              if (model != null && !model.getWritesJson()) {
+                return PromptStyle.ON_DEVICE_PLAIN;
               }
               return OnDeviceAiSettings.INSTANCE.shortPrompts(settings)
                   ? PromptStyle.ON_DEVICE_SHORT
@@ -93,8 +101,21 @@ public class GeminiRestEndpoint implements GeminiEndpoint {
               requestPerformer.performRequest(urls(), apiKey(), postData, callback);
               return kotlin.Unit.INSTANCE;
             },
-            failure -> failure.userMessage(context));
+            failure -> failure.userMessage(context),
+            packageName -> appName(context, packageName));
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
+  }
+
+  /** The name of the app with {@code packageName}, or null when it isn't installed. */
+  private static @Nullable String appName(Context context, CharSequence packageName) {
+    PackageManager packageManager = context.getPackageManager();
+    try {
+      return packageManager
+          .getApplicationLabel(packageManager.getApplicationInfo(packageName.toString(), 0))
+          .toString();
+    } catch (PackageManager.NameNotFoundException e) {
+      return null;
+    }
   }
 
   /**
