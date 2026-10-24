@@ -51,7 +51,7 @@
   <string name="pref_speak_container_element_positions_title">Озвучувати інформацію про контейнер</string>
   <string name="pref_speak_time_title">Озвучувати час</string>
   <string name="pref_speak_time_summary">Коли ви вмикаєте екран</string>
-  <string name="summary_speak_container_element_positions">Скажіть, коли ви вводите або виходите зі списків, сіток та інших контейнерів</string>
+  <string name="summary_speak_container_element_positions">Повідомляти, коли ви входите в списки, сітки й інші контейнери або виходите з них</string>
   <string name="reset_letency_reduction_settings_dialog_title">Скинути налаштування затримки?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Усі налаштування затримки буде скинуто</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Скинути</string>
@@ -503,7 +503,7 @@
   <string name="summary_read_from_top">Озвучити всі елементи на екрані зверху вниз</string>
   <string name="summary_read_from_current">Озвучувати всі об’єкти на екрані, починаючи від виділеного</string>
   <string name="summary_copy_last_spoken_phrase">Копіювання останньої фрази SandFly у буфер обміну, щоб вставити текст</string>
-  <string name="summary_spell_last_spoken_phrase">Назвіть букви останньої фрази, яку сказав SandFly</string>
+  <string name="summary_spell_last_spoken_phrase">Вимовити по буквах останню фразу, яку сказав SandFly</string>
   <string name="summary_repeat_last_spoken_phrase">Послухайте останню фразу, яку сказав SandFly</string>
   <string name="summary_perform_screen_search">Знайти на екрані текст за пошуковим запитом</string>
   <string name="summary_voice_commands">Керувати програмою SandFly за допомогою голосових команд</string>
@@ -1299,7 +1299,7 @@
     <string name="title_pref_tts_engine">Синтез мовлення</string>
     <string name="title_pref_system_tts_settings">Системні налаштування синтезу мовлення</string>
     <string name="title_selector_vertical_navigation">Вертикальна навігація</string>
-    <string name="summary_selector_vertical_navigation">Перейдіть до елемента нижче або вище, повз інші елементи рядка</string>
+    <string name="summary_selector_vertical_navigation">Перехід до елемента нижче або вище, минаючи інші елементи рядка</string>
     <string name="title_selector_switch_tts_engine">Синтезатор мовлення</string>
     <string name="summary_selector_switch_tts_engine">Перемикання між встановленими механізмами мовлення</string>
     <string name="title_selector_voice_profile">Голосовий профіль</string>
@@ -1336,7 +1336,7 @@
     <string name="summary_pref_tts_engine_default">Системний за умовчанням</string>
     <string name="title_pref_speech_pitch">Висота мовлення</string>
     <string name="title_pref_speech_stream">Гучність мовлення</string>
-    <string name="summary_selector_speech_stream">Перемикання між доступністю, медіа, гучністю дзвінка та виклику</string>
+    <string name="summary_selector_speech_stream">Перемикання між гучністю спеціальних можливостей, медіа, дзвінка та розмови</string>
     <string name="speech_stream_accessibility">Спеціальні можливості: гучність</string>
     <string name="speech_stream_media">Гучність медіа</string>
     <string name="speech_stream_ring">Гучність дзвінка</string>

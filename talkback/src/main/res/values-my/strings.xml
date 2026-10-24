@@ -51,7 +51,7 @@
   <string name="pref_speak_container_element_positions_title">အကွက်အချက်အလက်ကို ဖတ်ပြရန်</string>
   <string name="pref_speak_time_title">အချိန်ပြောရန်</string>
   <string name="pref_speak_time_summary">ဖန်သားပြင်ဖွင့်ထားသောအခါ</string>
-  <string name="summary_speak_container_element_positions">စာရင်းများ၊ ဇယားကွက်များနှင့် အခြားကွန်တိန်နာများကို သင်ထည့်သွင်းသည့်အခါ သို့မဟုတ် ထွက်သွားသည့်အခါတွင် ပြောပါ</string>
+  <string name="summary_speak_container_element_positions">စာရင်းများ၊ ဇယားကွက်များနှင့် အခြား container များထဲ ဝင်သည့်အခါ သို့မဟုတ် ထွက်သည့်အခါ ပြောသည်</string>
   <string name="reset_letency_reduction_settings_dialog_title">စောင့်ရချိန် ဆက်တင်များကို ပြင်ဆင်သတ်မှတ်မလား။</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">၎င်းသည် စောင့်ရချိန် ဆက်တင်များကို မူရင်းသို့ ပြင်ဆင်သတ်မှတ်ပါမည်</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">ပြင်ဆင်သတ်မှတ်ရန်</string>
@@ -503,7 +503,7 @@
   <string name="summary_read_from_top">ထိပ်မှစ၍ ဖန်သားပြင်ရှိ အကြောင်းအရာများအားလုံးကို ဖတ်သည်</string>
   <string name="summary_read_from_current">ရွေးထားသည်မှစ၍ ဖန်သားပြင်ရှိ အရာအားလုံးကို ဖတ်မည်</string>
   <string name="summary_copy_last_spoken_phrase">စာသားကို ကူးထည့်နိုင်ရန် SandFly ကပြောသည့် နောက်ဆုံးစကားရပ်ကို ကလစ်ဘုတ်သို့ မိတ္တူကူးသည်</string>
-  <string name="summary_spell_last_spoken_phrase">SandFly ပြောခဲ့သော နောက်ဆုံးစာစု၏ အက္ခရာတစ်ခုစီကို စာလုံးပေါင်းပါ</string>
+  <string name="summary_spell_last_spoken_phrase">SandFly နောက်ဆုံးပြောခဲ့သော စာစုကို အက္ခရာတစ်လုံးချင်း စာလုံးပေါင်းရန်</string>
   <string name="summary_repeat_last_spoken_phrase">SandFly နောက်ဆုံးပြောခဲ့သည့် စကားရပ်ကို ထပ်နားထောင်ရန်</string>
   <string name="summary_perform_screen_search">ဖန်သားပြင်တွင် ထိုစာသားကိုရှာရန် ရှာဖွေသည့်စာလုံးကို ထည့်ပါ</string>
   <string name="summary_voice_commands">SandFly ကို သင့်အသံဖြင့် ထိန်းချုပ်ပါ</string>
@@ -1299,7 +1299,7 @@
     <string name="title_pref_tts_engine">စာသားမှ စကားပြောအင်ဂျင်</string>
     <string name="title_pref_system_tts_settings">စနစ် စာသားမှ စကားပြော ဆက်တင်များ</string>
     <string name="title_selector_vertical_navigation">ဒေါင်လိုက် လမ်းကြောင်းပြ</string>
-    <string name="summary_selector_vertical_navigation">အောက် သို့မဟုတ် အထက်ရှိ အရာသို့ ရွှေ့ပါ၊ အတန်း၏ အခြားအရာများကို ကျော်ပါ</string>
+    <string name="summary_selector_vertical_navigation">အတန်းရှိ အခြားအရာများကို ကျော်၍ အောက် သို့မဟုတ် အထက်ရှိ အရာသို့ ရွှေ့ရန်</string>
     <string name="title_selector_switch_tts_engine">စကားပြောအင်ဂျင်</string>
     <string name="summary_selector_switch_tts_engine">ထည့်သွင်းထားသော စကားပြောအင်ဂျင်များအကြား ပြောင်းပါ</string>
     <string name="title_selector_voice_profile">အသံပရိုဖိုင်</string>
@@ -1336,7 +1336,7 @@
     <string name="summary_pref_tts_engine_default">စနစ် ပုံသေ</string>
     <string name="title_pref_speech_pitch">အသံ အနိမ့်အမြင့်</string>
     <string name="title_pref_speech_stream">အသံအတိုးအကျယ်</string>
-    <string name="summary_selector_speech_stream">အများသုံးစွဲနိုင်မှု၊ မီဒီယာ၊ ဖုန်းမြည်သံနှင့် ခေါ်ဆိုမှုပမာဏများအကြား ပြောင်းပါ</string>
+    <string name="summary_selector_speech_stream">အများသုံးစွဲနိုင်မှု၊ မီဒီယာ၊ ဖုန်းမြည်သံနှင့် ခေါ်ဆိုမှု အသံအတိုးအကျယ်များအကြား ပြောင်းရန်</string>
     <string name="speech_stream_accessibility">အများသုံးနိုင်မှု အသံ</string>
     <string name="speech_stream_media">မီဒီယာအသံအတိုးအကျယ်</string>
     <string name="speech_stream_ring">ဖုန်းမြည်သံ အတိုးအကျယ်</string>

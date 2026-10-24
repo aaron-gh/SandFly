@@ -51,7 +51,7 @@
   <string name="pref_speak_container_element_positions_title">Изговарај информације о контејнеру</string>
   <string name="pref_speak_time_title">Изговори време</string>
   <string name="pref_speak_time_summary">Када укључите екран</string>
-  <string name="summary_speak_container_element_positions">Реците када уносите или напуштате листе, мреже и друге контејнере</string>
+  <string name="summary_speak_container_element_positions">Обавештава када уђете у листе, мреже и друге контејнере или изађете из њих</string>
   <string name="reset_letency_reduction_settings_dialog_title">Желите да ресетујете подешавања кашњења?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Тиме ћете сва подешавања кашњења ресетовати на подразумевана</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Ресетуј</string>
@@ -1299,7 +1299,7 @@
     <string name="title_pref_tts_engine">Механизам за претварање текста у говор</string>
     <string name="title_pref_system_tts_settings">Системска подешавања претварања текста у говор</string>
     <string name="title_selector_vertical_navigation">Вертикална навигација</string>
-    <string name="summary_selector_vertical_navigation">Пређите на ставку испод или изнад, поред осталих ставки у реду</string>
+    <string name="summary_selector_vertical_navigation">Прелазак на ставку испод или изнад, уз прескакање осталих ставки у реду</string>
     <string name="title_selector_switch_tts_engine">Механизам за говор</string>
     <string name="summary_selector_switch_tts_engine">Пребацивање између инсталираних говорних машина</string>
     <string name="title_selector_voice_profile">Гласовни профил</string>
@@ -1336,7 +1336,7 @@
     <string name="summary_pref_tts_engine_default">Подразумевано за систем</string>
     <string name="title_pref_speech_pitch">Висина говора</string>
     <string name="title_pref_speech_stream">Јачина звука говора</string>
-    <string name="summary_selector_speech_stream">Пребацивање између приступачности, медија, звона и јачине звука позива</string>
+    <string name="summary_selector_speech_stream">Пребацивање између јачине звука за приступачност, медије, звоно и позиве</string>
     <string name="speech_stream_accessibility">Јачина звука за приступачност</string>
     <string name="speech_stream_media">Јачина звука медија</string>
     <string name="speech_stream_ring">Јачина звона</string>
