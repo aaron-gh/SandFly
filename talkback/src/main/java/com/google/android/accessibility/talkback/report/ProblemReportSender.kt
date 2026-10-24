@@ -297,7 +297,8 @@ object ProblemReportSender {
 
   /**
    * Remembers this process's ID under its name, so that a report includes its log even after it
-   * has ended. Call it when one of SandFly's other processes starts, such as on-device AI's.
+   * has ended. Call it when one of SandFly's processes starts: the screen reader's, and others such
+   * as on-device AI's.
    */
   @JvmStatic
   fun rememberProcess(context: Context, name: String) {
@@ -327,7 +328,8 @@ object ProblemReportSender {
     pids.remove(Process.myPid())
     val logs = StringBuilder()
     for ((pid, name) in pids) {
-      val log = readLog(pid, OTHER_LOG_LINES)?.takeIf { it.isNotBlank() } ?: continue
+      val log =
+        readLog(pid, OTHER_LOG_LINES, MAIN_LOG_PRIORITY)?.takeIf { it.isNotBlank() } ?: continue
       logs.append("\n\nLog of ").append(name).append(":\n")
       logs.append(log.takeLast(MAX_OTHER_LOG))
     }

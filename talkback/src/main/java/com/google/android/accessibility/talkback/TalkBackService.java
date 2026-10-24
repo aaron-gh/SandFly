@@ -254,6 +254,7 @@ import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId;
 import com.google.android.accessibility.talkback.trainingcommon.TutorialShortcuts;
+import com.google.android.accessibility.talkback.report.ProblemReportSender;
 import com.google.android.accessibility.talkback.report.ReportInbox;
 import com.google.android.accessibility.talkback.report.TurnOffLog;
 import com.google.android.accessibility.talkback.update.Updater;
@@ -1985,6 +1986,8 @@ public class TalkBackService extends AccessibilityServiceCompat
   @Override
   protected void onServiceConnected() {
     super.onServiceConnected();
+    // A report sent after the screen reader is turned off, from a new process, includes its log.
+    ProblemReportSender.rememberProcess(this, "screen reader");
     EventId talkbackOnEventId =
         Performance.getInstance().onHintEventReceived(Performance.HINT_SUB_TYPE_TALKBACK_ON);
 
