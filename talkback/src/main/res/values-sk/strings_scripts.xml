@@ -76,8 +76,8 @@
     <string name="script_log_copy">Kopírovať denník</string>
     <string name="script_log_copied">Denník bol skopírovaný</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Vyžaduje skriptové API <xliff:g id="needed">%1$d</xliff:g> alebo novšie. Tento SandFly má <xliff:g id="current">%2$d</xliff:g>, takže diely nemusia fungovať.</string>
-    <string name="script_api_untested">Testované až po skriptové API <xliff:g id="tested">%1$d</xliff:g>. Tento SandFly má <xliff:g id="current">%2$d</xliff:g>, takže nemusí fungovať podľa očakávania.</string>
+    <string name="script_api_too_old">Vyžaduje rozhranie API skriptov <xliff:g id="needed">%1$d</xliff:g> alebo novšie. Tento SandFly má <xliff:g id="current">%2$d</xliff:g>, takže niektoré časti nemusia fungovať.</string>
+    <string name="script_api_untested">Testované po rozhranie API skriptov <xliff:g id="tested">%1$d</xliff:g>. Tento SandFly má <xliff:g id="current">%2$d</xliff:g>, takže skript nemusí fungovať podľa očakávaní.</string>
     <string name="script_state_incompatible">S týmto SandFly nemusí fungovať</string>
     <string name="script_api_range">Skriptové API <xliff:g id="min">%1$d</xliff:g> až <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Kompatibilita</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Obnoviť predvolené nastavenia</string>
     <string name="script_binding_restored">Predvolené nastavenia boli obnovené</string>
     <string name="script_binding_perform">Vykonajte gesto alebo stlačte klávesy</string>
-    <string name="script_binding_perform_summary">Priraďte ďalšie gesto alebo klávesy stlačené s modifikátorom SandFly</string>
+    <string name="script_binding_perform_summary">Priradenie ďalšieho gesta alebo klávesov stlačených s modifikátorom SandFly</string>
     <string name="script_binding_perform_message">Urobte gesto alebo stlačte klávesy.</string>
     <string name="script_binding_assign_title">Priradiť <xliff:g id="binding">%1$s</xliff:g> k <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Priradiť</string>

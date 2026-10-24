@@ -76,8 +76,8 @@
     <string name="script_log_copy">Kopier logg</string>
     <string name="script_log_copied">Logg kopiert</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Trenger script API <xliff:g id="needed">%1$d</xliff:g> eller nyere. Denne SandFly har <xliff:g id="current">%2$d</xliff:g>, så det kan hende at deler ikke fungerer.</string>
-    <string name="script_api_untested">Testet opp til script API <xliff:g id="tested">%1$d</xliff:g>. Denne SandFly har <xliff:g id="current">%2$d</xliff:g>, så den fungerer kanskje ikke som forventet.</string>
+    <string name="script_api_too_old">Krever skript-API <xliff:g id="needed">%1$d</xliff:g> eller nyere. Denne SandFly-versjonen har <xliff:g id="current">%2$d</xliff:g>, så enkelte deler fungerer kanskje ikke.</string>
+    <string name="script_api_untested">Testet opp til skript-API <xliff:g id="tested">%1$d</xliff:g>. Denne SandFly-versjonen har <xliff:g id="current">%2$d</xliff:g>, så skriptet fungerer kanskje ikke som forventet.</string>
     <string name="script_state_incompatible">Fungerer kanskje ikke med denne versjonen av SandFly</string>
     <string name="script_api_range">Skript-API <xliff:g id="min">%1$d</xliff:g> til <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Kompatibilitet</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Gjenopprett standardinnstillinger</string>
     <string name="script_binding_restored">Standarder gjenopprettet</string>
     <string name="script_binding_perform">Utfør en bevegelse eller trykk på taster</string>
-    <string name="script_binding_perform_summary">Tilordne neste bevegelse, eller taster trykket med SandFly-modifikatoren</string>
+    <string name="script_binding_perform_summary">Tilordne neste bevegelse, eller taster trykket med SandFly-modifikatortasten</string>
     <string name="script_binding_perform_message">Gjør bevegelsen eller trykk på tastene.</string>
     <string name="script_binding_assign_title">Tilordne <xliff:g id="binding">%1$s</xliff:g> til <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Tilordne</string>

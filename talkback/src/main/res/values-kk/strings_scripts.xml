@@ -76,8 +76,8 @@
     <string name="script_log_copy">Журналды көшіру</string>
     <string name="script_log_copied">Журнал көшірілді</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Скрипт API <xliff:g id="needed">%1$d</xliff:g> немесе одан кейінгі нұсқасы қажет. Бұл SandFly ішінде <xliff:g id="current">%2$d</xliff:g> бар, сондықтан бөліктер жұмыс істемеуі мүмкін.</string>
-    <string name="script_api_untested">API <xliff:g id="tested">%1$d</xliff:g> сценарийіне дейін сыналған. Бұл SandFly параметрінде <xliff:g id="current">%2$d</xliff:g> бар, сондықтан ол күткендей жұмыс істемеуі мүмкін.</string>
+    <string name="script_api_too_old">Скрипт API <xliff:g id="needed">%1$d</xliff:g> немесе жаңарақ нұсқасы қажет. Бұл SandFly-да <xliff:g id="current">%2$d</xliff:g> бар, сондықтан кейбір бөліктері жұмыс істемеуі мүмкін.</string>
+    <string name="script_api_untested">Скрипт API <xliff:g id="tested">%1$d</xliff:g> нұсқасына дейін сыналған. Бұл SandFly-да <xliff:g id="current">%2$d</xliff:g> бар, сондықтан күткендей жұмыс істемеуі мүмкін.</string>
     <string name="script_state_incompatible">SandFly-дың осы нұсқасымен жұмыс істемеуі мүмкін</string>
     <string name="script_api_range">Скрипт API <xliff:g id="min">%1$d</xliff:g> – <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Үйлесімділік</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Әдепкі мәндерді қалпына келтіру</string>
     <string name="script_binding_restored">Әдепкілер қалпына келтірілді</string>
     <string name="script_binding_perform">Қимыл жасаңыз немесе пернелерді басыңыз</string>
-    <string name="script_binding_perform_summary">Келесі қимылды немесе SandFly модификаторымен басылған пернелерді тағайындаңыз</string>
+    <string name="script_binding_perform_summary">Келесі қимылды немесе SandFly модификатор пернесімен басылған пернелерді тағайындау</string>
     <string name="script_binding_perform_message">Қимыл жасаңыз немесе пернелерді басыңыз.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g> командасына тағайындалсын ба?</string>
     <string name="script_binding_assign">Тағайындау</string>

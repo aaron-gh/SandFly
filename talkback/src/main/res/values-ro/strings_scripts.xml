@@ -76,8 +76,8 @@
     <string name="script_log_copy">Copiază jurnalul</string>
     <string name="script_log_copied">Jurnalul a fost copiat</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Necesita script API <xliff:g id="needed">%1$d</xliff:g> sau o versiune ulterioară. Acest SandFly are <xliff:g id="current">%2$d</xliff:g>, deci piesele pot să nu funcționeze.</string>
-    <string name="script_api_untested">Testat până la script API <xliff:g id="tested">%1$d</xliff:g>. Acest SandFly are <xliff:g id="current">%2$d</xliff:g>, deci este posibil să nu funcționeze așa cum era de așteptat.</string>
+    <string name="script_api_too_old">Necesită API-ul pentru scripturi <xliff:g id="needed">%1$d</xliff:g> sau mai nou. Acest SandFly are <xliff:g id="current">%2$d</xliff:g>, deci unele părți pot să nu funcționeze.</string>
+    <string name="script_api_untested">Testat până la API-ul pentru scripturi <xliff:g id="tested">%1$d</xliff:g>. Acest SandFly are <xliff:g id="current">%2$d</xliff:g>, deci scriptul poate să nu funcționeze conform așteptărilor.</string>
     <string name="script_state_incompatible">Este posibil să nu funcționeze cu această versiune SandFly</string>
     <string name="script_api_range">API pentru scripturi de la <xliff:g id="min">%1$d</xliff:g> la <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Compatibilitate</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Restabilește valorile implicite</string>
     <string name="script_binding_restored">Valorile implicite au fost restaurate</string>
     <string name="script_binding_perform">Efectuați gestul sau apăsați tastele</string>
-    <string name="script_binding_perform_summary">Atribuiți următorul gest sau tastele apăsate cu modificatorul SandFly</string>
+    <string name="script_binding_perform_summary">Atribuirea gestului următor sau a tastelor apăsate cu tasta modificatoare SandFly</string>
     <string name="script_binding_perform_message">Faceți gestul sau apăsați tastele.</string>
     <string name="script_binding_assign_title">Atribuiți <xliff:g id="binding">%1$s</xliff:g> comenzii <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Atribuie</string>

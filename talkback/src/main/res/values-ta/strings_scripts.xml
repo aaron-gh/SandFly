@@ -76,8 +76,8 @@
     <string name="script_log_copy">பதிவை நகலெடுக்கவும்</string>
     <string name="script_log_copied">பதிவு நகலெடுக்கப்பட்டது</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">ஸ்கிரிப்ட் API <xliff:g id="needed">%1$d</xliff:g> அல்லது அதற்குப் பிறகு தேவை. இந்த SandFly இல் <xliff:g id="current">%2$d</xliff:g> உள்ளது, எனவே பாகங்கள் வேலை செய்யாமல் போகலாம்.</string>
-    <string name="script_api_untested">ஸ்கிரிப்ட் API <xliff:g id="tested">%1$d</xliff:g> வரை சோதிக்கப்பட்டது. இந்த SandFly இல் <xliff:g id="current">%2$d</xliff:g> உள்ளது, எனவே இது எதிர்பார்த்தபடி வேலை செய்யாமல் போகலாம்.</string>
+    <string name="script_api_too_old">ஸ்கிரிப்ட் API <xliff:g id="needed">%1$d</xliff:g> அல்லது புதியது தேவை. இந்த SandFly-இல் <xliff:g id="current">%2$d</xliff:g> உள்ளது, எனவே சில பகுதிகள் வேலை செய்யாமல் போகலாம்.</string>
+    <string name="script_api_untested">ஸ்கிரிப்ட் API <xliff:g id="tested">%1$d</xliff:g> வரை சோதிக்கப்பட்டது. இந்த SandFly-இல் <xliff:g id="current">%2$d</xliff:g> உள்ளது, எனவே இது எதிர்பார்த்தபடி வேலை செய்யாமல் போகலாம்.</string>
     <string name="script_state_incompatible">SandFly இன் இந்தப் பதிப்பில் வேலை செய்யாமல் போகலாம்</string>
     <string name="script_api_range">ஸ்கிரிப்ட் API <xliff:g id="min">%1$d</xliff:g> முதல் <xliff:g id="tested">%2$d</xliff:g> வரை</string>
     <string name="script_compatibility_title">இணக்கத்தன்மை</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">இயல்புநிலைகளை மீட்டமை</string>
     <string name="script_binding_restored">இயல்புநிலை மீட்டமைக்கப்பட்டது</string>
     <string name="script_binding_perform">சைகை செய்யவும் அல்லது விசைகளை அழுத்தவும்</string>
-    <string name="script_binding_perform_summary">அடுத்த சைகையை ஒதுக்கவும் அல்லது SandFly மாற்றியை அழுத்தும் விசைகள்</string>
+    <string name="script_binding_perform_summary">அடுத்த சைகையை அல்லது SandFly மாற்றியுடன் அழுத்திய விசைகளை ஒதுக்குதல்</string>
     <string name="script_binding_perform_message">சைகை செய்யவும் அல்லது விசைகளை அழுத்தவும்.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> ஐ <xliff:g id="command">%2$s</xliff:g> க்கு ஒதுக்கவா?</string>
     <string name="script_binding_assign">ஒதுக்கு</string>

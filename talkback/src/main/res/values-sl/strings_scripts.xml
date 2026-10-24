@@ -76,7 +76,7 @@
     <string name="script_log_copy">Kopiraj dnevnik</string>
     <string name="script_log_copied">Dnevnik je kopiran</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Potrebuje API za skripte <xliff:g id="needed">%1$d</xliff:g> ali novejši. Ta SandFly ima <xliff:g id="current">%2$d</xliff:g>, zato deli morda ne bodo delovali.</string>
+    <string name="script_api_too_old">Zahteva API za skripte <xliff:g id="needed">%1$d</xliff:g> ali novejši. Ta SandFly ima <xliff:g id="current">%2$d</xliff:g>, zato nekateri deli morda ne bodo delovali.</string>
     <string name="script_api_untested">Preizkušeno do skriptnega API-ja <xliff:g id="tested">%1$d</xliff:g>. Ta SandFly ima <xliff:g id="current">%2$d</xliff:g>, zato morda ne bo deloval po pričakovanjih.</string>
     <string name="script_state_incompatible">Morda ne bo delovalo s to različico SandFly</string>
     <string name="script_api_range">API za skripte <xliff:g id="min">%1$d</xliff:g> do <xliff:g id="tested">%2$d</xliff:g></string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Obnovi privzete nastavitve</string>
     <string name="script_binding_restored">Privzete nastavitve obnovljene</string>
     <string name="script_binding_perform">Izvedite potezo ali pritisnite tipke</string>
-    <string name="script_binding_perform_summary">Določite naslednjo potezo ali pritisnjene tipke z modifikatorjem SandFly</string>
+    <string name="script_binding_perform_summary">Dodelitev naslednje kretnje ali tipk, pritisnjenih z modifikatorsko tipko SandFly</string>
     <string name="script_binding_perform_message">Naredite potezo ali pritisnite tipke.</string>
     <string name="script_binding_assign_title">Dodeliti <xliff:g id="binding">%1$s</xliff:g> ukazu <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Dodeli</string>

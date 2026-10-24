@@ -76,8 +76,8 @@
     <string name="script_log_copy">Бүртгэлийг хуулах</string>
     <string name="script_log_copied">Бүртгэлийг хуулсан</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Скрипт API <xliff:g id="needed">%1$d</xliff:g> буюу түүнээс дээш хувилбар хэрэгтэй. Энэ SandFly-д <xliff:g id="current">%2$d</xliff:g> байгаа тул хэсгүүд ажиллахгүй байж магадгүй.</string>
-    <string name="script_api_untested">Скрипт API <xliff:g id="tested">%1$d</xliff:g> хүртэл туршсан. Энэ SandFly нь <xliff:g id="current">%2$d</xliff:g>-тэй тул санаснаар ажиллахгүй байж магадгүй.</string>
+    <string name="script_api_too_old">Скрипт API <xliff:g id="needed">%1$d</xliff:g> буюу түүнээс шинэ хувилбар шаардлагатай. Энэ SandFly-д <xliff:g id="current">%2$d</xliff:g> байгаа тул зарим хэсэг ажиллахгүй байж магадгүй.</string>
+    <string name="script_api_untested">Скрипт API <xliff:g id="tested">%1$d</xliff:g> хүртэл туршсан. Энэ SandFly-д <xliff:g id="current">%2$d</xliff:g> байгаа тул хүлээгдэж буй байдлаар ажиллахгүй байж магадгүй.</string>
     <string name="script_state_incompatible">SandFly-н энэ хувилбартай ажиллахгүй байж магадгүй</string>
     <string name="script_api_range">Скрипт API <xliff:g id="min">%1$d</xliff:g> - <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Тохиромжтой байдал</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Өгөгдмөлүүдийг сэргээх</string>
     <string name="script_binding_restored">Өгөгдмөлүүдийг сэргээсэн</string>
     <string name="script_binding_perform">Дохио хийх эсвэл товч дарах</string>
-    <string name="script_binding_perform_summary">Дараагийн дохио эсвэл SandFly өөрчлөгчөөр дарагдсан товчлууруудыг зааж өгнө үү</string>
+    <string name="script_binding_perform_summary">Дараагийн дохио эсвэл SandFly өөрчлөгч товчтой хамт дарсан товчлууруудыг оноох</string>
     <string name="script_binding_perform_message">Дохио хийх эсвэл товчийг дарна уу.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>-г <xliff:g id="command">%2$s</xliff:g>-д оноох уу?</string>
     <string name="script_binding_assign">Оноох</string>

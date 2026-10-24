@@ -76,8 +76,8 @@
     <string name="script_log_copy">Kopijuoti žurnalą</string>
     <string name="script_log_copied">Žurnalas nukopijuotas</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Reikia scenarijaus API <xliff:g id="needed">%1$d</xliff:g> arba naujesnės. Šis SandFly turi <xliff:g id="current">%2$d</xliff:g>, todėl dalys gali neveikti.</string>
-    <string name="script_api_untested">Išbandyta iki scenarijaus API <xliff:g id="tested">%1$d</xliff:g>. Šis SandFly turi <xliff:g id="current">%2$d</xliff:g>, todėl jis gali neveikti taip, kaip tikėtasi.</string>
+    <string name="script_api_too_old">Reikia scenarijų API <xliff:g id="needed">%1$d</xliff:g> ar naujesnės. Šiame SandFly yra <xliff:g id="current">%2$d</xliff:g>, todėl kai kurios dalys gali neveikti.</string>
+    <string name="script_api_untested">Išbandyta iki scenarijų API <xliff:g id="tested">%1$d</xliff:g>. Šiame SandFly yra <xliff:g id="current">%2$d</xliff:g>, todėl scenarijus gali veikti ne taip, kaip tikimasi.</string>
     <string name="script_state_incompatible">Gali neveikti su šia SandFly versija</string>
     <string name="script_api_range">Scenarijaus API nuo <xliff:g id="min">%1$d</xliff:g> iki <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Suderinamumas</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Atkurti numatytuosius nustatymus</string>
     <string name="script_binding_restored">Numatytieji nustatymai atkurti</string>
     <string name="script_binding_perform">Atlikite gestą arba paspauskite klavišus</string>
-    <string name="script_binding_perform_summary">Priskirkite kitą gestą arba paspaustus klavišus naudodami modifikatorių SandFly</string>
+    <string name="script_binding_perform_summary">Priskirti kitą gestą arba klavišus, paspaustus su SandFly modifikavimo klavišu</string>
     <string name="script_binding_perform_message">Atlikite gestą arba paspauskite klavišus.</string>
     <string name="script_binding_assign_title">Priskirti <xliff:g id="binding">%1$s</xliff:g> komandai <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Priskirti</string>

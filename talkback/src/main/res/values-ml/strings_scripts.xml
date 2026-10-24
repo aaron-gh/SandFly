@@ -76,8 +76,8 @@
     <string name="script_log_copy">ലോഗ് പകർത്തുക</string>
     <string name="script_log_copied">ലോഗ് പകർത്തി</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">സ്ക്രിപ്റ്റ് API <xliff:g id="needed">%1$d</xliff:g> അല്ലെങ്കിൽ അതിനുശേഷമുള്ളത് ആവശ്യമാണ്. ഈ SandFly ന് <xliff:g id="current">%2$d</xliff:g> ഉണ്ട്, അതിനാൽ ഭാഗങ്ങൾ പ്രവർത്തിച്ചേക്കില്ല.</string>
-    <string name="script_api_untested">സ്ക്രിപ്റ്റ് API <xliff:g id="tested">%1$d</xliff:g> വരെ പരീക്ഷിച്ചു. ഈ SandFly ന് <xliff:g id="current">%2$d</xliff:g> ഉണ്ട്, അതിനാൽ ഇത് പ്രതീക്ഷിച്ച പോലെ പ്രവർത്തിച്ചേക്കില്ല.</string>
+    <string name="script_api_too_old">സ്ക്രിപ്റ്റ് API <xliff:g id="needed">%1$d</xliff:g> അല്ലെങ്കിൽ പുതിയത് ആവശ്യമാണ്. ഈ SandFly-ൽ <xliff:g id="current">%2$d</xliff:g> ആണ്, അതിനാൽ ചില ഭാഗങ്ങൾ പ്രവർത്തിച്ചേക്കില്ല.</string>
+    <string name="script_api_untested">സ്ക്രിപ്റ്റ് API <xliff:g id="tested">%1$d</xliff:g> വരെ പരീക്ഷിച്ചു. ഈ SandFly-ൽ <xliff:g id="current">%2$d</xliff:g> ആണ്, അതിനാൽ ഇത് പ്രതീക്ഷിച്ച പോലെ പ്രവർത്തിച്ചേക്കില്ല.</string>
     <string name="script_state_incompatible">SandFly-യുടെ ഈ പതിപ്പിൽ പ്രവർത്തിച്ചേക്കില്ല</string>
     <string name="script_api_range">സ്ക്രിപ്റ്റ് API <xliff:g id="min">%1$d</xliff:g> മുതൽ <xliff:g id="tested">%2$d</xliff:g> വരെ</string>
     <string name="script_compatibility_title">അനുയോജ്യത</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">ഡിഫോൾട്ടുകൾ പുനഃസ്ഥാപിക്കുക</string>
     <string name="script_binding_restored">ഡിഫോൾട്ടുകൾ പുനഃസ്ഥാപിച്ചു</string>
     <string name="script_binding_perform">ആംഗ്യം കാണിക്കുക അല്ലെങ്കിൽ കീകൾ അമർത്തുക</string>
-    <string name="script_binding_perform_summary">അടുത്ത ആംഗ്യം നൽകുക, അല്ലെങ്കിൽ SandFly മോഡിഫയർ ഉപയോഗിച്ച് കീകൾ അമർത്തുക</string>
+    <string name="script_binding_perform_summary">അടുത്ത ജെസ്ചറോ SandFly മോഡിഫയറിനൊപ്പം അമർത്തിയ കീകളോ അസൈൻ ചെയ്യുക</string>
     <string name="script_binding_perform_message">ആംഗ്യം കാണിക്കുക അല്ലെങ്കിൽ കീകൾ അമർത്തുക.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g>-ലേക്ക് അസൈൻ ചെയ്യണോ?</string>
     <string name="script_binding_assign">അസൈൻ ചെയ്യുക</string>

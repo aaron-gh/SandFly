@@ -76,8 +76,8 @@
     <string name="script_log_copy">ჟურნალის კოპირება</string>
     <string name="script_log_copied">ჟურნალი კოპირებულია</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">სჭირდება სკრიპტის API <xliff:g id="needed">%1$d</xliff:g> ან უფრო ახალი. ამ SandFly აქვს <xliff:g id="current">%2$d</xliff:g>, ამიტომ ნაწილები შეიძლება არ იმუშაოს.</string>
-    <string name="script_api_untested">დატესტილია სკრიპტის API <xliff:g id="tested">%1$d</xliff:g>-მდე. ამ SandFly აქვს <xliff:g id="current">%2$d</xliff:g>, ამიტომ შეიძლება არ იმუშაოს ისე, როგორც მოსალოდნელი იყო.</string>
+    <string name="script_api_too_old">საჭიროა სკრიპტის API <xliff:g id="needed">%1$d</xliff:g> ან უფრო ახალი. ამ SandFly-ს აქვს <xliff:g id="current">%2$d</xliff:g>, ამიტომ ზოგიერთი ნაწილი შეიძლება არ იმუშაოს.</string>
+    <string name="script_api_untested">შემოწმებულია სკრიპტის API <xliff:g id="tested">%1$d</xliff:g>-მდე. ამ SandFly-ს აქვს <xliff:g id="current">%2$d</xliff:g>, ამიტომ შეიძლება მოსალოდნელისამებრ არ იმუშაოს.</string>
     <string name="script_state_incompatible">შეიძლება არ იმუშაოს SandFly-ის ამ ვერსიასთან</string>
     <string name="script_api_range">სკრიპტის API <xliff:g id="min">%1$d</xliff:g>-დან <xliff:g id="tested">%2$d</xliff:g>-მდე</string>
     <string name="script_compatibility_title">თავსებადობა</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">ნაგულისხმევი პარამეტრების აღდგენა</string>
     <string name="script_binding_restored">ნაგულისხმევი პარამეტრები აღდგენილია</string>
     <string name="script_binding_perform">შეასრულეთ ჟესტი ან დააჭირეთ კლავიშებს</string>
-    <string name="script_binding_perform_summary">მიანიჭეთ შემდეგი ჟესტი, ან ღილაკები დაჭერით SandFly მოდიფიკატორით</string>
+    <string name="script_binding_perform_summary">შემდეგი ჟესტის ან SandFly-ის მოდიფიკატორ კლავიშთან ერთად დაჭერილი კლავიშების მინიჭება</string>
     <string name="script_binding_perform_message">გააკეთეთ ჟესტი ან დააჭირეთ კლავიშებს.</string>
     <string name="script_binding_assign_title">მივანიჭოთ <xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g>-ს?</string>
     <string name="script_binding_assign">მინიჭება</string>

@@ -76,7 +76,7 @@
     <string name="script_log_copy">Salin log</string>
     <string name="script_log_copied">Log disalin</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Memerlukan API skrip <xliff:g id="needed">%1$d</xliff:g> atau yang lebih baru. SandFly ini memiliki <xliff:g id="current">%2$d</xliff:g>, jadi sebagian fungsi mungkin tidak berjalan.</string>
+    <string name="script_api_too_old">Memerlukan API skrip <xliff:g id="needed">%1$d</xliff:g> atau yang lebih baru. SandFly ini memiliki <xliff:g id="current">%2$d</xliff:g>, jadi sebagian mungkin tidak berfungsi.</string>
     <string name="script_api_untested">Diuji hingga API skrip <xliff:g id="tested">%1$d</xliff:g>. SandFly ini memiliki <xliff:g id="current">%2$d</xliff:g>, jadi skrip mungkin tidak berfungsi seperti yang diharapkan.</string>
     <string name="script_state_incompatible">Mungkin tidak berfungsi dengan SandFly ini</string>
     <string name="script_api_range">API skrip <xliff:g id="min">%1$d</xliff:g> hingga <xliff:g id="tested">%2$d</xliff:g></string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Pulihkan default</string>
     <string name="script_binding_restored">Default dipulihkan</string>
     <string name="script_binding_perform">Lakukan gestur atau tekan tombol</string>
-    <string name="script_binding_perform_summary">Tetapkan gestur berikutnya, atau tombol yang ditekan dengan tombol pengubah SandFly</string>
+    <string name="script_binding_perform_summary">Menetapkan gestur berikutnya, atau tombol yang ditekan dengan tombol pengubah SandFly</string>
     <string name="script_binding_perform_message">Lakukan gestur atau tekan tombol.</string>
     <string name="script_binding_assign_title">Tetapkan <xliff:g id="binding">%1$s</xliff:g> untuk <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Tetapkan</string>

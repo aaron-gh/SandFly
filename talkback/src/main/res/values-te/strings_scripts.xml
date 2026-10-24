@@ -76,8 +76,8 @@
     <string name="script_log_copy">లాగ్‌ను కాపీ చేయండి</string>
     <string name="script_log_copied">లాగ్ కాపీ చేయబడింది</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">స్క్రిప్ట్ API <xliff:g id="needed">%1$d</xliff:g> లేదా తదుపరిది అవసరం. ఈ SandFly <xliff:g id="current">%2$d</xliff:g>ని కలిగి ఉంది, కాబట్టి భాగాలు పని చేయకపోవచ్చు.</string>
-    <string name="script_api_untested">స్క్రిప్ట్ API <xliff:g id="tested">%1$d</xliff:g> వరకు పరీక్షించబడింది. ఈ SandFly <xliff:g id="current">%2$d</xliff:g>ని కలిగి ఉంది, కనుక ఇది ఊహించిన విధంగా పని చేయకపోవచ్చు.</string>
+    <string name="script_api_too_old">స్క్రిప్ట్ API <xliff:g id="needed">%1$d</xliff:g> లేదా తర్వాతిది అవసరం. ఈ SandFlyలో <xliff:g id="current">%2$d</xliff:g> ఉంది, కాబట్టి కొన్ని భాగాలు పని చేయకపోవచ్చు.</string>
+    <string name="script_api_untested">స్క్రిప్ట్ API <xliff:g id="tested">%1$d</xliff:g> వరకు పరీక్షించబడింది. ఈ SandFlyలో <xliff:g id="current">%2$d</xliff:g> ఉంది, కాబట్టి ఇది ఆశించిన విధంగా పని చేయకపోవచ్చు.</string>
     <string name="script_state_incompatible">SandFly యొక్క ఈ వెర్షన్‌తో పని చేయకపోవచ్చు</string>
     <string name="script_api_range">స్క్రిప్ట్ API <xliff:g id="min">%1$d</xliff:g> నుండి <xliff:g id="tested">%2$d</xliff:g> వరకు</string>
     <string name="script_compatibility_title">అనుకూలత</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">డిఫాల్ట్‌లను పునరుద్ధరించండి</string>
     <string name="script_binding_restored">డిఫాల్ట్‌లు పునరుద్ధరించబడ్డాయి</string>
     <string name="script_binding_perform">సంజ్ఞ చేయండి లేదా కీలను నొక్కండి</string>
-    <string name="script_binding_perform_summary">తదుపరి సంజ్ఞను కేటాయించండి లేదా SandFly మాడిఫైయర్‌తో నొక్కిన కీలు</string>
+    <string name="script_binding_perform_summary">తదుపరి సంజ్ఞను లేదా SandFly మాడిఫైయర్‌తో నొక్కిన కీలను కేటాయించడం</string>
     <string name="script_binding_perform_message">సంజ్ఞ చేయండి లేదా కీలను నొక్కండి.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>ను <xliff:g id="command">%2$s</xliff:g>కి కేటాయించాలా?</string>
     <string name="script_binding_assign">కేటాయించండి</string>

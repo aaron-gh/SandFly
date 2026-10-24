@@ -76,8 +76,8 @@
     <string name="script_log_copy">Copiar registo</string>
     <string name="script_log_copied">Registo copiado</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Precisa de API de script <xliff:g id="needed">%1$d</xliff:g> ou posterior. Este SandFly possui <xliff:g id="current">%2$d</xliff:g>, então algumas peças podem não funcionar.</string>
-    <string name="script_api_untested">Testado até API de script <xliff:g id="tested">%1$d</xliff:g>. Este SandFly possui <xliff:g id="current">%2$d</xliff:g>, portanto pode não funcionar como esperado.</string>
+    <string name="script_api_too_old">Requer a API de scripts <xliff:g id="needed">%1$d</xliff:g> ou posterior. Este SandFly tem a <xliff:g id="current">%2$d</xliff:g>, pelo que algumas partes podem não funcionar.</string>
+    <string name="script_api_untested">Testado até à API de scripts <xliff:g id="tested">%1$d</xliff:g>. Este SandFly tem a <xliff:g id="current">%2$d</xliff:g>, pelo que o script pode não funcionar como esperado.</string>
     <string name="script_state_incompatible">Pode não funcionar com esta versão do SandFly</string>
     <string name="script_api_range">API de script <xliff:g id="min">%1$d</xliff:g> a <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Compatibilidade</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Repor predefinições</string>
     <string name="script_binding_restored">Predefinições repostas</string>
     <string name="script_binding_perform">Faça o gesto ou prima as teclas</string>
-    <string name="script_binding_perform_summary">Atribua o próximo gesto ou teclas pressionadas com o modificador SandFly</string>
+    <string name="script_binding_perform_summary">Atribuir o gesto seguinte ou teclas premidas com a tecla modificadora do SandFly</string>
     <string name="script_binding_perform_message">Faça o gesto ou prima as teclas.</string>
     <string name="script_binding_assign_title">Atribuir <xliff:g id="binding">%1$s</xliff:g> a <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Atribuir</string>

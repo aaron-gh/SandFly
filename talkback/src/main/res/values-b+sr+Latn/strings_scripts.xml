@@ -76,8 +76,8 @@
     <string name="script_log_copy">Kopiraj dnevnik</string>
     <string name="script_log_copied">Dnevnik je kopiran</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Potreban je API za skripte <xliff:g id="needed">%1$d</xliff:g> ili noviji. Ovaj SandFly ima <xliff:g id="current">%2$d</xliff:g>, tako da delovi možda neće raditi.</string>
-    <string name="script_api_untested">Testirano do API-ja skripte <xliff:g id="tested">%1$d</xliff:g>. Ovaj SandFly ima <xliff:g id="current">%2$d</xliff:g>, tako da možda neće raditi kako se očekivalo.</string>
+    <string name="script_api_too_old">Potreban je API za skripte <xliff:g id="needed">%1$d</xliff:g> ili noviji. Ovaj SandFly ima <xliff:g id="current">%2$d</xliff:g>, pa neki delovi možda neće raditi.</string>
+    <string name="script_api_untested">Testirano do API-ja za skripte <xliff:g id="tested">%1$d</xliff:g>. Ovaj SandFly ima <xliff:g id="current">%2$d</xliff:g>, pa skripta možda neće raditi kako se očekuje.</string>
     <string name="script_state_incompatible">Možda neće raditi sa ovom verzijom SandFly-a</string>
     <string name="script_api_range">API za skripte od <xliff:g id="min">%1$d</xliff:g> do <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Kompatibilnost</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Vrati podrazumevane vrednosti</string>
     <string name="script_binding_restored">Podrazumevane vrednosti su vraćene</string>
     <string name="script_binding_perform">Izvedite pokret ili pritisnite tastere</string>
-    <string name="script_binding_perform_summary">Dodelite sledeći pokret ili tastere pritisnute sa modifikatorom SandFly</string>
+    <string name="script_binding_perform_summary">Dodeljivanje sledećeg pokreta ili tastera pritisnutih sa SandFly modifikatorskim tasterom</string>
     <string name="script_binding_perform_message">Napravite pokret ili pritisnite tastere.</string>
     <string name="script_binding_assign_title">Dodeliti <xliff:g id="binding">%1$s</xliff:g> komandi <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Dodeli</string>

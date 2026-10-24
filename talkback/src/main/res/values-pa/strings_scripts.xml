@@ -76,8 +76,8 @@
     <string name="script_log_copy">ਲੌਗ ਕਾਪੀ ਕਰੋ</string>
     <string name="script_log_copied">ਲੌਗ ਕਾਪੀ ਕੀਤਾ ਗਿਆ</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">ਸਕ੍ਰਿਪਟ API <xliff:g id="needed">%1$d</xliff:g> ਜਾਂ ਬਾਅਦ ਦੀ ਲੋੜ ਹੈ। ਇਸ SandFly ਵਿੱਚ <xliff:g id="current">%2$d</xliff:g> ਹੈ, ਇਸਲਈ ਹੋ ਸਕਦਾ ਹੈ ਕਿ ਹਿੱਸੇ ਕੰਮ ਨਾ ਕਰਨ।</string>
-    <string name="script_api_untested">ਸਕ੍ਰਿਪਟ API <xliff:g id="tested">%1$d</xliff:g> ਤੱਕ ਟੈਸਟ ਕੀਤਾ ਗਿਆ। ਇਸ SandFly ਵਿੱਚ <xliff:g id="current">%2$d</xliff:g> ਹੈ, ਇਸਲਈ ਇਹ ਉਮੀਦ ਮੁਤਾਬਕ ਕੰਮ ਨਹੀਂ ਕਰ ਸਕਦਾ।</string>
+    <string name="script_api_too_old">ਸਕ੍ਰਿਪਟ API <xliff:g id="needed">%1$d</xliff:g> ਜਾਂ ਬਾਅਦ ਵਾਲਾ ਲੋੜੀਂਦਾ ਹੈ। ਇਸ SandFly ਵਿੱਚ <xliff:g id="current">%2$d</xliff:g> ਹੈ, ਇਸ ਲਈ ਕੁਝ ਹਿੱਸੇ ਸ਼ਾਇਦ ਕੰਮ ਨਾ ਕਰਨ।</string>
+    <string name="script_api_untested">ਸਕ੍ਰਿਪਟ API <xliff:g id="tested">%1$d</xliff:g> ਤੱਕ ਟੈਸਟ ਕੀਤਾ ਗਿਆ। ਇਸ SandFly ਵਿੱਚ <xliff:g id="current">%2$d</xliff:g> ਹੈ, ਇਸ ਲਈ ਇਹ ਸ਼ਾਇਦ ਉਮੀਦ ਮੁਤਾਬਕ ਕੰਮ ਨਾ ਕਰੇ।</string>
     <string name="script_state_incompatible">ਹੋ ਸਕਦਾ ਹੈ SandFly ਦੇ ਇਸ ਵਰਜਨ ਨਾਲ ਕੰਮ ਨਾ ਕਰੇ</string>
     <string name="script_api_range">ਸਕ੍ਰਿਪਟ API <xliff:g id="min">%1$d</xliff:g> ਤੋਂ <xliff:g id="tested">%2$d</xliff:g> ਤੱਕ</string>
     <string name="script_compatibility_title">ਅਨੁਕੂਲਤਾ</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">ਪੂਰਵ-ਨਿਰਧਾਰਤ ਰੀਸਟੋਰ ਕਰੋ</string>
     <string name="script_binding_restored">ਪੂਰਵ-ਨਿਰਧਾਰਤ ਰੀਸਟੋਰ ਕੀਤੇ ਗਏ</string>
     <string name="script_binding_perform">ਸੰਕੇਤ ਕਰੋ ਜਾਂ ਕੁੰਜੀਆਂ ਦਬਾਓ</string>
-    <string name="script_binding_perform_summary">ਅਗਲਾ ਸੰਕੇਤ ਨਿਰਧਾਰਤ ਕਰੋ, ਜਾਂ SandFly ਮੋਡੀਫਾਇਰ ਨਾਲ ਦਬਾਈਆਂ ਗਈਆਂ ਕੁੰਜੀਆਂ</string>
+    <string name="script_binding_perform_summary">ਅਗਲਾ ਇਸ਼ਾਰਾ ਜਾਂ SandFly ਮੋਡੀਫਾਇਰ ਕੁੰਜੀ ਨਾਲ ਦਬਾਈਆਂ ਕੁੰਜੀਆਂ ਨਿਰਧਾਰਤ ਕਰਨਾ</string>
     <string name="script_binding_perform_message">ਇਸ਼ਾਰਾ ਕਰੋ ਜਾਂ ਕੁੰਜੀਆਂ ਦਬਾਓ।</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> ਨੂੰ <xliff:g id="command">%2$s</xliff:g> ਅਸਾਈਨ ਕਰੀਏ?</string>
     <string name="script_binding_assign">ਅਸਾਈਨ ਕਰੋ</string>

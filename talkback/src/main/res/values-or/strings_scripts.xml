@@ -76,8 +76,8 @@
     <string name="script_log_copy">ଲଗ୍ କପି କରନ୍ତୁ</string>
     <string name="script_log_copied">ଲଗ୍ କପି ହୋଇଛି</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="needed">%1$d</xliff:g> କିମ୍ବା ପରେ ଆବଶ୍ୟକ କରେ | ଏହି SandFly ରେ <xliff:g id="current">%2$d</xliff:g> ଅଛି, ତେଣୁ ଅଂଶଗୁଡିକ କାମ କରିନପାରେ |</string>
-    <string name="script_api_untested">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="tested">%1$d</xliff:g> ପର୍ଯ୍ୟନ୍ତ ପରୀକ୍ଷିତ | ଏହି SandFly ରେ <xliff:g id="current">%2$d</xliff:g> ଅଛି, ତେଣୁ ଏହା ଆଶା କରାଯାଉଥିବା ପରି କାମ କରିନପାରେ |</string>
+    <string name="script_api_too_old">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="needed">%1$d</xliff:g> କିମ୍ବା ପରବର୍ତ୍ତୀ ଆବଶ୍ୟକ। ଏହି SandFlyରେ <xliff:g id="current">%2$d</xliff:g> ଅଛି, ତେଣୁ କିଛି ଅଂଶ କାମ ନକରିପାରେ।</string>
+    <string name="script_api_untested">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="tested">%1$d</xliff:g> ପର୍ଯ୍ୟନ୍ତ ପରୀକ୍ଷିତ। ଏହି SandFlyରେ <xliff:g id="current">%2$d</xliff:g> ଅଛି, ତେଣୁ ଏହା ଆଶା ଅନୁଯାୟୀ କାମ ନକରିପାରେ।</string>
     <string name="script_state_incompatible">ଏହି SandFly ସହିତ କାମ କରିନପାରେ</string>
     <string name="script_api_range">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="min">%1$d</xliff:g> ରୁ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">ସୁସଙ୍ଗତତା</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">ଡିଫଲ୍ଟଗୁଡିକ ପୁନରୁଦ୍ଧାର କରନ୍ତୁ</string>
     <string name="script_binding_restored">ଡିଫଲ୍ଟଗୁଡ଼ିକ ପୁନଃସ୍ଥାପିତ ହୋଇଛି</string>
     <string name="script_binding_perform">ଜେଶ୍ଚର୍ କରନ୍ତୁ କିମ୍ବା କୀ ଦବାନ୍ତୁ</string>
-    <string name="script_binding_perform_summary">ପରବର୍ତ୍ତୀ ଅଙ୍ଗଭଙ୍ଗୀ, କିମ୍ବା SandFly ମୋଡିଫାୟର୍ ସହିତ ଦବାଯାଇଥିବା କିଗୁଡ଼ିକୁ ନ୍ୟସ୍ତ କରନ୍ତୁ</string>
+    <string name="script_binding_perform_summary">ପରବର୍ତ୍ତୀ ଜେଶ୍ଚର କିମ୍ବା SandFly ମୋଡିଫାୟର୍ କି ସହିତ ଦବାଯାଇଥିବା କିଗୁଡ଼ିକୁ ନ୍ୟସ୍ତ କରିବା</string>
     <string name="script_binding_perform_message">ଜେଶ୍ଚର୍ କରନ୍ତୁ କିମ୍ବା କୀ ଦବାନ୍ତୁ।</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> କୁ <xliff:g id="command">%2$s</xliff:g> ନ୍ୟସ୍ତ କରନ୍ତୁ?</string>
     <string name="script_binding_assign">ନ୍ୟସ୍ତ କରନ୍ତୁ</string>

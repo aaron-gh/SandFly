@@ -76,8 +76,8 @@
     <string name="script_log_copy">Nakili kumbukumbu</string>
     <string name="script_log_copied">Kumbukumbu imenakiliwa</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Inahitaji API ya hati <xliff:g id="needed">%1$d</xliff:g> au baadaye. Hii SandFly ina <xliff:g id="current">%2$d</xliff:g>, kwa hivyo sehemu zinaweza zisifanye kazi.</string>
-    <string name="script_api_untested">Imejaribiwa hadi API ya hati <xliff:g id="tested">%1$d</xliff:g>. Hii SandFly ina <xliff:g id="current">%2$d</xliff:g>, kwa hivyo inaweza isifanye kazi inavyotarajiwa.</string>
+    <string name="script_api_too_old">Inahitaji API ya skripti <xliff:g id="needed">%1$d</xliff:g> au mpya zaidi. SandFly hii ina <xliff:g id="current">%2$d</xliff:g>, kwa hivyo baadhi ya sehemu huenda zisifanye kazi.</string>
+    <string name="script_api_untested">Imejaribiwa hadi API ya skripti <xliff:g id="tested">%1$d</xliff:g>. SandFly hii ina <xliff:g id="current">%2$d</xliff:g>, kwa hivyo huenda isifanye kazi kama inavyotarajiwa.</string>
     <string name="script_state_incompatible">Huenda isifanye kazi na toleo hili la SandFly</string>
     <string name="script_api_range">API ya skripti <xliff:g id="min">%1$d</xliff:g> hadi <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Utangamano</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Rejesha chaguomsingi</string>
     <string name="script_binding_restored">Chaguo-msingi zimerejeshwa</string>
     <string name="script_binding_perform">Fanya ishara au bonyeza vitufe</string>
-    <string name="script_binding_perform_summary">Agiza ishara inayofuata, au vitufe vilivyobonyezwa na kirekebishaji SandFly</string>
+    <string name="script_binding_perform_summary">Kukabidhi ishara inayofuata, au vitufe vinavyobonyezwa pamoja na kitufe cha kurekebisha cha SandFly</string>
     <string name="script_binding_perform_message">Fanya ishara au bonyeza vitufe.</string>
     <string name="script_binding_assign_title">Je, ungependa kukabidhi <xliff:g id="binding">%1$s</xliff:g> kwa <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Weka</string>

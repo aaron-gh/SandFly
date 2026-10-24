@@ -76,8 +76,8 @@
     <string name="script_log_copy">Kopjo regjistrin</string>
     <string name="script_log_copied">Regjistri u kopjua</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Ka nevojë për API të skriptit <xliff:g id="needed">%1$d</xliff:g> ose më vonë. Ky SandFly ka <xliff:g id="current">%2$d</xliff:g>, kështu që pjesët mund të mos funksionojnë.</string>
-    <string name="script_api_untested">Testuar deri në API të skriptit <xliff:g id="tested">%1$d</xliff:g>. Ky SandFly ka <xliff:g id="current">%2$d</xliff:g>, kështu që mund të mos funksionojë siç pritej.</string>
+    <string name="script_api_too_old">Kërkon API-në e skripteve <xliff:g id="needed">%1$d</xliff:g> ose më të re. Ky SandFly ka <xliff:g id="current">%2$d</xliff:g>, prandaj disa pjesë mund të mos funksionojnë.</string>
+    <string name="script_api_untested">Testuar deri te API-ja e skripteve <xliff:g id="tested">%1$d</xliff:g>. Ky SandFly ka <xliff:g id="current">%2$d</xliff:g>, prandaj skripti mund të mos funksionojë siç pritet.</string>
     <string name="script_state_incompatible">Mund të mos funksionojë me këtë SandFly</string>
     <string name="script_api_range">API e skripteve <xliff:g id="min">%1$d</xliff:g> deri në <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Përputhshmëria</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Rikthe standardet</string>
     <string name="script_binding_restored">Parazgjedhjet u rivendosën</string>
     <string name="script_binding_perform">Kryeni gjestin ose shtypni tastet</string>
-    <string name="script_binding_perform_summary">Caktoni gjestin ose butonat e ardhshëm të shtypur me modifikuesin SandFly</string>
+    <string name="script_binding_perform_summary">Caktimi i gjestit të radhës ose i tasteve të shtypura me tastin modifikues të SandFly</string>
     <string name="script_binding_perform_message">Bëni gjestin ose shtypni tastet.</string>
     <string name="script_binding_assign_title">Të caktohet <xliff:g id="binding">%1$s</xliff:g> për <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Cakto</string>

@@ -76,8 +76,8 @@
     <string name="script_log_copy">Jurnaldan nusxa ko\'chirish</string>
     <string name="script_log_copied">Jurnal nusxalandi</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Skript API <xliff:g id="needed">%1$d</xliff:g> yoki undan keyingi versiyasi kerak. Bu SandFly <xliff:g id="current">%2$d</xliff:g>ga ega, shuning uchun uning qismlari ishlamasligi mumkin.</string>
-    <string name="script_api_untested">Skript API <xliff:g id="tested">%1$d</xliff:g>gacha sinovdan o\'tgan. Bu SandFly <xliff:g id="current">%2$d</xliff:g>ga ega, shuning uchun u kutilganidek ishlamasligi mumkin.</string>
+    <string name="script_api_too_old">Skript API <xliff:g id="needed">%1$d</xliff:g> yoki undan yangisi kerak. Bu SandFly’da <xliff:g id="current">%2$d</xliff:g> bor, shuning uchun ayrim qismlari ishlamasligi mumkin.</string>
+    <string name="script_api_untested">Skript API <xliff:g id="tested">%1$d</xliff:g> gacha sinovdan oʻtgan. Bu SandFly’da <xliff:g id="current">%2$d</xliff:g> bor, shuning uchun kutilganidek ishlamasligi mumkin.</string>
     <string name="script_state_incompatible">SandFlyning ushbu versiyasi bilan ishlamasligi mumkin</string>
     <string name="script_api_range">Skript API <xliff:g id="min">%1$d</xliff:g> dan <xliff:g id="tested">%2$d</xliff:g> gacha</string>
     <string name="script_compatibility_title">Moslik</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Standart sozlamalarni tiklash</string>
     <string name="script_binding_restored">Standart sozlamalar tiklandi</string>
     <string name="script_binding_perform">Imo-ishora qiling yoki tugmalarni bosing</string>
-    <string name="script_binding_perform_summary">Keyingi imo-ishorani yoki SandFly modifikatori bilan bosilgan tugmalarni tayinlang</string>
+    <string name="script_binding_perform_summary">Keyingi ishorani yoki SandFly modifikator tugmasi bilan bosilgan tugmalarni tayinlash</string>
     <string name="script_binding_perform_message">Imo-ishora qiling yoki tugmachalarni bosing.</string>
     <string name="script_binding_assign_title"><xliff:g id="command">%2$s</xliff:g> ga <xliff:g id="binding">%1$s</xliff:g> belgilansinmi?</string>
     <string name="script_binding_assign">Tayinlash</string>

@@ -76,8 +76,8 @@
     <string name="script_log_copy">Günlüğü kopyala</string>
     <string name="script_log_copied">Günlük kopyalandı</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Komut dosyası API\'si <xliff:g id="needed">%1$d</xliff:g> veya üzeri gerekiyor. Bu SandFly\'de <xliff:g id="current">%2$d</xliff:g> var, dolayısıyla parçalar çalışmayabilir.</string>
-    <string name="script_api_untested">API <xliff:g id="tested">%1$d</xliff:g> komut dosyasına kadar test edildi. Bu SandFly\'de <xliff:g id="current">%2$d</xliff:g> var, dolayısıyla beklendiği gibi çalışmayabilir.</string>
+    <string name="script_api_too_old">Komut dosyası API\'si <xliff:g id="needed">%1$d</xliff:g> veya üzeri gerekir. Bu SandFly\'da <xliff:g id="current">%2$d</xliff:g> var, bu nedenle bazı bölümler çalışmayabilir.</string>
+    <string name="script_api_untested">Komut dosyası API\'si <xliff:g id="tested">%1$d</xliff:g> sürümüne kadar test edildi. Bu SandFly\'da <xliff:g id="current">%2$d</xliff:g> var, bu nedenle beklendiği gibi çalışmayabilir.</string>
     <string name="script_state_incompatible">SandFly\'ın bu sürümüyle çalışmayabilir</string>
     <string name="script_api_range">Betik API\'si <xliff:g id="min">%1$d</xliff:g> ile <xliff:g id="tested">%2$d</xliff:g> arası</string>
     <string name="script_compatibility_title">Uyumluluk</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Varsayılanları geri yükle</string>
     <string name="script_binding_restored">Varsayılanlar geri yüklendi</string>
     <string name="script_binding_perform">Hareketi yapın veya tuşlara basın</string>
-    <string name="script_binding_perform_summary">Sonraki hareketi veya SandFly değiştiricisiyle basılan tuşları atayın</string>
+    <string name="script_binding_perform_summary">Sonraki hareketi veya SandFly değiştirici tuşuyla basılan tuşları atama</string>
     <string name="script_binding_perform_message">Hareketi yapın veya tuşlara basın.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>, <xliff:g id="command">%2$s</xliff:g> komutuna atansın mı?</string>
     <string name="script_binding_assign">Ata</string>

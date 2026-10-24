@@ -76,8 +76,8 @@
     <string name="script_log_copy">Logboek kopiëren</string>
     <string name="script_log_copied">Logboek gekopieerd</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Vereist script-API <xliff:g id="needed">%1$d</xliff:g> of hoger. Deze SandFly heeft <xliff:g id="current">%2$d</xliff:g>, dus onderdelen werken mogelijk niet.</string>
-    <string name="script_api_untested">Getest tot script-API <xliff:g id="tested">%1$d</xliff:g>. Deze SandFly heeft <xliff:g id="current">%2$d</xliff:g>, dus het kan zijn dat deze niet werkt zoals verwacht.</string>
+    <string name="script_api_too_old">Vereist script-API <xliff:g id="needed">%1$d</xliff:g> of hoger. Deze SandFly heeft <xliff:g id="current">%2$d</xliff:g>, dus sommige onderdelen werken mogelijk niet.</string>
+    <string name="script_api_untested">Getest tot script-API <xliff:g id="tested">%1$d</xliff:g>. Deze SandFly heeft <xliff:g id="current">%2$d</xliff:g>, dus het script werkt mogelijk niet zoals verwacht.</string>
     <string name="script_state_incompatible">Werkt mogelijk niet met deze SandFly</string>
     <string name="script_api_range">Script-API <xliff:g id="min">%1$d</xliff:g> tot <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Compatibiliteit</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Standaardwaarden herstellen</string>
     <string name="script_binding_restored">Standaardwaarden hersteld</string>
     <string name="script_binding_perform">Voer een gebaar uit of druk op toetsen</string>
-    <string name="script_binding_perform_summary">Wijs het volgende gebaar toe, of de toetsen die worden ingedrukt met de modifier SandFly</string>
+    <string name="script_binding_perform_summary">Het volgende gebaar toewijzen, of toetsen die met de SandFly-modificatietoets worden ingedrukt</string>
     <string name="script_binding_perform_message">Maak het gebaar of druk op de toetsen.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> toewijzen aan <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Toewijzen</string>

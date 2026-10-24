@@ -76,8 +76,8 @@
     <string name="script_log_copy">မှတ်တမ်းကို ကူးရန်</string>
     <string name="script_log_copied">မှတ်တမ်းကို ကူးယူထားသည်</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">script API <xliff:g id="needed">%1$d</xliff:g> သို့မဟုတ် နောက်ပိုင်းတွင် လိုအပ်သည်။ ဤ SandFlyတွင် <xliff:g id="current">%2$d</xliff:g> ပါရှိသောကြောင့် အစိတ်အပိုင်းများ အလုပ်မဖြစ်နိုင်ပါ။</string>
-    <string name="script_api_untested">script API <xliff:g id="tested">%1$d</xliff:g> အထိ စမ်းသပ်ခဲ့သည်။ ဤ SandFlyတွင် <xliff:g id="current">%2$d</xliff:g> ပါရှိသောကြောင့် ၎င်းသည် မျှော်လင့်ထားသလို အလုပ်မဖြစ်နိုင်ပါ။</string>
+    <string name="script_api_too_old">စခရစ် API <xliff:g id="needed">%1$d</xliff:g> သို့မဟုတ် နောက်ပိုင်းဗားရှင်း လိုအပ်သည်။ ဤ SandFly တွင် <xliff:g id="current">%2$d</xliff:g> ရှိသောကြောင့် အချို့အပိုင်းများ အလုပ်မလုပ်နိုင်ပါ။</string>
+    <string name="script_api_untested">စခရစ် API <xliff:g id="tested">%1$d</xliff:g> အထိ စမ်းသပ်ထားသည်။ ဤ SandFly တွင် <xliff:g id="current">%2$d</xliff:g> ရှိသောကြောင့် မျှော်လင့်ထားသလို အလုပ်မလုပ်နိုင်ပါ။</string>
     <string name="script_state_incompatible">ဒီ SandFly နဲ့ အလုပ်မဖြစ်နိုင်ပါ</string>
     <string name="script_api_range">စခရစ် API <xliff:g id="min">%1$d</xliff:g> မှ <xliff:g id="tested">%2$d</xliff:g> အထိ</string>
     <string name="script_compatibility_title">လိုက်ဖက်မှု</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">မူရင်းများကို ပြန်ယူပါ</string>
     <string name="script_binding_restored">ပုံသေများကို ပြန်လည်ရယူခဲ့သည်</string>
     <string name="script_binding_perform">လက်ဟန် လုပ်ပါ သို့မဟုတ် ခလုတ်များ နှိပ်ပါ</string>
-    <string name="script_binding_perform_summary">နောက်လက်ဟန်ကို သတ်မှတ်ပါ သို့မဟုတ် SandFly မွမ်းမံမှုဖြင့် နှိပ်ထားသော ခလုတ်များ</string>
+    <string name="script_binding_perform_summary">နောက်လက်ဟန် သို့မဟုတ် SandFly မွမ်းမံခလုတ်နှင့်အတူ နှိပ်သည့် ခလုတ်များကို သတ်မှတ်ခြင်း</string>
     <string name="script_binding_perform_message">လက်ဟန်လုပ်ပါ သို့မဟုတ် ခလုတ်များကို နှိပ်ပါ။</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> ကို <xliff:g id="command">%2$s</xliff:g> တွင် သတ်မှတ်မလား။</string>
     <string name="script_binding_assign">သတ်မှတ်ရန်</string>

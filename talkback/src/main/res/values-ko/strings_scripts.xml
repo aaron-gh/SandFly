@@ -76,8 +76,8 @@
     <string name="script_log_copy">로그 복사</string>
     <string name="script_log_copied">로그 복사됨</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">스크립트 API <xliff:g id="needed">%1$d</xliff:g> 이상이 필요합니다. 이 SandFly에는 <xliff:g id="current">%2$d</xliff:g>가 있으므로 일부가 작동하지 않을 수 있습니다.</string>
-    <string name="script_api_untested">스크립트 API <xliff:g id="tested">%1$d</xliff:g>까지 테스트되었습니다. 이 SandFly에는 <xliff:g id="current">%2$d</xliff:g>가 있으므로 예상대로 작동하지 않을 수 있습니다.</string>
+    <string name="script_api_too_old">스크립트 API <xliff:g id="needed">%1$d</xliff:g> 이상이 필요합니다. 이 SandFly는 <xliff:g id="current">%2$d</xliff:g>이므로 일부 기능이 작동하지 않을 수 있습니다.</string>
+    <string name="script_api_untested">스크립트 API <xliff:g id="tested">%1$d</xliff:g>까지 테스트되었습니다. 이 SandFly는 <xliff:g id="current">%2$d</xliff:g>이므로 예상대로 작동하지 않을 수 있습니다.</string>
     <string name="script_state_incompatible">이 버전의 SandFly에서는 작동하지 않을 수 있음</string>
     <string name="script_api_range">스크립트 API <xliff:g id="min">%1$d</xliff:g> ~ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">호환성</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">기본값 복원</string>
     <string name="script_binding_restored">기본값 복원됨</string>
     <string name="script_binding_perform">제스처 또는 키 수행</string>
-    <string name="script_binding_perform_summary">다음 동작 또는 SandFly 수정자와 함께 누른 키를 할당합니다.</string>
+    <string name="script_binding_perform_summary">다음 동작 또는 SandFly 보조키와 함께 누른 키 할당</string>
     <string name="script_binding_perform_message">제스처를 하거나 키를 누르세요.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>을(를) <xliff:g id="command">%2$s</xliff:g>에 할당할까요?</string>
     <string name="script_binding_assign">할당</string>

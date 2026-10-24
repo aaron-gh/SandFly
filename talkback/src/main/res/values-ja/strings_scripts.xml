@@ -76,8 +76,8 @@
     <string name="script_log_copy">ログをコピー</string>
     <string name="script_log_copied">ログをコピーしました</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">スクリプト API <xliff:g id="needed">%1$d</xliff:g> 以降が必要です。このSandFlyには<xliff:g id="current">%2$d</xliff:g>があるため、部品が動作しない可能性があります。</string>
-    <string name="script_api_untested">スクリプト API <xliff:g id="tested">%1$d</xliff:g> までテスト済み。このSandFlyには<xliff:g id="current">%2$d</xliff:g>があるため、期待どおりに動作しない可能性があります。</string>
+    <string name="script_api_too_old">スクリプト API <xliff:g id="needed">%1$d</xliff:g> 以降が必要です。この SandFly は <xliff:g id="current">%2$d</xliff:g> のため、一部が動作しない可能性があります。</string>
+    <string name="script_api_untested">スクリプト API <xliff:g id="tested">%1$d</xliff:g> までテスト済みです。この SandFly は <xliff:g id="current">%2$d</xliff:g> のため、想定どおりに動作しない可能性があります。</string>
     <string name="script_state_incompatible">このバージョンの SandFly では動作しない可能性があります</string>
     <string name="script_api_range">スクリプト API <xliff:g id="min">%1$d</xliff:g> ～ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">互換性</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">デフォルトに戻す</string>
     <string name="script_binding_restored">デフォルトに戻しました</string>
     <string name="script_binding_perform">ジェスチャーを実行するか、キーを押してください</string>
-    <string name="script_binding_perform_summary">次のジェスチャ、または SandFly 修飾子を使用して押されたキーを割り当てます</string>
+    <string name="script_binding_perform_summary">次のジェスチャー、または SandFly 修飾キーと一緒に押したキーを割り当てます</string>
     <string name="script_binding_perform_message">ジェスチャーを行うか、キーを押してください。</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>を<xliff:g id="command">%2$s</xliff:g>に割り当てますか?</string>
     <string name="script_binding_assign">割り当て</string>

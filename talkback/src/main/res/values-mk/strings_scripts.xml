@@ -76,8 +76,8 @@
     <string name="script_log_copy">Копирај дневник</string>
     <string name="script_log_copied">Дневникот е копиран</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Потребно е API на скрипта <xliff:g id="needed">%1$d</xliff:g> или понова верзија. Овој SandFly има <xliff:g id="current">%2$d</xliff:g>, така што деловите може да не работат.</string>
-    <string name="script_api_untested">Тестирано до скрипта API <xliff:g id="tested">%1$d</xliff:g>. Ова SandFly има <xliff:g id="current">%2$d</xliff:g>, така што можеби нема да работи како што се очекуваше.</string>
+    <string name="script_api_too_old">Потребен е API за скрипти <xliff:g id="needed">%1$d</xliff:g> или понов. Овој SandFly има <xliff:g id="current">%2$d</xliff:g>, па некои делови можеби нема да работат.</string>
+    <string name="script_api_untested">Тестирано до API за скрипти <xliff:g id="tested">%1$d</xliff:g>. Овој SandFly има <xliff:g id="current">%2$d</xliff:g>, па скриптата можеби нема да работи како што се очекува.</string>
     <string name="script_state_incompatible">Може да не работи со оваа верзија на SandFly</string>
     <string name="script_api_range">API за скрипти <xliff:g id="min">%1$d</xliff:g> до <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Компатибилност</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Врати ги стандардните вредности</string>
     <string name="script_binding_restored">Стандардните вредности се обновени</string>
     <string name="script_binding_perform">Изведете гест или притиснете копчиња</string>
-    <string name="script_binding_perform_summary">Доделете го следниот гест или копчињата притиснати со модификаторот SandFly</string>
+    <string name="script_binding_perform_summary">Доделување на следното движење или копчиња притиснати со модификаторското копче на SandFly</string>
     <string name="script_binding_perform_message">Направете гест или притиснете ги копчињата.</string>
     <string name="script_binding_assign_title">Да се додели <xliff:g id="binding">%1$s</xliff:g> на <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Додели</string>

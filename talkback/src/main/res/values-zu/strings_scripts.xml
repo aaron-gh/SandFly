@@ -76,8 +76,8 @@
     <string name="script_log_copy">Kopisha ilogi</string>
     <string name="script_log_copied">Ilogi ikopishiwe</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Idinga i-API yombhalo <xliff:g id="needed">%1$d</xliff:g> noma kamuva. Lokhu SandFly kuno-<xliff:g id="current">%2$d</xliff:g>, ngakho izingxenye zingase zingasebenzi.</string>
-    <string name="script_api_untested">Ihlolwe kuze kufike ku-script API <xliff:g id="tested">%1$d</xliff:g>. Le SandFly ino-<xliff:g id="current">%2$d</xliff:g>, ngakho-ke ingase ingasebenzi njengoba bekulindelekile.</string>
+    <string name="script_api_too_old">Idinga i-API yeziskripthi <xliff:g id="needed">%1$d</xliff:g> noma entsha. Le SandFly ine-<xliff:g id="current">%2$d</xliff:g>, ngakho ezinye izingxenye zingase zingasebenzi.</string>
+    <string name="script_api_untested">Ihlolwe kuze kufike ku-API yeziskripthi <xliff:g id="tested">%1$d</xliff:g>. Le SandFly ine-<xliff:g id="current">%2$d</xliff:g>, ngakho ingase ingasebenzi njengoba kulindelekile.</string>
     <string name="script_state_incompatible">Ingase ingasebenzi nale nguqulo ye-SandFly</string>
     <string name="script_api_range">I-API yeskripthi <xliff:g id="min">%1$d</xliff:g> kuya ku-<xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Ukuhambisana</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Buyisela okuzenzakalelayo</string>
     <string name="script_binding_restored">Okuzenzakalelayo kubuyiselwe</string>
     <string name="script_binding_perform">Yenza ukuthinta noma cindezela okhiye</string>
-    <string name="script_binding_perform_summary">Nikeza ukuthinta okulandelayo, noma okhiye abacindezelwe ngesilungisi SandFly</string>
+    <string name="script_binding_perform_summary">Ukunikeza ukunyakaza okulandelayo, noma okhiye abacindezelwe nokhiye wokushintsha we-SandFly</string>
     <string name="script_binding_perform_message">Yenza ukuthinta noma cindezela izinkinobho.</string>
     <string name="script_binding_assign_title">Nikeza u-<xliff:g id="binding">%1$s</xliff:g> ku-<xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Yabela</string>

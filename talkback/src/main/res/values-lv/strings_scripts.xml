@@ -76,8 +76,8 @@
     <string name="script_log_copy">Kopēt žurnālu</string>
     <string name="script_log_copied">Žurnāls nokopēts</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Nepieciešama skripta API <xliff:g id="needed">%1$d</xliff:g> vai jaunāka versija. Šim SandFly ir <xliff:g id="current">%2$d</xliff:g>, tāpēc daļas var nedarboties.</string>
-    <string name="script_api_untested">Pārbaudīts līdz skripta API <xliff:g id="tested">%1$d</xliff:g>. Šim SandFly ir <xliff:g id="current">%2$d</xliff:g>, tāpēc tas var nedarboties, kā paredzēts.</string>
+    <string name="script_api_too_old">Nepieciešama skriptu API <xliff:g id="needed">%1$d</xliff:g> vai jaunāka. Šajā SandFly ir <xliff:g id="current">%2$d</xliff:g>, tāpēc dažas daļas var nedarboties.</string>
+    <string name="script_api_untested">Pārbaudīts līdz skriptu API <xliff:g id="tested">%1$d</xliff:g>. Šajā SandFly ir <xliff:g id="current">%2$d</xliff:g>, tāpēc skripts var nedarboties, kā paredzēts.</string>
     <string name="script_state_incompatible">Var nedarboties ar šo SandFly versiju</string>
     <string name="script_api_range">Skripta API no <xliff:g id="min">%1$d</xliff:g> līdz <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Saderība</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Atjaunot noklusējuma iestatījumus</string>
     <string name="script_binding_restored">Atjaunoti noklusējuma iestatījumi</string>
     <string name="script_binding_perform">Veiciet žestu vai nospiediet taustiņus</string>
-    <string name="script_binding_perform_summary">Piešķiriet nākamo žestu vai nospiestus taustiņus, izmantojot modifikatoru SandFly</string>
+    <string name="script_binding_perform_summary">Piešķirt nākamo žestu vai taustiņus, kas nospiesti kopā ar SandFly modifikatora taustiņu</string>
     <string name="script_binding_perform_message">Veiciet žestu vai nospiediet taustiņus.</string>
     <string name="script_binding_assign_title">Vai piešķirt <xliff:g id="binding">%1$s</xliff:g> komandai <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Piešķirt</string>

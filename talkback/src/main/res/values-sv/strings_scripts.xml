@@ -76,8 +76,8 @@
     <string name="script_log_copy">Kopiera logg</string>
     <string name="script_log_copied">Loggen kopierad</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Behöver script API <xliff:g id="needed">%1$d</xliff:g> eller senare. Denna SandFly har <xliff:g id="current">%2$d</xliff:g>, så delar kanske inte fungerar.</string>
-    <string name="script_api_untested">Testat upp till script API <xliff:g id="tested">%1$d</xliff:g>. Denna SandFly har <xliff:g id="current">%2$d</xliff:g>, så den kanske inte fungerar som förväntat.</string>
+    <string name="script_api_too_old">Kräver skript-API <xliff:g id="needed">%1$d</xliff:g> eller senare. Den här SandFly-versionen har <xliff:g id="current">%2$d</xliff:g>, så vissa delar kanske inte fungerar.</string>
+    <string name="script_api_untested">Testat upp till skript-API <xliff:g id="tested">%1$d</xliff:g>. Den här SandFly-versionen har <xliff:g id="current">%2$d</xliff:g>, så skriptet kanske inte fungerar som förväntat.</string>
     <string name="script_state_incompatible">Fungerar kanske inte med den här versionen av SandFly</string>
     <string name="script_api_range">Skript-API <xliff:g id="min">%1$d</xliff:g> till <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Kompatibilitet</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Återställ standardinställningar</string>
     <string name="script_binding_restored">Standardvärden återställda</string>
     <string name="script_binding_perform">Utför en gest eller tryck på tangenter</string>
-    <string name="script_binding_perform_summary">Tilldela nästa gest eller de tangenter som trycks med SandFly-tangenten.</string>
+    <string name="script_binding_perform_summary">Tilldela nästa rörelse eller tangenter som trycks med SandFly-modifierartangenten</string>
     <string name="script_binding_perform_message">Gör gesten eller tryck på tangenterna.</string>
     <string name="script_binding_assign_title">Tilldela <xliff:g id="binding">%1$s</xliff:g> till <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Tilldela</string>

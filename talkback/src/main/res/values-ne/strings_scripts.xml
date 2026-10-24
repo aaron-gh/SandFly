@@ -76,7 +76,7 @@
     <string name="script_log_copy">लग प्रतिलिपि गर्नुहोस्</string>
     <string name="script_log_copied">लग प्रतिलिपि गरियो</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">स्क्रिप्ट API <xliff:g id="needed">%1$d</xliff:g> वा पछिको चाहिन्छ। यो SandFly मा <xliff:g id="current">%2$d</xliff:g> छ, त्यसैले भागहरूले काम नगर्न सक्छ।</string>
+    <string name="script_api_too_old">स्क्रिप्ट API <xliff:g id="needed">%1$d</xliff:g> वा पछिको चाहिन्छ। यो SandFly मा <xliff:g id="current">%2$d</xliff:g> छ, त्यसैले केही भागले काम नगर्न सक्छन्।</string>
     <string name="script_api_untested">स्क्रिप्ट API <xliff:g id="tested">%1$d</xliff:g> सम्म परीक्षण गरियो। यो SandFly मा <xliff:g id="current">%2$d</xliff:g> छ, त्यसैले यसले अपेक्षा गरे अनुसार काम नगर्न सक्छ।</string>
     <string name="script_state_incompatible">यो SandFly सँग काम नगर्न सक्छ</string>
     <string name="script_api_range">स्क्रिप्ट API <xliff:g id="min">%1$d</xliff:g> देखि <xliff:g id="tested">%2$d</xliff:g> सम्म</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">पूर्वनिर्धारितहरू पुनर्स्थापित गर्नुहोस्</string>
     <string name="script_binding_restored">पूर्वनिर्धारितहरू पुनर्स्थापित गरियो</string>
     <string name="script_binding_perform">इसारा गर्नुहोस् वा कुञ्जीहरू थिच्नुहोस्</string>
-    <string name="script_binding_perform_summary">अर्को इशारा तोक्नुहोस्, वा SandFly परिमार्जनकर्तासँग थिचिएको कुञ्जीहरू</string>
+    <string name="script_binding_perform_summary">अर्को इसारा वा SandFly मोडिफायर कुञ्जीसँग थिचिएका कुञ्जीहरू तोक्ने</string>
     <string name="script_binding_perform_message">इशारा गर्नुहोस् वा कुञ्जीहरू थिच्नुहोस्।</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> लाई <xliff:g id="command">%2$s</xliff:g> तोक्ने हो?</string>
     <string name="script_binding_assign">असाइन गर्नुहोस्</string>

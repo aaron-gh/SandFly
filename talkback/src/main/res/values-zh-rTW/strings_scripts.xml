@@ -76,8 +76,8 @@
     <string name="script_log_copy">複製日誌</string>
     <string name="script_log_copied">日誌已複製</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">需要腳本 API <xliff:g id="needed">%1$d</xliff:g> 或更高版本。这个SandFly有<xliff:g id="current">%2$d</xliff:g>，所以零件可能无法工作。</string>
-    <string name="script_api_untested">已測試腳本 API <xliff:g id="tested">%1$d</xliff:g>。这个SandFly有<xliff:g id="current">%2$d</xliff:g>，所以它可能无法按预期工作。</string>
+    <string name="script_api_too_old">需要指令碼 API <xliff:g id="needed">%1$d</xliff:g> 以上版本。這個 SandFly 為 <xliff:g id="current">%2$d</xliff:g>，因此部分功能可能無法運作。</string>
+    <string name="script_api_untested">已測試至指令碼 API <xliff:g id="tested">%1$d</xliff:g>。這個 SandFly 為 <xliff:g id="current">%2$d</xliff:g>，因此可能無法如預期運作。</string>
     <string name="script_state_incompatible">可能不適用於此版本的 SandFly</string>
     <string name="script_api_range">指令碼 API <xliff:g id="min">%1$d</xliff:g> 至 <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">相容性</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">恢復預設設定</string>
     <string name="script_binding_restored">已恢復預設值</string>
     <string name="script_binding_perform">執行手勢或按鍵</string>
-    <string name="script_binding_perform_summary">指定下一個手勢，或使用 SandFly 修飾符按下的按鍵</string>
+    <string name="script_binding_perform_summary">指派下一個手勢，或與 SandFly 輔助鍵一起按下的按鍵</string>
     <string name="script_binding_perform_message">請做出手勢或按下按鍵。</string>
     <string name="script_binding_assign_title">將 <xliff:g id="binding">%1$s</xliff:g> 指派給 <xliff:g id="command">%2$s</xliff:g>？</string>
     <string name="script_binding_assign">分配</string>

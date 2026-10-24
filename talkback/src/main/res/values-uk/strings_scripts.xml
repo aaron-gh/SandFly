@@ -76,8 +76,8 @@
     <string name="script_log_copy">Копіювати журнал</string>
     <string name="script_log_copied">Журнал скопійовано</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Потрібен API сценарію <xliff:g id="needed">%1$d</xliff:g> або новішої версії. Цей SandFly має <xliff:g id="current">%2$d</xliff:g>, тому деталі можуть не працювати.</string>
-    <string name="script_api_untested">Перевірено до API сценарію <xliff:g id="tested">%1$d</xliff:g>. Цей SandFly має <xliff:g id="current">%2$d</xliff:g>, тому він може працювати не так, як очікувалося.</string>
+    <string name="script_api_too_old">Потрібен API скриптів <xliff:g id="needed">%1$d</xliff:g> або новіший. У цьому SandFly — <xliff:g id="current">%2$d</xliff:g>, тому деякі частини можуть не працювати.</string>
+    <string name="script_api_untested">Перевірено до API скриптів <xliff:g id="tested">%1$d</xliff:g>. У цьому SandFly — <xliff:g id="current">%2$d</xliff:g>, тому скрипт може працювати не так, як очікується.</string>
     <string name="script_state_incompatible">Може не працювати з цим SandFly</string>
     <string name="script_api_range">API скриптів від <xliff:g id="min">%1$d</xliff:g> до <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Сумісність</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Відновити налаштування за замовчуванням</string>
     <string name="script_binding_restored">Стандартні параметри відновлено</string>
     <string name="script_binding_perform">Виконайте жест або натисніть клавіші</string>
-    <string name="script_binding_perform_summary">Призначте наступний жест або натиснуті клавіші з модифікатором SandFly</string>
+    <string name="script_binding_perform_summary">Призначення наступного жесту або клавіш, натиснутих із клавішею-модифікатором SandFly</string>
     <string name="script_binding_perform_message">Зробіть жест або натисніть клавіші.</string>
     <string name="script_binding_assign_title">Призначити <xliff:g id="binding">%1$s</xliff:g> для <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Призначити</string>
