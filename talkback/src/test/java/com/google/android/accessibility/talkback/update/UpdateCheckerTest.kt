@@ -53,6 +53,28 @@ class UpdateCheckerTest {
   }
 
   @Test
+  fun aStableReleaseOffersItsNotesRatherThanItsCommits() {
+    val json =
+      JSONObject(release(12, "bbbbbbb Two", "aaaaaaa One"))
+        .put(
+          "body",
+          listOf("build: 12", "", "## New", "", "* Dictation.", "", "## Fixes", "* A crash.")
+            .joinToString("\n"),
+        )
+        .toString()
+    val update = UpdateChecker.parseRelease(json, 10, "aaaaaaa0")
+    assertEquals(listOf("New", "Dictation.", "Fixes", "A crash."), update!!.changes)
+  }
+
+  @Test
+  fun aDevelopmentBuildOffersItsCommits() {
+    val json =
+      JSONObject(release(12, "bbbbbbb Two", "aaaaaaa One")).put("prerelease", true).toString()
+    val update = UpdateChecker.parseRelease(json, 10, "aaaaaaa0")
+    assertEquals(listOf("Two"), update!!.changes)
+  }
+
+  @Test
   fun moveIsOfferedWhateverTheBuild() {
     val json = release(5, "bbbbbbb SandFly", "aaaaaaa Old", apk = "sandfly.apk")
     val move = UpdateChecker.parseMove(json, "aaaaaaa0")

@@ -36,7 +36,10 @@ data class UpdateInfo(
   val build: Int,
   /** Where to download the APK. */
   val downloadUrl: String,
-  /** The subjects of the commits that are newer than the running build, newest first. */
+  /**
+   * What is new: a stable release's notes, line by line, or for a development build the subjects
+   * of the commits that are newer than the running build, newest first.
+   */
   val changes: List<String>,
   /** True if the build is SandFly, which installs as a new app. */
   val move: Boolean = false,
@@ -51,9 +54,10 @@ data class UpdateInfo(
  * stable release. Backtalk Aaron first checks SandFly's latest release, and offers it as a move
  * whenever there is one.
  *
- * CI writes the release notes as a line "build: <build number>", then one line per commit as "-
- * <7-character hash> <subject>", newest first. A release is newer only when its build number is
- * higher, so a local build of a newer commit is never offered an older build.
+ * CI writes the release notes as a line "build: <build number>". A development build's notes go on
+ * with one line per commit as "- <7-character hash> <subject>", newest first, and a stable
+ * release's with its written notes: "## " headings and "* " items. A release is newer only when
+ * its build number is higher, so a local build of a newer commit is never offered an older build.
  */
 object UpdateChecker {
   private const val TAG = "UpdateChecker"
@@ -214,8 +218,23 @@ object UpdateChecker {
       } else {
         commits.take((build - currentBuild).coerceAtMost(MAX_CHANGES))
       }
-    return UpdateInfo(build, downloadUrl, newCommits.map { it.substringAfter(' ') })
+    val notes = if (release.optBoolean("prerelease")) emptyList() else writtenNotes(lines)
+    return UpdateInfo(
+      build,
+      downloadUrl,
+      notes.ifEmpty { newCommits.map { it.substringAfter(' ') } },
+    )
   }
+
+  /**
+   * A stable release's written notes, without the build line, Markdown marks or any list of
+   * commits, or nothing when it has none.
+   */
+  private fun writtenNotes(lines: List<String>): List<String> =
+    lines
+      .filterNot { it.isEmpty() || BUILD_LINE.matches(it) || it.startsWith("- ") }
+      .takeWhile { !it.startsWith("Changes since") }
+      .map { it.removePrefix("## ").removePrefix("* ") }
 
   private fun versionName(context: Context): String =
     try {
