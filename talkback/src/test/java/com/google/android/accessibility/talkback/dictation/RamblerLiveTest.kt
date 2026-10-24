@@ -174,7 +174,8 @@ class RamblerLiveTest {
       val live = RamblerLive("key", api.url)
       live.start()
       live.send(ByteArray(3200))
-      waitFor { api.messages.size >= 2 }
+      // The phrase must have been heard before the end of the audio, or there is none to wait for.
+      waitFor { live.isPhrasePending }
       var result: String? = "not yet"
       live.finish { result = it }
       waitFor { result != "not yet" }

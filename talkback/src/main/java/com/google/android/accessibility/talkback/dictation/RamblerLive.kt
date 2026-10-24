@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.dictation
 import android.os.Handler
 import android.os.Looper
 import android.util.Base64
+import androidx.annotation.VisibleForTesting
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
@@ -53,6 +54,11 @@ internal class RamblerLive(private val apiKey: String, private val url: String =
   private val phrases = mutableListOf<String>()
   private var onDone: ((String?) -> Unit)? = null
   private val complete = Runnable { done(failedResult = false) }
+
+  /** Whether a phrase was heard that has no final text yet. */
+  @get:VisibleForTesting
+  internal val isPhrasePending: Boolean
+    get() = synchronized(lock) { pending }
 
   fun start() {
     val request =
