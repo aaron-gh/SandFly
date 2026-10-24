@@ -47,7 +47,7 @@
     <string name="pref_on_device_ai_import">ଷ୍ଟୋରେଜ୍ ରୁ ଏକ ମଡେଲ୍ ଫାଇଲ୍ ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="pref_on_device_ai_import_summary">ଆପଣ ପୂର୍ବରୁ ଡାଉନଲୋଡ୍ କରିଥିବା ଏକ ଜେମା 4 ଲିଟରଲମ୍ ଫାଇଲ୍ ବାଛନ୍ତୁ |</string>
     <string name="on_device_ai_import_done">ମଡେଲ୍ ସଂସ୍ଥାପିତ ହୋଇଛି</string>
-    <string name="on_device_ai_import_failed">ସେହି ଫାଇଲ୍ ସମର୍ଥିତ ଜେମା 4 ମଡେଲ୍ ଫାଇଲ୍ ନୁହେଁ |</string>
+    <string name="on_device_ai_import_failed">ସେହି ଫାଇଲ୍ ସମର୍ଥିତ Gemma 4 ମଡେଲ୍ ଫାଇଲ୍ ନୁହେଁ।</string>
     <string name="pref_on_device_ai_timeout">ଉତ୍ତର ପାଇଁ ସମୟ ସୀମା</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s। SandFly ଏହି ଦୀର୍ଘ ସମୟ ଅପେକ୍ଷା କରିବା ବନ୍ଦ କରିଦିଏ | ଚିତ୍ର ବର୍ଣ୍ଣନା କରିବା ଅପେକ୍ଷା ସ୍କ୍ରିନ୍ ବର୍ଣ୍ଣନା ଅଧିକ ସମୟ ନେଇଥାଏ |</string>
     <string name="on_device_ai_choose_timeout">ଉତ୍ତର ପାଇଁ ସମୟ ସୀମା</string>
@@ -58,12 +58,12 @@
     <string name="pref_on_device_ai_processor">ପ୍ରୋସେସର୍</string>
     <string name="pref_on_device_ai_short_prompts">ପରଦାର ଛୋଟ ବର୍ଣ୍ଣନା</string>
     <string name="pref_on_device_ai_short_prompts_summary">ସ୍କ୍ରିନ୍ ବର୍ଣ୍ଣନା କରନ୍ତୁ କମ୍ ବିବରଣୀ ମାଗେ, ତେଣୁ ଏହା ଶୀଘ୍ର ଉତ୍ତର ଦିଏ | ପୂର୍ଣ୍ଣ ବର୍ଣ୍ଣନା ପାଇଁ ଏହାକୁ ବନ୍ଦ କରନ୍ତୁ |</string>
-    <string name="on_device_ai_error_network">ଡାଉନଲୋଡ୍ ବନ୍ଦ ହେଲା | ଆପଣଙ୍କର ସଂଯୋଗ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ | ଏହା କେଉଁଠାରେ ଅଟକି ଗଲା ତାହା ଜାରି ରଖିବ |</string>
+    <string name="on_device_ai_error_network">ଡାଉନଲୋଡ୍ ବନ୍ଦ ହୋଇଗଲା। ଆପଣଙ୍କ ସଂଯୋଗ ଯାଞ୍ଚ କରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ। ଯେଉଁଠି ବନ୍ଦ ହୋଇଥିଲା ସେଠାରୁ ଏହା ଜାରି ରହିବ।</string>
     <string name="on_device_ai_error_http">ଡାଉନଲୋଡ୍ ସର୍ଭର ଅନୁରୋଧ ଗ୍ରହଣ କଲା ନାହିଁ | ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ, କିମ୍ବା ଏହା ପରିବର୍ତ୍ତେ ଏକ ଫାଇଲ ଆମଦାନି କରନ୍ତୁ |</string>
     <string name="on_device_ai_error_corrupt">ଫାଇଲଟି ଆଶା କରାଯାଉଥିବା ମଡେଲ ସହିତ ମେଳ ଖାଉ ନଥିଲା ଏବଂ ଡିଲିଟ ହୋଇଯାଇଥିଲା | ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
     <string name="on_device_ai_error_storage">ଫାଇଲ୍ ସେଭ୍ କରିହେଲା ନାହିଁ।</string>
-    <string name="on_device_ai_error_low_space">ଏହି ମଡେଲ୍ ପାଇଁ ପର୍ଯ୍ୟାପ୍ତ ମାଗଣା ଷ୍ଟୋରେଜ୍ ନାହିଁ |</string>
-    <string name="on_device_ai_error_time_limit">Android ପୃଷ୍ଠଭୂମିରେ ଅନେକ ଘଣ୍ଟା ପରେ ଡାଉନଲୋଡ୍ ବନ୍ଦ କରିଦେଲା | ଏହା କେଉଁଠାରେ ଅଟକି ଗଲା ତାହା ଉପରେ ଟ୍ୟାପ୍ କରନ୍ତୁ |</string>
+    <string name="on_device_ai_error_low_space">ଏହି ମଡେଲ୍ ପାଇଁ ଯଥେଷ୍ଟ ଖାଲି ଷ୍ଟୋରେଜ୍ ନାହିଁ।</string>
+    <string name="on_device_ai_error_time_limit">ପୃଷ୍ଠଭୂମିରେ କିଛି ଘଣ୍ଟା ପରେ Android ଡାଉନଲୋଡ୍ ବିରତ କଲା। ଯେଉଁଠି ବନ୍ଦ ହୋଇଥିଲା ସେଠାରୁ ଜାରି ରଖିବାକୁ ଟ୍ୟାପ୍ କରନ୍ତୁ।</string>
     <string name="on_device_ai_metered_title">ମୋବାଇଲ୍ ଡାଟାରେ ଡାଉନଲୋଡ୍ କରିବେ?</string>
     <string name="on_device_ai_metered_message">ମଡେଲଟି ଅନେକ ଗିଗାବାଇଟ୍‌ର। Wi-Fi ବ୍ୟବହାର କରିବା ଭଲ।</string>
     <string name="on_device_ai_metered_download">ଡାଉନଲୋଡ କରନ୍ତୁ</string>

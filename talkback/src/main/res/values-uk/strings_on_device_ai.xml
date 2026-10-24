@@ -49,7 +49,7 @@
     <string name="pref_on_device_ai_import">Використати файл моделі зі сховища</string>
     <string name="pref_on_device_ai_import_summary">Виберіть файл Gemma 4 litertlm, який ви вже завантажили.</string>
     <string name="on_device_ai_import_done">Модель встановлено</string>
-    <string name="on_device_ai_import_failed">Цей файл не підтримується файлом моделі Gemma 4.</string>
+    <string name="on_device_ai_import_failed">Цей файл не є підтримуваним файлом моделі Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Ліміт часу для відповідей</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly перестає чекати після цього часу. Опис екрана займає більше часу, ніж опис зображення.</string>
     <string name="on_device_ai_choose_timeout">Ліміт часу для відповідей</string>
@@ -62,12 +62,12 @@
     <string name="pref_on_device_ai_processor">Процесор</string>
     <string name="pref_on_device_ai_short_prompts">Коротші описи екрана</string>
     <string name="pref_on_device_ai_short_prompts_summary">Екран опису запитує менше деталей, тому відповідає швидше. Вимкніть це, щоб отримати повніший опис.</string>
-    <string name="on_device_ai_error_network">Завантаження зупинено. Перевірте підключення та повторіть спробу. Він буде продовжувати там, де зупинився.</string>
+    <string name="on_device_ai_error_network">Завантаження зупинилося. Перевірте підключення та повторіть спробу. Воно продовжиться з того місця, де зупинилося.</string>
     <string name="on_device_ai_error_http">Сервер завантаження не прийняв запит. Спробуйте пізніше або імпортуйте файл.</string>
     <string name="on_device_ai_error_corrupt">Файл не відповідав очікуваній моделі та був видалений. Спробуйте знову.</string>
     <string name="on_device_ai_error_storage">Не вдалося зберегти файл.</string>
     <string name="on_device_ai_error_low_space">Для цієї моделі недостатньо вільного місця.</string>
-    <string name="on_device_ai_error_time_limit">Android призупинив завантаження після кількох годин у фоновому режимі. Торкніться, щоб продовжити, де зупинилися.</string>
+    <string name="on_device_ai_error_time_limit">Android призупинив завантаження після кількох годин у фоновому режимі. Торкніться, щоб продовжити з того місця, де воно зупинилося.</string>
     <string name="on_device_ai_metered_title">Завантажити через мобільний Інтернет?</string>
     <string name="on_device_ai_metered_message">Модель займає кілька гігабайт. Краще використовувати Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Завантажити</string>

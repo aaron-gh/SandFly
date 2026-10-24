@@ -47,7 +47,7 @@
     <string name="pref_on_device_ai_import">Usar um ficheiro de modelo do armazenamento</string>
     <string name="pref_on_device_ai_import_summary">Escolha um arquivo Gemma 4 litrtlm que você já baixou.</string>
     <string name="on_device_ai_import_done">Modelo instalado</string>
-    <string name="on_device_ai_import_failed">Esse arquivo não é um arquivo de modelo Gemma 4 compatível.</string>
+    <string name="on_device_ai_import_failed">Esse ficheiro não é um ficheiro de modelo Gemma 4 suportado.</string>
     <string name="pref_on_device_ai_timeout">Tempo limite para respostas</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly para de esperar depois de tanto tempo. A descrição da tela leva mais tempo do que a descrição da imagem.</string>
     <string name="on_device_ai_choose_timeout">Tempo limite para respostas</string>
@@ -58,12 +58,12 @@
     <string name="pref_on_device_ai_processor">Processador</string>
     <string name="pref_on_device_ai_short_prompts">Descrições de ecrã mais curtas</string>
     <string name="pref_on_device_ai_short_prompts_summary">A tela Descrever pede menos detalhes, por isso responde mais cedo. Desligue isso para descrições mais completas.</string>
-    <string name="on_device_ai_error_network">O download parou. Verifique sua conexão e tente novamente. Ele continuará de onde parou.</string>
-    <string name="on_device_ai_error_http">O servidor de download não aceitou a solicitação. Tente novamente mais tarde ou importe um arquivo.</string>
+    <string name="on_device_ai_error_network">A transferência parou. Verifique a ligação e tente novamente. Continua a partir do ponto onde parou.</string>
+    <string name="on_device_ai_error_http">O servidor de transferência não aceitou o pedido. Tente novamente mais tarde ou importe um ficheiro.</string>
     <string name="on_device_ai_error_corrupt">O ficheiro não correspondia ao modelo esperado e foi eliminado. Tente novamente.</string>
     <string name="on_device_ai_error_storage">Não foi possível guardar o ficheiro.</string>
-    <string name="on_device_ai_error_low_space">Não há armazenamento gratuito suficiente para este modelo.</string>
-    <string name="on_device_ai_error_time_limit">Android pausou o download após várias horas em segundo plano. Toque para continuar de onde parou.</string>
+    <string name="on_device_ai_error_low_space">Não existe armazenamento livre suficiente para este modelo.</string>
+    <string name="on_device_ai_error_time_limit">O Android colocou a transferência em pausa após várias horas em segundo plano. Toque para continuar a partir do ponto onde parou.</string>
     <string name="on_device_ai_metered_title">Transferir com dados móveis?</string>
     <string name="on_device_ai_metered_message">O modelo tem vários gigabytes. É preferível usar Wi-Fi.</string>
     <string name="on_device_ai_metered_download">Transferir</string>

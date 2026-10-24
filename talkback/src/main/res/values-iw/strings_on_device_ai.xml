@@ -48,7 +48,7 @@
     <string name="pref_on_device_ai_import">שימוש בקובץ מודל מהאחסון</string>
     <string name="pref_on_device_ai_import_summary">בחר קובץ Gemma 4 litertlm שכבר הורדת.</string>
     <string name="on_device_ai_import_done">המודל הותקן</string>
-    <string name="on_device_ai_import_failed">הקובץ הזה אינו קובץ דגם Gemma 4 נתמך.</string>
+    <string name="on_device_ai_import_failed">הקובץ הזה אינו קובץ מודל Gemma 4 נתמך.</string>
     <string name="pref_on_device_ai_timeout">מגבלת זמן לתשובות</string>
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly מפסיק לחכות לאחר זמן רב כל כך. מסך תיאור לוקח יותר זמן מאשר תמונה תיאור.</string>
     <string name="on_device_ai_choose_timeout">מגבלת זמן לתשובות</string>
@@ -60,12 +60,12 @@
     <string name="pref_on_device_ai_processor">מעבד</string>
     <string name="pref_on_device_ai_short_prompts">תיאורי מסך קצרים יותר</string>
     <string name="pref_on_device_ai_short_prompts_summary">מסך תאר מבקש פחות פרטים, כך שהוא עונה מוקדם יותר. כבה את זה לתיאורים מלאים יותר.</string>
-    <string name="on_device_ai_error_network">ההורדה נעצרה. בדוק את החיבור שלך ונסה שוב. זה ימשיך היכן שהוא עצר.</string>
-    <string name="on_device_ai_error_http">שרת ההורדות לא קיבל את הבקשה. נסה שוב מאוחר יותר, או ייבא קובץ במקום זאת.</string>
+    <string name="on_device_ai_error_network">ההורדה נעצרה. יש לבדוק את החיבור ולנסות שוב. היא תמשיך מהמקום שבו נעצרה.</string>
+    <string name="on_device_ai_error_http">שרת ההורדה לא קיבל את הבקשה. אפשר לנסות שוב מאוחר יותר או לייבא קובץ.</string>
     <string name="on_device_ai_error_corrupt">הקובץ לא תאם למודל הצפוי ונמחק. אפשר לנסות שוב.</string>
     <string name="on_device_ai_error_storage">לא ניתן לשמור את הקובץ.</string>
-    <string name="on_device_ai_error_low_space">אין מספיק שטח אחסון בחינם עבור הדגם הזה.</string>
-    <string name="on_device_ai_error_time_limit">Android השהה את ההורדה לאחר מספר שעות ברקע. הקש כדי להמשיך במקום שבו זה עצר.</string>
+    <string name="on_device_ai_error_low_space">אין מספיק שטח אחסון פנוי למודל הזה.</string>
+    <string name="on_device_ai_error_time_limit">Android השהה את ההורדה אחרי כמה שעות ברקע. הקשה ממשיכה מהמקום שבו היא נעצרה.</string>
     <string name="on_device_ai_metered_title">להוריד בנתונים ניידים?</string>
     <string name="on_device_ai_metered_message">המודל בגודל של כמה ג\'יגה-בייט. עדיף להשתמש ב-Wi-Fi.</string>
     <string name="on_device_ai_metered_download">הורדה</string>
