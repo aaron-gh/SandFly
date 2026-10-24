@@ -105,7 +105,7 @@ class ScreenOverviewRequesterTest {
   }
 
   @Test
-  fun plainOverviewNamesTheAppAndLeavesOutTheNodes() {
+  fun plainOverviewNamesTheAppAndListsTheTextOnlyToCopy() {
     var request: JSONObject? = null
     var result: OverviewResponse? = null
     val node = AccessibilityNodeInfoCompat.obtain().apply {
@@ -145,7 +145,7 @@ class ScreenOverviewRequesterTest {
     val prompt = prompt(request!!)
     assertTrue(prompt.contains("The app is Tailscale."))
     assertFalse(prompt.contains("Nodes:"))
-    assertFalse(prompt.contains("Connected"))
+    assertTrue(prompt.endsWith("copy its text exactly from this list: Connected"))
     assertEquals(
       "The Tailscale app shows two connected devices.",
       (result as OverviewResponse.Success).overview.summary,

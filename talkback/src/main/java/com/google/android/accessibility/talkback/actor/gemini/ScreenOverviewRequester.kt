@@ -52,8 +52,9 @@ internal enum class PromptStyle {
   /**
    * A model on the phone that does not keep to a JSON format. Small models such as FastVLM copy the
    * example answer or write on without end, so they are asked for plain sentences. For an overview
-   * they get the app's name and no list of the nodes, which they described as made-up things, such
-   * as a web browser's search results. Questions get the shorter list of the nodes.
+   * they get the app's name and the screen's text only as a list to copy names from: given the
+   * list of the nodes, they described made-up things, such as a web browser's search results.
+   * Questions get the shorter list of the nodes.
    */
   ON_DEVICE_PLAIN,
 }
@@ -87,7 +88,11 @@ internal class ScreenOverviewRequester(
       if (instructions == null) {
         val app = command.focusedNode.packageName?.let(appName)
         val appLine = if (app.isNullOrBlank()) "" else "The app is $app.\n\n"
-        "$PLAIN_OVERVIEW_START\n\n$appLine$PLAIN_OVERVIEW_INSTRUCTIONS\n${languageInstruction()}"
+        val textLine =
+          if (tree.texts.isEmpty()) ""
+          else "\n$PLAIN_OVERVIEW_TEXTS ${tree.texts.joinToString("; ")}"
+        "$PLAIN_OVERVIEW_START\n\n$appLine$PLAIN_OVERVIEW_INSTRUCTIONS\n${languageInstruction()}" +
+          textLine
       } else {
         "$instructions\n${languageInstruction()}\n\nNodes:\n${nodes(tree, style)}"
       }
@@ -334,6 +339,10 @@ Example: {"answer": "The Send button is at the bottom right."}"""
     private const val PLAIN_OVERVIEW_INSTRUCTIONS =
       "In 2 sentences, say what this screen shows. Only say what you can see. Do not guess. " +
         "Reply in plain sentences."
+    // The screen's text as a list to copy from, after the instructions. Given as the screen's
+    // content instead, the model made up a story about it.
+    private const val PLAIN_OVERVIEW_TEXTS =
+      "When you name something, copy its text exactly from this list:"
 
     private const val PLAIN_QUERY_INSTRUCTIONS =
       """You help a blind person who uses a screen reader understand their phone screen. You get a screenshot, a numbered list of the text and controls on the screen, the conversation so far, and a question.
