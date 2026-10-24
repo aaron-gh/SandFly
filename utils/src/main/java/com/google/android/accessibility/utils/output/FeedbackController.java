@@ -897,6 +897,7 @@ public class FeedbackController {
     synchronized (mClips) {
       clip = mClips.get(key);
       if (clip == null) {
+        LogUtils.d(TAG, "Not decoded yet, playing the usual way: %s", key);
         decodeLater(player, key, resId, path);
         return false;
       }
@@ -947,6 +948,12 @@ public class FeedbackController {
         mClips.put(key, prepared);
         mClipSamples += prepared.getSize();
         trimClips(key);
+        LogUtils.d(
+            TAG,
+            "Decoded %s: %s, %d samples decoded in all",
+            key,
+            prepared.describe(),
+            mClipSamples);
       }
     }
   }
@@ -967,6 +974,7 @@ public class FeedbackController {
       if (clip != null) {
         mClipSamples -= clip.getSize();
       }
+      LogUtils.d(TAG, "Dropped decoded %s to stay within the limit", entry.getKey());
       oldest.remove();
     }
   }

@@ -34,6 +34,7 @@ import java.util.concurrent.ScheduledFuture
 import java.util.concurrent.ScheduledThreadPoolExecutor
 import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
+import kotlin.math.abs
 
 /**
  * Plays Backtalk's sounds and speech on one low-latency audio track at the device's own sample
@@ -82,6 +83,9 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
   // Set when the track starts, until its first write completes. Running short before that is only
   // the track starting, not a buffer too small.
   @Volatile private var starting = false
+  // Writes left before running short counts again after the buffer grew: the underruns of the same
+  // starvation can be counted after it grew, and would grow it again.
+  private var settleWrites = 0
   // The watchdog's checks, scheduled only while the audio thread runs.
   private var watchdog: ScheduledFuture<*>? = null
   private var thread: Thread? = null
@@ -119,6 +123,22 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     /** How many samples the clip holds. */
     val size: Int
       get() = frames.size
+
+    /** Its length, channels, and the silence before its sound starts, for the log. */
+    fun describe(): String {
+      val total = frames.size / channels
+      val firstSound =
+        (0 until total).firstOrNull { frame ->
+          (0 until channels).any { abs(frames[frame * channels + it]) > AUDIBLE }
+        } ?: total
+      return "${total * 1000L / rate} ms, $channels channels, " +
+        "${firstSound * 1000L / rate} ms before its sound"
+    }
+
+    private companion object {
+      // About -54 dB.
+      const val AUDIBLE = 0.002f
+    }
   }
 
   private class PlayingClip(val clip: Clip, val left: Float, val right: Float, val step: Double) {
@@ -809,8 +829,9 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
    */
   private fun keepUp(output: AudioTrack) {
     val count = output.underrunCount
-    if (starting) {
+    if (starting || settleWrites > 0) {
       starting = false
+      if (settleWrites > 0) settleWrites--
       underruns = count
       return
     }
@@ -820,6 +841,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     if (size >= output.bufferCapacityInFrames) return
     val grown = if (fastPath) size + burstFrames else size * 2
     output.setBufferSizeInFrames(minOf(grown, output.bufferCapacityInFrames))
+    settleWrites = 2 * output.bufferSizeInFrames / burstFrames
     if (fastPath) fastFrames = output.bufferSizeInFrames
     LogUtils.d(TAG, "Track ran short, now %d frames", output.bufferSizeInFrames)
   }
