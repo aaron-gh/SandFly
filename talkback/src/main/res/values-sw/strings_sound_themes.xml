@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">Mandhari za sauti</string>
-    <string name="summary_pref_sound_themes">Sakinisha na uchague seti za sauti na mitetemo, badilisha sauti moja na yako mwenyewe, na uwashe sauti za udhibiti na mitetemo na sauti ya 3D.</string>
+    <string name="summary_pref_sound_themes">Seti za sauti na mitetemo, sauti zako badala ya sauti moja moja, “Sauti na mitetemo ya vidhibiti” na sauti ya 3D.</string>
     <string name="sound_themes_installed_category">Mandhari yaliyosakinishwa</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">Sauti na mitetemo ya SandFly, na sauti zako zozote.</string>
@@ -32,14 +32,14 @@
     <string name="sound_theme_no_picker">Hakuna programu kwenye kifaa hiki ya kuchagua faili.</string>
     <string name="sound_theme_settings_category">Mipangilio ya <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">Sauti</string>
-    <string name="summary_pref_theme_sounds">Badilisha sauti yoyote ya mada hii na faili ya sauti yako mwenyewe.</string>
+    <string name="summary_pref_theme_sounds">Badilisha sauti yoyote ya mandhari haya kwa faili yako ya sauti.</string>
     <string name="sound_themes_install_category">Sakinisha mandhari</string>
     <string name="title_pref_sound_theme_install_file">Kutoka kwa faili</string>
     <string name="summary_pref_sound_theme_install_file">Faili ya mandhari ni faili ya ZIP. Unaweza pia kuifungua kwa SandFly, au kuishiriki kwa SandFly kutoka programu nyingine.</string>
     <string name="title_pref_sound_theme_install_link">Kutoka kwa kiungo</string>
     <string name="summary_pref_sound_theme_install_link">Kiungo cha faili ya mandhari, au cha hazina ya GitHub yenye mandhari. Unaweza pia kushiriki kiungo kwa SandFly kutoka kwenye kivinjari.</string>
     <string name="title_pref_sound_theme_install_source">Kutoka kwa chanzo</string>
-    <string name="summary_pref_sound_theme_install_source">Faili za mandhari kwenye hazina kwenye GitHub, GitLab, Codeberg, Gitea au Bitbucket.</string>
+    <string name="summary_pref_sound_theme_install_source">Faili za mandhari katika hazina kwenye GitHub, GitLab, Codeberg, Gitea au Bitbucket.</string>
     <string name="sound_theme_sources">Vyanzo vya mandhari ya sauti</string>
     <string name="sound_theme_source_empty">Hakuna mandhari ya sauti katika chanzo hiki</string>
     <string name="sound_theme_source_failed">Imeshindwa kupakia mandhari ya sauti. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>

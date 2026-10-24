@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">Ovozli mavzular</string>
-    <string name="summary_pref_sound_themes">Tovushlar va tebranishlar to‘plamini o‘rnating va tanlang, bitta tovushni o‘zingizga almashtiring va tovushlar va tebranishlarni hamda 3D audioni yoqing.</string>
+    <string name="summary_pref_sound_themes">Tovush va tebranish toʻplamlari, alohida tovushlar oʻrniga oʻz tovushlaringiz, “Boshqaruv elementlari ovozlari va tebranishlari” va 3D audio.</string>
     <string name="sound_themes_installed_category">O\'rnatilgan mavzular</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly’ning oʻz tovushlari va tebranishlari hamda oʻzingizning tovushlaringiz.</string>
@@ -39,7 +39,7 @@
     <string name="title_pref_sound_theme_install_link">Havoladan</string>
     <string name="summary_pref_sound_theme_install_link">Mavzu fayliga yoki mavzu joylashgan GitHub repozitoriysiga havola. Havolani brauzerdan SandFly’ga ulashish ham mumkin.</string>
     <string name="title_pref_sound_theme_install_source">Manbadan</string>
-    <string name="summary_pref_sound_theme_install_source">Mavzu fayllari GitHub, GitLab, Codeberg, Gitea yoki Bitbucket omborlarida.</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea yoki Bitbucket’dagi repozitoriydagi mavzu fayllari.</string>
     <string name="sound_theme_sources">Ovoz mavzulari manbalari</string>
     <string name="sound_theme_source_empty">Bu manbada ovozli mavzular yoʻq</string>
     <string name="sound_theme_source_failed">Ovozli mavzularni yuklab boʻlmadi. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -82,6 +82,6 @@
     <string name="theme_sound_use_default">SandFly ovozidan foydalanish</string>
     <string name="theme_sound_remove">Ovozni olib tashlash</string>
     <string name="theme_sound_too_large">Bu fayl juda katta. Ovoz 5 MB gacha bo\'lishi mumkin.</string>
-    <string name="theme_sound_not_audio">SandFly bu faylni oʻynatib boʻlmaydi. WAV, OGG, MP3 yoki FLAC tovushini tanlang.</string>
+    <string name="theme_sound_not_audio">SandFly bu faylni ijro eta olmaydi. WAV, OGG, MP3 yoki FLAC tovushini tanlang.</string>
     <string name="theme_sound_failed">SandFly bu faylni oʻqiy olmadi.</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">Zvučne teme</string>
-    <string name="summary_pref_sound_themes">Instalirajte i izaberite skupove zvukova i vibracija, zamenite pojedinačne zvukove sopstvenim i uključite kontrolne zvukove i vibracije i 3D zvuk.</string>
+    <string name="summary_pref_sound_themes">Skupovi zvukova i vibracija, sopstveni zvuci umesto pojedinačnih zvukova, „Zvukovi i vibracije kontrola” i 3D zvuk.</string>
     <string name="sound_themes_installed_category">Instalirane teme</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">Zvuci i vibracije SandFly-a i svi vaši zvuci.</string>
@@ -42,7 +42,7 @@
     <string name="title_pref_sound_theme_install_link">Sa veze</string>
     <string name="summary_pref_sound_theme_install_link">Veza do datoteke teme ili do GitHub spremišta koje sadrži temu. Vezu možete i da delite sa SandFly-em iz pregledača.</string>
     <string name="title_pref_sound_theme_install_source">Iz izvora</string>
-    <string name="summary_pref_sound_theme_install_source">Datoteke tema u spremištu na GitHub, GitLab, Codeberg, Gitea ili Bitbucket.</string>
+    <string name="summary_pref_sound_theme_install_source">Datoteke tema u spremištu na GitHub-u, GitLab-u, Codeberg-u, Gitea-i ili Bitbucket-u.</string>
     <string name="sound_theme_sources">Izvori zvučnih tema</string>
     <string name="sound_theme_source_empty">Nema zvučnih tema u ovom izvoru</string>
     <string name="sound_theme_source_failed">Nije moguće učitati zvučne teme. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -84,7 +84,7 @@
     <string name="theme_sound_action_set_none">Podesi bez zvuka</string>
     <string name="theme_sound_use_default">Koristi zvuk SandFly</string>
     <string name="theme_sound_remove">Ukloni zvuk</string>
-    <string name="theme_sound_too_large">Taj fajl je prevelik. Zvuk može biti do 5 MB.</string>
-    <string name="theme_sound_not_audio">SandFly ne može da pusti tu datoteku. Izaberite VAV, OGG, MP3 ili FLAC zvuk.</string>
+    <string name="theme_sound_too_large">Ta datoteka je prevelika. Zvuk može imati najviše 5 MB.</string>
+    <string name="theme_sound_not_audio">SandFly ne može da pusti tu datoteku. Izaberite WAV, OGG, MP3 ili FLAC zvuk.</string>
     <string name="theme_sound_failed">SandFly nije mogao da pročita tu datoteku.</string>
 </resources>

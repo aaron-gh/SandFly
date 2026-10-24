@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">Teme sonore</string>
-    <string name="summary_pref_sound_themes">Instalați și alegeți seturi de sunete și vibrații, înlocuiți sunete individuale cu ale dvs. și activați controlul sunetelor și vibrațiilor și audio 3D.</string>
+    <string name="summary_pref_sound_themes">Seturi de sunete și vibrații, sunete proprii în locul sunetelor individuale, „Sunete și vibrații pentru elementele de control” și audio 3D.</string>
     <string name="sound_themes_installed_category">Teme instalate</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">Sunetele și vibrațiile SandFly, plus orice sunete proprii.</string>
@@ -42,7 +42,7 @@
     <string name="title_pref_sound_theme_install_link">Dintr-un link</string>
     <string name="summary_pref_sound_theme_install_link">Un link către un fișier de temă sau către un depozit GitHub care conține o temă. Puteți trimite și un link către SandFly din browser.</string>
     <string name="title_pref_sound_theme_install_source">Dintr-o sursă</string>
-    <string name="summary_pref_sound_theme_install_source">Fișierele teme într-un depozit pe GitHub, GitLab, Codeberg, Gitea sau Bitbucket.</string>
+    <string name="summary_pref_sound_theme_install_source">Fișiere de temă dintr-un depozit de pe GitHub, GitLab, Codeberg, Gitea sau Bitbucket.</string>
     <string name="sound_theme_sources">Surse de teme sonore</string>
     <string name="sound_theme_source_empty">Nu există teme sonore în această sursă</string>
     <string name="sound_theme_source_failed">Nu s-au putut încărca teme de sunet. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>

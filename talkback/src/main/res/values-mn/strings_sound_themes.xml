@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">Дууны загварууд</string>
-    <string name="summary_pref_sound_themes">Дуу болон чичиргээний багцыг суулгаж, сонгож, ганц дууг өөрийн дуугаар сольж, дуу чимээ, чичиргээ болон 3D аудиог асаана уу.</string>
+    <string name="summary_pref_sound_themes">Дуу, чичиргээний багц, тусдаа дууг өөрийн дуугаар солих, «Удирдлагын дуу ба чичиргээ» болон 3D аудио.</string>
     <string name="sound_themes_installed_category">Суулгасан загварууд</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly-н өөрийн дуу, чичиргээ болон таны өөрийн дуунууд.</string>
@@ -82,6 +82,6 @@
     <string name="theme_sound_use_default">SandFly-ийн дууг ашиглах</string>
     <string name="theme_sound_remove">Дууг арилгах</string>
     <string name="theme_sound_too_large">Энэ файл хэтэрхий том байна. Дууны хэмжээ 5 МБ хүртэл байж болно.</string>
-    <string name="theme_sound_not_audio">SandFly тэр файлыг тоглуулах боломжгүй. WAV, OGG, MP3 эсвэл FLAC дууг сонгоно уу.</string>
+    <string name="theme_sound_not_audio">SandFly энэ файлыг тоглуулж чадахгүй. WAV, OGG, MP3 эсвэл FLAC дуу сонгоно уу.</string>
     <string name="theme_sound_failed">SandFly тэр файлыг уншиж чадсангүй.</string>
 </resources>

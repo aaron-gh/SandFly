@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">Ses temaları</string>
-    <string name="summary_pref_sound_themes">Ses ve titreşim kümelerini yükleyip seçin, tek sesleri kendi seslerinizle değiştirin ve kontrol seslerini, titreşimlerini ve 3D sesi açın.</string>
+    <string name="summary_pref_sound_themes">Ses ve titreşim setleri, tek tek seslerin yerine kendi sesleriniz, “Denetim öğesi sesleri ve titreşimleri” ve 3D ses.</string>
     <string name="sound_themes_installed_category">Yüklü temalar</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly\'ın kendi sesleri ve titreşimleri ile kendi eklediğiniz sesler.</string>
@@ -82,6 +82,6 @@
     <string name="theme_sound_use_default">SandFly\'nin sesini kullan</string>
     <string name="theme_sound_remove">Sesi kaldır</string>
     <string name="theme_sound_too_large">Bu dosya çok büyük. Bir ses 5 MB\'a kadar olabilir.</string>
-    <string name="theme_sound_not_audio">SandFly bu dosyayı oynatamıyor. Bir WAV, OGG, MP3 veya FLAC sesi seçin.</string>
+    <string name="theme_sound_not_audio">SandFly bu dosyayı oynatamıyor. WAV, OGG, MP3 veya FLAC biçiminde bir ses seçin.</string>
     <string name="theme_sound_failed">SandFly bu dosyayı okuyamadı.</string>
 </resources>

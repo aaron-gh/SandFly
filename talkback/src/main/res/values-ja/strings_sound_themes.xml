@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">サウンドテーマ</string>
-    <string name="summary_pref_sound_themes">サウンドと振動のセットをインストールして選択し、単一サウンドを独自のサウンドに置き換え、制御音と振動と 3D オーディオをオンにします。</string>
+    <string name="summary_pref_sound_themes">サウンドと振動のセット、個別のサウンドの置き換え、[コントロールの音と振動]、3D オーディオ。</string>
     <string name="sound_themes_installed_category">インストール済みのテーマ</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly 独自のサウンドと振動、および自分で追加したサウンド。</string>
@@ -32,7 +32,7 @@
     <string name="sound_theme_no_picker">このデバイスにはファイルを選択できるアプリがありません。</string>
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>の設定</string>
     <string name="title_pref_theme_sounds">サウンド</string>
-    <string name="summary_pref_theme_sounds">このテーマのサウンドを独自のサウンド ファイルに置き換えます。</string>
+    <string name="summary_pref_theme_sounds">このテーマの任意のサウンドを、自分のサウンド ファイルに置き換えます。</string>
     <string name="sound_themes_install_category">テーマをインストール</string>
     <string name="title_pref_sound_theme_install_file">ファイルから</string>
     <string name="summary_pref_sound_theme_install_file">テーマ ファイルは ZIP ファイルです。別のアプリから SandFly で開くか、SandFly に共有することもできます。</string>
@@ -81,7 +81,7 @@
     <string name="theme_sound_action_set_none">無音に設定</string>
     <string name="theme_sound_use_default">SandFly のサウンドを使用</string>
     <string name="theme_sound_remove">音を削除</string>
-    <string name="theme_sound_too_large">そのファイルは大きすぎます。サウンドは最大 5 MB まで可能です。</string>
-    <string name="theme_sound_not_audio">SandFly ではそのファイルを再生できません。 WAV、OGG、MP3、または FLAC サウンドを選択します。</string>
+    <string name="theme_sound_too_large">ファイルが大きすぎます。サウンドの上限は 5 MB です。</string>
+    <string name="theme_sound_not_audio">SandFly ではそのファイルを再生できません。WAV、OGG、MP3、FLAC のいずれかのサウンドを選択してください。</string>
     <string name="theme_sound_failed">SandFly はそのファイルを読み取れませんでした。</string>
 </resources>

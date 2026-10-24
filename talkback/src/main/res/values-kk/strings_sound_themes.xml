@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">Дыбыстық тақырыптар</string>
-    <string name="summary_pref_sound_themes">Дыбыстар мен дірілдер жинағын орнатыңыз және таңдаңыз, жеке дыбыстарды өзіңіздікімен ауыстырыңыз және дыбыстар мен дірілдерді және 3D дыбысты басқаруды қосыңыз.</string>
+    <string name="summary_pref_sound_themes">Дыбыстар мен діріл жинақтары, жеке дыбыстарды өз дыбысыңызбен ауыстыру, «Басқару элементтерінің дыбыстары мен дірілдері» және 3D аудио.</string>
     <string name="sound_themes_installed_category">Орнатылған тақырыптар</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly-дың өз дыбыстары мен дірілдері және өзіңіздің дыбыстарыңыз.</string>
@@ -39,7 +39,7 @@
     <string name="title_pref_sound_theme_install_link">Сілтемеден</string>
     <string name="summary_pref_sound_theme_install_link">Тақырып файлына не тақырыбы бар GitHub репозиторийіне сілтеме. Сілтемені браузерден SandFly-ға бөлісуге де болады.</string>
     <string name="title_pref_sound_theme_install_source">Көзден</string>
-    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea немесе Bitbucket репозиторийіндегі тақырыптық файлдар.</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea немесе Bitbucket репозиторийіндегі тақырып файлдары.</string>
     <string name="sound_theme_sources">Дыбыстық тақырып көздері</string>
     <string name="sound_theme_source_empty">Бұл дереккөзде дыбыс тақырыптары жоқ</string>
     <string name="sound_theme_source_failed">Дыбыс тақырыптары жүктелмеді. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -82,6 +82,6 @@
     <string name="theme_sound_use_default">SandFly дыбысын пайдалану</string>
     <string name="theme_sound_remove">Дыбысты алып тастау</string>
     <string name="theme_sound_too_large">Бұл файл тым үлкен. Дыбыс 5 МБ дейін болуы мүмкін.</string>
-    <string name="theme_sound_not_audio">SandFly бұл файлды ойнату мүмкін емес. WAV, OGG, MP3 немесе FLAC дыбысын таңдаңыз.</string>
+    <string name="theme_sound_not_audio">SandFly бұл файлды ойната алмайды. WAV, OGG, MP3 немесе FLAC дыбысын таңдаңыз.</string>
     <string name="theme_sound_failed">SandFly бұл файлды оқи алмады.</string>
 </resources>

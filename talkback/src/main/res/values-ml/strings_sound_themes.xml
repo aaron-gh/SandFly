@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">ശബ്ദ തീമുകൾ</string>
-    <string name="summary_pref_sound_themes">ശബ്‌ദങ്ങളുടെയും വൈബ്രേഷനുകളുടെയും സെറ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്‌ത് തിരഞ്ഞെടുക്കുക, ഒറ്റ ശബ്‌ദങ്ങൾ നിങ്ങളുടെ സ്വന്തമായത് ഉപയോഗിച്ച് മാറ്റിസ്ഥാപിക്കുക, ശബ്‌ദങ്ങളും വൈബ്രേഷനുകളും 3D ഓഡിയോയും നിയന്ത്രിക്കുക.</string>
+    <string name="summary_pref_sound_themes">ശബ്ദങ്ങളുടെയും വൈബ്രേഷനുകളുടെയും സെറ്റുകൾ, ഓരോ ശബ്ദത്തിനും പകരം നിങ്ങളുടെ സ്വന്തം ശബ്ദം, “നിയന്ത്രണങ്ങളുടെ ശബ്ദങ്ങളും വൈബ്രേഷനുകളും”, 3D ഓഡിയോ.</string>
     <string name="sound_themes_installed_category">ഇൻസ്റ്റാൾ ചെയ്ത തീമുകൾ</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly-ൻ്റെ സ്വന്തം ശബ്‌ദങ്ങളും വൈബ്രേഷനുകളും നിങ്ങളുടെ സ്വന്തം ശബ്ദങ്ങളും.</string>
@@ -39,7 +39,7 @@
     <string name="title_pref_sound_theme_install_link">ഒരു ലിങ്കിൽ നിന്ന്</string>
     <string name="summary_pref_sound_theme_install_link">ഒരു തീം ഫയലിലേക്കോ തീം അടങ്ങിയ GitHub റിപ്പോസിറ്ററിയിലേക്കോ ഉള്ള ലിങ്ക്. ബ്രൗസറിൽ നിന്ന് SandFly-ലേക്ക് ലിങ്ക് പങ്കിടാനും കഴിയും.</string>
     <string name="title_pref_sound_theme_install_source">ഒരു ഉറവിടത്തിൽ നിന്ന്</string>
-    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea അല്ലെങ്കിൽ Bitbucket എന്നിവയിലെ ഒരു ശേഖരത്തിലെ തീം ഫയലുകൾ.</string>
+    <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea അല്ലെങ്കിൽ Bitbucket-ലെ റിപ്പോസിറ്ററിയിലുള്ള തീം ഫയലുകൾ.</string>
     <string name="sound_theme_sources">സൗണ്ട് തീം ഉറവിടങ്ങൾ</string>
     <string name="sound_theme_source_empty">ഈ ഉറവിടത്തിൽ ശബ്‌ദ തീമുകളൊന്നുമില്ല</string>
     <string name="sound_theme_source_failed">ശബ്‌ദ തീമുകൾ ലോഡ് ചെയ്യാനായില്ല. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
@@ -82,6 +82,6 @@
     <string name="theme_sound_use_default">SandFly ൻ്റെ ശബ്ദം ഉപയോഗിക്കുക</string>
     <string name="theme_sound_remove">ശബ്ദം നീക്കം ചെയ്യുക</string>
     <string name="theme_sound_too_large">ആ ഫയൽ വളരെ വലുതാണ്. ഒരു ശബ്ദം 5 MB വരെയാകാം.</string>
-    <string name="theme_sound_not_audio">SandFly ആ ഫയൽ പ്ലേ ചെയ്യാൻ കഴിയില്ല. ഒരു WAV, OGG, MP3 അല്ലെങ്കിൽ FLAC ശബ്ദം തിരഞ്ഞെടുക്കുക.</string>
+    <string name="theme_sound_not_audio">SandFly-ന് ആ ഫയൽ പ്ലേ ചെയ്യാനാകില്ല. WAV, OGG, MP3 അല്ലെങ്കിൽ FLAC ശബ്ദം തിരഞ്ഞെടുക്കുക.</string>
     <string name="theme_sound_failed">SandFly ന് ആ ഫയൽ വായിക്കാൻ കഴിഞ്ഞില്ല.</string>
 </resources>

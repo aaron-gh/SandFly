@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">సౌండ్ థీమ్‌లు</string>
-    <string name="summary_pref_sound_themes">సౌండ్‌లు మరియు వైబ్రేషన్‌ల సెట్‌లను ఇన్‌స్టాల్ చేయండి మరియు ఎంచుకోండి, సింగిల్ సౌండ్‌లను మీ స్వంత వాటితో భర్తీ చేయండి మరియు కంట్రోల్ సౌండ్‌లు మరియు వైబ్రేషన్‌లు మరియు 3D ఆడియోను ఆన్ చేయండి.</string>
+    <string name="summary_pref_sound_themes">ధ్వనులు, వైబ్రేషన్‌ల సెట్‌లు, ఒక్కో ధ్వని బదులు మీ స్వంత ధ్వనులు, “కంట్రోల్ ధ్వనులు మరియు వైబ్రేషన్‌లు”, 3D ఆడియో.</string>
     <string name="sound_themes_installed_category">ఇన్‌స్టాల్ చేసిన థీమ్‌లు</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFly స్వంత సౌండ్‌లు, వైబ్రేషన్‌లు, మీ స్వంత సౌండ్‌లు.</string>
@@ -81,7 +81,7 @@
     <string name="theme_sound_action_set_none">ధ్వని లేకుండా సెట్ చేయి</string>
     <string name="theme_sound_use_default">SandFly ధ్వనిని ఉపయోగించు</string>
     <string name="theme_sound_remove">ధ్వనిని తీసివేయి</string>
-    <string name="theme_sound_too_large">ఆ ఫైల్ చాలా పెద్దది. ఒక ధ్వని 5 MB వరకు ఉంటుంది.</string>
-    <string name="theme_sound_not_audio">SandFly ఆ ఫైల్‌ని ప్లే చేయడం సాధ్యపడదు. WAV, OGG, MP3 లేదా FLAC ధ్వనిని ఎంచుకోండి.</string>
+    <string name="theme_sound_too_large">ఆ ఫైల్ చాలా పెద్దది. ఒక ధ్వని గరిష్ఠంగా 5 MB ఉండవచ్చు.</string>
+    <string name="theme_sound_not_audio">SandFly ఆ ఫైల్‌ను ప్లే చేయలేదు. WAV, OGG, MP3 లేదా FLAC ధ్వనిని ఎంచుకోండి.</string>
     <string name="theme_sound_failed">SandFly ఆ ఫైల్‌ని చదవలేకపోయింది.</string>
 </resources>
