@@ -319,8 +319,8 @@
     <string name="notification_automation_stop">停止朗讀目前的通知</string>
     <string name="notification_automation_read_all">朗讀通知</string>
     <plurals name="notification_seconds">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 第二</item>
-        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g>秒</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 秒</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> 秒</item>
     </plurals>
     <plurals name="notification_minutes">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>分鐘</item>
@@ -339,8 +339,8 @@
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> 句子</item>
     </plurals>
     <plurals name="notification_characters">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 文字字符</item>
-        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> 文字字符</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 個字元</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> 個字元</item>
     </plurals>
     <plurals name="notification_digits">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 數字</item>
