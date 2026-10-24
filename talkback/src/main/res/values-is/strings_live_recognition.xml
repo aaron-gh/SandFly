@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Rauntímagreining</string>
+    <string name="live_recognition_hint">Strjúktu upp eða niður til að velja stillingu og ýttu svo tvisvar til að kveikja eða slökkva á henni</string>
+    <string name="live_recognition_scenes">Umhverfi</string>
+    <string name="live_recognition_text">Texti</string>
+    <string name="live_recognition_point">Benda og lesa</string>
+    <string name="live_recognition_people">Greining fólks</string>
+    <string name="live_recognition_doors">Greining hurða</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Beindu myndavélinni að aftan að því sem þú vilt fá lýsingu á. Fyrir Benda og lesa bendirðu með fingri á texta í mynd myndavélarinnar. Lýsingar geta verið rangar. Ekki treysta á þær til að komast örugglega leiðar þinnar.</string>
+    <string name="live_recognition_camera_off">Slökkt á myndavél</string>
+    <string name="live_recognition_camera_on">Kveikt á myndavél</string>
+    <string name="live_recognition_connecting">Tengist Gemini…</string>
+    <string name="live_recognition_cloud_title">Senda myndir úr myndavélinni til Gemini?</string>
+    <string name="live_recognition_cloud_message">Umhverfi, Benda og lesa, Greining fólks og Greining hurða senda mynd úr myndavélinni til Gemini API frá Google á nokkurra sekúndna fresti. Texti er greindur í þessum síma.\n\nMeð ókeypis API-lykli getur Google geymt það sem berst, notað það til að bæta vörur sínar og látið fólk fara yfir það. Gervigreind sem býr til efni er á tilraunastigi og gerir því mistök.</string>
+    <string name="live_recognition_send">Senda myndir</string>
+    <string name="live_recognition_camera_permission">Engin heimild fyrir myndavél</string>
+    <string name="live_recognition_camera_error">Ekki tókst að opna myndavélina</string>
+    <string name="live_recognition_connection_error">Tenging við Gemini mistókst. Slökkt var á stillingum sem nota Gemini.</string>
+    <string name="live_recognition_timeout">Gemini svaraði ekki í tæka tíð. Slökkt var á stillingum sem nota Gemini.</string>
+    <string name="live_recognition_session_ended">Gemini-lotunni lauk. Slökkt var á stillingum sem nota Gemini.</string>
+    <string name="live_recognition_ocr_error">Textagreining er ekki í boði. Slökkt var á Texta.</string>
+    <string name="live_recognition_point_above">Lesa fyrir ofan fingurgóminn</string>
+    <string name="live_recognition_point_below">Lesa fyrir neðan fingurgóminn</string>
+</resources>

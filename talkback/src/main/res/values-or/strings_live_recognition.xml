@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">ଲାଇଭ ଚିହ୍ନଟ</string>
+    <string name="live_recognition_hint">ଏକ ମୋଡ ବାଛିବା ପାଇଁ ଉପରକୁ କିମ୍ବା ତଳକୁ ସ୍ୱାଇପ କରନ୍ତୁ, ତା\'ପରେ ଏହାକୁ ଚାଲୁ କିମ୍ବା ବନ୍ଦ କରିବା ପାଇଁ ଦୁଇଥର ଟାପ କରନ୍ତୁ</string>
+    <string name="live_recognition_scenes">ଦୃଶ୍ୟ</string>
+    <string name="live_recognition_text">ଟେକ୍ସଟ</string>
+    <string name="live_recognition_point">ଦେଖାନ୍ତୁ ଏବଂ ପଢ଼ନ୍ତୁ</string>
+    <string name="live_recognition_people">ଲୋକ ଚିହ୍ନଟ</string>
+    <string name="live_recognition_doors">କବାଟ ଚିହ୍ନଟ</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">ଆପଣ ଯାହାର ବର୍ଣ୍ଣନା ଚାହୁଁଛନ୍ତି, ପଛ କ୍ୟାମେରାକୁ ସେଆଡ଼େ କରନ୍ତୁ। \'ଦେଖାନ୍ତୁ ଏବଂ ପଢ଼ନ୍ତୁ\' ପାଇଁ, କ୍ୟାମେରା ଛବିରେ ଥିବା ଟେକ୍ସଟକୁ ଆଙ୍ଗୁଠିରେ ଦେଖାନ୍ତୁ। ବର୍ଣ୍ଣନା ଭୁଲ ହୋଇପାରେ। ସୁରକ୍ଷିତ ଭାବେ ଚଲାବୁଲା କରିବା ପାଇଁ ସେଥିରେ ଭରସା କରନ୍ତୁ ନାହିଁ।</string>
+    <string name="live_recognition_camera_off">କ୍ୟାମେରା ବନ୍ଦ ଅଛି</string>
+    <string name="live_recognition_camera_on">କ୍ୟାମେରା ଚାଲୁ ଅଛି</string>
+    <string name="live_recognition_connecting">Gemini ସହ ସଂଯୋଗ କରାଯାଉଛି…</string>
+    <string name="live_recognition_cloud_title">କ୍ୟାମେରା ଛବି Geminiକୁ ପଠାଇବେ?</string>
+    <string name="live_recognition_cloud_message">ଦୃଶ୍ୟ, ଦେଖାନ୍ତୁ ଏବଂ ପଢ଼ନ୍ତୁ, ଲୋକ ଚିହ୍ନଟ ଏବଂ କବାଟ ଚିହ୍ନଟ ପ୍ରତି କିଛି ସେକେଣ୍ଡରେ କ୍ୟାମେରାରୁ ଏକ ଛବି Googleର Gemini APIକୁ ପଠାନ୍ତି। ଟେକ୍ସଟ ଏହି ଫୋନରେ ଚିହ୍ନଟ କରାଯାଏ।\n\nମାଗଣା API ଚାବି ସହ, Google ଯାହା ପାଏ ତାହା ରଖିପାରେ, ନିଜ ପ୍ରଡକ୍ଟ ଉନ୍ନତ କରିବାକୁ ବ୍ୟବହାର କରିପାରେ ଏବଂ ଲୋକଙ୍କ ଦ୍ୱାରା ସମୀକ୍ଷା କରାଇପାରେ। ଜେନେରେଟିଭ AI ପରୀକ୍ଷାମୂଳକ, ତେଣୁ ଏହା ଭୁଲ କରିବ।</string>
+    <string name="live_recognition_send">ଛବି ପଠାନ୍ତୁ</string>
+    <string name="live_recognition_camera_permission">କ୍ୟାମେରା ଅନୁମତି ନାହିଁ</string>
+    <string name="live_recognition_camera_error">କ୍ୟାମେରା ଖୋଲିହେଲା ନାହିଁ</string>
+    <string name="live_recognition_connection_error">Gemini ସହ ସଂଯୋଗ ବିଫଳ ହେଲା। Gemini ବ୍ୟବହାର କରୁଥିବା ମୋଡଗୁଡ଼ିକ ବନ୍ଦ କରାଗଲା।</string>
+    <string name="live_recognition_timeout">Gemini ସମୟରେ ଉତ୍ତର ଦେଲା ନାହିଁ। Gemini ବ୍ୟବହାର କରୁଥିବା ମୋଡଗୁଡ଼ିକ ବନ୍ଦ କରାଗଲା।</string>
+    <string name="live_recognition_session_ended">Gemini ସେସନ ଶେଷ ହେଲା। Gemini ବ୍ୟବହାର କରୁଥିବା ମୋଡଗୁଡ଼ିକ ବନ୍ଦ କରାଗଲା।</string>
+    <string name="live_recognition_ocr_error">ଟେକ୍ସଟ ଚିହ୍ନଟ ଉପଲବ୍ଧ ନାହିଁ। ଟେକ୍ସଟ ବନ୍ଦ କରାଗଲା।</string>
+    <string name="live_recognition_point_above">ଆଙ୍ଗୁଠି ଅଗର ଉପରେ ପଢ଼ନ୍ତୁ</string>
+    <string name="live_recognition_point_below">ଆଙ୍ଗୁଠି ଅଗର ତଳେ ପଢ଼ନ୍ତୁ</string>
+</resources>

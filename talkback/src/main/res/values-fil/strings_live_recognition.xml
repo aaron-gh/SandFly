@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Live na pagkilala</string>
+    <string name="live_recognition_hint">Mag-swipe pataas o pababa para pumili ng mode, pagkatapos ay mag-double tap para i-on o i-off ito</string>
+    <string name="live_recognition_scenes">Mga Eksena</string>
+    <string name="live_recognition_text">Text</string>
+    <string name="live_recognition_point">Ituro at Basahin</string>
+    <string name="live_recognition_people">Pag-detect ng Tao</string>
+    <string name="live_recognition_doors">Pag-detect ng Pinto</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Itutok ang camera sa likod sa gusto mong ilarawan. Para sa Ituro at Basahin, ituro ng daliri ang text sa larawan ng camera. Maaaring mali ang mga paglalarawan. Huwag umasa sa mga ito para makagalaw nang ligtas.</string>
+    <string name="live_recognition_camera_off">Naka-off ang camera</string>
+    <string name="live_recognition_camera_on">Naka-on ang camera</string>
+    <string name="live_recognition_connecting">Kumokonekta sa Gemini…</string>
+    <string name="live_recognition_cloud_title">Ipadala ang mga larawan ng camera sa Gemini?</string>
+    <string name="live_recognition_cloud_message">Ang Mga Eksena, Ituro at Basahin, Pag-detect ng Tao at Pag-detect ng Pinto ay nagpapadala ng larawan mula sa camera sa Gemini API ng Google bawat ilang segundo. Kinikilala ang text sa teleponong ito.\n\nGamit ang libreng API key, puwedeng itago ng Google ang natatanggap nito, gamitin ito para pahusayin ang mga produkto nito, at ipasuri ito sa mga tao. Experimental ang generative AI, kaya magkakamali ito.</string>
+    <string name="live_recognition_send">Ipadala ang mga larawan</string>
+    <string name="live_recognition_camera_permission">Walang pahintulot sa camera</string>
+    <string name="live_recognition_camera_error">Hindi mabuksan ang camera</string>
+    <string name="live_recognition_connection_error">Hindi nakakonekta sa Gemini. Na-off ang mga mode na gumagamit ng Gemini.</string>
+    <string name="live_recognition_timeout">Hindi sumagot ang Gemini sa takdang oras. Na-off ang mga mode na gumagamit ng Gemini.</string>
+    <string name="live_recognition_session_ended">Natapos ang session ng Gemini. Na-off ang mga mode na gumagamit ng Gemini.</string>
+    <string name="live_recognition_ocr_error">Hindi available ang pagkilala ng text. Na-off ang Text.</string>
+    <string name="live_recognition_point_above">Basahin sa itaas ng dulo ng daliri</string>
+    <string name="live_recognition_point_below">Basahin sa ibaba ng dulo ng daliri</string>
+</resources>

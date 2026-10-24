@@ -231,6 +231,9 @@ public class KeyComboMapper {
           result = pipeline.returnFeedback(eventId, Feedback.prevContainer(INPUT_MODE_KEYBOARD));
       // Tap
       case PERFORM_CLICK -> {
+        if (selectorController.activateLiveRecognition()) {
+          break;
+        }
         if (SelectorController.getCurrentSetting(accessibilityService).equals(ACTIONS)) {
           selectorController.activateCurrentAction(eventId);
           break;

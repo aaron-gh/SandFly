@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Шууд таних</string>
+    <string name="live_recognition_hint">Горим сонгохын тулд дээш эсвэл доош шударч, дараа нь асаах эсвэл унтраахын тулд хоёр товшино уу</string>
+    <string name="live_recognition_scenes">Дүр зураг</string>
+    <string name="live_recognition_text">Текст</string>
+    <string name="live_recognition_point">Зааж унших</string>
+    <string name="live_recognition_people">Хүн илрүүлэх</string>
+    <string name="live_recognition_doors">Хаалга илрүүлэх</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Арын камерыг тайлбарлуулахыг хүссэн зүйл рүүгээ чиглүүлнэ үү. «Зааж унших» горимд камерын зураг дээрх текстийг хуруугаараа заана уу. Тайлбар буруу байж болно. Аюулгүй явахдаа үүнд найдаж болохгүй.</string>
+    <string name="live_recognition_camera_off">Камер унтраалттай</string>
+    <string name="live_recognition_camera_on">Камер асаалттай</string>
+    <string name="live_recognition_connecting">Gemini-д холбогдож байна…</string>
+    <string name="live_recognition_cloud_title">Камерын зургийг Gemini руу илгээх үү?</string>
+    <string name="live_recognition_cloud_message">«Дүр зураг», «Зааж унших», «Хүн илрүүлэх», «Хаалга илрүүлэх» нь хэдэн секунд тутам камерын зургийг Google-н Gemini API руу илгээдэг. Текстийг энэ утсан дээр танина.\n\nҮнэгүй API түлхүүртэй үед Google хүлээн авсан зүйлээ хадгалж, бүтээгдэхүүнээ сайжруулахад ашиглаж, хүмүүсээр хянуулж болно. Үүсгэгч хиймэл оюун туршилтын шатанд байгаа тул алдаа гаргана.</string>
+    <string name="live_recognition_send">Зураг илгээх</string>
+    <string name="live_recognition_camera_permission">Камерын зөвшөөрөл байхгүй</string>
+    <string name="live_recognition_camera_error">Камерыг нээж чадсангүй</string>
+    <string name="live_recognition_connection_error">Gemini-д холбогдож чадсангүй. Gemini ашигладаг горимуудыг унтраалаа.</string>
+    <string name="live_recognition_timeout">Gemini цагтаа хариулсангүй. Gemini ашигладаг горимуудыг унтраалаа.</string>
+    <string name="live_recognition_session_ended">Gemini-н сешн дууслаа. Gemini ашигладаг горимуудыг унтраалаа.</string>
+    <string name="live_recognition_ocr_error">Текст таних боломжгүй байна. «Текст»-ийг унтраалаа.</string>
+    <string name="live_recognition_point_above">Хурууны үзүүрийн дээд хэсгийг унших</string>
+    <string name="live_recognition_point_below">Хурууны үзүүрийн доод хэсгийг унших</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Tiesioginis atpažinimas</string>
+    <string name="live_recognition_hint">Perbraukite aukštyn arba žemyn, kad pasirinktumėte režimą, tada dukart palieskite, kad jį įjungtumėte arba išjungtumėte</string>
+    <string name="live_recognition_scenes">Scenos</string>
+    <string name="live_recognition_text">Tekstas</string>
+    <string name="live_recognition_point">Rodyti ir skaityti</string>
+    <string name="live_recognition_people">Žmonių aptikimas</string>
+    <string name="live_recognition_doors">Durų aptikimas</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Nukreipkite galinį fotoaparatą į tai, ką norite aprašyti. Naudodami režimą Rodyti ir skaityti, pirštu parodykite tekstą fotoaparato vaizde. Aprašymai gali būti klaidingi. Nepasikliaukite jais, kad saugiai judėtumėte.</string>
+    <string name="live_recognition_camera_off">Fotoaparatas išjungtas</string>
+    <string name="live_recognition_camera_on">Fotoaparatas įjungtas</string>
+    <string name="live_recognition_connecting">Jungiamasi prie Gemini…</string>
+    <string name="live_recognition_cloud_title">Siųsti fotoaparato vaizdus į Gemini?</string>
+    <string name="live_recognition_cloud_message">Scenos, Rodyti ir skaityti, Žmonių aptikimas ir Durų aptikimas kas kelias sekundes siunčia fotoaparato vaizdą į „Google“ Gemini API. Tekstas atpažįstamas šiame telefone.\n\nNaudojant nemokamą API raktą, „Google“ gali saugoti tai, ką gauna, naudoti tai savo produktams tobulinti ir leisti žmonėms tai peržiūrėti. Generatyvusis DI yra eksperimentinis, todėl jis darys klaidų.</string>
+    <string name="live_recognition_send">Siųsti vaizdus</string>
+    <string name="live_recognition_camera_permission">Nėra fotoaparato leidimo</string>
+    <string name="live_recognition_camera_error">Nepavyko atidaryti fotoaparato</string>
+    <string name="live_recognition_connection_error">Nepavyko prisijungti prie Gemini. Režimai, kurie naudoja Gemini, išjungti.</string>
+    <string name="live_recognition_timeout">Gemini neatsakė laiku. Režimai, kurie naudoja Gemini, išjungti.</string>
+    <string name="live_recognition_session_ended">Gemini sesija baigėsi. Režimai, kurie naudoja Gemini, išjungti.</string>
+    <string name="live_recognition_ocr_error">Teksto atpažinimas nepasiekiamas. Tekstas išjungtas.</string>
+    <string name="live_recognition_point_above">Skaityti virš piršto galiuko</string>
+    <string name="live_recognition_point_below">Skaityti po piršto galiuku</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">لائیو شناخت</string>
+    <string name="live_recognition_hint">موڈ منتخب کرنے کے لیے اوپر یا نیچے سوائپ کریں، پھر اسے آن یا آف کرنے کے لیے دو بار تھپتھپائیں</string>
+    <string name="live_recognition_scenes">مناظر</string>
+    <string name="live_recognition_text">متن</string>
+    <string name="live_recognition_point">اشارہ کریں اور پڑھیں</string>
+    <string name="live_recognition_people">لوگوں کا پتہ لگانا</string>
+    <string name="live_recognition_doors">دروازوں کا پتہ لگانا</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>، <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">پچھلے کیمرے کو اس چیز کی طرف کریں جس کی آپ وضاحت چاہتے ہیں۔ \"اشارہ کریں اور پڑھیں\" کے لیے کیمرے کی تصویر میں کسی متن کی طرف انگلی سے اشارہ کریں۔ وضاحتیں غلط ہو سکتی ہیں۔ محفوظ طریقے سے چلنے پھرنے کے لیے ان پر بھروسہ نہ کریں۔</string>
+    <string name="live_recognition_camera_off">کیمرا آف ہے</string>
+    <string name="live_recognition_camera_on">کیمرا آن ہے</string>
+    <string name="live_recognition_connecting">Gemini سے منسلک ہو رہا ہے…</string>
+    <string name="live_recognition_cloud_title">کیمرے کی تصاویر Gemini کو بھیجیں؟</string>
+    <string name="live_recognition_cloud_message">مناظر، اشارہ کریں اور پڑھیں، لوگوں کا پتہ لگانا اور دروازوں کا پتہ لگانا ہر چند سیکنڈ میں کیمرے سے ایک تصویر Google کے Gemini API کو بھیجتے ہیں۔ متن اسی فون پر پہچانا جاتا ہے۔\n\nمفت API کلید کے ساتھ، Google جو کچھ موصول کرتا ہے اسے رکھ سکتا ہے، اسے اپنی پروڈکٹس بہتر بنانے کے لیے استعمال کر سکتا ہے اور لوگوں سے اس کا جائزہ لے سکتا ہے۔ جنریٹو AI تجرباتی ہے، اس لیے یہ غلطیاں کرے گا۔</string>
+    <string name="live_recognition_send">تصاویر بھیجیں</string>
+    <string name="live_recognition_camera_permission">کیمرے کی اجازت نہیں ہے</string>
+    <string name="live_recognition_camera_error">کیمرا نہیں کھولا جا سکا</string>
+    <string name="live_recognition_connection_error">Gemini سے کنکشن ناکام ہو گیا۔ Gemini استعمال کرنے والے موڈز آف کر دیے گئے۔</string>
+    <string name="live_recognition_timeout">Gemini نے وقت پر جواب نہیں دیا۔ Gemini استعمال کرنے والے موڈز آف کر دیے گئے۔</string>
+    <string name="live_recognition_session_ended">Gemini کا سیشن ختم ہو گیا۔ Gemini استعمال کرنے والے موڈز آف کر دیے گئے۔</string>
+    <string name="live_recognition_ocr_error">متن کی شناخت دستیاب نہیں ہے۔ متن آف کر دیا گیا۔</string>
+    <string name="live_recognition_point_above">انگلی کی نوک کے اوپر پڑھیں</string>
+    <string name="live_recognition_point_below">انگلی کی نوک کے نیچے پڑھیں</string>
+</resources>

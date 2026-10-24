@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">זיהוי בזמן אמת</string>
+    <string name="live_recognition_hint">צריך להחליק למעלה או למטה כדי לבחור מצב, ואז להקיש פעמיים כדי להפעיל או להשבית אותו</string>
+    <string name="live_recognition_scenes">סצנות</string>
+    <string name="live_recognition_text">טקסט</string>
+    <string name="live_recognition_point">הצבעה והקראה</string>
+    <string name="live_recognition_people">זיהוי אנשים</string>
+    <string name="live_recognition_doors">זיהוי דלתות</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">יש לכוון את המצלמה האחורית אל מה שרוצים לתאר. במצב \"הצבעה והקראה\" יש להצביע באצבע על טקסט בתמונת המצלמה. התיאורים עלולים להיות שגויים. אין להסתמך עליהם כדי לנוע בבטחה.</string>
+    <string name="live_recognition_camera_off">המצלמה כבויה</string>
+    <string name="live_recognition_camera_on">המצלמה פועלת</string>
+    <string name="live_recognition_connecting">מתבצע חיבור ל-Gemini…</string>
+    <string name="live_recognition_cloud_title">לשלוח תמונות מהמצלמה ל-Gemini?</string>
+    <string name="live_recognition_cloud_message">המצבים \"סצנות\", \"הצבעה והקראה\", \"זיהוי אנשים\" ו\"זיהוי דלתות\" שולחים תמונה מהמצלמה ל-Gemini API של Google כל כמה שניות. הטקסט מזוהה בטלפון הזה.\n\nעם מפתח API בחינם, Google עשויה לשמור את מה שהיא מקבלת, להשתמש בו כדי לשפר את המוצרים שלה ולתת לאנשים לבדוק אותו. בינה מלאכותית גנרטיבית היא ניסיונית, ולכן היא תטעה.</string>
+    <string name="live_recognition_send">שליחת התמונות</string>
+    <string name="live_recognition_camera_permission">אין הרשאה למצלמה</string>
+    <string name="live_recognition_camera_error">לא ניתן היה לפתוח את המצלמה</string>
+    <string name="live_recognition_connection_error">החיבור ל-Gemini נכשל. המצבים שמשתמשים ב-Gemini הושבתו.</string>
+    <string name="live_recognition_timeout">‏Gemini לא ענה בזמן. המצבים שמשתמשים ב-Gemini הושבתו.</string>
+    <string name="live_recognition_session_ended">הסשן של Gemini הסתיים. המצבים שמשתמשים ב-Gemini הושבתו.</string>
+    <string name="live_recognition_ocr_error">זיהוי טקסט לא זמין. \"טקסט\" הושבת.</string>
+    <string name="live_recognition_point_above">הקראה מעל קצה האצבע</string>
+    <string name="live_recognition_point_below">הקראה מתחת לקצה האצבע</string>
+</resources>

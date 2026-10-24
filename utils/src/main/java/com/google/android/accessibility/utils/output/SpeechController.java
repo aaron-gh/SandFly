@@ -145,6 +145,8 @@ public interface SpeechController {
   int UTTERANCE_GROUP_OTHER_APPS = 7;
   // SandFly: notifications being read, so that a shake or a newer notification can stop them.
   int UTTERANCE_GROUP_NOTIFICATIONS = 8;
+  // Camera descriptions can be stopped without cutting off the newly focused screen.
+  int UTTERANCE_GROUP_LIVE_RECOGNITION = 9;
 
   /** Enumeration of utterance-group values. */
   @IntDef({
@@ -156,7 +158,8 @@ public interface SpeechController {
     UTTERANCE_GROUP_CONTENT_CHANGE,
     UTTERANCE_GROUP_CONTENT_HINTS,
     UTTERANCE_GROUP_OTHER_APPS,
-    UTTERANCE_GROUP_NOTIFICATIONS
+    UTTERANCE_GROUP_NOTIFICATIONS,
+    UTTERANCE_GROUP_LIVE_RECOGNITION
   })
   @Retention(RetentionPolicy.SOURCE)
   public @interface UtteranceGroup {}
@@ -438,6 +441,7 @@ public interface SpeechController {
       case UTTERANCE_GROUP_CONTENT_HINTS -> "UTTERANCE_GROUP_CONTENT_HINTS";
       case UTTERANCE_GROUP_OTHER_APPS -> "UTTERANCE_GROUP_OTHER_APPS";
       case UTTERANCE_GROUP_NOTIFICATIONS -> "UTTERANCE_GROUP_NOTIFICATIONS";
+      case UTTERANCE_GROUP_LIVE_RECOGNITION -> "UTTERANCE_GROUP_LIVE_RECOGNITION";
       default -> "(unknown utterance group)";
     };
   }

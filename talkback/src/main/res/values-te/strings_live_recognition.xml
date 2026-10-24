@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">లైవ్ గుర్తింపు</string>
+    <string name="live_recognition_hint">మోడ్‌ను ఎంచుకోవడానికి పైకి లేదా కిందికి స్వైప్ చేసి, ఆపై దాన్ని ఆన్ లేదా ఆఫ్ చేయడానికి రెండుసార్లు నొక్కండి</string>
+    <string name="live_recognition_scenes">దృశ్యాలు</string>
+    <string name="live_recognition_text">టెక్స్ట్</string>
+    <string name="live_recognition_point">చూపించి చదువు</string>
+    <string name="live_recognition_people">వ్యక్తుల గుర్తింపు</string>
+    <string name="live_recognition_doors">తలుపుల గుర్తింపు</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">మీరు వివరణ కోరుకునే దాని వైపు వెనుక కెమెరాను ఉంచండి. \'చూపించి చదువు\' కోసం, కెమెరా ఇమేజ్‌లోని టెక్స్ట్ వైపు వేలితో చూపించండి. వివరణలు తప్పుగా ఉండవచ్చు. సురక్షితంగా తిరగడానికి వాటిపై ఆధారపడవద్దు.</string>
+    <string name="live_recognition_camera_off">కెమెరా ఆఫ్‌లో ఉంది</string>
+    <string name="live_recognition_camera_on">కెమెరా ఆన్‌లో ఉంది</string>
+    <string name="live_recognition_connecting">Geminiకి కనెక్ట్ చేస్తోంది…</string>
+    <string name="live_recognition_cloud_title">కెమెరా ఇమేజ్‌లను Geminiకి పంపాలా?</string>
+    <string name="live_recognition_cloud_message">దృశ్యాలు, చూపించి చదువు, వ్యక్తుల గుర్తింపు, తలుపుల గుర్తింపు ప్రతి కొన్ని సెకన్లకు కెమెరా నుండి ఒక ఇమేజ్‌ను Google యొక్క Gemini APIకి పంపుతాయి. టెక్స్ట్ ఈ ఫోన్‌లోనే గుర్తించబడుతుంది.\n\nఉచిత API కీతో, Google తాను అందుకున్నదాన్ని ఉంచుకోవచ్చు, తన ప్రోడక్ట్‌లను మెరుగుపరచడానికి ఉపయోగించవచ్చు, వ్యక్తులతో సమీక్షింపజేయవచ్చు. జెనరేటివ్ AI ప్రయోగాత్మకమైనది, కాబట్టి అది తప్పులు చేస్తుంది.</string>
+    <string name="live_recognition_send">ఇమేజ్‌లను పంపు</string>
+    <string name="live_recognition_camera_permission">కెమెరా అనుమతి లేదు</string>
+    <string name="live_recognition_camera_error">కెమెరాను తెరవడం సాధ్యపడలేదు</string>
+    <string name="live_recognition_connection_error">Geminiకి కనెక్ట్ చేయడం విఫలమైంది. Geminiని ఉపయోగించే మోడ్‌లు ఆఫ్ చేయబడ్డాయి.</string>
+    <string name="live_recognition_timeout">Gemini సమయానికి సమాధానం ఇవ్వలేదు. Geminiని ఉపయోగించే మోడ్‌లు ఆఫ్ చేయబడ్డాయి.</string>
+    <string name="live_recognition_session_ended">Gemini సెషన్ ముగిసింది. Geminiని ఉపయోగించే మోడ్‌లు ఆఫ్ చేయబడ్డాయి.</string>
+    <string name="live_recognition_ocr_error">టెక్స్ట్ గుర్తింపు అందుబాటులో లేదు. టెక్స్ట్ ఆఫ్ చేయబడింది.</string>
+    <string name="live_recognition_point_above">వేలి కొన పైన చదువు</string>
+    <string name="live_recognition_point_below">వేలి కొన కింద చదువు</string>
+</resources>

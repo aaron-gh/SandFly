@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Live herkenning</string>
+    <string name="live_recognition_hint">Veeg omhoog of omlaag om een modus te kiezen en tik dan twee keer om deze aan of uit te zetten</string>
+    <string name="live_recognition_scenes">Scènes</string>
+    <string name="live_recognition_text">Tekst</string>
+    <string name="live_recognition_point">Aanwijzen en voorlezen</string>
+    <string name="live_recognition_people">Personen herkennen</string>
+    <string name="live_recognition_doors">Deuren herkennen</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Richt de camera aan de achterkant op wat je beschreven wilt hebben. Voor Aanwijzen en voorlezen wijs je met een vinger naar tekst in het camerabeeld. Beschrijvingen kunnen onjuist zijn. Vertrouw er niet op om je veilig te verplaatsen.</string>
+    <string name="live_recognition_camera_off">Camera uit</string>
+    <string name="live_recognition_camera_on">Camera aan</string>
+    <string name="live_recognition_connecting">Verbinden met Gemini…</string>
+    <string name="live_recognition_cloud_title">Camerabeelden naar Gemini sturen?</string>
+    <string name="live_recognition_cloud_message">Scènes, Aanwijzen en voorlezen, Personen herkennen en Deuren herkennen sturen om de paar seconden een beeld van de camera naar de Gemini API van Google. Tekst wordt op deze telefoon herkend.\n\nMet een gratis API-sleutel kan Google bewaren wat het ontvangt, het gebruiken om zijn producten te verbeteren en het door mensen laten beoordelen. Generatieve AI is experimenteel en maakt dus fouten.</string>
+    <string name="live_recognition_send">Beelden sturen</string>
+    <string name="live_recognition_camera_permission">Geen cameratoestemming</string>
+    <string name="live_recognition_camera_error">De camera kan niet worden geopend</string>
+    <string name="live_recognition_connection_error">Verbinding met Gemini mislukt. Modi die Gemini gebruiken, zijn uitgezet.</string>
+    <string name="live_recognition_timeout">Gemini heeft niet op tijd geantwoord. Modi die Gemini gebruiken, zijn uitgezet.</string>
+    <string name="live_recognition_session_ended">De Gemini-sessie is beëindigd. Modi die Gemini gebruiken, zijn uitgezet.</string>
+    <string name="live_recognition_ocr_error">Tekstherkenning is niet beschikbaar. Tekst is uitgezet.</string>
+    <string name="live_recognition_point_above">Boven de vingertop lezen</string>
+    <string name="live_recognition_point_below">Onder de vingertop lezen</string>
+</resources>

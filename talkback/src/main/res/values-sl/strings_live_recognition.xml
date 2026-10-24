@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Prepoznavanje v živo</string>
+    <string name="live_recognition_hint">Povlecite navzgor ali navzdol, da izberete način, nato se dvakrat dotaknite, da ga vklopite ali izklopite</string>
+    <string name="live_recognition_scenes">Prizori</string>
+    <string name="live_recognition_text">Besedilo</string>
+    <string name="live_recognition_point">Pokaži in preberi</string>
+    <string name="live_recognition_people">Zaznavanje oseb</string>
+    <string name="live_recognition_doors">Zaznavanje vrat</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Usmerite zadnji fotoaparat proti temu, kar želite, da je opisano. Za Pokaži in preberi s prstom pokažite besedilo na sliki fotoaparata. Opisi so lahko napačni. Ne zanašajte se nanje za varno premikanje.</string>
+    <string name="live_recognition_camera_off">Fotoaparat izklopljen</string>
+    <string name="live_recognition_camera_on">Fotoaparat vklopljen</string>
+    <string name="live_recognition_connecting">Povezovanje z Geminijem…</string>
+    <string name="live_recognition_cloud_title">Želite pošiljati slike fotoaparata Geminiju?</string>
+    <string name="live_recognition_cloud_message">Prizori, Pokaži in preberi, Zaznavanje oseb in Zaznavanje vrat vsakih nekaj sekund pošljejo sliko fotoaparata Googlovemu vmesniku Gemini API. Besedilo se prepozna v tem telefonu.\n\nZ brezplačnim ključem API lahko Google shrani, kar prejme, to uporabi za izboljšanje svojih izdelkov in da to pregledati ljudem. Generativna umetna inteligenca je poskusna, zato bo delala napake.</string>
+    <string name="live_recognition_send">Pošlji slike</string>
+    <string name="live_recognition_camera_permission">Ni dovoljenja za fotoaparat</string>
+    <string name="live_recognition_camera_error">Fotoaparata ni bilo mogoče odpreti</string>
+    <string name="live_recognition_connection_error">Povezava z Geminijem ni uspela. Načini, ki uporabljajo Gemini, so izklopljeni.</string>
+    <string name="live_recognition_timeout">Gemini ni odgovoril pravočasno. Načini, ki uporabljajo Gemini, so izklopljeni.</string>
+    <string name="live_recognition_session_ended">Seja Gemini se je končala. Načini, ki uporabljajo Gemini, so izklopljeni.</string>
+    <string name="live_recognition_ocr_error">Prepoznavanje besedila ni na voljo. Besedilo je izklopljeno.</string>
+    <string name="live_recognition_point_above">Beri nad konico prsta</string>
+    <string name="live_recognition_point_below">Beri pod konico prsta</string>
+</resources>

@@ -39,6 +39,7 @@ import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCa
 import com.google.android.accessibility.talkback.keyboard.KeyCombo
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
+import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.utils.Performance
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
@@ -131,6 +132,7 @@ class PauseController(
       return
     }
     LogUtils.i(TAG, "Pausing Backtalk")
+    LiveRecognition.stop()
     host.stopForPause()
     // The focus highlight would stay on screen while nothing can move it.
     service

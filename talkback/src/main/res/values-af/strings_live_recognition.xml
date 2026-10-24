@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Regstreekse herkenning</string>
+    <string name="live_recognition_hint">Swiep op of af om \'n modus te kies, en dubbeltik dan om dit aan of af te skakel</string>
+    <string name="live_recognition_scenes">Tonele</string>
+    <string name="live_recognition_text">Teks</string>
+    <string name="live_recognition_point">Wys en lees</string>
+    <string name="live_recognition_people">Mensbespeuring</string>
+    <string name="live_recognition_doors">Deurbespeuring</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Rig die agterste kamera op wat jy beskryf wil hê. Vir Wys en lees, wys met \'n vinger na teks in die kamerabeeld. Beskrywings kan verkeerd wees. Moenie daarop staatmaak om veilig rond te beweeg nie.</string>
+    <string name="live_recognition_camera_off">Kamera af</string>
+    <string name="live_recognition_camera_on">Kamera aan</string>
+    <string name="live_recognition_connecting">Koppel tans aan Gemini…</string>
+    <string name="live_recognition_cloud_title">Stuur kamerabeelde na Gemini?</string>
+    <string name="live_recognition_cloud_message">Tonele, Wys en lees, Mensbespeuring en Deurbespeuring stuur elke paar sekondes \'n beeld van die kamera na Google se Gemini API. Teks word op hierdie foon herken.\n\nMet \'n gratis API-sleutel kan Google hou wat dit ontvang, dit gebruik om sy produkte te verbeter en mense dit laat nagaan. Generatiewe KI is eksperimenteel en sal dus foute maak.</string>
+    <string name="live_recognition_send">Stuur beelde</string>
+    <string name="live_recognition_camera_permission">Geen kameratoestemming nie</string>
+    <string name="live_recognition_camera_error">Die kamera kon nie oopgemaak word nie</string>
+    <string name="live_recognition_connection_error">Koppeling aan Gemini het misluk. Modusse wat Gemini gebruik, is afgeskakel.</string>
+    <string name="live_recognition_timeout">Gemini het nie betyds geantwoord nie. Modusse wat Gemini gebruik, is afgeskakel.</string>
+    <string name="live_recognition_session_ended">Die Gemini-sessie het geëindig. Modusse wat Gemini gebruik, is afgeskakel.</string>
+    <string name="live_recognition_ocr_error">Teksherkenning is nie beskikbaar nie. Teks is afgeskakel.</string>
+    <string name="live_recognition_point_above">Lees bo die vingerpunt</string>
+    <string name="live_recognition_point_below">Lees onder die vingerpunt</string>
+</resources>

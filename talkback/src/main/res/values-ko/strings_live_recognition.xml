@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">실시간 인식</string>
+    <string name="live_recognition_hint">위나 아래로 스와이프하여 모드를 선택한 다음 두 번 탭하여 사용 또는 사용 중지합니다</string>
+    <string name="live_recognition_scenes">장면</string>
+    <string name="live_recognition_text">텍스트</string>
+    <string name="live_recognition_point">가리켜서 읽기</string>
+    <string name="live_recognition_people">사람 감지</string>
+    <string name="live_recognition_doors">문 감지</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">설명을 원하는 대상으로 후면 카메라를 향하게 하세요. 가리켜서 읽기를 사용하려면 카메라 화면에 보이는 텍스트를 손가락으로 가리키세요. 설명이 틀릴 수 있습니다. 안전하게 이동하는 데 의존하지 마세요.</string>
+    <string name="live_recognition_camera_off">카메라 꺼짐</string>
+    <string name="live_recognition_camera_on">카메라 켜짐</string>
+    <string name="live_recognition_connecting">Gemini에 연결 중…</string>
+    <string name="live_recognition_cloud_title">카메라 이미지를 Gemini로 전송하시겠습니까?</string>
+    <string name="live_recognition_cloud_message">장면, 가리켜서 읽기, 사람 감지, 문 감지는 몇 초마다 카메라 이미지를 Google의 Gemini API로 전송합니다. 텍스트는 이 휴대전화에서 인식됩니다.\n\n무료 API 키를 사용하면 Google이 받은 내용을 보관하고, 제품 개선에 사용하고, 사람이 검토하게 할 수 있습니다. 생성형 AI는 실험 단계이므로 실수를 합니다.</string>
+    <string name="live_recognition_send">이미지 전송</string>
+    <string name="live_recognition_camera_permission">카메라 권한 없음</string>
+    <string name="live_recognition_camera_error">카메라를 열 수 없습니다</string>
+    <string name="live_recognition_connection_error">Gemini에 연결하지 못했습니다. Gemini를 사용하는 모드가 사용 중지되었습니다.</string>
+    <string name="live_recognition_timeout">Gemini가 제시간에 응답하지 않았습니다. Gemini를 사용하는 모드가 사용 중지되었습니다.</string>
+    <string name="live_recognition_session_ended">Gemini 세션이 종료되었습니다. Gemini를 사용하는 모드가 사용 중지되었습니다.</string>
+    <string name="live_recognition_ocr_error">텍스트 인식을 사용할 수 없습니다. 텍스트가 사용 중지되었습니다.</string>
+    <string name="live_recognition_point_above">손가락 끝 위 읽기</string>
+    <string name="live_recognition_point_below">손가락 끝 아래 읽기</string>
+</resources>

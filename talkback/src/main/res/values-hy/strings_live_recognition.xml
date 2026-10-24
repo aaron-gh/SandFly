@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Կենդանի ճանաչում</string>
+    <string name="live_recognition_hint">Սահեցրեք վերև կամ ներքև՝ ռեժիմ ընտրելու համար, ապա կրկնակի հպեք՝ այն միացնելու կամ անջատելու համար</string>
+    <string name="live_recognition_scenes">Տեսարաններ</string>
+    <string name="live_recognition_text">Տեքստ</string>
+    <string name="live_recognition_point">Ցույց տուր և կարդա</string>
+    <string name="live_recognition_people">Մարդկանց հայտնաբերում</string>
+    <string name="live_recognition_doors">Դռների հայտնաբերում</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Հետևի տեսախցիկն ուղղեք այն բանին, որը ցանկանում եք նկարագրել։ «Ցույց տուր և կարդա» ռեժիմում մատով ցույց տվեք տեքստը տեսախցիկի պատկերում։ Նկարագրությունները կարող են սխալ լինել։ Մի՛ ապավինեք դրանց՝ անվտանգ տեղաշարժվելու համար։</string>
+    <string name="live_recognition_camera_off">Տեսախցիկն անջատված է</string>
+    <string name="live_recognition_camera_on">Տեսախցիկը միացված է</string>
+    <string name="live_recognition_connecting">Միացում Gemini-ին…</string>
+    <string name="live_recognition_cloud_title">Ուղարկե՞լ տեսախցիկի պատկերները Gemini-ին</string>
+    <string name="live_recognition_cloud_message">«Տեսարաններ», «Ցույց տուր և կարդա», «Մարդկանց հայտնաբերում» և «Դռների հայտնաբերում» ռեժիմները մի քանի վայրկյանը մեկ տեսախցիկից պատկեր են ուղարկում Google-ի Gemini API-ին։ Տեքստը ճանաչվում է այս հեռախոսում։\n\nԱնվճար API բանալիով Google-ը կարող է պահել ստացածը, օգտագործել այն իր արտադրանքը բարելավելու համար և տալ մարդկանց՝ ստուգելու։ Գեներատիվ AI-ը փորձնական է, ուստի սխալներ կանի։</string>
+    <string name="live_recognition_send">Ուղարկել պատկերները</string>
+    <string name="live_recognition_camera_permission">Տեսախցիկի թույլտվություն չկա</string>
+    <string name="live_recognition_camera_error">Չհաջողվեց բացել տեսախցիկը</string>
+    <string name="live_recognition_connection_error">Չհաջողվեց միանալ Gemini-ին։ Gemini օգտագործող ռեժիմներն անջատվեցին։</string>
+    <string name="live_recognition_timeout">Gemini-ը ժամանակին չպատասխանեց։ Gemini օգտագործող ռեժիմներն անջատվեցին։</string>
+    <string name="live_recognition_session_ended">Gemini-ի աշխատաշրջանն ավարտվեց։ Gemini օգտագործող ռեժիմներն անջատվեցին։</string>
+    <string name="live_recognition_ocr_error">Տեքստի ճանաչումը հասանելի չէ։ «Տեքստ»-ն անջատվեց։</string>
+    <string name="live_recognition_point_above">Կարդալ մատի ծայրից վերև</string>
+    <string name="live_recognition_point_below">Կարդալ մատի ծայրից ներքև</string>
+</resources>

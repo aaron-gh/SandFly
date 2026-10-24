@@ -234,6 +234,7 @@ import com.google.android.accessibility.talkback.notifications.NotificationSetti
 import com.google.android.accessibility.talkback.pause.PauseController;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.quicksettings.SystemPanelClicker;
+import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.scripting.ScriptHost;
 import com.google.android.accessibility.talkback.scripting.ScriptHostFactory;
 import com.google.android.accessibility.talkback.scripting.Scripts;
@@ -1257,6 +1258,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     serviceState = newState;
+    if (newState != ServiceStateListener.SERVICE_STATE_ACTIVE) {
+      LiveRecognition.stop();
+    }
     for (ServiceStateListener listener : serviceStateListeners) {
       listener.onServiceStateChanged(newState);
     }

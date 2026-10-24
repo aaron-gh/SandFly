@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Livetunnistus</string>
+    <string name="live_recognition_hint">Valitse tila pyyhkäisemällä ylös tai alas ja ota se käyttöön tai poista se käytöstä kaksoisnapautuksella</string>
+    <string name="live_recognition_scenes">Näkymät</string>
+    <string name="live_recognition_text">Teksti</string>
+    <string name="live_recognition_point">Osoita ja lue</string>
+    <string name="live_recognition_people">Ihmisten tunnistus</string>
+    <string name="live_recognition_doors">Ovien tunnistus</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Suuntaa takakamera kohteeseen, jonka haluat kuvailtavan. Kun käytät Osoita ja lue -tilaa, osoita sormella tekstiä kamerakuvassa. Kuvaukset voivat olla vääriä. Älä luota niihin liikkuessasi turvallisesti.</string>
+    <string name="live_recognition_camera_off">Kamera pois päältä</string>
+    <string name="live_recognition_camera_on">Kamera päällä</string>
+    <string name="live_recognition_connecting">Yhdistetään Geminiin…</string>
+    <string name="live_recognition_cloud_title">Lähetetäänkö kamerakuvia Geminiin?</string>
+    <string name="live_recognition_cloud_message">Näkymät, Osoita ja lue, Ihmisten tunnistus ja Ovien tunnistus lähettävät muutaman sekunnin välein kuvan kamerasta Googlen Gemini API:lle. Teksti tunnistetaan tällä puhelimella.\n\nIlmaisella API-avaimella Google voi säilyttää vastaanottamansa tiedot, käyttää niitä tuotteidensa parantamiseen ja antaa ihmisten tarkistaa ne. Generatiivinen tekoäly on kokeellinen, joten se tekee virheitä.</string>
+    <string name="live_recognition_send">Lähetä kuvat</string>
+    <string name="live_recognition_camera_permission">Ei kameran käyttöoikeutta</string>
+    <string name="live_recognition_camera_error">Kameraa ei voitu avata</string>
+    <string name="live_recognition_connection_error">Yhteys Geminiin epäonnistui. Geminiä käyttävät tilat poistettiin käytöstä.</string>
+    <string name="live_recognition_timeout">Gemini ei vastannut ajoissa. Geminiä käyttävät tilat poistettiin käytöstä.</string>
+    <string name="live_recognition_session_ended">Gemini-istunto päättyi. Geminiä käyttävät tilat poistettiin käytöstä.</string>
+    <string name="live_recognition_ocr_error">Tekstintunnistus ei ole käytettävissä. Teksti poistettiin käytöstä.</string>
+    <string name="live_recognition_point_above">Lue sormenpään yläpuolelta</string>
+    <string name="live_recognition_point_below">Lue sormenpään alapuolelta</string>
+</resources>

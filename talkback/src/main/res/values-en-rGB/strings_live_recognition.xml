@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Live recognition</string>
+    <string name="live_recognition_hint">Swipe up or down to choose a mode, then double-tap to turn it on or off</string>
+    <string name="live_recognition_scenes">Scenes</string>
+    <string name="live_recognition_text">Text</string>
+    <string name="live_recognition_point">Point and Speak</string>
+    <string name="live_recognition_people">People detection</string>
+    <string name="live_recognition_doors">Door detection</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Point the rear camera at what you want described. For Point and Speak, point a finger at text in the camera view. Descriptions can be wrong. Don\'t rely on them to move around safely.</string>
+    <string name="live_recognition_camera_off">Camera off</string>
+    <string name="live_recognition_camera_on">Camera on</string>
+    <string name="live_recognition_connecting">Connecting to Gemini…</string>
+    <string name="live_recognition_cloud_title">Send camera images to Gemini?</string>
+    <string name="live_recognition_cloud_message">Scenes, Point and Speak, People detection and Door detection send an image from the camera to Google\'s Gemini API every few seconds. Text is recognised on this phone.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes.</string>
+    <string name="live_recognition_send">Send images</string>
+    <string name="live_recognition_camera_permission">No camera permission</string>
+    <string name="live_recognition_camera_error">The camera could not be opened</string>
+    <string name="live_recognition_connection_error">Gemini connection failed. Modes that use Gemini turned off.</string>
+    <string name="live_recognition_timeout">Gemini didn\'t answer in time. Modes that use Gemini turned off.</string>
+    <string name="live_recognition_session_ended">The Gemini session ended. Modes that use Gemini turned off.</string>
+    <string name="live_recognition_ocr_error">Text recognition is not available. Text turned off.</string>
+    <string name="live_recognition_point_above">Read above the fingertip</string>
+    <string name="live_recognition_point_below">Read below the fingertip</string>
+</resources>

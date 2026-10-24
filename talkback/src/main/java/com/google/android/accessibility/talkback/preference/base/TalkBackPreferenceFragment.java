@@ -41,6 +41,7 @@ import com.google.android.accessibility.talkback.TalkBackExitController;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.preference.base.PreferenceActionHelper.WebPage;
+import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.training.OnboardingInitiator;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.TvTutorialInitiator;
@@ -85,6 +86,12 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
       return;
     }
 
+    if (!LiveRecognition.isSupported(context)) {
+      Preference liveRecognition = findPreference("pref_live_recognition_screen");
+      if (liveRecognition != null) {
+        liveRecognition.setVisible(false);
+      }
+    }
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
     settingsMetricStore = new SettingsMetricStore(context);
 

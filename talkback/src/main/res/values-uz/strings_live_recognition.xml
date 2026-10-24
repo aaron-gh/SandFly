@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Jonli aniqlash</string>
+    <string name="live_recognition_hint">Rejimni tanlash uchun tepaga yoki pastga suring, keyin uni yoqish yoki oʻchirish uchun ikki marta bosing</string>
+    <string name="live_recognition_scenes">Sahnalar</string>
+    <string name="live_recognition_text">Matn</string>
+    <string name="live_recognition_point">Koʻrsat va oʻqi</string>
+    <string name="live_recognition_people">Odamlarni aniqlash</string>
+    <string name="live_recognition_doors">Eshiklarni aniqlash</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Orqa kamerani tavsiflanishini istagan narsangizga qarating. Koʻrsat va oʻqi rejimida kamera tasviridagi matnni barmogʻingiz bilan koʻrsating. Tavsiflar notoʻgʻri boʻlishi mumkin. Xavfsiz harakatlanish uchun ularga tayanmang.</string>
+    <string name="live_recognition_camera_off">Kamera oʻchiq</string>
+    <string name="live_recognition_camera_on">Kamera yoniq</string>
+    <string name="live_recognition_connecting">Gemini bilan ulanmoqda…</string>
+    <string name="live_recognition_cloud_title">Kamera tasvirlari Gemini’ga yuborilsinmi?</string>
+    <string name="live_recognition_cloud_message">Sahnalar, Koʻrsat va oʻqi, Odamlarni aniqlash va Eshiklarni aniqlash har bir necha soniyada kameradan tasvirni Google’ning Gemini API xizmatiga yuboradi. Matn shu telefonda aniqlanadi.\n\nBepul API kaliti bilan Google olgan narsasini saqlashi, mahsulotlarini yaxshilash uchun ishlatishi va odamlarga koʻrib chiqtirishi mumkin. Generativ AI tajribaviy, shuning uchun u xato qiladi.</string>
+    <string name="live_recognition_send">Tasvirlarni yuborish</string>
+    <string name="live_recognition_camera_permission">Kamera uchun ruxsat yoʻq</string>
+    <string name="live_recognition_camera_error">Kamerani ochib boʻlmadi</string>
+    <string name="live_recognition_connection_error">Gemini bilan ulanib boʻlmadi. Gemini ishlatadigan rejimlar oʻchirildi.</string>
+    <string name="live_recognition_timeout">Gemini oʻz vaqtida javob bermadi. Gemini ishlatadigan rejimlar oʻchirildi.</string>
+    <string name="live_recognition_session_ended">Gemini seansi tugadi. Gemini ishlatadigan rejimlar oʻchirildi.</string>
+    <string name="live_recognition_ocr_error">Matnni aniqlash mavjud emas. Matn oʻchirildi.</string>
+    <string name="live_recognition_point_above">Barmoq uchining tepasini oʻqish</string>
+    <string name="live_recognition_point_below">Barmoq uchining pastini oʻqish</string>
+</resources>

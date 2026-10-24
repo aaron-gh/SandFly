@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Rozpoznawanie na żywo</string>
+    <string name="live_recognition_hint">Przesuń palcem w górę lub w dół, aby wybrać tryb, a następnie kliknij dwukrotnie, aby go włączyć lub wyłączyć</string>
+    <string name="live_recognition_scenes">Sceny</string>
+    <string name="live_recognition_text">Tekst</string>
+    <string name="live_recognition_point">Wskaż i czytaj</string>
+    <string name="live_recognition_people">Wykrywanie osób</string>
+    <string name="live_recognition_doors">Wykrywanie drzwi</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Skieruj tylny aparat na to, co ma zostać opisane. W trybie Wskaż i czytaj wskaż palcem tekst w obrazie z aparatu. Opisy mogą być błędne. Nie polegaj na nich, aby bezpiecznie się przemieszczać.</string>
+    <string name="live_recognition_camera_off">Aparat wyłączony</string>
+    <string name="live_recognition_camera_on">Aparat włączony</string>
+    <string name="live_recognition_connecting">Łączenie z Gemini…</string>
+    <string name="live_recognition_cloud_title">Wysyłać obrazy z aparatu do Gemini?</string>
+    <string name="live_recognition_cloud_message">Sceny, Wskaż i czytaj, Wykrywanie osób i Wykrywanie drzwi co kilka sekund wysyłają obraz z aparatu do interfejsu Gemini API Google. Tekst jest rozpoznawany na tym telefonie.\n\nPrzy bezpłatnym kluczu API Google może przechowywać to, co otrzyma, używać tego do ulepszania swoich produktów i zlecać sprawdzanie tego ludziom. Generatywna AI jest eksperymentalna, więc będzie popełniać błędy.</string>
+    <string name="live_recognition_send">Wyślij obrazy</string>
+    <string name="live_recognition_camera_permission">Brak uprawnień do aparatu</string>
+    <string name="live_recognition_camera_error">Nie udało się otworzyć aparatu</string>
+    <string name="live_recognition_connection_error">Nie udało się połączyć z Gemini. Tryby korzystające z Gemini zostały wyłączone.</string>
+    <string name="live_recognition_timeout">Gemini nie odpowiedział na czas. Tryby korzystające z Gemini zostały wyłączone.</string>
+    <string name="live_recognition_session_ended">Sesja Gemini została zakończona. Tryby korzystające z Gemini zostały wyłączone.</string>
+    <string name="live_recognition_ocr_error">Rozpoznawanie tekstu jest niedostępne. Tekst został wyłączony.</string>
+    <string name="live_recognition_point_above">Czytaj nad opuszkiem palca</string>
+    <string name="live_recognition_point_below">Czytaj pod opuszkiem palca</string>
+</resources>

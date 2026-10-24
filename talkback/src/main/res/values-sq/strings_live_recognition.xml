@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Njohja drejtpërdrejt</string>
+    <string name="live_recognition_hint">Rrëshqit lart ose poshtë për të zgjedhur një modalitet, pastaj trokit dy herë për ta aktivizuar ose çaktivizuar</string>
+    <string name="live_recognition_scenes">Skenat</string>
+    <string name="live_recognition_text">Teksti</string>
+    <string name="live_recognition_point">Trego dhe lexo</string>
+    <string name="live_recognition_people">Zbulimi i personave</string>
+    <string name="live_recognition_doors">Zbulimi i dyerve</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Drejtoje kamerën e pasme te ajo që dëshiron të përshkruhet. Për \"Trego dhe lexo\", trego me gisht një tekst në pamjen e kamerës. Përshkrimet mund të jenë të gabuara. Mos u mbështet te to për të lëvizur në mënyrë të sigurt.</string>
+    <string name="live_recognition_camera_off">Kamera joaktive</string>
+    <string name="live_recognition_camera_on">Kamera aktive</string>
+    <string name="live_recognition_connecting">Po lidhet me Gemini…</string>
+    <string name="live_recognition_cloud_title">Të dërgohen imazhet e kamerës te Gemini?</string>
+    <string name="live_recognition_cloud_message">Skenat, Trego dhe lexo, Zbulimi i personave dhe Zbulimi i dyerve dërgojnë një imazh nga kamera te Gemini API i Google çdo disa sekonda. Teksti njihet në këtë telefon.\n\nMe një çelës API falas, Google mund të ruajë atë që merr, ta përdorë për të përmirësuar produktet e tij dhe ta japë për shqyrtim te njerëz. IA gjeneruese është eksperimentale, prandaj do të bëjë gabime.</string>
+    <string name="live_recognition_send">Dërgo imazhet</string>
+    <string name="live_recognition_camera_permission">Nuk ka leje për kamerën</string>
+    <string name="live_recognition_camera_error">Kamera nuk mund të hapej</string>
+    <string name="live_recognition_connection_error">Lidhja me Gemini dështoi. Modalitetet që përdorin Gemini u çaktivizuan.</string>
+    <string name="live_recognition_timeout">Gemini nuk u përgjigj në kohë. Modalitetet që përdorin Gemini u çaktivizuan.</string>
+    <string name="live_recognition_session_ended">Sesioni i Gemini përfundoi. Modalitetet që përdorin Gemini u çaktivizuan.</string>
+    <string name="live_recognition_ocr_error">Njohja e tekstit nuk ofrohet. Teksti u çaktivizua.</string>
+    <string name="live_recognition_point_above">Lexo mbi majën e gishtit</string>
+    <string name="live_recognition_point_below">Lexo nën majën e gishtit</string>
+</resources>

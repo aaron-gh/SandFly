@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Nhận dạng trực tiếp</string>
+    <string name="live_recognition_hint">Vuốt lên hoặc xuống để chọn chế độ, sau đó nhấn đúp để bật hoặc tắt chế độ đó</string>
+    <string name="live_recognition_scenes">Cảnh</string>
+    <string name="live_recognition_text">Văn bản</string>
+    <string name="live_recognition_point">Chỉ và đọc</string>
+    <string name="live_recognition_people">Phát hiện người</string>
+    <string name="live_recognition_doors">Phát hiện cửa</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Hướng camera sau vào thứ bạn muốn được mô tả. Với Chỉ và đọc, hãy dùng ngón tay chỉ vào văn bản trong hình ảnh camera. Mô tả có thể sai. Đừng dựa vào mô tả để di chuyển an toàn.</string>
+    <string name="live_recognition_camera_off">Camera tắt</string>
+    <string name="live_recognition_camera_on">Camera bật</string>
+    <string name="live_recognition_connecting">Đang kết nối với Gemini…</string>
+    <string name="live_recognition_cloud_title">Gửi hình ảnh camera tới Gemini?</string>
+    <string name="live_recognition_cloud_message">Cảnh, Chỉ và đọc, Phát hiện người và Phát hiện cửa gửi một hình ảnh từ camera tới Gemini API của Google sau mỗi vài giây. Văn bản được nhận dạng trên điện thoại này.\n\nVới khóa API miễn phí, Google có thể lưu giữ những gì nhận được, dùng để cải thiện sản phẩm và cho người xem xét. AI tạo sinh đang trong giai đoạn thử nghiệm nên sẽ mắc lỗi.</string>
+    <string name="live_recognition_send">Gửi hình ảnh</string>
+    <string name="live_recognition_camera_permission">Không có quyền truy cập camera</string>
+    <string name="live_recognition_camera_error">Không mở được camera</string>
+    <string name="live_recognition_connection_error">Không kết nối được với Gemini. Đã tắt các chế độ dùng Gemini.</string>
+    <string name="live_recognition_timeout">Gemini không trả lời kịp thời. Đã tắt các chế độ dùng Gemini.</string>
+    <string name="live_recognition_session_ended">Phiên Gemini đã kết thúc. Đã tắt các chế độ dùng Gemini.</string>
+    <string name="live_recognition_ocr_error">Không dùng được tính năng nhận dạng văn bản. Đã tắt Văn bản.</string>
+    <string name="live_recognition_point_above">Đọc phía trên đầu ngón tay</string>
+    <string name="live_recognition_point_below">Đọc phía dưới đầu ngón tay</string>
+</resources>

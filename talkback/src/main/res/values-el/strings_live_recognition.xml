@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Ζωντανή αναγνώριση</string>
+    <string name="live_recognition_hint">Σύρετε προς τα πάνω ή προς τα κάτω για να επιλέξετε λειτουργία και, στη συνέχεια, πατήστε δύο φορές για να την ενεργοποιήσετε ή να την απενεργοποιήσετε</string>
+    <string name="live_recognition_scenes">Σκηνές</string>
+    <string name="live_recognition_text">Κείμενο</string>
+    <string name="live_recognition_point">Δείξε και διάβασε</string>
+    <string name="live_recognition_people">Ανίχνευση ατόμων</string>
+    <string name="live_recognition_doors">Ανίχνευση θυρών</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Στρέψτε την πίσω κάμερα προς αυτό που θέλετε να περιγραφεί. Για τη λειτουργία «Δείξε και διάβασε», δείξτε με το δάχτυλο ένα κείμενο στην εικόνα της κάμερας. Οι περιγραφές μπορεί να είναι λανθασμένες. Μην βασίζεστε σε αυτές για να μετακινείστε με ασφάλεια.</string>
+    <string name="live_recognition_camera_off">Κάμερα ανενεργή</string>
+    <string name="live_recognition_camera_on">Κάμερα ενεργή</string>
+    <string name="live_recognition_connecting">Σύνδεση με το Gemini…</string>
+    <string name="live_recognition_cloud_title">Αποστολή εικόνων της κάμερας στο Gemini;</string>
+    <string name="live_recognition_cloud_message">Οι λειτουργίες «Σκηνές», «Δείξε και διάβασε», «Ανίχνευση ατόμων» και «Ανίχνευση θυρών» στέλνουν μια εικόνα από την κάμερα στο Gemini API της Google κάθε λίγα δευτερόλεπτα. Το κείμενο αναγνωρίζεται σε αυτό το τηλέφωνο.\n\nΜε δωρεάν κλειδί API, η Google μπορεί να διατηρεί ό,τι λαμβάνει, να το χρησιμοποιεί για να βελτιώνει τα προϊόντα της και να το δίνει για έλεγχο σε ανθρώπους. Η γενετική τεχνητή νοημοσύνη είναι πειραματική, επομένως θα κάνει λάθη.</string>
+    <string name="live_recognition_send">Αποστολή εικόνων</string>
+    <string name="live_recognition_camera_permission">Δεν υπάρχει άδεια για την κάμερα</string>
+    <string name="live_recognition_camera_error">Δεν ήταν δυνατό το άνοιγμα της κάμερας</string>
+    <string name="live_recognition_connection_error">Η σύνδεση με το Gemini απέτυχε. Οι λειτουργίες που χρησιμοποιούν το Gemini απενεργοποιήθηκαν.</string>
+    <string name="live_recognition_timeout">Το Gemini δεν απάντησε εγκαίρως. Οι λειτουργίες που χρησιμοποιούν το Gemini απενεργοποιήθηκαν.</string>
+    <string name="live_recognition_session_ended">Η περίοδος σύνδεσης Gemini έληξε. Οι λειτουργίες που χρησιμοποιούν το Gemini απενεργοποιήθηκαν.</string>
+    <string name="live_recognition_ocr_error">Η αναγνώριση κειμένου δεν είναι διαθέσιμη. Η λειτουργία «Κείμενο» απενεργοποιήθηκε.</string>
+    <string name="live_recognition_point_above">Ανάγνωση πάνω από την άκρη του δαχτύλου</string>
+    <string name="live_recognition_point_below">Ανάγνωση κάτω από την άκρη του δαχτύλου</string>
+</resources>

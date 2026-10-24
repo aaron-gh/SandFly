@@ -27,6 +27,9 @@ dependencies {
     implementation libs.litertlm
     // WebSockets, for Rambler live transcription.
     implementation libs.okhttp
+    implementation libs.camera.camera2
+    implementation libs.camera.lifecycle
+    implementation libs.camera.view
     // Dictation with Whisper on the phone.
     phoneImplementation project(':whisper')
     // Whisper on Adreno GPUs, loaded only when used there.

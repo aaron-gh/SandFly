@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">تشخیص زنده</string>
+    <string name="live_recognition_hint">برای انتخاب حالت، تند به بالا یا پایین بکشید، سپس برای روشن یا خاموش کردن آن دوضربه بزنید</string>
+    <string name="live_recognition_scenes">صحنه‌ها</string>
+    <string name="live_recognition_text">نوشتار</string>
+    <string name="live_recognition_point">اشاره و خواندن</string>
+    <string name="live_recognition_people">تشخیص افراد</string>
+    <string name="live_recognition_doors">تشخیص درها</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>، <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">دوربین پشتی را به سمت چیزی بگیرید که می‌خواهید توصیف شود. برای «اشاره و خواندن»، با انگشت به نوشتاری در تصویر دوربین اشاره کنید. توصیف‌ها ممکن است اشتباه باشند. برای جابه‌جایی ایمن به آن‌ها تکیه نکنید.</string>
+    <string name="live_recognition_camera_off">دوربین خاموش</string>
+    <string name="live_recognition_camera_on">دوربین روشن</string>
+    <string name="live_recognition_connecting">درحال اتصال به Gemini…</string>
+    <string name="live_recognition_cloud_title">تصاویر دوربین برای Gemini ارسال شود؟</string>
+    <string name="live_recognition_cloud_message">«صحنه‌ها»، «اشاره و خواندن»، «تشخیص افراد» و «تشخیص درها» هر چند ثانیه یک تصویر از دوربین را برای Gemini API ‏Google ارسال می‌کنند. نوشتار در همین تلفن تشخیص داده می‌شود.\n\nبا کلید API رایگان، Google ممکن است آنچه را دریافت می‌کند نگه دارد، از آن برای بهبود محصولاتش استفاده کند و آن را برای بررسی در اختیار افراد قرار دهد. هوش مصنوعی مولد آزمایشی است، پس اشتباه خواهد کرد.</string>
+    <string name="live_recognition_send">ارسال تصاویر</string>
+    <string name="live_recognition_camera_permission">اجازه دسترسی به دوربین داده نشده است</string>
+    <string name="live_recognition_camera_error">دوربین باز نشد</string>
+    <string name="live_recognition_connection_error">اتصال به Gemini انجام نشد. حالت‌هایی که از Gemini استفاده می‌کنند خاموش شدند.</string>
+    <string name="live_recognition_timeout">‏Gemini به‌موقع پاسخ نداد. حالت‌هایی که از Gemini استفاده می‌کنند خاموش شدند.</string>
+    <string name="live_recognition_session_ended">جلسه Gemini پایان یافت. حالت‌هایی که از Gemini استفاده می‌کنند خاموش شدند.</string>
+    <string name="live_recognition_ocr_error">تشخیص نوشتار دردسترس نیست. «نوشتار» خاموش شد.</string>
+    <string name="live_recognition_point_above">خواندن بالای نوک انگشت</string>
+    <string name="live_recognition_point_below">خواندن پایین نوک انگشت</string>
+</resources>

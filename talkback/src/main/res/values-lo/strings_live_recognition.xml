@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">ການຈຳແນກສົດ</string>
+    <string name="live_recognition_hint">ປັດຂຶ້ນ ຫຼື ລົງເພື່ອເລືອກໂໝດ, ຈາກນັ້ນແຕະສອງເທື່ອເພື່ອເປີດ ຫຼື ປິດມັນ</string>
+    <string name="live_recognition_scenes">ສາກ</string>
+    <string name="live_recognition_text">ຂໍ້ຄວາມ</string>
+    <string name="live_recognition_point">ຊີ້ແລ້ວອ່ານ</string>
+    <string name="live_recognition_people">ການກວດຫາຄົນ</string>
+    <string name="live_recognition_doors">ການກວດຫາປະຕູ</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">ຫັນກ້ອງຫຼັງໄປຫາສິ່ງທີ່ທ່ານຕ້ອງການໃຫ້ອະທິບາຍ. ສຳລັບຊີ້ແລ້ວອ່ານ, ໃຫ້ໃຊ້ນິ້ວຊີ້ໄປທີ່ຂໍ້ຄວາມໃນຮູບກ້ອງ. ຄຳອະທິບາຍອາດຜິດໄດ້. ຢ່າເພິ່ງພາມັນເພື່ອເຄື່ອນທີ່ຢ່າງປອດໄພ.</string>
+    <string name="live_recognition_camera_off">ປິດກ້ອງຢູ່</string>
+    <string name="live_recognition_camera_on">ເປີດກ້ອງຢູ່</string>
+    <string name="live_recognition_connecting">ກຳລັງເຊື່ອມຕໍ່ຫາ Gemini…</string>
+    <string name="live_recognition_cloud_title">ສົ່ງຮູບຈາກກ້ອງໄປຫາ Gemini ບໍ?</string>
+    <string name="live_recognition_cloud_message">ສາກ, ຊີ້ແລ້ວອ່ານ, ການກວດຫາຄົນ ແລະ ການກວດຫາປະຕູ ຈະສົ່ງຮູບຈາກກ້ອງໄປຫາ Gemini API ຂອງ Google ທຸກໆສອງສາມວິນາທີ. ຂໍ້ຄວາມຈະຖືກຈຳແນກຢູ່ໃນໂທລະສັບເຄື່ອງນີ້.\n\nເມື່ອໃຊ້ກະແຈ API ຟຣີ, Google ອາດເກັບສິ່ງທີ່ໄດ້ຮັບໄວ້, ໃຊ້ມັນເພື່ອປັບປຸງຜະລິດຕະພັນຂອງຕົນ ແລະ ໃຫ້ຄົນກວດສອບມັນ. Generative AI ຍັງຢູ່ໃນຂັ້ນທົດລອງ, ສະນັ້ນມັນຈະມີຂໍ້ຜິດພາດ.</string>
+    <string name="live_recognition_send">ສົ່ງຮູບ</string>
+    <string name="live_recognition_camera_permission">ບໍ່ມີສິດອະນຸຍາດກ້ອງ</string>
+    <string name="live_recognition_camera_error">ບໍ່ສາມາດເປີດກ້ອງໄດ້</string>
+    <string name="live_recognition_connection_error">ເຊື່ອມຕໍ່ຫາ Gemini ບໍ່ສຳເລັດ. ປິດໂໝດທີ່ໃຊ້ Gemini ແລ້ວ.</string>
+    <string name="live_recognition_timeout">Gemini ບໍ່ໄດ້ຕອບທັນເວລາ. ປິດໂໝດທີ່ໃຊ້ Gemini ແລ້ວ.</string>
+    <string name="live_recognition_session_ended">ເຊດຊັນ Gemini ສິ້ນສຸດແລ້ວ. ປິດໂໝດທີ່ໃຊ້ Gemini ແລ້ວ.</string>
+    <string name="live_recognition_ocr_error">ການຈຳແນກຂໍ້ຄວາມບໍ່ພ້ອມໃຊ້ງານ. ປິດຂໍ້ຄວາມແລ້ວ.</string>
+    <string name="live_recognition_point_above">ອ່ານຢູ່ເໜືອປາຍນິ້ວ</string>
+    <string name="live_recognition_point_below">ອ່ານຢູ່ລຸ່ມປາຍນິ້ວ</string>
+</resources>

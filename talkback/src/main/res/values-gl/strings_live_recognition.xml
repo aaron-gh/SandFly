@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Recoñecemento en directo</string>
+    <string name="live_recognition_hint">Pasa o dedo cara arriba ou cara abaixo para escoller un modo e, despois, toca dúas veces para activalo ou desactivalo</string>
+    <string name="live_recognition_scenes">Escenas</string>
+    <string name="live_recognition_text">Texto</string>
+    <string name="live_recognition_point">Sinalar e ler</string>
+    <string name="live_recognition_people">Detección de persoas</string>
+    <string name="live_recognition_doors">Detección de portas</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Apunta coa cámara traseira cara ao que queiras que se describa. Para Sinalar e ler, sinala cun dedo un texto na imaxe da cámara. As descricións poden ser incorrectas. Non confíes nelas para desprazarte con seguridade.</string>
+    <string name="live_recognition_camera_off">Cámara desactivada</string>
+    <string name="live_recognition_camera_on">Cámara activada</string>
+    <string name="live_recognition_connecting">Conectando con Gemini…</string>
+    <string name="live_recognition_cloud_title">Queres enviar imaxes da cámara a Gemini?</string>
+    <string name="live_recognition_cloud_message">Escenas, Sinalar e ler, Detección de persoas e Detección de portas envían unha imaxe da cámara á API de Gemini de Google cada poucos segundos. O texto recoñécese neste teléfono.\n\nCunha clave de API gratuíta, Google pode conservar o que recibe, utilizalo para mellorar os seus produtos e facer que o revisen persoas. A IA xerativa é experimental, polo que cometerá erros.</string>
+    <string name="live_recognition_send">Enviar imaxes</string>
+    <string name="live_recognition_camera_permission">Non hai permiso de cámara</string>
+    <string name="live_recognition_camera_error">Non se puido abrir a cámara</string>
+    <string name="live_recognition_connection_error">Non se puido conectar con Gemini. Desactiváronse os modos que usan Gemini.</string>
+    <string name="live_recognition_timeout">Gemini non respondeu a tempo. Desactiváronse os modos que usan Gemini.</string>
+    <string name="live_recognition_session_ended">A sesión de Gemini rematou. Desactiváronse os modos que usan Gemini.</string>
+    <string name="live_recognition_ocr_error">O recoñecemento de texto non está dispoñible. Desactivouse Texto.</string>
+    <string name="live_recognition_point_above">Ler enriba da punta do dedo</string>
+    <string name="live_recognition_point_below">Ler debaixo da punta do dedo</string>
+</resources>

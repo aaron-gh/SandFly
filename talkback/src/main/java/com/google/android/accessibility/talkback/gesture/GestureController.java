@@ -109,6 +109,7 @@ import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor.VolumeChangedListener;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
+import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
@@ -559,7 +560,9 @@ public class GestureController {
         || action.equals(service.getString(R.string.shortcut_value_perform_click_action))) {
       // For customized gesture(s) which perform the "Activate"/click action, they are regarded
       // the same behavior as the native "Double-Tap" gesture.
-      if (SelectorController.getCurrentSetting(service).equals(Setting.ACTIONS)) {
+      if (selectorController.activateLiveRecognition()) {
+        return;
+      } else if (SelectorController.getCurrentSetting(service).equals(Setting.ACTIONS)) {
         selectorController.activateCurrentAction(eventId);
       } else {
         result = pipeline.returnFeedback(eventId, Feedback.focus(CLICK_CURRENT));
@@ -879,6 +882,9 @@ public class GestureController {
       return;
     }
 
+    if (LiveRecognition.onGesture(gestureId)) {
+      return;
+    }
     String action = gestureShortcutMapping.getActionKeyFromGestureId(gestureId);
     // Override the action if the current granularity is row/column.
     if (actorState.getDirectionNavigation().getCurrentGranularity()

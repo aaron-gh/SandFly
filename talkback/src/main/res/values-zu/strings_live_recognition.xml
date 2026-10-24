@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Ukubona bukhoma</string>
+    <string name="live_recognition_hint">Swayipha phezulu noma phansi ukuze ukhethe imodi, bese uthepha kabili ukuze uyivule noma uyivale</string>
+    <string name="live_recognition_scenes">Izigcawu</string>
+    <string name="live_recognition_text">Umbhalo</string>
+    <string name="live_recognition_point">Khomba ufunde</string>
+    <string name="live_recognition_people">Ukutholwa kwabantu</string>
+    <string name="live_recognition_doors">Ukutholwa kweminyango</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Qondisa ikhamera yangemuva kulokho ofuna kuchazwe. Ku-Khomba ufunde, khomba umbhalo osesithombeni sekhamera ngomunwe. Izincazelo zingaba yiphutha. Ungazethembi ukuze uhambe ngokuphephile.</string>
+    <string name="live_recognition_camera_off">Ikhamera ivaliwe</string>
+    <string name="live_recognition_camera_on">Ikhamera ivuliwe</string>
+    <string name="live_recognition_connecting">Ixhuma ku-Gemini…</string>
+    <string name="live_recognition_cloud_title">Thumela izithombe zekhamera ku-Gemini?</string>
+    <string name="live_recognition_cloud_message">Izigcawu, Khomba ufunde, Ukutholwa kwabantu kanye Nokutholwa kweminyango kuthumela isithombe sekhamera ku-Gemini API ka-Google njalo emizuzwaneni embalwa. Umbhalo ubonwa kule foni.\n\nNgokhiye we-API wamahhala, u-Google angagcina lokho akutholayo, akusebenzisele ukuthuthukisa imikhiqizo yakhe, futhi akunikeze abantu ukuthi bakubuyekeze. I-AI ekhiqizayo isesesigabeni sokuhlolwa, ngakho-ke izokwenza amaphutha.</string>
+    <string name="live_recognition_send">Thumela izithombe</string>
+    <string name="live_recognition_camera_permission">Ayikho imvume yekhamera</string>
+    <string name="live_recognition_camera_error">Ikhamera ayikwazanga ukuvulwa</string>
+    <string name="live_recognition_connection_error">Ukuxhuma ku-Gemini kwehlulekile. Amamodi asebenzisa i-Gemini avaliwe.</string>
+    <string name="live_recognition_timeout">I-Gemini ayiphendulanga ngesikhathi. Amamodi asebenzisa i-Gemini avaliwe.</string>
+    <string name="live_recognition_session_ended">Iseshini ye-Gemini iphelile. Amamodi asebenzisa i-Gemini avaliwe.</string>
+    <string name="live_recognition_ocr_error">Ukubonwa kombhalo akutholakali. Umbhalo uvaliwe.</string>
+    <string name="live_recognition_point_above">Funda ngaphezu kwesihloko somunwe</string>
+    <string name="live_recognition_point_below">Funda ngaphansi kwesihloko somunwe</string>
+</resources>

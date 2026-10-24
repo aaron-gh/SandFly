@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">ライブ認識</string>
+    <string name="live_recognition_hint">上下にスワイプしてモードを選択し、ダブルタップしてオン / オフを切り替えます</string>
+    <string name="live_recognition_scenes">シーン</string>
+    <string name="live_recognition_text">テキスト</string>
+    <string name="live_recognition_point">指差し読み上げ</string>
+    <string name="live_recognition_people">人物検出</string>
+    <string name="live_recognition_doors">ドア検出</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>、<xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">説明させたいものに背面カメラを向けてください。指差し読み上げでは、カメラの映像内のテキストを指で差してください。説明が誤っている場合があります。安全に移動するために頼らないでください。</string>
+    <string name="live_recognition_camera_off">カメラ オフ</string>
+    <string name="live_recognition_camera_on">カメラ オン</string>
+    <string name="live_recognition_connecting">Gemini に接続しています…</string>
+    <string name="live_recognition_cloud_title">カメラの画像を Gemini に送信しますか？</string>
+    <string name="live_recognition_cloud_message">シーン、指差し読み上げ、人物検出、ドア検出は、数秒ごとにカメラの画像を Google の Gemini API に送信します。テキストはこのスマートフォンで認識されます。\n\n無料の API キーでは、Google が受け取ったものを保持し、サービスの改善に使用し、人によるレビューを行う場合があります。生成 AI は試験運用中のため、誤りが生じます。</string>
+    <string name="live_recognition_send">画像を送信</string>
+    <string name="live_recognition_camera_permission">カメラの権限がありません</string>
+    <string name="live_recognition_camera_error">カメラを開けませんでした</string>
+    <string name="live_recognition_connection_error">Gemini に接続できませんでした。Gemini を使うモードをオフにしました。</string>
+    <string name="live_recognition_timeout">Gemini から時間内に応答がありませんでした。Gemini を使うモードをオフにしました。</string>
+    <string name="live_recognition_session_ended">Gemini のセッションが終了しました。Gemini を使うモードをオフにしました。</string>
+    <string name="live_recognition_ocr_error">テキスト認識を利用できません。テキストをオフにしました。</string>
+    <string name="live_recognition_point_above">指先の上を読み上げる</string>
+    <string name="live_recognition_point_below">指先の下を読み上げる</string>
+</resources>

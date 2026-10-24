@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Pengecaman langsung</string>
+    <string name="live_recognition_hint">Leret ke atas atau ke bawah untuk memilih mod, kemudian ketik dua kali untuk menghidupkan atau mematikannya</string>
+    <string name="live_recognition_scenes">Pemandangan</string>
+    <string name="live_recognition_text">Teks</string>
+    <string name="live_recognition_point">Tunjuk dan baca</string>
+    <string name="live_recognition_people">Pengesanan orang</string>
+    <string name="live_recognition_doors">Pengesanan pintu</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Halakan kamera belakang ke arah perkara yang anda mahu diterangkan. Untuk Tunjuk dan baca, tunjuk teks dalam imej kamera dengan jari. Penerangan mungkin salah. Jangan bergantung padanya untuk bergerak dengan selamat.</string>
+    <string name="live_recognition_camera_off">Kamera dimatikan</string>
+    <string name="live_recognition_camera_on">Kamera dihidupkan</string>
+    <string name="live_recognition_connecting">Menyambung ke Gemini…</string>
+    <string name="live_recognition_cloud_title">Hantar imej kamera ke Gemini?</string>
+    <string name="live_recognition_cloud_message">Pemandangan, Tunjuk dan baca, Pengesanan orang dan Pengesanan pintu menghantar imej daripada kamera ke Gemini API Google setiap beberapa saat. Teks dicam pada telefon ini.\n\nDengan kunci API percuma, Google boleh menyimpan perkara yang diterimanya, menggunakannya untuk menambah baik produknya dan meminta orang menyemaknya. AI generatif masih dalam percubaan, jadi ia akan melakukan kesilapan.</string>
+    <string name="live_recognition_send">Hantar imej</string>
+    <string name="live_recognition_camera_permission">Tiada kebenaran kamera</string>
+    <string name="live_recognition_camera_error">Kamera tidak dapat dibuka</string>
+    <string name="live_recognition_connection_error">Sambungan ke Gemini gagal. Mod yang menggunakan Gemini dimatikan.</string>
+    <string name="live_recognition_timeout">Gemini tidak menjawab dalam masa. Mod yang menggunakan Gemini dimatikan.</string>
+    <string name="live_recognition_session_ended">Sesi Gemini telah tamat. Mod yang menggunakan Gemini dimatikan.</string>
+    <string name="live_recognition_ocr_error">Pengecaman teks tidak tersedia. Teks dimatikan.</string>
+    <string name="live_recognition_point_above">Baca di atas hujung jari</string>
+    <string name="live_recognition_point_below">Baca di bawah hujung jari</string>
+</resources>

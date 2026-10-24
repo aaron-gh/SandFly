@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">लाइभ पहिचान</string>
+    <string name="live_recognition_hint">मोड छान्न माथि वा तल स्वाइप गर्नुहोस्, त्यसपछि त्यसलाई अन वा अफ गर्न डबल ट्याप गर्नुहोस्</string>
+    <string name="live_recognition_scenes">दृश्यहरू</string>
+    <string name="live_recognition_text">पाठ</string>
+    <string name="live_recognition_point">औंल्याउनुहोस् र पढ्नुहोस्</string>
+    <string name="live_recognition_people">मान्छे पत्ता लगाउने</string>
+    <string name="live_recognition_doors">ढोका पत्ता लगाउने</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">तपाईं जसको वर्णन चाहनुहुन्छ, पछाडिको क्यामेरा त्यसतर्फ फर्काउनुहोस्। \'औंल्याउनुहोस् र पढ्नुहोस्\' का लागि क्यामेराको तस्बिरमा रहेको पाठतर्फ औंलाले देखाउनुहोस्। वर्णनहरू गलत हुन सक्छन्। सुरक्षित रूपमा हिँडडुल गर्न तिनमा भर नपर्नुहोस्।</string>
+    <string name="live_recognition_camera_off">क्यामेरा अफ छ</string>
+    <string name="live_recognition_camera_on">क्यामेरा अन छ</string>
+    <string name="live_recognition_connecting">Gemini मा कनेक्ट गरिँदै छ…</string>
+    <string name="live_recognition_cloud_title">क्यामेराका तस्बिरहरू Gemini मा पठाउने हो?</string>
+    <string name="live_recognition_cloud_message">दृश्यहरू, औंल्याउनुहोस् र पढ्नुहोस्, मान्छे पत्ता लगाउने र ढोका पत्ता लगाउने मोडले प्रत्येक केही सेकेन्डमा क्यामेराबाट एउटा तस्बिर Google को Gemini API मा पठाउँछन्। पाठ यही फोनमा पहिचान गरिन्छ।\n\nनिःशुल्क API कुञ्जी प्रयोग गर्दा Google ले प्राप्त गरेको कुरा राख्न, आफ्ना उत्पादनहरू सुधार गर्न प्रयोग गर्न र मान्छेहरूलाई समीक्षा गर्न लगाउन सक्छ। जेनेरेटिभ AI परीक्षणात्मक छ, त्यसैले यसले गल्ती गर्नेछ।</string>
+    <string name="live_recognition_send">तस्बिरहरू पठाउनुहोस्</string>
+    <string name="live_recognition_camera_permission">क्यामेराको अनुमति छैन</string>
+    <string name="live_recognition_camera_error">क्यामेरा खोल्न सकिएन</string>
+    <string name="live_recognition_connection_error">Gemini मा कनेक्ट गर्न सकिएन। Gemini प्रयोग गर्ने मोडहरू अफ गरिए।</string>
+    <string name="live_recognition_timeout">Gemini ले समयमै जवाफ दिएन। Gemini प्रयोग गर्ने मोडहरू अफ गरिए।</string>
+    <string name="live_recognition_session_ended">Gemini सत्र समाप्त भयो। Gemini प्रयोग गर्ने मोडहरू अफ गरिए।</string>
+    <string name="live_recognition_ocr_error">पाठ पहिचान उपलब्ध छैन। पाठ अफ गरियो।</string>
+    <string name="live_recognition_point_above">औंलाको टुप्पोमाथि पढ्नुहोस्</string>
+    <string name="live_recognition_point_below">औंलाको टुप्पोमुनि पढ्नुहोस्</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Livegenkendelse</string>
+    <string name="live_recognition_hint">Stryg op eller ned for at vælge en tilstand, og tryk to gange for at slå den til eller fra</string>
+    <string name="live_recognition_scenes">Scener</string>
+    <string name="live_recognition_text">Tekst</string>
+    <string name="live_recognition_point">Peg og læs</string>
+    <string name="live_recognition_people">Registrering af personer</string>
+    <string name="live_recognition_doors">Registrering af døre</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Ret kameraet på bagsiden mod det, du vil have beskrevet. Til Peg og læs skal du pege med en finger på tekst i kamerabilledet. Beskrivelser kan være forkerte. Stol ikke på dem for at bevæge dig sikkert rundt.</string>
+    <string name="live_recognition_camera_off">Kamera fra</string>
+    <string name="live_recognition_camera_on">Kamera til</string>
+    <string name="live_recognition_connecting">Opretter forbindelse til Gemini…</string>
+    <string name="live_recognition_cloud_title">Vil du sende kamerabilleder til Gemini?</string>
+    <string name="live_recognition_cloud_message">Scener, Peg og læs, Registrering af personer og Registrering af døre sender et billede fra kameraet til Googles Gemini API med få sekunders mellemrum. Tekst genkendes på denne telefon.\n\nMed en gratis API-nøgle kan Google gemme det, den modtager, bruge det til at forbedre sine produkter og lade personer gennemgå det. Generativ AI er eksperimentel, så den laver fejl.</string>
+    <string name="live_recognition_send">Send billeder</string>
+    <string name="live_recognition_camera_permission">Ingen kameratilladelse</string>
+    <string name="live_recognition_camera_error">Kameraet kunne ikke åbnes</string>
+    <string name="live_recognition_connection_error">Forbindelsen til Gemini mislykkedes. Tilstande, der bruger Gemini, er slået fra.</string>
+    <string name="live_recognition_timeout">Gemini svarede ikke i tide. Tilstande, der bruger Gemini, er slået fra.</string>
+    <string name="live_recognition_session_ended">Gemini-sessionen er afsluttet. Tilstande, der bruger Gemini, er slået fra.</string>
+    <string name="live_recognition_ocr_error">Tekstgenkendelse er ikke tilgængelig. Tekst er slået fra.</string>
+    <string name="live_recognition_point_above">Læs over fingerspidsen</string>
+    <string name="live_recognition_point_below">Læs under fingerspidsen</string>
+</resources>
