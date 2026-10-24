@@ -25,6 +25,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.VisibleForTesting;
+import androidx.core.os.HandlerCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
 import com.google.android.accessibility.utils.StringBuilderUtils;
@@ -65,7 +66,6 @@ public class ScreenshotCaptureRequest extends Request {
   @NonNull private final OnFinishListener onFinishListener;
   private final boolean isUserRequested;
   private final Handler handler = new Handler(Looper.getMainLooper());
-  private final Runnable capture = this::capture;
   // Whether the focus indicator is hidden for this screenshot and must be shown again.
   private boolean focusHidden;
 
@@ -91,7 +91,8 @@ public class ScreenshotCaptureRequest extends Request {
     if (isUserRequested && FocusIndicatorUtils.hideForScreenshot(service)) {
       focusHidden = true;
       runTimeoutRunnable();
-      handler.postDelayed(capture, hiddenFocusRedrawMs);
+      // This request is the token, so that the capture can be removed.
+      HandlerCompat.postDelayed(handler, this::capture, this, hiddenFocusRedrawMs);
     } else {
       capture();
       runTimeoutRunnable();
@@ -101,7 +102,7 @@ public class ScreenshotCaptureRequest extends Request {
   @Override
   void cancel() {
     super.cancel();
-    handler.removeCallbacks(capture);
+    handler.removeCallbacksAndMessages(this);
     restoreFocus();
   }
 
@@ -149,7 +150,7 @@ public class ScreenshotCaptureRequest extends Request {
   }
 
   private void onFinished(@Nullable Bitmap screenCapture, boolean capturedByWindow) {
-    handler.removeCallbacks(capture);
+    handler.removeCallbacksAndMessages(this);
     restoreFocus();
     if (!finish()) {
       // It timed out or was cancelled, and the next request may have started.

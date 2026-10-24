@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.os.Build;
 import androidx.annotation.ColorInt;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.actor.DimScreenActor;
@@ -55,7 +56,8 @@ public class FocusIndicatorUtils {
    * indicator can't be changed. {@link #restoreAfterScreenshot} shows it again.
    */
   public static boolean hideForScreenshot(AccessibilityService service) {
-    if (!FeatureSupport.supportCustomizingFocusIndicator()) {
+    // A version check that lint recognizes, unlike FeatureSupport.supportCustomizingFocusIndicator.
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
       return false;
     }
     service.setAccessibilityFocusAppearance(0, Color.TRANSPARENT);
@@ -86,7 +88,7 @@ public class FocusIndicatorUtils {
    */
   public static void setAccessibilityFocusAppearance(
       AccessibilityService service, int borderWidth, int borderColor) {
-    if (FeatureSupport.supportCustomizingFocusIndicator()) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
       service.setAccessibilityFocusAppearance(borderWidth, borderColor);
     }
   }
