@@ -255,6 +255,7 @@ import com.google.android.accessibility.talkback.trainingcommon.PageConfig;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId;
 import com.google.android.accessibility.talkback.trainingcommon.TutorialShortcuts;
 import com.google.android.accessibility.talkback.report.ReportInbox;
+import com.google.android.accessibility.talkback.report.TurnOffLog;
 import com.google.android.accessibility.talkback.update.Updater;
 import com.google.android.accessibility.talkback.updatetasks.TalkBackUpdateHelper;
 import com.google.android.accessibility.talkback.utils.DiagnosticOverlayControllerImpl;
@@ -788,6 +789,9 @@ public class TalkBackService extends AccessibilityServiceCompat
   private int physicalKeyboardEcho = TextEventFilter.PREF_ECHO_CHARACTERS_AND_WORDS;
 
   private @Nullable ProcessorMagnification processorMagnification;
+  /** The app of the last window that came up, for the turn-off log. */
+  private @Nullable CharSequence lastWindowPackage;
+
   private final DisableTalkBackCompleteAction disableTalkBackCompleteAction =
       new DisableTalkBackCompleteAction();
 
@@ -928,6 +932,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   @Override
   public boolean onUnbind(Intent intent) {
     LogUtils.d(TAG, "onUnbind start");
+    TurnOffLog.record(this, lastWindowPackage);
     final long turningOffTime = System.currentTimeMillis();
     interruptAllFeedback(/* stopTtsSpeechCompletely= */ false);
     storeTalkBackUserUsage();
@@ -1159,6 +1164,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         && !"com.android.systemui".contentEquals(String.valueOf(event.getPackageName()))) {
       NotificationReader.onActiveApp(event.getPackageName());
+    }
+    if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+      lastWindowPackage = event.getPackageName();
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
