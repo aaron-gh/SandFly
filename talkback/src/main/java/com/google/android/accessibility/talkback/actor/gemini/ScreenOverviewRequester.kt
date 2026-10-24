@@ -48,6 +48,13 @@ internal enum class PromptStyle {
 
   /** [ON_DEVICE], with less detail and a shorter list of the nodes, to answer sooner. */
   ON_DEVICE_SHORT,
+
+  /**
+   * A model on the phone that does not keep to a JSON format. Small models such as FastVLM copy the
+   * example answer or write on without end, so they are asked for plain sentences and the shorter
+   * list of the nodes.
+   */
+  ON_DEVICE_PLAIN,
 }
 
 /**
@@ -71,6 +78,7 @@ internal class ScreenOverviewRequester(
         PromptStyle.CLOUD -> OVERVIEW_INSTRUCTIONS
         PromptStyle.ON_DEVICE -> ON_DEVICE_OVERVIEW_INSTRUCTIONS
         PromptStyle.ON_DEVICE_SHORT -> SHORT_OVERVIEW_INSTRUCTIONS
+        PromptStyle.ON_DEVICE_PLAIN -> PLAIN_OVERVIEW_INSTRUCTIONS
       }
     val prompt = "$instructions\n${languageInstruction()}\n\nNodes:\n${nodes(tree, style)}"
     send(
@@ -89,6 +97,9 @@ internal class ScreenOverviewRequester(
           command.screenshot,
         )
       },
+      plain = { text ->
+        OverviewResponse.Success(ScreenOverview(summary = text), tree, command.screenshot)
+      },
     )
   }
 
@@ -104,6 +115,7 @@ internal class ScreenOverviewRequester(
         PromptStyle.CLOUD -> QUERY_INSTRUCTIONS
         PromptStyle.ON_DEVICE -> ON_DEVICE_QUERY_INSTRUCTIONS
         PromptStyle.ON_DEVICE_SHORT -> SHORT_QUERY_INSTRUCTIONS
+        PromptStyle.ON_DEVICE_PLAIN -> PLAIN_QUERY_INSTRUCTIONS
       }
     val prompt =
       "$instructions\n${languageInstruction()}\n\nNodes:\n${nodeList(command.a11yTree, style)}" +
@@ -128,6 +140,13 @@ internal class ScreenOverviewRequester(
           command.screenshot,
         )
       },
+      plain = { text ->
+        OverviewResponse.QueryAnswer(
+          ScreenQueryAnswer(answer = text),
+          command.a11yTree,
+          command.screenshot,
+        )
+      },
     )
   }
 
@@ -139,6 +158,8 @@ internal class ScreenOverviewRequester(
     listener: GeminiResponseCallback<OverviewResponse>,
     parse: (String) -> OverviewResponse,
     fallback: (String) -> OverviewResponse,
+    /** The result for an answer in plain sentences, for [PromptStyle.ON_DEVICE_PLAIN]. */
+    plain: (String) -> OverviewResponse,
   ) {
     if (screenshot.isEmpty()) {
       listener.onError(ErrorReason.NO_IMAGE)
@@ -151,7 +172,9 @@ internal class ScreenOverviewRequester(
         Base64.encodeToString(screenshot, Base64.NO_WRAP),
         safetySettings,
       )
-    postData.getJSONObject("generationConfig").put("responseMimeType", "application/json")
+    if (style != PromptStyle.ON_DEVICE_PLAIN) {
+      postData.getJSONObject("generationConfig").put("responseMimeType", "application/json")
+    }
     performRequest(
       postData,
       object : GeminiRestResponseCallback {
@@ -168,6 +191,17 @@ internal class ScreenOverviewRequester(
           }
           if (BuildConfig.DEBUG) {
             Log.d(TAG, "Model answer (${text.length} characters): ${text.take(1500)}")
+          }
+          if (style == PromptStyle.ON_DEVICE_PLAIN) {
+            if (text.isBlank()) {
+              listener.onResponse(
+                FinishReason.ERROR_PARSING_RESULT,
+                error(FinishReason.ERROR_PARSING_RESULT),
+              )
+            } else {
+              listener.onResponse(FinishReason.STOP, plain(text.trim()))
+            }
+            return
           }
           try {
             listener.onResponse(FinishReason.STOP, parse(ScreenJsonRepair.repair(text)))
@@ -209,7 +243,11 @@ internal class ScreenOverviewRequester(
     OverviewResponse.Error(errorReason = null, finishReason = finishReason)
 
   private fun nodes(tree: ScreenTree, style: PromptStyle): String =
-    if (style == PromptStyle.ON_DEVICE_SHORT) tree.compactDescription else tree.description
+    if (style == PromptStyle.ON_DEVICE_SHORT || style == PromptStyle.ON_DEVICE_PLAIN) {
+      tree.compactDescription
+    } else {
+      tree.description
+    }
 
   private fun nodeList(tree: AccessibilityTree, style: PromptStyle): String =
     (tree as? ScreenTree)?.let { nodes(it, style) }.orEmpty()
@@ -280,5 +318,16 @@ Example: {"summary": "A chat with Sam. The last message asks about dinner.", "to
 Reply with only a JSON object with one field, "answer": a short plain answer to the question.
 
 Example: {"answer": "The Send button is at the bottom right."}"""
+
+    // No example: small models copy it instead of describing the screen.
+    private const val PLAIN_OVERVIEW_INSTRUCTIONS =
+      """You help a blind person who uses a screen reader understand their phone screen. You get a screenshot and a numbered list of the text and controls on the screen.
+
+In 2 to 4 sentences, say what app or screen this is, what it is for, and what is on it. Mention pictures, charts or text in images that the list does not describe. Do not list every item. Reply in plain sentences, not JSON."""
+
+    private const val PLAIN_QUERY_INSTRUCTIONS =
+      """You help a blind person who uses a screen reader understand their phone screen. You get a screenshot, a numbered list of the text and controls on the screen, the conversation so far, and a question.
+
+Answer the question in plain sentences, not JSON."""
   }
 }
