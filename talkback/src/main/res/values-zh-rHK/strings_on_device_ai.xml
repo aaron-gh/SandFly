@@ -41,7 +41,7 @@
     <string name="manage_models_empty">沒有下載任何模型。</string>
     <string name="manage_models_unfinished">%1$s，未完成下載</string>
     <string name="manage_models_delete_title">刪除%1$s？</string>
-    <string name="manage_models_delete_message">這釋放了%1$s。您可以稍後再次下載。</string>
+    <string name="manage_models_delete_message">這樣會釋放 %1$s 空間。你之後可以再次下載。</string>
     <string name="manage_models_delete">刪除</string>
     <string name="manage_models_deleted">%1$s 已刪除</string>
     <string name="pref_on_device_ai_import">使用儲存空間中的模型檔案</string>
@@ -60,7 +60,7 @@
     <string name="pref_on_device_ai_short_prompts_summary">描述螢幕要求的詳細資訊較少，因此它會更快回答。關閉此功能以獲得更完整的描述。</string>
     <string name="on_device_ai_error_network">下載停止了。檢查您的連線並重試。它將在停止的地方繼續進行。</string>
     <string name="on_device_ai_error_http">下載伺服器未接受請求。稍後重試，或匯入文件。</string>
-    <string name="on_device_ai_error_corrupt">該文件與預期模型不匹配，已被刪除。再試一次。</string>
+    <string name="on_device_ai_error_corrupt">檔案與預期的模型不符，已被刪除。請再試一次。</string>
     <string name="on_device_ai_error_storage">無法儲存檔案。</string>
     <string name="on_device_ai_error_low_space">此模型沒有足夠的可用儲存空間。</string>
     <string name="on_device_ai_error_time_limit">Android 在後台暫停了幾個小時的下載。點擊以繼續停止的地方。</string>

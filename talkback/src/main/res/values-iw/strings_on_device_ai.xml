@@ -42,7 +42,7 @@
     <string name="manage_models_empty">לא הורדו מודלים.</string>
     <string name="manage_models_unfinished">%1$s, הורדה לא הסתיימה</string>
     <string name="manage_models_delete_title">למחוק את %1$s?</string>
-    <string name="manage_models_delete_message">זה משחרר %1$s. תוכל להוריד אותו שוב מאוחר יותר.</string>
+    <string name="manage_models_delete_message">פעולה זו תפנה %1$s. אפשר להוריד אותו שוב מאוחר יותר.</string>
     <string name="manage_models_delete">מחיקה</string>
     <string name="manage_models_deleted">%1$s נמחק</string>
     <string name="pref_on_device_ai_import">שימוש בקובץ מודל מהאחסון</string>
@@ -62,7 +62,7 @@
     <string name="pref_on_device_ai_short_prompts_summary">מסך תאר מבקש פחות פרטים, כך שהוא עונה מוקדם יותר. כבה את זה לתיאורים מלאים יותר.</string>
     <string name="on_device_ai_error_network">ההורדה נעצרה. בדוק את החיבור שלך ונסה שוב. זה ימשיך היכן שהוא עצר.</string>
     <string name="on_device_ai_error_http">שרת ההורדות לא קיבל את הבקשה. נסה שוב מאוחר יותר, או ייבא קובץ במקום זאת.</string>
-    <string name="on_device_ai_error_corrupt">הקובץ לא תאם לדגם הצפוי ונמחק. נסה שוב.</string>
+    <string name="on_device_ai_error_corrupt">הקובץ לא תאם למודל הצפוי ונמחק. אפשר לנסות שוב.</string>
     <string name="on_device_ai_error_storage">לא ניתן לשמור את הקובץ.</string>
     <string name="on_device_ai_error_low_space">אין מספיק שטח אחסון בחינם עבור הדגם הזה.</string>
     <string name="on_device_ai_error_time_limit">Android השהה את ההורדה לאחר מספר שעות ברקע. הקש כדי להמשיך במקום שבו זה עצר.</string>

@@ -41,7 +41,7 @@
     <string name="manage_models_empty">Nenhum modelo foi transferido.</string>
     <string name="manage_models_unfinished">%1$s, transferência inacabada</string>
     <string name="manage_models_delete_title">Eliminar %1$s?</string>
-    <string name="manage_models_delete_message">Isso libera %1$s. Você pode baixá-lo novamente mais tarde.</string>
+    <string name="manage_models_delete_message">Isto liberta %1$s. Pode transferi-lo novamente mais tarde.</string>
     <string name="manage_models_delete">Eliminar</string>
     <string name="manage_models_deleted">%1$s eliminado</string>
     <string name="pref_on_device_ai_import">Usar um ficheiro de modelo do armazenamento</string>
@@ -60,7 +60,7 @@
     <string name="pref_on_device_ai_short_prompts_summary">A tela Descrever pede menos detalhes, por isso responde mais cedo. Desligue isso para descrições mais completas.</string>
     <string name="on_device_ai_error_network">O download parou. Verifique sua conexão e tente novamente. Ele continuará de onde parou.</string>
     <string name="on_device_ai_error_http">O servidor de download não aceitou a solicitação. Tente novamente mais tarde ou importe um arquivo.</string>
-    <string name="on_device_ai_error_corrupt">O arquivo não correspondia ao modelo esperado e foi excluído. Tente novamente.</string>
+    <string name="on_device_ai_error_corrupt">O ficheiro não correspondia ao modelo esperado e foi eliminado. Tente novamente.</string>
     <string name="on_device_ai_error_storage">Não foi possível guardar o ficheiro.</string>
     <string name="on_device_ai_error_low_space">Não há armazenamento gratuito suficiente para este modelo.</string>
     <string name="on_device_ai_error_time_limit">Android pausou o download após várias horas em segundo plano. Toque para continuar de onde parou.</string>
