@@ -36,9 +36,9 @@
     <string name="granular_editing_deleted">Șters</string>
     <string name="granular_editing_not_found">Nu a fost găsit</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> înlocuit</item>
-        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> înlocuit</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> înlocuite</item>
+        <item quantity="one">Înlocuite: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="few">Înlocuite: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Înlocuite: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Salvați modificările?</string>
     <string name="granular_editing_copy_changes">Copiezi textul modificat?</string>

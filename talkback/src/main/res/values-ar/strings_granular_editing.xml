@@ -36,12 +36,12 @@
     <string name="granular_editing_deleted">تم الحذف</string>
     <string name="granular_editing_not_found">لم يتم العثور عليه</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="zero"><xliff:g id="count" example="3">%d</xliff:g> تم استبداله</item>
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> تم استبداله</item>
-        <item quantity="two"><xliff:g id="count" example="3">%d</xliff:g> استبدال</item>
-        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> استبدال</item>
-        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> استبدال</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> استبدال</item>
+        <item quantity="zero">تم استبدال <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="one">تم استبدال <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="two">تم استبدال <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="few">تم استبدال <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="many">تم استبدال <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">تم استبدال <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">هل تريد حفظ التغييرات؟</string>
     <string name="granular_editing_copy_changes">هل تريد نسخ النص الذي تم تغييره؟</string>

@@ -36,9 +36,9 @@
     <string name="granular_editing_deleted">Izdzēsts</string>
     <string name="granular_editing_not_found">Nav atrasts</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="zero"><xliff:g id="count" example="3">%d</xliff:g> aizstāts</item>
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> aizstāts</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> aizstāts</item>
+        <item quantity="zero">Aizstāti: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="one">Aizstāti: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">Aizstāti: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Vai saglabāt izmaiņas?</string>
     <string name="granular_editing_copy_changes">Vai kopēt mainīto tekstu?</string>

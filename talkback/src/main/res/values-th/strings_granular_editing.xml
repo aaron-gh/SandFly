@@ -36,8 +36,8 @@
     <string name="granular_editing_deleted">ลบแล้ว</string>
     <string name="granular_editing_not_found">ไม่พบ</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> แทนที่</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> แทนที่</item>
+        <item quantity="one">แทนที่แล้ว <xliff:g id="count" example="1">%d</xliff:g> รายการ</item>
+        <item quantity="other">แทนที่แล้ว <xliff:g id="count" example="3">%d</xliff:g> รายการ</item>
     </plurals>
     <string name="granular_editing_save_changes">บันทึกการเปลี่ยนแปลงใช่ไหม</string>
     <string name="granular_editing_copy_changes">คัดลอกข้อความที่เปลี่ยนแปลงใช่ไหม</string>

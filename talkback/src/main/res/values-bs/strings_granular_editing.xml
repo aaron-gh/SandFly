@@ -36,9 +36,9 @@
     <string name="granular_editing_deleted">Izbrisano</string>
     <string name="granular_editing_not_found">Nije pronađeno</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> zamijenjen</item>
-        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> zamijenjena</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> zamijenjeno</item>
+        <item quantity="one">Zamijenjeno: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="few">Zamijenjeno: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Zamijenjeno: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Sačuvati promjene?</string>
     <string name="granular_editing_copy_changes">Kopirati izmijenjeni tekst?</string>

@@ -36,10 +36,10 @@
     <string name="granular_editing_deleted">Ištrinta</string>
     <string name="granular_editing_not_found">Nerasta</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> pakeista</item>
-        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> pakeista</item>
-        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> pakeista</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> pakeista</item>
+        <item quantity="one">Pakeista: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="few">Pakeista: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="many">Pakeista: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Pakeista: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Išsaugoti pakeitimus?</string>
     <string name="granular_editing_copy_changes">Nukopijuoti pakeistą tekstą?</string>

@@ -361,10 +361,10 @@
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> цифры</item>
     </plurals>
     <plurals name="notification_summary_count">
-        <item quantity="one">У вас есть <xliff:g id="count" example="1">%d</xliff:g> уведомление.</item>
-        <item quantity="few">У вас есть <xliff:g id="count" example="5">%d</xliff:g> уведомления.</item>
+        <item quantity="one">У вас <xliff:g id="count" example="1">%d</xliff:g> уведомление.</item>
+        <item quantity="few">У вас <xliff:g id="count" example="5">%d</xliff:g> уведомления.</item>
         <item quantity="many">У вас <xliff:g id="count" example="5">%d</xliff:g> уведомлений.</item>
-        <item quantity="other">У вас есть <xliff:g id="count" example="5">%d</xliff:g> уведомления.</item>
+        <item quantity="other">У вас <xliff:g id="count" example="5">%d</xliff:g> уведомления.</item>
     </plurals>
     <string-array name="notification_url_entries">
         <item>@string/notification_url_full</item>

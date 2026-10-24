@@ -36,10 +36,10 @@
     <string name="granular_editing_deleted">Odstránené</string>
     <string name="granular_editing_not_found">Nenájdené</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> nahradený</item>
-        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> nahradený</item>
-        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> vymenený</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> nahradených</item>
+        <item quantity="one">Nahradené: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="few">Nahradené: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="many">Nahradené: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Nahradené: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Uložiť zmeny?</string>
     <string name="granular_editing_copy_changes">Skopírovať zmenený text?</string>

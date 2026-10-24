@@ -36,10 +36,10 @@
     <string name="granular_editing_deleted">Выдалена</string>
     <string name="granular_editing_not_found">Не знойдзена</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> заменены</item>
-        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> заменены</item>
-        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> заменена</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> заменены</item>
+        <item quantity="one">Заменена: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="few">Заменена: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="many">Заменена: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Заменена: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Захаваць змены?</string>
     <string name="granular_editing_copy_changes">Скапіраваць зменены тэкст?</string>
