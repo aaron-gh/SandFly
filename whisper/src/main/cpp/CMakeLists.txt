@@ -11,6 +11,9 @@ set(GGML_NATIVE OFF CACHE BOOL "" FORCE)
 set(GGML_OPENMP OFF CACHE BOOL "" FORCE)
 set(GGML_BACKEND_DL OFF CACHE BOOL "" FORCE)
 set(GGML_LLAMAFILE OFF CACHE BOOL "" FORCE)
+# ggml does all the work. Without this, debug builds of the app, which are the ones published,
+# compile it unoptimized, which makes transcription many times slower.
+add_compile_options(-O3)
 add_subdirectory(${WHISPER_DIR}/ggml ggml)
 
 add_library(sandfly_whisper SHARED
