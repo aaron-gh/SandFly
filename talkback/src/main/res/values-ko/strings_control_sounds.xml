@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_control_sounds">컨트롤 사운드 및 진동</string>
-    <string name="summary_pref_control_sounds">Unspoken이 NVDA에서 하는 것처럼 포커스 사운드 및 진동 대신 버튼, 체크박스, 편집 필드 및 목록 항목과 같은 각 종류의 컨트롤과 테마의 고유한 사운드 및 진동을 제공합니다. 소리는 화면 컨트롤이 있는 곳에서 나오며 SandFly 컨트롤이 어떤 종류인지는 언급하지 않습니다.</string>
+    <string name="summary_pref_control_sounds">Unspoken이 NVDA에서 하는 것처럼, 버튼, 체크박스, 편집 필드, 목록 항목 등 컨트롤 종류마다 포커스 소리와 진동 대신 테마의 고유한 소리와 진동을 사용합니다. 소리는 화면에서 컨트롤이 있는 위치에서 나오며, SandFly는 컨트롤 종류를 읽지 않습니다.</string>
     <string name="title_pref_control_sounds_speak_roles">컨트롤 종류도 계속 말하기</string>
-    <string name="summary_pref_control_sounds_speak_roles">제어음이 재생되면 버튼과 같이 어떤 종류의 제어인지 알려주세요. 이것은 모든 사운드 테마에 적용됩니다.</string>
+    <string name="summary_pref_control_sounds_speak_roles">컨트롤 소리가 재생될 때도 버튼 등 컨트롤 종류를 읽습니다. 모든 사운드 테마에 적용됩니다.</string>
     <string name="title_pref_control_sounds_3d">3D 오디오</string>
     <string name="pref_control_sounds_3d_headphones">헤드폰 사용 시</string>
     <string name="pref_control_sounds_3d_always">항상</string>

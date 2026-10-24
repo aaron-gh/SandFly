@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_control_sounds">Lyder og vibrasjoner for kontroller</string>
-    <string name="summary_pref_control_sounds">Gi hver type kontroll, for eksempel knapper, avmerkingsbokser, redigeringsfelt og listeelementer, sin egen lyd og sin egen vibrasjon fra temaet, i stedet for fokuslyden og vibrasjonen, slik Unspoken gjør for NVDA. Lyden kommer fra der kontrollen er på skjermen, og SandFly utelater å si hva slags kontroll det er.</string>
+    <string name="summary_pref_control_sounds">Hver type kontroll, for eksempel knapper, avmerkingsbokser, redigeringsfelt og listeelementer, får sin egen lyd og vibrasjon fra temaet i stedet for fokuslyden og fokusvibrasjonen, slik Unspoken gjør for NVDA. Lyden kommer fra kontrollens plassering på skjermen, og SandFly sier ikke hva slags kontroll det er.</string>
     <string name="title_pref_control_sounds_speak_roles">Si likevel typen kontroll</string>
-    <string name="summary_pref_control_sounds_speak_roles">Når en kontrolllyd spilles av, si fortsatt hva slags kontroll det er, for eksempel knapp. Dette er for hvert lydtema.</string>
+    <string name="summary_pref_control_sounds_speak_roles">Når en kontrollyd spilles av, sies kontrolltypen likevel, for eksempel knapp. Gjelder alle lydtemaer.</string>
     <string name="title_pref_control_sounds_3d">3D-lyd</string>
     <string name="pref_control_sounds_3d_headphones">Med hodetelefoner</string>
     <string name="pref_control_sounds_3d_always">Alltid</string>

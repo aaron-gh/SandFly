@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_control_sounds">控制項音效和震動</string>
-    <string name="summary_pref_control_sounds">為每個控制項（例如按鈕、複選框、編輯欄位和清單項目）賦予主題自己的聲音和振動，以代替焦點聲音和振動，就像 Unspoken 為 NVDA 所做的那樣。聲音來自螢幕上控制所在的位置，SandFly 沒有說明它是什麼類型的控制。</string>
+    <string name="summary_pref_control_sounds">按鈕、核取方塊、編輯欄位和清單項目等每類控制項，都會以主題中各自的音效和震動取代焦點音效和震動，與 Unspoken 在 NVDA 中的做法相同。音效從控制項在螢幕上的位置發出，SandFly 不會讀出控制項類型。</string>
     <string name="title_pref_control_sounds_speak_roles">仍然讀出控制項類型</string>
-    <string name="summary_pref_control_sounds_speak_roles">當控制聲音播放時，仍然說出它是什麼類型的控制，例如按鈕。這適用於每個聲音主題。</string>
+    <string name="summary_pref_control_sounds_speak_roles">播放控制項音效時，仍會讀出控制項類型，例如按鈕。適用於所有音效主題。</string>
     <string name="title_pref_control_sounds_3d">3D音訊</string>
     <string name="pref_control_sounds_3d_headphones">使用耳機時</string>
     <string name="pref_control_sounds_3d_always">總是</string>
