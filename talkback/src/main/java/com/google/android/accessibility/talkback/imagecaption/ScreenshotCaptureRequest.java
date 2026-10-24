@@ -24,6 +24,7 @@ import android.os.Looper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
 import com.google.android.accessibility.utils.StringBuilderUtils;
@@ -57,7 +58,7 @@ public class ScreenshotCaptureRequest extends Request {
   public static final Duration SCREENSHOT_CAPTURE_TIMEOUT_MS = Duration.ofMillis(3000);
 
   /** How long the app on screen gets to redraw without the focus indicator. */
-  private static final long HIDDEN_FOCUS_REDRAW_MS = 150;
+  @VisibleForTesting static long hiddenFocusRedrawMs = 150;
 
   private final AccessibilityService service;
   private final AccessibilityNodeInfoCompat node;
@@ -90,7 +91,7 @@ public class ScreenshotCaptureRequest extends Request {
     if (isUserRequested && FocusIndicatorUtils.hideForScreenshot(service)) {
       focusHidden = true;
       runTimeoutRunnable();
-      handler.postDelayed(capture, HIDDEN_FOCUS_REDRAW_MS);
+      handler.postDelayed(capture, hiddenFocusRedrawMs);
     } else {
       capture();
       runTimeoutRunnable();

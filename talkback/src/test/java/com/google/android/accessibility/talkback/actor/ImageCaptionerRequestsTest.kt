@@ -45,6 +45,7 @@ import com.google.android.accessibility.talkback.imagecaption.CaptionRequest
 import com.google.android.accessibility.talkback.imagecaption.ImageCaptionStorage
 import com.google.android.accessibility.talkback.imagecaption.RequestList
 import com.google.android.accessibility.talkback.imagecaption.ScreenshotCaptureRequest
+import com.google.android.accessibility.talkback.imagecaption.ScreenshotCaptureRequestAccess
 import com.google.android.accessibility.talkback.imagedescription.ImageDescriptionProcessor
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -52,6 +53,7 @@ import java.time.Duration
 import java.util.concurrent.Executor
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
+import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -118,6 +120,9 @@ class ImageCaptionerRequestsTest {
 
   @Before
   fun setUp() {
+    // Screenshots start at once, so that only the requests' own times decide what runs. The wait
+    // for the focus indicator to disappear has its own test.
+    ScreenshotCaptureRequestAccess.setHiddenFocusRedrawMs(0)
     // TalkBackService does this when it starts.
     FormFactorUtils.initialize(context)
     service = Robolectric.setupService(FakeScreenshotService::class.java)
@@ -146,6 +151,11 @@ class ImageCaptionerRequestsTest {
     info.className = "android.widget.ImageView"
     info.isVisibleToUser = true
     node = AccessibilityNodeInfoCompat.wrap(info)
+  }
+
+  @After
+  fun tearDown() {
+    ScreenshotCaptureRequestAccess.setHiddenFocusRedrawMs(150)
   }
 
   /** ImageCaptioner asks the actor state whether the phone has AICore, which it does not. */
@@ -263,6 +273,24 @@ class ImageCaptionerRequestsTest {
     advance(Duration.ofMillis(200))
     assertEquals(spokenForB + 1, spoken.size)
     assertEquals(3, service.callbacks.size)
+  }
+
+  @Test
+  fun aScreenshotTheUserAskedFor_waitsForTheFocusIndicatorToDisappear() {
+    ScreenshotCaptureRequestAccess.setHiddenFocusRedrawMs(150)
+    captioner.caption(node, /* isUserRequested= */ true)
+    idle()
+    assertEquals(0, service.callbacks.size)
+    advance(Duration.ofMillis(150))
+    assertEquals(1, service.callbacks.size)
+  }
+
+  @Test
+  fun anAutomaticScreenshot_doesNotWait() {
+    ScreenshotCaptureRequestAccess.setHiddenFocusRedrawMs(150)
+    captioner.caption(node, /* isUserRequested= */ false)
+    idle()
+    assertEquals(1, service.callbacks.size)
   }
 
   /** Describe image with Gemini, as the menu does, up to the request to the model. */
