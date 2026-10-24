@@ -64,7 +64,7 @@
   <string name="pref_speak_roles_title">הקראה של סוג הרכיב</string>
   <string name="pref_speak_roles_summary">למשל לחצן או תיבת סימון</string>
   <string name="title_pref_speak_element_ids">הקראת מזהי הרכיב</string>
-  <string name="summary_pref_speak_element_ids">אמור את המזהה של לחצנים שאין להם תווית</string>
+  <string name="summary_pref_speak_element_ids">הקראת המזהה של לחצנים ללא תווית</string>
   <string name="pref_allow_frequent_content_change_announcement_title">הקראת כל עדכוני ההתקדמות</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">ההגדרה הזו כוללת עדכונים בזמן הורדה, מעקב אחר מסלול הנסיעה ועוד. כשההגדרה מושבתת, עדיין יהיו עדכונים, אבל בתדירות נמוכה יותר.</string>
   <string name="title_pref_explore_by_touch">גילוי באמצעות מגע</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">עזרה</string>
   <string name="title_pref_advanced_settings">הגדרות מתקדמות</string>
   <string name="title_pref_show_exit_watermark">‏הצגת הוראות להשבתת SandFly</string>
-  <string name="summary_pref_show_exit_watermark">כאשר SandFly נדלק, הראה כיצד לכבות אותו</string>
+  <string name="summary_pref_show_exit_watermark">כש-SandFly נדלק, מוצגת הדרך לכבות אותו</string>
   <string name="talkback_exit_watermark_text">‏התכונה SandFly מופעלת. כדי להשבית אותה, צריך ללחוץ לחיצה ארוכה על המסך ב-2 אצבעות למשך 5 שניות. רוצה להפסיק לראות את ההודעה הזו? צריך ללחוץ עם 3 אצבעות כדי לפתוח את תפריט SandFly.</string>
   <string name="talkback_exit_watermark_hint_text">‏מוצג באנר כדי לציין שהתכונה SandFly מופעלת. כדי להשבית את SandFly, לוחצים לחיצה ארוכה עם שתי אצבעות על המסך למשך 5 שניות. כדי להסיר את הבאנר הזה, צריך לעבור להגדרות SandFly.</string>
   <string name="reset_gesture_settings_title">איפוס של הגדרות התנועה</string>
@@ -1364,7 +1364,7 @@
     <string name="template_battery_level_unknown">רמת הסוללה לא ידועה</string>
     <string name="value_charger_connected">מטען מחובר</string>
     <string name="title_pref_screen_announcements">הפעלה וכיבוי של המסך</string>
-    <string name="summary_pref_screen_announcements">בחר מה אומר SandFly כאשר המסך נכבה או מופעל, וכאשר הטלפון אינו נעול</string>
+    <string name="summary_pref_screen_announcements">בחירת מה SandFly אומר כשהמסך נכבה או נדלק, וכשנעילת הטלפון מבוטלת</string>
     <string name="title_screen_announcements_screen_off">כשהמסך נכבה</string>
     <string name="title_screen_announcements_screen_on">כשהמסך נדלק</string>
     <string name="title_screen_announcements_unlock">כשנעילת הטלפון מבוטלת</string>

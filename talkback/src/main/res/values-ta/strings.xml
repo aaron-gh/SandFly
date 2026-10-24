@@ -64,7 +64,7 @@
   <string name="pref_speak_roles_title">உறுப்பின் வகையைப் படி</string>
   <string name="pref_speak_roles_summary">எ.கா. பட்டன் அல்லது தேர்வுப்பெட்டி</string>
   <string name="title_pref_speak_element_ids">உறுப்பு ஐடிகளைப் படி</string>
-  <string name="summary_pref_speak_element_ids">லேபிள் இல்லாத பட்டன்களின் ஐடியைக் கூறவும்</string>
+  <string name="summary_pref_speak_element_ids">லேபிள் இல்லாத பட்டன்களின் ID-ஐச் சொல்லும்</string>
   <string name="pref_allow_frequent_content_change_announcement_title">செயல்பாடு குறித்த அறிவிப்புகளை வாசித்தல்</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">பதிவிறக்குவது, வாகன வழிகளைப் பின்பற்றுவது மற்றும் பல அறிவிப்புகள் இதிலடங்கும். முடக்கப்பட்டால் அவ்வப்போது குறைவான அறிவிப்புகளைப் பெறுவீர்கள்.</string>
   <string name="title_pref_explore_by_touch">தொடுவதன் மூலம் அறிக</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">உதவி</string>
   <string name="title_pref_advanced_settings">மேம்பட்ட அமைப்புகள்</string>
   <string name="title_pref_show_exit_watermark">SandFlyகை ஆஃப் செய்வதற்கான வழிமுறைகளைக் காட்டு</string>
-  <string name="summary_pref_show_exit_watermark">SandFly ஆன் செய்யும்போது, அதை எப்படி அணைப்பது என்பதைக் காட்டவும்</string>
+  <string name="summary_pref_show_exit_watermark">SandFly இயக்கப்படும்போது, அதை எப்படி அணைப்பது என்பதைக் காட்டும்</string>
   <string name="talkback_exit_watermark_text">SandFly ஆன் செய்யப்பட்டுள்ளது. ஆஃப் செய்ய, திரையில் 2 விரல்களை 5 வினாடிகளுக்குப் பிடித்திருக்கவும். இந்த மெசேஜ் காட்டப்படுவதை நிறுத்த 3 விரல்களால் தட்டி SandFly மெனுவைத் திறக்கவும்.</string>
   <string name="talkback_exit_watermark_hint_text">SandFly இயக்கத்தில் இருப்பதைக் குறிப்பிடும் பேனர் காட்டப்படுகிறது. SandFlyகை முடக்குவதற்கு, 2 விரல்களால் திரையை 5 வினாடிகளுக்குப் பிடியுங்கள். இந்த பேனரை அகற்றுவதற்கு, SandFly அமைப்புகளுக்குச் செல்லுங்கள்.</string>
   <string name="reset_gesture_settings_title">சைகை அமைப்புகளை மீட்டமை</string>
@@ -1364,7 +1364,7 @@
     <string name="template_battery_level_unknown">பேட்டரி நிலை தெரியவில்லை</string>
     <string name="value_charger_connected">சார்ஜர் இணைக்கப்பட்டுள்ளது</string>
     <string name="title_pref_screen_announcements">திரை ஆன் மற்றும் ஆஃப்</string>
-    <string name="summary_pref_screen_announcements">SandFly திரை அணைக்கப்படும் போது அல்லது ஆன் ஆகும் போது மற்றும் ஃபோன் திறக்கப்படும் போது என்ன கூறுகிறது என்பதைத் தேர்வுசெய்யவும்</string>
+    <string name="summary_pref_screen_announcements">திரை அணையும்போது அல்லது இயங்கும்போது, ஃபோன் அன்லாக் செய்யப்படும்போது SandFly என்ன சொல்ல வேண்டும் என்பதைத் தேர்வுசெய்யவும்</string>
     <string name="title_screen_announcements_screen_off">திரை அணைக்கப்படும் போது</string>
     <string name="title_screen_announcements_screen_on">திரை இயக்கப்படும் போது</string>
     <string name="title_screen_announcements_unlock">தொலைபேசி திறக்கப்படும் போது</string>

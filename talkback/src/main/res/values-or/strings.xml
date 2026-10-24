@@ -64,7 +64,7 @@
   <string name="pref_speak_roles_title">ଏଲିମେଣ୍ଟର ପ୍ରକାର କୁହନ୍ତୁ</string>
   <string name="pref_speak_roles_summary">ବଟନ୍ କିମ୍ବା ଚେକ୍ ବକ୍ସ ପରି</string>
   <string name="title_pref_speak_element_ids">ଏଲିମେଣ୍ଟ ID କୁହନ୍ତୁ</string>
-  <string name="summary_pref_speak_element_ids">ବଟନ୍ ଗୁଡିକର ID କୁହନ୍ତୁ ଯାହାର କୌଣସି ଲେବଲ୍ ନାହିଁ</string>
+  <string name="summary_pref_speak_element_ids">ଲେବଲ୍ ନଥିବା ବଟନ୍‌ର ID କହେ</string>
   <string name="pref_allow_frequent_content_change_announcement_title">ସମସ୍ତ ପ୍ରୋଗ୍ରେସ ଅପଡେଟ କୁହନ୍ତୁ</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">ଏହା ଡାଉନଲୋଡ, ଡ୍ରାଇଭିଂ ଦିଗନିର୍ଦ୍ଦେଶଗୁଡ଼ିକୁ ଫଲୋ କରିବା ଏବଂ ଆହୁରି ଅନେକ କିଛି କରିବା ସମୟରେ ଅପଡେଟଗୁଡ଼ିକ ଅନ୍ତର୍ଭୁକ୍ତ କରେ। ବନ୍ଦ କଲେ, ଆପଣ ଏବେ ବି କମ ଥର ଅପଡେଟ ପାଇବେ।</string>
   <string name="title_pref_explore_by_touch">ସ୍ପର୍ଶ ଦ୍ୱାରା ଅନ୍ୱେଷଣ କରନ୍ତୁ</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">ସହାୟତା</string>
   <string name="title_pref_advanced_settings">ଉନ୍ନତ ସେଟିଂସ</string>
   <string name="title_pref_show_exit_watermark">SandFly ବନ୍ଦ କରିବା ପାଇଁ ନିର୍ଦ୍ଦେଶାବଳୀ ଦେଖାନ୍ତୁ</string>
-  <string name="summary_pref_show_exit_watermark">ଯେତେବେଳେ SandFly ଟର୍ନ୍ ଅନ୍ ହୁଏ, ଏହାକୁ କିପରି ବନ୍ଦ କରିବେ ଦେଖାନ୍ତୁ</string>
+  <string name="summary_pref_show_exit_watermark">SandFly ଚାଲୁ ହେଲେ, ଏହାକୁ କିପରି ବନ୍ଦ କରିବେ ତାହା ଦେଖାଏ</string>
   <string name="talkback_exit_watermark_text">SandFly ଚାଲୁ ଅଛି। ବନ୍ଦ କରିବା ପାଇଁ ସ୍କ୍ରିନରେ 2 ଆଙ୍ଗୁଠିକୁ 5 ସେକେଣ୍ଡ ପାଇଁ ଧରି ରଖନ୍ତୁ। ଏହି ମେସେଜକୁ ଦେଖାଇବା ବନ୍ଦ କରିବା ପାଇଁ SandFly ମେନୁ ଖୋଲିବାକୁ 3 ଆଙ୍ଗୁଠିରେ ଟାପ କରନ୍ତୁ।</string>
   <string name="talkback_exit_watermark_hint_text">SandFly ଚାଲୁ ଅଛି ବୋଲି ସୂଚିତ କରି ବେନର ଦେଖାଯାଉଛି। SandFly ବନ୍ଦ କରିବାକୁ 5 ସେକେଣ୍ଡ ପାଇଁ ସ୍କ୍ରିନରେ 2 ଆଙ୍ଗୁଠିକୁ ଧରି ରଖନ୍ତୁ। ଏହି ବେନରକୁ କାଢ଼ି ଦେବା ପାଇଁ SandFly ସେଟିଂସକୁ ଯାଆନ୍ତୁ।</string>
   <string name="reset_gesture_settings_title">ଜେଶ୍ଚର୍ ସେଟିଂସ୍ ରିସେଟ୍ କରନ୍ତୁ</string>
@@ -1363,7 +1363,7 @@
     <string name="template_battery_level_unknown">ବ୍ୟାଟେରୀ ସ୍ତର ଅଜ୍ଞାତ</string>
     <string name="value_charger_connected">ଚାର୍ଜର ସଂଯୁକ୍ତ</string>
     <string name="title_pref_screen_announcements">ସ୍କ୍ରିନ୍ ଅନ୍ ଏବଂ ଅଫ୍</string>
-    <string name="summary_pref_screen_announcements">ଯେତେବେଳେ ସ୍କ୍ରିନ୍ ବନ୍ଦ ହୁଏ କିମ୍ବା ଅନ୍ ହୁଏ, ଏବଂ ଯେତେବେଳେ ଫୋନ୍ ଅନଲକ୍ ହୁଏ SandFly କ’ଣ ବାଛ ତାହା ବାଛ</string>
+    <string name="summary_pref_screen_announcements">ସ୍କ୍ରିନ୍ ବନ୍ଦ କିମ୍ବା ଚାଲୁ ହେଲେ ଏବଂ ଫୋନ୍ ଅନଲକ୍ ହେଲେ SandFly କ’ଣ କହିବ ତାହା ବାଛନ୍ତୁ</string>
     <string name="title_screen_announcements_screen_off">ଯେତେବେଳେ ସ୍କ୍ରିନ୍ ବନ୍ଦ ହୋଇଯାଏ</string>
     <string name="title_screen_announcements_screen_on">ଯେତେବେଳେ ସ୍କ୍ରିନ୍ ଟର୍ନ୍ ଅନ୍ ହୁଏ</string>
     <string name="title_screen_announcements_unlock">ଯେତେବେଳେ ଫୋନ୍ ଅନଲକ୍ ହୁଏ</string>

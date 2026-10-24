@@ -64,7 +64,7 @@
   <string name="pref_speak_roles_title">എലമെന്റ് തരം വായിച്ചുകേൾക്കുക</string>
   <string name="pref_speak_roles_summary">ഉദാ. ബട്ടൺ അല്ലെങ്കിൽ ചെക്ക്ബോക്സ്</string>
   <string name="title_pref_speak_element_ids">എലമെൻ്റ് ഐഡികൾ പറയുക</string>
-  <string name="summary_pref_speak_element_ids">ലേബൽ ഇല്ലാത്ത ബട്ടണുകളുടെ ഐഡി പറയുക</string>
+  <string name="summary_pref_speak_element_ids">ലേബൽ ഇല്ലാത്ത ബട്ടണുകളുടെ ID പറയുന്നു</string>
   <string name="pref_allow_frequent_content_change_announcement_title">എല്ലാ പുരോഗതി അപ്‌ഡേറ്റുകളും പറയുക</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">ഡൗൺലോഡ് ചെയ്യുമ്പോഴും വാഹനമോടിച്ച് പോകാനുള്ള വഴികൾ പിന്തുടരുമ്പോഴും മറ്റുമുള്ള അപ്ഡേറ്റുകൾ ഉൾപ്പെടുന്നു. ഓഫാക്കിയിരിക്കുമ്പോൾ, തുടർന്നും ഇടവിട്ട് അപ്ഡേറ്റുകൾ ലഭിക്കും.</string>
   <string name="title_pref_explore_by_touch">ടച്ച് വഴി അടുത്തറിയൽ</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">സഹായം</string>
   <string name="title_pref_advanced_settings">വിപുലമായ ക്രമീകരണം</string>
   <string name="title_pref_show_exit_watermark">SandFly ഓഫാക്കുന്നതിനുള്ള നിർദ്ദേശങ്ങൾ കാണിക്കുക</string>
-  <string name="summary_pref_show_exit_watermark">SandFly ഓണാക്കുമ്പോൾ, അത് എങ്ങനെ ഓഫാക്കാമെന്ന് കാണിക്കുക</string>
+  <string name="summary_pref_show_exit_watermark">SandFly ഓണാകുമ്പോൾ, അത് എങ്ങനെ ഓഫാക്കാമെന്ന് കാണിക്കുന്നു</string>
   <string name="talkback_exit_watermark_text">SandFly ഓണാണ്. ഓഫാക്കാൻ, 5 സെക്കൻഡ് നേരത്തേക്ക് രണ്ട് വിരലുകൾ സ്ക്രീനിൽ ഹോൾഡ് ചെയ്യുക. ഈ സന്ദേശം കാണിക്കുന്നത് അവസാനിപ്പിക്കാൻ, SandFly മെനു തുറക്കാൻ 3 വിരലുകൾ ഉപയോഗിച്ച് ടാപ്പ് ചെയ്യുക.</string>
   <string name="talkback_exit_watermark_hint_text">SandFly ഓണാണെന്ന് സൂചിപ്പിക്കുന്ന ബാനർ കാണിക്കുന്നു. SandFly ഓഫാക്കാൻ, 2 വിരലുകൾ ഉപയോഗിച്ച് 5 സെക്കൻഡ് നേരത്തേക്ക് സ്‌ക്രീനിൽ ഹോൾഡ് ചെയ്യുക. ഈ ബാനർ നീക്കം ചെയ്യാൻ, SandFly ക്രമീകരണത്തിലേക്ക് പോകുക.</string>
   <string name="reset_gesture_settings_title">വിരൽചലന ക്രമീകരണം റീസെറ്റ് ചെയ്യുക</string>
@@ -1364,7 +1364,7 @@
     <string name="template_battery_level_unknown">ബാറ്ററി നില അജ്ഞാതമാണ്</string>
     <string name="value_charger_connected">ചാർജർ ബന്ധിപ്പിച്ചു</string>
     <string name="title_pref_screen_announcements">സ്‌ക്രീൻ ഓണും ഓഫും</string>
-    <string name="summary_pref_screen_announcements">സ്‌ക്രീൻ ഓഫാക്കുമ്പോഴോ ഓണായിരിക്കുമ്പോഴോ ഫോൺ അൺലോക്ക് ചെയ്യപ്പെടുമ്പോഴോ SandFly എന്താണ് പറയുന്നതെന്ന് തിരഞ്ഞെടുക്കുക</string>
+    <string name="summary_pref_screen_announcements">സ്‌ക്രീൻ ഓഫാകുമ്പോഴോ ഓണാകുമ്പോഴോ ഫോൺ അൺലോക്ക് ചെയ്യുമ്പോഴും SandFly എന്ത് പറയണമെന്ന് തിരഞ്ഞെടുക്കുക</string>
     <string name="title_screen_announcements_screen_off">സ്ക്രീൻ ഓഫ് ചെയ്യുമ്പോൾ</string>
     <string name="title_screen_announcements_screen_on">സ്ക്രീൻ ഓൺ ചെയ്യുമ്പോൾ</string>
     <string name="title_screen_announcements_unlock">ഫോൺ അൺലോക്ക് ചെയ്യുമ്പോൾ</string>
