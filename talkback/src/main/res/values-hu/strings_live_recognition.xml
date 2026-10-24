@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Csatlakozás a Geminihez…</string>
     <string name="live_recognition_cloud_title">Küldesz kameraképeket a Gemininek?</string>
     <string name="live_recognition_cloud_message">A Jelenetek, a Mutasd és olvasd, a Személyek észlelése és az Ajtók észlelése néhány másodpercenként elküld egy képet a kamerából a Google Gemini API-jának. A szöveg felismerése ezen a telefonon történik.\n\nIngyenes API-kulccsal a Google megőrizheti, amit kap, felhasználhatja termékei fejlesztéséhez, és emberekkel is átnézetheti. A generatív MI kísérleti, ezért hibázni fog.</string>
+    <string name="live_recognition_service_title">Küldesz kameraképeket ide: <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">A Jelenetek, a Mutasd és olvasd, a Személyek észlelése és az Ajtók észlelése néhány másodpercenként elküld egy képet a kamerából ide: <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>. A szöveg felismerése ezen a telefonon történik.\n\nA szolgáltatás saját feltételei és adatvédelmi irányelvei érvényesek. A generatív MI kísérleti, ezért hibázni fog.</string>
     <string name="live_recognition_send">Képek küldése</string>
     <string name="live_recognition_camera_permission">Nincs kameraengedély</string>
     <string name="live_recognition_camera_error">Nem sikerült megnyitni a kamerát</string>

@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Menghubungkan ke Gemini…</string>
     <string name="live_recognition_cloud_title">Kirim gambar kamera ke Gemini?</string>
     <string name="live_recognition_cloud_message">Pemandangan, Tunjuk dan baca, Deteksi orang, dan Deteksi pintu mengirim gambar dari kamera ke Gemini API Google setiap beberapa detik. Teks dikenali di ponsel ini.\n\nDengan kunci API gratis, Google dapat menyimpan apa yang diterimanya, menggunakannya untuk meningkatkan produknya, dan meminta orang meninjaunya. AI generatif masih eksperimental, jadi akan membuat kesalahan.</string>
+    <string name="live_recognition_service_title">Kirim gambar kamera ke <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Pemandangan, Tunjuk dan baca, Deteksi orang, dan Deteksi pintu mengirim gambar dari kamera ke <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> setiap beberapa detik. Teks dikenali di ponsel ini.\n\nPersyaratan dan kebijakan privasi layanan tersebut berlaku. AI generatif masih eksperimental, jadi akan membuat kesalahan.</string>
     <string name="live_recognition_send">Kirim gambar</string>
     <string name="live_recognition_camera_permission">Tidak ada izin kamera</string>
     <string name="live_recognition_camera_error">Kamera tidak dapat dibuka</string>

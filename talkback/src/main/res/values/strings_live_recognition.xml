@@ -28,7 +28,11 @@
     <string name="live_recognition_cloud_title">Send camera images to Gemini?</string>
     <!-- Message of the dialog shown before camera images are first sent to Gemini. [CHAR LIMIT=NONE] -->
     <string name="live_recognition_cloud_message">Scenes, Point and Speak, People detection and Door detection send an image from the camera to Google\'s Gemini API every few seconds. Text is recognized on this phone.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes.</string>
-    <!-- Button of the dialog that sends camera images to Gemini. [CHAR LIMIT=20] -->
+    <!-- Title of the dialog shown before camera images are first sent to the AI service the user set up, such as api.anthropic.com. [CHAR LIMIT=NONE] -->
+    <string name="live_recognition_service_title">Send camera images to <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <!-- Message of the dialog shown before camera images are first sent to the AI service the user set up. [CHAR LIMIT=NONE] -->
+    <string name="live_recognition_service_message">Scenes, Point and Speak, People detection and Door detection send an image from the camera to <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> every few seconds. Text is recognized on this phone.\n\nThe service\'s own terms and privacy policy apply. Generative AI is experimental, so it will make mistakes.</string>
+    <!-- Button of the dialog that sends camera images to Gemini or another AI service. [CHAR LIMIT=20] -->
     <string name="live_recognition_send">Send images</string>
     <!-- Spoken when the camera permission was not given. [CHAR LIMIT=NONE] -->
     <string name="live_recognition_camera_permission">No camera permission</string>

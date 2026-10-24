@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Yhdistetään Geminiin…</string>
     <string name="live_recognition_cloud_title">Lähetetäänkö kamerakuvia Geminiin?</string>
     <string name="live_recognition_cloud_message">Näkymät, Osoita ja lue, Ihmisten tunnistus ja Ovien tunnistus lähettävät muutaman sekunnin välein kuvan kamerasta Googlen Gemini API:lle. Teksti tunnistetaan tällä puhelimella.\n\nIlmaisella API-avaimella Google voi säilyttää vastaanottamansa tiedot, käyttää niitä tuotteidensa parantamiseen ja antaa ihmisten tarkistaa ne. Generatiivinen tekoäly on kokeellinen, joten se tekee virheitä.</string>
+    <string name="live_recognition_service_title">Lähetetäänkö kamerakuvia palveluun <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Näkymät, Osoita ja lue, Ihmisten tunnistus ja Ovien tunnistus lähettävät muutaman sekunnin välein kuvan kamerasta palveluun <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>. Teksti tunnistetaan tällä puhelimella.\n\nPalvelun omia ehtoja ja tietosuojakäytäntöä sovelletaan. Generatiivinen tekoäly on kokeellinen, joten se tekee virheitä.</string>
     <string name="live_recognition_send">Lähetä kuvat</string>
     <string name="live_recognition_camera_permission">Ei kameran käyttöoikeutta</string>
     <string name="live_recognition_camera_error">Kameraa ei voitu avata</string>

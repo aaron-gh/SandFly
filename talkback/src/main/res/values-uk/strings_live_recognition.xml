@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Підключення до Gemini…</string>
     <string name="live_recognition_cloud_title">Надсилати зображення з камери в Gemini?</string>
     <string name="live_recognition_cloud_message">«Сцени», «Покажи й прочитай», «Виявлення людей» і «Виявлення дверей» кожні кілька секунд надсилають зображення з камери в Gemini API від Google. Текст розпізнається на цьому телефоні.\n\nЗ безкоштовним ключем API Google може зберігати отримане, використовувати це для вдосконалення своїх продуктів і передавати на перевірку людям. Генеративний ШІ експериментальний, тому він робитиме помилки.</string>
+    <string name="live_recognition_service_title">Надсилати зображення з камери на <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">«Сцени», «Покажи й прочитай», «Виявлення людей» і «Виявлення дверей» кожні кілька секунд надсилають зображення з камери на <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>. Текст розпізнається на цьому телефоні.\n\nДіють умови й політика конфіденційності сервісу. Генеративний ШІ експериментальний, тому він робитиме помилки.</string>
     <string name="live_recognition_send">Надіслати зображення</string>
     <string name="live_recognition_camera_permission">Немає дозволу на камеру</string>
     <string name="live_recognition_camera_error">Не вдалося відкрити камеру</string>

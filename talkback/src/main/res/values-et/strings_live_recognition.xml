@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Geminiga ühendamine…</string>
     <string name="live_recognition_cloud_title">Kas saata kaamerapildid Geminile?</string>
     <string name="live_recognition_cloud_message">Stseenid, Osuta ja loe, Inimeste tuvastamine ja Uste tuvastamine saadavad iga paari sekundi järel kaamerast pildi Google\'i Gemini API-le. Tekst tuvastatakse selles telefonis.\n\nTasuta API-võtmega võib Google saadud andmed säilitada, kasutada neid oma toodete täiustamiseks ja lasta inimestel need üle vaadata. Generatiivne AI on katseline, seega teeb see vigu.</string>
+    <string name="live_recognition_service_title">Kas saata kaamerapildid teenusele <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Stseenid, Osuta ja loe, Inimeste tuvastamine ja Uste tuvastamine saadavad iga paari sekundi järel kaamerast pildi teenusele <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>. Tekst tuvastatakse selles telefonis.\n\nKehtivad teenuse enda tingimused ja privaatsuseeskirjad. Generatiivne AI on katseline, seega teeb see vigu.</string>
     <string name="live_recognition_send">Saada pildid</string>
     <string name="live_recognition_camera_permission">Kaamera luba puudub</string>
     <string name="live_recognition_camera_error">Kaamerat ei saanud avada</string>

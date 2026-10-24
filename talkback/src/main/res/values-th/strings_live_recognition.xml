@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">กำลังเชื่อมต่อกับ Gemini…</string>
     <string name="live_recognition_cloud_title">ส่งภาพจากกล้องไปยัง Gemini ไหม</string>
     <string name="live_recognition_cloud_message">ฉาก ชี้และอ่าน การตรวจจับบุคคล และการตรวจจับประตู จะส่งภาพจากกล้องไปยัง Gemini API ของ Google ทุกๆ ไม่กี่วินาที ข้อความจะได้รับการจดจำในโทรศัพท์เครื่องนี้\n\nเมื่อใช้คีย์ API แบบไม่มีค่าใช้จ่าย Google อาจเก็บสิ่งที่ได้รับไว้ ใช้เพื่อปรับปรุงผลิตภัณฑ์ และให้บุคคลตรวจสอบ Generative AI ยังอยู่ในขั้นทดลอง จึงจะมีข้อผิดพลาด</string>
+    <string name="live_recognition_service_title">ส่งภาพจากกล้องไปยัง <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> ไหม</string>
+    <string name="live_recognition_service_message">ฉาก ชี้และอ่าน การตรวจจับบุคคล และการตรวจจับประตู จะส่งภาพจากกล้องไปยัง <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> ทุกๆ ไม่กี่วินาที ข้อความจะได้รับการจดจำในโทรศัพท์เครื่องนี้\n\nข้อกำหนดและนโยบายความเป็นส่วนตัวของบริการนั้นมีผลบังคับใช้ Generative AI ยังอยู่ในขั้นทดลอง จึงจะมีข้อผิดพลาด</string>
     <string name="live_recognition_send">ส่งภาพ</string>
     <string name="live_recognition_camera_permission">ไม่มีสิทธิ์เข้าถึงกล้อง</string>
     <string name="live_recognition_camera_error">เปิดกล้องไม่ได้</string>

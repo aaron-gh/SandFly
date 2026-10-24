@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Conectando con Gemini…</string>
     <string name="live_recognition_cloud_title">Queres enviar imaxes da cámara a Gemini?</string>
     <string name="live_recognition_cloud_message">Escenas, Sinalar e ler, Detección de persoas e Detección de portas envían unha imaxe da cámara á API de Gemini de Google cada poucos segundos. O texto recoñécese neste teléfono.\n\nCunha clave de API gratuíta, Google pode conservar o que recibe, utilizalo para mellorar os seus produtos e facer que o revisen persoas. A IA xerativa é experimental, polo que cometerá erros.</string>
+    <string name="live_recognition_service_title">Queres enviar imaxes da cámara a <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Escenas, Sinalar e ler, Detección de persoas e Detección de portas envían unha imaxe da cámara a <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> cada poucos segundos. O texto recoñécese neste teléfono.\n\nAplícanse as condicións e a política de privacidade do propio servizo. A IA xerativa é experimental, polo que cometerá erros.</string>
     <string name="live_recognition_send">Enviar imaxes</string>
     <string name="live_recognition_camera_permission">Non hai permiso de cámara</string>
     <string name="live_recognition_camera_error">Non se puido abrir a cámara</string>

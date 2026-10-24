@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Kobler til Gemini…</string>
     <string name="live_recognition_cloud_title">Vil du sende kamerabilder til Gemini?</string>
     <string name="live_recognition_cloud_message">Scener, Pek og les, Persongjenkjenning og Dørgjenkjenning sender et bilde fra kameraet til Googles Gemini API med noen sekunders mellomrom. Tekst gjenkjennes på denne telefonen.\n\nMed en gratis API-nøkkel kan Google lagre det som mottas, bruke det til å forbedre produktene sine og la mennesker gå gjennom det. Generativ KI er eksperimentell og gjør derfor feil.</string>
+    <string name="live_recognition_service_title">Vil du sende kamerabilder til <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Scener, Pek og les, Persongjenkjenning og Dørgjenkjenning sender et bilde fra kameraet til <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> med noen sekunders mellomrom. Tekst gjenkjennes på denne telefonen.\n\nTjenestens egne vilkår og personvernregler gjelder. Generativ KI er eksperimentell og gjør derfor feil.</string>
     <string name="live_recognition_send">Send bilder</string>
     <string name="live_recognition_camera_permission">Ingen kameratillatelse</string>
     <string name="live_recognition_camera_error">Kameraet kunne ikke åpnes</string>

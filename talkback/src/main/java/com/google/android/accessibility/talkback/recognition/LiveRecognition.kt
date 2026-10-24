@@ -22,6 +22,11 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.actor.gemini.ImageQuestions
+import com.google.android.accessibility.utils.Performance
+import com.google.android.accessibility.utils.output.FeedbackItem
+import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.gestures.GestureManifold
 import java.lang.ref.WeakReference
@@ -30,6 +35,24 @@ import java.lang.ref.WeakReference
 object LiveRecognition {
   private var activity = WeakReference<LiveRecognitionActivity>(null)
   private var selected = RecognitionMode.SCENES
+  private var questions: ImageQuestions? = null
+
+  /** Asks the on-device model or the AI service in use. One for the process, as it has threads. */
+  internal fun imageQuestions(context: Context): ImageQuestions =
+    questions ?: ImageQuestions(context) { speak(it, interrupt = true) }.also { questions = it }
+
+  /**
+   * Speaks [text] even while other audio plays, as the user turned recognition on. Without
+   * [interrupt], it waits for speech that is going on, and can be stopped with the other results.
+   */
+  internal fun speak(text: String, interrupt: Boolean) {
+    TalkBackService.getInstance()?.speechController?.speak(text, Performance.EVENT_ID_UNTRACKED,
+      SpeechController.SpeakOptions.create()
+        .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)
+        .setUtteranceGroup(
+          if (interrupt) SpeechController.UTTERANCE_GROUP_DEFAULT else SpeechController.UTTERANCE_GROUP_LIVE_RECOGNITION)
+        .setQueueMode(if (interrupt) SpeechController.QUEUE_MODE_INTERRUPT else SpeechController.QUEUE_MODE_QUEUE))
+  }
 
   // Uses the rear camera only.
   @SuppressLint("UnsupportedChromeOsCameraSystemFeature")

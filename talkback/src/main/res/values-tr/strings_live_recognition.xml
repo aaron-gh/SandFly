@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Gemini\'ye bağlanılıyor…</string>
     <string name="live_recognition_cloud_title">Kamera görüntüleri Gemini\'ye gönderilsin mi?</string>
     <string name="live_recognition_cloud_message">Sahneler, Göster ve oku, Kişi algılama ve Kapı algılama, birkaç saniyede bir kameradan bir görüntüyü Google\'ın Gemini API\'sine gönderir. Metin bu telefonda tanınır.\n\nÜcretsiz bir API anahtarıyla Google, aldıklarını saklayabilir, ürünlerini geliştirmek için kullanabilir ve insanlara inceletebilir. Üretken yapay zeka deneyseldir, bu yüzden hata yapacaktır.</string>
+    <string name="live_recognition_service_title">Kamera görüntüleri <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> adresine gönderilsin mi?</string>
+    <string name="live_recognition_service_message">Sahneler, Göster ve oku, Kişi algılama ve Kapı algılama, birkaç saniyede bir kameradan bir görüntüyü <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> adresine gönderir. Metin bu telefonda tanınır.\n\nHizmetin kendi şartları ve gizlilik politikası geçerlidir. Üretken yapay zeka deneyseldir, bu yüzden hata yapacaktır.</string>
     <string name="live_recognition_send">Görüntüleri gönder</string>
     <string name="live_recognition_camera_permission">Kamera izni yok</string>
     <string name="live_recognition_camera_error">Kamera açılamadı</string>

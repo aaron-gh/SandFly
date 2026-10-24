@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Se conectează la Gemini…</string>
     <string name="live_recognition_cloud_title">Trimiți imagini de la cameră către Gemini?</string>
     <string name="live_recognition_cloud_message">Scene, Indică și citește, Detectarea persoanelor și Detectarea ușilor trimit la câteva secunde o imagine de la cameră către API-ul Gemini de la Google. Textul este recunoscut pe acest telefon.\n\nCu o cheie API gratuită, Google poate păstra ce primește, îl poate folosi pentru a-și îmbunătăți produsele și îl poate da spre verificare unor persoane. IA generativă este experimentală, așa că va face greșeli.</string>
+    <string name="live_recognition_service_title">Trimiți imagini de la cameră către <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Scene, Indică și citește, Detectarea persoanelor și Detectarea ușilor trimit la câteva secunde o imagine de la cameră către <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>. Textul este recunoscut pe acest telefon.\n\nSe aplică termenii și politica de confidențialitate ale serviciului. IA generativă este experimentală, așa că va face greșeli.</string>
     <string name="live_recognition_send">Trimite imaginile</string>
     <string name="live_recognition_camera_permission">Nu există permisiune pentru cameră</string>
     <string name="live_recognition_camera_error">Camera nu a putut fi deschisă</string>

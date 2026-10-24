@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Łączenie z Gemini…</string>
     <string name="live_recognition_cloud_title">Wysyłać obrazy z aparatu do Gemini?</string>
     <string name="live_recognition_cloud_message">Sceny, Wskaż i czytaj, Wykrywanie osób i Wykrywanie drzwi co kilka sekund wysyłają obraz z aparatu do interfejsu Gemini API Google. Tekst jest rozpoznawany na tym telefonie.\n\nPrzy bezpłatnym kluczu API Google może przechowywać to, co otrzyma, używać tego do ulepszania swoich produktów i zlecać sprawdzanie tego ludziom. Generatywna AI jest eksperymentalna, więc będzie popełniać błędy.</string>
+    <string name="live_recognition_service_title">Wysyłać obrazy z aparatu do <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Sceny, Wskaż i czytaj, Wykrywanie osób i Wykrywanie drzwi co kilka sekund wysyłają obraz z aparatu do <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>. Tekst jest rozpoznawany na tym telefonie.\n\nObowiązują warunki i polityka prywatności usługi. Generatywna AI jest eksperymentalna, więc będzie popełniać błędy.</string>
     <string name="live_recognition_send">Wyślij obrazy</string>
     <string name="live_recognition_camera_permission">Brak uprawnień do aparatu</string>
     <string name="live_recognition_camera_error">Nie udało się otworzyć aparatu</string>

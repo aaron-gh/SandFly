@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Connecting to Gemini…</string>
     <string name="live_recognition_cloud_title">Send camera images to Gemini?</string>
     <string name="live_recognition_cloud_message">Scenes, Point and Speak, People detection and Door detection send an image from the camera to Google\'s Gemini API every few seconds. Text is recognised on this phone.\n\nWith a free API key, Google may keep what it receives, use it to improve its products, and have people review it. Generative AI is experimental, so it will make mistakes.</string>
+    <string name="live_recognition_service_title">Send camera images to <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Scenes, Point and Speak, People detection and Door detection send an image from the camera to <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> every few seconds. Text is recognised on this phone.\n\nThe service\'s own terms and privacy policy apply. Generative AI is experimental, so it will make mistakes.</string>
     <string name="live_recognition_send">Send images</string>
     <string name="live_recognition_camera_permission">No camera permission</string>
     <string name="live_recognition_camera_error">The camera could not be opened</string>

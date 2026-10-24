@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">جارٍ الاتصال بـ Gemini…</string>
     <string name="live_recognition_cloud_title">هل تريد إرسال صور الكاميرا إلى Gemini؟</string>
     <string name="live_recognition_cloud_message">ترسل أوضاع \"المشاهد\" و\"الإشارة والقراءة\" و\"رصد الأشخاص\" و\"رصد الأبواب\" صورة من الكاميرا إلى Gemini API من Google كل بضع ثوانٍ. يتم التعرّف على النص على هذا الهاتف.\n\nمع مفتاح API مجاني، قد تحتفظ Google بما تتلقّاه وتستخدمه لتحسين منتجاتها وتجعل أشخاصًا يراجعونه. الذكاء الاصطناعي التوليدي تجريبي، لذا سيرتكب أخطاء.</string>
+    <string name="live_recognition_service_title">هل تريد إرسال صور الكاميرا إلى <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>؟</string>
+    <string name="live_recognition_service_message">ترسل أوضاع \"المشاهد\" و\"الإشارة والقراءة\" و\"رصد الأشخاص\" و\"رصد الأبواب\" صورة من الكاميرا إلى <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> كل بضع ثوانٍ. يتم التعرّف على النص على هذا الهاتف.\n\nتنطبق بنود الخدمة وسياسة الخصوصية الخاصة بها. الذكاء الاصطناعي التوليدي تجريبي، لذا سيرتكب أخطاء.</string>
     <string name="live_recognition_send">إرسال الصور</string>
     <string name="live_recognition_camera_permission">لا يوجد إذن بالوصول إلى الكاميرا</string>
     <string name="live_recognition_camera_error">تعذّر فتح الكاميرا</string>
