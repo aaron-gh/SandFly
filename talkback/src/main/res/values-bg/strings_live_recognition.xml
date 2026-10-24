@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Разпознаване на живо</string>
+    <string name="live_recognition_hint">Плъзнете нагоре или надолу, за да изберете режим, след което докоснете двукратно, за да го включите или изключите</string>
+    <string name="live_recognition_scenes">Сцени</string>
+    <string name="live_recognition_text">Текст</string>
+    <string name="live_recognition_point">Посочи и прочети</string>
+    <string name="live_recognition_people">Откриване на хора</string>
+    <string name="live_recognition_doors">Откриване на врати</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Насочете задната камера към това, което искате да бъде описано. За „Посочи и прочети“ посочете с пръст текст в изображението от камерата. Описанията може да са грешни. Не разчитайте на тях, за да се придвижвате безопасно.</string>
+    <string name="live_recognition_camera_off">Камерата е изключена</string>
+    <string name="live_recognition_camera_on">Камерата е включена</string>
+    <string name="live_recognition_connecting">Свързване с Gemini…</string>
+    <string name="live_recognition_cloud_title">Да се изпращат ли изображения от камерата до Gemini?</string>
+    <string name="live_recognition_cloud_message">„Сцени“, „Посочи и прочети“, „Откриване на хора“ и „Откриване на врати“ изпращат изображение от камерата до Gemini API на Google на всеки няколко секунди. Текстът се разпознава на този телефон.\n\nС безплатен API ключ Google може да запазва полученото, да го използва за подобряване на продуктите си и да го дава за преглед на хора. Генеративният ИИ е експериментален, така че ще прави грешки.</string>
+    <string name="live_recognition_send">Изпращане на изображенията</string>
+    <string name="live_recognition_camera_permission">Няма разрешение за камерата</string>
+    <string name="live_recognition_camera_error">Камерата не можа да бъде отворена</string>
+    <string name="live_recognition_connection_error">Свързването с Gemini не бе успешно. Режимите, които използват Gemini, бяха изключени.</string>
+    <string name="live_recognition_timeout">Gemini не отговори навреме. Режимите, които използват Gemini, бяха изключени.</string>
+    <string name="live_recognition_session_ended">Сесията на Gemini приключи. Режимите, които използват Gemini, бяха изключени.</string>
+    <string name="live_recognition_ocr_error">Разпознаването на текст не е налично. „Текст“ бе изключен.</string>
+    <string name="live_recognition_point_above">Четене над върха на пръста</string>
+    <string name="live_recognition_point_below">Четене под върха на пръста</string>
+</resources>

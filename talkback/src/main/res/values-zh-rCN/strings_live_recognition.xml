@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">实时识别</string>
+    <string name="live_recognition_hint">向上或向下滑动可选择模式，然后点按两次可开启或关闭该模式</string>
+    <string name="live_recognition_scenes">场景</string>
+    <string name="live_recognition_text">文字</string>
+    <string name="live_recognition_point">指向并朗读</string>
+    <string name="live_recognition_people">人物检测</string>
+    <string name="live_recognition_doors">门检测</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>，<xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">将后置摄像头对准要描述的内容。使用“指向并朗读”时，请用手指指向摄像头画面中的文字。描述可能有误。请勿依赖它们来安全行走。</string>
+    <string name="live_recognition_camera_off">摄像头已关闭</string>
+    <string name="live_recognition_camera_on">摄像头已开启</string>
+    <string name="live_recognition_connecting">正在连接 Gemini…</string>
+    <string name="live_recognition_cloud_title">要将摄像头图像发送给 Gemini 吗？</string>
+    <string name="live_recognition_cloud_message">“场景”“指向并朗读”“人物检测”和“门检测”每隔几秒钟就会将一张摄像头图像发送到 Google 的 Gemini API。文字在此手机上识别。\n\n使用免费 API 密钥时，Google 可能会保留收到的内容，将其用于改进产品，并让人工进行审核。生成式 AI 仍处于实验阶段，因此会出错。</string>
+    <string name="live_recognition_send">发送图像</string>
+    <string name="live_recognition_camera_permission">没有摄像头权限</string>
+    <string name="live_recognition_camera_error">无法打开摄像头</string>
+    <string name="live_recognition_connection_error">连接 Gemini 失败。使用 Gemini 的模式已关闭。</string>
+    <string name="live_recognition_timeout">Gemini 未及时回复。使用 Gemini 的模式已关闭。</string>
+    <string name="live_recognition_session_ended">Gemini 会话已结束。使用 Gemini 的模式已关闭。</string>
+    <string name="live_recognition_ocr_error">文字识别不可用。“文字”已关闭。</string>
+    <string name="live_recognition_point_above">朗读指尖上方</string>
+    <string name="live_recognition_point_below">朗读指尖下方</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Reconeixement en directe</string>
+    <string name="live_recognition_hint">Llisca cap amunt o cap avall per triar un mode i, després, fes doble toc per activar-lo o desactivar-lo</string>
+    <string name="live_recognition_scenes">Escenes</string>
+    <string name="live_recognition_text">Text</string>
+    <string name="live_recognition_point">Assenyalar i llegir</string>
+    <string name="live_recognition_people">Detecció de persones</string>
+    <string name="live_recognition_doors">Detecció de portes</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Apunta la càmera posterior cap al que vulguis que es descrigui. Per a Assenyalar i llegir, assenyala amb un dit un text a la imatge de la càmera. Les descripcions poden ser incorrectes. No hi confiïs per desplaçar-te amb seguretat.</string>
+    <string name="live_recognition_camera_off">Càmera desactivada</string>
+    <string name="live_recognition_camera_on">Càmera activada</string>
+    <string name="live_recognition_connecting">S\'està connectant amb Gemini…</string>
+    <string name="live_recognition_cloud_title">Vols enviar imatges de la càmera a Gemini?</string>
+    <string name="live_recognition_cloud_message">Escenes, Assenyalar i llegir, Detecció de persones i Detecció de portes envien una imatge de la càmera a l\'API de Gemini de Google cada pocs segons. El text es reconeix en aquest telèfon.\n\nAmb una clau d\'API gratuïta, Google pot conservar el que rep, utilitzar-ho per millorar els seus productes i fer que ho revisin persones. La IA generativa és experimental, per tant, cometrà errors.</string>
+    <string name="live_recognition_send">Envia les imatges</string>
+    <string name="live_recognition_camera_permission">No hi ha permís de càmera</string>
+    <string name="live_recognition_camera_error">No s\'ha pogut obrir la càmera</string>
+    <string name="live_recognition_connection_error">No s\'ha pogut connectar amb Gemini. S\'han desactivat els modes que utilitzen Gemini.</string>
+    <string name="live_recognition_timeout">Gemini no ha respost a temps. S\'han desactivat els modes que utilitzen Gemini.</string>
+    <string name="live_recognition_session_ended">La sessió de Gemini ha finalitzat. S\'han desactivat els modes que utilitzen Gemini.</string>
+    <string name="live_recognition_ocr_error">El reconeixement de text no està disponible. S\'ha desactivat Text.</string>
+    <string name="live_recognition_point_above">Llegeix a sobre de la punta del dit</string>
+    <string name="live_recognition_point_below">Llegeix a sota de la punta del dit</string>
+</resources>

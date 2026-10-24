@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Canlı tanıma</string>
+    <string name="live_recognition_hint">Bir mod seçmek için yukarı veya aşağı kaydırın, ardından açmak ya da kapatmak için iki kez dokunun</string>
+    <string name="live_recognition_scenes">Sahneler</string>
+    <string name="live_recognition_text">Metin</string>
+    <string name="live_recognition_point">Göster ve oku</string>
+    <string name="live_recognition_people">Kişi algılama</string>
+    <string name="live_recognition_doors">Kapı algılama</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Arka kamerayı tanımlanmasını istediğiniz şeye doğrultun. Göster ve oku için kamera görüntüsündeki bir metni parmağınızla gösterin. Açıklamalar yanlış olabilir. Güvenli bir şekilde hareket etmek için bunlara güvenmeyin.</string>
+    <string name="live_recognition_camera_off">Kamera kapalı</string>
+    <string name="live_recognition_camera_on">Kamera açık</string>
+    <string name="live_recognition_connecting">Gemini\'ye bağlanılıyor…</string>
+    <string name="live_recognition_cloud_title">Kamera görüntüleri Gemini\'ye gönderilsin mi?</string>
+    <string name="live_recognition_cloud_message">Sahneler, Göster ve oku, Kişi algılama ve Kapı algılama, birkaç saniyede bir kameradan bir görüntüyü Google\'ın Gemini API\'sine gönderir. Metin bu telefonda tanınır.\n\nÜcretsiz bir API anahtarıyla Google, aldıklarını saklayabilir, ürünlerini geliştirmek için kullanabilir ve insanlara inceletebilir. Üretken yapay zeka deneyseldir, bu yüzden hata yapacaktır.</string>
+    <string name="live_recognition_send">Görüntüleri gönder</string>
+    <string name="live_recognition_camera_permission">Kamera izni yok</string>
+    <string name="live_recognition_camera_error">Kamera açılamadı</string>
+    <string name="live_recognition_connection_error">Gemini bağlantısı başarısız oldu. Gemini kullanan modlar kapatıldı.</string>
+    <string name="live_recognition_timeout">Gemini zamanında yanıt vermedi. Gemini kullanan modlar kapatıldı.</string>
+    <string name="live_recognition_session_ended">Gemini oturumu sona erdi. Gemini kullanan modlar kapatıldı.</string>
+    <string name="live_recognition_ocr_error">Metin tanıma kullanılamıyor. Metin kapatıldı.</string>
+    <string name="live_recognition_point_above">Parmak ucunun üstünü oku</string>
+    <string name="live_recognition_point_below">Parmak ucunun altını oku</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">লাইভ শনাক্তকরণ</string>
+    <string name="live_recognition_hint">মোড বেছে নিতে উপরে বা নিচে সোয়াইপ করুন, তারপর সেটি চালু বা বন্ধ করতে ডবল ট্যাপ করুন</string>
+    <string name="live_recognition_scenes">দৃশ্য</string>
+    <string name="live_recognition_text">টেক্সট</string>
+    <string name="live_recognition_point">নির্দেশ করুন ও পড়ুন</string>
+    <string name="live_recognition_people">মানুষ শনাক্তকরণ</string>
+    <string name="live_recognition_doors">দরজা শনাক্তকরণ</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">আপনি যা বর্ণনা করাতে চান, পেছনের ক্যামেরা সেদিকে তাক করুন। \'নির্দেশ করুন ও পড়ুন\'-এর জন্য ক্যামেরার ছবিতে কোনো টেক্সটের দিকে আঙুল দিয়ে নির্দেশ করুন। বর্ণনা ভুল হতে পারে। নিরাপদে চলাফেরা করতে এর উপর নির্ভর করবেন না।</string>
+    <string name="live_recognition_camera_off">ক্যামেরা বন্ধ</string>
+    <string name="live_recognition_camera_on">ক্যামেরা চালু</string>
+    <string name="live_recognition_connecting">Gemini-এর সাথে কানেক্ট করা হচ্ছে…</string>
+    <string name="live_recognition_cloud_title">ক্যামেরার ছবি Gemini-এ পাঠাবেন?</string>
+    <string name="live_recognition_cloud_message">দৃশ্য, নির্দেশ করুন ও পড়ুন, মানুষ শনাক্তকরণ এবং দরজা শনাক্তকরণ প্রতি কয়েক সেকেন্ডে ক্যামেরা থেকে একটি ছবি Google-এর Gemini API-তে পাঠায়। টেক্সট এই ফোনেই শনাক্ত করা হয়।\n\nবিনামূল্যের API কী ব্যবহার করলে Google যা পায় তা রেখে দিতে, নিজের প্রোডাক্ট উন্নত করতে ব্যবহার করতে এবং মানুষকে দিয়ে পর্যালোচনা করাতে পারে। জেনারেটিভ AI পরীক্ষামূলক, তাই এটি ভুল করবে।</string>
+    <string name="live_recognition_send">ছবি পাঠান</string>
+    <string name="live_recognition_camera_permission">ক্যামেরার অনুমতি নেই</string>
+    <string name="live_recognition_camera_error">ক্যামেরা খোলা যায়নি</string>
+    <string name="live_recognition_connection_error">Gemini-এর সাথে কানেক্ট করা যায়নি। যে মোডগুলি Gemini ব্যবহার করে সেগুলি বন্ধ করা হয়েছে।</string>
+    <string name="live_recognition_timeout">Gemini সময়মতো উত্তর দেয়নি। যে মোডগুলি Gemini ব্যবহার করে সেগুলি বন্ধ করা হয়েছে।</string>
+    <string name="live_recognition_session_ended">Gemini সেশন শেষ হয়েছে। যে মোডগুলি Gemini ব্যবহার করে সেগুলি বন্ধ করা হয়েছে।</string>
+    <string name="live_recognition_ocr_error">টেক্সট শনাক্তকরণ উপলভ্য নয়। টেক্সট বন্ধ করা হয়েছে।</string>
+    <string name="live_recognition_point_above">আঙুলের ডগার উপরে পড়ুন</string>
+    <string name="live_recognition_point_below">আঙুলের ডগার নিচে পড়ুন</string>
+</resources>

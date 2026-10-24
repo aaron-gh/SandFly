@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Direktegjenkjenning</string>
+    <string name="live_recognition_hint">Sveip opp eller ned for å velge en modus, og dobbelttrykk for å slå den på eller av</string>
+    <string name="live_recognition_scenes">Scener</string>
+    <string name="live_recognition_text">Tekst</string>
+    <string name="live_recognition_point">Pek og les</string>
+    <string name="live_recognition_people">Persongjenkjenning</string>
+    <string name="live_recognition_doors">Dørgjenkjenning</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Rett det bakre kameraet mot det du vil ha beskrevet. For Pek og les peker du med en finger på tekst i kamerabildet. Beskrivelser kan være feil. Ikke stol på dem for å bevege deg trygt.</string>
+    <string name="live_recognition_camera_off">Kamera av</string>
+    <string name="live_recognition_camera_on">Kamera på</string>
+    <string name="live_recognition_connecting">Kobler til Gemini…</string>
+    <string name="live_recognition_cloud_title">Vil du sende kamerabilder til Gemini?</string>
+    <string name="live_recognition_cloud_message">Scener, Pek og les, Persongjenkjenning og Dørgjenkjenning sender et bilde fra kameraet til Googles Gemini API med noen sekunders mellomrom. Tekst gjenkjennes på denne telefonen.\n\nMed en gratis API-nøkkel kan Google lagre det som mottas, bruke det til å forbedre produktene sine og la mennesker gå gjennom det. Generativ KI er eksperimentell og gjør derfor feil.</string>
+    <string name="live_recognition_send">Send bilder</string>
+    <string name="live_recognition_camera_permission">Ingen kameratillatelse</string>
+    <string name="live_recognition_camera_error">Kameraet kunne ikke åpnes</string>
+    <string name="live_recognition_connection_error">Tilkoblingen til Gemini mislyktes. Moduser som bruker Gemini, er slått av.</string>
+    <string name="live_recognition_timeout">Gemini svarte ikke i tide. Moduser som bruker Gemini, er slått av.</string>
+    <string name="live_recognition_session_ended">Gemini-økten er avsluttet. Moduser som bruker Gemini, er slått av.</string>
+    <string name="live_recognition_ocr_error">Tekstgjenkjenning er ikke tilgjengelig. Tekst er slått av.</string>
+    <string name="live_recognition_point_above">Les over fingertuppen</string>
+    <string name="live_recognition_point_below">Les under fingertuppen</string>
+</resources>

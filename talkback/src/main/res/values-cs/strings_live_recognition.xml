@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Živé rozpoznávání</string>
+    <string name="live_recognition_hint">Přejetím nahoru nebo dolů vyberte režim a dvojitým klepnutím ho zapněte nebo vypněte</string>
+    <string name="live_recognition_scenes">Scény</string>
+    <string name="live_recognition_text">Text</string>
+    <string name="live_recognition_point">Ukázat a číst</string>
+    <string name="live_recognition_people">Detekce osob</string>
+    <string name="live_recognition_doors">Detekce dveří</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Namiřte zadní fotoaparát na to, co chcete popsat. U režimu Ukázat a číst ukažte prstem na text v obraze z fotoaparátu. Popisy mohou být chybné. Nespoléhejte na ně při bezpečném pohybu.</string>
+    <string name="live_recognition_camera_off">Fotoaparát vypnutý</string>
+    <string name="live_recognition_camera_on">Fotoaparát zapnutý</string>
+    <string name="live_recognition_connecting">Připojování ke Gemini…</string>
+    <string name="live_recognition_cloud_title">Odesílat snímky z fotoaparátu do Gemini?</string>
+    <string name="live_recognition_cloud_message">Scény, Ukázat a číst, Detekce osob a Detekce dveří každých několik sekund odesílají snímek z fotoaparátu do rozhraní Gemini API od Googlu. Text se rozpoznává v tomto telefonu.\n\nS bezplatným klíčem API může Google uchovávat, co obdrží, používat to ke zlepšování svých produktů a nechat to kontrolovat lidmi. Generativní AI je experimentální, takže bude dělat chyby.</string>
+    <string name="live_recognition_send">Odeslat snímky</string>
+    <string name="live_recognition_camera_permission">Chybí oprávnění k fotoaparátu</string>
+    <string name="live_recognition_camera_error">Fotoaparát se nepodařilo otevřít</string>
+    <string name="live_recognition_connection_error">Připojení ke Gemini se nezdařilo. Režimy, které používají Gemini, byly vypnuty.</string>
+    <string name="live_recognition_timeout">Gemini neodpověděl včas. Režimy, které používají Gemini, byly vypnuty.</string>
+    <string name="live_recognition_session_ended">Relace Gemini skončila. Režimy, které používají Gemini, byly vypnuty.</string>
+    <string name="live_recognition_ocr_error">Rozpoznávání textu není k dispozici. Text byl vypnut.</string>
+    <string name="live_recognition_point_above">Číst nad špičkou prstu</string>
+    <string name="live_recognition_point_below">Číst pod špičkou prstu</string>
+</resources>

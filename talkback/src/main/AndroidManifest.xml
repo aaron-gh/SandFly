@@ -11,6 +11,10 @@
     <uses-feature android:name="android.hardware.microphone" android:required="false" />
     <uses-feature android:name="android.hardware.location" android:required="false" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+
     <!-- Required for fingerprint gesture. -->
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
 
@@ -141,6 +145,13 @@
 
     <application
         android:supportsRtl="true">
+
+        <activity
+            android:name="com.google.android.accessibility.talkback.recognition.LiveRecognitionActivity"
+            android:exported="false"
+            android:label="@string/live_recognition_title"
+            android:launchMode="singleTop"
+            android:theme="@style/TalkBackSettings" />
 
         <!-- Keeps the on-device model download running and shows its progress. -->
         <service

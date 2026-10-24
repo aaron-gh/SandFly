@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Распазнаванне ў рэальным часе</string>
+    <string name="live_recognition_hint">Правядзіце ўверх або ўніз, каб выбраць рэжым, а потым двойчы націсніце, каб уключыць або выключыць яго</string>
+    <string name="live_recognition_scenes">Сцэны</string>
+    <string name="live_recognition_text">Тэкст</string>
+    <string name="live_recognition_point">Пакажы і прачытай</string>
+    <string name="live_recognition_people">Выяўленне людзей</string>
+    <string name="live_recognition_doors">Выяўленне дзвярэй</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Навядзіце заднюю камеру на тое, што трэба апісаць. Для рэжыму «Пакажы і прачытай» пакажыце пальцам на тэкст у выяве з камеры. Апісанні могуць быць няправільнымі. Не спадзявайцеся на іх, каб бяспечна перамяшчацца.</string>
+    <string name="live_recognition_camera_off">Камера выключана</string>
+    <string name="live_recognition_camera_on">Камера ўключана</string>
+    <string name="live_recognition_connecting">Падключэнне да Gemini…</string>
+    <string name="live_recognition_cloud_title">Адпраўляць выявы з камеры ў Gemini?</string>
+    <string name="live_recognition_cloud_message">«Сцэны», «Пакажы і прачытай», «Выяўленне людзей» і «Выяўленне дзвярэй» кожныя некалькі секунд адпраўляюць выяву з камеры ў Gemini API ад Google. Тэкст распазнаецца на гэтым тэлефоне.\n\nПры бясплатным ключы API Google можа захоўваць атрыманае, выкарыстоўваць гэта для паляпшэння сваіх прадуктаў і перадаваць на праверку людзям. Генератыўны ШІ эксперыментальны, таму ён будзе памыляцца.</string>
+    <string name="live_recognition_send">Адправіць выявы</string>
+    <string name="live_recognition_camera_permission">Няма дазволу на камеру</string>
+    <string name="live_recognition_camera_error">Не ўдалося адкрыць камеру</string>
+    <string name="live_recognition_connection_error">Не ўдалося падключыцца да Gemini. Рэжымы, якія выкарыстоўваюць Gemini, выключаны.</string>
+    <string name="live_recognition_timeout">Gemini не адказаў своечасова. Рэжымы, якія выкарыстоўваюць Gemini, выключаны.</string>
+    <string name="live_recognition_session_ended">Сеанс Gemini завяршыўся. Рэжымы, якія выкарыстоўваюць Gemini, выключаны.</string>
+    <string name="live_recognition_ocr_error">Распазнаванне тэксту недаступнае. «Тэкст» выключаны.</string>
+    <string name="live_recognition_point_above">Чытаць над кончыкам пальца</string>
+    <string name="live_recognition_point_below">Чытаць пад кончыкам пальца</string>
+</resources>

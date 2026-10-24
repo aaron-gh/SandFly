@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Live-Erkennung</string>
+    <string name="live_recognition_hint">Wische nach oben oder unten, um einen Modus zu wählen, und tippe dann doppelt, um ihn ein- oder auszuschalten</string>
+    <string name="live_recognition_scenes">Szenen</string>
+    <string name="live_recognition_text">Text</string>
+    <string name="live_recognition_point">Zeigen und Sprechen</string>
+    <string name="live_recognition_people">Personenerkennung</string>
+    <string name="live_recognition_doors">Türerkennung</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Richte die Rückkamera auf das, was beschrieben werden soll. Für „Zeigen und Sprechen“ zeigst du mit einem Finger im Kamerabild auf Text. Beschreibungen können falsch sein. Verlass dich nicht darauf, um dich sicher fortzubewegen.</string>
+    <string name="live_recognition_camera_off">Kamera aus</string>
+    <string name="live_recognition_camera_on">Kamera an</string>
+    <string name="live_recognition_connecting">Verbindung mit Gemini wird hergestellt…</string>
+    <string name="live_recognition_cloud_title">Kamerabilder an Gemini senden?</string>
+    <string name="live_recognition_cloud_message">Szenen, Zeigen und Sprechen, Personenerkennung und Türerkennung senden alle paar Sekunden ein Bild der Kamera an die Gemini API von Google. Text wird auf diesem Smartphone erkannt.\n\nMit einem kostenlosen API-Schlüssel kann Google speichern, was es empfängt, es zur Verbesserung seiner Produkte verwenden und von Menschen prüfen lassen. Generative KI ist experimentell und macht Fehler.</string>
+    <string name="live_recognition_send">Bilder senden</string>
+    <string name="live_recognition_camera_permission">Keine Kameraberechtigung</string>
+    <string name="live_recognition_camera_error">Die Kamera konnte nicht geöffnet werden</string>
+    <string name="live_recognition_connection_error">Verbindung mit Gemini fehlgeschlagen. Modi, die Gemini verwenden, wurden ausgeschaltet.</string>
+    <string name="live_recognition_timeout">Gemini hat nicht rechtzeitig geantwortet. Modi, die Gemini verwenden, wurden ausgeschaltet.</string>
+    <string name="live_recognition_session_ended">Die Gemini-Sitzung wurde beendet. Modi, die Gemini verwenden, wurden ausgeschaltet.</string>
+    <string name="live_recognition_ocr_error">Texterkennung ist nicht verfügbar. Text wurde ausgeschaltet.</string>
+    <string name="live_recognition_point_above">Über der Fingerspitze lesen</string>
+    <string name="live_recognition_point_below">Unter der Fingerspitze lesen</string>
+</resources>

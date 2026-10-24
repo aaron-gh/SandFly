@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">ការស្គាល់ផ្ទាល់</string>
+    <string name="live_recognition_hint">អូសឡើងលើ ឬចុះក្រោម ដើម្បីជ្រើសរើសមុខងារ បន្ទាប់មកចុចពីរដង ដើម្បីបើក ឬបិទវា</string>
+    <string name="live_recognition_scenes">ទិដ្ឋភាព</string>
+    <string name="live_recognition_text">អក្សរ</string>
+    <string name="live_recognition_point">ចង្អុល ហើយអាន</string>
+    <string name="live_recognition_people">ការរកឃើញមនុស្ស</string>
+    <string name="live_recognition_doors">ការរកឃើញទ្វារ</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">តម្រង់កាមេរ៉ាខាងក្រោយទៅកាន់អ្វីដែលអ្នកចង់ឱ្យពណ៌នា។ សម្រាប់ \"ចង្អុល ហើយអាន\" សូមចង្អុលម្រាមដៃទៅអក្សរក្នុងរូបភាពកាមេរ៉ា។ ការពណ៌នាអាចខុស។ កុំពឹងផ្អែកលើវាដើម្បីធ្វើដំណើរដោយសុវត្ថិភាព។</string>
+    <string name="live_recognition_camera_off">កាមេរ៉ាបានបិទ</string>
+    <string name="live_recognition_camera_on">កាមេរ៉ាបានបើក</string>
+    <string name="live_recognition_connecting">កំពុងភ្ជាប់ទៅ Gemini…</string>
+    <string name="live_recognition_cloud_title">ផ្ញើរូបភាពកាមេរ៉ាទៅ Gemini ឬ?</string>
+    <string name="live_recognition_cloud_message">ទិដ្ឋភាព ចង្អុល ហើយអាន ការរកឃើញមនុស្ស និងការរកឃើញទ្វារ ផ្ញើរូបភាពពីកាមេរ៉ាទៅ Gemini API របស់ Google រៀងរាល់ពីរបីវិនាទីម្ដង។ អក្សរត្រូវបានស្គាល់នៅលើទូរស័ព្ទនេះ។\n\nជាមួយកូនសោ API ឥតគិតថ្លៃ Google អាចរក្សាទុកអ្វីដែលវាទទួលបាន ប្រើវាដើម្បីកែលម្អផលិតផលរបស់ខ្លួន និងឱ្យមនុស្សពិនិត្យមើលវា។ AI ជំនាន់ថ្មីនៅជាការពិសោធន៍ ដូច្នេះវានឹងមានកំហុស។</string>
+    <string name="live_recognition_send">ផ្ញើរូបភាព</string>
+    <string name="live_recognition_camera_permission">គ្មានការអនុញ្ញាតកាមេរ៉ា</string>
+    <string name="live_recognition_camera_error">មិនអាចបើកកាមេរ៉ាបានទេ</string>
+    <string name="live_recognition_connection_error">ការភ្ជាប់ទៅ Gemini មិនបានសម្រេច។ មុខងារដែលប្រើ Gemini ត្រូវបានបិទ។</string>
+    <string name="live_recognition_timeout">Gemini មិនបានឆ្លើយទាន់ពេល។ មុខងារដែលប្រើ Gemini ត្រូវបានបិទ។</string>
+    <string name="live_recognition_session_ended">វគ្គ Gemini បានបញ្ចប់។ មុខងារដែលប្រើ Gemini ត្រូវបានបិទ។</string>
+    <string name="live_recognition_ocr_error">ការស្គាល់អក្សរមិនមានទេ។ អក្សរត្រូវបានបិទ។</string>
+    <string name="live_recognition_point_above">អានពីលើចុងម្រាមដៃ</string>
+    <string name="live_recognition_point_below">អានពីក្រោមចុងម្រាមដៃ</string>
+</resources>

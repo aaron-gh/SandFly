@@ -16,7 +16,10 @@
 package com.google.android.accessibility.talkback.preference.base;
 
 import android.os.Bundle;
+import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.recognition.LiveRecognition;
+import com.google.android.accessibility.utils.FeatureSupport;
 
 /** Panel holding a set of selector menu preferences. */
 public class SelectorMenuFragment extends TalkbackBaseFragment {
@@ -31,6 +34,14 @@ public class SelectorMenuFragment extends TalkbackBaseFragment {
   public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
     super.onCreatePreferences(savedInstanceState, rootKey);
     collapseCategories();
+    if (!LiveRecognition.isSupported(requireContext())
+        || !FeatureSupport.doesServiceHandleDoubleTap()) {
+      Preference liveRecognition =
+          findPreference(getString(R.string.pref_selector_live_recognition_key));
+      if (liveRecognition != null) {
+        liveRecognition.setVisible(false);
+      }
+    }
   }
 
   @Override

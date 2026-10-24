@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">ცოცხალი ამოცნობა</string>
+    <string name="live_recognition_hint">რეჟიმის ასარჩევად გადაფურცლეთ ზემოთ ან ქვემოთ, შემდეგ ორჯერ შეეხეთ მის ჩასართავად ან გამოსართავად</string>
+    <string name="live_recognition_scenes">სცენები</string>
+    <string name="live_recognition_text">ტექსტი</string>
+    <string name="live_recognition_point">მიუთითე და წაიკითხე</string>
+    <string name="live_recognition_people">ადამიანების აღმოჩენა</string>
+    <string name="live_recognition_doors">კარების აღმოჩენა</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">მიმართეთ უკანა კამერა იმისკენ, რისი აღწერაც გსურთ. „მიუთითე და წაიკითხე“ რეჟიმში თითით მიუთითეთ ტექსტზე კამერის გამოსახულებაში. აღწერები შეიძლება მცდარი იყოს. ნუ დაეყრდნობით მათ უსაფრთხოდ გადაადგილებისთვის.</string>
+    <string name="live_recognition_camera_off">კამერა გამორთულია</string>
+    <string name="live_recognition_camera_on">კამერა ჩართულია</string>
+    <string name="live_recognition_connecting">მიმდინარეობს Gemini-სთან დაკავშირება…</string>
+    <string name="live_recognition_cloud_title">გაეგზავნოს კამერის სურათები Gemini-ს?</string>
+    <string name="live_recognition_cloud_message">„სცენები“, „მიუთითე და წაიკითხე“, „ადამიანების აღმოჩენა“ და „კარების აღმოჩენა“ ყოველ რამდენიმე წამში კამერიდან სურათს უგზავნიან Google-ის Gemini API-ს. ტექსტი ამოიცნობა ამ ტელეფონზე.\n\nუფასო API გასაღებით Google-ს შეუძლია შეინახოს მიღებული, გამოიყენოს ის თავისი პროდუქტების გასაუმჯობესებლად და მისცეს ადამიანებს გადასახედად. გენერაციული AI ექსპერიმენტულია, ამიტომ ის შეცდომებს დაუშვებს.</string>
+    <string name="live_recognition_send">სურათების გაგზავნა</string>
+    <string name="live_recognition_camera_permission">კამერის ნებართვა არ არის</string>
+    <string name="live_recognition_camera_error">კამერის გახსნა ვერ მოხერხდა</string>
+    <string name="live_recognition_connection_error">Gemini-სთან დაკავშირება ვერ მოხერხდა. Gemini-ს გამომყენებელი რეჟიმები გამოირთო.</string>
+    <string name="live_recognition_timeout">Gemini-მ დროულად არ უპასუხა. Gemini-ს გამომყენებელი რეჟიმები გამოირთო.</string>
+    <string name="live_recognition_session_ended">Gemini-ს სესია დასრულდა. Gemini-ს გამომყენებელი რეჟიმები გამოირთო.</string>
+    <string name="live_recognition_ocr_error">ტექსტის ამოცნობა მიუწვდომელია. „ტექსტი“ გამოირთო.</string>
+    <string name="live_recognition_point_above">წაკითხვა თითის წვერის ზემოთ</string>
+    <string name="live_recognition_point_below">წაკითხვა თითის წვერის ქვემოთ</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Reaalajas tuvastamine</string>
+    <string name="live_recognition_hint">Režiimi valimiseks pühkige üles või alla, seejärel topeltpuudutage selle sisse- või väljalülitamiseks</string>
+    <string name="live_recognition_scenes">Stseenid</string>
+    <string name="live_recognition_text">Tekst</string>
+    <string name="live_recognition_point">Osuta ja loe</string>
+    <string name="live_recognition_people">Inimeste tuvastamine</string>
+    <string name="live_recognition_doors">Uste tuvastamine</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Suunake tagakaamera sellele, mida soovite kirjeldada. Režiimi Osuta ja loe puhul osutage sõrmega kaamerapildil olevale tekstile. Kirjeldused võivad olla valed. Ärge lootke neile ohutuks liikumiseks.</string>
+    <string name="live_recognition_camera_off">Kaamera väljas</string>
+    <string name="live_recognition_camera_on">Kaamera sees</string>
+    <string name="live_recognition_connecting">Geminiga ühendamine…</string>
+    <string name="live_recognition_cloud_title">Kas saata kaamerapildid Geminile?</string>
+    <string name="live_recognition_cloud_message">Stseenid, Osuta ja loe, Inimeste tuvastamine ja Uste tuvastamine saadavad iga paari sekundi järel kaamerast pildi Google\'i Gemini API-le. Tekst tuvastatakse selles telefonis.\n\nTasuta API-võtmega võib Google saadud andmed säilitada, kasutada neid oma toodete täiustamiseks ja lasta inimestel need üle vaadata. Generatiivne AI on katseline, seega teeb see vigu.</string>
+    <string name="live_recognition_send">Saada pildid</string>
+    <string name="live_recognition_camera_permission">Kaamera luba puudub</string>
+    <string name="live_recognition_camera_error">Kaamerat ei saanud avada</string>
+    <string name="live_recognition_connection_error">Geminiga ühendamine ebaõnnestus. Geminit kasutavad režiimid lülitati välja.</string>
+    <string name="live_recognition_timeout">Gemini ei vastanud õigel ajal. Geminit kasutavad režiimid lülitati välja.</string>
+    <string name="live_recognition_session_ended">Gemini seanss lõppes. Geminit kasutavad režiimid lülitati välja.</string>
+    <string name="live_recognition_ocr_error">Tekstituvastus pole saadaval. Tekst lülitati välja.</string>
+    <string name="live_recognition_point_above">Loe sõrmeotsast ülevalt</string>
+    <string name="live_recognition_point_below">Loe sõrmeotsast altpoolt</string>
+</resources>

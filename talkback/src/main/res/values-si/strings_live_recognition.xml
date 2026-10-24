@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">සජීවී හඳුනාගැනීම</string>
+    <string name="live_recognition_hint">ප්‍රකාරයක් තේරීමට ඉහළට හෝ පහළට ස්වයිප් කර, ඉන්පසු එය ක්‍රියාත්මක හෝ අක්‍රිය කිරීමට දෙවරක් තට්ටු කරන්න</string>
+    <string name="live_recognition_scenes">දර්ශන</string>
+    <string name="live_recognition_text">පෙළ</string>
+    <string name="live_recognition_point">පෙන්වා කියවන්න</string>
+    <string name="live_recognition_people">පුද්ගලයන් අනාවරණය</string>
+    <string name="live_recognition_doors">දොරවල් අනාවරණය</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">ඔබට විස්තර කිරීමට අවශ්‍ය දෙයට පසුපස කැමරාව යොමු කරන්න. \'පෙන්වා කියවන්න\' සඳහා, කැමරා රූපයේ ඇති පෙළකට ඇඟිල්ලකින් පෙන්වන්න. විස්තර වැරදි විය හැක. ආරක්ෂිතව ගමන් කිරීමට ඒවා මත විශ්වාසය තබන්න එපා.</string>
+    <string name="live_recognition_camera_off">කැමරාව ක්‍රියාවිරහිතයි</string>
+    <string name="live_recognition_camera_on">කැමරාව ක්‍රියාත්මකයි</string>
+    <string name="live_recognition_connecting">Gemini වෙත සම්බන්ධ වෙමින්…</string>
+    <string name="live_recognition_cloud_title">කැමරා රූප Gemini වෙත යවන්නද?</string>
+    <string name="live_recognition_cloud_message">දර්ශන, පෙන්වා කියවන්න, පුද්ගලයන් අනාවරණය සහ දොරවල් අනාවරණය තත්පර කිහිපයකට වරක් කැමරාවෙන් රූපයක් Google හි Gemini API වෙත යවයි. පෙළ මෙම දුරකථනයේම හඳුනා ගනී.\n\nනොමිලේ API යතුරක් සමඟ, Google හට ලැබෙන දේ තබා ගැනීමට, එහි නිෂ්පාදන වැඩිදියුණු කිරීමට භාවිත කිරීමට සහ පුද්ගලයන් ලවා සමාලෝචනය කරවීමට හැක. උත්පාදක AI පර්යේෂණාත්මක බැවින් එය වැරදි කරනු ඇත.</string>
+    <string name="live_recognition_send">රූප යවන්න</string>
+    <string name="live_recognition_camera_permission">කැමරා අවසරයක් නැත</string>
+    <string name="live_recognition_camera_error">කැමරාව විවෘත කළ නොහැකි විය</string>
+    <string name="live_recognition_connection_error">Gemini වෙත සම්බන්ධ වීම අසාර්ථක විය. Gemini භාවිත කරන ප්‍රකාර ක්‍රියාවිරහිත කරන ලදී.</string>
+    <string name="live_recognition_timeout">Gemini නියමිත වේලාවට පිළිතුරු දුන්නේ නැත. Gemini භාවිත කරන ප්‍රකාර ක්‍රියාවිරහිත කරන ලදී.</string>
+    <string name="live_recognition_session_ended">Gemini සැසිය අවසන් විය. Gemini භාවිත කරන ප්‍රකාර ක්‍රියාවිරහිත කරන ලදී.</string>
+    <string name="live_recognition_ocr_error">පෙළ හඳුනාගැනීම ලබා ගත නොහැක. පෙළ ක්‍රියාවිරහිත කරන ලදී.</string>
+    <string name="live_recognition_point_above">ඇඟිලි තුඩට ඉහළින් කියවන්න</string>
+    <string name="live_recognition_point_below">ඇඟිලි තුඩට පහළින් කියවන්න</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Pengenalan langsung</string>
+    <string name="live_recognition_hint">Geser ke atas atau ke bawah untuk memilih mode, lalu ketuk dua kali untuk mengaktifkan atau menonaktifkannya</string>
+    <string name="live_recognition_scenes">Pemandangan</string>
+    <string name="live_recognition_text">Teks</string>
+    <string name="live_recognition_point">Tunjuk dan baca</string>
+    <string name="live_recognition_people">Deteksi orang</string>
+    <string name="live_recognition_doors">Deteksi pintu</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Arahkan kamera belakang ke hal yang ingin Anda dengar deskripsinya. Untuk Tunjuk dan baca, tunjuk teks di gambar kamera dengan jari. Deskripsi bisa salah. Jangan mengandalkannya untuk bergerak dengan aman.</string>
+    <string name="live_recognition_camera_off">Kamera nonaktif</string>
+    <string name="live_recognition_camera_on">Kamera aktif</string>
+    <string name="live_recognition_connecting">Menghubungkan ke Gemini…</string>
+    <string name="live_recognition_cloud_title">Kirim gambar kamera ke Gemini?</string>
+    <string name="live_recognition_cloud_message">Pemandangan, Tunjuk dan baca, Deteksi orang, dan Deteksi pintu mengirim gambar dari kamera ke Gemini API Google setiap beberapa detik. Teks dikenali di ponsel ini.\n\nDengan kunci API gratis, Google dapat menyimpan apa yang diterimanya, menggunakannya untuk meningkatkan produknya, dan meminta orang meninjaunya. AI generatif masih eksperimental, jadi akan membuat kesalahan.</string>
+    <string name="live_recognition_send">Kirim gambar</string>
+    <string name="live_recognition_camera_permission">Tidak ada izin kamera</string>
+    <string name="live_recognition_camera_error">Kamera tidak dapat dibuka</string>
+    <string name="live_recognition_connection_error">Koneksi ke Gemini gagal. Mode yang menggunakan Gemini dinonaktifkan.</string>
+    <string name="live_recognition_timeout">Gemini tidak menjawab tepat waktu. Mode yang menggunakan Gemini dinonaktifkan.</string>
+    <string name="live_recognition_session_ended">Sesi Gemini berakhir. Mode yang menggunakan Gemini dinonaktifkan.</string>
+    <string name="live_recognition_ocr_error">Pengenalan teks tidak tersedia. Teks dinonaktifkan.</string>
+    <string name="live_recognition_point_above">Baca di atas ujung jari</string>
+    <string name="live_recognition_point_below">Baca di bawah ujung jari</string>
+</resources>

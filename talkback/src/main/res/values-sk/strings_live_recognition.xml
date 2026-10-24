@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Živé rozpoznávanie</string>
+    <string name="live_recognition_hint">Potiahnutím nahor alebo nadol vyberte režim a dvojitým klepnutím ho zapnite alebo vypnite</string>
+    <string name="live_recognition_scenes">Scény</string>
+    <string name="live_recognition_text">Text</string>
+    <string name="live_recognition_point">Ukázať a čítať</string>
+    <string name="live_recognition_people">Detekcia osôb</string>
+    <string name="live_recognition_doors">Detekcia dverí</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Namierte zadný fotoaparát na to, čo chcete opísať. Pri režime Ukázať a čítať ukážte prstom na text v obraze z fotoaparátu. Opisy môžu byť nesprávne. Nespoliehajte sa na ne pri bezpečnom pohybe.</string>
+    <string name="live_recognition_camera_off">Fotoaparát vypnutý</string>
+    <string name="live_recognition_camera_on">Fotoaparát zapnutý</string>
+    <string name="live_recognition_connecting">Pripája sa ku Gemini…</string>
+    <string name="live_recognition_cloud_title">Odosielať snímky z fotoaparátu do Gemini?</string>
+    <string name="live_recognition_cloud_message">Scény, Ukázať a čítať, Detekcia osôb a Detekcia dverí každých niekoľko sekúnd odosielajú snímku z fotoaparátu do rozhrania Gemini API od Googlu. Text sa rozpoznáva v tomto telefóne.\n\nS bezplatným kľúčom API môže Google uchovávať, čo dostane, používať to na zlepšovanie svojich produktov a nechať to kontrolovať ľuďmi. Generatívna AI je experimentálna, takže bude robiť chyby.</string>
+    <string name="live_recognition_send">Odoslať snímky</string>
+    <string name="live_recognition_camera_permission">Chýba povolenie pre fotoaparát</string>
+    <string name="live_recognition_camera_error">Fotoaparát sa nepodarilo otvoriť</string>
+    <string name="live_recognition_connection_error">Pripojenie ku Gemini zlyhalo. Režimy, ktoré používajú Gemini, boli vypnuté.</string>
+    <string name="live_recognition_timeout">Gemini neodpovedal včas. Režimy, ktoré používajú Gemini, boli vypnuté.</string>
+    <string name="live_recognition_session_ended">Relácia Gemini sa skončila. Režimy, ktoré používajú Gemini, boli vypnuté.</string>
+    <string name="live_recognition_ocr_error">Rozpoznávanie textu nie je k dispozícii. Text bol vypnutý.</string>
+    <string name="live_recognition_point_above">Čítať nad špičkou prsta</string>
+    <string name="live_recognition_point_below">Čítať pod špičkou prsta</string>
+</resources>

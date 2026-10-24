@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">लाइव पहचान</string>
+    <string name="live_recognition_hint">मोड चुनने के लिए ऊपर या नीचे स्वाइप करें, फिर उसे चालू या बंद करने के लिए दो बार टैप करें</string>
+    <string name="live_recognition_scenes">दृश्य</string>
+    <string name="live_recognition_text">टेक्स्ट</string>
+    <string name="live_recognition_point">इशारा करें और पढ़ें</string>
+    <string name="live_recognition_people">लोगों की पहचान</string>
+    <string name="live_recognition_doors">दरवाज़ों की पहचान</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">पीछे के कैमरे को उस चीज़ की ओर करें जिसका ब्यौरा आप चाहते हैं. \'इशारा करें और पढ़ें\' के लिए, कैमरे की इमेज में किसी टेक्स्ट की ओर उंगली से इशारा करें. ब्यौरे गलत हो सकते हैं. सुरक्षित तरीके से चलने-फिरने के लिए इन पर भरोसा न करें.</string>
+    <string name="live_recognition_camera_off">कैमरा बंद है</string>
+    <string name="live_recognition_camera_on">कैमरा चालू है</string>
+    <string name="live_recognition_connecting">Gemini से कनेक्ट हो रहा है…</string>
+    <string name="live_recognition_cloud_title">कैमरे की इमेज Gemini को भेजें?</string>
+    <string name="live_recognition_cloud_message">दृश्य, इशारा करें और पढ़ें, लोगों की पहचान और दरवाज़ों की पहचान हर कुछ सेकंड में कैमरे की एक इमेज Google के Gemini API को भेजते हैं. टेक्स्ट की पहचान इसी फ़ोन पर होती है.\n\nमुफ़्त API कुंजी के साथ, Google को जो मिलता है उसे वह रख सकता है, अपने प्रॉडक्ट बेहतर बनाने के लिए इस्तेमाल कर सकता है, और लोगों से उसकी समीक्षा करवा सकता है. जनरेटिव एआई एक्सपेरिमेंटल है, इसलिए इससे गलतियां होंगी.</string>
+    <string name="live_recognition_send">इमेज भेजें</string>
+    <string name="live_recognition_camera_permission">कैमरे की अनुमति नहीं है</string>
+    <string name="live_recognition_camera_error">कैमरा नहीं खोला जा सका</string>
+    <string name="live_recognition_connection_error">Gemini से कनेक्ट नहीं हो सका. Gemini का इस्तेमाल करने वाले मोड बंद कर दिए गए.</string>
+    <string name="live_recognition_timeout">Gemini ने समय पर जवाब नहीं दिया. Gemini का इस्तेमाल करने वाले मोड बंद कर दिए गए.</string>
+    <string name="live_recognition_session_ended">Gemini सेशन खत्म हो गया. Gemini का इस्तेमाल करने वाले मोड बंद कर दिए गए.</string>
+    <string name="live_recognition_ocr_error">टेक्स्ट की पहचान उपलब्ध नहीं है. टेक्स्ट बंद कर दिया गया.</string>
+    <string name="live_recognition_point_above">उंगली के सिरे के ऊपर पढ़ें</string>
+    <string name="live_recognition_point_below">उंगली के सिरे के नीचे पढ़ें</string>
+</resources>

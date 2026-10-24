@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">ಲೈವ್ ಗುರುತಿಸುವಿಕೆ</string>
+    <string name="live_recognition_hint">ಮೋಡ್ ಆಯ್ಕೆ ಮಾಡಲು ಮೇಲಕ್ಕೆ ಅಥವಾ ಕೆಳಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ, ನಂತರ ಅದನ್ನು ಆನ್ ಅಥವಾ ಆಫ್ ಮಾಡಲು ಡಬಲ್-ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="live_recognition_scenes">ದೃಶ್ಯಗಳು</string>
+    <string name="live_recognition_text">ಪಠ್ಯ</string>
+    <string name="live_recognition_point">ತೋರಿಸಿ ಮತ್ತು ಓದಿ</string>
+    <string name="live_recognition_people">ಜನರ ಪತ್ತೆ</string>
+    <string name="live_recognition_doors">ಬಾಗಿಲುಗಳ ಪತ್ತೆ</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">ನೀವು ವಿವರಿಸಬೇಕೆಂದಿರುವುದರ ಕಡೆಗೆ ಹಿಂಬದಿಯ ಕ್ಯಾಮರಾವನ್ನು ತಿರುಗಿಸಿ. \'ತೋರಿಸಿ ಮತ್ತು ಓದಿ\'ಗಾಗಿ, ಕ್ಯಾಮರಾ ಚಿತ್ರದಲ್ಲಿರುವ ಪಠ್ಯದ ಕಡೆಗೆ ಬೆರಳಿನಿಂದ ತೋರಿಸಿ. ವಿವರಣೆಗಳು ತಪ್ಪಾಗಿರಬಹುದು. ಸುರಕ್ಷಿತವಾಗಿ ಓಡಾಡಲು ಅವುಗಳನ್ನು ಅವಲಂಬಿಸಬೇಡಿ.</string>
+    <string name="live_recognition_camera_off">ಕ್ಯಾಮರಾ ಆಫ್ ಆಗಿದೆ</string>
+    <string name="live_recognition_camera_on">ಕ್ಯಾಮರಾ ಆನ್ ಆಗಿದೆ</string>
+    <string name="live_recognition_connecting">Gemini ಗೆ ಕನೆಕ್ಟ್ ಆಗುತ್ತಿದೆ…</string>
+    <string name="live_recognition_cloud_title">ಕ್ಯಾಮರಾ ಚಿತ್ರಗಳನ್ನು Gemini ಗೆ ಕಳುಹಿಸಬೇಕೇ?</string>
+    <string name="live_recognition_cloud_message">ದೃಶ್ಯಗಳು, ತೋರಿಸಿ ಮತ್ತು ಓದಿ, ಜನರ ಪತ್ತೆ ಮತ್ತು ಬಾಗಿಲುಗಳ ಪತ್ತೆ ಪ್ರತಿ ಕೆಲವು ಸೆಕೆಂಡುಗಳಿಗೊಮ್ಮೆ ಕ್ಯಾಮರಾದಿಂದ ಒಂದು ಚಿತ್ರವನ್ನು Google ನ Gemini API ಗೆ ಕಳುಹಿಸುತ್ತವೆ. ಪಠ್ಯವನ್ನು ಈ ಫೋನ್‌ನಲ್ಲೇ ಗುರುತಿಸಲಾಗುತ್ತದೆ.\n\nಉಚಿತ API ಕೀ ಬಳಸಿದರೆ, Google ತಾನು ಸ್ವೀಕರಿಸಿದ್ದನ್ನು ಇಟ್ಟುಕೊಳ್ಳಬಹುದು, ತನ್ನ ಉತ್ಪನ್ನಗಳನ್ನು ಸುಧಾರಿಸಲು ಬಳಸಬಹುದು ಮತ್ತು ಜನರಿಂದ ಪರಿಶೀಲಿಸಬಹುದು. ಜನರೇಟಿವ್ AI ಪ್ರಾಯೋಗಿಕವಾಗಿದೆ, ಆದ್ದರಿಂದ ಅದು ತಪ್ಪುಗಳನ್ನು ಮಾಡುತ್ತದೆ.</string>
+    <string name="live_recognition_send">ಚಿತ್ರಗಳನ್ನು ಕಳುಹಿಸಿ</string>
+    <string name="live_recognition_camera_permission">ಕ್ಯಾಮರಾ ಅನುಮತಿ ಇಲ್ಲ</string>
+    <string name="live_recognition_camera_error">ಕ್ಯಾಮರಾವನ್ನು ತೆರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
+    <string name="live_recognition_connection_error">Gemini ಗೆ ಕನೆಕ್ಟ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ. Gemini ಬಳಸುವ ಮೋಡ್‌ಗಳನ್ನು ಆಫ್ ಮಾಡಲಾಗಿದೆ.</string>
+    <string name="live_recognition_timeout">Gemini ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ಉತ್ತರಿಸಲಿಲ್ಲ. Gemini ಬಳಸುವ ಮೋಡ್‌ಗಳನ್ನು ಆಫ್ ಮಾಡಲಾಗಿದೆ.</string>
+    <string name="live_recognition_session_ended">Gemini ಸೆಷನ್ ಕೊನೆಗೊಂಡಿದೆ. Gemini ಬಳಸುವ ಮೋಡ್‌ಗಳನ್ನು ಆಫ್ ಮಾಡಲಾಗಿದೆ.</string>
+    <string name="live_recognition_ocr_error">ಪಠ್ಯ ಗುರುತಿಸುವಿಕೆ ಲಭ್ಯವಿಲ್ಲ. ಪಠ್ಯವನ್ನು ಆಫ್ ಮಾಡಲಾಗಿದೆ.</string>
+    <string name="live_recognition_point_above">ಬೆರಳ ತುದಿಯ ಮೇಲೆ ಓದಿ</string>
+    <string name="live_recognition_point_below">ಬೆರಳ ತುದಿಯ ಕೆಳಗೆ ಓದಿ</string>
+</resources>

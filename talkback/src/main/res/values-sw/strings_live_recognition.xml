@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Utambuzi wa moja kwa moja</string>
+    <string name="live_recognition_hint">Telezesha kidole juu au chini ili uchague hali, kisha gusa mara mbili ili uiwashe au uizime</string>
+    <string name="live_recognition_scenes">Mandhari</string>
+    <string name="live_recognition_text">Maandishi</string>
+    <string name="live_recognition_point">Onyesha na usome</string>
+    <string name="live_recognition_people">Kutambua watu</string>
+    <string name="live_recognition_doors">Kutambua milango</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Elekeza kamera ya nyuma kwenye kitu unachotaka kifafanuliwe. Kwa Onyesha na usome, onyesha maandishi kwenye picha ya kamera kwa kidole. Maelezo yanaweza kuwa si sahihi. Usiyategemee ili kutembea kwa usalama.</string>
+    <string name="live_recognition_camera_off">Kamera imezimwa</string>
+    <string name="live_recognition_camera_on">Kamera imewashwa</string>
+    <string name="live_recognition_connecting">Inaunganisha kwenye Gemini…</string>
+    <string name="live_recognition_cloud_title">Ungependa kutuma picha za kamera kwenye Gemini?</string>
+    <string name="live_recognition_cloud_message">Mandhari, Onyesha na usome, Kutambua watu na Kutambua milango hutuma picha kutoka kwenye kamera kwenda Gemini API ya Google kila baada ya sekunde chache. Maandishi hutambuliwa kwenye simu hii.\n\nUkitumia ufunguo wa API usiolipiwa, Google inaweza kuhifadhi inachopokea, kukitumia kuboresha bidhaa zake na kuwaruhusu watu wakikague. AI zalishi bado ni ya majaribio, kwa hivyo itakosea.</string>
+    <string name="live_recognition_send">Tuma picha</string>
+    <string name="live_recognition_camera_permission">Hakuna ruhusa ya kamera</string>
+    <string name="live_recognition_camera_error">Imeshindwa kufungua kamera</string>
+    <string name="live_recognition_connection_error">Imeshindwa kuunganisha kwenye Gemini. Hali zinazotumia Gemini zimezimwa.</string>
+    <string name="live_recognition_timeout">Gemini haikujibu kwa wakati. Hali zinazotumia Gemini zimezimwa.</string>
+    <string name="live_recognition_session_ended">Kipindi cha Gemini kimeisha. Hali zinazotumia Gemini zimezimwa.</string>
+    <string name="live_recognition_ocr_error">Utambuzi wa maandishi haupatikani. Maandishi yamezimwa.</string>
+    <string name="live_recognition_point_above">Soma juu ya ncha ya kidole</string>
+    <string name="live_recognition_point_below">Soma chini ya ncha ya kidole</string>
+</resources>

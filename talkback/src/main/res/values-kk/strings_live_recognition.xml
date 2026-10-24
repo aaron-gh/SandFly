@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Тікелей тану</string>
+    <string name="live_recognition_hint">Режимді таңдау үшін жоғары немесе төмен сырғытыңыз, содан кейін оны қосу немесе өшіру үшін екі рет түртіңіз</string>
+    <string name="live_recognition_scenes">Көріністер</string>
+    <string name="live_recognition_text">Мәтін</string>
+    <string name="live_recognition_point">Көрсет те оқы</string>
+    <string name="live_recognition_people">Адамдарды анықтау</string>
+    <string name="live_recognition_doors">Есіктерді анықтау</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Артқы камераны сипаттау керек нәрсеге бағыттаңыз. «Көрсет те оқы» режимінде камера кескініндегі мәтінді саусақпен көрсетіңіз. Сипаттамалар қате болуы мүмкін. Қауіпсіз жүріп-тұру үшін оларға сенбеңіз.</string>
+    <string name="live_recognition_camera_off">Камера өшірулі</string>
+    <string name="live_recognition_camera_on">Камера қосулы</string>
+    <string name="live_recognition_connecting">Gemini-ге қосылып жатыр…</string>
+    <string name="live_recognition_cloud_title">Камера кескіндері Gemini-ге жіберілсін бе?</string>
+    <string name="live_recognition_cloud_message">«Көріністер», «Көрсет те оқы», «Адамдарды анықтау» және «Есіктерді анықтау» бірнеше секунд сайын камерадан кескінді Google-дың Gemini API-іне жібереді. Мәтін осы телефонда танылады.\n\nТегін API кілтімен Google алғанын сақтай алады, оны өнімдерін жақсарту үшін пайдалана алады және адамдарға тексертуі мүмкін. Генеративтік ЖИ эксперименттік, сондықтан ол қателеседі.</string>
+    <string name="live_recognition_send">Кескіндерді жіберу</string>
+    <string name="live_recognition_camera_permission">Камера рұқсаты жоқ</string>
+    <string name="live_recognition_camera_error">Камераны ашу мүмкін болмады</string>
+    <string name="live_recognition_connection_error">Gemini-ге қосылу сәтсіз аяқталды. Gemini пайдаланатын режимдер өшірілді.</string>
+    <string name="live_recognition_timeout">Gemini уақытында жауап бермеді. Gemini пайдаланатын режимдер өшірілді.</string>
+    <string name="live_recognition_session_ended">Gemini сеансы аяқталды. Gemini пайдаланатын режимдер өшірілді.</string>
+    <string name="live_recognition_ocr_error">Мәтінді тану қолжетімсіз. «Мәтін» өшірілді.</string>
+    <string name="live_recognition_point_above">Саусақ ұшының үстін оқу</string>
+    <string name="live_recognition_point_below">Саусақ ұшының астын оқу</string>
+</resources>

@@ -316,6 +316,7 @@
         <item>never</item>
     </string-array>
     <string name="pref_selector_tablet_held_up_faces_away_key" translatable="false">pref_selector_tablet_held_up_faces_away_key</string>
+    <string name="pref_selector_live_recognition_key" translatable="false">pref_selector_live_recognition_key</string>
     <string name="pref_lift_to_activate_default" translatable="false">0</string>
     <string-array name="pref_lift_to_activate_entries">
       <item>@string/value_lift_to_activate_disabled</item>
@@ -1689,6 +1690,7 @@
     <bool name="pref_selector_links_controls_web_only_default">false</bool>
     <bool name="pref_selector_auto_switch_default">true</bool>
     <bool name="pref_selector_tablet_held_up_faces_away_default">false</bool>
+    <bool name="pref_selector_live_recognition_default">true</bool>
     <bool name="pref_selector_switch_tts_engine_default">false</bool>
     <bool name="pref_selector_speech_stream_default">false</bool>
     <bool name="pref_selector_vertical_navigation_default">false</bool>
@@ -2023,6 +2025,7 @@
     <string name="selector_lift_to_activate_change" translatable="false">SELECTOR_LIFT_TO_ACTIVATE_CHANGE</string>
     <string name="selector_wrap_around" translatable="false">SELECTOR_WRAP_AROUND</string>
     <string name="selector_tablet_held_up_faces_away" translatable="false">SELECTOR_TABLET_HELD_UP_FACES_AWAY</string>
+    <string name="selector_live_recognition" translatable="false">SELECTOR_LIVE_RECOGNITION</string>
     <string name="selector_switch_tts_engine" translatable="false">SELECTOR_SWITCH_TTS_ENGINE</string>
     <string name="selector_speech_stream" translatable="false">SELECTOR_SPEECH_STREAM</string>
     <string name="selector_vertical_navigation" translatable="false">SELECTOR_VERTICAL_NAVIGATION</string>

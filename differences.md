@@ -776,6 +776,10 @@ With Gemini, SandFly asks the model to think as little as it can, and asks Gemin
 
 SandFly can describe images and screens with a model that runs on your phone, so nothing is sent to Google or anyone else. For more information, see [On-device AI](README.md#on-device-ai). On phones that have one, **Processor** runs the model on the GPU, or on the NPU of Google Tensor G5 and G6 (Gemma 4 E2B) and Snapdragon 8 Elite and 8 Elite Gen 5 (FastVLM 0.5B).
 
+### Live recognition
+
+A camera screen like VoiceOver's Live Recognition, with Scenes, Text, Point and Speak, People detection and Door detection, and a **Live recognition** reading control that turns each mode on and off. Text is recognized on the phone; the other modes use Gemini Live with your Gemini API key. For more information, see [Live recognition](README.md#live-recognition).
+
 ### Clear error messages
 
 When Gemini can't describe something, TalkBack says "Something went wrong". SandFly says what failed: the key wasn't accepted, the usage limit was reached, the service is busy, it took too long, or there's no internet connection. For other errors, SandFly says the error code and the first sentence of the service's message, in English. Describe screen speaks its errors instead of showing them in a toast.

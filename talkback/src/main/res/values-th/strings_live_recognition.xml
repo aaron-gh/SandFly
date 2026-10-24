@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">การจดจำแบบสด</string>
+    <string name="live_recognition_hint">เลื่อนขึ้นหรือลงเพื่อเลือกโหมด แล้วแตะสองครั้งเพื่อเปิดหรือปิดโหมดนั้น</string>
+    <string name="live_recognition_scenes">ฉาก</string>
+    <string name="live_recognition_text">ข้อความ</string>
+    <string name="live_recognition_point">ชี้และอ่าน</string>
+    <string name="live_recognition_people">การตรวจจับบุคคล</string>
+    <string name="live_recognition_doors">การตรวจจับประตู</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g> <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">หันกล้องหลังไปยังสิ่งที่ต้องการให้อธิบาย สำหรับโหมดชี้และอ่าน ให้ใช้นิ้วชี้ไปที่ข้อความในภาพจากกล้อง คำอธิบายอาจไม่ถูกต้อง อย่าใช้คำอธิบายเพื่อเคลื่อนที่อย่างปลอดภัย</string>
+    <string name="live_recognition_camera_off">ปิดกล้องอยู่</string>
+    <string name="live_recognition_camera_on">เปิดกล้องอยู่</string>
+    <string name="live_recognition_connecting">กำลังเชื่อมต่อกับ Gemini…</string>
+    <string name="live_recognition_cloud_title">ส่งภาพจากกล้องไปยัง Gemini ไหม</string>
+    <string name="live_recognition_cloud_message">ฉาก ชี้และอ่าน การตรวจจับบุคคล และการตรวจจับประตู จะส่งภาพจากกล้องไปยัง Gemini API ของ Google ทุกๆ ไม่กี่วินาที ข้อความจะได้รับการจดจำในโทรศัพท์เครื่องนี้\n\nเมื่อใช้คีย์ API แบบไม่มีค่าใช้จ่าย Google อาจเก็บสิ่งที่ได้รับไว้ ใช้เพื่อปรับปรุงผลิตภัณฑ์ และให้บุคคลตรวจสอบ Generative AI ยังอยู่ในขั้นทดลอง จึงจะมีข้อผิดพลาด</string>
+    <string name="live_recognition_send">ส่งภาพ</string>
+    <string name="live_recognition_camera_permission">ไม่มีสิทธิ์เข้าถึงกล้อง</string>
+    <string name="live_recognition_camera_error">เปิดกล้องไม่ได้</string>
+    <string name="live_recognition_connection_error">เชื่อมต่อกับ Gemini ไม่สำเร็จ ปิดโหมดที่ใช้ Gemini แล้ว</string>
+    <string name="live_recognition_timeout">Gemini ไม่ตอบกลับภายในเวลาที่กำหนด ปิดโหมดที่ใช้ Gemini แล้ว</string>
+    <string name="live_recognition_session_ended">เซสชัน Gemini สิ้นสุดแล้ว ปิดโหมดที่ใช้ Gemini แล้ว</string>
+    <string name="live_recognition_ocr_error">การจดจำข้อความไม่พร้อมใช้งาน ปิดข้อความแล้ว</string>
+    <string name="live_recognition_point_above">อ่านเหนือปลายนิ้ว</string>
+    <string name="live_recognition_point_below">อ่านใต้ปลายนิ้ว</string>
+</resources>

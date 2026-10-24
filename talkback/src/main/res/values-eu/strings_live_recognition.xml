@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Zuzeneko ezagutza</string>
+    <string name="live_recognition_hint">Pasatu hatza gora edo behera modu bat aukeratzeko eta, ondoren, sakatu birritan aktibatzeko edo desaktibatzeko</string>
+    <string name="live_recognition_scenes">Eszenak</string>
+    <string name="live_recognition_text">Testua</string>
+    <string name="live_recognition_point">Seinalatu eta irakurri</string>
+    <string name="live_recognition_people">Pertsonak hautematea</string>
+    <string name="live_recognition_doors">Ateak hautematea</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Zuzendu atzeko kamera deskribatzea nahi duzunera. Seinalatu eta irakurri erabiltzeko, seinalatu hatzarekin kameraren irudiko testu bat. Deskribapenak okerrak izan daitezke. Ez fidatu haietaz segurtasunez mugitzeko.</string>
+    <string name="live_recognition_camera_off">Kamera desaktibatuta</string>
+    <string name="live_recognition_camera_on">Kamera aktibatuta</string>
+    <string name="live_recognition_connecting">Geminira konektatzen…</string>
+    <string name="live_recognition_cloud_title">Kamerako irudiak Geminira bidali nahi dituzu?</string>
+    <string name="live_recognition_cloud_message">Eszenak, Seinalatu eta irakurri, Pertsonak hautematea eta Ateak hautematea moduek segundo gutxitik behin kamerako irudi bat bidaltzen diote Google-ren Gemini APIari. Testua telefono honetan ezagutzen da.\n\nDoako API-gako batekin, Google-k jasotzen duena gorde dezake, bere produktuak hobetzeko erabil dezake eta pertsonei berrikusarazi diezaieke. AI sortzailea esperimentala da; beraz, akatsak egingo ditu.</string>
+    <string name="live_recognition_send">Bidali irudiak</string>
+    <string name="live_recognition_camera_permission">Ez dago kamera erabiltzeko baimenik</string>
+    <string name="live_recognition_camera_error">Ezin izan da ireki kamera</string>
+    <string name="live_recognition_connection_error">Ezin izan da konektatu Geminira. Gemini erabiltzen duten moduak desaktibatu dira.</string>
+    <string name="live_recognition_timeout">Geminik ez du garaiz erantzun. Gemini erabiltzen duten moduak desaktibatu dira.</string>
+    <string name="live_recognition_session_ended">Gemini-saioa amaitu da. Gemini erabiltzen duten moduak desaktibatu dira.</string>
+    <string name="live_recognition_ocr_error">Testu-ezagutza ez dago erabilgarri. Testua desaktibatu da.</string>
+    <string name="live_recognition_point_above">Irakurri hatz-puntaren gainean</string>
+    <string name="live_recognition_point_below">Irakurri hatz-puntaren azpian</string>
+</resources>

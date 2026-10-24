@@ -13,6 +13,10 @@
             android:key="pref_reading_control_letters_screen"
             android:title="@string/title_pref_reading_control_letters"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_live_recognition_default"
+            android:key="@string/pref_selector_live_recognition_key"
+            android:title="@string/live_recognition_title"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_actions_default"
             android:key="@string/pref_selector_actions_key"

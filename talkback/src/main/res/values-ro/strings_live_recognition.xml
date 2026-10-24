@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Recunoaștere live</string>
+    <string name="live_recognition_hint">Glisează în sus sau în jos pentru a alege un mod, apoi atinge de două ori pentru a-l activa sau dezactiva</string>
+    <string name="live_recognition_scenes">Scene</string>
+    <string name="live_recognition_text">Text</string>
+    <string name="live_recognition_point">Indică și citește</string>
+    <string name="live_recognition_people">Detectarea persoanelor</string>
+    <string name="live_recognition_doors">Detectarea ușilor</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Îndreaptă camera foto din spate spre ce vrei să fie descris. Pentru Indică și citește, indică cu un deget un text din imaginea camerei. Descrierile pot fi greșite. Nu te baza pe ele ca să te deplasezi în siguranță.</string>
+    <string name="live_recognition_camera_off">Cameră dezactivată</string>
+    <string name="live_recognition_camera_on">Cameră activată</string>
+    <string name="live_recognition_connecting">Se conectează la Gemini…</string>
+    <string name="live_recognition_cloud_title">Trimiți imagini de la cameră către Gemini?</string>
+    <string name="live_recognition_cloud_message">Scene, Indică și citește, Detectarea persoanelor și Detectarea ușilor trimit la câteva secunde o imagine de la cameră către API-ul Gemini de la Google. Textul este recunoscut pe acest telefon.\n\nCu o cheie API gratuită, Google poate păstra ce primește, îl poate folosi pentru a-și îmbunătăți produsele și îl poate da spre verificare unor persoane. IA generativă este experimentală, așa că va face greșeli.</string>
+    <string name="live_recognition_send">Trimite imaginile</string>
+    <string name="live_recognition_camera_permission">Nu există permisiune pentru cameră</string>
+    <string name="live_recognition_camera_error">Camera nu a putut fi deschisă</string>
+    <string name="live_recognition_connection_error">Conectarea la Gemini nu a reușit. Modurile care folosesc Gemini au fost dezactivate.</string>
+    <string name="live_recognition_timeout">Gemini nu a răspuns la timp. Modurile care folosesc Gemini au fost dezactivate.</string>
+    <string name="live_recognition_session_ended">Sesiunea Gemini s-a încheiat. Modurile care folosesc Gemini au fost dezactivate.</string>
+    <string name="live_recognition_ocr_error">Recunoașterea textului nu este disponibilă. Text a fost dezactivat.</string>
+    <string name="live_recognition_point_above">Citește deasupra vârfului degetului</string>
+    <string name="live_recognition_point_below">Citește sub vârful degetului</string>
+</resources>

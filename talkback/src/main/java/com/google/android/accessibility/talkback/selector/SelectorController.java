@@ -105,6 +105,7 @@ import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor.VolumeChangedListener;
 import com.google.android.accessibility.talkback.preference.base.FocusDelayPrefFragment;
 import com.google.android.accessibility.talkback.preference.base.TypingFocusDelayPrefFragment;
+import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.scripting.ScriptReadingControl;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting.DescriptionAndHint;
@@ -251,6 +252,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_tablet_held_up_faces_away_key,
         R.string.selector_tablet_held_up_faces_away,
         R.bool.pref_selector_tablet_held_up_faces_away_default),
+    LIVE_RECOGNITION(
+        R.string.pref_selector_live_recognition_key,
+        R.string.selector_live_recognition,
+        R.bool.pref_selector_live_recognition_default),
     ACTIONS(
         R.string.pref_selector_actions_key,
         R.string.selector_actions,
@@ -626,6 +631,7 @@ public class SelectorController implements UserInputEventListener {
       ImmutableList.of(
           Setting.GRANULARITY_TYPO,
           Setting.ACTIONS,
+          Setting.LIVE_RECOGNITION,
           // Puts table navigation granularities on top of the selector.
           Setting.GRANULARITY_ROW_COLUMN,
           Setting.GRANULARITY_ROW,
@@ -709,6 +715,8 @@ public class SelectorController implements UserInputEventListener {
   private Setting settingToRestore;
 
   private @Nullable String scriptControlKey;
+  // Whether double-tap toggles the chosen live recognition mode.
+  private boolean liveRecognitionArmed;
 
   private final VolumeMonitor volumeMonitor;
 
@@ -776,6 +784,7 @@ public class SelectorController implements UserInputEventListener {
       hiddenSettingsBuilder.add(Setting.KEYBOARD_ECHO_HANDWRITING_KEYBOARD);
     } else if (!FeatureSupport.doesServiceHandleDoubleTap()) {
       hiddenSettingsBuilder.add(ACTIONS);
+      hiddenSettingsBuilder.add(Setting.LIVE_RECOGNITION);
     }
     // Hide SEARCH in selector.
     if (!FeatureFlagReader.enableScreenSearchNavigation(context)
@@ -1048,6 +1057,11 @@ public class SelectorController implements UserInputEventListener {
         actionDescription = context.getString(R.string.title_selector_voice_profile);
         hint = getAdjustSelectedSettingGestures();
       }
+      case LIVE_RECOGNITION -> {
+        actionDescription = context.getString(R.string.live_recognition_title) + ", "
+            + LiveRecognition.selection(context);
+        hint = context.getString(R.string.live_recognition_hint);
+      }
       case ACTIONS -> {
         // Reset currentActionId to the default action.
         resetActionMenuToDefault();
@@ -1141,6 +1155,8 @@ public class SelectorController implements UserInputEventListener {
     DescriptionAndHint descriptionAndHint = getSettingActionDescriptionAndHint(newSetting, eventId);
 
     // There's no setting needed to handle double-tap by default, reset it once setting changed.
+    // Live recognition takes double-tap only after a swipe up or down chooses a mode.
+    liveRecognitionArmed = false;
     requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, false);
 
     if (TextUtils.isEmpty(descriptionAndHint.description)) {
@@ -1252,6 +1268,11 @@ public class SelectorController implements UserInputEventListener {
   @Override
   public void newItemFocused(
       AccessibilityNodeInfo nodeInfo, @NonNull Interpretation.AccessibilityFocused axFocused) {
+    // Double-tap activates the newly focused item again, such as a permission dialog button.
+    if (liveRecognitionArmed) {
+      liveRecognitionArmed = false;
+      requestServiceHandlesDoubleTap(EVENT_ID_UNTRACKED, false);
+    }
     // Reset currentActionId to the default action.
     resetActionMenuToDefault();
 
@@ -1644,6 +1665,9 @@ public class SelectorController implements UserInputEventListener {
       case TABLET_HELD_UP_FACES_AWAY -> {
         return true;
       }
+      case LIVE_RECOGNITION -> {
+        return LiveRecognition.isSupported(context) && FeatureSupport.doesServiceHandleDoubleTap();
+      }
       case ACTIONS -> {
         Optional<ContextualSetting> actions = findContextualSetting(ACTIONS);
         if (actions.isEmpty()) {
@@ -1904,6 +1928,13 @@ public class SelectorController implements UserInputEventListener {
     }
 
     switch (currentSetting) {
+      case LIVE_RECOGNITION -> {
+        liveRecognitionArmed = true;
+        requestServiceHandlesDoubleTap(eventId, true);
+        announceSetting(eventId, LiveRecognition.step(context, isNext),
+            context.getString(R.string.live_recognition_hint));
+        return;
+      }
       case SPEECH_RATE -> {
         // TODO: Increase speech rate when swipe-up is assigned to the selected setting's
         // previous action, which will be the default assignment.
@@ -2085,6 +2116,19 @@ public class SelectorController implements UserInputEventListener {
     if (!TextUtils.isEmpty(text)) {
       pipeline.returnFeedback(eventId, Feedback.speech(text));
     }
+  }
+
+  /**
+   * Toggles the chosen live recognition mode, if a swipe up or down chose one since focus last
+   * moved.
+   */
+  public boolean activateLiveRecognition() {
+    if (!liveRecognitionArmed || scriptControlKey != null
+        || getCurrentSetting(context) != Setting.LIVE_RECOGNITION) {
+      return false;
+    }
+    LiveRecognition.toggle(context);
+    return true;
   }
 
   /** Activate the currently selected action in the actions setting. */

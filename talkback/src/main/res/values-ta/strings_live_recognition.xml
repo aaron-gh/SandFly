@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">நேரலை அடையாளம் காணல்</string>
+    <string name="live_recognition_hint">பயன்முறையைத் தேர்வுசெய்ய மேலே அல்லது கீழே ஸ்வைப் செய்து, பிறகு அதை இயக்க அல்லது முடக்க இருமுறை தட்டவும்</string>
+    <string name="live_recognition_scenes">காட்சிகள்</string>
+    <string name="live_recognition_text">உரை</string>
+    <string name="live_recognition_point">சுட்டிக்காட்டிப் படி</string>
+    <string name="live_recognition_people">நபர்களைக் கண்டறிதல்</string>
+    <string name="live_recognition_doors">கதவுகளைக் கண்டறிதல்</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">விவரிக்க வேண்டியதை நோக்கிப் பின்பக்கக் கேமராவைத் திருப்பவும். \'சுட்டிக்காட்டிப் படி\' பயன்முறைக்கு, கேமரா படத்தில் உள்ள உரையை விரலால் சுட்டிக்காட்டவும். விளக்கங்கள் தவறாக இருக்கலாம். பாதுகாப்பாக நடமாட அவற்றை நம்ப வேண்டாம்.</string>
+    <string name="live_recognition_camera_off">கேமரா முடக்கப்பட்டுள்ளது</string>
+    <string name="live_recognition_camera_on">கேமரா இயக்கத்தில் உள்ளது</string>
+    <string name="live_recognition_connecting">Gemini உடன் இணைக்கிறது…</string>
+    <string name="live_recognition_cloud_title">கேமரா படங்களை Geminiக்கு அனுப்பவா?</string>
+    <string name="live_recognition_cloud_message">காட்சிகள், சுட்டிக்காட்டிப் படி, நபர்களைக் கண்டறிதல், கதவுகளைக் கண்டறிதல் ஆகியவை சில வினாடிகளுக்கு ஒருமுறை கேமராவிலிருந்து ஒரு படத்தை Googleளின் Gemini APIக்கு அனுப்பும். உரை இந்த மொபைலிலேயே அடையாளம் காணப்படும்.\n\nஇலவச API விசையுடன், Google தான் பெறுவதை வைத்திருக்கலாம், தனது தயாரிப்புகளை மேம்படுத்த அதைப் பயன்படுத்தலாம், மக்களைக் கொண்டு அதை மதிப்பாய்வு செய்யலாம். ஜெனரேட்டிவ் AI சோதனை நிலையில் உள்ளது, எனவே அது தவறுகள் செய்யும்.</string>
+    <string name="live_recognition_send">படங்களை அனுப்பு</string>
+    <string name="live_recognition_camera_permission">கேமரா அனுமதி இல்லை</string>
+    <string name="live_recognition_camera_error">கேமராவைத் திறக்க முடியவில்லை</string>
+    <string name="live_recognition_connection_error">Gemini உடன் இணைக்க முடியவில்லை. Geminiயைப் பயன்படுத்தும் பயன்முறைகள் முடக்கப்பட்டன.</string>
+    <string name="live_recognition_timeout">Gemini சரியான நேரத்தில் பதிலளிக்கவில்லை. Geminiயைப் பயன்படுத்தும் பயன்முறைகள் முடக்கப்பட்டன.</string>
+    <string name="live_recognition_session_ended">Gemini அமர்வு முடிந்தது. Geminiயைப் பயன்படுத்தும் பயன்முறைகள் முடக்கப்பட்டன.</string>
+    <string name="live_recognition_ocr_error">உரையை அடையாளம் காணல் கிடைக்கவில்லை. உரை முடக்கப்பட்டது.</string>
+    <string name="live_recognition_point_above">விரல் நுனிக்கு மேலே படி</string>
+    <string name="live_recognition_point_below">விரல் நுனிக்குக் கீழே படி</string>
+</resources>

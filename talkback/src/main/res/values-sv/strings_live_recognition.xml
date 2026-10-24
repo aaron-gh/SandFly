@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Liveigenkänning</string>
+    <string name="live_recognition_hint">Svep uppåt eller nedåt för att välja ett läge och tryck sedan två gånger för att aktivera eller inaktivera det</string>
+    <string name="live_recognition_scenes">Scener</string>
+    <string name="live_recognition_text">Text</string>
+    <string name="live_recognition_point">Peka och läs</string>
+    <string name="live_recognition_people">Personavkänning</string>
+    <string name="live_recognition_doors">Dörravkänning</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Rikta den bakre kameran mot det du vill få beskrivet. För Peka och läs pekar du med ett finger på text i kamerabilden. Beskrivningar kan vara fel. Lita inte på dem för att ta dig fram säkert.</string>
+    <string name="live_recognition_camera_off">Kamera av</string>
+    <string name="live_recognition_camera_on">Kamera på</string>
+    <string name="live_recognition_connecting">Ansluter till Gemini…</string>
+    <string name="live_recognition_cloud_title">Vill du skicka kamerabilder till Gemini?</string>
+    <string name="live_recognition_cloud_message">Scener, Peka och läs, Personavkänning och Dörravkänning skickar en bild från kameran till Googles Gemini API med några sekunders mellanrum. Text känns igen på den här telefonen.\n\nMed en kostnadsfri API-nyckel kan Google spara det som tas emot, använda det för att förbättra sina produkter och låta människor granska det. Generativ AI är experimentell och gör därför fel.</string>
+    <string name="live_recognition_send">Skicka bilder</string>
+    <string name="live_recognition_camera_permission">Ingen kamerabehörighet</string>
+    <string name="live_recognition_camera_error">Kameran kunde inte öppnas</string>
+    <string name="live_recognition_connection_error">Anslutningen till Gemini misslyckades. Lägen som använder Gemini har inaktiverats.</string>
+    <string name="live_recognition_timeout">Gemini svarade inte i tid. Lägen som använder Gemini har inaktiverats.</string>
+    <string name="live_recognition_session_ended">Gemini-sessionen har avslutats. Lägen som använder Gemini har inaktiverats.</string>
+    <string name="live_recognition_ocr_error">Textigenkänning är inte tillgänglig. Text har inaktiverats.</string>
+    <string name="live_recognition_point_above">Läs ovanför fingertoppen</string>
+    <string name="live_recognition_point_below">Läs nedanför fingertoppen</string>
+</resources>

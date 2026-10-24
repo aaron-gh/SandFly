@@ -351,6 +351,9 @@ public final class BrailleHelper implements ScreenReaderActionPerformer {
         return performGranularityFocusAction(SEARCH_FOCUS_BACKWARD, LINE, inputMode);
       }
       case CLICK_CURRENT -> {
+        if (selectorController.activateLiveRecognition()) {
+          return true;
+        }
         if (SelectorController.getCurrentSetting(accessibilityService).equals(ACTIONS)) {
           selectorController.activateCurrentAction(Performance.EVENT_ID_UNTRACKED);
           return true;

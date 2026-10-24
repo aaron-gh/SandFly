@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">التعرّف المباشر</string>
+    <string name="live_recognition_hint">مرِّر سريعًا للأعلى أو للأسفل لاختيار وضع، ثم انقر مرّتين لتفعيله أو إيقافه</string>
+    <string name="live_recognition_scenes">المشاهد</string>
+    <string name="live_recognition_text">النص</string>
+    <string name="live_recognition_point">الإشارة والقراءة</string>
+    <string name="live_recognition_people">رصد الأشخاص</string>
+    <string name="live_recognition_doors">رصد الأبواب</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>، <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">وجِّه الكاميرا الخلفية نحو ما تريد وصفه. في وضع \"الإشارة والقراءة\"، أشِر بإصبعك إلى نص في صورة الكاميرا. قد تكون الأوصاف خاطئة. لا تعتمد عليها للتنقّل بأمان.</string>
+    <string name="live_recognition_camera_off">الكاميرا متوقفة</string>
+    <string name="live_recognition_camera_on">الكاميرا مفعّلة</string>
+    <string name="live_recognition_connecting">جارٍ الاتصال بـ Gemini…</string>
+    <string name="live_recognition_cloud_title">هل تريد إرسال صور الكاميرا إلى Gemini؟</string>
+    <string name="live_recognition_cloud_message">ترسل أوضاع \"المشاهد\" و\"الإشارة والقراءة\" و\"رصد الأشخاص\" و\"رصد الأبواب\" صورة من الكاميرا إلى Gemini API من Google كل بضع ثوانٍ. يتم التعرّف على النص على هذا الهاتف.\n\nمع مفتاح API مجاني، قد تحتفظ Google بما تتلقّاه وتستخدمه لتحسين منتجاتها وتجعل أشخاصًا يراجعونه. الذكاء الاصطناعي التوليدي تجريبي، لذا سيرتكب أخطاء.</string>
+    <string name="live_recognition_send">إرسال الصور</string>
+    <string name="live_recognition_camera_permission">لا يوجد إذن بالوصول إلى الكاميرا</string>
+    <string name="live_recognition_camera_error">تعذّر فتح الكاميرا</string>
+    <string name="live_recognition_connection_error">تعذّر الاتصال بـ Gemini. تم إيقاف الأوضاع التي تستخدم Gemini.</string>
+    <string name="live_recognition_timeout">لم يردّ Gemini في الوقت المحدّد. تم إيقاف الأوضاع التي تستخدم Gemini.</string>
+    <string name="live_recognition_session_ended">انتهت جلسة Gemini. تم إيقاف الأوضاع التي تستخدم Gemini.</string>
+    <string name="live_recognition_ocr_error">التعرّف على النص غير متاح. تم إيقاف \"النص\".</string>
+    <string name="live_recognition_point_above">قراءة ما فوق طرف الإصبع</string>
+    <string name="live_recognition_point_below">قراءة ما تحت طرف الإصبع</string>
+</resources>

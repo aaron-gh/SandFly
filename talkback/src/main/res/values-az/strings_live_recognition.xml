@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Canlı tanıma</string>
+    <string name="live_recognition_hint">Rejim seçmək üçün yuxarı və ya aşağı sürüşdürün, sonra onu aktiv və ya deaktiv etmək üçün iki dəfə toxunun</string>
+    <string name="live_recognition_scenes">Səhnələr</string>
+    <string name="live_recognition_text">Mətn</string>
+    <string name="live_recognition_point">Göstər və oxu</string>
+    <string name="live_recognition_people">İnsanların aşkarlanması</string>
+    <string name="live_recognition_doors">Qapıların aşkarlanması</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Arxa kameranı təsvir edilməsini istədiyiniz şeyə yönəldin. Göstər və oxu üçün barmağınızla kamera görüntüsündəki mətni göstərin. Təsvirlər yanlış ola bilər. Təhlükəsiz hərəkət etmək üçün onlara etibar etməyin.</string>
+    <string name="live_recognition_camera_off">Kamera deaktivdir</string>
+    <string name="live_recognition_camera_on">Kamera aktivdir</string>
+    <string name="live_recognition_connecting">Gemini ilə əlaqə yaradılır…</string>
+    <string name="live_recognition_cloud_title">Kamera şəkilləri Gemini-yə göndərilsin?</string>
+    <string name="live_recognition_cloud_message">Səhnələr, Göstər və oxu, İnsanların aşkarlanması və Qapıların aşkarlanması bir neçə saniyədən bir kameradan şəkli Google-un Gemini API-sinə göndərir. Mətn bu telefonda tanınır.\n\nPulsuz API açarı ilə Google aldığını saxlaya, məhsullarını təkmilləşdirmək üçün istifadə edə və insanlara nəzərdən keçirtdirə bilər. Generativ süni intellekt eksperimentaldır, ona görə də səhvlər edəcək.</string>
+    <string name="live_recognition_send">Şəkilləri göndər</string>
+    <string name="live_recognition_camera_permission">Kamera icazəsi yoxdur</string>
+    <string name="live_recognition_camera_error">Kamera açılmadı</string>
+    <string name="live_recognition_connection_error">Gemini ilə əlaqə alınmadı. Gemini istifadə edən rejimlər deaktiv edildi.</string>
+    <string name="live_recognition_timeout">Gemini vaxtında cavab vermədi. Gemini istifadə edən rejimlər deaktiv edildi.</string>
+    <string name="live_recognition_session_ended">Gemini sessiyası bitdi. Gemini istifadə edən rejimlər deaktiv edildi.</string>
+    <string name="live_recognition_ocr_error">Mətn tanıma əlçatan deyil. Mətn deaktiv edildi.</string>
+    <string name="live_recognition_point_above">Barmaq ucunun üstünü oxu</string>
+    <string name="live_recognition_point_below">Barmaq ucunun altını oxu</string>
+</resources>

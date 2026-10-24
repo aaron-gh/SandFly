@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">Түз таануу</string>
+    <string name="live_recognition_hint">Режим тандоо үчүн өйдө же ылдый сүрүңүз, андан соң аны күйгүзүү же өчүрүү үчүн эки жолу басыңыз</string>
+    <string name="live_recognition_scenes">Көрүнүштөр</string>
+    <string name="live_recognition_text">Текст</string>
+    <string name="live_recognition_point">Көрсөт жана оку</string>
+    <string name="live_recognition_people">Адамдарды аныктоо</string>
+    <string name="live_recognition_doors">Эшиктерди аныктоо</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">Арткы камераны сүрөттөлүшүн каалаган нерсеге буруңуз. «Көрсөт жана оку» режиминде камеранын сүрөтүндөгү текстти манжаңыз менен көрсөтүңүз. Сүрөттөмөлөр туура эмес болушу мүмкүн. Коопсуз жылуу үчүн аларга ишенбеңиз.</string>
+    <string name="live_recognition_camera_off">Камера өчүк</string>
+    <string name="live_recognition_camera_on">Камера күйүк</string>
+    <string name="live_recognition_connecting">Gemini\'ге туташууда…</string>
+    <string name="live_recognition_cloud_title">Камеранын сүрөттөрү Gemini\'ге жөнөтүлсүнбү?</string>
+    <string name="live_recognition_cloud_message">«Көрүнүштөр», «Көрсөт жана оку», «Адамдарды аныктоо» жана «Эшиктерди аныктоо» бир нече секунд сайын камерадан сүрөттү Google\'дун Gemini API\'сине жөнөтөт. Текст ушул телефондо таанылат.\n\nАкысыз API ачкычы менен Google алганын сактап, аны өз продукцияларын жакшыртуу үчүн колдонуп, адамдарга текшертиши мүмкүн. Генеративдик ЖИ сыноо иретинде, ошондуктан ал каталарды кетирет.</string>
+    <string name="live_recognition_send">Сүрөттөрдү жөнөтүү</string>
+    <string name="live_recognition_camera_permission">Камерага уруксат жок</string>
+    <string name="live_recognition_camera_error">Камера ачылган жок</string>
+    <string name="live_recognition_connection_error">Gemini\'ге туташкан жок. Gemini колдонгон режимдер өчүрүлдү.</string>
+    <string name="live_recognition_timeout">Gemini өз убагында жооп берген жок. Gemini колдонгон режимдер өчүрүлдү.</string>
+    <string name="live_recognition_session_ended">Gemini сеансы бүттү. Gemini колдонгон режимдер өчүрүлдү.</string>
+    <string name="live_recognition_ocr_error">Текстти таануу жеткиликсиз. «Текст» өчүрүлдү.</string>
+    <string name="live_recognition_point_above">Манжанын учунун үстүн окуу</string>
+    <string name="live_recognition_point_below">Манжанын учунун астын окуу</string>
+</resources>

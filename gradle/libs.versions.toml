@@ -7,6 +7,7 @@ autoValue = "1.11.1"
 compose = "1.12.1"
 wearCompose = "1.7.1"
 activity = "1.13.0"
+camerax = "1.6.2"
 
 [libraries]
 # Google common
@@ -25,6 +26,9 @@ robolectric = "org.robolectric:robolectric:4.17"
 json = "org.json:json:20250517"
 
 # AndroidX
+camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" }
+camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camerax" }
+camera-view = { module = "androidx.camera:camera-view", version.ref = "camerax" }
 androidx-annotation = "androidx.annotation:annotation:1.11.0"
 androidx-appcompat = "androidx.appcompat:appcompat:1.8.0"
 androidx-collection = "androidx.collection:collection:1.7.0"

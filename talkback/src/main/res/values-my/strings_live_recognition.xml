@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">တိုက်ရိုက် မှတ်သိခြင်း</string>
+    <string name="live_recognition_hint">မုဒ်တစ်ခုရွေးရန် အပေါ် သို့မဟုတ် အောက်သို့ ပွတ်ဆွဲပြီး ၎င်းကို ဖွင့်ရန် သို့မဟုတ် ပိတ်ရန် နှစ်ချက်တို့ပါ</string>
+    <string name="live_recognition_scenes">မြင်ကွင်းများ</string>
+    <string name="live_recognition_text">စာသား</string>
+    <string name="live_recognition_point">ညွှန်ပြပြီး ဖတ်ရန်</string>
+    <string name="live_recognition_people">လူ ရှာဖွေတွေ့ရှိခြင်း</string>
+    <string name="live_recognition_doors">တံခါး ရှာဖွေတွေ့ရှိခြင်း</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>၊ <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">ဖော်ပြစေလိုသည့်အရာဆီ နောက်ကင်မရာကို ချိန်ပါ။ \'ညွှန်ပြပြီး ဖတ်ရန်\' အတွက် ကင်မရာပုံရှိ စာသားကို လက်ချောင်းဖြင့် ညွှန်ပြပါ။ ဖော်ပြချက်များ မှားနိုင်သည်။ ဘေးကင်းစွာ သွားလာရန် ၎င်းတို့ကို အားမကိုးပါနှင့်။</string>
+    <string name="live_recognition_camera_off">ကင်မရာ ပိတ်ထားသည်</string>
+    <string name="live_recognition_camera_on">ကင်မရာ ဖွင့်ထားသည်</string>
+    <string name="live_recognition_connecting">Gemini သို့ ချိတ်ဆက်နေသည်…</string>
+    <string name="live_recognition_cloud_title">ကင်မရာပုံများကို Gemini သို့ ပို့မလား။</string>
+    <string name="live_recognition_cloud_message">မြင်ကွင်းများ၊ ညွှန်ပြပြီး ဖတ်ရန်၊ လူ ရှာဖွေတွေ့ရှိခြင်းနှင့် တံခါး ရှာဖွေတွေ့ရှိခြင်းတို့သည် စက္ကန့်အနည်းငယ်တိုင်း ကင်မရာမှ ပုံတစ်ပုံကို Google ၏ Gemini API သို့ ပို့သည်။ စာသားကို ဤဖုန်းပေါ်တွင် မှတ်သိသည်။\n\nအခမဲ့ API ကီးဖြင့် Google သည် ၎င်းလက်ခံရရှိသည်များကို သိမ်းထားနိုင်၊ ၎င်း၏ထုတ်ကုန်များ ပိုကောင်းစေရန် အသုံးပြုနိုင်ပြီး လူများကို စိစစ်ခိုင်းနိုင်သည်။ Generative AI သည် စမ်းသပ်ဆဲဖြစ်၍ အမှားများ ရှိပါမည်။</string>
+    <string name="live_recognition_send">ပုံများ ပို့ရန်</string>
+    <string name="live_recognition_camera_permission">ကင်မရာခွင့်ပြုချက် မရှိပါ</string>
+    <string name="live_recognition_camera_error">ကင်မရာကို ဖွင့်၍မရပါ</string>
+    <string name="live_recognition_connection_error">Gemini သို့ ချိတ်ဆက်၍မရပါ။ Gemini သုံးသည့် မုဒ်များကို ပိတ်လိုက်သည်။</string>
+    <string name="live_recognition_timeout">Gemini က အချိန်မီ မဖြေပါ။ Gemini သုံးသည့် မုဒ်များကို ပိတ်လိုက်သည်။</string>
+    <string name="live_recognition_session_ended">Gemini စက်ရှင် ပြီးဆုံးသွားသည်။ Gemini သုံးသည့် မုဒ်များကို ပိတ်လိုက်သည်။</string>
+    <string name="live_recognition_ocr_error">စာသား မှတ်သိခြင်း မရနိုင်ပါ။ စာသားကို ပိတ်လိုက်သည်။</string>
+    <string name="live_recognition_point_above">လက်ချောင်းထိပ်၏ အပေါ်ကို ဖတ်ရန်</string>
+    <string name="live_recognition_point_below">လက်ချောင်းထိပ်၏ အောက်ကို ဖတ်ရန်</string>
+</resources>

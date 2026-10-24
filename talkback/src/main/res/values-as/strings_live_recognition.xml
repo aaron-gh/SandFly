@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="live_recognition_title">লাইভ চিনাক্তকৰণ</string>
+    <string name="live_recognition_hint">এটা ম\'ড বাছনি কৰিবলৈ ওপৰলৈ বা তললৈ ছোৱাইপ কৰক, তাৰ পিছত সেইটো অন বা অফ কৰিবলৈ দুবাৰ টিপক</string>
+    <string name="live_recognition_scenes">দৃশ্য</string>
+    <string name="live_recognition_text">পাঠ</string>
+    <string name="live_recognition_point">আঙুলিয়াই পঢ়ক</string>
+    <string name="live_recognition_people">মানুহ চিনাক্তকৰণ</string>
+    <string name="live_recognition_doors">দুৱাৰ চিনাক্তকৰণ</string>
+    <string name="live_recognition_mode_state"><xliff:g id="mode" example="Scenes">%1$s</xliff:g>, <xliff:g id="state" example="on">%2$s</xliff:g></string>
+    <string name="live_recognition_instructions">আপুনি যিটোৰ বিৱৰণ বিচাৰে, পিছফালৰ কেমেৰাটো সেইফালে কৰক। \'আঙুলিয়াই পঢ়ক\'ৰ বাবে কেমেৰাৰ ছবিখনত থকা কোনো পাঠলৈ আঙুলিৰে দেখুৱাওক। বিৱৰণ ভুল হ\'ব পাৰে। সুৰক্ষিতভাৱে চলাফুৰা কৰিবলৈ এইবোৰৰ ওপৰত নির্ভৰ নকৰিব।</string>
+    <string name="live_recognition_camera_off">কেমেৰা অফ আছে</string>
+    <string name="live_recognition_camera_on">কেমেৰা অন আছে</string>
+    <string name="live_recognition_connecting">Geminiৰ সৈতে সংযোগ কৰি থকা হৈছে…</string>
+    <string name="live_recognition_cloud_title">কেমেৰাৰ ছবি Geminiলৈ পঠিয়াবনে?</string>
+    <string name="live_recognition_cloud_message">দৃশ্য, আঙুলিয়াই পঢ়ক, মানুহ চিনাক্তকৰণ আৰু দুৱাৰ চিনাক্তকৰণে প্ৰতি কেইছেকেণ্ডমানৰ মূৰে মূৰে কেমেৰাৰ পৰা এখন ছবি Googleৰ Gemini APIলৈ পঠিয়ায়। পাঠ এই ফ\'নতে চিনাক্ত কৰা হয়।\n\nবিনামূলীয়া API কী থাকিলে Googleএ পোৱা বস্তু ৰাখিব পাৰে, নিজৰ উৎপাদন উন্নত কৰিবলৈ ব্যৱহাৰ কৰিব পাৰে আৰু মানুহক পৰ্যালোচনা কৰিবলৈ দিব পাৰে। জেনেৰেটিভ AI পৰীক্ষামূলক, সেয়ে ই ভুল কৰিব।</string>
+    <string name="live_recognition_send">ছবি পঠিয়াওক</string>
+    <string name="live_recognition_camera_permission">কেমেৰাৰ অনুমতি নাই</string>
+    <string name="live_recognition_camera_error">কেমেৰাটো খুলিব পৰা নগ\'ল</string>
+    <string name="live_recognition_connection_error">Geminiৰ সৈতে সংযোগ কৰিব পৰা নগ\'ল। Gemini ব্যৱহাৰ কৰা ম\'ডসমূহ অফ কৰা হ\'ল।</string>
+    <string name="live_recognition_timeout">Geminiএ সময়মতে উত্তৰ নিদিলে। Gemini ব্যৱহাৰ কৰা ম\'ডসমূহ অফ কৰা হ\'ল।</string>
+    <string name="live_recognition_session_ended">Gemini ছেশ্বন শেষ হ\'ল। Gemini ব্যৱহাৰ কৰা ম\'ডসমূহ অফ কৰা হ\'ল।</string>
+    <string name="live_recognition_ocr_error">পাঠ চিনাক্তকৰণ উপলব্ধ নহয়। পাঠ অফ কৰা হ\'ল।</string>
+    <string name="live_recognition_point_above">আঙুলিৰ আগৰ ওপৰত পঢ়ক</string>
+    <string name="live_recognition_point_below">আঙুলিৰ আগৰ তলত পঢ়ক</string>
+</resources>
