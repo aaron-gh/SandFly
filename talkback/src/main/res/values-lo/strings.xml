@@ -1679,7 +1679,7 @@
     <string name="value_lift_to_activate_entire_screen">ໜ້າຈໍທັງໝົດ</string>
     <string name="template_lift_to_activate_changed">ຍົກເພື່ອເປີດໃຊ້: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">ວົນກັບໄປຕົ້ນ</string>
-    <string name="summary_pref_wrap_around">ການປັດຜ່ານລາຍການສຸດທ້າຍໄປຫາອັນທໍາອິດ, ແລະຜ່ານໄປອັນທໍາອິດໄປຫາອັນສຸດທ້າຍ. ເມື່ອປິດ, ສຽງຈະຫຼິ້ນໃນຕອນທ້າຍແທນ.</string>
+    <string name="summary_pref_wrap_around">ການປັດເລີຍລາຍການສຸດທ້າຍຈະໄປລາຍການທຳອິດ ແລະ ເລີຍລາຍການທຳອິດຈະໄປລາຍການສຸດທ້າຍ. ເມື່ອປິດ, ຈະມີສຽງຫຼິ້ນຢູ່ທ້າຍແທນ.</string>
     <string name="title_pref_fix_stuck_touch_exploration">ແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດທີ່ຄ້າງ</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ຖ້າບໍ່ມີສິດ DUMP, SandFly ພຽງແຕ່ບອກໄດ້ວ່າການສຳຫຼວດໂດຍການສຳຜັດອາດຄ້າງຢູ່. ເພື່ອໃຫ້ SandFly ແກ້ໄຂໄດ້, ໃຫ້ແລ່ນ: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ກຳລັງແກ້ໄຂການສຳຫຼວດດ້ວຍການສຳຜັດ</string>
@@ -1697,9 +1697,9 @@
     <string name="title_pref_touch_stops_speech">ຢຸດສຽງເວົ້າເມື່ອແຕະໜ້າຈໍ</string>
     <string name="title_pref_focus_new_windows">ຍ້າຍໂຟກັສໄປທີ່ໜ້າຕ່າງໃໝ່</string>
     <string name="title_pref_volume_keys_adjust_sliders">ປຸ່ມລະດັບສຽງປັບຕົວເລື່ອນ</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">ເມື່ອຕົວເລື່ອນມີຈຸດສຸມ, ປະລິມານຂຶ້ນແລະລົງຈະປ່ຽນມູນຄ່າຂອງມັນແທນທີ່ຈະເປັນປະລິມານ</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">ເມື່ອແຖບເລື່ອນມີໂຟກັສ, ປຸ່ມເພີ່ມ ແລະ ຫຼຸດລະດັບສຽງຈະປ່ຽນຄ່າຂອງມັນແທນລະດັບສຽງ</string>
     <string name="title_pref_volume_keys_move_cursor">ປຸ່ມລະດັບສຽງຍ້າຍຕົວກະພິບ</string>
-    <string name="summary_pref_volume_keys_move_cursor">ເມື່ອຊ່ອງຂໍ້ຄວາມມີໂຟກັສ, ລະດັບສຽງຂຶ້ນຈະຍ້າຍຕົວກະພິບກັບຄືນໄປບ່ອນຕົວອັກສອນ ແລະລະດັບສຽງລົງຈະຍ້າຍມັນໃສ່</string>
+    <string name="summary_pref_volume_keys_move_cursor">ເມື່ອຊ່ອງຂໍ້ຄວາມມີໂຟກັສ, ການເພີ່ມລະດັບສຽງຈະຍ້າຍເຄີເຊີຖອຍຫຼັງໜຶ່ງຕົວອັກສອນ ແລະ ການຫຼຸດລະດັບສຽງຈະຍ້າຍໄປໜ້າໜຶ່ງຕົວອັກສອນ</string>
     <string name="summary_support_wrap_around">ເປີດ ຫຼືປິດການຫໍ່ຈາກລາຍການສຸດທ້າຍໄປຫາອັນທໍາອິດທີ່ເປີດ ຫຼືປິດ</string>
     <string name="wrap_around_on">ວົນກັບໄປຕົ້ນ: ເປີດ</string>
     <string name="wrap_around_off">ວົນກັບໄປຕົ້ນ: ປິດ</string>

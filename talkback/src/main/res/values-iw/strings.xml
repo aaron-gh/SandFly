@@ -1683,7 +1683,7 @@
     <string name="value_lift_to_activate_entire_screen">מסך שלם</string>
     <string name="template_lift_to_activate_changed">הרם להפעלה: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">ניווט מעגלי</string>
-    <string name="summary_pref_wrap_around">החלקה על פני הפריט האחרון עוברת אל הראשון, ומעבר הראשון עובר אל האחרון. במצב כבוי, במקום מתנגן צליל בסוף.</string>
+    <string name="summary_pref_wrap_around">החלקה מעבר לפריט האחרון עוברת לראשון, ומעבר לראשון עוברת לאחרון. כשהאפשרות כבויה, מושמע צליל בסוף במקום זאת.</string>
     <string name="title_pref_fix_stuck_touch_exploration">תיקון גילוי באמצעות מגע שנתקע</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ללא הרשאת DUMP, SandFly יכול רק לומר שחקר המגע עשוי להיות תקוע. כדי לתקן את זה, הפעל: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">מתקן את גילוי באמצעות מגע</string>
@@ -1701,7 +1701,7 @@
     <string name="title_pref_touch_stops_speech">הפסקת הדיבור בעת נגיעה במסך</string>
     <string name="title_pref_focus_new_windows">העברת המיקוד לחלונות חדשים</string>
     <string name="title_pref_volume_keys_adjust_sliders">מקשי עוצמת הקול מכוונים את המחוונים</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">כאשר למחוון יש מיקוד, עוצמת הקול משנים את הערך שלו במקום את עוצמת הקול</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">כשמחוון נמצא במיקוד, מקשי הגברת והחלשת עוצמת הקול משנים את הערך שלו במקום את עוצמת הקול</string>
     <string name="title_pref_volume_keys_move_cursor">מקשי עוצמת הקול מזיזים את הסמן</string>
     <string name="summary_pref_volume_keys_move_cursor">כאשר בשדה טקסט יש מיקוד, הגברת עוצמת הקול מזיזה את הסמן אחורה תו והורדת עוצמת הקול מזיזה אותו הלאה</string>
     <string name="summary_support_wrap_around">הפעל או כבה את העטיפה מהפריט האחרון לפריט הראשון</string>

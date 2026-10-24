@@ -1679,7 +1679,7 @@
     <string name="value_lift_to_activate_entire_screen">മുഴുവൻ സ്ക്രീൻ</string>
     <string name="template_lift_to_activate_changed">വിരൽ ഉയർത്തി സജീവമാക്കുക: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">തുടക്കത്തിലേക്ക് മടങ്ങുക</string>
-    <string name="summary_pref_wrap_around">അവസാനത്തെ ഇനം സ്വൈപ്പുചെയ്യുന്നത് ആദ്യത്തേതിലേക്കും ആദ്യത്തേത് അവസാനത്തേതിലേക്കും പോകുന്നു. ഓഫായിരിക്കുമ്പോൾ, പകരം ഒരു ശബ്ദം അവസാനം പ്ലേ ചെയ്യുന്നു.</string>
+    <string name="summary_pref_wrap_around">അവസാന ഇനം കടന്ന് സ്വൈപ്പ് ചെയ്താൽ ആദ്യത്തേതിലേക്കും, ആദ്യത്തേത് കടന്നാൽ അവസാനത്തേതിലേക്കും പോകുന്നു. ഓഫായിരിക്കുമ്പോൾ, പകരം അവസാനം ഒരു ശബ്‌ദം പ്ലേ ചെയ്യുന്നു.</string>
     <string name="title_pref_fix_stuck_touch_exploration">കുടുങ്ങിയ സ്‌പർശനത്തിലൂടെയുള്ള പര്യവേക്ഷണം പരിഹരിക്കുക</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP അനുമതിയില്ലാതെ, ടച്ച് പര്യവേക്ഷണം തടസ്സപ്പെട്ടേക്കാം എന്ന് മാത്രമേ SandFly ന് പറയാൻ കഴിയൂ. ഇത് പരിഹരിക്കാൻ അനുവദിക്കുന്നതിന്, റൺ ചെയ്യുക: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ടച്ച് പര്യവേക്ഷണം പരിഹരിക്കുന്നു</string>
@@ -1697,9 +1697,9 @@
     <string name="title_pref_touch_stops_speech">സ്‌ക്രീനിൽ തൊടുമ്പോൾ സംസാരം നിർത്തുക</string>
     <string name="title_pref_focus_new_windows">പുതിയ വിൻഡോകളിലേക്ക് ഫോക്കസ് നീക്കുക</string>
     <string name="title_pref_volume_keys_adjust_sliders">വോളിയം കീകൾ സ്ലൈഡറുകൾ ക്രമീകരിക്കുന്നു</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">ഒരു സ്ലൈഡറിന് ഫോക്കസ് ഉള്ളപ്പോൾ, വോളിയത്തിന് പകരം വോളിയം മുകളിലേക്കും താഴേക്കും അതിൻ്റെ മൂല്യം മാറ്റുന്നു</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">ഒരു സ്ലൈഡറിൽ ഫോക്കസ് ഉള്ളപ്പോൾ, വോളിയം കൂട്ടൽ, കുറയ്ക്കൽ കീകൾ വോളിയത്തിന് പകരം അതിന്റെ മൂല്യം മാറ്റുന്നു</string>
     <string name="title_pref_volume_keys_move_cursor">വോളിയം കീകൾ കഴ്സറിനെ ചലിപ്പിക്കുന്നു</string>
-    <string name="summary_pref_volume_keys_move_cursor">ഒരു ടെക്‌സ്‌റ്റ് ഫീൽഡിന് ഫോക്കസ് ഉള്ളപ്പോൾ, വോളിയം അപ്പ് കഴ്‌സറിനെ ഒരു പ്രതീകം പിന്നിലേക്ക് നീക്കുകയും വോളിയം ഡൗൺ അത് ഓൺ ചെയ്യുകയും ചെയ്യുന്നു</string>
+    <string name="summary_pref_volume_keys_move_cursor">ടെക്‌സ്‌റ്റ് ഫീൽഡിൽ ഫോക്കസ് ഉള്ളപ്പോൾ, വോളിയം കൂട്ടുന്നത് കഴ്‌സറിനെ ഒരു പ്രതീകം പിന്നിലേക്കും കുറയ്ക്കുന്നത് ഒരു പ്രതീകം മുന്നിലേക്കും നീക്കുന്നു</string>
     <string name="summary_support_wrap_around">അവസാന ഇനത്തിൽ നിന്ന് ആദ്യത്തേതിലേക്കോ ഓഫിലേക്കോ പൊതിയുക</string>
     <string name="wrap_around_on">തുടക്കത്തിലേക്ക് മടങ്ങുക: ഓണാണ്</string>
     <string name="wrap_around_off">തുടക്കത്തിലേക്ക് മടങ്ങുക: ഓഫാണ്</string>

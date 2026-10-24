@@ -1670,7 +1670,7 @@
     <string name="value_lift_to_activate_entire_screen">మొత్తం స్క్రీన్</string>
     <string name="template_lift_to_activate_changed">వేలు ఎత్తి యాక్టివేట్ చేయి: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">ప్రారంభానికి తిరిగి వెళ్లు</string>
-    <string name="summary_pref_wrap_around">చివరి ఐటెమ్‌ను స్వైప్ చేయడం మొదటిదానికి వెళుతుంది మరియు మొదటిది చివరిదానికి వెళుతుంది. ఆఫ్ చేసినప్పుడు, బదులుగా ఒక ధ్వని చివర ప్లే అవుతుంది.</string>
+    <string name="summary_pref_wrap_around">చివరి ఐటెమ్ దాటి స్వైప్ చేస్తే మొదటిదానికి, మొదటిది దాటితే చివరిదానికి వెళుతుంది. ఆఫ్‌లో ఉంటే, బదులుగా చివరలో ఒక శబ్దం ప్లే అవుతుంది.</string>
     <string name="title_pref_fix_stuck_touch_exploration">నిలిచిపోయిన టచ్ ద్వారా అన్వేషణను పరిష్కరించు</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP అనుమతి లేకుండా, SandFly స్పర్శ అన్వేషణ నిలిచిపోవచ్చని మాత్రమే చెప్పగలదు. దీన్ని పరిష్కరించడానికి అనుమతించడానికి, అమలు చేయండి: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">టచ్ అన్వేషణను పరిష్కరించడం</string>
@@ -1688,9 +1688,9 @@
     <string name="title_pref_touch_stops_speech">స్క్రీన్‌ను తాకినప్పుడు మాటను ఆపు</string>
     <string name="title_pref_focus_new_windows">ఫోకస్‌ను కొత్త విండోలకు తరలించు</string>
     <string name="title_pref_volume_keys_adjust_sliders">వాల్యూమ్ కీలు స్లయిడర్‌లను సర్దుబాటు చేస్తాయి</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">స్లయిడర్ ఫోకస్ కలిగి ఉన్నప్పుడు, వాల్యూమ్ అప్ మరియు డౌన్ దాని విలువను వాల్యూమ్‌కు బదులుగా మారుస్తుంది</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">స్లయిడర్‌పై ఫోకస్ ఉన్నప్పుడు, వాల్యూమ్ పెంచే మరియు తగ్గించే కీలు వాల్యూమ్‌కు బదులుగా దాని విలువను మారుస్తాయి</string>
     <string name="title_pref_volume_keys_move_cursor">వాల్యూమ్ కీలు కర్సర్‌ను కదిలిస్తాయి</string>
-    <string name="summary_pref_volume_keys_move_cursor">టెక్స్ట్ ఫీల్డ్‌లో ఫోకస్ ఉన్నప్పుడు, వాల్యూమ్ అప్ కర్సర్‌ను క్యారెక్టర్‌ని వెనుకకు తరలిస్తుంది మరియు వాల్యూమ్ డౌన్ దానిని ఆన్ చేస్తుంది</string>
+    <string name="summary_pref_volume_keys_move_cursor">టెక్స్ట్ ఫీల్డ్‌పై ఫోకస్ ఉన్నప్పుడు, వాల్యూమ్ పెంచడం కర్సర్‌ను ఒక అక్షరం వెనుకకు, తగ్గించడం ఒక అక్షరం ముందుకు జరుపుతుంది</string>
     <string name="summary_support_wrap_around">ర్యాపింగ్‌ని చివరి అంశం నుండి మొదటిది ఆన్ లేదా ఆఫ్ చేయండి</string>
     <string name="wrap_around_on">ప్రారంభానికి తిరిగి వెళ్లు: ఆన్‌లో ఉంది</string>
     <string name="wrap_around_off">ప్రారంభానికి తిరిగి వెళ్లు: ఆఫ్‌లో ఉంది</string>

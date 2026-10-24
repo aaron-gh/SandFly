@@ -1679,7 +1679,7 @@
     <string name="value_lift_to_activate_entire_screen">Ամբողջ էկրանը</string>
     <string name="template_lift_to_activate_changed">Բարձրացրեք՝ ակտիվացնելու համար՝ <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Ցիկլիկ անցում</string>
-    <string name="summary_pref_wrap_around">Վերջին տարրի կողքով սահեցնելը գնում է առաջինին, իսկ առաջինից անցնելը գնում է վերջինին: Երբ անջատված է, փոխարենը վերջում հնչում է ձայն:</string>
+    <string name="summary_pref_wrap_around">Վերջին տարրից այն կողմ սահեցնելիս անցնում է առաջինին, իսկ առաջինից այն կողմ՝ վերջինին։ Անջատված լինելիս փոխարենը վերջում ձայն է հնչում։</string>
     <string name="title_pref_fix_stuck_touch_exploration">Ուղղել կախված հպումով զննումը</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Առանց DUMP թույլտվության SandFly-ը կարող է միայն ասել, որ «Հպումով ուսումնասիրումը» կարող է կախված լինել։ Որպեսզի այն կարողանա շտկել խնդիրը, գործարկեք՝ adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Հպումով ուսումնասիրության շտկում</string>
@@ -1699,7 +1699,7 @@
     <string name="title_pref_volume_keys_adjust_sliders">Ձայնի ստեղները կարգավորում են սահիչները</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Երբ սահիչն ունի ֆոկուս, ձայնի բարձրացումն ու իջեցումը փոխում են դրա արժեքը ձայնի փոխարեն</string>
     <string name="title_pref_volume_keys_move_cursor">Ձայնի ստեղները շարժում են կուրսորը</string>
-    <string name="summary_pref_volume_keys_move_cursor">Երբ տեքստային դաշտն ունի ֆոկուս, ձայնի բարձրացումը կուրսորը տեղափոխում է նիշ, իսկ ձայնի ձայնի իջեցումը միացնում է այն</string>
+    <string name="summary_pref_volume_keys_move_cursor">Երբ տեքստային դաշտը ֆոկուսում է, ձայնի բարձրացումը կուրսորը տեղափոխում է մեկ նիշ հետ, իսկ իջեցումը՝ մեկ նիշ առաջ</string>
     <string name="summary_support_wrap_around">Միացրեք կամ անջատեք փաթաթումը վերջին տարրից մինչև առաջինը</string>
     <string name="wrap_around_on">Ցիկլիկ անցում: միացված</string>
     <string name="wrap_around_off">Ցիկլիկ անցում: անջատված</string>

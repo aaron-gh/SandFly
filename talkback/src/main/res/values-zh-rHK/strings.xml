@@ -1678,7 +1678,7 @@
     <string name="value_lift_to_activate_entire_screen">全螢幕</string>
     <string name="template_lift_to_activate_changed">抬起手指啟動：<xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">循環瀏覽</string>
-    <string name="summary_pref_wrap_around">滑過最後一個項目將轉到第一個項目，滑過第一個項目將轉到最後一個項目。關閉時，最後會播放聲音。</string>
+    <string name="summary_pref_wrap_around">滑過最後一個項目會移到第一個項目，滑過第一個項目會移到最後一個項目。關閉時，改為在盡頭播放音效。</string>
     <string name="title_pref_fix_stuck_touch_exploration">修正觸控探索停止回應的問題</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">如果沒有 DUMP 權限，SandFly 只能提示輕觸探索可能已停止回應。如要讓 SandFly 修正問題，請執行：adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">修復觸摸探索</string>
@@ -1696,9 +1696,9 @@
     <string name="title_pref_touch_stops_speech">觸碰螢幕時停止朗讀</string>
     <string name="title_pref_focus_new_windows">將焦點移至新視窗</string>
     <string name="title_pref_volume_keys_adjust_sliders">音量鍵調整滑桿</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">當滑桿獲得焦點時，音量增加和減少會更改其值而不是音量</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">滑桿獲得焦點時，調高和調低音量鍵會變更滑桿的值，而不是音量</string>
     <string name="title_pref_volume_keys_move_cursor">音量鍵移動遊標</string>
-    <string name="summary_pref_volume_keys_move_cursor">當文字欄位獲得焦點時，調高音量會將遊標向後移動一個字符，調低音量會將其向前移動</string>
+    <string name="summary_pref_volume_keys_move_cursor">文字欄位獲得焦點時，調高音量會將游標向後移一個字元，調低音量會將游標向前移一個字元</string>
     <string name="summary_support_wrap_around">開啟或關閉從最後一個項目到第一個項目的換行</string>
     <string name="wrap_around_on">循環瀏覽：開啟</string>
     <string name="wrap_around_off">循環瀏覽：關閉</string>

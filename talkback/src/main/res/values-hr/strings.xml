@@ -1683,7 +1683,7 @@
     <string name="value_lift_to_activate_entire_screen">Cijeli ekran</string>
     <string name="template_lift_to_activate_changed">Podignite za aktiviranje: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Kružno kretanje</string>
-    <string name="summary_pref_wrap_around">Prelaskom preko zadnje stavke prelazite na prvu, a nakon prve prelazite na posljednju. Kada je isključeno, umjesto toga svira zvuk na kraju.</string>
+    <string name="summary_pref_wrap_around">Prelaskom prstom preko zadnje stavke prelazi se na prvu, a preko prve na zadnju. Kada je isključeno, umjesto toga na kraju se reproducira zvuk.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Popravi zaglavljeno istraživanje dodirom</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez dopuštenja DUMP, SandFly može samo reći da je istraživanje dodirom možda zapelo. Da biste ga popravili, pokrenite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Popravak istraživanja dodirom</string>

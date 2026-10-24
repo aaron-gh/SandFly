@@ -1679,7 +1679,7 @@
     <string name="value_lift_to_activate_entire_screen">پوری اسکرین</string>
     <string name="template_lift_to_activate_changed">انگلی اٹھا کر فعال کریں: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">شروع پر واپس جائیں</string>
-    <string name="summary_pref_wrap_around">آخری آئٹم کے پاس سے سوائپ کرنے سے پہلے کی طرف جاتا ہے، اور پہلے سے گزرنا آخری پر جاتا ہے۔ آف ہونے پر، اس کے بجائے آخر میں ایک آواز بجتی ہے۔</string>
+    <string name="summary_pref_wrap_around">آخری آئٹم سے آگے سوائپ کرنے پر پہلے پر، اور پہلے سے پیچھے سوائپ کرنے پر آخری پر چلا جاتا ہے۔ آف ہونے پر اس کے بجائے آخر میں ایک آواز چلتی ہے۔</string>
     <string name="title_pref_fix_stuck_touch_exploration">پھنسے ہوئے ٹچ ایکسپلوریشن کو درست کریں</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP اجازت کے بغیر، SandFly صرف یہ کہہ سکتا ہے کہ ٹچ ایکسپلوریشن پھنس سکتی ہے۔ اسے ٹھیک کرنے کے لیے چلائیں: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">ٹچ ایکسپلوریشن کو ٹھیک کرنا</string>
@@ -1697,9 +1697,9 @@
     <string name="title_pref_touch_stops_speech">اسکرین کو چھوتے وقت بولنا بند کریں</string>
     <string name="title_pref_focus_new_windows">فوکس کو نئی ونڈوز پر منتقل کریں</string>
     <string name="title_pref_volume_keys_adjust_sliders">والیوم کیز سلائیڈرز کو ایڈجسٹ کرتی ہیں</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">جب کسی سلائیڈر پر فوکس ہوتا ہے تو والیوم کی بجائے اس کی قدر کو اوپر اور نیچے تبدیل کریں</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">جب کسی سلائیڈر پر فوکس ہو تو والیوم بڑھانے اور کم کرنے والی کلیدیں والیوم کے بجائے اس کی قدر تبدیل کرتی ہیں</string>
     <string name="title_pref_volume_keys_move_cursor">والیوم کیز کرسر کو حرکت دیتی ہیں</string>
-    <string name="summary_pref_volume_keys_move_cursor">جب کسی ٹیکسٹ فیلڈ میں فوکس ہوتا ہے، تو والیوم اپ کرسر کو ایک کریکٹر کی طرف لے جاتا ہے اور والیوم ڈاؤن اسے آگے بڑھاتا ہے</string>
+    <string name="summary_pref_volume_keys_move_cursor">جب کسی ٹیکسٹ فیلڈ پر فوکس ہو تو والیوم بڑھانا کرسر کو ایک حرف پیچھے اور والیوم کم کرنا ایک حرف آگے لے جاتا ہے</string>
     <string name="summary_support_wrap_around">آخری آئٹم سے پہلی چیز پر ریپنگ کو آن یا آف کریں</string>
     <string name="wrap_around_on">شروع پر واپس جائیں: آن ہے</string>
     <string name="wrap_around_off">شروع پر واپس جائیں: آف ہے</string>

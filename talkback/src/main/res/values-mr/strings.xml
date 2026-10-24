@@ -1682,7 +1682,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="value_lift_to_activate_entire_screen">संपूर्ण स्क्रीन</string>
     <string name="template_lift_to_activate_changed">बोट उचलून सक्रिय करा: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">सुरुवातीला परत जा</string>
-    <string name="summary_pref_wrap_around">शेवटच्या आयटमवरून स्वाइप केल्यास पहिल्याकडे जाते आणि पहिल्याला गेल्याने शेवटच्याकडे जाते. बंद असताना, त्याऐवजी शेवटी एक आवाज वाजतो.</string>
+    <string name="summary_pref_wrap_around">शेवटच्या आयटमच्या पुढे स्वाइप केल्यास पहिल्यावर आणि पहिल्याच्या मागे स्वाइप केल्यास शेवटच्यावर जाते. बंद असताना, त्याऐवजी शेवटी आवाज वाजतो.</string>
     <string name="title_pref_fix_stuck_touch_exploration">अडकलेल्या स्पर्श अन्वेषणाचे निराकरण करा</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP परवानगीशिवाय, SandFly फक्त असे म्हणू शकते की स्पर्श अन्वेषण कदाचित अडकले आहे. त्याचे निराकरण करू देण्यासाठी, चालवा: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">स्पर्श अन्वेषण दुरुस्त करत आहे</string>
@@ -1700,7 +1700,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="title_pref_touch_stops_speech">स्क्रीनला स्पर्श करताना बोलणे थांबवा</string>
     <string name="title_pref_focus_new_windows">नवीन विंडोवर फोकस हलवा</string>
     <string name="title_pref_volume_keys_adjust_sliders">व्हॉल्यूम की स्लाइडर समायोजित करतात</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">जेव्हा स्लाइडरवर फोकस असतो, तेव्हा व्हॉल्यूम अप आणि डाउन व्हॉल्यूमऐवजी त्याचे मूल्य बदलते</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">स्लाइडरवर फोकस असताना, व्हॉल्यूम वाढवा आणि कमी करा की व्हॉल्यूमऐवजी त्याचे मूल्य बदलतात</string>
     <string name="title_pref_volume_keys_move_cursor">व्हॉल्यूम की कर्सर हलवतात</string>
     <string name="summary_pref_volume_keys_move_cursor">जेव्हा मजकूर फील्डवर फोकस असतो, तेव्हा व्हॉल्यूम अप कर्सरला एक वर्ण मागे हलवते आणि व्हॉल्यूम डाउन ते पुढे हलवते</string>
     <string name="summary_support_wrap_around">शेवटच्या आयटमपासून पहिल्या आयटमवर रॅपिंग चालू किंवा बंद करा</string>
