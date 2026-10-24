@@ -1005,6 +1005,10 @@
       <item>@string/value_multi_tap_timeout_150ms</item>
       <item>@string/value_multi_tap_timeout_200ms</item>
       <item>@string/value_multi_tap_timeout_250ms</item>
+      <!-- Longer times for slower taps, with the same text as the handwriting waits. -->
+      <item>@string/value_handwriting_wait_300</item>
+      <item>@string/value_handwriting_wait_400</item>
+      <item>@string/value_handwriting_wait_500</item>
     </string-array>
 
   <!-- Multi-tap timeout values -->
@@ -1013,6 +1017,9 @@
       <item>150</item>
       <item>200</item>
       <item>250</item>
+      <item>300</item>
+      <item>400</item>
+      <item>500</item>
     </string-array>
 
     <string name="pref_multi_tap_timeout_default" translatable="false">250</string>

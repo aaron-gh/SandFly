@@ -1689,6 +1689,10 @@ public class TouchInteractionMonitor
       int remaining = requestTouchExplorationDelayed.remainingTime();
       requestTouchExplorationDelayed.cancel();
       requestTouchExplorationDelayed.post(remaining);
+      // The first tap has ended. The second may come as late as the time between taps after it, as
+      // the double tap allows, so touch exploration waits until then rather than counting from the
+      // first tap's start, which made a double tap with a longer first tap or gap impossible.
+      requestTouchExplorationDelayed.extendTo(GestureConfiguration.getMultiTapCompletionTimeoutMs());
     }
   }
 
