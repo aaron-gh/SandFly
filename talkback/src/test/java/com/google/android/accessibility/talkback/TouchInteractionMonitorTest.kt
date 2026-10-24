@@ -242,6 +242,22 @@ class TouchInteractionMonitorTest {
   }
 
   @Test
+  fun secondTapWithinTheTimeBetweenTapsAfterTheFirstEndsMakesADoubleTap() {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 160f, 200f, 0)
+    touchAt(ACTION_UP, 160f, 200f, 80)
+    // 200 ms after the first tap ended, within the time between taps, but after the touch
+    // exploration delay counted from the first tap's start.
+    touchAt(ACTION_DOWN, 160f, 200f, 280)
+    runUntil(270)
+    assertEquals(listOf<Thread>(), reporter.requests)
+    touchAt(ACTION_UP, 160f, 200f, 340)
+    runUntil(500)
+
+    assertEquals(listOf(GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
   fun touchExplorationTurnedOffDuringATouchChangesWhenTheTouchEnds() {
     stateChangeAt(STATE_TOUCH_INTERACTING, 0)
     touchAt(ACTION_DOWN, 160f, 200f, 0)
