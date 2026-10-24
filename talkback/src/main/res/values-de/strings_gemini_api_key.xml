@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">Modell</string>
     <string name="ai_service_address_invalid">Die Adresse muss mit https:// beginnen. Es wurde nichts gespeichert.</string>
     <string name="dialog_message_ai_service_consent">Bilder und Screenshots werden zur Beschreibung an <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> gesendet, was mehrere Sekunden dauert. Es gelten eigene Geschäftsbedingungen und Datenschutzbestimmungen. Generative KI ist experimentell und macht daher Fehler.</string>
-    <string name="ai_service_error_api_key">Der KI-Dienst hat den API-Schlüssel nicht akzeptiert. Überprüfen Sie seine Einstellungen unter Automatische Beschreibungen.</string>
-    <string name="ai_service_error_quota">Das Nutzungslimit des KI-Dienstes wurde erreicht. Versuchen Sie es später erneut.</string>
-    <string name="ai_service_error_busy">Der KI-Dienst ist gerade beschäftigt. Versuchen Sie es gleich noch einmal.</string>
-    <string name="ai_service_error_timeout">Die Antwort des KI-Dienstes dauerte zu lange. Versuchen Sie es erneut.</string>
+    <string name="ai_service_error_api_key">Der KI-Dienst hat den API-Schlüssel nicht akzeptiert. Prüfe seine Einstellungen unter „Automatische Beschreibungen“.</string>
+    <string name="ai_service_error_quota">Das Nutzungslimit des KI-Dienstes ist erreicht. Versuch es später noch einmal.</string>
+    <string name="ai_service_error_busy">Der KI-Dienst ist gerade ausgelastet. Versuch es gleich noch einmal.</string>
+    <string name="ai_service_error_timeout">Die Antwort des KI-Dienstes hat zu lange gedauert. Versuch es noch einmal.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Keine</string>
-    <string name="ai_service_not_set_up">Es wird kein KI-Dienst verwendet. Richten Sie einen Dienst ein oder wählen Sie einen unter Automatische Beschreibungen aus.</string>
-    <string name="ai_provider_none_set_up">Es ist kein KI-Dienst eingerichtet. Richten Sie einen in den Einstellungen unten ein.</string>
+    <string name="ai_service_not_set_up">Es wird kein KI-Dienst verwendet. Richte einen Dienst ein oder wähle einen unter „Automatische Beschreibungen“ aus.</string>
+    <string name="ai_provider_none_set_up">Es ist kein KI-Dienst eingerichtet. Richte einen in seinen Einstellungen unten ein.</string>
     <string name="ai_provider_other">Anderer Dienst</string>
     <string name="title_pref_category_ai_services">KI-Dienste</string>
     <string name="title_pref_ai_provider">KI-Dienst</string>
