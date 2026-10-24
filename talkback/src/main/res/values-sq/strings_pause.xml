@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pause_backtalk">Ndalo SandFly</string>
-    <string name="summary_pause_backtalk">Çaktivizo fjalimin, gjestet dhe eksploro me prekje derisa të rifillosh SandFly</string>
+    <string name="title_pause_backtalk">Vendos SandFly në pauzë</string>
+    <string name="summary_pause_backtalk">Çaktivizon të folurit, gjestet dhe “Eksploro me prekje” derisa të rifilloni SandFly</string>
     <string name="keycombo_menu_global_pause_backtalk">Ndalo ose rifillo SandFly</string>
     <string name="backtalk_paused">SandFly në pauzë</string>
     <string name="backtalk_resumed">SandFly rifilloi</string>
     <string name="notification_title_backtalk_paused">SandFly është ndërprerë</string>
     <string name="notification_message_backtalk_paused">Trokit për të rifilluar</string>
     <string name="notification_channel_backtalk_paused">SandFly në pauzë</string>
-    <string name="dialog_title_pause_backtalk">Ndalo SandFly?</string>
+    <string name="dialog_title_pause_backtalk">Të vendoset SandFly në pauzë?</string>
     <string name="dialog_button_pause_backtalk">Vendos në pauzë</string>
     <string name="dialog_message_pause_backtalk">Ndërsa SandFly është në pauzë, ai nuk flet ose nuk u përgjigjet gjesteve dhe ekrani funksionon sikur të mos jetë ndezur asnjë lexues i ekranit.</string>
-    <string name="message_resume_keyguard">Për të vazhduar, prekni njoftimin „SandFly është në pauzë“, shtypni shpejt tri herë butonin për uljen e volumit ose kyçeni dhe zgjojeni telefonin që të shfaqet ekrani i kyçjes.</string>
-    <string name="message_resume_screen_on">Për të rifilluar, trokitni lehtë mbi njoftimin SandFly është në pauzë, shtypni volumin 3 herë shpejt ose fikeni dhe ndizni përsëri ekranin.</string>
-    <string name="message_resume_manual">Për të rifilluar, trokitni lehtë mbi njoftimin SandFly është në pauzë ose shtypni volumin 3 herë me shpejtësi.</string>
+    <string name="message_resume_keyguard">Për të vazhduar, trokitni te njoftimi “SandFly është ndërprerë”, shtypni shpejt 3 herë butonin e uljes së volumit ose kyçni dhe zgjoni telefonin që të shfaqet ekrani i kyçjes.</string>
+    <string name="message_resume_screen_on">Për të vazhduar, trokitni te njoftimi “SandFly është ndërprerë”, shtypni shpejt 3 herë butonin e uljes së volumit ose fikni dhe ndizni sërish ekranin.</string>
+    <string name="message_resume_manual">Për të vazhduar, trokitni te njoftimi “SandFly është ndërprerë” ose shtypni shpejt 3 herë butonin e uljes së volumit.</string>
     <string name="message_resume_key_combo">Mund të shtypni gjithashtu <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
-    <string name="title_pref_resume_backtalk">Rifillo SandFly</string>
+    <string name="title_pref_resume_backtalk">Rifillimi i SandFly</string>
     <string name="value_resume_keyguard">Kur shfaqet ekrani i kyçjes</string>
     <string name="value_resume_screen_on">Kur ekrani ndizet</string>
     <string name="value_resume_manual">Vetëm nga njoftimi ose një shkurtore</string>

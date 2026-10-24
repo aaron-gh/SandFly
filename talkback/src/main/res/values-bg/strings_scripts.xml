@@ -63,7 +63,7 @@
     <string name="script_move_up">По-ранно изпълнение</string>
     <string name="script_move_down">По-късно изпълнение</string>
     <string name="script_order_summary">Ред за скриптовете, които променят един и същ говор. Скриптовете за приложения се изпълняват първи.</string>
-    <string name="script_log">Регистрационен файл</string>
+    <string name="script_log">Дневник</string>
     <string name="script_log_summary">Изход и грешки от стартирането на SandFly</string>
     <string name="script_clear_storage">Изчистване на съхранените данни</string>
     <string name="script_storage_cleared">Съхранените данни са изчистени</string>
@@ -71,10 +71,10 @@
     <string name="script_remove_title">Да се премахне ли <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_remove_message">Изтрива кода, данните и настройките му.</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> е премахнат</string>
-    <string name="script_log_empty">Регистрационният файл е празен</string>
-    <string name="script_log_clear">Изчистване на рег. файл</string>
-    <string name="script_log_copy">Копиране на рег. файл</string>
-    <string name="script_log_copied">Регистрационният файл е копиран</string>
+    <string name="script_log_empty">Дневникът е празен</string>
+    <string name="script_log_clear">Изчистване на дневника</string>
+    <string name="script_log_copy">Копиране на дневника</string>
+    <string name="script_log_copied">Дневникът е копиран</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Изисква API за скриптове <xliff:g id="needed">%1$d</xliff:g> или по-нова версия. Този SandFly има <xliff:g id="current">%2$d</xliff:g>, така че някои части може да не работят.</string>
     <string name="script_api_untested">Тестван до API за скриптове <xliff:g id="tested">%1$d</xliff:g>. Този SandFly има <xliff:g id="current">%2$d</xliff:g>, така че скриптът може да не работи според очакванията.</string>
@@ -88,7 +88,7 @@
     <string name="script_homepage_open">Отваряне</string>
     <string name="script_homepage_failed">Няма приложение, което може да отвори <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> е изключен след повтарящи се грешки. Вижте регистрационния му файл в „Скриптове“.</string>
-    <string name="shortcut_inspect_item">Проверка на елемента на фокус</string>
+    <string name="shortcut_inspect_item">Проверка на елемента във фокус</string>
     <string name="script_inspect_no_item">Няма елемент на фокус</string>
     <string name="script_inspect_copied">Копирано. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Няма идентификатор, така че правилата не могат да го посочат. Копирано. <xliff:g id="details">%1$s</xliff:g></string>
@@ -140,14 +140,14 @@
     <string name="script_source_remove_message">Скриптовете, инсталирани от него, остават инсталирани.</string>
     <string name="scripts_auto_update">Автоматично актуализиране на скриптове</string>
     <string name="scripts_check_updates">Проверка за актуализации</string>
-    <string name="scripts_checking_updates">Проверка за актуализации...</string>
+    <string name="scripts_checking_updates">Проверка за актуализации…</string>
     <string name="scripts_updates_category">Актуализации</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> актуализиран скрипт: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> актуализирани скрипта: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Актуализациите са посочени под Актуализации</string>
+    <string name="scripts_updates_to_approve">Актуализациите са изброени в „Актуализации“</string>
     <string name="scripts_update_check_failed">Някои източници не можаха да бъдат проверени</string>
     <string name="scripts_up_to_date">Всички скриптове са актуални</string>
 </resources>

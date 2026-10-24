@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">સાઉન્ડ થીમ</string>
-    <string name="summary_pref_sound_themes">અવાજો અને વાઇબ્રેશનના સેટ ઇન્સ્ટૉલ કરો અને પસંદ કરો, કોઈ એક અવાજને તમારા પોતાના અવાજથી બદલો અને નિયંત્રણના અવાજો અને વાઇબ્રેશન તથા 3D ઑડિયો ચાલુ કરો.</string>
+    <string name="summary_pref_sound_themes">અવાજો અને વાઇબ્રેશનના સેટ, એક-એક અવાજને બદલે તમારા પોતાના અવાજ, “નિયંત્રણના અવાજો અને વાઇબ્રેશન” અને 3D ઑડિયો.</string>
     <string name="sound_themes_installed_category">ઇન્સ્ટૉલ કરેલી થીમ</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">SandFlyના પોતાના અવાજો અને વાઇબ્રેશન, અને તમારા પોતાના કોઈપણ અવાજો.</string>
@@ -13,8 +13,8 @@
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> અવાજ.</item>
     </plurals>
     <plurals name="sound_theme_vibrations">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> કંપન.</item>
-        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> સ્પંદનો.</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> વાઇબ્રેશન.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> વાઇબ્રેશન.</item>
     </plurals>
     <string name="sound_theme_control_sounds_on">નિયંત્રણના અવાજો અને વાઇબ્રેશન ચાલુ કરે છે.</string>
     <string name="sound_theme_control_sounds_off">નિયંત્રણના અવાજો અને વાઇબ્રેશન બંધ કરે છે.</string>
@@ -75,7 +75,7 @@
     <string name="theme_sound_braille_new_line">બ્રેઇલ કીબોર્ડ: નવી લાઇન</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">સાઉન્ડ ફાઇલ પસંદ કરો</string>
-    <string name="theme_sound_preview">પ્રીવ્યૂ</string>
+    <string name="theme_sound_preview">સાંભળો</string>
     <string name="theme_sound_none">કોઈ અવાજ નહીં</string>
     <string name="theme_sound_summary_no_sound">કોઈ અવાજ નહીં</string>
     <string name="theme_sound_action_set_none">\'કોઈ અવાજ નહીં\' પર સેટ કરો</string>

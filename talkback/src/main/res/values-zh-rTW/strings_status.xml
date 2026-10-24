@@ -2,18 +2,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="shortcut_announce_status">說出狀態</string>
     <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> 條，共 <xliff:g id="max_level" example="4">%2$d</xliff:g> 條</string>
-    <string name="status_wifi_off">Wi-Fi 關閉</string>
-    <string name="status_wifi_not_connected">Wi-Fi 未連接</string>
+    <string name="status_wifi_off">Wi-Fi 已關閉</string>
+    <string name="status_wifi_not_connected">Wi-Fi 未連線</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
     <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
     <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
-    <string name="status_mobile">智慧型手機</string>
-    <string name="status_mobile_no_service">沒有移動服務</string>
-    <string name="status_do_not_disturb">請勿打擾</string>
+    <string name="status_mobile">行動網路</string>
+    <string name="status_mobile_no_service">沒有行動網路服務</string>
+    <string name="status_do_not_disturb">零打擾</string>
     <string name="status_ringer_vibrate">振動</string>
-    <string name="status_ringer_silent">沉默</string>
+    <string name="status_ringer_silent">靜音</string>
     <string name="status_airplane_mode">飛航模式</string>
-    <string name="title_pref_status_readout">狀態讀數</string>
+    <string name="title_pref_status_readout">朗讀狀態</string>
     <string name="status_item_time">時間</string>
     <string name="status_item_time_summary">目前時間</string>
     <string name="status_item_battery">電池</string>
@@ -21,9 +21,9 @@
     <string name="status_item_wifi">Wi-Fi</string>
     <string name="status_item_wifi_summary">網路名稱和訊號強度</string>
     <string name="status_item_mobile">行動網路</string>
-    <string name="status_item_mobile_summary">運營商、網路類型和訊號強度</string>
+    <string name="status_item_mobile_summary">電信業者、網路類型和訊號強度</string>
     <string name="status_item_ringer">響鈴和請勿打擾</string>
-    <string name="status_item_ringer_summary">僅當鈴聲未設定為響鈴或請勿打擾時</string>
+    <string name="status_item_ringer_summary">僅限鈴聲設為震動或靜音，或「零打擾」已開啟時</string>
     <string name="status_item_airplane_mode">飛航模式</string>
     <string name="status_item_airplane_mode_summary">僅當飛航模式開啟時</string>
 </resources>

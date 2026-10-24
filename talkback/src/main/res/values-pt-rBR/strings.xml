@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Dispositivo desbloqueado.</string>
   <string name="title_pref_speech_volume">Volume da fala</string>
   <string name="title_pref_verbose_scroll_announcement">Sempre falar o número de itens na lista</string>
-  <string name="summary_pref_verbose_scroll_announcement">Diga quais itens estão sendo exibidos após cada rolagem</string>
+  <string name="summary_pref_verbose_scroll_announcement">Diz quais itens estão sendo exibidos após cada rolagem</string>
   <string name="title_pref_cover_proximity_sensor">Cobrir sensor de proximidade para interromper a fala</string>
   <string name="title_pref_phonetic_letters">Falar letras com exemplos</string>
   <string name="summary_pref_phonetic_letters">Ao selecionar teclas ou navegar pelos caracteres, você ouvirá um exemplo junto a cada letra, como \"h, hotel\"</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">A maioria</string>
   <string name="punctuation_some">Algumas</string>
   <string name="title_pref_count_repeated_symbols">Contar símbolos repetidos</string>
-  <string name="summary_pref_count_repeated_symbols">Diga quantas vezes um símbolo se repete quando se repete 4 ou mais vezes</string>
+  <string name="summary_pref_count_repeated_symbols">Dizer quantas vezes um símbolo se repete quando ele se repete 4 ou mais vezes</string>
   <string name="learn_more">Saiba mais</string>
   <string name="title_pref_capital_letters">Letras maiúsculas</string>
   <string name="capital_letters_nothing">Não fazer nada</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">Mudar o tom de voz</string>
   <string name="capital_letters_sound_feedback">Tocar som</string>
   <string name="title_pref_a11y_hints">Falar dicas de uso</string>
-  <string name="summary_pref_a11y_hints">Depois que um item for descrito, diga como usá-lo</string>
+  <string name="summary_pref_a11y_hints">Depois de descrever um item, dizer como usá-lo</string>
   <string name="pref_speak_container_element_positions_title">Ler informações do contêiner em voz alta</string>
   <string name="pref_speak_time_title">Falar o horário</string>
   <string name="pref_speak_time_summary">Ao ligar a tela</string>
-  <string name="summary_speak_container_element_positions">Diga quando você entra ou sai de listas, grades e outros contêineres</string>
+  <string name="summary_speak_container_element_positions">Avisa quando você entra ou sai de listas, grades e outros contêineres</string>
   <string name="reset_letency_reduction_settings_dialog_title">Redefinir as configurações de atraso?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Essa ação vai redefinir todas as configurações de atraso para o padrão</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Redefinir</string>
@@ -62,14 +62,14 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Redefinir</string>
   <string name="gestures_announce_reset_gesture_settings">As configurações de gestos foram redefinidas.</string>
   <string name="pref_speak_roles_title">Falar o tipo do elemento</string>
-  <string name="pref_speak_roles_summary">Botão Curtir ou caixa de seleção</string>
+  <string name="pref_speak_roles_summary">Como botão ou caixa de seleção</string>
   <string name="title_pref_speak_element_ids">Falar o ID dos elementos</string>
-  <string name="summary_pref_speak_element_ids">Diga o ID dos botões que não possuem rótulo</string>
+  <string name="summary_pref_speak_element_ids">Fala o ID dos botões sem rótulo</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Falar todas as atualizações de progresso</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Inclui atualizações ao baixar conteúdo, seguir rotas de carro e muito mais. Quando o recurso está desativado, você ainda recebe atualizações, mas com menos frequência.</string>
   <string name="title_pref_explore_by_touch">Explorar por toque</string>
   <string name="title_pref_category_controls">Controles</string>
-  <string name="title_pref_category_reduce_latency_summary">Essas configurações fazem com que SandFly responda mais rápido depois que você toca na tela</string>
+  <string name="title_pref_category_reduce_latency_summary">Essas configurações fazem o SandFly responder mais rápido depois que você toca na tela</string>
   <string name="reset_latency_settings_title">Redefinir todas as configurações de atraso</string>
   <string name="title_pref_single_tap">Tocar uma vez para ativar</string>
   <string name="summary_pref_single_tap">Toque uma vez em um item em foco para ativá-lo. Isso é mais rápido do que tocar duas vezes.</string>
@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Indicador de foco</string>
   <string name="title_pref_category_manage_gestures">Gestos</string>
   <string name="title_pref_manage_labels">Rótulos personalizados</string>
-  <string name="title_pref_category_context_menu">SandFly cardápio</string>
+  <string name="title_pref_category_context_menu">Menu do SandFly</string>
   <string name="title_pref_category_selector_menu">Controles de leitura</string>
   <string name="title_pref_category_navigation_menu">Editar opções de navegação</string>
   <string name="title_pref_manage_keyboard_shortcuts">Atalhos do teclado</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">Ajuda</string>
   <string name="title_pref_advanced_settings">Configurações avançadas</string>
   <string name="title_pref_show_exit_watermark">Mostrar instruções para desativar o SandFly</string>
-  <string name="summary_pref_show_exit_watermark">Quando SandFly estiver ativado, mostre como desligá-lo</string>
+  <string name="summary_pref_show_exit_watermark">Quando o SandFly é ativado, mostra como desativá-lo</string>
   <string name="talkback_exit_watermark_text">Talkback ativado. Segure a tela com 2 dedos por 5 segundos para desativar. Se não quiser ver esta mensagem, toque com 3 dedos para abrir o menu do SandFly.</string>
   <string name="talkback_exit_watermark_hint_text">Mostrando banner indicando que o SandFly está ativado. Para desativar o SandFly, deixe dois dedos pressionados na tela por cinco segundos. Para remover o banner, acesse as Configurações do SandFly.</string>
   <string name="reset_gesture_settings_title">Redefinir configurações de gestos</string>
@@ -289,10 +289,10 @@
   <string name="override_keycombo_message_two_params">Esta combinação de teclas é usada para a ação \"%1$s\". Quer apagá-la e atribuir esse atalho para \"%2$s\"?</string>
   <string name="title_pref_intonation">Alterar tom de voz</string>
   <string name="title_pref_keyboard_echo">Teclado falado</string>
-  <string name="pref_node_desc_order_title">Detalhes da ordem do item</string>
+  <string name="pref_node_desc_order_title">Ordem dos detalhes do item</string>
   <string name="pref_time_feedback_format_title">Formato de hora</string>
   <string name="title_pref_latency_reduction">Reduzir o atraso</string>
-  <string name="talkback_latency_reduction_summary">Faça SandFly responder mais rápido depois de tocar na tela</string>
+  <string name="talkback_latency_reduction_summary">Faz o SandFly responder mais rápido depois que você toca na tela</string>
   <string name="summary_pref_intonation">Fala letras excluídas em um tom de voz mais agudo</string>
   <string name="title_pref_brailledisplay">Linha braille</string>
   <string name="title_pref_brailleime">Teclado em braille</string>
@@ -305,7 +305,7 @@
   <string name="title_pref_category_developer_settings">Configurações do desenvolvedor</string>
   <string name="title_activity_dump_a11y_event">Selecionar eventos a serem registrados</string>
   <string name="title_pref_dump_a11y_event">Filtrar registro de eventos de acessibilidade</string>
-  <string name="pref_reduce_window_delay_title">Desligue animações</string>
+  <string name="pref_reduce_window_delay_title">Desativar animações</string>
   <string name="title_pref_log_level">Registrar nível de saída</string>
   <string name="title_pref_diagnosis_mode">Modo diagnóstico</string>
   <string name="title_pref_tts_overlay">Mostrar saída de voz</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Feche o SandFly e o abra novamente para ativar a configuração.</string>
   <string name="title_pref_auto_image_captioning">Descrições automáticas</string>
   <string name="title_pref_gemini_settings">Configurações do Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini comandos de voz</string>
+  <string name="title_pref_gemini_enabled">Comandos de voz do Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Receba descrições detalhadas feitas por IA para imagens ao selecionar \“Descrever imagem\” no menu do SandFly.\n\nTambém é possível receber descrições automáticas ao focar em uma imagem ou um ícone. As descrições automáticas funcionam sem uma conexão de Internet.</string>
   <string name="title_pref_icon_detection">Descrições automáticas de ícones</string>
   <string name="title_pref_image_description">Descrições automáticas de imagens</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">Navegar para cima</string>
   <string name="training_tip">Dica</string>
   <string name="tv_training_overview_step_title">Como o SandFly funciona</string>
-  <string name="tv_training_overview_step_summary">SandFly é um leitor de tela baseado no Google do TalkBack. Ele lê em voz alta o texto na tela e fornece feedback falado, para que você possa usar seu dispositivo sem olhar para a tela.\n\nCom SandFly ativado, um item selecionado na tela é falado em voz alta, às vezes com informações adicionais ou contexto adicionado.\n\nPressione Selecionar para continuar. O botão Selecionar está localizado no centro do teclado direcional, que é o botão grande e circular na parte superior do controle remoto.</string>
+  <string name="tv_training_overview_step_summary">O SandFly é um leitor de tela baseado no TalkBack do Google. Ele lê em voz alta o texto na tela e fornece feedback falado, para que você possa usar o dispositivo sem olhar para a tela.\n\nCom o SandFly ativado, o item selecionado na tela é falado em voz alta, às vezes com informações ou contexto adicionais.\n\nPressione Selecionar para continuar. O botão Selecionar fica no centro do botão direcional, que é o botão grande e redondo na parte de cima do controle remoto.</string>
   <string name="tv_training_remote_step_title">Como usar o controle remoto</string>
   <string name="tv_training_remote_step_summary">Navegue pela tela usando o botão direcional em formato circular na parte de cima do controle remoto. Para selecionar, pressione o centro do botão direcional na parte de cima do controle.\n\nNa segunda linha à esquerda, está o botão \"Voltar\". À direita, está o botão do Assistente por voz.\n\nNa terceira linha à esquerda, está o botão home. À direita, está o botão de desativar microfone.\n\nNa quarta linha à esquerda, está o atalho do YouTube. À direita, está o atalho da Netflix.\n\nNa linha de botões, há dois botões pequenos. O que está à esquerda é o botão liga/desliga. O que está à direita abre o menu de entrada da TV.\n\nOs botões de volume ficam localizados no lado direito do controle remoto.\n\nPressione \"Selecionar\" para continuar.</string>
   <string name="tv_training_shortcut_step_title">Atalho do SandFly</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">Também é possível digitar com o teclado em braille. Ele pode ser encontrado nas configurações do SandFly.</string>
   <string name="other_ways_to_type_title">Outras maneiras de digitar</string>
   <string name="other_ways_to_type_text">Há outras maneiras de digitar no SandFly. Por exemplo, tocando duas vezes para inserir uma letra.</string>
-  <string name="basic_other_ways_to_type_text">Existem outras maneiras de digitar SandFly. Por exemplo, você pode tocar duas vezes para inserir uma letra. Você pode alterar isso mais tarde em SandFly configurações &gt; Teclado na tela &gt; Método de digitação.</string>
-  <string name="basic_other_ways_to_type_text_tts">Existem outras maneiras de digitar SandFly. Por exemplo, você pode tocar duas vezes para inserir uma letra. Você pode alterar isso mais tarde nas configurações SandFly, depois no teclado na tela e no método de digitação.</string>
+  <string name="basic_other_ways_to_type_text">Há outras maneiras de digitar no SandFly. Por exemplo, você pode tocar duas vezes para inserir uma letra. Você pode mudar isso depois em Configurações do SandFly &gt; Teclado na tela &gt; Método de digitação.</string>
+  <string name="basic_other_ways_to_type_text_tts">Há outras maneiras de digitar no SandFly. Por exemplo, você pode tocar duas vezes para inserir uma letra. Você pode mudar isso depois em Configurações do SandFly, depois Teclado na tela e depois Método de digitação.</string>
   <string name="change_typing_preference_text">Mudar preferência de digitação</string>
   <string name="moving_cursor_title">Como mover o cursor</string>
   <string name="moving_cursor_text">Ao ativar uma caixa de texto, você pode mover o cursor entre as letras deslizando para cima ou para baixo.\n\nFaça um teste na caixa de texto abaixo.</string>
@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Para conferir seu histórico de notificações, deslize a tela de cima para baixo com dois dedos</string>
   <string name="image_description_playground_title">Tente ouvir as descrições de imagens</string>
   <string name="image_description_playground_content_one">Quando você focar em uma imagem, abra o menu do SandFly e selecione \"Descrever a imagem\".\n\nTente ouvir a descrição da foto mostrada abaixo.</string>
-  <string name="image_description_playground_content_two">Você pode alterar as configurações de descrição da imagem a qualquer momento em configurações SandFly &gt; Descrições automáticas.</string>
-  <string name="image_description_playground_content_two_tts">Você pode alterar as configurações de descrição da imagem a qualquer momento nas configurações SandFly e depois nas descrições automáticas.</string>
+  <string name="image_description_playground_content_two">Você pode alterar as configurações de descrição de imagens a qualquer momento em Configurações do SandFly &gt; Descrições automáticas.</string>
+  <string name="image_description_playground_content_two_tts">Você pode alterar as configurações de descrição de imagens a qualquer momento em Configurações do SandFly e depois em Descrições automáticas.</string>
   <string name="image_description_sample_image_content_description">Imagem de amostra. Toque com 3 dedos para abrir o menu do SandFly e selecione \"Descrever imagem\" para ouvir uma descrição.</string>
   <string name="practice_gestures_title">Praticar gestos</string>
   <string name="practice_keyboard_gestures_title">Praticar atalhos do teclado</string>
@@ -1304,19 +1304,19 @@
     <string name="summary_selector_switch_tts_engine">Alternar entre mecanismos de fala instalados</string>
     <string name="title_selector_voice_profile">Perfil de voz</string>
     <string name="title_pref_voice_profiles">Perfis de voz</string>
-    <string name="voice_profile_default">SandFly padrão</string>
+    <string name="voice_profile_default">Padrão do SandFly</string>
     <string name="voice_profile_in_use">Em uso: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Idioma falado indisponível ao usar um perfil de voz</string>
     <string name="speech_engine_unavailable_with_profile">Mecanismo de fala indisponível ao usar um perfil de voz</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, em uso</string>
     <string name="no_voice_profiles">Sem perfis de voz</string>
-    <string name="shortcut_voice_profiles">Escolha o perfil de voz</string>
+    <string name="shortcut_voice_profiles">Escolher perfil de voz</string>
     <string name="shortcut_previous_voice_profile">Perfil de voz anterior</string>
     <string name="shortcut_next_voice_profile">Próximo perfil de voz</string>
     <string name="title_pref_voice_profile_in_use">Perfil de voz em uso</string>
     <string name="title_pref_add_voice_profile">Adicionar perfil de voz</string>
     <string name="voice_profile_new_name">Perfil de voz <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Um perfil de voz já foi chamado <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Já existe um perfil de voz chamado <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Nome</string>
     <string name="title_pref_voice_profile_language">Idioma</string>
     <string name="title_pref_voice_profile_voice">Voz</string>
@@ -1327,8 +1327,8 @@
     <string name="voice_profile_move_up">Subir</string>
     <string name="voice_profile_move_down">Mover para baixo</string>
     <string name="voice_profile_rename">Renomear</string>
-    <string name="voice_profile_moved_above">Movido acima <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="voice_profile_moved_below">Movido para baixo <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_above">Movido para cima de <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_below">Movido para baixo de <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> excluído</string>
     <string name="title_pref_delete_voice_profile">Excluir perfil de voz</string>
     <string name="voice_profile_delete_confirm">Excluir <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
@@ -1340,100 +1340,100 @@
     <string name="speech_stream_accessibility">Volume de acessibilidade</string>
     <string name="speech_stream_media">Volume de mídia</string>
     <string name="speech_stream_ring">Volume do toque</string>
-    <string name="speech_stream_call">Volume da chamada, fone de ouvido</string>
+    <string name="speech_stream_call">Volume da chamada, receptor</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Envie um texto longo, uma frase de cada vez</string>
-    <string name="summary_pref_speak_in_phrases">Para mecanismos de fala que demoram para parar, como o Gryphon, deslizar para longe interrompe o texto longo de uma só vez. Muitos mecanismos pausam mais entre as frases enviadas separadamente, então deixe essa opção desativada se o seu parar rapidamente.</string>
+    <string name="title_pref_speak_in_phrases">Enviar texto longo uma frase de cada vez</string>
+    <string name="summary_pref_speak_in_phrases">Para mecanismos de fala que demoram a parar, como o Gryphon, para que um deslize interrompa o texto longo imediatamente. Muitos mecanismos fazem pausas mais longas entre frases enviadas separadamente, então deixe desativado se o seu mecanismo parar rápido.</string>
     <string name="battery_optimization_notification_title">A otimização da bateria pode parar SandFly</string>
-    <string name="battery_optimization_notification_text">Neste telefone, a economia de bateria pode parar SandFly depois que a tela é desligada, ficando em silêncio até ser reiniciado. Toque para abrir a otimização da bateria, escolha Todos os aplicativos, encontre SandFly e escolha Não otimizar.</string>
+    <string name="battery_optimization_notification_text">Neste telefone, a economia de bateria pode parar o SandFly depois que a tela é desligada, e ele fica em silêncio até ser reiniciado. Toque para abrir a otimização de bateria, escolha Todos os apps, encontre o SandFly e escolha Não otimizar.</string>
     <string name="title_pref_mute_speech_while_recording">Silencioso durante a gravação</string>
-    <string name="summary_pref_mute_speech_while_recording">Embora um aplicativo grave sem fones de ouvido conectados, SandFly só fala em resposta aos seus gestos, teclas e digitação, e permanece silencioso para coisas como notificações, para que não sejam gravadas.</string>
+    <string name="summary_pref_mute_speech_while_recording">Enquanto um app grava sem fones de ouvido conectados, o SandFly só fala em resposta aos seus gestos, teclas e digitação e fica em silêncio para coisas como notificações, para que elas não sejam gravadas.</string>
     <string name="title_pref_switch_languages">Alternar idioma automaticamente</string>
     <string name="title_pref_switch_dialects">Mudar de dialeto automaticamente</string>
     <string name="category_collapsed">Seção recolhida</string>
     <string name="category_expanded">Seção expandida</string>
     <string name="title_pref_speak_nav_bar_buttons">Falar botões da barra de navegação</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Com o elevador para ativar na barra de navegação, diga o botão que um toque pressiona, como Voltar ou Início.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Com Levantar o dedo para ativar na barra de navegação, fala o botão pressionado pelo toque, como Voltar ou Início.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Bateria <xliff:g id="battery_level" example="73">%1$s</xliff:g> por cento</string>
     <string name="template_battery_level_unknown">Nível da bateria desconhecido</string>
     <string name="value_charger_connected">Carregador conectado</string>
     <string name="title_pref_screen_announcements">Tela ligada e desligada</string>
-    <string name="summary_pref_screen_announcements">Escolha o que SandFly diz quando a tela liga ou desliga e quando o telefone é desbloqueado</string>
+    <string name="summary_pref_screen_announcements">Escolha o que o SandFly diz quando a tela liga ou desliga e quando o telefone é desbloqueado</string>
     <string name="title_screen_announcements_screen_off">Quando a tela desliga</string>
     <string name="title_screen_announcements_screen_on">Quando a tela liga</string>
-    <string name="title_screen_announcements_unlock">Quando o telefone está desbloqueado</string>
-    <string name="title_pref_say_screen_off">Diga \"Tela desligada\"</string>
-    <string name="title_pref_say_device_unlocked">Diga \"Dispositivo desbloqueado\"</string>
+    <string name="title_screen_announcements_unlock">Quando o telefone é desbloqueado</string>
+    <string name="title_pref_say_screen_off">Falar \"Tela desligada\"</string>
+    <string name="title_pref_say_device_unlocked">Falar \"Dispositivo desbloqueado\"</string>
     <string name="title_pref_announce_time">Hora</string>
     <string name="title_pref_announce_ringer_mode">Modo de campainha</string>
-    <string name="summary_pref_announce_ringer_mode">Diga quando a campainha está definida para vibrar ou silenciar</string>
-    <string name="title_pref_category_feedback">Comentários</string>
+    <string name="summary_pref_announce_ringer_mode">Avisar quando o toque estiver definido para vibrar ou silencioso</string>
+    <string name="title_pref_category_feedback">Retorno</string>
     <string name="title_pref_category_typing_and_braille">Digitação e braille</string>
     <string name="title_pref_category_apps">Aplicativos</string>
     <string name="title_pref_touch_activation">Toque e ativação</string>
     <string name="title_pref_navigation">Navegação</string>
     <string name="title_pref_category_more">Mais</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Reserve gestos para Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Pára SandFly de manipular toques simples e duplos com dois dedos para que Samsung Vibration Watch possa usá-los. Ative Vibration Watch nas configurações de acessibilidade do seu relógio.</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Reservar gestos para Vibration Watch</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">O SandFly deixa de processar toques simples e duplos com dois dedos para que o Samsung Vibration Watch possa usá-los. Ative o Vibration Watch nas configurações de acessibilidade do relógio.</string>
     <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch em Configurações Avançadas</string>
     <string name="title_pref_speakerphone_away_from_ear">Alto-falante quando longe do ouvido</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Durante uma chamada, muda para o alto-falante quando você afasta o telefone do ouvido e volta para o fone de ouvido quando você o segura novamente.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Precisa de uma permissão que Android não concede aos leitores de tela. Para concedê-lo, execute este comando com adb or Shizuku, then come back to this screen: %1$s</string>
-    <string name="action_copy_command">Comando copiar</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Durante uma ligação, muda para o alto-falante quando você afasta o telefone do ouvido e volta para o alto-falante auricular quando você o aproxima do ouvido de novo.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Precisa de uma permissão que o Android não concede a leitores de tela. Para concedê-la, execute este comando com adb ou Shizuku e volte para esta tela: %1$s</string>
+    <string name="action_copy_command">Copiar comando</string>
     <string name="command_copied">Comando copiado</string>
-    <string name="title_pref_speech_control">Deixe outros aplicativos falarem</string>
-    <string name="summary_pref_speech_control">Os aplicativos que você permite podem dizer texto em sua voz SandFly. Nada é dito enquanto o dispositivo está bloqueado.</string>
-    <string name="title_pref_speech_control_sound">Reproduzir um som antes que outros aplicativos falem</string>
+    <string name="title_pref_speech_control">Permitir que outros apps falem</string>
+    <string name="summary_pref_speech_control">Os apps que você permitir podem falar texto com a voz do SandFly. Nada é falado enquanto o dispositivo está bloqueado.</string>
+    <string name="title_pref_speech_control_sound">Tocar um som antes de outros apps falarem</string>
     <string name="speech_control_apps_category">Aplicativos</string>
     <string name="speech_control_no_apps">Nenhum aplicativo pediu para falar ainda.</string>
-    <string name="speech_control_ask_title">Permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale através de SandFly?</string>
-    <string name="speech_control_ask_text">Ele pode dizer texto na sua voz SandFly. Você pode alterar isso nas configurações avançadas.</string>
+    <string name="speech_control_ask_title">Permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale através do SandFly?</string>
+    <string name="speech_control_ask_text">O app pode falar texto com sua voz do SandFly. Você pode alterar isso nas configurações avançadas.</string>
     <string name="speech_control_allow">Permitir</string>
-    <string name="speech_control_deny">Não permita</string>
-    <string name="permission_speak_label">fale através de SandFly</string>
-    <string name="permission_speak_description">Permite que o aplicativo peça para dizer o texto na sua voz SandFly. SandFly pergunta antes que o aplicativo possa falar.</string>
-    <string name="permission_braille_display_label">peça para ser um display braille para SandFly</string>
-    <string name="permission_braille_display_description">Permite que o aplicativo solicite um display braille para SandFly. Se você permitir a entrada SandFly, ele poderá ler tudo na tela e controlar seu dispositivo. SandFly pergunta primeiro.</string>
-    <string name="title_pref_phonetic_letters_mode">Fale letras foneticamente</string>
-    <string name="phonetic_letters_mode_off">Desativar</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Depois da carta, atrasada, tipo \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Depois da carta, sem demora, como \"h hotel\"</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Em vez da letra, como \"hotel\"</string>
+    <string name="speech_control_deny">Não permitir</string>
+    <string name="permission_speak_label">falar pelo SandFly</string>
+    <string name="permission_speak_description">Permite que o app peça para falar texto com sua voz do SandFly. O SandFly pergunta antes que o app possa falar.</string>
+    <string name="permission_braille_display_label">pedir para ser uma linha braille do SandFly</string>
+    <string name="permission_braille_display_description">Permite que o app peça para funcionar como linha braille do SandFly. Se você permitir no SandFly, ele poderá ler tudo na tela e controlar o dispositivo. O SandFly pergunta antes.</string>
+    <string name="title_pref_phonetic_letters_mode">Falar letras foneticamente</string>
+    <string name="phonetic_letters_mode_off">Desativado</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Depois da letra, com pausa, como “h, hotel”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Depois da letra, sem pausa, como “h hotel”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Em vez da letra, como “hotel”</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Ler por mecanismo de fala</string>
-    <string name="emoji_speech_names">Lido por SandFly</string>
+    <string name="emoji_speech_engine">Lidos pelo mecanismo de voz</string>
+    <string name="emoji_speech_names">Lidos pelo SandFly</string>
     <string name="emoji_speech_none">Nenhum</string>
     <string name="summary_selector_menu_emoji">Alterar a forma como os emojis são lidos</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Contar emojis repetidos</string>
-    <string name="emoji_repeat_count_off">Desativar</string>
+    <string name="emoji_repeat_count_off">Desativado</string>
     <string name="emoji_repeat_count_2">2 ou mais</string>
     <string name="emoji_repeat_count_3">3 ou mais</string>
     <string name="emoji_repeat_count_4">4 ou mais</string>
     <string name="emoji_repeat_count_5">5 ou mais</string>
     <string name="emoji_repeat_count_6">6 ou mais</string>
-    <string name="pref_table_headers_category_title">Leitura de mesa</string>
+    <string name="pref_table_headers_category_title">Leitura de tabelas</string>
     <string name="pref_table_column_headers_title">Ler cabeçalhos de colunas</string>
     <string name="pref_table_column_headers_entry_after">Depois dos dados da célula</string>
     <string name="pref_table_column_headers_entry_before">Antes dos dados da célula</string>
-    <string name="pref_table_column_headers_entry_off">Não leia</string>
-    <string name="pref_table_speak_row_column_numbers_title">Fale os números das linhas e colunas</string>
-    <string name="pref_table_speak_row_column_numbers_summary">Anuncie números de linhas e colunas para células da tabela</string>
+    <string name="pref_table_column_headers_entry_off">Não ler</string>
+    <string name="pref_table_speak_row_column_numbers_title">Falar números de linhas e colunas</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Anuncia os números de linha e coluna das células da tabela</string>
     <string name="title_pref_speak_volume_changes">Falar alterações de volume</string>
-    <string name="summary_pref_speak_volume_changes">Diga o novo volume depois de pressionar as teclas de volume</string>
+    <string name="summary_pref_speak_volume_changes">Fala o novo volume depois que as teclas de volume são pressionadas</string>
     <string name="title_pref_speak_notifications">Falar notificações</string>
-    <string name="summary_pref_speak_notifications">Leia novas notificações em voz alta quando elas chegarem. As chamadas recebidas são sempre lidas.</string>
-    <string name="title_pref_notification_list">Use a lista de notificações de SandFly</string>
+    <string name="summary_pref_speak_notifications">Lê em voz alta as novas notificações quando elas chegam. Chamadas recebidas são sempre lidas.</string>
+    <string name="title_pref_notification_list">Usar a lista de notificações do SandFly</string>
     <string name="title_pref_notification_parts">Detalhes da notificação</string>
-    <string name="title_pref_play_installer">Aparece instalado em Google Play</string>
-    <string name="summary_pref_play_installer">Informe outros aplicativos que o Google Play instalou SandFly. Alguns aplicativos, como alguns aplicativos bancários, desativam serviços de acessibilidade que foram instalados de qualquer outro lugar. Precisa de Shizuku e altera apenas os aplicativos informados sobre a origem de SandFly.</string>
-    <string name="summary_pref_play_installer_pending">Ativado, mas Google Play ainda não foi registrado como instalador. SandFly define quando Shizuku está disponível.</string>
+    <string name="title_pref_play_installer">Aparecer como instalado pelo Google Play</string>
+    <string name="summary_pref_play_installer">Informa a outros apps que o SandFly foi instalado pelo Google Play. Alguns apps, como alguns apps de bancos, desativam serviços de acessibilidade instalados de qualquer outra origem. Requer o Shizuku e altera apenas o que os apps recebem sobre a origem do SandFly.</string>
+    <string name="summary_pref_play_installer_pending">Ativado, mas o Google Play ainda não está registrado como instalador. O SandFly define isso quando o Shizuku está disponível.</string>
     <string name="notification_part_title">Título</string>
     <string name="notification_part_text">Texto</string>
     <string name="notification_part_app">Nome do aplicativo</string>
@@ -1442,16 +1442,16 @@
     <string name="notification_list_title">Notificações</string>
     <string name="notification_list_empty">Sem notificações</string>
     <string name="notification_list_no_access">O acesso às notificações está desativado</string>
-    <string name="notification_list_grant_access">Ative o acesso às notificações</string>
+    <string name="notification_list_grant_access">Ativar acesso às notificações</string>
     <string name="notification_list_quick_settings">Configurações rápidas</string>
     <string name="notification_list_dismiss">Dispensar</string>
     <string name="notification_list_show_all">Mostrar tudo</string>
     <string name="notification_list_show_less">Mostrar menos</string>
     <string name="notification_list_clear_all">Limpar tudo</string>
     <string name="notification_list_send">Enviar</string>
-    <string name="notification_list_playing">Jogando</string>
+    <string name="notification_list_playing">Reproduzindo</string>
     <string name="notification_list_paused">Pausado</string>
-    <string name="notification_list_play">Jogar</string>
+    <string name="notification_list_play">Reproduzir</string>
     <string name="notification_list_pause">Pausar</string>
     <string name="notification_list_previous">Anterior</string>
     <string name="notification_list_next">Avançar</string>
@@ -1459,7 +1459,7 @@
         <item quantity="one">%d notificação</item>
         <item quantity="other">%d notificações</item>
     </plurals>
-    <string name="title_pref_quick_settings">Use as configurações rápidas de SandFly</string>
+    <string name="title_pref_quick_settings">Usar as configurações rápidas do SandFly</string>
     <string name="title_pref_quick_settings_items">Painel de configurações rápidas</string>
     <string name="quick_settings_title">Configurações rápidas</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1473,7 +1473,7 @@
     <string name="quick_settings_flashlight_brightness">Brilho da lanterna</string>
     <string name="quick_settings_location">Localização</string>
     <string name="quick_settings_auto_rotate">Rotação automática</string>
-    <string name="quick_settings_battery_saver">Economizador de bateria</string>
+    <string name="quick_settings_battery_saver">Economia de bateria</string>
     <string name="quick_settings_dark_theme">Tema escuro</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Brilho</string>
@@ -1485,7 +1485,7 @@
     <string name="quick_settings_alarm_volume">Volume do alarme</string>
     <string name="quick_settings_accessibility_volume">Volume de acessibilidade</string>
     <string name="quick_settings_system_volume">Volume de áudio do sistema</string>
-    <string name="quick_settings_data_saver">Economizador de dados</string>
+    <string name="quick_settings_data_saver">Economia de dados</string>
     <string name="quick_settings_night_light">Luz noturna</string>
     <string name="quick_settings_extra_dim">Muito escuro</string>
     <string name="quick_settings_color_inversion">Inversão de cores</string>
@@ -1500,7 +1500,7 @@
     <string name="quick_settings_next_alarm">Próximo alarme</string>
     <string name="quick_settings_no_alarm">Sem alarme</string>
     <string name="quick_settings_settings">Configurações</string>
-    <string name="quick_settings_power_menu">Menu de energia</string>
+    <string name="quick_settings_power_menu">Menu liga/desliga</string>
     <string name="quick_settings_add_system_tile">Adicionar bloco do sistema</string>
     <string name="quick_settings_no_system_tiles">Nenhum bloco de sistema para adicionar</string>
     <string name="quick_settings_tile_not_found">%1$s não está nas configurações rápidas do sistema</string>
@@ -1516,12 +1516,12 @@
     <string name="quick_settings_connected">Conectado</string>
     <string name="quick_settings_battery">Bateria</string>
     <string name="quick_settings_battery_charging">%1$s, carregando</string>
-    <string name="quick_settings_battery_full">%1$s, cobrado</string>
+    <string name="quick_settings_battery_full">%1$s, carregado</string>
     <string name="quick_settings_sound">Som</string>
     <string name="quick_settings_vibrate">Vibrar</string>
     <string name="quick_settings_mute">Mudo</string>
-    <string name="quick_settings_on">Ativar</string>
-    <string name="quick_settings_off">Desativar</string>
+    <string name="quick_settings_on">Ativado</string>
+    <string name="quick_settings_off">Desativado</string>
     <string name="quick_settings_unavailable">Indisponível</string>
     <string name="quick_settings_edit">Editar</string>
     <string name="quick_settings_system">Configurações rápidas do sistema</string>
@@ -1542,52 +1542,52 @@
     <string name="quick_settings_remove">Remover</string>
     <string name="quick_settings_added">%1$s adicionado</string>
     <string name="quick_settings_removed">%1$s removido</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ativado. Mantenha 2 dedos na tela por 5 segundos para desligar. Para parar de mostrar esta mensagem, desative SandFly configurações &gt; Configurações avançadas &gt; Mostrar instruções para desligar SandFly.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ativado. Mantenha 2 dedos na tela por 5 segundos para desativar. Para não mostrar mais esta mensagem, desative Configurações do SandFly &gt; Configurações avançadas &gt; Mostrar instruções para desativar o SandFly.</string>
     <string name="edge_gestures_title">Bordas</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Outro atalho para ativar ou desativar o modo de navegação</string>
     <string name="title_pref_vibration_strength">Força de vibração</string>
     <string name="title_pref_audio_output_device">Dispositivo de saída de áudio</string>
-    <string name="dialog_title_audio_output_device">Escolha onde reproduzir o som SandFly</string>
+    <string name="dialog_title_audio_output_device">Escolha onde reproduzir o som do SandFly</string>
     <string name="value_audio_output_device_default">Padrão do sistema</string>
     <string name="value_audio_output_device_speaker">Alto-falante do telefone</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Dispositivo Bluetooth conectado ou com fio</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Dispositivo Bluetooth ou com fio conectado</string>
     <string name="value_audio_output_device_disconnected">desconectado</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth dispositivo de áudio</string>
+    <string name="value_audio_output_device_bluetooth_default">Dispositivo de áudio Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Fone de ouvido com fio</string>
     <string name="value_audio_output_device_wired_headphones">Fones de ouvido com fio</string>
-    <string name="value_audio_output_device_usb_headset">USB fone de ouvido</string>
-    <string name="value_audio_output_device_usb_device">USB dispositivo de áudio</string>
+    <string name="value_audio_output_device_usb_headset">Headset USB</string>
+    <string name="value_audio_output_device_usb_device">Dispositivo de áudio USB</string>
     <string name="title_pref_speaker_devices">Alto-falante do telefone com esses dispositivos</string>
     <string name="summary_pref_speaker_devices_none">Nenhum</string>
-    <string name="summary_pref_speaker_devices_no_devices">Nenhum Bluetooth ou dispositivo com fio conectado ainda</string>
+    <string name="summary_pref_speaker_devices_no_devices">Nenhum dispositivo Bluetooth ou com fio conectado ainda</string>
     <string name="pref_reduce_window_delay_summary">SandFly lê novas telas mais rapidamente quando as animações estão desativadas. Isso desativa as animações de todo o telefone.</string>
-    <string name="dialog_message_detailed_ai_description">As imagens selecionadas são enviadas para a API Gemini de Google para serem descritas. Com a IA no dispositivo ativada, eles são descritos neste telefone e não são enviados.\n\nCom uma chave de API gratuita, Google pode manter o que recebe, usá-lo para melhorar seus produtos e fazer com que as pessoas o revisem. A IA generativa é experimental, por isso cometerá erros. O <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplica.</string>
-    <string name="dialog_message_detailed_ai_promotion">Descrições detalhadas de imagens são alimentadas por IA generativa. As imagens selecionadas são enviadas para a API Gemini de Google para serem descritas. Com a IA no dispositivo ativada, eles são descritos neste telefone e não são enviados.\n\nCom uma chave de API gratuita, Google pode manter o que recebe, usá-lo para melhorar seus produtos e fazer com que as pessoas o revisem. A IA generativa é experimental, por isso cometerá erros. Você pode desativar as descrições detalhadas das imagens a qualquer momento nas configurações SandFly.\n\nO <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplica.</string>
-    <string name="dialog_message_screen_overview_promotion">Uma captura de tela da tela é enviada para a API Gemini de Google para ser descrita, o que leva vários segundos. Com a IA no dispositivo ativada, ela é descrita neste telefone e não é enviada.\n\nCom uma chave de API gratuita, Google pode manter o que recebe, usá-lo para melhorar seus produtos e fazer com que as pessoas o revisem. A IA generativa é experimental, por isso cometerá erros. O <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplica.</string>
+    <string name="dialog_message_detailed_ai_description">As imagens selecionadas são enviadas à API Gemini do Google para serem descritas. Com a IA no dispositivo ativada, elas são descritas neste telefone e não são enviadas.\n\nCom uma chave de API sem custo financeiro, o Google pode manter o que recebe, usar isso para melhorar os produtos dele e pedir que pessoas revisem esse conteúdo. A IA generativa é experimental, então vai cometer erros. Os <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplicam.</string>
+    <string name="dialog_message_detailed_ai_promotion">As descrições detalhadas de imagens são geradas por IA generativa. As imagens selecionadas são enviadas à API Gemini do Google para serem descritas. Com a IA no dispositivo ativada, elas são descritas neste telefone e não são enviadas.\n\nCom uma chave de API sem custo financeiro, o Google pode manter o que recebe, usar isso para melhorar os produtos dele e pedir que pessoas revisem esse conteúdo. A IA generativa é experimental, então vai cometer erros. Você pode desativar as descrições detalhadas de imagens a qualquer momento nas Configurações do SandFly.\n\nOs <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplicam.</string>
+    <string name="dialog_message_screen_overview_promotion">Uma captura de tela é enviada à API Gemini do Google para ser descrita, o que leva alguns segundos. Com a IA no dispositivo ativada, ela é descrita neste telefone e não é enviada.\n\nCom uma chave de API sem custo financeiro, o Google pode manter o que recebe, usar isso para melhorar os produtos dele e pedir que pessoas revisem esse conteúdo. A IA generativa é experimental, então vai cometer erros. Os <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> se aplicam.</string>
     <string name="shortcut_title_open_app">Abrir aplicativo</string>
     <string name="shortcut_open_app">Abrir <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Role para cima</string>
-    <string name="shortcut_write_reading_control">Escreva a letra de um controle de leitura</string>
+    <string name="shortcut_write_reading_control">Escrever a letra de um controle de leitura</string>
     <string name="title_pref_reading_control_letters">Letras do alfabeto manuscritas</string>
     <string name="reading_control_letter_none">Nenhum</string>
     <string name="handwriting_prompt">Escreva uma letra do alfabeto</string>
-    <string name="handwriting_closed">Caligrafia fechada</string>
+    <string name="handwriting_closed">Escrita à mão fechada</string>
     <string name="handwriting_no_match">Nenhum controle de leitura começa com <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Escrever o nome de um app para abri-lo</string>
     <string name="handwriting_app_prompt">Escreva o nome de um app</string>
     <string name="handwriting_no_app">Nenhum app começa com <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
     <string name="handwriting_app_not_opened">Não foi possível abrir <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Caligrafia não reconhecida</string>
+    <string name="handwriting_not_recognized">Escrita à mão não reconhecida</string>
     <string name="handwriting_downloading">O reconhecimento de escrita está sendo baixado</string>
     <string name="handwriting_download_title">Baixar reconhecimento de escrita?</string>
-    <string name="handwriting_download_message">A escrita manual é reconhecida neste telefone. Seu modelo para esta linguagem, com cerca de 20 MB, é baixado de Google uma vez. Uma mensagem mostra quando o download foi feito.</string>
+    <string name="handwriting_download_message">A escrita à mão é reconhecida neste telefone. O modelo para este idioma, com cerca de 20 MB, é baixado do Google uma vez. Uma mensagem aparece quando o download termina.</string>
     <string name="handwriting_download_button">Fazer o download</string>
     <string name="handwriting_downloaded">Reconhecimento de escrita baixado</string>
     <string name="handwriting_download_failed">Não foi possível fazer o download do reconhecimento de escrita manual. Verifique a conexão com a internet.</string>
     <string name="handwriting_unsupported_language">O reconhecimento de escrita não está disponível neste idioma</string>
     <string name="title_pref_handwriting_keyboard">Teclado de escrita manual</string>
-    <string name="summary_pref_handwriting_keyboard">Ative a escrita manual SandFly nas configurações do teclado de Android</string>
-    <string name="title_pref_handwriting_wait">Espere depois de escrever</string>
+    <string name="summary_pref_handwriting_keyboard">Ative a escrita manual do SandFly nas configurações do teclado do Android</string>
+    <string name="title_pref_handwriting_wait">Espera após escrever</string>
     <string name="value_handwriting_wait_200">0,2 segundos</string>
     <string name="value_handwriting_wait_300">0,3 segundos</string>
     <string name="value_handwriting_wait_400">0,4 segundos</string>
@@ -1595,11 +1595,11 @@
     <string name="value_handwriting_wait_600">0,6 segundos</string>
     <string name="value_handwriting_wait_800">0,8 segundos</string>
     <string name="value_handwriting_wait_1000">1 segundo</string>
-    <string name="handwriting_keyboard_name">SandFly caligrafia</string>
+    <string name="handwriting_keyboard_name">Escrita à mão SandFly</string>
     <string name="handwriting_space">Espaço</string>
     <string name="handwriting_new_line">Nova linha</string>
-    <string name="handwriting_tutorial_intro">Tutorial de teclado de escrita manual. Escreva com um dedo em qualquer lugar da tela. O que você escreve é ​​digitado quando você para por um momento. Para finalizar o tutorial, deslize três dedos para baixo.</string>
-    <string name="handwriting_tutorial_write_letter">Escreva a letra do alfabeto a.</string>
+    <string name="handwriting_tutorial_intro">Tutorial do teclado de escrita manual. Escreva com um dedo em qualquer lugar da tela. O que você escreve é digitado quando você para por um momento. Para encerrar o tutorial, deslize três dedos para baixo.</string>
+    <string name="handwriting_tutorial_write_letter">Escreva a letra a.</string>
     <string name="handwriting_tutorial_write_word">Agora escreva a palavra hi (h seguido de i).</string>
     <string name="handwriting_tutorial_typed">Digitado <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Deslize para a direita com dois dedos para digitar um espaço.</string>
@@ -1617,10 +1617,10 @@
     <string name="handwriting_not_available">O reconhecimento de escrita não está disponível neste dispositivo</string>
     <string name="shortcut_scroll_to_bottom">Role para baixo</string>
     <string name="shortcut_refresh">Atualizar</string>
-    <string name="shortcut_system_notifications">Sombra de notificação do sistema</string>
+    <string name="shortcut_system_notifications">Aba de notificações do sistema</string>
     <string name="shortcut_system_quick_settings">Configurações rápidas do sistema</string>
     <string name="shortcut_lock_screen">Bloquear a tela do dispositivo</string>
-    <string name="shortcut_power_menu">Menu de energia</string>
+    <string name="shortcut_power_menu">Menu liga/desliga</string>
     <string name="shortcut_increase_media_volume">Aumentar o volume da mídia</string>
     <string name="shortcut_decrease_media_volume">Diminuir o volume da mídia</string>
     <string name="title_clear_selection">Limpar seleção</string>
@@ -1630,13 +1630,13 @@
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Gire no sentido horário com 2 dedos</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Gire no sentido anti-horário com 2 dedos</string>
     <string name="title_pref_shortcut_2finger_scrub">Esfregue com 2 dedos</string>
-    <string name="title_pref_shortcut_2finger_pinch">Aperte com 2 dedos</string>
-    <string name="title_pref_shortcut_2finger_spread">Espalhe com 2 dedos</string>
-    <string name="title_pref_shortcut_3finger_pinch">Aperte com 3 dedos</string>
-    <string name="title_pref_shortcut_3finger_spread">Espalhe com 3 dedos</string>
-    <string name="title_pref_shortcut_4finger_pinch">Aperte com 4 dedos</string>
-    <string name="title_pref_shortcut_4finger_spread">Espalhe com 4 dedos</string>
-    <string name="title_pref_shortcut_edge_bottom_up">Deslize de cima para baixo a partir da borda inferior</string>
+    <string name="title_pref_shortcut_2finger_pinch">Fazer gesto de pinça com 2 dedos</string>
+    <string name="title_pref_shortcut_2finger_spread">Afastar 2 dedos</string>
+    <string name="title_pref_shortcut_3finger_pinch">Fazer gesto de pinça com 3 dedos</string>
+    <string name="title_pref_shortcut_3finger_spread">Afastar 3 dedos</string>
+    <string name="title_pref_shortcut_4finger_pinch">Fazer gesto de pinça com 4 dedos</string>
+    <string name="title_pref_shortcut_4finger_spread">Afastar 4 dedos</string>
+    <string name="title_pref_shortcut_edge_bottom_up">Deslize para cima a partir da borda inferior</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Deslize longamente para cima a partir da borda inferior</string>
     <string name="title_pref_shortcut_edge_top_left_down">Deslize para baixo do canto superior esquerdo</string>
     <string name="title_pref_shortcut_edge_top_right_down">Deslize para baixo do canto superior direito</string>
@@ -1673,44 +1673,44 @@
     <string name="value_rotor_step_45">45 graus</string>
     <string name="value_rotor_step_60">60 graus</string>
     <string name="title_pref_low_latency_audio">Áudio de baixa latência</string>
-    <string name="summary_pref_low_latency_audio">Reproduza os sons e a fala de SandFly através do caminho de áudio mais rápido do telefone, para que você os ouça mais cedo. Desligue-o se a fala ou os sons forem interrompidos ou parecerem errados.</string>
+    <string name="summary_pref_low_latency_audio">Reproduz os sons e a fala do SandFly pelo caminho de áudio mais rápido do telefone, para que você os ouça antes. Desative se a fala ou os sons falharem ou parecerem errados.</string>
     <string name="value_focus_delay_200ms_default">0,2 segundos (padrão)</string>
     <string name="value_focus_delay_300ms">0,3 segundos</string>
-    <string name="title_pref_lift_to_activate">Levante para ativar</string>
+    <string name="title_pref_lift_to_activate">Levantar o dedo para ativar</string>
     <string name="summary_support_change_lift_to_activate">Alterar onde levantar o dedo ativa um item</string>
     <string name="value_lift_to_activate_disabled">Desativado</string>
     <string name="value_lift_to_activate_navigation_bar">Somente na barra de navegação</string>
     <string name="value_lift_to_activate_entire_screen">Tela inteira</string>
     <string name="template_lift_to_activate_changed">Levante para ativar: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Enrole</string>
-    <string name="summary_pref_wrap_around">Passar o último item vai para o primeiro e passar o primeiro vai para o último. Quando desativado, um som é reproduzido no final.</string>
+    <string name="title_pref_wrap_around">Navegação circular</string>
+    <string name="summary_pref_wrap_around">Deslizar além do último item vai para o primeiro, e além do primeiro vai para o último. Quando desativado, um som é reproduzido no fim.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Corrigir exploração de toque travada</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Sem a permissão DUMP, SandFly só pode dizer que a exploração por toque pode travar. Para permitir que isso seja corrigido, execute: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Sem a permissão DUMP, o SandFly só pode avisar que a exploração por toque pode estar travada. Para que ele possa corrigir isso, execute: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Corrigindo a exploração de toque</string>
     <string name="stuck_touch_exploration_fixed">Exploração de toque corrigida</string>
-    <string name="stuck_touch_exploration_not_fixed">A exploração por toque ainda está travada. Reinicie o telefone para consertar.</string>
-    <string name="stuck_touch_exploration_restart">A exploração por toque pode travar. Reinicie o telefone para consertar.</string>
-    <string name="stuck_touch_exploration_grant_dump">A exploração por toque pode travar. Reinicie o telefone para consertar ou conceda SandFly a permissão DUMP ao ADB para que ele possa consertar.</string>
+    <string name="stuck_touch_exploration_not_fixed">A exploração por toque continua travada. Reinicie o telefone para resolver.</string>
+    <string name="stuck_touch_exploration_restart">A exploração por toque pode estar travada. Reinicie o telefone para resolver.</string>
+    <string name="stuck_touch_exploration_grant_dump">A exploração por toque pode estar travada. Reinicie o telefone para resolver ou conceda ao SandFly a permissão DUMP pelo ADB para que ele possa resolver.</string>
     <string name="title_pref_window_names">Nomes de janelas</string>
     <string name="window_names_always">Sempre</string>
-    <string name="window_names_until_first_item">Sempre, cortado pelo primeiro item</string>
+    <string name="window_names_until_first_item">Sempre, interrompido pelo primeiro item</string>
     <string name="window_names_window_opens">Somente quando uma janela abre</string>
     <string name="window_names_never">Nunca</string>
     <string name="title_pref_selector_links_controls_web_only">Links e controles apenas em conteúdo da web</string>
-    <string name="title_pref_selector_auto_switch">Altere o controle de leitura automaticamente</string>
-    <string name="title_pref_touch_stops_speech">Pare a fala ao tocar na tela</string>
+    <string name="title_pref_selector_auto_switch">Alterar o controle de leitura automaticamente</string>
+    <string name="title_pref_touch_stops_speech">Parar a fala ao tocar na tela</string>
     <string name="title_pref_focus_new_windows">Mover o foco para novas janelas</string>
     <string name="title_pref_volume_keys_adjust_sliders">As teclas de volume ajustam os controles deslizantes</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Quando um controle deslizante está em foco, aumentar e diminuir o volume altera seu valor em vez do volume</string>
     <string name="title_pref_volume_keys_move_cursor">As teclas de volume movem o cursor</string>
-    <string name="summary_pref_volume_keys_move_cursor">Quando um campo de texto está em foco, aumentar volume move o cursor um caractere para trás e diminuir volume move-o para frente</string>
-    <string name="summary_support_wrap_around">Ative ou desative o empacotamento do último item para o primeiro</string>
-    <string name="wrap_around_on">Envolva-se</string>
-    <string name="wrap_around_off">Enrole</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tablet levantado de costas</string>
+    <string name="summary_pref_volume_keys_move_cursor">Quando um campo de texto está em foco, aumentar o volume move o cursor um caractere para trás e diminuir o volume move um caractere para a frente</string>
+    <string name="summary_support_wrap_around">Ativar ou desativar a passagem do último item para o primeiro</string>
+    <string name="wrap_around_on">Navegação circular: ativado</string>
+    <string name="wrap_around_off">Navegação circular: desativado</string>
+    <string name="title_selector_tablet_held_up_faces_away">Tablet levantado com a tela para fora</string>
     <string name="summary_support_tablet_held_up_faces_away">Para o teclado braille em um tablet ou telefone aberto</string>
-    <string name="tablet_held_up_faces_away_on">Tablet levantado de frente para</string>
-    <string name="tablet_held_up_faces_away_off">Tablet levantado com a face voltada para fora</string>
+    <string name="tablet_held_up_faces_away_on">Tablet levantado com a tela para fora: ativado</string>
+    <string name="tablet_held_up_faces_away_off">Tablet levantado com a tela para fora: desativado</string>
     <string name="title_keyboard_echo_on_screen">Eco do teclado na tela</string>
     <string name="title_keyboard_echo_physical">Eco do teclado físico</string>
     <string name="title_keyboard_echo_braille_keyboard">Eco do teclado Braille</string>
@@ -1720,35 +1720,35 @@
     <string name="title_pref_interrupt_typing">Interromper a fala ao digitar</string>
     <string name="pref_interrupt_typing_entry_always">Sempre</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Em campos de edição</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">Eco no teclado</string>
-    <string name="title_pref_interrupt_enter">Interromper a fala ao Enter</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Com eco do teclado</string>
+    <string name="title_pref_interrupt_enter">Interromper a fala ao pressionar Enter</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Nome, estado, tipo</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Tipo, estado, nome</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Estado, tipo, nome</string>
     <string name="item_detail_name">Nome</string>
-    <string name="item_detail_type">Digitar</string>
+    <string name="item_detail_type">Tipo</string>
     <string name="item_detail_state">Estado</string>
     <string name="action_move_up">Subir</string>
     <string name="action_move_down">Mover para baixo</string>
     <string name="template_list_position">Posição <xliff:g id="position" example="2">%1$d</xliff:g> de <xliff:g id="count" example="3">%2$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up">Apanhado <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Caiu <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> selecionado para mover. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> solto. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly indica os detalhes de um item nesta ordem. Para alterá-lo, toque e segure um detalhe e arraste-o para cima ou para baixo. Com SandFly ativado, toque duas vezes e segure e arraste. Você também pode usar as ações Mover para cima e Mover para baixo.</string>
-    <string name="title_pref_speak_items_before_scroll">Fale os itens antes que eles apareçam</string>
-    <string name="gemini_error_api_key">Gemini não aceitou a chave API. Verifique a chave nas configurações de descrições automáticas.</string>
-    <string name="gemini_error_quota">O limite de uso da sua chave API Gemini foi atingido. Tente novamente mais tarde.</string>
+    <string name="title_pref_speak_items_before_scroll">Falar itens antes que apareçam ao rolar</string>
+    <string name="gemini_error_api_key">O Gemini não aceitou a chave de API. Verifique a chave nas configurações de descrições automáticas.</string>
+    <string name="gemini_error_quota">O limite de uso da sua chave de API do Gemini foi atingido. Tente novamente mais tarde.</string>
     <string name="gemini_error_busy">Gemini está ocupado agora. Tente novamente em alguns instantes.</string>
-    <string name="gemini_error_timeout">Gemini demorou muito para responder. Tente novamente.</string>
-    <string name="gemini_error_with_code">Gemini não conseguiu responder, erro <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
-    <string name="gemini_error_with_details">Gemini não foi possível responder, erro <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="gemini_error_timeout">O Gemini demorou muito para responder. Tente novamente.</string>
+    <string name="gemini_error_with_code">O Gemini não conseguiu responder, erro <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_with_details">O Gemini não conseguiu responder, erro <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Não é possível obter uma descrição mais detalhada da imagem: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Pergunte por voz</string>
-    <string name="image_qna_stop_listening">Pare de ouvir</string>
+    <string name="image_qna_stop_listening">Parar de ouvir</string>
     <string name="image_qna_type_question">Digite uma pergunta</string>
     <string name="shortcut_dictate">Ditar</string>
-    <string name="title_pref_ai_dictation">Ditado correto com IA</string>
-    <string name="dictation_not_corrected">Não corrigido. Digitado como reconhecido.</string>
-    <string name="dictation_nothing_recognized">Nada reconhecido</string>
+    <string name="title_pref_ai_dictation">Corrigir ditado com IA</string>
+    <string name="dictation_not_corrected">Não corrigido. Digitado como foi reconhecido.</string>
+    <string name="dictation_nothing_recognized">Nada foi reconhecido</string>
     <string name="dictation_unavailable">Reconhecimento de fala indisponível</string>
     <string name="dictation_field_gone">Campo de texto fechado. Nada digitado.</string>
     <string name="dictation_transcription_failed">A fala não foi transcrita. Nada digitado.</string>
@@ -1767,7 +1767,7 @@
     <string name="dictation_whisper_use">Usar</string>
     <string name="title_pref_dictation_ai_service">Serviço de IA para ditado</string>
     <string name="dictation_ai_same">O mesmo das descrições automáticas</string>
-    <string name="title_pref_browse_mode_per_app">Lembre-se do modo de navegação em cada aplicativo</string>
+    <string name="title_pref_browse_mode_per_app">Lembrar o modo de navegação em cada app</string>
     <string name="title_pref_export_settings">Exportar configurações</string>
     <string name="title_pref_import_settings">Importar configurações</string>
     <string name="settings_export_done">Configurações exportadas. As chaves de API não estão incluídas</string>

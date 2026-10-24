@@ -39,8 +39,8 @@
     <string name="script_import_failed">Tuonti epäonnistui. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Salli vain luotetuille skripteille.</string>
     <string name="script_permission_screen">Lukea näyttöä</string>
-    <string name="script_permission_actions">Napauttaa, vierittää, kirjoittaa ja siirtää valintaa</string>
-    <string name="script_permission_speech">Lukea ja muuttaa SandFlyn puhetta</string>
+    <string name="script_permission_actions">Napauttaa, vierittää, kirjoittaa ja siirtää kohdistusta</string>
+    <string name="script_permission_speech">Vastaanottaa ja muuttaa SandFlyn puhetta</string>
     <string name="script_permission_passwords">Lukea salasanakenttiä</string>
     <string name="script_permission_input">Lisätä eleitä, näppäimiä, valikkokohteita ja lukuasetuksia</string>
     <string name="script_permission_network">Käyttää internetiä</string>
@@ -51,7 +51,7 @@
     <string name="script_permission_dialogs">Näyttää valintaikkunoita minkä tahansa sovelluksen päällä</string>
     <string name="script_permission_java">Suorittaa Java-koodia kaikilla SandFlyn käyttöoikeuksilla kaikissa sovelluksissa</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
-    <string name="script_enabled">Laita päälle</string>
+    <string name="script_enabled">Ota käyttöön</string>
     <string name="script_permissions_title">Luvat</string>
     <string name="script_permissions_none">Ei mitään</string>
     <string name="script_settings_category">Asetukset</string>
@@ -89,7 +89,7 @@
     <string name="script_homepage_failed">Mikään sovellus ei voi avata osoitetta <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> poistettiin käytöstä toistuvien virheiden vuoksi. Katso sen loki kohdasta Skriptit.</string>
     <string name="shortcut_inspect_item">Tarkastele valittua kohdetta</string>
-    <string name="script_inspect_no_item">Mitään kohdetta ei ole valittu</string>
+    <string name="script_inspect_no_item">Mikään kohde ei ole kohdistettuna</string>
     <string name="script_inspect_copied">Kopioitu. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Ei tunnusta, joten säännöt eivät voi nimetä sitä. Kopioitu. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopioi näytön puu</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> skripti päivitetty: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skriptiä päivitetty: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Päivitykset on lueteltu kohdassa Päivitykset</string>
+    <string name="scripts_updates_to_approve">Päivitykset näkyvät kohdassa ”Päivitykset”</string>
     <string name="scripts_update_check_failed">Joitakin lähteitä ei voitu tarkistaa</string>
     <string name="scripts_up_to_date">Kaikki skriptit ovat ajan tasalla</string>
 </resources>

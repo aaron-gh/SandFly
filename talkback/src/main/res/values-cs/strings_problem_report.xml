@@ -6,11 +6,11 @@
     <string name="title_pref_problem_report_title">Název</string>
     <string name="title_pref_problem_report_app">Aplikace, kde se to děje</string>
     <string name="title_pref_problem_report_description">Popis</string>
-    <string name="dialog_message_problem_report_description">Co se stane a co jste očekávali.</string>
+    <string name="dialog_message_problem_report_description">Co se děje a co jste očekávali.</string>
     <string name="title_pref_problem_report_steps">Kroky k reprodukci</string>
     <string name="title_pref_problem_report_email">E-mail pro odpovědi</string>
     <string name="title_pref_problem_report_device">Zahrnout informace o zařízení</string>
-    <string name="title_pref_problem_report_log">Zahrnout SandFly log</string>
+    <string name="title_pref_problem_report_log">Zahrnout protokol SandFly</string>
     <string name="summary_pref_problem_report_log">Může obsahovat text z obrazovky</string>
     <string name="title_pref_problem_report_send">Odeslat</string>
     <string name="summary_pref_problem_report_sending">Odesílání</string>
@@ -22,19 +22,19 @@
     <string name="problem_report_not_sent">Zpětná vazba nebyla odeslána. Zkuste to znovu později.</string>
     <string-array name="problem_report_type_entries">
         <item>Nesprávné chování</item>
-        <item>Srážka</item>
-        <item>Pomalé nebo nereagující</item>
+        <item>Pád aplikace</item>
+        <item>Pomalé nebo nereaguje</item>
         <item>Návrh</item>
     </string-array>
     <string-array name="problem_report_area_entries">
         <item>Řeč</item>
         <item>Gesta</item>
-        <item>Dotykové zkoumání</item>
-        <item>Čtení ovládacích prvků a nabídek</item>
+        <item>Prozkoumání dotykem</item>
+        <item>Ovládání čtení a nabídky</item>
         <item>Psaní a klávesnice</item>
         <item>Braillská klávesnice</item>
         <item>Hmatový displej</item>
-        <item>Zvuky a vibrace</item>
+        <item>Zvuk a vibrace</item>
         <item>Oznámení</item>
         <item>Webový obsah</item>
         <item>Skripty</item>
@@ -68,7 +68,7 @@
     <string name="title_report_messages">Zprávy</string>
     <string name="report_message_from_developer">Vývojář, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">Vy, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Odpovědět</string>
+    <string name="title_report_reply">Odpověď</string>
     <string name="title_report_reply_text">Vaše odpověď</string>
     <string name="title_report_send_reply">Odeslat odpověď</string>
     <string name="report_reply_sent">Odpověď odeslána.</string>
@@ -81,6 +81,6 @@
     <string name="button_report_delete">Smazat</string>
     <string name="report_missing">Tato zpětná vazba již není v doručené poště.</string>
     <string name="notification_channel_problem_reports">Odpovědi na zpětnou vazbu</string>
-    <string name="report_notification_reply">Odpovědět na <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Odpověď na <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

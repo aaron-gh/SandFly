@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Valdykite garsus ir vibracijas</string>
-    <string name="summary_pref_control_sounds">Suteikite kiekvienai valdymo rūšiai, pvz., mygtukus, žymimuosius laukelius, redagavimo laukus ir sąrašo elementus, savo garsą ir vibraciją iš temos, o ne fokusavimo garsą ir vibraciją, kaip tai daro Unspoken NVDA. Garsas sklinda iš ten, kur yra valdiklis ekrane, o SandFly nenurodoma, koks tai valdiklis.</string>
-    <string name="title_pref_control_sounds_speak_roles">Vis tiek pasakykite kontrolės rūšį</string>
-    <string name="summary_pref_control_sounds_speak_roles">Kai groja valdymo garsas, vis tiek pasakykite, koks tai valdiklis, pvz., mygtukas. Tai tinka kiekvienai garso temai.</string>
+    <string name="title_pref_control_sounds">Valdiklių garsai ir vibracija</string>
+    <string name="summary_pref_control_sounds">Kiekviena valdiklių rūšis, pvz., mygtukai, žymimieji langeliai, redagavimo laukai ir sąrašo elementai, vietoj fokuso garso ir vibracijos gauna savo garsą ir vibraciją iš temos, kaip tai daro „Unspoken“ NVDA. Garsas sklinda iš valdiklio vietos ekrane, o SandFly nesako, kokios rūšies tai valdiklis.</string>
+    <string name="title_pref_control_sounds_speak_roles">Vis tiek sakyti valdiklio tipą</string>
+    <string name="summary_pref_control_sounds_speak_roles">Kai skamba valdiklio garsas, valdiklio rūšis vis tiek pasakoma, pvz., mygtukas. Taikoma visoms garsų temoms.</string>
     <string name="title_pref_control_sounds_3d">3D garsas</string>
     <string name="pref_control_sounds_3d_headphones">Su ausinėmis</string>
     <string name="pref_control_sounds_3d_always">Visada</string>
     <string name="pref_control_sounds_3d_never">Niekada, tik kairėn ir dešinėn</string>
-    <string name="individual_sound_control_button">Valdykite garsą: mygtukas</string>
-    <string name="individual_sound_control_checkbox">Valdykite garsą: žymimasis laukelis</string>
-    <string name="individual_sound_control_radio_button">Garso valdymas: radijo mygtukas</string>
-    <string name="individual_sound_control_edit_text">Valdykite garsą: redagavimo laukas</string>
-    <string name="individual_sound_control_combo_box">Valdykite garsą: išskleidžiamasis sąrašas</string>
-    <string name="individual_sound_control_slider">Valdykite garsą: slankiklis</string>
-    <string name="individual_sound_control_link">Valdykite garsą: nuoroda</string>
-    <string name="individual_sound_control_image">Valdykite garsą: vaizdas</string>
-    <string name="individual_sound_control_clock">Valdykite garsą: laikrodis</string>
-    <string name="individual_sound_control_tab">Valdykite garsą: skirtukas</string>
-    <string name="individual_sound_control_menu_item">Garso valdymas: meniu elementas</string>
-    <string name="individual_sound_control_list_item">Valdykite garsą: sąrašo elementas</string>
-    <string name="individual_sound_control_tree_item">Valdykite garsą: medžio elementas</string>
+    <string name="individual_sound_control_button">Valdiklio garsas: mygtukas</string>
+    <string name="individual_sound_control_checkbox">Valdiklio garsas: žymimasis laukelis</string>
+    <string name="individual_sound_control_radio_button">Valdiklio garsas: radijo mygtukas</string>
+    <string name="individual_sound_control_edit_text">Valdiklio garsas: redagavimo laukas</string>
+    <string name="individual_sound_control_combo_box">Valdiklio garsas: išskleidžiamasis sąrašas</string>
+    <string name="individual_sound_control_slider">Valdiklio garsas: slankiklis</string>
+    <string name="individual_sound_control_link">Valdiklio garsas: nuoroda</string>
+    <string name="individual_sound_control_image">Valdiklio garsas: vaizdas</string>
+    <string name="individual_sound_control_clock">Valdiklio garsas: laikrodis</string>
+    <string name="individual_sound_control_tab">Valdiklio garsas: skirtukas</string>
+    <string name="individual_sound_control_menu_item">Valdiklio garsas: meniu elementas</string>
+    <string name="individual_sound_control_list_item">Valdiklio garsas: sąrašo elementas</string>
+    <string name="individual_sound_control_tree_item">Valdiklio garsas: medžio elementas</string>
 </resources>

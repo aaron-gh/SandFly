@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Controlați sunetele și vibrațiile</string>
-    <string name="summary_pref_control_sounds">Oferiți fiecărui tip de control, cum ar fi butoanele, casetele de selectare, câmpurile de editare și elementele din listă, propriul sunet și propria vibrație a temei, în locul sunetului și vibrației de focalizare, așa cum face Unspoken pentru NVDA. Sunetul vine de unde se află controlul pe ecran și SandFly omite să spună ce fel de control este.</string>
-    <string name="title_pref_control_sounds_speak_roles">Totuși, spuneți genul de control</string>
-    <string name="summary_pref_control_sounds_speak_roles">Când se aude un sunet de control, spuneți totuși ce fel de control este, cum ar fi butonul. Aceasta este pentru fiecare temă sonoră.</string>
+    <string name="title_pref_control_sounds">Sunete și vibrații pentru elementele de control</string>
+    <string name="summary_pref_control_sounds">Fiecare tip de control, cum ar fi butoanele, casetele de selectare, câmpurile de editare și elementele de listă, primește un sunet și o vibrație proprii din temă în locul sunetului și vibrației de focalizare, așa cum face Unspoken pentru NVDA. Sunetul vine din poziția controlului pe ecran, iar SandFly nu rostește tipul de control.</string>
+    <string name="title_pref_control_sounds_speak_roles">Rostește totuși tipul elementului de control</string>
+    <string name="summary_pref_control_sounds_speak_roles">Când se redă sunetul unui control, tipul controlului este totuși rostit, de exemplu buton. Se aplică tuturor temelor de sunete.</string>
     <string name="title_pref_control_sounds_3d">Audio 3D</string>
     <string name="pref_control_sounds_3d_headphones">Cu căști</string>
     <string name="pref_control_sounds_3d_always">Întotdeauna</string>
     <string name="pref_control_sounds_3d_never">Niciodată, doar la stânga și la dreapta</string>
-    <string name="individual_sound_control_button">Control sunet: buton</string>
-    <string name="individual_sound_control_checkbox">Control sunet: casetă de selectare</string>
-    <string name="individual_sound_control_radio_button">Control sunet: buton radio</string>
-    <string name="individual_sound_control_edit_text">Control sunet: câmp de editare</string>
-    <string name="individual_sound_control_combo_box">Control sunet: listă derulantă</string>
-    <string name="individual_sound_control_slider">Controlul sunetului: glisor</string>
-    <string name="individual_sound_control_link">Control sunet: link</string>
-    <string name="individual_sound_control_image">Control sunet: imagine</string>
-    <string name="individual_sound_control_clock">Control sunet: ceas</string>
-    <string name="individual_sound_control_tab">Control sunet: tab</string>
-    <string name="individual_sound_control_menu_item">Control sunet: element de meniu</string>
-    <string name="individual_sound_control_list_item">Control sunet: element din listă</string>
-    <string name="individual_sound_control_tree_item">Control sunet: element arborescent</string>
+    <string name="individual_sound_control_button">Sunetul elementului de control: buton</string>
+    <string name="individual_sound_control_checkbox">Sunetul elementului de control: casetă de selectare</string>
+    <string name="individual_sound_control_radio_button">Sunetul elementului de control: buton radio</string>
+    <string name="individual_sound_control_edit_text">Sunetul elementului de control: câmp de editare</string>
+    <string name="individual_sound_control_combo_box">Sunetul elementului de control: listă derulantă</string>
+    <string name="individual_sound_control_slider">Sunetul elementului de control: glisor</string>
+    <string name="individual_sound_control_link">Sunetul elementului de control: link</string>
+    <string name="individual_sound_control_image">Sunetul elementului de control: imagine</string>
+    <string name="individual_sound_control_clock">Sunetul elementului de control: ceas</string>
+    <string name="individual_sound_control_tab">Sunetul elementului de control: filă</string>
+    <string name="individual_sound_control_menu_item">Sunetul elementului de control: element de meniu</string>
+    <string name="individual_sound_control_list_item">Sunetul elementului de control: element din listă</string>
+    <string name="individual_sound_control_tree_item">Sunetul elementului de control: element arborescent</string>
 </resources>

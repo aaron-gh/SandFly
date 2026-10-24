@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Eszköz feloldva.</string>
   <string name="title_pref_speech_volume">Beszéd hangereje</string>
   <string name="title_pref_verbose_scroll_announcement">A listaelemek számának kimondása minden alkalommal</string>
-  <string name="summary_pref_verbose_scroll_announcement">Mondja meg, hogy mely elemek jelennek meg minden görgetés után</string>
+  <string name="summary_pref_verbose_scroll_announcement">Minden görgetés után kimondja, mely elemek láthatók</string>
   <string name="title_pref_cover_proximity_sensor">Közelségérzékelő letakarása a beszéd befejezéséhez</string>
   <string name="title_pref_phonetic_letters">Betűk kimondása példákkal</string>
   <string name="summary_pref_phonetic_letters">Amikor kiválasztja a billentyűzet gombjait, vagy karakterenként navigál, példát hallhat az egyes betűknél (például „h, hotel”)</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">A legtöbb</string>
   <string name="punctuation_some">Néhány</string>
   <string name="title_pref_count_repeated_symbols">Ismétlődő szimbólumok számlálása</string>
-  <string name="summary_pref_count_repeated_symbols">Mondja meg, hányszor ismétlődik egy szimbólum, ha 4 vagy több alkalommal ismétlődik</string>
+  <string name="summary_pref_count_repeated_symbols">Ha egy szimbólum legalább 4-szer ismétlődik, az ismétlések számának bemondása</string>
   <string name="learn_more">További információ</string>
   <string name="title_pref_capital_letters">Nagybetűk</string>
   <string name="capital_letters_nothing">Ne tegyen semmit</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">Hangmagasság módosítása</string>
   <string name="capital_letters_sound_feedback">Hang lejátszása</string>
   <string name="title_pref_a11y_hints">Használati tippek kimondása</string>
-  <string name="summary_pref_a11y_hints">Egy elem leírása után mondja el, hogyan kell használni</string>
+  <string name="summary_pref_a11y_hints">Az elem leírása után a használatának bemondása</string>
   <string name="pref_speak_container_element_positions_title">Beszéd tárolóadatai</string>
   <string name="pref_speak_time_title">Az idő kimondása</string>
   <string name="pref_speak_time_summary">A képernyő bekapcsolásakor</string>
-  <string name="summary_speak_container_element_positions">Mondja ki, amikor listákba, rácsokba és egyéb tárolókba lép be vagy kilép</string>
+  <string name="summary_speak_container_element_positions">Kimondja, amikor listába, rácsba vagy más tárolóba belép, illetve kilép onnan</string>
   <string name="reset_letency_reduction_settings_dialog_title">Visszaállítja a késleltetési beállításokat?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Ezzel visszaállítja az összes késleltetési beállítást az alapértelmezettre.</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Visszaállítás</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Visszaállítás</string>
   <string name="gestures_announce_reset_gesture_settings">Sikerült a kézmozdulatok beállításainak visszaállítása.</string>
   <string name="pref_speak_roles_title">Elemtípus kimondása</string>
-  <string name="pref_speak_roles_summary">Tetszik gomb vagy jelölőnégyzet</string>
+  <string name="pref_speak_roles_summary">Például gomb vagy jelölőnégyzet</string>
   <string name="title_pref_speak_element_ids">Elemazonosítók felolvasása</string>
-  <string name="summary_pref_speak_element_ids">Mondja ki azoknak a gomboknak az azonosítóját, amelyeken nincs felirat</string>
+  <string name="summary_pref_speak_element_ids">A felirat nélküli gombok azonosítójának kimondása</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Minden frissítés kimondása</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">A letöltés, az autós útvonaltervek követése és egyebek közbeni értesítésítésekre is vonatkozik. Amikor ki van kapcsolva, kevesebb értesítést kap.</string>
   <string name="title_pref_explore_by_touch">Felfedezés érintéssel</string>
@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Fókuszjelző</string>
   <string name="title_pref_category_manage_gestures">Kézmozdulatok</string>
   <string name="title_pref_manage_labels">Egyéni címkék</string>
-  <string name="title_pref_category_context_menu">SandFly menü</string>
+  <string name="title_pref_category_context_menu">SandFly-menü</string>
   <string name="title_pref_category_selector_menu">Felolvasásvezérlés</string>
   <string name="title_pref_category_navigation_menu">Navigációs beállítások szerkesztése</string>
   <string name="title_pref_manage_keyboard_shortcuts">Billentyűparancsok</string>
@@ -289,10 +289,10 @@
   <string name="override_keycombo_message_two_params">Ez a kombináció a(z) „%1$s” művelethez van hozzárendelve. Szeretné törölni a hozzárendelést, és a kombinációt társítani a következő művelethez: „%2$s”?</string>
   <string name="title_pref_intonation">Hangmagasság-változtatások használata</string>
   <string name="title_pref_keyboard_echo">Leütött billentyűk kimondása</string>
-  <string name="pref_node_desc_order_title">A tétel sorrendjének részletei</string>
+  <string name="pref_node_desc_order_title">Az elemadatok sorrendje</string>
   <string name="pref_time_feedback_format_title">Időformátum</string>
   <string name="title_pref_latency_reduction">Késleltetés csökkentése</string>
-  <string name="talkback_latency_reduction_summary">Gyorsítsa a SandFly válaszadást a képernyő megérintése után</string>
+  <string name="talkback_latency_reduction_summary">A SandFly gyorsabban reagál a képernyő megérintése után</string>
   <string name="summary_pref_intonation">A törölt betűk magasabb hangszínben történő kimondása</string>
   <string name="title_pref_brailledisplay">Braille-kijelző</string>
   <string name="title_pref_brailleime">Braille-billentyűzet</string>
@@ -305,7 +305,7 @@
   <string name="title_pref_category_developer_settings">Fejlesztői beállítások</string>
   <string name="title_activity_dump_a11y_event">Válassza ki a naplózni kívánt eseményeket</string>
   <string name="title_pref_dump_a11y_event">Kisegítő lehetőségekkel kapcsolatos naplózás szűrése</string>
-  <string name="pref_reduce_window_delay_title">Kapcsolja ki az animációkat</string>
+  <string name="pref_reduce_window_delay_title">Animációk kikapcsolása</string>
   <string name="title_pref_log_level">Naplózás szintje</string>
   <string name="title_pref_diagnosis_mode">Elemző mód</string>
   <string name="title_pref_tts_overlay">Kimondott beszéd megjelenítése</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">A beállítás aktiválásához kapcsolja ki, majd újra be a SandFly funkciót.</string>
   <string name="title_pref_auto_image_captioning">Automatikus leírások</string>
   <string name="title_pref_gemini_settings">Gemini-beállítások</string>
-  <string name="title_pref_gemini_enabled">Gemini hangutasítások</string>
+  <string name="title_pref_gemini_enabled">Gemini-hangutasítások</string>
   <string name="title_pref_category_automatic_description_summary">Részletes AI-képleírásokat kaphat, ha a SandFly-menüben a „Képleírás” lehetőséget választja.\n\nAutomatikus leírásokat is kaphat, ha egy képre vagy ikonra fókuszál. Az automatikus leírások internetkapcsolat nélkül is működnek.</string>
   <string name="title_pref_icon_detection">Automatikus ikonleírások</string>
   <string name="title_pref_image_description">Automatikus képleírások</string>
@@ -358,7 +358,7 @@
   <string name="screen_dimmed">Képernyő elrejtve</string>
   <string name="screen_brightness_restored">Képernyő megjelenítve</string>
   <string name="screen_dimming_exit_instruction_line1">A SandFly kisegítő szolgáltatás elrejtette a képernyőt</string>
-  <string name="screen_dimming_exit_instruction_line2">Ennek megváltoztatásához nyomja meg a <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> gombot az SandFly menü megnyitásához, válassza a „<xliff:g id="menu item" example="show screen">%2$s</xliff:g>” lehetőséget, majd koppintson duplán.</string>
+  <string name="screen_dimming_exit_instruction_line2">Ennek módosításához nyissa meg a SandFly menüt ezzel: <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g>, válassza a „<xliff:g id="menu item" example="show screen">%2$s</xliff:g>” lehetőséget, majd koppintson duplán.</string>
   <string name="shortcut_title_basic_navigation">Alapvető navigáció</string>
   <string name="shortcut_title_system_actions">Rendszerműveletek</string>
   <string name="shortcut_title_reading_control">Olvasás</string>
@@ -668,7 +668,7 @@
   <string name="label_dialog_text">Írja be az elem címkéjeként használni kívánt szöveget\nBelső nézet neve: %1$s</string>
   <string name="label_dialog_edit_hint">Címkeszöveg</string>
   <string name="label_import">Egyéni címkék importálása</string>
-  <string name="label_import_dialog_title">Egyéni címkék importálása a SandFly szolgáltatásba</string>
+  <string name="label_import_dialog_title">Egyéni címkék importálása a SandFlyba</string>
   <string name="label_import_dialog_message">Eldöntheti, hogy ütközés esetén felülbírálja vagy kihagyja a meglévő címkéket</string>
   <string name="label_import_dialog_skip">Kihagyás</string>
   <string name="label_import_dialog_override">Felülírás</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">Kisegítő lehetőségek hangereje</string>
   <string name="title_pref_touch_explore_latency">Gépelési fókusz késleltetése</string>
   <string name="title_pref_touch_focus_latency">Fókusz késleltetése</string>
-  <string name="message_pref_touch_focus_latency">A rövidebb késleltetés hatására SandFly hamarabb beszél, miután megérinti a képernyőt</string>
+  <string name="message_pref_touch_focus_latency">A rövidebb késleltetés hatására a SandFly hamarabb beszél, miután megérinti a képernyőt</string>
   <string name="message_pref_typing_method_prefix">Gépelés közben a legkisebb késleltetés érdekében válassza „A kiválasztáshoz tartsa az ujját a kívánt billentyűn, majd emelje fel” lehetőséget.</string>
   <string name="message_pref_typing_method_postfix">Az osztott koppintás funkciót is bármikor használhatja a gépeléshez. Ehhez tartsa az egyik ujját a kívánt billentyűn, és koppintson valamelyik másik ujjával a képernyőre.</string>
   <string name="title_pref_talkback_speech_rate">Beszéd sebessége</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">Felfelé navigálás</string>
   <string name="training_tip">Tipp</string>
   <string name="tv_training_overview_step_title">Hogyan működik a SandFly?</string>
-  <string name="tv_training_overview_step_summary">A SandFly egy képernyőolvasó, amely az Google TalkBack-jein alapul. Hangosan felolvassa a képernyőn megjelenő szöveget, és szóbeli visszajelzést ad, így a készüléket anélkül használhatja, hogy ránézne a képernyőre.\n\nHa az SandFly be van kapcsolva, a képernyőn egy kiválasztott elem hangosan szólal meg, néha további információk vagy kontextus hozzáadásával.\n\n Nyomja meg a gombot a folytatáshoz. A Kiválasztás gomb az irányítópad közepén található, amely a távirányító tetején található nagy, kör alakú gomb.</string>
+  <string name="tv_training_overview_step_summary">A SandFly a Google TalkBack alkalmazásán alapuló képernyőolvasó. Felolvassa a képernyőn lévő szöveget, és hangos visszajelzést ad, így a képernyőre nézés nélkül használhatja az eszközt.\n\nHa a SandFly be van kapcsolva, a képernyőn kiválasztott elemet felolvassa, néha további információkkal vagy kontextussal együtt.\n\nA folytatáshoz nyomja meg a Kiválasztás gombot. A Kiválasztás gomb az iránypad közepén található; az iránypad a távirányító felső részén lévő nagy, kör alakú gomb.</string>
   <string name="tv_training_remote_step_title">A távirányító használata</string>
   <string name="tv_training_remote_step_summary">A távirányító tetején található kör alakú navigációs gomb segítségével navigálhat a képernyőn. A kiválasztáshoz nyomja meg a távirányító tetején található navigációs gomb közepén lévő gombot.\n\nA Vissza gombot a bal oldalon látható második sorban találja. Jobb oldalon helyezkedik el a Hangsegéd gomb.\n\nA Kezdőképernyő gomb a harmadik sorban a bal oldalon található. Jobb oldalon van a Némítás gomb.\n\nBal oldalon a negyedik sorban helyezkedik el a YouTube gyorsgomb. Jobb oldalon pedig a Netflix gyorsgomb látható.\n\nAz alsó sorban két kis gomb van. A bal oldali gomb a bekapcsológomb. A jobb oldali gombbal nyitható meg a tévé bemeneti menüje.\n\nA hangerőszabályzó gombok a távirányító jobb oldalán találhatók.\n\nA folytatáshoz nyomja meg a Kiválasztás gombot.</string>
   <string name="tv_training_shortcut_step_title">SandFly parancsikon</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">Braille-billentyűzetet is használhat a gépeléshez. Bekapcsolása a SandFly beállításaiban lehetséges.</string>
   <string name="other_ways_to_type_title">A gépelés egyéb módjai</string>
   <string name="other_ways_to_type_text">A SandFly funkcióban más módon is lehet gépelni. Például dupla koppintással adhat meg betűket.</string>
-  <string name="basic_other_ways_to_type_text">Vannak más módok is a SandFly beírására. Például dupla koppintással írhat be egy betűt. Ezt később módosíthatja a SandFly beállítások &gt; Képernyő-billentyűzet &gt; Gépelési mód menüpontban.</string>
-  <string name="basic_other_ways_to_type_text_tts">Vannak más módok is a SandFly beírására. Például dupla koppintással írhat be egy betűt. Ezt később módosíthatja a SandFly beállításokban, majd a Képernyő-billentyűzet, majd a Gépelési mód menüpontban.</string>
+  <string name="basic_other_ways_to_type_text">A SandFly használata közben más módokon is gépelhet. Például dupla koppintással is beírhat egy betűt. Ezt később módosíthatja itt: A SandFly beállításai &gt; Képernyő-billentyűzet &gt; Gépelési módszer.</string>
+  <string name="basic_other_ways_to_type_text_tts">A SandFly használata közben más módokon is gépelhet. Például dupla koppintással is beírhat egy betűt. Ezt később módosíthatja itt: A SandFly beállításai, majd Képernyő-billentyűzet, majd Gépelési módszer.</string>
   <string name="change_typing_preference_text">Gépelési beállítás módosítása</string>
   <string name="moving_cursor_title">A kurzor mozgatása</string>
   <string name="moving_cursor_text">A szövegmező aktiválása után felfelé vagy lefelé történő gyors csúsztatással tudja mozgatni a kurzort a betűk között.\n\nPróbálja ki az alábbi szövegmezőben.</string>
@@ -1069,7 +1069,7 @@
   <string name="checking_notifications_tips">Az értesítési előzmények ellenőrzéséhez csúsztasson lefelé két ujjal a képernyő tetejéről.</string>
   <string name="image_description_playground_title">A képleírások kérésének kipróbálása</string>
   <string name="image_description_playground_content_one">Amikor a fókusz egy képen van, nyissa meg a SandFly-menüt, és válassza a „Képleírás” lehetőséget.\n\nAlább egy fotó található. Próbáljon meg leírást kérni hozzá.</string>
-  <string name="image_description_playground_content_two">A képleírás beállításait bármikor módosíthatja a SandFly beállítások &gt; Automatikus leírások menüpontban.</string>
+  <string name="image_description_playground_content_two">A képleírás beállításait bármikor módosíthatja itt: A SandFly beállításai &gt; Automatikus leírások.</string>
   <string name="image_description_playground_content_two_tts">A képleírás beállításait bármikor módosíthatja a SandFly beállítások, majd az Automatikus leírások menüpontban.</string>
   <string name="image_description_sample_image_content_description">Mintakép. Koppintson három ujjal a SandFly-menü megnyitásához, és válassza a „Képleírás” lehetőséget a leírás meghallgatásához.</string>
   <string name="practice_gestures_title">Kézmozdulatok gyakorlása</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">Előző oszlop</string>
   <string name="shortcut_column_right">Következő oszlop</string>
   <string name="table_navigation_not_supported">A táblázatban való navigáció nem támogatott</string>
-  <string name="pref_auto_enter_table_navigation_title">Váltson a táblázatban történő navigációra</string>
+  <string name="pref_auto_enter_table_navigation_title">Váltás táblázatnavigációra táblázatokban</string>
   <string name="title_text_formatting_menu">Szövegformázás leírása</string>
   <string name="summary_text_formatting_menu">A félkövér, dőlt, aláhúzott és egyéb módosításokhoz</string>
   <string name="title_text_formatting_inline">Szöveg formázásának felolvasása</string>
@@ -1299,12 +1299,12 @@
     <string name="title_pref_tts_engine">Szövegfelolvasó motor</string>
     <string name="title_pref_system_tts_settings">Rendszer szövegfelolvasási beállításai</string>
     <string name="title_selector_vertical_navigation">Függőleges navigáció</string>
-    <string name="summary_selector_vertical_navigation">Lépjen az alatta vagy fölé lévő elemre, a sor többi eleme mögé</string>
+    <string name="summary_selector_vertical_navigation">Ugrás az alatta vagy fölötte lévő elemre a sor többi elemét átugorva</string>
     <string name="title_selector_switch_tts_engine">Beszédmotor</string>
     <string name="summary_selector_switch_tts_engine">Váltás a telepített beszédmotorok között</string>
     <string name="title_selector_voice_profile">Hangprofil</string>
     <string name="title_pref_voice_profiles">Hangprofilok</string>
-    <string name="voice_profile_default">SandFly alapértelmezett</string>
+    <string name="voice_profile_default">SandFly alapértelmezés</string>
     <string name="voice_profile_in_use">Használatban: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">A beszélt nyelv hangprofil használata közben nem érhető el</string>
     <string name="speech_engine_unavailable_with_profile">A beszédmotor hangprofil használata közben nem érhető el</string>
@@ -1340,7 +1340,7 @@
     <string name="speech_stream_accessibility">Kisegítő lehetőségek hangereje</string>
     <string name="speech_stream_media">Média hangereje</string>
     <string name="speech_stream_ring">Csengetés hangereje</string>
-    <string name="speech_stream_call">Hívás hangereje, fülhallgató</string>
+    <string name="speech_stream_call">Hívás hangereje, fülhangszóró</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Összecsukva</string>
     <string name="category_expanded">Kibontva</string>
     <string name="title_pref_speak_nav_bar_buttons">Navigációs sáv gombjainak kimondása</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Ha a navigációs sávon aktiválás felemeléssel van beállítva, a koppintással megnyomott gomb (például Vissza vagy Kezdőképernyő) kimondása.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Ha a navigációs sávon az ujj felemelésével történik az aktiválás, kimondja a koppintással megnyomott gombot, például: Vissza vagy Kezdőképernyő.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Akkumulátor: <xliff:g id="battery_level" example="73">%1$s</xliff:g> százalék</string>
     <string name="template_battery_level_unknown">Az akkumulátor töltöttsége ismeretlen</string>
@@ -1370,7 +1370,7 @@
     <string name="title_screen_announcements_unlock">Amikor feloldja a telefont</string>
     <string name="title_pref_say_screen_off">„Képernyő kikapcsolva” kimondása</string>
     <string name="title_pref_say_device_unlocked">„Eszköz feloldva” kimondása</string>
-    <string name="title_pref_announce_time">Idő</string>
+    <string name="title_pref_announce_time">Pontos idő</string>
     <string name="title_pref_announce_ringer_mode">Csengési mód</string>
     <string name="summary_pref_announce_ringer_mode">Kimondja, ha a csengő rezgésre vagy némára van állítva</string>
     <string name="title_pref_category_feedback">Visszajelzés</string>
@@ -1391,49 +1391,49 @@
     <string name="summary_pref_speech_control">Az engedélyezett alkalmazások szöveget mondhatnak ki az Ön SandFly-hangján. Az eszköz zárolt állapotában nincs beszéd.</string>
     <string name="title_pref_speech_control_sound">Hang lejátszása más alkalmazások beszéde előtt</string>
     <string name="speech_control_apps_category">Alkalmazások</string>
-    <string name="speech_control_no_apps">Egyetlen alkalmazás sem kért még felszólalást.</string>
-    <string name="speech_control_ask_title">Engedélyezi a <xliff:g id="app" example="Tasker">%1$s</xliff:g> számára, hogy az SandFly-n keresztül beszéljen?</string>
+    <string name="speech_control_no_apps">Még egyetlen alkalmazás sem kért engedélyt a beszédre.</string>
+    <string name="speech_control_ask_title">Engedélyezi a(z) <xliff:g id="app" example="Tasker">%1$s</xliff:g> számára, hogy a SandFlyon keresztül beszéljen?</string>
     <string name="speech_control_ask_text">Szöveget tud mondani az Ön SandFly hangján. Ezt a Speciális beállításokban módosíthatja.</string>
-    <string name="speech_control_allow">Engedélyezze</string>
-    <string name="speech_control_deny">Ne engedd</string>
-    <string name="permission_speak_label">beszéljen keresztül SandFly</string>
-    <string name="permission_speak_description">Lehetővé teszi, hogy az alkalmazás szöveget mondjon az Ön SandFly hangján. SandFly megkérdezi, mielőtt az alkalmazás beszélni tudna.</string>
-    <string name="permission_braille_display_label">kérje, hogy legyen Braille-kijelző a SandFly számára</string>
-    <string name="permission_braille_display_description">Lehetővé teszi, hogy az alkalmazás Braille-kijelzőként kérje a SandFly-t. Ha engedélyezi az SandFly-ben, akkor mindent elolvashat a képernyőn, és vezérelheti az eszközt. SandFly kérdezi meg először.</string>
-    <string name="title_pref_phonetic_letters_mode">A betűket fonetikusan beszélje</string>
+    <string name="speech_control_allow">Engedélyezés</string>
+    <string name="speech_control_deny">Tiltás</string>
+    <string name="permission_speak_label">beszéd a SandFly segítségével</string>
+    <string name="permission_speak_description">Lehetővé teszi, hogy az alkalmazás kérje, hogy szöveget mondhasson el az Ön SandFly-hangján. A SandFly megkérdezi Önt, mielőtt az alkalmazás beszélhetne.</string>
+    <string name="permission_braille_display_label">Braille-kijelzőként való működés kérése a SandFly számára</string>
+    <string name="permission_braille_display_description">Lehetővé teszi, hogy az alkalmazás kérje, hogy Braille-kijelzőként működhessen a SandFly számára. Ha a SandFly-ban engedélyezi, az alkalmazás mindent elolvashat a képernyőn, és vezérelheti az eszközt. A SandFly előbb megkérdezi Önt.</string>
+    <string name="title_pref_phonetic_letters_mode">Betűk fonetikus kimondása</string>
     <string name="phonetic_letters_mode_off">Ki</string>
-    <string name="phonetic_letters_mode_after_letter_delay">A levél után késleltetett, például \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">A levél után nincs késés, például \"h hotel\"</string>
-    <string name="phonetic_letters_mode_instead_of_letter">A betű helyett például \"hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">A betű után, szünettel, például „h, Huba”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">A betű után, szünet nélkül, például „h Huba”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">A betű helyett, például „Huba”</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Olvasás beszédmotorral</string>
-    <string name="emoji_speech_names">Olvasó: SandFly</string>
+    <string name="emoji_speech_engine">A beszédmotor olvassa fel</string>
+    <string name="emoji_speech_names">A SandFly olvassa fel</string>
     <string name="emoji_speech_none">Nincs</string>
-    <string name="summary_selector_menu_emoji">Módosítsa a hangulatjelek olvasásának módját</string>
+    <string name="summary_selector_menu_emoji">A hangulatjelek felolvasási módjának módosítása</string>
     <string name="emoji_speech_state">Hangulatjel: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Számolja meg az ismétlődő hangulatjeleket</string>
+    <string name="title_pref_emoji_repeat_count">Ismétlődő hangulatjelek számolása</string>
     <string name="emoji_repeat_count_off">Ki</string>
     <string name="emoji_repeat_count_2">2 vagy több</string>
     <string name="emoji_repeat_count_3">3 vagy több</string>
     <string name="emoji_repeat_count_4">4 vagy több</string>
     <string name="emoji_repeat_count_5">5 vagy több</string>
     <string name="emoji_repeat_count_6">6 vagy több</string>
-    <string name="pref_table_headers_category_title">Táblázat olvasás</string>
-    <string name="pref_table_column_headers_title">Olvassa el az oszlopfejléceket</string>
+    <string name="pref_table_headers_category_title">Táblázatok felolvasása</string>
+    <string name="pref_table_column_headers_title">Oszlopfejlécek felolvasása</string>
     <string name="pref_table_column_headers_entry_after">A cellaadatok után</string>
     <string name="pref_table_column_headers_entry_before">A cellaadatok előtt</string>
-    <string name="pref_table_column_headers_entry_off">Ne olvass</string>
-    <string name="pref_table_speak_row_column_numbers_title">Mondja ki a sorok és oszlopok számát</string>
+    <string name="pref_table_column_headers_entry_off">Nincs felolvasás</string>
+    <string name="pref_table_speak_row_column_numbers_title">Sor- és oszlopszámok kimondása</string>
     <string name="pref_table_speak_row_column_numbers_summary">A táblázatcellák sor- és oszlopszámainak bejelentése</string>
-    <string name="title_pref_speak_volume_changes">Beszédhangerő-változások</string>
-    <string name="summary_pref_speak_volume_changes">A hangerőszabályzó gombok megnyomása után mondja ki az új hangerőt</string>
+    <string name="title_pref_speak_volume_changes">Hangerő-változások kimondása</string>
+    <string name="summary_pref_speak_volume_changes">Kimondja az új hangerőt a hangerőgombok megnyomása után</string>
     <string name="title_pref_speak_notifications">Értesítések kimondása</string>
-    <string name="summary_pref_speak_notifications">Olvassa fel az új értesítéseket, amikor megérkeznek. A bejövő hívások mindig beolvasásra kerülnek.</string>
-    <string name="title_pref_notification_list">Használja a SandFly értesítési listáját</string>
+    <string name="summary_pref_speak_notifications">Felolvassa az új értesítéseket, amikor megérkeznek. A bejövő hívásokat mindig felolvassa.</string>
+    <string name="title_pref_notification_list">A SandFly értesítési listájának használata</string>
     <string name="title_pref_notification_parts">Az értesítés részletei</string>
-    <string name="title_pref_play_installer">Megjelenik a Google Play alkalmazásból telepítve</string>
-    <string name="summary_pref_play_installer">Mondja el a többi alkalmazásnak, hogy Google Play telepítve SandFly. Egyes alkalmazások, például egyes banki alkalmazások, kikapcsolják a bárhonnan telepített kisegítő lehetőségeket. Szüksége van a Shizuku-re, és csak azokat az alkalmazásokat módosítja, amelyek a SandFly származási helyéről értesülnek.</string>
-    <string name="summary_pref_play_installer_pending">Be, de Google A lejátszás még nincs rögzítve telepítőként. Az SandFly akkor állítja be, amikor a Shizuku elérhető.</string>
+    <string name="title_pref_play_installer">Google Playből telepítettként jelenjen meg</string>
+    <string name="summary_pref_play_installer">Közli más alkalmazásokkal, hogy a SandFly a Google Playről lett telepítve. Egyes alkalmazások, például egyes banki alkalmazások, kikapcsolják a máshonnan telepített kisegítő szolgáltatásokat. Shizuku szükséges hozzá, és csak azt módosítja, amit az alkalmazások a SandFly forrásáról megtudnak.</string>
+    <string name="summary_pref_play_installer_pending">Be van kapcsolva, de a Google Play még nincs telepítőként rögzítve. A SandFly akkor állítja be, amikor a Shizuku elérhető.</string>
     <string name="notification_part_title">Cím</string>
     <string name="notification_part_text">Szöveg</string>
     <string name="notification_part_app">Alkalmazás neve</string>
@@ -1442,16 +1442,16 @@
     <string name="notification_list_title">Értesítések</string>
     <string name="notification_list_empty">Nincsenek értesítések</string>
     <string name="notification_list_no_access">Az értesítésekhez való hozzáférés ki van kapcsolva</string>
-    <string name="notification_list_grant_access">Kapcsolja be az értesítésekhez való hozzáférést</string>
+    <string name="notification_list_grant_access">Értesítési hozzáférés bekapcsolása</string>
     <string name="notification_list_quick_settings">Gyors beállítások</string>
     <string name="notification_list_dismiss">Elvetés</string>
     <string name="notification_list_show_all">Összes megjelenítése</string>
-    <string name="notification_list_show_less">Mutass kevesebbet</string>
+    <string name="notification_list_show_less">Kevesebb megjelenítése</string>
     <string name="notification_list_clear_all">Minden törlése</string>
     <string name="notification_list_send">Küldés</string>
-    <string name="notification_list_playing">Játék</string>
+    <string name="notification_list_playing">Lejátszás folyamatban</string>
     <string name="notification_list_paused">Szüneteltetve</string>
-    <string name="notification_list_play">Játssz</string>
+    <string name="notification_list_play">Lejátszás</string>
     <string name="notification_list_pause">Szüneteltetés</string>
     <string name="notification_list_previous">Vissza</string>
     <string name="notification_list_next">Tovább</string>
@@ -1459,7 +1459,7 @@
         <item quantity="one">%d értesítés</item>
         <item quantity="other">%d értesítés</item>
     </plurals>
-    <string name="title_pref_quick_settings">Használja a SandFly gyorsbeállításait</string>
+    <string name="title_pref_quick_settings">A SandFly gyorsbeállításainak használata</string>
     <string name="title_pref_quick_settings_items">Gyorsbeállítások panel</string>
     <string name="quick_settings_title">Gyors beállítások</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1468,10 +1468,10 @@
     <string name="quick_settings_hotspot">Hotspot</string>
     <string name="quick_settings_airplane_mode">Repülőgép üzemmód</string>
     <string name="quick_settings_do_not_disturb">Ne zavarjanak</string>
-    <string name="quick_settings_sound_mode">Hang mód</string>
+    <string name="quick_settings_sound_mode">Hangmód</string>
     <string name="quick_settings_flashlight">Zseblámpa</string>
     <string name="quick_settings_flashlight_brightness">Zseblámpa fényereje</string>
-    <string name="quick_settings_location">Helyszín</string>
+    <string name="quick_settings_location">Helymeghatározás</string>
     <string name="quick_settings_auto_rotate">Automatikus forgatás</string>
     <string name="quick_settings_battery_saver">Akkumulátorkímélő</string>
     <string name="quick_settings_dark_theme">Sötét téma</string>
@@ -1482,26 +1482,26 @@
     <string name="quick_settings_call_volume">Hívás hangereje</string>
     <string name="quick_settings_ring_volume">Csengetés hangereje</string>
     <string name="quick_settings_notification_volume">Értesítés hangereje</string>
-    <string name="quick_settings_alarm_volume">Riasztás hangereje</string>
+    <string name="quick_settings_alarm_volume">Ébresztő hangereje</string>
     <string name="quick_settings_accessibility_volume">Kisegítő lehetőségek hangereje</string>
     <string name="quick_settings_system_volume">A rendszer hangereje</string>
-    <string name="quick_settings_data_saver">Adatmentő</string>
+    <string name="quick_settings_data_saver">Adatforgalom-csökkentő</string>
     <string name="quick_settings_night_light">Éjszakai fény</string>
     <string name="quick_settings_extra_dim">Extra homályos</string>
-    <string name="quick_settings_color_inversion">Szín inverzió</string>
+    <string name="quick_settings_color_inversion">Színek invertálása</string>
     <string name="quick_settings_color_correction">Színkorrekció</string>
-    <string name="quick_settings_microphone_access">Mikrofon hozzáférés</string>
-    <string name="quick_settings_camera_access">Kamera hozzáférés</string>
-    <string name="quick_settings_screen_timeout">Képernyő időtúllépése</string>
+    <string name="quick_settings_microphone_access">Mikrofon-hozzáférés</string>
+    <string name="quick_settings_camera_access">Kamera-hozzáférés</string>
+    <string name="quick_settings_screen_timeout">Képernyő kikapcsolási ideje</string>
     <string name="quick_settings_font_size">Betűméret</string>
     <string name="quick_settings_media">Média</string>
     <string name="quick_settings_no_media">Nincs média</string>
     <string name="quick_settings_media_output">Médiakimenet</string>
-    <string name="quick_settings_next_alarm">Következő riasztás</string>
-    <string name="quick_settings_no_alarm">Nincs riasztás</string>
+    <string name="quick_settings_next_alarm">Következő ébresztés</string>
+    <string name="quick_settings_no_alarm">Nincs ébresztés</string>
     <string name="quick_settings_settings">Beállítások</string>
     <string name="quick_settings_power_menu">Tápellátás menü</string>
-    <string name="quick_settings_add_system_tile">Rendszercsempék hozzáadása</string>
+    <string name="quick_settings_add_system_tile">Rendszercsempe hozzáadása</string>
     <string name="quick_settings_no_system_tiles">Nincsenek hozzáadható rendszercsempék</string>
     <string name="quick_settings_tile_not_found">A %1$s nem szerepel a rendszer gyorsbeállításai között</string>
     <string name="quick_settings_never">Soha</string>
@@ -1524,14 +1524,14 @@
     <string name="quick_settings_off">Ki</string>
     <string name="quick_settings_unavailable">Nem elérhető</string>
     <string name="quick_settings_edit">Szerkesztés</string>
-    <string name="quick_settings_system">Rendszer gyorsbeállítások</string>
-    <string name="quick_settings_open_settings">Nyissa meg a beállításokat</string>
+    <string name="quick_settings_system">Rendszer-gyorsbeállítások</string>
+    <string name="quick_settings_open_settings">Beállítások megnyitása</string>
     <string name="quick_settings_add_control">Vezérlés hozzáadása</string>
-    <string name="quick_settings_add_tile">Alkalmazáscsempék hozzáadása</string>
+    <string name="quick_settings_add_tile">Alkalmazáscsempe hozzáadása</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Oszlopok száma</string>
-    <string name="quick_settings_move">Mozgás</string>
-    <string name="quick_settings_move_title">Mozgás %1$s</string>
+    <string name="quick_settings_move">Áthelyezés</string>
+    <string name="quick_settings_move_title">%1$s áthelyezése</string>
     <string name="quick_settings_cell">%1$d sor, %2$d oszlop</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1539,40 +1539,40 @@
         <item quantity="one">%d másik elem áthelyezve</item>
         <item quantity="other">%d másik elem áthelyezve</item>
     </plurals>
-    <string name="quick_settings_remove">Távolítsa el</string>
+    <string name="quick_settings_remove">Eltávolítás</string>
     <string name="quick_settings_added">%1$s hozzáadva</string>
     <string name="quick_settings_removed">%1$s eltávolítva</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly bekapcsolva. A kikapcsoláshoz tartsa két ujját a képernyőn 5 másodpercig. Az üzenet megjelenítésének leállításához kapcsolja ki a SandFly beállítások &gt; Speciális beállítások &gt; Útmutató a SandFly kikapcsolásához.</string>
-    <string name="edge_gestures_title">Élek</string>
+    <string name="edge_gestures_title">Szélek</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Egy másik parancsikon a böngészési mód be- és kikapcsolásához</string>
     <string name="title_pref_vibration_strength">Rezgés erőssége</string>
     <string name="title_pref_audio_output_device">Hangkimeneti eszköz</string>
     <string name="dialog_title_audio_output_device">Válassza ki a SandFly hang lejátszásának helyét</string>
-    <string name="value_audio_output_device_default">Rendszer alapértelmezett</string>
-    <string name="value_audio_output_device_speaker">Telefon hangszóró</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Csatlakoztatott Bluetooth eszköz vagy vezetékes</string>
+    <string name="value_audio_output_device_default">Rendszer alapértelmezése</string>
+    <string name="value_audio_output_device_speaker">Telefon hangszórója</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Csatlakoztatott Bluetooth- vagy vezetékes eszköz</string>
     <string name="value_audio_output_device_disconnected">lekapcsolva</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth audioeszköz</string>
-    <string name="value_audio_output_device_wired_headset">Vezetékes fejhallgató</string>
+    <string name="value_audio_output_device_wired_headset">Vezetékes headset</string>
     <string name="value_audio_output_device_wired_headphones">Vezetékes fejhallgató</string>
-    <string name="value_audio_output_device_usb_headset">USB fejhallgató</string>
+    <string name="value_audio_output_device_usb_headset">USB-s headset</string>
     <string name="value_audio_output_device_usb_device">USB audioeszköz</string>
-    <string name="title_pref_speaker_devices">Telefon hangszóró ezekkel az eszközökkel</string>
+    <string name="title_pref_speaker_devices">Telefon hangszórója ezeknél az eszközöknél</string>
     <string name="summary_pref_speaker_devices_none">Nincs</string>
     <string name="summary_pref_speaker_devices_no_devices">Még nincs Bluetooth vagy vezetékes eszköz csatlakoztatva</string>
     <string name="pref_reduce_window_delay_summary">A SandFly gyorsabban beolvassa az új képernyőket, ha az animációk ki vannak kapcsolva. Ezzel kikapcsolja az animációkat az egész telefonra.</string>
-    <string name="dialog_message_detailed_ai_description">A kiválasztott képeket a rendszer elküldi a Google Gemini API-jára, hogy leírjuk. Ha az eszközön lévő mesterséges intelligencia be van kapcsolva, ezek helyett ezen a telefonon íródnak le, és nem küldik el őket.\n\nAz ingyenes API-kulccsal a Google megtarthatja, amit kapott, felhasználhatja termékei fejlesztésére, és az emberek felülvizsgálhatják azt. A generatív mesterséges intelligencia kísérleti jellegű, ezért hibákat követ el. Az <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> érvényes.</string>
-    <string name="dialog_message_detailed_ai_promotion">A részletes képleírásokat a generatív mesterséges intelligencia szolgáltatja. A kiválasztott képeket a rendszer elküldi a Google Gemini API-jára, hogy leírjuk. Ha az eszközön lévő mesterséges intelligencia be van kapcsolva, ezek helyett ezen a telefonon íródnak le, és nem küldik el őket.\n\nAz ingyenes API-kulccsal a Google megtarthatja, amit kapott, felhasználhatja termékei fejlesztésére, és az emberek felülvizsgálhatják azt. A generatív mesterséges intelligencia kísérleti jellegű, ezért hibákat követ el. A részletes képleírásokat bármikor kikapcsolhatja az SandFly beállításokban.\n\nA <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> érvényes.</string>
-    <string name="dialog_message_screen_overview_promotion">A képernyőről készült képernyőkép elküldésre kerül a Google Gemini API-jának leírásra, ami néhány másodpercet vesz igénybe. Ha az eszközön lévő mesterséges intelligencia be van kapcsolva, ezt a telefon leírja, és nem küldi el.\n\nAz ingyenes API-kulccsal a Google megtarthatja, amit kapott, felhasználhatja termékei fejlesztésére, és az emberek felülvizsgálhatják. A generatív mesterséges intelligencia kísérleti jellegű, ezért hibákat követ el. Az <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> érvényes.</string>
-    <string name="shortcut_title_open_app">Nyissa meg az alkalmazást</string>
-    <string name="shortcut_open_app">Megnyitás <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Görgessen a tetejére</string>
-    <string name="shortcut_write_reading_control">Írja be az olvasási vezérlő betűjét!</string>
+    <string name="dialog_message_detailed_ai_description">A kiválasztott képeket a Google Gemini API kapja meg leírásra. Ha az Eszközön futó AI be van kapcsolva, a leírás ehelyett ezen a telefonon készül, és a képek nem kerülnek elküldésre.\n\nIngyenes API-kulcs esetén a Google megőrizheti a kapott adatokat, felhasználhatja őket termékei fejlesztésére, és emberekkel is átnézetheti őket. A generatív AI kísérleti jellegű, ezért hibázni fog. Érvényesek a következők: <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_detailed_ai_promotion">A részletes képleírásokat generatív AI készíti. A kiválasztott képeket a Google Gemini API kapja meg leírásra. Ha az Eszközön futó AI be van kapcsolva, a leírás ehelyett ezen a telefonon készül, és a képek nem kerülnek elküldésre.\n\nIngyenes API-kulcs esetén a Google megőrizheti a kapott adatokat, felhasználhatja őket termékei fejlesztésére, és emberekkel is átnézetheti őket. A generatív AI kísérleti jellegű, ezért hibázni fog. A részletes képleírásokat bármikor kikapcsolhatja a SandFly beállításaiban.\n\nÉrvényesek a következők: <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_screen_overview_promotion">A képernyőről készült képernyőképet a Google Gemini API kapja meg leírásra, ami néhány másodpercig tart. Ha az Eszközön futó AI be van kapcsolva, a leírás ehelyett ezen a telefonon készül, és a kép nem kerül elküldésre.\n\nIngyenes API-kulcs esetén a Google megőrizheti a kapott adatokat, felhasználhatja őket termékei fejlesztésére, és emberekkel is átnézetheti őket. A generatív AI kísérleti jellegű, ezért hibázni fog. Érvényesek a következők: <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="shortcut_title_open_app">Alkalmazás megnyitása</string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> megnyitása</string>
+    <string name="shortcut_scroll_to_top">Görgetés a tetejére</string>
+    <string name="shortcut_write_reading_control">Felolvasásvezérlés betűjének írása</string>
     <string name="title_pref_reading_control_letters">Kézzel írt ábécé betűi</string>
     <string name="reading_control_letter_none">Nincs</string>
     <string name="handwriting_prompt">Írj egy ábécé betűt</string>
-    <string name="handwriting_closed">Kézírás zárva</string>
-    <string name="handwriting_no_match">Egyetlen olvasásvezérlő sem <xliff:g id="letter" example="Q">%1$s</xliff:g>-val kezdődik</string>
+    <string name="handwriting_closed">Kézírás bezárva</string>
+    <string name="handwriting_no_match">Nincs <xliff:g id="letter" example="Q">%1$s</xliff:g> betűvel kezdődő felolvasásvezérlés</string>
     <string name="shortcut_write_app_name">Írd le egy alkalmazás nevét a megnyitásához</string>
     <string name="handwriting_app_prompt">Írd le egy alkalmazás nevét</string>
     <string name="handwriting_no_app">Egyetlen alkalmazás sem kezdődik így: <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
@@ -1580,14 +1580,14 @@
     <string name="handwriting_not_recognized">A kézírás nem ismerhető fel</string>
     <string name="handwriting_downloading">A kézírás-felismerés letöltése folyamatban van</string>
     <string name="handwriting_download_title">Letölti a kézírás-felismerést?</string>
-    <string name="handwriting_download_message">A telefon felismeri a kézírást. Ennek a nyelvnek a körülbelül 20 MB-os modellje egyszer letöltődik a Google címről. Egy üzenet jelenik meg, amikor letöltötte.</string>
+    <string name="handwriting_download_message">A telefon felismeri a kézírást. Az ehhez a nyelvhez tartozó, körülbelül 20 MB-os modell egyszer töltődik le a Google-tól. A letöltés befejezésekor üzenet jelenik meg.</string>
     <string name="handwriting_download_button">Letöltés</string>
     <string name="handwriting_downloaded">Kézírás-felismerés letöltve</string>
     <string name="handwriting_download_failed">A kézírás-felismerést nem sikerült letölteni. Ellenőrizze az internetkapcsolatot.</string>
     <string name="handwriting_unsupported_language">A kézírás-felismerés nem érhető el ezen a nyelven</string>
     <string name="title_pref_handwriting_keyboard">Kézírásos billentyűzet</string>
     <string name="summary_pref_handwriting_keyboard">Kapcsolja be a SandFly kézírást az Android billentyűzetbeállításaiban</string>
-    <string name="title_pref_handwriting_wait">Írás után várj</string>
+    <string name="title_pref_handwriting_wait">Várakozás írás után</string>
     <string name="value_handwriting_wait_200">0,2 másodperc</string>
     <string name="value_handwriting_wait_300">0,3 másodperc</string>
     <string name="value_handwriting_wait_400">0,4 másodperc</string>
@@ -1598,44 +1598,44 @@
     <string name="handwriting_keyboard_name">SandFly kézírás</string>
     <string name="handwriting_space">Szóköz</string>
     <string name="handwriting_new_line">Új sor</string>
-    <string name="handwriting_tutorial_intro">Kézírás billentyűzet oktatóanyag. Írjon egy ujjal bárhol a képernyőn. Amit írsz, az be van gépelve, ha megállsz egy pillanatra. Az oktatóprogram befejezéséhez húzza lefelé három ujját.</string>
-    <string name="handwriting_tutorial_write_letter">Írd le az ábécé a betűjét!</string>
+    <string name="handwriting_tutorial_intro">A kézírásos billentyűzet oktatóanyaga. Írjon egy ujjal bárhová a képernyőn. Amit ír, az bevitelre kerül, ha egy pillanatra megáll. Az oktatóanyag befejezéséhez csúsztassa lefelé három ujját.</string>
+    <string name="handwriting_tutorial_write_letter">Írja le az a betűt.</string>
     <string name="handwriting_tutorial_write_word">Most írja be a hi szót (h, majd i).</string>
-    <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> beírása.</string>
+    <string name="handwriting_tutorial_typed">Beírva: <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Szóköz beírásához csúsztassa jobbra két ujját.</string>
     <string name="handwriting_tutorial_delete">Csúsztassa két ujját balra a kurzor előtti karakter törléséhez.</string>
     <string name="handwriting_tutorial_deleted">Törölve.</string>
     <string name="handwriting_tutorial_next_reading">Ha a kézírást más karakterként, például nagybetűként ismeri fel, húzza felfelé két ujját a következő felismerési javaslat kiválasztásához. Próbálja ki most.</string>
     <string name="handwriting_tutorial_read_back">Érintse meg két ujjal a kurzor előtti szöveg elolvasásához.</string>
-    <string name="handwriting_tutorial_new_line">Csúsztassa két ujját lefelé egy új sor beszúrásához, vagy hajtsa végre a szövegmezőműveletet, például a Küldést.</string>
-    <string name="handwriting_tutorial_not_that">Ez egy másik gesztus volt.</string>
-    <string name="handwriting_tutorial_done">Új vonal. A bemutató befejeződött. Csúsztassa lefelé három ujját a billentyűzet elrejtéséhez, három ujjal pedig jobbra vagy balra a billentyűzet váltásához. Az oktatóanyag újbóli megnyitásához koppintson három ujjal.</string>
+    <string name="handwriting_tutorial_new_line">Csúsztassa lefelé két ujját új sor beszúrásához vagy a szövegmező műveletének végrehajtásához, például Küldés.</string>
+    <string name="handwriting_tutorial_not_that">Ez egy másik kézmozdulat volt.</string>
+    <string name="handwriting_tutorial_done">Új sor. Az oktatóanyag befejeződött. Csúsztassa lefelé három ujját a billentyűzet elrejtéséhez, illetve jobbra vagy balra a billentyűzetváltáshoz. Az oktatóanyag újbóli megnyitásához koppintson három ujjal.</string>
     <string name="handwriting_tutorial_finished">A bemutató véget ért. Újbóli megnyitásához koppintson három ujjal.</string>
     <string name="handwriting_no_alternatives">Nincs más javaslat</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> / <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Üres szöveg</string>
     <string name="handwriting_not_available">A kézírás-felismerés nem érhető el ezen az eszközön</string>
-    <string name="shortcut_scroll_to_bottom">Görgessen lefelé</string>
+    <string name="shortcut_scroll_to_bottom">Görgetés az aljára</string>
     <string name="shortcut_refresh">Frissítés</string>
-    <string name="shortcut_system_notifications">Rendszer értesítési felület</string>
-    <string name="shortcut_system_quick_settings">Rendszer gyorsbeállítások</string>
-    <string name="shortcut_lock_screen">Zárja le az eszköz képernyőjét</string>
+    <string name="shortcut_system_notifications">Rendszerértesítési sáv</string>
+    <string name="shortcut_system_quick_settings">Rendszer-gyorsbeállítások</string>
+    <string name="shortcut_lock_screen">Képernyő lezárása</string>
     <string name="shortcut_power_menu">Tápellátás menü</string>
-    <string name="shortcut_increase_media_volume">Növelje a média hangerejét</string>
-    <string name="shortcut_decrease_media_volume">Csökkentse a média hangerejét</string>
+    <string name="shortcut_increase_media_volume">Médiahangerő növelése</string>
+    <string name="shortcut_decrease_media_volume">Médiahangerő csökkentése</string>
     <string name="title_clear_selection">Kiválasztás törlése</string>
     <string name="title_pref_brightness">Fényerő</string>
     <string name="summary_support_change_brightness">Növelje vagy csökkentse a képernyő fényerejét, még akkor is, ha a képernyő el van rejtve</string>
     <string name="title_pref_shortcut_3finger_4tap">Koppintson négyszer 3 ujjal</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Forgassa el az óramutató járásával megegyező irányba 2 ujjal</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Forgassa el 2 ujjal az óramutató járásával ellentétes irányba</string>
-    <string name="title_pref_shortcut_2finger_scrub">Dörzsölje le 2 ujjal</string>
-    <string name="title_pref_shortcut_2finger_pinch">Csípje össze 2 ujjal</string>
-    <string name="title_pref_shortcut_2finger_spread">2 ujjal szétterítjük</string>
-    <string name="title_pref_shortcut_3finger_pinch">Csípje össze 3 ujjal</string>
-    <string name="title_pref_shortcut_3finger_spread">Terítsd szét 3 ujjal</string>
-    <string name="title_pref_shortcut_4finger_pinch">Csípje össze 4 ujjal</string>
-    <string name="title_pref_shortcut_4finger_spread">Terítsd szét 4 ujjal</string>
+    <string name="title_pref_shortcut_2finger_scrub">Dörzsölés 2 ujjal</string>
+    <string name="title_pref_shortcut_2finger_pinch">Összecsippentés 2 ujjal</string>
+    <string name="title_pref_shortcut_2finger_spread">Széthúzás 2 ujjal</string>
+    <string name="title_pref_shortcut_3finger_pinch">Összecsippentés 3 ujjal</string>
+    <string name="title_pref_shortcut_3finger_spread">Széthúzás 3 ujjal</string>
+    <string name="title_pref_shortcut_4finger_pinch">Összecsippentés 4 ujjal</string>
+    <string name="title_pref_shortcut_4finger_spread">Széthúzás 4 ujjal</string>
     <string name="title_pref_shortcut_edge_bottom_up">Csúsztassa felfelé az ujját az alsó szélétől</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Csúsztassa hosszan felfelé az alsó széltől</string>
     <string name="title_pref_shortcut_edge_top_left_down">Csúsztassa lefelé az ujját a bal felső saroktól</string>
@@ -1643,14 +1643,14 @@
     <string name="title_pref_shortcut_edge_top_left_long_down">Csúsztasson hosszan lefelé a bal felső saroktól</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Csúsztassa hosszan lefelé a jobb felső saroktól</string>
     <string name="title_pref_shortcut_edge_left_top_right">Csúsztassa jobbra a bal széltől, a felső felétől</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Csúsztasson hosszan jobbra a bal széltől, a felső felétől</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Csúsztassa hosszan jobbra a bal széltől, a felső felétől</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Csúsztassa jobbra a bal széltől, az alsó felétől</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Csúsztasson hosszan jobbra a bal széltől, az alsó felétől</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Csúsztassa hosszan jobbra a bal széltől, a alsó felétől</string>
     <string name="title_pref_shortcut_edge_right_top_left">Csúsztassa balra a jobb széltől, a felső felétől</string>
     <string name="title_pref_shortcut_edge_right_top_long_left">Csúsztassa hosszan balra a jobb széltől, a felső felétől</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Csúsztassa balra a jobb széltől, az alsó felétől</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Csúsztasson hosszan balra a jobb széltől, az alsó felétől</string>
-    <string name="value_type_confirmation_lift_to_type_except_action_key">Tartsa lenyomva az ujját bármelyik billentyű kiválasztásához, majd emelje fel. Koppintson duplán a Belépés, a Kész vagy a Küldés lehetőséghez.</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Csúsztassa hosszan balra a jobb széltől, a alsó felétől</string>
+    <string name="value_type_confirmation_lift_to_type_except_action_key">Tartsa az ujját bármelyik billentyűn a kiválasztáshoz, majd emelje fel. Az Enter, a Kész vagy a Küldés gombhoz koppintson duplán.</string>
     <string name="value_type_confirmation_tap_to_type">Érintse meg bármelyik billentyűt a beírásához, vagy tartsa lenyomva az ujját bármelyik billentyű kiválasztásához, majd emelje fel</string>
     <string name="title_pref_multi_tap_timeout">Az egyujjas érintések közötti idő</string>
     <string name="value_multi_tap_timeout_100ms">0,1 másodperc</string>
@@ -1673,84 +1673,84 @@
     <string name="value_rotor_step_45">45 fok</string>
     <string name="value_rotor_step_60">60 fok</string>
     <string name="title_pref_low_latency_audio">Alacsony késleltetésű hang</string>
-    <string name="summary_pref_low_latency_audio">Játssza le a SandFly hangjait és beszédét a telefon leggyorsabb hangútján, hogy hamarabb hallja őket. Kapcsolja ki, ha a beszéd vagy a hangok megszakadnak vagy rosszul hangzanak.</string>
+    <string name="summary_pref_low_latency_audio">A SandFly hangjait és beszédét a telefon leggyorsabb hangútvonalán játssza le, így hamarabb hallja őket. Kapcsolja ki, ha a beszéd vagy a hangok szaggatnak vagy rosszul szólnak.</string>
     <string name="value_focus_delay_200ms_default">0,2 másodperc (alapértelmezett)</string>
     <string name="value_focus_delay_300ms">0,3 másodperc</string>
-    <string name="title_pref_lift_to_activate">Emelje fel az aktiváláshoz</string>
-    <string name="summary_support_change_lift_to_activate">Módosíthatja, hogy az ujj felemelésével hol aktiváljon egy elemet</string>
+    <string name="title_pref_lift_to_activate">Aktiválás az ujj felemelésével</string>
+    <string name="summary_support_change_lift_to_activate">Annak módosítása, hogy hol aktiválja az elemet az ujj felemelése</string>
     <string name="value_lift_to_activate_disabled">Letiltva</string>
     <string name="value_lift_to_activate_navigation_bar">Csak a navigációs sávon</string>
     <string name="value_lift_to_activate_entire_screen">A teljes képernyő</string>
     <string name="template_lift_to_activate_changed">Emelje fel az aktiváláshoz: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Tekerje körbe</string>
-    <string name="summary_pref_wrap_around">Ha az utolsó elem mellett csúsztat, az az elsőre, az első után pedig az utolsóra lép. Ha ki van kapcsolva, egy hang szól a végén.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Az elakadt érintéssel kapcsolatos felfedezés javítása</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">A DUMP engedély nélkül az SandFly csak azt mondhatja, hogy az érintéssel történő felfedezés elakadt. A javításhoz futtassa a következőt: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Az érintéssel történő felfedezés rögzítése</string>
+    <string name="title_pref_wrap_around">Körbeérés</string>
+    <string name="summary_pref_wrap_around">Az utolsó elemen túl csúsztatva az elsőre, az elsőn túl az utolsóra ugrik. Kikapcsolva helyette hang szól a végén.</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Elakadt felfedezés érintéssel javítása</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">A DUMP engedély nélkül a SandFly csak azt tudja jelezni, hogy a felfedezés érintéssel elakadhatott. Hogy a SandFly kijavíthassa, futtassa a következőt: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="stuck_touch_exploration_fixing">Érintéses felfedezés javítása</string>
     <string name="stuck_touch_exploration_fixed">Az érintéses felfedezés javítva</string>
     <string name="stuck_touch_exploration_not_fixed">Az érintéssel történő felfedezés továbbra is elakadt. A javításhoz indítsa újra a telefont.</string>
     <string name="stuck_touch_exploration_restart">Előfordulhat, hogy az érintéssel történő felfedezés elakadt. A javításhoz indítsa újra a telefont.</string>
-    <string name="stuck_touch_exploration_grant_dump">Előfordulhat, hogy az érintéssel történő felfedezés elakadt. Indítsa újra a telefont a javításhoz, vagy adja meg SandFly az DUMP engedélyt az ADB-vel, hogy kijavíthassa.</string>
+    <string name="stuck_touch_exploration_grant_dump">Előfordulhat, hogy a felfedezés érintéssel elakadt. A javításhoz indítsa újra a telefont, vagy adja meg a SandFly-nak a DUMP engedélyt ADB-vel, hogy kijavíthassa.</string>
     <string name="title_pref_window_names">Ablaknevek</string>
     <string name="window_names_always">Mindig</string>
-    <string name="window_names_until_first_item">Mindig az első tétellel levágva</string>
+    <string name="window_names_until_first_item">Mindig, az első elem megszakítja</string>
     <string name="window_names_window_opens">Csak akkor, ha kinyílik egy ablak</string>
     <string name="window_names_never">Soha</string>
     <string name="title_pref_selector_links_controls_web_only">Hivatkozások és vezérlők csak a webtartalomban</string>
-    <string name="title_pref_selector_auto_switch">Az olvasásvezérlés automatikus módosítása</string>
-    <string name="title_pref_touch_stops_speech">Állítsa le a beszédet, amikor megérinti a képernyőt</string>
+    <string name="title_pref_selector_auto_switch">Felolvasásvezérlés automatikus váltása</string>
+    <string name="title_pref_touch_stops_speech">Beszéd leállítása a képernyő megérintésekor</string>
     <string name="title_pref_focus_new_windows">A fókusz áthelyezése új ablakokra</string>
     <string name="title_pref_volume_keys_adjust_sliders">A hangerőgombok a csúszkákat állítják be</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">Ha egy csúszka fókuszban van, a hangerő fel és le módosítja az értékét a hangerő helyett</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">Ha egy csúszka van fókuszban, a hangerőnövelő és -csökkentő gomb a hangerő helyett annak értékét módosítja</string>
     <string name="title_pref_volume_keys_move_cursor">A hangerő gombok mozgatják a kurzort</string>
     <string name="summary_pref_volume_keys_move_cursor">Ha egy szövegmező fókuszban van, a hangerő növelése egy karakterrel hátrébb, a hangerő csökkentése pedig tovább mozgatja a kurzort</string>
-    <string name="summary_support_wrap_around">Kapcsolja be vagy ki a burkolást az utolsó elemről az elsőre</string>
-    <string name="wrap_around_on">Tekerje körbe</string>
-    <string name="wrap_around_off">Tekerje körbe</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tablet arccal elfelé tartotta</string>
+    <string name="summary_support_wrap_around">A körbeérés (az utolsó elemről az elsőre ugrás) be- vagy kikapcsolása</string>
+    <string name="wrap_around_on">Körbeérés: be</string>
+    <string name="wrap_around_off">Körbeérés: ki</string>
+    <string name="title_selector_tablet_held_up_faces_away">Felemelt táblagép kijelzője elfelé néz</string>
     <string name="summary_support_tablet_held_up_faces_away">Táblagépen vagy szétnyitott telefonon lévő Braille-billentyűzethez</string>
-    <string name="tablet_held_up_faces_away_on">A táblagép arccal elfelé tartotta</string>
-    <string name="tablet_held_up_faces_away_off">A táblagép arccal lefelé tartotta</string>
+    <string name="tablet_held_up_faces_away_on">Felemelt táblagép kijelzője elfelé néz: be</string>
+    <string name="tablet_held_up_faces_away_off">Felemelt táblagép kijelzője elfelé néz: ki</string>
     <string name="title_keyboard_echo_on_screen">A képernyőn megjelenő billentyűzet visszhangja</string>
     <string name="title_keyboard_echo_physical">Fizikai billentyűzet visszhangja</string>
     <string name="title_keyboard_echo_braille_keyboard">Braille billentyűzet visszhangja</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Kézírásos billentyűzet visszhangja</string>
     <string name="title_keyboard_echo_braille_display">Braille-kijelző visszhangja</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Gépelés közben szakítsa meg a beszédet</string>
+    <string name="title_pref_interrupt_typing">Beszéd megszakítása gépeléskor</string>
     <string name="pref_interrupt_typing_entry_always">Mindig</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Szerkesztési mezőkben</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">A billentyűzet visszhangja</string>
-    <string name="title_pref_interrupt_enter">Szakítsa meg a beszédet az Enter billentyűvel</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Billentyűzetvisszhangnál</string>
+    <string name="title_pref_interrupt_enter">Beszéd megszakítása Enter billentyűre</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Név, állapot, típus</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Típus, állapot, név</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Állam, típus, név</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Állapot, típus, név</string>
     <string name="item_detail_name">Név</string>
-    <string name="item_detail_type">Gépelés</string>
-    <string name="item_detail_state">Állam</string>
-    <string name="action_move_up">Lépj felfelé</string>
-    <string name="action_move_down">Mozgás lefelé</string>
+    <string name="item_detail_type">Típus</string>
+    <string name="item_detail_state">Állapot</string>
+    <string name="action_move_up">Mozgatás felfelé</string>
+    <string name="action_move_down">Mozgatás lefelé</string>
     <string name="template_list_position"><xliff:g id="position" example="2">%1$d</xliff:g>/<xliff:g id="count" example="3">%2$d</xliff:g> pozíció</string>
-    <string name="template_item_details_order_picked_up">Felvette <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Eldobva <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">A SandFly az elem részleteit ebben a sorrendben jelzi. A módosításhoz érintsen meg hosszan egy részletet, majd húzza fel vagy le. Ha az SandFly be van kapcsolva, koppintson duplán és tartsa lenyomva, majd húzza. Használhatja a Felfelé és Lefelé műveleteket is.</string>
-    <string name="title_pref_speak_items_before_scroll">Mondja ki az elemeket, mielőtt megjelennek a nézetben</string>
-    <string name="gemini_error_api_key">Gemini nem fogadta el az API-kulcsot. Ellenőrizze a kulcsot az Automatikus leírások beállításainál.</string>
+    <string name="template_item_details_order_picked_up">Felvéve: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Elengedve: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">A SandFly ebben a sorrendben mondja be az elemek részleteit. A módosításhoz érintsen meg és tartson lenyomva egy részletet, majd húzza fel vagy le. Ha a SandFly be van kapcsolva, koppintson duplán, tartsa lenyomva, majd húzza. A Mozgatás felfelé és a Mozgatás lefelé műveletet is használhatja.</string>
+    <string name="title_pref_speak_items_before_scroll">Elemek kimondása, mielőtt görgetéssel megjelennek</string>
+    <string name="gemini_error_api_key">A Gemini nem fogadta el az API-kulcsot. Ellenőrizze a kulcsot az Automatikus leírások beállításaiban.</string>
     <string name="gemini_error_quota">Elérte a Gemini API-kulcs használati korlátját. Próbálja újra később.</string>
-    <string name="gemini_error_busy">Gemini jelenleg elfoglalt. Próbálja újra egy pillanat múlva.</string>
-    <string name="gemini_error_timeout">Gemini túl sokáig tartott a válaszadáshoz. Próbáld újra.</string>
+    <string name="gemini_error_busy">A Gemini jelenleg túlterhelt. Próbálja újra egy kis idő múlva.</string>
+    <string name="gemini_error_timeout">A Gemini túl sokáig nem válaszolt. Próbálja újra.</string>
     <string name="gemini_error_with_code">Gemini nem tudott válaszolni, hiba <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini nem tudott válaszolni, hiba <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
-    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nem tudok részletesebb képleírást kapni: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
-    <string name="image_qna_ask_by_voice">Kérdezz hangon</string>
-    <string name="image_qna_stop_listening">Ne hallgasson</string>
+    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nem sikerült részletesebb képleírást kapni: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
+    <string name="image_qna_ask_by_voice">Kérdezés hanggal</string>
+    <string name="image_qna_stop_listening">Hallgatás leállítása</string>
     <string name="image_qna_type_question">Írjon be egy kérdést</string>
     <string name="shortcut_dictate">Diktálás</string>
-    <string name="title_pref_ai_dictation">Helyes diktálás AI-val</string>
-    <string name="dictation_not_corrected">Nem javítva. Felismertként gépelve.</string>
-    <string name="dictation_nothing_recognized">Semmit sem ismertek fel</string>
+    <string name="title_pref_ai_dictation">Diktálás javítása AI-jal</string>
+    <string name="dictation_not_corrected">Nincs javítva. A felismert szöveg lett beírva.</string>
+    <string name="dictation_nothing_recognized">Nem sikerült semmit felismerni</string>
     <string name="dictation_unavailable">A beszédfelismerés nem érhető el</string>
-    <string name="dictation_field_gone">Szövegmező zárva. Semmi sem gépelt.</string>
+    <string name="dictation_field_gone">A szövegmező bezárult. Nem történt gépelés.</string>
     <string name="dictation_transcription_failed">A beszéd nem lett átírva. Semmi sem lett begépelve.</string>
     <string name="title_pref_dictation">Diktálás</string>
     <string name="title_pref_dictation_rambler_live">Rambler élő átirat</string>
@@ -1767,10 +1767,10 @@
     <string name="dictation_whisper_use">Használat</string>
     <string name="title_pref_dictation_ai_service">AI szolgáltatás diktáláshoz</string>
     <string name="dictation_ai_same">Ugyanaz, mint az automatikus leírásoknál</string>
-    <string name="title_pref_browse_mode_per_app">Emlékezzen a böngészési módra az egyes alkalmazásokban</string>
+    <string name="title_pref_browse_mode_per_app">Böngészési mód megjegyzése alkalmazásonként</string>
     <string name="title_pref_export_settings">Beállítások exportálása</string>
     <string name="title_pref_import_settings">Beállítások importálása</string>
-    <string name="settings_export_done">Beállítások exportálva. Az API kulcsokat nem tartalmazza</string>
+    <string name="settings_export_done">Beállítások exportálva. Az API-kulcsok nincsenek benne</string>
     <string name="settings_export_failed">A beállításokat nem sikerült exportálni</string>
     <string name="settings_import_done">Beállítások importálva</string>
     <string name="settings_import_failed">Ez a fájl nem SandFly vagy Backtalk beállításfájl, vagy nem olvasható</string>

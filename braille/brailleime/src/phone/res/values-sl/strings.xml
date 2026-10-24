@@ -45,7 +45,7 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Če želite spremeniti jezik med tipkanjem z braillovo tipkovnico, s tremi prsti povlecite navzgor. Nato izberite »Preklopi na naslednji jezik«.</string>
   <string name="title_pref_accumulate_presses">Vključitev vseh pritisnjenih pik</string>
   <string name="summary_pref_accumulate_presses">Vsaka pritisnjena pika je del vnosa, tudi če piko spustite, preden spustite druge pike</string>
-  <string name="title_pref_reverse_dots">Zamenjaj levo in desno piko</string>
+  <string name="title_pref_reverse_dots">Zamenjaj leve in desne pike</string>
   <string name="summary_pref_reverse_dots">Pike 1, 2 in 3 zamenjajo mesta s pikami 4, 5 in 6</string>
   <string name="bd_preference_braille_contracted">Skrčena braillova pisava</string>
   <string name="bd_preference_braille_uncontracted">Neskrčena braillova pisava</string>
@@ -207,9 +207,9 @@
   <string name="custom_gesture_no_match">Potezi se nista ujemali</string>
   <string name="custom_gesture_perform_again">Znova izvedite potezo, ki jo želite uporabiti. %s</string>
     <string name="tabletop_port_left_announcement">Namizni način, vrata za polnjenje na levi</string>
-    <string name="tabletop_port_right_announcement">Način namizne postavitve, priključek za polnjenje na desni</string>
-    <string name="screen_away_port_right_announcement">Način Screen-Away, vrata za polnjenje na desni</string>
-    <string name="screen_away_port_left_announcement">Način z zaslonom navzdol, priključek za polnjenje na levi</string>
+    <string name="tabletop_port_right_announcement">Namizni način, vrata za polnjenje na desni</string>
+    <string name="screen_away_port_right_announcement">Zaslon obrnjen stran od vas, vrata za polnjenje na desni</string>
+    <string name="screen_away_port_left_announcement">Zaslon obrnjen stran od vas, vrata za polnjenje na levi</string>
     <string name="screen_toward_announcement">Zaslon proti tebi</string>
     <string name="screen_toward_port_left_announcement">Zaslon proti vam, vrata za polnjenje na levi</string>
     <string name="screen_toward_port_right_announcement">Zaslon proti vam, vrata za polnjenje na desni</string>
@@ -219,8 +219,8 @@
     <string name="port_left_announcement">Vrata za polnjenje na levi</string>
     <string name="tabletop_port_near_announcement">Namizni način, vrata za polnjenje proti vam</string>
     <string name="tabletop_port_far_announcement">Namizni način, vrata za polnjenje stran od vas</string>
-    <string name="screen_away_port_down_announcement">Način odmaknjenosti zaslona, vrata za polnjenje obrnjena navzdol</string>
-    <string name="screen_away_port_up_announcement">Način odmaknjenosti zaslona, vrata za polnjenje obrnjena navzgor</string>
+    <string name="screen_away_port_down_announcement">Zaslon obrnjen stran od vas, vrata za polnjenje so obrnjena navzdol</string>
+    <string name="screen_away_port_up_announcement">Zaslon obrnjen stran od vas, vrata za polnjenje obrnjena navzgor</string>
     <string name="port_near_announcement">Vrata za polnjenje proti vam</string>
     <string name="port_far_announcement">Vrata za polnjenje stran od vas</string>
     <string name="port_down_announcement">Vrata za polnjenje so obrnjena navzdol</string>
@@ -232,9 +232,9 @@
     <string name="switch_to_language_uncontracted_announcement">Preklopljeno na: %s, Neskrčena braillova pisava</string>
     <string name="title_pref_flip_dots_vertically">Zamenjaj zgornje in spodnje pike</string>
     <string name="summary_pref_flip_dots_vertically">Pika 1 zamenja mesto s piko 3, pika 4 pa s piko 6</string>
-    <string name="title_pref_tablet_held_up_faces_away">Tablica je bila obrnjena stran</string>
-    <string name="summary_pref_tablet_held_up_faces_away">Ko je izklopljen, tablični računalnik ali razgrnjen telefon uporablja postavitev mize, obrnjen proti vam</string>
+    <string name="title_pref_tablet_held_up_faces_away">Dvignjena tablica, obrnjena stran</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Ko je izklopljeno, dvignjen tablični računalnik ali razprt telefon uporablja postavitev namiznega načina z zaslonom proti vam</string>
     <string name="title_pref_typing_sounds">Zvoki tipkanja</string>
-    <string name="summary_pref_typing_sounds">Predvajajte klike tipkovnice, ko vnesete znak, presledek, novo vrstico ali izbrišete</string>
+    <string name="summary_pref_typing_sounds">Predvajanje klikov tipkovnice pri vnosu znaka, presledka ali nove vrstice ali pri brisanju</string>
     <string name="skip_tutorial">Preskoči vadnico</string>
 </resources>

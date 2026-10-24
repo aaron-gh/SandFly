@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">S-a trecut la tastatura Braille necontractată</string>
   <string name="braille_ime_displayed_name">Tastatura Braille</string>
   <string name="multiple_languages_braille_ime_displayed_name">Tastatura Braille, %s</string>
-  <string name="input_view_caption">Tastatura Braille SandFly – pentru ajutor, accesează g.co/help/Braille</string>
+  <string name="input_view_caption">Tastatura Braille SandFly – pentru ajutor, accesează g.co/help/braille</string>
   <string name="perform_action_next">Înainte</string>
   <string name="perform_action_submitting">Se trimite textul</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Se actualizează poziția punctului. Mai întâi, să înregistrăm punctele de pe %s.</string>
@@ -45,7 +45,7 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Pentru a trece la tastatura Braille în timp ce introduci text, glisează în sus cu trei degete. Apoi selectează Comută la următoarea limbă.</string>
   <string name="title_pref_accumulate_presses">Include toate punctele apăsate</string>
   <string name="summary_pref_accumulate_presses">Fiecare punct apăsat face parte din intrare, chiar dacă este eliberat înaintea altora</string>
-  <string name="title_pref_reverse_dots">Schimbați punctele din stânga și din dreapta</string>
+  <string name="title_pref_reverse_dots">Inversează punctele din stânga și din dreapta</string>
   <string name="summary_pref_reverse_dots">Punctele 1, 2 și 3 schimbă locurile cu punctele 4, 5 și 6</string>
   <string name="bd_preference_braille_contracted">Braille contractat</string>
   <string name="bd_preference_braille_uncontracted">Braille necontractat</string>
@@ -208,8 +208,8 @@
   <string name="custom_gesture_perform_again">Fă gestul pe care vrei să-l folosești din nou. %s</string>
     <string name="tabletop_port_left_announcement">Modul de masă, port de încărcare în stânga</string>
     <string name="tabletop_port_right_announcement">Modul de masă, port de încărcare în dreapta</string>
-    <string name="screen_away_port_right_announcement">Mod ecran îndepărtat, port de încărcare în dreapta</string>
-    <string name="screen_away_port_left_announcement">Mod ecran departe, port de încărcare în stânga</string>
+    <string name="screen_away_port_right_announcement">Ecran întors de la tine, port de încărcare în dreapta</string>
+    <string name="screen_away_port_left_announcement">Ecran întors de la tine, port de încărcare în stânga</string>
     <string name="screen_toward_announcement">Ecran spre tine</string>
     <string name="screen_toward_port_left_announcement">Ecranul spre tine, portul de încărcare în stânga</string>
     <string name="screen_toward_port_right_announcement">Ecranul spre tine, portul de încărcare în dreapta</string>
@@ -219,8 +219,8 @@
     <string name="port_left_announcement">Port de încărcare în stânga</string>
     <string name="tabletop_port_near_announcement">Modul de masă, portul de încărcare către tine</string>
     <string name="tabletop_port_far_announcement">Modul de masă, portul de încărcare departe de tine</string>
-    <string name="screen_away_port_down_announcement">Modul ecran departe, portul de încărcare îndreptat în jos</string>
-    <string name="screen_away_port_up_announcement">Mod ecran îndepărtat, portul de încărcare îndreptat în sus</string>
+    <string name="screen_away_port_down_announcement">Ecran întors de la tine, portul de încărcare îndreptat în jos</string>
+    <string name="screen_away_port_up_announcement">Ecran întors de la tine, portul de încărcare îndreptat în sus</string>
     <string name="port_near_announcement">Port de încărcare către tine</string>
     <string name="port_far_announcement">Port de încărcare departe de tine</string>
     <string name="port_down_announcement">Portul de încărcare îndreptat în jos</string>
@@ -230,11 +230,11 @@
     <string name="orientation_unlocked_announcement">Orientare deblocată</string>
     <string name="switch_to_language_contracted_announcement">Ai trecut la %s, Braille contractat</string>
     <string name="switch_to_language_uncontracted_announcement">Ai trecut la %s, Braille necontractat</string>
-    <string name="title_pref_flip_dots_vertically">Schimbați punctele de sus și de jos</string>
+    <string name="title_pref_flip_dots_vertically">Inversează punctele de sus și de jos</string>
     <string name="summary_pref_flip_dots_vertically">Punctul 1 schimbă locurile cu punctul 3 și punctul 4 cu punctul 6</string>
-    <string name="title_pref_tablet_held_up_faces_away">Tableta ținea cu fețele îndepărtate</string>
-    <string name="summary_pref_tablet_held_up_faces_away">Când este oprit, o tabletă sau un telefon desfășurat ținut în sus folosește aspectul mesei, cu fața către tine</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tabletă ridicată cu ecranul spre exterior</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Dezactivat: o tabletă sau un telefon desfăcut ținut ridicat folosește aspectul modului Pe masă, cu ecranul spre dvs.</string>
     <string name="title_pref_typing_sounds">Sunete de tastare</string>
-    <string name="summary_pref_typing_sounds">Redați clicuri de la tastatură atunci când introduceți un caracter, un spațiu, o linie nouă sau ștergeți</string>
+    <string name="summary_pref_typing_sounds">Redă clicuri de tastatură la introducerea unui caracter, a unui spațiu sau a unui rând nou ori la ștergere</string>
     <string name="skip_tutorial">Sari peste tutorial</string>
 </resources>

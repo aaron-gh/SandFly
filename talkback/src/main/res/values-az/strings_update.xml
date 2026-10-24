@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_check_for_updates">Güncəlləmələri yoxlayın</string>
-    <string name="summary_pref_check_for_updates_version">Versiya <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, versiya nömrəsi <xliff:g id="build" example="96">%2$d</xliff:g></string>
-    <string name="title_pref_auto_update_check">Güncəlləmələri avtomatik yoxlayın</string>
+    <string name="title_pref_check_for_updates">Yenilənmələri yoxla</string>
+    <string name="summary_pref_check_for_updates_version">Versiya <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Güncəlləmələri avtomatik yoxla</string>
     <string name="summary_pref_auto_update_check">Gündə bir dəfə yoxlayın və yeni versiya olduqda bildiriş göstərin</string>
-    <string name="title_pref_dev_builds">Development versiyaları</string>
+    <string name="title_pref_dev_builds">İnkişaf versiyaları</string>
     <string name="update_notification_title">SandFly güncəlləməsi əlçatandır</string>
-    <string name="update_notification_text">Versiya nömrəsi <xliff:g id="build" example="97">%1$d</xliff:g>. Quraşdırmaq üçün toxunun.</string>
-    <string name="update_dialog_title">SandFly versiya nömrəsi <xliff:g id="build" example="97">%1$d</xliff:g> əlçatandır</string>
-    <string name="update_dialog_install">Quraşdırın</string>
+    <string name="update_notification_text">Build <xliff:g id="build" example="97">%1$d</xliff:g>. Quraşdırmaq üçün toxunun.</string>
+    <string name="update_dialog_title">SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> əlçatandır</string>
+    <string name="update_dialog_install">Quraşdır</string>
     <string name="update_checking">Güncəlləmələr yoxlanılır</string>
     <string name="update_up_to_date">SandFly güncəldir</string>
     <string name="update_check_failed">Güncəlləmələri yoxlamaq mümkün olmadı</string>
@@ -17,6 +17,6 @@
     <string name="update_install_canceled">Güncəlləmə ləğv edildi</string>
     <string name="update_allow_install">SandFly-a tətbiq quraşdırmağa icazə verin, sonra güncəlləməni yenidən cəhd edin</string>
     <string name="update_already_downloading">Güncəlləmə artıq endirilir</string>
-    <string name="update_ready_title">SandFly yeniləmə endirildi</string>
+    <string name="update_ready_title">SandFly yeniləməsi endirildi</string>
     <string name="update_ready_text">Quraşdırmaq üçün toxunun.</string>
 </resources>

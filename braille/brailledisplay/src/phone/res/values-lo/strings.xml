@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">ຄຳສັ່ງລະບົບ</string>
   <string name="bd_commands_bindings_category_system_actions_summary">ກັບຄືນ, ໜ້າຫຼັກ, ການແຈ້ງເຕືອນ ແລະ ອື່ນໆ</string>
   <string name="bd_commands_bindings_category_talkback_features_title">ຄຸນສົມບັດ SandFly</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly ເມນູ ແລະການຕັ້ງຄ່າ</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">ເມນູ ແລະ ການຕັ້ງຄ່າ SandFly</string>
   <string name="bd_commands_bindings_category_braille_settings_title">ການຕັ້ງຄ່າອັກສອນນູນ</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ພາສາ ແລະ ການຕັ້ງຄ່າອັກສອນນູນ</string>
   <string name="bd_commands_bindings_category_text_editing_title">ການແກ້ໄຂຂໍ້ຄວາມ</string>
@@ -305,7 +305,7 @@
   <string name="bd_caption_tutorial_dialog_message">ເພື່ອສະແດງ ຫຼື ເຊື່ອງຄຳບັນຍາຍສຳລັບວິດີໂອນີ້, ໃຫ້ກົດຍະຫວ່າງ ແລະ ຈຸດ 1, 4, 7, 8.\n\nເພື່ອສະແດງຄຳບັນຍາຍອັດຕະໂນມັດສຳລັບສື່ທີ່ຮອງຮັບ, ໃຫ້ເປີດການສະແດງຄຳບັນຍາຍຢູ່ຈໍສະແດງຜົນຕົວອັກສອນນູນໃນການຕັ້ງຄ່າ.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">ສະແດງຂໍ້ຄວາມນີ້ສະເໝີເມື່ອຄຳບັນຍາຍມີໃຫ້</string>
   <string name="bd_usb_connect_dialog_title">ເຊື່ອມຕໍ່ຈໍສະແດງຜົນຕົວອັກສອນນູນໄປໃສ່ USB ແລ້ວ</string>
-  <string name="bd_usb_connect_dialog_message">ແບດເຕີຣີ້ຂອງ %s ກໍາລັງສາກໃຫ້ຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານ.\n\nຖ້າທ່ານຕ້ອງການສະຫຼັບໄປໃຊ້ Bluetooth, ຕັດການເຊື່ອມຕໍ່ USB ຫຼື USB hub ຂອງທ່ານ ແລ້ວໄປທີ່ການຕັ້ງຄ່າ SandFly &gt; ຈໍສະແດງຜົນ Braille.</string>
+  <string name="bd_usb_connect_dialog_message">ແບັດເຕີຣີຂອງ %s ກຳລັງສາກໄຟໃຫ້ຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານ.\n\nຖ້າທ່ານຕ້ອງການສະຫຼັບໄປໃຊ້ Bluetooth, ໃຫ້ຕັດການເຊື່ອມຕໍ່ USB ຫຼື USB hub ຂອງທ່ານ ແລ້ວໄປທີ່ການຕັ້ງຄ່າ SandFly &gt; ຈໍສະແດງຜົນຕົວອັກສອນນູນ.</string>
   <string name="bd_device">ໂທລະສັບ</string>
   <string name="bd_battery_low_dialog_title">%s ແບັດເຕີຣີຕ່ຳ</string>
   <string name="bd_battery_low_dialog_message">ແບັດເຕີຣີ %s ຂອງທ່ານກຳລັງສາກໄຟຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານຢູ່.\n\nເພື່ອປະຢັດແບັດເຕີຣີ:\n\n
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">ນີ້ຈະຈັດເກັບຂໍ້ຄວາມບາງຢ່າງ, ເຊັ່ນ: ການແຈ້ງເຕືອນ ແລະ ໂມງປຸກ, ໃນ SandFly. ທ່ານສາມາດປ່ຽນການຕັ້ງຄ່ານີ້ຕອນໃດກໍໄດ້.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ເປີດໃຊ້</string>
   <string name="popup_message_history_consent_dialog_negative_btn">ບໍ່, ຂອບໃຈ</string>
-    <string name="external_display_channel">ການສະແດງຕົວອັກສອນນູນຈາກແອັບອື່ນ</string>
+    <string name="external_display_channel">ຈໍສະແດງຜົນອັກສອນນູນຈາກແອັບອື່ນ</string>
     <string name="external_display_ask_title">ອະນຸຍາດໃຫ້ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ເປັນຈໍສະແດງຜົນອັກສອນນູນສຳລັບ SandFly ບໍ?</string>
     <string name="external_display_ask_text">SandFly ຈະບໍ່ໃຊ້ມັນຈົນກວ່າເຈົ້າຈະອະນຸຍາດ.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ຈະສາມາດອ່ານທຸກຢ່າງ SandFly ສະແດງເປັນຕົວອັກສອນນູນ, ເຊິ່ງສາມາດເປັນອັນໃດກໍໄດ້ຢູ່ໃນໜ້າຈໍ, ລວມທັງຂໍ້ຄວາມ ແລະສິ່ງທີ່ທ່ານພິມ. ມັນຍັງຈະສາມາດຄວບຄຸມອຸປະກອນຂອງທ່ານໄດ້ຕາມທີ່ທ່ານສາມາດເຮັດໄດ້ດ້ວຍຈໍສະແດງຜົນຕົວອັກສອນນູນ: ພິມ, ເປີດແອັບ ແລະ ແລ່ນຄຳສັ່ງ SandFly ໃດໜຶ່ງ. ອະນຸຍາດສະເພາະແອັບທີ່ທ່ານເຊື່ອຖືເທົ່ານັ້ນ.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ຈະສາມາດອ່ານທຸກຢ່າງທີ່ SandFly ສະແດງເປັນອັກສອນນູນ, ເຊິ່ງອາດເປັນອັນໃດກໍໄດ້ໃນໜ້າຈໍ ລວມທັງຂໍ້ຄວາມ ແລະ ສິ່ງທີ່ທ່ານພິມ. ມັນຍັງຈະສາມາດຄວບຄຸມອຸປະກອນຂອງທ່ານໄດ້ຄືກັບທີ່ທ່ານເຮັດດ້ວຍຈໍສະແດງຜົນຕົວອັກສອນນູນ: ພິມ, ເປີດແອັບ ແລະ ເອີ້ນໃຊ້ຄຳສັ່ງ SandFly ໃດກໍໄດ້. ອະນຸຍາດສະເພາະແອັບທີ່ທ່ານເຊື່ອຖືເທົ່ານັ້ນ.</string>
     <string name="external_display_allow">ອະນຸຍາດ</string>
-    <string name="external_display_deny">ບໍ່ອະນຸຍາດໃຫ້</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ແມ່ນການສະແດງຕົວອັກສອນນູນຂອງທ່ານ</string>
+    <string name="external_display_deny">ບໍ່ອະນຸຍາດ</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ເປັນຈໍສະແດງຜົນອັກສອນນູນຂອງທ່ານ</string>
     <string name="external_display_in_use_text">ໃນຂະນະທີ່ SandFly ໃຊ້ມັນ, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ສາມາດອ່ານໜ້າຈໍ ແລະ ຄວບຄຸມອຸປະກອນໄດ້.</string>
-    <string name="external_displays_title">ສະແດງຈາກແອັບອື່ນ</string>
-    <string name="external_displays_summary">ແອັບທີ່ທ່ານອະນຸຍາດສາມາດເປັນການສະແດງຕົວອັກສອນນູນສຳລັບ SandFly. ແອັບທີ່ເປັນຈໍສະແດງຜົນອັກສອນນູນສາມາດອ່ານໜ້າຈໍ ແລະຄວບຄຸມອຸປະກອນໄດ້.</string>
-    <string name="external_displays_none">ບໍ່ມີແອັບຯໃດສາມາດເປັນການສະແດງຕົວອັກສອນນູນໄດ້.</string>
+    <string name="external_displays_title">ຈໍສະແດງຜົນຈາກແອັບອື່ນ</string>
+    <string name="external_displays_summary">ແອັບທີ່ທ່ານອະນຸຍາດສາມາດເປັນຈໍສະແດງຜົນຕົວອັກສອນນູນສຳລັບ SandFly. ແອັບທີ່ເປັນຈໍສະແດງຜົນຕົວອັກສອນນູນສາມາດອ່ານໜ້າຈໍ ແລະ ຄວບຄຸມອຸປະກອນໄດ້.</string>
+    <string name="external_displays_none">ບໍ່ມີແອັບໃດເປັນຈໍສະແດງຜົນອັກສອນນູນໄດ້.</string>
 </resources>

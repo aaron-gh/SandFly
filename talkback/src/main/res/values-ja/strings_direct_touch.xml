@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="direct_touch_on">ダイレクトタッチで</string>
-    <string name="direct_touch_off">ダイレクトタッチオフ</string>
+    <string name="direct_touch_on">ダイレクトタッチ: オン</string>
+    <string name="direct_touch_off">ダイレクトタッチ: オフ</string>
     <string name="direct_touch_tile_label">ダイレクトタッチ</string>
     <string name="title_pref_direct_touch">ダイレクトタッチ</string>
     <string name="pref_direct_touch_master">ダイレクトタッチ</string>
-    <string name="pref_direct_touch_master_summary">以下で選択したアプリにタッチを直接渡し、ダイアログ、テキスト フィールド、キーボード、システム画面の SandFly にタッチを返します。</string>
-    <string name="pref_direct_touch_speech">ダイレクトタッチが変化したときに発声します</string>
-    <string name="pref_direct_touch_haptics">ダイレクトタッチが変化すると振動します</string>
-    <string name="pref_direct_touch_backup">設定をバックアップする</string>
-    <string name="pref_direct_touch_restore">設定を復元する</string>
+    <string name="pref_direct_touch_master_summary">下で選んだアプリにはタッチを直接渡し、ダイアログ、テキスト フィールド、キーボード、システム画面では SandFly がタッチを処理します。</string>
+    <string name="pref_direct_touch_speech">ダイレクト タッチの変更時に読み上げ</string>
+    <string name="pref_direct_touch_haptics">ダイレクト タッチの変更時に振動</string>
+    <string name="pref_direct_touch_backup">設定をバックアップ</string>
+    <string name="pref_direct_touch_restore">設定を復元</string>
     <string name="direct_touch_apps_category">アプリ</string>
     <string name="direct_touch_action_typing_on">直接入力をオンにする</string>
     <string name="direct_touch_action_typing_off">直接入力をオフにする</string>
-    <string name="direct_touch_typing_summary_on">直接入力オン</string>
+    <string name="direct_touch_typing_summary_on">直接入力: オン</string>
     <string name="direct_touch_backup_done">設定が保存されました</string>
     <string name="direct_touch_backup_failed">設定を保存できませんでした</string>
     <string name="direct_touch_restore_done">設定が復元されました</string>

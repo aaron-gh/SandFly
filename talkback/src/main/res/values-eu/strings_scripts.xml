@@ -39,16 +39,16 @@
     <string name="script_import_failed">Ezin izan da inportatu. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Eman baimena script fidagarriei soilik.</string>
     <string name="script_permission_screen">Irakurri pantaila</string>
-    <string name="script_permission_actions">Sakatu, egin gora eta behera, idatzi eta mugitu fokua</string>
+    <string name="script_permission_actions">Sakatzea, korritzea, idaztea eta fokua mugitzea</string>
     <string name="script_permission_speech">Atzitu eta aldatu SandFly-en hizketa</string>
     <string name="script_permission_passwords">Irakurri pasahitz-eremuak</string>
-    <string name="script_permission_input">Gehitu keinuak, teklak, menuko elementuak eta irakurketa kontrolatzeko aukerak</string>
-    <string name="script_permission_network">Erabili Internet</string>
+    <string name="script_permission_input">Keinuak, teklak, menuko elementuak eta irakurketa-kontrolak gehitzea</string>
+    <string name="script_permission_network">Internet erabili</string>
     <string name="script_permission_clipboard">Irakurri eta aldatu arbela</string>
     <string name="script_permission_system">Egin atzera edo joan hasierako pantailara, ireki jakinarazpenak eta aplikazioak</string>
     <string name="script_permission_notifications">Irakurri eta aldatu ozen irakurritako jakinarazpenak</string>
     <string name="script_permission_events">Ikusi aplikazio guztietako jarduera, idazketa barne</string>
-    <string name="script_permission_dialogs">Erakutsi leihoak edozein aplikazioren gainean</string>
+    <string name="script_permission_dialogs">Edozein aplikazioren gainean leihoak erakustea</string>
     <string name="script_permission_java">Exekutatu Java kodea SandFly-en sarbide guztiarekin, aplikazio guztietan</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Aktibatu</string>
@@ -59,7 +59,7 @@
     <string name="script_button_off">Aktibatu scripta lehenik</string>
     <string name="script_permissions_summary">Bat desaktibatuz gero, hura behar duten zatiak gelditu egiten dira.</string>
     <string name="script_install_permissions_note">Geroago desaktiba ditzakezu.</string>
-    <string name="script_manage_category">Kudeatu</string>
+    <string name="script_manage_category">Kudeaketa</string>
     <string name="script_move_up">Exekutatu lehenago</string>
     <string name="script_move_down">Exekutatu geroago</string>
     <string name="script_order_summary">Hizketa bera aldatzen duten scripten ordena. Aplikazioen scriptak exekutatzen dira lehenik.</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> script eguneratu da: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> script eguneratu dira: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Eguneraketak eguneraketak atalean agertzen dira</string>
+    <string name="scripts_updates_to_approve">Eguneraketak «Eguneraketak» atalean agertzen dira</string>
     <string name="scripts_update_check_failed">Ezin izan dira iturri batzuk egiaztatu</string>
-    <string name="scripts_up_to_date">Gidoi guztiak eguneratuta daude</string>
+    <string name="scripts_up_to_date">Script guztiak eguneratuta daude</string>
 </resources>

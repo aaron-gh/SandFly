@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Penyuntingan berbutir</string>
-    <string name="granular_editing_split_by">Dipisahkan oleh: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Berpisah dengan</string>
+    <string name="granular_editing_title">Penyuntingan mengikut bahagian</string>
+    <string name="granular_editing_split_by">Pisahkan mengikut: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Pisahkan mengikut</string>
     <string name="granular_editing_characters">Aksara</string>
     <string name="granular_editing_words">Perkataan</string>
     <string name="granular_editing_sentences">Ayat</string>
@@ -11,7 +11,7 @@
     <string name="granular_editing_space">Ruang</string>
     <string name="granular_editing_new_line">Baris baharu</string>
     <string name="granular_editing_tab">Watak tab</string>
-    <string name="granular_editing_empty">Tiada teks. Gunakan Tambah teks pada akhir, dalam Lagi.</string>
+    <string name="granular_editing_empty">Tiada teks. Gunakan “Tambahkan teks pada akhir” dalam “Lagi”.</string>
     <string name="granular_editing_edit">Sunting</string>
     <string name="granular_editing_insert_before">Masukkan sebelum</string>
     <string name="granular_editing_insert_after">Masukkan selepas</string>
@@ -22,16 +22,16 @@
     <string name="granular_editing_save">Simpan</string>
     <string name="granular_editing_more">Lagi</string>
     <string name="granular_editing_undo">Buat asal</string>
-    <string name="granular_editing_redo">Buat semula pengeditan yang terakhir dibuat asal</string>
+    <string name="granular_editing_redo">Buat semula</string>
     <string name="granular_editing_find">Cari</string>
     <string name="granular_editing_find_next">Cari seterusnya</string>
     <string name="granular_editing_replace">Gantikan</string>
     <string name="granular_editing_replace_with">Gantikan dengan</string>
     <string name="granular_editing_replace_all">Gantikan semua</string>
     <string name="granular_editing_add_at_end">Tambahkan teks pada akhir</string>
-    <string name="granular_editing_clear_selection">Nyahpilih semua teks</string>
+    <string name="granular_editing_clear_selection">Kosongkan pilihan</string>
     <string name="granular_editing_cut_selected">Potong teks yang dipilih</string>
-    <string name="granular_editing_delete_selected">Padam dipilih</string>
+    <string name="granular_editing_delete_selected">Padam yang dipilih</string>
     <string name="granular_editing_copied">Disalin</string>
     <string name="granular_editing_deleted">Dipadamkan</string>
     <string name="granular_editing_not_found">Tidak dijumpai</string>

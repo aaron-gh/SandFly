@@ -4,13 +4,13 @@
     <string name="title_pref_problem_report_type">Type feedback</string>
     <string name="title_pref_problem_report_area">Område</string>
     <string name="title_pref_problem_report_title">Titel</string>
-    <string name="title_pref_problem_report_app">App hvor det sker</string>
+    <string name="title_pref_problem_report_app">App, hvor det sker</string>
     <string name="title_pref_problem_report_description">Beskrivelse</string>
     <string name="dialog_message_problem_report_description">Hvad sker der, og hvad du forventede.</string>
-    <string name="title_pref_problem_report_steps">Trin til at reproducere</string>
+    <string name="title_pref_problem_report_steps">Trin til at genskabe problemet</string>
     <string name="title_pref_problem_report_email">E-mail for svar</string>
     <string name="title_pref_problem_report_device">Inkluder enhedsoplysninger</string>
-    <string name="title_pref_problem_report_log">Inkluder SandFly log</string>
+    <string name="title_pref_problem_report_log">Inkluder SandFly-log</string>
     <string name="summary_pref_problem_report_log">Kan indeholde tekst fra skærmen</string>
     <string name="title_pref_problem_report_send">Send</string>
     <string name="summary_pref_problem_report_sending">Sender</string>
@@ -22,19 +22,19 @@
     <string name="problem_report_not_sent">Feedback ikke sendt. Prøv igen senere.</string>
     <string-array name="problem_report_type_entries">
         <item>Forkert adfærd</item>
-        <item>Crash</item>
-        <item>Langsomt eller ikke reagerer</item>
+        <item>Nedbrud</item>
+        <item>Langsom eller reagerer ikke</item>
         <item>Forslag</item>
     </string-array>
     <string-array name="problem_report_area_entries">
         <item>Tale</item>
         <item>Bevægelser</item>
-        <item>Berøringsudforskning</item>
-        <item>Læsekontroller og menuer</item>
+        <item>Tryk for at høre</item>
+        <item>Indstillinger for oplæsning og menuer</item>
         <item>Indtastning og tastaturer</item>
         <item>Brailletastatur</item>
         <item>Brailleskærm</item>
-        <item>Lyde og vibrationer</item>
+        <item>Lyd og vibration</item>
         <item>Notifikationer</item>
         <item>Webindhold</item>
         <item>Scripts</item>
@@ -65,7 +65,7 @@
     <string name="title_report_your_report">Din feedback</string>
     <string name="title_report_messages">Beskeder</string>
     <string name="report_message_from_developer">Udvikler, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">Dig, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">Du, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">Svar</string>
     <string name="title_report_reply_text">Dit svar</string>
     <string name="title_report_send_reply">Send svar</string>
@@ -78,7 +78,7 @@
     <string name="dialog_title_report_delete_draft">Vil du slette denne kladde?</string>
     <string name="button_report_delete">Slet</string>
     <string name="report_missing">Denne feedback er ikke længere i indbakken.</string>
-    <string name="notification_channel_problem_reports">Feedback svarer</string>
-    <string name="report_notification_reply">Svar til <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="notification_channel_problem_reports">Svar på feedback</string>
+    <string name="report_notification_reply">Svar på <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pause_backtalk">SandFly szüneteltetése</string>
-    <string name="summary_pause_backtalk">A beszéd, a kézmozdulatok és a Felfedezés érintéssel kikapcsolása a SandFly folytatásáig</string>
+    <string name="summary_pause_backtalk">Kikapcsolja a beszédet, a kézmozdulatokat és a(z) „Felfedezés érintéssel” funkciót, amíg nem folytatja a SandFly működését</string>
     <string name="keycombo_menu_global_pause_backtalk">SandFly szüneteltetése vagy folytatása</string>
     <string name="backtalk_paused">SandFly szüneteltetve</string>
     <string name="backtalk_resumed">SandFly folytatva</string>
@@ -11,9 +11,9 @@
     <string name="dialog_title_pause_backtalk">Szünetelteti a SandFly-t?</string>
     <string name="dialog_button_pause_backtalk">Szüneteltetés</string>
     <string name="dialog_message_pause_backtalk">Amíg a SandFly szüneteltetve van, nem ad ki beszédet, nem reagál a kézmozdulatokra, és a képernyő úgy működik, mintha nem lenne bekapcsolva képernyőolvasó.</string>
-    <string name="message_resume_keyguard">A folytatáshoz koppintson „A SandFly szüneteltetve van” értesítésre, nyomja meg gyorsan háromszor a hangerő csökkentése gombot, vagy zárolja és ébressze fel a telefont, hogy megjelenjen a lezárási képernyő.</string>
-    <string name="message_resume_screen_on">A folytatáshoz koppintson „A SandFly szüneteltetve van” értesítésre, nyomja meg gyorsan háromszor a hangerő csökkentése gombot, vagy kapcsolja ki, majd újra be a képernyőt.</string>
-    <string name="message_resume_manual">A folytatáshoz koppintson „A SandFly szüneteltetve van” értesítésre, vagy nyomja meg gyorsan háromszor a hangerő csökkentése gombot.</string>
+    <string name="message_resume_keyguard">A folytatáshoz koppintson a(z) „A SandFly szüneteltetve van” értesítésre, nyomja meg gyorsan háromszor a hangerő-csökkentő gombot vagy zárolja, majd ébressze fel a telefont, hogy megjelenjen a lezárási képernyő.</string>
+    <string name="message_resume_screen_on">A folytatáshoz koppintson a(z) „A SandFly szüneteltetve van” értesítésre, nyomja meg gyorsan háromszor a hangerő-csökkentő gombot vagy kapcsolja ki, majd újra be a képernyőt.</string>
+    <string name="message_resume_manual">A folytatáshoz koppintson a(z) „A SandFly szüneteltetve van” értesítésre vagy nyomja meg gyorsan háromszor a hangerő-csökkentő gombot.</string>
     <string name="message_resume_key_combo">A(z) <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> billentyűkombinációt is megnyomhatja.</string>
     <string name="title_pref_resume_backtalk">SandFly folytatása</string>
     <string name="value_resume_keyguard">Amikor megjelenik a lezárási képernyő</string>

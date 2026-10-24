@@ -1,206 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="notification_shake_3">強い</string>
+    <string name="notification_shake_3">強</string>
     <string name="notification_shake_2">中</string>
-    <string name="notification_shake_1">優しい</string>
-    <string name="notification_media_skip">声に出して読まないでください</string>
-    <string name="notification_media_pause">読書中にメディアを一時停止する</string>
-    <string name="notification_media_read">声に出して読む</string>
-    <string name="notification_headphones_only_without">ヘッドフォンなしの場合のみ</string>
-    <string name="notification_headphones_only_with">ヘッドフォンのみで</string>
-    <string name="notification_headphones_always">ヘッドフォンの有無にかかわらず読み上げてください</string>
-    <string name="notification_queue_skip">新しい通知を読み上げないでください</string>
-    <string name="notification_queue_interrupt">読み上げ中の通知を中断します</string>
-    <string name="notification_queue_queue">現在の通知の後に読み上げます</string>
+    <string name="notification_shake_1">弱</string>
+    <string name="notification_media_skip">読み上げない</string>
+    <string name="notification_media_pause">読み上げ中はメディアを一時停止</string>
+    <string name="notification_media_read">読み上げる</string>
+    <string name="notification_headphones_only_without">ヘッドフォン未使用時のみ</string>
+    <string name="notification_headphones_only_with">ヘッドフォン使用時のみ</string>
+    <string name="notification_headphones_always">ヘッドフォンの有無にかかわらず読み上げる</string>
+    <string name="notification_queue_skip">新しい通知を読み上げない</string>
+    <string name="notification_queue_interrupt">中断する</string>
+    <string name="notification_queue_queue">後で読み上げる</string>
     <string name="notification_url_omit">除外する</string>
-    <string name="notification_url_replace">以下のテキストを言ってください</string>
-    <string name="notification_url_domain">サイトだけ読む</string>
-    <string name="notification_url_full">リンク全体を読む</string>
+    <string name="notification_url_replace">下のテキストを読み上げる</string>
+    <string name="notification_url_domain">サイト名のみ読み上げる</string>
+    <string name="notification_url_full">リンク全体を読み上げる</string>
     <string name="notification_category_title">通知</string>
     <string name="notification_reading_title">通知を読み上げる</string>
     <string name="notification_apps_title">アプリ</string>
-    <string name="notification_words_title">言葉と置き換え</string>
+    <string name="notification_words_title">単語と置換</string>
     <string name="notification_kinds_title">通知の種類</string>
-    <string name="notification_when_title">いつ読むべきか</string>
+    <string name="notification_when_title">読み上げるタイミング</string>
     <string name="notification_rules_title">ルール</string>
     <string name="notification_repeats_title">繰り返し</string>
-    <string name="notification_stop_title">読むのをやめる</string>
-    <string name="notification_schedules_title">概要と時間</string>
+    <string name="notification_stop_title">読み上げの停止</string>
+    <string name="notification_schedules_title">まとめと時刻</string>
     <string name="notification_history_title">通知履歴</string>
-    <string name="notification_test_title">テスト通知を送信する</string>
+    <string name="notification_test_title">テスト通知を送信</string>
     <string name="notification_automation_title">自動化</string>
-    <string name="notification_automation_allowed_title">自動化アプリを許可する</string>
+    <string name="notification_automation_allowed_title">自動化アプリを許可</string>
     <string name="notification_category_said">読み上げ内容</string>
     <string name="notification_format_title">音声フォーマット</string>
     <string name="notification_format_message">プレースホルダー: {app}、{title}、{text}、{content} (全文)、{bigtext}、{subtext}、{ticker}、{category}、{time}。</string>
-    <string name="notification_private_format_title">プライベート通知には次のように書かれています</string>
-    <string name="notification_private_format_message">非公開通知の内容の代わりに述べられます。プレースホルダー: {app}、{category}、{time}。</string>
-    <string name="notification_category_voice">声</string>
-    <string name="notification_voice_title">声</string>
-    <string name="notification_voice_sandfly">SandFlyの声</string>
+    <string name="notification_private_format_title">プライベート通知の読み上げ内容</string>
+    <string name="notification_private_format_message">非公開の通知の内容の代わりに読み上げます。プレースホルダー: {app}、{category}、{time}。</string>
+    <string name="notification_category_voice">音声</string>
+    <string name="notification_voice_title">音声</string>
+    <string name="notification_voice_sandfly">SandFlyの音声</string>
     <string name="notification_detect_language_title">言語の検出</string>
-    <string name="notification_detect_language_summary">各通知は、その通知が書かれている言語で読み上げます。テキスト読み上げ設定で言語を自動的に切り替える必要があります。</string>
+    <string name="notification_detect_language_summary">各通知を、書かれている言語で読み上げます。[テキスト読み上げ] の [言語を自動的に切り替える] が必要です。</string>
     <string name="notification_sound_before_title">通知の前に音を鳴らす</string>
     <string name="notification_category_text">テキスト</string>
     <string name="notification_remove_emoji_title">絵文字を省く</string>
     <string name="notification_lowercase_title">大文字を単語として読む</string>
     <string name="notification_lowercase_summary">大文字の単語を1文字ずつ読み上げる音声エンジンもあります</string>
-    <string name="notification_separate_digits_title">長い数字を一桁ずつ読み取る</string>
+    <string name="notification_separate_digits_title">長い数字を1桁ずつ読み上げる</string>
     <string name="notification_separate_digits_summary">コードや電話番号など</string>
     <string name="notification_min_digits_title">長い数値の最小桁数</string>
     <string name="notification_urls_title">リンク</string>
-    <string name="notification_url_text_title">リンクの代わりに言いました</string>
-    <string name="notification_skip_empty_title">テキストのない通知をスキップする</string>
+    <string name="notification_url_text_title">リンクの代わりに読み上げるテキスト</string>
+    <string name="notification_skip_empty_title">テキストのない通知をスキップ</string>
     <string name="notification_category_length">長さ</string>
     <string name="notification_max_words_title">最大単語数</string>
     <string name="notification_max_sentences_title">最大文数</string>
     <string name="notification_max_characters_title">テキストの最大文字数</string>
-    <string name="notification_max_seconds_title">次の場合は読むのをやめてください</string>
+    <string name="notification_max_seconds_title">読み上げを停止するまでの時間</string>
     <string name="notification_category_timing">タイミング</string>
-    <string name="notification_delay_title">読む前に待ってください</string>
-    <string name="notification_queue_title">別の通知を読んだとき</string>
-    <string name="notification_repeat_minutes_title">画面がオンになるまでもう一度読みます</string>
-    <string name="notification_skip_media_title">メディアプレーヤーをスキップする</string>
-    <string name="notification_skip_ongoing_title">進行中の通知をスキップする</string>
+    <string name="notification_delay_title">読み上げ前の待機時間</string>
+    <string name="notification_queue_title">別の通知を読み上げ中のとき</string>
+    <string name="notification_repeat_minutes_title">画面がオンになるまで繰り返し読み上げる</string>
+    <string name="notification_skip_media_title">メディアプレーヤーをスキップ</string>
+    <string name="notification_skip_ongoing_title">常駐通知をスキップ</string>
     <string name="notification_skip_ongoing_summary">ナビゲーションやタイマーなど</string>
-    <string name="notification_skip_foreground_title">実行中のアプリの通知をスキップする</string>
+    <string name="notification_skip_foreground_title">実行中のアプリの通知をスキップ</string>
     <string name="notification_skip_foreground_summary">VPN やオーディオレコーダーなど</string>
-    <string name="notification_skip_progress_title">進捗通知をスキップする</string>
-    <string name="notification_skip_group_summaries_title">グループの概要をスキップする</string>
+    <string name="notification_skip_progress_title">進行状況の通知をスキップ</string>
+    <string name="notification_skip_group_summaries_title">グループの概要をスキップ</string>
     <string name="notification_skip_group_summaries_summary">「新着メッセージ 3 件」など</string>
-    <string name="notification_skip_low_priority_title">優先度の低い通知をスキップする</string>
-    <string name="notification_skip_system_title">システム通知をスキップする</string>
+    <string name="notification_skip_low_priority_title">優先度の低い通知をスキップ</string>
+    <string name="notification_skip_system_title">システム通知をスキップ</string>
     <string name="notification_screen_on_title">画面がオンになっている間</string>
     <string name="notification_screen_off_title">画面がオフになっている間</string>
-    <string name="notification_locked_title">携帯電話がロックされている間</string>
+    <string name="notification_locked_title">スマートフォンのロック中</string>
     <string name="notification_headphones_title">ヘッドフォン</string>
     <string name="notification_media_title">メディアの再生中</string>
-    <string name="notification_dnd_title">邪魔しないでください</string>
-    <string name="notification_dnd_none">通知を読み上げないでください</string>
-    <string name="notification_dnd_allowed">おやすみモードで許可された通知の読み取り</string>
+    <string name="notification_dnd_title">サイレント モード</string>
+    <string name="notification_dnd_none">読み上げない</string>
+    <string name="notification_dnd_allowed">おやすみモードで許可された通知を読み上げる</string>
     <string name="notification_dnd_all">すべて読む</string>
     <string name="notification_touch_title">画面をタッチしている間</string>
-    <string name="notification_touch_read">すぐに読んでください</string>
+    <string name="notification_touch_read">すぐに読み上げる</string>
     <string name="notification_touch_after">タッチ終了時に読み上げる</string>
-    <string name="notification_touch_skip">声に出して読まないでください</string>
+    <string name="notification_touch_skip">読み上げない</string>
     <string name="notification_during_calls_title">通話中</string>
-    <string name="notification_honour_silent_title">サイレントモードではありません</string>
-    <string name="notification_honour_vibrate_title">振動モードではありません</string>
-    <string name="notification_skip_in_car_title">カーモードではありません</string>
-    <string name="notification_skip_in_car_summary">Android Auto など、それ自体を読み取ります。</string>
+    <string name="notification_honour_silent_title">サイレントモード時は読み上げない</string>
+    <string name="notification_honour_vibrate_title">バイブレーション時は読み上げない</string>
+    <string name="notification_skip_in_car_title">カーモード時は読み上げない</string>
+    <string name="notification_skip_in_car_summary">通知を自ら読み上げる Android Auto 使用時など</string>
     <string name="notification_category_quiet_hours">静かな時間帯</string>
     <string name="notification_quiet_hours_title">静かな時間帯</string>
-    <string name="notification_quiet_start_title">スタート</string>
+    <string name="notification_quiet_start_title">開始</string>
     <string name="notification_quiet_end_title">終了</string>
-    <string name="notification_repeat_seconds_title">同じ通知をスキップする</string>
-    <string name="notification_numbers_alike_title">異なる数値を同一のものとして扱う</string>
+    <string name="notification_repeat_seconds_title">同じ通知をスキップする期間</string>
+    <string name="notification_numbers_alike_title">数字が違っても同じ通知とみなす</string>
     <string name="notification_numbers_alike_summary">ダウンロードの割合など</string>
-    <string name="notification_cooldown_title">アプリの通知間の時間</string>
-    <string name="notification_skip_prefix_title">繰り返されるテキストの接頭辞を省略します</string>
+    <string name="notification_cooldown_title">同じアプリの通知の間隔</string>
+    <string name="notification_skip_prefix_title">繰り返される冒頭を省略</string>
     <string name="notification_skip_prefix_summary">チャット内のグループ名など</string>
-    <string name="notification_prefix_memory_title">テキストの接頭辞をどれくらいの期間覚えておくか</string>
-    <string name="notification_access_summary">却下された通知と概要を読むのをやめるために必要</string>
-    <string name="notification_shake_title">振って停止します</string>
-    <string name="notification_shake_strength_title">揺れの強さ</string>
-    <string name="notification_wave_title">手を振って読書をやめる</string>
+    <string name="notification_prefix_memory_title">冒頭を記憶する期間</string>
+    <string name="notification_access_summary">消去した通知の読み上げを止めるため、および概要のために必要です</string>
+    <string name="notification_shake_title">振って停止</string>
+    <string name="notification_shake_strength_title">振る強さ</string>
+    <string name="notification_wave_title">手を振って停止</string>
     <string name="notification_wave_summary">近接センサーの上に手をかざす</string>
     <string name="notification_pocket_title">ポケットモード</string>
-    <string name="notification_pocket_summary">ポケットなどに入れて読み取りを開始するときにセンサーが覆われていても、読み取りは停止しません。</string>
-    <string name="notification_volume_keys_title">両方の音量キーを押します</string>
+    <string name="notification_pocket_summary">読み上げ開始時にセンサーがすでに覆われている場合（ポケットの中など）、読み上げは停止しません</string>
+    <string name="notification_volume_keys_title">両方の音量キーを押す</string>
     <string name="notification_dismiss_title">通知が閉じられたら読むのをやめる</string>
-    <string name="notification_watch_dismiss_title">スマートウォッチで通知を閉じた場合も</string>
-    <string name="notification_app_cancel_title">アプリが通知を削除したら読書を中止する</string>
+    <string name="notification_watch_dismiss_title">時計で閉じたときも</string>
+    <string name="notification_app_cancel_title">アプリが削除したら停止</string>
     <string name="notification_category_summary">概要</string>
-    <string name="notification_summary_now_title">今すぐ通知を読む</string>
-    <string name="notification_summary_daily_title">毎日通知を読む</string>
-    <string name="notification_summary_time_title">時間</string>
+    <string name="notification_summary_now_title">今すぐ通知を読み上げる</string>
+    <string name="notification_summary_daily_title">毎日通知を読み上げる</string>
+    <string name="notification_summary_time_title">時刻</string>
     <string name="notification_summary_newest_first_title">新しい順</string>
-    <string name="notification_summary_name_title">あなたの名前</string>
-    <string name="notification_summary_gap_title">通知の間に一時停止する</string>
+    <string name="notification_summary_name_title">名前</string>
+    <string name="notification_summary_gap_title">通知間の間隔</string>
     <string name="notification_summary_needs_sandfly">通知を読むには SandFly をオンにしてください</string>
-    <string name="notification_summary_no_access">通知へのアクセスがオフになっています</string>
+    <string name="notification_summary_no_access">通知へのアクセスがオフです</string>
     <string name="notification_summary_morning">おはようございます。</string>
     <string name="notification_summary_afternoon">こんにちは。</string>
     <string name="notification_summary_evening">こんばんは。</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">時間のアナウンス</string>
-    <string name="notification_clock_interval_title">毎回時間を言います</string>
+    <string name="notification_category_clock">時刻の読み上げ</string>
+    <string name="notification_clock_interval_title">時刻を読み上げる間隔</string>
     <string name="notification_clock_format_title">時刻の表示形式</string>
     <string name="notification_clock_format_message">プレースホルダー: {time}、{date}、{battery} (バッテリーの割合)。</string>
     <string name="notification_clock_format_default">{time}です</string>
     <string name="notification_clock_exact_title">正確な時間</string>
-    <string name="notification_clock_exact_summary">アラームとリマインダーが必要です。そうしないと、時刻が最大 1 分遅れる可能性があります。</string>
+    <string name="notification_clock_exact_summary">[アラームとリマインダー] の権限が必要です。権限がない場合、時刻の読み上げが最大 1 分遅れることがあります。</string>
     <string name="notification_other_apps_title">その他のアプリ</string>
     <string name="notification_apps_category">アプリ</string>
-    <string name="notification_apps_loading">アプリをロードしています</string>
+    <string name="notification_apps_loading">アプリを読み込んでいます</string>
     <string name="notification_app_mode_title">通知</string>
-    <string name="notification_app_mode_default">他のアプリとして</string>
-    <string name="notification_app_mode_read">声に出して読む</string>
+    <string name="notification_app_mode_default">他のアプリと同じ</string>
+    <string name="notification_app_mode_read">読み上げる</string>
     <string name="notification_app_mode_private">アプリ名のみ</string>
-    <string name="notification_app_mode_priority">最初にお読みください</string>
-    <string name="notification_app_mode_ignore">声に出して読まないでください</string>
-    <string name="notification_app_name_title">口名</string>
-    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g>と言いました</string>
+    <string name="notification_app_mode_priority">最初に読み上げる</string>
+    <string name="notification_app_mode_ignore">読み上げない</string>
+    <string name="notification_app_name_title">読み上げ名</string>
+    <string name="notification_app_said_as">読み上げ名: <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">リセット</string>
-    <string name="notification_required_title">通知のみを読む</string>
-    <string name="notification_blocked_title">通知を読まないでください</string>
-    <string name="notification_private_title">アプリ名のみを読み取ります</string>
-    <string name="notification_replacements_title">違う言い方をする</string>
-    <string name="notification_add_word">一言追加</string>
-    <string name="notification_add_replacement">代替品を追加する</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> を <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_required_title">次を含む通知のみ読み上げる</string>
+    <string name="notification_blocked_title">次を含む通知を読み上げない</string>
+    <string name="notification_private_title">次を含む通知はアプリ名のみ読み上げる</string>
+    <string name="notification_replacements_title">読み方の変更</string>
+    <string name="notification_add_word">単語を追加</string>
+    <string name="notification_add_replacement">置換を追加</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> → <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">テキスト</string>
-    <string name="notification_replace_with">と言う</string>
+    <string name="notification_replace_with">読み方</string>
     <string name="notification_whole_words">単語全体のみ</string>
     <string name="notification_regex">正規表現</string>
     <string name="notification_enter_text">テキストを入力してください</string>
     <string name="notification_invalid_regex">有効な正規表現ではありません</string>
     <string name="notification_edit">編集</string>
     <string name="notification_remove">削除</string>
-    <string name="notification_history_keep">通知履歴を保存する</string>
-    <string name="notification_history_clear">履歴をクリアする</string>
+    <string name="notification_history_keep">通知履歴を保存</string>
+    <string name="notification_history_clear">履歴を消去</string>
     <string name="notification_history_category">通知</string>
     <string name="notification_history_empty">通知はありません</string>
-    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g>は読まないでください</string>
-    <string name="notification_history_private_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> の名前のみを読み取ります</string>
-    <string name="notification_history_priority_app">最初に<xliff:g id="app" example="Chat">%1$s</xliff:g>をお読みください</string>
-    <string name="notification_history_block_similar">このような通知は読まないでください</string>
+    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> を読み上げない</string>
+    <string name="notification_history_private_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> の名前のみ読み上げる</string>
+    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> を最初に読み上げる</string>
+    <string name="notification_history_block_similar">このような通知を読み上げない</string>
     <string name="notification_history_copy">コピー</string>
-    <string name="notification_saved">保存されました</string>
-    <string name="notification_copied">コピーされました</string>
-    <string name="notification_outcome_read">正常に読み上げました</string>
-    <string name="notification_outcome_stopped">読み取り中に停止しました</string>
-    <string name="notification_outcome_speech_off">未読: 通知音声がオフになっています</string>
-    <string name="notification_outcome_dnd">未読: 応答しないでください</string>
-    <string name="notification_outcome_touching">未読: 画面がタッチされました</string>
-    <string name="notification_outcome_app">未読: アプリ</string>
-    <string name="notification_outcome_ongoing">未読: 進行中</string>
-    <string name="notification_outcome_foreground">未読: 実行中のアプリ</string>
-    <string name="notification_outcome_low_priority">未読: 優先度が低い</string>
-    <string name="notification_outcome_system">未読: システム</string>
-    <string name="notification_outcome_media">読み込まれません: メディアプレーヤー</string>
-    <string name="notification_outcome_group_summary">未読: グループの概要</string>
-    <string name="notification_outcome_progress">未読: 進捗状況</string>
-    <string name="notification_outcome_required">未読: 必要な単語がありません</string>
-    <string name="notification_outcome_blocked">未読: ブロックされた単語</string>
-    <string name="notification_outcome_empty">未読: テキストなし</string>
-    <string name="notification_outcome_repeat">未読: 繰り返し</string>
-    <string name="notification_outcome_cooldown">読み上げられません: このアプリからの別の通知が最近読み上げられました</string>
-    <string name="notification_outcome_quiet_hours">読まれない：静かな時間</string>
-    <string name="notification_outcome_screen_on">未読: 画面オン</string>
-    <string name="notification_outcome_screen_off">未読: 画面オフ</string>
-    <string name="notification_outcome_locked">未読: ロックされています</string>
-    <string name="notification_outcome_headphones">未読: ヘッドフォンが接続されています</string>
-    <string name="notification_outcome_no_headphones">未読: ヘッドフォンなし</string>
-    <string name="notification_outcome_silent">未読：サイレントモード</string>
-    <string name="notification_outcome_vibrate">未読込み: バイブレーションモード</string>
-    <string name="notification_outcome_media_playing">未読: メディア再生中</string>
-    <string name="notification_outcome_car">読み取れません: 車モード</string>
-    <string name="notification_outcome_rule">未読: ルール</string>
-    <string name="notification_outcome_busy">未読: 別の通知が読まれました</string>
-    <string name="notification_outcome_call">電話の着信としてアナウンスされる</string>
-    <string name="notification_rule_add">ルールを追加する</string>
+    <string name="notification_saved">保存しました</string>
+    <string name="notification_copied">コピーしました</string>
+    <string name="notification_outcome_read">読み上げ済み</string>
+    <string name="notification_outcome_stopped">読み上げ中に停止</string>
+    <string name="notification_outcome_speech_off">読み上げなし: 通知の読み上げがオフ</string>
+    <string name="notification_outcome_dnd">読み上げなし: おやすみモード</string>
+    <string name="notification_outcome_touching">読み上げなし: 画面がタップされた</string>
+    <string name="notification_outcome_app">読み上げなし: アプリ</string>
+    <string name="notification_outcome_ongoing">読み上げなし: 継続中の通知</string>
+    <string name="notification_outcome_foreground">読み上げなし: アプリが開いている</string>
+    <string name="notification_outcome_low_priority">読み上げなし: 優先度が低い</string>
+    <string name="notification_outcome_system">読み上げなし: システム</string>
+    <string name="notification_outcome_media">読み上げなし: メディア プレーヤー</string>
+    <string name="notification_outcome_group_summary">読み上げなし: グループの概要</string>
+    <string name="notification_outcome_progress">読み上げなし: 進行状況</string>
+    <string name="notification_outcome_required">読み上げなし: 必須の単語がない</string>
+    <string name="notification_outcome_blocked">読み上げなし: ブロックした単語</string>
+    <string name="notification_outcome_empty">読み上げなし: テキストなし</string>
+    <string name="notification_outcome_repeat">読み上げなし: 繰り返し</string>
+    <string name="notification_outcome_cooldown">読み上げなし: このアプリの通知を読み上げた直後</string>
+    <string name="notification_outcome_quiet_hours">読み上げなし: 静かな時間帯</string>
+    <string name="notification_outcome_screen_on">読み上げなし: 画面オン</string>
+    <string name="notification_outcome_screen_off">読み上げなし: 画面オフ</string>
+    <string name="notification_outcome_locked">読み上げなし: ロック中</string>
+    <string name="notification_outcome_headphones">読み上げなし: ヘッドフォン接続中</string>
+    <string name="notification_outcome_no_headphones">読み上げなし: ヘッドフォンなし</string>
+    <string name="notification_outcome_silent">読み上げなし: サイレント モード</string>
+    <string name="notification_outcome_vibrate">読み上げなし: バイブレーション モード</string>
+    <string name="notification_outcome_media_playing">読み上げなし: メディア再生中</string>
+    <string name="notification_outcome_car">読み上げなし: 車モード</string>
+    <string name="notification_outcome_rule">読み上げなし: ルール</string>
+    <string name="notification_outcome_busy">読み上げなし: 別の通知を読み上げた</string>
+    <string name="notification_outcome_call">着信としてアナウンス</string>
+    <string name="notification_rule_add">ルールを追加</string>
     <string name="notification_rule_from_template">テンプレートからルールを追加する</string>
     <string name="notification_rules_category">ルール</string>
     <string name="notification_rules_empty">ルールなし</string>
@@ -208,48 +208,48 @@
     <string name="notification_rule_untitled">ルール</string>
     <string name="notification_rule_enabled">オン</string>
     <string name="notification_rule_match">条件</string>
-    <string name="notification_rule_match_all">すべての条件を満たさなければなりません</string>
-    <string name="notification_rule_match_any">少なくとも 1 つの条件を満たさなければなりません</string>
-    <string name="notification_rule_conditions">いつ</string>
-    <string name="notification_rule_actions">それから</string>
-    <string name="notification_rule_add_condition">条件を追加する</string>
-    <string name="notification_rule_add_action">アクションを追加する</string>
-    <string name="notification_rule_invert">条件を反転する</string>
-    <string name="notification_rule_delete">ルールを削除する</string>
+    <string name="notification_rule_match_all">すべての条件を満たす</string>
+    <string name="notification_rule_match_any">いずれかの条件を満たす</string>
+    <string name="notification_rule_conditions">条件</string>
+    <string name="notification_rule_actions">次を実行</string>
+    <string name="notification_rule_add_condition">条件を追加</string>
+    <string name="notification_rule_add_action">アクションを追加</string>
+    <string name="notification_rule_invert">条件を反転</string>
+    <string name="notification_rule_delete">ルールを削除</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g>を削除しますか?</string>
-    <string name="notification_rule_always">いつも</string>
-    <string name="notification_rule_no_actions">何も起こらない</string>
-    <string name="notification_rule_and">" 「と」 "</string>
-    <string name="notification_rule_or">" 「または」 "</string>
+    <string name="notification_rule_always">常に</string>
+    <string name="notification_rule_no_actions">何もしない</string>
+    <string name="notification_rule_and">" かつ "</string>
+    <string name="notification_rule_or">" または "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
-    <string name="notification_template_headphones">ヘッドフォンのみで</string>
-    <string name="notification_template_night">夜は静か</string>
+    <string name="notification_template_headphones">ヘッドフォン使用時のみ</string>
+    <string name="notification_template_night">夜間は読み上げない</string>
     <string name="notification_template_screen_off">画面がオフの場合のみ</string>
-    <string name="notification_template_locked_private">携帯電話がロックされている場合はアプリ名のみ</string>
-    <string name="notification_template_short_on_battery">充電していないときに軽く読んでください</string>
+    <string name="notification_template_locked_private">ロック中はアプリ名のみ</string>
+    <string name="notification_template_short_on_battery">充電していないときは短く</string>
     <string name="notification_type_bluetooth">Bluetooth デバイス</string>
     <string name="notification_type_wired">有線ヘッドフォン</string>
     <string name="notification_type_wifi">Wi-Fiネットワーク</string>
     <string name="notification_type_time">時刻</string>
     <string name="notification_type_screen">画面オン</string>
-    <string name="notification_type_locked">携帯電話がロックされています</string>
+    <string name="notification_type_locked">スマートフォンのロック中</string>
     <string name="notification_type_from_app">アプリからの通知</string>
     <string name="notification_type_foreground">フォアグラウンドのアプリ</string>
-    <string name="notification_type_contains">通知内容</string>
-    <string name="notification_type_battery">バッテリー残量が以下です</string>
+    <string name="notification_type_contains">通知に次を含む</string>
+    <string name="notification_type_battery">バッテリー残量が次より少ない</string>
     <string name="notification_type_charging">充電中</string>
     <string name="notification_type_landscape">横向き</string>
-    <string name="notification_type_silent">サイレントモードまたはバイブレーションモード</string>
+    <string name="notification_type_silent">サイレント モードまたはバイブレーション モード</string>
     <string name="notification_type_media">メディアの再生</string>
-    <string name="notification_bluetooth_any">あらゆるデバイス</string>
+    <string name="notification_bluetooth_any">すべてのデバイス</string>
     <string name="notification_wifi_hint">ネットワーク名</string>
-    <string name="notification_choose_app">アプリを選択してください</string>
+    <string name="notification_choose_app">アプリを選択</string>
     <string name="notification_time_start">から</string>
     <string name="notification_time_end">まで</string>
-    <string name="notification_time_days">日数</string>
+    <string name="notification_time_days">曜日</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> から <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly はこの条件に対してその許可が必要です</string>
-    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> が接続されました</string>
+    <string name="notification_permission_needed">SandFly がこの条件を判断するにはその権限が必要です</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> が接続中</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> が接続されていません</string>
     <string name="notification_cond_bluetooth_any">Bluetooth オーディオデバイスが接続されています</string>
     <string name="notification_cond_bluetooth_any_not">Bluetooth オーディオデバイスが接続されていません</string>
@@ -257,66 +257,66 @@
     <string name="notification_cond_wired_not">有線ヘッドフォンが接続されていません</string>
     <string name="notification_cond_battery_below">バッテリー残量が <xliff:g id="percent" example="20">%1$d</xliff:g> パーセント未満です</string>
     <string name="notification_cond_battery_below_not">バッテリー残量が<xliff:g id="percent" example="20">%1$d</xliff:g>パーセント以上です</string>
-    <string name="notification_cond_charging">携帯電話は充電中です</string>
-    <string name="notification_cond_charging_not">携帯電話が充電されていません</string>
-    <string name="notification_cond_locked">電話はロックされています</string>
+    <string name="notification_cond_charging">スマートフォンが充電中です</string>
+    <string name="notification_cond_charging_not">スマートフォンが充電中ではありません</string>
+    <string name="notification_cond_locked">スマートフォンがロックされています</string>
     <string name="notification_cond_locked_not">携帯電話のロックが解除されています</string>
     <string name="notification_cond_screen_on">画面がオンになっています</string>
     <string name="notification_cond_screen_on_not">画面がオフになっています</string>
     <string name="notification_cond_landscape">画面が横向きになっている</string>
-    <string name="notification_cond_landscape_not">画面が縦長になっている</string>
+    <string name="notification_cond_landscape_not">画面が縦向きになっている</string>
     <string name="notification_cond_time">時刻は<xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g>です</string>
     <string name="notification_cond_time_not">時間は<xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g>ではありません</string>
-    <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> に接続されました</string>
+    <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> に接続中</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> に接続されていません</string>
-    <string name="notification_cond_wifi_any">Wi-Fi に接続されました</string>
+    <string name="notification_cond_wifi_any">Wi-Fi に接続中</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi に接続されていません</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g>が前にあります</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g>が前にいない</string>
-    <string name="notification_cond_from">通知は<xliff:g id="app" example="Chat">%1$s</xliff:g>からです</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> がフォアグラウンドで実行中</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> がフォアグラウンドで実行されていない</string>
+    <string name="notification_cond_from">通知の送信元は <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not"><xliff:g id="app" example="Chat">%1$s</xliff:g>からの通知ではありません</string>
     <string name="notification_cond_contains">通知には <xliff:g id="text" example="urgent">%1$s</xliff:g> が含まれています</string>
     <string name="notification_cond_contains_not">通知には <xliff:g id="text" example="urgent">%1$s</xliff:g> が含まれていません</string>
-    <string name="notification_cond_silent">着信音が鳴らない、または振動する</string>
-    <string name="notification_cond_silent_not">着信音が鳴る</string>
-    <string name="notification_cond_media">メディアが再生中です</string>
+    <string name="notification_cond_silent">着信音がサイレントまたはバイブレーション</string>
+    <string name="notification_cond_silent_not">着信音がオン</string>
+    <string name="notification_cond_media">メディアの再生中</string>
     <string name="notification_cond_media_not">再生中のメディアがありません</string>
-    <string name="notification_action_skip">読まないでください</string>
-    <string name="notification_action_private">アプリ名のみを読み取ります</string>
-    <string name="notification_action_not_private">非公開であっても全文を読む</string>
-    <string name="notification_action_format">音声形式を使用する</string>
-    <string name="notification_action_max_words">いくつかの単語まで読む</string>
-    <string name="notification_action_no_limit">長さ制限なしで読む</string>
-    <string name="notification_action_keep_emoji">絵文字を維持する</string>
-    <string name="notification_action_keep_numbers">数字をまとめておく</string>
-    <string name="notification_action_priority">最初に読んでください</string>
-    <string name="notification_action_always_read">静かな時間帯やその他の制限された時間帯でも通知を読み上げます</string>
-    <string name="notification_action_voice">音声プロファイルで読む</string>
-    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>で読んでください</string>
-    <string name="notification_action_voice_sandfly">SandFlyの声で読みます</string>
-    <string name="notification_voice_removed">音声プロファイルが削除されました</string>
-    <string name="notification_action_format_value">音声形式 <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> を使用してください</string>
-    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>まで読んでください</string>
-    <string name="notification_off">OFF</string>
-    <string name="notification_on">ON</string>
+    <string name="notification_action_skip">読み上げない</string>
+    <string name="notification_action_private">アプリ名のみ読み上げる</string>
+    <string name="notification_action_not_private">非公開でも全文を読み上げる</string>
+    <string name="notification_action_format">読み上げ形式を使う</string>
+    <string name="notification_action_max_words">指定した語数まで読み上げる</string>
+    <string name="notification_action_no_limit">長さを制限せずに読み上げる</string>
+    <string name="notification_action_keep_emoji">絵文字を残す</string>
+    <string name="notification_action_keep_numbers">数字を区切らずに読む</string>
+    <string name="notification_action_priority">最初に読み上げる</string>
+    <string name="notification_action_always_read">静かな時間帯や通知を読み上げないその他の時間帯でも読み上げる</string>
+    <string name="notification_action_voice">音声プロファイルで読み上げる</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>で読み上げる</string>
+    <string name="notification_action_voice_sandfly">SandFly の音声で読み上げる</string>
+    <string name="notification_voice_removed">削除された音声プロファイル</string>
+    <string name="notification_action_format_value">読み上げ形式「<xliff:g id="format" example="{app}: {title}">%1$s</xliff:g>」を使う</string>
+    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>まで読み上げる</string>
+    <string name="notification_off">オフ</string>
+    <string name="notification_on">オン</string>
     <string name="notification_never_again">SandFlyが再起動するまで</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
     <string name="notification_speech_tile_label">通知を読み上げる</string>
-    <string name="notification_speech_now_on">通知の読み上げが有効になっています</string>
-    <string name="notification_speech_now_off">通知の読み上げが無効になっています</string>
-    <string name="notification_no_last_notification">通知は読まれませんでした</string>
+    <string name="notification_speech_now_on">通知の読み上げ: オン</string>
+    <string name="notification_speech_now_off">通知の読み上げ: オフ</string>
+    <string name="notification_no_last_notification">読み上げた通知はありません</string>
     <string name="shortcut_read_notifications">通知を読む</string>
-    <string name="shortcut_toggle_notification_speech">通知音声のオンまたはオフ</string>
-    <string name="shortcut_read_last_notification">最後の通知をもう一度読んでください</string>
-    <string name="shortcut_stop_notification">通知を読むのをやめる</string>
+    <string name="shortcut_toggle_notification_speech">通知の読み上げのオン/オフ</string>
+    <string name="shortcut_read_last_notification">最後の通知をもう一度読み上げる</string>
+    <string name="shortcut_stop_notification">通知の読み上げを停止</string>
     <string name="notification_test_posting">5 秒後にテスト通知が表示されます</string>
-    <string name="notification_test_not_allowed">SandFly が最初に通知を表示できるようにします</string>
+    <string name="notification_test_not_allowed">先に SandFly に通知の表示を許可してください</string>
     <string name="notification_test_content_title">SandFly テスト</string>
-    <string name="notification_test_content_text">これはテスト通知です。通知設定とともにお読みください。 123456</string>
-    <string name="notification_automation_on">通知の読み上げを有効にする</string>
-    <string name="notification_automation_off">通知の読み上げを無効にする</string>
-    <string name="notification_automation_toggle">通知の読み上げを有効または無効にする</string>
-    <string name="notification_automation_stop">通知の読み取りを停止します</string>
+    <string name="notification_test_content_text">これはテスト通知です。通知の設定に従って読み上げられます。123456</string>
+    <string name="notification_automation_on">通知の読み上げをオンにする</string>
+    <string name="notification_automation_off">通知の読み上げをオフにする</string>
+    <string name="notification_automation_toggle">通知の読み上げのオン/オフを切り替える</string>
+    <string name="notification_automation_stop">読み上げ中の通知を停止する</string>
     <string name="notification_automation_read_all">通知を読む</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>秒</item>
@@ -331,7 +331,7 @@
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g>時間</item>
     </plurals>
     <plurals name="notification_words">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>単語</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 単語</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> 単語</item>
     </plurals>
     <plurals name="notification_sentences">
@@ -339,8 +339,8 @@
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g>文</item>
     </plurals>
     <plurals name="notification_characters">
-        <item quantity="one">テキスト文字 <xliff:g id="count" example="1">%d</xliff:g> 文字</item>
-        <item quantity="other">テキスト文字数が <xliff:g id="count" example="5">%d</xliff:g> 個</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 文字</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> 文字</item>
     </plurals>
     <plurals name="notification_digits">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>桁</item>
@@ -348,7 +348,7 @@
     </plurals>
     <plurals name="notification_summary_count">
         <item quantity="one">通知が <xliff:g id="count" example="1">%d</xliff:g> 件あります。</item>
-        <item quantity="other">通知は <xliff:g id="count" example="5">%d</xliff:g> 件あります。</item>
+        <item quantity="other">通知が <xliff:g id="count" example="5">%d</xliff:g> 件あります。</item>
     </plurals>
     <string-array name="notification_url_entries">
         <item>@string/notification_url_full</item>

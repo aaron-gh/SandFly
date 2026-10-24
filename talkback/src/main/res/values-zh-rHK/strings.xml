@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">裝置已解鎖。</string>
   <string name="title_pref_speech_volume">語音音量</string>
   <string name="title_pref_verbose_scroll_announcement">一律讀出清單項目數量</string>
-  <string name="summary_pref_verbose_scroll_announcement">說出每次滾動後顯示哪些項目</string>
+  <string name="summary_pref_verbose_scroll_announcement">每次捲動後說出顯示的項目</string>
   <string name="title_pref_cover_proximity_sensor">遮蓋鄰近感應器來停止語音內容</string>
   <string name="title_pref_phonetic_letters">讀出字母及例子</string>
   <string name="summary_pref_phonetic_letters">當你選擇鍵盤按鍵或按字元導覽時，系統會讀出每個字母及例子，例如「h，hotel」</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">大多數</string>
   <string name="punctuation_some">部分</string>
   <string name="title_pref_count_repeated_symbols">計算重複符號</string>
-  <string name="summary_pref_count_repeated_symbols">當某個符號重複 4 次或以上時，請說出符號重複了多少次</string>
+  <string name="summary_pref_count_repeated_symbols">符號連續重複 4 次或以上時，讀出重複次數</string>
   <string name="learn_more">瞭解詳情</string>
   <string name="title_pref_capital_letters">大楷</string>
   <string name="capital_letters_nothing">不執行任何操作</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">變更音調</string>
   <string name="capital_letters_sound_feedback">播放音效</string>
   <string name="title_pref_a11y_hints">讀出使用提示</string>
-  <string name="summary_pref_a11y_hints">描述一個項目後，說明如何使用它</string>
+  <string name="summary_pref_a11y_hints">描述項目後讀出使用方法</string>
   <string name="pref_speak_container_element_positions_title">朗讀容器資料</string>
   <string name="pref_speak_time_title">朗讀時間</string>
   <string name="pref_speak_time_summary">開啟螢幕時</string>
-  <string name="summary_speak_container_element_positions">當您進入或離開清單、網格和其他容器時說出</string>
+  <string name="summary_speak_container_element_positions">進入或離開清單、網格和其他容器時讀出</string>
   <string name="reset_letency_reduction_settings_dialog_title">要重設延遲時間設定嗎？</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">此操作會將所有延遲時間設定重設為預設值</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">重設</string>
@@ -62,14 +62,14 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">重設</string>
   <string name="gestures_announce_reset_gesture_settings">手勢設定已重設。</string>
   <string name="pref_speak_roles_title">讀出元素類型</string>
-  <string name="pref_speak_roles_summary">喜歡按鈕或複選框</string>
+  <string name="pref_speak_roles_summary">例如按鈕或核取方塊</string>
   <string name="title_pref_speak_element_ids">讀出元素 ID</string>
   <string name="summary_pref_speak_element_ids">說出沒有標籤的按鈕的 ID</string>
   <string name="pref_allow_frequent_content_change_announcement_title">朗讀所有最新進度</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">包括下載、按照駕駛路線等最新進度。如果關閉此功能，系統仍會朗讀進度，只是頻率較低。</string>
   <string name="title_pref_explore_by_touch">輕觸探索</string>
   <string name="title_pref_category_controls">控制項</string>
-  <string name="title_pref_category_reduce_latency_summary">這些設定使SandFly在觸摸螢幕後響應更快</string>
+  <string name="title_pref_category_reduce_latency_summary">這些設定可讓 SandFly 在你輕觸螢幕後更快回應</string>
   <string name="reset_latency_settings_title">重設所有延遲時間設定</string>
   <string name="title_pref_single_tap">輕按一下即可啟用</string>
   <string name="summary_pref_single_tap">輕按一下焦點項目以啟用。相比輕按兩下，導覽更快速。</string>
@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">焦點指示器</string>
   <string name="title_pref_category_manage_gestures">手勢</string>
   <string name="title_pref_manage_labels">自訂標籤</string>
-  <string name="title_pref_category_context_menu">SandFly菜單</string>
+  <string name="title_pref_category_context_menu">SandFly 選單</string>
   <string name="title_pref_category_selector_menu">朗讀控制項</string>
   <string name="title_pref_category_navigation_menu">編輯導覽選項</string>
   <string name="title_pref_manage_keyboard_shortcuts">鍵盤快速鍵</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">說明</string>
   <string name="title_pref_advanced_settings">進階設定</string>
   <string name="title_pref_show_exit_watermark">顯示關閉 SandFly 的指示</string>
-  <string name="summary_pref_show_exit_watermark">當 SandFly 打開時，展示如何將其關閉</string>
+  <string name="summary_pref_show_exit_watermark">開啟 SandFly 時顯示關閉方法</string>
   <string name="talkback_exit_watermark_text">SandFly 已開啟。用兩隻手指按住螢幕 5 秒即可關閉。如要停止顯示此訊息，請用 3 隻手指輕按螢幕以開啟 SandFly 選單。</string>
   <string name="talkback_exit_watermark_hint_text">正在顯示表示已開啟 SandFly 的橫額。用 2 隻手指按住螢幕 5 秒，即可關閉 SandFly。如要移除此橫額，請前往 SandFly 設定。</string>
   <string name="reset_gesture_settings_title">重設手勢設定</string>
@@ -289,10 +289,10 @@
   <string name="override_keycombo_message_two_params">此組合鍵已用於「%1$s」動作。你要清除並指定這個快速鍵用於「%2$s」嗎？</string>
   <string name="title_pref_intonation">使用音調變化</string>
   <string name="title_pref_keyboard_echo">鍵盤語音提示</string>
-  <string name="pref_node_desc_order_title">商品详细信息的顺序</string>
+  <string name="pref_node_desc_order_title">項目詳細資料的順序</string>
   <string name="pref_time_feedback_format_title">時間格式</string>
   <string name="title_pref_latency_reduction">縮短延遲時間</string>
-  <string name="talkback_latency_reduction_summary">讓SandFly觸碰螢幕後反應更快</string>
+  <string name="talkback_latency_reduction_summary">讓 SandFly 在你輕觸螢幕後更快回應</string>
   <string name="summary_pref_intonation">以較高音調朗讀刪除的字母</string>
   <string name="title_pref_brailledisplay">點字顯示器</string>
   <string name="title_pref_brailleime">點字鍵盤</string>
@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">打字方法</string>
   <string name="title_pref_typing_long_tap_duration">輸入時的按住延遲時間</string>
   <string name="title_pref_touch_explore_timeout">輸入焦點延遲時間</string>
-  <string name="message_pref_touch_explore_latency">較短的延遲使SandFly在您觸摸鍵盤後更快說話。 \n\n選擇延遲</string>
+  <string name="message_pref_touch_explore_latency">延遲越短，SandFly 在您觸碰鍵盤後就會越快開始朗讀。\n\n選擇延遲</string>
   <string name="title_pref_touch_focus_timeout">焦點延遲時間</string>
   <string name="title_pref_talkback_gesture_detection">在 SandFly 中處理手勢</string>
   <string name="toast_pref_talkback_gesture_detection">關閉 SandFly，然後重新開啟即可啟動設定。</string>
@@ -357,7 +357,7 @@
   <string name="summary_pref_gemini_support_disabled">已停用 Gemini</string>
   <string name="screen_dimmed">隱藏咗螢幕</string>
   <string name="screen_brightness_restored">顯示緊螢幕</string>
-  <string name="screen_dimming_exit_instruction_line1">SandFly 無障礙服務已隱藏螢幕。</string>
+  <string name="screen_dimming_exit_instruction_line1">SandFly 無障礙服務已隱藏螢幕</string>
   <string name="screen_dimming_exit_instruction_line2">如要變更此設定，<xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g>即可開啟 SandFly 選單，選取 [<xliff:g id="menu item" example="show screen">%2$s</xliff:g>]，然後輕按兩下。</string>
   <string name="shortcut_title_basic_navigation">基本操作</string>
   <string name="shortcut_title_system_actions">系統操作</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">無障礙功能音量</string>
   <string name="title_pref_touch_explore_latency">輸入焦點延遲時間</string>
   <string name="title_pref_touch_focus_latency">焦點延遲時間</string>
-  <string name="message_pref_touch_focus_latency">較短的延遲使SandFly在觸摸螢幕後更快說話</string>
+  <string name="message_pref_touch_focus_latency">延遲越短，SandFly 在您觸碰螢幕後就會越快開始朗讀</string>
   <string name="message_pref_typing_method_prefix">選擇「按住任何要選取的鍵，然後放開手指」，即可將輸入延遲時間縮到最短</string>
   <string name="message_pref_typing_method_postfix">你亦可隨時使用分指輕按輸入。如要執行此操作，用一隻手指按住任何要選取的鍵，然後用另一隻手指輕按螢幕。</string>
   <string name="title_pref_talkback_speech_rate">語速</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">向上瀏覽</string>
   <string name="training_tip">提示</string>
   <string name="tv_training_overview_step_title">SandFly 的運作方式</string>
-  <string name="tv_training_overview_step_summary">SandFly 是基於 Google 的 TalkBack 的螢幕閱讀器。它會大聲朗讀螢幕上的文字並為您提供語音回饋，以便您無需看螢幕即可使用裝置。 \n\n開啟 SandFly 時，會大聲朗讀螢幕上的所選項目，有時會新增其他資訊或上下文。 \n\n按「選擇」繼續。 「選擇」按鈕位於方向鍵的中心，方向鍵是遙控器頂部的大圓形按鈕。</string>
+  <string name="tv_training_overview_step_summary">SandFly 是以 Google TalkBack 為基礎的螢幕閱讀器，會讀出螢幕上的文字並提供語音回應，讓你無需看螢幕亦可使用裝置。\n\n開啟 SandFly 後，螢幕上所選的項目會被讀出，有時會附加其他資訊或上下文。\n\n按「選擇」即可繼續。「選擇」按鈕位於方向鍵中央，方向鍵是遙控器頂部的大型圓形按鈕。</string>
   <string name="tv_training_remote_step_title">使用遙控器</string>
   <string name="tv_training_remote_step_summary">你可使用遙控器上方的圓形方向按鈕在畫面上移動。如要選取項目，請按下遙控器上方的方向按鈕中心。\n\n「返回」按鈕在第二行左邊，「語音助手」按鈕在右邊。\n\n主按鈕在第三行左邊，靜音按鈕在右邊。\n\nYouTube 捷徑在第四行左邊，Netflix 捷徑在右邊。\n\n最底一行有兩個小按鈕，左邊的是開關按鈕，右邊的按鈕可開啟電視輸入來源選單。\n\n音量按鈕在遙控器的右側。\n\n按下「選取」即可繼續操作。</string>
   <string name="tv_training_shortcut_step_title">SandFly 快速鍵</string>
@@ -868,7 +868,7 @@
   <string name="new_shortcut_gesture_reading_menu_text">如要使用朗讀控制項，請用 3 隻手指向左或向右滑動。你亦可用 3 隻手指向上或向下滑動。</string>
   <string name="new_shortcut_gesture_note">注意：由於你已自訂部分手勢，因此這些資料可能不準確。如要查看手勢，請前往 SandFly 設定。</string>
   <string name="welcome_to_android11_text">SandFly 現在支援新手勢，使用時更方便。\n\n你可在此畫面中試用這些新手勢，日後可隨時在 SandFly 設定中查看這些資料。</string>
-  <string name="new_gesture_notification_title">SandFly 支援新手勢</string>
+  <string name="new_gesture_notification_title">SandFly 的新手勢</string>
   <string name="new_gesture_notification_content">輕按即可瞭解新手勢如何讓 SandFly 更方便使用。</string>
   <string name="dump_node_tree_description">已經將節點樹狀結構印咗喺記錄度。</string>
   <string name="report_gesture_description">以下是你最近執行過的手勢，請報告錯誤的手勢，以及該手勢預期執行的功能。</string>
@@ -903,7 +903,7 @@
   <string name="split_tap_everywhere_title">在任何位置分指輕按</string>
   <string name="split_tap_everywhere_text">你現在可在任何位置分指輕按啟用項目，即使在鍵盤以外的位置亦可。如要使用此功能，請用一隻手指探索螢幕，然後在不提起第一隻手指的情況下，用另一隻手指輕按螢幕，即可啟用目前的焦點項目。</string>
   <string name="keyboard_enhanced_keymap_title">鍵盤：強化按鍵配置</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly 現在擁有適用於實體鍵盤的“增強型鍵盤映射”，其中包含各種新命令和快捷鍵。此增強功能包括“瀏覽模式”，可實現更有效率的 Web 導航，為依賴實體鍵盤的 SandFly 使用者簡化導航和互動。您可以切換到 <xliff:g id="settings_path">%1$s</xliff:g>.\n\n中的「增強型鍵盤映射」。如果您使用點字顯示器，您也可以使用新的瀏覽模式捷徑直接從點字顯示器瀏覽內容。一些點字顯示快捷方式已更改以適應此更改。您可以在<xliff:g id="braille_display_settings_path">%2$s</xliff:g>中查看所有點字顯示器捷徑的清單。</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly 現時為實體鍵盤提供「強化按鍵配置」，當中包含多個新指令和快速鍵。它包括「瀏覽模式」，讓使用實體鍵盤的 SandFly 使用者能更有效率地瀏覽網頁及與內容互動。您可以在 <xliff:g id="settings_path">%1$s</xliff:g> 中切換至「強化按鍵配置」。\n\n如果您使用點字顯示器，亦可使用新的瀏覽模式快速鍵，直接從點字顯示器瀏覽內容。為配合此變更，部分點字顯示器快速鍵已更改。您可以在 <xliff:g id="braille_display_settings_path">%2$s</xliff:g> 中查看所有點字顯示器快速鍵的清單。</string>
   <string name="keyboard_shortcuts_link">SandFly 設定 &gt; [鍵盤快速鍵]</string>
   <string name="keyboard_shortcuts_link_tts">SandFly 設定，然後㩒鍵盤快速鍵</string>
   <string name="braille_display_settings_link">點字顯示器設定</string>
@@ -922,8 +922,8 @@
   <string name="turn_off_talkback">關掉SandFly</string>
   <string name="tap_again_to_turn_off">再輕按即可關閉</string>
   <string name="talkback_turn_off_description_pointer_and_touch">SandFly 會朗讀你畫面上的內容，並改變導覽功能在裝置上的運作方式。如要關閉，請選取 [關閉 SandFly] 或輕按 2 次。</string>
-  <string name="welcome_to_talkback_text">SandFly 提供朗讀功能，讓你無需查看螢幕亦可使用裝置。Talkback 可讓無法看清楚螢幕的使用者瞭解螢幕內容。\n\n如要使用音量鍵迅速開關 SandFly，可前往 SandFly 設定 &gt; [SandFly 快速鍵] 設定快速鍵。\n\n開啟 SandFly 後，系統會朗讀螢幕上的焦點項目。\n\n向右滑動可移至下一個項目，向左滑動則可移至上一個項目。\n\n現即向右滑動找出 [繼續] 按鈕。</string>
-  <string name="welcome_to_talkback_text_tts">有了 SandFly 的朗讀功能，不用看螢幕都可使用裝置。Talkback 方便看不清楚螢幕的人理解螢幕上的內容。\n\n你可前往 SandFly 設定 &gt; [SandFly 快速鍵] 設定快速鍵，使用音量鍵快速開關 SandFly。\n\nSandFly 開啟時，系統會朗讀螢幕上的焦點項目。\n\n向右滑動可移至下一個項目，向左滑動則可移至上一個項目。\n\n現在試試向右滑動，尋找下一個按鈕。</string>
+  <string name="welcome_to_talkback_text">SandFly 提供朗讀功能，讓你無需查看螢幕亦可使用裝置。SandFly 可讓無法看清楚螢幕的使用者瞭解螢幕內容。\n\n如要使用音量鍵迅速開關 SandFly，可前往 SandFly 設定 &gt; [SandFly 快速鍵] 設定快速鍵。\n\n開啟 SandFly 後，系統會朗讀螢幕上的焦點項目。\n\n向右滑動可移至下一個項目，向左滑動則可移至上一個項目。\n\n現即向右滑動找出 [繼續] 按鈕。</string>
+  <string name="welcome_to_talkback_text_tts">有了 SandFly 的朗讀功能，不用看螢幕都可使用裝置。SandFly 方便看不清楚螢幕的人理解螢幕上的內容。\n\n你可前往 SandFly 設定 &gt; [SandFly 快速鍵] 設定快速鍵，使用音量鍵快速開關 SandFly。\n\nSandFly 開啟時，系統會朗讀螢幕上的焦點項目。\n\n向右滑動可移至下一個項目，向左滑動則可移至上一個項目。\n\n現在試試向右滑動，尋找下一個按鈕。</string>
   <string name="welcome_to_talkback_page_idle_announcement">向右滑動即可移到下一個按鈕。</string>
   <string name="explore_by_touch_title">拖曳手指即可探索</string>
   <string name="explore_by_touch_text">你亦可拖曳手指到螢幕對角，將焦點移至某個項目。\n\n現試輕觸螢幕，然後將手指拖曳至螢幕左下角來尋找下一個按鈕。</string>
@@ -968,7 +968,7 @@
   <string name="additional_tips_link_subtext">瞭解如何撥打電話、傳送訊息等</string>
   <string name="practice_gestures_link_text">練習手勢</string>
   <string name="practice_gestures_link_subtext">試試各種手勢並瞭解其用途</string>
-  <string name="choose_tutorial_title">選擇與 SandFly 互動的方式。</string>
+  <string name="choose_tutorial_title">選擇與 SandFly 互動的方式</string>
   <string name="touch_tutorial_button">輕觸教學</string>
   <string name="keyboard_tutorial_button">鍵盤教學</string>
   <string name="using_text_boxes_title">使用文字框</string>
@@ -981,8 +981,8 @@
   <string name="typing_text_with_braille_keyboard_text">你亦可以使用點字鍵盤輸入文字。請在 SandFly 設定頁面尋找此設定。</string>
   <string name="other_ways_to_type_title">其他輸入方式</string>
   <string name="other_ways_to_type_text">使用 SandFly 時，還有其他輸入方式。例如，輕按兩下字母即可輸入。</string>
-  <string name="basic_other_ways_to_type_text">還有其他方法可以輸入 SandFly。例如，您可以使用雙擊來輸入字母。您可以稍後在 SandFly 設定 &gt; 螢幕鍵盤 &gt; 鍵入方法中變更此設定。</string>
-  <string name="basic_other_ways_to_type_text_tts">還有其他方法可以輸入 SandFly。例如，您可以使用雙擊來輸入字母。您可以稍後在 SandFly 設定中更改此設置，然後在螢幕鍵盤和打字方法中進行更改。</string>
+  <string name="basic_other_ways_to_type_text">使用 SandFly 時還有其他輸入方法。例如，您可以輕按兩下輸入字母。您稍後可以在「SandFly 設定」&gt;「屏幕鍵盤」&gt;「打字方法」中變更此設定。</string>
+  <string name="basic_other_ways_to_type_text_tts">使用 SandFly 時還有其他輸入方法。例如，您可以輕按兩下輸入字母。您稍後可以依次前往 SandFly 設定、屏幕鍵盤、打字方法變更此設定。</string>
   <string name="change_typing_preference_text">變更輸入偏好設定</string>
   <string name="moving_cursor_title">移動游標</string>
   <string name="moving_cursor_text">啟用文字框後，你可以向上或向下滑動來控制游標在字母之間移動。\n\n現在試試在下方的文字框中移動游標。</string>
@@ -1068,8 +1068,8 @@
   <string name="checking_notifications_tips">如要查看通知記錄，請用 2 隻手從螢幕頂部向下滑動</string>
   <string name="image_description_playground_title">嘗試取得圖片描述</string>
   <string name="image_description_playground_content_one">將焦點放在圖片上時，開啟 SandFly 選單。接著，選取 [描述圖片]。\n\n下方有一張相片，嘗試取得描述。</string>
-  <string name="image_description_playground_content_two">您可以隨時在SandFly設定&gt;自動描述中變更影像描述設定。</string>
-  <string name="image_description_playground_content_two_tts">您可以隨時在SandFly設置中更改圖像描述設置，然後在自動描述中更改圖像描述設置。</string>
+  <string name="image_description_playground_content_two">您可以隨時在「SandFly 設定」&gt;「自動描述」中變更圖片描述設定。</string>
+  <string name="image_description_playground_content_two_tts">您可以隨時依次前往 SandFly 設定、自動描述，變更圖片描述設定。</string>
   <string name="image_description_sample_image_content_description">樣本圖片；用 3 隻手指輕按即可開啟 SandFly 選單。接著，選取 [描述圖片] 即可聽取描述。</string>
   <string name="practice_gestures_title">練習手勢</string>
   <string name="practice_keyboard_gestures_title">練習使用鍵盤快速鍵</string>
@@ -1253,7 +1253,7 @@
   <string name="shortcut_column_left">上一欄</string>
   <string name="shortcut_column_right">下一欄</string>
   <string name="table_navigation_not_supported">無法瀏覽表格</string>
-  <string name="pref_auto_enter_table_navigation_title">切換到表格中的表格導航</string>
+  <string name="pref_auto_enter_table_navigation_title">在表格中切換到表格瀏覽</string>
   <string name="title_text_formatting_menu">描述文字格式</string>
   <string name="summary_text_formatting_menu">用於粗體、斜體、底線等變更</string>
   <string name="title_text_formatting_inline">朗讀文字格式</string>
@@ -1296,26 +1296,26 @@
   <string name="close_string">關閉</string>
   <string name="talkback_label">SandFly</string>
     <string name="title_pref_tts_engine">文字轉語音引擎</string>
-    <string name="title_pref_system_tts_settings">系統文字轉語音設置</string>
+    <string name="title_pref_system_tts_settings">系統文字轉語音設定</string>
     <string name="title_selector_vertical_navigation">垂直導航</string>
     <string name="summary_selector_vertical_navigation">移至下方或上方的項目，越過該行的其他項目</string>
     <string name="title_selector_switch_tts_engine">語音引擎</string>
     <string name="summary_selector_switch_tts_engine">在已安裝的語音引擎之間切換</string>
-    <string name="title_selector_voice_profile">語音檔案</string>
+    <string name="title_selector_voice_profile">語音設定檔</string>
     <string name="title_pref_voice_profiles">語音設定檔</string>
     <string name="voice_profile_default">SandFly 預設</string>
     <string name="voice_profile_in_use">使用中：<xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="spoken_language_unavailable_with_profile">使用語音設定檔時無法使用語音</string>
+    <string name="spoken_language_unavailable_with_profile">使用語音設定檔時無法變更朗讀語言</string>
     <string name="speech_engine_unavailable_with_profile">使用語音設定檔時語音引擎不可用</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>，使用中</string>
     <string name="no_voice_profiles">沒有語音設定檔</string>
     <string name="shortcut_voice_profiles">選擇語音設定檔</string>
-    <string name="shortcut_previous_voice_profile">以前的语音配置文件</string>
-    <string name="shortcut_next_voice_profile">下一个语音配置文件</string>
-    <string name="title_pref_voice_profile_in_use">正在使用的语音配置文件</string>
+    <string name="shortcut_previous_voice_profile">上一個語音設定檔</string>
+    <string name="shortcut_next_voice_profile">下一個語音設定檔</string>
+    <string name="title_pref_voice_profile_in_use">使用中的語音設定檔</string>
     <string name="title_pref_add_voice_profile">新增語音設定檔</string>
-    <string name="voice_profile_new_name">语音配置文件<xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">语音配置文件已称为 <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_new_name">語音設定檔 <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="voice_profile_name_taken">已有名為 <xliff:g id="name" example="Reading">%1$s</xliff:g> 的語音設定檔</string>
     <string name="title_pref_voice_profile_name">名稱</string>
     <string name="title_pref_voice_profile_language">語言</string>
     <string name="title_pref_voice_profile_voice">語音</string>
@@ -1329,11 +1329,11 @@
     <string name="voice_profile_moved_above">移至<xliff:g id="name" example="Reading">%1$s</xliff:g>上方</string>
     <string name="voice_profile_moved_below">移至<xliff:g id="name" example="Reading">%1$s</xliff:g>以下</string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> 已刪除</string>
-    <string name="title_pref_delete_voice_profile">刪除語音設定文件</string>
+    <string name="title_pref_delete_voice_profile">刪除語音設定檔</string>
     <string name="voice_profile_delete_confirm">刪除<xliff:g id="name" example="Reading">%1$s</xliff:g>？</string>
     <string name="voice_profile_delete">刪除</string>
     <string name="summary_pref_tts_engine_default">系統預設</string>
-    <string name="title_pref_speech_pitch">演講音高</string>
+    <string name="title_pref_speech_pitch">語音音調</string>
     <string name="title_pref_speech_stream">語音音量</string>
     <string name="summary_selector_speech_stream">在輔助功能、媒體、鈴聲和通話音量之間切換</string>
     <string name="speech_stream_accessibility">無障礙功能音量</string>
@@ -1346,20 +1346,20 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">一次发送一个句子的长文本</string>
-    <string name="summary_pref_speak_in_phrases">對於停止速度較慢的語音引擎（例如 Gryphon），因此向遠處滑動會立即停止長文字。許多引擎在單獨發送的句子之間暫停時間較長，因此如果您的引擎停止得很快，請將其關閉。</string>
-    <string name="battery_optimization_notification_title">电池优化可以停止SandFly</string>
-    <string name="battery_optimization_notification_text">在這款手機上，省電模式可以在螢幕關閉後停止SandFly，因此在重新啟動之前會保持沉默。點擊開啟電池優化，選擇所有應用，找到 SandFly 並選擇不優化。</string>
+    <string name="title_pref_speak_in_phrases">長文字逐句傳送</string>
+    <string name="summary_pref_speak_in_phrases">適用於停止較慢的語音引擎（例如 Gryphon），讓滑動手勢可立即停止長文字。許多引擎在分開傳送的句子之間停頓較長，因此如果你的引擎停止得很快，請保持關閉。</string>
+    <string name="battery_optimization_notification_title">電池優化可能會停止 SandFly</string>
+    <string name="battery_optimization_notification_text">在這部手機上，螢幕關閉後省電模式可能會停止 SandFly，令 SandFly 在重新啟動前不會發聲。輕按即可開啟電池優化，選擇「所有應用程式」，找到 SandFly 並選擇「不要優化」。</string>
     <string name="title_pref_mute_speech_while_recording">錄音時保持安靜</string>
-    <string name="summary_pref_mute_speech_while_recording">當應用程式在未連接耳機的情況下進行錄製時，SandFly僅在回答您的手勢、按鍵和打字時說話，並且在通知等情況下保持安靜，因此不會被記錄。</string>
+    <string name="summary_pref_mute_speech_while_recording">當應用程式在未連接耳機的情況下錄音時，SandFly 只會在回應您的手勢、按鍵和輸入時說話，並在通知等情況下保持靜音，以免被錄下。</string>
     <string name="title_pref_switch_languages">自動切換語言</string>
     <string name="title_pref_switch_dialects">自動切換方言</string>
     <string name="category_collapsed">折疊部分</string>
-    <string name="category_expanded">擴充部分</string>
+    <string name="category_expanded">展開部分</string>
     <string name="title_pref_speak_nav_bar_buttons">說出導覽列按鈕</string>
-    <string name="summary_pref_speak_nav_bar_buttons">在導覽列上啟動抬起按鈕後，說出點擊按下的按鈕，例如「返回」或「首頁」。</string>
+    <string name="summary_pref_speak_nav_bar_buttons">在導覽列上使用「放開手指即啟用」時，讀出輕按所按下的按鈕，例如「返回」或「主畫面」。</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
-    <string name="template_battery_level">電量<xliff:g id="battery_level" example="73">%1$s</xliff:g>百分比</string>
+    <string name="template_battery_level">電量為百分之<xliff:g id="battery_level" example="73">%1$s</xliff:g></string>
     <string name="template_battery_level_unknown">電池電量未知</string>
     <string name="value_charger_connected">充電器已連接</string>
     <string name="title_pref_screen_announcements">螢幕開啟和關閉</string>
@@ -1367,48 +1367,48 @@
     <string name="title_screen_announcements_screen_off">當螢幕關閉時</string>
     <string name="title_screen_announcements_screen_on">當螢幕亮起時</string>
     <string name="title_screen_announcements_unlock">當手機解鎖時</string>
-    <string name="title_pref_say_screen_off">說“螢幕關閉”</string>
-    <string name="title_pref_say_device_unlocked">說“設備已解鎖”</string>
+    <string name="title_pref_say_screen_off">讀出「螢幕已關閉」</string>
+    <string name="title_pref_say_device_unlocked">讀出「裝置已解鎖」</string>
     <string name="title_pref_announce_time">時間</string>
-    <string name="title_pref_announce_ringer_mode">振鈴模式</string>
-    <string name="summary_pref_announce_ringer_mode">當鈴聲設定為振動或靜音時說出</string>
+    <string name="title_pref_announce_ringer_mode">鈴聲模式</string>
+    <string name="summary_pref_announce_ringer_mode">鈴聲設為震動或靜音時讀出</string>
     <string name="title_pref_category_feedback">回饋意見</string>
     <string name="title_pref_category_typing_and_braille">打字和點字</string>
     <string name="title_pref_category_apps">應用程式</string>
-    <string name="title_pref_touch_activation">觸摸和激活</string>
+    <string name="title_pref_touch_activation">觸控與啟用</string>
     <string name="title_pref_navigation">導覽方式</string>
     <string name="title_pref_category_more">更多</string>
     <string name="title_pref_reserve_vibration_watch_gestures">預留Vibration Watch的手勢</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">停止 SandFly 處理兩指點擊和雙擊，以便 Samsung Vibration Watch 可以使用它們。在手錶的輔助使用設定中啟用 Vibration Watch。</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly 會停止處理兩指輕按一下和兩下，讓 Samsung Vibration Watch 可以使用這些手勢。請在手錶的無障礙設定中啟用 Vibration Watch。</string>
     <string name="shortcut_reserved_for_vibration_watch">為進階設定中的Vibration Watch保留</string>
-    <string name="title_pref_speakerphone_away_from_ear">揚聲器遠離您的耳朵時</string>
-    <string name="summary_pref_speakerphone_away_from_ear">通話期間，當您將手機從耳邊拿開時，會切換到揚聲器；當您再次拿起手機時，會切換到聽筒。</string>
-    <string name="summary_pref_speakerphone_needs_permission">需要 Android 未授予螢幕閱讀器的權限。要授予它，請使用 adb or Shizuku, then come back to this screen: %1$s 運行此命令</string>
+    <string name="title_pref_speakerphone_away_from_ear">手機離開耳邊時使用揚聲器</string>
+    <string name="summary_pref_speakerphone_away_from_ear">通話期間，將手機從耳邊移開時切換至揚聲器，再次貼近耳邊時切換回聽筒。</string>
+    <string name="summary_pref_speakerphone_needs_permission">需要 Android 不會授予螢幕閱讀器的權限。如要授予，請使用 adb 或 Shizuku 執行此指令，然後返回此畫面：%1$s</string>
     <string name="action_copy_command">複製指令</string>
     <string name="command_copied">命令已複製</string>
-    <string name="title_pref_speech_control">讓其他應用程式說話</string>
-    <string name="summary_pref_speech_control">您允許的應用程式可以用您的 SandFly 聲音說出文字。設備鎖定時不會說話。</string>
-    <string name="title_pref_speech_control_sound">在其他應用程式說話之前播放聲音</string>
+    <string name="title_pref_speech_control">允許其他應用程式朗讀</string>
+    <string name="summary_pref_speech_control">你允許的應用程式可以用 SandFly 的語音讀出文字。裝置鎖定時不會讀出任何內容。</string>
+    <string name="title_pref_speech_control_sound">其他應用程式朗讀前播放提示音</string>
     <string name="speech_control_apps_category">應用程式</string>
-    <string name="speech_control_no_apps">尚未有應用程式要求發言。</string>
+    <string name="speech_control_no_apps">尚未有應用程式要求朗讀。</string>
     <string name="speech_control_ask_title">允許<xliff:g id="app" example="Tasker">%1$s</xliff:g>透過SandFly說話嗎？</string>
     <string name="speech_control_ask_text">它可以用您的 SandFly 聲音說出文字。您可以在進階設定中變更此設定。</string>
     <string name="speech_control_allow">允許</string>
     <string name="speech_control_deny">不允許</string>
-    <string name="permission_speak_label">透過SandFly說話</string>
-    <string name="permission_speak_description">讓應用程式要求用您的 SandFly 聲音說出文字。 SandFly 在應用程式說話之前詢問您。</string>
+    <string name="permission_speak_label">透過 SandFly 朗讀</string>
+    <string name="permission_speak_description">允許應用程式要求使用您的 SandFly 語音讀出文字。應用程式說話前，SandFly 會先詢問您。</string>
     <string name="permission_braille_display_label">要求成為 SandFly 的點字顯示器</string>
-    <string name="permission_braille_display_description">讓應用程式請求成為 SandFly 的點字顯示器。如果您在 SandFly 中允許它，它可以讀取螢幕上的所有內容並控制您的裝置。 SandFly先問你。</string>
-    <string name="title_pref_phonetic_letters_mode">按語音讀出字母</string>
+    <string name="permission_braille_display_description">允許應用程式要求成為 SandFly 的點字顯示器。如果您在 SandFly 中允許，該應用程式便可讀取螢幕上的所有內容並控制您的裝置。SandFly 會先詢問您。</string>
+    <string name="title_pref_phonetic_letters_mode">以拼讀單字讀出字母</string>
     <string name="phonetic_letters_mode_off">關閉</string>
-    <string name="phonetic_letters_mode_after_letter_delay">信後，延遲，如“h，旅館”</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">信完後，毫不拖延，就像“H酒店”</string>
-    <string name="phonetic_letters_mode_instead_of_letter">代替字母，如“酒店”</string>
+    <string name="phonetic_letters_mode_after_letter_delay">字母後，有停頓，例如「h，hotel」</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">字母後，無停頓，例如「h hotel」</string>
+    <string name="phonetic_letters_mode_instead_of_letter">代替字母，例如「hotel」</string>
     <string name="title_pref_emoji_speech">表情符號</string>
-    <string name="emoji_speech_engine">由語音引擎讀取</string>
-    <string name="emoji_speech_names">閱讀者SandFly</string>
+    <string name="emoji_speech_engine">由語音引擎朗讀</string>
+    <string name="emoji_speech_names">由 SandFly 朗讀</string>
     <string name="emoji_speech_none">無</string>
-    <string name="summary_selector_menu_emoji">更改表情符號的讀取方式</string>
+    <string name="summary_selector_menu_emoji">更改表情符號的朗讀方式</string>
     <string name="emoji_speech_state">表情符號：<xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">計算重複的表情符號</string>
     <string name="emoji_repeat_count_off">關閉</string>
@@ -1417,22 +1417,22 @@
     <string name="emoji_repeat_count_4">4個或更多</string>
     <string name="emoji_repeat_count_5">5個或更多</string>
     <string name="emoji_repeat_count_6">6個或更多</string>
-    <string name="pref_table_headers_category_title">表格讀</string>
-    <string name="pref_table_column_headers_title">讀取列標題</string>
+    <string name="pref_table_headers_category_title">表格朗讀</string>
+    <string name="pref_table_column_headers_title">讀出欄標題</string>
     <string name="pref_table_column_headers_entry_after">單元格資料後</string>
     <string name="pref_table_column_headers_entry_before">單元格資料之前</string>
     <string name="pref_table_column_headers_entry_off">不讀</string>
-    <string name="pref_table_speak_row_column_numbers_title">說出行號和列號</string>
-    <string name="pref_table_speak_row_column_numbers_summary">宣告表格儲存格的行號和列號</string>
-    <string name="title_pref_speak_volume_changes">說話音量變化</string>
-    <string name="summary_pref_speak_volume_changes">按音量鍵後說出新音量</string>
+    <string name="pref_table_speak_row_column_numbers_title">讀出列號和欄號</string>
+    <string name="pref_table_speak_row_column_numbers_summary">讀出表格儲存格的列號和欄號</string>
+    <string name="title_pref_speak_volume_changes">讀出音量變化</string>
+    <string name="summary_pref_speak_volume_changes">按下音量鍵後讀出新音量</string>
     <string name="title_pref_speak_notifications">說出通知</string>
-    <string name="summary_pref_speak_notifications">當新通知到達時大聲朗讀。來電始終會被讀取。</string>
-    <string name="title_pref_notification_list">使用SandFly的通知列表</string>
+    <string name="summary_pref_speak_notifications">收到新通知時朗讀。一律朗讀來電。</string>
+    <string name="title_pref_notification_list">使用 SandFly 的通知列表</string>
     <string name="title_pref_notification_parts">通知詳情</string>
-    <string name="title_pref_play_installer">看起來是從 Google Play 安裝的</string>
-    <string name="summary_pref_play_installer">告訴其他應用程式Google Play已安裝SandFly。某些應用程式（例如某些銀行應用程式）會關閉從其他地方安裝的輔助服務。需要 Shizuku，並且僅更改應用程式被告知的SandFly 來自何處。</string>
-    <string name="summary_pref_play_installer_pending">已打開，但 Google Play 尚未記錄為安裝程式。當 Shizuku 可用時，SandFly 設定它。</string>
+    <string name="title_pref_play_installer">顯示為從 Google Play 安裝</string>
+    <string name="summary_pref_play_installer">告訴其他應用程式 SandFly 是從 Google Play 安裝的。某些應用程式 (例如部分銀行應用程式) 會關閉從其他來源安裝的無障礙服務。需要 Shizuku，且只會變更其他應用程式所知的 SandFly 安裝來源。</string>
+    <string name="summary_pref_play_installer_pending">已開啟，但 Google Play 尚未記錄為安裝來源。Shizuku 可用時，SandFly 會進行設定。</string>
     <string name="notification_part_title">標題</string>
     <string name="notification_part_text">文字</string>
     <string name="notification_part_app">應用程式名稱</string>
@@ -1440,29 +1440,29 @@
     <string name="notification_part_playback">播放或暫停</string>
     <string name="notification_list_title">通知</string>
     <string name="notification_list_empty">無通知</string>
-    <string name="notification_list_no_access">通知訪問已關閉</string>
-    <string name="notification_list_grant_access">開啟通知訪問</string>
+    <string name="notification_list_no_access">通知存取權已關閉</string>
+    <string name="notification_list_grant_access">開啟通知存取權</string>
     <string name="notification_list_quick_settings">快速設定</string>
-    <string name="notification_list_dismiss">拒絕</string>
+    <string name="notification_list_dismiss">關閉</string>
     <string name="notification_list_show_all">顯示全部</string>
     <string name="notification_list_show_less">顯示較少</string>
     <string name="notification_list_clear_all">全部清除</string>
     <string name="notification_list_send">傳送</string>
-    <string name="notification_list_playing">演奏</string>
+    <string name="notification_list_playing">播放中</string>
     <string name="notification_list_paused">已暫停</string>
-    <string name="notification_list_play">玩</string>
+    <string name="notification_list_play">播放</string>
     <string name="notification_list_pause">暫停</string>
-    <string name="notification_list_previous">上一頁</string>
-    <string name="notification_list_next">繼續</string>
+    <string name="notification_list_previous">上一首</string>
+    <string name="notification_list_next">下一首</string>
     <plurals name="notification_list_group_count">
-        <item quantity="one">%d通知</item>
-        <item quantity="other">%d 通知</item>
+        <item quantity="one">%d 則通知</item>
+        <item quantity="other">%d 則通知</item>
     </plurals>
-    <string name="title_pref_quick_settings">使用SandFly的快速設定</string>
+    <string name="title_pref_quick_settings">使用 SandFly 的快速設定</string>
     <string name="title_pref_quick_settings_items">快速設定面板</string>
     <string name="quick_settings_title">快速設定</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
-    <string name="quick_settings_bluetooth">Bluetooth</string>
+    <string name="quick_settings_bluetooth">藍牙</string>
     <string name="quick_settings_mobile_data">行動數據</string>
     <string name="quick_settings_hotspot">熱點</string>
     <string name="quick_settings_airplane_mode">飛航模式</string>
@@ -1470,7 +1470,7 @@
     <string name="quick_settings_sound_mode">聲音模式</string>
     <string name="quick_settings_flashlight">手電筒</string>
     <string name="quick_settings_flashlight_brightness">手電筒亮度</string>
-    <string name="quick_settings_location">地點</string>
+    <string name="quick_settings_location">位置</string>
     <string name="quick_settings_auto_rotate">自動旋轉</string>
     <string name="quick_settings_battery_saver">省電</string>
     <string name="quick_settings_dark_theme">深色主題</string>
@@ -1481,32 +1481,32 @@
     <string name="quick_settings_call_volume">通話音量</string>
     <string name="quick_settings_ring_volume">鈴聲音量</string>
     <string name="quick_settings_notification_volume">通知音量</string>
-    <string name="quick_settings_alarm_volume">警報音量</string>
+    <string name="quick_settings_alarm_volume">鬧鐘音量</string>
     <string name="quick_settings_accessibility_volume">無障礙功能音量</string>
     <string name="quick_settings_system_volume">系統音量</string>
-    <string name="quick_settings_data_saver">資料保護程式</string>
+    <string name="quick_settings_data_saver">數據節省模式</string>
     <string name="quick_settings_night_light">夜燈</string>
-    <string name="quick_settings_extra_dim">額外昏暗</string>
+    <string name="quick_settings_extra_dim">超暗</string>
     <string name="quick_settings_color_inversion">顏色反轉</string>
     <string name="quick_settings_color_correction">色彩校正</string>
-    <string name="quick_settings_microphone_access">麥克風訪問</string>
-    <string name="quick_settings_camera_access">相機訪問</string>
+    <string name="quick_settings_microphone_access">麥克風存取權</string>
+    <string name="quick_settings_camera_access">相機存取權</string>
     <string name="quick_settings_screen_timeout">螢幕超時</string>
     <string name="quick_settings_font_size">字體大小</string>
     <string name="quick_settings_media">媒體</string>
     <string name="quick_settings_no_media">沒有媒體</string>
     <string name="quick_settings_media_output">媒體輸出</string>
     <string name="quick_settings_next_alarm">下一個鬧鐘</string>
-    <string name="quick_settings_no_alarm">無警報</string>
+    <string name="quick_settings_no_alarm">沒有鬧鐘</string>
     <string name="quick_settings_settings">設定</string>
     <string name="quick_settings_power_menu">電源選單</string>
     <string name="quick_settings_add_system_tile">新增系統磁貼</string>
-    <string name="quick_settings_no_system_tiles">無需新增系統圖塊</string>
-    <string name="quick_settings_tile_not_found">系统快捷设置中没有%1$s</string>
-    <string name="quick_settings_never">從來沒有</string>
+    <string name="quick_settings_no_system_tiles">沒有可新增的系統圖塊</string>
+    <string name="quick_settings_tile_not_found">系統快速設定中沒有%1$s</string>
+    <string name="quick_settings_never">永不</string>
     <plurals name="quick_settings_seconds">
-        <item quantity="one">%d 第二</item>
-        <item quantity="other">%d秒</item>
+        <item quantity="one">%d 秒</item>
+        <item quantity="other">%d 秒</item>
     </plurals>
     <plurals name="quick_settings_minutes">
         <item quantity="one">%d分鐘</item>
@@ -1525,53 +1525,53 @@
     <string name="quick_settings_edit">編輯</string>
     <string name="quick_settings_system">系統快速設定</string>
     <string name="quick_settings_open_settings">開啟設定</string>
-    <string name="quick_settings_add_control">新增控件</string>
+    <string name="quick_settings_add_control">新增控制項</string>
     <string name="quick_settings_add_tile">新增應用程式磁貼</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
-    <string name="quick_settings_columns">列數</string>
+    <string name="quick_settings_columns">欄數</string>
     <string name="quick_settings_move">移動</string>
     <string name="quick_settings_move_title">移動%1$s</string>
-    <string name="quick_settings_cell">第 %1$d 行，第 %2$d 列</string>
+    <string name="quick_settings_cell">第 %1$d 列，第 %2$d 欄</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
     <plurals name="quick_settings_others_moved">
-        <item quantity="one">%d 其他项目已移动</item>
-        <item quantity="other">%d 其他物品已移动</item>
+        <item quantity="one">另有 %d 個項目已移動</item>
+        <item quantity="other">另有 %d 個項目已移動</item>
     </plurals>
-    <string name="quick_settings_remove">刪除</string>
+    <string name="quick_settings_remove">移除</string>
     <string name="quick_settings_added">已新增%1$s</string>
     <string name="quick_settings_removed">%1$s 已刪除</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly 開啟。將 2 根手指按住螢幕 5 秒鐘即可關閉。若要停止顯示此訊息，請關閉 SandFly 設定 &gt; 進階設定 &gt; 顯示關閉 SandFly 的說明。</string>
     <string name="edge_gestures_title">邊緣</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">開啟或關閉瀏覽模式的另一個捷徑</string>
     <string name="title_pref_vibration_strength">振動強度</string>
-    <string name="title_pref_audio_output_device">音訊輸出設備</string>
+    <string name="title_pref_audio_output_device">音訊輸出裝置</string>
     <string name="dialog_title_audio_output_device">選擇播放SandFly聲音的位置</string>
     <string name="value_audio_output_device_default">系統預設</string>
     <string name="value_audio_output_device_speaker">手機揚聲器</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">連接Bluetooth設備或有線</string>
-    <string name="value_audio_output_device_disconnected">斷開連接</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth 音訊設備</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">已連接的藍牙或有線裝置</string>
+    <string name="value_audio_output_device_disconnected">已中斷連線</string>
+    <string name="value_audio_output_device_bluetooth_default">Bluetooth 音訊裝置</string>
     <string name="value_audio_output_device_wired_headset">有線耳機</string>
     <string name="value_audio_output_device_wired_headphones">有線耳機</string>
     <string name="value_audio_output_device_usb_headset">USB耳機</string>
-    <string name="value_audio_output_device_usb_device">USB 音訊設備</string>
-    <string name="title_pref_speaker_devices">配備這些裝置的手機揚聲器</string>
+    <string name="value_audio_output_device_usb_device">USB 音訊裝置</string>
+    <string name="title_pref_speaker_devices">連接這些裝置時使用手機揚聲器</string>
     <string name="summary_pref_speaker_devices_none">無</string>
     <string name="summary_pref_speaker_devices_no_devices">尚未連接Bluetooth或有線設備</string>
     <string name="pref_reduce_window_delay_summary">動畫關閉時，SandFly 可以更快地讀取新畫面。這會關閉整支手機的動畫。</string>
-    <string name="dialog_message_detailed_ai_description">選定的圖像將發送到 Google 的 Gemini API 進行描述。啟用裝置上 AI 後，它們會在此手機上進行描述，並且不會發送。 \n\n使用免費的 API 金鑰，Google 可以保留其收到的內容，用它來改進其產品，並讓人們對其進行審查。生成式人工智慧是實驗性的，所以它會犯錯。 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> 適用。</string>
-    <string name="dialog_message_detailed_ai_promotion">詳細的圖像描述由生成式人工智慧提供支援。選定的圖像將發送到 Google 的 Gemini API 進行描述。啟用裝置上 AI 後，它們會在此手機上進行描述，並且不會發送。 \n\n使用免費的 API 金鑰，Google 可以保留其收到的內容，用它來改進其產品，並讓人們對其進行審查。生成式人工智慧是實驗性的，所以它會犯錯。您可以隨時在SandFly設定中關閉詳細影像描述。 \n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>適用。</string>
-    <string name="dialog_message_screen_overview_promotion">螢幕截圖被傳送到Google的Gemini API進行描述，這需要幾秒鐘的時間。啟用裝置上 AI 後，它會在此手機上進行描述，並且不會發送。 \n\n使用免費的 API 金鑰，Google 可以保留其收到的內容，用它來改進其產品，並讓人們審查它。生成式人工智慧是實驗性的，所以它會犯錯。 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> 適用。</string>
-    <string name="shortcut_title_open_app">打開應用程式</string>
-    <string name="shortcut_open_app">打開<xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="dialog_message_detailed_ai_description">所選圖片會傳送至 Google 的 Gemini API 以產生描述。開啟「裝置端 AI」後，圖片會改為在這部手機上描述，不會傳送出去。\n\n使用免費 API 金鑰時，Google 可能會保留收到的內容、用於改善其產品，並交由人員審查。生成式 AI 仍處於實驗階段，因此會出錯。適用 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>。</string>
+    <string name="dialog_message_detailed_ai_promotion">詳細圖片描述由生成式 AI 產生。所選圖片會傳送至 Google 的 Gemini API 以產生描述。開啟「裝置端 AI」後，圖片會改為在這部手機上描述，不會傳送出去。\n\n使用免費 API 金鑰時，Google 可能會保留收到的內容、用於改善其產品，並交由人員審查。生成式 AI 仍處於實驗階段，因此會出錯。您可以隨時在 SandFly 設定中關閉詳細圖片描述。\n\n適用 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>。</string>
+    <string name="dialog_message_screen_overview_promotion">螢幕截圖會傳送至 Google 的 Gemini API 以產生描述，需時數秒。開啟「裝置端 AI」後，截圖會改為在這部手機上描述，不會傳送出去。\n\n使用免費 API 金鑰時，Google 可能會保留收到的內容、用於改善其產品，並交由人員審查。生成式 AI 仍處於實驗階段，因此會出錯。適用 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>。</string>
+    <string name="shortcut_title_open_app">開啟應用程式</string>
+    <string name="shortcut_open_app">開啟<xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">捲動到頂部</string>
-    <string name="shortcut_write_reading_control">寫一個讀控制項的字母</string>
+    <string name="shortcut_write_reading_control">書寫朗讀控制項的首字母</string>
     <string name="title_pref_reading_control_letters">手寫字母</string>
     <string name="reading_control_letter_none">無</string>
     <string name="handwriting_prompt">寫一個字母</string>
-    <string name="handwriting_closed">手寫關閉</string>
-    <string name="handwriting_no_match">無讀取控制以<xliff:g id="letter" example="Q">%1$s</xliff:g>開頭</string>
+    <string name="handwriting_closed">手寫已關閉</string>
+    <string name="handwriting_no_match">沒有以 <xliff:g id="letter" example="Q">%1$s</xliff:g> 開頭的朗讀控制項</string>
     <string name="shortcut_write_app_name">寫出應用程式名稱以開啟</string>
     <string name="handwriting_app_prompt">寫出應用程式名稱</string>
     <string name="handwriting_no_app">沒有以 <xliff:g id="letters" example="WHA">%1$s</xliff:g> 開頭的應用程式</string>
@@ -1579,11 +1579,11 @@
     <string name="handwriting_not_recognized">手寫體無法辨識</string>
     <string name="handwriting_downloading">手寫辨識正在下載</string>
     <string name="handwriting_download_title">下載手寫辨識？</string>
-    <string name="handwriting_download_message">這款手機可以辨識手寫內容。語言的模型大約 20 MB，從 Google 下載一次。下載完畢後會顯示一則訊息。</string>
+    <string name="handwriting_download_message">這部手機可以辨識手寫內容。此語言的模型大約 20 MB，會從 Google 下載一次。下載完畢後會顯示訊息。</string>
     <string name="handwriting_download_button">下載</string>
     <string name="handwriting_downloaded">手寫辨識已下載</string>
-    <string name="handwriting_download_failed">無法下載手寫辨識。檢查網路連線。</string>
-    <string name="handwriting_unsupported_language">該語言不支援手寫識別</string>
+    <string name="handwriting_download_failed">無法下載手寫辨識功能。請檢查網絡連線。</string>
+    <string name="handwriting_unsupported_language">此語言不支援手寫辨識</string>
     <string name="title_pref_handwriting_keyboard">手寫鍵盤</string>
     <string name="summary_pref_handwriting_keyboard">在Android的鍵盤設定中開啟SandFly手寫</string>
     <string name="title_pref_handwriting_wait">寫完後等待</string>
@@ -1597,23 +1597,23 @@
     <string name="handwriting_keyboard_name">SandFly 手寫</string>
     <string name="handwriting_space">空格</string>
     <string name="handwriting_new_line">新行</string>
-    <string name="handwriting_tutorial_intro">手寫鍵盤教學。用一根手指在螢幕上的任何位置書寫。當你停下來片刻時，你所寫的內容就會被輸入。要結束教程，請用三個手指向下滑動。</string>
+    <string name="handwriting_tutorial_intro">手寫鍵盤教學課程。用一隻手指在螢幕任何位置書寫。稍作停頓，寫下的內容就會輸入。如要結束教學課程，請用三隻手指向下滑動。</string>
     <string name="handwriting_tutorial_write_letter">寫出字母a。</string>
     <string name="handwriting_tutorial_write_word">現在寫下單字hi（h 後面跟著 i）。</string>
     <string name="handwriting_tutorial_typed">輸入<xliff:g id="text" example="a">%1$s</xliff:g>。</string>
-    <string name="handwriting_tutorial_space">用兩根手指向右滑動以輸入空格。</string>
+    <string name="handwriting_tutorial_space">用兩隻手指向右滑動以輸入空格。</string>
     <string name="handwriting_tutorial_delete">用兩根手指向左滑動可刪除遊標之前的字元。</string>
     <string name="handwriting_tutorial_deleted">已刪除。</string>
     <string name="handwriting_tutorial_next_reading">如果手寫體被識別為其他字元（例如大寫字母），請用兩根手指向上滑動以選擇下一個識別建議。現在就試試看。</string>
-    <string name="handwriting_tutorial_read_back">用兩根手指點擊可閱讀遊標之前的文字。</string>
-    <string name="handwriting_tutorial_new_line">用兩根手指向下滑動可插入新行或執行文字欄位操作，例如發送。</string>
-    <string name="handwriting_tutorial_not_that">那是另一個姿態。</string>
-    <string name="handwriting_tutorial_done">新線。教程完成。三指向下滑動可隱藏鍵盤，三指左右滑動可切換鍵盤。要再次打開教程，請用三個手指點擊。</string>
-    <string name="handwriting_tutorial_finished">教程結束。要再次打開它，請用三個手指點擊。</string>
+    <string name="handwriting_tutorial_read_back">用兩隻手指輕按可朗讀游標之前的文字。</string>
+    <string name="handwriting_tutorial_new_line">用兩隻手指向下滑動即可換行，或執行文字欄位的操作 (例如傳送)。</string>
+    <string name="handwriting_tutorial_not_that">那是其他手勢。</string>
+    <string name="handwriting_tutorial_done">換行。教學課程已完成。用三隻手指向下滑動可隱藏鍵盤，用三隻手指向左或向右滑動可切換鍵盤。如要再次開啟教學課程，請用三隻手指輕按。</string>
+    <string name="handwriting_tutorial_finished">教學課程已結束。如要再次開啟，請用三隻手指輕按。</string>
     <string name="handwriting_no_alternatives">沒有其他建議</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>、<xliff:g id="index" example="2">%2$d</xliff:g> / <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">空文本</string>
-    <string name="handwriting_not_available">此設備不支援手寫識別</string>
+    <string name="handwriting_not_available">此裝置不支援手寫辨識</string>
     <string name="shortcut_scroll_to_bottom">滾動到底部</string>
     <string name="shortcut_refresh">重新整理</string>
     <string name="shortcut_system_notifications">系統通知欄</string>
@@ -1628,40 +1628,40 @@
     <string name="title_pref_shortcut_3finger_4tap">用 3 根手指連按四次</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">用2根手指順時針旋轉</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">用2根手指逆時針旋轉</string>
-    <string name="title_pref_shortcut_2finger_scrub">用2個手指擦洗</string>
-    <string name="title_pref_shortcut_2finger_pinch">用2個手指捏住</string>
+    <string name="title_pref_shortcut_2finger_scrub">雙指來回滑動</string>
+    <string name="title_pref_shortcut_2finger_pinch">雙指捏合</string>
     <string name="title_pref_shortcut_2finger_spread">用2根手指展開</string>
-    <string name="title_pref_shortcut_3finger_pinch">用3個手指捏住</string>
+    <string name="title_pref_shortcut_3finger_pinch">三指捏合</string>
     <string name="title_pref_shortcut_3finger_spread">用3根手指展開</string>
-    <string name="title_pref_shortcut_4finger_pinch">用4個手指捏住</string>
+    <string name="title_pref_shortcut_4finger_pinch">四指捏合</string>
     <string name="title_pref_shortcut_4finger_spread">用4根手指展開</string>
     <string name="title_pref_shortcut_edge_bottom_up">從底部邊緣向上滑動</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">從底部邊緣向上長滑動</string>
     <string name="title_pref_shortcut_edge_top_left_down">從左上角向下滑動</string>
     <string name="title_pref_shortcut_edge_top_right_down">從右上角向下滑動</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">從左上角向下長滑動</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">從右上角向下長掃</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">從右上角向下長滑動</string>
     <string name="title_pref_shortcut_edge_left_top_right">從左邊緣向右滑動，上半部分</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">從左邊緣向右長滑動，上半部分</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">從左邊緣上半部向右長滑動</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">從左邊緣、下半部向右滑動</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">從左邊緣、下半部向右長滑動</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">從左邊緣下半部向右長滑動</string>
     <string name="title_pref_shortcut_edge_right_top_left">從上半部右邊緣向左滑動</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">從上半部右邊緣向左長掃</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">從右邊緣上半部向左長滑動</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">從右邊緣、下半部向左滑動</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">從右邊緣、下半部向左長掃</string>
-    <string name="value_type_confirmation_lift_to_type_except_action_key">按住手指選擇任意鍵，然後抬起。雙擊輸入、完成或發送。</string>
-    <string name="value_type_confirmation_tap_to_type">點擊任何鍵輸入，或按住手指選擇任意鍵，然後抬起</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">從右邊緣下半部向左長滑動</string>
+    <string name="value_type_confirmation_lift_to_type_except_action_key">按住手指選取任何按鍵，然後放開。按兩下可執行 Enter、完成或傳送。</string>
+    <string name="value_type_confirmation_tap_to_type">輕按任何按鍵即可輸入，或按住手指選取按鍵，然後放開</string>
     <string name="title_pref_multi_tap_timeout">單指點擊之間的時間</string>
     <string name="value_multi_tap_timeout_100ms">0.1秒</string>
     <string name="value_multi_tap_timeout_150ms">0.15 秒</string>
     <string name="value_multi_tap_timeout_200ms">0.2 秒</string>
     <string name="value_multi_tap_timeout_250ms">0.25 秒（預設）</string>
-    <string name="title_pref_rotor_step_degrees">轉子每步轉數</string>
+    <string name="title_pref_rotor_step_degrees">轉子每步角度</string>
     <string name="title_pref_edge_first_click_mm">到第一次點擊的距離</string>
     <string name="title_pref_edge_second_click_mm">第一次點擊到第二次點擊的距離</string>
-    <string name="value_distance_5mm">0.5厘米</string>
+    <string name="value_distance_5mm">0.5公分</string>
     <string name="value_distance_10mm">1公分</string>
-    <string name="value_distance_15mm">1.5厘米</string>
+    <string name="value_distance_15mm">1.5公分</string>
     <string name="value_distance_20mm">2公分</string>
     <string name="value_distance_30mm">3公分</string>
     <string name="value_distance_40mm">4公分</string>
@@ -1672,44 +1672,44 @@
     <string name="value_rotor_step_45">45度</string>
     <string name="value_rotor_step_60">60度</string>
     <string name="title_pref_low_latency_audio">低延遲音訊</string>
-    <string name="summary_pref_low_latency_audio">透過手機最快的音訊路徑播放 SandFly 的聲音和語音，以便您更快地聽到它們。如果語音或聲音中斷或聽起來錯誤，請將其關閉。</string>
+    <string name="summary_pref_low_latency_audio">透過手機最快的音訊路徑播放 SandFly 的音效和語音，讓您更早聽到。如果語音或音效斷斷續續或聽起來不正常，請關閉此設定。</string>
     <string name="value_focus_delay_200ms_default">0.2 秒（預設）</string>
     <string name="value_focus_delay_300ms">0.3秒</string>
-    <string name="title_pref_lift_to_activate">提起即可激活</string>
+    <string name="title_pref_lift_to_activate">放開手指即啟用</string>
     <string name="summary_support_change_lift_to_activate">更改抬起手指以啟動項目的位置</string>
-    <string name="value_lift_to_activate_disabled">殘障人士</string>
+    <string name="value_lift_to_activate_disabled">已停用</string>
     <string name="value_lift_to_activate_navigation_bar">僅在導覽列上</string>
     <string name="value_lift_to_activate_entire_screen">全螢幕</string>
-    <string name="template_lift_to_activate_changed">抬起激活：<xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">環繞</string>
-    <string name="summary_pref_wrap_around">滑過最後一個項目將轉到第一個項目，滑過第一個項目將轉到最後一個項目。關閉時，最後會播放聲音。</string>
-    <string name="title_pref_fix_stuck_touch_exploration">修復觸摸探索卡住的問題</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">沒有DUMP的許可，SandFly只能說觸摸探索可能會卡住。要讓它修復它，請運行： adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="template_lift_to_activate_changed">抬起手指啟動：<xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="title_pref_wrap_around">循環瀏覽</string>
+    <string name="summary_pref_wrap_around">滑過最後一個項目會移到第一個項目，滑過第一個項目會移到最後一個項目。關閉時，改為在盡頭播放音效。</string>
+    <string name="title_pref_fix_stuck_touch_exploration">修正觸控探索停止回應的問題</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">如果沒有 DUMP 權限，SandFly 只能提示輕觸探索可能已停止回應。如要讓 SandFly 修正問題，請執行：adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">修復觸摸探索</string>
     <string name="stuck_touch_exploration_fixed">觸摸探索已修復</string>
-    <string name="stuck_touch_exploration_not_fixed">觸摸探索仍然陷入困境。重新啟動手機即可修復。</string>
-    <string name="stuck_touch_exploration_restart">觸摸探索可能會卡住。重新啟動手機即可修復。</string>
-    <string name="stuck_touch_exploration_grant_dump">觸摸探索可能會卡住。重新啟動手機即可修復，或透過ADB授予SandFlyDUMP權限即可修復。</string>
+    <string name="stuck_touch_exploration_not_fixed">輕觸探索仍然沒有回應。請重新啟動手機以修正。</string>
+    <string name="stuck_touch_exploration_restart">輕觸探索可能已停止回應。請重新啟動手機以修正。</string>
+    <string name="stuck_touch_exploration_grant_dump">輕觸探索可能已停止回應。請重新啟動手機以修正，或透過 ADB 向 SandFly 授予 DUMP 權限，讓 SandFly 修正問題。</string>
     <string name="title_pref_window_names">視窗名稱</string>
     <string name="window_names_always">總是</string>
-    <string name="window_names_until_first_item">總是被第一個項目切斷</string>
+    <string name="window_names_until_first_item">一律讀出，第一個項目出現時停止</string>
     <string name="window_names_window_opens">僅當視窗開啟時</string>
-    <string name="window_names_never">從來沒有</string>
-    <string name="title_pref_selector_links_controls_web_only">僅在網頁內容中的連結和控件</string>
-    <string name="title_pref_selector_auto_switch">自動改變閱讀控制</string>
-    <string name="title_pref_touch_stops_speech">觸碰螢幕時停止講話</string>
-    <string name="title_pref_focus_new_windows">將對焦移至新視窗</string>
+    <string name="window_names_never">永不</string>
+    <string name="title_pref_selector_links_controls_web_only">連結和控制項僅限網頁內容</string>
+    <string name="title_pref_selector_auto_switch">自動切換朗讀控制項</string>
+    <string name="title_pref_touch_stops_speech">觸碰螢幕時停止朗讀</string>
+    <string name="title_pref_focus_new_windows">將焦點移至新視窗</string>
     <string name="title_pref_volume_keys_adjust_sliders">音量鍵調整滑桿</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">當滑桿獲得焦點時，音量增加和減少會更改其值而不是音量</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">滑桿獲得焦點時，調高和調低音量鍵會變更滑桿的值，而不是音量</string>
     <string name="title_pref_volume_keys_move_cursor">音量鍵移動遊標</string>
-    <string name="summary_pref_volume_keys_move_cursor">當文字欄位獲得焦點時，調高音量會將遊標向後移動一個字符，調低音量會將其向前移動</string>
-    <string name="summary_support_wrap_around">開啟或關閉從最後一個項目到第一個項目的換行</string>
-    <string name="wrap_around_on">環繞在</string>
-    <string name="wrap_around_off">環繞關閉</string>
-    <string name="title_selector_tablet_held_up_faces_away">平板電腦將臉轉向一邊</string>
+    <string name="summary_pref_volume_keys_move_cursor">文字欄位獲得焦點時，調高音量會將游標向後移一個字元，調低音量會將游標向前移一個字元</string>
+    <string name="summary_support_wrap_around">開啟或關閉從最後一個項目移到第一個項目</string>
+    <string name="wrap_around_on">循環瀏覽：開啟</string>
+    <string name="wrap_around_off">循環瀏覽：關閉</string>
+    <string name="title_selector_tablet_held_up_faces_away">平板電腦舉起時螢幕朝外</string>
     <string name="summary_support_tablet_held_up_faces_away">適用於平板電腦或展開手機上的點字鍵盤</string>
-    <string name="tablet_held_up_faces_away_on">平板電腦將面朝外</string>
-    <string name="tablet_held_up_faces_away_off">平板電腦正面朝外舉起</string>
+    <string name="tablet_held_up_faces_away_on">平板電腦舉起時螢幕朝外：開啟</string>
+    <string name="tablet_held_up_faces_away_off">平板電腦舉起時螢幕朝外：關閉</string>
     <string name="title_keyboard_echo_on_screen">螢幕鍵盤迴聲</string>
     <string name="title_keyboard_echo_physical">實體鍵盤迴聲</string>
     <string name="title_keyboard_echo_braille_keyboard">點字鍵盤迴聲</string>
@@ -1718,9 +1718,9 @@
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">打字時打斷語音</string>
     <string name="pref_interrupt_typing_entry_always">總是</string>
-    <string name="pref_interrupt_typing_entry_edit_fields">在編輯字段中</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">鍵盤迴聲</string>
-    <string name="title_pref_interrupt_enter">輸入時中斷語音</string>
+    <string name="pref_interrupt_typing_entry_edit_fields">在編輯欄位中</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">鍵盤回應時</string>
+    <string name="title_pref_interrupt_enter">按 Enter 時中斷語音</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">名稱、狀態、類型</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">類型、狀態、名稱</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">狀態、類型、名稱</string>
@@ -1728,16 +1728,16 @@
     <string name="item_detail_type">類型</string>
     <string name="item_detail_state">狀態</string>
     <string name="action_move_up">向上移動</string>
-    <string name="action_move_down">下移</string>
-    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> 的位置 <xliff:g id="position" example="2">%1$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up">撿到了<xliff:g id="detail" example="Name">%1$s</xliff:g>。 <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">掉落<xliff:g id="detail" example="Name">%1$s</xliff:g>。 <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly 表示此訂單中商品的詳細資訊。要更改它，請觸摸並按住某個細節，然後向上或向下拖曳它。啟用 SandFly 後，雙擊並按住，然後拖曳。您也可以使用“上移”和“下移”操作。</string>
-    <string name="title_pref_speak_items_before_scroll">在項目滾動到視圖中之前先說出它們</string>
-    <string name="gemini_error_api_key">Gemini 不接受 API 金鑰。檢查自動描述設定中的鍵。</string>
-    <string name="gemini_error_quota">您的 Gemini API 金鑰已達到使用限制。稍後再試。</string>
-    <string name="gemini_error_busy">Gemini現在很忙。稍後再試一次。</string>
-    <string name="gemini_error_timeout">Gemini 花了太長時間才回答。再試一次。</string>
+    <string name="action_move_down">向下移動</string>
+    <string name="template_list_position">第 <xliff:g id="position" example="2">%1$d</xliff:g> 項，共 <xliff:g id="count" example="3">%2$d</xliff:g> 項</string>
+    <string name="template_item_details_order_picked_up">已拿起<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">已放下<xliff:g id="detail" example="Name">%1$s</xliff:g>。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">SandFly 會按此順序讀出項目的詳細資料。如要變更順序，請按住某項詳細資料，然後向上或向下拖曳。SandFly 開啟時，請輕按兩下並按住，然後拖曳。您亦可使用「向上移動」和「向下移動」操作。</string>
+    <string name="title_pref_speak_items_before_scroll">在項目捲動到畫面中之前先讀出</string>
+    <string name="gemini_error_api_key">Gemini 不接受此 API 金鑰。請在自動描述設定中檢查金鑰。</string>
+    <string name="gemini_error_quota">您的 Gemini API 金鑰已達到使用限制。請稍後再試。</string>
+    <string name="gemini_error_busy">Gemini 目前繁忙，請稍後再試。</string>
+    <string name="gemini_error_timeout">Gemini 回應時間過長。請再試一次。</string>
     <string name="gemini_error_with_code">Gemini無法回答，錯誤<xliff:g id="http_status" example="400">%1$d</xliff:g>。</string>
     <string name="gemini_error_with_details">Gemini無法回答，錯誤<xliff:g id="http_status" example="400">%1$d</xliff:g>：<xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>。無法獲得更詳細的圖片描述：<xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
@@ -1745,9 +1745,9 @@
     <string name="image_qna_stop_listening">停止聆聽</string>
     <string name="image_qna_type_question">輸入問題</string>
     <string name="shortcut_dictate">口述</string>
-    <string name="title_pref_ai_dictation">AI 正確聽寫</string>
-    <string name="dictation_not_corrected">未糾正。按已識別的方式鍵入。</string>
-    <string name="dictation_nothing_recognized">沒有任何識別</string>
+    <string name="title_pref_ai_dictation">使用 AI 修正語音輸入</string>
+    <string name="dictation_not_corrected">未修正。已按辨識結果輸入。</string>
+    <string name="dictation_nothing_recognized">未辨識到任何內容</string>
     <string name="dictation_unavailable">語音辨識不可用</string>
     <string name="dictation_field_gone">文字欄位已關閉。沒有輸入任何內容。</string>
     <string name="dictation_transcription_failed">無法將語音轉為文字。沒有輸入任何內容。</string>
@@ -1768,9 +1768,9 @@
     <string name="dictation_ai_same">與自動描述相同</string>
     <string name="title_pref_browse_mode_per_app">記住每個應用程式中的瀏覽模式</string>
     <string name="title_pref_export_settings">匯出設定</string>
-    <string name="title_pref_import_settings">導入設定</string>
-    <string name="settings_export_done">導出設定。不包括 API 金鑰</string>
+    <string name="title_pref_import_settings">匯入設定</string>
+    <string name="settings_export_done">已匯出設定。不包括 API 金鑰</string>
     <string name="settings_export_failed">無法匯出設定</string>
-    <string name="settings_import_done">導入的設定</string>
-    <string name="settings_import_failed">該文件不是SandFly或Backtalk設定文件，或無法讀取</string>
+    <string name="settings_import_done">已匯入設定</string>
+    <string name="settings_import_failed">該檔案不是 SandFly 或 Backtalk 設定檔，或無法讀取</string>
 </resources>

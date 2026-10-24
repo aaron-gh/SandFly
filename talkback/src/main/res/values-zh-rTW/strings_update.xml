@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_check_for_updates">檢查更新</string>
-    <string name="summary_pref_check_for_updates_version">版本<xliff:g id="version" example="0.1.0">%1$s</xliff:g>，建造<xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="summary_pref_check_for_updates_version">版本 <xliff:g id="version" example="0.1.0">%1$s</xliff:g>，組建 <xliff:g id="build" example="96">%2$d</xliff:g></string>
     <string name="title_pref_auto_update_check">自動檢查更新</string>
-    <string name="summary_pref_auto_update_check">每天檢查一次，並在新版本可用時顯示通知</string>
+    <string name="summary_pref_auto_update_check">每天檢查一次，並在有新版本時顯示通知</string>
     <string name="title_pref_dev_builds">開發建置</string>
-    <string name="update_notification_title">SandFly 有更新</string>
-    <string name="update_notification_text">構建<xliff:g id="build" example="97">%1$d</xliff:g>。點擊即可安裝。</string>
-    <string name="update_dialog_title">SandFly 建造 <xliff:g id="build" example="97">%1$d</xliff:g> 可用</string>
+    <string name="update_notification_title">有可用的 SandFly 更新</string>
+    <string name="update_notification_text">組建 <xliff:g id="build" example="97">%1$d</xliff:g>。輕觸即可安裝。</string>
+    <string name="update_dialog_title">SandFly 組建 <xliff:g id="build" example="97">%1$d</xliff:g> 已推出</string>
     <string name="update_dialog_install">安裝</string>
-    <string name="update_checking">檢查更新</string>
-    <string name="update_up_to_date">SandFly 已更新</string>
+    <string name="update_checking">正在檢查更新</string>
+    <string name="update_up_to_date">SandFly 已是最新版本</string>
     <string name="update_check_failed">無法檢查更新</string>
     <string name="update_downloading">正在下載更新</string>
     <string name="update_already_downloading">更新已經在下載</string>
     <string name="update_ready_title">SandFly 更新已下載</string>
-    <string name="update_ready_text">點擊即可安裝。</string>
+    <string name="update_ready_text">輕觸即可安裝。</string>
     <string name="update_install_failed">無法安裝更新</string>
     <string name="update_install_canceled">更新已取消</string>
-    <string name="update_allow_install">允許 SandFly 安裝應用程序，然後再次嘗試更新</string>
+    <string name="update_allow_install">允許 SandFly 安裝應用程式，然後再試一次更新</string>
 </resources>

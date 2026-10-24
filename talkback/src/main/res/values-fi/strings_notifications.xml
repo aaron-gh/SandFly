@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Vahva</string>
-    <string name="notification_shake_2">Keskitasoinen</string>
-    <string name="notification_shake_1">Hellävarainen</string>
-    <string name="notification_media_skip">Älä lue ääneen</string>
+    <string name="notification_shake_2">Keskitaso</string>
+    <string name="notification_shake_1">Kevyt</string>
+    <string name="notification_media_skip">Älä lue</string>
     <string name="notification_media_pause">Keskeytä media lukemisen ajaksi</string>
-    <string name="notification_media_read">Lue ääneen</string>
+    <string name="notification_media_read">Lue</string>
     <string name="notification_headphones_only_without">Vain ilman kuulokkeita</string>
     <string name="notification_headphones_only_with">Vain kuulokkeilla</string>
     <string name="notification_headphones_always">Lue ääneen kuulokkeilla tai ilman</string>
-    <string name="notification_queue_skip">Älä lue uutta ilmoitusta ääneen</string>
-    <string name="notification_queue_interrupt">Keskeytä ääneen luettava ilmoitus</string>
-    <string name="notification_queue_queue">Lue ääneen nykyisen ilmoituksen jälkeen</string>
+    <string name="notification_queue_skip">Älä lue uutta</string>
+    <string name="notification_queue_interrupt">Keskeytä</string>
+    <string name="notification_queue_queue">Lue sen jälkeen</string>
     <string name="notification_url_omit">Jätä pois</string>
     <string name="notification_url_replace">Sano alla oleva teksti</string>
     <string name="notification_url_domain">Lue vain sivusto</string>
@@ -20,10 +20,10 @@
     <string name="notification_reading_title">Ilmoitusten lukeminen ääneen</string>
     <string name="notification_apps_title">Sovellukset</string>
     <string name="notification_words_title">Sanat ja korvaukset</string>
-    <string name="notification_kinds_title">Erilaisia ilmoituksia</string>
+    <string name="notification_kinds_title">Ilmoitustyypit</string>
     <string name="notification_when_title">Milloin lukea</string>
     <string name="notification_rules_title">Säännöt</string>
-    <string name="notification_repeats_title">Toistaa</string>
+    <string name="notification_repeats_title">Toistot</string>
     <string name="notification_stop_title">Lopeta lukeminen</string>
     <string name="notification_schedules_title">Yhteenveto ja aika</string>
     <string name="notification_history_title">Ilmoitushistoria</string>
@@ -33,31 +33,31 @@
     <string name="notification_category_said">Mitä sanotaan</string>
     <string name="notification_format_title">Puhemuoto</string>
     <string name="notification_format_message">Paikkamerkit: {app}, {title}, {text}, {content} (koko teksti), {bigtext}, {subtext}, {ticker}, {category} ja {time}.</string>
-    <string name="notification_private_format_title">Yksityiset ilmoitukset sanovat</string>
-    <string name="notification_private_format_message">Sanotaan yksityisen ilmoituksen sisällön sijasta. Paikkamerkit: {app}, {category} ja {time}.</string>
+    <string name="notification_private_format_title">Yksityisten ilmoitusten lukeminen</string>
+    <string name="notification_private_format_message">Sanotaan yksityisen ilmoituksen sisällön sijaan. Paikkamerkit: {app}, {category} ja {time}.</string>
     <string name="notification_category_voice">Ääni</string>
     <string name="notification_voice_title">Ääni</string>
-    <string name="notification_voice_sandfly">SandFly ääni</string>
+    <string name="notification_voice_sandfly">SandFlyn ääni</string>
     <string name="notification_detect_language_title">Tunnista kieli</string>
-    <string name="notification_detect_language_summary">Sano jokainen ilmoitus kielellä, jolla ne on kirjoitettu. Kielen vaihto on vaihdettava automaattisesti tekstistä puheeksi -asetuksissa.</string>
+    <string name="notification_detect_language_summary">Lukee jokaisen ilmoituksen sillä kielellä, jolla se on kirjoitettu. Vaatii asetuksen ”Vaihda kieltä automaattisesti” kohdassa Tekstistä puheeksi.</string>
     <string name="notification_sound_before_title">Ääni ennen ilmoituksia</string>
     <string name="notification_category_text">Teksti</string>
     <string name="notification_remove_emoji_title">Jätä emoji pois</string>
     <string name="notification_lowercase_title">Lue isot kirjaimet sanoina</string>
-    <string name="notification_lowercase_summary">Jotkut puhekoneet kirjoittavat sanat isoin kirjaimin kirjain kirjaimelta</string>
-    <string name="notification_separate_digits_title">Lue pitkiä numeroita numero numerolta</string>
+    <string name="notification_lowercase_summary">Jotkin puhemoottorit tavaavat isoilla kirjaimilla kirjoitetut sanat kirjain kerrallaan</string>
+    <string name="notification_separate_digits_title">Lue pitkät luvut numero kerrallaan</string>
     <string name="notification_separate_digits_summary">Kuten koodit ja puhelinnumerot</string>
-    <string name="notification_min_digits_title">Vähimmäisnumerot pitkässä numerossa</string>
+    <string name="notification_min_digits_title">Pitkän luvun vähimmäisnumeromäärä</string>
     <string name="notification_urls_title">Linkit</string>
-    <string name="notification_url_text_title">Sanoi linkin tilalla</string>
+    <string name="notification_url_text_title">Linkin tilalla sanottava teksti</string>
     <string name="notification_skip_empty_title">Ohita ilmoitukset ilman tekstiä</string>
     <string name="notification_category_length">Pituus</string>
     <string name="notification_max_words_title">Sanojen enimmäismäärä</string>
     <string name="notification_max_sentences_title">Virkkeiden enimmäismäärä</string>
     <string name="notification_max_characters_title">Tekstin merkkien enimmäismäärä</string>
-    <string name="notification_max_seconds_title">Lopeta lukeminen sen jälkeen</string>
+    <string name="notification_max_seconds_title">Lopeta lukeminen, kun kulunut</string>
     <string name="notification_category_timing">Ajoitus</string>
-    <string name="notification_delay_title">Odota ennen kuin luet</string>
+    <string name="notification_delay_title">Odotus ennen lukemista</string>
     <string name="notification_queue_title">Kun toinen ilmoitus luetaan</string>
     <string name="notification_repeat_minutes_title">Lue uudelleen, kunnes näyttö syttyy</string>
     <string name="notification_skip_media_title">Ohita mediasoittimet</string>
@@ -76,44 +76,44 @@
     <string name="notification_headphones_title">Kuulokkeet</string>
     <string name="notification_media_title">Median toiston aikana</string>
     <string name="notification_dnd_title">Älä häiritse</string>
-    <string name="notification_dnd_none">Älä lue ilmoituksia ääneen</string>
+    <string name="notification_dnd_none">Älä lue mitään</string>
     <string name="notification_dnd_allowed">Lue Älä häiritse -tilan sallimia ilmoituksia</string>
     <string name="notification_dnd_all">Lue kaikki</string>
     <string name="notification_touch_title">Kun näyttöä kosketetaan</string>
     <string name="notification_touch_read">Lue heti</string>
     <string name="notification_touch_after">Lue, kun kosketus päättyy</string>
-    <string name="notification_touch_skip">Älä lue ääneen</string>
+    <string name="notification_touch_skip">Älä lue</string>
     <string name="notification_during_calls_title">Puheluiden aikana</string>
     <string name="notification_honour_silent_title">Ei äänettömässä tilassa</string>
     <string name="notification_honour_vibrate_title">Ei värinätilassa</string>
     <string name="notification_skip_in_car_title">Ei autotilassa</string>
     <string name="notification_skip_in_car_summary">Kuten Android Auto, joka lukee ne itse</string>
-    <string name="notification_category_quiet_hours">Hiljaisia tunteja</string>
-    <string name="notification_quiet_hours_title">Hiljaisia tunteja</string>
-    <string name="notification_quiet_start_title">Aloita</string>
+    <string name="notification_category_quiet_hours">Hiljaiset tunnit</string>
+    <string name="notification_quiet_hours_title">Hiljaiset tunnit</string>
+    <string name="notification_quiet_start_title">Alku</string>
     <string name="notification_quiet_end_title">Loppu</string>
-    <string name="notification_repeat_seconds_title">Ohita sama ilmoitus</string>
-    <string name="notification_numbers_alike_title">Käsittele eri numeroita identtisinä</string>
+    <string name="notification_repeat_seconds_title">Saman ilmoituksen ohitusaika</string>
+    <string name="notification_numbers_alike_title">Numerot lasketaan samoiksi</string>
     <string name="notification_numbers_alike_summary">Kuten latausprosentti</string>
     <string name="notification_cooldown_title">Sovelluksen ilmoitusten välinen aika</string>
-    <string name="notification_skip_prefix_title">Jätä pois toistuva tekstin etuliite</string>
+    <string name="notification_skip_prefix_title">Jätä toistuva alku pois</string>
     <string name="notification_skip_prefix_summary">Kuten chatissa olevan ryhmän nimi</string>
-    <string name="notification_prefix_memory_title">Kuinka kauan tekstin etuliite muistaa</string>
-    <string name="notification_access_summary">Tarvitaan hylätyn ilmoituksen lukemisen ja yhteenvetojen lopettamiseksi</string>
+    <string name="notification_prefix_memory_title">Alun muistamisaika</string>
+    <string name="notification_access_summary">Tarvitaan, jotta hylätyn ilmoituksen lukeminen loppuu, ja yhteenvetoihin</string>
     <string name="notification_shake_title">Ravista lopettaaksesi</string>
     <string name="notification_shake_strength_title">Ravistelun voimakkuus</string>
-    <string name="notification_wave_title">Heilauta kättä lopettaaksesi lukemisen</string>
+    <string name="notification_wave_title">Heilauta lopettaaksesi</string>
     <string name="notification_wave_summary">Käden siirtäminen läheisyysanturin yli</string>
     <string name="notification_pocket_title">Taskutila</string>
-    <string name="notification_pocket_summary">Lukemisen alkaessa peitetty anturi, kuten taskussa, ei estä sitä</string>
+    <string name="notification_pocket_summary">Jos anturi on jo peitossa lukemisen alkaessa, esimerkiksi taskussa, lukeminen ei pysähdy</string>
     <string name="notification_volume_keys_title">Paina molempia äänenvoimakkuusnäppäimiä</string>
-    <string name="notification_dismiss_title">Lopeta lukeminen, kun ilmoitus hylätään</string>
+    <string name="notification_dismiss_title">Lopeta, kun ohitetaan</string>
     <string name="notification_watch_dismiss_title">Myös silloin, kun ilmoitus hylätään älykellossa</string>
-    <string name="notification_app_cancel_title">Lopeta lukeminen, kun sovellus poistaa ilmoituksen</string>
+    <string name="notification_app_cancel_title">Lopeta, kun sovellus poistaa sen</string>
     <string name="notification_category_summary">Yhteenveto</string>
     <string name="notification_summary_now_title">Lue ilmoitukset nyt</string>
     <string name="notification_summary_daily_title">Lue ilmoitukset joka päivä</string>
-    <string name="notification_summary_time_title">Aika</string>
+    <string name="notification_summary_time_title">Kellonaika</string>
     <string name="notification_summary_newest_first_title">Uusin ensin</string>
     <string name="notification_summary_name_title">Sinun nimesi</string>
     <string name="notification_summary_gap_title">Tauko ilmoitusten välillä</string>
@@ -125,33 +125,33 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Aika-ilmoitukset</string>
-    <string name="notification_clock_interval_title">Sano aika joka kerta</string>
+    <string name="notification_clock_interval_title">Ajan ilmoitusväli</string>
     <string name="notification_clock_format_title">Ajan esitystapa</string>
     <string name="notification_clock_format_message">Paikkamerkit: {time}, {date} ja {battery} (akun prosenttiosuus).</string>
-    <string name="notification_clock_format_default">Se on {time}</string>
+    <string name="notification_clock_format_default">Kello on {time}</string>
     <string name="notification_clock_exact_title">Tarkat ajat</string>
-    <string name="notification_clock_exact_summary">Tarvitsee hälytyksiä ja muistutuksia. Muuten aika voidaan sanoa jopa minuutin myöhässä.</string>
+    <string name="notification_clock_exact_summary">Vaatii luvan Herätykset ja muistutukset. Muuten kellonaika voidaan sanoa jopa minuutin myöhässä.</string>
     <string name="notification_other_apps_title">Muut sovellukset</string>
     <string name="notification_apps_category">Sovellukset</string>
     <string name="notification_apps_loading">Ladataan sovelluksia</string>
     <string name="notification_app_mode_title">Ilmoitukset</string>
     <string name="notification_app_mode_default">Kuten muutkin sovellukset</string>
-    <string name="notification_app_mode_read">Lue ääneen</string>
+    <string name="notification_app_mode_read">Lue</string>
     <string name="notification_app_mode_private">Vain sovelluksen nimi</string>
     <string name="notification_app_mode_priority">Lue ensin</string>
-    <string name="notification_app_mode_ignore">Älä lue ääneen</string>
+    <string name="notification_app_mode_ignore">Älä lue</string>
     <string name="notification_app_name_title">Puhuttu nimi</string>
-    <string name="notification_app_said_as">sanoi <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">sanotaan <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Nollaa</string>
-    <string name="notification_required_title">Lue vain ilmoitukset</string>
-    <string name="notification_blocked_title">Älä lue ilmoituksia</string>
-    <string name="notification_private_title">Lue vain sovelluksen nimi</string>
-    <string name="notification_replacements_title">Sano toisin</string>
+    <string name="notification_required_title">Lue vain ilmoitukset, joissa on</string>
+    <string name="notification_blocked_title">Älä lue ilmoituksia, joissa on</string>
+    <string name="notification_private_title">Lue vain sovelluksen nimi ilmoituksista, joissa on</string>
+    <string name="notification_replacements_title">Toisenlainen ääntäminen</string>
     <string name="notification_add_word">Lisää sana</string>
     <string name="notification_add_replacement">Lisää korvaava</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kuin <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g>: <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Teksti</string>
-    <string name="notification_replace_with">Sano kuin</string>
+    <string name="notification_replace_with">Lausu muodossa</string>
     <string name="notification_whole_words">Vain kokonaisia sanoja</string>
     <string name="notification_regex">Säännöllinen lauseke</string>
     <string name="notification_enter_text">Kirjoita teksti</string>
@@ -163,39 +163,39 @@
     <string name="notification_history_category">Ilmoitukset</string>
     <string name="notification_history_empty">Ei ilmoituksia</string>
     <string name="notification_history_ignore_app">Älä lue <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Lue vain nimi <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Lue vain sovelluksen <xliff:g id="app" example="Chat">%1$s</xliff:g> nimi</string>
     <string name="notification_history_priority_app">Lue <xliff:g id="app" example="Chat">%1$s</xliff:g> ensin</string>
     <string name="notification_history_block_similar">Älä lue tällaisia ilmoituksia</string>
     <string name="notification_history_copy">Kopioi</string>
     <string name="notification_saved">Tallennettu</string>
     <string name="notification_copied">Kopioitu</string>
-    <string name="notification_outcome_read">Lukeminen ääneen onnistui</string>
+    <string name="notification_outcome_read">Luettu</string>
     <string name="notification_outcome_stopped">Pysähtyi lukemisen aikana</string>
-    <string name="notification_outcome_speech_off">Ei luettu: ilmoituspuhe on pois päältä</string>
+    <string name="notification_outcome_speech_off">Ei luettu: ilmoitusten lukeminen on pois päältä</string>
     <string name="notification_outcome_dnd">Ei luettu: Älä häiritse</string>
     <string name="notification_outcome_touching">Ei luettu: näyttöä kosketettiin</string>
     <string name="notification_outcome_app">Ei luettu: sovellus</string>
-    <string name="notification_outcome_ongoing">Ei luettu: käynnissä</string>
-    <string name="notification_outcome_foreground">Ei luettu: käynnissä sovellus</string>
-    <string name="notification_outcome_low_priority">Ei luettu: alhainen prioriteetti</string>
+    <string name="notification_outcome_ongoing">Ei luettu: jatkuva ilmoitus</string>
+    <string name="notification_outcome_foreground">Ei luettu: sovellus on auki</string>
+    <string name="notification_outcome_low_priority">Ei luettu: matala prioriteetti</string>
     <string name="notification_outcome_system">Ei luettu: järjestelmä</string>
     <string name="notification_outcome_media">Ei luettu: mediasoitin</string>
     <string name="notification_outcome_group_summary">Ei luettu: ryhmän yhteenveto</string>
-    <string name="notification_outcome_progress">Ei luettu: edistystä</string>
-    <string name="notification_outcome_required">Ei luettu: pakolliset sanat puuttuvat</string>
+    <string name="notification_outcome_progress">Ei luettu: edistyminen</string>
+    <string name="notification_outcome_required">Ei luettu: pakollisia sanoja puuttuu</string>
     <string name="notification_outcome_blocked">Ei luettu: estetty sana</string>
     <string name="notification_outcome_empty">Ei luettu: ei tekstiä</string>
-    <string name="notification_outcome_repeat">Ei luettu: toista</string>
-    <string name="notification_outcome_cooldown">Ei luettu ääneen: toinen tämän sovelluksen ilmoitus luettiin liian äskettäin</string>
+    <string name="notification_outcome_repeat">Ei luettu: toisto</string>
+    <string name="notification_outcome_cooldown">Ei luettu: sovellus luettiin liian äskettäin</string>
     <string name="notification_outcome_quiet_hours">Ei luettu: hiljaiset tunnit</string>
     <string name="notification_outcome_screen_on">Ei luettu: näyttö päällä</string>
-    <string name="notification_outcome_screen_off">Ei luettu: näyttö pois päältä</string>
+    <string name="notification_outcome_screen_off">Ei luettu: näyttö pois</string>
     <string name="notification_outcome_locked">Ei luettu: lukittu</string>
     <string name="notification_outcome_headphones">Ei luettu: kuulokkeet kytketty</string>
     <string name="notification_outcome_no_headphones">Ei luettu: ei kuulokkeita</string>
-    <string name="notification_outcome_silent">Ei luettu: hiljainen tila</string>
+    <string name="notification_outcome_silent">Ei luettu: äänetön tila</string>
     <string name="notification_outcome_vibrate">Ei luettu: värinätila</string>
-    <string name="notification_outcome_media_playing">Ei luettu: median toisto</string>
+    <string name="notification_outcome_media_playing">Ei luettu: mediaa toistetaan</string>
     <string name="notification_outcome_car">Ei luettu: autotila</string>
     <string name="notification_outcome_rule">Ei luettu: sääntö</string>
     <string name="notification_outcome_busy">Ei luettu: toinen ilmoitus luettiin</string>
@@ -206,11 +206,11 @@
     <string name="notification_rules_empty">Ei sääntöjä</string>
     <string name="notification_rule_name">Nimi</string>
     <string name="notification_rule_untitled">Sääntö</string>
-    <string name="notification_rule_enabled">Käynnistetty</string>
+    <string name="notification_rule_enabled">Päällä</string>
     <string name="notification_rule_match">Ehdot</string>
     <string name="notification_rule_match_all">Kaikki ehdot on täytettävä</string>
     <string name="notification_rule_match_any">Vähintään yhden ehdon on täytyttävä</string>
-    <string name="notification_rule_conditions">Milloin</string>
+    <string name="notification_rule_conditions">Kun</string>
     <string name="notification_rule_actions">Sitten</string>
     <string name="notification_rule_add_condition">Lisää ehto</string>
     <string name="notification_rule_add_action">Lisää toiminto</string>
@@ -227,9 +227,9 @@
     <string name="notification_template_screen_off">Vain näytön ollessa pois päältä</string>
     <string name="notification_template_locked_private">Vain sovelluksen nimi, kun puhelin on lukittu</string>
     <string name="notification_template_short_on_battery">Lyhyt, kun laite ei lataudu</string>
-    <string name="notification_type_bluetooth">Bluetooth laite</string>
+    <string name="notification_type_bluetooth">Bluetooth-laite</string>
     <string name="notification_type_wired">Johdolliset kuulokkeet</string>
-    <string name="notification_type_wifi">Wi-Fi verkkoon</string>
+    <string name="notification_type_wifi">Wi-Fi-verkko</string>
     <string name="notification_type_time">Kellonaika</string>
     <string name="notification_type_screen">Näyttö päällä</string>
     <string name="notification_type_locked">Puhelin lukittu</string>
@@ -244,11 +244,11 @@
     <string name="notification_bluetooth_any">Mikä tahansa laite</string>
     <string name="notification_wifi_hint">Verkon nimi</string>
     <string name="notification_choose_app">Valitse sovellus</string>
-    <string name="notification_time_start">From</string>
-    <string name="notification_time_end">Kunnes</string>
-    <string name="notification_time_days">Päivää</string>
+    <string name="notification_time_start">Alkaa</string>
+    <string name="notification_time_end">Päättyy</string>
+    <string name="notification_time_days">Päivät</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> - <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly tarvitsee luvan tähän ehtoon</string>
+    <string name="notification_permission_needed">SandFly tarvitsee sen luvan tätä ehtoa varten</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> on yhdistetty</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ei ole yhdistetty</string>
     <string name="notification_cond_bluetooth_any">Bluetooth-äänilaite on kytketty</string>
@@ -269,34 +269,34 @@
     <string name="notification_cond_time_not">Kello ei ole <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Yhdistetty verkkoon <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Ei yhdistetty verkkoon <xliff:g id="network" example="Home">%1$s</xliff:g></string>
-    <string name="notification_cond_wifi_any">Yhdistetty verkkoon Wi-Fi</string>
+    <string name="notification_cond_wifi_any">Yhdistetty Wi-Fi-verkkoon</string>
     <string name="notification_cond_wifi_any_not">Ei yhdistetty Wi-Fi-verkkoon</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> on etualalla</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ei ole edessä</string>
-    <string name="notification_cond_from">Ilmoitus on osoitteesta <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">Ilmoitus ei ole osoitteesta <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_contains">Ilmoitus sisältää <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_contains_not">Ilmoitus ei sisällä <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Soittoääni on äänetön tai värisee</string>
-    <string name="notification_cond_silent_not">Soittoääni soi</string>
-    <string name="notification_cond_media">Media toistetaan</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ei ole etualalla</string>
+    <string name="notification_cond_from">Ilmoitus on sovellukselta <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Ilmoitus ei ole sovellukselta <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_contains">Ilmoituksessa on <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Ilmoituksessa ei ole <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_silent">Soittoääni on äänettömällä tai värinällä</string>
+    <string name="notification_cond_silent_not">Soittoääni on päällä</string>
+    <string name="notification_cond_media">Mediaa toistetaan</string>
     <string name="notification_cond_media_not">Mediaa ei toisteta</string>
     <string name="notification_action_skip">älä lue</string>
     <string name="notification_action_private">lue vain sovelluksen nimi</string>
-    <string name="notification_action_not_private">lue kokonaan, vaikka yksityisestikin</string>
+    <string name="notification_action_not_private">lue kokonaan, vaikka se olisi yksityinen</string>
     <string name="notification_action_format">käytä puhemuotoa</string>
-    <string name="notification_action_max_words">lukea jopa useita sanoja</string>
-    <string name="notification_action_no_limit">lue ilman pituusrajoituksia</string>
-    <string name="notification_action_keep_emoji">säilytä emoji</string>
-    <string name="notification_action_keep_numbers">pitää numerot yhdessä</string>
+    <string name="notification_action_max_words">lue tiettyyn sanamäärään asti</string>
+    <string name="notification_action_no_limit">lue ilman pituusrajoitusta</string>
+    <string name="notification_action_keep_emoji">säilytä emojit</string>
+    <string name="notification_action_keep_numbers">pidä numerot yhdessä</string>
     <string name="notification_action_priority">lue ensin</string>
-    <string name="notification_action_always_read">Lue ilmoitukset ääneen myös hiljaisina aikoina tai muina rajoitettuina aikoina</string>
-    <string name="notification_action_voice">lukea ääniprofiililla</string>
-    <string name="notification_action_voice_value">lue <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">lukea SandFly äänellä</string>
-    <string name="notification_voice_removed">Ääniprofiili poistettu</string>
+    <string name="notification_action_always_read">lue myös hiljaisina tunteina ja muina aikoina, joina ilmoituksia ei lueta</string>
+    <string name="notification_action_voice">lue ääniprofiililla</string>
+    <string name="notification_action_voice_value">lue profiililla <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">lue SandFlyn äänellä</string>
+    <string name="notification_voice_removed">Poistettu ääniprofiili</string>
     <string name="notification_action_format_value">käytä puhemuotoa <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">lue <xliff:g id="words" example="10 words">%1$s</xliff:g> asti</string>
+    <string name="notification_action_max_words_value">lue enintään <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Pois päältä</string>
     <string name="notification_on">Päällä</string>
     <string name="notification_never_again">Kunnes SandFly käynnistyy uudelleen</string>
@@ -306,16 +306,16 @@
     <string name="notification_speech_now_off">Ilmoitusten ääneen lukeminen poistettu käytöstä</string>
     <string name="notification_no_last_notification">Ilmoitusta ei luettu</string>
     <string name="shortcut_read_notifications">Lue ilmoitukset</string>
-    <string name="shortcut_toggle_notification_speech">Ilmoituspuhe päälle tai pois päältä</string>
+    <string name="shortcut_toggle_notification_speech">Ilmoitusten lukeminen päälle tai pois</string>
     <string name="shortcut_read_last_notification">Lue viimeisin ilmoitus uudelleen</string>
     <string name="shortcut_stop_notification">Lopeta ilmoituksen lukeminen</string>
-    <string name="notification_test_posting">Testiilmoitus tulee 5 sekunnin kuluttua</string>
-    <string name="notification_test_not_allowed">Salli SandFly näyttää ilmoitukset ensin</string>
-    <string name="notification_test_content_title">SandFly testi</string>
-    <string name="notification_test_content_text">Tämä on testiilmoitus, lue ilmoitusasetuksistasi. 123456</string>
-    <string name="notification_automation_on">Ota käyttöön ilmoitusten lukeminen ääneen</string>
-    <string name="notification_automation_off">Poista ilmoitusten ääneen lukeminen käytöstä</string>
-    <string name="notification_automation_toggle">Ota käyttöön tai poista käytöstä ilmoitusten lukeminen ääneen</string>
+    <string name="notification_test_posting">Testi-ilmoitus tulee 5 sekunnin kuluttua</string>
+    <string name="notification_test_not_allowed">Salli ensin SandFlyn näyttää ilmoituksia</string>
+    <string name="notification_test_content_title">SandFly-testi</string>
+    <string name="notification_test_content_text">Tämä on testi-ilmoitus, joka luetaan ilmoitusasetustesi mukaisesti. 123456</string>
+    <string name="notification_automation_on">Laita ilmoitusten lukeminen päälle</string>
+    <string name="notification_automation_off">Laita ilmoitusten lukeminen pois päältä</string>
+    <string name="notification_automation_toggle">Laita ilmoitusten lukeminen päälle tai pois</string>
     <string name="notification_automation_stop">Lopeta ilmoituksen lukeminen</string>
     <string name="notification_automation_read_all">Lue ilmoitukset</string>
     <plurals name="notification_seconds">

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Ovoz va tebranishlarni boshqarish</string>
-    <string name="summary_pref_control_sounds">Tugmalar, belgilash katakchalari, tahrirlash maydonlari va roʻyxat elementlari, oʻz ovozi va mavzudagi oʻz tebranishlari kabi har bir turdagi boshqaruvni, NVDA uchun Unspoken’da boʻlgani kabi, fokus tovushi va tebranish oʻrniga bering. Ovoz boshqaruv elementi ekrandagi joydan keladi va SandFly u qanday boshqaruv ekanligini bildirmaydi.</string>
-    <string name="title_pref_control_sounds_speak_roles">Hali ham nazorat turini ayting</string>
-    <string name="summary_pref_control_sounds_speak_roles">Boshqaruv tovushi o\'ynalganda, u qanday boshqaruv ekanligini ayting, masalan, tugma. Bu har bir tovush mavzusi uchun.</string>
+    <string name="title_pref_control_sounds">Boshqaruv elementlari ovozlari va tebranishlari</string>
+    <string name="summary_pref_control_sounds">Tugmalar, belgilash katakchalari, tahrirlash maydonlari va roʻyxat elementlari kabi har bir boshqaruv elementi turi fokus tovushi va tebranishi oʻrniga mavzudan oʻz tovushi va tebranishini oladi, Unspoken NVDA uchun qilganidek. Tovush elementning ekrandagi joyidan keladi va SandFly element turini aytmaydi.</string>
+    <string name="title_pref_control_sounds_speak_roles">Boshqaruv elementi turini baribir aytish</string>
+    <string name="summary_pref_control_sounds_speak_roles">Boshqaruv elementi tovushi ijro etilganda ham element turi aytiladi, masalan, tugma. Barcha tovush mavzulariga tegishli.</string>
     <string name="title_pref_control_sounds_3d">3D audio</string>
-    <string name="pref_control_sounds_3d_headphones">Eshitish vositalari bilan</string>
+    <string name="pref_control_sounds_3d_headphones">Quloqchinlar bilan</string>
     <string name="pref_control_sounds_3d_always">Har doim</string>
     <string name="pref_control_sounds_3d_never">Hech qachon, faqat chap va o\'ng</string>
-    <string name="individual_sound_control_button">Ovozni boshqarish: tugma</string>
-    <string name="individual_sound_control_checkbox">Ovozni boshqarish: katakcha</string>
-    <string name="individual_sound_control_radio_button">Ovozni boshqarish: radio tugmasi</string>
-    <string name="individual_sound_control_edit_text">Ovozni boshqarish: tahrirlash maydoni</string>
-    <string name="individual_sound_control_combo_box">Ovozni boshqarish: ochiladigan ro\'yxat</string>
-    <string name="individual_sound_control_slider">Ovozni boshqarish: slayder</string>
-    <string name="individual_sound_control_link">Ovozni boshqarish: havola</string>
-    <string name="individual_sound_control_image">Ovozni boshqarish: tasvir</string>
-    <string name="individual_sound_control_clock">Boshqarish ovozi: soat</string>
-    <string name="individual_sound_control_tab">Ovozni boshqarish: yorliq</string>
-    <string name="individual_sound_control_menu_item">Ovozni boshqarish: menyu bandi</string>
-    <string name="individual_sound_control_list_item">Ovozni boshqarish: ro\'yxat elementi</string>
-    <string name="individual_sound_control_tree_item">Boshqarish ovozi: daraxt elementi</string>
+    <string name="individual_sound_control_button">Boshqaruv elementi ovozi: tugma</string>
+    <string name="individual_sound_control_checkbox">Boshqaruv elementi ovozi: katakcha</string>
+    <string name="individual_sound_control_radio_button">Boshqaruv elementi ovozi: radio tugmasi</string>
+    <string name="individual_sound_control_edit_text">Boshqaruv elementi ovozi: tahrirlash maydoni</string>
+    <string name="individual_sound_control_combo_box">Boshqaruv elementi ovozi: ochiladigan ro\'yxat</string>
+    <string name="individual_sound_control_slider">Boshqaruv elementi ovozi: slayder</string>
+    <string name="individual_sound_control_link">Boshqaruv elementi ovozi: havola</string>
+    <string name="individual_sound_control_image">Boshqaruv elementi ovozi: tasvir</string>
+    <string name="individual_sound_control_clock">Boshqaruv elementi ovozi: soat</string>
+    <string name="individual_sound_control_tab">Boshqaruv elementi ovozi: yorliq</string>
+    <string name="individual_sound_control_menu_item">Boshqaruv elementi ovozi: menyu bandi</string>
+    <string name="individual_sound_control_list_item">Boshqaruv elementi ovozi: ro\'yxat elementi</string>
+    <string name="individual_sound_control_tree_item">Boshqaruv elementi ovozi: daraxt elementi</string>
 </resources>

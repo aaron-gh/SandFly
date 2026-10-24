@@ -11,7 +11,7 @@
     <string name="granular_editing_space">วรรค</string>
     <string name="granular_editing_new_line">บรรทัดใหม่</string>
     <string name="granular_editing_tab">อักขระแท็บ</string>
-    <string name="granular_editing_empty">ไม่มีข้อความ ใช้เพิ่มข้อความที่ส่วนท้ายในเพิ่มเติม</string>
+    <string name="granular_editing_empty">ไม่มีข้อความ ใช้ “เพิ่มข้อความที่ท้าย” ใน “เพิ่มเติม”</string>
     <string name="granular_editing_edit">แก้ไข</string>
     <string name="granular_editing_insert_before">ใส่ก่อน</string>
     <string name="granular_editing_insert_after">ใส่หลัง</string>
@@ -22,13 +22,13 @@
     <string name="granular_editing_save">บันทึก</string>
     <string name="granular_editing_more">เพิ่มเติม</string>
     <string name="granular_editing_undo">เลิกทำ</string>
-    <string name="granular_editing_redo">ทำซ้ำการแก้ไขที่เลิกทำครั้งล่าสุด</string>
+    <string name="granular_editing_redo">ทำซ้ำ</string>
     <string name="granular_editing_find">ค้นหา</string>
     <string name="granular_editing_find_next">ค้นหาต่อไป</string>
     <string name="granular_editing_replace">แทนที่</string>
     <string name="granular_editing_replace_with">แทนที่ด้วย</string>
-    <string name="granular_editing_replace_all">เปลี่ยนทั้งหมด</string>
-    <string name="granular_editing_add_at_end">เพิ่มข้อความในตอนท้าย</string>
+    <string name="granular_editing_replace_all">แทนที่ทั้งหมด</string>
+    <string name="granular_editing_add_at_end">เพิ่มข้อความที่ท้าย</string>
     <string name="granular_editing_clear_selection">ยกเลิกการเลือกข้อความทั้งหมด</string>
     <string name="granular_editing_cut_selected">ตัดข้อความที่เลือก</string>
     <string name="granular_editing_delete_selected">ลบที่เลือกไว้</string>
@@ -36,8 +36,8 @@
     <string name="granular_editing_deleted">ลบแล้ว</string>
     <string name="granular_editing_not_found">ไม่พบ</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> แทนที่</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> แทนที่</item>
+        <item quantity="one">แทนที่แล้ว <xliff:g id="count" example="1">%d</xliff:g> รายการ</item>
+        <item quantity="other">แทนที่แล้ว <xliff:g id="count" example="3">%d</xliff:g> รายการ</item>
     </plurals>
     <string name="granular_editing_save_changes">บันทึกการเปลี่ยนแปลงใช่ไหม</string>
     <string name="granular_editing_copy_changes">คัดลอกข้อความที่เปลี่ยนแปลงใช่ไหม</string>
@@ -45,5 +45,5 @@
     <string name="granular_editing_keep_editing">แก้ไขต่อไป</string>
     <string name="granular_editing_not_saved">ไม่ได้บันทึก: ช่องข้อความหายไป ข้อความถูกคัดลอก</string>
     <string name="granular_editing_no_text">ไม่มีข้อความให้แก้ไข</string>
-    <string name="granular_editing_password">ไม่มีในช่องรหัสผ่าน</string>
+    <string name="granular_editing_password">ใช้ไม่ได้ในช่องรหัสผ่าน</string>
 </resources>

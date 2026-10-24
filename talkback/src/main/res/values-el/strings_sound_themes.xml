@@ -54,7 +54,7 @@
     <string name="sound_theme_install_failed">Το SandFly δεν μπόρεσε να εγκαταστήσει το θέμα ήχου. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">Οι σύνδεσμοι σε θέματα ήχου πρέπει να ξεκινούν με https.</string>
     <string name="title_pref_theme_sounds_of">Ήχοι του <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
-    <string name="title_pref_theme_sounds_reset">Χρήση των ήχων του SandFly για όλους</string>
+    <string name="title_pref_theme_sounds_reset">Χρήση των ήχων του SandFly για όλα</string>
     <string name="theme_sounds_reset_confirm">Κατάργηση όλων των ήχων του θέματος και χρήση των ήχων του SandFly;</string>
     <string name="theme_sounds_reset_button">Κατάργηση</string>
     <string name="theme_sounds_category">Ήχοι</string>
@@ -69,7 +69,7 @@
     <string name="theme_sound_braille_new_line">Πληκτρολόγιο μπράιγ: νέα γραμμή</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">Επιλογή αρχείου ήχου</string>
-    <string name="theme_sound_preview">Προεπισκόπηση</string>
+    <string name="theme_sound_preview">Ακρόαση</string>
     <string name="theme_sound_none">Χωρίς ήχο</string>
     <string name="theme_sound_summary_no_sound">Χωρίς ήχο</string>
     <string name="theme_sound_action_set_none">Ορισμός σε χωρίς ήχο</string>
@@ -83,5 +83,5 @@
     <string name="sound_theme_sources">Πηγές θεμάτων ήχου</string>
     <string name="sound_theme_source_empty">Δεν υπάρχουν θέματα ήχου σε αυτήν την πηγή</string>
     <string name="sound_theme_source_failed">Δεν ήταν δυνατή η φόρτωση θεμάτων ήχου. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Τα θέματα ήχου που έχουν εγκατασταθεί από αυτό παραμένουν εγκατεστημένα.</string>
+    <string name="sound_theme_source_remove_message">Τα θέματα ήχου που εγκαταστάθηκαν από αυτή την πηγή παραμένουν εγκατεστημένα.</string>
 </resources>

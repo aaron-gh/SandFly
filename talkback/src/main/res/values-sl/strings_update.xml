@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_check_for_updates">Preverite posodobitve</string>
-    <string name="summary_pref_check_for_updates_version">Version <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_check_for_updates">Preveri posodobitve</string>
+    <string name="summary_pref_check_for_updates_version">Različica <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, gradnja <xliff:g id="build" example="96">%2$d</xliff:g></string>
     <string name="title_pref_auto_update_check">Samodejno preverjanje posodobitev</string>
-    <string name="summary_pref_auto_update_check">Preverite enkrat na dan in pokažite obvestilo, ko je na voljo nova zgradba</string>
-    <string name="title_pref_dev_builds">Razvoj gradi</string>
-    <string name="update_notification_title">SandFly update available</string>
-    <string name="update_notification_text">Zgradite <xliff:g id="build" example="97">%1$d</xliff:g>. Tapnite za namestitev.</string>
-    <string name="update_dialog_title">Na voljo je različica SandFly <xliff:g id="build" example="97">%1$d</xliff:g></string>
-    <string name="update_dialog_install">Namestite</string>
+    <string name="summary_pref_auto_update_check">Preveri enkrat na dan in prikaže obvestilo, ko je na voljo nova različica</string>
+    <string name="title_pref_dev_builds">Razvojne različice</string>
+    <string name="update_notification_title">Na voljo je posodobitev za SandFly</string>
+    <string name="update_notification_text">Gradnja <xliff:g id="build" example="97">%1$d</xliff:g>. Dotaknite se za namestitev.</string>
+    <string name="update_dialog_title">Na voljo je gradnja SandFly <xliff:g id="build" example="97">%1$d</xliff:g></string>
+    <string name="update_dialog_install">Namesti</string>
     <string name="update_checking">Preverjanje posodobitev</string>
-    <string name="update_up_to_date">SandFly je posodobljen.</string>
-    <string name="update_check_failed">Posodobitev ni bilo mogoče preveriti.</string>
+    <string name="update_up_to_date">SandFly je posodobljen</string>
+    <string name="update_check_failed">Posodobitev ni bilo mogoče preveriti</string>
     <string name="update_downloading">Prenašanje posodobitve</string>
-    <string name="update_already_downloading">Posodobitev se že prenaša.</string>
-    <string name="update_ready_title">SandFly update downloaded</string>
+    <string name="update_already_downloading">Posodobitev se že prenaša</string>
+    <string name="update_ready_title">Posodobitev za SandFly je prenesena</string>
     <string name="update_ready_text">Tapnite za namestitev.</string>
-    <string name="update_install_failed">Posodobitve ni bilo mogoče namestiti.</string>
-    <string name="update_install_canceled">Update canceled</string>
+    <string name="update_install_failed">Posodobitve ni bilo mogoče namestiti</string>
+    <string name="update_install_canceled">Posodobitev preklicana</string>
     <string name="update_allow_install">Dovolite SandFly, da namesti aplikacije, nato znova poskusite s posodobitvijo</string>
 </resources>

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">శబ్దాలు మరియు కంపనాలను నియంత్రించండి</string>
-    <string name="summary_pref_control_sounds">NVDA కోసం ఫోకస్ సౌండ్ మరియు వైబ్రేషన్ స్థానంలో బటన్‌లు, చెక్‌బాక్స్‌లు, ఎడిట్ ఫీల్డ్‌లు మరియు లిస్ట్ ఐటెమ్‌లు, దాని స్వంత సౌండ్ మరియు దాని స్వంత వైబ్రేషన్ వంటి ప్రతి రకమైన నియంత్రణను అందించండి. స్క్రీన్‌పై నియంత్రణ ఉన్న చోట నుండి ధ్వని వస్తుంది మరియు SandFly అది ఎలాంటి నియంత్రణను తెలియజేస్తుంది.</string>
-    <string name="title_pref_control_sounds_speak_roles">ఇప్పటికీ నియంత్రణ రకం చెప్పండి</string>
-    <string name="summary_pref_control_sounds_speak_roles">కంట్రోల్ సౌండ్ ప్లే అయినప్పుడు, బటన్ వంటిది ఎలాంటి కంట్రోల్ అని చెప్పండి. ఇది ప్రతి ధ్వని థీమ్ కోసం.</string>
+    <string name="title_pref_control_sounds">కంట్రోల్ ధ్వనులు మరియు వైబ్రేషన్‌లు</string>
+    <string name="summary_pref_control_sounds">బటన్‌లు, చెక్‌బాక్స్‌లు, ఎడిట్ ఫీల్డ్‌లు, లిస్ట్ ఐటెమ్‌లు వంటి ప్రతి రకమైన కంట్రోల్‌కు ఫోకస్ సౌండ్, వైబ్రేషన్‌కు బదులుగా థీమ్ నుండి సొంత సౌండ్, వైబ్రేషన్ లభిస్తాయి, NVDA కోసం Unspoken చేసినట్లు. సౌండ్ స్క్రీన్‌పై కంట్రోల్ ఉన్న స్థానం నుండి వస్తుంది, SandFly కంట్రోల్ రకాన్ని చెప్పదు.</string>
+    <string name="title_pref_control_sounds_speak_roles">కంట్రోల్ రకాన్ని కూడా చెప్పు</string>
+    <string name="summary_pref_control_sounds_speak_roles">కంట్రోల్ సౌండ్ ప్లే అయినప్పుడు కూడా కంట్రోల్ రకం చెప్పబడుతుంది, ఉదా. బటన్. అన్ని సౌండ్ థీమ్‌లకు వర్తిస్తుంది.</string>
     <string name="title_pref_control_sounds_3d">3D ఆడియో</string>
     <string name="pref_control_sounds_3d_headphones">హెడ్‌ఫోన్‌లతో</string>
     <string name="pref_control_sounds_3d_always">ఎల్లప్పుడూ</string>
-    <string name="pref_control_sounds_3d_never">ఎప్పుడూ, ఎడమ మరియు కుడి మాత్రమే</string>
-    <string name="individual_sound_control_button">ధ్వనిని నియంత్రించండి: బటన్</string>
-    <string name="individual_sound_control_checkbox">ధ్వనిని నియంత్రించండి: చెక్‌బాక్స్</string>
-    <string name="individual_sound_control_radio_button">ధ్వనిని నియంత్రించండి: రేడియో బటన్</string>
-    <string name="individual_sound_control_edit_text">ధ్వనిని నియంత్రించండి: ఎడిట్ ఫీల్డ్</string>
-    <string name="individual_sound_control_combo_box">ధ్వనిని నియంత్రించండి: డ్రాప్-డౌన్ జాబితా</string>
-    <string name="individual_sound_control_slider">ధ్వనిని నియంత్రించండి: స్లయిడర్</string>
-    <string name="individual_sound_control_link">ధ్వనిని నియంత్రించండి: లింక్</string>
-    <string name="individual_sound_control_image">ధ్వనిని నియంత్రించండి: చిత్రం</string>
-    <string name="individual_sound_control_clock">నియంత్రణ ధ్వని: గడియారం</string>
-    <string name="individual_sound_control_tab">ధ్వనిని నియంత్రించండి: ట్యాబ్</string>
-    <string name="individual_sound_control_menu_item">ధ్వనిని నియంత్రించండి: మెను అంశం</string>
-    <string name="individual_sound_control_list_item">ధ్వనిని నియంత్రించండి: జాబితా అంశం</string>
-    <string name="individual_sound_control_tree_item">ధ్వనిని నియంత్రించండి: చెట్టు అంశం</string>
+    <string name="pref_control_sounds_3d_never">ఎప్పుడూ వద్దు, ఎడమ మరియు కుడి మాత్రమే</string>
+    <string name="individual_sound_control_button">కంట్రోల్ ధ్వని: బటన్</string>
+    <string name="individual_sound_control_checkbox">కంట్రోల్ ధ్వని: చెక్‌బాక్స్</string>
+    <string name="individual_sound_control_radio_button">కంట్రోల్ ధ్వని: రేడియో బటన్</string>
+    <string name="individual_sound_control_edit_text">కంట్రోల్ ధ్వని: ఎడిట్ ఫీల్డ్</string>
+    <string name="individual_sound_control_combo_box">కంట్రోల్ ధ్వని: డ్రాప్-డౌన్ జాబితా</string>
+    <string name="individual_sound_control_slider">కంట్రోల్ ధ్వని: స్లయిడర్</string>
+    <string name="individual_sound_control_link">కంట్రోల్ ధ్వని: లింక్</string>
+    <string name="individual_sound_control_image">కంట్రోల్ ధ్వని: చిత్రం</string>
+    <string name="individual_sound_control_clock">కంట్రోల్ ధ్వని: గడియారం</string>
+    <string name="individual_sound_control_tab">కంట్రోల్ ధ్వని: ట్యాబ్</string>
+    <string name="individual_sound_control_menu_item">కంట్రోల్ ధ్వని: మెను అంశం</string>
+    <string name="individual_sound_control_list_item">కంట్రోల్ ధ్వని: జాబితా అంశం</string>
+    <string name="individual_sound_control_tree_item">కంట్రోల్ ధ్వని: ట్రీ అంశం</string>
 </resources>

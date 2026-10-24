@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_check_for_updates">Hlola izibuyekezo</string>
-    <string name="summary_pref_check_for_updates_version">Inguqulo <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, yakha <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="summary_pref_check_for_updates_version">Inguqulo <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, isakhiwo <xliff:g id="build" example="96">%2$d</xliff:g></string>
     <string name="title_pref_auto_update_check">Hlola ngokuzenzakalelayo izibuyekezo</string>
-    <string name="summary_pref_auto_update_check">Hlola kanye ngosuku futhi ubonise isaziso uma isakhiwo esisha sitholakala</string>
-    <string name="title_pref_dev_builds">Intuthuko iyakha</string>
-    <string name="update_notification_title">SandFly isibuyekezo siyatholakala</string>
-    <string name="update_notification_text">Yakha <xliff:g id="build" example="97">%1$d</xliff:g>. Thepha ukuze ufake.</string>
-    <string name="update_dialog_title">SandFly ukwakha <xliff:g id="build" example="97">%1$d</xliff:g> kuyatholakala</string>
+    <string name="summary_pref_auto_update_check">Ihlola kanye ngosuku futhi ibonise isaziso uma kukhona inguqulo entsha</string>
+    <string name="title_pref_dev_builds">Izinguqulo zokuthuthukisa</string>
+    <string name="update_notification_title">Isibuyekezo se-SandFly siyatholakala</string>
+    <string name="update_notification_text">Isakhiwo <xliff:g id="build" example="97">%1$d</xliff:g>. Thepha ukuze ufake.</string>
+    <string name="update_dialog_title">Isakhiwo se-SandFly <xliff:g id="build" example="97">%1$d</xliff:g> siyatholakala</string>
     <string name="update_dialog_install">Faka</string>
-    <string name="update_checking">Ihlola izibuyekezo</string>
+    <string name="update_checking">Kuhlolwa izibuyekezo</string>
     <string name="update_up_to_date">SandFly isesikhathini samanje</string>
     <string name="update_check_failed">Ayikwazanga ukuhlola izibuyekezo</string>
-    <string name="update_downloading">Ilanda isibuyekezo</string>
+    <string name="update_downloading">Kulandwa isibuyekezo</string>
     <string name="update_already_downloading">Isibuyekezo sesivele siyalanda</string>
-    <string name="update_ready_title">SandFly isibuyekezo silandiwe</string>
+    <string name="update_ready_title">Isibuyekezo se-SandFly silandiwe</string>
     <string name="update_ready_text">Thepha ukuze ufake.</string>
     <string name="update_install_failed">Ayikwazanga ukufaka isibuyekezo</string>
     <string name="update_install_canceled">Isibuyekezo sikhanseliwe</string>
-    <string name="update_allow_install">Vumela okuthi SandFly ukufaka izinhlelo zokusebenza, bese uzama isibuyekezo futhi</string>
+    <string name="update_allow_install">Vumela i-SandFly ukuthi ifake izinhlelo zokusebenza, bese uzama ukubuyekeza futhi</string>
 </resources>

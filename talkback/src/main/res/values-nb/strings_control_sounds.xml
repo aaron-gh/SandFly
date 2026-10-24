@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Kontroller lyder og vibrasjoner</string>
-    <string name="summary_pref_control_sounds">Gi hver type kontroll, for eksempel knapper, avmerkingsbokser, redigeringsfelt og listeelementer, sin egen lyd og sin egen vibrasjon fra temaet, i stedet for fokuslyden og vibrasjonen, slik Unspoken gjør for NVDA. Lyden kommer fra der kontrollen er på skjermen, og SandFly utelater å si hva slags kontroll det er.</string>
-    <string name="title_pref_control_sounds_speak_roles">Fortsatt si hva slags kontroll</string>
-    <string name="summary_pref_control_sounds_speak_roles">Når en kontrolllyd spilles av, si fortsatt hva slags kontroll det er, for eksempel knapp. Dette er for hvert lydtema.</string>
+    <string name="title_pref_control_sounds">Lyder og vibrasjoner for kontroller</string>
+    <string name="summary_pref_control_sounds">Hver type kontroll, for eksempel knapper, avmerkingsbokser, redigeringsfelt og listeelementer, får sin egen lyd og vibrasjon fra temaet i stedet for fokuslyden og fokusvibrasjonen, slik Unspoken gjør for NVDA. Lyden kommer fra kontrollens plassering på skjermen, og SandFly sier ikke hva slags kontroll det er.</string>
+    <string name="title_pref_control_sounds_speak_roles">Si likevel typen kontroll</string>
+    <string name="summary_pref_control_sounds_speak_roles">Når en kontrollyd spilles av, sies kontrolltypen likevel, for eksempel knapp. Gjelder alle lydtemaer.</string>
     <string name="title_pref_control_sounds_3d">3D-lyd</string>
     <string name="pref_control_sounds_3d_headphones">Med hodetelefoner</string>
     <string name="pref_control_sounds_3d_always">Alltid</string>
     <string name="pref_control_sounds_3d_never">Aldri, kun venstre og høyre</string>
-    <string name="individual_sound_control_button">Kontrolllyd: knapp</string>
-    <string name="individual_sound_control_checkbox">Kontroller lyd: avkrysningsboks</string>
-    <string name="individual_sound_control_radio_button">Kontrolllyd: alternativknapp</string>
-    <string name="individual_sound_control_edit_text">Kontrolllyd: redigeringsfelt</string>
-    <string name="individual_sound_control_combo_box">Kontroller lyd: rullegardinliste</string>
-    <string name="individual_sound_control_slider">Kontroller lyd: glidebryter</string>
-    <string name="individual_sound_control_link">Styr lyd: lenke</string>
-    <string name="individual_sound_control_image">Kontroller lyd: bilde</string>
-    <string name="individual_sound_control_clock">Kontrolllyd: klokke</string>
-    <string name="individual_sound_control_tab">Kontrolllyd: tab</string>
-    <string name="individual_sound_control_menu_item">Kontrolllyd: menyelement</string>
-    <string name="individual_sound_control_list_item">Kontrolllyd: listeelement</string>
-    <string name="individual_sound_control_tree_item">Kontrolllyd: treelement</string>
+    <string name="individual_sound_control_button">Kontrollelementlyd: knapp</string>
+    <string name="individual_sound_control_checkbox">Kontrollelementlyd: avkrysningsboks</string>
+    <string name="individual_sound_control_radio_button">Kontrollelementlyd: alternativknapp</string>
+    <string name="individual_sound_control_edit_text">Kontrollelementlyd: redigeringsfelt</string>
+    <string name="individual_sound_control_combo_box">Kontrollelementlyd: rullegardinliste</string>
+    <string name="individual_sound_control_slider">Kontrollelementlyd: glidebryter</string>
+    <string name="individual_sound_control_link">Kontrollelementlyd: lenke</string>
+    <string name="individual_sound_control_image">Kontrollelementlyd: bilde</string>
+    <string name="individual_sound_control_clock">Kontrollelementlyd: klokke</string>
+    <string name="individual_sound_control_tab">Kontrollelementlyd: tab</string>
+    <string name="individual_sound_control_menu_item">Kontrollelementlyd: menyelement</string>
+    <string name="individual_sound_control_list_item">Kontrollelementlyd: listeelement</string>
+    <string name="individual_sound_control_tree_item">Kontrollelementlyd: treelement</string>
 </resources>

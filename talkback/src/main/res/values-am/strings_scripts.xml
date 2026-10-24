@@ -9,7 +9,7 @@
     <string name="script_import_repository">ይህ አገናኝ ወደ አንድ ሙሉ ማከማቻ ነው። የሚፈልጉትን ስክሪፕት ይክፈቱ፣ ከዚያ አገናኙን ያጋሩ።</string>
     <string name="script_import_summary">.lua ፋይል፣ ወይም main.lua ያለበት .zip</string>
     <string name="scripts_category_app">የመተግበሪያ ስክሪፕቶች</string>
-    <string name="scripts_category_global">ዓለም አቀፍ ተሰኪዎች</string>
+    <string name="scripts_category_global">አጠቃላይ ተሰኪዎች</string>
     <string name="scripts_none">ምንም ስክሪፕቶች አልተጫኑም</string>
     <string name="scripts_all_off">ሁሉንም ስክሪፕቶች አጥፋ</string>
     <string name="scripts_all_off_summary">ስክሪፕቶች እንደተጫኑ ይቆያሉ እና የራሳቸውን ማብሪያ/ማጥፊያዎች ይይዛሉ። «ሁሉንም ስክሪፕቶች አብራ ወይም አጥፋ» የእጅ ምልክት ተመሳሳዩን ያደርጋል።</string>
@@ -59,7 +59,7 @@
     <string name="script_button_off">መጀመሪያ ስክሪፕቱን ያብሩ</string>
     <string name="script_permissions_summary">አንዱን ማጥፋት የሚያስፈልጉትን ክፍሎች ያስቆማል።</string>
     <string name="script_install_permissions_note">እነዚህን በኋላ ማጥፋት ይችላሉ።</string>
-    <string name="script_manage_category">አስተዳድር</string>
+    <string name="script_manage_category">አስተዳደር</string>
     <string name="script_move_up">ቀደም ብሎ አሂድ</string>
     <string name="script_move_down">ዘግየት ብሎ አሂድ</string>
     <string name="script_order_summary">ተመሳሳዩን ንግግር ለሚቀይሩ ስክሪፕቶች ቅደም ተከተል። የመተግበሪያ ስክሪፕቶች መጀመሪያ ይሄዳሉ።</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_turn_off">አጥፋ</string>
     <string name="script_binding_restore">ነባሪዎችን ወደነበሩበት መልስ</string>
     <string name="script_binding_restored">ነባሪዎች ወደነበሩበት ተመልሰዋል</string>
-    <string name="script_binding_perform">የእጅ ምልክት ወይም ቁልፎችን ያከናውኑ</string>
+    <string name="script_binding_perform">የእጅ ምልክት ያድርጉ ወይም ቁልፎችን ይጫኑ</string>
     <string name="script_binding_perform_summary">ቀጣዩን የእጅ ምልክት፣ ወይም ከSandFly መቀየሪያ ጋር የተጫኑ ቁልፎችን መድብ</string>
     <string name="script_binding_perform_message">የእጅ ምልክቱን ያድርጉ ወይም ቁልፎቹን ይጫኑ።</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> ለ<xliff:g id="command">%2$s</xliff:g> ይመደብ?</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ስክሪፕት ተዘምኗል፡ <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ስክሪፕቶች ተዘምነዋል፡ <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">ዝማኔዎች በዝማኔዎች ስር ተዘርዝረዋል።</string>
+    <string name="scripts_updates_to_approve">ዝማኔዎች በ«ዝማኔዎች» ስር ተዘርዝረዋል</string>
     <string name="scripts_update_check_failed">አንዳንድ ምንጮች ሊመረመሩ አልቻሉም</string>
-    <string name="scripts_up_to_date">ሁሉም ስክሪፕቶች የተዘመኑ ናቸው።</string>
+    <string name="scripts_up_to_date">ሁሉም ስክሪፕቶች የተዘመኑ ናቸው</string>
 </resources>

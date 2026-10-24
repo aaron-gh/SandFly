@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Cihaz kilidi açıldı.</string>
   <string name="title_pref_speech_volume">Nitqin səs həcmi</string>
   <string name="title_pref_verbose_scroll_announcement">Həmişə siyahı elementlərinin sayını səsləndirin</string>
-  <string name="summary_pref_verbose_scroll_announcement">Hər sürüşdürmədən sonra hansı elementlərin göstərildiyini səsləndirin</string>
+  <string name="summary_pref_verbose_scroll_announcement">Hər sürüşdürmədən sonra hansı elementlərin göstərildiyini səsləndirir</string>
   <string name="title_pref_cover_proximity_sensor">Nitqi dayandırmaq üçün yaxınlıq sensorunu örtün</string>
   <string name="title_pref_phonetic_letters">Hərfləri misallarla səsləndirin</string>
   <string name="summary_pref_phonetic_letters">Klaviatura düymələrini seçdiyiniz zaman və ya simvol üzrə naviqasiya etdiyiniz zaman hər hərflə birlikdə \"h, hotel\" kimi bir nümunə eşidəcəksiniz</string>
@@ -668,7 +668,7 @@
   <string name="label_dialog_text">Bu element etiketi kimi istifadə olunacaq mətni daxil edin\nDaxili baxış adı: %1$s</string>
   <string name="label_dialog_edit_hint">Etiket mətni</string>
   <string name="label_import">Xüsusi etiketləri import edin</string>
-  <string name="label_import_dialog_title">Fərdi etiketləri SandFly-a import edin</string>
+  <string name="label_import_dialog_title">Fərdi etiketləri SandFly-a import et</string>
   <string name="label_import_dialog_message">Konflikt zamanı mövcud etiketləri əvəzləmək və ya üzərindən keçmək istəyib istəmədiyinizi seçin</string>
   <string name="label_import_dialog_skip">Ötürün</string>
   <string name="label_import_dialog_override">Üzərinə yazın</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">Əvvəlki sütun</string>
   <string name="shortcut_column_right">Növbəti sütun</string>
   <string name="table_navigation_not_supported">Cədvəldə naviqasiya dəstəklənmir</string>
-  <string name="pref_auto_enter_table_navigation_title">Cədvəllərdə cədvəl naviqasiyasına keçin</string>
+  <string name="pref_auto_enter_table_navigation_title">Cədvəllərdə cədvəl naviqasiyasına keç</string>
   <string name="title_text_formatting_menu">Mətnin formatını təsvir edin</string>
   <string name="summary_text_formatting_menu">Qalın, kursiv, altından xətt və s. kimi dəyişikliklər üçün</string>
   <string name="title_text_formatting_inline">Mətnin oxudulması formatı</string>
@@ -1299,7 +1299,7 @@
     <string name="title_pref_tts_engine">Nitq sintezi mühərriki</string>
     <string name="title_pref_system_tts_settings">Sistemin nitq sintezi ayarları</string>
     <string name="title_selector_switch_tts_engine">Nitq mühərriki</string>
-    <string name="summary_selector_switch_tts_engine">Quraşdırılmış nitq mühərrikləri arasında keçid edin</string>
+    <string name="summary_selector_switch_tts_engine">Quraşdırılmış nitq mühərrikləri arasında keçid et</string>
     <string name="title_selector_voice_profile">Səs profili</string>
     <string name="title_pref_voice_profiles">Səs profilləri</string>
     <string name="voice_profile_default">SandFly defolt</string>
@@ -1333,7 +1333,7 @@
     <string name="voice_profile_delete">Silin</string>
     <string name="summary_pref_tts_engine_default">Sistem defoltu</string>
     <string name="title_pref_speech_pitch">Nitqin tonu</string>
-    <string name="title_pref_speak_in_phrases">Uzun mətni cümlə-cümlə göndərin</string>
+    <string name="title_pref_speak_in_phrases">Uzun mətni cümlə-cümlə göndər</string>
     <string name="summary_pref_speak_in_phrases">Gryphon kimi gec dayanan nitq mühərrikləri üçündür, beləliklə çəkmə uzun mətni dərhal dayandırır. Bir çox mühərrik ayrıca göndərilən cümlələr arasında daha uzun fasilə verir, ona görə mühərrikiniz tez dayanırsa, bunu deaktiv saxlayın.</string>
     <string name="battery_optimization_notification_title">Batareya optimallaşdırması SandFly-ı dayandıra bilər</string>
     <string name="battery_optimization_notification_text">Bu telefonda enerjiyə qənaət rejimi ekran deaktiv olduqdan sonra SandFly-ı dayandıra bilər və SandFly yenidən başladılanadək səssiz qalır. Batareya optimallaşdırmasını açmaq üçün toxunun, Bütün tətbiqlər seçin, SandFly-ı tapın və Optimallaşdırmayın seçin.</string>
@@ -1343,7 +1343,7 @@
     <string name="title_pref_switch_dialects">Dialekti avtomatik dəyişin</string>
     <string name="category_collapsed">Yığcamlaşdırılıb</string>
     <string name="category_expanded">Genişləndirilib</string>
-    <string name="title_pref_speak_nav_bar_buttons">Naviqasiya paneli düymələrini səsləndirin</string>
+    <string name="title_pref_speak_nav_bar_buttons">Naviqasiya paneli düymələrini səsləndir</string>
     <string name="summary_pref_speak_nav_bar_buttons">Naviqasiya panelində \"Aktivləşdirmək üçün qaldırın\" aktiv olduqda toxunuşun basdığı düyməni, məsələn, Geri və ya Əsas səhifə, səsləndirin.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Batareya <xliff:g id="battery_level" example="73">%1$s</xliff:g> faiz</string>
@@ -1359,13 +1359,13 @@
     <string name="title_pref_announce_time">Vaxt</string>
     <string name="title_pref_announce_ringer_mode">Zəng rejimi</string>
     <string name="summary_pref_announce_ringer_mode">Zəng rejimi vibrasiya və ya səssiz olduqda səsləndirin</string>
-    <string name="title_pref_category_feedback">Rəy</string>
+    <string name="title_pref_category_feedback">Əks əlaqə</string>
     <string name="title_pref_category_typing_and_braille">Yazı və brayl</string>
     <string name="title_pref_category_apps">Tətbiqlər</string>
     <string name="title_pref_touch_activation">Toxunuş və aktivləşdirmə</string>
     <string name="title_pref_navigation">Naviqasiya</string>
     <string name="title_pref_category_more">Digər</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Jestləri Vibration Watch üçün ayırın</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Jestləri Vibration Watch üçün ayır</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly iki barmaqla tək və ikiqat toxunuşları emal etmir ki, Samsung Vibration Watch onlardan istifadə edə bilsin. Vibration Watch funksiyasını saatınızın xüsusi imkanlar ayarlarında aktiv edin.</string>
     <string name="shortcut_reserved_for_vibration_watch">Qabaqcıl ayarlarda Vibration Watch üçün ayrılıb</string>
     <string name="title_pref_speakerphone_away_from_ear">Qulaqdan uzaq olduqda dinamik</string>
@@ -1373,9 +1373,9 @@
     <string name="summary_pref_speakerphone_needs_permission">Android-in ekran oxuyucularına vermədiyi icazə tələb olunur. İcazə vermək üçün bu əmri adb və ya Shizuku ilə icra edin, sonra bu ekrana qayıdın: %1$s</string>
     <string name="action_copy_command">Əmri kopyalayın</string>
     <string name="command_copied">Əmr kopyalandı</string>
-    <string name="title_pref_speech_control">Digər tətbiqlərə danışmağa icazə verin</string>
+    <string name="title_pref_speech_control">Digər tətbiqlərə danışmağa icazə ver</string>
     <string name="summary_pref_speech_control">İcazə verdiyiniz tətbiqlər mətni SandFly səsinizlə səsləndirə bilər. Cihaz kilidli olduqda heç nə səsləndirilmir.</string>
-    <string name="title_pref_speech_control_sound">Digər tətbiqlər danışmazdan əvvəl səs oxudun</string>
+    <string name="title_pref_speech_control_sound">Digər tətbiqlər danışmazdan əvvəl səs oxut</string>
     <string name="speech_control_apps_category">Tətbiqlər</string>
     <string name="speech_control_no_apps">Hələ heç bir tətbiq danışmaq üçün icazə istəməyib.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> tətbiqinə SandFly vasitəsilə danışmağa icazə verilsin?</string>
@@ -1395,7 +1395,7 @@
     <string name="emoji_speech_engine">Nitq mühərriki oxuyur</string>
     <string name="emoji_speech_names">SandFly oxuyur</string>
     <string name="emoji_speech_none">Heç biri</string>
-    <string name="summary_selector_menu_emoji">Emojilərin necə oxunduğunu dəyişin</string>
+    <string name="summary_selector_menu_emoji">Emojilərin necə oxunduğunu dəyiş</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Təkrarlanan emojiləri sayın</string>
     <string name="emoji_repeat_count_off">Deaktiv</string>
@@ -1408,14 +1408,14 @@
     <string name="pref_table_column_headers_title">Sütun başlıqlarını oxuyun</string>
     <string name="pref_table_column_headers_entry_after">Xana datasından sonra</string>
     <string name="pref_table_column_headers_entry_before">Xana datasından əvvəl</string>
-    <string name="pref_table_column_headers_entry_off">Oxumayın</string>
-    <string name="pref_table_speak_row_column_numbers_title">Sətir və sütun nömrələrini səsləndirin</string>
-    <string name="pref_table_speak_row_column_numbers_summary">Cədvəl xanaları üçün sətir və sütun nömrələrini səsləndirin</string>
+    <string name="pref_table_column_headers_entry_off">Oxunmasın</string>
+    <string name="pref_table_speak_row_column_numbers_title">Sətir və sütun nömrələrini səsləndir</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Cədvəl xanaları üçün sətir və sütun nömrələrini səsləndirir</string>
     <string name="title_pref_speak_volume_changes">Səs səviyyəsi dəyişikliklərini səsləndirin</string>
     <string name="summary_pref_speak_volume_changes">Səs düymələrini basdıqdan sonra yeni səs səviyyəsini səsləndirin</string>
     <string name="title_pref_speak_notifications">Bildirişləri səsləndirin</string>
     <string name="summary_pref_speak_notifications">Yeni bildirişləri gəldikdə səsləndirin. Gələn zənglər həmişə səsləndirilir.</string>
-    <string name="title_pref_notification_list">SandFly bildiriş siyahısından istifadə edin</string>
+    <string name="title_pref_notification_list">SandFly bildiriş siyahısından istifadə et</string>
     <string name="title_pref_notification_parts">Bildiriş detalları</string>
     <string name="notification_part_title">Başlıq</string>
     <string name="notification_part_text">Mətn</string>
@@ -1425,15 +1425,15 @@
     <string name="notification_list_title">Bildirişlər</string>
     <string name="notification_list_empty">Bildiriş yoxdur</string>
     <string name="notification_list_no_access">Bildirişlərə giriş deaktivdir</string>
-    <string name="notification_list_grant_access">Bildirişlərə girişi aktiv edin</string>
-    <string name="notification_list_quick_settings">Sürətli Ayarlar</string>
-    <string name="notification_list_dismiss">Rədd edin</string>
+    <string name="notification_list_grant_access">Bildirişlərə girişi aktiv et</string>
+    <string name="notification_list_quick_settings">Sürətli ayarlar</string>
+    <string name="notification_list_dismiss">Bağla</string>
     <string name="notification_list_clear_all">Hamısını silin</string>
     <string name="notification_list_send">Göndərin</string>
     <string name="notification_list_playing">Oxudulur</string>
-    <string name="notification_list_paused">Durdurulub</string>
+    <string name="notification_list_paused">Fasilə verilib</string>
     <string name="notification_list_play">Oxudun</string>
-    <string name="notification_list_pause">Durdurun</string>
+    <string name="notification_list_pause">Fasilə ver</string>
     <string name="notification_list_previous">Əvvəlki</string>
     <string name="notification_list_next">Növbəti</string>
     <plurals name="notification_list_group_count">
@@ -1470,11 +1470,11 @@
     <string name="title_pref_shortcut_2finger_rotate_clockwise">2 barmaqla saat əqrəbi istiqamətində fırladın</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">2 barmaqla saat əqrəbinin əksinə fırladın</string>
     <string name="title_pref_shortcut_2finger_scrub">2 barmaqla silin</string>
-    <string name="title_pref_shortcut_2finger_pinch">2 barmaqla sıxın</string>
+    <string name="title_pref_shortcut_2finger_pinch">2 barmaqla sıxma</string>
     <string name="title_pref_shortcut_2finger_spread">2 barmaqla aralayın</string>
-    <string name="title_pref_shortcut_3finger_pinch">3 barmaqla sıxın</string>
+    <string name="title_pref_shortcut_3finger_pinch">3 barmaqla sıxma</string>
     <string name="title_pref_shortcut_3finger_spread">3 barmaqla aralayın</string>
-    <string name="title_pref_shortcut_4finger_pinch">4 barmaqla sıxın</string>
+    <string name="title_pref_shortcut_4finger_pinch">4 barmaqla sıxma</string>
     <string name="title_pref_shortcut_4finger_spread">4 barmaqla aralayın</string>
     <string name="title_pref_shortcut_edge_bottom_up">Aşağı kənardan yuxarı çəkin</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Aşağı kənardan yuxarı uzun çəkin</string>
@@ -1498,14 +1498,14 @@
     <string name="value_focus_delay_200ms_default">0,2 saniyə (defolt)</string>
     <string name="value_focus_delay_300ms">0,3 saniyə</string>
     <string name="title_pref_lift_to_activate">Aktivləşdirmək üçün qaldırın</string>
-    <string name="summary_support_change_lift_to_activate">Barmağı qaldırmağın elementi harada aktivləşdirdiyini dəyişin</string>
+    <string name="summary_support_change_lift_to_activate">Barmağı qaldırmağın elementi harada aktivləşdirdiyini dəyiş</string>
     <string name="value_lift_to_activate_disabled">Deaktiv</string>
     <string name="value_lift_to_activate_navigation_bar">Yalnız naviqasiya panelində</string>
     <string name="value_lift_to_activate_entire_screen">Bütün ekran</string>
     <string name="template_lift_to_activate_changed">Aktivləşdirmək üçün qaldırın: <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="title_pref_wrap_around">Dövri keçid</string>
     <string name="summary_pref_wrap_around">Son elementdən sonra çəkmək birinciyə, birincidən əvvəl çəkmək isə sonuncuya keçir. Deaktiv olduqda əvəzində sonda səs oxudulur.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">İlişib qalmış toxunuşla kəşfi düzəldin</string>
+    <string name="title_pref_fix_stuck_touch_exploration">İlişib qalmış toxunuşla kəşfi düzəlt</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP icazəsi olmadan SandFly yalnız toxunuşla kəşfin ilişib qala biləcəyini səsləndirə bilər. Onu düzəltməyə imkan vermək üçün bunu icra edin: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Toxunuşla kəşf düzəldilir</string>
     <string name="stuck_touch_exploration_fixed">Toxunuşla kəşf düzəldildi</string>
@@ -1517,7 +1517,7 @@
     <string name="window_names_until_first_item">Həmişə, ilk element onu kəsir</string>
     <string name="window_names_window_opens">Yalnız pəncərə açıldıqda</string>
     <string name="window_names_never">Heç vaxt</string>
-    <string name="title_pref_focus_new_windows">Fokusu yeni pəncərələrə köçürün</string>
+    <string name="title_pref_focus_new_windows">Fokusu yeni pəncərələrə köçür</string>
     <string name="title_pref_volume_keys_adjust_sliders">Səs düymələri slayderləri tənzimləyir</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Slayder fokusda olduqda səs artırma və azaltma düymələri səs səviyyəsi əvəzinə onun dəyərini dəyişir</string>
     <string name="summary_support_wrap_around">Son elementdən birinciyə dövri keçidi aktiv və ya deaktiv edin</string>
@@ -1532,11 +1532,11 @@
     <string name="title_keyboard_echo_braille_keyboard">Brayl klaviaturası exosu</string>
     <string name="title_keyboard_echo_braille_display">Brayl displeyi exosu</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Yazarkən nitqi kəsin</string>
+    <string name="title_pref_interrupt_typing">Yazarkən nitqi kəs</string>
     <string name="pref_interrupt_typing_entry_always">Həmişə</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Redaktə sahələrində</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Klaviatura exosu səsləndirdikdə</string>
-    <string name="title_pref_interrupt_enter">Enter basıldıqda nitqi kəsin</string>
+    <string name="title_pref_interrupt_enter">Enter basıldıqda nitqi kəs</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Ad, vəziyyət, növ</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Növ, vəziyyət, ad</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Vəziyyət, növ, ad</string>
@@ -1549,7 +1549,7 @@
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> götürüldü. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> buraxıldı. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly elementin detallarını bu sıra ilə səsləndirir. Sıranı dəyişmək üçün detala toxunub saxlayın, sonra onu yuxarı və ya aşağı sürüşdürün. SandFly aktiv olduqda iki dəfə toxunub saxlayın, sonra sürüşdürün. Həmçinin Yuxarı köçürün və Aşağı köçürün əməliyyatlarından istifadə edə bilərsiniz.</string>
-    <string name="title_pref_speak_items_before_scroll">Elementləri görünüşə sürüşdürülməzdən əvvəl səsləndirin</string>
+    <string name="title_pref_speak_items_before_scroll">Elementləri görünən sahəyə sürüşmədən əvvəl səsləndir</string>
     <string name="gemini_error_api_key">Gemini API açarını qəbul etmədi. Açarı Avtomatik təsvirlər ayarlarında yoxlayın.</string>
     <string name="gemini_error_quota">Gemini API açarınız üçün istifadə limitinə çatılıb. Sonra yenidən cəhd edin.</string>
     <string name="gemini_error_busy">Gemini hazırda məşğuldur. Bir azdan yenidən cəhd edin.</string>
@@ -1558,13 +1558,13 @@
     <string name="gemini_error_with_details">Gemini cavab verə bilmədi, xəta <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Daha detallı şəkil təsviri əldə etmək mümkün deyil: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="title_selector_vertical_navigation">Şaquli naviqasiya</string>
-    <string name="summary_selector_vertical_navigation">Aşağıdakı və ya yuxarıdakı elementə keçin, cərgənin digər elementlərini keçin</string>
-    <string name="title_pref_speech_stream">Nitqin səs həcmi</string>
-    <string name="summary_selector_speech_stream">Əlçatanlıq, media, zəng və zəng həcmləri arasında keçid edin</string>
+    <string name="summary_selector_vertical_navigation">Sətrin digər elementlərini keçərək aşağıdakı və ya yuxarıdakı elementə keçid</string>
+    <string name="title_pref_speech_stream">Nitqin səsi</string>
+    <string name="summary_selector_speech_stream">Əlçatımlılıq, media, zəng melodiyası və danışıq səs səviyyələri arasında keçid</string>
     <string name="speech_stream_accessibility">Əlçatımlılıq səsi</string>
-    <string name="speech_stream_media">Media həcmi</string>
-    <string name="speech_stream_ring">Zəngin həcmi</string>
-    <string name="speech_stream_call">Zəng səsi, qulaqlıq</string>
+    <string name="speech_stream_media">Media səsi</string>
+    <string name="speech_stream_ring">Zəng səsi</string>
+    <string name="speech_stream_call">Zəng səsi, qulaq dinamiki</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1572,17 +1572,17 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_play_installer">Google Play-dən quraşdırılmış görünür</string>
-    <string name="summary_pref_play_installer">Google Play-in quraşdırılmış SandFly olduğunu digər tətbiqlərə deyin. Bəzi bank proqramları kimi bəzi proqramlar başqa yerdən quraşdırılmış əlçatanlıq xidmətlərini söndürür. Shizuku tələb olunur və yalnız SandFly-in haradan gəldiyi barədə deyilən proqramları dəyişir.</string>
+    <string name="summary_pref_play_installer">Digər tətbiqlərə SandFly-ın Google Play-dən quraşdırıldığını bildirir. Bəzi tətbiqlər, məsələn, bəzi bank tətbiqləri, başqa yerdən quraşdırılmış əlçatımlılıq xidmətlərini deaktiv edir. Shizuku tələb edir və yalnız tətbiqlərə SandFly-ın haradan quraşdırıldığı barədə verilən məlumatı dəyişir.</string>
     <string name="summary_pref_play_installer_pending">Aktivdir, lakin Google Play hələ quraşdırıcı kimi qeydə alınmayıb. SandFly, Shizuku mövcud olduqda onu təyin edir.</string>
     <string name="notification_list_show_all">Hamısını göstər</string>
     <string name="notification_list_show_less">Daha az göstər</string>
-    <string name="title_pref_quick_settings">SandFly-nin sürətli parametrlərindən istifadə edin</string>
+    <string name="title_pref_quick_settings">SandFly-ın sürətli ayarlarından istifadə et</string>
     <string name="title_pref_quick_settings_items">Sürətli parametrlər paneli</string>
-    <string name="quick_settings_title">Sürətli Ayarlar</string>
+    <string name="quick_settings_title">Sürətli ayarlar</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">Mobil data</string>
-    <string name="quick_settings_hotspot">Qaynar nöqtə</string>
+    <string name="quick_settings_hotspot">Hotspot</string>
     <string name="quick_settings_airplane_mode">Təyyarə rejimi</string>
     <string name="quick_settings_do_not_disturb">Narahat etməyin</string>
     <string name="quick_settings_sound_mode">Səs rejimi</string>
@@ -1591,34 +1591,34 @@
     <string name="quick_settings_location">Məkan</string>
     <string name="quick_settings_auto_rotate">Avtomatik fırlanma</string>
     <string name="quick_settings_battery_saver">Batareyaya qənaət</string>
-    <string name="quick_settings_dark_theme">Qaranlıq mövzu</string>
+    <string name="quick_settings_dark_theme">Tünd tema</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Parlaqlıq</string>
     <string name="quick_settings_adaptive_brightness">Adaptiv parlaqlıq</string>
-    <string name="quick_settings_media_volume">Media həcmi</string>
-    <string name="quick_settings_call_volume">Zəng həcmi</string>
-    <string name="quick_settings_ring_volume">Zəngin həcmi</string>
-    <string name="quick_settings_notification_volume">Bildiriş həcmi</string>
-    <string name="quick_settings_alarm_volume">Siqnalın həcmi</string>
+    <string name="quick_settings_media_volume">Media səsi</string>
+    <string name="quick_settings_call_volume">Zəng səsi</string>
+    <string name="quick_settings_ring_volume">Zəng səsi</string>
+    <string name="quick_settings_notification_volume">Bildiriş səsi</string>
+    <string name="quick_settings_alarm_volume">Zəngli saatın səs səviyyəsi</string>
     <string name="quick_settings_accessibility_volume">Əlçatımlılıq səsi</string>
-    <string name="quick_settings_system_volume">Sistem audio həcmi</string>
-    <string name="quick_settings_data_saver">Məlumat qoruyucusu</string>
-    <string name="quick_settings_night_light">Gecə İşığı</string>
+    <string name="quick_settings_system_volume">Sistem səsi</string>
+    <string name="quick_settings_data_saver">Trafikə qənaət</string>
+    <string name="quick_settings_night_light">Gecə işığı</string>
     <string name="quick_settings_extra_dim">Əlavə tutqun</string>
     <string name="quick_settings_color_inversion">Rəng çevrilməsi</string>
     <string name="quick_settings_color_correction">Rəng korreksiyası</string>
     <string name="quick_settings_microphone_access">Mikrofona giriş</string>
     <string name="quick_settings_camera_access">Kameraya giriş</string>
-    <string name="quick_settings_screen_timeout">Ekran fasiləsi</string>
+    <string name="quick_settings_screen_timeout">Ekranın sönmə vaxtı</string>
     <string name="quick_settings_font_size">Şrift ölçüsü</string>
     <string name="quick_settings_media">Media</string>
     <string name="quick_settings_no_media">Media yoxdur</string>
     <string name="quick_settings_media_output">Media çıxışı</string>
-    <string name="quick_settings_next_alarm">Növbəti həyəcan</string>
-    <string name="quick_settings_no_alarm">Siqnal yoxdur</string>
+    <string name="quick_settings_next_alarm">Növbəti zəngli saat</string>
+    <string name="quick_settings_no_alarm">Zəngli saat yoxdur</string>
     <string name="quick_settings_settings">Ayarlar</string>
     <string name="quick_settings_power_menu">Güc menyusu</string>
-    <string name="quick_settings_add_system_tile">Sistem plitəsi əlavə edin</string>
+    <string name="quick_settings_add_system_tile">Sistem xanasını əlavə edin</string>
     <string name="quick_settings_no_system_tiles">Əlavə etmək üçün sistem plitələri yoxdur</string>
     <string name="quick_settings_tile_not_found">%1$s sistemin sürətli parametrlərində deyil</string>
     <string name="quick_settings_never">Heç vaxt</string>
@@ -1643,11 +1643,11 @@
     <string name="quick_settings_edit">Redaktə et</string>
     <string name="quick_settings_system">Sistemin sürətli parametrləri</string>
     <string name="quick_settings_open_settings">Parametrləri açın</string>
-    <string name="quick_settings_add_control">Nəzarət əlavə edin</string>
-    <string name="quick_settings_add_tile">Proqram plitəsi əlavə edin</string>
+    <string name="quick_settings_add_control">İdarəetmə elementi əlavə edin</string>
+    <string name="quick_settings_add_tile">Tətbiq xanasını əlavə edin</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Sütunların sayı</string>
-    <string name="quick_settings_move">Hərəkət edin</string>
+    <string name="quick_settings_move">Köçür</string>
     <string name="quick_settings_move_title">%1$s köçürün</string>
     <string name="quick_settings_cell">Sətir %1$d, sütun %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1656,18 +1656,18 @@
         <item quantity="one">Digər %d element köçürüldü</item>
         <item quantity="other">%d digər element köçürüldü</item>
     </plurals>
-    <string name="quick_settings_remove">Silin</string>
+    <string name="quick_settings_remove">Sil</string>
     <string name="quick_settings_added">%1$s əlavə edildi</string>
     <string name="quick_settings_removed">%1$s silindi</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Baxış rejimini yandırmaq və ya söndürmək üçün başqa bir qısayol</string>
     <string name="title_pref_vibration_strength">Vibrasiya gücü</string>
-    <string name="shortcut_scroll_to_top">Yuxarıya sürüşdürün</string>
-    <string name="shortcut_write_reading_control">Oxu nəzarətinin hərfini yazın</string>
-    <string name="title_pref_reading_control_letters">Əl ilə hərf yazmaq</string>
+    <string name="shortcut_scroll_to_top">Yuxarıya sürüşdür</string>
+    <string name="shortcut_write_reading_control">Oxuma kontrolunun hərfini yaz</string>
+    <string name="title_pref_reading_control_letters">Əlyazma hərfləri</string>
     <string name="reading_control_letter_none">Yoxdur</string>
     <string name="handwriting_prompt">Əlifba hərfini yazın</string>
     <string name="handwriting_closed">Əl yazısı bağlandı</string>
-    <string name="handwriting_no_match">Heç bir oxu nəzarəti <xliff:g id="letter" example="Q">%1$s</xliff:g> ilə başlamır</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> ilə başlayan oxuma kontrolu yoxdur</string>
     <string name="shortcut_write_app_name">Tətbiqi açmaq üçün adını yazın</string>
     <string name="handwriting_app_prompt">Tətbiqin adını yazın</string>
     <string name="handwriting_no_app"><xliff:g id="letters" example="WHA">%1$s</xliff:g> ilə başlayan tətbiq yoxdur</string>
@@ -1693,8 +1693,8 @@
     <string name="handwriting_keyboard_name">SandFly əl yazısı</string>
     <string name="handwriting_space">Boşluq</string>
     <string name="handwriting_new_line">Yeni sətir</string>
-    <string name="handwriting_tutorial_intro">Əl yazısı klaviatura dərsliyi. Ekranın istənilən yerinə bir barmağınızla yazın. Yazdıqlarınız bir anlıq dayandığınız zaman çap olunur. Dərsliyi bitirmək üçün üç barmağınızla aşağı sürüşdürün.</string>
-    <string name="handwriting_tutorial_write_letter">Əlifba hərfini yazın a.</string>
+    <string name="handwriting_tutorial_intro">Əl yazısı klaviaturası təlimatı. Ekranın istənilən yerində bir barmaqla yazın. Bir anlıq dayandıqda yazdığınız mətn daxil edilir. Təlimatı bitirmək üçün üç barmaqla aşağı sürüşdürün.</string>
+    <string name="handwriting_tutorial_write_letter">a hərfini yazın.</string>
     <string name="handwriting_tutorial_write_word">İndi hi sözünü yazın.</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> yazıldı.</string>
     <string name="handwriting_tutorial_space">Boşluq daxil etmək üçün iki barmağınızla sağa sürüşdürün.</string>
@@ -1704,29 +1704,29 @@
     <string name="handwriting_tutorial_read_back">Kursordan əvvəl mətni oxumaq üçün iki barmağınızla toxunun.</string>
     <string name="handwriting_tutorial_new_line">Yeni sətir daxil etmək və ya Göndər kimi mətn sahəsində əməliyyatı yerinə yetirmək üçün iki barmağınızla aşağı sürüşdürün.</string>
     <string name="handwriting_tutorial_not_that">Bu başqa jest idi.</string>
-    <string name="handwriting_tutorial_done">Yeni xətt. Dərslik bitdi. Klaviaturanı gizlətmək üçün üç barmağınızla aşağı, klaviaturanı dəyişmək üçün isə üç barmağınızla sağa və ya sola sürüşdürün. Dərsliyi yenidən açmaq üçün üç barmağınızla vurun.</string>
-    <string name="handwriting_tutorial_finished">Dərslik bitdi. Onu yenidən açmaq üçün üç barmağınızla vurun.</string>
+    <string name="handwriting_tutorial_done">Yeni sətir. Təlimat bitdi. Klaviaturanı gizlətmək üçün üç barmaqla aşağı, klaviaturanı dəyişmək üçün üç barmaqla sağa və ya sola sürüşdürün. Təlimatı yenidən açmaq üçün üç barmaqla toxunun.</string>
+    <string name="handwriting_tutorial_finished">Təlimat bitdi. Yenidən açmaq üçün üç barmaqla toxunun.</string>
     <string name="handwriting_no_alternatives">Başqa təklif yoxdur</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g>/<xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Boş mətn</string>
     <string name="handwriting_not_available">Əl yazısının tanınması bu cihazda mövcud deyil</string>
-    <string name="shortcut_scroll_to_bottom">Aşağıya sürüşdürün</string>
+    <string name="shortcut_scroll_to_bottom">Aşağıya sürüşdür</string>
     <string name="shortcut_refresh">Yeniləyin</string>
     <string name="shortcut_system_quick_settings">Sistemin sürətli parametrləri</string>
     <string name="shortcut_lock_screen">Cihaz ekranını kilidləyin</string>
     <string name="shortcut_power_menu">Güc menyusu</string>
-    <string name="shortcut_increase_media_volume">Media həcmini artırın</string>
-    <string name="shortcut_decrease_media_volume">Media həcmini azaldın</string>
+    <string name="shortcut_increase_media_volume">Media səsini artırın</string>
+    <string name="shortcut_decrease_media_volume">Media səsini azaldın</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Yuxarı soldan aşağıya uzun sürüşdürün</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Yuxarı sağdan aşağı uzun sürüşdürün</string>
     <string name="title_pref_shortcut_edge_left_top_right">Sol kənardan, yuxarı yarısından sağa sürüşdürün</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Sol kənardan, yuxarı yarısından sağa uzun sürüşdürün</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Sol kənarın yuxarı yarısından sağa uzun sürüşdürün</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Sol kənardan, aşağı yarısından sağa sürüşdürün</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Sol kənardan, aşağı yarıdan sağa uzun sürüşdürün</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Sol kənarın aşağı yarısından sağa uzun sürüşdürün</string>
     <string name="title_pref_shortcut_edge_right_top_left">Sağ kənardan, yuxarı yarıdan sola sürüşdürün</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Sağ kənardan yuxarıdan sola uzun sürüşdürün</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Sağ kənarın yuxarı yarısından sola uzun sürüşdürün</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Sağ kənardan sola, aşağı yarıdan sürüşdürün</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Sağ kənardan, aşağı yarıdan sola uzun sürüşdürün</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Sağ kənarın aşağı yarısından sola uzun sürüşdürün</string>
     <string name="title_pref_edge_first_click_mm">İlk klikləməyə qədər olan məsafə</string>
     <string name="title_pref_edge_second_click_mm">Birinci klikdən ikinci klikə qədər olan məsafə</string>
     <string name="value_distance_5mm">0,5 sm</string>
@@ -1737,17 +1737,17 @@
     <string name="value_distance_40mm">4 sm</string>
     <string name="value_distance_50mm">5 sm</string>
     <string name="title_pref_selector_links_controls_web_only">Linklər və Nəzarətlər yalnız veb məzmunda</string>
-    <string name="title_pref_selector_auto_switch">Oxuma nəzarətini avtomatik olaraq dəyişdirin</string>
-    <string name="title_pref_touch_stops_speech">Ekrana toxunduqda nitqi dayandırın</string>
+    <string name="title_pref_selector_auto_switch">Oxuma kontrolunu avtomatik dəyiş</string>
+    <string name="title_pref_touch_stops_speech">Ekrana toxunduqda nitqi dayandır</string>
     <string name="title_pref_volume_keys_move_cursor">Səs səviyyəsi düymələri kursoru hərəkət etdirir</string>
-    <string name="summary_pref_volume_keys_move_cursor">Mətn sahəsində fokus olduqda, səsin artırılması kursoru simvolun geriyə, səsin aşağı salınması isə onu irəli aparır</string>
+    <string name="summary_pref_volume_keys_move_cursor">Mətn sahəsində fokus olduqda, səsi artırmaq kursoru bir simvol geri, səsi azaltmaq isə bir simvol irəli aparır</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Əl yazısı klaviaturasının əks-sədası</string>
     <string name="image_qna_ask_by_voice">Səslə soruşun</string>
-    <string name="image_qna_stop_listening">Dinləməyi dayandırın</string>
+    <string name="image_qna_stop_listening">Dinləməni dayandır</string>
     <string name="image_qna_type_question">Sual yazın</string>
     <string name="shortcut_dictate">Diktə edin</string>
-    <string name="title_pref_ai_dictation">AI ilə düzgün diktə</string>
-    <string name="dictation_not_corrected">Düzəldilməyib. Tanındığı kimi yazılmışdır.</string>
+    <string name="title_pref_ai_dictation">Diktəni AI ilə düzəlt</string>
+    <string name="dictation_not_corrected">Düzəldilməyib. Tanındığı kimi yazıldı.</string>
     <string name="dictation_nothing_recognized">Heç nə tanınmayıb</string>
     <string name="dictation_unavailable">Nitqin tanınması əlçatan deyil</string>
     <string name="dictation_field_gone">Mətn sahəsi bağlandı. Heç nə yazılmayıb.</string>
@@ -1769,7 +1769,7 @@
     <string name="dictation_ai_same">Avtomatik təsvirlərdəki ilə eyni</string>
     <string name="title_pref_browse_mode_per_app">Hər bir tətbiqdə baxış rejimini yadda saxla</string>
     <string name="title_pref_export_settings">Parametrləri ixrac edin</string>
-    <string name="title_pref_import_settings">İdxal parametrləri</string>
+    <string name="title_pref_import_settings">Parametrləri idxal edin</string>
     <string name="settings_export_done">Parametrlər ixrac edildi. API açarları daxil deyil</string>
     <string name="settings_export_failed">Parametrləri ixrac etmək mümkün olmadı</string>
     <string name="settings_import_done">Parametrlər idxal edildi</string>

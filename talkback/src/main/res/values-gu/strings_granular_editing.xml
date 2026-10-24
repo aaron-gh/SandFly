@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">દાણાદાર સંપાદન</string>
-    <string name="granular_editing_split_by">આના દ્વારા વિભાજિત કરો: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">દ્વારા વિભાજિત</string>
+    <string name="granular_editing_title">ભાગ પ્રમાણે સંપાદન</string>
+    <string name="granular_editing_split_by">આ મુજબ વિભાજન: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">આ મુજબ વિભાજન</string>
     <string name="granular_editing_characters">અક્ષરો</string>
     <string name="granular_editing_words">શબ્દો</string>
     <string name="granular_editing_sentences">વાક્યો</string>
     <string name="granular_editing_lines">લાઇન</string>
     <string name="granular_editing_paragraphs">ફકરા</string>
-    <string name="granular_editing_space">જગ્યા</string>
-    <string name="granular_editing_new_line">નવી રેખા</string>
+    <string name="granular_editing_space">સ્પેસ</string>
+    <string name="granular_editing_new_line">નવી લાઇન</string>
     <string name="granular_editing_tab">ટૅબ અક્ષર</string>
-    <string name="granular_editing_empty">કોઈ ટેક્સ્ટ નથી. વધુમાં, અંતે ટેક્સ્ટ ઉમેરોનો ઉપયોગ કરો.</string>
+    <string name="granular_editing_empty">કોઈ ટેક્સ્ટ નથી. “વધુ”માં “અંતે ટેક્સ્ટ ઉમેરો”નો ઉપયોગ કરો.</string>
     <string name="granular_editing_edit">સંપાદિત કરો</string>
     <string name="granular_editing_insert_before">પહેલાં દાખલ કરો</string>
     <string name="granular_editing_insert_after">પછી દાખલ કરો</string>
@@ -22,14 +22,14 @@
     <string name="granular_editing_save">સાચવો</string>
     <string name="granular_editing_more">વધુ</string>
     <string name="granular_editing_undo">પૂર્વવત્ કરો</string>
-    <string name="granular_editing_redo">છેલ્લું પૂર્વવત્ કરેલ સંપાદન ફરીથી કરો</string>
+    <string name="granular_editing_redo">ફરી કરો</string>
     <string name="granular_editing_find">શોધો</string>
     <string name="granular_editing_find_next">આગળ શોધો</string>
     <string name="granular_editing_replace">બદલો</string>
-    <string name="granular_editing_replace_with">સાથે બદલો</string>
+    <string name="granular_editing_replace_with">આનાથી બદલો</string>
     <string name="granular_editing_replace_all">બધા બદલો</string>
     <string name="granular_editing_add_at_end">અંતે ટેક્સ્ટ ઉમેરો</string>
-    <string name="granular_editing_clear_selection">બધા ટેક્સ્ટને નાપસંદ કરો</string>
+    <string name="granular_editing_clear_selection">પસંદગી સાફ કરો</string>
     <string name="granular_editing_cut_selected">પસંદ કરેલ ટેક્સ્ટ કાપો</string>
     <string name="granular_editing_delete_selected">પસંદ કરેલ કાઢી નાખો</string>
     <string name="granular_editing_copied">નકલ કરી</string>

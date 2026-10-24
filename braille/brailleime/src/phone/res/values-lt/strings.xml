@@ -45,7 +45,7 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Jei norite pakeisti kalbą, kai vedate tekstą Brailio rašto klaviatūra, perbraukite aukštyn trimis pirštais. Tada pasirinkite „perjungti į kitą kalbą“.</string>
   <string name="title_pref_accumulate_presses">Visų paspaustų taškų įtraukimas</string>
   <string name="summary_pref_accumulate_presses">Kiekvienas paspaustas taškas yra įvesties dalis, net jei jis atleidžiamas anksčiau nei kiti taškai</string>
-  <string name="title_pref_reverse_dots">Sukeiskite kairįjį ir dešinįjį taškus</string>
+  <string name="title_pref_reverse_dots">Sukeisti kairiuosius ir dešiniuosius taškus</string>
   <string name="summary_pref_reverse_dots">1, 2 ir 3 taškai keičiasi vietomis su 4, 5 ir 6 taškais</string>
   <string name="bd_preference_braille_contracted">Sutraukta Brailio rašmenų forma</string>
   <string name="bd_preference_braille_uncontracted">Nesutraukta Brailio rašmenų forma</string>
@@ -105,7 +105,7 @@
   <string name="talkback_off_dialog_positive_button">Įjungti pritaikomumo nustatymuose</string>
   <string name="talkback_suspend_dialog_title">„SandFly“ atnaujinimas norint naudoti Brailio rašmenų klaviatūrą</string>
   <string name="talkback_off_or_suspend_dialog_message">Kai „SandFly“ įjungta, galite paliesti ekraną, kad įvestumėte Brailio rašmenų simbolius.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Gesto keitimas įjungus „SandFly“</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Įjunkite „SandFly“, kad pakeistumėte gestą</string>
   <string name="talkback_off_custom_gestures_dialog_message">„SandFly“ išjungta. Įjunkite, kad galėtumėte keisti Brailio rašto klaviatūros gestus.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Eiti į nustatymus</string>
   <string name="reset_gestures_dialog_title">Visus gestus nustatyti iš naujo?</string>
@@ -208,8 +208,8 @@
   <string name="custom_gesture_perform_again">Atlikite gestą, kurį norite naudoti dar kartą. %s</string>
     <string name="tabletop_port_left_announcement">Stalo režimas, įkrovimo prievadas kairėje</string>
     <string name="tabletop_port_right_announcement">Stalo režimas, įkrovimo prievadas dešinėje</string>
-    <string name="screen_away_port_right_announcement">Ekrano režimas, įkrovimo prievadas dešinėje</string>
-    <string name="screen_away_port_left_announcement">Ekrano režimas, įkrovimo prievadas kairėje</string>
+    <string name="screen_away_port_right_announcement">Ekranas nukreiptas nuo jūsų, įkrovimo prievadas dešinėje</string>
+    <string name="screen_away_port_left_announcement">Ekranas nukreiptas nuo jūsų, įkrovimo prievadas kairėje</string>
     <string name="screen_toward_announcement">Ekranas link jūsų</string>
     <string name="screen_toward_port_left_announcement">Ekranas link jūsų, įkrovimo prievadas kairėje</string>
     <string name="screen_toward_port_right_announcement">Ekranas link jūsų, įkrovimo prievadas dešinėje</string>
@@ -219,8 +219,8 @@
     <string name="port_left_announcement">Įkrovimo prievadas kairėje</string>
     <string name="tabletop_port_near_announcement">Stalo režimas, įkrovimo prievadas link jūsų</string>
     <string name="tabletop_port_far_announcement">Stalo režimas, įkrovimo prievadas toliau nuo jūsų</string>
-    <string name="screen_away_port_down_announcement">Ekrano išjungimo režimas, įkrovimo prievadas nukreiptas žemyn</string>
-    <string name="screen_away_port_up_announcement">Ekrano išjungimo režimas, įkrovimo prievadas nukreiptas į viršų</string>
+    <string name="screen_away_port_down_announcement">Ekranas nukreiptas nuo jūsų, įkrovimo prievadas nukreiptas žemyn</string>
+    <string name="screen_away_port_up_announcement">Ekranas nukreiptas nuo jūsų, įkrovimo prievadas nukreiptas į viršų</string>
     <string name="port_near_announcement">Įkrovimo prievadas link jūsų</string>
     <string name="port_far_announcement">Įkrovimo prievadas toliau nuo jūsų</string>
     <string name="port_down_announcement">Įkrovimo prievadas nukreiptas žemyn</string>
@@ -230,11 +230,11 @@
     <string name="orientation_unlocked_announcement">Orientacija atrakinta</string>
     <string name="switch_to_language_contracted_announcement">Perjungta į: %s, Sutraukta Brailio rašmenų forma</string>
     <string name="switch_to_language_uncontracted_announcement">Perjungta į: %s, Nesutraukta Brailio rašmenų forma</string>
-    <string name="title_pref_flip_dots_vertically">Sukeiskite viršutinius ir apatinius taškus</string>
-    <string name="summary_pref_flip_dots_vertically">Taškas 1 keičiasi vietomis su 3 tašku, o taškas 4 su tašku 6</string>
-    <string name="title_pref_tablet_held_up_faces_away">Planšetinis kompiuteris buvo pakeltas veidu</string>
-    <string name="summary_pref_tablet_held_up_faces_away">Kai išjungtas, planšetinis kompiuteris arba išskleistas telefonas, pakeltas pakeltas, naudoja stalviršio išdėstymą, nukreiptą į jus</string>
+    <string name="title_pref_flip_dots_vertically">Sukeisti viršutinius ir apatinius taškus</string>
+    <string name="summary_pref_flip_dots_vertically">Taškas 1 susikeičia vietomis su tašku 3, o taškas 4 – su tašku 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Pakelto planšetinio kompiuterio ekranas nukreiptas nuo jūsų</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Kai išjungta, pakeltas planšetinis kompiuteris ar atlenktas telefonas naudoja gulsčiojo režimo išdėstymą, ekranu į jus</string>
     <string name="title_pref_typing_sounds">Rašymo garsai</string>
-    <string name="summary_pref_typing_sounds">Paleisti klaviatūros paspaudimai, kai įvedate simbolį, tarpą, naują eilutę arba ištrinate</string>
+    <string name="summary_pref_typing_sounds">Leisti klaviatūros spragtelėjimus įvedant simbolį, tarpą ar naują eilutę arba trinant</string>
     <string name="skip_tutorial">Praleisti mokymo programą</string>
 </resources>

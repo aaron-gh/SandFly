@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">ডিভাইচ আনলক কৰা হ’ল।</string>
   <string name="title_pref_speech_volume">কথনৰ ভলিউম</string>
   <string name="title_pref_verbose_scroll_announcement">সদায়েই সূচীবদ্ধ কৰা বস্তুৰ সংখ্যা কওক</string>
-  <string name="summary_pref_verbose_scroll_announcement">প্ৰতিবাৰ স্ক্ৰ’ল কৰাৰ পাছত কোনবোৰ বস্তু দেখুওৱা হৈছে কওক</string>
+  <string name="summary_pref_verbose_scroll_announcement">প্ৰতিবাৰ স্ক্ৰ’ল কৰাৰ পাছত কোনবোৰ বস্তু দেখুওৱা হৈছে কয়</string>
   <string name="title_pref_cover_proximity_sensor">কথন বন্ধ কৰিবলৈ নৈকট্য ছেন্সৰটোক ঢাকক</string>
   <string name="title_pref_phonetic_letters">উদাহৰণৰ সৈতে আখৰ উচ্চাৰণ কৰক</string>
   <string name="summary_pref_phonetic_letters">আপুনি যেতিয়া কীব’ৰ্ডৰ কী বাছনি কৰে অথবা বৰ্ণসংখ্যা অনুসৰি নেভিগে’ট কৰে, আপুনি প্ৰতিটো বৰ্ণসংখ্যাৰ বাবে এটাকৈ উদাহৰণ শুনিবলৈ পাব, যেনে \"এইচ্ছ, হোটেল\"</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">পূৰ্বৱৰ্তী স্তম্ভ</string>
   <string name="shortcut_column_right">পৰৱৰ্তী স্তম্ভ</string>
   <string name="table_navigation_not_supported">তালিকা নেভিগেশ্বন সমৰ্থিত নহয়</string>
-  <string name="pref_auto_enter_table_navigation_title">তালিকাত তালিকাৰ নেভিগেশ্বনলৈ সলনি কৰক</string>
+  <string name="pref_auto_enter_table_navigation_title">টেবুলত টেবুল নেভিগেশ্বনলৈ সলনি কৰক</string>
   <string name="title_text_formatting_menu">পাঠৰ ফৰ্মেট বৰ্ণনা কৰক</string>
   <string name="summary_text_formatting_menu">ব’ল্ড কৰা, ইটালিক কৰা, আণ্ডাৰলাইন কৰা আৰু তেনেধৰণৰ বহুতো সালসলনিৰ বাবে</string>
   <string name="title_text_formatting_inline">পাঠ কোৱাৰ ফৰ্মেটিং</string>
@@ -1312,7 +1312,7 @@
     <string name="shortcut_previous_voice_profile">পূৰ্বৱৰ্তী কণ্ঠৰ প্ৰ’ফাইল</string>
     <string name="shortcut_next_voice_profile">পৰৱৰ্তী কণ্ঠৰ প্ৰ’ফাইল</string>
     <string name="title_pref_voice_profile_in_use">ব্যৱহাৰ হৈ থকা কণ্ঠৰ প্ৰ’ফাইল</string>
-    <string name="title_pref_add_voice_profile">কণ্ঠৰ প্ৰ’ফাইল যোগ দিয়ক</string>
+    <string name="title_pref_add_voice_profile">কণ্ঠৰ প্ৰ\'ফাইল যোগ কৰক</string>
     <string name="voice_profile_new_name">কণ্ঠৰ প্ৰ’ফাইল <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> নামৰ এটা কণ্ঠৰ প্ৰ’ফাইল ইতিমধ্যে আছে</string>
     <string name="title_pref_voice_profile_name">নাম</string>
@@ -1404,13 +1404,13 @@
     <string name="emoji_repeat_count_4">৪ বা তাতকৈ অধিক</string>
     <string name="emoji_repeat_count_5">৫ বা তাতকৈ অধিক</string>
     <string name="emoji_repeat_count_6">৬ বা তাতকৈ অধিক</string>
-    <string name="pref_table_headers_category_title">তালিকা পঢ়া</string>
+    <string name="pref_table_headers_category_title">টেবুল পঢ়া</string>
     <string name="pref_table_column_headers_title">স্তম্ভৰ হে’ডাৰ পঢ়ক</string>
     <string name="pref_table_column_headers_entry_after">কোষৰ ডেটাৰ পাছত</string>
     <string name="pref_table_column_headers_entry_before">কোষৰ ডেটাৰ আগত</string>
     <string name="pref_table_column_headers_entry_off">নপঢ়িব</string>
     <string name="pref_table_speak_row_column_numbers_title">শাৰী আৰু স্তম্ভৰ নম্বৰ কওক</string>
-    <string name="pref_table_speak_row_column_numbers_summary">তালিকাৰ কোষৰ বাবে শাৰী আৰু স্তম্ভৰ নম্বৰ কওক</string>
+    <string name="pref_table_speak_row_column_numbers_summary">টেবুলৰ কোষৰ শাৰী আৰু স্তম্ভৰ নম্বৰ কয়</string>
     <string name="title_pref_speak_volume_changes">ভলিউমৰ সলনি কওক</string>
     <string name="summary_pref_speak_volume_changes">ভলিউম কী টিপাৰ পাছত নতুন ভলিউম কওক</string>
     <string name="title_pref_speak_notifications">জাননী কওক</string>
@@ -1427,7 +1427,7 @@
     <string name="notification_list_no_access">জাননীৰ এক্সেছ অফ আছে</string>
     <string name="notification_list_grant_access">জাননীৰ এক্সেছ অন কৰক</string>
     <string name="notification_list_quick_settings">ক্ষিপ্ৰ ছেটিং</string>
-    <string name="notification_list_dismiss">অগ্ৰাহ্য কৰক</string>
+    <string name="notification_list_dismiss">আঁতৰাওক</string>
     <string name="notification_list_clear_all">আটাইবোৰ মচক</string>
     <string name="notification_list_send">পঠিয়াওক</string>
     <string name="notification_list_playing">প্লে’ হৈ আছে</string>
@@ -1560,7 +1560,7 @@
     <string name="title_selector_vertical_navigation">উলম্ব নেভিগেচন</string>
     <string name="summary_selector_vertical_navigation">শাৰীৰ আন বস্তুবোৰৰ কাষেৰে পাৰ হৈ তলৰ বা ওপৰৰ বস্তুটোলৈ যাওক</string>
     <string name="title_pref_speech_stream">কথনৰ ভলিউম</string>
-    <string name="summary_selector_speech_stream">অভিগম্যতা, মাধ্যম, ৰিং আৰু কল আয়তনৰ মাজত চুইচ কৰক</string>
+    <string name="summary_selector_speech_stream">সাধ্য সুবিধা, মিডিয়া, ৰিং আৰু কলৰ ভলিউমৰ মাজত সলনি কৰক</string>
     <string name="speech_stream_accessibility">সাধ্য সুবিধাৰ ভলিউম</string>
     <string name="speech_stream_media">মিডিয়া ভলিউম</string>
     <string name="speech_stream_ring">ৰিং ভলিউম</string>
@@ -1572,7 +1572,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_play_installer">Google Play ৰ পৰা ইনষ্টল কৰা যেন লাগে</string>
-    <string name="summary_pref_play_installer">আন এপবোৰক কওক যে Google Play ইনষ্টল হৈছে SandFly। কিছুমান এপ, যেনে কিছুমান বেংকিং এপে আন যিকোনো ঠাইৰ পৰা ইনষ্টল কৰা অভিগম্যতা সেৱাসমূহ বন্ধ কৰি দিয়ে। Shizuku ৰ প্ৰয়োজন, আৰু কেৱল SandFly ক\'ৰ পৰা আহিল সেই বিষয়ে কি এপক কোৱা হয় সেই বিষয়েহে সলনি কৰে।</string>
+    <string name="summary_pref_play_installer">আন এপক জনায় যে SandFly Google Playৰ পৰা ইনষ্টল কৰা হৈছে। কিছুমান এপে, যেনে কিছুমান বেংকিং এপে, আন যিকোনো ঠাইৰ পৰা ইনষ্টল কৰা সাধ্য সুবিধা সেৱা অফ কৰি দিয়ে। Shizuku লাগে, আৰু SandFly ক’ৰ পৰা আহিছে সেই বিষয়ে এপক কি কোৱা হয় কেৱল সেইটোহে সলনি কৰে।</string>
     <string name="summary_pref_play_installer_pending">অন, কিন্তু Google Play এতিয়াও ইনষ্টলাৰ হিচাপে ৰেকৰ্ড কৰা হোৱা নাই। SandFly এ ইয়াক ছেট কৰে যেতিয়া Shizuku উপলব্ধ হয়।</string>
     <string name="notification_list_show_all">সকলো দেখুৱাওক</string>
     <string name="notification_list_show_less">কম দেখুৱাওক</string>
@@ -1598,10 +1598,10 @@
     <string name="quick_settings_media_volume">মিডিয়া ভলিউম</string>
     <string name="quick_settings_call_volume">কল ভলিউম</string>
     <string name="quick_settings_ring_volume">ৰিং ভলিউম</string>
-    <string name="quick_settings_notification_volume">অধিসূচনাৰ আয়তন</string>
+    <string name="quick_settings_notification_volume">জাননীৰ ভলিউম</string>
     <string name="quick_settings_alarm_volume">এলাৰ্ম ভলিউম</string>
     <string name="quick_settings_accessibility_volume">সাধ্য সুবিধাৰ ভলিউম</string>
-    <string name="quick_settings_system_volume">চিস্টেম অডিঅ\' আয়তন</string>
+    <string name="quick_settings_system_volume">চিস্টেম ভলিউম</string>
     <string name="quick_settings_data_saver">ডাটা চেভাৰ</string>
     <string name="quick_settings_night_light">নাইট লাইট</string>
     <string name="quick_settings_extra_dim">অতিৰিক্ত ম্লান</string>
@@ -1617,7 +1617,7 @@
     <string name="quick_settings_next_alarm">পৰৱৰ্তী এলাৰ্ম</string>
     <string name="quick_settings_no_alarm">কোনো এলাৰ্ম নাই</string>
     <string name="quick_settings_settings">ছেটিং</string>
-    <string name="quick_settings_power_menu">শক্তি মেনু</string>
+    <string name="quick_settings_power_menu">পাৱাৰ মেনু</string>
     <string name="quick_settings_add_system_tile">চিস্টেম টাইল যোগ কৰক</string>
     <string name="quick_settings_no_system_tiles">যোগ কৰিবলৈ কোনো চিস্টেম টাইল নাই</string>
     <string name="quick_settings_tile_not_found">%1$s চিস্টেমৰ দ্ৰুত ছেটিংছত নাই</string>
@@ -1641,14 +1641,14 @@
     <string name="quick_settings_off">অফ</string>
     <string name="quick_settings_unavailable">উপলব্ধ নহয়</string>
     <string name="quick_settings_edit">সম্পাদনা কৰক</string>
-    <string name="quick_settings_system">চিস্টেম দ্ৰুত সংহতিসমূহ</string>
+    <string name="quick_settings_system">চিস্টেমৰ ক্ষিপ্ৰ ছেটিং</string>
     <string name="quick_settings_open_settings">ছেটিংছ খোলক</string>
     <string name="quick_settings_add_control">নিয়ন্ত্ৰণ যোগ কৰক</string>
     <string name="quick_settings_add_tile">এপ টাইল যোগ কৰক</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">স্তম্ভৰ সংখ্যা</string>
-    <string name="quick_settings_move">লৰচৰ কৰক</string>
-    <string name="quick_settings_move_title">স্থানান্তৰ %1$s</string>
+    <string name="quick_settings_move">স্থানান্তৰ কৰক</string>
+    <string name="quick_settings_move_title">%1$s স্থানান্তৰ কৰক</string>
     <string name="quick_settings_cell">শাৰী %1$d, স্তম্ভ %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1663,23 +1663,23 @@
     <string name="title_pref_vibration_strength">কম্পনৰ শক্তি</string>
     <string name="shortcut_scroll_to_top">ওপৰলৈ স্ক্ৰল কৰক</string>
     <string name="shortcut_write_reading_control">এটা পঢ়া নিয়ন্ত্ৰণৰ আখৰ লিখা</string>
-    <string name="title_pref_reading_control_letters">হাতেৰে আখৰ লিখা</string>
+    <string name="title_pref_reading_control_letters">হাতে লিখা আখৰ</string>
     <string name="reading_control_letter_none">নাই</string>
     <string name="handwriting_prompt">বৰ্ণমালাৰ আখৰ লিখা</string>
     <string name="handwriting_closed">হাতৰ আখৰ বন্ধ</string>
-    <string name="handwriting_no_match">কোনো পঢ়া নিয়ন্ত্ৰণ <xliff:g id="letter" example="Q">%1$s</xliff:g> ৰ পৰা আৰম্ভ নহয়।</string>
+    <string name="handwriting_no_match">কোনো পঢ়া নিয়ন্ত্ৰণ <xliff:g id="letter" example="Q">%1$s</xliff:g> ৰ পৰা আৰম্ভ নহয়</string>
     <string name="shortcut_write_app_name">এটা এপ খুলিবলৈ ইয়াৰ নাম লিখক</string>
     <string name="handwriting_app_prompt">এটা এপৰ নাম লিখক</string>
     <string name="handwriting_no_app"><xliff:g id="letters" example="WHA">%1$s</xliff:g> ৰে আৰম্ভ হোৱা কোনো এপ নাই</string>
     <string name="handwriting_app_not_opened"><xliff:g id="app" example="WhatsApp">%1$s</xliff:g> খুলিব পৰা নগ\'ল</string>
     <string name="handwriting_not_recognized">হাতৰ আখৰ চিনি পোৱা নাই</string>
     <string name="handwriting_downloading">হাতৰ আখৰ চিনাক্তকৰণ ডাউনলোড হৈ আছে</string>
-    <string name="handwriting_download_title">হাতৰ আখৰৰ স্বীকৃতি ডাউনলোড কৰক?</string>
-    <string name="handwriting_download_message">এই ফোনত হাতৰ আখৰ চিনি পোৱা যায়। এই ভাষাৰ বাবে ইয়াৰ মডেল, প্ৰায় ২০ MB, Google ৰ পৰা এবাৰ ডাউনলোড কৰা হয়। এটা বাৰ্তা দেখুৱাই যে ই কেতিয়া ডাউনলোড হৈছে।</string>
+    <string name="handwriting_download_title">হাতৰ আখৰ চিনাক্তকৰণ ডাউনলোড কৰিবনে?</string>
+    <string name="handwriting_download_message">এই ফোনতে হাতৰ আখৰ চিনাক্ত কৰা হয়। এই ভাষাৰ বাবে ইয়াৰ মডেল, প্ৰায় ২০ MB, Googleৰ পৰা এবাৰ ডাউনল’ড কৰা হয়। ডাউনল’ড হ’লে এটা বাৰ্তা দেখুওৱা হয়।</string>
     <string name="handwriting_download_button">ডাউনল’ড কৰক</string>
     <string name="handwriting_downloaded">হাতৰ আখৰৰ চিনাক্তকৰণ ডাউনলোড কৰা হৈছে</string>
     <string name="handwriting_download_failed">হাতৰ আখৰ চিনাক্তকৰণ ডাউনলোড কৰিব পৰা নগ’ল। ইণ্টাৰনেট সংযোগ পৰীক্ষা কৰক।</string>
-    <string name="handwriting_unsupported_language">এই ভাষাত হাতৰ আখৰৰ স্বীকৃতি পোৱা নাযায়</string>
+    <string name="handwriting_unsupported_language">এই ভাষাত হাতৰ আখৰ চিনাক্তকৰণ উপলব্ধ নহয়</string>
     <string name="title_pref_handwriting_keyboard">হাতৰ আখৰৰ কিবৰ্ড</string>
     <string name="summary_pref_handwriting_keyboard">Android ৰ কিবৰ্ড ছেটিংছত SandFly হস্তলিপি অন কৰক</string>
     <string name="title_pref_handwriting_wait">লিখাৰ পিছত অপেক্ষা কৰক</string>
@@ -1692,12 +1692,12 @@
     <string name="value_handwriting_wait_1000">১ ছেকেণ্ড</string>
     <string name="handwriting_keyboard_name">SandFly হাতৰ আখৰ</string>
     <string name="handwriting_space">স্পেচ</string>
-    <string name="handwriting_new_line">নতুন ৰেখা</string>
-    <string name="handwriting_tutorial_intro">হস্তলিপি কিবৰ্ড টিউটোৰিয়েল। পৰ্দাৰ যিকোনো ঠাইতে এটা আঙুলিৰে লিখা। আপুনি যি লিখে তাক টাইপ কৰা হয় যেতিয়া আপুনি ক্ষন্তেক সময়ৰ বাবে ৰৈ যায়। টিউটোৰিয়েলটো শেষ কৰিবলৈ তিনিটা আঙুলিৰে তললৈ চুইপ কৰক।</string>
-    <string name="handwriting_tutorial_write_letter">বৰ্ণমালাৰ আখৰ লিখা ক.</string>
+    <string name="handwriting_new_line">নতুন শাৰী</string>
+    <string name="handwriting_tutorial_intro">হাতৰ আখৰৰ কিবৰ্ডৰ টিউটোৰিয়েল। স্ক্ৰীনৰ যিকোনো ঠাইত এটা আঙুলিৰে লিখক। আপুনি ক্ষন্তেক ৰ\'লে আপুনি লিখা আখৰ টাইপ হয়। টিউটোৰিয়েলটো শেষ কৰিবলৈ তিনিটা আঙুলিৰে তললৈ চুইপ কৰক।</string>
+    <string name="handwriting_tutorial_write_letter">a আখৰটো লিখক।</string>
     <string name="handwriting_tutorial_write_word">এতিয়া hi শব্দটো লিখক।</string>
     <string name="handwriting_tutorial_typed">টাইপ কৰা হৈছে <xliff:g id="text" example="a">%1$s</xliff:g>।</string>
-    <string name="handwriting_tutorial_space">এটা স্থান টাইপ কৰিবলৈ দুটা আঙুলিৰে সোঁফালে চুইপ কৰক।</string>
+    <string name="handwriting_tutorial_space">স্পেচ টাইপ কৰিবলৈ দুটা আঙুলিৰে সোঁফালে চুইপ কৰক।</string>
     <string name="handwriting_tutorial_delete">কাৰ্চাৰৰ আগৰ আখৰটো মচি পেলাবলৈ দুটা আঙুলিৰে বাওঁফালে চুইপ কৰক।</string>
     <string name="handwriting_tutorial_deleted">ডিলিট কৰা হৈছে।</string>
     <string name="handwriting_tutorial_next_reading">যদি হাতৰ আখৰক আন এটা আখৰ হিচাপে চিনাক্ত কৰা হয়, যেনে ডাঙৰ আখৰ, তেন্তে পৰৱৰ্তী চিনাক্তকৰণৰ পৰামৰ্শ বাছি ল’বলৈ দুটা আঙুলিৰে ওপৰলৈ চুইপ কৰক। এতিয়াই চেষ্টা কৰি চাওক।</string>
@@ -1712,21 +1712,21 @@
     <string name="handwriting_not_available">এই ডিভাইচত হস্তলিপি চিনাক্তকৰণ উপলব্ধ নহয়</string>
     <string name="shortcut_scroll_to_bottom">তললৈ স্ক্ৰল কৰক</string>
     <string name="shortcut_refresh">সতেজ কৰক</string>
-    <string name="shortcut_system_quick_settings">চিস্টেম দ্ৰুত সংহতিসমূহ</string>
+    <string name="shortcut_system_quick_settings">চিস্টেমৰ ক্ষিপ্ৰ ছেটিং</string>
     <string name="shortcut_lock_screen">ডিভাইচ পৰ্দা লক কৰক</string>
-    <string name="shortcut_power_menu">শক্তি মেনু</string>
-    <string name="shortcut_increase_media_volume">মাধ্যমৰ আয়তন বৃদ্ধি কৰক</string>
-    <string name="shortcut_decrease_media_volume">মাধ্যমৰ আয়তন হ্ৰাস কৰক</string>
+    <string name="shortcut_power_menu">পাৱাৰ মেনু</string>
+    <string name="shortcut_increase_media_volume">মিডিয়া ভলিউম বৃদ্ধি কৰক</string>
+    <string name="shortcut_decrease_media_volume">মিডিয়া ভলিউম হ্ৰাস কৰক</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">ওপৰৰ বাওঁফালৰ পৰা তললৈ দীঘল চুইপ কৰক</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">ওপৰৰ সোঁফালৰ পৰা তললৈ দীঘল চুইপ কৰক</string>
     <string name="title_pref_shortcut_edge_left_top_right">বাওঁফালৰ প্ৰান্তৰ পৰা সোঁফালে চুইপ কৰক, ওপৰৰ অৰ্ধেক</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">বাওঁফালৰ প্ৰান্তৰ পৰা সোঁফালে দীঘল চুইপ কৰক, ওপৰৰ অৰ্ধেক</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">বাওঁফালৰ প্ৰান্তৰ পৰা সোঁফালে দীঘলকৈ ছোৱাইপ কৰক, ওপৰৰ অৰ্ধেক</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">বাওঁফালৰ প্ৰান্তৰ পৰা সোঁফালে চুইপ কৰক, তলৰ অৰ্ধেক</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">বাওঁফালৰ প্ৰান্তৰ পৰা সোঁফালে দীঘল চুইপ কৰক, তলৰ অৰ্ধেক</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">বাওঁফালৰ প্ৰান্তৰ পৰা সোঁফালে দীঘলকৈ ছোৱাইপ কৰক, তলৰ অৰ্ধেক</string>
     <string name="title_pref_shortcut_edge_right_top_left">সোঁফালৰ প্ৰান্তৰ পৰা বাওঁফালে চুইপ কৰক, ওপৰৰ অৰ্ধেক</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">সোঁফালৰ প্ৰান্তৰ পৰা বাওঁফালে দীঘল চুইপ কৰক, ওপৰৰ অৰ্ধেক</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">সোঁফালৰ প্ৰান্তৰ পৰা বাওঁফালে দীঘলকৈ ছোৱাইপ কৰক, ওপৰৰ অৰ্ধেক</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">সোঁফালৰ প্ৰান্তৰ পৰা বাওঁফালে চুইপ কৰক, তলৰ অৰ্ধেক</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">সোঁফালৰ প্ৰান্তৰ পৰা বাওঁফালে দীঘলকৈ চুইপ কৰক, তলৰ অৰ্ধেক</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">সোঁফালৰ প্ৰান্তৰ পৰা বাওঁফালে দীঘলকৈ ছোৱাইপ কৰক, তলৰ অৰ্ধেক</string>
     <string name="title_pref_edge_first_click_mm">প্ৰথম ক্লিক কৰাৰ দূৰত্ব</string>
     <string name="title_pref_edge_second_click_mm">প্ৰথম ক্লিকৰ পৰা দ্বিতীয় ক্লিকলৈকে দূৰত্ব</string>
     <string name="value_distance_5mm">০.৫ চে.মি</string>
@@ -1738,15 +1738,15 @@
     <string name="value_distance_50mm">৫ চে.মি</string>
     <string name="title_pref_selector_links_controls_web_only">কেৱল ৱেব বিষয়বস্তুত লিংক আৰু নিয়ন্ত্ৰণ</string>
     <string name="title_pref_selector_auto_switch">পঢ়া নিয়ন্ত্ৰণ স্বয়ংক্ৰিয়ভাৱে সলনি কৰক</string>
-    <string name="title_pref_touch_stops_speech">পৰ্দা স্পৰ্শ কৰাৰ সময়ত বাক্য বন্ধ কৰক</string>
+    <string name="title_pref_touch_stops_speech">স্ক্ৰীন স্পৰ্শ কৰিলে কথন বন্ধ কৰক</string>
     <string name="title_pref_volume_keys_move_cursor">ভলিউম কি\'সমূহে কাৰ্চাৰক লৰচৰ কৰে</string>
-    <string name="summary_pref_volume_keys_move_cursor">যেতিয়া এটা লিখনী ক্ষেত্ৰৰ ফ\'কাচ থাকে, আয়তন আপে কাৰ্চাৰক এটা আখৰ পিছলৈ লৈ যায় আৰু আয়তন তললৈ ইয়াক আগুৱাই লৈ যায়</string>
+    <string name="summary_pref_volume_keys_move_cursor">লিখনি ক্ষেত্ৰত ফ’কাছ থাকিলে, ভলিউম বঢ়োৱা বুটামে কাৰ্ছৰ এটা আখৰ পিছুৱায় আৰু ভলিউম কমোৱা বুটামে এটা আখৰ আগুৱায়</string>
     <string name="title_keyboard_echo_handwriting_keyboard">হস্তলিপি কিবৰ্ড প্ৰতিধ্বনি</string>
     <string name="image_qna_ask_by_voice">মাতেৰে সুধিব</string>
     <string name="image_qna_stop_listening">শুনা বন্ধ কৰক</string>
     <string name="image_qna_type_question">এটা প্ৰশ্ন টাইপ কৰক</string>
     <string name="shortcut_dictate">শ্ৰুতিলিখন</string>
-    <string name="title_pref_ai_dictation">এআইৰ সৈতে সঠিক ডিক্টেচন</string>
+    <string name="title_pref_ai_dictation">এআইৰ সহায়ত ডিক্টেচন শুধৰাওক</string>
     <string name="dictation_not_corrected">শুধৰণি কৰা হোৱা নাই। চিনাক্ত কৰা অনুসৰি টাইপ কৰা হৈছে।</string>
     <string name="dictation_nothing_recognized">একো চিনি নাপালে</string>
     <string name="dictation_unavailable">বাক্য চিনাক্তকৰণ উপলব্ধ নহয়</string>
@@ -1771,7 +1771,7 @@
     <string name="title_pref_export_settings">ছেটিংছ ৰপ্তানি কৰক</string>
     <string name="title_pref_import_settings">ছেটিংছ আমদানি কৰক</string>
     <string name="settings_export_done">ছেটিংছ ৰপ্তানি কৰা হৈছে। API কি\'সমূহ অন্তৰ্ভুক্ত কৰা হোৱা নাই</string>
-    <string name="settings_export_failed">সংহতিসমূহ ৰপ্তানি কৰিব পৰা নগ\'ল</string>
+    <string name="settings_export_failed">ছেটিংছ ৰপ্তানি কৰিব পৰা নগ\'ল</string>
     <string name="settings_import_done">ছেটিংছ আমদানি কৰা হৈছে</string>
-    <string name="settings_import_failed">এই ফাইলটো এটা SandFly বা Backtalk সংহতিসমূহ ফাইল নহয়, বা পঢ়িব পৰা নগ\'ল</string>
+    <string name="settings_import_failed">এই ফাইলটো SandFly বা Backtalkৰ ছেটিঙৰ ফাইল নহয়, বা পঢ়িব পৰা নগ’ল</string>
 </resources>

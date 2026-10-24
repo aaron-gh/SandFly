@@ -2,18 +2,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_problem_report">إرسال ملاحظات</string>
     <string name="title_pref_problem_report_type">نوع ردود الفعل</string>
-    <string name="title_pref_problem_report_area">المنطقة</string>
+    <string name="title_pref_problem_report_area">القسم</string>
     <string name="title_pref_problem_report_title">العنوان</string>
-    <string name="title_pref_problem_report_app">التطبيق حيث يحدث</string>
+    <string name="title_pref_problem_report_app">التطبيق الذي تحدث فيه المشكلة</string>
     <string name="title_pref_problem_report_description">الوصف</string>
-    <string name="dialog_message_problem_report_description">ماذا حدث وماذا توقعت.</string>
+    <string name="dialog_message_problem_report_description">ما يحدث وما كنت تتوقعه.</string>
     <string name="title_pref_problem_report_steps">خطوات إعادة إنتاج المشكلة</string>
     <string name="title_pref_problem_report_email">البريد الإلكتروني للردود</string>
     <string name="title_pref_problem_report_device">تضمين معلومات الجهاز</string>
-    <string name="title_pref_problem_report_log">قم بتضمين سجل SandFly</string>
+    <string name="title_pref_problem_report_log">تضمين سجل SandFly</string>
     <string name="summary_pref_problem_report_log">قد يحتوي على نص من الشاشة</string>
     <string name="title_pref_problem_report_send">إرسال</string>
-    <string name="summary_pref_problem_report_sending">إرسال</string>
+    <string name="summary_pref_problem_report_sending">جارٍ الإرسال</string>
     <string name="problem_report_missing_fields">أدخل عنوانا ووصفا.</string>
     <string name="problem_report_invalid_email">أدخل عنوان بريد إلكتروني صالحًا.</string>
     <string name="problem_report_sent">تم إرسال التعليقات.</string>
@@ -22,19 +22,19 @@
     <string name="problem_report_not_sent">لم يتم إرسال التعليقات. حاول مرة أخرى لاحقًا.</string>
     <string-array name="problem_report_type_entries">
         <item>سلوك غير صحيح</item>
-        <item>تحطم</item>
-        <item>بطيء أو غير مستجيب</item>
+        <item>توقّف مفاجئ</item>
+        <item>بطء أو عدم استجابة</item>
         <item>اقتراح</item>
     </string-array>
     <string-array name="problem_report_area_entries">
-        <item>خطاب</item>
+        <item>الكلام</item>
         <item>الإيماءات</item>
-        <item>استكشاف اللمس</item>
-        <item>ضوابط القراءة والقوائم</item>
+        <item>الاستكشاف باللمس</item>
+        <item>عناصر التحكّم في القراءة والقوائم</item>
         <item>الكتابة ولوحات المفاتيح</item>
         <item>لوحة مفاتيح برايل</item>
         <item>جهاز عرض بلغة برايل</item>
-        <item>الأصوات والاهتزاز</item>
+        <item>الصوت والاهتزاز</item>
         <item>الإشعارات</item>
         <item>محتوى الويب</item>
         <item>النصوص البرمجية</item>
@@ -82,7 +82,7 @@
     <string name="dialog_title_report_delete_draft">هل تريد حذف هذه المسودة؟</string>
     <string name="button_report_delete">حذف</string>
     <string name="report_missing">لم تعد هذه التعليقات موجودة في البريد الوارد.</string>
-    <string name="notification_channel_problem_reports">ردود الفعل</string>
-    <string name="report_notification_reply">الرد على <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="notification_channel_problem_reports">ردود على الملاحظات</string>
+    <string name="report_notification_reply">رد على <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

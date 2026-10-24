@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="shortcut_announce_status">Statusu səsləndirin</string>
-    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g>/<xliff:g id="max_level" example="4">%2$d</xliff:g> xətt</string>
+    <string name="shortcut_announce_status">Statusu səsləndir</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g>/<xliff:g id="max_level" example="4">%2$d</xliff:g> zolaq</string>
     <string name="status_wifi_off">Wi-Fi deaktivdir</string>
     <string name="status_wifi_not_connected">Wi-Fi qoşulmayıb</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
@@ -14,8 +14,8 @@
     <string name="status_ringer_silent">Səssiz</string>
     <string name="status_airplane_mode">Təyyarə rejimi</string>
     <string name="title_pref_status_readout">Statusun səsləndirilməsi</string>
-    <string name="status_item_time">Vaxt</string>
-    <string name="status_item_time_summary">Cari vaxt</string>
+    <string name="status_item_time">Saat</string>
+    <string name="status_item_time_summary">Cari saat</string>
     <string name="status_item_battery">Batareya</string>
     <string name="status_item_battery_summary">Batareya səviyyəsi, enerji doldurma və enerjiyə qənaət</string>
     <string name="status_item_wifi">Wi-Fi</string>

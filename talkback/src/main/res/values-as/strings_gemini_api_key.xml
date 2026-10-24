@@ -9,15 +9,15 @@
     <string name="gemini_api_terms_link">Gemini APIৰ অতিৰিক্ত সেৱাৰ চৰ্তাৱলী</string>
     <string name="title_pref_gemini_model">Gemini মডেল</string>
     <string name="gemini_model_automatic">স্বয়ংক্ৰিয়</string>
-    <string name="summary_pref_gemini_model_automatic">স্বয়ংক্ৰিয়: Gemini ফ্লেচ, তাৰ পিছত ফ্লেচ ব্যস্ত হ’লে ফ্লেচ-লাইট</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, তাৰ পিছত ব্যস্ত হ’লে ফ্লেচ-লাইট</string>
-    <string name="gemini_model_loading">মডেলসমূহ পাই...</string>
+    <string name="summary_pref_gemini_model_automatic">স্বয়ংক্ৰিয়: Gemini Flash, Flash ব্যস্ত হ’লে Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ব্যস্ত হ’লে Flash-Lite</string>
+    <string name="gemini_model_loading">মডেলসমূহ পোৱা হৈছে…</string>
     <string name="gemini_model_list_failed">মডেলসমূহ পাব পৰা নগ\'ল: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">প্ৰথমে এটা Gemini API কি নিৰ্ধাৰণ কৰক</string>
     <string name="ai_service_address_hint">ঠিকনা, যেনে https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">মডেল</string>
-    <string name="ai_service_address_invalid">ঠিকনাটো https://. ৰে আৰম্ভ হ’ব লাগিব একো সংৰক্ষণ কৰা হোৱা নাছিল।</string>
-    <string name="dialog_message_ai_service_consent">ছবি আৰু স্ক্ৰীণশ্বটসমূহ বৰ্ণনা কৰিবলৈ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> লৈ প্ৰেৰণ কৰা হয়, যাৰ বাবে কেইবা চেকেণ্ড সময় লাগে। ইয়াৰ নিজৰ চৰ্ত আৰু গোপনীয়তা নীতি প্ৰযোজ্য। জেনেৰেটিভ এআই পৰীক্ষামূলক, গতিকে ই ভুল কৰিব।</string>
+    <string name="ai_service_address_invalid">ঠিকনাটো https://ৰে আৰম্ভ হ’ব লাগিব। একো ছেভ কৰা হোৱা নাই।</string>
+    <string name="dialog_message_ai_service_consent">বৰ্ণনাৰ বাবে ছবি আৰু স্ক্ৰীনশ্বট <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>লৈ পঠিওৱা হয়, ইয়াত কেইছেকেণ্ডমান সময় লাগে। সেৱাটোৰ নিজা চৰ্ত আৰু গোপনীয়তা নীতি প্ৰযোজ্য। জেনেৰেটিভ AI পৰীক্ষামূলক, সেয়েহে ই ভুল কৰিব।</string>
     <string name="ai_service_error_api_key">এআই সেৱাই এপিআই কী গ্ৰহণ কৰা নাছিল। স্বয়ংক্ৰিয় বিৱৰণসমূহত ইয়াৰ সংহতিসমূহ পৰীক্ষা কৰক।</string>
     <string name="ai_service_error_quota">এআই সেৱাৰ ব্যৱহাৰৰ সীমা অতিক্ৰম কৰা হৈছে। পিছত আকৌ চেষ্টা কৰক।</string>
     <string name="ai_service_error_busy">বৰ্তমান এআই সেৱা ব্যস্ত। ক্ষন্তেক পিছতে আকৌ চেষ্টা কৰক।</string>
@@ -44,10 +44,10 @@
     <string name="ai_provider_address_message">এটা OpenAI-সুসংগত চেট API আৰু ছবি ইনপুটৰ সৈতে এটা সেৱাৰ ঠিকনা, যেনে https://example.com/v1.</string>
     <string name="ai_provider_not_set">ছেট কৰা হোৱা নাই</string>
     <string name="ai_provider_set">বিন্যাস কৰা হৈছে</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> এপিআই কি</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API কী</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> মডেল</string>
     <string name="ai_provider_choose_model">নিৰ্বাচিত নহয়</string>
-    <string name="ai_provider_key_message">আপোনাৰ <xliff:g id="service" example="Claude">%1$s</xliff:g> API কি\' পেষ্ট কৰক। ইয়াক আঁতৰাবলৈ, ক্ষেত্ৰখন পৰিষ্কাৰ কৰি সংৰক্ষণ কৰক। আপুনি বৰ্ণনা কৰা ছবি আৰু পৰ্দাসমূহ <xliff:g id="service" example="Claude">%1$s</xliff:g> লৈ প্ৰেৰণ কৰা হয়।</string>
+    <string name="ai_provider_key_message">আপোনাৰ <xliff:g id="service" example="Claude">%1$s</xliff:g> API কী পেষ্ট কৰক। আঁতৰাবলৈ ক্ষেত্ৰখন খালী কৰি ছেভ কৰক। আপুনি বৰ্ণনা কৰিবলৈ দিয়া ছবি আৰু স্ক্ৰীন <xliff:g id="service" example="Claude">%1$s</xliff:g>লৈ পঠিওৱা হয়।</string>
     <string name="ai_provider_needs_key">প্ৰথমে <xliff:g id="service" example="Claude">%1$s</xliff:g> API কি\' নিৰ্ধাৰণ কৰক</string>
     <string name="ai_provider_needs_address">প্ৰথমে ঠিকনাটো নিৰ্ধাৰণ কৰক</string>
     <string name="ai_provider_enter_model">এটা মডেলৰ নাম দিয়ক</string>

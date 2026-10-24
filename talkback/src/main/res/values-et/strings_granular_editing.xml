@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Granuleeritud redigeerimine</string>
+    <string name="granular_editing_title">Osade kaupa muutmine</string>
     <string name="granular_editing_split_by">Poolitatud: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Poolt jagatud</string>
+    <string name="granular_editing_split_by_title">Poolitamise alus</string>
     <string name="granular_editing_characters">Tähemärgid</string>
     <string name="granular_editing_words">Sõnad</string>
     <string name="granular_editing_sentences">Laused</string>
@@ -11,7 +11,7 @@
     <string name="granular_editing_space">Tühik</string>
     <string name="granular_editing_new_line">Uus rida</string>
     <string name="granular_editing_tab">Tabeldusmärk</string>
-    <string name="granular_editing_empty">Teksti pole. Kasutage jaotises Rohkem valikut Lisa tekst lõpus.</string>
+    <string name="granular_editing_empty">Teksti pole. Kasutage jaotises „Rohkem“ valikut „Lisa tekst lõppu“.</string>
     <string name="granular_editing_edit">Muuda</string>
     <string name="granular_editing_insert_before">Sisesta enne</string>
     <string name="granular_editing_insert_after">Sisesta pärast</string>
@@ -22,11 +22,11 @@
     <string name="granular_editing_save">Salvesta</string>
     <string name="granular_editing_more">Rohkem</string>
     <string name="granular_editing_undo">Võta tagasi</string>
-    <string name="granular_editing_redo">Tehke viimane tagasivõetud muudatus uuesti</string>
+    <string name="granular_editing_redo">Tee uuesti</string>
     <string name="granular_editing_find">Otsi</string>
     <string name="granular_editing_find_next">Otsi järgmine</string>
     <string name="granular_editing_replace">Asenda</string>
-    <string name="granular_editing_replace_with">Asenda vastu</string>
+    <string name="granular_editing_replace_with">Asenda järgmisega</string>
     <string name="granular_editing_replace_all">Asenda kõik</string>
     <string name="granular_editing_add_at_end">Lisa tekst lõppu</string>
     <string name="granular_editing_clear_selection">Valiku tühistamine</string>

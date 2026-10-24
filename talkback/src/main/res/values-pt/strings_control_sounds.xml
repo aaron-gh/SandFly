@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Controle sons e vibrações</string>
-    <string name="summary_pref_control_sounds">Dê a cada tipo de controle, como botões, caixas de seleção, campos de edição e itens de lista, seu próprio som e sua própria vibração do tema, no lugar do som e vibração de foco, como Unspoken faz para o NVDA. O som vem de onde o controle está na tela e SandFly deixa de indicar que tipo de controle é.</string>
-    <string name="title_pref_control_sounds_speak_roles">Ainda digo o tipo de controle</string>
-    <string name="summary_pref_control_sounds_speak_roles">Quando um som de controle for reproduzido, diga que tipo de controle é, como botão. Isto é para cada tema sonoro.</string>
+    <string name="title_pref_control_sounds">Sons e vibrações dos controles</string>
+    <string name="summary_pref_control_sounds">Cada tipo de controle, como botões, caixas de seleção, campos de edição e itens de lista, recebe um som e uma vibração próprios do tema no lugar do som e da vibração de foco, como o Unspoken faz no NVDA. O som vem da posição do controle na tela, e o SandFly não diz o tipo de controle.</string>
+    <string name="title_pref_control_sounds_speak_roles">Também falar o tipo de controle</string>
+    <string name="summary_pref_control_sounds_speak_roles">Quando um som de controle toca, o tipo de controle ainda é falado, como botão. Vale para todos os temas sonoros.</string>
     <string name="title_pref_control_sounds_3d">Áudio 3D</string>
     <string name="pref_control_sounds_3d_headphones">Com fones de ouvido</string>
     <string name="pref_control_sounds_3d_always">Sempre</string>
@@ -11,14 +11,14 @@
     <string name="individual_sound_control_button">Som de controle: botão</string>
     <string name="individual_sound_control_checkbox">Som de controle: caixa de seleção</string>
     <string name="individual_sound_control_radio_button">Som de controle: botão de opção</string>
-    <string name="individual_sound_control_edit_text">Controle de som: campo de edição</string>
-    <string name="individual_sound_control_combo_box">Controle de som: lista suspensa</string>
+    <string name="individual_sound_control_edit_text">Som de controle: campo de edição</string>
+    <string name="individual_sound_control_combo_box">Som de controle: lista suspensa</string>
     <string name="individual_sound_control_slider">Som de controle: controle deslizante</string>
-    <string name="individual_sound_control_link">Controle de som: link</string>
-    <string name="individual_sound_control_image">Controle de som: imagem</string>
+    <string name="individual_sound_control_link">Som de controle: link</string>
+    <string name="individual_sound_control_image">Som de controle: imagem</string>
     <string name="individual_sound_control_clock">Som de controle: relógio</string>
-    <string name="individual_sound_control_tab">Controle de som: guia</string>
-    <string name="individual_sound_control_menu_item">Controle de som: item de menu</string>
+    <string name="individual_sound_control_tab">Som de controle: guia</string>
+    <string name="individual_sound_control_menu_item">Som de controle: item de menu</string>
     <string name="individual_sound_control_list_item">Som de controle: item da lista</string>
     <string name="individual_sound_control_tree_item">Som de controle: item de árvore</string>
 </resources>

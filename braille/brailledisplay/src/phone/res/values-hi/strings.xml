@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">ब्रेल हार्डवेयर कीबोर्ड</string>
   <string name="bd_application_name">Android Accessibility Suite</string>
-  <string name="bd_ime_unavailable_activity_name">SandFly की सुविधा वाले ब्रेल कीबोर्ड को सेट अप नहीं किया गया है</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly का ब्रेल कीबोर्ड उपलब्ध नहीं है</string>
   <string name="bd_ime_disabled_dialog_title">SandFly की सुविधा वाला ब्रेल कीबोर्ड चालू करें</string>
   <string name="bd_ime_disabled_dialog_message">ब्रेल डिसप्ले का इस्तेमाल करके टाइप करने के लिए, डिवाइस की इनपुट सेटिंग में जाकर इसे चालू करें</string>
   <string name="bd_ime_disabled_dialog_title_positive">इनपुट सेटिंग</string>
@@ -222,7 +222,7 @@
   <string name="bd_cmd_toggle_screen_search">\'स्क्रीन पर खोजें\' सुविधा को चालू करें</string>
   <string name="bd_cmd_edit_custom_label">कस्टम लेबल में बदलाव करें</string>
   <string name="bd_cmd_open_talkback_menu">SandFly मेन्यू खोलें</string>
-  <string name="bd_cmd_toggle_voice_feedback">SandFly के बोलकर दिए जाने वाले सुझाव को चालू या बंद करें</string>
+  <string name="bd_cmd_toggle_voice_feedback">SandFly की आवाज़ चालू या बंद करें</string>
   <string name="bd_cmd_read_stop">पढ़ना बंद करें</string>
   <string name="bd_cmd_talkback_settings">SandFly की सेटिंग खोलें</string>
   <string name="bd_cmd_switch_to_next_input_language">टाइपिंग के लिए इस्तेमाल की जाने वाली अगली भाषा चुनें</string>
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">इससे SandFly में कुछ मैसेज सेव हो जाएंगे, जैसे कि सूचनाएं और अलार्म. इस सेटिंग को कभी भी बदला जा सकता है.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">चालू करें</string>
   <string name="popup_message_history_consent_dialog_negative_btn">रहने दें</string>
-    <string name="external_display_channel">अन्य ऐप्स से ब्रेल प्रदर्शित होता है</string>
+    <string name="external_display_channel">दूसरे ऐप्लिकेशन के ब्रेल डिस्प्ले</string>
     <string name="external_display_ask_title">SandFly के लिए <xliff:g id="app" example="Notetaker">%1$s</xliff:g> को ब्रेल डिस्प्ले होने की अनुमति दें?</string>
-    <string name="external_display_ask_text">SandFly जब तक आप इसकी अनुमति नहीं देंगे तब तक इसका उपयोग नहीं करेंगे।</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ब्रेल में सब कुछ SandFly दिखाता हुआ पढ़ सकेगा, जो स्क्रीन पर कुछ भी हो सकता है, जिसमें संदेश और आप जो टाइप करते हैं वह भी शामिल है। यह आपके डिवाइस को ब्रेल डिस्प्ले के साथ नियंत्रित करने में भी सक्षम होगा: टाइप करें, ऐप्स खोलें और कोई भी SandFly कमांड चलाएं। केवल उन्हीं ऐप्स को अनुमति दें जिन पर आपको भरोसा है।</string>
+    <string name="external_display_ask_text">जब तक आप अनुमति नहीं देंगे, SandFly इसका इस्तेमाल नहीं करेगा।</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> वह सब पढ़ सकेगा जो SandFly ब्रेल में दिखाता है। इसमें स्क्रीन पर मौजूद कुछ भी हो सकता है, जैसे मैसेज और आपका टाइप किया गया टेक्स्ट। यह आपके डिवाइस को उसी तरह कंट्रोल भी कर सकेगा जैसे आप ब्रेल डिसप्ले से करते हैं: टाइप करना, ऐप्लिकेशन खोलना और SandFly का कोई भी निर्देश चलाना। सिर्फ़ उन ऐप्लिकेशन को अनुमति दें जिन पर आपको भरोसा है।</string>
     <string name="external_display_allow">अनुमति दें</string>
     <string name="external_display_deny">अनुमति न दें</string>
     <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> आपका ब्रेल डिस्प्ले है</string>
-    <string name="external_display_in_use_text">जबकि SandFly इसका उपयोग करता है, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> स्क्रीन को पढ़ सकता है और डिवाइस को नियंत्रित कर सकता है।</string>
-    <string name="external_displays_title">अन्य ऐप्स से प्रदर्शित होता है</string>
+    <string name="external_display_in_use_text">जब SandFly इसका इस्तेमाल कर रहा हो, तब <xliff:g id="app" example="Notetaker">%1$s</xliff:g> स्क्रीन पढ़ सकता है और डिवाइस को कंट्रोल कर सकता है।</string>
+    <string name="external_displays_title">दूसरे ऐप्लिकेशन के डिस्प्ले</string>
     <string name="external_displays_summary">जिन ऐप्स को आप अनुमति देते हैं वे SandFly के लिए ब्रेल डिस्प्ले हो सकते हैं। एक ऐप जो ब्रेल डिस्प्ले है, स्क्रीन को पढ़ सकता है और डिवाइस को नियंत्रित कर सकता है।</string>
-    <string name="external_displays_none">कोई भी ऐप ब्रेल डिस्प्ले वाला नहीं हो सकता.</string>
+    <string name="external_displays_none">कोई भी ऐप ब्रेल डिस्प्ले नहीं बन सकता.</string>
 </resources>

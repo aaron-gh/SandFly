@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Дуу чимээ, чичиргээг хянах</string>
-    <string name="summary_pref_control_sounds">Unspoken-д NVDA-д зориулсан шиг фокусын дуу, чичиргээний оронд товчлуур, шалгах хайрцаг, засварлах талбар, жагсаалтын зүйл, тухайн сэдвээс өөрийн дуу чимээ, чичиргээ гэх мэт удирдлага тус бүрийг өг. Дэлгэц дээрх удирдлага байгаа газраас дуу гарах бөгөөд SandFly ямар төрлийн удирдлага болохыг хэлэхээ больсон.</string>
-    <string name="title_pref_control_sounds_speak_roles">Хяналтын төрлийг хэлсээр л байна</string>
-    <string name="summary_pref_control_sounds_speak_roles">Хяналтын дуу гарах үед товчлуур гэх мэт ямар төрлийн удирдлага болохыг хэлээрэй. Энэ нь дууны сэдэв бүрт зориулагдсан.</string>
+    <string name="title_pref_control_sounds">Удирдлагын дуу ба чичиргээ</string>
+    <string name="summary_pref_control_sounds">Товч, сонгох нүд, засварлах талбар, жагсаалтын зүйл гэх мэт удирдлагын төрөл бүр фокусын дуу, чичиргээний оронд загвараас өөрийн дуу, чичиргээг авна, Unspoken NVDA-д хийдэг шиг. Дуу нь дэлгэц дээрх удирдлагын байрлалаас гарах бөгөөд SandFly удирдлагын төрлийг хэлэхгүй.</string>
+    <string name="title_pref_control_sounds_speak_roles">Удирдлагын төрлийг хэлсээр байх</string>
+    <string name="summary_pref_control_sounds_speak_roles">Удирдлагын дуу тоглох үед ч удирдлагын төрлийг хэлнэ, жишээ нь товч. Бүх дууны загварт хамаарна.</string>
     <string name="title_pref_control_sounds_3d">3D аудио</string>
     <string name="pref_control_sounds_3d_headphones">Чихэвчтэй</string>
     <string name="pref_control_sounds_3d_always">Үргэлж</string>
-    <string name="pref_control_sounds_3d_never">Хэзээ ч, зөвхөн баруун, зүүн</string>
-    <string name="individual_sound_control_button">Дууг хянах: товчлуур</string>
-    <string name="individual_sound_control_checkbox">Хяналтын дуу: шалгах нүд</string>
-    <string name="individual_sound_control_radio_button">Хяналтын дуу: радио товчлуур</string>
-    <string name="individual_sound_control_edit_text">Дууг хянах: засварлах талбар</string>
-    <string name="individual_sound_control_combo_box">Хяналтын дуу: унадаг жагсаалт</string>
-    <string name="individual_sound_control_slider">Хяналтын дуу: гулсагч</string>
-    <string name="individual_sound_control_link">Хяналтын дуу: холбоос</string>
-    <string name="individual_sound_control_image">Хяналтын дуу: зураг</string>
-    <string name="individual_sound_control_clock">Хяналтын дуу: цаг</string>
-    <string name="individual_sound_control_tab">Дууг хянах: таб</string>
-    <string name="individual_sound_control_menu_item">Хяналтын дуу: цэсийн зүйл</string>
-    <string name="individual_sound_control_list_item">Хяналтын дуу: жагсаалтын зүйл</string>
-    <string name="individual_sound_control_tree_item">Хяналтын дуу: модны зүйл</string>
+    <string name="pref_control_sounds_3d_never">Хэзээ ч үгүй, зөвхөн зүүн ба баруун</string>
+    <string name="individual_sound_control_button">Удирдлагын дуу: товчлуур</string>
+    <string name="individual_sound_control_checkbox">Удирдлагын дуу: шалгах нүд</string>
+    <string name="individual_sound_control_radio_button">Удирдлагын дуу: радио товчлуур</string>
+    <string name="individual_sound_control_edit_text">Удирдлагын дуу: засварлах талбар</string>
+    <string name="individual_sound_control_combo_box">Удирдлагын дуу: унадаг жагсаалт</string>
+    <string name="individual_sound_control_slider">Удирдлагын дуу: гулсагч</string>
+    <string name="individual_sound_control_link">Удирдлагын дуу: холбоос</string>
+    <string name="individual_sound_control_image">Удирдлагын дуу: зураг</string>
+    <string name="individual_sound_control_clock">Удирдлагын дуу: цаг</string>
+    <string name="individual_sound_control_tab">Удирдлагын дуу: таб</string>
+    <string name="individual_sound_control_menu_item">Удирдлагын дуу: цэсийн зүйл</string>
+    <string name="individual_sound_control_list_item">Удирдлагын дуу: жагсаалтын зүйл</string>
+    <string name="individual_sound_control_tree_item">Удирдлагын дуу: модны зүйл</string>
 </resources>

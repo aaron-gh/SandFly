@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="title_pref_sound_themes">Звуковые темы</string>
-  <string name="summary_pref_sound_themes">Устанавливайте и выбирайте наборы звуков и вибраций, заменяйте отдельные звуки своими, включайте звуки и вибрации элементов управления и объёмный звук.</string>
+  <string name="summary_pref_sound_themes">Наборы звуков и вибраций, свои звуки вместо отдельных звуков, «Звуки и вибрации элементов управления» и объёмный звук.</string>
   <string name="sound_themes_installed_category">Установленные темы</string>
   <string name="sound_theme_backtalk">SandFly</string>
   <string name="sound_theme_backtalk_description">Собственные звуки и вибрации SandFly, а также добавленные вами звуки.</string>
@@ -75,7 +75,7 @@
   <string name="theme_sound_braille_new_line">Клавиатура Брайля: новая строка</string>
   <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
   <string name="theme_sound_choose">Выбрать звуковой файл</string>
-  <string name="theme_sound_preview">Предпросмотр</string>
+  <string name="theme_sound_preview">Прослушать</string>
   <string name="theme_sound_use_default">Использовать звук SandFly</string>
   <string name="theme_sound_remove">Удалить звук</string>
   <string name="theme_sound_too_large">Файл слишком большой. Размер звукового файла не должен превышать 5 МБ.</string>
@@ -83,11 +83,11 @@
   <string name="theme_sound_failed">SandFly не удалось прочитать этот файл.</string>
     <string name="title_pref_sound_theme_install_source">Из источника</string>
     <string name="summary_pref_sound_theme_install_source">Файлы тем в репозитории на GitHub, GitLab, Codeberg, Gitea или Bitbucket.</string>
-    <string name="sound_theme_sources">Источники звуковой темы</string>
+    <string name="sound_theme_sources">Источники звуковых тем</string>
     <string name="sound_theme_source_empty">В этом источнике нет звуковых тем</string>
     <string name="sound_theme_source_failed">Не удалось загрузить звуковые темы. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">Звуковые темы, установленные с него, остаются установленными.</string>
-    <string name="theme_sound_none">Нет звука</string>
-    <string name="theme_sound_summary_no_sound">Нет звука</string>
+    <string name="theme_sound_none">Без звука</string>
+    <string name="theme_sound_summary_no_sound">Без звука</string>
     <string name="theme_sound_action_set_none">Отключить звук</string>
 </resources>

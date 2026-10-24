@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">기기가 잠금 해제되었습니다.</string>
   <string name="title_pref_speech_volume">음성 볼륨</string>
   <string name="title_pref_verbose_scroll_announcement">목록의 항목 개수 항상 소리 내어 읽기</string>
-  <string name="summary_pref_verbose_scroll_announcement">스크롤할 때마다 어떤 항목이 표시되는지 말해보세요.</string>
+  <string name="summary_pref_verbose_scroll_announcement">스크롤할 때마다 표시되는 항목을 말합니다</string>
   <string name="title_pref_cover_proximity_sensor">근접 센서를 덮어 음성 출력 중지</string>
   <string name="title_pref_phonetic_letters">예시와 함께 글자 소리 내어 읽기</string>
   <string name="summary_pref_phonetic_letters">키보드 키를 선택하거나 글자 단위로 탐색할 때 \'호텔의 호\'와 같이 글자와 예시를 함께 듣습니다.</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">음높이 변경</string>
   <string name="capital_letters_sound_feedback">소리 재생</string>
   <string name="title_pref_a11y_hints">사용 힌트 소리 내어 읽기</string>
-  <string name="summary_pref_a11y_hints">항목을 설명한 후 사용 방법을 말하세요.</string>
+  <string name="summary_pref_a11y_hints">항목을 설명한 후 사용 방법 말하기</string>
   <string name="pref_speak_container_element_positions_title">컨테이너 정보 소리 내어 읽기</string>
   <string name="pref_speak_time_title">음성 시간 알림</string>
   <string name="pref_speak_time_summary">화면을 켤 때</string>
-  <string name="summary_speak_container_element_positions">목록, 그리드 및 기타 컨테이너에 들어가거나 나갈 때 말하기</string>
+  <string name="summary_speak_container_element_positions">목록, 그리드 등 컨테이너에 들어가거나 나올 때 알립니다</string>
   <string name="reset_letency_reduction_settings_dialog_title">지연 설정을 재설정하시겠습니까?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">이렇게 하면 모든 지연 시간 설정이 기본값으로 재설정됩니다.</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">재설정</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">재설정</string>
   <string name="gestures_announce_reset_gesture_settings">동작 설정이 재설정되었습니다.</string>
   <string name="pref_speak_roles_title">요소 유형 소리 내어 읽기</string>
-  <string name="pref_speak_roles_summary">좋아요 버튼이나 체크박스</string>
+  <string name="pref_speak_roles_summary">예: 버튼 또는 체크박스</string>
   <string name="title_pref_speak_element_ids">요소 ID 읽기</string>
-  <string name="summary_pref_speak_element_ids">라벨이 없는 버튼의 ID를 말해보세요</string>
+  <string name="summary_pref_speak_element_ids">라벨이 없는 버튼의 ID를 읽습니다</string>
   <string name="pref_allow_frequent_content_change_announcement_title">모든 진행 상황 업데이트 말하기</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">다운로드, 운전 경로 따르기 등의 작업을 하는 동안의 업데이트가 포함됩니다. 이 기능을 끄면 업데이트 빈도가 줄어듭니다.</string>
   <string name="title_pref_explore_by_touch">터치하여 탐색</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">도움말</string>
   <string name="title_pref_advanced_settings">고급 설정</string>
   <string name="title_pref_show_exit_watermark">SandFly 사용 중지 안내 표시</string>
-  <string name="summary_pref_show_exit_watermark">SandFly가 켜지면 끄는 방법을 보여주세요.</string>
+  <string name="summary_pref_show_exit_watermark">SandFly가 켜질 때 끄는 방법을 표시합니다</string>
   <string name="talkback_exit_watermark_text">SandFly을 사용 중입니다. 두 손가락으로 화면을 5초 동안 누르면 사용 중지됩니다. 이 메시지를 더 이상 표시하지 않으려면 세 손가락으로 탭하여 SandFly 메뉴를 여세요.</string>
   <string name="talkback_exit_watermark_hint_text">SandFly이 사용 설정되었음을 나타내는 배너가 표시됩니다. SandFly을 사용 중지하려면 두 손가락으로 화면을 5초 동안 누르세요. 이 배너를 삭제하려면 SandFly 설정으로 이동하세요.</string>
   <string name="reset_gesture_settings_title">동작 재설정</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">\'%1$s\' 작업에 사용되는 키 조합입니다. 이전 작업을 삭제하고 이 키 조합에 \'%2$s\' 작업을 할당하시겠습니까?</string>
   <string name="title_pref_intonation">음조 변경 사용</string>
   <string name="title_pref_keyboard_echo">키보드 에코</string>
-  <string name="pref_node_desc_order_title">품목 세부정보 순서</string>
+  <string name="pref_node_desc_order_title">항목 세부정보 순서</string>
   <string name="pref_time_feedback_format_title">시간 형식</string>
   <string name="title_pref_latency_reduction">지연 시간 줄이기</string>
   <string name="talkback_latency_reduction_summary">화면을 터치한 후 SandFly가 더 빠르게 반응하도록 설정</string>
@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">타이핑 방법</string>
   <string name="title_pref_typing_long_tap_duration">입력 시 길게 터치의 지연 시간</string>
   <string name="title_pref_touch_explore_timeout">입력 포커스 지연</string>
-  <string name="message_pref_touch_explore_latency">지연 시간이 짧을수록 키보드를 터치한 후 SandFly 더 빨리 말하게 됩니다.\n\n지연 선택</string>
+  <string name="message_pref_touch_explore_latency">지연 시간이 짧을수록 키보드를 터치한 후 SandFly가 더 빨리 말합니다.\n\n지연 시간 선택</string>
   <string name="title_pref_touch_focus_timeout">포커스 지연</string>
   <string name="title_pref_talkback_gesture_detection">SandFly 지원 동작 처리</string>
   <string name="toast_pref_talkback_gesture_detection">설정을 활성화하려면 SandFly을 껐다가 다시 켜보세요.</string>
@@ -668,7 +668,7 @@
   <string name="label_dialog_text">이 요소의 라벨로 사용할 텍스트를 입력하세요.\n내부 뷰 이름: %1$s</string>
   <string name="label_dialog_edit_hint">라벨 텍스트</string>
   <string name="label_import">맞춤 라벨 가져오기</string>
-  <string name="label_import_dialog_title">맞춤 라벨을 SandFly으로 가져옵니다.</string>
+  <string name="label_import_dialog_title">맞춤 라벨을 SandFly로 가져오기</string>
   <string name="label_import_dialog_message">충돌이 발생할 경우 기존 라벨을 재정의할지 건너뛸지 선택하세요.</string>
   <string name="label_import_dialog_skip">건너뛰기</string>
   <string name="label_import_dialog_override">재정의</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">접근성 볼륨</string>
   <string name="title_pref_touch_explore_latency">입력 포커스 지연</string>
   <string name="title_pref_touch_focus_latency">포커스 지연</string>
-  <string name="message_pref_touch_focus_latency">지연 시간이 짧을수록 화면을 터치한 후 SandFly 더 빨리 말하게 됩니다.</string>
+  <string name="message_pref_touch_focus_latency">지연 시간이 짧을수록 화면을 터치한 후 SandFly가 더 빨리 말합니다</string>
   <string name="message_pref_typing_method_prefix">입력 시 지연을 최소화하려면 \'키 선택 후 떼기\'를 선택하세요.</string>
   <string name="message_pref_typing_method_postfix">언제든지 분할 탭을 사용하여 입력할 수도 있습니다. 이렇게 하려면 한 손가락으로 키를 선택한 상태로 다른 손가락으로 화면을 탭하세요.</string>
   <string name="title_pref_talkback_speech_rate">말하기 속도</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">점자 키보드를 사용해 입력할 수도 있습니다. SandFly 설정에서 찾아보세요.</string>
   <string name="other_ways_to_type_title">다른 입력 방법</string>
   <string name="other_ways_to_type_text">SandFly에서 입력하는 다른 방법이 있습니다. 예를 들어 두 번 탭하여 글자를 입력할 수 있습니다.</string>
-  <string name="basic_other_ways_to_type_text">SandFly를 입력하는 다른 방법이 있습니다. 예를 들어 두 번 탭하여 문자를 입력할 수 있습니다. 나중에 SandFly 설정 &gt; 화면 키보드 &gt; 입력 방법에서 변경할 수 있습니다.</string>
-  <string name="basic_other_ways_to_type_text_tts">SandFly를 입력하는 다른 방법이 있습니다. 예를 들어 두 번 탭하여 문자를 입력할 수 있습니다. 나중에 SandFly 설정, 화면 키보드, 입력 방법에서 이를 변경할 수 있습니다.</string>
+  <string name="basic_other_ways_to_type_text">SandFly에서 입력하는 다른 방법도 있습니다. 예를 들어 두 번 탭하여 문자를 입력할 수 있습니다. 나중에 SandFly 설정 &gt; 터치 키보드 &gt; 타이핑 방법에서 변경할 수 있습니다.</string>
+  <string name="basic_other_ways_to_type_text_tts">SandFly에서 입력하는 다른 방법도 있습니다. 예를 들어 두 번 탭하여 문자를 입력할 수 있습니다. 나중에 SandFly 설정, 터치 키보드, 타이핑 방법에서 변경할 수 있습니다.</string>
   <string name="change_typing_preference_text">입력 환경설정 변경</string>
   <string name="moving_cursor_title">커서 이동하기</string>
   <string name="moving_cursor_text">텍스트 상자를 활성화하면 위로 또는 아래로 스와이프하여 글자 간에 커서를 이동할 수 있습니다.\n\n아래의 텍스트 상자에서 커서를 이동해 보세요.</string>
@@ -1070,7 +1070,7 @@
   <string name="image_description_playground_title">이미지 설명 사용해 보기</string>
   <string name="image_description_playground_content_one">이미지에 포커스 시 SandFly 메뉴를 열고 \'이미지 설명\'을 선택합니다.\n\n아래에 사진 한 장이 있습니다. 이미지의 설명을 확인해 보세요.</string>
   <string name="image_description_playground_content_two">SandFly 설정 &gt; 자동 설명에서 언제든지 이미지 설명 설정을 변경할 수 있습니다.</string>
-  <string name="image_description_playground_content_two_tts">SandFly 설정과 자동 설명에서 언제든지 이미지 설명 설정을 변경할 수 있습니다.</string>
+  <string name="image_description_playground_content_two_tts">SandFly 설정에서 자동 설명으로 이동하면 언제든지 이미지 설명 설정을 변경할 수 있습니다.</string>
   <string name="image_description_sample_image_content_description">샘플 이미지: 세 손가락으로 탭하여 SandFly 메뉴를 연 후 \'이미지 설명\'을 선택하여 설명을 들으세요.</string>
   <string name="practice_gestures_title">동작 연습</string>
   <string name="practice_keyboard_gestures_title">단축키 연습</string>
@@ -1316,7 +1316,7 @@
     <string name="title_pref_voice_profile_in_use">사용 중인 음성 프로필</string>
     <string name="title_pref_add_voice_profile">음성 프로필 추가</string>
     <string name="voice_profile_new_name">음성 프로필 <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">음성 프로필이 이미 호출되었습니다 <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">이름이 <xliff:g id="name" example="Reading">%1$s</xliff:g>인 음성 프로필이 이미 있습니다</string>
     <string name="title_pref_voice_profile_name">이름</string>
     <string name="title_pref_voice_profile_language">언어</string>
     <string name="title_pref_voice_profile_voice">음성</string>
@@ -1327,8 +1327,8 @@
     <string name="voice_profile_move_up">위로 이동</string>
     <string name="voice_profile_move_down">아래로 이동</string>
     <string name="voice_profile_rename">이름 바꾸기</string>
-    <string name="voice_profile_moved_above">위로 이동 <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="voice_profile_moved_below">아래로 이동 <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g> 위로 이동함</string>
+    <string name="voice_profile_moved_below"><xliff:g id="name" example="Reading">%1$s</xliff:g> 아래로 이동함</string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> 삭제됨</string>
     <string name="title_pref_delete_voice_profile">음성 프로필 삭제</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g>을 삭제하시겠습니까?</string>
@@ -1340,17 +1340,17 @@
     <string name="speech_stream_accessibility">접근성 볼륨</string>
     <string name="speech_stream_media">미디어 볼륨</string>
     <string name="speech_stream_ring">벨소리 볼륨</string>
-    <string name="speech_stream_call">통화음량, 이어폰</string>
+    <string name="speech_stream_call">통화 음량, 수화부</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">긴 문자를 한 번에 한 문장씩 보내세요</string>
-    <string name="summary_pref_speak_in_phrases">Gryphon과 같이 중지 속도가 느린 음성 엔진의 경우 스와이프하면 긴 텍스트가 한 번에 중지됩니다. 많은 엔진이 별도로 전송된 문장 사이에 더 오랫동안 일시 중지하므로 문장이 빠르게 중지되는 경우 이 기능을 해제해 두세요.</string>
-    <string name="battery_optimization_notification_title">배터리 최적화가 중단될 수 있습니다 SandFly</string>
-    <string name="battery_optimization_notification_text">이 휴대전화에서는 화면이 꺼진 후 배터리 절약 모드가 SandFly 중지될 수 있으므로 다시 시작할 때까지 무음으로 유지됩니다. 탭하여 배터리 최적화를 열고 모든 앱을 선택한 다음 SandFly를 찾아 최적화하지 않음을 선택하세요.</string>
+    <string name="title_pref_speak_in_phrases">긴 텍스트를 한 문장씩 보내기</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon처럼 중지가 느린 음성 엔진용으로, 스와이프하면 긴 텍스트가 바로 중지됩니다. 많은 엔진은 따로 전송된 문장 사이에서 더 오래 쉬므로 사용 중인 엔진이 빨리 중지되면 사용 중지 상태로 두세요.</string>
+    <string name="battery_optimization_notification_title">배터리 최적화로 SandFly가 중지될 수 있음</string>
+    <string name="battery_optimization_notification_text">이 휴대전화에서는 화면이 꺼진 후 배터리 절약 모드가 SandFly를 중지할 수 있으며, 그러면 다시 시작할 때까지 음성이 나오지 않습니다. 탭하여 배터리 최적화를 열고 모든 앱을 선택한 다음 SandFly를 찾아 최적화하지 않음을 선택하세요.</string>
     <string name="title_pref_mute_speech_while_recording">녹음하는 동안 조용히</string>
     <string name="summary_pref_mute_speech_while_recording">헤드폰이 연결되지 않은 상태에서 앱이 녹음하는 동안 SandFly는 제스처, 키 및 입력에만 응답하고 알림 등의 내용은 녹음되지 않도록 조용히 유지됩니다.</string>
     <string name="title_pref_switch_languages">자동으로 언어 전환</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">접힌 섹션</string>
     <string name="category_expanded">확장된 섹션</string>
     <string name="title_pref_speak_nav_bar_buttons">탐색 메뉴 버튼 말하기</string>
-    <string name="summary_pref_speak_nav_bar_buttons">탐색 모음에서 활성화할 리프트를 사용하여 뒤로 또는 홈과 같이 탭하여 누르는 버튼을 말합니다.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">탐색 메뉴에서 손가락을 떼서 활성화를 사용할 때, 탭으로 누른 버튼(예: 뒤로 또는 홈)을 읽습니다.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">배터리 <xliff:g id="battery_level" example="73">%1$s</xliff:g>퍼센트</string>
     <string name="template_battery_level_unknown">배터리 수준을 알 수 없음</string>
@@ -1367,10 +1367,10 @@
     <string name="summary_pref_screen_announcements">화면이 꺼지거나 켜질 때, 그리고 휴대전화가 잠금 해제되었을 때 SandFly가 말하는 내용을 선택하세요.</string>
     <string name="title_screen_announcements_screen_off">화면이 꺼지면</string>
     <string name="title_screen_announcements_screen_on">화면이 켜질 때</string>
-    <string name="title_screen_announcements_unlock">휴대폰이 잠금 해제된 경우</string>
-    <string name="title_pref_say_screen_off">\"화면 꺼짐\"이라고 말하세요</string>
-    <string name="title_pref_say_device_unlocked">\"기기 잠금 해제됨\"이라고 말하세요.</string>
-    <string name="title_pref_announce_time">시간</string>
+    <string name="title_screen_announcements_unlock">휴대폰 잠금이 해제될 때</string>
+    <string name="title_pref_say_screen_off">\"화면 꺼짐\" 읽기</string>
+    <string name="title_pref_say_device_unlocked">\"기기 잠금 해제됨\" 읽기</string>
+    <string name="title_pref_announce_time">시각</string>
     <string name="title_pref_announce_ringer_mode">벨소리 모드</string>
     <string name="summary_pref_announce_ringer_mode">벨소리가 진동 또는 무음으로 설정되어 있을 때 말하기</string>
     <string name="title_pref_category_feedback">피드백</string>
@@ -1379,60 +1379,60 @@
     <string name="title_pref_touch_activation">터치 및 활성화</string>
     <string name="title_pref_navigation">탐색</string>
     <string name="title_pref_category_more">더보기</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch에 대한 동작 예약</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly 두 손가락으로 한 번 탭하기 및 두 번 탭하기 처리를 중지하여 삼성 Vibration Watch에서 사용할 수 있도록 합니다. 시계의 접근성 설정에서 Vibration Watch를 활성화하세요.</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch용 동작 할당</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly가 두 손가락 한 번 탭과 두 번 탭을 처리하지 않도록 하여 Samsung Vibration Watch에서 사용할 수 있게 합니다. 시계의 접근성 설정에서 Vibration Watch를 사용 설정하세요.</string>
     <string name="shortcut_reserved_for_vibration_watch">고급 설정에서 Vibration Watch용으로 예약됨</string>
     <string name="title_pref_speakerphone_away_from_ear">귀에서 멀리 떨어져 있을 때 스피커</string>
     <string name="summary_pref_speakerphone_away_from_ear">통화 중에 휴대폰을 귀에서 떼면 스피커로 전환되고, 다시 들면 이어피스로 전환됩니다.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Android 화면 판독기에는 부여되지 않는 권한이 필요합니다. 이를 부여하려면 adb or Shizuku, then come back to this screen: %1$s와 함께 이 명령을 실행하세요.</string>
-    <string name="action_copy_command">복사 명령</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android가 스크린 리더에 부여하지 않는 권한이 필요합니다. 권한을 부여하려면 adb 또는 Shizuku로 다음 명령어를 실행한 후 이 화면으로 돌아오세요. %1$s</string>
+    <string name="action_copy_command">명령어 복사</string>
     <string name="command_copied">명령이 복사되었습니다.</string>
-    <string name="title_pref_speech_control">다른 앱이 말하게 하세요</string>
-    <string name="summary_pref_speech_control">허용한 앱은 SandFly 음성으로 텍스트를 말할 수 있습니다. 장치가 잠겨 있는 동안에는 아무 말도 하지 않습니다.</string>
+    <string name="title_pref_speech_control">다른 앱의 음성 출력 허용</string>
+    <string name="summary_pref_speech_control">허용한 앱은 SandFly 음성으로 텍스트를 읽을 수 있습니다. 기기가 잠겨 있는 동안에는 아무것도 읽지 않습니다.</string>
     <string name="title_pref_speech_control_sound">다른 앱이 말하기 전에 소리 재생</string>
     <string name="speech_control_apps_category">앱</string>
-    <string name="speech_control_no_apps">아직 말을 요청한 앱이 없습니다.</string>
-    <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g>이 SandFly을 통해 말할 수 있도록 허용하시겠습니까?</string>
+    <string name="speech_control_no_apps">아직 말하기를 요청한 앱이 없습니다.</string>
+    <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g>이(가) SandFly를 통해 말하도록 허용할까요?</string>
     <string name="speech_control_ask_text">SandFly 음성으로 텍스트를 말할 수 있습니다. 고급 설정에서 이를 변경할 수 있습니다.</string>
     <string name="speech_control_allow">허용</string>
     <string name="speech_control_deny">허용하지 않음</string>
-    <string name="permission_speak_label">SandFly로 말하세요</string>
-    <string name="permission_speak_description">앱이 SandFly 음성으로 텍스트를 말하도록 요청합니다. SandFly 앱이 말하기 전에 묻습니다.</string>
-    <string name="permission_braille_display_label">SandFly의 점자 디스플레이가 되어 달라고 요청하세요</string>
-    <string name="permission_braille_display_description">앱이 SandFly에 대한 점자 디스플레이가 되도록 요청할 수 있습니다. SandFly에서 허용하면 화면의 모든 내용을 읽고 기기를 제어할 수 있습니다. SandFly 먼저 물어보세요.</string>
-    <string name="title_pref_phonetic_letters_mode">글자를 음성학적으로 말해보세요</string>
+    <string name="permission_speak_label">SandFly를 통해 말하기</string>
+    <string name="permission_speak_description">앱에서 SandFly 음성으로 텍스트를 말하도록 요청할 수 있습니다. 앱이 말하기 전에 SandFly에서 확인을 요청합니다.</string>
+    <string name="permission_braille_display_label">SandFly의 점자 디스플레이 역할 요청</string>
+    <string name="permission_braille_display_description">앱에서 SandFly의 점자 디스플레이로 사용되도록 요청할 수 있습니다. SandFly에서 허용하면 앱이 화면의 모든 내용을 읽고 기기를 제어할 수 있습니다. SandFly에서 먼저 확인을 요청합니다.</string>
+    <string name="title_pref_phonetic_letters_mode">글자를 음성 기호로 읽기</string>
     <string name="phonetic_letters_mode_off">사용 안함</string>
-    <string name="phonetic_letters_mode_after_letter_delay">편지 뒤에는 \'h, 호텔\'처럼 지연돼</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">편지 뒤에는 \"h 호텔\"처럼 지체 없이</string>
-    <string name="phonetic_letters_mode_instead_of_letter">\"호텔\"이라는 글자 대신</string>
+    <string name="phonetic_letters_mode_after_letter_delay">글자 다음에 잠시 쉬고, 예: “ㅎ, 하늘”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">글자 다음에 바로, 예: “ㅎ 하늘”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">글자 대신, 예: “하늘”</string>
     <string name="title_pref_emoji_speech">이모티콘</string>
-    <string name="emoji_speech_engine">음성 엔진으로 읽기</string>
-    <string name="emoji_speech_names">SandFly까지 읽으세요</string>
+    <string name="emoji_speech_engine">음성 엔진이 읽음</string>
+    <string name="emoji_speech_names">SandFly에서 읽기</string>
     <string name="emoji_speech_none">없음</string>
-    <string name="summary_selector_menu_emoji">이모티콘을 읽는 방법 변경</string>
+    <string name="summary_selector_menu_emoji">이모티콘 읽는 방법 변경</string>
     <string name="emoji_speech_state">이모티콘: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">반복되는 이모티콘 개수 계산</string>
+    <string name="title_pref_emoji_repeat_count">반복되는 이모티콘 개수 세기</string>
     <string name="emoji_repeat_count_off">사용 안함</string>
     <string name="emoji_repeat_count_2">2개 이상</string>
     <string name="emoji_repeat_count_3">3개 이상</string>
     <string name="emoji_repeat_count_4">4개 이상</string>
     <string name="emoji_repeat_count_5">5개 이상</string>
     <string name="emoji_repeat_count_6">6개 이상</string>
-    <string name="pref_table_headers_category_title">테이블 리딩</string>
+    <string name="pref_table_headers_category_title">표 읽기</string>
     <string name="pref_table_column_headers_title">열 헤더 읽기</string>
     <string name="pref_table_column_headers_entry_after">셀 데이터 이후</string>
     <string name="pref_table_column_headers_entry_before">셀 데이터 이전</string>
-    <string name="pref_table_column_headers_entry_off">읽지 마세요</string>
+    <string name="pref_table_column_headers_entry_off">읽지 않음</string>
     <string name="pref_table_speak_row_column_numbers_title">행 및 열 번호 말하기</string>
     <string name="pref_table_speak_row_column_numbers_summary">표 셀의 행 및 열 번호 알리기</string>
     <string name="title_pref_speak_volume_changes">볼륨 변경 말하기</string>
-    <string name="summary_pref_speak_volume_changes">볼륨 키를 누른 후 새 볼륨을 말하세요.</string>
+    <string name="summary_pref_speak_volume_changes">볼륨 키를 누르면 새 볼륨을 읽습니다</string>
     <string name="title_pref_speak_notifications">알림 말하기</string>
-    <string name="summary_pref_speak_notifications">새로운 알림이 도착하면 소리내어 읽어보세요. 수신 전화는 항상 읽혀집니다.</string>
+    <string name="summary_pref_speak_notifications">새 알림이 도착하면 소리 내어 읽습니다. 수신 전화는 항상 읽습니다.</string>
     <string name="title_pref_notification_list">SandFly의 알림 목록 사용</string>
     <string name="title_pref_notification_parts">알림 세부정보</string>
-    <string name="title_pref_play_installer">Google Play에서 설치된 것으로 표시됩니다.</string>
-    <string name="summary_pref_play_installer">다른 앱에 Google Play가 설치 SandFly라고 알립니다. 일부 뱅킹 앱과 같은 일부 앱은 다른 곳에서 설치된 접근성 서비스를 끕니다. Shizuku가 필요하며 SandFly의 출처에 대해 알려주는 앱만 변경합니다.</string>
+    <string name="title_pref_play_installer">Google Play에서 설치한 것으로 표시</string>
+    <string name="summary_pref_play_installer">SandFly가 Google Play에서 설치되었다고 다른 앱에 알립니다. 일부 뱅킹 앱 등 일부 앱은 다른 곳에서 설치된 접근성 서비스를 사용 중지합니다. Shizuku가 필요하며, SandFly의 설치 출처에 관해 앱에 전달되는 정보만 변경합니다.</string>
     <string name="summary_pref_play_installer_pending">켜져 있지만 Google Play가 아직 설치 프로그램으로 기록되지 않았습니다. SandFly는 Shizuku를 사용할 수 있을 때 설정합니다.</string>
     <string name="notification_part_title">제목</string>
     <string name="notification_part_text">텍스트</string>
@@ -1441,7 +1441,7 @@
     <string name="notification_part_playback">재생 또는 일시중지됨</string>
     <string name="notification_list_title">알림</string>
     <string name="notification_list_empty">알림 없음</string>
-    <string name="notification_list_no_access">알림 액세스가 사용 중지되었습니다.</string>
+    <string name="notification_list_no_access">알림 액세스가 꺼져 있습니다</string>
     <string name="notification_list_grant_access">알림 액세스 켜기</string>
     <string name="notification_list_quick_settings">빠른 설정</string>
     <string name="notification_list_dismiss">닫기</string>
@@ -1451,7 +1451,7 @@
     <string name="notification_list_send">보내기</string>
     <string name="notification_list_playing">재생</string>
     <string name="notification_list_paused">일시중지됨</string>
-    <string name="notification_list_play">플레이</string>
+    <string name="notification_list_play">재생</string>
     <string name="notification_list_pause">일시중지</string>
     <string name="notification_list_previous">이전</string>
     <string name="notification_list_next">다음</string>
@@ -1467,7 +1467,7 @@
     <string name="quick_settings_mobile_data">모바일 데이터</string>
     <string name="quick_settings_hotspot">핫스팟</string>
     <string name="quick_settings_airplane_mode">비행기 모드</string>
-    <string name="quick_settings_do_not_disturb">방해하지 마세요</string>
+    <string name="quick_settings_do_not_disturb">방해 금지 모드</string>
     <string name="quick_settings_sound_mode">사운드 모드</string>
     <string name="quick_settings_flashlight">손전등</string>
     <string name="quick_settings_flashlight_brightness">손전등 밝기</string>
@@ -1479,7 +1479,7 @@
     <string name="quick_settings_brightness">밝기</string>
     <string name="quick_settings_adaptive_brightness">적응형 밝기</string>
     <string name="quick_settings_media_volume">미디어 볼륨</string>
-    <string name="quick_settings_call_volume">통화량</string>
+    <string name="quick_settings_call_volume">통화 음량</string>
     <string name="quick_settings_ring_volume">벨소리 볼륨</string>
     <string name="quick_settings_notification_volume">알림 볼륨</string>
     <string name="quick_settings_alarm_volume">알람 볼륨</string>
@@ -1489,10 +1489,10 @@
     <string name="quick_settings_night_light">야간 조명</string>
     <string name="quick_settings_extra_dim">매우 어두움</string>
     <string name="quick_settings_color_inversion">색상 반전</string>
-    <string name="quick_settings_color_correction">색상보정</string>
+    <string name="quick_settings_color_correction">색상 보정</string>
     <string name="quick_settings_microphone_access">마이크 액세스</string>
     <string name="quick_settings_camera_access">카메라 액세스</string>
-    <string name="quick_settings_screen_timeout">화면 시간 초과</string>
+    <string name="quick_settings_screen_timeout">화면 자동 꺼짐</string>
     <string name="quick_settings_font_size">글꼴 크기</string>
     <string name="quick_settings_media">미디어</string>
     <string name="quick_settings_no_media">미디어 없음</string>
@@ -1503,8 +1503,8 @@
     <string name="quick_settings_power_menu">전원 메뉴</string>
     <string name="quick_settings_add_system_tile">시스템 타일 추가</string>
     <string name="quick_settings_no_system_tiles">추가할 시스템 타일이 없습니다.</string>
-    <string name="quick_settings_tile_not_found">%1$s는 시스템의 빠른 설정에 없습니다</string>
-    <string name="quick_settings_never">절대로</string>
+    <string name="quick_settings_tile_not_found">%1$s은(는) 시스템 빠른 설정에 없습니다</string>
+    <string name="quick_settings_never">안 함</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d초</item>
         <item quantity="other">%d초</item>
@@ -1531,7 +1531,7 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">열 수</string>
     <string name="quick_settings_move">이동</string>
-    <string name="quick_settings_move_title">이동 %1$s</string>
+    <string name="quick_settings_move_title">%1$s 이동</string>
     <string name="quick_settings_cell">행 %1$d, 열 %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1542,37 +1542,37 @@
     <string name="quick_settings_remove">제거</string>
     <string name="quick_settings_added">%1$s 추가됨</string>
     <string name="quick_settings_removed">%1$s 삭제됨</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly 켜짐. 끄려면 두 손가락으로 화면을 5초 동안 누르세요. 이 메시지 표시를 중지하려면 SandFly 설정 &gt; 고급 설정 &gt; 끄기 지침 표시 SandFly를 끄세요.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly 켜짐. 끄려면 두 손가락으로 화면을 5초 동안 길게 누르세요. 이 메시지를 표시하지 않으려면 SandFly 설정 &gt; 고급 설정 &gt; SandFly 사용 중지 안내 표시를 사용 중지하세요.</string>
     <string name="edge_gestures_title">가장자리</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">탐색 모드를 켜거나 끄는 또 다른 단축키</string>
     <string name="title_pref_vibration_strength">진동 강도</string>
     <string name="title_pref_audio_output_device">오디오 출력 장치</string>
     <string name="dialog_title_audio_output_device">SandFly 사운드를 재생할 위치를 선택하세요</string>
     <string name="value_audio_output_device_default">시스템 기본값</string>
-    <string name="value_audio_output_device_speaker">전화 스피커</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">연결 Bluetooth 기기 또는 유선</string>
-    <string name="value_audio_output_device_disconnected">연결이 끊어진</string>
+    <string name="value_audio_output_device_speaker">휴대전화 스피커</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">연결된 Bluetooth 또는 유선 기기</string>
+    <string name="value_audio_output_device_disconnected">연결 끊김</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth 오디오 장치</string>
     <string name="value_audio_output_device_wired_headset">유선 헤드셋</string>
     <string name="value_audio_output_device_wired_headphones">유선 헤드폰</string>
     <string name="value_audio_output_device_usb_headset">USB 헤드셋</string>
     <string name="value_audio_output_device_usb_device">USB 오디오 장치</string>
-    <string name="title_pref_speaker_devices">이 장치를 갖춘 전화 스피커</string>
+    <string name="title_pref_speaker_devices">이 기기 연결 시 휴대전화 스피커 사용</string>
     <string name="summary_pref_speaker_devices_none">없음</string>
     <string name="summary_pref_speaker_devices_no_devices">아직 Bluetooth 또는 유선 기기가 연결되지 않았습니다.</string>
-    <string name="pref_reduce_window_delay_summary">SandFly 애니메이션이 꺼지면 새 화면을 더 빠르게 읽습니다. 그러면 전체 전화기의 애니메이션이 꺼집니다.</string>
-    <string name="dialog_message_detailed_ai_description">선택된 이미지는 Google의 Gemini API로 전송되어 설명됩니다. 온디바이스 AI를 켜면 해당 내용이 이 휴대전화에서 대신 설명되고 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google가 수신한 내용을 보관하고 제품 개선에 사용하며 사람들이 검토하도록 할 수 있습니다. 생성 AI는 실험적이므로 실수를 할 수 있습니다. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>가 적용됩니다.</string>
-    <string name="dialog_message_detailed_ai_promotion">상세한 이미지 설명은 생성 AI를 기반으로 합니다. 선택된 이미지는 Google의 Gemini API로 전송되어 설명됩니다. 온디바이스 AI를 켜면 해당 내용이 이 휴대전화에서 대신 설명되고 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google가 수신한 내용을 보관하고 제품 개선에 사용하며 사람들이 검토하도록 할 수 있습니다. 생성 AI는 실험적이므로 실수를 할 수 있습니다. SandFly 설정에서 언제든지 자세한 이미지 설명을 끌 수 있습니다.\n\n <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>가 적용됩니다.</string>
-    <string name="dialog_message_screen_overview_promotion">설명을 위해 화면의 스크린샷이 Google의 Gemini API로 전송되는데, 이 작업에는 몇 초가 걸립니다. 온디바이스 AI가 켜져 있으면 이 휴대전화에서 대신 설명되고 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google가 수신한 내용을 보관하고 제품 개선에 사용하며 사람들이 검토하도록 할 수 있습니다. 생성 AI는 실험적이므로 실수를 할 수 있습니다. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>가 적용됩니다.</string>
+    <string name="pref_reduce_window_delay_summary">애니메이션이 꺼져 있으면 SandFly가 새 화면을 더 빠르게 읽습니다. 이 설정은 휴대전화 전체의 애니메이션을 끕니다.</string>
+    <string name="dialog_message_detailed_ai_description">선택한 이미지는 설명을 위해 Google의 Gemini API로 전송됩니다. 온디바이스 AI를 켜면 대신 이 휴대전화에서 설명되며 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google에서 수신한 내용을 보관하고 제품 개선에 사용하며 사람이 검토하게 할 수 있습니다. 생성형 AI는 실험 단계이므로 실수를 합니다. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>이(가) 적용됩니다.</string>
+    <string name="dialog_message_detailed_ai_promotion">자세한 이미지 설명은 생성형 AI로 만들어집니다. 선택한 이미지는 설명을 위해 Google의 Gemini API로 전송됩니다. 온디바이스 AI를 켜면 대신 이 휴대전화에서 설명되며 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google에서 수신한 내용을 보관하고 제품 개선에 사용하며 사람이 검토하게 할 수 있습니다. 생성형 AI는 실험 단계이므로 실수를 합니다. 자세한 이미지 설명은 SandFly 설정에서 언제든지 사용 중지할 수 있습니다.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>이(가) 적용됩니다.</string>
+    <string name="dialog_message_screen_overview_promotion">화면의 스크린샷이 설명을 위해 Google의 Gemini API로 전송되며, 몇 초 정도 걸립니다. 온디바이스 AI를 켜면 대신 이 휴대전화에서 설명되며 전송되지 않습니다.\n\n무료 API 키를 사용하면 Google에서 수신한 내용을 보관하고 제품 개선에 사용하며 사람이 검토하게 할 수 있습니다. 생성형 AI는 실험 단계이므로 실수를 합니다. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>이(가) 적용됩니다.</string>
     <string name="shortcut_title_open_app">앱 열기</string>
-    <string name="shortcut_open_app">오픈 <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> 열기</string>
     <string name="shortcut_scroll_to_top">맨 위로 스크롤</string>
-    <string name="shortcut_write_reading_control">읽기 제어 문자 쓰기</string>
+    <string name="shortcut_write_reading_control">읽기 제어의 글자 쓰기</string>
     <string name="title_pref_reading_control_letters">손으로 쓴 알파벳 글자</string>
     <string name="reading_control_letter_none">없음</string>
     <string name="handwriting_prompt">알파벳 글자를 쓰세요</string>
-    <string name="handwriting_closed">필기 마감됨</string>
-    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g>로 시작하는 읽기 제어가 없습니다.</string>
+    <string name="handwriting_closed">필기 닫힘</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g>(으)로 시작하는 읽기 제어가 없습니다</string>
     <string name="shortcut_write_app_name">앱 이름을 써서 앱 열기</string>
     <string name="handwriting_app_prompt">앱 이름을 쓰세요</string>
     <string name="handwriting_no_app"><xliff:g id="letters" example="WHA">%1$s</xliff:g>(으)로 시작하는 앱이 없습니다.</string>
@@ -1586,8 +1586,8 @@
     <string name="handwriting_download_failed">필기 인식을 다운로드할 수 없습니다. 인터넷 연결을 확인하세요.</string>
     <string name="handwriting_unsupported_language">이 언어에서는 필기 인식을 사용할 수 없습니다.</string>
     <string name="title_pref_handwriting_keyboard">필기 키보드</string>
-    <string name="summary_pref_handwriting_keyboard">Android 키보드 설정에서 SandFly 필기 기능을 켜세요</string>
-    <string name="title_pref_handwriting_wait">작성 후 기다려주세요</string>
+    <string name="summary_pref_handwriting_keyboard">Android 키보드 설정에서 SandFly 필기를 켜세요</string>
+    <string name="title_pref_handwriting_wait">필기 후 대기 시간</string>
     <string name="value_handwriting_wait_200">0.2초</string>
     <string name="value_handwriting_wait_300">0.3초</string>
     <string name="value_handwriting_wait_400">0.4초</string>
@@ -1598,8 +1598,8 @@
     <string name="handwriting_keyboard_name">SandFly 손글씨</string>
     <string name="handwriting_space">띄어쓰기</string>
     <string name="handwriting_new_line">줄바꿈</string>
-    <string name="handwriting_tutorial_intro">필기 키보드 튜토리얼. 한 손가락으로 화면 아무 곳에나 쓸 수 있습니다. 당신이 쓴 내용은 잠시 멈추면 입력됩니다. 튜토리얼을 종료하려면 세 손가락을 사용하여 아래로 스와이프합니다.</string>
-    <string name="handwriting_tutorial_write_letter">알파벳 문자 a를 쓰세요.</string>
+    <string name="handwriting_tutorial_intro">필기 키보드 튜토리얼입니다. 한 손가락으로 화면 아무 곳에나 쓰세요. 잠시 멈추면 쓴 내용이 입력됩니다. 튜토리얼을 종료하려면 세 손가락으로 아래로 스와이프하세요.</string>
+    <string name="handwriting_tutorial_write_letter">글자 a를 쓰세요.</string>
     <string name="handwriting_tutorial_write_word">이제 hi(h 다음에 i)라는 단어를 쓰세요.</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g>를 입력했습니다.</string>
     <string name="handwriting_tutorial_space">공백을 입력하려면 두 손가락으로 오른쪽으로 스와이프하세요.</string>
@@ -1608,8 +1608,8 @@
     <string name="handwriting_tutorial_next_reading">필기가 대문자 등 다른 문자로 인식되는 경우 두 손가락을 사용하여 위로 스와이프하여 다음 인식 제안을 선택합니다. 지금 사용해 보세요.</string>
     <string name="handwriting_tutorial_read_back">두 손가락으로 탭하면 커서 앞의 텍스트를 읽을 수 있습니다.</string>
     <string name="handwriting_tutorial_new_line">두 손가락으로 아래로 스와이프하여 새 줄을 삽입하거나 보내기 등의 텍스트 필드 작업을 수행합니다.</string>
-    <string name="handwriting_tutorial_not_that">그것은 또 다른 몸짓이었습니다.</string>
-    <string name="handwriting_tutorial_done">새로운 라인. 튜토리얼이 끝났습니다. 세 손가락으로 아래로 스와이프하면 키보드가 숨겨지고, 세 손가락으로 오른쪽이나 왼쪽으로 스와이프하면 키보드가 전환됩니다. 튜토리얼을 다시 열려면 세 손가락으로 탭하세요.</string>
+    <string name="handwriting_tutorial_not_that">다른 동작이었습니다.</string>
+    <string name="handwriting_tutorial_done">줄바꿈. 튜토리얼이 완료되었습니다. 세 손가락으로 아래로 스와이프하면 키보드가 숨겨지고, 세 손가락으로 오른쪽이나 왼쪽으로 스와이프하면 키보드가 전환됩니다. 튜토리얼을 다시 열려면 세 손가락으로 탭하세요.</string>
     <string name="handwriting_tutorial_finished">튜토리얼이 종료되었습니다. 다시 열려면 세 손가락으로 탭하세요.</string>
     <string name="handwriting_no_alternatives">다른 제안 없음</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g>/<xliff:g id="count" example="5">%3$d</xliff:g></string>
@@ -1638,8 +1638,8 @@
     <string name="title_pref_shortcut_4finger_spread">네 손가락으로 펴기</string>
     <string name="title_pref_shortcut_edge_bottom_up">하단 가장자리에서 위로 스와이프</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">하단 가장자리에서 위로 길게 스와이프</string>
-    <string name="title_pref_shortcut_edge_top_left_down">왼쪽 상단에서 아래로 스와이프하세요.</string>
-    <string name="title_pref_shortcut_edge_top_right_down">오른쪽 상단에서 아래로 스와이프하세요.</string>
+    <string name="title_pref_shortcut_edge_top_left_down">왼쪽 상단에서 아래로 스와이프</string>
+    <string name="title_pref_shortcut_edge_top_right_down">오른쪽 상단에서 아래로 스와이프</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">왼쪽 상단에서 아래로 길게 스와이프</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">오른쪽 상단에서 아래로 길게 스와이프</string>
     <string name="title_pref_shortcut_edge_left_top_right">왼쪽 가장자리, 위쪽 절반에서 오른쪽으로 스와이프</string>
@@ -1650,8 +1650,8 @@
     <string name="title_pref_shortcut_edge_right_top_long_left">오른쪽 가장자리, 위쪽 절반에서 왼쪽으로 길게 스와이프</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">오른쪽 가장자리, 아래쪽 절반에서 왼쪽으로 스와이프</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">오른쪽 가장자리, 아래쪽 절반에서 왼쪽으로 길게 스와이프</string>
-    <string name="value_type_confirmation_lift_to_type_except_action_key">손가락을 잡고 아무 키나 선택한 다음 떼세요. 입력, 완료 또는 보내기를 하려면 두 번 탭하세요.</string>
-    <string name="value_type_confirmation_tap_to_type">아무 키나 눌러 입력하거나 손가락을 잡고 아무 키나 선택한 다음 떼세요.</string>
+    <string name="value_type_confirmation_lift_to_type_except_action_key">손가락을 대고 있으면 키가 선택되고, 떼면 입력됩니다. Enter, 완료, 보내기는 두 번 탭합니다.</string>
+    <string name="value_type_confirmation_tap_to_type">키를 탭하여 입력하거나, 손가락을 대고 키를 선택한 다음 떼세요</string>
     <string name="title_pref_multi_tap_timeout">한 손가락 탭 사이의 시간</string>
     <string name="value_multi_tap_timeout_100ms">0.1초</string>
     <string name="value_multi_tap_timeout_150ms">0.15초</string>
@@ -1673,44 +1673,44 @@
     <string name="value_rotor_step_45">45도</string>
     <string name="value_rotor_step_60">60도</string>
     <string name="title_pref_low_latency_audio">지연 시간이 짧은 오디오</string>
-    <string name="summary_pref_low_latency_audio">휴대전화의 가장 빠른 오디오 경로를 통해 SandFly의 소리와 음성을 재생하여 더 빨리 들을 수 있습니다. 말이나 소리가 끊기거나 잘못된 소리가 들리면 끄십시오.</string>
+    <string name="summary_pref_low_latency_audio">휴대전화의 가장 빠른 오디오 경로로 SandFly의 소리와 음성을 재생해 더 빨리 들을 수 있습니다. 음성이나 소리가 끊기거나 이상하게 들리면 사용 중지하세요.</string>
     <string name="value_focus_delay_200ms_default">0.2초(기본값)</string>
     <string name="value_focus_delay_300ms">0.3초</string>
-    <string name="title_pref_lift_to_activate">활성화하려면 들어 올리세요.</string>
+    <string name="title_pref_lift_to_activate">손가락을 떼서 활성화</string>
     <string name="summary_support_change_lift_to_activate">손가락을 떼면 항목이 활성화되는 위치 변경</string>
-    <string name="value_lift_to_activate_disabled">장애인</string>
-    <string name="value_lift_to_activate_navigation_bar">네비게이션 바에서만</string>
+    <string name="value_lift_to_activate_disabled">사용 안함</string>
+    <string name="value_lift_to_activate_navigation_bar">탐색 메뉴에서만</string>
     <string name="value_lift_to_activate_entire_screen">전체 화면</string>
-    <string name="template_lift_to_activate_changed">활성화하려면 들어 올리세요: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">둘러싸기</string>
-    <string name="summary_pref_wrap_around">마지막 항목을 스와이프하면 첫 번째 항목으로 이동하고, 첫 번째 항목을 지나면 마지막 항목으로 이동합니다. 끄면 대신 소리가 마지막에 재생됩니다.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">멈춘 터치 탐색 문제 해결</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP 권한이 없으면 SandFly는 터치 탐색이 중단될 수 있다고만 말할 수 있습니다. 문제를 해결하려면 다음을 실행하세요: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">터치 탐색 수정</string>
+    <string name="template_lift_to_activate_changed">손가락을 떼서 활성화: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="title_pref_wrap_around">순환 탐색</string>
+    <string name="summary_pref_wrap_around">마지막 항목을 지나 스와이프하면 첫 번째 항목으로, 첫 번째 항목을 지나면 마지막 항목으로 이동합니다. 사용 중지하면 대신 끝에서 소리가 재생됩니다.</string>
+    <string name="title_pref_fix_stuck_touch_exploration">멈춘 터치하여 탐색 복구</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP 권한이 없으면 SandFly는 터치하여 탐색이 멈췄을 수 있다고 알리기만 할 수 있습니다. SandFly가 문제를 해결하도록 하려면 다음을 실행하세요: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="stuck_touch_exploration_fixing">터치 탐색 수정 중</string>
     <string name="stuck_touch_exploration_fixed">터치 탐색이 수정되었습니다.</string>
-    <string name="stuck_touch_exploration_not_fixed">터치 탐색이 여전히 중단되었습니다. 문제를 해결하려면 전화를 다시 시작하세요.</string>
-    <string name="stuck_touch_exploration_restart">터치 탐색이 중단될 수 있습니다. 문제를 해결하려면 전화를 다시 시작하세요.</string>
-    <string name="stuck_touch_exploration_grant_dump">터치 탐색이 중단될 수 있습니다. 문제를 해결하려면 휴대전화를 다시 시작하거나 ADB에 SandFly DUMP 권한을 부여하여 문제를 해결하세요.</string>
+    <string name="stuck_touch_exploration_not_fixed">터치하여 탐색이 여전히 멈춰 있습니다. 해결하려면 휴대전화를 다시 시작하세요.</string>
+    <string name="stuck_touch_exploration_restart">터치하여 탐색이 멈췄을 수 있습니다. 해결하려면 휴대전화를 다시 시작하세요.</string>
+    <string name="stuck_touch_exploration_grant_dump">터치하여 탐색이 멈췄을 수 있습니다. 해결하려면 휴대전화를 다시 시작하거나, SandFly가 해결할 수 있도록 ADB로 SandFly에 DUMP 권한을 부여하세요.</string>
     <string name="title_pref_window_names">창 이름</string>
     <string name="window_names_always">항상</string>
     <string name="window_names_until_first_item">항상 첫 번째 항목에서 잘림</string>
     <string name="window_names_window_opens">창이 열릴 때만</string>
-    <string name="window_names_never">절대로</string>
-    <string name="title_pref_selector_links_controls_web_only">웹 콘텐츠에만 있는 링크 및 컨트롤</string>
+    <string name="window_names_never">안 함</string>
+    <string name="title_pref_selector_links_controls_web_only">웹 콘텐츠에만 링크 및 컨트롤 표시</string>
     <string name="title_pref_selector_auto_switch">읽기 제어 자동 변경</string>
     <string name="title_pref_touch_stops_speech">화면 터치 시 음성 중지</string>
     <string name="title_pref_focus_new_windows">새 창으로 초점 이동</string>
-    <string name="title_pref_volume_keys_adjust_sliders">볼륨 키는 슬라이더를 조정합니다.</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">슬라이더에 초점이 있으면 볼륨을 높이거나 낮추면 볼륨 대신 해당 값이 변경됩니다.</string>
+    <string name="title_pref_volume_keys_adjust_sliders">볼륨 키로 슬라이더 조정</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">슬라이더에 포커스가 있으면 볼륨 높이기 및 낮추기 키가 볼륨 대신 슬라이더 값을 변경합니다</string>
     <string name="title_pref_volume_keys_move_cursor">볼륨 키로 커서 이동</string>
-    <string name="summary_pref_volume_keys_move_cursor">텍스트 필드에 포커스가 있을 때 볼륨을 높이면 커서가 한 문자 뒤로 이동하고 볼륨을 낮추면 커서가 한 문자 뒤로 이동합니다.</string>
-    <string name="summary_support_wrap_around">마지막 항목부터 첫 번째 항목까지 포장을 켜거나 끕니다.</string>
-    <string name="wrap_around_on">둘러싸기</string>
-    <string name="wrap_around_off">둘러싸서 끄기</string>
-    <string name="title_selector_tablet_held_up_faces_away">태블릿이 얼굴을 멀리 들고 있음</string>
+    <string name="summary_pref_volume_keys_move_cursor">텍스트 입력란에 포커스가 있으면 볼륨 높이기는 커서를 한 글자 뒤로, 볼륨 낮추기는 한 글자 앞으로 이동합니다</string>
+    <string name="summary_support_wrap_around">마지막 항목에서 첫 번째 항목으로 이동하는 기능을 켜거나 끕니다</string>
+    <string name="wrap_around_on">순환 탐색: 사용</string>
+    <string name="wrap_around_off">순환 탐색: 사용 안함</string>
+    <string name="title_selector_tablet_held_up_faces_away">들어 올린 태블릿 화면이 바깥쪽을 향함</string>
     <string name="summary_support_tablet_held_up_faces_away">태블릿이나 펼쳐진 휴대폰의 점자 키보드의 경우</string>
-    <string name="tablet_held_up_faces_away_on">태블릿이 얼굴을 멀리 대고 있음</string>
-    <string name="tablet_held_up_faces_away_off">태블릿을 들고 얼굴을 멀리 떨어뜨림</string>
+    <string name="tablet_held_up_faces_away_on">들어 올린 태블릿 화면이 바깥쪽을 향함: 켜짐</string>
+    <string name="tablet_held_up_faces_away_off">들어 올린 태블릿 화면이 바깥쪽을 향함: 꺼짐</string>
     <string name="title_keyboard_echo_on_screen">화면 키보드 에코</string>
     <string name="title_keyboard_echo_physical">물리적 키보드 에코</string>
     <string name="title_keyboard_echo_braille_keyboard">점자 키보드 에코</string>
@@ -1721,32 +1721,32 @@
     <string name="pref_interrupt_typing_entry_always">항상</string>
     <string name="pref_interrupt_typing_entry_edit_fields">편집 필드에서</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">키보드 에코에서</string>
-    <string name="title_pref_interrupt_enter">Enter 키에서 음성 중단</string>
+    <string name="title_pref_interrupt_enter">Enter 키를 누르면 음성 중단</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">이름, 상태, 유형</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">유형, 주, 이름</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">유형, 상태, 이름</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">상태, 유형, 이름</string>
     <string name="item_detail_name">이름</string>
     <string name="item_detail_type">유형</string>
     <string name="item_detail_state">상태</string>
     <string name="action_move_up">위로 이동</string>
     <string name="action_move_down">아래로 이동</string>
-    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> 중 <xliff:g id="position" example="2">%1$d</xliff:g> 위치</string>
-    <string name="template_item_details_order_picked_up">픽업 <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> 삭제되었습니다. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly는 해당 주문의 항목 세부정보를 나타냅니다. 변경하려면 세부정보를 길게 터치한 후 위나 아래로 드래그하세요. SandFly를 켠 상태에서 두 번 탭하고 누른 다음 드래그합니다. 위로 이동 및 아래로 이동 작업을 사용할 수도 있습니다.</string>
-    <string name="title_pref_speak_items_before_scroll">스크롤하여 보기 전에 항목을 말하세요.</string>
-    <string name="gemini_error_api_key">Gemini API 키를 수락하지 않았습니다. 자동 설명 설정에서 키를 확인하세요.</string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g>개 중 <xliff:g id="position" example="2">%1$d</xliff:g>번째 위치</string>
+    <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> 항목을 들어 올림. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> 놓음. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">SandFly는 항목의 세부정보를 이 순서대로 말합니다. 순서를 변경하려면 세부정보를 길게 터치한 다음 위나 아래로 드래그하세요. SandFly가 켜져 있으면 두 번 탭하고 길게 누른 다음 드래그합니다. 위로 이동 및 아래로 이동 작업을 사용할 수도 있습니다.</string>
+    <string name="title_pref_speak_items_before_scroll">스크롤되어 표시되기 전에 항목 말하기</string>
+    <string name="gemini_error_api_key">Gemini에서 API 키를 수락하지 않았습니다. 자동 설명 설정에서 키를 확인하세요.</string>
     <string name="gemini_error_quota">Gemini API 키의 사용 제한에 도달했습니다. 나중에 다시 시도하세요.</string>
-    <string name="gemini_error_busy">Gemini 지금은 바빠요. 잠시 후에 다시 시도해 보세요.</string>
-    <string name="gemini_error_timeout">Gemini 답변하는 데 시간이 너무 오래 걸렸습니다. 다시 시도해 보세요.</string>
-    <string name="gemini_error_with_code">Gemini 답변할 수 없습니다. 오류 <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
-    <string name="gemini_error_with_details">Gemini 답변할 수 없습니다. 오류 <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="gemini_error_busy">현재 Gemini 사용량이 많습니다. 잠시 후 다시 시도하세요.</string>
+    <string name="gemini_error_timeout">Gemini의 답변 시간이 너무 오래 걸렸습니다. 다시 시도해 보세요.</string>
+    <string name="gemini_error_with_code">Gemini가 답변할 수 없습니다. 오류 <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_with_details">Gemini가 답변할 수 없습니다. 오류 <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. 더 자세한 이미지 설명을 얻을 수 없습니다: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">음성으로 물어보세요</string>
     <string name="image_qna_stop_listening">듣기 중지</string>
     <string name="image_qna_type_question">질문을 입력하세요</string>
-    <string name="shortcut_dictate">기록</string>
-    <string name="title_pref_ai_dictation">AI로 올바른 받아쓰기</string>
+    <string name="shortcut_dictate">받아쓰기</string>
+    <string name="title_pref_ai_dictation">AI로 받아쓰기 수정</string>
     <string name="dictation_not_corrected">수정되지 않았습니다. 인식된 대로 입력되었습니다.</string>
     <string name="dictation_nothing_recognized">아무것도 인식되지 않았습니다</string>
     <string name="dictation_unavailable">음성 인식을 사용할 수 없습니다.</string>
@@ -1769,9 +1769,9 @@
     <string name="dictation_ai_same">자동 설명과 동일</string>
     <string name="title_pref_browse_mode_per_app">각 앱의 탐색 모드 기억</string>
     <string name="title_pref_export_settings">설정 내보내기</string>
-    <string name="title_pref_import_settings">가져오기 설정</string>
+    <string name="title_pref_import_settings">설정 가져오기</string>
     <string name="settings_export_done">설정을 내보냈습니다. API 키는 포함되지 않습니다.</string>
     <string name="settings_export_failed">설정을 내보낼 수 없습니다.</string>
-    <string name="settings_import_done">가져온 설정</string>
-    <string name="settings_import_failed">이 파일은 SandFly 또는 Backtalk 설정 파일이 아니거나 읽을 수 없습니다.</string>
+    <string name="settings_import_done">설정을 가져왔습니다</string>
+    <string name="settings_import_failed">이 파일은 SandFly 또는 Backtalk 설정 파일이 아니거나 읽을 수 없습니다</string>
 </resources>

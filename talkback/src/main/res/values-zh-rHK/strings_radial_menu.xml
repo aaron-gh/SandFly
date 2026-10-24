@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_radial_menu">圓形選單</string>
-    <string name="summary_pref_radial_menu">將 SandFly 選單顯示為螢幕中間的圓圈。滑動到某個項目並抬起以選擇它。</string>
-    <string name="template_radial_menu_submenu"><xliff:g id="title" example="Navigation">%1$s</xliff:g>菜單</string>
+    <string name="summary_pref_radial_menu">在螢幕中央以圓形顯示 SandFly 選單。滑到項目後放開手指即可選取。</string>
+    <string name="template_radial_menu_submenu"><xliff:g id="title" example="Navigation">%1$s</xliff:g>選單</string>
     <string name="radial_menu_cancel">取消</string>
     <string name="radial_menu_closed">選單已關閉</string>
-    <string name="hint_radial_menu">觸摸螢幕中間並向某個項目滑動，然後抬起以選擇它。向中間提起即可關閉。</string>
+    <string name="hint_radial_menu">輕觸螢幕中央並向項目滑動，然後放開手指即可選取。在中央放開手指即可關閉。</string>
 </resources>

@@ -57,9 +57,9 @@
   <string name="title_pref_category_feedback">Informacje zwrotne</string>
   <string name="title_pref_category_typing_and_braille">Pisanie i brajl</string>
   <string name="title_pref_category_more">Więcej</string>
-  <string name="title_pref_reserve_vibration_watch_gestures">Zarezerwuj gesty dla zegara wibracyjnego</string>
+  <string name="title_pref_reserve_vibration_watch_gestures">Zarezerwuj gesty dla Vibration Watch</string>
   <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nie obsługuje pojedynczego ani dwukrotnego kliknięcia dwoma palcami, aby mogła ich używać funkcja „Zegar wibracyjny” firmy Samsung. Włącz ją w ustawieniach ułatwień dostępu zegarka.</string>
-  <string name="shortcut_reserved_for_vibration_watch">Zarezerwowany dla zegara wibracyjnego w ustawieniach zaawansowanych</string>
+  <string name="shortcut_reserved_for_vibration_watch">Zarezerwowany dla Vibration Watch w ustawieniach zaawansowanych</string>
   <string name="title_pref_speakerphone_away_from_ear">Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha</string>
   <string name="summary_pref_speakerphone_away_from_ear">Podczas rozmowy włącza tryb głośnomówiący po odsunięciu telefonu od ucha i wyłącza go po ponownym przyłożeniu.</string>
   <string name="summary_pref_speakerphone_needs_permission">Wymaga uprawnienia, którego Android nie przyznaje czytnikom ekranu. Aby je przyznać, wykonaj poniższe polecenie za pomocą adb lub Shizuku, a następnie wróć do tego ekranu: %1$s</string>
@@ -218,7 +218,7 @@
   <string name="direct_touch_restore_done">Ustawienia przywrócone</string>
   <string name="direct_touch_restore_failed">Nie udało się odczytać tego pliku</string>
   <string name="title_pref_gemini_api_key">Klucz API Gemini</string>
-  <string name="summary_pref_gemini_api_key_built_in">Korzystanie z klucza wbudowanego w aplikację</string>
+  <string name="summary_pref_gemini_api_key_built_in">Używany jest klucz wbudowany w tę aplikację</string>
   <string name="gemini_api_key_hint">Klucz API</string>
   <string name="gemini_api_key_save">Zapisz</string>
   <string name="gemini_api_key_get">Uzyskaj klucz</string>
@@ -260,7 +260,7 @@
   <string name="pref_on_device_ai_importing">Sprawdzanie pliku modelu</string>
   <string name="pref_on_device_ai_manage">Zarządzaj modelami</string>
   <string name="pref_on_device_ai_manage_none">Brak pobranych modeli</string>
-  <string name="title_pref_manage_models">Zarządzaj modelami</string>
+  <string name="title_pref_manage_models">Zarządzanie modelami</string>
   <string name="manage_models_storage_used">Modele zajmują %1$s miejsca na urządzeniu.</string>
   <string name="manage_models_empty">Nie pobrano żadnych modeli.</string>
   <string name="manage_models_unfinished">%1$s, nieukończone pobieranie</string>
@@ -283,7 +283,7 @@
   <string name="on_device_ai_error_corrupt">Pobrany plik nie odpowiadał oczekiwanemu modelowi i został usunięty. Spróbuj ponownie.</string>
   <string name="on_device_ai_error_storage">Nie udało się zapisać pliku.</string>
   <string name="on_device_ai_error_low_space">Brak wystarczającej ilości wolnego miejsca na ten model.</string>
-  <string name="on_device_ai_metered_title">Pobrać przez sieć z limitem danych?</string>
+  <string name="on_device_ai_metered_title">Pobrać przez komórkową transmisję danych?</string>
   <string name="gemini_api_key_dialog_message">Uzyskaj bezpłatny klucz API w Google AI Studio na stronie aistudio.google.com/apikey i wklej go tutaj. Aby usunąć klucz, wyczyść pole i zapisz zmiany.\n\nObrazy i ekrany, które opisujesz, są wysyłane do Google. Jeśli korzystasz z bezpłatnej wersji usługi, Google może używać ich do ulepszania swoich produktów.</string>
   <string name="update_move_title">Backtalk Aaron to teraz SandFly</string>
   <string name="update_move_notification_text">Zainstaluj SandFly. Ustawienia i etykiety niestandardowe zostaną do niego skopiowane. Kliknij, aby zainstalować.</string>
@@ -318,7 +318,7 @@
   <string name="backtalk_paused">Wstrzymano działanie SandFly</string>
   <string name="backtalk_resumed">Wznowiono działanie SandFly</string>
   <string name="notification_title_backtalk_paused">SandFly jest wstrzymany</string>
-  <string name="notification_message_backtalk_paused">Kliknij, aby wznowić</string>
+  <string name="notification_message_backtalk_paused">Dotknij, aby wznowić</string>
   <string name="notification_channel_backtalk_paused">Wstrzymanie SandFly</string>
   <string name="dialog_title_pause_backtalk">Wstrzymać SandFly?</string>
   <string name="dialog_button_pause_backtalk">Wstrzymaj</string>
@@ -332,7 +332,7 @@
   <string name="value_resume_screen_on">Po włączeniu ekranu</string>
   <string name="value_resume_manual">Tylko przez powiadomienie lub skrót</string>
   <string name="title_pref_scripts">Skrypty</string>
-  <string name="summary_pref_scripts">Zmieniaj sposób działania SandFly w aplikacjach</string>
+  <string name="summary_pref_scripts">Zmiana działania SandFly w aplikacjach</string>
   <string name="script_import">Importuj skrypt</string>
   <string name="script_install_label">Zainstaluj skrypt SandFly</string>
   <string name="script_import_nothing">Brak pliku skryptu do zainstalowania.</string>
@@ -570,7 +570,6 @@
   <string name="title_pref_auto_update_check">Automatycznie sprawdzaj aktualizacje</string>
   <string name="summary_pref_auto_update_check">Sprawdzaj raz dziennie i wyświetlaj powiadomienie, gdy dostępna jest nowa kompilacja</string>
   <string name="update_notification_title">Dostępna aktualizacja SandFly</string>
-  <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="update_notification_text">Kompilacja <xliff:g id="build" example="97">%1$d</xliff:g>. Kliknij, aby zainstalować.</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="update_dialog_title">Dostępna jest kompilacja <xliff:g id="build" example="97">%1$d</xliff:g> SandFly</string>
   <string name="update_dialog_install">Zainstaluj</string>
   <string name="update_checking">Sprawdzanie aktualizacji</string>

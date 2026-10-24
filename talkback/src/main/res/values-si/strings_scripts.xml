@@ -6,19 +6,19 @@
     <string name="script_install_label">SandFly ස්ක්‍රිප්ට් ස්ථාපනය කරන්න</string>
     <string name="script_import_nothing">ස්ථාපනය කිරීමට ස්ක්‍රිප්ට් ගොනුවක් නොමැත.</string>
     <string name="script_import_cannot_open">ගොනුව විවෘත කළ නොහැකි විය.</string>
-    <string name="script_import_repository">මෙම සබැඳිය සම්පූර්ණ ගබඩාවකට වේ. ඔබට අවශ්‍ය ස්ක්‍රිප්ට් එක විවෘත කරන්න, ඉන්පසු එහි සබැඳිය බෙදා ගන්න.</string>
-    <string name="script_import_summary">.lua ගොනුව, හෝ main.lua සමඟ .zip</string>
+    <string name="script_import_repository">මෙම සබැඳිය සම්පූර්ණ ගබඩාවකට යොමු වේ. ඔබට අවශ්‍ය ස්ක්‍රිප්ට් එක විවෘත කර එහි සබැඳිය බෙදා ගන්න.</string>
+    <string name="script_import_summary">.lua ගොනුව, හෝ main.lua සහිත .zip</string>
     <string name="scripts_category_app">යෙදුම් ස්ක්‍රිප්ට්</string>
-    <string name="scripts_category_global">ගෝලීය ප්ලගින</string>
+    <string name="scripts_category_global">පොදු ප්ලගින</string>
     <string name="scripts_none">ස්ක්‍රිප්ට් ස්ථාපනය කර නැත</string>
     <string name="scripts_all_off">සියලුම ස්ක්‍රිප්ට් අක්‍රිය කරන්න</string>
-    <string name="scripts_all_off_summary">ස්ක්‍රිප්ට් ස්ථාපනය කර ඔවුන්ගේම ස්විච තබා ගන්න. සියලුම ස්ක්‍රිප්ට් සක්‍රිය හෝ අක්‍රිය කිරීමේ අභිනය ද එයම කරයි.</string>
+    <string name="scripts_all_off_summary">ස්ක්‍රිප්ට් ස්ථාපිතව පවතින අතර තමන්ගේම ස්විච තබා ගනී. “සියලුම ස්ක්‍රිප්ට් සක්‍රිය හෝ අක්‍රිය කරන්න” ඉංගිතය ද එයම කරයි.</string>
     <string name="shortcut_toggle_scripts">සියලුම ස්ක්‍රිප්ට් සක්‍රිය හෝ අක්‍රිය කරන්න</string>
     <string name="scripts_now_off">ස්ක්‍රිප්ට් අක්‍රියයි</string>
     <string name="scripts_now_on">ස්ක්‍රිප්ට් ක්‍රියාත්මකයි</string>
     <string name="scripts_unavailable">මෙම උපාංගයේ ස්ක්‍රිප්ට් නොමැත</string>
     <string name="script_add_example">උදාහරණ ස්ක්‍රිප්ට් එක එකතු කරන්න</string>
-    <string name="script_add_example_summary">ඔබ මාරු කරන එක් එක් යෙදුමේ නම කියයි. ආරම්භ කිරීමට පිටපතක්.</string>
+    <string name="script_add_example_summary">ඔබ මාරු වන සෑම යෙදුමකම නම කියයි. ආරම්භ කිරීමට ස්ක්‍රිප්ට් එකක්.</string>
     <string name="script_state_on">ක්‍රියාත්මකයි</string>
     <string name="script_state_off">ක්‍රියාවිරහිතයි</string>
     <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g> හි ධාවනය වේ</string>
@@ -29,27 +29,27 @@
     <string name="script_install_can">එය කළ හැක්කේ:</string>
     <string name="script_install_no_permissions">අවසර අවශ්‍ය නැත.</string>
     <string name="script_install_button">ස්ථාපනය කරන්න</string>
-    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> සිට <xliff:g id="version">%2$s</xliff:g> දක්වා යාවත්කාලීන කරන්නද?</string>
+    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> වෙත යාවත්කාලීන කරන්නද?</string>
     <string name="script_update_new_permissions">නව අවසර:</string>
     <string name="script_update_button">යාවත්කාලීන කරන්න</string>
-    <string name="script_update_replaces">මෙය <xliff:g id="version">%1$s</xliff:g> අනුවාදය <xliff:g id="author">%2$s</xliff:g> මගින් ප්‍රතිස්ථාපනය කරයි, සහ එහි දත්ත සහ සැකසීම් තබා ගනී.</string>
-    <string name="script_update_other_author">අලුත් එක වෙනස් කර්තෘවරයෙකු වන <xliff:g id="author">%1$s</xliff:g> විසිනි. ඔබ එය විශ්වාස කරන්නේ නම් පමණක් යාවත්කාලීන කරන්න.</string>
+    <string name="script_update_replaces">මෙය <xliff:g id="author">%2$s</xliff:g> ගේ <xliff:g id="version">%1$s</xliff:g> අනුවාදය ප්‍රතිස්ථාපනය කර, එහි දත්ත සහ සැකසීම් තබා ගනී.</string>
+    <string name="script_update_other_author">අලුත් එක වෙනත් කතුවරයෙකු වන <xliff:g id="author">%1$s</xliff:g> විසිනි. ඔබ විශ්වාස කරන්නේ නම් පමණක් යාවත්කාලීන කරන්න.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ස්ථාපනය කර ඇත</string>
-    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> වෙත යාවත්කාලීන</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> වෙත යාවත්කාලීන කරන ලදී</string>
     <string name="script_import_failed">ආයාත කිරීම අසාර්ථක විය. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. විශ්වාසදායී ස්ක්‍රිප්ට් සඳහා පමණක් ඉඩ දෙන්න.</string>
-    <string name="script_permission_screen">තිරය කියවන්න</string>
-    <string name="script_permission_actions">ක්ලික් කරන්න, අනුචලනය කරන්න, ටයිප් කරන්න සහ අවධානය යොමු කරන්න</string>
-    <string name="script_permission_speech">SandFlyගේ කතාව අසා වෙනස් කරන්න</string>
-    <string name="script_permission_passwords">මුරපද ක්ෂේත්‍ර කියවන්න</string>
-    <string name="script_permission_input">අභිනයන්, යතුරු, මෙනු අයිතම සහ කියවීම් පාලන එකතු කරන්න</string>
-    <string name="script_permission_network">අන්තර්ජාලය භාවිතා කරන්න</string>
-    <string name="script_permission_clipboard">ක්ලිප්බෝඩ් එක කියවා වෙනස් කරන්න</string>
-    <string name="script_permission_system">ආපසු හෝ නිවසට යන්න, දැනුම්දීම් සහ යෙදුම් විවෘත කරන්න</string>
-    <string name="script_permission_notifications">කථන දැනුම්දීම් කියවා වෙනස් කරන්න</string>
-    <string name="script_permission_events">ටයිප් කිරීම ඇතුළුව, සෑම යෙදුමකම සියලුම ක්‍රියාකාරකම් බලන්න</string>
-    <string name="script_permission_dialogs">ඕනෑම යෙදුමක් හරහා සංවාද පෙන්වන්න</string>
-    <string name="script_permission_java">සෑම යෙදුමකම SandFly හි සියලුම ප්‍රවේශයන් සමඟ ජාවා කේතය ධාවනය කරන්න</string>
+    <string name="script_permission_screen">තිරය කියවීම</string>
+    <string name="script_permission_actions">ක්ලික් කිරීම, අනුචලනය, ටයිප් කිරීම සහ ෆෝකස් ගෙන යාම</string>
+    <string name="script_permission_speech">SandFly කථනය ලබා ගැනීම සහ වෙනස් කිරීම</string>
+    <string name="script_permission_passwords">මුරපද ක්ෂේත්‍ර කියවීම</string>
+    <string name="script_permission_input">අභිනයන්, යතුරු, මෙනු අයිතම සහ කියවීම් පාලන එක් කිරීම</string>
+    <string name="script_permission_network">අන්තර්ජාලය භාවිතා කිරීම</string>
+    <string name="script_permission_clipboard">ක්ලිප්බෝඩය කියවීම සහ වෙනස් කිරීම</string>
+    <string name="script_permission_system">ආපසු හෝ මුල් තිරයට යාම, දැනුම්දීම් සහ යෙදුම් විවෘත කිරීම</string>
+    <string name="script_permission_notifications">කියවන දැනුම්දීම් කියවීම සහ වෙනස් කිරීම</string>
+    <string name="script_permission_events">ටයිප් කිරීම ඇතුළුව සෑම යෙදුමකම සියලු ක්‍රියාකාරකම් දැකීම</string>
+    <string name="script_permission_dialogs">ඕනෑම යෙදුමක් මත සංවාද පෙන්වීම</string>
+    <string name="script_permission_java">සෑම යෙදුමකම SandFly හි සියලු ප්‍රවේශය සමඟ Java කේතය ධාවනය කිරීම</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ක්‍රියාත්මක කරන්න</string>
     <string name="script_permissions_title">අවසර</string>
@@ -57,13 +57,13 @@
     <string name="script_settings_category">සැකසීම්</string>
     <string name="script_list_filter">පෙරහන</string>
     <string name="script_button_off">මුලින්ම ස්ක්‍රිප්ට් එක ඔන් කරන්න</string>
-    <string name="script_permissions_summary">එකක් නිවා දැමීමෙන් අවශ්‍ය කොටස් නතර වේ.</string>
+    <string name="script_permissions_summary">අවසරයක් අක්‍රිය කිරීමෙන් එය අවශ්‍ය කොටස් නතර වේ.</string>
     <string name="script_install_permissions_note">ඔබට පසුව මේවා අක්‍රිය කළ හැක.</string>
-    <string name="script_manage_category">කළමනාකරණය කරන්න</string>
-    <string name="script_move_up">කලින් දුවන්න</string>
-    <string name="script_move_down">පසුව දුවන්න</string>
-    <string name="script_order_summary">එකම කථාව වෙනස් කරන ස්ක්‍රිප්ට් සඳහා ඇණවුම් කරන්න. යෙදුම් ස්ක්‍රිප්ට් පළමුව ක්‍රියාත්මක වේ.</string>
-    <string name="script_log">ලොග් කරන්න</string>
+    <string name="script_manage_category">කළමනාකරණය</string>
+    <string name="script_move_up">කලින් ධාවනය කරන්න</string>
+    <string name="script_move_down">පසුව ධාවනය කරන්න</string>
+    <string name="script_order_summary">එකම කථනය වෙනස් කරන ස්ක්‍රිප්ට්වල අනුපිළිවෙළ. යෙදුම් ස්ක්‍රිප්ට් පළමුව ක්‍රියාත්මක වේ.</string>
+    <string name="script_log">ලොගය</string>
     <string name="script_log_summary">SandFly ආරම්භයේ සිට ප්‍රතිදානය සහ දෝෂ</string>
     <string name="script_clear_storage">ගබඩා කර ඇති දත්ත හිස් කරන්න</string>
     <string name="script_storage_cleared">ගබඩා කළ දත්ත හිස් කර ඇත</string>
@@ -76,33 +76,33 @@
     <string name="script_log_copy">ලොගය පිටපත් කරන්න</string>
     <string name="script_log_copied">ලොගය පිටපත් කර ඇත</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">ස්ක්‍රිප්ට් API <xliff:g id="needed">%1$d</xliff:g> හෝ පසුව අවශ්‍යයි. මෙම SandFly හි <xliff:g id="current">%2$d</xliff:g> ඇත, එබැවින් කොටස් ක්‍රියා නොකරනු ඇත.</string>
-    <string name="script_api_untested">ස්ක්‍රිප්ට් API <xliff:g id="tested">%1$d</xliff:g> දක්වා පරීක්ෂා කර ඇත. මෙම SandFly හි <xliff:g id="current">%2$d</xliff:g> ඇත, එබැවින් එය අපේක්ෂා කළ පරිදි ක්‍රියා නොකරනු ඇත.</string>
-    <string name="script_state_incompatible">මෙය සමඟ වැඩ නොකළ හැකිය SandFly</string>
+    <string name="script_api_too_old">ස්ක්‍රිප්ට් API <xliff:g id="needed">%1$d</xliff:g> හෝ නවතම එකක් අවශ්‍යයි. මෙම SandFly හි <xliff:g id="current">%2$d</xliff:g> ඇත, එබැවින් සමහර කොටස් ක්‍රියා නොකළ හැක.</string>
+    <string name="script_api_untested">ස්ක්‍රිප්ට් API <xliff:g id="tested">%1$d</xliff:g> දක්වා පරීක්ෂා කර ඇත. මෙම SandFly හි <xliff:g id="current">%2$d</xliff:g> ඇත, එබැවින් එය අපේක්ෂිත පරිදි ක්‍රියා නොකළ හැක.</string>
+    <string name="script_state_incompatible">SandFly හි මෙම අනුවාදය සමඟ ක්‍රියා නොකළ හැකිය</string>
     <string name="script_api_range">ස්ක්‍රිප්ට් API <xliff:g id="min">%1$d</xliff:g> සිට <xliff:g id="tested">%2$d</xliff:g> දක්වා</string>
     <string name="script_compatibility_title">ගැළපුම</string>
     <string name="script_install_anyway">කෙසේ හෝ ස්ථාපනය කරන්න</string>
-    <string name="script_update_anyway">කෙසේ හෝ යාවත්කාලීන කරන්න</string>
+    <string name="script_update_anyway">කෙසේ වෙතත් යාවත්කාලීන කරන්න</string>
     <string name="script_homepage">මුල් පිටුව විවෘත කරන්න</string>
     <string name="script_homepage_confirm_title">මෙම ලිපිනය විවෘත කරන්නද?</string>
     <string name="script_homepage_open">විවෘත කරන්න</string>
     <string name="script_homepage_failed">කිසිදු යෙදුමකට <xliff:g id="address">%1$s</xliff:g> විවෘත කළ නොහැක</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> නැවත නැවත දෝෂ වලින් පසුව අක්‍රිය කර ඇත. එහි log in Scripts බලන්න.</string>
-    <string name="shortcut_inspect_item">අවධානය යොමු කළ අයිතමය පරීක්ෂා කරන්න</string>
-    <string name="script_inspect_no_item">කිසිම අයිතමයක් අවධානය යොමු කර නැත</string>
+    <string name="script_turned_off">නැවත නැවත දෝෂ නිසා <xliff:g id="name">%1$s</xliff:g> අක්‍රිය විය. එහි ලොගය “ස්ක්‍රිප්ට්” හි බලන්න.</string>
+    <string name="shortcut_inspect_item">ෆෝකස් කළ අයිතමය පරීක්ෂා කරන්න</string>
+    <string name="script_inspect_no_item">කිසිදු අයිතමයක ෆෝකස් නැත</string>
     <string name="script_inspect_copied">පිටපත් කර ඇත. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">හැඳුනුම්පත නැත, එබැවින් රීතිවලට එය නම් කළ නොහැක. පිටපත් කර ඇත. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">පිටපත් තිර ගස</string>
+    <string name="script_inspect_no_id">id නැත, එබැවින් නීතිවලට එය සඳහන් කළ නොහැක. පිටපත් කළා. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">තිර ට්‍රී පිටපත් කරන්න</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> අයිතම පිටපත් කරන ලදී</string>
     <string name="script_tree_none">පිටපත් කිරීමට කවුළුවක් නැත</string>
-    <string name="script_tree_clip_label">තිර ගස</string>
-    <string name="summary_copy_screen_tree_menu">ස්ක්‍රිප්ට් ලිවීම සඳහා තිරයේ ඇති සියලුම අයිතම JSON ලෙස පිටපත් කරන්න</string>
+    <string name="script_tree_clip_label">තිර ට්‍රී</string>
+    <string name="summary_copy_screen_tree_menu">ස්ක්‍රිප්ට් ලිවීම සඳහා තිරයේ සියලු අයිතම JSON ලෙස පිටපත් කිරීම</string>
     <string name="script_inspect_clip_label">අයිතම විස්තර</string>
-    <string name="summary_inspect_item_menu">ස්ක්‍රිප්ට් ලිවීම සඳහා ඔබ සිටි අයිතමයේ විස්තර කියන්න සහ පිටපත් කරන්න</string>
-    <string name="script_keys_backtalk_modifier">SandFly modifier</string>
+    <string name="summary_inspect_item_menu">ස්ක්‍රිප්ට් ලිවීම සඳහා අවසන් වරට නාභිගත කළ අයිතමයේ විස්තර කීම සහ පිටපත් කිරීම</string>
+    <string name="script_keys_backtalk_modifier">SandFly විකරණ යතුර</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, පසුව <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">විධාන</string>
-    <string name="script_commands_summary">ධාවන ස්ක්‍රිප්ට් එකක අභිනයන් සහ යතුරු SandFly ට පෙර පැමිණේ. SandFlys තබා ගැනීමට එකක් ක්‍රියාවිරහිත කරන්න.</string>
+    <string name="script_commands_summary">ධාවනය වන ස්ක්‍රිප්ට් එකක ඉංගිත සහ යතුරු SandFly හි ඒවාට වඩා ප්‍රමුඛ වේ. SandFly හි එක තබා ගැනීමට ස්ක්‍රිප්ට් එකේ එක අක්‍රිය කරන්න.</string>
     <string name="script_binding_gesture">අභිනය: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">යතුරු: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly මෙනුව</string>
@@ -112,10 +112,10 @@
     <string name="script_binding_turn_off">ක්‍රියාවිරහිත කරන්න</string>
     <string name="script_binding_restore">පෙරනිමි ප්‍රතිසාධනය කරන්න</string>
     <string name="script_binding_restored">පෙරනිමි ප්‍රතිසාධනය කරන ලදී</string>
-    <string name="script_binding_perform">අභිනය හෝ යතුරු ඉටු කරන්න</string>
-    <string name="script_binding_perform_summary">මීළඟ අභිනය පවරන්න, නැතහොත් SandFly විකරණකාරකය සමඟ යතුරු එබීම</string>
+    <string name="script_binding_perform">අභිනයක් කරන්න හෝ යතුරු ඔබන්න</string>
+    <string name="script_binding_perform_summary">මීළඟ ඉංගිතය හෝ SandFly විකරණ යතුර සමඟ එබූ යතුරු පැවරීම</string>
     <string name="script_binding_perform_message">අභිනය කරන්න හෝ යතුරු ඔබන්න.</string>
-    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> සිට <xliff:g id="command">%2$s</xliff:g> දක්වා පවරන්නද?</string>
+    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g> වෙත පවරන්නද?</string>
     <string name="script_binding_assign">පවරන්න</string>
     <string name="script_binding_choose_gesture">අභිනය තෝරන්න</string>
     <string name="script_binding_type_keys">යතුරු ටයිප් කරන්න</string>
@@ -125,7 +125,7 @@
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">ස්ක්‍රිප්ට් මූලාශ්‍ර</string>
     <string name="script_sources_none">මූලාශ්‍ර එකතු කර නැත</string>
-    <string name="script_source_add">මූලාශ්රය එකතු කරන්න</string>
+    <string name="script_source_add">මූලාශ්‍රය එකතු කරන්න</string>
     <string name="script_source_add_button">එකතු කරන්න</string>
     <string name="script_source_hint">github.com/owner/repository</string>
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea හෝ Bitbucket හි ගබඩාවක ලිපිනය නොවේ.</string>
@@ -134,20 +134,20 @@
     <string name="script_source_empty">මෙම මූලාශ්‍රයේ ස්ක්‍රිප්ට් නැත</string>
     <string name="script_source_failed">ස්ක්‍රිප්ට් පූරණය කළ නොහැකි විය. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">නැවත උත්සාහ කරන්න</string>
-    <string name="script_source_downloading">බාගත කරමින් <xliff:g id="name">%1$s</xliff:g></string>
-    <string name="script_source_remove">මූලාශ්රය ඉවත් කරන්න</string>
+    <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> බාගත වෙමින්</string>
+    <string name="script_source_remove">මූලාශ්‍රය ඉවත් කරන්න</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> ඉවත් කරන්නද?</string>
-    <string name="script_source_remove_message">එයින් ස්ථාපනය කර ඇති ස්ක්‍රිප්ට් ස්ථාපනය කර ඇත.</string>
+    <string name="script_source_remove_message">එයින් ස්ථාපනය කළ ස්ක්‍රිප්ට් ස්ථාපිතව පවතී.</string>
     <string name="scripts_auto_update">ස්ක්‍රිප්ට් ස්වයංක්‍රීයව යාවත්කාලීන කරන්න</string>
     <string name="scripts_check_updates">යාවත්කාලීන සඳහා පරීක්ෂා කරන්න</string>
-    <string name="scripts_checking_updates">යාවත්කාලීන සඳහා පරීක්ෂා කරමින්...</string>
+    <string name="scripts_checking_updates">යාවත්කාලීන සඳහා පරීක්ෂා කරමින්…</string>
     <string name="scripts_updates_category">යාවත්කාලීන</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ස්ක්‍රිප්ට් යාවත්කාලීන කරන ලදී: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ස්ක්‍රිප්ට් යාවත්කාලීන කරන ලදී: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">යාවත්කාලීන කිරීම් යටතේ යාවත්කාලීන කිරීම් ලැයිස්තුගත කර ඇත</string>
+    <string name="scripts_updates_to_approve">යාවත්කාලීන “යාවත්කාලීන” යටතේ ලැයිස්තුගත කර ඇත</string>
     <string name="scripts_update_check_failed">සමහර මූලාශ්‍ර පරීක්ෂා කළ නොහැකි විය</string>
     <string name="scripts_up_to_date">සියලුම ස්ක්‍රිප්ට් යාවත්කාලීන වේ</string>
 </resources>

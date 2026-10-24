@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Zariadenie bolo odomknuté</string>
   <string name="title_pref_speech_volume">Hlasitosť reči</string>
   <string name="title_pref_verbose_scroll_announcement">Vždy vyslovovať počet položiek zoznamu</string>
-  <string name="summary_pref_verbose_scroll_announcement">Povedzte, ktoré položky sa zobrazujú po každom rolovaní</string>
+  <string name="summary_pref_verbose_scroll_announcement">Po každom posunutí povie, ktoré položky sa zobrazujú</string>
   <string name="title_pref_cover_proximity_sensor">Zastaviť reč zakrytím senzora blízkosti</string>
   <string name="title_pref_phonetic_letters">Vyslovovať písmená s príkladmi</string>
   <string name="summary_pref_phonetic_letters">Keď vyberiete klávesy alebo navigáciu podľa znakov, s každým písmenom zaznie aj príklad. Ak napríklad vyberiete h, začujete „hotel“.</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">Väčšinu</string>
   <string name="punctuation_some">Niektoré</string>
   <string name="title_pref_count_repeated_symbols">Počítať opakované symboly</string>
-  <string name="summary_pref_count_repeated_symbols">Povedzte, koľkokrát sa symbol zopakuje, keď sa zopakuje 4 alebo viackrát</string>
+  <string name="summary_pref_count_repeated_symbols">Povedať, koľkokrát sa symbol opakuje, keď sa opakuje 4 alebo viackrát</string>
   <string name="learn_more">Ďalšie informácie</string>
   <string name="title_pref_capital_letters">Veľké písmená</string>
   <string name="capital_letters_nothing">Nerobiť nič</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">Zmeniť výšku hlasu</string>
   <string name="capital_letters_sound_feedback">Prehrať zvuk</string>
   <string name="title_pref_a11y_hints">Vyslovovať tipy na používanie</string>
-  <string name="summary_pref_a11y_hints">Po opísaní položky povedzte, ako ju používať</string>
+  <string name="summary_pref_a11y_hints">Po opísaní položky povedať, ako ju používať</string>
   <string name="pref_speak_container_element_positions_title">Vyslovovať informácie o kontajneroch</string>
   <string name="pref_speak_time_title">Hlásiť čas</string>
   <string name="pref_speak_time_summary">Keď zapnete obrazovku</string>
-  <string name="summary_speak_container_element_positions">Povedzte, keď zadávate alebo opúšťate zoznamy, mriežky a iné kontajnery</string>
+  <string name="summary_speak_container_element_positions">Oznamovať vstup do zoznamov, mriežok a iných kontajnerov a výstup z nich</string>
   <string name="reset_letency_reduction_settings_dialog_title">Chcete resetovať nastavenia oneskorenia?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Týmto resetujete všetky nastavenia oneskorenia na predvolené hodnoty</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Resetovať</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Resetovať</string>
   <string name="gestures_announce_reset_gesture_settings">Nastavenia gest boli resetované.</string>
   <string name="pref_speak_roles_title">Vyslovovať typ prvku</string>
-  <string name="pref_speak_roles_summary">Tlačidlo Páči sa mi alebo začiarkavacie políčko</string>
+  <string name="pref_speak_roles_summary">Napríklad tlačidlo alebo začiarkavacie políčko</string>
   <string name="title_pref_speak_element_ids">Vyslovovať identifikátory prvkov</string>
-  <string name="summary_pref_speak_element_ids">Vyslovte ID tlačidiel, ktoré nemajú štítok</string>
+  <string name="summary_pref_speak_element_ids">Vyslovovať ID tlačidiel bez štítka</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Vyslovovať všetky aktuality o postupe</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Zahŕňa aktuality počas sťahovania, šoférovania podľa trás jazdy a ďalších aktivít. Keď túto možnosť vypnete, stále budete dostávať menej časté aktuality.</string>
   <string name="title_pref_explore_by_touch">Preskúmanie dotykom</string>
@@ -75,10 +75,10 @@
   <string name="summary_pref_single_tap">Označenú položku aktivujete jedným klepnutím. Rýchlejšie prechádzanie ako dvojité klepnutie.</string>
   <string name="pref_verbosity_title">Podrobnosť</string>
   <string name="pref_punctuation_title">Vyslovovanie interpunkcie a symbolov</string>
-  <string name="title_pref_category_manage_focus_indicator">Indikátor zaostrenia</string>
+  <string name="title_pref_category_manage_focus_indicator">Indikátor výberu</string>
   <string name="title_pref_category_manage_gestures">Gestá</string>
   <string name="title_pref_manage_labels">Vlastné štítky</string>
-  <string name="title_pref_category_context_menu">SandFly menu</string>
+  <string name="title_pref_category_context_menu">Ponuka SandFly</string>
   <string name="title_pref_category_selector_menu">Ovládanie čítania</string>
   <string name="title_pref_category_navigation_menu">Upraviť možnosti navigácie</string>
   <string name="title_pref_manage_keyboard_shortcuts">Klávesové skratky</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">Pomocník</string>
   <string name="title_pref_advanced_settings">Rozšírené nastavenia</string>
   <string name="title_pref_show_exit_watermark">Zobrazovať pokyny, ako vypnúť SandFly</string>
-  <string name="summary_pref_show_exit_watermark">Keď sa SandFly zapne, ukážte, ako sa dá vypnúť</string>
+  <string name="summary_pref_show_exit_watermark">Keď sa SandFly zapne, zobrazí sa, ako ho vypnúť</string>
   <string name="talkback_exit_watermark_text">Aplikácia SandFly je zapnutá. Ak ju chcete vypnúť, pridržte päť sekúnd dva prsty na obrazovke. Zobrazovanie tejto správy zastavíte v ponuke aplikácie SandFly, ktorú otvoríte klepnutím troma prstami.</string>
   <string name="talkback_exit_watermark_hint_text">Zobrazuje sa banner s informáciou, že aplikácia SandFly je zapnutá. Ak chcete SandFly vypnúť, pridržte päť sekúnd dva prsty na obrazovke. Ak chcete tento banner odstrániť, prejdite do nastavení aplikácie SandFly.</string>
   <string name="reset_gesture_settings_title">Resetovať nastavenia gest</string>
@@ -289,10 +289,10 @@
   <string name="override_keycombo_message_two_params">Táto kombinácia klávesov sa používa pre akciu %1$s. Chcete ju vymazať a túto skratku priradiť k akcii %2$s?</string>
   <string name="title_pref_intonation">Meniť výšku hlasu</string>
   <string name="title_pref_keyboard_echo">Zvuky klávesnice</string>
-  <string name="pref_node_desc_order_title">Podrobnosti objednávky</string>
+  <string name="pref_node_desc_order_title">Poradie podrobností položky</string>
   <string name="pref_time_feedback_format_title">Formát času</string>
   <string name="title_pref_latency_reduction">Zníženie oneskorenia</string>
-  <string name="talkback_latency_reduction_summary">Aby SandFly reagoval rýchlejšie, keď sa dotknete obrazovky</string>
+  <string name="talkback_latency_reduction_summary">SandFly reaguje rýchlejšie po dotyku obrazovky</string>
   <string name="summary_pref_intonation">Vyslovovať odstránené písmená vyšším hlasom</string>
   <string name="title_pref_brailledisplay">Braillovský displej</string>
   <string name="title_pref_brailleime">Braillovská klávesnica</string>
@@ -305,7 +305,7 @@
   <string name="title_pref_category_developer_settings">Nastavenia pre vývojárov</string>
   <string name="title_activity_dump_a11y_event">Vybrať zaznamenávané udalosti</string>
   <string name="title_pref_dump_a11y_event">Filtrovať záznamy udalostí dostupnosti v denníku</string>
-  <string name="pref_reduce_window_delay_title">Vypnite animácie</string>
+  <string name="pref_reduce_window_delay_title">Vypnúť animácie</string>
   <string name="title_pref_log_level">Zaznamenať úroveň výstupu</string>
   <string name="title_pref_diagnosis_mode">Diagnostický režim</string>
   <string name="title_pref_tts_overlay">Zobraziť hlasový výstup</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Ak chcete dané nastavenie aktivovať, vypnite a znova zapnite SandFly.</string>
   <string name="title_pref_auto_image_captioning">Automatické opisy</string>
   <string name="title_pref_gemini_settings">Nastavenia Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini hlasové príkazy</string>
+  <string name="title_pref_gemini_enabled">Hlasové príkazy Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Keď v ponuke čítačky SandFly vyberiete Opísať obrázok, získate podrobné opisy obrázkov pomocou umelej inteligencie.\n\nAutomatické opisy môžete získať aj tak, že označíte obrázok alebo ikonu. Automatické opisy fungujú aj bez internetového pripojenia.</string>
   <string name="title_pref_icon_detection">Automatické opisy ikon</string>
   <string name="title_pref_image_description">Automatické opisy obrázkov</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">Prejsť hore</string>
   <string name="training_tip">Tip</string>
   <string name="tv_training_overview_step_title">Ako funguje SandFly</string>
-  <string name="tv_training_overview_step_summary">SandFly je čítačka obrazovky založená na Google TalkBack. Prečíta nahlas text na obrazovke a poskytne vám hovorenú spätnú väzbu, aby ste mohli používať svoje zariadenie bez toho, aby ste sa pozerali na obrazovku.\n\nPri zapnutom SandFly sa nahlas vysloví vybraná položka na obrazovke, niekedy s pridanými ďalšími informáciami alebo kontextom.\n\nPokračujte stlačením tlačidla Vybrať. Tlačidlo Select sa nachádza v strede smerového ovládača, čo je veľké kruhové tlačidlo v hornej časti diaľkového ovládača.</string>
+  <string name="tv_training_overview_step_summary">SandFly je čítačka obrazovky založená na aplikácii TalkBack od spoločnosti Google. Číta nahlas text na obrazovke a poskytuje hovorenú spätnú väzbu, aby ste mohli zariadenie používať bez pozerania na obrazovku.\n\nKeď je SandFly zapnutý, vybraná položka na obrazovke sa prečíta nahlas, niekedy s ďalšími informáciami alebo kontextom.\n\nPokračujte stlačením tlačidla Vybrať. Tlačidlo Vybrať sa nachádza v strede smerového ovládača, čo je veľké okrúhle tlačidlo v hornej časti diaľkového ovládača.</string>
   <string name="tv_training_remote_step_title">Používanie diaľkového ovládania</string>
   <string name="tv_training_remote_step_summary">Po obrazovke sa môžete pohybovať pomocou kruhového tlačidla so šípkami v hornej časti diaľkového ovládania. Ak chcete niektorú položku vybrať, stlačte stred tlačidla so šípkami v hornej časti diaľkového ovládania.\n\nV druhom rade vľavo je tlačidlo Späť. Napravo je tlačidlo hlasového Asistenta.\n\nV treťom rade vľavo je tlačidlo plochy. Napravo je tlačidlo na vypnutie zvuku.\n\nV štvrtom rade vľavo je skratka aktivujúca YouTube. Napravo je skratka aktivujúca Netflix.\n\nv dolnom rade sú dve malé tlačidlá. Ľavé je vypínač. Pravým otvoríte ponuku vstupu televízora.\n\nTlačidlá hlasitosti sú na pravej strane diaľkového ovládania.\n\nPokračujte stlačením tlačidla Vybrať.</string>
   <string name="tv_training_shortcut_step_title">Skratka aktivujúca SandFly</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">Písať môžete aj pomocou braillovskej klávesnice. Nájdete ju v nastaveniach aplikácie SandFly.</string>
   <string name="other_ways_to_type_title">Ďalšie spôsoby písania</string>
   <string name="other_ways_to_type_text">V aplikácii SandFly môžete písať aj inými spôsobmi. Napríklad môžete zadať písmeno dvojitým klepnutím.</string>
-  <string name="basic_other_ways_to_type_text">Existujú aj iné spôsoby, ako zadať SandFly. Na zadanie písmena môžete napríklad použiť dvojité ťuknutie. Toto môžete neskôr zmeniť v nastaveniach SandFly &gt; Klávesnica na obrazovke &gt; Spôsob písania.</string>
-  <string name="basic_other_ways_to_type_text_tts">Existujú aj iné spôsoby, ako zadať SandFly. Na zadanie písmena môžete napríklad použiť dvojité ťuknutie. Môžete to zmeniť neskôr v nastaveniach SandFly, potom na klávesnici na obrazovke a potom na metóde písania.</string>
+  <string name="basic_other_ways_to_type_text">V aplikácii SandFly môžete písať aj inými spôsobmi. Písmeno môžete zadať napríklad dvojitým klepnutím. Neskôr to môžete zmeniť v časti Nastavenia aplikácie SandFly &gt; Klávesnica na obrazovke &gt; Spôsob písania.</string>
+  <string name="basic_other_ways_to_type_text_tts">V aplikácii SandFly môžete písať aj inými spôsobmi. Písmeno môžete zadať napríklad dvojitým klepnutím. Neskôr to môžete zmeniť v časti Nastavenia aplikácie SandFly, potom Klávesnica na obrazovke a potom Spôsob písania.</string>
   <string name="change_typing_preference_text">Zmeniť predvoľbu písania</string>
   <string name="moving_cursor_title">Presúvanie kurzora</string>
   <string name="moving_cursor_text">Po aktivácii textového poľa môžete pohybovať kurzorom medzi písmenami potiahnutím nahor alebo nadol.\n\nVyskúšajte si to v textovom poli nižšie.</string>
@@ -1299,33 +1299,33 @@
     <string name="title_pref_tts_engine">Nástroj na prevod textu na reč</string>
     <string name="title_pref_system_tts_settings">Systémové nastavenia prevodu textu na reč</string>
     <string name="title_selector_vertical_navigation">Vertikálna navigácia</string>
-    <string name="summary_selector_vertical_navigation">Prejdite na položku pod alebo nad, za ostatné položky v riadku</string>
-    <string name="title_selector_switch_tts_engine">Rečový motor</string>
-    <string name="summary_selector_switch_tts_engine">Prepínajte medzi nainštalovanými rečovými nástrojmi</string>
+    <string name="summary_selector_vertical_navigation">Prechod na položku pod alebo nad, cez ostatné položky riadka</string>
+    <string name="title_selector_switch_tts_engine">Hlasový modul</string>
+    <string name="summary_selector_switch_tts_engine">Prepínať medzi nainštalovanými rečovými nástrojmi</string>
     <string name="title_selector_voice_profile">Hlasový profil</string>
     <string name="title_pref_voice_profiles">Hlasové profily</string>
-    <string name="voice_profile_default">SandFly predvolená hodnota</string>
+    <string name="voice_profile_default">Predvolený SandFly</string>
     <string name="voice_profile_in_use">Používa sa: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Hovorený jazyk nie je dostupný počas používania hlasového profilu</string>
     <string name="speech_engine_unavailable_with_profile">Pri používaní hlasového profilu je rečový modul nedostupný</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, používa sa</string>
     <string name="no_voice_profiles">Žiadne hlasové profily</string>
-    <string name="shortcut_voice_profiles">Vyberte hlasový profil</string>
+    <string name="shortcut_voice_profiles">Vybrať hlasový profil</string>
     <string name="shortcut_previous_voice_profile">Predchádzajúci hlasový profil</string>
     <string name="shortcut_next_voice_profile">Ďalší hlasový profil</string>
-    <string name="title_pref_voice_profile_in_use">Používa sa hlasový profil</string>
+    <string name="title_pref_voice_profile_in_use">Používaný hlasový profil</string>
     <string name="title_pref_add_voice_profile">Pridať hlasový profil</string>
     <string name="voice_profile_new_name">Hlasový profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Hlasový profil sa už volá <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="title_pref_voice_profile_name">Meno</string>
+    <string name="voice_profile_name_taken">Hlasový profil s názvom <xliff:g id="name" example="Reading">%1$s</xliff:g> už existuje</string>
+    <string name="title_pref_voice_profile_name">Názov</string>
     <string name="title_pref_voice_profile_language">Jazyk</string>
     <string name="title_pref_voice_profile_voice">Hlas</string>
     <string name="voice_profile_engine_default">Predvolené</string>
     <string name="voice_profile_loading">Načítava sa</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, nie je nainštalované</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Posunúť sa hore</string>
-    <string name="voice_profile_move_down">Presuňte sa nadol</string>
+    <string name="voice_profile_move_up">Presunúť nahor</string>
+    <string name="voice_profile_move_down">Presunúť nadol</string>
     <string name="voice_profile_rename">Premenovať</string>
     <string name="voice_profile_moved_above">Presunuté nad <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Presunuté pod <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1336,7 +1336,7 @@
     <string name="summary_pref_tts_engine_default">Predvolené nastavenie systému</string>
     <string name="title_pref_speech_pitch">Výška reči</string>
     <string name="title_pref_speech_stream">Hlasitosť reči</string>
-    <string name="summary_selector_speech_stream">Prepínajte medzi dostupnosťou, médiami, hlasitosťami zvonenia a hovorov</string>
+    <string name="summary_selector_speech_stream">Prepínanie medzi hlasitosťou dostupnosti, médií, zvonenia a hovorov</string>
     <string name="speech_stream_accessibility">Hlasitosť dostupnosti</string>
     <string name="speech_stream_media">Hlasitosť médií</string>
     <string name="speech_stream_ring">Hlasitosť zvonenia</string>
@@ -1347,18 +1347,18 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Posielajte dlhý text po vetách</string>
-    <string name="summary_pref_speak_in_phrases">V prípade rečových nástrojov, ktoré sa pomaly zastavujú, ako je napríklad Gryphon, potiahnutie prstom zastaví naraz dlhý text. Mnoho motorov sa medzi jednotlivými vetami zastaví dlhšie, takže ak sa vaša rýchlo zastaví, nechajte túto možnosť vypnutú.</string>
-    <string name="battery_optimization_notification_title">Optimalizácia batérie sa môže zastaviť SandFly</string>
-    <string name="battery_optimization_notification_text">Na tomto telefóne sa šetrič batérie môže zastaviť SandFly po vypnutí obrazovky, takže sa vypne, kým sa nereštartuje. Klepnutím otvorte optimalizáciu batérie, vyberte Všetky aplikácie, nájdite SandFly a vyberte Neoptimalizovať.</string>
+    <string name="title_pref_speak_in_phrases">Posielať dlhý text po vetách</string>
+    <string name="summary_pref_speak_in_phrases">Pre rečové moduly, ktoré sa zastavujú pomaly, napríklad Gryphon, aby potiahnutie prstom hneď zastavilo dlhý text. Mnohé moduly robia dlhšie pauzy medzi samostatne odoslanými vetami, preto túto možnosť nechajte vypnutú, ak sa váš modul zastavuje rýchlo.</string>
+    <string name="battery_optimization_notification_title">Optimalizácia batérie môže zastaviť SandFly</string>
+    <string name="battery_optimization_notification_text">V tomto telefóne môže šetrič batérie po vypnutí obrazovky zastaviť SandFly a ten potom mlčí, kým sa znova nespustí. Klepnutím otvorte optimalizáciu batérie, vyberte Všetky aplikácie, nájdite SandFly a vyberte Neoptimalizovať.</string>
     <string name="title_pref_mute_speech_while_recording">Ticho pri nahrávaní</string>
     <string name="summary_pref_mute_speech_while_recording">Zatiaľ čo aplikácia nahráva bez pripojených slúchadiel, SandFly hovorí iba ako odpoveď na vaše gestá, klávesy a písanie a zostáva potichu pri veciach, ako sú upozornenia, takže sa nenahrávajú.</string>
     <string name="title_pref_switch_languages">Automaticky prepínať jazyk</string>
     <string name="title_pref_switch_dialects">Automaticky prepínať dialekt</string>
     <string name="category_collapsed">Zbalená sekcia</string>
-    <string name="category_expanded">Rozšírená sekcia</string>
+    <string name="category_expanded">Rozbalená sekcia</string>
     <string name="title_pref_speak_nav_bar_buttons">Vysloviť tlačidlá navigačnej lišty</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Zdvihnutím aktivujte navigačnú lištu a povedzte tlačidlo, ktoré stlačí ťuknutie, napríklad Späť alebo Domov.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Keď sa na navigačnom paneli používa aktivácia zdvihnutím prsta, vysloví sa tlačidlo stlačené klepnutím, napríklad Späť alebo Plocha.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Batéria <xliff:g id="battery_level" example="73">%1$s</xliff:g> percent</string>
     <string name="template_battery_level_unknown">Úroveň batérie neznáma</string>
@@ -1367,12 +1367,12 @@
     <string name="summary_pref_screen_announcements">Vyberte, čo hovorí SandFly, keď sa obrazovka vypne alebo zapne a keď je telefón odomknutý</string>
     <string name="title_screen_announcements_screen_off">Keď sa obrazovka vypne</string>
     <string name="title_screen_announcements_screen_on">Keď sa obrazovka zapne</string>
-    <string name="title_screen_announcements_unlock">Keď je telefón odomknutý</string>
-    <string name="title_pref_say_screen_off">Povedzte „Vypnúť obrazovku“</string>
-    <string name="title_pref_say_device_unlocked">Povedzte „Zariadenie odomknuté“</string>
+    <string name="title_screen_announcements_unlock">Keď sa telefón odomkne</string>
+    <string name="title_pref_say_screen_off">Vyslovovať „Obrazovka vypnutá“</string>
+    <string name="title_pref_say_device_unlocked">Vyslovovať „Zariadenie odomknuté“</string>
     <string name="title_pref_announce_time">Čas</string>
     <string name="title_pref_announce_ringer_mode">Režim zvonenia</string>
-    <string name="summary_pref_announce_ringer_mode">Povedzte, keď je zvonenie nastavené na vibrovanie alebo ticho</string>
+    <string name="summary_pref_announce_ringer_mode">Oznámiť, keď je zvonenie nastavené na vibrovanie alebo tichý režim</string>
     <string name="title_pref_category_feedback">Spätná väzba</string>
     <string name="title_pref_category_typing_and_braille">Písanie a Braillovo písmo</string>
     <string name="title_pref_category_apps">Aplikácie</string>
@@ -1380,38 +1380,38 @@
     <string name="title_pref_navigation">Navigácia</string>
     <string name="title_pref_category_more">Viac</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezervovať gestá na Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Zastaví SandFly manipuláciu s jedným a dvojitým klepnutím dvoma prstami, aby ich Samsung Vibration Watch mohol použiť. Povoľte Vibration Watch v nastaveniach dostupnosti hodiniek.</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly prestane spracúvať jednoduché a dvojité klepnutia dvoma prstami, aby ich mohol používať Samsung Vibration Watch. Zapnite Vibration Watch v nastaveniach dostupnosti hodiniek.</string>
     <string name="shortcut_reserved_for_vibration_watch">Vyhradené pre Vibration Watch v rozšírených nastaveniach</string>
-    <string name="title_pref_speakerphone_away_from_ear">Keď je reproduktor ďaleko od ucha</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Počas hovoru sa prepne na reproduktor, keď si vezmete telefón z ucha, a späť na slúchadlo, keď ho znova podržíte.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Vyžaduje povolenie, ktoré Android nedáva čítačkám obrazovky. Ak to chcete udeliť, spustite tento príkaz s adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="title_pref_speakerphone_away_from_ear">Reproduktor, keď telefón nie je pri uchu</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Počas hovoru prepne na reproduktor, keď telefón oddialite od ucha, a späť na slúchadlo, keď ho znova priložíte k uchu.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Vyžaduje povolenie, ktoré Android čítačkám obrazovky neudeľuje. Ak ho chcete udeliť, spustite tento príkaz cez adb alebo Shizuku a potom sa vráťte na túto obrazovku: %1$s</string>
     <string name="action_copy_command">Kopírovať príkaz</string>
     <string name="command_copied">Príkaz bol skopírovaný</string>
-    <string name="title_pref_speech_control">Nechajte hovoriť ostatné aplikácie</string>
-    <string name="summary_pref_speech_control">Aplikácie, ktoré povolíte, môžu vysloviť text vaším hlasom SandFly. Keď je zariadenie uzamknuté, nič sa nehovorí.</string>
-    <string name="title_pref_speech_control_sound">Prehrajte zvuk predtým, ako ostatné aplikácie prehovoria</string>
+    <string name="title_pref_speech_control">Povoliť ostatným aplikáciám hovoriť</string>
+    <string name="summary_pref_speech_control">Povolené aplikácie môžu vyslovovať text hlasom SandFly. Kým je zariadenie uzamknuté, nič sa nevysloví.</string>
+    <string name="title_pref_speech_control_sound">Prehrať zvuk pred hovorením iných aplikácií</string>
     <string name="speech_control_apps_category">Aplikácie</string>
-    <string name="speech_control_no_apps">Žiadne aplikácie zatiaľ nepožiadali o slovo.</string>
+    <string name="speech_control_no_apps">Žiadna aplikácia zatiaľ nepožiadala o hovorenie.</string>
     <string name="speech_control_ask_title">Povoliť <xliff:g id="app" example="Tasker">%1$s</xliff:g> hovoriť cez SandFly?</string>
     <string name="speech_control_ask_text">Môže povedať text vaším hlasom SandFly. Môžete to zmeniť v rozšírených nastaveniach.</string>
     <string name="speech_control_allow">Povoliť</string>
-    <string name="speech_control_deny">Nedovoľte</string>
-    <string name="permission_speak_label">hovor cez SandFly</string>
+    <string name="speech_control_deny">Nepovoliť</string>
+    <string name="permission_speak_label">hovorenie cez SandFly</string>
     <string name="permission_speak_description">Umožňuje aplikácii požiadať o vyslovenie textu vaším hlasom SandFly. SandFly sa vás opýta skôr, ako môže aplikácia hovoriť.</string>
-    <string name="permission_braille_display_label">požiadať o zobrazenie Braillovho písma pre SandFly</string>
-    <string name="permission_braille_display_description">Umožňuje aplikácii požiadať o zobrazenie Braillovho písma pre SandFly. Ak to povolíte v SandFly, môže čítať všetko na obrazovke a ovládať vaše zariadenie. SandFly sa vás pýta ako prvý.</string>
-    <string name="title_pref_phonetic_letters_mode">Hovorte písmená foneticky</string>
+    <string name="permission_braille_display_label">žiadať o funkciu Braillovho displeja pre SandFly</string>
+    <string name="permission_braille_display_description">Umožňuje aplikácii požiadať, aby fungovala ako braillovský displej pre SandFly. Ak to v SandFly povolíte, aplikácia môže čítať všetko na obrazovke a ovládať zariadenie. SandFly sa vás najprv opýta.</string>
+    <string name="title_pref_phonetic_letters_mode">Vyslovovať písmená foneticky</string>
     <string name="phonetic_letters_mode_off">Vypnuté</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Po liste, oneskorený, napríklad \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Po liste bez meškania, napríklad „h hotel“</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Namiesto písmena ako „hotel“</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Po písmene, s pauzou, napríklad „h, Helena“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Po písmene, bez pauzy, napríklad „h Helena“</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Namiesto písmena, napríklad „Helena“</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Čítanie pomocou rečového nástroja</string>
+    <string name="emoji_speech_engine">Číta rečový nástroj</string>
     <string name="emoji_speech_names">Číta SandFly</string>
     <string name="emoji_speech_none">Žiadne</string>
-    <string name="summary_selector_menu_emoji">Zmeňte spôsob čítania emodži</string>
+    <string name="summary_selector_menu_emoji">Zmeniť spôsob čítania emodži</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Počítajte opakované emotikony</string>
+    <string name="title_pref_emoji_repeat_count">Počítať opakované emotikony</string>
     <string name="emoji_repeat_count_off">Vypnuté</string>
     <string name="emoji_repeat_count_2">2 alebo viac</string>
     <string name="emoji_repeat_count_3">3 alebo viac</string>
@@ -1419,20 +1419,20 @@
     <string name="emoji_repeat_count_5">5 alebo viac</string>
     <string name="emoji_repeat_count_6">6 alebo viac</string>
     <string name="pref_table_headers_category_title">Čítanie tabuľky</string>
-    <string name="pref_table_column_headers_title">Prečítajte si hlavičky stĺpcov</string>
-    <string name="pref_table_column_headers_entry_after">Po bunkových údajoch</string>
+    <string name="pref_table_column_headers_title">Čítať hlavičky stĺpcov</string>
+    <string name="pref_table_column_headers_entry_after">Po údajoch bunky</string>
     <string name="pref_table_column_headers_entry_before">Pred údajmi bunky</string>
-    <string name="pref_table_column_headers_entry_off">Nečítaj</string>
+    <string name="pref_table_column_headers_entry_off">Nečítať</string>
     <string name="pref_table_speak_row_column_numbers_title">Vysloviť čísla riadkov a stĺpcov</string>
-    <string name="pref_table_speak_row_column_numbers_summary">Oznámte čísla riadkov a stĺpcov pre bunky tabuľky</string>
-    <string name="title_pref_speak_volume_changes">Hlasitosť hovoru sa mení</string>
-    <string name="summary_pref_speak_volume_changes">Po stlačení tlačidiel hlasitosti vyslovte novú hlasitosť</string>
-    <string name="title_pref_speak_notifications">Vysloviť upozornenia</string>
-    <string name="summary_pref_speak_notifications">Prečítajte si nové upozornenia nahlas, keď prídu. Prichádzajúce hovory sa vždy čítajú.</string>
-    <string name="title_pref_notification_list">Použite zoznam upozornení SandFly</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Oznamuje čísla riadkov a stĺpcov buniek tabuľky</string>
+    <string name="title_pref_speak_volume_changes">Vyslovovať zmeny hlasitosti</string>
+    <string name="summary_pref_speak_volume_changes">Po stlačení tlačidiel hlasitosti vysloviť novú hlasitosť</string>
+    <string name="title_pref_speak_notifications">Vyslovovať upozornenia</string>
+    <string name="summary_pref_speak_notifications">Čítať nové upozornenia nahlas, keď prídu. Prichádzajúce hovory sa čítajú vždy.</string>
+    <string name="title_pref_notification_list">Používať zoznam upozornení SandFly</string>
     <string name="title_pref_notification_parts">Podrobnosti oznámenia</string>
-    <string name="title_pref_play_installer">Zdá sa, že je nainštalovaný z Google Play</string>
-    <string name="summary_pref_play_installer">Povedzte ostatným aplikáciám, že Google Play nainštalované SandFly. Niektoré aplikácie, ako napríklad niektoré bankové aplikácie, vypínajú služby dostupnosti, ktoré boli nainštalované odkiaľkoľvek inde. Potrebuje Shizuku a mení iba to, čo sa aplikáciám hovorí o tom, odkiaľ pochádza SandFly.</string>
+    <string name="title_pref_play_installer">Zobrazovať ako nainštalované z Google Play</string>
+    <string name="summary_pref_play_installer">Oznamuje ostatným aplikáciám, že SandFly bol nainštalovaný z Google Play. Niektoré aplikácie, napríklad niektoré bankové aplikácie, vypínajú služby dostupnosti nainštalované z iného zdroja. Vyžaduje Shizuku a mení iba to, čo sa aplikácie dozvedia o zdroji SandFly.</string>
     <string name="summary_pref_play_installer_pending">Zapnuté, ale Google Play ešte nie je zaznamenané ako inštalátor. SandFly nastaví, keď je k dispozícii Shizuku.</string>
     <string name="notification_part_title">Názov</string>
     <string name="notification_part_text">Text</string>
@@ -1442,16 +1442,16 @@
     <string name="notification_list_title">Upozornenia</string>
     <string name="notification_list_empty">Žiadne upozornenia</string>
     <string name="notification_list_no_access">Prístup k upozorneniam je vypnutý</string>
-    <string name="notification_list_grant_access">Zapnite prístup k upozorneniam</string>
+    <string name="notification_list_grant_access">Zapnúť prístup k upozorneniam</string>
     <string name="notification_list_quick_settings">Rýchle nastavenia</string>
-    <string name="notification_list_dismiss">Odmietnuť</string>
+    <string name="notification_list_dismiss">Zavrieť</string>
     <string name="notification_list_show_all">Zobraziť všetky</string>
-    <string name="notification_list_show_less">Ukážte menej</string>
+    <string name="notification_list_show_less">Zobraziť menej</string>
     <string name="notification_list_clear_all">Vymazať všetko</string>
     <string name="notification_list_send">Odoslať</string>
     <string name="notification_list_playing">Prehrávanie</string>
     <string name="notification_list_paused">Pozastavené</string>
-    <string name="notification_list_play">Hrať</string>
+    <string name="notification_list_play">Prehrať</string>
     <string name="notification_list_pause">Pozastaviť</string>
     <string name="notification_list_previous">Naspäť</string>
     <string name="notification_list_next">Ďalej</string>
@@ -1459,9 +1459,9 @@
         <item quantity="one">%d oznámenie</item>
         <item quantity="few">%d oznámenia</item>
         <item quantity="many">%d oznámenia</item>
-        <item quantity="other">%d upozornení</item>
+        <item quantity="other">%d oznámení</item>
     </plurals>
-    <string name="title_pref_quick_settings">Použite rýchle nastavenia SandFly</string>
+    <string name="title_pref_quick_settings">Používať rýchle nastavenia SandFly</string>
     <string name="title_pref_quick_settings_items">Panel rýchlych nastavení</string>
     <string name="quick_settings_title">Rýchle nastavenia</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1500,10 +1500,10 @@
     <string name="quick_settings_no_media">Žiadne médiá</string>
     <string name="quick_settings_media_output">Výstup médií</string>
     <string name="quick_settings_next_alarm">Ďalší budík</string>
-    <string name="quick_settings_no_alarm">Žiadny alarm</string>
+    <string name="quick_settings_no_alarm">Žiadny budík</string>
     <string name="quick_settings_settings">Nastavenia</string>
     <string name="quick_settings_power_menu">Ponuka napájania</string>
-    <string name="quick_settings_add_system_tile">Pridajte dlaždicu systému</string>
+    <string name="quick_settings_add_system_tile">Pridať dlaždicu systému</string>
     <string name="quick_settings_no_system_tiles">Žiadne systémové dlaždice na pridanie</string>
     <string name="quick_settings_tile_not_found">%1$s nie je v rýchlych nastaveniach systému</string>
     <string name="quick_settings_never">Nikdy</string>
@@ -1522,21 +1522,21 @@
     <string name="quick_settings_connected">Pripojené</string>
     <string name="quick_settings_battery">Batéria</string>
     <string name="quick_settings_battery_charging">%1$s, nabíjanie</string>
-    <string name="quick_settings_battery_full">%1$s, účtované</string>
+    <string name="quick_settings_battery_full">%1$s, nabité</string>
     <string name="quick_settings_sound">Zvuk</string>
-    <string name="quick_settings_vibrate">Vibrovať</string>
+    <string name="quick_settings_vibrate">Vibrovanie</string>
     <string name="quick_settings_mute">Stlmiť</string>
     <string name="quick_settings_on">Zapnuté</string>
     <string name="quick_settings_off">Vypnuté</string>
     <string name="quick_settings_unavailable">Nedostupné</string>
     <string name="quick_settings_edit">Upraviť</string>
     <string name="quick_settings_system">Rýchle nastavenia systému</string>
-    <string name="quick_settings_open_settings">Otvorte nastavenia</string>
-    <string name="quick_settings_add_control">Pridajte kontrolu</string>
-    <string name="quick_settings_add_tile">Pridajte dlaždicu aplikácie</string>
+    <string name="quick_settings_open_settings">Otvoriť nastavenia</string>
+    <string name="quick_settings_add_control">Pridať ovládací prvok</string>
+    <string name="quick_settings_add_tile">Pridať dlaždicu aplikácie</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Počet stĺpcov</string>
-    <string name="quick_settings_move">Pohybujte sa</string>
+    <string name="quick_settings_move">Presunúť</string>
     <string name="quick_settings_move_title">Posunúť %1$s</string>
     <string name="quick_settings_cell">Riadok %1$d, stĺpec %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1551,16 +1551,16 @@
     <string name="quick_settings_added">%1$s pridané</string>
     <string name="quick_settings_removed">%1$s odstránené</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly zapnuté. Pre vypnutie podržte 2 prsty na obrazovke na 5 sekúnd. Ak chcete zastaviť zobrazovanie tejto správy, vypnite nastavenia SandFly &gt; Rozšírené nastavenia &gt; Zobraziť pokyny na vypnutie SandFly.</string>
-    <string name="edge_gestures_title">Hrany</string>
+    <string name="edge_gestures_title">Okraje</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Ďalšia skratka na zapnutie alebo vypnutie režimu prehliadania</string>
     <string name="title_pref_vibration_strength">Sila vibrácií</string>
     <string name="title_pref_audio_output_device">Výstupné zvukové zariadenie</string>
     <string name="dialog_title_audio_output_device">Vyberte, kde chcete prehrať zvuk SandFly</string>
     <string name="value_audio_output_device_default">Predvolené nastavenie systému</string>
     <string name="value_audio_output_device_speaker">Reproduktor telefónu</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Pripojené Bluetooth zariadenie alebo káblové</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Pripojené Bluetooth alebo káblové zariadenie</string>
     <string name="value_audio_output_device_disconnected">odpojený</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth zvukové zariadenie</string>
+    <string name="value_audio_output_device_bluetooth_default">Zvukové zariadenie Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Káblový headset</string>
     <string name="value_audio_output_device_wired_headphones">Káblové slúchadlá</string>
     <string name="value_audio_output_device_usb_headset">USB headset</string>
@@ -1569,18 +1569,18 @@
     <string name="summary_pref_speaker_devices_none">Žiadne</string>
     <string name="summary_pref_speaker_devices_no_devices">Zatiaľ nie sú pripojené žiadne Bluetooth ani káblové zariadenia</string>
     <string name="pref_reduce_window_delay_summary">SandFly číta nové obrazovky rýchlejšie, keď sú animácie vypnuté. Tým sa vypnú animácie pre celý telefón.</string>
-    <string name="dialog_message_detailed_ai_description">Vybrané obrázky sa odošlú do Gemini API Google, aby boli opísané. So zapnutou AI na zariadení sú namiesto toho popísané na tomto telefóne a neodosielajú sa.\n\nS bezplatným API kľúčom si môže Google ponechať to, čo dostane, použiť to na zlepšenie svojich produktov a nechať ľudí, aby to skontrolovali. Generatívna AI je experimentálna, takže bude robiť chyby. Platí <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="dialog_message_detailed_ai_promotion">Podrobné popisy obrázkov poháňa generatívna AI. Vybrané obrázky sa odošlú do Gemini API Google, aby boli opísané. So zapnutou AI na zariadení sú namiesto toho popísané na tomto telefóne a neodosielajú sa.\n\nS bezplatným API kľúčom si môže Google ponechať to, čo dostane, použiť to na zlepšenie svojich produktov a nechať ľudí, aby to skontrolovali. Generatívna AI je experimentálna, takže bude robiť chyby. Podrobné popisy obrázkov môžete kedykoľvek vypnúť v nastaveniach SandFly.\n\nPlatí <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="dialog_message_screen_overview_promotion">Snímka obrazovky sa odošle do API Google Gemini, aby bola opísaná, čo trvá niekoľko sekúnd. Keď je zapnutá AI na zariadení, je popísaná na tomto telefóne a neodosiela sa.\n\nS bezplatným API kľúčom si Google môže ponechať to, čo dostane, použiť to na zlepšenie svojich produktov a nechať ľudí, aby to skontrolovali. Generatívna AI je experimentálna, takže bude robiť chyby. Platí <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Otvorte aplikáciu</string>
+    <string name="dialog_message_detailed_ai_description">Vybrané obrázky sa na opísanie odosielajú do rozhrania Gemini API od Googlu. Keď je zapnutá AI na zariadení, opíšu sa namiesto toho v tomto telefóne a neodošlú sa.\n\nPri bezplatnom kľúči API si môže Google ponechať prijaté údaje, použiť ich na zlepšenie svojich produktov a nechať ich skontrolovať ľuďmi. Generatívna AI je experimentálna, preto bude robiť chyby. Platia <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_detailed_ai_promotion">Podrobné opisy obrázkov vytvára generatívna AI. Vybrané obrázky sa na opísanie odosielajú do rozhrania Gemini API od Googlu. Keď je zapnutá AI na zariadení, opíšu sa namiesto toho v tomto telefóne a neodošlú sa.\n\nPri bezplatnom kľúči API si môže Google ponechať prijaté údaje, použiť ich na zlepšenie svojich produktov a nechať ich skontrolovať ľuďmi. Generatívna AI je experimentálna, preto bude robiť chyby. Podrobné opisy obrázkov môžete kedykoľvek vypnúť v nastaveniach aplikácie SandFly.\n\nPlatia <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_screen_overview_promotion">Snímka obrazovky sa na opísanie odošle do rozhrania Gemini API od Googlu, čo trvá niekoľko sekúnd. Keď je zapnutá AI na zariadení, opíše sa namiesto toho v tomto telefóne a neodošle sa.\n\nPri bezplatnom kľúči API si môže Google ponechať prijaté údaje, použiť ich na zlepšenie svojich produktov a nechať ich skontrolovať ľuďmi. Generatívna AI je experimentálna, preto bude robiť chyby. Platia <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="shortcut_title_open_app">Otvoriť aplikáciu</string>
     <string name="shortcut_open_app">Otvoriť <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Prejdite na začiatok</string>
-    <string name="shortcut_write_reading_control">Napíšte písmeno kontroly čítania</string>
+    <string name="shortcut_scroll_to_top">Prejsť na začiatok</string>
+    <string name="shortcut_write_reading_control">Napísať písmeno ovládania čítania</string>
     <string name="title_pref_reading_control_letters">Ručne písané písmená abecedy</string>
     <string name="reading_control_letter_none">Žiadne</string>
     <string name="handwriting_prompt">Napíšte písmeno abecedy</string>
     <string name="handwriting_closed">Rukopis uzavretý</string>
-    <string name="handwriting_no_match">Žiadna kontrola čítania nezačína <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Žiadne ovládanie čítania nezačína na <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Napísať názov aplikácie a otvoriť ju</string>
     <string name="handwriting_app_prompt">Napíšte názov aplikácie</string>
     <string name="handwriting_no_app">Žiadna aplikácia nezačína na <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_unsupported_language">Rozpoznávanie rukou písaného textu nie je v tomto jazyku dostupné</string>
     <string name="title_pref_handwriting_keyboard">Klávesnica na písanie rukou</string>
     <string name="summary_pref_handwriting_keyboard">Zapnite ručné písanie SandFly v nastaveniach klávesnice Android</string>
-    <string name="title_pref_handwriting_wait">Po napísaní počkajte</string>
+    <string name="title_pref_handwriting_wait">Čakanie po napísaní</string>
     <string name="value_handwriting_wait_200">0,2 sekundy</string>
     <string name="value_handwriting_wait_300">0,3 sekundy</string>
     <string name="value_handwriting_wait_400">0,4 sekundy</string>
@@ -1606,8 +1606,8 @@
     <string name="handwriting_keyboard_name">SandFly rukopis</string>
     <string name="handwriting_space">Medzerník</string>
     <string name="handwriting_new_line">Nový riadok</string>
-    <string name="handwriting_tutorial_intro">Kurz klávesnice na písanie rukou. Píšte jedným prstom kdekoľvek na obrazovke. To, čo píšete, sa píše, keď sa na chvíľu zastavíte. Ak chcete ukončiť návod, potiahnite troma prstami nadol.</string>
-    <string name="handwriting_tutorial_write_letter">Napíšte písmeno abecedy a.</string>
+    <string name="handwriting_tutorial_intro">Návod na klávesnicu na písanie rukou. Píšte jedným prstom kdekoľvek na obrazovke. Napísaný text sa zadá, keď sa na chvíľu zastavíte. Návod ukončíte potiahnutím troma prstami nadol.</string>
+    <string name="handwriting_tutorial_write_letter">Napíšte písmeno a.</string>
     <string name="handwriting_tutorial_write_word">Teraz napíšte slovo hi (h, za ktorým nasleduje i).</string>
     <string name="handwriting_tutorial_typed">Zadali ste <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Medzeru zadajte potiahnutím dvoma prstami doprava.</string>
@@ -1616,34 +1616,34 @@
     <string name="handwriting_tutorial_next_reading">Ak sa rukopis rozpozná ako iný znak, napríklad veľké písmeno, potiahnutím dvoma prstami nahor vyberte ďalší návrh na rozpoznávanie. Skúste to teraz.</string>
     <string name="handwriting_tutorial_read_back">Klepnutím dvoma prstami si prečítajte text pred kurzorom.</string>
     <string name="handwriting_tutorial_new_line">Potiahnutím dvoma prstami nadol vložte nový riadok alebo vykonajte akciu textového poľa, napríklad Odoslať.</string>
-    <string name="handwriting_tutorial_not_that">To bolo ďalšie gesto.</string>
-    <string name="handwriting_tutorial_done">Nový riadok. Výukový program dokončený. Potiahnutím troch prstov nadol klávesnicu skryjete a tromi prstami doprava alebo doľava prepnete klávesnice. Ak chcete znova otvoriť návod, klepnite tromi prstami.</string>
-    <string name="handwriting_tutorial_finished">Kurz skončil. Ak ho chcete znova otvoriť, klepnite naň tromi prstami.</string>
+    <string name="handwriting_tutorial_not_that">To bolo iné gesto.</string>
+    <string name="handwriting_tutorial_done">Nový riadok. Návod je dokončený. Potiahnutím troma prstami nadol skryjete klávesnicu a potiahnutím troma prstami doprava alebo doľava prepnete klávesnicu. Návod znova otvoríte klepnutím troma prstami.</string>
+    <string name="handwriting_tutorial_finished">Návod sa skončil. Znova ho otvoríte klepnutím troma prstami.</string>
     <string name="handwriting_no_alternatives">Žiadne ďalšie návrhy</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> z <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Prázdny text</string>
     <string name="handwriting_not_available">Na tomto zariadení nie je k dispozícii rozpoznávanie rukou písaného textu</string>
-    <string name="shortcut_scroll_to_bottom">Prejdite nadol</string>
+    <string name="shortcut_scroll_to_bottom">Prejsť na koniec</string>
     <string name="shortcut_refresh">Obnoviť</string>
-    <string name="shortcut_system_notifications">Odtieň upozornení systému</string>
+    <string name="shortcut_system_notifications">Panel upozornení systému</string>
     <string name="shortcut_system_quick_settings">Rýchle nastavenia systému</string>
     <string name="shortcut_lock_screen">Uzamknite obrazovku zariadenia</string>
     <string name="shortcut_power_menu">Ponuka napájania</string>
-    <string name="shortcut_increase_media_volume">Zvýšte hlasitosť médií</string>
-    <string name="shortcut_decrease_media_volume">Znížte hlasitosť médií</string>
+    <string name="shortcut_increase_media_volume">Zvýšiť hlasitosť médií</string>
+    <string name="shortcut_decrease_media_volume">Znížiť hlasitosť médií</string>
     <string name="title_clear_selection">Vymazať výber</string>
     <string name="title_pref_brightness">Jas</string>
     <string name="summary_support_change_brightness">Zvýšte alebo znížte jas obrazovky, aj keď je obrazovka skrytá</string>
     <string name="title_pref_shortcut_3finger_4tap">Štvorité poklepanie tromi prstami</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Otočte 2 prstami v smere hodinových ručičiek</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Otočte 2 prstami proti smeru hodinových ručičiek</string>
-    <string name="title_pref_shortcut_2finger_scrub">Vydrhnite 2 prstami</string>
-    <string name="title_pref_shortcut_2finger_pinch">Stlačte 2 prsty</string>
-    <string name="title_pref_shortcut_2finger_spread">Rozotrite 2 prstami</string>
-    <string name="title_pref_shortcut_3finger_pinch">Stlačte 3 prsty</string>
-    <string name="title_pref_shortcut_3finger_spread">Rozotrite 3 prstami</string>
-    <string name="title_pref_shortcut_4finger_pinch">Stlačte 4 prstami</string>
-    <string name="title_pref_shortcut_4finger_spread">Rozotrite 4 prstami</string>
+    <string name="title_pref_shortcut_2finger_scrub">Rýchle prejdenie tam a späť 2 prstami</string>
+    <string name="title_pref_shortcut_2finger_pinch">Stiahnutie 2 prstami</string>
+    <string name="title_pref_shortcut_2finger_spread">Roztiahnutie 2 prstami</string>
+    <string name="title_pref_shortcut_3finger_pinch">Stiahnutie 3 prstami</string>
+    <string name="title_pref_shortcut_3finger_spread">Roztiahnutie 3 prstami</string>
+    <string name="title_pref_shortcut_4finger_pinch">Stiahnutie 4 prstami</string>
+    <string name="title_pref_shortcut_4finger_spread">Roztiahnutie 4 prstami</string>
     <string name="title_pref_shortcut_edge_bottom_up">Potiahnite prstom nahor od spodného okraja</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Dlhé potiahnutie nahor od spodného okraja</string>
     <string name="title_pref_shortcut_edge_top_left_down">Potiahnite prstom z ľavého horného rohu nadol</string>
@@ -1658,15 +1658,15 @@
     <string name="title_pref_shortcut_edge_right_top_long_left">Dlhé potiahnutie doľava od pravého okraja, horná polovica</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Potiahnite prstom doľava od pravého okraja, spodnú polovicu</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Dlhé potiahnutie doľava od pravého okraja, spodná polovica</string>
-    <string name="value_type_confirmation_lift_to_type_except_action_key">Podržaním prsta vyberte ľubovoľný kláves a potom ho zdvihnite. Dvojitým klepnutím zobrazíte Enter, Hotovo alebo Odoslať.</string>
-    <string name="value_type_confirmation_tap_to_type">Klepnutím na ľubovoľný kláves ho napíšte alebo podržaním prsta vyberte ľubovoľný kláves a potom ho zdvihnite</string>
+    <string name="value_type_confirmation_lift_to_type_except_action_key">Podržaním prsta vyberte ľubovoľný kláves a potom prst zdvihnite. Pre Enter, Hotovo alebo Odoslať dvakrát klepnite.</string>
+    <string name="value_type_confirmation_tap_to_type">Klepnutím na kláves ho napíšete; prípadne podržaním prsta kláves vyberte a potom prst zdvihnite</string>
     <string name="title_pref_multi_tap_timeout">Čas medzi klepnutiami jedným prstom</string>
     <string name="value_multi_tap_timeout_100ms">0,1 sekundy</string>
     <string name="value_multi_tap_timeout_150ms">0,15 sekundy</string>
     <string name="value_multi_tap_timeout_200ms">0,2 sekundy</string>
     <string name="value_multi_tap_timeout_250ms">0,25 sekundy (predvolené)</string>
     <string name="title_pref_rotor_step_degrees">Otočenie rotora na krok</string>
-    <string name="title_pref_edge_first_click_mm">Vzdialenosť od prvého kliknutia</string>
+    <string name="title_pref_edge_first_click_mm">Vzdialenosť k prvému kliknutiu</string>
     <string name="title_pref_edge_second_click_mm">Vzdialenosť od prvého po druhé kliknutie</string>
     <string name="value_distance_5mm">0,5 cm</string>
     <string name="value_distance_10mm">1 cm</string>
@@ -1681,18 +1681,18 @@
     <string name="value_rotor_step_45">45 stupňov</string>
     <string name="value_rotor_step_60">60 stupňov</string>
     <string name="title_pref_low_latency_audio">Zvuk s nízkou latenciou</string>
-    <string name="summary_pref_low_latency_audio">Prehrávajte zvuky a reč SandFly prostredníctvom najrýchlejšej zvukovej cesty telefónu, aby ste ich počuli skôr. Vypnite ho, ak sa reč alebo zvuky rozpadnú alebo znejú zle.</string>
+    <string name="summary_pref_low_latency_audio">Prehráva zvuky a reč SandFly najrýchlejšou zvukovou cestou telefónu, aby ste ich počuli skôr. Vypnite, ak sa reč alebo zvuky prerušujú alebo znejú nesprávne.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekundy (predvolené)</string>
     <string name="value_focus_delay_300ms">0,3 sekundy</string>
-    <string name="title_pref_lift_to_activate">Aktivujte zdvihnutím</string>
-    <string name="summary_support_change_lift_to_activate">Zmeňte miesto, kde sa položka aktivuje zdvihnutím prsta</string>
+    <string name="title_pref_lift_to_activate">Aktivovať zdvihnutím prsta</string>
+    <string name="summary_support_change_lift_to_activate">Zmeniť, kde zdvihnutie prsta aktivuje položku</string>
     <string name="value_lift_to_activate_disabled">Zakázané</string>
     <string name="value_lift_to_activate_navigation_bar">Iba na navigačnom paneli</string>
     <string name="value_lift_to_activate_entire_screen">Celá obrazovka</string>
     <string name="template_lift_to_activate_changed">Zdvihnite pre aktiváciu: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Omotajte sa</string>
+    <string name="title_pref_wrap_around">Cyklický pohyb</string>
     <string name="summary_pref_wrap_around">Potiahnutím za poslednú položku prejdete na prvú a za prvú položku na poslednú. Keď je vypnutý, na konci sa namiesto toho prehrá zvuk.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Opravte zaseknuté skúmanie dotykom</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Opravovať zaseknuté skúmanie dotykom</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez povolenia DUMP môže SandFly povedať len to, že prieskum dotykom môže byť zaseknutý. Ak to chcete opraviť, spustite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Oprava dotykového prieskumu</string>
     <string name="stuck_touch_exploration_fixed">Dotykové skúmanie opravené</string>
@@ -1701,62 +1701,62 @@
     <string name="stuck_touch_exploration_grant_dump">Dotykové skúmanie sa môže zaseknúť. Reštartujte telefón, aby ste to opravili, alebo udeľte SandFly povolenie DUMP s ADB, aby to mohla opraviť.</string>
     <string name="title_pref_window_names">Názvy okien</string>
     <string name="window_names_always">Vždy</string>
-    <string name="window_names_until_first_item">Vždy odrežte pri prvej položke</string>
+    <string name="window_names_until_first_item">Vždy, prerušené prvou položkou</string>
     <string name="window_names_window_opens">Len keď sa otvorí okno</string>
     <string name="window_names_never">Nikdy</string>
     <string name="title_pref_selector_links_controls_web_only">Odkazy a ovládacie prvky iba vo webovom obsahu</string>
-    <string name="title_pref_selector_auto_switch">Automaticky zmeniť ovládanie čítania</string>
-    <string name="title_pref_touch_stops_speech">Zastavte reč pri dotyku obrazovky</string>
-    <string name="title_pref_focus_new_windows">Presuňte zameranie na nové okná</string>
+    <string name="title_pref_selector_auto_switch">Automaticky meniť ovládanie čítania</string>
+    <string name="title_pref_touch_stops_speech">Zastaviť reč pri dotyku obrazovky</string>
+    <string name="title_pref_focus_new_windows">Presúvať zameranie do nových okien</string>
     <string name="title_pref_volume_keys_adjust_sliders">Tlačidlá hlasitosti upravujú posúvače</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Keď je posuvník zaostrený, zvýšenie a zníženie hlasitosti zmenia jeho hodnotu namiesto hlasitosti</string>
     <string name="title_pref_volume_keys_move_cursor">Tlačidlá hlasitosti posúvajú kurzor</string>
     <string name="summary_pref_volume_keys_move_cursor">Keď je textové pole aktívne, zvýšenie hlasitosti presunie kurzor späť o znak a zníženie hlasitosti ho posunie ďalej</string>
-    <string name="summary_support_wrap_around">Zapnite alebo vypnite balenie od poslednej položky po prvú</string>
-    <string name="wrap_around_on">Zabaľte sa</string>
-    <string name="wrap_around_off">Zabaľte sa</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tablet zdvihol tváre preč</string>
+    <string name="summary_support_wrap_around">Zapnutie alebo vypnutie prechodu z poslednej položky na prvú</string>
+    <string name="wrap_around_on">Cyklický pohyb: zapnuté</string>
+    <string name="wrap_around_off">Cyklický pohyb: vypnuté</string>
+    <string name="title_selector_tablet_held_up_faces_away">Zdvihnutý tablet otočený obrazovkou od vás</string>
     <string name="summary_support_tablet_held_up_faces_away">Pre braillovu klávesnicu na tablete alebo rozloženom telefóne</string>
-    <string name="tablet_held_up_faces_away_on">Tablet zdvihnutý tvárami preč</string>
-    <string name="tablet_held_up_faces_away_off">Tablet zdvihol tvár preč</string>
+    <string name="tablet_held_up_faces_away_on">Zdvihnutý tablet otočený obrazovkou od vás: zapnuté</string>
+    <string name="tablet_held_up_faces_away_off">Zdvihnutý tablet otočený obrazovkou od vás: vypnuté</string>
     <string name="title_keyboard_echo_on_screen">Ozvena klávesnice na obrazovke</string>
-    <string name="title_keyboard_echo_physical">Fyzická ozvena klávesnice</string>
+    <string name="title_keyboard_echo_physical">Ozvena fyzickej klávesnice</string>
     <string name="title_keyboard_echo_braille_keyboard">Ozvena Braillovej klávesnice</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Ozvena klávesnice na písanie rukou</string>
     <string name="title_keyboard_echo_braille_display">Ozvena Braillovho displeja</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Prerušujte reč pri písaní</string>
+    <string name="title_pref_interrupt_typing">Prerušiť reč pri písaní</string>
     <string name="pref_interrupt_typing_entry_always">Vždy</string>
     <string name="pref_interrupt_typing_entry_edit_fields">V poliach úprav</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">Ozvena klávesnice</string>
-    <string name="title_pref_interrupt_enter">Prerušiť reč na Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Názov, štát, typ</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Typ, štát, názov</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Štát, typ, názov</string>
-    <string name="item_detail_name">Meno</string>
-    <string name="item_detail_type">Písať</string>
-    <string name="item_detail_state">Štátu</string>
-    <string name="action_move_up">Posunúť sa hore</string>
-    <string name="action_move_down">Presuňte sa nadol</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Pri ozvene klávesnice</string>
+    <string name="title_pref_interrupt_enter">Prerušiť reč pri stlačení klávesu Enter</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Názov, stav, typ</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Typ, stav, názov</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Stav, typ, názov</string>
+    <string name="item_detail_name">Názov</string>
+    <string name="item_detail_type">Typ</string>
+    <string name="item_detail_state">Stav</string>
+    <string name="action_move_up">Presunúť nahor</string>
+    <string name="action_move_down">Presunúť nadol</string>
     <string name="template_list_position">Pozícia <xliff:g id="position" example="2">%1$d</xliff:g> z <xliff:g id="count" example="3">%2$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up">Vyzdvihnuté <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Klesla <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly hovorí o detailoch položky v tejto objednávke. Ak ho chcete zmeniť, dotknite sa a podržte detail a potom ho potiahnite nahor alebo nadol. So zapnutým SandFly dvakrát ťuknite a podržte, potom potiahnite. Môžete tiež použiť akcie Posunúť nahor a Posunúť nadol.</string>
-    <string name="title_pref_speak_items_before_scroll">Vyslovte položky predtým, ako sa posunú do zobrazenia</string>
+    <string name="template_item_details_order_picked_up">Zdvihnuté: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Pustené: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">SandFly hovorí podrobnosti položky v tomto poradí. Ak ho chcete zmeniť, pridržte podrobnosť a potom ju potiahnite nahor alebo nadol. Keď je SandFly zapnutý, dvakrát klepnite, podržte a potom potiahnite. Môžete použiť aj akcie Presunúť nahor a Presunúť nadol.</string>
+    <string name="title_pref_speak_items_before_scroll">Vyslovovať položky skôr, ako sa posunú do zobrazenia</string>
     <string name="gemini_error_api_key">Gemini neakceptoval API kľúč. Skontrolujte kľúč v nastaveniach automatických popisov.</string>
     <string name="gemini_error_quota">Dosiahli ste limit použitia pre váš kľúč API Gemini. Skúste to znova neskôr.</string>
     <string name="gemini_error_busy">Gemini je práve zaneprázdnený. Skúste to znova o chvíľu.</string>
-    <string name="gemini_error_timeout">Odpoveď Gemini trvalo príliš dlho. Skúste to znova.</string>
+    <string name="gemini_error_timeout">Gemini odpovedal príliš dlho. Skúste to znova.</string>
     <string name="gemini_error_with_code">Gemini nemohol odpovedať, chyba <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini nemohol odpovedať, chyba <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nie je možné získať podrobnejší popis obrázka: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Opýtajte sa hlasom</string>
-    <string name="image_qna_stop_listening">Prestaň počúvať</string>
+    <string name="image_qna_stop_listening">Zastaviť počúvanie</string>
     <string name="image_qna_type_question">Napíšte otázku</string>
     <string name="shortcut_dictate">Diktovať</string>
-    <string name="title_pref_ai_dictation">Správny diktát s AI</string>
-    <string name="dictation_not_corrected">Neopravené. Zadané ako rozpoznané.</string>
-    <string name="dictation_nothing_recognized">Nič rozpoznané</string>
+    <string name="title_pref_ai_dictation">Opravovať diktovanie pomocou AI</string>
+    <string name="dictation_not_corrected">Neopravené. Zadané tak, ako bolo rozpoznané.</string>
+    <string name="dictation_nothing_recognized">Nič sa nerozpoznalo</string>
     <string name="dictation_unavailable">Rozpoznávanie reči nie je k dispozícii</string>
     <string name="dictation_field_gone">Textové pole je zatvorené. Nič nebolo napísané.</string>
     <string name="dictation_transcription_failed">Reč nebola prepísaná. Nič nebolo napísané.</string>
@@ -1775,7 +1775,7 @@
     <string name="dictation_whisper_use">Použiť</string>
     <string name="title_pref_dictation_ai_service">Služba AI na diktovanie</string>
     <string name="dictation_ai_same">Rovnaká ako pre automatické opisy</string>
-    <string name="title_pref_browse_mode_per_app">Pamätajte na režim prehliadania v každej aplikácii</string>
+    <string name="title_pref_browse_mode_per_app">Pamätať si režim prehliadania v každej aplikácii</string>
     <string name="title_pref_export_settings">Exportovať nastavenia</string>
     <string name="title_pref_import_settings">Importovať nastavenia</string>
     <string name="settings_export_done">Nastavenia boli exportované. Kľúče API nie sú zahrnuté</string>

@@ -7,7 +7,7 @@
     <string name="gemini_api_key_save">Αποθήκευση</string>
     <string name="gemini_api_key_get">Λήψη κλειδιού</string>
     <string name="gemini_api_terms_link">Πρόσθετοι Όροι Παροχής Υπηρεσιών του Gemini API</string>
-    <string name="title_pref_gemini_model">Gemini μοντέλο</string>
+    <string name="title_pref_gemini_model">Μοντέλο Gemini</string>
     <string name="gemini_model_automatic">Αυτόματο</string>
     <string name="summary_pref_gemini_model_automatic">Αυτόματο: Gemini Flash, μετά Flash-Lite όταν το Flash είναι απασχολημένο</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g> και μετά Flash-Lite όταν είναι απασχολημένο</string>
@@ -17,7 +17,7 @@
     <string name="ai_service_address_hint">Διεύθυνση, όπως https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Μοντέλο</string>
     <string name="ai_service_address_invalid">Η διεύθυνση πρέπει να ξεκινά με https://. Δεν αποθηκεύτηκε τίποτα.</string>
-    <string name="dialog_message_ai_service_consent">Οι εικόνες και τα στιγμιότυπα οθόνης αποστέλλονται στο <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> για περιγραφή, η οποία διαρκεί αρκετά δευτερόλεπτα. Ισχύουν οι δικοί της όροι και η πολιτική απορρήτου. Το Generative AI είναι πειραματικό, επομένως θα κάνει λάθη.</string>
+    <string name="dialog_message_ai_service_consent">Οι εικόνες και τα στιγμιότυπα οθόνης αποστέλλονται στο <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> για περιγραφή, κάτι που διαρκεί αρκετά δευτερόλεπτα. Ισχύουν οι όροι και η πολιτική απορρήτου της υπηρεσίας. Η παραγωγική τεχνητή νοημοσύνη είναι πειραματική, επομένως θα κάνει λάθη.</string>
     <string name="ai_service_error_api_key">Η υπηρεσία AI δεν αποδέχτηκε το κλειδί API. Ελέγξτε τις ρυθμίσεις του στις Αυτόματες περιγραφές.</string>
     <string name="ai_service_error_quota">Το όριο χρήσης της υπηρεσίας AI έχει συμπληρωθεί. Δοκιμάστε ξανά αργότερα.</string>
     <string name="ai_service_error_busy">Η υπηρεσία AI είναι απασχολημένη αυτή τη στιγμή. Δοκιμάστε ξανά σε λίγο.</string>
@@ -30,12 +30,12 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Κανένα</string>
-    <string name="ai_service_not_set_up">Δεν χρησιμοποιείται καμία υπηρεσία AI. Ρυθμίστε ένα ή επιλέξτε ένα στις ρυθμίσεις Αυτόματες περιγραφές.</string>
-    <string name="ai_provider_none_set_up">Δεν έχει ρυθμιστεί υπηρεσία AI. Ρυθμίστε ένα στις ρυθμίσεις του παρακάτω.</string>
+    <string name="ai_service_not_set_up">Δεν χρησιμοποιείται καμία υπηρεσία AI. Ρυθμίστε ή επιλέξτε μία στις ρυθμίσεις Αυτόματες περιγραφές.</string>
+    <string name="ai_provider_none_set_up">Δεν έχει ρυθμιστεί υπηρεσία AI. Ρυθμίστε μία στις ρυθμίσεις της παρακάτω.</string>
     <string name="ai_provider_other">Άλλη υπηρεσία</string>
     <string name="title_pref_category_ai_services">Υπηρεσίες AI</string>
     <string name="title_pref_ai_provider">Υπηρεσία AI</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> ρυθμίσεις</string>
+    <string name="title_ai_provider_settings">Ρυθμίσεις <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, δεν έχει ρυθμιστεί</string>
     <string name="ai_provider_in_use">Σε χρήση</string>
     <string name="ai_provider_not_set_up">Δεν έχει ρυθμιστεί</string>
@@ -45,9 +45,9 @@
     <string name="ai_provider_not_set">Δεν έχει οριστεί</string>
     <string name="ai_provider_set">Έχει οριστεί</string>
     <string name="title_pref_gemini_api_key_of">Κλειδί API για <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> μοντέλο</string>
+    <string name="title_pref_gemini_model_of">Μοντέλο <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Δεν έχει επιλεγεί</string>
-    <string name="ai_provider_key_message">Επικολλήστε το κλειδί API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Για να το αφαιρέσετε, καθαρίστε το πεδίο και αποθηκεύστε το. Οι εικόνες και οι οθόνες που περιγράφετε αποστέλλονται στο <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Επικολλήστε το κλειδί API για <xliff:g id="service" example="Claude">%1$s</xliff:g>. Για να το αφαιρέσετε, αδειάστε το πεδίο και αποθηκεύστε. Οι εικόνες και οι οθόνες για τις οποίες ζητάτε περιγραφή αποστέλλονται στο <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Ρυθμίστε πρώτα το κλειδί API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Ορίστε πρώτα τη διεύθυνση</string>
     <string name="ai_provider_enter_model">Εισαγάγετε ένα όνομα μοντέλου</string>

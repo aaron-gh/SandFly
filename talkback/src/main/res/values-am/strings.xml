@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">መሳሪያው ተከፍቷል።</string>
   <string name="title_pref_speech_volume">የንግግር ድምፅ መጠን</string>
   <string name="title_pref_verbose_scroll_announcement">ሁልጊዜ የዝርዝር ንጥሎች ብዛት ተናገር</string>
-  <string name="summary_pref_verbose_scroll_announcement">ከእያንዳንዱ ሽብለላ በኋላ የትኞቹ ንጥሎች እየታዩ እንደሆኑ ተናገር</string>
+  <string name="summary_pref_verbose_scroll_announcement">ከእያንዳንዱ ሽብለላ በኋላ የትኞቹ ንጥሎች እየታዩ እንደሆኑ ይናገራል</string>
   <string name="title_pref_cover_proximity_sensor">ንግግርን ለማቆም የቀረቤታ መለኪያ መሣሪያን ይሸፍኑ</string>
   <string name="title_pref_phonetic_letters">ፊደሎችን በምሳሌዎች ተናገር</string>
   <string name="summary_pref_phonetic_letters">የቁልፍ ሰሌዳ ቁልፎችን ሲመርጡ ወይም በቁምፊ ሲያስሱ ከእያንዳንዱ ፊደል ጋር አንድ ምሳሌ ይሰማሉ፣ ለምሳሌ «h፣ hotel»</string>
@@ -357,7 +357,7 @@
   <string name="summary_pref_gemini_support_disabled">Gemini ተሰናክሏል</string>
   <string name="screen_dimmed">የተደበቀ ማያ ገፅ</string>
   <string name="screen_brightness_restored">ማያ ገፅ በማሳየት ላይ</string>
-  <string name="screen_dimming_exit_instruction_line1">የSandFly ተደራሽነት አገልግሎት ማያ ገጹን አደብዝዞታል</string>
+  <string name="screen_dimming_exit_instruction_line1">የSandFly ተደራሽነት አገልግሎት ማያ ገጹን ደብቆታል</string>
   <string name="screen_dimming_exit_instruction_line2">ይህን ለመለወጥ፣ የSandFly ምናሌን ለመክፈት <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g>፣ «<xliff:g id="menu item" example="show screen">%2$s</xliff:g>»ን ይምረጡ ከዚያም ሁለቴ መታ ያድርጉ።</string>
   <string name="shortcut_title_basic_navigation">መሠረታዊ ዳሰሳ</string>
   <string name="shortcut_title_system_actions">የሥርዓት እርምጃዎች</string>
@@ -788,7 +788,7 @@
   <string name="dialog_message_continuous_reading_mode">«ከላይ አንብብ» ወይም «ከተተኮረው ንጥል ጀምሮ አንብብ» ከመረጡ በኋላ አሁንም ጽሑፉ እየተነበበ ሳለ ወደ ቀዳሚው ወይም ቀጣዩ ንጥል መሄድ ይችላሉ። ይህ በቀላሉ ወደኋላ እንዲመለሱ ወይም ወደፊት እንዲዘልሉ ያስችልዎታል።\n\nSandFly በሚናገርበት ጊዜ የድምጹን መጠን ለማስተካከል ድምፅ ጨምር ወይም ድምፅ ቀንስ የሚለውን ቁልፍ ይጫኑ።</string>
   <string name="always_show_this_message_label">ይህን መልዕክት ሁልጊዜ አሳይ</string>
   <string name="dialog_title_voice_commands">SandFlyን ለመቆጣጠር የድምፅ ትዕዛዞችን ይጠቀሙ</string>
-  <string name="dialog_message_voice_commands">ሊሏቸው የሚችሏቸው አንዳንድ ነገሮች እነሆ፦\n\n• ቅዳ\n• ትኩረት ከተሰጠው ንጥል ጀምሮ አንብብ\n• [አስቀምጥ]ን ያግኙ\n• [በፍጥነት] ተናገር\n• የSandFly ቅንብሮች\n\nለሁሉም የድምፅ ትዕዛዞች ዝርዝር «<xliff:g id="voice_help_cmd" example="help">%1$s</xliff:g>» ይበሉ።</string>
+  <string name="dialog_message_voice_commands">ሊሏቸው የሚችሏቸው አንዳንድ ነገሮች እነሆ፦\n\n• ቅዳ\n• ትኩረት ከተሰጠው ንጥል ጀምሮ አንብብ\n• [አስቀምጥ]ን ያግኙ\n• [በፍጥነት] ተናገር\n• የSandFly ቅንብሮች\n\nለሁሉም የድምፅ ትዕዛዞች ዝርዝር «<xliff:g id="voice_help_cmd" example="help">%1$s</xliff:g>» ይበሉ</string>
   <string name="start_voice_command">የድምፅ ትዕዛዞችን ይጠቀሙ</string>
   <string name="dialog_title_pass_through_mode">የሥርዓቱን ምልክቶች ለመጠቀም የSandFly ምልክቶችን ይዝለሉ</string>
   <string name="dialog_message_pass_through_mode">ቃጭል ሲሰሙ በSandFly የማይደገፍ የስርዓት ምልክትን መጠቀም ይችላሉ። ይህ በምልክት ማለፍ በመባል ይታወቃል።</string>
@@ -1199,7 +1199,7 @@
   <string name="confirm_download_all_image_captioning_message">በሚደገፉ መተግበሪያዎች ውስጥ ምስል ወይም አዶ ላይ ሲያተኩሩ አጭር መግለጫ ይሰማሉ</string>
   <string name="confirm_download_checkbox_text">ይህን በድጋሚ አታሳይ</string>
   <string name="confirm_download_positive_button_text">አውርድ</string>
-  <string name="confirm_download_negative_button_hint">SandFly አሁንም በምስሎች ውስጥ ጽሁፍን መግለጽ ይችላል።</string>
+  <string name="confirm_download_negative_button_hint">SandFly አሁንም በምስሎች ውስጥ ጽሁፍን መግለጽ ይችላል</string>
   <string name="downloading_icon_detection_hint">ራስ-ሰር የአዶ መግለጫዎችን በማውረድ ላይ</string>
   <string name="download_icon_detection_successful_hint">የአዶ መግለጫዎች ወርደዋል</string>
   <string name="download_icon_detection_failed_hint">ራስ-ሰር የአዶ መግለጫዎችን ማውረድ አልተቻለም</string>
@@ -1349,7 +1349,7 @@
     <string name="template_battery_level">ባትሪ <xliff:g id="battery_level" example="73">%1$s</xliff:g> በመቶ</string>
     <string name="template_battery_level_unknown">የባትሪ ደረጃ አይታወቅም</string>
     <string name="value_charger_connected">ኃይል መሙያ ተገናኝቷል</string>
-    <string name="title_pref_screen_announcements">ማያ ገፅ በርቷል እና ጠፍቷል</string>
+    <string name="title_pref_screen_announcements">ማያ ገፅ ማብራት እና ማጥፋት</string>
     <string name="summary_pref_screen_announcements">ማያ ገፁ ሲጠፋ ወይም ሲበራ፣ እና ስልኩ ሲከፈት SandFly የሚናገረውን ይምረጡ</string>
     <string name="title_screen_announcements_screen_off">ማያ ገፁ ሲጠፋ</string>
     <string name="title_screen_announcements_screen_on">ማያ ገፁ ሲበራ</string>
@@ -1462,7 +1462,7 @@
     <string name="dialog_message_screen_overview_promotion">የማያ ገፁ ቅጽበታዊ ገጽ እይታ እንዲገለጽ ወደ Google Gemini API ይላካል፣ ይህም በርካታ ሰከንዶችን ይወስዳል። በመሣሪያ ላይ ያለ ሰው ሠራሽ አስተውሎት ሲበራ በምትኩ በዚህ ስልክ ላይ ይገለጻል እና አይላክም።\n\nነፃ የAPI ቁልፍ ሲኖር Google የሚቀበለውን ሊያስቀምጥ፣ ምርቶቹን ለማሻሻል ሊጠቀምበት እና ሰዎች እንዲገመግሙት ሊያደርግ ይችላል። አመንጪ ሰው ሠራሽ አስተውሎት የሙከራ ነው፣ ስለዚህ ስህተቶች ይሠራል። <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> ተፈጻሚ ይሆናል።</string>
     <string name="shortcut_title_open_app">መተግበሪያ ክፈት</string>
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g>ን ክፈት</string>
-    <string name="shortcut_system_notifications">የስርዓት ማሳወቂያ ጥላ</string>
+    <string name="shortcut_system_notifications">የስርዓት ማሳወቂያ ፓነል</string>
     <string name="title_clear_selection">ምርጫን አጽዳ</string>
     <string name="title_pref_brightness">ብሩህነት</string>
     <string name="summary_support_change_brightness">ማያ ገፁ ተደብቆ ቢሆንም የማያ ገፅ ብሩህነትን ጨምር ወይም ቀንስ</string>
@@ -1503,7 +1503,7 @@
     <string name="value_lift_to_activate_navigation_bar">በአሰሳ አሞሌ ላይ ብቻ</string>
     <string name="value_lift_to_activate_entire_screen">መላው ማያ ገፅ</string>
     <string name="template_lift_to_activate_changed">ለማግበር ማንሳት፦ <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">ዙሪያ መጠቅለል</string>
+    <string name="title_pref_wrap_around">ወደ መጀመሪያ ተመለስ</string>
     <string name="summary_pref_wrap_around">ከመጨረሻው ንጥል አልፎ ማንሸራተት ወደ መጀመሪያው ይሄዳል፣ ከመጀመሪያው አልፎ ደግሞ ወደ መጨረሻው። ሲጠፋ በምትኩ መጨረሻ ላይ ድምፅ ይጫወታል።</string>
     <string name="title_pref_fix_stuck_touch_exploration">የተጣበቀ በንክኪ ማሰስን አስተካክል</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ያለ DUMP ፈቃድ SandFly በንክኪ ማሰስ ተጣብቆ ሊሆን እንደሚችል ብቻ መናገር ይችላል። እንዲያስተካክለው ለመፍቀድ ይህን ያሂዱ፦ adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
@@ -1521,8 +1521,8 @@
     <string name="title_pref_volume_keys_adjust_sliders">የድምፅ መጠን ቁልፎች ተንሸራታቾችን ያስተካክላሉ</string>
     <string name="summary_pref_volume_keys_adjust_sliders">ተንሸራታች ትኩረት ሲኖረው ድምፅ ጨምር እና ቀንስ ከድምፅ መጠኑ ይልቅ እሴቱን ይቀይራሉ</string>
     <string name="summary_support_wrap_around">ከመጨረሻው ንጥል ወደ መጀመሪያው መጠቅለልን አብራ ወይም አጥፋ</string>
-    <string name="wrap_around_on">ዙሪያ መጠቅለል በርቷል</string>
-    <string name="wrap_around_off">ዙሪያ መጠቅለል ጠፍቷል</string>
+    <string name="wrap_around_on">ወደ መጀመሪያ ተመለስ: በርቷል</string>
+    <string name="wrap_around_off">ወደ መጀመሪያ ተመለስ: ጠፍቷል</string>
     <string name="title_selector_tablet_held_up_faces_away">ወደ ላይ የተያዘ ጡባዊ ወደ ውጭ ይመለከታል</string>
     <string name="summary_support_tablet_held_up_faces_away">በጡባዊ ወይም በተዘረጋ ስልክ ላይ ላለው የብሬይል ቁልፍ ሰሌዳ</string>
     <string name="tablet_held_up_faces_away_on">ወደ ላይ የተያዘ ጡባዊ ወደ ውጭ ይመለከታል በርቷል</string>
@@ -1560,7 +1560,7 @@
     <string name="title_selector_vertical_navigation">አቀባዊ አሰሳ</string>
     <string name="summary_selector_vertical_navigation">የረድፉ ሌሎች ንጥሎችን አልፈው ከታች ወይም በላይ ወዳለው ንጥል ይሂዱ</string>
     <string name="title_pref_speech_stream">የንግግር ድምፅ መጠን</string>
-    <string name="summary_selector_speech_stream">በተደራሽነት፣ ሚዲያ፣ ቀለበት እና የጥሪ ጥራዞች መካከል ይቀያይሩ</string>
+    <string name="summary_selector_speech_stream">በተደራሽነት፣ በሚዲያ፣ በጥሪ ድምፅ እና በጥሪ ድምፅ መጠኖች መካከል መቀያየር</string>
     <string name="speech_stream_accessibility">የተደራሽነት መጠን</string>
     <string name="speech_stream_media">የሚዲያ መጠን</string>
     <string name="speech_stream_ring">የደወል መጠን</string>
@@ -1571,8 +1571,8 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_play_installer">ከGoogle Play ተጭኗል</string>
-    <string name="summary_pref_play_installer">Google Play SandFly እንደጫነ ለሌሎች መተግበሪያዎች ይንገሩ። እንደ አንዳንድ የባንክ መተግበሪያዎች ያሉ አንዳንድ መተግበሪያዎች ከሌላ ቦታ ሆነው የተጫኑ የተደራሽነት አገልግሎቶችን ያጠፋሉ። Shizuku ይፈልጋል፣ እና መተግበሪያዎች SandFly ከየት እንደመጣ የሚነገሩትን ብቻ ይለውጣል።</string>
+    <string name="title_pref_play_installer">ከGoogle Play እንደተጫነ አሳይ</string>
+    <string name="summary_pref_play_installer">SandFly በGoogle Play እንደተጫነ ለሌሎች መተግበሪያዎች ይገልጻል። አንዳንድ መተግበሪያዎች፣ ለምሳሌ አንዳንድ የባንክ መተግበሪያዎች፣ ከሌላ ቦታ የተጫኑ የተደራሽነት አገልግሎቶችን ያጠፋሉ። Shizuku ያስፈልገዋል፣ እና የሚቀይረው መተግበሪያዎች SandFly ከየት እንደመጣ የሚነገራቸውን ብቻ ነው።</string>
     <string name="summary_pref_play_installer_pending">በርቷል፣ ግን Google Play ገና እንደ ጫኝ አልተመዘገበም። SandFly Shizuku ሲገኝ ያስቀምጣል።</string>
     <string name="notification_list_show_all">ሁሉንም አሳይ</string>
     <string name="notification_list_show_less">ያነሰ አሳይ</string>
@@ -1596,7 +1596,7 @@
     <string name="quick_settings_brightness">ብሩህነት</string>
     <string name="quick_settings_adaptive_brightness">የሚለምደዉ ብሩህነት</string>
     <string name="quick_settings_media_volume">የሚዲያ መጠን</string>
-    <string name="quick_settings_call_volume">የድምጽ መጠን ይደውሉ</string>
+    <string name="quick_settings_call_volume">የጥሪ ድምጽ መጠን</string>
     <string name="quick_settings_ring_volume">የደወል መጠን</string>
     <string name="quick_settings_notification_volume">የማሳወቂያ መጠን</string>
     <string name="quick_settings_alarm_volume">የማንቂያ ድምጽ</string>
@@ -1609,18 +1609,18 @@
     <string name="quick_settings_color_correction">የቀለም እርማት</string>
     <string name="quick_settings_microphone_access">የማይክሮፎን መዳረሻ</string>
     <string name="quick_settings_camera_access">የካሜራ መዳረሻ</string>
-    <string name="quick_settings_screen_timeout">የማያ ገጽ ጊዜ አለቀ</string>
+    <string name="quick_settings_screen_timeout">የማያ ገጽ ጊዜ ማብቂያ</string>
     <string name="quick_settings_font_size">የቅርጸ ቁምፊ መጠን</string>
     <string name="quick_settings_media">ሚዲያ</string>
-    <string name="quick_settings_no_media">ሚዲያ የለም።</string>
+    <string name="quick_settings_no_media">ሚዲያ የለም</string>
     <string name="quick_settings_media_output">የሚዲያ ውጤት</string>
     <string name="quick_settings_next_alarm">ቀጣይ ማንቂያ</string>
-    <string name="quick_settings_no_alarm">ማንቂያ የለም።</string>
+    <string name="quick_settings_no_alarm">ማንቂያ የለም</string>
     <string name="quick_settings_settings">ቅንብሮች</string>
     <string name="quick_settings_power_menu">የኃይል ምናሌ</string>
     <string name="quick_settings_add_system_tile">የስርዓት ንጣፍ አክል</string>
     <string name="quick_settings_no_system_tiles">ምንም የሚታከሉ የስርዓት ሰቆች የሉም</string>
-    <string name="quick_settings_tile_not_found">%1$s በስርዓቱ ፈጣን መቼቶች ውስጥ የለም።</string>
+    <string name="quick_settings_tile_not_found">%1$s በስርዓቱ ፈጣን መቼቶች ውስጥ የለም</string>
     <string name="quick_settings_never">በጭራሽ</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d ሰከንድ</item>
@@ -1630,10 +1630,10 @@
         <item quantity="one">%d ደቂቃ</item>
         <item quantity="other">%d ደቂቃዎች</item>
     </plurals>
-    <string name="quick_settings_connected">ተገናኝቷል።</string>
+    <string name="quick_settings_connected">ተገናኝቷል</string>
     <string name="quick_settings_battery">ባትሪ</string>
     <string name="quick_settings_battery_charging">%1$s፣ በመሙላት ላይ</string>
-    <string name="quick_settings_battery_full">%1$s፣ ተከሷል</string>
+    <string name="quick_settings_battery_full">%1$s፣ ተሞልቷል</string>
     <string name="quick_settings_sound">ድምፅ</string>
     <string name="quick_settings_vibrate">ንዝረት</string>
     <string name="quick_settings_mute">ድምጸ-ከል አድርግ</string>
@@ -1648,7 +1648,7 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">የአምዶች ብዛት</string>
     <string name="quick_settings_move">አንቀሳቅስ</string>
-    <string name="quick_settings_move_title">አንቀሳቅስ %1$s</string>
+    <string name="quick_settings_move_title">%1$s አንቀሳቅስ</string>
     <string name="quick_settings_cell">ረድፍ %1$d፣ አምድ %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1657,7 +1657,7 @@
         <item quantity="other">%d ሌሎች ነገሮች ተንቀሳቅሰዋል</item>
     </plurals>
     <string name="quick_settings_remove">አስወግድ</string>
-    <string name="quick_settings_added">%1$s ታክሏል።</string>
+    <string name="quick_settings_added">%1$s ታክሏል</string>
     <string name="quick_settings_removed">%1$s ተወግዷል</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">የአሰሳ ሁነታን ለማብራት ወይም ለማጥፋት ሌላ አቋራጭ</string>
     <string name="title_pref_vibration_strength">የንዝረት ጥንካሬ</string>
@@ -1666,23 +1666,23 @@
     <string name="title_pref_reading_control_letters">በእጅ የሚጻፉ ፊደሎች</string>
     <string name="reading_control_letter_none">ምንም</string>
     <string name="handwriting_prompt">ፊደል ጻፍ</string>
-    <string name="handwriting_closed">የእጅ ጽሑፍ ተዘግቷል።</string>
-    <string name="handwriting_no_match">ምንም የንባብ ቁጥጥር በ <xliff:g id="letter" example="Q">%1$s</xliff:g> አይጀምርም</string>
+    <string name="handwriting_closed">የእጅ ጽሑፍ ተዘግቷል</string>
+    <string name="handwriting_no_match">በ <xliff:g id="letter" example="Q">%1$s</xliff:g> የሚጀምር የንባብ መቆጣጠሪያ የለም</string>
     <string name="shortcut_write_app_name">ለመክፈት የመተግበሪያ ስም ይጻፉ</string>
     <string name="handwriting_app_prompt">የመተግበሪያ ስም ይጻፉ</string>
     <string name="handwriting_no_app">በ <xliff:g id="letters" example="WHA">%1$s</xliff:g> የሚጀምር መተግበሪያ የለም</string>
     <string name="handwriting_app_not_opened"><xliff:g id="app" example="WhatsApp">%1$s</xliff:g> ሊከፈት አልቻለም</string>
-    <string name="handwriting_not_recognized">የእጅ ጽሑፍ አልታወቀም።</string>
-    <string name="handwriting_downloading">የእጅ ጽሑፍ ማወቂያ እየወረደ ነው።</string>
+    <string name="handwriting_not_recognized">የእጅ ጽሑፍ አልታወቀም</string>
+    <string name="handwriting_downloading">የእጅ ጽሑፍ ማወቂያ እየወረደ ነው</string>
     <string name="handwriting_download_title">የእጅ ጽሑፍ ማወቂያ ይውረድ?</string>
-    <string name="handwriting_download_message">የእጅ ጽሑፍ በዚህ ስልክ ይታወቃል። የዚህ ቋንቋ ሞዴል፣ ወደ 20 ሜባ አካባቢ፣ ከGoogle አንድ ጊዜ ወርዷል። አንድ መልእክት ሲወርድ ያሳያል።</string>
+    <string name="handwriting_download_message">የእጅ ጽሑፍ በዚህ ስልክ ላይ ይለያል። ለዚህ ቋንቋ ያለው ሞዴል፣ 20 ሜባ ገደማ፣ ከGoogle አንድ ጊዜ ይወርዳል። ማውረዱ ሲጠናቀቅ መልዕክት ይታያል።</string>
     <string name="handwriting_download_button">አውርድ</string>
     <string name="handwriting_downloaded">የእጅ ጽሑፍ ማወቂያ ወርዷል</string>
     <string name="handwriting_download_failed">የእጅ ጽሑፍ ማወቂያ ሊወርድ አልቻለም። የበይነመረብ ግንኙነትን ያረጋግጡ።</string>
     <string name="handwriting_unsupported_language">የእጅ ጽሑፍ ማወቂያ በዚህ ቋንቋ አይገኝም</string>
     <string name="title_pref_handwriting_keyboard">የእጅ ጽሑፍ ቁልፍ ሰሌዳ</string>
     <string name="summary_pref_handwriting_keyboard">በAndroid ኪቦርድ መቼቶች ውስጥ SandFly የእጅ ጽሑፍን ያብሩ</string>
-    <string name="title_pref_handwriting_wait">ከጻፍኩ በኋላ ይጠብቁ</string>
+    <string name="title_pref_handwriting_wait">ከመጻፍ በኋላ መጠበቂያ</string>
     <string name="value_handwriting_wait_200">0.2 ሰከንዶች</string>
     <string name="value_handwriting_wait_300">0.3 ሰከንዶች</string>
     <string name="value_handwriting_wait_400">0.4 ሰከንድ</string>
@@ -1693,8 +1693,8 @@
     <string name="handwriting_keyboard_name">SandFly የእጅ ጽሑፍ</string>
     <string name="handwriting_space">ክፍተት</string>
     <string name="handwriting_new_line">አዲስ መስመር</string>
-    <string name="handwriting_tutorial_intro">የእጅ ጽሑፍ ቁልፍ ሰሌዳ አጋዥ ስልጠና። በማያ ገጹ ላይ በማንኛውም ቦታ በአንድ ጣት ይፃፉ። የምትጽፈው ለአንድ አፍታ ስትቆም ነው የተተየበው። ትምህርቱን ለመጨረስ በሶስት ጣቶች ወደ ታች ይጥረጉ።</string>
-    <string name="handwriting_tutorial_write_letter">ፊደላትን ይፃፉ ሀ.</string>
+    <string name="handwriting_tutorial_intro">የእጅ ጽሑፍ ቁልፍ ሰሌዳ መማሪያ። በማያ ገጹ ላይ በየትኛውም ቦታ በአንድ ጣት ይጻፉ። ለአፍታ ሲቆሙ የጻፉት ይተየባል። መማሪያውን ለመጨረስ በሶስት ጣቶች ወደ ታች ያንሸራትቱ።</string>
+    <string name="handwriting_tutorial_write_letter">ፊደሉን a ይጻፉ።</string>
     <string name="handwriting_tutorial_write_word">አሁን hi የሚለውን ቃል ይጻፉ።</string>
     <string name="handwriting_tutorial_typed">የተተየበው <xliff:g id="text" example="a">%1$s</xliff:g></string>
     <string name="handwriting_tutorial_space">ቦታ ለመተየብ በሁለት ጣቶች ወደ ቀኝ ያንሸራትቱ።</string>
@@ -1717,16 +1717,16 @@
     <string name="shortcut_power_menu">የኃይል ምናሌ</string>
     <string name="shortcut_increase_media_volume">የሚዲያ መጠን ይጨምሩ</string>
     <string name="shortcut_decrease_media_volume">የሚዲያ መጠን ቀንስ</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">ከላይ ወደ ግራ በረጅሙ ወደ ታች ያንሸራትቱ</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">ከላይ ወደ ቀኝ በረጅሙ ወደ ታች ያንሸራትቱ</string>
-    <string name="title_pref_shortcut_edge_left_top_right">ከግራኛው ጫፍ ወደ ቀኝ ያንሸራትቱ, ግማሽ ላይ</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">ከግራ ጠርዝ ወደ ቀኝ በረጅሙ ያንሸራትቱ ፣ ግማሽ ላይ</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">ከላይ ግራ ወደ ታች ረጅም ማንሸራተት</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">ከላይ ቀኝ ወደ ታች ረጅም ማንሸራተት</string>
+    <string name="title_pref_shortcut_edge_left_top_right">ከግራ ጠርዝ ወደ ቀኝ ያንሸራትቱ፣ የላይኛው ግማሽ</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">ከግራ ጠርዝ ወደ ቀኝ ረጅም ማንሸራተት፣ የላይኛው ግማሽ</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">ከግራ ጠርዝ ወደ ቀኝ ያንሸራትቱ, የታችኛው ግማሽ</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">ከግራ ጠርዝ ወደ ቀኝ በረጅሙ ያንሸራትቱ ፣ የታችኛው ግማሽ</string>
-    <string name="title_pref_shortcut_edge_right_top_left">ከቀኝ ጠርዝ ወደ ግራ ያንሸራትቱ, ግማሽ ላይ</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">ከቀኝ ጠርዝ ወደ ግራ ረጅም ያንሸራትቱ፣ ከላይ ግማሽ</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">ከግራ ጠርዝ ወደ ቀኝ ረጅም ማንሸራተት፣ የታችኛው ግማሽ</string>
+    <string name="title_pref_shortcut_edge_right_top_left">ከቀኝ ጠርዝ ወደ ግራ ያንሸራትቱ፣ የላይኛው ግማሽ</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">ከቀኝ ጠርዝ ወደ ግራ ረጅም ማንሸራተት፣ የላይኛው ግማሽ</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">ከቀኝ ጠርዝ ወደ ግራ ያንሸራትቱ, የታችኛው ግማሽ</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">ከቀኝ ጠርዝ ወደ ግራ ረጅም ያንሸራትቱ ፣ የታችኛው ግማሽ</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">ከቀኝ ጠርዝ ወደ ግራ ረጅም ማንሸራተት፣ የታችኛው ግማሽ</string>
     <string name="title_pref_edge_first_click_mm">መጀመሪያ ጠቅ ለማድረግ ርቀት</string>
     <string name="title_pref_edge_second_click_mm">ከመጀመሪያው እስከ ሁለተኛ ጠቅታ ያለው ርቀት</string>
     <string name="value_distance_5mm">0.5 ሴ.ሜ</string>
@@ -1737,19 +1737,19 @@
     <string name="value_distance_40mm">4 ሴ.ሜ</string>
     <string name="value_distance_50mm">5 ሴ.ሜ</string>
     <string name="title_pref_selector_links_controls_web_only">አገናኞች እና መቆጣጠሪያዎች በድር ይዘት ውስጥ ብቻ</string>
-    <string name="title_pref_selector_auto_switch">የንባብ ቁጥጥርን በራስ-ሰር ይቀይሩ</string>
+    <string name="title_pref_selector_auto_switch">የንባብ መቆጣጠሪያን በራስ-ሰር ቀይር</string>
     <string name="title_pref_touch_stops_speech">ማያ ገጹን ሲነኩ ንግግርን ያቁሙ</string>
     <string name="title_pref_volume_keys_move_cursor">የድምጽ ቁልፎች ጠቋሚውን ያንቀሳቅሳሉ</string>
-    <string name="summary_pref_volume_keys_move_cursor">የጽሑፍ መስክ ትኩረት ሲኖረው የድምጽ መጨመሪያ ጠቋሚውን አንድ ቁምፊ ወደ ኋላ ያንቀሳቅሰዋል እና ድምጽ ወደ ታች ያንቀሳቅሰዋል</string>
+    <string name="summary_pref_volume_keys_move_cursor">የጽሑፍ መስክ ትኩረት ሲኖረው፣ ድምፅ ጨምር ጠቋሚውን አንድ ቁምፊ ወደ ኋላ፣ ድምፅ ቀንስ ደግሞ አንድ ቁምፊ ወደ ፊት ያንቀሳቅሳል</string>
     <string name="title_keyboard_echo_handwriting_keyboard">የእጅ ጽሑፍ ቁልፍ ሰሌዳ አስተጋባ</string>
     <string name="image_qna_ask_by_voice">በድምጽ ይጠይቁ</string>
     <string name="image_qna_stop_listening">ማዳመጥ አቁም</string>
     <string name="image_qna_type_question">ጥያቄ ይተይቡ</string>
     <string name="shortcut_dictate">በቃል አስጽፍ</string>
-    <string name="title_pref_ai_dictation">ከ AI ጋር ትክክለኛ መግለጫ</string>
-    <string name="dictation_not_corrected">አልተስተካከለም። እንደታወቀ የተተየበው።</string>
-    <string name="dictation_nothing_recognized">ምንም የታወቀ ነገር የለም።</string>
-    <string name="dictation_unavailable">የንግግር ማወቂያ የለም።</string>
+    <string name="title_pref_ai_dictation">መግለጫን በAI አስተካክል</string>
+    <string name="dictation_not_corrected">አልተስተካከለም። እንደተለየው ተተይቧል።</string>
+    <string name="dictation_nothing_recognized">ምንም የታወቀ ነገር የለም</string>
+    <string name="dictation_unavailable">የንግግር ማወቂያ የለም</string>
     <string name="dictation_field_gone">የጽሑፍ መስክ ተዘግቷል። ምንም የተተየበ የለም።</string>
     <string name="dictation_transcription_failed">ንግግሩ ወደ ጽሑፍ አልተቀየረም። ምንም የተተየበ የለም።</string>
     <string name="title_pref_dictation">በቃል ማስጻፍ</string>
@@ -1769,9 +1769,9 @@
     <string name="dictation_ai_same">ከራስ-ሰር መግለጫዎች ጋር ተመሳሳይ</string>
     <string name="title_pref_browse_mode_per_app">በእያንዳንዱ መተግበሪያ ውስጥ የአሰሳ ሁነታን ያስታውሱ</string>
     <string name="title_pref_export_settings">ቅንጅቶችን ወደ ውጪ ላክ</string>
-    <string name="title_pref_import_settings">አስመጣ ቅንብሮች</string>
-    <string name="settings_export_done">ቅንብሮች ወደ ውጭ ተልከዋል። የኤፒአይ ቁልፎች አልተካተቱም።</string>
+    <string name="title_pref_import_settings">ቅንብሮችን አስመጣ</string>
+    <string name="settings_export_done">ቅንብሮች ወደ ውጭ ተልከዋል። የኤፒአይ ቁልፎች አልተካተቱም</string>
     <string name="settings_export_failed">ቅንብሮችን ወደ ውጭ መላክ አልተቻለም</string>
-    <string name="settings_import_done">ቅንብሮች መጥተዋል።</string>
+    <string name="settings_import_done">ቅንብሮች ገብተዋል</string>
     <string name="settings_import_failed">ይህ ፋይል SandFly ወይም Backtalk የቅንብር ፋይል አይደለም፣ ወይም ሊነበብ አይችልም</string>
 </resources>

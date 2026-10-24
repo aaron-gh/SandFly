@@ -40,7 +40,7 @@
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. सिर्फ़ भरोसेमंद स्क्रिप्ट को अनुमति दें.</string>
     <string name="script_permission_screen">स्क्रीन पढ़ना</string>
     <string name="script_permission_actions">क्लिक करना, स्क्रोल करना, टाइप करना और फ़ोकस बदलना</string>
-    <string name="script_permission_speech">SandFly की बोली पढ़ना और बदलना</string>
+    <string name="script_permission_speech">SandFly की बोली पाना और बदलना</string>
     <string name="script_permission_passwords">पासवर्ड फ़ील्ड पढ़ना</string>
     <string name="script_permission_input">जेस्चर, कुंजियां, मेन्यू आइटम और टेक्स्ट पढ़ने से जुड़े कंट्रोल जोड़ना</string>
     <string name="script_permission_network">इंटरनेट इस्तेमाल करना</string>
@@ -59,7 +59,7 @@
     <string name="script_button_off">पहले स्क्रिप्ट चालू करें</string>
     <string name="script_permissions_summary">किसी अनुमति को बंद करने पर, उसकी ज़रूरत वाले हिस्से काम करना बंद कर देते हैं.</string>
     <string name="script_install_permissions_note">आप इन्हें बाद में बंद कर सकते हैं.</string>
-    <string name="script_manage_category">मैनेज करें</string>
+    <string name="script_manage_category">प्रबंधन</string>
     <string name="script_move_up">पहले चलाएं</string>
     <string name="script_move_down">बाद में चलाएं</string>
     <string name="script_order_summary">एक ही बोली को बदलने वाली स्क्रिप्ट का क्रम. ऐप्लिकेशन स्क्रिप्ट पहले चलती हैं.</string>
@@ -80,7 +80,7 @@
     <string name="script_api_untested">स्क्रिप्ट API <xliff:g id="tested">%1$d</xliff:g> तक टेस्ट की गई. इस SandFly में <xliff:g id="current">%2$d</xliff:g> है, इसलिए हो सकता है कि यह उम्मीद के मुताबिक काम न करे.</string>
     <string name="script_state_incompatible">हो सकता है कि यह इस SandFly के साथ काम न करे</string>
     <string name="script_api_range">स्क्रिप्ट API <xliff:g id="min">%1$d</xliff:g> से <xliff:g id="tested">%2$d</xliff:g> तक</string>
-    <string name="script_compatibility_title">काम करने की क्षमता</string>
+    <string name="script_compatibility_title">संगतता</string>
     <string name="script_install_anyway">फिर भी इंस्टॉल करें</string>
     <string name="script_update_anyway">फिर भी अपडेट करें</string>
     <string name="script_homepage">होम पेज खोलें</string>
@@ -140,14 +140,14 @@
     <string name="script_source_remove_message">इससे इंस्टॉल की गई स्क्रिप्ट इंस्टॉल रहती हैं.</string>
     <string name="scripts_auto_update">स्क्रिप्ट स्वचालित रूप से अपडेट करें</string>
     <string name="scripts_check_updates">अपडेट देखें</string>
-    <string name="scripts_checking_updates">अपडेट की जांच की जा रही है...</string>
+    <string name="scripts_checking_updates">अपडेट की जांच की जा रही है…</string>
     <string name="scripts_updates_category">अद्यतन</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> स्क्रिप्ट अपडेट की गई: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> स्क्रिप्ट अपडेट की गईं: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">अद्यतनों को अद्यतन के अंतर्गत सूचीबद्ध किया गया है</string>
+    <string name="scripts_updates_to_approve">अपडेट “अद्यतन” के अंतर्गत दिखाए जाते हैं</string>
     <string name="scripts_update_check_failed">कुछ स्रोतों की जाँच नहीं की जा सकी</string>
     <string name="scripts_up_to_date">सभी स्क्रिप्ट अद्यतित हैं</string>
 </resources>

@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- SandFly-specific Czech translations for on-device AI. -->
     <string name="title_pref_on_device_ai">AI v zařízení</string>
-    <string name="summary_pref_on_device_ai">Popisujte obrázky a obrazovku modelem v tomto telefonu bez klíče API</string>
+    <string name="summary_pref_on_device_ai">Popis obrázku a obrazovky modelem v tomto telefonu, bez klíče API</string>
     <string name="pref_on_device_ai_enable">Používat AI v zařízení</string>
     <string name="pref_on_device_ai_enable_summary">Obrázky a snímky obrazovky se popisují v tomto telefonu a nikdy se neodesílají Googlu. Je to pomalejší než cloud a spotřebovává více baterie.</string>
     <string name="pref_on_device_ai_enable_needs_model">Nejprve stáhněte nebo importujte model.</string>
@@ -37,7 +37,7 @@
         <item quantity="few">Staženy %1$d modely</item>
         <item quantity="other">Staženo %1$d modelů</item>
     </plurals>
-    <string name="title_pref_manage_models">Spravovat modely</string>
+    <string name="title_pref_manage_models">Správa modelů</string>
     <string name="manage_models_storage_used">Modely využívají %1$s úložiště.</string>
     <string name="manage_models_empty">Nejsou staženy žádné modely.</string>
     <string name="manage_models_unfinished">%1$s, nedokončené stahování</string>

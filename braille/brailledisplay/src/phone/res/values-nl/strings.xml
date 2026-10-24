@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">Systeemacties</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Terug, start, meldingen en meer</string>
   <string name="bd_commands_bindings_category_talkback_features_title">SandFly-functies</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menu\'s en instellingen</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly-menu\'s en -instellingen</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Braille-instellingen</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Brailletaal en -instellingen</string>
   <string name="bd_commands_bindings_category_text_editing_title">Tekstverwerking</string>
@@ -323,12 +323,12 @@
     <string name="external_display_channel">Brailleleesregels van andere apps</string>
     <string name="external_display_ask_title">Toestaan dat <xliff:g id="app" example="Notetaker">%1$s</xliff:g> een brailleleesregel is voor SandFly?</string>
     <string name="external_display_ask_text">SandFly zal het pas gebruiken als je het toestaat.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> kan alles wat SandFly toont in braille lezen, wat alles op het scherm kan zijn, inclusief berichten en wat u typt. Het zal uw apparaat ook kunnen bedienen zoals u dat kunt met een brailleleesregel: typ, open apps en voer elk SandFly-commando uit. Sta alleen apps toe die u vertrouwt.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> kan alles lezen wat SandFly in braille toont. Dat kan alles op het scherm zijn, waaronder berichten en wat je typt. De app kan je apparaat ook bedienen zoals jij dat met een brailleleesregel kunt: typen, apps openen en elk SandFly-commando uitvoeren. Sta alleen apps toe die je vertrouwt.</string>
     <string name="external_display_allow">Toestaan</string>
     <string name="external_display_deny">Niet toestaan</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> is uw brailleleesregel</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> is je brailleleesregel</string>
     <string name="external_display_in_use_text">Terwijl SandFly het gebruikt, kan <xliff:g id="app" example="Notetaker">%1$s</xliff:g> het scherm lezen en het apparaat bedienen.</string>
-    <string name="external_displays_title">Weergaven van andere apps</string>
+    <string name="external_displays_title">Leesregels van andere apps</string>
     <string name="external_displays_summary">Apps die u toestaat, kunnen brailleleesregels zijn voor SandFly. Een app die een brailleleesregel is, kan het scherm lezen en het apparaat bedienen.</string>
     <string name="external_displays_none">Geen enkele app kan een brailleleesregel zijn.</string>
 </resources>

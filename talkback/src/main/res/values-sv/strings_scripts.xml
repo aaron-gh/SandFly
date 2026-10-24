@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_scripts">Manus</string>
+    <string name="title_pref_scripts">Skript</string>
     <string name="summary_pref_scripts">Ändra hur SandFly fungerar i appar</string>
     <string name="script_import">Importera skript</string>
     <string name="script_install_label">Installera SandFly-skriptet</string>
     <string name="script_import_nothing">Det finns ingen skriptfil att installera.</string>
     <string name="script_import_cannot_open">Filen kunde inte öppnas.</string>
-    <string name="script_import_repository">Denna länk är till ett helt arkiv. Öppna det skript du vill ha och dela sedan dess länk.</string>
+    <string name="script_import_repository">Den här länken går till ett helt arkiv. Öppna skriptet du vill ha och dela sedan dess länk.</string>
     <string name="script_import_summary">.lua-fil eller .zip med main.lua</string>
     <string name="scripts_category_app">App-skript</string>
     <string name="scripts_category_global">Globala plugins</string>
     <string name="scripts_none">Inga skript installerade</string>
     <string name="scripts_all_off">Stäng av alla skript</string>
-    <string name="scripts_all_off_summary">Skript förblir installerade och behåller sina egna switchar. Gesten Slå på eller av alla skript gör detsamma.</string>
+    <string name="scripts_all_off_summary">Skripten förblir installerade och behåller sina egna reglage. Rörelsen ”Slå på eller av alla skript” gör samma sak.</string>
     <string name="shortcut_toggle_scripts">Slå på eller av alla skript</string>
     <string name="scripts_now_off">Skript av</string>
     <string name="scripts_now_on">Skript på</string>
     <string name="scripts_unavailable">Skript är inte tillgängliga på den här enheten</string>
     <string name="script_add_example">Lägg till exempelskriptet</string>
-    <string name="script_add_example_summary">Säger namnet på varje app du byter till. Ett manus att utgå ifrån.</string>
+    <string name="script_add_example_summary">Säger namnet på varje app du byter till. Ett skript att utgå från.</string>
     <string name="script_state_on">På</string>
     <string name="script_state_off">Av</string>
     <string name="script_runs_in">Körs i <xliff:g id="apps">%1$s</xliff:g></string>
@@ -31,39 +31,39 @@
     <string name="script_install_button">Installera</string>
     <string name="script_update_title">Uppdatera <xliff:g id="name">%1$s</xliff:g> till <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nya behörigheter:</string>
-    <string name="script_update_button">Uppdatering</string>
-    <string name="script_update_replaces">Detta ersätter version <xliff:g id="version">%1$s</xliff:g> med <xliff:g id="author">%2$s</xliff:g> och behåller dess data och inställningar.</string>
-    <string name="script_update_other_author">Den nya är av <xliff:g id="author">%1$s</xliff:g>, en annan författare. Uppdatera bara om du litar på det.</string>
+    <string name="script_update_button">Uppdatera</string>
+    <string name="script_update_replaces">Detta ersätter version <xliff:g id="version">%1$s</xliff:g> av <xliff:g id="author">%2$s</xliff:g> och behåller dess data och inställningar.</string>
+    <string name="script_update_other_author">Det nya är av <xliff:g id="author">%1$s</xliff:g>, en annan författare. Uppdatera bara om du litar på det.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> installerat</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> uppdaterad till <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Importen misslyckades. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Tillåt endast betrodda skript.</string>
-    <string name="script_permission_screen">Läs skärmen</string>
-    <string name="script_permission_actions">Klicka, rulla, skriv och flytta fokus</string>
-    <string name="script_permission_speech">Hör och ändra SandFlys tal</string>
-    <string name="script_permission_passwords">Läs lösenordsfält</string>
-    <string name="script_permission_input">Lägg till gester, nycklar, menyalternativ och läskontroller</string>
-    <string name="script_permission_network">Använd internet</string>
-    <string name="script_permission_clipboard">Läs och ändra urklipp</string>
-    <string name="script_permission_system">Gå tillbaka eller hem, öppna aviseringar och appar</string>
-    <string name="script_permission_notifications">Läs och ändra talade meddelanden</string>
-    <string name="script_permission_events">Se all aktivitet i varje app, inklusive att skriva</string>
-    <string name="script_permission_dialogs">Visa dialogrutor över valfri app</string>
-    <string name="script_permission_java">Kör Java-kod med alla SandFlys åtkomst, i varje app</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Tillåt bara för betrodda skript.</string>
+    <string name="script_permission_screen">Läsa skärmen</string>
+    <string name="script_permission_actions">Klicka, rulla, skriva och flytta fokus</string>
+    <string name="script_permission_speech">Ta emot och ändra SandFlys tal</string>
+    <string name="script_permission_passwords">Läsa lösenordsfält</string>
+    <string name="script_permission_input">Lägga till gester, tangenter, menyalternativ och läskontroller</string>
+    <string name="script_permission_network">Använda internet</string>
+    <string name="script_permission_clipboard">Läsa och ändra urklipp</string>
+    <string name="script_permission_system">Gå tillbaka eller till startskärmen, öppna aviseringar och appar</string>
+    <string name="script_permission_notifications">Läsa och ändra aviseringar som läses upp</string>
+    <string name="script_permission_events">Se all aktivitet i alla appar, inklusive inskrivning</string>
+    <string name="script_permission_dialogs">Visa dialogrutor ovanpå alla appar</string>
+    <string name="script_permission_java">Köra Java-kod med all åtkomst som SandFly har, i alla appar</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Aktivera</string>
     <string name="script_permissions_title">Behörigheter</string>
     <string name="script_permissions_none">Inget</string>
     <string name="script_settings_category">Inställningar</string>
     <string name="script_list_filter">Filtrera</string>
-    <string name="script_button_off">Slå på manuset först</string>
-    <string name="script_permissions_summary">Att stänga av en stoppar de delar som behöver det.</string>
+    <string name="script_button_off">Aktivera skriptet först</string>
+    <string name="script_permissions_summary">Om du stänger av en behörighet stoppas de delar som behöver den.</string>
     <string name="script_install_permissions_note">Du kan stänga av dessa senare.</string>
-    <string name="script_manage_category">Hantera</string>
-    <string name="script_move_up">Spring tidigare</string>
+    <string name="script_manage_category">Hantering</string>
+    <string name="script_move_up">Kör tidigare</string>
     <string name="script_move_down">Kör senare</string>
-    <string name="script_order_summary">Beställ för manus som ändrar samma tal. Appskript körs först.</string>
-    <string name="script_log">Logga</string>
+    <string name="script_order_summary">Ordning för skript som ändrar samma tal. Appskript körs först.</string>
+    <string name="script_log">Logg</string>
     <string name="script_log_summary">Utdata och fel sedan SandFly startade</string>
     <string name="script_clear_storage">Rensa lagrad data</string>
     <string name="script_storage_cleared">Lagrade data raderade</string>
@@ -76,9 +76,9 @@
     <string name="script_log_copy">Kopiera logg</string>
     <string name="script_log_copied">Loggen kopierad</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Behöver script API <xliff:g id="needed">%1$d</xliff:g> eller senare. Denna SandFly har <xliff:g id="current">%2$d</xliff:g>, så delar kanske inte fungerar.</string>
-    <string name="script_api_untested">Testat upp till script API <xliff:g id="tested">%1$d</xliff:g>. Denna SandFly har <xliff:g id="current">%2$d</xliff:g>, så den kanske inte fungerar som förväntat.</string>
-    <string name="script_state_incompatible">Fungerar kanske inte med denna SandFly</string>
+    <string name="script_api_too_old">Kräver skript-API <xliff:g id="needed">%1$d</xliff:g> eller senare. Den här SandFly-versionen har <xliff:g id="current">%2$d</xliff:g>, så vissa delar kanske inte fungerar.</string>
+    <string name="script_api_untested">Testat upp till skript-API <xliff:g id="tested">%1$d</xliff:g>. Den här SandFly-versionen har <xliff:g id="current">%2$d</xliff:g>, så skriptet kanske inte fungerar som förväntat.</string>
+    <string name="script_state_incompatible">Fungerar kanske inte med den här versionen av SandFly</string>
     <string name="script_api_range">Skript-API <xliff:g id="min">%1$d</xliff:g> till <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Kompatibilitet</string>
     <string name="script_install_anyway">Installera ändå</string>
@@ -86,25 +86,25 @@
     <string name="script_homepage">Öppna hemsidan</string>
     <string name="script_homepage_confirm_title">Öppna den här adressen?</string>
     <string name="script_homepage_open">Öppna</string>
-    <string name="script_homepage_failed">Ingen app kan öppnas <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> avstängd efter upprepade fel. Se dess inloggning i Skript.</string>
+    <string name="script_homepage_failed">Ingen app kan öppna <xliff:g id="address">%1$s</xliff:g></string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> stängdes av efter upprepade fel. Se loggen under Skript.</string>
     <string name="shortcut_inspect_item">Inspektera fokuserat objekt</string>
     <string name="script_inspect_no_item">Inget objekt har fokus</string>
-    <string name="script_inspect_copied">Kopierade. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Inget id, så regler kan inte namnge det. Kopierade. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_copied">Kopierat. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Inget id, så regler kan inte hänvisa till det. Kopierat. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopiera skärmträd</string>
-    <string name="script_tree_copied">Kopierade <xliff:g id="count">%1$d</xliff:g> objekt</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> objekt kopierade</string>
     <string name="script_tree_none">Inget fönster att kopiera</string>
     <string name="script_tree_clip_label">Skärmträd</string>
-    <string name="summary_copy_screen_tree_menu">Kopiera alla objekt på skärmen som JSON för att skriva skript.</string>
-    <string name="script_inspect_clip_label">Artikeldetaljer</string>
-    <string name="summary_inspect_item_menu">Läs upp och kopiera information om objektet du befann dig på, för att skriva skript.</string>
-    <string name="script_keys_backtalk_modifier">SandFly modifierare</string>
+    <string name="summary_copy_screen_tree_menu">Kopiera alla objekt på skärmen som JSON, för att skriva skript</string>
+    <string name="script_inspect_clip_label">Objektdetaljer</string>
+    <string name="summary_inspect_item_menu">Läsa upp och kopiera information om objektet som senast var i fokus, för att skriva skript</string>
+    <string name="script_keys_backtalk_modifier">SandFly-modifierartangent</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, sedan <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Kommandon</string>
-    <string name="script_commands_summary">Gestures and keys of a running script come before SandFly\'s. Stäng av en för att behålla SandFlys.</string>
+    <string name="script_commands_summary">Rörelser och tangenter i ett skript som körs går före SandFlys. Stäng av skriptets för att behålla SandFlys.</string>
     <string name="script_binding_gesture">Gest: <xliff:g id="gesture">%1$s</xliff:g></string>
-    <string name="script_binding_keys">Nycklar: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_keys">Tangenter: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly-menyn</string>
     <string name="script_binding_control">Läsinställningar</string>
     <string name="script_binding_none">Inget</string>
@@ -112,23 +112,23 @@
     <string name="script_binding_turn_off">Inaktivera</string>
     <string name="script_binding_restore">Återställ standardinställningar</string>
     <string name="script_binding_restored">Standardvärden återställda</string>
-    <string name="script_binding_perform">Utför gester eller nycklar</string>
-    <string name="script_binding_perform_summary">Tilldela nästa gest eller de tangenter som trycks med SandFly-tangenten.</string>
+    <string name="script_binding_perform">Utför en gest eller tryck på tangenter</string>
+    <string name="script_binding_perform_summary">Tilldela nästa rörelse eller tangenter som trycks med SandFly-modifierartangenten</string>
     <string name="script_binding_perform_message">Gör gesten eller tryck på tangenterna.</string>
     <string name="script_binding_assign_title">Tilldela <xliff:g id="binding">%1$s</xliff:g> till <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Tilldela</string>
     <string name="script_binding_choose_gesture">Välj gest</string>
-    <string name="script_binding_type_keys">Skriv nycklar</string>
+    <string name="script_binding_type_keys">Skriv tangenter</string>
     <string name="script_binding_type_keys_summary">Som sf+shift+n, eller sf+t, s</string>
-    <string name="script_binding_bad_keys">Kan inte använda dessa nycklar. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_install_adds">Det tilläggs:</string>
+    <string name="script_binding_bad_keys">Dessa tangenter kan inte användas. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_install_adds">Det lägger till:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Skriptkällor</string>
     <string name="script_sources_none">Inga källor har lagts till</string>
     <string name="script_source_add">Lägg till källa</string>
     <string name="script_source_add_button">Lägg till</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">Det här är inte adressen till ett kodförråd på GitHub, GitLab, Codeberg, Gitea eller Bitbucket.</string>
+    <string name="script_source_invalid">Inte adressen till ett arkiv på GitHub, GitLab, Codeberg, Gitea eller Bitbucket.</string>
     <string name="script_source_exists">Denna källa har redan lagts till.</string>
     <string name="script_source_loading">Läser in</string>
     <string name="script_source_empty">Inga skript i den här källan</string>
@@ -137,17 +137,17 @@
     <string name="script_source_downloading">Laddar ner <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">Ta bort källan</string>
     <string name="script_source_remove_title">Ta bort <xliff:g id="name">%1$s</xliff:g>?</string>
-    <string name="script_source_remove_message">Skript som installeras från den förblir installerade.</string>
+    <string name="script_source_remove_message">Skript som har installerats från den förblir installerade.</string>
     <string name="scripts_auto_update">Uppdatera skript automatiskt</string>
     <string name="scripts_check_updates">Sök efter uppdateringar</string>
-    <string name="scripts_checking_updates">Söker efter uppdateringar...</string>
+    <string name="scripts_checking_updates">Söker efter uppdateringar…</string>
     <string name="scripts_updates_category">Uppdateringar</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> skript uppdaterat: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skript uppdaterade: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Uppdateringar listas under Uppdateringar</string>
+    <string name="scripts_updates_to_approve">Uppdateringar listas under ”Uppdateringar”</string>
     <string name="scripts_update_check_failed">Vissa källor kunde inte kontrolleras</string>
     <string name="scripts_up_to_date">Alla skript är uppdaterade</string>
 </resources>

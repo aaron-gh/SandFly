@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Édition granulaire</string>
+    <string name="granular_editing_title">Édition par morceaux</string>
     <string name="granular_editing_split_by">Découper par : <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
     <string name="granular_editing_split_by_title">Découper par</string>
     <string name="granular_editing_characters">Caractères</string>
@@ -11,7 +11,7 @@
     <string name="granular_editing_space">Espace</string>
     <string name="granular_editing_new_line">Nouvelle ligne</string>
     <string name="granular_editing_tab">Tabulation</string>
-    <string name="granular_editing_empty">Pas de texte. Utilisez Ajouter du texte à la fin, dans Plus.</string>
+    <string name="granular_editing_empty">Aucun texte. Utilisez « Ajouter du texte à la fin » dans « Plus ».</string>
     <string name="granular_editing_edit">Modifier</string>
     <string name="granular_editing_insert_before">Insérer avant</string>
     <string name="granular_editing_insert_after">Insérer après</string>
@@ -24,7 +24,7 @@
     <string name="granular_editing_undo">Annuler</string>
     <string name="granular_editing_redo">Rétablir</string>
     <string name="granular_editing_find">Rechercher</string>
-    <string name="granular_editing_find_next">Rechercher ensuite</string>
+    <string name="granular_editing_find_next">Rechercher le suivant</string>
     <string name="granular_editing_replace">Remplacer</string>
     <string name="granular_editing_replace_with">Remplacer par</string>
     <string name="granular_editing_replace_all">Remplacer tout</string>
@@ -34,17 +34,17 @@
     <string name="granular_editing_delete_selected">Supprimer la sélection</string>
     <string name="granular_editing_copied">Copié</string>
     <string name="granular_editing_deleted">Supprimé</string>
-    <string name="granular_editing_not_found">Pas trouvé</string>
+    <string name="granular_editing_not_found">Introuvable</string>
     <plurals name="granular_editing_replaced">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> remplacé</item>
-        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> remplacé</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> remplacé</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> remplacés</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> remplacés</item>
     </plurals>
     <string name="granular_editing_save_changes">Enregistrer les modifications ?</string>
     <string name="granular_editing_copy_changes">Copier le texte modifié ?</string>
-    <string name="granular_editing_discard">Supprimer</string>
+    <string name="granular_editing_discard">Ignorer</string>
     <string name="granular_editing_keep_editing">Continuer à modifier</string>
-    <string name="granular_editing_not_saved">Non enregistré : le champ de texte a disparu. Le texte est copié.</string>
+    <string name="granular_editing_not_saved">Non enregistré : le champ de texte n\'existe plus. Le texte a été copié.</string>
     <string name="granular_editing_no_text">Aucun texte à modifier</string>
     <string name="granular_editing_password">Non disponible dans les champs de mot de passe</string>
 </resources>

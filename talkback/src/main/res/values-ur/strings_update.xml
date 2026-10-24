@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_check_for_updates">اپ ڈیٹس کے لیے چیک کریں۔</string>
-    <string name="summary_pref_check_for_updates_version">ورژن <xliff:g id="version" example="0.1.0">%1$s</xliff:g>، تعمیر <xliff:g id="build" example="96">%2$d</xliff:g></string>
-    <string name="title_pref_auto_update_check">اپ ڈیٹس کے لیے خودکار طور پر چیک کریں۔</string>
-    <string name="summary_pref_auto_update_check">دن میں ایک بار چیک کریں اور جب کوئی نئی تعمیر دستیاب ہو تو اطلاع دکھائیں۔</string>
-    <string name="title_pref_dev_builds">ترقی بنتی ہے۔</string>
-    <string name="update_notification_title">SandFly اپ ڈیٹ دستیاب ہے۔</string>
-    <string name="update_notification_text"><xliff:g id="build" example="97">%1$d</xliff:g> بنائیں۔ انسٹال کرنے کے لیے تھپتھپائیں۔</string>
-    <string name="update_dialog_title">SandFly بلڈ <xliff:g id="build" example="97">%1$d</xliff:g> دستیاب ہے۔</string>
-    <string name="update_dialog_install">انسٹال کریں۔</string>
-    <string name="update_checking">اپ ڈیٹس کی جانچ ہو رہی ہے۔</string>
-    <string name="update_up_to_date">SandFly اپ ٹو ڈیٹ ہے۔</string>
+    <string name="title_pref_check_for_updates">اپ ڈیٹس کے لیے چیک کریں</string>
+    <string name="summary_pref_check_for_updates_version">ورژن <xliff:g id="version" example="0.1.0">%1$s</xliff:g>، بلڈ <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">اپ ڈیٹس کے لیے خودکار طور پر چیک کریں</string>
+    <string name="summary_pref_auto_update_check">دن میں ایک بار چیک کرتا ہے اور نیا بلڈ دستیاب ہونے پر اطلاع دکھاتا ہے</string>
+    <string name="title_pref_dev_builds">ڈیولپمنٹ بلڈز</string>
+    <string name="update_notification_title">SandFly اپ ڈیٹ دستیاب ہے</string>
+    <string name="update_notification_text">بلڈ <xliff:g id="build" example="97">%1$d</xliff:g>۔ انسٹال کرنے کے لیے تھپتھپائیں۔</string>
+    <string name="update_dialog_title">SandFly بلڈ <xliff:g id="build" example="97">%1$d</xliff:g> دستیاب ہے</string>
+    <string name="update_dialog_install">انسٹال کریں</string>
+    <string name="update_checking">اپ ڈیٹس کی جانچ ہو رہی ہے</string>
+    <string name="update_up_to_date">SandFly اپ ٹو ڈیٹ ہے</string>
     <string name="update_check_failed">اپ ڈیٹس کی جانچ نہیں ہو سکی</string>
-    <string name="update_downloading">اپ ڈیٹ ڈاؤن لوڈ ہو رہا ہے۔</string>
-    <string name="update_already_downloading">اپ ڈیٹ پہلے ہی ڈاؤن لوڈ ہو رہا ہے۔</string>
-    <string name="update_ready_title">SandFly اپ ڈیٹ ڈاؤن لوڈ ہو گیا۔</string>
+    <string name="update_downloading">اپ ڈیٹ ڈاؤن لوڈ ہو رہا ہے</string>
+    <string name="update_already_downloading">اپ ڈیٹ پہلے ہی ڈاؤن لوڈ ہو رہا ہے</string>
+    <string name="update_ready_title">SandFly اپ ڈیٹ ڈاؤن لوڈ ہو گیا</string>
     <string name="update_ready_text">انسٹال کرنے کے لیے تھپتھپائیں۔</string>
     <string name="update_install_failed">اپ ڈیٹ انسٹال نہیں ہو سکا</string>
-    <string name="update_install_canceled">اپ ڈیٹ منسوخ کر دیا گیا۔</string>
-    <string name="update_allow_install">SandFly کو ایپس انسٹال کرنے کی اجازت دیں، پھر دوبارہ اپ ڈیٹ کرنے کی کوشش کریں۔</string>
+    <string name="update_install_canceled">اپ ڈیٹ منسوخ کر دیا گیا</string>
+    <string name="update_allow_install">SandFly کو ایپس انسٹال کرنے کی اجازت دیں، پھر دوبارہ اپ ڈیٹ کرنے کی کوشش کریں</string>
 </resources>

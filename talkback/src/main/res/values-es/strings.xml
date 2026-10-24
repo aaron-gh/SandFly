@@ -923,8 +923,8 @@
   <string name="turn_off_talkback">Desactivar SandFly</string>
   <string name="tap_again_to_turn_off">Toca de nuevo para desactivarlo</string>
   <string name="talkback_turn_off_description_pointer_and_touch">SandFly lee en voz alta el contenido de la pantalla y cambia la manera de navegar por el dispositivo. Para desactivarlo, selecciona Desactivar SandFly o tócalo 2 veces.</string>
-  <string name="welcome_to_talkback_text">SandFly proporciona mensajes de voz para que puedas usar tu dispositivo sin mirar la pantalla. SandFly puede ser útil para personas a quienes les cuesta ver la pantalla. \n\nSi quieres activar o desactivar SandFly rápidamente con las teclas de volumen, puedes configurar un acceso directo en Ajustes de SandFly &gt; Acceso directo a Talkback.\n\nCuando SandFly está activado, el elemento enfocado de la pantalla se lee en voz alta.\n\nSi deslizas hacia la derecha, irás al siguiente elemento, y si lo haces hacia la izquierda, volverás al anterior.\n\nDesliza el dedo hacia la derecha ahora para pasar al botón Siguiente.</string>
-  <string name="welcome_to_talkback_text_tts">SandFly proporciona mensajes de voz para que puedas usar tu dispositivo sin mirar la pantalla. SandFly puede ser útil para personas a quienes les cuesta ver la pantalla. \n\nSi quieres activar o desactivar SandFly rápidamente con las teclas de volumen, puedes configurar un acceso directo en Ajustes de SandFly y, a continuación, en Acceso directo a Talkback.\n\nCuando SandFly está activado, el elemento enfocado de la pantalla se lee en voz alta.\n\nSi deslizas hacia la derecha, irás al siguiente elemento, y si lo haces hacia la izquierda, volverás al anterior.\n\nDesliza el dedo hacia la derecha ahora para encontrar el siguiente botón.</string>
+  <string name="welcome_to_talkback_text">SandFly proporciona mensajes de voz para que puedas usar tu dispositivo sin mirar la pantalla. SandFly puede ser útil para personas a quienes les cuesta ver la pantalla. \n\nSi quieres activar o desactivar SandFly rápidamente con las teclas de volumen, puedes configurar un acceso directo en Ajustes de SandFly &gt; Acceso directo a SandFly.\n\nCuando SandFly está activado, el elemento enfocado de la pantalla se lee en voz alta.\n\nSi deslizas hacia la derecha, irás al siguiente elemento, y si lo haces hacia la izquierda, volverás al anterior.\n\nDesliza el dedo hacia la derecha ahora para pasar al botón Siguiente.</string>
+  <string name="welcome_to_talkback_text_tts">SandFly proporciona mensajes de voz para que puedas usar tu dispositivo sin mirar la pantalla. SandFly puede ser útil para personas a quienes les cuesta ver la pantalla. \n\nSi quieres activar o desactivar SandFly rápidamente con las teclas de volumen, puedes configurar un acceso directo en Ajustes de SandFly y, a continuación, en Acceso directo a SandFly.\n\nCuando SandFly está activado, el elemento enfocado de la pantalla se lee en voz alta.\n\nSi deslizas hacia la derecha, irás al siguiente elemento, y si lo haces hacia la izquierda, volverás al anterior.\n\nDesliza el dedo hacia la derecha ahora para encontrar el siguiente botón.</string>
   <string name="welcome_to_talkback_page_idle_announcement">Desliza hacia la derecha ahora para encontrar el siguiente botón</string>
   <string name="explore_by_touch_title">Arrastrar el dedo para explorar</string>
   <string name="explore_by_touch_text">También puedes seleccionar un elemento arrastrando el dedo por la pantalla.\n\nPruébalo ahora tocando la pantalla y arrastrando el dedo hacia la esquina inferior izquierda hasta que encuentres el botón Siguiente.</string>
@@ -1563,7 +1563,7 @@
     <string name="title_pref_speech_stream">Volumen de la voz</string>
     <string name="summary_selector_speech_stream">Cambiar entre los volúmenes de accesibilidad, medios, timbres y llamadas</string>
     <string name="speech_stream_accessibility">Volumen de accesibilidad</string>
-    <string name="speech_stream_media">Volumen de medios</string>
+    <string name="speech_stream_media">Volumen multimedia</string>
     <string name="speech_stream_ring">Volumen del timbre</string>
     <string name="speech_stream_call">Volumen de llamada, auricular</string>
     <string-array name="pref_speech_stream_entries">
@@ -1573,7 +1573,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_play_installer">Aparecer como instalado desde Google Play</string>
-    <string name="summary_pref_play_installer">Dile a otras aplicaciones que Google Play instaló SandFly. Algunas aplicaciones, como algunas aplicaciones bancarias, desactivan los servicios de accesibilidad que se instalaron desde cualquier otro lugar. Necesita Shizuku y cambia solo lo que se le dice a las aplicaciones sobre el origen de SandFly.</string>
+    <string name="summary_pref_play_installer">Indica a otras aplicaciones que SandFly se instaló desde Google Play. Algunas aplicaciones, como algunas aplicaciones bancarias, desactivan los servicios de accesibilidad instalados desde cualquier otro origen. Requiere Shizuku y solo cambia lo que se indica a las aplicaciones sobre el origen de SandFly.</string>
     <string name="summary_pref_play_installer_pending">Activado, pero Google Play aún no está registrado como instalador. SandFly lo establece cuando Shizuku está disponible.</string>
     <string name="notification_list_show_all">Mostrar todo</string>
     <string name="notification_list_show_less">Mostrar menos</string>
@@ -1596,7 +1596,7 @@
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Brillo</string>
     <string name="quick_settings_adaptive_brightness">Brillo adaptativo</string>
-    <string name="quick_settings_media_volume">Volumen de medios</string>
+    <string name="quick_settings_media_volume">Volumen multimedia</string>
     <string name="quick_settings_call_volume">Volumen de llamadas</string>
     <string name="quick_settings_ring_volume">Volumen del timbre</string>
     <string name="quick_settings_notification_volume">Volumen de notificaciones</string>
@@ -1612,13 +1612,13 @@
     <string name="quick_settings_camera_access">Acceso a la cámara</string>
     <string name="quick_settings_screen_timeout">Tiempo de espera de la pantalla</string>
     <string name="quick_settings_font_size">Tamaño de fuente</string>
-    <string name="quick_settings_media">Medios</string>
-    <string name="quick_settings_no_media">Sin medios</string>
-    <string name="quick_settings_media_output">Salida de medios</string>
+    <string name="quick_settings_media">Multimedia</string>
+    <string name="quick_settings_no_media">Sin contenido multimedia</string>
+    <string name="quick_settings_media_output">Salida multimedia</string>
     <string name="quick_settings_next_alarm">Próxima alarma</string>
     <string name="quick_settings_no_alarm">Sin alarma</string>
     <string name="quick_settings_settings">Ajustes</string>
-    <string name="quick_settings_power_menu">Menú de energía</string>
+    <string name="quick_settings_power_menu">Menú de encendido</string>
     <string name="quick_settings_add_system_tile">Agregar mosaico del sistema</string>
     <string name="quick_settings_no_system_tiles">No hay mosaicos del sistema para agregar</string>
     <string name="quick_settings_tile_not_found">%1$s no está en la configuración rápida del sistema</string>
@@ -1679,10 +1679,10 @@
     <string name="handwriting_not_recognized">No reconocido</string>
     <string name="handwriting_downloading">Se está descargando el reconocimiento de escritura a mano</string>
     <string name="handwriting_download_title">¿Descargar reconocimiento de escritura a mano?</string>
-    <string name="handwriting_download_message">La escritura a mano se reconoce en este teléfono. Su modelo para este idioma, de unos 20 MB, se descarga desde Google una vez. Un mensaje muestra cuando se ha descargado.</string>
+    <string name="handwriting_download_message">La escritura a mano se reconoce en este teléfono. Su modelo para este idioma, de unos 20 MB, se descarga una vez desde Google. Cuando se descarga, aparece un mensaje.</string>
     <string name="handwriting_download_button">Descargar</string>
     <string name="handwriting_downloaded">Reconocimiento de escritura descargado</string>
-    <string name="handwriting_download_failed">No se pudo descargar el reconocimiento de escritura a mano. Verifique la conexión a Internet.</string>
+    <string name="handwriting_download_failed">No se pudo descargar el reconocimiento de escritura a mano. Verifica la conexión a Internet.</string>
     <string name="handwriting_unsupported_language">El reconocimiento de escritura a mano no está disponible en este idioma</string>
     <string name="title_pref_handwriting_keyboard">Teclado de escritura a mano</string>
     <string name="summary_pref_handwriting_keyboard">Activa la escritura a mano SandFly en la configuración del teclado de Android</string>
@@ -1697,7 +1697,7 @@
     <string name="handwriting_keyboard_name">Escritura a mano de SandFly</string>
     <string name="handwriting_space">Espacio</string>
     <string name="handwriting_new_line">Nueva línea</string>
-    <string name="handwriting_tutorial_intro">Tutorial de teclado de escritura a mano. Escribe con un dedo en cualquier lugar de la pantalla. Lo que escribes se escribe cuando te detienes un momento. Para finalizar el tutorial, desliza hacia abajo con tres dedos.</string>
+    <string name="handwriting_tutorial_intro">Tutorial del teclado de escritura a mano. Escribe con un dedo en cualquier parte de la pantalla. Lo que escribes se introduce cuando te detienes un momento. Para terminar el tutorial, desliza tres dedos hacia abajo.</string>
     <string name="handwriting_tutorial_write_letter">Escribe la letra a.</string>
     <string name="handwriting_tutorial_write_word">Ahora escribe la palabra hi.</string>
     <string name="handwriting_tutorial_typed">Se ha escrito <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
@@ -1705,11 +1705,11 @@
     <string name="handwriting_tutorial_delete">Desliza dos dedos hacia la izquierda para eliminar el carácter que se encuentra antes del cursor.</string>
     <string name="handwriting_tutorial_deleted">Eliminado.</string>
     <string name="handwriting_tutorial_next_reading">Si se introduce otro carácter, por ejemplo una mayúscula, desliza dos dedos hacia arriba para elegir la siguiente sugerencia de reconocimiento. Pruébalo ahora.</string>
-    <string name="handwriting_tutorial_read_back">Toque con dos dedos para leer el texto antes del cursor.</string>
+    <string name="handwriting_tutorial_read_back">Toca con dos dedos para leer el texto antes del cursor.</string>
     <string name="handwriting_tutorial_new_line">Desliza dos dedos hacia abajo para insertar una nueva línea o ejecutar la acción del campo, como Enviar.</string>
     <string name="handwriting_tutorial_not_that">Ese fue otro gesto.</string>
-    <string name="handwriting_tutorial_done">Nueva línea. Tutorial terminado. Desliza tres dedos hacia abajo para ocultar el teclado y hacia la derecha o hacia la izquierda con tres dedos para cambiar de teclado. Para abrir el tutorial nuevamente, toque con tres dedos.</string>
-    <string name="handwriting_tutorial_finished">El tutorial finalizó. Para abrirlo nuevamente, toque con tres dedos.</string>
+    <string name="handwriting_tutorial_done">Nueva línea. Tutorial terminado. Desliza tres dedos hacia abajo para ocultar el teclado y hacia la derecha o la izquierda para cambiar de teclado. Para volver a abrir el tutorial, toca con tres dedos.</string>
+    <string name="handwriting_tutorial_finished">Tutorial terminado. Para volver a abrirlo, toca con tres dedos.</string>
     <string name="handwriting_no_alternatives">No hay otras sugerencias</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> de <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Vacío</string>
@@ -1718,18 +1718,18 @@
     <string name="shortcut_refresh">Actualizar</string>
     <string name="shortcut_system_quick_settings">Ajustes rápidos del sistema</string>
     <string name="shortcut_lock_screen">Bloquear la pantalla</string>
-    <string name="shortcut_power_menu">Menú de energía</string>
-    <string name="shortcut_increase_media_volume">Aumentar el volumen de medios</string>
-    <string name="shortcut_decrease_media_volume">Disminuir el volumen de medios</string>
+    <string name="shortcut_power_menu">Menú de encendido</string>
+    <string name="shortcut_increase_media_volume">Subir el volumen multimedia</string>
+    <string name="shortcut_decrease_media_volume">Bajar el volumen multimedia</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Deslizamiento largo hacia abajo desde la parte superior izquierda</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Deslizamiento largo hacia abajo desde la parte superior derecha</string>
-    <string name="title_pref_shortcut_edge_left_top_right">Desliza hacia la derecha desde el borde izquierdo, mitad superior</string>
+    <string name="title_pref_shortcut_edge_left_top_right">Deslizar hacia la derecha desde el borde izquierdo, mitad superior</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">Deslizamiento largo hacia la derecha desde el borde izquierdo, mitad superior</string>
-    <string name="title_pref_shortcut_edge_left_bottom_right">Desliza hacia la derecha desde el borde izquierdo, mitad inferior</string>
+    <string name="title_pref_shortcut_edge_left_bottom_right">Deslizar hacia la derecha desde el borde izquierdo, mitad inferior</string>
     <string name="title_pref_shortcut_edge_left_bottom_long_right">Deslizamiento largo hacia la derecha desde el borde izquierdo, mitad inferior</string>
-    <string name="title_pref_shortcut_edge_right_top_left">Desliza hacia la izquierda desde el borde derecho, mitad superior</string>
+    <string name="title_pref_shortcut_edge_right_top_left">Deslizar hacia la izquierda desde el borde derecho, mitad superior</string>
     <string name="title_pref_shortcut_edge_right_top_long_left">Deslizamiento largo hacia la izquierda desde el borde derecho, mitad superior</string>
-    <string name="title_pref_shortcut_edge_right_bottom_left">Desliza hacia la izquierda desde el borde derecho, mitad inferior</string>
+    <string name="title_pref_shortcut_edge_right_bottom_left">Deslizar hacia la izquierda desde el borde derecho, mitad inferior</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Deslizamiento largo hacia la izquierda desde el borde derecho, mitad inferior</string>
     <string name="title_pref_edge_first_click_mm">Distancia al primer clic</string>
     <string name="title_pref_edge_second_click_mm">Distancia del primer al segundo clic</string>
@@ -1740,9 +1740,9 @@
     <string name="value_distance_30mm">3 cm</string>
     <string name="value_distance_40mm">4 cm</string>
     <string name="value_distance_50mm">5 cm</string>
-    <string name="title_pref_selector_links_controls_web_only">Enlaces y Controles sólo en contenido web</string>
+    <string name="title_pref_selector_links_controls_web_only">Enlaces y Controles solo en contenido web</string>
     <string name="title_pref_selector_auto_switch">Cambiar el control de lectura automáticamente</string>
-    <string name="title_pref_touch_stops_speech">Dejar de hablar al tocar la pantalla</string>
+    <string name="title_pref_touch_stops_speech">Detener la voz al tocar la pantalla</string>
     <string name="title_pref_volume_keys_move_cursor">Las teclas de volumen mueven el cursor</string>
     <string name="summary_pref_volume_keys_move_cursor">Cuando un campo de texto tiene el foco, subir el volumen mueve el cursor hacia atrás un carácter y bajar el volumen lo mueve hacia adelante.</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Eco del teclado de escritura a mano</string>
@@ -1752,9 +1752,9 @@
     <string name="shortcut_dictate">Dictar</string>
     <string name="title_pref_ai_dictation">Corregir el dictado con IA</string>
     <string name="dictation_not_corrected">No se ha corregido. Se ha introducido el texto reconocido.</string>
-    <string name="dictation_nothing_recognized">Nada reconocido</string>
+    <string name="dictation_nothing_recognized">No se ha reconocido nada</string>
     <string name="dictation_unavailable">Reconocimiento de voz no disponible</string>
-    <string name="dictation_field_gone">Campo de texto cerrado. Nada escrito.</string>
+    <string name="dictation_field_gone">Campo de texto cerrado. No se ha escrito nada.</string>
     <string name="dictation_transcription_failed">No se transcribió la voz. No se escribió nada.</string>
     <string name="title_pref_dictation">Dictado</string>
     <string name="title_pref_dictation_rambler_live">Transcripción en directo de Rambler</string>

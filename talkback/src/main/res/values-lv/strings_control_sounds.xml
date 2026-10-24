@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Kontrolējiet skaņas un vibrācijas</string>
-    <string name="summary_pref_control_sounds">Piešķiriet katram vadības veidam, piemēram, pogām, izvēles rūtiņām, rediģēšanas laukiem un saraksta vienumiem, savu skaņu un savu vibrāciju no motīva fokusa skaņas un vibrācijas vietā, kā Unspoken to dara NVDA. Skaņa nāk no vietas, kur ekrānā atrodas vadīkla, un SandFly netiek norādīts, kāda veida vadīkla tā ir.</string>
-    <string name="title_pref_control_sounds_speak_roles">Joprojām saka veida kontrole</string>
-    <string name="summary_pref_control_sounds_speak_roles">Kad tiek atskaņota vadības skaņa, joprojām sakiet, kāda veida vadība tā ir, piemēram, poga. Tas ir paredzēts katrai skaņas tēmai.</string>
+    <string name="title_pref_control_sounds">Vadīklu skaņas un vibrācijas</string>
+    <string name="summary_pref_control_sounds">Katrs vadīklu veids, piemēram, pogas, izvēles rūtiņas, rediģēšanas lauki un saraksta vienumi, fokusa skaņas un vibrācijas vietā saņem savu skaņu un vibrāciju no motīva, kā to dara Unspoken programmai NVDA. Skaņa atskan no vadīklas atrašanās vietas ekrānā, un SandFly neizrunā vadīklas veidu.</string>
+    <string name="title_pref_control_sounds_speak_roles">Joprojām izrunāt vadīklas veidu</string>
+    <string name="summary_pref_control_sounds_speak_roles">Kad atskan vadīklas skaņa, vadīklas veids tomēr tiek izrunāts, piemēram, poga. Attiecas uz visiem skaņu motīviem.</string>
     <string name="title_pref_control_sounds_3d">3D audio</string>
     <string name="pref_control_sounds_3d_headphones">Ar austiņām</string>
     <string name="pref_control_sounds_3d_always">Vienmēr</string>
     <string name="pref_control_sounds_3d_never">Nekad, tikai pa kreisi un pa labi</string>
-    <string name="individual_sound_control_button">Skaņas vadība: poga</string>
-    <string name="individual_sound_control_checkbox">Kontrolēt skaņu: izvēles rūtiņa</string>
-    <string name="individual_sound_control_radio_button">Skaņas vadība: radio poga</string>
-    <string name="individual_sound_control_edit_text">Vadības skaņa: rediģēšanas lauks</string>
-    <string name="individual_sound_control_combo_box">Skaņas vadība: nolaižamais saraksts</string>
-    <string name="individual_sound_control_slider">Skaņas vadība: slīdnis</string>
-    <string name="individual_sound_control_link">Vadības skaņa: saite</string>
-    <string name="individual_sound_control_image">Vadības skaņa: attēls</string>
-    <string name="individual_sound_control_clock">Vadības skaņa: pulkstenis</string>
-    <string name="individual_sound_control_tab">Skaņas vadība: cilne</string>
-    <string name="individual_sound_control_menu_item">Vadības skaņa: izvēlnes vienums</string>
-    <string name="individual_sound_control_list_item">Vadības skaņa: saraksta vienums</string>
-    <string name="individual_sound_control_tree_item">Vadības skaņa: koka vienums</string>
+    <string name="individual_sound_control_button">Vadīklas skaņa: poga</string>
+    <string name="individual_sound_control_checkbox">Vadīklas skaņa: izvēles rūtiņa</string>
+    <string name="individual_sound_control_radio_button">Vadīklas skaņa: radio poga</string>
+    <string name="individual_sound_control_edit_text">Vadīklas skaņa: rediģēšanas lauks</string>
+    <string name="individual_sound_control_combo_box">Vadīklas skaņa: nolaižamais saraksts</string>
+    <string name="individual_sound_control_slider">Vadīklas skaņa: slīdnis</string>
+    <string name="individual_sound_control_link">Vadīklas skaņa: saite</string>
+    <string name="individual_sound_control_image">Vadīklas skaņa: attēls</string>
+    <string name="individual_sound_control_clock">Vadīklas skaņa: pulkstenis</string>
+    <string name="individual_sound_control_tab">Vadīklas skaņa: cilne</string>
+    <string name="individual_sound_control_menu_item">Vadīklas skaņa: izvēlnes vienums</string>
+    <string name="individual_sound_control_list_item">Vadīklas skaņa: saraksta vienums</string>
+    <string name="individual_sound_control_tree_item">Vadīklas skaņa: koka vienums</string>
 </resources>

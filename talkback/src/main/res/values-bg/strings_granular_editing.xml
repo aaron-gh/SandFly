@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Гранулирано редактиране</string>
+    <string name="granular_editing_title">Редактиране по части</string>
     <string name="granular_editing_split_by">Разделяне по: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
     <string name="granular_editing_split_by_title">Разделяне по</string>
     <string name="granular_editing_characters">Знаци</string>
@@ -11,10 +11,10 @@
     <string name="granular_editing_space">Интервал</string>
     <string name="granular_editing_new_line">Нов ред</string>
     <string name="granular_editing_tab">Символ табулация</string>
-    <string name="granular_editing_empty">Без текст. Използвайте Добавяне на текст в края, в Още.</string>
+    <string name="granular_editing_empty">Няма текст. Използвайте „Добавяне на текст в края“ в „Още“.</string>
     <string name="granular_editing_edit">Редактиране</string>
     <string name="granular_editing_insert_before">Вмъкнете преди</string>
-    <string name="granular_editing_insert_after">Вмъкнете след</string>
+    <string name="granular_editing_insert_after">Вмъкване след</string>
     <string name="granular_editing_delete">Изтриване</string>
     <string name="granular_editing_select">Избиране</string>
     <string name="granular_editing_unselect">Премахване на избора</string>
@@ -22,15 +22,15 @@
     <string name="granular_editing_save">Запазване</string>
     <string name="granular_editing_more">Още</string>
     <string name="granular_editing_undo">Отмяна</string>
-    <string name="granular_editing_redo">Повторете последната отменена редакция</string>
+    <string name="granular_editing_redo">Повторение</string>
     <string name="granular_editing_find">Намиране</string>
-    <string name="granular_editing_find_next">Намерете следващия</string>
-    <string name="granular_editing_replace">Сменете</string>
-    <string name="granular_editing_replace_with">Заменете с</string>
-    <string name="granular_editing_replace_all">Сменете всички</string>
-    <string name="granular_editing_add_at_end">Добавете текст в края</string>
+    <string name="granular_editing_find_next">Намиране на следващ</string>
+    <string name="granular_editing_replace">Замяна</string>
+    <string name="granular_editing_replace_with">Замяна с</string>
+    <string name="granular_editing_replace_all">Замяна на всички</string>
+    <string name="granular_editing_add_at_end">Добавяне на текст в края</string>
     <string name="granular_editing_clear_selection">Изчистване на избраното</string>
-    <string name="granular_editing_cut_selected">Изрежете избрания текст</string>
+    <string name="granular_editing_cut_selected">Изрязване на избрания текст</string>
     <string name="granular_editing_delete_selected">Изтриване на избраното</string>
     <string name="granular_editing_copied">Копирано</string>
     <string name="granular_editing_deleted">Изтрито</string>

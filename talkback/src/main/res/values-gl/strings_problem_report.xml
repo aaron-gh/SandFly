@@ -9,12 +9,12 @@
     <string name="dialog_message_problem_report_description">Que pasa e que esperabas.</string>
     <string name="title_pref_problem_report_steps">Pasos para reproducir</string>
     <string name="title_pref_problem_report_email">Correo electrónico para respostas</string>
-    <string name="title_pref_problem_report_device">Inclúe información do dispositivo</string>
-    <string name="title_pref_problem_report_log">Inclúe o rexistro SandFly</string>
+    <string name="title_pref_problem_report_device">Incluír información do dispositivo</string>
+    <string name="title_pref_problem_report_log">Incluír o rexistro de SandFly</string>
     <string name="summary_pref_problem_report_log">Pode conter texto da pantalla</string>
     <string name="title_pref_problem_report_send">Enviar</string>
     <string name="summary_pref_problem_report_sending">Enviando</string>
-    <string name="problem_report_missing_fields">Introduza un título e unha descrición.</string>
+    <string name="problem_report_missing_fields">Introduce un título e unha descrición.</string>
     <string name="problem_report_invalid_email">Introduce un enderezo de correo electrónico válido.</string>
     <string name="problem_report_sent">Comentarios enviados.</string>
     <string name="problem_report_rate_limited">Enviáronse demasiados comentarios. Téntao de novo máis tarde.</string>
@@ -22,32 +22,32 @@
     <string name="problem_report_not_sent">Comentarios non enviados. Téntao de novo máis tarde.</string>
     <string-array name="problem_report_type_entries">
         <item>Comportamento incorrecto</item>
-        <item>Choque</item>
-        <item>Lenta ou sen resposta</item>
+        <item>Peche inesperado</item>
+        <item>Lento ou non responde</item>
         <item>Suxestión</item>
     </string-array>
     <string-array name="problem_report_area_entries">
-        <item>Discurso</item>
+        <item>Voz</item>
         <item>Xestos</item>
         <item>Exploración táctil</item>
-        <item>Lectura de controis e menús</item>
-        <item>Mecanografía e teclados</item>
+        <item>Controis de lectura e menús</item>
+        <item>Escritura e teclados</item>
         <item>Teclado braille</item>
         <item>Liña braille</item>
-        <item>Sons e vibracións</item>
+        <item>Son e vibración</item>
         <item>Notificacións</item>
         <item>Contido web</item>
-        <item>Guións</item>
+        <item>Scripts</item>
         <item>Configuración</item>
         <item>Actualizacións</item>
-        <item>Outras</item>
+        <item>Outros</item>
     </string-array>
     <string name="title_report_new">Enviar comentarios</string>
     <string name="title_report_inbox">Caixa de entrada</string>
     <string name="title_report_drafts">Borradores</string>
     <string name="report_inbox_empty">Non se enviou ningún comentario</string>
     <string name="report_drafts_empty">Sen borradores</string>
-    <string name="report_just_now">xusto agora</string>
+    <string name="report_just_now">hai un momento</string>
     <string name="report_untitled">Sen título</string>
     <string name="report_draft_summary">Cambiou <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">enviado <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -66,7 +66,7 @@
     <string name="title_report_messages">Mensaxes</string>
     <string name="report_message_from_developer">Desenvolvedor, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">Ti, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Responder</string>
+    <string name="title_report_reply">Resposta</string>
     <string name="title_report_reply_text">A túa resposta</string>
     <string name="title_report_send_reply">Enviar resposta</string>
     <string name="report_reply_sent">Resposta enviada.</string>
@@ -76,9 +76,9 @@
     <string name="dialog_message_report_remove">As respostas xa non chegarán a este teléfono.</string>
     <string name="title_report_delete_draft">Eliminar borrador</string>
     <string name="dialog_title_report_delete_draft">Queres eliminar este borrador?</string>
-    <string name="button_report_delete">Elimina</string>
+    <string name="button_report_delete">Eliminar</string>
     <string name="report_missing">Este comentario xa non está na caixa de entrada.</string>
-    <string name="notification_channel_problem_reports">Respostas de comentarios</string>
-    <string name="report_notification_reply">Responder a <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="notification_channel_problem_reports">Respostas aos comentarios</string>
+    <string name="report_notification_reply">Resposta a <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

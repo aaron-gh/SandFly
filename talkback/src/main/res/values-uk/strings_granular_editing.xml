@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="granular_editing_title">Детальне редагування</string>
     <string name="granular_editing_split_by">Розділити за: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Розділити по</string>
+    <string name="granular_editing_split_by_title">Розділити за</string>
     <string name="granular_editing_characters">Символи</string>
     <string name="granular_editing_words">Слова</string>
     <string name="granular_editing_sentences">Речення</string>
@@ -11,40 +11,40 @@
     <string name="granular_editing_space">Пробіл</string>
     <string name="granular_editing_new_line">Новий рядок</string>
     <string name="granular_editing_tab">Символ табуляції</string>
-    <string name="granular_editing_empty">Немає тексту. Використовуйте Додати текст наприкінці в меню Більше.</string>
+    <string name="granular_editing_empty">Немає тексту. Скористайтеся пунктом «Додати текст у кінці» у меню «Більше».</string>
     <string name="granular_editing_edit">Редагувати</string>
     <string name="granular_editing_insert_before">Вставити перед</string>
     <string name="granular_editing_insert_after">Вставити після</string>
     <string name="granular_editing_delete">Видалити</string>
     <string name="granular_editing_select">Виділити</string>
     <string name="granular_editing_unselect">Скасувати вибір</string>
-    <string name="granular_editing_selected">Вибране</string>
+    <string name="granular_editing_selected">Вибрано</string>
     <string name="granular_editing_save">Зберегти</string>
     <string name="granular_editing_more">Більше</string>
     <string name="granular_editing_undo">Скасувати</string>
-    <string name="granular_editing_redo">Повторити останню скасовану правку</string>
+    <string name="granular_editing_redo">Повторити</string>
     <string name="granular_editing_find">Знайти</string>
     <string name="granular_editing_find_next">Знайти далі</string>
     <string name="granular_editing_replace">Замінити</string>
     <string name="granular_editing_replace_with">Замінити на</string>
     <string name="granular_editing_replace_all">Замінити все</string>
-    <string name="granular_editing_add_at_end">Додайте текст в кінці</string>
-    <string name="granular_editing_clear_selection">Зняти виділення з усього тексту</string>
+    <string name="granular_editing_add_at_end">Додати текст у кінці</string>
+    <string name="granular_editing_clear_selection">Зняти виділення</string>
     <string name="granular_editing_cut_selected">Вирізати виділений текст</string>
     <string name="granular_editing_delete_selected">Видалити вибране</string>
     <string name="granular_editing_copied">Скопійовано</string>
     <string name="granular_editing_deleted">Видалено</string>
     <string name="granular_editing_not_found">Не знайдено</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> замінено</item>
-        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> замінено</item>
-        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> замінено</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> замінено</item>
+        <item quantity="one">Замінено: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="few">Замінено: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="many">Замінено: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Замінено: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Зберегти зміни?</string>
     <string name="granular_editing_copy_changes">Копіювати змінений текст?</string>
     <string name="granular_editing_discard">Відкинути</string>
-    <string name="granular_editing_keep_editing">Продовжуйте редагувати</string>
+    <string name="granular_editing_keep_editing">Продовжити редагування</string>
     <string name="granular_editing_not_saved">Не збережено: текстове поле зникло. Текст скопійований.</string>
     <string name="granular_editing_no_text">Немає тексту для редагування</string>
     <string name="granular_editing_password">Недоступно в полях пароля</string>

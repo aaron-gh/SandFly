@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Ishintshele ku-braille engenayo inkontileka</string>
   <string name="braille_ime_displayed_name">ikhibhodi ye-braille</string>
   <string name="multiple_languages_braille_ime_displayed_name">ikhibhodi ye-braille, %s</string>
-  <string name="input_view_caption">Ikhobhodi ye-SandFly - ukuthola usizo, vakashela ku-g.co/help/braille</string>
+  <string name="input_view_caption">Ikhibhodi ye-braille ye-SandFly - ukuthola usizo, vakashela ku-g.co/help/braille</string>
   <string name="perform_action_next">Okulandelayo</string>
   <string name="perform_action_submitting">Ukuthumela umbhalo</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Ibuyekeza indawo yechashazi. Okokuqala, masirekhode amachashazi ku-%s yakho.</string>
@@ -46,7 +46,7 @@
   <string name="title_pref_accumulate_presses">Faka phakathi wonke amachashazi acindezelwe</string>
   <string name="summary_pref_accumulate_presses">Ichashazi ngalinye elicindezelwe liyingxenye yokokufaka, ngisho noma ichashazi likhishwe ngaphambi kwamanye amachashazi</string>
   <string name="title_pref_reverse_dots">Shintshanisa amachashazi kwesokunxele nakwesokudla</string>
-  <string name="summary_pref_reverse_dots">Amachashazi 1, 2, kanye nezindawo ezi-3 zohwebo ezinamachashazi 4, 5, kanye no-6</string>
+  <string name="summary_pref_reverse_dots">Amachashazi 1, 2 no-3 ashintshana izindawo namachashazi 4, 5 no-6</string>
   <string name="bd_preference_braille_contracted">I-braille enenkontileka</string>
   <string name="bd_preference_braille_uncontracted">I-braille engenankontileka</string>
   <string name="context_menu_title">Izinketho zekhibhodi ye-braille</string>
@@ -103,9 +103,9 @@
   <string name="not_enough_touch_points_dialog_message">Idivayisi yakho ayisekeli amaphoyinti wokuthinta anele. Ukuthola ulwazi olwengeziwe, xhumana nomkhiqizi wedivayisi yakho</string>
   <string name="talkback_off_dialog_title">Vula i-SandFly ukusebenzisa ikhibhodi ye-braille</string>
   <string name="talkback_off_dialog_positive_button">Vula izilungiselelo zokufinyeleleka</string>
-  <string name="talkback_suspend_dialog_title">Qhubeka ne-SandFly ukuze usebenzise ikhibhothi ye-braille</string>
+  <string name="talkback_suspend_dialog_title">Qhubeka ne-SandFly ukuze usebenzise ikhibhodi ye-braille</string>
   <string name="talkback_off_or_suspend_dialog_message">Uma i-SandFly ivuliwe, ungathepha isikrini sakho ukuze ufake amasimbuli e-braille.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Vula iSandFly ukuze ushintshe ukunyakazisa umzimba</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Vula i-SandFly ukuze ushintshe ukuthinta</string>
   <string name="talkback_off_custom_gestures_dialog_message">ISandFly ivaliwe. Yivule ukuze uguqule ukunyakaziswa komzimba kwekhibhodi yebhrayli.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Iya Kumasethingi</string>
   <string name="reset_gestures_dialog_title">Setha kabusha konke ukunyakazisa umzimba?</string>
@@ -206,8 +206,8 @@
   <string name="custom_gesture_try_another">Zama enye indlela yokunyakazisa umzimba. Ukuze ubone uhlu lwazo zonke izindlela zokunyakazisa umzimba ezitholakalayo, ngena esikhungweni sosizo sekhibhodi yebhrayli yeSandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Ukunyakazisa umzimba akuzange kuqondane</string>
   <string name="custom_gesture_perform_again">Nyakazisa umzimba ngendlela ofuna ukuphinde uwunyakazise ngayo futhi. %s</string>
-    <string name="tabletop_port_left_announcement">Imodi yethebhulethi, imbobo yokushaja kwesokunxele</string>
-    <string name="tabletop_port_right_announcement">Imodi yethebhulethi, imbobo yokushaja kwesokudla</string>
+    <string name="tabletop_port_left_announcement">Imodi yetafula, imbobo yokushaja kwesokunxele</string>
+    <string name="tabletop_port_right_announcement">Imodi yetafula, imbobo yokushaja kwesokudla</string>
     <string name="screen_away_port_right_announcement">Imodi yokuba kude nesikrini, imbobo yokushaja kwesokudla</string>
     <string name="screen_away_port_left_announcement">Imodi yokuba kude nesikrini, imbobo yokushaja kwesokunxele</string>
     <string name="screen_toward_announcement">Isikrini esibheke kuwe</string>
@@ -217,8 +217,8 @@
     <string name="screen_toward_port_up_announcement">Isikrini sibheke kuwe, imbobo yokushaja ebheke phezulu</string>
     <string name="port_right_announcement">Imbobo yokushaja kwesokudla</string>
     <string name="port_left_announcement">Imbobo yokushaja kwesokunxele</string>
-    <string name="tabletop_port_near_announcement">Imodi yethebhulethi, imbobo yokushaja ibheke kuwe</string>
-    <string name="tabletop_port_far_announcement">Imodi yethebhulethi, imbobo yokushaja ikude nawe</string>
+    <string name="tabletop_port_near_announcement">Imodi yetafula, imbobo yokushaja ibheke kuwe</string>
+    <string name="tabletop_port_far_announcement">Imodi yetafula, imbobo yokushaja ikude nawe</string>
     <string name="screen_away_port_down_announcement">Imodi yokungabi khona kwesikrini, imbobo yokushaja ebheke phansi</string>
     <string name="screen_away_port_up_announcement">Imodi yokungabi khona kwesikrini, imbobo yokushaja ebheke phezulu</string>
     <string name="port_near_announcement">Imbobo yokushaja ibheke kuwe</string>
@@ -228,13 +228,13 @@
     <string name="orientation_locked_announcement">Ukuma kukhiyiwe</string>
     <string name="orientation_locked_port_announcement">Ukuma kukhiyiwe. %1$s</string>
     <string name="orientation_unlocked_announcement">Ukuma kuvuliwe</string>
-    <string name="switch_to_language_contracted_announcement">Ishintshelwe ku-%s, I-braille enenkontileka</string>
-    <string name="switch_to_language_uncontracted_announcement">Ishintshelwe ku-%s, I-braille engenankontileka</string>
+    <string name="switch_to_language_contracted_announcement">Ishintshelwe ku-%s, I-braille efinyeziwe</string>
+    <string name="switch_to_language_uncontracted_announcement">Ishintshelwe ku-%s, I-braille engafinyeziwe</string>
     <string name="title_pref_flip_dots_vertically">Shintshanisa amachashazi aphezulu naphansi</string>
-    <string name="summary_pref_flip_dots_vertically">Ichashazi 1 lihweba ngezindawo ngechashazi 3, kanye nechashazi 4 elinechashazi 6</string>
-    <string name="title_pref_tablet_held_up_faces_away">Ithebhulethi iphakanyiswe ubuso bubheke kude</string>
-    <string name="summary_pref_tablet_held_up_faces_away">Uma ivaliwe, ithebhulethi noma ifoni engavuliwe ebanjiwe isebenzisa isakhiwo sethebulethi, ebheke wena</string>
-    <string name="title_pref_typing_sounds">Ukuthayipha imisindo</string>
-    <string name="summary_pref_typing_sounds">Dlala ukuchofoza kwekhibhodi uma uthayipha uhlamvu, isikhala, umugqa omusha, noma ususa</string>
+    <string name="summary_pref_flip_dots_vertically">Ichashazi 1 lishintshana indawo nechashazi 3, nechashazi 4 nechashazi 6</string>
+    <string name="title_pref_tablet_held_up_faces_away">Ithebhulethi ephakanyisiwe ibheke ngaphandle</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Uma kuvaliwe, ithebulethi noma ifoni evuliwe ephakanyisiwe isebenzisa isakhiwo semodi ye-tabletop, isikrini sibheke kuwe</string>
+    <string name="title_pref_typing_sounds">Imisindo yokuthayipha</string>
+    <string name="summary_pref_typing_sounds">Idlala imisindo yokuchofoza kwekhibhodi lapho kuthayiphwa uhlamvu, isikhala noma umugqa omusha, noma lapho kususwa</string>
     <string name="skip_tutorial">Yeqa okokufundisa</string>
 </resources>

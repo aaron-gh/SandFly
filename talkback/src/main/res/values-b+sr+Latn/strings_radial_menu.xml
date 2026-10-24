@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_radial_menu">Kružni meni</string>
-    <string name="summary_pref_radial_menu">Prikažite meni SandFly kao krug u sredini ekrana. Prevucite do stavke i podignite je da biste je izabrali.</string>
-    <string name="template_radial_menu_submenu"><xliff:g id="title" example="Navigation">%1$s</xliff:g> meni</string>
+    <string name="summary_pref_radial_menu">Prikazuje meni SandFly-a kao krug u sredini ekrana. Prevucite do stavke i podignite prst da biste je izabrali.</string>
+    <string name="template_radial_menu_submenu">Meni <xliff:g id="title" example="Navigation">%1$s</xliff:g></string>
     <string name="radial_menu_cancel">Otkaži</string>
     <string name="radial_menu_closed">Meni je zatvoren</string>
-    <string name="hint_radial_menu">Dodirnite sredinu ekrana i klizite prema stavci, a zatim podignite da biste je izabrali. Podignite u sredini da biste zatvorili.</string>
+    <string name="hint_radial_menu">Dodirnite sredinu ekrana i prevucite ka stavci, a zatim podignite prst da biste je izabrali. Podignite prst u sredini da biste zatvorili.</string>
 </resources>

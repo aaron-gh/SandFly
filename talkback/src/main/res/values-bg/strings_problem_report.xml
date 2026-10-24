@@ -2,15 +2,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_problem_report">Изпращане на отзиви</string>
     <string name="title_pref_problem_report_type">Тип обратна връзка</string>
-    <string name="title_pref_problem_report_area">Площ</string>
+    <string name="title_pref_problem_report_area">Област</string>
     <string name="title_pref_problem_report_title">Заглавие</string>
     <string name="title_pref_problem_report_app">Приложение, където се случва</string>
     <string name="title_pref_problem_report_description">Описание</string>
-    <string name="dialog_message_problem_report_description">Какво се случва и какво очаквате.</string>
+    <string name="dialog_message_problem_report_description">Какво се случва и какво очаквахте.</string>
     <string name="title_pref_problem_report_steps">Стъпки за възпроизвеждане</string>
-    <string name="title_pref_problem_report_email">Изпратете имейл за отговори</string>
-    <string name="title_pref_problem_report_device">Включете информация за устройството</string>
-    <string name="title_pref_problem_report_log">Включете SandFly дневник</string>
+    <string name="title_pref_problem_report_email">Имейл за отговори</string>
+    <string name="title_pref_problem_report_device">Включване на информация за устройството</string>
+    <string name="title_pref_problem_report_log">Включване на дневника на SandFly</string>
     <string name="summary_pref_problem_report_log">Може да съдържа текст от екрана</string>
     <string name="title_pref_problem_report_send">Изпращане</string>
     <string name="summary_pref_problem_report_sending">Изпращане</string>
@@ -21,20 +21,20 @@
     <string name="problem_report_no_connection">Обратната връзка не е изпратена. Проверете интернет връзката.</string>
     <string name="problem_report_not_sent">Обратната връзка не е изпратена. Опитайте отново по-късно.</string>
     <string-array name="problem_report_type_entries">
-        <item>Некоректно поведение</item>
+        <item>Неправилно поведение</item>
         <item>Срив</item>
         <item>Бавно или не реагира</item>
         <item>Предложение</item>
     </string-array>
     <string-array name="problem_report_area_entries">
-        <item>Реч</item>
+        <item>Говор</item>
         <item>Жестове</item>
-        <item>Докоснете изследване</item>
-        <item>Четене на контроли и менюта</item>
-        <item>Писане и клавиатури</item>
+        <item>Изследване чрез докосване</item>
+        <item>Контроли за четене и менюта</item>
+        <item>Въвеждане и клавиатури</item>
         <item>Брайлова клавиатура</item>
         <item>Екран за брайлово писмо</item>
-        <item>Звуци и вибрации</item>
+        <item>Звук и вибриране</item>
         <item>Известия</item>
         <item>Уеб съдържание</item>
         <item>Скриптове</item>
@@ -47,7 +47,7 @@
     <string name="title_report_drafts">Чернови</string>
     <string name="report_inbox_empty">Няма изпратени отзиви</string>
     <string name="report_drafts_empty">Без чернови</string>
-    <string name="report_just_now">точно сега</string>
+    <string name="report_just_now">току-що</string>
     <string name="report_untitled">Без заглавие</string>
     <string name="report_draft_summary">Променен <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">изпратено <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -65,10 +65,10 @@
     <string name="title_report_your_report">Вашето мнение</string>
     <string name="title_report_messages">Съобщения</string>
     <string name="report_message_from_developer">Разработчик, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">Ти, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Отговорете</string>
+    <string name="report_message_from_you">Вие, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Отговор</string>
     <string name="title_report_reply_text">Вашият отговор</string>
-    <string name="title_report_send_reply">Изпратете отговор</string>
+    <string name="title_report_send_reply">Изпращане на отговор</string>
     <string name="report_reply_sent">Отговорът е изпратен.</string>
     <string name="report_reply_not_sent">Отговорът не е изпратен. Опитайте отново по-късно.</string>
     <string name="title_report_remove">Премахване от входящата кутия</string>

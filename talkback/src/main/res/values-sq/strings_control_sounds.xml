@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Kontrolloni tingujt dhe dridhjet</string>
-    <string name="summary_pref_control_sounds">Jepini secilit lloj kontrolli, si p.sh. butonat, kutitë e kontrollit, modifikoni fushat dhe artikujt e listës, tingullin e tij dhe dridhjen e tij nga tema, në vend të tingullit dhe dridhjes së fokusit, siç bën Unspoken për NVDA. Tingulli vjen nga vendi ku kontrolli është në ekran dhe SandFly lë jashtë duke thënë se çfarë lloj kontrolli është.</string>
-    <string name="title_pref_control_sounds_speak_roles">Ende thuaj llojin e kontrollit</string>
-    <string name="summary_pref_control_sounds_speak_roles">Kur luhet një tingull kontrolli, përsëri thoni çfarë lloj kontrolli është, si p.sh. butoni. Kjo është për çdo temë zanore.</string>
-    <string name="title_pref_control_sounds_3d">audio 3D</string>
+    <string name="title_pref_control_sounds">Tingujt dhe dridhjet e elementeve të kontrollit</string>
+    <string name="summary_pref_control_sounds">Çdo lloj kontrolli, si butonat, kutitë e zgjedhjes, fushat e redaktimit dhe artikujt e listës, merr tingullin dhe dridhjen e vet nga tema në vend të tingullit dhe dridhjes së fokusit, siç bën Unspoken për NVDA. Tingulli vjen nga vendndodhja e kontrollit në ekran dhe SandFly nuk e thotë llojin e kontrollit.</string>
+    <string name="title_pref_control_sounds_speak_roles">Thuaj gjithsesi llojin e elementit të kontrollit</string>
+    <string name="summary_pref_control_sounds_speak_roles">Kur luhet tingulli i një kontrolli, lloji i kontrollit thuhet gjithsesi, p.sh. buton. Vlen për të gjitha temat e tingujve.</string>
+    <string name="title_pref_control_sounds_3d">Audio 3D</string>
     <string name="pref_control_sounds_3d_headphones">Me kufje</string>
     <string name="pref_control_sounds_3d_always">Gjithmonë</string>
     <string name="pref_control_sounds_3d_never">Asnjëherë, vetëm majtas dhe djathtas</string>
-    <string name="individual_sound_control_button">Zëri i kontrollit: butoni</string>
-    <string name="individual_sound_control_checkbox">Kontrollo tingullin: kutia e kontrollit</string>
-    <string name="individual_sound_control_radio_button">Kontrolloni zërin: butoni i radios</string>
-    <string name="individual_sound_control_edit_text">Kontrollo tingullin: fushë redaktimi</string>
-    <string name="individual_sound_control_combo_box">Kontrollo tingullin: lista rënëse</string>
-    <string name="individual_sound_control_slider">Tingulli i kontrollit: rrëshqitës</string>
-    <string name="individual_sound_control_link">Kontrollo tingullin: lidhje</string>
-    <string name="individual_sound_control_image">Kontrollo zërin: imazh</string>
-    <string name="individual_sound_control_clock">Kontrolloni zërin: ora</string>
-    <string name="individual_sound_control_tab">Kontrollo tingullin: tab</string>
-    <string name="individual_sound_control_menu_item">Kontrollo tingullin: artikulli i menysë</string>
-    <string name="individual_sound_control_list_item">Kontrollo tingullin: artikullin e listës</string>
-    <string name="individual_sound_control_tree_item">Tingulli i kontrollit: artikulli i pemës</string>
+    <string name="individual_sound_control_button">Tingulli i elementit të kontrollit: butoni</string>
+    <string name="individual_sound_control_checkbox">Tingulli i elementit të kontrollit: kutia e kontrollit</string>
+    <string name="individual_sound_control_radio_button">Tingulli i elementit të kontrollit: butoni i radios</string>
+    <string name="individual_sound_control_edit_text">Tingulli i elementit të kontrollit: fushë redaktimi</string>
+    <string name="individual_sound_control_combo_box">Tingulli i elementit të kontrollit: lista rënëse</string>
+    <string name="individual_sound_control_slider">Tingulli i elementit të kontrollit: rrëshqitës</string>
+    <string name="individual_sound_control_link">Tingulli i elementit të kontrollit: lidhje</string>
+    <string name="individual_sound_control_image">Tingulli i elementit të kontrollit: imazh</string>
+    <string name="individual_sound_control_clock">Tingulli i elementit të kontrollit: ora</string>
+    <string name="individual_sound_control_tab">Tingulli i elementit të kontrollit: tab</string>
+    <string name="individual_sound_control_menu_item">Tingulli i elementit të kontrollit: artikulli i menysë</string>
+    <string name="individual_sound_control_list_item">Tingulli i elementit të kontrollit: artikull liste</string>
+    <string name="individual_sound_control_tree_item">Tingulli i elementit të kontrollit: artikulli i pemës</string>
 </resources>

@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Na-unlock ang device.</string>
   <string name="title_pref_speech_volume">Volume ng pagsasalita</string>
   <string name="title_pref_verbose_scroll_announcement">Palaging bigkasin ang bilang ng item sa listahan</string>
-  <string name="summary_pref_verbose_scroll_announcement">Sabihin kung aling mga item ang ipinapakita pagkatapos ng bawat pag-scroll</string>
+  <string name="summary_pref_verbose_scroll_announcement">Sinasabi kung aling mga item ang ipinapakita pagkatapos ng bawat pag-scroll</string>
   <string name="title_pref_cover_proximity_sensor">Takpan ang proximity sensor para itigil ang pagsasalita</string>
   <string name="title_pref_phonetic_letters">Bigkasin ang letra nang may halimbawa</string>
   <string name="summary_pref_phonetic_letters">Kapag pumili ka ng mga key ng keyboard o nag-navigate ka ayon sa character, makakarinig ka ng halimbawa kasabay ng bawat letra, gaya ng \"h, hotel\"</string>
@@ -1488,11 +1488,11 @@
     <string name="value_multi_tap_timeout_200ms">0.2 segundo</string>
     <string name="value_multi_tap_timeout_250ms">0.25 segundo (default)</string>
     <string name="title_pref_rotor_step_degrees">Pag-ikot ng rotor bawat hakbang</string>
-    <string name="value_rotor_step_15">15 degree</string>
-    <string name="value_rotor_step_20">20 degree</string>
-    <string name="value_rotor_step_30">30 degree (default)</string>
-    <string name="value_rotor_step_45">45 degree</string>
-    <string name="value_rotor_step_60">60 degree</string>
+    <string name="value_rotor_step_15">15 digri</string>
+    <string name="value_rotor_step_20">20 digri</string>
+    <string name="value_rotor_step_30">30 digri (default)</string>
+    <string name="value_rotor_step_45">45 digri</string>
+    <string name="value_rotor_step_60">60 digri</string>
     <string name="title_pref_low_latency_audio">Low-latency na audio</string>
     <string name="summary_pref_low_latency_audio">I-play ang mga tunog at pagsasalita ng SandFly sa pinakamabilis na audio path ng telepono, para mas maaga mong marinig ang mga ito. I-off ito kung napuputol o mali ang tunog ng pagsasalita o mga tunog.</string>
     <string name="value_focus_delay_200ms_default">0.2 segundo (default)</string>
@@ -1557,14 +1557,14 @@
     <string name="gemini_error_with_code">Hindi nakasagot ang Gemini, error <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Hindi nakasagot ang Gemini, error <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Hindi makakuha ng mas detalyadong paglalarawan ng larawan: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
-    <string name="title_selector_vertical_navigation">Vertical nabigasyon</string>
+    <string name="title_selector_vertical_navigation">Patayong pag-navigate</string>
     <string name="summary_selector_vertical_navigation">Lumipat sa item sa ibaba o sa itaas, lampas sa iba pang mga item ng row</string>
     <string name="title_pref_speech_stream">Volume ng pagsasalita</string>
-    <string name="summary_selector_speech_stream">Lumipat sa pagitan ng accessibility, media, ring at mga volume ng tawag</string>
+    <string name="summary_selector_speech_stream">Lumipat sa pagitan ng volume ng accessibility, media, ring, at tawag</string>
     <string name="speech_stream_accessibility">Volume ng Accessibility</string>
-    <string name="speech_stream_media">Dami ng media</string>
-    <string name="speech_stream_ring">Dami ng ring</string>
-    <string name="speech_stream_call">Dami ng tawag, earpiece</string>
+    <string name="speech_stream_media">Volume ng media</string>
+    <string name="speech_stream_ring">Volume ng ring</string>
+    <string name="speech_stream_call">Volume ng tawag, earpiece</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1572,12 +1572,12 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_play_installer">Lumitaw na naka-install mula sa Google Play</string>
-    <string name="summary_pref_play_installer">Sabihin sa iba pang mga app na Google Naka-install ang Play SandFly. Ang ilang app, gaya ng ilang banking app, ay nag-o-off ng mga serbisyo sa pagiging naa-access na na-install mula sa kahit saan pa. Nangangailangan ng Shizuku, at binabago lamang kung anong mga app ang sinasabi tungkol sa kung saan nanggaling ang SandFly.</string>
+    <string name="summary_pref_play_installer">Sinasabi sa ibang app na na-install ang SandFly mula sa Google Play. Ino-off ng ilang app, gaya ng ilang banking app, ang mga serbisyo sa accessibility na na-install mula sa ibang pinagmulan. Kailangan ng Shizuku, at binabago lang nito ang sinasabi sa mga app tungkol sa pinagmulan ng SandFly.</string>
     <string name="summary_pref_play_installer_pending">Naka-on, ngunit ang Google Play ay hindi pa naitala bilang installer. Itinatakda ito ng SandFly kapag available na ang Shizuku.</string>
     <string name="notification_list_show_all">Ipakita ang lahat</string>
     <string name="notification_list_show_less">Magpakita ng mas kaunti</string>
     <string name="title_pref_quick_settings">Gamitin ang mga mabilisang setting ng SandFly</string>
-    <string name="title_pref_quick_settings_items">Mabilis na panel ng mga setting</string>
+    <string name="title_pref_quick_settings_items">Panel ng Mga Mabilisang Setting</string>
     <string name="quick_settings_title">Mga Mabilisang Setting</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
@@ -1595,13 +1595,13 @@
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Liwanag</string>
     <string name="quick_settings_adaptive_brightness">Adaptive brightness</string>
-    <string name="quick_settings_media_volume">Dami ng media</string>
-    <string name="quick_settings_call_volume">Dami ng tawag</string>
-    <string name="quick_settings_ring_volume">Dami ng ring</string>
-    <string name="quick_settings_notification_volume">Dami ng notification</string>
+    <string name="quick_settings_media_volume">Volume ng media</string>
+    <string name="quick_settings_call_volume">Volume ng tawag</string>
+    <string name="quick_settings_ring_volume">Volume ng ring</string>
+    <string name="quick_settings_notification_volume">Volume ng notification</string>
     <string name="quick_settings_alarm_volume">Dami ng alarm</string>
     <string name="quick_settings_accessibility_volume">Volume ng Accessibility</string>
-    <string name="quick_settings_system_volume">Dami ng audio ng system</string>
+    <string name="quick_settings_system_volume">Volume ng audio ng system</string>
     <string name="quick_settings_data_saver">Data saver</string>
     <string name="quick_settings_night_light">Liwanag ng Gabi</string>
     <string name="quick_settings_extra_dim">Sobrang dim</string>
@@ -1633,7 +1633,7 @@
     <string name="quick_settings_connected">Nakakonekta</string>
     <string name="quick_settings_battery">Baterya</string>
     <string name="quick_settings_battery_charging">%1$s, nagcha-charge</string>
-    <string name="quick_settings_battery_full">%1$s, sinisingil</string>
+    <string name="quick_settings_battery_full">%1$s, naka-charge na</string>
     <string name="quick_settings_sound">Tunog</string>
     <string name="quick_settings_vibrate">Naka-vibrate</string>
     <string name="quick_settings_mute">I-mute</string>
@@ -1675,11 +1675,11 @@
     <string name="handwriting_not_recognized">Hindi nakilala ang sulat-kamay</string>
     <string name="handwriting_downloading">Dina-download ang pagkilala sa sulat-kamay</string>
     <string name="handwriting_download_title">I-download ang pagkilala sa sulat-kamay?</string>
-    <string name="handwriting_download_message">Kinikilala ang sulat-kamay sa teleponong ito. Ang modelo nito para sa wikang ito, mga 20 MB, ay dina-download mula sa Google isang beses. Ang isang mensahe ay nagpapakita kapag ito ay na-download.</string>
+    <string name="handwriting_download_message">Kinikilala ang sulat-kamay sa teleponong ito. Ang modelo nito para sa wikang ito, mga 20 MB, ay dina-download nang isang beses mula sa Google. May lalabas na mensahe kapag na-download na ito.</string>
     <string name="handwriting_download_button">I-download</string>
     <string name="handwriting_downloaded">Na-download ang pagkilala sa sulat-kamay</string>
     <string name="handwriting_download_failed">Hindi ma-download ang pagkilala sa sulat-kamay. Suriin ang koneksyon sa internet.</string>
-    <string name="handwriting_unsupported_language">Ang pagkilala sa sulat-kamay ay hindi magagamit sa wikang ito</string>
+    <string name="handwriting_unsupported_language">Hindi available ang pagkilala sa sulat-kamay sa wikang ito</string>
     <string name="title_pref_handwriting_keyboard">Sulat-kamay na keyboard</string>
     <string name="summary_pref_handwriting_keyboard">I-on ang sulat-kamay ng SandFly sa mga setting ng keyboard ng Android</string>
     <string name="title_pref_handwriting_wait">Maghintay pagkatapos magsulat</string>
@@ -1694,7 +1694,7 @@
     <string name="handwriting_space">Espasyo</string>
     <string name="handwriting_new_line">Bagong linya</string>
     <string name="handwriting_tutorial_intro">Tutorial sa keyboard ng sulat-kamay. Sumulat gamit ang isang daliri kahit saan sa screen. Ang isinulat mo ay tina-type kapag huminto ka saglit. Upang tapusin ang tutorial, mag-swipe pababa gamit ang tatlong daliri.</string>
-    <string name="handwriting_tutorial_write_letter">Isulat ang titik ng alpabeto a.</string>
+    <string name="handwriting_tutorial_write_letter">Isulat ang titik na a.</string>
     <string name="handwriting_tutorial_write_word">Isulat ngayon ang salitang hi.</string>
     <string name="handwriting_tutorial_typed">Nag-type ng <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Mag-swipe pakanan gamit ang dalawang daliri para mag-type ng space.</string>
@@ -1703,11 +1703,11 @@
     <string name="handwriting_tutorial_next_reading">Kung kinikilala ang sulat-kamay bilang isa pang character, tulad ng malaking titik, mag-swipe pataas gamit ang dalawang daliri upang piliin ang susunod na suhestyon sa pagkilala. Subukan ito ngayon.</string>
     <string name="handwriting_tutorial_read_back">I-tap gamit ang dalawang daliri para basahin ang text bago ang cursor.</string>
     <string name="handwriting_tutorial_new_line">Mag-swipe pababa gamit ang dalawang daliri upang magpasok ng bagong linya o isagawa ang aksyon sa field ng text, gaya ng Ipadala.</string>
-    <string name="handwriting_tutorial_not_that">Iyon ay isa pang kilos.</string>
+    <string name="handwriting_tutorial_not_that">Ibang galaw iyon.</string>
     <string name="handwriting_tutorial_done">Bagong linya. Tapos na ang tutorial. Mag-swipe pababa gamit ang tatlong daliri upang itago ang keyboard, at pakanan o pakaliwa gamit ang tatlong daliri upang lumipat ng mga keyboard. Upang buksan muli ang tutorial, i-tap gamit ang tatlong daliri.</string>
     <string name="handwriting_tutorial_finished">Natapos ang tutorial. Para buksan itong muli, i-tap gamit ang tatlong daliri.</string>
     <string name="handwriting_no_alternatives">Walang ibang mungkahi</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> ng <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> sa <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Walang laman na text</string>
     <string name="handwriting_not_available">Hindi available ang pagkilala sa sulat-kamay sa device na ito</string>
     <string name="shortcut_scroll_to_bottom">Mag-scroll sa pinakababa</string>
@@ -1724,9 +1724,9 @@
     <string name="title_pref_shortcut_edge_left_bottom_right">Mag-swipe pakanan mula sa kaliwang gilid, kalahati sa ibaba</string>
     <string name="title_pref_shortcut_edge_left_bottom_long_right">Mahabang pag-swipe pakanan mula sa kaliwang gilid, kalahati sa ibaba</string>
     <string name="title_pref_shortcut_edge_right_top_left">Mag-swipe pakaliwa mula sa kanang gilid, kalahati sa itaas</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Mahabang mag-swipe pakaliwa mula sa kanang gilid, kalahati sa itaas</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Mahabang pag-swipe pakaliwa mula sa kanang gilid, kalahati sa itaas</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Mag-swipe pakaliwa mula sa kanang gilid, kalahati sa ibaba</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Mahabang mag-swipe pakaliwa mula sa kanang gilid, kalahati sa ibaba</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Mahabang pag-swipe pakaliwa mula sa kanang gilid, kalahati sa ibaba</string>
     <string name="title_pref_edge_first_click_mm">Distansya sa unang pag-click</string>
     <string name="title_pref_edge_second_click_mm">Distansya mula sa una hanggang pangalawang pag-click</string>
     <string name="value_distance_5mm">0.5 cm</string>
@@ -1740,14 +1740,14 @@
     <string name="title_pref_selector_auto_switch">Awtomatikong baguhin ang kontrol sa pagbabasa</string>
     <string name="title_pref_touch_stops_speech">Itigil ang pagsasalita kapag hinahawakan ang screen</string>
     <string name="title_pref_volume_keys_move_cursor">Ginagalaw ng mga volume key ang cursor</string>
-    <string name="summary_pref_volume_keys_move_cursor">Kapag ang isang field ng text ay may focus, ang lakas ng tunog ay nagbabalik sa cursor ng isang character at ang lakas ng tunog ay nagpapaandar nito</string>
+    <string name="summary_pref_volume_keys_move_cursor">Kapag naka-focus ang isang text field, inuurong ng volume up ang cursor nang isang character at isinusulong ito ng volume down nang isang character</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Echo ng keyboard ng sulat-kamay</string>
     <string name="image_qna_ask_by_voice">Magtanong sa pamamagitan ng boses</string>
     <string name="image_qna_stop_listening">Itigil ang pakikinig</string>
     <string name="image_qna_type_question">Mag-type ng tanong</string>
     <string name="shortcut_dictate">Mag-dictate</string>
-    <string name="title_pref_ai_dictation">Tamang pagdidikta gamit ang AI</string>
-    <string name="dictation_not_corrected">Hindi naitama. Na-type bilang kinikilala.</string>
+    <string name="title_pref_ai_dictation">Itama ang pagdidikta gamit ang AI</string>
+    <string name="dictation_not_corrected">Hindi naitama. Na-type gaya ng pagkakakilala.</string>
     <string name="dictation_nothing_recognized">Walang nakilala</string>
     <string name="dictation_unavailable">Hindi available ang speech recognition</string>
     <string name="dictation_field_gone">Isinara ang field ng text. Walang nai-type.</string>
@@ -1768,8 +1768,8 @@
     <string name="title_pref_dictation_ai_service">Serbisyo ng AI para sa pagdidikta</string>
     <string name="dictation_ai_same">Kapareho ng mga awtomatikong paglalarawan</string>
     <string name="title_pref_browse_mode_per_app">Tandaan ang browse mode sa bawat app</string>
-    <string name="title_pref_export_settings">Mga setting ng pag-export</string>
-    <string name="title_pref_import_settings">Mga setting ng pag-import</string>
+    <string name="title_pref_export_settings">I-export ang mga setting</string>
+    <string name="title_pref_import_settings">I-import ang mga setting</string>
     <string name="settings_export_done">Na-export ang mga setting. Hindi kasama ang mga API key</string>
     <string name="settings_export_failed">Hindi ma-export ang mga setting</string>
     <string name="settings_import_done">Na-import ang mga setting</string>

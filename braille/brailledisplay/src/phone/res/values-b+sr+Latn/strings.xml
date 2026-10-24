@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">Sistemske radnje</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Nazad, početna stranica, obaveštenja i drugo</string>
   <string name="bd_commands_bindings_category_talkback_features_title">SandFly funkcije</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly meniji i podešavanja</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">Meniji i podešavanja SandFly-a</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Podešavanja Brajeve azbuke</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Jezik i podešavanja Brajeve azbuke</string>
   <string name="bd_commands_bindings_category_text_editing_title">Menjanje teksta</string>
@@ -224,7 +224,7 @@
   <string name="bd_cmd_toggle_screen_search">Otvorite pretragu ekrana</string>
   <string name="bd_cmd_edit_custom_label">Izmenite prilagođenu oznaku</string>
   <string name="bd_cmd_open_talkback_menu">Otvorite SandFly meni</string>
-  <string name="bd_cmd_toggle_voice_feedback">Uključite/isključite SandFly govor</string>
+  <string name="bd_cmd_toggle_voice_feedback">Uključi ili isključi govor SandFly-a</string>
   <string name="bd_cmd_read_stop">Zaustavite čitanje</string>
   <string name="bd_cmd_talkback_settings">Otvorite podešavanja SandFly-a</string>
   <string name="bd_cmd_switch_to_next_input_language">Pređite na sledeći jezik za kucanje</string>
@@ -322,15 +322,15 @@
   <string name="popup_message_history_consent_dialog_msg">Na taj način ćete čuvati neke poruke, poput obaveštenja i alarma, u SandFly-u. Ovo podešavanje možete da promenite u bilo kom trenutku.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Uključi</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Ne, hvala</string>
-    <string name="external_display_channel">Brajevo pismo prikazuje iz drugih aplikacija</string>
-    <string name="external_display_ask_title">Dozvoliti da <xliff:g id="app" example="Notetaker">%1$s</xliff:g> bude Brajevo pismo za SandFly?</string>
+    <string name="external_display_channel">Brajevi ekrani iz drugih aplikacija</string>
+    <string name="external_display_ask_title">Dozvoliti da <xliff:g id="app" example="Notetaker">%1$s</xliff:g> bude Brajev ekran za SandFly?</string>
     <string name="external_display_ask_text">SandFly ga neće koristiti dok to ne dozvolite.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> će moći da čita sve što se SandFly prikazuje na Brajevom pismu, što može biti bilo šta na ekranu, uključujući poruke i ono što kucate. Takođe će moći da kontroliše vaš uređaj kao što možete pomoću Brajevog displeja: kucajte, otvarajte aplikacije i pokrenite bilo koju komandu SandFly. Dozvolite samo aplikacije kojima verujete.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> će moći da čita sve što SandFly prikazuje na Brajevom pismu, a to može biti bilo šta na ekranu, uključujući poruke i ono što kucate. Moći će i da upravlja uređajem kao što vi to možete pomoću Brajevog ekrana: da kuca, otvara aplikacije i pokreće bilo koju komandu SandFly-a. Dozvolite samo aplikacije kojima verujete.</string>
     <string name="external_display_allow">Dozvoli</string>
-    <string name="external_display_deny">Ne dozvolite</string>
+    <string name="external_display_deny">Ne dozvoli</string>
     <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> je vaš Brajev ekran</string>
     <string name="external_display_in_use_text">Dok ga SandFly koristi, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> može da čita ekran i kontroliše uređaj.</string>
-    <string name="external_displays_title">Prikazuje se iz drugih aplikacija</string>
-    <string name="external_displays_summary">Aplikacije koje dozvolite mogu biti ekrani na Brajevom azbuku za SandFly. Aplikacija koja je Brajev ekran može da čita ekran i kontroliše uređaj.</string>
-    <string name="external_displays_none">Nijedna aplikacija ne može biti ekran na Brajevom azbuku.</string>
+    <string name="external_displays_title">Ekrani iz drugih aplikacija</string>
+    <string name="external_displays_summary">Aplikacije koje dozvolite mogu biti Brajevi ekrani za SandFly. Aplikacija koja je Brajev ekran može da čita ekran i upravlja uređajem.</string>
+    <string name="external_displays_none">Nijedna aplikacija ne može biti Brajev ekran.</string>
 </resources>

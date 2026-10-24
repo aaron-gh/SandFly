@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="script_permission_java">Uruchom kod Java z całym dostępem SandFly w każdej aplikacji</string>
+    <string name="script_permission_java">Uruchamianie kodu Java z pełnym dostępem SandFly, w każdej aplikacji</string>
     <string name="script_sources">Źródła skryptów</string>
     <string name="script_sources_none">Nie dodano żadnych źródeł</string>
     <string name="script_source_add">Dodaj źródło</string>
     <string name="script_source_add_button">Dodaj</string>
     <string name="script_source_hint">github.com/właściciel/repozytorium</string>
-    <string name="script_source_invalid">Nie jest to adres repozytorium na GitHub, GitLab, Codeberg, Gitea lub Bitbucket.</string>
+    <string name="script_source_invalid">To nie jest adres repozytorium w GitHub, GitLab, Codeberg, Gitea ani Bitbucket.</string>
     <string name="script_source_exists">To źródło zostało już dodane.</string>
     <string name="script_source_loading">Wczytywanie</string>
     <string name="script_source_empty">Brak skryptów w tym źródle</string>
@@ -14,11 +14,11 @@
     <string name="script_source_retry">Spróbuj ponownie</string>
     <string name="script_source_downloading">Pobieranie <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">Usuń źródło</string>
-    <string name="script_source_remove_title">Usunąć skrypt <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_source_remove_title">Usunąć źródło <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Zainstalowane z niego skrypty pozostają zainstalowane.</string>
     <string name="scripts_auto_update">Aktualizuj skrypty automatycznie</string>
     <string name="scripts_check_updates">Sprawdź aktualizacje</string>
-    <string name="scripts_checking_updates">Sprawdzam dostępność aktualizacji…</string>
+    <string name="scripts_checking_updates">Sprawdzanie aktualizacji…</string>
     <string name="scripts_updates_category">Aktualizacje</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
@@ -27,7 +27,7 @@
         <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> skryptów zaktualizowano: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skrypty zaktualizowano: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Aktualizacje są wymienione w sekcji Aktualizacje</string>
+    <string name="scripts_updates_to_approve">Aktualizacje są wymienione w sekcji „Aktualizacje”</string>
     <string name="scripts_update_check_failed">Niektórych źródeł nie udało się sprawdzić</string>
     <string name="scripts_up_to_date">Wszystkie skrypty są aktualne</string>
 </resources>

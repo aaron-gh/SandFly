@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Clave da API de Gemini</string>
-    <string name="summary_pref_gemini_api_key_built_in">Usando a clave integrada nesta aplicación</string>
+    <string name="summary_pref_gemini_api_key_built_in">Úsase a clave integrada nesta aplicación</string>
     <string name="gemini_api_key_dialog_message">Obtén unha clave da API gratuíta en Google AI Studio, en aistudio.google.com/apikey, e pégaa aquí. Para quitar a clave, borra o campo e garda.\n\nAs imaxes e as pantallas que describes envíanse a Google. No nivel gratuíto, Google pode usalas para mellorar os seus produtos.</string>
     <string name="gemini_api_key_hint">Clave da API</string>
     <string name="gemini_api_key_save">Gardar</string>
@@ -11,7 +11,7 @@
     <string name="gemini_model_automatic">Automático</string>
     <string name="summary_pref_gemini_model_automatic">Automático: Gemini Flash, despois Flash-Lite cando Flash está ocupado</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, despois Flash-Lite cando estea ocupado</string>
-    <string name="gemini_model_loading">Conseguindo modelos...</string>
+    <string name="gemini_model_loading">Obtendo os modelos…</string>
     <string name="gemini_model_list_failed">Non se puideron obter os modelos: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Establece primeiro unha clave API Gemini</string>
     <string name="ai_service_address_hint">Enderezo, como https://openrouter.ai/api/v1</string>
@@ -35,11 +35,11 @@
     <string name="ai_provider_other">Outro servizo</string>
     <string name="title_pref_category_ai_services">Servizos de IA</string>
     <string name="title_pref_ai_provider">Servizo de IA</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> configuración</string>
+    <string name="title_ai_provider_settings">Configuración de <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, non configurado</string>
     <string name="ai_provider_in_use">En uso</string>
     <string name="ai_provider_not_set_up">Non configurado</string>
-    <string name="ai_provider_not_ready">Escolla primeiro un modelo</string>
+    <string name="ai_provider_not_ready">Escolle primeiro un modelo</string>
     <string name="ai_provider_address">Enderezo</string>
     <string name="ai_provider_address_message">O enderezo dun servizo cunha API de chat e unha entrada de imaxe compatibles con OpenAI, como https://example.com/v1.</string>
     <string name="ai_provider_not_set">Non definido</string>
@@ -47,8 +47,8 @@
     <string name="title_pref_gemini_api_key_of">Clave API de <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">Modelo <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Non escollido</string>
-    <string name="ai_provider_key_message">Pega a túa clave API de <xliff:g id="service" example="Claude">%1$s</xliff:g>. Para eliminala, baleira o campo e garda. As imaxes e pantallas que describes envíanse a <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Pega a túa clave API de <xliff:g id="service" example="Claude">%1$s</xliff:g>. Para eliminala, baleira o campo e garda. As imaxes e pantallas que pidas describir envíanse a <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Establece primeiro a clave API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Establece o enderezo primeiro</string>
-    <string name="ai_provider_enter_model">Introduza un nome de modelo</string>
+    <string name="ai_provider_enter_model">Introduce un nome de modelo</string>
 </resources>

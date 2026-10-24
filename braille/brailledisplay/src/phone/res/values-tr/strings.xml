@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_name">Braille donanım klavyesi</string>
   <string name="bd_application_name">Android Erişilebilirlik Seti</string>
-  <string name="bd_ime_unavailable_activity_name">SandFly braille klavye kullanılamıyor</string>
+  <string name="bd_ime_unavailable_activity_name">SandFly braille klavyesi kullanılamıyor</string>
   <string name="bd_ime_disabled_dialog_title">SandFly braille klavyesini açın</string>
   <string name="bd_ime_disabled_dialog_message">Yazma sırasında braille ekranınızı kullanmak için giriş ayarlarına giderek ekranı etkinleştirin</string>
   <string name="bd_ime_disabled_dialog_title_positive">Giriş ayarları</string>
@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">Sistem işlemleri</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Geri, ana sayfa, bildirimler ve daha fazlası</string>
   <string name="bd_commands_bindings_category_talkback_features_title">SandFly özellikleri</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menüler ve ayarlar</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menüleri ve ayarları</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Braille ayarları</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Braille dili ve ayarları</string>
   <string name="bd_commands_bindings_category_text_editing_title">Metin düzenleme</string>
@@ -321,14 +321,14 @@
   <string name="popup_message_history_consent_dialog_positive_btn">Aç</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Hayır, teşekkürler</string>
     <string name="external_display_channel">Diğer uygulamalardaki Braille ekranları</string>
-    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>\'nin SandFly için braille ekranı olmasına izin verilsin mi?</string>
-    <string name="external_display_ask_text">SandFly siz izin verene kadar kullanmayacaksınız.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>, mesajlar ve yazdıklarınız da dahil olmak üzere ekrandaki herhangi bir şey olabilecek, SandFly\'nin braille alfabesiyle gösterdiği her şeyi okuyabilecektir. Ayrıca cihazınızı Braille ekranla olabildiğince kontrol edebilecek: yazın, uygulamaları açın ve herhangi bir SandFly komutunu çalıştırın. Yalnızca güvendiğiniz uygulamalara izin verin.</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> uygulamasının SandFly için braille ekranı olmasına izin verilsin mi?</string>
+    <string name="external_display_ask_text">Siz izin verene kadar SandFly bunu kullanmaz.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>, SandFly\'ın braille ile gösterdiği her şeyi okuyabilecek. Bu, mesajlar ve yazdıklarınız dahil ekrandaki herhangi bir şey olabilir. Ayrıca cihazınızı braille ekranla yapabildiğiniz gibi kontrol edebilecek: yazı yazabilecek, uygulama açabilecek ve herhangi bir SandFly komutunu çalıştırabilecek. Yalnızca güvendiğiniz uygulamalara izin verin.</string>
     <string name="external_display_allow">İzin ver</string>
     <string name="external_display_deny">İzin verme</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> sizin braille ekranınızdır</string>
+    <string name="external_display_in_use_title">Braille ekranınız: <xliff:g id="app" example="Notetaker">%1$s</xliff:g></string>
     <string name="external_display_in_use_text">SandFly bunu kullanırken, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ekranı okuyabilir ve cihazı kontrol edebilir.</string>
-    <string name="external_displays_title">Diğer uygulamalardaki görüntüler</string>
+    <string name="external_displays_title">Diğer uygulamalardaki ekranlar</string>
     <string name="external_displays_summary">İzin verdiğiniz uygulamalar SandFly için braille ekranı olabilir. Braille ekranı olan bir uygulama ekranı okuyabilir ve cihazı kontrol edebilir.</string>
     <string name="external_displays_none">Hiçbir uygulama braille ekranı olamaz.</string>
 </resources>

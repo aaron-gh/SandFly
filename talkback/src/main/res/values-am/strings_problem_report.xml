@@ -2,16 +2,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_problem_report">ግብረመልስ ላክ</string>
     <string name="title_pref_problem_report_type">የግብረመልስ አይነት</string>
-    <string name="title_pref_problem_report_area">አካባቢ</string>
+    <string name="title_pref_problem_report_area">ክፍል</string>
     <string name="title_pref_problem_report_title">ርዕስ</string>
-    <string name="title_pref_problem_report_app">በሚከሰትበት ቦታ መተግበሪያ</string>
+    <string name="title_pref_problem_report_app">ችግሩ የሚከሰትበት መተግበሪያ</string>
     <string name="title_pref_problem_report_description">መግለጫ</string>
-    <string name="dialog_message_problem_report_description">ምን እንደሚፈጠር እና የጠበቁት.</string>
-    <string name="title_pref_problem_report_steps">ለመራባት እርምጃዎች</string>
-    <string name="title_pref_problem_report_email">ለምላሾች ኢሜይል ያድርጉ</string>
+    <string name="dialog_message_problem_report_description">ምን እንደሚከሰት እና ምን እንደጠበቁ።</string>
+    <string name="title_pref_problem_report_steps">ችግሩን ለመድገም ደረጃዎች</string>
+    <string name="title_pref_problem_report_email">ለምላሾች ኢሜይል</string>
     <string name="title_pref_problem_report_device">የመሣሪያ መረጃን ያካትቱ</string>
     <string name="title_pref_problem_report_log">SandFly ሎግ ያካትቱ</string>
-    <string name="summary_pref_problem_report_log">ከማያ ገጹ ጽሑፍ ሊይዝ ይችላል።</string>
+    <string name="summary_pref_problem_report_log">ከማያ ገጹ ጽሑፍ ሊይዝ ይችላል</string>
     <string name="title_pref_problem_report_send">ላክ</string>
     <string name="summary_pref_problem_report_sending">በመላክ ላይ</string>
     <string name="problem_report_missing_fields">ርዕስ እና መግለጫ ያስገቡ።</string>
@@ -29,12 +29,12 @@
     <string-array name="problem_report_area_entries">
         <item>ንግግር</item>
         <item>የጣት ሸርተቴዎች</item>
-        <item>ፍለጋን ይንኩ።</item>
+        <item>በመንካት አስስ</item>
         <item>የንባብ መቆጣጠሪያዎች እና ምናሌዎች</item>
         <item>መተየብ እና የቁልፍ ሰሌዳዎች</item>
         <item>የብሬይል ቁልፍ ሰሌዳ</item>
         <item>የብሬይል ማሳያ ምርጫዎች</item>
-        <item>ድምፆች እና ንዝረት</item>
+        <item>ድምፅ እና ንዝረት</item>
         <item>ማሳወቂያዎች</item>
         <item>የድር ይዘት</item>
         <item>ስክሪፕቶች</item>
@@ -45,12 +45,12 @@
     <string name="title_report_new">ግብረመልስ ላክ</string>
     <string name="title_report_inbox">የገቢ መልእክት ሳጥን</string>
     <string name="title_report_drafts">ረቂቆች</string>
-    <string name="report_inbox_empty">ምንም ግብረ መልስ አልተላከም።</string>
+    <string name="report_inbox_empty">ምንም ግብረ መልስ አልተላከም</string>
     <string name="report_drafts_empty">ምንም ረቂቆች የሉም</string>
     <string name="report_just_now">ልክ አሁን</string>
     <string name="report_untitled">ርዕስ አልባ</string>
-    <string name="report_draft_summary">ተቀይሯል <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
-    <string name="report_sent_at">ተልኳል <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> ተቀይሯል</string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> ተልኳል</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> አዲስ ምላሽ</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> አዳዲስ መልሶች</item>
@@ -65,7 +65,7 @@
     <string name="title_report_your_report">የእርስዎ አስተያየት</string>
     <string name="title_report_messages">መልዕክቶች</string>
     <string name="report_message_from_developer">ገንቢ፣ <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">አንተ፣ <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="report_message_from_you">እርስዎ፣ <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="title_report_reply">መልስ</string>
     <string name="title_report_reply_text">የእርስዎ ምላሽ</string>
     <string name="title_report_send_reply">ምላሽ ላክ</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">ሰርዝ</string>
     <string name="report_missing">ይህ ግብረመልስ ከአሁን በኋላ በገቢ መልእክት ሳጥን ውስጥ የለም።</string>
     <string name="notification_channel_problem_reports">የግብረመልስ ምላሾች</string>
-    <string name="report_notification_reply">መልስ ለ <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">ለ<xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> የተሰጠ መልስ</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

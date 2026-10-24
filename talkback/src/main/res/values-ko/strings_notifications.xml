@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="notification_shake_3">강한</string>
+    <string name="notification_shake_3">강하게</string>
     <string name="notification_shake_2">중간</string>
-    <string name="notification_shake_1">온화한</string>
-    <string name="notification_media_skip">큰 소리로 읽지 마세요</string>
-    <string name="notification_media_pause">읽는 동안 미디어를 일시 중지하세요.</string>
-    <string name="notification_media_read">소리내어 읽기</string>
-    <string name="notification_headphones_only_without">헤드폰 없이만 가능</string>
-    <string name="notification_headphones_only_with">헤드폰만 있으면</string>
+    <string name="notification_shake_1">약하게</string>
+    <string name="notification_media_skip">읽지 않음</string>
+    <string name="notification_media_pause">읽는 동안 미디어 일시중지</string>
+    <string name="notification_media_read">읽기</string>
+    <string name="notification_headphones_only_without">헤드폰 미사용 시에만</string>
+    <string name="notification_headphones_only_with">헤드폰 사용 시에만</string>
     <string name="notification_headphones_always">헤드폰을 사용하거나 사용하지 않고 소리내어 읽기</string>
-    <string name="notification_queue_skip">새 알림을 소리내어 읽지 마세요.</string>
-    <string name="notification_queue_interrupt">소리내어 읽는 알림을 중단합니다.</string>
-    <string name="notification_queue_queue">현재 알림 후 소리내어 읽기</string>
-    <string name="notification_url_omit">나가다</string>
-    <string name="notification_url_replace">아래 텍스트를 말해보세요.</string>
+    <string name="notification_queue_skip">새 알림 읽지 않기</string>
+    <string name="notification_queue_interrupt">중단</string>
+    <string name="notification_queue_queue">다음에 읽기</string>
+    <string name="notification_url_omit">생략</string>
+    <string name="notification_url_replace">아래 텍스트 말하기</string>
     <string name="notification_url_domain">사이트만 읽기</string>
     <string name="notification_url_full">전체 링크 읽기</string>
     <string name="notification_category_title">알림</string>
     <string name="notification_reading_title">알림을 소리내어 읽기</string>
     <string name="notification_apps_title">앱</string>
     <string name="notification_words_title">단어 및 대체</string>
-    <string name="notification_kinds_title">알림의 종류</string>
-    <string name="notification_when_title">언제 읽어야 하는가?</string>
+    <string name="notification_kinds_title">알림 종류</string>
+    <string name="notification_when_title">읽을 시점</string>
     <string name="notification_rules_title">규칙</string>
     <string name="notification_repeats_title">반복</string>
     <string name="notification_stop_title">읽기 중지</string>
@@ -34,32 +34,32 @@
     <string name="notification_format_title">음성 형식</string>
     <string name="notification_format_message">자리 표시자: {app}, {title}, {text}, {content}(전체 텍스트), {bigtext}, {subtext}, {ticker}, {category} 및 {time}.</string>
     <string name="notification_private_format_title">비공개 알림 내용</string>
-    <string name="notification_private_format_message">비공개 알림의 내용을 대신합니다. 자리 표시자: {app}, {category} 및 {time}.</string>
+    <string name="notification_private_format_message">비공개 알림의 내용 대신 읽습니다. 자리 표시자: {app}, {category}, {time}.</string>
     <string name="notification_category_voice">음성</string>
     <string name="notification_voice_title">음성</string>
     <string name="notification_voice_sandfly">SandFly 목소리</string>
     <string name="notification_detect_language_title">언어 감지</string>
-    <string name="notification_detect_language_summary">각 알림을 작성된 언어로 말하세요. 텍스트 음성 변환 설정에서 언어를 자동으로 전환해야 합니다.</string>
+    <string name="notification_detect_language_summary">각 알림을 작성된 언어로 읽습니다. TTS(텍스트 음성 변환)의 \'자동으로 언어 전환\'이(가) 필요합니다.</string>
     <string name="notification_sound_before_title">알림 전 소리</string>
     <string name="notification_category_text">텍스트</string>
-    <string name="notification_remove_emoji_title">이모티콘은 빼고</string>
+    <string name="notification_remove_emoji_title">이모티콘 제외</string>
     <string name="notification_lowercase_title">대문자를 단어로 읽기</string>
-    <string name="notification_lowercase_summary">일부 음성 엔진은 단어를 문자별로 대문자로 철자합니다.</string>
+    <string name="notification_lowercase_summary">일부 음성 엔진은 대문자로 쓴 단어를 한 글자씩 읽습니다</string>
     <string name="notification_separate_digits_title">긴 숫자를 자릿수 단위로 읽기</string>
     <string name="notification_separate_digits_summary">코드, 전화번호 등</string>
     <string name="notification_min_digits_title">긴 숫자의 최소 자릿수</string>
     <string name="notification_urls_title">링크</string>
-    <string name="notification_url_text_title">링크 대신 말함</string>
-    <string name="notification_skip_empty_title">문자가 없는 알림 건너뛰기</string>
+    <string name="notification_url_text_title">링크 대신 말할 텍스트</string>
+    <string name="notification_skip_empty_title">텍스트가 없는 알림 건너뛰기</string>
     <string name="notification_category_length">길이</string>
     <string name="notification_max_words_title">최대 단어 수</string>
     <string name="notification_max_sentences_title">최대 문장 수</string>
     <string name="notification_max_characters_title">최대 텍스트 문자 수</string>
-    <string name="notification_max_seconds_title">다음 이후에는 읽기를 중지하세요.</string>
+    <string name="notification_max_seconds_title">읽기 중지 시간</string>
     <string name="notification_category_timing">타이밍</string>
-    <string name="notification_delay_title">읽기 전에 기다리세요</string>
-    <string name="notification_queue_title">다른 알림을 읽었을 때</string>
-    <string name="notification_repeat_minutes_title">화면이 켜질 때까지 다시 읽어보세요</string>
+    <string name="notification_delay_title">읽기 전 대기 시간</string>
+    <string name="notification_queue_title">다른 알림을 읽는 중일 때</string>
+    <string name="notification_repeat_minutes_title">화면이 켜질 때까지 다시 읽기</string>
     <string name="notification_skip_media_title">미디어 플레이어 건너뛰기</string>
     <string name="notification_skip_ongoing_title">진행 중인 알림 건너뛰기</string>
     <string name="notification_skip_ongoing_summary">내비게이션, 타이머 등</string>
@@ -71,135 +71,135 @@
     <string name="notification_skip_low_priority_title">우선순위가 낮은 알림 건너뛰기</string>
     <string name="notification_skip_system_title">시스템 알림 건너뛰기</string>
     <string name="notification_screen_on_title">화면이 켜져 있는 동안</string>
-    <string name="notification_screen_off_title">화면이 꺼진 상태에서</string>
-    <string name="notification_locked_title">전화기가 잠겨 있는 동안</string>
+    <string name="notification_screen_off_title">화면이 꺼져 있는 동안</string>
+    <string name="notification_locked_title">휴대전화가 잠겨 있는 동안</string>
     <string name="notification_headphones_title">헤드폰</string>
     <string name="notification_media_title">미디어가 재생되는 동안</string>
-    <string name="notification_dnd_title">방해하지 마세요</string>
-    <string name="notification_dnd_none">알림을 소리내어 읽지 마세요.</string>
+    <string name="notification_dnd_title">방해 금지 모드</string>
+    <string name="notification_dnd_none">읽지 않음</string>
     <string name="notification_dnd_allowed">방해 금지 모드에서 허용되는 알림 읽기</string>
     <string name="notification_dnd_all">모두 읽기</string>
     <string name="notification_touch_title">화면을 터치하는 동안</string>
-    <string name="notification_touch_read">바로 읽어보세요</string>
+    <string name="notification_touch_read">바로 읽기</string>
     <string name="notification_touch_after">터치가 끝나면 읽기</string>
-    <string name="notification_touch_skip">큰 소리로 읽지 마세요</string>
+    <string name="notification_touch_skip">읽지 않음</string>
     <string name="notification_during_calls_title">통화 중</string>
     <string name="notification_honour_silent_title">무음 모드가 아님</string>
-    <string name="notification_honour_vibrate_title">진동 모드가 아닙니다.</string>
+    <string name="notification_honour_vibrate_title">진동 모드가 아님</string>
     <string name="notification_skip_in_car_title">자동차 모드가 아님</string>
-    <string name="notification_skip_in_car_summary">Android Auto와 같은 경우 자체적으로 읽습니다.</string>
+    <string name="notification_skip_in_car_summary">예: 알림을 자체적으로 읽어 주는 Android Auto</string>
     <string name="notification_category_quiet_hours">조용한 시간</string>
     <string name="notification_quiet_hours_title">조용한 시간</string>
     <string name="notification_quiet_start_title">시작</string>
     <string name="notification_quiet_end_title">끝</string>
-    <string name="notification_repeat_seconds_title">다음에 대한 동일한 알림 건너뛰기</string>
-    <string name="notification_numbers_alike_title">서로 다른 숫자를 동일하게 취급</string>
+    <string name="notification_repeat_seconds_title">같은 알림 건너뛰기 시간</string>
+    <string name="notification_numbers_alike_title">숫자가 달라도 같은 알림으로 간주</string>
     <string name="notification_numbers_alike_summary">다운로드 비율 등</string>
     <string name="notification_cooldown_title">앱 알림 간격</string>
-    <string name="notification_skip_prefix_title">반복되는 텍스트 접두사 생략</string>
+    <string name="notification_skip_prefix_title">반복되는 시작 부분 생략</string>
     <string name="notification_skip_prefix_summary">채팅의 그룹 이름 등</string>
-    <string name="notification_prefix_memory_title">텍스트 접두어를 기억하는 기간</string>
-    <string name="notification_access_summary">닫은 알림 및 요약 읽기를 중지하는 데 필요함</string>
-    <string name="notification_shake_title">흔들어서 멈추세요</string>
-    <string name="notification_shake_strength_title">흔들리는 강도</string>
-    <string name="notification_wave_title">읽기를 중단하려면 손을 흔들어주세요.</string>
+    <string name="notification_prefix_memory_title">시작 부분 기억 시간</string>
+    <string name="notification_access_summary">닫은 알림의 읽기를 중지하고 요약을 만드는 데 필요합니다</string>
+    <string name="notification_shake_title">흔들어서 중지</string>
+    <string name="notification_shake_strength_title">흔들기 강도</string>
+    <string name="notification_wave_title">손을 흔들어 중지</string>
     <string name="notification_wave_summary">근접 센서 위로 손을 움직이기</string>
     <string name="notification_pocket_title">포켓 모드</string>
-    <string name="notification_pocket_summary">읽기가 시작되면 주머니에 넣어두듯이 덮는 센서가 멈추지 않습니다.</string>
-    <string name="notification_volume_keys_title">볼륨 키를 둘 다 누르세요</string>
+    <string name="notification_pocket_summary">읽기를 시작할 때 센서가 이미 가려져 있으면(예: 주머니 속) 읽기가 중지되지 않습니다</string>
+    <string name="notification_volume_keys_title">볼륨 키 두 개 누르기</string>
     <string name="notification_dismiss_title">알림이 해제되면 읽기 중지</string>
-    <string name="notification_watch_dismiss_title">또한 스마트워치에서 알림이 해제된 경우</string>
-    <string name="notification_app_cancel_title">앱이 알림을 제거하면 읽기 중지</string>
+    <string name="notification_watch_dismiss_title">시계에서 닫을 때도</string>
+    <string name="notification_app_cancel_title">앱이 알림을 삭제하면 중지</string>
     <string name="notification_category_summary">요약</string>
     <string name="notification_summary_now_title">지금 알림 읽기</string>
     <string name="notification_summary_daily_title">매일 알림 읽기</string>
     <string name="notification_summary_time_title">시간</string>
     <string name="notification_summary_newest_first_title">최신순</string>
-    <string name="notification_summary_name_title">당신의 이름</string>
-    <string name="notification_summary_gap_title">알림 사이에 일시중지</string>
-    <string name="notification_summary_needs_sandfly">알림을 읽으려면 SandFly를 켜세요.</string>
-    <string name="notification_summary_no_access">알림 액세스가 사용 중지되었습니다.</string>
+    <string name="notification_summary_name_title">이름</string>
+    <string name="notification_summary_gap_title">알림 간 일시중지</string>
+    <string name="notification_summary_needs_sandfly">알림을 읽으려면 SandFly를 켜세요</string>
+    <string name="notification_summary_no_access">알림 액세스가 꺼져 있습니다</string>
     <string name="notification_summary_morning">좋은 아침입니다.</string>
-    <string name="notification_summary_afternoon">좋은 오후에요.</string>
-    <string name="notification_summary_evening">좋은 저녁이에요.</string>
+    <string name="notification_summary_afternoon">안녕하세요.</string>
+    <string name="notification_summary_evening">안녕하세요.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">시간 공지</string>
-    <string name="notification_clock_interval_title">시간을 말해 보세요.</string>
+    <string name="notification_category_clock">시간 알림</string>
+    <string name="notification_clock_interval_title">시간 알림 간격</string>
     <string name="notification_clock_format_title">시간 형식</string>
     <string name="notification_clock_format_message">자리 표시자: {time}, {date} 및 {battery}(배터리 비율).</string>
     <string name="notification_clock_format_default">{time} 입니다</string>
     <string name="notification_clock_exact_title">정확한 시간</string>
-    <string name="notification_clock_exact_summary">알람 및 알림이 필요합니다. 그렇지 않으면 시간이 최대 1분 정도 늦어질 수 있습니다.</string>
+    <string name="notification_clock_exact_summary">\'알람 및 리마인더\' 권한이 필요합니다. 권한이 없으면 시간을 최대 1분 늦게 알릴 수 있습니다.</string>
     <string name="notification_other_apps_title">기타 앱</string>
     <string name="notification_apps_category">앱</string>
     <string name="notification_apps_loading">앱 로드 중</string>
     <string name="notification_app_mode_title">알림</string>
     <string name="notification_app_mode_default">다른 앱과 마찬가지로</string>
-    <string name="notification_app_mode_read">소리내어 읽기</string>
+    <string name="notification_app_mode_read">읽기</string>
     <string name="notification_app_mode_private">앱 이름만</string>
-    <string name="notification_app_mode_priority">먼저 읽어보세요</string>
-    <string name="notification_app_mode_ignore">큰 소리로 읽지 마세요</string>
+    <string name="notification_app_mode_priority">먼저 읽기</string>
+    <string name="notification_app_mode_ignore">읽지 않음</string>
     <string name="notification_app_name_title">음성 이름</string>
-    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g>라고 말함</string>
+    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g>(으)로 읽음</string>
     <string name="notification_app_reset">재설정</string>
-    <string name="notification_required_title">다음이 포함된 알림만 읽습니다.</string>
-    <string name="notification_blocked_title">알림을 읽지 마세요</string>
-    <string name="notification_private_title">앱 이름만 읽기</string>
-    <string name="notification_replacements_title">다르게 말해보세요</string>
+    <string name="notification_required_title">다음이 포함된 알림만 읽기</string>
+    <string name="notification_blocked_title">다음이 포함된 알림 읽지 않기</string>
+    <string name="notification_private_title">다음이 포함된 알림은 앱 이름만 읽기</string>
+    <string name="notification_replacements_title">다르게 읽기</string>
     <string name="notification_add_word">단어 추가</string>
     <string name="notification_add_replacement">교체 추가</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g>로</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> → <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">텍스트</string>
-    <string name="notification_replace_with">다음과 같이 말하세요</string>
+    <string name="notification_replace_with">읽는 방법</string>
     <string name="notification_whole_words">전체 단어만</string>
     <string name="notification_regex">정규식</string>
     <string name="notification_enter_text">텍스트를 입력하세요</string>
-    <string name="notification_invalid_regex">유효한 정규 표현식이 아닙니다.</string>
+    <string name="notification_invalid_regex">유효한 정규 표현식이 아닙니다</string>
     <string name="notification_edit">편집</string>
     <string name="notification_remove">제거</string>
     <string name="notification_history_keep">알림 기록 저장</string>
     <string name="notification_history_clear">기록 지우기</string>
     <string name="notification_history_category">알림</string>
     <string name="notification_history_empty">알림 없음</string>
-    <string name="notification_history_ignore_app">읽지 마세요 <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> 읽지 않음</string>
     <string name="notification_history_private_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> 이름만 읽기</string>
-    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> 먼저 읽어보세요</string>
+    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> 먼저 읽기</string>
     <string name="notification_history_block_similar">이런 알림은 읽지 마세요</string>
     <string name="notification_history_copy">복사</string>
     <string name="notification_saved">저장됨</string>
     <string name="notification_copied">복사됨</string>
-    <string name="notification_outcome_read">소리내어 읽기 성공</string>
-    <string name="notification_outcome_stopped">읽는 동안 중지되었습니다.</string>
-    <string name="notification_outcome_speech_off">읽지 않음: 알림 음성이 꺼져 있습니다.</string>
+    <string name="notification_outcome_read">읽음</string>
+    <string name="notification_outcome_stopped">읽는 중 중지됨</string>
+    <string name="notification_outcome_speech_off">읽지 않음: 알림 읽기 꺼짐</string>
     <string name="notification_outcome_dnd">읽지 않음: 방해 금지</string>
-    <string name="notification_outcome_touching">읽지 않음: 화면을 터치했습니다.</string>
+    <string name="notification_outcome_touching">읽지 않음: 화면을 터치함</string>
     <string name="notification_outcome_app">읽지 않음: 앱</string>
-    <string name="notification_outcome_ongoing">읽지 않음: 진행 중</string>
-    <string name="notification_outcome_foreground">읽지 않음: 앱 실행 중</string>
+    <string name="notification_outcome_ongoing">읽지 않음: 진행 중인 알림</string>
+    <string name="notification_outcome_foreground">읽지 않음: 앱이 열려 있음</string>
     <string name="notification_outcome_low_priority">읽지 않음: 낮은 우선순위</string>
     <string name="notification_outcome_system">읽지 않음: 시스템</string>
     <string name="notification_outcome_media">읽지 않음: 미디어 플레이어</string>
     <string name="notification_outcome_group_summary">읽지 않음: 그룹 요약</string>
-    <string name="notification_outcome_progress">읽지 않음: 진행 중</string>
-    <string name="notification_outcome_required">읽지 않음: 필수 단어가 누락되었습니다.</string>
+    <string name="notification_outcome_progress">읽지 않음: 진행률</string>
+    <string name="notification_outcome_required">읽지 않음: 필수 단어 없음</string>
     <string name="notification_outcome_blocked">읽지 않음: 차단된 단어</string>
     <string name="notification_outcome_empty">읽지 않음: 텍스트 없음</string>
     <string name="notification_outcome_repeat">읽지 않음: 반복</string>
-    <string name="notification_outcome_cooldown">소리내어 읽지 않음: 이 앱의 다른 알림을 너무 최근에 읽었습니다.</string>
+    <string name="notification_outcome_cooldown">읽지 않음: 앱 알림을 방금 읽음</string>
     <string name="notification_outcome_quiet_hours">읽지 않음: 조용한 시간</string>
     <string name="notification_outcome_screen_on">읽지 않음: 화면 켜짐</string>
     <string name="notification_outcome_screen_off">읽지 않음: 화면 꺼짐</string>
     <string name="notification_outcome_locked">읽지 않음: 잠겨 있음</string>
-    <string name="notification_outcome_headphones">읽지 않음: 헤드폰이 연결됨</string>
+    <string name="notification_outcome_headphones">읽지 않음: 헤드폰 연결됨</string>
     <string name="notification_outcome_no_headphones">읽지 않음: 헤드폰 없음</string>
     <string name="notification_outcome_silent">읽지 않음: 무음 모드</string>
     <string name="notification_outcome_vibrate">읽지 않음: 진동 모드</string>
     <string name="notification_outcome_media_playing">읽지 않음: 미디어 재생 중</string>
     <string name="notification_outcome_car">읽지 않음: 자동차 모드</string>
     <string name="notification_outcome_rule">읽지 않음: 규칙</string>
-    <string name="notification_outcome_busy">읽지 않음: 다른 알림을 읽었습니다.</string>
-    <string name="notification_outcome_call">전화 수신으로 안내됩니다.</string>
+    <string name="notification_outcome_busy">읽지 않음: 다른 알림을 읽음</string>
+    <string name="notification_outcome_call">전화로 안내됨</string>
     <string name="notification_rule_add">규칙 추가</string>
     <string name="notification_rule_from_template">템플릿에서 규칙 추가</string>
     <string name="notification_rules_category">규칙</string>
@@ -208,115 +208,115 @@
     <string name="notification_rule_untitled">규칙</string>
     <string name="notification_rule_enabled">켜짐</string>
     <string name="notification_rule_match">조건</string>
-    <string name="notification_rule_match_all">모든 조건이 충족되어야 합니다.</string>
-    <string name="notification_rule_match_any">최소한 하나의 조건을 만족해야 합니다.</string>
-    <string name="notification_rule_conditions">언제</string>
+    <string name="notification_rule_match_all">모든 조건 충족</string>
+    <string name="notification_rule_match_any">하나 이상의 조건 충족</string>
+    <string name="notification_rule_conditions">조건</string>
     <string name="notification_rule_actions">그런 다음</string>
     <string name="notification_rule_add_condition">조건 추가</string>
     <string name="notification_rule_add_action">작업 추가</string>
-    <string name="notification_rule_invert">조건을 반전시키다</string>
+    <string name="notification_rule_invert">조건 반전</string>
     <string name="notification_rule_delete">규칙 삭제</string>
-    <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g>을 삭제하시겠습니까?</string>
+    <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g>을(를) 삭제하시겠습니까?</string>
     <string name="notification_rule_always">항상</string>
-    <string name="notification_rule_no_actions">아무 일도 일어나지 않는다</string>
+    <string name="notification_rule_no_actions">아무 작업 안 함</string>
     <string name="notification_rule_and">" 그리고 "</string>
     <string name="notification_rule_or">" 또는 "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
-    <string name="notification_template_headphones">헤드폰만 있으면</string>
-    <string name="notification_template_night">밤에는 조용하다</string>
+    <string name="notification_template_headphones">헤드폰 사용 시에만</string>
+    <string name="notification_template_night">야간 무음</string>
     <string name="notification_template_screen_off">화면이 꺼진 상태에서만</string>
-    <string name="notification_template_locked_private">휴대폰이 잠겨 있을 때는 앱 이름만 표시됩니다.</string>
-    <string name="notification_template_short_on_battery">충전하지 않을 때는 간략하게 읽어 보세요.</string>
+    <string name="notification_template_locked_private">잠겼을 때 앱 이름만</string>
+    <string name="notification_template_short_on_battery">충전 중이 아닐 때 짧게</string>
     <string name="notification_type_bluetooth">Bluetooth 장치</string>
     <string name="notification_type_wired">유선 헤드폰</string>
     <string name="notification_type_wifi">Wi-Fi 네트워크</string>
     <string name="notification_type_time">하루 중 시간</string>
     <string name="notification_type_screen">화면 켜짐</string>
-    <string name="notification_type_locked">전화기가 잠겼습니다.</string>
-    <string name="notification_type_from_app">앱에서 알림</string>
+    <string name="notification_type_locked">휴대전화 잠김</string>
+    <string name="notification_type_from_app">앱의 알림</string>
     <string name="notification_type_foreground">포그라운드에 있는 앱</string>
-    <string name="notification_type_contains">알림에는 다음이 포함됩니다.</string>
-    <string name="notification_type_battery">아래 배터리 잔량</string>
+    <string name="notification_type_contains">알림 내용 포함</string>
+    <string name="notification_type_battery">배터리 잔량 미만</string>
     <string name="notification_type_charging">충전 중</string>
     <string name="notification_type_landscape">가로</string>
     <string name="notification_type_silent">무음 또는 진동 모드</string>
     <string name="notification_type_media">미디어 재생</string>
     <string name="notification_bluetooth_any">모든 장치</string>
     <string name="notification_wifi_hint">네트워크 이름</string>
-    <string name="notification_choose_app">앱을 선택하세요</string>
-    <string name="notification_time_start">에서</string>
+    <string name="notification_choose_app">앱 선택</string>
+    <string name="notification_time_start">부터</string>
     <string name="notification_time_end">까지</string>
-    <string name="notification_time_days">일</string>
+    <string name="notification_time_days">요일</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ~ <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly 이 조건에 대한 권한이 필요합니다.</string>
-    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g>이 연결되었습니다</string>
+    <string name="notification_permission_needed">SandFly는 이 조건에 그 권한이 필요합니다</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> 연결됨</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> 연결되지 않음</string>
-    <string name="notification_cond_bluetooth_any">Bluetooth 오디오 장치가 연결되었습니다</string>
-    <string name="notification_cond_bluetooth_any_not">Bluetooth 오디오 장치가 연결되어 있지 않습니다.</string>
-    <string name="notification_cond_wired">유선 헤드폰이 연결되었습니다.</string>
-    <string name="notification_cond_wired_not">유선 헤드폰이 연결되지 않았습니다.</string>
-    <string name="notification_cond_battery_below">배터리가 <xliff:g id="percent" example="20">%1$d</xliff:g>퍼센트 미만입니다.</string>
-    <string name="notification_cond_battery_below_not">배터리가 <xliff:g id="percent" example="20">%1$d</xliff:g>퍼센트 이상입니다.</string>
-    <string name="notification_cond_charging">휴대전화가 충전 중입니다.</string>
-    <string name="notification_cond_charging_not">휴대전화가 충전되지 않습니다.</string>
-    <string name="notification_cond_locked">전화기가 잠겨 있습니다.</string>
-    <string name="notification_cond_locked_not">전화기가 잠금 해제되었습니다.</string>
-    <string name="notification_cond_screen_on">화면이 켜져 있습니다.</string>
-    <string name="notification_cond_screen_on_not">화면이 꺼져 있어요</string>
-    <string name="notification_cond_landscape">화면이 가로 모드입니다.</string>
-    <string name="notification_cond_landscape_not">화면이 세로 모드입니다.</string>
-    <string name="notification_cond_time">시간은 <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
-    <string name="notification_cond_time_not">시간은 <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g>가 아닙니다</string>
+    <string name="notification_cond_bluetooth_any">Bluetooth 오디오 장치가 연결되어 있습니다</string>
+    <string name="notification_cond_bluetooth_any_not">Bluetooth 오디오 장치가 연결되어 있지 않습니다</string>
+    <string name="notification_cond_wired">유선 헤드폰이 연결되어 있습니다</string>
+    <string name="notification_cond_wired_not">유선 헤드폰이 연결되어 있지 않습니다</string>
+    <string name="notification_cond_battery_below">배터리가 <xliff:g id="percent" example="20">%1$d</xliff:g>퍼센트 미만입니다</string>
+    <string name="notification_cond_battery_below_not">배터리가 <xliff:g id="percent" example="20">%1$d</xliff:g>퍼센트 이상입니다</string>
+    <string name="notification_cond_charging">휴대전화가 충전 중입니다</string>
+    <string name="notification_cond_charging_not">휴대전화가 충전 중이 아닙니다</string>
+    <string name="notification_cond_locked">휴대전화가 잠겨 있습니다</string>
+    <string name="notification_cond_locked_not">휴대전화 잠금이 해제되어 있습니다</string>
+    <string name="notification_cond_screen_on">화면이 켜져 있습니다</string>
+    <string name="notification_cond_screen_on_not">화면이 꺼져 있습니다</string>
+    <string name="notification_cond_landscape">화면이 가로 모드입니다</string>
+    <string name="notification_cond_landscape_not">화면이 세로 모드입니다</string>
+    <string name="notification_cond_time">시간이 <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> 사이임</string>
+    <string name="notification_cond_time_not">시간이 <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> 사이가 아님</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g>에 연결됨</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g>에 연결되지 않음</string>
     <string name="notification_cond_wifi_any">Wi-Fi에 연결됨</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi에 연결되지 않음</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g>이 앞에 있습니다</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g>이 앞에 있지 않습니다.</string>
-    <string name="notification_cond_from">알림은 <xliff:g id="app" example="Chat">%1$s</xliff:g>에서 왔습니다.</string>
-    <string name="notification_cond_from_not">알림이 <xliff:g id="app" example="Chat">%1$s</xliff:g>에서 온 것이 아닙니다.</string>
-    <string name="notification_cond_contains">알림에는 <xliff:g id="text" example="urgent">%1$s</xliff:g>이 포함되어 있습니다.</string>
-    <string name="notification_cond_contains_not">알림에 <xliff:g id="text" example="urgent">%1$s</xliff:g>가 포함되어 있지 않습니다.</string>
-    <string name="notification_cond_silent">벨소리가 조용하거나 진동합니다.</string>
-    <string name="notification_cond_silent_not">벨소리가 울린다</string>
-    <string name="notification_cond_media">미디어가 재생 중입니다.</string>
-    <string name="notification_cond_media_not">재생 중인 미디어가 없습니다.</string>
-    <string name="notification_action_skip">읽지 마세요</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g>이(가) 화면에 열려 있음</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g>이(가) 화면에 열려 있지 않음</string>
+    <string name="notification_cond_from">알림이 <xliff:g id="app" example="Chat">%1$s</xliff:g>에서 왔음</string>
+    <string name="notification_cond_from_not">알림이 <xliff:g id="app" example="Chat">%1$s</xliff:g>에서 오지 않았음</string>
+    <string name="notification_cond_contains">알림에 <xliff:g id="text" example="urgent">%1$s</xliff:g>이(가) 포함되어 있습니다</string>
+    <string name="notification_cond_contains_not">알림에 <xliff:g id="text" example="urgent">%1$s</xliff:g>이(가) 포함되어 있지 않습니다</string>
+    <string name="notification_cond_silent">벨소리가 무음 또는 진동임</string>
+    <string name="notification_cond_silent_not">벨소리 켜짐</string>
+    <string name="notification_cond_media">미디어 재생 중</string>
+    <string name="notification_cond_media_not">재생 중인 미디어가 없습니다</string>
+    <string name="notification_action_skip">읽지 않기</string>
     <string name="notification_action_private">앱 이름만 읽기</string>
-    <string name="notification_action_not_private">비공개라도 전체 내용을 읽으세요.</string>
-    <string name="notification_action_format">음성 형식을 사용하다</string>
-    <string name="notification_action_max_words">여러 단어까지 읽어 보세요</string>
+    <string name="notification_action_not_private">비공개라도 전체 읽기</string>
+    <string name="notification_action_format">음성 형식 사용</string>
+    <string name="notification_action_max_words">일정 단어 수까지 읽기</string>
     <string name="notification_action_no_limit">길이 제한 없이 읽기</string>
     <string name="notification_action_keep_emoji">이모티콘 유지</string>
-    <string name="notification_action_keep_numbers">숫자를 함께 유지</string>
-    <string name="notification_action_priority">먼저 읽어보세요</string>
-    <string name="notification_action_always_read">조용한 시간이나 기타 제한된 시간에도 알림을 소리내어 읽어보세요.</string>
+    <string name="notification_action_keep_numbers">숫자 붙여 읽기</string>
+    <string name="notification_action_priority">먼저 읽기</string>
+    <string name="notification_action_always_read">조용한 시간 및 알림을 읽지 않는 기타 시간에도 읽기</string>
     <string name="notification_action_voice">음성 프로필로 읽기</string>
-    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>로 읽기</string>
-    <string name="notification_action_voice_sandfly">SandFly 목소리로 읽어주세요</string>
-    <string name="notification_voice_removed">음성 프로필이 삭제되었습니다.</string>
-    <string name="notification_action_format_value">음성 형식을 사용하세요 <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g>까지 읽어보세요</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>(으)로 읽기</string>
+    <string name="notification_action_voice_sandfly">SandFly 음성으로 읽기</string>
+    <string name="notification_voice_removed">삭제된 음성 프로필</string>
+    <string name="notification_action_format_value">음성 형식 <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> 사용</string>
+    <string name="notification_action_max_words_value">최대 <xliff:g id="words" example="10 words">%1$s</xliff:g>까지 읽기</string>
     <string name="notification_off">사용 안함</string>
     <string name="notification_on">사용</string>
     <string name="notification_never_again">SandFly가 다시 시작될 때까지</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
     <string name="notification_speech_tile_label">알림을 소리내어 읽기</string>
-    <string name="notification_speech_now_on">알림 소리내어 읽기가 활성화되었습니다.</string>
-    <string name="notification_speech_now_off">알림 소리내어 읽기가 비활성화되었습니다.</string>
-    <string name="notification_no_last_notification">읽은 알림이 없습니다.</string>
+    <string name="notification_speech_now_on">알림 읽기 켜짐</string>
+    <string name="notification_speech_now_off">알림 읽기 꺼짐</string>
+    <string name="notification_no_last_notification">읽은 알림이 없습니다</string>
     <string name="shortcut_read_notifications">알림 읽기</string>
-    <string name="shortcut_toggle_notification_speech">알림 음성 켜기 또는 끄기</string>
-    <string name="shortcut_read_last_notification">마지막 알림을 다시 읽어보세요</string>
+    <string name="shortcut_toggle_notification_speech">알림 읽기 켜기 또는 끄기</string>
+    <string name="shortcut_read_last_notification">마지막 알림 다시 읽기</string>
     <string name="shortcut_stop_notification">알림 읽기 중지</string>
-    <string name="notification_test_posting">5초 후에 테스트 알림이 옵니다.</string>
-    <string name="notification_test_not_allowed">SandFly 알림을 먼저 표시하도록 허용</string>
+    <string name="notification_test_posting">5초 후에 테스트 알림이 표시됩니다</string>
+    <string name="notification_test_not_allowed">SandFly가 알림을 표시하도록 먼저 허용하세요</string>
     <string name="notification_test_content_title">SandFly 테스트</string>
-    <string name="notification_test_content_text">이것은 테스트 알림입니다. 알림 설정을 읽어보세요. 123456</string>
-    <string name="notification_automation_on">소리내어 읽기 알림 활성화</string>
-    <string name="notification_automation_off">소리내어 읽기 알림 비활성화</string>
-    <string name="notification_automation_toggle">소리내어 읽기 알림 활성화 또는 비활성화</string>
-    <string name="notification_automation_stop">알림 읽기 중지</string>
+    <string name="notification_test_content_text">알림 설정에 따라 읽히는 테스트 알림입니다. 123456</string>
+    <string name="notification_automation_on">알림 읽기 켜기</string>
+    <string name="notification_automation_off">알림 읽기 끄기</string>
+    <string name="notification_automation_toggle">알림 읽기 켜기 또는 끄기</string>
+    <string name="notification_automation_stop">읽고 있는 알림 중지</string>
     <string name="notification_automation_read_all">알림 읽기</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>초</item>

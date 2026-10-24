@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_gemini_api_key">Gemini Ключ API</string>
-    <string name="summary_pref_gemini_api_key_built_in">За допомогою ключа, вбудованого в цю програму</string>
-    <string name="gemini_api_key_dialog_message">Отримайте безкоштовний ключ API від Google AI Studio за адресою aistudio.google.com/apikey і вставте його сюди. Щоб видалити свій ключ, очистіть поле та збережіть.\n\nЗображення та екрани, які ви описуєте, надсилаються на Google. На безкоштовному рівні Google може використовувати їх для покращення своїх продуктів.</string>
+    <string name="title_pref_gemini_api_key">Ключ API Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">Використовується ключ, вбудований у цю програму</string>
+    <string name="gemini_api_key_dialog_message">Отримайте безкоштовний ключ API у Google AI Studio за адресою aistudio.google.com/apikey і вставте його сюди. Щоб видалити ключ, очистьте поле та збережіть.\n\nЗображення й екрани, опис яких ви запитуєте, надсилаються в Google. У безкоштовному тарифі Google може використовувати їх для покращення своїх продуктів.</string>
     <string name="gemini_api_key_hint">Ключ API</string>
     <string name="gemini_api_key_save">Зберегти</string>
     <string name="gemini_api_key_get">Отримати ключ</string>
@@ -13,11 +13,11 @@
     <string name="gemini_model_loading">Отримання моделей…</string>
     <string name="gemini_model_list_failed">Не вдалося отримати моделі: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Спочатку встановіть ключ API Gemini</string>
-    <string name="gemini_api_terms_link">Gemini Додаткові умови використання API</string>
+    <string name="gemini_api_terms_link">Додаткові умови використання Gemini API</string>
     <string name="ai_service_address_hint">Адреса, наприклад https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Модель</string>
     <string name="ai_service_address_invalid">Адреса має починатися з https://. Нічого не збережено.</string>
-    <string name="dialog_message_ai_service_consent">Зображення та скріншоти надсилаються на <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для опису, що займає кілька секунд. Застосовуються його власні умови та політика конфіденційності. Генеративний ШІ є експериментальним, тому він допускатиме помилки.</string>
+    <string name="dialog_message_ai_service_consent">Зображення та знімки екрана надсилаються в <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для опису, це триває кілька секунд. Діють власні умови й політика конфіденційності цього сервісу. Генеративний ШІ експериментальний, тому помилятиметься.</string>
     <string name="ai_service_error_api_key">Сервіс AI не прийняв ключ API. Перевірте його налаштування в автоматичних описах.</string>
     <string name="ai_service_error_quota">Досягнуто ліміту використання служби ШІ. Повторіть спробу пізніше.</string>
     <string name="ai_service_error_busy">Служба ШІ зараз зайнята. Повторіть спробу за мить.</string>
@@ -30,24 +30,24 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Немає</string>
-    <string name="ai_service_not_set_up">Жодна служба ШІ не використовується. Налаштуйте або виберіть один у налаштуваннях автоматичних описів.</string>
+    <string name="ai_service_not_set_up">Не використовується жоден сервіс ШІ. Налаштуйте або виберіть його в налаштуваннях «Автоматичні описи».</string>
     <string name="ai_provider_none_set_up">Сервіс ШІ не налаштовано. Налаштуйте його в налаштуваннях нижче.</string>
-    <string name="ai_provider_other">Інші послуги</string>
+    <string name="ai_provider_other">Інший сервіс</string>
     <string name="title_pref_category_ai_services">Сервіси ШІ</string>
     <string name="title_pref_ai_provider">Сервіс ШІ</string>
     <string name="title_ai_provider_settings">Налаштування <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, не встановлено</string>
-    <string name="ai_provider_in_use">У користуванні</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, не налаштовано</string>
+    <string name="ai_provider_in_use">Використовується</string>
     <string name="ai_provider_not_set_up">Не налаштовано</string>
     <string name="ai_provider_not_ready">Спочатку виберіть модель</string>
     <string name="ai_provider_address">Адреса</string>
     <string name="ai_provider_address_message">Адреса служби з OpenAI-сумісним API чату та введенням зображення, наприклад https://example.com/v1.</string>
     <string name="ai_provider_not_set">Не встановлено</string>
     <string name="ai_provider_set">Налаштовано</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> Ключ API</string>
+    <string name="title_pref_gemini_api_key_of">Ключ API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">Модель <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="ai_provider_choose_model">Не обраний</string>
-    <string name="ai_provider_key_message">Вставте свій ключ API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Щоб видалити його, очистіть поле та збережіть. Зображення та екрани, які ви описуєте, надсилаються на <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_choose_model">Не вибрано</string>
+    <string name="ai_provider_key_message">Вставте ключ API для <xliff:g id="service" example="Claude">%1$s</xliff:g>. Щоб видалити його, очистьте поле та збережіть. Зображення й екрани, опис яких ви запитуєте, надсилаються в <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Спочатку встановіть ключ API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Спочатку вкажіть адресу</string>
     <string name="ai_provider_enter_model">Введіть назву моделі</string>

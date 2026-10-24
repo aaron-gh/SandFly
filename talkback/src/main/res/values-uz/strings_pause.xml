@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pause_backtalk">Pauza SandFly</string>
-    <string name="summary_pause_backtalk">SandFly davom etguningizcha nutq, imo-ishoralarni oʻchiring va teginish orqali kashf qiling.</string>
-    <string name="keycombo_menu_global_pause_backtalk">Toʻxtatib turish yoki davom ettirish SandFly</string>
+    <string name="title_pause_backtalk">SandFly-ni toʻxtatib turish</string>
+    <string name="summary_pause_backtalk">SandFly davom ettirilguncha nutq, ishoralar va “Teginib o‘rganish”ni oʻchiradi</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly’ni toʻxtatib turish yoki davom ettirish</string>
     <string name="backtalk_paused">SandFly pauza qilindi</string>
     <string name="backtalk_resumed">SandFly davom ettirildi</string>
     <string name="notification_title_backtalk_paused">SandFly pauza qilingan</string>
@@ -11,11 +11,11 @@
     <string name="dialog_title_pause_backtalk">SandFly toʻxtatilsinmi?</string>
     <string name="dialog_button_pause_backtalk">Pauza</string>
     <string name="dialog_message_pause_backtalk">SandFly toʻxtatilganda, u gapirmaydi yoki imo-ishoralarga javob bermaydi va ekran hech qanday ekran oʻquvchi yoqilmagandek ishlaydi.</string>
-    <string name="message_resume_keyguard">Davom etish uchun SandFly toʻxtatildi bildirishnomasiga teging, ovoz balandligini 3 marta tezda pasaytiring yoki qulflangan ekran koʻrinishi uchun telefonni qulflang va uygʻoting.</string>
-    <string name="message_resume_screen_on">Davom etish uchun SandFly toʻxtatildi bildirishnomasiga teging, ovoz balandligini 3 marta tezda pasaytiring yoki ekranni oʻchiring va yana yoqing.</string>
-    <string name="message_resume_manual">Davom etish uchun SandFly pauza qilinganligi haqida bildirishnomaga teging yoki ovoz balandligini 3 marta tezda pasaytiring.</string>
+    <string name="message_resume_keyguard">Davom ettirish uchun “SandFly pauza qilingan” bildirishnomasiga bosing, ovozni pasaytirish tugmasini tez 3 marta bosing yoki qulf ekrani chiqishi uchun telefonni qulflab, uygʻoting.</string>
+    <string name="message_resume_screen_on">Davom ettirish uchun “SandFly pauza qilingan” bildirishnomasiga bosing, ovozni pasaytirish tugmasini tez 3 marta bosing yoki ekranni oʻchirib, qayta yoqing.</string>
+    <string name="message_resume_manual">Davom ettirish uchun “SandFly pauza qilingan” bildirishnomasiga bosing yoki ovozni pasaytirish tugmasini tez 3 marta bosing.</string>
     <string name="message_resume_key_combo"><xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> tugmasini bosishingiz ham mumkin.</string>
-    <string name="title_pref_resume_backtalk">Davom etish SandFly</string>
+    <string name="title_pref_resume_backtalk">SandFly-ni davom ettirish</string>
     <string name="value_resume_keyguard">Bloklangan ekran ko\'rsatilganda</string>
     <string name="value_resume_screen_on">Ekran yoqilganda</string>
     <string name="value_resume_manual">Faqat bildirishnoma yoki yorliqdan</string>

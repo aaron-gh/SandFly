@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="granular_editing_title">Gedetailleerde bewerking</string>
-    <string name="granular_editing_split_by">Gesplitst door: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Gesplitst door</string>
+    <string name="granular_editing_split_by">Splitsen op: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Splitsen op</string>
     <string name="granular_editing_characters">Tekens</string>
     <string name="granular_editing_words">Woorden</string>
     <string name="granular_editing_sentences">Zinnen</string>
     <string name="granular_editing_lines">Regels</string>
     <string name="granular_editing_paragraphs">Alinea\'s</string>
-    <string name="granular_editing_space">Spatiebalk</string>
+    <string name="granular_editing_space">Spatie</string>
     <string name="granular_editing_new_line">Nieuwe regel</string>
     <string name="granular_editing_tab">Tab-teken</string>
-    <string name="granular_editing_empty">Geen tekst. Gebruik Tekst toevoegen aan het einde, in Meer.</string>
+    <string name="granular_editing_empty">Geen tekst. Gebruik ‘Tekst toevoegen aan het einde’ onder ‘Meer’.</string>
     <string name="granular_editing_edit">Bewerken</string>
-    <string name="granular_editing_insert_before">Eerder invoegen</string>
+    <string name="granular_editing_insert_before">Invoegen voor</string>
     <string name="granular_editing_insert_after">Invoegen na</string>
     <string name="granular_editing_delete">Verwijderen</string>
     <string name="granular_editing_select">Selecteren</string>
-    <string name="granular_editing_unselect">Deselecteer</string>
+    <string name="granular_editing_unselect">Deselecteren</string>
     <string name="granular_editing_selected">Geselecteerd</string>
     <string name="granular_editing_save">Opslaan</string>
     <string name="granular_editing_more">Meer</string>
     <string name="granular_editing_undo">Ongedaan maken</string>
-    <string name="granular_editing_redo">Voer de laatste ongedaan gemaakte bewerking opnieuw uit</string>
+    <string name="granular_editing_redo">Opnieuw</string>
     <string name="granular_editing_find">Zoeken</string>
-    <string name="granular_editing_find_next">Zoek de volgende</string>
+    <string name="granular_editing_find_next">Volgende zoeken</string>
     <string name="granular_editing_replace">Vervangen</string>
     <string name="granular_editing_replace_with">Vervangen door</string>
-    <string name="granular_editing_replace_all">Vervang alles</string>
-    <string name="granular_editing_add_at_end">Voeg tekst toe aan het einde</string>
-    <string name="granular_editing_clear_selection">Deselecteer alle tekst</string>
-    <string name="granular_editing_cut_selected">Knip de geselecteerde tekst</string>
+    <string name="granular_editing_replace_all">Alles vervangen</string>
+    <string name="granular_editing_add_at_end">Tekst toevoegen aan het einde</string>
+    <string name="granular_editing_clear_selection">Selectie wissen</string>
+    <string name="granular_editing_cut_selected">Geselecteerde tekst knippen</string>
     <string name="granular_editing_delete_selected">Geselecteerde verwijderen</string>
     <string name="granular_editing_copied">Gekopieerd</string>
     <string name="granular_editing_deleted">Verwijderd</string>
@@ -40,10 +40,10 @@
         <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> vervangen</item>
     </plurals>
     <string name="granular_editing_save_changes">Wijzigingen opslaan?</string>
-    <string name="granular_editing_copy_changes">Kopieer de gewijzigde tekst?</string>
-    <string name="granular_editing_discard">Gooi weg</string>
-    <string name="granular_editing_keep_editing">Blijf bewerken</string>
-    <string name="granular_editing_not_saved">Niet opgeslagen: het tekstveld is verdwenen. De tekst wordt gekopieerd.</string>
+    <string name="granular_editing_copy_changes">De gewijzigde tekst kopiëren?</string>
+    <string name="granular_editing_discard">Verwijderen</string>
+    <string name="granular_editing_keep_editing">Doorgaan met bewerken</string>
+    <string name="granular_editing_not_saved">Niet opgeslagen: het tekstveld bestaat niet meer. De tekst is gekopieerd.</string>
     <string name="granular_editing_no_text">Geen tekst om te bewerken</string>
     <string name="granular_editing_password">Niet beschikbaar in wachtwoordvelden</string>
 </resources>

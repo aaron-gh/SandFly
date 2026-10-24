@@ -36,7 +36,7 @@
         <item quantity="one">%1$d malli ladattu</item>
         <item quantity="other">%1$d mallia ladattu</item>
     </plurals>
-    <string name="title_pref_manage_models">Hallinnoi malleja</string>
+    <string name="title_pref_manage_models">Mallien hallinta</string>
     <string name="manage_models_storage_used">Mallit käyttävät tallennustilaa %1$s.</string>
     <string name="manage_models_empty">Malleja ei ole ladattu.</string>
     <string name="manage_models_unfinished">%1$s, keskeneräinen lataus</string>
@@ -65,7 +65,7 @@
     <string name="on_device_ai_error_low_space">Vapaata tallennustilaa ei ole tarpeeksi tälle mallille.</string>
     <string name="on_device_ai_error_time_limit">Android keskeytti latauksen, kun se oli ollut useita tunteja taustalla. Jatka siitä, mihin se pysähtyi, napauttamalla.</string>
     <string name="on_device_ai_metered_title">Ladataanko mobiilidatalla?</string>
-    <string name="on_device_ai_metered_message">Malli on useita gigatavuja. Wi-Fi on parempi.</string>
+    <string name="on_device_ai_metered_message">Malli on useita gigatavuja. Wi-Fi on suositeltava.</string>
     <string name="on_device_ai_metered_download">Lataa</string>
     <string name="on_device_ai_cancel">Peruuta</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Ohita laitteen tekoälyn muistirajat</string>

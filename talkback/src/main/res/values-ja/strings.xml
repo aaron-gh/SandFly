@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">デバイスのロックを解除。</string>
   <string name="title_pref_speech_volume">読み上げの音量</string>
   <string name="title_pref_verbose_scroll_announcement">リスト項目の数を常に読み上げる</string>
-  <string name="summary_pref_verbose_scroll_announcement">スクロールするたびにどの項目が表示されているかを言います</string>
+  <string name="summary_pref_verbose_scroll_announcement">スクロールするたびに表示中の項目を読み上げます</string>
   <string name="title_pref_cover_proximity_sensor">近接センサーを覆って読み上げを停止する</string>
   <string name="title_pref_phonetic_letters">文字とサンプルを読み上げる</string>
   <string name="summary_pref_phonetic_letters">キーボードのキーを選択するか、文字ごとに移動すると、「h、ホテル」のように、文字とともにサンプルが読み上げられます。</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">ほとんど</string>
   <string name="punctuation_some">一部</string>
   <string name="title_pref_count_repeated_symbols">繰り返される記号を数える</string>
-  <string name="summary_pref_count_repeated_symbols">シンボルが 4 回以上繰り返される場合、そのシンボルが何回繰り返されるかを言います</string>
+  <string name="summary_pref_count_repeated_symbols">記号が 4 回以上繰り返されるときに、繰り返しの回数を読み上げる</string>
   <string name="learn_more">詳細</string>
   <string name="title_pref_capital_letters">大文字</string>
   <string name="capital_letters_nothing">何もしない</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">ピッチを変更する</string>
   <string name="capital_letters_sound_feedback">音を鳴らす</string>
   <string name="title_pref_a11y_hints">使用に関するヒントを読み上げる</string>
-  <string name="summary_pref_a11y_hints">アイテムについて説明した後、その使用方法を説明します</string>
+  <string name="summary_pref_a11y_hints">項目の説明の後に使い方を読み上げる</string>
   <string name="pref_speak_container_element_positions_title">コンテナ情報を読み上げる</string>
   <string name="pref_speak_time_title">時刻を読み上げる</string>
   <string name="pref_speak_time_summary">画面を ON にしたとき</string>
-  <string name="summary_speak_container_element_positions">リスト、グリッド、その他のコンテナに出入りするときに言う</string>
+  <string name="summary_speak_container_element_positions">リスト、グリッドなどのコンテナに出入りしたときに読み上げます</string>
   <string name="reset_letency_reduction_settings_dialog_title">遅延の設定をリセットしますか？</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">遅延の設定がすべてデフォルトにリセットされます</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">リセット</string>
@@ -62,14 +62,14 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">リセット</string>
   <string name="gestures_announce_reset_gesture_settings">ジェスチャー設定がリセットされました。</string>
   <string name="pref_speak_roles_title">要素タイプを読み上げる</string>
-  <string name="pref_speak_roles_summary">「いいね！」ボタンまたはチェックボックス</string>
+  <string name="pref_speak_roles_summary">ボタン、チェックボックスなど</string>
   <string name="title_pref_speak_element_ids">要素 ID の読み上げ</string>
-  <string name="summary_pref_speak_element_ids">ラベルのないボタンの ID を言います</string>
+  <string name="summary_pref_speak_element_ids">ラベルのないボタンの ID を読み上げます</string>
   <string name="pref_allow_frequent_content_change_announcement_title">状況の変動をすべて読み上げる</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">ダウンロード、運転ルートの検索などを行っている間の更新を含みます。OFF にしても頻度を下げて更新は読み上げられます。</string>
   <string name="title_pref_explore_by_touch">タッチガイド</string>
   <string name="title_pref_category_controls">コントロール</string>
-  <string name="title_pref_category_reduce_latency_summary">これらの設定により、画面に触れた後の SandFly の反応が速くなります。</string>
+  <string name="title_pref_category_reduce_latency_summary">これらの設定により、画面に触れた後の SandFly の反応が速くなります</string>
   <string name="reset_latency_settings_title">遅延の設定をすべてリセット</string>
   <string name="title_pref_single_tap">シングルタップで有効化</string>
   <string name="summary_pref_single_tap">フォーカスのあるアイテムを 1 回タップすると有効にできます。ダブルタップよりもすばやく操作できます。</string>
@@ -317,7 +317,7 @@
   <string name="title_pref_typing_confirmation">入力方法</string>
   <string name="title_pref_typing_long_tap_duration">入力時に長押しする時間</string>
   <string name="title_pref_touch_explore_timeout">入力フォーカス遅延</string>
-  <string name="message_pref_touch_explore_latency">遅延を短くすると、キーボードに触れた後、SandFly が早く話します。\n\n 遅延を選択してください</string>
+  <string name="message_pref_touch_explore_latency">遅延を短くすると、キーボードに触れてから SandFly が読み上げるまでの時間が短くなります。\n\n遅延を選択</string>
   <string name="title_pref_touch_focus_timeout">フォーカス遅延</string>
   <string name="title_pref_talkback_gesture_detection">SandFly でジェスチャーを処理する</string>
   <string name="toast_pref_talkback_gesture_detection">設定を有効にするには、SandFly をオフにして再度オンにします。</string>
@@ -697,7 +697,7 @@
   <string name="dialog_title_diagnosis_mode">診断モードを有効にしますか？</string>
   <string name="dialog_message_diagnosis_mode">診断モードはデバッグをする場合に便利です。診断モードでは 4 本指でのジェスチャー タップをオーバーライドし、画面コンテンツをシステムログに記録します。画面コンテンツには個人情報が含まれる可能性があります。\n\n診断モードを有効にしますか？</string>
   <string name="title_request_phone_permission">スマートフォンへのアクセスを許可しますか？</string>
-  <string name="message_request_phone_permission">これにより、通話中に SandFly からの通知が少なくなります。</string>
+  <string name="message_request_phone_permission">これにより、通話中に SandFly からの通知が少なくなります</string>
   <string name="continue_button">続行</string>
   <string name="links">リンク</string>
   <string name="start_of_page">前の%1$sはありません</string>
@@ -754,7 +754,7 @@
   <string name="title_pref_a11y_volume">ユーザー補助機能の音量</string>
   <string name="title_pref_touch_explore_latency">入力フォーカス遅延</string>
   <string name="title_pref_touch_focus_latency">フォーカス遅延</string>
-  <string name="message_pref_touch_focus_latency">遅延を短くすると、画面をタッチした後、SandFly が早く話します。</string>
+  <string name="message_pref_touch_focus_latency">遅延を短くすると、画面に触れてから SandFly が読み上げるまでの時間が短くなります</string>
   <string name="message_pref_typing_method_prefix">入力時の遅延を最小限に抑えるには、[指でキーを選択してから離す] を選択します</string>
   <string name="message_pref_typing_method_postfix">また、いつでもスプリット タップを使用して入力できます。これを行うには、1 本の指でキーのいずれかを長押しし、別の指で画面をタップします。</string>
   <string name="title_pref_talkback_speech_rate">音声の速度</string>
@@ -789,7 +789,7 @@
   <string name="dialog_title_voice_commands">音声コマンドを使って SandFly を制御する</string>
   <string name="dialog_message_voice_commands">音声で次のような操作を行えます。\n\n• コピーする\n• フォーカスした項目以降を読み上げる\n• [保存したものを] 探す\n• [速く] 話す\n• SandFly の設定\n\n 「<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>」と言うと、利用できるすべての音声コマンドが表示されます</string>
   <string name="start_voice_command">音声コマンドを使用する</string>
-  <string name="dialog_title_pass_through_mode">SandFly をスキップしてシステム ジェスチャーを使用</string>
+  <string name="dialog_title_pass_through_mode">SandFly のジェスチャーをスキップしてシステム ジェスチャーを使用</string>
   <string name="dialog_message_pass_through_mode">チャイムが聞こえたら、SandFly でサポートされていないシステム ジェスチャーを使用できます。これは、パススルー ジェスチャーとも呼ばれています。</string>
   <string name="dialog_title_voice_input_download">音声入力を使用するには Gboard を更新してください</string>
   <string name="dialog_message_voice_input_download">Gboard がアクティブなときに 2 本の指でダブルタップして、音声入力を ON にできるようになりました。この操作を使用するには、Gboard を最新バージョンに更新する必要があります。</string>
@@ -903,7 +903,7 @@
   <string name="split_tap_everywhere_title">どこでもスプリット タップ</string>
   <string name="split_tap_everywhere_text">スプリット タップをどこでも使用して項目を有効にできるようになりました。キーボード以外でも使用できます。使用するには、1 本の指で画面上の項目を探し、その指を置いたまま別の指で画面をタップすると、現在フォーカスのある項目が有効になります。</string>
   <string name="keyboard_enhanced_keymap_title">キーボード: 拡張キーマップ</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly には、さまざまな新しいコマンドとショートカットを備えた物理キーボード用の「拡張キーマップ」が追加されました。この機能強化には、Web ナビゲーションをより効率化し、物理キーボードに依存する SandFly ユーザーのナビゲーションと対話を合理化するための「ブラウズ モード」が含まれています。 <xliff:g id="settings_path">%1$s</xliff:g>.\n\nで「拡張キーマップ」に切り替えることができます。点字ディスプレイを使用している場合は、新しい参照モードのショートカットを使用して、点字ディスプレイから直接コンテンツを移動することもできます。この変更に対応するために、点字表示のショートカットの一部が変更されました。 <xliff:g id="braille_display_settings_path">%2$s</xliff:g> ですべての点字表示ショートカットのリストを確認できます。</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly に、物理キーボード用の「拡張キーマップ」が追加されました。さまざまな新しいコマンドとショートカットを利用できます。この機能には、ウェブを効率よく移動できる「ブラウズモード」が含まれており、物理キーボードを使う SandFly ユーザーの操作が簡単になります。「拡張キーマップ」には <xliff:g id="settings_path">%1$s</xliff:g> で切り替えられます。\n\n点字ディスプレイを使用している場合は、ブラウズモードの新しいショートカットで、点字ディスプレイから直接コンテンツ内を移動することもできます。この変更に合わせて、点字ディスプレイのショートカットの一部が変更されました。点字ディスプレイのショートカットの一覧は <xliff:g id="braille_display_settings_path">%2$s</xliff:g> で確認できます。</string>
   <string name="keyboard_shortcuts_link">[SandFly の設定] &gt; [キーボード ショートカット] で</string>
   <string name="keyboard_shortcuts_link_tts">[SandFly の設定]、[キーボード ショートカット] の順に選択して</string>
   <string name="braille_display_settings_link">点字ディスプレイの設定</string>
@@ -981,8 +981,8 @@
   <string name="typing_text_with_braille_keyboard_text">点字キーボードを使って入力することもできます。点字キーボードは SandFly の設定にあります。</string>
   <string name="other_ways_to_type_title">その他の入力方法</string>
   <string name="other_ways_to_type_text">SandFly で入力する方法は他にもあります。たとえば、ダブルタップして文字を入力することもできます。</string>
-  <string name="basic_other_ways_to_type_text">SandFly を入力する他の方法もあります。たとえば、ダブルタップして文字を入力できます。これは、後で「SandFly 設定」&gt;「スクリーンキーボード」&gt;「入力方法」で変更できます。</string>
-  <string name="basic_other_ways_to_type_text_tts">SandFly を入力する他の方法もあります。たとえば、ダブルタップして文字を入力できます。これは、後で「SandFly」設定、「スクリーンキーボード」、「入力方法」で変更できます。</string>
+  <string name="basic_other_ways_to_type_text">SandFly では他の方法でも入力できます。たとえば、ダブルタップで文字を入力できます。これは後で [SandFly の設定] &gt; [画面キーボード] &gt; [入力方法] で変更できます。</string>
+  <string name="basic_other_ways_to_type_text_tts">SandFly では他の方法でも入力できます。たとえば、ダブルタップで文字を入力できます。これは後で SandFly の設定、画面キーボード、入力方法の順に開いて変更できます。</string>
   <string name="change_typing_preference_text">入力の設定を変更</string>
   <string name="moving_cursor_title">カーソルの移動</string>
   <string name="moving_cursor_text">テキスト ボックスを有効にしたら、上または下にスワイプして文字から文字にカーソルを移動できます。\n\n下のテキスト ボックスで行ってみましょう。</string>
@@ -1068,8 +1068,8 @@
   <string name="checking_notifications_tips">通知の履歴を確認するには、2 本の指で画面の上部から下にスワイプします</string>
   <string name="image_description_playground_title">画像の説明を聞いてみる</string>
   <string name="image_description_playground_content_one">画像にフォーカスを合わせたら、SandFly メニューを開いて [画像の説明] を選択します。\n\n下の写真を例に、説明を取得してみましょう。</string>
-  <string name="image_description_playground_content_two">画像の説明設定は、「SandFly 設定 &gt; 自動説明」でいつでも変更できます。</string>
-  <string name="image_description_playground_content_two_tts">画像の説明設定は、「SandFly」設定から「自動説明」でいつでも変更できます。</string>
+  <string name="image_description_playground_content_two">画像の説明の設定は [SandFly の設定] &gt; [説明の自動読み上げ] でいつでも変更できます。</string>
+  <string name="image_description_playground_content_two_tts">画像の説明の設定は、SandFly の設定、説明の自動読み上げの順に開いていつでも変更できます。</string>
   <string name="image_description_sample_image_content_description">サンプル画像: 3 本の指でタップして SandFly メニューを開き、[画像の説明] を選択すると、説明が読み上げられます。</string>
   <string name="practice_gestures_title">ジェスチャーの練習</string>
   <string name="practice_keyboard_gestures_title">キーボード ショートカットの練習</string>
@@ -1251,7 +1251,7 @@
   <string name="shortcut_column_left">前の列</string>
   <string name="shortcut_column_right">次の列</string>
   <string name="table_navigation_not_supported">表内の移動はサポートされていません</string>
-  <string name="pref_auto_enter_table_navigation_title">テーブル内のテーブル ナビゲーションに切り替える</string>
+  <string name="pref_auto_enter_table_navigation_title">表内では表ナビゲーションに切り替える</string>
   <string name="title_text_formatting_menu">テキストの書式設定の説明</string>
   <string name="summary_text_formatting_menu">太字、斜体、下線などの変更</string>
   <string name="title_text_formatting_inline">テキストの書式設定の読み上げ</string>
@@ -1307,16 +1307,16 @@
     <string name="speech_engine_unavailable_with_profile">音声プロファイルの使用中は音声エンジンを使用できません</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>、使用中</string>
     <string name="no_voice_profiles">音声プロファイルはありません</string>
-    <string name="shortcut_voice_profiles">音声プロファイルを選択する</string>
-    <string name="shortcut_previous_voice_profile">以前の音声プロファイル</string>
+    <string name="shortcut_voice_profiles">音声プロファイルを選択</string>
+    <string name="shortcut_previous_voice_profile">前の音声プロファイル</string>
     <string name="shortcut_next_voice_profile">次の音声プロファイル</string>
     <string name="title_pref_voice_profile_in_use">使用中の音声プロファイル</string>
-    <string name="title_pref_add_voice_profile">音声プロファイルを追加する</string>
-    <string name="voice_profile_new_name">音声プロフィール <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">音声プロファイルはすでに <xliff:g id="name" example="Reading">%1$s</xliff:g> と呼ばれています</string>
+    <string name="title_pref_add_voice_profile">音声プロファイルを追加</string>
+    <string name="voice_profile_new_name">音声プロファイル <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> という名前の音声プロファイルはすでにあります</string>
     <string name="title_pref_voice_profile_name">名前</string>
     <string name="title_pref_voice_profile_language">言語</string>
-    <string name="title_pref_voice_profile_voice">声</string>
+    <string name="title_pref_voice_profile_voice">音声</string>
     <string name="voice_profile_engine_default">デフォルト</string>
     <string name="voice_profile_loading">読み込み中</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>、インストールされていません</string>
@@ -1324,18 +1324,18 @@
     <string name="voice_profile_move_up">上に移動</string>
     <string name="voice_profile_move_down">下に移動</string>
     <string name="voice_profile_rename">名前の変更</string>
-    <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g> 上に移動しました</string>
+    <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g> の上に移動しました</string>
     <string name="voice_profile_moved_below"><xliff:g id="name" example="Reading">%1$s</xliff:g> の下に移動しました</string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> 削除されました</string>
-    <string name="title_pref_delete_voice_profile">音声プロファイルを削除する</string>
+    <string name="title_pref_delete_voice_profile">音声プロファイルを削除</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g>を削除しますか?</string>
     <string name="voice_profile_delete">削除</string>
     <string name="summary_pref_tts_engine_default">システムのデフォルト</string>
-    <string name="title_pref_speech_pitch">スピーチのピッチ</string>
+    <string name="title_pref_speech_pitch">音声の高さ</string>
     <string name="title_pref_speech_stream">読み上げの音量</string>
     <string name="summary_selector_speech_stream">アクセシビリティ、メディア、着信音、通話音量を切り替える</string>
     <string name="speech_stream_accessibility">ユーザー補助機能の音量</string>
-    <string name="speech_stream_media">メディアのボリューム</string>
+    <string name="speech_stream_media">メディアの音量</string>
     <string name="speech_stream_ring">着信音量</string>
     <string name="speech_stream_call">通話音量、受話口</string>
     <string-array name="pref_speech_stream_entries">
@@ -1344,18 +1344,18 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">長いテキストを一度に 1 文ずつ送信する</string>
-    <string name="summary_pref_speak_in_phrases">Gryphon などの音声エンジンの場合、停止が遅いため、スワイプすると長いテキストが一度に停止します。多くのエンジンは、別々に送信されるセンテンスの間に一時停止時間が長くなるため、エンジンがすぐに停止する場合は、これをオフのままにしておきます。</string>
-    <string name="battery_optimization_notification_title">バッテリーの最適化が停止する可能性があります SandFly</string>
-    <string name="battery_optimization_notification_text">この携帯電話では、画面がオフになった後にバッテリー セーバーによって SandFly が停止されるため、再起動されるまで静かになります。タップしてバッテリーの最適化を開き、[すべてのアプリ] を選択して、SandFly を見つけて、[最適化しない] を選択します。</string>
-    <string name="title_pref_mute_speech_while_recording">録音中は静かに</string>
+    <string name="title_pref_speak_in_phrases">長いテキストを 1 文ずつ送信</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon など停止に時間がかかる音声エンジン向けで、スワイプすると長いテキストがすぐに停止します。多くのエンジンは個別に送られた文の間で長めに間を置くため、使用中のエンジンがすぐに停止する場合はオフのままにしてください。</string>
+    <string name="battery_optimization_notification_title">バッテリーの最適化によって SandFly が停止することがあります</string>
+    <string name="battery_optimization_notification_text">このスマートフォンでは、画面がオフになった後にバッテリー セーバーが SandFly を停止することがあり、再起動するまで読み上げが行われません。タップして [電池の最適化] を開き、[すべてのアプリ] を選択して SandFly を探し、[最適化しない] を選択してください。</string>
+    <string name="title_pref_mute_speech_while_recording">録音中は読み上げない</string>
     <string name="summary_pref_mute_speech_while_recording">ヘッドフォンが接続されていない状態でアプリが録音している間、SandFly はジェスチャー、キー、入力に応じて話すだけで、通知などの場合は沈黙を保つため、録音されません。</string>
     <string name="title_pref_switch_languages">言語を自動的に切り替える</string>
     <string name="title_pref_switch_dialects">自動的に方言を切り替える</string>
-    <string name="category_collapsed">折りたたまれたセクション</string>
-    <string name="category_expanded">拡大セクション</string>
+    <string name="category_collapsed">折りたたみ済み</string>
+    <string name="category_expanded">展開済み</string>
     <string name="title_pref_speak_nav_bar_buttons">ナビゲーション バーのボタンを読み上げる</string>
-    <string name="summary_pref_speak_nav_bar_buttons">ナビゲーション バーでリフトを有効にすると、「戻る」や「ホーム」など、タップで押すボタンを言います。</string>
+    <string name="summary_pref_speak_nav_bar_buttons">ナビゲーション バーで指を離して有効化を使うとき、タップで押されたボタン（「戻る」や「ホーム」など）を読み上げます。</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">バッテリー <xliff:g id="battery_level" example="73">%1$s</xliff:g> パーセント</string>
     <string name="template_battery_level_unknown">電池残量不明</string>
@@ -1363,53 +1363,53 @@
     <string name="title_pref_screen_announcements">画面のオンとオフ</string>
     <string name="summary_pref_screen_announcements">画面がオフまたはオンになったとき、および電話のロックが解除されたときにSandFlyが何を言うかを選択します</string>
     <string name="title_screen_announcements_screen_off">画面がオフになるとき</string>
-    <string name="title_screen_announcements_screen_on">画面がオンになると</string>
-    <string name="title_screen_announcements_unlock">電話機のロックが解除されているとき</string>
-    <string name="title_pref_say_screen_off">「画面をオフにして」と言います</string>
-    <string name="title_pref_say_device_unlocked">「デバイスのロックが解除されました」と言います</string>
-    <string name="title_pref_announce_time">時間</string>
+    <string name="title_screen_announcements_screen_on">画面がオンになるとき</string>
+    <string name="title_screen_announcements_unlock">電話機のロックが解除されたとき</string>
+    <string name="title_pref_say_screen_off">「画面オフ」と読み上げる</string>
+    <string name="title_pref_say_device_unlocked">「デバイスのロックが解除されました」と読み上げる</string>
+    <string name="title_pref_announce_time">時刻</string>
     <string name="title_pref_announce_ringer_mode">着信音モード</string>
-    <string name="summary_pref_announce_ringer_mode">着信音が振動またはサイレントに設定されているときに言ってください</string>
+    <string name="summary_pref_announce_ringer_mode">着信音がバイブレーションまたはサイレントに設定されたときに読み上げる</string>
     <string name="title_pref_category_feedback">フィードバック</string>
     <string name="title_pref_category_typing_and_braille">タイピングと点字</string>
     <string name="title_pref_category_apps">アプリ</string>
-    <string name="title_pref_touch_activation">タッチとアクティベーション</string>
+    <string name="title_pref_touch_activation">タップと有効化</string>
     <string name="title_pref_navigation">ナビゲーション</string>
-    <string name="title_pref_category_more">もっと見る</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch のジェスチャーを予約</string>
+    <string name="title_pref_category_more">その他</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch 用にジェスチャーを確保</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly による 2 本指のシングルタップとダブルタップの処理を停止し、Samsung Vibration Watch が使用できるようにします。ウォッチのアクセシビリティ設定で Vibration Watch を有効にします。</string>
     <string name="shortcut_reserved_for_vibration_watch">詳細設定の Vibration Watch 用に予約されています</string>
-    <string name="title_pref_speakerphone_away_from_ear">スピーカーを耳から離したとき</string>
+    <string name="title_pref_speakerphone_away_from_ear">耳から離したときにスピーカー</string>
     <string name="summary_pref_speakerphone_away_from_ear">通話中に電話機を耳から離すとスピーカーに切り替わり、再び持ち上げると受話口に戻ります。</string>
-    <string name="summary_pref_speakerphone_needs_permission">Android がスクリーン リーダーに与えない許可が必要です。許可するには、adb or Shizuku, then come back to this screen: %1$s を指定してこのコマンドを実行します。</string>
-    <string name="action_copy_command">コピーコマンド</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android がスクリーン リーダーに付与しない権限が必要です。付与するには、adb または Shizuku で次のコマンドを実行してから、この画面に戻ってください: %1$s</string>
+    <string name="action_copy_command">コマンドをコピー</string>
     <string name="command_copied">コマンドがコピーされました</string>
-    <string name="title_pref_speech_control">他のアプリに話しかけてもらう</string>
-    <string name="summary_pref_speech_control">許可したアプリは、SandFly の声でテキストを話すことができます。デバイスがロックされている間は何も言われません。</string>
+    <string name="title_pref_speech_control">他のアプリの読み上げを許可</string>
+    <string name="summary_pref_speech_control">許可したアプリは SandFly の音声でテキストを読み上げられます。デバイスのロック中は何も読み上げられません。</string>
     <string name="title_pref_speech_control_sound">他のアプリが話す前にサウンドを再生する</string>
     <string name="speech_control_apps_category">アプリ</string>
-    <string name="speech_control_no_apps">まだ発言を要求したアプリはありません。</string>
+    <string name="speech_control_no_apps">まだ読み上げをリクエストしたアプリはありません。</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> が SandFly を通して話すことを許可しますか?</string>
-    <string name="speech_control_ask_text">あなたのSandFlyの声でテキストを言うことができます。これは詳細設定で変更できます。</string>
+    <string name="speech_control_ask_text">SandFly の音声でテキストを読み上げることができます。これは詳細設定で変更できます。</string>
     <string name="speech_control_allow">許可する</string>
-    <string name="speech_control_deny">許可しないでください</string>
-    <string name="permission_speak_label">SandFlyを通して話す</string>
-    <string name="permission_speak_description">アプリにあなたのSandFlyの声でテキストを言うように要求させます。アプリが話す前に、SandFly が質問します。</string>
-    <string name="permission_braille_display_label">SandFly の点字ディスプレイになるよう依頼してください</string>
-    <string name="permission_braille_display_description">アプリに SandFly の点字ディスプレイになるように要求させます。 SandFly で許可すると、画面上のすべてを読み取り、デバイスを制御できます。 SandFly が最初に尋ねます。</string>
-    <string name="title_pref_phonetic_letters_mode">文字を音声的に話す</string>
-    <string name="phonetic_letters_mode_off">OFF</string>
-    <string name="phonetic_letters_mode_after_letter_delay">手紙の後で、「えー、ホテル」のように遅れて</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">手紙の後は、「h ホテル」のように遅延はありません。</string>
-    <string name="phonetic_letters_mode_instead_of_letter">文字の代わりに「ホテル」みたいに</string>
+    <string name="speech_control_deny">許可しない</string>
+    <string name="permission_speak_label">SandFly を通して読み上げる</string>
+    <string name="permission_speak_description">SandFly の音声でテキストを読み上げるようリクエストすることをアプリに許可します。アプリが読み上げる前に SandFly が確認します。</string>
+    <string name="permission_braille_display_label">SandFly の点字ディスプレイとしての動作をリクエスト</string>
+    <string name="permission_braille_display_description">SandFly の点字ディスプレイとして動作するようリクエストすることをアプリに許可します。SandFly で許可すると、アプリは画面上のすべてを読み取り、デバイスを操作できます。SandFly は事前に確認します。</string>
+    <string name="title_pref_phonetic_letters_mode">文字をフォネティックで読み上げる</string>
+    <string name="phonetic_letters_mode_off">オフ</string>
+    <string name="phonetic_letters_mode_after_letter_delay">文字の後に間を置く（例:「h、ホテル」）</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">文字の後に間を置かない（例:「h ホテル」）</string>
+    <string name="phonetic_letters_mode_instead_of_letter">文字の代わりに（例:「ホテル」）</string>
     <string name="title_pref_emoji_speech">絵文字</string>
     <string name="emoji_speech_engine">音声エンジンによる読み上げ</string>
     <string name="emoji_speech_names">SandFly が読む</string>
     <string name="emoji_speech_none">なし</string>
-    <string name="summary_selector_menu_emoji">絵文字の読み方を変更する</string>
+    <string name="summary_selector_menu_emoji">絵文字の読み方を変更</string>
     <string name="emoji_speech_state">絵文字: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">繰り返される絵文字を数える</string>
-    <string name="emoji_repeat_count_off">OFF</string>
+    <string name="emoji_repeat_count_off">オフ</string>
     <string name="emoji_repeat_count_2">2つ以上</string>
     <string name="emoji_repeat_count_3">3つ以上</string>
     <string name="emoji_repeat_count_4">4つ以上</string>
@@ -1419,22 +1419,22 @@
     <string name="pref_table_column_headers_title">列ヘッダーを読む</string>
     <string name="pref_table_column_headers_entry_after">セルデータ後</string>
     <string name="pref_table_column_headers_entry_before">セルデータの前</string>
-    <string name="pref_table_column_headers_entry_off">読まないでください</string>
+    <string name="pref_table_column_headers_entry_off">読まない</string>
     <string name="pref_table_speak_row_column_numbers_title">行番号と列番号を読み上げる</string>
-    <string name="pref_table_speak_row_column_numbers_summary">表のセルの行番号と列番号を発表する</string>
-    <string name="title_pref_speak_volume_changes">発話音量の変更</string>
-    <string name="summary_pref_speak_volume_changes">音量キーを押した後、新しい音量を言います</string>
-    <string name="title_pref_speak_notifications">音声通知</string>
-    <string name="summary_pref_speak_notifications">新しい通知が到着したら読み上げます。着信通話は常に読み取られます。</string>
+    <string name="pref_table_speak_row_column_numbers_summary">表のセルの行番号と列番号を読み上げます</string>
+    <string name="title_pref_speak_volume_changes">音量の変更を読み上げる</string>
+    <string name="summary_pref_speak_volume_changes">音量キーを押した後に新しい音量を読み上げます</string>
+    <string name="title_pref_speak_notifications">通知を読み上げる</string>
+    <string name="summary_pref_speak_notifications">新しい通知が届いたときに読み上げます。着信は常に読み上げられます。</string>
     <string name="title_pref_notification_list">SandFly の通知リストを使用する</string>
     <string name="title_pref_notification_parts">通知内容</string>
-    <string name="title_pref_play_installer">Google Play からインストールされたようです</string>
-    <string name="summary_pref_play_installer">他のアプリに Google Play がインストールされている SandFly と伝えます。一部の銀行アプリなど、一部のアプリでは、他の場所からインストールされたユーザー補助サービスが無効になります。 Shizuku が必要で、SandFly の出所について通知されているアプリのみを変更します。</string>
-    <string name="summary_pref_play_installer_pending">オンですが、Google Play はまだインストーラーとして記録されていません。 SandFlyは、Shizukuが利用可能な場合に設定します。</string>
+    <string name="title_pref_play_installer">Google Play からインストールしたように見せる</string>
+    <string name="summary_pref_play_installer">SandFly が Google Play からインストールされたことを他のアプリに通知します。一部の銀行アプリなど、ほかの場所からインストールされたユーザー補助サービスをオフにするアプリがあります。Shizuku が必要です。変更されるのは、SandFly の入手元としてアプリに通知される情報のみです。</string>
+    <string name="summary_pref_play_installer_pending">オンですが、Google Play はまだインストール元として記録されていません。SandFly は Shizuku が利用可能になったときに設定します。</string>
     <string name="notification_part_title">タイトル</string>
     <string name="notification_part_text">テキスト</string>
     <string name="notification_part_app">アプリ名</string>
-    <string name="notification_part_time">時間</string>
+    <string name="notification_part_time">時刻</string>
     <string name="notification_part_playback">再生中または一時停止中</string>
     <string name="notification_list_title">通知</string>
     <string name="notification_list_empty">通知はありません</string>
@@ -1443,17 +1443,17 @@
     <string name="notification_list_quick_settings">クイック設定</string>
     <string name="notification_list_dismiss">表示しない</string>
     <string name="notification_list_show_all">すべて表示</string>
-    <string name="notification_list_show_less">表示を少なくする</string>
+    <string name="notification_list_show_less">表示を減らす</string>
     <string name="notification_list_clear_all">すべてクリア</string>
     <string name="notification_list_send">送信</string>
-    <string name="notification_list_playing">遊ぶ</string>
+    <string name="notification_list_playing">再生中</string>
     <string name="notification_list_paused">一時停止中</string>
-    <string name="notification_list_play">遊ぶ</string>
+    <string name="notification_list_play">再生</string>
     <string name="notification_list_pause">一時停止</string>
     <string name="notification_list_previous">前へ</string>
     <string name="notification_list_next">次へ</string>
     <plurals name="notification_list_group_count">
-        <item quantity="one">%d件の通知</item>
+        <item quantity="one">%d 件の通知</item>
         <item quantity="other">%d 件の通知</item>
     </plurals>
     <string name="title_pref_quick_settings">SandFlyのクイック設定を使用する</string>
@@ -1464,27 +1464,27 @@
     <string name="quick_settings_mobile_data">モバイルデータ</string>
     <string name="quick_settings_hotspot">ホットスポット</string>
     <string name="quick_settings_airplane_mode">機内モード</string>
-    <string name="quick_settings_do_not_disturb">邪魔しないでください</string>
+    <string name="quick_settings_do_not_disturb">サイレント モード</string>
     <string name="quick_settings_sound_mode">サウンドモード</string>
     <string name="quick_settings_flashlight">懐中電灯</string>
     <string name="quick_settings_flashlight_brightness">懐中電灯の明るさ</string>
-    <string name="quick_settings_location">場所</string>
+    <string name="quick_settings_location">位置情報</string>
     <string name="quick_settings_auto_rotate">自動回転</string>
     <string name="quick_settings_battery_saver">バッテリーセーバー</string>
     <string name="quick_settings_dark_theme">ダークテーマ</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">明るさ</string>
     <string name="quick_settings_adaptive_brightness">適応型明るさ</string>
-    <string name="quick_settings_media_volume">メディアのボリューム</string>
-    <string name="quick_settings_call_volume">通話量</string>
+    <string name="quick_settings_media_volume">メディアの音量</string>
+    <string name="quick_settings_call_volume">通話音量</string>
     <string name="quick_settings_ring_volume">着信音量</string>
-    <string name="quick_settings_notification_volume">通知量</string>
+    <string name="quick_settings_notification_volume">通知音量</string>
     <string name="quick_settings_alarm_volume">アラーム音量</string>
     <string name="quick_settings_accessibility_volume">ユーザー補助機能の音量</string>
     <string name="quick_settings_system_volume">システムオーディオの音量</string>
     <string name="quick_settings_data_saver">データセーバー</string>
     <string name="quick_settings_night_light">ナイトライト</string>
-    <string name="quick_settings_extra_dim">非常に暗い</string>
+    <string name="quick_settings_extra_dim">画面をさらに暗くする</string>
     <string name="quick_settings_color_inversion">色の反転</string>
     <string name="quick_settings_color_correction">色補正</string>
     <string name="quick_settings_microphone_access">マイクへのアクセス</string>
@@ -1501,7 +1501,7 @@
     <string name="quick_settings_add_system_tile">システムタイルを追加</string>
     <string name="quick_settings_no_system_tiles">追加するシステム タイルはありません</string>
     <string name="quick_settings_tile_not_found">%1$s はシステムのクイック設定にありません</string>
-    <string name="quick_settings_never">決してしない</string>
+    <string name="quick_settings_never">なし</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d秒</item>
         <item quantity="other">%d秒</item>
@@ -1515,10 +1515,10 @@
     <string name="quick_settings_battery_charging">%1$s、充電中</string>
     <string name="quick_settings_battery_full">%1$s、充電済み</string>
     <string name="quick_settings_sound">音</string>
-    <string name="quick_settings_vibrate">振動する</string>
+    <string name="quick_settings_vibrate">バイブレーション</string>
     <string name="quick_settings_mute">ミュート</string>
-    <string name="quick_settings_on">ON</string>
-    <string name="quick_settings_off">OFF</string>
+    <string name="quick_settings_on">オン</string>
+    <string name="quick_settings_off">オフ</string>
     <string name="quick_settings_unavailable">利用不可</string>
     <string name="quick_settings_edit">編集</string>
     <string name="quick_settings_system">システムクイック設定</string>
@@ -1528,53 +1528,53 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">列数</string>
     <string name="quick_settings_move">移動</string>
-    <string name="quick_settings_move_title">%1$s 移動</string>
+    <string name="quick_settings_move_title">%1$s を移動</string>
     <string name="quick_settings_cell">行%1$d、列%2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
     <plurals name="quick_settings_others_moved">
-        <item quantity="one">他 %d 個のアイテムが移動されました</item>
-        <item quantity="other">他に %d 個のアイテムが移動されました</item>
+        <item quantity="one">ほかの %d 個の項目が移動しました</item>
+        <item quantity="other">ほかの %d 個の項目が移動しました</item>
     </plurals>
     <string name="quick_settings_remove">削除</string>
-    <string name="quick_settings_added">%1$s 追加しました</string>
+    <string name="quick_settings_added">%1$s を追加しました</string>
     <string name="quick_settings_removed">%1$s が削除されました</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly オン。 2 本の指を画面上で 5 秒間押し続けると、電源がオフになります。このメッセージの表示を停止するには、「SandFly 設定」&gt;「詳細設定」&gt;「SandFly をオフにする手順を表示」をオフにします。</string>
     <string name="edge_gestures_title">エッジ</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ブラウズ モードをオンまたはオフにする別のショートカット</string>
     <string name="title_pref_vibration_strength">振動強度</string>
-    <string name="title_pref_audio_output_device">音声出力装置</string>
-    <string name="dialog_title_audio_output_device">SandFly サウンドを再生する場所を選択してください</string>
+    <string name="title_pref_audio_output_device">音声出力デバイス</string>
+    <string name="dialog_title_audio_output_device">SandFly のサウンドを再生する場所を選択</string>
     <string name="value_audio_output_device_default">システムのデフォルト</string>
-    <string name="value_audio_output_device_speaker">電話スピーカー</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">接続されたBluetoothデバイスまたは有線</string>
-    <string name="value_audio_output_device_disconnected">切断された</string>
+    <string name="value_audio_output_device_speaker">スマートフォンのスピーカー</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">接続済みの Bluetooth または有線デバイス</string>
+    <string name="value_audio_output_device_disconnected">切断済み</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth オーディオデバイス</string>
     <string name="value_audio_output_device_wired_headset">有線ヘッドセット</string>
     <string name="value_audio_output_device_wired_headphones">有線ヘッドフォン</string>
     <string name="value_audio_output_device_usb_headset">USB ヘッドセット</string>
     <string name="value_audio_output_device_usb_device">USB オーディオデバイス</string>
-    <string name="title_pref_speaker_devices">これらのデバイスを備えた電話スピーカー</string>
+    <string name="title_pref_speaker_devices">これらのデバイスの接続時はスマートフォンのスピーカー</string>
     <string name="summary_pref_speaker_devices_none">なし</string>
     <string name="summary_pref_speaker_devices_no_devices">Bluetooth または有線デバイスがまだ接続されていません</string>
     <string name="pref_reduce_window_delay_summary">SandFly は、アニメーションがオフのときに新しい画面をより速く読み取ります。これにより、電話全体のアニメーションがオフになります。</string>
-    <string name="dialog_message_detailed_ai_description">選択された画像はGoogleのGemini APIに送信されて記述されます。オンデバイス AI がオンになっている場合、それらは代わりにこの携帯電話上で説明され、送信されません。\n\n無料の API キーを使用すると、Google は受け取ったものを保持し、製品の改善に使用して、人々にレビューしてもらうことができます。生成 AI は実験的なものであるため、間違いを犯す可能性があります。 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> が適用されます。</string>
-    <string name="dialog_message_detailed_ai_promotion">詳細な画像の説明は、生成 AI によって強化されています。選択された画像はGoogleのGemini APIに送信されて記述されます。オンデバイス AI がオンになっている場合、それらは代わりにこの携帯電話上で説明され、送信されません。\n\n無料の API キーを使用すると、Google は受け取ったものを保持し、製品の改善に使用して、人々にレビューしてもらうことができます。生成 AI は実験的なものであるため、間違いを犯す可能性があります。 SandFly 設定でいつでも詳細な画像の説明をオフにできます。\n\n <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> が適用されます。</string>
-    <string name="dialog_message_screen_overview_promotion">画面のスクリーンショットがGoogleのGemini APIに送信され、説明されます。これには数秒かかります。オンデバイス AI がオンになっていると、代わりにこの携帯電話に記述され、送信されません。\n\n無料の API キーを使用すると、Google は受信したものを保持し、製品の改善に使用して、人々にレビューしてもらうことができます。生成 AI は実験的なものであるため、間違いを犯す可能性があります。 <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> が適用されます。</string>
+    <string name="dialog_message_detailed_ai_description">選択した画像は、説明を生成するために Google の Gemini API に送信されます。[オンデバイスAI] をオンにすると、代わりにこのスマートフォン上で説明され、送信されません。\n\n無料の API キーを使用している場合、Google は受け取った内容を保持し、サービスの改善に使用し、人間による確認を行うことがあります。生成 AI は試験運用中のため、間違いが発生します。<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> が適用されます。</string>
+    <string name="dialog_message_detailed_ai_promotion">画像の詳細な説明は生成 AI によって作成されます。選択した画像は、説明を生成するために Google の Gemini API に送信されます。[オンデバイスAI] をオンにすると、代わりにこのスマートフォン上で説明され、送信されません。\n\n無料の API キーを使用している場合、Google は受け取った内容を保持し、サービスの改善に使用し、人間による確認を行うことがあります。生成 AI は試験運用中のため、間違いが発生します。画像の詳細な説明は SandFly の設定でいつでもオフにできます。\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> が適用されます。</string>
+    <string name="dialog_message_screen_overview_promotion">画面のスクリーンショットが説明のために Google の Gemini API に送信されます。これには数秒かかります。[オンデバイスAI] をオンにすると、代わりにこのスマートフォン上で説明され、送信されません。\n\n無料の API キーを使用している場合、Google は受け取った内容を保持し、サービスの改善に使用し、人間による確認を行うことがあります。生成 AI は試験運用中のため、間違いが発生します。<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> が適用されます。</string>
     <string name="shortcut_title_open_app">アプリを開く</string>
-    <string name="shortcut_open_app">オープン<xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> を開く</string>
     <string name="shortcut_scroll_to_top">一番上までスクロール</string>
-    <string name="shortcut_write_reading_control">読み取りコントロールの文字を書く</string>
+    <string name="shortcut_write_reading_control">読み上げコントロールの文字を書く</string>
     <string name="title_pref_reading_control_letters">手書きのアルファベット文字</string>
     <string name="reading_control_letter_none">なし</string>
-    <string name="handwriting_prompt">アルファベット文字を書きます</string>
+    <string name="handwriting_prompt">文字を書いてください</string>
     <string name="handwriting_closed">手書き終了</string>
-    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> で始まる読み取り制御はありません</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> で始まる読み上げコントロールはありません</string>
     <string name="shortcut_write_app_name">アプリ名を書いてアプリを開く</string>
     <string name="handwriting_app_prompt">アプリ名を書いてください</string>
     <string name="handwriting_no_app"><xliff:g id="letters" example="WHA">%1$s</xliff:g> で始まるアプリはありません</string>
     <string name="handwriting_app_not_opened"><xliff:g id="app" example="WhatsApp">%1$s</xliff:g> を開けませんでした</string>
-    <string name="handwriting_not_recognized">手書きが認識されない</string>
+    <string name="handwriting_not_recognized">手書きを認識できませんでした</string>
     <string name="handwriting_downloading">手書き認識をダウンロード中です</string>
     <string name="handwriting_download_title">手書き認識をダウンロードしますか?</string>
     <string name="handwriting_download_message">この携帯電話では手書きが認識されます。この言語のモデル (約 20 MB) は、Google から 1 回ダウンロードされます。ダウンロードが完了するとメッセージが表示されます。</string>
@@ -1584,7 +1584,7 @@
     <string name="handwriting_unsupported_language">この言語では手書き認識は利用できません</string>
     <string name="title_pref_handwriting_keyboard">手書きキーボード</string>
     <string name="summary_pref_handwriting_keyboard">Android のキーボード設定で SandFly 手書きをオンにします</string>
-    <string name="title_pref_handwriting_wait">書いてから待つ</string>
+    <string name="title_pref_handwriting_wait">書いた後の待機時間</string>
     <string name="value_handwriting_wait_200">0.2 秒</string>
     <string name="value_handwriting_wait_300">0.3秒</string>
     <string name="value_handwriting_wait_400">0.4秒</string>
@@ -1595,8 +1595,8 @@
     <string name="handwriting_keyboard_name">SandFly 手書き</string>
     <string name="handwriting_space">スペース</string>
     <string name="handwriting_new_line">改行</string>
-    <string name="handwriting_tutorial_intro">手書きキーボードのチュートリアル。画面上の任意の場所に 1 本の指で書き込みます。書いたものは、少し立ち止まったときに入力されます。チュートリアルを終了するには、3 本の指で下にスワイプします。</string>
-    <string name="handwriting_tutorial_write_letter">アルファベットの「a」を書きます。</string>
+    <string name="handwriting_tutorial_intro">手書きキーボードのチュートリアルです。画面上の任意の場所に 1 本の指で書いてください。少し手を止めると、書いた内容が入力されます。チュートリアルを終了するには、3 本の指で下にスワイプします。</string>
+    <string name="handwriting_tutorial_write_letter">文字「a」を書いてください。</string>
     <string name="handwriting_tutorial_write_word">次に、単語 hi (h の後に i) を書きます。</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g>と入力しました。</string>
     <string name="handwriting_tutorial_space">2 本の指で右にスワイプしてスペースを入力します。</string>
@@ -1605,7 +1605,7 @@
     <string name="handwriting_tutorial_next_reading">手書きが大文字などの別の文字として認識された場合は、2 本の指で上にスワイプして次の認識候補を選択します。今すぐ試してください。</string>
     <string name="handwriting_tutorial_read_back">2 本の指でタップすると、カーソルの前のテキストが読み上げられます。</string>
     <string name="handwriting_tutorial_new_line">2 本の指で下にスワイプして新しい行を挿入するか、送信などのテキスト フィールド アクションを実行します。</string>
-    <string name="handwriting_tutorial_not_that">それもまたジェスチャーでした。</string>
+    <string name="handwriting_tutorial_not_that">別のジェスチャーでした。</string>
     <string name="handwriting_tutorial_done">改行。チュートリアルが終了しました。 3 本の指で下にスワイプするとキーボードが非表示になり、3 本の指で右または左にスワイプするとキーボードが切り替わります。チュートリアルを再度開くには、3 本の指でタップします。</string>
     <string name="handwriting_tutorial_finished">チュートリアルが終了しました。再度開くには、3 本の指でタップします。</string>
     <string name="handwriting_no_alternatives">他に提案はありません</string>
@@ -1613,18 +1613,18 @@
     <string name="handwriting_empty">空のテキスト</string>
     <string name="handwriting_not_available">このデバイスでは手書き認識は利用できません</string>
     <string name="shortcut_scroll_to_bottom">一番下までスクロール</string>
-    <string name="shortcut_refresh">リフレッシュ</string>
-    <string name="shortcut_system_notifications">システム通知シェード</string>
+    <string name="shortcut_refresh">更新</string>
+    <string name="shortcut_system_notifications">システムの通知パネル</string>
     <string name="shortcut_system_quick_settings">システムクイック設定</string>
     <string name="shortcut_lock_screen">デバイスの画面をロックする</string>
     <string name="shortcut_power_menu">電源メニュー</string>
-    <string name="shortcut_increase_media_volume">メディアの音量を増やす</string>
+    <string name="shortcut_increase_media_volume">メディアの音量を上げる</string>
     <string name="shortcut_decrease_media_volume">メディアの音量を下げる</string>
     <string name="title_clear_selection">選択をクリア</string>
     <string name="title_pref_brightness">明るさ</string>
-    <string name="summary_support_change_brightness">画面が隠れている場合でも、画面の明るさを増減します。</string>
+    <string name="summary_support_change_brightness">画面が隠れている場合でも、画面の明るさを増減します</string>
     <string name="title_pref_shortcut_3finger_4tap">3本指で4回タップ</string>
-    <string name="title_pref_shortcut_2finger_rotate_clockwise">2本の指で時計回りに回転させます</string>
+    <string name="title_pref_shortcut_2finger_rotate_clockwise">2 本指で時計回りに回転</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">2本の指で反時計回りに回転</string>
     <string name="title_pref_shortcut_2finger_scrub">2本の指でこする</string>
     <string name="title_pref_shortcut_2finger_pinch">2本指でピンチ</string>
@@ -1654,7 +1654,7 @@
     <string name="value_multi_tap_timeout_150ms">0.15 秒</string>
     <string name="value_multi_tap_timeout_200ms">0.2 秒</string>
     <string name="value_multi_tap_timeout_250ms">0.25秒(デフォルト)</string>
-    <string name="title_pref_rotor_step_degrees">ステップごとのローター回転数</string>
+    <string name="title_pref_rotor_step_degrees">1 ステップあたりのローター回転角</string>
     <string name="title_pref_edge_first_click_mm">最初のクリックまでの距離</string>
     <string name="title_pref_edge_second_click_mm">最初のクリックから 2 番目のクリックまでの距離</string>
     <string name="value_distance_5mm">0.5cm</string>
@@ -1670,44 +1670,44 @@
     <string name="value_rotor_step_45">45度</string>
     <string name="value_rotor_step_60">60度</string>
     <string name="title_pref_low_latency_audio">低遅延オーディオ</string>
-    <string name="summary_pref_low_latency_audio">SandFly の音と音声を電話の最速オーディオ パスで再生すると、より早く聞こえるようになります。音声や音声が途切れたり、間違って聞こえる場合は、オフにしてください。</string>
+    <string name="summary_pref_low_latency_audio">SandFly のサウンドと音声をスマートフォンの最速のオーディオ経路で再生し、早く聞こえるようにします。音声やサウンドが途切れたり、正しく聞こえなかったりする場合はオフにしてください。</string>
     <string name="value_focus_delay_200ms_default">0.2秒(デフォルト)</string>
     <string name="value_focus_delay_300ms">0.3秒</string>
-    <string name="title_pref_lift_to_activate">持ち上げてアクティブにします</string>
-    <string name="summary_support_change_lift_to_activate">指を離すとアイテムがアクティブになる場所を変更する</string>
-    <string name="value_lift_to_activate_disabled">障害者</string>
+    <string name="title_pref_lift_to_activate">指を離して有効化</string>
+    <string name="summary_support_change_lift_to_activate">指を離すと項目が有効になる場所を変更</string>
+    <string name="value_lift_to_activate_disabled">無効</string>
     <string name="value_lift_to_activate_navigation_bar">ナビゲーションバーのみ</string>
     <string name="value_lift_to_activate_entire_screen">画面全体</string>
-    <string name="template_lift_to_activate_changed">持ち上げてアクティブにします: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">ラップアラウンド</string>
+    <string name="template_lift_to_activate_changed">指を離して有効化: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="title_pref_wrap_around">最初に戻る</string>
     <string name="summary_pref_wrap_around">最後の項目を越えてスワイプすると最初の項目に移動し、最初の項目を越えてスワイプすると最後の項目に移動します。オフにすると、代わりに最後にサウンドが再生されます。</string>
-    <string name="title_pref_fix_stuck_touch_exploration">タッチ探索のスタックを修正</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP の許可がなければ、SandFly はタッチ探索がスタックする可能性があるとしか言えません。それを修正するには、次を実行します: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">タッチ探索の修正</string>
+    <string name="title_pref_fix_stuck_touch_exploration">停止したタッチ操作ガイドを修正</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP 権限がないと、SandFly はタッチガイドが応答しなくなっている可能性を知らせることしかできません。SandFly が修正できるようにするには、次のコマンドを実行してください: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="stuck_touch_exploration_fixing">タッチ探索を修正しています</string>
     <string name="stuck_touch_exploration_fixed">タッチ探索が修正されました</string>
-    <string name="stuck_touch_exploration_not_fixed">タッチ探索はまだスタックしています。電話機を再起動して問題を解決します。</string>
-    <string name="stuck_touch_exploration_restart">タッチ探索がスタックする可能性があります。電話機を再起動して問題を解決します。</string>
-    <string name="stuck_touch_exploration_grant_dump">タッチ探索がスタックする可能性があります。電話機を再起動して問題を修正するか、修正できるように ADB で SandFly に DUMP 権限を付与します。</string>
+    <string name="stuck_touch_exploration_not_fixed">タッチガイドがまだ応答していません。修正するにはスマートフォンを再起動してください。</string>
+    <string name="stuck_touch_exploration_restart">タッチガイドが応答しなくなっている可能性があります。修正するにはスマートフォンを再起動してください。</string>
+    <string name="stuck_touch_exploration_grant_dump">タッチガイドが応答しなくなっている可能性があります。修正するには、スマートフォンを再起動するか、SandFly が修正できるように ADB で DUMP 権限を付与してください。</string>
     <string name="title_pref_window_names">ウィンドウ名</string>
-    <string name="window_names_always">いつも</string>
-    <string name="window_names_until_first_item">常に最初の項目で切り取る</string>
-    <string name="window_names_window_opens">窓が開いているときのみ</string>
-    <string name="window_names_never">決してしない</string>
-    <string name="title_pref_selector_links_controls_web_only">Web コンテンツのみのリンクとコントロール</string>
-    <string name="title_pref_selector_auto_switch">読み取り制御を自動的に変更する</string>
-    <string name="title_pref_touch_stops_speech">画面に触れると発話を停止する</string>
+    <string name="window_names_always">常に</string>
+    <string name="window_names_until_first_item">常に（最初の項目で中断）</string>
+    <string name="window_names_window_opens">ウィンドウが開いたときのみ</string>
+    <string name="window_names_never">なし</string>
+    <string name="title_pref_selector_links_controls_web_only">リンクとコントロールはウェブ コンテンツのみ</string>
+    <string name="title_pref_selector_auto_switch">読み上げコントロールを自動的に変更</string>
+    <string name="title_pref_touch_stops_speech">画面に触れると読み上げを停止</string>
     <string name="title_pref_focus_new_windows">新しいウィンドウにフォーカスを移動する</string>
     <string name="title_pref_volume_keys_adjust_sliders">音量キーでスライダーを調整する</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">スライダーにフォーカスがある場合、音量の代わりに音量を上下すると値が変更されます</string>
-    <string name="title_pref_volume_keys_move_cursor">音量キーでカーソルを移動します</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">スライダーにフォーカスがあるとき、音量大キーと音量小キーで音量ではなくスライダーの値を変更します</string>
+    <string name="title_pref_volume_keys_move_cursor">音量キーでカーソルを移動</string>
     <string name="summary_pref_volume_keys_move_cursor">テキストフィールドにフォーカスがある場合、音量を上げるとカーソルが 1 文字戻り、音量を下げるとカーソルが次の文字に移動します</string>
-    <string name="summary_support_wrap_around">最後のアイテムから最初のアイテムへのラッピングをオンまたはオフにします</string>
-    <string name="wrap_around_on">ラップアラウンドオン</string>
-    <string name="wrap_around_off">ラップアラウンドオフ</string>
-    <string name="title_selector_tablet_held_up_faces_away">タブレットを向こう側に向けてかざす</string>
-    <string name="summary_support_tablet_held_up_faces_away">タブレットまたは折りたたんだ携帯電話の点字キーボードの場合</string>
-    <string name="tablet_held_up_faces_away_on">タブレットを向こう側に向けてかざす</string>
-    <string name="tablet_held_up_faces_away_off">タブレットを向こう側に向けてかざす</string>
+    <string name="summary_support_wrap_around">最後の項目から最初の項目への移動をオンまたはオフにします</string>
+    <string name="wrap_around_on">最初に戻る: オン</string>
+    <string name="wrap_around_off">最初に戻る: オフ</string>
+    <string name="title_selector_tablet_held_up_faces_away">持ち上げたタブレットの画面を外向きにする</string>
+    <string name="summary_support_tablet_held_up_faces_away">タブレットまたは開いた折りたたみ式スマートフォンの点字キーボード用</string>
+    <string name="tablet_held_up_faces_away_on">持ち上げたタブレットの画面を外向きにする: オン</string>
+    <string name="tablet_held_up_faces_away_off">持ち上げたタブレットの画面を外向きにする: オフ</string>
     <string name="title_keyboard_echo_on_screen">スクリーンキーボードのエコー</string>
     <string name="title_keyboard_echo_physical">物理キーボードエコー</string>
     <string name="title_keyboard_echo_braille_keyboard">点字キーボードのエコー</string>
@@ -1715,27 +1715,27 @@
     <string name="title_keyboard_echo_braille_display">点字表示エコー</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">入力中に音声を中断する</string>
-    <string name="pref_interrupt_typing_entry_always">いつも</string>
+    <string name="pref_interrupt_typing_entry_always">常に</string>
     <string name="pref_interrupt_typing_entry_edit_fields">編集フィールド内</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">キーボードエコー時</string>
-    <string name="title_pref_interrupt_enter">Enter でスピーチを中断する</string>
+    <string name="title_pref_interrupt_enter">Enter キーで読み上げを中断</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">名前、状態、タイプ</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">タイプ、状態、名前</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">状態、タイプ、名前</string>
     <string name="item_detail_name">名前</string>
-    <string name="item_detail_type">入力</string>
-    <string name="item_detail_state">州</string>
+    <string name="item_detail_type">種類</string>
+    <string name="item_detail_state">状態</string>
     <string name="action_move_up">上に移動</string>
     <string name="action_move_down">下に移動</string>
-    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g>中<xliff:g id="position" example="2">%1$d</xliff:g>の位置</string>
-    <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g>を拾いました。 <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> を落としました。 <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly は、この注文の商品の詳細を示します。変更するには、詳細をタッチしたまま上下にドラッグします。 SandFly がオンの状態で、ダブルタップして押したままドラッグします。 「上に移動」および「下に移動」アクションを使用することもできます。</string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> 中 <xliff:g id="position" example="2">%1$d</xliff:g> 番目</string>
+    <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> を持ち上げました。<xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> をドロップしました。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">SandFly は項目の詳細をこの順序で読み上げます。順序を変更するには、詳細を長押しして上下にドラッグします。SandFly がオンの場合は、ダブルタップして長押ししてからドラッグします。[上に移動] と [下に移動] の操作も使用できます。</string>
     <string name="title_pref_speak_items_before_scroll">スクロールして表示される前に項目を読み上げる</string>
     <string name="gemini_error_api_key">Gemini は API キーを受け入れませんでした。自動説明設定でキーを確認してください。</string>
     <string name="gemini_error_quota">Gemini API キーの使用制限に達しました。後でもう一度試してください。</string>
-    <string name="gemini_error_busy">Gemini は現在忙しいです。しばらくしてからもう一度試してください。</string>
-    <string name="gemini_error_timeout">Gemini は答えるのに時間がかかりすぎました。もう一度やり直してください。</string>
+    <string name="gemini_error_busy">Gemini は現在混み合っています。しばらくしてからもう一度お試しください。</string>
+    <string name="gemini_error_timeout">Gemini の応答に時間がかかりすぎました。もう一度お試しください。</string>
     <string name="gemini_error_with_code">Gemini は応答できませんでした。エラー <xliff:g id="http_status" example="400">%1$d</xliff:g>。</string>
     <string name="gemini_error_with_details">Gemini は応答できませんでした。エラー <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>。より詳細な画像の説明を取得できません: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
@@ -1743,7 +1743,7 @@
     <string name="image_qna_stop_listening">聞くのをやめる</string>
     <string name="image_qna_type_question">質問を入力してください</string>
     <string name="shortcut_dictate">音声入力</string>
-    <string name="title_pref_ai_dictation">AI による正しいディクテーション</string>
+    <string name="title_pref_ai_dictation">AI で音声入力を修正</string>
     <string name="dictation_not_corrected">修正されていません。認識されたとおりに入力されました。</string>
     <string name="dictation_nothing_recognized">何も認識されませんでした</string>
     <string name="dictation_unavailable">音声認識は利用できません</string>
@@ -1766,9 +1766,9 @@
     <string name="dictation_ai_same">説明の自動読み上げと同じ</string>
     <string name="title_pref_browse_mode_per_app">各アプリのブラウズモードを記憶する</string>
     <string name="title_pref_export_settings">設定のエクスポート</string>
-    <string name="title_pref_import_settings">インポート設定</string>
-    <string name="settings_export_done">設定がエクスポートされました。 APIキーは含まれていません</string>
+    <string name="title_pref_import_settings">設定のインポート</string>
+    <string name="settings_export_done">設定をエクスポートしました。API キーは含まれていません</string>
     <string name="settings_export_failed">設定をエクスポートできませんでした</string>
-    <string name="settings_import_done">インポートされた設定</string>
-    <string name="settings_import_failed">このファイルはSandFly または Backtalk 設定ファイルではないか、読み取れませんでした</string>
+    <string name="settings_import_done">設定をインポートしました</string>
+    <string name="settings_import_failed">このファイルは SandFly または Backtalk の設定ファイルではないか、読み取れませんでした</string>
 </resources>

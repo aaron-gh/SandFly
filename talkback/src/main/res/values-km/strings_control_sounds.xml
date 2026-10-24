@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">គ្រប់គ្រងសំឡេង និងរំញ័រ</string>
-    <string name="summary_pref_control_sounds">ផ្តល់ឱ្យប្រភេទនៃការគ្រប់គ្រងនីមួយៗ ដូចជាប៊ូតុង ប្រអប់ធីក កែសម្រួលវាល និងធាតុបញ្ជី សំឡេងរបស់វា និងការរំញ័រផ្ទាល់ខ្លួនរបស់វាពីរូបរាង ជំនួសឱ្យសំឡេងផ្តោតអារម្មណ៍ និងរំញ័រ ដូចដែល Unspoken ធ្វើសម្រាប់ NVDA ។ សំឡេងចេញមកពីកន្លែងបញ្ជានៅលើអេក្រង់ ហើយ SandFly បន្សល់ទុកថាវាជាប្រភេទនៃការគ្រប់គ្រង។</string>
-    <string name="title_pref_control_sounds_speak_roles">នៅតែនិយាយថាប្រភេទនៃការគ្រប់គ្រង</string>
-    <string name="summary_pref_control_sounds_speak_roles">នៅពេលដែលសំឡេងបញ្ជាលេង នៅតែនិយាយថាប្រភេទនៃការគ្រប់គ្រងដូចជាប៊ូតុង។ នេះគឺសម្រាប់ប្រធានបទសំឡេងនីមួយៗ។</string>
+    <string name="title_pref_control_sounds">សំឡេង និងរំញ័ររបស់ធាតុបញ្ជា</string>
+    <string name="summary_pref_control_sounds">ប្រភេទនីមួយៗនៃធាតុបញ្ជា ដូចជាប៊ូតុង ប្រអប់ធីក ប្រអប់កែសម្រួល និងធាតុបញ្ជី ទទួលបានសំឡេង និងការញ័រផ្ទាល់ខ្លួនពីរចនាប័ទ្ម ជំនួសឱ្យសំឡេង និងការញ័រនៃការផ្ដោត ដូចដែល Unspoken ធ្វើសម្រាប់ NVDA។ សំឡេងចេញពីទីតាំងរបស់ធាតុបញ្ជានៅលើអេក្រង់ ហើយ SandFly មិននិយាយប្រភេទធាតុបញ្ជាទេ។</string>
+    <string name="title_pref_control_sounds_speak_roles">នៅតែនិយាយប្រភេទធាតុបញ្ជា</string>
+    <string name="summary_pref_control_sounds_speak_roles">នៅពេលសំឡេងធាតុបញ្ជាចាក់ ប្រភេទធាតុបញ្ជានៅតែត្រូវបាននិយាយ ដូចជាប៊ូតុង។ អនុវត្តចំពោះរចនាប័ទ្មសំឡេងទាំងអស់។</string>
     <string name="title_pref_control_sounds_3d">អូឌីយ៉ូ 3D</string>
     <string name="pref_control_sounds_3d_headphones">ជាមួយនឹងកាស</string>
     <string name="pref_control_sounds_3d_always">ជានិច្ច</string>
-    <string name="pref_control_sounds_3d_never">មិនដែលទេមានតែឆ្វេងនិងស្តាំ</string>
-    <string name="individual_sound_control_button">ការគ្រប់គ្រងសំឡេង៖ ប៊ូតុង</string>
-    <string name="individual_sound_control_checkbox">ការត្រួតពិនិត្យសំឡេង៖ ប្រអប់ធីក</string>
-    <string name="individual_sound_control_radio_button">គ្រប់គ្រងសំឡេង៖ ប៊ូតុងវិទ្យុ</string>
-    <string name="individual_sound_control_edit_text">គ្រប់គ្រងសំឡេង៖ កែសម្រួលវាល</string>
-    <string name="individual_sound_control_combo_box">គ្រប់គ្រងសំឡេង៖ បញ្ជីទម្លាក់ចុះ</string>
-    <string name="individual_sound_control_slider">ការគ្រប់គ្រងសំឡេង៖ គ្រាប់រំកិល</string>
-    <string name="individual_sound_control_link">គ្រប់គ្រងសំឡេង៖ តំណ</string>
-    <string name="individual_sound_control_image">ការគ្រប់គ្រងសំឡេង៖ រូបភាព</string>
-    <string name="individual_sound_control_clock">សំឡេងបញ្ជា៖ នាឡិកា</string>
-    <string name="individual_sound_control_tab">គ្រប់គ្រងសំឡេង៖ ផ្ទាំង</string>
-    <string name="individual_sound_control_menu_item">គ្រប់គ្រងសំឡេង៖ ធាតុម៉ឺនុយ</string>
-    <string name="individual_sound_control_list_item">គ្រប់គ្រងសំឡេង៖ បញ្ជីធាតុ</string>
-    <string name="individual_sound_control_tree_item">គ្រប់គ្រងសំឡេង៖ ធាតុដើមឈើ</string>
+    <string name="pref_control_sounds_3d_never">មិនប្រើ មានតែឆ្វេង និងស្ដាំ</string>
+    <string name="individual_sound_control_button">សំឡេងធាតុបញ្ជា៖ប៊ូតុង</string>
+    <string name="individual_sound_control_checkbox">សំឡេងធាតុបញ្ជា៖ប្រអប់ធីក</string>
+    <string name="individual_sound_control_radio_button">សំឡេងធាតុបញ្ជា៖ ប៊ូតុងមូល</string>
+    <string name="individual_sound_control_edit_text">សំឡេងធាតុបញ្ជា៖ វាលកែសម្រួល</string>
+    <string name="individual_sound_control_combo_box">សំឡេងធាតុបញ្ជា៖បញ្ជីទម្លាក់ចុះ</string>
+    <string name="individual_sound_control_slider">សំឡេងធាតុបញ្ជា៖គ្រាប់រំកិល</string>
+    <string name="individual_sound_control_link">សំឡេងធាតុបញ្ជា៖តំណ</string>
+    <string name="individual_sound_control_image">សំឡេងធាតុបញ្ជា៖រូបភាព</string>
+    <string name="individual_sound_control_clock">សំឡេងធាតុបញ្ជា៖នាឡិកា</string>
+    <string name="individual_sound_control_tab">សំឡេងធាតុបញ្ជា៖ផ្ទាំង</string>
+    <string name="individual_sound_control_menu_item">សំឡេងធាតុបញ្ជា៖ធាតុម៉ឺនុយ</string>
+    <string name="individual_sound_control_list_item">សំឡេងធាតុបញ្ជា៖ ធាតុក្នុងបញ្ជី</string>
+    <string name="individual_sound_control_tree_item">សំឡេងធាតុបញ្ជា៖ ធាតុមែកធាង</string>
 </resources>

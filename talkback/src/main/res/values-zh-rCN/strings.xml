@@ -69,7 +69,7 @@
   <string name="summary_pref_allow_frequent_content_change_announcement">包括下载、行车路线等进度。如果您关闭此功能，系统仍会读出进度，只是频率较低。</string>
   <string name="title_pref_explore_by_touch">触摸浏览</string>
   <string name="title_pref_category_controls">控制</string>
-  <string name="title_pref_category_reduce_latency_summary">这些设置可使 SandFly 在您触摸屏幕后更快响应</string>
+  <string name="title_pref_category_reduce_latency_summary">这些设置可使 SandFly 在你触摸屏幕后更快响应</string>
   <string name="reset_latency_settings_title">重置所有延迟时间设置</string>
   <string name="title_pref_single_tap">点按一次即可激活</string>
   <string name="summary_pref_single_tap">只需点按一次聚焦的项目即可将其激活，这种导航方式比点按两次更快。</string>
@@ -292,7 +292,7 @@
   <string name="pref_node_desc_order_title">元素描述顺序</string>
   <string name="pref_time_feedback_format_title">时间格式</string>
   <string name="title_pref_latency_reduction">缩短延迟时间</string>
-  <string name="talkback_latency_reduction_summary">让 SandFly 在您触摸屏幕后更快响应</string>
+  <string name="talkback_latency_reduction_summary">让 SandFly 在你触摸屏幕后更快响应</string>
   <string name="summary_pref_intonation">以较高的音调读出删除的字母</string>
   <string name="title_pref_brailledisplay">盲文显示屏</string>
   <string name="title_pref_brailleime">盲文键盘</string>
@@ -980,8 +980,8 @@
   <string name="typing_text_with_braille_keyboard_text">您还可以使用盲文键盘输入文字。盲文键盘可在 SandFly 设置中找到。</string>
   <string name="other_ways_to_type_title">其他输入方式</string>
   <string name="other_ways_to_type_text">您还可以通过其他方式在 SandFly 中输入内容。例如，您可以通过点按两次输入字母。</string>
-  <string name="basic_other_ways_to_type_text">您还可以通过其他方式在 SandFly 中输入。例如，点按两次可输入一个字母。您可以稍后在 SandFly 设置 &gt; 屏幕键盘 &gt; 输入方式中更改此设置。</string>
-  <string name="basic_other_ways_to_type_text_tts">您还可以通过其他方式在 SandFly 中输入。例如，点按两次可输入一个字母。您可以稍后在 SandFly 设置中的屏幕键盘和输入方式中更改此设置。</string>
+  <string name="basic_other_ways_to_type_text">您还可以通过其他方式在 SandFly 中输入。例如，点按两次可输入一个字母。您可以稍后在“SandFly 设置”&gt;“屏幕键盘”&gt;“偏好的输入方式”中更改此设置。</string>
+  <string name="basic_other_ways_to_type_text_tts">您还可以通过其他方式在 SandFly 中输入。例如，点按两次可输入一个字母。您可以稍后依次前往 SandFly 设置、屏幕键盘、偏好的输入方式更改此设置。</string>
   <string name="change_typing_preference_text">更改输入偏好设置</string>
   <string name="moving_cursor_title">移动光标</string>
   <string name="moving_cursor_text">启用文本框之后，您可通过向上或向下滑动手指在字母之间移动光标。\n\n不妨在下方的文本框中试试。</string>
@@ -1068,7 +1068,7 @@
   <string name="image_description_playground_title">尝试获取图片描述</string>
   <string name="image_description_playground_content_one">将焦点置于某个图片上时，打开 SandFly 菜单并选择“描述图片”。\n\n下面有一张图片。请尝试获取图片描述。</string>
   <string name="image_description_playground_content_two">您可以随时在 SandFly 设置 &gt; 自动描述中更改图片描述设置。</string>
-  <string name="image_description_playground_content_two_tts">您可以随时在 SandFly 设置中的自动描述中更改图片描述设置。</string>
+  <string name="image_description_playground_content_two_tts">您可以随时依次前往 SandFly 设置、自动描述，更改图片描述设置。</string>
   <string name="image_description_sample_image_content_description">示例图片；用三根手指点按图片，打开 SandFly 菜单，然后选择“描述图片”聆听描述。</string>
   <string name="practice_gestures_title">练习手势</string>
   <string name="practice_keyboard_gestures_title">练习使用键盘快捷键</string>
@@ -1256,7 +1256,7 @@
   <string name="title_text_formatting_menu">描述文字格式</string>
   <string name="summary_text_formatting_menu">读出不同的文字格式，例如粗体、斜体、下划线等</string>
   <string name="title_text_formatting_inline">读出文字格式信息</string>
-  <string name="title_switch_text_formatting">开启或关闭文本格式播报</string>
+  <string name="title_switch_text_formatting">朗读文本格式</string>
   <string name="summary_text_formatting_verbosity">读出不同的文字样式，例如粗体和斜体</string>
   <string name="summary_text_formatting_selector">是否朗读粗体和斜体等格式</string>
   <string name="title_text_formatting_verbosity_options">文字格式选项</string>
@@ -1339,7 +1339,7 @@
       Said when the user tries to change the spoken language from the reading controls while a
       voice profile is in use, as all speech then uses the profile's voice. [CHAR LIMIT=NONE]
     -->
-    <string name="spoken_language_unavailable_with_profile">使用语音配置时口语语言不可用</string>
+    <string name="spoken_language_unavailable_with_profile">使用语音配置时无法更改朗读语言</string>
 
     <!--
       Said when the user tries to change the speech engine from the reading controls while a voice
@@ -1387,7 +1387,7 @@
     <string name="title_pref_voice_profile_language">语言</string>
 
     <!-- Title for the setting with a voice profile's voice. [CHAR LIMIT=NONE] -->
-    <string name="title_pref_voice_profile_voice">声音</string>
+    <string name="title_pref_voice_profile_voice">语音</string>
 
     <!--
       Choice of language or voice for a voice profile that uses the speech engine's own default.
@@ -1467,7 +1467,7 @@
     <string name="summary_pref_speak_in_phrases">适用于停止较慢的语音引擎，例如 Gryphon，这样滑走时能立即停止长文本。许多引擎在分别发送的句子之间停顿更久，如果你的引擎能立即停止，请保持关闭。</string>
 
     <!-- Title of the notification shown once on phones whose battery saver can stop SandFly, when battery optimization is on for it. [CHAR LIMIT=NONE] -->
-    <string name="battery_optimization_notification_title">电池优化可能会停掉 SandFly</string>
+    <string name="battery_optimization_notification_title">电池优化可能会停止 SandFly</string>
 
     <!-- Text of the notification shown once on phones whose battery saver can stop SandFly. Tapping it opens the system list of battery optimization. [CHAR LIMIT=NONE] -->
     <string name="battery_optimization_notification_text">在这台手机上，省电模式可能在屏幕关闭后停掉 SandFly，使其保持静默直到重新启动。点按以打开电池优化，选择所有应用，找到 SandFly 并选择不优化。</string>
@@ -1579,7 +1579,7 @@
     <string name="command_copied">命令已复制</string>
 
     <!-- Title of the setting that lets other apps speak through SandFly. [CHAR LIMIT=NONE] -->
-    <string name="title_pref_speech_control">允许其他应用说话</string>
+    <string name="title_pref_speech_control">允许其他应用朗读</string>
 
     <!-- Summary of that setting. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_speech_control">你允许的应用可以用你的 SandFly 声音朗读文本。设备锁定时不朗读任何内容。</string>
@@ -1618,7 +1618,7 @@
     <string name="permission_braille_display_description">允许应用请求成为 SandFly 的盲文显示器。如果你在 SandFly 中允许，它就能读取屏幕上的全部内容并控制你的设备。SandFly 会先询问你。</string>
 
     <!-- Title of the setting for saying a word from a spelling alphabet, such as "hotel" for h, for letters such as keyboard keys and letters moved over by character. [CHAR LIMIT=40] -->
-    <string name="title_pref_phonetic_letters_mode">用音标朗读字母</string>
+    <string name="title_pref_phonetic_letters_mode">以拼读单词朗读字母</string>
 
     <!-- Choice for Speak letters phonetically: only the letter is said. [CHAR LIMIT=NONE] -->
     <string name="phonetic_letters_mode_off">关闭</string>
@@ -1920,7 +1920,7 @@
     <string name="value_focus_delay_300ms">0.3 秒</string>
 
     <!-- Title of the setting that activates the item under the finger when the finger is lifted. [CHAR LIMIT=NONE]-->
-    <string name="title_pref_lift_to_activate">抬起激活</string>
+    <string name="title_pref_lift_to_activate">抬起手指即激活</string>
 
     <!-- Summary of the lift to activate setting in the reading controls list. [CHAR LIMIT=NONE]-->
     <string name="summary_support_change_lift_to_activate">更改抬起手指时激活项目的范围</string>
@@ -1929,13 +1929,13 @@
     <string name="value_lift_to_activate_disabled">禁用</string>
 
     <!-- Lift to activate works only on the system navigation bar buttons. [CHAR LIMIT=NONE]-->
-    <string name="value_lift_to_activate_navigation_bar">仅导航栏</string>
+    <string name="value_lift_to_activate_navigation_bar">仅在导航栏上</string>
 
     <!-- Lift to activate works anywhere on the screen. [CHAR LIMIT=NONE]-->
     <string name="value_lift_to_activate_entire_screen">整个屏幕</string>
 
     <!-- Spoken when the lift to activate setting changes. [CHAR LIMIT=NONE]-->
-    <string name="template_lift_to_activate_changed">抬起激活：<xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="template_lift_to_activate_changed">抬起手指激活：<xliff:g id="mode">%1$s</xliff:g></string>
 
     <!-- Title of the setting that makes moving past the last item on the screen go to the first item, and past the first go to the last. [CHAR LIMIT=NONE]-->
     <string name="title_pref_wrap_around">循环</string>
@@ -2075,9 +2075,9 @@
     <string name="category_expanded">已展开</string>
     <string name="title_pref_notification_list">使用SandFly的通知列表</string>
     <string name="title_pref_notification_parts">通知详情</string>
-    <string name="title_pref_play_installer">看起来是从 Google Play 安装的</string>
-    <string name="summary_pref_play_installer">告诉其他应用程序Google Play已安装SandFly。某些应用程序（例如某些银行应用程序）会关闭从其他地方安装的辅助服务。需要 Shizuku，并且仅更改应用程序被告知的SandFly 来自何处。</string>
-    <string name="summary_pref_play_installer_pending">已打开，但 Google Play 尚未记录为安装程序。当 Shizuku 可用时，SandFly 设置它。</string>
+    <string name="title_pref_play_installer">显示为从 Google Play 安装</string>
+    <string name="summary_pref_play_installer">告诉其他应用 SandFly 是从 Google Play 安装的。某些应用（例如某些银行应用）会关闭从其他来源安装的无障碍服务。需要 Shizuku，且只更改其他应用获知的 SandFly 安装来源。</string>
+    <string name="summary_pref_play_installer_pending">已开启，但 Google Play 尚未记录为安装来源。Shizuku 可用时，SandFly 会进行设置。</string>
     <string name="notification_part_title">标题</string>
     <string name="notification_part_text">文字</string>
     <string name="notification_part_app">应用名称</string>
@@ -2100,14 +2100,14 @@
     <string name="notification_list_previous">上一首</string>
     <string name="notification_list_next">下一首</string>
     <plurals name="notification_list_group_count">
-        <item quantity="one">%d通知</item>
-        <item quantity="other">%d 通知</item>
+        <item quantity="one">%d 条通知</item>
+        <item quantity="other">%d 条通知</item>
     </plurals>
     <string name="title_pref_quick_settings">使用SandFly的快速设置</string>
     <string name="title_pref_quick_settings_items">快速设置面板</string>
     <string name="quick_settings_title">快速设置</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
-    <string name="quick_settings_bluetooth">Bluetooth</string>
+    <string name="quick_settings_bluetooth">蓝牙</string>
     <string name="quick_settings_mobile_data">移动数据</string>
     <string name="quick_settings_hotspot">热点</string>
     <string name="quick_settings_airplane_mode">飞行模式</string>
@@ -2134,8 +2134,8 @@
     <string name="quick_settings_extra_dim">额外调暗</string>
     <string name="quick_settings_color_inversion">颜色反转</string>
     <string name="quick_settings_color_correction">色彩校正</string>
-    <string name="quick_settings_microphone_access">麦克风访问</string>
-    <string name="quick_settings_camera_access">相机访问</string>
+    <string name="quick_settings_microphone_access">麦克风使用权限</string>
+    <string name="quick_settings_camera_access">相机使用权限</string>
     <string name="quick_settings_screen_timeout">屏幕超时</string>
     <string name="quick_settings_font_size">字体大小</string>
     <string name="quick_settings_media">媒体</string>
@@ -2150,8 +2150,8 @@
     <string name="quick_settings_tile_not_found">系统快捷设置中没有%1$s</string>
     <string name="quick_settings_never">永不</string>
     <plurals name="quick_settings_seconds">
-        <item quantity="one">%d 第二</item>
-        <item quantity="other">%d秒</item>
+        <item quantity="one">%d 秒</item>
+        <item quantity="other">%d 秒</item>
     </plurals>
     <plurals name="quick_settings_minutes">
         <item quantity="one">%d分钟</item>
@@ -2180,8 +2180,8 @@
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
     <plurals name="quick_settings_others_moved">
-        <item quantity="one">%d 其他项目已移动</item>
-        <item quantity="other">%d 其他物品已移动</item>
+        <item quantity="one">另有 %d 个项目已移动</item>
+        <item quantity="other">另有 %d 个项目已移动</item>
     </plurals>
     <string name="quick_settings_remove">移除</string>
     <string name="quick_settings_added">已添加%1$s</string>
@@ -2189,10 +2189,10 @@
     <string name="edge_gestures_title">边缘</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">打开或关闭浏览模式的另一个快捷方式</string>
     <string name="title_pref_vibration_strength">振动强度</string>
-    <string name="title_pref_speaker_devices">配备这些设备的手机扬声器</string>
+    <string name="title_pref_speaker_devices">连接这些设备时使用手机扬声器</string>
     <string name="summary_pref_speaker_devices_none">无</string>
     <string name="summary_pref_speaker_devices_no_devices">尚未连接Bluetooth或有线设备</string>
-    <string name="message_pref_touch_explore_latency">较短的延迟使SandFly在您触摸键盘后更快说话。\n\n选择延迟</string>
+    <string name="message_pref_touch_explore_latency">延迟越短，SandFly 在您触摸键盘后就会越快开始朗读。\n\n选择延迟</string>
     <string name="shortcut_title_open_app">打开应用程序</string>
     <string name="shortcut_open_app">打开<xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">滚动到顶部</string>
@@ -2200,7 +2200,7 @@
     <string name="title_pref_reading_control_letters">手写字母</string>
     <string name="reading_control_letter_none">无</string>
     <string name="handwriting_prompt">书写一个字母</string>
-    <string name="handwriting_closed">手写关闭</string>
+    <string name="handwriting_closed">手写已关闭</string>
     <string name="handwriting_no_match">没有以 <xliff:g id="letter" example="Q">%1$s</xliff:g> 开头的朗读控件</string>
     <string name="shortcut_write_app_name">书写应用名称以打开应用</string>
     <string name="handwriting_app_prompt">书写应用名称</string>
@@ -2212,7 +2212,7 @@
     <string name="handwriting_download_message">这款手机可以识别手写内容。该语言的模型大约 20 MB，从 Google 下载一次。下载完毕后会显示一条消息。</string>
     <string name="handwriting_download_button">下载</string>
     <string name="handwriting_downloaded">手写识别已下载</string>
-    <string name="handwriting_download_failed">无法下载手写识别。检查互联网连接。</string>
+    <string name="handwriting_download_failed">无法下载手写识别功能。请检查互联网连接。</string>
     <string name="handwriting_unsupported_language">该语言不支持手写识别</string>
     <string name="title_pref_handwriting_keyboard">手写键盘</string>
     <string name="summary_pref_handwriting_keyboard">在Android的键盘设置中打开SandFly手写</string>
@@ -2226,8 +2226,8 @@
     <string name="value_handwriting_wait_1000">1 秒</string>
     <string name="handwriting_keyboard_name">SandFly 手写</string>
     <string name="handwriting_space">空格</string>
-    <string name="handwriting_new_line">换行符号</string>
-    <string name="handwriting_tutorial_intro">手写键盘教程。用一根手指在屏幕上的任意位置书写。当你停下来片刻时，你所写的内容就会被输入。要结束教程，请用三个手指向下滑动。</string>
+    <string name="handwriting_new_line">换行</string>
+    <string name="handwriting_tutorial_intro">手写键盘教程。用一根手指在屏幕上任意位置书写。稍作停顿，写下的内容就会输入。要结束教程，请用三指向下滑动。</string>
     <string name="handwriting_tutorial_write_letter">请书写字母 a。</string>
     <string name="handwriting_tutorial_write_word">现在请书写单词 hi。</string>
     <string name="handwriting_tutorial_typed">输入<xliff:g id="text" example="a">%1$s</xliff:g>。</string>
@@ -2235,11 +2235,11 @@
     <string name="handwriting_tutorial_delete">用两根手指向左滑动可删除光标之前的字符。</string>
     <string name="handwriting_tutorial_deleted">已删除。</string>
     <string name="handwriting_tutorial_next_reading">如果输入了其他识别结果，例如大写字母，请用两根手指向上滑动，选择下一个识别建议。现在试一试。</string>
-    <string name="handwriting_tutorial_read_back">用两根手指点击可阅读光标之前的文本。</string>
+    <string name="handwriting_tutorial_read_back">用两根手指点按可朗读光标之前的文本。</string>
     <string name="handwriting_tutorial_new_line">用两根手指向下滑动以换行，或执行输入框的操作，例如发送。</string>
-    <string name="handwriting_tutorial_not_that">这是另一个手势。</string>
+    <string name="handwriting_tutorial_not_that">这是其他手势。</string>
     <string name="handwriting_tutorial_done">换行。教程已完成。三指向下滑动可隐藏键盘，三指向左或向右滑动可切换键盘。要重新打开教程，请用三指点按。</string>
-    <string name="handwriting_tutorial_finished">教程结束。要再次打开它，请用三个手指点击。</string>
+    <string name="handwriting_tutorial_finished">教程已结束。要再次打开，请用三指点按。</string>
     <string name="handwriting_no_alternatives">没有其他建议</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>、<xliff:g id="index" example="2">%2$d</xliff:g> / <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">空</string>
@@ -2264,15 +2264,15 @@
     <string name="title_pref_shortcut_edge_top_left_down">从左上角向下滑动</string>
     <string name="title_pref_shortcut_edge_top_right_down">从右上角向下滑动</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">从左上角向下长滑动</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">从右上角向下长扫</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">从右上角向下长滑动</string>
     <string name="title_pref_shortcut_edge_left_top_right">从左边缘向右滑动，上半部分</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">从左边缘向右长滑动，上半部分</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">从左边缘上半部分向右长滑动</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">从左边缘、下半部分向右滑动</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">从左边缘、下半部分向右长滑动</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">从左边缘下半部分向右长滑动</string>
     <string name="title_pref_shortcut_edge_right_top_left">从上半部右边缘向左滑动</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">从上半部分右边缘向左长扫</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">从右边缘上半部分向左长滑动</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">从右边缘、下半部分向左滑动</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">从右边缘、下半部分向左长扫</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">从右边缘下半部分向左长滑动</string>
     <string name="value_type_confirmation_tap_to_type">点击任意键进行输入，或按住手指选择任意键，然后抬起</string>
     <string name="title_pref_edge_first_click_mm">到第一次点击的距离</string>
     <string name="title_pref_edge_second_click_mm">第一次点击到第二次点击的距离</string>
@@ -2284,20 +2284,20 @@
     <string name="value_distance_40mm">4厘米</string>
     <string name="value_distance_50mm">5厘米</string>
     <string name="title_pref_fix_stuck_touch_exploration">修复触摸探索卡住的问题</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">没有DUMP的许可，SandFly只能说触摸探索可能会卡住。要让它修复它，请运行： adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">如果没有 DUMP 权限，SandFly 只能提示触摸浏览可能卡住了。要让 SandFly 修复此问题，请运行：adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">修复触摸探索</string>
     <string name="stuck_touch_exploration_fixed">触摸探索已修复</string>
-    <string name="stuck_touch_exploration_not_fixed">触摸探索仍无响应。请重启手机以修复。</string>
-    <string name="stuck_touch_exploration_restart">触摸探索可能会卡住。重新启动手机即可修复。</string>
-    <string name="stuck_touch_exploration_grant_dump">触摸探索可能会卡住。重启手机即可修复，或者通过ADB授予SandFlyDUMP权限即可修复。</string>
+    <string name="stuck_touch_exploration_not_fixed">触摸浏览仍然卡住。请重启手机以修复。</string>
+    <string name="stuck_touch_exploration_restart">触摸浏览可能卡住了。请重启手机以修复。</string>
+    <string name="stuck_touch_exploration_grant_dump">触摸浏览可能卡住了。请重启手机以修复，或通过 ADB 向 SandFly 授予 DUMP 权限，以便 SandFly 进行修复。</string>
     <string name="title_pref_window_names">窗口名称</string>
     <string name="window_names_always">始终</string>
     <string name="window_names_until_first_item">始终朗读，首个项目打断时停止</string>
     <string name="window_names_window_opens">仅当窗口打开时</string>
     <string name="window_names_never">从不</string>
-    <string name="title_pref_selector_links_controls_web_only">仅在网页内容中的链接和控件</string>
+    <string name="title_pref_selector_links_controls_web_only">链接和控件仅限网页内容</string>
     <string name="title_pref_selector_auto_switch">自动切换朗读控件</string>
-    <string name="title_pref_touch_stops_speech">触摸屏幕时停止讲话</string>
+    <string name="title_pref_touch_stops_speech">触摸屏幕时停止朗读</string>
     <string name="title_pref_volume_keys_move_cursor">音量键移动光标</string>
     <string name="summary_pref_volume_keys_move_cursor">当文本字段获得焦点时，调高音量会将光标向后移动一个字符，调低音量会将其向前移动</string>
     <string name="title_keyboard_echo_on_screen">屏幕键盘输入回声</string>
@@ -2306,14 +2306,14 @@
     <string name="title_keyboard_echo_handwriting_keyboard">手写键盘输入回声</string>
     <string name="title_keyboard_echo_braille_display">盲文显示器输入回声</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="keyboard_enhanced_keymap_text">SandFly 现在拥有适用于物理键盘的“增强型键盘映射”，其中包含各种新命令和快捷键。此增强功能包括“浏览模式”，可实现更高效的 Web 导航，为依赖物理键盘的 SandFly 用户简化导航和交互。您可以切换到 <xliff:g id="settings_path">%1$s</xliff:g>.\n\n中的“增强型键盘映射”。如果您使用盲文显示器，您还可以使用新的浏览模式快捷方式直接从盲文显示器浏览内容。一些盲文显示快捷方式已更改以适应此更改。您可以在<xliff:g id="braille_display_settings_path">%2$s</xliff:g>中查看所有盲文显示器快捷方式的列表。</string>
+    <string name="keyboard_enhanced_keymap_text">SandFly 现在为实体键盘提供“增强型按键映射”，其中包含多种新命令和快捷键。它包括“浏览模式”，可让使用实体键盘的 SandFly 用户更高效地浏览网页并与内容互动。您可以在 <xliff:g id="settings_path">%1$s</xliff:g> 中切换到“增强型按键映射”。\n\n如果您使用盲文显示器，还可以使用新的浏览模式快捷键直接从盲文显示器浏览内容。为配合此变化，部分盲文显示器快捷键已更改。您可以在 <xliff:g id="braille_display_settings_path">%2$s</xliff:g> 中查看所有盲文显示器快捷键的列表。</string>
     <string name="image_qna_ask_by_voice">通过语音询问</string>
     <string name="image_qna_stop_listening">停止聆听</string>
     <string name="image_qna_type_question">输入问题</string>
     <string name="shortcut_dictate">听写</string>
     <string name="title_pref_ai_dictation">使用 AI 修正听写</string>
     <string name="dictation_not_corrected">未修正。已按识别结果输入。</string>
-    <string name="dictation_nothing_recognized">没有任何识别</string>
+    <string name="dictation_nothing_recognized">未识别到任何内容</string>
     <string name="dictation_unavailable">语音识别不可用</string>
     <string name="dictation_field_gone">文本字段已关闭。没有输入任何内容。</string>
     <string name="dictation_transcription_failed">未能将语音转写为文字。没有输入任何内容。</string>
@@ -2338,5 +2338,5 @@
     <string name="settings_export_done">设置已导出。不包含 API 密钥</string>
     <string name="settings_export_failed">无法导出设置</string>
     <string name="settings_import_done">设置已导入</string>
-    <string name="settings_import_failed">该文件不是SandFly或Backtalk设置文件，或者无法读取</string>
+    <string name="settings_import_failed">该文件不是 SandFly 或 Backtalk 设置文件，或者无法读取</string>
 </resources>

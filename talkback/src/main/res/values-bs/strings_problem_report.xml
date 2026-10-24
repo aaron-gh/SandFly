@@ -9,8 +9,8 @@
     <string name="dialog_message_problem_report_description">Šta se dešava i šta ste očekivali.</string>
     <string name="title_pref_problem_report_steps">Koraci za reprodukciju</string>
     <string name="title_pref_problem_report_email">E-mail za odgovore</string>
-    <string name="title_pref_problem_report_device">Uključite informacije o uređaju</string>
-    <string name="title_pref_problem_report_log">Uključuje SandFly dnevnik</string>
+    <string name="title_pref_problem_report_device">Uključi informacije o uređaju</string>
+    <string name="title_pref_problem_report_log">Uključi zapisnik SandFly-a</string>
     <string name="summary_pref_problem_report_log">Može sadržavati tekst sa ekrana</string>
     <string name="title_pref_problem_report_send">Pošalji</string>
     <string name="summary_pref_problem_report_sending">Slanje</string>
@@ -21,34 +21,34 @@
     <string name="problem_report_no_connection">Povratne informacije nisu poslane. Provjerite internetsku vezu.</string>
     <string name="problem_report_not_sent">Povratne informacije nisu poslane. Pokušajte ponovo kasnije.</string>
     <string-array name="problem_report_type_entries">
-        <item>Nekorektno ponašanje</item>
-        <item>Crash</item>
-        <item>Sporo ili ne reaguje</item>
-        <item>Sugestija</item>
+        <item>Pogrešno ponašanje</item>
+        <item>Rušenje</item>
+        <item>Sporo ili ne reagira</item>
+        <item>Prijedlog</item>
     </string-array>
     <string-array name="problem_report_area_entries">
         <item>Govor</item>
         <item>Pokreti</item>
-        <item>Istraživanje dodirom</item>
-        <item>Kontrole za čitanje i menije</item>
-        <item>Tipkanje i tastature</item>
+        <item>Istraži dodirom</item>
+        <item>Kontrole za čitanje i meniji</item>
+        <item>Kucanje i tastature</item>
         <item>Tastatura s Braillevim pismom</item>
         <item>Brailleov ekran</item>
-        <item>Zvukovi i vibracije</item>
+        <item>Zvuk i vibracija</item>
         <item>Obavještenja</item>
         <item>Web sadržaj</item>
         <item>Skripte</item>
         <item>Postavke</item>
         <item>Ažuriranja</item>
-        <item>Drugo</item>
+        <item>Ostalo</item>
     </string-array>
     <string name="title_report_new">Slanje povratnih informacija</string>
-    <string name="title_report_inbox">Inbox</string>
+    <string name="title_report_inbox">Prijemno sanduče</string>
     <string name="title_report_drafts">Nacrti</string>
     <string name="report_inbox_empty">Povratne informacije nisu poslane</string>
     <string name="report_drafts_empty">Nema nacrta</string>
     <string name="report_just_now">upravo sada</string>
-    <string name="report_untitled">Untitled</string>
+    <string name="report_untitled">Bez naslova</string>
     <string name="report_draft_summary">Promijenjeno <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">poslano <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
@@ -67,12 +67,12 @@
     <string name="title_report_messages">Poruke</string>
     <string name="report_message_from_developer">Programer, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">Vi, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Odgovori</string>
+    <string name="title_report_reply">Odgovor</string>
     <string name="title_report_reply_text">Vaš odgovor</string>
     <string name="title_report_send_reply">Pošalji odgovor</string>
     <string name="report_reply_sent">Odgovor je poslan.</string>
     <string name="report_reply_not_sent">Odgovor nije poslan. Pokušajte ponovo kasnije.</string>
-    <string name="title_report_remove">Ukloni iz inboxa</string>
+    <string name="title_report_remove">Ukloni iz prijemnog sandučeta</string>
     <string name="dialog_title_report_remove">Ukloniti ove povratne informacije iz pristigle pošte?</string>
     <string name="dialog_message_report_remove">Odgovori na njega više neće stizati na ovaj telefon.</string>
     <string name="title_report_delete_draft">Izbriši nacrt</string>
@@ -80,6 +80,6 @@
     <string name="button_report_delete">Izbriši</string>
     <string name="report_missing">Ove povratne informacije više nisu u inboxu.</string>
     <string name="notification_channel_problem_reports">Odgovori na povratne informacije</string>
-    <string name="report_notification_reply">Odgovori na <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Odgovor na <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pause_backtalk">SandFly-ı durdurun</string>
+    <string name="title_pause_backtalk">SandFly-a fasilə ver</string>
     <string name="summary_pause_backtalk">SandFly-ı davam etdirənədək nitqi, jestləri və toxunuşla kəşfi deaktiv edin</string>
-    <string name="keycombo_menu_global_pause_backtalk">SandFly-ı durdurun və ya davam etdirin</string>
-    <string name="backtalk_paused">SandFly durduruldu</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly-ı dayandır və ya davam etdir</string>
+    <string name="backtalk_paused">SandFly fasilədədir</string>
     <string name="backtalk_resumed">SandFly davam etdirildi</string>
     <string name="notification_title_backtalk_paused">SandFly durdurulub</string>
     <string name="notification_message_backtalk_paused">Davam etdirmək üçün toxunun</string>
-    <string name="notification_channel_backtalk_paused">SandFly durduruldu</string>
+    <string name="notification_channel_backtalk_paused">SandFly fasilədədir</string>
     <string name="dialog_title_pause_backtalk">SandFly durdurulsun?</string>
-    <string name="dialog_button_pause_backtalk">Durdurun</string>
+    <string name="dialog_button_pause_backtalk">Fasilə ver</string>
     <string name="dialog_message_pause_backtalk">SandFly durdurulduqda danışmır, jestlərə reaksiya vermir və ekran ekran oxuyucusu deaktiv olduğu kimi işləyir.</string>
     <string name="message_resume_keyguard">Davam etdirmək üçün \"SandFly durdurulub\" bildirişinə toxunun, səsi azaltma düyməsini cəld 3 dəfə basın və ya telefonu kilidləyib oyadın ki, kilid ekranı göstərilsin.</string>
     <string name="message_resume_screen_on">Davam etdirmək üçün \"SandFly durdurulub\" bildirişinə toxunun, səsi azaltma düyməsini cəld 3 dəfə basın və ya ekranı deaktiv edib yenidən aktiv edin.</string>
     <string name="message_resume_manual">Davam etdirmək üçün \"SandFly durdurulub\" bildirişinə toxunun və ya səsi azaltma düyməsini cəld 3 dəfə basın.</string>
     <string name="message_resume_key_combo">Həmçinin <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> düymələrinə basa bilərsiniz.</string>
-    <string name="title_pref_resume_backtalk">SandFly-ı davam etdirin</string>
+    <string name="title_pref_resume_backtalk">SandFly-ın davam etdirilməsi</string>
     <string name="value_resume_keyguard">Kilid ekranı göstərildikdə</string>
-    <string name="value_resume_screen_on">Ekran aktiv olduqda</string>
+    <string name="value_resume_screen_on">Ekran yandıqda</string>
     <string name="value_resume_manual">Yalnız bildirişdən və ya qısayoldan</string>
 </resources>

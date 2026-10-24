@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pause_backtalk">විරාමයක් SandFly</string>
-    <string name="summary_pause_backtalk">ඔබ SandFly නැවත ආරම්භ කරන තෙක් කථනය, අභිනයන් අක්‍රිය කර ස්පර්ශයෙන් ගවේෂණය කරන්න</string>
-    <string name="keycombo_menu_global_pause_backtalk">විරාමයක් හෝ නැවත ආරම්භ කරන්න SandFly</string>
+    <string name="title_pause_backtalk">SandFly විරාම කරන්න</string>
+    <string name="summary_pause_backtalk">SandFly නැවත ආරම්භ කරන තෙක් කථනය, ඉංගිත සහ “ස්පර්ශය මගින් ගවේෂණය කරන්න” අක්‍රිය කරයි</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly විරාම කරන්න හෝ නැවත ආරම්භ කරන්න</string>
     <string name="backtalk_paused">SandFly විරාම කරන ලදී</string>
     <string name="backtalk_resumed">SandFly නැවත ආරම්භ විය</string>
     <string name="notification_title_backtalk_paused">SandFly විරාම කර ඇත</string>
@@ -10,13 +10,13 @@
     <string name="notification_channel_backtalk_paused">SandFly විරාම කරන ලදී</string>
     <string name="dialog_title_pause_backtalk">SandFly විරාම කරන්නද?</string>
     <string name="dialog_button_pause_backtalk">විරාම කරන්න</string>
-    <string name="dialog_message_pause_backtalk">SandFly විරාම කර ඇති අතර, එය අභිනයන් කථා නොකරන අතර ප්‍රතිචාර නොදක්වන අතර තිරය ක්‍රියා කරන්නේ තිර කියවනය ක්‍රියාත්මක නොවන පරිදිය.</string>
-    <string name="message_resume_keyguard">නැවත ආරම්භ කිරීමට, SandFly විරාම කරන ලද දැනුම්දීම තට්ටු කරන්න, ශබ්දය 3 වතාවක් ඉක්මනින් පහළට ඔබන්න, නැතහොත් අගුළු තිරය පෙන්වන පරිදි දුරකථනය අගුළු දමා අවදි කරන්න.</string>
-    <string name="message_resume_screen_on">නැවත ආරම්භ කිරීමට, SandFly විරාම කරන ලද දැනුම්දීම තට්ටු කරන්න, ශබ්දය 3 වතාවක් ඉක්මනින් අඩු කරන්න, නැතහොත් තිරය ක්‍රියා විරහිත කර නැවත ක්‍රියාත්මක කරන්න.</string>
-    <string name="message_resume_manual">නැවත ආරම්භ කිරීමට, SandFly විරාම දැනුම්දීම තට්ටු කරන්න නැතහොත් ශබ්දය 3 වතාවක් ඉක්මනින් පහළට ඔබන්න.</string>
-    <string name="message_resume_key_combo">ඔබට <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> ඔබන්න.</string>
-    <string name="title_pref_resume_backtalk">නැවත ආරම්භ කරන්න SandFly</string>
+    <string name="dialog_message_pause_backtalk">SandFly විරාම කර ඇති අතරතුර එය කථා නොකරයි, ඉංගිතවලට ප්‍රතිචාර නොදක්වයි, තිරය තිර කියවනයක් ක්‍රියාත්මක නොවූ ලෙස ක්‍රියා කරයි.</string>
+    <string name="message_resume_keyguard">නැවත ආරම්භ කිරීමට “SandFly විරාම කර ඇත” දැනුම්දීම තට්ටු කරන්න, හඬ අඩු කිරීමේ බොත්තම ඉක්මනින් 3 වරක් ඔබන්න හෝ අගුළු තිරය පෙන්වන සේ දුරකථනය අගුළු දමා අවදි කරන්න.</string>
+    <string name="message_resume_screen_on">නැවත ආරම්භ කිරීමට “SandFly විරාම කර ඇත” දැනුම්දීම තට්ටු කරන්න, හඬ අඩු කිරීමේ බොත්තම ඉක්මනින් 3 වරක් ඔබන්න හෝ තිරය ක්‍රියාවිරහිත කර නැවත ක්‍රියාත්මක කරන්න.</string>
+    <string name="message_resume_manual">නැවත ආරම්භ කිරීමට “SandFly විරාම කර ඇත” දැනුම්දීම තට්ටු කරන්න හෝ හඬ අඩු කිරීමේ බොත්තම ඉක්මනින් 3 වරක් ඔබන්න.</string>
+    <string name="message_resume_key_combo">ඔබට <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> ඔබන්නද පුළුවන්.</string>
+    <string name="title_pref_resume_backtalk">SandFly නැවත ආරම්භ කිරීම</string>
     <string name="value_resume_keyguard">අගුළු තිරය පෙන්වන විට</string>
-    <string name="value_resume_screen_on">තිරය හැරෙන විට</string>
+    <string name="value_resume_screen_on">තිරය ක්‍රියාත්මක වූ විට</string>
     <string name="value_resume_manual">දැනුම්දීමකින් හෝ කෙටිමඟකින් පමණි</string>
 </resources>

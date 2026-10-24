@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Uhariri wa punjepunje</string>
-    <string name="granular_editing_split_by">Imegawanywa na: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Gawanya</string>
+    <string name="granular_editing_title">Uhariri kwa vipande</string>
+    <string name="granular_editing_split_by">Imegawanywa kwa: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Gawanya kwa</string>
     <string name="granular_editing_characters">Herufi</string>
     <string name="granular_editing_words">Maneno</string>
     <string name="granular_editing_sentences">Sentensi</string>
@@ -10,8 +10,8 @@
     <string name="granular_editing_paragraphs">Aya</string>
     <string name="granular_editing_space">Nafasi</string>
     <string name="granular_editing_new_line">Mstari mpya</string>
-    <string name="granular_editing_tab">Tabia ya kichupo</string>
-    <string name="granular_editing_empty">Hakuna maandishi. Tumia Ongeza maandishi mwishoni, katika Zaidi.</string>
+    <string name="granular_editing_tab">Herufi ya kichupo</string>
+    <string name="granular_editing_empty">Hakuna maandishi. Tumia “Ongeza maandishi mwishoni” katika “Zaidi”.</string>
     <string name="granular_editing_edit">Hariri</string>
     <string name="granular_editing_insert_before">Weka kabla</string>
     <string name="granular_editing_insert_after">Ingiza baada</string>
@@ -22,28 +22,28 @@
     <string name="granular_editing_save">Hifadhi</string>
     <string name="granular_editing_more">Zaidi</string>
     <string name="granular_editing_undo">Tendua</string>
-    <string name="granular_editing_redo">Rudia uhariri wa mwisho uliotenguliwa</string>
+    <string name="granular_editing_redo">Rudia</string>
     <string name="granular_editing_find">Tafuta</string>
     <string name="granular_editing_find_next">Tafuta ijayo</string>
     <string name="granular_editing_replace">Badilisha</string>
     <string name="granular_editing_replace_with">Badilisha na</string>
     <string name="granular_editing_replace_all">Badilisha zote</string>
     <string name="granular_editing_add_at_end">Ongeza maandishi mwishoni</string>
-    <string name="granular_editing_clear_selection">Acha kuchagua maandishi yote</string>
+    <string name="granular_editing_clear_selection">Futa uteuzi</string>
     <string name="granular_editing_cut_selected">Kata maandishi yaliyochaguliwa</string>
     <string name="granular_editing_delete_selected">Futa iliyochaguliwa</string>
     <string name="granular_editing_copied">Imenakiliwa</string>
     <string name="granular_editing_deleted">Imefutwa</string>
     <string name="granular_editing_not_found">Haijapatikana</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> imebadilishwa</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> kubadilishwa</item>
+        <item quantity="one">Imebadilishwa: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">Imebadilishwa: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Ungependa kuhifadhi mabadiliko?</string>
     <string name="granular_editing_copy_changes">Je, ungependa kunakili maandishi yaliyobadilishwa?</string>
     <string name="granular_editing_discard">Tupa</string>
     <string name="granular_editing_keep_editing">Endelea kuhariri</string>
-    <string name="granular_editing_not_saved">Haijahifadhiwa: sehemu ya maandishi haipo. Maandishi yanakiliwa.</string>
+    <string name="granular_editing_not_saved">Haijahifadhiwa: sehemu ya maandishi haipo tena. Maandishi yamenakiliwa.</string>
     <string name="granular_editing_no_text">Hakuna maandishi ya kuhariri</string>
     <string name="granular_editing_password">Haipatikani katika sehemu za nenosiri</string>
 </resources>

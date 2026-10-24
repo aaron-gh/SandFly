@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Грануларно уредување</string>
+    <string name="granular_editing_title">Уредување по делови</string>
     <string name="granular_editing_split_by">Поделено по: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Поделени од</string>
+    <string name="granular_editing_split_by_title">Подели по</string>
     <string name="granular_editing_characters">Знаци</string>
     <string name="granular_editing_words">Зборови</string>
     <string name="granular_editing_sentences">Реченици</string>
@@ -10,39 +10,39 @@
     <string name="granular_editing_paragraphs">Пасуси</string>
     <string name="granular_editing_space">Празно место</string>
     <string name="granular_editing_new_line">Нов ред</string>
-    <string name="granular_editing_tab">Карактер на јазиче</string>
-    <string name="granular_editing_empty">Нема текст. Користете Додај текст на крајот, во Повеќе.</string>
+    <string name="granular_editing_tab">Знак за табулација</string>
+    <string name="granular_editing_empty">Нема текст. Користете „Додај текст на крајот“ во „Повеќе“.</string>
     <string name="granular_editing_edit">Уреди</string>
-    <string name="granular_editing_insert_before">Вметнете пред</string>
-    <string name="granular_editing_insert_after">Вметнете после</string>
+    <string name="granular_editing_insert_before">Вметни пред</string>
+    <string name="granular_editing_insert_after">Вметни после</string>
     <string name="granular_editing_delete">Избриши</string>
     <string name="granular_editing_select">Избери</string>
-    <string name="granular_editing_unselect">Отштиклирајте</string>
-    <string name="granular_editing_selected">Избрани</string>
+    <string name="granular_editing_unselect">Отстрани избор</string>
+    <string name="granular_editing_selected">Избрано</string>
     <string name="granular_editing_save">Зачувај</string>
     <string name="granular_editing_more">Повеќе</string>
     <string name="granular_editing_undo">Врати</string>
-    <string name="granular_editing_redo">Повторете го последното отповикано уредување</string>
+    <string name="granular_editing_redo">Повтори</string>
     <string name="granular_editing_find">Најди</string>
-    <string name="granular_editing_find_next">Најдете следно</string>
-    <string name="granular_editing_replace">Заменете</string>
-    <string name="granular_editing_replace_with">Заменете со</string>
-    <string name="granular_editing_replace_all">Заменете ги сите</string>
-    <string name="granular_editing_add_at_end">Додадете текст на крајот</string>
+    <string name="granular_editing_find_next">Најди следно</string>
+    <string name="granular_editing_replace">Замени</string>
+    <string name="granular_editing_replace_with">Замени со</string>
+    <string name="granular_editing_replace_all">Замени ги сите</string>
+    <string name="granular_editing_add_at_end">Додај текст на крајот</string>
     <string name="granular_editing_clear_selection">Деселектирај го целиот текст</string>
-    <string name="granular_editing_cut_selected">Исечете го избраниот текст</string>
-    <string name="granular_editing_delete_selected">Избришете го избраното</string>
+    <string name="granular_editing_cut_selected">Исечи го избраниот текст</string>
+    <string name="granular_editing_delete_selected">Избриши го избраното</string>
     <string name="granular_editing_copied">Копирано</string>
     <string name="granular_editing_deleted">Избришано</string>
-    <string name="granular_editing_not_found">Не е пронајден</string>
+    <string name="granular_editing_not_found">Не е пронајдено</string>
     <plurals name="granular_editing_replaced">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> заменет</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> заменет</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> заменети</item>
     </plurals>
     <string name="granular_editing_save_changes">Да се зачуваат промените?</string>
     <string name="granular_editing_copy_changes">Да се копира променетиот текст?</string>
     <string name="granular_editing_discard">Отфрли</string>
-    <string name="granular_editing_keep_editing">Продолжете да уредувате</string>
+    <string name="granular_editing_keep_editing">Продолжи со уредување</string>
     <string name="granular_editing_not_saved">Не е зачувано: полето за текст исчезна. Текстот е копиран.</string>
     <string name="granular_editing_no_text">Нема текст за уредување</string>
     <string name="granular_editing_password">Не е достапно во полињата за лозинка</string>

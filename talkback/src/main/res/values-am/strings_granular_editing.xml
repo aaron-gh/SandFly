@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">ግራንላር ማረም</string>
+    <string name="granular_editing_title">በክፍል ማረም</string>
     <string name="granular_editing_split_by">የተከፋፈለው በ፡ <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">ተከፋፈለ</string>
-    <string name="granular_editing_characters">ገጸባህሪያት</string>
+    <string name="granular_editing_split_by_title">የመከፋፈያ ዘዴ</string>
+    <string name="granular_editing_characters">ቁምፊዎች</string>
     <string name="granular_editing_words">ቃላት</string>
     <string name="granular_editing_sentences">ዓረፍተ ነገሮች</string>
     <string name="granular_editing_lines">መስመሮች</string>
@@ -11,30 +11,30 @@
     <string name="granular_editing_space">ክፍተት</string>
     <string name="granular_editing_new_line">አዲስ መስመር</string>
     <string name="granular_editing_tab">የትር ቁምፊ</string>
-    <string name="granular_editing_empty">ጽሑፍ የለም መጨረሻ ላይ ጽሁፍ አክል፣በተጨማሪ ተጠቀም።</string>
+    <string name="granular_editing_empty">ምንም ጽሑፍ የለም። በ«ተጨማሪ» ውስጥ «መጨረሻ ላይ ጽሑፍ ጨምር»ን ይጠቀሙ።</string>
     <string name="granular_editing_edit">አርትዕ</string>
-    <string name="granular_editing_insert_before">አስቀድመህ አስገባ</string>
+    <string name="granular_editing_insert_before">ከፊት አስገባ</string>
     <string name="granular_editing_insert_after">በኋላ አስገባ</string>
     <string name="granular_editing_delete">ሰርዝ</string>
     <string name="granular_editing_select">ምረጥ</string>
-    <string name="granular_editing_unselect">አይምረጡ</string>
+    <string name="granular_editing_unselect">አለመምረጥ</string>
     <string name="granular_editing_selected">ተመርጧል</string>
     <string name="granular_editing_save">አስቀምጥ</string>
     <string name="granular_editing_more">ተጨማሪ</string>
     <string name="granular_editing_undo">ቀልብስ</string>
-    <string name="granular_editing_redo">የመጨረሻውን የተቀለበሰ አርትዖት ይድገሙት</string>
+    <string name="granular_editing_redo">ድገም</string>
     <string name="granular_editing_find">አግኝ</string>
-    <string name="granular_editing_find_next">ቀጥሎ ያግኙ</string>
+    <string name="granular_editing_find_next">ቀጣዩን አግኝ</string>
     <string name="granular_editing_replace">ተካ</string>
-    <string name="granular_editing_replace_with">ተካ በ</string>
+    <string name="granular_editing_replace_with">በዚህ ተካ</string>
     <string name="granular_editing_replace_all">ሁሉንም ይተኩ</string>
     <string name="granular_editing_add_at_end">መጨረሻ ላይ ጽሑፍ ጨምር</string>
     <string name="granular_editing_clear_selection">ምርጫን አጽዳ</string>
     <string name="granular_editing_cut_selected">የተመረጠውን ጽሑፍ ይቁረጡ</string>
-    <string name="granular_editing_delete_selected">ሰርዝ ተመርጧል</string>
+    <string name="granular_editing_delete_selected">የተመረጠውን ሰርዝ</string>
     <string name="granular_editing_copied">ተገልብጧል</string>
-    <string name="granular_editing_deleted">ተሰርዟል።</string>
-    <string name="granular_editing_not_found">አልተገኘም።</string>
+    <string name="granular_editing_deleted">ተሰርዟል</string>
+    <string name="granular_editing_not_found">አልተገኘም</string>
     <plurals name="granular_editing_replaced">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ተተካ</item>
         <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ተተካ</item>
@@ -44,6 +44,6 @@
     <string name="granular_editing_discard">ጣል</string>
     <string name="granular_editing_keep_editing">ማርትዕን ቀጥል</string>
     <string name="granular_editing_not_saved">አልተቀመጠም፡ የጽሑፍ መስኩ ጠፍቷል። ጽሑፉ ተገልብጧል።</string>
-    <string name="granular_editing_no_text">የሚስተካከል ጽሑፍ የለም።</string>
+    <string name="granular_editing_no_text">የሚስተካከል ጽሑፍ የለም</string>
     <string name="granular_editing_password">በይለፍ ቃል መስኮች አይገኝም</string>
 </resources>

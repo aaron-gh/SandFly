@@ -9,9 +9,9 @@
     <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
     <string name="status_mobile">मोबाइल</string>
     <string name="status_mobile_no_service">मोबाइल सेवा छैन</string>
-    <string name="status_do_not_disturb">डिस्टर्ब नगर्नुहोस्</string>
+    <string name="status_do_not_disturb">बाधा नपुर्‍याउनुहोस्</string>
     <string name="status_ringer_vibrate">कम्पन</string>
-    <string name="status_ringer_silent">मौन</string>
+    <string name="status_ringer_silent">साइलेन्ट</string>
     <string name="status_airplane_mode">हवाइजहाज मोड</string>
     <string name="title_pref_status_readout">स्थिति पढाइ</string>
     <string name="status_item_time">समय</string>
@@ -22,8 +22,8 @@
     <string name="status_item_wifi_summary">नेटवर्क नाम र सिग्नल बल</string>
     <string name="status_item_mobile">मोबाइल नेटवर्क</string>
     <string name="status_item_mobile_summary">क्यारियर, नेटवर्क प्रकार, र सिग्नल बल</string>
-    <string name="status_item_ringer">घन्टी र बाधा नपुर्याउनुहोस्</string>
-    <string name="status_item_ringer_summary">घण्टी बज्न सेट नभएको वा बाधा नपुऱ्याउने सुविधा अन भएको अवस्थामा मात्र</string>
+    <string name="status_item_ringer">रिङ्गर र डिस्टर्ब नगर्नुहोस्</string>
+    <string name="status_item_ringer_summary">घण्टी कम्पन वा मौनमा सेट भएको, वा बाधा नपुऱ्याउनुहोस् अन भएको अवस्थामा मात्र</string>
     <string name="status_item_airplane_mode">हवाइजहाज मोड</string>
     <string name="status_item_airplane_mode_summary">हवाईजहाज मोड अन हुँदा मात्र</string>
 </resources>

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API కీ</string>
-    <string name="summary_pref_gemini_api_key_built_in">ఈ యాప్‌లో అంతర్నిర్మిత కీని ఉపయోగించడం</string>
-    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikeyలో Google AI స్టూడియో నుండి ఉచిత API కీని పొందండి మరియు దానిని ఇక్కడ అతికించండి. మీ కీని తీసివేయడానికి, ఫీల్డ్‌ను క్లియర్ చేసి, సేవ్ చేయండి.\n\nమీరు వివరించే చిత్రాలు మరియు స్క్రీన్‌లు Googleకి పంపబడతాయి. ఉచిత శ్రేణిలో, Google తన ఉత్పత్తులను మెరుగుపరచడానికి వాటిని ఉపయోగించవచ్చు.</string>
+    <string name="summary_pref_gemini_api_key_built_in">ఈ యాప్‌లో అంతర్నిర్మితమైన కీ ఉపయోగించబడుతోంది</string>
+    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikeyలో Google AI Studio నుండి ఉచిత API కీని పొంది ఇక్కడ అతికించండి. కీని తీసివేయడానికి, ఫీల్డ్‌ను ఖాళీ చేసి సేవ్ చేయండి.\n\nమీరు వివరణ అడిగిన చిత్రాలు, స్క్రీన్‌లు Googleకి పంపబడతాయి. ఉచిత టైర్‌లో, Google వాటిని తన ఉత్పత్తులను మెరుగుపరచడానికి ఉపయోగించవచ్చు.</string>
     <string name="gemini_api_key_hint">API కీ</string>
     <string name="gemini_api_key_save">సేవ్ చేయండి</string>
-    <string name="gemini_api_key_get">ఒక కీ పొందండి</string>
+    <string name="gemini_api_key_get">కీ పొందండి</string>
     <string name="title_pref_gemini_model">Gemini మోడల్</string>
     <string name="gemini_model_automatic">ఆటోమేటిక్</string>
-    <string name="summary_pref_gemini_model_automatic">ఆటోమేటిక్: Gemini ఫ్లాష్, ఆపై ఫ్లాష్ బిజీగా ఉన్నప్పుడు ఫ్లాష్-లైట్</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ఆపై బిజీగా ఉన్నప్పుడు ఫ్లాష్-లైట్</string>
+    <string name="summary_pref_gemini_model_automatic">ఆటోమేటిక్: Gemini Flash, Flash బిజీగా ఉంటే Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, బిజీగా ఉన్నప్పుడు Flash-Lite</string>
     <string name="gemini_model_loading">మోడల్‌లను పొందుతోంది…</string>
     <string name="gemini_model_list_failed">మోడల్‌లను పొందడం సాధ్యపడలేదు: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">ముందుగా Gemini API కీని సెట్ చేయండి</string>
     <string name="gemini_api_terms_link">Gemini API అదనపు సేవా నిబంధనలు</string>
-    <string name="ai_service_address_hint">Https://openrouter.ai/api/v1 వంటి చిరునామా</string>
+    <string name="ai_service_address_hint">చిరునామా, ఉదాహరణకు https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">మోడల్</string>
-    <string name="ai_service_address_invalid">చిరునామా తప్పనిసరిగా https://.తో ప్రారంభం కావాలి ఏదీ సేవ్ చేయబడలేదు.</string>
-    <string name="dialog_message_ai_service_consent">చిత్రాలు మరియు స్క్రీన్‌షాట్‌లు వివరించడానికి <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>కి పంపబడతాయి, దీనికి చాలా సెకన్ల సమయం పడుతుంది. దాని స్వంత నిబంధనలు మరియు గోప్యతా విధానం వర్తిస్తాయి. ఉత్పాదక AI ప్రయోగాత్మకమైనది, కాబట్టి ఇది తప్పులు చేస్తుంది.</string>
+    <string name="ai_service_address_invalid">చిరునామా https://తో ప్రారంభం కావాలి. ఏదీ సేవ్ చేయబడలేదు.</string>
+    <string name="dialog_message_ai_service_consent">వివరణ కోసం చిత్రాలు, స్క్రీన్‌షాట్‌లు <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>కి పంపబడతాయి, దీనికి కొన్ని సెకన్లు పడుతుంది. ఆ సేవ యొక్క సొంత నిబంధనలు, గోప్యతా విధానం వర్తిస్తాయి. జెనరేటివ్ AI ప్రయోగాత్మకమైనది, కాబట్టి అది తప్పులు చేస్తుంది.</string>
     <string name="ai_service_error_api_key">AI సేవ API కీని అంగీకరించలేదు. స్వయంచాలక వివరణలలో దాని సెట్టింగ్‌లను తనిఖీ చేయండి.</string>
     <string name="ai_service_error_quota">AI సేవ యొక్క వినియోగ పరిమితిని చేరుకున్నారు. తర్వాత మళ్లీ ప్రయత్నించండి.</string>
     <string name="ai_service_error_busy">AI సేవ ప్రస్తుతం బిజీగా ఉంది. క్షణంలో మళ్లీ ప్రయత్నించండి.</string>
@@ -41,13 +41,13 @@
     <string name="ai_provider_not_set_up">ఏర్పాటు చేయలేదు</string>
     <string name="ai_provider_not_ready">ముందుగా ఒక మోడల్‌ని ఎంచుకోండి</string>
     <string name="ai_provider_address">చిరునామా</string>
-    <string name="ai_provider_address_message">OpenAI-అనుకూల చాట్ API మరియు https://example.com/v1. వంటి ఇమేజ్ ఇన్‌పుట్‌తో సేవ యొక్క చిరునామా</string>
+    <string name="ai_provider_address_message">OpenAI-అనుకూల చాట్ API, ఇమేజ్ ఇన్‌పుట్ ఉన్న సేవ యొక్క చిరునామా, ఉదా. https://example.com/v1.</string>
     <string name="ai_provider_not_set">సెట్ కాలేదు</string>
     <string name="ai_provider_set">కాన్ఫిగర్ చేయబడింది</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API కీ</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> మోడల్</string>
     <string name="ai_provider_choose_model">ఎంపిక చేయలేదు</string>
-    <string name="ai_provider_key_message">మీ <xliff:g id="service" example="Claude">%1$s</xliff:g> API కీని అతికించండి. దాన్ని తీసివేయడానికి, ఫీల్డ్‌ను క్లియర్ చేసి, సేవ్ చేయండి. మీరు వివరించే చిత్రాలు మరియు స్క్రీన్‌లు <xliff:g id="service" example="Claude">%1$s</xliff:g>కి పంపబడతాయి.</string>
+    <string name="ai_provider_key_message">మీ <xliff:g id="service" example="Claude">%1$s</xliff:g> API కీని అతికించండి. దాన్ని తీసివేయడానికి, ఫీల్డ్‌ను ఖాళీ చేసి సేవ్ చేయండి. మీరు వివరణ అడిగిన చిత్రాలు, స్క్రీన్‌లు <xliff:g id="service" example="Claude">%1$s</xliff:g>కి పంపబడతాయి.</string>
     <string name="ai_provider_needs_key">ముందుగా <xliff:g id="service" example="Claude">%1$s</xliff:g> API కీని సెట్ చేయండి</string>
     <string name="ai_provider_needs_address">మొదట చిరునామాను సెట్ చేయండి</string>
     <string name="ai_provider_enter_model">మోడల్ పేరును నమోదు చేయండి</string>

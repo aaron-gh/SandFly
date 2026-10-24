@@ -7,19 +7,19 @@
     <string name="title_pref_problem_report_app">App, in der das Problem auftritt</string>
     <string name="title_pref_problem_report_description">Beschreibung</string>
     <string name="dialog_message_problem_report_description">Was passiert und was Sie erwartet haben.</string>
-    <string name="title_pref_problem_report_steps">Schritte zur Reproduktion</string>
+    <string name="title_pref_problem_report_steps">Schritte zum Nachvollziehen</string>
     <string name="title_pref_problem_report_email">E-Mail für Antworten</string>
     <string name="title_pref_problem_report_device">Geräteinformationen einschließen</string>
-    <string name="title_pref_problem_report_log">SandFly Protokoll einschließen</string>
+    <string name="title_pref_problem_report_log">SandFly-Protokoll anhängen</string>
     <string name="summary_pref_problem_report_log">Kann Text vom Bildschirm enthalten</string>
     <string name="title_pref_problem_report_send">Senden</string>
     <string name="summary_pref_problem_report_sending">Wird gesendet</string>
-    <string name="problem_report_missing_fields">Geben Sie einen Titel und eine Beschreibung ein.</string>
-    <string name="problem_report_invalid_email">Geben Sie eine gültige E-Mail-Adresse ein.</string>
+    <string name="problem_report_missing_fields">Gib einen Titel und eine Beschreibung ein.</string>
+    <string name="problem_report_invalid_email">Gib eine gültige E-Mail-Adresse ein.</string>
     <string name="problem_report_sent">Feedback gesendet.</string>
-    <string name="problem_report_rate_limited">Es wurde zu viel Feedback gesendet. Versuchen Sie es später noch einmal.</string>
-    <string name="problem_report_no_connection">Feedback nicht gesendet. Überprüfen Sie die Internetverbindung.</string>
-    <string name="problem_report_not_sent">Feedback nicht gesendet. Versuchen Sie es später noch einmal.</string>
+    <string name="problem_report_rate_limited">Es wurde zu viel Feedback gesendet. Versuche es später noch einmal.</string>
+    <string name="problem_report_no_connection">Feedback nicht gesendet. Überprüfe die Internetverbindung.</string>
+    <string name="problem_report_not_sent">Feedback nicht gesendet. Versuche es später noch einmal.</string>
     <string-array name="problem_report_type_entries">
         <item>Falsches Verhalten</item>
         <item>Absturz</item>
@@ -27,14 +27,14 @@
         <item>Vorschlag</item>
     </string-array>
     <string-array name="problem_report_area_entries">
-        <item>Rede</item>
+        <item>Sprachausgabe</item>
         <item>Touch-Gesten</item>
-        <item>Berühren Sie die Erkundung</item>
-        <item>Steuerelemente und Menüs lesen</item>
+        <item>Bei Berühren vorlesen</item>
+        <item>Vorleseoptionen und Menüs</item>
         <item>Tippen und Tastaturen</item>
         <item>Brailletastatur</item>
         <item>Braillezeile</item>
-        <item>Geräusche und Vibration</item>
+        <item>Töne und Vibration</item>
         <item>Benachrichtigungen</item>
         <item>Webinhalte</item>
         <item>Skripts</item>
@@ -47,7 +47,7 @@
     <string name="title_report_drafts">Entwürfe</string>
     <string name="report_inbox_empty">Noch kein Feedback gesendet</string>
     <string name="report_drafts_empty">Keine Entwürfe</string>
-    <string name="report_just_now">gerade jetzt</string>
+    <string name="report_just_now">gerade eben</string>
     <string name="report_untitled">Ohne Titel</string>
     <string name="report_draft_summary">Geändert <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">gesendet <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -70,7 +70,7 @@
     <string name="title_report_reply_text">Ihre Antwort</string>
     <string name="title_report_send_reply">Antwort senden</string>
     <string name="report_reply_sent">Antwort gesendet.</string>
-    <string name="report_reply_not_sent">Antwort nicht gesendet. Versuchen Sie es später noch einmal.</string>
+    <string name="report_reply_not_sent">Antwort nicht gesendet. Versuche es später noch einmal.</string>
     <string name="title_report_remove">Aus Posteingang entfernen</string>
     <string name="dialog_title_report_remove">Dieses Feedback aus dem Posteingang entfernen?</string>
     <string name="dialog_message_report_remove">Antworten darauf erreichen dieses Telefon nicht mehr.</string>

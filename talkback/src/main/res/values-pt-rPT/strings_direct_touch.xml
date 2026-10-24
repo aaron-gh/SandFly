@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="direct_touch_on">Toque direto em</string>
-    <string name="direct_touch_off">Toque direto</string>
+    <string name="direct_touch_on">Toque direto ativado</string>
+    <string name="direct_touch_off">Toque direto desativado</string>
     <string name="direct_touch_tile_label">Toque direto</string>
     <string name="title_pref_direct_touch">Toque direto</string>
     <string name="pref_direct_touch_master">Toque direto</string>
-    <string name="pref_direct_touch_master_summary">Passe os toques diretamente nos aplicativos que você escolher abaixo e devolva-os para SandFly nas caixas de diálogo, campos de texto, teclado e telas do sistema.</string>
-    <string name="pref_direct_touch_speech">Fale quando o toque direto mudar</string>
+    <string name="pref_direct_touch_master_summary">Os toques vão diretamente para as apps escolhidas abaixo e voltam para o SandFly em caixas de diálogo, campos de texto, teclado e ecrãs do sistema.</string>
+    <string name="pref_direct_touch_speech">Dizer quando o toque direto mudar</string>
     <string name="pref_direct_touch_haptics">Vibrar quando o toque direto muda</string>
-    <string name="pref_direct_touch_backup">Fazer backup das configurações</string>
-    <string name="pref_direct_touch_restore">Restaurar configurações</string>
-    <string name="direct_touch_apps_category">Aplicativos</string>
-    <string name="direct_touch_action_typing_on">Ative a digitação direta</string>
-    <string name="direct_touch_action_typing_off">Desative a digitação direta</string>
-    <string name="direct_touch_typing_summary_on">Digitação direta ativada</string>
-    <string name="direct_touch_backup_done">Configurações salvas</string>
+    <string name="pref_direct_touch_backup">Fazer cópia de segurança das definições</string>
+    <string name="pref_direct_touch_restore">Restaurar definições</string>
+    <string name="direct_touch_apps_category">Aplicações</string>
+    <string name="direct_touch_action_typing_on">Ativar a escrita direta</string>
+    <string name="direct_touch_action_typing_off">Desativar a escrita direta</string>
+    <string name="direct_touch_typing_summary_on">Escrita direta ativada</string>
+    <string name="direct_touch_backup_done">Definições guardadas</string>
     <string name="direct_touch_backup_failed">Não foi possível salvar as configurações</string>
-    <string name="direct_touch_restore_done">Configurações restauradas</string>
-    <string name="direct_touch_restore_failed">Não foi possível ler esse arquivo</string>
+    <string name="direct_touch_restore_done">Definições restauradas</string>
+    <string name="direct_touch_restore_failed">Não foi possível ler esse ficheiro</string>
 </resources>

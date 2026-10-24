@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="shortcut_announce_status">Tala status</string>
+    <string name="shortcut_announce_status">Läs upp status</string>
     <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> av <xliff:g id="max_level" example="4">%2$d</xliff:g> staplar</string>
     <string name="status_wifi_off">Wi-Fi av</string>
     <string name="status_wifi_not_connected">Wi-Fi inte ansluten</string>
@@ -10,20 +10,20 @@
     <string name="status_mobile">Mobil</string>
     <string name="status_mobile_no_service">Ingen mobiltjänst</string>
     <string name="status_do_not_disturb">Stör ej</string>
-    <string name="status_ringer_vibrate">Vibrera</string>
+    <string name="status_ringer_vibrate">Vibration</string>
     <string name="status_ringer_silent">Tyst</string>
     <string name="status_airplane_mode">Flygplansläge</string>
-    <string name="title_pref_status_readout">Statusavläsning</string>
+    <string name="title_pref_status_readout">Statusuppläsning</string>
     <string name="status_item_time">Tid</string>
-    <string name="status_item_time_summary">Den aktuella tiden</string>
+    <string name="status_item_time_summary">Aktuell tid</string>
     <string name="status_item_battery">Batteri</string>
     <string name="status_item_battery_summary">Batterinivå, laddning och batterispar</string>
     <string name="status_item_wifi">Wi-Fi</string>
     <string name="status_item_wifi_summary">Nätverksnamn och signalstyrka</string>
-    <string name="status_item_mobile">Mobilt nätverk</string>
-    <string name="status_item_mobile_summary">Transportör, nätverkstyp och signalstyrka</string>
+    <string name="status_item_mobile">Mobilnätverk</string>
+    <string name="status_item_mobile_summary">Operatör, nätverkstyp och signalstyrka</string>
     <string name="status_item_ringer">Ringsignal och Stör ej</string>
-    <string name="status_item_ringer_summary">Endast när ringsignalen inte är inställd på att ringa eller Stör ej är på</string>
+    <string name="status_item_ringer_summary">Bara när ringsignalen är inställd på vibration eller ljudlös, eller Stör ej är på</string>
     <string name="status_item_airplane_mode">Flygplansläge</string>
     <string name="status_item_airplane_mode_summary">Endast när flygplansläget är på</string>
 </resources>

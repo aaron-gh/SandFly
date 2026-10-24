@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_check_for_updates">Provjerite ima li ažuriranja</string>
-    <string name="summary_pref_check_for_updates_version">Verzija <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, verzija <xliff:g id="build" example="96">%2$d</xliff:g></string>
-    <string name="title_pref_auto_update_check">Automatski provjeri ima li ažuriranja</string>
-    <string name="summary_pref_auto_update_check">Provjerite jednom dnevno i pokažite obavijest kada nova verzija bude dostupna</string>
-    <string name="title_pref_dev_builds">Razvoj gradi</string>
-    <string name="update_notification_title">Dostupno ažuriranje SandFly</string>
-    <string name="update_notification_text">Graditi <xliff:g id="build" example="97">%1$d</xliff:g>. Dodirnite za instalaciju.</string>
-    <string name="update_dialog_title">Dostupna je verzija SandFly <xliff:g id="build" example="97">%1$d</xliff:g></string>
-    <string name="update_dialog_install">Instalirajte</string>
+    <string name="title_pref_check_for_updates">Provjeri ima li ažuriranja</string>
+    <string name="summary_pref_check_for_updates_version">Verzija <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, međuverzija <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">Automatski provjeravaj ažuriranja</string>
+    <string name="summary_pref_auto_update_check">Provjerava jednom dnevno i prikazuje obavijest kada je dostupna nova verzija</string>
+    <string name="title_pref_dev_builds">Razvojne verzije</string>
+    <string name="update_notification_title">Dostupno je ažuriranje za SandFly</string>
+    <string name="update_notification_text">Međuverzija <xliff:g id="build" example="97">%1$d</xliff:g>. Dodirnite za instalaciju.</string>
+    <string name="update_dialog_title">Dostupna je međuverzija SandFlyja <xliff:g id="build" example="97">%1$d</xliff:g></string>
+    <string name="update_dialog_install">Instaliraj</string>
     <string name="update_checking">Provjera ažuriranja</string>
     <string name="update_up_to_date">SandFly je ažuriran</string>
     <string name="update_check_failed">Nije moguće provjeriti ima li ažuriranja</string>
     <string name="update_downloading">Preuzimanje ažuriranja</string>
     <string name="update_already_downloading">Ažuriranje se već preuzima</string>
-    <string name="update_ready_title">SandFly ažuriranje preuzeto</string>
+    <string name="update_ready_title">Ažuriranje za SandFly preuzeto</string>
     <string name="update_ready_text">Dodirnite za instalaciju.</string>
     <string name="update_install_failed">Nije moguće instalirati ažuriranje</string>
     <string name="update_install_canceled">Ažuriranje otkazano</string>
-    <string name="update_allow_install">Dopustite SandFly da instalira aplikacije, a zatim ponovno pokušajte ažurirati</string>
+    <string name="update_allow_install">Dopustite SandFlyu da instalira aplikacije, a zatim ponovno pokušajte ažurirati</string>
 </resources>

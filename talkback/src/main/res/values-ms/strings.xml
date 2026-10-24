@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Peranti dibuka kunci.</string>
   <string name="title_pref_speech_volume">Kelantangan pertuturan</string>
   <string name="title_pref_verbose_scroll_announcement">Sentiasa sebut bilangan item senarai</string>
-  <string name="summary_pref_verbose_scroll_announcement">Sebut item mana yang ditunjukkan selepas setiap tatal</string>
+  <string name="summary_pref_verbose_scroll_announcement">Menyebut item yang ditunjukkan selepas setiap tatal</string>
   <string name="title_pref_cover_proximity_sensor">Tutup penderia kehampiran untuk menghentikan pertuturan</string>
   <string name="title_pref_phonetic_letters">Sebut huruf dengan contoh</string>
   <string name="summary_pref_phonetic_letters">Apabila anda memilih kekunci papan kekunci atau menavigasi mengikut aksara, anda akan mendengar contoh bersama setiap huruf, seperti, \"h, hotel\"</string>
@@ -51,7 +51,7 @@
   <string name="pref_speak_container_element_positions_title">Sebutkan maklumat bekas</string>
   <string name="pref_speak_time_title">Maklumkan masa</string>
   <string name="pref_speak_time_summary">Apabila anda menghidupkan skrin</string>
-  <string name="summary_speak_container_element_positions">Sebut apabila anda memasukkan atau meninggalkan senarai, grid dan bekas lain</string>
+  <string name="summary_speak_container_element_positions">Menyebut apabila anda masuk ke atau keluar dari senarai, grid dan bekas lain</string>
   <string name="reset_letency_reduction_settings_dialog_title">Tetapkan semula tetapan penangguhan?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Tetapan ini akan menetapkan semula tetapan penangguhan kepada lalai</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Tetapkan semula</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Tetapkan semula</string>
   <string name="gestures_announce_reset_gesture_settings">Tetapan gerak isyarat telah ditetapkan semula.</string>
   <string name="pref_speak_roles_title">Sebut jenis unsur</string>
-  <string name="pref_speak_roles_summary">Butang suka atau kotak semak</string>
+  <string name="pref_speak_roles_summary">Seperti butang atau kotak semak</string>
   <string name="title_pref_speak_element_ids">Sebut ID unsur</string>
-  <string name="summary_pref_speak_element_ids">Sebutkan ID butang yang tidak mempunyai label</string>
+  <string name="summary_pref_speak_element_ids">Menyebut ID butang yang tiada label</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Tuturkan semua kemaskinian kemajuan</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Merangkumi kemaskinian semasa memuat turun, mengikut arah memandu dan pelbagai lagi. Apabila dimatikan, anda masih menerima kemaskinian tetapi kurang kerap.</string>
   <string name="title_pref_explore_by_touch">Teroka melalui sentuhan</string>
@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Penunjuk fokus</string>
   <string name="title_pref_category_manage_gestures">Gerak isyarat</string>
   <string name="title_pref_manage_labels">Label tersuai</string>
-  <string name="title_pref_category_context_menu">SandFly menu</string>
+  <string name="title_pref_category_context_menu">Menu SandFly</string>
   <string name="title_pref_category_selector_menu">Kawalan bacaan</string>
   <string name="title_pref_category_navigation_menu">Edit pilihan navigasi</string>
   <string name="title_pref_manage_keyboard_shortcuts">Pintasan papan kekunci</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">Bantuan</string>
   <string name="title_pref_advanced_settings">Tetapan terperinci</string>
   <string name="title_pref_show_exit_watermark">Tunjukkan arahan untuk mematikan SandFly</string>
-  <string name="summary_pref_show_exit_watermark">Apabila SandFly dihidupkan, tunjukkan cara untuk mematikannya</string>
+  <string name="summary_pref_show_exit_watermark">Apabila SandFly dihidupkan, cara mematikannya ditunjukkan</string>
   <string name="talkback_exit_watermark_text">SandFly dihidupkan. Tahan 2 jari pada skrin selama 5 saat untuk mematikan SandFly. Untuk berhenti memaparkan mesej ini, ketik dengan 3 jari untuk membuka menu SandFly.</string>
   <string name="talkback_exit_watermark_hint_text">Sepanduk dipaparkan untuk menunjukkan SandFly dihidupkan. Untuk mematikan SandFly, tahan 2 jari pada skrin selama 5 saat. Untuk mengalih keluar sepanduk ini, akses Tetapan SandFly.</string>
   <string name="reset_gesture_settings_title">Tetapkan semula tetapan gerak isyarat</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">Gabungan kekunci ini digunakan untuk tindakan \'%1$s\'. Adakah anda ingin menghapuskannya dan menetapkan pintasan ini kepada \'%2$s\'?</string>
   <string name="title_pref_intonation">Gunakan perubahan nada</string>
   <string name="title_pref_keyboard_echo">Gema papan kekunci</string>
-  <string name="pref_node_desc_order_title">Pesanan butiran item</string>
+  <string name="pref_node_desc_order_title">Susunan butiran item</string>
   <string name="pref_time_feedback_format_title">Format waktu</string>
   <string name="title_pref_latency_reduction">Kurangkan penangguhan</string>
   <string name="talkback_latency_reduction_summary">Jadikan SandFly bertindak balas dengan lebih pantas selepas anda menyentuh skrin</string>
@@ -297,7 +297,7 @@
   <string name="title_pref_brailledisplay">Paparan braille</string>
   <string name="title_pref_brailleime">Papan kekunci braille</string>
   <string name="summary_pref_brailleime_disabled">Peranti anda tidak menyokong papan kekunci braille</string>
-  <string name="title_pref_speech_footer">Untuk menukar kelantangan kebolehaksesan daripada mana-mana skrin, tahan 1 jari pada skrin dan tekan kekunci kelantangan naik atau turunkan.</string>
+  <string name="title_pref_speech_footer">Untuk menukar kelantangan kebolehaksesan dari mana-mana skrin, tahan 1 jari pada skrin dan tekan kekunci naikkan atau turunkan kelantangan.</string>
   <string name="title_pref_vibration">Maklum balas getaran</string>
   <string name="title_pref_soundback">Maklum balas bunyi</string>
   <string name="title_pref_use_audio_focus">Merendahkan audio</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Matikan SandFly kemudian hidupkan sekali lagi untuk mengaktifkan tetapan.</string>
   <string name="title_pref_auto_image_captioning">Perihalan automatik</string>
   <string name="title_pref_gemini_settings">Tetapan Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini arahan suara</string>
+  <string name="title_pref_gemini_enabled">Arahan suara Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Dapatkan perihalan imej AI yang terperinci apabila anda memilih \“Perihalkan imej\” daripada menu SandFly.\n\nAnda juga boleh mendapatkan perihalan automatik apabila anda memfokuskan imej atau ikon. Perihalan automatik berfungsi tanpa sambungan Internet.</string>
   <string name="title_pref_icon_detection">Perihalan ikon automatik</string>
   <string name="title_pref_image_description">Perihalan imej automatik</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">Anda juga boleh menaip dengan papan kekunci braille. Cari papan kekunci braille dalam tetapan SandFly.</string>
   <string name="other_ways_to_type_title">Cara lain untuk menaip</string>
   <string name="other_ways_to_type_text">Terdapat cara lain untuk menaip dalam SandFly. Sebagai contoh, anda boleh menggunakan dwiketik untuk memasukkan huruf.</string>
-  <string name="basic_other_ways_to_type_text">Terdapat cara lain untuk menaip SandFly. Sebagai contoh, anda boleh menggunakan ketik dua kali untuk memasukkan huruf. Anda boleh menukar ini kemudian dalam tetapan SandFly &gt; Papan kekunci pada skrin &gt; Kaedah menaip.</string>
-  <string name="basic_other_ways_to_type_text_tts">Terdapat cara lain untuk menaip SandFly. Sebagai contoh, anda boleh menggunakan ketik dua kali untuk memasukkan huruf. Anda boleh menukar ini kemudian dalam tetapan SandFly kemudian Papan kekunci pada skrin kemudian kaedah Menaip.</string>
+  <string name="basic_other_ways_to_type_text">Terdapat cara lain untuk menaip dalam SandFly. Contohnya, anda boleh mengetik dua kali untuk memasukkan huruf. Anda boleh menukar tetapan ini kemudian dalam Tetapan SandFly &gt; Papan kekunci pada skrin &gt; Kaedah menaip.</string>
+  <string name="basic_other_ways_to_type_text_tts">Terdapat cara lain untuk menaip dalam SandFly. Contohnya, anda boleh mengetik dua kali untuk memasukkan huruf. Anda boleh menukar tetapan ini kemudian dalam Tetapan SandFly, kemudian Papan kekunci pada skrin, kemudian Kaedah menaip.</string>
   <string name="change_typing_preference_text">Tukar pilihan penaipan</string>
   <string name="moving_cursor_title">Menggerakkan kursor</string>
   <string name="moving_cursor_text">Apabila anda telah mengaktifkan kotak teks, anda boleh menggerakkan kursor antara huruf dengan meleret ke atas atau ke bawah.\n\nCuba gerakkan kursor dalam kotak teks di bawah.</string>
@@ -1304,7 +1304,7 @@
     <string name="summary_selector_switch_tts_engine">Tukar antara enjin pertuturan yang dipasang</string>
     <string name="title_selector_voice_profile">Profil suara</string>
     <string name="title_pref_voice_profiles">Profil suara</string>
-    <string name="voice_profile_default">SandFly lalai</string>
+    <string name="voice_profile_default">Lalai SandFly</string>
     <string name="voice_profile_in_use">Sedang digunakan: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Bahasa pertuturan tidak tersedia semasa menggunakan profil suara</string>
     <string name="speech_engine_unavailable_with_profile">Enjin pertuturan tidak tersedia semasa menggunakan profil suara</string>
@@ -1313,10 +1313,10 @@
     <string name="shortcut_voice_profiles">Pilih profil suara</string>
     <string name="shortcut_previous_voice_profile">Profil suara sebelumnya</string>
     <string name="shortcut_next_voice_profile">Profil suara seterusnya</string>
-    <string name="title_pref_voice_profile_in_use">Profil suara sedang digunakan</string>
+    <string name="title_pref_voice_profile_in_use">Profil suara yang digunakan</string>
     <string name="title_pref_add_voice_profile">Tambahkan profil suara</string>
     <string name="voice_profile_new_name">Profil suara <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Profil suara sudah dipanggil <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Sudah ada profil suara bernama <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Nama</string>
     <string name="title_pref_voice_profile_language">Bahasa</string>
     <string name="title_pref_voice_profile_voice">Suara</string>
@@ -1324,8 +1324,8 @@
     <string name="voice_profile_loading">Memuatkan</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, tidak dipasang</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Bergerak ke atas</string>
-    <string name="voice_profile_move_down">Bergerak ke bawah</string>
+    <string name="voice_profile_move_up">Alihkan ke atas</string>
+    <string name="voice_profile_move_down">Alihkan ke bawah</string>
     <string name="voice_profile_rename">Namakan semula</string>
     <string name="voice_profile_moved_above">Dialihkan ke atas <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Dialihkan ke bawah <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1333,14 +1333,14 @@
     <string name="title_pref_delete_voice_profile">Padamkan profil suara</string>
     <string name="voice_profile_delete_confirm">Padamkan <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Padam</string>
-    <string name="summary_pref_tts_engine_default">Sistem lalai</string>
+    <string name="summary_pref_tts_engine_default">Lalai sistem</string>
     <string name="title_pref_speech_pitch">Pic pertuturan</string>
     <string name="title_pref_speech_stream">Kelantangan pertuturan</string>
-    <string name="summary_selector_speech_stream">Beralih antara kebolehaksesan, media, deringan dan volum panggilan</string>
+    <string name="summary_selector_speech_stream">Beralih antara kelantangan kebolehaksesan, media, deringan dan panggilan</string>
     <string name="speech_stream_accessibility">Kelantangan kebolehaksesan</string>
     <string name="speech_stream_media">Kelantangan media</string>
     <string name="speech_stream_ring">Kelantangan deringan</string>
-    <string name="speech_stream_call">Kelantangan panggilan, cuping telinga</string>
+    <string name="speech_stream_call">Kelantangan panggilan, alat dengar</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1348,17 +1348,17 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Hantar teks panjang satu ayat pada satu masa</string>
-    <string name="summary_pref_speak_in_phrases">Untuk enjin pertuturan yang lambat berhenti, seperti Gryphon, jadi meleret keluar menghentikan teks yang panjang sekali gus. Banyak enjin berhenti seketika antara ayat yang dihantar secara berasingan, jadi biarkan ini jika enjin anda berhenti dengan cepat.</string>
-    <string name="battery_optimization_notification_title">Pengoptimuman bateri boleh berhenti SandFly</string>
-    <string name="battery_optimization_notification_text">Pada telefon ini, penjimat bateri boleh berhenti SandFly selepas skrin dimatikan, jadi ia menjadi senyap sehingga ia dimulakan semula. Ketik untuk membuka pengoptimuman bateri, pilih Semua apl, cari SandFly dan pilih Jangan optimumkan.</string>
+    <string name="summary_pref_speak_in_phrases">Untuk enjin pertuturan yang lambat berhenti, seperti Gryphon, supaya leretan menghentikan teks panjang dengan serta-merta. Banyak enjin berjeda lebih lama antara ayat yang dihantar berasingan, jadi biarkan ini mati jika enjin anda berhenti dengan cepat.</string>
+    <string name="battery_optimization_notification_title">Pengoptimuman bateri boleh menghentikan SandFly</string>
+    <string name="battery_optimization_notification_text">Pada telefon ini, penjimat bateri boleh menghentikan SandFly selepas skrin dimatikan, jadi SandFly senyap sehingga dimulakan semula. Ketik untuk membuka pengoptimuman bateri, pilih Semua apl, cari SandFly dan pilih Jangan optimumkan.</string>
     <string name="title_pref_mute_speech_while_recording">Senyap semasa merakam</string>
     <string name="summary_pref_mute_speech_while_recording">Semasa apl merakam tanpa fon kepala disambungkan, SandFly hanya bercakap sebagai jawapan kepada gerak isyarat, kekunci dan menaip anda dan kekal senyap untuk perkara seperti pemberitahuan, supaya ia tidak dirakam.</string>
     <string name="title_pref_switch_languages">Tukar bahasa secara automatik</string>
     <string name="title_pref_switch_dialects">Tukar dialek secara automatik</string>
-    <string name="category_collapsed">Bahagian runtuh</string>
+    <string name="category_collapsed">Bahagian dikuncupkan</string>
     <string name="category_expanded">Bahagian dikembangkan</string>
     <string name="title_pref_speak_nav_bar_buttons">Sebut butang bar navigasi</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Dengan lif untuk mengaktifkan pada bar navigasi, sebut butang yang ditekan oleh ketikan, seperti Kembali atau Laman Utama.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Apabila Angkat untuk mengaktifkan digunakan pada bar navigasi, menyebut butang yang ditekan oleh ketikan, seperti Kembali atau Skrin Utama.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Bateri <xliff:g id="battery_level" example="73">%1$s</xliff:g> peratus</string>
     <string name="template_battery_level_unknown">Tahap bateri tidak diketahui</string>
@@ -1368,8 +1368,8 @@
     <string name="title_screen_announcements_screen_off">Apabila skrin dimatikan</string>
     <string name="title_screen_announcements_screen_on">Apabila skrin dihidupkan</string>
     <string name="title_screen_announcements_unlock">Apabila telefon dibuka kunci</string>
-    <string name="title_pref_say_screen_off">Sebut \"Matikan skrin\"</string>
-    <string name="title_pref_say_device_unlocked">Sebut \"Peranti tidak berkunci\"</string>
+    <string name="title_pref_say_screen_off">Sebut \"Skrin dimatikan\"</string>
+    <string name="title_pref_say_device_unlocked">Sebut \"Peranti dibuka kunci\"</string>
     <string name="title_pref_announce_time">Masa</string>
     <string name="title_pref_announce_ringer_mode">Mod dering</string>
     <string name="summary_pref_announce_ringer_mode">Sebut apabila dering ditetapkan kepada bergetar atau senyap</string>
@@ -1379,16 +1379,16 @@
     <string name="title_pref_touch_activation">Sentuh dan pengaktifan</string>
     <string name="title_pref_navigation">Navigasi</string>
     <string name="title_pref_category_more">Lagi</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Simpan gerak isyarat untuk Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Berhenti SandFly mengendalikan satu dan dua jari dua jari supaya Samsung Vibration Watch boleh menggunakannya. Dayakan Vibration Watch dalam tetapan kebolehaksesan jam tangan anda.</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Khaskan gerak isyarat untuk Vibration Watch</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly berhenti mengendalikan ketikan tunggal dan ketikan dua kali dengan dua jari supaya Samsung Vibration Watch boleh menggunakannya. Dayakan Vibration Watch dalam tetapan kebolehaksesan jam tangan anda.</string>
     <string name="shortcut_reserved_for_vibration_watch">Dikhaskan untuk Vibration Watch dalam Tetapan Lanjutan</string>
     <string name="title_pref_speakerphone_away_from_ear">Pembesar suara apabila jauh dari telinga anda</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Semasa panggilan, beralih kepada pembesar suara apabila anda menjauhkan telefon dari telinga anda dan kembali ke alat dengar apabila anda memegangnya semula.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Memerlukan kebenaran yang Android tidak diberikan kepada pembaca skrin. Untuk memberikannya, jalankan arahan ini dengan adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Semasa panggilan, beralih kepada pembesar suara apabila anda menjauhkan telefon dari telinga, dan kembali kepada pembesar suara telinga apabila anda mendekatkannya semula.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Memerlukan kebenaran yang tidak diberikan oleh Android kepada pembaca skrin. Untuk memberikannya, jalankan arahan ini dengan adb atau Shizuku, kemudian kembali ke skrin ini: %1$s</string>
     <string name="action_copy_command">Salin arahan</string>
     <string name="command_copied">Perintah disalin</string>
     <string name="title_pref_speech_control">Biarkan apl lain bercakap</string>
-    <string name="summary_pref_speech_control">Apl yang anda benarkan boleh menyebut teks dalam suara SandFly anda. Tiada apa-apa yang dikatakan semasa peranti dikunci.</string>
+    <string name="summary_pref_speech_control">Apl yang anda benarkan boleh menyebut teks dengan suara SandFly. Tiada apa-apa disebut semasa peranti dikunci.</string>
     <string name="title_pref_speech_control_sound">Mainkan bunyi sebelum apl lain bercakap</string>
     <string name="speech_control_apps_category">Apl</string>
     <string name="speech_control_no_apps">Belum ada apl yang meminta untuk bercakap.</string>
@@ -1398,15 +1398,15 @@
     <string name="speech_control_deny">Jangan benarkan</string>
     <string name="permission_speak_label">bercakap melalui SandFly</string>
     <string name="permission_speak_description">Membenarkan apl meminta untuk menyebut teks dalam suara SandFly anda. SandFly bertanya kepada anda sebelum apl boleh bercakap.</string>
-    <string name="permission_braille_display_label">minta untuk menjadi paparan braille untuk SandFly</string>
+    <string name="permission_braille_display_label">meminta untuk menjadi paparan braille bagi SandFly</string>
     <string name="permission_braille_display_description">Membenarkan apl meminta untuk menjadi paparan braille untuk SandFly. Jika anda membenarkannya dalam SandFly, ia boleh membaca semua pada skrin dan mengawal peranti anda. SandFly bertanya kepada anda dahulu.</string>
     <string name="title_pref_phonetic_letters_mode">Sebut huruf secara fonetik</string>
     <string name="phonetic_letters_mode_off">Mati</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Selepas surat itu, ditangguhkan, seperti \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Selepas surat itu, tiada kelewatan, seperti \"h hotel\"</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Daripada surat itu, seperti \"hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Selepas huruf, dengan jeda, seperti “h, hotel”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Selepas huruf, tanpa jeda, seperti “h hotel”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Sebagai ganti huruf, seperti “hotel”</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Dibaca dengan enjin pertuturan</string>
+    <string name="emoji_speech_engine">Dibaca oleh enjin pertuturan</string>
     <string name="emoji_speech_names">Dibaca oleh SandFly</string>
     <string name="emoji_speech_none">Tiada</string>
     <string name="summary_selector_menu_emoji">Tukar cara emoji dibaca</string>
@@ -1418,27 +1418,27 @@
     <string name="emoji_repeat_count_4">4 atau lebih</string>
     <string name="emoji_repeat_count_5">5 atau lebih</string>
     <string name="emoji_repeat_count_6">6 atau lebih</string>
-    <string name="pref_table_headers_category_title">Bacaan meja</string>
+    <string name="pref_table_headers_category_title">Bacaan jadual</string>
     <string name="pref_table_column_headers_title">Baca tajuk lajur</string>
     <string name="pref_table_column_headers_entry_after">Selepas data sel</string>
     <string name="pref_table_column_headers_entry_before">Sebelum data sel</string>
     <string name="pref_table_column_headers_entry_off">Jangan baca</string>
     <string name="pref_table_speak_row_column_numbers_title">Sebut nombor baris dan lajur</string>
-    <string name="pref_table_speak_row_column_numbers_summary">Umumkan nombor baris dan lajur untuk sel jadual</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Menyebut nombor baris dan lajur bagi sel jadual</string>
     <string name="title_pref_speak_volume_changes">Sebut perubahan kelantangan</string>
-    <string name="summary_pref_speak_volume_changes">Sebut kelantangan baharu selepas anda menekan kekunci kelantangan</string>
+    <string name="summary_pref_speak_volume_changes">Menyebut kelantangan baharu selepas kekunci kelantangan ditekan</string>
     <string name="title_pref_speak_notifications">Sebut pemberitahuan</string>
-    <string name="summary_pref_speak_notifications">Baca pemberitahuan baharu dengan kuat apabila ia tiba. Panggilan masuk sentiasa dibaca.</string>
+    <string name="summary_pref_speak_notifications">Membaca pemberitahuan baharu dengan kuat apabila diterima. Panggilan masuk sentiasa dibaca.</string>
     <string name="title_pref_notification_list">Gunakan senarai pemberitahuan SandFly</string>
     <string name="title_pref_notification_parts">Butiran pemberitahuan</string>
-    <string name="title_pref_play_installer">Muncul dipasang dari Google Main</string>
-    <string name="summary_pref_play_installer">Beritahu apl lain bahawa Google Play dipasang SandFly. Sesetengah apl, seperti sesetengah apl perbankan, mematikan perkhidmatan kebolehaksesan yang dipasang dari tempat lain. Memerlukan Shizuku, dan hanya menukar apl yang diberitahu tentang asal SandFly.</string>
-    <string name="summary_pref_play_installer_pending">Hidup, tetapi Google Main belum direkodkan sebagai pemasang lagi. SandFly menetapkannya apabila Shizuku tersedia.</string>
+    <string name="title_pref_play_installer">Kelihatan dipasang dari Google Play</string>
+    <string name="summary_pref_play_installer">Memberitahu apl lain bahawa SandFly dipasang daripada Google Play. Sesetengah apl, seperti sesetengah apl perbankan, mematikan perkhidmatan kebolehaksesan yang dipasang daripada sumber lain. Memerlukan Shizuku dan hanya menukar perkara yang diberitahu kepada apl tentang asal SandFly.</string>
+    <string name="summary_pref_play_installer_pending">Hidup, tetapi Google Play belum direkodkan sebagai pemasang. SandFly menetapkannya apabila Shizuku tersedia.</string>
     <string name="notification_part_title">Tajuk</string>
     <string name="notification_part_text">Teks</string>
     <string name="notification_part_app">Nama apl</string>
     <string name="notification_part_time">Masa</string>
-    <string name="notification_part_playback">Bermain atau dijeda</string>
+    <string name="notification_part_playback">Dimainkan atau dijeda</string>
     <string name="notification_list_title">Pemberitahuan</string>
     <string name="notification_list_empty">Tiada pemberitahuan</string>
     <string name="notification_list_no_access">Akses pemberitahuan dimatikan</string>
@@ -1449,7 +1449,7 @@
     <string name="notification_list_show_less">Tunjukkan lebih sedikit</string>
     <string name="notification_list_clear_all">Kosongkan semua</string>
     <string name="notification_list_send">Hantar</string>
-    <string name="notification_list_playing">Bermain</string>
+    <string name="notification_list_playing">Sedang dimainkan</string>
     <string name="notification_list_paused">Dijeda</string>
     <string name="notification_list_play">Main</string>
     <string name="notification_list_pause">Jeda</string>
@@ -1472,12 +1472,12 @@
     <string name="quick_settings_flashlight">Lampu suluh</string>
     <string name="quick_settings_flashlight_brightness">Kecerahan lampu suluh</string>
     <string name="quick_settings_location">Lokasi</string>
-    <string name="quick_settings_auto_rotate">Auto-putar</string>
+    <string name="quick_settings_auto_rotate">Autoputar</string>
     <string name="quick_settings_battery_saver">Penjimat bateri</string>
     <string name="quick_settings_dark_theme">Tema gelap</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Kecerahan</string>
-    <string name="quick_settings_adaptive_brightness">Kecerahan penyesuaian</string>
+    <string name="quick_settings_adaptive_brightness">Kecerahan boleh suai</string>
     <string name="quick_settings_media_volume">Kelantangan media</string>
     <string name="quick_settings_call_volume">Kelantangan panggilan</string>
     <string name="quick_settings_ring_volume">Kelantangan deringan</string>
@@ -1516,7 +1516,7 @@
     <string name="quick_settings_connected">Bersambung</string>
     <string name="quick_settings_battery">Bateri</string>
     <string name="quick_settings_battery_charging">%1$s, mengecas</string>
-    <string name="quick_settings_battery_full">%1$s, dicaj</string>
+    <string name="quick_settings_battery_full">%1$s, dicas penuh</string>
     <string name="quick_settings_sound">Bunyi</string>
     <string name="quick_settings_vibrate">Bergetar</string>
     <string name="quick_settings_mute">Bisu</string>
@@ -1530,8 +1530,8 @@
     <string name="quick_settings_add_tile">Tambahkan jubin apl</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Bilangan lajur</string>
-    <string name="quick_settings_move">Bergerak</string>
-    <string name="quick_settings_move_title">Bergerak %1$s</string>
+    <string name="quick_settings_move">Alihkan</string>
+    <string name="quick_settings_move_title">Alihkan %1$s</string>
     <string name="quick_settings_cell">Baris %1$d, lajur %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1542,28 +1542,28 @@
     <string name="quick_settings_remove">Alih keluar</string>
     <string name="quick_settings_added">%1$s ditambah</string>
     <string name="quick_settings_removed">%1$s dikeluarkan</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly pada. Pegang 2 jari pada skrin selama 5 saat untuk mematikan. Untuk berhenti memaparkan mesej ini, matikan SandFly tetapan &gt; Tetapan lanjutan &gt; Tunjukkan arahan untuk mematikan SandFly.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly hidup. Tahan 2 jari pada skrin selama 5 saat untuk mematikannya. Untuk berhenti menunjukkan mesej ini, matikan Tetapan SandFly &gt; Tetapan terperinci &gt; Tunjukkan arahan untuk mematikan SandFly.</string>
     <string name="edge_gestures_title">Tepi</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Pintasan lain untuk menghidupkan atau mematikan mod semak imbas</string>
     <string name="title_pref_vibration_strength">Kekuatan getaran</string>
     <string name="title_pref_audio_output_device">Peranti output audio</string>
     <string name="dialog_title_audio_output_device">Pilih tempat untuk memainkan bunyi SandFly</string>
-    <string name="value_audio_output_device_default">Sistem lalai</string>
+    <string name="value_audio_output_device_default">Lalai sistem</string>
     <string name="value_audio_output_device_speaker">Pembesar suara telefon</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Disambungkan Bluetooth peranti atau berwayar</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Peranti Bluetooth atau berwayar yang disambungkan</string>
     <string name="value_audio_output_device_disconnected">terputus</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth peranti audio</string>
+    <string name="value_audio_output_device_bluetooth_default">Peranti audio Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Alat dengar berwayar</string>
     <string name="value_audio_output_device_wired_headphones">Fon kepala berwayar</string>
-    <string name="value_audio_output_device_usb_headset">USB set kepala</string>
-    <string name="value_audio_output_device_usb_device">USB peranti audio</string>
+    <string name="value_audio_output_device_usb_headset">Set kepala USB</string>
+    <string name="value_audio_output_device_usb_device">Peranti audio USB</string>
     <string name="title_pref_speaker_devices">Pembesar suara telefon dengan peranti ini</string>
     <string name="summary_pref_speaker_devices_none">Tiada</string>
-    <string name="summary_pref_speaker_devices_no_devices">Tiada Bluetooth atau peranti berwayar disambungkan lagi</string>
+    <string name="summary_pref_speaker_devices_no_devices">Tiada peranti Bluetooth atau berwayar disambungkan lagi</string>
     <string name="pref_reduce_window_delay_summary">SandFly membaca skrin baharu dengan lebih pantas apabila animasi dimatikan. Ini mematikan animasi untuk keseluruhan telefon.</string>
-    <string name="dialog_message_detailed_ai_description">Imej yang dipilih dihantar ke Google\'s Gemini API untuk diterangkan. Dengan AI pada peranti dihidupkan, ia diterangkan pada telefon ini dan tidak dihantar.\n\nDengan kunci API percuma, Google boleh menyimpan perkara yang diterima, menggunakannya untuk menambah baik produknya dan meminta orang ramai menyemaknya. AI Generatif adalah eksperimen, jadi ia akan membuat kesilapan. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> terpakai.</string>
-    <string name="dialog_message_detailed_ai_promotion">Penerangan imej terperinci dikuasakan oleh AI generatif. Imej yang dipilih dihantar ke Google\'s Gemini API untuk diterangkan. Dengan AI pada peranti dihidupkan, ia diterangkan pada telefon ini dan tidak dihantar.\n\nDengan kunci API percuma, Google boleh menyimpan perkara yang diterima, menggunakannya untuk menambah baik produknya dan meminta orang ramai menyemaknya. AI Generatif adalah eksperimen, jadi ia akan membuat kesilapan. Anda boleh mematikan penerangan imej terperinci pada bila-bila masa dalam tetapan SandFly.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> digunakan.</string>
-    <string name="dialog_message_screen_overview_promotion">Tangkapan skrin skrin dihantar ke Google API Gemini untuk diterangkan, yang mengambil masa beberapa saat. Dengan AI pada peranti dihidupkan, ia diterangkan pada telefon ini dan tidak dihantar.\n\nDengan kunci API percuma, Google boleh menyimpan perkara yang diterima, menggunakannya untuk menambah baik produknya dan meminta orang ramai menyemaknya. AI Generatif adalah eksperimen, jadi ia akan membuat kesilapan. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> terpakai.</string>
+    <string name="dialog_message_detailed_ai_description">Imej yang dipilih dihantar ke Gemini API Google untuk diterangkan. Apabila AI pada peranti dihidupkan, imej diterangkan pada telefon ini dan tidak dihantar.\n\nDengan kunci API percuma, Google boleh menyimpan perkara yang diterimanya, menggunakannya untuk menambah baik produknya dan meminta manusia menyemaknya. AI generatif masih dalam percubaan, jadi ia akan membuat kesilapan. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> terpakai.</string>
+    <string name="dialog_message_detailed_ai_promotion">Penerangan imej terperinci dijana oleh AI generatif. Imej yang dipilih dihantar ke Gemini API Google untuk diterangkan. Apabila AI pada peranti dihidupkan, imej diterangkan pada telefon ini dan tidak dihantar.\n\nDengan kunci API percuma, Google boleh menyimpan perkara yang diterimanya, menggunakannya untuk menambah baik produknya dan meminta manusia menyemaknya. AI generatif masih dalam percubaan, jadi ia akan membuat kesilapan. Anda boleh mematikan penerangan imej terperinci pada bila-bila masa dalam Tetapan SandFly.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> terpakai.</string>
+    <string name="dialog_message_screen_overview_promotion">Tangkapan skrin dihantar ke Gemini API Google untuk diterangkan, dan ini mengambil masa beberapa saat. Apabila AI pada peranti dihidupkan, tangkapan skrin diterangkan pada telefon ini dan tidak dihantar.\n\nDengan kunci API percuma, Google boleh menyimpan perkara yang diterimanya, menggunakannya untuk menambah baik produknya dan meminta manusia menyemaknya. AI generatif masih dalam percubaan, jadi ia akan membuat kesilapan. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> terpakai.</string>
     <string name="shortcut_title_open_app">Buka apl</string>
     <string name="shortcut_open_app">Buka <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Tatal ke atas</string>
@@ -1580,13 +1580,13 @@
     <string name="handwriting_not_recognized">Tulisan tangan tidak dikenali</string>
     <string name="handwriting_downloading">Pengecaman tulisan tangan sedang dimuat turun</string>
     <string name="handwriting_download_title">Muat turun pengecaman tulisan tangan?</string>
-    <string name="handwriting_download_message">Tulisan tangan dikenali pada telefon ini. Modelnya untuk bahasa ini, kira-kira 20 MB, dimuat turun daripada Google sekali. Mesej menunjukkan apabila ia telah dimuat turun.</string>
+    <string name="handwriting_download_message">Tulisan tangan dikenali pada telefon ini. Modelnya untuk bahasa ini, kira-kira 20 MB, dimuat turun sekali daripada Google. Mesej akan dipaparkan apabila muat turun selesai.</string>
     <string name="handwriting_download_button">Muat turun</string>
     <string name="handwriting_downloaded">Pengecaman tulisan tangan dimuat turun</string>
     <string name="handwriting_download_failed">Pengecaman tulisan tangan tidak dapat dimuat turun. Semak sambungan internet.</string>
     <string name="handwriting_unsupported_language">Pengecaman tulisan tangan tidak tersedia dalam bahasa ini</string>
     <string name="title_pref_handwriting_keyboard">Papan kekunci tulisan tangan</string>
-    <string name="summary_pref_handwriting_keyboard">Hidupkan SandFly tulisan tangan dalam tetapan papan kekunci Android</string>
+    <string name="summary_pref_handwriting_keyboard">Hidupkan tulisan tangan SandFly dalam tetapan papan kekunci Android</string>
     <string name="title_pref_handwriting_wait">Tunggu selepas menulis</string>
     <string name="value_handwriting_wait_200">0.2 saat</string>
     <string name="value_handwriting_wait_300">0.3 saat</string>
@@ -1596,19 +1596,19 @@
     <string name="value_handwriting_wait_800">0.8 saat</string>
     <string name="value_handwriting_wait_1000">1 saat</string>
     <string name="handwriting_keyboard_name">SandFly tulisan tangan</string>
-    <string name="handwriting_space">Ruang</string>
+    <string name="handwriting_space">Jarak</string>
     <string name="handwriting_new_line">Baris baharu</string>
     <string name="handwriting_tutorial_intro">Tutorial papan kekunci tulisan tangan. Tulis dengan satu jari di mana-mana pada skrin. Apa yang anda tulis ditaip apabila anda berhenti seketika. Untuk menamatkan tutorial, leret ke bawah dengan tiga jari.</string>
-    <string name="handwriting_tutorial_write_letter">Tulis huruf abjad a.</string>
+    <string name="handwriting_tutorial_write_letter">Tulis huruf a.</string>
     <string name="handwriting_tutorial_write_word">Sekarang tulis perkataan hi (h diikuti dengan i).</string>
     <string name="handwriting_tutorial_typed">Ditaip <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
-    <string name="handwriting_tutorial_space">Leret ke kanan dengan dua jari untuk menaip ruang.</string>
+    <string name="handwriting_tutorial_space">Leret ke kanan dengan dua jari untuk menaip jarak.</string>
     <string name="handwriting_tutorial_delete">Leret ke kiri dengan dua jari untuk memadam aksara sebelum kursor.</string>
     <string name="handwriting_tutorial_deleted">Dipadamkan.</string>
     <string name="handwriting_tutorial_next_reading">Jika tulisan tangan dikenali sebagai aksara lain, seperti huruf besar, leret ke atas dengan dua jari untuk memilih cadangan pengecaman seterusnya. Cuba sekarang.</string>
     <string name="handwriting_tutorial_read_back">Ketik dengan dua jari untuk membaca teks sebelum kursor.</string>
-    <string name="handwriting_tutorial_new_line">Leret ke bawah dengan dua jari untuk memasukkan baris baharu atau lakukan tindakan medan teks, seperti Hantar.</string>
-    <string name="handwriting_tutorial_not_that">Itu adalah satu lagi isyarat.</string>
+    <string name="handwriting_tutorial_new_line">Leret ke bawah dengan dua jari untuk memasukkan baris baharu atau melakukan tindakan medan teks, seperti Hantar.</string>
+    <string name="handwriting_tutorial_not_that">Itu isyarat yang lain.</string>
     <string name="handwriting_tutorial_done">Barisan baharu. Tutorial selesai. Leret ke bawah dengan tiga jari untuk menyembunyikan papan kekunci dan kanan atau kiri dengan tiga jari untuk menukar papan kekunci. Untuk membuka tutorial sekali lagi, ketik dengan tiga jari.</string>
     <string name="handwriting_tutorial_finished">Tutorial tamat. Untuk membukanya semula, ketik dengan tiga jari.</string>
     <string name="handwriting_no_alternatives">Tiada cadangan lain</string>
@@ -1617,7 +1617,7 @@
     <string name="handwriting_not_available">Pengecaman tulisan tangan tidak tersedia pada peranti ini</string>
     <string name="shortcut_scroll_to_bottom">Tatal ke bawah</string>
     <string name="shortcut_refresh">Segarkan semula</string>
-    <string name="shortcut_system_notifications">Lorek pemberitahuan sistem</string>
+    <string name="shortcut_system_notifications">Bidai pemberitahuan sistem</string>
     <string name="shortcut_system_quick_settings">Tetapan pantas sistem</string>
     <string name="shortcut_lock_screen">Kunci skrin peranti</string>
     <string name="shortcut_power_menu">Menu kuasa</string>
@@ -1631,11 +1631,11 @@
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Putar lawan jam dengan 2 jari</string>
     <string name="title_pref_shortcut_2finger_scrub">Gosok dengan 2 jari</string>
     <string name="title_pref_shortcut_2finger_pinch">Cubit dengan 2 jari</string>
-    <string name="title_pref_shortcut_2finger_spread">Sebarkan dengan 2 jari</string>
+    <string name="title_pref_shortcut_2finger_spread">Rentangkan dengan 2 jari</string>
     <string name="title_pref_shortcut_3finger_pinch">Cubit dengan 3 jari</string>
-    <string name="title_pref_shortcut_3finger_spread">Sebarkan dengan 3 jari</string>
+    <string name="title_pref_shortcut_3finger_spread">Rentangkan dengan 3 jari</string>
     <string name="title_pref_shortcut_4finger_pinch">Cubit dengan 4 jari</string>
-    <string name="title_pref_shortcut_4finger_spread">Sebarkan dengan 4 jari</string>
+    <string name="title_pref_shortcut_4finger_spread">Rentangkan dengan 4 jari</string>
     <string name="title_pref_shortcut_edge_bottom_up">Leret ke atas dari tepi bawah</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Leret panjang ke atas dari tepi bawah</string>
     <string name="title_pref_shortcut_edge_top_left_down">Leret ke bawah dari kiri atas</string>
@@ -1643,11 +1643,11 @@
     <string name="title_pref_shortcut_edge_top_left_long_down">Leret panjang ke bawah dari kiri atas</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Leret panjang ke bawah dari bahagian atas sebelah kanan</string>
     <string name="title_pref_shortcut_edge_left_top_right">Leret ke kanan dari tepi kiri, bahagian atas</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Leret panjang ke kanan dari tepi kiri, bahagian atas</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Leret panjang ke kanan dari tepi kiri, separuh atas</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Leret ke kanan dari tepi kiri, separuh bawah</string>
     <string name="title_pref_shortcut_edge_left_bottom_long_right">Leret panjang ke kanan dari tepi kiri, separuh bawah</string>
     <string name="title_pref_shortcut_edge_right_top_left">Leret ke kiri dari tepi kanan, bahagian atas</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Leret panjang ke kiri dari tepi kanan, bahagian atas</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Leret panjang ke kiri dari tepi kanan, separuh atas</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Leret ke kiri dari tepi kanan, separuh bawah</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Leret panjang ke kiri dari tepi kanan, separuh bawah</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">Pegang jari untuk memilih mana-mana kekunci, kemudian angkat. Ketik dua kali untuk Masukkan, Selesai atau Hantar.</string>
@@ -1682,7 +1682,7 @@
     <string name="value_lift_to_activate_navigation_bar">Hanya pada bar navigasi</string>
     <string name="value_lift_to_activate_entire_screen">Seluruh skrin</string>
     <string name="template_lift_to_activate_changed">Angkat untuk mengaktifkan: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Bungkus sekeliling</string>
+    <string name="title_pref_wrap_around">Kembali ke permulaan</string>
     <string name="summary_pref_wrap_around">Meleret melepasi item terakhir pergi ke yang pertama, dan melepasi yang pertama pergi ke yang terakhir. Apabila dimatikan, bunyi akan dimainkan pada penghujungnya.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Betulkan penerokaan sentuhan yang tersekat</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Tanpa kebenaran DUMP, SandFly hanya boleh mengatakan bahawa penerokaan sentuhan mungkin tersekat. Untuk membiarkannya membaikinya, jalankan: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
@@ -1693,7 +1693,7 @@
     <string name="stuck_touch_exploration_grant_dump">Penerokaan sentuhan mungkin tersekat. Mulakan semula telefon untuk membaikinya, atau berikan SandFly kebenaran DUMP dengan ADB supaya ia boleh membetulkannya.</string>
     <string name="title_pref_window_names">Nama tetingkap</string>
     <string name="window_names_always">Sentiasa</string>
-    <string name="window_names_until_first_item">Sentiasa, potong dengan item pertama</string>
+    <string name="window_names_until_first_item">Sentiasa, dihentikan oleh item pertama</string>
     <string name="window_names_window_opens">Hanya apabila tingkap dibuka</string>
     <string name="window_names_never">Tidak pernah</string>
     <string name="title_pref_selector_links_controls_web_only">Pautan dan Kawalan hanya dalam kandungan web</string>
@@ -1701,54 +1701,54 @@
     <string name="title_pref_touch_stops_speech">Hentikan pertuturan apabila menyentuh skrin</string>
     <string name="title_pref_focus_new_windows">Alihkan fokus ke tetingkap baharu</string>
     <string name="title_pref_volume_keys_adjust_sliders">Kekunci kelantangan melaraskan peluncur</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">Apabila peluncur mempunyai fokus, kelantangan naik dan turun menukar nilainya dan bukannya kelantangan</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">Apabila peluncur mempunyai fokus, kekunci naikkan dan turunkan kelantangan menukar nilainya, bukan kelantangan</string>
     <string name="title_pref_volume_keys_move_cursor">Kekunci kelantangan menggerakkan kursor</string>
-    <string name="summary_pref_volume_keys_move_cursor">Apabila medan teks mempunyai fokus, kelantangan naik menggerakkan kursor ke belakang aksara dan kelantangan turun menggerakkannya</string>
-    <string name="summary_support_wrap_around">Hidupkan atau matikan pembalut dari item terakhir kepada yang pertama</string>
-    <string name="wrap_around_on">Bungkus pada</string>
-    <string name="wrap_around_off">Bungkus</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tablet mengangkat muka</string>
+    <string name="summary_pref_volume_keys_move_cursor">Apabila medan teks mempunyai fokus, naikkan kelantangan mengalihkan kursor satu aksara ke belakang dan turunkan kelantangan satu aksara ke hadapan</string>
+    <string name="summary_support_wrap_around">Hidupkan atau matikan peralihan dari item terakhir ke item pertama</string>
+    <string name="wrap_around_on">Kembali ke permulaan: hidup</string>
+    <string name="wrap_around_off">Kembali ke permulaan: mati</string>
+    <string name="title_selector_tablet_held_up_faces_away">Tablet yang diangkat menghadap ke luar</string>
     <string name="summary_support_tablet_held_up_faces_away">Untuk papan kekunci braille pada tablet atau telefon yang tidak dilipat</string>
-    <string name="tablet_held_up_faces_away_on">Tablet mengangkat mukanya</string>
-    <string name="tablet_held_up_faces_away_off">Tablet diangkat menghadap jauh</string>
+    <string name="tablet_held_up_faces_away_on">Tablet yang diangkat menghadap ke luar: hidup</string>
+    <string name="tablet_held_up_faces_away_off">Tablet yang diangkat menghadap ke luar: mati</string>
     <string name="title_keyboard_echo_on_screen">Gema papan kekunci pada skrin</string>
     <string name="title_keyboard_echo_physical">Gema papan kekunci fizikal</string>
     <string name="title_keyboard_echo_braille_keyboard">Gema papan kekunci Braille</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Gema papan kekunci tulisan tangan</string>
     <string name="title_keyboard_echo_braille_display">Gema paparan Braille</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Mengganggu ucapan semasa menaip</string>
+    <string name="title_pref_interrupt_typing">Hentikan pertuturan semasa menaip</string>
     <string name="pref_interrupt_typing_entry_always">Sentiasa</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Dalam medan edit</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Pada gema papan kekunci</string>
-    <string name="title_pref_interrupt_enter">Mengganggu ucapan pada Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Nama, negeri, jenis</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Jenis, negeri, nama</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Negeri, jenis, nama</string>
+    <string name="title_pref_interrupt_enter">Hentikan pertuturan apabila menekan Enter</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Nama, keadaan, jenis</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Jenis, keadaan, nama</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Keadaan, jenis, nama</string>
     <string name="item_detail_name">Nama</string>
-    <string name="item_detail_type">Taip</string>
-    <string name="item_detail_state">Negeri</string>
-    <string name="action_move_up">Bergerak ke atas</string>
-    <string name="action_move_down">Bergerak ke bawah</string>
+    <string name="item_detail_type">Jenis</string>
+    <string name="item_detail_state">Keadaan</string>
+    <string name="action_move_up">Alihkan ke atas</string>
+    <string name="action_move_down">Alihkan ke bawah</string>
     <string name="template_list_position">Kedudukan <xliff:g id="position" example="2">%1$d</xliff:g> daripada <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Diambil <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Digugurkan <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly menyatakan butiran item dalam pesanan ini. Untuk menukarnya, sentuh dan tahan butiran, kemudian seretnya ke atas atau ke bawah. Dengan SandFly dihidupkan, dwiketik dan tahan, kemudian seret. Anda juga boleh menggunakan tindakan Bergerak ke atas dan Bergerak ke bawah.</string>
-    <string name="title_pref_speak_items_before_scroll">Sebut item sebelum ia menatal ke paparan</string>
-    <string name="gemini_error_api_key">Gemini tidak menerima kunci API. Semak kekunci dalam tetapan Perihalan automatik.</string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> dilepaskan. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">SandFly menyebut butiran item dalam susunan ini. Untuk menukarnya, sentuh dan tahan butiran, kemudian seret ke atas atau ke bawah. Apabila SandFly dihidupkan, ketik dua kali dan tahan, kemudian seret. Anda juga boleh menggunakan tindakan Alihkan ke atas dan Alihkan ke bawah.</string>
+    <string name="title_pref_speak_items_before_scroll">Sebut item sebelum ditatal ke paparan</string>
+    <string name="gemini_error_api_key">Gemini tidak menerima kunci API. Semak kunci dalam tetapan Perihalan automatik.</string>
     <string name="gemini_error_quota">Had penggunaan untuk kunci API Gemini anda telah dicapai. Cuba lagi nanti.</string>
     <string name="gemini_error_busy">Gemini sibuk sekarang. Cuba lagi sebentar lagi.</string>
     <string name="gemini_error_timeout">Gemini mengambil masa terlalu lama untuk menjawab. Cuba lagi.</string>
     <string name="gemini_error_with_code">Gemini tidak dapat menjawab, ralat <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini tidak dapat menjawab, ralat <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
-    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Tidak dapat penerangan imej yang lebih terperinci: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
+    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Tidak dapat memperoleh penerangan imej yang lebih terperinci: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Tanya dengan suara</string>
     <string name="image_qna_stop_listening">Berhenti mendengar</string>
     <string name="image_qna_type_question">Taip soalan</string>
     <string name="shortcut_dictate">Imlakkan</string>
-    <string name="title_pref_ai_dictation">Imlak yang betul dengan AI</string>
-    <string name="dictation_not_corrected">Tidak diperbetulkan. Ditaip sebagai diiktiraf.</string>
-    <string name="dictation_nothing_recognized">Tiada yang diiktiraf</string>
+    <string name="title_pref_ai_dictation">Betulkan imlak dengan AI</string>
+    <string name="dictation_not_corrected">Tidak dibetulkan. Ditaip seperti yang dicam.</string>
+    <string name="dictation_nothing_recognized">Tiada apa-apa yang dikenal pasti</string>
     <string name="dictation_unavailable">Pengecaman pertuturan tidak tersedia</string>
     <string name="dictation_field_gone">Medan teks ditutup. Tiada apa-apa yang ditaip.</string>
     <string name="dictation_transcription_failed">Pertuturan tidak ditranskripsikan. Tiada apa-apa yang ditaip.</string>
@@ -1768,8 +1768,8 @@
     <string name="title_pref_dictation_ai_service">Perkhidmatan AI untuk imlak</string>
     <string name="dictation_ai_same">Sama seperti perihalan automatik</string>
     <string name="title_pref_browse_mode_per_app">Ingat mod semak imbas dalam setiap apl</string>
-    <string name="title_pref_export_settings">Tetapan eksport</string>
-    <string name="title_pref_import_settings">Tetapan import</string>
+    <string name="title_pref_export_settings">Eksport tetapan</string>
+    <string name="title_pref_import_settings">Import tetapan</string>
     <string name="settings_export_done">Tetapan dieksport. Kunci API tidak disertakan</string>
     <string name="settings_export_failed">Tetapan tidak dapat dieksport</string>
     <string name="settings_import_done">Tetapan diimport</string>

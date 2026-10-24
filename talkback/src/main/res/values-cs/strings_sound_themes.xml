@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- SandFly-specific Czech translations for sound themes. -->
     <string name="title_pref_sound_themes">Zvukové motivy</string>
-    <string name="summary_pref_sound_themes">Instalujte a vybírejte sady zvuků a vibrací, nahrazujte jednotlivé zvuky vlastními a zapněte zvuky a vibrace ovládacích prvků a 3D zvuk.</string>
+    <string name="summary_pref_sound_themes">Sady zvuků a vibrací, vlastní zvuky místo jednotlivých zvuků, „Zvuky a vibrace ovládacích prvků“ a 3D zvuk.</string>
     <string name="sound_themes_installed_category">Nainstalované motivy</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">Vlastní zvuky a vibrace SandFly a případné vaše vlastní zvuky.</string>
@@ -54,8 +54,7 @@
     <string name="sound_theme_install_and_use">Nainstalovat a použít</string>
     <string name="sound_theme_install">Nainstalovat</string>
     <string name="sound_theme_install_replaces">Tímto se nahradí nainstalovaný motiv se stejným názvem.</string>
-    <string name="sound_theme_install_skipped">Vynecháno:\
-<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
+    <string name="sound_theme_install_skipped">Vynecháno:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">Nainstalován motiv <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>.</string>
     <string name="sound_theme_installed_in_use">Nainstalován motiv <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>. Nyní se používá.</string>
     <string name="sound_theme_install_nothing">Není k dispozici žádný zvukový motiv k instalaci.</string>
@@ -79,10 +78,10 @@
     <string name="theme_sound_braille_new_line">Braillská klávesnice: nový řádek</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">Vybrat zvukový soubor</string>
-    <string name="theme_sound_preview">Náhled</string>
+    <string name="theme_sound_preview">Přehrát</string>
     <string name="theme_sound_none">Žádný zvuk</string>
     <string name="theme_sound_summary_no_sound">Žádný zvuk</string>
-    <string name="theme_sound_action_set_none">Nastavit na žádný zvuk</string>
+    <string name="theme_sound_action_set_none">Nastavit bez zvuku</string>
     <string name="theme_sound_use_default">Použít zvuk SandFly</string>
     <string name="theme_sound_remove">Odebrat zvuk</string>
     <string name="theme_sound_too_large">Tento soubor je příliš velký. Zvuk může mít nejvýše 5 MB.</string>

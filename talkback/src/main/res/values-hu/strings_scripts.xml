@@ -18,7 +18,7 @@
     <string name="scripts_now_on">Szkriptek bekapcsolva</string>
     <string name="scripts_unavailable">A szkriptek nem használhatók ezen az eszközön</string>
     <string name="script_add_example">A példaszkript hozzáadása</string>
-    <string name="script_add_example_summary">Kimondja minden alkalmazás nevét, amelyre átvált. Kiindulópont saját szkripthez.</string>
+    <string name="script_add_example_summary">Kimondja minden alkalmazás nevét, amelyre vált. Kiindulásnak szánt szkript.</string>
     <string name="script_state_on">Be</string>
     <string name="script_state_off">Ki</string>
     <string name="script_runs_in">Fut itt: <xliff:g id="apps">%1$s</xliff:g></string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Fókuszált elem vizsgálata</string>
     <string name="script_inspect_no_item">Egy elem sincs fókuszban</string>
     <string name="script_inspect_copied">Másolva. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Nincs azonosító, így a szabályok nem hivatkozhatnak rá. Másolva. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Nincs azonosítója, így a szabályok nem hivatkozhatnak rá. Másolva. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Képernyőfa másolása</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> elem másolva</string>
     <string name="script_tree_none">Nincs másolható ablak</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_turn_off">Kikapcsolás</string>
     <string name="script_binding_restore">Alapértelmezések visszaállítása</string>
     <string name="script_binding_restored">Alapértelmezések visszaállítva</string>
-    <string name="script_binding_perform">Kézmozdulat vagy billentyűk végrehajtása</string>
+    <string name="script_binding_perform">Hajtson végre egy kézmozdulatot, vagy nyomja meg a billentyűket</string>
     <string name="script_binding_perform_summary">A következő kézmozdulat vagy a SandFly-módosítóbillentyűvel lenyomott billentyűk hozzárendelése</string>
     <string name="script_binding_perform_message">Hajtsa végre a kézmozdulatot, vagy nyomja le a billentyűket.</string>
     <string name="script_binding_assign_title">Hozzárendeli a(z) <xliff:g id="binding">%1$s</xliff:g> elemet a(z) <xliff:g id="command">%2$s</xliff:g> parancshoz?</string>
@@ -138,8 +138,8 @@
     <string name="script_source_remove">Forrás eltávolítása</string>
     <string name="script_source_remove_title">Eltávolítja a következőt: <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Az innen telepített szkriptek telepítve maradnak.</string>
-    <string name="scripts_auto_update">A szkriptek automatikus frissítése</string>
-    <string name="scripts_check_updates">Ellenőrizze a frissítéseket</string>
+    <string name="scripts_auto_update">Szkriptek automatikus frissítése</string>
+    <string name="scripts_check_updates">Frissítések keresése</string>
     <string name="scripts_checking_updates">Frissítések keresése…</string>
     <string name="scripts_updates_category">Frissítések</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> szkript frissítve: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> szkript frissítve: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">A frissítések a Frissítések alatt találhatók</string>
+    <string name="scripts_updates_to_approve">A frissítések a „Frissítések” részben találhatók</string>
     <string name="scripts_update_check_failed">Egyes forrásokat nem lehetett ellenőrizni</string>
     <string name="scripts_up_to_date">Minden szkript naprakész</string>
 </resources>

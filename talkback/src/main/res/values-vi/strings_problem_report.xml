@@ -49,7 +49,7 @@
     <string name="report_drafts_empty">Không có bản nháp</string>
     <string name="report_just_now">vừa xong</string>
     <string name="report_untitled">Không có tiêu đề</string>
-    <string name="report_draft_summary">Thay đổi <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary">Đã thay đổi <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">đã gửi <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> câu trả lời mới</item>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Xoá</string>
     <string name="report_missing">Phản hồi này không còn trong hộp thư đến.</string>
     <string name="notification_channel_problem_reports">Câu trả lời cho phản hồi</string>
-    <string name="report_notification_reply">Trả lời <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Phản hồi cho <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

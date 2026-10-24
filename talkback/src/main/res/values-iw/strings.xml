@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">נעילת המכשיר בוטלה.</string>
   <string name="title_pref_speech_volume">עוצמת קול דיבור</string>
   <string name="title_pref_verbose_scroll_announcement">הקראת מספר הפריטים ברשימה תמיד</string>
-  <string name="summary_pref_verbose_scroll_announcement">אמור אילו פריטים מוצגים לאחר כל גלילה</string>
+  <string name="summary_pref_verbose_scroll_announcement">הקראת הפריטים המוצגים אחרי כל גלילה</string>
   <string name="title_pref_cover_proximity_sensor">כיסוי של חיישן הקירבה יפסיק את הדיבור</string>
   <string name="title_pref_phonetic_letters">הקראת אותיות עם דוגמאות</string>
   <string name="summary_pref_phonetic_letters">כשבוחרים מקשים במקלדת או מנווטים לפי תו, שומעים דוגמה למילה אחרי כל אות, למשל \"מ\', מלון\"</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">הרוב</string>
   <string name="punctuation_some">חלק</string>
   <string name="title_pref_count_repeated_symbols">ספירת סמלים חוזרים</string>
-  <string name="summary_pref_count_repeated_symbols">אמור כמה פעמים סמל חוזר כאשר הוא חוזר 4 פעמים או יותר</string>
+  <string name="summary_pref_count_repeated_symbols">הקראת מספר החזרות של סמל כשהוא חוזר 4 פעמים או יותר</string>
   <string name="learn_more">מידע נוסף</string>
   <string name="title_pref_capital_letters">אותיות רישיות</string>
   <string name="capital_letters_nothing">לא לבצע שום פעולה</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">שינוי גובה הצליל</string>
   <string name="capital_letters_sound_feedback">השמעת צליל</string>
   <string name="title_pref_a11y_hints">אמירה בקול של טיפים לשימוש</string>
-  <string name="summary_pref_a11y_hints">לאחר תיאור פריט, אמור כיצד להשתמש בו</string>
+  <string name="summary_pref_a11y_hints">אחרי תיאור פריט, הקראת הסבר איך להשתמש בו</string>
   <string name="pref_speak_container_element_positions_title">הקראה של פרטי המאגר</string>
   <string name="pref_speak_time_title">הקראת השעה</string>
   <string name="pref_speak_time_summary">כשמפעילים את המסך</string>
-  <string name="summary_speak_container_element_positions">אמור מתי אתה נכנס או עוזב רשימות, רשתות ומכלים אחרים</string>
+  <string name="summary_speak_container_element_positions">הקראה בכניסה לרשימות, לרשתות ולקונטיינרים אחרים וביציאה מהם</string>
   <string name="reset_letency_reduction_settings_dialog_title">לאפס את הגדרות ההשהיה?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">הפעולה הזו תאפס את כל הגדרות ההשהיה לברירת המחדל</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">איפוס</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">איפוס</string>
   <string name="gestures_announce_reset_gesture_settings">הגדרות התנועה אופסו.</string>
   <string name="pref_speak_roles_title">הקראה של סוג הרכיב</string>
-  <string name="pref_speak_roles_summary">כפתור לייק או תיבת סימון</string>
+  <string name="pref_speak_roles_summary">למשל לחצן או תיבת סימון</string>
   <string name="title_pref_speak_element_ids">הקראת מזהי הרכיב</string>
-  <string name="summary_pref_speak_element_ids">אמור את המזהה של לחצנים שאין להם תווית</string>
+  <string name="summary_pref_speak_element_ids">הקראת המזהה של לחצנים ללא תווית</string>
   <string name="pref_allow_frequent_content_change_announcement_title">הקראת כל עדכוני ההתקדמות</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">ההגדרה הזו כוללת עדכונים בזמן הורדה, מעקב אחר מסלול הנסיעה ועוד. כשההגדרה מושבתת, עדיין יהיו עדכונים, אבל בתדירות נמוכה יותר.</string>
   <string name="title_pref_explore_by_touch">גילוי באמצעות מגע</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">עזרה</string>
   <string name="title_pref_advanced_settings">הגדרות מתקדמות</string>
   <string name="title_pref_show_exit_watermark">‏הצגת הוראות להשבתת SandFly</string>
-  <string name="summary_pref_show_exit_watermark">כאשר SandFly נדלק, הראה כיצד לכבות אותו</string>
+  <string name="summary_pref_show_exit_watermark">כש-SandFly נדלק, מוצגת הדרך לכבות אותו</string>
   <string name="talkback_exit_watermark_text">‏התכונה SandFly מופעלת. כדי להשבית אותה, צריך ללחוץ לחיצה ארוכה על המסך ב-2 אצבעות למשך 5 שניות. רוצה להפסיק לראות את ההודעה הזו? צריך ללחוץ עם 3 אצבעות כדי לפתוח את תפריט SandFly.</string>
   <string name="talkback_exit_watermark_hint_text">‏מוצג באנר כדי לציין שהתכונה SandFly מופעלת. כדי להשבית את SandFly, לוחצים לחיצה ארוכה עם שתי אצבעות על המסך למשך 5 שניות. כדי להסיר את הבאנר הזה, צריך לעבור להגדרות SandFly.</string>
   <string name="reset_gesture_settings_title">איפוס של הגדרות התנועה</string>
@@ -292,7 +292,7 @@
   <string name="pref_node_desc_order_title">סדר פרטי הפריט</string>
   <string name="pref_time_feedback_format_title">פורמט השעה</string>
   <string name="title_pref_latency_reduction">הפחתת ההשהיה</string>
-  <string name="talkback_latency_reduction_summary">תגרום ל-SandFly להגיב מהר יותר לאחר שתגע במסך</string>
+  <string name="talkback_latency_reduction_summary">SandFly מגיב מהר יותר אחרי נגיעה במסך</string>
   <string name="summary_pref_intonation">הקראת אותיות שנמחקו בקול גבוה יותר</string>
   <string name="title_pref_brailledisplay">צג ברייל</string>
   <string name="title_pref_brailleime">מקלדת ברייל</string>
@@ -305,7 +305,7 @@
   <string name="title_pref_category_developer_settings">הגדרות למפתחים</string>
   <string name="title_activity_dump_a11y_event">בחירת אירועים לרישום</string>
   <string name="title_pref_dump_a11y_event">סנן רישום אירועי נגישות</string>
-  <string name="pref_reduce_window_delay_title">כבה אנימציות</string>
+  <string name="pref_reduce_window_delay_title">כיבוי אנימציות</string>
   <string name="title_pref_log_level">רמת רישום של הפלט ביומן</string>
   <string name="title_pref_diagnosis_mode">מצב אבחון</string>
   <string name="title_pref_tts_overlay">הצגת פלט דיבור</string>
@@ -318,13 +318,13 @@
   <string name="title_pref_typing_confirmation">שיטת הקלדה</string>
   <string name="title_pref_typing_long_tap_duration">זמן ההשהיה של לחיצה ארוכה בזמן ההקלדה</string>
   <string name="title_pref_touch_explore_timeout">השהיית המיקוד בהקלדה</string>
-  <string name="message_pref_touch_explore_latency">השהיה קצר יותר גורם ל-SandFly לדבר מוקדם יותר לאחר שנגעת במקלדת.\n\nבחר השהיה</string>
+  <string name="message_pref_touch_explore_latency">השהיה קצרה יותר גורמת ל-SandFly לדבר מוקדם יותר אחרי נגיעה במקלדת.\n\nבחירת השהיה</string>
   <string name="title_pref_touch_focus_timeout">השהיית המיקוד</string>
   <string name="title_pref_talkback_gesture_detection">‏ניהול התנועות ב-SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">‏יש להשבית ולהפעיל מחדש את SandFly כדי להפעיל את ההגדרה.</string>
   <string name="title_pref_auto_image_captioning">תיאורים אוטומטיים</string>
   <string name="title_pref_gemini_settings">‏הגדרות Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini פקודות קוליות</string>
+  <string name="title_pref_gemini_enabled">פקודות קוליות של Gemini</string>
   <string name="title_pref_category_automatic_description_summary">‏בוחרים באפשרות \'תיאור התמונה\' בתפריט SandFly ומקבלים תיאורים מפורטים של תוכן ויזואלי באמצעות AI.‏\n\nאפשר גם לקבל תיאורים אוטומטיים כשמתמקדים בתמונה או בסמל. התיאורים האוטומטיים פועלים גם בלי חיבור לאינטרנט.</string>
   <string name="title_pref_icon_detection">תיאורים אוטומטיים של סמלים</string>
   <string name="title_pref_image_description">תיאורי תמונות אוטומטיים</string>
@@ -357,7 +357,7 @@
   <string name="summary_pref_gemini_support_disabled">‏‫Gemini מושבת</string>
   <string name="screen_dimmed">המסך מוסתר</string>
   <string name="screen_brightness_restored">המסך מוצג</string>
-  <string name="screen_dimming_exit_instruction_line1">‏שירות הנגישות SandFly עמעם את המסך</string>
+  <string name="screen_dimming_exit_instruction_line1">שירות הנגישות SandFly הסתיר את המסך</string>
   <string name="screen_dimming_exit_instruction_line2">‏כדי לשנות זאת, <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> כדי לפתוח את התפריט של SandFly, בוחרים באפשרות \'<xliff:g id="menu item" example="show screen">%2$s</xliff:g>\' ולוחצים לחיצה כפולה.</string>
   <string name="shortcut_title_basic_navigation">ניווט בסיסי</string>
   <string name="shortcut_title_system_actions">פעולות מערכת</string>
@@ -668,7 +668,7 @@
   <string name="label_dialog_text">‏יש להזין את הטקסט שישמש כתווית של האלמנט הזה\nשם פנימי למטרות תצוגה: %1$s</string>
   <string name="label_dialog_edit_hint">טקסט תווית</string>
   <string name="label_import">ייבוא תוויות מותאמות אישית</string>
-  <string name="label_import_dialog_title">‏יבא תוויות מותאמות אישית אל SandFly</string>
+  <string name="label_import_dialog_title">ייבוא תוויות מותאמות אישית אל SandFly</string>
   <string name="label_import_dialog_message">האם ברצונך לבטל תוויות קיימות או לדלג עליהן במקרה של התנגשות?</string>
   <string name="label_import_dialog_skip">דילוג</string>
   <string name="label_import_dialog_override">ביטול</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">ניווט למעלה</string>
   <string name="training_tip">טיפ</string>
   <string name="tv_training_overview_step_title">‏איך התכונה SandFly פועלת</string>
-  <string name="tv_training_overview_step_summary">SandFly הוא קורא מסך המבוסס על Google של TalkBack. הוא קורא בקול את הטקסט על המסך ונותן לך משוב מדובר, כך שתוכל להשתמש במכשיר שלך מבלי להסתכל על המסך.\n\nעם SandFly מופעל, פריט נבחר על המסך מושמע בקול, לפעמים עם מידע נוסף או הקשר נוסף.\n\nלחץ על בחר כדי להמשיך. כפתור הבחירה ממוקם במרכז משטח הכיוון, שהוא הכפתור העגול והגדול בחלק העליון של השלט.</string>
+  <string name="tv_training_overview_step_summary">SandFly הוא קורא מסך שמבוסס על TalkBack של Google. הוא מקריא את הטקסט שעל המסך ומשמיע משוב קולי, כדי שאפשר יהיה להשתמש במכשיר בלי להסתכל על המסך.\n\nכש-SandFly פועל, הפריט שנבחר במסך מוקרא, לפעמים עם מידע נוסף או הקשר.\n\nכדי להמשיך יש ללחוץ על ״בחירה״. לחצן הבחירה נמצא במרכז לחצני הכיוונים, שהם הלחצן העגול והגדול בחלק העליון של השלט.</string>
   <string name="tv_training_remote_step_title">שימוש בשלט הרחוק</string>
   <string name="tv_training_remote_step_summary">‏אפשר לנוע במסך באמצעות מקשי החיצים בצורת מעגל בחלק העליון של השלט הרחוק. כדי לבחור, לוחצים על הכפתור שבמרכז מקשי החיצים בחלק העליון של השלט הרחוק.\n\nבשורה השנייה משמאל נמצא כפתור \"הקודם\". בצד ימין נמצא כפתור המעבר ל-Assistant‏.\n\nבשורה השלישית משמאל נמצא הכפתור הראשי. בצד ימין נמצא כפתור ההשתקה.\n\nבשורה הרביעית משמאל נמצא מקש הקיצור ל-YouTube. בצד ימין נמצא מקש הקיצור ל-Netflix‏.\n\nבשורה התחתונה יש שני כפתורים קטנים. הכפתור השמאלי הוא כפתור ההפעלה. הכפתור הימני יפתח את תפריט הקלט של הטלוויזיה.\n\nכפתורי עוצמת הקול ממוקמים בצד ימין של השלט הרחוק.\n\nצריך ללחוץ על Select (בחירה) כדי להמשיך.</string>
   <string name="tv_training_shortcut_step_title">‏קיצור דרך ל-SandFly</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">‏אפשר להקליד גם בעזרת מקלדת ברייל. את המקלדת הזו ניתן למצוא בהגדרות של SandFly.</string>
   <string name="other_ways_to_type_title">דרכים נוספות להקליד</string>
   <string name="other_ways_to_type_text">‏יש עוד דרכים להקליד ב-SandFly. לדוגמה, אפשר ללחוץ לחיצה כפולה כדי להקליד אות.</string>
-  <string name="basic_other_ways_to_type_text">ישנן דרכים אחרות להקליד SandFly. לדוגמה, אתה יכול להשתמש בלחיצה כפולה כדי להזין אות. תוכל לשנות זאת מאוחר יותר בהגדרות SandFly &gt; מקלדת על המסך &gt; שיטת הקלדה.</string>
-  <string name="basic_other_ways_to_type_text_tts">ישנן דרכים אחרות להקליד SandFly. לדוגמה, אתה יכול להשתמש בלחיצה כפולה כדי להזין אות. אתה יכול לשנות זאת מאוחר יותר בהגדרות SandFly ואז במקלדת המסך ואז בשיטת ההקלדה.</string>
+  <string name="basic_other_ways_to_type_text">יש דרכים נוספות להקליד ב-SandFly. לדוגמה, אפשר להקיש פעמיים כדי להזין אות. אפשר לשנות זאת בהמשך בהגדרות של SandFly &gt; מקלדת וירטואלית &gt; שיטת הקלדה.</string>
+  <string name="basic_other_ways_to_type_text_tts">יש דרכים נוספות להקליד ב-SandFly. לדוגמה, אפשר להקיש פעמיים כדי להזין אות. אפשר לשנות זאת בהמשך בהגדרות של SandFly, אחר כך מקלדת וירטואלית, ואז שיטת הקלדה.</string>
   <string name="change_typing_preference_text">שינוי העדפות ההקלדה</string>
   <string name="moving_cursor_title">הזזת הסמן</string>
   <string name="moving_cursor_text">‏אחרי שמפעילים תיבת טקסט, אפשר להזיז את הסמן בין האותיות על ידי החלקה למעלה או למטה.\n\nרוצה לנסות? בשביל זה הוספנו כאן את התיבה הזאת.</string>
@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">כדי לבדוק את היסטוריית ההתראות, מחליקים למטה עם 2 אצבעות מהחלק העליון של המסך</string>
   <string name="image_description_playground_title">כך מקבלים תיאורי תמונות</string>
   <string name="image_description_playground_content_one">‏אחרי שמתמקדים על תמונה, פותחים את תפריט SandFly ובוחרים באפשרות \'תיאור התמונה\'.\n\n הנה תמונה לדוגמה. אפשר לנסות לקבל תיאור לתמונה פה.</string>
-  <string name="image_description_playground_content_two">אתה יכול לשנות את הגדרות תיאור התמונה בכל עת בהגדרות SandFly &gt; תיאורים אוטומטיים.</string>
-  <string name="image_description_playground_content_two_tts">אתה יכול לשנות את הגדרות תיאור התמונה בכל עת בהגדרות SandFly ולאחר מכן בתיאורים אוטומטיים.</string>
+  <string name="image_description_playground_content_two">אפשר לשנות את הגדרות תיאור התמונות בכל שלב בהגדרות של SandFly &gt; תיאורים אוטומטיים.</string>
+  <string name="image_description_playground_content_two_tts">אפשר לשנות את הגדרות תיאור התמונות בכל שלב בהגדרות של SandFly ואז בתיאורים אוטומטיים.</string>
   <string name="image_description_sample_image_content_description">‏תמונה לדוגמה – לוחצים עם 3 אצבעות כדי לפתוח את תפריט SandFly ובוחרים באפשרות \'תיאור התמונה\' כדי להשמיע תיאור.</string>
   <string name="practice_gestures_title">תרגול תנועות</string>
   <string name="practice_keyboard_gestures_title">תרגול השימוש במקשי הקיצור</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">העמודה הקודמת</string>
   <string name="shortcut_column_right">העמודה הבאה</string>
   <string name="table_navigation_not_supported">אין תמיכה בניווט בטבלה</string>
-  <string name="pref_auto_enter_table_navigation_title">עבור לניווט בטבלאות בטבלאות</string>
+  <string name="pref_auto_enter_table_navigation_title">מעבר לניווט בטבלה בתוך טבלאות</string>
   <string name="title_text_formatting_menu">תיאור של עיצוב הטקסט</string>
   <string name="summary_text_formatting_menu">לשינויים כמו טקסט מודגש, נטוי, קו תחתון ועוד</string>
   <string name="title_text_formatting_inline">תיאור של עיצוב הטקסט</string>
@@ -1299,24 +1299,24 @@
     <string name="title_pref_tts_engine">מנוע טקסט לדיבור</string>
     <string name="title_pref_system_tts_settings">הגדרות מערכת טקסט לדיבור</string>
     <string name="title_selector_vertical_navigation">ניווט אנכי</string>
-    <string name="summary_selector_vertical_navigation">עבור לפריט מתחת או למעלה, מעבר לפריטים האחרים בשורה</string>
+    <string name="summary_selector_vertical_navigation">מעבר לפריט שמתחת או מעל, תוך דילוג על שאר הפריטים בשורה</string>
     <string name="title_selector_switch_tts_engine">מנוע דיבור</string>
     <string name="summary_selector_switch_tts_engine">מעבר בין מנועי דיבור מותקנים</string>
     <string name="title_selector_voice_profile">פרופיל קול</string>
     <string name="title_pref_voice_profiles">פרופילי קול</string>
-    <string name="voice_profile_default">SandFly ברירת מחדל</string>
+    <string name="voice_profile_default">ברירת המחדל של SandFly</string>
     <string name="voice_profile_in_use">בשימוש: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">השפה המדוברת אינה זמינה בעת שימוש בפרופיל קולי</string>
     <string name="speech_engine_unavailable_with_profile">מנוע דיבור אינו זמין בעת שימוש בפרופיל קולי</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, בשימוש</string>
     <string name="no_voice_profiles">אין פרופילים קוליים</string>
-    <string name="shortcut_voice_profiles">בחר פרופיל קולי</string>
+    <string name="shortcut_voice_profiles">בחירת פרופיל קולי</string>
     <string name="shortcut_previous_voice_profile">פרופיל קול קודם</string>
     <string name="shortcut_next_voice_profile">פרופיל הקול הבא</string>
     <string name="title_pref_voice_profile_in_use">פרופיל קול בשימוש</string>
-    <string name="title_pref_add_voice_profile">הוסף פרופיל קולי</string>
+    <string name="title_pref_add_voice_profile">הוספת פרופיל קולי</string>
     <string name="voice_profile_new_name">פרופיל קולי <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">פרופיל קולי כבר נקרא <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">כבר יש פרופיל קולי בשם <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">שם</string>
     <string name="title_pref_voice_profile_language">שפה</string>
     <string name="title_pref_voice_profile_voice">קול</string>
@@ -1324,13 +1324,13 @@
     <string name="voice_profile_loading">בטעינה</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, לא מותקן</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">לזוז למעלה</string>
-    <string name="voice_profile_move_down">לזוז למטה</string>
-    <string name="voice_profile_rename">שנה שם</string>
-    <string name="voice_profile_moved_above">עבר מעל <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="voice_profile_moved_below">הועבר למטה <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_move_up">העברה למעלה</string>
+    <string name="voice_profile_move_down">העברה למטה</string>
+    <string name="voice_profile_rename">שינוי שם</string>
+    <string name="voice_profile_moved_above">הועבר מעל <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_below">הועבר מתחת ל<xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> נמחק</string>
-    <string name="title_pref_delete_voice_profile">מחק פרופיל קולי</string>
+    <string name="title_pref_delete_voice_profile">מחיקת פרופיל קולי</string>
     <string name="voice_profile_delete_confirm">למחוק את <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">מחיקה</string>
     <string name="summary_pref_tts_engine_default">ברירת המחדל של המערכת</string>
@@ -1338,80 +1338,80 @@
     <string name="title_pref_speech_stream">עוצמת קול דיבור</string>
     <string name="summary_selector_speech_stream">מעבר בין עוצמת הנגישות, המדיה, הצלצול והשיחות</string>
     <string name="speech_stream_accessibility">עוצמת הקול לנגישות</string>
-    <string name="speech_stream_media">נפח מדיה</string>
+    <string name="speech_stream_media">עוצמת הקול של המדיה</string>
     <string name="speech_stream_ring">עוצמת הצלצול</string>
-    <string name="speech_stream_call">עוצמת קול, אוזנייה</string>
+    <string name="speech_stream_call">עוצמת קול שיחה, אפרכסת</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">שלח טקסט ארוך משפט בכל פעם</string>
-    <string name="summary_pref_speak_in_phrases">עבור מנועי דיבור שאיטיים לעצור, כגון Gryphon, אז החלקה משם עוצרת טקסט ארוך בבת אחת. מנועים רבים עוצרים זמן רב יותר בין משפט שנשלח בנפרד, אז השאר את זה כבוי אם שלך מפסיק במהירות.</string>
-    <string name="battery_optimization_notification_title">אופטימיזציה של הסוללה יכולה להפסיק SandFly</string>
-    <string name="battery_optimization_notification_text">בטלפון זה, חיסכון הסוללה יכול להפסיק SandFly לאחר כיבוי המסך, כך שהוא משתתק עד שהוא מופעל מחדש. הקש כדי לפתוח את אופטימיזציית הסוללה, בחר כל האפליקציות, מצא את SandFly ובחר אל תבצע אופטימיזציה.</string>
+    <string name="title_pref_speak_in_phrases">שליחת טקסט ארוך משפט אחר משפט</string>
+    <string name="summary_pref_speak_in_phrases">למנועי דיבור שעוצרים לאט, כמו Gryphon, כדי שהחלקה תעצור טקסט ארוך מיד. מנועים רבים משהים זמן רב יותר בין משפטים שנשלחים בנפרד, ולכן כדאי להשאיר את זה כבוי אם המנוע שלך עוצר מהר.</string>
+    <string name="battery_optimization_notification_title">אופטימיזציה של הסוללה עלולה לעצור את SandFly</string>
+    <string name="battery_optimization_notification_text">בטלפון הזה, החיסכון בסוללה עלול לעצור את SandFly אחרי כיבוי המסך, ואז אין דיבור עד שהוא מופעל מחדש. יש להקיש כדי לפתוח את אופטימיזציית הסוללה, לבחור \'כל האפליקציות\', למצוא את SandFly ולבחור \'ללא אופטימיזציה\'.</string>
     <string name="title_pref_mute_speech_while_recording">שקט בזמן ההקלטה</string>
     <string name="summary_pref_mute_speech_while_recording">בעוד אפליקציה מקליטה ללא אוזניות מחוברות, SandFly מדבר רק בתגובה למחוות, למקשים והקלדה שלך, ונשאר שקט לדברים כמו התראות, כך שהם לא מוקלטים.</string>
-    <string name="title_pref_switch_languages">החלף שפה אוטומטית</string>
-    <string name="title_pref_switch_dialects">החלף ניב אוטומטי</string>
+    <string name="title_pref_switch_languages">החלפת שפה אוטומטית</string>
+    <string name="title_pref_switch_dialects">החלפת ניב אוטומטית</string>
     <string name="category_collapsed">קטע מכווץ</string>
     <string name="category_expanded">קטע מורחב</string>
-    <string name="title_pref_speak_nav_bar_buttons">דיבור לחצני סרגל הניווט</string>
-    <string name="summary_pref_speak_nav_bar_buttons">עם הרמה להפעלה בסרגל הניווט, אמור את הלחצן שעליו לוחצת הקשה, כגון חזרה או בית.</string>
+    <string name="title_pref_speak_nav_bar_buttons">הקראת לחצני סרגל הניווט</string>
+    <string name="summary_pref_speak_nav_bar_buttons">כשבסרגל הניווט פועלת הפעלה בהרמת האצבע, מוקרא הלחצן שנלחץ בהקשה, כמו ״הקודם״ או ״דף הבית״.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">סוללה <xliff:g id="battery_level" example="73">%1$s</xliff:g> אחוז</string>
     <string name="template_battery_level_unknown">רמת הסוללה לא ידועה</string>
     <string name="value_charger_connected">מטען מחובר</string>
-    <string name="title_pref_screen_announcements">מסך מופעל וכיבוי</string>
-    <string name="summary_pref_screen_announcements">בחר מה אומר SandFly כאשר המסך נכבה או מופעל, וכאשר הטלפון אינו נעול</string>
+    <string name="title_pref_screen_announcements">הפעלה וכיבוי של המסך</string>
+    <string name="summary_pref_screen_announcements">בחירת מה SandFly אומר כשהמסך נכבה או נדלק, וכשנעילת הטלפון מבוטלת</string>
     <string name="title_screen_announcements_screen_off">כשהמסך נכבה</string>
     <string name="title_screen_announcements_screen_on">כשהמסך נדלק</string>
-    <string name="title_screen_announcements_unlock">כשהטלפון לא נעול</string>
-    <string name="title_pref_say_screen_off">אמור \"מסך כבוי\"</string>
-    <string name="title_pref_say_device_unlocked">אמור \"התקן לא נעול\"</string>
+    <string name="title_screen_announcements_unlock">כשנעילת הטלפון מבוטלת</string>
+    <string name="title_pref_say_screen_off">הקראת \"מסך כבוי\"</string>
+    <string name="title_pref_say_device_unlocked">הקראת \"המכשיר נפתח\"</string>
     <string name="title_pref_announce_time">זמן</string>
     <string name="title_pref_announce_ringer_mode">מצב צלצול</string>
-    <string name="summary_pref_announce_ringer_mode">אמור מתי הצלצול מוגדר לרטוט או שקט</string>
+    <string name="summary_pref_announce_ringer_mode">הקראה כשהצלצול מוגדר לרטט או למצב שקט</string>
     <string name="title_pref_category_feedback">משוב</string>
     <string name="title_pref_category_typing_and_braille">הקלדה וברייל</string>
     <string name="title_pref_category_apps">אפליקציות</string>
     <string name="title_pref_touch_activation">מגע והפעלה</string>
     <string name="title_pref_navigation">ניווט</string>
     <string name="title_pref_category_more">עוד</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">שמור תנועות עבור Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">מפסיק SandFly לטפל בשתי אצבעות בודדות וכפולות כדי שסמסונג Vibration Watch תוכל להשתמש בהן. הפעל את Vibration Watch בהגדרות הנגישות של השעון שלך.</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">שמירת תנועות עבור Vibration Watch</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly מפסיק לטפל בהקשה אחת ובהקשה כפולה עם שתי אצבעות, כדי ש-Samsung Vibration Watch יוכל להשתמש בהן. יש להפעיל את Vibration Watch בהגדרות הנגישות של השעון.</string>
     <string name="shortcut_reserved_for_vibration_watch">שמור עבור Vibration Watch בהגדרות מתקדמות</string>
-    <string name="title_pref_speakerphone_away_from_ear">רמקול כשהוא רחוק מהאוזן</string>
-    <string name="summary_pref_speakerphone_away_from_ear">במהלך שיחה, עובר לרמקול כאשר אתה מרחיק את הטלפון מהאוזן, וחוזר לאפרכסת כאשר אתה מחזיק אותה שוב.</string>
-    <string name="summary_pref_speakerphone_needs_permission">צריך הרשאה ש-Android לא נותנת לקוראי מסך. כדי להעניק זאת, הפעל פקודה זו עם adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="title_pref_speakerphone_away_from_ear">רמקול כשהטלפון רחוק מהאוזן</string>
+    <string name="summary_pref_speakerphone_away_from_ear">במהלך שיחה, עובר לרמקול כשמרחיקים את הטלפון מהאוזן, וחוזר לאפרכסת כשמקרבים אותו שוב לאוזן.</string>
+    <string name="summary_pref_speakerphone_needs_permission">נדרשת הרשאה ש-Android לא מעניק לקוראי מסך. כדי להעניק אותה, יש להריץ את הפקודה הזו באמצעות adb או Shizuku ואז לחזור למסך הזה: %1$s</string>
     <string name="action_copy_command">העתק פקודה</string>
     <string name="command_copied">הפקודה הועתקה</string>
-    <string name="title_pref_speech_control">תן לאפליקציות אחרות לדבר</string>
-    <string name="summary_pref_speech_control">אפליקציות שאתה מתיר יכולות לומר טקסט בקולך SandFly. שום דבר לא נאמר בזמן שהמכשיר נעול.</string>
-    <string name="title_pref_speech_control_sound">השמע צליל לפני שאפליקציות אחרות מדברות</string>
+    <string name="title_pref_speech_control">מתן אפשרות לאפליקציות אחרות לדבר</string>
+    <string name="summary_pref_speech_control">אפליקציות שקיבלו הרשאה יכולות להקריא טקסט בקול של SandFly. כשהמכשיר נעול, שום דבר לא מוקרא.</string>
+    <string name="title_pref_speech_control_sound">השמעת צליל לפני שאפליקציות אחרות מדברות</string>
     <string name="speech_control_apps_category">אפליקציות</string>
     <string name="speech_control_no_apps">אף אפליקציה לא ביקשה לדבר עדיין.</string>
     <string name="speech_control_ask_title">לאפשר ל-<xliff:g id="app" example="Tasker">%1$s</xliff:g> לדבר דרך SandFly?</string>
-    <string name="speech_control_ask_text">זה יכול להגיד טקסט בקולך SandFly. אתה יכול לשנות זאת בהגדרות מתקדמות.</string>
+    <string name="speech_control_ask_text">האפליקציה יכולה להקריא טקסט בקול של SandFly. אפשר לשנות זאת בהגדרות המתקדמות.</string>
     <string name="speech_control_allow">אפשר</string>
     <string name="speech_control_deny">אל תאפשר</string>
-    <string name="permission_speak_label">דבר דרך SandFly</string>
-    <string name="permission_speak_description">מאפשר לאפליקציה לבקש לומר טקסט בקולך SandFly. SandFly שואל אותך לפני שהאפליקציה יכולה לדבר.</string>
-    <string name="permission_braille_display_label">בקש להיות צג ברייל עבור SandFly</string>
-    <string name="permission_braille_display_description">מאפשר לאפליקציה לבקש להיות צג ברייל עבור SandFly. אם תאפשר את זה ב-SandFly, זה יכול לקרוא הכל על המסך ולשלוט במכשיר שלך. SandFly שואל אותך קודם.</string>
-    <string name="title_pref_phonetic_letters_mode">דבר אותיות באופן פונטי</string>
+    <string name="permission_speak_label">דיבור דרך SandFly</string>
+    <string name="permission_speak_description">מאפשרת לאפליקציה לבקש להקריא טקסט בקול של SandFly. SandFly מבקש אישור לפני שהאפליקציה יכולה לדבר.</string>
+    <string name="permission_braille_display_label">בקשה לשמש כצג ברייל עבור SandFly</string>
+    <string name="permission_braille_display_description">מאפשרת לאפליקציה לבקש לשמש כצג ברייל עבור SandFly. אם מאשרים זאת ב-SandFly, היא יכולה לקרוא את כל מה שבמסך ולשלוט במכשיר. SandFly מבקש אישור קודם.</string>
+    <string name="title_pref_phonetic_letters_mode">הקראת אותיות באופן פונטי</string>
     <string name="phonetic_letters_mode_off">מצב מושבת</string>
-    <string name="phonetic_letters_mode_after_letter_delay">אחרי המכתב, מתעכב, כמו \"ח, מלון\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">אחרי המכתב, ללא עיכוב, כמו \"h hotel\"</string>
-    <string name="phonetic_letters_mode_instead_of_letter">במקום האות, כמו \"מלון\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">אחרי האות, בהשהיה, כמו “ה, הדס”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">אחרי האות, בלי השהיה, כמו “ה הדס”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">במקום האות, כמו “הדס”</string>
     <string name="title_pref_emoji_speech">אימוג\'י</string>
-    <string name="emoji_speech_engine">קריאה באמצעות מנוע דיבור</string>
-    <string name="emoji_speech_names">קרא על ידי SandFly</string>
+    <string name="emoji_speech_engine">מנוע הדיבור מקריא</string>
+    <string name="emoji_speech_names">הקראה על ידי SandFly</string>
     <string name="emoji_speech_none">ללא</string>
-    <string name="summary_selector_menu_emoji">שנה את אופן קריאת האמוג\'י</string>
+    <string name="summary_selector_menu_emoji">שינוי אופן הקריאה של אמוג\'י</string>
     <string name="emoji_speech_state">אמוג\'י: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">ספור אמוג\'י חוזר</string>
+    <string name="title_pref_emoji_repeat_count">ספירת אמוג\'י חוזרים</string>
     <string name="emoji_repeat_count_off">מצב מושבת</string>
     <string name="emoji_repeat_count_2">2 או יותר</string>
     <string name="emoji_repeat_count_3">3 או יותר</string>
@@ -1419,39 +1419,39 @@
     <string name="emoji_repeat_count_5">5 או יותר</string>
     <string name="emoji_repeat_count_6">6 או יותר</string>
     <string name="pref_table_headers_category_title">קריאת טבלה</string>
-    <string name="pref_table_column_headers_title">קרא את כותרות העמודות</string>
-    <string name="pref_table_column_headers_entry_after">אחרי נתוני סלולרי</string>
-    <string name="pref_table_column_headers_entry_before">לפני נתוני סלולרי</string>
-    <string name="pref_table_column_headers_entry_off">אל תקראו</string>
-    <string name="pref_table_speak_row_column_numbers_title">אמור מספרי שורות ועמודות</string>
+    <string name="pref_table_column_headers_title">הקראת כותרות עמודות</string>
+    <string name="pref_table_column_headers_entry_after">אחרי נתוני התא</string>
+    <string name="pref_table_column_headers_entry_before">לפני נתוני התא</string>
+    <string name="pref_table_column_headers_entry_off">ללא הקראה</string>
+    <string name="pref_table_speak_row_column_numbers_title">הקראת מספרי שורות ועמודות</string>
     <string name="pref_table_speak_row_column_numbers_summary">הכרזה על מספרי שורות ועמודות עבור תאי טבלה</string>
     <string name="title_pref_speak_volume_changes">אמור שינויים בעוצמת הקול</string>
-    <string name="summary_pref_speak_volume_changes">אמור את עוצמת הקול החדשה לאחר שתלחץ על מקשי עוצמת הקול</string>
-    <string name="title_pref_speak_notifications">אמור התראות</string>
-    <string name="summary_pref_speak_notifications">קרא התראות חדשות בקול כשהן מגיעות. שיחות נכנסות נקראות תמיד.</string>
-    <string name="title_pref_notification_list">השתמש ברשימת ההתראות של SandFly</string>
+    <string name="summary_pref_speak_volume_changes">הקראת עוצמת הקול החדשה אחרי לחיצה על מקשי עוצמת הקול</string>
+    <string name="title_pref_speak_notifications">הקראת התראות</string>
+    <string name="summary_pref_speak_notifications">הקראת התראות חדשות כשהן מגיעות. שיחות נכנסות מוקראות תמיד.</string>
+    <string name="title_pref_notification_list">שימוש ברשימת ההתראות של SandFly</string>
     <string name="title_pref_notification_parts">פרטי הודעה</string>
     <string name="title_pref_play_installer">נראה מותקן מ-Google Play</string>
-    <string name="summary_pref_play_installer">ספר לאפליקציות אחרות ש-Google Play מותקנות SandFly. אפליקציות מסוימות, כמו אפליקציות בנקאיות מסוימות, מכבות את שירותי הנגישות שהותקנו מכל מקום אחר. צריך Shizuku, ומשנה רק אילו יישומים מסופר על מהיכן הגיע SandFly.</string>
-    <string name="summary_pref_play_installer_pending">פועל, אבל Google ההפעלה עדיין לא מתועדת כמתקין. SandFly מגדיר אותו כאשר Shizuku זמין.</string>
+    <string name="summary_pref_play_installer">מודיע לאפליקציות אחרות ש-SandFly הותקן מ-Google Play. אפליקציות מסוימות, כמו חלק מאפליקציות הבנקים, משביתות שירותי נגישות שהותקנו מכל מקור אחר. נדרש Shizuku, והשינוי חל רק על מה שנמסר לאפליקציות לגבי המקור של SandFly.</string>
+    <string name="summary_pref_play_installer_pending">פועל, אבל Google Play עדיין לא רשום כמתקין. SandFly מגדיר זאת כש-Shizuku זמין.</string>
     <string name="notification_part_title">כותרת</string>
     <string name="notification_part_text">טקסט</string>
     <string name="notification_part_app">שם האפליקציה</string>
     <string name="notification_part_time">זמן</string>
-    <string name="notification_part_playback">משחק או מושהה</string>
+    <string name="notification_part_playback">מתנגן או מושהה</string>
     <string name="notification_list_title">התראות</string>
     <string name="notification_list_empty">אין הודעות</string>
     <string name="notification_list_no_access">הגישה להתראות מושבתת</string>
-    <string name="notification_list_grant_access">הפעל את הגישה להתראות</string>
+    <string name="notification_list_grant_access">הפעלת הגישה להתראות</string>
     <string name="notification_list_quick_settings">הגדרות מהירות</string>
     <string name="notification_list_dismiss">ביטול</string>
     <string name="notification_list_show_all">הצג הכל</string>
     <string name="notification_list_show_less">הצג פחות</string>
     <string name="notification_list_clear_all">נקה הכל</string>
     <string name="notification_list_send">שלח</string>
-    <string name="notification_list_playing">משחק</string>
+    <string name="notification_list_playing">מתנגן</string>
     <string name="notification_list_paused">מושהה</string>
-    <string name="notification_list_play">שחק</string>
+    <string name="notification_list_play">הפעלה</string>
     <string name="notification_list_pause">השהיה</string>
     <string name="notification_list_previous">הקודם</string>
     <string name="notification_list_next">הבא</string>
@@ -1460,30 +1460,30 @@
         <item quantity="two">%d התראות</item>
         <item quantity="other">%d התראות</item>
     </plurals>
-    <string name="title_pref_quick_settings">השתמש בהגדרות המהירות של SandFly</string>
+    <string name="title_pref_quick_settings">שימוש בהגדרות המהירות של SandFly</string>
     <string name="title_pref_quick_settings_items">פאנל הגדרות מהירות</string>
     <string name="quick_settings_title">הגדרות מהירות</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">נתונים ניידים</string>
-    <string name="quick_settings_hotspot">נקודה חמה</string>
+    <string name="quick_settings_hotspot">נקודה לשיתוף אינטרנט</string>
     <string name="quick_settings_airplane_mode">מצב מטוס</string>
     <string name="quick_settings_do_not_disturb">אל תפריע</string>
-    <string name="quick_settings_sound_mode">מצב סאונד</string>
+    <string name="quick_settings_sound_mode">מצב צליל</string>
     <string name="quick_settings_flashlight">פנס</string>
     <string name="quick_settings_flashlight_brightness">בהירות פנס</string>
     <string name="quick_settings_location">מיקום</string>
     <string name="quick_settings_auto_rotate">סיבוב אוטומטי</string>
     <string name="quick_settings_battery_saver">חיסכון בסוללה</string>
-    <string name="quick_settings_dark_theme">נושא אפל</string>
+    <string name="quick_settings_dark_theme">עיצוב כהה</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">בהירות</string>
     <string name="quick_settings_adaptive_brightness">בהירות מסתגלת</string>
-    <string name="quick_settings_media_volume">נפח מדיה</string>
+    <string name="quick_settings_media_volume">עוצמת הקול של המדיה</string>
     <string name="quick_settings_call_volume">עוצמת הקול של השיחה</string>
     <string name="quick_settings_ring_volume">עוצמת הצלצול</string>
-    <string name="quick_settings_notification_volume">נפח הודעות</string>
-    <string name="quick_settings_alarm_volume">עוצמת הקול של אזעקה</string>
+    <string name="quick_settings_notification_volume">עוצמת הקול של ההתראות</string>
+    <string name="quick_settings_alarm_volume">עוצמת השעון המעורר</string>
     <string name="quick_settings_accessibility_volume">עוצמת הקול לנגישות</string>
     <string name="quick_settings_system_volume">עוצמת השמע של המערכת</string>
     <string name="quick_settings_data_saver">חוסך נתונים</string>
@@ -1496,13 +1496,13 @@
     <string name="quick_settings_screen_timeout">פסק זמן מסך</string>
     <string name="quick_settings_font_size">גודל גופן</string>
     <string name="quick_settings_media">מדיה</string>
-    <string name="quick_settings_no_media">אין תקשורת</string>
+    <string name="quick_settings_no_media">אין מדיה</string>
     <string name="quick_settings_media_output">פלט מדיה</string>
-    <string name="quick_settings_next_alarm">האזעקה הבאה</string>
-    <string name="quick_settings_no_alarm">אין אזעקה</string>
+    <string name="quick_settings_next_alarm">השעון המעורר הבא</string>
+    <string name="quick_settings_no_alarm">אין שעון מעורר</string>
     <string name="quick_settings_settings">הגדרות</string>
     <string name="quick_settings_power_menu">תפריט הפעלה</string>
-    <string name="quick_settings_add_system_tile">הוסף אריח מערכת</string>
+    <string name="quick_settings_add_system_tile">הוספת משבצת מערכת</string>
     <string name="quick_settings_no_system_tiles">אין אריחי מערכת להוסיף</string>
     <string name="quick_settings_tile_not_found">%1$s אינו נמצא בהגדרות המהירות של המערכת</string>
     <string name="quick_settings_never">לעולם לא</string>
@@ -1526,14 +1526,14 @@
     <string name="quick_settings_on">מצב פעיל</string>
     <string name="quick_settings_off">מצב מושבת</string>
     <string name="quick_settings_unavailable">לא זמין</string>
-    <string name="quick_settings_edit">ערוך</string>
+    <string name="quick_settings_edit">עריכה</string>
     <string name="quick_settings_system">הגדרות מהירות של המערכת</string>
-    <string name="quick_settings_open_settings">פתח את ההגדרות</string>
-    <string name="quick_settings_add_control">הוסף שליטה</string>
-    <string name="quick_settings_add_tile">הוסף אריח אפליקציה</string>
+    <string name="quick_settings_open_settings">פתיחת ההגדרות</string>
+    <string name="quick_settings_add_control">הוספת פקד</string>
+    <string name="quick_settings_add_tile">הוספת משבצת אפליקציה</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">מספר עמודות</string>
-    <string name="quick_settings_move">זז</string>
+    <string name="quick_settings_move">העברה</string>
     <string name="quick_settings_move_title">הזז %1$s</string>
     <string name="quick_settings_cell">שורה %1$d, עמודה %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1543,7 +1543,7 @@
         <item quantity="two">%d פריטים נוספים הועברו</item>
         <item quantity="other">%d פריטים נוספים הועברו</item>
     </plurals>
-    <string name="quick_settings_remove">הסר</string>
+    <string name="quick_settings_remove">הסרה</string>
     <string name="quick_settings_added">%1$s נוסף</string>
     <string name="quick_settings_removed">%1$s הוסר</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly פועל. החזק 2 אצבעות על המסך למשך 5 שניות כדי לכבות. כדי להפסיק את הצגת ההודעה הזו, כבה את הגדרות SandFly &gt; הגדרות מתקדמות &gt; הצג הוראות לכיבוי SandFly.</string>
@@ -1551,47 +1551,47 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">קיצור דרך נוסף להפעלה או כיבוי של מצב עיון</string>
     <string name="title_pref_vibration_strength">חוזק רטט</string>
     <string name="title_pref_audio_output_device">התקן פלט אודיו</string>
-    <string name="dialog_title_audio_output_device">בחר היכן להשמיע צליל SandFly</string>
+    <string name="dialog_title_audio_output_device">בחירת מיקום השמעת הצלילים של SandFly</string>
     <string name="value_audio_output_device_default">ברירת המחדל של המערכת</string>
     <string name="value_audio_output_device_speaker">רמקול טלפון</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">מכשיר Bluetooth מחובר או חוטי</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">מכשיר Bluetooth או חוטי מחובר</string>
     <string name="value_audio_output_device_disconnected">מנותק</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth מכשיר שמע</string>
+    <string name="value_audio_output_device_bluetooth_default">מכשיר שמע Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">אוזניות קוויות</string>
     <string name="value_audio_output_device_wired_headphones">אוזניות חוטיות</string>
     <string name="value_audio_output_device_usb_headset">אוזניות USB</string>
-    <string name="value_audio_output_device_usb_device">USB מכשיר שמע</string>
+    <string name="value_audio_output_device_usb_device">מכשיר שמע USB</string>
     <string name="title_pref_speaker_devices">רמקול טלפון עם מכשירים אלה</string>
     <string name="summary_pref_speaker_devices_none">ללא</string>
     <string name="summary_pref_speaker_devices_no_devices">לא מחוברים עדיין מכשירים Bluetooth או קוויים</string>
     <string name="pref_reduce_window_delay_summary">SandFly קורא מסכים חדשים מהר יותר כאשר אנימציות כבויות. זה מכבה אנימציות עבור כל הטלפון.</string>
-    <string name="dialog_message_detailed_ai_description">תמונות נבחרות נשלחות אל ה-API של Gemini של Google לתיאור. כאשר AI במכשיר מופעל, הם מתוארים בטלפון זה במקום זאת ואינם נשלחים.\n\nעם מפתח API בחינם, Google עשוי לשמור את מה שהוא מקבל, להשתמש בו כדי לשפר את המוצרים שלו ולבקש מאנשים לבדוק אותו. AI גנרטיבי הוא ניסיוני, אז הוא יעשה טעויות. ה-<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> חלים.</string>
-    <string name="dialog_message_detailed_ai_promotion">תיאורי תמונה מפורטים מופעלים על ידי AI גנרטיבי. תמונות נבחרות נשלחות אל ה-API של Gemini של Google לתיאור. כאשר AI במכשיר מופעל, הם מתוארים בטלפון זה במקום זאת ואינם נשלחים.\n\nעם מפתח API בחינם, Google עשוי לשמור את מה שהוא מקבל, להשתמש בו כדי לשפר את המוצרים שלו ולבקש מאנשים לבדוק אותו. AI גנרטיבי הוא ניסיוני, אז הוא יעשה טעויות. אתה יכול לכבות תיאורי תמונה מפורטים בכל עת בהגדרות SandFly.\n\nה- <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> חלים.</string>
-    <string name="dialog_message_screen_overview_promotion">צילום מסך נשלח אל ה-API של Gemini מבית Google לצורך תיאור, שנמשך כמה שניות. כאשר AI במכשיר מופעל, התיאור מתבצע בטלפון הזה והתמונה אינה נשלחת.\n\nעם מפתח API בחינם, Google עשוי לשמור את מה שהוא מקבל, להשתמש בו כדי לשפר את המוצרים שלו ולבקש מאנשים לבדוק אותו. AI גנרטיבי הוא ניסיוני, אז הוא יעשה טעויות. ה-<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> חלים.</string>
-    <string name="shortcut_title_open_app">פתח את האפליקציה</string>
-    <string name="shortcut_open_app">פתוח <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">גלול למעלה</string>
-    <string name="shortcut_write_reading_control">כתוב את האות של בקרת קריאה</string>
+    <string name="dialog_message_detailed_ai_description">התמונות שנבחרו נשלחות ל-Gemini API של Google לקבלת תיאור. כשהאפשרות “AI במכשיר” מופעלת, הן מתוארות בטלפון הזה במקום זאת ולא נשלחות.\n\nעם מפתח API בחינם, Google רשאית לשמור את מה שהיא מקבלת, להשתמש בו לשיפור המוצרים שלה ולהעביר אותו לבדיקה של בני אדם. AI גנרטיבי הוא ניסיוני, ולכן הוא יטעה. חלים <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_detailed_ai_promotion">תיאורי תמונה מפורטים נוצרים באמצעות AI גנרטיבי. התמונות שנבחרו נשלחות ל-Gemini API של Google לקבלת תיאור. כשהאפשרות “AI במכשיר” מופעלת, הן מתוארות בטלפון הזה במקום זאת ולא נשלחות.\n\nעם מפתח API בחינם, Google רשאית לשמור את מה שהיא מקבלת, להשתמש בו לשיפור המוצרים שלה ולהעביר אותו לבדיקה של בני אדם. AI גנרטיבי הוא ניסיוני, ולכן הוא יטעה. אפשר להשבית תיאורי תמונה מפורטים בכל שלב בהגדרות של SandFly.\n\nחלים <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_screen_overview_promotion">צילום מסך נשלח ל-Gemini API של Google לקבלת תיאור, והפעולה נמשכת כמה שניות. כשהאפשרות “AI במכשיר” מופעלת, הוא מתואר בטלפון הזה במקום זאת ולא נשלח.\n\nעם מפתח API בחינם, Google רשאית לשמור את מה שהיא מקבלת, להשתמש בו לשיפור המוצרים שלה ולהעביר אותו לבדיקה של בני אדם. AI גנרטיבי הוא ניסיוני, ולכן הוא יטעה. חלים <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="shortcut_title_open_app">פתיחת אפליקציה</string>
+    <string name="shortcut_open_app">פתיחת <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_scroll_to_top">גלילה להתחלה</string>
+    <string name="shortcut_write_reading_control">כתיבת האות של כפתור הקראה</string>
     <string name="title_pref_reading_control_letters">אותיות אלפבית בכתב יד</string>
     <string name="reading_control_letter_none">ללא</string>
     <string name="handwriting_prompt">כתוב אות אלפבית</string>
     <string name="handwriting_closed">כתב יד סגור</string>
-    <string name="handwriting_no_match">אין בקרת קריאה מתחילה ב-<xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">אין כפתור הקראה שמתחיל ב-<xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">כתיבת שם של אפליקציה כדי לפתוח אותה</string>
     <string name="handwriting_app_prompt">כתוב שם של אפליקציה</string>
     <string name="handwriting_no_app">אין אפליקציה שמתחילה ב-<xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
     <string name="handwriting_app_not_opened">לא ניתן לפתוח את <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">כתב היד לא מזוהה</string>
-    <string name="handwriting_downloading">זיהוי כתב יד מוריד</string>
+    <string name="handwriting_not_recognized">כתב היד לא זוהה</string>
+    <string name="handwriting_downloading">זיהוי כתב היד בהורדה</string>
     <string name="handwriting_download_title">להוריד זיהוי כתב יד?</string>
-    <string name="handwriting_download_message">כתב היד מזוהה בטלפון זה. המודל שלו לשפה זו, כ-20 מגה-בייט, מורידים מ-Google פעם אחת. הודעה מופיעה כאשר הוא הורד.</string>
+    <string name="handwriting_download_message">כתב היד מזוהה בטלפון הזה. המודל שלו לשפה הזו, כ-20 MB, מורד מ-Google פעם אחת. בסיום ההורדה מוצגת הודעה.</string>
     <string name="handwriting_download_button">הורדה</string>
     <string name="handwriting_downloaded">זיהוי כתב יד הורד</string>
     <string name="handwriting_download_failed">לא ניתן היה להוריד את זיהוי כתב היד. בדוק את החיבור לאינטרנט.</string>
     <string name="handwriting_unsupported_language">זיהוי כתב יד אינו זמין בשפה זו</string>
-    <string name="title_pref_handwriting_keyboard">מקלדת בכתב יד</string>
-    <string name="summary_pref_handwriting_keyboard">הפעל את כתב יד SandFly בהגדרות המקלדת של Android</string>
-    <string name="title_pref_handwriting_wait">חכה אחרי הכתיבה</string>
+    <string name="title_pref_handwriting_keyboard">מקלדת כתב יד</string>
+    <string name="summary_pref_handwriting_keyboard">יש להפעיל את כתב היד של SandFly בהגדרות המקלדת של Android</string>
+    <string name="title_pref_handwriting_wait">המתנה אחרי כתיבה</string>
     <string name="value_handwriting_wait_200">‫0.2 שניות</string>
     <string name="value_handwriting_wait_300">0.3 שניות</string>
     <string name="value_handwriting_wait_400">0.4 שניות</string>
@@ -1602,50 +1602,50 @@
     <string name="handwriting_keyboard_name">SandFly כתב יד</string>
     <string name="handwriting_space">רווח</string>
     <string name="handwriting_new_line">שורה חדשה</string>
-    <string name="handwriting_tutorial_intro">הדרכה למקלדת כתב יד. כתוב באצבע אחת בכל מקום על המסך. מה שאתה כותב מוקלד כשאתה עוצר לרגע. כדי לסיים את המדריך, החלק מטה בשלוש אצבעות.</string>
-    <string name="handwriting_tutorial_write_letter">כתוב את אות האלפבית א.</string>
-    <string name="handwriting_tutorial_write_word">כעת כתוב את המילה hi (h ואחריו i).</string>
-    <string name="handwriting_tutorial_typed">הקלד <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_intro">מדריך למקלדת כתב יד. כותבים באצבע אחת בכל מקום במסך. מה שכותבים מוקלד כשעוצרים לרגע. כדי לסיים את המדריך, מחליקים למטה בשלוש אצבעות.</string>
+    <string name="handwriting_tutorial_write_letter">יש לכתוב את האות a.</string>
+    <string name="handwriting_tutorial_write_word">עכשיו יש לכתוב את המילה hi (h ואחריה i).</string>
+    <string name="handwriting_tutorial_typed">הוקלד <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">החלק ימינה בשתי אצבעות כדי להקליד רווח.</string>
     <string name="handwriting_tutorial_delete">החלק שמאלה בשתי אצבעות כדי למחוק את התו לפני הסמן.</string>
     <string name="handwriting_tutorial_deleted">נמחק.</string>
     <string name="handwriting_tutorial_next_reading">אם כתב יד מזוהה כתו אחר, כגון אות גדולה, החלק למעלה בשתי אצבעות כדי לבחור את הצעת הזיהוי הבאה. נסה את זה עכשיו.</string>
     <string name="handwriting_tutorial_read_back">הקש בשתי אצבעות כדי לקרוא את הטקסט לפני הסמן.</string>
     <string name="handwriting_tutorial_new_line">החלק מטה בשתי אצבעות כדי להוסיף שורה חדשה או לבצע את פעולת שדה הטקסט, כגון שלח.</string>
-    <string name="handwriting_tutorial_not_that">זו הייתה מחווה אחרת.</string>
-    <string name="handwriting_tutorial_done">קו חדש. ההדרכה הסתיימה. החלק מטה בשלוש אצבעות כדי להסתיר את המקלדת, וימינה או שמאלה בשלוש אצבעות כדי להחליף מקלדת. כדי לפתוח שוב את המדריך, הקש בשלוש אצבעות.</string>
-    <string name="handwriting_tutorial_finished">ההדרכה הסתיימה. כדי לפתוח אותו שוב, הקש בשלוש אצבעות.</string>
+    <string name="handwriting_tutorial_not_that">זו הייתה תנועה אחרת.</string>
+    <string name="handwriting_tutorial_done">שורה חדשה. המדריך הסתיים. כדי להסתיר את המקלדת, מחליקים למטה בשלוש אצבעות, וכדי להחליף מקלדת, מחליקים ימינה או שמאלה בשלוש אצבעות. כדי לפתוח שוב את המדריך, מקישים בשלוש אצבעות.</string>
+    <string name="handwriting_tutorial_finished">המדריך הסתיים. כדי לפתוח אותו שוב, מקישים בשלוש אצבעות.</string>
     <string name="handwriting_no_alternatives">אין הצעות אחרות</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> מתוך <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">טקסט ריק</string>
     <string name="handwriting_not_available">זיהוי כתב יד אינו זמין במכשיר זה</string>
-    <string name="shortcut_scroll_to_bottom">גלול למטה</string>
-    <string name="shortcut_refresh">רענן</string>
-    <string name="shortcut_system_notifications">גוון התראות מערכת</string>
+    <string name="shortcut_scroll_to_bottom">גלילה לסוף</string>
+    <string name="shortcut_refresh">רענון</string>
+    <string name="shortcut_system_notifications">לוח ההתראות של המערכת</string>
     <string name="shortcut_system_quick_settings">הגדרות מהירות של המערכת</string>
     <string name="shortcut_lock_screen">נעל את מסך המכשיר</string>
     <string name="shortcut_power_menu">תפריט הפעלה</string>
-    <string name="shortcut_increase_media_volume">הגבר את עוצמת הקול של המדיה</string>
-    <string name="shortcut_decrease_media_volume">הורד את עוצמת הקול של המדיה</string>
+    <string name="shortcut_increase_media_volume">הגברת עוצמת הקול של המדיה</string>
+    <string name="shortcut_decrease_media_volume">הנמכת עוצמת הקול של המדיה</string>
     <string name="title_clear_selection">נקה בחירה</string>
     <string name="title_pref_brightness">בהירות</string>
-    <string name="summary_support_change_brightness">הגדל או הקטנת בהירות המסך, גם כשהמסך מוסתר</string>
+    <string name="summary_support_change_brightness">הגברה או הנמכה של בהירות המסך, גם כשהמסך מוסתר</string>
     <string name="title_pref_shortcut_3finger_4tap">הקשה מרובעת עם 3 אצבעות</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">סובב בכיוון השעון עם 2 אצבעות</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">סובב נגד כיוון השעון עם 2 אצבעות</string>
     <string name="title_pref_shortcut_2finger_scrub">לשפשף עם 2 אצבעות</string>
-    <string name="title_pref_shortcut_2finger_pinch">צובטים ב-2 אצבעות</string>
-    <string name="title_pref_shortcut_2finger_spread">מורחים ב-2 אצבעות</string>
-    <string name="title_pref_shortcut_3finger_pinch">צובטים ב-3 אצבעות</string>
-    <string name="title_pref_shortcut_3finger_spread">מורחים ב-3 אצבעות</string>
-    <string name="title_pref_shortcut_4finger_pinch">צובטים ב-4 אצבעות</string>
-    <string name="title_pref_shortcut_4finger_spread">מורחים ב-4 אצבעות</string>
+    <string name="title_pref_shortcut_2finger_pinch">צביטה ב-2 אצבעות</string>
+    <string name="title_pref_shortcut_2finger_spread">הרחקת 2 אצבעות</string>
+    <string name="title_pref_shortcut_3finger_pinch">צביטה ב-3 אצבעות</string>
+    <string name="title_pref_shortcut_3finger_spread">הרחקת 3 אצבעות</string>
+    <string name="title_pref_shortcut_4finger_pinch">צביטה ב-4 אצבעות</string>
+    <string name="title_pref_shortcut_4finger_spread">הרחקת 4 אצבעות</string>
     <string name="title_pref_shortcut_edge_bottom_up">החלק למעלה מהקצה התחתון</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">החלקה ארוכה למעלה מהקצה התחתון</string>
     <string name="title_pref_shortcut_edge_top_left_down">החלק למטה משמאל למעלה</string>
-    <string name="title_pref_shortcut_edge_top_right_down">החלק למטה מהפינה השמאלית העליונה</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">החלק מטה משמאל למעלה</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">החלק ארוכות למטה מהפינה השמאלית העליונה</string>
+    <string name="title_pref_shortcut_edge_top_right_down">החלקה למטה מהפינה הימנית העליונה</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">החלקה ארוכה למטה משמאל למעלה</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">החלקה ארוכה למטה מהפינה הימנית העליונה</string>
     <string name="title_pref_shortcut_edge_left_top_right">החלק ימינה מהקצה השמאלי, החצי העליון</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">החלקה ארוכה ימינה מהקצה השמאלי, החצי העליון</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">החלק ימינה מהקצה השמאלי, החצי התחתון</string>
@@ -1656,7 +1656,7 @@
     <string name="title_pref_shortcut_edge_right_bottom_long_left">החלקה ארוכה שמאלה מהקצה הימני, החצי התחתון</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">החזק את האצבע כדי לבחור מקש כלשהו, ולאחר מכן הרם. הקש פעמיים עבור Enter, Done או Send.</string>
     <string name="value_type_confirmation_tap_to_type">הקש על מקש כלשהו כדי להקליד אותו, או החזק את האצבע כדי לבחור מקש כלשהו, ולאחר מכן הרם</string>
-    <string name="title_pref_multi_tap_timeout">זמן בין הקשה באצבע אחת</string>
+    <string name="title_pref_multi_tap_timeout">זמן בין הקשות באצבע אחת</string>
     <string name="value_multi_tap_timeout_100ms">0.1 שניות</string>
     <string name="value_multi_tap_timeout_150ms">‫0.15 שניות</string>
     <string name="value_multi_tap_timeout_200ms">‫0.2 שניות</string>
@@ -1677,84 +1677,84 @@
     <string name="value_rotor_step_45">45 מעלות</string>
     <string name="value_rotor_step_60">60 מעלות</string>
     <string name="title_pref_low_latency_audio">אודיו עם אחזור נמוך</string>
-    <string name="summary_pref_low_latency_audio">הפעל את הצלילים והדיבור של SandFly דרך נתיב האודיו המהיר ביותר של הטלפון, כך שתשמע אותם מוקדם יותר. כבה אותו אם דיבור או צלילים מתפרקים או נשמעים שגויים.</string>
+    <string name="summary_pref_low_latency_audio">מפעיל את הצלילים והדיבור של SandFly דרך נתיב האודיו המהיר ביותר בטלפון, כך שהם נשמעים מוקדם יותר. כדאי לכבות את האפשרות אם הדיבור או הצלילים נקטעים או נשמעים לא תקין.</string>
     <string name="value_focus_delay_200ms_default">0.2 שניות (ברירת מחדל)</string>
     <string name="value_focus_delay_300ms">0.3 שניות</string>
-    <string name="title_pref_lift_to_activate">הרם להפעלה</string>
-    <string name="summary_support_change_lift_to_activate">שנה את המקום שבו הרמת האצבע מפעילה פריט</string>
+    <string name="title_pref_lift_to_activate">הפעלה בהרמת האצבע</string>
+    <string name="summary_support_change_lift_to_activate">שינוי המקום שבו הרמת האצבע מפעילה פריט</string>
     <string name="value_lift_to_activate_disabled">מושבת</string>
     <string name="value_lift_to_activate_navigation_bar">רק בסרגל הניווט</string>
     <string name="value_lift_to_activate_entire_screen">מסך שלם</string>
     <string name="template_lift_to_activate_changed">הרם להפעלה: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">לעטוף מסביב</string>
-    <string name="summary_pref_wrap_around">החלקה על פני הפריט האחרון עוברת אל הראשון, ומעבר הראשון עובר אל האחרון. במצב כבוי, במקום מתנגן צליל בסוף.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">תקן חקר מגע תקוע</string>
+    <string name="title_pref_wrap_around">ניווט מעגלי</string>
+    <string name="summary_pref_wrap_around">החלקה מעבר לפריט האחרון עוברת לראשון, ומעבר לראשון עוברת לאחרון. כשהאפשרות כבויה, מושמע צליל בסוף במקום זאת.</string>
+    <string name="title_pref_fix_stuck_touch_exploration">תיקון גילוי באמצעות מגע שנתקע</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">ללא הרשאת DUMP, SandFly יכול רק לומר שחקר המגע עשוי להיות תקוע. כדי לתקן את זה, הפעל: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">תיקון מגע חקר</string>
+    <string name="stuck_touch_exploration_fixing">מתקן את גילוי באמצעות מגע</string>
     <string name="stuck_touch_exploration_fixed">חקירת המגע תוקנה</string>
     <string name="stuck_touch_exploration_not_fixed">חקר המגע עדיין תקוע. הפעל מחדש את הטלפון כדי לתקן את זה.</string>
     <string name="stuck_touch_exploration_restart">חקר המגע עשוי להיות תקוע. הפעל מחדש את הטלפון כדי לתקן את זה.</string>
     <string name="stuck_touch_exploration_grant_dump">חקר המגע עשוי להיות תקוע. הפעל מחדש את הטלפון כדי לתקן את זה, או הענק ל-SandFly את הרשאת DUMP עם ADB כדי שהוא יוכל לתקן את זה.</string>
     <string name="title_pref_window_names">שמות חלונות</string>
     <string name="window_names_always">תמיד</string>
-    <string name="window_names_until_first_item">תמיד, מנותק מהפריט הראשון</string>
+    <string name="window_names_until_first_item">תמיד, נקטע על ידי הפריט הראשון</string>
     <string name="window_names_window_opens">רק כשנפתח חלון</string>
     <string name="window_names_never">לעולם לא</string>
     <string name="title_pref_selector_links_controls_web_only">קישורים ופקדים רק בתוכן אינטרנט</string>
-    <string name="title_pref_selector_auto_switch">שנה את בקרת הקריאה באופן אוטומטי</string>
-    <string name="title_pref_touch_stops_speech">הפסק את הדיבור בעת נגיעה במסך</string>
-    <string name="title_pref_focus_new_windows">העבר את המיקוד לחלונות חדשים</string>
+    <string name="title_pref_selector_auto_switch">החלפה אוטומטית של כפתור ההקראה</string>
+    <string name="title_pref_touch_stops_speech">הפסקת הדיבור בעת נגיעה במסך</string>
+    <string name="title_pref_focus_new_windows">העברת המיקוד לחלונות חדשים</string>
     <string name="title_pref_volume_keys_adjust_sliders">מקשי עוצמת הקול מכוונים את המחוונים</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">כאשר למחוון יש מיקוד, עוצמת הקול משנים את הערך שלו במקום את עוצמת הקול</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">כשמחוון נמצא במיקוד, מקשי הגברת והחלשת עוצמת הקול משנים את הערך שלו במקום את עוצמת הקול</string>
     <string name="title_pref_volume_keys_move_cursor">מקשי עוצמת הקול מזיזים את הסמן</string>
     <string name="summary_pref_volume_keys_move_cursor">כאשר בשדה טקסט יש מיקוד, הגברת עוצמת הקול מזיזה את הסמן אחורה תו והורדת עוצמת הקול מזיזה אותו הלאה</string>
-    <string name="summary_support_wrap_around">הפעל או כבה את העטיפה מהפריט האחרון לפריט הראשון</string>
-    <string name="wrap_around_on">לעטוף על</string>
-    <string name="wrap_around_off">לעטוף מסביב</string>
-    <string name="title_selector_tablet_held_up_faces_away">הטאבלט הרים את פניו</string>
+    <string name="summary_support_wrap_around">הפעלה או השבתה של מעבר מהפריט האחרון לפריט הראשון</string>
+    <string name="wrap_around_on">ניווט מעגלי: מצב פעיל</string>
+    <string name="wrap_around_off">ניווט מעגלי: מצב מושבת</string>
+    <string name="title_selector_tablet_held_up_faces_away">טאבלט מורם מופנה החוצה</string>
     <string name="summary_support_tablet_held_up_faces_away">למקלדת ברייל בטאבלט או בטלפון פתוח</string>
-    <string name="tablet_held_up_faces_away_on">הטאבלט הרים את פניו</string>
-    <string name="tablet_held_up_faces_away_off">הטאבלט הרים את פניו</string>
+    <string name="tablet_held_up_faces_away_on">טאבלט מורם מופנה החוצה: מופעל</string>
+    <string name="tablet_held_up_faces_away_off">טאבלט מורם מופנה החוצה: כבוי</string>
     <string name="title_keyboard_echo_on_screen">הד מקלדת על המסך</string>
     <string name="title_keyboard_echo_physical">הד מקלדת פיזית</string>
     <string name="title_keyboard_echo_braille_keyboard">הד מקלדת ברייל</string>
     <string name="title_keyboard_echo_handwriting_keyboard">הד מקלדת כתב יד</string>
     <string name="title_keyboard_echo_braille_display">הד של תצוגת ברייל</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">להפריע לדיבור בעת הקלדה</string>
+    <string name="title_pref_interrupt_typing">הפסקת דיבור בעת הקלדה</string>
     <string name="pref_interrupt_typing_entry_always">תמיד</string>
     <string name="pref_interrupt_typing_entry_edit_fields">בשדות עריכה</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">על הד מקלדת</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">בהד מקלדת</string>
     <string name="title_pref_interrupt_enter">הפסקת דיבור ב-Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">שם, מדינה, סוג</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">סוג, מדינה, שם</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">מדינה, סוג, שם</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">שם, מצב, סוג</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">סוג, מצב, שם</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">מצב, סוג, שם</string>
     <string name="item_detail_name">שם</string>
-    <string name="item_detail_type">הקלדה</string>
-    <string name="item_detail_state">מדינה</string>
-    <string name="action_move_up">לזוז למעלה</string>
-    <string name="action_move_down">לזוז למטה</string>
+    <string name="item_detail_type">סוג</string>
+    <string name="item_detail_state">מצב</string>
+    <string name="action_move_up">העברה למעלה</string>
+    <string name="action_move_down">העברה למטה</string>
     <string name="template_list_position">מיקום <xliff:g id="position" example="2">%1$d</xliff:g> מתוך <xliff:g id="count" example="3">%2$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up">נאסף <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">ירד <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly אומר פרטי פריט בהזמנה זו. כדי לשנות אותו, גע והחזק בפרט ולאחר מכן גרור אותו למעלה או למטה. עם SandFly מופעל, הקש פעמיים והחזק ואז גרור. אתה יכול גם להשתמש בפעולות העבר למעלה והזז למטה.</string>
-    <string name="title_pref_speak_items_before_scroll">אמור פריטים לפני שהם גוללים לתצוגה</string>
-    <string name="gemini_error_api_key">Gemini לא קיבל את מפתח ה-API. סמן את המפתח בהגדרות תיאורים אוטומטיים.</string>
-    <string name="gemini_error_quota">הגעת למגבלת השימוש עבור מפתח ה-API שלך Gemini. נסה שוב מאוחר יותר.</string>
+    <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> הורם. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">שוחרר: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">SandFly אומר את פרטי הפריט בסדר הזה. כדי לשנות את הסדר, לוחצים לחיצה ארוכה על פרט וגוררים אותו למעלה או למטה. כש-SandFly מופעל, מקישים הקשה כפולה ומחזיקים, ואז גוררים. אפשר גם להשתמש בפעולות \"העברה למעלה\" ו\"העברה למטה\".</string>
+    <string name="title_pref_speak_items_before_scroll">הקראת פריטים לפני שהם נגללים לתצוגה</string>
+    <string name="gemini_error_api_key">Gemini לא קיבל את מפתח ה-API. יש לבדוק את המפתח בהגדרות של תיאורים אוטומטיים.</string>
+    <string name="gemini_error_quota">הגעת למגבלת השימוש של מפתח Gemini API שלך. אפשר לנסות שוב מאוחר יותר.</string>
     <string name="gemini_error_busy">Gemini עסוק כרגע. נסה שוב בעוד רגע.</string>
-    <string name="gemini_error_timeout">Gemini לקח יותר מדי זמן לענות. נסה שוב.</string>
+    <string name="gemini_error_timeout">Gemini לא ענה בזמן. יש לנסות שוב.</string>
     <string name="gemini_error_with_code">Gemini לא הצליח לענות, שגיאה <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini לא הצליח לענות, שגיאה <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. לא ניתן לקבל תיאור תמונה מפורט יותר: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">שאל בקול</string>
-    <string name="image_qna_stop_listening">תפסיק להקשיב</string>
+    <string name="image_qna_stop_listening">הפסקת האזנה</string>
     <string name="image_qna_type_question">הקלד שאלה</string>
     <string name="shortcut_dictate">הכתבה</string>
-    <string name="title_pref_ai_dictation">הכתבה נכונה עם AI</string>
-    <string name="dictation_not_corrected">לא תוקן. הוקלדו כמוהו.</string>
-    <string name="dictation_nothing_recognized">שום דבר לא מזוהה</string>
+    <string name="title_pref_ai_dictation">תיקון הכתבה באמצעות AI</string>
+    <string name="dictation_not_corrected">לא תוקן. הוקלד כפי שזוהה.</string>
+    <string name="dictation_nothing_recognized">לא זוהה דבר</string>
     <string name="dictation_unavailable">זיהוי דיבור אינו זמין</string>
-    <string name="dictation_field_gone">שדה הטקסט נסגר. שום דבר לא מודפס.</string>
+    <string name="dictation_field_gone">שדה הטקסט נסגר. לא הוקלד דבר.</string>
     <string name="dictation_transcription_failed">הדיבור לא תומלל. שום דבר לא הוקלד.</string>
     <string name="title_pref_dictation">הכתבה</string>
     <string name="title_pref_dictation_rambler_live">תמלול חי של Rambler</string>
@@ -1771,9 +1771,9 @@
     <string name="dictation_whisper_use">שימוש</string>
     <string name="title_pref_dictation_ai_service">שירות AI להכתבה</string>
     <string name="dictation_ai_same">זהה לתיאורים האוטומטיים</string>
-    <string name="title_pref_browse_mode_per_app">זכור את מצב הגלישה בכל אפליקציה</string>
+    <string name="title_pref_browse_mode_per_app">שמירת מצב הגלישה בכל אפליקציה</string>
     <string name="title_pref_export_settings">ייצוא הגדרות</string>
-    <string name="title_pref_import_settings">הגדרות ייבוא</string>
+    <string name="title_pref_import_settings">ייבוא הגדרות</string>
     <string name="settings_export_done">הגדרות יוצאו. מפתחות API אינם כלולים</string>
     <string name="settings_export_failed">לא ניתן לייצא את ההגדרות</string>
     <string name="settings_import_done">הגדרות יובאו</string>

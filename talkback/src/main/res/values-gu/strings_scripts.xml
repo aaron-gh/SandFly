@@ -9,7 +9,7 @@
     <string name="script_import_repository">આ લિંક આખી રિપોઝિટરીની છે. તમને જોઈતી સ્ક્રિપ્ટ ખોલો, પછી તેની લિંક શેર કરો.</string>
     <string name="script_import_summary">.lua ફાઇલ અથવા main.lua ધરાવતી .zip</string>
     <string name="scripts_category_app">ઍપ સ્ક્રિપ્ટ</string>
-    <string name="scripts_category_global">વૈશ્વિક પ્લગઇન</string>
+    <string name="scripts_category_global">સામાન્ય પ્લગઇન</string>
     <string name="scripts_none">કોઈ સ્ક્રિપ્ટ ઇન્સ્ટૉલ કરેલી નથી</string>
     <string name="scripts_all_off">બધી સ્ક્રિપ્ટ બંધ કરો</string>
     <string name="scripts_all_off_summary">સ્ક્રિપ્ટ ઇન્સ્ટૉલ રહે છે અને પોતાની સ્વિચ જાળવી રાખે છે. \'બધી સ્ક્રિપ્ટ ચાલુ અથવા બંધ કરો\' સંકેત પણ આ જ કામ કરે છે.</string>
@@ -18,7 +18,7 @@
     <string name="scripts_now_on">સ્ક્રિપ્ટ ચાલુ</string>
     <string name="scripts_unavailable">આ ડિવાઇસ પર સ્ક્રિપ્ટ ઉપલબ્ધ નથી</string>
     <string name="script_add_example">ઉદાહરણ સ્ક્રિપ્ટ ઉમેરો</string>
-    <string name="script_add_example_summary">તમે જે ઍપ પર સ્વિચ કરો છો તેનું નામ બોલે છે. શરૂઆત કરવા માટેની સ્ક્રિપ્ટ.</string>
+    <string name="script_add_example_summary">તમે સ્વિચ કરો તે દરેક ઍપનું નામ બોલે છે. શરૂઆત માટેની સ્ક્રિપ્ટ.</string>
     <string name="script_state_on">ચાલુ</string>
     <string name="script_state_off">બંધ</string>
     <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g>માં ચાલે છે</string>
@@ -38,18 +38,18 @@
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>ને <xliff:g id="version">%2$s</xliff:g> પર અપડેટ કરી</string>
     <string name="script_import_failed">આયાત કરવું નિષ્ફળ થયું. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. માત્ર વિશ્વસનીય સ્ક્રિપ્ટ માટે મંજૂરી આપો.</string>
-    <string name="script_permission_screen">સ્ક્રીન વાંચો</string>
-    <string name="script_permission_actions">ક્લિક કરો, સ્ક્રોલ કરો, ટાઇપ કરો અને ફોકસ ખસેડો</string>
-    <string name="script_permission_speech">SandFlyની સ્પીચ મેળવો અને બદલો</string>
-    <string name="script_permission_passwords">પાસવર્ડ ફીલ્ડ વાંચો</string>
-    <string name="script_permission_input">સંકેતો, કી, મેનૂ આઇટમ અને વાંચનના નિયંત્રણો ઉમેરો</string>
-    <string name="script_permission_network">ઇન્ટરનેટનો ઉપયોગ કરો</string>
-    <string name="script_permission_clipboard">ક્લિપબોર્ડ વાંચો અને બદલો</string>
-    <string name="script_permission_system">પાછળ અથવા હોમ પર જાઓ, નોટિફિકેશન અને ઍપ ખોલો</string>
-    <string name="script_permission_notifications">બોલાતા નોટિફિકેશન વાંચો અને બદલો</string>
+    <string name="script_permission_screen">સ્ક્રીન વાંચવી</string>
+    <string name="script_permission_actions">ક્લિક કરવું, સ્ક્રોલ કરવું, ટાઇપ કરવું અને ફોકસ ખસેડવું</string>
+    <string name="script_permission_speech">SandFlyની સ્પીચ મેળવવી અને બદલવી</string>
+    <string name="script_permission_passwords">પાસવર્ડ ફીલ્ડ વાંચવા</string>
+    <string name="script_permission_input">સંકેતો, કી, મેનૂ આઇટમ અને વાંચનના નિયંત્રણો ઉમેરવા</string>
+    <string name="script_permission_network">ઇન્ટરનેટનો ઉપયોગ કરવો</string>
+    <string name="script_permission_clipboard">ક્લિપબોર્ડ વાંચવું અને બદલવું</string>
+    <string name="script_permission_system">પાછળ કે હોમ પર જવું, સૂચનાઓ અને ઍપ ખોલવી</string>
+    <string name="script_permission_notifications">બોલાતી સૂચનાઓ વાંચવી અને બદલવી</string>
     <string name="script_permission_events">ટાઇપિંગ સહિત, દરેક ઍપમાંની બધી પ્રવૃત્તિ જુઓ</string>
-    <string name="script_permission_dialogs">કોઈપણ ઍપ પર ડાયલોગ બતાવો</string>
-    <string name="script_permission_java">દરેક ઍપમાં, SandFlyના સંપૂર્ણ ઍક્સેસ સાથે Java કોડ ચલાવો</string>
+    <string name="script_permission_dialogs">કોઈપણ ઍપ પર ડાયલોગ બતાવવા</string>
+    <string name="script_permission_java">દરેક ઍપમાં SandFlyના બધા ઍક્સેસ સાથે Java કોડ ચલાવવો</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ચાલુ કરો</string>
     <string name="script_permissions_title">પરવાનગીઓ</string>
@@ -59,10 +59,10 @@
     <string name="script_button_off">પહેલા સ્ક્રિપ્ટ ચાલુ કરો</string>
     <string name="script_permissions_summary">કોઈ પરવાનગી બંધ કરવાથી, તેની જરૂર હોય તેવા ભાગો બંધ થઈ જાય છે.</string>
     <string name="script_install_permissions_note">તમે આને પછીથી બંધ કરી શકો છો.</string>
-    <string name="script_manage_category">મેનેજ કરો</string>
+    <string name="script_manage_category">મેનેજમેન્ટ</string>
     <string name="script_move_up">વહેલા ચલાવો</string>
     <string name="script_move_down">પછી ચલાવો</string>
-    <string name="script_order_summary">સમાન સ્પીચ બદલતી સ્ક્રિપ્ટ માટેનો ક્રમ. ઍપ સ્ક્રિપ્ટ પહેલા ચાલે છે.</string>
+    <string name="script_order_summary">એક જ સ્પીચ બદલતી સ્ક્રિપ્ટનો ક્રમ. ઍપ સ્ક્રિપ્ટ પહેલા ચાલે છે.</string>
     <string name="script_log">લૉગ</string>
     <string name="script_log_summary">SandFly શરૂ થયું ત્યારથી આઉટપુટ અને ભૂલો</string>
     <string name="script_clear_storage">સ્ટોર કરેલો ડેટા સાફ કરો</string>
@@ -76,7 +76,7 @@
     <string name="script_log_copy">લૉગ કૉપિ કરો</string>
     <string name="script_log_copied">લૉગ કૉપિ કર્યો</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">સ્ક્રિપ્ટ API <xliff:g id="needed">%1$d</xliff:g> અથવા તેના પછીના વર્ઝનની જરૂર છે. આ SandFlyમાં <xliff:g id="current">%2$d</xliff:g> છે, તેથી કેટલાક ભાગો કદાચ કામ ન કરે.</string>
+    <string name="script_api_too_old">સ્ક્રિપ્ટ API <xliff:g id="needed">%1$d</xliff:g> અથવા પછીનું જરૂરી છે. આ SandFlyમાં <xliff:g id="current">%2$d</xliff:g> છે, તેથી કેટલાક ભાગો કદાચ કામ ન કરે.</string>
     <string name="script_api_untested">સ્ક્રિપ્ટ API <xliff:g id="tested">%1$d</xliff:g> સુધી પરીક્ષણ કરેલું. આ SandFlyમાં <xliff:g id="current">%2$d</xliff:g> છે, તેથી તે કદાચ અપેક્ષા મુજબ કામ ન કરે.</string>
     <string name="script_state_incompatible">આ SandFly સાથે કદાચ કામ ન કરે</string>
     <string name="script_api_range">સ્ક્રિપ્ટ API <xliff:g id="min">%1$d</xliff:g>થી <xliff:g id="tested">%2$d</xliff:g></string>
@@ -91,14 +91,14 @@
     <string name="shortcut_inspect_item">ફોકસ કરેલી આઇટમનું નિરીક્ષણ કરો</string>
     <string name="script_inspect_no_item">કોઈ આઇટમ પર ફોકસ નથી</string>
     <string name="script_inspect_copied">કૉપિ કર્યું. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">કોઈ id નથી, તેથી નિયમો તેનો ઉલ્લેખ કરી શકતા નથી. કૉપિ કર્યું. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id નથી, તેથી નિયમો તેનો ઉલ્લેખ કરી શકતા નથી. કૉપિ કર્યું. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">સ્ક્રીન ટ્રી કૉપિ કરો</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> આઇટમ કૉપિ કરી</string>
     <string name="script_tree_none">કૉપિ કરવા માટે કોઈ વિન્ડો નથી</string>
     <string name="script_tree_clip_label">સ્ક્રીન ટ્રી</string>
-    <string name="summary_copy_screen_tree_menu">સ્ક્રિપ્ટ લખવા માટે, સ્ક્રીન પરની બધી આઇટમ JSON તરીકે કૉપિ કરો</string>
+    <string name="summary_copy_screen_tree_menu">સ્ક્રિપ્ટ લખવા માટે સ્ક્રીન પરની બધી આઇટમ JSON તરીકે કૉપિ કરવી</string>
     <string name="script_inspect_clip_label">આઇટમની વિગતો</string>
-    <string name="summary_inspect_item_menu">સ્ક્રિપ્ટ લખવા માટે, તમે જે આઇટમ પર હતા તેની વિગતો બોલો અને કૉપિ કરો</string>
+    <string name="summary_inspect_item_menu">સ્ક્રિપ્ટ લખવા માટે છેલ્લે ફોકસ થયેલી આઇટમની વિગતો બોલવી અને કૉપિ કરવી</string>
     <string name="script_keys_backtalk_modifier">SandFly મૉડિફાયર</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, પછી <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">આદેશો</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">ડિફૉલ્ટ રિસ્ટોર કરો</string>
     <string name="script_binding_restored">ડિફૉલ્ટ રિસ્ટોર કર્યા</string>
     <string name="script_binding_perform">સંકેત કરો અથવા કી દબાવો</string>
-    <string name="script_binding_perform_summary">આગલો સંકેત અથવા SandFly મૉડિફાયર સાથે દબાવેલી કી સોંપો</string>
+    <string name="script_binding_perform_summary">આગલો સંકેત અથવા SandFly મૉડિફાયર સાથે દબાવેલી કી સોંપવી</string>
     <string name="script_binding_perform_message">સંકેત કરો અથવા કી દબાવો.</string>
     <string name="script_binding_assign_title"><xliff:g id="command">%2$s</xliff:g> માટે <xliff:g id="binding">%1$s</xliff:g> સોંપીએ?</string>
     <string name="script_binding_assign">સોંપો</string>
@@ -140,14 +140,14 @@
     <string name="script_source_remove_message">તેમાંથી ઇન્સ્ટૉલ કરેલી સ્ક્રિપ્ટ ઇન્સ્ટૉલ રહે છે.</string>
     <string name="scripts_auto_update">સ્ક્રિપ્ટો આપમેળે અપડેટ કરો</string>
     <string name="scripts_check_updates">અપડેટ્સ માટે તપાસો</string>
-    <string name="scripts_checking_updates">અપડેટ માટે તપાસી રહ્યું છે...</string>
+    <string name="scripts_checking_updates">અપડેટ માટે તપાસી રહ્યું છે…</string>
     <string name="scripts_updates_category">અપડેટ્સ</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> સ્ક્રિપ્ટ અપડેટ કરી: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> સ્ક્રિપ્ટ અપડેટ કરી: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">અપડેટ્સ અપડેટ્સ હેઠળ સૂચિબદ્ધ છે</string>
+    <string name="scripts_updates_to_approve">અપડેટ્સ “અપડેટ્સ” હેઠળ સૂચિબદ્ધ છે</string>
     <string name="scripts_update_check_failed">કેટલાક સ્ત્રોતો તપાસી શકાયા નથી</string>
     <string name="scripts_up_to_date">બધી સ્ક્રિપ્ટો અદ્યતન છે</string>
 </resources>

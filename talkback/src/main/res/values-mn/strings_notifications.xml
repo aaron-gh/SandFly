@@ -3,19 +3,19 @@
     <string name="notification_shake_3">Хүчтэй</string>
     <string name="notification_shake_2">Дунд зэрэг</string>
     <string name="notification_shake_1">Зөөлөн</string>
-    <string name="notification_media_skip">Чанга уншиж болохгүй</string>
-    <string name="notification_media_pause">Уншиж байхдаа хэвлэл мэдээллийн хэрэгслийг түр зогсоо</string>
-    <string name="notification_media_read">Чанга унш</string>
+    <string name="notification_media_skip">Уншихгүй</string>
+    <string name="notification_media_pause">Унших үед медиаг түр зогсоох</string>
+    <string name="notification_media_read">Унших</string>
     <string name="notification_headphones_only_without">Зөвхөн чихэвчгүй</string>
     <string name="notification_headphones_only_with">Зөвхөн чихэвчтэй</string>
     <string name="notification_headphones_always">Чихэвчтэй эсвэл чихэвчгүй чангаар унш</string>
-    <string name="notification_queue_skip">Шинэ мэдэгдлийг чангаар уншиж болохгүй</string>
-    <string name="notification_queue_interrupt">Чанга уншиж буй мэдэгдлийг тасал</string>
-    <string name="notification_queue_queue">Одоогийн мэдэгдлийн дараа чангаар уншина уу</string>
+    <string name="notification_queue_skip">Шинийг уншихгүй</string>
+    <string name="notification_queue_interrupt">Тасалдуулах</string>
+    <string name="notification_queue_queue">Дараа нь унших</string>
     <string name="notification_url_omit">Орхих</string>
-    <string name="notification_url_replace">Доорх текстийг хэлнэ үү</string>
-    <string name="notification_url_domain">Зөвхөн сайтыг уншина уу</string>
-    <string name="notification_url_full">Холбоосыг бүхэлд нь уншина уу</string>
+    <string name="notification_url_replace">Доорх текстийг хэлэх</string>
+    <string name="notification_url_domain">Зөвхөн сайтыг унших</string>
+    <string name="notification_url_full">Холбоосыг бүтнээр нь унших</string>
     <string name="notification_category_title">Мэдэгдлүүд</string>
     <string name="notification_reading_title">Мэдэгдэлийг чангаар унших</string>
     <string name="notification_apps_title">Аппууд</string>
@@ -23,43 +23,43 @@
     <string name="notification_kinds_title">Мэдэгдэлийн төрлүүд</string>
     <string name="notification_when_title">Хэзээ унших вэ</string>
     <string name="notification_rules_title">Дүрэм</string>
-    <string name="notification_repeats_title">Дахин давтана</string>
-    <string name="notification_stop_title">Уншихаа боль</string>
-    <string name="notification_schedules_title">Дүгнэлт ба цаг хугацаа</string>
+    <string name="notification_repeats_title">Давталтууд</string>
+    <string name="notification_stop_title">Уншихыг зогсоох</string>
+    <string name="notification_schedules_title">Хураангуй ба цаг</string>
     <string name="notification_history_title">Мэдэгдлийн түүх</string>
-    <string name="notification_test_title">Туршилтын мэдэгдэл илгээнэ үү</string>
+    <string name="notification_test_title">Туршилтын мэдэгдэл илгээх</string>
     <string name="notification_automation_title">Автоматжуулалт</string>
     <string name="notification_automation_allowed_title">Автоматжуулалтын програмуудыг зөвшөөрөх</string>
-    <string name="notification_category_said">Юу гэж хэлсэн</string>
+    <string name="notification_category_said">Юу уншигдах</string>
     <string name="notification_format_title">Ярианы формат</string>
     <string name="notification_format_message">Орлуулагч: {app}, {title}, {text}, {content} (бүх текст), {bigtext}, {subtext}, {ticker}, {category} болон {time}.</string>
-    <string name="notification_private_format_title">Хувийн мэдэгдлүүд ингэж хэлдэг</string>
-    <string name="notification_private_format_message">Хувийн мэдэгдлийн агуулгын оронд хэлсэн. Орлуулагч: {app}, {category} болон {time}.</string>
+    <string name="notification_private_format_title">Хувийн мэдэгдлийг унших</string>
+    <string name="notification_private_format_message">Хувийн мэдэгдлийн агуулгын оронд хэлнэ. Орлуулагч: {app}, {category} болон {time}.</string>
     <string name="notification_category_voice">Дуу хоолой</string>
     <string name="notification_voice_title">Дуу хоолой</string>
     <string name="notification_voice_sandfly">SandFly-ийн хоолой</string>
     <string name="notification_detect_language_title">Хэл илрүүлэх</string>
-    <string name="notification_detect_language_summary">Мэдэгдэл бүрийг өөрийн бичсэн хэлээр хэлээрэй. Текстээс ярианы тохиргоонд хэлийг автоматаар солих шаардлагатай.</string>
-    <string name="notification_sound_before_title">Мэдэгдэл гарахаас өмнө дуугарна</string>
+    <string name="notification_detect_language_summary">Мэдэгдэл бүрийг бичигдсэн хэлээр нь хэлнэ. «Бичвэрийг ярианд хувиргах» хэсгийн «Хэлийг автоматаар солих» шаардлагатай.</string>
+    <string name="notification_sound_before_title">Мэдэгдлийн өмнөх дуу</string>
     <string name="notification_category_text">Текст</string>
-    <string name="notification_remove_emoji_title">Эможийг орхи</string>
-    <string name="notification_lowercase_title">Том үсгийг үг болгон унш</string>
+    <string name="notification_remove_emoji_title">Эможийг алгасах</string>
+    <string name="notification_lowercase_title">Том үсгийг үг болгон унших</string>
     <string name="notification_lowercase_summary">Зарим ярианы хөдөлгүүр том үсгээр бичсэн үгийг үсэг бүрээр нь уншдаг.</string>
-    <string name="notification_separate_digits_title">Урт тоонуудыг цифрээр нь унш</string>
+    <string name="notification_separate_digits_title">Урт тоог цифр бүрээр унших</string>
     <string name="notification_separate_digits_summary">Код, утасны дугаар гэх мэт</string>
-    <string name="notification_min_digits_title">Урт тооны хамгийн бага цифрүүд</string>
+    <string name="notification_min_digits_title">Урт тооны хамгийн бага цифрийн тоо</string>
     <string name="notification_urls_title">Холбооснууд</string>
-    <string name="notification_url_text_title">Холбоосны оронд хэлсэн</string>
-    <string name="notification_skip_empty_title">Текстгүйгээр мэдэгдлүүдийг алгасах</string>
+    <string name="notification_url_text_title">Холбоосын оронд хэлэх текст</string>
+    <string name="notification_skip_empty_title">Текстгүй мэдэгдлийг алгасах</string>
     <string name="notification_category_length">Урт</string>
     <string name="notification_max_words_title">Үгийн хамгийн их тоо</string>
     <string name="notification_max_sentences_title">Өгүүлбэрийн дээд тоо</string>
     <string name="notification_max_characters_title">Текст тэмдэгтүүдийн хамгийн их тоо</string>
-    <string name="notification_max_seconds_title">Дараа нь уншихаа боль</string>
+    <string name="notification_max_seconds_title">Унших хугацааны дээд хязгаар</string>
     <string name="notification_category_timing">Хугацаа</string>
-    <string name="notification_delay_title">Уншихаасаа өмнө хүлээнэ үү</string>
+    <string name="notification_delay_title">Уншихын өмнөх хүлээлт</string>
     <string name="notification_queue_title">Өөр мэдэгдэл унших үед</string>
-    <string name="notification_repeat_minutes_title">Дэлгэц асах хүртэл дахин уншина уу</string>
+    <string name="notification_repeat_minutes_title">Дэлгэц асах хүртэл дахин унших</string>
     <string name="notification_skip_media_title">Медиа тоглуулагчийг алгасах</string>
     <string name="notification_skip_ongoing_title">Үргэлжилсэн мэдэгдлүүдийг алгасах</string>
     <string name="notification_skip_ongoing_summary">Навигаци, таймер гэх мэт</string>
@@ -74,49 +74,49 @@
     <string name="notification_screen_off_title">Дэлгэц унтарсан үед</string>
     <string name="notification_locked_title">Утас түгжигдсэн байхад</string>
     <string name="notification_headphones_title">Чихэвч</string>
-    <string name="notification_media_title">Медиа тоглож байх үед</string>
+    <string name="notification_media_title">Медиа тоглуулж байх үед</string>
     <string name="notification_dnd_title">Бүү саад бол</string>
-    <string name="notification_dnd_none">Ямар ч мэдэгдлийг чангаар уншиж болохгүй</string>
-    <string name="notification_dnd_allowed">Бүү саад бол горимын зөвшөөрөгдсөн мэдэгдлүүдийг уншина уу</string>
+    <string name="notification_dnd_none">Алийг нь ч уншихгүй</string>
+    <string name="notification_dnd_allowed">Бүү саад бол горимын зөвшөөрснийг унших</string>
     <string name="notification_dnd_all">Бүгдийг унш</string>
     <string name="notification_touch_title">Дэлгэцэнд хүрч байхад</string>
-    <string name="notification_touch_read">Шууд унш</string>
-    <string name="notification_touch_after">Мэдрэлт дуусах үед уншина уу</string>
-    <string name="notification_touch_skip">Чанга уншиж болохгүй</string>
+    <string name="notification_touch_read">Шууд унших</string>
+    <string name="notification_touch_after">Хүрэлт дуусахад унших</string>
+    <string name="notification_touch_skip">Уншихгүй</string>
     <string name="notification_during_calls_title">Дуудлагын үеэр</string>
     <string name="notification_honour_silent_title">Чимээгүй горимд биш</string>
     <string name="notification_honour_vibrate_title">Чичиргээний горимд биш</string>
     <string name="notification_skip_in_car_title">Машины горимд биш</string>
-    <string name="notification_skip_in_car_summary">Тэдгээрийг өөрөө уншдаг Android Auto гэх мэт</string>
+    <string name="notification_skip_in_car_summary">Жишээ нь, мэдэгдлийг өөрөө уншдаг Android Auto</string>
     <string name="notification_category_quiet_hours">Чимээгүй цаг</string>
     <string name="notification_quiet_hours_title">Чимээгүй цаг</string>
-    <string name="notification_quiet_start_title">Эхлэх</string>
+    <string name="notification_quiet_start_title">Эхлэл</string>
     <string name="notification_quiet_end_title">Төгсгөл</string>
-    <string name="notification_repeat_seconds_title">Үүнтэй ижил мэдэгдлийг алгасах</string>
-    <string name="notification_numbers_alike_title">Өөр өөр тоонуудыг адилхан гэж үзнэ</string>
+    <string name="notification_repeat_seconds_title">Ижил мэдэгдлийг алгасах хугацаа</string>
+    <string name="notification_numbers_alike_title">Тоонуудыг ижил гэж тооцно</string>
     <string name="notification_numbers_alike_summary">Татаж авах хувь гэх мэт</string>
     <string name="notification_cooldown_title">Аппликешны мэдэгдлийн хоорондох хугацаа</string>
-    <string name="notification_skip_prefix_title">Давтагдсан текстийн угтварыг орхи</string>
+    <string name="notification_skip_prefix_title">Давтагдсан эхлэлийг алгасах</string>
     <string name="notification_skip_prefix_summary">Чат дахь бүлгийн нэр гэх мэт</string>
-    <string name="notification_prefix_memory_title">Текстийн угтварыг хэр удаан санах вэ</string>
-    <string name="notification_access_summary">Татгалзсан мэдэгдэл болон хураангуйг уншихаа болих шаардлагатай</string>
+    <string name="notification_prefix_memory_title">Эхлэлийг санах хугацаа</string>
+    <string name="notification_access_summary">Хаасан мэдэгдлийг уншихыг зогсоох болон хураангуйд шаардлагатай</string>
     <string name="notification_shake_title">Зогсоохын тулд сэгсэрнэ үү</string>
-    <string name="notification_shake_strength_title">Чичиргээний эрчим</string>
-    <string name="notification_wave_title">Уншихаа болихын тулд гараа даллана</string>
-    <string name="notification_wave_summary">Ойролцоох мэдрэгч дээр гараа хөдөлгөж байна</string>
+    <string name="notification_shake_strength_title">Сэгсрэх хүч</string>
+    <string name="notification_wave_title">Зогсоохын тулд гараа даллах</string>
+    <string name="notification_wave_summary">Ойртолтын мэдрэгч дээгүүр гараа хөдөлгөх</string>
     <string name="notification_pocket_title">Халаасны горим</string>
-    <string name="notification_pocket_summary">Уншиж эхлэхэд халаасанд байдаг шиг тагласан мэдрэгч нь үүнийг зогсоохгүй</string>
-    <string name="notification_volume_keys_title">Дууны түвшний товчлуурыг хоёуланг нь дар</string>
-    <string name="notification_dismiss_title">Мэдэгдэл хаагдсан үед уншихаа зогсоо</string>
-    <string name="notification_watch_dismiss_title">Мөн ухаалаг цаг дээр мэдэгдэл хаагдах үед</string>
-    <string name="notification_app_cancel_title">Апп мэдэгдлийг устгах үед уншихаа зогсоо</string>
-    <string name="notification_category_summary">Дүгнэлт</string>
-    <string name="notification_summary_now_title">Мэдэгдэлүүдийг одоо уншина уу</string>
-    <string name="notification_summary_daily_title">Өдөр бүр мэдэгдлүүдийг уншина уу</string>
-    <string name="notification_summary_time_title">Цаг хугацаа</string>
+    <string name="notification_pocket_summary">Уншиж эхлэхэд мэдрэгч аль хэдийн хаалттай байвал, жишээ нь халаасанд, уншилт зогсохгүй</string>
+    <string name="notification_volume_keys_title">Дууны хоёр товчийг дарах</string>
+    <string name="notification_dismiss_title">Хаахад зогсоох</string>
+    <string name="notification_watch_dismiss_title">Цаг дээр хаагдсан үед ч</string>
+    <string name="notification_app_cancel_title">Апп үүнийг устгахад зогсоох</string>
+    <string name="notification_category_summary">Хураангуй</string>
+    <string name="notification_summary_now_title">Мэдэгдлийг одоо унших</string>
+    <string name="notification_summary_daily_title">Мэдэгдлийг өдөр бүр унших</string>
+    <string name="notification_summary_time_title">Цаг</string>
     <string name="notification_summary_newest_first_title">Хамгийн шинэ нь эхлээд</string>
     <string name="notification_summary_name_title">Таны нэр</string>
-    <string name="notification_summary_gap_title">Мэдэгдлийн хооронд түр зогсоох</string>
+    <string name="notification_summary_gap_title">Мэдэгдлийн хоорондох завсарлага</string>
     <string name="notification_summary_needs_sandfly">Мэдэгдэл уншихын тулд SandFly-г асаана уу</string>
     <string name="notification_summary_no_access">Мэдэгдлийн хандалт идэвхгүй байна</string>
     <string name="notification_summary_morning">Өглөөний мэнд.</string>
@@ -125,80 +125,80 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Цагийн мэдэгдэл</string>
-    <string name="notification_clock_interval_title">Цаг бүрийг хэлээрэй</string>
+    <string name="notification_clock_interval_title">Цаг хэлэх давтамж</string>
     <string name="notification_clock_format_title">Цагийн формат</string>
     <string name="notification_clock_format_message">Орлуулагч: {time}, {date} болон {battery} (батарейны хувь).</string>
-    <string name="notification_clock_format_default">Энэ бол {time}</string>
-    <string name="notification_clock_exact_title">Яг цаг хугацаа</string>
-    <string name="notification_clock_exact_summary">Сэрүүлэг, сануулагч хэрэгтэй. Үгүй бол цагийг минут хүртэл хоцорч хэлж болно.</string>
+    <string name="notification_clock_format_default">Одоо {time}</string>
+    <string name="notification_clock_exact_title">Яг цаг</string>
+    <string name="notification_clock_exact_summary">«Сэрүүлэг ба сануулагч» зөвшөөрөл шаардлагатай. Эс бөгөөс цагийг нэг минут хүртэл хоцроож хэлж болзошгүй.</string>
     <string name="notification_other_apps_title">Бусад програмууд</string>
     <string name="notification_apps_category">Аппууд</string>
     <string name="notification_apps_loading">Апп-уудыг ачаалж байна</string>
     <string name="notification_app_mode_title">Мэдэгдлүүд</string>
     <string name="notification_app_mode_default">Бусад програмуудын адил</string>
-    <string name="notification_app_mode_read">Чанга унш</string>
+    <string name="notification_app_mode_read">Унших</string>
     <string name="notification_app_mode_private">Зөвхөн програмын нэр</string>
     <string name="notification_app_mode_priority">Эхлээд унш</string>
-    <string name="notification_app_mode_ignore">Чанга уншиж болохгүй</string>
+    <string name="notification_app_mode_ignore">Уншихгүй</string>
     <string name="notification_app_name_title">Хэлсэн нэр</string>
-    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> гэж хэлсэн</string>
+    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> гэж хэлнэ</string>
     <string name="notification_app_reset">Дахин тохируулах</string>
-    <string name="notification_required_title">Зөвхөн мэдэгдлийг уншина уу</string>
-    <string name="notification_blocked_title">Мэдэгдлүүдийг бүү унш</string>
-    <string name="notification_private_title">Зөвхөн програмын нэрийг уншина уу</string>
-    <string name="notification_replacements_title">Өөрөөр хэлбэл</string>
-    <string name="notification_add_word">Үг нэмнэ үү</string>
-    <string name="notification_add_replacement">Орлуулах зүйл нэмнэ үү</string>
-    <string name="notification_replacement_item"><xliff:g id="replace" example="laughing">%2$s</xliff:g>-р <xliff:g id="find" example="lol">%1$s</xliff:g></string>
+    <string name="notification_required_title">Зөвхөн эдгээрийг агуулсан мэдэгдлийг унших</string>
+    <string name="notification_blocked_title">Эдгээрийг агуулсан мэдэгдлийг уншихгүй</string>
+    <string name="notification_private_title">Эдгээрийг агуулсан мэдэгдэлд зөвхөн аппын нэрийг унших</string>
+    <string name="notification_replacements_title">Өөрөөр хэлэх</string>
+    <string name="notification_add_word">Үг нэмэх</string>
+    <string name="notification_add_replacement">Орлуулга нэмэх</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g>-г <xliff:g id="replace" example="laughing">%2$s</xliff:g> гэж</string>
     <string name="notification_replace_find">Текст</string>
-    <string name="notification_replace_with">Гэж хэл</string>
+    <string name="notification_replace_with">Ингэж хэлэх</string>
     <string name="notification_whole_words">Зөвхөн бүхэл үгс</string>
-    <string name="notification_regex">Тогтмол илэрхийлэл</string>
+    <string name="notification_regex">Регуляр илэрхийлэл</string>
     <string name="notification_enter_text">Текст оруулна уу</string>
-    <string name="notification_invalid_regex">Тогтмол илэрхийлэл буруу байна</string>
+    <string name="notification_invalid_regex">Хүчинтэй regex биш байна</string>
     <string name="notification_edit">Засварлах</string>
     <string name="notification_remove">Устгах</string>
     <string name="notification_history_keep">Мэдэгдлийн түүхийг хадгалах</string>
-    <string name="notification_history_clear">Түүхийг цэвэрлэ</string>
+    <string name="notification_history_clear">Түүхийг цэвэрлэх</string>
     <string name="notification_history_category">Мэдэгдлүүд</string>
     <string name="notification_history_empty">Мэдэгдэл алга</string>
     <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g>-г бүү унш</string>
-    <string name="notification_history_private_app">Зөвхөн <xliff:g id="app" example="Chat">%1$s</xliff:g>-н нэрийг уншина уу</string>
-    <string name="notification_history_priority_app">Эхлээд <xliff:g id="app" example="Chat">%1$s</xliff:g> уншина уу</string>
+    <string name="notification_history_private_app">Зөвхөн <xliff:g id="app" example="Chat">%1$s</xliff:g>-ын нэрийг унших</string>
+    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g>-г эхэлж унших</string>
     <string name="notification_history_block_similar">Ийм мэдэгдлийг бүү унш</string>
     <string name="notification_history_copy">Хуулах</string>
     <string name="notification_saved">Хадгалсан</string>
     <string name="notification_copied">Хуулсан</string>
-    <string name="notification_outcome_read">Амжилттай чангаар уншаарай</string>
+    <string name="notification_outcome_read">Уншсан</string>
     <string name="notification_outcome_stopped">Уншиж байхдаа зогссон</string>
-    <string name="notification_outcome_speech_off">Уншаагүй: мэдэгдлийн яриа унтраалттай байна</string>
+    <string name="notification_outcome_speech_off">Уншаагүй: мэдэгдэл уншихыг унтраасан</string>
     <string name="notification_outcome_dnd">Уншаагүй: Бүү саад бол</string>
     <string name="notification_outcome_touching">Уншаагүй: дэлгэцэнд хүрсэн</string>
     <string name="notification_outcome_app">Уншаагүй: апп</string>
-    <string name="notification_outcome_ongoing">Уншаагүй: үргэлжилж байна</string>
-    <string name="notification_outcome_foreground">Уншаагүй: ажиллаж байгаа програм</string>
-    <string name="notification_outcome_low_priority">Уншаагүй: тэргүүлэх ач холбогдол багатай</string>
+    <string name="notification_outcome_ongoing">Уншаагүй: байнгын мэдэгдэл</string>
+    <string name="notification_outcome_foreground">Уншаагүй: апп нээлттэй байна</string>
+    <string name="notification_outcome_low_priority">Уншаагүй: бага ач холбогдол</string>
     <string name="notification_outcome_system">Уншаагүй: систем</string>
     <string name="notification_outcome_media">Уншаагүй: медиа тоглуулагч</string>
     <string name="notification_outcome_group_summary">Уншаагүй: бүлгийн хураангуй</string>
-    <string name="notification_outcome_progress">Уншаагүй: ахиц дэвшил</string>
-    <string name="notification_outcome_required">Уншаагүй: шаардлагатай үгс дутуу байна</string>
-    <string name="notification_outcome_blocked">Уншаагүй: блоклогдсон үг</string>
-    <string name="notification_outcome_empty">Уншаагүй: текст байхгүй</string>
-    <string name="notification_outcome_repeat">Уншаагүй: давтана</string>
-    <string name="notification_outcome_cooldown">Чанга уншихгүй байна: энэ апп-ын өөр мэдэгдлийг хэтэрхий саяхан уншсан</string>
+    <string name="notification_outcome_progress">Уншаагүй: явц</string>
+    <string name="notification_outcome_required">Уншаагүй: заавал байх үг алга</string>
+    <string name="notification_outcome_blocked">Уншаагүй: блоклосон үг</string>
+    <string name="notification_outcome_empty">Уншаагүй: текст алга</string>
+    <string name="notification_outcome_repeat">Уншаагүй: давталт</string>
+    <string name="notification_outcome_cooldown">Уншаагүй: аппыг дөнгөж уншсан</string>
     <string name="notification_outcome_quiet_hours">Уншаагүй: чимээгүй цаг</string>
     <string name="notification_outcome_screen_on">Уншаагүй: дэлгэц асаалттай</string>
-    <string name="notification_outcome_screen_off">Уншаагүй: дэлгэц унтарсан</string>
-    <string name="notification_outcome_locked">Уншаагүй: түгжигдсэн</string>
+    <string name="notification_outcome_screen_off">Уншаагүй: дэлгэц унтраалттай</string>
+    <string name="notification_outcome_locked">Уншаагүй: түгжээтэй</string>
     <string name="notification_outcome_headphones">Уншаагүй: чихэвч холбогдсон</string>
-    <string name="notification_outcome_no_headphones">Уншаагүй: чихэвч байхгүй</string>
+    <string name="notification_outcome_no_headphones">Уншаагүй: чихэвч алга</string>
     <string name="notification_outcome_silent">Уншаагүй: чимээгүй горим</string>
     <string name="notification_outcome_vibrate">Уншаагүй: чичиргээний горим</string>
     <string name="notification_outcome_media_playing">Уншаагүй: медиа тоглуулж байна</string>
     <string name="notification_outcome_car">Уншаагүй: машины горим</string>
     <string name="notification_outcome_rule">Уншаагүй: дүрэм</string>
-    <string name="notification_outcome_busy">Уншаагүй: өөр мэдэгдлийг уншсан</string>
+    <string name="notification_outcome_busy">Уншаагүй: өөр мэдэгдэл уншсан</string>
     <string name="notification_outcome_call">Ирж буй утасны дуудлага гэж зарласан</string>
     <string name="notification_rule_add">Дүрэм нэмэх</string>
     <string name="notification_rule_from_template">Загвараас дүрэм нэмнэ үү</string>
@@ -206,16 +206,16 @@
     <string name="notification_rules_empty">Дүрэм байхгүй</string>
     <string name="notification_rule_name">Нэр</string>
     <string name="notification_rule_untitled">Дүрэм</string>
-    <string name="notification_rule_enabled">Асаасан</string>
-    <string name="notification_rule_match">Нөхцөл байдал</string>
+    <string name="notification_rule_enabled">Асаалттай</string>
+    <string name="notification_rule_match">Нөхцөлүүд</string>
     <string name="notification_rule_match_all">Бүх нөхцөл хангагдсан байх ёстой</string>
     <string name="notification_rule_match_any">Дор хаяж нэг нөхцөл хангагдсан байх ёстой</string>
-    <string name="notification_rule_conditions">Хэзээ</string>
+    <string name="notification_rule_conditions">Хэрэв</string>
     <string name="notification_rule_actions">Дараа нь</string>
-    <string name="notification_rule_add_condition">Нөхцөл нэмнэ үү</string>
-    <string name="notification_rule_add_action">Үйлдэл нэмнэ үү</string>
-    <string name="notification_rule_invert">Нөхцөл байдлыг эргүүл</string>
-    <string name="notification_rule_delete">Дүрмийг устгана уу</string>
+    <string name="notification_rule_add_condition">Нөхцөл нэмэх</string>
+    <string name="notification_rule_add_action">Үйлдэл нэмэх</string>
+    <string name="notification_rule_invert">Нөхцөлийг эсрэгээр болгох</string>
+    <string name="notification_rule_delete">Дүрмийг устгах</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g>-г устгах уу?</string>
     <string name="notification_rule_always">Үргэлж</string>
     <string name="notification_rule_no_actions">юу ч болохгүй</string>
@@ -226,21 +226,21 @@
     <string name="notification_template_night">Шөнө чимээгүй</string>
     <string name="notification_template_screen_off">Зөвхөн дэлгэц унтарсан үед</string>
     <string name="notification_template_locked_private">Утас түгжигдсэн үед зөвхөн програмын нэр</string>
-    <string name="notification_template_short_on_battery">Цэнэглэхгүй байх үед товч уншина уу</string>
+    <string name="notification_template_short_on_battery">Цэнэглэхгүй үед товч</string>
     <string name="notification_type_bluetooth">Bluetooth төхөөрөмж</string>
     <string name="notification_type_wired">Утастай чихэвч</string>
     <string name="notification_type_wifi">Wi-Fi сүлжээ</string>
     <string name="notification_type_time">Өдрийн цаг</string>
     <string name="notification_type_screen">Дэлгэц асаалттай</string>
     <string name="notification_type_locked">Утас түгжигдсэн</string>
-    <string name="notification_type_from_app">Аппликешны мэдэгдэл</string>
+    <string name="notification_type_from_app">Аппын мэдэгдэл</string>
     <string name="notification_type_foreground">Аппликешн урд талд</string>
     <string name="notification_type_contains">Мэдэгдэл агуулж байна</string>
-    <string name="notification_type_battery">Батерейны түвшин доогуур байна</string>
+    <string name="notification_type_battery">Батерейны түвшин үүнээс доош</string>
     <string name="notification_type_charging">Цэнэглэж байна</string>
     <string name="notification_type_landscape">Хэвтээ</string>
     <string name="notification_type_silent">Чимээгүй эсвэл чичиргээний горим</string>
-    <string name="notification_type_media">Медиа тоглож байна</string>
+    <string name="notification_type_media">Медиа тоглуулж байна</string>
     <string name="notification_bluetooth_any">Ямар ч төхөөрөмж</string>
     <string name="notification_wifi_hint">Сүлжээний нэр</string>
     <string name="notification_choose_app">Апп сонгоно уу</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Хүртэл</string>
     <string name="notification_time_days">Өдөр</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g>-с <xliff:g id="end" example="07:00">%2$s</xliff:g> хүртэл</string>
-    <string name="notification_permission_needed">SandFly-д энэ нөхцөлд зөвшөөрөл шаардлагатай</string>
+    <string name="notification_permission_needed">SandFly-д энэ нөхцөлд тэр зөвшөөрөл хэрэгтэй</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> холбогдсон байна</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> холбогдоогүй байна</string>
     <string name="notification_cond_bluetooth_any">Bluetooth аудио төхөөрөмж холбогдсон байна</string>
@@ -263,42 +263,42 @@
     <string name="notification_cond_locked_not">Утасны түгжээг тайлсан байна</string>
     <string name="notification_cond_screen_on">Дэлгэц асаалттай байна</string>
     <string name="notification_cond_screen_on_not">Дэлгэц унтарсан байна</string>
-    <string name="notification_cond_landscape">Дэлгэц нь ландшафт байна</string>
-    <string name="notification_cond_landscape_not">Дэлгэц нь хөрөг зураг дээр байна</string>
+    <string name="notification_cond_landscape">Дэлгэц хэвтээ байрлалтай байна</string>
+    <string name="notification_cond_landscape_not">Дэлгэц босоо байрлалтай байна</string>
     <string name="notification_cond_time">Цаг нь <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Цаг нь <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> биш байна</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g>-д холбогдсон</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g>-д холбогдоогүй байна</string>
     <string name="notification_cond_wifi_any">Wi-Fi-д холбогдсон</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi-д холбогдоогүй байна</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> урд байна</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> урд биш байна</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> дэлгэц дээр нээлттэй байна</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> дэлгэц дээр нээлттэй биш байна</string>
     <string name="notification_cond_from">Мэдэгдэл <xliff:g id="app" example="Chat">%1$s</xliff:g>-с ирсэн</string>
     <string name="notification_cond_from_not">Мэдэгдэл <xliff:g id="app" example="Chat">%1$s</xliff:g>-ээс ирээгүй байна</string>
     <string name="notification_cond_contains">Мэдэгдэлд <xliff:g id="text" example="urgent">%1$s</xliff:g> орсон байна</string>
     <string name="notification_cond_contains_not">Мэдэгдэлд <xliff:g id="text" example="urgent">%1$s</xliff:g> байхгүй байна</string>
-    <string name="notification_cond_silent">Хонхны дуу чимээгүй эсвэл чичирч байна</string>
-    <string name="notification_cond_silent_not">Хонхны дуу хангинаж байна</string>
-    <string name="notification_cond_media">Медиа тоглож байна</string>
-    <string name="notification_cond_media_not">Ямар ч медиа тоглуулахгүй байна</string>
-    <string name="notification_action_skip">битгий унш</string>
-    <string name="notification_action_private">зөвхөн програмын нэрийг уншина уу</string>
-    <string name="notification_action_not_private">хувийн байсан ч бүрэн эхээр нь уншина уу</string>
-    <string name="notification_action_format">ярианы форматыг ашиглах</string>
-    <string name="notification_action_max_words">хэд хэдэн үг хүртэл унших</string>
-    <string name="notification_action_no_limit">уртын хязгаарлалтгүйгээр унших</string>
+    <string name="notification_cond_silent">Хонхны дуу чимээгүй эсвэл чичиргээний горимд байна</string>
+    <string name="notification_cond_silent_not">Хонхны дуу асаалттай</string>
+    <string name="notification_cond_media">Медиа тоглуулж байна</string>
+    <string name="notification_cond_media_not">Медиа тоглуулж байхгүй</string>
+    <string name="notification_action_skip">уншихгүй</string>
+    <string name="notification_action_private">зөвхөн аппын нэрийг унших</string>
+    <string name="notification_action_not_private">хувийн байсан ч бүтнээр нь унших</string>
+    <string name="notification_action_format">ярианы формат ашиглах</string>
+    <string name="notification_action_max_words">тодорхой тооны үг хүртэл унших</string>
+    <string name="notification_action_no_limit">уртын хязгааргүй унших</string>
     <string name="notification_action_keep_emoji">эможи хадгалах</string>
-    <string name="notification_action_keep_numbers">тоонуудыг хамтад нь байлгах</string>
-    <string name="notification_action_priority">эхлээд унш</string>
-    <string name="notification_action_always_read">Чимээгүй цаг эсвэл бусад хязгаарлалттай үед ч мэдэгдлийг чангаар уншаарай</string>
-    <string name="notification_action_voice">дуут профайл ашиглан уншина уу</string>
-    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g>-тай унших</string>
-    <string name="notification_action_voice_sandfly">SandFly-ийн хоолойгоор уншина уу</string>
-    <string name="notification_voice_removed">Дуут профайлыг устгасан</string>
-    <string name="notification_action_format_value">ярианы форматыг ашиглах <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_keep_numbers">тоог хамт байлгах</string>
+    <string name="notification_action_priority">эхэлж унших</string>
+    <string name="notification_action_always_read">чимээгүй цаг болон мэдэгдэл уншдаггүй бусад үед ч унших</string>
+    <string name="notification_action_voice">дуу хоолойн профайлаар унших</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> профайлаар унших</string>
+    <string name="notification_action_voice_sandfly">SandFly-ийн хоолойгоор унших</string>
+    <string name="notification_voice_removed">Устгагдсан дуут профайл</string>
+    <string name="notification_action_format_value"><xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> ярианы формат ашиглах</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> хүртэл унших</string>
-    <string name="notification_off">Унтраах</string>
-    <string name="notification_on">Асаах</string>
+    <string name="notification_off">Унтраалттай</string>
+    <string name="notification_on">Асаалттай</string>
     <string name="notification_never_again">SandFly дахин эхлүүлэх хүртэл</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
     <string name="notification_speech_tile_label">Мэдэгдэлийг чангаар унших</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Мэдэгдлийг чанга уншихыг идэвхгүй болгосон</string>
     <string name="notification_no_last_notification">Мэдэгдэл уншаагүй</string>
     <string name="shortcut_read_notifications">Мэдэгдэл унших</string>
-    <string name="shortcut_toggle_notification_speech">Мэдэгдлийн яриа асаах эсвэл унтраах</string>
-    <string name="shortcut_read_last_notification">Сүүлийн мэдэгдлийг дахин уншина уу</string>
-    <string name="shortcut_stop_notification">Мэдэгдэл уншихаа боль</string>
+    <string name="shortcut_toggle_notification_speech">Мэдэгдэл уншихыг асаах эсвэл унтраах</string>
+    <string name="shortcut_read_last_notification">Сүүлийн мэдэгдлийг дахин унших</string>
+    <string name="shortcut_stop_notification">Мэдэгдэл уншихыг зогсоох</string>
     <string name="notification_test_posting">5 секундын дараа туршилтын мэдэгдэл ирнэ</string>
-    <string name="notification_test_not_allowed">SandFly-д эхлээд мэдэгдлийг харуулахыг зөвшөөрнө үү</string>
+    <string name="notification_test_not_allowed">Эхлээд SandFly-д мэдэгдэл харуулахыг зөвшөөрнө үү</string>
     <string name="notification_test_content_title">SandFly тест</string>
-    <string name="notification_test_content_text">Энэ бол туршилтын мэдэгдэл бөгөөд мэдэгдлийн тохиргоогоо уншина уу. 123456</string>
-    <string name="notification_automation_on">Чанга унших мэдэгдлийг идэвхжүүл</string>
-    <string name="notification_automation_off">Чанга унших мэдэгдлийг идэвхгүй болгох</string>
-    <string name="notification_automation_toggle">Чанга унших мэдэгдлийг идэвхжүүлэх эсвэл идэвхгүй болгох</string>
-    <string name="notification_automation_stop">Мэдэгдэл уншихыг зогсоо</string>
+    <string name="notification_test_content_text">Энэ нь таны мэдэгдлийн тохиргооны дагуу уншигдах туршилтын мэдэгдэл юм. 123456</string>
+    <string name="notification_automation_on">Мэдэгдэл уншихыг асаах</string>
+    <string name="notification_automation_off">Мэдэгдэл уншихыг унтраах</string>
+    <string name="notification_automation_toggle">Мэдэгдэл уншихыг асаах эсвэл унтраах</string>
+    <string name="notification_automation_stop">Уншиж буй мэдэгдлийг зогсоох</string>
     <string name="notification_automation_read_all">Мэдэгдэл унших</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунд</item>
@@ -343,7 +343,7 @@
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> текст тэмдэгт</item>
     </plurals>
     <plurals name="notification_digits">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> оронтой</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> цифр</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> цифр</item>
     </plurals>
     <plurals name="notification_summary_count">

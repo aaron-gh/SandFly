@@ -3,16 +3,16 @@
     <string name="notification_shake_3">Indartsua</string>
     <string name="notification_shake_2">Ertaina</string>
     <string name="notification_shake_1">Leuna</string>
-    <string name="notification_media_skip">Ez irakurri ozenki</string>
-    <string name="notification_media_pause">Eten komunikabideak irakurtzen ari zaren bitartean</string>
-    <string name="notification_media_read">Irakurri ozen</string>
+    <string name="notification_media_skip">Ez irakurri</string>
+    <string name="notification_media_pause">Pausatu multimedia irakurtzean</string>
+    <string name="notification_media_read">Irakurri</string>
     <string name="notification_headphones_only_without">Aurikularrik gabe bakarrik</string>
     <string name="notification_headphones_only_with">Aurikularrekin bakarrik</string>
     <string name="notification_headphones_always">Irakurri ozen entzungailuekin edo entzungailurik gabe</string>
     <string name="notification_queue_skip">Ez irakurri jakinarazpen berria ozen</string>
-    <string name="notification_queue_interrupt">Eten ozen irakurtzen ari den jakinarazpena</string>
-    <string name="notification_queue_queue">Irakurri ozen uneko jakinarazpenaren ondoren</string>
-    <string name="notification_url_omit">Utzi kanpoan</string>
+    <string name="notification_queue_interrupt">Eten</string>
+    <string name="notification_queue_queue">Irakurri ondoren</string>
+    <string name="notification_url_omit">Saltatu</string>
     <string name="notification_url_replace">Esan beheko testua</string>
     <string name="notification_url_domain">Irakurri gunea soilik</string>
     <string name="notification_url_full">Irakurri esteka osoa</string>
@@ -23,39 +23,39 @@
     <string name="notification_kinds_title">Jakinarazpen motak</string>
     <string name="notification_when_title">Noiz irakurri</string>
     <string name="notification_rules_title">Arauak</string>
-    <string name="notification_repeats_title">Errepikatzen</string>
+    <string name="notification_repeats_title">Errepikapenak</string>
     <string name="notification_stop_title">Utzi irakurtzeari</string>
-    <string name="notification_schedules_title">Laburpena eta denbora</string>
+    <string name="notification_schedules_title">Laburpena eta ordua</string>
     <string name="notification_history_title">Jakinarazpenen historia</string>
-    <string name="notification_test_title">Bidali probaren jakinarazpena</string>
+    <string name="notification_test_title">Bidali proba-jakinarazpen bat</string>
     <string name="notification_automation_title">Automatizazioa</string>
     <string name="notification_automation_allowed_title">Baimendu automatizazio-aplikazioak</string>
     <string name="notification_category_said">Esaten dena</string>
     <string name="notification_format_title">Hizketa formatua</string>
     <string name="notification_format_message">Leku-markak: {app}, {title}, {text}, {content} (testu osoa), {bigtext}, {subtext}, {ticker}, {category} eta {time}.</string>
-    <string name="notification_private_format_title">Jakinarazpen pribatuek diote</string>
-    <string name="notification_private_format_message">Jakinarazpen pribatu baten edukiaren ordez esana. Leku-markak: {app}, {category} eta {time}.</string>
+    <string name="notification_private_format_title">Jakinarazpen pribatuen irakurketa</string>
+    <string name="notification_private_format_message">Jakinarazpen pribatu baten edukiaren ordez esaten da. Leku-markak: {app}, {category} eta {time}.</string>
     <string name="notification_category_voice">Ahotsa</string>
     <string name="notification_voice_title">Ahotsa</string>
     <string name="notification_voice_sandfly">SandFlyren ahotsa</string>
     <string name="notification_detect_language_title">Hizkuntza detektatu</string>
-    <string name="notification_detect_language_summary">Esan jakinarazpen bakoitza idatzita dagoen hizkuntzan. Aldatu behar da hizkuntza automatikoki Testutik ahotserako ezarpenetan.</string>
+    <string name="notification_detect_language_summary">Jakinarazpen bakoitza idatzita dagoen hizkuntzan irakurtzen du. «Aldatu hizkuntza automatikoki» behar du Testua ahots bihurtzea atalean.</string>
     <string name="notification_sound_before_title">Soinua jakinarazpenen aurretik</string>
     <string name="notification_category_text">Testua</string>
     <string name="notification_remove_emoji_title">Utzi emojia kanpoan</string>
     <string name="notification_lowercase_title">Irakurri letra larriak hitz gisa</string>
-    <string name="notification_lowercase_summary">Hizketa-motor batzuek letra larriz letra larriz idazten dituzte hitzak</string>
+    <string name="notification_lowercase_summary">Hizketa-motor batzuek letra larriz idatzitako hitzak letraz letra irakurtzen dituzte</string>
     <string name="notification_separate_digits_title">Irakurri zenbaki luzeak zifraz zifra</string>
     <string name="notification_separate_digits_summary">Hala nola, kodeak eta telefono zenbakiak</string>
-    <string name="notification_min_digits_title">Gutxieneko zifrak zenbaki luze batean</string>
+    <string name="notification_min_digits_title">Zenbaki luze bateko gutxieneko zifra kopurua</string>
     <string name="notification_urls_title">Estekak</string>
-    <string name="notification_url_text_title">Esteka baten ordez esana</string>
-    <string name="notification_skip_empty_title">Saltatu jakinarazpenak testurik gabe</string>
+    <string name="notification_url_text_title">Esteka baten ordez esaten den testua</string>
+    <string name="notification_skip_empty_title">Saltatu testurik gabeko jakinarazpenak</string>
     <string name="notification_category_length">Luzera</string>
     <string name="notification_max_words_title">Gehienezko hitz kopurua</string>
     <string name="notification_max_sentences_title">Gehienezko esaldi kopurua</string>
     <string name="notification_max_characters_title">Gehienezko testu-karaktere kopurua</string>
-    <string name="notification_max_seconds_title">Utzi irakurtzea ondoren</string>
+    <string name="notification_max_seconds_title">Utzi irakurtzeari honen ondoren</string>
     <string name="notification_category_timing">Denboralizazioa</string>
     <string name="notification_delay_title">Irakurri aurretik itxaron</string>
     <string name="notification_queue_title">Beste jakinarazpen bat irakurtzen denean</string>
@@ -63,7 +63,7 @@
     <string name="notification_skip_media_title">Saltatu multimedia erreproduzitzaileak</string>
     <string name="notification_skip_ongoing_title">Saltatu etengabeko jakinarazpenak</string>
     <string name="notification_skip_ongoing_summary">Esaterako, nabigazioa eta tenporizadoreak</string>
-    <string name="notification_skip_foreground_title">Saltatu aplikazioen jakinarazpenak martxan</string>
+    <string name="notification_skip_foreground_title">Saltatu martxan dauden aplikazioen jakinarazpenak</string>
     <string name="notification_skip_foreground_summary">Esaterako, VPN edo grabagailu bat</string>
     <string name="notification_skip_progress_title">Saltatu aurrerapen jakinarazpenak</string>
     <string name="notification_skip_group_summaries_title">Saltatu taldeen laburpenak</string>
@@ -76,13 +76,13 @@
     <string name="notification_headphones_title">Entzungailuak</string>
     <string name="notification_media_title">Multimedia erreproduzitzen den bitartean</string>
     <string name="notification_dnd_title">Ez molestatu</string>
-    <string name="notification_dnd_none">Ez irakurri jakinarazpenik ozen</string>
+    <string name="notification_dnd_none">Ez irakurri bat ere</string>
     <string name="notification_dnd_allowed">Irakurri Ez molestatu moduak onartzen dituen jakinarazpenak</string>
     <string name="notification_dnd_all">Irakurri guztia</string>
     <string name="notification_touch_title">Pantaila ukituta dagoen bitartean</string>
     <string name="notification_touch_read">Irakurri berehala</string>
     <string name="notification_touch_after">Irakurri ukitua amaitzen denean</string>
-    <string name="notification_touch_skip">Ez irakurri ozenki</string>
+    <string name="notification_touch_skip">Ez irakurri</string>
     <string name="notification_during_calls_title">Deietan zehar</string>
     <string name="notification_honour_silent_title">Ez modu isilean</string>
     <string name="notification_honour_vibrate_title">Ez bibrazio moduan</string>
@@ -90,26 +90,26 @@
     <string name="notification_skip_in_car_summary">Esaterako, Android Autorekin, berak irakurtzen dituena</string>
     <string name="notification_category_quiet_hours">Ordu lasaiak</string>
     <string name="notification_quiet_hours_title">Ordu lasaiak</string>
-    <string name="notification_quiet_start_title">Hasi</string>
+    <string name="notification_quiet_start_title">Hasiera</string>
     <string name="notification_quiet_end_title">Amaiera</string>
-    <string name="notification_repeat_seconds_title">Saltatu jakinarazpen bera</string>
-    <string name="notification_numbers_alike_title">Tratatu zenbaki desberdinak berdin gisa</string>
+    <string name="notification_repeat_seconds_title">Jakinarazpen bera saltatzeko denbora</string>
+    <string name="notification_numbers_alike_title">Zenbakiak berdintzat hartzen dira</string>
     <string name="notification_numbers_alike_summary">Esaterako, deskargaren ehunekoa</string>
     <string name="notification_cooldown_title">Aplikazio baten jakinarazpenen arteko denbora</string>
-    <string name="notification_skip_prefix_title">Utzi errepikatutako testu-aurrizki bat</string>
+    <string name="notification_skip_prefix_title">Kendu errepikatutako hasiera</string>
     <string name="notification_skip_prefix_summary">Hala nola, txat bateko talde baten izena</string>
-    <string name="notification_prefix_memory_title">Zenbat denbora gogoratu testu-aurrizkia</string>
-    <string name="notification_access_summary">Baztertutako jakinarazpen bat irakurtzeari utzi eta laburpenak egiteko</string>
+    <string name="notification_prefix_memory_title">Hasiera gogoratzeko denbora</string>
+    <string name="notification_access_summary">Baztertutako jakinarazpen bat irakurtzeari uzteko eta laburpenetarako behar da</string>
     <string name="notification_shake_title">Astindu gelditzeko</string>
-    <string name="notification_shake_strength_title">Dardararen intentsitatea</string>
-    <string name="notification_wave_title">Egin eskua irakurtzeari uzteko</string>
+    <string name="notification_shake_strength_title">Astintzearen indarra</string>
+    <string name="notification_wave_title">Egin keinu eskuarekin gelditzeko</string>
     <string name="notification_wave_summary">Esku bat hurbiltasun-sentsorearen gainean mugitzea</string>
     <string name="notification_pocket_title">Poltsiko modua</string>
-    <string name="notification_pocket_summary">Irakurtzen hasten denean estalita dagoen sentsore batek, poltsiko batean bezala, ez du gelditzen</string>
+    <string name="notification_pocket_summary">Irakurtzen hastean sentsorea estalita badago, poltsikoan adibidez, irakurketa ez da gelditzen</string>
     <string name="notification_volume_keys_title">Sakatu bolumen-tekla biak</string>
-    <string name="notification_dismiss_title">Utzi irakurtzea jakinarazpena baztertzen denean</string>
+    <string name="notification_dismiss_title">Gelditu baztertzean</string>
     <string name="notification_watch_dismiss_title">Jakinarazpena erloju adimendun batean baztertzen denean ere</string>
-    <string name="notification_app_cancel_title">Utzi irakurtzea aplikazioak jakinarazpena kentzen duenean</string>
+    <string name="notification_app_cancel_title">Gelditu aplikazioak kentzen duenean</string>
     <string name="notification_category_summary">Laburpena</string>
     <string name="notification_summary_now_title">Irakurri jakinarazpenak orain</string>
     <string name="notification_summary_daily_title">Irakurri jakinarazpenak egunero</string>
@@ -124,34 +124,34 @@
     <string name="notification_summary_evening">Arratsalde on.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">Orduko iragarkiak</string>
-    <string name="notification_clock_interval_title">Esan ordu bakoitzean</string>
+    <string name="notification_category_clock">Orduaren iragarpenak</string>
+    <string name="notification_clock_interval_title">Orduaren iragarpen-tartea</string>
     <string name="notification_clock_format_title">Orduaren formatua</string>
     <string name="notification_clock_format_message">Leku-markak: {time}, {date} eta {battery} (bateria-ehunekoa).</string>
     <string name="notification_clock_format_default">{time} da</string>
     <string name="notification_clock_exact_title">Ordu zehatzak</string>
-    <string name="notification_clock_exact_summary">Alarmak eta abisuak behar ditu. Bestela, ordua minutu bat berandu arte esan daiteke.</string>
+    <string name="notification_clock_exact_summary">«Alarmak eta abisuak» baimena behar du. Bestela, ordua minutu bat beranduago esan daiteke.</string>
     <string name="notification_other_apps_title">Beste aplikazio batzuk</string>
     <string name="notification_apps_category">Aplikazioak</string>
     <string name="notification_apps_loading">Aplikazioak kargatzen</string>
     <string name="notification_app_mode_title">Jakinarazpenak</string>
-    <string name="notification_app_mode_default">Beste aplikazio batzuk bezala</string>
-    <string name="notification_app_mode_read">Irakurri ozen</string>
+    <string name="notification_app_mode_default">Beste aplikazioak bezala</string>
+    <string name="notification_app_mode_read">Irakurri</string>
     <string name="notification_app_mode_private">Aplikazioaren izena soilik</string>
     <string name="notification_app_mode_priority">Irakurri lehenik</string>
-    <string name="notification_app_mode_ignore">Ez irakurri ozenki</string>
+    <string name="notification_app_mode_ignore">Ez irakurri</string>
     <string name="notification_app_name_title">Ahozko izena</string>
-    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> gisa esan zuen</string>
+    <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> gisa esaten da</string>
     <string name="notification_app_reset">Berrezarri</string>
-    <string name="notification_required_title">Irakurri jakinarazpenak bakarrik</string>
-    <string name="notification_blocked_title">Ez irakurri jakinarazpenak honekin</string>
-    <string name="notification_private_title">Irakurri aplikazioaren izena soilik</string>
-    <string name="notification_replacements_title">Bestela esan</string>
+    <string name="notification_required_title">Irakurri hauek dituzten jakinarazpenak soilik</string>
+    <string name="notification_blocked_title">Ez irakurri hauek dituzten jakinarazpenak</string>
+    <string name="notification_private_title">Irakurri aplikazioaren izena soilik hauek dituzten jakinarazpenetan</string>
+    <string name="notification_replacements_title">Beste ahoskera bat</string>
     <string name="notification_add_word">Gehitu hitz bat</string>
     <string name="notification_add_replacement">Gehitu ordezko bat</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> gisa</string>
     <string name="notification_replace_find">Testua</string>
-    <string name="notification_replace_with">Esan bezala</string>
+    <string name="notification_replace_with">Ahoskatu honela</string>
     <string name="notification_whole_words">Hitz osoak bakarrik</string>
     <string name="notification_regex">Adierazpen erregularra</string>
     <string name="notification_enter_text">Sartu testu bat</string>
@@ -163,41 +163,41 @@
     <string name="notification_history_category">Jakinarazpenak</string>
     <string name="notification_history_empty">Ez dago jakinarazpenik</string>
     <string name="notification_history_ignore_app">Ez irakurri <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Irakurri bakarrik <xliff:g id="app" example="Chat">%1$s</xliff:g> izena</string>
+    <string name="notification_history_private_app">Irakurri <xliff:g id="app" example="Chat">%1$s</xliff:g> aplikazioaren izena soilik</string>
     <string name="notification_history_priority_app">Irakurri lehenik <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_block_similar">Ez irakurri honelako jakinarazpenak</string>
     <string name="notification_history_copy">Kopiatu</string>
     <string name="notification_saved">Gorde</string>
-    <string name="notification_copied">Kopiatua</string>
-    <string name="notification_outcome_read">Irakurri ozenki ongi</string>
+    <string name="notification_copied">Kopiatu da</string>
+    <string name="notification_outcome_read">Irakurrita</string>
     <string name="notification_outcome_stopped">Irakurri bitartean gelditu da</string>
-    <string name="notification_outcome_speech_off">Ez da irakurri: jakinarazpenen hizketa desaktibatuta dago</string>
-    <string name="notification_outcome_dnd">Ez irakurri: Ez molestatu</string>
-    <string name="notification_outcome_touching">Irakurri gabe: pantaila ukitu zen</string>
-    <string name="notification_outcome_app">Ez irakurri: aplikazioa</string>
+    <string name="notification_outcome_speech_off">Irakurri gabe: jakinarazpenak ozen irakurtzea desaktibatuta dago</string>
+    <string name="notification_outcome_dnd">Irakurri gabe: Ez molestatu</string>
+    <string name="notification_outcome_touching">Irakurri gabe: pantaila ukitu da</string>
+    <string name="notification_outcome_app">Irakurri gabe: aplikazioa</string>
     <string name="notification_outcome_ongoing">Irakurri gabe: abian</string>
-    <string name="notification_outcome_foreground">Ez da irakurri: aplikazioa martxan</string>
-    <string name="notification_outcome_low_priority">Ez irakurri: lehentasun baxua</string>
+    <string name="notification_outcome_foreground">Irakurri gabe: aplikazioa irekita dago</string>
+    <string name="notification_outcome_low_priority">Irakurri gabe: lehentasun txikia</string>
     <string name="notification_outcome_system">Irakurri gabe: sistema</string>
-    <string name="notification_outcome_media">Irakurri gabe: multimedia erreproduzitzailea</string>
+    <string name="notification_outcome_media">Irakurri gabe: multimedia-erreproduzigailua</string>
     <string name="notification_outcome_group_summary">Irakurri gabe: taldearen laburpena</string>
     <string name="notification_outcome_progress">Irakurri gabe: aurrerapena</string>
-    <string name="notification_outcome_required">Irakurri gabe: beharrezkoak diren hitzak falta dira</string>
+    <string name="notification_outcome_required">Irakurri gabe: derrigorrezko hitzak falta dira</string>
     <string name="notification_outcome_blocked">Irakurri gabe: hitz blokeatua</string>
     <string name="notification_outcome_empty">Irakurri gabe: testurik ez</string>
-    <string name="notification_outcome_repeat">Ez irakurri: errepikatu</string>
-    <string name="notification_outcome_cooldown">Ez da ozen irakurri: duela gutxi irakurri da aplikazio honen beste jakinarazpen bat</string>
-    <string name="notification_outcome_quiet_hours">Ez irakurri: ordu lasaiak</string>
+    <string name="notification_outcome_repeat">Irakurri gabe: errepikapena</string>
+    <string name="notification_outcome_cooldown">Irakurri gabe: aplikazioa duela gutxiegi irakurri da</string>
+    <string name="notification_outcome_quiet_hours">Irakurri gabe: ordu lasaiak</string>
     <string name="notification_outcome_screen_on">Irakurri gabe: pantaila piztuta</string>
     <string name="notification_outcome_screen_off">Irakurri gabe: pantaila itzalita</string>
     <string name="notification_outcome_locked">Irakurri gabe: blokeatuta</string>
     <string name="notification_outcome_headphones">Irakurri gabe: entzungailuak konektatuta</string>
-    <string name="notification_outcome_no_headphones">Ez irakurri: entzungailurik ez</string>
+    <string name="notification_outcome_no_headphones">Irakurri gabe: entzungailurik ez</string>
     <string name="notification_outcome_silent">Irakurri gabe: modu isila</string>
-    <string name="notification_outcome_vibrate">Ez da irakurri: dardara modua</string>
+    <string name="notification_outcome_vibrate">Irakurri gabe: dardara modua</string>
     <string name="notification_outcome_media_playing">Irakurri gabe: multimedia erreproduzitzen</string>
-    <string name="notification_outcome_car">Ez irakurri: auto modua</string>
-    <string name="notification_outcome_rule">Ez irakurri: araua</string>
+    <string name="notification_outcome_car">Irakurri gabe: auto modua</string>
+    <string name="notification_outcome_rule">Irakurri gabe: araua</string>
     <string name="notification_outcome_busy">Irakurri gabe: beste jakinarazpen bat irakurri da</string>
     <string name="notification_outcome_call">Sarrerako telefono dei gisa iragarri da</string>
     <string name="notification_rule_add">Gehitu arau bat</string>
@@ -206,11 +206,11 @@
     <string name="notification_rules_empty">Araurik ez</string>
     <string name="notification_rule_name">Izena</string>
     <string name="notification_rule_untitled">Araua</string>
-    <string name="notification_rule_enabled">Piztuta</string>
+    <string name="notification_rule_enabled">Aktibatuta</string>
     <string name="notification_rule_match">Baldintzak</string>
     <string name="notification_rule_match_all">Baldintza guztiak bete behar dira</string>
     <string name="notification_rule_match_any">Gutxienez baldintza bat bete behar da</string>
-    <string name="notification_rule_conditions">Noiz</string>
+    <string name="notification_rule_conditions">Baldin eta</string>
     <string name="notification_rule_actions">Gero</string>
     <string name="notification_rule_add_condition">Gehitu baldintza bat</string>
     <string name="notification_rule_add_action">Gehitu ekintza bat</string>
@@ -226,7 +226,7 @@
     <string name="notification_template_night">Isilik gauez</string>
     <string name="notification_template_screen_off">Pantaila itzalita dagoela bakarrik</string>
     <string name="notification_template_locked_private">Telefonoa blokeatuta dagoenean aplikazioaren izena bakarrik</string>
-    <string name="notification_template_short_on_battery">Irakurri laburki kargatzen ez duzunean</string>
+    <string name="notification_template_short_on_battery">Laburra kargatzen ari ez denean</string>
     <string name="notification_type_bluetooth">Bluetooth gailua</string>
     <string name="notification_type_wired">Kable bidezko aurikularrak</string>
     <string name="notification_type_wifi">Wi-Fi sarea</string>
@@ -244,7 +244,7 @@
     <string name="notification_bluetooth_any">Edozein gailu</string>
     <string name="notification_wifi_hint">Sarearen izena</string>
     <string name="notification_choose_app">Aukeratu aplikazio bat</string>
-    <string name="notification_time_start">Bertatik</string>
+    <string name="notification_time_start">Hasiera</string>
     <string name="notification_time_end">Arte</string>
     <string name="notification_time_days">Egunak</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g>-tik <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
@@ -258,44 +258,44 @@
     <string name="notification_cond_battery_below">Bateria ehuneko <xliff:g id="percent" example="20">%1$d</xliff:g> azpitik dago</string>
     <string name="notification_cond_battery_below_not">Bateria ehuneko <xliff:g id="percent" example="20">%1$d</xliff:g> edo gehiagokoa da</string>
     <string name="notification_cond_charging">Telefonoa kargatzen ari da</string>
-    <string name="notification_cond_charging_not">Telefonoa ez da kargatzen</string>
+    <string name="notification_cond_charging_not">Telefonoa ez dago kargatzen</string>
     <string name="notification_cond_locked">Telefonoa blokeatuta dago</string>
     <string name="notification_cond_locked_not">Telefonoa desblokeatuta dago</string>
     <string name="notification_cond_screen_on">Pantaila piztuta dago</string>
     <string name="notification_cond_screen_on_not">Pantaila itzalita dago</string>
-    <string name="notification_cond_landscape">Pantaila paisaian dago</string>
-    <string name="notification_cond_landscape_not">Pantaila erretratuan dago</string>
+    <string name="notification_cond_landscape">Pantaila horizontalean dago</string>
+    <string name="notification_cond_landscape_not">Pantaila bertikalean dago</string>
     <string name="notification_cond_time">Ordua <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> da</string>
     <string name="notification_cond_time_not">Ordua ez da <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g>-rekin konektatuta</string>
-    <string name="notification_cond_wifi_not">Ez dago konektatuta <xliff:g id="network" example="Home">%1$s</xliff:g></string>
+    <string name="notification_cond_wifi_not">Ez dago <xliff:g id="network" example="Home">%1$s</xliff:g> sarera konektatuta</string>
     <string name="notification_cond_wifi_any">Wi-Fi-rekin konektatuta</string>
     <string name="notification_cond_wifi_any_not">Ez dago Wi-Fi sarera konektatuta</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> lehen planoan dago</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ez dago aurrean</string>
-    <string name="notification_cond_from">Jakinarazpena <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">Jakinarazpena ez da <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ez dago lehen planoan</string>
+    <string name="notification_cond_from">Jakinarazpena <xliff:g id="app" example="Chat">%1$s</xliff:g> aplikaziokoa da</string>
+    <string name="notification_cond_from_not">Jakinarazpena ez da <xliff:g id="app" example="Chat">%1$s</xliff:g> aplikaziokoa</string>
     <string name="notification_cond_contains">Jakinarazpenak <xliff:g id="text" example="urgent">%1$s</xliff:g> dauka</string>
-    <string name="notification_cond_contains_not">Jakinarazpenak ez du <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Jakinarazpenak ez dauka <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Txirrina isilik edo bibrazio moduan dago</string>
-    <string name="notification_cond_silent_not">Eraztunak jotzen du</string>
+    <string name="notification_cond_silent_not">Tonua aktibatuta dago</string>
     <string name="notification_cond_media">Media jotzen ari da</string>
-    <string name="notification_cond_media_not">Ez da komunikabiderik erreproduzitzen</string>
+    <string name="notification_cond_media_not">Ez da multimediarik erreproduzitzen</string>
     <string name="notification_action_skip">ez irakurri</string>
     <string name="notification_action_private">irakurri aplikazioaren izena soilik</string>
-    <string name="notification_action_not_private">osorik irakurri, pribatua bada ere</string>
-    <string name="notification_action_format">erabili hizketa formatua</string>
-    <string name="notification_action_max_words">irakurri hainbat hitz</string>
-    <string name="notification_action_no_limit">irakurri luzera mugarik gabe</string>
-    <string name="notification_action_keep_emoji">mantendu emojia</string>
-    <string name="notification_action_keep_numbers">mantendu zenbakiak batera</string>
-    <string name="notification_action_priority">irakurri lehenengo</string>
-    <string name="notification_action_always_read">Irakurri jakinarazpenak ozen ordu lasaietan edo beste ordu mugatu batzuetan ere</string>
-    <string name="notification_action_voice">irakurri ahots-profilarekin</string>
-    <string name="notification_action_voice_value">irakurri <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_not_private">irakurri osorik, pribatua bada ere</string>
+    <string name="notification_action_format">erabili hizketa-formatu bat</string>
+    <string name="notification_action_max_words">irakurri hitz kopuru jakin bat arte</string>
+    <string name="notification_action_no_limit">irakurri luzera-mugarik gabe</string>
+    <string name="notification_action_keep_emoji">mantendu emojiak</string>
+    <string name="notification_action_keep_numbers">mantendu zenbakiak elkarrekin</string>
+    <string name="notification_action_priority">irakurri lehenik</string>
+    <string name="notification_action_always_read">irakurri ordu lasaietan eta jakinarazpenak irakurtzen ez diren beste uneetan ere</string>
+    <string name="notification_action_voice">irakurri ahots-profil batekin</string>
+    <string name="notification_action_voice_value">irakurri <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> profilarekin</string>
     <string name="notification_action_voice_sandfly">irakurri SandFly-ren ahotsarekin</string>
-    <string name="notification_voice_removed">Ahots profila kendu da</string>
-    <string name="notification_action_format_value">erabili hizketa formatua <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_voice_removed">Kendutako ahots-profila</string>
+    <string name="notification_action_format_value">erabili <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> hizketa-formatua</string>
     <string name="notification_action_max_words_value">irakurri <xliff:g id="words" example="10 words">%1$s</xliff:g> arte</string>
     <string name="notification_off">Desaktibatuta</string>
     <string name="notification_on">Aktibatuta</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">Jakinarazpenak ozen irakurtzea desgaituta dago</string>
     <string name="notification_no_last_notification">Ez da jakinarazpenik irakurri</string>
     <string name="shortcut_read_notifications">Irakurri jakinarazpenak</string>
-    <string name="shortcut_toggle_notification_speech">Jakinarazpenen hizkera aktibatu edo desaktibatuta</string>
+    <string name="shortcut_toggle_notification_speech">Jakinarazpenak ozen irakurtzea: aktibatu edo desaktibatu</string>
     <string name="shortcut_read_last_notification">Irakurri berriro azken jakinarazpena</string>
     <string name="shortcut_stop_notification">Utzi jakinarazpena irakurtzeari</string>
-    <string name="notification_test_posting">5 segundotan probaren jakinarazpen bat dator</string>
-    <string name="notification_test_not_allowed">Baimendu SandFly jakinarazpenak lehenik erakusteko</string>
+    <string name="notification_test_posting">Proba-jakinarazpen bat agertuko da 5 segundo barru</string>
+    <string name="notification_test_not_allowed">Lehenik, baimendu SandFly-ri jakinarazpenak erakustea</string>
     <string name="notification_test_content_title">SandFly proba</string>
-    <string name="notification_test_content_text">Probako jakinarazpena da hau, zure jakinarazpen-ezarpenekin irakurri. 123456</string>
-    <string name="notification_automation_on">Gaitu ozen irakurtzeko jakinarazpenak</string>
-    <string name="notification_automation_off">Desgaitu ozen irakurtzeko jakinarazpenak</string>
-    <string name="notification_automation_toggle">Gaitu edo desgaitu ozen irakurtzeko jakinarazpenak</string>
-    <string name="notification_automation_stop">Utzi jakinarazpena irakurtzeari</string>
+    <string name="notification_test_content_text">Hau probako jakinarazpen bat da, zure jakinarazpen-ezarpenen arabera irakurria. 123456</string>
+    <string name="notification_automation_on">Aktibatu jakinarazpenak ozen irakurtzea</string>
+    <string name="notification_automation_off">Desaktibatu jakinarazpenak ozen irakurtzea</string>
+    <string name="notification_automation_toggle">Aktibatu edo desaktibatu jakinarazpenak ozen irakurtzea</string>
+    <string name="notification_automation_stop">Gelditu jakinarazpena irakurtzea</string>
     <string name="notification_automation_read_all">Irakurri jakinarazpenak</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> segundo</item>

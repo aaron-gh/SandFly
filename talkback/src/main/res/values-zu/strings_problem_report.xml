@@ -4,13 +4,13 @@
     <string name="title_pref_problem_report_type">Uhlobo lwempendulo</string>
     <string name="title_pref_problem_report_area">Indawo</string>
     <string name="title_pref_problem_report_title">Isihloko</string>
-    <string name="title_pref_problem_report_app">Uhlelo lokusebenza lapho kwenzeka</string>
+    <string name="title_pref_problem_report_app">Uhlelo lokusebenza lapho kwenzeka khona</string>
     <string name="title_pref_problem_report_description">Incazelo</string>
     <string name="dialog_message_problem_report_description">Kwenzekani kanye nalokho obukulindele.</string>
-    <string name="title_pref_problem_report_steps">Izinyathelo zokukhiqiza kabusha inkinga yesoftware</string>
+    <string name="title_pref_problem_report_steps">Izinyathelo zokuphinda inkinga</string>
     <string name="title_pref_problem_report_email">I-imeyili yezimpendulo</string>
     <string name="title_pref_problem_report_device">Faka ulwazi lwedivayisi</string>
-    <string name="title_pref_problem_report_log">Faka phakathi SandFly log</string>
+    <string name="title_pref_problem_report_log">Faka ilogi ye-SandFly</string>
     <string name="summary_pref_problem_report_log">Ingaqukatha umbhalo ovela esikrinini</string>
     <string name="title_pref_problem_report_send">Thumela</string>
     <string name="summary_pref_problem_report_sending">Iyathumela</string>
@@ -23,21 +23,21 @@
     <string-array name="problem_report_type_entries">
         <item>Ukuziphatha okungalungile</item>
         <item>Ukuphahlazeka</item>
-        <item>Iyanensa noma ayiphenduli</item>
-        <item>Ukusikisela</item>
+        <item>Kuyanensa noma akuphenduli</item>
+        <item>Isiphakamiso</item>
     </string-array>
     <string-array name="problem_report_area_entries">
         <item>Inkulumo</item>
         <item>Okwenziwayo</item>
-        <item>Thinta ukuhlola</item>
+        <item>Hlola ngokuthinta</item>
         <item>Izilawuli zokufunda namamenyu</item>
         <item>Ukuthayipha namakhibhodi</item>
         <item>Ikhibhodi ye-Braille</item>
         <item>Isibonisi se-braille</item>
-        <item>Imisindo nokudlidliza</item>
+        <item>Umsindo nokudlidliza</item>
         <item>Izaziso</item>
         <item>Okuqukethwe kwewebhu</item>
-        <item>Izikriphthi</item>
+        <item>Iziskripthi</item>
         <item>Amasethingi</item>
         <item>Izibuyekezo</item>
         <item>Okunye</item>
@@ -56,7 +56,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> izimpendulo ezintsha</item>
     </plurals>
     <string name="report_status_changed">isimo sishintshile</string>
-    <string name="report_status_open">Vula udaba</string>
+    <string name="report_status_open">Kuvuliwe</string>
     <string name="report_status_completed">Kuvaliwe, kuqediwe</string>
     <string name="report_status_not_planned">Kuvaliwe, akuhleliwe</string>
     <string name="report_status_duplicate">Ivaliwe, impinda</string>
@@ -66,7 +66,7 @@
     <string name="title_report_messages">Imilayezo</string>
     <string name="report_message_from_developer">Unjiniyela, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">Wena, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Phendula</string>
+    <string name="title_report_reply">Impendulo</string>
     <string name="title_report_reply_text">Impendulo yakho</string>
     <string name="title_report_send_reply">Thumela impendulo</string>
     <string name="report_reply_sent">Impendulo ithunyelwe.</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Susa</string>
     <string name="report_missing">Le mpendulo ayisekho ebhokisini lokungenayo.</string>
     <string name="notification_channel_problem_reports">Izimpendulo zempendulo</string>
-    <string name="report_notification_reply">Phendula ku-<xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Impendulo ku-<xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

@@ -10,18 +10,18 @@
     <string name="title_pref_gemini_model">Gemini-Modell</string>
     <string name="gemini_model_automatic">Automatisch</string>
     <string name="summary_pref_gemini_model_automatic">Automatisch: Gemini Flash, dann Flash-Lite, wenn Flash beschäftigt ist</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, dann Flash-Lite, wenn es beschäftigt ist</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, dann Flash-Lite, wenn es ausgelastet ist</string>
     <string name="gemini_model_loading">Modelle werden abgerufen…</string>
     <string name="gemini_model_list_failed">Die Modelle konnten nicht abgerufen werden: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Zuerst einen Gemini-API-Schlüssel festlegen</string>
     <string name="ai_service_address_hint">Adresse, z. B. https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Modell</string>
     <string name="ai_service_address_invalid">Die Adresse muss mit https:// beginnen. Es wurde nichts gespeichert.</string>
-    <string name="dialog_message_ai_service_consent">Bilder und Screenshots werden zur Beschreibung an <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> gesendet, was mehrere Sekunden dauert. Es gelten eigene Geschäftsbedingungen und Datenschutzbestimmungen. Generative KI ist experimentell und macht daher Fehler.</string>
-    <string name="ai_service_error_api_key">Der KI-Dienst hat den API-Schlüssel nicht akzeptiert. Überprüfen Sie seine Einstellungen unter Automatische Beschreibungen.</string>
-    <string name="ai_service_error_quota">Das Nutzungslimit des KI-Dienstes wurde erreicht. Versuchen Sie es später erneut.</string>
-    <string name="ai_service_error_busy">Der KI-Dienst ist gerade beschäftigt. Versuchen Sie es gleich noch einmal.</string>
-    <string name="ai_service_error_timeout">Die Antwort des KI-Dienstes dauerte zu lange. Versuchen Sie es erneut.</string>
+    <string name="dialog_message_ai_service_consent">Bilder und Screenshots werden zur Beschreibung an <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> gesendet, was einige Sekunden dauert. Es gelten die Nutzungsbedingungen und die Datenschutzerklärung dieses Dienstes. Generative KI ist experimentell und macht daher Fehler.</string>
+    <string name="ai_service_error_api_key">Der KI-Dienst hat den API-Schlüssel nicht akzeptiert. Prüfe seine Einstellungen unter „Automatische Beschreibungen“.</string>
+    <string name="ai_service_error_quota">Das Nutzungslimit des KI-Dienstes ist erreicht. Versuch es später noch einmal.</string>
+    <string name="ai_service_error_busy">Der KI-Dienst ist gerade ausgelastet. Versuch es gleich noch einmal.</string>
+    <string name="ai_service_error_timeout">Die Antwort des KI-Dienstes hat zu lange gedauert. Versuch es noch einmal.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Keine</string>
-    <string name="ai_service_not_set_up">Es wird kein KI-Dienst verwendet. Richten Sie einen Dienst ein oder wählen Sie einen unter Automatische Beschreibungen aus.</string>
-    <string name="ai_provider_none_set_up">Es ist kein KI-Dienst eingerichtet. Richten Sie einen in den Einstellungen unten ein.</string>
+    <string name="ai_service_not_set_up">Es wird kein KI-Dienst verwendet. Richte einen Dienst ein oder wähle einen unter „Automatische Beschreibungen“ aus.</string>
+    <string name="ai_provider_none_set_up">Es ist kein KI-Dienst eingerichtet. Richte einen in seinen Einstellungen unten ein.</string>
     <string name="ai_provider_other">Anderer Dienst</string>
     <string name="title_pref_category_ai_services">KI-Dienste</string>
     <string name="title_pref_ai_provider">KI-Dienst</string>
@@ -39,7 +39,7 @@
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nicht eingerichtet</string>
     <string name="ai_provider_in_use">Wird verwendet</string>
     <string name="ai_provider_not_set_up">Nicht eingerichtet</string>
-    <string name="ai_provider_not_ready">Wählen Sie zunächst ein Modell</string>
+    <string name="ai_provider_not_ready">Zuerst ein Modell auswählen</string>
     <string name="ai_provider_address">Adresse</string>
     <string name="ai_provider_address_message">Die Adresse eines Dienstes mit einer OpenAI-kompatiblen Chat-API und Bildeingabe, z. B. https://example.com/v1.</string>
     <string name="ai_provider_not_set">Nicht festgelegt</string>
@@ -47,8 +47,8 @@
     <string name="title_pref_gemini_api_key_of">API-Schlüssel für <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">Modell für <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Nicht ausgewählt</string>
-    <string name="ai_provider_key_message">Fügen Sie Ihren API-Schlüssel für <xliff:g id="service" example="Claude">%1$s</xliff:g> ein. Zum Entfernen leeren Sie das Feld und speichern Sie. Bilder und Bildschirme, die Sie beschreiben lassen, werden an <xliff:g id="service" example="Claude">%1$s</xliff:g> gesendet.</string>
+    <string name="ai_provider_key_message">Füge deinen API-Schlüssel für <xliff:g id="service" example="Claude">%1$s</xliff:g> ein. Zum Entfernen leere das Feld und speichere. Bilder und Bildschirme, die du beschreiben lässt, werden an <xliff:g id="service" example="Claude">%1$s</xliff:g> gesendet.</string>
     <string name="ai_provider_needs_key">Zuerst den API-Schlüssel für <xliff:g id="service" example="Claude">%1$s</xliff:g> festlegen</string>
-    <string name="ai_provider_needs_address">Stellen Sie zunächst die Adresse ein</string>
-    <string name="ai_provider_enter_model">Geben Sie einen Modellnamen ein</string>
+    <string name="ai_provider_needs_address">Zuerst die Adresse festlegen</string>
+    <string name="ai_provider_enter_model">Modellnamen eingeben</string>
 </resources>

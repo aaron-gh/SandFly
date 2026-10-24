@@ -2,54 +2,54 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Nguvu</string>
     <string name="notification_shake_2">Kati</string>
-    <string name="notification_shake_1">Mpole</string>
-    <string name="notification_media_skip">Usisome kwa sauti</string>
+    <string name="notification_shake_1">Kidogo</string>
+    <string name="notification_media_skip">Usisome</string>
     <string name="notification_media_pause">Sitisha media unaposoma</string>
-    <string name="notification_media_read">Soma kwa sauti</string>
-    <string name="notification_headphones_only_without">Bila vichwa vya sauti pekee</string>
+    <string name="notification_media_read">Soma</string>
+    <string name="notification_headphones_only_without">Bila vipokea sauti vya kichwani pekee</string>
     <string name="notification_headphones_only_with">Na vipokea sauti vinavyobanwa kichwani pekee</string>
     <string name="notification_headphones_always">Soma kwa sauti ukiwa na au bila vipokea sauti vinavyobanwa kichwani</string>
-    <string name="notification_queue_skip">Usisome arifa mpya kwa sauti</string>
-    <string name="notification_queue_interrupt">Kataza arifa inayosomwa kwa sauti</string>
-    <string name="notification_queue_queue">Soma kwa sauti baada ya arifa ya sasa</string>
-    <string name="notification_url_omit">Ondoka</string>
+    <string name="notification_queue_skip">Usisome mpya</string>
+    <string name="notification_queue_interrupt">Katiza</string>
+    <string name="notification_queue_queue">Soma baadaye</string>
+    <string name="notification_url_omit">Ruka</string>
     <string name="notification_url_replace">Sema maandishi hapa chini</string>
     <string name="notification_url_domain">Soma tovuti pekee</string>
     <string name="notification_url_full">Soma kiungo kizima</string>
     <string name="notification_category_title">Arifa</string>
     <string name="notification_reading_title">Kusoma arifa kwa sauti</string>
     <string name="notification_apps_title">Programu</string>
-    <string name="notification_words_title">Maneno na uingizwaji</string>
+    <string name="notification_words_title">Maneno na mbadala</string>
     <string name="notification_kinds_title">Aina za arifa</string>
     <string name="notification_when_title">Wakati wa kusoma</string>
     <string name="notification_rules_title">Kanuni</string>
-    <string name="notification_repeats_title">Hurudia</string>
+    <string name="notification_repeats_title">Marudio</string>
     <string name="notification_stop_title">Acha kusoma</string>
     <string name="notification_schedules_title">Muhtasari na wakati</string>
     <string name="notification_history_title">Historia ya arifa</string>
     <string name="notification_test_title">Tuma arifa ya jaribio</string>
-    <string name="notification_automation_title">Otomatiki</string>
+    <string name="notification_automation_title">Uendeshaji otomatiki</string>
     <string name="notification_automation_allowed_title">Ruhusu programu za otomatiki</string>
     <string name="notification_category_said">Kinachosemwa</string>
-    <string name="notification_format_title">Umbizo la hotuba</string>
+    <string name="notification_format_title">Umbizo la matamshi</string>
     <string name="notification_format_message">Vishika nafasi: {app}, {title}, {text}, {content} (maandishi yote), {bigtext}, {subtext}, {ticker}, {category} na {time}.</string>
-    <string name="notification_private_format_title">Arifa za kibinafsi zinasema</string>
-    <string name="notification_private_format_message">Ilisema badala ya maudhui ya arifa ya kibinafsi. Vishika nafasi: {app}, {category} na {time}.</string>
+    <string name="notification_private_format_title">Usomaji wa arifa za faragha</string>
+    <string name="notification_private_format_message">Hutamkwa badala ya maudhui ya arifa ya faragha. Vishika nafasi: {app}, {category} na {time}.</string>
     <string name="notification_category_voice">Sauti</string>
     <string name="notification_voice_title">Sauti</string>
-    <string name="notification_voice_sandfly">SandFly sauti</string>
+    <string name="notification_voice_sandfly">Sauti ya SandFly</string>
     <string name="notification_detect_language_title">Tambua lugha</string>
-    <string name="notification_detect_language_summary">Sema kila arifa katika lugha iliyoandikwa. Inahitaji Kubadilisha lugha kiotomatiki katika mipangilio ya Maandishi hadi usemi.</string>
+    <string name="notification_detect_language_summary">Hutamka kila arifa katika lugha iliyoandikwa. Inahitaji “Badilisha lugha kiotomatiki” katika Kusoma maandishi kwa sauti.</string>
     <string name="notification_sound_before_title">Sauti kabla ya arifa</string>
     <string name="notification_category_text">Maandishi</string>
-    <string name="notification_remove_emoji_title">Acha emoji</string>
+    <string name="notification_remove_emoji_title">Ruka emoji</string>
     <string name="notification_lowercase_title">Soma herufi kubwa kama maneno</string>
     <string name="notification_lowercase_summary">Baadhi ya injini za hotuba husoma maneno yaliyoandikwa kwa herufi kubwa herufi moja baada ya nyingine.</string>
     <string name="notification_separate_digits_title">Soma nambari ndefu tarakimu kwa tarakimu</string>
     <string name="notification_separate_digits_summary">Kama vile misimbo na nambari za simu</string>
     <string name="notification_min_digits_title">Kiwango cha chini cha tarakimu katika nambari ndefu</string>
     <string name="notification_urls_title">Viungo</string>
-    <string name="notification_url_text_title">Alisema badala ya kiungo</string>
+    <string name="notification_url_text_title">Maandishi yanayotamkwa badala ya kiungo</string>
     <string name="notification_skip_empty_title">Ruka arifa bila maandishi</string>
     <string name="notification_category_length">Urefu</string>
     <string name="notification_max_words_title">Idadi ya juu zaidi ya maneno</string>
@@ -74,15 +74,15 @@
     <string name="notification_screen_off_title">Wakati skrini imezimwa</string>
     <string name="notification_locked_title">Wakati simu imefungwa</string>
     <string name="notification_headphones_title">Vipokea sauti vya masikioni</string>
-    <string name="notification_media_title">Wakati vyombo vya habari vinacheza</string>
+    <string name="notification_media_title">Wakati maudhui yanacheza</string>
     <string name="notification_dnd_title">Usinisumbue</string>
-    <string name="notification_dnd_none">Usisome arifa zozote kwa sauti</string>
+    <string name="notification_dnd_none">Usisome yoyote</string>
     <string name="notification_dnd_allowed">Soma arifa zinazoruhusiwa na hali ya Usinisumbue</string>
     <string name="notification_dnd_all">Soma yote</string>
     <string name="notification_touch_title">Wakati skrini imeguswa</string>
     <string name="notification_touch_read">Soma mara moja</string>
-    <string name="notification_touch_after">Soma mguso unapoisha</string>
-    <string name="notification_touch_skip">Usisome kwa sauti</string>
+    <string name="notification_touch_after">Soma mguso unapokwisha</string>
+    <string name="notification_touch_skip">Usisome</string>
     <string name="notification_during_calls_title">Wakati wa simu</string>
     <string name="notification_honour_silent_title">Sio katika hali ya kimya</string>
     <string name="notification_honour_vibrate_title">Haiko katika hali ya mtetemo</string>
@@ -90,33 +90,33 @@
     <string name="notification_skip_in_car_summary">Kama vile Android Auto, ambayo huisoma yenyewe</string>
     <string name="notification_category_quiet_hours">Saa za utulivu</string>
     <string name="notification_quiet_hours_title">Saa za utulivu</string>
-    <string name="notification_quiet_start_title">Anza</string>
+    <string name="notification_quiet_start_title">Mwanzo</string>
     <string name="notification_quiet_end_title">Mwisho</string>
-    <string name="notification_repeat_seconds_title">Ruka arifa sawa kwa</string>
-    <string name="notification_numbers_alike_title">Chukua nambari tofauti kama sawa</string>
+    <string name="notification_repeat_seconds_title">Ruka arifa ile ile kwa muda wa</string>
+    <string name="notification_numbers_alike_title">Nambari zinahesabiwa kuwa sawa</string>
     <string name="notification_numbers_alike_summary">Kama vile asilimia ya upakuaji</string>
     <string name="notification_cooldown_title">Muda kati ya arifa za programu</string>
-    <string name="notification_skip_prefix_title">Acha kiambishi awali cha maandishi</string>
+    <string name="notification_skip_prefix_title">Acha mwanzo unaorudiwa</string>
     <string name="notification_skip_prefix_summary">Kama vile jina la kikundi kwenye gumzo</string>
-    <string name="notification_prefix_memory_title">Muda gani wa kukumbuka kiambishi awali cha maandishi</string>
-    <string name="notification_access_summary">Inahitajika ili kuacha kusoma arifa iliyokataliwa na kwa muhtasari</string>
+    <string name="notification_prefix_memory_title">Muda wa kukumbuka mwanzo</string>
+    <string name="notification_access_summary">Inahitajika ili kuacha kusoma arifa iliyoondolewa na kwa ajili ya muhtasari</string>
     <string name="notification_shake_title">Tikisa ili kuacha</string>
-    <string name="notification_shake_strength_title">Nguvu ya kutetemeka</string>
-    <string name="notification_wave_title">Punga mkono ili kuacha kusoma</string>
+    <string name="notification_shake_strength_title">Nguvu ya kutikisa</string>
+    <string name="notification_wave_title">Punga mkono ili kusimamisha</string>
     <string name="notification_wave_summary">Kusogeza mkono juu ya kitambuzi cha ukaribu</string>
     <string name="notification_pocket_title">Hali ya mfukoni</string>
-    <string name="notification_pocket_summary">Kihisi ambacho hufunikwa wakati usomaji unapoanza, kama mfukoni, hauzuii</string>
+    <string name="notification_pocket_summary">Ikiwa kitambuzi tayari kimefunikwa usomaji unapoanza, kama mfukoni, usomaji hausimami</string>
     <string name="notification_volume_keys_title">Bonyeza vitufe vyote viwili vya sauti</string>
     <string name="notification_dismiss_title">Acha kusoma arifa inapofungwa</string>
-    <string name="notification_watch_dismiss_title">Pia wakati arifa imetupiliwa mbali kwenye saa mahiri</string>
-    <string name="notification_app_cancel_title">Acha kusoma programu inapoondoa arifa</string>
+    <string name="notification_watch_dismiss_title">Pia inapoondolewa kwenye saa</string>
+    <string name="notification_app_cancel_title">Simamisha programu inapoiondoa</string>
     <string name="notification_category_summary">Muhtasari</string>
     <string name="notification_summary_now_title">Soma arifa sasa</string>
     <string name="notification_summary_daily_title">Soma arifa kila siku</string>
-    <string name="notification_summary_time_title">Muda</string>
+    <string name="notification_summary_time_title">Saa</string>
     <string name="notification_summary_newest_first_title">Mpya zaidi kwanza</string>
     <string name="notification_summary_name_title">Jina lako</string>
-    <string name="notification_summary_gap_title">Sitisha kati ya arifa</string>
+    <string name="notification_summary_gap_title">Kusita kati ya arifa</string>
     <string name="notification_summary_needs_sandfly">Washa SandFly ili kusoma arifa</string>
     <string name="notification_summary_no_access">Ufikiaji wa arifa umezimwa</string>
     <string name="notification_summary_morning">Habari za asubuhi.</string>
@@ -125,37 +125,37 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Matangazo ya wakati</string>
-    <string name="notification_clock_interval_title">Sema kila wakati</string>
+    <string name="notification_clock_interval_title">Sema saa kila</string>
     <string name="notification_clock_format_title">Mfumo wa saa</string>
     <string name="notification_clock_format_message">Vishika nafasi: {time}, {date} na {battery} (asilimia ya betri).</string>
-    <string name="notification_clock_format_default">Ni {time}</string>
+    <string name="notification_clock_format_default">Ni saa {time}</string>
     <string name="notification_clock_exact_title">Nyakati kamili</string>
-    <string name="notification_clock_exact_summary">Inahitaji Kengele na vikumbusho. Vinginevyo wakati unaweza kusemwa hadi kuchelewa kwa dakika.</string>
+    <string name="notification_clock_exact_summary">Inahitaji ruhusa ya Kengele na vikumbusho. La sivyo, saa inaweza kutamkwa ikiwa imechelewa hadi dakika moja.</string>
     <string name="notification_other_apps_title">Programu zingine</string>
     <string name="notification_apps_category">Programu</string>
     <string name="notification_apps_loading">Inapakia programu</string>
     <string name="notification_app_mode_title">Arifa</string>
     <string name="notification_app_mode_default">Kama programu zingine</string>
-    <string name="notification_app_mode_read">Soma kwa sauti</string>
+    <string name="notification_app_mode_read">Soma</string>
     <string name="notification_app_mode_private">Jina la programu pekee</string>
     <string name="notification_app_mode_priority">Soma kwanza</string>
-    <string name="notification_app_mode_ignore">Usisome kwa sauti</string>
+    <string name="notification_app_mode_ignore">Usisome</string>
     <string name="notification_app_name_title">Jina linalozungumzwa</string>
-    <string name="notification_app_said_as">alisema kama <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">hutamkwa kama <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Weka upya</string>
-    <string name="notification_required_title">Soma arifa na</string>
-    <string name="notification_blocked_title">Usisome arifa na</string>
-    <string name="notification_private_title">Soma tu jina la programu</string>
-    <string name="notification_replacements_title">Sema tofauti</string>
+    <string name="notification_required_title">Soma arifa zilizo na haya tu</string>
+    <string name="notification_blocked_title">Usisome arifa zilizo na</string>
+    <string name="notification_private_title">Soma jina la programu tu kwa arifa zilizo na</string>
+    <string name="notification_replacements_title">Matamshi tofauti</string>
     <string name="notification_add_word">Ongeza neno</string>
     <string name="notification_add_replacement">Ongeza mbadala</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kama <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Maandishi</string>
-    <string name="notification_replace_with">Sema kama</string>
-    <string name="notification_whole_words">Maneno yote tu</string>
-    <string name="notification_regex">Kujieleza mara kwa mara</string>
+    <string name="notification_replace_with">Tamka kama</string>
+    <string name="notification_whole_words">Maneno kamili pekee</string>
+    <string name="notification_regex">Regular expression</string>
     <string name="notification_enter_text">Weka maandishi</string>
-    <string name="notification_invalid_regex">Si usemi halali wa kawaida</string>
+    <string name="notification_invalid_regex">Si regex halali</string>
     <string name="notification_edit">Hariri</string>
     <string name="notification_remove">Ondoa</string>
     <string name="notification_history_keep">Hifadhi historia ya arifa</string>
@@ -169,33 +169,33 @@
     <string name="notification_history_copy">Nakili</string>
     <string name="notification_saved">Imehifadhiwa</string>
     <string name="notification_copied">Imenakiliwa</string>
-    <string name="notification_outcome_read">Soma kwa sauti kwa mafanikio</string>
+    <string name="notification_outcome_read">Imesomwa</string>
     <string name="notification_outcome_stopped">Imesimama wakati wa kusoma</string>
-    <string name="notification_outcome_speech_off">Haijasomwa: hotuba ya arifa imezimwa</string>
-    <string name="notification_outcome_dnd">Haijasomwa: Usisumbue</string>
+    <string name="notification_outcome_speech_off">Haijasomwa: usomaji wa arifa umezimwa</string>
+    <string name="notification_outcome_dnd">Haijasomwa: Usinisumbue</string>
     <string name="notification_outcome_touching">Haijasomwa: skrini iliguswa</string>
     <string name="notification_outcome_app">Haijasomwa: programu</string>
-    <string name="notification_outcome_ongoing">Haijasomwa: inaendelea</string>
-    <string name="notification_outcome_foreground">Haijasomwa: inayoendesha programu</string>
+    <string name="notification_outcome_ongoing">Haijasomwa: arifa endelevu</string>
+    <string name="notification_outcome_foreground">Haijasomwa: programu imefunguliwa</string>
     <string name="notification_outcome_low_priority">Haijasomwa: kipaumbele cha chini</string>
     <string name="notification_outcome_system">Haijasomwa: mfumo</string>
-    <string name="notification_outcome_media">Haijasomwa: kicheza media</string>
+    <string name="notification_outcome_media">Haijasomwa: kicheza maudhui</string>
     <string name="notification_outcome_group_summary">Haijasomwa: muhtasari wa kikundi</string>
     <string name="notification_outcome_progress">Haijasomwa: maendeleo</string>
     <string name="notification_outcome_required">Haijasomwa: maneno yanayohitajika hayapo</string>
     <string name="notification_outcome_blocked">Haijasomwa: neno lililozuiwa</string>
     <string name="notification_outcome_empty">Haijasomwa: hakuna maandishi</string>
-    <string name="notification_outcome_repeat">Haijasomwa: kurudia</string>
-    <string name="notification_outcome_cooldown">Haijasomwa kwa sauti: arifa nyingine kutoka kwa programu hii ilisomwa hivi majuzi</string>
-    <string name="notification_outcome_quiet_hours">Haijasomwa: masaa ya utulivu</string>
+    <string name="notification_outcome_repeat">Haijasomwa: kurudiwa</string>
+    <string name="notification_outcome_cooldown">Haijasomwa: programu ilisomwa hivi karibuni mno</string>
+    <string name="notification_outcome_quiet_hours">Haijasomwa: saa za utulivu</string>
     <string name="notification_outcome_screen_on">Haijasomwa: skrini imewashwa</string>
     <string name="notification_outcome_screen_off">Haijasomwa: skrini imezimwa</string>
     <string name="notification_outcome_locked">Haijasomwa: imefungwa</string>
-    <string name="notification_outcome_headphones">Haijasomwa: vipokea sauti vya masikioni vimeunganishwa</string>
-    <string name="notification_outcome_no_headphones">Haijasomwa: hakuna vichwa vya sauti</string>
+    <string name="notification_outcome_headphones">Haijasomwa: vipokea sauti vimeunganishwa</string>
+    <string name="notification_outcome_no_headphones">Haijasomwa: hakuna vipokea sauti</string>
     <string name="notification_outcome_silent">Haijasomwa: hali ya kimya</string>
     <string name="notification_outcome_vibrate">Haijasomwa: hali ya mtetemo</string>
-    <string name="notification_outcome_media_playing">Haijasomwa: media inacheza</string>
+    <string name="notification_outcome_media_playing">Haijasomwa: maudhui yanacheza</string>
     <string name="notification_outcome_car">Haijasomwa: hali ya gari</string>
     <string name="notification_outcome_rule">Haijasomwa: sheria</string>
     <string name="notification_outcome_busy">Haijasomwa: arifa nyingine ilisomwa</string>
@@ -203,7 +203,7 @@
     <string name="notification_rule_add">Ongeza kanuni</string>
     <string name="notification_rule_from_template">Ongeza sheria kutoka kwa kiolezo</string>
     <string name="notification_rules_category">Kanuni</string>
-    <string name="notification_rules_empty">Hakuna sheria</string>
+    <string name="notification_rules_empty">Hakuna kanuni</string>
     <string name="notification_rule_name">Jina</string>
     <string name="notification_rule_untitled">Kanuni</string>
     <string name="notification_rule_enabled">Imewashwa</string>
@@ -214,7 +214,7 @@
     <string name="notification_rule_actions">Kisha</string>
     <string name="notification_rule_add_condition">Ongeza hali</string>
     <string name="notification_rule_add_action">Ongeza kitendo</string>
-    <string name="notification_rule_invert">Geuza hali</string>
+    <string name="notification_rule_invert">Geuza sharti</string>
     <string name="notification_rule_delete">Futa kanuni</string>
     <string name="notification_rule_delete_confirm">Ungependa kufuta <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Daima</string>
@@ -224,12 +224,12 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">Na vipokea sauti vinavyobanwa kichwani pekee</string>
     <string name="notification_template_night">Kimya usiku</string>
-    <string name="notification_template_screen_off">Ukiwa umezima skrini pekee</string>
+    <string name="notification_template_screen_off">Skrini ikiwa imezimwa tu</string>
     <string name="notification_template_locked_private">Jina la programu tu wakati simu imefungwa</string>
-    <string name="notification_template_short_on_battery">Soma kwa ufupi wakati hauchaji</string>
-    <string name="notification_type_bluetooth">Bluetooth kifaa</string>
+    <string name="notification_template_short_on_battery">Fupi isipochaji</string>
+    <string name="notification_type_bluetooth">Kifaa cha Bluetooth</string>
     <string name="notification_type_wired">Vipokea sauti vinavyobanwa kichwani vyenye waya</string>
-    <string name="notification_type_wifi">Wi-Fi mtandao</string>
+    <string name="notification_type_wifi">Mtandao wa Wi-Fi</string>
     <string name="notification_type_time">Muda wa siku</string>
     <string name="notification_type_screen">Skrini imewashwa</string>
     <string name="notification_type_locked">Simu imefungwa</string>
@@ -240,7 +240,7 @@
     <string name="notification_type_charging">Inachaji</string>
     <string name="notification_type_landscape">Mlalo</string>
     <string name="notification_type_silent">Hali ya kimya au mtetemo</string>
-    <string name="notification_type_media">Vyombo vya habari vinavyocheza</string>
+    <string name="notification_type_media">Maudhui yanacheza</string>
     <string name="notification_bluetooth_any">Kifaa chochote</string>
     <string name="notification_wifi_hint">Jina la mtandao</string>
     <string name="notification_choose_app">Chagua programu</string>
@@ -248,11 +248,11 @@
     <string name="notification_time_end">Mpaka</string>
     <string name="notification_time_days">Siku</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> hadi <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly inahitaji ruhusa hiyo kwa hali hii</string>
+    <string name="notification_permission_needed">SandFly inahitaji ruhusa hiyo kwa sharti hili</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> imeunganishwa</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> haijaunganishwa</string>
     <string name="notification_cond_bluetooth_any">Kifaa cha sauti Bluetooth kimeunganishwa</string>
-    <string name="notification_cond_bluetooth_any_not">Hakuna Bluetooth kifaa cha sauti kimeunganishwa</string>
+    <string name="notification_cond_bluetooth_any_not">Hakuna kifaa cha sauti cha Bluetooth kilichounganishwa</string>
     <string name="notification_cond_wired">Vipokea sauti vinavyobanwa kichwani vyenye waya vimeunganishwa</string>
     <string name="notification_cond_wired_not">Vipokea sauti vinavyobanwa kichwani vyenye waya havijaunganishwa</string>
     <string name="notification_cond_battery_below">Betri iko chini ya asilimia <xliff:g id="percent" example="20">%1$d</xliff:g></string>
@@ -264,41 +264,41 @@
     <string name="notification_cond_screen_on">Skrini imewashwa</string>
     <string name="notification_cond_screen_on_not">Skrini imezimwa</string>
     <string name="notification_cond_landscape">Skrini iko katika mlalo</string>
-    <string name="notification_cond_landscape_not">Skrini iko kwenye picha</string>
+    <string name="notification_cond_landscape_not">Skrini iko wima</string>
     <string name="notification_cond_time">Wakati ni <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Wakati sio <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Imeunganishwa kwa <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Haijaunganishwa kwa <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Imeunganishwa kwa Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Haijaunganishwa kwa Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> iko mbele</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> haiko mbele</string>
-    <string name="notification_cond_from">Arifa inatoka kwa <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">Arifa haitoki <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> imefunguliwa kwenye skrini</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> haijafunguliwa kwenye skrini</string>
+    <string name="notification_cond_from">Arifa inatoka kwenye <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from_not">Arifa haitoki kwenye <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Arifa ina <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Arifa haina <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Mlio ni kimya au hutetemeka</string>
-    <string name="notification_cond_silent_not">Mlio hupiga</string>
-    <string name="notification_cond_media">Vyombo vya habari vinacheza</string>
+    <string name="notification_cond_silent">Mlio umezimwa au uko kwenye mtetemo</string>
+    <string name="notification_cond_silent_not">Mlio umewashwa</string>
+    <string name="notification_cond_media">Maudhui yanacheza</string>
     <string name="notification_cond_media_not">Hakuna media inayocheza</string>
     <string name="notification_action_skip">usisome</string>
-    <string name="notification_action_private">soma tu jina la programu</string>
-    <string name="notification_action_not_private">soma kikamilifu, hata kama faragha</string>
-    <string name="notification_action_format">tumia muundo wa hotuba</string>
-    <string name="notification_action_max_words">soma hadi idadi ya maneno</string>
+    <string name="notification_action_private">soma jina la programu tu</string>
+    <string name="notification_action_not_private">soma yote, hata kama ni ya faragha</string>
+    <string name="notification_action_format">tumia muundo wa usemi</string>
+    <string name="notification_action_max_words">soma hadi idadi fulani ya maneno</string>
     <string name="notification_action_no_limit">soma bila kikomo cha urefu</string>
-    <string name="notification_action_keep_emoji">weka emoji</string>
-    <string name="notification_action_keep_numbers">kuweka namba pamoja</string>
+    <string name="notification_action_keep_emoji">hifadhi emoji</string>
+    <string name="notification_action_keep_numbers">weka nambari pamoja</string>
     <string name="notification_action_priority">soma kwanza</string>
-    <string name="notification_action_always_read">Soma arifa kwa sauti hata wakati wa saa tulivu au nyakati zingine zilizozuiliwa</string>
-    <string name="notification_action_voice">soma na wasifu wa sauti</string>
-    <string name="notification_action_voice_value">soma na <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_always_read">soma hata wakati wa saa za utulivu na nyakati nyingine ambazo arifa hazisomwi</string>
+    <string name="notification_action_voice">soma kwa wasifu wa sauti</string>
+    <string name="notification_action_voice_value">soma kwa <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">soma kwa sauti ya SandFly</string>
-    <string name="notification_voice_removed">Umeondoa wasifu wa sauti</string>
-    <string name="notification_action_format_value">tumia umbizo la usemi <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_voice_removed">Wasifu wa sauti ulioondolewa</string>
+    <string name="notification_action_format_value">tumia muundo wa usemi <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">soma hadi <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Zima</string>
-    <string name="notification_on">Washa</string>
+    <string name="notification_on">Imewashwa</string>
     <string name="notification_never_again">Hadi SandFly iwashwe tena</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
     <string name="notification_speech_tile_label">Kusoma arifa kwa sauti</string>
@@ -306,21 +306,21 @@
     <string name="notification_speech_now_off">Kusoma arifa kwa sauti kumezimwa</string>
     <string name="notification_no_last_notification">Hakuna arifa iliyosomwa</string>
     <string name="shortcut_read_notifications">Soma arifa</string>
-    <string name="shortcut_toggle_notification_speech">Hotuba ya arifa imewashwa au imezimwa</string>
+    <string name="shortcut_toggle_notification_speech">Usomaji wa arifa: washa au zima</string>
     <string name="shortcut_read_last_notification">Soma arifa ya mwisho tena</string>
     <string name="shortcut_stop_notification">Acha kusoma arifa</string>
-    <string name="notification_test_posting">Arifa ya jaribio inafuata baada ya sekunde 5</string>
-    <string name="notification_test_not_allowed">Ruhusu SandFly ionyeshe arifa kwanza</string>
-    <string name="notification_test_content_title">SandFly mtihani</string>
-    <string name="notification_test_content_text">Hii ni arifa ya majaribio, soma pamoja na mipangilio yako ya arifa. 123456</string>
-    <string name="notification_automation_on">Washa arifa za kusoma kwa sauti</string>
-    <string name="notification_automation_off">Zima arifa za kusoma kwa sauti</string>
-    <string name="notification_automation_toggle">Washa au uzime arifa za kusoma kwa sauti</string>
-    <string name="notification_automation_stop">Acha arifa isomwe</string>
+    <string name="notification_test_posting">Arifa ya majaribio itakuja baada ya sekunde 5</string>
+    <string name="notification_test_not_allowed">Kwanza ruhusu SandFly ionyeshe arifa</string>
+    <string name="notification_test_content_title">Jaribio la SandFly</string>
+    <string name="notification_test_content_text">Hii ni arifa ya majaribio, inayosomwa kulingana na mipangilio yako ya arifa. 123456</string>
+    <string name="notification_automation_on">Washa usomaji wa arifa</string>
+    <string name="notification_automation_off">Zima usomaji wa arifa</string>
+    <string name="notification_automation_toggle">Washa au zima usomaji wa arifa</string>
+    <string name="notification_automation_stop">Simamisha usomaji wa arifa</string>
     <string name="notification_automation_read_all">Soma arifa</string>
     <plurals name="notification_seconds">
         <item quantity="one">Sekunde <xliff:g id="count" example="1">%d</xliff:g></item>
-        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> sekunde</item>
+        <item quantity="other">Sekunde <xliff:g id="count" example="5">%d</xliff:g></item>
     </plurals>
     <plurals name="notification_minutes">
         <item quantity="one">Dakika <xliff:g id="count" example="1">%d</xliff:g></item>
@@ -328,11 +328,11 @@
     </plurals>
     <plurals name="notification_hours">
         <item quantity="one">Saa <xliff:g id="count" example="1">%d</xliff:g></item>
-        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> saa</item>
+        <item quantity="other">Saa <xliff:g id="count" example="5">%d</xliff:g></item>
     </plurals>
     <plurals name="notification_words">
-        <item quantity="one">neno <xliff:g id="count" example="1">%d</xliff:g></item>
-        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> maneno</item>
+        <item quantity="one">Neno <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">Maneno <xliff:g id="count" example="5">%d</xliff:g></item>
     </plurals>
     <plurals name="notification_sentences">
         <item quantity="one">sentensi <xliff:g id="count" example="1">%d</xliff:g></item>

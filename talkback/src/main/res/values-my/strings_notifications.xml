@@ -1,325 +1,325 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="notification_shake_3">ခိုင်မာတယ်။</string>
+    <string name="notification_shake_3">ပြင်းပြင်း</string>
     <string name="notification_shake_2">လတ်</string>
-    <string name="notification_shake_1">နူးညံ့သော</string>
-    <string name="notification_media_skip">အသံထွက်မဖတ်ပါနှင့်</string>
-    <string name="notification_media_pause">စာဖတ်နေစဉ် မီဒီယာကို ခေတ္တရပ်ပါ။</string>
-    <string name="notification_media_read">အသံထွက်ဖတ်ပါ။</string>
+    <string name="notification_shake_1">ပေါ့ပေါ့</string>
+    <string name="notification_media_skip">မဖတ်ရန်</string>
+    <string name="notification_media_pause">စာဖတ်နေစဉ် မီဒီယာကို ခေတ္တရပ်ပါ</string>
+    <string name="notification_media_read">ဖတ်ရန်</string>
     <string name="notification_headphones_only_without">နားကြပ်မပါဘဲသာ</string>
     <string name="notification_headphones_only_with">နားကြပ်များဖြင့်သာ</string>
-    <string name="notification_headphones_always">နားကြပ်ဖြင့် သို့မဟုတ် မပါပဲ အသံထွက်ဖတ်ပါ။</string>
-    <string name="notification_queue_skip">သတိပေးချက်အသစ်ကို အသံထွက်မဖတ်ပါနှင့်</string>
-    <string name="notification_queue_interrupt">အကြောင်းကြားချက်ကို အသံထွက်ဖတ်ခြင်းကို အနှောင့်အယှက်ပေးသည်။</string>
-    <string name="notification_queue_queue">လက်ရှိအကြောင်းကြားချက်ပြီးနောက် အသံထွက်ဖတ်ပါ။</string>
-    <string name="notification_url_omit">ထွက်သွားပါ။</string>
-    <string name="notification_url_replace">အောက်ပါစာသားကိုပြောပါ။</string>
-    <string name="notification_url_domain">ဆိုဒ်ကိုသာဖတ်ပါ။</string>
-    <string name="notification_url_full">လင့်ခ်တစ်ခုလုံးကို ဖတ်ပါ။</string>
+    <string name="notification_headphones_always">နားကြပ်ဖြင့် သို့မဟုတ် မပါပဲ အသံထွက်ဖတ်ပါ</string>
+    <string name="notification_queue_skip">အသစ်ကို မဖတ်ရန်</string>
+    <string name="notification_queue_interrupt">ကြားဖြတ်ရန်</string>
+    <string name="notification_queue_queue">ပြီးမှ ဖတ်ရန်</string>
+    <string name="notification_url_omit">ချန်ထားရန်</string>
+    <string name="notification_url_replace">အောက်ပါ စာသားကို ပြောရန်</string>
+    <string name="notification_url_domain">ဆိုက်ကိုသာ ဖတ်ရန်</string>
+    <string name="notification_url_full">လင့်ခ် တစ်ခုလုံးကို ဖတ်ရန်</string>
     <string name="notification_category_title">အကြောင်းကြားချက်များ</string>
-    <string name="notification_reading_title">သတိပေးချက်များကို အသံထွက်ဖတ်ခြင်း။</string>
+    <string name="notification_reading_title">သတိပေးချက်များကို အသံထွက်ဖတ်ခြင်း</string>
     <string name="notification_apps_title">အက်ပ်များ</string>
     <string name="notification_words_title">စကားလုံးများနှင့် အစားထိုးမှုများ</string>
     <string name="notification_kinds_title">အကြောင်းကြားစာအမျိုးအစားများ</string>
-    <string name="notification_when_title">ဘယ်အချိန်ဖတ်ရမလဲ</string>
+    <string name="notification_when_title">ဖတ်မည့်အချိန်</string>
     <string name="notification_rules_title">စည်းကမ်းများ</string>
-    <string name="notification_repeats_title">ထပ်ခါထပ်ခါ</string>
-    <string name="notification_stop_title">စာဖတ်ခြင်းကို ရပ်လိုက်ပါ။</string>
+    <string name="notification_repeats_title">ထပ်ခါထပ်ခါ ဖြစ်ခြင်း</string>
+    <string name="notification_stop_title">ဖတ်ခြင်း ရပ်ရန်</string>
     <string name="notification_schedules_title">အကျဉ်းချုပ်နှင့်အချိန်</string>
-    <string name="notification_history_title">အသိပေးချက်မှတ်တမ်း</string>
-    <string name="notification_test_title">စမ်းသပ်မှုသတိပေးချက်ပေးပို့ပါ။</string>
+    <string name="notification_history_title">အကြောင်းကြားချက် မှတ်တမ်း</string>
+    <string name="notification_test_title">စမ်းသပ် အကြောင်းကြားချက် ပို့ရန်</string>
     <string name="notification_automation_title">အလိုအလျောက်စနစ်</string>
-    <string name="notification_automation_allowed_title">အလိုအလျောက်စနစ်အက်ပ်များကို ခွင့်ပြုပါ။</string>
-    <string name="notification_category_said">ဘာပြောလဲ။</string>
-    <string name="notification_format_title">မိန့်ခွန်းပုံစံ</string>
-    <string name="notification_format_message">နေရာထိုင်ခင်း- {app}၊ {title}၊ {text}၊ {content} (စာသားတစ်ခုလုံး)၊ {bigtext}၊ {subtext}၊ {ticker}၊ {category} နှင့် {time}။</string>
-    <string name="notification_private_format_title">ပုဂ္ဂလိက အကြောင်းကြားစာများ ဟုဆိုသည်။</string>
-    <string name="notification_private_format_message">သီးသန့် အသိပေးချက်၏ အကြောင်းအရာ နေရာတွင် ပြောကြားခဲ့ပါသည်။ နေရာထိုင်ခင်း- {app}၊ {category} နှင့် {time}။</string>
+    <string name="notification_automation_allowed_title">အလိုအလျောက်စနစ်အက်ပ်များကို ခွင့်ပြုပါ</string>
+    <string name="notification_category_said">ဖတ်မည့်အရာ</string>
+    <string name="notification_format_title">စကားပြောပုံစံ</string>
+    <string name="notification_format_message">နေရာယူစာလုံးများ- {app}၊ {title}၊ {text}၊ {content} (စာသားအားလုံး)၊ {bigtext}၊ {subtext}၊ {ticker}၊ {category} နှင့် {time}။</string>
+    <string name="notification_private_format_title">ပုဂ္ဂလိက အကြောင်းကြားချက်များအတွက် ဖတ်မည့်အရာ</string>
+    <string name="notification_private_format_message">သီးသန့်အကြောင်းကြားချက်၏ အကြောင်းအရာအစား ပြောသည်။ နေရာယူစာလုံးများ- {app}၊ {category} နှင့် {time}။</string>
     <string name="notification_category_voice">စကားသံ</string>
     <string name="notification_voice_title">စကားသံ</string>
     <string name="notification_voice_sandfly">SandFly အသံ</string>
-    <string name="notification_detect_language_title">ဘာသာစကားကို ရှာဖွေပါ။</string>
-    <string name="notification_detect_language_summary">ရေးထားသည့် ဘာသာစကားဖြင့် အသိပေးချက်တစ်ခုစီကို ပြောပါ။ စာသားမှ စကားပြောဆက်တင်များတွင် ဘာသာစကား အလိုအလျောက်ပြောင်းရန် လိုအပ်သည်။</string>
+    <string name="notification_detect_language_title">ဘာသာစကား သိရှိရန်</string>
+    <string name="notification_detect_language_summary">အကြောင်းကြားချက်တစ်ခုစီကို ရေးထားသော ဘာသာစကားဖြင့် ပြောသည်။ စာ-မှ-စကား (TTS) ရှိ “ဘာသာစကား အလိုအလျောက်ပြောင်းပါ” လိုအပ်သည်။</string>
     <string name="notification_sound_before_title">အကြောင်းကြားချက်များမတိုင်မီ အသံ</string>
     <string name="notification_category_text">စာသား</string>
-    <string name="notification_remove_emoji_title">အီမိုဂျီကို ချန်ထားပါ။</string>
-    <string name="notification_lowercase_title">စာလုံးများအဖြစ် စာလုံးကြီးများကို ဖတ်ပါ။</string>
-    <string name="notification_lowercase_summary">အချို့သော စကားပြောအင်ဂျင်များသည် စာလုံးအကြီးများကို အက္ခရာဖြင့် စာလုံးပေါင်းပါသည်။</string>
-    <string name="notification_separate_digits_title">ဂဏန်းရှည် ဂဏန်းများကို ဂဏန်းဖြင့်ဖတ်ပါ။</string>
-    <string name="notification_separate_digits_summary">ကုဒ်များနှင့် ဖုန်းနံပါတ်များကဲ့သို့သော</string>
-    <string name="notification_min_digits_title">ရှည်လျားသော ဂဏန်းများတွင် အနိမ့်ဆုံးဂဏန်းများ</string>
+    <string name="notification_remove_emoji_title">အီမိုဂျီ ကျော်ရန်</string>
+    <string name="notification_lowercase_title">စာလုံးကြီးများကို စကားလုံးအဖြစ် ဖတ်ရန်</string>
+    <string name="notification_lowercase_summary">စကားသံအင်ဂျင်အချို့သည် စာလုံးကြီးဖြင့်ရေးသော စကားလုံးများကို အက္ခရာတစ်လုံးချင်း ဖတ်သည်</string>
+    <string name="notification_separate_digits_title">ရှည်လျားသော ဂဏန်းများကို တစ်လုံးချင်း ဖတ်ရန်</string>
+    <string name="notification_separate_digits_summary">ကုဒ်များနှင့် ဖုန်းနံပါတ်များ ကဲ့သို့</string>
+    <string name="notification_min_digits_title">ရှည်လျားသော ဂဏန်းတစ်ခု၏ အနည်းဆုံး ဂဏန်းလုံးရေ</string>
     <string name="notification_urls_title">လင့်ခ်များ</string>
-    <string name="notification_url_text_title">လင့်ခ်တစ်ခု၏ နေရာတွင် ပြောကြားခဲ့သည်။</string>
-    <string name="notification_skip_empty_title">စာသားမပါဘဲ အကြောင်းကြားချက်များကို ကျော်ပါ။</string>
+    <string name="notification_url_text_title">လင့်ခ်အစား ပြောမည့် စာသား</string>
+    <string name="notification_skip_empty_title">စာသားမပါသော အကြောင်းကြားချက်များကို ကျော်ရန်</string>
     <string name="notification_category_length">အရှည်</string>
     <string name="notification_max_words_title">အများဆုံးစကားလုံးအရေအတွက်</string>
     <string name="notification_max_sentences_title">အများဆုံးစာကြောင်းအရေအတွက်</string>
     <string name="notification_max_characters_title">အများဆုံးစာသားအက္ခရာအရေအတွက်</string>
-    <string name="notification_max_seconds_title">ပြီးရင် စာဖတ်တာကို ရပ်လိုက်ပါ။</string>
+    <string name="notification_max_seconds_title">ဤအချိန်ပြီးနောက် ဖတ်ခြင်း ရပ်ရန်</string>
     <string name="notification_category_timing">အချိန်ကိုက်</string>
-    <string name="notification_delay_title">မဖတ်ခင် စောင့်ပါ။</string>
-    <string name="notification_queue_title">အခြားသတိပေးချက်ကို ဖတ်သည့်အခါ</string>
-    <string name="notification_repeat_minutes_title">မျက်နှာပြင်မဖွင့်မချင်း ပြန်ဖတ်ပါ။</string>
-    <string name="notification_skip_media_title">မီဒီယာပလေယာကို ကျော်ပါ။</string>
-    <string name="notification_skip_ongoing_title">လက်ရှိအကြောင်းကြားချက်များကို ကျော်ပါ။</string>
-    <string name="notification_skip_ongoing_summary">လမ်းကြောင်းပြခြင်းနှင့် တိုင်မာများကဲ့သို့သော</string>
-    <string name="notification_skip_foreground_title">လုပ်ဆောင်နေသည့် အက်ပ် အသိပေးချက်များကို ကျော်ပါ။</string>
-    <string name="notification_skip_foreground_summary">VPN သို့မဟုတ် အသံဖမ်းစက် ကဲ့သို့သော</string>
-    <string name="notification_skip_progress_title">တိုးတက်မှု အကြောင်းကြားချက်များကို ကျော်ပါ။</string>
-    <string name="notification_skip_group_summaries_title">အဖွဲ့အကျဉ်းချုပ်များကို ကျော်ပါ။</string>
-    <string name="notification_skip_group_summaries_summary">“စာအသစ် ၃ စောင်” ကဲ့သို့သော၊</string>
-    <string name="notification_skip_low_priority_title">ဦးစားပေး အကြောင်းကြားချက်များကို ကျော်ပါ။</string>
-    <string name="notification_skip_system_title">စနစ်အကြောင်းကြားချက်များကို ကျော်ပါ။</string>
+    <string name="notification_delay_title">မဖတ်ခင် စောင့်ပါ</string>
+    <string name="notification_queue_title">အခြား အကြောင်းကြားချက်ကို ဖတ်နေစဉ်</string>
+    <string name="notification_repeat_minutes_title">မျက်နှာပြင်မဖွင့်မချင်း ပြန်ဖတ်ပါ</string>
+    <string name="notification_skip_media_title">မီဒီယာပလေယာကို ကျော်ပါ</string>
+    <string name="notification_skip_ongoing_title">အမြဲပြနေသော အကြောင်းကြားချက်များကို ကျော်ရန်</string>
+    <string name="notification_skip_ongoing_summary">လမ်းညွှန်ခြင်းနှင့် တိုင်မာများ ကဲ့သို့</string>
+    <string name="notification_skip_foreground_title">လုပ်ဆောင်နေသည့် အက်ပ် အသိပေးချက်များကို ကျော်ပါ</string>
+    <string name="notification_skip_foreground_summary">VPN သို့မဟုတ် အသံဖမ်းစက် ကဲ့သို့</string>
+    <string name="notification_skip_progress_title">တိုးတက်မှု အကြောင်းကြားချက်များကို ကျော်ပါ</string>
+    <string name="notification_skip_group_summaries_title">အဖွဲ့အကျဉ်းချုပ်များကို ကျော်ပါ</string>
+    <string name="notification_skip_group_summaries_summary">“စာအသစ် ၃ စောင်” ကဲ့သို့</string>
+    <string name="notification_skip_low_priority_title">ဦးစားပေးမှု နိမ့်သော အကြောင်းကြားချက်များကို ကျော်ရန်</string>
+    <string name="notification_skip_system_title">စနစ်အကြောင်းကြားချက်များကို ကျော်ပါ</string>
     <string name="notification_screen_on_title">မျက်နှာပြင်ကို ဖွင့်ထားစဉ်</string>
     <string name="notification_screen_off_title">မျက်နှာပြင် ပိတ်ထားစဉ်</string>
     <string name="notification_locked_title">ဖုန်းကို လော့ခ်ချနေစဉ်</string>
     <string name="notification_headphones_title">နားကြပ်များ</string>
-    <string name="notification_media_title">မီဒီယာကစားနေစဉ်</string>
-    <string name="notification_dnd_title">မနှောင့်ယှက်ပါနဲ့။</string>
-    <string name="notification_dnd_none">အကြောင်းကြားချက်များကို အသံထွက်မဖတ်ပါနှင့်</string>
-    <string name="notification_dnd_allowed">\'မနှောင့်ယှက်ရမုဒ်\' မှ ခွင့်ပြုထားသော အသိပေးချက်များကို ဖတ်ပါ။</string>
-    <string name="notification_dnd_all">အားလုံးဖတ်ပါ။</string>
+    <string name="notification_media_title">မီဒီယာ ဖွင့်နေစဉ်</string>
+    <string name="notification_dnd_title">မနှောင့်ယှက်ပါနဲ့</string>
+    <string name="notification_dnd_none">ဘာမှ မဖတ်ရန်</string>
+    <string name="notification_dnd_allowed">\'မနှောင့်ယှက်ရမုဒ်\' မှ ခွင့်ပြုထားသော အသိပေးချက်များကို ဖတ်ပါ</string>
+    <string name="notification_dnd_all">အားလုံးဖတ်ပါ</string>
     <string name="notification_touch_title">မျက်နှာပြင်ကို ထိနေချိန်</string>
-    <string name="notification_touch_read">ချက်ချင်းဖတ်ပါ။</string>
-    <string name="notification_touch_after">ထိတွေ့မှု ပြီးဆုံးသည့်အခါ ဖတ်ပါ။</string>
-    <string name="notification_touch_skip">အသံထွက်မဖတ်ပါနှင့်</string>
+    <string name="notification_touch_read">ချက်ချင်းဖတ်ပါ</string>
+    <string name="notification_touch_after">ထိတွေ့မှု ပြီးမှ ဖတ်ရန်</string>
+    <string name="notification_touch_skip">မဖတ်ရန်</string>
     <string name="notification_during_calls_title">ဖုန်းခေါ်ဆိုနေစဉ်</string>
-    <string name="notification_honour_silent_title">အသံတိတ်မုဒ်တွင် မရှိပါ။</string>
-    <string name="notification_honour_vibrate_title">တုန်ခါမှုမုဒ်တွင် မရှိပါ။</string>
-    <string name="notification_skip_in_car_title">ကားမုဒ်တွင် မရှိပါ။</string>
-    <string name="notification_skip_in_car_summary">၎င်းတို့ကို ကိုယ်တိုင်ဖတ်သည့် Android Auto ကဲ့သို့သော</string>
+    <string name="notification_honour_silent_title">အသံတိတ်မုဒ်တွင် မရှိပါ</string>
+    <string name="notification_honour_vibrate_title">တုန်ခါမှုမုဒ်တွင် မရှိပါ</string>
+    <string name="notification_skip_in_car_title">ကားမုဒ်တွင် မရှိပါ</string>
+    <string name="notification_skip_in_car_summary">ဥပမာ အကြောင်းကြားချက်များကို ကိုယ်တိုင်ဖတ်သော Android Auto</string>
     <string name="notification_category_quiet_hours">တိတ်ဆိတ်သောနာရီ</string>
     <string name="notification_quiet_hours_title">တိတ်ဆိတ်သောနာရီ</string>
-    <string name="notification_quiet_start_title">စတင်ပါ။</string>
+    <string name="notification_quiet_start_title">စတင်ချိန်</string>
     <string name="notification_quiet_end_title">အဆုံး</string>
-    <string name="notification_repeat_seconds_title">တူညီသောသတိပေးချက်ကို ကျော်သွားပါ။</string>
-    <string name="notification_numbers_alike_title">မတူညီသောနံပါတ်များကို တူညီသည့်အတိုင်း ဆက်ဆံပါ။</string>
-    <string name="notification_numbers_alike_summary">ဒေါင်းလုဒ်တစ်ခု၏ ရာခိုင်နှုန်းအဖြစ်</string>
+    <string name="notification_repeat_seconds_title">တူညီသော အကြောင်းကြားချက်ကို ကျော်မည့် ကြာချိန်</string>
+    <string name="notification_numbers_alike_title">ဂဏန်းများကို တူညီသည်ဟု သတ်မှတ်သည်</string>
+    <string name="notification_numbers_alike_summary">ဒေါင်းလုဒ် ရာခိုင်နှုန်း ကဲ့သို့</string>
     <string name="notification_cooldown_title">အက်ပ်တစ်ခု၏ အသိပေးချက်များကြား အချိန်</string>
-    <string name="notification_skip_prefix_title">ထပ်ခါတလဲလဲ စာသားရှေ့ဆက်ကို ချန်လှပ်ထားပါ။</string>
+    <string name="notification_skip_prefix_title">ထပ်နေသော အစပိုင်းကို ချန်ရန်</string>
     <string name="notification_skip_prefix_summary">ချတ်တစ်ခုတွင် အုပ်စုတစ်ခု၏အမည်ကဲ့သို့သော</string>
-    <string name="notification_prefix_memory_title">စာသားရှေ့ဆက်ကို မည်မျှကြာအောင် မှတ်မိမည်နည်း။</string>
-    <string name="notification_access_summary">ပယ်ချခံထားရသော အကြောင်းကြားစာကို ဖတ်ရှုခြင်းကို ရပ်တန့်ရန်နှင့် အနှစ်ချုပ်များအတွက် လိုအပ်ပါသည်။</string>
-    <string name="notification_shake_title">ရပ်ရန် လှုပ်ခါပါ။</string>
-    <string name="notification_shake_strength_title">တုန်ခါမှုပြင်းထန်မှု</string>
-    <string name="notification_wave_title">စာဖတ်ခြင်းကို ရပ်ရန် လက်ဝှေ့ယမ်းပါ။</string>
-    <string name="notification_wave_summary">proximity sensor ကို လက်ဖြင့် ရွှေ့ပါ။</string>
-    <string name="notification_pocket_title">အိတ်ဆောင်မုဒ်</string>
-    <string name="notification_pocket_summary">အိတ်ကပ်ထဲတွင်ကဲ့သို့ စာဖတ်ခြင်းစတင်သောအခါတွင် ဖုံးအုပ်ထားသော အာရုံခံကိရိယာသည် ၎င်းကို မရပ်တန့်ပါ။</string>
-    <string name="notification_volume_keys_title">အသံအတိုးအကျယ်ခလုတ်နှစ်ခုလုံးကို နှိပ်ပါ။</string>
-    <string name="notification_dismiss_title">အကြောင်းကြားချက်ကို ပယ်လိုက်သောအခါ စာဖတ်ခြင်းကို ရပ်ပါ။</string>
-    <string name="notification_watch_dismiss_title">စမတ်နာရီပေါ်တွင် အကြောင်းကြားချက်ကို ပယ်လိုက်သည့်အခါလည်း ဖြစ်သည်။</string>
-    <string name="notification_app_cancel_title">အက်ပ်က အသိပေးချက်ကို ဖယ်ရှားသည့်အခါ စာဖတ်ခြင်းကို ရပ်ပါ။</string>
+    <string name="notification_prefix_memory_title">အစပိုင်းကို မှတ်ထားမည့် ကြာချိန်</string>
+    <string name="notification_access_summary">ဖယ်ထားသော အကြောင်းကြားချက်ကို ဖတ်ခြင်း ရပ်ရန်နှင့် အနှစ်ချုပ်များအတွက် လိုအပ်သည်</string>
+    <string name="notification_shake_title">ရပ်ရန် လှုပ်ခါပါ</string>
+    <string name="notification_shake_strength_title">လှုပ်ခါမှု ပြင်းအား</string>
+    <string name="notification_wave_title">ရပ်ရန် လက်ဝှေ့ယမ်းပါ</string>
+    <string name="notification_wave_summary">အနီးကပ် အာရုံခံကိရိယာပေါ်တွင် လက်ဝှေ့ယမ်းခြင်း</string>
+    <string name="notification_pocket_title">အိတ်ကပ်မုဒ်</string>
+    <string name="notification_pocket_summary">စတင်ဖတ်ချိန်တွင် အာရုံခံကိရိယာ ဖုံးထားပြီးဖြစ်ပါက (ဥပမာ အိတ်ကပ်ထဲ) ဖတ်ခြင်း မရပ်ပါ</string>
+    <string name="notification_volume_keys_title">အသံ ခလုတ် နှစ်ခုလုံးကို နှိပ်ရန်</string>
+    <string name="notification_dismiss_title">ပယ်လိုက်သောအခါ ရပ်ရန်</string>
+    <string name="notification_watch_dismiss_title">နာရီတွင် ပယ်လိုက်သည့်အခါလည်း</string>
+    <string name="notification_app_cancel_title">အက်ပ်က ဖယ်ရှားသည့်အခါ ရပ်ရန်</string>
     <string name="notification_category_summary">အကျဉ်းချုပ်</string>
-    <string name="notification_summary_now_title">အသိပေးချက်များကို ယခုဖတ်ပါ။</string>
-    <string name="notification_summary_daily_title">သတိပေးချက်များကို နေ့တိုင်းဖတ်ပါ။</string>
+    <string name="notification_summary_now_title">အကြောင်းကြားချက်များကို ယခု ဖတ်ရန်</string>
+    <string name="notification_summary_daily_title">အကြောင်းကြားချက်များကို နေ့စဉ် ဖတ်ရန်</string>
     <string name="notification_summary_time_title">အချိန်</string>
-    <string name="notification_summary_newest_first_title">အသစ်ဆုံး ပထမ</string>
-    <string name="notification_summary_name_title">မင်းနာမည်</string>
-    <string name="notification_summary_gap_title">အကြောင်းကြားချက်များကြားတွင် ခဏရပ်ပါ။</string>
-    <string name="notification_summary_needs_sandfly">အသိပေးချက်များကိုဖတ်ရန် SandFly ကိုဖွင့်ပါ။</string>
-    <string name="notification_summary_no_access">အကြောင်းကြားချက် ဝင်ရောက်ခွင့်ကို ပိတ်ထားသည်။</string>
+    <string name="notification_summary_newest_first_title">အသစ်ဆုံးကို အရင်</string>
+    <string name="notification_summary_name_title">သင့်အမည်</string>
+    <string name="notification_summary_gap_title">အကြောင်းကြားချက်များကြား ခဏနား</string>
+    <string name="notification_summary_needs_sandfly">အသိပေးချက်များကိုဖတ်ရန် SandFly ကိုဖွင့်ပါ</string>
+    <string name="notification_summary_no_access">အကြောင်းကြားချက် ဝင်ရောက်ခွင့်ကို ပိတ်ထားသည်</string>
     <string name="notification_summary_morning">မင်္ဂလာနံနက်ခင်းပါ။</string>
     <string name="notification_summary_afternoon">မင်္ဂလာနေ့လည်ခင်းပါ။</string>
     <string name="notification_summary_evening">မင်္ဂလာညနေခင်းပါ။</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">အချိန်ကြေငြာချက်များ</string>
-    <string name="notification_clock_interval_title">အချိန်တိုင်းပြောပါ။</string>
+    <string name="notification_clock_interval_title">အချိန်ပြောသည့် ကြားကာလ</string>
     <string name="notification_clock_format_title">အချိန်ဖော်မက်</string>
-    <string name="notification_clock_format_message">နေရာထိုင်ခင်း- {time}၊ {date} နှင့် {battery} (ဘက်ထရီရာခိုင်နှုန်း)။</string>
-    <string name="notification_clock_format_default">အဲဒါ {time}</string>
+    <string name="notification_clock_format_message">နေရာယူ စာသားများ- {time}၊ {date} နှင့် {battery} (ဘက်ထရီ ရာခိုင်နှုန်း)။</string>
+    <string name="notification_clock_format_default">အခု {time}</string>
     <string name="notification_clock_exact_title">အချိန်အတိအကျ</string>
-    <string name="notification_clock_exact_summary">နှိုးစက်များနှင့် သတိပေးချက်များ လိုအပ်သည်။ မဟုတ်ရင် အချိန်က တစ်မိနစ်လောက် နောက်ကျသွားနိုင်တယ်။</string>
+    <string name="notification_clock_exact_summary">“နှိုးစက်နှင့် သတိပေးချက်များ” ခွင့်ပြုချက် လိုအပ်သည်။ မဟုတ်ပါက အချိန်ကို တစ်မိနစ်အထိ နောက်ကျပြောနိုင်သည်။</string>
     <string name="notification_other_apps_title">အခြားအက်ပ်များ</string>
     <string name="notification_apps_category">အက်ပ်များ</string>
-    <string name="notification_apps_loading">အက်ပ်များကို ဖွင့်နေသည်။</string>
+    <string name="notification_apps_loading">အက်ပ်များကို တင်နေသည်</string>
     <string name="notification_app_mode_title">အကြောင်းကြားချက်များ</string>
     <string name="notification_app_mode_default">အခြားအက်ပ်များကဲ့သို့</string>
-    <string name="notification_app_mode_read">အသံထွက်ဖတ်ပါ။</string>
+    <string name="notification_app_mode_read">ဖတ်ရန်</string>
     <string name="notification_app_mode_private">အက်ပ်အမည်သာ</string>
-    <string name="notification_app_mode_priority">အရင်ဖတ်ပါ။</string>
-    <string name="notification_app_mode_ignore">အသံထွက်မဖတ်ပါနှင့်</string>
+    <string name="notification_app_mode_priority">အရင်ဖတ်ပါ</string>
+    <string name="notification_app_mode_ignore">မဖတ်ရန်</string>
     <string name="notification_app_name_title">ပြောသောအမည်</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ဟု ဆိုသည်</string>
     <string name="notification_app_reset">ပြန်လည်သတ်မှတ်ပါ</string>
-    <string name="notification_required_title">အသိပေးချက်များကိုသာ ဖတ်ပါ။</string>
-    <string name="notification_blocked_title">အသိပေးချက်များကို မဖတ်ပါနှင့်</string>
-    <string name="notification_private_title">အက်ပ်အမည်ကိုသာ ဖတ်ပါ။</string>
-    <string name="notification_replacements_title">ကွဲပြားစွာပြောပါ။</string>
-    <string name="notification_add_word">စကားလုံးထည့်ပါ။</string>
-    <string name="notification_add_replacement">အစားထိုးထည့်ပါ။</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> အဖြစ် <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_required_title">ဤစကားလုံးများပါသော အကြောင်းကြားချက်များကိုသာ ဖတ်ရန်</string>
+    <string name="notification_blocked_title">ဤစကားလုံးများပါသော အကြောင်းကြားချက်များကို မဖတ်ရန်</string>
+    <string name="notification_private_title">ဤစကားလုံးများပါသော အကြောင်းကြားချက်များအတွက် အက်ပ်အမည်ကိုသာ ဖတ်ရန်</string>
+    <string name="notification_replacements_title">ကွဲပြားစွာ ဖတ်ခြင်း</string>
+    <string name="notification_add_word">စကားလုံးထည့်ပါ</string>
+    <string name="notification_add_replacement">အစားထိုးထည့်ပါ</string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> → <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">စာသား</string>
-    <string name="notification_replace_with">အတိုင်းပြောပါ။</string>
-    <string name="notification_whole_words">စကားလုံးတွေချည်းပဲ။</string>
-    <string name="notification_regex">ပုံမှန်အသုံးအနှုန်း</string>
-    <string name="notification_enter_text">စာသားထည့်ပါ။</string>
-    <string name="notification_invalid_regex">မှန်ကန်သော ပုံမှန်အသုံးအနှုန်းမဟုတ်ပါ။</string>
-    <string name="notification_edit">တည်းဖြတ်ပါ။</string>
-    <string name="notification_remove">ဖယ်ရှားပါ။</string>
-    <string name="notification_history_keep">အကြောင်းကြားချက်မှတ်တမ်းကို သိမ်းဆည်းပါ။</string>
-    <string name="notification_history_clear">သမိုင်းကိုရှင်းလင်းပါ။</string>
+    <string name="notification_replace_with">ဤသို့ ဖတ်ရန်</string>
+    <string name="notification_whole_words">စကားလုံးအပြည့်သာ</string>
+    <string name="notification_regex">Regular expression</string>
+    <string name="notification_enter_text">စာသားထည့်ပါ</string>
+    <string name="notification_invalid_regex">မှန်ကန်သော regular expression မဟုတ်ပါ</string>
+    <string name="notification_edit">တည်းဖြတ်ပါ</string>
+    <string name="notification_remove">ဖယ်ရှားပါ</string>
+    <string name="notification_history_keep">အကြောင်းကြားချက် မှတ်တမ်း သိမ်းရန်</string>
+    <string name="notification_history_clear">မှတ်တမ်းကို ရှင်းရန်</string>
     <string name="notification_history_category">အကြောင်းကြားချက်များ</string>
-    <string name="notification_history_empty">အကြောင်းကြားချက်များမရှိပါ။</string>
-    <string name="notification_history_ignore_app">မဖတ်ပါနဲ့ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_empty">အကြောင်းကြားချက်များမရှိပါ</string>
+    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> ကို မဖတ်ရန်</string>
     <string name="notification_history_private_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> အမည်ကိုသာဖတ်ပါ</string>
-    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> အရင်ဖတ်ပါ။</string>
+    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> အရင်ဖတ်ပါ</string>
     <string name="notification_history_block_similar">ဤကဲ့သို့သော အသိပေးချက်များကို မဖတ်ပါနှင့်</string>
     <string name="notification_history_copy">မိတ္တူကူးရန်</string>
-    <string name="notification_saved">သိမ်းဆည်းထားသည်။</string>
-    <string name="notification_copied">ကူးယူသည်။</string>
-    <string name="notification_outcome_read">အောင်မြင်စွာ ရွတ်ဖတ်ပါ။</string>
-    <string name="notification_outcome_stopped">ဖတ်နေရင်း ရပ်သွားတယ်။</string>
-    <string name="notification_outcome_speech_off">မဖတ်ရ- အကြောင်းကြားချက် မိန့်ခွန်းကို ပိတ်ထားသည်။</string>
-    <string name="notification_outcome_dnd">မဖတ်ရ- မနှောင့်ယှက်ရပါ။</string>
-    <string name="notification_outcome_touching">မဖတ်ရ- စခရင်ကို ထိထားသည်။</string>
-    <string name="notification_outcome_app">မဖတ်ရ- အက်ပ်</string>
-    <string name="notification_outcome_ongoing">မဖတ်ရသေးပါ</string>
-    <string name="notification_outcome_foreground">မဖတ်ရ- အက်ပ်ကို ဖွင့်ထားသည်။</string>
-    <string name="notification_outcome_low_priority">မဖတ်ရ- ဦးစားပေးမှု နည်းသည်။</string>
-    <string name="notification_outcome_system">မဖတ်ရ- စနစ်</string>
-    <string name="notification_outcome_media">မဖတ်ရ- မီဒီယာပလေယာ</string>
-    <string name="notification_outcome_group_summary">မဖတ်ရ- အုပ်စုအကျဉ်းချုပ်</string>
-    <string name="notification_outcome_progress">မဖတ်ရ- တိုးတက်မှု</string>
-    <string name="notification_outcome_required">မဖတ်ရ- လိုအပ်သော စကားလုံးများ ပျောက်ဆုံးနေပါသည်။</string>
-    <string name="notification_outcome_blocked">မဖတ်ရ- ပိတ်ဆို့ထားသော စကားလုံး</string>
-    <string name="notification_outcome_empty">မဖတ်ရ- စာသားမရှိ။</string>
-    <string name="notification_outcome_repeat">မဖတ်ပါ</string>
-    <string name="notification_outcome_cooldown">အသံကျယ်ကျယ် မဖတ်ပါ- ဤအက်ပ်မှ နောက်ထပ်သတိပေးချက်ကို မကြာသေးမီကပင် ဖတ်ရှုခဲ့သည်။</string>
-    <string name="notification_outcome_quiet_hours">မဖတ်ရ- တိတ်ဆိတ်သောနာရီ</string>
-    <string name="notification_outcome_screen_on">မဖတ်ရ- စခရင်ဖွင့်ထားသည်။</string>
-    <string name="notification_outcome_screen_off">မဖတ်ရ- စခရင်ပိတ်</string>
-    <string name="notification_outcome_locked">မဖတ်ရ- လော့ခ်ချထားသည်။</string>
-    <string name="notification_outcome_headphones">မဖတ်ရ- နားကြပ်များ ချိတ်ဆက်ထားသည်။</string>
-    <string name="notification_outcome_no_headphones">မဖတ်ရ- နားကြပ်မပါပါ။</string>
-    <string name="notification_outcome_silent">မဖတ်ရ- အသံတိတ်မုဒ်</string>
-    <string name="notification_outcome_vibrate">မဖတ်ရ- တုန်ခါမှုမုဒ်</string>
-    <string name="notification_outcome_media_playing">မဖတ်ရ- မီဒီယာဖွင့်ခြင်း။</string>
-    <string name="notification_outcome_car">မဖတ်ရ- ကားမုဒ်</string>
-    <string name="notification_outcome_rule">မဖတ်ပါ: စည်းကမ်း</string>
-    <string name="notification_outcome_busy">မဖတ်ရသေးပါ- နောက်ထပ်သတိပေးချက်ကို ဖတ်ပြီးပါပြီ။</string>
-    <string name="notification_outcome_call">အဝင်ဖုန်းခေါ်ဆိုမှုအဖြစ် ကြေညာခဲ့သည်။</string>
-    <string name="notification_rule_add">စည်းကမ်းထည့်ပါ။</string>
-    <string name="notification_rule_from_template">နမူနာပုံစံတစ်ခုမှ စည်းမျဉ်းတစ်ခုကို ထည့်ပါ။</string>
+    <string name="notification_saved">သိမ်းဆည်းထားသည်</string>
+    <string name="notification_copied">ကူးယူပြီးပါပြီ</string>
+    <string name="notification_outcome_read">ဖတ်ပြီး</string>
+    <string name="notification_outcome_stopped">ဖတ်နေစဉ် ရပ်သွားသည်</string>
+    <string name="notification_outcome_speech_off">မဖတ်ပါ- အကြောင်းကြားချက် ဖတ်ခြင်း ပိတ်ထားသည်</string>
+    <string name="notification_outcome_dnd">မဖတ်ပါ- မနှောင့်ယှက်ရ</string>
+    <string name="notification_outcome_touching">မဖတ်ပါ- မျက်နှာပြင်ကို ထိထားသည်</string>
+    <string name="notification_outcome_app">မဖတ်ပါ- အက်ပ်</string>
+    <string name="notification_outcome_ongoing">မဖတ်ပါ- ဆက်တိုက် အကြောင်းကြားချက်</string>
+    <string name="notification_outcome_foreground">မဖတ်ပါ- အက်ပ် ဖွင့်ထားသည်</string>
+    <string name="notification_outcome_low_priority">မဖတ်ပါ- ဦးစားပေးမှု နိမ့်</string>
+    <string name="notification_outcome_system">မဖတ်ပါ- စနစ်</string>
+    <string name="notification_outcome_media">မဖတ်ပါ- မီဒီယာ ပလေယာ</string>
+    <string name="notification_outcome_group_summary">မဖတ်ပါ- အုပ်စု အနှစ်ချုပ်</string>
+    <string name="notification_outcome_progress">မဖတ်ပါ- တိုးတက်မှု</string>
+    <string name="notification_outcome_required">မဖတ်ပါ- လိုအပ်သော စကားလုံးများ မပါ</string>
+    <string name="notification_outcome_blocked">မဖတ်ပါ- ပိတ်ထားသော စကားလုံး</string>
+    <string name="notification_outcome_empty">မဖတ်ပါ- စာသား မရှိ</string>
+    <string name="notification_outcome_repeat">မဖတ်ပါ- ထပ်နေသည်</string>
+    <string name="notification_outcome_cooldown">မဖတ်ပါ- အက်ပ်ကို မကြာမီက ဖတ်ခဲ့သည်</string>
+    <string name="notification_outcome_quiet_hours">မဖတ်ပါ- တိတ်ဆိတ်သော နာရီ</string>
+    <string name="notification_outcome_screen_on">မဖတ်ပါ- မျက်နှာပြင် ဖွင့်ထားသည်</string>
+    <string name="notification_outcome_screen_off">မဖတ်ပါ- မျက်နှာပြင် ပိတ်ထားသည်</string>
+    <string name="notification_outcome_locked">မဖတ်ပါ- လော့ခ်ချထားသည်</string>
+    <string name="notification_outcome_headphones">မဖတ်ပါ- နားကြပ် ချိတ်ဆက်ထားသည်</string>
+    <string name="notification_outcome_no_headphones">မဖတ်ပါ- နားကြပ် မရှိ</string>
+    <string name="notification_outcome_silent">မဖတ်ပါ- အသံတိတ်မုဒ်</string>
+    <string name="notification_outcome_vibrate">မဖတ်ပါ- တုန်ခါမုဒ်</string>
+    <string name="notification_outcome_media_playing">မဖတ်ပါ- မီဒီယာ ဖွင့်နေသည်</string>
+    <string name="notification_outcome_car">မဖတ်ပါ- ကားမုဒ်</string>
+    <string name="notification_outcome_rule">မဖတ်ပါ- စည်းမျဉ်း</string>
+    <string name="notification_outcome_busy">မဖတ်ပါ- အခြား အကြောင်းကြားချက်ကို ဖတ်ခဲ့သည်</string>
+    <string name="notification_outcome_call">အဝင်ဖုန်းခေါ်ဆိုမှုအဖြစ် ကြေညာခဲ့သည်</string>
+    <string name="notification_rule_add">စည်းကမ်းထည့်ပါ</string>
+    <string name="notification_rule_from_template">နမူနာပုံစံတစ်ခုမှ စည်းမျဉ်းတစ်ခုကို ထည့်ပါ</string>
     <string name="notification_rules_category">စည်းကမ်းများ</string>
-    <string name="notification_rules_empty">စည်းကမ်းမရှိ။</string>
+    <string name="notification_rules_empty">စည်းကမ်းမရှိ</string>
     <string name="notification_rule_name">နာမည်</string>
     <string name="notification_rule_untitled">စည်းကမ်း</string>
-    <string name="notification_rule_enabled">ဖွင့်ထားသည်။</string>
+    <string name="notification_rule_enabled">ဖွင့်ထားသည်</string>
     <string name="notification_rule_match">အခြေအနေများ</string>
-    <string name="notification_rule_match_all">အခြေအနေအားလုံး ကျေနပ်ရမယ်။</string>
-    <string name="notification_rule_match_any">အနည်းဆုံး အခြေအနေတစ်ခုကို ကျေနပ်ရပေမည်။</string>
-    <string name="notification_rule_conditions">ဘယ်တော့လဲ။</string>
-    <string name="notification_rule_actions">ပြီးတော့</string>
-    <string name="notification_rule_add_condition">အခြေအနေတစ်ခုထည့်ပါ။</string>
-    <string name="notification_rule_add_action">လုပ်ဆောင်ချက်တစ်ခုထည့်ပါ။</string>
-    <string name="notification_rule_invert">အခြေအနေကို ပြောင်းပြန်</string>
-    <string name="notification_rule_delete">စည်းကမ်းကိုဖျက်ပါ။</string>
+    <string name="notification_rule_match_all">အခြေအနေအားလုံး ပြည့်မီရမည်</string>
+    <string name="notification_rule_match_any">အနည်းဆုံး အခြေအနေတစ်ခု ပြည့်မီရမည်</string>
+    <string name="notification_rule_conditions">အခြေအနေ</string>
+    <string name="notification_rule_actions">ထို့နောက်</string>
+    <string name="notification_rule_add_condition">အခြေအနေတစ်ခုထည့်ပါ</string>
+    <string name="notification_rule_add_action">လုပ်ဆောင်ချက်တစ်ခုထည့်ပါ</string>
+    <string name="notification_rule_invert">အခြေအနေကို ပြောင်းပြန်လှန်ရန်</string>
+    <string name="notification_rule_delete">စည်းကမ်းကိုဖျက်ပါ</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> ဖျက်မလား။</string>
     <string name="notification_rule_always">အမြဲတမ်း</string>
-    <string name="notification_rule_no_actions">ဘာမှမဖြစ်ဘူး။</string>
+    <string name="notification_rule_no_actions">ဘာမှ မလုပ်ပါ</string>
     <string name="notification_rule_and">" နှင့် "</string>
     <string name="notification_rule_or">" သို့မဟုတ် "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">နားကြပ်များဖြင့်သာ</string>
-    <string name="notification_template_night">ညမှာ တိတ်ဆိတ်နေတယ်။</string>
-    <string name="notification_template_screen_off">ဖန်သားပြင်ကို ပိတ်ထားခြင်းဖြင့်သာ</string>
-    <string name="notification_template_locked_private">ဖုန်းကို လော့ခ်ချထားသောအခါတွင်သာ အက်ပ်အမည်</string>
-    <string name="notification_template_short_on_battery">အားမသွင်းသည့်အခါ အတိုချုံးဖတ်ပါ။</string>
+    <string name="notification_template_night">ညအချိန် အသံပိတ်</string>
+    <string name="notification_template_screen_off">မျက်နှာပြင် ပိတ်ထားချိန်တွင်သာ</string>
+    <string name="notification_template_locked_private">လော့ခ်ချထားချိန်တွင် အက်ပ်အမည်သာ</string>
+    <string name="notification_template_short_on_battery">အားမသွင်းချိန်တွင် အတိုချုံး</string>
     <string name="notification_type_bluetooth">Bluetooth စက်</string>
     <string name="notification_type_wired">ကြိုးတပ်နားကြပ်များ</string>
     <string name="notification_type_wifi">Wi-Fi ကွန်ရက်</string>
     <string name="notification_type_time">နေ့အချိန်</string>
-    <string name="notification_type_screen">မျက်နှာပြင်ဖွင့်ပါ။</string>
-    <string name="notification_type_locked">ဖုန်းသော့ခတ်ထားသည်။</string>
+    <string name="notification_type_screen">မျက်နှာပြင် ဖွင့်ထားသည်</string>
+    <string name="notification_type_locked">ဖုန်းသော့ခတ်ထားသည်</string>
     <string name="notification_type_from_app">အက်ပ်တစ်ခုမှ အသိပေးချက်</string>
-    <string name="notification_type_foreground">အက်ပ်သည် နောက်ခံတွင်ရှိသည်။</string>
-    <string name="notification_type_contains">အသိပေးချက်ပါရှိသည်။</string>
+    <string name="notification_type_foreground">အက်ပ် ရှေ့တွင်ရှိသည်</string>
+    <string name="notification_type_contains">အကြောင်းကြားချက်တွင် ပါဝင်သည်</string>
     <string name="notification_type_battery">ဘက်ထရီအဆင့်အောက်</string>
-    <string name="notification_type_charging">အားသွင်းခြင်း။</string>
+    <string name="notification_type_charging">အားသွင်းခြင်း</string>
     <string name="notification_type_landscape">ဘေးတိုက်</string>
     <string name="notification_type_silent">အသံတိတ် သို့မဟုတ် တုန်ခါမှုမုဒ်</string>
-    <string name="notification_type_media">မီဒီယာကစားခြင်း။</string>
+    <string name="notification_type_media">မီဒီယာ ဖွင့်နေခြင်း</string>
     <string name="notification_bluetooth_any">စက်ပစ္စည်းတစ်ခုခု</string>
     <string name="notification_wifi_hint">ကွန်ရက်အမည်</string>
-    <string name="notification_choose_app">အက်ပ်တစ်ခုကို ရွေးပါ။</string>
-    <string name="notification_time_start">ထံမှ</string>
-    <string name="notification_time_end">သည်အထိ</string>
+    <string name="notification_choose_app">အက်ပ်တစ်ခုကို ရွေးပါ</string>
+    <string name="notification_time_start">မှ</string>
+    <string name="notification_time_end">အထိ</string>
     <string name="notification_time_days">နေ့ရက်များ</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> မှ <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly ဤအခြေအနေအတွက် ထိုခွင့်ပြုချက် လိုအပ်ပါသည်။</string>
-    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ချိတ်ဆက်ထားသည်။</string>
-    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> မချိတ်ဆက်ပါ။</string>
-    <string name="notification_cond_bluetooth_any">Bluetooth အသံစက်ကို ချိတ်ဆက်ထားသည်။</string>
-    <string name="notification_cond_bluetooth_any_not">Bluetooth အသံစက်ကို ချိတ်ဆက်ထားခြင်းမရှိပါ။</string>
-    <string name="notification_cond_wired">ကြိုးတပ်နားကြပ်များကို ချိတ်ဆက်ထားသည်။</string>
-    <string name="notification_cond_wired_not">ကြိုးတပ်နားကြပ်များကို မချိတ်ဆက်ပါ။</string>
-    <string name="notification_cond_battery_below">ဘက်ထရီသည် <xliff:g id="percent" example="20">%1$d</xliff:g> ရာခိုင်နှုန်းအောက်တွင်ရှိသည်။</string>
-    <string name="notification_cond_battery_below_not">ဘက်ထရီသည် <xliff:g id="percent" example="20">%1$d</xliff:g> ရာခိုင်နှုန်း သို့မဟုတ် ထို့ထက်ပိုသည်။</string>
-    <string name="notification_cond_charging">ဖုန်းအားသွင်းနေပါသည်။</string>
-    <string name="notification_cond_charging_not">ဖုန်းအားမသွင်းပါ။</string>
-    <string name="notification_cond_locked">ဖုန်းကို လော့ခ်ချထားသည်။</string>
-    <string name="notification_cond_locked_not">ဖုန်းကို လော့ခ်ဖွင့်ထားသည်။</string>
-    <string name="notification_cond_screen_on">မျက်နှာပြင်ကို ဖွင့်ထားသည်။</string>
-    <string name="notification_cond_screen_on_not">မျက်နှာပြင် ပိတ်ထားသည်။</string>
-    <string name="notification_cond_landscape">မျက်နှာပြင်သည် ရှုခင်းဖြစ်သည်။</string>
-    <string name="notification_cond_landscape_not">မျက်နှာပြင်သည် ပုံတူဖြစ်သည်။</string>
+    <string name="notification_permission_needed">SandFly သည် ဤအခြေအနေအတွက် ထိုခွင့်ပြုချက် လိုအပ်ပါသည်</string>
+    <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ချိတ်ဆက်ထားသည်</string>
+    <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> မချိတ်ဆက်ပါ</string>
+    <string name="notification_cond_bluetooth_any">Bluetooth အသံ စက်ပစ္စည်း ချိတ်ဆက်ထားသည်</string>
+    <string name="notification_cond_bluetooth_any_not">Bluetooth အသံ စက်ပစ္စည်း ချိတ်ဆက်ထားခြင်း မရှိပါ</string>
+    <string name="notification_cond_wired">ကြိုးတပ်နားကြပ်များကို ချိတ်ဆက်ထားသည်</string>
+    <string name="notification_cond_wired_not">ကြိုးတပ်နားကြပ်များကို မချိတ်ဆက်ပါ</string>
+    <string name="notification_cond_battery_below">ဘက်ထရီသည် <xliff:g id="percent" example="20">%1$d</xliff:g> ရာခိုင်နှုန်းအောက်တွင်ရှိသည်</string>
+    <string name="notification_cond_battery_below_not">ဘက်ထရီသည် <xliff:g id="percent" example="20">%1$d</xliff:g> ရာခိုင်နှုန်း သို့မဟုတ် ထို့ထက်ပိုသည်</string>
+    <string name="notification_cond_charging">ဖုန်းအားသွင်းနေပါသည်</string>
+    <string name="notification_cond_charging_not">ဖုန်းအားမသွင်းပါ</string>
+    <string name="notification_cond_locked">ဖုန်းကို လော့ခ်ချထားသည်</string>
+    <string name="notification_cond_locked_not">ဖုန်းကို လော့ခ်ဖွင့်ထားသည်</string>
+    <string name="notification_cond_screen_on">မျက်နှာပြင်ကို ဖွင့်ထားသည်</string>
+    <string name="notification_cond_screen_on_not">မျက်နှာပြင် ပိတ်ထားသည်</string>
+    <string name="notification_cond_landscape">မျက်နှာပြင်သည် အလျားလိုက် ဖြစ်သည်</string>
+    <string name="notification_cond_landscape_not">မျက်နှာပြင်သည် ဒေါင်လိုက် ဖြစ်သည်</string>
     <string name="notification_cond_time">အချိန်က <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
-    <string name="notification_cond_time_not">အချိန်က မဟုတ်ဘူး <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">အချိန်သည် <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> မဟုတ်ပါ</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> နှင့် ချိတ်ဆက်ထားသည်</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> နှင့် မချိတ်ဆက်ပါ</string>
     <string name="notification_cond_wifi_any">Wi-Fi နှင့် ချိတ်ဆက်ထားသည်</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi နှင့် မချိတ်ဆက်ပါ</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> ရှေ့က</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ရှေ့ကမဟုတ်ဘူး။</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> ကို မျက်နှာပြင်ပေါ်တွင် ဖွင့်ထားသည်</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ကို မျက်နှာပြင်ပေါ်တွင် ဖွင့်မထားပါ</string>
     <string name="notification_cond_from">အသိပေးချက်သည် <xliff:g id="app" example="Chat">%1$s</xliff:g> မှဖြစ်သည်</string>
     <string name="notification_cond_from_not">အကြောင်းကြားချက်သည် <xliff:g id="app" example="Chat">%1$s</xliff:g> မှမဟုတ်ပါ</string>
-    <string name="notification_cond_contains">အသိပေးချက်တွင် <xliff:g id="text" example="urgent">%1$s</xliff:g> ပါရှိသည်။</string>
-    <string name="notification_cond_contains_not">အကြောင်းကြားချက်တွင် <xliff:g id="text" example="urgent">%1$s</xliff:g> မပါဝင်ပါ။</string>
-    <string name="notification_cond_silent">ဖုန်းမြည်သံသည် အသံတိတ်နေသည် သို့မဟုတ် တုန်နေသည်။</string>
-    <string name="notification_cond_silent_not">အသံမြည်သည်။</string>
-    <string name="notification_cond_media">မီဒီယာက ကစားနေတယ်။</string>
-    <string name="notification_cond_media_not">ဘယ်မီဒီယာကမှ မဖွင့်ဘူး။</string>
-    <string name="notification_action_skip">မဖတ်နဲ့</string>
-    <string name="notification_action_private">အက်ပ်အမည်ကိုသာ ဖတ်ပါ။</string>
-    <string name="notification_action_not_private">သီးသန့်ရှိရင်တောင် အပြည့်အစုံဖတ်ပါ။</string>
-    <string name="notification_action_format">စကားပြောဖော်မတ်ကို သုံးပါ။</string>
-    <string name="notification_action_max_words">စကားလုံးများစွာအထိဖတ်ပါ။</string>
-    <string name="notification_action_no_limit">အရှည်ကန့်သတ်ချက်မရှိဘဲဖတ်ပါ။</string>
-    <string name="notification_action_keep_emoji">emoji ထားရှိပါ။</string>
-    <string name="notification_action_keep_numbers">နံပါတ်များကို အတူတူထားပါ။</string>
-    <string name="notification_action_priority">အရင်ဖတ်ပါ။</string>
-    <string name="notification_action_always_read">တိတ်ဆိတ်သောနာရီများ သို့မဟုတ် အခြားကန့်သတ်ထားသည့်အချိန်များတွင်ပင် သတိပေးချက်များကို ကျယ်လောင်စွာဖတ်ပါ။</string>
-    <string name="notification_action_voice">အသံဖိုင်ဖြင့်ဖတ်ပါ။</string>
-    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ဖြင့်ဖတ်ပါ</string>
-    <string name="notification_action_voice_sandfly">SandFly အသံဖြင့် ဖတ်ပါ။</string>
-    <string name="notification_voice_removed">အသံပရိုဖိုင်ကို ဖယ်ရှားခဲ့သည်။</string>
-    <string name="notification_action_format_value">စကားပြောဖော်မတ် <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> ကိုသုံးပါ</string>
-    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> အထိဖတ်ပါ</string>
+    <string name="notification_cond_contains">အသိပေးချက်တွင် <xliff:g id="text" example="urgent">%1$s</xliff:g> ပါရှိသည်</string>
+    <string name="notification_cond_contains_not">အကြောင်းကြားချက်တွင် <xliff:g id="text" example="urgent">%1$s</xliff:g> မပါဝင်ပါ</string>
+    <string name="notification_cond_silent">ဖုန်းမြည်သံ အသံပိတ် သို့မဟုတ် တုန်ခါမုဒ်တွင် ရှိသည်</string>
+    <string name="notification_cond_silent_not">ဖုန်းမြည်သံ ဖွင့်ထားသည်</string>
+    <string name="notification_cond_media">မီဒီယာ ဖွင့်နေသည်</string>
+    <string name="notification_cond_media_not">မည်သည့် မီဒီယာမျှ ဖွင့်မထားပါ</string>
+    <string name="notification_action_skip">မဖတ်ရန်</string>
+    <string name="notification_action_private">အက်ပ်အမည်ကိုသာ ဖတ်ရန်</string>
+    <string name="notification_action_not_private">သီးသန့်ဖြစ်လျှင်ပင် အပြည့်အစုံ ဖတ်ရန်</string>
+    <string name="notification_action_format">စကားပြော ဖော်မတ် သုံးရန်</string>
+    <string name="notification_action_max_words">သတ်မှတ်ထားသော စကားလုံးအရေအတွက်အထိ ဖတ်ရန်</string>
+    <string name="notification_action_no_limit">အရှည် ကန့်သတ်ချက်မရှိဘဲ ဖတ်ရန်</string>
+    <string name="notification_action_keep_emoji">emoji ထားရန်</string>
+    <string name="notification_action_keep_numbers">နံပါတ်များကို တွဲထားရန်</string>
+    <string name="notification_action_priority">အရင်ဖတ်ရန်</string>
+    <string name="notification_action_always_read">တိတ်ဆိတ်သောနာရီများနှင့် အကြောင်းကြားချက်များ မဖတ်သည့် အခြားအချိန်များတွင်ပင် ဖတ်ရန်</string>
+    <string name="notification_action_voice">အသံပရိုဖိုင်ဖြင့် ဖတ်ရန်</string>
+    <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> ဖြင့် ဖတ်ရန်</string>
+    <string name="notification_action_voice_sandfly">SandFly အသံဖြင့် ဖတ်ရန်</string>
+    <string name="notification_voice_removed">ဖယ်ရှားထားသော အသံပရိုဖိုင်</string>
+    <string name="notification_action_format_value">စကားပြော ဖော်မတ် <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> ကို သုံးရန်</string>
+    <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> အထိ ဖတ်ရန်</string>
     <string name="notification_off">ပိတ်</string>
     <string name="notification_on">ဖွင့်</string>
     <string name="notification_never_again">SandFly ပြန်လည်စတင်သည်အထိ</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">သတိပေးချက်များကို အသံထွက်ဖတ်ခြင်း။</string>
-    <string name="notification_speech_now_on">အကြောင်းကြားချက်များကို ရွတ်ဖတ်ခြင်းကို ဖွင့်ထားသည်။</string>
-    <string name="notification_speech_now_off">အကြောင်းကြားချက်များကို ကျယ်လောင်စွာဖတ်ခြင်းကို ပိတ်ထားသည်။</string>
-    <string name="notification_no_last_notification">အကြောင်းကြားစာကို မဖတ်ခဲ့ပါ။</string>
-    <string name="shortcut_read_notifications">အသိပေးချက်များကိုဖတ်ပါ။</string>
-    <string name="shortcut_toggle_notification_speech">အကြောင်းကြားချက် မိန့်ခွန်းကို အဖွင့် သို့မဟုတ် ပိတ်ပါ။</string>
-    <string name="shortcut_read_last_notification">နောက်ဆုံးသတိပေးချက်ကို ထပ်ဖတ်ပါ။</string>
-    <string name="shortcut_stop_notification">အကြောင်းကြားစာကို ဖတ်ခြင်းကို ရပ်ပါ။</string>
-    <string name="notification_test_posting">စမ်းသပ်မှုသတိပေးချက်သည် ၅ စက္ကန့်အတွင်း ထွက်ပေါ်လာသည်။</string>
-    <string name="notification_test_not_allowed">အကြောင်းကြားချက်များကို ဦးစွာပြသရန် SandFlyအား ခွင့်ပြုပါ။</string>
-    <string name="notification_test_content_title">SandFly စာမေးပွဲ</string>
-    <string name="notification_test_content_text">ဤသည်မှာ စမ်းသပ်မှုသတိပေးချက်ဖြစ်ပြီး၊ သင်၏သတိပေးချက်ဆက်တင်များဖြင့် ဖတ်ပါ။ ၁၂၃၄၅၆</string>
-    <string name="notification_automation_on">အကြောင်းကြားချက်များကို ကျယ်လောင်စွာဖတ်ခြင်းကို ဖွင့်ပါ။</string>
-    <string name="notification_automation_off">ကျယ်လောင်စွာဖတ်ခြင်း အသိပေးချက်များကို ပိတ်ပါ။</string>
-    <string name="notification_automation_toggle">ကျယ်လောင်စွာ ဖတ်ရှုခြင်း အသိပေးချက်များကို ဖွင့်ပါ သို့မဟုတ် ပိတ်ပါ။</string>
-    <string name="notification_automation_stop">အကြောင်းကြားချက်ကို ဖတ်နေခြင်းကို ရပ်ပါ။</string>
-    <string name="notification_automation_read_all">အသိပေးချက်များကိုဖတ်ပါ။</string>
+    <string name="notification_speech_tile_label">သတိပေးချက်များကို အသံထွက်ဖတ်ခြင်း</string>
+    <string name="notification_speech_now_on">အကြောင်းကြားချက် ဖတ်ခြင်း ဖွင့်ထားသည်</string>
+    <string name="notification_speech_now_off">အကြောင်းကြားချက် ဖတ်ခြင်း ပိတ်ထားသည်</string>
+    <string name="notification_no_last_notification">အကြောင်းကြားချက် မဖတ်ရသေးပါ</string>
+    <string name="shortcut_read_notifications">အကြောင်းကြားချက်များကို ဖတ်ရန်</string>
+    <string name="shortcut_toggle_notification_speech">အကြောင်းကြားချက် ဖတ်ခြင်း ဖွင့်/ပိတ်</string>
+    <string name="shortcut_read_last_notification">နောက်ဆုံး အကြောင်းကြားချက်ကို ထပ်ဖတ်ရန်</string>
+    <string name="shortcut_stop_notification">အကြောင်းကြားချက် ဖတ်ခြင်းကို ရပ်ရန်</string>
+    <string name="notification_test_posting">စမ်းသပ် အကြောင်းကြားချက်တစ်ခု ၅ စက္ကန့်အတွင်း ရောက်လာမည်</string>
+    <string name="notification_test_not_allowed">SandFly ကို အကြောင်းကြားချက်များ ပြသခွင့် အရင်ပေးပါ</string>
+    <string name="notification_test_content_title">SandFly စမ်းသပ်မှု</string>
+    <string name="notification_test_content_text">ဤသည်မှာ သင့်အကြောင်းကြားချက် ဆက်တင်များအတိုင်း ဖတ်ပေးသော စမ်းသပ်အကြောင်းကြားချက် ဖြစ်သည်။ 123456</string>
+    <string name="notification_automation_on">အကြောင်းကြားချက် ဖတ်ခြင်းကို ဖွင့်ရန်</string>
+    <string name="notification_automation_off">အကြောင်းကြားချက် ဖတ်ခြင်းကို ပိတ်ရန်</string>
+    <string name="notification_automation_toggle">အကြောင်းကြားချက် ဖတ်ခြင်းကို ဖွင့်ရန် သို့မဟုတ် ပိတ်ရန်</string>
+    <string name="notification_automation_stop">ဖတ်နေသော အကြောင်းကြားချက်ကို ရပ်ရန်</string>
+    <string name="notification_automation_read_all">အကြောင်းကြားချက်များကို ဖတ်ရန်</string>
     <plurals name="notification_seconds">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ဒုတိယ</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> စက္ကန့်</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> စက္ကန့်</item>
     </plurals>
     <plurals name="notification_minutes">
@@ -335,8 +335,8 @@
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> စကားလုံးများ</item>
     </plurals>
     <plurals name="notification_sentences">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ဝါကျ</item>
-        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> စာကြောင်းများ</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> စာကြောင်း</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> စာကြောင်း</item>
     </plurals>
     <plurals name="notification_characters">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> စာသားအက္ခရာ</item>

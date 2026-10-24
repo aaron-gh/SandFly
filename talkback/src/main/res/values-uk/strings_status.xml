@@ -8,22 +8,22 @@
     <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
     <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
     <string name="status_mobile">Мобільний</string>
-    <string name="status_mobile_no_service">Немає мобільних послуг</string>
+    <string name="status_mobile_no_service">Немає мобільного зв\'язку</string>
     <string name="status_do_not_disturb">Не турбувати</string>
-    <string name="status_ringer_vibrate">Вібрувати</string>
-    <string name="status_ringer_silent">Мовчазний</string>
+    <string name="status_ringer_vibrate">Вібрація</string>
+    <string name="status_ringer_silent">Без звуку</string>
     <string name="status_airplane_mode">Режим польоту</string>
-    <string name="title_pref_status_readout">Зчитування стану</string>
+    <string name="title_pref_status_readout">Озвучення стану</string>
     <string name="status_item_time">Час</string>
     <string name="status_item_time_summary">Поточний час</string>
     <string name="status_item_battery">Акумулятор</string>
     <string name="status_item_battery_summary">Рівень заряду акумулятора, заряджання та економія заряду</string>
     <string name="status_item_wifi">Wi-Fi</string>
-    <string name="status_item_wifi_summary">Назва мережі та потужність сигналу</string>
+    <string name="status_item_wifi_summary">Назва мережі та рівень сигналу</string>
     <string name="status_item_mobile">Мобільна мережа</string>
-    <string name="status_item_mobile_summary">Оператор, тип мережі та потужність сигналу</string>
+    <string name="status_item_mobile_summary">Оператор, тип мережі та рівень сигналу</string>
     <string name="status_item_ringer">Дзвінок і Не турбувати</string>
-    <string name="status_item_ringer_summary">Лише коли дзвінок не налаштовано на дзвінок або ввімкнено режим «Не турбувати».</string>
+    <string name="status_item_ringer_summary">Лише коли дзвінок у режимі вібрації чи без звуку або ввімкнено режим «Не турбувати»</string>
     <string name="status_item_airplane_mode">Режим польоту</string>
     <string name="status_item_airplane_mode_summary">Лише коли ввімкнено режим польоту</string>
 </resources>

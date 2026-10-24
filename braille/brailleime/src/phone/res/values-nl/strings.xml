@@ -206,23 +206,23 @@
   <string name="custom_gesture_try_another">Probeer een ander gebaar. Ga naar het Helpcentrum voor het brailletoetsenbord van SandFly voor een lijst met alle beschikbare gebaren. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Gebaren komen niet overeen</string>
   <string name="custom_gesture_perform_again">Voer het gebaar dat je wilt gebruiken nog een keer uit. %s</string>
-    <string name="tabletop_port_left_announcement">Tafelmodel, oplaadpoort aan de linkerkant</string>
-    <string name="tabletop_port_right_announcement">Tafelmodel, oplaadpoort aan de rechterkant</string>
+    <string name="tabletop_port_left_announcement">Tafelmodus, oplaadpoort aan de linkerkant</string>
+    <string name="tabletop_port_right_announcement">Tafelmodus, oplaadpoort aan de rechterkant</string>
     <string name="screen_away_port_right_announcement">Screen-away-modus, oplaadpoort aan de rechterkant</string>
     <string name="screen_away_port_left_announcement">Screen-away-modus, oplaadpoort aan de linkerkant</string>
     <string name="screen_toward_announcement">Scherm naar u toe</string>
-    <string name="screen_toward_port_left_announcement">Scherm naar u toe, oplaadpoort aan de linkerkant</string>
-    <string name="screen_toward_port_right_announcement">Scherm naar u toe, oplaadpoort aan de rechterkant</string>
-    <string name="screen_toward_port_down_announcement">Scherm naar u toe, oplaadpoort naar beneden gericht</string>
-    <string name="screen_toward_port_up_announcement">Scherm naar u toe, oplaadpoort naar boven gericht</string>
+    <string name="screen_toward_port_left_announcement">Scherm naar je toe, oplaadpoort aan de linkerkant</string>
+    <string name="screen_toward_port_right_announcement">Scherm naar je toe, oplaadpoort aan de rechterkant</string>
+    <string name="screen_toward_port_down_announcement">Scherm naar je toe, oplaadpoort naar beneden gericht</string>
+    <string name="screen_toward_port_up_announcement">Scherm naar je toe, oplaadpoort wijst naar boven</string>
     <string name="port_right_announcement">Oplaadpoort aan de rechterkant</string>
     <string name="port_left_announcement">Oplaadpoort aan de linkerkant</string>
-    <string name="tabletop_port_near_announcement">Tafelmodel, oplaadpoort naar u toe</string>
-    <string name="tabletop_port_far_announcement">Tafelmodel, oplaadpoort van u af</string>
+    <string name="tabletop_port_near_announcement">Tafelmodus, oplaadpoort naar je toe</string>
+    <string name="tabletop_port_far_announcement">Tafelmodus, oplaadpoort van je af</string>
     <string name="screen_away_port_down_announcement">Screen-away-modus, oplaadpoort naar beneden gericht</string>
     <string name="screen_away_port_up_announcement">Screen-away-modus, oplaadpoort naar boven gericht</string>
-    <string name="port_near_announcement">Oplaadpoort naar u toe</string>
-    <string name="port_far_announcement">Oplaadpoort van u af</string>
+    <string name="port_near_announcement">Oplaadpoort naar je toe</string>
+    <string name="port_far_announcement">Oplaadpoort van je af</string>
     <string name="port_down_announcement">Oplaadpoort naar beneden gericht</string>
     <string name="port_up_announcement">Oplaadpoort wijst naar boven</string>
     <string name="orientation_locked_announcement">Oriëntatie vergrendeld</string>
@@ -232,9 +232,9 @@
     <string name="switch_to_language_uncontracted_announcement">Overgeschakeld naar %s, Volledige braille</string>
     <string name="title_pref_flip_dots_vertically">Wissel de bovenste en onderste punten om</string>
     <string name="summary_pref_flip_dots_vertically">Punt 1 ruilt plaatsen met punt 3, en punt 4 met punt 6</string>
-    <string name="title_pref_tablet_held_up_faces_away">Tablet omhoog gehouden, gezichten weg</string>
+    <string name="title_pref_tablet_held_up_faces_away">Rechtop gehouden tablet naar buiten gericht</string>
     <string name="summary_pref_tablet_held_up_faces_away">Wanneer deze is uitgeschakeld, gebruikt een tablet of uitgevouwen telefoon die omhoog wordt gehouden de tafelbladindeling, naar u toe gericht</string>
     <string name="title_pref_typing_sounds">Typegeluiden</string>
-    <string name="summary_pref_typing_sounds">Speel toetsenbordklikken wanneer u een teken, een spatie, een nieuwe regel typt of verwijdert</string>
+    <string name="summary_pref_typing_sounds">Speelt toetsklikken af bij het typen van een teken, spatie of nieuwe regel, of bij verwijderen</string>
     <string name="skip_tutorial">Handleiding overslaan</string>
 </resources>

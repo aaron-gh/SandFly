@@ -6,22 +6,22 @@
     <string name="script_install_label">SandFly स्क्रिप्ट स्थापित करा</string>
     <string name="script_import_nothing">स्थापित करण्यासाठी स्क्रिप्ट फाइल नाही.</string>
     <string name="script_import_cannot_open">फाइल उघडता आली नाही.</string>
-    <string name="script_import_repository">ही लिंक संपूर्ण भांडाराची आहे. तुम्हाला हवी असलेली स्क्रिप्ट उघडा, त्यानंतर त्याची लिंक शेअर करा.</string>
-    <string name="script_import_summary">.lua फाइल, किंवा main.lua सह .zip</string>
+    <string name="script_import_repository">ही लिंक संपूर्ण रिपॉझिटरीची आहे. हवी असलेली स्क्रिप्ट उघडा, नंतर तिची लिंक शेअर करा.</string>
+    <string name="script_import_summary">.lua फाइल, किंवा main.lua असलेली .zip</string>
     <string name="scripts_category_app">ॲप स्क्रिप्ट्स</string>
-    <string name="scripts_category_global">जागतिक प्लगइन</string>
-    <string name="scripts_none">स्क्रिप्ट स्थापित केल्या नाहीत</string>
+    <string name="scripts_category_global">सामान्य प्लगइन</string>
+    <string name="scripts_none">कोणत्याही स्क्रिप्ट इंस्टॉल केलेल्या नाहीत</string>
     <string name="scripts_all_off">सर्व स्क्रिप्ट बंद करा</string>
-    <string name="scripts_all_off_summary">स्क्रिप्ट स्थापित राहतात आणि त्यांचे स्वतःचे स्विच ठेवतात. सर्व स्क्रिप्ट चालू किंवा बंद करा जेश्चर तेच करते.</string>
+    <string name="scripts_all_off_summary">स्क्रिप्ट इंस्टॉल राहतात आणि त्यांचे स्वतःचे स्विच राखतात. “सर्व स्क्रिप्ट चालू किंवा बंद करा” जेश्चरही हेच करते.</string>
     <string name="shortcut_toggle_scripts">सर्व स्क्रिप्ट चालू किंवा बंद करा</string>
     <string name="scripts_now_off">स्क्रिप्ट बंद</string>
     <string name="scripts_now_on">स्क्रिप्ट चालू</string>
     <string name="scripts_unavailable">या डिव्हाइसवर स्क्रिप्ट उपलब्ध नाहीत</string>
     <string name="script_add_example">उदाहरण स्क्रिप्ट जोडा</string>
-    <string name="script_add_example_summary">तुम्ही स्विच करता त्या प्रत्येक ॲपचे नाव सांगते. पासून सुरू करण्यासाठी स्क्रिप्ट.</string>
+    <string name="script_add_example_summary">तुम्ही स्विच करता त्या प्रत्येक अ‍ॅपचे नाव सांगते. सुरुवातीसाठी एक स्क्रिप्ट.</string>
     <string name="script_state_on">सुरू आहे</string>
     <string name="script_state_off">बंद आहे</string>
-    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g> मध्ये धावतो</string>
+    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g> मध्ये चालते</string>
     <string name="script_runs_everywhere">सर्व ॲप्समध्ये चालते</string>
     <string name="script_version">आवृत्ती <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author"><xliff:g id="author">%1$s</xliff:g> ने</string>
@@ -32,24 +32,24 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> वर अपडेट करायचे?</string>
     <string name="script_update_new_permissions">नवीन परवानग्या:</string>
     <string name="script_update_button">अपडेट करा</string>
-    <string name="script_update_replaces">हे आवृत्ती <xliff:g id="version">%1$s</xliff:g> <xliff:g id="author">%2$s</xliff:g> ने बदलते आणि त्याचा डेटा आणि सेटिंग्ज ठेवते.</string>
-    <string name="script_update_other_author">नवीन <xliff:g id="author">%1$s</xliff:g>, वेगळ्या लेखकाचे आहे. तुमचा विश्वास असेल तरच अपडेट करा.</string>
-    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> स्थापित</string>
+    <string name="script_update_replaces">हे <xliff:g id="author">%2$s</xliff:g> यांची आवृत्ती <xliff:g id="version">%1$s</xliff:g> बदलते आणि तिचा डेटा व सेटिंग्ज ठेवते.</string>
+    <string name="script_update_other_author">नवीन स्क्रिप्ट वेगळ्या लेखकाची, <xliff:g id="author">%1$s</xliff:g> यांची आहे. विश्वास असेल तरच अपडेट करा.</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> इंस्टॉल केले</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> वर अपडेट केले</string>
     <string name="script_import_failed">आयात अयशस्वी. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. केवळ विश्वसनीय स्क्रिप्टसाठी अनुमती द्या.</string>
-    <string name="script_permission_screen">स्क्रीन वाचा</string>
-    <string name="script_permission_actions">क्लिक करा, स्क्रोल करा, टाइप करा आणि फोकस हलवा</string>
-    <string name="script_permission_speech">SandFly चे भाषण ऐका आणि बदला</string>
-    <string name="script_permission_passwords">पासवर्ड फील्ड वाचा</string>
-    <string name="script_permission_input">जेश्चर, की, मेनू आयटम आणि वाचन नियंत्रणे जोडा</string>
-    <string name="script_permission_network">इंटरनेट वापरा</string>
-    <string name="script_permission_clipboard">क्लिपबोर्ड वाचा आणि बदला</string>
-    <string name="script_permission_system">परत जा किंवा घरी जा, सूचना आणि ॲप्स उघडा</string>
-    <string name="script_permission_notifications">बोललेल्या सूचना वाचा आणि बदला</string>
-    <string name="script_permission_events">टायपिंगसह प्रत्येक ॲपमधील सर्व क्रियाकलाप पहा</string>
-    <string name="script_permission_dialogs">कोणत्याही ॲपवर संवाद दाखवा</string>
-    <string name="script_permission_java">प्रत्येक ॲपमध्ये SandFly च्या सर्व प्रवेशासह Java कोड चालवा</string>
+    <string name="script_permission_screen">स्क्रीन वाचणे</string>
+    <string name="script_permission_actions">क्लिक करणे, स्क्रोल करणे, टाइप करणे आणि फोकस हलवणे</string>
+    <string name="script_permission_speech">SandFly चे बोलणे मिळवणे आणि बदलणे</string>
+    <string name="script_permission_passwords">पासवर्ड फील्ड वाचणे</string>
+    <string name="script_permission_input">जेश्चर, की, मेनू आयटम आणि वाचन नियंत्रणे जोडणे</string>
+    <string name="script_permission_network">इंटरनेट वापरणे</string>
+    <string name="script_permission_clipboard">क्लिपबोर्ड वाचणे आणि बदलणे</string>
+    <string name="script_permission_system">मागे किंवा होमवर जाणे, सूचना आणि ॲप्स उघडणे</string>
+    <string name="script_permission_notifications">बोलल्या जाणाऱ्या सूचना वाचणे आणि बदलणे</string>
+    <string name="script_permission_events">टायपिंगसह प्रत्येक ॲपमधील सर्व ॲक्टिव्हिटी पाहणे</string>
+    <string name="script_permission_dialogs">कोणत्याही ॲपवर डायलॉग दाखवणे</string>
+    <string name="script_permission_java">प्रत्येक अ‍ॅपमध्ये SandFly च्या सर्व अ‍ॅक्सेससह Java कोड चालवणे</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">सुरू करा</string>
     <string name="script_permissions_title">परवानग्या</string>
@@ -57,12 +57,12 @@
     <string name="script_settings_category">सेटिंग्ज</string>
     <string name="script_list_filter">फिल्टर करा</string>
     <string name="script_button_off">प्रथम स्क्रिप्ट चालू करा</string>
-    <string name="script_permissions_summary">एक बंद केल्याने आवश्यक असलेले भाग थांबतात.</string>
+    <string name="script_permissions_summary">परवानगी बंद केल्यास तिची गरज असलेले भाग थांबतात.</string>
     <string name="script_install_permissions_note">तुम्ही हे नंतर बंद करू शकता.</string>
-    <string name="script_manage_category">व्यवस्थापित करा</string>
-    <string name="script_move_up">आधी धावा</string>
+    <string name="script_manage_category">व्यवस्थापन</string>
+    <string name="script_move_up">आधी चालवा</string>
     <string name="script_move_down">नंतर चालवा</string>
-    <string name="script_order_summary">समान भाषण बदलणाऱ्या स्क्रिप्टचा क्रम. ॲप स्क्रिप्ट प्रथम चालतात.</string>
+    <string name="script_order_summary">एकच भाषण बदलणाऱ्या स्क्रिप्टचा क्रम. अ‍ॅप स्क्रिप्ट आधी चालतात.</string>
     <string name="script_log">लॉग</string>
     <string name="script_log_summary">SandFly सुरू झाल्यापासून आउटपुट आणि त्रुटी</string>
     <string name="script_clear_storage">संग्रहित डेटा साफ करा</string>
@@ -76,9 +76,9 @@
     <string name="script_log_copy">लॉग कॉपी करा</string>
     <string name="script_log_copied">लॉग कॉपी केला</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">स्क्रिप्ट API <xliff:g id="needed">%1$d</xliff:g> किंवा नंतरची आवश्यकता आहे. या SandFly मध्ये <xliff:g id="current">%2$d</xliff:g> आहे, त्यामुळे भाग कदाचित काम करणार नाहीत.</string>
-    <string name="script_api_untested">स्क्रिप्ट API <xliff:g id="tested">%1$d</xliff:g> पर्यंत चाचणी केली. या SandFly मध्ये <xliff:g id="current">%2$d</xliff:g> आहे, त्यामुळे ते अपेक्षेप्रमाणे कार्य करू शकत नाही.</string>
-    <string name="script_state_incompatible">यासह कार्य करू शकत नाही SandFly</string>
+    <string name="script_api_too_old">स्क्रिप्ट API <xliff:g id="needed">%1$d</xliff:g> किंवा नंतरचे आवश्यक आहे. या SandFly मध्ये <xliff:g id="current">%2$d</xliff:g> आहे, त्यामुळे काही भाग कदाचित काम करणार नाहीत.</string>
+    <string name="script_api_untested">स्क्रिप्ट API <xliff:g id="tested">%1$d</xliff:g> पर्यंत चाचणी केली. या SandFly मध्ये <xliff:g id="current">%2$d</xliff:g> आहे, त्यामुळे ते अपेक्षेप्रमाणे काम करू शकणार नाही.</string>
+    <string name="script_state_incompatible">SandFly च्या या आवृत्तीसह कदाचित काम करणार नाही</string>
     <string name="script_api_range">स्क्रिप्ट API <xliff:g id="min">%1$d</xliff:g> ते <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">सुसंगतता</string>
     <string name="script_install_anyway">तरीही स्थापित करा</string>
@@ -87,22 +87,22 @@
     <string name="script_homepage_confirm_title">हा पत्ता उघडायचा?</string>
     <string name="script_homepage_open">उघडा</string>
     <string name="script_homepage_failed">कोणतेही ॲप <xliff:g id="address">%1$s</xliff:g> उघडू शकत नाही</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> वारंवार त्रुटींनंतर बंद केले. त्याचे लॉग इन स्क्रिप्ट पहा.</string>
-    <string name="shortcut_inspect_item">केंद्रित आयटम तपासा</string>
+    <string name="script_turned_off">वारंवार त्रुटींमुळे <xliff:g id="name">%1$s</xliff:g> बंद झाले. त्याचा लॉग “स्क्रिप्ट” मध्ये पाहा.</string>
+    <string name="shortcut_inspect_item">फोकस केलेला आयटम तपासा</string>
     <string name="script_inspect_no_item">कोणत्याही आयटमवर फोकस नाही</string>
     <string name="script_inspect_copied">कॉपी केले. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">आयडी नाही, त्यामुळे नियम त्याला नाव देऊ शकत नाहीत. कॉपी केले. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id नाही, त्यामुळे नियम त्याचा उल्लेख करू शकत नाहीत. कॉपी केले. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">स्क्रीन ट्री कॉपी करा</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> आयटम कॉपी केले</string>
     <string name="script_tree_none">कॉपी करण्यासाठी कोणतीही विंडो नाही</string>
-    <string name="script_tree_clip_label">पडदा वृक्ष</string>
-    <string name="summary_copy_screen_tree_menu">स्क्रिप्ट लिहिण्यासाठी स्क्रीनवरील सर्व आयटम JSON म्हणून कॉपी करा</string>
+    <string name="script_tree_clip_label">स्क्रीन ट्री</string>
+    <string name="summary_copy_screen_tree_menu">स्क्रिप्ट लिहिण्यासाठी स्क्रीनवरील सर्व आयटम JSON म्हणून कॉपी करणे</string>
     <string name="script_inspect_clip_label">आयटम तपशील</string>
-    <string name="summary_inspect_item_menu">स्क्रिप्ट लिहिण्यासाठी तुम्ही ज्या आयटमवर होता त्याचे तपशील सांगा आणि कॉपी करा</string>
-    <string name="script_keys_backtalk_modifier">SandFly सुधारक</string>
+    <string name="summary_inspect_item_menu">स्क्रिप्ट लिहिण्यासाठी शेवटच्या फोकस केलेल्या आयटमचे तपशील सांगणे आणि कॉपी करणे</string>
+    <string name="script_keys_backtalk_modifier">SandFly मॉडिफायर की</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, नंतर <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">आज्ञा</string>
-    <string name="script_commands_summary">चालू स्क्रिप्टचे जेश्चर आणि की SandFly च्या आधी येतात. SandFly ठेवण्यासाठी एक बंद करा.</string>
+    <string name="script_commands_summary">चालू स्क्रिप्टचे जेश्चर आणि की SandFly च्या जेश्चर आणि कीपेक्षा प्राधान्य घेतात. SandFly चे ठेवण्यासाठी स्क्रिप्टचे बंद करा.</string>
     <string name="script_binding_gesture">जेश्चर: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">की: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly मेनू</string>
@@ -112,42 +112,42 @@
     <string name="script_binding_turn_off">बंद करा</string>
     <string name="script_binding_restore">डीफॉल्ट पुनर्संचयित करा</string>
     <string name="script_binding_restored">डीफॉल्ट पुनर्संचयित केले</string>
-    <string name="script_binding_perform">जेश्चर किंवा की करा</string>
-    <string name="script_binding_perform_summary">पुढील जेश्चर नियुक्त करा किंवा SandFly मॉडिफायरने दाबलेल्या कळा</string>
+    <string name="script_binding_perform">जेश्चर करा किंवा की दाबा</string>
+    <string name="script_binding_perform_summary">पुढील जेश्चर किंवा SandFly मॉडिफायर कीसह दाबलेल्या की नियुक्त करणे</string>
     <string name="script_binding_perform_message">जेश्चर करा किंवा कळा दाबा.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g> ला नियुक्त करायचे?</string>
     <string name="script_binding_assign">नियुक्त करा</string>
     <string name="script_binding_choose_gesture">जेश्चर निवडा</string>
     <string name="script_binding_type_keys">की टाइप करा</string>
     <string name="script_binding_type_keys_summary">जसे sf+shift+n, किंवा sf+t, s</string>
-    <string name="script_binding_bad_keys">या की वापरू शकत नाही. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">या की वापरता येत नाहीत. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">ते जोडते:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">स्क्रिप्ट स्रोत</string>
     <string name="script_sources_none">कोणतेही स्रोत जोडले नाहीत</string>
     <string name="script_source_add">स्त्रोत जोडा</string>
-    <string name="script_source_add_button">ॲड</string>
+    <string name="script_source_add_button">जोडा</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea किंवा Bitbucket वरील भांडाराचा पत्ता नाही.</string>
+    <string name="script_source_invalid">ही GitHub, GitLab, Codeberg, Gitea किंवा Bitbucket वरील रिपॉझिटरीचा पत्ता नाही.</string>
     <string name="script_source_exists">हा स्रोत आधीच जोडलेला आहे.</string>
     <string name="script_source_loading">लोड होत आहे</string>
     <string name="script_source_empty">या स्त्रोतामध्ये स्क्रिप्ट नाहीत</string>
-    <string name="script_source_failed">स्क्रिप्ट लोड करू शकलो नाही. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_failed">स्क्रिप्ट लोड करता आल्या नाहीत. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">पुन्हा प्रयत्न करा</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> डाउनलोड करत आहे</string>
     <string name="script_source_remove">स्रोत काढा</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> काढायचे?</string>
     <string name="script_source_remove_message">त्यातून स्थापित स्क्रिप्ट्स स्थापित राहतात.</string>
     <string name="scripts_auto_update">स्क्रिप्ट्स आपोआप अपडेट करा</string>
-    <string name="scripts_check_updates">अद्यतनांसाठी तपासा</string>
-    <string name="scripts_checking_updates">अपडेट तपासत आहे...</string>
+    <string name="scripts_check_updates">अपडेट तपासा</string>
+    <string name="scripts_checking_updates">अपडेट तपासत आहे…</string>
     <string name="scripts_updates_category">अपडेट्स</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> स्क्रिप्ट अपडेट केली: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> स्क्रिप्ट अपडेट केल्या: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">अद्यतने अद्यतने अंतर्गत सूचीबद्ध आहेत</string>
+    <string name="scripts_updates_to_approve">अपडेट्स “अपडेट्स” अंतर्गत सूचीबद्ध आहेत</string>
     <string name="scripts_update_check_failed">काही स्रोत तपासता आले नाहीत</string>
     <string name="scripts_up_to_date">सर्व स्क्रिप्ट अद्ययावत आहेत</string>
 </resources>

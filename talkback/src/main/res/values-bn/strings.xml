@@ -187,7 +187,7 @@
   <string name="keycombo_menu_other_show_link_list">লিঙ্কের তালিকা দেখুন</string>
   <string name="keycombo_menu_other_show_control_list">কন্ট্রোলের তালিকা দেখুন</string>
   <string name="keycombo_menu_other_show_table_list">টেবিলের তালিকা দেখুন</string>
-  <string name="keycombo_menu_other_talkback_context_menu">SandFly মেনু দেখুন</string>
+  <string name="keycombo_menu_other_talkback_context_menu">SandFly মেনু দেখান</string>
   <string name="keycombo_menu_other_custom_actions">অ্যাকশনগুলি দেখুন</string>
   <string name="keycombo_menu_other_language_options">ইনস্টল করা ভাষাগুলি দেখুন</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">আপনার বলা শেষ কথাটি কপি করুন</string>
@@ -698,7 +698,7 @@
   <string name="dialog_title_diagnosis_mode">\'ডায়গনোসিস মোড\' চালু করবেন?</string>
   <string name="dialog_message_diagnosis_mode">\'ডায়গনোসিস মোড\' ডিবাগিং করতে সাহায্য করে।  \'ডায়গনোসিস মোড\' সিস্টেম লগে স্ক্রিনের কন্টেন্ট ক্যাপচার করতে ৪টি আঙ্গুলের মাধ্যম জেসচার ট্যাপ ওভাররাইড করে।  স্ক্রিন কন্টেন্টে ব্যক্তিগত তথ্য থাকতে পারে। \n\n \'ডায়গনোসিস মোড\' চালু করতে চান?</string>
   <string name="title_request_phone_permission">ফোন অ্যাক্সেস করার অনুমতি দেবেন?</string>
-  <string name="message_request_phone_permission">আপনি কলে থাকার সময় এটি SandFly-এর ঘোষণা কমাতে সাহায্য করে।</string>
+  <string name="message_request_phone_permission">আপনি কলে থাকার সময় এটি SandFly-এর ঘোষণা কমাতে সাহায্য করে</string>
   <string name="continue_button">চালিয়ে যান</string>
   <string name="links">লিঙ্ক</string>
   <string name="start_of_page">এর আগে কোনও %1$s নেই</string>
@@ -1462,7 +1462,7 @@
     <string name="dialog_message_screen_overview_promotion">বিবরণ পেতে স্ক্রিনের একটি স্ক্রিনশট Google-এর Gemini API-তে পাঠানো হয়, যাতে কয়েক সেকেন্ড সময় লাগে। ডিভাইসে থাকা AI চালু থাকলে, বিবরণ এই ফোনেই তৈরি হয় এবং স্ক্রিনশট পাঠানো হয় না।\n\nবিনামূল্যের API কী ব্যবহার করলে, Google যা পায় তা রেখে দিতে, নিজের প্রোডাক্ট উন্নত করতে ব্যবহার করতে এবং লোক দিয়ে পর্যালোচনা করাতে পারে। জেনারেটিভ AI পরীক্ষামূলক লেভেলে রয়েছে, তাই এটি ভুল করবে। <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> প্রযোজ্য।</string>
     <string name="shortcut_title_open_app">অ্যাপ খুলুন</string>
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> খুলুন</string>
-    <string name="shortcut_system_notifications">সিস্টেমের বিজ্ঞপ্তি শেড</string>
+    <string name="shortcut_system_notifications">সিস্টেম বিজ্ঞপ্তি প্যানেল</string>
     <string name="title_clear_selection">বেছে নেওয়া টেক্সট সরান</string>
     <string name="title_pref_brightness">উজ্জ্বলতা</string>
     <string name="summary_support_change_brightness">স্ক্রিন লুকানো থাকলেও স্ক্রিনের উজ্জ্বলতা বাড়ায় অথবা কমায়</string>
@@ -1571,8 +1571,8 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_play_installer">Google প্লে থেকে ইনস্টল করা প্রদর্শিত হবে</string>
-    <string name="summary_pref_play_installer">Google Play SandFly ইনস্টল করা অন্যান্য অ্যাপকে বলুন। কিছু অ্যাপ, যেমন কিছু ব্যাঙ্কিং অ্যাপ, অন্য কোথাও থেকে ইনস্টল করা অ্যাক্সেসিবিলিটি পরিষেবাগুলি বন্ধ করে দেয়। Shizuku প্রয়োজন, এবং SandFly কোথা থেকে এসেছে সে সম্পর্কে যা বলা হয়েছে শুধুমাত্র তা পরিবর্তন করে।</string>
+    <string name="title_pref_play_installer">Google Play থেকে ইনস্টল করা হিসেবে দেখান</string>
+    <string name="summary_pref_play_installer">অন্য অ্যাপকে জানায় যে SandFly Google Play থেকে ইনস্টল করা হয়েছে। কিছু অ্যাপ, যেমন কিছু ব্যাঙ্কিং অ্যাপ, অন্য কোনও উৎস থেকে ইনস্টল করা অ্যাক্সেসিবিলিটি পরিষেবা বন্ধ করে দেয়। Shizuku প্রয়োজন, এবং SandFly কোথা থেকে এসেছে সে বিষয়ে অ্যাপকে যা জানানো হয় শুধু সেটাই বদলায়।</string>
     <string name="summary_pref_play_installer_pending">চালু আছে, কিন্তু Google Play এখনও ইনস্টলার হিসেবে রেকর্ড করা হয়নি। SandFly এটি সেট করে যখন Shizuku উপলব্ধ থাকে।</string>
     <string name="notification_list_show_all">সব দেখান</string>
     <string name="notification_list_show_less">কম দেখান</string>
@@ -1619,7 +1619,7 @@
     <string name="quick_settings_settings">সেটিংস</string>
     <string name="quick_settings_power_menu">পাওয়ার মেনু</string>
     <string name="quick_settings_add_system_tile">সিস্টেম টাইল যোগ করুন</string>
-    <string name="quick_settings_no_system_tiles">কোন সিস্টেম টাইলস যোগ করার জন্য</string>
+    <string name="quick_settings_no_system_tiles">যোগ করার মতো কোনো সিস্টেম টাইল নেই</string>
     <string name="quick_settings_tile_not_found">%1$s সিস্টেমের দ্রুত সেটিংসে নেই৷</string>
     <string name="quick_settings_never">কখনও নয়</string>
     <plurals name="quick_settings_seconds">
@@ -1648,7 +1648,7 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">কলামের সংখ্যা</string>
     <string name="quick_settings_move">সরান</string>
-    <string name="quick_settings_move_title">সরান %1$s</string>
+    <string name="quick_settings_move_title">%1$s সরান</string>
     <string name="quick_settings_cell">সারি %1$d, কলাম %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1667,19 +1667,19 @@
     <string name="reading_control_letter_none">কোনওটিই নয়</string>
     <string name="handwriting_prompt">একটি অক্ষর লিখুন</string>
     <string name="handwriting_closed">হাতের লেখা বন্ধ</string>
-    <string name="handwriting_no_match">কোনো রিডিং কন্ট্রোল <xliff:g id="letter" example="Q">%1$s</xliff:g> দিয়ে শুরু হয় না</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> দিয়ে শুরু হওয়া কোনো রিডিং কন্ট্রোল নেই</string>
     <string name="shortcut_write_app_name">কোনো অ্যাপ খুলতে তার নাম লিখুন</string>
     <string name="handwriting_app_prompt">অ্যাপের নাম লিখুন</string>
     <string name="handwriting_no_app"><xliff:g id="letters" example="WHA">%1$s</xliff:g> দিয়ে শুরু হয় এমন কোনো অ্যাপ নেই</string>
     <string name="handwriting_app_not_opened"><xliff:g id="app" example="WhatsApp">%1$s</xliff:g> খোলা যায়নি</string>
-    <string name="handwriting_not_recognized">হাতের লেখা স্বীকৃত নয়</string>
-    <string name="handwriting_downloading">হাতের লেখার স্বীকৃতি ডাউনলোড হচ্ছে</string>
-    <string name="handwriting_download_title">হাতের লেখার স্বীকৃতি ডাউনলোড করুন?</string>
-    <string name="handwriting_download_message">এই ফোনে হাতের লেখা স্বীকৃত। এই ভাষার জন্য এর মডেল, প্রায় 20 MB, Google থেকে একবার ডাউনলোড করা হয়। এটি ডাউনলোড করা হলে একটি বার্তা দেখায়।</string>
+    <string name="handwriting_not_recognized">হাতের লেখা শনাক্ত করা যায়নি</string>
+    <string name="handwriting_downloading">হাতের লেখা শনাক্তকরণ ডাউনলোড হচ্ছে</string>
+    <string name="handwriting_download_title">হাতের লেখা শনাক্তকরণ ডাউনলোড করবেন?</string>
+    <string name="handwriting_download_message">হাতের লেখা এই ফোনেই শনাক্ত করা হয়। এই ভাষার জন্য এর মডেল, প্রায় 20 MB, Google থেকে একবার ডাউনলোড করা হয়। ডাউনলোড হয়ে গেলে একটি মেসেজ দেখানো হয়।</string>
     <string name="handwriting_download_button">ডাউনলোড করুন</string>
-    <string name="handwriting_downloaded">হাতের লেখার স্বীকৃতি ডাউনলোড করা হয়েছে</string>
+    <string name="handwriting_downloaded">হাতের লেখা শনাক্তকরণ ডাউনলোড করা হয়েছে</string>
     <string name="handwriting_download_failed">হাতের লেখার স্বীকৃতি ডাউনলোড করা যায়নি। ইন্টারনেট সংযোগ পরীক্ষা করুন।</string>
-    <string name="handwriting_unsupported_language">এই ভাষায় হাতের লেখার স্বীকৃতি পাওয়া যায় না</string>
+    <string name="handwriting_unsupported_language">এই ভাষায় হাতের লেখা শনাক্তকরণ উপলভ্য নয়</string>
     <string name="title_pref_handwriting_keyboard">হাতের লেখা কীবোর্ড</string>
     <string name="summary_pref_handwriting_keyboard">Android-এর কীবোর্ড সেটিংসে SandFly হাতের লেখা চালু করুন</string>
     <string name="title_pref_handwriting_wait">লেখার পর অপেক্ষা করুন</string>
@@ -1691,10 +1691,10 @@
     <string name="value_handwriting_wait_800">0.8 সেকেন্ড</string>
     <string name="value_handwriting_wait_1000">১ সেকেন্ড</string>
     <string name="handwriting_keyboard_name">SandFly হাতের লেখা</string>
-    <string name="handwriting_space">ব্যবধান</string>
+    <string name="handwriting_space">স্পেস</string>
     <string name="handwriting_new_line">নতুন লাইন</string>
     <string name="handwriting_tutorial_intro">হস্তাক্ষর কীবোর্ড টিউটোরিয়াল। স্ক্রিনের যেকোনো জায়গায় এক আঙুল দিয়ে লিখুন। আপনি যা লিখছেন তা টাইপ করা হয় যখন আপনি কিছুক্ষণের জন্য থামেন। টিউটোরিয়ালটি শেষ করতে, তিনটি আঙ্গুল দিয়ে নিচের দিকে সোয়াইপ করুন।</string>
-    <string name="handwriting_tutorial_write_letter">বর্ণমালা অক্ষর লিখুন a.</string>
+    <string name="handwriting_tutorial_write_letter">a অক্ষরটি লিখুন।</string>
     <string name="handwriting_tutorial_write_word">এখন hi শব্দটি লিখুন।</string>
     <string name="handwriting_tutorial_typed">টাইপ করা হয়েছে <xliff:g id="text" example="a">%1$s</xliff:g>।</string>
     <string name="handwriting_tutorial_space">স্পেস টাইপ করতে দুই আঙ্গুল দিয়ে ডানদিকে সোয়াইপ করুন।</string>
@@ -1702,14 +1702,14 @@
     <string name="handwriting_tutorial_deleted">মুছে ফেলা হয়েছে।</string>
     <string name="handwriting_tutorial_next_reading">যদি হাতের লেখা অন্য একটি অক্ষর হিসাবে স্বীকৃত হয়, যেমন একটি বড় অক্ষর, তাহলে পরবর্তী স্বীকৃতির পরামর্শটি বেছে নিতে দুটি আঙুল দিয়ে উপরে সোয়াইপ করুন। এখনই চেষ্টা করুন।</string>
     <string name="handwriting_tutorial_read_back">কার্সারের আগে পাঠ্য পড়তে দুই আঙুল দিয়ে আলতো চাপুন।</string>
-    <string name="handwriting_tutorial_new_line">একটি নতুন লাইন সন্নিবেশ করতে দুই আঙ্গুল দিয়ে নিচের দিকে সোয়াইপ করুন বা পাঠ্য ক্ষেত্রের ক্রিয়া সম্পাদন করুন, যেমন পাঠান৷</string>
-    <string name="handwriting_tutorial_not_that">এটা অন্য অঙ্গভঙ্গি ছিল.</string>
+    <string name="handwriting_tutorial_new_line">নতুন লাইন যোগ করতে বা টেক্সট ফিল্ডের অ্যাকশন (যেমন পাঠান) চালাতে দুই আঙুল দিয়ে নিচের দিকে সোয়াইপ করুন।</string>
+    <string name="handwriting_tutorial_not_that">এটি অন্য জেসচার ছিল।</string>
     <string name="handwriting_tutorial_done">নতুন লাইন। টিউটোরিয়াল শেষ। কীবোর্ড লুকানোর জন্য তিনটি আঙুল দিয়ে নিচের দিকে সোয়াইপ করুন এবং কীবোর্ড স্যুইচ করতে তিনটি আঙুল দিয়ে ডান বা বামে সোয়াইপ করুন। টিউটোরিয়ালটি আবার খুলতে, তিনটি আঙ্গুল দিয়ে আলতো চাপুন।</string>
     <string name="handwriting_tutorial_finished">টিউটোরিয়াল শেষ। এটি আবার খুলতে, তিনটি আঙ্গুল দিয়ে আলতো চাপুন।</string>
     <string name="handwriting_no_alternatives">অন্য কোনো পরামর্শ নেই</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> এর <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g>টির মধ্যে <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">খালি লেখা</string>
-    <string name="handwriting_not_available">এই ডিভাইসে হাতের লেখার স্বীকৃতি পাওয়া যায় না</string>
+    <string name="handwriting_not_available">এই ডিভাইসে হাতের লেখা শনাক্তকরণ উপলভ্য নয়</string>
     <string name="shortcut_scroll_to_bottom">নীচে স্ক্রোল করুন</string>
     <string name="shortcut_refresh">রিফ্রেশ</string>
     <string name="shortcut_system_quick_settings">সিস্টেম দ্রুত সেটিংস</string>
@@ -1720,13 +1720,13 @@
     <string name="title_pref_shortcut_edge_top_left_long_down">উপরের বাম দিক থেকে নিচে দীর্ঘ সোয়াইপ করুন</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">উপরের ডান দিক থেকে নিচে দীর্ঘ সোয়াইপ করুন</string>
     <string name="title_pref_shortcut_edge_left_top_right">বাম প্রান্ত থেকে ডানদিকে সোয়াইপ করুন, উপরের অর্ধেক</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">বাম প্রান্ত থেকে ডানদিকে লম্বা সোয়াইপ করুন, উপরের অর্ধেক</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">বাঁ প্রান্ত থেকে ডানদিকে লম্বা সোয়াইপ করা, উপরের অর্ধেক</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">বাম প্রান্ত থেকে ডানদিকে সোয়াইপ করুন, নীচের অর্ধেক</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">বাম প্রান্ত থেকে ডানদিকে দীর্ঘ সোয়াইপ করুন, নীচের অর্ধেক</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">বাঁ প্রান্ত থেকে ডানদিকে লম্বা সোয়াইপ করা, নিচের অর্ধেক</string>
     <string name="title_pref_shortcut_edge_right_top_left">ডান প্রান্ত থেকে বাম দিকে সোয়াইপ করুন, উপরের অর্ধেক</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">ডান প্রান্ত থেকে বাম দিকে লম্বা সোয়াইপ করুন, উপরের অর্ধেক</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">ডান প্রান্ত থেকে বাঁদিকে লম্বা সোয়াইপ করা, উপরের অর্ধেক</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">ডান প্রান্ত থেকে বাম দিকে সোয়াইপ করুন, নীচের অর্ধেক</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">ডান প্রান্ত থেকে বাম দিকে লম্বা সোয়াইপ করুন, নীচের অর্ধেক</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">ডান প্রান্ত থেকে বাঁদিকে লম্বা সোয়াইপ করা, নিচের অর্ধেক</string>
     <string name="title_pref_edge_first_click_mm">প্রথম ক্লিকের দূরত্ব</string>
     <string name="title_pref_edge_second_click_mm">প্রথম থেকে দ্বিতীয় ক্লিকের দূরত্ব</string>
     <string name="value_distance_5mm">0.5 সেমি</string>
@@ -1737,20 +1737,20 @@
     <string name="value_distance_40mm">4 সেমি</string>
     <string name="value_distance_50mm">5 সেমি</string>
     <string name="title_pref_selector_links_controls_web_only">শুধুমাত্র ওয়েব সামগ্রীতে লিঙ্ক এবং নিয়ন্ত্রণ</string>
-    <string name="title_pref_selector_auto_switch">স্বয়ংক্রিয়ভাবে পড়ার নিয়ন্ত্রণ পরিবর্তন করুন</string>
-    <string name="title_pref_touch_stops_speech">স্ক্রিনে স্পর্শ করার সময় বক্তৃতা বন্ধ করুন</string>
+    <string name="title_pref_selector_auto_switch">রিডিং কন্ট্রোল অটোমেটিক পরিবর্তন করুন</string>
+    <string name="title_pref_touch_stops_speech">স্ক্রিন স্পর্শ করলে স্পিচ বন্ধ করুন</string>
     <string name="title_pref_volume_keys_move_cursor">ভলিউম কীগুলি কার্সারকে সরিয়ে দেয়</string>
-    <string name="summary_pref_volume_keys_move_cursor">যখন একটি পাঠ্য ক্ষেত্রের ফোকাস থাকে, ভলিউম আপ কার্সারটিকে একটি অক্ষর পিছনে নিয়ে যায় এবং ভলিউম ডাউন এটিকে চালু করে</string>
+    <string name="summary_pref_volume_keys_move_cursor">টেক্সট ফিল্ডে ফোকাস থাকলে, ভলিউম বাড়ানো কার্সারকে এক অক্ষর পিছনে এবং ভলিউম কমানো এক অক্ষর সামনে নিয়ে যায়</string>
     <string name="title_keyboard_echo_handwriting_keyboard">হাতের লেখা কীবোর্ড ইকো</string>
     <string name="image_qna_ask_by_voice">কণ্ঠে জিজ্ঞাসা করুন</string>
     <string name="image_qna_stop_listening">শোনা বন্ধ করুন</string>
     <string name="image_qna_type_question">একটি প্রশ্ন টাইপ করুন</string>
-    <string name="shortcut_dictate">নির্দেশ</string>
-    <string name="title_pref_ai_dictation">AI এর সাথে সঠিক ডিকশন</string>
-    <string name="dictation_not_corrected">সংশোধন করা হয়নি। স্বীকৃত হিসাবে টাইপ করুন.</string>
-    <string name="dictation_nothing_recognized">কিছুই চেনা যায় না</string>
-    <string name="dictation_unavailable">বক্তৃতা শনাক্তকরণ অনুপলব্ধ৷</string>
-    <string name="dictation_field_gone">পাঠ্য ক্ষেত্র বন্ধ। কিছুই টাইপ করা হয়নি.</string>
+    <string name="shortcut_dictate">ডিকটেট করুন</string>
+    <string name="title_pref_ai_dictation">AI দিয়ে ডিক্টেশন সংশোধন করুন</string>
+    <string name="dictation_not_corrected">সংশোধন করা হয়নি। যেভাবে শনাক্ত হয়েছে সেভাবে টাইপ করা হয়েছে।</string>
+    <string name="dictation_nothing_recognized">কিছুই শনাক্ত হয়নি</string>
+    <string name="dictation_unavailable">স্পিচ রেকগনিশন উপলভ্য নয়</string>
+    <string name="dictation_field_gone">টেক্সট ফিল্ড বন্ধ হয়ে গেছে। কিছু টাইপ করা হয়নি।</string>
     <string name="dictation_transcription_failed">কথা লেখায় রূপান্তর করা যায়নি। কিছুই টাইপ করা হয়নি।</string>
     <string name="title_pref_dictation">ডিক্টেশন</string>
     <string name="title_pref_dictation_rambler_live">Rambler লাইভ ট্রান্সক্রিপশন</string>
@@ -1767,11 +1767,11 @@
     <string name="dictation_whisper_use">ব্যবহার করুন</string>
     <string name="title_pref_dictation_ai_service">ডিক্টেশনের জন্য এআই পরিষেবা</string>
     <string name="dictation_ai_same">অটোমেটিক বিবরণের মতোই</string>
-    <string name="title_pref_browse_mode_per_app">প্রতিটি অ্যাপে ব্রাউজ মোড মনে রাখবেন</string>
-    <string name="title_pref_export_settings">রপ্তানি সেটিংস</string>
+    <string name="title_pref_browse_mode_per_app">প্রতিটি অ্যাপে ব্রাউজ মোড মনে রাখুন</string>
+    <string name="title_pref_export_settings">সেটিংস এক্সপোর্ট করুন</string>
     <string name="title_pref_import_settings">সেটিংস আমদানি করুন</string>
     <string name="settings_export_done">সেটিংস এক্সপোর্ট করা হয়েছে। API কী অন্তর্ভুক্ত করা হয় না</string>
     <string name="settings_export_failed">সেটিংস এক্সপোর্ট করা যায়নি</string>
-    <string name="settings_import_done">সেটিংস আমদানি করা হয়েছে৷</string>
+    <string name="settings_import_done">সেটিংস ইমপোর্ট করা হয়েছে</string>
     <string name="settings_import_failed">এই ফাইলটি একটি SandFly বা Backtalk সেটিংস ফাইল নয়, বা পড়া যাবে না</string>
 </resources>

@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="shortcut_announce_status">ਸਥਿਤੀ ਬੋਲੋ</string>
     <string name="template_status_bars"><xliff:g id="max_level" example="4">%2$d</xliff:g> ਬਾਰਾਂ ਵਿੱਚੋਂ <xliff:g id="level" example="3">%1$d</xliff:g></string>
-    <string name="status_wifi_off">Wi-Fi ਦੀ ਛੋਟ</string>
+    <string name="status_wifi_off">Wi-Fi ਬੰਦ</string>
     <string name="status_wifi_not_connected">Wi-Fi ਕਨੈਕਟ ਨਹੀਂ ਹੈ</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
     <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
@@ -13,7 +13,7 @@
     <string name="status_ringer_vibrate">ਵਾਈਬ੍ਰੇਟ</string>
     <string name="status_ringer_silent">ਚੁੱਪ</string>
     <string name="status_airplane_mode">ਏਅਰਪਲੇਨ ਮੋਡ</string>
-    <string name="title_pref_status_readout">ਸਥਿਤੀ ਰੀਡਆਊਟ</string>
+    <string name="title_pref_status_readout">ਸਥਿਤੀ ਪੜ੍ਹਨਾ</string>
     <string name="status_item_time">ਸਮਾਂ</string>
     <string name="status_item_time_summary">ਮੌਜੂਦਾ ਸਮਾਂ</string>
     <string name="status_item_battery">ਬੈਟਰੀ</string>
@@ -23,7 +23,7 @@
     <string name="status_item_mobile">ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ</string>
     <string name="status_item_mobile_summary">ਕੈਰੀਅਰ, ਨੈੱਟਵਰਕ ਕਿਸਮ, ਅਤੇ ਸਿਗਨਲ ਤਾਕਤ</string>
     <string name="status_item_ringer">ਰਿੰਗਰ ਅਤੇ ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ</string>
-    <string name="status_item_ringer_summary">ਸਿਰਫ਼ ਉਦੋਂ ਜਦੋਂ ਰਿੰਗਰ ਵੱਜਣ \'ਤੇ ਸੈੱਟ ਨਾ ਹੋਵੇ, ਜਾਂ \'ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ\' ਚਾਲੂ ਹੋਵੇ</string>
+    <string name="status_item_ringer_summary">ਸਿਰਫ਼ ਉਦੋਂ ਜਦੋਂ ਰਿੰਗਰ ਥਰਥਰਾਹਟ ਜਾਂ ਸ਼ਾਂਤ \'ਤੇ ਹੋਵੇ, ਜਾਂ \'ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ\' ਚਾਲੂ ਹੋਵੇ</string>
     <string name="status_item_airplane_mode">ਏਅਰਪਲੇਨ ਮੋਡ</string>
     <string name="status_item_airplane_mode_summary">ਸਿਰਫ਼ ਉਦੋਂ ਜਦੋਂ ਏਅਰਪਲੇਨ ਮੋਡ ਚਾਲੂ ਹੋਵੇ</string>
 </resources>

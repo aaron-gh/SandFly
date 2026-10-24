@@ -6,11 +6,11 @@
     <string name="title_pref_problem_report_title">Titel</string>
     <string name="title_pref_problem_report_app">App waar het gebeurt</string>
     <string name="title_pref_problem_report_description">Beschrijving</string>
-    <string name="dialog_message_problem_report_description">Wat er gebeurt en wat je ervan verwachtte.</string>
-    <string name="title_pref_problem_report_steps">Stappen om het softwareprobleem te reproduceren</string>
+    <string name="dialog_message_problem_report_description">Wat er gebeurt en wat je verwachtte.</string>
+    <string name="title_pref_problem_report_steps">Stappen om te reproduceren</string>
     <string name="title_pref_problem_report_email">E-mail voor antwoorden</string>
-    <string name="title_pref_problem_report_device">Voeg apparaatinformatie toe</string>
-    <string name="title_pref_problem_report_log">Inclusief SandFly logboek</string>
+    <string name="title_pref_problem_report_device">Apparaatinformatie toevoegen</string>
+    <string name="title_pref_problem_report_log">SandFly-logboek toevoegen</string>
     <string name="summary_pref_problem_report_log">Kan tekst van het scherm bevatten</string>
     <string name="title_pref_problem_report_send">Verzenden</string>
     <string name="summary_pref_problem_report_sending">Verzenden</string>
@@ -23,20 +23,20 @@
     <string-array name="problem_report_type_entries">
         <item>Onjuist gedrag</item>
         <item>Crash</item>
-        <item>Langzaam of reageert niet</item>
+        <item>Traag of reageert niet</item>
         <item>Suggestie</item>
     </string-array>
     <string-array name="problem_report_area_entries">
-        <item>Toespraak</item>
+        <item>Spraak</item>
         <item>Gebaren</item>
-        <item>Verkenning via aanraking</item>
-        <item>Bedieningselementen en menu\'s lezen</item>
+        <item>Verkennen via aanraking</item>
+        <item>Leesinstellingen en menu\'s</item>
         <item>Typen en toetsenborden</item>
         <item>Brailletoetsenbord</item>
         <item>Brailleleesregel</item>
-        <item>Geluiden en trillingen</item>
+        <item>Geluid en trillen</item>
         <item>Meldingen</item>
-        <item>Webinhoud</item>
+        <item>Webcontent</item>
         <item>Scripts</item>
         <item>Instellingen</item>
         <item>Updates</item>
@@ -56,7 +56,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> nieuwe antwoorden</item>
     </plurals>
     <string name="report_status_changed">status gewijzigd</string>
-    <string name="report_status_open">Open probleem</string>
+    <string name="report_status_open">Open</string>
     <string name="report_status_completed">Gesloten, voltooid</string>
     <string name="report_status_not_planned">Gesloten, niet gepland</string>
     <string name="report_status_duplicate">Gesloten, duplicaat</string>
@@ -71,7 +71,7 @@
     <string name="title_report_send_reply">Antwoord verzenden</string>
     <string name="report_reply_sent">Antwoord verzonden.</string>
     <string name="report_reply_not_sent">Antwoord niet verzonden. Probeer het later opnieuw.</string>
-    <string name="title_report_remove">Verwijderen uit inbox</string>
+    <string name="title_report_remove">Verwijderen uit Postvak IN</string>
     <string name="dialog_title_report_remove">Deze feedback uit de inbox verwijderen?</string>
     <string name="dialog_message_report_remove">Antwoorden daarop bereiken deze telefoon niet meer.</string>
     <string name="title_report_delete_draft">Concept verwijderen</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Verwijderen</string>
     <string name="report_missing">Deze feedback staat niet meer in de inbox.</string>
     <string name="notification_channel_problem_reports">Feedback-antwoorden</string>
-    <string name="report_notification_reply">Reageer op <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Reactie op <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

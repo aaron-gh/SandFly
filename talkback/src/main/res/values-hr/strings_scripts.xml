@@ -18,7 +18,7 @@
     <string name="scripts_now_on">Skripte uključene</string>
     <string name="scripts_unavailable">Skripte nisu dostupne na ovom uređaju</string>
     <string name="script_add_example">Dodaj primjer skripte</string>
-    <string name="script_add_example_summary">Izgovara naziv svake aplikacije na koju se prebacite. Skripta za početak.</string>
+    <string name="script_add_example_summary">Izgovara naziv svake aplikacije na koju prijeđete. Skripta kao polazna točka.</string>
     <string name="script_state_on">Uključeno</string>
     <string name="script_state_off">Isključeno</string>
     <string name="script_runs_in">Radi u aplikacijama: <xliff:g id="apps">%1$s</xliff:g></string>
@@ -91,8 +91,8 @@
     <string name="shortcut_inspect_item">Pregled fokusirane stavke</string>
     <string name="script_inspect_no_item">Nijedna stavka nije fokusirana</string>
     <string name="script_inspect_copied">Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Nema ID-a, pa ga pravila ne mogu imenovati. Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">Kopiranje stabla zaslona</string>
+    <string name="script_inspect_no_id">Nema ID-a, pa ga pravila ne mogu navesti. Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">Kopiraj stablo zaslona</string>
     <string name="script_tree_copied">Kopirano stavki: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Nema prozora za kopiranje</string>
     <string name="script_tree_clip_label">Stablo zaslona</string>
@@ -138,9 +138,9 @@
     <string name="script_source_remove">Ukloni izvor</string>
     <string name="script_source_remove_title">Želite li ukloniti izvor <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Skripte instalirane iz njega ostaju instalirane.</string>
-    <string name="scripts_auto_update">Automatski ažurirajte skripte</string>
-    <string name="scripts_check_updates">Provjerite ima li ažuriranja</string>
-    <string name="scripts_checking_updates">Provjera ažuriranja...</string>
+    <string name="scripts_auto_update">Automatski ažuriraj skripte</string>
+    <string name="scripts_check_updates">Provjeri ima li ažuriranja</string>
+    <string name="scripts_checking_updates">Provjera ažuriranja…</string>
     <string name="scripts_updates_category">Ažuriranja</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
@@ -148,7 +148,7 @@
         <item quantity="few">Ažurirane su <xliff:g id="count" example="2">%1$d</xliff:g> skripte: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skripti ažurirano: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Ažuriranja su navedena pod Ažuriranja</string>
+    <string name="scripts_updates_to_approve">Ažuriranja su navedena u odjeljku „Ažuriranja”</string>
     <string name="scripts_update_check_failed">Neke izvore nije bilo moguće provjeriti</string>
     <string name="scripts_up_to_date">Sve skripte su ažurne</string>
 </resources>

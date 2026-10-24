@@ -6,19 +6,19 @@
     <string name="script_install_label">SandFly സ്ക്രിപ്റ്റ് ഇൻസ്റ്റാൾ ചെയ്യുക</string>
     <string name="script_import_nothing">ഇൻസ്റ്റാൾ ചെയ്യാൻ സ്‌ക്രിപ്റ്റ് ഫയലൊന്നുമില്ല.</string>
     <string name="script_import_cannot_open">ഫയൽ തുറക്കാൻ കഴിഞ്ഞില്ല.</string>
-    <string name="script_import_repository">ഈ ലിങ്ക് ഒരു മുഴുവൻ സംഭരണിയിലേക്കുള്ളതാണ്. നിങ്ങൾക്ക് ആവശ്യമുള്ള സ്ക്രിപ്റ്റ് തുറക്കുക, തുടർന്ന് അതിൻ്റെ ലിങ്ക് പങ്കിടുക.</string>
-    <string name="script_import_summary">.lua ഫയൽ, അല്ലെങ്കിൽ main.lua ഉപയോഗിച്ച് .zip</string>
+    <string name="script_import_repository">ഈ ലിങ്ക് ഒരു മുഴുവൻ റിപ്പോസിറ്ററിയിലേക്കുള്ളതാണ്. ആവശ്യമുള്ള സ്ക്രിപ്റ്റ് തുറന്ന് അതിന്റെ ലിങ്ക് പങ്കിടുക.</string>
+    <string name="script_import_summary">.lua ഫയൽ, അല്ലെങ്കിൽ main.lua ഉള്ള .zip</string>
     <string name="scripts_category_app">ആപ്പ് സ്ക്രിപ്റ്റുകൾ</string>
-    <string name="scripts_category_global">ആഗോള പ്ലഗിനുകൾ</string>
+    <string name="scripts_category_global">പൊതു പ്ലഗിനുകൾ</string>
     <string name="scripts_none">സ്ക്രിപ്റ്റുകളൊന്നും ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ല</string>
     <string name="scripts_all_off">എല്ലാ സ്ക്രിപ്റ്റുകളും ഓഫാക്കുക</string>
-    <string name="scripts_all_off_summary">സ്‌ക്രിപ്റ്റുകൾ ഇൻസ്റ്റാളുചെയ്‌ത നിലയിൽ തുടരുകയും സ്വന്തം സ്വിച്ചുകൾ സൂക്ഷിക്കുകയും ചെയ്യുന്നു. എല്ലാ സ്ക്രിപ്റ്റുകളും ഓണാക്കുകയോ ഓഫാക്കുകയോ ചെയ്യുന്ന ആംഗ്യവും ഇതുതന്നെ ചെയ്യുന്നു.</string>
+    <string name="scripts_all_off_summary">സ്ക്രിപ്റ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്‌ത നിലയിൽ തുടരുകയും സ്വന്തം സ്വിച്ചുകൾ നിലനിർത്തുകയും ചെയ്യും. “എല്ലാ സ്ക്രിപ്റ്റുകളും ഓണാക്കുകയോ ഓഫാക്കുകയോ ചെയ്യുക” ജെസ്ചറും ഇതുതന്നെ ചെയ്യുന്നു.</string>
     <string name="shortcut_toggle_scripts">എല്ലാ സ്ക്രിപ്റ്റുകളും ഓണാക്കുകയോ ഓഫാക്കുകയോ ചെയ്യുക</string>
     <string name="scripts_now_off">സ്ക്രിപ്റ്റുകൾ ഓഫാണ്</string>
     <string name="scripts_now_on">സ്ക്രിപ്റ്റുകൾ ഓണാണ്</string>
     <string name="scripts_unavailable">ഈ ഉപകരണത്തിൽ സ്ക്രിപ്റ്റുകൾ ലഭ്യമല്ല</string>
     <string name="script_add_example">ഉദാഹരണ സ്ക്രിപ്റ്റ് ചേർക്കുക</string>
-    <string name="script_add_example_summary">നിങ്ങൾ മാറുന്ന ഓരോ ആപ്പിൻ്റെയും പേര് പറയുന്നു. ആരംഭിക്കാൻ ഒരു സ്ക്രിപ്റ്റ്.</string>
+    <string name="script_add_example_summary">നിങ്ങൾ മാറുന്ന ഓരോ ആപ്പിന്റെയും പേര് പറയുന്നു. തുടങ്ങാനുള്ള ഒരു സ്ക്രിപ്റ്റ്.</string>
     <string name="script_state_on">ഓണാണ്</string>
     <string name="script_state_off">ഓഫാണ്</string>
     <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g>-ൽ പ്രവർത്തിക്കുന്നു</string>
@@ -29,27 +29,27 @@
     <string name="script_install_can">ഇതിന് കഴിയും:</string>
     <string name="script_install_no_permissions">അനുമതികൾ ആവശ്യമില്ല.</string>
     <string name="script_install_button">ഇൻസ്റ്റാൾ ചെയ്യുക</string>
-    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> മുതൽ <xliff:g id="version">%2$s</xliff:g> വരെ അപ്‌ഡേറ്റ് ചെയ്യണോ?</string>
+    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> പതിപ്പിലേക്ക് അപ്‌ഡേറ്റ് ചെയ്യണോ?</string>
     <string name="script_update_new_permissions">പുതിയ അനുമതികൾ:</string>
-    <string name="script_update_button">അപ്ഡേറ്റ്</string>
-    <string name="script_update_replaces">ഇത് <xliff:g id="version">%1$s</xliff:g> പതിപ്പിനെ <xliff:g id="author">%2$s</xliff:g> ഉപയോഗിച്ച് മാറ്റിസ്ഥാപിക്കുകയും അതിൻ്റെ ഡാറ്റയും ക്രമീകരണങ്ങളും നിലനിർത്തുകയും ചെയ്യുന്നു.</string>
-    <string name="script_update_other_author">പുതിയത് <xliff:g id="author">%1$s</xliff:g> എന്ന മറ്റൊരു രചയിതാവിൻ്റെതാണ്. നിങ്ങൾക്ക് വിശ്വാസമുണ്ടെങ്കിൽ മാത്രം അപ്ഡേറ്റ് ചെയ്യുക.</string>
+    <string name="script_update_button">അപ്ഡേറ്റ് ചെയ്യുക</string>
+    <string name="script_update_replaces">ഇത് <xliff:g id="author">%2$s</xliff:g> എഴുതിയ പതിപ്പ് <xliff:g id="version">%1$s</xliff:g> മാറ്റിസ്ഥാപിക്കും, അതിന്റെ ഡാറ്റയും ക്രമീകരണങ്ങളും നിലനിർത്തും.</string>
+    <string name="script_update_other_author">പുതിയതിന്റെ രചയിതാവ് മറ്റൊരാളാണ്: <xliff:g id="author">%1$s</xliff:g>. വിശ്വാസമുണ്ടെങ്കിൽ മാത്രം അപ്ഡേറ്റ് ചെയ്യുക.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ഇൻസ്റ്റാൾ ചെയ്തു</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> ലേക്ക് അപ്ഡേറ്റ് ചെയ്തു</string>
     <string name="script_import_failed">ഇറക്കുമതി പരാജയപ്പെട്ടു. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. വിശ്വസനീയമായ സ്ക്രിപ്റ്റുകൾ മാത്രം അനുവദിക്കുക.</string>
     <string name="script_permission_screen">സ്ക്രീൻ വായിക്കുക</string>
-    <string name="script_permission_actions">ക്ലിക്ക് ചെയ്യുക, സ്ക്രോൾ ചെയ്യുക, ടൈപ്പ് ചെയ്യുക, ഫോക്കസ് നീക്കുക</string>
-    <string name="script_permission_speech">SandFlyൻ്റെ സംസാരം കേൾക്കുകയും മാറ്റുകയും ചെയ്യുക</string>
+    <string name="script_permission_actions">ക്ലിക്ക് ചെയ്യൽ, സ്ക്രോൾ ചെയ്യൽ, ടൈപ്പ് ചെയ്യൽ, ഫോക്കസ് നീക്കൽ</string>
+    <string name="script_permission_speech">SandFly-യുടെ സംസാരം സ്വീകരിക്കലും മാറ്റലും</string>
     <string name="script_permission_passwords">പാസ്‌വേഡ് ഫീൽഡുകൾ വായിക്കുക</string>
-    <string name="script_permission_input">ആംഗ്യങ്ങൾ, കീകൾ, മെനു ഇനങ്ങൾ, വായന നിയന്ത്രണങ്ങൾ എന്നിവ ചേർക്കുക</string>
-    <string name="script_permission_network">ഇൻ്റർനെറ്റ് ഉപയോഗിക്കുക</string>
-    <string name="script_permission_clipboard">ക്ലിപ്പ്ബോർഡ് വായിച്ച് മാറ്റുക</string>
-    <string name="script_permission_system">തിരിച്ചോ വീട്ടിലേക്കോ പോകുക, അറിയിപ്പുകളും ആപ്പുകളും തുറക്കുക</string>
-    <string name="script_permission_notifications">സംഭാഷണ അറിയിപ്പുകൾ വായിക്കുകയും മാറ്റുകയും ചെയ്യുക</string>
-    <string name="script_permission_events">ടൈപ്പിംഗ് ഉൾപ്പെടെ എല്ലാ ആപ്പിലെയും എല്ലാ പ്രവർത്തനങ്ങളും കാണുക</string>
-    <string name="script_permission_dialogs">ഏത് ആപ്പിലും ഡയലോഗുകൾ കാണിക്കുക</string>
-    <string name="script_permission_java">എല്ലാ ആപ്പിലും SandFly-ൻ്റെ എല്ലാ ആക്‌സസുകളോടും കൂടി Java കോഡ് പ്രവർത്തിപ്പിക്കുക</string>
+    <string name="script_permission_input">ആംഗ്യങ്ങൾ, കീകൾ, മെനു ഇനങ്ങൾ, വായന നിയന്ത്രണങ്ങൾ എന്നിവ ചേർക്കൽ</string>
+    <string name="script_permission_network">ഇന്റർനെറ്റ് ഉപയോഗിക്കൽ</string>
+    <string name="script_permission_clipboard">ക്ലിപ്പ്ബോർഡ് വായിക്കലും മാറ്റലും</string>
+    <string name="script_permission_system">പിന്നോട്ട് അല്ലെങ്കിൽ ഹോമിലേക്ക് പോകൽ, അറിയിപ്പുകളും ആപ്പുകളും തുറക്കൽ</string>
+    <string name="script_permission_notifications">സംസാരിക്കുന്ന അറിയിപ്പുകൾ വായിക്കലും മാറ്റലും</string>
+    <string name="script_permission_events">ടൈപ്പിംഗ് ഉൾപ്പെടെ എല്ലാ ആപ്പിലെയും എല്ലാ പ്രവർത്തനവും കാണൽ</string>
+    <string name="script_permission_dialogs">ഏത് ആപ്പിന് മുകളിലും ഡയലോഗുകൾ കാണിക്കൽ</string>
+    <string name="script_permission_java">എല്ലാ ആപ്പിലും SandFly-ന്റെ മുഴുവൻ ആക്സസോടെ Java കോഡ് റൺ ചെയ്യൽ</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ഓണാക്കുക</string>
     <string name="script_permissions_title">അനുമതികൾ</string>
@@ -57,12 +57,12 @@
     <string name="script_settings_category">ക്രമീകരണം</string>
     <string name="script_list_filter">ഫിൽട്ടർ ചെയ്യുക</string>
     <string name="script_button_off">ആദ്യം സ്ക്രിപ്റ്റ് ഓണാക്കുക</string>
-    <string name="script_permissions_summary">ഒരെണ്ണം ഓഫ് ചെയ്യുന്നത് ആവശ്യമുള്ള ഭാഗങ്ങൾ നിർത്തുന്നു.</string>
+    <string name="script_permissions_summary">ഒരു അനുമതി ഓഫാക്കിയാൽ അത് ആവശ്യമുള്ള ഭാഗങ്ങൾ നിൽക്കും.</string>
     <string name="script_install_permissions_note">നിങ്ങൾക്ക് ഇവ പിന്നീട് ഓഫ് ചെയ്യാം.</string>
-    <string name="script_manage_category">കൈകാര്യം ചെയ്യുക</string>
-    <string name="script_move_up">നേരത്തെ ഓടുക</string>
-    <string name="script_move_down">പിന്നീട് ഓടുക</string>
-    <string name="script_order_summary">ഒരേ സംഭാഷണം മാറ്റുന്ന സ്ക്രിപ്റ്റുകൾക്ക് ഓർഡർ നൽകുക. ആപ്പ് സ്ക്രിപ്റ്റുകൾ ആദ്യം പ്രവർത്തിക്കുന്നു.</string>
+    <string name="script_manage_category">മാനേജ്മെന്റ്</string>
+    <string name="script_move_up">നേരത്തെ പ്രവർത്തിപ്പിക്കുക</string>
+    <string name="script_move_down">പിന്നീട് പ്രവർത്തിപ്പിക്കുക</string>
+    <string name="script_order_summary">ഒരേ സംഭാഷണം മാറ്റുന്ന സ്ക്രിപ്റ്റുകളുടെ ക്രമം. ആപ്പ് സ്ക്രിപ്റ്റുകൾ ആദ്യം പ്രവർത്തിക്കുന്നു.</string>
     <string name="script_log">ലോഗ്</string>
     <string name="script_log_summary">SandFly ആരംഭിച്ചതു മുതലുള്ള ഔട്ട്‌പുട്ടും പിശകുകളും</string>
     <string name="script_clear_storage">സംഭരിച്ച ഡാറ്റ മായ്‌ക്കുക</string>
@@ -76,33 +76,33 @@
     <string name="script_log_copy">ലോഗ് പകർത്തുക</string>
     <string name="script_log_copied">ലോഗ് പകർത്തി</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">സ്ക്രിപ്റ്റ് API <xliff:g id="needed">%1$d</xliff:g> അല്ലെങ്കിൽ അതിനുശേഷമുള്ളത് ആവശ്യമാണ്. ഈ SandFly ന് <xliff:g id="current">%2$d</xliff:g> ഉണ്ട്, അതിനാൽ ഭാഗങ്ങൾ പ്രവർത്തിച്ചേക്കില്ല.</string>
-    <string name="script_api_untested">സ്ക്രിപ്റ്റ് API <xliff:g id="tested">%1$d</xliff:g> വരെ പരീക്ഷിച്ചു. ഈ SandFly ന് <xliff:g id="current">%2$d</xliff:g> ഉണ്ട്, അതിനാൽ ഇത് പ്രതീക്ഷിച്ച പോലെ പ്രവർത്തിച്ചേക്കില്ല.</string>
-    <string name="script_state_incompatible">ഇത് SandFly ഉപയോഗിച്ച് പ്രവർത്തിച്ചേക്കില്ല</string>
+    <string name="script_api_too_old">സ്ക്രിപ്റ്റ് API <xliff:g id="needed">%1$d</xliff:g> അല്ലെങ്കിൽ പുതിയത് ആവശ്യമാണ്. ഈ SandFly-ൽ <xliff:g id="current">%2$d</xliff:g> ആണ്, അതിനാൽ ചില ഭാഗങ്ങൾ പ്രവർത്തിച്ചേക്കില്ല.</string>
+    <string name="script_api_untested">സ്ക്രിപ്റ്റ് API <xliff:g id="tested">%1$d</xliff:g> വരെ പരീക്ഷിച്ചു. ഈ SandFly-ൽ <xliff:g id="current">%2$d</xliff:g> ആണ്, അതിനാൽ ഇത് പ്രതീക്ഷിച്ച പോലെ പ്രവർത്തിച്ചേക്കില്ല.</string>
+    <string name="script_state_incompatible">SandFly-യുടെ ഈ പതിപ്പിൽ പ്രവർത്തിച്ചേക്കില്ല</string>
     <string name="script_api_range">സ്ക്രിപ്റ്റ് API <xliff:g id="min">%1$d</xliff:g> മുതൽ <xliff:g id="tested">%2$d</xliff:g> വരെ</string>
     <string name="script_compatibility_title">അനുയോജ്യത</string>
     <string name="script_install_anyway">എന്തായാലും ഇൻസ്റ്റാൾ ചെയ്യുക</string>
-    <string name="script_update_anyway">എന്തായാലും അപ്ഡേറ്റ് ചെയ്യുക</string>
+    <string name="script_update_anyway">എന്നിട്ടും അപ്ഡേറ്റ് ചെയ്യുക</string>
     <string name="script_homepage">ഹോംപേജ് തുറക്കുക</string>
     <string name="script_homepage_confirm_title">ഈ വിലാസം തുറക്കണോ?</string>
     <string name="script_homepage_open">തുറക്കുക</string>
     <string name="script_homepage_failed">ഒരു ആപ്പിനും <xliff:g id="address">%1$s</xliff:g> തുറക്കാൻ കഴിയില്ല</string>
-    <string name="script_turned_off">ആവർത്തിച്ചുള്ള പിശകുകൾക്ക് ശേഷം <xliff:g id="name">%1$s</xliff:g> ഓഫാക്കി. അതിൻ്റെ ലോഗ് ഇൻ സ്ക്രിപ്റ്റുകൾ കാണുക.</string>
+    <string name="script_turned_off">ആവർത്തിച്ചുള്ള പിശകുകൾ കാരണം <xliff:g id="name">%1$s</xliff:g> ഓഫാക്കി. അതിന്റെ ലോഗ് “സ്ക്രിപ്റ്റുകൾ” എന്നതിൽ കാണുക.</string>
     <string name="shortcut_inspect_item">ഫോക്കസ് ചെയ്ത ഇനം പരിശോധിക്കുക</string>
     <string name="script_inspect_no_item">ഒരു ഇനത്തിനും ഫോക്കസ് ഇല്ല</string>
     <string name="script_inspect_copied">പകർത്തി. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ഐഡി ഇല്ല, അതിനാൽ നിയമങ്ങൾക്ക് പേരിടാൻ കഴിയില്ല. പകർത്തി. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id ഇല്ല, അതിനാൽ നിയമങ്ങൾക്ക് ഇതിനെ സൂചിപ്പിക്കാനാകില്ല. പകർത്തി. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">സ്ക്രീൻ ട്രീ പകർത്തുക</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ഇനങ്ങൾ പകർത്തി</string>
     <string name="script_tree_none">പകർത്താൻ വിൻഡോ ഇല്ല</string>
-    <string name="script_tree_clip_label">സ്ക്രീൻ മരം</string>
-    <string name="summary_copy_screen_tree_menu">സ്‌ക്രിപ്റ്റുകൾ എഴുതുന്നതിനായി സ്‌ക്രീനിൽ എല്ലാ ഇനങ്ങളും JSON ആയി പകർത്തുക</string>
+    <string name="script_tree_clip_label">സ്ക്രീൻ ട്രീ</string>
+    <string name="summary_copy_screen_tree_menu">സ്ക്രിപ്റ്റുകൾ എഴുതാൻ സ്ക്രീനിലെ എല്ലാ ഇനങ്ങളും JSON ആയി പകർത്തുന്നു</string>
     <string name="script_inspect_clip_label">ഇനത്തിൻ്റെ വിശദാംശങ്ങൾ</string>
-    <string name="summary_inspect_item_menu">സ്ക്രിപ്റ്റുകൾ എഴുതുന്നതിനായി നിങ്ങൾ ഉണ്ടായിരുന്ന ഇനത്തിൻ്റെ വിശദാംശങ്ങൾ പറയുകയും പകർത്തുകയും ചെയ്യുക</string>
+    <string name="summary_inspect_item_menu">സ്ക്രിപ്റ്റുകൾ എഴുതാൻ അവസാനം ഫോക്കസ് ചെയ്‌ത ഇനത്തിന്റെ വിശദാംശങ്ങൾ പറയുകയും പകർത്തുകയും ചെയ്യുന്നു</string>
     <string name="script_keys_backtalk_modifier">SandFly മോഡിഫയർ</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, പിന്നെ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">കമാൻഡുകൾ</string>
-    <string name="script_commands_summary">റൺ ചെയ്യുന്ന സ്‌ക്രിപ്റ്റിൻ്റെ ആംഗ്യങ്ങളും കീകളും SandFly-ന് മുമ്പായി വരുന്നു. SandFly കൾ സൂക്ഷിക്കാൻ ഒരെണ്ണം ഓഫാക്കുക.</string>
+    <string name="script_commands_summary">പ്രവർത്തിക്കുന്ന സ്ക്രിപ്റ്റിന്റെ ജെസ്ചറുകൾക്കും കീകൾക്കും SandFly-ന്റേതിനെക്കാൾ മുൻഗണനയുണ്ട്. SandFly-ന്റേത് നിലനിർത്താൻ സ്ക്രിപ്റ്റിന്റേത് ഓഫാക്കുക.</string>
     <string name="script_binding_gesture">ആംഗ്യം: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">കീകൾ: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly മെനു</string>
@@ -112,14 +112,14 @@
     <string name="script_binding_turn_off">ഓഫാക്കുക</string>
     <string name="script_binding_restore">ഡിഫോൾട്ടുകൾ പുനഃസ്ഥാപിക്കുക</string>
     <string name="script_binding_restored">ഡിഫോൾട്ടുകൾ പുനഃസ്ഥാപിച്ചു</string>
-    <string name="script_binding_perform">ആംഗ്യമോ കീകളോ നടത്തുക</string>
-    <string name="script_binding_perform_summary">അടുത്ത ആംഗ്യം നൽകുക, അല്ലെങ്കിൽ SandFly മോഡിഫയർ ഉപയോഗിച്ച് കീകൾ അമർത്തുക</string>
+    <string name="script_binding_perform">ആംഗ്യം കാണിക്കുക അല്ലെങ്കിൽ കീകൾ അമർത്തുക</string>
+    <string name="script_binding_perform_summary">അടുത്ത ജെസ്ചറോ SandFly മോഡിഫയറിനൊപ്പം അമർത്തിയ കീകളോ അസൈൻ ചെയ്യുക</string>
     <string name="script_binding_perform_message">ആംഗ്യം കാണിക്കുക അല്ലെങ്കിൽ കീകൾ അമർത്തുക.</string>
-    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> മുതൽ <xliff:g id="command">%2$s</xliff:g> വരെ അസൈൻ ചെയ്യണോ?</string>
+    <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g>-ലേക്ക് അസൈൻ ചെയ്യണോ?</string>
     <string name="script_binding_assign">അസൈൻ ചെയ്യുക</string>
     <string name="script_binding_choose_gesture">ആംഗ്യം തിരഞ്ഞെടുക്കുക</string>
     <string name="script_binding_type_keys">കീകൾ ടൈപ്പ് ചെയ്യുക</string>
-    <string name="script_binding_type_keys_summary">Sf+shift+n, അല്ലെങ്കിൽ sf+t, s പോലെ</string>
+    <string name="script_binding_type_keys_summary">sf+shift+n അല്ലെങ്കിൽ sf+t, s പോലെ</string>
     <string name="script_binding_bad_keys">ഈ കീകൾ ഉപയോഗിക്കാൻ കഴിയില്ല. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">ഇത് കൂട്ടിച്ചേർക്കുന്നു:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
@@ -134,20 +134,20 @@
     <string name="script_source_empty">ഈ ഉറവിടത്തിൽ സ്ക്രിപ്റ്റുകളൊന്നുമില്ല</string>
     <string name="script_source_failed">സ്ക്രിപ്റ്റുകൾ ലോഡ് ചെയ്യാനായില്ല. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">വീണ്ടും ശ്രമിക്കുക</string>
-    <string name="script_source_downloading">ഡൗൺലോഡ് ചെയ്യുന്നു <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> ഡൗൺലോഡ് ചെയ്യുന്നു</string>
     <string name="script_source_remove">ഉറവിടം നീക്കം ചെയ്യുക</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> നീക്കം ചെയ്യണോ?</string>
     <string name="script_source_remove_message">അതിൽ നിന്ന് ഇൻസ്റ്റാൾ ചെയ്ത സ്ക്രിപ്റ്റുകൾ ഇൻസ്റ്റാൾ ചെയ്ത നിലയിൽ തുടരും.</string>
     <string name="scripts_auto_update">സ്ക്രിപ്റ്റുകൾ സ്വയമേവ അപ്ഡേറ്റ് ചെയ്യുക</string>
     <string name="scripts_check_updates">അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക</string>
-    <string name="scripts_checking_updates">അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുന്നു...</string>
+    <string name="scripts_checking_updates">അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുന്നു…</string>
     <string name="scripts_updates_category">അപ്ഡേറ്റുകൾ</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> സ്ക്രിപ്റ്റ് അപ്ഡേറ്റ് ചെയ്തു: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> സ്ക്രിപ്റ്റുകൾ അപ്ഡേറ്റ് ചെയ്തു: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">അപ്‌ഡേറ്റുകൾക്ക് കീഴിൽ അപ്‌ഡേറ്റുകൾ ലിസ്‌റ്റ് ചെയ്‌തിരിക്കുന്നു</string>
+    <string name="scripts_updates_to_approve">അപ്ഡേറ്റുകൾ “അപ്ഡേറ്റുകൾ” എന്നതിന് കീഴിൽ ലിസ്റ്റ് ചെയ്തിരിക്കുന്നു</string>
     <string name="scripts_update_check_failed">ചില ഉറവിടങ്ങൾ പരിശോധിക്കാൻ കഴിഞ്ഞില്ല</string>
     <string name="scripts_up_to_date">എല്ലാ സ്ക്രിപ്റ്റുകളും കാലികമാണ്</string>
 </resources>

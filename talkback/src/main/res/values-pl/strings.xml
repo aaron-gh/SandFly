@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Urządzenie zostało odblokowane.</string>
   <string name="title_pref_speech_volume">Głośność mowy</string>
   <string name="title_pref_verbose_scroll_announcement">Zawsze odczytuj liczbę elementów z listy</string>
-  <string name="summary_pref_verbose_scroll_announcement">Powiedz, które elementy wyświetlają się po każdym przewinięciu</string>
+  <string name="summary_pref_verbose_scroll_announcement">Po każdym przewinięciu mówi, które elementy są widoczne</string>
   <string name="title_pref_cover_proximity_sensor">Zakryj czujnik zbliżeniowy, by zatrzymać wypowiedź</string>
   <string name="title_pref_phonetic_letters">Odczytuj litery z przykładami</string>
   <string name="summary_pref_phonetic_letters">Podczas wybierania przycisków klawiatury ekranowej lub przechodzenia po poszczególnych znakach usłyszysz każdą literę wraz z przykładem, np. „h – hotel”.</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">Większość</string>
   <string name="punctuation_some">Niektóre</string>
   <string name="title_pref_count_repeated_symbols">Podawaj liczbę powtórzonych symboli</string>
-  <string name="summary_pref_count_repeated_symbols">Powiedz, ile razy symbol się powtarza, jeśli powtarza się 4 lub więcej razy</string>
+  <string name="summary_pref_count_repeated_symbols">Informowanie, ile razy powtarza się symbol, gdy powtarza się 4 lub więcej razy</string>
   <string name="learn_more">Więcej informacji</string>
   <string name="title_pref_capital_letters">Wielkie litery</string>
   <string name="capital_letters_nothing">Nic nie rób</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">Zmień wysokość głosu</string>
   <string name="capital_letters_sound_feedback">Odtwórz dźwięk</string>
   <string name="title_pref_a11y_hints">Odczytuj wskazówki użytkowania</string>
-  <string name="summary_pref_a11y_hints">Po opisaniu przedmiotu powiedz, jak go używać</string>
+  <string name="summary_pref_a11y_hints">Po opisaniu elementu informowanie, jak go używać</string>
   <string name="pref_speak_container_element_positions_title">Odczytuj informacje w kontenerach</string>
   <string name="pref_speak_time_title">Wypowiadaj godzinę</string>
   <string name="pref_speak_time_summary">Po włączeniu ekranu</string>
-  <string name="summary_speak_container_element_positions">Powiedz, kiedy wchodzisz lub wychodzisz z list, siatek i innych kontenerów</string>
+  <string name="summary_speak_container_element_positions">Informowanie o wejściu do list, siatek i innych kontenerów oraz o wyjściu z nich</string>
   <string name="reset_letency_reduction_settings_dialog_title">Zresetować ustawienia opóźnienia?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Spowoduje to zresetowanie wszystkich ustawień opóźnienia do wartości domyślnych</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Zresetuj</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Resetuj</string>
   <string name="gestures_announce_reset_gesture_settings">To ustawienie gestu zostało zresetowane.</string>
   <string name="pref_speak_roles_title">Odczytuj typ elementu</string>
-  <string name="pref_speak_roles_summary">Przycisk lub pole wyboru „Lubię to”.</string>
+  <string name="pref_speak_roles_summary">Np. przycisk lub pole wyboru</string>
   <string name="title_pref_speak_element_ids">Odczytuj identyfikatory elementów</string>
-  <string name="summary_pref_speak_element_ids">Powiedz identyfikator przycisków, które nie mają etykiety</string>
+  <string name="summary_pref_speak_element_ids">Wypowiadanie identyfikatorów przycisków bez etykiety</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Wypowiadaj informacje o wszystkich zmianach postępu</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Obejmuje to zmiany dotyczące pobierania, postępowanie według wskazówek dojazdu i inne informacje. Nawet jeśli wyłączysz tę funkcję, będziesz otrzymywać informacje o mniej częstych zmianach.</string>
   <string name="title_pref_explore_by_touch">Czytanie dotykiem</string>
@@ -75,10 +75,10 @@
   <string name="summary_pref_single_tap">Kliknij zaznaczony element raz, aby go uaktywnić. Jest to szybsza metoda niż dwukrotne kliknięcie.</string>
   <string name="pref_verbosity_title">Szczegółowość</string>
   <string name="pref_punctuation_title">Odczytuj znaki interpunkcyjne i symbole</string>
-  <string name="title_pref_category_manage_focus_indicator">Wskaźnik ostrości</string>
+  <string name="title_pref_category_manage_focus_indicator">Wskaźnik zaznaczenia</string>
   <string name="title_pref_category_manage_gestures">Gesty</string>
   <string name="title_pref_manage_labels">Etykiety niestandardowe</string>
-  <string name="title_pref_category_context_menu">Dostosuj menu SandFly</string>
+  <string name="title_pref_category_context_menu">Menu SandFly</string>
   <string name="title_pref_category_selector_menu">Sterowanie czytaniem</string>
   <string name="title_pref_category_navigation_menu">Edytuj opcje nawigacji</string>
   <string name="title_pref_manage_keyboard_shortcuts">Skróty klawiszowe</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Aby uruchomić to ustawienie, wyłącz, a następnie włącz SandFly.</string>
   <string name="title_pref_auto_image_captioning">Automatyczne opisy</string>
   <string name="title_pref_gemini_settings">Ustawienia Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini polecenia głosowe</string>
+  <string name="title_pref_gemini_enabled">Polecenia głosowe Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Otrzymuj szczegółowe opisy obrazów dzięki AI, wybierając „Opisz obraz” w menu SandFly.\n\nMożesz też otrzymywać automatyczne opisy, gdy zaznaczysz obraz lub ikonę. Automatyczne opisy działają bez połączenia z internetem.</string>
   <string name="title_pref_icon_detection">Automatyczne opisy ikon</string>
   <string name="title_pref_image_description">Automatyczne opisy obrazów</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">Poprzednia kolumna</string>
   <string name="shortcut_column_right">Następna kolumna</string>
   <string name="table_navigation_not_supported">Nawigacja w tabeli nie jest obsługiwana</string>
-  <string name="pref_auto_enter_table_navigation_title">Przełącz na nawigację po tabelach</string>
+  <string name="pref_auto_enter_table_navigation_title">W tabelach przełączaj na nawigację po tabeli</string>
   <string name="title_text_formatting_menu">Opisz formatowanie tekstu</string>
   <string name="summary_text_formatting_menu">Dotyczy zmian formatowania, takich jak pogrubienie, kursywa, podkreślenie itp.</string>
   <string name="title_text_formatting_inline">Informuj o formatowaniu tekstu</string>
@@ -1297,8 +1297,8 @@
   <string name="close_string">Zamknij</string>
   <string name="talkback_label">SandFly</string>
     <string name="title_selector_vertical_navigation">Nawigacja pionowa</string>
-    <string name="summary_selector_vertical_navigation">Przejdź do elementu poniżej lub powyżej, obok innych elementów w wierszu</string>
-    <string name="title_selector_switch_tts_engine">Silnik mowy</string>
+    <string name="summary_selector_vertical_navigation">Przejście do elementu poniżej lub powyżej z pominięciem pozostałych elementów wiersza</string>
+    <string name="title_selector_switch_tts_engine">Syntezator mowy</string>
     <string name="summary_selector_switch_tts_engine">Przełączaj pomiędzy zainstalowanymi silnikami mowy</string>
     <string name="speech_engine_unavailable_with_profile">Silnik mowy jest niedostępny podczas korzystania z profilu głosowego</string>
     <string name="title_pref_speech_stream">Głośność mowy</string>
@@ -1313,8 +1313,8 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="battery_optimization_notification_title">Optymalizacja baterii może się zatrzymać SandFly</string>
-    <string name="battery_optimization_notification_text">W tym telefonie oszczędzanie baterii może zatrzymać się po SandFly po wyłączeniu ekranu, więc wycisza się do czasu ponownego uruchomienia. Stuknij, aby otworzyć optymalizację baterii, wybierz Wszystkie aplikacje, znajdź SandFly i wybierz Nie optymalizuj.</string>
+    <string name="battery_optimization_notification_title">Optymalizacja baterii może zatrzymać SandFly</string>
+    <string name="battery_optimization_notification_text">Na tym telefonie oszczędzanie baterii może zatrzymać SandFly po wyłączeniu ekranu i wtedy SandFly milczy do ponownego uruchomienia. Kliknij, aby otworzyć optymalizację baterii, wybierz Wszystkie aplikacje, znajdź SandFly i wybierz Nie optymalizuj.</string>
     <string name="category_collapsed">Zwinięta sekcja</string>
     <string name="category_expanded">Rozwinięta sekcja</string>
     <string name="title_pref_category_apps">Aplikacje</string>
@@ -1322,17 +1322,17 @@
     <string name="title_pref_navigation">Nawigacja</string>
     <string name="action_copy_command">Kopiuj polecenie</string>
     <string name="command_copied">Polecenie skopiowane</string>
-    <string name="permission_braille_display_label">poproś o bycie monitorem brajlowskim dla SandFly</string>
-    <string name="permission_braille_display_description">Pozwala aplikacji poprosić o wyświetlanie komunikatu brajlowskiego dla SandFly. Jeśli zezwolisz na SandFly, będzie mógł czytać wszystko na ekranie i sterować Twoim urządzeniem. SandFly pyta cię pierwszy.</string>
-    <string name="title_pref_phonetic_letters_mode">Mów litery fonetycznie</string>
+    <string name="permission_braille_display_label">prośba o działanie jako monitor brajlowski dla SandFly</string>
+    <string name="permission_braille_display_description">Pozwala aplikacji poprosić o działanie jako monitor brajlowski dla SandFly. Jeśli zezwolisz na to w SandFly, aplikacja będzie mogła odczytywać wszystko na ekranie i sterować urządzeniem. SandFly najpierw zapyta Cię o zgodę.</string>
+    <string name="title_pref_phonetic_letters_mode">Wymawiaj litery fonetycznie</string>
     <string name="phonetic_letters_mode_off">Wyłączony</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Po liście opóźnionym, jak „h, hotel”</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Po liście bez opóźnień, typu „h hotel”</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Zamiast litery, np. „hotel”</string>
-    <string name="title_pref_notification_list">Skorzystaj z listy powiadomień SandFly</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Po literze, z pauzą, np. „h, Henryk”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Po literze, bez pauzy, np. „h Henryk”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Zamiast litery, np. „Henryk”</string>
+    <string name="title_pref_notification_list">Używaj listy powiadomień SandFly</string>
     <string name="title_pref_notification_parts">Szczegóły powiadomienia</string>
-    <string name="title_pref_play_installer">Wygląda na zainstalowany od Google Play</string>
-    <string name="summary_pref_play_installer">Poinformuj inne aplikacje, że Google Play zostało zainstalowane SandFly. Niektóre aplikacje, np. niektóre aplikacje bankowe, wyłączają usługi ułatwień dostępu zainstalowane z dowolnego miejsca. Potrzebuje Shizuku i zmienia tylko to, co mówi aplikacjom o tym, skąd pochodzi SandFly.</string>
+    <string name="title_pref_play_installer">Pokazuj jako zainstalowane z Google Play</string>
+    <string name="summary_pref_play_installer">Informuje inne aplikacje, że SandFly został zainstalowany ze Sklepu Google Play. Niektóre aplikacje, np. niektóre aplikacje bankowe, wyłączają usługi ułatwień dostępu zainstalowane z innego źródła. Wymaga Shizuku i zmienia tylko to, co aplikacje wiedzą o źródle instalacji SandFly.</string>
     <string name="summary_pref_play_installer_pending">Włączone, ale Google Play nie jest jeszcze zarejestrowany jako instalator. SandFly ustawia to, gdy Shizuku jest dostępne.</string>
     <string name="notification_part_title">Tytuł</string>
     <string name="notification_part_text">Tekst</string>
@@ -1349,9 +1349,9 @@
     <string name="notification_list_show_less">Pokaż mniej</string>
     <string name="notification_list_clear_all">Wyczyść wszystko</string>
     <string name="notification_list_send">Wyślij</string>
-    <string name="notification_list_playing">Gra</string>
+    <string name="notification_list_playing">Odtwarzanie</string>
     <string name="notification_list_paused">Wstrzymano</string>
-    <string name="notification_list_play">Zagraj</string>
+    <string name="notification_list_play">Odtwórz</string>
     <string name="notification_list_pause">Wstrzymaj</string>
     <string name="notification_list_previous">Wstecz</string>
     <string name="notification_list_next">Dalej</string>
@@ -1361,7 +1361,7 @@
         <item quantity="many">%d powiadomień</item>
         <item quantity="other">%d powiadomienia</item>
     </plurals>
-    <string name="title_pref_quick_settings">Użyj szybkich ustawień SandFly</string>
+    <string name="title_pref_quick_settings">Używaj szybkich ustawień SandFly</string>
     <string name="title_pref_quick_settings_items">Panel szybkich ustawień</string>
     <string name="quick_settings_title">Szybkie ustawienia</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1432,11 +1432,11 @@
     <string name="quick_settings_edit">Edytuj</string>
     <string name="quick_settings_system">Szybkie ustawienia systemu</string>
     <string name="quick_settings_open_settings">Otwórz ustawienia</string>
-    <string name="quick_settings_add_control">Dodaj kontrolę</string>
+    <string name="quick_settings_add_control">Dodaj element sterujący</string>
     <string name="quick_settings_add_tile">Dodaj kafelek aplikacji</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Liczba kolumn</string>
-    <string name="quick_settings_move">Rusz się</string>
+    <string name="quick_settings_move">Przenieś</string>
     <string name="quick_settings_move_title">Przesuń %1$s</string>
     <string name="quick_settings_cell">Wiersz %1$d, kolumna %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1448,23 +1448,23 @@
         <item quantity="other">%d inne elementy zostały przeniesione</item>
     </plurals>
     <string name="quick_settings_remove">Usuń</string>
-    <string name="quick_settings_added">%1$s dodano</string>
+    <string name="quick_settings_added">Dodano %1$s</string>
     <string name="quick_settings_removed">%1$s usunięte</string>
     <string name="edge_gestures_title">Krawędzie</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Kolejny skrót do włączania i wyłączania trybu przeglądania</string>
     <string name="title_pref_vibration_strength">Siła wibracji</string>
-    <string name="title_pref_speaker_devices">Głośnik telefoniczny z tymi urządzeniami</string>
+    <string name="title_pref_speaker_devices">Głośnik telefonu przy tych urządzeniach</string>
     <string name="summary_pref_speaker_devices_none">Brak</string>
     <string name="summary_pref_speaker_devices_no_devices">Nie podłączono jeszcze żadnych urządzeń Bluetooth ani przewodowych</string>
     <string name="shortcut_title_open_app">Otwórz aplikację</string>
-    <string name="shortcut_open_app">Otwarte <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_open_app">Otwórz <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Przewiń do góry</string>
-    <string name="shortcut_write_reading_control">Napisz list kontroli czytania</string>
+    <string name="shortcut_write_reading_control">Napisz literę opcji sterowania czytaniem</string>
     <string name="title_pref_reading_control_letters">Odręczne litery alfabetu</string>
     <string name="reading_control_letter_none">Brak</string>
     <string name="handwriting_prompt">Napisz literę alfabetu</string>
     <string name="handwriting_closed">Pismo ręczne zamknięte</string>
-    <string name="handwriting_no_match">Żadna kontrola odczytu nie zaczyna się od <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Żadna opcja sterowania czytaniem nie zaczyna się od <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Napisz nazwę aplikacji, aby ją otworzyć</string>
     <string name="handwriting_app_prompt">Napisz nazwę aplikacji</string>
     <string name="handwriting_no_app">Żadna aplikacja nie zaczyna się od <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
@@ -1479,7 +1479,7 @@
     <string name="handwriting_unsupported_language">Rozpoznawanie pisma ręcznego nie jest dostępne w tym języku</string>
     <string name="title_pref_handwriting_keyboard">Klawiatura pisma ręcznego</string>
     <string name="summary_pref_handwriting_keyboard">Włącz pismo odręczne SandFly w ustawieniach klawiatury Android</string>
-    <string name="title_pref_handwriting_wait">Poczekaj po napisaniu</string>
+    <string name="title_pref_handwriting_wait">Oczekiwanie po napisaniu</string>
     <string name="value_handwriting_wait_200">0,2 sekundy</string>
     <string name="value_handwriting_wait_300">0,3 sekundy</string>
     <string name="value_handwriting_wait_400">0,4 sekundy</string>
@@ -1487,11 +1487,11 @@
     <string name="value_handwriting_wait_600">0,6 sekundy</string>
     <string name="value_handwriting_wait_800">0,8 sekundy</string>
     <string name="value_handwriting_wait_1000">1 sekunda</string>
-    <string name="handwriting_keyboard_name">SandFly charakter pisma</string>
+    <string name="handwriting_keyboard_name">Pismo odręczne SandFly</string>
     <string name="handwriting_space">Spacja</string>
     <string name="handwriting_new_line">Nowy wiersz</string>
-    <string name="handwriting_tutorial_intro">Samouczek klawiatury pisma ręcznego. Pisz jednym palcem w dowolnym miejscu na ekranie. To, co piszesz, zostaje zapisane, gdy się na chwilę zatrzymasz. Aby zakończyć samouczek, przesuń trzema palcami w dół.</string>
-    <string name="handwriting_tutorial_write_letter">Napisz literę alfabetu a.</string>
+    <string name="handwriting_tutorial_intro">Samouczek klawiatury pisma ręcznego. Pisz jednym palcem w dowolnym miejscu ekranu. To, co napiszesz, zostanie wpisane, gdy na chwilę przerwiesz. Aby zakończyć samouczek, przesuń trzema palcami w dół.</string>
+    <string name="handwriting_tutorial_write_letter">Napisz literę a.</string>
     <string name="handwriting_tutorial_write_word">Teraz napisz słowo hi (h, po którym następuje i).</string>
     <string name="handwriting_tutorial_typed">Wpisano <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Przesuń dwoma palcami w prawo, aby wpisać spację.</string>
@@ -1499,30 +1499,30 @@
     <string name="handwriting_tutorial_deleted">Usunięto.</string>
     <string name="handwriting_tutorial_next_reading">Jeśli pismo ręczne zostanie rozpoznane jako inny znak, np. wielka litera, przesuń dwoma palcami w górę, aby wybrać następną sugestię rozpoznawania. Spróbuj teraz.</string>
     <string name="handwriting_tutorial_read_back">Stuknij dwoma palcami, aby przeczytać tekst przed kursorem.</string>
-    <string name="handwriting_tutorial_new_line">Przesuń dwoma palcami w dół, aby wstawić nową linię lub wykonać czynność w polu tekstowym, na przykład Wyślij.</string>
-    <string name="handwriting_tutorial_not_that">To był kolejny gest.</string>
-    <string name="handwriting_tutorial_done">Nowa linia. Samouczek ukończony. Przesuń trzema palcami w dół, aby ukryć klawiaturę, lub przesuń trzema palcami w prawo lub w lewo, aby przełączyć klawiatury. Aby ponownie otworzyć samouczek, dotknij trzema palcami.</string>
-    <string name="handwriting_tutorial_finished">Samouczek został zakończony. Aby otworzyć je ponownie, dotknij trzema palcami.</string>
+    <string name="handwriting_tutorial_new_line">Przesuń dwoma palcami w dół, aby wstawić nowy wiersz lub wykonać czynność pola tekstowego, na przykład Wyślij.</string>
+    <string name="handwriting_tutorial_not_that">To był inny gest.</string>
+    <string name="handwriting_tutorial_done">Nowy wiersz. Samouczek ukończony. Przesuń trzema palcami w dół, aby ukryć klawiaturę, lub trzema palcami w prawo albo w lewo, aby przełączyć klawiaturę. Aby ponownie otworzyć samouczek, dotknij trzema palcami.</string>
+    <string name="handwriting_tutorial_finished">Samouczek został zakończony. Aby otworzyć go ponownie, dotknij trzema palcami.</string>
     <string name="handwriting_no_alternatives">Żadnych innych sugestii</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> z <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Pusty tekst</string>
     <string name="handwriting_not_available">Rozpoznawanie pisma ręcznego nie jest dostępne na tym urządzeniu</string>
     <string name="shortcut_scroll_to_bottom">Przewiń w dół</string>
     <string name="shortcut_refresh">Odśwież</string>
-    <string name="shortcut_system_notifications">Cień powiadomień systemowych</string>
+    <string name="shortcut_system_notifications">Systemowy obszar powiadomień</string>
     <string name="shortcut_system_quick_settings">Szybkie ustawienia systemu</string>
     <string name="shortcut_lock_screen">Zablokuj ekran urządzenia</string>
     <string name="shortcut_power_menu">Menu zasilania</string>
     <string name="shortcut_increase_media_volume">Zwiększ głośność multimediów</string>
     <string name="shortcut_decrease_media_volume">Zmniejsz głośność multimediów</string>
     <string name="title_clear_selection">Wyczyść wybór</string>
-    <string name="title_pref_shortcut_2finger_scrub">Szoruj 2 palcami</string>
-    <string name="title_pref_shortcut_2finger_pinch">Uszczypnij 2 palcami</string>
-    <string name="title_pref_shortcut_2finger_spread">Rozłóż 2 palcami</string>
-    <string name="title_pref_shortcut_3finger_pinch">Uszczypnij 3 palcami</string>
-    <string name="title_pref_shortcut_3finger_spread">Rozłóż 3 palcami</string>
-    <string name="title_pref_shortcut_4finger_pinch">Uszczypnij 4 palcami</string>
-    <string name="title_pref_shortcut_4finger_spread">Rozłóż 4 palcami</string>
+    <string name="title_pref_shortcut_2finger_scrub">Szybkie przesunięcie tam i z powrotem 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_pinch">Zsunięcie 2 palców</string>
+    <string name="title_pref_shortcut_2finger_spread">Rozsunięcie 2 palców</string>
+    <string name="title_pref_shortcut_3finger_pinch">Zsunięcie 3 palców</string>
+    <string name="title_pref_shortcut_3finger_spread">Rozsunięcie 3 palców</string>
+    <string name="title_pref_shortcut_4finger_pinch">Zsunięcie 4 palców</string>
+    <string name="title_pref_shortcut_4finger_spread">Rozsunięcie 4 palców</string>
     <string name="title_pref_shortcut_edge_bottom_up">Przesuń palcem w górę od dolnej krawędzi</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Długie przesunięcie w górę od dolnej krawędzi</string>
     <string name="title_pref_shortcut_edge_top_left_down">Przesuń palcem w dół od lewego górnego rogu</string>
@@ -1530,13 +1530,13 @@
     <string name="title_pref_shortcut_edge_top_left_long_down">Długie przesunięcie w dół od lewego górnego rogu</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Długie przesunięcie w dół od prawego górnego rogu</string>
     <string name="title_pref_shortcut_edge_left_top_right">Przesuń palcem w prawo od lewej krawędzi, w górnej połowie</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Długie przesunięcie w prawo od lewej krawędzi, górnej połowy</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Długie przesunięcie w prawo od lewej krawędzi, w górnej połowie</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Przesuń palcem w prawo od lewej krawędzi, dolnej połowy</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Długie przesunięcie w prawo od lewej krawędzi, dolnej połowy</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Długie przesunięcie w prawo od lewej krawędzi, w dolnej połowie</string>
     <string name="title_pref_shortcut_edge_right_top_left">Przesuń palcem w lewo od prawej krawędzi, w górnej połowie</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Długie przesunięcie w lewo od prawej krawędzi, górnej połowy</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Długie przesunięcie w lewo od prawej krawędzi, w górnej połowie</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Przesuń palcem w lewo od prawej krawędzi, dolnej połowy</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Długie przesunięcie w lewo od prawej krawędzi, dolnej połowy</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Długie przesunięcie w lewo od prawej krawędzi, w dolnej połowie</string>
     <string name="value_type_confirmation_tap_to_type">Stuknij dowolny klawisz, aby go wpisać, lub przytrzymaj palec, aby wybrać dowolny klawisz, a następnie podnieś</string>
     <string name="title_pref_edge_first_click_mm">Odległość do pierwszego kliknięcia</string>
     <string name="title_pref_edge_second_click_mm">Odległość od pierwszego do drugiego kliknięcia</string>
@@ -1560,8 +1560,8 @@
     <string name="window_names_window_opens">Tylko wtedy, gdy okno się otworzy</string>
     <string name="window_names_never">Nigdy</string>
     <string name="title_pref_selector_links_controls_web_only">Łącza i elementy sterujące tylko w treści internetowej</string>
-    <string name="title_pref_selector_auto_switch">Zmień kontrolę czytania automatycznie</string>
-    <string name="title_pref_touch_stops_speech">Zatrzymaj mowę, dotykając ekranu</string>
+    <string name="title_pref_selector_auto_switch">Automatycznie zmieniaj opcję sterowania czytaniem</string>
+    <string name="title_pref_touch_stops_speech">Zatrzymuj mowę po dotknięciu ekranu</string>
     <string name="title_pref_focus_new_windows">Przenieś fokus na nowe okna</string>
     <string name="title_pref_volume_keys_adjust_sliders">Klawisze głośności regulują suwaki</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Gdy suwak jest aktywny, zwiększanie i zmniejszanie głośności zmienia jego wartość zamiast głośności</string>
@@ -1577,8 +1577,8 @@
     <string name="image_qna_stop_listening">Przestań słuchać</string>
     <string name="image_qna_type_question">Wpisz pytanie</string>
     <string name="shortcut_dictate">Dyktuj</string>
-    <string name="title_pref_ai_dictation">Prawidłowe dyktando za pomocą AI</string>
-    <string name="dictation_not_corrected">Niepoprawione. Wpisano jako rozpoznane.</string>
+    <string name="title_pref_ai_dictation">Poprawiaj dyktowanie za pomocą AI</string>
+    <string name="dictation_not_corrected">Nie poprawiono. Wpisano w rozpoznanej postaci.</string>
     <string name="dictation_nothing_recognized">Nic nie zostało rozpoznane</string>
     <string name="dictation_unavailable">Rozpoznawanie mowy niedostępne</string>
     <string name="dictation_field_gone">Pole tekstowe zamknięte. Nic nie zostało wpisane.</string>

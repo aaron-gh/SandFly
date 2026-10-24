@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="shortcut_announce_status">Საუბრის სტატუსი</string>
+    <string name="shortcut_announce_status">სტატუსის წაკითხვა</string>
     <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> <xliff:g id="max_level" example="4">%2$d</xliff:g> ზოლიდან</string>
-    <string name="status_wifi_off">Wi-Fi ფასდაკლება</string>
+    <string name="status_wifi_off">Wi-Fi გამორთულია</string>
     <string name="status_wifi_not_connected">Wi-Fi არ არის დაკავშირებული</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
     <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
     <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
-    <string name="status_mobile">Მობილური</string>
-    <string name="status_mobile_no_service">Მობილური სერვისი არ არის</string>
-    <string name="status_do_not_disturb">Არ შემაწუხო</string>
-    <string name="status_ringer_vibrate">Ვიბრაცია</string>
-    <string name="status_ringer_silent">Ჩუმად</string>
-    <string name="status_airplane_mode">Თვითმფრინავის რეჟიმი</string>
-    <string name="title_pref_status_readout">Სტატუსის წაკითხვა</string>
-    <string name="status_item_time">Დრო</string>
-    <string name="status_item_time_summary">Მიმდინარე დრო</string>
-    <string name="status_item_battery">Ბატარეა</string>
-    <string name="status_item_battery_summary">Ბატარეის დონე, დატენვა და ბატარეის დამზოგავი</string>
+    <string name="status_mobile">მობილური</string>
+    <string name="status_mobile_no_service">მობილური კავშირი არ არის</string>
+    <string name="status_do_not_disturb">არ შემაწუხოთ</string>
+    <string name="status_ringer_vibrate">ვიბრაცია</string>
+    <string name="status_ringer_silent">ჩუმად</string>
+    <string name="status_airplane_mode">თვითმფრინავის რეჟიმი</string>
+    <string name="title_pref_status_readout">სტატუსის წაკითხვა</string>
+    <string name="status_item_time">დრო</string>
+    <string name="status_item_time_summary">მიმდინარე დრო</string>
+    <string name="status_item_battery">ბატარეა</string>
+    <string name="status_item_battery_summary">ბატარეის დონე, დატენვა და ბატარეის დამზოგავი</string>
     <string name="status_item_wifi">Wi-Fi</string>
-    <string name="status_item_wifi_summary">Ქსელის სახელი და სიგნალის სიძლიერე</string>
-    <string name="status_item_mobile">Მობილური ქსელი</string>
-    <string name="status_item_mobile_summary">Ოპერატორი, ქსელის ტიპი და სიგნალის სიძლიერე</string>
-    <string name="status_item_ringer">Ზარი და არ შემაწუხო</string>
-    <string name="status_item_ringer_summary">Მხოლოდ მაშინ, როცა ზარი არ არის დაყენებული, ან არ შემაწუხოთ ჩართულია</string>
-    <string name="status_item_airplane_mode">Თვითმფრინავის რეჟიმი</string>
-    <string name="status_item_airplane_mode_summary">Მხოლოდ მაშინ, როდესაც თვითმფრინავის რეჟიმი ჩართულია</string>
+    <string name="status_item_wifi_summary">ქსელის სახელი და სიგნალის სიძლიერე</string>
+    <string name="status_item_mobile">მობილური ქსელი</string>
+    <string name="status_item_mobile_summary">ოპერატორი, ქსელის ტიპი და სიგნალის სიძლიერე</string>
+    <string name="status_item_ringer">ზარი და არ შემაწუხო</string>
+    <string name="status_item_ringer_summary">მხოლოდ მაშინ, როცა ზარი ვიბრაციაზე ან უხმოზეა, ან ჩართულია „არ შემაწუხოთ“</string>
+    <string name="status_item_airplane_mode">თვითმფრინავის რეჟიმი</string>
+    <string name="status_item_airplane_mode_summary">მხოლოდ მაშინ, როდესაც თვითმფრინავის რეჟიმი ჩართულია</string>
 </resources>

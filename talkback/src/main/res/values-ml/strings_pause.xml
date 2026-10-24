@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pause_backtalk">താൽക്കാലികമായി നിർത്തുക SandFly</string>
-    <string name="summary_pause_backtalk">നിങ്ങൾ SandFly പുനരാരംഭിക്കുന്നത് വരെ സംഭാഷണം, ആംഗ്യങ്ങൾ എന്നിവ ഓഫാക്കി സ്പർശനത്തിലൂടെ പര്യവേക്ഷണം ചെയ്യുക</string>
-    <string name="keycombo_menu_global_pause_backtalk">താൽക്കാലികമായി നിർത്തുക അല്ലെങ്കിൽ പുനരാരംഭിക്കുക SandFly</string>
+    <string name="title_pause_backtalk">SandFly താൽക്കാലികമായി നിർത്തുക</string>
+    <string name="summary_pause_backtalk">SandFly പുനരാരംഭിക്കുന്നത് വരെ സംഭാഷണം, ജെസ്‌ചറുകൾ, “ടച്ച് വഴി അടുത്തറിയൽ” എന്നിവ ഓഫാക്കുന്നു</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly താൽക്കാലികമായി നിർത്തുക അല്ലെങ്കിൽ പുനരാരംഭിക്കുക</string>
     <string name="backtalk_paused">SandFly താൽക്കാലികമായി നിർത്തി</string>
     <string name="backtalk_resumed">SandFly പുനരാരംഭിച്ചു</string>
     <string name="notification_title_backtalk_paused">SandFly താൽക്കാലികമായി നിർത്തി</string>
@@ -10,13 +10,13 @@
     <string name="notification_channel_backtalk_paused">SandFly താൽക്കാലികമായി നിർത്തി</string>
     <string name="dialog_title_pause_backtalk">SandFly താൽക്കാലികമായി നിർത്തണോ?</string>
     <string name="dialog_button_pause_backtalk">താൽക്കാലികമായി നിർത്തുക</string>
-    <string name="dialog_message_pause_backtalk">SandFly താൽക്കാലികമായി നിർത്തിയിരിക്കുമ്പോൾ, അത് ആംഗ്യങ്ങളോട് സംസാരിക്കുകയോ പ്രതികരിക്കുകയോ ചെയ്യുന്നില്ല, കൂടാതെ സ്‌ക്രീൻ റീഡർ ഓണാക്കാത്തതുപോലെ സ്‌ക്രീൻ പ്രവർത്തിക്കുന്നു.</string>
-    <string name="message_resume_keyguard">തുടരാൻ, SandFly നിർത്തിയിരിക്കുന്നു എന്ന അറിയിപ്പിൽ ടാപ്പുചെയ്യുക, വോളിയം കുറയ്ക്കൽ ബട്ടൺ വേഗത്തിൽ 3 തവണ അമർത്തുക, അല്ലെങ്കിൽ ലോക്ക് സ്‌ക്രീൻ കാണാൻ ഫോൺ ലോക്ക് ചെയ്‌ത് ഉണർത്തുക.</string>
-    <string name="message_resume_screen_on">പുനരാരംഭിക്കുന്നതിന്, SandFly താൽക്കാലികമായി നിർത്തിയ അറിയിപ്പിൽ ടാപ്പുചെയ്യുക, വോളിയം 3 തവണ വേഗത്തിൽ അമർത്തുക, അല്ലെങ്കിൽ സ്‌ക്രീൻ ഓഫാക്കി വീണ്ടും ഓണാക്കുക.</string>
-    <string name="message_resume_manual">പുനരാരംഭിക്കാൻ, SandFly താൽക്കാലികമായി നിർത്തിയ അറിയിപ്പിൽ ടാപ്പ് ചെയ്യുക അല്ലെങ്കിൽ വോളിയം 3 തവണ വേഗത്തിൽ അമർത്തുക.</string>
+    <string name="dialog_message_pause_backtalk">SandFly താൽക്കാലികമായി നിർത്തിയിരിക്കുമ്പോൾ, അത് സംസാരിക്കുകയോ ജെസ്‌ചറുകളോട് പ്രതികരിക്കുകയോ ചെയ്യില്ല, സ്‌ക്രീൻ റീഡർ ഓണല്ലാത്തതുപോലെ സ്‌ക്രീൻ പ്രവർത്തിക്കും.</string>
+    <string name="message_resume_keyguard">തുടരാൻ, “SandFly താൽക്കാലികമായി നിർത്തി” അറിയിപ്പിൽ ടാപ്പ് ചെയ്യുക, വോളിയം കുറയ്ക്കൽ ബട്ടൺ വേഗത്തിൽ 3 തവണ അമർത്തുക, അല്ലെങ്കിൽ ലോക്ക് സ്‌ക്രീൻ ദൃശ്യമാകാൻ ഫോൺ ലോക്ക് ചെയ്‌ത് ഉണർത്തുക.</string>
+    <string name="message_resume_screen_on">തുടരാൻ, “SandFly താൽക്കാലികമായി നിർത്തി” അറിയിപ്പിൽ ടാപ്പ് ചെയ്യുക, വോളിയം കുറയ്ക്കൽ ബട്ടൺ വേഗത്തിൽ 3 തവണ അമർത്തുക, അല്ലെങ്കിൽ സ്‌ക്രീൻ ഓഫാക്കി വീണ്ടും ഓണാക്കുക.</string>
+    <string name="message_resume_manual">തുടരാൻ, “SandFly താൽക്കാലികമായി നിർത്തി” അറിയിപ്പിൽ ടാപ്പ് ചെയ്യുക, അല്ലെങ്കിൽ വോളിയം കുറയ്ക്കൽ ബട്ടൺ വേഗത്തിൽ 3 തവണ അമർത്തുക.</string>
     <string name="message_resume_key_combo">നിങ്ങൾക്ക് <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> അമർത്താനും കഴിയും.</string>
-    <string name="title_pref_resume_backtalk">പുനരാരംഭിക്കുക SandFly</string>
+    <string name="title_pref_resume_backtalk">SandFly പുനരാരംഭിക്കൽ</string>
     <string name="value_resume_keyguard">ലോക്ക് സ്ക്രീൻ കാണിക്കുമ്പോൾ</string>
-    <string name="value_resume_screen_on">സ്ക്രീൻ ഓൺ ചെയ്യുമ്പോൾ</string>
+    <string name="value_resume_screen_on">സ്ക്രീൻ ഓണാകുമ്പോൾ</string>
     <string name="value_resume_manual">അറിയിപ്പിൽ നിന്നോ കുറുക്കുവഴിയിൽ നിന്നോ മാത്രം</string>
 </resources>

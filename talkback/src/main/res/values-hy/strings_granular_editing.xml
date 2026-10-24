@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">հատիկավոր խմբագրում</string>
+    <string name="granular_editing_title">Մաս առ մաս խմբագրում</string>
     <string name="granular_editing_split_by">Բաժանել ըստ՝ <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Բաժանվել ըստ</string>
+    <string name="granular_editing_split_by_title">Բաժանել ըստ</string>
     <string name="granular_editing_characters">Նիշեր</string>
     <string name="granular_editing_words">Բառեր</string>
     <string name="granular_editing_sentences">Նախադասություններ</string>
     <string name="granular_editing_lines">Տողեր</string>
-    <string name="granular_editing_paragraphs">Պարբերություն</string>
+    <string name="granular_editing_paragraphs">Պարբերություններ</string>
     <string name="granular_editing_space">Բացատ</string>
     <string name="granular_editing_new_line">Նոր տող</string>
-    <string name="granular_editing_tab">Ներդիրի նիշ</string>
-    <string name="granular_editing_empty">Ոչ մի տեքստ: Օգտագործեք «Ավելացնել տեքստ» վերջում՝ «Ավելին»:</string>
+    <string name="granular_editing_tab">Տաբուլյացիայի նիշ</string>
+    <string name="granular_editing_empty">Տեքստ չկա։ Օգտագործեք «Ավելացնել տեքստ վերջում»-ը «Ավելին» բաժնում։</string>
     <string name="granular_editing_edit">Խմբագրել</string>
-    <string name="granular_editing_insert_before">Տեղադրեք առաջ</string>
-    <string name="granular_editing_insert_after">Տեղադրեք հետո</string>
+    <string name="granular_editing_insert_before">Տեղադրել առաջ</string>
+    <string name="granular_editing_insert_after">Տեղադրել հետո</string>
     <string name="granular_editing_delete">Ջնջել</string>
     <string name="granular_editing_select">Ընտրել</string>
     <string name="granular_editing_unselect">Ապաընտրել</string>
@@ -22,15 +22,15 @@
     <string name="granular_editing_save">Պահել</string>
     <string name="granular_editing_more">Ավելին</string>
     <string name="granular_editing_undo">Հետարկել</string>
-    <string name="granular_editing_redo">Կրկնեք վերջին չեղարկված խմբագրումը</string>
+    <string name="granular_editing_redo">Կրկնել</string>
     <string name="granular_editing_find">Գտնել</string>
-    <string name="granular_editing_find_next">Գտեք հաջորդը</string>
+    <string name="granular_editing_find_next">Գտնել հաջորդը</string>
     <string name="granular_editing_replace">Փոխարինել</string>
-    <string name="granular_editing_replace_with">Փոխարինել հետ</string>
-    <string name="granular_editing_replace_all">Փոխարինեք բոլորը</string>
-    <string name="granular_editing_add_at_end">Վերջում ավելացրեք տեքստ</string>
-    <string name="granular_editing_clear_selection">Ապաընտրել ամբողջ տեքստը</string>
-    <string name="granular_editing_cut_selected">Կտրեք ընտրված տեքստը</string>
+    <string name="granular_editing_replace_with">Փոխարինել հետևյալով</string>
+    <string name="granular_editing_replace_all">Փոխարինել բոլորը</string>
+    <string name="granular_editing_add_at_end">Ավելացնել տեքստ վերջում</string>
+    <string name="granular_editing_clear_selection">Մաքրել ընտրությունը</string>
+    <string name="granular_editing_cut_selected">Կտրել ընտրված տեքստը</string>
     <string name="granular_editing_delete_selected">Ջնջել ընտրվածը</string>
     <string name="granular_editing_copied">Պատճենվել է</string>
     <string name="granular_editing_deleted">Ջնջված է</string>
@@ -42,7 +42,7 @@
     <string name="granular_editing_save_changes">Պահե՞լ փոփոխությունները:</string>
     <string name="granular_editing_copy_changes">Պատճենե՞լ փոխված տեքստը:</string>
     <string name="granular_editing_discard">Վերացնել</string>
-    <string name="granular_editing_keep_editing">Շարունակեք խմբագրել</string>
+    <string name="granular_editing_keep_editing">Շարունակել խմբագրումը</string>
     <string name="granular_editing_not_saved">Չի պահպանվել. տեքստային դաշտը չկա: Տեքստը պատճենված է։</string>
     <string name="granular_editing_no_text">Խմբագրելու տեքստ չկա</string>
     <string name="granular_editing_password">Հասանելի չէ գաղտնաբառի դաշտերում</string>

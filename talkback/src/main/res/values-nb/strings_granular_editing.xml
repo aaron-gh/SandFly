@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Granulær redigering</string>
+    <string name="granular_editing_title">Redigering i deler</string>
     <string name="granular_editing_split_by">Delt etter: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Splitt av</string>
+    <string name="granular_editing_split_by_title">Del etter</string>
     <string name="granular_editing_characters">Tegn</string>
     <string name="granular_editing_words">Ord</string>
     <string name="granular_editing_sentences">Setninger</string>
@@ -11,23 +11,23 @@
     <string name="granular_editing_space">Mellomrom</string>
     <string name="granular_editing_new_line">Ny linje</string>
     <string name="granular_editing_tab">Tab-tegn</string>
-    <string name="granular_editing_empty">Ingen tekst. Bruk Legg til tekst på slutten, i Mer.</string>
+    <string name="granular_editing_empty">Ingen tekst. Bruk «Legg til tekst på slutten» under «Mer».</string>
     <string name="granular_editing_edit">Rediger</string>
     <string name="granular_editing_insert_before">Sett inn før</string>
     <string name="granular_editing_insert_after">Sett inn etter</string>
     <string name="granular_editing_delete">Slett</string>
-    <string name="granular_editing_select">Markering</string>
+    <string name="granular_editing_select">Merk</string>
     <string name="granular_editing_unselect">Fjern valget</string>
     <string name="granular_editing_selected">Valgt</string>
     <string name="granular_editing_save">Lagre</string>
     <string name="granular_editing_more">Mer</string>
     <string name="granular_editing_undo">Angre</string>
-    <string name="granular_editing_redo">Gjenta den siste angrete redigeringen</string>
+    <string name="granular_editing_redo">Gjør om</string>
     <string name="granular_editing_find">Finn</string>
     <string name="granular_editing_find_next">Finn neste</string>
-    <string name="granular_editing_replace">Bytt ut</string>
-    <string name="granular_editing_replace_with">Bytt ut med</string>
-    <string name="granular_editing_replace_all">Bytt ut alle</string>
+    <string name="granular_editing_replace">Erstatt</string>
+    <string name="granular_editing_replace_with">Erstatt med</string>
+    <string name="granular_editing_replace_all">Erstatt alle</string>
     <string name="granular_editing_add_at_end">Legg til tekst på slutten</string>
     <string name="granular_editing_clear_selection">Fjern markeringen av all tekst</string>
     <string name="granular_editing_cut_selected">Klipp ut den valgte teksten</string>
@@ -41,9 +41,9 @@
     </plurals>
     <string name="granular_editing_save_changes">Vil du lagre endringer?</string>
     <string name="granular_editing_copy_changes">Vil du kopiere den endrede teksten?</string>
-    <string name="granular_editing_discard">Kast</string>
+    <string name="granular_editing_discard">Forkast</string>
     <string name="granular_editing_keep_editing">Fortsett å redigere</string>
     <string name="granular_editing_not_saved">Ikke lagret: tekstfeltet er borte. Teksten er kopiert.</string>
     <string name="granular_editing_no_text">Ingen tekst å redigere</string>
-    <string name="granular_editing_password">Ikke tilgjengelig i passordfeltene</string>
+    <string name="granular_editing_password">Ikke tilgjengelig i passordfelt</string>
 </resources>

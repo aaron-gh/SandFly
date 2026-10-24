@@ -271,8 +271,8 @@
     <string name="notification_cond_wifi_not">Chưa kết nối với <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Đã kết nối Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Chưa kết nối Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> đang ở phía trước</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> không ở phía trước</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> đang mở trên màn hình</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> không mở trên màn hình</string>
     <string name="notification_cond_from">Thông báo từ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Thông báo không phải từ <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Thông báo chứa <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
@@ -294,7 +294,7 @@
     <string name="notification_action_voice">đọc bằng hồ sơ giọng nói</string>
     <string name="notification_action_voice_value">đọc bằng <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">đọc bằng giọng nói của SandFly</string>
-    <string name="notification_voice_removed">Hồ sơ giọng nói đã bị xoá</string>
+    <string name="notification_voice_removed">Hồ sơ giọng nói đã xoá</string>
     <string name="notification_action_format_value">dùng định dạng lời đọc <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">đọc tối đa <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Tắt</string>

@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Kontrollera ljud och vibrationer</string>
-    <string name="summary_pref_control_sounds">Ge varje typ av kontroll, som knappar, kryssrutor, redigeringsfält och listobjekt, sitt eget ljud och sin egen vibration från temat, i stället för fokusljudet och vibrationen, som Unspoken gör för NVDA. Ljudet kommer från där kontrollen är på skärmen, och SandFly utelämnar att säga vilken typ av kontroll det är.</string>
-    <string name="title_pref_control_sounds_speak_roles">Säg fortfarande typ av kontroll</string>
-    <string name="summary_pref_control_sounds_speak_roles">När ett kontrollljud spelas, säg fortfarande vilken typ av kontroll det är, till exempel knapp. Detta är för varje ljudtema.</string>
+    <string name="title_pref_control_sounds">Ljud och vibrationer för kontroller</string>
+    <string name="summary_pref_control_sounds">Varje typ av kontroll, till exempel knappar, kryssrutor, redigeringsfält och listobjekt, får ett eget ljud och en egen vibration från temat i stället för fokusljudet och fokusvibrationen, som Unspoken gör för NVDA. Ljudet kommer från kontrollens plats på skärmen, och SandFly säger inte vilken typ av kontroll det är.</string>
+    <string name="title_pref_control_sounds_speak_roles">Säg ändå typen av kontroll</string>
+    <string name="summary_pref_control_sounds_speak_roles">När ett kontrolljud spelas sägs kontrolltypen ändå, till exempel knapp. Gäller alla ljudteman.</string>
     <string name="title_pref_control_sounds_3d">3D-ljud</string>
     <string name="pref_control_sounds_3d_headphones">Med hörlurar</string>
     <string name="pref_control_sounds_3d_always">Alltid</string>
     <string name="pref_control_sounds_3d_never">Aldrig, bara vänster och höger</string>
-    <string name="individual_sound_control_button">Styrljud: knapp</string>
-    <string name="individual_sound_control_checkbox">Styr ljud: kryssruta</string>
-    <string name="individual_sound_control_radio_button">Styrljud: radioknapp</string>
-    <string name="individual_sound_control_edit_text">Styr ljud: redigeringsfält</string>
-    <string name="individual_sound_control_combo_box">Styr ljud: rullgardinslista</string>
-    <string name="individual_sound_control_slider">Styr ljud: reglage</string>
-    <string name="individual_sound_control_link">Styr ljud: länk</string>
-    <string name="individual_sound_control_image">Styr ljud: bild</string>
-    <string name="individual_sound_control_clock">Styrljud: klocka</string>
-    <string name="individual_sound_control_tab">Styr ljud: flik</string>
-    <string name="individual_sound_control_menu_item">Styr ljud: menyalternativ</string>
-    <string name="individual_sound_control_list_item">Styr ljud: listobjekt</string>
-    <string name="individual_sound_control_tree_item">Styrljud: trädobjekt</string>
+    <string name="individual_sound_control_button">Ljud för kontroller: knapp</string>
+    <string name="individual_sound_control_checkbox">Ljud för kontroller: kryssruta</string>
+    <string name="individual_sound_control_radio_button">Ljud för kontroller: radioknapp</string>
+    <string name="individual_sound_control_edit_text">Ljud för kontroller: redigeringsfält</string>
+    <string name="individual_sound_control_combo_box">Ljud för kontroller: rullgardinslista</string>
+    <string name="individual_sound_control_slider">Ljud för kontroller: reglage</string>
+    <string name="individual_sound_control_link">Ljud för kontroller: länk</string>
+    <string name="individual_sound_control_image">Ljud för kontroller: bild</string>
+    <string name="individual_sound_control_clock">Ljud för kontroller: klocka</string>
+    <string name="individual_sound_control_tab">Ljud för kontroller: flik</string>
+    <string name="individual_sound_control_menu_item">Ljud för kontroller: menyalternativ</string>
+    <string name="individual_sound_control_list_item">Ljud för kontroller: listobjekt</string>
+    <string name="individual_sound_control_tree_item">Ljud för kontroller: trädobjekt</string>
 </resources>

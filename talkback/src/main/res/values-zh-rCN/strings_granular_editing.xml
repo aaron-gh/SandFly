@@ -9,19 +9,19 @@
     <string name="granular_editing_lines">行</string>
     <string name="granular_editing_paragraphs">段落</string>
     <string name="granular_editing_space">空格</string>
-    <string name="granular_editing_new_line">换行符号</string>
+    <string name="granular_editing_new_line">换行</string>
     <string name="granular_editing_tab">制表符</string>
-    <string name="granular_editing_empty">没有文字。使用“更多”中末尾添加文本。</string>
+    <string name="granular_editing_empty">没有文字。请使用“更多”中的“在末尾添加文字”。</string>
     <string name="granular_editing_edit">编辑</string>
-    <string name="granular_editing_insert_before">插入之前</string>
-    <string name="granular_editing_insert_after">插入之后</string>
+    <string name="granular_editing_insert_before">在前面插入</string>
+    <string name="granular_editing_insert_after">在后面插入</string>
     <string name="granular_editing_delete">删除</string>
     <string name="granular_editing_select">选择</string>
     <string name="granular_editing_unselect">取消选择</string>
     <string name="granular_editing_selected">已选择</string>
     <string name="granular_editing_save">保存</string>
     <string name="granular_editing_more">更多</string>
-    <string name="granular_editing_undo">撤消</string>
+    <string name="granular_editing_undo">撤销</string>
     <string name="granular_editing_redo">重做</string>
     <string name="granular_editing_find">查找</string>
     <string name="granular_editing_find_next">查找下一个</string>
@@ -29,21 +29,21 @@
     <string name="granular_editing_replace_with">替换为</string>
     <string name="granular_editing_replace_all">全部替换</string>
     <string name="granular_editing_add_at_end">在末尾添加文字</string>
-    <string name="granular_editing_clear_selection">取消所有选择</string>
+    <string name="granular_editing_clear_selection">清除选择</string>
     <string name="granular_editing_cut_selected">剪切所选文本</string>
     <string name="granular_editing_delete_selected">删除所选内容</string>
     <string name="granular_editing_copied">已复制</string>
     <string name="granular_editing_deleted">已删除</string>
     <string name="granular_editing_not_found">未找到</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 已替换</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> 已替换</item>
+        <item quantity="one">已替换 <xliff:g id="count" example="1">%d</xliff:g> 处</item>
+        <item quantity="other">已替换 <xliff:g id="count" example="3">%d</xliff:g> 处</item>
     </plurals>
     <string name="granular_editing_save_changes">保存更改吗？</string>
     <string name="granular_editing_copy_changes">复制更改后的文本？</string>
     <string name="granular_editing_discard">丢弃</string>
     <string name="granular_editing_keep_editing">继续编辑</string>
-    <string name="granular_editing_not_saved">未保存：文本字段消失。文本已复制。</string>
+    <string name="granular_editing_not_saved">未保存：文本字段已不存在。文字已复制。</string>
     <string name="granular_editing_no_text">没有要编辑的文字</string>
     <string name="granular_editing_password">密码字段中不可用</string>
 </resources>

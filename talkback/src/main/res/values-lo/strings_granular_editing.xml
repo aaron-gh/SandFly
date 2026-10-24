@@ -9,9 +9,9 @@
     <string name="granular_editing_lines">ແຖວ</string>
     <string name="granular_editing_paragraphs">ຫຍໍ້ໜ້າ</string>
     <string name="granular_editing_space">ຍະຫວ່າງ</string>
-    <string name="granular_editing_new_line">ເຄື່ອງໝາຍ​ແຖວໃໝ່</string>
-    <string name="granular_editing_tab">ຕົວອັກສອນແຖບ</string>
-    <string name="granular_editing_empty">ບໍ່ມີຂໍ້ຄວາມ. ໃຊ້ Add text ໃນຕອນທ້າຍ, ໃນ More.</string>
+    <string name="granular_editing_new_line">ແຖວໃໝ່</string>
+    <string name="granular_editing_tab">ຕົວອັກສອນ Tab</string>
+    <string name="granular_editing_empty">ບໍ່ມີຂໍ້ຄວາມ. ໃຊ້ “ເພີ່ມຂໍ້ຄວາມຢູ່ທ້າຍ” ໃນ “ເພີ່ມເຕີມ”.</string>
     <string name="granular_editing_edit">ແກ້ໄຂ</string>
     <string name="granular_editing_insert_before">ໃສ່ກ່ອນ</string>
     <string name="granular_editing_insert_after">ໃສ່ຫຼັງ</string>
@@ -21,8 +21,8 @@
     <string name="granular_editing_selected">ເລືອກແລ້ວ</string>
     <string name="granular_editing_save">ບັນທຶກ</string>
     <string name="granular_editing_more">ເພີ່ມເຕີມ</string>
-    <string name="granular_editing_undo">ຍົກເລີກ</string>
-    <string name="granular_editing_redo">ເຮັດຄືນການດັດແກ້ຫຼ້າສຸດ</string>
+    <string name="granular_editing_undo">ຍົກເລີກການກະທຳ</string>
+    <string name="granular_editing_redo">ເຮັດຄືນ</string>
     <string name="granular_editing_find">ຊອກຫາ</string>
     <string name="granular_editing_find_next">ຊອກຫາຕໍ່ໄປ</string>
     <string name="granular_editing_replace">ແທນທີ່</string>
@@ -36,8 +36,8 @@
     <string name="granular_editing_deleted">ລຶບແລ້ວ</string>
     <string name="granular_editing_not_found">ບໍ່ພົບ</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ແທນ</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ແທນ</item>
+        <item quantity="one">ແທນທີ່ແລ້ວ <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">ແທນທີ່ແລ້ວ <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">ບັນທຶກການປ່ຽນແປງບໍ?</string>
     <string name="granular_editing_copy_changes">ສຳເນົາຂໍ້ຄວາມທີ່ປ່ຽນບໍ?</string>
@@ -45,5 +45,5 @@
     <string name="granular_editing_keep_editing">ສືບຕໍ່ແກ້ໄຂ</string>
     <string name="granular_editing_not_saved">ບໍ່ໄດ້ບັນທຶກໄວ້: ກ່ອງຂໍ້ຄວາມຫາຍໄປ. ຂໍ້ຄວາມຖືກຄັດລອກ.</string>
     <string name="granular_editing_no_text">ບໍ່ມີຂໍ້ຄວາມໃຫ້ແກ້ໄຂ</string>
-    <string name="granular_editing_password">ບໍ່ມີຢູ່ໃນຊ່ອງຂໍ້ມູນລະຫັດຜ່ານ</string>
+    <string name="granular_editing_password">ໃຊ້ບໍ່ໄດ້ໃນຊ່ອງລະຫັດຜ່ານ</string>
 </resources>

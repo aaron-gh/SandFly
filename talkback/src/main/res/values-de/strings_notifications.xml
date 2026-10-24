@@ -21,7 +21,7 @@
     <string name="notification_apps_title">Apps</string>
     <string name="notification_words_title">Wörter und Ersetzungen</string>
     <string name="notification_kinds_title">Arten von Benachrichtigungen</string>
-    <string name="notification_when_title">Wann lesen?</string>
+    <string name="notification_when_title">Wann vorlesen</string>
     <string name="notification_rules_title">Regeln</string>
     <string name="notification_repeats_title">Wiederholungen</string>
     <string name="notification_stop_title">Vorlesen beenden</string>
@@ -43,10 +43,10 @@
     <string name="notification_sound_before_title">Ton vor Benachrichtigungen</string>
     <string name="notification_category_text">Text</string>
     <string name="notification_remove_emoji_title">Emoji weglassen</string>
-    <string name="notification_lowercase_title">Großgeschriebene Wörter als Wörter vorlesen</string>
+    <string name="notification_lowercase_title">Großbuchstaben als Wörter vorlesen</string>
     <string name="notification_lowercase_summary">Einige Sprachausgaben buchstabieren großgeschriebene Wörter</string>
     <string name="notification_separate_digits_title">Lange Zahlen Ziffer für Ziffer vorlesen</string>
-    <string name="notification_separate_digits_summary">Wie Codes und Telefonnummern</string>
+    <string name="notification_separate_digits_summary">Zum Beispiel Codes und Telefonnummern</string>
     <string name="notification_min_digits_title">Mindestanzahl an Ziffern für lange Zahlen</string>
     <string name="notification_urls_title">Links</string>
     <string name="notification_url_text_title">Text anstelle eines Links</string>
@@ -58,16 +58,16 @@
     <string name="notification_max_seconds_title">Vorlesen beenden nach</string>
     <string name="notification_category_timing">Zeitsteuerung</string>
     <string name="notification_delay_title">Wartezeit vor dem Vorlesen</string>
-    <string name="notification_queue_title">Wenn eine andere Benachrichtigung gelesen wird</string>
+    <string name="notification_queue_title">Wenn eine andere Benachrichtigung vorgelesen wird</string>
     <string name="notification_repeat_minutes_title">Bis zum Einschalten des Bildschirms erneut vorlesen</string>
     <string name="notification_skip_media_title">Benachrichtigungen von Medienplayern überspringen</string>
     <string name="notification_skip_ongoing_title">Dauerhafte Benachrichtigungen überspringen</string>
-    <string name="notification_skip_ongoing_summary">Wie Navigation und Timer</string>
+    <string name="notification_skip_ongoing_summary">Zum Beispiel Navigation und Timer</string>
     <string name="notification_skip_foreground_title">Benachrichtigungen laufender Apps überspringen</string>
     <string name="notification_skip_foreground_summary">Zum Beispiel ein VPN oder ein Rekorder</string>
     <string name="notification_skip_progress_title">Fortschrittsbenachrichtigungen überspringen</string>
     <string name="notification_skip_group_summaries_title">Gruppenzusammenfassungen überspringen</string>
-    <string name="notification_skip_group_summaries_summary">Wie zum Beispiel „3 neue Nachrichten“</string>
+    <string name="notification_skip_group_summaries_summary">Zum Beispiel „3 neue Nachrichten“</string>
     <string name="notification_skip_low_priority_title">Benachrichtigungen mit niedriger Priorität überspringen</string>
     <string name="notification_skip_system_title">Systembenachrichtigungen überspringen</string>
     <string name="notification_screen_on_title">Während der Bildschirm eingeschaltet ist</string>
@@ -103,10 +103,10 @@
     <string name="notification_shake_title">Zum Stoppen schütteln</string>
     <string name="notification_shake_strength_title">Schüttelstärke</string>
     <string name="notification_wave_title">Zum Beenden winken</string>
-    <string name="notification_wave_summary">Bewegen Sie eine Hand über den Näherungssensor</string>
+    <string name="notification_wave_summary">Hand über den Näherungssensor bewegen</string>
     <string name="notification_pocket_title">Taschenmodus</string>
-    <string name="notification_pocket_summary">Ein Sensor, der zu Beginn des Lesens abgedeckt ist, wie in einer Tasche, stoppt es nicht</string>
-    <string name="notification_volume_keys_title">Drücken Sie beide Lautstärketasten</string>
+    <string name="notification_pocket_summary">Ist der Sensor zu Beginn des Vorlesens bereits verdeckt, etwa in einer Tasche, wird das Vorlesen nicht beendet</string>
+    <string name="notification_volume_keys_title">Beide Lautstärketasten drücken</string>
     <string name="notification_dismiss_title">Beim Entfernen der Benachrichtigung beenden</string>
     <string name="notification_watch_dismiss_title">Auch beim Entfernen auf einer Uhr</string>
     <string name="notification_app_cancel_title">Beenden, wenn die App die Benachrichtigung entfernt</string>
@@ -117,7 +117,7 @@
     <string name="notification_summary_newest_first_title">Das Neueste zuerst</string>
     <string name="notification_summary_name_title">Ihr Name</string>
     <string name="notification_summary_gap_title">Pause zwischen Benachrichtigungen</string>
-    <string name="notification_summary_needs_sandfly">Schalten Sie SandFly ein, um Benachrichtigungen zu lesen</string>
+    <string name="notification_summary_needs_sandfly">SandFly einschalten, um Benachrichtigungen vorzulesen</string>
     <string name="notification_summary_no_access">Benachrichtigungszugriff ist deaktiviert</string>
     <string name="notification_summary_morning">Guten Morgen.</string>
     <string name="notification_summary_afternoon">Guten Tag.</string>
@@ -144,7 +144,7 @@
     <string name="notification_app_said_as">vorgelesen als <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Zurücksetzen</string>
     <string name="notification_required_title">Nur Benachrichtigungen vorlesen mit</string>
-    <string name="notification_blocked_title">Keine Benachrichtigungen vorlesen mit</string>
+    <string name="notification_blocked_title">Benachrichtigungen nicht vorlesen, die Folgendes enthalten</string>
     <string name="notification_private_title">Nur den App-Namen vorlesen bei</string>
     <string name="notification_replacements_title">Anders aussprechen</string>
     <string name="notification_add_word">Wort hinzufügen</string>
@@ -163,7 +163,7 @@
     <string name="notification_history_category">Benachrichtigungen</string>
     <string name="notification_history_empty">Keine Benachrichtigungen</string>
     <string name="notification_history_ignore_app">Benachrichtigungen von <xliff:g id="app" example="Chat">%1$s</xliff:g> nicht vorlesen</string>
-    <string name="notification_history_private_app">Nur den Namen von <xliff:g id="app" example="Chat">%1$s</xliff:g> lesen</string>
+    <string name="notification_history_private_app">Nur den Namen von <xliff:g id="app" example="Chat">%1$s</xliff:g> vorlesen</string>
     <string name="notification_history_priority_app">Benachrichtigungen von <xliff:g id="app" example="Chat">%1$s</xliff:g> zuerst vorlesen</string>
     <string name="notification_history_block_similar">Solche Benachrichtigungen nicht vorlesen</string>
     <string name="notification_history_copy">Kopieren</string>
@@ -171,22 +171,22 @@
     <string name="notification_copied">Kopiert</string>
     <string name="notification_outcome_read">Vorgelesen</string>
     <string name="notification_outcome_stopped">Beim Vorlesen angehalten</string>
-    <string name="notification_outcome_speech_off">Nicht vorgelesen: Benachrichtigungsansage ist deaktiviert</string>
+    <string name="notification_outcome_speech_off">Nicht vorgelesen: Vorlesen von Benachrichtigungen ist aus</string>
     <string name="notification_outcome_dnd">Nicht vorgelesen: Bitte nicht stören</string>
-    <string name="notification_outcome_touching">Nicht vorgelesen: Der Bildschirm wurde berührt</string>
+    <string name="notification_outcome_touching">Nicht vorgelesen: der Bildschirm wurde berührt</string>
     <string name="notification_outcome_app">Nicht vorgelesen: App</string>
-    <string name="notification_outcome_ongoing">Nicht vorgelesen: fortlaufend</string>
-    <string name="notification_outcome_foreground">Nicht vorgelesen: App wird ausgeführt</string>
+    <string name="notification_outcome_ongoing">Nicht vorgelesen: laufende Benachrichtigung</string>
+    <string name="notification_outcome_foreground">Nicht vorgelesen: App ist geöffnet</string>
     <string name="notification_outcome_low_priority">Nicht vorgelesen: niedrige Priorität</string>
     <string name="notification_outcome_system">Nicht vorgelesen: System</string>
     <string name="notification_outcome_media">Nicht vorgelesen: Mediaplayer</string>
     <string name="notification_outcome_group_summary">Nicht vorgelesen: Gruppenzusammenfassung</string>
     <string name="notification_outcome_progress">Nicht vorgelesen: Fortschritt</string>
-    <string name="notification_outcome_required">Nicht vorgelesen: Erforderliche Wörter fehlen</string>
+    <string name="notification_outcome_required">Nicht vorgelesen: erforderliche Wörter fehlen</string>
     <string name="notification_outcome_blocked">Nicht vorgelesen: blockiertes Wort</string>
     <string name="notification_outcome_empty">Nicht vorgelesen: kein Text</string>
     <string name="notification_outcome_repeat">Nicht vorgelesen: Wiederholung</string>
-    <string name="notification_outcome_cooldown">Nicht vorgelesen: App-Benachrichtigung erst kürzlich vorgelesen</string>
+    <string name="notification_outcome_cooldown">Nicht vorgelesen: App erst kürzlich vorgelesen</string>
     <string name="notification_outcome_quiet_hours">Nicht vorgelesen: Ruhezeiten</string>
     <string name="notification_outcome_screen_on">Nicht vorgelesen: Bildschirm an</string>
     <string name="notification_outcome_screen_off">Nicht vorgelesen: Bildschirm aus</string>
@@ -198,7 +198,7 @@
     <string name="notification_outcome_media_playing">Nicht vorgelesen: Medien werden abgespielt</string>
     <string name="notification_outcome_car">Nicht vorgelesen: Automodus</string>
     <string name="notification_outcome_rule">Nicht vorgelesen: Regel</string>
-    <string name="notification_outcome_busy">Nicht vorgelesen: Eine weitere Benachrichtigung wurde gelesen</string>
+    <string name="notification_outcome_busy">Nicht vorgelesen: eine andere Benachrichtigung wurde vorgelesen</string>
     <string name="notification_outcome_call">Als Anruf angekündigt</string>
     <string name="notification_rule_add">Regel hinzufügen</string>
     <string name="notification_rule_from_template">Regel aus Vorlage hinzufügen</string>
@@ -210,7 +210,7 @@
     <string name="notification_rule_match">Bedingungen</string>
     <string name="notification_rule_match_all">Alle müssen zutreffen</string>
     <string name="notification_rule_match_any">Mindestens eine muss zutreffen</string>
-    <string name="notification_rule_conditions">Wann</string>
+    <string name="notification_rule_conditions">Wenn</string>
     <string name="notification_rule_actions">Dann</string>
     <string name="notification_rule_add_condition">Bedingung hinzufügen</string>
     <string name="notification_rule_add_action">Aktion hinzufügen</string>
@@ -276,27 +276,27 @@
     <string name="notification_cond_from">Die Benachrichtigung stammt von <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Die Benachrichtigung stammt nicht von <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Die Benachrichtigung enthält <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_contains_not">Die Benachrichtigung enthält kein <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
+    <string name="notification_cond_contains_not">Die Benachrichtigung enthält nicht <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">Das Telefon ist im Lautlos- oder Vibrationsmodus</string>
     <string name="notification_cond_silent_not">Der Klingelton ist eingeschaltet</string>
     <string name="notification_cond_media">Medien werden abgespielt</string>
     <string name="notification_cond_media_not">Es werden keine Medien abgespielt</string>
-    <string name="notification_action_skip">nicht lesen</string>
+    <string name="notification_action_skip">nicht vorlesen</string>
     <string name="notification_action_private">nur den App-Namen vorlesen</string>
     <string name="notification_action_not_private">vollständig vorlesen, auch private Inhalte</string>
     <string name="notification_action_format">ein Sprachausgabeformat verwenden</string>
-    <string name="notification_action_max_words">bis zu einer Anzahl von Wörtern lesen</string>
-    <string name="notification_action_no_limit">ohne Längenbegrenzung lesen</string>
+    <string name="notification_action_max_words">bis zu einer Anzahl von Wörtern vorlesen</string>
+    <string name="notification_action_no_limit">ohne Längenbegrenzung vorlesen</string>
     <string name="notification_action_keep_emoji">Emoji behalten</string>
     <string name="notification_action_keep_numbers">Zahlen zusammenhalten</string>
     <string name="notification_action_priority">zuerst vorlesen</string>
     <string name="notification_action_always_read">auch während Ruhezeiten und zu anderen Zeiten vorlesen, zu denen Benachrichtigungen sonst nicht vorgelesen werden</string>
     <string name="notification_action_voice">mit einem Stimmprofil vorlesen</string>
-    <string name="notification_action_voice_value">lesen mit <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_value">mit <xliff:g id="profile" example="DECtalk">%1$s</xliff:g> vorlesen</string>
     <string name="notification_action_voice_sandfly">mit der Stimme von SandFly vorlesen</string>
-    <string name="notification_voice_removed">Stimmprofil entfernt</string>
+    <string name="notification_voice_removed">Entferntes Stimmprofil</string>
     <string name="notification_action_format_value">das Sprachausgabeformat <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> verwenden</string>
-    <string name="notification_action_max_words_value">bis <xliff:g id="words" example="10 words">%1$s</xliff:g> lesen</string>
+    <string name="notification_action_max_words_value">bis zu <xliff:g id="words" example="10 words">%1$s</xliff:g> vorlesen</string>
     <string name="notification_off">Aus</string>
     <string name="notification_on">An</string>
     <string name="notification_never_again">Bis SandFly neu startet</string>
@@ -306,13 +306,13 @@
     <string name="notification_speech_now_off">Vorlesen von Benachrichtigungen ausgeschaltet</string>
     <string name="notification_no_last_notification">Es wurde keine Benachrichtigung gelesen</string>
     <string name="shortcut_read_notifications">Benachrichtigungen lesen</string>
-    <string name="shortcut_toggle_notification_speech">Benachrichtigungsansage ein- oder ausschalten</string>
+    <string name="shortcut_toggle_notification_speech">Vorlesen von Benachrichtigungen ein oder aus</string>
     <string name="shortcut_read_last_notification">Letzte Benachrichtigung erneut vorlesen</string>
     <string name="shortcut_stop_notification">Vorlesen der Benachrichtigung beenden</string>
     <string name="notification_test_posting">Eine Testbenachrichtigung folgt in 5 Sekunden</string>
-    <string name="notification_test_not_allowed">Erlauben Sie SandFly, zuerst Benachrichtigungen anzuzeigen</string>
-    <string name="notification_test_content_title">SandFly Test</string>
-    <string name="notification_test_content_text">Dies ist eine Testbenachrichtigung. Sie wird mit Ihren Benachrichtigungseinstellungen vorgelesen. 123456</string>
+    <string name="notification_test_not_allowed">Erlaube SandFly zuerst, Benachrichtigungen anzuzeigen</string>
+    <string name="notification_test_content_title">SandFly-Test</string>
+    <string name="notification_test_content_text">Dies ist eine Testbenachrichtigung. Sie wird mit deinen Benachrichtigungseinstellungen vorgelesen. 123456</string>
     <string name="notification_automation_on">Vorlesen von Benachrichtigungen einschalten</string>
     <string name="notification_automation_off">Vorlesen von Benachrichtigungen ausschalten</string>
     <string name="notification_automation_toggle">Vorlesen von Benachrichtigungen ein- oder ausschalten</string>
@@ -347,8 +347,8 @@
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> Ziffern</item>
     </plurals>
     <plurals name="notification_summary_count">
-        <item quantity="one">Sie haben eine <xliff:g id="count" example="1">%d</xliff:g>-Benachrichtigung.</item>
-        <item quantity="other">Sie haben <xliff:g id="count" example="5">%d</xliff:g> Benachrichtigungen.</item>
+        <item quantity="one">Du hast <xliff:g id="count" example="1">%d</xliff:g> Benachrichtigung.</item>
+        <item quantity="other">Du hast <xliff:g id="count" example="5">%d</xliff:g> Benachrichtigungen.</item>
     </plurals>
     <string-array name="notification_url_entries">
         <item>@string/notification_url_full</item>

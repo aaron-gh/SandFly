@@ -8,12 +8,12 @@
     <string name="granular_editing_sentences">문장</string>
     <string name="granular_editing_lines">줄</string>
     <string name="granular_editing_paragraphs">단락</string>
-    <string name="granular_editing_space">띄어쓰기</string>
+    <string name="granular_editing_space">공백</string>
     <string name="granular_editing_new_line">줄바꿈</string>
     <string name="granular_editing_tab">탭 문자</string>
-    <string name="granular_editing_empty">텍스트가 없습니다. 더보기에서 끝에 텍스트 추가를 사용하세요.</string>
+    <string name="granular_editing_empty">텍스트가 없습니다. \'더보기\'에서 \'끝에 텍스트 추가\'를 사용하세요.</string>
     <string name="granular_editing_edit">편집</string>
-    <string name="granular_editing_insert_before">이전에 삽입</string>
+    <string name="granular_editing_insert_before">앞에 삽입</string>
     <string name="granular_editing_insert_after">뒤에 삽입</string>
     <string name="granular_editing_delete">삭제</string>
     <string name="granular_editing_select">선택</string>
@@ -22,14 +22,14 @@
     <string name="granular_editing_save">저장</string>
     <string name="granular_editing_more">더보기</string>
     <string name="granular_editing_undo">실행 취소</string>
-    <string name="granular_editing_redo">마지막으로 실행 취소된 편집 다시 실행</string>
+    <string name="granular_editing_redo">다시 실행</string>
     <string name="granular_editing_find">찾기</string>
     <string name="granular_editing_find_next">다음 찾기</string>
     <string name="granular_editing_replace">바꾸기</string>
     <string name="granular_editing_replace_with">다음으로 교체</string>
-    <string name="granular_editing_replace_all">모두 교체</string>
+    <string name="granular_editing_replace_all">모두 바꾸기</string>
     <string name="granular_editing_add_at_end">끝에 텍스트 추가</string>
-    <string name="granular_editing_clear_selection">모든 텍스트 선택 해제</string>
+    <string name="granular_editing_clear_selection">선택 해제</string>
     <string name="granular_editing_cut_selected">선택한 텍스트 잘라내기</string>
     <string name="granular_editing_delete_selected">선택 항목 삭제</string>
     <string name="granular_editing_copied">복사됨</string>
@@ -41,9 +41,9 @@
     </plurals>
     <string name="granular_editing_save_changes">변경사항을 저장하시겠습니까?</string>
     <string name="granular_editing_copy_changes">변경된 텍스트를 복사하시겠습니까?</string>
-    <string name="granular_editing_discard">폐기</string>
-    <string name="granular_editing_keep_editing">계속 수정하세요</string>
-    <string name="granular_editing_not_saved">저장되지 않음: 텍스트 필드가 사라졌습니다. 텍스트가 복사됩니다.</string>
-    <string name="granular_editing_no_text">편집할 텍스트가 없습니다.</string>
-    <string name="granular_editing_password">비밀번호 필드에서는 사용할 수 없습니다.</string>
+    <string name="granular_editing_discard">삭제</string>
+    <string name="granular_editing_keep_editing">계속 수정</string>
+    <string name="granular_editing_not_saved">저장되지 않음: 텍스트 입력란이 사라졌습니다. 텍스트가 복사되었습니다.</string>
+    <string name="granular_editing_no_text">편집할 텍스트가 없습니다</string>
+    <string name="granular_editing_password">비밀번호 필드에서는 사용할 수 없습니다</string>
 </resources>

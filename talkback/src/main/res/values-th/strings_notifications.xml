@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="notification_shake_3">แข็งแกร่ง</string>
+    <string name="notification_shake_3">แรง</string>
     <string name="notification_shake_2">ปานกลาง</string>
-    <string name="notification_shake_1">อ่อนโยน</string>
-    <string name="notification_media_skip">อย่าอ่านออกเสียง</string>
+    <string name="notification_shake_1">เบา</string>
+    <string name="notification_media_skip">ไม่อ่าน</string>
     <string name="notification_media_pause">หยุดสื่อชั่วคราวขณะอ่าน</string>
-    <string name="notification_media_read">อ่านออกเสียง</string>
-    <string name="notification_headphones_only_without">ไม่มีหูฟังเท่านั้น</string>
+    <string name="notification_media_read">อ่าน</string>
+    <string name="notification_headphones_only_without">เฉพาะเมื่อไม่ใช้หูฟัง</string>
     <string name="notification_headphones_only_with">ด้วยหูฟังเท่านั้น</string>
     <string name="notification_headphones_always">อ่านออกเสียงโดยมีหรือไม่มีหูฟัง</string>
-    <string name="notification_queue_skip">อย่าอ่านออกเสียงการแจ้งเตือนใหม่</string>
-    <string name="notification_queue_interrupt">ขัดจังหวะการแจ้งเตือนที่กำลังอ่านออกเสียง</string>
-    <string name="notification_queue_queue">อ่านออกเสียงหลังจากการแจ้งเตือนปัจจุบัน</string>
-    <string name="notification_url_omit">ออกไป</string>
-    <string name="notification_url_replace">พูดข้อความด้านล่างนี้</string>
+    <string name="notification_queue_skip">ไม่อ่านอันใหม่</string>
+    <string name="notification_queue_interrupt">ขัดจังหวะ</string>
+    <string name="notification_queue_queue">อ่านต่อจากนั้น</string>
+    <string name="notification_url_omit">ข้าม</string>
+    <string name="notification_url_replace">พูดข้อความด้านล่าง</string>
     <string name="notification_url_domain">อ่านเว็บไซต์เท่านั้น</string>
-    <string name="notification_url_full">อ่านลิงค์ทั้งหมด</string>
+    <string name="notification_url_full">อ่านลิงก์ทั้งหมด</string>
     <string name="notification_category_title">การแจ้งเตือน</string>
     <string name="notification_reading_title">การอ่านออกเสียงการแจ้งเตือน</string>
     <string name="notification_apps_title">แอป</string>
     <string name="notification_words_title">คำและการแทนที่</string>
     <string name="notification_kinds_title">ประเภทของการแจ้งเตือน</string>
-    <string name="notification_when_title">เมื่อไหร่จะได้อ่าน.</string>
+    <string name="notification_when_title">เวลาที่อ่าน</string>
     <string name="notification_rules_title">กฎเกณฑ์</string>
     <string name="notification_repeats_title">ซ้ำ</string>
     <string name="notification_stop_title">หยุดอ่าน</string>
     <string name="notification_schedules_title">สรุปและเวลา</string>
     <string name="notification_history_title">ประวัติการแจ้งเตือน</string>
-    <string name="notification_test_title">ส่งการแจ้งเตือนการทดสอบ</string>
+    <string name="notification_test_title">ส่งการแจ้งเตือนทดสอบ</string>
     <string name="notification_automation_title">ระบบอัตโนมัติ</string>
     <string name="notification_automation_allowed_title">อนุญาตแอปอัตโนมัติ</string>
     <string name="notification_category_said">สิ่งที่พูด</string>
     <string name="notification_format_title">รูปแบบคำพูด</string>
     <string name="notification_format_message">ตัวยึด: {app}, {title}, {text}, {content} (ข้อความทั้งหมด), {bigtext}, {subtext}, {ticker}, {category} และ {time}</string>
-    <string name="notification_private_format_title">การแจ้งเตือนส่วนตัวบอกว่า</string>
-    <string name="notification_private_format_message">กล่าวแทนเนื้อหาการแจ้งเตือนส่วนตัว ตัวยึด: {app}, {category} และ {time}</string>
+    <string name="notification_private_format_title">การอ่านการแจ้งเตือนส่วนตัว</string>
+    <string name="notification_private_format_message">พูดแทนเนื้อหาของการแจ้งเตือนส่วนตัว ตัวยึด: {app}, {category} และ {time}</string>
     <string name="notification_category_voice">เสียง</string>
     <string name="notification_voice_title">เสียง</string>
     <string name="notification_voice_sandfly">เสียงของ SandFly</string>
     <string name="notification_detect_language_title">ตรวจจับภาษา</string>
-    <string name="notification_detect_language_summary">พูดการแจ้งเตือนแต่ละรายการในภาษาที่ใช้เขียน ต้องการเปลี่ยนภาษาโดยอัตโนมัติในการตั้งค่าการอ่านออกเสียงข้อความ</string>
+    <string name="notification_detect_language_summary">พูดการแจ้งเตือนแต่ละรายการด้วยภาษาที่ใช้เขียน ต้องเปิด “สลับภาษาโดยอัตโนมัติ” ใน การอ่านออกเสียงข้อความ</string>
     <string name="notification_sound_before_title">เสียงก่อนการแจ้งเตือน</string>
     <string name="notification_category_text">ข้อความ</string>
-    <string name="notification_remove_emoji_title">ทิ้งอีโมจิไว้</string>
+    <string name="notification_remove_emoji_title">ข้ามอีโมจิ</string>
     <string name="notification_lowercase_title">อ่านตัวพิมพ์ใหญ่เป็นคำ</string>
-    <string name="notification_lowercase_summary">โปรแกรมคำพูดบางตัวสะกดคำด้วยตัวพิมพ์ใหญ่ทีละตัวอักษร</string>
+    <string name="notification_lowercase_summary">เอนจินเสียงพูดบางตัวสะกดคำที่เขียนด้วยตัวพิมพ์ใหญ่ทีละตัวอักษร</string>
     <string name="notification_separate_digits_title">อ่านตัวเลขยาวทีละหลัก</string>
     <string name="notification_separate_digits_summary">เช่นรหัสและหมายเลขโทรศัพท์</string>
-    <string name="notification_min_digits_title">หลักขั้นต่ำเป็นตัวเลขยาว</string>
+    <string name="notification_min_digits_title">จำนวนหลักขั้นต่ำของตัวเลขยาว</string>
     <string name="notification_urls_title">ลิงก์</string>
-    <string name="notification_url_text_title">บอกว่าแทนลิงค์.</string>
-    <string name="notification_skip_empty_title">ข้ามการแจ้งเตือนโดยไม่มีข้อความ</string>
+    <string name="notification_url_text_title">ข้อความที่พูดแทนลิงก์</string>
+    <string name="notification_skip_empty_title">ข้ามการแจ้งเตือนที่ไม่มีข้อความ</string>
     <string name="notification_category_length">ความยาว</string>
     <string name="notification_max_words_title">จำนวนคำสูงสุด</string>
     <string name="notification_max_sentences_title">จำนวนประโยคสูงสุด</string>
     <string name="notification_max_characters_title">จำนวนอักขระข้อความสูงสุด</string>
-    <string name="notification_max_seconds_title">หยุดอ่านทีหลัง.</string>
+    <string name="notification_max_seconds_title">หยุดอ่านหลังจาก</string>
     <string name="notification_category_timing">เวลา</string>
-    <string name="notification_delay_title">รออ่านก่อนครับ</string>
+    <string name="notification_delay_title">เวลารอก่อนอ่าน</string>
     <string name="notification_queue_title">เมื่อมีการอ่านการแจ้งเตือนอื่น</string>
     <string name="notification_repeat_minutes_title">อ่านอีกครั้งจนกระทั่งหน้าจอเปิดขึ้น</string>
     <string name="notification_skip_media_title">ข้ามเครื่องเล่นสื่อ</string>
@@ -76,47 +76,47 @@
     <string name="notification_headphones_title">หูฟัง</string>
     <string name="notification_media_title">ขณะที่สื่อกำลังเล่นอยู่</string>
     <string name="notification_dnd_title">ห้ามรบกวน</string>
-    <string name="notification_dnd_none">อย่าอ่านออกเสียงการแจ้งเตือนใดๆ</string>
+    <string name="notification_dnd_none">ไม่อ่านเลย</string>
     <string name="notification_dnd_allowed">อ่านการแจ้งเตือนที่อนุญาตโดยโหมดห้ามรบกวน</string>
     <string name="notification_dnd_all">อ่านทั้งหมด</string>
     <string name="notification_touch_title">ในขณะที่สัมผัสหน้าจอ</string>
     <string name="notification_touch_read">อ่านทันที</string>
     <string name="notification_touch_after">อ่านเมื่อการสัมผัสสิ้นสุดลง</string>
-    <string name="notification_touch_skip">อย่าอ่านออกเสียง</string>
+    <string name="notification_touch_skip">ไม่อ่าน</string>
     <string name="notification_during_calls_title">ระหว่างการโทร</string>
     <string name="notification_honour_silent_title">ไม่ได้อยู่ในโหมดเงียบ</string>
     <string name="notification_honour_vibrate_title">ไม่ได้อยู่ในโหมดสั่น</string>
     <string name="notification_skip_in_car_title">ไม่อยู่ในโหมดรถยนต์</string>
     <string name="notification_skip_in_car_summary">เช่นกับ Android Auto ซึ่งอ่านได้เอง</string>
-    <string name="notification_category_quiet_hours">ชั่วโมงที่เงียบสงบ</string>
-    <string name="notification_quiet_hours_title">ชั่วโมงที่เงียบสงบ</string>
+    <string name="notification_category_quiet_hours">ช่วงเวลาเงียบ</string>
+    <string name="notification_quiet_hours_title">ช่วงเวลาเงียบ</string>
     <string name="notification_quiet_start_title">เริ่ม</string>
     <string name="notification_quiet_end_title">สิ้นสุด</string>
-    <string name="notification_repeat_seconds_title">ข้ามการแจ้งเตือนเดียวกันสำหรับ</string>
-    <string name="notification_numbers_alike_title">ปฏิบัติต่อตัวเลขที่แตกต่างกันให้เหมือนกัน</string>
+    <string name="notification_repeat_seconds_title">ระยะเวลาข้ามการแจ้งเตือนเดียวกัน</string>
+    <string name="notification_numbers_alike_title">ถือว่าตัวเลขเหมือนกัน</string>
     <string name="notification_numbers_alike_summary">เช่น เปอร์เซ็นต์การดาวน์โหลด</string>
     <string name="notification_cooldown_title">เวลาระหว่างการแจ้งเตือนของแอป</string>
-    <string name="notification_skip_prefix_title">ละเว้นคำนำหน้าข้อความที่ซ้ำกัน</string>
+    <string name="notification_skip_prefix_title">ละเว้นส่วนต้นที่ซ้ำ</string>
     <string name="notification_skip_prefix_summary">เช่นชื่อกลุ่มในการแชท</string>
-    <string name="notification_prefix_memory_title">นานแค่ไหนในการจำคำนำหน้าข้อความ</string>
-    <string name="notification_access_summary">จำเป็นต้องหยุดอ่านการแจ้งเตือนที่ถูกปิดและสำหรับข้อมูลสรุป</string>
+    <string name="notification_prefix_memory_title">ระยะเวลาจำส่วนต้น</string>
+    <string name="notification_access_summary">จำเป็นสำหรับการหยุดอ่านการแจ้งเตือนที่ปิดไปแล้ว และสำหรับข้อมูลสรุป</string>
     <string name="notification_shake_title">เขย่าเพื่อหยุด</string>
     <string name="notification_shake_strength_title">ความแรงของการสั่น</string>
-    <string name="notification_wave_title">โบกมือให้หยุดอ่าน</string>
+    <string name="notification_wave_title">โบกมือเพื่อหยุด</string>
     <string name="notification_wave_summary">เลื่อนมือไปเหนือพรอกซิมิตี้เซนเซอร์</string>
-    <string name="notification_pocket_title">โหมดพกพา</string>
-    <string name="notification_pocket_summary">เซ็นเซอร์ที่ถูกปิดไว้เมื่อเริ่มการอ่านจะไม่หยุดการอ่านเช่นเดียวกับในกระเป๋า</string>
+    <string name="notification_pocket_title">โหมดในกระเป๋า</string>
+    <string name="notification_pocket_summary">หากเซ็นเซอร์ถูกปิดอยู่แล้วตอนเริ่มอ่าน เช่น อยู่ในกระเป๋า การอ่านจะไม่หยุด</string>
     <string name="notification_volume_keys_title">กดปุ่มปรับระดับเสียงทั้งสองปุ่ม</string>
     <string name="notification_dismiss_title">หยุดอ่านเมื่อปิดการแจ้งเตือน</string>
-    <string name="notification_watch_dismiss_title">นอกจากนี้เมื่อการแจ้งเตือนบนสมาร์ทวอทช์ถูกปิด</string>
-    <string name="notification_app_cancel_title">หยุดอ่านเมื่อแอปลบการแจ้งเตือน</string>
+    <string name="notification_watch_dismiss_title">รวมถึงเมื่อปิดบนนาฬิกา</string>
+    <string name="notification_app_cancel_title">หยุดเมื่อแอปนำการแจ้งเตือนออก</string>
     <string name="notification_category_summary">สรุป</string>
     <string name="notification_summary_now_title">อ่านการแจ้งเตือนตอนนี้</string>
     <string name="notification_summary_daily_title">อ่านการแจ้งเตือนทุกวัน</string>
     <string name="notification_summary_time_title">เวลา</string>
     <string name="notification_summary_newest_first_title">ใหม่ล่าสุดก่อน</string>
     <string name="notification_summary_name_title">ชื่อของคุณ</string>
-    <string name="notification_summary_gap_title">หยุดชั่วคราวระหว่างการแจ้งเตือน</string>
+    <string name="notification_summary_gap_title">การหยุดระหว่างการแจ้งเตือน</string>
     <string name="notification_summary_needs_sandfly">เปิด SandFly เพื่ออ่านการแจ้งเตือน</string>
     <string name="notification_summary_no_access">การเข้าถึงการแจ้งเตือนปิดอยู่</string>
     <string name="notification_summary_morning">สวัสดีตอนเช้า.</string>
@@ -125,37 +125,37 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">ประกาศเวลา</string>
-    <string name="notification_clock_interval_title">บอกเวลาทุกครั้ง.</string>
+    <string name="notification_clock_interval_title">ช่วงเวลาบอกเวลา</string>
     <string name="notification_clock_format_title">รูปแบบเวลา</string>
     <string name="notification_clock_format_message">ตัวยึด: {time}, {date} และ {battery} (เปอร์เซ็นต์แบตเตอรี่)</string>
-    <string name="notification_clock_format_default">มันคือ {time}</string>
+    <string name="notification_clock_format_default">ขณะนี้เวลา {time}</string>
     <string name="notification_clock_exact_title">เวลาที่แน่นอน</string>
-    <string name="notification_clock_exact_summary">ต้องการสัญญาณเตือนและการแจ้งเตือน มิฉะนั้นอาจกล่าวได้ว่าสายไปหนึ่งนาที</string>
+    <string name="notification_clock_exact_summary">ต้องใช้สิทธิ์ “การปลุกและการช่วยเตือน” มิฉะนั้นอาจบอกเวลาช้าไปได้สูงสุดหนึ่งนาที</string>
     <string name="notification_other_apps_title">แอพอื่นๆ</string>
     <string name="notification_apps_category">แอป</string>
     <string name="notification_apps_loading">กำลังโหลดแอป</string>
     <string name="notification_app_mode_title">การแจ้งเตือน</string>
     <string name="notification_app_mode_default">เช่นเดียวกับแอพอื่นๆ</string>
-    <string name="notification_app_mode_read">อ่านออกเสียง</string>
+    <string name="notification_app_mode_read">อ่าน</string>
     <string name="notification_app_mode_private">ชื่อแอปเท่านั้น</string>
     <string name="notification_app_mode_priority">อ่านก่อน</string>
-    <string name="notification_app_mode_ignore">อย่าอ่านออกเสียง</string>
+    <string name="notification_app_mode_ignore">ไม่อ่าน</string>
     <string name="notification_app_name_title">ชื่อที่พูด</string>
-    <string name="notification_app_said_as">บอกว่าเป็น <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">อ่านว่า <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">รีเซ็ต</string>
-    <string name="notification_required_title">อ่านการแจ้งเตือนด้วยเท่านั้น</string>
-    <string name="notification_blocked_title">อย่าอ่านการแจ้งเตือนด้วย</string>
-    <string name="notification_private_title">อ่านเฉพาะชื่อแอปสำหรับ</string>
-    <string name="notification_replacements_title">พูดอย่างอื่น</string>
+    <string name="notification_required_title">อ่านเฉพาะการแจ้งเตือนที่มี</string>
+    <string name="notification_blocked_title">ไม่อ่านการแจ้งเตือนที่มี</string>
+    <string name="notification_private_title">อ่านเฉพาะชื่อแอปสำหรับการแจ้งเตือนที่มี</string>
+    <string name="notification_replacements_title">การอ่านแบบอื่น</string>
     <string name="notification_add_word">เพิ่มคำ</string>
     <string name="notification_add_replacement">เพิ่มการทดแทน</string>
-    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> เป็น <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
+    <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> อ่านว่า <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">ข้อความ</string>
-    <string name="notification_replace_with">พูดเป็น</string>
-    <string name="notification_whole_words">ทั้งคำเท่านั้น</string>
-    <string name="notification_regex">การแสดงออกปกติ</string>
+    <string name="notification_replace_with">อ่านว่า</string>
+    <string name="notification_whole_words">เฉพาะทั้งคำ</string>
+    <string name="notification_regex">นิพจน์ทั่วไป</string>
     <string name="notification_enter_text">ป้อนข้อความ</string>
-    <string name="notification_invalid_regex">ไม่ใช่นิพจน์ทั่วไปที่ถูกต้อง</string>
+    <string name="notification_invalid_regex">ไม่ใช่ Regular Expression ที่ถูกต้อง</string>
     <string name="notification_edit">แก้ไข</string>
     <string name="notification_remove">ลบ</string>
     <string name="notification_history_keep">บันทึกประวัติการแจ้งเตือน</string>
@@ -169,36 +169,36 @@
     <string name="notification_history_copy">คัดลอก</string>
     <string name="notification_saved">บันทึกแล้ว</string>
     <string name="notification_copied">คัดลอกแล้ว</string>
-    <string name="notification_outcome_read">อ่านออกเสียงได้สำเร็จ</string>
+    <string name="notification_outcome_read">อ่านแล้ว</string>
     <string name="notification_outcome_stopped">หยุดขณะอ่าน</string>
-    <string name="notification_outcome_speech_off">ไม่ได้อ่าน: ปิดคำพูดการแจ้งเตือน</string>
+    <string name="notification_outcome_speech_off">ไม่ได้อ่าน: การอ่านการแจ้งเตือนปิดอยู่</string>
     <string name="notification_outcome_dnd">ไม่ได้อ่าน: ห้ามรบกวน</string>
-    <string name="notification_outcome_touching">ไม่ได้อ่าน: หน้าจอถูกสัมผัส</string>
+    <string name="notification_outcome_touching">ไม่ได้อ่าน: มีการแตะหน้าจอ</string>
     <string name="notification_outcome_app">ไม่ได้อ่าน: แอป</string>
-    <string name="notification_outcome_ongoing">ไม่ได้อ่าน: กำลังดำเนินการอยู่</string>
-    <string name="notification_outcome_foreground">ไม่ได้อ่าน: แอปที่กำลังรันอยู่</string>
-    <string name="notification_outcome_low_priority">ไม่อ่าน: มีลำดับความสำคัญต่ำ</string>
+    <string name="notification_outcome_ongoing">ไม่ได้อ่าน: การแจ้งเตือนต่อเนื่อง</string>
+    <string name="notification_outcome_foreground">ไม่ได้อ่าน: แอปเปิดอยู่</string>
+    <string name="notification_outcome_low_priority">ไม่ได้อ่าน: ลำดับความสำคัญต่ำ</string>
     <string name="notification_outcome_system">ไม่ได้อ่าน: ระบบ</string>
-    <string name="notification_outcome_media">ไม่ได้อ่าน: เครื่องเล่นสื่อ</string>
+    <string name="notification_outcome_media">ไม่ได้อ่าน: โปรแกรมเล่นสื่อ</string>
     <string name="notification_outcome_group_summary">ไม่ได้อ่าน: สรุปกลุ่ม</string>
     <string name="notification_outcome_progress">ไม่ได้อ่าน: ความคืบหน้า</string>
     <string name="notification_outcome_required">ไม่ได้อ่าน: ไม่มีคำที่จำเป็น</string>
     <string name="notification_outcome_blocked">ไม่ได้อ่าน: คำที่ถูกบล็อก</string>
     <string name="notification_outcome_empty">ไม่ได้อ่าน: ไม่มีข้อความ</string>
-    <string name="notification_outcome_repeat">ไม่ได้อ่าน: ทำซ้ำ</string>
-    <string name="notification_outcome_cooldown">ไม่อ่านออกเสียง: การแจ้งเตือนอื่นจากแอปนี้ถูกอ่านเร็วเกินไป</string>
-    <string name="notification_outcome_quiet_hours">ไม่ได้อ่าน: ชั่วโมงที่เงียบสงบ</string>
-    <string name="notification_outcome_screen_on">ไม่ได้อ่าน: เปิดหน้าจอ</string>
-    <string name="notification_outcome_screen_off">ไม่ได้อ่าน: ปิดหน้าจอ</string>
-    <string name="notification_outcome_locked">ไม่อ่าน: ล็อค</string>
-    <string name="notification_outcome_headphones">ไม่ได้อ่าน: เชื่อมต่อหูฟังแล้ว</string>
+    <string name="notification_outcome_repeat">ไม่ได้อ่าน: ซ้ำ</string>
+    <string name="notification_outcome_cooldown">ไม่ได้อ่าน: เพิ่งอ่านแอปนี้ไป</string>
+    <string name="notification_outcome_quiet_hours">ไม่ได้อ่าน: ช่วงเวลาเงียบ</string>
+    <string name="notification_outcome_screen_on">ไม่ได้อ่าน: หน้าจอเปิด</string>
+    <string name="notification_outcome_screen_off">ไม่ได้อ่าน: หน้าจอปิด</string>
+    <string name="notification_outcome_locked">ไม่ได้อ่าน: ล็อกอยู่</string>
+    <string name="notification_outcome_headphones">ไม่ได้อ่าน: เชื่อมต่อหูฟังอยู่</string>
     <string name="notification_outcome_no_headphones">ไม่ได้อ่าน: ไม่มีหูฟัง</string>
-    <string name="notification_outcome_silent">ไม่อ่าน: โหมดเงียบ</string>
+    <string name="notification_outcome_silent">ไม่ได้อ่าน: โหมดเงียบ</string>
     <string name="notification_outcome_vibrate">ไม่ได้อ่าน: โหมดสั่น</string>
     <string name="notification_outcome_media_playing">ไม่ได้อ่าน: กำลังเล่นสื่อ</string>
     <string name="notification_outcome_car">ไม่ได้อ่าน: โหมดรถยนต์</string>
     <string name="notification_outcome_rule">ไม่ได้อ่าน: กฎ</string>
-    <string name="notification_outcome_busy">ไม่ได้อ่าน: มีการอ่านการแจ้งเตือนอื่นแล้ว</string>
+    <string name="notification_outcome_busy">ไม่ได้อ่าน: อ่านการแจ้งเตือนอื่นแล้ว</string>
     <string name="notification_outcome_call">ประกาศเป็นสายเรียกเข้า</string>
     <string name="notification_rule_add">เพิ่มกฎ</string>
     <string name="notification_rule_from_template">เพิ่มกฎจากเทมเพลต</string>
@@ -214,7 +214,7 @@
     <string name="notification_rule_actions">แล้ว</string>
     <string name="notification_rule_add_condition">เพิ่มเงื่อนไข</string>
     <string name="notification_rule_add_action">เพิ่มการกระทำ</string>
-    <string name="notification_rule_invert">พลิกสภาพ</string>
+    <string name="notification_rule_invert">กลับเงื่อนไข</string>
     <string name="notification_rule_delete">ลบกฎ</string>
     <string name="notification_rule_delete_confirm">ลบ <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">เสมอ</string>
@@ -224,12 +224,12 @@
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">ด้วยหูฟังเท่านั้น</string>
     <string name="notification_template_night">เงียบในเวลากลางคืน</string>
-    <string name="notification_template_screen_off">พอปิดหน้าจอเท่านั้น</string>
+    <string name="notification_template_screen_off">เฉพาะเมื่อหน้าจอปิด</string>
     <string name="notification_template_locked_private">เฉพาะชื่อแอปเมื่อโทรศัพท์ถูกล็อค</string>
-    <string name="notification_template_short_on_battery">อ่านสั้นๆ เมื่อไม่ได้ชาร์จ</string>
-    <string name="notification_type_bluetooth">Bluetooth อุปกรณ์</string>
+    <string name="notification_template_short_on_battery">สั้นๆ เมื่อไม่ได้ชาร์จ</string>
+    <string name="notification_type_bluetooth">อุปกรณ์ Bluetooth</string>
     <string name="notification_type_wired">หูฟังแบบมีสาย</string>
-    <string name="notification_type_wifi">Wi-Fi เครือข่าย</string>
+    <string name="notification_type_wifi">เครือข่าย Wi-Fi</string>
     <string name="notification_type_time">เวลาของวัน</string>
     <string name="notification_type_screen">เปิดหน้าจอ</string>
     <string name="notification_type_locked">โทรศัพท์ถูกล็อค</string>
@@ -241,14 +241,14 @@
     <string name="notification_type_landscape">แนวนอน</string>
     <string name="notification_type_silent">โหมดเงียบหรือสั่น</string>
     <string name="notification_type_media">กำลังเล่นสื่อ</string>
-    <string name="notification_bluetooth_any">อุปกรณ์อะไรก็ได้</string>
+    <string name="notification_bluetooth_any">อุปกรณ์ใดก็ได้</string>
     <string name="notification_wifi_hint">ชื่อเครือข่าย</string>
     <string name="notification_choose_app">เลือกแอป</string>
     <string name="notification_time_start">จาก</string>
-    <string name="notification_time_end">จนกระทั่ง</string>
+    <string name="notification_time_end">ถึง</string>
     <string name="notification_time_days">วัน</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> ถึง <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly ต้องได้รับอนุญาตสำหรับเงื่อนไขนี้</string>
+    <string name="notification_permission_needed">SandFly ต้องใช้สิทธิ์นั้นสำหรับเงื่อนไขนี้</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> เชื่อมต่อแล้ว</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> ไม่ได้เชื่อมต่อ</string>
     <string name="notification_cond_bluetooth_any">เชื่อมต่ออุปกรณ์เสียง Bluetooth แล้ว</string>
@@ -266,37 +266,37 @@
     <string name="notification_cond_landscape">หน้าจออยู่ในแนวนอน</string>
     <string name="notification_cond_landscape_not">หน้าจออยู่ในแนวตั้ง</string>
     <string name="notification_cond_time">เวลาคือ <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
-    <string name="notification_cond_time_not">เวลาไม่ <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">เวลาไม่อยู่ในช่วง <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">เชื่อมต่อกับ <xliff:g id="network" example="Home">%1$s</xliff:g> แล้ว</string>
     <string name="notification_cond_wifi_not">ไม่ได้เชื่อมต่อกับ <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">เชื่อมต่อกับ Wi-Fi แล้ว</string>
     <string name="notification_cond_wifi_any_not">ไม่ได้เชื่อมต่อกับ Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> อยู่ข้างหน้า</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ไม่ได้อยู่ข้างหน้า</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> เปิดอยู่บนหน้าจอ</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ไม่ได้เปิดอยู่บนหน้าจอ</string>
     <string name="notification_cond_from">การแจ้งเตือนมาจาก <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">การแจ้งเตือนไม่ได้มาจาก <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">การแจ้งเตือนมี <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">การแจ้งเตือนไม่มี <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_silent">เสียงเรียกเข้าเงียบหรือสั่น</string>
-    <string name="notification_cond_silent_not">เสียงกริ่งดังขึ้น</string>
+    <string name="notification_cond_silent_not">เปิดเสียงเรียกเข้าอยู่</string>
     <string name="notification_cond_media">กำลังเล่นสื่อ</string>
     <string name="notification_cond_media_not">ไม่มีสื่อกำลังเล่น</string>
-    <string name="notification_action_skip">อย่าอ่าน</string>
+    <string name="notification_action_skip">ไม่อ่าน</string>
     <string name="notification_action_private">อ่านเฉพาะชื่อแอป</string>
-    <string name="notification_action_not_private">อ่านเต็มๆ แม้จะเป็นเรื่องส่วนตัวก็ตาม</string>
-    <string name="notification_action_format">ใช้รูปแบบคำพูด</string>
-    <string name="notification_action_max_words">อ่านได้หลายคำ</string>
-    <string name="notification_action_no_limit">อ่านได้ไม่จำกัดความยาว</string>
-    <string name="notification_action_keep_emoji">เก็บอิโมจิไว้</string>
-    <string name="notification_action_keep_numbers">เก็บตัวเลขไว้ด้วยกัน</string>
+    <string name="notification_action_not_private">อ่านทั้งหมด แม้เป็นข้อมูลส่วนตัว</string>
+    <string name="notification_action_format">ใช้รูปแบบเสียงพูด</string>
+    <string name="notification_action_max_words">อ่านไม่เกินจำนวนคำที่กำหนด</string>
+    <string name="notification_action_no_limit">อ่านโดยไม่จำกัดความยาว</string>
+    <string name="notification_action_keep_emoji">เก็บอีโมจิไว้</string>
+    <string name="notification_action_keep_numbers">อ่านตัวเลขรวมกัน</string>
     <string name="notification_action_priority">อ่านก่อน</string>
-    <string name="notification_action_always_read">อ่านออกเสียงการแจ้งเตือนแม้ในช่วงเวลาที่เงียบสงบหรือเวลาที่จำกัดอื่นๆ</string>
+    <string name="notification_action_always_read">อ่านแม้ในช่วงเวลาเงียบและเวลาอื่นที่ไม่อ่านการแจ้งเตือน</string>
     <string name="notification_action_voice">อ่านด้วยโปรไฟล์เสียง</string>
     <string name="notification_action_voice_value">อ่านด้วย <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">อ่านด้วยเสียงของ SandFly</string>
     <string name="notification_voice_removed">โปรไฟล์เสียงที่ถูกลบออก</string>
-    <string name="notification_action_format_value">ใช้รูปแบบคำพูด <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">อ่านได้ถึง <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_format_value">ใช้รูปแบบเสียงพูด <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">อ่านไม่เกิน <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">ปิด</string>
     <string name="notification_on">เปิด</string>
     <string name="notification_never_again">จนกระทั่ง SandFly รีสตาร์ท</string>
@@ -306,17 +306,17 @@
     <string name="notification_speech_now_off">ปิดการอ่านออกเสียงการแจ้งเตือนแล้ว</string>
     <string name="notification_no_last_notification">ไม่มีการอ่านการแจ้งเตือน</string>
     <string name="shortcut_read_notifications">อ่านการแจ้งเตือน</string>
-    <string name="shortcut_toggle_notification_speech">เปิดหรือปิดคำพูดแจ้งเตือน</string>
+    <string name="shortcut_toggle_notification_speech">เปิดหรือปิดการอ่านการแจ้งเตือน</string>
     <string name="shortcut_read_last_notification">อ่านการแจ้งเตือนครั้งล่าสุดอีกครั้ง</string>
     <string name="shortcut_stop_notification">หยุดอ่านการแจ้งเตือน</string>
-    <string name="notification_test_posting">การแจ้งเตือนการทดสอบจะตามมาใน 5 วินาที</string>
+    <string name="notification_test_posting">การแจ้งเตือนทดสอบจะแสดงใน 5 วินาที</string>
     <string name="notification_test_not_allowed">อนุญาตให้ SandFly แสดงการแจ้งเตือนก่อน</string>
-    <string name="notification_test_content_title">SandFly ทดสอบ</string>
-    <string name="notification_test_content_text">นี่คือการแจ้งเตือนทดสอบ โปรดอ่านการตั้งค่าการแจ้งเตือนของคุณ 123456</string>
-    <string name="notification_automation_on">เปิดใช้งานการแจ้งเตือนการอ่านออกเสียง</string>
-    <string name="notification_automation_off">ปิดการอ่านออกเสียงการแจ้งเตือน</string>
-    <string name="notification_automation_toggle">เปิดหรือปิดการแจ้งเตือนการอ่านออกเสียง</string>
-    <string name="notification_automation_stop">หยุดการอ่านการแจ้งเตือน</string>
+    <string name="notification_test_content_title">การทดสอบ SandFly</string>
+    <string name="notification_test_content_text">นี่คือการแจ้งเตือนทดสอบ ซึ่งอ่านตามการตั้งค่าการแจ้งเตือนของคุณ 123456</string>
+    <string name="notification_automation_on">เปิดการอ่านการแจ้งเตือน</string>
+    <string name="notification_automation_off">ปิดการอ่านการแจ้งเตือน</string>
+    <string name="notification_automation_toggle">เปิดหรือปิดการอ่านการแจ้งเตือน</string>
+    <string name="notification_automation_stop">หยุดอ่านการแจ้งเตือนที่กำลังอ่าน</string>
     <string name="notification_automation_read_all">อ่านการแจ้งเตือน</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> วินาที</item>
@@ -328,7 +328,7 @@
     </plurals>
     <plurals name="notification_hours">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ชั่วโมง</item>
-        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ชม</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ชั่วโมง</item>
     </plurals>
     <plurals name="notification_words">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> คำ</item>
@@ -339,16 +339,16 @@
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> ประโยค</item>
     </plurals>
     <plurals name="notification_characters">
-        <item quantity="one">อักขระข้อความ <xliff:g id="count" example="1">%d</xliff:g> ตัว</item>
-        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> อักขระข้อความ</item>
+        <item quantity="one">อักขระ <xliff:g id="count" example="1">%d</xliff:g> ตัว</item>
+        <item quantity="other">อักขระ <xliff:g id="count" example="5">%d</xliff:g> ตัว</item>
     </plurals>
     <plurals name="notification_digits">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> หลัก</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> หลัก</item>
     </plurals>
     <plurals name="notification_summary_count">
-        <item quantity="one">คุณมี <xliff:g id="count" example="1">%d</xliff:g> การแจ้งเตือน</item>
-        <item quantity="other">คุณมี <xliff:g id="count" example="5">%d</xliff:g> การแจ้งเตือน</item>
+        <item quantity="one">คุณมีการแจ้งเตือน <xliff:g id="count" example="1">%d</xliff:g> รายการ</item>
+        <item quantity="other">คุณมีการแจ้งเตือน <xliff:g id="count" example="5">%d</xliff:g> รายการ</item>
     </plurals>
     <string-array name="notification_url_entries">
         <item>@string/notification_url_full</item>

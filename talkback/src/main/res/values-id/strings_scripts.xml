@@ -18,7 +18,7 @@
     <string name="scripts_now_on">Skrip aktif</string>
     <string name="scripts_unavailable">Skrip tidak tersedia di perangkat ini</string>
     <string name="script_add_example">Tambahkan contoh skrip</string>
-    <string name="script_add_example_summary">Mengucapkan nama setiap aplikasi yang Anda buka. Skrip untuk titik awal.</string>
+    <string name="script_add_example_summary">Mengucapkan nama setiap aplikasi yang Anda buka. Skrip sebagai titik awal.</string>
     <string name="script_state_on">Aktif</string>
     <string name="script_state_off">Nonaktif</string>
     <string name="script_runs_in">Berjalan di <xliff:g id="apps">%1$s</xliff:g></string>
@@ -59,10 +59,10 @@
     <string name="script_button_off">Aktifkan skrip terlebih dahulu</string>
     <string name="script_permissions_summary">Menonaktifkan izin akan menghentikan bagian yang memerlukannya.</string>
     <string name="script_install_permissions_note">Anda dapat menonaktifkannya nanti.</string>
-    <string name="script_manage_category">Kelola</string>
+    <string name="script_manage_category">Pengelolaan</string>
     <string name="script_move_up">Jalankan lebih awal</string>
     <string name="script_move_down">Jalankan lebih akhir</string>
-    <string name="script_order_summary">Urutan untuk skrip yang mengubah ucapan yang sama. Skrip aplikasi berjalan lebih dulu.</string>
+    <string name="script_order_summary">Urutan skrip yang mengubah ucapan yang sama. Skrip aplikasi dijalankan lebih dulu.</string>
     <string name="script_log">Log</string>
     <string name="script_log_summary">Output dan error sejak SandFly dimulai</string>
     <string name="script_clear_storage">Hapus data tersimpan</string>
@@ -76,7 +76,7 @@
     <string name="script_log_copy">Salin log</string>
     <string name="script_log_copied">Log disalin</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Memerlukan API skrip <xliff:g id="needed">%1$d</xliff:g> atau yang lebih baru. SandFly ini memiliki <xliff:g id="current">%2$d</xliff:g>, jadi sebagian fungsi mungkin tidak berjalan.</string>
+    <string name="script_api_too_old">Memerlukan API skrip <xliff:g id="needed">%1$d</xliff:g> atau yang lebih baru. SandFly ini memiliki <xliff:g id="current">%2$d</xliff:g>, jadi sebagian mungkin tidak berfungsi.</string>
     <string name="script_api_untested">Diuji hingga API skrip <xliff:g id="tested">%1$d</xliff:g>. SandFly ini memiliki <xliff:g id="current">%2$d</xliff:g>, jadi skrip mungkin tidak berfungsi seperti yang diharapkan.</string>
     <string name="script_state_incompatible">Mungkin tidak berfungsi dengan SandFly ini</string>
     <string name="script_api_range">API skrip <xliff:g id="min">%1$d</xliff:g> hingga <xliff:g id="tested">%2$d</xliff:g></string>
@@ -91,14 +91,14 @@
     <string name="shortcut_inspect_item">Periksa item yang difokuskan</string>
     <string name="script_inspect_no_item">Tidak ada item yang difokuskan</string>
     <string name="script_inspect_copied">Disalin. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Tidak ada ID, jadi aturan tidak dapat menyebutnya. Disalin. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Tidak ada ID, jadi aturan tidak dapat merujuknya. Disalin. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Salin hierarki layar</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> item disalin</string>
     <string name="script_tree_none">Tidak ada jendela untuk disalin</string>
     <string name="script_tree_clip_label">Hierarki layar</string>
-    <string name="summary_copy_screen_tree_menu">Salin semua item di layar sebagai JSON, untuk menulis skrip</string>
+    <string name="summary_copy_screen_tree_menu">Menyalin semua item di layar sebagai JSON, untuk menulis skrip</string>
     <string name="script_inspect_clip_label">Detail item</string>
-    <string name="summary_inspect_item_menu">Ucapkan dan salin detail item terakhir yang difokuskan, untuk menulis skrip</string>
+    <string name="summary_inspect_item_menu">Mengucapkan dan menyalin detail item yang terakhir difokuskan, untuk menulis skrip</string>
     <string name="script_keys_backtalk_modifier">Tombol pengubah SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, lalu <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Perintah</string>
@@ -113,7 +113,7 @@
     <string name="script_binding_restore">Pulihkan default</string>
     <string name="script_binding_restored">Default dipulihkan</string>
     <string name="script_binding_perform">Lakukan gestur atau tekan tombol</string>
-    <string name="script_binding_perform_summary">Tetapkan gestur berikutnya, atau tombol yang ditekan dengan tombol pengubah SandFly</string>
+    <string name="script_binding_perform_summary">Menetapkan gestur berikutnya, atau tombol yang ditekan dengan tombol pengubah SandFly</string>
     <string name="script_binding_perform_message">Lakukan gestur atau tekan tombol.</string>
     <string name="script_binding_assign_title">Tetapkan <xliff:g id="binding">%1$s</xliff:g> untuk <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Tetapkan</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> skrip diperbarui: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skrip diperbarui: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Pembaruan tercantum di bawah Pembaruan</string>
+    <string name="scripts_updates_to_approve">Pembaruan tercantum di bagian “Pembaruan”</string>
     <string name="scripts_update_check_failed">Beberapa sumber tidak dapat diperiksa</string>
     <string name="scripts_up_to_date">Semua skrip mutakhir</string>
 </resources>

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pause_backtalk">Პაუზა SandFly</string>
-    <string name="summary_pause_backtalk">Გამორთეთ მეტყველება, ჟესტები და შეისწავლეთ შეხებით, სანამ არ განაახლებთ SandFly</string>
-    <string name="keycombo_menu_global_pause_backtalk">Შეაჩერე ან განაახლე SandFly</string>
+    <string name="title_pause_backtalk">SandFly-ის შეჩერება</string>
+    <string name="summary_pause_backtalk">გამორთავს მეტყველებას, ჟესტებს და „შეხებით დათვალიერება“-ს, სანამ SandFly-ს არ განაახლებთ</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly-ის შეჩერება ან განახლება</string>
     <string name="backtalk_paused">SandFly შეჩერებულია</string>
     <string name="backtalk_resumed">SandFly განახლდა</string>
     <string name="notification_title_backtalk_paused">SandFly შეჩერებულია</string>
-    <string name="notification_message_backtalk_paused">Შეეხეთ გასაგრძელებლად</string>
+    <string name="notification_message_backtalk_paused">შეეხეთ გასაგრძელებლად</string>
     <string name="notification_channel_backtalk_paused">SandFly შეჩერებულია</string>
-    <string name="dialog_title_pause_backtalk">Პაუზა SandFly?</string>
-    <string name="dialog_button_pause_backtalk">Პაუზა</string>
-    <string name="dialog_message_pause_backtalk">Სანამ SandFly დაპაუზებულია, ის არ საუბრობს და არ პასუხობს ჟესტებს და ეკრანი ისე მუშაობს, თითქოს ეკრანის წამკითხველი არ არის ჩართული.</string>
-    <string name="message_resume_keyguard">გასაგრძელებლად შეეხეთ შეტყობინებას „SandFly შეჩერებულია“, სწრაფად სამჯერ დააჭირეთ ხმის დაწევის ღილაკს, ან დაბლოკეთ და გააღვიძეთ ტელეფონი, რათა დაბლოკვის ეკრანი გამოჩნდეს.</string>
-    <string name="message_resume_screen_on">Განახლებისთვის შეეხეთ SandFly შეჩერებულია შეტყობინებას, 3-ჯერ სწრაფად დააჭირეთ ხმის შემცირებას ან გამორთეთ და ხელახლა ჩართეთ ეკრანი.</string>
-    <string name="message_resume_manual">Განახლებისთვის შეეხეთ SandFly შეჩერებული შეტყობინებას ან 3-ჯერ სწრაფად დააჭირეთ ხმის შემცირებას.</string>
-    <string name="message_resume_key_combo">Ასევე შეგიძლიათ დააჭიროთ <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
-    <string name="title_pref_resume_backtalk">Რეზიუმე SandFly</string>
-    <string name="value_resume_keyguard">Როდესაც დაბლოკვის ეკრანი გამოჩნდება</string>
-    <string name="value_resume_screen_on">Როცა ეკრანი ჩაირთვება</string>
-    <string name="value_resume_manual">Მხოლოდ შეტყობინებებიდან ან მალსახმობიდან</string>
+    <string name="dialog_title_pause_backtalk">შევაჩეროთ SandFly?</string>
+    <string name="dialog_button_pause_backtalk">პაუზა</string>
+    <string name="dialog_message_pause_backtalk">სანამ SandFly დაპაუზებულია, ის არ საუბრობს და არ პასუხობს ჟესტებს და ეკრანი ისე მუშაობს, თითქოს ეკრანის წამკითხველი არ არის ჩართული.</string>
+    <string name="message_resume_keyguard">გასაგრძელებლად შეეხეთ შეტყობინებას „SandFly შეჩერებულია“, სწრაფად 3-ჯერ დააჭირეთ ხმის დაწევის ღილაკს ან ჩაკეტეთ და გააღვიძეთ ტელეფონი, რომ ჩაკეტილი ეკრანი გამოჩნდეს.</string>
+    <string name="message_resume_screen_on">გასაგრძელებლად შეეხეთ შეტყობინებას „SandFly შეჩერებულია“, სწრაფად 3-ჯერ დააჭირეთ ხმის დაწევის ღილაკს ან გამორთეთ და ხელახლა ჩართეთ ეკრანი.</string>
+    <string name="message_resume_manual">გასაგრძელებლად შეეხეთ შეტყობინებას „SandFly შეჩერებულია“ ან სწრაფად 3-ჯერ დააჭირეთ ხმის დაწევის ღილაკს.</string>
+    <string name="message_resume_key_combo">ასევე შეგიძლიათ დააჭიროთ <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
+    <string name="title_pref_resume_backtalk">SandFly-ის განახლება</string>
+    <string name="value_resume_keyguard">როდესაც დაბლოკვის ეკრანი გამოჩნდება</string>
+    <string name="value_resume_screen_on">როცა ეკრანი ჩაირთვება</string>
+    <string name="value_resume_manual">მხოლოდ შეტყობინებებიდან ან მალსახმობიდან</string>
 </resources>

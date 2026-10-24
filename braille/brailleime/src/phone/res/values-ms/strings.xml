@@ -208,8 +208,8 @@
   <string name="custom_gesture_perform_again">Lakukan gerak isyarat yang mahu anda gunakan sekali lagi. %s</string>
     <string name="tabletop_port_left_announcement">Mod atas meja, port pengecasan di sebelah kiri</string>
     <string name="tabletop_port_right_announcement">Mod atas meja, port pengecasan di sebelah kanan</string>
-    <string name="screen_away_port_right_announcement">Mod skrin jauh, port pengecasan di sebelah kanan</string>
-    <string name="screen_away_port_left_announcement">Mod skrin jauh, port pengecasan di sebelah kiri</string>
+    <string name="screen_away_port_right_announcement">Skrin menghadap jauh daripada anda, port pengecasan di sebelah kanan</string>
+    <string name="screen_away_port_left_announcement">Skrin menghadap jauh daripada anda, port pengecasan di sebelah kiri</string>
     <string name="screen_toward_announcement">Skrin ke arah anda</string>
     <string name="screen_toward_port_left_announcement">Skrin ke arah anda, port pengecasan di sebelah kiri</string>
     <string name="screen_toward_port_right_announcement">Skrin ke arah anda, port pengecasan di sebelah kanan</string>
@@ -218,11 +218,11 @@
     <string name="port_right_announcement">Port pengecasan di sebelah kanan</string>
     <string name="port_left_announcement">Port pengecasan di sebelah kiri</string>
     <string name="tabletop_port_near_announcement">Mod atas meja, port pengecasan ke arah anda</string>
-    <string name="tabletop_port_far_announcement">Mod atas meja, mengecas port dari anda</string>
-    <string name="screen_away_port_down_announcement">Mod skrin jauh, port pengecasan menghala ke bawah</string>
-    <string name="screen_away_port_up_announcement">Mod skrin jauh, port pengecasan menghala ke atas</string>
+    <string name="tabletop_port_far_announcement">Mod atas meja, port pengecasan menghala jauh daripada anda</string>
+    <string name="screen_away_port_down_announcement">Skrin menghadap jauh daripada anda, port pengecasan menunjuk ke bawah</string>
+    <string name="screen_away_port_up_announcement">Skrin menghadap jauh daripada anda, port pengecasan menghala ke atas</string>
     <string name="port_near_announcement">Port pengecasan ke arah anda</string>
-    <string name="port_far_announcement">Mengecas port jauh daripada anda</string>
+    <string name="port_far_announcement">Port pengecasan menghala jauh daripada anda</string>
     <string name="port_down_announcement">Port pengecasan menunjuk ke bawah</string>
     <string name="port_up_announcement">Port pengecasan menghala ke atas</string>
     <string name="orientation_locked_announcement">Orientasi dikunci</string>
@@ -232,9 +232,9 @@
     <string name="switch_to_language_uncontracted_announcement">Bertukar kepada %s, Braille tidak singkat</string>
     <string name="title_pref_flip_dots_vertically">Tukar titik atas dan bawah</string>
     <string name="summary_pref_flip_dots_vertically">Titik 1 menukar tempat dengan titik 3 dan titik 4 dengan titik 6</string>
-    <string name="title_pref_tablet_held_up_faces_away">Tablet mengangkat muka</string>
-    <string name="summary_pref_tablet_held_up_faces_away">Apabila dimatikan, tablet atau telefon yang tidak dilipat dipegang menggunakan reka letak atas meja, menghadap anda</string>
-    <string name="title_pref_typing_sounds">Menaip bunyi</string>
-    <string name="summary_pref_typing_sounds">Mainkan klik papan kekunci apabila anda menaip aksara, ruang, baris baharu atau padam</string>
+    <string name="title_pref_tablet_held_up_faces_away">Tablet yang diangkat menghadap ke luar</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Apabila mati, tablet atau telefon terbuka yang diangkat menggunakan reka letak mod atas meja, dengan skrin menghadap anda</string>
+    <string name="title_pref_typing_sounds">Bunyi menaip</string>
+    <string name="summary_pref_typing_sounds">Memainkan bunyi klik papan kekunci apabila menaip aksara, ruang atau baris baharu, atau apabila memadam</string>
     <string name="skip_tutorial">Langkau tutorial</string>
 </resources>

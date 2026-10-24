@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_check_for_updates">Перевірте наявність оновлень</string>
+    <string name="title_pref_check_for_updates">Перевірити оновлення</string>
     <string name="summary_pref_check_for_updates_version">Версія <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, збірка <xliff:g id="build" example="96">%2$d</xliff:g></string>
     <string name="title_pref_auto_update_check">Автоматично перевіряти наявність оновлень</string>
-    <string name="summary_pref_auto_update_check">Перевіряйте один раз на день і показуйте сповіщення, коли доступна нова збірка</string>
-    <string name="title_pref_dev_builds">Розвиток будує</string>
+    <string name="summary_pref_auto_update_check">Перевіряє раз на день і показує сповіщення, коли доступна нова збірка</string>
+    <string name="title_pref_dev_builds">Тестові збірки</string>
     <string name="update_notification_title">Доступне оновлення SandFly</string>
     <string name="update_notification_text">Збірка <xliff:g id="build" example="97">%1$d</xliff:g>. Торкніться, щоб установити.</string>
-    <string name="update_dialog_title">SandFly збірка <xliff:g id="build" example="97">%1$d</xliff:g> доступна</string>
+    <string name="update_dialog_title">Доступна збірка SandFly <xliff:g id="build" example="97">%1$d</xliff:g></string>
     <string name="update_dialog_install">Встановити</string>
     <string name="update_checking">Перевірка оновлень</string>
     <string name="update_up_to_date">SandFly актуальний</string>
@@ -18,5 +18,5 @@
     <string name="update_ready_text">Торкніться, щоб установити.</string>
     <string name="update_install_failed">Не вдалося встановити оновлення</string>
     <string name="update_install_canceled">Оновлення скасовано</string>
-    <string name="update_allow_install">Дозвольте SandFly інсталювати програми, а потім повторіть спробу оновлення</string>
+    <string name="update_allow_install">Дозвольте SandFly встановлювати додатки, а потім спробуйте оновити ще раз</string>
 </resources>

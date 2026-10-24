@@ -33,10 +33,10 @@
     <string name="pref_on_device_ai_manage">Stjórna líkönum</string>
     <string name="pref_on_device_ai_manage_none">Engin líkön sótt</string>
     <plurals name="on_device_ai_models_downloaded">
-        <item quantity="one">%1$d gerð sótt</item>
-        <item quantity="other">%1$d módel sótt</item>
+        <item quantity="one">%1$d líkan sótt</item>
+        <item quantity="other">%1$d líkön sótt</item>
     </plurals>
-    <string name="title_pref_manage_models">Stjórna líkönum</string>
+    <string name="title_pref_manage_models">Stjórnun líkana</string>
     <string name="manage_models_storage_used">Líkön nota %1$s af geymsluplássi.</string>
     <string name="manage_models_empty">Engin líkön hafa verið sótt.</string>
     <string name="manage_models_unfinished">%1$s, ólokið niðurhal</string>
@@ -52,7 +52,7 @@
     <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly hættir að bíða eftir þennan tíma. „Lýsa skjánum“ tekur lengri tíma en „Lýsa mynd“.</string>
     <string name="on_device_ai_choose_timeout">Tímamörk svara</string>
     <plurals name="on_device_ai_timeout_minutes">
-        <item quantity="one">%1$d mínútu</item>
+        <item quantity="one">%1$d mínúta</item>
         <item quantity="other">%1$d mínútur</item>
     </plurals>
     <string name="pref_on_device_ai_processor">Örgjörvi</string>
@@ -70,6 +70,6 @@
     <string name="on_device_ai_cancel">Hætta við</string>
     <string name="title_pref_on_device_ai_ignore_memory_limits">Hunsa minnismörk gervigreindar í tækinu</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">Leyfir val á líkani sem þarf meira minni en þessi sími hefur og hleður því án þess að athuga laust minni, til að prófa hvað gerist þegar Android stöðvar það.</string>
-    <string name="on_device_ai_not_enough_memory">Ekki nægt laust minni fyrir %1$s. Lokaðu einhverjum forritum eða veldu minna líkan í stillingum gervigreindar í tækinu.</string>
-    <string name="on_device_ai_stopped">%1$s stöðvaðist, líklega vegna þess að símann skorti minni. Veldu minna líkan í stillingum gervigreindar í tækinu.</string>
+    <string name="on_device_ai_not_enough_memory">Ekki nægt laust minni fyrir %1$s. Lokaðu einhverjum forritum eða veldu minna líkan í stillingunum „Gervigreind í tækinu“.</string>
+    <string name="on_device_ai_stopped">%1$s stöðvaðist, líklega vegna þess að minni símans kláraðist. Veldu minna líkan í stillingunum „Gervigreind í tækinu“.</string>
 </resources>

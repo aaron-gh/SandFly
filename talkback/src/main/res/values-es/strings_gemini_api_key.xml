@@ -11,7 +11,7 @@
     <string name="gemini_model_automatic">Automático</string>
     <string name="summary_pref_gemini_model_automatic">Automático: Gemini Flash, luego Flash-Lite cuando Flash está ocupado</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, luego Flash-Lite cuando esté ocupado</string>
-    <string name="gemini_model_loading">Obteniendo los modelos...</string>
+    <string name="gemini_model_loading">Obteniendo los modelos…</string>
     <string name="gemini_model_list_failed">No se pudieron obtener los modelos: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Configura primero una clave API de Gemini</string>
     <string name="ai_service_address_hint">Dirección, como https://openrouter.ai/api/v1</string>
@@ -49,6 +49,6 @@
     <string name="ai_provider_choose_model">No elegido</string>
     <string name="ai_provider_key_message">Pega tu clave API de <xliff:g id="service" example="Claude">%1$s</xliff:g>. Para eliminarla, vacía el campo y guarda. Las imágenes y pantallas que solicites describir se envían a <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Configura primero la clave API de <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="ai_provider_needs_address">Establecer la dirección primero</string>
-    <string name="ai_provider_enter_model">Introduzca un nombre de modelo</string>
+    <string name="ai_provider_needs_address">Primero establece la dirección</string>
+    <string name="ai_provider_enter_model">Introduce un nombre de modelo</string>
 </resources>

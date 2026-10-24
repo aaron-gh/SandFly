@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Enheten är upplåst.</string>
   <string name="title_pref_speech_volume">Talvolym</string>
   <string name="title_pref_verbose_scroll_announcement">Läs alltid upp antalet listposter</string>
-  <string name="summary_pref_verbose_scroll_announcement">Säg vilka objekt som visas efter varje rullning</string>
+  <string name="summary_pref_verbose_scroll_announcement">Säger vilka objekt som visas efter varje rullning</string>
   <string name="title_pref_cover_proximity_sensor">Täck närhetssensorn för att stänga av talet</string>
   <string name="title_pref_phonetic_letters">Läs upp bokstäver med exempel</string>
   <string name="summary_pref_phonetic_letters">När du väljer tangenter eller navigerar med tecken får du ett exempel uppläst med varje bokstav, till exempel ”h, hotell”</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">De flesta</string>
   <string name="punctuation_some">Några</string>
   <string name="title_pref_count_repeated_symbols">Räkna upprepade symboler</string>
-  <string name="summary_pref_count_repeated_symbols">Säg hur många gånger en symbol upprepas när den upprepas 4 eller fler gånger</string>
+  <string name="summary_pref_count_repeated_symbols">Säga hur många gånger en symbol upprepas när den upprepas 4 eller fler gånger</string>
   <string name="learn_more">Läs mer</string>
   <string name="title_pref_capital_letters">Versaler</string>
   <string name="capital_letters_nothing">Gör ingenting</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">Ändra röstläge</string>
   <string name="capital_letters_sound_feedback">Spela upp ljud</string>
   <string name="title_pref_a11y_hints">Läs upp an­vändningstips</string>
-  <string name="summary_pref_a11y_hints">När ett föremål har beskrivits, säg hur du använder det</string>
+  <string name="summary_pref_a11y_hints">Säga hur ett objekt används efter att det har beskrivits</string>
   <string name="pref_speak_container_element_positions_title">Läs upp information om behållare</string>
   <string name="pref_speak_time_title">Läs upp tiden</string>
   <string name="pref_speak_time_summary">När du aktiverar skärmen</string>
-  <string name="summary_speak_container_element_positions">Säg när du går in i eller lämnar listor, rutnät och andra behållare</string>
+  <string name="summary_speak_container_element_positions">Meddelar när du går in i eller lämnar listor, rutnät och andra behållare</string>
   <string name="reset_letency_reduction_settings_dialog_title">Vill du återställa inställningarna för fördröjning?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Detta återställer alla inställningar för fördröjning till standard</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Återställ</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Återställ</string>
   <string name="gestures_announce_reset_gesture_settings">Rörelseinställningarna har återställts.</string>
   <string name="pref_speak_roles_title">Läs upp elementtyp</string>
-  <string name="pref_speak_roles_summary">Gilla-knapp eller kryssruta</string>
+  <string name="pref_speak_roles_summary">Till exempel knapp eller kryssruta</string>
   <string name="title_pref_speak_element_ids">Läs upp element-id:n</string>
-  <string name="summary_pref_speak_element_ids">Säg ID för knappar som inte har någon etikett</string>
+  <string name="summary_pref_speak_element_ids">Säger ID för knappar som saknar etikett</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Läs upp alla förloppsuppdateringar</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Omfattar uppdateringar vid nedladdning, vägbeskrivningar med mera. Du får fortfarande uppdateringar när inställningen är av, men inte lika ofta.</string>
   <string name="title_pref_explore_by_touch">Upptäck genom beröring</string>
@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Fokusindikator</string>
   <string name="title_pref_category_manage_gestures">Rörelser</string>
   <string name="title_pref_manage_labels">Anpassade etiketter</string>
-  <string name="title_pref_category_context_menu">SandFly meny</string>
+  <string name="title_pref_category_context_menu">SandFly-menyn</string>
   <string name="title_pref_category_selector_menu">Läsinställningar</string>
   <string name="title_pref_category_navigation_menu">Redigera navigerings­alternativ</string>
   <string name="title_pref_manage_keyboard_shortcuts">Kortkommandon</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">Hjälp</string>
   <string name="title_pref_advanced_settings">Avancerade inställningar</string>
   <string name="title_pref_show_exit_watermark">Visa anvisningar för att inaktivera SandFly</string>
-  <string name="summary_pref_show_exit_watermark">När SandFly slås på, visa hur du stänger av den</string>
+  <string name="summary_pref_show_exit_watermark">När SandFly slås på visas hur den stängs av</string>
   <string name="talkback_exit_watermark_text">SandFly har aktiverats. Inaktivera genom att hålla två fingrar på skärmen i fem sekunder. Om du vill sluta visa det här meddelandet trycker du med tre fingrar för att öppna SandFly-menyn.</string>
   <string name="talkback_exit_watermark_hint_text">Visar bannern som visar att SandFly är aktiverat. Inaktivera SandFly genom att hålla två fingrar på skärmen i fem sekunder. Du kan ta bort bannern i SandFly-inställningarna.</string>
   <string name="reset_gesture_settings_title">Återställ rörelse­inställningarna</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">Den här tangentkombinationen används för åtgärden %1$s. Vill du radera kopplingen och använda kortkommandot för %2$s i stället?</string>
   <string name="title_pref_intonation">Använd ändringar i tonhöjd</string>
   <string name="title_pref_keyboard_echo">Tangentbordseko</string>
-  <string name="pref_node_desc_order_title">Beställning av artikeldetaljer</string>
+  <string name="pref_node_desc_order_title">Ordning för objektdetaljer</string>
   <string name="pref_time_feedback_format_title">Tidsformat</string>
   <string name="title_pref_latency_reduction">Minska fördröjningen</string>
   <string name="talkback_latency_reduction_summary">Få SandFly att svara snabbare efter att du tryckt på skärmen</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Inaktivera och återaktivera SandFly för att aktivera den här inställningen.</string>
   <string name="title_pref_auto_image_captioning">Automatiska beskrivningar</string>
   <string name="title_pref_gemini_settings">Gemini-inställningar</string>
-  <string name="title_pref_gemini_enabled">Gemini röstkommandon</string>
+  <string name="title_pref_gemini_enabled">Röstkommandon för Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Få detaljerade bildbeskrivningar med hjälp av AI när du väljer ”Beskriv bild” i SandFly-menyn.\n\nDu kan även få automatiska beskrivningar när du fokuserar på bilder eller ikoner. Automatiska beskrivningar fungerar utan internetanslutning.</string>
   <string name="title_pref_icon_detection">Automatiska ikonbeskrivningar</string>
   <string name="title_pref_image_description">Automatiska bildbeskrivningar</string>
@@ -504,7 +504,7 @@
   <string name="summary_read_from_current">Läs upp allt på skärmen från och med objektet i fokus</string>
   <string name="summary_copy_last_spoken_phrase">Kopiera det senaste som lästes upp med SandFly till Urklipp så att du kan klistra in texten</string>
   <string name="summary_spell_last_spoken_phrase">Få det senaste som lästes upp med SandFly uppläst bokstav för bokstav</string>
-  <string name="summary_repeat_last_spoken_phrase">Få det senaste som lästes upp med SandFly uppläst en gång till</string>
+  <string name="summary_repeat_last_spoken_phrase">Hör det senaste SandFly sa igen</string>
   <string name="summary_perform_screen_search">Ange det som du vill söka efter på skärmen</string>
   <string name="summary_voice_commands">Styr SandFly med rösten</string>
   <string name="summary_show_hide_screen">Dölj skärmen så att andra omkring dig inte kan se den. Du kan återställa skärmen när du har dolt den.</string>
@@ -904,7 +904,7 @@
   <string name="split_tap_everywhere_title">Använd delat tryck överallt</string>
   <string name="split_tap_everywhere_text">Nu kan du använda delat tryck överallt för att aktivera objekt, även utanför tangentbordet. Du använder det genom att utforska skärmen med ett finger och sedan aktivera objektet i fokus trycka på skärmen med ett annat finger utan att lyfta det första fingret.</string>
   <string name="keyboard_enhanced_keymap_title">Tangentbord: Förbättrad lista över kortkommandon</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly har nu en \"Enhanced keymap\" för fysiska tangentbord, med en mängd nya kommandon och genvägar. Denna förbättring inkluderar ett \"bläddringsläge\" för effektivare webbnavigering, effektivisering av navigering och interaktion för SandFly-användare som förlitar sig på fysiska tangentbord. Du kan byta till \"Förbättrad tangentkarta\" i <xliff:g id="settings_path">%1$s</xliff:g>.\n\nOm du använder en punktdisplay kan du också använda nya genvägar för bläddringsläge för att gå igenom innehåll direkt från din punktdisplay. Vissa punktskriftsgenvägar ändrades för att anpassas till denna förändring. Du kan se en lista över alla genvägar för punktskrift i <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly har nu en ”Förbättrad lista över kortkommandon” för fysiska tangentbord, med en rad nya kommandon och kortkommandon. Den innehåller ett läsläge för effektivare webbnavigering och enklare navigering och interaktion för SandFly-användare som använder fysiska tangentbord. Du kan byta till ”Förbättrad lista över kortkommandon” i <xliff:g id="settings_path">%1$s</xliff:g>.\n\nOm du använder en punktskriftsskärm kan du också använda nya kortkommandon för läsläget för att gå igenom innehåll direkt från punktskriftsskärmen. Vissa kortkommandon för punktskriftsskärmen har ändrats på grund av detta. Du hittar en lista över alla kortkommandon för punktskriftsskärmen i <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">SandFly-inställningar &gt; Kortkommandon</string>
   <string name="keyboard_shortcuts_link_tts">SandFly-inställningar och sedan Kortkommandon</string>
   <string name="braille_display_settings_link">Inställningar för punktskriftsskärmen</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">Du kan även skriva med tangentbordet för punktskrift. Det finns i SandFly-inställningarna.</string>
   <string name="other_ways_to_type_title">Andra sätt att skriva</string>
   <string name="other_ways_to_type_text">Det finns andra sätt att skriva på i SandFly. Du kan till exempel dubbeltrycka för att skriva en bokstav.</string>
-  <string name="basic_other_ways_to_type_text">Det finns andra sätt att skriva in SandFly. Du kan till exempel använda dubbeltryck för att ange en bokstav. Du kan ändra detta senare i SandFly-inställningar &gt; Tangentbord på skärmen &gt; Inmatningsmetod.</string>
-  <string name="basic_other_ways_to_type_text_tts">Det finns andra sätt att skriva in SandFly. Du kan till exempel använda dubbeltryck för att ange en bokstav. Du kan ändra detta senare i SandFly-inställningarna, sedan på tangentbordet på skärmen och sedan i Inmatningsmetod.</string>
+  <string name="basic_other_ways_to_type_text">Det finns andra sätt att skriva i SandFly. Du kan till exempel dubbeltrycka för att ange en bokstav. Du kan ändra detta senare under Inställningar för SandFly &gt; Skärmtangentbord &gt; Skrivningsmetod.</string>
+  <string name="basic_other_ways_to_type_text_tts">Det finns andra sätt att skriva i SandFly. Du kan till exempel dubbeltrycka för att ange en bokstav. Du kan ändra detta senare under Inställningar för SandFly, sedan Skärmtangentbord och sedan Skrivningsmetod.</string>
   <string name="change_typing_preference_text">Ändra skrivinställning</string>
   <string name="moving_cursor_title">Flytta markören</string>
   <string name="moving_cursor_text">När du har aktiverat textrutan kan du flytta markören mellan bokstäverna genom att svepa uppåt eller nedåt.\n\nTesta i textrutan nedan.</string>
@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Svep nedåt med två fingrar från skärmens överkant för att se din aviseringshistorik</string>
   <string name="image_description_playground_title">Testa att få bildbeskrivningar</string>
   <string name="image_description_playground_content_one">Öppna SandFly-menyn när du fokuserar på en bild och välj Beskriv bild.\n\nDet finns ett foto nedan. Testa att få en beskrivning av det.</string>
-  <string name="image_description_playground_content_two">Du kan ändra bildbeskrivningsinställningar när som helst i SandFly inställningar &gt; Automatiska beskrivningar.</string>
-  <string name="image_description_playground_content_two_tts">Du kan ändra bildbeskrivningsinställningar när som helst i SandFly-inställningarna sedan Automatiska beskrivningar.</string>
+  <string name="image_description_playground_content_two">Du kan när som helst ändra inställningarna för bildbeskrivningar i Inställningar för SandFly &gt; Automatiska beskrivningar.</string>
+  <string name="image_description_playground_content_two_tts">Du kan när som helst ändra inställningarna för bildbeskrivningar i Inställningar för SandFly och sedan Automatiska beskrivningar.</string>
   <string name="image_description_sample_image_content_description">Testbild. Tryck med tre fingrar för att öppna SandFly-menyn och välj Beskriv bild för att få en beskrivning uppläst.</string>
   <string name="practice_gestures_title">Öva på rörelser</string>
   <string name="practice_keyboard_gestures_title">Öva på kortkommandon</string>
@@ -1304,19 +1304,19 @@
     <string name="summary_selector_switch_tts_engine">Växla mellan installerade talmotorer</string>
     <string name="title_selector_voice_profile">Röstprofil</string>
     <string name="title_pref_voice_profiles">Röstprofiler</string>
-    <string name="voice_profile_default">SandFly standard</string>
+    <string name="voice_profile_default">SandFly-standard</string>
     <string name="voice_profile_in_use">Används: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Det talade språket är inte tillgängligt när du använder en röstprofil</string>
     <string name="speech_engine_unavailable_with_profile">Talmotor är inte tillgänglig när du använder en röstprofil</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, används</string>
     <string name="no_voice_profiles">Inga röstprofiler</string>
     <string name="shortcut_voice_profiles">Välj röstprofil</string>
-    <string name="shortcut_previous_voice_profile">Tidigare röstprofil</string>
+    <string name="shortcut_previous_voice_profile">Föregående röstprofil</string>
     <string name="shortcut_next_voice_profile">Nästa röstprofil</string>
-    <string name="title_pref_voice_profile_in_use">Röstprofil används</string>
+    <string name="title_pref_voice_profile_in_use">Röstprofil som används</string>
     <string name="title_pref_add_voice_profile">Lägg till röstprofil</string>
     <string name="voice_profile_new_name">Röstprofil <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">En röstprofil heter redan <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Det finns redan en röstprofil som heter <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Namn</string>
     <string name="title_pref_voice_profile_language">Språk</string>
     <string name="title_pref_voice_profile_voice">Röst</string>
@@ -1334,13 +1334,13 @@
     <string name="voice_profile_delete_confirm">Ta bort <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Radera</string>
     <string name="summary_pref_tts_engine_default">Systemstandard</string>
-    <string name="title_pref_speech_pitch">Tal tonhöjd</string>
+    <string name="title_pref_speech_pitch">Tonhöjd för tal</string>
     <string name="title_pref_speech_stream">Talvolym</string>
     <string name="summary_selector_speech_stream">Växla mellan volymer för tillgänglighet, media, ringsignal och samtal</string>
     <string name="speech_stream_accessibility">Volym för tillgänglighetsfunktionerna</string>
     <string name="speech_stream_media">Medievolym</string>
     <string name="speech_stream_ring">Ringvolym</string>
-    <string name="speech_stream_call">Samtalsvolym, hörlur</string>
+    <string name="speech_stream_call">Samtalsvolym, hörsnäcka</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Skicka lång text en mening i taget</string>
-    <string name="summary_pref_speak_in_phrases">För talmotorer som är långsamma att stoppa, till exempel Gryphon, så stoppas lång text på en gång genom att svepa bort. Många motorer pausar längre mellan meningar som skickas separat, så lämna detta avstängt om din stannar snabbt.</string>
+    <string name="summary_pref_speak_in_phrases">För talmotorer som är långsamma att stoppa, till exempel Gryphon, så att ett svep stoppar lång text direkt. Många motorer pausar längre mellan meningar som skickas separat, så låt detta vara av om din motor stoppar snabbt.</string>
     <string name="battery_optimization_notification_title">Batterioptimering kan stoppa SandFly</string>
     <string name="battery_optimization_notification_text">På den här telefonen kan batterisparläget stoppa SandFly efter att skärmen stängts av, så det blir tyst tills det startas om. Tryck för att öppna batterioptimering, välj Alla appar, hitta SandFly och välj Optimera inte.</string>
     <string name="title_pref_mute_speech_while_recording">Tyst under inspelning</string>
@@ -1356,9 +1356,9 @@
     <string name="title_pref_switch_languages">Byt språk automatiskt</string>
     <string name="title_pref_switch_dialects">Byt dialekt automatiskt</string>
     <string name="category_collapsed">Komprimerat avsnitt</string>
-    <string name="category_expanded">Utökat avsnitt</string>
-    <string name="title_pref_speak_nav_bar_buttons">Tala navigeringsfältets knappar</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Med lyft för att aktivera på navigeringsfältet, säg knappen som ett tryck trycker på, till exempel Tillbaka eller Hem.</string>
+    <string name="category_expanded">Expanderat avsnitt</string>
+    <string name="title_pref_speak_nav_bar_buttons">Läs upp navigeringsfältets knappar</string>
+    <string name="summary_pref_speak_nav_bar_buttons">När Lyft för att aktivera används i navigeringsfältet sägs knappen som ett tryck tryckte på, till exempel Tillbaka eller Startskärm.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Batteri <xliff:g id="battery_level" example="73">%1$s</xliff:g> procent</string>
     <string name="template_battery_level_unknown">Batterinivå okänd</string>
@@ -1367,47 +1367,47 @@
     <string name="summary_pref_screen_announcements">Välj vad SandFly säger när skärmen stängs av eller slås på och när telefonen är upplåst</string>
     <string name="title_screen_announcements_screen_off">När skärmen stängs av</string>
     <string name="title_screen_announcements_screen_on">När skärmen slås på</string>
-    <string name="title_screen_announcements_unlock">När telefonen är upplåst</string>
+    <string name="title_screen_announcements_unlock">När telefonen låses upp</string>
     <string name="title_pref_say_screen_off">Säg \"Skärm av\"</string>
     <string name="title_pref_say_device_unlocked">Säg \"Enhet olåst\"</string>
-    <string name="title_pref_announce_time">Tid</string>
+    <string name="title_pref_announce_time">Klockslag</string>
     <string name="title_pref_announce_ringer_mode">Ringsignalläge</string>
-    <string name="summary_pref_announce_ringer_mode">Säg när ringsignalen är inställd på att vibrera eller tyst</string>
+    <string name="summary_pref_announce_ringer_mode">Säga till när ringsignalen är inställd på vibration eller ljudlös</string>
     <string name="title_pref_category_feedback">Feedback</string>
     <string name="title_pref_category_typing_and_braille">Skrivning och punktskrift</string>
     <string name="title_pref_category_apps">Appar</string>
-    <string name="title_pref_touch_activation">Tryck och aktivering</string>
+    <string name="title_pref_touch_activation">Beröring och aktivering</string>
     <string name="title_pref_navigation">Navigering</string>
     <string name="title_pref_category_more">Mer</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reservera gester för Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Slutar SandFly att hantera enkel- och dubbeltryck med två fingrar så att Samsung Vibration Watch kan använda dem. Aktivera Vibration Watch i klockans tillgänglighetsinställningar.</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly slutar hantera enkel- och dubbeltryck med två fingrar så att Samsung Vibration Watch kan använda dem. Aktivera Vibration Watch i klockans tillgänglighetsinställningar.</string>
     <string name="shortcut_reserved_for_vibration_watch">Reserverad för Vibration Watch i avancerade inställningar</string>
-    <string name="title_pref_speakerphone_away_from_ear">Högtalare när du är borta från örat</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Under ett samtal växlar du till högtalaren när du tar bort telefonen från örat och tillbaka till hörluren när du håller upp den igen.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Behöver en behörighet som Android inte ger till skärmläsare. För att bevilja det, kör det här kommandot med adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="title_pref_speakerphone_away_from_ear">Högtalare när telefonen inte är vid örat</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Växlar under ett samtal till högtalaren när du tar bort telefonen från örat, och tillbaka till hörluren när du håller den mot örat igen.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Kräver en behörighet som Android inte ger skärmläsare. Kör det här kommandot med adb eller Shizuku för att bevilja den och gå sedan tillbaka till den här skärmen: %1$s</string>
     <string name="action_copy_command">Kopiera kommando</string>
     <string name="command_copied">Kommandot kopierat</string>
     <string name="title_pref_speech_control">Låt andra appar tala</string>
-    <string name="summary_pref_speech_control">Appar som du tillåter kan säga text med din SandFly röst. Inget sägs medan enheten är låst.</string>
+    <string name="summary_pref_speech_control">Appar som du tillåter kan läsa upp text med SandFly-rösten. Inget läses upp medan enheten är låst.</string>
     <string name="title_pref_speech_control_sound">Spela ett ljud innan andra appar talar</string>
     <string name="speech_control_apps_category">Appar</string>
     <string name="speech_control_no_apps">Inga appar har bett om att få tala ännu.</string>
-    <string name="speech_control_ask_title">Vill du tillåta <xliff:g id="app" example="Tasker">%1$s</xliff:g> att tala igenom SandFly?</string>
-    <string name="speech_control_ask_text">Det kan säga text med din SandFly röst. Du kan ändra detta i Avancerade inställningar.</string>
+    <string name="speech_control_ask_title">Vill du tillåta <xliff:g id="app" example="Tasker">%1$s</xliff:g> att tala genom SandFly?</string>
+    <string name="speech_control_ask_text">Appen kan säga text med din SandFly-röst. Du kan ändra detta i Avancerade inställningar.</string>
     <string name="speech_control_allow">Tillåt</string>
     <string name="speech_control_deny">Tillåt inte</string>
-    <string name="permission_speak_label">tala igenom SandFly</string>
-    <string name="permission_speak_description">Låter appen be att få säga text med din SandFly röst. SandFly frågar dig innan appen kan tala.</string>
+    <string name="permission_speak_label">tala genom SandFly</string>
+    <string name="permission_speak_description">Låter appen be att få säga text med din SandFly-röst. SandFly frågar dig innan appen kan tala.</string>
     <string name="permission_braille_display_label">be om att vara en punktskriftsskärm för SandFly</string>
     <string name="permission_braille_display_description">Låter appen begära att vara en punktskriftsskärm för SandFly. Om du tillåter det i SandFly kan det läsa allt på skärmen och styra din enhet. SandFly frågar dig först.</string>
-    <string name="title_pref_phonetic_letters_mode">Tala bokstäver fonetiskt</string>
+    <string name="title_pref_phonetic_letters_mode">Läs upp bokstäver fonetiskt</string>
     <string name="phonetic_letters_mode_off">Av</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Efter brevet, försenat, som \"h, hotell\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Efter brevet, ingen fördröjning, som \"h hotel\"</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Istället för bokstaven, som \"hotell\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Efter bokstaven, med paus, t.ex. ”h, Helge”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Efter bokstaven, utan paus, t.ex. ”h Helge”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">I stället för bokstaven, t.ex. ”Helge”</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Läs med talmotor</string>
-    <string name="emoji_speech_names">Läst av SandFly</string>
+    <string name="emoji_speech_engine">Läses av talmotorn</string>
+    <string name="emoji_speech_names">Läses av SandFly</string>
     <string name="emoji_speech_none">Inget</string>
     <string name="summary_selector_menu_emoji">Ändra hur emoji läses</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
@@ -1421,23 +1421,23 @@
     <string name="pref_table_headers_category_title">Tabellläsning</string>
     <string name="pref_table_column_headers_title">Läs kolumnrubriker</string>
     <string name="pref_table_column_headers_entry_after">Efter celldata</string>
-    <string name="pref_table_column_headers_entry_before">Innan celldata</string>
+    <string name="pref_table_column_headers_entry_before">Före celldata</string>
     <string name="pref_table_column_headers_entry_off">Läs inte</string>
-    <string name="pref_table_speak_row_column_numbers_title">Tala rad- och kolumnnummer</string>
-    <string name="pref_table_speak_row_column_numbers_summary">Meddela rad- och kolumnnummer för tabellceller</string>
+    <string name="pref_table_speak_row_column_numbers_title">Läs upp rad- och kolumnnummer</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Läser upp rad- och kolumnnummer för tabellceller</string>
     <string name="title_pref_speak_volume_changes">Läs upp volymändringar</string>
-    <string name="summary_pref_speak_volume_changes">Säg den nya volymen när du har tryckt på volymknapparna</string>
+    <string name="summary_pref_speak_volume_changes">Säger den nya volymen efter tryck på volymknapparna</string>
     <string name="title_pref_speak_notifications">Tala aviseringar</string>
-    <string name="summary_pref_speak_notifications">Läs nya aviseringar högt när de kommer. Inkommande samtal läses alltid.</string>
+    <string name="summary_pref_speak_notifications">Läser upp nya aviseringar när de kommer. Inkommande samtal läses alltid upp.</string>
     <string name="title_pref_notification_list">Använd SandFlys aviseringslista</string>
     <string name="title_pref_notification_parts">Aviseringsdetaljer</string>
     <string name="title_pref_play_installer">Visas installerad från Google Play</string>
-    <string name="summary_pref_play_installer">Berätta för andra appar att Google Play är installerade SandFly. Vissa appar, till exempel vissa bankappar, stänger av tillgänglighetstjänster som har installerats från någon annanstans. Behöver Shizuku och ändrar bara vilka appar som berättas om var SandFly kom ifrån.</string>
-    <string name="summary_pref_play_installer_pending">På, men Google Spela är inte inspelat som installationsprogrammet ännu. SandFly ställer in det när Shizuku är tillgängligt.</string>
+    <string name="summary_pref_play_installer">Talar om för andra appar att SandFly har installerats från Google Play. Vissa appar, till exempel vissa bankappar, stänger av tillgänglighetstjänster som har installerats från någon annan källa. Kräver Shizuku och ändrar bara vad appar får veta om var SandFly kommer ifrån.</string>
+    <string name="summary_pref_play_installer_pending">På, men Google Play är inte registrerat som installationskälla ännu. SandFly anger det när Shizuku är tillgängligt.</string>
     <string name="notification_part_title">Titel</string>
     <string name="notification_part_text">Text</string>
     <string name="notification_part_app">Appens namn</string>
-    <string name="notification_part_time">Tid</string>
+    <string name="notification_part_time">Tidpunkt</string>
     <string name="notification_part_playback">Spelar eller pausas</string>
     <string name="notification_list_title">Aviseringar</string>
     <string name="notification_list_empty">Inga aviseringar</string>
@@ -1451,7 +1451,7 @@
     <string name="notification_list_send">Skicka</string>
     <string name="notification_list_playing">Spelar</string>
     <string name="notification_list_paused">Pausad</string>
-    <string name="notification_list_play">Spela</string>
+    <string name="notification_list_play">Spela upp</string>
     <string name="notification_list_pause">Pausa</string>
     <string name="notification_list_previous">Föregående</string>
     <string name="notification_list_next">Nästa</string>
@@ -1472,7 +1472,7 @@
     <string name="quick_settings_flashlight">Ficklampa</string>
     <string name="quick_settings_flashlight_brightness">Ficklampans ljusstyrka</string>
     <string name="quick_settings_location">Plats</string>
-    <string name="quick_settings_auto_rotate">Auto-rotera</string>
+    <string name="quick_settings_auto_rotate">Rotera automatiskt</string>
     <string name="quick_settings_battery_saver">Batterisparare</string>
     <string name="quick_settings_dark_theme">Mörkt tema</string>
     <string name="quick_settings_nfc">NFC</string>
@@ -1487,7 +1487,7 @@
     <string name="quick_settings_system_volume">Systemets ljudvolym</string>
     <string name="quick_settings_data_saver">Datasparare</string>
     <string name="quick_settings_night_light">Nattljus</string>
-    <string name="quick_settings_extra_dim">Extra dim</string>
+    <string name="quick_settings_extra_dim">Extra dimmat</string>
     <string name="quick_settings_color_inversion">Färginversion</string>
     <string name="quick_settings_color_correction">Färgkorrigering</string>
     <string name="quick_settings_microphone_access">Mikrofonåtkomst</string>
@@ -1526,7 +1526,7 @@
     <string name="quick_settings_edit">Redigera</string>
     <string name="quick_settings_system">Snabbinställningar för systemet</string>
     <string name="quick_settings_open_settings">Öppna inställningar</string>
-    <string name="quick_settings_add_control">Lägg till kontroll</string>
+    <string name="quick_settings_add_control">Lägg till reglage</string>
     <string name="quick_settings_add_tile">Lägg till appbricka</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Antal kolumner</string>
@@ -1547,23 +1547,23 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">En annan genväg för att slå på eller av bläddringsläget</string>
     <string name="title_pref_vibration_strength">Vibrationsstyrka</string>
     <string name="title_pref_audio_output_device">Ljudutgångsenhet</string>
-    <string name="dialog_title_audio_output_device">Välj var du vill spela SandFly ljud</string>
+    <string name="dialog_title_audio_output_device">Välj var SandFly-ljud ska spelas upp</string>
     <string name="value_audio_output_device_default">Systemstandard</string>
     <string name="value_audio_output_device_speaker">Telefonhögtalare</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Ansluten Bluetooth enhet eller trådbunden</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Ansluten Bluetooth- eller trådbunden enhet</string>
     <string name="value_audio_output_device_disconnected">frånkopplad</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth ljudenhet</string>
-    <string name="value_audio_output_device_wired_headset">Trådbundna headset</string>
+    <string name="value_audio_output_device_bluetooth_default">Bluetooth-ljudenhet</string>
+    <string name="value_audio_output_device_wired_headset">Trådbundet headset</string>
     <string name="value_audio_output_device_wired_headphones">Trådbundna hörlurar</string>
-    <string name="value_audio_output_device_usb_headset">USB headset</string>
-    <string name="value_audio_output_device_usb_device">USB ljudenhet</string>
+    <string name="value_audio_output_device_usb_headset">USB-headset</string>
+    <string name="value_audio_output_device_usb_device">USB-ljudenhet</string>
     <string name="title_pref_speaker_devices">Telefonhögtalare med dessa enheter</string>
     <string name="summary_pref_speaker_devices_none">Inget</string>
-    <string name="summary_pref_speaker_devices_no_devices">Inga Bluetooth eller trådbundna enheter anslutna ännu</string>
+    <string name="summary_pref_speaker_devices_no_devices">Inga Bluetooth- eller trådbundna enheter anslutna ännu</string>
     <string name="pref_reduce_window_delay_summary">SandFly läser nya skärmar snabbare när animationer är avstängda. Detta stänger av animationer för hela telefonen.</string>
-    <string name="dialog_message_detailed_ai_description">Utvalda bilder skickas till Googles Gemini API för att beskrivas. Med On-device AI påslagen beskrivs de på den här telefonen istället och skickas inte.\n\nMed en gratis API-nyckel kan Google behålla vad den tar emot, använda den för att förbättra sina produkter och låta folk granska den. Generativ AI är experimentell, så det kommer att göra misstag. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gäller.</string>
-    <string name="dialog_message_detailed_ai_promotion">Detaljerade bildbeskrivningar drivs av generativ AI. Utvalda bilder skickas till Googles Gemini API för att beskrivas. Med On-device AI påslagen beskrivs de på den här telefonen istället och skickas inte.\n\nMed en gratis API-nyckel kan Google behålla vad den tar emot, använda den för att förbättra sina produkter och låta folk granska den. Generativ AI är experimentell, så det kommer att göra misstag. Du kan stänga av detaljerade bildbeskrivningar när som helst i SandFly-inställningarna.\n\nDen <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gäller.</string>
-    <string name="dialog_message_screen_overview_promotion">En skärmdump av skärmen skickas till Googles Gemini API för att beskrivas, vilket tar flera sekunder. Med On-device AI påslagen beskrivs den på den här telefonen istället och skickas inte.\n\nMed en gratis API-nyckel kan Google behålla vad den tar emot, använda den för att förbättra sina produkter och låta folk granska den. Generativ AI är experimentell, så det kommer att göra misstag. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gäller.</string>
+    <string name="dialog_message_detailed_ai_description">Valda bilder skickas till Googles Gemini API för att beskrivas. När AI på enheten är på beskrivs de i stället på den här telefonen och skickas inte.\n\nMed en kostnadsfri API-nyckel får Google spara det som tas emot, använda det för att förbättra sina produkter och låta människor granska det. Generativ AI är experimentell och gör därför fel. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gäller.</string>
+    <string name="dialog_message_detailed_ai_promotion">Detaljerade bildbeskrivningar skapas med generativ AI. Valda bilder skickas till Googles Gemini API för att beskrivas. När AI på enheten är på beskrivs de i stället på den här telefonen och skickas inte.\n\nMed en kostnadsfri API-nyckel får Google spara det som tas emot, använda det för att förbättra sina produkter och låta människor granska det. Generativ AI är experimentell och gör därför fel. Du kan när som helst stänga av detaljerade bildbeskrivningar i Inställningar för SandFly.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gäller.</string>
+    <string name="dialog_message_screen_overview_promotion">En skärmbild skickas till Googles Gemini API för att beskrivas, vilket tar några sekunder. När AI på enheten är på beskrivs den i stället på den här telefonen och skickas inte.\n\nMed en kostnadsfri API-nyckel får Google spara det som tas emot, använda det för att förbättra sina produkter och låta människor granska det. Generativ AI är experimentell och gör därför fel. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> gäller.</string>
     <string name="shortcut_title_open_app">Öppna appen</string>
     <string name="shortcut_open_app">Öppna <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">Bläddra till toppen</string>
@@ -1571,23 +1571,23 @@
     <string name="title_pref_reading_control_letters">Handskrivna bokstäver i alfabetet</string>
     <string name="reading_control_letter_none">Inget</string>
     <string name="handwriting_prompt">Skriv en bokstav i alfabetet</string>
-    <string name="handwriting_closed">Handstil stängd</string>
-    <string name="handwriting_no_match">Ingen läskontroll börjar med <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_closed">Handskrift stängd</string>
+    <string name="handwriting_no_match">Ingen läsinställning börjar med <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Skriv namnet på en app för att öppna den</string>
     <string name="handwriting_app_prompt">Skriv namnet på en app</string>
     <string name="handwriting_no_app">Ingen app börjar med <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
     <string name="handwriting_app_not_opened"><xliff:g id="app" example="WhatsApp">%1$s</xliff:g> kunde inte öppnas</string>
-    <string name="handwriting_not_recognized">Handstilen känns inte igen</string>
+    <string name="handwriting_not_recognized">Handskriften kändes inte igen</string>
     <string name="handwriting_downloading">Handskriftsigenkänning laddas ned</string>
     <string name="handwriting_download_title">Ladda ner handskriftsigenkänning?</string>
-    <string name="handwriting_download_message">Handstil känns igen på den här telefonen. Dess modell för detta språk, cirka 20 MB, laddas ner från Google en gång. Ett meddelande visar när den har laddats ner.</string>
+    <string name="handwriting_download_message">Handstil känns igen på den här telefonen. Modellen för det här språket, cirka 20 MB, laddas ned en gång från Google. Ett meddelande visas när den har laddats ned.</string>
     <string name="handwriting_download_button">Ladda ned</string>
     <string name="handwriting_downloaded">Handskriftsigenkänning har laddats ned</string>
     <string name="handwriting_download_failed">Det gick inte att ladda ned handskriftsigenkänning. Kontrollera internetanslutningen.</string>
     <string name="handwriting_unsupported_language">Handskriftsigenkänning är inte tillgängligt på detta språk</string>
-    <string name="title_pref_handwriting_keyboard">Handstil tangentbord</string>
-    <string name="summary_pref_handwriting_keyboard">Aktivera SandFly handskrift i Androids tangentbordsinställningar</string>
-    <string name="title_pref_handwriting_wait">Vänta efter att ha skrivit</string>
+    <string name="title_pref_handwriting_keyboard">Handskriftstangentbord</string>
+    <string name="summary_pref_handwriting_keyboard">Aktivera SandFly-handskrift i Androids tangentbordsinställningar</string>
+    <string name="title_pref_handwriting_wait">Väntetid efter skrivning</string>
     <string name="value_handwriting_wait_200">0,2 sekunder</string>
     <string name="value_handwriting_wait_300">0,3 sekunder</string>
     <string name="value_handwriting_wait_400">0,4 sekunder</string>
@@ -1595,22 +1595,22 @@
     <string name="value_handwriting_wait_600">0,6 sekunder</string>
     <string name="value_handwriting_wait_800">0,8 sekunder</string>
     <string name="value_handwriting_wait_1000">1 sekund</string>
-    <string name="handwriting_keyboard_name">SandFly handstil</string>
+    <string name="handwriting_keyboard_name">SandFly handskrift</string>
     <string name="handwriting_space">Blanksteg</string>
     <string name="handwriting_new_line">Ny rad</string>
-    <string name="handwriting_tutorial_intro">Handskriftsguide för tangentbord. Skriv med ett finger var som helst på skärmen. Det du skriver skrivs när du stannar upp en stund. För att avsluta handledningen sveper du nedåt med tre fingrar.</string>
+    <string name="handwriting_tutorial_intro">Självstudie för handskriftstangentbordet. Skriv med ett finger var som helst på skärmen. Det du skriver matas in när du stannar upp en kort stund. Svep nedåt med tre fingrar för att avsluta självstudien.</string>
     <string name="handwriting_tutorial_write_letter">Skriv bokstaven a.</string>
     <string name="handwriting_tutorial_write_word">Skriv nu ordet hi (h följt av i).</string>
-    <string name="handwriting_tutorial_typed">Skrev <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Skrivet: <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Svep åt höger med två fingrar för att skriva ett mellanslag.</string>
     <string name="handwriting_tutorial_delete">Svep åt vänster med två fingrar för att ta bort tecknet före markören.</string>
     <string name="handwriting_tutorial_deleted">Raderad.</string>
     <string name="handwriting_tutorial_next_reading">Om handstil känns igen som ett annat tecken, till exempel en stor bokstav, sveper du uppåt med två fingrar för att välja nästa igenkänningsförslag. Prova nu.</string>
     <string name="handwriting_tutorial_read_back">Tryck med två fingrar för att läsa texten före markören.</string>
-    <string name="handwriting_tutorial_new_line">Svep nedåt med två fingrar för att infoga en ny rad eller utför textfältsåtgärden, till exempel Skicka.</string>
-    <string name="handwriting_tutorial_not_that">Det var en annan gest.</string>
-    <string name="handwriting_tutorial_done">Ny linje. Handledningen avslutad. Svep nedåt med tre fingrar för att dölja tangentbordet och höger eller vänster med tre fingrar för att byta tangentbord. För att öppna handledningen igen, tryck med tre fingrar.</string>
-    <string name="handwriting_tutorial_finished">Handledningen är slut. För att öppna den igen, tryck med tre fingrar.</string>
+    <string name="handwriting_tutorial_new_line">Svep nedåt med två fingrar för att infoga en ny rad eller utföra textfältets åtgärd, till exempel Skicka.</string>
+    <string name="handwriting_tutorial_not_that">Det var en annan rörelse.</string>
+    <string name="handwriting_tutorial_done">Ny rad. Självstudien är klar. Svep nedåt med tre fingrar för att dölja tangentbordet och åt höger eller vänster med tre fingrar för att byta tangentbord. Tryck med tre fingrar för att öppna självstudien igen.</string>
+    <string name="handwriting_tutorial_finished">Självstudien är slut. Tryck med tre fingrar för att öppna den igen.</string>
     <string name="handwriting_no_alternatives">Inga andra förslag</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> av <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Tom text</string>
@@ -1629,13 +1629,13 @@
     <string name="title_pref_shortcut_3finger_4tap">Fyrdubbelknacka med 3 fingrar</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Vrid medurs med 2 fingrar</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Vrid moturs med 2 fingrar</string>
-    <string name="title_pref_shortcut_2finger_scrub">Skrubba med 2 fingrar</string>
+    <string name="title_pref_shortcut_2finger_scrub">Snabb svepning fram och tillbaka med 2 fingrar</string>
     <string name="title_pref_shortcut_2finger_pinch">Nyp med 2 fingrar</string>
-    <string name="title_pref_shortcut_2finger_spread">Bred ut med 2 fingrar</string>
+    <string name="title_pref_shortcut_2finger_spread">Dra isär med 2 fingrar</string>
     <string name="title_pref_shortcut_3finger_pinch">Nyp med 3 fingrar</string>
-    <string name="title_pref_shortcut_3finger_spread">Bred ut med 3 fingrar</string>
+    <string name="title_pref_shortcut_3finger_spread">Dra isär med 3 fingrar</string>
     <string name="title_pref_shortcut_4finger_pinch">Nyp med 4 fingrar</string>
-    <string name="title_pref_shortcut_4finger_spread">Sprid ut med 4 fingrar</string>
+    <string name="title_pref_shortcut_4finger_spread">Dra isär med 4 fingrar</string>
     <string name="title_pref_shortcut_edge_bottom_up">Svep uppåt från den nedre kanten</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Långt svep uppåt från den nedre kanten</string>
     <string name="title_pref_shortcut_edge_top_left_down">Svep nedåt från det övre vänstra hörnet</string>
@@ -1652,12 +1652,12 @@
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Långt svep åt vänster från höger kant, nedre halvan</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">Håll fingret för att välja valfri tangent och lyft sedan. Dubbeltryck för Enter, Klar eller Skicka.</string>
     <string name="value_type_confirmation_tap_to_type">Tryck på valfri tangent för att skriva den, eller håll fingret för att välja valfri tangent och lyft sedan</string>
-    <string name="title_pref_multi_tap_timeout">Tid mellan ett fingertryck</string>
+    <string name="title_pref_multi_tap_timeout">Tid mellan tryck med ett finger</string>
     <string name="value_multi_tap_timeout_100ms">0,1 sekunder</string>
     <string name="value_multi_tap_timeout_150ms">0,15 sekunder</string>
     <string name="value_multi_tap_timeout_200ms">0,2 sekunder</string>
     <string name="value_multi_tap_timeout_250ms">0,25 sekunder (standard)</string>
-    <string name="title_pref_rotor_step_degrees">Rotorvarv per steg</string>
+    <string name="title_pref_rotor_step_degrees">Rotorvridning per steg</string>
     <string name="title_pref_edge_first_click_mm">Avstånd till första klick</string>
     <string name="title_pref_edge_second_click_mm">Avstånd från första till andra klick</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1673,22 +1673,22 @@
     <string name="value_rotor_step_45">45 grader</string>
     <string name="value_rotor_step_60">60 grader</string>
     <string name="title_pref_low_latency_audio">Ljud med låg latens</string>
-    <string name="summary_pref_low_latency_audio">Spela upp SandFlys ljud och tal genom telefonens snabbaste ljudväg, så att du hör dem tidigare. Stäng av den om tal eller ljud går sönder eller låter fel.</string>
+    <string name="summary_pref_low_latency_audio">Spelar upp ljud och tal från SandFly via telefonens snabbaste ljudväg, så att du hör dem tidigare. Stäng av det om tal eller ljud hackar eller låter fel.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekunder (standard)</string>
     <string name="value_focus_delay_300ms">0,3 sekunder</string>
     <string name="title_pref_lift_to_activate">Lyft för att aktivera</string>
-    <string name="summary_support_change_lift_to_activate">Ändra var ett föremål aktiveras genom att lyfta fingret</string>
+    <string name="summary_support_change_lift_to_activate">Ändra var lyft finger aktiverar ett objekt</string>
     <string name="value_lift_to_activate_disabled">Inaktiverad</string>
     <string name="value_lift_to_activate_navigation_bar">Endast på navigeringsfältet</string>
     <string name="value_lift_to_activate_entire_screen">Hela skärmen</string>
     <string name="template_lift_to_activate_changed">Lyft för att aktivera: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Linda runt</string>
-    <string name="summary_pref_wrap_around">Svep förbi det sista objektet går till det första och förbi det första går till det sista. When off, a sound plays at the end instead.</string>
+    <string name="title_pref_wrap_around">Börja om från början</string>
+    <string name="summary_pref_wrap_around">Om du sveper förbi det sista objektet går du till det första, och förbi det första till det sista. När av spelas i stället ett ljud vid slutet.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Åtgärda beröringsutforskning som fastnat</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Utan DUMP-tillståndet kan SandFly bara säga att beröringsutforskning kan ha fastnat. För att låta det fixa det, kör: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Fixing touch utforskning</string>
-    <string name="stuck_touch_exploration_fixed">Beröringsutforskning fast</string>
-    <string name="stuck_touch_exploration_not_fixed">Pekutforskningen har fastnat. Starta om telefonen för att lösa problemet.</string>
+    <string name="stuck_touch_exploration_fixing">Åtgärdar beröringsutforskning</string>
+    <string name="stuck_touch_exploration_fixed">Beröringsutforskning har åtgärdats</string>
+    <string name="stuck_touch_exploration_not_fixed">Upptäck genom beröring har fortfarande fastnat. Starta om telefonen för att lösa problemet.</string>
     <string name="stuck_touch_exploration_restart">Pekutforskningen kan ha fastnat. Starta om telefonen för att lösa problemet.</string>
     <string name="stuck_touch_exploration_grant_dump">Beröringsutforskning kan ha fastnat. Starta om telefonen för att fixa det, eller ge SandFly behörigheten DUMP med ADB så att den kan fixa det.</string>
     <string name="title_pref_window_names">Fönsternamn</string>
@@ -1696,44 +1696,44 @@
     <string name="window_names_until_first_item">Alltid, avbryt vid det första objektet</string>
     <string name="window_names_window_opens">Bara när ett fönster öppnas</string>
     <string name="window_names_never">Aldrig</string>
-    <string name="title_pref_selector_links_controls_web_only">Endast länkar och kontroller i webbinnehåll</string>
-    <string name="title_pref_selector_auto_switch">Byt läskontroll automatiskt</string>
-    <string name="title_pref_touch_stops_speech">Stoppa talet när du pekar på skärmen</string>
+    <string name="title_pref_selector_links_controls_web_only">Länkar och kontroller endast i webbinnehåll</string>
+    <string name="title_pref_selector_auto_switch">Byt läsinställning automatiskt</string>
+    <string name="title_pref_touch_stops_speech">Stoppa tal vid beröring av skärmen</string>
     <string name="title_pref_focus_new_windows">Flytta fokus till nya fönster</string>
     <string name="title_pref_volume_keys_adjust_sliders">Volymknapparna justerar reglagen</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">När ett reglage har fokus ändrar volymen upp och ner dess värde istället för volymen</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">När ett reglage har fokus ändrar volymknapparna upp och ned dess värde i stället för volymen</string>
     <string name="title_pref_volume_keys_move_cursor">Volymknappar flyttar markören</string>
     <string name="summary_pref_volume_keys_move_cursor">När ett textfält har fokus flyttar volym upp markören tillbaka ett tecken och volym ned flyttar den vidare</string>
-    <string name="summary_support_wrap_around">Slå på eller av omslag från det sista föremålet till det första</string>
-    <string name="wrap_around_on">Linda runt på</string>
-    <string name="wrap_around_off">Linda runt av</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tabletten höll upp ansiktena bort</string>
+    <string name="summary_support_wrap_around">Slå på eller av att gå från det sista objektet till det första</string>
+    <string name="wrap_around_on">Börja om från början: på</string>
+    <string name="wrap_around_off">Börja om från början: av</string>
+    <string name="title_selector_tablet_held_up_faces_away">Upprätt surfplatta vänd bort</string>
     <string name="summary_support_tablet_held_up_faces_away">För punktskrifttangentbordet på en surfplatta eller uppfälld telefon</string>
-    <string name="tablet_held_up_faces_away_on">Tabletten höll upp ansiktena bort på</string>
-    <string name="tablet_held_up_faces_away_off">Tabletten höll upp ansiktena bort</string>
-    <string name="title_keyboard_echo_on_screen">Tangentbordeko på skärmen</string>
-    <string name="title_keyboard_echo_physical">Fysiskt tangentbordseko</string>
-    <string name="title_keyboard_echo_braille_keyboard">Eko av blindskriftstangentbord</string>
-    <string name="title_keyboard_echo_handwriting_keyboard">Handstil tangentbord eko</string>
-    <string name="title_keyboard_echo_braille_display">Punktdisplay eko</string>
+    <string name="tablet_held_up_faces_away_on">Upprätt surfplatta vänd bort: på</string>
+    <string name="tablet_held_up_faces_away_off">Upprätt surfplatta vänd bort: av</string>
+    <string name="title_keyboard_echo_on_screen">Eko för skärmtangentbord</string>
+    <string name="title_keyboard_echo_physical">Eko för fysiskt tangentbord</string>
+    <string name="title_keyboard_echo_braille_keyboard">Eko för punktskriftstangentbord</string>
+    <string name="title_keyboard_echo_handwriting_keyboard">Eko för handskriftstangentbord</string>
+    <string name="title_keyboard_echo_braille_display">Eko för punktskriftsdisplay</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Avbryt talet när du skriver</string>
+    <string name="title_pref_interrupt_typing">Avbryt tal vid inmatning</string>
     <string name="pref_interrupt_typing_entry_always">Alltid</string>
     <string name="pref_interrupt_typing_entry_edit_fields">I redigeringsfält</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">På tangentbordseko</string>
-    <string name="title_pref_interrupt_enter">Avbryt talet på Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Namn, stat, typ</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Typ, stat, namn</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Vid tangentbordseko</string>
+    <string name="title_pref_interrupt_enter">Avbryt tal vid Enter</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Namn, tillstånd, typ</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Typ, tillstånd, namn</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">Tillstånd, typ, namn</string>
     <string name="item_detail_name">Namn</string>
     <string name="item_detail_type">Typ</string>
-    <string name="item_detail_state">Staten</string>
+    <string name="item_detail_state">Tillstånd</string>
     <string name="action_move_up">Flytta uppåt</string>
     <string name="action_move_down">Flytta ner</string>
     <string name="template_list_position">Position <xliff:g id="position" example="2">%1$d</xliff:g> av <xliff:g id="count" example="3">%2$d</xliff:g></string>
     <string name="template_item_details_order_picked_up">Plockade upp <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Tappade <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly säger en varas detaljer i denna ordning. Om du vill ändra den trycker du länge på en detalj och drar den sedan uppåt eller nedåt. Med SandFly på, dubbeltryck och håll ned och dra sedan. Du kan också använda funktionerna Flytta upp och Flytta ner.</string>
+    <string name="template_item_details_order_dropped">Släppte <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">SandFly läser upp ett objekts detaljer i den här ordningen. Om du vill ändra den trycker du länge på en detalj och drar den sedan uppåt eller nedåt. När SandFly är på dubbeltrycker du och håller kvar och drar sedan. Du kan också använda åtgärderna Flytta uppåt och Flytta ner.</string>
     <string name="title_pref_speak_items_before_scroll">Tala upp objekt innan de rullar fram</string>
     <string name="gemini_error_api_key">Gemini accepterade inte API-nyckeln. Kontrollera nyckeln i inställningarna för automatiska beskrivningar.</string>
     <string name="gemini_error_quota">Användningsgränsen för din Gemini API-nyckel har uppnåtts. Försök igen senare.</string>
@@ -1746,11 +1746,11 @@
     <string name="image_qna_stop_listening">Sluta lyssna</string>
     <string name="image_qna_type_question">Skriv en fråga</string>
     <string name="shortcut_dictate">Diktering</string>
-    <string name="title_pref_ai_dictation">Korrekt diktering med AI</string>
-    <string name="dictation_not_corrected">Ej korrigerad. Skrivs som igenkänd.</string>
+    <string name="title_pref_ai_dictation">Korrigera diktering med AI</string>
+    <string name="dictation_not_corrected">Inte korrigerat. Skrevs som det kändes igen.</string>
     <string name="dictation_nothing_recognized">Inget känt igen</string>
     <string name="dictation_unavailable">Taligenkänning inte tillgänglig</string>
-    <string name="dictation_field_gone">Textfältet stängt. Inget skrivit.</string>
+    <string name="dictation_field_gone">Textfältet stängdes. Inget skrevs.</string>
     <string name="dictation_transcription_failed">Talet transkriberades inte. Inget skrivet.</string>
     <string name="title_pref_dictation">Diktering</string>
     <string name="title_pref_dictation_rambler_live">Rambler-livetranskribering</string>
@@ -1773,5 +1773,5 @@
     <string name="settings_export_done">Inställningar exporterade. API-nycklar ingår inte</string>
     <string name="settings_export_failed">Inställningarna kunde inte exporteras</string>
     <string name="settings_import_done">Inställningar importerade</string>
-    <string name="settings_import_failed">Den här filen är inte en SandFly eller Backtalk inställningsfil, eller kunde inte läsas</string>
+    <string name="settings_import_failed">Den här filen är inte en SandFly- eller Backtalk-inställningsfil, eller så kunde den inte läsas</string>
 </resources>

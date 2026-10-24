@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API-kulcs</string>
     <string name="summary_pref_gemini_api_key_built_in">Az alkalmazásba beépített kulcs használatban</string>
-    <string name="gemini_api_key_dialog_message">Kérjen ingyenes API-kulcsot a Google AI Studióban (aistudio.google.com/apikey), és illessze be ide. A kulcs eltávolításához ürítse ki a mezőt, és mentsen.\n\nA leírt képeket és képernyőket a rendszer elküldi a Google-nek. Az ingyenes csomagban a Google felhasználhatja őket termékei fejlesztéséhez.</string>
+    <string name="gemini_api_key_dialog_message">Kérjen ingyenes API-kulcsot a Google AI Studióban (aistudio.google.com/apikey), és illessze be ide. A kulcs eltávolításához ürítse ki a mezőt, és mentsen.\n\nA leírásra kért képek és képernyők a Google-hoz kerülnek. Az ingyenes csomagban a Google felhasználhatja őket termékei fejlesztéséhez.</string>
     <string name="gemini_api_key_hint">API-kulcs</string>
     <string name="gemini_api_key_save">Mentés</string>
     <string name="gemini_api_key_get">Kulcs kérése</string>
@@ -10,14 +10,14 @@
     <string name="gemini_model_automatic">Automatikus</string>
     <string name="summary_pref_gemini_model_automatic">Automatikus: Gemini Flash, majd Flash-Lite, ha a Flash foglalt</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, majd a Flash-Lite, ha foglalt</string>
-    <string name="gemini_model_loading">A modellek beszerzése…</string>
-    <string name="gemini_model_list_failed">Nem sikerült beszerezni a következő modelleket: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_loading">Modellek lekérése…</string>
+    <string name="gemini_model_list_failed">Nem sikerült lekérni a modelleket: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Először állítson be egy Gemini API-kulcsot</string>
     <string name="gemini_api_terms_link">A Gemini API kiegészítő általános szerződési feltételei</string>
     <string name="ai_service_address_hint">Cím, például https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Modell</string>
-    <string name="ai_service_address_invalid">A címnek https://. karakterrel kell kezdődnie. Semmi sem lett elmentve.</string>
-    <string name="dialog_message_ai_service_consent">A képek és képernyőképek a <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> címre kerülnek leírásra, ami néhány másodpercet vesz igénybe. Saját feltételei és adatvédelmi szabályzata érvényesek. A generatív mesterséges intelligencia kísérleti jellegű, ezért hibákat követ el.</string>
+    <string name="ai_service_address_invalid">A címnek https:// előtaggal kell kezdődnie. Semmi sem lett mentve.</string>
+    <string name="dialog_message_ai_service_consent">A képeket és képernyőképeket leírás céljából a(z) <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> kapja meg, ami néhány másodpercig tart. A szolgáltatás saját feltételei és adatvédelmi irányelvei érvényesek. A generatív MI kísérleti jellegű, ezért hibázni fog.</string>
     <string name="ai_service_error_api_key">Az AI-szolgáltatás nem fogadta el az API-kulcsot. Ellenőrizze a beállításait az Automatikus leírásokban.</string>
     <string name="ai_service_error_quota">Elérte az AI szolgáltatás használati korlátját. Próbálja újra később.</string>
     <string name="ai_service_error_busy">Az AI szolgáltatás jelenleg foglalt. Próbálja újra egy pillanat múlva.</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Egyéb szolgáltatás</string>
     <string name="title_pref_category_ai_services">AI szolgáltatások</string>
     <string name="title_pref_ai_provider">AI szolgáltatás</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> beállítások</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> beállításai</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nincs beállítva</string>
     <string name="ai_provider_in_use">Használatban</string>
     <string name="ai_provider_not_set_up">Nincs beállítva</string>
@@ -44,10 +44,10 @@
     <string name="ai_provider_address_message">Egy OpenAI-kompatibilis chat API-val és képbemenettel rendelkező szolgáltatás címe, például https://example.com/v1.</string>
     <string name="ai_provider_not_set">Nincs beállítva</string>
     <string name="ai_provider_set">Beállítva</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API kulcs</string>
+    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API-kulcs</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modell</string>
-    <string name="ai_provider_choose_model">Nem választották</string>
-    <string name="ai_provider_key_message">Illessze be a <xliff:g id="service" example="Claude">%1$s</xliff:g> API-kulcsot. Az eltávolításhoz törölje a mezőt, és mentse. Az Ön által leírt képeket és képernyőket a <xliff:g id="service" example="Claude">%1$s</xliff:g> címre küldjük.</string>
+    <string name="ai_provider_choose_model">Nincs kiválasztva</string>
+    <string name="ai_provider_key_message">Illessze be a(z) <xliff:g id="service" example="Claude">%1$s</xliff:g> API-kulcsát. Az eltávolításhoz ürítse ki a mezőt, és mentsen. A leírásra kért képek és képernyők a(z) <xliff:g id="service" example="Claude">%1$s</xliff:g> szolgáltatáshoz kerülnek.</string>
     <string name="ai_provider_needs_key">Először állítsa be a <xliff:g id="service" example="Claude">%1$s</xliff:g> API kulcsot</string>
     <string name="ai_provider_needs_address">Először állítsa be a címet</string>
     <string name="ai_provider_enter_model">Adja meg a modell nevét</string>

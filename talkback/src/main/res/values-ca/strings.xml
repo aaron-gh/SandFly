@@ -1561,9 +1561,9 @@
     <string name="title_selector_vertical_navigation">Navegació vertical</string>
     <string name="summary_selector_vertical_navigation">Desplaceu-vos a l\'element inferior o superior, més enllà dels altres elements de la fila</string>
     <string name="title_pref_speech_stream">Volum de la parla</string>
-    <string name="summary_selector_speech_stream">Canvia entre els volums d\'accessibilitat, multimèdia, trucades i trucades</string>
+    <string name="summary_selector_speech_stream">Canvia entre els volums d\'accessibilitat, multimèdia, so de trucada i trucades</string>
     <string name="speech_stream_accessibility">Volum d\'accessibilitat</string>
-    <string name="speech_stream_media">Volum dels mitjans</string>
+    <string name="speech_stream_media">Volum multimèdia</string>
     <string name="speech_stream_ring">Volum del timbre</string>
     <string name="speech_stream_call">Volum de trucada, auricular</string>
     <string-array name="pref_speech_stream_entries">
@@ -1573,11 +1573,11 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_play_installer">Apareix instal·lat des de Google Play</string>
-    <string name="summary_pref_play_installer">Digues a altres aplicacions que Google Play instal·lades SandFly. Algunes aplicacions, com ara algunes aplicacions bancàries, desactiven els serveis d\'accessibilitat que s\'han instal·lat des de qualsevol altre lloc. Necessita Shizuku i només canvia les aplicacions que es diuen d\'on prové SandFly.</string>
-    <string name="summary_pref_play_installer_pending">Activat, però Google La reproducció encara no s\'ha registrat com a instal·lador. SandFly el defineix quan Shizuku està disponible.</string>
+    <string name="summary_pref_play_installer">Indica a altres aplicacions que SandFly s\'ha instal·lat des de Google Play. Algunes aplicacions, com ara algunes aplicacions bancàries, desactiven els serveis d\'accessibilitat instal·lats des de qualsevol altre origen. Requereix Shizuku i només canvia el que se\'ls indica a les aplicacions sobre l\'origen de SandFly.</string>
+    <string name="summary_pref_play_installer_pending">Activat, però Google Play encara no consta com a instal·lador. SandFly ho estableix quan Shizuku està disponible.</string>
     <string name="notification_list_show_all">Mostra-ho tot</string>
     <string name="notification_list_show_less">Mostra menys</string>
-    <string name="title_pref_quick_settings">Utilitzeu la configuració ràpida de SandFly</string>
+    <string name="title_pref_quick_settings">Utilitza la configuració ràpida de SandFly</string>
     <string name="title_pref_quick_settings_items">Panell de configuració ràpida</string>
     <string name="quick_settings_title">Configuració ràpida</string>
     <string name="quick_settings_wifi">Wi‑Fi</string>
@@ -1596,7 +1596,7 @@
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Brillantor</string>
     <string name="quick_settings_adaptive_brightness">Lluminositat adaptativa</string>
-    <string name="quick_settings_media_volume">Volum dels mitjans</string>
+    <string name="quick_settings_media_volume">Volum multimèdia</string>
     <string name="quick_settings_call_volume">Volum de trucades</string>
     <string name="quick_settings_ring_volume">Volum del timbre</string>
     <string name="quick_settings_notification_volume">Volum de notificacions</string>
@@ -1605,16 +1605,16 @@
     <string name="quick_settings_system_volume">Volum d\'àudio del sistema</string>
     <string name="quick_settings_data_saver">Estalviador de dades</string>
     <string name="quick_settings_night_light">Llum nocturna</string>
-    <string name="quick_settings_extra_dim">Extra dim</string>
+    <string name="quick_settings_extra_dim">Atenuació extra</string>
     <string name="quick_settings_color_inversion">Inversió de color</string>
     <string name="quick_settings_color_correction">Correcció de color</string>
     <string name="quick_settings_microphone_access">Accés al micròfon</string>
     <string name="quick_settings_camera_access">Accés a la càmera</string>
     <string name="quick_settings_screen_timeout">Temps d\'espera de la pantalla</string>
     <string name="quick_settings_font_size">Mida de la lletra</string>
-    <string name="quick_settings_media">Mitjans de comunicació</string>
-    <string name="quick_settings_no_media">Sense mitjans</string>
-    <string name="quick_settings_media_output">Sortida de mitjans</string>
+    <string name="quick_settings_media">Multimèdia</string>
+    <string name="quick_settings_no_media">Sense contingut multimèdia</string>
+    <string name="quick_settings_media_output">Sortida multimèdia</string>
     <string name="quick_settings_next_alarm">Pròxima alarma</string>
     <string name="quick_settings_no_alarm">Sense alarma</string>
     <string name="quick_settings_settings">Configuració</string>
@@ -1629,7 +1629,7 @@
         <item quantity="other">%d segons</item>
     </plurals>
     <plurals name="quick_settings_minutes">
-        <item quantity="one">%d minute</item>
+        <item quantity="one">%d minut</item>
         <item quantity="many">%d minuts</item>
         <item quantity="other">%d minuts</item>
     </plurals>
@@ -1650,7 +1650,7 @@
     <string name="quick_settings_add_tile">Afegeix mosaic de l\'aplicació</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Nombre de columnes</string>
-    <string name="quick_settings_move">Mou-te</string>
+    <string name="quick_settings_move">Mou</string>
     <string name="quick_settings_move_title">Mou %1$s</string>
     <string name="quick_settings_cell">Fila %1$d, columna %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1665,27 +1665,27 @@
     <string name="quick_settings_removed">%1$s eliminat</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Una altra drecera per activar o desactivar el mode de navegació</string>
     <string name="title_pref_vibration_strength">Força de vibració</string>
-    <string name="shortcut_scroll_to_top">Desplaceu-vos cap a dalt</string>
+    <string name="shortcut_scroll_to_top">Desplaça\'t fins a dalt</string>
     <string name="shortcut_write_reading_control">Escriu la lletra d\'un control de lectura</string>
     <string name="title_pref_reading_control_letters">Lletres escrites a mà</string>
     <string name="reading_control_letter_none">Cap</string>
     <string name="handwriting_prompt">Escriu una lletra de l\'alfabet</string>
     <string name="handwriting_closed">Escriptura a mà tancada</string>
-    <string name="handwriting_no_match">Cap control de lectura comença per <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Cap control de lectura no comença per <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Escriu el nom d\'una aplicació per obrir-la</string>
     <string name="handwriting_app_prompt">Escriu el nom d\'una aplicació</string>
     <string name="handwriting_no_app">Cap aplicació no comença per <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
     <string name="handwriting_app_not_opened">No s\'ha pogut obrir <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
     <string name="handwriting_not_recognized">Escriptura no reconeguda</string>
     <string name="handwriting_downloading">S\'està baixant el reconeixement d\'escriptura</string>
-    <string name="handwriting_download_title">Baixeu el reconeixement d\'escriptura?</string>
+    <string name="handwriting_download_title">Vols baixar el reconeixement d\'escriptura?</string>
     <string name="handwriting_download_message">En aquest telèfon es reconeix l\'escriptura a mà. El seu model per a aquest idioma, d\'uns 20 MB, es descarrega de Google una vegada. Es mostra un missatge quan s\'ha baixat.</string>
     <string name="handwriting_download_button">Baixa</string>
     <string name="handwriting_downloaded">S\'ha baixat el reconeixement d\'escriptura</string>
-    <string name="handwriting_download_failed">No s\'ha pogut baixar el reconeixement d\'escriptura a mà. Comproveu la connexió a Internet.</string>
+    <string name="handwriting_download_failed">No s\'ha pogut baixar el reconeixement d\'escriptura a mà. Comprova la connexió a Internet.</string>
     <string name="handwriting_unsupported_language">El reconeixement d\'escriptura a mà no està disponible en aquest idioma</string>
     <string name="title_pref_handwriting_keyboard">Teclat d\'escriptura a mà</string>
-    <string name="summary_pref_handwriting_keyboard">Activa l\'escriptura a mà SandFly a la configuració del teclat de Android</string>
+    <string name="summary_pref_handwriting_keyboard">Activa l\'escriptura a mà de SandFly a la configuració del teclat d\'Android</string>
     <string name="title_pref_handwriting_wait">Espereu després d\'escriure</string>
     <string name="value_handwriting_wait_200">0,2 segons</string>
     <string name="value_handwriting_wait_300">0,3 segons</string>
@@ -1697,40 +1697,40 @@
     <string name="handwriting_keyboard_name">SandFly escriptura a mà</string>
     <string name="handwriting_space">Espai</string>
     <string name="handwriting_new_line">Línia nova</string>
-    <string name="handwriting_tutorial_intro">Tutorial d\'escriptura manual del teclat. Escriu amb un dit a qualsevol punt de la pantalla. El que escrius s\'escriu quan t\'atures un moment. Per finalitzar el tutorial, fes lliscar tres dits cap avall.</string>
-    <string name="handwriting_tutorial_write_letter">Escriu la lletra de l\'alfabet a.</string>
+    <string name="handwriting_tutorial_intro">Tutorial del teclat d\'escriptura a mà. Escriu amb un dit a qualsevol punt de la pantalla. El que escrius s\'introdueix quan t\'atures un moment. Per acabar el tutorial, fes lliscar tres dits cap avall.</string>
+    <string name="handwriting_tutorial_write_letter">Escriu la lletra a.</string>
     <string name="handwriting_tutorial_write_word">Ara escriu la paraula hi.</string>
     <string name="handwriting_tutorial_typed">S\'ha escrit <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
-    <string name="handwriting_tutorial_space">Feu lliscar dos dits cap a la dreta per escriure un espai.</string>
-    <string name="handwriting_tutorial_delete">Feu lliscar dos dits cap a l\'esquerra per eliminar el caràcter que hi ha davant del cursor.</string>
+    <string name="handwriting_tutorial_space">Fes lliscar dos dits cap a la dreta per escriure un espai.</string>
+    <string name="handwriting_tutorial_delete">Fes lliscar dos dits cap a l\'esquerra per suprimir el caràcter que hi ha abans del cursor.</string>
     <string name="handwriting_tutorial_deleted">S\'ha suprimit.</string>
-    <string name="handwriting_tutorial_next_reading">Si l\'escriptura a mà es reconeix com un altre caràcter, com ara una lletra majúscula, feu lliscar dos dits cap amunt per triar el següent suggeriment de reconeixement. Prova-ho ara.</string>
-    <string name="handwriting_tutorial_read_back">Toqueu amb dos dits per llegir el text abans del cursor.</string>
-    <string name="handwriting_tutorial_new_line">Feu lliscar dos dits cap avall per inserir una línia nova o realitzar l\'acció del camp de text, com ara Enviar.</string>
-    <string name="handwriting_tutorial_not_that">Va ser un altre gest.</string>
-    <string name="handwriting_tutorial_done">Nova línia. Tutorial acabat. Llisca cap avall amb tres dits per amagar el teclat i cap a la dreta o cap a l\'esquerra amb tres dits per canviar de teclat. Per tornar a obrir el tutorial, toqueu amb tres dits.</string>
-    <string name="handwriting_tutorial_finished">S\'ha acabat el tutorial. Per obrir-lo de nou, toqueu amb tres dits.</string>
+    <string name="handwriting_tutorial_next_reading">Si l\'escriptura a mà es reconeix com un altre caràcter, com ara una lletra majúscula, fes lliscar dos dits cap amunt per triar el suggeriment de reconeixement següent. Prova-ho ara.</string>
+    <string name="handwriting_tutorial_read_back">Toca amb dos dits per llegir el text abans del cursor.</string>
+    <string name="handwriting_tutorial_new_line">Fes lliscar dos dits cap avall per inserir una línia nova o fer l\'acció del camp de text, com ara Envia.</string>
+    <string name="handwriting_tutorial_not_that">Era un altre gest.</string>
+    <string name="handwriting_tutorial_done">Línia nova. Tutorial acabat. Llisca tres dits cap avall per amagar el teclat, i cap a la dreta o cap a l\'esquerra per canviar de teclat. Per tornar a obrir el tutorial, toca amb tres dits.</string>
+    <string name="handwriting_tutorial_finished">S\'ha acabat el tutorial. Per tornar-lo a obrir, toca amb tres dits.</string>
     <string name="handwriting_no_alternatives">No hi ha altres suggeriments</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> de <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Text buit</string>
     <string name="handwriting_not_available">El reconeixement d\'escriptura a mà no està disponible en aquest dispositiu</string>
-    <string name="shortcut_scroll_to_bottom">Desplaceu-vos cap avall</string>
+    <string name="shortcut_scroll_to_bottom">Desplaça\'t fins al final</string>
     <string name="shortcut_refresh">Actualitza</string>
     <string name="shortcut_system_quick_settings">Configuració ràpida del sistema</string>
     <string name="shortcut_lock_screen">Bloqueja la pantalla del dispositiu</string>
     <string name="shortcut_power_menu">Menú d\'alimentació</string>
-    <string name="shortcut_increase_media_volume">Augmenta el volum dels mitjans</string>
-    <string name="shortcut_decrease_media_volume">Disminueix el volum dels mitjans</string>
+    <string name="shortcut_increase_media_volume">Apuja el volum multimèdia</string>
+    <string name="shortcut_decrease_media_volume">Abaixa el volum multimèdia</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Llisca llarg cap avall des de la part superior esquerra</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Llisca llarg cap avall des de la part superior dreta</string>
     <string name="title_pref_shortcut_edge_left_top_right">Llisca cap a la dreta des de la vora esquerra, la meitat superior</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Llisca llarg cap a la dreta des de la vora esquerra, la meitat superior</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Llisca llargament cap a la dreta des de la vora esquerra, meitat superior</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Llisca cap a la dreta des de la vora esquerra, la meitat inferior</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Llisca llarg cap a la dreta des de la vora esquerra, la meitat inferior</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Llisca llargament cap a la dreta des de la vora esquerra, meitat inferior</string>
     <string name="title_pref_shortcut_edge_right_top_left">Llisca cap a l\'esquerra des de la vora dreta, la meitat superior</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Llisca llarg cap a l\'esquerra des de la vora dreta, la meitat superior</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Llisca llargament cap a l\'esquerra des de la vora dreta, meitat superior</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Llisca cap a l\'esquerra des de la vora dreta, la meitat inferior</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Llisca llarg cap a l\'esquerra des de la vora dreta, la meitat inferior</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Llisca llargament cap a l\'esquerra des de la vora dreta, meitat inferior</string>
     <string name="title_pref_edge_first_click_mm">Distància al primer clic</string>
     <string name="title_pref_edge_second_click_mm">Distància del primer al segon clic</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1742,19 +1742,19 @@
     <string name="value_distance_50mm">5 cm</string>
     <string name="title_pref_selector_links_controls_web_only">Enllaços i controls només al contingut web</string>
     <string name="title_pref_selector_auto_switch">Canvia automàticament el control de lectura</string>
-    <string name="title_pref_touch_stops_speech">Atureu la parla quan toqueu la pantalla</string>
+    <string name="title_pref_touch_stops_speech">Atura la veu en tocar la pantalla</string>
     <string name="title_pref_volume_keys_move_cursor">Les tecles de volum mouen el cursor</string>
-    <string name="summary_pref_volume_keys_move_cursor">Quan un camp de text té el focus, pujar el volum mou el cursor cap enrere un caràcter i baixar el volum el mou</string>
+    <string name="summary_pref_volume_keys_move_cursor">Quan un camp de text té el focus, apujar el volum mou el cursor un caràcter enrere i abaixar-lo el mou un caràcter endavant</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Ressò del teclat d\'escriptura a mà</string>
     <string name="image_qna_ask_by_voice">Pregunta per veu</string>
     <string name="image_qna_stop_listening">Deixa d\'escoltar</string>
     <string name="image_qna_type_question">Escriviu una pregunta</string>
     <string name="shortcut_dictate">Dicta</string>
-    <string name="title_pref_ai_dictation">Dictat correcte amb IA</string>
-    <string name="dictation_not_corrected">No corregit. Escriu com a reconegut.</string>
-    <string name="dictation_nothing_recognized">Res reconegut</string>
+    <string name="title_pref_ai_dictation">Corregeix el dictat amb IA</string>
+    <string name="dictation_not_corrected">No s\'ha corregit. S\'ha escrit tal com s\'ha reconegut.</string>
+    <string name="dictation_nothing_recognized">No s\'ha reconegut res</string>
     <string name="dictation_unavailable">El reconeixement de veu no està disponible</string>
-    <string name="dictation_field_gone">Camp de text tancat. Res escrit.</string>
+    <string name="dictation_field_gone">Camp de text tancat. No s\'ha escrit res.</string>
     <string name="dictation_transcription_failed">No s’ha transcrit la veu. No s’ha escrit res.</string>
     <string name="title_pref_dictation">Dictat</string>
     <string name="title_pref_dictation_rambler_live">Transcripció en directe de Rambler</string>
@@ -1771,7 +1771,7 @@
     <string name="dictation_whisper_use">Utilitza</string>
     <string name="title_pref_dictation_ai_service">Servei d’IA per al dictat</string>
     <string name="dictation_ai_same">El mateix que les descripcions automàtiques</string>
-    <string name="title_pref_browse_mode_per_app">Recordeu el mode de navegació a cada aplicació</string>
+    <string name="title_pref_browse_mode_per_app">Recorda el mode de navegació a cada aplicació</string>
     <string name="title_pref_export_settings">Exporta la configuració</string>
     <string name="title_pref_import_settings">Importa la configuració</string>
     <string name="settings_export_done">S\'ha exportat la configuració. Les claus API no estan incloses</string>

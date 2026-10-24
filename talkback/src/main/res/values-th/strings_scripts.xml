@@ -6,50 +6,50 @@
     <string name="script_install_label">ติดตั้งสคริปต์ SandFly</string>
     <string name="script_import_nothing">ไม่มีไฟล์สคริปต์ที่จะติดตั้ง</string>
     <string name="script_import_cannot_open">ไม่สามารถเปิดไฟล์ได้</string>
-    <string name="script_import_repository">ลิงก์นี้ไปยังพื้นที่เก็บข้อมูลทั้งหมด เปิดสคริปต์ที่คุณต้องการ จากนั้นแชร์ลิงก์</string>
-    <string name="script_import_summary">ไฟล์ .lua หรือ .zip ด้วย main.lua</string>
+    <string name="script_import_repository">ลิงก์นี้ชี้ไปยังที่เก็บทั้งหมด เปิดสคริปต์ที่ต้องการ แล้วแชร์ลิงก์ของสคริปต์นั้น</string>
+    <string name="script_import_summary">ไฟล์ .lua หรือ .zip ที่มี main.lua</string>
     <string name="scripts_category_app">สคริปต์ของแอป</string>
-    <string name="scripts_category_global">ปลั๊กอินทั่วโลก</string>
+    <string name="scripts_category_global">ปลั๊กอินส่วนกลาง</string>
     <string name="scripts_none">ไม่มีการติดตั้งสคริปต์</string>
     <string name="scripts_all_off">ปิดสคริปต์ทั้งหมด</string>
-    <string name="scripts_all_off_summary">สคริปต์จะติดตั้งอยู่และเก็บสวิตช์ของตัวเองไว้ ท่าทางการเปิดหรือปิดสคริปต์ทั้งหมดจะทำเช่นเดียวกัน</string>
+    <string name="scripts_all_off_summary">สคริปต์ยังติดตั้งอยู่และคงสวิตช์ของตัวเองไว้ ท่าทางสัมผัส “เปิดหรือปิดสคริปต์ทั้งหมด” ก็ทำแบบเดียวกัน</string>
     <string name="shortcut_toggle_scripts">เปิดหรือปิดสคริปต์ทั้งหมด</string>
     <string name="scripts_now_off">สคริปต์ปิดอยู่</string>
     <string name="scripts_now_on">สคริปต์เปิดอยู่</string>
     <string name="scripts_unavailable">สคริปต์ไม่พร้อมใช้งานบนอุปกรณ์นี้</string>
     <string name="script_add_example">เพิ่มสคริปต์ตัวอย่าง</string>
-    <string name="script_add_example_summary">พูดชื่อของแต่ละแอปที่คุณเปลี่ยนไปใช้ สคริปต์ที่จะเริ่มต้นจาก</string>
+    <string name="script_add_example_summary">พูดชื่อของแต่ละแอปที่คุณสลับไป สคริปต์สำหรับใช้เริ่มต้น</string>
     <string name="script_state_on">เปิด</string>
     <string name="script_state_off">ปิด</string>
     <string name="script_runs_in">ทำงานใน <xliff:g id="apps">%1$s</xliff:g></string>
-    <string name="script_runs_everywhere">ทำงานได้ในทุกแอพ</string>
+    <string name="script_runs_everywhere">ทำงานในทุกแอป</string>
     <string name="script_version">เวอร์ชัน <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">โดย <xliff:g id="author">%1$s</xliff:g></string>
-    <string name="script_install_title">ติดตั้ง <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_title">ติดตั้ง <xliff:g id="name">%1$s</xliff:g> ไหม</string>
     <string name="script_install_can">มันสามารถ:</string>
     <string name="script_install_no_permissions">ไม่จำเป็นต้องมีสิทธิ์</string>
     <string name="script_install_button">ติดตั้ง</string>
     <string name="script_update_title">อัปเดต <xliff:g id="name">%1$s</xliff:g> เป็น <xliff:g id="version">%2$s</xliff:g> หรือไม่</string>
     <string name="script_update_new_permissions">สิทธิ์ใหม่:</string>
     <string name="script_update_button">อัปเดต</string>
-    <string name="script_update_replaces">ซึ่งจะแทนที่เวอร์ชัน <xliff:g id="version">%1$s</xliff:g> ด้วย <xliff:g id="author">%2$s</xliff:g> และเก็บข้อมูลและการตั้งค่าไว้</string>
-    <string name="script_update_other_author">อันใหม่คือโดย <xliff:g id="author">%1$s</xliff:g> ผู้เขียนคนอื่น อัปเดตเฉพาะเมื่อคุณเชื่อถือเท่านั้น</string>
+    <string name="script_update_replaces">สคริปต์นี้จะแทนที่เวอร์ชัน <xliff:g id="version">%1$s</xliff:g> ของ <xliff:g id="author">%2$s</xliff:g> โดยเก็บข้อมูลและการตั้งค่าไว้</string>
+    <string name="script_update_other_author">สคริปต์ใหม่เป็นของ <xliff:g id="author">%1$s</xliff:g> ซึ่งเป็นผู้เขียนคนอื่น อัปเดตเฉพาะเมื่อคุณเชื่อถือ</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ติดตั้งแล้ว</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> อัปเดตเป็น <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">การนำเข้าล้มเหลว <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. อนุญาตเฉพาะสคริปต์ที่เชื่อถือได้เท่านั้น</string>
     <string name="script_permission_screen">อ่านหน้าจอ</string>
     <string name="script_permission_actions">คลิก เลื่อน พิมพ์ และย้ายโฟกัส</string>
-    <string name="script_permission_speech">ได้ยินและเปลี่ยนคำพูดของ SandFly</string>
+    <string name="script_permission_speech">รับและเปลี่ยนเสียงพูดของ SandFly</string>
     <string name="script_permission_passwords">อ่านฟิลด์รหัสผ่าน</string>
     <string name="script_permission_input">เพิ่มท่าทาง ปุ่ม รายการเมนู และตัวควบคุมการอ่าน</string>
     <string name="script_permission_network">ใช้อินเตอร์เน็ต</string>
     <string name="script_permission_clipboard">อ่านและเปลี่ยนคลิปบอร์ด</string>
-    <string name="script_permission_system">กลับบ้านหรือกลับบ้าน เปิดการแจ้งเตือนและแอป</string>
-    <string name="script_permission_notifications">อ่านและเปลี่ยนแปลงการแจ้งเตือนด้วยเสียง</string>
-    <string name="script_permission_events">ดูกิจกรรมทั้งหมดในทุกแอปรวมถึงการพิมพ์</string>
+    <string name="script_permission_system">ย้อนกลับหรือไปที่หน้าแรก เปิดการแจ้งเตือนและแอป</string>
+    <string name="script_permission_notifications">อ่านและเปลี่ยนการแจ้งเตือนที่อ่านออกเสียง</string>
+    <string name="script_permission_events">เห็นกิจกรรมทั้งหมดในทุกแอป รวมถึงการพิมพ์</string>
     <string name="script_permission_dialogs">แสดงกล่องโต้ตอบบนแอปใดก็ได้</string>
-    <string name="script_permission_java">เรียกใช้โค้ด Java ด้วยการเข้าถึงทั้งหมดของ SandFly ในทุกแอป</string>
+    <string name="script_permission_java">เรียกใช้โค้ด Java ด้วยสิทธิ์เข้าถึงทั้งหมดของ SandFly ในทุกแอป</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">เปิด</string>
     <string name="script_permissions_title">สิทธิ์</string>
@@ -57,54 +57,54 @@
     <string name="script_settings_category">การตั้งค่า</string>
     <string name="script_list_filter">ตัวกรอง</string>
     <string name="script_button_off">เปิดสคริปต์ก่อน</string>
-    <string name="script_permissions_summary">การปิดเครื่องจะหยุดชิ้นส่วนที่จำเป็นต้องใช้</string>
+    <string name="script_permissions_summary">การปิดสิทธิ์จะหยุดส่วนที่ต้องใช้สิทธิ์นั้น</string>
     <string name="script_install_permissions_note">คุณสามารถปิดสิ่งเหล่านี้ได้ในภายหลัง</string>
-    <string name="script_manage_category">จัดการ</string>
-    <string name="script_move_up">วิ่งไปก่อน</string>
-    <string name="script_move_down">วิ่งทีหลัง</string>
-    <string name="script_order_summary">ลำดับสคริปต์ที่เปลี่ยนคำพูดเดียวกัน สคริปต์ของแอปจะทำงานก่อน</string>
-    <string name="script_log">เข้าสู่ระบบ</string>
+    <string name="script_manage_category">การจัดการ</string>
+    <string name="script_move_up">เรียกใช้ก่อน</string>
+    <string name="script_move_down">เรียกใช้ทีหลัง</string>
+    <string name="script_order_summary">ลำดับของสคริปต์ที่เปลี่ยนเสียงพูดเดียวกัน สคริปต์ของแอปจะทำงานก่อน</string>
+    <string name="script_log">บันทึก</string>
     <string name="script_log_summary">ผลลัพธ์และข้อผิดพลาดตั้งแต่ SandFly เริ่มต้น</string>
     <string name="script_clear_storage">ล้างข้อมูลที่เก็บไว้</string>
     <string name="script_storage_cleared">ล้างข้อมูลที่เก็บไว้แล้ว</string>
     <string name="script_remove">ลบ</string>
-    <string name="script_remove_title">ลบ <xliff:g id="name">%1$s</xliff:g> ออก?</string>
-    <string name="script_remove_message">ลบรหัส ข้อมูล และการตั้งค่า</string>
+    <string name="script_remove_title">ลบ <xliff:g id="name">%1$s</xliff:g> ออกไหม</string>
+    <string name="script_remove_message">ลบโค้ด ข้อมูล และการตั้งค่าของสคริปต์</string>
     <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> ลบแล้ว</string>
     <string name="script_log_empty">บันทึกว่างเปล่า</string>
     <string name="script_log_clear">ล้างบันทึก</string>
     <string name="script_log_copy">คัดลอกบันทึก</string>
     <string name="script_log_copied">คัดลอกบันทึกแล้ว</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">ต้องการสคริปต์ API <xliff:g id="needed">%1$d</xliff:g> หรือใหม่กว่า SandFly นี้มี <xliff:g id="current">%2$d</xliff:g> ดังนั้นบางส่วนอาจไม่ทำงาน</string>
-    <string name="script_api_untested">ทดสอบจนถึงสคริปต์ API <xliff:g id="tested">%1$d</xliff:g> SandFly นี้มี <xliff:g id="current">%2$d</xliff:g> ดังนั้นจึงอาจไม่ทำงานตามที่คาดไว้</string>
-    <string name="script_state_incompatible">อาจไม่ทำงานกับสิ่งนี้ SandFly</string>
-    <string name="script_api_range">สคริปต์ API <xliff:g id="min">%1$d</xliff:g> ถึง <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_too_old">ต้องใช้ API สคริปต์ <xliff:g id="needed">%1$d</xliff:g> ขึ้นไป SandFly นี้มี <xliff:g id="current">%2$d</xliff:g> ดังนั้นบางส่วนอาจไม่ทำงาน</string>
+    <string name="script_api_untested">ทดสอบถึง API สคริปต์ <xliff:g id="tested">%1$d</xliff:g> SandFly นี้มี <xliff:g id="current">%2$d</xliff:g> ดังนั้นอาจไม่ทำงานตามที่คาดไว้</string>
+    <string name="script_state_incompatible">อาจใช้งานไม่ได้กับ SandFly เวอร์ชันนี้</string>
+    <string name="script_api_range">API สคริปต์ <xliff:g id="min">%1$d</xliff:g> ถึง <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">ความเข้ากันได้</string>
     <string name="script_install_anyway">ติดตั้งต่อไป</string>
-    <string name="script_update_anyway">อัพเดทยังไงก็ได้</string>
+    <string name="script_update_anyway">อัปเดตต่อ</string>
     <string name="script_homepage">เปิดหน้าแรก</string>
     <string name="script_homepage_confirm_title">เปิดที่อยู่นี้ใช่ไหม</string>
     <string name="script_homepage_open">เปิด</string>
-    <string name="script_homepage_failed">ไม่มีแอปใดที่สามารถเปิดได้ <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ปิดหลังจากเกิดข้อผิดพลาดซ้ำๆ ดูบันทึกในสคริปต์</string>
+    <string name="script_homepage_failed">ไม่มีแอปที่เปิด <xliff:g id="address">%1$s</xliff:g> ได้</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ถูกปิดหลังเกิดข้อผิดพลาดซ้ำๆ ดูบันทึกได้ใน “สคริปต์”</string>
     <string name="shortcut_inspect_item">ตรวจสอบรายการที่โฟกัส</string>
-    <string name="script_inspect_no_item">ไม่มีรายการใดมีจุดสนใจ</string>
+    <string name="script_inspect_no_item">ไม่มีรายการที่โฟกัสอยู่</string>
     <string name="script_inspect_copied">คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ไม่มีรหัส ดังนั้นกฎจึงไม่สามารถตั้งชื่อได้ คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">คัดลอกแผนผังหน้าจอ</string>
+    <string name="script_inspect_no_id">ไม่มี id กฎจึงอ้างถึงไม่ได้ คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">คัดลอกโครงสร้างหน้าจอ</string>
     <string name="script_tree_copied">คัดลอก <xliff:g id="count">%1$d</xliff:g> รายการแล้ว</string>
     <string name="script_tree_none">ไม่มีหน้าต่างให้คัดลอก</string>
-    <string name="script_tree_clip_label">ต้นไม้หน้าจอ</string>
+    <string name="script_tree_clip_label">โครงสร้างหน้าจอ</string>
     <string name="summary_copy_screen_tree_menu">คัดลอกรายการทั้งหมดบนหน้าจอเป็น JSON เพื่อเขียนสคริปต์</string>
     <string name="script_inspect_clip_label">รายละเอียดรายการ</string>
-    <string name="summary_inspect_item_menu">พูดและคัดลอกรายละเอียดของรายการที่คุณดูเพื่อเขียนสคริปต์</string>
+    <string name="summary_inspect_item_menu">พูดและคัดลอกรายละเอียดของรายการที่โฟกัสล่าสุด เพื่อเขียนสคริปต์</string>
     <string name="script_keys_backtalk_modifier">ตัวแก้ไข SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g> จากนั้น <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">คำสั่ง</string>
-    <string name="script_commands_summary">ท่าทางและปุ่มของสคริปต์ที่รันอยู่มาก่อน SandFly\'s ปิดอันหนึ่งเพื่อเก็บ SandFly ไว้</string>
+    <string name="script_commands_summary">ท่าทางสัมผัสและปุ่มของสคริปต์ที่ทำงานอยู่มีลำดับก่อนของ SandFly ปิดของสคริปต์เพื่อใช้ของ SandFly</string>
     <string name="script_binding_gesture">ท่าทาง: <xliff:g id="gesture">%1$s</xliff:g></string>
-    <string name="script_binding_keys">กุญแจ: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_keys">ปุ่ม: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">เมนูของ SandFly</string>
     <string name="script_binding_control">การควบคุมการอ่าน</string>
     <string name="script_binding_none">ไม่มี</string>
@@ -112,15 +112,15 @@
     <string name="script_binding_turn_off">ปิด</string>
     <string name="script_binding_restore">คืนค่าเริ่มต้น</string>
     <string name="script_binding_restored">คืนค่าเริ่มต้นแล้ว</string>
-    <string name="script_binding_perform">ดำเนินการท่าทางหรือปุ่ม</string>
-    <string name="script_binding_perform_summary">กำหนดท่าทางถัดไปหรือปุ่มที่กดด้วยตัวปรับแต่ง SandFly</string>
+    <string name="script_binding_perform">ทำท่าทางหรือกดปุ่ม</string>
+    <string name="script_binding_perform_summary">กำหนดท่าทางสัมผัสถัดไป หรือปุ่มที่กดพร้อมตัวแก้ไข SandFly</string>
     <string name="script_binding_perform_message">ทำท่าทางหรือกดปุ่ม</string>
     <string name="script_binding_assign_title">กำหนด <xliff:g id="binding">%1$s</xliff:g> ให้กับ <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">มอบหมาย</string>
     <string name="script_binding_choose_gesture">เลือกท่าทาง</string>
-    <string name="script_binding_type_keys">พิมพ์คีย์</string>
+    <string name="script_binding_type_keys">พิมพ์ปุ่ม</string>
     <string name="script_binding_type_keys_summary">เช่น sf+shift+n, หรือ sf+t, s</string>
-    <string name="script_binding_bad_keys">ไม่สามารถใช้คีย์เหล่านี้ได้ <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">ใช้ปุ่มเหล่านี้ไม่ได้ <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">มันเพิ่ม:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">แหล่งที่มาของสคริปต์</string>
@@ -136,18 +136,18 @@
     <string name="script_source_retry">ลองอีกครั้ง</string>
     <string name="script_source_downloading">กำลังดาวน์โหลด <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">ลบแหล่งที่มา</string>
-    <string name="script_source_remove_title">ลบ <xliff:g id="name">%1$s</xliff:g> ออก?</string>
-    <string name="script_source_remove_message">สคริปต์ที่ติดตั้งจากนั้นจะยังคงติดตั้งอยู่</string>
+    <string name="script_source_remove_title">ลบ <xliff:g id="name">%1$s</xliff:g> ออกไหม</string>
+    <string name="script_source_remove_message">สคริปต์ที่ติดตั้งจากแหล่งที่มานี้จะยังคงติดตั้งอยู่</string>
     <string name="scripts_auto_update">อัปเดตสคริปต์โดยอัตโนมัติ</string>
     <string name="scripts_check_updates">ตรวจสอบการอัปเดต</string>
-    <string name="scripts_checking_updates">กำลังตรวจสอบการอัปเดต...</string>
-    <string name="scripts_updates_category">อัพเดท</string>
+    <string name="scripts_checking_updates">กำลังตรวจสอบการอัปเดต…</string>
+    <string name="scripts_updates_category">อัปเดต</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one">อัปเดตสคริปต์แล้ว <xliff:g id="count" example="1">%1$d</xliff:g> รายการ: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other">อัปเดตสคริปต์ <xliff:g id="count" example="2">%1$d</xliff:g> รายการ: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">การอัปเดตจะแสดงอยู่ภายใต้การอัปเดต</string>
+    <string name="scripts_updates_to_approve">การอัปเดตจะแสดงอยู่ใน “อัปเดต”</string>
     <string name="scripts_update_check_failed">ไม่สามารถตรวจสอบแหล่งที่มาบางแห่งได้</string>
-    <string name="scripts_up_to_date">สคริปต์ทั้งหมดเป็นข้อมูลล่าสุด</string>
+    <string name="scripts_up_to_date">สคริปต์ทั้งหมดเป็นเวอร์ชันล่าสุด</string>
 </resources>

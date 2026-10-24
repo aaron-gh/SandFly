@@ -1,153 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ</string>
-    <string name="summary_pref_scripts">ଆପ୍ସରେ SandFly କିପରି କାମ କରେ ପରିବର୍ତ୍ତନ କରନ୍ତୁ |</string>
-    <string name="script_import">ସ୍କ୍ରିପ୍ଟ ଆମଦାନୀ କରନ୍ତୁ |</string>
-    <string name="script_install_label">SandFly ସ୍କ୍ରିପ୍ଟ ସଂସ୍ଥାପନ କରନ୍ତୁ |</string>
-    <string name="script_import_nothing">ସଂସ୍ଥାପନ କରିବାକୁ କ script ଣସି ସ୍କ୍ରିପ୍ଟ ଫାଇଲ୍ ନାହିଁ |</string>
-    <string name="script_import_cannot_open">ଫାଇଲ୍ ଖୋଲାଯାଇ ପାରିଲା ନାହିଁ |</string>
-    <string name="script_import_repository">ଏହି ଲିଙ୍କ୍ ଏକ ପୁରା ସଂଗ୍ରହାଳୟ ସହିତ | ଆପଣ ଚାହୁଁଥିବା ସ୍କ୍ରିପ୍ଟ ଖୋଲନ୍ତୁ, ତା’ପରେ ଏହାର ଲିଙ୍କ୍ ଅଂଶୀଦାର କରନ୍ତୁ |</string>
-    <string name="script_import_summary">.lua ଫାଇଲ୍, କିମ୍ବା main.lua ସହିତ .zip</string>
-    <string name="scripts_category_app">ଆପ୍ ସ୍କ୍ରିପ୍ଟଗୁଡିକ |</string>
-    <string name="scripts_category_global">ଗ୍ଲୋବାଲ୍ ପ୍ଲଗଇନ୍ |</string>
-    <string name="scripts_none">କ No ଣସି ସ୍କ୍ରିପ୍ଟ ସଂସ୍ଥାପିତ ହୋଇନାହିଁ |</string>
-    <string name="scripts_all_off">ସମସ୍ତ ସ୍କ୍ରିପ୍ଟ ବନ୍ଦ କରନ୍ତୁ |</string>
-    <string name="scripts_all_off_summary">ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ସଂସ୍ଥାପିତ ରୁହନ୍ତି ଏବଂ ସେମାନଙ୍କର ନିଜସ୍ୱ ସୁଇଚ୍ ରଖନ୍ତି | ସମସ୍ତ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକୁ ଟର୍ନ୍ ଅନ୍ କିମ୍ବା ଅଫ୍ ଅଙ୍ଗଭଙ୍ଗୀ ସମାନ କରେ |</string>
-    <string name="shortcut_toggle_scripts">ସମସ୍ତ ସ୍କ୍ରିପ୍ଟ ଟର୍ନ୍ ଅନ୍ କିମ୍ବା ଅଫ୍ କରନ୍ତୁ |</string>
-    <string name="scripts_now_off">ସ୍କ୍ରିପ୍ଟ ବନ୍ଦ |</string>
-    <string name="scripts_now_on">ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ</string>
-    <string name="scripts_unavailable">ଏହି ଡିଭାଇସରେ ସ୍କ୍ରିପ୍ଟ ଉପଲବ୍ଧ ନାହିଁ |</string>
-    <string name="script_add_example">ଉଦାହରଣ ସ୍କ୍ରିପ୍ଟ ଯୋଡନ୍ତୁ |</string>
-    <string name="script_add_example_summary">ଆପଣ ସୁଇଚ୍ କରୁଥିବା ପ୍ରତ୍ୟେକ ଆପର ନାମ କୁହନ୍ତି | ଠାରୁ ଆରମ୍ଭ କରିବାକୁ ଏକ ସ୍କ୍ରିପ୍ଟ |</string>
+    <string name="summary_pref_scripts">ଆପ୍ସରେ SandFly କିପରି କାମ କରେ ପରିବର୍ତ୍ତନ କରନ୍ତୁ</string>
+    <string name="script_import">ସ୍କ୍ରିପ୍ଟ ଆମଦାନୀ କରନ୍ତୁ</string>
+    <string name="script_install_label">SandFly ସ୍କ୍ରିପ୍ଟ ସଂସ୍ଥାପନ କରନ୍ତୁ</string>
+    <string name="script_import_nothing">ସଂସ୍ଥାପନ କରିବାକୁ କୌଣସି ସ୍କ୍ରିପ୍ଟ ଫାଇଲ୍ ନାହିଁ।</string>
+    <string name="script_import_cannot_open">ଫାଇଲ୍ ଖୋଲାଯାଇପାରିଲା ନାହିଁ।</string>
+    <string name="script_import_repository">ଏହି ଲିଙ୍କ୍ ସମ୍ପୂର୍ଣ୍ଣ ରିପୋଜିଟୋରୀର। ଆପଣ ଚାହୁଁଥିବା ସ୍କ୍ରିପ୍ଟ ଖୋଲନ୍ତୁ, ତାପରେ ଏହାର ଲିଙ୍କ୍ ସେୟାର୍ କରନ୍ତୁ।</string>
+    <string name="script_import_summary">.lua ଫାଇଲ୍, କିମ୍ବା main.lua ଥିବା .zip</string>
+    <string name="scripts_category_app">ଆପ୍ ସ୍କ୍ରିପ୍ଟଗୁଡିକ</string>
+    <string name="scripts_category_global">ଗ୍ଲୋବାଲ୍ ପ୍ଲଗଇନ୍</string>
+    <string name="scripts_none">କୌଣସି ସ୍କ୍ରିପ୍ଟ ସଂସ୍ଥାପିତ ହୋଇନାହିଁ</string>
+    <string name="scripts_all_off">ସମସ୍ତ ସ୍କ୍ରିପ୍ଟ ବନ୍ଦ କରନ୍ତୁ</string>
+    <string name="scripts_all_off_summary">ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ଇନଷ୍ଟଲ୍ ହୋଇ ରହେ ଏବଂ ନିଜର ସୁଇଚ୍ ରଖେ। “ସମସ୍ତ ସ୍କ୍ରିପ୍ଟ ଟର୍ନ୍ ଅନ୍ କିମ୍ବା ଅଫ୍ କରନ୍ତୁ” ଜେଶ୍ଚର ମଧ୍ୟ ସମାନ କାମ କରେ।</string>
+    <string name="shortcut_toggle_scripts">ସମସ୍ତ ସ୍କ୍ରିପ୍ଟ ଟର୍ନ୍ ଅନ୍ କିମ୍ବା ଅଫ୍ କରନ୍ତୁ</string>
+    <string name="scripts_now_off">ସ୍କ୍ରିପ୍ଟ ବନ୍ଦ</string>
+    <string name="scripts_now_on">ସ୍କ୍ରିପ୍ଟ ଚାଲୁ</string>
+    <string name="scripts_unavailable">ଏହି ଡିଭାଇସରେ ସ୍କ୍ରିପ୍ଟ ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="script_add_example">ଉଦାହରଣ ସ୍କ୍ରିପ୍ଟ ଯୋଡନ୍ତୁ</string>
+    <string name="script_add_example_summary">ଆପଣ ସୁଇଚ୍ କରୁଥିବା ପ୍ରତ୍ୟେକ ଆପ୍‌ର ନାମ କହେ। ଆରମ୍ଭ ପାଇଁ ଏକ ସ୍କ୍ରିପ୍ଟ।</string>
     <string name="script_state_on">ଚାଲୁ ଅଛି</string>
     <string name="script_state_off">ବନ୍ଦ ଅଛି</string>
-    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g> ରେ ଚାଲିଥାଏ |</string>
-    <string name="script_runs_everywhere">ସମସ୍ତ ଆପରେ ଚାଲିଥାଏ |</string>
+    <string name="script_runs_in"><xliff:g id="apps">%1$s</xliff:g> ରେ ଚାଲିଥାଏ</string>
+    <string name="script_runs_everywhere">ସମସ୍ତ ଆପରେ ଚାଲିଥାଏ</string>
     <string name="script_version">ସଂସ୍କରଣ <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author"><xliff:g id="author">%1$s</xliff:g> ଦ୍ୱାରା</string>
-    <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> ସଂସ୍ଥାପନ କରନ୍ତୁ?</string>
+    <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> ସଂସ୍ଥାପନ କରିବେ?</string>
     <string name="script_install_can">ଏହା କରିପାରିବ:</string>
-    <string name="script_install_no_permissions">କ per ଣସି ଅନୁମତି ଆବଶ୍ୟକ ନାହିଁ |</string>
-    <string name="script_install_button">ସଂସ୍ଥାପନ କରନ୍ତୁ |</string>
-    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> କୁ <xliff:g id="version">%2$s</xliff:g> କୁ ଅଦ୍ୟତନ କରନ୍ତୁ?</string>
+    <string name="script_install_no_permissions">କୌଣସି ଅନୁମତି ଆବଶ୍ୟକ ନାହିଁ।</string>
+    <string name="script_install_button">ସଂସ୍ଥାପନ କରନ୍ତୁ</string>
+    <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> କୁ <xliff:g id="version">%2$s</xliff:g> କୁ ଅପଡେଟ୍ କରିବେ?</string>
     <string name="script_update_new_permissions">ନୂତନ ଅନୁମତି:</string>
-    <string name="script_update_button">ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
-    <string name="script_update_replaces">ଏହା <xliff:g id="version">%1$s</xliff:g> ସଂସ୍କରଣ <xliff:g id="author">%2$s</xliff:g> ଦ୍ୱାରା ବଦଳାଇଥାଏ, ଏବଂ ଏହାର ତଥ୍ୟ ଏବଂ ସେଟିଙ୍ଗଗୁଡ଼ିକୁ ରଖେ |</string>
-    <string name="script_update_other_author">ଏକ ନୂତନ ଲେଖକ <xliff:g id="author">%1$s</xliff:g> ଦ୍ୱାରା | ଯଦି ଆପଣ ଏହାକୁ ବିଶ୍ trust ାସ କରନ୍ତି ତେବେ ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
-    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ସଂସ୍ଥାପିତ |</string>
-    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> କୁ ଅଦ୍ୟତନ ହୋଇଛି |</string>
-    <string name="script_import_failed">ଆମଦାନୀ ବିଫଳ ହେଲା | <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>। କେବଳ ବିଶ୍ୱସ୍ତ ସ୍କ୍ରିପ୍ଟ ପାଇଁ ଅନୁମତି ଦିଅନ୍ତୁ |</string>
-    <string name="script_permission_screen">ସ୍କ୍ରିନ୍ ପ Read ଼ନ୍ତୁ |</string>
-    <string name="script_permission_actions">ଫୋକସ୍ କ୍ଲିକ୍, ସ୍କ୍ରୋଲ୍, ଟାଇପ୍ ଏବଂ ଘୁଞ୍ଚାନ୍ତୁ |</string>
-    <string name="script_permission_speech">SandFly ର ବକ୍ତବ୍ୟ ଶୁଣ ଏବଂ ପରିବର୍ତ୍ତନ କର |</string>
-    <string name="script_permission_passwords">ପାସୱାର୍ଡ ଫିଲ୍ଡ ପ Read ନ୍ତୁ |</string>
-    <string name="script_permission_input">ଅଙ୍ଗଭଙ୍ଗୀ, ଚାବି, ମେନୁ ଆଇଟମ୍ ଏବଂ ପଠନ ନିୟନ୍ତ୍ରଣ ଯୋଡନ୍ତୁ |</string>
-    <string name="script_permission_network">ଇଣ୍ଟରନେଟ୍ ବ୍ୟବହାର କରନ୍ତୁ |</string>
-    <string name="script_permission_clipboard">କ୍ଲିପବୋର୍ଡ ପ Read ଏବଂ ପରିବର୍ତ୍ତନ କର |</string>
-    <string name="script_permission_system">ଘରକୁ କିମ୍ବା ଘରକୁ ଯାଆନ୍ତୁ, ବିଜ୍ଞପ୍ତି ଏବଂ ଆପ୍ ଖୋଲନ୍ତୁ |</string>
-    <string name="script_permission_notifications">କଥିତ ବିଜ୍ଞପ୍ତିଗୁଡିକ ପ Read ଏବଂ ପରିବର୍ତ୍ତନ କର |</string>
-    <string name="script_permission_events">ଟାଇପିଂ ସହିତ ପ୍ରତ୍ୟେକ ଆପରେ ସମସ୍ତ କାର୍ଯ୍ୟକଳାପ ଦେଖନ୍ତୁ |</string>
-    <string name="script_permission_dialogs">ଯେକ any ଣସି ଆପ୍ ଉପରେ ସଂଳାପ ଦେଖାନ୍ତୁ |</string>
-    <string name="script_permission_java">ପ୍ରତ୍ୟେକ ଆପରେ SandFly ର ସମସ୍ତ ଆକ୍ସେସ୍ ସହିତ ଜାଭା କୋଡ୍ ଚଲାନ୍ତୁ |</string>
+    <string name="script_update_button">ଅଦ୍ୟତନ କରନ୍ତୁ</string>
+    <string name="script_update_replaces">ଏହା <xliff:g id="author">%2$s</xliff:g>ଙ୍କ ସଂସ୍କରଣ <xliff:g id="version">%1$s</xliff:g>କୁ ବଦଳାଏ, ଏବଂ ଏହାର ଡାଟା ଓ ସେଟିଂସ୍ ରଖେ।</string>
+    <string name="script_update_other_author">ନୂଆଟି ଅନ୍ୟ ଜଣେ ଲେଖକ <xliff:g id="author">%1$s</xliff:g>ଙ୍କର। ଆପଣ ଭରସା କରୁଥିଲେ ହିଁ ଅପଡେଟ୍ କରନ୍ତୁ।</string>
+    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ସଂସ୍ଥାପିତ ହେଲା</string>
+    <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> କୁ ଅଦ୍ୟତନ ହୋଇଛି</string>
+    <string name="script_import_failed">ଆମଦାନୀ ବିଫଳ ହେଲା। <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>। କେବଳ ବିଶ୍ୱସ୍ତ ସ୍କ୍ରିପ୍ଟ ପାଇଁ ଅନୁମତି ଦିଅନ୍ତୁ।</string>
+    <string name="script_permission_screen">ସ୍କ୍ରିନ୍ ପଢ଼ିବା</string>
+    <string name="script_permission_actions">କ୍ଲିକ୍, ସ୍କ୍ରୋଲ୍, ଟାଇପ୍ କରିବା ଏବଂ ଫୋକସ୍ ଘୁଞ୍ଚାଇବା</string>
+    <string name="script_permission_speech">SandFly ର କଥା ପାଇବା ଏବଂ ବଦଳାଇବା</string>
+    <string name="script_permission_passwords">ପାସୱାର୍ଡ ଫିଲ୍ଡ ପଢ଼ିବା</string>
+    <string name="script_permission_input">ଜେଶ୍ଚର୍, କୀ, ମେନୁ ଆଇଟମ୍ ଏବଂ ପଢ଼ିବା ନିୟନ୍ତ୍ରଣ ଯୋଡ଼ିବା</string>
+    <string name="script_permission_network">ଇଣ୍ଟରନେଟ୍ ବ୍ୟବହାର କରିବା</string>
+    <string name="script_permission_clipboard">କ୍ଲିପବୋର୍ଡ ପଢ଼ିବା ଏବଂ ବଦଳାଇବା</string>
+    <string name="script_permission_system">ପଛକୁ କିମ୍ବା ହୋମକୁ ଯିବା, ବିଜ୍ଞପ୍ତି ଏବଂ ଆପ୍ ଖୋଲିବା</string>
+    <string name="script_permission_notifications">ପଢ଼ାଯାଉଥିବା ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ଏବଂ ବଦଳାଇବା</string>
+    <string name="script_permission_events">ଟାଇପିଂ ସହିତ ପ୍ରତ୍ୟେକ ଆପ୍‌ର ସମସ୍ତ କାର୍ଯ୍ୟକଳାପ ଦେଖିବା</string>
+    <string name="script_permission_dialogs">ଯେକୌଣସି ଆପ୍ ଉପରେ ଡାଏଲଗ୍ ଦେଖାଇବା</string>
+    <string name="script_permission_java">ପ୍ରତ୍ୟେକ ଆପ୍‌ରେ SandFlyର ସମସ୍ତ ଆକ୍ସେସ୍ ସହିତ Java କୋଡ୍ ଚଲାଇବା</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ଚାଲୁ କରନ୍ତୁ</string>
     <string name="script_permissions_title">ଅନୁମତି</string>
     <string name="script_permissions_none">କିଛି ନାହିଁ</string>
     <string name="script_settings_category">ସେଟିଂସ</string>
-    <string name="script_list_filter">ଫିଲ୍ଟର୍ |</string>
-    <string name="script_button_off">ସ୍କ୍ରିପ୍ଟକୁ ପ୍ରଥମେ ଟର୍ନ୍ କର |</string>
-    <string name="script_permissions_summary">ଗୋଟିଏ ବନ୍ଦ କରିବା ଆବଶ୍ୟକ କରୁଥିବା ଅଂଶଗୁଡ଼ିକୁ ବନ୍ଦ କରିଦିଏ |</string>
-    <string name="script_install_permissions_note">ଆପଣ ପରେ ଏହାକୁ ବନ୍ଦ କରିପାରିବେ |</string>
-    <string name="script_manage_category">ପରିଚାଳନା କରନ୍ତୁ |</string>
-    <string name="script_move_up">ପୂର୍ବରୁ ଚଲାନ୍ତୁ |</string>
-    <string name="script_move_down">ପରେ ଚଲାନ୍ତୁ |</string>
-    <string name="script_order_summary">ସମାନ ବକ୍ତବ୍ୟ ପରିବର୍ତ୍ତନ କରୁଥିବା ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ପାଇଁ ଅର୍ଡର | ଆପ୍ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ପ୍ରଥମେ ଚାଲିଥାଏ |</string>
-    <string name="script_log">ଲଗ୍ କରନ୍ତୁ |</string>
-    <string name="script_log_summary">SandFly ଆରମ୍ଭରୁ ଆଉଟପୁଟ୍ ଏବଂ ତ୍ରୁଟି |</string>
-    <string name="script_clear_storage">ଗଚ୍ଛିତ ତଥ୍ୟ ସଫା କରନ୍ତୁ |</string>
-    <string name="script_storage_cleared">ଗଚ୍ଛିତ ତଥ୍ୟ ସଫା ହୋଇଛି |</string>
-    <string name="script_remove">ଅପସାରଣ କରନ୍ତୁ |</string>
+    <string name="script_list_filter">ଫିଲ୍ଟର୍</string>
+    <string name="script_button_off">ପ୍ରଥମେ ସ୍କ୍ରିପ୍ଟ ଚାଲୁ କରନ୍ତୁ</string>
+    <string name="script_permissions_summary">ଏକ ଅନୁମତି ବନ୍ଦ କଲେ ତାହା ଆବଶ୍ୟକ କରୁଥିବା ଅଂଶଗୁଡ଼ିକ ବନ୍ଦ ହୋଇଯାଏ।</string>
+    <string name="script_install_permissions_note">ଆପଣ ପରେ ଏହାକୁ ବନ୍ଦ କରିପାରିବେ।</string>
+    <string name="script_manage_category">ପରିଚାଳନା</string>
+    <string name="script_move_up">ପୂର୍ବରୁ ଚଲାନ୍ତୁ</string>
+    <string name="script_move_down">ପରେ ଚଲାନ୍ତୁ</string>
+    <string name="script_order_summary">ସମାନ ସ୍ପିଚ୍ ବଦଳାଉଥିବା ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକର କ୍ରମ। ଆପ୍ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ପ୍ରଥମେ ଚାଲେ।</string>
+    <string name="script_log">ଲଗ୍</string>
+    <string name="script_log_summary">SandFly ଆରମ୍ଭରୁ ଆଉଟପୁଟ୍ ଏବଂ ତ୍ରୁଟି</string>
+    <string name="script_clear_storage">ଗଚ୍ଛିତ ତଥ୍ୟ ସଫା କରନ୍ତୁ</string>
+    <string name="script_storage_cleared">ଗଚ୍ଛିତ ତଥ୍ୟ ସଫା ହୋଇଛି</string>
+    <string name="script_remove">ଅପସାରଣ କରନ୍ତୁ</string>
     <string name="script_remove_title"><xliff:g id="name">%1$s</xliff:g> ଅପସାରଣ କରିବେ?</string>
-    <string name="script_remove_message">ଏହାର କୋଡ୍, ଡାଟା ଏବଂ ସେଟିଙ୍ଗ୍ ଡିଲିଟ୍ କରେ |</string>
-    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> ଅପସାରିତ ହୋଇଛି |</string>
-    <string name="script_log_empty">ଲଗ୍ ଖାଲି ଅଛି |</string>
-    <string name="script_log_clear">ଲଗ୍ ସଫା କରନ୍ତୁ |</string>
-    <string name="script_log_copy">ଲଗ୍ କପି କରନ୍ତୁ |</string>
-    <string name="script_log_copied">ଲଗ୍ କପି ହୋଇଛି |</string>
+    <string name="script_remove_message">ଏହାର କୋଡ୍, ଡାଟା ଏବଂ ସେଟିଂସ ଡିଲିଟ୍ କରେ।</string>
+    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g> ଅପସାରିତ ହୋଇଛି</string>
+    <string name="script_log_empty">ଲଗ୍ ଖାଲି ଅଛି</string>
+    <string name="script_log_clear">ଲଗ୍ ସଫା କରନ୍ତୁ</string>
+    <string name="script_log_copy">ଲଗ୍ କପି କରନ୍ତୁ</string>
+    <string name="script_log_copied">ଲଗ୍ କପି ହୋଇଛି</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="needed">%1$d</xliff:g> କିମ୍ବା ପରେ ଆବଶ୍ୟକ କରେ | ଏହି SandFly ରେ <xliff:g id="current">%2$d</xliff:g> ଅଛି, ତେଣୁ ଅଂଶଗୁଡିକ କାମ କରିନପାରେ |</string>
-    <string name="script_api_untested">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="tested">%1$d</xliff:g> ପର୍ଯ୍ୟନ୍ତ ପରୀକ୍ଷିତ | ଏହି SandFly ରେ <xliff:g id="current">%2$d</xliff:g> ଅଛି, ତେଣୁ ଏହା ଆଶା କରାଯାଉଥିବା ପରି କାମ କରିନପାରେ |</string>
-    <string name="script_state_incompatible">ଏହି SandFly ସହିତ କାମ କରିନପାରେ |</string>
-    <string name="script_api_range">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="min">%1$d</xliff:g> ରୁ <xliff:g id="tested">%2$d</xliff:g> |</string>
-    <string name="script_compatibility_title">ସୁସଙ୍ଗତତା |</string>
-    <string name="script_install_anyway">ଯାହା ବି ହେଉ ସଂସ୍ଥାପନ କରନ୍ତୁ |</string>
-    <string name="script_update_anyway">ଯାହା ବି ହେଉ ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
-    <string name="script_homepage">ମୂଳପୃଷ୍ଠା ଖୋଲନ୍ତୁ |</string>
-    <string name="script_homepage_confirm_title">ଏହି ଠିକଣା ଖୋଲନ୍ତୁ?</string>
-    <string name="script_homepage_open">ଖୋଲନ୍ତୁ |</string>
-    <string name="script_homepage_failed">କ app ଣସି ଆପ୍ <xliff:g id="address">%1$s</xliff:g> ଖୋଲିପାରିବ ନାହିଁ |</string>
-    <string name="script_turned_off">ବାରମ୍ବାର ତ୍ରୁଟି ପରେ <xliff:g id="name">%1$s</xliff:g> ବନ୍ଦ ହୋଇଗଲା | ସ୍କ୍ରିପ୍ଟରେ ଏହାର ଲଗ୍ ଦେଖନ୍ତୁ |</string>
-    <string name="shortcut_inspect_item">ଫୋକସ୍ ଆଇଟମ୍ ଯାଞ୍ଚ କରନ୍ତୁ |</string>
-    <string name="script_inspect_no_item">କ item ଣସି ବସ୍ତୁର ଫୋକସ୍ ନାହିଁ |</string>
-    <string name="script_inspect_copied">କପି କରାଯାଇଛି | <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">କ id ଣସି id ନାହିଁ, ତେଣୁ ନିୟମ ଏହାର ନାମ ଦେଇପାରିବ ନାହିଁ | କପି କରାଯାଇଛି | <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">ସ୍କ୍ରିନ୍ ଗଛ କପି କରନ୍ତୁ |</string>
-    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ଆଇଟମଗୁଡିକ କପି କରାଯାଇଛି |</string>
-    <string name="script_tree_none">କପି କରିବାକୁ କ window ଣସି ୱିଣ୍ଡୋ ନାହିଁ |</string>
-    <string name="script_tree_clip_label">ସ୍କ୍ରିନ୍ ଗଛ |</string>
-    <string name="summary_copy_screen_tree_menu">ସ୍କ୍ରିପ୍ଟ ଲେଖିବା ପାଇଁ ସ୍କ୍ରିନରେ ଥିବା ସମସ୍ତ ଆଇଟମକୁ JSON ଭାବରେ କପି କରନ୍ତୁ |</string>
+    <string name="script_api_too_old">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="needed">%1$d</xliff:g> କିମ୍ବା ପରବର୍ତ୍ତୀ ଆବଶ୍ୟକ। ଏହି SandFlyରେ <xliff:g id="current">%2$d</xliff:g> ଅଛି, ତେଣୁ କିଛି ଅଂଶ କାମ ନକରିପାରେ।</string>
+    <string name="script_api_untested">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="tested">%1$d</xliff:g> ପର୍ଯ୍ୟନ୍ତ ପରୀକ୍ଷିତ। ଏହି SandFlyରେ <xliff:g id="current">%2$d</xliff:g> ଅଛି, ତେଣୁ ଏହା ଆଶା ଅନୁଯାୟୀ କାମ ନକରିପାରେ।</string>
+    <string name="script_state_incompatible">ଏହି SandFly ସହିତ କାମ କରିନପାରେ</string>
+    <string name="script_api_range">ସ୍କ୍ରିପ୍ଟ API <xliff:g id="min">%1$d</xliff:g> ରୁ <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_compatibility_title">ସୁସଙ୍ଗତତା</string>
+    <string name="script_install_anyway">ଯାହା ବି ହେଉ ସଂସ୍ଥାପନ କରନ୍ତୁ</string>
+    <string name="script_update_anyway">ତଥାପି ଅପଡେଟ କରନ୍ତୁ</string>
+    <string name="script_homepage">ମୂଳପୃଷ୍ଠା ଖୋଲନ୍ତୁ</string>
+    <string name="script_homepage_confirm_title">ଏହି ଠିକଣା ଖୋଲିବେ?</string>
+    <string name="script_homepage_open">ଖୋଲନ୍ତୁ</string>
+    <string name="script_homepage_failed">କୌଣସି ଆପ୍ <xliff:g id="address">%1$s</xliff:g> ଖୋଲିପାରିବ ନାହିଁ</string>
+    <string name="script_turned_off">ବାରମ୍ବାର ତ୍ରୁଟି ପରେ <xliff:g id="name">%1$s</xliff:g> ବନ୍ଦ ହୋଇଗଲା। ଏହାର ଲଗ୍ “ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ”ରେ ଦେଖନ୍ତୁ।</string>
+    <string name="shortcut_inspect_item">ଫୋକସ୍ ଆଇଟମ୍ ଯାଞ୍ଚ କରନ୍ତୁ</string>
+    <string name="script_inspect_no_item">କୌଣସି ବସ୍ତୁର ଫୋକସ୍ ନାହିଁ</string>
+    <string name="script_inspect_copied">କପି କରାଯାଇଛି। <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id ନାହିଁ, ତେଣୁ ନିୟମଗୁଡ଼ିକ ଏହାକୁ ସୂଚାଇପାରିବ ନାହିଁ। କପି କରାଗଲା। <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">ସ୍କ୍ରିନ୍ ଟ୍ରି କପି କରନ୍ତୁ</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g>ଟି ଆଇଟମ କପି କରାଯାଇଛି</string>
+    <string name="script_tree_none">କପି କରିବାକୁ କୌଣସି ୱିଣ୍ଡୋ ନାହିଁ</string>
+    <string name="script_tree_clip_label">ସ୍କ୍ରିନ୍ ଟ୍ରି</string>
+    <string name="summary_copy_screen_tree_menu">ସ୍କ୍ରିପ୍ଟ ଲେଖିବା ପାଇଁ ସ୍କ୍ରିନର ସମସ୍ତ ଆଇଟମକୁ JSON ଭାବେ କପି କରିବା</string>
     <string name="script_inspect_clip_label">ଆଇଟମ୍ ବିବରଣୀ</string>
-    <string name="summary_inspect_item_menu">ସ୍କ୍ରିପ୍ଟ ଲେଖିବା ପାଇଁ, ତୁମେ ଥିବା ଆଇଟମ୍ ର ବିବରଣୀ କୁହ ଏବଂ କପି କର |</string>
-    <string name="script_keys_backtalk_modifier">SandFly ରୂପାନ୍ତରକାରୀ |</string>
-    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ତାପରେ <xliff:g id="second">%2$s</xliff:g> |</string>
+    <string name="summary_inspect_item_menu">ସ୍କ୍ରିପ୍ଟ ଲେଖିବା ପାଇଁ ଶେଷ ଫୋକସ୍ ହୋଇଥିବା ଆଇଟମର ବିବରଣୀ କହିବା ଓ କପି କରିବା</string>
+    <string name="script_keys_backtalk_modifier">SandFly ମୋଡିଫାୟର୍ କି</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ତାପରେ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ନିର୍ଦ୍ଦେଶଗୁଡ଼ିକ</string>
-    <string name="script_commands_summary">ଏକ ଚାଲୁଥିବା ସ୍କ୍ରିପ୍ଟର ଅଙ୍ଗଭଙ୍ଗୀ ଏବଂ ଚାବି SandFly ପୂର୍ବରୁ ଆସେ | SandFly ରଖିବା ପାଇଁ ଗୋଟିଏ ବନ୍ଦ କରନ୍ତୁ |</string>
+    <string name="script_commands_summary">ଚାଲୁଥିବା ସ୍କ୍ରିପ୍ଟର ଜେଶ୍ଚର ଓ କିଗୁଡ଼ିକ SandFlyର ଜେଶ୍ଚର ଓ କି ଠାରୁ ଅଗ୍ରାଧିକାର ପାଏ। SandFlyର ରଖିବାକୁ ସ୍କ୍ରିପ୍ଟର ବନ୍ଦ କରନ୍ତୁ।</string>
     <string name="script_binding_gesture">ଅଙ୍ଗଭଙ୍ଗୀ: <xliff:g id="gesture">%1$s</xliff:g></string>
-    <string name="script_binding_keys">ଚାବି: <xliff:g id="keys">%1$s</xliff:g></string>
-    <string name="script_binding_menu">SandFly ମେନୁ |</string>
+    <string name="script_binding_keys">କି: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">SandFly ମେନୁ</string>
     <string name="script_binding_control">ପଢ଼ିବା ନିୟନ୍ତ୍ରଣ</string>
     <string name="script_binding_none">କିଛି ନାହିଁ</string>
     <string name="script_binding_turn_on">ଚାଲୁ କରନ୍ତୁ</string>
     <string name="script_binding_turn_off">ବନ୍ଦ କରନ୍ତୁ</string>
-    <string name="script_binding_restore">ଡିଫଲ୍ଟଗୁଡିକ ପୁନରୁଦ୍ଧାର କରନ୍ତୁ |</string>
-    <string name="script_binding_restored">ଡିଫଲ୍ଟଗୁଡିକ ପୁନ restored ସ୍ଥାପିତ ହୋଇଛି |</string>
-    <string name="script_binding_perform">ଅଙ୍ଗଭଙ୍ଗୀ କିମ୍ବା ଚାବି କର |</string>
-    <string name="script_binding_perform_summary">ପରବର୍ତ୍ତୀ ଅଙ୍ଗଭଙ୍ଗୀ, କିମ୍ବା SandFly ମୋଡିଫାୟର୍ ସହିତ ଦବାଯାଇଥିବା କିଗୁଡ଼ିକୁ ନ୍ୟସ୍ତ କରନ୍ତୁ |</string>
-    <string name="script_binding_perform_message">ଅଙ୍ଗଭଙ୍ଗୀ କରନ୍ତୁ କିମ୍ବା ଚାବିକୁ ଦବାନ୍ତୁ |</string>
+    <string name="script_binding_restore">ଡିଫଲ୍ଟଗୁଡିକ ପୁନରୁଦ୍ଧାର କରନ୍ତୁ</string>
+    <string name="script_binding_restored">ଡିଫଲ୍ଟଗୁଡ଼ିକ ପୁନଃସ୍ଥାପିତ ହୋଇଛି</string>
+    <string name="script_binding_perform">ଜେଶ୍ଚର୍ କରନ୍ତୁ କିମ୍ବା କୀ ଦବାନ୍ତୁ</string>
+    <string name="script_binding_perform_summary">ପରବର୍ତ୍ତୀ ଜେଶ୍ଚର କିମ୍ବା SandFly ମୋଡିଫାୟର୍ କି ସହିତ ଦବାଯାଇଥିବା କିଗୁଡ଼ିକୁ ନ୍ୟସ୍ତ କରିବା</string>
+    <string name="script_binding_perform_message">ଜେଶ୍ଚର୍ କରନ୍ତୁ କିମ୍ବା କୀ ଦବାନ୍ତୁ।</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> କୁ <xliff:g id="command">%2$s</xliff:g> ନ୍ୟସ୍ତ କରନ୍ତୁ?</string>
-    <string name="script_binding_assign">ନ୍ୟସ୍ତ କରନ୍ତୁ |</string>
-    <string name="script_binding_choose_gesture">ଅଙ୍ଗଭଙ୍ଗୀ ବାଛନ୍ତୁ |</string>
-    <string name="script_binding_type_keys">କିଗୁଡିକ ଟାଇପ୍ କରନ୍ତୁ |</string>
-    <string name="script_binding_type_keys_summary">sf+shift+n, କିମ୍ବା sf+t, s ପରି |</string>
-    <string name="script_binding_bad_keys">ଏହି ଚାବିଗୁଡିକ ବ୍ୟବହାର କରିପାରିବେ ନାହିଁ | <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_assign">ନ୍ୟସ୍ତ କରନ୍ତୁ</string>
+    <string name="script_binding_choose_gesture">ଅଙ୍ଗଭଙ୍ଗୀ ବାଛନ୍ତୁ</string>
+    <string name="script_binding_type_keys">କିଗୁଡିକ ଟାଇପ୍ କରନ୍ତୁ</string>
+    <string name="script_binding_type_keys_summary">sf+shift+n, କିମ୍ବା sf+t, s ପରି</string>
+    <string name="script_binding_bad_keys">ଏହି କୀଗୁଡ଼ିକ ବ୍ୟବହାର କରିହେବ ନାହିଁ। <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">ଏହା ଯୋଗ କରେ:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
-    <string name="script_sources">ସ୍କ୍ରିପ୍ଟ ଉତ୍ସଗୁଡ଼ିକ |</string>
-    <string name="script_sources_none">କ sources ଣସି ଉତ୍ସ ଯୋଗ କରାଯାଇ ନାହିଁ |</string>
-    <string name="script_source_add">ଉତ୍ସ ଯୋଡନ୍ତୁ |</string>
-    <string name="script_source_add_button">ଯୋଡନ୍ତୁ |</string>
+    <string name="script_sources">ସ୍କ୍ରିପ୍ଟ ଉତ୍ସଗୁଡ଼ିକ</string>
+    <string name="script_sources_none">କୌଣସି ଉତ୍ସ ଯୋଗ କରାଯାଇ ନାହିଁ</string>
+    <string name="script_source_add">ଉତ୍ସ ଯୋଡନ୍ତୁ</string>
+    <string name="script_source_add_button">ଯୋଡନ୍ତୁ</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea କିମ୍ବା Bitbucket ରେ ଏକ ସଂଗ୍ରହାଳୟର ଠିକଣା ନୁହେଁ |</string>
-    <string name="script_source_exists">ଏହି ଉତ୍ସ ପୂର୍ବରୁ ଯୋଗ କରାଯାଇଛି |</string>
+    <string name="script_source_invalid">ଏହା GitHub, GitLab, Codeberg, Gitea କିମ୍ବା Bitbucketରେ ଥିବା ରିପୋଜିଟୋରୀର ଠିକଣା ନୁହେଁ।</string>
+    <string name="script_source_exists">ଏହି ଉତ୍ସ ପୂର୍ବରୁ ଯୋଗ କରାଯାଇଛି।</string>
     <string name="script_source_loading">ଲୋଡ ହେଉଛି</string>
-    <string name="script_source_empty">ଏହି ଉତ୍ସରେ କ No ଣସି ସ୍କ୍ରିପ୍ଟ ନାହିଁ |</string>
-    <string name="script_source_failed">ସ୍କ୍ରିପ୍ଟ ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ | <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_source_retry">ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+    <string name="script_source_empty">ଏହି ଉତ୍ସରେ କୌଣସି ସ୍କ୍ରିପ୍ଟ ନାହିଁ</string>
+    <string name="script_source_failed">ସ୍କ୍ରିପ୍ଟ ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ। <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_retry">ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> ଡାଉନଲୋଡ୍ କରୁଛି</string>
-    <string name="script_source_remove">ଉତ୍ସ ଅପସାରଣ କରନ୍ତୁ |</string>
+    <string name="script_source_remove">ଉତ୍ସ ଅପସାରଣ କରନ୍ତୁ</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> ଅପସାରଣ କରିବେ?</string>
-    <string name="script_source_remove_message">ଏଥିରୁ ସଂସ୍ଥାପିତ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ସଂସ୍ଥାପିତ ରୁହନ୍ତୁ |</string>
-    <string name="scripts_auto_update">ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକୁ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
-    <string name="scripts_check_updates">ଅଦ୍ୟତନ ପାଇଁ ଯାଞ୍ଚ କରନ୍ତୁ |</string>
+    <string name="script_source_remove_message">ଏଥିରୁ ସଂସ୍ଥାପିତ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ସଂସ୍ଥାପିତ ରହିବ।</string>
+    <string name="scripts_auto_update">ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକୁ ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଅଦ୍ୟତନ କରନ୍ତୁ</string>
+    <string name="scripts_check_updates">ଅଦ୍ୟତନ ପାଇଁ ଯାଞ୍ଚ କରନ୍ତୁ</string>
     <string name="scripts_checking_updates">ଅଦ୍ୟତନ ପାଇଁ ଯାଞ୍ଚ କରୁଛି…</string>
     <string name="scripts_updates_category">ଅଦ୍ୟତନଗୁଡିକ</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
-        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ସ୍କ୍ରିପ୍ଟ ଅପଡେଟ୍: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g> |</item>
-        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ଅଦ୍ୟତନ ହୋଇଛି: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g>ଟି ସ୍କ୍ରିପ୍ଟ ଅପଡେଟ୍ ହେଲା: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g>ଟି ସ୍କ୍ରିପ୍ଟ ଅପଡେଟ୍ ହେଲା: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">ଅଦ୍ୟତନଗୁଡ଼ିକ ଅଦ୍ୟତନଗୁଡ଼ିକ ତାଲିକାଭୁକ୍ତ |</string>
-    <string name="scripts_update_check_failed">କିଛି ଉତ୍ସ ଯାଞ୍ଚ ହୋଇପାରିଲା ନାହିଁ |</string>
-    <string name="scripts_up_to_date">ସମସ୍ତ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ଅପ୍ ଟୁ ଡେଟ୍ ଅଟେ |</string>
+    <string name="scripts_updates_to_approve">ଅଦ୍ୟତନଗୁଡ଼ିକ “ଅଦ୍ୟତନଗୁଡିକ” ତଳେ ତାଲିକାଭୁକ୍ତ</string>
+    <string name="scripts_update_check_failed">କିଛି ଉତ୍ସ ଯାଞ୍ଚ ହୋଇପାରିଲା ନାହିଁ</string>
+    <string name="scripts_up_to_date">ସମସ୍ତ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ଅପ୍ ଟୁ ଡେଟ୍ ଅଟେ</string>
 </resources>

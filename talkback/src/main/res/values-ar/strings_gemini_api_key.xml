@@ -7,9 +7,9 @@
     <string name="gemini_api_key_save">حفظ</string>
     <string name="gemini_api_key_get">الحصول على مفتاح</string>
     <string name="gemini_api_terms_link">بنود الخدمة الإضافية لواجهة Gemini API</string>
-    <string name="title_pref_gemini_model">Gemini الموديل</string>
+    <string name="title_pref_gemini_model">نموذج Gemini</string>
     <string name="gemini_model_automatic">تلقائي</string>
-    <string name="summary_pref_gemini_model_automatic">تلقائي: Gemini فلاش، ثم فلاش لايت عندما يكون الفلاش مشغولاً</string>
+    <string name="summary_pref_gemini_model_automatic">تلقائي: Gemini Flash، ثم Flash-Lite عندما يكون Flash مشغولاً</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>، ثم Flash-Lite عندما يكون مشغولاً</string>
     <string name="gemini_model_loading">الحصول على النماذج…</string>
     <string name="gemini_model_list_failed">تعذر الحصول على النماذج: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
@@ -17,7 +17,7 @@
     <string name="ai_service_address_hint">العنوان، مثل https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">النموذج</string>
     <string name="ai_service_address_invalid">يجب أن يبدأ العنوان بـ https://. لم يتم حفظ أي شيء.</string>
-    <string name="dialog_message_ai_service_consent">يتم إرسال الصور ولقطات الشاشة إلى <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ليتم وصفها، الأمر الذي يستغرق عدة ثوانٍ. تطبق شروطها وسياسة الخصوصية الخاصة بها. الذكاء الاصطناعي التوليدي هو أمر تجريبي، لذلك سوف يرتكب أخطاء.</string>
+    <string name="dialog_message_ai_service_consent">تُرسَل الصور ولقطات الشاشة إلى <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> لوصفها، ويستغرق ذلك عدة ثوانٍ. تسري بنود الخدمة وسياسة الخصوصية الخاصة بها. الذكاء الاصطناعي التوليدي تجريبي، لذا سيرتكب أخطاء.</string>
     <string name="ai_service_error_api_key">لم تقبل خدمة AI مفتاح API. تحقق من إعداداته في الأوصاف التلقائية.</string>
     <string name="ai_service_error_quota">تم الوصول إلى الحد الأقصى لاستخدام خدمة الذكاء الاصطناعي. حاول مرة أخرى لاحقًا.</string>
     <string name="ai_service_error_busy">خدمة الذكاء الاصطناعي مشغولة الآن. حاول مرة أخرى بعد قليل.</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">خدمة أخرى</string>
     <string name="title_pref_category_ai_services">خدمات الذكاء الاصطناعي</string>
     <string name="title_pref_ai_provider">خدمة الذكاء الاصطناعي</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> الإعدادات</string>
+    <string name="title_ai_provider_settings">إعدادات <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>، لم يتم إعداده</string>
     <string name="ai_provider_in_use">قيد الاستخدام</string>
     <string name="ai_provider_not_set_up">لم يتم إعداده</string>
@@ -45,7 +45,7 @@
     <string name="ai_provider_not_set">لم يتم ضبطه</string>
     <string name="ai_provider_set">تم تكوينه</string>
     <string name="title_pref_gemini_api_key_of">مفتاح API لخدمة <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> الموديل</string>
+    <string name="title_pref_gemini_model_of">نموذج <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">لم يتم اختياره</string>
     <string name="ai_provider_key_message">الصق مفتاح API الخاص بك لخدمة <xliff:g id="service" example="Claude">%1$s</xliff:g>. لإزالته، أفرغ الحقل ثم احفظ. تُرسل الصور والشاشات التي تطلب وصفها إلى <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">قم بتعيين مفتاح <xliff:g id="service" example="Claude">%1$s</xliff:g> API أولاً</string>

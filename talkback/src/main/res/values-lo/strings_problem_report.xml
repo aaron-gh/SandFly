@@ -2,12 +2,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_problem_report">ສົ່ງຄຳຕິຊົມ</string>
     <string name="title_pref_problem_report_type">ປະເພດຂອງຄໍາຄຶດຄໍາເຫັນ</string>
-    <string name="title_pref_problem_report_area">ພື້ນທີ່</string>
+    <string name="title_pref_problem_report_area">ສ່ວນ</string>
     <string name="title_pref_problem_report_title">ຫົວຂໍ້</string>
-    <string name="title_pref_problem_report_app">App ທີ່​ມັນ​ເກີດ​ຂຶ້ນ​</string>
+    <string name="title_pref_problem_report_app">ແອັບທີ່ມັນເກີດຂຶ້ນ</string>
     <string name="title_pref_problem_report_description">ລາຍລະອຽດ</string>
     <string name="dialog_message_problem_report_description">ສິ່ງທີ່ເກີດຂຶ້ນແລະສິ່ງທີ່ທ່ານຄາດຫວັງ.</string>
-    <string name="title_pref_problem_report_steps">ຂັ້ນຕອນການແຜ່ພັນບັນຫາຊອບແວ</string>
+    <string name="title_pref_problem_report_steps">ຂັ້ນຕອນໃນການເຮັດໃຫ້ບັນຫາເກີດຂຶ້ນອີກ</string>
     <string name="title_pref_problem_report_email">ອີເມວສຳລັບການຕອບກັບ</string>
     <string name="title_pref_problem_report_device">ລວມຂໍ້ມູນອຸປະກອນ</string>
     <string name="title_pref_problem_report_log">ລວມເອົາບັນທຶກ SandFly</string>
@@ -21,20 +21,20 @@
     <string name="problem_report_no_connection">ບໍ່ໄດ້ສົ່ງຄຳຕິຊົມ. ກວດເບິ່ງການເຊື່ອມຕໍ່ອິນເຕີເນັດ.</string>
     <string name="problem_report_not_sent">ບໍ່ໄດ້ສົ່ງຄຳຕິຊົມ. ລອງໃໝ່ໃນພາຍຫຼັງ.</string>
     <string-array name="problem_report_type_entries">
-        <item>ພຶດຕິກໍາທີ່ບໍ່ຖືກຕ້ອງ</item>
-        <item>ອຸປະຕິເຫດ</item>
+        <item>ເຮັດວຽກບໍ່ຖືກຕ້ອງ</item>
+        <item>ຂັດຂ້ອງ</item>
         <item>ຊ້າ ຫຼື ບໍ່ຕອບສະໜອງ</item>
-        <item>ຄຳແນະນຳ</item>
+        <item>ຂໍ້ສະເໜີ</item>
     </string-array>
     <string-array name="problem_report_area_entries">
-        <item>ການປາກເວົ້າ</item>
+        <item>ສຽງເວົ້າ</item>
         <item>ທ່າທາງ</item>
-        <item>ແຕະສໍາຫຼວດ</item>
-        <item>ການຄວບຄຸມການອ່ານແລະເມນູ</item>
-        <item>ການພິມແລະແປ້ນພິມ</item>
+        <item>​ສຳຫຼວດ​ໂດຍ​ການ​ສຳ​ຜັດ</item>
+        <item>ຕົວຄວບຄຸມການອ່ານ ແລະ ເມນູ</item>
+        <item>ການພິມ ແລະ ແປ້ນພິມ</item>
         <item>ແປ້ນພິມອັກສອນນູນ</item>
         <item>ຈໍສະແດງຜົນຕົວອັກສອນນູນ</item>
-        <item>ສຽງແລະການສັ່ນສະເທືອນ</item>
+        <item>ສຽງ ແລະ ການສັ່ນ</item>
         <item>ການແຈ້ງເຕືອນ</item>
         <item>ເນື້ອຫາເວັບ</item>
         <item>ສະຄຣິບ</item>
@@ -47,16 +47,16 @@
     <string name="title_report_drafts">ຮ່າງ</string>
     <string name="report_inbox_empty">ບໍ່ມີການສົ່ງຄຳຕິຊົມ</string>
     <string name="report_drafts_empty">ບໍ່ມີສະບັບຮ່າງ</string>
-    <string name="report_just_now">ດຽວນີ້</string>
+    <string name="report_just_now">ຫາກໍ່</string>
     <string name="report_untitled">ບໍ່ມີຊື່</string>
-    <string name="report_draft_summary">ປ່ຽນແລ້ວ<xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
-    <string name="report_sent_at">ສົ່ງແລ້ວ<xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary">ປ່ຽນແລ້ວ <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_sent_at">ສົ່ງແລ້ວ <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
-        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ຕອບໃໝ່</item>
-        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ຕອບກັບໃໝ່</item>
+        <item quantity="one">ການຕອບກັບໃໝ່ <xliff:g id="count" example="1">%1$d</xliff:g> ລາຍການ</item>
+        <item quantity="other">ການຕອບກັບໃໝ່ <xliff:g id="count" example="2">%1$d</xliff:g> ລາຍການ</item>
     </plurals>
     <string name="report_status_changed">ສະ​ຖາ​ນະ​ການ​ປ່ຽນ​ແປງ​</string>
-    <string name="report_status_open">ເປີດບັນຫາ</string>
+    <string name="report_status_open">ເປີດຢູ່</string>
     <string name="report_status_completed">ປິດ, ສໍາເລັດ</string>
     <string name="report_status_not_planned">ປິດ, ບໍ່ໄດ້ວາງແຜນໄວ້</string>
     <string name="report_status_duplicate">ປິດ, ຊໍ້າກັນ</string>
@@ -66,11 +66,11 @@
     <string name="title_report_messages">ຂໍ້ຄວາມ</string>
     <string name="report_message_from_developer">ນັກພັດທະນາ, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">ເຈົ້າ, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">ຕອບ</string>
+    <string name="title_report_reply">ຄຳຕອບ</string>
     <string name="title_report_reply_text">ຄໍາຕອບຂອງເຈົ້າ</string>
     <string name="title_report_send_reply">ສົ່ງຄໍາຕອບ</string>
     <string name="report_reply_sent">ສົ່ງຄຳຕອບແລ້ວ.</string>
-    <string name="report_reply_not_sent">ຕອບກັບບໍ່ໄດ້ສົ່ງ. ລອງໃໝ່ໃນພາຍຫຼັງ.</string>
+    <string name="report_reply_not_sent">ບໍ່ໄດ້ສົ່ງການຕອບກັບ. ລອງໃໝ່ພາຍຫຼັງ.</string>
     <string name="title_report_remove">ເອົາອອກຈາກອິນບັອກ</string>
     <string name="dialog_title_report_remove">ລຶບຄຳຕິຊົມນີ້ອອກຈາກອິນບັອກບໍ?</string>
     <string name="dialog_message_report_remove">ການຕອບກັບຫາມັນຈະບໍ່ເຂົ້າເຖິງໂທລະສັບໜ່ວຍນີ້ອີກຕໍ່ໄປ.</string>
@@ -78,7 +78,7 @@
     <string name="dialog_title_report_delete_draft">ລຶບສະບັບຮ່າງນີ້ບໍ?</string>
     <string name="button_report_delete">ລຶບ</string>
     <string name="report_missing">ຄຳຕິຊົມນີ້ບໍ່ໄດ້ຢູ່ໃນກ່ອງຈົດໝາຍອີກຕໍ່ໄປ.</string>
-    <string name="notification_channel_problem_reports">ຄໍາຕອບຕອບໂຕ້</string>
-    <string name="report_notification_reply">ຕອບກັບຫາ <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="notification_channel_problem_reports">ການຕອບກັບຄຳຕິຊົມ</string>
+    <string name="report_notification_reply">ການຕອບກັບ <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

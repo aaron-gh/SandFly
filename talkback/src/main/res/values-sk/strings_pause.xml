@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pause_backtalk">Pauza SandFly</string>
-    <string name="summary_pause_backtalk">Vypnite reč, gestá a skúmajte dotykom, kým nezačnete pokračovať SandFly</string>
+    <string name="title_pause_backtalk">Pozastaviť SandFly</string>
+    <string name="summary_pause_backtalk">Vypne reč, gestá a „Preskúmanie dotykom“, kým SandFly znova nespustíte</string>
     <string name="keycombo_menu_global_pause_backtalk">Pozastaviť alebo obnoviť SandFly</string>
     <string name="backtalk_paused">SandFly pozastavené</string>
     <string name="backtalk_resumed">SandFly obnovené</string>
     <string name="notification_title_backtalk_paused">SandFly je pozastavené</string>
     <string name="notification_message_backtalk_paused">Klepnutím obnovíte</string>
     <string name="notification_channel_backtalk_paused">SandFly pozastavené</string>
-    <string name="dialog_title_pause_backtalk">Pauza SandFly?</string>
+    <string name="dialog_title_pause_backtalk">Pozastaviť SandFly?</string>
     <string name="dialog_button_pause_backtalk">Pozastaviť</string>
     <string name="dialog_message_pause_backtalk">Kým je SandFly pozastavené, nehovorí ani nereaguje na gestá a obrazovka funguje, ako keby nebola zapnutá žiadna čítačka obrazovky.</string>
-    <string name="message_resume_keyguard">Ak chcete pokračovať, klepnite na upozornenie SandFly je pozastavené, trikrát rýchlo stlačte tlačidlo zníženia hlasitosti alebo uzamknite a zobuďte telefón, aby sa zobrazila obrazovka uzamknutia.</string>
-    <string name="message_resume_screen_on">Ak chcete pokračovať, klepnite na upozornenie SandFly je pozastavené, trikrát rýchlo stlačte zníženie hlasitosti alebo vypnite a znova zapnite obrazovku.</string>
-    <string name="message_resume_manual">Ak chcete pokračovať, klepnite na upozornenie SandFly je pozastavené alebo trikrát rýchlo stlačte tlačidlo zníženia hlasitosti.</string>
+    <string name="message_resume_keyguard">Ak chcete pokračovať, klepnite na upozornenie „SandFly je pozastavené“, rýchlo trikrát stlačte tlačidlo zníženia hlasitosti alebo uzamknite a prebuďte telefón, aby sa zobrazila uzamknutá obrazovka.</string>
+    <string name="message_resume_screen_on">Ak chcete pokračovať, klepnite na upozornenie „SandFly je pozastavené“, rýchlo trikrát stlačte tlačidlo zníženia hlasitosti alebo vypnite a znova zapnite obrazovku.</string>
+    <string name="message_resume_manual">Ak chcete pokračovať, klepnite na upozornenie „SandFly je pozastavené“ alebo rýchlo trikrát stlačte tlačidlo zníženia hlasitosti.</string>
     <string name="message_resume_key_combo">Môžete tiež stlačiť <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>.</string>
-    <string name="title_pref_resume_backtalk">Pokračovať SandFly</string>
+    <string name="title_pref_resume_backtalk">Obnovenie SandFly</string>
     <string name="value_resume_keyguard">Keď sa zobrazí obrazovka uzamknutia</string>
     <string name="value_resume_screen_on">Keď sa obrazovka zapne</string>
     <string name="value_resume_manual">Iba z upozornenia alebo skratky</string>

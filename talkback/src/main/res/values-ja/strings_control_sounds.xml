@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">音と振動をコントロールする</string>
-    <string name="summary_pref_control_sounds">Unspoken が NVDA で行うように、ボタン、チェックボックス、編集フィールド、リスト項目などの各種類のコントロールに、フォーカスの音と振動の代わりに、テーマからの独自のサウンドと振動を与えます。音は画面上のコントロールがある場所から聞こえますが、SandFly ではそれがどのようなコントロールであるかは省略されています。</string>
-    <string name="title_pref_control_sounds_speak_roles">まだコントロールの種類を言う</string>
-    <string name="summary_pref_control_sounds_speak_roles">コントロール音が鳴ったら、ボタンなどのコントロールの種類を言います。これはすべてのサウンドテーマに当てはまります。</string>
+    <string name="title_pref_control_sounds">コントロールの音と振動</string>
+    <string name="summary_pref_control_sounds">Unspoken が NVDA で行うように、ボタン、チェックボックス、編集フィールド、リスト項目などのコントロールの種類ごとに、フォーカス音とフォーカス振動の代わりにテーマの専用の音と振動を使います。音は画面上のコントロールの位置から聞こえ、SandFly はコントロールの種類を読み上げません。</string>
+    <string name="title_pref_control_sounds_speak_roles">コントロールの種類も読み上げる</string>
+    <string name="summary_pref_control_sounds_speak_roles">コントロール音が鳴ったときも、ボタンなどのコントロールの種類を読み上げます。すべてのサウンド テーマに適用されます。</string>
     <string name="title_pref_control_sounds_3d">3Dオーディオ</string>
-    <string name="pref_control_sounds_3d_headphones">ヘッドフォン付き</string>
-    <string name="pref_control_sounds_3d_always">いつも</string>
-    <string name="pref_control_sounds_3d_never">決して、左右だけ</string>
-    <string name="individual_sound_control_button">サウンドコントロール：ボタン</string>
-    <string name="individual_sound_control_checkbox">サウンドの制御: チェックボックス</string>
-    <string name="individual_sound_control_radio_button">サウンドの制御：ラジオボタン</string>
-    <string name="individual_sound_control_edit_text">コントロールサウンド：編集フィールド</string>
-    <string name="individual_sound_control_combo_box">サウンドの制御: ドロップダウン リスト</string>
-    <string name="individual_sound_control_slider">コントロール音：スライダー</string>
-    <string name="individual_sound_control_link">コントロールサウンド：リンク</string>
-    <string name="individual_sound_control_image">制御音：映像</string>
-    <string name="individual_sound_control_clock">制御音：時計</string>
-    <string name="individual_sound_control_tab">コントロールサウンド：タブ</string>
-    <string name="individual_sound_control_menu_item">サウンドコントロール：メニュー項目</string>
-    <string name="individual_sound_control_list_item">コントロールサウンド：リスト項目</string>
-    <string name="individual_sound_control_tree_item">コントロールサウンド：ツリーアイテム</string>
+    <string name="pref_control_sounds_3d_headphones">ヘッドフォン使用時</string>
+    <string name="pref_control_sounds_3d_always">常に</string>
+    <string name="pref_control_sounds_3d_never">なし（左右のみ）</string>
+    <string name="individual_sound_control_button">コントロールの音：ボタン</string>
+    <string name="individual_sound_control_checkbox">コントロールの音：チェックボックス</string>
+    <string name="individual_sound_control_radio_button">コントロールの音：ラジオボタン</string>
+    <string name="individual_sound_control_edit_text">コントロールの音：編集フィールド</string>
+    <string name="individual_sound_control_combo_box">コントロールの音：ドロップダウン リスト</string>
+    <string name="individual_sound_control_slider">コントロールの音：スライダー</string>
+    <string name="individual_sound_control_link">コントロールの音：リンク</string>
+    <string name="individual_sound_control_image">コントロールの音：画像</string>
+    <string name="individual_sound_control_clock">コントロールの音：時計</string>
+    <string name="individual_sound_control_tab">コントロールの音：タブ</string>
+    <string name="individual_sound_control_menu_item">コントロールの音：メニュー項目</string>
+    <string name="individual_sound_control_list_item">コントロールの音：リスト項目</string>
+    <string name="individual_sound_control_tree_item">コントロールの音：ツリーアイテム</string>
 </resources>

@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">Veprimet e sistemit</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Prapa, kreu, njoftimet dhe të tjera</string>
   <string name="bd_commands_bindings_category_talkback_features_title">Veçoritë e SandFly</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menutë dhe cilësimet</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">Menytë dhe cilësimet e SandFly</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Cilësimet e breilit</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Gjuha dhe cilësimet e breilit</string>
   <string name="bd_commands_bindings_category_text_editing_title">Redaktimi i tekstit</string>
@@ -297,7 +297,7 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Mund të navigosh me shpejtësi në faqet e uebit duke përdorur komandën për të hyrë në modalitetin e shfletimit dhe duke shkruar më pas shkurtoret e mëposhtme me shkronja ose numra\n\nKëto shkurtore mund të përdoren edhe pa hyrë në modalitetin e shfletimit, por do të duhet të shtosh pikën 8 te komandat \"para\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Navigimi në tabelë</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Të çaktivizohet cilësimi i ekranit breil?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Mund ta aktivizosh sërish në çdo kohë te cilësimet SandFly</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Mund ta aktivizosh sërish në çdo kohë te Cilësimet e SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Çaktivizo</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Disa komanda nuk ofrohen</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_message">Komandat për navigim, cilësimet breil e disa veçori të SandFly nuk ofrohen kur shkruan ose modifikon.\n\n Për të përdorur këto komanda; fillimisht mbyll tastierën.</string>
@@ -323,12 +323,12 @@
     <string name="external_display_channel">Shfaqjet e Braillit nga aplikacionet e tjera</string>
     <string name="external_display_ask_title">Të lejohet që <xliff:g id="app" example="Notetaker">%1$s</xliff:g> të jetë një ekran braille për SandFly?</string>
     <string name="external_display_ask_text">SandFly nuk do ta përdorë derisa ta lejoni.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> do të jetë në gjendje të lexojë të gjitha shfaqjet SandFly në braille, që mund të jetë çdo gjë në ekran, duke përfshirë mesazhet dhe atë që shkruani. Ai gjithashtu do të jetë në gjendje të kontrollojë pajisjen tuaj siç mundeni me një ekran braille: shkruani, hapni aplikacionet dhe ekzekutoni çdo komandë SandFly. Lejo vetëm aplikacionet që ke besim.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> do të mund të lexojë gjithçka që SandFly shfaq në braille, që mund të jetë çdo gjë në ekran, përfshirë mesazhet dhe atë që shkruani. Do të mund ta kontrollojë edhe pajisjen ashtu si ju me një ekran braille: të shkruajë, të hapë aplikacione dhe të ekzekutojë çdo komandë të SandFly. Lejoni vetëm aplikacionet që u besoni.</string>
     <string name="external_display_allow">Lejo</string>
-    <string name="external_display_deny">Mos lejoni</string>
+    <string name="external_display_deny">Mos lejo</string>
     <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> është ekrani juaj braille</string>
     <string name="external_display_in_use_text">Ndërsa SandFly e përdor atë, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> mund të lexojë ekranin dhe të kontrollojë pajisjen.</string>
-    <string name="external_displays_title">Shfaqet nga aplikacionet e tjera</string>
+    <string name="external_displays_title">Ekranet nga aplikacionet e tjera</string>
     <string name="external_displays_summary">Aplikacionet që ju lejoni mund të jenë ekrane braille për SandFly. Një aplikacion që është një ekran braille mund të lexojë ekranin dhe të kontrollojë pajisjen.</string>
     <string name="external_displays_none">Asnjë aplikacion nuk mund të jetë ekran braille.</string>
 </resources>

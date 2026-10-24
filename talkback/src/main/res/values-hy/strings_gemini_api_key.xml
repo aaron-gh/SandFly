@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API-ի բանալի</string>
     <string name="summary_pref_gemini_api_key_built_in">Օգտագործվում է այս հավելվածում ներկառուցված բանալին</string>
-    <string name="gemini_api_key_dialog_message">Ստացեք անվճար API բանալի Google AI Studio-ում՝ aistudio.google.com/apikey հասցեով, և տեղադրեք այստեղ։ Բանալին հեռացնելու համար մաքրեք դաշտը և պահեք։\n\nՁեր նկարագրած պատկերներն ու էկրանները ուղարկվում են Google-ին։ Անվճար սակագնի դեպքում Google-ը կարող է դրանք օգտագործել իր արտադրանքը բարելավելու համար։</string>
+    <string name="gemini_api_key_dialog_message">Ստացեք անվճար API բանալի Google AI Studio-ում՝ aistudio.google.com/apikey հասցեով, և տեղադրեք այստեղ։ Բանալին հեռացնելու համար դատարկեք դաշտը և պահեք։\n\nՊատկերներն ու էկրանները, որոնց նկարագրությունը խնդրում եք, ուղարկվում են Google-ին։ Անվճար սակագնի դեպքում Google-ը կարող է դրանք օգտագործել իր արտադրանքը բարելավելու համար։</string>
     <string name="gemini_api_key_hint">API բանալի</string>
     <string name="gemini_api_key_save">Պահել</string>
     <string name="gemini_api_key_get">Ստանալ բանալի</string>
@@ -16,12 +16,12 @@
     <string name="gemini_api_terms_link">Gemini API-ի օգտագործման լրացուցիչ պայմաններ</string>
     <string name="ai_service_address_hint">Հասցե, օրինակ՝ https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Մոդել</string>
-    <string name="ai_service_address_invalid">Հասցեն պետք է սկսվի https://.-ով Ոչինչ չի պահպանվել:</string>
-    <string name="dialog_message_ai_service_consent">Նկարները և սքրինշոթներն ուղարկվում են <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> հասցեին՝ նկարագրելու համար, որը տևում է մի քանի վայրկյան: Կիրառվում են նրա սեփական պայմանները և գաղտնիության քաղաքականությունը: Generative AI-ն փորձնական է, ուստի սխալներ թույլ կտա:</string>
+    <string name="ai_service_address_invalid">Հասցեն պետք է սկսվի https://-ով։ Ոչինչ չի պահվել։</string>
+    <string name="dialog_message_ai_service_consent">Պատկերներն ու սքրինշոթները նկարագրության համար ուղարկվում են <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, ինչը տևում է մի քանի վայրկյան։ Գործում են ծառայության սեփական պայմաններն ու գաղտնիության քաղաքականությունը։ Գեներատիվ ԱԲ-ն փորձնական է, ուստի սխալներ է անելու։</string>
     <string name="ai_service_error_api_key">AI ծառայությունը չի ընդունել API բանալին: Ստուգեք դրա կարգավորումները Ավտոմատ նկարագրություններում:</string>
-    <string name="ai_service_error_quota">AI ծառայության օգտագործման սահմանաչափը հասել է: Փորձեք ավելի ուշ:</string>
-    <string name="ai_service_error_busy">AI ծառայությունն այս պահին զբաղված է: Մի պահ նորից փորձեք:</string>
-    <string name="ai_service_error_timeout">Արհեստական ​​ինտելեկտի ծառայությունը չափազանց երկար տևեց պատասխանը: Կրկին փորձեք:</string>
+    <string name="ai_service_error_quota">AI ծառայության օգտագործման սահմանաչափը սպառվել է։ Փորձեք ավելի ուշ։</string>
+    <string name="ai_service_error_busy">AI ծառայությունն այս պահին զբաղված է։ Քիչ անց նորից փորձեք։</string>
+    <string name="ai_service_error_timeout">AI ծառայությունը չափազանց երկար էր պատասխանում։ Նորից փորձեք։</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -29,16 +29,16 @@
     <string name="ai_provider_groq">Groq</string>
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
-    <string name="ai_provider_none">Միացված չէ</string>
+    <string name="ai_provider_none">Ոչ մեկը</string>
     <string name="ai_service_not_set_up">AI ծառայություն չի օգտագործվում: Ստեղծեք մեկը կամ ընտրեք մեկը Ավտոմատ նկարագրությունների կարգավորումներում:</string>
     <string name="ai_provider_none_set_up">AI ծառայություն չի ստեղծվել: Ստեղծեք մեկը ստորև նշված կարգավորումներում:</string>
     <string name="ai_provider_other">Այլ ծառայություն</string>
     <string name="title_pref_category_ai_services">AI ծառայություններ</string>
     <string name="title_pref_ai_provider">AI ծառայություն</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> կարգավորումներ</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g>-ի կարգավորումներ</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, կարգավորված չէ</string>
-    <string name="ai_provider_in_use">Օգտագործման մեջ</string>
-    <string name="ai_provider_not_set_up">Չի ստեղծվել</string>
+    <string name="ai_provider_in_use">Օգտագործվում է</string>
+    <string name="ai_provider_not_set_up">Կարգավորված չէ</string>
     <string name="ai_provider_not_ready">Նախ ընտրեք մոդել</string>
     <string name="ai_provider_address">Հասցե</string>
     <string name="ai_provider_address_message">Ծառայության հասցեն, որն ունի OpenAI համատեղելի զրույցի API և պատկերի մուտքագրում, օրինակ՝ https://example.com/v1.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API բանալի</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> մոդել</string>
     <string name="ai_provider_choose_model">Ընտրված չէ</string>
-    <string name="ai_provider_key_message">Տեղադրեք ձեր <xliff:g id="service" example="Claude">%1$s</xliff:g> API ստեղնը: Այն հեռացնելու համար մաքրեք դաշտը և պահեք: Ձեր նկարագրած պատկերներն ու էկրաններն ուղարկվում են <xliff:g id="service" example="Claude">%1$s</xliff:g>:</string>
+    <string name="ai_provider_key_message">Տեղադրեք ձեր <xliff:g id="service" example="Claude">%1$s</xliff:g> API բանալին։ Հեռացնելու համար դատարկեք դաշտը և պահեք։ Պատկերներն ու էկրանները, որոնց նկարագրությունը խնդրում եք, ուղարկվում են <xliff:g id="service" example="Claude">%1$s</xliff:g>։</string>
     <string name="ai_provider_needs_key">Նախ կարգավորեք <xliff:g id="service" example="Claude">%1$s</xliff:g> API ստեղնը</string>
     <string name="ai_provider_needs_address">Նախ նշեք հասցեն</string>
     <string name="ai_provider_enter_model">Մուտքագրեք մոդելի անունը</string>

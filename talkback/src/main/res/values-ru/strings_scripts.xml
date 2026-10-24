@@ -40,13 +40,13 @@
   <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Разрешайте только доверенным скриптам.</string>
   <string name="script_permission_screen">Читать содержимое экрана</string>
   <string name="script_permission_actions">Нажимать, прокручивать, вводить текст и перемещать фокус</string>
-  <string name="script_permission_speech">Получать, изменять и озвучивать текст через SandFly</string>
+  <string name="script_permission_speech">Получать и изменять речь SandFly</string>
   <string name="script_permission_passwords">Читать поля паролей</string>
   <string name="script_permission_input">Добавлять жесты, сочетания клавиш, пункты меню и элементы управления чтением</string>
   <string name="script_permission_network">Использовать интернет</string>
   <string name="script_permission_clipboard">Читать и изменять содержимое буфера обмена</string>
   <string name="script_permission_system">Возвращаться назад и на главный экран, открывать уведомления и приложения</string>
-  <string name="script_permission_notifications">Читать уведомления и изменять их озвучивание</string>
+  <string name="script_permission_notifications">Читать и изменять озвучиваемые уведомления</string>
   <string name="script_permission_events">Получать сведения обо всех действиях во всех приложениях, включая ввод текста</string>
   <string name="script_permission_dialogs">Показывать диалоговые окна поверх любого приложения</string>
   <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
@@ -137,7 +137,7 @@
   <string name="script_source_remove">Удалить источник</string>
   <string name="script_source_remove_title">Удалить <xliff:g id="name">%1$s</xliff:g>?</string>
   <string name="script_source_remove_message">Установленные из него скрипты останутся установленными.</string>
-    <string name="script_permission_java">Запускайте Java-код со всеми доступами SandFly в каждом приложении.</string>
+    <string name="script_permission_java">Запуск кода Java со всеми правами доступа SandFly в любом приложении</string>
     <string name="scripts_auto_update">Автоматическое обновление скриптов</string>
     <string name="scripts_check_updates">Проверить обновления</string>
     <string name="scripts_checking_updates">Проверка обновлений…</string>
@@ -149,7 +149,7 @@
         <item quantity="many">Обновлено <xliff:g id="count" example="5">%1$d</xliff:g> скриптов: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other">Обновлено <xliff:g id="count" example="1.5">%1$d</xliff:g> скрипта: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Обновления перечислены в разделе «Обновления».</string>
+    <string name="scripts_updates_to_approve">Обновления перечислены в разделе «Обновления»</string>
     <string name="scripts_update_check_failed">Некоторые источники не удалось проверить</string>
     <string name="scripts_up_to_date">Все скрипты актуальны</string>
 </resources>

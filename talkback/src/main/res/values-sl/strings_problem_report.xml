@@ -7,9 +7,9 @@
     <string name="title_pref_problem_report_app">Aplikacija, kjer se to zgodi</string>
     <string name="title_pref_problem_report_description">Opis</string>
     <string name="dialog_message_problem_report_description">Kaj se zgodi in kaj ste pričakovali.</string>
-    <string name="title_pref_problem_report_steps">Koraki za reprodukcijo težave s programsko opremo</string>
-    <string name="title_pref_problem_report_email">Za odgovore pošljite e-pošto</string>
-    <string name="title_pref_problem_report_device">Vključite informacije o napravi</string>
+    <string name="title_pref_problem_report_steps">Koraki za ponovitev</string>
+    <string name="title_pref_problem_report_email">E-pošta za odgovore</string>
+    <string name="title_pref_problem_report_device">Vključi informacije o napravi</string>
     <string name="title_pref_problem_report_log">Vključi dnevnik SandFly</string>
     <string name="summary_pref_problem_report_log">Lahko vsebuje besedilo z zaslona</string>
     <string name="title_pref_problem_report_send">Pošlji</string>
@@ -21,20 +21,20 @@
     <string name="problem_report_no_connection">Povratne informacije niso poslane. Preverite internetno povezavo.</string>
     <string name="problem_report_not_sent">Povratne informacije niso poslane. Poskusite znova pozneje.</string>
     <string-array name="problem_report_type_entries">
-        <item>Nepravilno vedenje</item>
-        <item>Strmoglavljenje</item>
-        <item>Počasen ali neodziven</item>
+        <item>Nepravilno delovanje</item>
+        <item>Zrušitev</item>
+        <item>Počasno ali se ne odziva</item>
         <item>Predlog</item>
     </string-array>
     <string-array name="problem_report_area_entries">
         <item>Govor</item>
         <item>Poteze</item>
-        <item>Raziskovanje na dotik</item>
-        <item>Bralne kontrole in meniji</item>
+        <item>Raziskovanje z dotikom</item>
+        <item>Kontrolniki za branje in meniji</item>
         <item>Tipkanje in tipkovnice</item>
         <item>Braillova tipkovnica</item>
         <item>Zaslon braille</item>
-        <item>Zvoki in vibracije</item>
+        <item>Zvok in vibriranje</item>
         <item>Obvestila</item>
         <item>Spletna vsebina</item>
         <item>Skripte</item>
@@ -58,7 +58,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> novih odgovorov</item>
     </plurals>
     <string name="report_status_changed">stanje spremenjeno</string>
-    <string name="report_status_open">Odprta zadeva</string>
+    <string name="report_status_open">Odprto</string>
     <string name="report_status_completed">Zaprto, dokončano</string>
     <string name="report_status_not_planned">Zaprto, ni načrtovano</string>
     <string name="report_status_duplicate">Zaprto, dvojnik</string>
@@ -67,20 +67,20 @@
     <string name="title_report_your_report">Vaše povratne informacije</string>
     <string name="title_report_messages">Sporočila</string>
     <string name="report_message_from_developer">Razvijalec, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">Ti, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Odgovori</string>
+    <string name="report_message_from_you">Vi, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Odgovor</string>
     <string name="title_report_reply_text">Vaš odgovor</string>
     <string name="title_report_send_reply">Pošlji odgovor</string>
     <string name="report_reply_sent">Odgovor poslan.</string>
     <string name="report_reply_not_sent">Odgovor ni poslan. Poskusite znova pozneje.</string>
-    <string name="title_report_remove">Odstrani iz mape »Prejeto«.</string>
+    <string name="title_report_remove">Odstrani iz mape Prejeto</string>
     <string name="dialog_title_report_remove">Odstraniti te povratne informacije iz mape »Prejeto«?</string>
     <string name="dialog_message_report_remove">Odgovori nanj ne bodo več dosegli tega telefona.</string>
     <string name="title_report_delete_draft">Izbriši osnutek</string>
     <string name="dialog_title_report_delete_draft">Želite izbrisati ta osnutek?</string>
     <string name="button_report_delete">Izbriši</string>
     <string name="report_missing">Te povratne informacije ni več v mapi »Prejeto«.</string>
-    <string name="notification_channel_problem_reports">Povratne informacije</string>
-    <string name="report_notification_reply">Odgovori na <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="notification_channel_problem_reports">Odgovori na povratne informacije</string>
+    <string name="report_notification_reply">Odgovor na <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

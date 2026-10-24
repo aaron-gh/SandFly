@@ -45,7 +45,7 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Du kan byta språk när du skriver på punktskriftstangentbordet genom att svepa uppåt med tre fingrar. Välj sedan Byt till nästa språk.</string>
   <string name="title_pref_accumulate_presses">Inkludera alla nedtryckta punkter</string>
   <string name="summary_pref_accumulate_presses">Alla nedtryckta punkter är en del av inmatningen, även om punkten släpps upp före andra punkter</string>
-  <string name="title_pref_reverse_dots">Byt vänster och höger prickar</string>
+  <string name="title_pref_reverse_dots">Byt plats på vänstra och högra punkterna</string>
   <string name="summary_pref_reverse_dots">Punkterna 1, 2 och 3 byter plats med punkterna 4, 5 och 6</string>
   <string name="bd_preference_braille_contracted">Sammandragen punktskrift</string>
   <string name="bd_preference_braille_uncontracted">Icke-sammandragen punktskrift</string>
@@ -209,8 +209,8 @@ punktskrifts-skärmen</string>
   <string name="custom_gesture_perform_again">Gör rörelsen du vill använda igen. %s</string>
     <string name="tabletop_port_left_announcement">Bordsläge, laddningsport till vänster</string>
     <string name="tabletop_port_right_announcement">Bordsläge, laddningsport till höger</string>
-    <string name="screen_away_port_right_announcement">Skärmbortläge, laddningsport till höger</string>
-    <string name="screen_away_port_left_announcement">Skärmbortläge, laddningsport till vänster</string>
+    <string name="screen_away_port_right_announcement">Skärmen vänd bort från dig, laddningsport till höger</string>
+    <string name="screen_away_port_left_announcement">Skärmen vänd bort från dig, laddningsport till vänster</string>
     <string name="screen_toward_announcement">Skärm mot dig</string>
     <string name="screen_toward_port_left_announcement">Skärmen mot dig, laddningsporten till vänster</string>
     <string name="screen_toward_port_right_announcement">Skärmen mot dig, laddningsporten till höger</string>
@@ -220,8 +220,8 @@ punktskrifts-skärmen</string>
     <string name="port_left_announcement">Laddningsport till vänster</string>
     <string name="tabletop_port_near_announcement">Bordsläge, laddningsport mot dig</string>
     <string name="tabletop_port_far_announcement">Bordsläge, laddningsport borta från dig</string>
-    <string name="screen_away_port_down_announcement">Skärmbortläge, laddningsporten pekar nedåt</string>
-    <string name="screen_away_port_up_announcement">Skärmbortläge, laddningsporten pekar uppåt</string>
+    <string name="screen_away_port_down_announcement">Skärmen vänd bort från dig, laddningsporten pekar nedåt</string>
+    <string name="screen_away_port_up_announcement">Skärmen vänd bort från dig, laddningsporten pekar uppåt</string>
     <string name="port_near_announcement">Laddningsport mot dig</string>
     <string name="port_far_announcement">Laddningsport bort från dig</string>
     <string name="port_down_announcement">Laddningsporten pekar nedåt</string>
@@ -231,11 +231,11 @@ punktskrifts-skärmen</string>
     <string name="orientation_unlocked_announcement">Orientering upplåst</string>
     <string name="switch_to_language_contracted_announcement">Du har bytt till %s, Sammandragen punktskrift</string>
     <string name="switch_to_language_uncontracted_announcement">Du har bytt till %s, Icke-sammandragen punktskrift</string>
-    <string name="title_pref_flip_dots_vertically">Byt översta och nedre prickar</string>
+    <string name="title_pref_flip_dots_vertically">Byt plats på översta och nedersta punkterna</string>
     <string name="summary_pref_flip_dots_vertically">Punkt 1 byter plats med punkt 3 och punkt 4 med punkt 6</string>
-    <string name="title_pref_tablet_held_up_faces_away">Tabletten höll upp ansiktena bort</string>
-    <string name="summary_pref_tablet_held_up_faces_away">När den är avstängd använder en surfplatta eller utfälld telefon som hålls upp bordsskivans layout, vänd mot dig</string>
+    <string name="title_pref_tablet_held_up_faces_away">Upprätt surfplatta vänd bort</string>
+    <string name="summary_pref_tablet_held_up_faces_away">När av används bordslägets layout för en surfplatta eller utfälld telefon som hålls upp, med skärmen mot dig</string>
     <string name="title_pref_typing_sounds">Skrivljud</string>
-    <string name="summary_pref_typing_sounds">Spela tangentbordsklick när du skriver ett tecken, ett mellanslag, en ny rad eller raderar</string>
+    <string name="summary_pref_typing_sounds">Spelar tangentklick när du skriver ett tecken, ett mellanslag eller en ny rad, eller raderar</string>
     <string name="skip_tutorial">Hoppa över tutorial</string>
 </resources>

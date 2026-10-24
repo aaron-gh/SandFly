@@ -45,7 +45,7 @@
   <string name="switch_input_code_gesture_tip_dialog_message">For å endre språk mens du skriver med punktskrifttastaturet, sveip opp med tre fingre. Velg deretter «Bytt til neste språk».</string>
   <string name="title_pref_accumulate_presses">Inkluder alle trykte punkter</string>
   <string name="summary_pref_accumulate_presses">Hvert trykte punkt er en del av inndataene, selv om punktet slippes før andre punkter.</string>
-  <string name="title_pref_reverse_dots">Bytt venstre og høyre prikker</string>
+  <string name="title_pref_reverse_dots">Bytt venstre og høyre punkter</string>
   <string name="summary_pref_reverse_dots">Punkt 1, 2 og 3 bytter plass med punkt 4, 5 og 6</string>
   <string name="bd_preference_braille_contracted">Forkortet punktskrift</string>
   <string name="bd_preference_braille_uncontracted">Uforkortet punktskrift</string>
@@ -208,8 +208,8 @@
   <string name="custom_gesture_perform_again">Utfør bevegelsen du vil bruke, på nytt. %s</string>
     <string name="tabletop_port_left_announcement">Bordmodus, ladeport til venstre</string>
     <string name="tabletop_port_right_announcement">Bordmodus, ladeport til høyre</string>
-    <string name="screen_away_port_right_announcement">Skjerm-bort-modus, ladeport til høyre</string>
-    <string name="screen_away_port_left_announcement">Skjerm-bort-modus, ladeport til venstre</string>
+    <string name="screen_away_port_right_announcement">Skjermen vender bort fra deg, ladeport til høyre</string>
+    <string name="screen_away_port_left_announcement">Skjermen vender bort fra deg, ladeport til venstre</string>
     <string name="screen_toward_announcement">Skjerm mot deg</string>
     <string name="screen_toward_port_left_announcement">Skjerm mot deg, ladeport til venstre</string>
     <string name="screen_toward_port_right_announcement">Skjerm mot deg, ladeport til høyre</string>
@@ -219,8 +219,8 @@
     <string name="port_left_announcement">Ladeport til venstre</string>
     <string name="tabletop_port_near_announcement">Bordmodus, ladeport mot deg</string>
     <string name="tabletop_port_far_announcement">Bordmodus, ladeport vekk fra deg</string>
-    <string name="screen_away_port_down_announcement">Skjerm-bort-modus, ladeport peker ned</string>
-    <string name="screen_away_port_up_announcement">Skjerm-bort-modus, ladeport peker opp</string>
+    <string name="screen_away_port_down_announcement">Skjermen vender bort fra deg, ladeport peker ned</string>
+    <string name="screen_away_port_up_announcement">Skjermen vender bort fra deg, ladeport peker opp</string>
     <string name="port_near_announcement">Ladeport mot deg</string>
     <string name="port_far_announcement">Ladeport vekk fra deg</string>
     <string name="port_down_announcement">Ladeport peker ned</string>
@@ -230,11 +230,11 @@
     <string name="orientation_unlocked_announcement">Orientering låst opp</string>
     <string name="switch_to_language_contracted_announcement">Byttet til %s, Forkortet punktskrift</string>
     <string name="switch_to_language_uncontracted_announcement">Byttet til %s, Uforkortet punktskrift</string>
-    <string name="title_pref_flip_dots_vertically">Bytt topp og bunn prikker</string>
+    <string name="title_pref_flip_dots_vertically">Bytt øverste og nederste punkter</string>
     <string name="summary_pref_flip_dots_vertically">Punkt 1 bytter plass med punkt 3, og punkt 4 med punkt 6</string>
-    <string name="title_pref_tablet_held_up_faces_away">Nettbrettet holdt opp ansiktene bort</string>
+    <string name="title_pref_tablet_held_up_faces_away">Oppreist nettbrett vender bort</string>
     <string name="summary_pref_tablet_held_up_faces_away">Når den er av, bruker et nettbrett eller en utfoldet telefon som holdes opp bordplateoppsettet vendt mot deg</string>
     <string name="title_pref_typing_sounds">Skrivelyder</string>
-    <string name="summary_pref_typing_sounds">Spilletastaturklikk når du skriver inn et tegn, et mellomrom, en ny linje eller sletter</string>
+    <string name="summary_pref_typing_sounds">Spiller tastaturklikk når du skriver et tegn, et mellomrom eller en ny linje, eller sletter</string>
     <string name="skip_tutorial">Hopp over opplæringen</string>
 </resources>

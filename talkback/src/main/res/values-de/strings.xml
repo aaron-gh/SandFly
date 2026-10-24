@@ -843,7 +843,7 @@
   <string name="tv_training_remote_step_title">Fernbedienung verwenden</string>
   <string name="tv_training_remote_step_summary">Mit der kreisförmigen Richtungstaste oben auf der Fernbedienung kannst du auf dem Bildschirm die verschiedenen Optionen auswählen. Wenn du etwas auswählen möchtest, drücke die Mitte der Richtungstaste.\n\nIn der zweiten Zeile findest du links den Button „Zurück“. Rechts befindet sich die Taste für den Sprachassistenten.\n\nIn der dritten Zeile findest du links die Startbildschirmtaste. Rechts befindet sich die Taste „Stummschalten“.\n\nIn der vierten Zeile findest du links die YouTube-Verknüpfung. Rechts befindet sich die Netflix-Verknüpfung.\n\nIn der untersten Zeile findest du zwei kleine Tasten. Die linke ist die Ein-/Aus-Taste. Mit der rechten lässt sich das Eingabemenü des Fernsehers öffnen.\n\nDie Lautstärketasten befinden sich an der rechten Seite der Fernbedienung.\n\nDrücke die Auswahltaste, um fortzufahren.</string>
   <string name="tv_training_shortcut_step_title">SandFly-Verknüpfung</string>
-  <string name="tv_training_shortcut_step_summary">Wenn du auf den TalkBack-Kurzbefehl zugreifen möchtest, drücke gleichzeitig die Tasten „Nach unten“ und „Zurück“ und halte sie 3 Sekunden lang gedrückt. Dadurch wird TalkBack aktiviert bzw. deaktiviert.\n\nDu kannst auf diesen Kurzbefehl auch in den TV-Einstellungen zugreifen.\n\nDrücke die Auswahltaste, um fortzufahren.</string>
+  <string name="tv_training_shortcut_step_summary">Wenn du auf den SandFly-Kurzbefehl zugreifen möchtest, drücke gleichzeitig die Tasten „Nach unten“ und „Zurück“ und halte sie 3 Sekunden lang gedrückt. Dadurch wird SandFly aktiviert bzw. deaktiviert.\n\nDu kannst auf diesen Kurzbefehl auch in den TV-Einstellungen zugreifen.\n\nDrücke die Auswahltaste, um fortzufahren.</string>
   <string name="new_feature_in_talkback_title">Neue Funktionen in SandFly</string>
   <string name="exit_tutorial_title">Du bist fertig?</string>
   <string name="exit_tutorial_content">Du kannst jederzeit zum Tutorial zurückkehren – du findest es in den SandFly-Einstellungen.</string>
@@ -1341,8 +1341,8 @@
     <string name="summary_pref_mute_speech_while_recording">Während eine App ohne verbundene Kopfhörer aufnimmt, spricht SandFly nur als Reaktion auf deine Gesten, Tasten und Eingaben und bleibt bei Dingen wie Benachrichtigungen stumm, damit sie nicht aufgenommen werden.</string>
     <string name="title_pref_switch_languages">Sprache automatisch wechseln</string>
     <string name="title_pref_switch_dialects">Dialekt automatisch wechseln</string>
-    <string name="category_collapsed">Minimiert</string>
-    <string name="category_expanded">Maximiert</string>
+    <string name="category_collapsed">Eingeklappt</string>
+    <string name="category_expanded">Ausgeklappt</string>
     <string name="title_pref_speak_nav_bar_buttons">Schaltflächen der Navigationsleiste ansagen</string>
     <string name="summary_pref_speak_nav_bar_buttons">Bei „Zum Aktivieren anheben“ in der Navigationsleiste die Schaltfläche ansagen, die durch Tippen gedrückt wird, zum Beispiel „Zurück“ oder „Startbildschirm“.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
@@ -1573,7 +1573,7 @@
     </string-array>
     <string name="title_pref_play_installer">Als über Google Play installiert erscheinen</string>
     <string name="summary_pref_play_installer">Anderen Apps mitteilen, dass SandFly über Google Play installiert wurde. Einige Apps, darunter manche Banking-Apps, deaktivieren anderswoher installierte Bedienungshilfedienste. Erfordert Shizuku und ändert nur die an andere Apps übermittelte Installationsquelle von SandFly.</string>
-    <string name="summary_pref_play_installer_pending">Ein, aber Google Play wird noch nicht als Installationsprogramm aufgezeichnet. SandFly legt es fest, wenn Shizuku verfügbar ist.</string>
+    <string name="summary_pref_play_installer_pending">Ein, aber Google Play ist noch nicht als Installationsquelle eingetragen. SandFly trägt es ein, sobald Shizuku verfügbar ist.</string>
     <string name="notification_list_show_all">Alle anzeigen</string>
     <string name="notification_list_show_less">Weniger anzeigen</string>
     <string name="title_pref_quick_settings">Schnelleinstellungen von SandFly verwenden</string>
@@ -1678,7 +1678,7 @@
     <string name="handwriting_download_message">Handschrift wird auf diesem Telefon erkannt. Das etwa 20 MB große Modell für diese Sprache wird einmal von Google heruntergeladen. Nach dem Download wird eine Meldung angezeigt.</string>
     <string name="handwriting_download_button">Herunterladen</string>
     <string name="handwriting_downloaded">Handschrifterkennung heruntergeladen</string>
-    <string name="handwriting_download_failed">Die Handschrifterkennung konnte nicht heruntergeladen werden. Überprüfen Sie die Internetverbindung.</string>
+    <string name="handwriting_download_failed">Die Handschrifterkennung konnte nicht heruntergeladen werden. Prüfe die Internetverbindung.</string>
     <string name="handwriting_unsupported_language">Die Handschrifterkennung ist in dieser Sprache nicht verfügbar</string>
     <string name="title_pref_handwriting_keyboard">Handschrifttastatur</string>
     <string name="summary_pref_handwriting_keyboard">SandFly-Handschrift in den Android-Tastatureinstellungen aktivieren</string>
@@ -1693,19 +1693,19 @@
     <string name="handwriting_keyboard_name">SandFly Handschrift</string>
     <string name="handwriting_space">Leertaste</string>
     <string name="handwriting_new_line">Neue Zeile</string>
-    <string name="handwriting_tutorial_intro">Tutorial zur Handschrift-Tastatur. Schreiben Sie mit einem Finger an einer beliebigen Stelle auf dem Bildschirm. Was Sie schreiben, wird getippt, wenn Sie einen Moment innehalten. Um das Tutorial zu beenden, wischen Sie mit drei Fingern nach unten.</string>
-    <string name="handwriting_tutorial_write_letter">Schreiben Sie den Buchstaben a.</string>
-    <string name="handwriting_tutorial_write_word">Schreiben Sie jetzt das Wort hi.</string>
+    <string name="handwriting_tutorial_intro">Tutorial zur Handschrifttastatur. Schreibe mit einem Finger an einer beliebigen Stelle auf dem Bildschirm. Was du schreibst, wird eingegeben, wenn du kurz innehältst. Wische mit drei Fingern nach unten, um das Tutorial zu beenden.</string>
+    <string name="handwriting_tutorial_write_letter">Schreib den Buchstaben a.</string>
+    <string name="handwriting_tutorial_write_word">Schreib jetzt das Wort hi.</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> eingegeben.</string>
-    <string name="handwriting_tutorial_space">Wischen Sie mit zwei Fingern nach rechts, um ein Leerzeichen einzugeben.</string>
-    <string name="handwriting_tutorial_delete">Wischen Sie mit zwei Fingern nach links, um das Zeichen vor dem Cursor zu löschen.</string>
+    <string name="handwriting_tutorial_space">Wische mit zwei Fingern nach rechts, um ein Leerzeichen einzugeben.</string>
+    <string name="handwriting_tutorial_delete">Wische mit zwei Fingern nach links, um das Zeichen vor dem Cursor zu löschen.</string>
     <string name="handwriting_tutorial_deleted">Gelöscht.</string>
-    <string name="handwriting_tutorial_next_reading">Wenn ein anderes Zeichen eingegeben wird, etwa ein Großbuchstabe, wischen Sie mit zwei Fingern nach oben, um den nächsten Erkennungsvorschlag auszuwählen. Probieren Sie es jetzt aus.</string>
-    <string name="handwriting_tutorial_read_back">Tippen Sie mit zwei Fingern, um den Text vor dem Cursor zu lesen.</string>
-    <string name="handwriting_tutorial_new_line">Wischen Sie mit zwei Fingern nach unten, um eine neue Zeile einzugeben oder die Feldaktion auszuführen, etwa Senden.</string>
+    <string name="handwriting_tutorial_next_reading">Wenn ein anderes Zeichen eingegeben wird, etwa ein Großbuchstabe, wische mit zwei Fingern nach oben, um den nächsten Erkennungsvorschlag auszuwählen. Probiere es jetzt aus.</string>
+    <string name="handwriting_tutorial_read_back">Tippe mit zwei Fingern, um den Text vor dem Cursor vorlesen zu lassen.</string>
+    <string name="handwriting_tutorial_new_line">Wische mit zwei Fingern nach unten, um eine neue Zeile einzufügen oder die Aktion des Felds auszuführen, etwa Senden.</string>
     <string name="handwriting_tutorial_not_that">Das war eine andere Geste.</string>
-    <string name="handwriting_tutorial_done">Neue Zeile. Tutorial beendet. Wischen Sie mit drei Fingern nach unten, um die Tastatur auszublenden, und mit drei Fingern nach rechts oder links, um die Tastatur zu wechseln. Um das Tutorial erneut zu öffnen, tippen Sie mit drei Fingern.</string>
-    <string name="handwriting_tutorial_finished">Tutorial beendet. Um es wieder zu öffnen, tippen Sie mit drei Fingern darauf.</string>
+    <string name="handwriting_tutorial_done">Neue Zeile. Tutorial abgeschlossen. Wische mit drei Fingern nach unten, um die Tastatur auszublenden, und mit drei Fingern nach rechts oder links, um die Tastatur zu wechseln. Tippe mit drei Fingern, um das Tutorial erneut zu öffnen.</string>
+    <string name="handwriting_tutorial_finished">Tutorial beendet. Tippe mit drei Fingern, um es erneut zu öffnen.</string>
     <string name="handwriting_no_alternatives">Keine weiteren Vorschläge</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> von <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Leer</string>
@@ -1717,16 +1717,16 @@
     <string name="shortcut_power_menu">Ausschaltmenü</string>
     <string name="shortcut_increase_media_volume">Medienlautstärke erhöhen</string>
     <string name="shortcut_decrease_media_volume">Medienlautstärke verringern</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Wischen Sie lange von links oben nach unten</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Wischen Sie lange von oben rechts nach unten</string>
-    <string name="title_pref_shortcut_edge_left_top_right">Wischen Sie vom linken Rand in der oberen Hälfte nach rechts</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Wischen Sie vom linken Rand in der oberen Hälfte lange nach rechts</string>
-    <string name="title_pref_shortcut_edge_left_bottom_right">Wischen Sie vom linken Rand in der unteren Hälfte nach rechts</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Wischen Sie vom linken Rand in der unteren Hälfte lange nach rechts</string>
-    <string name="title_pref_shortcut_edge_right_top_left">Wischen Sie vom rechten Rand in der oberen Hälfte nach links</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Wischen Sie vom rechten Rand in der oberen Hälfte lange nach links</string>
-    <string name="title_pref_shortcut_edge_right_bottom_left">Wischen Sie vom rechten Rand in der unteren Hälfte nach links</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Wischen Sie vom rechten Rand in der unteren Hälfte lange nach links</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Von oben links weit nach unten wischen</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Von oben rechts weit nach unten wischen</string>
+    <string name="title_pref_shortcut_edge_left_top_right">Vom linken Rand in der oberen Hälfte nach rechts wischen</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Vom linken Rand in der oberen Hälfte weit nach rechts wischen</string>
+    <string name="title_pref_shortcut_edge_left_bottom_right">Vom linken Rand in der unteren Hälfte nach rechts wischen</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Vom linken Rand in der unteren Hälfte weit nach rechts wischen</string>
+    <string name="title_pref_shortcut_edge_right_top_left">Vom rechten Rand in der oberen Hälfte nach links wischen</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Vom rechten Rand in der oberen Hälfte weit nach links wischen</string>
+    <string name="title_pref_shortcut_edge_right_bottom_left">Vom rechten Rand in der unteren Hälfte nach links wischen</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Vom rechten Rand in der unteren Hälfte weit nach links wischen</string>
     <string name="title_pref_edge_first_click_mm">Abstand zum ersten Klick</string>
     <string name="title_pref_edge_second_click_mm">Abstand vom ersten zum zweiten Klick</string>
     <string name="value_distance_5mm">0,5 cm</string>

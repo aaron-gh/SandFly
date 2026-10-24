@@ -2,8 +2,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="shortcut_announce_status">ເວົ້າສະຖານະ</string>
     <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> ຂອງ <xliff:g id="max_level" example="4">%2$d</xliff:g> ແຖບ</string>
-    <string name="status_wifi_off">Wi-Fiປິດ</string>
-    <string name="status_wifi_not_connected">Wi-Fiບໍ່ໄດ້ເຊື່ອມຕໍ່</string>
+    <string name="status_wifi_off">Wi-Fi ປິດ</string>
+    <string name="status_wifi_not_connected">Wi-Fi ບໍ່ໄດ້ເຊື່ອມຕໍ່</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
     <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
     <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
@@ -22,8 +22,8 @@
     <string name="status_item_wifi_summary">ຊື່ເຄືອຂ່າຍແລະຄວາມແຮງຂອງສັນຍານ</string>
     <string name="status_item_mobile">ເຄືອຂ່າຍມືຖື</string>
     <string name="status_item_mobile_summary">ຜູ້ໃຫ້ບໍລິການ, ປະເພດເຄືອຂ່າຍ ແລະ ຄວາມແຮງຂອງສັນຍານ</string>
-    <string name="status_item_ringer">ສຽງດັງ ແລະ ຫ້າມລົບກວນ</string>
-    <string name="status_item_ringer_summary">ພຽງແຕ່ເມື່ອບໍ່ໄດ້ຕັ້ງສຽງເອີ້ນເຂົ້າ, ຫຼືຫ້າມລົບກວນເປີດ</string>
+    <string name="status_item_ringer">ສຽງເອີ້ນເຂົ້າ ແລະ ຫ້າມລົບກວນ</string>
+    <string name="status_item_ringer_summary">ສະເພາະເມື່ອສຽງເອີ້ນເຂົ້າຕັ້ງເປັນສັ່ນ ຫຼື ປິດສຽງ, ຫຼື ເປີດຫ້າມລົບກວນຢູ່</string>
     <string name="status_item_airplane_mode">ໂໝດຢູ່ໃນຍົນ</string>
     <string name="status_item_airplane_mode_summary">ເມື່ອເປີດໂໝດຢູ່ໃນຍົນເທົ່ານັ້ນ</string>
 </resources>

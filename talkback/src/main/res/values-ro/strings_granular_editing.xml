@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Editare granulară</string>
-    <string name="granular_editing_split_by">Împărțit la: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Împărțit de</string>
+    <string name="granular_editing_title">Editare pe bucăți</string>
+    <string name="granular_editing_split_by">Împărțire după: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
+    <string name="granular_editing_split_by_title">Împărțire după</string>
     <string name="granular_editing_characters">Caractere</string>
     <string name="granular_editing_words">Cuvinte</string>
     <string name="granular_editing_sentences">Propoziții</string>
@@ -11,40 +11,40 @@
     <string name="granular_editing_space">Spațiu</string>
     <string name="granular_editing_new_line">Rând nou</string>
     <string name="granular_editing_tab">Caracter tabulator</string>
-    <string name="granular_editing_empty">Fără text. Utilizați Adăugați text la sfârșit, în Mai multe.</string>
-    <string name="granular_editing_edit">Editați</string>
-    <string name="granular_editing_insert_before">Introduceți înainte</string>
-    <string name="granular_editing_insert_after">Inserați după</string>
+    <string name="granular_editing_empty">Niciun text. Folosiți „Adaugă text la sfârșit” din „Mai multe”.</string>
+    <string name="granular_editing_edit">Editează</string>
+    <string name="granular_editing_insert_before">Inserează înainte</string>
+    <string name="granular_editing_insert_after">Inserează după</string>
     <string name="granular_editing_delete">Șterge</string>
     <string name="granular_editing_select">Selectează</string>
-    <string name="granular_editing_unselect">Deselectați</string>
+    <string name="granular_editing_unselect">Deselectează</string>
     <string name="granular_editing_selected">Selectat</string>
     <string name="granular_editing_save">Salvează</string>
-    <string name="granular_editing_more">Mai mult</string>
-    <string name="granular_editing_undo">Anulați</string>
-    <string name="granular_editing_redo">Refaceți ultima modificare anulată</string>
+    <string name="granular_editing_more">Mai multe</string>
+    <string name="granular_editing_undo">Anulează</string>
+    <string name="granular_editing_redo">Refă</string>
     <string name="granular_editing_find">Găsește</string>
-    <string name="granular_editing_find_next">Găsiți următorul</string>
+    <string name="granular_editing_find_next">Găsește următorul</string>
     <string name="granular_editing_replace">Înlocuiește</string>
     <string name="granular_editing_replace_with">Înlocuiește cu</string>
     <string name="granular_editing_replace_all">Înlocuiește-le pe toate</string>
-    <string name="granular_editing_add_at_end">Adăugați text la sfârșit</string>
-    <string name="granular_editing_clear_selection">Deselectați tot textul</string>
-    <string name="granular_editing_cut_selected">Tăiați textul selectat</string>
-    <string name="granular_editing_delete_selected">Ștergeți selectat</string>
+    <string name="granular_editing_add_at_end">Adaugă text la sfârșit</string>
+    <string name="granular_editing_clear_selection">Anulează selecția</string>
+    <string name="granular_editing_cut_selected">Taie textul selectat</string>
+    <string name="granular_editing_delete_selected">Șterge selecția</string>
     <string name="granular_editing_copied">Copiat</string>
     <string name="granular_editing_deleted">Șters</string>
     <string name="granular_editing_not_found">Nu a fost găsit</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> înlocuit</item>
-        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> înlocuit</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> înlocuite</item>
+        <item quantity="one">Înlocuite: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="few">Înlocuite: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Înlocuite: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Salvați modificările?</string>
-    <string name="granular_editing_copy_changes">Copiați textul modificat?</string>
-    <string name="granular_editing_discard">Aruncă</string>
-    <string name="granular_editing_keep_editing">Continuați să editați</string>
-    <string name="granular_editing_not_saved">Nu a fost salvat: câmpul de text a dispărut. Textul este copiat.</string>
+    <string name="granular_editing_copy_changes">Copiezi textul modificat?</string>
+    <string name="granular_editing_discard">Renunță</string>
+    <string name="granular_editing_keep_editing">Continuă editarea</string>
+    <string name="granular_editing_not_saved">Nu s-a salvat: câmpul de text nu mai există. Textul a fost copiat.</string>
     <string name="granular_editing_no_text">Niciun text de editat</string>
     <string name="granular_editing_password">Nu este disponibil în câmpurile pentru parole</string>
 </resources>

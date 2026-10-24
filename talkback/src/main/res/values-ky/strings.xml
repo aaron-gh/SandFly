@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Түзмөктүн кулпусу ачылды.</string>
   <string name="title_pref_speech_volume">Кептин катуулугу</string>
   <string name="title_pref_verbose_scroll_announcement">Тизмедеги нерселердин саны ар дайым айтылат</string>
-  <string name="summary_pref_verbose_scroll_announcement">Ар бир жылдыруудан кийин кайсы нерселер көрсөтүлүп жатканын айтыңыз</string>
+  <string name="summary_pref_verbose_scroll_announcement">Ар бир сыдыруудан кийин кайсы элементтер көрүнүп турганын айтат</string>
   <string name="title_pref_cover_proximity_sensor">Кепти токтотуу үчүн жакындык сенсорун жабуу</string>
   <string name="title_pref_phonetic_letters">Тамгалар мисалдары менен айтылат</string>
   <string name="summary_pref_phonetic_letters">Баскычтоптон баскыч тандаганда же бир тамгадан экинчисине өткөндө, ар бир тамгага мисал келтирилет, мисалы, \"А, Айчүрөк\" деген сыяктуу</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">Көбүнчө</string>
   <string name="punctuation_some">Анча-мынча</string>
   <string name="title_pref_count_repeated_symbols">Кайталанган символдорду эсептөө</string>
-  <string name="summary_pref_count_repeated_symbols">Символ 4 же андан көп жолу кайталанганда канча жолу кайталанарын айтыңыз</string>
+  <string name="summary_pref_count_repeated_symbols">Символ 4 же андан көп жолу кайталанганда, канча жолу кайталанганын айтуу</string>
   <string name="learn_more">Кеңири маалымат</string>
   <string name="title_pref_capital_letters">Баш тамгалар</string>
   <string name="capital_letters_nothing">Эч нерсе кылынбасын</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">Бийик нотага өзгөртүү</string>
   <string name="capital_letters_sound_feedback">Үнүн чыгаруу</string>
   <string name="title_pref_a11y_hints">Айтып туруу</string>
-  <string name="summary_pref_a11y_hints">Бир нерсе сүрөттөлгөндөн кийин, аны кантип колдонуу керектигин айтыңыз</string>
+  <string name="summary_pref_a11y_hints">Элемент сүрөттөлгөндөн кийин аны кантип колдонууну айтуу</string>
   <string name="pref_speak_container_element_positions_title">Кеп контейнери жөнүндө маалымат</string>
   <string name="pref_speak_time_title">Убакытты айтуу</string>
   <string name="pref_speak_time_summary">Экранды күйгүзгөнүңүздө</string>
-  <string name="summary_speak_container_element_positions">Тизмелерге, торлорго жана башка контейнерлерге киргениңизде же чыкканыңызда айтыңыз</string>
+  <string name="summary_speak_container_element_positions">Тизмелерге, торлорго жана башка контейнерлерге киргенде же чыкканда айтат</string>
   <string name="reset_letency_reduction_settings_dialog_title">Кечигүү параметрлери баштапкы абалга келтирилсинби?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Бардык кечигүү параметрлери демейкиге кайтарылат</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Кайра коюу</string>
@@ -62,14 +62,14 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Кайра коюу</string>
   <string name="gestures_announce_reset_gesture_settings">Жаңсоо параметрлери баштапкы абалга келтирилди.</string>
   <string name="pref_speak_roles_title">Элементтин түрүн айтуу</string>
-  <string name="pref_speak_roles_summary">Like баскычы же белги кутучасы</string>
+  <string name="pref_speak_roles_summary">Мисалы, баскыч же белги кутучасы</string>
   <string name="title_pref_speak_element_ids">Элементтин идентификаторлорун айтуу</string>
-  <string name="summary_pref_speak_element_ids">Энбелгиси жок баскычтардын идентификаторун айтыңыз</string>
+  <string name="summary_pref_speak_element_ids">Энбелгиси жок баскычтардын идентификаторун айтат</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Аткарылып жатканын айтып туруу</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Канчалык жүктөлүп алынганын, унааңыз менен кайда баратканыңызды жана башка көптөгөн нерселерди угуп турасыз. Өчүрүп койсоңуз, укпай каласыз.</string>
   <string name="title_pref_explore_by_touch">Тийип изилдөө</string>
   <string name="title_pref_category_controls">Башкаруу элементтери</string>
-  <string name="title_pref_category_reduce_latency_summary">Бул жөндөөлөр экранга тийгенден кийин SandFly тезирээк жооп берет</string>
+  <string name="title_pref_category_reduce_latency_summary">Бул жөндөөлөр SandFly экранга тийгенден кийин тезирээк жооп бериши үчүн</string>
   <string name="reset_latency_settings_title">Бардык кечигүү параметрлерин баштапкы абалга келтирүү</string>
   <string name="title_pref_single_tap">Иштетүү үчүн бир жолу басуу</string>
   <string name="summary_pref_single_tap">Тандалган нерсени иштетүү үчүн бир жолу таптаңыз. Эки жолу таптоого караганда ылдамыраак чабыттоо</string>
@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Фокус көрсөткүчү</string>
   <string name="title_pref_category_manage_gestures">Жаңсоолор</string>
   <string name="title_pref_manage_labels">Жеке энбелгилер</string>
-  <string name="title_pref_category_context_menu">SandFly меню</string>
+  <string name="title_pref_category_context_menu">SandFly менюсу</string>
   <string name="title_pref_category_selector_menu">Окууну башкаруу элементтери</string>
   <string name="title_pref_category_navigation_menu">Чабыттоо параметрлерин түзөтүү</string>
   <string name="title_pref_manage_keyboard_shortcuts">Ыкчам баскычтар</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">Жардам</string>
   <string name="title_pref_advanced_settings">Кеңири параметрлер</string>
   <string name="title_pref_show_exit_watermark">SandFly\'ти өчүрүү үчүн нускамаларды көрсөтүү</string>
-  <string name="summary_pref_show_exit_watermark">SandFly күйгөндө, аны кантип өчүрүүнү көрсөтүңүз</string>
+  <string name="summary_pref_show_exit_watermark">SandFly күйгөндө, аны кантип өчүрүү көрсөтүлөт</string>
   <string name="talkback_exit_watermark_text">SandFly күйүк. Өчүрүү үчүн 2 манжаңызды экранда 5 секунд кармап туруңуз. Бул билдирүү көрсөтүлбөй калышы үчүн, SandFly менюсун 3 манжаңыз менен таптап коюп ачыңыз.</string>
   <string name="talkback_exit_watermark_hint_text">SandFly күйгүзүлгөнүн көрсөткөн баннер. SandFly\'ти өчүрүү үчүн экранды 2 манжаңыз менен 5 секунд кармап туруңуз. Бул баннерди алып салуу үчүн SandFly параметрлерин күйгүзүңүз.</string>
   <string name="reset_gesture_settings_title">Жаңсоо параметрлерин кайра коюу</string>
@@ -192,7 +192,7 @@
   <string name="keycombo_menu_other_language_options">Орнотулган тилдерди көрсөтүү</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Акыркы айтылган сүйлөмдү көчүрүү</string>
   <string name="keycombo_menu_other_open_tts_settings">Кеп синтезаторунун параметрлерин ачыңыз</string>
-  <string name="keycombo_menu_other_open_talkback_settings">SandFly параметрлерин ачасыз</string>
+  <string name="keycombo_menu_other_open_talkback_settings">SandFly параметрлерин ачуу</string>
   <string name="keycombo_menu_other_report_issue">Пикир билдирүү</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Терүү жаңырыгынын мерчими</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Ыкчам баскычтардын тизмесин айтып бер</string>
@@ -289,15 +289,15 @@
   <string name="override_keycombo_message_two_params">Бул баскычтар айкалышы \"%1$s\" аракети үчүн колдонулат. Аны тазалап, бул кыска жолду \"%2$s\" үчүн дайындагыңыз келеби?</string>
   <string name="title_pref_intonation">Айтып жаткан үндүн бийиктигин өзгөртүү</string>
   <string name="title_pref_keyboard_echo">Баскыч басылганда үн чыгат</string>
-  <string name="pref_node_desc_order_title">Буюмдун реквизиттеринин тартиби</string>
+  <string name="pref_node_desc_order_title">Элементтин чоо-жайынын тартиби</string>
   <string name="pref_time_feedback_format_title">Убакыт форматы</string>
   <string name="title_pref_latency_reduction">Кечигүүнү азайтуу</string>
-  <string name="talkback_latency_reduction_summary">Экранга тийгениңизден кийин SandFly тезирээк жооп бериңиз</string>
+  <string name="talkback_latency_reduction_summary">SandFly экранга тийгенден кийин тезирээк жооп берет</string>
   <string name="summary_pref_intonation">Өчүрүлгөн тамгаларды бийик үн менен айтуу</string>
   <string name="title_pref_brailledisplay">Брайль дисплейи</string>
   <string name="title_pref_brailleime">Брайль баскычтобу</string>
   <string name="summary_pref_brailleime_disabled">Түзмөгүңүздө Брайль баскычтобу жок</string>
-  <string name="title_pref_speech_footer">Атайын мүмкүнчүлүктөрдүн үнүн каалаган экрандан өзгөртүү үчүн экранда 1 манжаңызды кармап, үнүн жогорулатуу же ылдый баскычтарын басыңыз.</string>
+  <string name="title_pref_speech_footer">Атайын мүмкүнчүлүктөрдүн үнүн каалаган экранда өзгөртүү үчүн экранда 1 манжаңызды кармап туруп, үндү көтөрүү же басаңдатуу баскычын басыңыз.</string>
   <string name="title_pref_vibration">Дирилдөө</string>
   <string name="title_pref_soundback">Үн сигналы</string>
   <string name="title_pref_use_audio_focus">Колдонмолордун үнүн басаңдатуу</string>
@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">Терүү ыкмасы</string>
   <string name="title_pref_typing_long_tap_duration">Терүүдө коё бербей басып туруу узактыгы</string>
   <string name="title_pref_touch_explore_timeout">Терүүдө фокустун кечигүүсү</string>
-  <string name="message_pref_touch_explore_latency">Кыскараак кечигүү SandFly баскычтопка тийгенден кийин тезирээк сүйлөйт.\n\nКечиктирүүнү тандаңыз</string>
+  <string name="message_pref_touch_explore_latency">Кечигүү канчалык кыска болсо, баскычтопко тийгенден кийин SandFly ошончолук тезирээк сүйлөйт.\n\nКечигүүнү тандаңыз</string>
   <string name="title_pref_touch_focus_timeout">Фокустун кечигүүсү</string>
   <string name="title_pref_talkback_gesture_detection">SandFly\'теги жаңсоолорду тууралоо</string>
   <string name="toast_pref_talkback_gesture_detection">Параметрди иштетүү үчүн SandFly\'ти өчүрүп, кайра күйгүзүңүз.</string>
@@ -502,7 +502,7 @@
   <string name="summary_granularity">Символдор, сөздөр, саптар ж.б. боюнча окулат</string>
   <string name="summary_read_from_top">Экрандагы бардык нерселер башынан баштап окулат</string>
   <string name="summary_read_from_current">Экрандагы тандалган нерседен баштап баары окулат</string>
-  <string name="summary_copy_last_spoken_phrase">Текстти чаптоо үчүн акыркы SandFly фразасын алмашуу буферине көчүрүңүз</string>
+  <string name="summary_copy_last_spoken_phrase">SandFly айткан акыркы фразаны текстти чаптоо үчүн алмашуу буферине көчүрүү</string>
   <string name="summary_spell_last_spoken_phrase">SandFly айткан акыркы сүйлөм тамгалап айтылат</string>
   <string name="summary_repeat_last_spoken_phrase">SandFly айткан акыркы сүйлөм кайталанат</string>
   <string name="summary_perform_screen_search">Экранда изделе турган текстти киргизесиз</string>
@@ -510,7 +510,7 @@
   <string name="summary_show_hide_screen">Экраныңызды жашырасыз. Жаныңыздагы адамдарга андагы нерселер көрүнбөй калат. Баса, аны кайра кадимки абалга кайтарганды унутпаңыз.</string>
   <string name="summary_control_speak_time">Экранды күйгүзгөнүңүздө убакыт айтылып же айтылбай турганын өзгөртүңүз</string>
   <string name="summary_show_keyboard_shortcuts_preferences">Ыкчам баскычтардын тизмесин ач</string>
-  <string name="summary_talkback_preferences">SandFly параметрлерин ачасыз</string>
+  <string name="summary_talkback_preferences">SandFly параметрлерин ачуу</string>
   <string name="summary_braile_display_preferences">Брайль дисплейинин параметрлерин ачуу</string>
   <string name="summary_system_actions">Бардык колдонмолорго жана ыкчам параметрлерге өтүү</string>
   <string name="summary_tts_settings">Кеп синтезаторунун параметрлерин ачасыз</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">Атайын мүмкүнчүлүктөрдүн үнүнүн катуулугу</string>
   <string name="title_pref_touch_explore_latency">Терүүдө фокустун кечигүүсү</string>
   <string name="title_pref_touch_focus_latency">Фокустун кечигүүсү</string>
-  <string name="message_pref_touch_focus_latency">Кыскараак кечигүү экранга тийгенден кийин SandFly тезирээк сүйлөйт</string>
+  <string name="message_pref_touch_focus_latency">Кечигүү канчалык кыска болсо, экранга тийгенден кийин SandFly ошончолук тезирээк сүйлөйт</string>
   <string name="message_pref_typing_method_prefix">Текстти терип жатканда кечигүүнү азайтуу үчүн \"Баскычты тандоо үчүн манжа менен коё бербей басып, андан кийин алып коюу\" параметрин тандаңыз</string>
   <string name="message_pref_typing_method_postfix">Ошондой эле каалаган убакта эки манжа менен тере аласыз. Ал үчүн каалаган баскычты бир манжаңыз менен коё бербей басып, экранды башка манжаңыз менен таптап коюңуз.</string>
   <string name="title_pref_talkback_speech_rate">Кеп ылдамдыгы</string>
@@ -790,7 +790,7 @@
   <string name="dialog_title_voice_commands">SandFly\'ти көзөмөлдөө үчүн үн буйруктарын колдонуңуз</string>
   <string name="dialog_message_voice_commands">Бул буйруктарды айтып көрүңүз:\n\n• Көчүр\n• Тандалган нерседен баштап оку\n• [Сактоо] деген сөздү тап\n• [Тезирээк] сүйлө\n• SandFly параметрлери\n\nБардык үн буйруктарын көрүү үчүн \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" деп айтыңыз</string>
   <string name="start_voice_command">Үн буйруктарын колдонуу</string>
-  <string name="dialog_title_pass_through_mode">SandFly жаңсоолорунан мурун системанын жаңсоолорун колдонуңуз</string>
+  <string name="dialog_title_pass_through_mode">SandFly жаңсоолорунун ордуна системанын жаңсоолорун колдонуу</string>
   <string name="dialog_message_pass_through_mode">Коңгуроо угулганда, SandFly колдоого албаган тутум жаңсоосун колдоно аласыз. Бул өтмө жаңсоо катары белгилөө.</string>
   <string name="dialog_title_voice_input_download">Оозеки киргизүү үчүн Gboard\'ду жаңыртыңыз</string>
   <string name="dialog_message_voice_input_download">Gboard иштеп жатканда 2 манжа менен эки жолу басып, оозеки киргизүүнү күйгүзө аласыз. Бул жаңсоону колдонуу үчүн Gboard\'ду эң акыркы версиясына жаңыртыңыз.</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">Жогору өтүү</string>
   <string name="training_tip">Кеңеш</string>
   <string name="tv_training_overview_step_title">SandFly кантип иштейт</string>
-  <string name="tv_training_overview_step_summary">SandFly – Googleнын TalkBack негизиндеги экранды окуу куралы. Ал экрандагы текстти үнүн чыгарып окуйт жана түзмөгүңүздү экранды карабай эле колдоно аласыз.\n\nSandFly күйгүзүлгөндө, экрандагы тандалган нерсе үнүн чыгарып айтылат, кээде кошумча маалымат же контекст кошулат.\n\nпрессти тандаңыз. Тандоо баскычы багыттоочу тактанын ортосунда жайгашкан, ал пультуңуздун жогору жагындагы чоң тегерек баскыч.</string>
+  <string name="tv_training_overview_step_summary">SandFly — Google TalkBack негизиндеги экрандан окугуч. Ал экрандагы текстти үн чыгарып окуйт жана үн менен жооп берет, ошондуктан түзмөктү экранды карабай колдоно аласыз.\n\nSandFly күйүк болгондо, экранда тандалган нерсе үн чыгарып айтылат, кээде кошумча маалымат же контекст менен.\n\nУлантуу үчүн «Тандоо» баскычын басыңыз. «Тандоо» баскычы багыт тактасынын ортосунда жайгашкан, ал — пульттун жогору жагындагы чоң, тегерек баскыч.</string>
   <string name="tv_training_remote_step_title">Пультту колдонуу</string>
   <string name="tv_training_remote_step_summary">Пульттун жогору жагындагы тегерек баскычты колдонуп, экрандагы элементтерге өтүңүз. Элементти тандоо үчүн пульттун жогору жагындагы баскычтын ортосун басыңыз.\n\nСол жактагы экинчи сапта Артка баскычы бар. Оң жакта Үн жардамчысынын баскычы жайгашкан.\n\nСол жактагы үчүнчү сапта башкы бет баскычы бар. Оңдо үнүн басуу баскычы бар.\n\nСол жактагы төртүнчү сапта YouTube ыкчам баскычы жайгашкан. Оңдо Netflix ыкчам баскычы бар.\n\nЭң төмөнкү сапта эки кичинекей баскыч бар. Солдогу кубат баскычы. Оңдогу баскыч сыналгынын киргизүү менюсун ачат.\n\nҮндү катуулатуу/акырындатуу баскычтары пульттун оң капталында жайгашкан.\n\nУлантуу үчүн Тандоо баскычын басыңыз.</string>
   <string name="tv_training_shortcut_step_title">SandFly ыкчам баскычы</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">Брайль баскычтобу менен да терсеңиз болот. SandFly\'тин параметрлеринен издеңиз.</string>
   <string name="other_ways_to_type_title">Терүүнүн башка жолдору</string>
   <string name="other_ways_to_type_text">SandFly\'те терүүнүн башка жолдору да бар. Мисалы, тамганы терүү үчүн аны эки жолу бассаңыз болот.</string>
-  <string name="basic_other_ways_to_type_text">SandFly терүүнүн башка жолдору бар. Мисалы, сиз катты киргизүү үчүн эки жолу таптасаңыз болот. Муну кийинчерээк SandFly орнотуулар &gt; Экрандагы клавиатура &gt; Терүү ыкмасынан өзгөртө аласыз.</string>
-  <string name="basic_other_ways_to_type_text_tts">SandFly терүүнүн башка жолдору бар. Мисалы, катты киргизүү үчүн эки жолу таптасаңыз болот. Муну кийинчерээк SandFly жөндөөлөрүнөн, андан кийин экрандагы клавиатурадан, андан соң Терүү ыкмасынан өзгөртө аласыз.</string>
+  <string name="basic_other_ways_to_type_text">SandFly’да терүүнүн башка жолдору да бар. Мисалы, тамганы эки жолу таптап киргизсеңиз болот. Муну кийин SandFly параметрлери &gt; Экрандагы баскычтоп &gt; Терүү ыкмасы бөлүмүнөн өзгөртө аласыз.</string>
+  <string name="basic_other_ways_to_type_text_tts">SandFly’да терүүнүн башка жолдору да бар. Мисалы, тамганы эки жолу таптап киргизсеңиз болот. Муну кийин SandFly параметрлери, андан кийин Экрандагы баскычтоп, андан кийин Терүү ыкмасы бөлүмүнөн өзгөртө аласыз.</string>
   <string name="change_typing_preference_text">Терүү жолун өзгөртүү</string>
   <string name="moving_cursor_title">Курсорду жылдыруу</string>
   <string name="moving_cursor_text">Текст кутучасын иштеткенден кийин бир тамгадан экинчисине өтүү үчүн экранды өйдө же ылдый сүрүңүз.\n\nТөмөнкү текст кутучасында машыгып көрүңүз.</string>
@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Билдирмелердин таржымалын көрүү үчүн 2 манжаңыз менен экрандын жогору жагынан төмөн карай сүрүңүз</string>
   <string name="image_description_playground_title">Сүрөттөрдүн түшүндүрмөлөрүн алып көрүү</string>
   <string name="image_description_playground_content_one">Сүрөттү басып, SandFly менюсун ачып, \"Сүрөттүн түшүндүрмөсүн угуу\" параметрин тандаңыз.\n\nТөмөндө сүрөт берилди. Анын түшүндүрмөсүн угуп көрүңүз.</string>
-  <string name="image_description_playground_content_two">Сүрөттүн сүрөттөмө жөндөөлөрүн каалаган убакта SandFly жөндөөлөр &gt; Автоматтык сүрөттөмөлөр бөлүмүнөн өзгөртө аласыз.</string>
-  <string name="image_description_playground_content_two_tts">Сүрөттүн сүрөттөмө жөндөөлөрүн каалаган убакта SandFly жөндөөлөрүнөн, андан кийин Автоматтык сүрөттөмөлөрдөн өзгөртө аласыз.</string>
+  <string name="image_description_playground_content_two">Сүрөттөрдү сүрөттөө жөндөөлөрүн каалаган убакта SandFly параметрлери &gt; Автоматтык учкай маалыматтар бөлүмүнөн өзгөртө аласыз.</string>
+  <string name="image_description_playground_content_two_tts">Сүрөттөрдү сүрөттөө жөндөөлөрүн каалаган убакта SandFly параметрлеринен, андан кийин Автоматтык учкай маалыматтар бөлүмүнөн өзгөртө аласыз.</string>
   <string name="image_description_sample_image_content_description">Үлгү сүрөт; SandFly менюсун ачуу үчүн 3 манжаңыз менен таптап, түшүндүрмөсүн угуу үчүн \"Сүрөттүн түшүндүрмөсүн угуу\" параметрин тандаңыз.</string>
   <string name="practice_gestures_title">Жаңсоолорду үйрөнүү</string>
   <string name="practice_keyboard_gestures_title">Ыкчам баскычтарды үйрөнүү</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">Мурунку мамыча</string>
   <string name="shortcut_column_right">Кийинки мамыча</string>
   <string name="table_navigation_not_supported">Таблица боюнча чабыттоо колдоого алынбайт</string>
-  <string name="pref_auto_enter_table_navigation_title">Таблицаларда үстөл навигациясына өтүңүз</string>
+  <string name="pref_auto_enter_table_navigation_title">Таблицаларда таблица боюнча навигацияга өтүү</string>
   <string name="title_text_formatting_menu">Тексттин форматын сүрөттөп берүү</string>
   <string name="summary_text_formatting_menu">Жоон, жантык, алды сызылган сыяктуу жана башка өзгөртүүлөр үчүн</string>
   <string name="title_text_formatting_inline">Тексттин форматын айтуу</string>
@@ -1296,11 +1296,11 @@
   <string name="talkback_speech_bubble_label">@string/talkback_label</string>
   <string name="close_string">Жабуу</string>
   <string name="talkback_label">SandFly</string>
-    <string name="title_pref_tts_engine">Тексттен сөзгө кыймылдаткыч</string>
+    <string name="title_pref_tts_engine">Текстти үнгө айландыруу механизми</string>
     <string name="title_pref_system_tts_settings">Системанын текстти сүйлөөгө орнотуулары</string>
     <string name="title_selector_vertical_navigation">Вертикалдуу навигация</string>
-    <string name="summary_selector_vertical_navigation">Төмөнкү же жогорудагы нерсеге өтүп, катардын башка элементтеринен өтүңүз</string>
-    <string name="title_selector_switch_tts_engine">Кеп кыймылдаткычы</string>
+    <string name="summary_selector_vertical_navigation">Катардын башка элементтерин аттап, төмөнкү же жогорку элементке өтүү</string>
+    <string name="title_selector_switch_tts_engine">Кеп механизми</string>
     <string name="summary_selector_switch_tts_engine">Орнотулган сүйлөө кыймылдаткычтарынын ортосунда которулуу</string>
     <string name="title_selector_voice_profile">Үн профили</string>
     <string name="title_pref_voice_profiles">Үн профилдери</string>
@@ -1310,13 +1310,13 @@
     <string name="speech_engine_unavailable_with_profile">Үн профилин колдонууда кеп кыймылдаткычы жеткиликсиз</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, колдонууда</string>
     <string name="no_voice_profiles">Үн профилдери жок</string>
-    <string name="shortcut_voice_profiles">Үн профилин тандаңыз</string>
+    <string name="shortcut_voice_profiles">Үн профилин тандоо</string>
     <string name="shortcut_previous_voice_profile">Мурунку үн профили</string>
     <string name="shortcut_next_voice_profile">Кийинки үн профили</string>
-    <string name="title_pref_voice_profile_in_use">Үн профили колдонулууда</string>
+    <string name="title_pref_voice_profile_in_use">Колдонулуп жаткан үн профили</string>
     <string name="title_pref_add_voice_profile">Үн профилин кошуу</string>
     <string name="voice_profile_new_name">Үн профили <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Үн профили мурунтан эле <xliff:g id="name" example="Reading">%1$s</xliff:g> деп аталган</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> деген үн профили бар</string>
     <string name="title_pref_voice_profile_name">Аты</string>
     <string name="title_pref_voice_profile_language">Тил</string>
     <string name="title_pref_voice_profile_voice">Үн</string>
@@ -1327,38 +1327,38 @@
     <string name="voice_profile_move_up">Өйдө жылдыруу</string>
     <string name="voice_profile_move_down">Төмөн жылдыруу</string>
     <string name="voice_profile_rename">Атын өзгөртүү</string>
-    <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g> жогору жылдырылды</string>
-    <string name="voice_profile_moved_below">Төмөндө жылдырылды <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_above"><xliff:g id="name" example="Reading">%1$s</xliff:g> профилинен жогору жылдырылды</string>
+    <string name="voice_profile_moved_below"><xliff:g id="name" example="Reading">%1$s</xliff:g> профилинен төмөн жылдырылды</string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> жок кылынды</string>
     <string name="title_pref_delete_voice_profile">Үн профилин жок кылуу</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> жок кылынсынбы?</string>
     <string name="voice_profile_delete">Өчүрүү</string>
-    <string name="summary_pref_tts_engine_default">Системанын демейки</string>
+    <string name="summary_pref_tts_engine_default">Системанын демейкиси</string>
     <string name="title_pref_speech_pitch">Сүйлөө бийиктиги</string>
     <string name="title_pref_speech_stream">Кептин катуулугу</string>
-    <string name="summary_selector_speech_stream">Атайын мүмкүнчүлүктөр, медиа, шыңгыроо жана чалуу көлөмүнүн ортосунда которуштуруу</string>
+    <string name="summary_selector_speech_stream">Атайын мүмкүнчүлүктөр, медиа, шыңгыр жана сүйлөшүү үнүнүн катуулугунун ортосунда которулуу</string>
     <string name="speech_stream_accessibility">Атайын мүмкүнчүлүктөрдүн үнүнүн катуулугу</string>
-    <string name="speech_stream_media">Медиа көлөмү</string>
-    <string name="speech_stream_ring">Шыңгырдын көлөмү</string>
-    <string name="speech_stream_call">Чалуу үнүнүн көлөмү, наушник</string>
+    <string name="speech_stream_media">Медианын үнү</string>
+    <string name="speech_stream_ring">Шыңгырдын үнү</string>
+    <string name="speech_stream_call">Чалуунун үнү, кулак динамиги</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Узун текстти бир убакта жөнөтүңүз</string>
-    <string name="summary_pref_speak_in_phrases">Gryphon сыяктуу жай токтогон сүйлөө кыймылдаткычтары үчүн сүрүп коюу узун текстти дароо токтотот. Көптөгөн кыймылдаткычтар өзүнчө жөнөтүлгөн сүйлөмдөрдүн ортосунда узагыраак тыныгууда, андыктан сиздики тез токтоп калса, муну өчүрүп коюңуз.</string>
-    <string name="battery_optimization_notification_title">Батареяны оптималдаштыруу SandFly токтошу мүмкүн</string>
-    <string name="battery_optimization_notification_text">Бул телефондо батареяны үнөмдөгүч экран өчкөндөн кийин SandFly токтоп калышы мүмкүн, андыктан ал кайра күйгүзүлгөнгө чейин унчукпай калат. Батареяны оптималдаштырууну ачуу үчүн таптап, Бардык колдонмолорду тандап, SandFly табыңыз жана Оптимизациялоону тандаңыз.</string>
+    <string name="title_pref_speak_in_phrases">Узун текстти сүйлөм-сүйлөм менен жөнөтүү</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon сыяктуу жай токтогон кеп кыймылдаткычтары үчүн: сүрүү узун текстти дароо токтотот. Көп кыймылдаткычтар өзүнчө жөнөтүлгөн сүйлөмдөрдүн ортосунда узагыраак тыным жасайт, андыктан кыймылдаткычыңыз тез токтосо, муну өчүк калтырыңыз.</string>
+    <string name="battery_optimization_notification_title">Батареяны оптималдаштыруу SandFly\'ды токтотушу мүмкүн</string>
+    <string name="battery_optimization_notification_text">Бул телефондо экран өчкөндөн кийин батареяны үнөмдөгүч SandFly’ды токтотуп коюшу мүмкүн, анда ал кайра иштетилмейинче эч нерсе айтпайт. Батареяны оптималдаштырууну ачуу үчүн таптап, «Бардык колдонмолор» дегенди тандап, SandFly’ды таап, «Оптималдаштырбоо» дегенди тандаңыз.</string>
     <string name="title_pref_mute_speech_while_recording">Жазып жатканда тынч</string>
-    <string name="summary_pref_mute_speech_while_recording">Колдонмо кулакчын туташтырбай жазып жатканда, SandFly жаңсооңузга, баскычтарыңызга жана терүүңүзгө жооп катары гана сүйлөйт жана эскертмелер сыяктуу нерселер үчүн унчукпай туруп, алар жаздырылбайт.</string>
+    <string name="summary_pref_mute_speech_while_recording">Колдонмо кулакчынсыз жаздырып жатканда, SandFly жаңсоолоруңузга, баскычтарга жана терүүңүзгө жооп катары гана сүйлөйт, ал эми эскертмелер сыяктуу нерселер жаздырылбашы үчүн аларды айтпайт.</string>
     <string name="title_pref_switch_languages">Тилди автоматтык түрдө которуу</string>
     <string name="title_pref_switch_dialects">Диалекти автоматтык түрдө которуу</string>
     <string name="category_collapsed">Жыйыштырылган бөлүм</string>
     <string name="category_expanded">Кеңейтилген бөлүм</string>
-    <string name="title_pref_speak_nav_bar_buttons">Чабыттоо тилкесинин баскычтарын сүйлө</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Чабыттоо тилкесинде жандыруу үчүн көтөрүү менен, Артка же Үй сыяктуу таптоо басылган баскычты айтыңыз.</string>
+    <string name="title_pref_speak_nav_bar_buttons">Чабыттоо тилкесинин баскычтарын айтуу</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Чабыттоо тилкесинде манжаны көтөрүп жандыруу колдонулганда, таптоо менен басылган баскычты айтат, мисалы, «Артка» же «Башкы экран».</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Батарея <xliff:g id="battery_level" example="73">%1$s</xliff:g> пайыз</string>
     <string name="template_battery_level_unknown">Батарея деңгээли белгисиз</string>
@@ -1368,50 +1368,50 @@
     <string name="title_screen_announcements_screen_off">Экран өчкөндө</string>
     <string name="title_screen_announcements_screen_on">Экран күйгөндө</string>
     <string name="title_screen_announcements_unlock">Телефондун кулпусу ачылганда</string>
-    <string name="title_pref_say_screen_off">\"Экран өчүк\" деп айтыңыз</string>
-    <string name="title_pref_say_device_unlocked">\"Түзмөктүн кулпусу ачылды\" деп айтыңыз</string>
+    <string name="title_pref_say_screen_off">\"Экран өчүк\" деп айтуу</string>
+    <string name="title_pref_say_device_unlocked">\"Түзмөктүн кулпусу ачылды\" деп айтуу</string>
     <string name="title_pref_announce_time">Убакыт</string>
     <string name="title_pref_announce_ringer_mode">Коңгуроо режими</string>
-    <string name="summary_pref_announce_ringer_mode">Коңгуроо титирөө же унчукпай коюуга качан коюлганын айтыңыз</string>
-    <string name="title_pref_category_feedback">Пикир</string>
+    <string name="summary_pref_announce_ringer_mode">Коңгуроо дирилдөөгө же үнсүз режимге коюлганда айтуу</string>
+    <string name="title_pref_category_feedback">Кайтарым байланыш</string>
     <string name="title_pref_category_typing_and_braille">Терүү жана брайль</string>
     <string name="title_pref_category_apps">Колдонмолор</string>
     <string name="title_pref_touch_activation">Тийип жана активдештирүү</string>
     <string name="title_pref_navigation">Чабыттоо</string>
     <string name="title_pref_category_more">Дагы</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch үчүн жаңсоолорду камдоо</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch аларды колдонушу үчүн SandFly эки манжа менен бир жана эки жолу басууну токтотот. Саатыңыздын атайын мүмкүнчүлүктөр жөндөөлөрүнөн Vibration Watch иштетиңиз.</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly эки манжа менен бир жолу жана эки жолу таптоолорду иштетпей калат, ошондо Samsung Vibration Watch аларды колдоно алат. Vibration Watch’ту саатыңыздын атайын мүмкүнчүлүктөр жөндөөлөрүнөн иштетиңиз.</string>
     <string name="shortcut_reserved_for_vibration_watch">Өркүндөтүлгөн жөндөөлөрдөгү Vibration Watch үчүн сакталган</string>
-    <string name="title_pref_speakerphone_away_from_ear">Кулагыңыздан алыс болгондо сүйлөңүз</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Чалуу учурунда телефонду кулагыңыздан алганыңызда динамикке, кайра көтөргөнүңүздө кайра наушникке өтөт.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Экрандагы окурмандарга Android бербеген уруксат керек. Аны берүү үчүн, бул буйрукту adb or Shizuku, then come back to this screen: %1$s менен иштетиңиз</string>
-    <string name="action_copy_command">Көчүрүү буйругу</string>
+    <string name="title_pref_speakerphone_away_from_ear">Телефон кулактан алыс болгондо динамик</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Чалуу учурунда телефонду кулактан алыстатканда динамикке, кайра кулакка тосканда сүйлөшүү динамигине өтөт.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android экрандан окугучтарга бербеген уруксат керек. Аны берүү үчүн бул буйрукту adb же Shizuku аркылуу аткарып, анан ушул экранга кайтыңыз: %1$s</string>
+    <string name="action_copy_command">Буйрукту көчүрүү</string>
     <string name="command_copied">Буйрук көчүрүлдү</string>
-    <string name="title_pref_speech_control">Башка колдонмолорго сүйлөөгө уруксат бериңиз</string>
-    <string name="summary_pref_speech_control">Сиз уруксат берген колдонмолор текстти SandFly үнүңүз менен айта алышат. Түзмөк кулпуланып турганда эч нерсе айтылбайт.</string>
-    <string name="title_pref_speech_control_sound">Башка колдонмолор сүйлөй электе үндү ойнотуңуз</string>
+    <string name="title_pref_speech_control">Башка колдонмолорго сүйлөөгө уруксат берүү</string>
+    <string name="summary_pref_speech_control">Уруксат берилген колдонмолор текстти SandFly үнү менен айта алат. Түзмөк кулпуланып турганда эч нерсе айтылбайт.</string>
+    <string name="title_pref_speech_control_sound">Башка колдонмолор сүйлөй электе үн ойнотуу</string>
     <string name="speech_control_apps_category">Колдонмолор</string>
     <string name="speech_control_no_apps">Азырынча бир дагы колдонмо сүйлөөгө сурай элек.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> SandFly аркылуу сүйлөөгө уруксат бересизби?</string>
     <string name="speech_control_ask_text">Ал текстти SandFly үнүңүз менен айта алат. Муну Өркүндөтүлгөн жөндөөлөрдөн өзгөртө аласыз.</string>
     <string name="speech_control_allow">Уруксат берүү</string>
-    <string name="speech_control_deny">Уруксат бербе</string>
-    <string name="permission_speak_label">SandFly аркылуу сүйлө</string>
+    <string name="speech_control_deny">Уруксат бербөө</string>
+    <string name="permission_speak_label">SandFly аркылуу сүйлөө</string>
     <string name="permission_speak_description">Колдонмого текстти SandFly үнүңүз менен айтууга уруксат берет. SandFly колдонмо сүйлөй электе сизден сурайт.</string>
     <string name="permission_braille_display_label">SandFly үчүн брайл дисплейи болууну сурануу</string>
-    <string name="permission_braille_display_description">Колдонмого SandFly үчүн Брайл дисплейи болууга уруксат берүү. Эгер ага SandFly ичинде уруксат берсеңиз, ал экрандагы баарын окуп, түзмөгүңүздү башкара алат. SandFly биринчи сизден сурайт.</string>
+    <string name="permission_braille_display_description">Колдонмого SandFly үчүн Брайл дисплейи болууну суроого уруксат берет. Эгер SandFly’да уруксат берсеңиз, ал экрандагы баарын окуп, түзмөгүңүздү башкара алат. SandFly адегенде сизден сурайт.</string>
     <string name="title_pref_phonetic_letters_mode">Тамгаларды фонетикалык жактан сүйлөө</string>
     <string name="phonetic_letters_mode_off">Өчүк</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Каттан кийин кечигип, \"ч, мейманкана\" сыяктуу</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Каттан кийин, \"h hotel\" сыяктуу кечигүү жок</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Каттын ордуна, \"мейманкана\" сыяктуу</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Тамгадан кийин, тыным менен, мисалы «а, Алма»</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Тамгадан кийин, тынымсыз, мисалы «а Алма»</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Тамганын ордуна, мисалы «Алма»</string>
     <string name="title_pref_emoji_speech">Эмодзи</string>
-    <string name="emoji_speech_engine">Кеп кыймылдаткычы менен окуу</string>
-    <string name="emoji_speech_names">Окуган: SandFly</string>
+    <string name="emoji_speech_engine">Кеп кыймылдаткычы окуйт</string>
+    <string name="emoji_speech_names">SandFly окуйт</string>
     <string name="emoji_speech_none">Жок</string>
-    <string name="summary_selector_menu_emoji">Быйтыкчаларды окуу ыкмасын өзгөртүңүз</string>
+    <string name="summary_selector_menu_emoji">Быйтыкчаларды окуу ыкмасын өзгөртүү</string>
     <string name="emoji_speech_state">Эмодзи: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Кайталанган эмодзилерди санаңыз</string>
+    <string name="title_pref_emoji_repeat_count">Кайталанган эмодзилерди саноо</string>
     <string name="emoji_repeat_count_off">Өчүк</string>
     <string name="emoji_repeat_count_2">2 же андан көп</string>
     <string name="emoji_repeat_count_3">3 же андан көп</string>
@@ -1419,39 +1419,39 @@
     <string name="emoji_repeat_count_5">5 же андан көп</string>
     <string name="emoji_repeat_count_6">6 же андан көп</string>
     <string name="pref_table_headers_category_title">Таблица окуу</string>
-    <string name="pref_table_column_headers_title">Мамычалардын баштарын окуу</string>
-    <string name="pref_table_column_headers_entry_after">Уюлдук маалыматтардан кийин</string>
-    <string name="pref_table_column_headers_entry_before">Клетка маалыматтарына чейин</string>
-    <string name="pref_table_column_headers_entry_off">Окуба</string>
-    <string name="pref_table_speak_row_column_numbers_title">Катар жана тилке номерлерин айтыңыз</string>
-    <string name="pref_table_speak_row_column_numbers_summary">Таблица клеткалары үчүн сап жана мамыча номерлерин жарыялоо</string>
-    <string name="title_pref_speak_volume_changes">Сүйлөө үнүн өзгөртүү</string>
-    <string name="summary_pref_speak_volume_changes">Үн баскычтарын басканда жаңы үндү айтыңыз</string>
-    <string name="title_pref_speak_notifications">Билдирмелерди сүйлө</string>
-    <string name="summary_pref_speak_notifications">Жаңы эскертмелер келгенде, аларды үн чыгарып окуңуз. Кирүүчү чалуулар ар дайым окулат.</string>
-    <string name="title_pref_notification_list">SandFly эскертме тизмесин колдонуңуз</string>
-    <string name="title_pref_notification_parts">Кабарлоо чоо-жайы</string>
+    <string name="pref_table_column_headers_title">Тилке аталыштарын окуу</string>
+    <string name="pref_table_column_headers_entry_after">Уячанын маалыматынан кийин</string>
+    <string name="pref_table_column_headers_entry_before">Уячанын маалыматына чейин</string>
+    <string name="pref_table_column_headers_entry_off">Окубоо</string>
+    <string name="pref_table_speak_row_column_numbers_title">Сап жана тилке номерлерин айтуу</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Таблица уячаларынын сап жана тилке номерлерин айтат</string>
+    <string name="title_pref_speak_volume_changes">Үн деңгээлинин өзгөрүүсүн айтуу</string>
+    <string name="summary_pref_speak_volume_changes">Үн баскычтары басылгандан кийин жаңы үндүн катуулугун айтат</string>
+    <string name="title_pref_speak_notifications">Билдирмелерди окуу</string>
+    <string name="summary_pref_speak_notifications">Жаңы билдирмелерди келгенде үн чыгарып окуйт. Кирүүчү чалуулар ар дайым окулат.</string>
+    <string name="title_pref_notification_list">SandFly билдирмелер тизмесин колдонуу</string>
+    <string name="title_pref_notification_parts">Билдирменин чоо-жайы</string>
     <string name="title_pref_play_installer">Google Play\'ден орнотулган көрүнөт</string>
-    <string name="summary_pref_play_installer">Google Play орнотулган SandFly башка колдонмолорго айтыңыз. Кээ бир колдонмолор, мисалы, банктык колдонмолор, башка жерден орнотулган атайын мүмкүнчүлүктөр кызматтарын өчүрүшөт. Shizuku керек жана SandFly кайдан келгени жөнүндө айтылган колдонмолорду гана өзгөртөт.</string>
+    <string name="summary_pref_play_installer">Башка колдонмолорго SandFly Google Play’ден орнотулганын билдирет. Кээ бир колдонмолор, мисалы, кээ бир банк колдонмолору, башка жерден орнотулган атайын мүмкүнчүлүктөр кызматтарын өчүрөт. Shizuku керек жана колдонмолорго SandFly кайдан орнотулганы тууралуу берилген маалыматты гана өзгөртөт.</string>
     <string name="summary_pref_play_installer_pending">Күйүк, бирок Google Play орнотуучу катары жазыла элек. SandFly аны Shizuku жеткиликтүү болгондо орнотот.</string>
-    <string name="notification_part_title">Title</string>
+    <string name="notification_part_title">Аталышы</string>
     <string name="notification_part_text">Текст</string>
     <string name="notification_part_app">Колдонмонун аты</string>
     <string name="notification_part_time">Убакыт</string>
-    <string name="notification_part_playback">Ойнотуу же тындырылды</string>
+    <string name="notification_part_playback">Ойнотулууда же тындырылган</string>
     <string name="notification_list_title">Билдирмелер</string>
     <string name="notification_list_empty">Билдирмелер жок</string>
-    <string name="notification_list_no_access">Эскертмеге кирүү өчүк</string>
-    <string name="notification_list_grant_access">Билдирүү мүмкүнчүлүгүн күйгүзүңүз</string>
+    <string name="notification_list_no_access">Билдирмелерге кирүү өчүк</string>
+    <string name="notification_list_grant_access">Билдирмелерге кирүүнү күйгүзүү</string>
     <string name="notification_list_quick_settings">Ыкчам орнотуулар</string>
-    <string name="notification_list_dismiss">Этибарга албоо</string>
+    <string name="notification_list_dismiss">Жабуу</string>
     <string name="notification_list_show_all">Баарын көрсөтүү</string>
     <string name="notification_list_show_less">Азыраак көрсөтүү</string>
     <string name="notification_list_clear_all">Баарын тазалоо</string>
     <string name="notification_list_send">Жөнөтүү</string>
-    <string name="notification_list_playing">Ойнотуу</string>
+    <string name="notification_list_playing">Ойнотулууда</string>
     <string name="notification_list_paused">Тындырылды</string>
-    <string name="notification_list_play">Play</string>
+    <string name="notification_list_play">Ойнотуу</string>
     <string name="notification_list_pause">Тындыруу</string>
     <string name="notification_list_previous">Мурунку</string>
     <string name="notification_list_next">Кийинки</string>
@@ -1459,7 +1459,7 @@
         <item quantity="one">%d эскертме</item>
         <item quantity="other">%d эскертмелер</item>
     </plurals>
-    <string name="title_pref_quick_settings">SandFlyнын тез жөндөөлөрүн колдонуңуз</string>
+    <string name="title_pref_quick_settings">SandFly\'дын тез жөндөөлөрүн колдонуу</string>
     <string name="title_pref_quick_settings_items">Ыкчам орнотуулар панели</string>
     <string name="quick_settings_title">Ыкчам орнотуулар</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1478,27 +1478,27 @@
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Жарыктык</string>
     <string name="quick_settings_adaptive_brightness">Адаптивдүү жарыктык</string>
-    <string name="quick_settings_media_volume">Медиа көлөмү</string>
-    <string name="quick_settings_call_volume">Чалуу көлөмү</string>
-    <string name="quick_settings_ring_volume">Шыңгырдын көлөмү</string>
-    <string name="quick_settings_notification_volume">Эскертме көлөмү</string>
-    <string name="quick_settings_alarm_volume">Ойготкучтун көлөмү</string>
+    <string name="quick_settings_media_volume">Медианын үнү</string>
+    <string name="quick_settings_call_volume">Чалуунун үнү</string>
+    <string name="quick_settings_ring_volume">Шыңгырдын үнү</string>
+    <string name="quick_settings_notification_volume">Эскертменин үнү</string>
+    <string name="quick_settings_alarm_volume">Ойготкучтун үнү</string>
     <string name="quick_settings_accessibility_volume">Атайын мүмкүнчүлүктөрдүн үнүнүн катуулугу</string>
-    <string name="quick_settings_system_volume">Системанын аудио көлөмү</string>
-    <string name="quick_settings_data_saver">Дайындарды сактагыч</string>
-    <string name="quick_settings_night_light">Night Light</string>
+    <string name="quick_settings_system_volume">Системанын үнү</string>
+    <string name="quick_settings_data_saver">Трафикти үнөмдөө</string>
+    <string name="quick_settings_night_light">Түнкү жарык</string>
     <string name="quick_settings_extra_dim">Кошумча күңүрт</string>
     <string name="quick_settings_color_inversion">Түстүн инверсиясы</string>
     <string name="quick_settings_color_correction">Түстү оңдоо</string>
-    <string name="quick_settings_microphone_access">Микрофонго кирүү</string>
-    <string name="quick_settings_camera_access">Камерага кирүү</string>
-    <string name="quick_settings_screen_timeout">Экранды күтүү</string>
+    <string name="quick_settings_microphone_access">Микрофонду колдонуу мүмкүнчүлүгү</string>
+    <string name="quick_settings_camera_access">Камераны колдонуу мүмкүнчүлүгү</string>
+    <string name="quick_settings_screen_timeout">Экрандын өчүү убактысы</string>
     <string name="quick_settings_font_size">Арип өлчөмү</string>
     <string name="quick_settings_media">Медиа</string>
-    <string name="quick_settings_no_media">ЖМК жок</string>
+    <string name="quick_settings_no_media">Медиа жок</string>
     <string name="quick_settings_media_output">Медиа чыгаруу</string>
-    <string name="quick_settings_next_alarm">Кийинки сигнал</string>
-    <string name="quick_settings_no_alarm">Сигнал жок</string>
+    <string name="quick_settings_next_alarm">Кийинки ойготкуч</string>
+    <string name="quick_settings_no_alarm">Ойготкуч жок</string>
     <string name="quick_settings_settings">Параметрлер</string>
     <string name="quick_settings_power_menu">Кубат менюсу</string>
     <string name="quick_settings_add_system_tile">Системалык плитканы кошуу</string>
@@ -1525,13 +1525,13 @@
     <string name="quick_settings_unavailable">Жеткиликсиз</string>
     <string name="quick_settings_edit">Түзөтүү</string>
     <string name="quick_settings_system">Системанын тез орнотуулары</string>
-    <string name="quick_settings_open_settings">Жөндөөлөрдү ачыңыз</string>
+    <string name="quick_settings_open_settings">Жөндөөлөрдү ачуу</string>
     <string name="quick_settings_add_control">Башкаруу кошуу</string>
     <string name="quick_settings_add_tile">Колдонмонун мозаикасын кошуу</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
-    <string name="quick_settings_columns">Мамычалардын саны</string>
+    <string name="quick_settings_columns">Тилкелердин саны</string>
     <string name="quick_settings_move">Жылдыруу</string>
-    <string name="quick_settings_move_title">Жылдыруу %1$s</string>
+    <string name="quick_settings_move_title">%1$s жылдыруу</string>
     <string name="quick_settings_cell">Катар %1$d, тилке %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1543,14 +1543,14 @@
     <string name="quick_settings_added">%1$s кошулду</string>
     <string name="quick_settings_removed">%1$s алынып салынды</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly күйүк. Өчүрүү үчүн 2 манжаңызды экранда 5 секунд кармап туруңуз. Бул билдирүүнү көрсөтүүнү токтотуу үчүн, SandFly орнотуулар &gt; Өркүндөтүлгөн орнотуулар &gt; SandFly өчүрүү нускамаларын көрсөтүүнү өчүрүңүз.</string>
-    <string name="edge_gestures_title">Edges</string>
+    <string name="edge_gestures_title">Четтер</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Серептөө режимин күйгүзүү же өчүрүү үчүн дагы бир жарлык</string>
     <string name="title_pref_vibration_strength">Вибрация күчү</string>
     <string name="title_pref_audio_output_device">Аудио чыгаруу аспабы</string>
     <string name="dialog_title_audio_output_device">SandFly үнүн ойнотуучу жерди тандаңыз</string>
-    <string name="value_audio_output_device_default">Системанын демейки</string>
+    <string name="value_audio_output_device_default">Системанын демейкиси</string>
     <string name="value_audio_output_device_speaker">Телефон динамиги</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Туташтырылган Bluetooth түзмөк же зымдуу</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Туташкан Bluetooth же зымдуу түзмөк</string>
     <string name="value_audio_output_device_disconnected">ажыратылган</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth аудио түзмөк</string>
     <string name="value_audio_output_device_wired_headset">Зымдуу гарнитура</string>
@@ -1561,18 +1561,18 @@
     <string name="summary_pref_speaker_devices_none">Жок</string>
     <string name="summary_pref_speaker_devices_no_devices">Азырынча Bluetooth же зымдуу түзмөктөр туташа элек</string>
     <string name="pref_reduce_window_delay_summary">SandFly анимациялар өчүк болгондо жаңы экрандарды тезирээк окуйт. Бул бүт телефон үчүн анимацияларды өчүрөт.</string>
-    <string name="dialog_message_detailed_ai_description">Тандалган сүрөттөр сүрөттөлүш үчүн Googleнын Gemini API\'сине жөнөтүлөт. Түзмөктөгү AI күйгүзүлгөндө, алар бул телефондо сүрөттөлөт жана жөнөтүлбөйт.\n\nАкысыз API ачкычы менен Google алган нерсесин сактап, өнүмдөрүн жакшыртуу үчүн колдонуп, адамдар аны карап чыгышы мүмкүн. Генеративдик AI эксперименталдык, ошондуктан ката кетирет. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> колдонулат.</string>
-    <string name="dialog_message_detailed_ai_promotion">Сүрөттүн деталдуу сүрөттөлүшү генеративдик AI тарабынан иштетилет. Тандалган сүрөттөр сүрөттөлүш үчүн Googleнын Gemini API\'сине жөнөтүлөт. Түзмөктөгү AI күйгүзүлгөндө, алар бул телефондо сүрөттөлөт жана жөнөтүлбөйт.\n\nАкысыз API ачкычы менен Google алган нерсесин сактап, өнүмдөрүн жакшыртуу үчүн колдонуп, адамдар аны карап чыгышы мүмкүн. Генеративдик AI эксперименталдык, ошондуктан ката кетирет. Сүрөттүн толук сүрөттөмөлөрүн каалаган убакта SandFly жөндөөлөрүнөн өчүрө аласыз.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> колдонулат.</string>
-    <string name="dialog_message_screen_overview_promotion">Экрандын скриншоту сүрөттөлүш үчүн Googleнын Gemini API\'сине жөнөтүлөт, ал бир нече секундду талап кылат. Түзмөктөгү AI күйгүзүлгөндө, анын ордуна бул телефондо сүрөттөлөт жана жөнөтүлбөйт.\n\nАкысыз API ачкычы менен Google алганын сактап, өнүмдөрүн жакшыртуу үчүн колдонуп, адамдар аны карап чыгышы мүмкүн. Генеративдик AI эксперименталдык, ошондуктан ката кетирет. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> колдонулат.</string>
+    <string name="dialog_message_detailed_ai_description">Тандалган сүрөттөр сүрөттөмө алуу үчүн Google’дун Gemini API’сине жөнөтүлөт. «Түзмөктөгү AI» күйгүзүлгөндө, алар ордуна бул телефондо сүрөттөлөт жана жөнөтүлбөйт.\n\nАкысыз API ачкычы менен Google алган маалыматты сактап, өнүмдөрүн жакшыртуу үчүн колдонуп, аны адамдарга карап чыгууга бериши мүмкүн. Генеративдик AI сыноо абалында, ошондуктан ката кетирет. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> колдонулат.</string>
+    <string name="dialog_message_detailed_ai_promotion">Сүрөттөрдүн толук сүрөттөмөлөрүн генеративдик AI түзөт. Тандалган сүрөттөр сүрөттөмө алуу үчүн Google’дун Gemini API’сине жөнөтүлөт. «Түзмөктөгү AI» күйгүзүлгөндө, алар ордуна бул телефондо сүрөттөлөт жана жөнөтүлбөйт.\n\nАкысыз API ачкычы менен Google алган маалыматты сактап, өнүмдөрүн жакшыртуу үчүн колдонуп, аны адамдарга карап чыгууга бериши мүмкүн. Генеративдик AI сыноо абалында, ошондуктан ката кетирет. Сүрөттөрдүн толук сүрөттөмөлөрүн каалаган убакта SandFly параметрлеринен өчүрө аласыз.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> колдонулат.</string>
+    <string name="dialog_message_screen_overview_promotion">Экрандын скриншоту сүрөттөмө алуу үчүн Google’дун Gemini API’сине жөнөтүлөт, бул бир нече секундга созулат. «Түзмөктөгү AI» күйгүзүлгөндө, ал ордуна бул телефондо сүрөттөлөт жана жөнөтүлбөйт.\n\nАкысыз API ачкычы менен Google алган маалыматты сактап, өнүмдөрүн жакшыртуу үчүн колдонуп, аны адамдарга карап чыгууга бериши мүмкүн. Генеративдик AI сыноо абалында, ошондуктан ката кетирет. <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> колдонулат.</string>
     <string name="shortcut_title_open_app">Колдонмону ачуу</string>
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> ачуу</string>
-    <string name="shortcut_scroll_to_top">Үстүнө сыдырыңыз</string>
-    <string name="shortcut_write_reading_control">Окууну башкаруунун тамгасын жазыңыз</string>
+    <string name="shortcut_scroll_to_top">Өйдө сыдыруу</string>
+    <string name="shortcut_write_reading_control">Окууну башкаруу элементинин тамгасын жазуу</string>
     <string name="title_pref_reading_control_letters">Кол жазма алфавит тамгалары</string>
     <string name="reading_control_letter_none">Жок</string>
     <string name="handwriting_prompt">Алфавит тамгасын жаз</string>
     <string name="handwriting_closed">Колжазма жабылды</string>
-    <string name="handwriting_no_match">Окууну көзөмөлдөө <xliff:g id="letter" example="Q">%1$s</xliff:g> менен башталбайт</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> тамгасынан башталган окууну башкаруу элементи жок</string>
     <string name="shortcut_write_app_name">Колдонмону ачуу үчүн анын атын жазыңыз</string>
     <string name="handwriting_app_prompt">Колдонмонун атын жазыңыз</string>
     <string name="handwriting_no_app"><xliff:g id="letters" example="WHA">%1$s</xliff:g> менен башталган колдонмо жок</string>
@@ -1586,8 +1586,8 @@
     <string name="handwriting_download_failed">Колжазманы таанууну жүктөп алуу мүмкүн эмес. Интернет байланышын текшериңиз.</string>
     <string name="handwriting_unsupported_language">Колжазманы таануу бул тилде жеткиликтүү эмес</string>
     <string name="title_pref_handwriting_keyboard">Колжазма клавиатурасы</string>
-    <string name="summary_pref_handwriting_keyboard">Android баскычтоп жөндөөлөрүндө SandFly колжазманы күйгүзүңүз</string>
-    <string name="title_pref_handwriting_wait">Жазгандан кийин күтө тур</string>
+    <string name="summary_pref_handwriting_keyboard">Android баскычтоп жөндөөлөрүндө SandFly колжазмасын күйгүзүңүз</string>
+    <string name="title_pref_handwriting_wait">Жазгандан кийин күтүү</string>
     <string name="value_handwriting_wait_200">0,2 секунд</string>
     <string name="value_handwriting_wait_300">0,3 секунд</string>
     <string name="value_handwriting_wait_400">0,4 секунд</string>
@@ -1598,8 +1598,8 @@
     <string name="handwriting_keyboard_name">SandFly колжазма</string>
     <string name="handwriting_space">Боштук</string>
     <string name="handwriting_new_line">Жаңы сап</string>
-    <string name="handwriting_tutorial_intro">Колжазма клавиатура окуу куралы. Экрандын каалаган жерине бир манжаңыз менен жазыңыз. Жазганыңыз бир аз токтоп калганда терилип калат. Үйрөткүчтү бүтүрүү үчүн үч манжаңыз менен ылдый сүрүңүз.</string>
-    <string name="handwriting_tutorial_write_letter">Алфавиттин а тамгасын жаз.</string>
+    <string name="handwriting_tutorial_intro">Колжазма клавиатурасынын үйрөткүчү. Экрандын каалаган жерине бир манжа менен жазыңыз. Бир аз токтогондо жазганыңыз киргизилет. Үйрөткүчтү бүтүрүү үчүн үч манжа менен ылдый сүрүңүз.</string>
+    <string name="handwriting_tutorial_write_letter">a тамгасын жазыңыз.</string>
     <string name="handwriting_tutorial_write_word">Эми hi деген сөздү жазыңыз (h андан кийин i).</string>
     <string name="handwriting_tutorial_typed">Терилген <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Боштук терүү үчүн эки манжаңыз менен оңго сүрүңүз.</string>
@@ -1608,21 +1608,21 @@
     <string name="handwriting_tutorial_next_reading">Эгер колжазма баш тамга сыяктуу башка символ катары таанылса, кийинки таануу сунушун тандоо үчүн эки манжаңыз менен өйдө сүрүңүз. Азыр аракет кылып көрүңүз.</string>
     <string name="handwriting_tutorial_read_back">Курсордун алдындагы текстти окуу үчүн эки манжаңыз менен таптаңыз.</string>
     <string name="handwriting_tutorial_new_line">Жаңы сап киргизүү же Жөнөтүү сыяктуу текст талаасынын аракетин аткаруу үчүн эки манжаңыз менен ылдый сүрүңүз.</string>
-    <string name="handwriting_tutorial_not_that">Бул дагы бир ишарат болду.</string>
-    <string name="handwriting_tutorial_done">Жаңы линия. Окутуу аяктады. Баскычтопту жашыруу үчүн үч манжаңыз менен ылдый сүрүңүз, ал эми баскычтопту которуу үчүн үч манжаңыз менен оңго же солго сүрүңүз. Үйрөткүчтү кайра ачуу үчүн үч манжаңыз менен таптаңыз.</string>
-    <string name="handwriting_tutorial_finished">Окутуу аяктады. Аны кайра ачуу үчүн үч манжаңыз менен таптаңыз.</string>
+    <string name="handwriting_tutorial_not_that">Бул башка жаңсоо болду.</string>
+    <string name="handwriting_tutorial_done">Жаңы сап. Үйрөткүч аяктады. Баскычтопту жашыруу үчүн үч манжа менен ылдый, баскычтопту которуу үчүн үч манжа менен оңго же солго сүрүңүз. Үйрөткүчтү кайра ачуу үчүн үч манжа менен таптаңыз.</string>
+    <string name="handwriting_tutorial_finished">Үйрөткүч аяктады. Кайра ачуу үчүн үч манжа менен таптаңыз.</string>
     <string name="handwriting_no_alternatives">Башка сунуштар жок</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> ичинен <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> ичинен <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">Бош текст</string>
     <string name="handwriting_not_available">Колжазманы таануу бул түзмөктө жеткиликтүү эмес</string>
-    <string name="shortcut_scroll_to_bottom">Төмөнгө сыдырыңыз</string>
+    <string name="shortcut_scroll_to_bottom">Ылдыйга сыдыруу</string>
     <string name="shortcut_refresh">Жаңылоо</string>
-    <string name="shortcut_system_notifications">Системанын эскертме көлөкөсү</string>
+    <string name="shortcut_system_notifications">Системанын эскертмелер панели</string>
     <string name="shortcut_system_quick_settings">Системанын тез орнотуулары</string>
     <string name="shortcut_lock_screen">Түзмөктүн экранын кулпулоо</string>
     <string name="shortcut_power_menu">Кубат менюсу</string>
     <string name="shortcut_increase_media_volume">Медиа үнүн жогорулатуу</string>
-    <string name="shortcut_decrease_media_volume">Медиа үнүн азайтыңыз</string>
+    <string name="shortcut_decrease_media_volume">Медиа үнүн азайтуу</string>
     <string name="title_clear_selection">Тандоону тазалоо</string>
     <string name="title_pref_brightness">Жарыктык</string>
     <string name="summary_support_change_brightness">Экран жашырылган учурда да экрандын жарыктыгын көбөйтүңүз же азайтыңыз</string>
@@ -1630,26 +1630,26 @@
     <string name="title_pref_shortcut_2finger_rotate_clockwise">2 манжаңыз менен саат жебеси боюнча айлантыңыз</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">2 манжаңыз менен саат жебесине каршы айлантыңыз</string>
     <string name="title_pref_shortcut_2finger_scrub">2 манжаңыз менен сүртүңүз</string>
-    <string name="title_pref_shortcut_2finger_pinch">2 манжаңыз менен чымчыңыз</string>
-    <string name="title_pref_shortcut_2finger_spread">2 манжа менен жайыңыз</string>
-    <string name="title_pref_shortcut_3finger_pinch">3 манжаңыз менен чымчыңыз</string>
-    <string name="title_pref_shortcut_3finger_spread">3 манжа менен жайыңыз</string>
-    <string name="title_pref_shortcut_4finger_pinch">4 манжаңыз менен чымчыңыз</string>
-    <string name="title_pref_shortcut_4finger_spread">4 манжа менен жайыңыз</string>
+    <string name="title_pref_shortcut_2finger_pinch">2 манжа менен кысуу</string>
+    <string name="title_pref_shortcut_2finger_spread">2 манжаны ачуу</string>
+    <string name="title_pref_shortcut_3finger_pinch">3 манжа менен кысуу</string>
+    <string name="title_pref_shortcut_3finger_spread">3 манжаны ачуу</string>
+    <string name="title_pref_shortcut_4finger_pinch">4 манжа менен кысуу</string>
+    <string name="title_pref_shortcut_4finger_spread">4 манжаны ачуу</string>
     <string name="title_pref_shortcut_edge_bottom_up">Төмөнкү четинен өйдө сүрүңүз</string>
-    <string name="title_pref_shortcut_edge_bottom_long_up">Төмөнкү четинен өйдө сүрүңүз</string>
+    <string name="title_pref_shortcut_edge_bottom_long_up">Төмөнкү четинен өйдө узун сүрүү</string>
     <string name="title_pref_shortcut_edge_top_left_down">Жогорку сол жактан ылдый сүрүңүз</string>
     <string name="title_pref_shortcut_edge_top_right_down">Жогорку оң тараптан ылдый сүрүңүз</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Жогорку сол жактан ылдый сүрүп коюңуз</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Жогорку оң жактан ылдый сүрүп коюңуз</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Жогорку сол жактан ылдый узун сүрүү</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Жогорку оң жактан ылдый узун сүрүү</string>
     <string name="title_pref_shortcut_edge_left_top_right">Сол четинен, үстүнкү жарымынан оңго сүрүңүз</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Сол четинен, үстүнкү жарымынан оңго узакка сүрүңүз</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Сол четинин үстүнкү жарымынан оңго узун сүрүү</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Сол четинен, ылдыйкы жарымынан оңго сүрүңүз</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Сол четинен, ылдыйкы жарымынан оңго узакка сүрүңүз</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Сол четинин ылдыйкы жарымынан оңго узун сүрүү</string>
     <string name="title_pref_shortcut_edge_right_top_left">Оң четинен, үстүнкү жарымынан солго сүрүңүз</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Оң четинен, үстүнкү жарымынан солго узакка сүрүңүз</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Оң четинин үстүнкү жарымынан солго узун сүрүү</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Оң четинен солго, ылдыйкы жарымынан сүрүңүз</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Оң четинен солго, ылдыйкы жарымынан узакка сүрүңүз</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Оң четинин ылдыйкы жарымынан солго узун сүрүү</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">Каалаган баскычты тандоо үчүн манжаңызды кармап, анан көтөрүңүз. Киргизүү, Бүттү же Жөнөтүү үчүн эки жолу таптаңыз.</string>
     <string name="value_type_confirmation_tap_to_type">Аны терүү үчүн каалаган баскычты таптаңыз же каалаган баскычты тандоо үчүн манжаңызды кармап, анан көтөрүңүз</string>
     <string name="title_pref_multi_tap_timeout">Бир манжа менен басуу ортосундагы убакыт</string>
@@ -1672,45 +1672,45 @@
     <string name="value_rotor_step_30">30 градус (демейки)</string>
     <string name="value_rotor_step_45">45 градус</string>
     <string name="value_rotor_step_60">60 градус</string>
-    <string name="title_pref_low_latency_audio">Аз күтүүдөгү аудио</string>
-    <string name="summary_pref_low_latency_audio">SandFly үндөрүн жана кептерин телефондун эң ылдам аудио жолу аркылуу ойнотуңуз, аларды тезирээк угуңуз. Сүйлөө же үндөр бузулса же туура эмес угулса, аны өчүрүңүз.</string>
+    <string name="title_pref_low_latency_audio">Кечигүүсү аз аудио</string>
+    <string name="summary_pref_low_latency_audio">SandFly’дын үндөрүн жана кебин телефондун эң ылдам аудио жолу аркылуу ойнотот, ошондо аларды тезирээк угасыз. Кеп же үндөр үзүлүп же туура эмес угулса, өчүрүңүз.</string>
     <string name="value_focus_delay_200ms_default">0,2 секунд (демейки)</string>
     <string name="value_focus_delay_300ms">0,3 секунд</string>
     <string name="title_pref_lift_to_activate">Жандыруу үчүн көтөрүңүз</string>
-    <string name="summary_support_change_lift_to_activate">Манжаңызды көтөрүү объектти иштете турган жерди өзгөртүңүз</string>
+    <string name="summary_support_change_lift_to_activate">Манжаны көтөргөндө элемент кайсы жерде иштей турганын өзгөртүү</string>
     <string name="value_lift_to_activate_disabled">Өчүрүлгөн</string>
     <string name="value_lift_to_activate_navigation_bar">Чабыттоо тилкесинде гана</string>
     <string name="value_lift_to_activate_entire_screen">Бүтүндөй экран</string>
     <string name="template_lift_to_activate_changed">Жандыруу үчүн көтөрүңүз: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Айланайын</string>
-    <string name="summary_pref_wrap_around">Акыркы нерсени сүрүп коюу биринчиге, ал эми биринчиден өткөн соң акыркыга өтөт. Өчүк болгондо, анын ордуна акырында үн чыгат.</string>
+    <string name="title_pref_wrap_around">Циклдик өтүү</string>
+    <string name="summary_pref_wrap_around">Акыркы нерседен ары сүрсөңүз биринчисине, биринчисинен ары сүрсөңүз акыркысына өтөт. Өчүк болсо, анын ордуна аягында үн ойнотулат.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Капталган тийүү изилдөөсүн оңдоо</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP уруксатысыз SandFly тийүү менен изилдөө тыгылып калышы мүмкүн деп гана айта алат. Аны оңдоо үчүн төмөнкүнү иштетиңиз: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Сенсордук изилдөөнү оңдоо</string>
     <string name="stuck_touch_exploration_fixed">Тийип изилдөө оңдолду</string>
-    <string name="stuck_touch_exploration_not_fixed">Сенсордук чалгындоо дагы эле токтоп турат. Аны оңдоо үчүн телефонду өчүрүп күйгүзүңүз.</string>
-    <string name="stuck_touch_exploration_restart">Тийип изилдөө тыгылып калышы мүмкүн. Аны оңдоо үчүн телефонду өчүрүп күйгүзүңүз.</string>
-    <string name="stuck_touch_exploration_grant_dump">Тийип изилдөө тыгылып калышы мүмкүн. Аны оңдоо үчүн телефонду өчүрүп күйгүзүңүз же SandFlyге DUMP уруксатын АӨБ менен бериңиз, ал аны оңдой алат.</string>
+    <string name="stuck_touch_exploration_not_fixed">«Тийип изилдөө» дагы эле тыгылып турат. Оңдоо үчүн телефонду өчүрүп күйгүзүңүз.</string>
+    <string name="stuck_touch_exploration_restart">«Тийип изилдөө» тыгылып калышы мүмкүн. Оңдоо үчүн телефонду өчүрүп күйгүзүңүз.</string>
+    <string name="stuck_touch_exploration_grant_dump">«Тийип изилдөө» тыгылып калышы мүмкүн. Оңдоо үчүн телефонду өчүрүп күйгүзүңүз же SandFly оңдой алышы үчүн ага ADB аркылуу DUMP уруксатын бериңиз.</string>
     <string name="title_pref_window_names">Терезе аттары</string>
     <string name="window_names_always">Ар дайым</string>
-    <string name="window_names_until_first_item">Ар дайым, биринчи нерсе менен кесип</string>
+    <string name="window_names_until_first_item">Ар дайым, биринчи элемент үзөт</string>
     <string name="window_names_window_opens">Терезе ачылганда гана</string>
     <string name="window_names_never">Эч качан</string>
     <string name="title_pref_selector_links_controls_web_only">Шилтемелер жана башкаруу элементтери веб-контентте гана</string>
-    <string name="title_pref_selector_auto_switch">Окууну башкарууну автоматтык түрдө өзгөртүү</string>
-    <string name="title_pref_touch_stops_speech">Экранга тийгенде сөздү токтотуңуз</string>
+    <string name="title_pref_selector_auto_switch">Окууну башкаруу элементин автоматтык түрдө өзгөртүү</string>
+    <string name="title_pref_touch_stops_speech">Экранга тийгенде сүйлөөнү токтотуу</string>
     <string name="title_pref_focus_new_windows">Фокусту жаңы терезелерге жылдыруу</string>
     <string name="title_pref_volume_keys_adjust_sliders">Үн баскычтары сыдырмаларды тууралайт</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">Слайдер фокуска ээ болгондо, үндү жогорулатуу жана төмөндөтүү анын маанисин үндүн ордуна өзгөртөт</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">Сыдырма фокуста болгондо, үндү көтөрүү жана басаңдатуу баскычтары үндүн ордуна анын маанисин өзгөртөт</string>
     <string name="title_pref_volume_keys_move_cursor">Үн көлөмү баскычтары курсорду жылдырат</string>
-    <string name="summary_pref_volume_keys_move_cursor">Текст талаасында фокус болгондо, үндү жогорулатуу курсорду символдун артына жылдырат, ал эми үндү азайтуу аны кайра жылдырат</string>
-    <string name="summary_support_wrap_around">Акыркы нерседен биринчиге чейин таңууну күйгүзүңүз же өчүрүңүз</string>
-    <string name="wrap_around_on">Айланайын</string>
-    <string name="wrap_around_off">Айланайын</string>
-    <string name="title_selector_tablet_held_up_faces_away">Планшет жүзүн башка жакка бурган</string>
-    <string name="summary_support_tablet_held_up_faces_away">Планшеттеги же ачылбаган телефондогу брайл клавиатурасы үчүн</string>
-    <string name="tablet_held_up_faces_away_on">Планшет жүзүн башка жакка бурган</string>
-    <string name="tablet_held_up_faces_away_off">Планшет жүзүн каратып туруп алды</string>
+    <string name="summary_pref_volume_keys_move_cursor">Текст талаасы фокуста болгондо, үндү көтөрүү курсорду бир белги артка, басаңдатуу бир белги алдыга жылдырат</string>
+    <string name="summary_support_wrap_around">Акыркы нерседен биринчисине өтүүнү күйгүзүү же өчүрүү</string>
+    <string name="wrap_around_on">Циклдик өтүү: күйүк</string>
+    <string name="wrap_around_off">Циклдик өтүү: өчүк</string>
+    <string name="title_selector_tablet_held_up_faces_away">Көтөрүлгөн планшеттин экраны сыртты карайт</string>
+    <string name="summary_support_tablet_held_up_faces_away">Планшеттеги же ачылган телефондогу брайл клавиатурасы үчүн</string>
+    <string name="tablet_held_up_faces_away_on">Көтөрүлгөн планшеттин экраны сыртты карайт: күйүк</string>
+    <string name="tablet_held_up_faces_away_off">Көтөрүлгөн планшеттин экраны сыртты карайт: өчүк</string>
     <string name="title_keyboard_echo_on_screen">Экрандагы клавиатуранын жаңырыгы</string>
     <string name="title_keyboard_echo_physical">Физикалык клавиатуранын жаңырыгы</string>
     <string name="title_keyboard_echo_braille_keyboard">Брайл клавиатурасынын жаңырыгы</string>
@@ -1720,34 +1720,34 @@
     <string name="title_pref_interrupt_typing">Терип жатканда сөздү үзүү</string>
     <string name="pref_interrupt_typing_entry_always">Ар дайым</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Түзөтүү талааларында</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">Баскычтоптун жаңырыгы</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Баскычтоп жаңырыгы учурунда</string>
     <string name="title_pref_interrupt_enter">Enter\'де сөздү үзүү</string>
     <string name="pref_node_desc_order_entry_name_state_role_pos">Аты, абалы, түрү</string>
     <string name="pref_node_desc_order_entry_role_state_name_pos">Түрү, абалы, аты</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Мамлекет, түрү, аты</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Абалы, түрү, аты</string>
     <string name="item_detail_name">Аты</string>
     <string name="item_detail_type">Түрү</string>
-    <string name="item_detail_state">Мамлекет</string>
+    <string name="item_detail_state">Абалы</string>
     <string name="action_move_up">Өйдө жылдыруу</string>
     <string name="action_move_down">Төмөн жылдыруу</string>
-    <string name="template_list_position">Позициясы <xliff:g id="position" example="2">%1$d</xliff:g> ичинен <xliff:g id="count" example="3">%2$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> алды. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> түшүп калды. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> ичинен <xliff:g id="position" example="2">%1$d</xliff:g>-орун</string>
+    <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> көтөрүлдү. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> коюлду. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly буюмдун чоо-жайын ушул тартипте айтат. Аны өзгөртүү үчүн деталга тийип, кармап туруңуз, андан кийин аны өйдө же ылдый сүйрөңүз. SandFly күйгүзүлгөндө, эки жолу таптап, кармап туруңуз, анан сүйрөңүз. Сиз ошондой эле өйдө жана ылдый жылдыруу аракеттерин колдоно аласыз.</string>
-    <string name="title_pref_speak_items_before_scroll">Элементтер көрүнүшкө жылардан мурун сүйлөңүз</string>
+    <string name="title_pref_speak_items_before_scroll">Элементтерди көрүнүшкө жылганга чейин айтуу</string>
     <string name="gemini_error_api_key">Gemini API ачкычын кабыл алган жок. Автоматтык сүрөттөмөлөр жөндөөлөрүндөгү ачкычты текшериңиз.</string>
     <string name="gemini_error_quota">Gemini API ачкычыңыздын колдонуу чегине жеттиңиз. Кийинчерээк кайра аракет кылыңыз.</string>
     <string name="gemini_error_busy">Gemini азыр бош эмес. Бир аздан кийин кайталап көрүңүз.</string>
-    <string name="gemini_error_timeout">Gemini жооп берүү өтө көпкө созулду. Кайра аракет кыл.</string>
+    <string name="gemini_error_timeout">Gemini өтө көпкө жооп берген жок. Кайра аракет кылыңыз.</string>
     <string name="gemini_error_with_code">Gemini жооп бере алган жок, ката <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini жооп бере алган жок, ката <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Сүрөттүн кеңири сүрөттөмөсүн алуу мүмкүн эмес: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Үн менен суроо</string>
-    <string name="image_qna_stop_listening">Укканды токтот</string>
+    <string name="image_qna_stop_listening">Угууну токтотуу</string>
     <string name="image_qna_type_question">Суроо жазыңыз</string>
     <string name="shortcut_dictate">Айтып жаздыруу</string>
-    <string name="title_pref_ai_dictation">AI менен туура диктант</string>
-    <string name="dictation_not_corrected">Оңдолгон жок. Таанылган катары терилген.</string>
+    <string name="title_pref_ai_dictation">Айтып жазууну AI менен оңдоо</string>
+    <string name="dictation_not_corrected">Оңдолгон жок. Таанылгандай терилди.</string>
     <string name="dictation_nothing_recognized">Эч нерсе таанылган жок</string>
     <string name="dictation_unavailable">Кепти таануу жеткиликсиз</string>
     <string name="dictation_field_gone">Текст талаасы жабылды. Эч нерсе терилген жок.</string>
@@ -1767,11 +1767,11 @@
     <string name="dictation_whisper_use">Колдонуу</string>
     <string name="title_pref_dictation_ai_service">Айтып жаздыруу үчүн AI кызматы</string>
     <string name="dictation_ai_same">Автоматтык учкай маалыматтардагыдай</string>
-    <string name="title_pref_browse_mode_per_app">Ар бир колдонмодо серептөө режимин унутпаңыз</string>
-    <string name="title_pref_export_settings">Экспорт жөндөөлөрү</string>
-    <string name="title_pref_import_settings">Импорт жөндөөлөрү</string>
+    <string name="title_pref_browse_mode_per_app">Ар бир колдонмодо серептөө режимин эстеп калуу</string>
+    <string name="title_pref_export_settings">Жөндөөлөрдү экспорттоо</string>
+    <string name="title_pref_import_settings">Жөндөөлөрдү импорттоо</string>
     <string name="settings_export_done">Жөндөөлөр экспорттолду. API ачкычтары камтылган эмес</string>
-    <string name="settings_export_failed">Жөндөөлөр экспорттолбой койду</string>
+    <string name="settings_export_failed">Жөндөөлөрдү экспорттоо мүмкүн болбоду</string>
     <string name="settings_import_done">Орнотуулар импорттолду</string>
     <string name="settings_import_failed">Бул файл SandFly же Backtalk жөндөө файлы эмес же окуу мүмкүн эмес</string>
 </resources>

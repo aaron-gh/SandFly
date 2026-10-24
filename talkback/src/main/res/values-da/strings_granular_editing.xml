@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Granuleret redigering</string>
+    <string name="granular_editing_title">Redigering i dele</string>
     <string name="granular_editing_split_by">Opdelt efter: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Split af</string>
+    <string name="granular_editing_split_by_title">Opdel efter</string>
     <string name="granular_editing_characters">Tegn</string>
     <string name="granular_editing_words">Ord</string>
     <string name="granular_editing_sentences">Sætninger</string>
@@ -11,7 +11,7 @@
     <string name="granular_editing_space">Mellemrum</string>
     <string name="granular_editing_new_line">Ny linje</string>
     <string name="granular_editing_tab">Tabulatortegn</string>
-    <string name="granular_editing_empty">Ingen tekst. Brug Tilføj tekst til sidst i Mere.</string>
+    <string name="granular_editing_empty">Ingen tekst. Brug “Tilføj tekst til sidst” under “Mere”.</string>
     <string name="granular_editing_edit">Rediger</string>
     <string name="granular_editing_insert_before">Indsæt før</string>
     <string name="granular_editing_insert_after">Indsæt efter</string>
@@ -22,7 +22,7 @@
     <string name="granular_editing_save">Gem</string>
     <string name="granular_editing_more">Mere</string>
     <string name="granular_editing_undo">Fortryd</string>
-    <string name="granular_editing_redo">Gentag den sidste fortrydede redigering</string>
+    <string name="granular_editing_redo">Annuller fortryd</string>
     <string name="granular_editing_find">Find</string>
     <string name="granular_editing_find_next">Find næste</string>
     <string name="granular_editing_replace">Udskift</string>

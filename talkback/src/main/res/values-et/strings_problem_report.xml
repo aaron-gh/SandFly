@@ -2,16 +2,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_problem_report">Tagasiside saatmine</string>
     <string name="title_pref_problem_report_type">Tagasiside tüüp</string>
-    <string name="title_pref_problem_report_area">Piirkond</string>
+    <string name="title_pref_problem_report_area">Valdkond</string>
     <string name="title_pref_problem_report_title">Pealkiri</string>
     <string name="title_pref_problem_report_app">Rakendus, kus see juhtub</string>
     <string name="title_pref_problem_report_description">Kirjeldus</string>
     <string name="dialog_message_problem_report_description">Mis juhtub ja mida ootasite.</string>
     <string name="title_pref_problem_report_steps">Probleemi kordamise sammud</string>
     <string name="title_pref_problem_report_email">E-post vastuste saamiseks</string>
-    <string name="title_pref_problem_report_device">Kaasake seadme teave</string>
+    <string name="title_pref_problem_report_device">Kaasa seadme teave</string>
     <string name="title_pref_problem_report_log">Kaasa SandFly logi</string>
-    <string name="summary_pref_problem_report_log">Võib sisaldada ekraanilt tulevat teksti</string>
+    <string name="summary_pref_problem_report_log">Võib sisaldada ekraanil olevat teksti</string>
     <string name="title_pref_problem_report_send">Saada</string>
     <string name="summary_pref_problem_report_sending">Saatmine</string>
     <string name="problem_report_missing_fields">Sisestage pealkiri ja kirjeldus.</string>
@@ -21,20 +21,20 @@
     <string name="problem_report_no_connection">Tagasisidet ei saadetud. Kontrollige Interneti-ühendust.</string>
     <string name="problem_report_not_sent">Tagasisidet ei saadetud. Proovige hiljem uuesti.</string>
     <string-array name="problem_report_type_entries">
-        <item>Ebaõige käitumine</item>
+        <item>Vale käitumine</item>
         <item>Krahh</item>
         <item>Aeglane või ei reageeri</item>
-        <item>Soovitus</item>
+        <item>Ettepanek</item>
     </string-array>
     <string-array name="problem_report_area_entries">
         <item>Kõne</item>
         <item>Liigutused</item>
-        <item>Puudutage uurimist</item>
-        <item>Juhtnuppude ja menüüde lugemine</item>
+        <item>Puudutusega uurimine</item>
+        <item>Lugemise juhtelemendid ja menüüd</item>
         <item>Tippimine ja klaviatuurid</item>
         <item>Braille klaviatuur</item>
         <item>Braille ekraan</item>
-        <item>Helid ja vibratsioon</item>
+        <item>Heli ja vibreerimine</item>
         <item>Märguanded</item>
         <item>Veebisisu</item>
         <item>Skriptid</item>
@@ -47,7 +47,7 @@
     <string name="title_report_drafts">Mustandid</string>
     <string name="report_inbox_empty">Tagasisidet pole saadetud</string>
     <string name="report_drafts_empty">Mustandeid pole</string>
-    <string name="report_just_now">just praegu</string>
+    <string name="report_just_now">äsja</string>
     <string name="report_untitled">Pealkirjata</string>
     <string name="report_draft_summary">Muudetud <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">saadetud <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -66,7 +66,7 @@
     <string name="title_report_messages">Sõnumid</string>
     <string name="report_message_from_developer">Arendaja, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">Sina, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Vasta</string>
+    <string name="title_report_reply">Vastus</string>
     <string name="title_report_reply_text">Teie vastus</string>
     <string name="title_report_send_reply">Saada vastus</string>
     <string name="report_reply_sent">Vastus saadetud.</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Kustuta</string>
     <string name="report_missing">Seda tagasisidet pole enam postkastis.</string>
     <string name="notification_channel_problem_reports">Tagasiside vastused</string>
-    <string name="report_notification_reply">Vasta <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Vastus: <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

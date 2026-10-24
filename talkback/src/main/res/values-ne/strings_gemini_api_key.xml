@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API कुञ्जी</string>
-    <string name="summary_pref_gemini_api_key_built_in">यस एपमा निर्मित कुञ्जी प्रयोग गर्दै</string>
-    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey मा Google AI Studio बाट नि:शुल्क API कुञ्जी प्राप्त गर्नुहोस् र यसलाई यहाँ टाँस्नुहोस्। आफ्नो कुञ्जी हटाउन, क्षेत्र खाली गर्नुहोस् र बचत गर्नुहोस्।\n\nतपाईले वर्णन गर्नुभएको छवि र स्क्रिनहरू Google मा पठाइन्छ। फ्री टियरमा, Google ले आफ्ना उत्पादनहरू सुधार्न प्रयोग गर्न सक्छ।</string>
+    <string name="summary_pref_gemini_api_key_built_in">यस एपमा निर्मित कुञ्जी प्रयोग भइरहेको छ</string>
+    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey मा Google AI Studio बाट निःशुल्क API की लिनुहोस् र यहाँ टाँस्नुहोस्। की हटाउन फिल्ड खाली गरेर सेभ गर्नुहोस्।\n\nतपाईंले वर्णन मागेका छवि र स्क्रिनहरू Google मा पठाइन्छन्। निःशुल्क तहमा, Google ले तिनलाई आफ्ना उत्पादन सुधार्न प्रयोग गर्न सक्छ।</string>
     <string name="gemini_api_key_hint">API कुञ्जी</string>
     <string name="gemini_api_key_save">सेभ गर्नुहोस्</string>
-    <string name="gemini_api_key_get">एउटा चाबी लिनुहोस्</string>
+    <string name="gemini_api_key_get">कुञ्जी लिनुहोस्</string>
     <string name="title_pref_gemini_model">Gemini मोडेल</string>
     <string name="gemini_model_automatic">स्वचालित</string>
     <string name="summary_pref_gemini_model_automatic">स्वचालित: Gemini Flash, त्यसपछि Flash-Lite जब Flash व्यस्त हुन्छ</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, त्यसपछि फ्ल्यास-लाइट व्यस्त हुँदा</string>
-    <string name="gemini_model_loading">मोडलहरू प्राप्त गर्दै...</string>
-    <string name="gemini_model_list_failed">मोडेलहरू प्राप्त गर्न सकेन: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, व्यस्त हुँदा Flash-Lite</string>
+    <string name="gemini_model_loading">मोडलहरू प्राप्त गर्दै…</string>
+    <string name="gemini_model_list_failed">मोडेलहरू प्राप्त गर्न सकिएन: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">पहिले Gemini API कुञ्जी सेट गर्नुहोस्</string>
     <string name="gemini_api_terms_link">Gemini API अतिरिक्त सेवा सर्तहरू</string>
     <string name="ai_service_address_hint">ठेगाना, जस्तै https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">मोडेल</string>
-    <string name="ai_service_address_invalid">ठेगाना https://. बाट सुरु हुनु पर्छ केहि पनि बचत गरिएको छैन।</string>
-    <string name="dialog_message_ai_service_consent">चित्र र स्क्रिनसटहरू वर्णन गर्न <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> मा पठाइन्छ, जसले धेरै सेकेन्ड लिन्छ। यसको आफ्नै सर्तहरू र गोपनीयता नीति लागू हुन्छ। जेनेरेटिभ एआई प्रयोगात्मक छ, त्यसैले यसले गल्ती गर्नेछ।</string>
+    <string name="ai_service_address_invalid">ठेगाना https:// बाट सुरु हुनुपर्छ। केही पनि सेभ गरिएन।</string>
+    <string name="dialog_message_ai_service_consent">वर्णनका लागि छवि र स्क्रिनसटहरू <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> मा पठाइन्छन्, यसमा केही सेकेन्ड लाग्छ। त्यो सेवाका आफ्नै सर्त र गोपनीयता नीति लागू हुन्छन्। जेनेरेटिभ AI प्रयोगात्मक भएकाले यसले गल्ती गर्नेछ।</string>
     <string name="ai_service_error_api_key">AI सेवाले API कुञ्जी स्वीकार गरेन। स्वचालित विवरणहरूमा यसको सेटिङहरू जाँच गर्नुहोस्।</string>
     <string name="ai_service_error_quota">एआई सेवाको उपयोग सीमा पुगेको छ। पछि फेरि प्रयास गर्नुहोस्।</string>
     <string name="ai_service_error_busy">एआई सेवा अहिले व्यस्त छ। केही क्षणमा पुन: प्रयास गर्नुहोस्।</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API कुञ्जी</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> मोडेल</string>
     <string name="ai_provider_choose_model">छनोट भएन</string>
-    <string name="ai_provider_key_message">आफ्नो <xliff:g id="service" example="Claude">%1$s</xliff:g> API कुञ्जी टाँस्नुहोस्। यसलाई हटाउन, क्षेत्र खाली गर्नुहोस् र बचत गर्नुहोस्। तपाईंले वर्णन गर्नुभएको छवि र स्क्रिनहरू <xliff:g id="service" example="Claude">%1$s</xliff:g> मा पठाइन्छ।</string>
+    <string name="ai_provider_key_message">आफ्नो <xliff:g id="service" example="Claude">%1$s</xliff:g> API की टाँस्नुहोस्। हटाउन फिल्ड खाली गरेर सेभ गर्नुहोस्। तपाईंले वर्णन मागेका छवि र स्क्रिनहरू <xliff:g id="service" example="Claude">%1$s</xliff:g> मा पठाइन्छन्।</string>
     <string name="ai_provider_needs_key">पहिले <xliff:g id="service" example="Claude">%1$s</xliff:g> API कुञ्जी सेट गर्नुहोस्</string>
     <string name="ai_provider_needs_address">पहिले ठेगाना सेट गर्नुहोस्</string>
     <string name="ai_provider_enter_model">मोडेलको नाम प्रविष्ट गर्नुहोस्</string>

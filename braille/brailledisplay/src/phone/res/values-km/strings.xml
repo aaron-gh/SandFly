@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">សកម្មភាព​ប្រព័ន្ធ</string>
   <string name="bd_commands_bindings_category_system_actions_summary">ត្រឡប់ក្រោយ ទំព័រដើម ការជូនដំណឹង និងច្រើនទៀត</string>
   <string name="bd_commands_bindings_category_talkback_features_title">មុខងារ SandFly</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly ម៉ឺនុយ និងការកំណត់</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">ម៉ឺនុយ និងការកំណត់ SandFly</string>
   <string name="bd_commands_bindings_category_braille_settings_title">ការកំណត់អក្សរស្ទាប</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ភាសា​ និង​ការ​កំណត់​​អក្សរ​ស្ទាប</string>
   <string name="bd_commands_bindings_category_text_editing_title">ការកែអក្សរ</string>
@@ -222,7 +222,7 @@
   <string name="bd_cmd_toggle_screen_search">បើក​ការស្វែងរក​លើអេក្រង់</string>
   <string name="bd_cmd_edit_custom_label">កែ​ស្លាក​ផ្ទាល់ខ្លួន</string>
   <string name="bd_cmd_open_talkback_menu">បើកម៉ឺនុយ SandFly</string>
-  <string name="bd_cmd_toggle_voice_feedback">បើក ឬបិទការនិយាយនៃមុខងារ SandFly</string>
+  <string name="bd_cmd_toggle_voice_feedback">បើក ឬបិទការនិយាយរបស់ SandFly</string>
   <string name="bd_cmd_read_stop">បញ្ឈប់ការអាន</string>
   <string name="bd_cmd_talkback_settings">បើកការកំណត់ SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">ប្ដូរទៅភាសា​វាយបញ្ចូលបន្ទាប់</string>
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">ការធ្វើបែបនេះនឹងរក្សាទុកសារមួយចំនួន ដូចជាការជូនដំណឹង និងសំឡេងរោទ៍ នៅក្នុង SandFly។ អ្នកអាចផ្លាស់ប្ដូរការកំណត់នេះពេលណាក៏បាន។</string>
   <string name="popup_message_history_consent_dialog_positive_btn">បើក</string>
   <string name="popup_message_history_consent_dialog_negative_btn">ទេ អរគុណ</string>
-    <string name="external_display_channel">ការបង្ហាញអក្សរស្ទាបពីកម្មវិធីផ្សេងៗ</string>
-    <string name="external_display_ask_title">អនុញ្ញាតឱ្យ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ជាការបង្ហាញអក្សរស្ទាបសម្រាប់ SandFly?</string>
+    <string name="external_display_channel">ឧបករណ៍បង្ហាញអក្សរស្ទាបពីកម្មវិធីផ្សេង</string>
+    <string name="external_display_ask_title">អនុញ្ញាតឱ្យ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ធ្វើជាឧបករណ៍បង្ហាញអក្សរស្ទាបសម្រាប់ SandFly ឬ?</string>
     <string name="external_display_ask_text">SandFly នឹងមិនប្រើវាទេ រហូតដល់អ្នកអនុញ្ញាត។</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>នឹងអាចអានអ្វីគ្រប់យ៉ាង SandFly បង្ហាញជាអក្សរស្ទាប ដែលអាចជាអ្វីទាំងអស់នៅលើអេក្រង់ រួមទាំងសារ និងអ្វីដែលអ្នកវាយបញ្ចូល។ វាក៏នឹងអាចគ្រប់គ្រងឧបករណ៍របស់អ្នកតាមដែលអ្នកអាចធ្វើបានជាមួយនឹងការបង្ហាញអក្សរស្ទាប៖ វាយ បើកកម្មវិធី និងដំណើរការពាក្យបញ្ជា SandFly ណាមួយ។ អនុញ្ញាតតែកម្មវិធីដែលអ្នកទុកចិត្តប៉ុណ្ណោះ។</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> នឹងអាចអានអ្វីៗទាំងអស់ដែល SandFly បង្ហាញជាអក្សរស្ទាប ដែលអាចជាអ្វីក៏បាននៅលើអេក្រង់ រួមទាំងសារ និងអ្វីដែលអ្នកវាយបញ្ចូល។ វាក៏នឹងអាចគ្រប់គ្រងឧបករណ៍របស់អ្នកដូចដែលអ្នកធ្វើបានជាមួយឧបករណ៍បង្ហាញអក្សរស្ទាប៖ វាយអក្សរ បើកកម្មវិធី និងដំណើរការពាក្យបញ្ជា SandFly ណាមួយ។ អនុញ្ញាតតែកម្មវិធីដែលអ្នកទុកចិត្តប៉ុណ្ណោះ។</string>
     <string name="external_display_allow">អនុញ្ញាត</string>
     <string name="external_display_deny">មិនអនុញ្ញាត</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> គឺជាការបង្ហាញអក្សរស្ទាបរបស់អ្នក។</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ជាឧបករណ៍បង្ហាញអក្សរស្ទាបរបស់អ្នក</string>
     <string name="external_display_in_use_text">ខណៈពេលដែល SandFly ប្រើវា <xliff:g id="app" example="Notetaker">%1$s</xliff:g> អាចអានអេក្រង់ និងគ្រប់គ្រងឧបករណ៍។</string>
-    <string name="external_displays_title">បង្ហាញពីកម្មវិធីផ្សេងៗ</string>
-    <string name="external_displays_summary">កម្មវិធីដែលអ្នកអនុញ្ញាតអាចជាការបង្ហាញអក្សរស្ទាបសម្រាប់ SandFly។ កម្មវិធីដែលជាការបង្ហាញអក្សរស្ទាបអាចអានអេក្រង់ និងគ្រប់គ្រងឧបករណ៍។</string>
-    <string name="external_displays_none">គ្មានកម្មវិធីណាអាចជាការបង្ហាញអក្សរស្ទាបទេ។</string>
+    <string name="external_displays_title">ឧបករណ៍បង្ហាញពីកម្មវិធីផ្សេង</string>
+    <string name="external_displays_summary">កម្មវិធីដែលអ្នកអនុញ្ញាតអាចធ្វើជាឧបករណ៍បង្ហាញអក្សរស្ទាបសម្រាប់ SandFly។ កម្មវិធីដែលជាឧបករណ៍បង្ហាញអក្សរស្ទាបអាចអានអេក្រង់ និងគ្រប់គ្រងឧបករណ៍។</string>
+    <string name="external_displays_none">គ្មានកម្មវិធីណាអាចធ្វើជាឧបករណ៍បង្ហាញអក្សរស្ទាបបានទេ។</string>
 </resources>

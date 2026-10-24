@@ -4,10 +4,10 @@
     <string name="title_pref_problem_report_type">கருத்து வகை</string>
     <string name="title_pref_problem_report_area">பகுதி</string>
     <string name="title_pref_problem_report_title">தலைப்பு</string>
-    <string name="title_pref_problem_report_app">அது நடக்கும் இடத்தில் ஆப்</string>
+    <string name="title_pref_problem_report_app">இது நிகழும் ஆப்ஸ்</string>
     <string name="title_pref_problem_report_description">விளக்கம்</string>
-    <string name="dialog_message_problem_report_description">என்ன நடக்கிறது மற்றும் நீங்கள் எதிர்பார்த்தது.</string>
-    <string name="title_pref_problem_report_steps">மென்பொருள் சிக்கலை மீண்டும் உருவாக்குவதற்கான படிகள்</string>
+    <string name="dialog_message_problem_report_description">என்ன நடக்கிறது, நீங்கள் என்ன எதிர்பார்த்தீர்கள்.</string>
+    <string name="title_pref_problem_report_steps">சிக்கலை மீண்டும் உருவாக்கும் படிகள்</string>
     <string name="title_pref_problem_report_email">பதில்களுக்கான மின்னஞ்சல்</string>
     <string name="title_pref_problem_report_device">சாதனத் தகவலைச் சேர்க்கவும்</string>
     <string name="title_pref_problem_report_log">SandFly பதிவைச் சேர்க்கவும்</string>
@@ -19,22 +19,22 @@
     <string name="problem_report_sent">கருத்து அனுப்பப்பட்டது.</string>
     <string name="problem_report_rate_limited">அதிக கருத்து அனுப்பப்பட்டது. பிறகு முயற்சிக்கவும்.</string>
     <string name="problem_report_no_connection">கருத்து அனுப்பப்படவில்லை. இணைய இணைப்பைச் சரிபார்க்கவும்.</string>
-    <string name="problem_report_not_sent">கருத்து அனுப்பப்படவில்லை. பிறகு முயற்சிக்கவும்.</string>
+    <string name="problem_report_not_sent">கருத்து அனுப்பப்படவில்லை. பிறகு மீண்டும் முயற்சிக்கவும்.</string>
     <string-array name="problem_report_type_entries">
-        <item>தவறான நடத்தை</item>
-        <item>விபத்து</item>
-        <item>மெதுவாக அல்லது பதிலளிக்கவில்லை</item>
+        <item>தவறான செயல்பாடு</item>
+        <item>சிதைவு</item>
+        <item>மெதுவாக உள்ளது அல்லது பதிலளிக்கவில்லை</item>
         <item>பரிந்துரை</item>
     </string-array>
     <string-array name="problem_report_area_entries">
         <item>பேச்சு</item>
         <item>சைகைகள்</item>
-        <item>தொடு ஆய்வு</item>
-        <item>வாசிப்பு கட்டுப்பாடுகள் மற்றும் மெனுக்கள்</item>
-        <item>தட்டச்சு மற்றும் விசைப்பலகைகள்</item>
+        <item>தொடுவதன் மூலம் அறிக</item>
+        <item>வாசிப்புக் கட்டுப்பாடுகள், மெனுக்கள்</item>
+        <item>தட்டச்சு, கீபோர்டுகள்</item>
         <item>பிரெய்ல் கீபோர்டு</item>
         <item>பிரெய்ல் காட்சி</item>
-        <item>ஒலிகள் மற்றும் அதிர்வு</item>
+        <item>ஒலியும் அதிர்வும்</item>
         <item>அறிவிப்புகள்</item>
         <item>இணைய உள்ளடக்கம்</item>
         <item>ஸ்கிரிப்டுகள்</item>
@@ -49,14 +49,14 @@
     <string name="report_drafts_empty">வரைவுகள் இல்லை</string>
     <string name="report_just_now">இப்போது தான்</string>
     <string name="report_untitled">பெயரிடப்படாதது</string>
-    <string name="report_draft_summary">மாற்றப்பட்டது <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
-    <string name="report_sent_at">அனுப்பப்பட்டது <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> மாற்றப்பட்டது</string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> அனுப்பப்பட்டது</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> புதிய பதில்</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> புதிய பதில்கள்</item>
     </plurals>
     <string name="report_status_changed">நிலை மாறியது</string>
-    <string name="report_status_open">சிக்கலைத் திறக்கவும்</string>
+    <string name="report_status_open">திறந்துள்ளது</string>
     <string name="report_status_completed">மூடப்பட்டது, நிறைவுற்றது</string>
     <string name="report_status_not_planned">மூடப்பட்டது, திட்டமிடப்படவில்லை</string>
     <string name="report_status_duplicate">மூடப்பட்டது, நகல்</string>
@@ -70,15 +70,15 @@
     <string name="title_report_reply_text">உங்கள் பதில்</string>
     <string name="title_report_send_reply">பதில் அனுப்பவும்</string>
     <string name="report_reply_sent">பதில் அனுப்பப்பட்டது.</string>
-    <string name="report_reply_not_sent">பதில் அனுப்பப்படவில்லை. பிறகு முயற்சிக்கவும்.</string>
+    <string name="report_reply_not_sent">பதில் அனுப்பப்படவில்லை. பிறகு மீண்டும் முயற்சிக்கவும்.</string>
     <string name="title_report_remove">இன்பாக்ஸிலிருந்து அகற்று</string>
     <string name="dialog_title_report_remove">இன்பாக்ஸிலிருந்து இந்தக் கருத்தை அகற்றவா?</string>
     <string name="dialog_message_report_remove">அதற்கான பதில்கள் இனி இந்த மொபைலுக்கு வராது.</string>
     <string name="title_report_delete_draft">வரைவை நீக்கு</string>
     <string name="dialog_title_report_delete_draft">இந்த வரைவை நீக்கவா?</string>
     <string name="button_report_delete">நீக்கு</string>
-    <string name="report_missing">இந்தக் கருத்து இனி இன்பாக்ஸில் இருக்காது.</string>
+    <string name="report_missing">இந்தக் கருத்து இனி இன்பாக்ஸில் இல்லை.</string>
     <string name="notification_channel_problem_reports">கருத்து பதில்கள்</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>க்கு பதிலளிக்கவும்</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>க்கான பதில்</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

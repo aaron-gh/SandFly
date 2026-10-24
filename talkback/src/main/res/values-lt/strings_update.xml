@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_check_for_updates">Patikrinkite, ar nėra atnaujinimų</string>
-    <string name="summary_pref_check_for_updates_version"><xliff:g id="version" example="0.1.0">%1$s</xliff:g> versija, kūrimas <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_check_for_updates">Tikrinti, ar yra naujinių</string>
+    <string name="summary_pref_check_for_updates_version">Versija <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, darinys <xliff:g id="build" example="96">%2$d</xliff:g></string>
     <string name="title_pref_auto_update_check">Automatiškai tikrinti, ar nėra naujinimų</string>
-    <string name="summary_pref_auto_update_check">Tikrinkite kartą per dieną ir rodykite pranešimą, kai bus pasiekiama nauja versija</string>
-    <string name="title_pref_dev_builds">Vystymasis stato</string>
-    <string name="update_notification_title">SandFly yra naujinimas</string>
-    <string name="update_notification_text">Sukurti <xliff:g id="build" example="97">%1$d</xliff:g>. Bakstelėkite, kad įdiegtumėte.</string>
-    <string name="update_dialog_title">SandFly versija <xliff:g id="build" example="97">%1$d</xliff:g> yra prieinama</string>
+    <string name="summary_pref_auto_update_check">Tikrina kartą per dieną ir rodo pranešimą, kai yra nauja versija</string>
+    <string name="title_pref_dev_builds">Kūrimo versijos</string>
+    <string name="update_notification_title">Yra SandFly naujinimas</string>
+    <string name="update_notification_text">Darinys <xliff:g id="build" example="97">%1$d</xliff:g>. Bakstelėkite, kad įdiegtumėte.</string>
+    <string name="update_dialog_title">Pasiekiamas SandFly darinys <xliff:g id="build" example="97">%1$d</xliff:g></string>
     <string name="update_dialog_install">Įdiegti</string>
-    <string name="update_checking">Tikrinama, ar nėra atnaujinimų</string>
+    <string name="update_checking">Tikrinama, ar yra naujinių</string>
     <string name="update_up_to_date">SandFly yra atnaujinta</string>
     <string name="update_check_failed">Nepavyko patikrinti, ar yra naujinimų</string>
     <string name="update_downloading">Atsisiunčiamas naujinimas</string>

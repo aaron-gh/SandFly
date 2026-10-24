@@ -7,37 +7,37 @@
     <string name="title_pref_problem_report_app">App onde isso acontece</string>
     <string name="title_pref_problem_report_description">Descrição</string>
     <string name="dialog_message_problem_report_description">O que acontece e o que você esperava.</string>
-    <string name="title_pref_problem_report_steps">Etapas para reproduzir o problema de software</string>
+    <string name="title_pref_problem_report_steps">Passos para reproduzir</string>
     <string name="title_pref_problem_report_email">E-mail para respostas</string>
     <string name="title_pref_problem_report_device">Incluir informações do dispositivo</string>
-    <string name="title_pref_problem_report_log">Incluir registro SandFly</string>
+    <string name="title_pref_problem_report_log">Incluir registro do SandFly</string>
     <string name="summary_pref_problem_report_log">Pode conter texto da tela</string>
     <string name="title_pref_problem_report_send">Enviar</string>
     <string name="summary_pref_problem_report_sending">Enviando</string>
     <string name="problem_report_missing_fields">Insira um título e uma descrição.</string>
     <string name="problem_report_invalid_email">Insira um endereço de e-mail válido.</string>
     <string name="problem_report_sent">Feedback enviado.</string>
-    <string name="problem_report_rate_limited">Muitos comentários enviados. Tente novamente mais tarde.</string>
+    <string name="problem_report_rate_limited">Foram enviados comentários demais. Tente novamente mais tarde.</string>
     <string name="problem_report_no_connection">Feedback não enviado. Verifique a conexão com a internet.</string>
     <string name="problem_report_not_sent">Feedback não enviado. Tente novamente mais tarde.</string>
     <string-array name="problem_report_type_entries">
         <item>Comportamento incorreto</item>
-        <item>Acidente</item>
+        <item>Falha</item>
         <item>Lento ou sem resposta</item>
         <item>Sugestão</item>
     </string-array>
     <string-array name="problem_report_area_entries">
-        <item>Discurso</item>
+        <item>Fala</item>
         <item>Gestos</item>
-        <item>Exploração de toque</item>
-        <item>Lendo controles e menus</item>
+        <item>Explorar por toque</item>
+        <item>Controles de leitura e menus</item>
         <item>Digitação e teclados</item>
         <item>Teclado em braille</item>
         <item>Linha braille</item>
-        <item>Sons e vibração</item>
+        <item>Som e vibração</item>
         <item>Notificações</item>
-        <item>Conteúdo da web</item>
-        <item>Roteiros</item>
+        <item>Conteúdo da Web</item>
+        <item>Scripts</item>
         <item>Configurações</item>
         <item>Atualizações</item>
         <item>Outro</item>
@@ -56,17 +56,17 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> novas respostas</item>
     </plurals>
     <string name="report_status_changed">status alterado</string>
-    <string name="report_status_open">Problema aberto</string>
+    <string name="report_status_open">Aberto</string>
     <string name="report_status_completed">Fechado, concluído</string>
     <string name="report_status_not_planned">Fechado, não planejado</string>
     <string name="report_status_duplicate">Fechado, duplicado</string>
     <string name="report_status_unknown">Removido</string>
-    <string name="title_report_status">Estado</string>
+    <string name="title_report_status">Status</string>
     <string name="title_report_your_report">Seu feedback</string>
     <string name="title_report_messages">Mensagens</string>
     <string name="report_message_from_developer">Desenvolvedor, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">Você, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Responder</string>
+    <string name="title_report_reply">Resposta</string>
     <string name="title_report_reply_text">Sua resposta</string>
     <string name="title_report_send_reply">Enviar resposta</string>
     <string name="report_reply_sent">Resposta enviada.</string>
@@ -78,7 +78,7 @@
     <string name="dialog_title_report_delete_draft">Excluir este rascunho?</string>
     <string name="button_report_delete">Excluir</string>
     <string name="report_missing">Este feedback não está mais na caixa de entrada.</string>
-    <string name="notification_channel_problem_reports">Respostas de feedback</string>
-    <string name="report_notification_reply">Responder para <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="notification_channel_problem_reports">Respostas ao feedback</string>
+    <string name="report_notification_reply">Resposta a <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

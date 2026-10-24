@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="talkback_service_description">Talkback अन हुँदा यसले स्क्रिनमा भएको कुरा पढेर सुनाउने भएकाले तपाईं स्क्रिनमा नहेरिकन आफ्नो डिभाइस प्रयोग गर्न सक्नुहुन्छ। दृष्टिविहीन वा दृष्टि क्षमता कमजोर भएका मान्छेहरूका लागि यो सुविधा उपयोगी हुन सक्छ।\n\nSandFly प्रयोग गरेर नेभिगेट गर्न:\n• एउटा वस्तुबाट अर्को वस्तुमा जान दायाँ वा बायाँतिर स्वाइप गर्नुहोस्\n•  कुनै वस्तु एक्टिभेट गर्न त्यसमा डबल ट्याप गर्नुहोस्\n• स्क्रोल गर्न दुई वटा औँलाले ड्र्याग गर्नुहोस्\n\nSandFly अफ गर्न:\n• स्विचमा ट्याप गर्नुहोस्। तपाईं एउटा आउटलाइन देख्नु हुने छ। उक्त स्विचमा डबल ट्याप गर्नुहोस्।\n• पुष्टि गर्ने म्यासेजमा रहेको \"ठिक छ\" बटनमा ट्याप गर्नुहोस्। त्यसपछि \"ठिक छ\" बटनमा डबल ट्याप गर्नुहोस्।</string>
+  <string name="talkback_service_description">SandFly अन हुँदा यसले स्क्रिनमा भएको कुरा पढेर सुनाउने भएकाले तपाईं स्क्रिनमा नहेरिकन आफ्नो डिभाइस प्रयोग गर्न सक्नुहुन्छ। दृष्टिविहीन वा दृष्टि क्षमता कमजोर भएका मान्छेहरूका लागि यो सुविधा उपयोगी हुन सक्छ।\n\nSandFly प्रयोग गरेर नेभिगेट गर्न:\n• एउटा वस्तुबाट अर्को वस्तुमा जान दायाँ वा बायाँतिर स्वाइप गर्नुहोस्\n•  कुनै वस्तु एक्टिभेट गर्न त्यसमा डबल ट्याप गर्नुहोस्\n• स्क्रोल गर्न दुई वटा औँलाले ड्र्याग गर्नुहोस्\n\nSandFly अफ गर्न:\n• स्विचमा ट्याप गर्नुहोस्। तपाईं एउटा आउटलाइन देख्नु हुने छ। उक्त स्विचमा डबल ट्याप गर्नुहोस्।\n• पुष्टि गर्ने म्यासेजमा रहेको \"ठिक छ\" बटनमा ट्याप गर्नुहोस्। त्यसपछि \"ठिक छ\" बटनमा डबल ट्याप गर्नुहोस्।</string>
   <string name="talkback_service_html_description"><![CDATA[SandFly अन भएका बेला यसले बोलेर प्रतिक्रिया दिने भएकाले तपाईं स्क्रिनमा नहेरिकनै आफ्नो डिभाइस प्रयोग गर्न सक्नुहुन्छ। SandFly स्क्रिन हेर्न नमिल्ने अवस्थामा प्रयोग गर्न वा स्क्रिनमा भएका कुरा राम्ररी हेर्न नसक्ने मान्छेहरूका लागि बनाइएको हो।<br><br><b>SandFly प्रयोग गर्ने तरिका</b><br>• एउटा सामग्रीबाट अर्को सामग्रीमा जान दायाँ वा बायाँतिर स्वाइप गर्नुहोस्<br>• कुनै सामग्री एक्टिभेट गर्न उक्त सामग्रीमा डबल ट्याप गर्नुहोस्<br>• स्क्रोल गर्न २ वटा औँलाले ड्र्याग गर्नुहोस्<br><b>SandFly अफ गर्ने तरिका</b><br>१. सेटिङमा गई <b>SandFly प्रयोग गर्नुहोस्</b> मा ट्याप गर्नुहोस्। त्यहाँ आउटलाइन देखिने छ। उक्त आउटलाइनमा डबल ट्याप गर्नुहोस्।<br>२. पुष्टि गर्ने म्यासेजमा भएको <b>रोक्नुहोस्</b> मा ट्याप गर्नुहोस्। त्यहाँ आउटलाइन देखिने छ। उक्त आउटलाइनमा डबल ट्याप गर्नुहोस्।]]></string>
   <string name="talkback_service_summary">स्क्रिनमा भएका वस्तुहरूका बारेमा ठुलो स्वरमा सुन्न स्क्रिन रिडर प्रयोग गर्नुहोस्</string>
   <string name="talkback_preferences_title">SandFly का सेटिङ</string>
@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">उपकरण बन्द खोलियो</string>
   <string name="title_pref_speech_volume">बोलीको मात्रा</string>
   <string name="title_pref_verbose_scroll_announcement">सूचीका वस्तुहरूको सङ्ख्या सधैँ भन्नुहोस्</string>
-  <string name="summary_pref_verbose_scroll_announcement">प्रत्येक स्क्रोल पछि कुन वस्तुहरू देखाइँदैछ भन्नुहोस्</string>
+  <string name="summary_pref_verbose_scroll_announcement">प्रत्येक स्क्रोलपछि कुन वस्तुहरू देखिएका छन् भन्छ</string>
   <string name="title_pref_cover_proximity_sensor">आवाज रोक्नका लागि निकटका वस्तु पत्ता लगाउने सेन्सर छोप्नुहोस्</string>
   <string name="title_pref_phonetic_letters">उदाहरणसहितका अक्षरहरू भन्नुहोस्</string>
   <string name="summary_pref_phonetic_letters">तपाईंले किबोर्डका की चयन गर्नुभयो वा वर्ण प्रयोग गरेर नेभिगेट गर्नुभयो भने तपाईं हरेक अक्षरसँगै (जस्तै, \"ह, होटेल\") जस्ता कुनै उदाहरण सुन्नु हुने छ</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">अधिकांश</string>
   <string name="punctuation_some">केही</string>
   <string name="title_pref_count_repeated_symbols">दोहोरिएका चिन्हहरू गन्नुहोस्</string>
-  <string name="summary_pref_count_repeated_symbols">4 वा धेरै पटक दोहोर्याउँदा प्रतीक कति पटक दोहोर्याउँछ भन्नुहोस्</string>
+  <string name="summary_pref_count_repeated_symbols">प्रतीक 4 वा बढी पटक दोहोरिँदा, कति पटक दोहोरियो भनेर बताउँछ</string>
   <string name="learn_more">थप जान्नुहोस्</string>
   <string name="title_pref_capital_letters">ठुला अक्षरहरू</string>
   <string name="capital_letters_nothing">केही पनि नगर्नुहोस्</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">आवाजको तीक्ष्णता बदल्नुहोस्</string>
   <string name="capital_letters_sound_feedback">साउन्ड बजाउनुहोस्</string>
   <string name="title_pref_a11y_hints">प्रयोग गर्न विधि बताउनुहोस्</string>
-  <string name="summary_pref_a11y_hints">एक वस्तु वर्णन गरिसकेपछि, यसलाई कसरी प्रयोग गर्ने भन्नुहोस्</string>
+  <string name="summary_pref_a11y_hints">वस्तुको वर्णनपछि यसलाई कसरी प्रयोग गर्ने भनेर बताउँछ</string>
   <string name="pref_speak_container_element_positions_title">कन्टेनरमा भएको जानकारी पढेर सुनाउनुहोस्</string>
   <string name="pref_speak_time_title">बोलेर समय बताउनुहोस्</string>
   <string name="pref_speak_time_summary">तपाईंले स्क्रिन अन गर्दा</string>
-  <string name="summary_speak_container_element_positions">तपाईंले सूचीहरू, ग्रिडहरू र अन्य कन्टेनरहरू प्रविष्ट गर्दा वा छोड्दा भन्नुहोस्</string>
+  <string name="summary_speak_container_element_positions">सूची, ग्रिड र अन्य कन्टेनरमा पस्दा वा निस्कँदा भन्छ</string>
   <string name="reset_letency_reduction_settings_dialog_title">डिलेसम्बन्धी सेटिङ रिसेट गर्ने हो?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">तपाईंले यसो गर्नुभयो भने डिलेसम्बन्धी सबै सेटिङ रिसेट गरी डिफल्ट सेटिङ लागू गरिने छन्</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">रिसेट गर्नुहोस्</string>
@@ -62,14 +62,14 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">रिसेट गर्नुहोस्</string>
   <string name="gestures_announce_reset_gesture_settings">इसारासम्बन्धी सेटिङहरू रिसेट गरिएका छन्।</string>
   <string name="pref_speak_roles_title">तत्वको प्रकार बोल्नुहोस्</string>
-  <string name="pref_speak_roles_summary">बटन वा चेकबक्स लाइक गर्नुहोस्</string>
+  <string name="pref_speak_roles_summary">जस्तै बटन वा चेकबक्स</string>
   <string name="title_pref_speak_element_ids">तत्त्वका ID हरू बोल्नुहोस्</string>
-  <string name="summary_pref_speak_element_ids">लेबल नभएका बटनहरूको ID भन्नुहोस्</string>
+  <string name="summary_pref_speak_element_ids">लेबल नभएका बटनहरूको ID भन्छ</string>
   <string name="pref_allow_frequent_content_change_announcement_title">सबै प्रोग्रेस अपडेटहरू पढेर सुनाउनुहोस्</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">यसअन्तर्गत सामग्री डाउनलोड गर्ने र ड्राइभिङ निर्देशनहरू पालना गर्ने जस्ता कार्यहरू गरिरहेका बेला दिइने अद्यावधिक जानकारी समावेश हुन्छ। तपाईं यो सुविधा अफ गरिएका बेला पनि कहिलेकाहीँ पठाइने अद्यावधिक जानकारी प्राप्त गर्नु हुने छ।</string>
   <string name="title_pref_explore_by_touch">छोएर अन्वेषण</string>
   <string name="title_pref_category_controls">कन्ट्रोलहरू</string>
-  <string name="title_pref_category_reduce_latency_summary">यी सेटिङहरूले SandFly तपाईंले स्क्रिन छोएपछि छिटो प्रतिक्रिया दिन्छ</string>
+  <string name="title_pref_category_reduce_latency_summary">यी सेटिङहरूले स्क्रिन छोएपछि SandFly लाई छिटो प्रतिक्रिया दिन लगाउँछन्</string>
   <string name="reset_latency_settings_title">डिलेसम्बन्धी सबै सेटिङ रिसेट गर्नुहोस्</string>
   <string name="title_pref_single_tap">एक्टिभेट गर्न एक पटक ट्याप गर्नुहोस्</string>
   <string name="summary_pref_single_tap">फोकस गरिएको सामग्री एक्टिभेट गर्न उक्त सामग्रीमा एक पटक ट्याप गर्नुहोस्। डबल ट्याप गर्नुको साटो यसरी नेभिगेट गर्दा छिटो हुन्छ।</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">मद्दत</string>
   <string name="title_pref_advanced_settings">उन्नत सेटिङ</string>
   <string name="title_pref_show_exit_watermark">SandFly अफ गर्ने तरिका देखाउनुहोस्</string>
-  <string name="summary_pref_show_exit_watermark">SandFly सक्रिय हुँदा, यसलाई कसरी बन्द गर्ने भनेर देखाउनुहोस्</string>
+  <string name="summary_pref_show_exit_watermark">SandFly सक्रिय हुँदा यसलाई कसरी बन्द गर्ने भनेर देखाउँछ</string>
   <string name="talkback_exit_watermark_text">SandFly अन छ। यसलाई अफ गर्न स्क्रिनमा ५ सेकेन्डसम्म २ औँलाले थिचिराख्नुहोस्। यो म्यासेज देखाउन छाड्न ३ औँलाले ट्याप गरेर SandFly मेनु खोल्नुहोस्।</string>
   <string name="talkback_exit_watermark_hint_text">SandFly अन गरिएको छ भन्ने कुरा जनाउने ब्यानर देखाइँदै छ। SandFly अफ गर्न २ वटा औँलाले ५ सेकेन्डसम्म स्क्रिनमा होल्ड गर्नुहोस्। यो ब्यानर हटाउन SandFly का सेटिङमा जानुहोस्।</string>
   <string name="reset_gesture_settings_title">इसारासम्बन्धी सेटिङ रिसेट गर्नुहोस्</string>
@@ -292,7 +292,7 @@
   <string name="pref_node_desc_order_title">वस्तु विवरणहरूको क्रम</string>
   <string name="pref_time_feedback_format_title">समयको फर्म्याट</string>
   <string name="title_pref_latency_reduction">डिले घटाउनुहोस्</string>
-  <string name="talkback_latency_reduction_summary">तपाईंले स्क्रिन छोएपछि SandFly छिटो प्रतिक्रिया दिनुहोस्</string>
+  <string name="talkback_latency_reduction_summary">स्क्रिन छोएपछि SandFly छिटो प्रतिक्रिया दिन्छ</string>
   <string name="summary_pref_intonation">मेटाइएका अक्षरहरू ठुलो स्वरमा भनियोस्</string>
   <string name="title_pref_brailledisplay">ब्रेल डिस्प्ले</string>
   <string name="title_pref_brailleime">ब्रेल किबोर्ड</string>
@@ -318,7 +318,7 @@
   <string name="title_pref_typing_confirmation">टाइपिङ विधि</string>
   <string name="title_pref_typing_long_tap_duration">टाइप गर्ने क्रममा \"टच एन्ड होल्ड\" को डिले</string>
   <string name="title_pref_touch_explore_timeout">टाइपिङ फोकस डिले</string>
-  <string name="message_pref_touch_explore_latency">छोटो ढिलाइले SandFly तपाईंले किबोर्ड छोएपछि चाँडै बोल्छ।\n\nढिलाइ छान्नुहोस्</string>
+  <string name="message_pref_touch_explore_latency">ढिलाइ छोटो भए, तपाईंले किबोर्ड छोएपछि SandFly चाँडै बोल्छ।\n\nढिलाइ छान्नुहोस्</string>
   <string name="title_pref_touch_focus_timeout">फोकस डिले</string>
   <string name="title_pref_talkback_gesture_detection">SandFly मा गई जेस्चर व्यवस्थापन गर्नुहोस्</string>
   <string name="toast_pref_talkback_gesture_detection">यो सेटिङ एक्टिभेट गर्न SandFly अफ गरी फेरि अन गर्नुहोस्।</string>
@@ -386,7 +386,7 @@
   <string name="shortcut_notifications">नोटिफिकेसनहरू</string>
   <string name="shortcut_quick_settings">द्रुत सेटिङ</string>
   <string name="shortcut_show_custom_actions">रोजाइअनुसारका कार्यहरू देखाउनुहोस्</string>
-  <string name="shortcut_talkback_breakout">SandFly मेनु खोलियोस्</string>
+  <string name="shortcut_talkback_breakout">SandFly मेनु खोल्नुहोस्</string>
   <string name="shortcut_pause_or_resume_feedback">TalkBack को बोली पज वा सुचारु गर्नुहोस्</string>
   <string name="shortcut_toggle_voice_feedback">स्पिच अन वा अफ गर्नुहोस्</string>
   <string name="shortcut_read_from_top">सिरानबाट पढ्नुहोस्</string>
@@ -755,7 +755,7 @@
   <string name="title_pref_a11y_volume">सर्वसुलभता सेवाको भोल्युम</string>
   <string name="title_pref_touch_explore_latency">टाइपिङ फोकस डिले</string>
   <string name="title_pref_touch_focus_latency">फोकस डिले</string>
-  <string name="message_pref_touch_focus_latency">छोटो ढिलाइले SandFly तपाईंले स्क्रिन छोएपछि चाँडै बोल्छ</string>
+  <string name="message_pref_touch_focus_latency">ढिलाइ छोटो भए, तपाईंले स्क्रिन छोएपछि SandFly चाँडै बोल्छ</string>
   <string name="message_pref_typing_method_prefix">टाइप गर्दा हुने ढिलाइ सबैभन्दा न्यून बनाउन \"कुनै की चयन गर्न औँलाले उक्त कीमा थिचिराख्नुहोस् अनि औँला उठाउनुहोस्\" छनौट गर्नुहोस्</string>
   <string name="message_pref_typing_method_postfix">तपाईं जुनसुकै बेला स्प्लिट ट्याप प्रयोग गरेर पनि टाइप गर्न सक्नुहुन्छ। यसो गर्न एउटा औँलाले कुनै कीमा थिचिराखेर उक्त की चयन गर्नुहोस् अनि अर्को औँला प्रयोग गरी स्क्रिनमा ट्याप गर्नुहोस्।</string>
   <string name="title_pref_talkback_speech_rate">बोल्ने गति</string>
@@ -804,7 +804,7 @@
   <string name="screen_search_hint_type_search_controls">खोजसम्बन्धी कन्ट्रोलहरू</string>
   <string name="screen_search_hint_type_search_tables">खोज गर्नु पर्ने तालिकाहरू</string>
   <string name="talkback_notification_channel_name">@string/talkback_label</string>
-  <string name="talkback_notification_channel_description">SandFly का सूचनासम्बन्धी च्यानलहरू</string>
+  <string name="talkback_notification_channel_description">SandFly को सूचना च्यानल</string>
   <string name="speech_pitch_maximum">बोलीको पिच सबैभन्दा उच्च छ</string>
   <string name="speech_pitch_minimum">बोलीको पिच सबैभन्दा न्यून छ</string>
   <string name="reset_speech_rate_and_pitch">स्पिच रेट र पिच रिसेट गर्नुहोस्</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">माथि जानुहोस्</string>
   <string name="training_tip">सुझाव</string>
   <string name="tv_training_overview_step_title">SandFly ले काम गर्ने तरिका</string>
-  <string name="tv_training_overview_step_summary">SandFly Google को TalkBack मा आधारित स्क्रिन रिडर हो। यसले स्क्रिनमा रहेको पाठ ठूलो स्वरले पढ्छ र तपाइँलाई बोलिएको प्रतिक्रिया दिन्छ, ताकि तपाइँ स्क्रिनमा नहेरी तपाइँको यन्त्र प्रयोग गर्न सक्नुहुन्छ। \n\nSandFly अन हुँदा, स्क्रिनमा चयन गरिएको वस्तु ठूलो स्वरमा बोलिन्छ, कहिलेकाहीँ अतिरिक्त जानकारी वा सन्दर्भ थपिएको छ।\n\nPress चयन गर्नुहोस्। चयन बटन दिशात्मक प्याडको केन्द्रमा अवस्थित छ, जुन तपाईंको रिमोटको शीर्षमा ठूलो, गोलाकार बटन हो।</string>
+  <string name="tv_training_overview_step_summary">SandFly Google को TalkBack मा आधारित स्क्रिन रिडर हो। यसले स्क्रिनमा भएको पाठ ठूलो स्वरमा पढ्छ र बोलेर प्रतिक्रिया दिन्छ, जसले गर्दा तपाईं स्क्रिन नहेरी आफ्नो डिभाइस प्रयोग गर्न सक्नुहुन्छ।\n\nSandFly अन हुँदा, स्क्रिनमा चयन गरिएको वस्तु ठूलो स्वरमा बोलिन्छ, कहिलेकाहीँ थप जानकारी वा सन्दर्भसहित।\n\nजारी राख्न चयन गर्नुहोस् थिच्नुहोस्। चयन बटन दिशा प्याडको बीचमा छ, जुन तपाईंको रिमोटको माथिल्लो भागमा भएको ठूलो, गोलो बटन हो।</string>
   <string name="tv_training_remote_step_title">रिमोट प्रयोग गर्ने तरिका</string>
   <string name="tv_training_remote_step_summary">तपाईंको रिमोटको सिरानमा रहेको दिशासूचक वृत्ताकार बटन प्रयोग गरी स्क्रिनमा यताउता जानुहोस्। स्क्रिनमा कुनै कुरा चयन गर्न रिमोटको सिरानमा रहेको दिशासूचक बटनको मध्यबिन्दुमा थिच्नुहोस्।\n\nरिमोटमा रहेको दोस्रो रोमा बायाँपट्टि \"पछाडि\" बटन छ। उक्त रोमा दायाँपट्टि \"भ्वाइस सहायक\" बटन छ।\n\nतेस्रो रोमा बायाँपट्टि होम बटन छ। उक्त रोमा दायाँपट्टि म्युट बटन छ।\n\nचौथो रोमा बायाँपट्टि YouTube को सर्टकट छ। उक्त रोमा दायाँपट्टि Netflix को सर्टकट छ।\n\nपुछारको रोमा दुई वटा साना बटन छन्। बायाँपट्टिको बटन पावर बटन हो। दायाँपट्टिको बटनमा थिच्दा तपाईंको टिभीको इनपुट मेनु खुल्छ।\n\nभोल्युम बटनहरू रिमोटको दायाँ छेउमा छन्।\n\nजारी राख्न \"चयन गर्नुहोस्\" थिच्नुहोस्।</string>
   <string name="tv_training_shortcut_step_title">SandFly को सर्टकट</string>
@@ -905,7 +905,7 @@
   <string name="split_tap_everywhere_title">सबैतिर स्प्लिट-ट्याप गर्नुहोस्</string>
   <string name="split_tap_everywhere_text">तपाईं अब किबोर्डबाहिरका साथै सबैतिर स्प्लिट ट्याप प्रयोग गरी वस्तुहरू एक्टिभेट गर्न सक्नुहुन्छ। यो सुविधा प्रयोग गर्न एउटा औँलाले स्क्रिन प्रयोग गर्नुहोस् अनि पहिलो औँला नउठाइकन हाल फोकस गरिएको वस्तु एक्टिभेट गर्न अर्को औँलाले स्क्रिनमा ट्याप गर्नुहोस्।</string>
   <string name="keyboard_enhanced_keymap_title">किबोर्ड: परिष्कृत किम्याप</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly मा अब भौतिक किबोर्डहरूको लागि \"परिष्कृत कीम्याप\" छ, विभिन्न प्रकारका नयाँ आदेशहरू र सर्टकटहरू प्रस्तुत गर्दै। यो वृद्धिले थप कुशल वेब नेभिगेसन, स्ट्रिमलाइनिङ नेभिगेसन र SandFly प्रयोगकर्ताहरूका लागि अन्तरक्रियाको लागि \"ब्राउज मोड\" समावेश गर्दछ जो भौतिक किबोर्डहरूमा निर्भर छन्। तपाईं <xliff:g id="settings_path">%1$s</xliff:g>.\n\n मा \"परिष्कृत कीम्याप\" मा स्विच गर्न सक्नुहुन्छ यदि तपाईंले ब्रेल डिस्प्ले प्रयोग गर्नुहुन्छ भने, तपाईंले आफ्नो ब्रेल डिस्प्लेबाट सीधै सामग्री मार्फत पार गर्न नयाँ ब्राउज मोड सर्टकटहरू पनि प्रयोग गर्न सक्नुहुन्छ। यस परिवर्तनलाई समायोजन गर्न केही ब्रेल डिस्प्ले सर्टकटहरू परिवर्तन गरियो। तपाईंले <xliff:g id="braille_display_settings_path">%2$s</xliff:g> मा सबै ब्रेल डिस्प्ले सर्टकटहरूको सूची हेर्न सक्नुहुन्छ।</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly मा अब भौतिक किबोर्डका लागि “परिष्कृत किम्याप” छ, जसमा धेरै नयाँ आदेश र सर्टकटहरू छन्। यसमा “ब्राउज मोड” समावेश छ, जसले भौतिक किबोर्ड प्रयोग गर्ने SandFly प्रयोगकर्ताका लागि वेब नेभिगेसन र अन्तरक्रिया अझ प्रभावकारी र सजिलो बनाउँछ। तपाईं <xliff:g id="settings_path">%1$s</xliff:g> मा “परिष्कृत किम्याप” मा स्विच गर्न सक्नुहुन्छ।\n\nतपाईं ब्रेल डिस्प्ले प्रयोग गर्नुहुन्छ भने, आफ्नो ब्रेल डिस्प्लेबाटै सामग्रीमा अघि बढ्न ब्राउज मोडका नयाँ सर्टकटहरू पनि प्रयोग गर्न सक्नुहुन्छ। यो परिवर्तन मिलाउन ब्रेल डिस्प्लेका केही सर्टकटहरू परिवर्तन गरिएका छन्। तपाईं सबै ब्रेल डिस्प्ले सर्टकटहरूको सूची <xliff:g id="braille_display_settings_path">%2$s</xliff:g> मा हेर्न सक्नुहुन्छ।</string>
   <string name="keyboard_shortcuts_link">SandFly का सेटिङ &gt; किबोर्डका सर्टकटहरू</string>
   <string name="keyboard_shortcuts_link_tts">SandFly का सेटिङ अनि किबोर्डका सर्टकटहरू</string>
   <string name="braille_display_settings_link">ब्रेल डिस्प्लेसम्बन्धी सेटिङ</string>
@@ -983,8 +983,8 @@
   <string name="typing_text_with_braille_keyboard_text">तपाईं ब्रेल किबोर्ड प्रयोग गरेर पनि टाइप गर्न सक्नुहुन्छ। तपाईं SandFly का सेटिङमा गई यो किबोर्ड भेट्टाउन सक्नुहुन्छ।</string>
   <string name="other_ways_to_type_title">टाइप गर्ने अन्य तरिकाहरू</string>
   <string name="other_ways_to_type_text">SandFly मा टाइप गर्ने अन्य तरिकाहरू उपलब्ध छन्। उदाहरणका लागि, तपाईं अक्षर टाइप गर्न डबल ट्याप गर्न सक्नुहुन्छ।</string>
-  <string name="basic_other_ways_to_type_text">SandFly मा टाइप गर्ने अन्य तरिकाहरू छन्। उदाहरणका लागि, तपाईंले एउटा अक्षर प्रविष्ट गर्न डबल ट्याप प्रयोग गर्न सक्नुहुन्छ। तपाईंले यसलाई पछि SandFly सेटिङहरू &gt; अन-स्क्रिन किबोर्ड &gt; टाइपिङ विधिमा परिवर्तन गर्न सक्नुहुन्छ।</string>
-  <string name="basic_other_ways_to_type_text_tts">SandFly मा टाइप गर्ने अन्य तरिकाहरू छन्। उदाहरणका लागि, तपाईंले एउटा अक्षर प्रविष्ट गर्न डबल ट्याप प्रयोग गर्न सक्नुहुन्छ। तपाईंले यसलाई पछि SandFly सेटिङहरूमा परिवर्तन गर्न सक्नुहुन्छ त्यसपछि अन-स्क्रिन किबोर्ड त्यसपछि टाइपिङ विधि।</string>
+  <string name="basic_other_ways_to_type_text">SandFly मा टाइप गर्ने अन्य तरिकाहरू पनि छन्। उदाहरणका लागि, तपाईं अक्षर प्रविष्ट गर्न डबल ट्याप गर्न सक्नुहुन्छ। तपाईं यसलाई पछि SandFly का सेटिङ &gt; अनस्क्रिन किबोर्ड &gt; टाइपिङ विधिमा परिवर्तन गर्न सक्नुहुन्छ।</string>
+  <string name="basic_other_ways_to_type_text_tts">SandFly मा टाइप गर्ने अन्य तरिकाहरू पनि छन्। उदाहरणका लागि, तपाईं अक्षर प्रविष्ट गर्न डबल ट्याप गर्न सक्नुहुन्छ। तपाईं यसलाई पछि SandFly का सेटिङ, त्यसपछि अनस्क्रिन किबोर्ड, त्यसपछि टाइपिङ विधिमा गएर परिवर्तन गर्न सक्नुहुन्छ।</string>
   <string name="change_typing_preference_text">टाइपिङसम्बन्धी प्राथमिकता परिवर्तन गर्नुहोस्</string>
   <string name="moving_cursor_title">कर्सर सार्ने तरिका</string>
   <string name="moving_cursor_text">तपाईंले टेक्स्ट बक्स एक्टिभेट गर्नुभएको छ भने तपाईं माथि वा तलतिर स्वाइप गरेर एउटा अक्षरबाट अर्को अक्षरमा कर्सर लैजान सक्नुहुन्छ।\n\nतलको टेक्स्ट बक्समा यो कार्य गरी हेर्नुहोस्।</string>
@@ -1070,7 +1070,7 @@
   <string name="checking_notifications_tips">आफ्नो नोटिफिकेसनसम्बन्धी हिस्ट्री हेर्न २ औँलाले स्क्रिनको सिरानबाट तलतिर स्वाइप गर्नुहोस्</string>
   <string name="image_description_playground_title">फोटोका वर्णन डाउनलोड गरी हेर्नुहोस्</string>
   <string name="image_description_playground_content_one">तपाईंले कुनै फोटोमा फोकस गरेका बेला SandFly मेनु खोल्नुहोस् र “फोटोको वर्णन गर” चयन गर्नुहोस्।\n\nएउटा फोटो तल दिइएको छ। यसको एउटा वर्णन प्राप्त गर्ने प्रयास गर्नुहोस्।</string>
-  <string name="image_description_playground_content_two">तपाईं कुनै पनि समय SandFly सेटिङहरू &gt; स्वचालित विवरणहरूमा गई छवि विवरण सेटिङहरू परिवर्तन गर्न सक्नुहुन्छ।</string>
+  <string name="image_description_playground_content_two">तपाईं जुनसुकै बेला SandFly का सेटिङ &gt; स्वतः सिर्जना हुने विवरणहरूमा गई छवि विवरण सेटिङ परिवर्तन गर्न सक्नुहुन्छ।</string>
   <string name="image_description_playground_content_two_tts">तपाईं कुनै पनि समय SandFly सेटिङहरूमा र त्यसपछि स्वचालित विवरणहरूमा छवि विवरण सेटिङहरू परिवर्तन गर्न सक्नुहुन्छ।</string>
   <string name="image_description_sample_image_content_description">नमुना फोटो; SandFly मेनु खोल्न ३ वटा औँलाले ट्याप गर्नुहोस् र वर्णन सुन्न \"फोटोको वर्णन गर्नुहोस्\" चयन गर्नुहोस्।</string>
   <string name="practice_gestures_title">विभिन्न जेस्चरहरू प्रयोग गर्ने अभ्यास गर्नुहोस्</string>
@@ -1300,8 +1300,8 @@
     <string name="title_pref_tts_engine">पाठ-देखि-वाक् इन्जिन</string>
     <string name="title_pref_system_tts_settings">प्रणाली पाठ-देखि-वाक् सेटिङहरू</string>
     <string name="title_selector_vertical_navigation">ठाडो नेभिगेसन</string>
-    <string name="summary_selector_vertical_navigation">तल वा माथिको वस्तुमा सार्नुहोस्, पङ्क्तिका अन्य वस्तुहरू पछि</string>
-    <string name="title_selector_switch_tts_engine">भाषण इन्जिन</string>
+    <string name="summary_selector_vertical_navigation">पङ्क्तिका अन्य वस्तुहरू छाडेर तल वा माथिको वस्तुमा जानुहोस्</string>
+    <string name="title_selector_switch_tts_engine">स्पिच इन्जिन</string>
     <string name="summary_selector_switch_tts_engine">स्थापित स्पीच इन्जिनहरू बीच स्विच गर्नुहोस्</string>
     <string name="title_selector_voice_profile">आवाज प्रोफाइल</string>
     <string name="title_pref_voice_profiles">आवाज प्रोफाइलहरू</string>
@@ -1314,10 +1314,10 @@
     <string name="shortcut_voice_profiles">आवाज प्रोफाइल छान्नुहोस्</string>
     <string name="shortcut_previous_voice_profile">अघिल्लो आवाज प्रोफाइल</string>
     <string name="shortcut_next_voice_profile">अर्को आवाज प्रोफाइल</string>
-    <string name="title_pref_voice_profile_in_use">भ्वाइस प्रोफाइल प्रयोगमा छ</string>
+    <string name="title_pref_voice_profile_in_use">प्रयोगमा रहेको भ्वाइस प्रोफाइल</string>
     <string name="title_pref_add_voice_profile">आवाज प्रोफाइल थप्नुहोस्</string>
     <string name="voice_profile_new_name">भ्वाइस प्रोफाइल <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">आवाज प्रोफाइल पहिले नै <xliff:g id="name" example="Reading">%1$s</xliff:g> भनिन्छ</string>
+    <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> नामको भ्वाइस प्रोफाइल पहिल्यै छ</string>
     <string name="title_pref_voice_profile_name">नाम</string>
     <string name="title_pref_voice_profile_language">भाषा</string>
     <string name="title_pref_voice_profile_voice">आवाज</string>
@@ -1335,8 +1335,8 @@
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> मेट्ने हो?</string>
     <string name="voice_profile_delete">मेटाऊ</string>
     <string name="summary_pref_tts_engine_default">प्रणाली पूर्वनिर्धारित</string>
-    <string name="title_pref_speech_pitch">भाषण पिच</string>
-    <string name="title_pref_speech_stream">बोलीको मात्रा</string>
+    <string name="title_pref_speech_pitch">बोलीको पिच</string>
+    <string name="title_pref_speech_stream">बोलीको भोल्युम</string>
     <string name="summary_selector_speech_stream">पहुँच, मिडिया, घण्टी र कल भोल्युमहरू बीच स्विच गर्नुहोस्</string>
     <string name="speech_stream_accessibility">सर्वसुलभता सेवाको भोल्युम</string>
     <string name="speech_stream_media">मिडिया भोल्युम</string>
@@ -1349,7 +1349,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">लामो पाठ एक समयमा एक वाक्य पठाउनुहोस्</string>
-    <string name="summary_pref_speak_in_phrases">स्पीच इन्जिनहरू जुन बन्द गर्न ढिलो हुन्छ, जस्तै Gryphon, त्यसैले स्वाइप गर्दा लामो पाठ एकै पटक रोकिन्छ। धेरै इन्जिनहरू छुट्टाछुट्टै पठाइएका वाक्यहरूको बीचमा लामो समयसम्म रोकिन्छन्, त्यसैले यदि तपाईंको छिट्टै रोकिन्छ भने यसलाई बन्द गर्नुहोस्।</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon जस्ता ढिलो रोकिने स्पीच इन्जिनहरूका लागि, ताकि स्वाइप गर्दा लामो पाठ तुरुन्तै रोकियोस्। धेरै इन्जिनहरू छुट्टाछुट्टै पठाइएका वाक्यहरूबीच लामो विराम लिन्छन्, त्यसैले तपाईंको इन्जिन छिट्टै रोकिन्छ भने यसलाई अफ नै राख्नुहोस्।</string>
     <string name="battery_optimization_notification_title">ब्याट्री अप्टिमाइजेसन SandFly रोक्न सक्छ</string>
     <string name="battery_optimization_notification_text">यस फोनमा, स्क्रिन बन्द भएपछि ब्याट्री सेभरले SandFly बन्द गर्न सक्छ, त्यसैले यो पुन: सुरु नभएसम्म यो मौन हुन्छ। ब्याट्री अप्टिमाइजेसन खोल्न ट्याप गर्नुहोस्, सबै एपहरू छान्नुहोस्, SandFly फेला पार्नुहोस् र अप्टिमाइज नगर्नुहोस् छनौट गर्नुहोस्।</string>
     <string name="title_pref_mute_speech_while_recording">रेकर्ड गर्दा शान्त</string>
@@ -1359,7 +1359,7 @@
     <string name="category_collapsed">संक्षिप्त गरिएको खण्ड</string>
     <string name="category_expanded">विस्तारित खण्ड</string>
     <string name="title_pref_speak_nav_bar_buttons">नेभिगेसन बार बटनहरू बोल्नुहोस्</string>
-    <string name="summary_pref_speak_nav_bar_buttons">नेभिगेसन पट्टीमा सक्रिय गर्न लिफ्टको साथ, ट्यापले थिच्ने बटन भन्नुहोस्, जस्तै ब्याक वा होम।</string>
+    <string name="summary_pref_speak_nav_bar_buttons">नेभिगेसन बारमा औँला उठाएर सक्रिय गर्ने सुविधा प्रयोग हुँदा, ट्यापले थिचेको बटन भन्छ, जस्तै पछाडि वा होम।</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">ब्याट्री <xliff:g id="battery_level" example="73">%1$s</xliff:g> प्रतिशत</string>
     <string name="template_battery_level_unknown">ब्याट्री स्तर अज्ञात</string>
@@ -1373,23 +1373,23 @@
     <string name="title_pref_say_device_unlocked">\"उपकरण अनलक\" भन्नुहोस्</string>
     <string name="title_pref_announce_time">समय</string>
     <string name="title_pref_announce_ringer_mode">घण्टी मोड</string>
-    <string name="summary_pref_announce_ringer_mode">रिङ्गर कम्पन वा मौनमा सेट हुँदा भन्नुहोस्</string>
+    <string name="summary_pref_announce_ringer_mode">रिङ्गर कम्पन वा मौनमा सेट हुँदा बताउँछ</string>
     <string name="title_pref_category_feedback">प्रतिक्रिया</string>
     <string name="title_pref_category_typing_and_braille">टाइपिङ र ब्रेल</string>
     <string name="title_pref_category_apps">एपहरू</string>
-    <string name="title_pref_touch_activation">छुनुहोस् र सक्रियता</string>
+    <string name="title_pref_touch_activation">स्पर्श र सक्रियता</string>
     <string name="title_pref_navigation">नेभिगेसन</string>
     <string name="title_pref_category_more">थप</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch को लागि इशाराहरू आरक्षित गर्नुहोस्</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch ले तिनीहरूलाई प्रयोग गर्न सकून् भन्नाका खातिर SandFly दुई औंलाहरू एकल र डबल ट्यापहरू ह्यान्डल गर्न रोक्छ। आफ्नो घडीको पहुँच सेटिङहरूमा Vibration Watch सक्षम गर्नुहोस्।</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch ले प्रयोग गर्न सकोस् भनेर SandFly ले दुई औंलाले एक पटक र दुई पटक ट्याप गर्ने इसाराहरू ह्यान्डल गर्न छोड्छ। आफ्नो घडीको सर्वसुलभता सेटिङमा Vibration Watch अन गर्नुहोस्।</string>
     <string name="shortcut_reserved_for_vibration_watch">उन्नत सेटिङहरूमा Vibration Watch को लागि आरक्षित</string>
     <string name="title_pref_speakerphone_away_from_ear">तपाईंको कानबाट टाढा हुँदा स्पिकर</string>
-    <string name="summary_pref_speakerphone_away_from_ear">कलको क्रममा, तपाईंले फोनलाई आफ्नो कानबाट टाढा लैजाँदा स्पिकरमा स्विच गर्नुहोस्, र तपाईंले यसलाई फेरि समात्दा इयरपिसमा फर्कनुहोस्।</string>
-    <string name="summary_pref_speakerphone_needs_permission">Android ले स्क्रिन रिडरहरूलाई नदिने अनुमति चाहिन्छ। यसलाई प्रदान गर्न, यो आदेश adb or Shizuku, then come back to this screen: %1$s सँग चलाउनुहोस्</string>
+    <string name="summary_pref_speakerphone_away_from_ear">कलको समयमा फोन कानबाट टाढा लैजाँदा स्पिकरमा र फेरि कानमा लगाउँदा इयरपिसमा स्विच गर्छ।</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android ले स्क्रिन रिडरहरूलाई नदिने अनुमति चाहिन्छ। यो दिन adb वा Shizuku बाट यो कमान्ड चलाउनुहोस्, त्यसपछि यही स्क्रिनमा फर्कनुहोस्: %1$s</string>
     <string name="action_copy_command">आदेश प्रतिलिपि गर्नुहोस्</string>
     <string name="command_copied">आदेश प्रतिलिपि गरियो</string>
     <string name="title_pref_speech_control">अन्य एपहरूलाई बोल्न दिनुहोस्</string>
-    <string name="summary_pref_speech_control">तपाईंले अनुमति दिनुभएको एपहरूले तपाईंको SandFly आवाजमा पाठ भन्न सक्छन्। यन्त्र लक हुँदा केही भनिएको छैन।</string>
+    <string name="summary_pref_speech_control">तपाईंले अनुमति दिएका एपहरूले SandFly को आवाजमा पाठ बोल्न सक्छन्। डिभाइस लक हुँदा केही पनि बोलिँदैन।</string>
     <string name="title_pref_speech_control_sound">अन्य एपहरू बोल्नु अघि ध्वनि बजाउनुहोस्</string>
     <string name="speech_control_apps_category">एपहरू</string>
     <string name="speech_control_no_apps">कुनै पनि एपहरूले अझै बोल्न आग्रह गरेका छैनन्।</string>
@@ -1397,23 +1397,23 @@
     <string name="speech_control_ask_text">यसले तपाईंको SandFly आवाजमा पाठ भन्न सक्छ। तपाईं यसलाई उन्नत सेटिङहरूमा परिवर्तन गर्न सक्नुहुन्छ।</string>
     <string name="speech_control_allow">अनुमति दिनुहोस्</string>
     <string name="speech_control_deny">अनुमति नदिनुहोस्</string>
-    <string name="permission_speak_label">SandFly मार्फत बोल्नुहोस्</string>
-    <string name="permission_speak_description">एपलाई तपाईंको SandFly आवाजमा पाठ भन्न सोध्न दिनुहोस्। SandFly एपले बोल्न अघि तपाईंलाई सोध्छ।</string>
-    <string name="permission_braille_display_label">SandFly को लागि ब्रेल डिस्प्ले हुन सोध्नुहोस्</string>
-    <string name="permission_braille_display_description">एपलाई SandFly को लागि ब्रेल डिस्प्ले हुन सोध्न दिनुहोस्। यदि तपाईंले यसलाई SandFly मा अनुमति दिनुभयो भने, यसले स्क्रिनमा भएका सबै कुराहरू पढ्न र तपाईंको यन्त्रलाई नियन्त्रण गर्न सक्छ। SandFly तपाईंलाई पहिले सोध्छ।</string>
+    <string name="permission_speak_label">SandFly मार्फत बोल्ने</string>
+    <string name="permission_speak_description">एपलाई तपाईंको SandFly आवाजमा पाठ बोल्न अनुरोध गर्न दिन्छ। एपले बोल्नुअघि SandFly ले तपाईंलाई सोध्छ।</string>
+    <string name="permission_braille_display_label">SandFly को ब्रेल डिस्प्ले बन्न अनुरोध गर्ने</string>
+    <string name="permission_braille_display_description">एपलाई SandFly को ब्रेल डिस्प्ले बन्न अनुरोध गर्न दिन्छ। तपाईंले SandFly मा अनुमति दिनुभयो भने, यसले स्क्रिनमा भएका सबै कुरा पढ्न र तपाईंको डिभाइस नियन्त्रण गर्न सक्छ। SandFly ले पहिले तपाईंलाई सोध्छ।</string>
     <string name="title_pref_phonetic_letters_mode">फोनेटिक रूपमा अक्षरहरू बोल्नुहोस्</string>
-    <string name="phonetic_letters_mode_off">अफ गर्नुहोस्</string>
-    <string name="phonetic_letters_mode_after_letter_delay">पत्र पछि, ढिलाइ, जस्तै \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">पत्र पछि, कुनै ढिलाइ छैन, जस्तै \"h होटल\"</string>
-    <string name="phonetic_letters_mode_instead_of_letter">अक्षरको सट्टा, \"होटल\" जस्तै</string>
+    <string name="phonetic_letters_mode_off">अफ</string>
+    <string name="phonetic_letters_mode_after_letter_delay">अक्षरपछि, रोकेर, जस्तै “ह, हात्ती”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">अक्षरपछि, नरोकी, जस्तै “ह हात्ती”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">अक्षरको सट्टा, जस्तै “हात्ती”</string>
     <string name="title_pref_emoji_speech">इमोजी</string>
-    <string name="emoji_speech_engine">भाषण इन्जिन द्वारा पढ्नुहोस्</string>
-    <string name="emoji_speech_names">SandFly द्वारा पढियो</string>
+    <string name="emoji_speech_engine">स्पिच इन्जिनले पढ्छ</string>
+    <string name="emoji_speech_names">SandFly ले पढ्छ</string>
     <string name="emoji_speech_none">कुनै पनि होइन</string>
     <string name="summary_selector_menu_emoji">इमोजी पढ्ने तरिका परिवर्तन गर्नुहोस्</string>
     <string name="emoji_speech_state">इमोजी: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">दोहोर्याइएको इमोजी गणना गर्नुहोस्</string>
-    <string name="emoji_repeat_count_off">अफ गर्नुहोस्</string>
+    <string name="emoji_repeat_count_off">अफ</string>
     <string name="emoji_repeat_count_2">२ वा बढी</string>
     <string name="emoji_repeat_count_3">3 वा बढी</string>
     <string name="emoji_repeat_count_4">४ वा बढी</string>
@@ -1425,35 +1425,35 @@
     <string name="pref_table_column_headers_entry_before">सेल डाटा अघि</string>
     <string name="pref_table_column_headers_entry_off">नपढ्नुहोस्</string>
     <string name="pref_table_speak_row_column_numbers_title">पङ्क्ति र स्तम्भ नम्बरहरू बोल्नुहोस्</string>
-    <string name="pref_table_speak_row_column_numbers_summary">तालिका कक्षहरूको लागि पङ्क्ति र स्तम्भ संख्याहरू घोषणा गर्नुहोस्</string>
+    <string name="pref_table_speak_row_column_numbers_summary">तालिकाका कक्षहरूको पङ्क्ति र स्तम्भ नम्बर बोल्छ</string>
     <string name="title_pref_speak_volume_changes">भोल्युम परिवर्तनहरू बोल्नुहोस्</string>
-    <string name="summary_pref_speak_volume_changes">भोल्युम कुञ्जीहरू थिचेपछि नयाँ भोल्युम भन्नुहोस्</string>
+    <string name="summary_pref_speak_volume_changes">भोल्युम कीहरू थिचेपछि नयाँ भोल्युम भन्छ</string>
     <string name="title_pref_speak_notifications">सूचनाहरू बोल्नुहोस्</string>
-    <string name="summary_pref_speak_notifications">नयाँ सूचनाहरू आउँदा ठूलो स्वरमा पढ्नुहोस्। आगमन कलहरू सधैं पढिन्छन्।</string>
+    <string name="summary_pref_speak_notifications">नयाँ सूचनाहरू आउँदा ठूलो स्वरमा पढ्छ। आगमन कलहरू सधैँ पढिन्छन्।</string>
     <string name="title_pref_notification_list">SandFly को सूचना सूची प्रयोग गर्नुहोस्</string>
     <string name="title_pref_notification_parts">सूचना विवरण</string>
     <string name="title_pref_play_installer">Google Play बाट स्थापित देखिन्छ</string>
-    <string name="summary_pref_play_installer">Google Play स्थापना गरिएको SandFly अन्य एपहरूलाई भन्नुहोस्। केही एपहरू, जस्तै केही बैंकिङ एपहरू, पहुँच सेवाहरू बन्द गर्नुहोस् जुन अरू कतैबाट स्थापना गरिएको थियो। Shizuku चाहिन्छ, र SandFly कहाँबाट आयो भन्ने बारे बताइएका एपहरूलाई मात्र परिवर्तन गर्छ।</string>
-    <string name="summary_pref_play_installer_pending">सक्रिय छ, तर Google प्ले अझै स्थापनाकर्ताको रूपमा रेकर्ड गरिएको छैन। SandFly यसलाई Shizuku उपलब्ध हुँदा सेट गर्दछ।</string>
+    <string name="summary_pref_play_installer">अन्य एपहरूलाई SandFly Google Play बाट इन्स्टल गरिएको हो भनी बताउँछ। केही एपहरू, जस्तै केही बैंकिङ एपहरू, अन्य कुनै स्रोतबाट इन्स्टल गरिएका सर्वसुलभता सेवाहरू अफ गर्छन्। Shizuku चाहिन्छ, र SandFly कहाँबाट आएको हो भन्ने बारेमा एपहरूलाई दिइने जानकारी मात्र परिवर्तन गर्छ।</string>
+    <string name="summary_pref_play_installer_pending">अन छ, तर Google Play अझै इन्स्टलरको रूपमा दर्ता गरिएको छैन। Shizuku उपलब्ध हुँदा SandFly ले यो सेट गर्छ।</string>
     <string name="notification_part_title">शीर्षक</string>
     <string name="notification_part_text">पाठ</string>
-    <string name="notification_part_app">एप नाम</string>
+    <string name="notification_part_app">एपको नाम</string>
     <string name="notification_part_time">समय</string>
-    <string name="notification_part_playback">खेल्दै वा रोकिएको</string>
+    <string name="notification_part_playback">प्ले हुँदै वा रोकिएको</string>
     <string name="notification_list_title">नोटिफिकेसनहरू</string>
     <string name="notification_list_empty">कुनै सूचना छैन</string>
     <string name="notification_list_no_access">सूचना पहुँच बन्द छ</string>
-    <string name="notification_list_grant_access">सूचना पहुँच खोल्नुहोस्</string>
+    <string name="notification_list_grant_access">सूचना पहुँच अन गर्नुहोस्</string>
     <string name="notification_list_quick_settings">द्रुत सेटिङहरू</string>
     <string name="notification_list_dismiss">खारेज गर्नुहोस्</string>
     <string name="notification_list_show_all">सबै देखाउनुहोस्</string>
     <string name="notification_list_show_less">कम देखाउनुहोस्</string>
     <string name="notification_list_clear_all">सबै खाली गर्नुहोस्</string>
     <string name="notification_list_send">पठाउनुहोस्</string>
-    <string name="notification_list_playing">खेल्दै</string>
+    <string name="notification_list_playing">प्ले हुँदै</string>
     <string name="notification_list_paused">रोकियो</string>
-    <string name="notification_list_play">खेल्नुहोस्</string>
-    <string name="notification_list_pause">पज गर</string>
+    <string name="notification_list_play">प्ले गर्नुहोस्</string>
+    <string name="notification_list_pause">पज गर्नुहोस्</string>
     <string name="notification_list_previous">अघिल्लो</string>
     <string name="notification_list_next">अर्को</string>
     <plurals name="notification_list_group_count">
@@ -1475,7 +1475,7 @@
     <string name="quick_settings_location">स्थान</string>
     <string name="quick_settings_auto_rotate">स्वतः घुमाउनुहोस्</string>
     <string name="quick_settings_battery_saver">ब्याट्री सेभर</string>
-    <string name="quick_settings_dark_theme">गाढा विषयवस्तु</string>
+    <string name="quick_settings_dark_theme">गाढा थिम</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">चमक</string>
     <string name="quick_settings_adaptive_brightness">अनुकूली चमक</string>
@@ -1486,7 +1486,7 @@
     <string name="quick_settings_alarm_volume">अलार्म भोल्युम</string>
     <string name="quick_settings_accessibility_volume">सर्वसुलभता सेवाको भोल्युम</string>
     <string name="quick_settings_system_volume">प्रणाली अडियो भोल्युम</string>
-    <string name="quick_settings_data_saver">डाटा बचतकर्ता</string>
+    <string name="quick_settings_data_saver">डेटा सेभर</string>
     <string name="quick_settings_night_light">नाइट लाइट</string>
     <string name="quick_settings_extra_dim">अतिरिक्त मधुरो</string>
     <string name="quick_settings_color_inversion">रङ उल्टो</string>
@@ -1505,7 +1505,7 @@
     <string name="quick_settings_add_system_tile">प्रणाली टाइल थप्नुहोस्</string>
     <string name="quick_settings_no_system_tiles">थप्नको लागि कुनै प्रणाली टाइलहरू छैनन्</string>
     <string name="quick_settings_tile_not_found">%1$s प्रणालीको द्रुत सेटिङहरूमा छैन</string>
-    <string name="quick_settings_never">कहिल्यै</string>
+    <string name="quick_settings_never">कहिल्यै होइन</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d सेकेन्ड</item>
         <item quantity="other">%d सेकेन्ड</item>
@@ -1517,12 +1517,12 @@
     <string name="quick_settings_connected">जडान भयो</string>
     <string name="quick_settings_battery">ब्याट्री</string>
     <string name="quick_settings_battery_charging">%1$s, चार्ज गर्दै</string>
-    <string name="quick_settings_battery_full">%1$s, चार्ज</string>
+    <string name="quick_settings_battery_full">%1$s, चार्ज भयो</string>
     <string name="quick_settings_sound">साउन्ड</string>
     <string name="quick_settings_vibrate">कम्पन</string>
     <string name="quick_settings_mute">मौन</string>
-    <string name="quick_settings_on">अन गर्नुहोस्</string>
-    <string name="quick_settings_off">अफ गर्नुहोस्</string>
+    <string name="quick_settings_on">अन</string>
+    <string name="quick_settings_off">अफ</string>
     <string name="quick_settings_unavailable">अनुपलब्ध</string>
     <string name="quick_settings_edit">सम्पादन गर्नुहोस्</string>
     <string name="quick_settings_system">प्रणाली द्रुत सेटिङहरू</string>
@@ -1532,7 +1532,7 @@
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">स्तम्भहरूको संख्या</string>
     <string name="quick_settings_move">सार्नुहोस्</string>
-    <string name="quick_settings_move_title">सार्नुहोस् %1$s</string>
+    <string name="quick_settings_move_title">%1$s सार्नुहोस्</string>
     <string name="quick_settings_cell">पङ्क्ति %1$d, स्तम्भ %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
@@ -1541,7 +1541,7 @@
         <item quantity="other">%d अन्य वस्तुहरू सारियो</item>
     </plurals>
     <string name="quick_settings_remove">हटाउनुहोस्</string>
-    <string name="quick_settings_added">%1$s थप्नुभयो</string>
+    <string name="quick_settings_added">%1$s थपियो</string>
     <string name="quick_settings_removed">%1$s हटाइयो</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly अन। बन्द गर्न 5 सेकेन्डको लागि स्क्रिनमा 2 औंलाहरू समात्नुहोस्। यो सन्देश देखाउन रोक्न, बन्द गर्नुहोस् SandFly सेटिङहरू &gt; उन्नत सेटिङहरू &gt; SandFly बन्द गर्न निर्देशनहरू देखाउनुहोस्।</string>
     <string name="edge_gestures_title">किनारहरू</string>
@@ -1551,7 +1551,7 @@
     <string name="dialog_title_audio_output_device">SandFly ध्वनि बजाउने ठाउँ छनौट गर्नुहोस्</string>
     <string name="value_audio_output_device_default">प्रणाली पूर्वनिर्धारित</string>
     <string name="value_audio_output_device_speaker">फोन स्पिकर</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">जडान गरिएको Bluetooth उपकरण वा तार</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">जडान गरिएको Bluetooth वा तारयुक्त यन्त्र</string>
     <string name="value_audio_output_device_disconnected">विच्छेद भएको</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth अडियो उपकरण</string>
     <string name="value_audio_output_device_wired_headset">तार भएको हेडसेट</string>
@@ -1562,18 +1562,18 @@
     <string name="summary_pref_speaker_devices_none">कुनै पनि होइन</string>
     <string name="summary_pref_speaker_devices_no_devices">कुनै Bluetooth वा तारयुक्त यन्त्रहरू अझै जोडिएका छैनन्</string>
     <string name="pref_reduce_window_delay_summary">SandFly एनिमेसनहरू बन्द हुँदा नयाँ स्क्रिनहरू छिटो पढ्छ। यसले सम्पूर्ण फोनको लागि एनिमेसनहरू बन्द गर्छ।</string>
-    <string name="dialog_message_detailed_ai_description">चयन गरिएका तस्बिरहरू वर्णन गर्न Google को Gemini API मा पठाइन्छ। अन-डिभाइस AI सक्रिय हुँदा, तिनीहरू यस फोनमा वर्णन गरिन्छन् र पठाइँदैनन्।\n\nनि:शुल्क API कुञ्जीको साथ, Google ले प्राप्त गरेको कुरा राख्न सक्छ, यसको उत्पादनहरू सुधार गर्न प्रयोग गर्न सक्छ, र मानिसहरूलाई यसको समीक्षा गर्न लगाउन सक्छ। जेनेरेटिभ एआई प्रयोगात्मक छ, त्यसैले यसले गल्ती गर्नेछ। <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> लागू हुन्छ।</string>
-    <string name="dialog_message_detailed_ai_promotion">विस्तृत छवि विवरणहरू जेनेरेटिभ एआई द्वारा संचालित छन्। चयन गरिएका तस्बिरहरू वर्णन गर्न Google को Gemini API मा पठाइन्छ। अन-डिभाइस AI सक्रिय हुँदा, तिनीहरू यस फोनमा वर्णन गरिन्छन् र पठाइँदैनन्।\n\nनि:शुल्क API कुञ्जीको साथ, Google ले प्राप्त गरेको कुरा राख्न सक्छ, यसको उत्पादनहरू सुधार गर्न प्रयोग गर्न सक्छ, र मानिसहरूलाई यसको समीक्षा गर्न लगाउन सक्छ। जेनेरेटिभ एआई प्रयोगात्मक छ, त्यसैले यसले गल्ती गर्नेछ। तपाईंले SandFly सेटिङहरूमा गई जुनसुकै बेला विस्तृत छवि विवरणहरू बन्द गर्न सक्नुहुन्छ।\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> लागू हुन्छ।</string>
-    <string name="dialog_message_screen_overview_promotion">स्क्रिनको स्क्रिनसट Google को Gemini API मा वर्णन गर्न पठाइन्छ, जसले धेरै सेकेन्ड लिन्छ। अन-डिभाइस AI सक्रिय हुँदा, यसको सट्टा यो फोनमा वर्णन गरिएको छ र पठाइँदैन।\n\nनि:शुल्क API कुञ्जीको साथ, Google ले प्राप्त गरेको कुरा राख्न सक्छ, यसको उत्पादनहरू सुधार गर्न प्रयोग गर्न सक्छ, र मानिसहरूले यसको समीक्षा गर्न सक्छन्। जेनेरेटिभ एआई प्रयोगात्मक छ, त्यसैले यसले गल्ती गर्नेछ। <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> लागू हुन्छ।</string>
+    <string name="dialog_message_detailed_ai_description">चयन गरिएका तस्बिरहरूको विवरण तयार गर्न तिनलाई Google को Gemini API मा पठाइन्छ। डिभाइसमै चल्ने AI अन हुँदा, तिनको विवरण यसको सट्टा यही फोनमा तयार हुन्छ र तिनलाई पठाइँदैन।\n\nनिःशुल्क API की प्रयोग गर्दा, Google ले प्राप्त गरेको कुरा राख्न, आफ्ना उत्पादनहरू सुधार्न प्रयोग गर्न र मानिसहरूबाट समीक्षा गराउन सक्छ। जेनेरेटिभ AI प्रयोगात्मक छ, त्यसैले यसले गल्ती गर्छ। <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> लागू हुन्छन्।</string>
+    <string name="dialog_message_detailed_ai_promotion">विस्तृत तस्बिर विवरणहरू जेनेरेटिभ AI ले तयार गर्छ। चयन गरिएका तस्बिरहरूको विवरण तयार गर्न तिनलाई Google को Gemini API मा पठाइन्छ। डिभाइसमै चल्ने AI अन हुँदा, तिनको विवरण यसको सट्टा यही फोनमा तयार हुन्छ र तिनलाई पठाइँदैन।\n\nनिःशुल्क API की प्रयोग गर्दा, Google ले प्राप्त गरेको कुरा राख्न, आफ्ना उत्पादनहरू सुधार्न प्रयोग गर्न र मानिसहरूबाट समीक्षा गराउन सक्छ। जेनेरेटिभ AI प्रयोगात्मक छ, त्यसैले यसले गल्ती गर्छ। तपाईं SandFly का सेटिङमा जुनसुकै बेला विस्तृत तस्बिर विवरणहरू अफ गर्न सक्नुहुन्छ।\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> लागू हुन्छन्।</string>
+    <string name="dialog_message_screen_overview_promotion">स्क्रिनको विवरण तयार गर्न यसको स्क्रिनसट Google को Gemini API मा पठाइन्छ, जसमा केही सेकेन्ड लाग्छ। डिभाइसमै चल्ने AI अन हुँदा, यसको विवरण यसको सट्टा यही फोनमा तयार हुन्छ र स्क्रिनसट पठाइँदैन।\n\nनिःशुल्क API की प्रयोग गर्दा, Google ले प्राप्त गरेको कुरा राख्न, आफ्ना उत्पादनहरू सुधार्न प्रयोग गर्न र मानिसहरूबाट समीक्षा गराउन सक्छ। जेनेरेटिभ AI प्रयोगात्मक छ, त्यसैले यसले गल्ती गर्छ। <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> लागू हुन्छन्।</string>
     <string name="shortcut_title_open_app">एप खोल्नुहोस्</string>
     <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> खोल्नुहोस्</string>
     <string name="shortcut_scroll_to_top">शीर्षमा स्क्रोल गर्नुहोस्</string>
-    <string name="shortcut_write_reading_control">पठन नियन्त्रणको पत्र लेख्नुहोस्</string>
+    <string name="shortcut_write_reading_control">रिडिङ कन्ट्रोलको अक्षर लेख्नुहोस्</string>
     <string name="title_pref_reading_control_letters">हस्तलिखित वर्णमाला अक्षरहरू</string>
     <string name="reading_control_letter_none">कुनै पनि होइन</string>
     <string name="handwriting_prompt">एक वर्णमाला अक्षर लेख्नुहोस्</string>
     <string name="handwriting_closed">हस्तलेखन बन्द</string>
-    <string name="handwriting_no_match">कुनै पठन नियन्त्रण <xliff:g id="letter" example="Q">%1$s</xliff:g> बाट सुरु हुँदैन</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> बाट सुरु हुने कुनै रिडिङ कन्ट्रोल छैन</string>
     <string name="shortcut_write_app_name">कुनै एप खोल्न त्यसको नाम लेख्नुहोस्</string>
     <string name="handwriting_app_prompt">एपको नाम लेख्नुहोस्</string>
     <string name="handwriting_no_app"><xliff:g id="letters" example="WHA">%1$s</xliff:g> बाट सुरु हुने कुनै एप छैन</string>
@@ -1581,7 +1581,7 @@
     <string name="handwriting_not_recognized">हस्तलेखन पहिचान भएन</string>
     <string name="handwriting_downloading">हस्तलेखन पहिचान डाउनलोड हुँदैछ</string>
     <string name="handwriting_download_title">हस्तलेखन पहिचान डाउनलोड गर्ने हो?</string>
-    <string name="handwriting_download_message">यस फोनमा हस्तलेखन पहिचान गरिएको छ। यस भाषाको लागि यसको मोडेल, लगभग 20 MB, Google बाट एक पटक डाउनलोड गरिन्छ। यो डाउनलोड भएको बेला सन्देश देखाउँछ।</string>
+    <string name="handwriting_download_message">यस फोनमै हस्तलेखन पहिचान गरिन्छ। यस भाषाको मोडेल, लगभग 20 MB, Google बाट एक पटक डाउनलोड गरिन्छ। डाउनलोड भएपछि एउटा सन्देश देखिन्छ।</string>
     <string name="handwriting_download_button">डाउनलोड गर्नुहोस्</string>
     <string name="handwriting_downloaded">हस्तलेखन पहिचान डाउनलोड गरियो</string>
     <string name="handwriting_download_failed">हस्तलेखन पहिचान डाउनलोड गर्न सकिएन। इन्टरनेट जडान जाँच गर्नुहोस्।</string>
@@ -1598,9 +1598,9 @@
     <string name="value_handwriting_wait_1000">१ सेकेन्ड</string>
     <string name="handwriting_keyboard_name">SandFly हस्तलेखन</string>
     <string name="handwriting_space">स्पेस</string>
-    <string name="handwriting_new_line">नयाँ रेखा</string>
+    <string name="handwriting_new_line">नयाँ लाइन</string>
     <string name="handwriting_tutorial_intro">हस्तलेखन किबोर्ड ट्यूटोरियल। स्क्रिनमा जहाँ पनि एउटा औंलाले लेख्नुहोस्। तपाईले लेख्नु भएको कुरा तपाईले एक क्षणको लागि रोकिँदा टाइप गरिन्छ। ट्यूटोरियल समाप्त गर्न, तीन औंलाहरूले तल स्वाइप गर्नुहोस्।</string>
-    <string name="handwriting_tutorial_write_letter">वर्णमाला अक्षर a लेख्नुहोस्।</string>
+    <string name="handwriting_tutorial_write_letter">a अक्षर लेख्नुहोस्।</string>
     <string name="handwriting_tutorial_write_word">अब hi (h पछि i) शब्द लेख्नुहोस्।</string>
     <string name="handwriting_tutorial_typed">टाइप गरिएको <xliff:g id="text" example="a">%1$s</xliff:g>।</string>
     <string name="handwriting_tutorial_space">स्पेस टाइप गर्न दुई औंलाहरूले दायाँ स्वाइप गर्नुहोस्।</string>
@@ -1608,17 +1608,17 @@
     <string name="handwriting_tutorial_deleted">मेटाइयो।</string>
     <string name="handwriting_tutorial_next_reading">यदि हस्तलेखन अर्को क्यारेक्टरको रूपमा पहिचान गरिएको छ, जस्तै ठूलो अक्षर, अर्को पहिचान सुझाव छनोट गर्न दुई औंलाले माथि स्वाइप गर्नुहोस्। अहिले नै प्रयास गर्नुहोस्।</string>
     <string name="handwriting_tutorial_read_back">कर्सर अघिको पाठ पढ्न दुई औंलाले ट्याप गर्नुहोस्।</string>
-    <string name="handwriting_tutorial_new_line">नयाँ रेखा सम्मिलित गर्न वा पठाउने जस्ता पाठ क्षेत्र कार्य गर्न दुई औंलाहरूले तल स्वाइप गर्नुहोस्।</string>
-    <string name="handwriting_tutorial_not_that">त्यो अर्को इशारा थियो।</string>
+    <string name="handwriting_tutorial_new_line">नयाँ लाइन हाल्न वा पठाउनुहोस् जस्ता पाठ फिल्डको कार्य गर्न दुई औंलाले तल स्वाइप गर्नुहोस्।</string>
+    <string name="handwriting_tutorial_not_that">त्यो अर्कै जेस्चर थियो।</string>
     <string name="handwriting_tutorial_done">नयाँ लाइन। ट्यूटोरियल समाप्त भयो। किबोर्ड लुकाउन तीन औंलाले तल स्वाइप गर्नुहोस्, र किबोर्डहरू स्विच गर्न तीन औँलाले दायाँ वा बायाँ स्वाइप गर्नुहोस्। ट्यूटोरियल फेरि खोल्न, तीन औंलाहरूले ट्याप गर्नुहोस्।</string>
     <string name="handwriting_tutorial_finished">ट्यूटोरियल समाप्त भयो। यसलाई फेरि खोल्न, तीन औंलाहरूले ट्याप गर्नुहोस्।</string>
     <string name="handwriting_no_alternatives">अरू कुनै सुझाव छैन</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> को <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> मध्ये <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">खाली पाठ</string>
     <string name="handwriting_not_available">हस्तलेखन पहिचान यस उपकरणमा उपलब्ध छैन</string>
     <string name="shortcut_scroll_to_bottom">तल स्क्रोल गर्नुहोस्</string>
     <string name="shortcut_refresh">रिफ्रेस गर्नुहोस्</string>
-    <string name="shortcut_system_notifications">प्रणाली सूचना छाया</string>
+    <string name="shortcut_system_notifications">प्रणाली सूचना प्यानल</string>
     <string name="shortcut_system_quick_settings">प्रणाली द्रुत सेटिङहरू</string>
     <string name="shortcut_lock_screen">उपकरण स्क्रिन लक गर्नुहोस्</string>
     <string name="shortcut_power_menu">पावर मेनु</string>
@@ -1627,7 +1627,7 @@
     <string name="title_clear_selection">चयन खाली गर्नुहोस्</string>
     <string name="title_pref_brightness">चमक</string>
     <string name="summary_support_change_brightness">स्क्रिन लुकेको हुँदा पनि स्क्रिनको चमक बढाउनुहोस् वा घटाउनुहोस्</string>
-    <string name="title_pref_shortcut_3finger_4tap">३ औँलाले चारवटा ट्याप गर्नुहोस्</string>
+    <string name="title_pref_shortcut_3finger_4tap">३ औँलाले चार पटक ट्याप गर्नुहोस्</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">२ औंलाहरूले घडीको दिशामा घुमाउनुहोस्</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">२ औंलाहरूले घडीको विपरीत दिशामा घुमाउनुहोस्</string>
     <string name="title_pref_shortcut_2finger_scrub">२ औंलाले स्क्रब गर्नुहोस्</string>
@@ -1643,24 +1643,24 @@
     <string name="title_pref_shortcut_edge_top_right_down">शीर्ष दायाँबाट तल स्वाइप गर्नुहोस्</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">माथि बायाँबाट तल लामो स्वाइप गर्नुहोस्</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">माथि दायाँबाट तल लामो स्वाइप गर्नुहोस्</string>
-    <string name="title_pref_shortcut_edge_left_top_right">बायाँ किनाराबाट दायाँ स्वाइप गर्नुहोस्, शीर्ष आधा</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">बायाँ किनाराबाट दायाँतिर लामो स्वाइप गर्नुहोस्, शीर्ष आधा</string>
+    <string name="title_pref_shortcut_edge_left_top_right">बायाँ किनाराबाट दायाँ स्वाइप गर्नुहोस्, माथिल्लो आधा</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">बायाँ किनाराबाट दायाँतिर लामो स्वाइप गर्नुहोस्, माथिल्लो आधा</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">बायाँ किनाराबाट दायाँ स्वाइप गर्नुहोस्, तल्लो आधा</string>
     <string name="title_pref_shortcut_edge_left_bottom_long_right">बायाँ किनाराबाट दायाँतिर लामो स्वाइप गर्नुहोस्, तल्लो आधा</string>
-    <string name="title_pref_shortcut_edge_right_top_left">दायाँ किनाराबाट बायाँ स्वाइप गर्नुहोस्, शीर्ष आधा</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">दायाँ किनाराबाट बायाँतिर लामो स्वाइप गर्नुहोस्, शीर्ष आधा</string>
+    <string name="title_pref_shortcut_edge_right_top_left">दायाँ किनाराबाट बायाँ स्वाइप गर्नुहोस्, माथिल्लो आधा</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">दायाँ किनाराबाट बायाँतिर लामो स्वाइप गर्नुहोस्, माथिल्लो आधा</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">दायाँ किनाराबाट बायाँ स्वाइप गर्नुहोस्, तल्लो आधा</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">दायाँ किनाराबाट बायाँतिर लामो स्वाइप गर्नुहोस्, तल्लो आधा</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">कुनै पनि कुञ्जी चयन गर्न औंला होल्ड गर्नुहोस्, त्यसपछि उठाउनुहोस्। Enter, Done, वा Send को लागि डबल ट्याप गर्नुहोस्।</string>
-    <string name="value_type_confirmation_tap_to_type">कुनै पनि कुञ्जी टाइप गर्न ट्याप गर्नुहोस्, वा कुनै कुञ्जी चयन गर्न औंला होल्ड गर्नुहोस्, त्यसपछि लिफ्ट गर्नुहोस्</string>
+    <string name="value_type_confirmation_tap_to_type">कुनै पनि की टाइप गर्न ट्याप गर्नुहोस्, वा की चयन गर्न औँला राखिरहनुहोस्, त्यसपछि उठाउनुहोस्</string>
     <string name="title_pref_multi_tap_timeout">एक-औँला ट्यापहरू बीचको समय</string>
     <string name="value_multi_tap_timeout_100ms">०.१ सेकेन्ड</string>
     <string name="value_multi_tap_timeout_150ms">०.१५ सेकेन्ड</string>
     <string name="value_multi_tap_timeout_200ms">०.२ सेकेन्ड</string>
     <string name="value_multi_tap_timeout_250ms">०.२५ सेकेन्ड (पूर्वनिर्धारित)</string>
-    <string name="title_pref_rotor_step_degrees">प्रति चरण रोटर घुमाउनुहोस्</string>
+    <string name="title_pref_rotor_step_degrees">प्रति चरण रोटर घुमाइ</string>
     <string name="title_pref_edge_first_click_mm">पहिलो क्लिकको दूरी</string>
-    <string name="title_pref_edge_second_click_mm">पहिलो देखि दोस्रो क्लिक को दूरी</string>
+    <string name="title_pref_edge_second_click_mm">पहिलोदेखि दोस्रो क्लिकसम्मको दूरी</string>
     <string name="value_distance_5mm">०.५ सेमी</string>
     <string name="value_distance_10mm">1 सेमी</string>
     <string name="value_distance_15mm">1.5 सेमी</string>
@@ -1674,84 +1674,84 @@
     <string name="value_rotor_step_45">४५ डिग्री</string>
     <string name="value_rotor_step_60">६० डिग्री</string>
     <string name="title_pref_low_latency_audio">कम विलम्बता अडियो</string>
-    <string name="summary_pref_low_latency_audio">फोनको सबैभन्दा छिटो अडियो मार्ग मार्फत SandFly को ध्वनि र बोली बजाउनुहोस्, ताकि तपाईंले तिनीहरूलाई चाँडै सुन्न सक्नुहुन्छ। यदि बोली वा आवाज बिग्रियो वा गलत सुनियो भने यसलाई बन्द गर्नुहोस्।</string>
+    <string name="summary_pref_low_latency_audio">SandFly का ध्वनि र बोली फोनको सबैभन्दा छिटो अडियो मार्गबाट बजाउँछ, जसले गर्दा तपाईं तिनलाई चाँडै सुन्नुहुन्छ। बोली वा ध्वनि टुटफुट भए वा गलत सुनिए यसलाई अफ गर्नुहोस्।</string>
     <string name="value_focus_delay_200ms_default">०.२ सेकेन्ड (पूर्वनिर्धारित)</string>
     <string name="value_focus_delay_300ms">०.३ सेकेन्ड</string>
-    <string name="title_pref_lift_to_activate">सक्रिय गर्न लिफ्ट गर्नुहोस्</string>
+    <string name="title_pref_lift_to_activate">औँला उठाएर सक्रिय गर्नुहोस्</string>
     <string name="summary_support_change_lift_to_activate">आफ्नो औंला उठाउँदा वस्तु सक्रिय हुने ठाउँ परिवर्तन गर्नुहोस्</string>
     <string name="value_lift_to_activate_disabled">असक्षम</string>
     <string name="value_lift_to_activate_navigation_bar">नेभिगेसन पट्टीमा मात्र</string>
     <string name="value_lift_to_activate_entire_screen">सम्पूर्ण स्क्रिन</string>
-    <string name="template_lift_to_activate_changed">सक्रिय गर्न लिफ्ट: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">वरिपरि लपेट्नुहोस्</string>
-    <string name="summary_pref_wrap_around">अन्तिम वस्तुलाई स्वाइप गर्दा पहिलोमा जान्छ, र पहिलेको विगत अन्तिममा जान्छ। बन्द हुँदा, यसको सट्टा अन्तमा ध्वनि बज्छ।</string>
+    <string name="template_lift_to_activate_changed">औंला उठाएर सक्रिय गर्नुहोस्: <xliff:g id="mode">%1$s</xliff:g></string>
+    <string name="title_pref_wrap_around">सुरुमा फर्कनुहोस्</string>
+    <string name="summary_pref_wrap_around">अन्तिम वस्तुभन्दा पर स्वाइप गर्दा पहिलोमा, र पहिलोभन्दा पर स्वाइप गर्दा अन्तिममा पुगिन्छ। अफ हुँदा, यसको सट्टा अन्त्यमा आवाज बज्छ।</string>
     <string name="title_pref_fix_stuck_touch_exploration">अड्किएको टच अन्वेषण फिक्स गर्नुहोस्</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">DUMP अनुमति बिना, SandFly ले टच अन्वेषण अड्किएको हुन सक्छ भनेर मात्र भन्न सक्छ। यसलाई ठीक गर्न, चलाउनुहोस्: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">टच अन्वेषण फिक्सिङ</string>
-    <string name="stuck_touch_exploration_fixed">टच अन्वेषण निश्चित</string>
+    <string name="stuck_touch_exploration_fixing">टच अन्वेषण ठीक गर्दै</string>
+    <string name="stuck_touch_exploration_fixed">टच अन्वेषण ठीक भयो</string>
     <string name="stuck_touch_exploration_not_fixed">स्पर्श अन्वेषण अझै रोकिएको छ। यसलाई ठीक गर्न फोन रिस्टार्ट गर्नुहोस्।</string>
     <string name="stuck_touch_exploration_restart">टच अन्वेषण अड्किएको हुन सक्छ। यसलाई ठीक गर्न फोन रिस्टार्ट गर्नुहोस्।</string>
-    <string name="stuck_touch_exploration_grant_dump">टच अन्वेषण अड्किएको हुन सक्छ। यसलाई ठीक गर्न फोन रिस्टार्ट गर्नुहोस्, वा ADB लाई SandFly DUMP अनुमति दिनुहोस् ताकि यसले यसलाई ठीक गर्न सक्छ।</string>
+    <string name="stuck_touch_exploration_grant_dump">छोएर अन्वेषण अड्किएको हुन सक्छ। ठीक गर्न फोन रिस्टार्ट गर्नुहोस्, वा SandFly ले ठीक गर्न सकोस् भनेर ADB प्रयोग गरी SandFly लाई DUMP अनुमति दिनुहोस्।</string>
     <string name="title_pref_window_names">विन्डो नामहरू</string>
     <string name="window_names_always">सधैं</string>
-    <string name="window_names_until_first_item">सधैं, पहिलो वस्तु द्वारा काट्नुहोस्</string>
-    <string name="window_names_window_opens">सञ्झ्याल खुल्दा मात्र</string>
-    <string name="window_names_never">कहिल्यै</string>
+    <string name="window_names_until_first_item">सधैं, पहिलो वस्तुमा रोकिन्छ</string>
+    <string name="window_names_window_opens">विन्डो खुल्दा मात्र</string>
+    <string name="window_names_never">कहिल्यै होइन</string>
     <string name="title_pref_selector_links_controls_web_only">वेब सामग्रीमा मात्र लिङ्क र नियन्त्रणहरू</string>
-    <string name="title_pref_selector_auto_switch">पढ्ने नियन्त्रण स्वतः परिवर्तन गर्नुहोस्</string>
-    <string name="title_pref_touch_stops_speech">स्क्रिन छुँदा भाषण रोक्नुहोस्</string>
+    <string name="title_pref_selector_auto_switch">रिडिङ कन्ट्रोल स्वतः परिवर्तन गर्नुहोस्</string>
+    <string name="title_pref_touch_stops_speech">स्क्रिन छुँदा बोली रोक्नुहोस्</string>
     <string name="title_pref_focus_new_windows">नयाँ विन्डोजमा फोकस सार्नुहोस्</string>
     <string name="title_pref_volume_keys_adjust_sliders">भोल्युम कुञ्जीहरूले स्लाइडरहरू समायोजन गर्दछ</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">जब स्लाइडर फोकस हुन्छ, भोल्युम माथि र तल भोल्युमको सट्टा यसको मान परिवर्तन गर्नुहोस्</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">स्लाइडरमा फोकस हुँदा, भोल्युम बढाउने र घटाउने कीहरूले भोल्युमको सट्टा यसको मान परिवर्तन गर्छन्</string>
     <string name="title_pref_volume_keys_move_cursor">भोल्युम कुञ्जीहरूले कर्सर सार्छन्</string>
     <string name="summary_pref_volume_keys_move_cursor">जब पाठ फिल्डमा फोकस हुन्छ, भोल्युम अपले कर्सरलाई क्यारेक्टर फिर्ता लैजान्छ र भोल्युम डाउनले यसलाई अगाडि बढाउँछ</string>
-    <string name="summary_support_wrap_around">अन्तिम वस्तुबाट पहिलोमा र्यापिङ खोल्नुहोस् वा बन्द गर्नुहोस्</string>
-    <string name="wrap_around_on">वरिपरि लपेट्नुहोस्</string>
-    <string name="wrap_around_off">वरिपरि लपेट्नुहोस्</string>
-    <string name="title_selector_tablet_held_up_faces_away">ट्याब्लेट अनुहारहरू टाढा राखियो</string>
+    <string name="summary_support_wrap_around">अन्तिम वस्तुबाट पहिलोमा जाने सुविधा अन वा अफ गर्नुहोस्</string>
+    <string name="wrap_around_on">सुरुमा फर्कनुहोस्: अन</string>
+    <string name="wrap_around_off">सुरुमा फर्कनुहोस्: अफ</string>
+    <string name="title_selector_tablet_held_up_faces_away">उठाइएको ट्याब्लेटको स्क्रिन बाहिरतिर</string>
     <string name="summary_support_tablet_held_up_faces_away">ट्याब्लेट वा अनफोल्ड गरिएको फोनमा ब्रेल किबोर्डको लागि</string>
-    <string name="tablet_held_up_faces_away_on">ट्याब्लेटहरू अनुहारहरू टाढा राखियो</string>
-    <string name="tablet_held_up_faces_away_off">ट्याब्लेट माथि राखिएको अनुहारहरू टाढा</string>
+    <string name="tablet_held_up_faces_away_on">उठाइएको ट्याब्लेटको स्क्रिन बाहिरतिर: अन</string>
+    <string name="tablet_held_up_faces_away_off">उठाइएको ट्याब्लेटको स्क्रिन बाहिरतिर: अफ</string>
     <string name="title_keyboard_echo_on_screen">अन-स्क्रिन किबोर्ड इको</string>
     <string name="title_keyboard_echo_physical">भौतिक किबोर्ड इको</string>
     <string name="title_keyboard_echo_braille_keyboard">ब्रेल किबोर्ड इको</string>
     <string name="title_keyboard_echo_handwriting_keyboard">हस्तलेखन किबोर्ड प्रतिध्वनि</string>
     <string name="title_keyboard_echo_braille_display">ब्रेल डिस्प्ले इको</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">टाइप गर्दा भाषण अवरोध गर्नुहोस्</string>
+    <string name="title_pref_interrupt_typing">टाइप गर्दा बोली रोक्नुहोस्</string>
     <string name="pref_interrupt_typing_entry_always">सधैं</string>
-    <string name="pref_interrupt_typing_entry_edit_fields">सम्पादन क्षेत्रहरूमा</string>
+    <string name="pref_interrupt_typing_entry_edit_fields">सम्पादन फिल्डहरूमा</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">किबोर्ड इकोमा</string>
-    <string name="title_pref_interrupt_enter">Enter मा भाषण अवरोध गर्नुहोस्</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">नाम, राज्य, प्रकार</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">प्रकार, राज्य, नाम</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">राज्य, प्रकार, नाम</string>
+    <string name="title_pref_interrupt_enter">Enter थिच्दा बोली रोक्नुहोस्</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">नाम, अवस्था, प्रकार</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">प्रकार, अवस्था, नाम</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">अवस्था, प्रकार, नाम</string>
     <string name="item_detail_name">नाम</string>
     <string name="item_detail_type">प्रकार</string>
-    <string name="item_detail_state">राज्य</string>
+    <string name="item_detail_state">अवस्था</string>
     <string name="action_move_up">माथि सार्नुहोस्</string>
     <string name="action_move_down">तल सार्नुहोस्</string>
-    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> को स्थिति <xliff:g id="position" example="2">%1$d</xliff:g></string>
+    <string name="template_list_position"><xliff:g id="count" example="3">%2$d</xliff:g> मध्ये स्थान <xliff:g id="position" example="2">%1$d</xliff:g></string>
     <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> उठाइयो। <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> खस्यो। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> छोडियो। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ले यस क्रममा वस्तुको विवरणहरू बताउँछ। यसलाई परिवर्तन गर्न, कुनै विवरण छुनुहोस् र होल्ड गर्नुहोस्, त्यसपछि यसलाई माथि वा तल तान्नुहोस्। SandFly अन गरी, डबल-ट्याप गर्नुहोस् र होल्ड गर्नुहोस्, त्यसपछि तान्नुहोस्। तपाईं पनि माथि सार्नुहोस् र तल सार्नुहोस् कार्यहरू प्रयोग गर्न सक्नुहुन्छ।</string>
-    <string name="title_pref_speak_items_before_scroll">तिनीहरू दृश्यमा स्क्रोल गर्नु अघि वस्तुहरू बोल्नुहोस्</string>
+    <string name="title_pref_speak_items_before_scroll">वस्तुहरू स्क्रोल भएर देखिनुअघि बोल्नुहोस्</string>
     <string name="gemini_error_api_key">Gemini ले API कुञ्जी स्वीकार गरेन। स्वचालित विवरण सेटिङहरूमा कुञ्जी जाँच गर्नुहोस्।</string>
     <string name="gemini_error_quota">तपाईको Gemini API कुञ्जीको उपयोग सीमा पुगिसकेको छ। पछि फेरि प्रयास गर्नुहोस्।</string>
     <string name="gemini_error_busy">Gemini अहिले व्यस्त छ। केही क्षणमा पुन: प्रयास गर्नुहोस्।</string>
-    <string name="gemini_error_timeout">Gemini जवाफ दिन धेरै समय लाग्यो। पुन: प्रयास गर्नुहोस्।</string>
+    <string name="gemini_error_timeout">Gemini लाई जवाफ दिन धेरै समय लाग्यो। फेरि प्रयास गर्नुहोस्।</string>
     <string name="gemini_error_with_code">Gemini जवाफ दिन सकेन, त्रुटि <xliff:g id="http_status" example="400">%1$d</xliff:g>।</string>
     <string name="gemini_error_with_details">Gemini जवाफ दिन सकेन, त्रुटि <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>। थप विस्तृत छवि विवरण प्राप्त गर्न सकिँदैन: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">आवाजबाट सोध्नुहोस्</string>
     <string name="image_qna_stop_listening">सुन्न बन्द गर्नुहोस्</string>
     <string name="image_qna_type_question">एउटा प्रश्न टाइप गर्नुहोस्</string>
-    <string name="shortcut_dictate">सुन्दै लेख्दै गर्नुहोस्</string>
-    <string name="title_pref_ai_dictation">AI को साथ सही श्रुतिलेख</string>
-    <string name="dictation_not_corrected">सच्याइएको छैन। पहिचान गरिएको रूपमा टाइप गरियो।</string>
+    <string name="shortcut_dictate">बोलेर लेख्नुहोस्</string>
+    <string name="title_pref_ai_dictation">AI ले डिक्टेसन सच्याउनुहोस्</string>
+    <string name="dictation_not_corrected">सच्याइएको छैन। पहिचान भएअनुसार टाइप गरियो।</string>
     <string name="dictation_nothing_recognized">केही चिनिएन</string>
     <string name="dictation_unavailable">वाक् पहिचान उपलब्ध छैन</string>
-    <string name="dictation_field_gone">पाठ क्षेत्र बन्द। केहि टाइप गरिएको छैन।</string>
+    <string name="dictation_field_gone">पाठ क्षेत्र बन्द भयो। केही पनि टाइप गरिएन।</string>
     <string name="dictation_transcription_failed">बोलीलाई पाठमा रूपान्तरण गरिएन। केही टाइप गरिएको छैन।</string>
     <string name="title_pref_dictation">बोलेर लेखाइ</string>
     <string name="title_pref_dictation_rambler_live">Rambler प्रत्यक्ष ट्रान्सक्रिप्सन</string>
@@ -1771,8 +1771,8 @@
     <string name="title_pref_browse_mode_per_app">प्रत्येक एपमा ब्राउज मोड सम्झनुहोस्</string>
     <string name="title_pref_export_settings">सेटिङहरू निर्यात गर्नुहोस्</string>
     <string name="title_pref_import_settings">सेटिङ्हरू आयात गर्नुहोस्</string>
-    <string name="settings_export_done">सेटिङहरू निर्यात गरियो। API कुञ्जीहरू समावेश छैनन्</string>
-    <string name="settings_export_failed">सेटिङहरू निर्यात गर्न सकिएन</string>
+    <string name="settings_export_done">सेटिङहरू एक्सपोर्ट गरियो। API कुञ्जीहरू समावेश छैनन्</string>
+    <string name="settings_export_failed">सेटिङहरू एक्सपोर्ट गर्न सकिएन</string>
     <string name="settings_import_done">सेटिङ्हरू आयात गरियो</string>
     <string name="settings_import_failed">यो फाइल SandFly वा Backtalk सेटिङ फाइल होइन, वा पढ्न सकिँदैन</string>
 </resources>

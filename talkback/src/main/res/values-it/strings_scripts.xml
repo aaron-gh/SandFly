@@ -18,9 +18,9 @@
     <string name="scripts_now_on">Script attivati</string>
     <string name="scripts_unavailable">Gli script non sono disponibili su questo dispositivo</string>
     <string name="script_add_example">Aggiungi lo script di esempio</string>
-    <string name="script_add_example_summary">Legge il nome di ogni app a cui passi. Uno script da cui partire.</string>
-    <string name="script_state_on">On</string>
-    <string name="script_state_off">Off</string>
+    <string name="script_add_example_summary">Pronuncia il nome di ogni app a cui passi. Uno script da usare come punto di partenza.</string>
+    <string name="script_state_on">Attivato</string>
+    <string name="script_state_off">Disattivato</string>
     <string name="script_runs_in">Viene eseguito in <xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">Viene eseguito in tutte le app</string>
     <string name="script_version">Versione <xliff:g id="version">%1$s</xliff:g></string>
@@ -39,7 +39,7 @@
     <string name="script_import_failed">Importazione non riuscita. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Consenti solo per script attendibili.</string>
     <string name="script_permission_screen">Leggere lo schermo</string>
-    <string name="script_permission_actions">Fare clic, scorrere, digitare e spostare la selezione</string>
+    <string name="script_permission_actions">Fare clic, scorrere, digitare e spostare lo stato attivo</string>
     <string name="script_permission_speech">Leggere e modificare la sintesi vocale di SandFly</string>
     <string name="script_permission_passwords">Leggere i campi password</string>
     <string name="script_permission_input">Aggiungere gesti, tasti, voci di menu e controlli di lettura</string>
@@ -59,7 +59,7 @@
     <string name="script_button_off">Attiva prima lo script</string>
     <string name="script_permissions_summary">Se ne disattivi una, si interrompono le parti che la richiedono.</string>
     <string name="script_install_permissions_note">Puoi disattivarle in un secondo momento.</string>
-    <string name="script_manage_category">Gestisci</string>
+    <string name="script_manage_category">Gestione</string>
     <string name="script_move_up">Esegui prima</string>
     <string name="script_move_down">Esegui dopo</string>
     <string name="script_order_summary">Ordine per gli script che modificano lo stesso testo letto. Gli script delle app vengono eseguiti per primi.</string>
@@ -87,18 +87,18 @@
     <string name="script_homepage_confirm_title">Aprire questo indirizzo?</string>
     <string name="script_homepage_open">Apri</string>
     <string name="script_homepage_failed">Nessuna app può aprire <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> disattivato dopo errori ripetuti. Consulta il suo log in Script.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> disattivato dopo errori ripetuti. Consulta il log in Script.</string>
     <string name="shortcut_inspect_item">Esamina elemento selezionato</string>
-    <string name="script_inspect_no_item">Nessun elemento selezionato</string>
+    <string name="script_inspect_no_item">Nessun elemento attivo</string>
     <string name="script_inspect_copied">Copiato. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Nessun ID, quindi le regole non possono identificarlo. Copiato. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Nessun ID, quindi le regole non possono farvi riferimento. Copiato. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Copia albero della schermata</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> elementi copiati</string>
     <string name="script_tree_none">Nessuna finestra da copiare</string>
     <string name="script_tree_clip_label">Albero della schermata</string>
-    <string name="summary_copy_screen_tree_menu">Copia tutti gli elementi sullo schermo come JSON, per scrivere script</string>
+    <string name="summary_copy_screen_tree_menu">Copia di tutti gli elementi sullo schermo come JSON, per scrivere script</string>
     <string name="script_inspect_clip_label">Dettagli elemento</string>
-    <string name="summary_inspect_item_menu">Leggi e copia i dettagli dell\'elemento su cui ti trovavi, per scrivere script</string>
+    <string name="summary_inspect_item_menu">Lettura e copia dei dettagli dell\'ultimo elemento attivo, per scrivere script</string>
     <string name="script_keys_backtalk_modifier">Modificatore SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, poi <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Comandi</string>
@@ -112,8 +112,8 @@
     <string name="script_binding_turn_off">Disattiva</string>
     <string name="script_binding_restore">Ripristina predefiniti</string>
     <string name="script_binding_restored">Predefiniti ripristinati</string>
-    <string name="script_binding_perform">Esegui gesto o tasti</string>
-    <string name="script_binding_perform_summary">Assegna il gesto successivo o i tasti premuti con il modificatore SandFly</string>
+    <string name="script_binding_perform">Esegui il gesto o premi i tasti</string>
+    <string name="script_binding_perform_summary">Assegnazione del gesto successivo o dei tasti premuti con il modificatore SandFly</string>
     <string name="script_binding_perform_message">Esegui il gesto o premi i tasti.</string>
     <string name="script_binding_assign_title">Assegnare <xliff:g id="binding">%1$s</xliff:g> a <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Assegna</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> script aggiornato: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> script aggiornati: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Gli aggiornamenti sono elencati in Aggiornamenti</string>
+    <string name="scripts_updates_to_approve">Gli aggiornamenti sono elencati in “Aggiornamenti”</string>
     <string name="scripts_update_check_failed">Non è stato possibile controllare alcune fonti</string>
     <string name="scripts_up_to_date">Tutti gli script sono aggiornati</string>
 </resources>

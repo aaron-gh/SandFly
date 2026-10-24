@@ -59,7 +59,7 @@
     <string name="script_button_off">প্রথমে স্ক্রিপ্টটি চালু করুন</string>
     <string name="script_permissions_summary">কোনও একটি বন্ধ করলে যে অংশগুলির সেটি প্রয়োজন সেগুলি বন্ধ হয়ে যায়।</string>
     <string name="script_install_permissions_note">আপনি পরে এগুলি বন্ধ করতে পারবেন।</string>
-    <string name="script_manage_category">ম্যানেজ করুন</string>
+    <string name="script_manage_category">পরিচালনা</string>
     <string name="script_move_up">আগে চালান</string>
     <string name="script_move_down">পরে চালান</string>
     <string name="script_order_summary">একই স্পিচ পরিবর্তন করে এমন স্ক্রিপ্টগুলির ক্রম। অ্যাপ স্ক্রিপ্ট প্রথমে চলে।</string>
@@ -140,14 +140,14 @@
     <string name="script_source_remove_message">এখান থেকে ইনস্টল করা স্ক্রিপ্টগুলি ইনস্টল থাকবে।</string>
     <string name="scripts_auto_update">স্বয়ংক্রিয়ভাবে স্ক্রিপ্ট আপডেট করুন</string>
     <string name="scripts_check_updates">আপডেট চেক করুন</string>
-    <string name="scripts_checking_updates">আপডেটের জন্য পরীক্ষা করা হচ্ছে...</string>
+    <string name="scripts_checking_updates">আপডেটের জন্য পরীক্ষা করা হচ্ছে…</string>
     <string name="scripts_updates_category">আপডেট</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g>টি স্ক্রিপ্ট আপডেট করা হয়েছে: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g>টি স্ক্রিপ্ট আপডেট করা হয়েছে: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">আপডেটের অধীনে তালিকাভুক্ত করা হয়</string>
+    <string name="scripts_updates_to_approve">আপডেটগুলি “আপডেট” বিভাগে দেখানো হয়</string>
     <string name="scripts_update_check_failed">কিছু উৎস চেক করা যায়নি</string>
     <string name="scripts_up_to_date">সমস্ত স্ক্রিপ্ট আপ টু ডেট</string>
 </resources>

@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Gailua desblokeatu da.</string>
   <string name="title_pref_speech_volume">Hizketaren bolumena</string>
   <string name="title_pref_verbose_scroll_announcement">Irakurri beti ozen zerrendako elementu kopurua</string>
-  <string name="summary_pref_verbose_scroll_announcement">Esan zer elementu ikusten diren gora edo behera egiten den bakoitzean</string>
+  <string name="summary_pref_verbose_scroll_announcement">Korritze bakoitzaren ondoren ikusten diren elementuak esaten ditu</string>
   <string name="title_pref_cover_proximity_sensor">Hizketa gelditzeko, estali hurbiltasun-sentsorea</string>
   <string name="title_pref_phonetic_letters">Irakurri ozen hizkiak, adibide eta guzti</string>
   <string name="summary_pref_phonetic_letters">Teklatuko teklak hautatzen dituzunean edo karaktere batetik bestera aldatzean hizkiaren izena eta haren adibide bat entzungo dituzu; esate baterako, \"i, ilargia\"</string>
@@ -1563,7 +1563,7 @@
     <string name="summary_selector_speech_stream">Aldatu irisgarritasun, multimedia, tonu eta deien bolumenen artean</string>
     <string name="speech_stream_accessibility">Erabilerraztasun-eginbideen bolumena</string>
     <string name="speech_stream_media">Multimediaren bolumena</string>
-    <string name="speech_stream_ring">Eraztunaren bolumena</string>
+    <string name="speech_stream_ring">Tonuaren bolumena</string>
     <string name="speech_stream_call">Deiaren bolumena, entzungailua</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
@@ -1572,8 +1572,8 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_play_installer">Agertu Google Play-tik instalatuta</string>
-    <string name="summary_pref_play_installer">Esan beste aplikazioei Google Play instalatuta dagoela SandFly. Aplikazio batzuek, banku-aplikazio batzuek, beste edozein lekutatik instalatutako irisgarritasun-zerbitzuak desaktibatu egiten dituzte. Shizuku behar du, eta SandFly nondik datozen aplikazioei buruz esaten zaiena soilik aldatzen du.</string>
-    <string name="summary_pref_play_installer_pending">Aktibatuta, baina Google Erreprodukzioa ez da oraindik instalatzaile gisa grabatu. SandFly Shizuku erabilgarri dagoenean ezartzen du.</string>
+    <string name="summary_pref_play_installer">Beste aplikazioei jakinarazten die SandFly Google Play-tik instalatu dela. Aplikazio batzuek (adibidez, banku-aplikazio batzuek) beste edozein iturburutatik instalatutako erabilerraztasun-zerbitzuak desaktibatzen dituzte. Shizuku behar du, eta SandFly-ren jatorriari buruz aplikazioei esaten zaiena soilik aldatzen du.</string>
+    <string name="summary_pref_play_installer_pending">Aktibatuta, baina Google Play ez dago oraindik instalatzaile gisa erregistratuta. SandFly-k ezartzen du Shizuku erabilgarri dagoenean.</string>
     <string name="notification_list_show_all">Erakutsi guztiak</string>
     <string name="notification_list_show_less">Erakutsi gutxiago</string>
     <string name="title_pref_quick_settings">Erabili SandFly-ren ezarpen azkarrak</string>
@@ -1587,9 +1587,9 @@
     <string name="quick_settings_do_not_disturb">Ez molestatu</string>
     <string name="quick_settings_sound_mode">Soinu modua</string>
     <string name="quick_settings_flashlight">Linterna</string>
-    <string name="quick_settings_flashlight_brightness">Linterna distira</string>
+    <string name="quick_settings_flashlight_brightness">Linternaren distira</string>
     <string name="quick_settings_location">Kokapena</string>
-    <string name="quick_settings_auto_rotate">Auto-biratu</string>
+    <string name="quick_settings_auto_rotate">Biratu automatikoki</string>
     <string name="quick_settings_battery_saver">Bateria aurreztea</string>
     <string name="quick_settings_dark_theme">Gai iluna</string>
     <string name="quick_settings_nfc">NFC</string>
@@ -1597,27 +1597,27 @@
     <string name="quick_settings_adaptive_brightness">Distira moldagarria</string>
     <string name="quick_settings_media_volume">Multimediaren bolumena</string>
     <string name="quick_settings_call_volume">Deiaren bolumena</string>
-    <string name="quick_settings_ring_volume">Eraztunaren bolumena</string>
+    <string name="quick_settings_ring_volume">Tonuaren bolumena</string>
     <string name="quick_settings_notification_volume">Jakinarazpenen bolumena</string>
     <string name="quick_settings_alarm_volume">Alarma bolumena</string>
     <string name="quick_settings_accessibility_volume">Erabilerraztasun-eginbideen bolumena</string>
     <string name="quick_settings_system_volume">Sistemaren audio bolumena</string>
     <string name="quick_settings_data_saver">Datu-aurrezlea</string>
-    <string name="quick_settings_night_light">Gau Argia</string>
-    <string name="quick_settings_extra_dim">Extra ilun</string>
+    <string name="quick_settings_night_light">Gaueko argia</string>
+    <string name="quick_settings_extra_dim">Are ilunagoa</string>
     <string name="quick_settings_color_inversion">Kolore-inbertsioa</string>
     <string name="quick_settings_color_correction">Koloreen zuzenketa</string>
     <string name="quick_settings_microphone_access">Mikrofonorako sarbidea</string>
     <string name="quick_settings_camera_access">Kamera sarbidea</string>
     <string name="quick_settings_screen_timeout">Pantailaren denbora-muga</string>
     <string name="quick_settings_font_size">Letra-tamaina</string>
-    <string name="quick_settings_media">Komunikabideak</string>
-    <string name="quick_settings_no_media">Hedabiderik ez</string>
+    <string name="quick_settings_media">Multimedia</string>
+    <string name="quick_settings_no_media">Ez dago multimediarik</string>
     <string name="quick_settings_media_output">Media irteera</string>
     <string name="quick_settings_next_alarm">Hurrengo alarma</string>
     <string name="quick_settings_no_alarm">Alarmarik ez</string>
     <string name="quick_settings_settings">Ezarpenak</string>
-    <string name="quick_settings_power_menu">Power menua</string>
+    <string name="quick_settings_power_menu">Pizteko menua</string>
     <string name="quick_settings_add_system_tile">Gehitu sistemaren fitxa</string>
     <string name="quick_settings_no_system_tiles">Ez dago sistemaren fitxa gehitzeko</string>
     <string name="quick_settings_tile_not_found">%1$s ez dago sistemaren ezarpen azkarrean</string>
@@ -1633,7 +1633,7 @@
     <string name="quick_settings_connected">Konektatuta</string>
     <string name="quick_settings_battery">Bateria</string>
     <string name="quick_settings_battery_charging">%1$s, kargatzen</string>
-    <string name="quick_settings_battery_full">%1$s, kobratuta</string>
+    <string name="quick_settings_battery_full">%1$s, kargatuta</string>
     <string name="quick_settings_sound">Soinua</string>
     <string name="quick_settings_vibrate">Dardara</string>
     <string name="quick_settings_mute">Isildu</string>
@@ -1653,33 +1653,33 @@
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
     <string name="quick_settings_moved_and_displaced">%1$s. %2$s</string>
     <plurals name="quick_settings_others_moved">
-        <item quantity="one">%d beste elementu mugitu da</item>
-        <item quantity="other">%d beste elementuzuk mugitu dira</item>
+        <item quantity="one">Beste %d elementu mugitu da</item>
+        <item quantity="other">Beste %d elementu mugitu dira</item>
     </plurals>
     <string name="quick_settings_remove">Kendu</string>
     <string name="quick_settings_added">%1$s gehitu da</string>
     <string name="quick_settings_removed">%1$s kendu da</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Beste lasterbide bat arakatzeko modua aktibatzeko edo desaktibatzeko</string>
     <string name="title_pref_vibration_strength">Bibrazio indarra</string>
-    <string name="shortcut_scroll_to_top">Joan goian</string>
+    <string name="shortcut_scroll_to_top">Joan goialdera</string>
     <string name="shortcut_write_reading_control">Idatzi irakurketa-kontrol baten letra</string>
     <string name="title_pref_reading_control_letters">Eskuz idatzitako alfabetoko letrak</string>
     <string name="reading_control_letter_none">Bat ere ez</string>
     <string name="handwriting_prompt">Idatzi alfabetoko letra bat</string>
     <string name="handwriting_closed">Eskuzko idazkera itxita</string>
-    <string name="handwriting_no_match">Ez dago irakurketa-kontrolik <xliff:g id="letter" example="Q">%1$s</xliff:g>-rekin hasten</string>
+    <string name="handwriting_no_match">Ez dago <xliff:g id="letter" example="Q">%1$s</xliff:g> letrarekin hasten den irakurketa kontrolatzeko aukerarik</string>
     <string name="shortcut_write_app_name">Idatzi aplikazio baten izena hura irekitzeko</string>
     <string name="handwriting_app_prompt">Idatzi aplikazio baten izena</string>
     <string name="handwriting_no_app">Ez dago <xliff:g id="letters" example="WHA">%1$s</xliff:g>-rekin hasten den aplikaziorik</string>
     <string name="handwriting_app_not_opened">Ezin izan da ireki <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
-    <string name="handwriting_not_recognized">Eskuzko idazkera ez da ezagutzen</string>
-    <string name="handwriting_downloading">Eskuzko idazketaren aitorpena deskargatzen ari da</string>
-    <string name="handwriting_download_title">Eskuzko idazketaren aitorpena deskargatu nahi duzu?</string>
-    <string name="handwriting_download_message">Telefono honetan eskuz idaztea ezagutzen da. Hizkuntza honetarako duen eredua, 20 MB ingurukoa, Google-tik deskargatzen da behin. Mezu batek deskargatu denean erakusten du.</string>
+    <string name="handwriting_not_recognized">Ez da eskuzko idazkera ezagutu</string>
+    <string name="handwriting_downloading">Eskuz idatzitakoaren ezagutzea deskargatzen ari da</string>
+    <string name="handwriting_download_title">Eskuzko idazketaren ezagutza deskargatu nahi duzu?</string>
+    <string name="handwriting_download_message">Telefono honetan ezagutzen da eskuz idatzitakoa. Hizkuntza honetarako eredua, 20 MB ingurukoa, behin deskargatzen da Google-tik. Deskargatzen denean, mezu bat agertzen da.</string>
     <string name="handwriting_download_button">Deskargatu</string>
-    <string name="handwriting_downloaded">Eskuzko idazketaren aitorpena deskargatu da</string>
-    <string name="handwriting_download_failed">Ezin izan da deskargatu eskuz idazteko aitorpena. Egiaztatu Interneteko konexioa.</string>
-    <string name="handwriting_unsupported_language">Eskuzko idazkera ez dago erabilgarri hizkuntza honetan</string>
+    <string name="handwriting_downloaded">Eskuzko idazketaren ezagutza deskargatu da</string>
+    <string name="handwriting_download_failed">Ezin izan da deskargatu eskuz idatzitakoa ezagutzeko eginbidea. Egiaztatu Interneteko konexioa.</string>
+    <string name="handwriting_unsupported_language">Eskuz idatzitakoa ezagutzeko aukera ez dago erabilgarri hizkuntza honetan</string>
     <string name="title_pref_handwriting_keyboard">Eskuz idazteko teklatua</string>
     <string name="summary_pref_handwriting_keyboard">Aktibatu SandFly eskuzko idazketa Android teklatuaren ezarpenetan</string>
     <string name="title_pref_handwriting_wait">Itxaron idatzi ondoren</string>
@@ -1693,7 +1693,7 @@
     <string name="handwriting_keyboard_name">SandFly eskuzko idazkera</string>
     <string name="handwriting_space">Zuriunea</string>
     <string name="handwriting_new_line">Lerro berria</string>
-    <string name="handwriting_tutorial_intro">Eskuz idazteko teklatuaren tutoriala. Idatzi hatz batekin pantailako edozein lekutan. Idazten duzuna une batez gelditzen zarenean idazten da. Tutoriala amaitzeko, irristatu hatza behera hiru hatzekin.</string>
+    <string name="handwriting_tutorial_intro">Eskuz idazteko teklatuaren tutoriala. Idatzi hatz batekin pantailako edozein lekutan. Idazten duzuna testu gisa sartzen da une batez gelditzen zarenean. Tutoriala amaitzeko, pasatu hiru hatz behera.</string>
     <string name="handwriting_tutorial_write_letter">Idatzi alfabetoko a letra.</string>
     <string name="handwriting_tutorial_write_word">Idatzi orain hi hitza.</string>
     <string name="handwriting_tutorial_typed"><xliff:g id="text" example="a">%1$s</xliff:g> idatzita.</string>
@@ -1701,32 +1701,32 @@
     <string name="handwriting_tutorial_delete">Irristatu ezkerrera bi hatzekin kurtsorearen aurreko karakterea ezabatzeko.</string>
     <string name="handwriting_tutorial_deleted">Ezabatu da.</string>
     <string name="handwriting_tutorial_next_reading">Eskuz idatzitakoa beste karaktere gisa sartzen bada, adibidez letra larri gisa, irristatu bi hatzekin gorantz hurrengo interpretazioa hautatzeko. Saiatu orain.</string>
-    <string name="handwriting_tutorial_read_back">Ukitu bi hatzekin testua irakurtzeko kurtsorearen aurretik.</string>
+    <string name="handwriting_tutorial_read_back">Ukitu bi hatzekin kurtsorearen aurreko testua irakurtzeko.</string>
     <string name="handwriting_tutorial_new_line">Irristatu bi hatzekin beherantz lerro berri bat sartzeko edo eremuaren ekintza egiteko, adibidez Bidali.</string>
-    <string name="handwriting_tutorial_not_that">Hori beste keinu bat izan zen.</string>
-    <string name="handwriting_tutorial_done">Lerro berria. Tutoriala amaitu da. Irristatu hatza behera hiru hatzekin teklatua ezkutatzeko, eta eskuinera edo ezkerrera hiru hatzekin teklatua aldatzeko. Tutoriala berriro irekitzeko, sakatu hiru hatzekin.</string>
+    <string name="handwriting_tutorial_not_that">Beste keinu bat zen.</string>
+    <string name="handwriting_tutorial_done">Lerro berria. Tutoriala amaitu da. Pasatu hiru hatz behera teklatua ezkutatzeko, eta eskuinera edo ezkerrera teklatuz aldatzeko. Tutoriala berriro irekitzeko, sakatu hiru hatzekin.</string>
     <string name="handwriting_tutorial_finished">Tutoriala amaitu da. Berriro irekitzeko, sakatu hiru hatzekin.</string>
     <string name="handwriting_no_alternatives">Ez dago beste iradokizunik</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g>/<xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Testu hutsa</string>
-    <string name="handwriting_not_available">Eskuzko idazkera ez dago erabilgarri gailu honetan</string>
+    <string name="handwriting_not_available">Eskuz idatzitakoa ezagutzeko aukera ez dago erabilgarri gailu honetan</string>
     <string name="shortcut_scroll_to_bottom">Joan behealdera</string>
     <string name="shortcut_refresh">Freskatu</string>
     <string name="shortcut_system_quick_settings">Sistemaren ezarpen azkarrak</string>
     <string name="shortcut_lock_screen">Blokeatu gailuaren pantaila</string>
-    <string name="shortcut_power_menu">Power menua</string>
+    <string name="shortcut_power_menu">Pizteko menua</string>
     <string name="shortcut_increase_media_volume">Handitu multimedia-bolumena</string>
     <string name="shortcut_decrease_media_volume">Murriztu multimedia-bolumena</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Irristatu luzea goian ezkerretik behera</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Irristatu luzea goiko eskuinetik behera</string>
     <string name="title_pref_shortcut_edge_left_top_right">Irristatu eskuinera ezkerreko ertzetik, goiko erditik</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Irristatu luze eskuinera ezkerreko ertzetik, goiko erditik</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Pasatu hatza luze eskuinera ezkerreko ertzetik, goiko erdian</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Irristatu eskuinera ezkerreko ertzetik, beheko erditik</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Irristatu luze eskuinera ezkerreko ertzetik, beheko erditik</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Pasatu hatza luze eskuinera ezkerreko ertzetik, beheko erdian</string>
     <string name="title_pref_shortcut_edge_right_top_left">Irristatu ezkerrera eskuineko ertzetik, goiko erditik</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Irristatu luze ezkerrera eskuineko ertzetik, goiko erdia</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Pasatu hatza luze ezkerrera eskuineko ertzetik, goiko erdian</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Irristatu ezkerrera eskuineko ertzetik, beheko erditik</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Irristatu luze ezkerrera eskuineko ertzetik, beheko erditik</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Pasatu hatza luze ezkerrera eskuineko ertzetik, beheko erdian</string>
     <string name="title_pref_edge_first_click_mm">Lehenengo klikaren distantzia</string>
     <string name="title_pref_edge_second_click_mm">Lehenengo kliketik bigarrenerako distantzia</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1740,17 +1740,17 @@
     <string name="title_pref_selector_auto_switch">Aldatu irakurketa kontrola automatikoki</string>
     <string name="title_pref_touch_stops_speech">Gelditu hizketa pantaila ukitzean</string>
     <string name="title_pref_volume_keys_move_cursor">Bolumen-teklek kurtsorea mugitzen dute</string>
-    <string name="summary_pref_volume_keys_move_cursor">Testu-eremu batek fokua duenean, bolumena igotzen da kurtsorea karaktere bat atzera egiten du eta bolumena beherantz mugitzen da</string>
+    <string name="summary_pref_volume_keys_move_cursor">Testu-eremu batek fokua duenean, bolumena igotzeak kurtsorea karaktere bat atzera eramaten du, eta jaisteak karaktere bat aurrera</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Eskuzko teklatuaren oihartzuna</string>
     <string name="image_qna_ask_by_voice">Ahotsez galdetu</string>
     <string name="image_qna_stop_listening">Utzi entzuteari</string>
     <string name="image_qna_type_question">Idatzi galdera bat</string>
     <string name="shortcut_dictate">Diktatu</string>
-    <string name="title_pref_ai_dictation">Diktaketa zuzena AIarekin</string>
-    <string name="dictation_not_corrected">Ez da zuzendu. Aitortu gisa idatzita.</string>
-    <string name="dictation_nothing_recognized">Ezer aitortzen</string>
+    <string name="title_pref_ai_dictation">Zuzendu diktaketa AArekin</string>
+    <string name="dictation_not_corrected">Ez da zuzendu. Ezagutu den bezala idatzi da.</string>
+    <string name="dictation_nothing_recognized">Ez da ezer ezagutu</string>
     <string name="dictation_unavailable">Hizketa-hautematea ez dago erabilgarri</string>
-    <string name="dictation_field_gone">Testu-eremua itxita. Ezer idatzita.</string>
+    <string name="dictation_field_gone">Testu-eremua itxi da. Ez da ezer idatzi.</string>
     <string name="dictation_transcription_failed">Ez da hizketa transkribatu. Ez da ezer idatzi.</string>
     <string name="title_pref_dictation">Diktaketa</string>
     <string name="title_pref_dictation_rambler_live">Rambler-en zuzeneko transkripzioa</string>

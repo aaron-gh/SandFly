@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Керуйте звуками та вібрацією</string>
-    <string name="summary_pref_control_sounds">Надайте кожному виду керування, наприклад кнопкам, прапорцям, полям редагування та елементам списку, власний звук і власну вібрацію від теми замість звуку та вібрації фокусу, як Unspoken робить для NVDA. Звук надходить з місця керування на екрані, і SandFly не повідомляє, який це тип керування.</string>
-    <string name="title_pref_control_sounds_speak_roles">Ще кажуть вид контролю</string>
-    <string name="summary_pref_control_sounds_speak_roles">Коли відтворюється звук керування, усе одно скажіть, який це елемент керування, наприклад кнопка. Це для кожної звукової теми.</string>
+    <string name="title_pref_control_sounds">Звуки та вібрація елементів керування</string>
+    <string name="summary_pref_control_sounds">Кожен тип елементів керування, наприклад кнопки, прапорці, поля редагування й елементи списку, отримує власний звук і вібрацію з теми замість звуку й вібрації фокуса, як це робить Unspoken для NVDA. Звук лунає з місця елемента на екрані, а SandFly не називає тип елемента.</string>
+    <string name="title_pref_control_sounds_speak_roles">Усе одно озвучувати тип елемента керування</string>
+    <string name="summary_pref_control_sounds_speak_roles">Коли лунає звук елемента керування, тип елемента все одно називається, наприклад кнопка. Діє для всіх звукових тем.</string>
     <string name="title_pref_control_sounds_3d">3D аудіо</string>
     <string name="pref_control_sounds_3d_headphones">З навушниками</string>
     <string name="pref_control_sounds_3d_always">Завжди</string>
     <string name="pref_control_sounds_3d_never">Ніколи, тільки ліворуч і праворуч</string>
-    <string name="individual_sound_control_button">Управління звуком: кнопка</string>
-    <string name="individual_sound_control_checkbox">Контроль звуку: прапорець</string>
-    <string name="individual_sound_control_radio_button">Керування звуком: перемикач</string>
-    <string name="individual_sound_control_edit_text">Керування звуком: поле редагування</string>
-    <string name="individual_sound_control_combo_box">Керування звуком: розкривний список</string>
-    <string name="individual_sound_control_slider">Управління звуком: повзунок</string>
-    <string name="individual_sound_control_link">Керування звуком: посилання</string>
-    <string name="individual_sound_control_image">Керування звуком: зображення</string>
-    <string name="individual_sound_control_clock">Управління звуком: годинник</string>
-    <string name="individual_sound_control_tab">Керування звуком: табл</string>
-    <string name="individual_sound_control_menu_item">Керування звуком: пункт меню</string>
-    <string name="individual_sound_control_list_item">Керування звуком: пункт списку</string>
-    <string name="individual_sound_control_tree_item">Керування звуком: елемент дерева</string>
+    <string name="individual_sound_control_button">Звук елемента керування: кнопка</string>
+    <string name="individual_sound_control_checkbox">Звук елемента керування: прапорець</string>
+    <string name="individual_sound_control_radio_button">Звук елемента керування: перемикач</string>
+    <string name="individual_sound_control_edit_text">Звук елемента керування: поле редагування</string>
+    <string name="individual_sound_control_combo_box">Звук елемента керування: розкривний список</string>
+    <string name="individual_sound_control_slider">Звук елемента керування: повзунок</string>
+    <string name="individual_sound_control_link">Звук елемента керування: посилання</string>
+    <string name="individual_sound_control_image">Звук елемента керування: зображення</string>
+    <string name="individual_sound_control_clock">Звук елемента керування: годинник</string>
+    <string name="individual_sound_control_tab">Звук елемента керування: вкладка</string>
+    <string name="individual_sound_control_menu_item">Звук елемента керування: пункт меню</string>
+    <string name="individual_sound_control_list_item">Звук елемента керування: пункт списку</string>
+    <string name="individual_sound_control_tree_item">Звук елемента керування: елемент дерева</string>
 </resources>

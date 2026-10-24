@@ -78,11 +78,11 @@
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
     <string name="script_api_too_old">Απαιτεί API σεναρίων <xliff:g id="needed">%1$d</xliff:g> ή νεότερο. Αυτό το SandFly έχει <xliff:g id="current">%2$d</xliff:g>, οπότε ορισμένα μέρη ίσως δεν λειτουργούν.</string>
     <string name="script_api_untested">Δοκιμασμένο έως το API σεναρίων <xliff:g id="tested">%1$d</xliff:g>. Αυτό το SandFly έχει <xliff:g id="current">%2$d</xliff:g>, οπότε ίσως δεν λειτουργεί όπως αναμένεται.</string>
-    <string name="script_state_incompatible">Ίσως δεν λειτουργεί με αυτό το SandFly</string>
+    <string name="script_state_incompatible">Ίσως να μην λειτουργεί με αυτή την έκδοση του SandFly</string>
     <string name="script_api_range">API σεναρίων <xliff:g id="min">%1$d</xliff:g> έως <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Συμβατότητα</string>
     <string name="script_install_anyway">Εγκατάσταση ούτως ή άλλως</string>
-    <string name="script_update_anyway">Ενημέρωση ούτως ή άλλως</string>
+    <string name="script_update_anyway">Ενημέρωση παρ\' όλα αυτά</string>
     <string name="script_homepage">Άνοιγμα αρχικής σελίδας</string>
     <string name="script_homepage_confirm_title">Άνοιγμα αυτής της διεύθυνσης;</string>
     <string name="script_homepage_open">Άνοιγμα</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_turn_off">Απενεργοποίηση</string>
     <string name="script_binding_restore">Επαναφορά προεπιλογών</string>
     <string name="script_binding_restored">Έγινε επαναφορά των προεπιλογών</string>
-    <string name="script_binding_perform">Εκτέλεση κίνησης ή πλήκτρων</string>
+    <string name="script_binding_perform">Εκτελέστε κίνηση ή πατήστε πλήκτρα</string>
     <string name="script_binding_perform_summary">Ανάθεση της επόμενης κίνησης ή των πλήκτρων που πατιούνται με το πλήκτρο τροποποίησης SandFly</string>
     <string name="script_binding_perform_message">Εκτελέστε την κίνηση ή πατήστε τα πλήκτρα.</string>
     <string name="script_binding_assign_title">Ανάθεση του <xliff:g id="binding">%1$s</xliff:g> στην εντολή <xliff:g id="command">%2$s</xliff:g>;</string>
@@ -147,7 +147,7 @@
         <item quantity="one">Ενημερώθηκε <xliff:g id="count" example="1">%1$d</xliff:g> σενάριο: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other">Ενημερώθηκαν <xliff:g id="count" example="2">%1$d</xliff:g> σενάρια: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Οι ενημερώσεις παρατίθενται στην ενότητα Ενημερώσεις</string>
+    <string name="scripts_updates_to_approve">Οι ενημερώσεις εμφανίζονται στην ενότητα «Ενημερώσεις»</string>
     <string name="scripts_update_check_failed">Δεν ήταν δυνατός ο έλεγχος ορισμένων πηγών</string>
     <string name="scripts_up_to_date">Όλα τα σενάρια είναι ενημερωμένα</string>
 </resources>

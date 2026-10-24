@@ -17,30 +17,30 @@
     <string name="problem_report_missing_fields">Idatzi izenburu bat eta deskribapen bat.</string>
     <string name="problem_report_invalid_email">Sartu baliozko helbide elektroniko bat.</string>
     <string name="problem_report_sent">Iritzia bidali da.</string>
-    <string name="problem_report_rate_limited">Iritzi gehiegi bidali. Saiatu berriro geroago.</string>
+    <string name="problem_report_rate_limited">Iritzi gehiegi bidali dira. Saiatu berriro geroago.</string>
     <string name="problem_report_no_connection">Iritzia ez da bidali. Egiaztatu Interneteko konexioa.</string>
     <string name="problem_report_not_sent">Iritzia ez da bidali. Saiatu berriro geroago.</string>
     <string-array name="problem_report_type_entries">
         <item>Portaera okerra</item>
-        <item>Istripua</item>
+        <item>Ustekabeko itxiera</item>
         <item>Motela edo ez du erantzuten</item>
         <item>Iradokizuna</item>
     </string-array>
     <string-array name="problem_report_area_entries">
-        <item>Hitzaldia</item>
+        <item>Ahotsa</item>
         <item>Keinuak</item>
-        <item>Ukitu esplorazioa</item>
-        <item>Irakurketa kontrolak eta menuak</item>
+        <item>Arakatu sakatuta</item>
+        <item>Irakurketa kontrolatzeko aukerak eta menuak</item>
         <item>Idazketa eta teklatuak</item>
         <item>Braille-teklatua</item>
         <item>Braille-pantaila</item>
-        <item>Soinuak eta bibrazioa</item>
+        <item>Soinua eta dardara</item>
         <item>Jakinarazpenak</item>
         <item>Web-edukia</item>
         <item>Scriptak</item>
         <item>Ezarpenak</item>
         <item>Eguneraketak</item>
-        <item>Beste batzuk</item>
+        <item>Bestelakoak</item>
     </string-array>
     <string name="title_report_new">Bidali oharrak</string>
     <string name="title_report_inbox">Sarrera-ontzia</string>
@@ -49,8 +49,8 @@
     <string name="report_drafts_empty">Zirriborrorik ez</string>
     <string name="report_just_now">oraintxe bertan</string>
     <string name="report_untitled">Izenbururik gabe</string>
-    <string name="report_draft_summary">Aldatu <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
-    <string name="report_sent_at">bidali <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> aldatua</string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> bidalia</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> erantzun berri</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> erantzun berri</item>
@@ -65,8 +65,8 @@
     <string name="title_report_your_report">Zure iritzia</string>
     <string name="title_report_messages">Mezuak</string>
     <string name="report_message_from_developer">Garatzailea, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="report_message_from_you">Zuk, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Erantzun</string>
+    <string name="report_message_from_you">Zu, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
+    <string name="title_report_reply">Erantzuna</string>
     <string name="title_report_reply_text">Zure erantzuna</string>
     <string name="title_report_send_reply">Bidali erantzuna</string>
     <string name="report_reply_sent">Erantzuna bidali da.</string>
@@ -79,6 +79,6 @@
     <string name="button_report_delete">Ezabatu</string>
     <string name="report_missing">Iritzi hau jada ez dago sarrera-ontzian.</string>
     <string name="notification_channel_problem_reports">Iritzi-erantzunak</string>
-    <string name="report_notification_reply">Erantzun <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g> txostenari erantzuna</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

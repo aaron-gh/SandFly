@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="shortcut_announce_status">Snakk status</string>
+    <string name="shortcut_announce_status">Les opp status</string>
     <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> av <xliff:g id="max_level" example="4">%2$d</xliff:g> stolper</string>
     <string name="status_wifi_off">Wi-Fi av</string>
     <string name="status_wifi_not_connected">Wi-Fi ikke tilkoblet</string>
@@ -10,20 +10,20 @@
     <string name="status_mobile">Mobil</string>
     <string name="status_mobile_no_service">Ingen mobiltjeneste</string>
     <string name="status_do_not_disturb">Ikke forstyrr</string>
-    <string name="status_ringer_vibrate">Vibrer</string>
+    <string name="status_ringer_vibrate">Vibrering</string>
     <string name="status_ringer_silent">Stille</string>
     <string name="status_airplane_mode">Flymodus</string>
-    <string name="title_pref_status_readout">Statusavlesning</string>
-    <string name="status_item_time">Tid</string>
-    <string name="status_item_time_summary">Gjeldende tid</string>
+    <string name="title_pref_status_readout">Statusopplesning</string>
+    <string name="status_item_time">Klokkeslett</string>
+    <string name="status_item_time_summary">Klokkeslettet nå</string>
     <string name="status_item_battery">Batteri</string>
     <string name="status_item_battery_summary">Batterinivå, lading og batterisparing</string>
     <string name="status_item_wifi">Wi-Fi</string>
     <string name="status_item_wifi_summary">Nettverksnavn og signalstyrke</string>
     <string name="status_item_mobile">Mobilnett</string>
-    <string name="status_item_mobile_summary">Transportør, nettverkstype og signalstyrke</string>
+    <string name="status_item_mobile_summary">Operatør, nettverkstype og signalstyrke</string>
     <string name="status_item_ringer">Ringer og Ikke forstyrr</string>
-    <string name="status_item_ringer_summary">Bare når ringetonen ikke er satt til å ringe, eller Ikke forstyrr er på</string>
+    <string name="status_item_ringer_summary">Bare når ringelyden er satt til vibrering eller lydløs, eller Ikke forstyrr er på</string>
     <string name="status_item_airplane_mode">Flymodus</string>
     <string name="status_item_airplane_mode_summary">Bare når flymodus er på</string>
 </resources>

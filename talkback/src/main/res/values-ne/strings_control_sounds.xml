@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">आवाज र कम्पनहरू नियन्त्रण गर्नुहोस्</string>
-    <string name="summary_pref_control_sounds">प्रत्येक प्रकारको नियन्त्रण दिनुहोस्, जस्तै बटनहरू, चेकबक्सहरू, सम्पादन क्षेत्रहरू र सूची वस्तुहरू, यसको आफ्नै ध्वनि र विषयवस्तुबाट आफ्नै कम्पन, फोकस ध्वनि र कम्पनको स्थानमा, जस्तै अनस्पोकनले NVDA को लागि गर्छ। स्क्रिनमा कन्ट्रोल भएको ठाउँबाट आवाज आउँछ र SandFly यो कस्तो प्रकारको नियन्त्रण हो भनी छोड्छ।</string>
+    <string name="title_pref_control_sounds">नियन्त्रणका ध्वनि र कम्पन</string>
+    <string name="summary_pref_control_sounds">बटन, चेकबक्स, सम्पादन फिल्ड र सूची वस्तु जस्ता प्रत्येक प्रकारको नियन्त्रणले फोकसको ध्वनि र कम्पनको सट्टा थिमबाट आफ्नै ध्वनि र कम्पन पाउँछ, जसरी Unspoken ले NVDA का लागि गर्छ। ध्वनि स्क्रिनमा नियन्त्रण भएको ठाउँबाट आउँछ, र SandFly ले नियन्त्रणको प्रकार भन्दैन।</string>
     <string name="title_pref_control_sounds_speak_roles">अझै पनि नियन्त्रणको प्रकार भन्नुहोस्</string>
-    <string name="summary_pref_control_sounds_speak_roles">जब नियन्त्रण ध्वनि बज्छ, अझै पनि भन्नुहोस् यो कस्तो प्रकारको नियन्त्रण हो, जस्तै बटन। यो हरेक ध्वनि विषयवस्तुको लागि हो।</string>
+    <string name="summary_pref_control_sounds_speak_roles">नियन्त्रणको ध्वनि बज्दा पनि नियन्त्रणको प्रकार भनिन्छ, जस्तै बटन। सबै ध्वनि थिममा लागू हुन्छ।</string>
     <string name="title_pref_control_sounds_3d">3D अडियो</string>
     <string name="pref_control_sounds_3d_headphones">हेडफोन संग</string>
     <string name="pref_control_sounds_3d_always">सधैं</string>
-    <string name="pref_control_sounds_3d_never">कहिले पनि, बायाँ र दायाँ मात्र</string>
-    <string name="individual_sound_control_button">नियन्त्रण ध्वनि: बटन</string>
-    <string name="individual_sound_control_checkbox">आवाज नियन्त्रण गर्नुहोस्: चेकबक्स</string>
-    <string name="individual_sound_control_radio_button">ध्वनि नियन्त्रण: रेडियो बटन</string>
-    <string name="individual_sound_control_edit_text">नियन्त्रण ध्वनि: सम्पादन क्षेत्र</string>
-    <string name="individual_sound_control_combo_box">नियन्त्रण ध्वनि: ड्रप-डाउन सूची</string>
-    <string name="individual_sound_control_slider">नियन्त्रण ध्वनि: स्लाइडर</string>
-    <string name="individual_sound_control_link">नियन्त्रण ध्वनि: लिङ्क</string>
-    <string name="individual_sound_control_image">नियन्त्रण ध्वनि: छवि</string>
-    <string name="individual_sound_control_clock">नियन्त्रण ध्वनि: घडी</string>
-    <string name="individual_sound_control_tab">ध्वनि नियन्त्रण: ट्याब</string>
-    <string name="individual_sound_control_menu_item">नियन्त्रण ध्वनि: मेनु वस्तु</string>
-    <string name="individual_sound_control_list_item">नियन्त्रण ध्वनि: सूची वस्तु</string>
-    <string name="individual_sound_control_tree_item">नियन्त्रण ध्वनि: रूख वस्तु</string>
+    <string name="pref_control_sounds_3d_never">कहिल्यै होइन, बायाँ र दायाँ मात्र</string>
+    <string name="individual_sound_control_button">नियन्त्रणको ध्वनि: बटन</string>
+    <string name="individual_sound_control_checkbox">नियन्त्रणको ध्वनि: चेकबक्स</string>
+    <string name="individual_sound_control_radio_button">नियन्त्रणको ध्वनि: रेडियो बटन</string>
+    <string name="individual_sound_control_edit_text">नियन्त्रणको ध्वनि: सम्पादन क्षेत्र</string>
+    <string name="individual_sound_control_combo_box">नियन्त्रणको ध्वनि: ड्रप-डाउन सूची</string>
+    <string name="individual_sound_control_slider">नियन्त्रणको ध्वनि: स्लाइडर</string>
+    <string name="individual_sound_control_link">नियन्त्रणको ध्वनि: लिङ्क</string>
+    <string name="individual_sound_control_image">नियन्त्रणको ध्वनि: छवि</string>
+    <string name="individual_sound_control_clock">नियन्त्रणको ध्वनि: घडी</string>
+    <string name="individual_sound_control_tab">नियन्त्रणको ध्वनि: ट्याब</string>
+    <string name="individual_sound_control_menu_item">नियन्त्रणको ध्वनि: मेनु वस्तु</string>
+    <string name="individual_sound_control_list_item">नियन्त्रणको ध्वनि: सूची वस्तु</string>
+    <string name="individual_sound_control_tree_item">नियन्त्रणको ध्वनि: ट्री वस्तु</string>
 </resources>

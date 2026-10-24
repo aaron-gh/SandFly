@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pause_backtalk">पज SandFly</string>
-    <string name="summary_pause_backtalk">तपाईंले SandFly पुन: सुरु नगरेसम्म बोली, इशाराहरू र स्पर्शद्वारा अन्वेषण गर्नुहोस्।</string>
-    <string name="keycombo_menu_global_pause_backtalk">पज वा पुन: सुरु गर्नुहोस् SandFly</string>
+    <string name="title_pause_backtalk">SandFly पज गर्नुहोस्</string>
+    <string name="summary_pause_backtalk">SandFly फेरि सुरु नगरेसम्म बोली, इसारा र “छोएर अन्वेषण” बन्द गर्छ</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly पज गर्नुहोस् वा पुन: सुरु गर्नुहोस्</string>
     <string name="backtalk_paused">SandFly पज गरियो</string>
     <string name="backtalk_resumed">SandFly फेरि सुरु भयो</string>
     <string name="notification_title_backtalk_paused">SandFly पज गरिएको छ</string>
     <string name="notification_message_backtalk_paused">पुन: सुरु गर्न ट्याप गर्नुहोस्</string>
     <string name="notification_channel_backtalk_paused">SandFly पज गरियो</string>
-    <string name="dialog_title_pause_backtalk">पज SandFly?</string>
-    <string name="dialog_button_pause_backtalk">पज गर</string>
+    <string name="dialog_title_pause_backtalk">SandFly पज गर्ने हो?</string>
+    <string name="dialog_button_pause_backtalk">पज गर्नुहोस्</string>
     <string name="dialog_message_pause_backtalk">SandFly पज भएको बेला, यसले बोल्दैन वा इशाराहरूमा प्रतिक्रिया दिँदैन, र स्क्रिनले स्क्रिन रिडर अन नभएको जस्तो काम गर्दछ।</string>
-    <string name="message_resume_keyguard">पुन: सुरु गर्न, SandFly पज गरिएको सूचनामा ट्याप गर्नुहोस्, भोल्युम 3 पटक छिटो थिच्नुहोस्, वा फोन लक गर्नुहोस् र लक स्क्रिन देखाउनुहोस्।</string>
-    <string name="message_resume_screen_on">पुन: सुरु गर्न, SandFly पज गरिएको सूचनामा ट्याप गर्नुहोस्, भोल्युम 3 पटक छिटो थिच्नुहोस्, वा स्क्रिन बन्द गर्नुहोस् र फेरि अन गर्नुहोस्।</string>
-    <string name="message_resume_manual">पुन: सुरु गर्न, SandFly पज गरिएको सूचनामा ट्याप गर्नुहोस् वा भोल्युम 3 पटक छिटो थिच्नुहोस्।</string>
+    <string name="message_resume_keyguard">फेरि सुरु गर्न “SandFly पज गरिएको छ” सूचनामा ट्याप गर्नुहोस्, भोल्युम घटाउने बटन छिटो 3 पटक थिच्नुहोस् वा लक स्क्रिन देखिने गरी फोन लक गरेर फेरि ब्युँझाउनुहोस्।</string>
+    <string name="message_resume_screen_on">फेरि सुरु गर्न “SandFly पज गरिएको छ” सूचनामा ट्याप गर्नुहोस्, भोल्युम घटाउने बटन छिटो 3 पटक थिच्नुहोस् वा स्क्रिन बन्द गरेर फेरि खोल्नुहोस्।</string>
+    <string name="message_resume_manual">फेरि सुरु गर्न “SandFly पज गरिएको छ” सूचनामा ट्याप गर्नुहोस् वा भोल्युम घटाउने बटन छिटो 3 पटक थिच्नुहोस्।</string>
     <string name="message_resume_key_combo">तपाईं <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> पनि थिच्न सक्नुहुन्छ।</string>
-    <string name="title_pref_resume_backtalk">पुन: सुरु गर्नुहोस् SandFly</string>
-    <string name="value_resume_keyguard">जब लक स्क्रिन देखाउँछ</string>
-    <string name="value_resume_screen_on">जब स्क्रिन अन हुन्छ</string>
+    <string name="title_pref_resume_backtalk">SandFly पुनः सुरु</string>
+    <string name="value_resume_keyguard">लक स्क्रिन देखिँदा</string>
+    <string name="value_resume_screen_on">स्क्रिन अन हुँदा</string>
     <string name="value_resume_manual">सूचना वा सर्टकटबाट मात्र</string>
 </resources>

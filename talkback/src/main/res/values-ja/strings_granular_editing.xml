@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="granular_editing_title">きめ細かな編集</string>
     <string name="granular_editing_split_by">分割方法: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">分割</string>
+    <string name="granular_editing_split_by_title">分割方法</string>
     <string name="granular_editing_characters">文字</string>
     <string name="granular_editing_words">単語</string>
     <string name="granular_editing_sentences">文</string>
@@ -11,39 +11,39 @@
     <string name="granular_editing_space">スペース</string>
     <string name="granular_editing_new_line">改行</string>
     <string name="granular_editing_tab">タブ文字</string>
-    <string name="granular_editing_empty">テキストはありません。 [詳細] の最後にテキストを追加を使用します。</string>
+    <string name="granular_editing_empty">テキストがありません。[その他] の [末尾にテキストを追加] を使用してください。</string>
     <string name="granular_editing_edit">編集</string>
     <string name="granular_editing_insert_before">前に挿入</string>
     <string name="granular_editing_insert_after">後に挿入</string>
     <string name="granular_editing_delete">削除</string>
     <string name="granular_editing_select">選択</string>
-    <string name="granular_editing_unselect">選択を解除します</string>
+    <string name="granular_editing_unselect">選択を解除</string>
     <string name="granular_editing_selected">選択済み</string>
     <string name="granular_editing_save">保存</string>
-    <string name="granular_editing_more">もっと見る</string>
+    <string name="granular_editing_more">その他</string>
     <string name="granular_editing_undo">元に戻す</string>
-    <string name="granular_editing_redo">最後に取り消した編集をやり直す</string>
+    <string name="granular_editing_redo">やり直し</string>
     <string name="granular_editing_find">検索</string>
     <string name="granular_editing_find_next">次を探す</string>
-    <string name="granular_editing_replace">交換する</string>
-    <string name="granular_editing_replace_with">と置き換えます</string>
-    <string name="granular_editing_replace_all">すべて置き換える</string>
-    <string name="granular_editing_add_at_end">最後にテキストを追加する</string>
-    <string name="granular_editing_clear_selection">すべてのテキストの選択を解除します</string>
-    <string name="granular_editing_cut_selected">選択したテキストを切り取ります</string>
+    <string name="granular_editing_replace">置換</string>
+    <string name="granular_editing_replace_with">置換後の文字列</string>
+    <string name="granular_editing_replace_all">すべて置換</string>
+    <string name="granular_editing_add_at_end">末尾にテキストを追加</string>
+    <string name="granular_editing_clear_selection">選択を解除</string>
+    <string name="granular_editing_cut_selected">選択したテキストを切り取り</string>
     <string name="granular_editing_delete_selected">選択したものを削除</string>
-    <string name="granular_editing_copied">コピーされました</string>
-    <string name="granular_editing_deleted">削除されました</string>
+    <string name="granular_editing_copied">コピーしました</string>
+    <string name="granular_editing_deleted">削除しました</string>
     <string name="granular_editing_not_found">見つかりません</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> が交換されました</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> が交換されました</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 件を置換しました</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> 件を置換しました</item>
     </plurals>
     <string name="granular_editing_save_changes">変更を保存しますか?</string>
     <string name="granular_editing_copy_changes">変更されたテキストをコピーしますか?</string>
-    <string name="granular_editing_discard">廃棄する</string>
+    <string name="granular_editing_discard">破棄</string>
     <string name="granular_editing_keep_editing">編集を続ける</string>
-    <string name="granular_editing_not_saved">保存されていません: テキストフィールドが消えています。テキストがコピーされます。</string>
+    <string name="granular_editing_not_saved">保存されませんでした: テキスト フィールドがなくなりました。テキストはコピーされました。</string>
     <string name="granular_editing_no_text">編集するテキストがありません</string>
-    <string name="granular_editing_password">パスワードフィールドでは使用できません</string>
+    <string name="granular_editing_password">パスワード フィールドでは使用できません</string>
 </resources>

@@ -3,26 +3,26 @@
     <string name="title_pref_scripts">ສະຄຣິບ</string>
     <string name="summary_pref_scripts">ປ່ຽນວິທີເຮັດວຽກ SandFly ໃນແອັບ</string>
     <string name="script_import">ນຳເຂົ້າສະຄຣິບ</string>
-    <string name="script_install_label">ຕິດຕັ້ງ SandFly script</string>
+    <string name="script_install_label">ຕິດຕັ້ງສະຄຣິບ SandFly</string>
     <string name="script_import_nothing">ບໍ່ມີໄຟລ໌ສະຄຣິບເພື່ອຕິດຕັ້ງ.</string>
     <string name="script_import_cannot_open">ບໍ່ສາມາດເປີດໄຟລ໌ໄດ້.</string>
-    <string name="script_import_repository">ລິ້ງນີ້ແມ່ນໄປຫາບ່ອນເກັບມ້ຽນທັງໝົດ. ເປີດສະຄຣິບທີ່ທ່ານຕ້ອງການ, ຈາກນັ້ນແບ່ງປັນລິ້ງຂອງມັນ.</string>
-    <string name="script_import_summary">ໄຟລ໌ .lua, ຫຼື .zip ກັບ main.lua</string>
+    <string name="script_import_repository">ລິ້ງນີ້ໄປຫາບ່ອນເກັບທັງໝົດ. ເປີດສະຄຣິບທີ່ຕ້ອງການ, ແລ້ວແບ່ງປັນລິ້ງຂອງມັນ.</string>
+    <string name="script_import_summary">ໄຟລ໌ .lua ຫຼື .zip ທີ່ມີ main.lua</string>
     <string name="scripts_category_app">ສະຄຣິບແອັບ</string>
-    <string name="scripts_category_global">ປລັກອິນທົ່ວໂລກ</string>
+    <string name="scripts_category_global">ປລັກອິນທົ່ວໄປ</string>
     <string name="scripts_none">ບໍ່ມີສະຄຣິບຕິດຕັ້ງ</string>
     <string name="scripts_all_off">ປິດສະຄຣິບທັງໝົດ</string>
-    <string name="scripts_all_off_summary">ສະຄຣິບຖືກຕິດຕັ້ງຢູ່ ແລະຮັກສາສະວິດຂອງຕົນເອງ. ການເປີດ ຫຼືປິດສະຄຣິບທັງໝົດເຮັດແບບດຽວກັນ.</string>
+    <string name="scripts_all_off_summary">ສະຄຣິບຍັງຕິດຕັ້ງຢູ່ ແລະ ຮັກສາສະວິດຂອງມັນເອງ. ທ່າທາງ “ເປີດ ຫຼືປິດສະຄຣິບທັງໝົດ” ເຮັດຄືກັນ.</string>
     <string name="shortcut_toggle_scripts">ເປີດ ຫຼືປິດສະຄຣິບທັງໝົດ</string>
     <string name="scripts_now_off">ສະຄຣິບປິດ</string>
     <string name="scripts_now_on">ສະຄຣິບເປີດຢູ່</string>
     <string name="scripts_unavailable">ສະຄຣິບບໍ່ສາມາດໃຊ້ໄດ້ໃນອຸປະກອນນີ້</string>
-    <string name="script_add_example">ເພີ່ມ script ຕົວຢ່າງ</string>
-    <string name="script_add_example_summary">ເວົ້າຊື່ຂອງແຕ່ລະແອັບທີ່ທ່ານປ່ຽນໄປໃຊ້. script ທີ່ຈະເລີ່ມຕົ້ນຈາກ.</string>
+    <string name="script_add_example">ເພີ່ມສະຄຣິບຕົວຢ່າງ</string>
+    <string name="script_add_example_summary">ເວົ້າຊື່ຂອງແຕ່ລະແອັບທີ່ທ່ານປ່ຽນໄປ. ສະຄຣິບສຳລັບເລີ່ມຕົ້ນ.</string>
     <string name="script_state_on">ເປີດ</string>
     <string name="script_state_off">ປິດ</string>
-    <string name="script_runs_in">ແລ່ນໃນ <xliff:g id="apps">%1$s</xliff:g></string>
-    <string name="script_runs_everywhere">ແລ່ນໃນທຸກແອັບ</string>
+    <string name="script_runs_in">ເຮັດວຽກໃນ <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_everywhere">ເຮັດວຽກໃນທຸກແອັບ</string>
     <string name="script_version">ລຸ້ນ <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">ໂດຍ <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">ຕິດຕັ້ງ <xliff:g id="name">%1$s</xliff:g> ບໍ?</string>
@@ -30,26 +30,26 @@
     <string name="script_install_no_permissions">ບໍ່ຈໍາເປັນຕ້ອງມີການອະນຸຍາດ.</string>
     <string name="script_install_button">ຕິດຕັ້ງ</string>
     <string name="script_update_title">ອັບເດດ <xliff:g id="name">%1$s</xliff:g> ເປັນ <xliff:g id="version">%2$s</xliff:g> ບໍ?</string>
-    <string name="script_update_new_permissions">ການ​ອະ​ນຸ​ຍາດ​ໃຫມ່​:</string>
+    <string name="script_update_new_permissions">ການອະນຸຍາດໃໝ່:</string>
     <string name="script_update_button">ອັບເດດ</string>
-    <string name="script_update_replaces">ນີ້ແທນທີ່ເວີຊັນ <xliff:g id="version">%1$s</xliff:g> ໂດຍ <xliff:g id="author">%2$s</xliff:g>, ແລະຮັກສາຂໍ້ມູນ ແລະການຕັ້ງຄ່າຂອງມັນໄວ້.</string>
-    <string name="script_update_other_author">ອັນໃໝ່ແມ່ນໂດຍ <xliff:g id="author">%1$s</xliff:g>, ຜູ້ຂຽນອື່ນ. ອັບເດດພຽງແຕ່ຖ້າທ່ານເຊື່ອມັນ.</string>
-    <string name="script_installed"><xliff:g id="name">%1$s</xliff:g>ຕິດຕັ້ງ</string>
+    <string name="script_update_replaces">ອັນນີ້ຈະແທນທີ່ເວີຊັນ <xliff:g id="version">%1$s</xliff:g> ຂອງ <xliff:g id="author">%2$s</xliff:g> ແລະ ຮັກສາຂໍ້ມູນ ແລະ ການຕັ້ງຄ່າຂອງມັນໄວ້.</string>
+    <string name="script_update_other_author">ອັນໃໝ່ສ້າງໂດຍ <xliff:g id="author">%1$s</xliff:g>, ເຊິ່ງເປັນຜູ້ສ້າງຄົນອື່ນ. ອັບເດດສະເພາະເມື່ອທ່ານເຊື່ອຖືມັນເທົ່ານັ້ນ.</string>
+    <string name="script_installed">ຕິດຕັ້ງ <xliff:g id="name">%1$s</xliff:g> ແລ້ວ</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> ອັບເດດເປັນ <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">ການນຳເຂົ້າລົ້ມເຫລວ. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. ອະນຸຍາດສະເພາະສະຄຣິບທີ່ເຊື່ອຖືໄດ້ເທົ່ານັ້ນ.</string>
     <string name="script_permission_screen">ອ່ານຫນ້າຈໍ</string>
     <string name="script_permission_actions">ຄລິກ, ເລື່ອນ, ພິມ ແລະຍ້າຍໂຟກັສ</string>
-    <string name="script_permission_speech">ຟັງ ແລະປ່ຽນຄຳເວົ້າຂອງ SandFly</string>
+    <string name="script_permission_speech">ຮັບ ແລະ ປ່ຽນການເວົ້າຂອງ SandFly</string>
     <string name="script_permission_passwords">ອ່ານຊ່ອງໃສ່ລະຫັດຜ່ານ</string>
     <string name="script_permission_input">ເພີ່ມທ່າທາງ, ປຸ່ມ, ລາຍການເມນູ ແລະການຄວບຄຸມການອ່ານ</string>
     <string name="script_permission_network">ໃຊ້ອິນເຕີເນັດ</string>
-    <string name="script_permission_clipboard">ອ່ານ​ແລະ​ປ່ຽນ clipboard ໄດ້​</string>
-    <string name="script_permission_system">ກັບຄືນ ຫຼືເຮືອນ, ເປີດການແຈ້ງເຕືອນ ແລະແອັບ</string>
-    <string name="script_permission_notifications">ອ່ານ ແລະປ່ຽນການແຈ້ງເຕືອນສຽງເວົ້າ</string>
+    <string name="script_permission_clipboard">ອ່ານ ແລະ ປ່ຽນຄລິບບອດ</string>
+    <string name="script_permission_system">ກັບຄືນ ຫຼື ໄປໜ້າຫຼັກ, ເປີດການແຈ້ງເຕືອນ ແລະ ແອັບ</string>
+    <string name="script_permission_notifications">ອ່ານ ແລະ ປ່ຽນການແຈ້ງເຕືອນທີ່ອ່ານອອກສຽງ</string>
     <string name="script_permission_events">ເບິ່ງການເຄື່ອນໄຫວທັງໝົດໃນທຸກໆແອັບ, ລວມທັງການພິມ</string>
-    <string name="script_permission_dialogs">ສະແດງກ່ອງໂຕ້ຕອບຜ່ານແອັບຯໃດກໍໄດ້</string>
-    <string name="script_permission_java">ແລ່ນລະຫັດ Java ດ້ວຍການເຂົ້າເຖິງທັງໝົດຂອງ SandFly, ໃນທຸກແອັບ</string>
+    <string name="script_permission_dialogs">ສະແດງກ່ອງໂຕ້ຕອບເທິງແອັບໃດກໍໄດ້</string>
+    <string name="script_permission_java">ແລ່ນລະຫັດ Java ດ້ວຍສິດເຂົ້າເຖິງທັງໝົດຂອງ SandFly ໃນທຸກແອັບ</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ເປີດ</string>
     <string name="script_permissions_title">ການອະນຸຍາດ</string>
@@ -57,70 +57,70 @@
     <string name="script_settings_category">ການຕັ້ງຄ່າ</string>
     <string name="script_list_filter">ການກັ່ນຕອງ</string>
     <string name="script_button_off">ເປີດສະຄຣິບກ່ອນ</string>
-    <string name="script_permissions_summary">ການປິດອັນໜຶ່ງຈະຢຸດພາກສ່ວນທີ່ຕ້ອງການ.</string>
+    <string name="script_permissions_summary">ການປິດການອະນຸຍາດຈະຢຸດສ່ວນທີ່ຕ້ອງການມັນ.</string>
     <string name="script_install_permissions_note">ທ່ານສາມາດປິດສິ່ງເຫຼົ່ານີ້ໄດ້ໃນພາຍຫຼັງ.</string>
-    <string name="script_manage_category">ຈັດການ</string>
-    <string name="script_move_up">ດໍາເນີນການກ່ອນຫນ້ານັ້ນ</string>
-    <string name="script_move_down">ດໍາເນີນການຕໍ່ມາ</string>
-    <string name="script_order_summary">ຄໍາສັ່ງສໍາລັບສະຄິບທີ່ປ່ຽນຄໍາເວົ້າດຽວກັນ. ສະຄຣິບແອັບເຮັດວຽກກ່ອນ.</string>
+    <string name="script_manage_category">ການຈັດການ</string>
+    <string name="script_move_up">ດຳເນີນການກ່ອນ</string>
+    <string name="script_move_down">ດຳເນີນການພາຍຫຼັງ</string>
+    <string name="script_order_summary">ລຳດັບຂອງສະຄຣິບທີ່ປ່ຽນສຽງເວົ້າດຽວກັນ. ສະຄຣິບແອັບເຮັດວຽກກ່ອນ.</string>
     <string name="script_log">ບັນທຶກ</string>
-    <string name="script_log_summary">ຜົນຜະລິດ ແລະຄວາມຜິດພາດຕັ້ງແຕ່ SandFly ເລີ່ມຕົ້ນ</string>
+    <string name="script_log_summary">ຜົນອອກ ແລະ ຂໍ້ຜິດພາດນັບຕັ້ງແຕ່ SandFly ເລີ່ມ</string>
     <string name="script_clear_storage">ລຶບຂໍ້ມູນທີ່ເກັບໄວ້</string>
     <string name="script_storage_cleared">ຂໍ້ມູນທີ່ເກັບໄວ້ຖືກລຶບລ້າງ</string>
     <string name="script_remove">ເອົາອອກ</string>
     <string name="script_remove_title">ລຶບ <xliff:g id="name">%1$s</xliff:g> ອອກບໍ?</string>
     <string name="script_remove_message">ລຶບລະຫັດ, ຂໍ້ມູນ ແລະການຕັ້ງຄ່າຂອງມັນ.</string>
-    <string name="script_removed"><xliff:g id="name">%1$s</xliff:g>ເອົາອອກ</string>
+    <string name="script_removed">ເອົາ <xliff:g id="name">%1$s</xliff:g> ອອກແລ້ວ</string>
     <string name="script_log_empty">ບັນທຶກຫວ່າງເປົ່າ</string>
     <string name="script_log_clear">ລຶບບັນທຶກ</string>
     <string name="script_log_copy">ສຳເນົາບັນທຶກ</string>
     <string name="script_log_copied">ສຳເນົາບັນທຶກແລ້ວ</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">ຕ້ອງການ script API <xliff:g id="needed">%1$d</xliff:g> ຫຼືຫຼັງຈາກນັ້ນ. ນີ້ SandFly ມີ <xliff:g id="current">%2$d</xliff:g>, ດັ່ງນັ້ນບາງສ່ວນອາດຈະບໍ່ເຮັດວຽກ.</string>
-    <string name="script_api_untested">ທົດສອບເຖິງ script API <xliff:g id="tested">%1$d</xliff:g>. ນີ້ SandFly ມີ <xliff:g id="current">%2$d</xliff:g>, ສະນັ້ນມັນອາດຈະບໍ່ເຮັດວຽກຕາມທີ່ຄາດໄວ້.</string>
-    <string name="script_state_incompatible">ອາດຈະໃຊ້ບໍ່ໄດ້ກັບສິ່ງນີ້SandFly</string>
-    <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> ຫາ <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_too_old">ຕ້ອງໃຊ້ API ສະຄຣິບ <xliff:g id="needed">%1$d</xliff:g> ຫຼືໃໝ່ກວ່າ. SandFly ນີ້ມີ <xliff:g id="current">%2$d</xliff:g>, ດັ່ງນັ້ນບາງສ່ວນອາດຈະບໍ່ເຮັດວຽກ.</string>
+    <string name="script_api_untested">ທົດສອບເຖິງ API ສະຄຣິບ <xliff:g id="tested">%1$d</xliff:g>. SandFly ນີ້ມີ <xliff:g id="current">%2$d</xliff:g>, ດັ່ງນັ້ນມັນອາດຈະບໍ່ເຮັດວຽກຕາມທີ່ຄາດໄວ້.</string>
+    <string name="script_state_incompatible">ອາດໃຊ້ບໍ່ໄດ້ກັບ SandFly ເວີຊັນນີ້</string>
+    <string name="script_api_range">API ສະຄຣິບ <xliff:g id="min">%1$d</xliff:g> ຫາ <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">ຄວາມເຂົ້າກັນໄດ້</string>
-    <string name="script_install_anyway">ຕິດຕັ້ງແນວໃດ</string>
-    <string name="script_update_anyway">ແນວໃດກໍ່ອັບເດດ</string>
+    <string name="script_install_anyway">ຕິດຕັ້ງຕໍ່</string>
+    <string name="script_update_anyway">ອັບເດດຢູ່ດີ</string>
     <string name="script_homepage">ເປີດຫນ້າທໍາອິດ</string>
     <string name="script_homepage_confirm_title">ເປີດທີ່ຢູ່ນີ້ບໍ?</string>
     <string name="script_homepage_open">ເປີດ</string>
-    <string name="script_homepage_failed">ບໍ່ມີແອັບໃດສາມາດເປີດໄດ້ <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g>ປິດຫຼັງຈາກເກີດຄວາມຜິດພາດຊ້ຳໆ. ເບິ່ງບັນທຶກຂອງມັນຢູ່ໃນ Scripts.</string>
-    <string name="shortcut_inspect_item">ກວດກາລາຍການທີ່ສຸມໃສ່</string>
-    <string name="script_inspect_no_item">ບໍ່ມີລາຍການໃດທີ່ມີຈຸດສຸມ</string>
+    <string name="script_homepage_failed">ບໍ່ມີແອັບໃດທີ່ເປີດ <xliff:g id="address">%1$s</xliff:g> ໄດ້</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ຖືກປິດຫຼັງຈາກເກີດຂໍ້ຜິດພາດຊ້ຳໆ. ເບິ່ງບັນທຶກຂອງມັນໃນ “ສະຄຣິບ”.</string>
+    <string name="shortcut_inspect_item">ກວດກາລາຍການທີ່ໂຟກັສ</string>
+    <string name="script_inspect_no_item">ບໍ່ມີລາຍການທີ່ຖືກໂຟກັສ</string>
     <string name="script_inspect_copied">ສຳເນົາແລ້ວ. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ບໍ່ມີ id, ດັ່ງນັ້ນກົດລະບຽບບໍ່ສາມາດຕັ້ງຊື່ມັນໄດ້. ສຳເນົາແລ້ວ. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">ສຳເນົາຕົ້ນໄມ້ໜ້າຈໍ</string>
+    <string name="script_inspect_no_id">ບໍ່ມີ id, ສະນັ້ນກົດບໍ່ສາມາດອ້າງອີງມັນໄດ້. ສຳເນົາແລ້ວ. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="shortcut_copy_screen_tree">ສຳເນົາໂຄງສ້າງໜ້າຈໍ</string>
     <string name="script_tree_copied">ສຳເນົາລາຍການ <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">ບໍ່ມີປ່ອງຢ້ຽມໃຫ້ສຳເນົາ</string>
-    <string name="script_tree_clip_label">ຕົ້ນໄມ້ຫນ້າຈໍ</string>
+    <string name="script_tree_clip_label">ໂຄງສ້າງໜ້າຈໍ</string>
     <string name="summary_copy_screen_tree_menu">ສຳເນົາລາຍການທັງໝົດໃນໜ້າຈໍເປັນ JSON, ເພື່ອຂຽນສະຄຣິບ</string>
     <string name="script_inspect_clip_label">ລາຍ​ລະ​ອຽດ​ລາຍ​ການ​</string>
-    <string name="summary_inspect_item_menu">ເວົ້າແລະຄັດລອກລາຍລະອຽດຂອງລາຍການທີ່ທ່ານຢູ່, ສໍາລັບການຂຽນສະຄິບ</string>
-    <string name="script_keys_backtalk_modifier">SandFlyຕົວແກ້ໄຂ</string>
-    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ຈາກນັ້ນ<xliff:g id="second">%2$s</xliff:g></string>
+    <string name="summary_inspect_item_menu">ອ່ານ ແລະ ສຳເນົາລາຍລະອຽດຂອງລາຍການທີ່ໂຟກັສຫຼ້າສຸດ ເພື່ອຂຽນສະຄຣິບ</string>
+    <string name="script_keys_backtalk_modifier">ປຸ່ມປັບແຕ່ງ SandFly</string>
+    <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ຈາກນັ້ນ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ຄໍາສັ່ງ</string>
-    <string name="script_commands_summary">ທ່າທາງ ແລະກະແຈຂອງສະຄຣິບທີ່ໃຊ້ຢູ່ກ່ອນໜ້າ SandFly. ປິດອັນໜຶ່ງເພື່ອຮັກສາໄວ້ SandFly.</string>
+    <string name="script_commands_summary">ທ່າທາງ ແລະ ປຸ່ມຂອງສະຄຣິບທີ່ກຳລັງເຮັດວຽກມີສິດກ່ອນຂອງ SandFly. ປິດອັນຂອງສະຄຣິບເພື່ອໃຊ້ອັນຂອງ SandFly.</string>
     <string name="script_binding_gesture">ທ່າທາງ: <xliff:g id="gesture">%1$s</xliff:g></string>
-    <string name="script_binding_keys">ກະແຈ: <xliff:g id="keys">%1$s</xliff:g></string>
-    <string name="script_binding_menu">SandFly ເມນູ</string>
+    <string name="script_binding_keys">ປຸ່ມ: <xliff:g id="keys">%1$s</xliff:g></string>
+    <string name="script_binding_menu">ເມນູ SandFly</string>
     <string name="script_binding_control">ຕົວຄວບຄຸມການອ່ານ</string>
     <string name="script_binding_none">ບໍ່ມີ</string>
     <string name="script_binding_turn_on">ເປີດ</string>
     <string name="script_binding_turn_off">ປິດ</string>
     <string name="script_binding_restore">ຟື້ນຟູຄ່າເລີ່ມຕົ້ນ</string>
-    <string name="script_binding_restored">ຟື້ນຟູຄ່າເລີ່ມຕົ້ນ</string>
-    <string name="script_binding_perform">ປະຕິບັດ gesture ຫຼືກະແຈ</string>
-    <string name="script_binding_perform_summary">ກຳນົດທ່າທາງຕໍ່ໄປ, ຫຼືກົດປຸ່ມທີ່ກົດດ້ວຍຕົວປັບປ່ຽນ SandFly</string>
+    <string name="script_binding_restored">ຟື້ນຟູຄ່າເລີ່ມຕົ້ນແລ້ວ</string>
+    <string name="script_binding_perform">ເຮັດທ່າທາງ ຫຼື ກົດປຸ່ມ</string>
+    <string name="script_binding_perform_summary">ກຳນົດທ່າທາງຕໍ່ໄປ ຫຼືປຸ່ມທີ່ກົດພ້ອມກັບປຸ່ມປັບແຕ່ງ SandFly</string>
     <string name="script_binding_perform_message">ເຮັດທ່າທາງ ຫຼືກົດປຸ່ມ.</string>
     <string name="script_binding_assign_title">ກຳນົດ <xliff:g id="binding">%1$s</xliff:g> ໃຫ້ <xliff:g id="command">%2$s</xliff:g> ບໍ?</string>
     <string name="script_binding_assign">ມອບໝາຍ</string>
     <string name="script_binding_choose_gesture">ເລືອກທ່າທາງ</string>
-    <string name="script_binding_type_keys">ພິມລະຫັດ</string>
-    <string name="script_binding_type_keys_summary">ມັກ sf+shift+n, ຫຼື sf+t, s</string>
-    <string name="script_binding_bad_keys">ບໍ່ສາມາດໃຊ້ກະແຈເຫຼົ່ານີ້ໄດ້. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_type_keys">ພິມປຸ່ມ</string>
+    <string name="script_binding_type_keys_summary">ເຊັ່ນ sf+shift+n ຫຼື sf+t, s</string>
+    <string name="script_binding_bad_keys">ບໍ່ສາມາດໃຊ້ປຸ່ມເຫຼົ່ານີ້ໄດ້. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">ມັນເພີ່ມ:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">ແຫຼ່ງສະຄຣິບ</string>
@@ -137,17 +137,17 @@
     <string name="script_source_downloading">ກຳລັງດາວໂຫຼດ <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">ລຶບແຫຼ່ງ</string>
     <string name="script_source_remove_title">ລຶບ <xliff:g id="name">%1$s</xliff:g> ອອກບໍ?</string>
-    <string name="script_source_remove_message">ສະຄຣິບທີ່ຕິດຕັ້ງຈາກມັນຄົງຖືກຕິດຕັ້ງ.</string>
+    <string name="script_source_remove_message">ສະຄຣິບທີ່ຕິດຕັ້ງຈາກແຫຼ່ງນີ້ຈະຍັງຄົງຕິດຕັ້ງຢູ່.</string>
     <string name="scripts_auto_update">ອັບເດດສະຄຣິບອັດຕະໂນມັດ</string>
     <string name="scripts_check_updates">ກວດສອບການອັບເດດ</string>
-    <string name="scripts_checking_updates">ກຳລັງກວດສອບການອັບເດດ...</string>
+    <string name="scripts_checking_updates">ກຳລັງກວດສອບການອັບເດດ…</string>
     <string name="scripts_updates_category">ອັບເດດ</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
-        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ອັບເດດສະຄຣິບ: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
-        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ອັບເດດສະຄຣິບ: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="one">ອັບເດດສະຄຣິບແລ້ວ <xliff:g id="count" example="1">%1$d</xliff:g> ລາຍການ: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other">ອັບເດດສະຄຣິບແລ້ວ <xliff:g id="count" example="2">%1$d</xliff:g> ລາຍການ: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">ການປັບປຸງແມ່ນລະບຸໄວ້ພາຍໃຕ້ການປັບປຸງ</string>
+    <string name="scripts_updates_to_approve">ອັບເດດຖືກສະແດງຢູ່ໃນ “ອັບເດດ”</string>
     <string name="scripts_update_check_failed">ບາງແຫຼ່ງບໍ່ສາມາດກວດສອບໄດ້</string>
     <string name="scripts_up_to_date">ສະຄຣິບທັງໝົດແມ່ນອັບເດດແລ້ວ</string>
 </resources>

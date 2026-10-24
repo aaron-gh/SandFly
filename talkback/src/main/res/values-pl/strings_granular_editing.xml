@@ -11,9 +11,9 @@
     <string name="granular_editing_space">Spacja</string>
     <string name="granular_editing_new_line">Nowy wiersz</string>
     <string name="granular_editing_tab">Znak tabulatora</string>
-    <string name="granular_editing_empty">Brak tekstu. Użyj opcji Dodaj tekst na końcu w obszarze Więcej.</string>
+    <string name="granular_editing_empty">Brak tekstu. Użyj opcji „Dodaj tekst na końcu” w menu „Więcej”.</string>
     <string name="granular_editing_edit">Edytuj</string>
-    <string name="granular_editing_insert_before">Wstaw wcześniej</string>
+    <string name="granular_editing_insert_before">Wstaw przed</string>
     <string name="granular_editing_insert_after">Wstaw po</string>
     <string name="granular_editing_delete">Usuń</string>
     <string name="granular_editing_select">Zaznacz</string>
@@ -22,12 +22,12 @@
     <string name="granular_editing_save">Zapisz</string>
     <string name="granular_editing_more">Więcej</string>
     <string name="granular_editing_undo">Cofnij</string>
-    <string name="granular_editing_redo">Powtórz ostatnią cofniętą edycję</string>
+    <string name="granular_editing_redo">Ponów</string>
     <string name="granular_editing_find">Znajdź</string>
     <string name="granular_editing_find_next">Znajdź następny</string>
-    <string name="granular_editing_replace">Wymień</string>
+    <string name="granular_editing_replace">Zamień</string>
     <string name="granular_editing_replace_with">Zamień na</string>
-    <string name="granular_editing_replace_all">Wymień wszystkie</string>
+    <string name="granular_editing_replace_all">Zamień wszystkie</string>
     <string name="granular_editing_add_at_end">Dodaj tekst na końcu</string>
     <string name="granular_editing_clear_selection">Odznacz cały tekst</string>
     <string name="granular_editing_cut_selected">Wytnij zaznaczony tekst</string>
@@ -36,14 +36,14 @@
     <string name="granular_editing_deleted">Usunięto</string>
     <string name="granular_editing_not_found">Nie znaleziono</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> zastąpiony</item>
-        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> zastąpione</item>
-        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> zastąpionych</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> zastąpione</item>
+        <item quantity="one">Zastąpiono: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="few">Zastąpiono: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="many">Zastąpiono: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Zastąpiono: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Zapisać zmiany?</string>
     <string name="granular_editing_copy_changes">Skopiować zmieniony tekst?</string>
-    <string name="granular_editing_discard">Wyrzucać</string>
+    <string name="granular_editing_discard">Odrzuć</string>
     <string name="granular_editing_keep_editing">Edytuj dalej</string>
     <string name="granular_editing_not_saved">Niezapisano: pole tekstowe zniknęło. Tekst został skopiowany.</string>
     <string name="granular_editing_no_text">Brak tekstu do edycji</string>

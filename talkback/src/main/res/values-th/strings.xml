@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">ปลดล็อกอุปกรณ์แล้ว</string>
   <string name="title_pref_speech_volume">ระดับเสียงพูด</string>
   <string name="title_pref_verbose_scroll_announcement">พูดจำนวนรายการในลิสต์เสมอ</string>
-  <string name="summary_pref_verbose_scroll_announcement">บอกว่ารายการใดที่แสดงหลังจากการเลื่อนทุกครั้ง</string>
+  <string name="summary_pref_verbose_scroll_announcement">บอกว่ารายการใดแสดงอยู่หลังการเลื่อนแต่ละครั้ง</string>
   <string name="title_pref_cover_proximity_sensor">ปิดพร็อกซิมิตีเซ็นเซอร์เพื่อหยุดเสียงพูด</string>
   <string name="title_pref_phonetic_letters">พูดตัวอักษรพร้อมตัวอย่าง</string>
   <string name="summary_pref_phonetic_letters">เมื่อเลือกปุ่มบนแป้นพิมพ์หรือไปตามอักขระทีละตัว คุณจะได้ยินตัวอย่างพร้อมทั้งตัวอักษรแต่ละตัว เช่น \"h, hotel\"</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">เปลี่ยนระดับเสียงสูงต่ำ</string>
   <string name="capital_letters_sound_feedback">เปิดเสียง</string>
   <string name="title_pref_a11y_hints">พูดคำแนะนำการใช้งาน</string>
-  <string name="summary_pref_a11y_hints">หลังจากอธิบายรายการแล้ว ให้พูดวิธีใช้งาน</string>
+  <string name="summary_pref_a11y_hints">หลังจากอธิบายรายการแล้ว จะบอกวิธีใช้งาน</string>
   <string name="pref_speak_container_element_positions_title">อ่านข้อมูลคอนเทนเนอร์</string>
   <string name="pref_speak_time_title">พูดบอกเวลา</string>
   <string name="pref_speak_time_summary">เมื่อคุณเปิดหน้าจอ</string>
-  <string name="summary_speak_container_element_positions">พูดเมื่อคุณเข้าหรือออกจากรายการ ตาราง และคอนเทนเนอร์อื่นๆ</string>
+  <string name="summary_speak_container_element_positions">บอกเมื่อคุณเข้าหรือออกจากรายการ ตาราง และคอนเทนเนอร์อื่นๆ</string>
   <string name="reset_letency_reduction_settings_dialog_title">รีเซ็ตการตั้งค่าความล่าช้าไหม</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">การดำเนินการนี้จะรีเซ็ตการตั้งค่าความล่าช้าทั้งหมดเป็นค่าเริ่มต้น</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">รีเซ็ต</string>
@@ -62,7 +62,7 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">รีเซ็ต</string>
   <string name="gestures_announce_reset_gesture_settings">รีเซ็ตการตั้งค่าท่าทางสัมผัสแล้ว</string>
   <string name="pref_speak_roles_title">พูดประเภทองค์ประกอบ</string>
-  <string name="pref_speak_roles_summary">ปุ่มถูกใจหรือช่องทำเครื่องหมาย</string>
+  <string name="pref_speak_roles_summary">เช่น ปุ่มหรือช่องทำเครื่องหมาย</string>
   <string name="title_pref_speak_element_ids">พูดรหัสองค์ประกอบ</string>
   <string name="summary_pref_speak_element_ids">พูด ID ของปุ่มที่ไม่มีป้ายกำกับ</string>
   <string name="pref_allow_frequent_content_change_announcement_title">พูดข้อมูลอัปเดตความคืบหน้าทั้งหมด</string>
@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">สัญลักษณ์แสดงโฟกัส</string>
   <string name="title_pref_category_manage_gestures">ท่าทางสัมผัส</string>
   <string name="title_pref_manage_labels">ป้ายกำกับที่กำหนดเอง</string>
-  <string name="title_pref_category_context_menu">SandFly เมนู</string>
+  <string name="title_pref_category_context_menu">เมนู SandFly</string>
   <string name="title_pref_category_selector_menu">การควบคุมการอ่าน</string>
   <string name="title_pref_category_navigation_menu">แก้ไขตัวเลือกการนําทาง</string>
   <string name="title_pref_manage_keyboard_shortcuts">แป้นพิมพ์ลัด</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">ความช่วยเหลือ</string>
   <string name="title_pref_advanced_settings">การตั้งค่าขั้นสูง</string>
   <string name="title_pref_show_exit_watermark">แสดงวิธีการปิด SandFly</string>
-  <string name="summary_pref_show_exit_watermark">เมื่อ SandFly เปิด แสดงวิธีปิด</string>
+  <string name="summary_pref_show_exit_watermark">เมื่อ SandFly เปิด จะแสดงวิธีปิด</string>
   <string name="talkback_exit_watermark_text">SandFly เปิดอยู่ ใช้ 2 นิ้วกดหน้าจอค้างไว้ 5 วินาทีเพื่อปิด หากต้องการหยุดแสดงข้อความนี้ ให้ใช้ 3 นิ้วแตะเพื่อเปิดเมนู SandFly</string>
   <string name="talkback_exit_watermark_hint_text">แสดงแบนเนอร์ที่ระบุว่า SandFly เปิดอยู่ หากต้องการปิด SandFly ให้ใช้ 2 นิ้วแตะหน้าจอค้างไว้ 5 วินาที หากต้องการนำแบนเนอร์นี้ออก ให้ไปที่การตั้งค่า SandFly</string>
   <string name="reset_gesture_settings_title">รีเซ็ตการตั้งค่าท่าทางสัมผัส</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">ปุ่มที่ใช้ร่วมกันนี้ใช้สำหรับการทำงาน \"%1$s\" คุณต้องการล้างและกำหนดทางลัดนี้ให้กับ \"%2$s\" ไหม</string>
   <string name="title_pref_intonation">ใช้การเปลี่ยนแปลงระดับเสียงสูงต่ำ</string>
   <string name="title_pref_keyboard_echo">เสียงสะท้อนของแป้นพิมพ์</string>
-  <string name="pref_node_desc_order_title">รายละเอียดการเรียงลำดับรายการ</string>
+  <string name="pref_node_desc_order_title">ลำดับรายละเอียดรายการ</string>
   <string name="pref_time_feedback_format_title">รูปแบบเวลา</string>
   <string name="title_pref_latency_reduction">ลดความล่าช้า</string>
   <string name="talkback_latency_reduction_summary">ทำให้ SandFly ตอบสนองเร็วขึ้นหลังจากที่คุณสัมผัสหน้าจอ</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">ปิดและเปิด SandFly ขึ้นมาใหม่เพื่อเปิดใช้การตั้งค่า</string>
   <string name="title_pref_auto_image_captioning">คำอธิบายอัตโนมัติ</string>
   <string name="title_pref_gemini_settings">การตั้งค่า Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini คำสั่งเสียง</string>
+  <string name="title_pref_gemini_enabled">คำสั่งเสียง Gemini</string>
   <string name="title_pref_category_automatic_description_summary">ดูคำอธิบายรูปภาพ AI โดยละเอียดเมื่อเลือก \\"อธิบายรูปภาพ\\" จากเมนู SandFly\n\nรวมถึงยังดูคำอธิบายอัตโนมัติเมื่อโฟกัสที่รูปภาพหรือไอคอนหนึ่งๆ ได้ด้วย คำอธิบายอัตโนมัติสามารถทำงานได้โดยไม่ต้องเชื่อมต่ออินเทอร์เน็ต</string>
   <string name="title_pref_icon_detection">คำอธิบายไอคอนอัตโนมัติ</string>
   <string name="title_pref_image_description">คำอธิบายรูปภาพอัตโนมัติ</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">นำทางขึ้น</string>
   <string name="training_tip">เคล็ดลับ</string>
   <string name="tv_training_overview_step_title">วิธีการทำงานของ SandFly</string>
-  <string name="tv_training_overview_step_summary">SandFly เป็นตัวอ่านหน้าจอที่อิงจาก Google\'s TalkBack โดยจะอ่านออกเสียงข้อความบนหน้าจอและให้เสียงตอบรับเพื่อให้คุณใช้อุปกรณ์ได้โดยไม่ต้องมองหน้าจอ\n\nเมื่อเปิด SandFly ระบบจะพูดออกเสียงรายการที่เลือกบนหน้าจอ บางครั้งอาจมีข้อมูลเพิ่มเติมหรือบริบทเพิ่ม\n\nกดเลือกเพื่อดำเนินการต่อ ปุ่มเลือกจะอยู่ที่กึ่งกลางของแผงบังคับทิศทาง ซึ่งเป็นปุ่มวงกลมขนาดใหญ่ที่ด้านบนของรีโมท</string>
+  <string name="tv_training_overview_step_summary">SandFly เป็นโปรแกรมอ่านหน้าจอที่พัฒนาจาก TalkBack ของ Google โดยจะอ่านออกเสียงข้อความบนหน้าจอและให้เสียงตอบสนอง เพื่อให้คุณใช้อุปกรณ์ได้โดยไม่ต้องมองหน้าจอ\n\nเมื่อเปิด SandFly รายการที่เลือกบนหน้าจอจะถูกอ่านออกเสียง บางครั้งมีข้อมูลหรือบริบทเพิ่มเติม\n\nกด เลือก เพื่อดำเนินการต่อ ปุ่มเลือกอยู่ตรงกลางปุ่มบังคับทิศทาง ซึ่งเป็นปุ่มวงกลมขนาดใหญ่ที่ด้านบนของรีโมท</string>
   <string name="tv_training_remote_step_title">การใช้รีโมต</string>
   <string name="tv_training_remote_step_summary">เลื่อนไปมาบนหน้าจอโดยใช้ปุ่มบังคับทิศทางรูปทรงกลมที่ด้านบนของรีโมต หากต้องการเลือก ให้กดตรงกลางของปุ่มบังคับทิศทางที่ด้านบนของรีโมต\n\nในแถวที่ 2 ทางด้านซ้ายจะมีปุ่มย้อนกลับ ส่วนทางด้านขวามีปุ่ม Assistant แบบเสียง\n\nในแถวที่ 3 ทางด้านซ้ายจะมีปุ่มหน้าแรก ทางด้านขวาเป็นปุ่มปิดเสียง\n\nในแถวที่ 4 ทางด้านซ้ายจะมีทางลัด YouTube ทางด้านขวาเป็นทางลัด Netflix\n\nที่แถวล่างจะมีปุ่มเล็กๆ 2 ปุ่ม โดยปุ่มทางซ้ายเป็นปุ่มเปิด/ปิด ทางขวาจะเปิดเมนูอินพุตของทีวี\n\nส่วนปุ่มปรับระดับเสียงอยู่ที่ด้านขวาของรีโมต\n\nกด \"เลือก\" เพื่อดำเนินการต่อ</string>
   <string name="tv_training_shortcut_step_title">ทางลัด SandFly</string>
@@ -983,8 +983,8 @@
   <string name="typing_text_with_braille_keyboard_text">คุณพิมพ์โดยใช้แป้นพิมพ์อักษรเบรลล์ได้ด้วย ซึ่งจะค้นหาแป้นพิมพ์นี้ได้ในการตั้งค่า SandFly</string>
   <string name="other_ways_to_type_title">วิธีอื่นๆ ในการพิมพ์</string>
   <string name="other_ways_to_type_text">SandFly มีวิธีอื่นๆ ในการพิมพ์ เช่น คุณแตะสองครั้งเพื่อป้อนตัวอักษรได้</string>
-  <string name="basic_other_ways_to_type_text">มีวิธีอื่นๆ ในการพิมพ์ SandFly ตัวอย่างเช่น คุณสามารถใช้แตะสองครั้งเพื่อป้อนตัวอักษร คุณสามารถเปลี่ยนได้ในภายหลังในการตั้งค่า SandFly &gt; แป้นพิมพ์บนหน้าจอ &gt; วิธีการพิมพ์</string>
-  <string name="basic_other_ways_to_type_text_tts">มีวิธีอื่นๆ ในการพิมพ์ SandFly ตัวอย่างเช่น คุณสามารถใช้แตะสองครั้งเพื่อป้อนตัวอักษร คุณสามารถเปลี่ยนได้ในภายหลังในการตั้งค่า SandFly จากนั้นเลือกแป้นพิมพ์บนหน้าจอ ตามด้วยวิธีพิมพ์</string>
+  <string name="basic_other_ways_to_type_text">มีวิธีอื่นๆ ในการพิมพ์ใน SandFly เช่น คุณสามารถแตะสองครั้งเพื่อป้อนตัวอักษร คุณเปลี่ยนการตั้งค่านี้ได้ภายหลังใน การตั้งค่า SandFly &gt; แป้นพิมพ์บนหน้าจอ &gt; วิธีการพิมพ์</string>
+  <string name="basic_other_ways_to_type_text_tts">มีวิธีอื่นๆ ในการพิมพ์ใน SandFly เช่น คุณสามารถแตะสองครั้งเพื่อป้อนตัวอักษร คุณเปลี่ยนการตั้งค่านี้ได้ภายหลังใน การตั้งค่า SandFly จากนั้น แป้นพิมพ์บนหน้าจอ จากนั้น วิธีการพิมพ์</string>
   <string name="change_typing_preference_text">เปลี่ยนค่ากำหนดการพิมพ์</string>
   <string name="moving_cursor_title">การย้ายเคอร์เซอร์</string>
   <string name="moving_cursor_text">เมื่อเปิดใช้งานกล่องข้อความแล้ว คุณจะย้ายเคอร์เซอร์ไปมาระหว่างตัวอักษรได้โดยปัดขึ้นหรือลง\n\nลองทำในกล่องข้อความด้านล่าง</string>
@@ -1301,11 +1301,11 @@
     <string name="title_pref_system_tts_settings">การตั้งค่าข้อความเป็นคำพูดของระบบ</string>
     <string name="title_selector_vertical_navigation">การนำทางแนวตั้ง</string>
     <string name="summary_selector_vertical_navigation">ย้ายไปยังรายการด้านล่างหรือด้านบน ผ่านรายการอื่นๆ ของแถว</string>
-    <string name="title_selector_switch_tts_engine">เครื่องมือพูด</string>
+    <string name="title_selector_switch_tts_engine">โปรแกรมสังเคราะห์เสียง</string>
     <string name="summary_selector_switch_tts_engine">สลับระหว่างเครื่องมือเสียงพูดที่ติดตั้งไว้</string>
     <string name="title_selector_voice_profile">โปรไฟล์เสียง</string>
     <string name="title_pref_voice_profiles">โปรไฟล์เสียง</string>
-    <string name="voice_profile_default">SandFly ค่าเริ่มต้น</string>
+    <string name="voice_profile_default">ค่าเริ่มต้นของ SandFly</string>
     <string name="voice_profile_in_use">ใช้งานอยู่: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">ภาษาพูดไม่พร้อมใช้งานในขณะที่ใช้โปรไฟล์เสียง</string>
     <string name="speech_engine_unavailable_with_profile">โปรแกรมคำพูดไม่พร้อมใช้งานในขณะที่ใช้โปรไฟล์เสียง</string>
@@ -1317,7 +1317,7 @@
     <string name="title_pref_voice_profile_in_use">โปรไฟล์เสียงที่ใช้งานอยู่</string>
     <string name="title_pref_add_voice_profile">เพิ่มโปรไฟล์เสียง</string>
     <string name="voice_profile_new_name">โปรไฟล์เสียง <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">โปรไฟล์เสียงถูกเรียกแล้ว <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">มีโปรไฟล์เสียงชื่อ <xliff:g id="name" example="Reading">%1$s</xliff:g> อยู่แล้ว</string>
     <string name="title_pref_voice_profile_name">ชื่อ</string>
     <string name="title_pref_voice_profile_language">ภาษา</string>
     <string name="title_pref_voice_profile_voice">เสียง</string>
@@ -1337,10 +1337,10 @@
     <string name="summary_pref_tts_engine_default">ค่าเริ่มต้นของระบบ</string>
     <string name="title_pref_speech_pitch">ระดับเสียงพูด</string>
     <string name="title_pref_speech_stream">ระดับเสียงพูด</string>
-    <string name="summary_selector_speech_stream">สลับระหว่างการเข้าถึง สื่อ เสียงเรียกเข้า และระดับเสียงการโทร</string>
+    <string name="summary_selector_speech_stream">สลับระหว่างระดับเสียงการช่วยเหลือพิเศษ สื่อ เสียงเรียกเข้า และการโทร</string>
     <string name="speech_stream_accessibility">ระดับเสียงการช่วยเหลือพิเศษ</string>
-    <string name="speech_stream_media">ปริมาณสื่อ</string>
-    <string name="speech_stream_ring">ปริมาณเสียงเรียกเข้า</string>
+    <string name="speech_stream_media">ระดับเสียงสื่อ</string>
+    <string name="speech_stream_ring">ระดับเสียงเรียกเข้า</string>
     <string name="speech_stream_call">ระดับเสียงการโทร หูฟัง</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
@@ -1349,47 +1349,47 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">ส่งข้อความยาวทีละประโยค</string>
-    <string name="summary_pref_speak_in_phrases">สำหรับกลไกเสียงพูดที่หยุดช้า เช่น กริฟฟอน การปัดออกไปจะหยุดข้อความยาวๆ ในคราวเดียว กลไกหลายตัวหยุดนานขึ้นระหว่างประโยคที่ส่งแยกกัน ดังนั้นไม่ต้องสนใจหากคุณหยุดอย่างรวดเร็ว</string>
-    <string name="battery_optimization_notification_title">การเพิ่มประสิทธิภาพแบตเตอรี่สามารถหยุด SandFly</string>
-    <string name="battery_optimization_notification_text">ในโทรศัพท์เครื่องนี้ โหมดประหยัดแบตเตอรี่สามารถหยุดที่ SandFly หลังจากที่หน้าจอปิด ดังนั้นจึงจะปิดเสียงไว้จนกว่าจะรีสตาร์ท แตะเพื่อเปิดการเพิ่มประสิทธิภาพแบตเตอรี่ เลือกแอปทั้งหมด ค้นหา SandFly และเลือกไม่ปรับให้เหมาะสม</string>
+    <string name="summary_pref_speak_in_phrases">สำหรับเอนจินเสียงพูดที่หยุดช้า เช่น Gryphon เพื่อให้การปัดหยุดข้อความยาวได้ทันที เอนจินจำนวนมากเว้นช่วงนานขึ้นระหว่างประโยคที่ส่งแยกกัน จึงควรปิดไว้หากเอนจินของคุณหยุดได้เร็ว</string>
+    <string name="battery_optimization_notification_title">การเพิ่มประสิทธิภาพแบตเตอรี่อาจหยุด SandFly</string>
+    <string name="battery_optimization_notification_text">ในโทรศัพท์เครื่องนี้ โหมดประหยัดแบตเตอรี่อาจหยุด SandFly หลังจากหน้าจอปิด ทำให้ไม่มีเสียงพูดจนกว่าจะรีสตาร์ท แตะเพื่อเปิดการเพิ่มประสิทธิภาพแบตเตอรี่ เลือกแอปทั้งหมด ค้นหา SandFly แล้วเลือกไม่ต้องเพิ่มประสิทธิภาพ</string>
     <string name="title_pref_mute_speech_while_recording">เงียบขณะบันทึก</string>
     <string name="summary_pref_mute_speech_while_recording">ในขณะที่แอปบันทึกโดยไม่ต้องเชื่อมต่อหูฟัง SandFly พูดเฉพาะตอบรับท่าทาง ปุ่ม และการพิมพ์ของคุณเท่านั้น และเงียบไว้สำหรับสิ่งต่างๆ เช่น การแจ้งเตือน เพื่อไม่ให้มีการบันทึก</string>
     <string name="title_pref_switch_languages">สลับภาษาโดยอัตโนมัติ</string>
-    <string name="title_pref_switch_dialects">สลับภาษาโดยอัตโนมัติ</string>
+    <string name="title_pref_switch_dialects">สลับสำเนียงโดยอัตโนมัติ</string>
     <string name="category_collapsed">ส่วนที่ยุบ</string>
     <string name="category_expanded">ส่วนที่ขยาย</string>
     <string name="title_pref_speak_nav_bar_buttons">พูดปุ่มแถบนำทาง</string>
-    <string name="summary_pref_speak_nav_bar_buttons">ด้วยการยกเพื่อเปิดใช้งานบนแถบนำทาง ให้พูดปุ่มที่มีการแตะ เช่น ย้อนกลับหรือหน้าแรก</string>
+    <string name="summary_pref_speak_nav_bar_buttons">เมื่อใช้ “ยกเพื่อเปิดใช้งาน” บนแถบนำทาง จะพูดปุ่มที่ถูกกดด้วยการแตะ เช่น กลับ หรือ หน้าแรก</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">แบตเตอรี่ <xliff:g id="battery_level" example="73">%1$s</xliff:g> เปอร์เซ็นต์</string>
     <string name="template_battery_level_unknown">ไม่ทราบระดับแบตเตอรี่</string>
     <string name="value_charger_connected">เชื่อมต่อเครื่องชาร์จแล้ว</string>
     <string name="title_pref_screen_announcements">เปิดและปิดหน้าจอ</string>
-    <string name="summary_pref_screen_announcements">เลือกสิ่งที่ SandFly พูดเมื่อหน้าจอปิดหรือเปิด และเมื่อโทรศัพท์ไม่ได้ล็อก</string>
+    <string name="summary_pref_screen_announcements">เลือกสิ่งที่ SandFly พูดเมื่อหน้าจอปิดหรือเปิด และเมื่อปลดล็อกโทรศัพท์</string>
     <string name="title_screen_announcements_screen_off">เมื่อหน้าจอดับลง</string>
     <string name="title_screen_announcements_screen_on">เมื่อหน้าจอเปิดขึ้น</string>
     <string name="title_screen_announcements_unlock">เมื่อโทรศัพท์ถูกปลดล็อค</string>
-    <string name="title_pref_say_screen_off">พูดว่า \"ปิดหน้าจอ\"</string>
+    <string name="title_pref_say_screen_off">พูดว่า \"หน้าจอปิดอยู่\"</string>
     <string name="title_pref_say_device_unlocked">พูดว่า \"ปลดล็อคอุปกรณ์แล้ว\"</string>
     <string name="title_pref_announce_time">เวลา</string>
     <string name="title_pref_announce_ringer_mode">โหมดเสียงเรียกเข้า</string>
     <string name="summary_pref_announce_ringer_mode">พูดเมื่อตั้งค่าเสียงเรียกเข้าเป็นสั่นหรือปิดเสียง</string>
-    <string name="title_pref_category_feedback">ข้อเสนอแนะ</string>
+    <string name="title_pref_category_feedback">การตอบสนอง</string>
     <string name="title_pref_category_typing_and_braille">การพิมพ์และอักษรเบรลล์</string>
     <string name="title_pref_category_apps">แอป</string>
     <string name="title_pref_touch_activation">สัมผัสและเปิดใช้งาน</string>
     <string name="title_pref_navigation">การนำทาง</string>
     <string name="title_pref_category_more">เพิ่มเติม</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">จองท่าทางสำหรับ Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">หยุด SandFly จัดการการแตะสองนิ้วครั้งเดียวและสองครั้งเพื่อให้ Samsung Vibration Watch สามารถใช้งานได้ เปิดใช้งาน Vibration Watch ในการตั้งค่าการเข้าถึงของนาฬิกา</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">สงวนท่าทางสัมผัสไว้สำหรับ Vibration Watch</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly จะหยุดจัดการการแตะครั้งเดียวและแตะสองครั้งด้วยสองนิ้ว เพื่อให้ Samsung Vibration Watch ใช้ได้ เปิด Vibration Watch ในการตั้งค่าการช่วยเหลือพิเศษของนาฬิกา</string>
     <string name="shortcut_reserved_for_vibration_watch">สงวนไว้สำหรับ Vibration Watch ในการตั้งค่าขั้นสูง</string>
     <string name="title_pref_speakerphone_away_from_ear">ลำโพงเมื่ออยู่ห่างจากหูของคุณ</string>
-    <string name="summary_pref_speakerphone_away_from_ear">ในระหว่างการโทร ให้สลับไปที่ลำโพงเมื่อคุณยกโทรศัพท์ออกจากหู และกลับไปที่หูฟังเมื่อคุณยกขึ้นอีกครั้ง</string>
-    <string name="summary_pref_speakerphone_needs_permission">ต้องการการอนุญาตที่ Android ไม่ได้มอบให้กับโปรแกรมอ่านหน้าจอ หากต้องการอนุญาต ให้รันคำสั่งนี้ด้วย adb or Shizuku, then come back to this screen: %1$s</string>
-    <string name="action_copy_command">คำสั่งคัดลอก</string>
+    <string name="summary_pref_speakerphone_away_from_ear">ระหว่างการโทร จะสลับไปใช้ลำโพงเมื่อคุณยกโทรศัพท์ออกจากหู และกลับไปใช้ลำโพงสนทนาเมื่อคุณยกขึ้นแนบหูอีกครั้ง</string>
+    <string name="summary_pref_speakerphone_needs_permission">ต้องใช้สิทธิ์ที่ Android ไม่ให้แก่โปรแกรมอ่านหน้าจอ หากต้องการให้สิทธิ์ ให้เรียกใช้คำสั่งนี้ด้วย adb หรือ Shizuku แล้วกลับมาที่หน้าจอนี้: %1$s</string>
+    <string name="action_copy_command">คัดลอกคำสั่ง</string>
     <string name="command_copied">คัดลอกคำสั่งแล้ว</string>
-    <string name="title_pref_speech_control">ให้แอปอื่นๆ พูด</string>
-    <string name="summary_pref_speech_control">แอปที่คุณอนุญาตสามารถพูดข้อความด้วยเสียง SandFly ของคุณได้ ไม่มีการพูดอะไรในขณะที่อุปกรณ์ถูกล็อค</string>
+    <string name="title_pref_speech_control">อนุญาตให้แอปอื่นพูด</string>
+    <string name="summary_pref_speech_control">แอปที่คุณอนุญาตสามารถพูดข้อความด้วยเสียงของ SandFly ได้ ไม่มีการพูดใดๆ ขณะที่อุปกรณ์ล็อกอยู่</string>
     <string name="title_pref_speech_control_sound">เล่นเสียงก่อนที่แอปอื่นจะพูด</string>
     <string name="speech_control_apps_category">แอป</string>
     <string name="speech_control_no_apps">ยังไม่มีแอปใดขอให้พูด</string>
@@ -1400,14 +1400,14 @@
     <string name="permission_speak_label">พูดผ่าน SandFly</string>
     <string name="permission_speak_description">ให้แอปขอพูดข้อความด้วยเสียง SandFly ของคุณ SandFly ถามคุณก่อนที่แอปจะพูดได้</string>
     <string name="permission_braille_display_label">ขอเป็นเครื่องแสดงอักษรเบรลล์สำหรับ SandFly</string>
-    <string name="permission_braille_display_description">ให้แอปขอเป็นจอแสดงผลอักษรเบรลล์สำหรับ SandFly หากคุณอนุญาตใน SandFly จะสามารถอ่านทุกอย่างบนหน้าจอและควบคุมอุปกรณ์ของคุณได้ SandFly ถามคุณก่อน</string>
+    <string name="permission_braille_display_description">อนุญาตให้แอปขอเป็นจอแสดงผลอักษรเบรลล์ของ SandFly หากคุณอนุญาตใน SandFly แอปจะอ่านทุกอย่างบนหน้าจอและควบคุมอุปกรณ์ของคุณได้ SandFly จะถามคุณก่อน</string>
     <string name="title_pref_phonetic_letters_mode">พูดตัวอักษรตามสัทศาสตร์</string>
     <string name="phonetic_letters_mode_off">ปิด</string>
-    <string name="phonetic_letters_mode_after_letter_delay">หลังจากจดหมายล่าช้าเช่น \"h โรงแรม\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">หลังจดหมายไม่รอช้าเหมือน “โรงแรมเอช”</string>
-    <string name="phonetic_letters_mode_instead_of_letter">แทนที่จะเป็นตัวอักษร เช่น \"โรงแรม\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">หลังตัวอักษร เว้นช่วง เช่น “ห, หีบ”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">หลังตัวอักษร ไม่เว้นช่วง เช่น “ห หีบ”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">แทนตัวอักษร เช่น “หีบ”</string>
     <string name="title_pref_emoji_speech">อิโมจิ</string>
-    <string name="emoji_speech_engine">อ่านด้วยเครื่องมือพูด</string>
+    <string name="emoji_speech_engine">เอนจินเสียงพูดอ่าน</string>
     <string name="emoji_speech_names">อ่านโดย SandFly</string>
     <string name="emoji_speech_none">ไม่มี</string>
     <string name="summary_selector_menu_emoji">เปลี่ยนวิธีการอ่านอิโมจิ</string>
@@ -1423,17 +1423,17 @@
     <string name="pref_table_column_headers_title">อ่านส่วนหัวของคอลัมน์</string>
     <string name="pref_table_column_headers_entry_after">หลังจากข้อมูลเซลล์</string>
     <string name="pref_table_column_headers_entry_before">ก่อนข้อมูลเซลล์</string>
-    <string name="pref_table_column_headers_entry_off">อย่าอ่าน</string>
+    <string name="pref_table_column_headers_entry_off">ไม่อ่าน</string>
     <string name="pref_table_speak_row_column_numbers_title">พูดหมายเลขแถวและคอลัมน์</string>
-    <string name="pref_table_speak_row_column_numbers_summary">ประกาศหมายเลขแถวและคอลัมน์สำหรับเซลล์ตาราง</string>
+    <string name="pref_table_speak_row_column_numbers_summary">พูดหมายเลขแถวและคอลัมน์ของเซลล์ตาราง</string>
     <string name="title_pref_speak_volume_changes">พูดการเปลี่ยนแปลงระดับเสียง</string>
-    <string name="summary_pref_speak_volume_changes">พูดระดับเสียงใหม่หลังจากที่คุณกดปุ่มปรับระดับเสียง</string>
+    <string name="summary_pref_speak_volume_changes">พูดระดับเสียงใหม่หลังจากกดปุ่มปรับระดับเสียง</string>
     <string name="title_pref_speak_notifications">พูดการแจ้งเตือน</string>
-    <string name="summary_pref_speak_notifications">อ่านออกเสียงการแจ้งเตือนใหม่เมื่อมาถึง สายเรียกเข้าจะถูกอ่านเสมอ</string>
+    <string name="summary_pref_speak_notifications">อ่านออกเสียงการแจ้งเตือนใหม่เมื่อได้รับ สายเรียกเข้าจะอ่านเสมอ</string>
     <string name="title_pref_notification_list">ใช้รายการแจ้งเตือนของ SandFly</string>
     <string name="title_pref_notification_parts">รายละเอียดการแจ้งเตือน</string>
-    <string name="title_pref_play_installer">ปรากฏติดตั้งจาก Google Play</string>
-    <string name="summary_pref_play_installer">แจ้งแอปอื่นๆ ว่า Google Play ติดตั้งแล้ว SandFly แอพบางตัว เช่น แอพธนาคารบางตัว ปิดบริการการเข้าถึงที่ติดตั้งจากที่อื่น ต้องการ Shizuku และเปลี่ยนเฉพาะแอปที่บอกว่า SandFly มาจากไหน</string>
+    <string name="title_pref_play_installer">แสดงว่าติดตั้งจาก Google Play</string>
+    <string name="summary_pref_play_installer">แจ้งแอปอื่นๆ ว่า SandFly ติดตั้งจาก Google Play แอปบางแอป เช่น แอปธนาคารบางแอป จะปิดบริการการช่วยเหลือพิเศษที่ติดตั้งจากแหล่งอื่น ต้องใช้ Shizuku และเปลี่ยนเฉพาะข้อมูลที่แอปได้รับเกี่ยวกับแหล่งที่มาของ SandFly เท่านั้น</string>
     <string name="summary_pref_play_installer_pending">เปิดอยู่ แต่ Google Play ยังไม่ได้บันทึกเป็นตัวติดตั้ง SandFly ตั้งค่าเมื่อ Shizuku พร้อมใช้งาน</string>
     <string name="notification_part_title">ชื่อเรื่อง</string>
     <string name="notification_part_text">ข้อความ</string>
@@ -1458,7 +1458,7 @@
     <string name="notification_list_next">ถัดไป</string>
     <plurals name="notification_list_group_count">
         <item quantity="one">การแจ้งเตือน %d รายการ</item>
-        <item quantity="other">%d การแจ้งเตือน</item>
+        <item quantity="other">การแจ้งเตือน %d รายการ</item>
     </plurals>
     <string name="title_pref_quick_settings">ใช้การตั้งค่าด่วนของ SandFly</string>
     <string name="title_pref_quick_settings_items">แผงการตั้งค่าด่วน</string>
@@ -1472,17 +1472,17 @@
     <string name="quick_settings_sound_mode">โหมดเสียง</string>
     <string name="quick_settings_flashlight">ไฟฉาย</string>
     <string name="quick_settings_flashlight_brightness">ความสว่างของไฟฉาย</string>
-    <string name="quick_settings_location">ที่ตั้ง</string>
+    <string name="quick_settings_location">ตำแหน่ง</string>
     <string name="quick_settings_auto_rotate">หมุนอัตโนมัติ</string>
     <string name="quick_settings_battery_saver">ประหยัดแบตเตอรี่</string>
     <string name="quick_settings_dark_theme">ธีมสีเข้ม</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">ความสว่าง</string>
     <string name="quick_settings_adaptive_brightness">ความสว่างที่ปรับได้</string>
-    <string name="quick_settings_media_volume">ปริมาณสื่อ</string>
+    <string name="quick_settings_media_volume">ระดับเสียงสื่อ</string>
     <string name="quick_settings_call_volume">ระดับเสียงการโทร</string>
-    <string name="quick_settings_ring_volume">ปริมาณเสียงเรียกเข้า</string>
-    <string name="quick_settings_notification_volume">ปริมาณการแจ้งเตือน</string>
+    <string name="quick_settings_ring_volume">ระดับเสียงเรียกเข้า</string>
+    <string name="quick_settings_notification_volume">ระดับเสียงการแจ้งเตือน</string>
     <string name="quick_settings_alarm_volume">ระดับเสียงปลุก</string>
     <string name="quick_settings_accessibility_volume">ระดับเสียงการช่วยเหลือพิเศษ</string>
     <string name="quick_settings_system_volume">ระดับเสียงของระบบ</string>
@@ -1501,7 +1501,7 @@
     <string name="quick_settings_next_alarm">ปลุกครั้งถัดไป</string>
     <string name="quick_settings_no_alarm">ไม่มีการปลุก</string>
     <string name="quick_settings_settings">การตั้งค่า</string>
-    <string name="quick_settings_power_menu">เมนูพลังงาน</string>
+    <string name="quick_settings_power_menu">เมนูเปิด/ปิด</string>
     <string name="quick_settings_add_system_tile">เพิ่มไทล์ระบบ</string>
     <string name="quick_settings_no_system_tiles">ไม่มีไทล์ระบบที่จะเพิ่ม</string>
     <string name="quick_settings_tile_not_found">%1$s ไม่ได้อยู่ในการตั้งค่าด่วนของระบบ</string>
@@ -1551,29 +1551,29 @@
     <string name="dialog_title_audio_output_device">เลือกตำแหน่งที่จะเล่นเสียง SandFly</string>
     <string name="value_audio_output_device_default">ค่าเริ่มต้นของระบบ</string>
     <string name="value_audio_output_device_speaker">ลำโพงโทรศัพท์</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">เชื่อมต่ออุปกรณ์ Bluetooth หรือใช้สายแล้ว</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">อุปกรณ์ Bluetooth หรือแบบมีสายที่เชื่อมต่ออยู่</string>
     <string name="value_audio_output_device_disconnected">ตัดการเชื่อมต่อ</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth อุปกรณ์เสียง</string>
+    <string name="value_audio_output_device_bluetooth_default">อุปกรณ์เสียง Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">ชุดหูฟังแบบมีสาย</string>
     <string name="value_audio_output_device_wired_headphones">หูฟังแบบมีสาย</string>
-    <string name="value_audio_output_device_usb_headset">USB ชุดหูฟัง</string>
-    <string name="value_audio_output_device_usb_device">USB อุปกรณ์เสียง</string>
-    <string name="title_pref_speaker_devices">ลำโพงโทรศัพท์กับอุปกรณ์เหล่านี้</string>
+    <string name="value_audio_output_device_usb_headset">ชุดหูฟัง USB</string>
+    <string name="value_audio_output_device_usb_device">อุปกรณ์เสียง USB</string>
+    <string name="title_pref_speaker_devices">ลำโพงโทรศัพท์เมื่อเชื่อมต่ออุปกรณ์เหล่านี้</string>
     <string name="summary_pref_speaker_devices_none">ไม่มี</string>
     <string name="summary_pref_speaker_devices_no_devices">ยังไม่ได้เชื่อมต่ออุปกรณ์ Bluetooth หรือแบบมีสาย</string>
     <string name="pref_reduce_window_delay_summary">SandFly อ่านหน้าจอใหม่เร็วขึ้นเมื่อปิดภาพเคลื่อนไหว การดำเนินการนี้จะปิดภาพเคลื่อนไหวสำหรับโทรศัพท์ทั้งหมด</string>
-    <string name="dialog_message_detailed_ai_description">รูปภาพที่เลือกจะถูกส่งไปยัง Gemini API ของ Google เพื่ออธิบาย เมื่อเปิด AI บนอุปกรณ์ ระบบจะอธิบายข้อมูลเหล่านั้นบนโทรศัพท์เครื่องนี้แทนและจะไม่ถูกส่งไป\n\nด้วยคีย์ API ฟรี Google อาจเก็บสิ่งที่ได้รับ ใช้เพื่อปรับปรุงผลิตภัณฑ์ และให้ผู้คนตรวจสอบ Generative AI อยู่ระหว่างการทดลอง ดังนั้นมันจะเกิดข้อผิดพลาด <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> ใช้</string>
-    <string name="dialog_message_detailed_ai_promotion">คำอธิบายภาพโดยละเอียดขับเคลื่อนโดย AI กำเนิด รูปภาพที่เลือกจะถูกส่งไปยัง Gemini API ของ Google เพื่ออธิบาย เมื่อเปิด AI บนอุปกรณ์ ระบบจะอธิบายข้อมูลเหล่านั้นบนโทรศัพท์เครื่องนี้แทนและจะไม่ถูกส่งไป\n\nด้วยคีย์ API ฟรี Google อาจเก็บสิ่งที่ได้รับ ใช้เพื่อปรับปรุงผลิตภัณฑ์ และให้ผู้คนตรวจสอบ Generative AI อยู่ระหว่างการทดลอง ดังนั้นมันจะเกิดข้อผิดพลาด คุณสามารถปิดคำอธิบายรูปภาพโดยละเอียดได้ทุกเมื่อในการตั้งค่า SandFly\n\nจะใช้ <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g></string>
-    <string name="dialog_message_screen_overview_promotion">ภาพหน้าจอของหน้าจอจะถูกส่งไปยัง Gemini API ของ Google เพื่ออธิบาย ซึ่งจะใช้เวลาหลายวินาที เมื่อเปิด AI บนอุปกรณ์ ระบบจะอธิบายไว้ในโทรศัพท์นี้แทนและจะไม่ถูกส่งไป\n\nด้วยคีย์ API ฟรี Google อาจเก็บสิ่งที่ได้รับ ใช้เพื่อปรับปรุงผลิตภัณฑ์ และให้ผู้คนตรวจสอบ Generative AI อยู่ระหว่างการทดลอง ดังนั้นมันจะเกิดข้อผิดพลาด <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> ใช้</string>
+    <string name="dialog_message_detailed_ai_description">ระบบจะส่งรูปภาพที่เลือกไปยัง Gemini API ของ Google เพื่อสร้างคำอธิบาย เมื่อเปิด AI บนอุปกรณ์ ระบบจะอธิบายรูปภาพบนโทรศัพท์เครื่องนี้แทนและไม่ส่งรูปภาพออกไป\n\nเมื่อใช้คีย์ API แบบไม่มีค่าใช้จ่าย Google อาจเก็บข้อมูลที่ได้รับ ใช้ข้อมูลนั้นเพื่อปรับปรุงผลิตภัณฑ์ และให้เจ้าหน้าที่ตรวจสอบ Generative AI ยังอยู่ในขั้นทดลอง จึงจะเกิดข้อผิดพลาด <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> มีผลบังคับใช้</string>
+    <string name="dialog_message_detailed_ai_promotion">คำอธิบายรูปภาพแบบละเอียดสร้างโดย Generative AI ระบบจะส่งรูปภาพที่เลือกไปยัง Gemini API ของ Google เพื่อสร้างคำอธิบาย เมื่อเปิด AI บนอุปกรณ์ ระบบจะอธิบายรูปภาพบนโทรศัพท์เครื่องนี้แทนและไม่ส่งรูปภาพออกไป\n\nเมื่อใช้คีย์ API แบบไม่มีค่าใช้จ่าย Google อาจเก็บข้อมูลที่ได้รับ ใช้ข้อมูลนั้นเพื่อปรับปรุงผลิตภัณฑ์ และให้เจ้าหน้าที่ตรวจสอบ Generative AI ยังอยู่ในขั้นทดลอง จึงจะเกิดข้อผิดพลาด คุณปิดคำอธิบายรูปภาพแบบละเอียดได้ทุกเมื่อในการตั้งค่า SandFly\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> มีผลบังคับใช้</string>
+    <string name="dialog_message_screen_overview_promotion">ระบบจะส่งภาพหน้าจอไปยัง Gemini API ของ Google เพื่อสร้างคำอธิบาย ซึ่งใช้เวลาสักครู่ เมื่อเปิด AI บนอุปกรณ์ ระบบจะอธิบายภาพหน้าจอบนโทรศัพท์เครื่องนี้แทนและไม่ส่งออกไป\n\nเมื่อใช้คีย์ API แบบไม่มีค่าใช้จ่าย Google อาจเก็บข้อมูลที่ได้รับ ใช้ข้อมูลนั้นเพื่อปรับปรุงผลิตภัณฑ์ และให้เจ้าหน้าที่ตรวจสอบ Generative AI ยังอยู่ในขั้นทดลอง จึงจะเกิดข้อผิดพลาด <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> มีผลบังคับใช้</string>
     <string name="shortcut_title_open_app">เปิดแอป</string>
     <string name="shortcut_open_app">เปิด <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_scroll_to_top">เลื่อนไปด้านบน</string>
-    <string name="shortcut_write_reading_control">เขียนจดหมายควบคุมการอ่าน</string>
+    <string name="shortcut_write_reading_control">เขียนตัวอักษรของการควบคุมการอ่าน</string>
     <string name="title_pref_reading_control_letters">ตัวอักษรที่เขียนด้วยลายมือ</string>
     <string name="reading_control_letter_none">ไม่มี</string>
     <string name="handwriting_prompt">เขียนตัวอักษร</string>
     <string name="handwriting_closed">ปิดการเขียนด้วยลายมือแล้ว</string>
-    <string name="handwriting_no_match">ไม่มีการควบคุมการอ่านเริ่มต้นด้วย <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">ไม่มีการควบคุมการอ่านที่ขึ้นต้นด้วย <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">เขียนชื่อแอปเพื่อเปิดแอป</string>
     <string name="handwriting_app_prompt">เขียนชื่อแอป</string>
     <string name="handwriting_no_app">ไม่มีแอปที่ขึ้นต้นด้วย <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
@@ -1581,14 +1581,14 @@
     <string name="handwriting_not_recognized">ไม่รู้จักลายมือ</string>
     <string name="handwriting_downloading">กำลังดาวน์โหลดการรู้จำลายมือ</string>
     <string name="handwriting_download_title">ดาวน์โหลดการรู้จำลายมือ?</string>
-    <string name="handwriting_download_message">จดจำลายมือบนโทรศัพท์เครื่องนี้ โมเดลสำหรับภาษานี้มีขนาดประมาณ 20 MB ดาวน์โหลดจาก Google หนึ่งครั้ง ข้อความจะแสดงเมื่อมีการดาวน์โหลด</string>
+    <string name="handwriting_download_message">ระบบจดจำลายมือบนโทรศัพท์เครื่องนี้ โมเดลสำหรับภาษานี้มีขนาดประมาณ 20 MB และจะดาวน์โหลดจาก Google ครั้งเดียว เมื่อดาวน์โหลดเสร็จ จะมีข้อความแสดงขึ้น</string>
     <string name="handwriting_download_button">ดาวน์โหลด</string>
     <string name="handwriting_downloaded">ดาวน์โหลดการรู้จำลายมือแล้ว</string>
     <string name="handwriting_download_failed">ไม่สามารถดาวน์โหลดการรู้จำลายมือได้ ตรวจสอบการเชื่อมต่ออินเทอร์เน็ต</string>
     <string name="handwriting_unsupported_language">การรู้จำลายมือไม่พร้อมใช้งานในภาษานี้</string>
     <string name="title_pref_handwriting_keyboard">แป้นพิมพ์เขียนด้วยลายมือ</string>
-    <string name="summary_pref_handwriting_keyboard">เปิด SandFly การเขียนด้วยลายมือในการตั้งค่าแป้นพิมพ์ของ Android</string>
-    <string name="title_pref_handwriting_wait">รอหลังเขียนครับ</string>
+    <string name="summary_pref_handwriting_keyboard">เปิดการเขียนด้วยลายมือของ SandFly ในการตั้งค่าแป้นพิมพ์ของ Android</string>
+    <string name="title_pref_handwriting_wait">เวลารอหลังเขียน</string>
     <string name="value_handwriting_wait_200">0.2 วินาที</string>
     <string name="value_handwriting_wait_300">0.3 วินาที</string>
     <string name="value_handwriting_wait_400">0.4 วินาที</string>
@@ -1600,7 +1600,7 @@
     <string name="handwriting_space">วรรค</string>
     <string name="handwriting_new_line">บรรทัดใหม่</string>
     <string name="handwriting_tutorial_intro">บทช่วยสอนแป้นพิมพ์เขียนด้วยลายมือ เขียนด้วยนิ้วเดียวได้ทุกที่บนหน้าจอ สิ่งที่คุณเขียนจะถูกพิมพ์เมื่อคุณหยุดสักครู่ หากต้องการสิ้นสุดบทช่วยสอน ให้ใช้สามนิ้วปัดลง</string>
-    <string name="handwriting_tutorial_write_letter">เขียนตัวอักษรตัวอักษรก</string>
+    <string name="handwriting_tutorial_write_letter">เขียนตัวอักษร a</string>
     <string name="handwriting_tutorial_write_word">ตอนนี้เขียนคำว่า hi (h ตามด้วย i)</string>
     <string name="handwriting_tutorial_typed">พิมพ์ <xliff:g id="text" example="a">%1$s</xliff:g></string>
     <string name="handwriting_tutorial_space">ปัดไปทางขวาด้วยสองนิ้วเพื่อพิมพ์ช่องว่าง</string>
@@ -1610,7 +1610,7 @@
     <string name="handwriting_tutorial_read_back">แตะด้วยสองนิ้วเพื่ออ่านข้อความก่อนเคอร์เซอร์</string>
     <string name="handwriting_tutorial_new_line">ปัดลงด้วยสองนิ้วเพื่อแทรกบรรทัดใหม่หรือดำเนินการกับช่องข้อความ เช่น ส่ง</string>
     <string name="handwriting_tutorial_not_that">นั่นเป็นอีกท่าทางหนึ่ง</string>
-    <string name="handwriting_tutorial_done">สายใหม่. บทช่วยสอนเสร็จสิ้นแล้ว ใช้สามนิ้วปัดลงเพื่อซ่อนคีย์บอร์ด และใช้สามนิ้วปัดไปทางขวาหรือซ้ายเพื่อสลับคีย์บอร์ด หากต้องการเปิดบทช่วยสอนอีกครั้ง ให้แตะด้วยสามนิ้ว</string>
+    <string name="handwriting_tutorial_done">ขึ้นบรรทัดใหม่ บทแนะนำเสร็จสิ้นแล้ว ใช้สามนิ้วปัดลงเพื่อซ่อนแป้นพิมพ์ และใช้สามนิ้วปัดไปทางขวาหรือซ้ายเพื่อสลับแป้นพิมพ์ หากต้องการเปิดบทแนะนำอีกครั้ง ให้แตะด้วยสามนิ้ว</string>
     <string name="handwriting_tutorial_finished">บทช่วยสอนสิ้นสุดลงแล้ว หากต้องการเปิดอีกครั้ง ให้ใช้สามนิ้วแตะ</string>
     <string name="handwriting_no_alternatives">ไม่มีข้อเสนอแนะอื่น ๆ</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> จาก <xliff:g id="count" example="5">%3$d</xliff:g></string>
@@ -1621,28 +1621,28 @@
     <string name="shortcut_system_notifications">หน้าต่างแจ้งเตือนของระบบ</string>
     <string name="shortcut_system_quick_settings">การตั้งค่าด่วนของระบบ</string>
     <string name="shortcut_lock_screen">ล็อคหน้าจออุปกรณ์</string>
-    <string name="shortcut_power_menu">เมนูพลังงาน</string>
-    <string name="shortcut_increase_media_volume">เพิ่มปริมาณสื่อ</string>
+    <string name="shortcut_power_menu">เมนูเปิด/ปิด</string>
+    <string name="shortcut_increase_media_volume">เพิ่มระดับเสียงสื่อ</string>
     <string name="shortcut_decrease_media_volume">ลดระดับเสียงสื่อ</string>
     <string name="title_clear_selection">ล้างการเลือก</string>
     <string name="title_pref_brightness">ความสว่าง</string>
     <string name="summary_support_change_brightness">เพิ่มหรือลดความสว่างของหน้าจอ แม้ว่าหน้าจอจะถูกซ่อนอยู่ก็ตาม</string>
-    <string name="title_pref_shortcut_3finger_4tap">แตะสี่เท่าด้วย 3 นิ้ว</string>
+    <string name="title_pref_shortcut_3finger_4tap">แตะ 4 ครั้งด้วย 3 นิ้ว</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">หมุนตามเข็มนาฬิกาด้วย 2 นิ้ว</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">หมุนทวนเข็มนาฬิกาด้วย 2 นิ้ว</string>
     <string name="title_pref_shortcut_2finger_scrub">ขัดด้วย 2 นิ้ว</string>
-    <string name="title_pref_shortcut_2finger_pinch">หยิกด้วย 2 นิ้ว</string>
-    <string name="title_pref_shortcut_2finger_spread">เกลี่ยด้วย 2 นิ้ว</string>
-    <string name="title_pref_shortcut_3finger_pinch">หยิกด้วย 3 นิ้ว</string>
-    <string name="title_pref_shortcut_3finger_spread">กระจายด้วย 3 นิ้ว</string>
-    <string name="title_pref_shortcut_4finger_pinch">หยิกด้วย 4 นิ้ว</string>
-    <string name="title_pref_shortcut_4finger_spread">กระจายด้วย 4 นิ้ว</string>
+    <string name="title_pref_shortcut_2finger_pinch">บีบด้วย 2 นิ้ว</string>
+    <string name="title_pref_shortcut_2finger_spread">กางด้วย 2 นิ้ว</string>
+    <string name="title_pref_shortcut_3finger_pinch">บีบด้วย 3 นิ้ว</string>
+    <string name="title_pref_shortcut_3finger_spread">กางด้วย 3 นิ้ว</string>
+    <string name="title_pref_shortcut_4finger_pinch">บีบด้วย 4 นิ้ว</string>
+    <string name="title_pref_shortcut_4finger_spread">กางด้วย 4 นิ้ว</string>
     <string name="title_pref_shortcut_edge_bottom_up">ปัดขึ้นจากขอบด้านล่าง</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">ปัดขึ้นยาวจากขอบด้านล่าง</string>
     <string name="title_pref_shortcut_edge_top_left_down">ปัดลงจากซ้ายบน</string>
     <string name="title_pref_shortcut_edge_top_right_down">ปัดลงจากด้านบนขวา</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">ปัดลงจากซ้ายบนค้างไว้</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">ปัดลงจากขวาบนค้างไว้</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">ปัดลงยาวจากซ้ายบน</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">ปัดลงยาวจากขวาบน</string>
     <string name="title_pref_shortcut_edge_left_top_right">ปัดไปทางขวาจากขอบซ้ายครึ่งบน</string>
     <string name="title_pref_shortcut_edge_left_top_long_right">ปัดไปทางขวายาวๆ จากขอบซ้าย ครึ่งบน</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">ปัดไปทางขวาจากขอบซ้ายครึ่งล่าง</string>
@@ -1651,14 +1651,14 @@
     <string name="title_pref_shortcut_edge_right_top_long_left">ปัดไปทางซ้ายยาวจากขอบขวาครึ่งบน</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">ปัดไปทางซ้ายจากขอบขวาครึ่งล่าง</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">ปัดไปทางซ้ายยาวจากขอบขวา ครึ่งล่าง</string>
-    <string name="value_type_confirmation_lift_to_type_except_action_key">กดนิ้วค้างไว้เพื่อเลือกปุ่มใดก็ได้ จากนั้นยกขึ้น แตะสองครั้งเพื่อป้อน เสร็จสิ้น หรือส่ง</string>
+    <string name="value_type_confirmation_lift_to_type_except_action_key">แตะนิ้วค้างไว้เพื่อเลือกแป้นใดก็ได้ แล้วยกนิ้วขึ้น แตะสองครั้งสำหรับ Enter เสร็จสิ้น หรือส่ง</string>
     <string name="value_type_confirmation_tap_to_type">แตะแป้นใดก็ได้เพื่อพิมพ์ หรือใช้นิ้วค้างไว้เพื่อเลือกแป้นใดก็ได้ จากนั้นยกขึ้น</string>
     <string name="title_pref_multi_tap_timeout">เวลาระหว่างการแตะด้วยนิ้วเดียว</string>
     <string name="value_multi_tap_timeout_100ms">0.1 วินาที</string>
     <string name="value_multi_tap_timeout_150ms">0.15 วินาที</string>
     <string name="value_multi_tap_timeout_200ms">0.2 วินาที</string>
     <string name="value_multi_tap_timeout_250ms">0.25 วินาที (ค่าเริ่มต้น)</string>
-    <string name="title_pref_rotor_step_degrees">โรเตอร์หมุนต่อขั้นตอน</string>
+    <string name="title_pref_rotor_step_degrees">การหมุนโรเตอร์ต่อขั้น</string>
     <string name="title_pref_edge_first_click_mm">ระยะทางถึงการคลิกครั้งแรก</string>
     <string name="title_pref_edge_second_click_mm">ระยะทางจากการคลิกครั้งแรกถึงครั้งที่สอง</string>
     <string name="value_distance_5mm">0.5 ซม</string>
@@ -1674,16 +1674,16 @@
     <string name="value_rotor_step_45">45 องศา</string>
     <string name="value_rotor_step_60">60 องศา</string>
     <string name="title_pref_low_latency_audio">เสียงที่มีความหน่วงต่ำ</string>
-    <string name="summary_pref_low_latency_audio">เล่นเสียงและคำพูดของ SandFly ผ่านเส้นทางเสียงที่เร็วที่สุดของโทรศัพท์ เพื่อให้คุณได้ยินเร็วขึ้น ปิดหากเสียงพูดหรือเสียงขาดหายหรือฟังผิดไป</string>
+    <string name="summary_pref_low_latency_audio">เล่นเสียงและเสียงพูดของ SandFly ผ่านเส้นทางเสียงที่เร็วที่สุดของโทรศัพท์ เพื่อให้คุณได้ยินเร็วขึ้น ปิดตัวเลือกนี้หากเสียงพูดหรือเสียงขาดๆ หายๆ หรือฟังผิดปกติ</string>
     <string name="value_focus_delay_200ms_default">0.2 วินาที (ค่าเริ่มต้น)</string>
     <string name="value_focus_delay_300ms">0.3 วินาที</string>
     <string name="title_pref_lift_to_activate">ยกเพื่อเปิดใช้งาน</string>
-    <string name="summary_support_change_lift_to_activate">เปลี่ยนตำแหน่งการยกนิ้วของคุณเพื่อเปิดใช้งานรายการ</string>
+    <string name="summary_support_change_lift_to_activate">เปลี่ยนตำแหน่งที่การยกนิ้วจะเปิดใช้งานรายการ</string>
     <string name="value_lift_to_activate_disabled">ปิดการใช้งาน</string>
     <string name="value_lift_to_activate_navigation_bar">บนแถบนำทางเท่านั้น</string>
     <string name="value_lift_to_activate_entire_screen">ทั้งหน้าจอ</string>
     <string name="template_lift_to_activate_changed">ยกเพื่อเปิดใช้งาน: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">พันรอบ</string>
+    <string name="title_pref_wrap_around">วนกลับไปต้น</string>
     <string name="summary_pref_wrap_around">การปัดผ่านรายการสุดท้ายจะไปที่รายการแรก และผ่านรายการแรกไปยังรายการสุดท้าย เมื่อปิด จะมีเสียงเล่นในตอนท้ายแทน</string>
     <string name="title_pref_fix_stuck_touch_exploration">แก้ไขการสำรวจการสัมผัสที่ค้างอยู่</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">หากไม่ได้รับอนุญาต DUMP SandFly พูดได้เพียงว่าการสำรวจด้วยการสัมผัสอาจค้างอยู่ หากต้องการให้มันแก้ไข ให้รัน: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
@@ -1691,27 +1691,27 @@
     <string name="stuck_touch_exploration_fixed">การสำรวจแบบสัมผัสได้รับการแก้ไขแล้ว</string>
     <string name="stuck_touch_exploration_not_fixed">การสำรวจด้วยการสัมผัสยังคงค้างอยู่ รีสตาร์ทโทรศัพท์เพื่อแก้ไข</string>
     <string name="stuck_touch_exploration_restart">การสำรวจด้วยการสัมผัสอาจค้างอยู่ รีสตาร์ทโทรศัพท์เพื่อแก้ไข</string>
-    <string name="stuck_touch_exploration_grant_dump">การสำรวจด้วยการสัมผัสอาจค้างอยู่ รีสตาร์ทโทรศัพท์เพื่อแก้ไข หรือให้สิทธิ์ SandFly DUMP กับ ADB เพื่อให้สามารถแก้ไขได้</string>
+    <string name="stuck_touch_exploration_grant_dump">การแตะเพื่อสำรวจอาจค้างอยู่ รีสตาร์ทโทรศัพท์เพื่อแก้ไข หรือให้สิทธิ์ DUMP แก่ SandFly ผ่าน ADB เพื่อให้ SandFly แก้ไขได้</string>
     <string name="title_pref_window_names">ชื่อหน้าต่าง</string>
     <string name="window_names_always">เสมอ</string>
-    <string name="window_names_until_first_item">เสมอให้ตัดรายการแรกออก</string>
+    <string name="window_names_until_first_item">เสมอ หยุดเมื่อถึงรายการแรก</string>
     <string name="window_names_window_opens">เมื่อเปิดหน้าต่างเท่านั้น</string>
     <string name="window_names_never">ไม่เคย</string>
     <string name="title_pref_selector_links_controls_web_only">ลิงก์และการควบคุมเฉพาะในเนื้อหาเว็บเท่านั้น</string>
     <string name="title_pref_selector_auto_switch">เปลี่ยนการควบคุมการอ่านโดยอัตโนมัติ</string>
-    <string name="title_pref_touch_stops_speech">หยุดคำพูดเมื่อสัมผัสหน้าจอ</string>
+    <string name="title_pref_touch_stops_speech">หยุดเสียงพูดเมื่อแตะหน้าจอ</string>
     <string name="title_pref_focus_new_windows">ย้ายโฟกัสไปที่หน้าต่างใหม่</string>
     <string name="title_pref_volume_keys_adjust_sliders">ปุ่มปรับระดับเสียงปรับแถบเลื่อน</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">เมื่อแถบเลื่อนมีโฟกัส ระดับเสียงขึ้นและลงจะเปลี่ยนค่าแทนระดับเสียง</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">เมื่อแถบเลื่อนมีโฟกัส ปุ่มเพิ่มและลดระดับเสียงจะเปลี่ยนค่าของแถบเลื่อนแทนระดับเสียง</string>
     <string name="title_pref_volume_keys_move_cursor">ปุ่มปรับระดับเสียงเลื่อนเคอร์เซอร์</string>
-    <string name="summary_pref_volume_keys_move_cursor">เมื่อช่องข้อความมีโฟกัส การเพิ่มระดับเสียงจะเลื่อนเคอร์เซอร์ไปข้างหลังอักขระ และลดระดับเสียงจะเลื่อนเคอร์เซอร์ไปด้านหลัง</string>
-    <string name="summary_support_wrap_around">เปิดหรือปิดการตัดจากรายการสุดท้ายไปเป็นรายการแรก</string>
-    <string name="wrap_around_on">พันรอบบน</string>
-    <string name="wrap_around_off">พันรอบปิด</string>
-    <string name="title_selector_tablet_held_up_faces_away">แท็บเล็ตเงยหน้าขึ้น</string>
+    <string name="summary_pref_volume_keys_move_cursor">เมื่อช่องข้อความมีโฟกัส การเพิ่มระดับเสียงจะเลื่อนเคอร์เซอร์ถอยหลังหนึ่งอักขระ และการลดระดับเสียงจะเลื่อนไปข้างหน้าหนึ่งอักขระ</string>
+    <string name="summary_support_wrap_around">เปิดหรือปิดการวนจากรายการสุดท้ายไปยังรายการแรก</string>
+    <string name="wrap_around_on">วนกลับไปต้น: เปิด</string>
+    <string name="wrap_around_off">วนกลับไปต้น: ปิด</string>
+    <string name="title_selector_tablet_held_up_faces_away">แท็บเล็ตที่ยกขึ้นหันหน้าจอออก</string>
     <string name="summary_support_tablet_held_up_faces_away">สำหรับแป้นพิมพ์อักษรเบรลล์บนแท็บเล็ตหรือโทรศัพท์ที่กางออก</string>
-    <string name="tablet_held_up_faces_away_on">แท็บเล็ตเงยหน้าขึ้น</string>
-    <string name="tablet_held_up_faces_away_off">แท็บเล็ตยื่นหน้าออกไป</string>
+    <string name="tablet_held_up_faces_away_on">แท็บเล็ตที่ยกขึ้นหันหน้าจอออก: เปิด</string>
+    <string name="tablet_held_up_faces_away_off">แท็บเล็ตที่ยกขึ้นหันหน้าจอออก: ปิด</string>
     <string name="title_keyboard_echo_on_screen">เสียงสะท้อนของแป้นพิมพ์บนหน้าจอ</string>
     <string name="title_keyboard_echo_physical">เสียงสะท้อนของแป้นพิมพ์กายภาพ</string>
     <string name="title_keyboard_echo_braille_keyboard">เสียงสะท้อนของแป้นพิมพ์อักษรเบรลล์</string>
@@ -1721,22 +1721,22 @@
     <string name="title_pref_interrupt_typing">ขัดจังหวะคำพูดเมื่อพิมพ์</string>
     <string name="pref_interrupt_typing_entry_always">เสมอ</string>
     <string name="pref_interrupt_typing_entry_edit_fields">ในช่องแก้ไข</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">บนคีย์บอร์ดก้อง</string>
-    <string name="title_pref_interrupt_enter">ขัดจังหวะคำพูดเมื่อ Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">ชื่อ รัฐ ประเภท</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">ประเภท รัฐ ชื่อ</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">รัฐ ประเภท ชื่อ</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">เมื่อแป้นพิมพ์อ่านออกเสียง</string>
+    <string name="title_pref_interrupt_enter">ขัดจังหวะเสียงพูดเมื่อกด Enter</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">ชื่อ สถานะ ประเภท</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">ประเภท สถานะ ชื่อ</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">สถานะ ประเภท ชื่อ</string>
     <string name="item_detail_name">ชื่อ</string>
-    <string name="item_detail_type">พิมพ์</string>
-    <string name="item_detail_state">รัฐ</string>
+    <string name="item_detail_type">ประเภท</string>
+    <string name="item_detail_state">สถานะ</string>
     <string name="action_move_up">เลื่อนขึ้น</string>
     <string name="action_move_down">เลื่อนลง</string>
     <string name="template_list_position">ตำแหน่ง <xliff:g id="position" example="2">%1$d</xliff:g> จาก <xliff:g id="count" example="3">%2$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up">หยิบขึ้นมา <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">ลดลง <xliff:g id="detail" example="Name">%1$s</xliff:g> <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly ระบุรายละเอียดของรายการในคำสั่งซื้อนี้ หากต้องการเปลี่ยน ให้แตะรายละเอียดค้างไว้ จากนั้นลากขึ้นหรือลง เมื่อเปิด SandFly ให้แตะสองครั้งค้างไว้แล้วลาก คุณยังสามารถใช้การกระทำเลื่อนขึ้นและเลื่อนลงได้</string>
-    <string name="title_pref_speak_items_before_scroll">พูดรายการก่อนที่จะเลื่อนเข้าสู่มุมมอง</string>
-    <string name="gemini_error_api_key">Gemini ไม่ยอมรับคีย์ API ตรวจสอบกุญแจในการตั้งค่าคำอธิบายอัตโนมัติ</string>
+    <string name="template_item_details_order_picked_up">หยิบ <xliff:g id="detail" example="Name">%1$s</xliff:g> ขึ้นมาแล้ว <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">วาง <xliff:g id="detail" example="Name">%1$s</xliff:g> แล้ว <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">SandFly จะพูดรายละเอียดของรายการตามลำดับนี้ หากต้องการเปลี่ยน ให้แตะรายละเอียดค้างไว้ แล้วลากขึ้นหรือลง เมื่อเปิด SandFly อยู่ ให้แตะสองครั้งค้างไว้แล้วลาก คุณยังใช้การดำเนินการเลื่อนขึ้นและเลื่อนลงได้ด้วย</string>
+    <string name="title_pref_speak_items_before_scroll">พูดรายการก่อนที่จะเลื่อนเข้ามาในมุมมอง</string>
+    <string name="gemini_error_api_key">Gemini ไม่ยอมรับคีย์ API ตรวจสอบคีย์ในการตั้งค่าคำอธิบายอัตโนมัติ</string>
     <string name="gemini_error_quota">ถึงขีดจำกัดการใช้งานสำหรับคีย์ Gemini API ของคุณแล้ว ลองอีกครั้งในภายหลัง</string>
     <string name="gemini_error_busy">Gemini ไม่ว่างในขณะนี้ โปรดลองอีกครั้งในอีกสักครู่</string>
     <string name="gemini_error_timeout">Gemini ใช้เวลาตอบนานเกินไป ลองอีกครั้ง</string>
@@ -1747,11 +1747,11 @@
     <string name="image_qna_stop_listening">หยุดฟัง</string>
     <string name="image_qna_type_question">พิมพ์คำถาม</string>
     <string name="shortcut_dictate">พิมพ์ตามเสียงอ่าน</string>
-    <string name="title_pref_ai_dictation">การเขียนตามคำบอกที่ถูกต้องด้วย AI</string>
-    <string name="dictation_not_corrected">ไม่ได้รับการแก้ไข. พิมพ์ว่าได้รับการยอมรับแล้ว</string>
-    <string name="dictation_nothing_recognized">ไม่มีอะไรได้รับการยอมรับ</string>
+    <string name="title_pref_ai_dictation">แก้ไขการพิมพ์ด้วยเสียงด้วย AI</string>
+    <string name="dictation_not_corrected">ไม่ได้แก้ไข พิมพ์ตามที่จดจำได้</string>
+    <string name="dictation_nothing_recognized">ไม่รู้จำอะไรเลย</string>
     <string name="dictation_unavailable">การรู้จำเสียงไม่พร้อมใช้งาน</string>
-    <string name="dictation_field_gone">ช่องข้อความปิดแล้ว ไม่มีอะไรพิมพ์</string>
+    <string name="dictation_field_gone">ช่องข้อความปิดแล้ว ไม่ได้พิมพ์อะไร</string>
     <string name="dictation_transcription_failed">ไม่ได้ถอดเสียงพูดเป็นข้อความ ไม่มีอะไรพิมพ์</string>
     <string name="title_pref_dictation">การพิมพ์ตามเสียงพูด</string>
     <string name="title_pref_dictation_rambler_live">การถอดเสียงสดของ Rambler</string>
@@ -1769,7 +1769,7 @@
     <string name="title_pref_dictation_ai_service">บริการเอไอสำหรับการพิมพ์ตามเสียงพูด</string>
     <string name="dictation_ai_same">เหมือนกับคำอธิบายอัตโนมัติ</string>
     <string name="title_pref_browse_mode_per_app">จำโหมดเรียกดูในแต่ละแอป</string>
-    <string name="title_pref_export_settings">การตั้งค่าการส่งออก</string>
+    <string name="title_pref_export_settings">ส่งออกการตั้งค่า</string>
     <string name="title_pref_import_settings">นำเข้าการตั้งค่า</string>
     <string name="settings_export_done">ส่งออกการตั้งค่าแล้ว ไม่รวมคีย์ API</string>
     <string name="settings_export_failed">ไม่สามารถส่งออกการตั้งค่าได้</string>

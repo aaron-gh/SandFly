@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API-sleutel</string>
-    <string name="summary_pref_gemini_api_key_built_in">Met behulp van de sleutel die in deze app is ingebouwd</string>
-    <string name="gemini_api_key_dialog_message">Ontvang een gratis API-sleutel van Google AI Studio, op aistudio.google.com/apikey, en plak deze hier. Om uw sleutel te verwijderen, maakt u het veld leeg en slaat u het op.\n\nAfbeeldingen en schermen die u beschrijft, worden verzonden naar Google. Op de gratis laag kan Google ze gebruiken om zijn producten te verbeteren.</string>
+    <string name="summary_pref_gemini_api_key_built_in">De in deze app ingebouwde sleutel wordt gebruikt</string>
+    <string name="gemini_api_key_dialog_message">Vraag een gratis API-sleutel aan bij Google AI Studio op aistudio.google.com/apikey en plak die hier. Maak het veld leeg en sla op om de sleutel te verwijderen.\n\nAfbeeldingen en schermen waarvan je een beschrijving vraagt, worden naar Google gestuurd. Bij het gratis abonnement kan Google ze gebruiken om zijn producten te verbeteren.</string>
     <string name="gemini_api_key_hint">API-sleutel</string>
     <string name="gemini_api_key_save">Opslaan</string>
-    <string name="gemini_api_key_get">Haal een sleutel</string>
+    <string name="gemini_api_key_get">Sleutel ophalen</string>
     <string name="title_pref_gemini_model">Gemini-model</string>
     <string name="gemini_model_automatic">Automatisch</string>
     <string name="summary_pref_gemini_model_automatic">Automatisch: Gemini Flash, dan Flash-Lite als Flash bezig is</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, dan Flash-Lite als het bezet is</string>
-    <string name="gemini_model_loading">De modellen ophalen...</string>
-    <string name="gemini_model_list_failed">Kon de modellen niet verkrijgen: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, dan Flash-Lite als het overbelast is</string>
+    <string name="gemini_model_loading">Modellen ophalen…</string>
+    <string name="gemini_model_list_failed">Kan de modellen niet ophalen: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Stel eerst een Gemini API-sleutel in</string>
-    <string name="gemini_api_terms_link">Gemini Aanvullende API-servicevoorwaarden</string>
+    <string name="gemini_api_terms_link">Aanvullende servicevoorwaarden voor de Gemini API</string>
     <string name="ai_service_address_hint">Adres, zoals https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Het adres moet beginnen met https://. Er is niets opgeslagen.</string>
     <string name="dialog_message_ai_service_consent">Afbeeldingen en schermafbeeldingen worden ter beschrijving naar <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> gestuurd, wat enkele seconden duurt. De eigen voorwaarden en het privacybeleid zijn van toepassing. Generatieve AI is experimenteel en zal dus fouten maken.</string>
     <string name="ai_service_error_api_key">De AI-service heeft de API-sleutel niet geaccepteerd. Controleer de instellingen in Automatische beschrijvingen.</string>
     <string name="ai_service_error_quota">De gebruikslimiet van de AI-service is bereikt. Probeer het later opnieuw.</string>
-    <string name="ai_service_error_busy">De AI-service is momenteel druk bezig. Probeer het zo nog eens.</string>
+    <string name="ai_service_error_busy">De AI-service is op dit moment overbelast. Probeer het zo opnieuw.</string>
     <string name="ai_service_error_timeout">Het duurde te lang voordat de AI-service antwoordde. Probeer het opnieuw.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Andere dienst</string>
     <string name="title_pref_category_ai_services">AI-diensten</string>
     <string name="title_pref_ai_provider">AI-service</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> instellingen</string>
+    <string name="title_ai_provider_settings">Instellingen voor <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, niet ingesteld</string>
     <string name="ai_provider_in_use">In gebruik</string>
     <string name="ai_provider_not_set_up">Niet ingesteld</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API-sleutel</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>-model</string>
     <string name="ai_provider_choose_model">Niet gekozen</string>
-    <string name="ai_provider_key_message">Plak uw <xliff:g id="service" example="Claude">%1$s</xliff:g> API-sleutel. Om het te verwijderen, maakt u het veld leeg en slaat u het op. Afbeeldingen en schermen die u beschrijft, worden verzonden naar <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Plak je API-sleutel voor <xliff:g id="service" example="Claude">%1$s</xliff:g>. Maak het veld leeg en sla op om de sleutel te verwijderen. Afbeeldingen en schermen waarvan je een beschrijving vraagt, worden naar <xliff:g id="service" example="Claude">%1$s</xliff:g> gestuurd.</string>
     <string name="ai_provider_needs_key">Stel eerst de <xliff:g id="service" example="Claude">%1$s</xliff:g> API-sleutel in</string>
     <string name="ai_provider_needs_address">Stel eerst het adres in</string>
     <string name="ai_provider_enter_model">Voer een modelnaam in</string>

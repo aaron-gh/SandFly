@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">Hangtémák</string>
-    <string name="summary_pref_sound_themes">Hang- és rezgéskészletek telepítése és kiválasztása, egyes hangok cseréje saját hangokra, valamint a vezérlőhangok és -rezgések és a 3D hang bekapcsolása.</string>
+    <string name="summary_pref_sound_themes">Hang- és rezgéskészletek, saját hangok egyes hangok helyett, „Vezérlőhangok és -rezgések” és 3D hang.</string>
     <string name="sound_themes_installed_category">Telepített témák</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">A SandFly saját hangjai és rezgései, valamint az Ön saját hangjai.</string>
@@ -10,7 +10,7 @@
     <string name="sound_theme_license">Licenc: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> hang.</item>
-        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> hangok.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> hang.</item>
     </plurals>
     <plurals name="sound_theme_vibrations">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> rezgés.</item>
@@ -26,7 +26,7 @@
     <string name="sound_theme_remove_button">Eltávolítás</string>
     <plurals name="sound_theme_exported">
         <item quantity="one">A téma elmentve, <xliff:g id="count" example="1">%d</xliff:g> hanggal.</item>
-        <item quantity="other">Mentettük a témát, <xliff:g id="count" example="13">%d</xliff:g> hanggal.</item>
+        <item quantity="other">A téma elmentve, <xliff:g id="count" example="13">%d</xliff:g> hanggal.</item>
     </plurals>
     <string name="sound_theme_export_failed">A SandFly nem tudta menteni a témafájlt.</string>
     <string name="sound_theme_no_picker">Az eszközön nincs fájlok kiválasztására alkalmas alkalmazás.</string>
@@ -75,10 +75,10 @@
     <string name="theme_sound_braille_new_line">Braille-billentyűzet: új sor</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">Hangfájl kiválasztása</string>
-    <string name="theme_sound_preview">Előnézet</string>
+    <string name="theme_sound_preview">Meghallgatás</string>
     <string name="theme_sound_none">Nincs hang</string>
     <string name="theme_sound_summary_no_sound">Nincs hang</string>
-    <string name="theme_sound_action_set_none">Beállítás hang nélkülire</string>
+    <string name="theme_sound_action_set_none">Beállítás: nincs hang</string>
     <string name="theme_sound_use_default">A SandFly hangjának használata</string>
     <string name="theme_sound_remove">A hang eltávolítása</string>
     <string name="theme_sound_too_large">A fájl túl nagy. Egy hang legfeljebb 5 MB lehet.</string>

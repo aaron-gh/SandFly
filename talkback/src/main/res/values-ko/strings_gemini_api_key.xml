@@ -2,22 +2,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API 키</string>
     <string name="summary_pref_gemini_api_key_built_in">이 앱에 내장된 키 사용</string>
-    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey의 Google AI Studio에서 무료 API 키를 받아 여기에 붙여넣으세요. 키를 제거하려면 해당 필드를 지우고 저장하세요.\n\n설명하는 이미지와 화면이 Google로 전송됩니다. 무료 등급에서는 Google가 이를 사용하여 제품을 개선할 수 있습니다.</string>
+    <string name="gemini_api_key_dialog_message">Google AI Studio(aistudio.google.com/apikey)에서 무료 API 키를 받아 여기에 붙여넣으세요. 키를 삭제하려면 입력란을 비우고 저장하세요.\n\n설명을 요청한 이미지와 화면은 Google로 전송됩니다. 무료 등급에서는 Google이 이를 자사 제품 개선에 사용할 수 있습니다.</string>
     <string name="gemini_api_key_hint">API 키</string>
     <string name="gemini_api_key_save">저장</string>
-    <string name="gemini_api_key_get">열쇠 받기</string>
+    <string name="gemini_api_key_get">키 받기</string>
     <string name="title_pref_gemini_model">Gemini 모델</string>
     <string name="gemini_model_automatic">자동</string>
-    <string name="summary_pref_gemini_model_automatic">자동: Gemini 플래시, 플래시가 사용 중이면 Flash-Lite</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, 그리고 바쁠 때 Flash-Lite</string>
-    <string name="gemini_model_loading">모델을 구하는 중…</string>
+    <string name="summary_pref_gemini_model_automatic">자동: Gemini Flash, Flash가 혼잡하면 Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, 사용량이 많을 때는 Flash-Lite</string>
+    <string name="gemini_model_loading">모델을 가져오는 중…</string>
     <string name="gemini_model_list_failed">모델을 가져올 수 없습니다: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Gemini API 키를 먼저 설정하세요.</string>
+    <string name="gemini_model_needs_key">Gemini API 키를 먼저 설정하세요</string>
     <string name="gemini_api_terms_link">Gemini API 추가 서비스 약관</string>
     <string name="ai_service_address_hint">주소(예: https://openrouter.ai/api/v1)</string>
     <string name="ai_service_model_hint">모델</string>
-    <string name="ai_service_address_invalid">주소는 https://.로 시작해야 합니다. 저장된 내용이 없습니다.</string>
-    <string name="dialog_message_ai_service_consent">설명을 위해 이미지와 스크린샷이 <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>로 전송되는데, 이 작업에는 몇 초가 걸립니다. 자체 약관 및 개인 정보 보호 정책이 적용됩니다. 생성 AI는 실험적이므로 실수를 할 수 있습니다.</string>
+    <string name="ai_service_address_invalid">주소는 https://로 시작해야 합니다. 저장된 내용이 없습니다.</string>
+    <string name="dialog_message_ai_service_consent">이미지와 스크린샷은 설명을 위해 <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>(으)로 전송되며, 몇 초가 걸립니다. 해당 서비스의 자체 약관과 개인정보처리방침이 적용됩니다. 생성형 AI는 실험 단계이므로 오류가 있을 수 있습니다.</string>
     <string name="ai_service_error_api_key">AI 서비스가 API 키를 수락하지 않았습니다. 자동 설명에서 설정을 확인하세요.</string>
     <string name="ai_service_error_quota">AI 서비스 이용 한도에 도달했습니다. 나중에 다시 시도하세요.</string>
     <string name="ai_service_error_busy">현재 AI 서비스가 사용 중입니다. 잠시 후에 다시 시도해 보세요.</string>
@@ -41,13 +41,13 @@
     <string name="ai_provider_not_set_up">설정되지 않음</string>
     <string name="ai_provider_not_ready">먼저 모델을 선택하세요</string>
     <string name="ai_provider_address">주소</string>
-    <string name="ai_provider_address_message">OpenAI 호환 채팅 API 및 이미지 입력(예: https://example.com/v1.)을 갖춘 서비스 주소</string>
+    <string name="ai_provider_address_message">OpenAI 호환 채팅 API와 이미지 입력을 지원하는 서비스의 주소입니다(예: https://example.com/v1).</string>
     <string name="ai_provider_not_set">설정되지 않음</string>
     <string name="ai_provider_set">구성됨</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 키</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> 모델</string>
     <string name="ai_provider_choose_model">선택되지 않음</string>
-    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 키를 붙여넣으세요. 제거하려면 필드를 지우고 저장하세요. 귀하가 설명하는 이미지와 화면이 <xliff:g id="service" example="Claude">%1$s</xliff:g>로 전송됩니다.</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 키를 붙여넣으세요. 삭제하려면 입력란을 비우고 저장하세요. 설명을 요청한 이미지와 화면은 <xliff:g id="service" example="Claude">%1$s</xliff:g>(으)로 전송됩니다.</string>
     <string name="ai_provider_needs_key"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 키를 먼저 설정하세요</string>
     <string name="ai_provider_needs_address">주소를 먼저 설정하세요.</string>
     <string name="ai_provider_enter_model">모델명을 입력하세요</string>

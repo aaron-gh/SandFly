@@ -21,7 +21,7 @@
     <string name="script_add_example_summary">Sê die naam van elke app waarna jy oorskakel. ’n Skrip om mee te begin.</string>
     <string name="script_state_on">Aan</string>
     <string name="script_state_off">Af</string>
-    <string name="script_runs_in">Loop in <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_in">Werk in <xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">Loop in alle apps</string>
     <string name="script_version">Weergawe <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">Deur <xliff:g id="author">%1$s</xliff:g></string>
@@ -60,8 +60,8 @@
     <string name="script_permissions_summary">As jy een afskakel, stop die dele wat dit nodig het.</string>
     <string name="script_install_permissions_note">Jy kan dit later afskakel.</string>
     <string name="script_manage_category">Bestuur</string>
-    <string name="script_move_up">Loop vroeër</string>
-    <string name="script_move_down">Loop later</string>
+    <string name="script_move_up">Voer vroeër uit</string>
+    <string name="script_move_down">Voer later uit</string>
     <string name="script_order_summary">Volgorde vir skripte wat dieselfde spraak verander. App-skripte loop eerste.</string>
     <string name="script_log">Log</string>
     <string name="script_log_summary">Uitset en foute sedert SandFly begin het</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_turn_off">Skakel af</string>
     <string name="script_binding_restore">Stel verstekke terug</string>
     <string name="script_binding_restored">Verstekke teruggestel</string>
-    <string name="script_binding_perform">Voer gebaar of sleutels uit</string>
+    <string name="script_binding_perform">Voer die gebaar uit of druk die sleutels</string>
     <string name="script_binding_perform_summary">Wys die volgende gebaar toe, of sleutels wat met die SandFly-wysigersleutel gedruk word</string>
     <string name="script_binding_perform_message">Maak die gebaar of druk die sleutels.</string>
     <string name="script_binding_assign_title">Wys <xliff:g id="binding">%1$s</xliff:g> aan <xliff:g id="command">%2$s</xliff:g> toe?</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> skrip opgedateer: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skripte opgedateer: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Opdaterings word onder Opdaterings gelys</string>
+    <string name="scripts_updates_to_approve">Opdaterings word onder “Opdaterings” gelys</string>
     <string name="scripts_update_check_failed">Sommige bronne kon nie nagegaan word nie</string>
-    <string name="scripts_up_to_date">Alle skrifte is op datum</string>
+    <string name="scripts_up_to_date">Alle skripte is op datum</string>
 </resources>

@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">Системанын аракеттери</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Артка, башкы бет, билдирмелер жана башкалар</string>
   <string name="bd_commands_bindings_category_talkback_features_title">SandFly функциялары</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly менюлар жана жөндөөлөр</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly менюлары жана параметрлери</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Брайль параметрлери</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Брайль тили жана параметрлери</string>
   <string name="bd_commands_bindings_category_text_editing_title">Текстти оңдоо</string>
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">Бул SandFly функциясына билдирмелер жана ойготкучтар сыяктуу айрым билдирүүлөрдү сактайт. Бул параметрди каалаган убакта өзгөртө аласыз.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Күйгүзүү</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Жок, рахмат</string>
-    <string name="external_display_channel">Башка колдонмолордон Брайл дисплейлери</string>
+    <string name="external_display_channel">Башка колдонмолордогу Брайл дисплейлери</string>
     <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly үчүн Брайль дисплейи болууга уруксат берилсинби?</string>
     <string name="external_display_ask_text">SandFly сиз уруксат бермейинче аны колдонбойт.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly көрсөтүүлөрүнүн баарын Брайл арибинде окуй алат, алар экранда каалаган нерсе болушу мүмкүн, анын ичинде билдирүүлөр жана сиз терген нерселер. Ал ошондой эле Брайль дисплейи менен түзмөгүңүздү башкара алат: териңиз, колдонмолорду ачыңыз жана каалаган SandFly буйругун аткарыңыз. Сиз ишенген колдонмолорго гана уруксат бериңиз.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly Брайл арибинде көрсөткөндүн баарын окуй алат, ал экрандагы каалаган нерсе, анын ичинде билдирүүлөр жана сиз тергениңиз болушу мүмкүн. Ал ошондой эле түзмөгүңүздү Брайл дисплейи менен башкаргандай башкара алат: текст терип, колдонмолорду ачып жана SandFly’дын каалаган буйругун аткара алат. Ишенген колдонмолоруңузга гана уруксат бериңиз.</string>
     <string name="external_display_allow">Уруксат берүү</string>
-    <string name="external_display_deny">Уруксат бербе</string>
+    <string name="external_display_deny">Уруксат бербөө</string>
     <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> сиздин Брайл дисплейи</string>
     <string name="external_display_in_use_text">SandFly аны колдонуп жатканда, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> экранды окуп, түзмөктү башкара алат.</string>
-    <string name="external_displays_title">Башка колдонмолордон көрсөтөт</string>
-    <string name="external_displays_summary">Сиз уруксат берген колдонмолор SandFly үчүн брайль дисплейлери болушу мүмкүн. Брайл дисплейи болгон колдонмо экранды окуп, аппаратты башкара алат.</string>
+    <string name="external_displays_title">Башка колдонмолордогу дисплейлер</string>
+    <string name="external_displays_summary">Сиз уруксат берген колдонмолор SandFly үчүн Брайл дисплейи боло алат. Брайл дисплейи болгон колдонмо экранды окуп, түзмөктү башкара алат.</string>
     <string name="external_displays_none">Эч бир колдонмо Брайл дисплейи боло албайт.</string>
 </resources>

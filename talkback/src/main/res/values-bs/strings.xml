@@ -1465,7 +1465,7 @@
     <string name="shortcut_open_app">Otvori aplikaciju <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <string name="shortcut_system_notifications">Sistemska traka s obavještenjima</string>
     <string name="title_clear_selection">Poništi odabir</string>
-    <string name="title_pref_brightness">Osvjetljenje</string>
+    <string name="title_pref_brightness">Svjetlina</string>
     <string name="summary_support_change_brightness">Povećanje ili smanjenje osvjetljenja ekrana, i kada je ekran skriven</string>
     <string name="title_pref_shortcut_3finger_4tap">Četverostruki dodir s 3 prsta</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Okretanje s 2 prsta u smjeru kazaljke na satu</string>
@@ -1478,7 +1478,7 @@
     <string name="title_pref_shortcut_4finger_pinch">Primicanje 4 prsta</string>
     <string name="title_pref_shortcut_4finger_spread">Razmicanje 4 prsta</string>
     <string name="title_pref_shortcut_edge_bottom_up">Prevlačenje nagore s donjeg ruba</string>
-    <string name="title_pref_shortcut_edge_bottom_long_up">Dugo prevlačenje nagore s donjeg ruba</string>
+    <string name="title_pref_shortcut_edge_bottom_long_up">Dugi potez nagore s donjeg ruba</string>
     <string name="title_pref_shortcut_edge_top_left_down">Prevlačenje nadolje s gornjeg lijevog ruba</string>
     <string name="title_pref_shortcut_edge_top_right_down">Prevlačenje nadolje s gornjeg desnog ruba</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">Držite prstom da odaberete bilo koju tipku pa ga podignite. Dvaput dodirnite za Enter, Gotovo ili Pošalji.</string>
@@ -1559,11 +1559,11 @@
     <string name="gemini_error_with_details">Gemini nije mogao odgovoriti, greška <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nije moguće dobiti detaljniji opis slike: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="title_selector_vertical_navigation">Vertikalna navigacija</string>
-    <string name="summary_selector_vertical_navigation">Pređite na stavku ispod ili iznad, pored ostalih stavki u redu</string>
+    <string name="summary_selector_vertical_navigation">Prelazak na stavku ispod ili iznad, preskačući ostale stavke u redu</string>
     <string name="title_pref_speech_stream">Jačina govora</string>
-    <string name="summary_selector_speech_stream">Prebacivanje između pristupačnosti, medija, zvona i jačine zvuka poziva</string>
+    <string name="summary_selector_speech_stream">Prebacivanje između jačine zvuka za pristupačnost, medije, zvono i pozive</string>
     <string name="speech_stream_accessibility">Jačina zvuka za pristupačnost</string>
-    <string name="speech_stream_media">Jačina medija</string>
+    <string name="speech_stream_media">Jačina zvuka medija</string>
     <string name="speech_stream_ring">Jačina zvona</string>
     <string name="speech_stream_call">Jačina zvuka poziva, slušalica</string>
     <string-array name="pref_speech_stream_entries">
@@ -1572,12 +1572,12 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_play_installer">Izgleda instalirano od Google Play</string>
-    <string name="summary_pref_play_installer">Recite drugim aplikacijama da je Google Play instaliran SandFly. Neke aplikacije, kao što su neke bankarske, isključuju usluge pristupačnosti koje su instalirane s bilo kojeg drugog mjesta. Potrebno je Shizuku i mijenja samo ono što je aplikacijama rečeno o tome odakle dolazi SandFly.</string>
-    <string name="summary_pref_play_installer_pending">Uključeno, ali Google Reprodukcija još nije snimljena kao instalater. SandFly postavlja kada je Shizuku dostupno.</string>
+    <string name="title_pref_play_installer">Prikaži kao instalirano s Google Playa</string>
+    <string name="summary_pref_play_installer">Javlja drugim aplikacijama da je SandFly instaliran s Google Playa. Neke aplikacije, kao što su neke bankarske aplikacije, isključuju usluge pristupačnosti instalirane iz bilo kojeg drugog izvora. Potreban je Shizuku i mijenja se samo ono što se aplikacijama javlja o izvoru SandFlya.</string>
+    <string name="summary_pref_play_installer_pending">Uključeno, ali Google Play još nije zabilježen kao instalater. SandFly ga postavlja kada je Shizuku dostupan.</string>
     <string name="notification_list_show_all">Prikaži sve</string>
     <string name="notification_list_show_less">Prikaži manje</string>
-    <string name="title_pref_quick_settings">Koristite brza podešavanja SandFly</string>
+    <string name="title_pref_quick_settings">Koristi brze postavke SandFlya</string>
     <string name="title_pref_quick_settings_items">Panel za brza podešavanja</string>
     <string name="quick_settings_title">Brze postavke</string>
     <string name="quick_settings_wifi">WiFi</string>
@@ -1587,25 +1587,25 @@
     <string name="quick_settings_airplane_mode">Način rada u avionu</string>
     <string name="quick_settings_do_not_disturb">Ne ometaj</string>
     <string name="quick_settings_sound_mode">Režim zvuka</string>
-    <string name="quick_settings_flashlight">Lampa</string>
-    <string name="quick_settings_flashlight_brightness">Osvetljenost lampe</string>
+    <string name="quick_settings_flashlight">Svjetiljka</string>
+    <string name="quick_settings_flashlight_brightness">Svjetlina svjetiljke</string>
     <string name="quick_settings_location">Lokacija</string>
     <string name="quick_settings_auto_rotate">Automatsko rotiranje</string>
     <string name="quick_settings_battery_saver">Ušteda baterije</string>
     <string name="quick_settings_dark_theme">Tamna tema</string>
     <string name="quick_settings_nfc">NFC</string>
-    <string name="quick_settings_brightness">Osvjetljenje</string>
+    <string name="quick_settings_brightness">Svjetlina</string>
     <string name="quick_settings_adaptive_brightness">Prilagodljiva svjetlina</string>
-    <string name="quick_settings_media_volume">Jačina medija</string>
+    <string name="quick_settings_media_volume">Jačina zvuka medija</string>
     <string name="quick_settings_call_volume">Jačina zvuka poziva</string>
     <string name="quick_settings_ring_volume">Jačina zvona</string>
-    <string name="quick_settings_notification_volume">Jačina obavještenja</string>
+    <string name="quick_settings_notification_volume">Jačina zvuka obavještenja</string>
     <string name="quick_settings_alarm_volume">Jačina zvuka alarma</string>
     <string name="quick_settings_accessibility_volume">Jačina zvuka za pristupačnost</string>
     <string name="quick_settings_system_volume">Jačina zvuka sistema</string>
-    <string name="quick_settings_data_saver">Data saver</string>
-    <string name="quick_settings_night_light">Night Light</string>
-    <string name="quick_settings_extra_dim">Extra dim</string>
+    <string name="quick_settings_data_saver">Ušteda podataka</string>
+    <string name="quick_settings_night_light">Noćno svjetlo</string>
+    <string name="quick_settings_extra_dim">Dodatno zatamnjenje</string>
     <string name="quick_settings_color_inversion">Inverzija boja</string>
     <string name="quick_settings_color_correction">Korekcija boje</string>
     <string name="quick_settings_microphone_access">Pristup mikrofonu</string>
@@ -1615,11 +1615,11 @@
     <string name="quick_settings_media">Mediji</string>
     <string name="quick_settings_no_media">Nema medija</string>
     <string name="quick_settings_media_output">Medijski izlaz</string>
-    <string name="quick_settings_next_alarm">Sledeći alarm</string>
+    <string name="quick_settings_next_alarm">Sljedeći alarm</string>
     <string name="quick_settings_no_alarm">Nema alarma</string>
     <string name="quick_settings_settings">Postavke</string>
     <string name="quick_settings_power_menu">Meni napajanja</string>
-    <string name="quick_settings_add_system_tile">Dodajte sistemsku pločicu</string>
+    <string name="quick_settings_add_system_tile">Dodaj sistemsku pločicu</string>
     <string name="quick_settings_no_system_tiles">Nema sistemskih pločica za dodavanje</string>
     <string name="quick_settings_tile_not_found">%1$s nije u brzim postavkama sistema</string>
     <string name="quick_settings_never">Nikada</string>
@@ -1636,21 +1636,21 @@
     <string name="quick_settings_connected">Povezano</string>
     <string name="quick_settings_battery">Baterija</string>
     <string name="quick_settings_battery_charging">%1$s, punjenje</string>
-    <string name="quick_settings_battery_full">%1$s, naplaćeno</string>
+    <string name="quick_settings_battery_full">%1$s, napunjeno</string>
     <string name="quick_settings_sound">Zvuk</string>
     <string name="quick_settings_vibrate">Vibracija</string>
-    <string name="quick_settings_mute">Mute</string>
+    <string name="quick_settings_mute">Bez zvuka</string>
     <string name="quick_settings_on">Uključeno</string>
     <string name="quick_settings_off">Isključeno</string>
     <string name="quick_settings_unavailable">Nedostupno</string>
     <string name="quick_settings_edit">Uredi</string>
     <string name="quick_settings_system">Brza podešavanja sistema</string>
-    <string name="quick_settings_open_settings">Otvorite postavke</string>
+    <string name="quick_settings_open_settings">Otvori postavke</string>
     <string name="quick_settings_add_control">Dodaj kontrolu</string>
-    <string name="quick_settings_add_tile">Dodajte pločicu aplikacije</string>
+    <string name="quick_settings_add_tile">Dodaj pločicu aplikacije</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Broj kolona</string>
-    <string name="quick_settings_move">Pokret</string>
+    <string name="quick_settings_move">Pomjeri</string>
     <string name="quick_settings_move_title">Pomjeri %1$s</string>
     <string name="quick_settings_cell">Red %1$d, kolona %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1665,13 +1665,13 @@
     <string name="quick_settings_removed">%1$s uklonjeno</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Još jedna prečica za uključivanje ili isključivanje načina pretraživanja</string>
     <string name="title_pref_vibration_strength">Snaga vibracija</string>
-    <string name="shortcut_scroll_to_top">Skrolujte na vrh</string>
-    <string name="shortcut_write_reading_control">Napišite slovo kontrole čitanja</string>
+    <string name="shortcut_scroll_to_top">Skrolaj na vrh</string>
+    <string name="shortcut_write_reading_control">Napiši slovo kontrole za čitanje</string>
     <string name="title_pref_reading_control_letters">Rukopisna slova</string>
     <string name="reading_control_letter_none">Nema</string>
     <string name="handwriting_prompt">Napišite slovo abecede</string>
     <string name="handwriting_closed">Rukopis zatvoren</string>
-    <string name="handwriting_no_match">Kontrola čitanja ne počinje sa <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Nijedna kontrola za čitanje ne počinje sa <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Napišite naziv aplikacije da je otvorite</string>
     <string name="handwriting_app_prompt">Napišite naziv aplikacije</string>
     <string name="handwriting_no_app">Nijedna aplikacija ne počinje sa <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
@@ -1679,13 +1679,13 @@
     <string name="handwriting_not_recognized">Rukopis nije prepoznat</string>
     <string name="handwriting_downloading">Prepoznavanje rukopisa se preuzima</string>
     <string name="handwriting_download_title">Preuzeti prepoznavanje rukopisa?</string>
-    <string name="handwriting_download_message">Ovaj telefon prepoznaje rukopis. Njegov model za ovaj jezik, oko 20 MB, preuzima se sa Google jednom. Poruka se prikazuje kada je preuzeta.</string>
+    <string name="handwriting_download_message">Ovaj telefon prepoznaje rukopis. Njegov model za ovaj jezik, oko 20 MB, jednom se preuzima s Googlea. Kada se preuzme, prikazuje se poruka.</string>
     <string name="handwriting_download_button">Preuzmi</string>
     <string name="handwriting_downloaded">Preuzeto je prepoznavanje rukopisa</string>
     <string name="handwriting_download_failed">Prepoznavanje rukopisa nije bilo moguće preuzeti. Provjerite internetsku vezu.</string>
     <string name="handwriting_unsupported_language">Prepoznavanje rukopisa nije dostupno na ovom jeziku</string>
     <string name="title_pref_handwriting_keyboard">Tastatura za rukopis</string>
-    <string name="summary_pref_handwriting_keyboard">Uključite SandFly rukopis u postavkama tastature Android</string>
+    <string name="summary_pref_handwriting_keyboard">Uključite SandFly rukopis u postavkama tastature Androida</string>
     <string name="title_pref_handwriting_wait">Sačekajte nakon pisanja</string>
     <string name="value_handwriting_wait_200">0,2 s</string>
     <string name="value_handwriting_wait_300">0,3 sekunde</string>
@@ -1697,8 +1697,8 @@
     <string name="handwriting_keyboard_name">SandFly rukopis</string>
     <string name="handwriting_space">Razmak</string>
     <string name="handwriting_new_line">Novi red</string>
-    <string name="handwriting_tutorial_intro">Vodič za rukopis tastature. Pišite jednim prstom bilo gdje na ekranu. Ono što napišete se otkucava kada zastanete na trenutak. Da završite vodič, prevucite prema dolje s tri prsta.</string>
-    <string name="handwriting_tutorial_write_letter">Napišite slovo abecede a.</string>
+    <string name="handwriting_tutorial_intro">Vodič za tastaturu za rukopis. Pišite jednim prstom bilo gdje na ekranu. Ono što napišete unosi se kada na trenutak zastanete. Da završite vodič, prevucite nadolje s tri prsta.</string>
+    <string name="handwriting_tutorial_write_letter">Napišite slovo a.</string>
     <string name="handwriting_tutorial_write_word">Sada napišite riječ hi.</string>
     <string name="handwriting_tutorial_typed">Otkucano <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Prevucite udesno sa dva prsta da unesete razmak.</string>
@@ -1707,30 +1707,30 @@
     <string name="handwriting_tutorial_next_reading">Ako je rukopis prepoznat kao drugi znak, kao što je veliko slovo, prevucite prema gore s dva prsta da odaberete sljedeći prijedlog za prepoznavanje. Pokušajte sada.</string>
     <string name="handwriting_tutorial_read_back">Dodirnite sa dva prsta da pročitate tekst ispred kursora.</string>
     <string name="handwriting_tutorial_new_line">Prevucite nadole sa dva prsta da biste umetnuli novi red ili izvršili radnju u polju za tekst, kao što je Pošalji.</string>
-    <string name="handwriting_tutorial_not_that">To je bio još jedan gest.</string>
-    <string name="handwriting_tutorial_done">Nova linija. Tutorial je završen. Prevucite nadole sa tri prsta da sakrijete tastaturu, a desno ili levo sa tri prsta da promenite tastaturu. Da ponovo otvorite vodič, dodirnite s tri prsta.</string>
+    <string name="handwriting_tutorial_not_that">To je bio drugi pokret.</string>
+    <string name="handwriting_tutorial_done">Novi red. Vodič je završen. Prevucite nadolje s tri prsta da sakrijete tastaturu, a lijevo ili desno s tri prsta da promijenite tastaturu. Da ponovo otvorite vodič, dodirnite s tri prsta.</string>
     <string name="handwriting_tutorial_finished">Tutorial je završen. Da ga ponovo otvorite, dodirnite s tri prsta.</string>
     <string name="handwriting_no_alternatives">Nema drugih prijedloga</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> od <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Prazan tekst</string>
     <string name="handwriting_not_available">Prepoznavanje rukopisa nije dostupno na ovom uređaju</string>
-    <string name="shortcut_scroll_to_bottom">Skrolujte do dna</string>
+    <string name="shortcut_scroll_to_bottom">Skrolaj do dna</string>
     <string name="shortcut_refresh">Osvježi</string>
     <string name="shortcut_system_quick_settings">Brza podešavanja sistema</string>
     <string name="shortcut_lock_screen">Zaključajte ekran uređaja</string>
     <string name="shortcut_power_menu">Meni napajanja</string>
-    <string name="shortcut_increase_media_volume">Povećajte jačinu medija</string>
-    <string name="shortcut_decrease_media_volume">Smanjite jačinu medija</string>
+    <string name="shortcut_increase_media_volume">Povećaj jačinu zvuka medija</string>
+    <string name="shortcut_decrease_media_volume">Smanji jačinu zvuka medija</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Dugi prelazak prstom prema dolje od gornjeg lijevog dijela</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Dugi prelazak prstom prema dolje od gornjeg desnog dijela</string>
     <string name="title_pref_shortcut_edge_left_top_right">Prevucite udesno od lijeve ivice, gornje polovine</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Dugi prijelaz udesno od lijeve ivice, gornje polovine</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Dugi potez udesno s lijeve ivice, gornja polovina</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Prevucite desno od lijeve ivice, donje polovine</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Dugi prijelaz udesno od lijeve ivice, donje polovine</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Dugi potez udesno s lijeve ivice, donja polovina</string>
     <string name="title_pref_shortcut_edge_right_top_left">Prevucite lijevo od desne ivice, gornje polovine</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Dugo prevlačenje ulijevo s desne ivice, gornja polovina</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Dugi potez ulijevo s desne ivice, gornja polovina</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Prevucite lijevo od desne ivice, donje polovine</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Dugo prevlačenje ulijevo s desne ivice, donja polovina</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Dugi potez ulijevo s desne ivice, donja polovina</string>
     <string name="title_pref_edge_first_click_mm">Udaljenost do prvog klika</string>
     <string name="title_pref_edge_second_click_mm">Udaljenost od prvog do drugog klika</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1741,17 +1741,17 @@
     <string name="value_distance_40mm">4 cm</string>
     <string name="value_distance_50mm">5 cm</string>
     <string name="title_pref_selector_links_controls_web_only">Veze i kontrole samo u web sadržaju</string>
-    <string name="title_pref_selector_auto_switch">Automatski promijenite kontrolu čitanja</string>
-    <string name="title_pref_touch_stops_speech">Zaustavite govor kada dodirnete ekran</string>
+    <string name="title_pref_selector_auto_switch">Automatski promijeni kontrolu za čitanje</string>
+    <string name="title_pref_touch_stops_speech">Zaustavi govor pri dodiru ekrana</string>
     <string name="title_pref_volume_keys_move_cursor">Tasteri za jačinu zvuka pomeraju kursor</string>
-    <string name="summary_pref_volume_keys_move_cursor">Kada tekstualno polje ima fokus, jačina zvuka pomera kursor unazad za jedan znak, a jačina zvuka ga pomera dalje</string>
+    <string name="summary_pref_volume_keys_move_cursor">Kada je tekstualno polje u fokusu, pojačavanje zvuka pomjera kursor jedan znak unazad, a utišavanje jedan znak naprijed</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Odjek tastature rukopisa</string>
     <string name="image_qna_ask_by_voice">Pitaj glasom</string>
-    <string name="image_qna_stop_listening">Prestani da slušaš</string>
+    <string name="image_qna_stop_listening">Zaustavi slušanje</string>
     <string name="image_qna_type_question">Unesite pitanje</string>
     <string name="shortcut_dictate">Diktiranje</string>
-    <string name="title_pref_ai_dictation">Ispravan diktat sa AI</string>
-    <string name="dictation_not_corrected">Nije ispravljeno. Otkucano kao prepoznato.</string>
+    <string name="title_pref_ai_dictation">Ispravljanje diktata pomoću AI</string>
+    <string name="dictation_not_corrected">Nije ispravljeno. Upisano kako je prepoznato.</string>
     <string name="dictation_nothing_recognized">Ništa nije prepoznato</string>
     <string name="dictation_unavailable">Prepoznavanje govora nije dostupno</string>
     <string name="dictation_field_gone">Polje za tekst je zatvoreno. Ništa nije upisano.</string>
@@ -1771,9 +1771,9 @@
     <string name="dictation_whisper_use">Koristi</string>
     <string name="title_pref_dictation_ai_service">AI usluga za diktiranje</string>
     <string name="dictation_ai_same">Isto kao za automatske opise</string>
-    <string name="title_pref_browse_mode_per_app">Zapamtite način pretraživanja u svakoj aplikaciji</string>
+    <string name="title_pref_browse_mode_per_app">Zapamti način pregledavanja u svakoj aplikaciji</string>
     <string name="title_pref_export_settings">Izvoz postavki</string>
-    <string name="title_pref_import_settings">Uvezite postavke</string>
+    <string name="title_pref_import_settings">Uvezi postavke</string>
     <string name="settings_export_done">Postavke su izvezene. API ključevi nisu uključeni</string>
     <string name="settings_export_failed">Postavke nije moguće izvesti</string>
     <string name="settings_import_done">Postavke su uvezene</string>

@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">डिवाइस अनलॉक कर दिया गया.</string>
   <string name="title_pref_speech_volume">बोली का वॉल्‍यूम</string>
   <string name="title_pref_verbose_scroll_announcement">स्क्रीन पर मौजूद सूची में आइटम की संख्या हमेशा सुनें</string>
-  <string name="summary_pref_verbose_scroll_announcement">हर बार स्क्रोल करने के बाद बोलें कि कौनसे आइटम दिख रहे हैं</string>
+  <string name="summary_pref_verbose_scroll_announcement">हर बार स्क्रोल करने के बाद बताता है कि कौनसे आइटम दिख रहे हैं</string>
   <string name="title_pref_cover_proximity_sensor">लिखे गए शब्द सुनने की सुविधा रोकने के लिए, प्रॉक्सिमिटी सेंसर को कवर करें</string>
   <string name="title_pref_phonetic_letters">अक्षरों को उदाहरण के साथ सुनें</string>
   <string name="summary_pref_phonetic_letters">कीबोर्ड के बटन चुनने या वर्ण के मुताबिक नेविगेट करने पर, आपको हर अक्षर के साथ एक उदाहरण सुनाई देगा. जैसे- \"h के लिए hotel\"</string>
@@ -357,7 +357,7 @@
   <string name="summary_pref_gemini_support_disabled">Gemini की सुविधा बंद है</string>
   <string name="screen_dimmed">स्क्रीन की रोशनी कम कर दी गई है</string>
   <string name="screen_brightness_restored">स्क्रीन की रोशनी बढ़ा दी गई है</string>
-  <string name="screen_dimming_exit_instruction_line1">SandFly की सुलभता सेवा ने स्क्रीन की रोशनी कम कर दी है</string>
+  <string name="screen_dimming_exit_instruction_line1">SandFly की सुलभता सेवा ने स्क्रीन छिपा दी है</string>
   <string name="screen_dimming_exit_instruction_line2">इस सेटिंग में बदलाव करने के लिए, <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> का इस्तेमाल करके SandFly मेन्यू खोलें. इसके बाद, \"<xliff:g id="menu item" example="show screen">%2$s</xliff:g>\" को चुनें और फिर दो बार टैप करें.</string>
   <string name="shortcut_title_basic_navigation">नेविगेशन का सामान्य तरीका</string>
   <string name="shortcut_title_system_actions">सिस्टम से जुड़ी कार्रवाइयां</string>
@@ -790,7 +790,7 @@
   <string name="dialog_title_voice_commands">बोलकर दिए जाने वाले निर्देशों का इस्तेमाल करके, SandFly को कंट्रोल करें</string>
   <string name="dialog_message_voice_commands">बोलकर इस तरह के निर्देश दिए जा सकते हैं:\n\n• कॉपी करो\n• फ़ोकस किए गए आइटम से पढ़ो\n• [सेव किए गए आइटम] ढूंढो\n• [तेज़] बोलो\n• SandFly की सेटिंग\n\nबोलकर दिए जाने वाले निर्देशों की सूची के लिए, \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" कहें</string>
   <string name="start_voice_command">बोलकर देने वाले निर्देश इस्तेमाल करें</string>
-  <string name="dialog_title_pass_through_mode">सिस्टम के लिए इस्तेमाल होने वाले हाथ के जेस्चर (हाव-भाव) का इस्तेमाल करने के लिए, SandFly के लिए इस्तेमाल होने वाले जेस्चर छोड़ें</string>
+  <string name="dialog_title_pass_through_mode">सिस्टम जेस्चर इस्तेमाल करने के लिए SandFly जेस्चर छोड़ें</string>
   <string name="dialog_message_pass_through_mode">घंटी बजने पर, आप उस सिस्टम जेस्चर का इस्तेमाल कर सकते हैं जो SandFly पर काम नहीं करता. इसे \'पास-थ्रू जेस्चर\' के नाम से जाना जाता है.</string>
   <string name="dialog_title_voice_input_download">फ़ोन को बोलकर निर्देश देने की सुविधा इस्तेमाल करने के लिए, Gboard को अपडेट करें</string>
   <string name="dialog_message_voice_input_download">अगर Gboard चालू है, तो दो उंगलियों से दो बार टैप करने पर फ़ोन को बोलकर निर्देश देने की सुविधा चालू हो जाएगी. हाथ के इस जेस्चर का इस्तेमाल करने के लिए, Gboard का नया वर्शन इंस्टॉल करें.</string>
@@ -868,7 +868,7 @@
   <string name="new_shortcut_gesture_reading_menu_text">टेक्स्ट पढ़ें जाने से जुड़े कंट्रोल का इस्तेमाल करने के लिए, तीन उंगलियों से बाईं या दाईं ओर स्वाइप करें. तीन उंगलियों से, ऊपर या नीचे की ओर भी स्वाइप करें.</string>
   <string name="new_shortcut_gesture_note">ध्यान दें: आपने हाथ के कुछ जेस्चर (हाव-भाव) को अपनी पसंद के मुताबिक सेट किया है. इसलिए, यह जानकारी शायद आपके लिए मददगार न हो. यह देखने के लिए कि आपने हाथ के किन जेस्चर (हाव-भाव) को अपनी पसंद के मुताबिक सेट किया है, SandFly की सेटिंग में जाएं.</string>
   <string name="welcome_to_android11_text">SandFly को आसानी और तेज़ी से इस्तेमाल करने के लिए, हाथ के नए जेस्चर (हाव-भाव) जोड़े गए हैं.\n\nआप इस स्क्रीन पर, ये जेस्चर आज़माकर देख सकते हैं. आप जब चाहें, SandFly की सेटिंग में जाकर, यह जानकारी देख सकते हैं.</string>
-  <string name="new_gesture_notification_title">SandFly में मौजूद, हाथ के नए जेस्चर (हाव-भाव)</string>
+  <string name="new_gesture_notification_title">SandFly में नए जेस्चर</string>
   <string name="new_gesture_notification_content">हाथ के नए जेस्चर (हाव-भाव) की मदद से, SandFly को तेज़ी से इस्तेमाल करना सीखने के लिए टैप करें.</string>
   <string name="dump_node_tree_description">नोड ट्री को लॉग में प्रिंट कर दिया गया है</string>
   <string name="report_gesture_description">यहां पर हाल ही में इस्तेमाल किए गए हाथ के जेस्चर दिए गए हैं. अगर इनमें से कुछ जेस्चर सही नहीं हैं, तो कृपया उनके बारे में शिकायत करें. साथ ही, हमें बताएं कि इन जेस्चर को बेहतर कैसे बनाया जा सकता है.</string>
@@ -1371,8 +1371,8 @@
     <string name="title_pref_speakerphone_away_from_ear">कान से दूर होने पर स्पीकर</string>
     <string name="summary_pref_speakerphone_away_from_ear">कॉल के दौरान, फ़ोन को कान से दूर करने पर स्पीकर पर स्विच करता है, और फिर से कान के पास लाने पर ईयरपीस पर वापस जाता है.</string>
     <string name="summary_pref_speakerphone_needs_permission">एक ऐसी अनुमति ज़रूरी है जो Android, स्क्रीन रीडर को नहीं देता. अनुमति देने के लिए, adb या Shizuku से यह निर्देश चलाएं, फिर इस स्क्रीन पर वापस आएं: %1$s</string>
-    <string name="action_copy_command">निर्देश कॉपी करें</string>
-    <string name="command_copied">निर्देश कॉपी किया गया</string>
+    <string name="action_copy_command">कमांड कॉपी करें</string>
+    <string name="command_copied">कमांड कॉपी किया गया</string>
     <string name="title_pref_speech_control">दूसरे ऐप्लिकेशन को बोलने दें</string>
     <string name="summary_pref_speech_control">जिन ऐप्लिकेशन को आप अनुमति देते हैं वे आपकी SandFly वॉइस में टेक्स्ट बोल सकते हैं. डिवाइस लॉक होने पर कुछ नहीं बोला जाता.</string>
     <string name="title_pref_speech_control_sound">दूसरे ऐप्लिकेशन के बोलने से पहले आवाज़ चलाएं</string>
@@ -1541,7 +1541,7 @@
     <string name="pref_node_desc_order_entry_role_state_name_pos">टाइप, स्थिति, नाम</string>
     <string name="pref_node_desc_order_entry_state_role_name_pos">स्थिति, टाइप, नाम</string>
     <string name="item_detail_name">नाम</string>
-    <string name="item_detail_type">टाइप</string>
+    <string name="item_detail_type">प्रकार</string>
     <string name="item_detail_state">स्थिति</string>
     <string name="action_move_up">ऊपर ले जाएं</string>
     <string name="action_move_down">नीचे ले जाएं</string>
@@ -1571,12 +1571,12 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_play_installer">Google प्ले से इंस्टॉल दिखाई देगा</string>
-    <string name="summary_pref_play_installer">अन्य ऐप्स को बताएं कि Google Play ने SandFly इंस्टॉल किया है। कुछ ऐप्स, जैसे कि कुछ बैंकिंग ऐप्स, उन एक्सेसिबिलिटी सेवाओं को बंद कर देते हैं जो कहीं और से इंस्टॉल की गई थीं। Shizuku की आवश्यकता है, और केवल उन्हीं ऐप्स को बदलता है जिनके बारे में बताया जाता है कि SandFly कहां से आया है।</string>
-    <string name="summary_pref_play_installer_pending">चालू है, लेकिन Google प्ले अभी तक इंस्टॉलर के रूप में रिकॉर्ड नहीं किया गया है। Shizuku उपलब्ध होने पर SandFly इसे सेट करता है।</string>
-    <string name="notification_list_show_all">सब दिखाओ</string>
-    <string name="notification_list_show_less">कम दिखाओ</string>
-    <string name="title_pref_quick_settings">SandFly की त्वरित सेटिंग्स का उपयोग करें</string>
+    <string name="title_pref_play_installer">Google Play से इंस्टॉल किया गया दिखाएं</string>
+    <string name="summary_pref_play_installer">दूसरे ऐप्लिकेशन को बताता है कि SandFly, Google Play से इंस्टॉल हुआ है। कुछ ऐप्लिकेशन, जैसे कुछ बैंकिंग ऐप्लिकेशन, किसी और सोर्स से इंस्टॉल की गई सुलभता सेवाएं बंद कर देते हैं। इसके लिए Shizuku ज़रूरी है, और यह सिर्फ़ वह जानकारी बदलता है जो ऐप्लिकेशन को SandFly के सोर्स के बारे में दी जाती है।</string>
+    <string name="summary_pref_play_installer_pending">चालू है, लेकिन Google Play को अभी तक इंस्टॉलर के तौर पर दर्ज नहीं किया गया है। Shizuku उपलब्ध होने पर SandFly इसे सेट करता है।</string>
+    <string name="notification_list_show_all">सभी दिखाएं</string>
+    <string name="notification_list_show_less">कम दिखाएं</string>
+    <string name="title_pref_quick_settings">SandFly की क्विक सेटिंग इस्तेमाल करें</string>
     <string name="title_pref_quick_settings_items">त्वरित सेटिंग्स पैनल</string>
     <string name="quick_settings_title">फटाफट सेटिंग</string>
     <string name="quick_settings_wifi">वाई-फ़ाई</string>
@@ -1585,7 +1585,7 @@
     <string name="quick_settings_hotspot">हॉटस्पॉट</string>
     <string name="quick_settings_airplane_mode">हवाई जहाज़ मोड</string>
     <string name="quick_settings_do_not_disturb">परेशान न करें</string>
-    <string name="quick_settings_sound_mode">ध्वनि विधा</string>
+    <string name="quick_settings_sound_mode">साउंड मोड</string>
     <string name="quick_settings_flashlight">टॉर्च</string>
     <string name="quick_settings_flashlight_brightness">टॉर्च की चमक</string>
     <string name="quick_settings_location">स्थान</string>
@@ -1598,7 +1598,7 @@
     <string name="quick_settings_media_volume">मीडिया वॉल्यूम</string>
     <string name="quick_settings_call_volume">कॉल वॉल्यूम</string>
     <string name="quick_settings_ring_volume">रिंग वॉल्यूम</string>
-    <string name="quick_settings_notification_volume">अधिसूचना मात्रा</string>
+    <string name="quick_settings_notification_volume">सूचना की आवाज़</string>
     <string name="quick_settings_alarm_volume">अलार्म वॉल्यूम</string>
     <string name="quick_settings_accessibility_volume">सुलभता सुविधाओं के लिए वॉल्यूम</string>
     <string name="quick_settings_system_volume">सिस्टम ऑडियो वॉल्यूम</string>
@@ -1607,8 +1607,8 @@
     <string name="quick_settings_extra_dim">अतिरिक्त मंद</string>
     <string name="quick_settings_color_inversion">रंग उलटाव</string>
     <string name="quick_settings_color_correction">रंग सुधार</string>
-    <string name="quick_settings_microphone_access">माइक्रोफ़ोन पहुंच</string>
-    <string name="quick_settings_camera_access">कैमरा पहुंच</string>
+    <string name="quick_settings_microphone_access">माइक्रोफ़ोन का ऐक्सेस</string>
+    <string name="quick_settings_camera_access">कैमरे का ऐक्सेस</string>
     <string name="quick_settings_screen_timeout">स्क्रीन टाइमआउट</string>
     <string name="quick_settings_font_size">फ़ॉन्ट आकार</string>
     <string name="quick_settings_media">मीडिया</string>
@@ -1636,7 +1636,7 @@
     <string name="quick_settings_battery_full">%1$s, चार्ज किया गया</string>
     <string name="quick_settings_sound">आवाज़</string>
     <string name="quick_settings_vibrate">वाइब्रेट</string>
-    <string name="quick_settings_mute">मूक</string>
+    <string name="quick_settings_mute">म्यूट</string>
     <string name="quick_settings_on">चालू</string>
     <string name="quick_settings_off">बंद</string>
     <string name="quick_settings_unavailable">अनुपलब्ध</string>
@@ -1647,7 +1647,7 @@
     <string name="quick_settings_add_tile">ऐप टाइल जोड़ें</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">स्तंभों की संख्या</string>
-    <string name="quick_settings_move">हटो</string>
+    <string name="quick_settings_move">ले जाएं</string>
     <string name="quick_settings_move_title">%1$s ले जाएँ</string>
     <string name="quick_settings_cell">पंक्ति %1$d, स्तंभ %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1665,9 +1665,9 @@
     <string name="shortcut_write_reading_control">रीडिंग कंट्रोल का अक्षर लिखें</string>
     <string name="title_pref_reading_control_letters">हस्तलिखित वर्णमाला के अक्षर</string>
     <string name="reading_control_letter_none">कोई नहीं</string>
-    <string name="handwriting_prompt">एक वर्णमाला पत्र लिखें</string>
+    <string name="handwriting_prompt">वर्णमाला का एक अक्षर लिखें</string>
     <string name="handwriting_closed">लिखावट बंद</string>
-    <string name="handwriting_no_match">कोई पठन नियंत्रण <xliff:g id="letter" example="Q">%1$s</xliff:g> से प्रारंभ नहीं होता</string>
+    <string name="handwriting_no_match">टेक्स्ट पढ़ने से जुड़ा ऐसा कोई कंट्रोल नहीं है जो <xliff:g id="letter" example="Q">%1$s</xliff:g> से शुरू होता हो</string>
     <string name="shortcut_write_app_name">किसी ऐप को खोलने के लिए उसका नाम लिखें</string>
     <string name="handwriting_app_prompt">ऐप का नाम लिखें</string>
     <string name="handwriting_no_app"><xliff:g id="letters" example="WHA">%1$s</xliff:g> से शुरू होने वाला कोई ऐप नहीं है</string>
@@ -1675,7 +1675,7 @@
     <string name="handwriting_not_recognized">लिखावट पहचानी नहीं गई</string>
     <string name="handwriting_downloading">लिखावट पहचान डाउनलोड हो रही है</string>
     <string name="handwriting_download_title">हस्तलेखन पहचान डाउनलोड करें?</string>
-    <string name="handwriting_download_message">इस फोन पर लिखावट की पहचान की जाती है। इस भाषा के लिए इसका मॉडल, लगभग 20 एमबी, Google से एक बार डाउनलोड किया जाता है। एक संदेश दिखाता है कि यह कब डाउनलोड हुआ है।</string>
+    <string name="handwriting_download_message">लिखावट की पहचान इसी फ़ोन पर होती है। इस भाषा के लिए इसका मॉडल, करीब 20 एमबी, Google से एक बार डाउनलोड किया जाता है। डाउनलोड हो जाने पर एक मैसेज दिखता है।</string>
     <string name="handwriting_download_button">डाउनलोड करें</string>
     <string name="handwriting_downloaded">हस्तलेखन पहचान डाउनलोड की गई</string>
     <string name="handwriting_download_failed">हस्तलेखन पहचान डाउनलोड नहीं की जा सकी. इंटरनेट कनेक्शन की जाँच करें.</string>
@@ -1694,20 +1694,20 @@
     <string name="handwriting_space">स्पेस</string>
     <string name="handwriting_new_line">नई पंक्ति</string>
     <string name="handwriting_tutorial_intro">हस्तलेखन कीबोर्ड ट्यूटोरियल. स्क्रीन पर कहीं भी एक उंगली से लिखें। जब आप एक पल के लिए रुकते हैं तो आप जो लिखते हैं वह टाइप हो जाता है। ट्यूटोरियल समाप्त करने के लिए, तीन अंगुलियों से नीचे की ओर स्वाइप करें।</string>
-    <string name="handwriting_tutorial_write_letter">वर्णमाला का अक्षर a लिखिए।</string>
+    <string name="handwriting_tutorial_write_letter">अक्षर a लिखें.</string>
     <string name="handwriting_tutorial_write_word">अब शब्द hi (h के बाद i) लिखें।</string>
     <string name="handwriting_tutorial_typed">टाइप किया <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">स्पेस टाइप करने के लिए दो अंगुलियों से दाईं ओर स्वाइप करें।</string>
     <string name="handwriting_tutorial_delete">कर्सर से पहले के अक्षर को हटाने के लिए दो अंगुलियों से बाईं ओर स्वाइप करें।</string>
     <string name="handwriting_tutorial_deleted">हटा दिया गया.</string>
-    <string name="handwriting_tutorial_next_reading">यदि लिखावट को किसी अन्य वर्ण, जैसे कि बड़े अक्षर, के रूप में पहचाना जाता है, तो अगले पहचान सुझाव को चुनने के लिए दो अंगुलियों से ऊपर की ओर स्वाइप करें। अब इसे आजमाओ।</string>
+    <string name="handwriting_tutorial_next_reading">अगर लिखावट को किसी दूसरे वर्ण, जैसे बड़े अक्षर, के रूप में पहचाना जाता है, तो पहचान का अगला सुझाव चुनने के लिए दो उंगलियों से ऊपर की ओर स्वाइप करें। अभी आज़माकर देखें।</string>
     <string name="handwriting_tutorial_read_back">कर्सर से पहले टेक्स्ट को पढ़ने के लिए दो अंगुलियों से टैप करें।</string>
     <string name="handwriting_tutorial_new_line">नई लाइन डालने या टेक्स्ट फ़ील्ड क्रिया करने के लिए दो अंगुलियों से नीचे की ओर स्वाइप करें, जैसे भेजें।</string>
-    <string name="handwriting_tutorial_not_that">वह एक और इशारा था.</string>
+    <string name="handwriting_tutorial_not_that">वह कोई दूसरा जेस्चर था.</string>
     <string name="handwriting_tutorial_done">नई लाइन. ट्यूटोरियल समाप्त हुआ. कीबोर्ड को छिपाने के लिए तीन अंगुलियों से नीचे की ओर स्वाइप करें, और कीबोर्ड स्विच करने के लिए तीन अंगुलियों से दाएं या बाएं स्वाइप करें। ट्यूटोरियल को दोबारा खोलने के लिए, तीन अंगुलियों से टैप करें।</string>
     <string name="handwriting_tutorial_finished">ट्यूटोरियल समाप्त हुआ. इसे दोबारा खोलने के लिए तीन अंगुलियों से टैप करें.</string>
     <string name="handwriting_no_alternatives">कोई अन्य सुझाव नहीं</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> का <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="count" example="5">%3$d</xliff:g> में से <xliff:g id="index" example="2">%2$d</xliff:g></string>
     <string name="handwriting_empty">खाली पाठ</string>
     <string name="handwriting_not_available">इस डिवाइस पर हस्तलेखन पहचान उपलब्ध नहीं है</string>
     <string name="shortcut_scroll_to_bottom">नीचे स्क्रॉल करें</string>
@@ -1719,14 +1719,14 @@
     <string name="shortcut_decrease_media_volume">मीडिया वॉल्यूम कम करें</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">ऊपर बाईं ओर से नीचे की ओर लंबा स्वाइप करें</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">ऊपर दाईं ओर से नीचे की ओर लंबा स्वाइप करें</string>
-    <string name="title_pref_shortcut_edge_left_top_right">बाएँ किनारे से दाएँ स्वाइप करें, शीर्ष आधा</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">बाएं किनारे से दाएं, ऊपरी आधे भाग पर लंबा स्वाइप करें</string>
+    <string name="title_pref_shortcut_edge_left_top_right">बाएँ किनारे से दाएँ स्वाइप करें, ऊपर का आधा भाग</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">बाएँ किनारे से दाईं ओर लंबा स्वाइप करें, ऊपर का आधा भाग</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">बाएँ किनारे से दाएँ स्वाइप करें, नीचे का आधा भाग</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">बाएं किनारे से दाईं ओर, निचले आधे भाग पर लंबा स्वाइप करें</string>
-    <string name="title_pref_shortcut_edge_right_top_left">दाएँ किनारे से बाएँ स्वाइप करें, शीर्ष आधा</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">दाएँ किनारे से बाईं ओर लंबा स्वाइप करें, शीर्ष आधा</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">बाएँ किनारे से दाईं ओर लंबा स्वाइप करें, नीचे का आधा भाग</string>
+    <string name="title_pref_shortcut_edge_right_top_left">दाएँ किनारे से बाएँ स्वाइप करें, ऊपर का आधा भाग</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">दाएँ किनारे से बाईं ओर लंबा स्वाइप करें, ऊपर का आधा भाग</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">दाएँ किनारे से बाएँ स्वाइप करें, नीचे का आधा भाग</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">दाएं किनारे से बाईं ओर लंबा स्वाइप करें, नीचे का आधा भाग</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">दाएँ किनारे से बाईं ओर लंबा स्वाइप करें, नीचे का आधा भाग</string>
     <string name="title_pref_edge_first_click_mm">पहले क्लिक की दूरी</string>
     <string name="title_pref_edge_second_click_mm">पहले से दूसरे क्लिक तक की दूरी</string>
     <string name="value_distance_5mm">0.5 सेमी</string>
@@ -1737,18 +1737,18 @@
     <string name="value_distance_40mm">4 सेमी</string>
     <string name="value_distance_50mm">5 सेमी</string>
     <string name="title_pref_selector_links_controls_web_only">लिंक और नियंत्रण केवल वेब सामग्री में</string>
-    <string name="title_pref_selector_auto_switch">पठन नियंत्रण स्वचालित रूप से बदलें</string>
-    <string name="title_pref_touch_stops_speech">स्क्रीन को छूते समय बोलना बंद कर दें</string>
-    <string name="title_pref_volume_keys_move_cursor">वॉल्यूम कुंजियाँ कर्सर को घुमाती हैं</string>
+    <string name="title_pref_selector_auto_switch">टेक्स्ट पढ़ने से जुड़ा कंट्रोल अपने-आप बदलें</string>
+    <string name="title_pref_touch_stops_speech">स्क्रीन छूने पर बोलना बंद करें</string>
+    <string name="title_pref_volume_keys_move_cursor">वॉल्यूम बटन से कर्सर आगे-पीछे करें</string>
     <string name="summary_pref_volume_keys_move_cursor">जब किसी टेक्स्ट फ़ील्ड पर फ़ोकस होता है, तो वॉल्यूम तेज़ कर्सर को एक वर्ण के पीछे ले जाता है और वॉल्यूम कम करने पर कर्सर आगे बढ़ता है</string>
     <string name="title_keyboard_echo_handwriting_keyboard">लिखावट कीबोर्ड प्रतिध्वनि</string>
     <string name="image_qna_ask_by_voice">आवाज़ देकर पूछें</string>
-    <string name="image_qna_stop_listening">सुनना बंद करो</string>
+    <string name="image_qna_stop_listening">सुनना बंद करें</string>
     <string name="image_qna_type_question">एक प्रश्न टाइप करें</string>
     <string name="shortcut_dictate">बोलकर लिखें</string>
-    <string name="title_pref_ai_dictation">एआई के साथ सही श्रुतलेख</string>
-    <string name="dictation_not_corrected">ठीक नहीं किया गया. मान्यता प्राप्त के रूप में टाइप किया गया।</string>
-    <string name="dictation_nothing_recognized">कुछ भी नहीं पहचाना</string>
+    <string name="title_pref_ai_dictation">AI से डिक्टेशन ठीक करें</string>
+    <string name="dictation_not_corrected">ठीक नहीं किया गया. जैसा पहचाना गया, वैसा टाइप किया गया.</string>
+    <string name="dictation_nothing_recognized">कुछ भी पहचाना नहीं गया</string>
     <string name="dictation_unavailable">वाक् पहचान अनुपलब्ध</string>
     <string name="dictation_field_gone">पाठ फ़ील्ड बंद है. कुछ भी टाइप नहीं हुआ.</string>
     <string name="dictation_transcription_failed">बोली को टेक्स्ट में नहीं बदला जा सका. कुछ भी टाइप नहीं हुआ.</string>
@@ -1768,7 +1768,7 @@
     <string name="title_pref_dictation_ai_service">बोलकर लिखने के लिए एआई सेवा</string>
     <string name="dictation_ai_same">अपने-आप मिलने वाली जानकारी के जैसी ही</string>
     <string name="title_pref_browse_mode_per_app">प्रत्येक ऐप में ब्राउज़ मोड याद रखें</string>
-    <string name="title_pref_export_settings">निर्यात सेटिंग्स</string>
+    <string name="title_pref_export_settings">सेटिंग एक्सपोर्ट करें</string>
     <string name="title_pref_import_settings">सेटिंग्स आयात करें</string>
     <string name="settings_export_done">सेटिंग्स निर्यात की गईं. एपीआई कुंजियाँ शामिल नहीं हैं</string>
     <string name="settings_export_failed">सेटिंग्स निर्यात नहीं की जा सकीं</string>

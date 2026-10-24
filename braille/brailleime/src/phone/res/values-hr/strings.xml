@@ -45,7 +45,7 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Da biste promijenili jezik tijekom upotrebe brajične tipkovnice, prijeđite trima prstima prema gore. Zatim odaberite \"Prijeđi na sljedeći jezik\".</string>
   <string name="title_pref_accumulate_presses">Uključi sve pritisnute točke</string>
   <string name="summary_pref_accumulate_presses">Svaka pritisnuta točka dio je unosa, čak i ako se otpusti prije drugih točaka</string>
-  <string name="title_pref_reverse_dots">Zamijenite lijeve i desne točke</string>
+  <string name="title_pref_reverse_dots">Zamijeni lijeve i desne točkice</string>
   <string name="summary_pref_reverse_dots">Točke 1, 2 i 3 zamjenjuju mjesta s točkama 4, 5 i 6</string>
   <string name="bd_preference_braille_contracted">Kratkopis</string>
   <string name="bd_preference_braille_uncontracted">Puno pismo</string>
@@ -208,8 +208,8 @@
   <string name="custom_gesture_perform_again">Ponovno izvršite pokret koji želite upotrijebiti. %s</string>
     <string name="tabletop_port_left_announcement">Stolni način rada, priključak za punjenje s lijeve strane</string>
     <string name="tabletop_port_right_announcement">Stolni način rada, priključak za punjenje s desne strane</string>
-    <string name="screen_away_port_right_announcement">Način rada Screen-Away, priključak za punjenje s desne strane</string>
-    <string name="screen_away_port_left_announcement">Način rada Screen-Away, priključak za punjenje s lijeve strane</string>
+    <string name="screen_away_port_right_announcement">Zaslon okrenut od vas, priključak za punjenje s desne strane</string>
+    <string name="screen_away_port_left_announcement">Zaslon okrenut od vas, priključak za punjenje s lijeve strane</string>
     <string name="screen_toward_announcement">Zaslon prema vama</string>
     <string name="screen_toward_port_left_announcement">Zaslon prema vama, priključak za punjenje lijevo</string>
     <string name="screen_toward_port_right_announcement">Zaslon prema vama, priključak za punjenje desno</string>
@@ -219,8 +219,8 @@
     <string name="port_left_announcement">Priključak za punjenje s lijeve strane</string>
     <string name="tabletop_port_near_announcement">Stolni način rada, priključak za punjenje prema vama</string>
     <string name="tabletop_port_far_announcement">Stolni način rada, priključak za punjenje dalje od vas</string>
-    <string name="screen_away_port_down_announcement">Način odmaknutog zaslona, priključak za punjenje usmjeren prema dolje</string>
-    <string name="screen_away_port_up_announcement">Način rada s ekranom, priključak za punjenje usmjeren prema gore</string>
+    <string name="screen_away_port_down_announcement">Zaslon okrenut od vas, priključak za punjenje usmjeren prema dolje</string>
+    <string name="screen_away_port_up_announcement">Zaslon okrenut od vas, priključak za punjenje usmjeren prema gore</string>
     <string name="port_near_announcement">Priključak za punjenje prema vama</string>
     <string name="port_far_announcement">Priključak za punjenje dalje od vas</string>
     <string name="port_down_announcement">Priključak za punjenje usmjeren prema dolje</string>
@@ -230,11 +230,11 @@
     <string name="orientation_unlocked_announcement">Orijentacija otključana</string>
     <string name="switch_to_language_contracted_announcement">Prešli ste na brajicu %s, Kratkopis</string>
     <string name="switch_to_language_uncontracted_announcement">Prešli ste na brajicu %s, Puno pismo</string>
-    <string name="title_pref_flip_dots_vertically">Zamijenite gornje i donje točke</string>
+    <string name="title_pref_flip_dots_vertically">Zamijeni gornje i donje točkice</string>
     <string name="summary_pref_flip_dots_vertically">Točka 1 mijenja mjesta s točkom 3, a točka 4 s točkom 6</string>
-    <string name="title_pref_tablet_held_up_faces_away">Tablet je držao okrenut licem u stranu</string>
-    <string name="summary_pref_tablet_held_up_faces_away">Kada je isključen, tablet ili rasklopljeni telefon koji se drži u položaju koristi se kao na stolu, okrenut prema vama</string>
+    <string name="title_pref_tablet_held_up_faces_away">Podignuti tablet okrenut od vas</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Kad je isključeno, podignuti tablet ili rasklopljeni telefon upotrebljava raspored stolnog načina, sa zaslonom prema vama</string>
     <string name="title_pref_typing_sounds">Zvukovi tipkanja</string>
-    <string name="summary_pref_typing_sounds">Reproducirajte klikove tipkovnice kada upisujete znak, razmak, novi redak ili brisanje</string>
+    <string name="summary_pref_typing_sounds">Reproduciranje klikova tipkovnice pri unosu znaka, razmaka ili novog retka te pri brisanju</string>
     <string name="skip_tutorial">Preskoči vodič</string>
 </resources>

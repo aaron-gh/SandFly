@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_sound_themes">Hljóðþemu</string>
-    <string name="summary_pref_sound_themes">Settu upp og veldu söfn hljóða og titrings, skiptu stökum hljóðum út fyrir þín eigin og kveiktu á stýringarhljóðum, stýringartitringi og þrívíddarhljóði.</string>
+    <string name="summary_pref_sound_themes">Hljóð- og titringssöfn, eigin hljóð í stað stakra hljóða, „Stýringarhljóð og -titringur“ og þrívíddarhljóð.</string>
     <string name="sound_themes_installed_category">Uppsett þemu</string>
     <string name="sound_theme_backtalk">SandFly</string>
     <string name="sound_theme_backtalk_description">Hljóð og titringur SandFly ásamt þínum eigin hljóðum.</string>
@@ -14,7 +14,7 @@
     </plurals>
     <plurals name="sound_theme_vibrations">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> titringur.</item>
-        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> titringur.</item>
+        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> titringar.</item>
     </plurals>
     <string name="sound_theme_control_sounds_on">Kveikir á stýringarhljóðum og -titringi.</string>
     <string name="sound_theme_control_sounds_off">Slekkur á stýringarhljóðum og -titringi.</string>
@@ -40,10 +40,10 @@
     <string name="summary_pref_sound_theme_install_link">Tengill á þemaskrá eða á GitHub-geymslu sem inniheldur þema. Þú getur líka deilt tengli með SandFly úr vafranum.</string>
     <string name="title_pref_sound_theme_install_source">Frá heimild</string>
     <string name="summary_pref_sound_theme_install_source">Þemaskrár í geymslu á GitHub, GitLab, Codeberg, Gitea eða Bitbucket.</string>
-    <string name="sound_theme_sources">Hljóð þema heimildir</string>
-    <string name="sound_theme_source_empty">Engin hljóðþemu í þessari heimild</string>
+    <string name="sound_theme_sources">Uppsprettur hljóðþema</string>
+    <string name="sound_theme_source_empty">Engin hljóðþemu í þessari veitu</string>
     <string name="sound_theme_source_failed">Ekki tókst að hlaða hljóðþemu. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Hljóðþemu uppsett frá því haldast uppsett.</string>
+    <string name="sound_theme_source_remove_message">Hljóðþemu sem voru sett upp úr henni haldast uppsett.</string>
     <string name="sound_theme_link_message">Sláðu inn eða límdu tengil á þemaskrá eða á GitHub-geymslu sem inniheldur þema.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Setja upp hljóðþema</string>

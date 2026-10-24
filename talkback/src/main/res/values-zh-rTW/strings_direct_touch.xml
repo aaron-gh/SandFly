@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="direct_touch_on">直接觸摸</string>
-    <string name="direct_touch_off">直接觸碰</string>
-    <string name="direct_touch_tile_label">直接觸摸</string>
-    <string name="title_pref_direct_touch">直接觸摸</string>
-    <string name="pref_direct_touch_master">直接觸摸</string>
-    <string name="pref_direct_touch_master_summary">將觸控直接傳遞到您在下面選擇的應用程序，並將它們返回到對話框、文字欄位、鍵盤和系統螢幕的 SandFly。</string>
-    <string name="pref_direct_touch_speech">當直接觸摸發生變化時說話</string>
+    <string name="direct_touch_on">直接觸控已開啟</string>
+    <string name="direct_touch_off">直接觸控已關閉</string>
+    <string name="direct_touch_tile_label">直接觸控</string>
+    <string name="title_pref_direct_touch">直接觸控</string>
+    <string name="pref_direct_touch_master">直接觸控</string>
+    <string name="pref_direct_touch_master_summary">觸控會直接傳送至下方所選的應用程式；在對話框、文字欄位、鍵盤和系統畫面中則交回 SandFly 處理。</string>
+    <string name="pref_direct_touch_speech">直接觸控變更時讀出</string>
     <string name="pref_direct_touch_haptics">直接觸摸變化時振動</string>
     <string name="pref_direct_touch_backup">備份設定</string>
-    <string name="pref_direct_touch_restore">恢復設定</string>
+    <string name="pref_direct_touch_restore">還原設定</string>
     <string name="direct_touch_apps_category">應用程式</string>
     <string name="direct_touch_action_typing_on">開啟直接輸入</string>
-    <string name="direct_touch_action_typing_off">關閉直接打字</string>
-    <string name="direct_touch_typing_summary_on">直接打字</string>
+    <string name="direct_touch_action_typing_off">關閉直接輸入</string>
+    <string name="direct_touch_typing_summary_on">直接輸入已開啟</string>
     <string name="direct_touch_backup_done">設定已儲存</string>
     <string name="direct_touch_backup_failed">無法儲存設定</string>
-    <string name="direct_touch_restore_done">設定已恢復</string>
-    <string name="direct_touch_restore_failed">無法讀取該文件</string>
+    <string name="direct_touch_restore_done">設定已還原</string>
+    <string name="direct_touch_restore_failed">無法讀取該檔案</string>
 </resources>

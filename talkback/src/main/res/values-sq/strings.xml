@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Pajisja u shkyç.</string>
   <string name="title_pref_speech_volume">Volumi i ligjërimit</string>
   <string name="title_pref_verbose_scroll_announcement">Lexo gjithmonë me zë numrat e artikujve në listë</string>
-  <string name="summary_pref_verbose_scroll_announcement">Thuaj se cilët artikuj po shfaqen pas çdo rrotullimi</string>
+  <string name="summary_pref_verbose_scroll_announcement">Thotë cilët artikuj shfaqen pas çdo lëvizjeje</string>
   <string name="title_pref_cover_proximity_sensor">Mbulo sensorin e afërsisë për të ndaluar të folurën</string>
   <string name="title_pref_phonetic_letters">Lexo me zë shkronjat me shembuj</string>
   <string name="summary_pref_phonetic_letters">Kur zgjedh tastet e tastierës ose navigon sipas karakterit, do të dëgjosh një shembull së bashku me çdo shkronjë, p.sh. \"h, hotel\"</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">Shumica</string>
   <string name="punctuation_some">Disa</string>
   <string name="title_pref_count_repeated_symbols">Numëro simbolet e përsëritura</string>
-  <string name="summary_pref_count_repeated_symbols">Thuaj sa herë përsëritet një simbol kur përsëritet 4 ose më shumë herë</string>
+  <string name="summary_pref_count_repeated_symbols">Të thuhet sa herë përsëritet një simbol kur përsëritet 4 ose më shumë herë</string>
   <string name="learn_more">Mëso më shumë</string>
   <string name="title_pref_capital_letters">Shkronjat kapitale</string>
   <string name="capital_letters_nothing">Mos bëj asgjë</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">Ndrysho tonalitetin</string>
   <string name="capital_letters_sound_feedback">Luaj tingullin</string>
   <string name="title_pref_a11y_hints">Lexo me zë këshillat e përdorimit</string>
-  <string name="summary_pref_a11y_hints">Pasi të përshkruhet një artikull, thoni se si ta përdorni</string>
+  <string name="summary_pref_a11y_hints">Pasi përshkruhet një element, të thuhet si përdoret</string>
   <string name="pref_speak_container_element_positions_title">Lexo me zë informacionet e kontejnerit</string>
   <string name="pref_speak_time_title">Lexo me zë orën</string>
   <string name="pref_speak_time_summary">Kur aktivizon ekranin</string>
-  <string name="summary_speak_container_element_positions">Thoni kur hyni ose dilni nga listat, rrjetet dhe kontejnerët e tjerë</string>
+  <string name="summary_speak_container_element_positions">Njofton kur hyni ose dilni nga listat, rrjetat dhe kontejnerët e tjerë</string>
   <string name="reset_letency_reduction_settings_dialog_title">Të rivendosen cilësimet e vonesës?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Kjo do t\'i rivendosë te parazgjedhja të gjitha cilësimet e vonesës</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Rivendos</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Rivendos</string>
   <string name="gestures_announce_reset_gesture_settings">Cilësimet e gjesteve janë rivendosur.</string>
   <string name="pref_speak_roles_title">Lexo me zë llojin e elementit</string>
-  <string name="pref_speak_roles_summary">Pëlqeje butonin ose kutinë e zgjedhjes</string>
+  <string name="pref_speak_roles_summary">Si buton ose kuti zgjedhjeje</string>
   <string name="title_pref_speak_element_ids">Lexo me zë ID-të e elementeve</string>
-  <string name="summary_pref_speak_element_ids">Thuaj ID-në e butonave që nuk kanë etiketë</string>
+  <string name="summary_pref_speak_element_ids">Thotë ID-në e butonave pa etiketë</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Shqipto përditësimet e progresit</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Përfshin përditësimet ndërkohë që shkarkon, ndjek drejtimet e udhëtimit me makinë etj. Kur është i çaktivizuar, do të marrësh përsëri përditësime më pak të shpeshta.</string>
   <string name="title_pref_explore_by_touch">Eksploro me prekje</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">Ndihma</string>
   <string name="title_pref_advanced_settings">Cilësimet e përparuara</string>
   <string name="title_pref_show_exit_watermark">Shfaq udhëzimet për çaktivizimin e SandFly</string>
-  <string name="summary_pref_show_exit_watermark">Kur SandFly ndizet, trego si ta çaktivizosh</string>
+  <string name="summary_pref_show_exit_watermark">Kur SandFly ndizet, shfaqet si fiket</string>
   <string name="talkback_exit_watermark_text">SandFly është aktiv. Mbaj 2 gishta në ekran për 5 sekonda për ta çaktivizuar. Për të ndaluar shfaqjen e këtij mesazhi, trokit me 3 gishta për të hapur menynë e SandFly.</string>
   <string name="talkback_exit_watermark_hint_text">Shfaqja e banderolës tregon se SandFly është aktiv. Për të çaktivizuar SandFly, mbaj 2 gishta mbi ekran për 5 sekonda. Për ta hequr këtë banderolë, shko te cilësimet e SandFly.</string>
   <string name="reset_gesture_settings_title">Rivendos cilësimet e gjesteve</string>
@@ -305,7 +305,7 @@
   <string name="title_pref_category_developer_settings">Cilësimet e zhvilluesit</string>
   <string name="title_activity_dump_a11y_event">Zgjidh ngjarjet për regjistrimin</string>
   <string name="title_pref_dump_a11y_event">Filtro regjistrimin e ngjarjeve të qasshmërisë</string>
-  <string name="pref_reduce_window_delay_title">Fikni animacionet</string>
+  <string name="pref_reduce_window_delay_title">Fik animacionet</string>
   <string name="title_pref_log_level">Niveli i daljes së regjistrit</string>
   <string name="title_pref_diagnosis_mode">Modaliteti i diagnostikimit</string>
   <string name="title_pref_tts_overlay">Shfaq daljen e ligjërimit</string>
@@ -318,13 +318,13 @@
   <string name="title_pref_typing_confirmation">Metoda e shtypjes</string>
   <string name="title_pref_typing_long_tap_duration">Vonesa e trokitjes dhe e mbajtjes shtypur kur shkruan</string>
   <string name="title_pref_touch_explore_timeout">Vonesa e fokusit për të shkruar</string>
-  <string name="message_pref_touch_explore_latency">Një vonesë më e shkurtër bën që SandFly të flasë më shpejt pasi prek tastierën.\n\nZgjidh një vonesë</string>
+  <string name="message_pref_touch_explore_latency">Një vonesë më e shkurtër bën që SandFly të flasë më shpejt pasi prekni tastierën.\n\nZgjidhni një vonesë</string>
   <string name="title_pref_touch_focus_timeout">Vonesa e fokusit</string>
   <string name="title_pref_talkback_gesture_detection">Menaxho gjestet në SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">Çaktivizo SandFly dhe aktivizoje atë sërish për të aktivizuar këtë cilësim.</string>
   <string name="title_pref_auto_image_captioning">Përshkrimet automatike</string>
   <string name="title_pref_gemini_settings">Cilësimet e Gemini</string>
-  <string name="title_pref_gemini_enabled">Gemini komandat zanore</string>
+  <string name="title_pref_gemini_enabled">Komandat zanore të Gemini</string>
   <string name="title_pref_category_automatic_description_summary">Merr përshkrime të detajuara të imazheve nga IA-ja kur zgjedh \“Përshkruaj imazhin\” nga menyja e SandFly.\n\nMund të marrësh gjithashtu përshkrime automatike kur fokusohesh te një imazh në një ikonë. Përshkrimet automatike funksionojnë pa lidhje interneti.</string>
   <string name="title_pref_icon_detection">Përshkrimet automatike të ikonave</string>
   <string name="title_pref_image_description">Përshkrimet automatike të imazheve</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">Ngjitu lart</string>
   <string name="training_tip">Këshillë</string>
   <string name="tv_training_overview_step_title">Si funksionon SandFly</string>
-  <string name="tv_training_overview_step_summary">SandFly është një lexues ekrani i bazuar në TalkBack të Google. Ai lexon me zë të lartë tekstin në ekran dhe ju jep komente të folura, në mënyrë që të mund të përdorni pajisjen tuaj pa shikuar ekranin.\n\nMe SandFly të aktivizuar, një artikull i përzgjedhur në ekran shqiptohet me zë të lartë, ndonjëherë me informacion shtesë ose kontekst të shtuar.\n\nShtypni Zgjidh për të vazhduar. Butoni Select ndodhet në qendër të panelit të drejtimit, i cili është butoni i madh rrethor në krye të telekomandës.</string>
+  <string name="tv_training_overview_step_summary">SandFly është një lexues ekrani i bazuar në TalkBack të Google. Ai lexon me zë tekstin në ekran dhe jep komente me zë, që ta përdorni pajisjen pa e parë ekranin.\n\nKur SandFly është aktiv, artikulli i zgjedhur në ekran lexohet me zë, ndonjëherë me informacion ose kontekst shtesë.\n\nShtypni Zgjidh për të vazhduar. Butoni Zgjidh ndodhet në qendër të butonit të drejtimit, që është butoni i madh e i rrumbullakët në pjesën e sipërme të telekomandës.</string>
   <string name="tv_training_remote_step_title">Përdorimi i telekomandës</string>
   <string name="tv_training_remote_step_summary">Lëviz nëpër ekran duke përdorur butonin e drejtimit në formë rrethore në krye të telekomandës. Për të zgjedhur, shtyp qendrën e butonit të drejtimit në krye të telekomandës.\n\nNë rreshtin e dytë në të majtë gjendet butoni \"prapa\". Në të djathtë gjendet butoni i \"Asistentit\" me zë.\n\nNë rreshtin e tretë në të majtë gjendet butoni \"kreu\". Në të djathtë është butoni i heqjes së zërit.\n\nNë rreshtin e katërt në të majtë gjendet shkurtorja e YouTube. Në të djathtë është shkurtorja e Netflix.\n\nNë rreshtin e fundit gjenden dy butona të vegjël. Butoni i majtë është butoni i energjisë. Butoni i djathtë do të hapë menynë e hyrjes së televizorit.\n\nButonat e volumit gjenden në anën e djathtë të telekomandës.\n\n Shtyp \"Zgjidh\" për të vazhduar.</string>
   <string name="tv_training_shortcut_step_title">Shkurtorja e SandFly</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">Mund të shkruash edhe me tastierën breil. Gjeje te cilësimet e SandFly.</string>
   <string name="other_ways_to_type_title">Mënyra të tjera për të shkruar</string>
   <string name="other_ways_to_type_text">Ka mënyra të tjera për të shkruar në SandFly. Për shembull, mund të përdorësh trokitjen dy herë për të futur një shkronjë.</string>
-  <string name="basic_other_ways_to_type_text">Ka mënyra të tjera për të shtypur SandFly. Për shembull, mund të përdorni prekjen e dyfishtë për të futur një shkronjë. Këtë mund ta ndryshoni më vonë te cilësimet SandFly &gt; Tastiera në ekran &gt; Mënyra e shkrimit.</string>
-  <string name="basic_other_ways_to_type_text_tts">Ka mënyra të tjera për të shtypur SandFly. Për shembull, mund të përdorni prekjen e dyfishtë për të futur një shkronjë. Këtë mund ta ndryshoni më vonë te cilësimet SandFly, më pas në tastierën në ekran dhe më pas te \"Mënyra e shkrimit\".</string>
+  <string name="basic_other_ways_to_type_text">Ka mënyra të tjera për të shkruar në SandFly. Për shembull, mund të prekni dy herë për të futur një shkronjë. Këtë mund ta ndryshoni më vonë te Cilësimet e SandFly &gt; Tastiera në ekran &gt; Metoda e shtypjes.</string>
+  <string name="basic_other_ways_to_type_text_tts">Ka mënyra të tjera për të shkruar në SandFly. Për shembull, mund të prekni dy herë për të futur një shkronjë. Këtë mund ta ndryshoni më vonë te Cilësimet e SandFly, më pas Tastiera në ekran dhe më pas Metoda e shtypjes.</string>
   <string name="change_typing_preference_text">Ndrysho preferencën për të shkruarit</string>
   <string name="moving_cursor_title">Lëvizja e kursorit</string>
   <string name="moving_cursor_text">Kur ke aktivizuar një kuti teksti, mund ta lëvizësh kursorin mes shkronjave duke rrëshqitur shpejt lart ose poshtë.\n\nProvoje në kutinë e tekstit më poshtë.</string>
@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Për të kontrolluar historikun e njoftimeve, rrëshqit shpejt poshtë me 2 gishta nga kreu i ekranit</string>
   <string name="image_description_playground_title">Provo të marrësh përshkrimet e imazheve</string>
   <string name="image_description_playground_content_one">Kur je i fokusuar te një imazh, hap menynë e SandFly dhe zgjidh \"Përshkruaj imazhin\".\n\nKa një fotografi më poshtë. Provo të marrësh përshkrimin e saj.</string>
-  <string name="image_description_playground_content_two">Mund t\'i ndryshoni cilësimet e përshkrimit të imazhit në çdo kohë te cilësimet SandFly &gt; Përshkrimet automatike.</string>
-  <string name="image_description_playground_content_two_tts">Mund t\'i ndryshoni cilësimet e përshkrimit të imazhit në çdo kohë te cilësimet SandFly më pas te Përshkrimet automatike.</string>
+  <string name="image_description_playground_content_two">Mund t\'i ndryshoni cilësimet e përshkrimit të imazheve në çdo kohë te Cilësimet e SandFly &gt; Përshkrimet automatike.</string>
+  <string name="image_description_playground_content_two_tts">Mund t\'i ndryshoni cilësimet e përshkrimit të imazheve në çdo kohë te Cilësimet e SandFly, më pas te Përshkrimet automatike.</string>
   <string name="image_description_sample_image_content_description">Shembull i imazhit; trokit me 3 gishta për të hapur menynë e SandFly dhe zgjidh \"Përshkruaj imazhin\" për të dëgjuar një përshkrim.</string>
   <string name="practice_gestures_title">Praktiko gjestet</string>
   <string name="practice_keyboard_gestures_title">Praktiko shkurtoret e tastierës</string>
@@ -1299,24 +1299,24 @@
     <string name="title_pref_tts_engine">Motori i tekstit në të folur</string>
     <string name="title_pref_system_tts_settings">Cilësimet e sistemit të tekstit në të folur</string>
     <string name="title_selector_vertical_navigation">Navigacion vertikal</string>
-    <string name="summary_selector_vertical_navigation">Lëvizni te artikulli poshtë ose lart, kaloni artikujt e tjerë të rreshtit</string>
+    <string name="summary_selector_vertical_navigation">Kalim te artikulli poshtë ose lart, duke kapërcyer artikujt e tjerë të rreshtit</string>
     <string name="title_selector_switch_tts_engine">Motori i të folurit</string>
-    <string name="summary_selector_switch_tts_engine">Kaloni midis motorëve të instaluar të të folurit</string>
+    <string name="summary_selector_switch_tts_engine">Kalo midis motorëve të instaluar të të folurit</string>
     <string name="title_selector_voice_profile">Profili i zërit</string>
     <string name="title_pref_voice_profiles">Profilet e zërit</string>
-    <string name="voice_profile_default">SandFly e paracaktuar</string>
+    <string name="voice_profile_default">Parazgjedhja e SandFly</string>
     <string name="voice_profile_in_use">Në përdorim: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Gjuha e folur nuk ofrohet gjatë përdorimit të një profili zanor</string>
     <string name="speech_engine_unavailable_with_profile">Motori i të folurit nuk ofrohet gjatë përdorimit të një profili zanor</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, në përdorim</string>
     <string name="no_voice_profiles">Nuk ka profile zanore</string>
-    <string name="shortcut_voice_profiles">Zgjidhni profilin e zërit</string>
+    <string name="shortcut_voice_profiles">Zgjidh profilin e zërit</string>
     <string name="shortcut_previous_voice_profile">Profili i mëparshëm i zërit</string>
     <string name="shortcut_next_voice_profile">Profili tjetër i zërit</string>
     <string name="title_pref_voice_profile_in_use">Profili zanor në përdorim</string>
     <string name="title_pref_add_voice_profile">Shto profilin e zërit</string>
     <string name="voice_profile_new_name">Profili zanor <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Një profil zanor quhet tashmë <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Ekziston tashmë një profil zanor me emrin <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Emri</string>
     <string name="title_pref_voice_profile_language">Gjuha</string>
     <string name="title_pref_voice_profile_voice">Zëri</string>
@@ -1324,11 +1324,11 @@
     <string name="voice_profile_loading">Po ngarkohet</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, i pa instaluar</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Lëvizni lart</string>
-    <string name="voice_profile_move_down">Lëvizni poshtë</string>
+    <string name="voice_profile_move_up">Zhvendos lart</string>
+    <string name="voice_profile_move_down">Zhvendos poshtë</string>
     <string name="voice_profile_rename">Riemërto</string>
-    <string name="voice_profile_moved_above">Lëvizur mbi <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="voice_profile_moved_below">Lëvizur më poshtë <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_above">U zhvendos mbi <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_below">U zhvendos poshtë <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> u fshi</string>
     <string name="title_pref_delete_voice_profile">Fshi profilin e zërit</string>
     <string name="voice_profile_delete_confirm">Të fshihet <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
@@ -1339,79 +1339,79 @@
     <string name="summary_selector_speech_stream">Kaloni midis volumit të aksesueshmërisë, medias, ziles dhe thirrjeve</string>
     <string name="speech_stream_accessibility">Volumi i qasshmërisë</string>
     <string name="speech_stream_media">Volumi i medias</string>
-    <string name="speech_stream_ring">Vëllimi i unazës</string>
-    <string name="speech_stream_call">Volumi i thirrjes, kufja</string>
+    <string name="speech_stream_ring">Volumi i ziles</string>
+    <string name="speech_stream_call">Volumi i thirrjes, altoparlanti i veshit</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Dërgoni tekst të gjatë një fjali në të njëjtën kohë</string>
-    <string name="summary_pref_speak_in_phrases">Për motorët e të folurit që ndalojnë ngadalë, si p.sh. Gryphon, kështu që rrëshqitja larg ndalon menjëherë tekstin e gjatë. Shumë motorë ndalojnë më gjatë midis fjalive të dërguara veçmas, kështu që lëreni këtë nëse e juaja ndalon shpejt.</string>
+    <string name="title_pref_speak_in_phrases">Dërgo tekstin e gjatë fjali pas fjalie</string>
+    <string name="summary_pref_speak_in_phrases">Për motorët e të folurit që ndalen ngadalë, si Gryphon, që një rrëshqitje ta ndalë menjëherë tekstin e gjatë. Shumë motorë bëjnë pauza më të gjata mes fjalive të dërguara veçmas, prandaj lëreni të çaktivizuar nëse motori juaj ndalet shpejt.</string>
     <string name="battery_optimization_notification_title">Optimizimi i baterisë mund të ndalojë SandFly</string>
-    <string name="battery_optimization_notification_text">Në këtë telefon, kursyesi i baterisë mund të ndalojë SandFly pasi ekrani fiket, kështu që bie në heshtje derisa të rindizet. Prekni për të hapur optimizimin e baterisë, zgjidhni Të gjitha aplikacionet, gjeni SandFly dhe zgjidhni Mos optimizo.</string>
+    <string name="battery_optimization_notification_text">Në këtë telefon, kursyesi i baterisë mund ta ndalojë SandFly pasi fiket ekrani, kështu që SandFly hesht derisa të riniset. Prekni për të hapur optimizimin e baterisë, zgjidhni Të gjitha aplikacionet, gjeni SandFly dhe zgjidhni Mos optimizo.</string>
     <string name="title_pref_mute_speech_while_recording">I qetë gjatë regjistrimit</string>
     <string name="summary_pref_mute_speech_while_recording">Ndërsa një aplikacion regjistron pa kufje të lidhura, SandFly flet vetëm në përgjigje të gjesteve, tasteve dhe shkrimit tuaj dhe qëndron i heshtur për gjëra të tilla si njoftimet, në mënyrë që ato të mos regjistrohen.</string>
-    <string name="title_pref_switch_languages">Ndërroni gjuhën automatikisht</string>
-    <string name="title_pref_switch_dialects">Ndërroni automatikisht dialektin</string>
+    <string name="title_pref_switch_languages">Ndërro gjuhën automatikisht</string>
+    <string name="title_pref_switch_dialects">Ndërro automatikisht dialektin</string>
     <string name="category_collapsed">Seksioni i palosur</string>
     <string name="category_expanded">Seksioni i zgjeruar</string>
-    <string name="title_pref_speak_nav_bar_buttons">Flisni butonat e shiritit të navigimit</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Me ngritjen për t\'u aktivizuar në shiritin e navigimit, thoni butonin që shtyp një trokitje, si p.sh. Prapa ose Home.</string>
+    <string name="title_pref_speak_nav_bar_buttons">Thuaj butonat e shiritit të navigimit</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Kur në shiritin e navigimit përdoret aktivizimi me ngritjen e gishtit, thotë butonin e shtypur me trokitje, si Prapa ose Ekrani bazë.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Bateria <xliff:g id="battery_level" example="73">%1$s</xliff:g> përqind</string>
     <string name="template_battery_level_unknown">Niveli i baterisë i panjohur</string>
     <string name="value_charger_connected">Karikuesi i lidhur</string>
-    <string name="title_pref_screen_announcements">Ekrani është ndezur dhe fikur</string>
+    <string name="title_pref_screen_announcements">Ndezja dhe fikja e ekranit</string>
     <string name="summary_pref_screen_announcements">Zgjidh atë që thotë SandFly kur ekrani fiket ose ndizet dhe kur telefoni është i shkyçur</string>
     <string name="title_screen_announcements_screen_off">Kur ekrani fiket</string>
     <string name="title_screen_announcements_screen_on">Kur ekrani ndizet</string>
-    <string name="title_screen_announcements_unlock">Kur telefoni është i shkyçur</string>
+    <string name="title_screen_announcements_unlock">Kur shkyçet telefoni</string>
     <string name="title_pref_say_screen_off">Thuaj \"Ekrani fikur\"</string>
     <string name="title_pref_say_device_unlocked">Thuaj \"Pajisja u shkyç\"</string>
-    <string name="title_pref_announce_time">Koha</string>
+    <string name="title_pref_announce_time">Ora</string>
     <string name="title_pref_announce_ringer_mode">Modaliteti i ziles</string>
-    <string name="summary_pref_announce_ringer_mode">Thuaj kur zilja është vendosur në dridhje ose në heshtje</string>
+    <string name="summary_pref_announce_ringer_mode">Njoftimi kur zilja vendoset në dridhje ose në heshtje</string>
     <string name="title_pref_category_feedback">Feedback</string>
     <string name="title_pref_category_typing_and_braille">Shkrimi dhe shkrimi braille</string>
     <string name="title_pref_category_apps">Aplikacionet</string>
-    <string name="title_pref_touch_activation">Prekni dhe aktivizoni</string>
+    <string name="title_pref_touch_activation">Prekja dhe aktivizimi</string>
     <string name="title_pref_navigation">Navigimi</string>
     <string name="title_pref_category_more">Më shumë</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezervo gjestet për Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Ndalon SandFly trajtimin e goditjeve me dy gishta të vetëm dhe të dyfishtë në mënyrë që Samsung Vibration Watch t\'i përdorë ato. Aktivizo Vibration Watch në cilësimet e aksesueshmërisë së orës.</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nuk i trajton më prekjet e njëfishta dhe të dyfishta me dy gishta, që t\'i përdorë Samsung Vibration Watch. Aktivizoni Vibration Watch te cilësimet e qasshmërisë së orës.</string>
     <string name="shortcut_reserved_for_vibration_watch">Rezervuar për Vibration Watch te \"Cilësimet e avancuara\".</string>
     <string name="title_pref_speakerphone_away_from_ear">Altoparlanti kur është larg veshit tuaj</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Gjatë një telefonate, kalon në altoparlant kur e hiqni telefonin nga veshi dhe kthehet në kufje kur e mbani përsëri lart.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Nevojë për një leje që Android nuk ua jep lexuesve të ekranit. Për ta dhënë atë, ekzekutoni këtë komandë me adb or Shizuku, then come back to this screen: %1$s</string>
-    <string name="action_copy_command">Komandën e kopjimit</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Gjatë një telefonate, kalon në altoparlant kur e largoni telefonin nga veshi dhe kthehet te altoparlanti i veshit kur e afroni sërish te veshi.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Kërkon një leje që Android nuk ua jep lexuesve të ekranit. Për ta dhënë, ekzekutoni këtë komandë me adb ose Shizuku, pastaj kthehuni në këtë ekran: %1$s</string>
+    <string name="action_copy_command">Kopjo komandën</string>
     <string name="command_copied">Komanda u kopjua</string>
-    <string name="title_pref_speech_control">Lërini aplikacionet e tjera të flasin</string>
-    <string name="summary_pref_speech_control">Aplikacionet që ju lejoni mund të thonë tekst me zërin tuaj SandFly. Asgjë nuk thuhet ndërsa pajisja është e kyçur.</string>
+    <string name="title_pref_speech_control">Lejo aplikacionet e tjera të flasin</string>
+    <string name="summary_pref_speech_control">Aplikacionet që lejoni mund të thonë tekst me zërin e SandFly. Kur pajisja është e kyçur, nuk thuhet asgjë.</string>
     <string name="title_pref_speech_control_sound">Luaj një tingull përpara se të flasin aplikacionet e tjera</string>
     <string name="speech_control_apps_category">Aplikacionet</string>
     <string name="speech_control_no_apps">Asnjë aplikacion nuk ka kërkuar ende të flasë.</string>
     <string name="speech_control_ask_title">Të lejohet <xliff:g id="app" example="Tasker">%1$s</xliff:g> të flasë përmes SandFly?</string>
     <string name="speech_control_ask_text">Mund të thotë tekst me zërin tuaj SandFly. Këtë mund ta ndryshoni te Cilësimet e avancuara.</string>
     <string name="speech_control_allow">Lejo</string>
-    <string name="speech_control_deny">Mos lejoni</string>
-    <string name="permission_speak_label">fol përmes SandFly</string>
+    <string name="speech_control_deny">Mos lejo</string>
+    <string name="permission_speak_label">të folurit përmes SandFly</string>
     <string name="permission_speak_description">Lejon aplikacionin të kërkojë të thotë tekst me zërin tuaj SandFly. SandFly ju pyet përpara se aplikacioni të mund të flasë.</string>
-    <string name="permission_braille_display_label">kërkoni të jetë një ekran braille për SandFly</string>
-    <string name="permission_braille_display_description">Lejon që aplikacioni të kërkojë të jetë një ekran braille për SandFly. Nëse e lejoni në SandFly, ai mund të lexojë gjithçka në ekran dhe të kontrollojë pajisjen tuaj. SandFly ju pyet ju së pari.</string>
-    <string name="title_pref_phonetic_letters_mode">Flisni shkronja në mënyrë fonetike</string>
+    <string name="permission_braille_display_label">kërkesë për të qenë ekran braille për SandFly</string>
+    <string name="permission_braille_display_description">Lejon aplikacionin të kërkojë të jetë ekran braille për SandFly. Nëse e lejoni në SandFly, mund të lexojë gjithçka në ekran dhe të kontrollojë pajisjen tuaj. SandFly ju pyet më parë.</string>
+    <string name="title_pref_phonetic_letters_mode">Fol shkronjat fonetikisht</string>
     <string name="phonetic_letters_mode_off">Joaktive</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Pas letrës, me vonesë, si \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Pas letrës, pa vonesë, si \"h hotel\"</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Në vend të letrës, si \"hotel\"</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Pas shkronjës, me pauzë, si “h, hotel”</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Pas shkronjës, pa pauzë, si “h hotel”</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Në vend të shkronjës, si “hotel”</string>
     <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Lexoni nga motori i të folurit</string>
+    <string name="emoji_speech_engine">I lexon motori i të folurit</string>
     <string name="emoji_speech_names">Lexuar nga SandFly</string>
     <string name="emoji_speech_none">Asnjë</string>
     <string name="summary_selector_menu_emoji">Ndrysho mënyrën se si lexohen emoji</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Numëroni emoji të përsëritura</string>
+    <string name="title_pref_emoji_repeat_count">Numëro emoji të përsëritura</string>
     <string name="emoji_repeat_count_off">Joaktive</string>
     <string name="emoji_repeat_count_2">2 ose më shumë</string>
     <string name="emoji_repeat_count_3">3 ose më shumë</string>
@@ -1419,29 +1419,29 @@
     <string name="emoji_repeat_count_5">5 ose më shumë</string>
     <string name="emoji_repeat_count_6">6 ose më shumë</string>
     <string name="pref_table_headers_category_title">Leximi i tabelës</string>
-    <string name="pref_table_column_headers_title">Lexoni titujt e kolonave</string>
+    <string name="pref_table_column_headers_title">Lexo titujt e kolonave</string>
     <string name="pref_table_column_headers_entry_after">Pas të dhënave të qelizave</string>
     <string name="pref_table_column_headers_entry_before">Përpara të dhënave të qelizave</string>
-    <string name="pref_table_column_headers_entry_off">Mos lexoni</string>
-    <string name="pref_table_speak_row_column_numbers_title">Flisni numrat e rreshtave dhe kolonave</string>
-    <string name="pref_table_speak_row_column_numbers_summary">Njoftoni numrat e rreshtave dhe kolonave për qelizat e tabelës</string>
-    <string name="title_pref_speak_volume_changes">Ndryshimet e volumit të të folurit</string>
-    <string name="summary_pref_speak_volume_changes">Thoni volumin e ri pasi të keni shtypur tastet e volumit</string>
-    <string name="title_pref_speak_notifications">Flisni njoftimet</string>
-    <string name="summary_pref_speak_notifications">Lexoni me zë të lartë njoftimet e reja kur të mbërrijnë. Thirrjet hyrëse lexohen gjithmonë.</string>
-    <string name="title_pref_notification_list">Përdorni listën e njoftimeve të SandFly</string>
+    <string name="pref_table_column_headers_entry_off">Mos lexo</string>
+    <string name="pref_table_speak_row_column_numbers_title">Thuaj numrat e rreshtave dhe kolonave</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Thotë numrat e rreshtit dhe kolonës për qelizat e tabelës</string>
+    <string name="title_pref_speak_volume_changes">Lexo ndryshimet e volumit</string>
+    <string name="summary_pref_speak_volume_changes">Thotë volumin e ri pas shtypjes së butonave të volumit</string>
+    <string name="title_pref_speak_notifications">Lexo njoftimet me zë</string>
+    <string name="summary_pref_speak_notifications">Lexon me zë njoftimet e reja kur mbërrijnë. Telefonatat hyrëse lexohen gjithmonë.</string>
+    <string name="title_pref_notification_list">Përdor listën e njoftimeve të SandFly</string>
     <string name="title_pref_notification_parts">Detajet e njoftimit</string>
     <string name="title_pref_play_installer">Shfaqet i instaluar nga Google Play</string>
-    <string name="summary_pref_play_installer">Tregoju aplikacioneve të tjera që Google Play janë instaluar SandFly. Disa aplikacione, të tilla si disa aplikacione bankare, çaktivizojnë shërbimet e aksesueshmërisë që janë instaluar nga kudo tjetër. Ka nevojë për Shizuku dhe ndryshon vetëm ato aplikacione që tregohen se nga erdhi SandFly.</string>
+    <string name="summary_pref_play_installer">U tregon aplikacioneve të tjera se SandFly është instaluar nga Google Play. Disa aplikacione, si disa aplikacione bankare, çaktivizojnë shërbimet e qasshmërisë të instaluara nga çdo burim tjetër. Kërkon Shizuku dhe ndryshon vetëm atë që u thuhet aplikacioneve për burimin e SandFly.</string>
     <string name="summary_pref_play_installer_pending">Aktiv, por Google Play nuk është regjistruar ende si instalues. SandFly e vendos kur disponohet Shizuku.</string>
     <string name="notification_part_title">Titulli</string>
     <string name="notification_part_text">Teksti</string>
     <string name="notification_part_app">Emri i aplikacionit</string>
     <string name="notification_part_time">Koha</string>
-    <string name="notification_part_playback">Duke luajtur ose në pauzë</string>
+    <string name="notification_part_playback">Po luhet ose në pauzë</string>
     <string name="notification_list_title">Njoftimet</string>
     <string name="notification_list_empty">Nuk ka njoftime</string>
-    <string name="notification_list_no_access">Qasja në njoftim është joaktiv</string>
+    <string name="notification_list_no_access">Qasja në njoftime është joaktive</string>
     <string name="notification_list_grant_access">Aktivizo qasjen në njoftim</string>
     <string name="notification_list_quick_settings">Cilësimet e shpejta</string>
     <string name="notification_list_dismiss">Hiqe</string>
@@ -1449,17 +1449,17 @@
     <string name="notification_list_show_less">Trego më pak</string>
     <string name="notification_list_clear_all">Pastro të gjitha</string>
     <string name="notification_list_send">Dërgo</string>
-    <string name="notification_list_playing">Duke luajtur</string>
+    <string name="notification_list_playing">Po luhet</string>
     <string name="notification_list_paused">Në pauzë</string>
     <string name="notification_list_play">Luaj</string>
     <string name="notification_list_pause">Vendos në pauzë</string>
     <string name="notification_list_previous">Prapa</string>
-    <string name="notification_list_next">Para</string>
+    <string name="notification_list_next">Tjetra</string>
     <plurals name="notification_list_group_count">
         <item quantity="one">%d njoftim</item>
         <item quantity="other">%d njoftime</item>
     </plurals>
-    <string name="title_pref_quick_settings">Përdorni cilësimet e shpejta të SandFly</string>
+    <string name="title_pref_quick_settings">Përdor cilësimet e shpejta të SandFly</string>
     <string name="title_pref_quick_settings_items">Paneli i cilësimeve të shpejta</string>
     <string name="quick_settings_title">Cilësimet e shpejta</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1479,10 +1479,10 @@
     <string name="quick_settings_brightness">Shkëlqimi</string>
     <string name="quick_settings_adaptive_brightness">Shkëlqim përshtatës</string>
     <string name="quick_settings_media_volume">Volumi i medias</string>
-    <string name="quick_settings_call_volume">Vëllimi i thirrjes</string>
-    <string name="quick_settings_ring_volume">Vëllimi i unazës</string>
-    <string name="quick_settings_notification_volume">Vëllimi i njoftimit</string>
-    <string name="quick_settings_alarm_volume">Vëllimi i alarmit</string>
+    <string name="quick_settings_call_volume">Volumi i thirrjes</string>
+    <string name="quick_settings_ring_volume">Volumi i ziles</string>
+    <string name="quick_settings_notification_volume">Volumi i njoftimeve</string>
+    <string name="quick_settings_alarm_volume">Volumi i alarmit</string>
     <string name="quick_settings_accessibility_volume">Volumi i qasshmërisë</string>
     <string name="quick_settings_system_volume">Volumi i zërit të sistemit</string>
     <string name="quick_settings_data_saver">Kursuesi i të dhënave</string>
@@ -1492,15 +1492,15 @@
     <string name="quick_settings_color_correction">Korrigjimi i ngjyrës</string>
     <string name="quick_settings_microphone_access">Qasje në mikrofon</string>
     <string name="quick_settings_camera_access">Qasja në kamerë</string>
-    <string name="quick_settings_screen_timeout">Koha e fundit e ekranit</string>
+    <string name="quick_settings_screen_timeout">Koha e fikjes së ekranit</string>
     <string name="quick_settings_font_size">Madhësia e shkronjave</string>
     <string name="quick_settings_media">Media</string>
     <string name="quick_settings_no_media">Asnjë media</string>
-    <string name="quick_settings_media_output">Prodhimi mediatik</string>
+    <string name="quick_settings_media_output">Dalja e medias</string>
     <string name="quick_settings_next_alarm">Alarmi i radhës</string>
     <string name="quick_settings_no_alarm">Asnjë alarm</string>
     <string name="quick_settings_settings">Cilësimet</string>
-    <string name="quick_settings_power_menu">Menuja e energjisë</string>
+    <string name="quick_settings_power_menu">Menyja e fikjes</string>
     <string name="quick_settings_add_system_tile">Shto pllakën e sistemit</string>
     <string name="quick_settings_no_system_tiles">Nuk ka pllaka sistemi për të shtuar</string>
     <string name="quick_settings_tile_not_found">%1$s nuk është në cilësimet e shpejta të sistemit</string>
@@ -1515,7 +1515,7 @@
     </plurals>
     <string name="quick_settings_connected">Lidhur</string>
     <string name="quick_settings_battery">Bateria</string>
-    <string name="quick_settings_battery_charging">%1$s, karikimi</string>
+    <string name="quick_settings_battery_charging">%1$s, po karikohet</string>
     <string name="quick_settings_battery_full">%1$s, i ngarkuar</string>
     <string name="quick_settings_sound">Tingulli</string>
     <string name="quick_settings_vibrate">Dridhja</string>
@@ -1530,7 +1530,7 @@
     <string name="quick_settings_add_tile">Shto pllakën e aplikacionit</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Numri i kolonave</string>
-    <string name="quick_settings_move">Lëvizni</string>
+    <string name="quick_settings_move">Zhvendos</string>
     <string name="quick_settings_move_title">Lëviz %1$s</string>
     <string name="quick_settings_cell">Rreshti %1$d, kolona %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1541,7 +1541,7 @@
     </plurals>
     <string name="quick_settings_remove">Hiq</string>
     <string name="quick_settings_added">%1$s u shtua</string>
-    <string name="quick_settings_removed">%1$s hequr</string>
+    <string name="quick_settings_removed">%1$s u hoq</string>
     <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aktiv. Mbani 2 gishta në ekran për 5 sekonda për ta fikur. Për të ndaluar shfaqjen e këtij mesazhi, çaktivizoni cilësimet SandFly &gt; Cilësimet e avancuara &gt; Shfaq udhëzimet për çaktivizimin e SandFly.</string>
     <string name="edge_gestures_title">Skajet</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Një tjetër shkurtore për të aktivizuar ose çaktivizuar modalitetin e shfletimit</string>
@@ -1550,24 +1550,24 @@
     <string name="dialog_title_audio_output_device">Zgjidh se ku të luhet tingulli SandFly</string>
     <string name="value_audio_output_device_default">Parazgjedhja e sistemit</string>
     <string name="value_audio_output_device_speaker">Altoparlanti i telefonit</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Pajisja Bluetooth e lidhur ose me kabllo</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Pajisje Bluetooth ose me kabllo e lidhur</string>
     <string name="value_audio_output_device_disconnected">shkëputur</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth pajisje audio</string>
+    <string name="value_audio_output_device_bluetooth_default">Pajisje audio Bluetooth</string>
     <string name="value_audio_output_device_wired_headset">Kufje me tela</string>
     <string name="value_audio_output_device_wired_headphones">Kufje me tela</string>
-    <string name="value_audio_output_device_usb_headset">USB kufje</string>
-    <string name="value_audio_output_device_usb_device">USB pajisje audio</string>
+    <string name="value_audio_output_device_usb_headset">Kufje USB</string>
+    <string name="value_audio_output_device_usb_device">Pajisje audio USB</string>
     <string name="title_pref_speaker_devices">Altoparlanti i telefonit me këto pajisje</string>
     <string name="summary_pref_speaker_devices_none">Asnjë</string>
     <string name="summary_pref_speaker_devices_no_devices">Nuk janë lidhur ende pajisje Bluetooth ose me kabllo</string>
     <string name="pref_reduce_window_delay_summary">SandFly lexon më shpejt ekranet e reja kur animacionet janë të fikur. Kjo çaktivizon animacionet për të gjithë telefonin.</string>
-    <string name="dialog_message_detailed_ai_description">Imazhet e përzgjedhura dërgohen në API-në Google të Gemini për t\'u përshkruar. Me AI në pajisje të aktivizuar, ato përshkruhen në këtë telefon dhe nuk dërgohen.\n\nMe një çelës falas API, Google mund të mbajë atë që merr, ta përdorë për të përmirësuar produktet e tij dhe t\'i bëjë njerëzit ta shqyrtojnë atë. AI gjeneruese është eksperimentale, kështu që do të bëjë gabime. Zbatohet <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="dialog_message_detailed_ai_promotion">Përshkrimet e detajuara të imazheve mundësohen nga AI gjeneruese. Imazhet e përzgjedhura dërgohen në API-në Google të Gemini për t\'u përshkruar. Me AI në pajisje të aktivizuar, ato përshkruhen në këtë telefon dhe nuk dërgohen.\n\nMe një çelës falas API, Google mund të mbajë atë që merr, ta përdorë për të përmirësuar produktet e tij dhe t\'i bëjë njerëzit ta shqyrtojnë atë. AI gjeneruese është eksperimentale, kështu që do të bëjë gabime. Mund të çaktivizoni përshkrimet e detajuara të imazheve në çdo kohë te cilësimet SandFly.\n\n<xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> zbatohet.</string>
-    <string name="dialog_message_screen_overview_promotion">Një pamje e ekranit dërgohet në API-në Gemini të Google për t\'u përshkruar, e cila zgjat disa sekonda. Me AI në pajisje të aktivizuar, ajo përshkruhet në këtë telefon dhe nuk dërgohet.\n\nMe një çelës API falas, Google mund të mbajë atë që merr, ta përdorë për të përmirësuar produktet e tij dhe t\'i bëjë njerëzit ta shqyrtojnë atë. AI gjeneruese është eksperimentale, kështu që do të bëjë gabime. Zbatohet <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_detailed_ai_description">Imazhet e zgjedhura dërgohen te Gemini API e Google për t\'u përshkruar. Kur AI në pajisje është aktive, ato përshkruhen në këtë telefon dhe nuk dërgohen.\n\nMe një çelës API falas, Google mund të mbajë atë që merr, ta përdorë për të përmirësuar produktet e tij dhe ta japë për shqyrtim te njerëz. AI gjeneruese është eksperimentale, kështu që do të bëjë gabime. Zbatohen <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_detailed_ai_promotion">Përshkrimet e detajuara të imazheve krijohen nga AI gjeneruese. Imazhet e zgjedhura dërgohen te Gemini API e Google për t\'u përshkruar. Kur AI në pajisje është aktive, ato përshkruhen në këtë telefon dhe nuk dërgohen.\n\nMe një çelës API falas, Google mund të mbajë atë që merr, ta përdorë për të përmirësuar produktet e tij dhe ta japë për shqyrtim te njerëz. AI gjeneruese është eksperimentale, kështu që do të bëjë gabime. Mund t\'i çaktivizoni përshkrimet e detajuara të imazheve në çdo kohë te Cilësimet e SandFly.\n\nZbatohen <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_screen_overview_promotion">Një pamje ekrani dërgohet te Gemini API e Google për t\'u përshkruar, gjë që zgjat disa sekonda. Kur AI në pajisje është aktive, ajo përshkruhet në këtë telefon dhe nuk dërgohet.\n\nMe një çelës API falas, Google mund të mbajë atë që merr, ta përdorë për të përmirësuar produktet e tij dhe ta japë për shqyrtim te njerëz. AI gjeneruese është eksperimentale, kështu që do të bëjë gabime. Zbatohen <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
     <string name="shortcut_title_open_app">Hap aplikacionin</string>
-    <string name="shortcut_open_app">Hapur <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Lëvizni në krye</string>
-    <string name="shortcut_write_reading_control">Shkruani letrën e një kontrolli leximi</string>
+    <string name="shortcut_open_app">Hap <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_scroll_to_top">Lëviz në krye</string>
+    <string name="shortcut_write_reading_control">Shkruaj shkronjën e një kontrolli leximi</string>
     <string name="title_pref_reading_control_letters">Shkronjat e alfabetit të shkruara me dorë</string>
     <string name="reading_control_letter_none">Asnjë</string>
     <string name="handwriting_prompt">Shkruani një shkronjë alfabeti</string>
@@ -1577,7 +1577,7 @@
     <string name="handwriting_app_prompt">Shkruaj emrin e një aplikacioni</string>
     <string name="handwriting_no_app">Asnjë aplikacion nuk fillon me <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
     <string name="handwriting_app_not_opened"><xliff:g id="app" example="WhatsApp">%1$s</xliff:g> nuk mund të hapej</string>
-    <string name="handwriting_not_recognized">Shkrimi i dorës nuk njihet</string>
+    <string name="handwriting_not_recognized">Shkrimi i dorës nuk u njoh</string>
     <string name="handwriting_downloading">Njohja e shkrimit të dorës po shkarkohet</string>
     <string name="handwriting_download_title">Të shkarkohet njohja e shkrimit të dorës?</string>
     <string name="handwriting_download_message">Shkrimi i dorës njihet në këtë telefon. Modeli i tij për këtë gjuhë, rreth 20 MB, shkarkohet nga Google një herë. Një mesazh shfaqet kur është shkarkuar.</string>
@@ -1598,10 +1598,10 @@
     <string name="handwriting_keyboard_name">SandFly shkrim dore</string>
     <string name="handwriting_space">Hapësirë</string>
     <string name="handwriting_new_line">Rresht i ri</string>
-    <string name="handwriting_tutorial_intro">Udhëzues për tastierën e shkrimit të dorës. Shkruani me një gisht kudo në ekran. Ajo që shkruani shtypet kur ndaloni për një moment. Për të përfunduar tutorialin, rrëshqitni poshtë me tre gishta.</string>
-    <string name="handwriting_tutorial_write_letter">Shkruani shkronjën e alfabetit a.</string>
+    <string name="handwriting_tutorial_intro">Udhëzues për tastierën me shkrim dore. Shkruani me një gisht kudo në ekran. Ajo që shkruani futet kur ndaloni për një çast. Për ta përfunduar udhëzuesin, rrëshqitni poshtë me tre gishta.</string>
+    <string name="handwriting_tutorial_write_letter">Shkruani shkronjën a.</string>
     <string name="handwriting_tutorial_write_word">Tani shkruani fjalën hi (h e ndjekur nga i).</string>
-    <string name="handwriting_tutorial_typed">Shkruani <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">U shkrua <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Rrëshqitni djathtas me dy gishta për të shkruar një hapësirë.</string>
     <string name="handwriting_tutorial_delete">Rrëshqitni majtas me dy gishta për të fshirë karakterin përpara kursorit.</string>
     <string name="handwriting_tutorial_deleted">Fshirë.</string>
@@ -1609,18 +1609,18 @@
     <string name="handwriting_tutorial_read_back">Prekni me dy gishta për të lexuar tekstin përpara kursorit.</string>
     <string name="handwriting_tutorial_new_line">Rrëshqitni poshtë me dy gishta për të futur një rresht të ri ose për të kryer veprimin e fushës së tekstit, si p.sh. \"Dërgo\".</string>
     <string name="handwriting_tutorial_not_that">Ky ishte një gjest tjetër.</string>
-    <string name="handwriting_tutorial_done">Linja e re. Tutoriali mbaroi. Rrëshqitni poshtë me tre gishta për të fshehur tastierën dhe djathtas ose majtas me tre gishta për të ndërruar tastierat. Për të hapur përsëri tutorialin, trokitni lehtë me tre gishta.</string>
+    <string name="handwriting_tutorial_done">Rresht i ri. Udhëzuesi përfundoi. Rrëshqitni poshtë me tre gishta për të fshehur tastierën, dhe djathtas ose majtas me tre gishta për të ndërruar tastierën. Për ta hapur përsëri udhëzuesin, trokitni me tre gishta.</string>
     <string name="handwriting_tutorial_finished">Tutoriali mbaroi. Për ta hapur përsëri, trokitni lehtë me tre gishta.</string>
     <string name="handwriting_no_alternatives">Asnjë sugjerim tjetër</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> nga <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Tekst bosh</string>
     <string name="handwriting_not_available">Njohja e shkrimit të dorës nuk disponohet në këtë pajisje</string>
-    <string name="shortcut_scroll_to_bottom">Lëvizni në fund</string>
+    <string name="shortcut_scroll_to_bottom">Lëviz në fund</string>
     <string name="shortcut_refresh">Rifresko</string>
-    <string name="shortcut_system_notifications">Hija e njoftimit të sistemit</string>
+    <string name="shortcut_system_notifications">Paneli i njoftimeve të sistemit</string>
     <string name="shortcut_system_quick_settings">Cilësimet e shpejta të sistemit</string>
     <string name="shortcut_lock_screen">Blloko ekranin e pajisjes</string>
-    <string name="shortcut_power_menu">Menuja e energjisë</string>
+    <string name="shortcut_power_menu">Menyja e fikjes</string>
     <string name="shortcut_increase_media_volume">Rrit volumin e medias</string>
     <string name="shortcut_decrease_media_volume">Ul volumin e medias</string>
     <string name="title_clear_selection">Pastro përzgjedhjen</string>
@@ -1629,13 +1629,13 @@
     <string name="title_pref_shortcut_3finger_4tap">Prekni katër herë me 3 gishta</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Rrotulloni në drejtim të akrepave të orës me 2 gishta</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Rrotulloni në drejtim të kundërt të akrepave të orës me 2 gishta</string>
-    <string name="title_pref_shortcut_2finger_scrub">Pastroni me 2 gishta</string>
-    <string name="title_pref_shortcut_2finger_pinch">Shtypni me 2 gishta</string>
-    <string name="title_pref_shortcut_2finger_spread">Përhapeni me 2 gishta</string>
-    <string name="title_pref_shortcut_3finger_pinch">Shtypni me 3 gishta</string>
-    <string name="title_pref_shortcut_3finger_spread">Përhapeni me 3 gishta</string>
-    <string name="title_pref_shortcut_4finger_pinch">Pini me 4 gishta</string>
-    <string name="title_pref_shortcut_4finger_spread">Përhapeni me 4 gishta</string>
+    <string name="title_pref_shortcut_2finger_scrub">Lëvizje e shpejtë para-mbrapa me 2 gishta</string>
+    <string name="title_pref_shortcut_2finger_pinch">Afrimi i 2 gishtave</string>
+    <string name="title_pref_shortcut_2finger_spread">Largimi i 2 gishtave</string>
+    <string name="title_pref_shortcut_3finger_pinch">Afrimi i 3 gishtave</string>
+    <string name="title_pref_shortcut_3finger_spread">Largimi i 3 gishtave</string>
+    <string name="title_pref_shortcut_4finger_pinch">Afrimi i 4 gishtave</string>
+    <string name="title_pref_shortcut_4finger_spread">Largimi i 4 gishtave</string>
     <string name="title_pref_shortcut_edge_bottom_up">Rrëshqitni lart nga buza e poshtme</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Rrëshqitni gjatë lart nga buza e poshtme</string>
     <string name="title_pref_shortcut_edge_top_left_down">Rrëshqitni poshtë nga lart majtas</string>
@@ -1659,7 +1659,7 @@
     <string name="value_multi_tap_timeout_250ms">0,25 sekonda (e parazgjedhur)</string>
     <string name="title_pref_rotor_step_degrees">Rrotullimi i rotorit për hap</string>
     <string name="title_pref_edge_first_click_mm">Distanca deri në klikimin e parë</string>
-    <string name="title_pref_edge_second_click_mm">Distanca nga klikimi i parë në të dytën</string>
+    <string name="title_pref_edge_second_click_mm">Distanca nga klikimi i parë te i dyti</string>
     <string name="value_distance_5mm">0,5 cm</string>
     <string name="value_distance_10mm">1 cm</string>
     <string name="value_distance_15mm">1.5 cm</string>
@@ -1673,18 +1673,18 @@
     <string name="value_rotor_step_45">45 gradë</string>
     <string name="value_rotor_step_60">60 gradë</string>
     <string name="title_pref_low_latency_audio">Audio me vonesë të ulët</string>
-    <string name="summary_pref_low_latency_audio">Luaj tingujt dhe fjalimin e SandFly përmes shtegut më të shpejtë audio të telefonit, në mënyrë që t\'i dëgjosh më shpejt. Fikeni nëse fjalimi ose tingujt prishen ose tingëllojnë gabim.</string>
+    <string name="summary_pref_low_latency_audio">Luan tingujt dhe të folurin e SandFly përmes shtegut më të shpejtë audio të telefonit, që t\'i dëgjoni më shpejt. Çaktivizojeni nëse të folurit ose tingujt ndërpriten ose tingëllojnë gabim.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekonda (e parazgjedhur)</string>
     <string name="value_focus_delay_300ms">0.3 sekonda</string>
     <string name="title_pref_lift_to_activate">Ngrini për ta aktivizuar</string>
-    <string name="summary_support_change_lift_to_activate">Ndryshoni vendin ku ngritja e gishtit aktivizon një artikull</string>
-    <string name="value_lift_to_activate_disabled">I paaftë</string>
+    <string name="summary_support_change_lift_to_activate">Ndrysho vendin ku ngritja e gishtit aktivizon një artikull</string>
+    <string name="value_lift_to_activate_disabled">Joaktive</string>
     <string name="value_lift_to_activate_navigation_bar">Vetëm në shiritin e navigimit</string>
     <string name="value_lift_to_activate_entire_screen">I gjithë ekrani</string>
     <string name="template_lift_to_activate_changed">Ngrini për të aktivizuar: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Mbështilleni rreth</string>
-    <string name="summary_pref_wrap_around">Duke rrëshqitur përpara artikullit të fundit shkon tek i pari dhe tejkalimi i të parit shkon tek i fundit. Kur fiket, në vend të kësaj luhet një tingull në fund.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Rregulloni eksplorimin me prekje të mbërthyer</string>
+    <string name="title_pref_wrap_around">Navigim rrethor</string>
+    <string name="summary_pref_wrap_around">Rrëshqitja përtej artikullit të fundit shkon te i pari, dhe përtej të parit te i fundit. Kur është joaktive, në vend të kësaj luhet një tingull në fund.</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Rregullo eksplorimin me prekje të bllokuar</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Pa lejen DUMP, SandFly mund të thotë vetëm se eksplorimi me prekje mund të jetë i bllokuar. Për ta rregulluar, ekzekutoni: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Rregullimi i eksplorimit me prekje</string>
     <string name="stuck_touch_exploration_fixed">Eksplorimi me prekje u rregullua</string>
@@ -1693,64 +1693,64 @@
     <string name="stuck_touch_exploration_grant_dump">Eksplorimi me prekje mund të jetë i bllokuar. Rinisni telefonin për ta rregulluar ose jepni SandFly lejen DUMP me ADB në mënyrë që të mund ta rregullojë.</string>
     <string name="title_pref_window_names">Emrat e dritareve</string>
     <string name="window_names_always">Gjithmonë</string>
-    <string name="window_names_until_first_item">Gjithmonë, të prerë nga artikulli i parë</string>
+    <string name="window_names_until_first_item">Gjithmonë, ndërpritet nga artikulli i parë</string>
     <string name="window_names_window_opens">Vetëm kur hapet një dritare</string>
     <string name="window_names_never">Kurrë</string>
     <string name="title_pref_selector_links_controls_web_only">Lidhjet dhe kontrollet vetëm në përmbajtjen e internetit</string>
     <string name="title_pref_selector_auto_switch">Ndrysho automatikisht kontrollin e leximit</string>
-    <string name="title_pref_touch_stops_speech">Ndalo fjalimin kur prek ekranin</string>
+    <string name="title_pref_touch_stops_speech">Ndalo të folurit kur prek ekranin</string>
     <string name="title_pref_focus_new_windows">Zhvendos fokusin në dritare të reja</string>
     <string name="title_pref_volume_keys_adjust_sliders">Tastet e volumit rregullojnë rrëshqitësit</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">Kur një rrëshqitës ka fokus, volumi lart e poshtë ndryshon vlerën e tij në vend të volumit</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">Kur një rrëshqitës ka fokusin, butonat e ngritjes dhe uljes së volumit ndryshojnë vlerën e tij në vend të volumit</string>
     <string name="title_pref_volume_keys_move_cursor">Tastet e volumit lëvizin kursorin</string>
-    <string name="summary_pref_volume_keys_move_cursor">Kur një fushë teksti ka fokus, vëllimi lart e zhvendos kursorin prapa një karakteri dhe volumi poshtë e lëviz atë</string>
-    <string name="summary_support_wrap_around">Aktivizoni ose çaktivizoni mbështjelljen nga artikulli i fundit tek i pari</string>
-    <string name="wrap_around_on">Mbështilleni rreth</string>
-    <string name="wrap_around_off">Mbështilleni jashtë</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tableti mbajti lart fytyrat larg</string>
+    <string name="summary_pref_volume_keys_move_cursor">Kur një fushë teksti ka fokusin, ngritja e volumit e lëviz kursorin një karakter prapa dhe ulja e volumit një karakter përpara</string>
+    <string name="summary_support_wrap_around">Aktivizo ose çaktivizo kalimin nga artikulli i fundit te i pari</string>
+    <string name="wrap_around_on">Navigim rrethor: aktive</string>
+    <string name="wrap_around_off">Navigim rrethor: joaktive</string>
+    <string name="title_selector_tablet_held_up_faces_away">Tableti i ngritur me ekranin nga jashtë</string>
     <string name="summary_support_tablet_held_up_faces_away">Për tastierën braille në një tablet ose telefon të shpalosur</string>
-    <string name="tablet_held_up_faces_away_on">Tableti mbajti lart fytyrat larg</string>
-    <string name="tablet_held_up_faces_away_off">Tableti mbajti lart fytyrat larg</string>
+    <string name="tablet_held_up_faces_away_on">Tableti i ngritur me ekranin nga jashtë: aktiv</string>
+    <string name="tablet_held_up_faces_away_off">Tableti i ngritur me ekranin nga jashtë: joaktiv</string>
     <string name="title_keyboard_echo_on_screen">Jehona e tastierës në ekran</string>
-    <string name="title_keyboard_echo_physical">Jehona fizike e tastierës</string>
+    <string name="title_keyboard_echo_physical">Jehona e tastierës fizike</string>
     <string name="title_keyboard_echo_braille_keyboard">Jehona e tastierës Braille</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Jehonë e tastierës së shkrimit të dorës</string>
     <string name="title_keyboard_echo_braille_display">Jehona e ekranit Braille</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Ndërpreni fjalimin kur shkruani</string>
+    <string name="title_pref_interrupt_typing">Ndërprit të folurit gjatë shkrimit</string>
     <string name="pref_interrupt_typing_entry_always">Gjithmonë</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Në fushat e redaktimit</string>
     <string name="pref_interrupt_typing_entry_keyboard_echo">Në jehonën e tastierës</string>
-    <string name="title_pref_interrupt_enter">Ndërpreni fjalimin në Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Emri, shteti, lloji</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Lloji, shteti, emri</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Shteti, lloji, emri</string>
+    <string name="title_pref_interrupt_enter">Ndërprit të folurit me Enter</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Emri, gjendja, lloji</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Lloji, gjendja, emri</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Gjendja, lloji, emri</string>
     <string name="item_detail_name">Emri</string>
-    <string name="item_detail_type">Shkruaj</string>
-    <string name="item_detail_state">Shtetit</string>
-    <string name="action_move_up">Lëvizni lart</string>
-    <string name="action_move_down">Lëvizni poshtë</string>
+    <string name="item_detail_type">Lloji</string>
+    <string name="item_detail_state">Gjendja</string>
+    <string name="action_move_up">Zhvendos lart</string>
+    <string name="action_move_down">Zhvendos poshtë</string>
     <string name="template_list_position">Pozicioni <xliff:g id="position" example="2">%1$d</xliff:g> nga <xliff:g id="count" example="3">%2$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up">Marrë <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Ka rënë <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_picked_up">U mor: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">U lëshua <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly thotë detajet e një artikulli në këtë renditje. Për ta ndryshuar, prekni dhe mbani një detaj dhe më pas tërhiqeni lart ose poshtë. Me SandFly të aktivizuar, prekni dy herë dhe mbani, më pas zvarriteni. Mund të përdorni gjithashtu veprimet Lëviz lart dhe Lëviz poshtë.</string>
-    <string name="title_pref_speak_items_before_scroll">Flisni artikujt përpara se të lëvizin në pamje</string>
+    <string name="title_pref_speak_items_before_scroll">Thuaj artikujt përpara se të lëvizin në pamje</string>
     <string name="gemini_error_api_key">Gemini nuk e pranoi çelësin API. Kontrolloni çelësin te cilësimet e përshkrimeve automatike.</string>
     <string name="gemini_error_quota">Kufiri i përdorimit për çelësin tuaj API Gemini është arritur. Provo sërish më vonë.</string>
     <string name="gemini_error_busy">Gemini është i zënë për momentin. Provo sërish pas një momenti.</string>
     <string name="gemini_error_timeout">Gemini iu desh shumë kohë për t\'u përgjigjur. Provo sërish.</string>
-    <string name="gemini_error_with_code">Gemini nuk mund të përgjigjem, gabimi <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
-    <string name="gemini_error_with_details">Gemini nuk mund të përgjigjem, gabimi <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
-    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nuk mund të marr një përshkrim më të detajuar të imazhit: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
+    <string name="gemini_error_with_code">Gemini nuk mundi të përgjigjej, gabimi <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
+    <string name="gemini_error_with_details">Gemini nuk mundi të përgjigjej, gabimi <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
+    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nuk mund të merret një përshkrim më i detajuar i imazhit: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Pyet me zë</string>
-    <string name="image_qna_stop_listening">Ndaloni së dëgjuari</string>
+    <string name="image_qna_stop_listening">Ndalo dëgjimin</string>
     <string name="image_qna_type_question">Shkruani një pyetje</string>
     <string name="shortcut_dictate">Dikto</string>
-    <string name="title_pref_ai_dictation">Diktimin e saktë me AI</string>
-    <string name="dictation_not_corrected">Nuk është korrigjuar. Shkruani si të njohur.</string>
+    <string name="title_pref_ai_dictation">Korrigjo diktimin me IA</string>
+    <string name="dictation_not_corrected">Nuk u korrigjua. U shkrua siç u njoh.</string>
     <string name="dictation_nothing_recognized">Asgjë nuk u njoh</string>
     <string name="dictation_unavailable">Njohja e të folurit nuk ofrohet</string>
-    <string name="dictation_field_gone">Fusha e tekstit u mbyll. Asgjë e shtypur.</string>
+    <string name="dictation_field_gone">Fusha e tekstit u mbyll. Nuk u shtyp asgjë.</string>
     <string name="dictation_transcription_failed">E folura nuk u transkriptua. Asgjë e shtypur.</string>
     <string name="title_pref_dictation">Diktimi</string>
     <string name="title_pref_dictation_rambler_live">Transkriptimi i drejtpërdrejtë i Rambler</string>
@@ -1767,9 +1767,9 @@
     <string name="dictation_whisper_use">Përdor</string>
     <string name="title_pref_dictation_ai_service">Shërbimi i AI për diktimin</string>
     <string name="dictation_ai_same">I njëjti si për përshkrimet automatike</string>
-    <string name="title_pref_browse_mode_per_app">Mos harroni mënyrën e shfletimit në çdo aplikacion</string>
-    <string name="title_pref_export_settings">Cilësimet e eksportit</string>
-    <string name="title_pref_import_settings">Cilësimet e importit</string>
+    <string name="title_pref_browse_mode_per_app">Mbaj mend mënyrën e shfletimit në çdo aplikacion</string>
+    <string name="title_pref_export_settings">Eksporto cilësimet</string>
+    <string name="title_pref_import_settings">Importo cilësimet</string>
     <string name="settings_export_done">Cilësimet u eksportuan. Nuk përfshihen çelësat API</string>
     <string name="settings_export_failed">Cilësimet nuk mund të eksportoheshin</string>
     <string name="settings_import_done">Cilësimet u importuan</string>

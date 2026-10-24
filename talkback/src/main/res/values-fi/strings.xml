@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Laitteen lukitus avattu.</string>
   <string name="title_pref_speech_volume">Puheen äänenvoimakkuus</string>
   <string name="title_pref_verbose_scroll_announcement">Sano aina luettelokohtien määrä ääneen</string>
-  <string name="summary_pref_verbose_scroll_announcement">Sano jokaisen vierityksen jälkeen, mitkä kohteet näkyvät</string>
+  <string name="summary_pref_verbose_scroll_announcement">Sanoo jokaisen vierityksen jälkeen, mitkä kohteet näkyvät</string>
   <string name="title_pref_cover_proximity_sensor">Lopeta puhe peittämällä lähestymisanturi</string>
   <string name="title_pref_phonetic_letters">Sano kirjaimet ja esimerkit ääneen</string>
   <string name="summary_pref_phonetic_letters">Valitessasi näppäimistön näppäimiä tai siirtyessäsi merkeillä, kuulet esimerkin jokaisesta kirjaimesta, esimerkiksi \"h, hotelli\"</string>
@@ -1356,7 +1356,7 @@
     <string name="title_screen_announcements_unlock">Kun puhelimen lukitus avataan</string>
     <string name="title_pref_say_screen_off">Sano \"Näyttö sammutettu\"</string>
     <string name="title_pref_say_device_unlocked">Sano \"Laitteen lukitus avattu\"</string>
-    <string name="title_pref_announce_time">Aika</string>
+    <string name="title_pref_announce_time">Kellonaika</string>
     <string name="title_pref_announce_ringer_mode">Soittoäänitila</string>
     <string name="summary_pref_announce_ringer_mode">Sano, kun soittoääni on asetettu värinälle tai äänettömäksi</string>
     <string name="title_pref_category_feedback">Palaute</string>
@@ -1469,13 +1469,13 @@
     <string name="title_pref_shortcut_3finger_4tap">Napauta neljästi kolmella sormella</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Kierrä myötäpäivään kahdella sormella</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Kierrä vastapäivään kahdella sormella</string>
-    <string name="title_pref_shortcut_2finger_scrub">Hankaa kahdella sormella</string>
+    <string name="title_pref_shortcut_2finger_scrub">Nopea edestakainen pyyhkäisy kahdella sormella</string>
     <string name="title_pref_shortcut_2finger_pinch">Nipistä kahdella sormella</string>
-    <string name="title_pref_shortcut_2finger_spread">Levitä kahdella sormella</string>
+    <string name="title_pref_shortcut_2finger_spread">Loitonna kahdella sormella</string>
     <string name="title_pref_shortcut_3finger_pinch">Nipistä kolmella sormella</string>
-    <string name="title_pref_shortcut_3finger_spread">Levitä kolmella sormella</string>
+    <string name="title_pref_shortcut_3finger_spread">Loitonna kolmella sormella</string>
     <string name="title_pref_shortcut_4finger_pinch">Nipistä neljällä sormella</string>
-    <string name="title_pref_shortcut_4finger_spread">Levitä neljällä sormella</string>
+    <string name="title_pref_shortcut_4finger_spread">Loitonna neljällä sormella</string>
     <string name="title_pref_shortcut_edge_bottom_up">Pyyhkäise ylös alareunasta</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Pitkä pyyhkäisy ylös alareunasta</string>
     <string name="title_pref_shortcut_edge_top_left_down">Pyyhkäise alas yläreunan vasemmalta puolelta</string>
@@ -1558,7 +1558,7 @@
     <string name="gemini_error_with_details">Gemini ei voinut vastata, virhe <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Yksityiskohtaisempaa kuvan kuvausta ei saatu: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="title_selector_vertical_navigation">Pystysuuntainen navigointi</string>
-    <string name="summary_selector_vertical_navigation">Siirry ala- tai yläpuolelle rivin muiden kohteiden ohi</string>
+    <string name="summary_selector_vertical_navigation">Siirry alla tai yllä olevaan kohteeseen rivin muiden kohteiden ohi</string>
     <string name="title_pref_speech_stream">Puheen äänenvoimakkuus</string>
     <string name="summary_selector_speech_stream">Vaihda saavutettavuuden, median, soittoäänen ja puhelun äänenvoimakkuuden välillä</string>
     <string name="speech_stream_accessibility">Esteettömyyden äänenvoimakkuus</string>
@@ -1571,12 +1571,12 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_play_installer">Näkyy asennettuna Playsta Google</string>
-    <string name="summary_pref_play_installer">Kerro muille sovelluksille, jotka Google Play on asennettu SandFly. Jotkut sovellukset, kuten jotkut pankkisovellukset, poistavat käytöstä esteettömyyspalvelut, jotka on asennettu muualta. Tarvitsee Shizuku ja muuttaa vain niitä sovelluksia, jotka kertovat, mistä SandFly tuli.</string>
-    <string name="summary_pref_play_installer_pending">Päällä, mutta Google Toistoa ei ole vielä tallennettu asennusohjelmana. SandFly asettaa sen, kun Shizuku on saatavilla.</string>
+    <string name="title_pref_play_installer">Näy Google Playsta asennettuna</string>
+    <string name="summary_pref_play_installer">Kertoo muille sovelluksille, että SandFly on asennettu Google Playsta. Jotkin sovellukset, kuten jotkin pankkisovellukset, poistavat käytöstä muualta asennetut esteettömyyspalvelut. Vaatii Shizukun ja muuttaa vain sitä, mitä sovelluksille kerrotaan SandFlyn alkuperästä.</string>
+    <string name="summary_pref_play_installer_pending">Päällä, mutta Google Playta ei ole vielä merkitty asentajaksi. SandFly asettaa sen, kun Shizuku on käytettävissä.</string>
     <string name="notification_list_show_all">Näytä kaikki</string>
     <string name="notification_list_show_less">Näytä vähemmän</string>
-    <string name="title_pref_quick_settings">Käytä SandFly pika-asetuksia</string>
+    <string name="title_pref_quick_settings">Käytä SandFlyn pika-asetuksia</string>
     <string name="title_pref_quick_settings_items">Pika-asetuspaneeli</string>
     <string name="quick_settings_title">Pika-asetukset</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1587,7 +1587,7 @@
     <string name="quick_settings_do_not_disturb">Älä häiritse</string>
     <string name="quick_settings_sound_mode">Äänitila</string>
     <string name="quick_settings_flashlight">Taskulamppu</string>
-    <string name="quick_settings_flashlight_brightness">Taskulamppujen kirkkaus</string>
+    <string name="quick_settings_flashlight_brightness">Taskulampun kirkkaus</string>
     <string name="quick_settings_location">Sijainti</string>
     <string name="quick_settings_auto_rotate">Automaattinen kierto</string>
     <string name="quick_settings_battery_saver">Virransäästö</string>
@@ -1598,15 +1598,15 @@
     <string name="quick_settings_media_volume">Median äänenvoimakkuus</string>
     <string name="quick_settings_call_volume">Puhelun äänenvoimakkuus</string>
     <string name="quick_settings_ring_volume">Soiton voimakkuus</string>
-    <string name="quick_settings_notification_volume">Ilmoitusten määrä</string>
-    <string name="quick_settings_alarm_volume">Hälytyksen äänenvoimakkuus</string>
+    <string name="quick_settings_notification_volume">Ilmoitusten äänenvoimakkuus</string>
+    <string name="quick_settings_alarm_volume">Herätyksen äänenvoimakkuus</string>
     <string name="quick_settings_accessibility_volume">Esteettömyyden äänenvoimakkuus</string>
     <string name="quick_settings_system_volume">Järjestelmän äänenvoimakkuus</string>
     <string name="quick_settings_data_saver">Tiedonsäästö</string>
     <string name="quick_settings_night_light">Yövalo</string>
     <string name="quick_settings_extra_dim">Erittäin hämärä</string>
-    <string name="quick_settings_color_inversion">Värin inversio</string>
-    <string name="quick_settings_color_correction">Värin korjaus</string>
+    <string name="quick_settings_color_inversion">Värien käänteistys</string>
+    <string name="quick_settings_color_correction">Värinkorjaus</string>
     <string name="quick_settings_microphone_access">Mikrofonin käyttöoikeus</string>
     <string name="quick_settings_camera_access">Kameran käyttöoikeus</string>
     <string name="quick_settings_screen_timeout">Näytön aikakatkaisu</string>
@@ -1614,8 +1614,8 @@
     <string name="quick_settings_media">Media</string>
     <string name="quick_settings_no_media">Ei mediaa</string>
     <string name="quick_settings_media_output">Mediatulostus</string>
-    <string name="quick_settings_next_alarm">Seuraava hälytys</string>
-    <string name="quick_settings_no_alarm">Ei hälytystä</string>
+    <string name="quick_settings_next_alarm">Seuraava herätys</string>
+    <string name="quick_settings_no_alarm">Ei herätystä</string>
     <string name="quick_settings_settings">Asetukset</string>
     <string name="quick_settings_power_menu">Virtavalikko</string>
     <string name="quick_settings_add_system_tile">Lisää järjestelmäruutu</string>
@@ -1667,22 +1667,22 @@
     <string name="reading_control_letter_none">Ei mitään</string>
     <string name="handwriting_prompt">Kirjoita kirjain</string>
     <string name="handwriting_closed">Käsinkirjoitus suljettu</string>
-    <string name="handwriting_no_match">Mikään lukuohjaus ei ala kirjaimella <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Mikään lukuasetus ei ala kirjaimella <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Kirjoita sovelluksen nimi avataksesi sen</string>
     <string name="handwriting_app_prompt">Kirjoita sovelluksen nimi</string>
     <string name="handwriting_no_app">Mikään sovellus ei ala kirjaimilla <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
     <string name="handwriting_app_not_opened">Sovellusta <xliff:g id="app" example="WhatsApp">%1$s</xliff:g> ei voitu avata</string>
-    <string name="handwriting_not_recognized">Käsialaa ei tunnistettu</string>
+    <string name="handwriting_not_recognized">Käsinkirjoitusta ei tunnistettu</string>
     <string name="handwriting_downloading">Käsinkirjoituksen tunnistusta ladataan</string>
-    <string name="handwriting_download_title">Lataa käsinkirjoituksen tunnistus?</string>
-    <string name="handwriting_download_message">Käsinkirjoitus tunnistetaan tässä puhelimessa. Sen malli tälle kielelle, noin 20 Mt, ladataan osoitteesta Google kerran. Viesti näkyy, kun se on ladattu.</string>
+    <string name="handwriting_download_title">Ladataanko käsinkirjoituksen tunnistus?</string>
+    <string name="handwriting_download_message">Käsinkirjoitus tunnistetaan tässä puhelimessa. Sen malli tälle kielelle, noin 20 Mt, ladataan kerran Googlelta. Viesti näkyy, kun se on ladattu.</string>
     <string name="handwriting_download_button">Lataa</string>
     <string name="handwriting_downloaded">Käsinkirjoituksen tunnistus ladattu</string>
     <string name="handwriting_download_failed">Käsinkirjoituksen tunnistusta ei voitu ladata. Tarkista Internet-yhteys.</string>
     <string name="handwriting_unsupported_language">Käsinkirjoituksen tunnistus ei ole käytettävissä tällä kielellä</string>
     <string name="title_pref_handwriting_keyboard">Käsinkirjoitusnäppäimistö</string>
-    <string name="summary_pref_handwriting_keyboard">Ota SandFly käsinkirjoitus käyttöön käyttäjän Android näppäimistöasetuksissa</string>
-    <string name="title_pref_handwriting_wait">Odota kirjoittamisen jälkeen</string>
+    <string name="summary_pref_handwriting_keyboard">Ota SandFly-käsinkirjoitus käyttöön Androidin näppäimistöasetuksissa</string>
+    <string name="title_pref_handwriting_wait">Odotus kirjoittamisen jälkeen</string>
     <string name="value_handwriting_wait_200">0,2 sekuntia</string>
     <string name="value_handwriting_wait_300">0,3 sekuntia</string>
     <string name="value_handwriting_wait_400">0,4 sekuntia</string>
@@ -1690,11 +1690,11 @@
     <string name="value_handwriting_wait_600">0,6 sekuntia</string>
     <string name="value_handwriting_wait_800">0,8 sekuntia</string>
     <string name="value_handwriting_wait_1000">1 sekunti</string>
-    <string name="handwriting_keyboard_name">SandFly käsiala</string>
+    <string name="handwriting_keyboard_name">SandFly-käsinkirjoitus</string>
     <string name="handwriting_space">Välilyönti</string>
     <string name="handwriting_new_line">Rivinvaihto</string>
-    <string name="handwriting_tutorial_intro">Käsinkirjoitusnäppäimistön opetusohjelma. Kirjoita yhdellä sormella mihin tahansa näytölle. Se, mitä kirjoitat, kirjoitetaan, kun pysähdyt hetkeksi. Lopeta opetusohjelma pyyhkäisemällä alas kolmella sormella.</string>
-    <string name="handwriting_tutorial_write_letter">Kirjoita aakkosten kirjain a.</string>
+    <string name="handwriting_tutorial_intro">Käsinkirjoitusnäppäimistön opetusohjelma. Kirjoita yhdellä sormella mihin tahansa näytölle. Kirjoittamasi teksti syötetään, kun pysähdyt hetkeksi. Lopeta opetusohjelma pyyhkäisemällä alas kolmella sormella.</string>
+    <string name="handwriting_tutorial_write_letter">Kirjoita kirjain a.</string>
     <string name="handwriting_tutorial_write_word">Kirjoita nyt sana hi.</string>
     <string name="handwriting_tutorial_typed">Kirjoitettiin <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Pyyhkäise oikealle kahdella sormella kirjoittaaksesi välilyönnin.</string>
@@ -1702,7 +1702,7 @@
     <string name="handwriting_tutorial_deleted">Poistettu.</string>
     <string name="handwriting_tutorial_next_reading">Jos käsinkirjoitus tunnistetaan toiseksi merkiksi, kuten isoksi kirjaimeksi, pyyhkäise ylös kahdella sormella valitaksesi seuraavan tunnistusehdotuksen. Kokeile nyt.</string>
     <string name="handwriting_tutorial_read_back">Napauta kahdella sormella lukeaksesi kohdistinta edeltävän tekstin.</string>
-    <string name="handwriting_tutorial_new_line">Lisää uusi rivi pyyhkäisemällä alas kahdella sormella tai suorita tekstikenttätoiminto, kuten Lähetä.</string>
+    <string name="handwriting_tutorial_new_line">Pyyhkäise alas kahdella sormella lisätäksesi uuden rivin tai suorittaaksesi tekstikentän toiminnon, kuten Lähetä.</string>
     <string name="handwriting_tutorial_not_that">Se oli toinen ele.</string>
     <string name="handwriting_tutorial_done">Uusi rivi. Opetusohjelma valmis. Pyyhkäise alas kolmella sormella piilottaaksesi näppäimistön ja oikealle tai vasemmalle kolmella sormella vaihtaaksesi näppäimistöä. Avaa opetusohjelma uudelleen napauttamalla kolmella sormella.</string>
     <string name="handwriting_tutorial_finished">Tutoriaali päättyi. Avaa se uudelleen napauttamalla kolmella sormella.</string>
@@ -1717,16 +1717,16 @@
     <string name="shortcut_power_menu">Virtavalikko</string>
     <string name="shortcut_increase_media_volume">Lisää median äänenvoimakkuutta</string>
     <string name="shortcut_decrease_media_volume">Pienennä median äänenvoimakkuutta</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Pyyhkäise pitkään alas vasemmasta yläkulmasta</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Pyyhkäise pitkään alas oikeasta yläkulmasta</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Pitkä pyyhkäisy alas vasemmasta yläkulmasta</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Pitkä pyyhkäisy alas oikeasta yläkulmasta</string>
     <string name="title_pref_shortcut_edge_left_top_right">Pyyhkäise oikealle vasemmasta reunasta, yläosasta</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Pyyhkäise pitkään oikealle vasemmasta reunasta, yläosasta</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Pitkä pyyhkäisy oikealle vasemmasta reunasta, yläosasta</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Pyyhkäise oikealle vasemmasta reunasta, alaosasta</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Pyyhkäise pitkään oikealle vasemmasta reunasta, alaosasta</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Pitkä pyyhkäisy oikealle vasemmasta reunasta, alaosasta</string>
     <string name="title_pref_shortcut_edge_right_top_left">Pyyhkäise vasemmalle oikeasta reunasta, yläosasta</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Pyyhkäise pitkään vasemmalle oikeasta reunasta, yläosasta</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Pitkä pyyhkäisy vasemmalle oikeasta reunasta, yläosasta</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Pyyhkäise vasemmalle oikeasta reunasta, alaosasta</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Pyyhkäise pitkään vasemmalle oikeasta reunasta, alaosasta</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Pitkä pyyhkäisy vasemmalle oikeasta reunasta, alaosasta</string>
     <string name="title_pref_edge_first_click_mm">Etäisyys ensimmäiseen napsautukseen</string>
     <string name="title_pref_edge_second_click_mm">Etäisyys ensimmäisestä toiseen napsautukseen</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1737,8 +1737,8 @@
     <string name="value_distance_40mm">4 cm</string>
     <string name="value_distance_50mm">5 cm</string>
     <string name="title_pref_selector_links_controls_web_only">Linkit ja säätimet vain verkkosisällössä</string>
-    <string name="title_pref_selector_auto_switch">Muuta lukemisen ohjausta automaattisesti</string>
-    <string name="title_pref_touch_stops_speech">Pysäytä puhe, kun kosketat näyttöä</string>
+    <string name="title_pref_selector_auto_switch">Vaihda lukuasetusta automaattisesti</string>
+    <string name="title_pref_touch_stops_speech">Pysäytä puhe näyttöä kosketettaessa</string>
     <string name="title_pref_volume_keys_move_cursor">Äänenvoimakkuusnäppäimet siirtävät kohdistinta</string>
     <string name="summary_pref_volume_keys_move_cursor">Kun tekstikenttä on kohdistettu, äänenvoimakkuuden lisääminen siirtää kohdistinta merkin taaksepäin ja äänenvoimakkuuden vähennys siirtää sen eteenpäin</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Käsinkirjoituksen näppäimistön kaiku</string>
@@ -1746,8 +1746,8 @@
     <string name="image_qna_stop_listening">Lopeta kuunteleminen</string>
     <string name="image_qna_type_question">Kirjoita kysymys</string>
     <string name="shortcut_dictate">Sanele</string>
-    <string name="title_pref_ai_dictation">Oikea sanelu tekoälyllä</string>
-    <string name="dictation_not_corrected">Ei korjattu. Kirjoitettu tunnistettuna.</string>
+    <string name="title_pref_ai_dictation">Korjaa sanelu tekoälyllä</string>
+    <string name="dictation_not_corrected">Ei korjattu. Kirjoitettu tunnistetussa muodossa.</string>
     <string name="dictation_nothing_recognized">Ei tunnistettu mitään</string>
     <string name="dictation_unavailable">Puheentunnistus ei ole käytettävissä</string>
     <string name="dictation_field_gone">Tekstikenttä suljettu. Ei kirjoitettu mitään.</string>
@@ -1773,5 +1773,5 @@
     <string name="settings_export_done">Asetukset viety. API-avaimia ei sisällytetä</string>
     <string name="settings_export_failed">Asetuksia ei voitu viedä</string>
     <string name="settings_import_done">Asetukset tuotu</string>
-    <string name="settings_import_failed">Tämä tiedosto ei ole SandFly tai Backtalk asetustiedosto, tai sitä ei voitu lukea</string>
+    <string name="settings_import_failed">Tämä tiedosto ei ole SandFly- tai Backtalk-asetustiedosto, tai sitä ei voitu lukea</string>
 </resources>

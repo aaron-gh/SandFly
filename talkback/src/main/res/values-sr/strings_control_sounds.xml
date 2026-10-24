@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Контролишите звукове и вибрације</string>
-    <string name="summary_pref_control_sounds">Дајте свакој врсти контроле, као што су дугмад, поља за потврду, поља за уређивање и ставке листе, сопствени звук и сопствену вибрацију из теме, уместо звука фокуса и вибрације, као што Унспокен ради за НВДА. Звук долази са места где је контрола на екрану, а SandFly изоставља да каже каква је то контрола.</string>
-    <string name="title_pref_control_sounds_speak_roles">Још кажемо врсту контроле</string>
-    <string name="summary_pref_control_sounds_speak_roles">Када се репродукује контролни звук, ипак реците каква је то контрола, на пример дугме. Ово је за сваку звучну тему.</string>
+    <string name="title_pref_control_sounds">Звукови и вибрације контрола</string>
+    <string name="summary_pref_control_sounds">Свака врста контроле, као што су дугмад, поља за потврду, поља за уређивање и ставке листе, добија сопствени звук и вибрацију из теме уместо звука и вибрације фокуса, као што Unspoken ради за NVDA. Звук долази са места контроле на екрану, а SandFly не изговара врсту контроле.</string>
+    <string name="title_pref_control_sounds_speak_roles">Ипак изговарај врсту контроле</string>
+    <string name="summary_pref_control_sounds_speak_roles">Када се пусти звук контроле, врста контроле се ипак изговара, на пример дугме. Важи за све звучне теме.</string>
     <string name="title_pref_control_sounds_3d">3Д аудио</string>
     <string name="pref_control_sounds_3d_headphones">Са слушалицама</string>
     <string name="pref_control_sounds_3d_always">Увек</string>
     <string name="pref_control_sounds_3d_never">Никад, само лево и десно</string>
-    <string name="individual_sound_control_button">Контролни звук: дугме</string>
-    <string name="individual_sound_control_checkbox">Контролни звук: поље за потврду</string>
-    <string name="individual_sound_control_radio_button">Контролни звук: радио дугме</string>
-    <string name="individual_sound_control_edit_text">Контролни звук: поље за уређивање</string>
-    <string name="individual_sound_control_combo_box">Контрола звука: падајућа листа</string>
-    <string name="individual_sound_control_slider">Контролни звук: клизач</string>
-    <string name="individual_sound_control_link">Контролни звук: линк</string>
-    <string name="individual_sound_control_image">Контролни звук: слика</string>
-    <string name="individual_sound_control_clock">Контролни звук: сат</string>
-    <string name="individual_sound_control_tab">Контролни звук: таб</string>
-    <string name="individual_sound_control_menu_item">Контролни звук: ставка менија</string>
-    <string name="individual_sound_control_list_item">Контролни звук: ставка листе</string>
-    <string name="individual_sound_control_tree_item">Контролни звук: ставка дрвета</string>
+    <string name="individual_sound_control_button">Звук контроле: дугме</string>
+    <string name="individual_sound_control_checkbox">Звук контроле: поље за потврду</string>
+    <string name="individual_sound_control_radio_button">Звук контроле: радио дугме</string>
+    <string name="individual_sound_control_edit_text">Звук контроле: поље за уређивање</string>
+    <string name="individual_sound_control_combo_box">Звук контроле: падајућа листа</string>
+    <string name="individual_sound_control_slider">Звук контроле: клизач</string>
+    <string name="individual_sound_control_link">Звук контроле: линк</string>
+    <string name="individual_sound_control_image">Звук контроле: слика</string>
+    <string name="individual_sound_control_clock">Звук контроле: сат</string>
+    <string name="individual_sound_control_tab">Звук контроле: таб</string>
+    <string name="individual_sound_control_menu_item">Звук контроле: ставка менија</string>
+    <string name="individual_sound_control_list_item">Звук контроле: ставка листе</string>
+    <string name="individual_sound_control_tree_item">Звук контроле: ставка дрвета</string>
 </resources>

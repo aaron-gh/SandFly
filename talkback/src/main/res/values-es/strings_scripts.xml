@@ -40,7 +40,7 @@
     <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Permítelo solo a scripts de confianza.</string>
     <string name="script_permission_screen">Leer la pantalla</string>
     <string name="script_permission_actions">Hacer clic, desplazarse, escribir y mover el enfoque</string>
-    <string name="script_permission_speech">Leer y cambiar la voz de SandFly</string>
+    <string name="script_permission_speech">Recibir y cambiar la voz de SandFly</string>
     <string name="script_permission_passwords">Leer campos de contraseña</string>
     <string name="script_permission_input">Añadir gestos, teclas, elementos de menú y controles de lectura</string>
     <string name="script_permission_network">Usar Internet</string>
@@ -59,7 +59,7 @@
     <string name="script_button_off">Activa primero el script</string>
     <string name="script_permissions_summary">Al desactivar uno, se detienen las partes que lo necesitan.</string>
     <string name="script_install_permissions_note">Puedes desactivarlos más adelante.</string>
-    <string name="script_manage_category">Gestionar</string>
+    <string name="script_manage_category">Gestión</string>
     <string name="script_move_up">Ejecutar antes</string>
     <string name="script_move_down">Ejecutar después</string>
     <string name="script_order_summary">Orden de los scripts que cambian la misma voz. Los scripts de aplicaciones se ejecutan primero.</string>
@@ -140,7 +140,7 @@
     <string name="script_source_remove_message">Los scripts instalados desde ella siguen instalados.</string>
     <string name="scripts_auto_update">Actualizar scripts automáticamente</string>
     <string name="scripts_check_updates">Buscar actualizaciones</string>
-    <string name="scripts_checking_updates">Buscando actualizaciones...</string>
+    <string name="scripts_checking_updates">Buscando actualizaciones…</string>
     <string name="scripts_updates_category">Actualizaciones</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
@@ -148,7 +148,7 @@
         <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> scripts actualizados: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> scripts actualizados: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Las actualizaciones se enumeran en Actualizaciones</string>
-    <string name="scripts_update_check_failed">Algunas fuentes no se pudieron verificar.</string>
-    <string name="scripts_up_to_date">Todos los scripts están actualizados.</string>
+    <string name="scripts_updates_to_approve">Las actualizaciones aparecen en “Actualizaciones”</string>
+    <string name="scripts_update_check_failed">Algunas fuentes no se pudieron verificar</string>
+    <string name="scripts_up_to_date">Todos los scripts están actualizados</string>
 </resources>

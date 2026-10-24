@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Įrenginys atrakintas.</string>
   <string name="title_pref_speech_volume">Kalbos garsumas</string>
   <string name="title_pref_verbose_scroll_announcement">Visada ištarti sąrašo elementų skaičių</string>
-  <string name="summary_pref_verbose_scroll_announcement">Pasakykite, kurie elementai rodomi po kiekvieno slinkimo</string>
+  <string name="summary_pref_verbose_scroll_announcement">Po kiekvieno slinkimo pasakoma, kurie elementai rodomi</string>
   <string name="title_pref_cover_proximity_sensor">Uždenkite artumo jutiklį, kad sustabdytumėte kalbą</string>
   <string name="title_pref_phonetic_letters">Ištarti raides su pavyzdžiais</string>
   <string name="summary_pref_phonetic_letters">Pasirinkę klaviatūros klavišus arba naršydami pagal simbolį, su kiekviena raide išgirsite pavyzdį, pvz., „v, viešbutis“</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">Dauguma</string>
   <string name="punctuation_some">Kai kas</string>
   <string name="title_pref_count_repeated_symbols">Suskaičiuoti pasikartojančius simbolius</string>
-  <string name="summary_pref_count_repeated_symbols">Pasakykite, kiek kartų simbolis kartojasi, kai kartojasi 4 ar daugiau kartų</string>
+  <string name="summary_pref_count_repeated_symbols">Pasakyti, kiek kartų simbolis kartojasi, kai jis kartojasi 4 ar daugiau kartų</string>
   <string name="learn_more">Sužinokite daugiau</string>
   <string name="title_pref_capital_letters">Didžiosios raidės</string>
   <string name="capital_letters_nothing">Nieko nedaryti</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">Keisti toną</string>
   <string name="capital_letters_sound_feedback">Leisti garsą</string>
   <string name="title_pref_a11y_hints">Ištarti naudojimo patarimus</string>
-  <string name="summary_pref_a11y_hints">Aprašę daiktą, pasakykite, kaip jį naudoti</string>
+  <string name="summary_pref_a11y_hints">Aprašius elementą, pasakyti, kaip jį naudoti</string>
   <string name="pref_speak_container_element_positions_title">Ištarti sudėtinio failo informaciją</string>
   <string name="pref_speak_time_title">Sakyti laiką</string>
   <string name="pref_speak_time_summary">Kai įjungiate ekraną</string>
-  <string name="summary_speak_container_element_positions">Pasakykite, kai įeinate į sąrašus, tinklelius ir kitus konteinerius arba išeinate iš jų</string>
+  <string name="summary_speak_container_element_positions">Sakyti, kai įeinate į sąrašus, tinklelius ir kitus konteinerius ar iš jų išeinate</string>
   <string name="reset_letency_reduction_settings_dialog_title">Iš naujo nustatyti delsos nustatymus?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Tai atlikus visi delsos nustatymai bus iš naujo nustatyti į numatytuosius</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Nustatyti iš naujo</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Nustatyti iš naujo</string>
   <string name="gestures_announce_reset_gesture_settings">Gestų nustatymai nustatyti iš naujo.</string>
   <string name="pref_speak_roles_title">Ištarti elemento tipą</string>
-  <string name="pref_speak_roles_summary">Mygtukas „Patinka“ arba žymimasis laukelis</string>
+  <string name="pref_speak_roles_summary">Pvz., mygtukas arba žymimasis laukelis</string>
   <string name="title_pref_speak_element_ids">Ištarti elementų ID</string>
-  <string name="summary_pref_speak_element_ids">Pasakykite mygtukų, neturinčių etiketės, ID</string>
+  <string name="summary_pref_speak_element_ids">Sakyti mygtukų be etiketės ID</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Ištarti visus eigos naujinius</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Apima naujinius atsisiunčiant, naudojantis važiavimo nuorodomis ir kt. Kai išjungta, vis tiek gausite mažiau naujinių.</string>
   <string name="title_pref_explore_by_touch">Naršyti paliečiant</string>
@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Fokusavimo indikatorius</string>
   <string name="title_pref_category_manage_gestures">Gestai</string>
   <string name="title_pref_manage_labels">Tinkintos etiketės</string>
-  <string name="title_pref_category_context_menu">SandFly meniu</string>
+  <string name="title_pref_category_context_menu">„SandFly“ meniu</string>
   <string name="title_pref_category_selector_menu">Skaitymo valdikliai</string>
   <string name="title_pref_category_navigation_menu">Redaguoti naršymo parinktis</string>
   <string name="title_pref_manage_keyboard_shortcuts">Spartieji klavišai</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">Pagalba</string>
   <string name="title_pref_advanced_settings">Išplėstiniai nustatymai</string>
   <string name="title_pref_show_exit_watermark">Rodyti „SandFly“ išjungimo instrukcijas</string>
-  <string name="summary_pref_show_exit_watermark">Kai SandFly įsijungia, parodykite, kaip jį išjungti</string>
+  <string name="summary_pref_show_exit_watermark">Kai SandFly įsijungia, rodoma, kaip jį išjungti</string>
   <string name="talkback_exit_watermark_text">„SandFly“ įjungta. Penkias sekundes laikykite du pirštus ant ekrano, kad išjungtumėte. Jei norite, kad šis pranešimas nebebūtų rodomas, palieskite trimis pirštais, kad atidarytumėte „SandFly“ meniu.</string>
   <string name="talkback_exit_watermark_hint_text">Rodoma reklamjuostė, nurodanti, kad „SandFly“ įjungta. Jei norite išjungti „SandFly“, penkias sekundes palaikykite du pirštus ant ekrano. Jei norite pašalinti šią reklamjuostę, eikite į „SandFly“ nustatymų skiltį.</string>
   <string name="reset_gesture_settings_title">Gestų nustatymas iš naujo</string>
@@ -289,10 +289,10 @@
   <string name="override_keycombo_message_two_params">Šis klavišų derinys naudojamas veiksmui „%1$s“ atlikti. Ar norite jį išvalyti ir šį spartųjį klavišą naudoti veiksmui „%2$s“ atlikti?</string>
   <string name="title_pref_intonation">Naudoti tono pakeitimus</string>
   <string name="title_pref_keyboard_echo">Klaviatūros aidas</string>
-  <string name="pref_node_desc_order_title">Prekės užsakymo detalės</string>
+  <string name="pref_node_desc_order_title">Elemento išsamios informacijos tvarka</string>
   <string name="pref_time_feedback_format_title">Laiko formatas</string>
   <string name="title_pref_latency_reduction">Sumažinti delsą</string>
-  <string name="talkback_latency_reduction_summary">Priverskite SandFly greičiau reaguoti palietus ekraną</string>
+  <string name="talkback_latency_reduction_summary">SandFly greičiau reaguoja palietus ekraną</string>
   <string name="summary_pref_intonation">Ištrintas raides tarti aukštesniu balso tonu</string>
   <string name="title_pref_brailledisplay">Brailio rašmenų ekranas</string>
   <string name="title_pref_brailleime">Brailio rašmenų klaviatūra</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">Naršyti į viršų</string>
   <string name="training_tip">Patarimas</string>
   <string name="tv_training_overview_step_title">Kaip veikia „SandFly“</string>
-  <string name="tv_training_overview_step_summary">SandFly yra ekrano skaitytuvas, pagrįstas Google TalkBack. Jis garsiai skaito ekrane esantį tekstą ir pateikia žodinį grįžtamąjį ryšį, kad galėtumėte naudoti įrenginį nežiūrėdami į ekraną.\n\nĮjungus SandFly, pasirinktas elementas ekrane ištariamas garsiai, kartais pridedama papildomos informacijos arba konteksto.\n\nPaspauskite, jei norite tęsti. Mygtukas Pasirinkti yra krypties mygtuko centre, kuris yra didelis, apskritas mygtukas nuotolinio valdymo pulto viršuje.</string>
+  <string name="tv_training_overview_step_summary">SandFly yra ekrano skaitytuvas, sukurtas „Google“ „TalkBack“ pagrindu. Jis garsiai skaito ekrane esantį tekstą ir pateikia garsinius atsiliepimus, kad galėtumėte naudoti įrenginį nežiūrėdami į ekraną.\n\nKai SandFly įjungta, ekrane pasirinktas elementas perskaitomas garsiai, kartais su papildoma informacija ar kontekstu.\n\nNorėdami tęsti, paspauskite „Pasirinkti“. Mygtukas „Pasirinkti“ yra krypčių valdiklio centre – tai didelis apskritas mygtukas nuotolinio valdymo pulto viršuje.</string>
   <string name="tv_training_remote_step_title">Nuotolinio valdymo pultelio naudojimas</string>
   <string name="tv_training_remote_step_summary">Judėkite ekrane naudodami apvalų valdymo mygtukų pultą nuotolinio valdymo pultelio viršuje. Jei norite pasirinkti, paspauskite nuotolinio valdymo pultelio viršuje esančio valdymo mygtuko pulto centre.\n\nAntroje eilutėje kairėje yra grįžimo mygtukas. Dešinėje yra pagalbos balsu mygtukas.\n\nTrečioje eilutėje kairėje yra pagrindinio ekrano mygtukas. Dešinėje yra nutildymo mygtukas.\n\nKetvirtoje eilutėje kairėje yra „YouTube“ spartusis klavišas. Dešinėje yra „Netflix“ spartusis klavišas.\n\nApatinėje eilutėje yra du nedideli mygtukai. Kairysis mygtukas yra maitinimo mygtukas. Dešiniuoju mygtuku atidaromas TV įvesčių meniu.\n\nGarsumo mygtukai yra nuotolinio valdymo pultelio dešinėje.\n\nPaspauskite „Pasirinkti“ ir tęskite.</string>
   <string name="tv_training_shortcut_step_title">„SandFly“ spartusis klavišas</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">Be to, tekstą galite vesti naudodami Brailio rašto klaviatūrą. Ją rasite „SandFly“ nustatymų skiltyje.</string>
   <string name="other_ways_to_type_title">Kiti rašymo būdai</string>
   <string name="other_ways_to_type_text">Yra ir kitų būdų, kaip rašyti naudojant „SandFly“. Pavyzdžiui, galite dukart palietę įvesti raidę.</string>
-  <string name="basic_other_ways_to_type_text">Yra ir kitų būdų įvesti SandFly. Pavyzdžiui, norėdami įvesti raidę, galite naudoti dukart bakstelėjimą. Vėliau galėsite tai pakeisti skiltyje SandFly nustatymai &gt; Ekrano klaviatūra &gt; Rašymo metodas.</string>
-  <string name="basic_other_ways_to_type_text_tts">Yra ir kitų būdų įvesti SandFly. Pavyzdžiui, norėdami įvesti raidę, galite naudoti dukart bakstelėjimą. Vėliau galėsite tai pakeisti nustatymuose SandFly, tada Ekrano klaviatūroje, tada – Įvesties metodas.</string>
+  <string name="basic_other_ways_to_type_text">Naudojant SandFly galima rašyti ir kitais būdais. Pavyzdžiui, raidę galite įvesti dukart bakstelėdami. Vėliau tai galite pakeisti skiltyje „SandFly“ nustatymai &gt; Ekrano klaviatūra &gt; Rašymo būdas.</string>
+  <string name="basic_other_ways_to_type_text_tts">Naudojant SandFly galima rašyti ir kitais būdais. Pavyzdžiui, raidę galite įvesti dukart bakstelėdami. Vėliau tai galite pakeisti skiltyje „SandFly“ nustatymai, tada Ekrano klaviatūra, tada Rašymo būdas.</string>
   <string name="change_typing_preference_text">Pakeisti rašymo nuostatą</string>
   <string name="moving_cursor_title">Žymeklio perkėlimas</string>
   <string name="moving_cursor_text">Kai suaktyvinate teksto laukelį, galite perkelti žymeklį nuo vienos raidės prie kitos perbraukdami aukštyn arba žemyn.\n\nIšbandykite tai toliau pateiktame teksto laukelyje.</string>
@@ -1070,7 +1070,7 @@
   <string name="image_description_playground_title">Pabandykite gauti vaizdų aprašus</string>
   <string name="image_description_playground_content_one">Suaktyvinę vaizdą, atidarykite „SandFly“ meniu ir pasirinkite „Apibūdinti vaizdą“.\n\nToliau pateikta viena nuotrauka. Pabandykite gauti jos aprašą.</string>
   <string name="image_description_playground_content_two">Vaizdo aprašymo nustatymus galite bet kada pakeisti skiltyje SandFly nustatymai &gt; Automatiniai aprašai.</string>
-  <string name="image_description_playground_content_two_tts">Vaizdo aprašymo nustatymus galite bet kada pakeisti nustatymuose SandFly, tada – Automatiniai aprašymai.</string>
+  <string name="image_description_playground_content_two_tts">Vaizdų aprašų nustatymus galite bet kada pakeisti skiltyje „SandFly“ nustatymai, tada – Automatiniai aprašai.</string>
   <string name="image_description_sample_image_content_description">Bandomasis vaizdas; palieskite trimis pirštais, kad atidarytumėte „SandFly“ meniu, ir pasirinkite „Apibūdinti vaizdą“, kad išgirstumėte aprašą.</string>
   <string name="practice_gestures_title">Gestų mokymasis</string>
   <string name="practice_keyboard_gestures_title">Sparčiųjų klavišų naudojimo praktika</string>
@@ -1258,7 +1258,7 @@
   <string name="title_text_formatting_menu">Teksto formato apibūdinimas</string>
   <string name="summary_text_formatting_menu">Jei reikia tokių pakeitimų kaip pusjuodis, kursyvas, pabraukimas ir kt.</string>
   <string name="title_text_formatting_inline">Sakomo teksto formatavimas</string>
-  <string name="title_switch_text_formatting">Sakomo teksto formatavimas</string>
+  <string name="title_switch_text_formatting">Sakyti teksto formatavimą</string>
   <string name="summary_text_formatting_verbosity">Jei norite keisti, pvz., pusjuodžiu ir kursyvu</string>
   <string name="summary_text_formatting_selector">Keiskite, ar formatavimas, pvz., pusjuodis ir kursyvas, bus skaitomas garsiai</string>
   <string name="title_text_formatting_verbosity_options">Teksto formatavimo parinktys</string>
@@ -1299,33 +1299,33 @@
     <string name="title_pref_tts_engine">Teksto į kalbą variklis</string>
     <string name="title_pref_system_tts_settings">Sistemos teksto į kalbą nustatymai</string>
     <string name="title_selector_vertical_navigation">Vertikali navigacija</string>
-    <string name="summary_selector_vertical_navigation">Pereikite prie elemento žemiau arba aukščiau, už kitus eilutės elementus</string>
+    <string name="summary_selector_vertical_navigation">Pereiti prie elemento žemiau arba aukščiau, praleidžiant kitus eilutės elementus</string>
     <string name="title_selector_switch_tts_engine">Kalbos variklis</string>
     <string name="summary_selector_switch_tts_engine">Perjungti įdiegtus kalbos variklius</string>
     <string name="title_selector_voice_profile">Balso profilis</string>
     <string name="title_pref_voice_profiles">Balso profiliai</string>
-    <string name="voice_profile_default">SandFly numatytoji</string>
+    <string name="voice_profile_default">„SandFly“ numatytasis</string>
     <string name="voice_profile_in_use">Naudojamas: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Naudojant balso profilį šnekamoji kalba nepasiekiama</string>
     <string name="speech_engine_unavailable_with_profile">Kalbėjimo variklis nepasiekiamas naudojant balso profilį</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, naudojamas</string>
     <string name="no_voice_profiles">Nėra balso profilių</string>
-    <string name="shortcut_voice_profiles">Pasirinkite balso profilį</string>
+    <string name="shortcut_voice_profiles">Pasirinkti balso profilį</string>
     <string name="shortcut_previous_voice_profile">Ankstesnis balso profilis</string>
     <string name="shortcut_next_voice_profile">Kitas balso profilis</string>
     <string name="title_pref_voice_profile_in_use">Naudojamas balso profilis</string>
     <string name="title_pref_add_voice_profile">Pridėti balso profilį</string>
     <string name="voice_profile_new_name">Balso profilis <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Balso profilis jau vadinamas <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="title_pref_voice_profile_name">Vardas</string>
+    <string name="voice_profile_name_taken">Balso profilis pavadinimu <xliff:g id="name" example="Reading">%1$s</xliff:g> jau yra</string>
+    <string name="title_pref_voice_profile_name">Pavadinimas</string>
     <string name="title_pref_voice_profile_language">Kalba</string>
     <string name="title_pref_voice_profile_voice">Balsas</string>
     <string name="voice_profile_engine_default">Numatytasis</string>
     <string name="voice_profile_loading">Įkeliama</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, neįdiegta</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Judėti aukštyn</string>
-    <string name="voice_profile_move_down">Judėti žemyn</string>
+    <string name="voice_profile_move_up">Perkelti aukštyn</string>
+    <string name="voice_profile_move_down">Perkelti žemyn</string>
     <string name="voice_profile_rename">Pervardyti</string>
     <string name="voice_profile_moved_above">Perkelta virš <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Perkelta žemiau <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
@@ -1347,18 +1347,18 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Vienu sakiniu siųskite ilgą tekstą</string>
-    <string name="summary_pref_speak_in_phrases">Kalbos varikliuose, kurie lėtai sustoja, pvz., Gryphon, todėl perbraukus tolyn ilgas tekstas sustabdomas iš karto. Daugelis variklių daro ilgesnę pauzę tarp atskirai siunčiamų sakinių, todėl palikite tai išjungti, jei jūsiškis greitai sustoja.</string>
-    <string name="battery_optimization_notification_title">Akumuliatoriaus optimizavimas gali sustoti SandFly</string>
-    <string name="battery_optimization_notification_text">Šiame telefone akumuliatoriaus tausojimo priemonė gali sustoti SandFly, kai ekranas išsijungia, todėl nutyla, kol bus paleistas iš naujo. Palieskite, kad atidarytumėte akumuliatoriaus optimizavimą, pasirinkite Visos programos, raskite SandFly ir pasirinkite Neoptimizuoti.</string>
+    <string name="title_pref_speak_in_phrases">Siųsti ilgą tekstą po vieną sakinį</string>
+    <string name="summary_pref_speak_in_phrases">Lėtai sustojantiems kalbos varikliams, pvz., Gryphon, kad perbraukus ilgas tekstas sustotų iš karto. Daugelis variklių daro ilgesnę pauzę tarp atskirai siunčiamų sakinių, todėl palikite išjungtą, jei jūsų variklis sustoja greitai.</string>
+    <string name="battery_optimization_notification_title">Akumuliatoriaus optimizavimas gali sustabdyti SandFly</string>
+    <string name="battery_optimization_notification_text">Šiame telefone akumuliatoriaus tausojimo priemonė gali sustabdyti SandFly išsijungus ekranui, tada SandFly nekalba, kol nepaleidžiamas iš naujo. Palieskite, kad atidarytumėte akumuliatoriaus optimizavimą, pasirinkite „Visos programos“, raskite SandFly ir pasirinkite „Neoptimizuoti“.</string>
     <string name="title_pref_mute_speech_while_recording">Įrašymo metu tylu</string>
-    <string name="summary_pref_mute_speech_while_recording">Nors programa įrašo neprijungusi ausinių, SandFly kalba tik atsakydama į jūsų gestus, klavišus ir įvedant tekstą, ir tyli, pavyzdžiui, pranešimus, kad jie nebūtų įrašomi.</string>
-    <string name="title_pref_switch_languages">Automatiškai perjunkite kalbą</string>
-    <string name="title_pref_switch_dialects">Automatiškai perjunkite tarmę</string>
+    <string name="summary_pref_mute_speech_while_recording">Kai programa įrašo be prijungtų ausinių, SandFly kalba tik atsakydamas į jūsų gestus, klavišus ir rašymą, o, pavyzdžiui, pranešimų nesako, kad jie nebūtų įrašyti.</string>
+    <string name="title_pref_switch_languages">Automatiškai perjungti kalbą</string>
+    <string name="title_pref_switch_dialects">Automatiškai perjungti tarmę</string>
     <string name="category_collapsed">Sutrauktas skyrius</string>
     <string name="category_expanded">Išplėstas skyrius</string>
-    <string name="title_pref_speak_nav_bar_buttons">Ištarkite naršymo juostos mygtukus</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Naršymo juostoje suaktyvinę pakėlimą pasakykite mygtuką, kurį paspaudžia bakstelėjimas, pvz., Atgal arba Home.</string>
+    <string name="title_pref_speak_nav_bar_buttons">Ištarti naršymo juostos mygtukus</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Kai naršymo juostoje naudojamas aktyvinimas pakeliant pirštą, pasakomas bakstelėjimu paspaustas mygtukas, pvz., „Atgal“ arba „Pagrindinis“.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Baterija <xliff:g id="battery_level" example="73">%1$s</xliff:g> proc</string>
     <string name="template_battery_level_unknown">Akumuliatoriaus lygis nežinomas</string>
@@ -1367,29 +1367,29 @@
     <string name="summary_pref_screen_announcements">Pasirinkite, ką SandFly sako, kai ekranas išsijungia arba įjungiamas ir kai telefonas atrakinamas</string>
     <string name="title_screen_announcements_screen_off">Kai ekranas išsijungia</string>
     <string name="title_screen_announcements_screen_on">Kai ekranas įsijungia</string>
-    <string name="title_screen_announcements_unlock">Kai telefonas atrakintas</string>
-    <string name="title_pref_say_screen_off">Pasakykite „Screen off“</string>
-    <string name="title_pref_say_device_unlocked">Pasakykite „Įrenginys atrakintas“</string>
+    <string name="title_screen_announcements_unlock">Kai telefonas atrakinamas</string>
+    <string name="title_pref_say_screen_off">Sakyti „Ekranas išjungtas“</string>
+    <string name="title_pref_say_device_unlocked">Sakyti „Įrenginys atrakintas“</string>
     <string name="title_pref_announce_time">Laikas</string>
     <string name="title_pref_announce_ringer_mode">Skambučio režimas</string>
-    <string name="summary_pref_announce_ringer_mode">Pasakykite, kai skambutis nustatytas vibruoti arba nutildyti</string>
-    <string name="title_pref_category_feedback">Atsiliepimai</string>
+    <string name="summary_pref_announce_ringer_mode">Pranešti, kai skambutis nustatytas vibruoti arba nutildytas</string>
+    <string name="title_pref_category_feedback">Grįžtamasis ryšys</string>
     <string name="title_pref_category_typing_and_braille">Rašymas ir Brailio raštas</string>
     <string name="title_pref_category_apps">Programos</string>
     <string name="title_pref_touch_activation">Palietimas ir aktyvinimas</string>
     <string name="title_pref_navigation">Naršymas</string>
     <string name="title_pref_category_more">Daugiau</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezervuoti gestus Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Sustabdo SandFly vieno ir dvigubo paspaudimo dviem pirštais, kad „Samsung Vibration Watch“ galėtų juos naudoti. Laikrodžio pritaikymo neįgaliesiems nustatymuose įgalinkite Vibration Watch.</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nebeapdoroja vieno ir dvigubo bakstelėjimo dviem pirštais, kad juos galėtų naudoti „Samsung Vibration Watch“. Įjunkite „Vibration Watch“ laikrodžio pritaikymo neįgaliesiems nustatymuose.</string>
     <string name="shortcut_reserved_for_vibration_watch">Išplėstiniuose nustatymuose rezervuota Vibration Watch</string>
     <string name="title_pref_speakerphone_away_from_ear">Garsiakalbis toli nuo ausies</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Pokalbio metu persijungia į garsiakalbį, kai atitraukiate telefoną nuo ausies, ir grįžta į ausinę, kai vėl ją laikote.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Reikia leidimo, kurio Android nesuteikia ekrano skaitytuvams. Norėdami tai suteikti, paleiskite šią komandą su adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Pokalbio metu, atitraukus telefoną nuo ausies, perjungia į garsiakalbį, o vėl priglaudus prie ausies – atgal į ausinį garsiakalbį.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Reikia leidimo, kurio Android nesuteikia ekrano skaitytuvams. Kad jį suteiktumėte, paleiskite šią komandą per adb arba Shizuku ir grįžkite į šį ekraną: %1$s</string>
     <string name="action_copy_command">Kopijuoti komandą</string>
     <string name="command_copied">Komanda nukopijuota</string>
-    <string name="title_pref_speech_control">Leiskite kalbėti kitoms programoms</string>
-    <string name="summary_pref_speech_control">Programos, kurias leidžiate, gali pasakyti tekstą jūsų SandFly balsu. Kol įrenginys užrakintas, nieko nesakoma.</string>
-    <string name="title_pref_speech_control_sound">Leiskite garsą prieš kalbėdami kitoms programoms</string>
+    <string name="title_pref_speech_control">Leisti kitoms programoms kalbėti</string>
+    <string name="summary_pref_speech_control">Leistos programos gali sakyti tekstą SandFly balsu. Kol įrenginys užrakintas, nieko nesakoma.</string>
+    <string name="title_pref_speech_control_sound">Leisti garsą prieš kalbant kitoms programoms</string>
     <string name="speech_control_apps_category">Programos</string>
     <string name="speech_control_no_apps">Jokia programa dar neprašė kalbėti.</string>
     <string name="speech_control_ask_title">Leisti <xliff:g id="app" example="Tasker">%1$s</xliff:g> kalbėti per SandFly?</string>
@@ -1398,21 +1398,21 @@
     <string name="speech_control_deny">Neleisti</string>
     <string name="permission_speak_label">kalbėti per SandFly</string>
     <string name="permission_speak_description">Leidžia programai paprašyti pasakyti tekstą jūsų SandFly balsu. SandFly klausia jūsų prieš programai galint kalbėti.</string>
-    <string name="permission_braille_display_label">prašyti rodyti Brailio rašto ekraną SandFly</string>
-    <string name="permission_braille_display_description">Leidžia programai prašyti rodyti Brailio rašto ekraną SandFly. Jei leisite SandFly, jis galės skaityti viską, kas rodoma ekrane, ir valdyti jūsų įrenginį. SandFly pirmiausia klausia jūsų.</string>
-    <string name="title_pref_phonetic_letters_mode">Kalbėkite raides fonetiškai</string>
-    <string name="phonetic_letters_mode_off">Išjungti</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Po laiško, atidėtas, pvz., \"h, viešbutis\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Po laiško nedelskite, pavyzdžiui, „h viešbutis“</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Vietoj raidės, pvz., „viešbutis“</string>
+    <string name="permission_braille_display_label">prašyti būti SandFly Brailio rašto ekranu</string>
+    <string name="permission_braille_display_description">Leidžia programai prašyti tapti SandFly Brailio ekranu. Jei tai leisite SandFly, programa galės skaityti viską ekrane ir valdyti įrenginį. SandFly pirmiausia jūsų paklausia.</string>
+    <string name="title_pref_phonetic_letters_mode">Tarti raides fonetiškai</string>
+    <string name="phonetic_letters_mode_off">Išjungta</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Po raidės, su pauze, pvz., „h, Henrikas“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Po raidės, be pauzės, pvz., „h Henrikas“</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Vietoj raidės, pvz., „Henrikas“</string>
     <string name="title_pref_emoji_speech">Jaustukai</string>
-    <string name="emoji_speech_engine">Skaityti kalbos varikliu</string>
-    <string name="emoji_speech_names">Perskaitė SandFly</string>
+    <string name="emoji_speech_engine">Skaito kalbos variklis</string>
+    <string name="emoji_speech_names">Skaito „SandFly“</string>
     <string name="emoji_speech_none">Nėra</string>
-    <string name="summary_selector_menu_emoji">Pakeiskite jaustukų skaitymo būdą</string>
+    <string name="summary_selector_menu_emoji">Keisti, kaip skaitomi jaustukai</string>
     <string name="emoji_speech_state">Jaustukai: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Suskaičiuokite pasikartojančius jaustukus</string>
-    <string name="emoji_repeat_count_off">Išjungti</string>
+    <string name="title_pref_emoji_repeat_count">Skaičiuoti pasikartojančius jaustukus</string>
+    <string name="emoji_repeat_count_off">Išjungta</string>
     <string name="emoji_repeat_count_2">2 ar daugiau</string>
     <string name="emoji_repeat_count_3">3 ar daugiau</string>
     <string name="emoji_repeat_count_4">4 ar daugiau</string>
@@ -1420,20 +1420,20 @@
     <string name="emoji_repeat_count_6">6 ar daugiau</string>
     <string name="pref_table_headers_category_title">Lentelės skaitymas</string>
     <string name="pref_table_column_headers_title">Skaityti stulpelių antraštes</string>
-    <string name="pref_table_column_headers_entry_after">Po ląstelių duomenų</string>
-    <string name="pref_table_column_headers_entry_before">Prieš ląstelių duomenis</string>
+    <string name="pref_table_column_headers_entry_after">Po langelio duomenų</string>
+    <string name="pref_table_column_headers_entry_before">Prieš langelio duomenis</string>
     <string name="pref_table_column_headers_entry_off">Neskaityti</string>
-    <string name="pref_table_speak_row_column_numbers_title">Kalbėkite eilučių ir stulpelių numerius</string>
-    <string name="pref_table_speak_row_column_numbers_summary">Paskelbkite lentelės langelių eilučių ir stulpelių numerius</string>
-    <string name="title_pref_speak_volume_changes">Kalbėkite apie garsumo pokyčius</string>
-    <string name="summary_pref_speak_volume_changes">Paspaudę garsumo klavišus ištarkite naują garsumą</string>
+    <string name="pref_table_speak_row_column_numbers_title">Sakyti eilučių ir stulpelių numerius</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Sakyti lentelės langelių eilučių ir stulpelių numerius</string>
+    <string name="title_pref_speak_volume_changes">Sakyti garsumo pokyčius</string>
+    <string name="summary_pref_speak_volume_changes">Paspaudus garsumo klavišus pasakyti naują garsumą</string>
     <string name="title_pref_speak_notifications">Ištarti pranešimus</string>
-    <string name="summary_pref_speak_notifications">Garsiai skaitykite naujus pranešimus, kai jie ateina. Įeinantys skambučiai visada skaitomi.</string>
-    <string name="title_pref_notification_list">Naudokite SandFly pranešimų sąrašą</string>
+    <string name="summary_pref_speak_notifications">Garsiai skaityti naujus pranešimus, kai jie gaunami. Gaunami skambučiai visada skaitomi.</string>
+    <string name="title_pref_notification_list">Naudoti SandFly pranešimų sąrašą</string>
     <string name="title_pref_notification_parts">Išsami pranešimo informacija</string>
-    <string name="title_pref_play_installer">Rodoma įdiegta iš Google Play</string>
-    <string name="summary_pref_play_installer">Pasakykite kitoms programoms, kad Google „Play“ įdiegta SandFly. Kai kurios programos, pvz., kai kurios bankininkystės programos, išjungia pritaikymo neįgaliesiems paslaugas, kurios buvo įdiegtos iš bet kurios kitos vietos. Reikia Shizuku ir pakeičia tik tos, kurioms programoms pranešama, iš kur atsirado SandFly.</string>
-    <string name="summary_pref_play_installer_pending">Įjungta, bet Google Paleidimas dar neįrašytas kaip diegimo programa. SandFly nustato jį, kai pasiekiamas Shizuku.</string>
+    <string name="title_pref_play_installer">Rodyti kaip įdiegtą iš Google Play</string>
+    <string name="summary_pref_play_installer">Kitoms programoms praneša, kad SandFly įdiegtas iš „Google Play“. Kai kurios programos, pvz., kai kurios bankininkystės programos, išjungia pritaikymo neįgaliesiems paslaugas, įdiegtas iš bet kurio kito šaltinio. Reikia „Shizuku“; keičiama tik tai, ką programos sužino apie SandFly kilmę.</string>
+    <string name="summary_pref_play_installer_pending">Įjungta, bet „Google Play“ dar neužregistruota kaip diegimo programa. SandFly tai nustato, kai pasiekiama „Shizuku“.</string>
     <string name="notification_part_title">Pavadinimas</string>
     <string name="notification_part_text">Tekstas</string>
     <string name="notification_part_app">Programos pavadinimas</string>
@@ -1442,16 +1442,16 @@
     <string name="notification_list_title">Pranešimai</string>
     <string name="notification_list_empty">Jokių pranešimų</string>
     <string name="notification_list_no_access">Prieiga prie pranešimų išjungta</string>
-    <string name="notification_list_grant_access">Įjunkite prieigą prie pranešimų</string>
+    <string name="notification_list_grant_access">Įjungti prieigą prie pranešimų</string>
     <string name="notification_list_quick_settings">Greiti nustatymai</string>
     <string name="notification_list_dismiss">Atsisakyti</string>
     <string name="notification_list_show_all">Rodyti viską</string>
     <string name="notification_list_show_less">Rodyti mažiau</string>
     <string name="notification_list_clear_all">Išvalyti viską</string>
     <string name="notification_list_send">Siųsti</string>
-    <string name="notification_list_playing">Žaidžia</string>
+    <string name="notification_list_playing">Leidžiama</string>
     <string name="notification_list_paused">Pristabdyta</string>
-    <string name="notification_list_play">Žaisti</string>
+    <string name="notification_list_play">Leisti</string>
     <string name="notification_list_pause">Pristabdyti</string>
     <string name="notification_list_previous">Ankstesnis</string>
     <string name="notification_list_next">Kitas</string>
@@ -1461,7 +1461,7 @@
         <item quantity="many">%d pranešimai</item>
         <item quantity="other">%d pranešimai</item>
     </plurals>
-    <string name="title_pref_quick_settings">Naudokite SandFly sparčiuosius nustatymus</string>
+    <string name="title_pref_quick_settings">Naudoti SandFly sparčiuosius nustatymus</string>
     <string name="title_pref_quick_settings_items">Greitųjų nustatymų skydelis</string>
     <string name="quick_settings_title">Greiti nustatymai</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1483,8 +1483,8 @@
     <string name="quick_settings_media_volume">Medijos garsumas</string>
     <string name="quick_settings_call_volume">Skambučio garsumas</string>
     <string name="quick_settings_ring_volume">Skambučio garsumas</string>
-    <string name="quick_settings_notification_volume">Pranešimų apimtis</string>
-    <string name="quick_settings_alarm_volume">Signalizacijos garsumas</string>
+    <string name="quick_settings_notification_volume">Pranešimų garsumas</string>
+    <string name="quick_settings_alarm_volume">Žadintuvo garsumas</string>
     <string name="quick_settings_accessibility_volume">Pritaikomumo garsumas</string>
     <string name="quick_settings_system_volume">Sistemos garso garsumas</string>
     <string name="quick_settings_data_saver">Duomenų taupymo priemonė</string>
@@ -1496,27 +1496,27 @@
     <string name="quick_settings_camera_access">Prieiga prie fotoaparato</string>
     <string name="quick_settings_screen_timeout">Ekrano skirtasis laikas</string>
     <string name="quick_settings_font_size">Šrifto dydis</string>
-    <string name="quick_settings_media">Žiniasklaida</string>
-    <string name="quick_settings_no_media">Nėra žiniasklaidos</string>
+    <string name="quick_settings_media">Medija</string>
+    <string name="quick_settings_no_media">Nėra medijos</string>
     <string name="quick_settings_media_output">Medijos išvestis</string>
-    <string name="quick_settings_next_alarm">Kitas signalas</string>
-    <string name="quick_settings_no_alarm">Nėra signalizacijos</string>
+    <string name="quick_settings_next_alarm">Kitas žadintuvas</string>
+    <string name="quick_settings_no_alarm">Nėra žadintuvo</string>
     <string name="quick_settings_settings">Nustatymai</string>
     <string name="quick_settings_power_menu">Maitinimo meniu</string>
     <string name="quick_settings_add_system_tile">Pridėti sistemos plytelę</string>
-    <string name="quick_settings_no_system_tiles">Nereikia pridėti sistemos plytelių</string>
+    <string name="quick_settings_no_system_tiles">Nėra sistemos plytelių, kurias būtų galima pridėti</string>
     <string name="quick_settings_tile_not_found">%1$s nėra sistemos greituosiuose nustatymuose</string>
     <string name="quick_settings_never">Niekada</string>
     <plurals name="quick_settings_seconds">
-        <item quantity="one">%d sekundės</item>
-        <item quantity="few">%d sekundžių</item>
-        <item quantity="many">%d sekundžių</item>
+        <item quantity="one">%d sekundė</item>
+        <item quantity="few">%d sekundės</item>
+        <item quantity="many">%d sekundės</item>
         <item quantity="other">%d sekundžių</item>
     </plurals>
     <plurals name="quick_settings_minutes">
-        <item quantity="one">%d minutę</item>
-        <item quantity="few">%d minučių</item>
-        <item quantity="many">%d minučių</item>
+        <item quantity="one">%d minutė</item>
+        <item quantity="few">%d minutės</item>
+        <item quantity="many">%d minutės</item>
         <item quantity="other">%d minučių</item>
     </plurals>
     <string name="quick_settings_connected">Prisijungta</string>
@@ -1524,19 +1524,19 @@
     <string name="quick_settings_battery_charging">%1$s, įkraunama</string>
     <string name="quick_settings_battery_full">%1$s, įkrautas</string>
     <string name="quick_settings_sound">Garsas</string>
-    <string name="quick_settings_vibrate">Vibruoti</string>
+    <string name="quick_settings_vibrate">Vibravimas</string>
     <string name="quick_settings_mute">Nutildyti</string>
-    <string name="quick_settings_on">Įjungti</string>
-    <string name="quick_settings_off">Išjungti</string>
+    <string name="quick_settings_on">Įjungta</string>
+    <string name="quick_settings_off">Išjungta</string>
     <string name="quick_settings_unavailable">Nepasiekiamas</string>
     <string name="quick_settings_edit">Redaguoti</string>
     <string name="quick_settings_system">Greiti sistemos nustatymai</string>
-    <string name="quick_settings_open_settings">Atidarykite nustatymus</string>
+    <string name="quick_settings_open_settings">Atidaryti nustatymus</string>
     <string name="quick_settings_add_control">Pridėti valdiklį</string>
     <string name="quick_settings_add_tile">Pridėti programos plytelę</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Stulpelių skaičius</string>
-    <string name="quick_settings_move">Judėti</string>
+    <string name="quick_settings_move">Perkelti</string>
     <string name="quick_settings_move_title">Perkelti %1$s</string>
     <string name="quick_settings_cell">%1$d eilutė, %2$d stulpelis</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1558,7 +1558,7 @@
     <string name="dialog_title_audio_output_device">Pasirinkite, kur leisti SandFly garsą</string>
     <string name="value_audio_output_device_default">Numatytasis sistemos</string>
     <string name="value_audio_output_device_speaker">Telefono garsiakalbis</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Prijungtas Bluetooth įrenginys arba laidinis</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Prijungtas Bluetooth arba laidinis įrenginys</string>
     <string name="value_audio_output_device_disconnected">atjungtas</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth garso įrenginys</string>
     <string name="value_audio_output_device_wired_headset">Laidinės ausinės</string>
@@ -1569,18 +1569,18 @@
     <string name="summary_pref_speaker_devices_none">Nėra</string>
     <string name="summary_pref_speaker_devices_no_devices">Dar neprijungta jokių Bluetooth arba laidinių įrenginių</string>
     <string name="pref_reduce_window_delay_summary">SandFly greičiau nuskaito naujus ekranus, kai animacija išjungta. Tai išjungia animacijas visame telefone.</string>
-    <string name="dialog_message_detailed_ai_description">Pasirinkti vaizdai siunčiami į Google Gemini API, kad juos būtų galima aprašyti. Įjungus įrenginio AI, jie aprašomi šiame telefone ir nėra siunčiami.\n\nTurėdamas nemokamą API raktą, Google gali pasilikti tai, ką gauna, naudoti jį produktams tobulinti ir reikalauti, kad žmonės jį peržiūrėtų. Generatyvusis AI yra eksperimentinis, todėl pridarys klaidų. Taikomas <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="dialog_message_detailed_ai_promotion">Išsamūs vaizdų aprašymai pateikiami naudojant generatyvųjį AI. Pasirinkti vaizdai siunčiami į Google Gemini API, kad juos būtų galima aprašyti. Įjungus įrenginio AI, jie aprašomi šiame telefone ir nėra siunčiami.\n\nTurėdamas nemokamą API raktą, Google gali pasilikti tai, ką gauna, naudoti jį produktams tobulinti ir reikalauti, kad žmonės jį peržiūrėtų. Generatyvusis AI yra eksperimentinis, todėl pridarys klaidų. Išsamius vaizdų aprašymus galite bet kada išjungti SandFly nustatymuose.\n\nTaikomas <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="dialog_message_screen_overview_promotion">Ekrano ekrano kopija siunčiama į Google Gemini API, kuri turi būti aprašyta. Tai užtrunka kelias sekundes. Įjungus įrenginio AI, jis aprašomas šiame telefone ir nėra siunčiamas.\n\nTurėdamas nemokamą API raktą, Google gali pasilikti tai, ką gauna, naudoti jį produktams tobulinti ir reikalauti, kad žmonės jį peržiūrėtų. Generatyvusis AI yra eksperimentinis, todėl pridarys klaidų. Taikomas <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Atidarykite programą</string>
+    <string name="dialog_message_detailed_ai_description">Pasirinkti vaizdai siunčiami į Google Gemini API, kad būtų aprašyti. Įjungus „Įrenginio AI“, jie aprašomi šiame telefone ir nesiunčiami.\n\nNaudojant nemokamą API raktą, Google gali pasilikti tai, ką gauna, naudoti tai savo produktams tobulinti ir duoti tai peržiūrėti žmonėms. Generatyvusis AI yra eksperimentinis, todėl darys klaidų. Taikomos <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_detailed_ai_promotion">Išsamius vaizdų aprašus kuria generatyvusis AI. Pasirinkti vaizdai siunčiami į Google Gemini API, kad būtų aprašyti. Įjungus „Įrenginio AI“, jie aprašomi šiame telefone ir nesiunčiami.\n\nNaudojant nemokamą API raktą, Google gali pasilikti tai, ką gauna, naudoti tai savo produktams tobulinti ir duoti tai peržiūrėti žmonėms. Generatyvusis AI yra eksperimentinis, todėl darys klaidų. Išsamius vaizdų aprašus bet kada galite išjungti „SandFly“ nustatymuose.\n\nTaikomos <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_screen_overview_promotion">Ekrano kopija siunčiama į Google Gemini API, kad būtų aprašyta. Tai užtrunka kelias sekundes. Įjungus „Įrenginio AI“, ji aprašoma šiame telefone ir nesiunčiama.\n\nNaudojant nemokamą API raktą, Google gali pasilikti tai, ką gauna, naudoti tai savo produktams tobulinti ir duoti tai peržiūrėti žmonėms. Generatyvusis AI yra eksperimentinis, todėl darys klaidų. Taikomos <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="shortcut_title_open_app">Atidaryti programą</string>
     <string name="shortcut_open_app">Atidaryti <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Slinkite į viršų</string>
-    <string name="shortcut_write_reading_control">Parašykite skaitymo valdiklio raidę</string>
+    <string name="shortcut_scroll_to_top">Slinkti į viršų</string>
+    <string name="shortcut_write_reading_control">Parašyti skaitymo valdiklio raidę</string>
     <string name="title_pref_reading_control_letters">Ranka rašytos abėcėlės raidės</string>
     <string name="reading_control_letter_none">Nėra</string>
     <string name="handwriting_prompt">Parašykite abėcėlės raidę</string>
     <string name="handwriting_closed">Rašysena uždaryta</string>
-    <string name="handwriting_no_match">Joks skaitymo valdiklis neprasideda <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Nėra skaitymo valdiklio, prasidedančio <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Parašykite programos pavadinimą, kad ją atidarytumėte</string>
     <string name="handwriting_app_prompt">Parašykite programos pavadinimą</string>
     <string name="handwriting_no_app">Nėra programos, prasidedančios <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
@@ -1595,7 +1595,7 @@
     <string name="handwriting_unsupported_language">Rašysenos atpažinimo funkcija šia kalba nepasiekiama</string>
     <string name="title_pref_handwriting_keyboard">Rašymo ranka klaviatūra</string>
     <string name="summary_pref_handwriting_keyboard">Įjunkite SandFly rašymą ranka Android klaviatūros nustatymuose</string>
-    <string name="title_pref_handwriting_wait">Palauk parašęs</string>
+    <string name="title_pref_handwriting_wait">Laukimas po rašymo</string>
     <string name="value_handwriting_wait_200">0,2 sek.</string>
     <string name="value_handwriting_wait_300">0,3 sekundės</string>
     <string name="value_handwriting_wait_400">0,4 sekundės</string>
@@ -1606,58 +1606,58 @@
     <string name="handwriting_keyboard_name">SandFly rašysena</string>
     <string name="handwriting_space">Tarpo klavišas</string>
     <string name="handwriting_new_line">Nauja eilutė</string>
-    <string name="handwriting_tutorial_intro">Rašymo ranka klaviatūros pamoka. Rašykite vienu pirštu bet kurioje ekrano vietoje. Tai, ką rašai, įvedama, kai trumpam sustoji. Norėdami baigti mokymo programą, trimis pirštais braukite žemyn.</string>
-    <string name="handwriting_tutorial_write_letter">Parašykite abėcėlės raidę a.</string>
+    <string name="handwriting_tutorial_intro">Rašymo ranka klaviatūros mokymas. Rašykite vienu pirštu bet kurioje ekrano vietoje. Tai, ką parašote, įvedama, kai trumpam sustojate. Kad baigtumėte mokymą, perbraukite trimis pirštais žemyn.</string>
+    <string name="handwriting_tutorial_write_letter">Parašykite raidę a.</string>
     <string name="handwriting_tutorial_write_word">Dabar parašykite žodį hi (h ir i).</string>
-    <string name="handwriting_tutorial_typed">Įvedė <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
+    <string name="handwriting_tutorial_typed">Įvesta <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Braukite dešinėn dviem pirštais, kad įvestumėte tarpą.</string>
     <string name="handwriting_tutorial_delete">Dviem pirštais braukite kairėn, kad ištrintumėte prieš žymeklį esantį simbolį.</string>
     <string name="handwriting_tutorial_deleted">Ištrinta.</string>
     <string name="handwriting_tutorial_next_reading">Jei rašysena atpažįstama kaip kitas simbolis, pvz., didžioji raidė, braukite aukštyn dviem pirštais, kad pasirinktumėte kitą atpažinimo pasiūlymą. Išbandykite dabar.</string>
     <string name="handwriting_tutorial_read_back">Bakstelėkite dviem pirštais, kad perskaitytumėte tekstą prieš žymeklį.</string>
     <string name="handwriting_tutorial_new_line">Braukite žemyn dviem pirštais, kad įterptumėte naują eilutę arba atliktumėte teksto lauko veiksmą, pvz., Siųsti.</string>
-    <string name="handwriting_tutorial_not_that">Tai buvo dar vienas gestas.</string>
-    <string name="handwriting_tutorial_done">Nauja linija. Pamoka baigta. Braukite žemyn trimis pirštais, kad paslėptumėte klaviatūrą, ir dešinėn arba kairėn trimis pirštais, kad perjungtumėte klaviatūras. Norėdami vėl atidaryti mokymo programą, bakstelėkite trimis pirštais.</string>
-    <string name="handwriting_tutorial_finished">Pamoka baigėsi. Norėdami vėl atidaryti, bakstelėkite trimis pirštais.</string>
+    <string name="handwriting_tutorial_not_that">Tai buvo kitas gestas.</string>
+    <string name="handwriting_tutorial_done">Nauja eilutė. Mokymas baigtas. Perbraukite trimis pirštais žemyn, kad paslėptumėte klaviatūrą, o trimis pirštais dešinėn arba kairėn – kad perjungtumėte klaviatūrą. Kad vėl atidarytumėte mokymą, bakstelėkite trimis pirštais.</string>
+    <string name="handwriting_tutorial_finished">Mokymas baigtas. Kad vėl jį atidarytumėte, bakstelėkite trimis pirštais.</string>
     <string name="handwriting_no_alternatives">Jokių kitų pasiūlymų</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> iš <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Tuščias tekstas</string>
     <string name="handwriting_not_available">Rašysenos atpažinimo funkcija šiame įrenginyje nepasiekiama</string>
-    <string name="shortcut_scroll_to_bottom">Slinkite į apačią</string>
+    <string name="shortcut_scroll_to_bottom">Slinkti į apačią</string>
     <string name="shortcut_refresh">Atnaujinti</string>
     <string name="shortcut_system_notifications">Sistemos pranešimų skydelis</string>
     <string name="shortcut_system_quick_settings">Greiti sistemos nustatymai</string>
     <string name="shortcut_lock_screen">Užrakinkite įrenginio ekraną</string>
     <string name="shortcut_power_menu">Maitinimo meniu</string>
-    <string name="shortcut_increase_media_volume">Padidinkite medijos garsumą</string>
-    <string name="shortcut_decrease_media_volume">Sumažinkite medijos garsumą</string>
+    <string name="shortcut_increase_media_volume">Padidinti medijos garsumą</string>
+    <string name="shortcut_decrease_media_volume">Sumažinti medijos garsumą</string>
     <string name="title_clear_selection">Išvalyti pasirinkimą</string>
     <string name="title_pref_brightness">Ryškumas</string>
     <string name="summary_support_change_brightness">Padidinkite arba sumažinkite ekrano ryškumą, net kai ekranas paslėptas</string>
     <string name="title_pref_shortcut_3finger_4tap">Keturis kartus bakstelėkite 3 pirštais</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Pasukite pagal laikrodžio rodyklę 2 pirštais</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Pasukite prieš laikrodžio rodyklę 2 pirštais</string>
-    <string name="title_pref_shortcut_2finger_scrub">Šveiskite 2 pirštais</string>
-    <string name="title_pref_shortcut_2finger_pinch">Suimkite 2 pirštais</string>
-    <string name="title_pref_shortcut_2finger_spread">Paskleiskite 2 pirštais</string>
-    <string name="title_pref_shortcut_3finger_pinch">Suimkite 3 pirštais</string>
-    <string name="title_pref_shortcut_3finger_spread">Paskleiskite 3 pirštais</string>
-    <string name="title_pref_shortcut_4finger_pinch">Suimkite 4 pirštais</string>
-    <string name="title_pref_shortcut_4finger_spread">Paskleiskite 4 pirštais</string>
+    <string name="title_pref_shortcut_2finger_scrub">Greitas braukimas pirmyn ir atgal 2 pirštais</string>
+    <string name="title_pref_shortcut_2finger_pinch">Suspaudimas 2 pirštais</string>
+    <string name="title_pref_shortcut_2finger_spread">Išskleidimas 2 pirštais</string>
+    <string name="title_pref_shortcut_3finger_pinch">Suspaudimas 3 pirštais</string>
+    <string name="title_pref_shortcut_3finger_spread">Išskleidimas 3 pirštais</string>
+    <string name="title_pref_shortcut_4finger_pinch">Suspaudimas 4 pirštais</string>
+    <string name="title_pref_shortcut_4finger_spread">Išskleidimas 4 pirštais</string>
     <string name="title_pref_shortcut_edge_bottom_up">Braukite aukštyn nuo apatinio krašto</string>
-    <string name="title_pref_shortcut_edge_bottom_long_up">Ilgai braukite aukštyn nuo apatinio krašto</string>
-    <string name="title_pref_shortcut_edge_top_left_down">Braukite žemyn iš viršaus į kairę</string>
-    <string name="title_pref_shortcut_edge_top_right_down">Braukite žemyn iš viršaus dešinėje</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Ilgai braukite žemyn iš viršaus į kairę</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Ilgai braukite žemyn iš viršaus dešinėje</string>
+    <string name="title_pref_shortcut_edge_bottom_long_up">Ilgas braukimas aukštyn nuo apatinio krašto</string>
+    <string name="title_pref_shortcut_edge_top_left_down">Braukite žemyn nuo viršutinio kairiojo krašto</string>
+    <string name="title_pref_shortcut_edge_top_right_down">Braukite žemyn nuo viršutinio dešiniojo krašto</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Ilgas braukimas žemyn nuo viršutinio kairiojo krašto</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Ilgas braukimas žemyn nuo viršutinio dešiniojo krašto</string>
     <string name="title_pref_shortcut_edge_left_top_right">Braukite dešinėn nuo kairiojo krašto, viršutinės pusės</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Ilgai braukite dešinėn nuo kairiojo krašto, viršutinės pusės</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Ilgas braukimas dešinėn nuo kairiojo krašto, viršutinė pusė</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Braukite dešinėn nuo kairiojo krašto, apatinės pusės</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Ilgai braukite dešinėn nuo kairiojo krašto, apatinės pusės</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Ilgas braukimas dešinėn nuo kairiojo krašto, apatinė pusė</string>
     <string name="title_pref_shortcut_edge_right_top_left">Braukite kairėn nuo dešiniojo krašto, viršutinės pusės</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Ilgai braukite kairėn nuo dešiniojo krašto, viršutinės pusės</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Ilgas braukimas kairėn nuo dešiniojo krašto, viršutinė pusė</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Braukite kairėn nuo dešiniojo krašto, apatinės pusės</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Ilgai braukite kairėn nuo dešiniojo krašto, apatinės pusės</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Ilgas braukimas kairėn nuo dešiniojo krašto, apatinė pusė</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">Laikydami pirštą pasirinkite bet kurį klavišą, tada pakelkite. Dukart palieskite, kad pasirinktumėte „Enter“, „Done“ arba „Send“.</string>
     <string name="value_type_confirmation_tap_to_type">Bakstelėkite bet kurį klavišą, kad jį įvestumėte, arba laikykite pirštą, kad pasirinktumėte bet kurį klavišą, tada pakelkite</string>
     <string name="title_pref_multi_tap_timeout">Laikas tarp paspaudimų vienu pirštu</string>
@@ -1681,82 +1681,82 @@
     <string name="value_rotor_step_45">45 laipsnių</string>
     <string name="value_rotor_step_60">60 laipsnių</string>
     <string name="title_pref_low_latency_audio">Mažos delsos garsas</string>
-    <string name="summary_pref_low_latency_audio">Leiskite SandFly garsus ir kalbą greičiausiu telefono garso keliu, kad išgirstumėte juos greičiau. Išjunkite, jei kalba ar garsai nutrūksta arba skamba neteisingai.</string>
+    <string name="summary_pref_low_latency_audio">Leidžia SandFly garsus ir kalbą greičiausiu telefono garso keliu, kad juos išgirstumėte anksčiau. Išjunkite, jei kalba ar garsai trūkinėja arba skamba netinkamai.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekundės (numatytasis)</string>
     <string name="value_focus_delay_300ms">0,3 sekundės</string>
     <string name="title_pref_lift_to_activate">Pakelkite, kad suaktyvintumėte</string>
-    <string name="summary_support_change_lift_to_activate">Pakeiskite, kur pakėlus pirštą suaktyvinamas elementas</string>
+    <string name="summary_support_change_lift_to_activate">Keisti, kur pakėlus pirštą suaktyvinamas elementas</string>
     <string name="value_lift_to_activate_disabled">Išjungta</string>
     <string name="value_lift_to_activate_navigation_bar">Tik naršymo juostoje</string>
     <string name="value_lift_to_activate_entire_screen">Visas ekranas</string>
     <string name="template_lift_to_activate_changed">Pakelkite, kad suaktyvintumėte: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Apvyniokite</string>
+    <string name="title_pref_wrap_around">Ciklinis naršymas</string>
     <string name="summary_pref_wrap_around">Perbraukus per paskutinį elementą pereinama prie pirmojo, o už pirmojo – į paskutinį. Kai išjungta, pabaigoje skamba garsas.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Pataisykite įstrigusį tyrinėjimą</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Taisyti įstrigusį tyrinėjimą liečiant</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Be leidimo DUMP SandFly gali tik pasakyti, kad tyrinėjimas liečiant gali užstrigti. Jei norite leisti tai išspręsti, paleiskite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">Patikslinamas tyrinėjimas prisilietimu</string>
+    <string name="stuck_touch_exploration_fixing">Taisomas naršymas liečiant</string>
     <string name="stuck_touch_exploration_fixed">Naršymas liečiant ištaisytas</string>
     <string name="stuck_touch_exploration_not_fixed">Naršymas liečiant vis dar įstrigo. Iš naujo paleiskite telefoną, kad tai ištaisytumėte.</string>
     <string name="stuck_touch_exploration_restart">Naršymas liečiant gali užstrigti. Iš naujo paleiskite telefoną, kad tai ištaisytumėte.</string>
     <string name="stuck_touch_exploration_grant_dump">Naršymas liečiant gali užstrigti. Iš naujo paleiskite telefoną, kad jį ištaisytumėte, arba suteikite SandFly leidimą DUMP su ADB, kad jis galėtų tai ištaisyti.</string>
     <string name="title_pref_window_names">Langų pavadinimai</string>
     <string name="window_names_always">Visada</string>
-    <string name="window_names_until_first_item">Visada, nupjaukite pirmuoju elementu</string>
+    <string name="window_names_until_first_item">Visada, nutraukiama pirmuoju elementu</string>
     <string name="window_names_window_opens">Tik tada, kai atsidaro langas</string>
     <string name="window_names_never">Niekada</string>
     <string name="title_pref_selector_links_controls_web_only">Nuorodos ir valdikliai tik žiniatinklio turinyje</string>
-    <string name="title_pref_selector_auto_switch">Automatiškai pakeiskite skaitymo valdiklį</string>
-    <string name="title_pref_touch_stops_speech">Sustabdykite kalbą, kai liečiate ekraną</string>
-    <string name="title_pref_focus_new_windows">Perkelkite dėmesį į naujus langus</string>
+    <string name="title_pref_selector_auto_switch">Automatiškai keisti skaitymo valdiklį</string>
+    <string name="title_pref_touch_stops_speech">Sustabdyti kalbą palietus ekraną</string>
+    <string name="title_pref_focus_new_windows">Perkelti fokusą į naujus langus</string>
     <string name="title_pref_volume_keys_adjust_sliders">Garsumo klavišai reguliuoja slankiklius</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Kai slankiklis sufokusuotas, garsumo didinimas ir mažinimas keičia jo reikšmę, o ne garsumą</string>
     <string name="title_pref_volume_keys_move_cursor">Garsumo klavišai perkelia žymeklį</string>
     <string name="summary_pref_volume_keys_move_cursor">Kai teksto laukas yra sufokusuotas, garsumo padidinimas perkelia žymeklį simboliu atgal, o garsumo mažinimas – toliau</string>
-    <string name="summary_support_wrap_around">Įjunkite arba išjunkite vyniojimą nuo paskutinio elemento iki pirmojo</string>
-    <string name="wrap_around_on">Apvyniokite</string>
-    <string name="wrap_around_off">Apvyniokite</string>
-    <string name="title_selector_tablet_held_up_faces_away">Planšetinis kompiuteris buvo pakeltas veidu</string>
+    <string name="summary_support_wrap_around">Įjungti arba išjungti perėjimą nuo paskutinio elemento prie pirmojo</string>
+    <string name="wrap_around_on">Ciklinis naršymas: įjungta</string>
+    <string name="wrap_around_off">Ciklinis naršymas: išjungta</string>
+    <string name="title_selector_tablet_held_up_faces_away">Pakelto planšetinio kompiuterio ekranas nukreiptas nuo jūsų</string>
     <string name="summary_support_tablet_held_up_faces_away">Brailio rašto klaviatūrai planšetiniame kompiuteryje arba išskleistame telefone</string>
-    <string name="tablet_held_up_faces_away_on">Planšetinis kompiuteris buvo pakeltas veidais</string>
-    <string name="tablet_held_up_faces_away_off">Planšetinis kompiuteris buvo pakeltas veidu</string>
+    <string name="tablet_held_up_faces_away_on">Pakelto planšetinio kompiuterio ekranas nukreiptas nuo jūsų: įjungta</string>
+    <string name="tablet_held_up_faces_away_off">Pakelto planšetinio kompiuterio ekranas nukreiptas nuo jūsų: išjungta</string>
     <string name="title_keyboard_echo_on_screen">Ekrano klaviatūros aidas</string>
-    <string name="title_keyboard_echo_physical">Fizinis klaviatūros aidas</string>
+    <string name="title_keyboard_echo_physical">Fizinės klaviatūros aidas</string>
     <string name="title_keyboard_echo_braille_keyboard">Brailio rašto klaviatūros aidas</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Rašymo ranka klaviatūros aidas</string>
     <string name="title_keyboard_echo_braille_display">Brailio rašto ekrano aidas</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Pertraukite kalbą spausdindami</string>
+    <string name="title_pref_interrupt_typing">Pertraukti kalbą rašant</string>
     <string name="pref_interrupt_typing_entry_always">Visada</string>
     <string name="pref_interrupt_typing_entry_edit_fields">Redagavimo laukuose</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">Klaviatūros aidas</string>
-    <string name="title_pref_interrupt_enter">Pertraukite kalbą Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Pavadinimas, valstybė, tipas</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Tipas, valstybė, pavadinimas</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Valstybė, tipas, pavadinimas</string>
-    <string name="item_detail_name">Vardas</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Kai klaviatūros aidas</string>
+    <string name="title_pref_interrupt_enter">Pertraukti kalbą paspaudus Enter</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Pavadinimas, būsena, tipas</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Tipas, būsena, pavadinimas</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Būsena, tipas, pavadinimas</string>
+    <string name="item_detail_name">Pavadinimas</string>
     <string name="item_detail_type">Tipas</string>
-    <string name="item_detail_state">valstybė</string>
-    <string name="action_move_up">Judėti aukštyn</string>
-    <string name="action_move_down">Judėti žemyn</string>
+    <string name="item_detail_state">Būsena</string>
+    <string name="action_move_up">Perkelti aukštyn</string>
+    <string name="action_move_down">Perkelti žemyn</string>
     <string name="template_list_position">Pozicija <xliff:g id="position" example="2">%1$d</xliff:g> iš <xliff:g id="count" example="3">%2$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up">Paėmė <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped">Numesta <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
-    <string name="item_details_order_footer">SandFly nurodo išsamią prekės informaciją šia tvarka. Norėdami ją pakeisti, palieskite ir palaikykite detalę, tada vilkite ją aukštyn arba žemyn. Įjungę SandFly dukart bakstelėkite ir palaikykite, tada vilkite. Taip pat galite naudoti veiksmus Perkelti aukštyn ir Perkelti žemyn.</string>
-    <string name="title_pref_speak_items_before_scroll">Ištarkite elementus prieš jiems pasirodant</string>
+    <string name="template_item_details_order_picked_up">Paimta: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped">Paleista: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="item_details_order_footer">SandFly elemento informaciją sako šia tvarka. Norėdami ją pakeisti, palieskite ir palaikykite informacijos dalį, tada vilkite ją aukštyn arba žemyn. Kai SandFly įjungtas, dukart bakstelėkite ir palaikykite, tada vilkite. Taip pat galite naudoti veiksmus „Perkelti aukštyn“ ir „Perkelti žemyn“.</string>
+    <string name="title_pref_speak_items_before_scroll">Ištarti elementus, kol jie dar neslinkti į rodinį</string>
     <string name="gemini_error_api_key">Gemini nepriėmė API rakto. Patikrinkite raktą automatinių aprašų nustatymuose.</string>
     <string name="gemini_error_quota">Pasiektas jūsų Gemini API rakto naudojimo limitas. Vėliau bandykite dar kartą.</string>
     <string name="gemini_error_busy">Gemini šiuo metu yra užimtas. Po akimirkos bandykite dar kartą.</string>
     <string name="gemini_error_timeout">Gemini užtruko per ilgai atsakyti. Bandykite dar kartą.</string>
     <string name="gemini_error_with_code">Gemini negalėjo atsakyti, klaida <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini nepavyko atsakyti, klaida <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
-    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Negaliu gauti išsamesnio vaizdo aprašymo: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
+    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nepavyko gauti išsamesnio vaizdo aprašo: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Klauskite balsu</string>
-    <string name="image_qna_stop_listening">Nustokite klausytis</string>
+    <string name="image_qna_stop_listening">Nebeklausyti</string>
     <string name="image_qna_type_question">Įveskite klausimą</string>
     <string name="shortcut_dictate">Diktuoti</string>
-    <string name="title_pref_ai_dictation">Teisingas diktavimas naudojant AI</string>
-    <string name="dictation_not_corrected">Netaisyta. Įrašyta kaip atpažinta.</string>
-    <string name="dictation_nothing_recognized">Nieko nepripažino</string>
+    <string name="title_pref_ai_dictation">Taisyti diktavimą naudojant DI</string>
+    <string name="dictation_not_corrected">Neištaisyta. Įrašyta taip, kaip atpažinta.</string>
+    <string name="dictation_nothing_recognized">Nieko neatpažinta</string>
     <string name="dictation_unavailable">Kalbos atpažinimas nepasiekiamas</string>
     <string name="dictation_field_gone">Teksto laukas uždarytas. Nieko neįrašyta.</string>
     <string name="dictation_transcription_failed">Kalba nebuvo transkribuota. Nieko neįrašyta.</string>
@@ -1775,7 +1775,7 @@
     <string name="dictation_whisper_use">Naudoti</string>
     <string name="title_pref_dictation_ai_service">AI paslauga diktavimui</string>
     <string name="dictation_ai_same">Ta pati kaip automatiniams aprašams</string>
-    <string name="title_pref_browse_mode_per_app">Prisiminkite naršymo režimą kiekvienoje programoje</string>
+    <string name="title_pref_browse_mode_per_app">Įsiminti naršymo režimą kiekvienoje programoje</string>
     <string name="title_pref_export_settings">Eksportuoti nustatymus</string>
     <string name="title_pref_import_settings">Importuoti nustatymus</string>
     <string name="settings_export_done">Nustatymai eksportuoti. API raktai neįtraukti</string>

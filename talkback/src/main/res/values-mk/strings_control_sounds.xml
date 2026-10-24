@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Контролирајте ги звуците и вибрациите</string>
-    <string name="summary_pref_control_sounds">Дајте му на секој вид контрола, како што се копчиња, полиња, полиња за уредување и ставки од список, свој звук и сопствена вибрација од темата, наместо фокусниот звук и вибрации, како што тоа го прави Unspoken за НВДА. Звукот доаѓа од местото каде што е контролата на екранот и SandFly не кажува за каква контрола станува збор.</string>
-    <string name="title_pref_control_sounds_speak_roles">Сепак кажете го видот на контрола</string>
-    <string name="summary_pref_control_sounds_speak_roles">Кога се репродуцира контролен звук, сепак кажете за каква контрола станува збор, како на пример копче. Ова е за секоја звучна тема.</string>
+    <string name="title_pref_control_sounds">Звуци и вибрации на контролите</string>
+    <string name="summary_pref_control_sounds">Секој вид контрола, како копчиња, полиња за избор, полиња за уредување и ставки од список, добива свој звук и своја вибрација од темата наместо звукот и вибрацијата на фокусот, како што прави Unspoken за NVDA. Звукот доаѓа од местото на контролата на екранот, а SandFly не кажува каков вид контрола е.</string>
+    <string name="title_pref_control_sounds_speak_roles">Сепак кажувај го видот на контролата</string>
+    <string name="summary_pref_control_sounds_speak_roles">Кога се пушта звук на контрола, видот на контролата сепак се изговара, на пример копче. Важи за секоја звучна тема.</string>
     <string name="title_pref_control_sounds_3d">3D аудио</string>
     <string name="pref_control_sounds_3d_headphones">Со слушалки</string>
     <string name="pref_control_sounds_3d_always">Секогаш</string>
     <string name="pref_control_sounds_3d_never">Никогаш, само лево и десно</string>
-    <string name="individual_sound_control_button">Контролен звук: копче</string>
-    <string name="individual_sound_control_checkbox">Контролен звук: поле за избор</string>
-    <string name="individual_sound_control_radio_button">Контролен звук: радио копче</string>
-    <string name="individual_sound_control_edit_text">Контролен звук: поле за уредување</string>
-    <string name="individual_sound_control_combo_box">Контролирајте го звукот: паѓачка листа</string>
-    <string name="individual_sound_control_slider">Контролен звук: лизгач</string>
-    <string name="individual_sound_control_link">Контролен звук: врска</string>
-    <string name="individual_sound_control_image">Контрола на звук: слика</string>
-    <string name="individual_sound_control_clock">Контролен звук: часовник</string>
-    <string name="individual_sound_control_tab">Контролен звук: таб</string>
-    <string name="individual_sound_control_menu_item">Контролен звук: ставка од менито</string>
-    <string name="individual_sound_control_list_item">Контролен звук: ставка од списокот</string>
-    <string name="individual_sound_control_tree_item">Контролен звук: ставка од дрво</string>
+    <string name="individual_sound_control_button">Звук на контрола: копче</string>
+    <string name="individual_sound_control_checkbox">Звук на контрола: поле за избор</string>
+    <string name="individual_sound_control_radio_button">Звук на контрола: радио копче</string>
+    <string name="individual_sound_control_edit_text">Звук на контрола: поле за уредување</string>
+    <string name="individual_sound_control_combo_box">Звук на контрола: паѓачка листа</string>
+    <string name="individual_sound_control_slider">Звук на контрола: лизгач</string>
+    <string name="individual_sound_control_link">Звук на контрола: врска</string>
+    <string name="individual_sound_control_image">Звук на контрола: слика</string>
+    <string name="individual_sound_control_clock">Звук на контрола: часовник</string>
+    <string name="individual_sound_control_tab">Звук на контрола: таб</string>
+    <string name="individual_sound_control_menu_item">Звук на контрола: ставка од менито</string>
+    <string name="individual_sound_control_list_item">Звук на контрола: ставка од списокот</string>
+    <string name="individual_sound_control_tree_item">Звук на контрола: ставка од дрво</string>
 </resources>

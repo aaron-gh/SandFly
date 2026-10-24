@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">Skripte</string>
-    <string name="summary_pref_scripts">Spremenite način delovanja SandFly v aplikacijah</string>
+    <string name="summary_pref_scripts">Spreminjanje delovanja SandFly v aplikacijah</string>
     <string name="script_import">Uvozi skript</string>
-    <string name="script_install_label">Namestite skript SandFly</string>
+    <string name="script_install_label">Namesti skript SandFly</string>
     <string name="script_import_nothing">Ni skriptne datoteke za namestitev.</string>
     <string name="script_import_cannot_open">Datoteke ni bilo mogoče odpreti.</string>
     <string name="script_import_repository">Ta povezava vodi do celotnega repozitorija. Odprite želeni skript in nato delite njegovo povezavo.</string>
-    <string name="script_import_summary">.lua ali .zip z main.lua</string>
+    <string name="script_import_summary">Datoteka .lua ali .zip z main.lua</string>
     <string name="scripts_category_app">Skripti aplikacij</string>
     <string name="scripts_category_global">Globalni vtičniki</string>
     <string name="scripts_none">Ni nameščenih skriptov</string>
-    <string name="scripts_all_off">Izklopite vse skripte</string>
-    <string name="scripts_all_off_summary">Skripti ostanejo nameščeni in ohranijo lastna stikala. Poteza Vklopi ali izklopi vse skripte naredi enako.</string>
-    <string name="shortcut_toggle_scripts">Vklopite ali izklopite vse skripte</string>
+    <string name="scripts_all_off">Izklop vseh skriptov</string>
+    <string name="scripts_all_off_summary">Skripti ostanejo nameščeni in obdržijo svoja stikala. Kretnja »Vklop ali izklop vseh skriptov« naredi isto.</string>
+    <string name="shortcut_toggle_scripts">Vklop ali izklop vseh skriptov</string>
     <string name="scripts_now_off">Skripti izključeni</string>
     <string name="scripts_now_on">Skripte vklopljene</string>
     <string name="scripts_unavailable">Skripti niso na voljo v tej napravi</string>
-    <string name="script_add_example">Dodajte primer skripta</string>
-    <string name="script_add_example_summary">Pove ime vsake aplikacije, na katero preklopite. Skript za začetek.</string>
+    <string name="script_add_example">Dodaj vzorčni skript</string>
+    <string name="script_add_example_summary">Izgovori ime vsake aplikacije, na katero preklopite. Skript za začetek.</string>
     <string name="script_state_on">Vklopljeno</string>
     <string name="script_state_off">Izklopljeno</string>
-    <string name="script_runs_in">Teče v <xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_in">Deluje v <xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">Deluje v vseh aplikacijah</string>
     <string name="script_version">Različica <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">Avtor <xliff:g id="author">%1$s</xliff:g></string>
-    <string name="script_install_title">Namestite <xliff:g id="name">%1$s</xliff:g>?</string>
+    <string name="script_install_title">Želite namestiti <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Lahko:</string>
     <string name="script_install_no_permissions">Dovoljenja niso potrebna.</string>
-    <string name="script_install_button">Namestite</string>
+    <string name="script_install_button">Namesti</string>
     <string name="script_update_title">Posodobiti <xliff:g id="name">%1$s</xliff:g> na <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nova dovoljenja:</string>
-    <string name="script_update_button">Posodobitev</string>
-    <string name="script_update_replaces">To zamenja različico <xliff:g id="version">%1$s</xliff:g> z <xliff:g id="author">%2$s</xliff:g> in ohrani njene podatke in nastavitve.</string>
-    <string name="script_update_other_author">Nova je od <xliff:g id="author">%1$s</xliff:g>, drugega avtorja. Posodobite le, če mu zaupate.</string>
+    <string name="script_update_button">Posodobi</string>
+    <string name="script_update_replaces">To zamenja različico <xliff:g id="version">%1$s</xliff:g> avtorja <xliff:g id="author">%2$s</xliff:g> in ohrani njene podatke in nastavitve.</string>
+    <string name="script_update_other_author">Novi je od drugega avtorja: <xliff:g id="author">%1$s</xliff:g>. Posodobite le, če mu zaupate.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> nameščen</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> posodobljeno na <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Uvoz ni uspel. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Dovoli samo za zaupanja vredne skripte.</string>
-    <string name="script_permission_screen">Preberite zaslon</string>
-    <string name="script_permission_actions">Kliknite, pomaknite se, vnesite in premaknite fokus</string>
-    <string name="script_permission_speech">Poslušajte in spremenite govor SandFly</string>
-    <string name="script_permission_passwords">Preberite polja za geslo</string>
-    <string name="script_permission_input">Dodajte poteze, tipke, elemente menija in kontrolnike za branje</string>
-    <string name="script_permission_network">Uporabite internet</string>
-    <string name="script_permission_clipboard">Preberite in spremenite odložišče</string>
-    <string name="script_permission_system">Pojdite nazaj ali domov, odprite obvestila in aplikacije</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Dovolite samo zaupanja vrednim skriptom.</string>
+    <string name="script_permission_screen">Brati zaslon</string>
+    <string name="script_permission_actions">Klikanje, pomikanje, tipkanje in premikanje fokusa</string>
+    <string name="script_permission_speech">Prejemanje in spreminjanje govora SandFly</string>
+    <string name="script_permission_passwords">Brati polja za geslo</string>
+    <string name="script_permission_input">Dodajanje potez, tipk, elementov menija in kontrolnikov za branje</string>
+    <string name="script_permission_network">Uporabljati internet</string>
+    <string name="script_permission_clipboard">Branje in spreminjanje odložišča</string>
+    <string name="script_permission_system">Vrnitev nazaj ali na začetni zaslon, odpiranje obvestil in aplikacij</string>
     <string name="script_permission_notifications">Branje in spreminjanje govorjenih obvestil</string>
-    <string name="script_permission_events">Oglejte si vso dejavnost v vsaki aplikaciji, vključno s tipkanjem</string>
-    <string name="script_permission_dialogs">Prikaži pogovorna okna nad katero koli aplikacijo</string>
-    <string name="script_permission_java">Zaženite kodo Java z vsemi dostopi SandFly v vsaki aplikaciji</string>
+    <string name="script_permission_events">Ogled vse dejavnosti v vsaki aplikaciji, vključno s tipkanjem</string>
+    <string name="script_permission_dialogs">Prikazovanje pogovornih oken nad katero koli aplikacijo</string>
+    <string name="script_permission_java">Izvajanje kode Java z vsem dostopom SandFly v vsaki aplikaciji</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Vklopi</string>
     <string name="script_permissions_title">Dovoljenja</string>
@@ -57,14 +57,14 @@
     <string name="script_settings_category">Nastavitve</string>
     <string name="script_list_filter">Filter</string>
     <string name="script_button_off">Najprej vklopite skript</string>
-    <string name="script_permissions_summary">Izklop enega zaustavi dele, ki ga potrebujejo.</string>
+    <string name="script_permissions_summary">Izklop dovoljenja ustavi dele, ki ga potrebujejo.</string>
     <string name="script_install_permissions_note">Te lahko pozneje izklopite.</string>
-    <string name="script_manage_category">Upravljaj</string>
-    <string name="script_move_up">Teci prej</string>
+    <string name="script_manage_category">Upravljanje</string>
+    <string name="script_move_up">Zaženi prej</string>
     <string name="script_move_down">Zaženi pozneje</string>
-    <string name="script_order_summary">Naročilo za skripte, ki spremenijo isti govor. Najprej se zaženejo skripti aplikacije.</string>
+    <string name="script_order_summary">Vrstni red skriptov, ki spreminjajo isti govor. Skripti aplikacij se zaženejo prvi.</string>
     <string name="script_log">Dnevnik</string>
-    <string name="script_log_summary">Izhod in napake od začetka SandFly</string>
+    <string name="script_log_summary">Izhod in napake od zagona SandFly</string>
     <string name="script_clear_storage">Počisti shranjene podatke</string>
     <string name="script_storage_cleared">Shranjeni podatki so izbrisani</string>
     <string name="script_remove">Odstrani</string>
@@ -76,51 +76,51 @@
     <string name="script_log_copy">Kopiraj dnevnik</string>
     <string name="script_log_copied">Dnevnik je kopiran</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Potrebuje API za skripte <xliff:g id="needed">%1$d</xliff:g> ali novejši. Ta SandFly ima <xliff:g id="current">%2$d</xliff:g>, zato deli morda ne bodo delovali.</string>
+    <string name="script_api_too_old">Zahteva API za skripte <xliff:g id="needed">%1$d</xliff:g> ali novejši. Ta SandFly ima <xliff:g id="current">%2$d</xliff:g>, zato nekateri deli morda ne bodo delovali.</string>
     <string name="script_api_untested">Preizkušeno do skriptnega API-ja <xliff:g id="tested">%1$d</xliff:g>. Ta SandFly ima <xliff:g id="current">%2$d</xliff:g>, zato morda ne bo deloval po pričakovanjih.</string>
-    <string name="script_state_incompatible">Morda ne bo delovalo s tem SandFly</string>
+    <string name="script_state_incompatible">Morda ne bo delovalo s to različico SandFly</string>
     <string name="script_api_range">API za skripte <xliff:g id="min">%1$d</xliff:g> do <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Združljivost</string>
-    <string name="script_install_anyway">Vseeno namestite</string>
+    <string name="script_install_anyway">Vseeno namesti</string>
     <string name="script_update_anyway">Vseeno posodobi</string>
     <string name="script_homepage">Odpri domačo stran</string>
     <string name="script_homepage_confirm_title">Odpreti ta naslov?</string>
     <string name="script_homepage_open">Odpri</string>
     <string name="script_homepage_failed">Nobena aplikacija ne more odpreti <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> se je izklopil po ponavljajočih se napakah. Oglejte si njegov dnevnik v Skriptih.</string>
-    <string name="shortcut_inspect_item">Preglejte izbrani predmet</string>
+    <string name="script_turned_off">Skript <xliff:g id="name">%1$s</xliff:g> se je izklopil po ponavljajočih se napakah. Njegov dnevnik je v razdelku Skripte.</string>
+    <string name="shortcut_inspect_item">Preglej element v fokusu</string>
     <string name="script_inspect_no_item">Noben element nima fokusa</string>
     <string name="script_inspect_copied">Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Ni ID-ja, zato ga pravila ne morejo poimenovati. Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Brez ID-ja, zato se pravila nanj ne morejo sklicevati. Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopiraj drevo zaslona</string>
-    <string name="script_tree_copied">Kopiranih <xliff:g id="count">%1$d</xliff:g> elementov</string>
+    <string name="script_tree_copied">Kopirani elementi: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Ni okna za kopiranje</string>
     <string name="script_tree_clip_label">Zaslonsko drevo</string>
-    <string name="summary_copy_screen_tree_menu">Kopirajte vse elemente na zaslonu kot JSON, za pisanje skriptov</string>
-    <string name="script_inspect_clip_label">Podrobnosti artikla</string>
-    <string name="summary_inspect_item_menu">Izgovorite in kopirajte podrobnosti elementa, na katerem ste bili, za pisanje skriptov</string>
-    <string name="script_keys_backtalk_modifier">SandFly modifikator</string>
+    <string name="summary_copy_screen_tree_menu">Kopiranje vseh elementov na zaslonu kot JSON za pisanje skriptov</string>
+    <string name="script_inspect_clip_label">Podrobnosti elementa</string>
+    <string name="summary_inspect_item_menu">Izgovorjava in kopiranje podrobnosti zadnjega izbranega elementa za pisanje skriptov</string>
+    <string name="script_keys_backtalk_modifier">Modifikatorska tipka SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, nato <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Ukazi</string>
-    <string name="script_commands_summary">Poteze in tipke delujočega skripta so pred SandFly. Izklopite enega, če želite obdržati SandFly.</string>
+    <string name="script_commands_summary">Kretnje in tipke zagnanega skripta imajo prednost pred kretnjami in tipkami SandFly. Če želite ohraniti tiste iz SandFly, jih izklopite v skriptu.</string>
     <string name="script_binding_gesture">Kretnja: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Tipke: <xliff:g id="keys">%1$s</xliff:g></string>
-    <string name="script_binding_menu">SandFly meni</string>
+    <string name="script_binding_menu">Meni SandFly</string>
     <string name="script_binding_control">Kontrolniki za branje</string>
     <string name="script_binding_none">Brez</string>
     <string name="script_binding_turn_on">Vklopi</string>
     <string name="script_binding_turn_off">Izklopi</string>
     <string name="script_binding_restore">Obnovi privzete nastavitve</string>
     <string name="script_binding_restored">Privzete nastavitve obnovljene</string>
-    <string name="script_binding_perform">Izvedite potezo ali tipke</string>
-    <string name="script_binding_perform_summary">Določite naslednjo potezo ali pritisnjene tipke z modifikatorjem SandFly</string>
+    <string name="script_binding_perform">Izvedite potezo ali pritisnite tipke</string>
+    <string name="script_binding_perform_summary">Dodelitev naslednje kretnje ali tipk, pritisnjenih z modifikatorsko tipko SandFly</string>
     <string name="script_binding_perform_message">Naredite potezo ali pritisnite tipke.</string>
-    <string name="script_binding_assign_title">Dodelite <xliff:g id="binding">%1$s</xliff:g> na <xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign_title">Dodeliti <xliff:g id="binding">%1$s</xliff:g> ukazu <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Dodeli</string>
-    <string name="script_binding_choose_gesture">Izberite gesto</string>
-    <string name="script_binding_type_keys">Vnesite ključe</string>
+    <string name="script_binding_choose_gesture">Izberi gesto</string>
+    <string name="script_binding_type_keys">Vnesi tipke</string>
     <string name="script_binding_type_keys_summary">Kot sf+shift+n, ali sf+t, s</string>
-    <string name="script_binding_bad_keys">Teh ključev ni mogoče uporabiti. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">Teh tipk ni mogoče uporabiti. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Dodaja:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Viri skriptov</string>
@@ -138,9 +138,9 @@
     <string name="script_source_remove">Odstrani vir</string>
     <string name="script_source_remove_title">Odstraniti <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Skripti, nameščeni iz njega, ostanejo nameščeni.</string>
-    <string name="scripts_auto_update">Samodejno posodobite skripte</string>
-    <string name="scripts_check_updates">Preverite posodobitve</string>
-    <string name="scripts_checking_updates">Iskanje posodobitev ...</string>
+    <string name="scripts_auto_update">Samodejno posodobi skripte</string>
+    <string name="scripts_check_updates">Preveri posodobitve</string>
+    <string name="scripts_checking_updates">Iskanje posodobitev …</string>
     <string name="scripts_updates_category">Posodobitve</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
@@ -149,7 +149,7 @@
         <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> skripti posodobljeni: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> posodobljenih skriptov: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Posodobitve so navedene pod Posodobitve</string>
+    <string name="scripts_updates_to_approve">Posodobitve so navedene v razdelku »Posodobitve«</string>
     <string name="scripts_update_check_failed">Nekaterih virov ni bilo mogoče preveriti</string>
     <string name="scripts_up_to_date">Vsi skripti so posodobljeni</string>
 </resources>

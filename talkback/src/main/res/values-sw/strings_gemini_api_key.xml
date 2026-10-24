@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_gemini_api_key">Gemini Kitufe cha API</string>
-    <string name="summary_pref_gemini_api_key_built_in">Kwa kutumia ufunguo uliojumuishwa kwenye programu hii</string>
-    <string name="gemini_api_key_dialog_message">Pata ufunguo wa API bila malipo kutoka Google AI Studio, kwenye aistudio.google.com/apikey, na ubandike hapa. Ili kuondoa ufunguo wako, futa sehemu na uhifadhi.\n\nPicha na skrini unazozielezea hutumwa kwa Google. Kwenye kiwango cha bure, Google inaweza kuzitumia kuboresha bidhaa zake.</string>
-    <string name="gemini_api_key_hint">Kitufe cha API</string>
+    <string name="title_pref_gemini_api_key">Ufunguo wa API wa Gemini</string>
+    <string name="summary_pref_gemini_api_key_built_in">Inatumia ufunguo uliojumuishwa kwenye programu hii</string>
+    <string name="gemini_api_key_dialog_message">Pata ufunguo wa API bila malipo kutoka Google AI Studio kwenye aistudio.google.com/apikey na uubandike hapa. Ili kuondoa ufunguo, futa sehemu kisha uhifadhi.\n\nPicha na skrini unazoomba zielezwe hutumwa kwa Google. Kwenye kiwango cha bila malipo, Google inaweza kuzitumia kuboresha bidhaa zake.</string>
+    <string name="gemini_api_key_hint">Ufunguo wa API</string>
     <string name="gemini_api_key_save">Hifadhi</string>
     <string name="gemini_api_key_get">Pata ufunguo</string>
-    <string name="title_pref_gemini_model">Gemini mfano</string>
+    <string name="title_pref_gemini_model">Muundo wa Gemini</string>
     <string name="gemini_model_automatic">Otomatiki</string>
     <string name="summary_pref_gemini_model_automatic">Otomatiki: Gemini Flash, kisha Flash-Lite wakati Flash ina shughuli nyingi</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, kisha Flash-Lite inapotumika</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, kisha Flash-Lite ikiwa ina shughuli nyingi</string>
     <string name="gemini_model_loading">Inapata miundo…</string>
-    <string name="gemini_model_list_failed">Haikuweza kupata miundo: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Weka kitufe cha Gemini API kwanza</string>
-    <string name="gemini_api_terms_link">Gemini Sheria na Masharti ya Ziada ya API</string>
+    <string name="gemini_model_list_failed">Imeshindwa kupata miundo: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Weka ufunguo wa Gemini API kwanza</string>
+    <string name="gemini_api_terms_link">Sheria na Masharti ya Ziada ya Gemini API</string>
     <string name="ai_service_address_hint">Anwani, kama vile https://openrouter.ai/api/v1</string>
-    <string name="ai_service_model_hint">Mfano</string>
+    <string name="ai_service_model_hint">Muundo</string>
     <string name="ai_service_address_invalid">Anwani lazima ianze na https://. Hakuna chochote kilichohifadhiwa.</string>
-    <string name="dialog_message_ai_service_consent">Picha na picha za skrini hutumwa kwa <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ili kuelezewa, ambayo huchukua sekunde kadhaa. Masharti na sera yake ya faragha inatumika. AI inayozalisha ni ya majaribio, kwa hivyo itafanya makosa.</string>
-    <string name="ai_service_error_api_key">Huduma ya AI haikukubali ufunguo wa API. Angalia mipangilio yake katika maelezo ya Kiotomatiki.</string>
+    <string name="dialog_message_ai_service_consent">Picha na picha za skrini hutumwa kwa <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ili zielezwe, jambo linalochukua sekunde kadhaa. Masharti na sera ya faragha ya huduma hiyo yenyewe hutumika. AI zalishi ni ya majaribio, kwa hivyo itafanya makosa.</string>
+    <string name="ai_service_error_api_key">Huduma ya AI haikukubali ufunguo wa API. Angalia mipangilio yake katika Maelezo ya kiotomatiki.</string>
     <string name="ai_service_error_quota">Kikomo cha matumizi ya huduma ya AI kimefikiwa. Jaribu tena baadaye.</string>
     <string name="ai_service_error_busy">Huduma ya AI ina shughuli nyingi sasa hivi. Jaribu tena baada ya muda mfupi.</string>
     <string name="ai_service_error_timeout">Huduma ya AI ilichukua muda mrefu sana kujibu. Jaribu tena.</string>
@@ -30,25 +30,25 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Hamna</string>
-    <string name="ai_service_not_set_up">Hakuna huduma ya AI inayotumika. Sanidi moja au chagua moja katika mipangilio ya maelezo ya Kiotomatiki.</string>
+    <string name="ai_service_not_set_up">Hakuna huduma ya AI inayotumika. Sanidi au uchague moja katika mipangilio ya Maelezo ya kiotomatiki.</string>
     <string name="ai_provider_none_set_up">Hakuna huduma ya AI iliyosanidiwa. Sanidi moja katika mipangilio yake hapa chini.</string>
     <string name="ai_provider_other">Huduma nyingine</string>
     <string name="title_pref_category_ai_services">Huduma za AI</string>
     <string name="title_pref_ai_provider">Huduma ya AI</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> mipangilio</string>
+    <string name="title_ai_provider_settings">Mipangilio ya <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, haijasanidiwa</string>
     <string name="ai_provider_in_use">Inatumika</string>
     <string name="ai_provider_not_set_up">Haijawekwa</string>
-    <string name="ai_provider_not_ready">Chagua mfano kwanza</string>
+    <string name="ai_provider_not_ready">Chagua muundo kwanza</string>
     <string name="ai_provider_address">Anwani</string>
-    <string name="ai_provider_address_message">Anwani ya huduma iliyo na API ya gumzo inayooana OpenAI na ingizo la picha, kama vile https://example.com/v1.</string>
+    <string name="ai_provider_address_message">Anwani ya huduma yenye API ya gumzo inayooana na OpenAI na inayokubali picha, kama vile https://example.com/v1.</string>
     <string name="ai_provider_not_set">Haijawekwa</string>
     <string name="ai_provider_set">Imesanidiwa</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> Kitufe cha API</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> mfano</string>
+    <string name="title_pref_gemini_api_key_of">Ufunguo wa API wa <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">Muundo wa <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Haijachaguliwa</string>
-    <string name="ai_provider_key_message">Bandika ufunguo wako wa <xliff:g id="service" example="Claude">%1$s</xliff:g> API. Ili kuiondoa, futa sehemu na uhifadhi. Picha na skrini unazoelezea hutumwa kwa <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
-    <string name="ai_provider_needs_key">Weka kitufe cha <xliff:g id="service" example="Claude">%1$s</xliff:g> API kwanza</string>
+    <string name="ai_provider_key_message">Bandika ufunguo wako wa API wa <xliff:g id="service" example="Claude">%1$s</xliff:g>. Ili kuuondoa, futa sehemu kisha uhifadhi. Picha na skrini unazoomba zielezwe hutumwa kwa <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Weka ufunguo wa API wa <xliff:g id="service" example="Claude">%1$s</xliff:g> kwanza</string>
     <string name="ai_provider_needs_address">Weka anwani kwanza</string>
-    <string name="ai_provider_enter_model">Weka jina la mfano</string>
+    <string name="ai_provider_enter_model">Weka jina la muundo</string>
 </resources>

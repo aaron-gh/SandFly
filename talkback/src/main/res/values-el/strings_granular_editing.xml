@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Κοκκώδης επεξεργασία</string>
+    <string name="granular_editing_title">Επεξεργασία ανά τμήματα</string>
     <string name="granular_editing_split_by">Διαχωρισμός κατά: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Χωρίστε κατά</string>
+    <string name="granular_editing_split_by_title">Διαχωρισμός κατά</string>
     <string name="granular_editing_characters">Χαρακτήρες</string>
     <string name="granular_editing_words">Λέξεις</string>
     <string name="granular_editing_sentences">Προτάσεις</string>
     <string name="granular_editing_lines">Γραμμές</string>
     <string name="granular_editing_paragraphs">Παράγραφοι</string>
-    <string name="granular_editing_space">Πλήκτρο διαστήματος</string>
+    <string name="granular_editing_space">Κενό</string>
     <string name="granular_editing_new_line">Νέα γραμμή</string>
     <string name="granular_editing_tab">Στηλοθέτης</string>
-    <string name="granular_editing_empty">Χωρίς κείμενο. Χρησιμοποιήστε την προσθήκη κειμένου στο τέλος, στο Περισσότερα.</string>
+    <string name="granular_editing_empty">Δεν υπάρχει κείμενο. Χρησιμοποιήστε την επιλογή «Προσθήκη κειμένου στο τέλος» στο «Περισσότερα».</string>
     <string name="granular_editing_edit">Επεξεργασία</string>
-    <string name="granular_editing_insert_before">Εισαγάγετε πριν</string>
+    <string name="granular_editing_insert_before">Εισαγωγή πριν</string>
     <string name="granular_editing_insert_after">Εισαγωγή μετά</string>
     <string name="granular_editing_delete">Διαγραφή</string>
     <string name="granular_editing_select">Επιλογή</string>
@@ -22,22 +22,22 @@
     <string name="granular_editing_save">Αποθήκευση</string>
     <string name="granular_editing_more">Περισσότερα</string>
     <string name="granular_editing_undo">Αναίρεση</string>
-    <string name="granular_editing_redo">Επαναλάβετε την τελευταία αναίρεση επεξεργασίας</string>
+    <string name="granular_editing_redo">Επανάληψη</string>
     <string name="granular_editing_find">Εύρεση</string>
-    <string name="granular_editing_find_next">Βρείτε το επόμενο</string>
-    <string name="granular_editing_replace">Αντικαταστήστε</string>
+    <string name="granular_editing_find_next">Εύρεση επόμενου</string>
+    <string name="granular_editing_replace">Αντικατάσταση</string>
     <string name="granular_editing_replace_with">Αντικατάσταση με</string>
-    <string name="granular_editing_replace_all">Αντικαταστήστε όλα</string>
-    <string name="granular_editing_add_at_end">Προσθέστε κείμενο στο τέλος</string>
+    <string name="granular_editing_replace_all">Αντικατάσταση όλων</string>
+    <string name="granular_editing_add_at_end">Προσθήκη κειμένου στο τέλος</string>
     <string name="granular_editing_clear_selection">Απαλοιφή επιλογής</string>
-    <string name="granular_editing_cut_selected">Κόψτε το επιλεγμένο κείμενο</string>
+    <string name="granular_editing_cut_selected">Αποκοπή επιλεγμένου κειμένου</string>
     <string name="granular_editing_delete_selected">Διαγραφή επιλεγμένων</string>
     <string name="granular_editing_copied">Αντιγράφηκε</string>
     <string name="granular_editing_deleted">Διαγράφηκε</string>
     <string name="granular_editing_not_found">Δεν βρέθηκε</string>
     <plurals name="granular_editing_replaced">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> αντικαταστάθηκε</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> αντικαταστάθηκε</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> αντικαταστάθηκαν</item>
     </plurals>
     <string name="granular_editing_save_changes">Αποθήκευση αλλαγών;</string>
     <string name="granular_editing_copy_changes">Αντιγραφή του αλλαγμένου κειμένου;</string>

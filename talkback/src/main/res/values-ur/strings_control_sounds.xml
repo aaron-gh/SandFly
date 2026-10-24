@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">آوازوں اور کمپن کو کنٹرول کریں۔</string>
-    <string name="summary_pref_control_sounds">فوکس ساؤنڈ اور وائبریشن کی جگہ پر ہر قسم کا کنٹرول دیں، جیسے بٹن، چیک باکسز، فیلڈز اور لسٹ آئٹمز میں ترمیم کریں، اس کی اپنی آواز اور تھیم سے اس کی اپنی وائبریشن، جیسا کہ NVDA کے لیے Unspoken کرتا ہے۔ آواز وہیں سے آتی ہے جہاں سے اسکرین پر کنٹرول ہوتا ہے، اور SandFly یہ کہتے ہوئے نکل جاتا ہے کہ یہ کس قسم کا کنٹرول ہے۔</string>
-    <string name="title_pref_control_sounds_speak_roles">پھر بھی کنٹرول کی قسم کہتے ہیں</string>
-    <string name="summary_pref_control_sounds_speak_roles">جب کوئی کنٹرول آواز چلتی ہے، تب بھی بولیں کہ یہ کس قسم کا کنٹرول ہے، جیسے بٹن۔ یہ ہر صوتی تھیم کے لیے ہے۔</string>
+    <string name="title_pref_control_sounds">کنٹرولز کی آوازیں اور کمپن</string>
+    <string name="summary_pref_control_sounds">بٹن، چیک باکس، ترمیمی فیلڈ اور فہرست آئٹم جیسے ہر قسم کے کنٹرول کو فوکس کی آواز اور وائبریشن کی جگہ تھیم سے اپنی آواز اور وائبریشن ملتی ہے، جیسا کہ Unspoken NVDA کے لیے کرتا ہے۔ آواز اسکرین پر کنٹرول کی جگہ سے آتی ہے، اور SandFly کنٹرول کی قسم نہیں بولتا۔</string>
+    <string name="title_pref_control_sounds_speak_roles">پھر بھی کنٹرول کی قسم بتائیں</string>
+    <string name="summary_pref_control_sounds_speak_roles">کنٹرول کی آواز چلنے پر بھی کنٹرول کی قسم بولی جاتی ہے، جیسے بٹن۔ تمام صوتی تھیمز پر لاگو ہوتا ہے۔</string>
     <string name="title_pref_control_sounds_3d">3D آڈیو</string>
     <string name="pref_control_sounds_3d_headphones">ہیڈ فون کے ساتھ</string>
     <string name="pref_control_sounds_3d_always">ہمیشہ</string>
     <string name="pref_control_sounds_3d_never">کبھی نہیں، صرف بائیں اور دائیں</string>
-    <string name="individual_sound_control_button">آواز کو کنٹرول کریں: بٹن</string>
-    <string name="individual_sound_control_checkbox">آواز کو کنٹرول کریں: چیک باکس</string>
-    <string name="individual_sound_control_radio_button">آواز کو کنٹرول کریں: ریڈیو بٹن</string>
-    <string name="individual_sound_control_edit_text">آواز کو کنٹرول کریں: فیلڈ میں ترمیم کریں۔</string>
-    <string name="individual_sound_control_combo_box">کنٹرول آواز: ڈراپ ڈاؤن فہرست</string>
-    <string name="individual_sound_control_slider">آواز کو کنٹرول کریں: سلائیڈر</string>
-    <string name="individual_sound_control_link">کنٹرول آواز: لنک</string>
-    <string name="individual_sound_control_image">آواز کو کنٹرول کریں: تصویر</string>
-    <string name="individual_sound_control_clock">کنٹرول آواز: گھڑی</string>
-    <string name="individual_sound_control_tab">آواز کو کنٹرول کریں: ٹیب</string>
-    <string name="individual_sound_control_menu_item">کنٹرول آواز: مینو آئٹم</string>
-    <string name="individual_sound_control_list_item">کنٹرول آواز: فہرست آئٹم</string>
-    <string name="individual_sound_control_tree_item">کنٹرول آواز: درخت کی چیز</string>
+    <string name="individual_sound_control_button">کنٹرول کی آواز: بٹن</string>
+    <string name="individual_sound_control_checkbox">کنٹرول کی آواز: چیک باکس</string>
+    <string name="individual_sound_control_radio_button">کنٹرول کی آواز: ریڈیو بٹن</string>
+    <string name="individual_sound_control_edit_text">کنٹرول کی آواز: ترمیمی فیلڈ</string>
+    <string name="individual_sound_control_combo_box">کنٹرول کی آواز: ڈراپ ڈاؤن فہرست</string>
+    <string name="individual_sound_control_slider">کنٹرول کی آواز: سلائیڈر</string>
+    <string name="individual_sound_control_link">کنٹرول کی آواز: لنک</string>
+    <string name="individual_sound_control_image">کنٹرول کی آواز: تصویر</string>
+    <string name="individual_sound_control_clock">کنٹرول کی آواز: گھڑی</string>
+    <string name="individual_sound_control_tab">کنٹرول کی آواز: ٹیب</string>
+    <string name="individual_sound_control_menu_item">کنٹرول کی آواز: مینو آئٹم</string>
+    <string name="individual_sound_control_list_item">کنٹرول کی آواز: فہرست آئٹم</string>
+    <string name="individual_sound_control_tree_item">کنٹرول کی آواز: ٹری آئٹم</string>
 </resources>

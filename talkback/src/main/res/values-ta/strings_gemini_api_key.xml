@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API விசை</string>
-    <string name="summary_pref_gemini_api_key_built_in">இந்த பயன்பாட்டில் உள்ளமைக்கப்பட்ட விசையைப் பயன்படுத்துதல்</string>
-    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey இல் Google AI ஸ்டுடியோவிலிருந்து இலவச API விசையைப் பெற்று, அதை இங்கே ஒட்டவும். உங்கள் விசையை அகற்ற, புலத்தை அழித்து சேமிக்கவும்.\n\nநீங்கள் விவரிக்கும் படங்கள் மற்றும் திரைகள் Googleக்கு அனுப்பப்படும். இலவச அடுக்கில், Google அதன் தயாரிப்புகளை மேம்படுத்த அவற்றைப் பயன்படுத்தலாம்.</string>
+    <string name="summary_pref_gemini_api_key_built_in">இந்த ஆப்ஸில் உள்ளமைந்த விசை பயன்படுத்தப்படுகிறது</string>
+    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey இல் Google AI Studio-விலிருந்து இலவச API விசையைப் பெற்று இங்கே ஒட்டவும். விசையை அகற்ற, புலத்தைக் காலியாக்கிச் சேமிக்கவும்.\n\nவிளக்கம் கேட்கும் படங்களும் திரைகளும் Google-க்கு அனுப்பப்படும். இலவச நிலையில், Google அவற்றைத் தன் தயாரிப்புகளை மேம்படுத்தப் பயன்படுத்தலாம்.</string>
     <string name="gemini_api_key_hint">API விசை</string>
     <string name="gemini_api_key_save">சேமி</string>
-    <string name="gemini_api_key_get">ஒரு சாவியைப் பெறுங்கள்</string>
-    <string name="title_pref_gemini_model">Gemini மாதிரி</string>
+    <string name="gemini_api_key_get">விசையைப் பெறுக</string>
+    <string name="title_pref_gemini_model">Gemini மாடல்</string>
     <string name="gemini_model_automatic">தானியங்கி</string>
-    <string name="summary_pref_gemini_model_automatic">தானியங்கு: Gemini ஃப்ளாஷ், பின்னர் ஃப்ளாஷ் பிஸியாக இருக்கும்போது ஃப்ளாஷ்-லைட்</string>
+    <string name="summary_pref_gemini_model_automatic">தானியங்கு: Gemini Flash, Flash பிஸியாக இருந்தால் Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, பிறகு பிஸியாக இருக்கும்போது Flash-Lite</string>
     <string name="gemini_model_loading">மாடல்களைப் பெறுகிறது…</string>
     <string name="gemini_model_list_failed">மாடல்களைப் பெற முடியவில்லை: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">முதலில் Gemini API விசையை அமைக்கவும்</string>
     <string name="gemini_api_terms_link">Gemini API கூடுதல் சேவை விதிமுறைகள்</string>
-    <string name="ai_service_address_hint">Https://openrouter.ai/api/v1 போன்ற முகவரி</string>
-    <string name="ai_service_model_hint">மாதிரி</string>
-    <string name="ai_service_address_invalid">முகவரி https://. உடன் தொடங்க வேண்டும், எதுவும் சேமிக்கப்படவில்லை.</string>
-    <string name="dialog_message_ai_service_consent">படங்கள் மற்றும் ஸ்கிரீன்ஷாட்கள் <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> க்கு அனுப்பப்பட்டு விவரிக்கப்பட வேண்டும், இதற்கு பல வினாடிகள் ஆகும். அதன் சொந்த விதிமுறைகள் மற்றும் தனியுரிமைக் கொள்கை பொருந்தும். ஜெனரேட்டிவ் AI சோதனையானது, எனவே அது தவறுகளை செய்யும்.</string>
+    <string name="ai_service_address_hint">முகவரி, எடுத்துக்காட்டாக https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">மாடல்</string>
+    <string name="ai_service_address_invalid">முகவரி https:// என்று தொடங்க வேண்டும். எதுவும் சேமிக்கப்படவில்லை.</string>
+    <string name="dialog_message_ai_service_consent">விளக்கத்திற்காகப் படங்களும் ஸ்கிரீன்ஷாட்களும் <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>க்கு அனுப்பப்படும், இதற்குச் சில வினாடிகள் ஆகும். அந்தச் சேவையின் சொந்த விதிமுறைகளும் தனியுரிமைக் கொள்கையும் பொருந்தும். ஜெனரேட்டிவ் AI சோதனை நிலையில் உள்ளதால் தவறுகள் செய்யும்.</string>
     <string name="ai_service_error_api_key">AI சேவை API விசையை ஏற்கவில்லை. தானியங்கி விளக்கங்களில் அதன் அமைப்புகளைச் சரிபார்க்கவும்.</string>
     <string name="ai_service_error_quota">AI சேவையின் பயன்பாட்டு வரம்பை அடைந்துவிட்டது. பிறகு முயற்சிக்கவும்.</string>
     <string name="ai_service_error_busy">AI சேவை தற்போது பிஸியாக உள்ளது. சிறிது நேரத்தில் மீண்டும் முயற்சிக்கவும்.</string>
@@ -39,16 +39,16 @@
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, அமைக்கப்படவில்லை</string>
     <string name="ai_provider_in_use">பயன்பாட்டில் உள்ளது</string>
     <string name="ai_provider_not_set_up">அமைக்கவில்லை</string>
-    <string name="ai_provider_not_ready">முதலில் ஒரு மாதிரியைத் தேர்ந்தெடுக்கவும்</string>
+    <string name="ai_provider_not_ready">முதலில் ஒரு மாடலைத் தேர்ந்தெடுக்கவும்</string>
     <string name="ai_provider_address">முகவரி</string>
-    <string name="ai_provider_address_message">OpenAI-இணக்கமான அரட்டை API மற்றும் https://example.com/v1. போன்ற பட உள்ளீடு கொண்ட சேவையின் முகவரி</string>
+    <string name="ai_provider_address_message">OpenAI-இணக்கமான அரட்டை API மற்றும் பட உள்ளீடு கொண்ட சேவையின் முகவரி, எ.கா. https://example.com/v1.</string>
     <string name="ai_provider_not_set">அமைக்கப்படவில்லை</string>
     <string name="ai_provider_set">கட்டமைக்கப்பட்டது</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API விசை</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> மாதிரி</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> மாடல்</string>
     <string name="ai_provider_choose_model">தேர்ந்தெடுக்கப்படவில்லை</string>
-    <string name="ai_provider_key_message">உங்கள் <xliff:g id="service" example="Claude">%1$s</xliff:g> API விசையை ஒட்டவும். அதை அகற்ற, புலத்தை அழித்து சேமிக்கவும். நீங்கள் விவரிக்கும் படங்கள் மற்றும் திரைகள் <xliff:g id="service" example="Claude">%1$s</xliff:g>க்கு அனுப்பப்படும்.</string>
+    <string name="ai_provider_key_message">உங்கள் <xliff:g id="service" example="Claude">%1$s</xliff:g> API விசையை ஒட்டவும். அதை அகற்ற, புலத்தைக் காலியாக்கிச் சேமிக்கவும். விளக்கம் கேட்கும் படங்களும் திரைகளும் <xliff:g id="service" example="Claude">%1$s</xliff:g>க்கு அனுப்பப்படும்.</string>
     <string name="ai_provider_needs_key">முதலில் <xliff:g id="service" example="Claude">%1$s</xliff:g> API விசையை அமைக்கவும்</string>
     <string name="ai_provider_needs_address">முதலில் முகவரியை அமைக்கவும்</string>
-    <string name="ai_provider_enter_model">மாதிரி பெயரை உள்ளிடவும்</string>
+    <string name="ai_provider_enter_model">மாடல் பெயரை உள்ளிடவும்</string>
 </resources>

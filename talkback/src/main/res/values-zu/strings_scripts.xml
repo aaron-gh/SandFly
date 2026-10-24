@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_scripts">Izikriphthi</string>
+    <string name="title_pref_scripts">Iziskripthi</string>
     <string name="summary_pref_scripts">Shintsha indlela SandFly esebenza ngayo ezinhlelweni zokusebenza</string>
-    <string name="script_import">Ngenisa umbhalo</string>
-    <string name="script_install_label">Faka SandFly iskripthi</string>
-    <string name="script_import_nothing">Alikho ifayela lombhalo elingafakwa.</string>
+    <string name="script_import">Ngenisa iskripthi</string>
+    <string name="script_install_label">Faka iskripthi ye-SandFly</string>
+    <string name="script_import_nothing">Alikho ifayela leskripthi elingafakwa.</string>
     <string name="script_import_cannot_open">Ifayela alikwazanga ukuvulwa.</string>
-    <string name="script_import_repository">Lesi sixhumanisi esiya kuyo yonke inqolobane. Vula iskripthi osifunayo, bese wabelane ngesixhumanisi saso.</string>
-    <string name="script_import_summary">.lua ifayela, noma .zip nge-main.lua</string>
-    <string name="scripts_category_app">Imibhalo yohlelo lokusebenza</string>
-    <string name="scripts_category_global">Ama-plugin omhlaba</string>
-    <string name="scripts_none">Azikho izikripthi ezifakiwe</string>
-    <string name="scripts_all_off">Vala zonke izikripthi</string>
-    <string name="scripts_all_off_summary">Izikripthi zihlala zifakiwe futhi zigcina amaswishi awo. Ukuvula noma ukuvala zonke izikripthi kwenza okufanayo.</string>
-    <string name="shortcut_toggle_scripts">Vula noma uvale zonke izikripthi</string>
-    <string name="scripts_now_off">Izikriphthi zivaliwe</string>
-    <string name="scripts_now_on">Izikripthi zivuliwe</string>
-    <string name="scripts_unavailable">Imibhalo ayitholakali kule divayisi</string>
+    <string name="script_import_repository">Lesi sixhumanisi siya kuyo yonke inqolobane. Vula iskripthi osifunayo, bese wabelana ngesixhumanisi saso.</string>
+    <string name="script_import_summary">Ifayela le-.lua, noma i-.zip ene-main.lua</string>
+    <string name="scripts_category_app">Iziskripthi zohlelo lokusebenza</string>
+    <string name="scripts_category_global">Ama-plugin ajikelele</string>
+    <string name="scripts_none">Azikho iziskripthi ezifakiwe</string>
+    <string name="scripts_all_off">Vala zonke iziskripthi</string>
+    <string name="scripts_all_off_summary">Iziskripthi zihlala zifakiwe futhi zigcina amaswishi azo. Ukunyakaza okuthi “Vula noma uvale zonke iziskripthi” kwenza okufanayo.</string>
+    <string name="shortcut_toggle_scripts">Vula noma uvale zonke iziskripthi</string>
+    <string name="scripts_now_off">Iziskripthi zivaliwe</string>
+    <string name="scripts_now_on">Iziskripthi zivuliwe</string>
+    <string name="scripts_unavailable">Iziskripthi azitholakali kule divayisi</string>
     <string name="script_add_example">Engeza iskripthi esiyisibonelo</string>
-    <string name="script_add_example_summary">Isho igama lohlelo lokusebenza ngalunye oshintshela kulo. Iskripthi esizoqala kuso.</string>
+    <string name="script_add_example_summary">Isho igama lohlelo lokusebenza ngalunye oshintshela kulo. Iskripthi sokuqala.</string>
     <string name="script_state_on">Kuvuliwe</string>
     <string name="script_state_off">Kuvaliwe</string>
-    <string name="script_runs_in">Igijima ku-<xliff:g id="apps">%1$s</xliff:g></string>
+    <string name="script_runs_in">Isebenza ku-<xliff:g id="apps">%1$s</xliff:g></string>
     <string name="script_runs_everywhere">Isebenza kuzo zonke izinhlelo zokusebenza</string>
     <string name="script_version">Inguqulo <xliff:g id="version">%1$s</xliff:g></string>
     <string name="script_author">Ngu <xliff:g id="author">%1$s</xliff:g></string>
@@ -29,27 +29,27 @@
     <string name="script_install_can">Ingakwazi:</string>
     <string name="script_install_no_permissions">Azikho izimvume ezidingekayo.</string>
     <string name="script_install_button">Faka</string>
-    <string name="script_update_title">Buyekeza <xliff:g id="name">%1$s</xliff:g> uye kokuthi <xliff:g id="version">%2$s</xliff:g>?</string>
+    <string name="script_update_title">Buyekeza i-<xliff:g id="name">%1$s</xliff:g> ibe ngu-<xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Izimvume ezintsha:</string>
     <string name="script_update_button">Buyekeza</string>
-    <string name="script_update_replaces">Lokhu kungena esikhundleni senguqulo <xliff:g id="version">%1$s</xliff:g> ngokuthi <xliff:g id="author">%2$s</xliff:g>, futhi igcina idatha yayo nezilungiselelo.</string>
-    <string name="script_update_other_author">Entsha ibhalwe <xliff:g id="author">%1$s</xliff:g>, umbhali ohlukile. Buyekeza kuphela uma uyethemba.</string>
+    <string name="script_update_replaces">Lokhu kuthatha indawo yenguqulo <xliff:g id="version">%1$s</xliff:g> ka-<xliff:g id="author">%2$s</xliff:g>, futhi kugcina idatha nezilungiselelo zayo.</string>
+    <string name="script_update_other_author">Entsha yenziwe ngu-<xliff:g id="author">%1$s</xliff:g>, umbhali ohlukile. Buyekeza kuphela uma uyethemba.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ifakiwe</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> ibuyekezelwe ku-<xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Ukungenisa kwehlulekile. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Vumela kuphela izikripthi ezethembekile.</string>
-    <string name="script_permission_screen">Funda isikrini</string>
-    <string name="script_permission_actions">Chofoza, skrola, thayipha bese uhambisa ukugxila</string>
-    <string name="script_permission_speech">Izwa futhi uguqule inkulumo ka-SandFly</string>
-    <string name="script_permission_passwords">Funda izinkambu zephasiwedi</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Vumela kuphela iziskripthi ezethembekile.</string>
+    <string name="script_permission_screen">Ukufunda isikrini</string>
+    <string name="script_permission_actions">Ukuchofoza, ukuskrola, ukuthayipha nokuhambisa ukugxila</string>
+    <string name="script_permission_speech">Ukwamukela nokushintsha inkulumo ye-SandFly</string>
+    <string name="script_permission_passwords">Ukufunda izinkambu zephasiwedi</string>
     <string name="script_permission_input">Engeza ukuthinta, okhiye, izinto zemenyu nezilawuli zokufunda</string>
-    <string name="script_permission_network">Sebenzisa i-inthanethi</string>
-    <string name="script_permission_clipboard">Funda futhi ushintshe ibhodi lokunamathisela</string>
-    <string name="script_permission_system">Buyela emuva noma ekhaya, vula izaziso nezinhlelo zokusebenza</string>
-    <string name="script_permission_notifications">Funda futhi ushintshe izaziso ezikhulunywayo</string>
-    <string name="script_permission_events">Bona wonke umsebenzi kulo lonke uhlelo lokusebenza, okuhlanganisa nokuthayipha</string>
+    <string name="script_permission_network">Ukusebenzisa i-inthanethi</string>
+    <string name="script_permission_clipboard">Ukufunda nokushintsha ibhodi lokunamathisela</string>
+    <string name="script_permission_system">Ukubuyela emuva noma ekhaya, ukuvula izaziso nezinhlelo zokusebenza</string>
+    <string name="script_permission_notifications">Ukufunda nokushintsha izaziso ezifundwayo</string>
+    <string name="script_permission_events">Ukubona wonke umsebenzi kuzo zonke izinhlelo zokusebenza, kuhlanganise nokuthayipha</string>
     <string name="script_permission_dialogs">Bonisa izingxoxo phezu kwanoma yiluphi uhlelo lokusebenza</string>
-    <string name="script_permission_java">Qalisa ikhodi ye-Java ngakho konke ukufinyelela kwe-SandFly, kulo lonke uhlelo lokusebenza</string>
+    <string name="script_permission_java">Ukuqalisa ikhodi ye-Java ngakho konke ukufinyelela kwe-SandFly, kunoma yiluphi uhlelo lokusebenza</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Vula</string>
     <string name="script_permissions_title">Izimvume</string>
@@ -57,14 +57,14 @@
     <string name="script_settings_category">Amasethingi</string>
     <string name="script_list_filter">Hlunga</string>
     <string name="script_button_off">Vula iskripthi kuqala</string>
-    <string name="script_permissions_summary">Ukucisha okukodwa kumisa izingxenye ezidingayo.</string>
+    <string name="script_permissions_summary">Ukuvala imvume kumisa izingxenye eziyidingayo.</string>
     <string name="script_install_permissions_note">Ungakwazi ukuvala lokhu ngokuhamba kwesikhathi.</string>
-    <string name="script_manage_category">Phatha</string>
-    <string name="script_move_up">Gijimani ngaphambi kwesikhathi</string>
-    <string name="script_move_down">Gijimani kamuva</string>
-    <string name="script_order_summary">Oda izikripthi ezishintsha inkulumo efanayo. Imibhalo yohlelo lokusebenza iqala.</string>
+    <string name="script_manage_category">Ukuphatha</string>
+    <string name="script_move_up">Qalisa ngaphambili</string>
+    <string name="script_move_down">Qalisa kamuva</string>
+    <string name="script_order_summary">Ukuhleleka kweziskripthi ezishintsha inkulumo efanayo. Iziskripthi zohlelo lokusebenza ziqala ukusebenza.</string>
     <string name="script_log">Ilogi</string>
-    <string name="script_log_summary">Okukhiphayo namaphutha kusukela SandFly kuqalile</string>
+    <string name="script_log_summary">Okuphumayo namaphutha kusukela i-SandFly iqale</string>
     <string name="script_clear_storage">Sula idatha egciniwe</string>
     <string name="script_storage_cleared">Idatha egciniwe isuliwe</string>
     <string name="script_remove">Susa</string>
@@ -76,10 +76,10 @@
     <string name="script_log_copy">Kopisha ilogi</string>
     <string name="script_log_copied">Ilogi ikopishiwe</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Idinga i-API yombhalo <xliff:g id="needed">%1$d</xliff:g> noma kamuva. Lokhu SandFly kuno-<xliff:g id="current">%2$d</xliff:g>, ngakho izingxenye zingase zingasebenzi.</string>
-    <string name="script_api_untested">Ihlolwe kuze kufike ku-script API <xliff:g id="tested">%1$d</xliff:g>. Le SandFly ino-<xliff:g id="current">%2$d</xliff:g>, ngakho-ke ingase ingasebenzi njengoba bekulindelekile.</string>
-    <string name="script_state_incompatible">Ngeke isebenze ngalokhu SandFly</string>
-    <string name="script_api_range">I-Script API <xliff:g id="min">%1$d</xliff:g> kuya ku-<xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_too_old">Idinga i-API yeziskripthi <xliff:g id="needed">%1$d</xliff:g> noma entsha. Le SandFly ine-<xliff:g id="current">%2$d</xliff:g>, ngakho ezinye izingxenye zingase zingasebenzi.</string>
+    <string name="script_api_untested">Ihlolwe kuze kufike ku-API yeziskripthi <xliff:g id="tested">%1$d</xliff:g>. Le SandFly ine-<xliff:g id="current">%2$d</xliff:g>, ngakho ingase ingasebenzi njengoba kulindelekile.</string>
+    <string name="script_state_incompatible">Ingase ingasebenzi nale nguqulo ye-SandFly</string>
+    <string name="script_api_range">I-API yeskripthi <xliff:g id="min">%1$d</xliff:g> kuya ku-<xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Ukuhambisana</string>
     <string name="script_install_anyway">Faka noma kunjalo</string>
     <string name="script_update_anyway">Buyekeza noma kunjalo</string>
@@ -87,67 +87,67 @@
     <string name="script_homepage_confirm_title">Vula leli kheli?</string>
     <string name="script_homepage_open">Vula</string>
     <string name="script_homepage_failed">Alukho uhlelo lokusebenza olungavula <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ivaliwe ngemva kwamaphutha aphindaphindiwe. Bona ukungena kwayo ku-Scripts.</string>
+    <string name="script_turned_off">I-<xliff:g id="name">%1$s</xliff:g> ivaliwe ngemva kwamaphutha aphindaphindiwe. Bona ilogu yayo ku-Iziskripthi.</string>
     <string name="shortcut_inspect_item">Hlola into okugxilwe kuyo</string>
-    <string name="script_inspect_no_item">Ayikho into egxilile</string>
+    <string name="script_inspect_no_item">Ayikho into enokugxila</string>
     <string name="script_inspect_copied">Kukopishiwe. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Ayikho i-id, ngakho-ke imithetho ayikwazi ukuyiqamba. Kukopishiwe. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Ayikho i-id, ngakho imithetho ayikwazi ukuyikhomba. Kukopishiwe. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopisha isihlahla sesikrini</string>
     <string name="script_tree_copied">Kukopishwe izinto ezingu-<xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Alikho iwindi lokukopishwa</string>
     <string name="script_tree_clip_label">Isihlahla sesikrini</string>
-    <string name="summary_copy_screen_tree_menu">Kopisha zonke izinto ezisesikrinini njengo-JSON, ukuze ubhale izikripthi</string>
+    <string name="summary_copy_screen_tree_menu">Ukukopisha zonke izinto ezisesikrinini njenge-JSON, ukuze kubhalwe iziskripthi</string>
     <string name="script_inspect_clip_label">Imininingwane yento</string>
-    <string name="summary_inspect_item_menu">Isho futhi ukopishe imininingwane yento obukuyo, ukuze ubhale imibhalo</string>
-    <string name="script_keys_backtalk_modifier">SandFly isilungisi</string>
+    <string name="summary_inspect_item_menu">Ukusho nokukopisha imininingwane yento ebigxilwe ekugcineni, ukuze kubhalwe iziskripthi</string>
+    <string name="script_keys_backtalk_modifier">Ukhiye wokushintsha we-SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, bese <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Imiyalo</string>
-    <string name="script_commands_summary">Ukuthinta nokhiye bombhalo osebenzayo kuza ngaphambi kuka-SandFly\'s. Vala okukodwa ukuze ugcine SandFly\'s.</string>
+    <string name="script_commands_summary">Ukunyakaza nokhiye beskripthi esisebenzayo kuza ngaphambi kwalokho kwe-SandFly. Vala okweskripthi ukuze ugcine okwe-SandFly.</string>
     <string name="script_binding_gesture">Ukuthinta: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Okhiye: <xliff:g id="keys">%1$s</xliff:g></string>
-    <string name="script_binding_menu">SandFly imenyu</string>
+    <string name="script_binding_menu">Imenyu ye-SandFly</string>
     <string name="script_binding_control">Izilawuli zokufunda</string>
     <string name="script_binding_none">Lutho</string>
     <string name="script_binding_turn_on">Vula</string>
     <string name="script_binding_turn_off">Vala</string>
     <string name="script_binding_restore">Buyisela okuzenzakalelayo</string>
     <string name="script_binding_restored">Okuzenzakalelayo kubuyiselwe</string>
-    <string name="script_binding_perform">Yenza ukuthinta noma okhiye</string>
-    <string name="script_binding_perform_summary">Nikeza ukuthinta okulandelayo, noma okhiye abacindezelwe ngesilungisi SandFly</string>
+    <string name="script_binding_perform">Yenza ukuthinta noma cindezela okhiye</string>
+    <string name="script_binding_perform_summary">Ukunikeza ukunyakaza okulandelayo, noma okhiye abacindezelwe nokhiye wokushintsha we-SandFly</string>
     <string name="script_binding_perform_message">Yenza ukuthinta noma cindezela izinkinobho.</string>
-    <string name="script_binding_assign_title">Yabela <xliff:g id="binding">%1$s</xliff:g> ku-<xliff:g id="command">%2$s</xliff:g>?</string>
+    <string name="script_binding_assign_title">Nikeza u-<xliff:g id="binding">%1$s</xliff:g> ku-<xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Yabela</string>
     <string name="script_binding_choose_gesture">Khetha ukuthinta</string>
     <string name="script_binding_type_keys">Thayipha okhiye</string>
-    <string name="script_binding_type_keys_summary">Thanda sf+shift+n, noma sf+t, s</string>
-    <string name="script_binding_bad_keys">Ayikwazi ukusebenzisa lezi zikhiye. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_type_keys_summary">Njenge-sf+shift+n noma sf+t, s</string>
+    <string name="script_binding_bad_keys">Lezi zinkinobho azikwazi ukusetshenziswa. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Iyanezela:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
-    <string name="script_sources">Imithombo yombhalo</string>
+    <string name="script_sources">Imithombo yeziskripthi</string>
     <string name="script_sources_none">Ayikho imithombo eyengeziwe</string>
     <string name="script_source_add">Engeza umthombo</string>
     <string name="script_source_add_button">Engeza</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">Akulona ikheli lekhosombe ku-GitHub, GitLab, Codeberg, Gitea noma i-Bitbucket.</string>
+    <string name="script_source_invalid">Akulona ikheli lenqolobane ku-GitHub, GitLab, Codeberg, Gitea noma Bitbucket.</string>
     <string name="script_source_exists">Lo mthombo usuvele ungeziwe.</string>
     <string name="script_source_loading">Iyalayisha</string>
-    <string name="script_source_empty">Azikho izikripthi kulo mthombo</string>
-    <string name="script_source_failed">Ayikwazanga ukulayisha izikripthi. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_empty">Azikho iziskripthi kulo mthombo</string>
+    <string name="script_source_failed">Ayikwazanga ukulayisha iziskripthi. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">Zama futhi</string>
     <string name="script_source_downloading">Iyalanda <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">Susa umthombo</string>
     <string name="script_source_remove_title">Susa <xliff:g id="name">%1$s</xliff:g>?</string>
-    <string name="script_source_remove_message">Imibhalo efakwe kuyo ihlala ifakiwe.</string>
-    <string name="scripts_auto_update">Buyekeza imibhalo ngokuzenzakalelayo</string>
+    <string name="script_source_remove_message">Iziskripthi ezifakwe kuwo zihlala zifakiwe.</string>
+    <string name="scripts_auto_update">Buyekeza iziskripthi ngokuzenzakalelayo</string>
     <string name="scripts_check_updates">Hlola izibuyekezo</string>
-    <string name="scripts_checking_updates">Ihlolela izibuyekezo...</string>
+    <string name="scripts_checking_updates">Kuhlolwa izibuyekezo…</string>
     <string name="scripts_updates_category">Izibuyekezo</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> iskripthi sibuyekeziwe: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
-        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> izikripthi ezibuyekeziwe: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> iziskripthi ezibuyekeziwe: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Izibuyekezo zibhalwe ngaphansi kokuthi Izibuyekezo</string>
+    <string name="scripts_updates_to_approve">Izibuyekezo zibhalwe ngaphansi kokuthi “Izibuyekezo”</string>
     <string name="scripts_update_check_failed">Eminye imithombo ayikwazanga ukubhekwa</string>
-    <string name="scripts_up_to_date">Zonke izikripthi zisesikhathini samanje</string>
+    <string name="scripts_up_to_date">Zonke iziskripthi zisesikhathini samanje</string>
 </resources>

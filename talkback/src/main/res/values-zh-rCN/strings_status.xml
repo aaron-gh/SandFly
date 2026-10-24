@@ -20,7 +20,7 @@
     <!-- Status readout: there is no mobile service. [CHAR LIMIT=NONE] -->
     <string name="status_mobile_no_service" tools:ignore="MissingTranslation">无移动服务</string>
     <!-- Status readout: Do Not Disturb is on. [CHAR LIMIT=NONE] -->
-    <string name="status_do_not_disturb" tools:ignore="MissingTranslation">免打扰</string>
+    <string name="status_do_not_disturb">勿扰模式</string>
     <!-- Status readout: the ringer is set to vibrate. [CHAR LIMIT=NONE] -->
     <string name="status_ringer_vibrate" tools:ignore="MissingTranslation">振动</string>
     <!-- Status readout: the ringer is silent. [CHAR LIMIT=NONE] -->
@@ -29,14 +29,14 @@
     <string name="status_airplane_mode" tools:ignore="MissingTranslation">飞行模式</string>
 
     <!-- Title of the settings screen that chooses what the status gesture speaks. [CHAR LIMIT=40] -->
-    <string name="title_pref_status_readout" tools:ignore="MissingTranslation">状态读出</string>
+    <string name="title_pref_status_readout">状态朗读</string>
 
     <!-- Status readout settings: title of the time item. [CHAR LIMIT=40] -->
     <string name="status_item_time" tools:ignore="MissingTranslation">时间</string>
     <!-- Status readout settings: summary of the time item. [CHAR LIMIT=NONE] -->
     <string name="status_item_time_summary" tools:ignore="MissingTranslation">当前时间</string>
     <!-- Status readout settings: title of the battery item. [CHAR LIMIT=40] -->
-    <string name="status_item_battery" tools:ignore="MissingTranslation">电量</string>
+    <string name="status_item_battery">电池</string>
     <!-- Status readout settings: summary of the battery item. [CHAR LIMIT=NONE] -->
     <string name="status_item_battery_summary" tools:ignore="MissingTranslation">电量、充电状态和省电模式</string>
     <!-- Status readout settings: title of the Wi-Fi item. [CHAR LIMIT=40] -->

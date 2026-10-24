@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API түлхүүр</string>
-    <string name="summary_pref_gemini_api_key_built_in">Энэ програмд суулгасан түлхүүрийг ашиглана уу</string>
-    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey дээрээс Google AI Studio-с үнэгүй API түлхүүр авч, энд буулгана уу. Түлхүүрээ арилгахын тулд талбарыг арилгаж хадгална уу.\n\nТаны тодорхойлсон зураг, дэлгэцийг Google руу илгээнэ. Үнэгүй давхарга дээр Google бүтээгдэхүүнээ сайжруулахын тулд тэдгээрийг ашиглах боломжтой.</string>
+    <string name="summary_pref_gemini_api_key_built_in">Энэ аппд суулгасан түлхүүрийг ашиглаж байна</string>
+    <string name="gemini_api_key_dialog_message">Google AI Studio-оос aistudio.google.com/apikey хаягаар үнэгүй API түлхүүр аваад энд буулгана уу. Түлхүүрийг устгахын тулд талбарыг хоосолж хадгална уу.\n\nТайлбар хүссэн зураг, дэлгэцийг Google руу илгээнэ. Үнэгүй багцад Google тэдгээрийг өөрийн бүтээгдэхүүнийг сайжруулахад ашиглаж болно.</string>
     <string name="gemini_api_key_hint">API түлхүүр</string>
     <string name="gemini_api_key_save">Хадгалах</string>
-    <string name="gemini_api_key_get">Түлхүүр аваарай</string>
-    <string name="title_pref_gemini_model">Gemini model</string>
+    <string name="gemini_api_key_get">Түлхүүр авах</string>
+    <string name="title_pref_gemini_model">Gemini загвар</string>
     <string name="gemini_model_automatic">Автомат</string>
     <string name="summary_pref_gemini_model_automatic">Автомат: Gemini Flash, дараа нь Flash завгүй үед Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, дараа нь завгүй үед Flash-Lite</string>
@@ -16,12 +16,12 @@
     <string name="gemini_api_terms_link">Gemini API-н нэмэлт үйлчилгээний нөхцөл</string>
     <string name="ai_service_address_hint">Хаягийн жишээ: https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Загвар</string>
-    <string name="ai_service_address_invalid">Хаяг нь https://. гэж эхлэх ёстой Юу ч хадгалагдаагүй.</string>
-    <string name="dialog_message_ai_service_consent">Зураг болон дэлгэцийн агшинг дүрслэхийн тулд <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> руу илгээдэг бөгөөд үүнд хэдэн секунд зарцуулдаг. Өөрийн нөхцөл, нууцлалын бодлогыг хэрэгжүүлнэ. Generative AI нь туршилтын шинж чанартай тул алдаа гаргах болно.</string>
-    <string name="ai_service_error_api_key">AI үйлчилгээ API түлхүүрийг хүлээн аваагүй. Түүний тохиргоог Автомат тайлбараас шалгана уу.</string>
-    <string name="ai_service_error_quota">AI үйлчилгээний ашиглалтын хязгаарт хүрсэн байна. Try again later.</string>
-    <string name="ai_service_error_busy">AI үйлчилгээ яг одоо завгүй байна. Try again in a moment.</string>
-    <string name="ai_service_error_timeout">AI үйлчилгээ хариулахад хэтэрхий удсан. Дахин оролдоно уу.</string>
+    <string name="ai_service_address_invalid">Хаяг https://-ээр эхлэх ёстой. Юу ч хадгалагдаагүй.</string>
+    <string name="dialog_message_ai_service_consent">Зураг болон дэлгэцийн агшныг тайлбарлуулахаар <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> руу илгээдэг бөгөөд хэдэн секунд зарцуулна. Тухайн үйлчилгээний өөрийн нөхцөл, нууцлалын бодлого үйлчилнэ. Үүсгэгч хиймэл оюун туршилтын шатанд байгаа тул алдаа гаргана.</string>
+    <string name="ai_service_error_api_key">Хиймэл оюуны үйлчилгээ API түлхүүрийг хүлээн аваагүй. Тохиргоог нь «Автомат тайлбарууд» хэсгээс шалгана уу.</string>
+    <string name="ai_service_error_quota">Хиймэл оюуны үйлчилгээний ашиглалтын хязгаарт хүрсэн байна. Дараа дахин оролдоно уу.</string>
+    <string name="ai_service_error_busy">Хиймэл оюуны үйлчилгээ одоо ачаалалтай байна. Хэсэг хугацааны дараа дахин оролдоно уу.</string>
+    <string name="ai_service_error_timeout">Хиймэл оюуны үйлчилгээ хариулахад хэт удсан. Дахин оролдоно уу.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -29,25 +29,25 @@
     <string name="ai_provider_groq">Groq</string>
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
-    <string name="ai_provider_none">Хоосон</string>
-    <string name="ai_service_not_set_up">No AI service is in use. Нэгийг нь тохируулах эсвэл Автомат тайлбарын тохиргооноос нэгийг нь сонгоно уу.</string>
-    <string name="ai_provider_none_set_up">No AI service is set up. Доорх тохиргоондоо нэгийг нь тохируулна уу.</string>
-    <string name="ai_provider_other">Other service</string>
+    <string name="ai_provider_none">Байхгүй</string>
+    <string name="ai_service_not_set_up">Хиймэл оюуны үйлчилгээ ашиглагдаагүй байна. «Автомат тайлбарууд» тохиргооноос аль нэгийг тохируулах эсвэл сонгоно уу.</string>
+    <string name="ai_provider_none_set_up">Хиймэл оюуны үйлчилгээ тохируулаагүй байна. Доорх тохиргооноос аль нэгийг нь тохируулна уу.</string>
+    <string name="ai_provider_other">Бусад үйлчилгээ</string>
     <string name="title_pref_category_ai_services">AI үйлчилгээ</string>
     <string name="title_pref_ai_provider">AI үйлчилгээ</string>
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> тохиргоо</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g> үйлчилгээг тохируулаагүй байна</string>
     <string name="ai_provider_in_use">Ашиглаж байна</string>
     <string name="ai_provider_not_set_up">Тохируулаагүй байна</string>
-    <string name="ai_provider_not_ready">Эхлээд загвараа сонго</string>
+    <string name="ai_provider_not_ready">Эхлээд загвар сонгоно уу</string>
     <string name="ai_provider_address">Хаяг</string>
-    <string name="ai_provider_address_message">Https://example.com/v1. гэх мэт OpenAI-тай нийцтэй чатын API болон дүрс оруулах үйлчилгээний хаяг</string>
+    <string name="ai_provider_address_message">OpenAI-тай нийцтэй чатын API болон зураг оруулах боломжтой үйлчилгээний хаяг, жишээ нь https://example.com/v1.</string>
     <string name="ai_provider_not_set">Тохируулаагүй</string>
     <string name="ai_provider_set">Тохируулсан</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API түлхүүр</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> model</string>
-    <string name="ai_provider_choose_model">Not chosen</string>
-    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API түлхүүрээ буулгана уу. Үүнийг арилгахын тулд талбарыг арилгаж хадгална уу. Таны тодорхойлсон зураг, дэлгэцийг <xliff:g id="service" example="Claude">%1$s</xliff:g> руу илгээнэ.</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> загвар</string>
+    <string name="ai_provider_choose_model">Сонгоогүй</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API түлхүүрээ буулгана уу. Устгахын тулд талбарыг хоосолж хадгална уу. Тайлбар хүссэн зураг, дэлгэцийг <xliff:g id="service" example="Claude">%1$s</xliff:g> руу илгээнэ.</string>
     <string name="ai_provider_needs_key">Эхлээд <xliff:g id="service" example="Claude">%1$s</xliff:g> API түлхүүрийг тохируулна уу</string>
     <string name="ai_provider_needs_address">Эхлээд хаягаа тохируулна уу</string>
     <string name="ai_provider_enter_model">Загварын нэр оруулна уу</string>

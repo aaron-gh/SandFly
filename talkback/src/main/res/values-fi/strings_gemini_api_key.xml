@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_gemini_api_key">Gemini API ‑avain</string>
+    <string name="title_pref_gemini_api_key">Gemini-API-avain</string>
     <string name="summary_pref_gemini_api_key_built_in">Käytetään sovellukseen sisäänrakennettua avainta</string>
     <string name="gemini_api_key_dialog_message">Hanki ilmainen API-avain Google AI Studiosta osoitteesta aistudio.google.com/apikey ja liitä se tähän. Voit poistaa avaimen tyhjentämällä kentän ja tallentamalla.\n\nKuvailemasi kuvat ja näytöt lähetetään Googlelle. Ilmaisella tasolla Google voi käyttää niitä tuotteidensa parantamiseen.</string>
     <string name="gemini_api_key_hint">API-avain</string>
     <string name="gemini_api_key_save">Tallenna</string>
     <string name="gemini_api_key_get">Hanki avain</string>
     <string name="gemini_api_terms_link">Gemini API:n lisäkäyttöehdot</string>
-    <string name="title_pref_gemini_model">Gemini malli</string>
+    <string name="title_pref_gemini_model">Gemini-malli</string>
     <string name="gemini_model_automatic">Automaattinen</string>
     <string name="summary_pref_gemini_model_automatic">Automaattinen: Gemini Flash, sitten Flash-Lite, kun Flash on varattu</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, sitten Flash-Lite, kun se on varattu</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, sitten Flash-Lite, kun se on ruuhkautunut</string>
     <string name="gemini_model_loading">Malleja haetaan…</string>
     <string name="gemini_model_list_failed">Ei saatu malleja: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Aseta ensin Gemini API-avain</string>
     <string name="ai_service_address_hint">Osoite, kuten https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Malli</string>
     <string name="ai_service_address_invalid">Osoitteen tulee alkaa https://. Mitään ei tallennettu.</string>
-    <string name="dialog_message_ai_service_consent">Kuvat ja kuvakaappaukset lähetetään numeroon <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> kuvattavaksi, mikä kestää useita sekunteja. Sen omat ehdot ja tietosuojakäytäntö ovat voimassa. Generatiivinen tekoäly on kokeellinen, joten se tekee virheitä.</string>
+    <string name="dialog_message_ai_service_consent">Kuvat ja kuvakaappaukset lähetetään kuvattaviksi palveluun <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, mikä kestää useita sekunteja. Palvelun omat ehdot ja tietosuojakäytäntö ovat voimassa. Generatiivinen tekoäly on kokeellinen, joten se tekee virheitä.</string>
     <string name="ai_service_error_api_key">Tekoälypalvelu ei hyväksynyt API-avainta. Tarkista sen asetukset automaattisista kuvauksista.</string>
     <string name="ai_service_error_quota">Tekoälypalvelun käyttöraja on saavutettu. Yritä myöhemmin uudelleen.</string>
     <string name="ai_service_error_busy">Tekoälypalvelu on tällä hetkellä kiireinen. Yritä hetken kuluttua uudelleen.</string>
@@ -35,7 +35,7 @@
     <string name="ai_provider_other">Muu palvelu</string>
     <string name="title_pref_category_ai_services">AI-palvelut</string>
     <string name="title_pref_ai_provider">Tekoälypalvelu</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> asetukset</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g>-asetukset</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ei määritetty</string>
     <string name="ai_provider_in_use">Käytössä</string>
     <string name="ai_provider_not_set_up">Ei asetettu</string>
@@ -45,9 +45,9 @@
     <string name="ai_provider_not_set">Ei asetettu</string>
     <string name="ai_provider_set">Määritetty</string>
     <string name="title_pref_gemini_api_key_of">Palvelun <xliff:g id="service" example="Claude">%1$s</xliff:g> API-avain</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> malli</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>-malli</string>
     <string name="ai_provider_choose_model">Ei valittu</string>
-    <string name="ai_provider_key_message">Liitä palvelun <xliff:g id="service" example="Claude">%1$s</xliff:g> API-avain. Poista se tyhjentämällä kenttä ja tallentamalla. Kuvailemasi kuvat ja näytöt lähetetään palveluun <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Liitä palvelun <xliff:g id="service" example="Claude">%1$s</xliff:g> API-avain. Poista se tyhjentämällä kenttä ja tallentamalla. Kuvat ja näytöt, joista pyydät kuvauksen, lähetetään palveluun <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Aseta ensin <xliff:g id="service" example="Claude">%1$s</xliff:g> API-avain</string>
     <string name="ai_provider_needs_address">Aseta ensin osoite</string>
     <string name="ai_provider_enter_model">Anna mallin nimi</string>

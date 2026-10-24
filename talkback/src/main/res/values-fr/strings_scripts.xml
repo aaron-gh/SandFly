@@ -59,7 +59,7 @@
     <string name="script_button_off">Activez d\'abord le script</string>
     <string name="script_permissions_summary">Désactiver une autorisation arrête les fonctions qui en ont besoin.</string>
     <string name="script_install_permissions_note">Vous pourrez les désactiver plus tard.</string>
-    <string name="script_manage_category">Gérer</string>
+    <string name="script_manage_category">Gestion</string>
     <string name="script_move_up">Exécuter plus tôt</string>
     <string name="script_move_down">Exécuter plus tard</string>
     <string name="script_order_summary">Ordre des scripts qui modifient le même énoncé. Les scripts d\'application s\'exécutent en premier.</string>
@@ -89,7 +89,7 @@
     <string name="script_homepage_failed">Aucune application ne peut ouvrir <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> désactivé après des erreurs répétées. Consultez son journal dans Scripts.</string>
     <string name="shortcut_inspect_item">Inspecter l\'élément sélectionné</string>
-    <string name="script_inspect_no_item">Aucun élément sélectionné</string>
+    <string name="script_inspect_no_item">Aucun élément n\'a le focus</string>
     <string name="script_inspect_copied">Copié. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Aucun ID, les règles ne peuvent donc pas le désigner. Copié. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Copier l\'arborescence de l\'écran</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_turn_off">Désactiver</string>
     <string name="script_binding_restore">Rétablir les valeurs par défaut</string>
     <string name="script_binding_restored">Valeurs par défaut rétablies</string>
-    <string name="script_binding_perform">Effectuer un geste ou des touches</string>
+    <string name="script_binding_perform">Effectuez le geste ou appuyez sur les touches</string>
     <string name="script_binding_perform_summary">Attribuer le geste suivant, ou les touches appuyées avec la touche de modification SandFly</string>
     <string name="script_binding_perform_message">Effectuez le geste ou appuyez sur les touches.</string>
     <string name="script_binding_assign_title">Attribuer <xliff:g id="binding">%1$s</xliff:g> à <xliff:g id="command">%2$s</xliff:g> ?</string>
@@ -148,7 +148,7 @@
         <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> scripts mis à jour : <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> scripts mis à jour : <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Les mises à jour sont répertoriées sous Mises à jour</string>
+    <string name="scripts_updates_to_approve">Les mises à jour sont répertoriées sous « Mises à jour »</string>
     <string name="scripts_update_check_failed">Certaines sources n\'ont pas pu être vérifiées</string>
     <string name="scripts_up_to_date">Tous les scripts sont à jour</string>
 </resources>

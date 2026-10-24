@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">आवाज आणि कंपन नियंत्रित करा</string>
-    <string name="summary_pref_control_sounds">प्रत्येक प्रकारचे नियंत्रण द्या, जसे की बटणे, चेकबॉक्सेस, फील्ड संपादित करा आणि सूची आयटम, त्याचा स्वतःचा आवाज आणि थीममधील स्वतःचे कंपन, फोकस ध्वनी आणि कंपनाच्या जागी, जसे अनस्पोकन NVDA साठी करते. स्क्रीनवर नियंत्रण आहे तिथून आवाज येतो आणि SandFly ते कोणत्या प्रकारचे नियंत्रण आहे हे सांगून निघून जातो.</string>
-    <string name="title_pref_control_sounds_speak_roles">तरीही नियंत्रणाचा प्रकार म्हणा</string>
-    <string name="summary_pref_control_sounds_speak_roles">जेव्हा कंट्रोल ध्वनी वाजतो, तरीही ते कोणत्या प्रकारचे नियंत्रण आहे ते म्हणा, जसे की बटण. हे प्रत्येक ध्वनी थीमसाठी आहे.</string>
+    <string name="title_pref_control_sounds">नियंत्रणांचे आवाज आणि कंपने</string>
+    <string name="summary_pref_control_sounds">बटणे, चेकबॉक्स, संपादन फील्ड आणि सूची आयटम यांसारख्या प्रत्येक प्रकारच्या नियंत्रणाला फोकसच्या आवाज आणि कंपनाऐवजी थीममधील स्वतःचा आवाज आणि कंपन मिळते, जसे Unspoken NVDA साठी करते. आवाज स्क्रीनवर नियंत्रण जिथे आहे तिथून येतो आणि SandFly नियंत्रणाचा प्रकार सांगत नाही.</string>
+    <string name="title_pref_control_sounds_speak_roles">तरीही नियंत्रणाचा प्रकार सांगा</string>
+    <string name="summary_pref_control_sounds_speak_roles">नियंत्रणाचा आवाज वाजल्यावरही नियंत्रणाचा प्रकार सांगते, जसे की बटण. सर्व ध्वनी थीमना लागू.</string>
     <string name="title_pref_control_sounds_3d">3D ऑडिओ</string>
     <string name="pref_control_sounds_3d_headphones">हेडफोनसह</string>
     <string name="pref_control_sounds_3d_always">नेहमी</string>
     <string name="pref_control_sounds_3d_never">कधीही नाही, फक्त डावीकडे आणि उजवीकडे</string>
-    <string name="individual_sound_control_button">आवाज नियंत्रित करा: बटण</string>
-    <string name="individual_sound_control_checkbox">आवाज नियंत्रित करा: चेकबॉक्स</string>
-    <string name="individual_sound_control_radio_button">आवाज नियंत्रित करा: रेडिओ बटण</string>
-    <string name="individual_sound_control_edit_text">आवाज नियंत्रित करा: फील्ड संपादित करा</string>
-    <string name="individual_sound_control_combo_box">आवाज नियंत्रित करा: ड्रॉप-डाउन सूची</string>
-    <string name="individual_sound_control_slider">आवाज नियंत्रित करा: स्लाइडर</string>
-    <string name="individual_sound_control_link">आवाज नियंत्रित करा: दुवा</string>
-    <string name="individual_sound_control_image">आवाज नियंत्रित करा: प्रतिमा</string>
-    <string name="individual_sound_control_clock">आवाज नियंत्रित करा: घड्याळ</string>
-    <string name="individual_sound_control_tab">आवाज नियंत्रित करा: टॅब</string>
-    <string name="individual_sound_control_menu_item">आवाज नियंत्रित करा: मेनू आयटम</string>
-    <string name="individual_sound_control_list_item">आवाज नियंत्रित करा: सूची आयटम</string>
-    <string name="individual_sound_control_tree_item">आवाज नियंत्रित करा: झाडाची वस्तू</string>
+    <string name="individual_sound_control_button">नियंत्रणाचा आवाज: बटण</string>
+    <string name="individual_sound_control_checkbox">नियंत्रणाचा आवाज: चेकबॉक्स</string>
+    <string name="individual_sound_control_radio_button">नियंत्रणाचा आवाज: रेडिओ बटण</string>
+    <string name="individual_sound_control_edit_text">नियंत्रणाचा आवाज: संपादन फील्ड</string>
+    <string name="individual_sound_control_combo_box">नियंत्रणाचा आवाज: ड्रॉप-डाउन सूची</string>
+    <string name="individual_sound_control_slider">नियंत्रणाचा आवाज: स्लाइडर</string>
+    <string name="individual_sound_control_link">नियंत्रणाचा आवाज: दुवा</string>
+    <string name="individual_sound_control_image">नियंत्रणाचा आवाज: प्रतिमा</string>
+    <string name="individual_sound_control_clock">नियंत्रणाचा आवाज: घड्याळ</string>
+    <string name="individual_sound_control_tab">नियंत्रणाचा आवाज: टॅब</string>
+    <string name="individual_sound_control_menu_item">नियंत्रणाचा आवाज: मेनू आयटम</string>
+    <string name="individual_sound_control_list_item">नियंत्रणाचा आवाज: सूची आयटम</string>
+    <string name="individual_sound_control_tree_item">नियंत्रणाचा आवाज: ट्री आयटम</string>
 </resources>

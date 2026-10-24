@@ -3,19 +3,19 @@
     <string name="notification_shake_3">Күшті</string>
     <string name="notification_shake_2">Орташа</string>
     <string name="notification_shake_1">Жұмсақ</string>
-    <string name="notification_media_skip">Дауыстап оқымаңыз</string>
-    <string name="notification_media_pause">Оқу кезінде медианы кідіртіңіз</string>
-    <string name="notification_media_read">Дауыстап оқы</string>
+    <string name="notification_media_skip">Оқымау</string>
+    <string name="notification_media_pause">Оқу кезінде медианы кідірту</string>
+    <string name="notification_media_read">Оқу</string>
     <string name="notification_headphones_only_without">Тек құлаққапсыз</string>
     <string name="notification_headphones_only_with">Тек құлаққаппен</string>
-    <string name="notification_headphones_always">Құлаққаппен немесе құлаққапсыз дауыстап оқыңыз</string>
-    <string name="notification_queue_skip">Жаңа хабарландыруды дауыстап оқымаңыз</string>
-    <string name="notification_queue_interrupt">Дауыстап оқылатын хабарландыруды үзіңіз</string>
-    <string name="notification_queue_queue">Ағымдағы хабарландырудан кейін дауыстап оқыңыз</string>
-    <string name="notification_url_omit">Шығу</string>
-    <string name="notification_url_replace">Төмендегі мәтінді айтыңыз</string>
-    <string name="notification_url_domain">Тек сайтты оқыңыз</string>
-    <string name="notification_url_full">Толық сілтемені оқыңыз</string>
+    <string name="notification_headphones_always">Құлақаспаппен немесе онсыз оқу</string>
+    <string name="notification_queue_skip">Жаңасын оқымау</string>
+    <string name="notification_queue_interrupt">Үзу</string>
+    <string name="notification_queue_queue">Одан кейін оқу</string>
+    <string name="notification_url_omit">Өткізіп жіберу</string>
+    <string name="notification_url_replace">Төмендегі мәтінді айту</string>
+    <string name="notification_url_domain">Тек сайтты оқу</string>
+    <string name="notification_url_full">Толық сілтемені оқу</string>
     <string name="notification_category_title">Хабарландырулар</string>
     <string name="notification_reading_title">Хабарландыруларды дауыстап оқу</string>
     <string name="notification_apps_title">Қолданбалар</string>
@@ -23,47 +23,47 @@
     <string name="notification_kinds_title">Хабарландыру түрлері</string>
     <string name="notification_when_title">Қашан оқу керек</string>
     <string name="notification_rules_title">Ережелер</string>
-    <string name="notification_repeats_title">Қайталанады</string>
-    <string name="notification_stop_title">Оқуды тоқтатыңыз</string>
-    <string name="notification_schedules_title">Қорытынды және уақыт</string>
+    <string name="notification_repeats_title">Қайталаулар</string>
+    <string name="notification_stop_title">Оқуды тоқтату</string>
+    <string name="notification_schedules_title">Жиынтық және уақыт</string>
     <string name="notification_history_title">Хабарландыру тарихы</string>
-    <string name="notification_test_title">Сынақ туралы хабарландыру жіберіңіз</string>
+    <string name="notification_test_title">Сынақ хабарландыруын жіберу</string>
     <string name="notification_automation_title">Автоматтандыру</string>
-    <string name="notification_automation_allowed_title">Автоматтандыру қолданбаларына рұқсат беріңіз</string>
+    <string name="notification_automation_allowed_title">Автоматтандыру қолданбаларына рұқсат беру</string>
     <string name="notification_category_said">Оқылатын нәрсе</string>
     <string name="notification_format_title">Сөйлеу пішімі</string>
     <string name="notification_format_message">Толтырғыштар: {app}, {title}, {text}, {content} (барлық мәтін), {bigtext}, {subtext}, {ticker}, {category} және {time}.</string>
-    <string name="notification_private_format_title">Жеке хабарламалар айтады</string>
-    <string name="notification_private_format_message">Жеке хабарландыру мазмұнының орнына айтылған. Толтырғыштар: {app}, {category} және {time}.</string>
+    <string name="notification_private_format_title">Жеке хабарландыруларды оқу</string>
+    <string name="notification_private_format_message">Жеке хабарландыру мазмұнының орнына айтылады. Толтырғыштар: {app}, {category} және {time}.</string>
     <string name="notification_category_voice">Дауыс</string>
     <string name="notification_voice_title">Дауыс</string>
     <string name="notification_voice_sandfly">SandFly дауысы</string>
     <string name="notification_detect_language_title">Тілді анықтау</string>
-    <string name="notification_detect_language_summary">Әрбір хабарландыруды өзі жазылған тілде айтыңыз. Мәтінді дыбысқа өзгерту параметрлерінде тілді автоматты түрде ауыстыру қажет.</string>
+    <string name="notification_detect_language_summary">Әр хабарландыруды өзі жазылған тілде айтады. «Мәтінді дыбыстау» бөліміндегі «Тілді автоматты ауыстыру» қажет.</string>
     <string name="notification_sound_before_title">Хабарландырулар алдында дыбыс</string>
     <string name="notification_category_text">Мәтін</string>
-    <string name="notification_remove_emoji_title">Эмодзиді қалдырыңыз</string>
-    <string name="notification_lowercase_title">Бас әріптерді сөз ретінде оқыңыз</string>
+    <string name="notification_remove_emoji_title">Эмодзиді өткізіп жіберу</string>
+    <string name="notification_lowercase_title">Бас әріптерді сөз ретінде оқу</string>
     <string name="notification_lowercase_summary">Кейбір сөйлеу қозғалтқыштары бас әріппен жазылған сөздерді әріптеп оқиды.</string>
-    <string name="notification_separate_digits_title">Ұзын сандарды цифрмен оқу</string>
+    <string name="notification_separate_digits_title">Ұзын сандарды цифрлап оқу</string>
     <string name="notification_separate_digits_summary">Кодтар мен телефон нөмірлері сияқты</string>
-    <string name="notification_min_digits_title">Ұзын сандағы ең аз сандар</string>
+    <string name="notification_min_digits_title">Ұзын сандағы цифрлардың ең аз саны</string>
     <string name="notification_urls_title">Сілтемелер</string>
-    <string name="notification_url_text_title">Сілтеме орнына айтылған</string>
-    <string name="notification_skip_empty_title">Мәтінсіз хабарландыруларды өткізіп жіберіңіз</string>
+    <string name="notification_url_text_title">Сілтеме орнына айтылатын мәтін</string>
+    <string name="notification_skip_empty_title">Мәтінсіз хабарландыруларды өткізу</string>
     <string name="notification_category_length">Ұзындығы</string>
     <string name="notification_max_words_title">Сөздердің максималды саны</string>
     <string name="notification_max_sentences_title">Сөйлемдердің максималды саны</string>
     <string name="notification_max_characters_title">Мәтін таңбаларының максималды саны</string>
-    <string name="notification_max_seconds_title">Кейін оқуды тоқтатыңыз</string>
+    <string name="notification_max_seconds_title">Оқуды тоқтату уақыты</string>
     <string name="notification_category_timing">Уақыт</string>
-    <string name="notification_delay_title">Оқпас бұрын күтіңіз</string>
+    <string name="notification_delay_title">Оқу алдындағы күту</string>
     <string name="notification_queue_title">Басқа хабарландыру оқылғанда</string>
-    <string name="notification_repeat_minutes_title">Экран қосылғанша қайта оқыңыз</string>
-    <string name="notification_skip_media_title">Медиа ойнатқыштарды өткізіп жіберіңіз</string>
-    <string name="notification_skip_ongoing_title">Ағымдағы хабарландыруларды өткізіп жіберу</string>
+    <string name="notification_repeat_minutes_title">Экран қосылғанша қайта оқу</string>
+    <string name="notification_skip_media_title">Медиа ойнатқыштарды өткізіп жіберу</string>
+    <string name="notification_skip_ongoing_title">Тұрақты хабарландыруларды өткізіп жіберу</string>
     <string name="notification_skip_ongoing_summary">Навигация және таймерлер сияқты</string>
-    <string name="notification_skip_foreground_title">Қолданбаның іске қосылған хабарландыруларын өткізіп жіберіңіз</string>
+    <string name="notification_skip_foreground_title">Іске қосылған қолданбалар хабарландыруларын өткізу</string>
     <string name="notification_skip_foreground_summary">VPN немесе аудио жазғыш сияқты</string>
     <string name="notification_skip_progress_title">Орындалу барысы туралы хабарландыруларды өткізіп жіберу</string>
     <string name="notification_skip_group_summaries_title">Топтық қорытындыларды өткізіп жіберу</string>
@@ -76,13 +76,13 @@
     <string name="notification_headphones_title">Құлаққаптар</string>
     <string name="notification_media_title">Медиа ойнату кезінде</string>
     <string name="notification_dnd_title">Мазаламау</string>
-    <string name="notification_dnd_none">Хабарландыруларды дауыстап оқымаңыз</string>
+    <string name="notification_dnd_none">Ешқайсысын оқымау</string>
     <string name="notification_dnd_allowed">Мазаламау режимі рұқсат еткен хабарландыруларды оқу</string>
     <string name="notification_dnd_all">Барлығын оқы</string>
     <string name="notification_touch_title">Экран түртілген кезде</string>
-    <string name="notification_touch_read">Бірден оқыңыз</string>
-    <string name="notification_touch_after">Түрту аяқталған кезде оқыңыз</string>
-    <string name="notification_touch_skip">Дауыстап оқымаңыз</string>
+    <string name="notification_touch_read">Бірден оқу</string>
+    <string name="notification_touch_after">Түрту аяқталғанда оқу</string>
+    <string name="notification_touch_skip">Оқымау</string>
     <string name="notification_during_calls_title">Қоңыраулар кезінде</string>
     <string name="notification_honour_silent_title">Үнсіз режимде емес</string>
     <string name="notification_honour_vibrate_title">Діріл режимінде емес</string>
@@ -90,31 +90,31 @@
     <string name="notification_skip_in_car_summary">Мысалы, оларды өзі оқитын Android Auto сияқты</string>
     <string name="notification_category_quiet_hours">Тыныш сағаттар</string>
     <string name="notification_quiet_hours_title">Тыныш сағаттар</string>
-    <string name="notification_quiet_start_title">Бастау</string>
-    <string name="notification_quiet_end_title">Аяқтау</string>
-    <string name="notification_repeat_seconds_title">Үшін бірдей хабарландыруды өткізіп жіберіңіз</string>
-    <string name="notification_numbers_alike_title">Әртүрлі сандарды бірдей деп есептеңіз</string>
+    <string name="notification_quiet_start_title">Басталуы</string>
+    <string name="notification_quiet_end_title">Аяқталуы</string>
+    <string name="notification_repeat_seconds_title">Бірдей хабарландыруды өткізіп жіберу уақыты</string>
+    <string name="notification_numbers_alike_title">Сандар бірдей саналады</string>
     <string name="notification_numbers_alike_summary">Жүктеп алу пайызы сияқты</string>
     <string name="notification_cooldown_title">Қолданба хабарландырулары арасындағы уақыт</string>
-    <string name="notification_skip_prefix_title">Қайталанатын мәтін префиксін алып тастаңыз</string>
+    <string name="notification_skip_prefix_title">Қайталанған басын өткізу</string>
     <string name="notification_skip_prefix_summary">Чаттағы топтың аты сияқты</string>
-    <string name="notification_prefix_memory_title">Мәтін префиксі қанша уақыт есте сақталады</string>
-    <string name="notification_access_summary">Қабылданбаған хабарландыруды оқуды тоқтату және қорытындылар үшін қажет</string>
+    <string name="notification_prefix_memory_title">Басын есте сақтау уақыты</string>
+    <string name="notification_access_summary">Жабылған хабарландыруды оқуды тоқтату және қорытындылар үшін қажет</string>
     <string name="notification_shake_title">Тоқтату үшін шайқаңыз</string>
     <string name="notification_shake_strength_title">Шайқау қарқындылығы</string>
-    <string name="notification_wave_title">Оқуды тоқтату үшін қол бұлғаңыз</string>
+    <string name="notification_wave_title">Тоқтату үшін қол бұлғау</string>
     <string name="notification_wave_summary">Қолды жақындық сенсорының үстіне жылжыту</string>
     <string name="notification_pocket_title">Қалта режимі</string>
-    <string name="notification_pocket_summary">Оқу басталған кезде қалтадағыдай жабылған сенсор оны тоқтатпайды</string>
-    <string name="notification_volume_keys_title">Дыбыс деңгейі пернелерінің екеуін де басыңыз</string>
+    <string name="notification_pocket_summary">Оқу басталғанда сенсор жабық тұрса, мысалы қалтада, оқу тоқтамайды</string>
+    <string name="notification_volume_keys_title">Екі дыбыс пернесін басу</string>
     <string name="notification_dismiss_title">Хабарландыру жабылғанда оқуды тоқтату</string>
-    <string name="notification_watch_dismiss_title">Сондай-ақ смарт сағатта хабарландыру жабылған кезде</string>
-    <string name="notification_app_cancel_title">Қолданба хабарландыруды жойғанда оқуды тоқтатыңыз</string>
-    <string name="notification_category_summary">Түйіндеме</string>
-    <string name="notification_summary_now_title">Хабарландыруларды қазір оқыңыз</string>
-    <string name="notification_summary_daily_title">Күн сайын хабарландыруларды оқыңыз</string>
+    <string name="notification_watch_dismiss_title">Сағатта жабылғанда да</string>
+    <string name="notification_app_cancel_title">Қолданба оны жойғанда тоқтату</string>
+    <string name="notification_category_summary">Жиынтық</string>
+    <string name="notification_summary_now_title">Хабарландыруларды қазір оқу</string>
+    <string name="notification_summary_daily_title">Хабарландыруларды күн сайын оқу</string>
     <string name="notification_summary_time_title">Уақыт</string>
-    <string name="notification_summary_newest_first_title">Ең жаңасы бірінші</string>
+    <string name="notification_summary_newest_first_title">Алдымен ең жаңасы</string>
     <string name="notification_summary_name_title">Сіздің атыңыз</string>
     <string name="notification_summary_gap_title">Хабарландырулар арасында үзіліс</string>
     <string name="notification_summary_needs_sandfly">Хабарландыруларды оқу үшін SandFly қосыңыз</string>
@@ -125,108 +125,108 @@
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
     <string name="notification_category_clock">Уақыт туралы хабарландырулар</string>
-    <string name="notification_clock_interval_title">Әр уақытты айтыңыз</string>
+    <string name="notification_clock_interval_title">Уақытты айту аралығы</string>
     <string name="notification_clock_format_title">Уақыт форматы</string>
     <string name="notification_clock_format_message">Толтырғыштар: {time}, {date} және {battery} (батарея пайызы).</string>
-    <string name="notification_clock_format_default">Бұл {time}</string>
-    <string name="notification_clock_exact_title">Нақты уақыттары</string>
-    <string name="notification_clock_exact_summary">Дабылдар мен еске салғыштар қажет. Әйтпесе, уақытты бір минутқа дейін кеш айтуға болады.</string>
+    <string name="notification_clock_format_default">Қазір {time}</string>
+    <string name="notification_clock_exact_title">Нақты уақыт</string>
+    <string name="notification_clock_exact_summary">«Оятқыштар мен еске салғыштар» рұқсаты қажет. Әйтпесе уақыт бір минутқа дейін кешігіп айтылуы мүмкін.</string>
     <string name="notification_other_apps_title">Басқа қолданбалар</string>
     <string name="notification_apps_category">Қолданбалар</string>
     <string name="notification_apps_loading">Қолданбалар жүктелуде</string>
     <string name="notification_app_mode_title">Хабарландырулар</string>
     <string name="notification_app_mode_default">Басқа қолданбалар сияқты</string>
-    <string name="notification_app_mode_read">Дауыстап оқы</string>
+    <string name="notification_app_mode_read">Оқу</string>
     <string name="notification_app_mode_private">Тек қолданба атауы</string>
     <string name="notification_app_mode_priority">Алдымен оқы</string>
-    <string name="notification_app_mode_ignore">Дауыстап оқымаңыз</string>
-    <string name="notification_app_name_title">Аты-жөні</string>
+    <string name="notification_app_mode_ignore">Оқымау</string>
+    <string name="notification_app_name_title">Айтылатын атау</string>
     <string name="notification_app_said_as"><xliff:g id="name" example="Twitter">%1$s</xliff:g> ретінде айтылды</string>
     <string name="notification_app_reset">Қалпына келтіру</string>
-    <string name="notification_required_title">Хабарландыруларды тек көмегімен оқыңыз</string>
-    <string name="notification_blocked_title">Арқылы хабарландыруларды оқымаңыз</string>
-    <string name="notification_private_title">Қолданбаның атын ғана оқыңыз</string>
-    <string name="notification_replacements_title">Басқаша айт</string>
-    <string name="notification_add_word">Сөз қосыңыз</string>
-    <string name="notification_add_replacement">Ауыстыруды қосыңыз</string>
+    <string name="notification_required_title">Тек мыналар бар хабарландыруларды оқу</string>
+    <string name="notification_blocked_title">Мыналар бар хабарландыруларды оқымау</string>
+    <string name="notification_private_title">Мыналар бар хабарландыруларда тек қолданба атын оқу</string>
+    <string name="notification_replacements_title">Басқаша айту</string>
+    <string name="notification_add_word">Сөз қосу</string>
+    <string name="notification_add_replacement">Ауыстыру қосу</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> <xliff:g id="replace" example="laughing">%2$s</xliff:g> ретінде</string>
     <string name="notification_replace_find">Мәтін</string>
-    <string name="notification_replace_with">Ретінде айтыңыз</string>
+    <string name="notification_replace_with">Былай айту</string>
     <string name="notification_whole_words">Тек тұтас сөздер</string>
     <string name="notification_regex">Тұрақты өрнек</string>
     <string name="notification_enter_text">Мәтін енгізіңіз</string>
     <string name="notification_invalid_regex">Жарамды тұрақты өрнек емес</string>
     <string name="notification_edit">Өңдеу</string>
     <string name="notification_remove">Жою</string>
-    <string name="notification_history_keep">Хабарландыру тарихын сақтаңыз</string>
-    <string name="notification_history_clear">Тарихты тазалаңыз</string>
+    <string name="notification_history_keep">Хабарландыру тарихын сақтау</string>
+    <string name="notification_history_clear">Тарихты тазалау</string>
     <string name="notification_history_category">Хабарландырулар</string>
     <string name="notification_history_empty">Хабарландырулар жоқ</string>
-    <string name="notification_history_ignore_app">Оқымаңыз <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_ignore_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> оқымау</string>
     <string name="notification_history_private_app">Тек <xliff:g id="app" example="Chat">%1$s</xliff:g> атын оқыңыз</string>
-    <string name="notification_history_priority_app">Алдымен <xliff:g id="app" example="Chat">%1$s</xliff:g> оқыңыз</string>
+    <string name="notification_history_priority_app"><xliff:g id="app" example="Chat">%1$s</xliff:g> алдымен оқу</string>
     <string name="notification_history_block_similar">Мұндай хабарландыруларды оқымаңыз</string>
     <string name="notification_history_copy">Көшіру</string>
     <string name="notification_saved">Сақталды</string>
-    <string name="notification_copied">Көшірілген</string>
-    <string name="notification_outcome_read">Дауыстап оқыңыз</string>
+    <string name="notification_copied">Көшірілді</string>
+    <string name="notification_outcome_read">Оқылды</string>
     <string name="notification_outcome_stopped">Оқу кезінде тоқтады</string>
-    <string name="notification_outcome_speech_off">Оқылмаған: хабарландыру сөзі өшірулі</string>
-    <string name="notification_outcome_dnd">Оқылмаған: Мазаламау</string>
-    <string name="notification_outcome_touching">Оқылмаған: экран түртілді</string>
-    <string name="notification_outcome_app">Оқылмаған: қолданба</string>
-    <string name="notification_outcome_ongoing">Оқылмаған: жалғасуда</string>
-    <string name="notification_outcome_foreground">Оқылмаған: іске қосылған қолданба</string>
-    <string name="notification_outcome_low_priority">Оқылмаған: басымдық төмен</string>
-    <string name="notification_outcome_system">Оқылмаған: жүйе</string>
-    <string name="notification_outcome_media">Оқылмаған: медиа ойнатқыш</string>
-    <string name="notification_outcome_group_summary">Оқылмаған: топтың қысқаша мазмұны</string>
-    <string name="notification_outcome_progress">Оқылмаған: прогресс</string>
-    <string name="notification_outcome_required">Оқылмаған: қажетті сөздер жоқ</string>
-    <string name="notification_outcome_blocked">Оқылмаған: блокталған сөз</string>
-    <string name="notification_outcome_empty">Оқылмаған: мәтін жоқ</string>
-    <string name="notification_outcome_repeat">Оқылмаған: қайталаңыз</string>
-    <string name="notification_outcome_cooldown">Дауыстап оқылмайды: бұл қолданбаның басқа хабарландыруы тым жақында оқылды</string>
-    <string name="notification_outcome_quiet_hours">Оқылмаған: тыныш сағаттар</string>
-    <string name="notification_outcome_screen_on">Оқылмаған: экран қосулы</string>
-    <string name="notification_outcome_screen_off">Оқылмаған: экран өшірулі</string>
-    <string name="notification_outcome_locked">Оқылмаған: құлыптаулы</string>
-    <string name="notification_outcome_headphones">Оқылмаған: құлаққап қосылған</string>
-    <string name="notification_outcome_no_headphones">Оқылмаған: құлаққап жоқ</string>
-    <string name="notification_outcome_silent">Оқылмаған: дыбыссыз режим</string>
-    <string name="notification_outcome_vibrate">Оқылмаған: діріл режимі</string>
-    <string name="notification_outcome_media_playing">Оқылмаған: медиа ойнату</string>
-    <string name="notification_outcome_car">Оқылмаған: автокөлік режимі</string>
-    <string name="notification_outcome_rule">Оқылмаған: ереже</string>
-    <string name="notification_outcome_busy">Оқылмаған: басқа хабарландыру оқылды</string>
-    <string name="notification_outcome_call">Кіріс телефон қоңырауы ретінде хабарланады</string>
-    <string name="notification_rule_add">Ереже қосыңыз</string>
+    <string name="notification_outcome_speech_off">Оқылмады: хабарландыруларды оқу өшірулі</string>
+    <string name="notification_outcome_dnd">Оқылмады: Мазаламау</string>
+    <string name="notification_outcome_touching">Оқылмады: экранға түртілді</string>
+    <string name="notification_outcome_app">Оқылмады: қолданба</string>
+    <string name="notification_outcome_ongoing">Оқылмады: тұрақты хабарландыру</string>
+    <string name="notification_outcome_foreground">Оқылмады: қолданба ашық</string>
+    <string name="notification_outcome_low_priority">Оқылмады: төмен басымдық</string>
+    <string name="notification_outcome_system">Оқылмады: жүйе</string>
+    <string name="notification_outcome_media">Оқылмады: медиа ойнатқыш</string>
+    <string name="notification_outcome_group_summary">Оқылмады: топ жиынтығы</string>
+    <string name="notification_outcome_progress">Оқылмады: орындалу барысы</string>
+    <string name="notification_outcome_required">Оқылмады: міндетті сөздер жоқ</string>
+    <string name="notification_outcome_blocked">Оқылмады: блокталған сөз</string>
+    <string name="notification_outcome_empty">Оқылмады: мәтін жоқ</string>
+    <string name="notification_outcome_repeat">Оқылмады: қайталау</string>
+    <string name="notification_outcome_cooldown">Оқылмады: қолданба жақында ғана оқылды</string>
+    <string name="notification_outcome_quiet_hours">Оқылмады: тыныш сағаттар</string>
+    <string name="notification_outcome_screen_on">Оқылмады: экран қосулы</string>
+    <string name="notification_outcome_screen_off">Оқылмады: экран өшірулі</string>
+    <string name="notification_outcome_locked">Оқылмады: құлыпталған</string>
+    <string name="notification_outcome_headphones">Оқылмады: құлақаспап жалғанған</string>
+    <string name="notification_outcome_no_headphones">Оқылмады: құлақаспап жоқ</string>
+    <string name="notification_outcome_silent">Оқылмады: дыбыссыз режим</string>
+    <string name="notification_outcome_vibrate">Оқылмады: діріл режимі</string>
+    <string name="notification_outcome_media_playing">Оқылмады: медиа ойнатылуда</string>
+    <string name="notification_outcome_car">Оқылмады: көлік режимі</string>
+    <string name="notification_outcome_rule">Оқылмады: ереже</string>
+    <string name="notification_outcome_busy">Оқылмады: басқа хабарландыру оқылды</string>
+    <string name="notification_outcome_call">Қоңырау ретінде хабарланды</string>
+    <string name="notification_rule_add">Ереже қосу</string>
     <string name="notification_rule_from_template">Үлгіден ереже қосыңыз</string>
     <string name="notification_rules_category">Ережелер</string>
     <string name="notification_rules_empty">Ереже жоқ</string>
-    <string name="notification_rule_name">Аты</string>
+    <string name="notification_rule_name">Атауы</string>
     <string name="notification_rule_untitled">Ереже</string>
-    <string name="notification_rule_enabled">Қосылды</string>
+    <string name="notification_rule_enabled">Қосулы</string>
     <string name="notification_rule_match">Шарттар</string>
     <string name="notification_rule_match_all">Барлық шарттар орындалуы керек</string>
     <string name="notification_rule_match_any">Кем дегенде бір шарт орындалуы керек</string>
-    <string name="notification_rule_conditions">Қашан</string>
+    <string name="notification_rule_conditions">Егер</string>
     <string name="notification_rule_actions">Содан кейін</string>
-    <string name="notification_rule_add_condition">Шартты қосыңыз</string>
-    <string name="notification_rule_add_action">Әрекет қосыңыз</string>
-    <string name="notification_rule_invert">Шартты аударыңыз</string>
-    <string name="notification_rule_delete">Ережені жойыңыз</string>
+    <string name="notification_rule_add_condition">Шарт қосу</string>
+    <string name="notification_rule_add_action">Әрекет қосу</string>
+    <string name="notification_rule_invert">Шартты керісінше ету</string>
+    <string name="notification_rule_delete">Ережені жою</string>
     <string name="notification_rule_delete_confirm"><xliff:g id="rule" example="Night">%1$s</xliff:g> жою керек пе?</string>
     <string name="notification_rule_always">Әрқашан</string>
     <string name="notification_rule_no_actions">ештеңе болмайды</string>
-    <string name="notification_rule_and">" «және» "</string>
-    <string name="notification_rule_or">" «немесе» "</string>
+    <string name="notification_rule_and">" және "</string>
+    <string name="notification_rule_or">" немесе "</string>
     <string name="notification_rule_summary"><xliff:g id="conditions" example="When the screen is on">%1$s</xliff:g>: <xliff:g id="actions" example="don\'t read">%2$s</xliff:g></string>
     <string name="notification_template_headphones">Тек құлаққаппен</string>
     <string name="notification_template_night">Түнде үнсіз</string>
     <string name="notification_template_screen_off">Тек экран өшірулі кезде</string>
-    <string name="notification_template_locked_private">Телефон құлыпталған кезде ғана қолданба атауы</string>
-    <string name="notification_template_short_on_battery">Зарядталмаған кезде қысқаша оқыңыз</string>
+    <string name="notification_template_locked_private">Құлыптаулы кезде тек қолданба аты</string>
+    <string name="notification_template_short_on_battery">Зарядталмағанда қысқа</string>
     <string name="notification_type_bluetooth">Bluetooth құрылғысы</string>
     <string name="notification_type_wired">Сымды құлаққаптар</string>
     <string name="notification_type_wifi">Wi-Fi желі</string>
@@ -234,11 +234,11 @@
     <string name="notification_type_screen">Экран қосулы</string>
     <string name="notification_type_locked">Телефон құлыптаулы</string>
     <string name="notification_type_from_app">Қолданбадан хабарландыру</string>
-    <string name="notification_type_foreground">Қолданба алдыңғы қатарда</string>
+    <string name="notification_type_foreground">Қолданба алдыңғы планда</string>
     <string name="notification_type_contains">Хабарламада бар</string>
-    <string name="notification_type_battery">Батарея деңгейі төмен</string>
+    <string name="notification_type_battery">Батарея деңгейі мынадан төмен</string>
     <string name="notification_type_charging">Зарядталуда</string>
-    <string name="notification_type_landscape">Пейзаждық</string>
+    <string name="notification_type_landscape">Көлденең</string>
     <string name="notification_type_silent">Үнсіз немесе діріл режимі</string>
     <string name="notification_type_media">Медиа ойнату</string>
     <string name="notification_bluetooth_any">Кез келген құрылғы</string>
@@ -263,39 +263,39 @@
     <string name="notification_cond_locked_not">Телефон құлпы ашылған</string>
     <string name="notification_cond_screen_on">Экран қосулы</string>
     <string name="notification_cond_screen_on_not">Экран өшірулі</string>
-    <string name="notification_cond_landscape">Экран пейзажда</string>
-    <string name="notification_cond_landscape_not">Экран портреттік күйде</string>
+    <string name="notification_cond_landscape">Экран көлденең күйде</string>
+    <string name="notification_cond_landscape_not">Экран тік күйде</string>
     <string name="notification_cond_time">Уақыт <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Уақыт <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g> емес</string>
     <string name="notification_cond_wifi"><xliff:g id="network" example="Home">%1$s</xliff:g> желісіне қосылған</string>
     <string name="notification_cond_wifi_not"><xliff:g id="network" example="Home">%1$s</xliff:g> желісіне қосылмаған</string>
     <string name="notification_cond_wifi_any">Wi-Fi желісіне қосылған</string>
     <string name="notification_cond_wifi_any_not">Wi-Fi желісіне қосылмаған</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> алда</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> алдында емес</string>
-    <string name="notification_cond_from">Хабарландыру <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_cond_from_not">Хабарландыру <xliff:g id="app" example="Chat">%1$s</xliff:g> емес</string>
-    <string name="notification_cond_contains">Хабарламада <xliff:g id="text" example="urgent">%1$s</xliff:g> бар</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> алдыңғы планда</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> алдыңғы планда емес</string>
+    <string name="notification_cond_from">Хабарландыру <xliff:g id="app" example="Chat">%1$s</xliff:g> қолданбасынан</string>
+    <string name="notification_cond_from_not">Хабарландыру <xliff:g id="app" example="Chat">%1$s</xliff:g> қолданбасынан емес</string>
+    <string name="notification_cond_contains">Хабарландыруда <xliff:g id="text" example="urgent">%1$s</xliff:g> бар</string>
     <string name="notification_cond_contains_not">Хабарландыруда <xliff:g id="text" example="urgent">%1$s</xliff:g> жоқ</string>
-    <string name="notification_cond_silent">Қоңырау үнсіз немесе дірілдейді</string>
-    <string name="notification_cond_silent_not">Қоңырау соғылады</string>
+    <string name="notification_cond_silent">Қоңырау үнсіз немесе діріл режимінде</string>
+    <string name="notification_cond_silent_not">Қоңырау дыбысы қосулы</string>
     <string name="notification_cond_media">Медиа ойнатуда</string>
     <string name="notification_cond_media_not">Ешбір медиа ойнатылмайды</string>
-    <string name="notification_action_skip">оқыма</string>
-    <string name="notification_action_private">тек қолданба атын оқыңыз</string>
-    <string name="notification_action_not_private">жеке болса да толық оқыңыз</string>
-    <string name="notification_action_format">сөйлеу пішімін пайдаланыңыз</string>
-    <string name="notification_action_max_words">бірнеше сөзге дейін оқыңыз</string>
-    <string name="notification_action_no_limit">ұзындықты шектеусіз оқу</string>
-    <string name="notification_action_keep_emoji">эмодзиді сақтаңыз</string>
-    <string name="notification_action_keep_numbers">сандарды бірге ұстаңыз</string>
-    <string name="notification_action_priority">алдымен оқы</string>
-    <string name="notification_action_always_read">Тыныш сағаттарда немесе басқа шектеулі уақытта да хабарландыруларды дауыстап оқыңыз</string>
-    <string name="notification_action_voice">дауыс профилімен оқыңыз</string>
+    <string name="notification_action_skip">оқымау</string>
+    <string name="notification_action_private">тек қолданба атын оқу</string>
+    <string name="notification_action_not_private">жеке болса да толық оқу</string>
+    <string name="notification_action_format">сөйлеу пішімін пайдалану</string>
+    <string name="notification_action_max_words">белгілі бір сөз санына дейін оқу</string>
+    <string name="notification_action_no_limit">ұзындығын шектемей оқу</string>
+    <string name="notification_action_keep_emoji">эмодзиді сақтау</string>
+    <string name="notification_action_keep_numbers">сандарды бөлмеу</string>
+    <string name="notification_action_priority">бірінші оқу</string>
+    <string name="notification_action_always_read">тыныш сағаттарда және хабарландырулар оқылмайтын басқа уақытта да оқу</string>
+    <string name="notification_action_voice">дауыс профилімен оқу</string>
     <string name="notification_action_voice_value"><xliff:g id="profile" example="DECtalk">%1$s</xliff:g> арқылы оқу</string>
-    <string name="notification_action_voice_sandfly">SandFly дауысымен оқыңыз</string>
-    <string name="notification_voice_removed">Дауыс профилі жойылды</string>
-    <string name="notification_action_format_value">сөйлеу пішімін пайдаланыңыз <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">SandFly дауысымен оқу</string>
+    <string name="notification_voice_removed">Жойылған дауыс профилі</string>
+    <string name="notification_action_format_value"><xliff:g id="format" example="{app}: {title}">%1$s</xliff:g> сөйлеу пішімін пайдалану</string>
     <string name="notification_action_max_words_value"><xliff:g id="words" example="10 words">%1$s</xliff:g> дейін оқу</string>
     <string name="notification_off">Өшірулі</string>
     <string name="notification_on">Қосулы</string>
@@ -304,19 +304,19 @@
     <string name="notification_speech_tile_label">Хабарландыруларды дауыстап оқу</string>
     <string name="notification_speech_now_on">Хабарландыруларды дауыстап оқу қосылды</string>
     <string name="notification_speech_now_off">Хабарландыруларды дауыстап оқу өшірілген</string>
-    <string name="notification_no_last_notification">Хабарлама оқылмады</string>
+    <string name="notification_no_last_notification">Хабарландыру оқылмады</string>
     <string name="shortcut_read_notifications">Хабарландыруларды оқу</string>
-    <string name="shortcut_toggle_notification_speech">Хабарландыру сөзі қосулы немесе өшірулі</string>
-    <string name="shortcut_read_last_notification">Соңғы хабарландыруды қайта оқыңыз</string>
-    <string name="shortcut_stop_notification">Хабарландыруды оқуды тоқтатыңыз</string>
-    <string name="notification_test_posting">Сынақ туралы хабарландыру 5 секундтан кейін келеді</string>
-    <string name="notification_test_not_allowed">Алдымен хабарландыруларды көрсету үшін SandFly рұқсат беріңіз</string>
+    <string name="shortcut_toggle_notification_speech">Хабарландыруларды оқуды қосу немесе өшіру</string>
+    <string name="shortcut_read_last_notification">Соңғы хабарландыруды қайта оқу</string>
+    <string name="shortcut_stop_notification">Хабарландыруды оқуды тоқтату</string>
+    <string name="notification_test_posting">5 секундтан кейін сынақ хабарландыруы келеді</string>
+    <string name="notification_test_not_allowed">Алдымен SandFly-ға хабарландыруларды көрсетуге рұқсат беріңіз</string>
     <string name="notification_test_content_title">SandFly сынақ</string>
-    <string name="notification_test_content_text">Бұл сынақ хабарландыруы, хабарландыру параметрлерімен бірге оқыңыз. 123456</string>
-    <string name="notification_automation_on">Хабарландыруларды дауыстап оқуды қосыңыз</string>
-    <string name="notification_automation_off">Хабарландыруларды дауыстап оқуды өшіріңіз</string>
-    <string name="notification_automation_toggle">Хабарландыруларды дауыстап оқуды қосыңыз немесе өшіріңіз</string>
-    <string name="notification_automation_stop">Хабарландыруды оқуды тоқтатыңыз</string>
+    <string name="notification_test_content_text">Бұл хабарландыру параметрлеріңізге сай оқылатын сынақ хабарландыруы. 123456</string>
+    <string name="notification_automation_on">Хабарландыруларды оқуды қосу</string>
+    <string name="notification_automation_off">Хабарландыруларды оқуды өшіру</string>
+    <string name="notification_automation_toggle">Хабарландыруларды оқуды қосу немесе өшіру</string>
+    <string name="notification_automation_stop">Оқылып жатқан хабарландыруды тоқтату</string>
     <string name="notification_automation_read_all">Хабарландыруларды оқу</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> секунд</item>
@@ -344,7 +344,7 @@
     </plurals>
     <plurals name="notification_digits">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> цифр</item>
-        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> цифры</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> цифр</item>
     </plurals>
     <plurals name="notification_summary_count">
         <item quantity="one">Сізде <xliff:g id="count" example="1">%d</xliff:g> хабарландыру бар.</item>

@@ -52,14 +52,14 @@
     <string name="script_permission_java">Magpatakbo ng Java code na may lahat ng access ng SandFly, sa bawat app</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">I-on</string>
-    <string name="script_permissions_title">Mga Pahintulot</string>
+    <string name="script_permissions_title">Mga pahintulot</string>
     <string name="script_permissions_none">Wala</string>
-    <string name="script_settings_category">Mga Setting</string>
+    <string name="script_settings_category">Mga setting</string>
     <string name="script_list_filter">I-filter</string>
     <string name="script_button_off">I-on muna ang script</string>
     <string name="script_permissions_summary">Kapag in-off ang isa, hihinto ang mga bahaging nangangailangan nito.</string>
     <string name="script_install_permissions_note">Puwede mong i-off ang mga ito sa ibang pagkakataon.</string>
-    <string name="script_manage_category">Pamahalaan</string>
+    <string name="script_manage_category">Pamamahala</string>
     <string name="script_move_up">Patakbuhin nang mas maaga</string>
     <string name="script_move_down">Patakbuhin nang mas huli</string>
     <string name="script_order_summary">Pagkakasunod-sunod para sa mga script na nagbabago ng parehong pagsasalita. Unang tumatakbo ang mga script ng app.</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_turn_off">I-off</string>
     <string name="script_binding_restore">I-restore ang mga default</string>
     <string name="script_binding_restored">Na-restore ang mga default</string>
-    <string name="script_binding_perform">Gawin ang galaw o mga key</string>
+    <string name="script_binding_perform">Gawin ang galaw o pindutin ang mga key</string>
     <string name="script_binding_perform_summary">Italaga ang susunod na galaw, o mga key na pinindot kasama ang SandFly modifier</string>
     <string name="script_binding_perform_message">Gawin ang galaw o pindutin ang mga key.</string>
     <string name="script_binding_assign_title">Italaga ang <xliff:g id="binding">%1$s</xliff:g> sa <xliff:g id="command">%2$s</xliff:g>?</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> script ang na-update: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> script ang na-update: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Ang mga update ay nakalista sa ilalim ng Mga Update</string>
+    <string name="scripts_updates_to_approve">Nakalista ang mga update sa ilalim ng “Mga update”</string>
     <string name="scripts_update_check_failed">Hindi masuri ang ilang pinagmulan</string>
-    <string name="scripts_up_to_date">Ang lahat ng mga script ay napapanahon</string>
+    <string name="scripts_up_to_date">Napapanahon ang lahat ng script</string>
 </resources>

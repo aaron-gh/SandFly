@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Прешли сте у режим пуне Брајеве азбуке</string>
   <string name="braille_ime_displayed_name">тастатура са Брајевом азбуком</string>
   <string name="multiple_languages_braille_ime_displayed_name">тастатура са Брајевом азбуком, %s</string>
-  <string name="input_view_caption">SandFly Брајева тастатура - за помоћ посетите г.цо/хелп/браилле</string>
+  <string name="input_view_caption">SandFly Брајева тастатура – за помоћ посетите g.co/help/braille</string>
   <string name="perform_action_next">Даље</string>
   <string name="perform_action_submitting">Текст се шаље</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Ажурира се положај тачака. Хајде прво да снимимо тачке: %s.</string>
@@ -45,7 +45,7 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Да бисте променили језик док куцате помоћу тастатуре са Брајевом азбуком, превуците нагоре помоћу 3 прста. Затим изаберите „пређи на следећи језик“.</string>
   <string name="title_pref_accumulate_presses">Уврсти све притиснуте тачке</string>
   <string name="summary_pref_accumulate_presses">Свака притиснута тачка је део уноса, чак и ако се тачка отпусти пре других тачака</string>
-  <string name="title_pref_reverse_dots">Замените леву и десну тачку</string>
+  <string name="title_pref_reverse_dots">Замени леве и десне тачке</string>
   <string name="summary_pref_reverse_dots">Тачке 1, 2 и 3 мењају места са тачкама 4, 5 и 6</string>
   <string name="bd_preference_braille_contracted">Брајева азбука са скраћеницама</string>
   <string name="bd_preference_braille_uncontracted">Брајева азбука са целим речима</string>
@@ -206,10 +206,10 @@
   <string name="custom_gesture_try_another">Пробајте са другим покретом. Да бисте видели листу свих доступних покрета, идите у центар за помоћ за SandFly Брајеву тастатуру. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Покрети се не подударају</string>
   <string name="custom_gesture_perform_again">Поновите покрет који желите да користите. %s</string>
-    <string name="tabletop_port_left_announcement">Стони режим, прикључак за пуњење на левој страни</string>
-    <string name="tabletop_port_right_announcement">Режим стола, прикључак за пуњење на десној страни</string>
-    <string name="screen_away_port_right_announcement">Режим без екрана, прикључак за пуњење на десној страни</string>
-    <string name="screen_away_port_left_announcement">Режим без екрана, прикључак за пуњење на левој страни</string>
+    <string name="tabletop_port_left_announcement">Стони режим, порт за пуњење на левој страни</string>
+    <string name="tabletop_port_right_announcement">Стони режим, порт за пуњење на десној страни</string>
+    <string name="screen_away_port_right_announcement">Екран окренут од вас, порт за пуњење на десној страни</string>
+    <string name="screen_away_port_left_announcement">Екран окренут од вас, порт за пуњење на левој страни</string>
     <string name="screen_toward_announcement">Екран према вама</string>
     <string name="screen_toward_port_left_announcement">Екран према вама, прикључак за пуњење на левој страни</string>
     <string name="screen_toward_port_right_announcement">Екран према вама, прикључак за пуњење на десној страни</string>
@@ -217,10 +217,10 @@
     <string name="screen_toward_port_up_announcement">Екран према вама, порт за пуњење окренут нагоре</string>
     <string name="port_right_announcement">Порт за пуњење на десној страни</string>
     <string name="port_left_announcement">Порт за пуњење на левој страни</string>
-    <string name="tabletop_port_near_announcement">Режим стола, прикључак за пуњење према вама</string>
-    <string name="tabletop_port_far_announcement">Стони режим, прикључак за пуњење удаљен од вас</string>
-    <string name="screen_away_port_down_announcement">Режим одвојеног екрана, порт за пуњење окренут надоле</string>
-    <string name="screen_away_port_up_announcement">Режим уклоњеног екрана, прикључак за пуњење окренут нагоре</string>
+    <string name="tabletop_port_near_announcement">Стони режим, порт за пуњење према вама</string>
+    <string name="tabletop_port_far_announcement">Стони режим, порт за пуњење удаљен од вас</string>
+    <string name="screen_away_port_down_announcement">Екран окренут од вас, порт за пуњење окренут надоле</string>
+    <string name="screen_away_port_up_announcement">Екран окренут од вас, порт за пуњење окренут нагоре</string>
     <string name="port_near_announcement">Порт за пуњење према вама</string>
     <string name="port_far_announcement">Порт за пуњење удаљен од вас</string>
     <string name="port_down_announcement">Порт за пуњење окренут надоле</string>
@@ -230,11 +230,11 @@
     <string name="orientation_unlocked_announcement">Оријентација је откључана</string>
     <string name="switch_to_language_contracted_announcement">Прешли сте на: %s, Брајева азбука са скраћеницама</string>
     <string name="switch_to_language_uncontracted_announcement">Прешли сте на: %s, Брајева азбука са целим речима</string>
-    <string name="title_pref_flip_dots_vertically">Замените горње и доње тачке</string>
+    <string name="title_pref_flip_dots_vertically">Замени горње и доње тачке</string>
     <string name="summary_pref_flip_dots_vertically">Тачка 1 мења места са тачком 3, а тачка 4 са тачком 6</string>
-    <string name="title_pref_tablet_held_up_faces_away">Таблет је окренут лицем у страну</string>
-    <string name="summary_pref_tablet_held_up_faces_away">Када је искључен, таблет или расклопљени телефон који је подигнут користи изглед стола, окренут према вама</string>
+    <string name="title_pref_tablet_held_up_faces_away">Подигнути таблет окренут од вас</string>
+    <string name="summary_pref_tablet_held_up_faces_away">Када је искључено, подигнут таблет или расклопљен телефон користи распоред стоног режима, са екраном према вама</string>
     <string name="title_pref_typing_sounds">Звуци куцања</string>
-    <string name="summary_pref_typing_sounds">Плаи тастатура кликће када унесете знак, размак, нови ред или избришете</string>
+    <string name="summary_pref_typing_sounds">Пуштање звукова тастатуре при уносу знака, размака или новог реда, или при брисању</string>
     <string name="skip_tutorial">Прескочи водич</string>
 </resources>

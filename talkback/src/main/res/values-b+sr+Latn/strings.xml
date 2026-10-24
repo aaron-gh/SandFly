@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Uređaj je otključan.</string>
   <string name="title_pref_speech_volume">Jačina zvuka govora</string>
   <string name="title_pref_verbose_scroll_announcement">Uvek izgovaraj broj stavki liste</string>
-  <string name="summary_pref_verbose_scroll_announcement">Recite koje stavke se prikazuju nakon svakog skrolovanja</string>
+  <string name="summary_pref_verbose_scroll_announcement">Nakon svakog pomeranja kaže koje se stavke prikazuju</string>
   <string name="title_pref_cover_proximity_sensor">Zaustavljanje govora prekrivanjem senzora blizine</string>
   <string name="title_pref_phonetic_letters">Izgovaraj slova sa primerima</string>
   <string name="summary_pref_phonetic_letters">Kada izaberete tastere na tastaturi ili se krećete prema znaku, čućete primer sa svakim slovom, poput „h, hotel“</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">Većinu</string>
   <string name="punctuation_some">Nešto</string>
   <string name="title_pref_count_repeated_symbols">Broji simbole koji se ponavljaju</string>
-  <string name="summary_pref_count_repeated_symbols">Recite koliko puta se simbol ponavlja kada se ponavlja 4 ili više puta</string>
+  <string name="summary_pref_count_repeated_symbols">Izgovaranje koliko puta se simbol ponavlja kada se ponovi 4 ili više puta</string>
   <string name="learn_more">Saznajte više</string>
   <string name="title_pref_capital_letters">Velika slova</string>
   <string name="capital_letters_nothing">Ne radi ništa</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">Promenite visinu glasa</string>
   <string name="capital_letters_sound_feedback">Pusti zvuk</string>
   <string name="title_pref_a11y_hints">Izgovaraj savete o korišćenju</string>
-  <string name="summary_pref_a11y_hints">Nakon što je stavka opisana, recite kako da je koristite</string>
+  <string name="summary_pref_a11y_hints">Nakon opisa stavke izgovaranje načina upotrebe</string>
   <string name="pref_speak_container_element_positions_title">Izgovaraj informacije o kontejneru</string>
   <string name="pref_speak_time_title">Izgovori vreme</string>
   <string name="pref_speak_time_summary">Kada uključite ekran</string>
-  <string name="summary_speak_container_element_positions">Recite kada unosite ili napuštate liste, mreže i druge kontejnere</string>
+  <string name="summary_speak_container_element_positions">Obaveštava kada uđete u liste, mreže i druge kontejnere ili izađete iz njih</string>
   <string name="reset_letency_reduction_settings_dialog_title">Želite da resetujete podešavanja kašnjenja?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Time ćete sva podešavanja kašnjenja resetovati na podrazumevana</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Resetuj</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Resetuj</string>
   <string name="gestures_announce_reset_gesture_settings">Podešavanja pokreta su resetovana.</string>
   <string name="pref_speak_roles_title">Izgovori tip elementa</string>
-  <string name="pref_speak_roles_summary">Dugme Sviđa mi se ili polje za potvrdu</string>
+  <string name="pref_speak_roles_summary">Na primer dugme ili polje za potvrdu</string>
   <string name="title_pref_speak_element_ids">Izgovaraj ID-ove elemenata</string>
-  <string name="summary_pref_speak_element_ids">Izgovorite ID dugmadi koja nemaju oznaku</string>
+  <string name="summary_pref_speak_element_ids">Izgovaranje ID-a dugmadi bez oznake</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Izgovaraj sve novosti o napretku</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Obuhvata promene tokom učitavanja, praćenja uputstava za vožnju i drugo. Kada je ovo podešavanje isključeno, i dalje ćete dobijati obaveštenja, ali ređe.</string>
   <string name="title_pref_explore_by_touch">Istraživanje dodirom</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">Pomoć</string>
   <string name="title_pref_advanced_settings">Napredna podešavanja</string>
   <string name="title_pref_show_exit_watermark">Prikaži uputstva za isključivanje SandFly-a</string>
-  <string name="summary_pref_show_exit_watermark">Kada se SandFly uključi, pokažite kako da ga isključite</string>
+  <string name="summary_pref_show_exit_watermark">Kada se SandFly uključi, prikazuje se kako da se isključi</string>
   <string name="talkback_exit_watermark_text">SandFly je uključen. Da biste ga isključili, držite 2 prsta na ekranu 5 sekundi. Da biste prekinuli prikazivanje ove poruke, dodirnite sa 3 prsta i otvorite SandFly meni.</string>
   <string name="talkback_exit_watermark_hint_text">Prikazuje se baner koji ukazuje da je SandFly uključen. Da biste isključili SandFly, držite 2 prsta na ekranu 5 sekundi. Da biste uklonili ovaj baner, idite u Podešavanja SandFly-a.</string>
   <string name="reset_gesture_settings_title">Resetujte podešavanja pokreta</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">Kombinacija tastera se već koristi za radnju „%1$s“. Želite li da je obrišete i dodelite tu prečicu radnji „%2$s“?</string>
   <string name="title_pref_intonation">Koristi promene tonaliteta</string>
   <string name="title_pref_keyboard_echo">Eho tastature</string>
-  <string name="pref_node_desc_order_title">Detalji o redosledu stavke</string>
+  <string name="pref_node_desc_order_title">Redosled detalja stavke</string>
   <string name="pref_time_feedback_format_title">Format vremena</string>
   <string name="title_pref_latency_reduction">Smanji kašnjenje</string>
   <string name="talkback_latency_reduction_summary">Neka SandFly odgovori brže nakon što dodirnete ekran</string>
@@ -305,7 +305,7 @@
   <string name="title_pref_category_developer_settings">Programerska podešavanja</string>
   <string name="title_activity_dump_a11y_event">Izaberite događaje koje ćete evidentirati</string>
   <string name="title_pref_dump_a11y_event">Filtriraj evidentiranje događaja pristupačnosti</string>
-  <string name="pref_reduce_window_delay_title">Isključite animacije</string>
+  <string name="pref_reduce_window_delay_title">Isključi animacije</string>
   <string name="title_pref_log_level">Nivo opširnosti evidencije</string>
   <string name="title_pref_diagnosis_mode">Režim dijagnoze</string>
   <string name="title_pref_tts_overlay">Prikaži snimak govora</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Isključite, pa ponovo uključite SandFly da biste aktivirali ovo podešavanje.</string>
   <string name="title_pref_auto_image_captioning">Automatski opisi</string>
   <string name="title_pref_gemini_settings">Gemini podešavanja</string>
-  <string name="title_pref_gemini_enabled">Gemini glasovne komande</string>
+  <string name="title_pref_gemini_enabled">Glasovne komande za Gemini</string>
   <string name="title_pref_category_automatic_description_summary">U SandFly meniju izaberite Opis slike da biste dobijali detaljne opise slika koje pruža veštačka inteligencija.\n\nAutomatske opise možete da dobijate i kada fokusirate sliku ili ikonu. Automatski opisi rade bez internet veze.</string>
   <string name="title_pref_icon_detection">Automatski opisi ikona</string>
   <string name="title_pref_image_description">Automatski opisi slika</string>
@@ -386,7 +386,7 @@
   <string name="shortcut_notifications">Obaveštenja</string>
   <string name="shortcut_quick_settings">Brza podešavanja</string>
   <string name="shortcut_show_custom_actions">Prikazuje prilagođene radnje</string>
-  <string name="shortcut_talkback_breakout">Otvara SandFly meni</string>
+  <string name="shortcut_talkback_breakout">Otvori SandFly meni</string>
   <string name="shortcut_pause_or_resume_feedback">Pauzirj ili nastavi govor</string>
   <string name="shortcut_toggle_voice_feedback">Uključi ili isključi govor</string>
   <string name="shortcut_read_from_top">Čitaj od vrha</string>
@@ -668,7 +668,7 @@
   <string name="label_dialog_text">Unesite tekst koji će se koristiti kao oznaka za ovaj element\nNaziv internog prikaza: %1$s</string>
   <string name="label_dialog_edit_hint">Tekst oznake</string>
   <string name="label_import">Uvezi prilagođene oznake</string>
-  <string name="label_import_dialog_title">Uvezite prilagođene oznake u SandFly</string>
+  <string name="label_import_dialog_title">Uvoz prilagođenih oznaka u SandFly</string>
   <string name="label_import_dialog_message">Odaberite da li želite da zamenite ili preskočite postojeće oznake u slučaju neusklađenosti</string>
   <string name="label_import_dialog_skip">Preskoči</string>
   <string name="label_import_dialog_override">Zameni</string>
@@ -788,7 +788,7 @@
   <string name="dialog_message_continuous_reading_mode">Kada izaberete Čitaj od vrha ili Čitaj od fokusirane stavke, i dalje možete da pređete na prethodnu ili sledeću stavku dok se tekst čita. To vam omogućava da se lako krećete napred ili nazad kroz tekst.\n\nDa biste prilagodili jačinu zvuka dok SandFly govori, pritisnite dugme za pojačavanje ili smanjivanje zvuka.</string>
   <string name="always_show_this_message_label">Uvek prikazuj ovu poruku</string>
   <string name="dialog_title_voice_commands">Kontrolišite SandFly pomoću glasovnih kontrola</string>
-  <string name="dialog_message_voice_commands">Evo nekih stvari koje možete reći:\n\n• Kopiraj\n• Čitanje iz fokusirane stavke\n• Pronađi [sačuvaj]\n• Govori [brže]\n• SandFly podešavanja\n\nRecite „<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>“ za listu svih glasovnih komandi</string>
+  <string name="dialog_message_voice_commands">Evo nekih stvari koje možete reći:\n\n• Kopiraj\n• Čitaj od fokusirane stavke\n• Pronađi [sačuvaj]\n• Govori [brže]\n• SandFly podešavanja\n\nRecite „<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>“ za listu svih glasovnih komandi</string>
   <string name="start_voice_command">Koristite glasovne komande</string>
   <string name="dialog_title_pass_through_mode">Preskočite SandFly pokrete da biste koristili sistemske pokrete</string>
   <string name="dialog_message_pass_through_mode">Kada čujete zvonce, možete da koristite sistemski pokret koji SandFly ne podržava. To se naziva pokret za prolazak.</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">Idite nagore</string>
   <string name="training_tip">Savet:</string>
   <string name="tv_training_overview_step_title">Kako SandFly radi</string>
-  <string name="tv_training_overview_step_summary">SandFly je čitač ekrana zasnovan na Google TalkBack. Čita naglas tekst na ekranu i daje vam govornu povratnu informaciju, tako da možete da koristite svoj uređaj bez gledanja u ekran.\n\nSa uključenom SandFly, izabrana stavka na ekranu se izgovara naglas, ponekad uz dodavanje dodatnih informacija ili konteksta.\n\nPritisnite da biste nastavili. Dugme za odabir nalazi se u sredini table za usmeravanje, što je veliko, kružno dugme na vrhu daljinskog upravljača.</string>
+  <string name="tv_training_overview_step_summary">SandFly je čitač ekrana zasnovan na Google-ovom TalkBack-u. Čita naglas tekst na ekranu i daje govorne povratne informacije, tako da uređaj možete da koristite bez gledanja u ekran.\n\nKada je SandFly uključen, izabrana stavka na ekranu se izgovara naglas, ponekad sa dodatnim informacijama ili kontekstom.\n\nPritisnite Izaberi da biste nastavili. Dugme Izaberi nalazi se u sredini tastera za smer, a to je veliko, okruglo dugme na vrhu daljinskog upravljača.</string>
   <string name="tv_training_remote_step_title">Korišćenje daljinskog</string>
   <string name="tv_training_remote_step_summary">Krećite se ekranom pomoću okruglog dugmeta za smer u vrhu daljinskog upravljača. Da biste izabrali, pritisnite sredinu dugmeta za smer u vrhu daljinskog upravljača.\n\nU drugom redu na levoj strani nalazi se dugme Nazad. Na desnoj strani nalazi se glasovno dugme za Pomoćnik.\n\nU trećem redu na levoj strani nalazi se dugme Početak. Na desnoj strani je dugme za prekid zvuka.\n\nU četvrtom redu na levoj strani nalazi se prečica za YouTube. Na desnoj strani je prečica za Netflix.\n\nU poslednjem redu nalaze se dva mala dugmeta. Levo dugme je dugme za uključivanje. Desno dugme otvara meni za unos na TV-u.\n\nDugmad za jačinu zvuka nalaze se sa desne strane daljinskog upravljača.\n\nPritisnite dugme za izbor da biste nastavili.</string>
   <string name="tv_training_shortcut_step_title">Prečica za SandFly</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">Možete da unosite tekst i pomoću tastature sa Brajevom azbukom. Pronađite to u SandFly podešavanjima.</string>
   <string name="other_ways_to_type_title">Drugi načini unosa teksta</string>
   <string name="other_ways_to_type_text">Postoje i drugi načini za unos teksta u SandFly-u. Na primer, možete da koristite dvostruki dodir da biste uneli slovo.</string>
-  <string name="basic_other_ways_to_type_text">Postoje i drugi načini da unesete SandFly. Na primer, možete koristiti dvostruki dodir da unesete slovo. Ovo možete kasnije da promenite u SandFly podešavanja &gt; Tastatura na ekranu &gt; Metod kucanja.</string>
-  <string name="basic_other_ways_to_type_text_tts">Postoje i drugi načini da unesete SandFly. Na primer, možete koristiti dvostruki dodir da unesete slovo. Ovo možete kasnije da promenite u podešavanjima SandFly, zatim na tastaturi na ekranu, a zatim u Metodu kucanja.</string>
+  <string name="basic_other_ways_to_type_text">Postoje i drugi načini kucanja u SandFly-u. Na primer, slovo možete da unesete dvostrukim dodirom. To možete kasnije da promenite u Podešavanja SandFly-a &gt; Tastatura na ekranu &gt; Metod kucanja.</string>
+  <string name="basic_other_ways_to_type_text_tts">Postoje i drugi načini kucanja u SandFly-u. Na primer, slovo možete da unesete dvostrukim dodirom. To možete kasnije da promenite u podešavanjima SandFly-a, zatim Tastatura na ekranu, zatim Metod kucanja.</string>
   <string name="change_typing_preference_text">Promeni podešavanje unosa teksta</string>
   <string name="moving_cursor_title">Pomeranje kursora</string>
   <string name="moving_cursor_text">Kada aktivirate okvir za tekst, možete da pomerate kursor između slova prevlačenjem nagore ili nadole.\n\nProbajte to u okviru za tekst u nastavku.</string>
@@ -1069,7 +1069,7 @@
   <string name="checking_notifications_tips">Da biste proverili istoriju obaveštenja, prevucite nadole od vrha ekrana pomoću 2 prsta</string>
   <string name="image_description_playground_title">Pokušajte da dobijete opise slika</string>
   <string name="image_description_playground_content_one">Kada fokusirate sliku, otvorite SandFly meni i izaberite Opiši sliku.\n\nU nastavku je jedna slika. Pokušajte da dobijete opis za nju.</string>
-  <string name="image_description_playground_content_two">Podešavanja opisa slika možete promeniti u bilo kom trenutku u SandFly podešavanja &gt; Automatski opisi.</string>
+  <string name="image_description_playground_content_two">Podešavanja opisa slika možete u bilo kom trenutku da promenite u Podešavanja SandFly-a &gt; Automatski opisi.</string>
   <string name="image_description_playground_content_two_tts">Možete promeniti podešavanja opisa slike u bilo kom trenutku u podešavanjima SandFly, a zatim u Automatskim opisima.</string>
   <string name="image_description_sample_image_content_description">Primer slike; dodirnite pomoću 3 prsta da biste otvorili SandFly meni, pa izaberite Opiši sliku da biste čuli opis.</string>
   <string name="practice_gestures_title">Vežbanje pokreta</string>
@@ -1254,11 +1254,11 @@
   <string name="shortcut_column_left">Prethodna kolona</string>
   <string name="shortcut_column_right">Sledeća kolona</string>
   <string name="table_navigation_not_supported">Kretanje kroz tabelu nije podržano</string>
-  <string name="pref_auto_enter_table_navigation_title">Prebacite se na navigaciju tabele u tabelama</string>
+  <string name="pref_auto_enter_table_navigation_title">Pređi na navigaciju tabelom u tabelama</string>
   <string name="title_text_formatting_menu">Opiši formatiranje teksta</string>
   <string name="summary_text_formatting_menu">Za promene kao što su podebljano, kurziv, podvučeno i drugo</string>
   <string name="title_text_formatting_inline">Formatiranje teksta za govor</string>
-  <string name="title_switch_text_formatting">Formatiranje teksta za govor</string>
+  <string name="title_switch_text_formatting">Izgovaraj formatiranje teksta</string>
   <string name="summary_text_formatting_verbosity">Za promene kao što su podebljano i kurziv</string>
   <string name="summary_text_formatting_selector">Promenite da li se naglas čita formatiranje, na primer podebljano i kurziv</string>
   <string name="title_text_formatting_verbosity_options">Opcije formatiranja teksta</string>
@@ -1299,46 +1299,46 @@
     <string name="title_pref_tts_engine">Mehanizam za pretvaranje teksta u govor</string>
     <string name="title_pref_system_tts_settings">Sistemska podešavanja pretvaranja teksta u govor</string>
     <string name="title_selector_vertical_navigation">Vertikalna navigacija</string>
-    <string name="summary_selector_vertical_navigation">Pređite na stavku ispod ili iznad, pored ostalih stavki u redu</string>
-    <string name="title_selector_switch_tts_engine">Govorna mašina</string>
+    <string name="summary_selector_vertical_navigation">Prelazak na stavku ispod ili iznad, uz preskakanje ostalih stavki u redu</string>
+    <string name="title_selector_switch_tts_engine">Mehanizam za govor</string>
     <string name="summary_selector_switch_tts_engine">Prebacivanje između instaliranih govornih mašina</string>
     <string name="title_selector_voice_profile">Glasovni profil</string>
     <string name="title_pref_voice_profiles">Glasovni profili</string>
-    <string name="voice_profile_default">SandFly podrazumevano</string>
+    <string name="voice_profile_default">Podrazumevano za SandFly</string>
     <string name="voice_profile_in_use">U upotrebi: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Govorni jezik je nedostupan dok se koristi glasovni profil</string>
     <string name="speech_engine_unavailable_with_profile">Govorni mehanizam nije dostupan dok koristite glasovni profil</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, u upotrebi</string>
     <string name="no_voice_profiles">Nema glasovnih profila</string>
-    <string name="shortcut_voice_profiles">Izaberite glasovni profil</string>
+    <string name="shortcut_voice_profiles">Izaberi glasovni profil</string>
     <string name="shortcut_previous_voice_profile">Prethodni glasovni profil</string>
     <string name="shortcut_next_voice_profile">Sledeći glasovni profil</string>
-    <string name="title_pref_voice_profile_in_use">Glasovni profil je u upotrebi</string>
-    <string name="title_pref_add_voice_profile">Dodajte glasovni profil</string>
+    <string name="title_pref_voice_profile_in_use">Glasovni profil u upotrebi</string>
+    <string name="title_pref_add_voice_profile">Dodaj glasovni profil</string>
     <string name="voice_profile_new_name">Glasovni profil <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Glasovni profil se već zove <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="title_pref_voice_profile_name">Ime</string>
+    <string name="voice_profile_name_taken">Glasovni profil sa nazivom <xliff:g id="name" example="Reading">%1$s</xliff:g> već postoji</string>
+    <string name="title_pref_voice_profile_name">Naziv</string>
     <string name="title_pref_voice_profile_language">Jezik</string>
     <string name="title_pref_voice_profile_voice">Glas</string>
     <string name="voice_profile_engine_default">Podrazumevano</string>
     <string name="voice_profile_loading">Učitava se</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, nije instalirano</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Pomeri se gore</string>
-    <string name="voice_profile_move_down">Pomeri se dole</string>
+    <string name="voice_profile_move_up">Pomeri nagore</string>
+    <string name="voice_profile_move_down">Pomeri nadole</string>
     <string name="voice_profile_rename">Preimenuj</string>
     <string name="voice_profile_moved_above">Premešteno iznad <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Premešteno ispod <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> izbrisano</string>
-    <string name="title_pref_delete_voice_profile">Izbrišite glasovni profil</string>
+    <string name="title_pref_delete_voice_profile">Izbriši glasovni profil</string>
     <string name="voice_profile_delete_confirm">Izbrisati <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Izbriši</string>
-    <string name="summary_pref_tts_engine_default">Sistem podrazumevano</string>
+    <string name="summary_pref_tts_engine_default">Podrazumevano za sistem</string>
     <string name="title_pref_speech_pitch">Visina govora</string>
     <string name="title_pref_speech_stream">Jačina zvuka govora</string>
-    <string name="summary_selector_speech_stream">Prebacivanje između pristupačnosti, medija, zvona i jačine zvuka poziva</string>
+    <string name="summary_selector_speech_stream">Prebacivanje između jačine zvuka za pristupačnost, medije, zvono i pozive</string>
     <string name="speech_stream_accessibility">Jačina zvuka za pristupačnost</string>
-    <string name="speech_stream_media">Jačina medija</string>
+    <string name="speech_stream_media">Jačina zvuka medija</string>
     <string name="speech_stream_ring">Jačina zvona</string>
     <string name="speech_stream_call">Jačina zvuka poziva, slušalica</string>
     <string-array name="pref_speech_stream_entries">
@@ -1347,18 +1347,18 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_speak_in_phrases">Šaljite dugačak tekst rečenicu po rečenicu</string>
-    <string name="summary_pref_speak_in_phrases">Za govorne mašine koje se sporo zaustavljaju, kao što je Griphon, tako da prevlačenje u stranu zaustavlja dugačak tekst odjednom. Mnogi motori pauziraju duže između rečenica koje se šalju zasebno, pa ostavite ovo isključeno ako vaša brzo stane.</string>
-    <string name="battery_optimization_notification_title">Optimizacija baterije može da prestane SandFly</string>
-    <string name="battery_optimization_notification_text">Na ovom telefonu, ušteda baterije može da se zaustavi SandFly nakon što se ekran isključi, tako da utihne dok se ponovo ne pokrene. Dodirnite da biste otvorili optimizaciju baterije, izaberite Sve aplikacije, pronađite SandFly i izaberite Ne optimizuj.</string>
+    <string name="title_pref_speak_in_phrases">Šalji dugačak tekst rečenicu po rečenicu</string>
+    <string name="summary_pref_speak_in_phrases">Za govorne mehanizme koji se sporo zaustavljaju, kao što je Gryphon, da prevlačenje odmah zaustavi dug tekst. Mnogi mehanizmi prave dužu pauzu između rečenica poslatih zasebno, pa ovo ostavite isključeno ako se vaš mehanizam brzo zaustavlja.</string>
+    <string name="battery_optimization_notification_title">Optimizacija baterije može da zaustavi SandFly</string>
+    <string name="battery_optimization_notification_text">Na ovom telefonu ušteda baterije može da zaustavi SandFly kada se ekran isključi, pa SandFly ćuti dok se ponovo ne pokrene. Dodirnite da biste otvorili optimizaciju baterije, izaberite Sve aplikacije, pronađite SandFly i izaberite Ne optimizuj.</string>
     <string name="title_pref_mute_speech_while_recording">Tiho tokom snimanja</string>
     <string name="summary_pref_mute_speech_while_recording">Dok aplikacija snima bez priključenih slušalica, SandFly govori samo kao odgovor na vaše pokrete, tastere i kucanje, i ostaje tih za stvari kao što su obaveštenja, tako da se ne snimaju.</string>
-    <string name="title_pref_switch_languages">Automatski menjajte jezik</string>
-    <string name="title_pref_switch_dialects">Automatski menjajte dijalekt</string>
+    <string name="title_pref_switch_languages">Automatski menjaj jezik</string>
+    <string name="title_pref_switch_dialects">Automatski menjaj dijalekt</string>
     <string name="category_collapsed">Skupljeni odeljak</string>
     <string name="category_expanded">Prošireni odeljak</string>
-    <string name="title_pref_speak_nav_bar_buttons">Izgovarajte dugmad na traci za navigaciju</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Sa podizanjem za aktiviranje na traci za navigaciju, izgovorite dugme koje pritisne dodir, na primer Nazad ili Početna.</string>
+    <string name="title_pref_speak_nav_bar_buttons">Izgovaraj dugmad na traci za navigaciju</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Kada se na traci za navigaciju koristi aktiviranje podizanjem prsta, izgovara se dugme pritisnuto dodirom, na primer Nazad ili Početni ekran.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Baterija <xliff:g id="battery_level" example="73">%1$s</xliff:g> procenata</string>
     <string name="template_battery_level_unknown">Nivo baterije nepoznat</string>
@@ -1367,51 +1367,51 @@
     <string name="summary_pref_screen_announcements">Odaberite šta SandFly kaže kada se ekran isključi ili uključi i kada je telefon otključan</string>
     <string name="title_screen_announcements_screen_off">Kada se ekran isključi</string>
     <string name="title_screen_announcements_screen_on">Kada se ekran uključi</string>
-    <string name="title_screen_announcements_unlock">Kada je telefon otključan</string>
-    <string name="title_pref_say_screen_off">Recite „Screen off“</string>
-    <string name="title_pref_say_device_unlocked">Recite „Uređaj je otključan“</string>
+    <string name="title_screen_announcements_unlock">Kada se telefon otključa</string>
+    <string name="title_pref_say_screen_off">Izgovori „Ekran je isključen“</string>
+    <string name="title_pref_say_device_unlocked">Izgovori „Uređaj je otključan“</string>
     <string name="title_pref_announce_time">Vreme</string>
     <string name="title_pref_announce_ringer_mode">Režim zvona</string>
-    <string name="summary_pref_announce_ringer_mode">Recite kada je zvono podešeno da vibrira ili nečujno</string>
+    <string name="summary_pref_announce_ringer_mode">Izgovaranje kada je zvono podešeno na vibraciju ili nečujno</string>
     <string name="title_pref_category_feedback">Povratne informacije</string>
     <string name="title_pref_category_typing_and_braille">Kucanje i brajevo pismo</string>
     <string name="title_pref_category_apps">Aplikacije</string>
     <string name="title_pref_touch_activation">Dodir i aktivacija</string>
     <string name="title_pref_navigation">Navigacija</string>
     <string name="title_pref_category_more">Više</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Rezervišite pokrete za Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Zaustavlja SandFly rukovanje jednim i dvostrukim dodirima sa dva prsta tako da ih Samsung Vibration Watch može koristiti. Omogućite Vibration Watch u podešavanjima pristupačnosti vašeg sata.</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Rezerviši pokrete za Vibration Watch</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly više ne obrađuje jednostruke i dvostruke dodire sa dva prsta da bi ih Samsung Vibration Watch mogao koristiti. Uključite Vibration Watch u podešavanjima pristupačnosti sata.</string>
     <string name="shortcut_reserved_for_vibration_watch">Rezervisano za Vibration Watch u naprednim podešavanjima</string>
-    <string name="title_pref_speakerphone_away_from_ear">Zvučnik kada je udaljen od uha</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Tokom poziva, prebacuje se na zvučnik kada odvojite telefon od uha i vraća se na slušalicu kada ga ponovo držite.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Potrebna je dozvola koju Android ne daje čitačima ekrana. Da biste to odobrili, pokrenite ovu komandu sa adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="title_pref_speakerphone_away_from_ear">Zvučnik kada telefon nije uz uvo</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Tokom poziva prebacuje na zvučnik kada odmaknete telefon od uha, a nazad na slušalicu kada ga ponovo prinesete uhu.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Potrebna je dozvola koju Android ne daje čitačima ekrana. Da biste je dodelili, pokrenite ovu komandu pomoću adb-a ili Shizuku-a, pa se vratite na ovaj ekran: %1$s</string>
     <string name="action_copy_command">Kopiraj komandu</string>
     <string name="command_copied">Komanda je kopirana</string>
-    <string name="title_pref_speech_control">Neka druge aplikacije govore</string>
-    <string name="summary_pref_speech_control">Aplikacije koje dozvolite mogu da izgovore tekst vašim glasom SandFly. Ništa se ne govori dok je uređaj zaključan.</string>
-    <string name="title_pref_speech_control_sound">Pustite zvuk pre nego što druge aplikacije progovore</string>
+    <string name="title_pref_speech_control">Dozvoli drugim aplikacijama da govore</string>
+    <string name="summary_pref_speech_control">Aplikacije kojima dozvolite mogu da izgovaraju tekst glasom koji SandFly koristi. Dok je uređaj zaključan, ništa se ne izgovara.</string>
+    <string name="title_pref_speech_control_sound">Pusti zvuk pre nego što druge aplikacije progovore</string>
     <string name="speech_control_apps_category">Aplikacije</string>
     <string name="speech_control_no_apps">Još nijedna aplikacija nije tražila da govori.</string>
     <string name="speech_control_ask_title">Dozvoliti <xliff:g id="app" example="Tasker">%1$s</xliff:g> da govori kroz SandFly?</string>
     <string name="speech_control_ask_text">Može da izgovori tekst vašim glasom SandFly. Ovo možete promeniti u Naprednim podešavanjima.</string>
     <string name="speech_control_allow">Dozvoli</string>
-    <string name="speech_control_deny">Ne dozvolite</string>
-    <string name="permission_speak_label">govori kroz SandFly</string>
-    <string name="permission_speak_description">Dozvoljava aplikaciji da traži da kaže tekst vašim glasom SandFly. SandFly vas pita pre nego što aplikacija može da govori.</string>
-    <string name="permission_braille_display_label">traži da bude Brajev ekran za SandFly</string>
-    <string name="permission_braille_display_description">Dozvoljava aplikaciji da traži da bude prikazan na Brajevom azbuku za SandFly. Ako to dozvolite u SandFly, može da čita sve na ekranu i kontroliše vaš uređaj. SandFly vas prvo pita.</string>
-    <string name="title_pref_phonetic_letters_mode">Govori slova fonetski</string>
+    <string name="speech_control_deny">Ne dozvoli</string>
+    <string name="permission_speak_label">govor preko SandFly-a</string>
+    <string name="permission_speak_description">Dozvoljava aplikaciji da traži da izgovori tekst vašim glasom SandFly-a. SandFly vas pita pre nego što aplikacija može da govori.</string>
+    <string name="permission_braille_display_label">zahtev da bude Brajev ekran za SandFly</string>
+    <string name="permission_braille_display_description">Dozvoljava aplikaciji da zatraži da bude Brajev ekran za SandFly. Ako to dozvolite u SandFly-u, aplikacija može da čita sve na ekranu i da upravlja uređajem. SandFly vas prvo pita.</string>
+    <string name="title_pref_phonetic_letters_mode">Izgovaraj slova fonetski</string>
     <string name="phonetic_letters_mode_off">Isključeno</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Posle pisma, odloženo, kao \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Posle pisma, bez odlaganja, kao \"h hotel\"</string>
-    <string name="phonetic_letters_mode_instead_of_letter">Umesto slova, kao \"hotel\"</string>
-    <string name="title_pref_emoji_speech">Emoji</string>
-    <string name="emoji_speech_engine">Čitanje pomoću govornog mehanizma</string>
-    <string name="emoji_speech_names">Pročitao SandFly</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Posle slova, sa pauzom, npr. „h, Hristina“</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Posle slova, bez pauze, npr. „h Hristina“</string>
+    <string name="phonetic_letters_mode_instead_of_letter">Umesto slova, npr. „Hristina“</string>
+    <string name="title_pref_emoji_speech">Emodži</string>
+    <string name="emoji_speech_engine">Čita govorni mehanizam</string>
+    <string name="emoji_speech_names">Čita SandFly</string>
     <string name="emoji_speech_none">Ništa</string>
-    <string name="summary_selector_menu_emoji">Promenite način čitanja emodžija</string>
+    <string name="summary_selector_menu_emoji">Promeni način čitanja emodžija</string>
     <string name="emoji_speech_state">Emodži: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
-    <string name="title_pref_emoji_repeat_count">Brojite ponovljene emodžije</string>
+    <string name="title_pref_emoji_repeat_count">Brojanje ponovljenih emodžija</string>
     <string name="emoji_repeat_count_off">Isključeno</string>
     <string name="emoji_repeat_count_2">2 ili više</string>
     <string name="emoji_repeat_count_3">3 ili više</string>
@@ -1419,21 +1419,21 @@
     <string name="emoji_repeat_count_5">5 ili više</string>
     <string name="emoji_repeat_count_6">6 ili više</string>
     <string name="pref_table_headers_category_title">Čitanje tablice</string>
-    <string name="pref_table_column_headers_title">Pročitajte zaglavlja kolona</string>
+    <string name="pref_table_column_headers_title">Čitaj zaglavlja kolona</string>
     <string name="pref_table_column_headers_entry_after">Nakon podataka ćelije</string>
     <string name="pref_table_column_headers_entry_before">Pre podataka ćelije</string>
     <string name="pref_table_column_headers_entry_off">Ne čitaj</string>
-    <string name="pref_table_speak_row_column_numbers_title">Izgovorite brojeve redova i kolona</string>
-    <string name="pref_table_speak_row_column_numbers_summary">Najavite brojeve redova i kolona za ćelije tabele</string>
-    <string name="title_pref_speak_volume_changes">Promena jačine govora</string>
-    <string name="summary_pref_speak_volume_changes">Izgovorite novu jačinu zvuka nakon što pritisnete tastere za jačinu zvuka</string>
-    <string name="title_pref_speak_notifications">Izgovarajte obaveštenja</string>
-    <string name="summary_pref_speak_notifications">Pročitajte nova obaveštenja naglas kada stignu. Dolazni pozivi se uvek čitaju.</string>
-    <string name="title_pref_notification_list">Koristite listu obaveštenja SandFly</string>
+    <string name="pref_table_speak_row_column_numbers_title">Izgovaraj brojeve redova i kolona</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Izgovara brojeve reda i kolone za ćelije tabele</string>
+    <string name="title_pref_speak_volume_changes">Izgovaraj promene jačine zvuka</string>
+    <string name="summary_pref_speak_volume_changes">Izgovara novu jačinu zvuka posle pritiska tastera za jačinu zvuka</string>
+    <string name="title_pref_speak_notifications">Izgovaraj obaveštenja</string>
+    <string name="summary_pref_speak_notifications">Čitanje novih obaveštenja naglas kada stignu. Dolazni pozivi se uvek čitaju.</string>
+    <string name="title_pref_notification_list">Koristi listu obaveštenja SandFly-a</string>
     <string name="title_pref_notification_parts">Detalji obaveštenja</string>
-    <string name="title_pref_play_installer">Pojavljuje se instaliran od Google Plai</string>
-    <string name="summary_pref_play_installer">Recite drugim aplikacijama da je Google Plai instaliran SandFly. Neke aplikacije, kao što su neke bankarske aplikacije, isključuju usluge pristupačnosti koje su instalirane sa bilo kog drugog mesta. Potrebno je Shizuku i menja samo ono što je aplikacijama rečeno o tome odakle je SandFly došlo.</string>
-    <string name="summary_pref_play_installer_pending">Uključeno, ali Google Reprodukcija još nije snimljena kao instalater. SandFly postavlja kada je Shizuku dostupno.</string>
+    <string name="title_pref_play_installer">Prikazuj kao instalirano iz Google Play-a</string>
+    <string name="summary_pref_play_installer">Obaveštava druge aplikacije da je SandFly instaliran sa Google Play-a. Neke aplikacije, na primer neke bankarske aplikacije, isključuju usluge pristupačnosti instalirane iz bilo kog drugog izvora. Potreban je Shizuku i menja se samo ono što se aplikacijama saopštava o poreklu SandFly-a.</string>
+    <string name="summary_pref_play_installer_pending">Uključeno, ali Google Play još nije upisan kao instalater. SandFly to podešava kada je Shizuku dostupan.</string>
     <string name="notification_part_title">Naslov</string>
     <string name="notification_part_text">Tekst</string>
     <string name="notification_part_app">Naziv aplikacije</string>
@@ -1442,16 +1442,16 @@
     <string name="notification_list_title">Obaveštenja</string>
     <string name="notification_list_empty">Nema obaveštenja</string>
     <string name="notification_list_no_access">Pristup obaveštenjima je isključen</string>
-    <string name="notification_list_grant_access">Uključite pristup obaveštenjima</string>
+    <string name="notification_list_grant_access">Uključi pristup obaveštenjima</string>
     <string name="notification_list_quick_settings">Brza podešavanja</string>
     <string name="notification_list_dismiss">Odbaci</string>
     <string name="notification_list_show_all">Prikaži sve</string>
     <string name="notification_list_show_less">Prikaži manje</string>
     <string name="notification_list_clear_all">Obriši sve</string>
     <string name="notification_list_send">Pošalji</string>
-    <string name="notification_list_playing">Igranje</string>
+    <string name="notification_list_playing">Reprodukuje se</string>
     <string name="notification_list_paused">Pauzirano</string>
-    <string name="notification_list_play">Igraj</string>
+    <string name="notification_list_play">Pusti</string>
     <string name="notification_list_pause">Pauziraj</string>
     <string name="notification_list_previous">Nazad</string>
     <string name="notification_list_next">Dalje</string>
@@ -1460,7 +1460,7 @@
         <item quantity="few">%d obaveštenja</item>
         <item quantity="other">%d obaveštenja</item>
     </plurals>
-    <string name="title_pref_quick_settings">Koristite brza podešavanja SandFly</string>
+    <string name="title_pref_quick_settings">Koristi brza podešavanja SandFly-a</string>
     <string name="title_pref_quick_settings_items">Panel za brza podešavanja</string>
     <string name="quick_settings_title">Brza podešavanja</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1473,22 +1473,22 @@
     <string name="quick_settings_flashlight">Lampica</string>
     <string name="quick_settings_flashlight_brightness">Osvetljenost lampe</string>
     <string name="quick_settings_location">Lokacija</string>
-    <string name="quick_settings_auto_rotate">Auto-rotate</string>
+    <string name="quick_settings_auto_rotate">Automatsko rotiranje</string>
     <string name="quick_settings_battery_saver">Ušteda baterije</string>
     <string name="quick_settings_dark_theme">Tamna tema</string>
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Osvetljenost</string>
     <string name="quick_settings_adaptive_brightness">Adaptivna osvetljenost</string>
-    <string name="quick_settings_media_volume">Jačina medija</string>
+    <string name="quick_settings_media_volume">Jačina zvuka medija</string>
     <string name="quick_settings_call_volume">Jačina zvuka poziva</string>
     <string name="quick_settings_ring_volume">Jačina zvona</string>
-    <string name="quick_settings_notification_volume">Jačina obaveštenja</string>
+    <string name="quick_settings_notification_volume">Jačina zvuka obaveštenja</string>
     <string name="quick_settings_alarm_volume">Jačina zvuka alarma</string>
     <string name="quick_settings_accessibility_volume">Jačina zvuka za pristupačnost</string>
     <string name="quick_settings_system_volume">Jačina zvuka sistema</string>
-    <string name="quick_settings_data_saver">Data saver</string>
-    <string name="quick_settings_night_light">Night Light</string>
-    <string name="quick_settings_extra_dim">Ektra dim</string>
+    <string name="quick_settings_data_saver">Ušteda podataka</string>
+    <string name="quick_settings_night_light">Noćno svetlo</string>
+    <string name="quick_settings_extra_dim">Dodatno zatamnjenje</string>
     <string name="quick_settings_color_inversion">Inverzija boja</string>
     <string name="quick_settings_color_correction">Korekcija boje</string>
     <string name="quick_settings_microphone_access">Pristup mikrofonu</string>
@@ -1502,7 +1502,7 @@
     <string name="quick_settings_no_alarm">Nema alarma</string>
     <string name="quick_settings_settings">Podešavanja</string>
     <string name="quick_settings_power_menu">Meni za napajanje</string>
-    <string name="quick_settings_add_system_tile">Dodajte sistemsku pločicu</string>
+    <string name="quick_settings_add_system_tile">Dodaj sistemsku pločicu</string>
     <string name="quick_settings_no_system_tiles">Nema sistemskih pločica za dodavanje</string>
     <string name="quick_settings_tile_not_found">%1$s nije u brzim podešavanjima sistema</string>
     <string name="quick_settings_never">Nikada</string>
@@ -1519,21 +1519,21 @@
     <string name="quick_settings_connected">Povezano</string>
     <string name="quick_settings_battery">Baterija</string>
     <string name="quick_settings_battery_charging">%1$s, punjenje</string>
-    <string name="quick_settings_battery_full">%1$s, naplaćeno</string>
+    <string name="quick_settings_battery_full">%1$s, napunjeno</string>
     <string name="quick_settings_sound">Zvuk</string>
-    <string name="quick_settings_vibrate">Vibriraj</string>
-    <string name="quick_settings_mute">Mute</string>
+    <string name="quick_settings_vibrate">Vibracija</string>
+    <string name="quick_settings_mute">Bez zvuka</string>
     <string name="quick_settings_on">Uključeno</string>
     <string name="quick_settings_off">Isključeno</string>
     <string name="quick_settings_unavailable">Nedostupno</string>
     <string name="quick_settings_edit">Uredi</string>
     <string name="quick_settings_system">Brza podešavanja sistema</string>
-    <string name="quick_settings_open_settings">Otvorite podešavanja</string>
-    <string name="quick_settings_add_control">Dodajte kontrolu</string>
-    <string name="quick_settings_add_tile">Dodajte pločicu aplikacije</string>
+    <string name="quick_settings_open_settings">Otvori podešavanja</string>
+    <string name="quick_settings_add_control">Dodaj kontrolu</string>
+    <string name="quick_settings_add_tile">Dodaj pločicu aplikacije</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Broj kolona</string>
-    <string name="quick_settings_move">Pomeri se</string>
+    <string name="quick_settings_move">Pomeri</string>
     <string name="quick_settings_move_title">Pomeri %1$s</string>
     <string name="quick_settings_cell">Red %1$d, kolona %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1551,10 +1551,10 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Još jedna prečica za uključivanje ili isključivanje režima pretraživanja</string>
     <string name="title_pref_vibration_strength">Snaga vibracija</string>
     <string name="title_pref_audio_output_device">Audio izlazni uređaj</string>
-    <string name="dialog_title_audio_output_device">Izaberite gde da pustite zvuk SandFly</string>
-    <string name="value_audio_output_device_default">Sistem podrazumevano</string>
+    <string name="dialog_title_audio_output_device">Izaberite gde se pušta zvuk SandFly-a</string>
+    <string name="value_audio_output_device_default">Podrazumevano za sistem</string>
     <string name="value_audio_output_device_speaker">Telefonski zvučnik</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Povezani Bluetooth uređaj ili ožičeni</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Povezani Bluetooth ili žičani uređaj</string>
     <string name="value_audio_output_device_disconnected">isključen</string>
     <string name="value_audio_output_device_bluetooth_default">Bluetooth audio uređaj</string>
     <string name="value_audio_output_device_wired_headset">Žičane slušalice</string>
@@ -1563,15 +1563,15 @@
     <string name="value_audio_output_device_usb_device">USB audio uređaj</string>
     <string name="title_pref_speaker_devices">Zvučnik telefona sa ovim uređajima</string>
     <string name="summary_pref_speaker_devices_none">Ništa</string>
-    <string name="summary_pref_speaker_devices_no_devices">Još uvek nema Bluetooth ili ožičenih uređaja</string>
+    <string name="summary_pref_speaker_devices_no_devices">Još nema povezanih Bluetooth ili žičanih uređaja</string>
     <string name="pref_reduce_window_delay_summary">SandFly brže čita nove ekrane kada su animacije isključene. Ovo isključuje animacije za ceo telefon.</string>
-    <string name="dialog_message_detailed_ai_description">Odabrane slike se šalju na Google API Gemini radi opisa. Kada je uključena veštačka inteligencija na uređaju, oni su opisani na ovom telefonu i ne šalju se.\n\nSa besplatnim API ključem, Google može da zadrži ono što primi, da ga koristi za poboljšanje svojih proizvoda i da ljudi pregledaju. Generativna AI je eksperimentalna, tako da će praviti greške. Primenjuje se <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="dialog_message_detailed_ai_promotion">Detaljne opise slika pokreće generativna AI. Odabrane slike se šalju na Google API Gemini radi opisa. Kada je uključena veštačka inteligencija na uređaju, oni su opisani na ovom telefonu i ne šalju se.\n\nSa besplatnim API ključem, Google može da zadrži ono što primi, da ga koristi za poboljšanje svojih proizvoda i da ljudi pregledaju. Generativna AI je eksperimentalna, tako da će praviti greške. Detaljne opise slika možete da isključite bilo kada u podešavanjima SandFly.\n\nPrimenjuju se <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="dialog_message_screen_overview_promotion">Snimak ekrana se šalje Google API-ju Gemini da bude opisan, što traje nekoliko sekundi. Kada je uključena veštačka inteligencija na uređaju, ona je umesto toga opisana na ovom telefonu i ne šalje se.\n\nSa besplatnim API ključem, Google može da zadrži ono što primi, da ga koristi za poboljšanje svojih proizvoda i da ga ljudi pregledaju. Generativna AI je eksperimentalna, tako da će praviti greške. Primenjuje se <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
-    <string name="shortcut_title_open_app">Otvorite aplikaciju</string>
-    <string name="shortcut_open_app">Otvoreno <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Pomerite se do vrha</string>
-    <string name="shortcut_write_reading_control">Napišite slovo kontrole čitanja</string>
+    <string name="dialog_message_detailed_ai_description">Izabrane slike se radi opisivanja šalju Google-ovom Gemini API-ju. Kada je uključen AI na uređaju, one se umesto toga opisuju na ovom telefonu i ne šalju se.\n\nUz besplatni API ključ, Google može da zadrži ono što primi, da to koristi za poboljšanje svojih proizvoda i da da ljudima da to pregledaju. Generativni AI je eksperimentalan, pa će praviti greške. Važe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_detailed_ai_promotion">Detaljne opise slika pravi generativni AI. Izabrane slike se radi opisivanja šalju Google-ovom Gemini API-ju. Kada je uključen AI na uređaju, one se umesto toga opisuju na ovom telefonu i ne šalju se.\n\nUz besplatni API ključ, Google može da zadrži ono što primi, da to koristi za poboljšanje svojih proizvoda i da da ljudima da to pregledaju. Generativni AI je eksperimentalan, pa će praviti greške. Detaljne opise slika možete da isključite u bilo kom trenutku u podešavanjima SandFly-a.\n\nVaže <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="dialog_message_screen_overview_promotion">Snimak ekrana se radi opisivanja šalje Google-ovom Gemini API-ju, što traje nekoliko sekundi. Kada je uključen AI na uređaju, on se umesto toga opisuje na ovom telefonu i ne šalje se.\n\nUz besplatni API ključ, Google može da zadrži ono što primi, da to koristi za poboljšanje svojih proizvoda i da da ljudima da to pregledaju. Generativni AI je eksperimentalan, pa će praviti greške. Važe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g>.</string>
+    <string name="shortcut_title_open_app">Otvori aplikaciju</string>
+    <string name="shortcut_open_app">Otvori <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
+    <string name="shortcut_scroll_to_top">Pomeri do vrha</string>
+    <string name="shortcut_write_reading_control">Napiši slovo kontrole čitanja</string>
     <string name="title_pref_reading_control_letters">Rukopisna slova abecede</string>
     <string name="reading_control_letter_none">Ništa</string>
     <string name="handwriting_prompt">Napiši slovo abecede</string>
@@ -1584,7 +1584,7 @@
     <string name="handwriting_not_recognized">Rukopis nije prepoznat</string>
     <string name="handwriting_downloading">Prepoznavanje rukopisa se preuzima</string>
     <string name="handwriting_download_title">Želite li da preuzmete prepoznavanje rukopisa?</string>
-    <string name="handwriting_download_message">Na ovom telefonu se prepoznaje rukopis. Njegov model za ovaj jezik, oko 20 MB, jednom se preuzima sa Google. Poruka se prikazuje kada je preuzeta.</string>
+    <string name="handwriting_download_message">Na ovom telefonu se prepoznaje rukopis. Njegov model za ovaj jezik, oko 20 MB, preuzima se jednom sa Google-a. Kada se preuzme, prikazuje se poruka.</string>
     <string name="handwriting_download_button">Preuzmi</string>
     <string name="handwriting_downloaded">Preuzeto je prepoznavanje rukopisa</string>
     <string name="handwriting_download_failed">Nije moguće preuzeti prepoznavanje rukopisa. Proverite internet vezu.</string>
@@ -1602,9 +1602,9 @@
     <string name="handwriting_keyboard_name">SandFly rukopis</string>
     <string name="handwriting_space">Razmak</string>
     <string name="handwriting_new_line">Novi red</string>
-    <string name="handwriting_tutorial_intro">Vodič za tastaturu rukopisa. Pišite jednim prstom bilo gde na ekranu. Ono što napišete se otkucava kada zastanete na trenutak. Da biste završili vodič, prevucite nadole sa tri prsta.</string>
-    <string name="handwriting_tutorial_write_letter">Napiši slovo abecede a.</string>
-    <string name="handwriting_tutorial_write_word">Sada napišite reč hi (h praćeno i).</string>
+    <string name="handwriting_tutorial_intro">Vodič za tastaturu za rukopis. Pišite jednim prstom bilo gde na ekranu. Ono što napišete unosi se kada na trenutak zastanete. Da biste završili vodič, prevucite nadole sa tri prsta.</string>
+    <string name="handwriting_tutorial_write_letter">Napišite slovo a.</string>
+    <string name="handwriting_tutorial_write_word">Sada napišite reč hi (h, pa i).</string>
     <string name="handwriting_tutorial_typed">Otkucano <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Prevucite udesno sa dva prsta da biste uneli razmak.</string>
     <string name="handwriting_tutorial_delete">Prevucite nalevo sa dva prsta da biste izbrisali znak ispred kursora.</string>
@@ -1612,48 +1612,48 @@
     <string name="handwriting_tutorial_next_reading">Ako je rukopis prepoznat kao drugi znak, na primer veliko slovo, prevucite nagore sa dva prsta da biste izabrali sledeći predlog za prepoznavanje. Pokušajte sada.</string>
     <string name="handwriting_tutorial_read_back">Dodirnite sa dva prsta da pročitate tekst ispred kursora.</string>
     <string name="handwriting_tutorial_new_line">Prevucite nadole sa dva prsta da biste umetnuli novi red ili izvršili radnju u polju za tekst, kao što je Pošalji.</string>
-    <string name="handwriting_tutorial_not_that">To je bio još jedan gest.</string>
-    <string name="handwriting_tutorial_done">Nova linija. Tutorial je završen. Prevucite nadole sa tri prsta da biste sakrili tastaturu, a udesno ili ulevo sa tri prsta da biste promenili tastaturu. Da biste ponovo otvorili vodič, dodirnite sa tri prsta.</string>
-    <string name="handwriting_tutorial_finished">Tutorijal je završen. Da biste je ponovo otvorili, dodirnite sa tri prsta.</string>
+    <string name="handwriting_tutorial_not_that">To je bio drugi pokret.</string>
+    <string name="handwriting_tutorial_done">Novi red. Vodič je završen. Prevucite nadole sa tri prsta da biste sakrili tastaturu, a udesno ili ulevo sa tri prsta da biste promenili tastaturu. Da biste ponovo otvorili vodič, dodirnite sa tri prsta.</string>
+    <string name="handwriting_tutorial_finished">Vodič je završen. Da biste ga ponovo otvorili, dodirnite sa tri prsta.</string>
     <string name="handwriting_no_alternatives">Nema drugih predloga</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> od <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Prazan tekst</string>
     <string name="handwriting_not_available">Prepoznavanje rukopisa nije dostupno na ovom uređaju</string>
-    <string name="shortcut_scroll_to_bottom">Pomerite se do dna</string>
+    <string name="shortcut_scroll_to_bottom">Pomeri do dna</string>
     <string name="shortcut_refresh">Osveži</string>
-    <string name="shortcut_system_notifications">Senka za sistemska obaveštenja</string>
+    <string name="shortcut_system_notifications">Panel sa obaveštenjima sistema</string>
     <string name="shortcut_system_quick_settings">Brza podešavanja sistema</string>
     <string name="shortcut_lock_screen">Zaključajte ekran uređaja</string>
     <string name="shortcut_power_menu">Meni za napajanje</string>
-    <string name="shortcut_increase_media_volume">Povećajte jačinu medija</string>
-    <string name="shortcut_decrease_media_volume">Smanjite jačinu medija</string>
+    <string name="shortcut_increase_media_volume">Povećaj jačinu zvuka medija</string>
+    <string name="shortcut_decrease_media_volume">Smanji jačinu zvuka medija</string>
     <string name="title_clear_selection">Obriši izbor</string>
     <string name="title_pref_brightness">Osvetljenost</string>
     <string name="summary_support_change_brightness">Povećajte ili smanjite osvetljenost ekrana, čak i kada je ekran sakriven</string>
     <string name="title_pref_shortcut_3finger_4tap">Četvorostruko dodirnite sa 3 prsta</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Rotirajte u smeru kazaljke na satu sa 2 prsta</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Rotirajte u smeru suprotnom od kazaljke na satu sa 2 prsta</string>
-    <string name="title_pref_shortcut_2finger_scrub">Piling sa 2 prsta</string>
-    <string name="title_pref_shortcut_2finger_pinch">Uštipnite sa 2 prsta</string>
+    <string name="title_pref_shortcut_2finger_scrub">Brzo prevlačenje napred-nazad sa 2 prsta</string>
+    <string name="title_pref_shortcut_2finger_pinch">Skupljanje sa 2 prsta</string>
     <string name="title_pref_shortcut_2finger_spread">Raširite sa 2 prsta</string>
-    <string name="title_pref_shortcut_3finger_pinch">Uštipnite sa 3 prsta</string>
+    <string name="title_pref_shortcut_3finger_pinch">Skupljanje sa 3 prsta</string>
     <string name="title_pref_shortcut_3finger_spread">Raširite sa 3 prsta</string>
-    <string name="title_pref_shortcut_4finger_pinch">Uštipnite sa 4 prsta</string>
+    <string name="title_pref_shortcut_4finger_pinch">Skupljanje sa 4 prsta</string>
     <string name="title_pref_shortcut_4finger_spread">Raširite sa 4 prsta</string>
     <string name="title_pref_shortcut_edge_bottom_up">Prevucite nagore od donje ivice</string>
-    <string name="title_pref_shortcut_edge_bottom_long_up">Dugo prevucite nagore od donje ivice</string>
+    <string name="title_pref_shortcut_edge_bottom_long_up">Dugačko prevlačenje nagore od donje ivice</string>
     <string name="title_pref_shortcut_edge_top_left_down">Prevucite nadole od gore levo</string>
     <string name="title_pref_shortcut_edge_top_right_down">Prevucite nadole od gore desno</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Dugo prevucite nadole od gornjeg levog vrha</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Dugo prevucite nadole od gornjeg desnog</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Dugačko prevlačenje nadole od gore levo</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Dugačko prevlačenje nadole od gore desno</string>
     <string name="title_pref_shortcut_edge_left_top_right">Prevucite udesno sa leve ivice, gornje polovine</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Dugačko prevlačenje desno od leve ivice, gornje polovine</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Dugačko prevlačenje udesno od leve ivice, gornja polovina</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">Prevucite udesno sa leve ivice, donje polovine</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Dugačko prevlačenje desno od leve ivice, donje polovine</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Dugačko prevlačenje udesno od leve ivice, donja polovina</string>
     <string name="title_pref_shortcut_edge_right_top_left">Prevucite levo od desne ivice, gornje polovine</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Dugačko prevlačenje levo od desne ivice, gornje polovine</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Dugačko prevlačenje ulevo od desne ivice, gornja polovina</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Prevucite levo od desne ivice, donje polovine</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Dugačko prevlačenje levo od desne ivice, donje polovine</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Dugačko prevlačenje ulevo od desne ivice, donja polovina</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">Držite prst da biste izabrali bilo koji taster, a zatim ga podignite. Dvaput dodirnite za Enter, Gotovo ili Pošalji.</string>
     <string name="value_type_confirmation_tap_to_type">Dodirnite bilo koji taster da biste ga otkucali ili držite prst da izaberete bilo koji taster, a zatim podignite</string>
     <string name="title_pref_multi_tap_timeout">Vreme između dodira jednim prstom</string>
@@ -1676,82 +1676,82 @@
     <string name="value_rotor_step_30">30 stepeni (podrazumevano)</string>
     <string name="value_rotor_step_45">45 stepeni</string>
     <string name="value_rotor_step_60">60 stepeni</string>
-    <string name="title_pref_low_latency_audio">Nisko kašnjenje zvuka</string>
-    <string name="summary_pref_low_latency_audio">Pustite zvukove i govor SandFly kroz najbržu audio putanju telefona, tako da ih čujete ranije. Isključite ga ako se govor ili zvuci prekinu ili zvuče pogrešno.</string>
+    <string name="title_pref_low_latency_audio">Zvuk sa malim kašnjenjem</string>
+    <string name="summary_pref_low_latency_audio">Pušta zvukove i govor SandFly-a najbržom audio putanjom telefona da biste ih čuli ranije. Isključite ako se govor ili zvuci prekidaju ili zvuče pogrešno.</string>
     <string name="value_focus_delay_200ms_default">0,2 sekunde (podrazumevano)</string>
     <string name="value_focus_delay_300ms">0,3 sekunde</string>
-    <string name="title_pref_lift_to_activate">Podignite da biste aktivirali</string>
-    <string name="summary_support_change_lift_to_activate">Promenite gde podizanje prsta aktivira stavku</string>
+    <string name="title_pref_lift_to_activate">Aktiviranje podizanjem prsta</string>
+    <string name="summary_support_change_lift_to_activate">Promeni gde podizanje prsta aktivira stavku</string>
     <string name="value_lift_to_activate_disabled">Onemogućeno</string>
     <string name="value_lift_to_activate_navigation_bar">Samo na traci za navigaciju</string>
     <string name="value_lift_to_activate_entire_screen">Ceo ekran</string>
     <string name="template_lift_to_activate_changed">Podignite za aktiviranje: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Zamotajte se</string>
+    <string name="title_pref_wrap_around">Kružno kretanje</string>
     <string name="summary_pref_wrap_around">Prevlačenjem preko poslednje stavke prelazi se na prvu, a posle prve ide na poslednju. Kada je isključeno, na kraju se čuje zvuk.</string>
-    <string name="title_pref_fix_stuck_touch_exploration">Popravite zaglavljeno istraživanje dodirom</string>
-    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez dozvole DUMP, SandFly može samo da kaže da je istraživanje dodirom možda zaglavljeno. Da biste to popravili, pokrenite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
+    <string name="title_pref_fix_stuck_touch_exploration">Popravi zaglavljeno istraživanje dodirom</string>
+    <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Bez dozvole DUMP, SandFly može samo da kaže da je istraživanje dodirom možda zaglavljeno. Da bi SandFly mogao to da popravi, pokrenite: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Popravljanje istraživanja dodirom</string>
     <string name="stuck_touch_exploration_fixed">Istraživanje dodirom je ispravljeno</string>
     <string name="stuck_touch_exploration_not_fixed">Istraživanje dodirom je i dalje zaglavljeno. Ponovo pokrenite telefon da biste to popravili.</string>
     <string name="stuck_touch_exploration_restart">Istraživanje dodirom je možda zaglavljeno. Ponovo pokrenite telefon da biste to popravili.</string>
-    <string name="stuck_touch_exploration_grant_dump">Istraživanje dodirom je možda zaglavljeno. Ponovo pokrenite telefon da biste to popravili ili dajte SandFly dozvolu DUMP sa ADB-om kako bi to mogao da popravi.</string>
+    <string name="stuck_touch_exploration_grant_dump">Istraživanje dodirom je možda zaglavljeno. Ponovo pokrenite telefon da biste to popravili ili dajte SandFly-u dozvolu DUMP pomoću ADB-a da bi mogao to da popravi.</string>
     <string name="title_pref_window_names">Imena prozora</string>
     <string name="window_names_always">Uvek</string>
-    <string name="window_names_until_first_item">Uvek, odsečeni po prvoj stavci</string>
-    <string name="window_names_window_opens">Tek kada se otvori prozor</string>
+    <string name="window_names_until_first_item">Uvek, prekida ih prva stavka</string>
+    <string name="window_names_window_opens">Samo kada se otvori prozor</string>
     <string name="window_names_never">Nikada</string>
     <string name="title_pref_selector_links_controls_web_only">Veze i kontrole samo u veb sadržaju</string>
-    <string name="title_pref_selector_auto_switch">Automatski promenite kontrolu čitanja</string>
-    <string name="title_pref_touch_stops_speech">Zaustavite govor kada dodirnete ekran</string>
-    <string name="title_pref_focus_new_windows">Premestite fokus na nove prozore</string>
+    <string name="title_pref_selector_auto_switch">Automatski menjaj kontrolu čitanja</string>
+    <string name="title_pref_touch_stops_speech">Zaustavi govor pri dodiru ekrana</string>
+    <string name="title_pref_focus_new_windows">Premesti fokus na nove prozore</string>
     <string name="title_pref_volume_keys_adjust_sliders">Tasteri za jačinu zvuka podešavaju klizače</string>
-    <string name="summary_pref_volume_keys_adjust_sliders">Kada klizač ima fokus, jačina zvuka se povećava i smanjuje umesto jačine zvuka</string>
+    <string name="summary_pref_volume_keys_adjust_sliders">Kada je klizač u fokusu, tasteri za pojačavanje i utišavanje zvuka menjaju njegovu vrednost umesto jačine zvuka</string>
     <string name="title_pref_volume_keys_move_cursor">Tasteri za jačinu zvuka pomeraju kursor</string>
-    <string name="summary_pref_volume_keys_move_cursor">Kada polje za tekst ima fokus, jačina zvuka pomera kursor unazad za jedan znak, a smanjivanje jačine zvuka ga pomera</string>
-    <string name="summary_support_wrap_around">Uključite ili isključite previjanje sa poslednje stavke na prvu</string>
-    <string name="wrap_around_on">Zamotajte se</string>
-    <string name="wrap_around_off">Zamotajte</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tablet je okrenut licem u stranu</string>
+    <string name="summary_pref_volume_keys_move_cursor">Kada je polje za tekst u fokusu, pojačavanje zvuka pomera kursor jedan znak unazad, a utišavanje jedan znak unapred</string>
+    <string name="summary_support_wrap_around">Uključivanje ili isključivanje prelaska sa poslednje stavke na prvu</string>
+    <string name="wrap_around_on">Kružno kretanje: uključeno</string>
+    <string name="wrap_around_off">Kružno kretanje: isključeno</string>
+    <string name="title_selector_tablet_held_up_faces_away">Podignuti tablet okrenut od vas</string>
     <string name="summary_support_tablet_held_up_faces_away">Za tastaturu sa Brajevom azbukom na tabletu ili rasklopljenom telefonu</string>
-    <string name="tablet_held_up_faces_away_on">Tablet je okrenut okrenut</string>
-    <string name="tablet_held_up_faces_away_off">Tablet je bio okrenut licem</string>
+    <string name="tablet_held_up_faces_away_on">Podignuti tablet okrenut od vas: uključeno</string>
+    <string name="tablet_held_up_faces_away_off">Podignuti tablet okrenut od vas: isključeno</string>
     <string name="title_keyboard_echo_on_screen">Eho tastature na ekranu</string>
     <string name="title_keyboard_echo_physical">Odjek fizičke tastature</string>
     <string name="title_keyboard_echo_braille_keyboard">Odjek tastature Brajeve azbuke</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Odjek tastature rukopisa</string>
     <string name="title_keyboard_echo_braille_display">Odjek Brajevog displeja</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Prekinite govor prilikom kucanja</string>
+    <string name="title_pref_interrupt_typing">Prekidaj govor pri kucanju</string>
     <string name="pref_interrupt_typing_entry_always">Uvek</string>
     <string name="pref_interrupt_typing_entry_edit_fields">U poljima za uređivanje</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">Na eho tastature</string>
-    <string name="title_pref_interrupt_enter">Prekinite govor na Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Ime, država, tip</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Tip, država, ime</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Država, tip, ime</string>
-    <string name="item_detail_name">Ime</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Uz eho tastature</string>
+    <string name="title_pref_interrupt_enter">Prekidaj govor na taster Enter</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Naziv, stanje, tip</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Tip, stanje, naziv</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Stanje, tip, naziv</string>
+    <string name="item_detail_name">Naziv</string>
     <string name="item_detail_type">Tip</string>
-    <string name="item_detail_state">Država</string>
-    <string name="action_move_up">Pomeri se gore</string>
-    <string name="action_move_down">Pomeri se dole</string>
+    <string name="item_detail_state">Stanje</string>
+    <string name="action_move_up">Pomeri nagore</string>
+    <string name="action_move_down">Pomeri nadole</string>
     <string name="template_list_position">Pozicija <xliff:g id="position" example="2">%1$d</xliff:g> od <xliff:g id="count" example="3">%2$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up">Preuzeto <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_picked_up">Podignuto: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
     <string name="template_item_details_order_dropped">Ispušteno <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly kaže detalje stavke ovim redosledom. Da biste ga promenili, dodirnite i držite detalj, a zatim ga prevucite nagore ili nadole. Sa uključenim SandFly, dvaput dodirnite i zadržite, a zatim prevucite. Takođe možete koristiti akcije Pomeri nagore i Pomeri nadole.</string>
-    <string name="title_pref_speak_items_before_scroll">Izgovorite stavke pre nego što se pomaknu u prikaz</string>
+    <string name="title_pref_speak_items_before_scroll">Izgovaraj stavke pre nego što se pomaknu u prikaz</string>
     <string name="gemini_error_api_key">Gemini nije prihvatio API ključ. Proverite ključ u podešavanjima automatskih opisa.</string>
     <string name="gemini_error_quota">Ograničenje upotrebe vašeg Gemini API ključa je dostignuto. Pokušajte ponovo kasnije.</string>
     <string name="gemini_error_busy">Gemini je trenutno zauzet. Pokušajte ponovo za trenutak.</string>
-    <string name="gemini_error_timeout">Gemini trebalo je predugo za odgovor. Pokušajte ponovo.</string>
+    <string name="gemini_error_timeout">Gemini-ju je trebalo predugo za odgovor. Pokušajte ponovo.</string>
     <string name="gemini_error_with_code">Gemini nije mogao da odgovori, greška <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini nije mogao da odgovori, greška <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
-    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Ne mogu da dobijem detaljniji opis slike: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
+    <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Nije moguće dobiti detaljniji opis slike: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Pitajte glasom</string>
-    <string name="image_qna_stop_listening">Prestani da slušaš</string>
+    <string name="image_qna_stop_listening">Zaustavi slušanje</string>
     <string name="image_qna_type_question">Unesite pitanje</string>
     <string name="shortcut_dictate">Diktiranje</string>
-    <string name="title_pref_ai_dictation">Tačan diktat sa AI</string>
-    <string name="dictation_not_corrected">Nije ispravljeno. Otkucano kao prepoznato.</string>
+    <string name="title_pref_ai_dictation">Ispravljanje diktiranja pomoću veštačke inteligencije</string>
+    <string name="dictation_not_corrected">Nije ispravljeno. Otkucano kako je prepoznato.</string>
     <string name="dictation_nothing_recognized">Ništa nije prepoznato</string>
     <string name="dictation_unavailable">Prepoznavanje govora nije dostupno</string>
     <string name="dictation_field_gone">Polje za tekst je zatvoreno. Ništa nije otkucano.</string>
@@ -1771,9 +1771,9 @@
     <string name="dictation_whisper_use">Koristi</string>
     <string name="title_pref_dictation_ai_service">AI usluga za diktiranje</string>
     <string name="dictation_ai_same">Isto kao za automatske opise</string>
-    <string name="title_pref_browse_mode_per_app">Zapamtite režim pregledanja u svakoj aplikaciji</string>
-    <string name="title_pref_export_settings">Izvezite podešavanja</string>
-    <string name="title_pref_import_settings">Uvezite podešavanja</string>
+    <string name="title_pref_browse_mode_per_app">Pamti režim pregledanja u svakoj aplikaciji</string>
+    <string name="title_pref_export_settings">Izvezi podešavanja</string>
+    <string name="title_pref_import_settings">Uvezi podešavanja</string>
     <string name="settings_export_done">Podešavanja su izvezena. API ključevi nisu uključeni</string>
     <string name="settings_export_failed">Podešavanja nisu mogla da se izvezu</string>
     <string name="settings_import_done">Podešavanja su uvezena</string>

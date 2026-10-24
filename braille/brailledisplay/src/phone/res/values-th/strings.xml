@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">การทำงานของระบบ</string>
   <string name="bd_commands_bindings_category_system_actions_summary">กลับ หน้าแรก การแจ้งเตือน และอื่นๆ</string>
   <string name="bd_commands_bindings_category_talkback_features_title">ฟีเจอร์ SandFly</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly เมนูและการตั้งค่า</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">เมนูและการตั้งค่าของ SandFly</string>
   <string name="bd_commands_bindings_category_braille_settings_title">การตั้งค่าอักษรเบรลล์</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">ภาษาของอักษรเบรลล์และการตั้งค่า</string>
   <string name="bd_commands_bindings_category_text_editing_title">การแก้ไขข้อความ</string>
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">การดำเนินการนี้จะจัดเก็บข้อความบางส่วนใน SandFly เช่น การแจ้งเตือนและการปลุก คุณเปลี่ยนแปลงการตั้งค่านี้ได้ทุกเมื่อ</string>
   <string name="popup_message_history_consent_dialog_positive_btn">เปิด</string>
   <string name="popup_message_history_consent_dialog_negative_btn">ไม่เป็นไร</string>
-    <string name="external_display_channel">การแสดงอักษรเบรลล์จากแอปอื่นๆ</string>
+    <string name="external_display_channel">จอแสดงผลอักษรเบรลล์จากแอปอื่น</string>
     <string name="external_display_ask_title">อนุญาตให้ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> เป็นจอแสดงผลอักษรเบรลล์สำหรับ SandFly หรือไม่</string>
     <string name="external_display_ask_text">SandFly จะไม่ใช้จนกว่าคุณจะอนุญาต</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> จะสามารถอ่านทุกอย่าง SandFly ที่แสดงเป็นอักษรเบรลล์ ซึ่งสามารถเป็นอะไรก็ได้บนหน้าจอ รวมถึงข้อความและสิ่งที่คุณพิมพ์ นอกจากนี้ยังจะสามารถควบคุมอุปกรณ์ของคุณได้มากที่สุดเท่าที่จะเป็นไปได้ด้วยจอแสดงผลอักษรเบรลล์: พิมพ์ เปิดแอป และเรียกใช้คำสั่ง SandFly ใดก็ได้ อนุญาตเฉพาะแอปที่คุณเชื่อถือเท่านั้น</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> จะอ่านทุกอย่างที่ SandFly แสดงเป็นอักษรเบรลล์ได้ ซึ่งอาจเป็นอะไรก็ได้บนหน้าจอ รวมถึงข้อความและสิ่งที่คุณพิมพ์ แอปนี้ยังควบคุมอุปกรณ์ได้เหมือนที่คุณทำได้ด้วยจอแสดงผลอักษรเบรลล์ ได้แก่ การพิมพ์ การเปิดแอป และการเรียกใช้คำสั่งใดก็ได้ของ SandFly อนุญาตเฉพาะแอปที่คุณเชื่อถือเท่านั้น</string>
     <string name="external_display_allow">อนุญาต</string>
     <string name="external_display_deny">ไม่อนุญาต</string>
     <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> คือจอแสดงผลอักษรเบรลล์ของคุณ</string>
-    <string name="external_display_in_use_text">ขณะที่ SandFly ใช้ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> สามารถอ่านหน้าจอและควบคุมอุปกรณ์ได้</string>
-    <string name="external_displays_title">แสดงจากแอปอื่น</string>
-    <string name="external_displays_summary">แอปที่คุณอนุญาตสามารถเป็นจอแสดงผลอักษรเบรลล์ได้ในราคา SandFly แอพที่เป็นจอแสดงผลอักษรเบรลล์สามารถอ่านหน้าจอและควบคุมอุปกรณ์ได้</string>
+    <string name="external_display_in_use_text">ขณะที่ SandFly ใช้งานอยู่ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> จะอ่านหน้าจอและควบคุมอุปกรณ์ได้</string>
+    <string name="external_displays_title">จอแสดงผลจากแอปอื่น</string>
+    <string name="external_displays_summary">แอปที่คุณอนุญาตจะเป็นจอแสดงผลอักษรเบรลล์ของ SandFly ได้ แอปที่เป็นจอแสดงผลอักษรเบรลล์จะอ่านหน้าจอและควบคุมอุปกรณ์ได้</string>
     <string name="external_displays_none">ไม่มีแอปใดที่สามารถเป็นจอแสดงผลอักษรเบรลล์ได้</string>
 </resources>

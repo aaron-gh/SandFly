@@ -6,22 +6,22 @@
     <string name="title_pref_problem_report_title">Cím</string>
     <string name="title_pref_problem_report_app">Alkalmazás, ahol ez történik</string>
     <string name="title_pref_problem_report_description">Leírás</string>
-    <string name="dialog_message_problem_report_description">Mi történik és mire számítottál.</string>
-    <string name="title_pref_problem_report_steps">A szoftverhiba reprodukálásának lépései</string>
-    <string name="title_pref_problem_report_email">E-mail a válaszokért</string>
-    <string name="title_pref_problem_report_device">Tartalmazza az eszköz adatait</string>
-    <string name="title_pref_problem_report_log">Tartalmazza a SandFly naplót</string>
+    <string name="dialog_message_problem_report_description">Mi történik, és mire számított.</string>
+    <string name="title_pref_problem_report_steps">Reprodukálás lépései</string>
+    <string name="title_pref_problem_report_email">E-mail-cím a válaszokhoz</string>
+    <string name="title_pref_problem_report_device">Eszközadatok csatolása</string>
+    <string name="title_pref_problem_report_log">SandFly-napló csatolása</string>
     <string name="summary_pref_problem_report_log">Tartalmazhat szöveget a képernyőről</string>
     <string name="title_pref_problem_report_send">Küldés</string>
     <string name="summary_pref_problem_report_sending">Küldés</string>
     <string name="problem_report_missing_fields">Adja meg a címet és a leírást.</string>
     <string name="problem_report_invalid_email">Adjon meg egy érvényes e-mail címet.</string>
     <string name="problem_report_sent">Visszajelzés elküldve.</string>
-    <string name="problem_report_rate_limited">Túl sok visszajelzést küldtünk. Próbálja újra később.</string>
-    <string name="problem_report_no_connection">A visszajelzést nem küldték el. Ellenőrizze az internetkapcsolatot.</string>
-    <string name="problem_report_not_sent">A visszajelzést nem küldték el. Próbálja újra később.</string>
+    <string name="problem_report_rate_limited">Túl sok visszajelzést küldött. Próbálja újra később.</string>
+    <string name="problem_report_no_connection">A visszajelzést nem sikerült elküldeni. Ellenőrizze az internetkapcsolatot.</string>
+    <string name="problem_report_not_sent">A visszajelzést nem sikerült elküldeni. Próbálja újra később.</string>
     <string-array name="problem_report_type_entries">
-        <item>Helytelen viselkedés</item>
+        <item>Hibás működés</item>
         <item>Összeomlás</item>
         <item>Lassú vagy nem reagál</item>
         <item>Javaslat</item>
@@ -29,12 +29,12 @@
     <string-array name="problem_report_area_entries">
         <item>Beszéd</item>
         <item>Kézmozdulatok</item>
-        <item>Érintse meg a felfedezést</item>
-        <item>Vezérlők és menük olvasása</item>
-        <item>Gépelés és billentyűzet</item>
+        <item>Felfedezés érintéssel</item>
+        <item>Felolvasásvezérlés és menük</item>
+        <item>Gépelés és billentyűzetek</item>
         <item>Braille-billentyűzet</item>
         <item>Braille-kijelző</item>
-        <item>Hangok és rezgés</item>
+        <item>Hangok és rezgések</item>
         <item>Értesítések</item>
         <item>Webes tartalom</item>
         <item>Szkriptek</item>
@@ -45,20 +45,20 @@
     <string name="title_report_new">Visszajelzés küldése</string>
     <string name="title_report_inbox">Beérkezett üzenetek</string>
     <string name="title_report_drafts">Piszkozatok</string>
-    <string name="report_inbox_empty">Nem küldtek visszajelzést</string>
-    <string name="report_drafts_empty">Nincs huzat</string>
-    <string name="report_just_now">csak most</string>
+    <string name="report_inbox_empty">Nincs elküldött visszajelzés</string>
+    <string name="report_drafts_empty">Nincsenek piszkozatok</string>
+    <string name="report_just_now">az imént</string>
     <string name="report_untitled">Cím nélkül</string>
-    <string name="report_draft_summary">Megváltozott <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
+    <string name="report_draft_summary">Módosítva: <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">elküldve <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> új válasz</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> új válasz</item>
     </plurals>
     <string name="report_status_changed">állapot megváltozott</string>
-    <string name="report_status_open">Nyitott kérdés</string>
+    <string name="report_status_open">Nyitott</string>
     <string name="report_status_completed">Lezárva, elkészült</string>
-    <string name="report_status_not_planned">Zárt, nem tervezett</string>
+    <string name="report_status_not_planned">Lezárva, nem tervezett</string>
     <string name="report_status_duplicate">Lezárva, duplikált</string>
     <string name="report_status_unknown">Eltávolítva</string>
     <string name="title_report_status">Állapot</string>
@@ -70,7 +70,7 @@
     <string name="title_report_reply_text">Az Ön válasza</string>
     <string name="title_report_send_reply">Válasz küldése</string>
     <string name="report_reply_sent">Válasz elküldve.</string>
-    <string name="report_reply_not_sent">A választ nem küldték el. Próbálja újra később.</string>
+    <string name="report_reply_not_sent">A választ nem sikerült elküldeni. Próbálja újra később.</string>
     <string name="title_report_remove">Eltávolítás a beérkező levelek közül</string>
     <string name="dialog_title_report_remove">Eltávolítja ezt a visszajelzést a beérkező levelek közül?</string>
     <string name="dialog_message_report_remove">A rá adott válaszok többé nem érik el ezt a telefont.</string>

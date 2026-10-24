@@ -8,10 +8,10 @@
     <string name="gemini_model_list_failed">Nie udało się pobrać modeli: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Najpierw ustaw klucz API Gemini</string>
     <string name="ai_service_address_hint">Adres, na przykład https://openrouter.ai/api/v1</string>
-    <string name="ai_service_model_hint">Modelka</string>
+    <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Adres musi zaczynać się od https://. Nic nie zostało zapisane.</string>
-    <string name="dialog_message_ai_service_consent">Obrazy i zrzuty ekranu są wysyłane do <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> w celu opisu, co zajmuje kilka sekund. Obowiązują jego własne warunki i polityka prywatności. Generatywna sztuczna inteligencja jest eksperymentalna, więc będzie popełniać błędy.</string>
-    <string name="ai_service_error_api_key">Usługa AI nie zaakceptowała klucza API. Sprawdź jego ustawienia w Opisach automatycznych.</string>
+    <string name="dialog_message_ai_service_consent">Obrazy i zrzuty ekranu są wysyłane do <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> w celu opisania, co trwa kilka sekund. Obowiązują warunki i polityka prywatności tej usługi. Generatywna sztuczna inteligencja jest eksperymentalna, więc będzie popełniać błędy.</string>
+    <string name="ai_service_error_api_key">Usługa AI nie zaakceptowała klucza API. Sprawdź jej ustawienia w sekcji Automatyczne opisy.</string>
     <string name="ai_service_error_quota">Osiągnięto limit wykorzystania usługi AI. Spróbuj ponownie później.</string>
     <string name="ai_service_error_busy">Usługa AI jest teraz zajęta. Spróbuj ponownie za chwilę.</string>
     <string name="ai_service_error_timeout">Odpowiedź usługi AI trwała zbyt długo. Spróbuj ponownie.</string>
@@ -23,8 +23,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Brak</string>
-    <string name="ai_service_not_set_up">Żadna usługa AI nie jest używana. Skonfiguruj lub wybierz w ustawieniach opisów automatycznych.</string>
-    <string name="ai_provider_none_set_up">Nie skonfigurowano żadnej usługi AI. Skonfiguruj go w ustawieniach poniżej.</string>
+    <string name="ai_service_not_set_up">Nie jest używana żadna usługa AI. Skonfiguruj lub wybierz jedną w ustawieniach Automatyczne opisy.</string>
+    <string name="ai_provider_none_set_up">Nie skonfigurowano żadnej usługi AI. Skonfiguruj jedną w jej ustawieniach poniżej.</string>
     <string name="ai_provider_other">Inna usługa</string>
     <string name="title_pref_category_ai_services">Usługi AI</string>
     <string name="title_pref_ai_provider">Usługa AI</string>
@@ -37,10 +37,10 @@
     <string name="ai_provider_address_message">Adres usługi z interfejsem API czatu zgodnym z OpenAI i danymi wejściowymi obrazu, np. https://example.com/v1.</string>
     <string name="ai_provider_not_set">Nie ustawiono</string>
     <string name="ai_provider_set">Skonfigurowane</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> Klucz API</string>
+    <string name="title_pref_gemini_api_key_of">Klucz API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">Model <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Nie wybrano</string>
-    <string name="ai_provider_key_message">Wklej swój klucz API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Aby go usunąć, wyczyść pole i zapisz. Obrazy i zrzuty ekranu, które opisujesz, są wysyłane do <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Wklej swój klucz API usługi <xliff:g id="service" example="Claude">%1$s</xliff:g>. Aby go usunąć, wyczyść pole i zapisz. Obrazy i ekrany, których opis zlecasz, są wysyłane do <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Najpierw ustaw klucz API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Najpierw ustaw adres</string>
     <string name="ai_provider_enter_model">Wprowadź nazwę modelu</string>

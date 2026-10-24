@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API anahtarı</string>
-    <string name="summary_pref_gemini_api_key_built_in">Bu uygulamada yerleşik anahtarı kullanma</string>
-    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey adresindeki Google AI Studio\'dan ücretsiz bir API anahtarı alın ve buraya yapıştırın. Anahtarınızı kaldırmak için alanı temizleyip kaydedin.\n\nAçıkladığınız görseller ve ekranlar Google adresine gönderilir. Ücretsiz seviyede Google bunları ürünlerini geliştirmek için kullanabilir.</string>
+    <string name="summary_pref_gemini_api_key_built_in">Bu uygulamaya yerleşik anahtar kullanılıyor</string>
+    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikey adresindeki Google AI Studio\'dan ücretsiz bir API anahtarı alıp buraya yapıştırın. Anahtarı kaldırmak için alanı boşaltıp kaydedin.\n\nAçıklanmasını istediğiniz görüntüler ve ekranlar Google\'a gönderilir. Ücretsiz katmanda Google bunları kendi ürünlerini geliştirmek için kullanabilir.</string>
     <string name="gemini_api_key_hint">API anahtarı</string>
     <string name="gemini_api_key_save">Kaydet</string>
     <string name="gemini_api_key_get">Bir anahtar al</string>
@@ -10,14 +10,14 @@
     <string name="gemini_model_automatic">Otomatik</string>
     <string name="summary_pref_gemini_model_automatic">Otomatik: Gemini Flash, ardından Flash meşgul olduğunda Flash-Lite</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ardından meşgul olduğunda Flash-Lite</string>
-    <string name="gemini_model_loading">Modelleri almak…</string>
+    <string name="gemini_model_loading">Modeller alınıyor…</string>
     <string name="gemini_model_list_failed">Modeller alınamadı: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Önce bir Gemini API anahtarı ayarlayın</string>
     <string name="gemini_api_terms_link">Gemini API Ek Hizmet Şartları</string>
-    <string name="ai_service_address_hint">Https://openrouter.ai/api/v1 gibi adres</string>
-    <string name="ai_service_model_hint">Modeli</string>
-    <string name="ai_service_address_invalid">Adres https://. ile başlamalıdır. Hiçbir şey kaydedilmedi.</string>
-    <string name="dialog_message_ai_service_consent">Resimler ve ekran görüntüleri açıklanmak üzere <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>\'ye gönderilir ve bu işlem birkaç saniye sürer. Kendi şartları ve gizlilik politikası geçerlidir. Üretken yapay zeka deneysel olduğundan hata yapacaktır.</string>
+    <string name="ai_service_address_hint">Adres, örneğin https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">Model</string>
+    <string name="ai_service_address_invalid">Adres https:// ile başlamalıdır. Hiçbir şey kaydedilmedi.</string>
+    <string name="dialog_message_ai_service_consent">Görüntüler ve ekran görüntüleri açıklanmak üzere <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> hizmetine gönderilir; bu birkaç saniye sürer. Hizmetin kendi şartları ve gizlilik politikası geçerlidir. Üretken yapay zeka deneyseldir, bu nedenle hata yapacaktır.</string>
     <string name="ai_service_error_api_key">AI hizmeti API anahtarını kabul etmedi. Otomatik açıklamalar bölümündeki ayarlarını kontrol edin.</string>
     <string name="ai_service_error_quota">AI hizmetinin kullanım sınırına ulaşıldı. Daha sonra tekrar deneyin.</string>
     <string name="ai_service_error_busy">AI hizmeti şu anda meşgul. Birazdan tekrar deneyin.</string>
@@ -35,19 +35,19 @@
     <string name="ai_provider_other">Diğer hizmet</string>
     <string name="title_pref_category_ai_services">Yapay zeka hizmetleri</string>
     <string name="title_pref_ai_provider">Yapay zeka hizmeti</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> ayarlar</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> ayarları</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, kurulmadı</string>
     <string name="ai_provider_in_use">Kullanımda</string>
     <string name="ai_provider_not_set_up">Kurulmadı</string>
     <string name="ai_provider_not_ready">Önce bir model seçin</string>
     <string name="ai_provider_address">Adres</string>
-    <string name="ai_provider_address_message">OpenAI uyumlu sohbet API\'sine ve resim girişine sahip bir hizmetin adresi (ör. https://example.com/v1.)</string>
+    <string name="ai_provider_address_message">OpenAI uyumlu sohbet API\'si ve resim girişi olan bir hizmetin adresi, ör. https://example.com/v1.</string>
     <string name="ai_provider_not_set">Ayarlanmadı</string>
-    <string name="ai_provider_set">Yapılandırılmış</string>
+    <string name="ai_provider_set">Ayarlandı</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API anahtarı</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modeli</string>
     <string name="ai_provider_choose_model">Seçilmedi</string>
-    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API anahtarınızı yapıştırın. Kaldırmak için alanı temizleyin ve kaydedin. Tanımladığınız görseller ve ekranlar <xliff:g id="service" example="Claude">%1$s</xliff:g> adresine gönderilir.</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API anahtarınızı yapıştırın. Kaldırmak için alanı boşaltıp kaydedin. Açıklanmasını istediğiniz görüntüler ve ekranlar <xliff:g id="service" example="Claude">%1$s</xliff:g> hizmetine gönderilir.</string>
     <string name="ai_provider_needs_key">Önce <xliff:g id="service" example="Claude">%1$s</xliff:g> API anahtarını ayarlayın</string>
     <string name="ai_provider_needs_address">Önce adresi ayarlayın</string>
     <string name="ai_provider_enter_model">Bir model adı girin</string>

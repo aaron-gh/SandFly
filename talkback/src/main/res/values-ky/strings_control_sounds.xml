@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Үндөрдү жана титирөөнү башкаруу</string>
-    <string name="summary_pref_control_sounds">NVDA үчүн Unspoken кылгандай, баскычтар, белги кутучалары, түзөтүү талаалары жана тизме элементтери, өз үнүн жана темадагы өзүнүн титирөө сыяктуу башкаруунун ар бир түрүн, фокустун үнүнүн жана титирөөнүн ордуна бериңиз. Үн башкаруу элементи экранда турган жерден чыгат жана SandFly анын кандай башкаруу экенин айтып коёт.</string>
-    <string name="title_pref_control_sounds_speak_roles">Дагы деле контролдун түрүн айтабыз</string>
-    <string name="summary_pref_control_sounds_speak_roles">Башкаруу үнү ойногондо, анын кандай башкаруу экенин айтыңыз, мисалы, баскыч. Бул ар бир үн темасы үчүн.</string>
+    <string name="title_pref_control_sounds">Башкаруу элементтеринин үндөрү жана титирөөлөрү</string>
+    <string name="summary_pref_control_sounds">Баскычтар, белгилөө кутучалары, түзөтүү талаалары жана тизме элементтери сыяктуу башкаруу элементинин ар бир түрү фокус үнү менен дирилдөөнүн ордуна темадан өз үнүн жана дирилдөөсүн алат, Unspoken NVDA үчүн кылгандай. Үн элементтин экрандагы ордунан чыгат жана SandFly элементтин түрүн айтпайт.</string>
+    <string name="title_pref_control_sounds_speak_roles">Башкаруу элементинин түрүн баары бир айтуу</string>
+    <string name="summary_pref_control_sounds_speak_roles">Башкаруу элементинин үнү ойнотулганда да элементтин түрү айтылат, мисалы, баскыч. Бардык үн темаларына тиешелүү.</string>
     <string name="title_pref_control_sounds_3d">3D аудио</string>
     <string name="pref_control_sounds_3d_headphones">Наушник менен</string>
     <string name="pref_control_sounds_3d_always">Ар дайым</string>
     <string name="pref_control_sounds_3d_never">Эч качан, бир гана сол жана оң</string>
-    <string name="individual_sound_control_button">Үндү башкаруу: баскыч</string>
-    <string name="individual_sound_control_checkbox">Үндү башкаруу: кутуча</string>
-    <string name="individual_sound_control_radio_button">Үндү башкаруу: радио баскычы</string>
-    <string name="individual_sound_control_edit_text">Үндү башкаруу: талааны түзөтүү</string>
-    <string name="individual_sound_control_combo_box">Башкаруу үнү: ылдый түшүүчү тизме</string>
-    <string name="individual_sound_control_slider">Үндү башкаруу: сыдырма</string>
-    <string name="individual_sound_control_link">Үн башкаруу: шилтеме</string>
-    <string name="individual_sound_control_image">Үндү башкаруу: сүрөт</string>
-    <string name="individual_sound_control_clock">Башкаруучу үн: саат</string>
-    <string name="individual_sound_control_tab">Үндү башкаруу: өтмөк</string>
-    <string name="individual_sound_control_menu_item">Үндү башкаруу: меню пункту</string>
-    <string name="individual_sound_control_list_item">Башкаруу үн: тизме элементи</string>
-    <string name="individual_sound_control_tree_item">Башкаруучу үн: дарак буюму</string>
+    <string name="individual_sound_control_button">Башкаруу элементинин үнү: баскыч</string>
+    <string name="individual_sound_control_checkbox">Башкаруу элементинин үнү: кутуча</string>
+    <string name="individual_sound_control_radio_button">Башкаруу элементинин үнү: радио баскычы</string>
+    <string name="individual_sound_control_edit_text">Башкаруу элементинин үнү: түзөтүү талаасы</string>
+    <string name="individual_sound_control_combo_box">Башкаруу элементинин үнү: ылдый түшүүчү тизме</string>
+    <string name="individual_sound_control_slider">Башкаруу элементинин үнү: сыдырма</string>
+    <string name="individual_sound_control_link">Башкаруу элементинин үнү: шилтеме</string>
+    <string name="individual_sound_control_image">Башкаруу элементинин үнү: сүрөт</string>
+    <string name="individual_sound_control_clock">Башкаруу элементинин үнү: саат</string>
+    <string name="individual_sound_control_tab">Башкаруу элементинин үнү: өтмөк</string>
+    <string name="individual_sound_control_menu_item">Башкаруу элементинин үнү: меню пункту</string>
+    <string name="individual_sound_control_list_item">Башкаруу элементинин үнү: тизме элементи</string>
+    <string name="individual_sound_control_tree_item">Башкаруу элементинин үнү: дарак элементи</string>
 </resources>

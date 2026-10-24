@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">အသေးစိပ်တည်းဖြတ်ခြင်း။</string>
+    <string name="granular_editing_title">အသေးစိတ် တည်းဖြတ်ခြင်း</string>
     <string name="granular_editing_split_by">ခွဲထားသည်- <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">ခွဲထားသည်။</string>
+    <string name="granular_editing_split_by_title">ခွဲရန်နည်း</string>
     <string name="granular_editing_characters">အက္ခရာများ</string>
     <string name="granular_editing_words">စကားလုံးများ</string>
     <string name="granular_editing_sentences">စာကြောင်းများ</string>
     <string name="granular_editing_lines">စာကြောင်းများ</string>
     <string name="granular_editing_paragraphs">စာပိုဒ်များ</string>
-    <string name="granular_editing_space">စပေ့စ်ကီး</string>
+    <string name="granular_editing_space">နေရာလွတ်</string>
     <string name="granular_editing_new_line">လိုင်း အသစ်</string>
-    <string name="granular_editing_tab">တက်ဘ်ဇာတ်ကောင်</string>
-    <string name="granular_editing_empty">စာသားမရှိပါ။ More တွင် အဆုံးတွင် Add text ကိုသုံးပါ။</string>
-    <string name="granular_editing_edit">တည်းဖြတ်ပါ။</string>
-    <string name="granular_editing_insert_before">ရှေ့မှာထည့်ပါ။</string>
-    <string name="granular_editing_insert_after">ပြီးနောက်ထည့်ပါ။</string>
+    <string name="granular_editing_tab">တက်ဘ် အက္ခရာ</string>
+    <string name="granular_editing_empty">စာသား မရှိပါ။ “နောက်ထပ်” ထဲရှိ “အဆုံးတွင် စာသားထည့်ရန်” ကို သုံးပါ။</string>
+    <string name="granular_editing_edit">တည်းဖြတ်ပါ</string>
+    <string name="granular_editing_insert_before">ရှေ့တွင် ထည့်ရန်</string>
+    <string name="granular_editing_insert_after">နောက်တွင် ထည့်ရန်</string>
     <string name="granular_editing_delete">ဖျက်ပါ</string>
     <string name="granular_editing_select">ရွေးချယ်ပါ</string>
-    <string name="granular_editing_unselect">ရွေးဖြုတ်ပါ။</string>
-    <string name="granular_editing_selected">ရွေးချယ်ခဲ့သည်။</string>
+    <string name="granular_editing_unselect">ရွေးဖြုတ်ပါ</string>
+    <string name="granular_editing_selected">ရွေးထားသည်</string>
     <string name="granular_editing_save">သိမ်းရန်</string>
-    <string name="granular_editing_more">ပို</string>
-    <string name="granular_editing_undo">မလုပ်တော့</string>
-    <string name="granular_editing_redo">နောက်ဆုံးမပြီးသေးသော တည်းဖြတ်မှုကို ပြန်လုပ်ပါ။</string>
+    <string name="granular_editing_more">နောက်ထပ်</string>
+    <string name="granular_editing_undo">နောက်ပြန်ရန်</string>
+    <string name="granular_editing_redo">ပြန်လုပ်ရန်</string>
     <string name="granular_editing_find">ရှာရန်</string>
-    <string name="granular_editing_find_next">နောက်တစ်ခုရှာပါ။</string>
-    <string name="granular_editing_replace">အစားထိုးပါ။</string>
-    <string name="granular_editing_replace_with">ဖြင့် အစားထိုးပါ။</string>
-    <string name="granular_editing_replace_all">အားလုံးကို အစားထိုးပါ။</string>
-    <string name="granular_editing_add_at_end">အဆုံးတွင် စာသားထည့်ပါ။</string>
-    <string name="granular_editing_clear_selection">စာသားအားလုံးကို ဖြုတ်ပါ။</string>
-    <string name="granular_editing_cut_selected">ရွေးချယ်ထားသောစာသားကိုဖြတ်ပါ။</string>
-    <string name="granular_editing_delete_selected">ရွေးထားသည်ကို ဖျက်ပါ။</string>
-    <string name="granular_editing_copied">ကူးယူသည်။</string>
-    <string name="granular_editing_deleted">ဖျက်လိုက်</string>
-    <string name="granular_editing_not_found">မတွေ့</string>
+    <string name="granular_editing_find_next">နောက်တစ်ခုရှာပါ</string>
+    <string name="granular_editing_replace">အစားထိုးပါ</string>
+    <string name="granular_editing_replace_with">ဤအရာဖြင့် အစားထိုးရန်</string>
+    <string name="granular_editing_replace_all">အားလုံးကို အစားထိုးပါ</string>
+    <string name="granular_editing_add_at_end">အဆုံးတွင် စာသားထည့်ရန်</string>
+    <string name="granular_editing_clear_selection">ရွေးချယ်မှုကို ဖယ်ရှားရန်</string>
+    <string name="granular_editing_cut_selected">ရွေးချယ်ထားသောစာသားကိုဖြတ်ပါ</string>
+    <string name="granular_editing_delete_selected">ရွေးထားသည်ကို ဖျက်ပါ</string>
+    <string name="granular_editing_copied">ကူးယူပြီးပါပြီ</string>
+    <string name="granular_editing_deleted">ဖျက်ပြီးပါပြီ</string>
+    <string name="granular_editing_not_found">မတွေ့ပါ</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> အစားထိုးခဲ့သည်။</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> အစားထိုးခဲ့သည်။</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> အစားထိုးခဲ့သည်</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> အစားထိုးခဲ့သည်</item>
     </plurals>
     <string name="granular_editing_save_changes">အပြောင်းအလဲများကို သိမ်းဆည်းမလား။</string>
     <string name="granular_editing_copy_changes">ပြောင်းထားသောစာသားကို ကူးယူမလား။</string>
     <string name="granular_editing_discard">ပစ်ပယ်</string>
-    <string name="granular_editing_keep_editing">ဆက်တည်းဖြတ်ပါ။</string>
+    <string name="granular_editing_keep_editing">ဆက်တည်းဖြတ်ပါ</string>
     <string name="granular_editing_not_saved">မသိမ်းဆည်းထားပါ- စာသားအကွက် မရှိတော့ပါ။ စာသားကို ကူးယူထားသည်။</string>
-    <string name="granular_editing_no_text">တည်းဖြတ်ရန် စာသားမရှိပါ။</string>
-    <string name="granular_editing_password">စကားဝှက်အကွက်များတွင် မရရှိနိုင်ပါ။</string>
+    <string name="granular_editing_no_text">တည်းဖြတ်ရန် စာသားမရှိပါ</string>
+    <string name="granular_editing_password">စကားဝှက်အကွက်များတွင် မရရှိနိုင်ပါ</string>
 </resources>

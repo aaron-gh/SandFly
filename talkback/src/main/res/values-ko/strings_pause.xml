@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pause_backtalk">일시중지 SandFly</string>
-    <string name="summary_pause_backtalk">SandFly를 다시 시작할 때까지 음성, 제스처 및 터치 탐색을 끕니다.</string>
-    <string name="keycombo_menu_global_pause_backtalk">일시중지 또는 재개 SandFly</string>
+    <string name="title_pause_backtalk">SandFly 일시중지</string>
+    <string name="summary_pause_backtalk">SandFly를 다시 시작할 때까지 음성, 동작, \'터치하여 탐색\'을(를) 끕니다</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly 일시중지 또는 재개</string>
     <string name="backtalk_paused">SandFly 일시중지됨</string>
     <string name="backtalk_resumed">SandFly 재개됨</string>
-    <string name="notification_title_backtalk_paused">SandFly is paused</string>
-    <string name="notification_message_backtalk_paused">재개하려면 탭하세요.</string>
+    <string name="notification_title_backtalk_paused">SandFly 일시중지됨</string>
+    <string name="notification_message_backtalk_paused">탭하여 재개</string>
     <string name="notification_channel_backtalk_paused">SandFly 일시중지됨</string>
-    <string name="dialog_title_pause_backtalk">일시중지 SandFly?</string>
+    <string name="dialog_title_pause_backtalk">SandFly를 일시중지하시겠습니까?</string>
     <string name="dialog_button_pause_backtalk">일시중지</string>
     <string name="dialog_message_pause_backtalk">SandFly가 일시중지된 동안에는 말하거나 제스처에 반응하지 않으며 화면 리더가 켜져 있지 않은 것처럼 화면이 작동합니다.</string>
-    <string name="message_resume_keyguard">다시 시작하려면 SandFly 일시중지됨 알림을 탭하거나, 볼륨 낮추기를 빠르게 3번 누르거나, 잠금 화면이 표시되도록 휴대전화를 잠그고 깨우세요.</string>
-    <string name="message_resume_screen_on">다시 시작하려면 SandFly 일시중지 알림을 탭하고, 볼륨 다운을 빠르게 3번 누르거나, 화면을 껐다가 다시 켜세요.</string>
-    <string name="message_resume_manual">다시 시작하려면 SandFly 일시중지 알림을 탭하거나 볼륨 낮추기를 빠르게 3번 누르세요.</string>
+    <string name="message_resume_keyguard">다시 시작하려면 \'SandFly 일시중지됨\' 알림을 탭하거나 볼륨 낮추기 버튼을 빠르게 세 번 누르거나 휴대전화를 잠갔다가 깨워 잠금 화면이 표시되게 하세요.</string>
+    <string name="message_resume_screen_on">다시 시작하려면 \'SandFly 일시중지됨\' 알림을 탭하거나 볼륨 낮추기 버튼을 빠르게 세 번 누르거나 화면을 껐다가 다시 켜세요.</string>
+    <string name="message_resume_manual">다시 시작하려면 \'SandFly 일시중지됨\' 알림을 탭하거나 볼륨 낮추기 버튼을 빠르게 세 번 누르세요.</string>
     <string name="message_resume_key_combo"><xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>를 누를 수도 있습니다.</string>
-    <string name="title_pref_resume_backtalk">이력서 SandFly</string>
+    <string name="title_pref_resume_backtalk">SandFly 재개</string>
     <string name="value_resume_keyguard">잠금 화면이 표시되면</string>
     <string name="value_resume_screen_on">화면이 켜질 때</string>
-    <string name="value_resume_manual">알림이나 바로가기에서만 가능</string>
+    <string name="value_resume_manual">알림이나 바로가기에서만</string>
 </resources>

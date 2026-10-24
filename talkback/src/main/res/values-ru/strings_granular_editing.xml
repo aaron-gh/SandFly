@@ -8,10 +8,10 @@
     <string name="granular_editing_sentences">Предложения</string>
     <string name="granular_editing_lines">Строки</string>
     <string name="granular_editing_paragraphs">Абзацы</string>
-    <string name="granular_editing_space">Пробел.</string>
-    <string name="granular_editing_new_line">Перевод строки.</string>
+    <string name="granular_editing_space">Пробел</string>
+    <string name="granular_editing_new_line">Новая строка</string>
     <string name="granular_editing_tab">Символ табуляции</string>
-    <string name="granular_editing_empty">Нет текста. Используйте «Добавить текст в конце» в разделе «Еще».</string>
+    <string name="granular_editing_empty">Нет текста. Используйте «Добавить текст в конце» в разделе «Ещё».</string>
     <string name="granular_editing_edit">Редактировать</string>
     <string name="granular_editing_insert_before">Вставить перед</string>
     <string name="granular_editing_insert_after">Вставить после</string>
@@ -22,30 +22,30 @@
     <string name="granular_editing_save">Сохранить</string>
     <string name="granular_editing_more">Ещё</string>
     <string name="granular_editing_undo">Отменить</string>
-    <string name="granular_editing_redo">Повторить последнее отмененное редактирование</string>
+    <string name="granular_editing_redo">Повторить</string>
     <string name="granular_editing_find">Найти</string>
-    <string name="granular_editing_find_next">Найти следующий</string>
+    <string name="granular_editing_find_next">Найти далее</string>
     <string name="granular_editing_replace">Заменить</string>
     <string name="granular_editing_replace_with">Заменить на</string>
     <string name="granular_editing_replace_all">Заменить все</string>
     <string name="granular_editing_add_at_end">Добавить текст в конце</string>
-    <string name="granular_editing_clear_selection">Отменить выделение всего текста</string>
+    <string name="granular_editing_clear_selection">Снять выделение</string>
     <string name="granular_editing_cut_selected">Вырезать выделенный текст</string>
     <string name="granular_editing_delete_selected">Удалить выбранное</string>
     <string name="granular_editing_copied">Скопировано</string>
     <string name="granular_editing_deleted">Удалено</string>
-    <string name="granular_editing_not_found">Не найден</string>
+    <string name="granular_editing_not_found">Не найдено</string>
     <plurals name="granular_editing_replaced">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> заменен</item>
-        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> заменено</item>
-        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> заменено</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> заменил</item>
+        <item quantity="one">Заменено: <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="few">Заменено: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="many">Заменено: <xliff:g id="count" example="3">%d</xliff:g></item>
+        <item quantity="other">Заменено: <xliff:g id="count" example="3">%d</xliff:g></item>
     </plurals>
     <string name="granular_editing_save_changes">Сохранить изменения?</string>
     <string name="granular_editing_copy_changes">Скопировать измененный текст?</string>
-    <string name="granular_editing_discard">Отбросить</string>
-    <string name="granular_editing_keep_editing">Продолжайте редактировать</string>
+    <string name="granular_editing_discard">Не сохранять</string>
+    <string name="granular_editing_keep_editing">Продолжить редактирование</string>
     <string name="granular_editing_not_saved">Не сохранено: текстовое поле исчезло. Текст скопирован.</string>
     <string name="granular_editing_no_text">Нет текста для редактирования</string>
-    <string name="granular_editing_password">Недоступно в полях пароля.</string>
+    <string name="granular_editing_password">Недоступно в полях пароля</string>
 </resources>

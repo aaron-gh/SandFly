@@ -88,8 +88,8 @@
     <string name="script_homepage_open">Mở</string>
     <string name="script_homepage_failed">Không có ứng dụng nào mở được <xliff:g id="address">%1$s</xliff:g></string>
     <string name="script_turned_off">Đã tắt <xliff:g id="name">%1$s</xliff:g> sau nhiều lần gặp lỗi. Hãy xem nhật ký của tập lệnh này trong mục Tập lệnh.</string>
-    <string name="shortcut_inspect_item">Kiểm tra mục đang được làm nổi bật</string>
-    <string name="script_inspect_no_item">Không có mục nào được làm nổi bật</string>
+    <string name="shortcut_inspect_item">Kiểm tra mục đang có tiêu điểm</string>
+    <string name="script_inspect_no_item">Không có mục nào có tiêu điểm</string>
     <string name="script_inspect_copied">Đã sao chép. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Không có mã nhận dạng nên các quy tắc không thể gọi tên mục này. Đã sao chép. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Sao chép cây màn hình</string>
@@ -147,7 +147,7 @@
         <item quantity="one">Đã cập nhật <xliff:g id="count" example="1">%1$d</xliff:g> tập lệnh: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other">Đã cập nhật <xliff:g id="count" example="2">%1$d</xliff:g> tập lệnh: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Các bản cập nhật được liệt kê trong mục Bản cập nhật</string>
+    <string name="scripts_updates_to_approve">Các bản cập nhật được liệt kê trong mục “Bản cập nhật”</string>
     <string name="scripts_update_check_failed">Không thể kiểm tra một số nguồn</string>
     <string name="scripts_up_to_date">Tất cả tập lệnh đều đã được cập nhật</string>
 </resources>

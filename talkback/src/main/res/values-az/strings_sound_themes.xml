@@ -18,12 +18,12 @@
     </plurals>
     <string name="sound_theme_control_sounds_on">İdarəetmə elementi səslərini və vibrasiyalarını aktiv edir.</string>
     <string name="sound_theme_control_sounds_off">İdarəetmə elementi səslərini və vibrasiyalarını deaktiv edir.</string>
-    <string name="sound_theme_use">Bu temadan istifadə edin</string>
+    <string name="sound_theme_use">Bu temadan istifadə et</string>
     <string name="sound_theme_about">Bu tema haqqında</string>
-    <string name="sound_theme_export">Tema faylı kimi yadda saxlayın</string>
-    <string name="sound_theme_remove">Silin</string>
+    <string name="sound_theme_export">Tema faylı kimi yadda saxla</string>
+    <string name="sound_theme_remove">Sil</string>
     <string name="sound_theme_remove_confirm"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> teması silinsin?</string>
-    <string name="sound_theme_remove_button">Silin</string>
+    <string name="sound_theme_remove_button">Sil</string>
     <plurals name="sound_theme_exported">
         <item quantity="one">Tema <xliff:g id="count" example="1">%d</xliff:g> səslə yadda saxlanıldı.</item>
         <item quantity="other">Tema <xliff:g id="count" example="13">%d</xliff:g> səslə yadda saxlanıldı.</item>
@@ -33,18 +33,18 @@
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ayarları</string>
     <string name="title_pref_theme_sounds">Səslər</string>
     <string name="summary_pref_theme_sounds">Bu temanın istənilən səsini öz səs faylınızla əvəz edin.</string>
-    <string name="sound_themes_install_category">Tema quraşdırın</string>
+    <string name="sound_themes_install_category">Tema quraşdır</string>
     <string name="title_pref_sound_theme_install_file">Fayldan</string>
     <string name="summary_pref_sound_theme_install_file">Tema faylı ZIP faylıdır. Onu başqa tətbiqdən SandFly ilə aça və ya SandFly-a paylaşa da bilərsiniz.</string>
     <string name="title_pref_sound_theme_install_link">Keçiddən</string>
     <string name="summary_pref_sound_theme_install_link">Tema faylına və ya içində tema olan GitHub repozitoriyasına keçid. Keçidi brauzerinizdən SandFly-a da paylaşa bilərsiniz.</string>
     <string name="sound_theme_link_message">Tema faylına və ya içində tema olan GitHub repozitoriyasına keçid daxil edin və ya əlavə edin.</string>
     <string name="sound_theme_link_hint">https://</string>
-    <string name="sound_theme_install_label">Səs temasını quraşdırın</string>
+    <string name="sound_theme_install_label">Səs temasını quraşdır</string>
     <string name="sound_theme_install_reading">Səs teması oxunur</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> quraşdırılsın?</string>
-    <string name="sound_theme_install_and_use">Quraşdırın və istifadə edin</string>
-    <string name="sound_theme_install">Quraşdırın</string>
+    <string name="sound_theme_install_and_use">Quraşdır və istifadə et</string>
+    <string name="sound_theme_install">Quraşdır</string>
     <string name="sound_theme_install_replaces">Bu, eyni adlı quraşdırılmış temanı əvəz edir.</string>
     <string name="sound_theme_install_skipped">Buraxıldı:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> quraşdırıldı.</string>
@@ -54,34 +54,34 @@
     <string name="sound_theme_install_failed">SandFly səs temasını quraşdıra bilmədi. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">Səs temalarına keçidlər https ilə başlamalıdır.</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> səsləri</string>
-    <string name="title_pref_theme_sounds_reset">Hamısı üçün SandFly səslərindən istifadə edin</string>
+    <string name="title_pref_theme_sounds_reset">Hamısı üçün SandFly səslərindən istifadə et</string>
     <string name="theme_sounds_reset_confirm">Bu temanın bütün səsləri silinsin və SandFly-ın öz səslərindən istifadə edilsin?</string>
-    <string name="theme_sounds_reset_button">Silin</string>
+    <string name="theme_sounds_reset_button">Sil</string>
     <string name="theme_sounds_category">Səslər</string>
     <string name="theme_sound_summary_default">SandFly səsi</string>
     <string name="theme_sound_summary_custom">Tema səsi</string>
     <string name="theme_sound_summary_none">Səs yoxdur. Fokus səsi oxudulur.</string>
     <string name="theme_sound_summary_android_keyboard">Android klaviatura səsi</string>
-    <string name="theme_sound_use_android_keyboard">Android klaviatura səsindən istifadə edin</string>
+    <string name="theme_sound_use_android_keyboard">Android klaviatura səsindən istifadə et</string>
     <string name="theme_sound_braille_character">Brayl klaviaturası: simvol yazmaq</string>
     <string name="theme_sound_braille_space">Brayl klaviaturası: boşluq</string>
     <string name="theme_sound_braille_delete">Brayl klaviaturası: silmə</string>
     <string name="theme_sound_braille_new_line">Brayl klaviaturası: yeni sətir</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
-    <string name="theme_sound_choose">Səs faylı seçin</string>
-    <string name="theme_sound_preview">Önizləmə</string>
-    <string name="theme_sound_none">Səs yoxdur</string>
-    <string name="theme_sound_summary_no_sound">Səs yoxdur</string>
-    <string name="theme_sound_action_set_none">Səssiz təyin edin</string>
-    <string name="theme_sound_use_default">SandFly səsindən istifadə edin</string>
-    <string name="theme_sound_remove">Səsi silin</string>
+    <string name="theme_sound_choose">Səs faylı seç</string>
+    <string name="theme_sound_preview">Dinlə</string>
+    <string name="theme_sound_none">Səssiz</string>
+    <string name="theme_sound_summary_no_sound">Səssiz</string>
+    <string name="theme_sound_action_set_none">Səssiz olaraq təyin et</string>
+    <string name="theme_sound_use_default">SandFly səsindən istifadə et</string>
+    <string name="theme_sound_remove">Səsi sil</string>
     <string name="theme_sound_too_large">Fayl çox böyükdür. Səs ən çox 5 MB ola bilər.</string>
     <string name="theme_sound_not_audio">SandFly bu faylı oxuda bilmir. WAV, OGG, MP3 və ya FLAC səsi seçin.</string>
     <string name="theme_sound_failed">SandFly bu faylı oxuya bilmədi.</string>
     <string name="title_pref_sound_theme_install_source">Mənbədən</string>
     <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea və ya Bitbucket-də repozitoriyada olan tema faylları.</string>
-    <string name="sound_theme_sources">Səs mövzu mənbələri</string>
-    <string name="sound_theme_source_empty">Bu mənbədə səs mövzusu yoxdur</string>
-    <string name="sound_theme_source_failed">Səs mövzularını yükləmək mümkün olmadı. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Ondan quraşdırılmış səs mövzuları quraşdırılmış qalır.</string>
+    <string name="sound_theme_sources">Səs teması mənbələri</string>
+    <string name="sound_theme_source_empty">Bu mənbədə səs teması yoxdur</string>
+    <string name="sound_theme_source_failed">Səs temalarını yükləmək mümkün olmadı. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Ondan quraşdırılmış səs temaları quraşdırılmış qalır.</string>
 </resources>

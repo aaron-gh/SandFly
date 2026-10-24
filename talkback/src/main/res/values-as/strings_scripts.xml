@@ -42,7 +42,7 @@
     <string name="script_permission_actions">ক্লিক, স্ক্ৰ’ল আৰু টাইপ কৰা, আৰু ফ’কাছ স্থানান্তৰ কৰা</string>
     <string name="script_permission_speech">SandFlyৰ কথন পোৱা আৰু সলনি কৰা</string>
     <string name="script_permission_passwords">পাছৱৰ্ডৰ ফিল্ড পঢ়া</string>
-    <string name="script_permission_input">নিৰ্দেশ, কী, মেনুৰ বস্তু আৰু পঢ়াৰ নিয়ন্ত্ৰণ যোগ দিয়া</string>
+    <string name="script_permission_input">জেষ্টাৰ, কী, মেনুৰ বস্তু আৰু পঢ়াৰ নিয়ন্ত্ৰণ যোগ দিয়া</string>
     <string name="script_permission_network">ইণ্টাৰনেট ব্যৱহাৰ কৰা</string>
     <string name="script_permission_clipboard">ক্লিপব’ৰ্ড পঢ়া আৰু সলনি কৰা</string>
     <string name="script_permission_system">উভতি যোৱা বা গৃহ স্ক্ৰীনলৈ যোৱা, জাননী আৰু এপ খোলা</string>
@@ -59,7 +59,7 @@
     <string name="script_button_off">প্ৰথমে স্ক্ৰিপ্টটো অন কৰক</string>
     <string name="script_permissions_summary">এটা অফ কৰিলে সেইটোৰ প্ৰয়োজন থকা অংশবোৰ বন্ধ হয়।</string>
     <string name="script_install_permissions_note">আপুনি এইবোৰ পিছত অফ কৰিব পাৰে।</string>
-    <string name="script_manage_category">পৰিচালনা কৰক</string>
+    <string name="script_manage_category">পৰিচালনা</string>
     <string name="script_move_up">আগতে চলাওক</string>
     <string name="script_move_down">পিছত চলাওক</string>
     <string name="script_order_summary">একেটা কথন সলনি কৰা স্ক্ৰিপ্টৰ ক্ৰম। এপৰ স্ক্ৰিপ্ট প্ৰথমে চলে।</string>
@@ -103,7 +103,7 @@
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, তাৰ পাছত <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">কামাণ্ড</string>
     <string name="script_commands_summary">চলি থকা স্ক্ৰিপ্টৰ নিৰ্দেশ আৰু কী SandFlyৰ নিৰ্দেশ আৰু কীতকৈ অগ্ৰাধিকাৰ পায়। SandFlyৰটো ৰাখিবলৈ এটা অফ কৰক।</string>
-    <string name="script_binding_gesture">নিৰ্দেশ: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_gesture">অংগভংগী: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">কী: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFlyৰ মেনু</string>
     <string name="script_binding_control">পঢ়াৰ নিয়ন্ত্ৰণ</string>
@@ -112,12 +112,12 @@
     <string name="script_binding_turn_off">অফ কৰক</string>
     <string name="script_binding_restore">ডিফ’ল্ট পুনঃস্থাপন কৰক</string>
     <string name="script_binding_restored">ডিফ’ল্ট পুনঃস্থাপন কৰা হ’ল</string>
-    <string name="script_binding_perform">নিৰ্দেশ দিয়ক বা কী টিপক</string>
+    <string name="script_binding_perform">জেষ্টাৰ কৰক বা কী টিপক</string>
     <string name="script_binding_perform_summary">পৰৱৰ্তী নিৰ্দেশ, বা SandFly সংশোধক কীৰ সৈতে টিপা কী অৰ্পণ কৰক</string>
-    <string name="script_binding_perform_message">নিৰ্দেশটো দিয়ক বা কীবোৰ টিপক।</string>
+    <string name="script_binding_perform_message">জেষ্টাৰ কৰক বা কীবোৰ টিপক।</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g>ত অৰ্পণ কৰিবনে?</string>
     <string name="script_binding_assign">অৰ্পণ কৰক</string>
-    <string name="script_binding_choose_gesture">নিৰ্দেশ বাছনি কৰক</string>
+    <string name="script_binding_choose_gesture">অংগভংগী বাছনি কৰক</string>
     <string name="script_binding_type_keys">কী টাইপ কৰক</string>
     <string name="script_binding_type_keys_summary">যেনে sf+shift+n, বা sf+t, s</string>
     <string name="script_binding_bad_keys">এই কীবোৰ ব্যৱহাৰ কৰিব নোৱাৰি। <xliff:g id="reason">%1$s</xliff:g></string>
@@ -140,14 +140,14 @@
     <string name="script_source_remove_message">ইয়াৰ পৰা ইনষ্টল কৰা স্ক্ৰিপ্টসমূহ ইনষ্টল হৈ থাকিব।</string>
     <string name="scripts_auto_update">স্ক্ৰিপ্টসমূহ স্বয়ংক্ৰিয়ভাৱে আপডেইট কৰক</string>
     <string name="scripts_check_updates">আপডে’ট আছে নেকি চাওক</string>
-    <string name="scripts_checking_updates">আপডেটৰ বাবে পৰীক্ষা কৰা হৈছে...</string>
+    <string name="scripts_checking_updates">আপডেটৰ বাবে পৰীক্ষা কৰা হৈছে…</string>
     <string name="scripts_updates_category">আপডেটসমূহ</string>
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
-        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> লিপি আপডেট কৰা হৈছে: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
-        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> লিপি আপডেট: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g>টা স্ক্ৰিপ্ট আপডেট কৰা হ\'ল: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g>টা স্ক্ৰিপ্ট আপডেট কৰা হ\'ল: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">আপডেইটসমূহ আপডেইটসমূহৰ অন্তৰ্গত তালিকাভুক্ত কৰা হৈছে</string>
+    <string name="scripts_updates_to_approve">আপডেটসমূহ “আপডেটসমূহ”ৰ অধীনত তালিকাভুক্ত</string>
     <string name="scripts_update_check_failed">কিছুমান উৎস পৰীক্ষা কৰিব পৰা নগ’ল</string>
-    <string name="scripts_up_to_date">সকলো লিপি আপডেট</string>
+    <string name="scripts_up_to_date">সকলো স্ক্ৰিপ্ট আপ-টু-ডেট</string>
 </resources>

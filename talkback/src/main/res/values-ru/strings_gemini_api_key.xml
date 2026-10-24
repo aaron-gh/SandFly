@@ -7,9 +7,9 @@
   <string name="gemini_api_key_save">Сохранить</string>
   <string name="gemini_api_key_get">Получить ключ</string>
   <string name="gemini_api_terms_link">Дополнительные условия использования API Gemini</string>
-    <string name="title_pref_gemini_model">Gemini модель</string>
+    <string name="title_pref_gemini_model">Модель Gemini</string>
     <string name="gemini_model_automatic">Автоматический</string>
-    <string name="summary_pref_gemini_model_automatic">Автоматически: Gemini Flash, затем Flash-Lite, когда Flash занята.</string>
+    <string name="summary_pref_gemini_model_automatic">Автоматически: Gemini Flash, затем Flash-Lite, если Flash перегружена</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, затем Flash-Lite, когда он занят</string>
     <string name="gemini_model_loading">Получение моделей…</string>
     <string name="gemini_model_list_failed">Не удалось получить модели: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
@@ -17,8 +17,8 @@
     <string name="ai_service_address_hint">Адрес, например https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Модель</string>
     <string name="ai_service_address_invalid">Адрес должен начинаться с https://. Ничего не сохранено.</string>
-    <string name="dialog_message_ai_service_consent">Изображения и скриншоты отправляются на <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для описания, что занимает несколько секунд. Применяются собственные условия и политика конфиденциальности. Генеративный ИИ является экспериментальным, поэтому он будет совершать ошибки.</string>
-    <string name="ai_service_error_api_key">Служба AI не приняла ключ API. Проверьте его настройки в Автоматических описаниях.</string>
+    <string name="dialog_message_ai_service_consent">Изображения и скриншоты отправляются в <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для описания, это занимает несколько секунд. Действуют собственные условия и политика конфиденциальности этого сервиса. Генеративный ИИ находится на экспериментальной стадии, поэтому будет ошибаться.</string>
+    <string name="ai_service_error_api_key">Сервис ИИ не принял ключ API. Проверьте его настройки в разделе «Автоматические описания».</string>
     <string name="ai_service_error_quota">Достигнут лимит использования службы AI. Повторите попытку позже.</string>
     <string name="ai_service_error_busy">Служба искусственного интеллекта сейчас занята. Повторите попытку через минуту.</string>
     <string name="ai_service_error_timeout">Служба искусственного интеллекта слишком долго отвечала. Попробуйте еще раз.</string>
@@ -30,24 +30,24 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Нет</string>
-    <string name="ai_service_not_set_up">Ни одна служба AI не используется. Настройте его или выберите в настройках автоматических описаний.</string>
-    <string name="ai_provider_none_set_up">Служба AI не настроена. Установите его в настройках ниже.</string>
-    <string name="ai_provider_other">Другая услуга</string>
+    <string name="ai_service_not_set_up">Сервис ИИ не используется. Настройте или выберите его в настройках «Автоматические описания».</string>
+    <string name="ai_provider_none_set_up">Сервис ИИ не настроен. Настройте один из них в его настройках ниже.</string>
+    <string name="ai_provider_other">Другой сервис</string>
     <string name="title_pref_category_ai_services">ИИ-сервисы</string>
     <string name="title_pref_ai_provider">ИИ-сервис</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> настройки</string>
+    <string name="title_ai_provider_settings">Настройки <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, не настроено</string>
     <string name="ai_provider_in_use">Используется</string>
     <string name="ai_provider_not_set_up">Не настроено</string>
     <string name="ai_provider_not_ready">Сначала выберите модель</string>
     <string name="ai_provider_address">Адрес</string>
-    <string name="ai_provider_address_message">Адрес службы с OpenAI-совместимым API чата и вводом изображений, например https://example.com/v1..</string>
+    <string name="ai_provider_address_message">Адрес сервиса с OpenAI-совместимым API чата и вводом изображений, например https://example.com/v1.</string>
     <string name="ai_provider_not_set">Не установлено</string>
     <string name="ai_provider_set">Настроен</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API-ключ</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> модель</string>
+    <string name="title_pref_gemini_api_key_of">API-ключ <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="title_pref_gemini_model_of">Модель <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Не выбрано</string>
-    <string name="ai_provider_key_message">Вставьте свой ключ API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Чтобы удалить его, очистите поле и сохраните. Изображения и экраны, которые вы описываете, отправляются на <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Вставьте ключ API для <xliff:g id="service" example="Claude">%1$s</xliff:g>. Чтобы удалить его, очистите поле и сохраните. Изображения и экраны, для которых вы запрашиваете описание, отправляются в <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Сначала установите ключ API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Сначала укажите адрес</string>
     <string name="ai_provider_enter_model">Введите название модели</string>

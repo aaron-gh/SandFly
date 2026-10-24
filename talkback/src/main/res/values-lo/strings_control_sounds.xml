@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">ຄວບຄຸມສຽງແລະການສັ່ນສະເທືອນ</string>
-    <string name="summary_pref_control_sounds">ໃຫ້ການຄວບຄຸມແຕ່ລະປະເພດ, ເຊັ່ນປຸ່ມ, ກ່ອງກາເຄື່ອງຫມາຍ, ແກ້ໄຂຊ່ອງຂໍ້ມູນແລະລາຍການລາຍການ, ສຽງຂອງມັນເອງແລະການສັ່ນສະເທືອນຂອງມັນເອງຈາກຫົວຂໍ້, ແທນສຽງທີ່ເນັ້ນໃສ່ແລະການສັ່ນສະເທືອນ, ດັ່ງທີ່ Unspoken ເຮັດສໍາລັບ NVDA. ສຽງມາຈາກບ່ອນທີ່ການຄວບຄຸມຢູ່ໃນຫນ້າຈໍ, ແລະ SandFly ອອກບອກວ່າການຄວບຄຸມປະເພດໃດ.</string>
-    <string name="title_pref_control_sounds_speak_roles">ຍັງເວົ້າວ່າປະເພດຂອງການຄວບຄຸມ</string>
-    <string name="summary_pref_control_sounds_speak_roles">ເມື່ອສຽງຄວບຄຸມເປີດ, ຍັງບອກວ່າການຄວບຄຸມປະເພດໃດ, ເຊັ່ນປຸ່ມ. ນີ້ແມ່ນສໍາລັບທຸກໆຫົວຂໍ້ສຽງ.</string>
+    <string name="title_pref_control_sounds">ສຽງ ແລະ ການສັ່ນຂອງຕົວຄວບຄຸມ</string>
+    <string name="summary_pref_control_sounds">ການຄວບຄຸມແຕ່ລະປະເພດ ເຊັ່ນ ປຸ່ມ, ກ່ອງໝາຍ, ຊ່ອງແກ້ໄຂ ແລະ ລາຍການໃນລາຍຊື່ ຈະໄດ້ສຽງ ແລະ ການສັ່ນຂອງມັນເອງຈາກຊຸດຮູບແບບ ແທນສຽງ ແລະ ການສັ່ນຂອງໂຟກັສ ຄືກັບທີ່ Unspoken ເຮັດສຳລັບ NVDA. ສຽງຈະດັງມາຈາກຕຳແໜ່ງຂອງການຄວບຄຸມໃນໜ້າຈໍ ແລະ SandFly ຈະບໍ່ເວົ້າປະເພດຂອງການຄວບຄຸມ.</string>
+    <string name="title_pref_control_sounds_speak_roles">ຍັງເວົ້າປະເພດຂອງຕົວຄວບຄຸມ</string>
+    <string name="summary_pref_control_sounds_speak_roles">ເມື່ອສຽງຂອງການຄວບຄຸມດັງ, ຍັງເວົ້າປະເພດຂອງການຄວບຄຸມ ເຊັ່ນ ປຸ່ມ. ໃຊ້ກັບທຸກຊຸດສຽງ.</string>
     <string name="title_pref_control_sounds_3d">ສຽງ 3D</string>
     <string name="pref_control_sounds_3d_headphones">ກັບຫູຟັງ</string>
     <string name="pref_control_sounds_3d_always">ສະເໝີ</string>
-    <string name="pref_control_sounds_3d_never">ບໍ່ເຄີຍ, ພຽງແຕ່ຊ້າຍແລະຂວາ</string>
-    <string name="individual_sound_control_button">ການຄວບຄຸມສຽງ: ປຸ່ມ</string>
-    <string name="individual_sound_control_checkbox">ການຄວບຄຸມສຽງ: checkbox</string>
-    <string name="individual_sound_control_radio_button">ຄວບຄຸມສຽງ: ປຸ່ມວິທະຍຸ</string>
-    <string name="individual_sound_control_edit_text">ຄວບຄຸມສຽງ: ແກ້ໄຂຊ່ອງຂໍ້ມູນ</string>
-    <string name="individual_sound_control_combo_box">ການຄວບຄຸມສຽງ: ບັນຊີລາຍຊື່ເລື່ອນລົງ</string>
-    <string name="individual_sound_control_slider">ການຄວບຄຸມສຽງ: slider</string>
-    <string name="individual_sound_control_link">ການຄວບຄຸມສຽງ: ການເຊື່ອມຕໍ່</string>
-    <string name="individual_sound_control_image">ການຄວບຄຸມສຽງ: ຮູບພາບ</string>
-    <string name="individual_sound_control_clock">ຄວບຄຸມສຽງ: ໂມງ</string>
-    <string name="individual_sound_control_tab">ຄວບຄຸມສຽງ: ແຖບ</string>
-    <string name="individual_sound_control_menu_item">ຄວບຄຸມສຽງ: ລາຍການເມນູ</string>
-    <string name="individual_sound_control_list_item">ການຄວບຄຸມສຽງ: ລາຍການລາຍການ</string>
-    <string name="individual_sound_control_tree_item">ການຄວບຄຸມສຽງ: ລາຍການຕົ້ນໄມ້</string>
+    <string name="pref_control_sounds_3d_never">ບໍ່ໃຊ້, ສະເພາະຊ້າຍ ແລະ ຂວາ</string>
+    <string name="individual_sound_control_button">ສຽງຂອງຕົວຄວບຄຸມ: ປຸ່ມ</string>
+    <string name="individual_sound_control_checkbox">ສຽງຂອງຕົວຄວບຄຸມ: ກ່ອງໝາຍ</string>
+    <string name="individual_sound_control_radio_button">ສຽງຂອງຕົວຄວບຄຸມ: ປຸ່ມຕົວເລືອກ</string>
+    <string name="individual_sound_control_edit_text">ສຽງຂອງຕົວຄວບຄຸມ: ຊ່ອງແກ້ໄຂ</string>
+    <string name="individual_sound_control_combo_box">ສຽງຂອງຕົວຄວບຄຸມ: ບັນຊີລາຍຊື່ເລື່ອນລົງ</string>
+    <string name="individual_sound_control_slider">ສຽງຂອງຕົວຄວບຄຸມ: ແຖບເລື່ອນ</string>
+    <string name="individual_sound_control_link">ສຽງຂອງຕົວຄວບຄຸມ: ການເຊື່ອມຕໍ່</string>
+    <string name="individual_sound_control_image">ສຽງຂອງຕົວຄວບຄຸມ: ຮູບພາບ</string>
+    <string name="individual_sound_control_clock">ສຽງຂອງຕົວຄວບຄຸມ: ໂມງ</string>
+    <string name="individual_sound_control_tab">ສຽງຂອງຕົວຄວບຄຸມ: ແຖບ</string>
+    <string name="individual_sound_control_menu_item">ສຽງຂອງຕົວຄວບຄຸມ: ລາຍການເມນູ</string>
+    <string name="individual_sound_control_list_item">ສຽງຂອງຕົວຄວບຄຸມ: ລາຍການໃນລາຍຊື່</string>
+    <string name="individual_sound_control_tree_item">ສຽງຂອງຕົວຄວບຄຸມ: ລາຍການຕົ້ນໄມ້</string>
 </resources>

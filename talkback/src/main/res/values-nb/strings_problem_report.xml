@@ -4,10 +4,10 @@
     <string name="title_pref_problem_report_type">Type tilbakemelding</string>
     <string name="title_pref_problem_report_area">Område</string>
     <string name="title_pref_problem_report_title">Tittel</string>
-    <string name="title_pref_problem_report_app">App hvor det skjer</string>
+    <string name="title_pref_problem_report_app">App der det skjer</string>
     <string name="title_pref_problem_report_description">Beskrivelse</string>
     <string name="dialog_message_problem_report_description">Hva skjer og hva du forventet.</string>
-    <string name="title_pref_problem_report_steps">Trinn for å gjenskape programvareproblemet</string>
+    <string name="title_pref_problem_report_steps">Trinn for å gjenskape</string>
     <string name="title_pref_problem_report_email">E-post for svar</string>
     <string name="title_pref_problem_report_device">Ta med enhetsinformasjon</string>
     <string name="title_pref_problem_report_log">Inkluder SandFly-logg</string>
@@ -21,9 +21,9 @@
     <string name="problem_report_no_connection">Tilbakemelding ikke sendt. Sjekk internettforbindelsen.</string>
     <string name="problem_report_not_sent">Tilbakemelding ikke sendt. Prøv igjen senere.</string>
     <string-array name="problem_report_type_entries">
-        <item>Feil oppførsel</item>
+        <item>Feil virkemåte</item>
         <item>Krasj</item>
-        <item>Sakte eller ikke reagerer</item>
+        <item>Treg eller svarer ikke</item>
         <item>Forslag</item>
     </string-array>
     <string-array name="problem_report_area_entries">
@@ -34,7 +34,7 @@
         <item>Skriving og tastaturer</item>
         <item>Punktskrifttastatur</item>
         <item>Leselist</item>
-        <item>Lyder og vibrasjoner</item>
+        <item>Lyd og vibrering</item>
         <item>Varsler</item>
         <item>Nettinnhold</item>
         <item>Skript</item>
@@ -56,9 +56,9 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> nye svar</item>
     </plurals>
     <string name="report_status_changed">status endret</string>
-    <string name="report_status_open">Åpen sak</string>
-    <string name="report_status_completed">Stengt, fullført</string>
-    <string name="report_status_not_planned">Stengt, ikke planlagt</string>
+    <string name="report_status_open">Åpen</string>
+    <string name="report_status_completed">Lukket, fullført</string>
+    <string name="report_status_not_planned">Lukket, ikke planlagt</string>
     <string name="report_status_duplicate">Lukket, duplikat</string>
     <string name="report_status_unknown">Fjernet</string>
     <string name="title_report_status">Status</string>
@@ -78,7 +78,7 @@
     <string name="dialog_title_report_delete_draft">Vil du slette dette utkastet?</string>
     <string name="button_report_delete">Slett</string>
     <string name="report_missing">Denne tilbakemeldingen er ikke lenger i innboksen.</string>
-    <string name="notification_channel_problem_reports">Tilbakemeldinger svarer</string>
-    <string name="report_notification_reply">Svar til <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="notification_channel_problem_reports">Svar på tilbakemeldinger</string>
+    <string name="report_notification_reply">Svar på <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

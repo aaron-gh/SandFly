@@ -69,7 +69,7 @@
     <string name="theme_sound_braille_new_line">صفحه‌کلید بریل: خط جدید</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">انتخاب فایل صوتی</string>
-    <string name="theme_sound_preview">پیش‌نمایش</string>
+    <string name="theme_sound_preview">پخش</string>
     <string name="theme_sound_none">بدون صدا</string>
     <string name="theme_sound_summary_no_sound">بدون صدا</string>
     <string name="theme_sound_action_set_none">تنظیم روی بدون صدا</string>
@@ -80,8 +80,8 @@
     <string name="theme_sound_failed">‏SandFly نتوانست این فایل را بخواند.</string>
     <string name="title_pref_sound_theme_install_source">از یک منبع</string>
     <string name="summary_pref_sound_theme_install_source">فایل‌های تم در یک مخزن در GitHub، GitLab، Codeberg، Gitea یا Bitbucket.</string>
-    <string name="sound_theme_sources">منابع تم صدا</string>
-    <string name="sound_theme_source_empty">هیچ تم صوتی در این منبع وجود ندارد</string>
-    <string name="sound_theme_source_failed">تم های صوتی بارگیری نشد. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">تم های صوتی نصب شده از آن همچنان نصب می شوند.</string>
+    <string name="sound_theme_sources">منابع طرح‌های صوتی</string>
+    <string name="sound_theme_source_empty">هیچ طرح صوتی‌ای در این منبع نیست</string>
+    <string name="sound_theme_source_failed">طرح‌های صوتی بارگیری نشد. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">طرح‌های صوتی نصب‌شده از آن، نصب‌شده باقی می‌مانند.</string>
 </resources>

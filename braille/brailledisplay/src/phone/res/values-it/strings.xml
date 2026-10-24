@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">Azioni di sistema</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Indietro, schermata Home, notifiche e altro ancora</string>
   <string name="bd_commands_bindings_category_talkback_features_title">Funzionalità SandFly</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly menu e impostazioni</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">Menu e impostazioni di SandFly</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Impostazioni braille</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Lingua e impostazioni braille</string>
   <string name="bd_commands_bindings_category_text_editing_title">Modifica del testo</string>
@@ -323,12 +323,12 @@
     <string name="external_display_channel">Display Braille da altre app</string>
     <string name="external_display_ask_title">Consentire che <xliff:g id="app" example="Notetaker">%1$s</xliff:g> sia un display braille per SandFly?</string>
     <string name="external_display_ask_text">SandFly non lo utilizzerà finché non lo consentirai.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> sarà in grado di leggere tutto ciò che SandFly mostra in braille, che può essere qualsiasi cosa sullo schermo, inclusi i messaggi e ciò che scrivi. Potrà anche controllare il tuo dispositivo come faresti con un display braille: digita, apri app ed esegui qualsiasi comando SandFly. Consenti solo le app di cui ti fidi.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> potrà leggere tutto ciò che SandFly mostra in braille, cioè qualsiasi contenuto dello schermo, compresi i messaggi e ciò che digiti. Potrà anche controllare il dispositivo come puoi fare tu con un display braille: digitare, aprire app ed eseguire qualsiasi comando di SandFly. Consenti solo app di cui ti fidi.</string>
     <string name="external_display_allow">Consenti</string>
     <string name="external_display_deny">Non permettere</string>
     <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> è il tuo display Braille</string>
     <string name="external_display_in_use_text">Mentre SandFly lo usa, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> può leggere lo schermo e controllare il dispositivo.</string>
-    <string name="external_displays_title">Visualizza da altre app</string>
+    <string name="external_displays_title">Display di altre app</string>
     <string name="external_displays_summary">Le app consentite possono essere display braille per SandFly. Un\'app che è un display braille può leggere lo schermo e controllare il dispositivo.</string>
     <string name="external_displays_none">Nessuna app può essere un display Braille.</string>
 </resources>

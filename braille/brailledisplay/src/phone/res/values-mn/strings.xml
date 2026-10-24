@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">Системийн үйлдлүүд</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Буцах, нүүр, мэдэгдэл болон бусад</string>
   <string name="bd_commands_bindings_category_talkback_features_title">SandFly-н онцлогууд</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly цэс болон тохиргоо</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly-н цэс болон тохиргоо</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Брайлын тохиргоо</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Брайлын хэл болон тохиргоо</string>
   <string name="bd_commands_bindings_category_text_editing_title">Текст засах</string>
@@ -323,12 +323,12 @@
     <string name="external_display_channel">Бусад програмын брайл дэлгэцүүд</string>
     <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g>-г SandFly-д зориулсан брайл дэлгэц байхыг зөвшөөрөх үү?</string>
     <string name="external_display_ask_text">SandFly таныг зөвшөөрөх хүртэл үүнийг ашиглахгүй.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> нь мессеж, таны бичсэн зүйл зэрэг дэлгэцэн дээрх бүх зүйл байж болох SandFly шоуг брайл үсгээр унших боломжтой. Энэ нь мөн таны төхөөрөмжийг брайл дэлгэцээр удирдах боломжтой болно: бичиж, програмуудыг нээж, дурын SandFly командыг ажиллуулна. Зөвхөн итгэдэг програмуудаа зөвшөөрнө үү.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> нь SandFly-н брайлаар харуулдаг бүх зүйлийг унших боломжтой болно. Энэ нь мессеж, таны бичсэн зүйл зэрэг дэлгэц дээрх аливаа зүйл байж болно. Мөн брайл дэлгэцээр таны хийдэгтэй адил төхөөрөмжийг удирдах боломжтой: бичих, апп нээх, SandFly-н дурын командыг ажиллуулах. Зөвхөн итгэдэг аппуудаа зөвшөөрнө үү.</string>
     <string name="external_display_allow">Зөвшөөрөх</string>
-    <string name="external_display_deny">Бүү зөвшөөр</string>
+    <string name="external_display_deny">Зөвшөөрөхгүй</string>
     <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> бол таны брайл дэлгэц юм</string>
     <string name="external_display_in_use_text">SandFly үүнийг ашиглаж байхад <xliff:g id="app" example="Notetaker">%1$s</xliff:g> нь дэлгэцийг уншиж, төхөөрөмжийг удирдах боломжтой.</string>
     <string name="external_displays_title">Бусад програмын дэлгэцүүд</string>
-    <string name="external_displays_summary">Таны зөвшөөрсөн програмууд нь SandFly-д зориулсан брайл дэлгэц байж болно. Брайл дэлгэц бүхий програм нь дэлгэцийг уншиж, төхөөрөмжийг удирдах боломжтой.</string>
-    <string name="external_displays_none">Ямар ч програм брайл дэлгэц байж болохгүй.</string>
+    <string name="external_displays_summary">Таны зөвшөөрсөн аппууд SandFly-н брайл дэлгэц болж болно. Брайл дэлгэц болсон апп нь дэлгэцийг уншиж, төхөөрөмжийг удирдаж чадна.</string>
+    <string name="external_displays_none">Брайл дэлгэц болж чадах програм алга.</string>
 </resources>

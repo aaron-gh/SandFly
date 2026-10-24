@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API kaliti</string>
-    <string name="summary_pref_gemini_api_key_built_in">Ushbu ilovaga o\'rnatilgan kalitdan foydalanish</string>
-    <string name="gemini_api_key_dialog_message">Google AI Studio’dan bepul API kalitini aistudio.google.com/apikey orqali oling va uni shu yerga joylashtiring. Kalitni olib tashlash uchun maydonni tozalang va saqlang.\n\nSiz tasvirlagan tasvirlar va ekranlar Google manziliga yuboriladi. Bepul darajadagi Google o\'z mahsulotlarini yaxshilash uchun ulardan foydalanishi mumkin.</string>
+    <string name="summary_pref_gemini_api_key_built_in">Ushbu ilovaga oʻrnatilgan kalit ishlatilmoqda</string>
+    <string name="gemini_api_key_dialog_message">Google AI Studio’dan aistudio.google.com/apikey manzili orqali bepul API kalitini oling va shu yerga joylang. Kalitni oʻchirish uchun maydonni boʻshatib, saqlang.\n\nTavsifini soʻragan rasm va ekranlaringiz Google’ga yuboriladi. Bepul tarifda Google ulardan oʻz mahsulotlarini yaxshilash uchun foydalanishi mumkin.</string>
     <string name="gemini_api_key_hint">API kaliti</string>
     <string name="gemini_api_key_save">Saqlash</string>
-    <string name="gemini_api_key_get">Kalit oling</string>
+    <string name="gemini_api_key_get">Kalit olish</string>
     <string name="title_pref_gemini_model">Gemini modeli</string>
     <string name="gemini_model_automatic">Avtomatik</string>
     <string name="summary_pref_gemini_model_automatic">Avtomatik: Gemini Flash, keyin Flash band bo\'lganda Flash-Lite</string>
@@ -16,8 +16,8 @@
     <string name="gemini_api_terms_link">Gemini API qoʻshimcha xizmat koʻrsatish shartlari</string>
     <string name="ai_service_address_hint">Manzil, masalan, https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
-    <string name="ai_service_address_invalid">Manzil https://. bilan boshlanishi kerak Hech narsa saqlanmadi.</string>
-    <string name="dialog_message_ai_service_consent">Tasvirlar va skrinshotlar tasvirlash uchun <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ga yuboriladi, bu bir necha soniya davom etadi. Uning shaxsiy shartlari va maxfiylik siyosati amal qiladi. Generativ AI eksperimentaldir, shuning uchun u xato qiladi.</string>
+    <string name="ai_service_address_invalid">Manzil https:// bilan boshlanishi kerak. Hech narsa saqlanmadi.</string>
+    <string name="dialog_message_ai_service_consent">Rasmlar va skrinshotlar tavsiflash uchun <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> xizmatiga yuboriladi, bu bir necha soniya davom etadi. Shu xizmatning oʻz shartlari va maxfiylik siyosati amal qiladi. Generativ SI tajriba bosqichida, shuning uchun xato qiladi.</string>
     <string name="ai_service_error_api_key">AI xizmati API kalitini qabul qilmadi. Avtomatik tavsiflarda uning sozlamalarini tekshiring.</string>
     <string name="ai_service_error_quota">AI xizmatidan foydalanish chegarasiga yetdi. Keyinroq qayta urinib ko‘ring.</string>
     <string name="ai_service_error_busy">AI xizmati hozir band. Birozdan keyin qayta urinib ko‘ring.</string>
@@ -41,13 +41,13 @@
     <string name="ai_provider_not_set_up">Sozlanmagan</string>
     <string name="ai_provider_not_ready">Avval modelni tanlang</string>
     <string name="ai_provider_address">Manzil</string>
-    <string name="ai_provider_address_message">OpenAI-mos keladigan chat API va https://example.com/v1. kabi rasm kiritishga ega xizmat manzili</string>
+    <string name="ai_provider_address_message">OpenAI bilan mos chat API va rasm kiritish imkoniyati boʻlgan xizmat manzili, masalan, https://example.com/v1.</string>
     <string name="ai_provider_not_set">Belgilanmagan</string>
     <string name="ai_provider_set">Sozlangan</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API kaliti</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modeli</string>
     <string name="ai_provider_choose_model">Tanlanmagan</string>
-    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API kalitingizni joylashtiring. Uni olib tashlash uchun maydonni tozalang va saqlang. Siz tasvirlagan tasvirlar va ekranlar <xliff:g id="service" example="Claude">%1$s</xliff:g> manziliga yuboriladi.</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API kalitingizni joylashtiring. Oʻchirish uchun maydonni boʻshatib, saqlang. Tavsifini soʻragan rasm va ekranlaringiz <xliff:g id="service" example="Claude">%1$s</xliff:g> xizmatiga yuboriladi.</string>
     <string name="ai_provider_needs_key">Avval <xliff:g id="service" example="Claude">%1$s</xliff:g> API kalitini o\'rnating</string>
     <string name="ai_provider_needs_address">Avval manzilni belgilang</string>
     <string name="ai_provider_enter_model">Model nomini kiriting</string>

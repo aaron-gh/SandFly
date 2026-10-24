@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">TalkBackova tastatura s Braillevim pismom</string>
+  <string name="braille_ime_service_name">SandFlyova tastatura s Braillevim pismom</string>
   <string name="braille_ime_bd_mode_name">Unos na Brailleovom ekranu</string>
   <string name="switch_to_tabletop_announcement">Način rada na stolu. Postavite uređaj tako da priključak za punjenje bude lijevo.</string>
   <string name="calibration_tip_announcement">Da ažurirate položaj tačaka, držite pritisnutim sa %d prsta/iju.</string>
@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Prebačeno je na neskraćeno Braillevo pismo</string>
   <string name="braille_ime_displayed_name">tastatura s Braillevim pismom</string>
   <string name="multiple_languages_braille_ime_displayed_name">tastatura s Braillevim pismom, %s</string>
-  <string name="input_view_caption">TalkBackova tastatura s Braillevim pismom. Za pomoć posjetite g.co/help/braille</string>
+  <string name="input_view_caption">SandFlyova tastatura s Braillevim pismom. Za pomoć posjetite g.co/help/braille</string>
   <string name="perform_action_next">Naprijed</string>
   <string name="perform_action_submitting">Slanje teksta</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Ažuriranje položaja tačaka. Prvo ćemo snimiti tačke %s.</string>
@@ -45,8 +45,8 @@
   <string name="switch_input_code_gesture_tip_dialog_message">Da promijenite jezik prilikom unosa teksta pomoću tastature s Braillevim pismom, prevucite nagore s 3 prsta. Zatim odaberite \"prebaci na sljedeći jezik\".</string>
   <string name="title_pref_accumulate_presses">Uvrsti sve pritisnute tačke</string>
   <string name="summary_pref_accumulate_presses">Svaka pritisnuta tačka je dio unosa, čak i ako je otpuštena prije drugih tačaka</string>
-  <string name="title_pref_reverse_dots">Obrni tačke</string>
-  <string name="summary_pref_reverse_dots">Zamijenite pozicije tačaka tako da naprimjer tačke 1 i 4 zamijene mjesta</string>
+  <string name="title_pref_reverse_dots">Zamijeni lijeve i desne tačke</string>
+  <string name="summary_pref_reverse_dots">Tačke 1, 2 i 3 mijenjaju mjesta s tačkama 4, 5 i 6</string>
   <string name="bd_preference_braille_contracted">Skraćeno Braillevo pismo</string>
   <string name="bd_preference_braille_uncontracted">neskraćeno Braillevo pismo</string>
   <string name="context_menu_title">Opcije Brailleve tastature</string>
@@ -101,12 +101,12 @@
   <string name="bk_pref_category_title_keyboard">Tastatura</string>
   <string name="not_enough_touch_points_dialog_title">Vaš uređaj ne podržava tastaturu s Braillevim pismom</string>
   <string name="not_enough_touch_points_dialog_message">Vaš uređaj ne podržava dovoljno dodirnih tačaka. Za više informacija obratite se proizvođaču uređaja.</string>
-  <string name="talkback_off_dialog_title">Uključite TalkBack za korištenje tastature s Braillevim pismom</string>
+  <string name="talkback_off_dialog_title">Uključite SandFly za korištenje tastature s Braillevim pismom</string>
   <string name="talkback_off_dialog_positive_button">Uključi u postavkama pristupačnosti</string>
-  <string name="talkback_suspend_dialog_title">Nastavite TalkBack da koristite tastaturu s Braillevim pismom</string>
-  <string name="talkback_off_or_suspend_dialog_message">Kada je TalkBack uključen, dodirom na ekran možete unositi Brailleve simbole.</string>
-  <string name="talkback_off_custom_gestures_dialog_title">Uključite TalkBack da promijenite pokret</string>
-  <string name="talkback_off_custom_gestures_dialog_message">TalkBack je isključen. Uključite ga da promijenite pokrete na tastaturi s Braillevim pismom.</string>
+  <string name="talkback_suspend_dialog_title">Nastavite SandFly da koristite tastaturu s Braillevim pismom</string>
+  <string name="talkback_off_or_suspend_dialog_message">Kada je SandFly uključen, dodirom na ekran možete unositi Brailleve simbole.</string>
+  <string name="talkback_off_custom_gestures_dialog_title">Uključite SandFly da promijenite pokret</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly je isključen. Uključite ga da promijenite pokrete na tastaturi s Braillevim pismom.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Idi u Postavke</string>
   <string name="reset_gestures_dialog_title">Vratiti sve pokrete na zadano?</string>
   <string name="reset_gestures_dialog_message">Svi pokreti na tastaturi s Braillevim pismom će se vratiti na zadano</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Vrati na zadano</string>
   <string name="custom_gestures_dialog_remove_button">Ukloni pokret</string>
   <string name="change_gestures_dialog_message_title">Kako promijeniti pokret</string>
-  <string name="change_gestures_dialog_message">Na sljedećem ekranu će se otvoriti tastatura s Braillevim pismom i nećete moći izvoditi pokrete TalkBacka.\n\nKada se tastatura s Braillevim pismom otvori, izvedite željeni pokret ili prevucite nadolje s 2 prsta da zatvorite tastaturu s Braillevim pismom i otkažete promjenu pokreta.\n\nPogledajte dostupne pokrete\n</string>
+  <string name="change_gestures_dialog_message">Na sljedećem ekranu će se otvoriti tastatura s Braillevim pismom i nećete moći izvoditi pokrete SandFlya.\n\nKada se tastatura s Braillevim pismom otvori, izvedite željeni pokret ili prevucite nadolje s 2 prsta da zatvorite tastaturu s Braillevim pismom i otkažete promjenu pokreta.\n\nPogledajte dostupne pokrete\n</string>
   <string name="change_gestures_dialog_message_link">Pogledajte dostupne pokrete</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Ne prikazuj ovu poruku ponovo</string>
   <string name="change_gestures_dialog_positive_button">Nastavi</string>
@@ -133,11 +133,11 @@
   <string name="mirrored_gesture_dialog_conflict_negative_button">Nemoj koristiti</string>
   <string name="next_keyboard">Sljedeća tastatura</string>
   <string name="braille_tutorial_title">Vodič za tastaturu s Braillevim pismom</string>
-  <string name="tutorial_intro_description">Kada koristite tastaturu s Braillevim pismom, dodirom ekrana možete unijeti Braillev simbol od 6 tačaka.\n\nKoristite unificirano Braillevo pismo na engleskom jeziku. Da zamijenite jezik pisanja, idite u postavke TalkBacka.\n\nDa pišete na Braillevom pismu, morate drugačije držati i koristiti telefon.</string>
+  <string name="tutorial_intro_description">Kada koristite tastaturu s Braillevim pismom, dodirom ekrana možete unijeti Braillev simbol od 6 tačaka.\n\nKoristite unificirano Braillevo pismo na engleskom jeziku. Da zamijenite jezik pisanja, idite u postavke SandFlya.\n\nDa pišete na Braillevom pismu, morate drugačije držati i koristiti telefon.</string>
   <string name="next_step">Dalje</string>
   <string name="leave_keyboard">Zatvori tastaturu s Braillevim pismom</string>
-  <string name="hold_six_fingers_description">Na tastaturi s Braillevim pismom nećete moći koristiti uobičajene pokrete za TalkBack.\n\nDa započnete, trebate postaviti položaj 6 tačaka Braillevog pisma dok pišete.</string>
-  <string name="rotate_orientation_description_1">Od sada nećete moći koristiti obične TalkBack pokrete. TalkBack nije dostupan dok koristite tastaturu s Braillevim pismom.</string>
+  <string name="hold_six_fingers_description">Na tastaturi s Braillevim pismom nećete moći koristiti uobičajene pokrete za SandFly.\n\nDa započnete, trebate postaviti položaj 6 tačaka Braillevog pisma dok pišete.</string>
+  <string name="rotate_orientation_description_1">Od sada nećete moći koristiti obične SandFly pokrete. SandFly nije dostupan dok koristite tastaturu s Braillevim pismom.</string>
   <string name="rotate_orientation_description_2">Da započnete, držite telefon ovako, s ekranom okrenutim od vas.</string>
   <string name="tap_to_continue">Da nastavite, dodirnite dvaput bilo gdje</string>
   <string name="instruction_type_letter_a">Dodirnite tačku 1 lijevim kažiprstom da upišete slovo \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">KURSOR JE PREMJEŠTEN UNAPRIJED</string>
   <string name="result_swipe_down_2_fingers">SAKRIVANJE TASTATURE</string>
   <string name="result_swipe_down_3_fingers">SLJEDEĆA TASTATURA</string>
-  <string name="rotate_orientation_announcement">Od sada nećete moći koristiti obične TalkBack pokrete. TalkBack nije dostupan dok koristite tastaturu s Braillevim pismom.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Od sada nećete moći koristiti obične SandFly pokrete. SandFly nije dostupan dok koristite tastaturu s Braillevim pismom.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Prvo, okrenite telefon tako da je ekran usmjeren od vas.\n\nZatim okrenite telefon u vodoravni položaj. Vaše ruke trebaju držati kraće krajeve telefona. Desnom rukom trebate držati kraj s USB priključkom. Ostavite 3 srednja prsta na ekranu i pomoću malog prsta i palca pridržavajte telefon.\n\nKada ste spremni, dodirnite ekran dvaput da nastavite.\n\nDa zatvorite tastaturu s Braillevim pismom, prevucite prema dolje s 3 prsta. Time ćete se vratiti na početnu tastaturu.</string>
   <string name="rotate_orientation_continue_announcement">Vaš telefon je u uspravnom položaju. Da nastavite, okrenite telefon horizontalno s dužom stranom na dnu. Zatim okrenite ekran od sebe. Kada ste spremni, dodirnite ekran dvaput da nastavite.</string>
   <string name="type_letter_a_announcement">Držite ekran okrenutim od vas. Držite telefon s obje ruke za njegove kraće krajeve da bi srednja 3 prsta svake ruke mogla dotaći ekran.\n\nVaš lijevi kažiprst treba biti na tački 1. Sada, dodirnite tačku 1 da upišete slovo \"A\".</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Da se prebacite na drugu tastaturu, prevucite prema dolje s 3 prsta. Isprobajte sada.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Sljedeća tastatura. Ovako ćete obično preći na sljedeću tastaturu. Ovaj put ostajete na tastaturi s Braillevim pismom jer još uvijek koristite vodič.</string>
   <string name="swipe_up_3_fingers_announcement">Također možete pisati u načinu rada na stolu postavljanjem telefona ravno na stol. Da zatvorite vodič, prevucite s 3 prsta i pronađite opciju za zatvaranje vodiča</string>
-  <string name="open_context_menu_announcement">Ovaj meni s opcijama je otvoren. Okrenite telefon prema sebi i držite ga normalno. Sada možete koristiti uobičajene pokrete TalkBacka za navigaciju. Prevucite udesno da vidite više opcija.</string>
+  <string name="open_context_menu_announcement">Ovaj meni s opcijama je otvoren. Okrenite telefon prema sebi i držite ga normalno. Sada možete koristiti uobičajene pokrete SandFlya za navigaciju. Prevucite udesno da vidite više opcija.</string>
   <string name="hold_six_fingers_announcement">%s\nPostavite uređaj ravno na stol. Zatim dodirnite i držite ekran s 3 srednja prsta obje ruke u položaju koji vam odgovara za pisanje.</string>
   <string name="hold_six_fingers_inactive_announcement">Postavite uređaj ravno na stol. Zatim dodirnite i držite ekran s 3 srednja prsta obje ruke u položaju koji vam odgovara za pisanje.</string>
   <string name="finish_tutorial_announcement">Prikazuje se tastatura s Braillevim pismom. Okrenite telefon tako da ekran bude okrenut od vas. Rotirajte telefon u vodoravni položaj. Zatim počnite pisati.</string>
@@ -203,7 +203,7 @@
   <string name="custom_gesture_conflict_try_another">Ovaj pokret se koristi za radnju \"%1$s\" i ne može se promijeniti. Pokušajte s drugim pokretom. %2$s</string>
   <string name="custom_gesture_cannot_used">Ovaj pokret se ne može koristiti</string>
   <string name="custom_gesture_no_gesture">Nijedan pokret nije izvršen</string>
-  <string name="custom_gesture_try_another">Pokušajte s drugim pokretom. Da vidite listu svih dostupnih pokreta, idite u centar za pomoć za TalkBack tastaturu s Braillevim pismom. %s</string>
+  <string name="custom_gesture_try_another">Pokušajte s drugim pokretom. Da vidite listu svih dostupnih pokreta, idite u centar za pomoć za SandFly tastaturu s Braillevim pismom. %s</string>
   <string name="custom_gesture_no_match">Pokreti se ne podudaraju</string>
   <string name="custom_gesture_perform_again">Izvedite pokret koji želite ponovo koristiti. %s</string>
 </resources>

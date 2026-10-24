@@ -6,8 +6,8 @@
     <string name="title_pref_problem_report_title">శీర్షిక</string>
     <string name="title_pref_problem_report_app">ఇది జరిగే యాప్</string>
     <string name="title_pref_problem_report_description">వివరణ</string>
-    <string name="dialog_message_problem_report_description">ఏమి జరుగుతుంది మరియు మీరు ఊహించినది.</string>
-    <string name="title_pref_problem_report_steps">సాఫ్ట్‌వేర్ సమస్యను పునరుత్పత్తి చేయడానికి దశలు</string>
+    <string name="dialog_message_problem_report_description">ఏమి జరుగుతుంది, మీరు ఏమి ఆశించారు.</string>
+    <string name="title_pref_problem_report_steps">సమస్యను మళ్లీ కలిగించే దశలు</string>
     <string name="title_pref_problem_report_email">ప్రత్యుత్తరాల కోసం ఇమెయిల్</string>
     <string name="title_pref_problem_report_device">పరికర సమాచారాన్ని చేర్చండి</string>
     <string name="title_pref_problem_report_log">SandFly లాగ్‌ను చేర్చండి</string>
@@ -21,26 +21,26 @@
     <string name="problem_report_no_connection">అభిప్రాయం పంపబడలేదు. ఇంటర్నెట్ కనెక్షన్‌ని తనిఖీ చేయండి.</string>
     <string name="problem_report_not_sent">అభిప్రాయం పంపబడలేదు. తర్వాత మళ్లీ ప్రయత్నించండి.</string>
     <string-array name="problem_report_type_entries">
-        <item>సరికాని ప్రవర్తన</item>
+        <item>తప్పు ప్రవర్తన</item>
         <item>క్రాష్</item>
-        <item>నెమ్మదిగా లేదా స్పందించని</item>
+        <item>నెమ్మదిగా లేదా స్పందించడం లేదు</item>
         <item>సూచన</item>
     </string-array>
     <string-array name="problem_report_area_entries">
         <item>ప్రసంగం</item>
         <item>సంజ్ఞలు</item>
-        <item>టచ్ అన్వేషణ</item>
-        <item>పఠన నియంత్రణలు మరియు మెనులు</item>
-        <item>టైపింగ్ మరియు కీబోర్డులు</item>
+        <item>తాకడం ద్వారా పరిశీలించడం</item>
+        <item>రీడింగ్ కంట్రోల్స్, మెనూలు</item>
+        <item>టైపింగ్, కీబోర్డ్‌లు</item>
         <item>బ్రెయిలీ కీబోర్డ్</item>
         <item>బ్రెయిలీ డిస్‌ప్లే</item>
-        <item>శబ్దాలు మరియు కంపనం</item>
+        <item>సౌండ్, వైబ్రేషన్</item>
         <item>నోటిఫికేషన్‌లు</item>
         <item>వెబ్ కంటెంట్</item>
         <item>స్క్రిప్ట్‌లు</item>
         <item>సెట్టింగ్‌లు</item>
         <item>నవీకరణలు</item>
-        <item>మరిన్ని</item>
+        <item>ఇతరం</item>
     </string-array>
     <string name="title_report_new">ఫీడ్‌బ్యాక్‌ను పంపండి</string>
     <string name="title_report_inbox">ఇన్‌బాక్స్</string>
@@ -48,15 +48,15 @@
     <string name="report_inbox_empty">అభిప్రాయం పంపబడలేదు</string>
     <string name="report_drafts_empty">చిత్తుప్రతులు లేవు</string>
     <string name="report_just_now">ఇప్పుడే</string>
-    <string name="report_untitled">శీర్షిక లేని</string>
-    <string name="report_draft_summary">మార్చబడింది <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
-    <string name="report_sent_at">పంపబడింది <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
+    <string name="report_untitled">శీర్షిక లేదు</string>
+    <string name="report_draft_summary"><xliff:g id="when" example="5 minutes ago">%1$s</xliff:g> మార్చబడింది</string>
+    <string name="report_sent_at"><xliff:g id="when" example="2 days ago">%1$s</xliff:g> పంపబడింది</string>
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> కొత్త ప్రత్యుత్తరం</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> కొత్త ప్రత్యుత్తరాలు</item>
     </plurals>
     <string name="report_status_changed">స్థితి మారింది</string>
-    <string name="report_status_open">సమస్యను తెరవండి</string>
+    <string name="report_status_open">తెరిచి ఉంది</string>
     <string name="report_status_completed">మూసివేయబడింది, పూర్తయింది</string>
     <string name="report_status_not_planned">మూసివేయబడింది, ప్రణాళిక లేదు</string>
     <string name="report_status_duplicate">మూసివేయబడింది, నకిలీ</string>
@@ -66,7 +66,7 @@
     <string name="title_report_messages">సందేశాలు</string>
     <string name="report_message_from_developer">డెవలపర్, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">మీరు, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">ప్రత్యుత్తరం ఇవ్వండి</string>
+    <string name="title_report_reply">ప్రత్యుత్తరం</string>
     <string name="title_report_reply_text">మీ సమాధానం</string>
     <string name="title_report_send_reply">సమాధానం పంపండి</string>
     <string name="report_reply_sent">ప్రత్యుత్తరం పంపబడింది.</string>
@@ -77,8 +77,8 @@
     <string name="title_report_delete_draft">చిత్తుప్రతిని తొలగించండి</string>
     <string name="dialog_title_report_delete_draft">ఈ చిత్తుప్రతిని తొలగించాలా?</string>
     <string name="button_report_delete">తొలగించండి</string>
-    <string name="report_missing">ఈ అభిప్రాయం ఇప్పుడు ఇన్‌బాక్స్‌లో ఉండదు.</string>
+    <string name="report_missing">ఈ అభిప్రాయం ఇప్పుడు ఇన్‌బాక్స్‌లో లేదు.</string>
     <string name="notification_channel_problem_reports">ఫీడ్‌బ్యాక్ ప్రత్యుత్తరాలు</string>
-    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>కి ప్రత్యుత్తరం ఇవ్వండి</string>
+    <string name="report_notification_reply"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>కి ప్రత్యుత్తరం</string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

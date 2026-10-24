@@ -10,34 +10,34 @@
     <string name="title_pref_problem_report_steps">Passos per reproduir</string>
     <string name="title_pref_problem_report_email">Correu electrònic per a les respostes</string>
     <string name="title_pref_problem_report_device">Inclou informació del dispositiu</string>
-    <string name="title_pref_problem_report_log">Inclou el registre SandFly</string>
+    <string name="title_pref_problem_report_log">Inclou el registre de SandFly</string>
     <string name="summary_pref_problem_report_log">Pot contenir text de la pantalla</string>
     <string name="title_pref_problem_report_send">Envia</string>
-    <string name="summary_pref_problem_report_sending">Enviament</string>
-    <string name="problem_report_missing_fields">Introduïu un títol i una descripció.</string>
-    <string name="problem_report_invalid_email">Introduïu una adreça de correu electrònic vàlida.</string>
+    <string name="summary_pref_problem_report_sending">S\'està enviant</string>
+    <string name="problem_report_missing_fields">Introdueix un títol i una descripció.</string>
+    <string name="problem_report_invalid_email">Introdueix una adreça de correu electrònic vàlida.</string>
     <string name="problem_report_sent">Comentaris enviats.</string>
     <string name="problem_report_rate_limited">S\'han enviat massa comentaris. Torna-ho a provar més tard.</string>
-    <string name="problem_report_no_connection">Comentaris no enviats. Comproveu la connexió a Internet.</string>
+    <string name="problem_report_no_connection">Comentaris no enviats. Comprova la connexió a Internet.</string>
     <string name="problem_report_not_sent">Comentaris no enviats. Torna-ho a provar més tard.</string>
     <string-array name="problem_report_type_entries">
         <item>Comportament incorrecte</item>
-        <item>Crash</item>
-        <item>Lent o sense resposta</item>
+        <item>Bloqueig</item>
+        <item>Lent o no respon</item>
         <item>Suggeriment</item>
     </string-array>
     <string-array name="problem_report_area_entries">
-        <item>Discurs</item>
+        <item>Veu</item>
         <item>Gestos</item>
         <item>Exploració tàctil</item>
         <item>Controls de lectura i menús</item>
-        <item>Mecanografia i teclats</item>
+        <item>Escriptura i teclats</item>
         <item>Teclat braille</item>
         <item>Pantalla braille</item>
-        <item>Sons i vibracions</item>
+        <item>So i vibració</item>
         <item>Notificacions</item>
         <item>Contingut web</item>
-        <item>Guions</item>
+        <item>Scripts</item>
         <item>Configuració</item>
         <item>Actualitzacions</item>
         <item>Altres</item>
@@ -47,7 +47,7 @@
     <string name="title_report_drafts">Esborranys</string>
     <string name="report_inbox_empty">No s\'ha enviat cap comentari</string>
     <string name="report_drafts_empty">Sense esborranys</string>
-    <string name="report_just_now">just ara</string>
+    <string name="report_just_now">fa un moment</string>
     <string name="report_untitled">Sense títol</string>
     <string name="report_draft_summary">S\'ha canviat <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">enviat <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
@@ -67,9 +67,9 @@
     <string name="title_report_messages">Missatges</string>
     <string name="report_message_from_developer">Desenvolupador, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">Tu, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Respon</string>
+    <string name="title_report_reply">Resposta</string>
     <string name="title_report_reply_text">La teva resposta</string>
-    <string name="title_report_send_reply">Enviar resposta</string>
+    <string name="title_report_send_reply">Envia la resposta</string>
     <string name="report_reply_sent">Resposta enviada.</string>
     <string name="report_reply_not_sent">Resposta no enviada. Torna-ho a provar més tard.</string>
     <string name="title_report_remove">Elimina de la safata d\'entrada</string>
@@ -79,7 +79,7 @@
     <string name="dialog_title_report_delete_draft">Vols suprimir aquest esborrany?</string>
     <string name="button_report_delete">Suprimeix</string>
     <string name="report_missing">Aquest comentari ja no es troba a la safata d\'entrada.</string>
-    <string name="notification_channel_problem_reports">Respostes de comentaris</string>
-    <string name="report_notification_reply">Respon a <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="notification_channel_problem_reports">Respostes als comentaris</string>
+    <string name="report_notification_reply">Resposta a <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

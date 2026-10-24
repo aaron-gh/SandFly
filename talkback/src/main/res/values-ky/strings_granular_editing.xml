@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="granular_editing_title">Гранулярдык редакциялоо</string>
+    <string name="granular_editing_title">Бөлүктөп түзөтүү</string>
     <string name="granular_editing_split_by">Бөлүү: <xliff:g id="granularity" example="Words">%1$s</xliff:g></string>
-    <string name="granular_editing_split_by_title">Бөлүнүү</string>
+    <string name="granular_editing_split_by_title">Бөлүү</string>
     <string name="granular_editing_characters">Символдор</string>
     <string name="granular_editing_words">Сөздөр</string>
     <string name="granular_editing_sentences">Сүйлөмдөр</string>
@@ -10,29 +10,29 @@
     <string name="granular_editing_paragraphs">Абзацтар</string>
     <string name="granular_editing_space">Боштук</string>
     <string name="granular_editing_new_line">Жаңы сап</string>
-    <string name="granular_editing_tab">Өтмөк белгиси</string>
-    <string name="granular_editing_empty">Текст жок. \"Көбүрөөк\" бөлүмүндөгү аягында текстти кошуңуз.</string>
+    <string name="granular_editing_tab">Табуляция белгиси</string>
+    <string name="granular_editing_empty">Текст жок. «Дагы» бөлүмүндөгү «Аягына текст кошуу» буйругун колдонуңуз.</string>
     <string name="granular_editing_edit">Түзөтүү</string>
-    <string name="granular_editing_insert_before">Мурун киргизиңиз</string>
-    <string name="granular_editing_insert_after">Кийин киргизүү</string>
+    <string name="granular_editing_insert_before">Алдына киргизүү</string>
+    <string name="granular_editing_insert_after">Артына киргизүү</string>
     <string name="granular_editing_delete">Өчүрүү</string>
     <string name="granular_editing_select">Тандоо</string>
     <string name="granular_editing_unselect">Тандоодон баш тартуу</string>
     <string name="granular_editing_selected">Тандалган</string>
     <string name="granular_editing_save">Сактоо</string>
     <string name="granular_editing_more">Дагы</string>
-    <string name="granular_editing_undo">Жок кылуу</string>
-    <string name="granular_editing_redo">Акыркы кайтарылган түзөтүүнү кайра жасаңыз</string>
+    <string name="granular_editing_undo">Кайтаруу</string>
+    <string name="granular_editing_redo">Кайталоо</string>
     <string name="granular_editing_find">Табуу</string>
-    <string name="granular_editing_find_next">Кийинки табуу</string>
+    <string name="granular_editing_find_next">Кийинкисин табуу</string>
     <string name="granular_editing_replace">Алмаштыруу</string>
-    <string name="granular_editing_replace_with">Менен алмаштырыңыз</string>
-    <string name="granular_editing_replace_all">Баарын алмаштыр</string>
-    <string name="granular_editing_add_at_end">Аягына текст кошуңуз</string>
-    <string name="granular_editing_clear_selection">Бардык текстти тандоодон чыгарыңыз</string>
-    <string name="granular_editing_cut_selected">Тандалган текстти кесиңиз</string>
-    <string name="granular_editing_delete_selected">Тандалган жок кылуу</string>
-    <string name="granular_editing_copied">Көчүрүлгөн</string>
+    <string name="granular_editing_replace_with">Муну менен алмаштыруу</string>
+    <string name="granular_editing_replace_all">Баарын алмаштыруу</string>
+    <string name="granular_editing_add_at_end">Аягына текст кошуу</string>
+    <string name="granular_editing_clear_selection">Тандоону тазалоо</string>
+    <string name="granular_editing_cut_selected">Тандалган текстти кесүү</string>
+    <string name="granular_editing_delete_selected">Тандалганды өчүрүү</string>
+    <string name="granular_editing_copied">Көчүрүлдү</string>
     <string name="granular_editing_deleted">Жок кылынды</string>
     <string name="granular_editing_not_found">Табылган жок</string>
     <plurals name="granular_editing_replaced">
@@ -42,8 +42,8 @@
     <string name="granular_editing_save_changes">Өзгөртүүлөр сакталсынбы?</string>
     <string name="granular_editing_copy_changes">Өзгөрүлгөн текст көчүрүлсүнбү?</string>
     <string name="granular_editing_discard">Жок кылуу</string>
-    <string name="granular_editing_keep_editing">Түзөтүүнү улантыңыз</string>
-    <string name="granular_editing_not_saved">Сакталган жок: текст талаасы жок. Текст көчүрүлгөн.</string>
+    <string name="granular_editing_keep_editing">Түзөтүүнү улантуу</string>
+    <string name="granular_editing_not_saved">Сакталган жок: текст талаасы жок болуп калды. Текст көчүрүлдү.</string>
     <string name="granular_editing_no_text">Түзөтө турган текст жок</string>
     <string name="granular_editing_password">Сырсөз талааларында жеткиликтүү эмес</string>
 </resources>

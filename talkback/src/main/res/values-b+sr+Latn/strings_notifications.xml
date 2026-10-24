@@ -2,20 +2,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="notification_shake_3">Jaka</string>
     <string name="notification_shake_2">Srednje</string>
-    <string name="notification_shake_1">Nežno</string>
-    <string name="notification_media_skip">Ne čitajte naglas</string>
-    <string name="notification_media_pause">Pauzirajte medije dok čitate</string>
-    <string name="notification_media_read">Čitaj naglas</string>
+    <string name="notification_shake_1">Lagano</string>
+    <string name="notification_media_skip">Ne čitaj</string>
+    <string name="notification_media_pause">Pauziraj medije tokom čitanja</string>
+    <string name="notification_media_read">Čitaj</string>
     <string name="notification_headphones_only_without">Samo bez slušalica</string>
     <string name="notification_headphones_only_with">Samo sa slušalicama</string>
     <string name="notification_headphones_always">Čitajte naglas sa ili bez slušalica</string>
-    <string name="notification_queue_skip">Ne čitajte novo obaveštenje naglas</string>
-    <string name="notification_queue_interrupt">Prekinite čitanje obaveštenja naglas</string>
-    <string name="notification_queue_queue">Pročitajte naglas nakon trenutnog obaveštenja</string>
+    <string name="notification_queue_skip">Ne čitati novo</string>
+    <string name="notification_queue_interrupt">Prekini</string>
+    <string name="notification_queue_queue">Čitaj posle</string>
     <string name="notification_url_omit">Izostavi</string>
-    <string name="notification_url_replace">Recite tekst ispod</string>
-    <string name="notification_url_domain">Čitajte samo sajt</string>
-    <string name="notification_url_full">Pročitajte ceo link</string>
+    <string name="notification_url_replace">Izgovoriti tekst ispod</string>
+    <string name="notification_url_domain">Čitati samo sajt</string>
+    <string name="notification_url_full">Čitati ceo link</string>
     <string name="notification_category_title">Obaveštenja</string>
     <string name="notification_reading_title">Čitanje obaveštenja naglas</string>
     <string name="notification_apps_title">Aplikacije</string>
@@ -23,52 +23,52 @@
     <string name="notification_kinds_title">Vrste obaveštenja</string>
     <string name="notification_when_title">Kada čitati</string>
     <string name="notification_rules_title">Pravila</string>
-    <string name="notification_repeats_title">Ponavlja</string>
-    <string name="notification_stop_title">Prestani da čitaš</string>
+    <string name="notification_repeats_title">Ponavljanja</string>
+    <string name="notification_stop_title">Zaustavljanje čitanja</string>
     <string name="notification_schedules_title">Rezime i vreme</string>
     <string name="notification_history_title">Istorija obaveštenja</string>
-    <string name="notification_test_title">Pošaljite obaveštenje o testiranju</string>
+    <string name="notification_test_title">Pošalji probno obaveštenje</string>
     <string name="notification_automation_title">Automatizacija</string>
-    <string name="notification_automation_allowed_title">Dozvolite aplikacije za automatizaciju</string>
-    <string name="notification_category_said">Šta je rečeno</string>
+    <string name="notification_automation_allowed_title">Dozvoli aplikacije za automatizaciju</string>
+    <string name="notification_category_said">Šta se čita</string>
     <string name="notification_format_title">Format govora</string>
     <string name="notification_format_message">Čuvari mesta: {app}, {title}, {text}, {content} (ceo tekst), {bigtext}, {subtext}, {ticker}, {category} i {time}.</string>
-    <string name="notification_private_format_title">Privatna obaveštenja kažu</string>
-    <string name="notification_private_format_message">Rečeno umesto sadržaja privatnog obaveštenja. Čuvari mesta: {app}, {category} i {time}.</string>
+    <string name="notification_private_format_title">Čitanje privatnih obaveštenja</string>
+    <string name="notification_private_format_message">Izgovara se umesto sadržaja privatnog obaveštenja. Čuvari mesta: {app}, {category} i {time}.</string>
     <string name="notification_category_voice">Glas</string>
     <string name="notification_voice_title">Glas</string>
     <string name="notification_voice_sandfly">SandFly-ov glas</string>
-    <string name="notification_detect_language_title">Otkrijte jezik</string>
-    <string name="notification_detect_language_summary">Izgovorite svako obaveštenje na jeziku na kojem je napisano. Potrebno je automatski menjati jezik u podešavanjima pretvaranja teksta u govor.</string>
+    <string name="notification_detect_language_title">Otkrij jezik</string>
+    <string name="notification_detect_language_summary">Svako obaveštenje se izgovara na jeziku na kojem je napisano. Potrebno je „Automatski menjaj jezik” u odeljku Pretvaranje teksta u govor.</string>
     <string name="notification_sound_before_title">Zvuk pre obaveštenja</string>
     <string name="notification_category_text">Tekst</string>
-    <string name="notification_remove_emoji_title">Izostavite emodži</string>
-    <string name="notification_lowercase_title">Čitajte velika slova kao reči</string>
+    <string name="notification_remove_emoji_title">Izostavi emodži</string>
+    <string name="notification_lowercase_title">Čitaj velika slova kao reči</string>
     <string name="notification_lowercase_summary">Neki govorni mehanizmi izgovaraju reči napisane velikim slovima slovo po slovo.</string>
     <string name="notification_separate_digits_title">Čitanje dugih brojeva cifru po cifru</string>
     <string name="notification_separate_digits_summary">Kao što su kodovi i brojevi telefona</string>
     <string name="notification_min_digits_title">Minimum cifara u dugom broju</string>
     <string name="notification_urls_title">Linkovi</string>
-    <string name="notification_url_text_title">Rečeno umesto veze</string>
+    <string name="notification_url_text_title">Tekst umesto linka</string>
     <string name="notification_skip_empty_title">Preskoči obaveštenja bez teksta</string>
     <string name="notification_category_length">Dužina</string>
     <string name="notification_max_words_title">Maksimalan broj reči</string>
     <string name="notification_max_sentences_title">Maksimalan broj rečenica</string>
     <string name="notification_max_characters_title">Maksimalan broj tekstualnih znakova</string>
-    <string name="notification_max_seconds_title">Prestani da čitaš posle</string>
-    <string name="notification_category_timing">Tajming</string>
-    <string name="notification_delay_title">Sačekajte pre čitanja</string>
-    <string name="notification_queue_title">Kada se pročita drugo obaveštenje</string>
-    <string name="notification_repeat_minutes_title">Čitajte ponovo dok se ekran ne uključi</string>
-    <string name="notification_skip_media_title">Preskočite medijske plejere</string>
-    <string name="notification_skip_ongoing_title">Preskočite tekuća obaveštenja</string>
+    <string name="notification_max_seconds_title">Prestani da čitaš nakon</string>
+    <string name="notification_category_timing">Vreme</string>
+    <string name="notification_delay_title">Čekanje pre čitanja</string>
+    <string name="notification_queue_title">Dok se čita drugo obaveštenje</string>
+    <string name="notification_repeat_minutes_title">Ponovo čitati dok se ekran ne uključi</string>
+    <string name="notification_skip_media_title">Preskoči medijske plejere</string>
+    <string name="notification_skip_ongoing_title">Preskoči trajna obaveštenja</string>
     <string name="notification_skip_ongoing_summary">Kao što su navigacija i tajmeri</string>
     <string name="notification_skip_foreground_title">Preskoči obaveštenja pokrenutih aplikacija</string>
     <string name="notification_skip_foreground_summary">Kao što je VPN ili audio snimač</string>
-    <string name="notification_skip_progress_title">Preskočite obaveštenja o napretku</string>
+    <string name="notification_skip_progress_title">Preskoči obaveštenja o napretku</string>
     <string name="notification_skip_group_summaries_title">Preskoči grupne rezimee</string>
     <string name="notification_skip_group_summaries_summary">Kao što su „3 nove poruke“</string>
-    <string name="notification_skip_low_priority_title">Preskočite obaveštenja niskog prioriteta</string>
+    <string name="notification_skip_low_priority_title">Preskoči obaveštenja niskog prioriteta</string>
     <string name="notification_skip_system_title">Preskoči sistemska obaveštenja</string>
     <string name="notification_screen_on_title">Dok je ekran uključen</string>
     <string name="notification_screen_off_title">Dok je ekran isključen</string>
@@ -76,13 +76,13 @@
     <string name="notification_headphones_title">Slušalice</string>
     <string name="notification_media_title">Dok se mediji reprodukuju</string>
     <string name="notification_dnd_title">Ne uznemiravaj</string>
-    <string name="notification_dnd_none">Ne čitajte nikakva obaveštenja naglas</string>
-    <string name="notification_dnd_allowed">Pročitajte obaveštenja koja dozvoljava režim Ne uznemiravaj</string>
-    <string name="notification_dnd_all">Pročitajte sve</string>
+    <string name="notification_dnd_none">Ne čitaj nijedno</string>
+    <string name="notification_dnd_allowed">Čitaj ono što dozvoljava režim Ne uznemiravaj</string>
+    <string name="notification_dnd_all">Čitaj sve</string>
     <string name="notification_touch_title">Dok se dodiruje ekran</string>
-    <string name="notification_touch_read">Čitajte odmah</string>
-    <string name="notification_touch_after">Pročitajte kada se dodir završi</string>
-    <string name="notification_touch_skip">Ne čitajte naglas</string>
+    <string name="notification_touch_read">Čitaj odmah</string>
+    <string name="notification_touch_after">Čitati kada se dodir završi</string>
+    <string name="notification_touch_skip">Ne čitaj</string>
     <string name="notification_during_calls_title">Tokom poziva</string>
     <string name="notification_honour_silent_title">Ne u nečujnom režimu</string>
     <string name="notification_honour_vibrate_title">Nije u režimu vibracije</string>
@@ -90,33 +90,33 @@
     <string name="notification_skip_in_car_summary">Kao na primer sa Android Auto, koji ih sam čita</string>
     <string name="notification_category_quiet_hours">Tihi sati</string>
     <string name="notification_quiet_hours_title">Tihi sati</string>
-    <string name="notification_quiet_start_title">Počni</string>
+    <string name="notification_quiet_start_title">Početak</string>
     <string name="notification_quiet_end_title">Kraj</string>
-    <string name="notification_repeat_seconds_title">Preskočite isto obaveštenje za</string>
-    <string name="notification_numbers_alike_title">Tretirajte različite brojeve kao identične</string>
+    <string name="notification_repeat_seconds_title">Preskoči isto obaveštenje tokom</string>
+    <string name="notification_numbers_alike_title">Brojevi se smatraju istim</string>
     <string name="notification_numbers_alike_summary">Kao što je procenat preuzimanja</string>
     <string name="notification_cooldown_title">Vreme između obaveštenja aplikacije</string>
-    <string name="notification_skip_prefix_title">Izostavite ponovljeni tekstualni prefiks</string>
+    <string name="notification_skip_prefix_title">Izostavi ponovljeni početak</string>
     <string name="notification_skip_prefix_summary">Kao što je ime grupe u ćaskanju</string>
-    <string name="notification_prefix_memory_title">Koliko dugo treba zapamtiti tekstualni prefiks</string>
-    <string name="notification_access_summary">Potrebno je da prestanete da čitate odbačeno obaveštenje i za rezime</string>
-    <string name="notification_shake_title">Protresite da prestanete</string>
-    <string name="notification_shake_strength_title">Intenzitet potresanja</string>
-    <string name="notification_wave_title">Odmahnite rukom da prestanete da čitate</string>
+    <string name="notification_prefix_memory_title">Pamti početak tokom</string>
+    <string name="notification_access_summary">Potrebno za zaustavljanje čitanja odbačenog obaveštenja i za rezimee</string>
+    <string name="notification_shake_title">Protresi za zaustavljanje</string>
+    <string name="notification_shake_strength_title">Jačina protresanja</string>
+    <string name="notification_wave_title">Odmahni za zaustavljanje</string>
     <string name="notification_wave_summary">Pomeranje ruke preko senzora blizine</string>
     <string name="notification_pocket_title">Džepni režim</string>
-    <string name="notification_pocket_summary">Senzor koji je prekriven kada čitanje počne, kao u džepu, ne zaustavlja ga</string>
-    <string name="notification_volume_keys_title">Pritisnite oba tastera za jačinu zvuka</string>
-    <string name="notification_dismiss_title">Zaustavite čitanje kada se obaveštenje zatvori</string>
+    <string name="notification_pocket_summary">Ako je senzor već prekriven kada čitanje počne, kao u džepu, čitanje se ne zaustavlja</string>
+    <string name="notification_volume_keys_title">Pritisak na oba tastera za jačinu zvuka</string>
+    <string name="notification_dismiss_title">Zaustavi pri zatvaranju</string>
     <string name="notification_watch_dismiss_title">Takođe kada je obaveštenje odbačeno na pametnom satu</string>
-    <string name="notification_app_cancel_title">Prestanite da čitate kada aplikacija ukloni obaveštenje</string>
+    <string name="notification_app_cancel_title">Zaustavi kada ga aplikacija ukloni</string>
     <string name="notification_category_summary">Rezime</string>
-    <string name="notification_summary_now_title">Pročitajte obaveštenja sada</string>
-    <string name="notification_summary_daily_title">Čitajte obaveštenja svaki dan</string>
+    <string name="notification_summary_now_title">Pročitaj obaveštenja sada</string>
+    <string name="notification_summary_daily_title">Čitati obaveštenja svaki dan</string>
     <string name="notification_summary_time_title">Vreme</string>
     <string name="notification_summary_newest_first_title">Najnovije prvo</string>
-    <string name="notification_summary_name_title">Tvoje ime</string>
-    <string name="notification_summary_gap_title">Pauzirajte između obaveštenja</string>
+    <string name="notification_summary_name_title">Vaše ime</string>
+    <string name="notification_summary_gap_title">Pauza između obaveštenja</string>
     <string name="notification_summary_needs_sandfly">Uključite SandFly da čitate obaveštenja</string>
     <string name="notification_summary_no_access">Pristup obaveštenjima je isključen</string>
     <string name="notification_summary_morning">Dobro jutro.</string>
@@ -124,83 +124,83 @@
     <string name="notification_summary_evening">Dobro veče.</string>
     <string name="notification_summary_greeting_name"><xliff:g id="greeting" example="Good morning.">%1$s</xliff:g> <xliff:g id="name" example="Sam">%2$s</xliff:g>.</string>
     <string name="notification_summary_item_format">{app}, {title}, {text}</string>
-    <string name="notification_category_clock">Vremenske najave</string>
-    <string name="notification_clock_interval_title">Reci vreme svaki</string>
+    <string name="notification_category_clock">Najava vremena</string>
+    <string name="notification_clock_interval_title">Izgovaraj vreme na svakih</string>
     <string name="notification_clock_format_title">Format vremena</string>
     <string name="notification_clock_format_message">Čuvari mesta: {time}, {date} i {battery} (procenat baterije).</string>
-    <string name="notification_clock_format_default">{time} je</string>
+    <string name="notification_clock_format_default">Sada je {time}</string>
     <string name="notification_clock_exact_title">Tačna vremena</string>
-    <string name="notification_clock_exact_summary">Potrebni su alarmi i podsetnici. U suprotnom se može reći da vreme kasni i do jednog minuta.</string>
+    <string name="notification_clock_exact_summary">Potrebna je dozvola „Alarmi i podsetnici”. U suprotnom vreme može da se izgovori sa zakašnjenjem do jednog minuta.</string>
     <string name="notification_other_apps_title">Druge aplikacije</string>
     <string name="notification_apps_category">Aplikacije</string>
     <string name="notification_apps_loading">Učitavanje aplikacija</string>
     <string name="notification_app_mode_title">Obaveštenja</string>
     <string name="notification_app_mode_default">Kao i druge aplikacije</string>
-    <string name="notification_app_mode_read">Čitaj naglas</string>
+    <string name="notification_app_mode_read">Čitaj</string>
     <string name="notification_app_mode_private">Samo naziv aplikacije</string>
-    <string name="notification_app_mode_priority">Prvo pročitajte</string>
-    <string name="notification_app_mode_ignore">Ne čitajte naglas</string>
+    <string name="notification_app_mode_priority">Čitaj prvo</string>
+    <string name="notification_app_mode_ignore">Ne čitaj</string>
     <string name="notification_app_name_title">Izgovoreno ime</string>
     <string name="notification_app_said_as">rečeno kao <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Resetuj</string>
-    <string name="notification_required_title">Čitajte samo obaveštenja sa</string>
-    <string name="notification_blocked_title">Ne čitajte obaveštenja sa</string>
-    <string name="notification_private_title">Pročitajte samo naziv aplikacije za</string>
-    <string name="notification_replacements_title">Reci drugačije</string>
-    <string name="notification_add_word">Dodajte reč</string>
-    <string name="notification_add_replacement">Dodajte zamenu</string>
+    <string name="notification_required_title">Čitati samo obaveštenja koja sadrže</string>
+    <string name="notification_blocked_title">Ne čitati obaveštenja koja sadrže</string>
+    <string name="notification_private_title">Čitati samo naziv aplikacije za obaveštenja koja sadrže</string>
+    <string name="notification_replacements_title">Drugačiji izgovor</string>
+    <string name="notification_add_word">Dodaj reč</string>
+    <string name="notification_add_replacement">Dodaj zamenu</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> kao <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Tekst</string>
-    <string name="notification_replace_with">Reci kao</string>
+    <string name="notification_replace_with">Izgovori kao</string>
     <string name="notification_whole_words">Samo cele reči</string>
     <string name="notification_regex">Regularni izraz</string>
     <string name="notification_enter_text">Unesite tekst</string>
     <string name="notification_invalid_regex">Nije važeći regularni izraz</string>
     <string name="notification_edit">Uredi</string>
     <string name="notification_remove">Ukloni</string>
-    <string name="notification_history_keep">Sačuvajte istoriju obaveštenja</string>
-    <string name="notification_history_clear">Očistite istoriju</string>
+    <string name="notification_history_keep">Čuvaj istoriju obaveštenja</string>
+    <string name="notification_history_clear">Obriši istoriju</string>
     <string name="notification_history_category">Obaveštenja</string>
     <string name="notification_history_empty">Nema obaveštenja</string>
     <string name="notification_history_ignore_app">Ne čitaj <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Pročitaj samo ime <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_priority_app">Prvo pročitajte <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Čitaj samo naziv aplikacije <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_priority_app">Čitaj <xliff:g id="app" example="Chat">%1$s</xliff:g> prvo</string>
     <string name="notification_history_block_similar">Ne čitajte ovakva obaveštenja</string>
     <string name="notification_history_copy">Kopiraj</string>
     <string name="notification_saved">Sačuvano</string>
     <string name="notification_copied">Kopirano</string>
-    <string name="notification_outcome_read">Uspešno pročitajte naglas</string>
+    <string name="notification_outcome_read">Pročitano</string>
     <string name="notification_outcome_stopped">Zaustavljeno tokom čitanja</string>
-    <string name="notification_outcome_speech_off">Nije pročitano: govor obaveštenja je isključen</string>
+    <string name="notification_outcome_speech_off">Nije pročitano: čitanje obaveštenja je isključeno</string>
     <string name="notification_outcome_dnd">Nije pročitano: Ne uznemiravaj</string>
-    <string name="notification_outcome_touching">Nije pročitano: ekran je dodirnut</string>
-    <string name="notification_outcome_app">Nije pročitano: app</string>
-    <string name="notification_outcome_ongoing">Nije pročitano: u toku</string>
-    <string name="notification_outcome_foreground">Nije pročitano: pokrenuta aplikacija</string>
+    <string name="notification_outcome_touching">Nije pročitano: dodirnut je ekran</string>
+    <string name="notification_outcome_app">Nije pročitano: aplikacija</string>
+    <string name="notification_outcome_ongoing">Nije pročitano: stalno obaveštenje</string>
+    <string name="notification_outcome_foreground">Nije pročitano: aplikacija je otvorena</string>
     <string name="notification_outcome_low_priority">Nije pročitano: nizak prioritet</string>
     <string name="notification_outcome_system">Nije pročitano: sistem</string>
     <string name="notification_outcome_media">Nije pročitano: medija plejer</string>
-    <string name="notification_outcome_group_summary">Nije pročitano: grupni rezime</string>
+    <string name="notification_outcome_group_summary">Nije pročitano: rezime grupe</string>
     <string name="notification_outcome_progress">Nije pročitano: napredak</string>
-    <string name="notification_outcome_required">Nije pročitano: nedostaju potrebne reči</string>
+    <string name="notification_outcome_required">Nije pročitano: nedostaju obavezne reči</string>
     <string name="notification_outcome_blocked">Nije pročitano: blokirana reč</string>
     <string name="notification_outcome_empty">Nije pročitano: nema teksta</string>
-    <string name="notification_outcome_repeat">Nije pročitano: ponovite</string>
-    <string name="notification_outcome_cooldown">Nije pročitano naglas: još jedno obaveštenje iz ove aplikacije je nedavno pročitano</string>
+    <string name="notification_outcome_repeat">Nije pročitano: ponavljanje</string>
+    <string name="notification_outcome_cooldown">Nije pročitano: aplikacija je nedavno čitana</string>
     <string name="notification_outcome_quiet_hours">Nije pročitano: tihi sati</string>
     <string name="notification_outcome_screen_on">Nije pročitano: ekran uključen</string>
     <string name="notification_outcome_screen_off">Nije pročitano: ekran isključen</string>
     <string name="notification_outcome_locked">Nije pročitano: zaključano</string>
-    <string name="notification_outcome_headphones">Nije pročitano: priključene su slušalice</string>
+    <string name="notification_outcome_headphones">Nije pročitano: slušalice su povezane</string>
     <string name="notification_outcome_no_headphones">Nije pročitano: nema slušalica</string>
-    <string name="notification_outcome_silent">Nije pročitano: tihi režim</string>
+    <string name="notification_outcome_silent">Nije pročitano: nečujni režim</string>
     <string name="notification_outcome_vibrate">Nije pročitano: režim vibracije</string>
-    <string name="notification_outcome_media_playing">Nije pročitano: reprodukcija medija</string>
-    <string name="notification_outcome_car">Nije pročitano: režim automobila</string>
+    <string name="notification_outcome_media_playing">Nije pročitano: reprodukuje se medij</string>
+    <string name="notification_outcome_car">Nije pročitano: režim za automobil</string>
     <string name="notification_outcome_rule">Nije pročitano: pravilo</string>
-    <string name="notification_outcome_busy">Nije pročitano: pročitano je još jedno obaveštenje</string>
-    <string name="notification_outcome_call">Najavljuje se kao dolazni telefonski poziv</string>
-    <string name="notification_rule_add">Dodajte pravilo</string>
+    <string name="notification_outcome_busy">Nije pročitano: pročitano je drugo obaveštenje</string>
+    <string name="notification_outcome_call">Najavljeno kao poziv</string>
+    <string name="notification_rule_add">Dodaj pravilo</string>
     <string name="notification_rule_from_template">Dodajte pravilo iz šablona</string>
     <string name="notification_rules_category">Pravila</string>
     <string name="notification_rules_empty">Nema pravila</string>
@@ -209,13 +209,13 @@
     <string name="notification_rule_enabled">Uključeno</string>
     <string name="notification_rule_match">Uslovi</string>
     <string name="notification_rule_match_all">Svi uslovi moraju biti ispunjeni</string>
-    <string name="notification_rule_match_any">Najmanje jedan uslov mora biti zadovoljen</string>
+    <string name="notification_rule_match_any">Najmanje jedan uslov mora biti ispunjen</string>
     <string name="notification_rule_conditions">Kada</string>
     <string name="notification_rule_actions">Onda</string>
-    <string name="notification_rule_add_condition">Dodajte uslov</string>
-    <string name="notification_rule_add_action">Dodajte akciju</string>
+    <string name="notification_rule_add_condition">Dodaj uslov</string>
+    <string name="notification_rule_add_action">Dodaj radnju</string>
     <string name="notification_rule_invert">Obrni uslov</string>
-    <string name="notification_rule_delete">Izbrišite pravilo</string>
+    <string name="notification_rule_delete">Izbriši pravilo</string>
     <string name="notification_rule_delete_confirm">Izbrisati <xliff:g id="rule" example="Night">%1$s</xliff:g>?</string>
     <string name="notification_rule_always">Uvek</string>
     <string name="notification_rule_no_actions">ništa se ne dešava</string>
@@ -226,7 +226,7 @@
     <string name="notification_template_night">Tiho noću</string>
     <string name="notification_template_screen_off">Samo sa isključenim ekranom</string>
     <string name="notification_template_locked_private">Samo naziv aplikacije kada je telefon zaključan</string>
-    <string name="notification_template_short_on_battery">Pročitajte kratko kada se ne puni</string>
+    <string name="notification_template_short_on_battery">Kratko kada se ne puni</string>
     <string name="notification_type_bluetooth">Bluetooth uređaj</string>
     <string name="notification_type_wired">Žičane slušalice</string>
     <string name="notification_type_wifi">Wi-Fi mreža</string>
@@ -239,7 +239,7 @@
     <string name="notification_type_battery">Nivo baterije ispod</string>
     <string name="notification_type_charging">Punjenje</string>
     <string name="notification_type_landscape">Vodoravno</string>
-    <string name="notification_type_silent">Tihi ili vibrirajući režim</string>
+    <string name="notification_type_silent">Nečujni režim ili režim vibracije</string>
     <string name="notification_type_media">Reprodukcija medija</string>
     <string name="notification_bluetooth_any">Bilo koji uređaj</string>
     <string name="notification_wifi_hint">Ime mreže</string>
@@ -248,7 +248,7 @@
     <string name="notification_time_end">Do</string>
     <string name="notification_time_days">Dani</string>
     <string name="notification_time_range"><xliff:g id="start" example="22:00">%1$s</xliff:g> do <xliff:g id="end" example="07:00">%2$s</xliff:g></string>
-    <string name="notification_permission_needed">SandFly je potrebna ta dozvola za ovaj uslov</string>
+    <string name="notification_permission_needed">SandFly-u je potrebna ta dozvola za ovaj uslov</string>
     <string name="notification_cond_bluetooth"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> je povezan</string>
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> nije povezan</string>
     <string name="notification_cond_bluetooth_any">Bluetooth audio uređaj je povezan</string>
@@ -264,39 +264,39 @@
     <string name="notification_cond_screen_on">Ekran je uključen</string>
     <string name="notification_cond_screen_on_not">Ekran je isključen</string>
     <string name="notification_cond_landscape">Ekran je u vodoravnom položaju</string>
-    <string name="notification_cond_landscape_not">Ekran je u portretu</string>
+    <string name="notification_cond_landscape_not">Ekran je u uspravnom položaju</string>
     <string name="notification_cond_time">Vreme je <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_time_not">Vreme nije <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Povezano sa <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Nije povezan sa <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Povezano sa Wi-Fi</string>
     <string name="notification_cond_wifi_any_not">Nije povezan sa Wi-Fi</string>
-    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je ispred</string>
-    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nije ispred</string>
+    <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> je u prvom planu</string>
+    <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> nije u prvom planu</string>
     <string name="notification_cond_from">Obaveštenje je od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">Obaveštenje nije od <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">Obaveštenje sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">Obaveštenje ne sadrži <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
-    <string name="notification_cond_silent">Zvono je tiho ili vibrira</string>
-    <string name="notification_cond_silent_not">Zvono zvoni</string>
-    <string name="notification_cond_media">Mediji sviraju</string>
-    <string name="notification_cond_media_not">Nema medija</string>
-    <string name="notification_action_skip">ne čitaj</string>
-    <string name="notification_action_private">pročitajte samo naziv aplikacije</string>
-    <string name="notification_action_not_private">pročitajte u celosti, čak i privatno</string>
-    <string name="notification_action_format">koristite govorni format</string>
-    <string name="notification_action_max_words">pročitajte do određenog broja reči</string>
+    <string name="notification_cond_silent">Zvono je utišano ili na vibraciji</string>
+    <string name="notification_cond_silent_not">Zvono je uključeno</string>
+    <string name="notification_cond_media">Reprodukuje se medijski sadržaj</string>
+    <string name="notification_cond_media_not">Ne reprodukuje se nijedan medij</string>
+    <string name="notification_action_skip">ne čitati</string>
+    <string name="notification_action_private">čitati samo naziv aplikacije</string>
+    <string name="notification_action_not_private">čitati u celosti, čak i ako je privatno</string>
+    <string name="notification_action_format">koristiti format govora</string>
+    <string name="notification_action_max_words">čitati do određenog broja reči</string>
     <string name="notification_action_no_limit">čitati bez ograničenja dužine</string>
-    <string name="notification_action_keep_emoji">zadržati emoji</string>
+    <string name="notification_action_keep_emoji">zadržati emodžije</string>
     <string name="notification_action_keep_numbers">držati brojeve zajedno</string>
-    <string name="notification_action_priority">prvo pročitaj</string>
-    <string name="notification_action_always_read">Čitajte obaveštenja naglas čak i tokom tihih sati ili u drugim ograničenim vremenima</string>
-    <string name="notification_action_voice">čitati sa glasovnim profilom</string>
-    <string name="notification_action_voice_value">čitaj sa <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
-    <string name="notification_action_voice_sandfly">čitajte glasom SandFly</string>
-    <string name="notification_voice_removed">Glasovni profil je uklonjen</string>
-    <string name="notification_action_format_value">koristite format govora <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
-    <string name="notification_action_max_words_value">pročitaj do <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
+    <string name="notification_action_priority">čitati prvo</string>
+    <string name="notification_action_always_read">čitati čak i tokom tihih sati i u drugim periodima kada se obaveštenja ne čitaju</string>
+    <string name="notification_action_voice">čitati glasovnim profilom</string>
+    <string name="notification_action_voice_value">čitati profilom <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
+    <string name="notification_action_voice_sandfly">čitati glasom SandFly-a</string>
+    <string name="notification_voice_removed">Uklonjeni glasovni profil</string>
+    <string name="notification_action_format_value">koristiti format govora <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
+    <string name="notification_action_max_words_value">čitati do <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Isključeno</string>
     <string name="notification_on">Uključeno</string>
     <string name="notification_never_again">Dok se SandFly ponovo ne pokrene</string>
@@ -305,19 +305,19 @@
     <string name="notification_speech_now_on">Omogućeno je čitanje obaveštenja naglas</string>
     <string name="notification_speech_now_off">Čitanje obaveštenja naglas je onemogućeno</string>
     <string name="notification_no_last_notification">Nije pročitano nijedno obaveštenje</string>
-    <string name="shortcut_read_notifications">Pročitajte obaveštenja</string>
-    <string name="shortcut_toggle_notification_speech">Govor obaveštenja uključen ili isključen</string>
-    <string name="shortcut_read_last_notification">Pročitajte poslednje obaveštenje ponovo</string>
-    <string name="shortcut_stop_notification">Prestanite da čitate obaveštenje</string>
-    <string name="notification_test_posting">Obaveštenje o testu sledi za 5 sekundi</string>
-    <string name="notification_test_not_allowed">Dozvolite SandFly da prvo prikaže obaveštenja</string>
+    <string name="shortcut_read_notifications">Pročitaj obaveštenja</string>
+    <string name="shortcut_toggle_notification_speech">Uključivanje ili isključivanje čitanja obaveštenja</string>
+    <string name="shortcut_read_last_notification">Ponovo pročitaj poslednje obaveštenje</string>
+    <string name="shortcut_stop_notification">Zaustavi čitanje obaveštenja</string>
+    <string name="notification_test_posting">Probno obaveštenje stiže za 5 sekundi</string>
+    <string name="notification_test_not_allowed">Prvo dozvolite SandFly-u da prikazuje obaveštenja</string>
     <string name="notification_test_content_title">SandFly test</string>
-    <string name="notification_test_content_text">Ovo je probno obaveštenje, čitajte ga sa podešavanjima obaveštenja. 123456</string>
-    <string name="notification_automation_on">Omogućite čitanje obaveštenja naglas</string>
-    <string name="notification_automation_off">Onemogućite čitanje obaveštenja naglas</string>
-    <string name="notification_automation_toggle">Omogućite ili onemogućite čitanje obaveštenja naglas</string>
-    <string name="notification_automation_stop">Zaustavite čitanje obaveštenja</string>
-    <string name="notification_automation_read_all">Pročitajte obaveštenja</string>
+    <string name="notification_test_content_text">Ovo je probno obaveštenje, pročitano prema podešavanjima obaveštenja. 123456</string>
+    <string name="notification_automation_on">Uključi čitanje obaveštenja</string>
+    <string name="notification_automation_off">Isključi čitanje obaveštenja</string>
+    <string name="notification_automation_toggle">Uključi ili isključi čitanje obaveštenja</string>
+    <string name="notification_automation_stop">Zaustavi čitanje obaveštenja</string>
+    <string name="notification_automation_read_all">Pročitaj obaveštenja</string>
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> sekunda</item>
         <item quantity="few"><xliff:g id="count" example="5">%d</xliff:g> sekunde</item>

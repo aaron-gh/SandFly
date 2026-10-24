@@ -30,7 +30,7 @@
   <string name="value_device_unlocked">Apparaat ontgrendeld.</string>
   <string name="title_pref_speech_volume">Spraakvolume</string>
   <string name="title_pref_verbose_scroll_announcement">Aantal lijstitems altijd uitspreken</string>
-  <string name="summary_pref_verbose_scroll_announcement">Zeg welke items na elke scroll worden weergegeven</string>
+  <string name="summary_pref_verbose_scroll_announcement">Zegt welke items worden getoond na elke keer scrollen</string>
   <string name="title_pref_cover_proximity_sensor">Afstandssensor afdekken om spraak te stoppen</string>
   <string name="title_pref_phonetic_letters">Letters uitspreken met voorbeelden</string>
   <string name="summary_pref_phonetic_letters">Als je toetsen op het toetsenbord selecteert of navigeert op teken, hoor je een voorbeeld samen met elke letter, zoals \'h, hotel\'</string>
@@ -39,7 +39,7 @@
   <string name="punctuation_most">De meeste</string>
   <string name="punctuation_some">Sommige</string>
   <string name="title_pref_count_repeated_symbols">Aantal herhaalde symbolen</string>
-  <string name="summary_pref_count_repeated_symbols">Zeg hoe vaak een symbool wordt herhaald als het vier of meer keer wordt herhaald</string>
+  <string name="summary_pref_count_repeated_symbols">Zeggen hoe vaak een symbool wordt herhaald als het vier of meer keer wordt herhaald</string>
   <string name="learn_more">Meer informatie</string>
   <string name="title_pref_capital_letters">Hoofdletters</string>
   <string name="capital_letters_nothing">Niets doen</string>
@@ -47,11 +47,11 @@
   <string name="capital_letters_change_pitch">Toonhoogte wijzigen</string>
   <string name="capital_letters_sound_feedback">Geluid afspelen</string>
   <string name="title_pref_a11y_hints">Gebruikstips uitspreken</string>
-  <string name="summary_pref_a11y_hints">Nadat een item is beschreven, zegt u hoe u het moet gebruiken</string>
+  <string name="summary_pref_a11y_hints">Na de beschrijving van een item zeggen hoe je het gebruikt</string>
   <string name="pref_speak_container_element_positions_title">Containerinformatie uitspreken</string>
   <string name="pref_speak_time_title">Tijd uitspreken</string>
   <string name="pref_speak_time_summary">Als je het scherm aanzet</string>
-  <string name="summary_speak_container_element_positions">Zeg wanneer u lijsten, rasters en andere containers betreedt of verlaat</string>
+  <string name="summary_speak_container_element_positions">Meldt wanneer je lijsten, rasters en andere containers binnengaat of verlaat</string>
   <string name="reset_letency_reduction_settings_dialog_title">Instellingen voor vertraging resetten?</string>
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Hiermee worden alle instellingen voor vertraging teruggezet op de standaardwaarden</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Resetten</string>
@@ -62,9 +62,9 @@
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Resetten</string>
   <string name="gestures_announce_reset_gesture_settings">De instellingen voor gebaren zijn gereset.</string>
   <string name="pref_speak_roles_title">Elementtype uitspreken</string>
-  <string name="pref_speak_roles_summary">Vind ik leuk-knop of selectievakje</string>
+  <string name="pref_speak_roles_summary">Zoals knop of selectievakje</string>
   <string name="title_pref_speak_element_ids">Element-ID\'s voorlezen</string>
-  <string name="summary_pref_speak_element_ids">Zeg de ID van knoppen zonder label</string>
+  <string name="summary_pref_speak_element_ids">Zegt de ID van knoppen zonder label</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Alle voortgangsupdates voorlezen</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Biedt onder andere updates tijdens het downloaden en het volgen van routebeschrijvingen. Als dit uitstaat, krijg je nog steeds minder frequente updates.</string>
   <string name="title_pref_explore_by_touch">Verkennen via aanraking</string>
@@ -92,7 +92,7 @@
   <string name="title_pref_category_help_no_tutorial">Hulp</string>
   <string name="title_pref_advanced_settings">Geavanceerde instellingen</string>
   <string name="title_pref_show_exit_watermark">Instructies tonen om SandFly uit te zetten</string>
-  <string name="summary_pref_show_exit_watermark">Wanneer SandFly wordt ingeschakeld, laat u zien hoe u dit kunt uitschakelen</string>
+  <string name="summary_pref_show_exit_watermark">Als SandFly wordt ingeschakeld, wordt getoond hoe je het uitschakelt</string>
   <string name="talkback_exit_watermark_text">SandFly staat aan. Houd 2 vingers 5 seconden op het scherm om deze functie uit te zetten. Als je dit bericht niet meer wilt weergeven, tik je met 3 vingers om het SandFly-menu te openen.</string>
   <string name="talkback_exit_watermark_hint_text">Er wordt een banner getoond die aangeeft dat SandFly aanstaat. Als je SandFly wilt uitzetten, houd je 2 vingers 5 seconden op het scherm. Ga naar de SandFly-instellingen om deze banner te verwijderen.</string>
   <string name="reset_gesture_settings_title">Instellingen voor gebaren resetten</string>
@@ -289,7 +289,7 @@
   <string name="override_keycombo_message_two_params">Deze toetsen worden gebruikt voor de actie \'%1$s\'. Wil je de sneltoets wissen en deze toewijzen aan \'%2$s\'?</string>
   <string name="title_pref_intonation">Verschillende toonhoogten gebruiken</string>
   <string name="title_pref_keyboard_echo">Toetsenbordecho</string>
-  <string name="pref_node_desc_order_title">Volgorde van artikelgegevens</string>
+  <string name="pref_node_desc_order_title">Volgorde van itemgegevens</string>
   <string name="pref_time_feedback_format_title">Tijdnotatie</string>
   <string name="title_pref_latency_reduction">Vertraging verkorten</string>
   <string name="talkback_latency_reduction_summary">Zorg ervoor dat SandFly sneller reageert nadat u het scherm hebt aangeraakt</string>
@@ -305,7 +305,7 @@
   <string name="title_pref_category_developer_settings">Ontwikkelaarsinstellingen</string>
   <string name="title_activity_dump_a11y_event">Bij te houden gebeurtenissen</string>
   <string name="title_pref_dump_a11y_event">Gebeurtenisregistratie voor toegankelijkheid filteren</string>
-  <string name="pref_reduce_window_delay_title">Schakel animaties uit</string>
+  <string name="pref_reduce_window_delay_title">Animaties uitschakelen</string>
   <string name="title_pref_log_level">Niveau van logoutput</string>
   <string name="title_pref_diagnosis_mode">Diagnosemodus</string>
   <string name="title_pref_tts_overlay">Spraakuitvoer tonen</string>
@@ -324,7 +324,7 @@
   <string name="toast_pref_talkback_gesture_detection">Zet SandFly uit en weer aan om de instelling te activeren.</string>
   <string name="title_pref_auto_image_captioning">Automatische beschrijvingen</string>
   <string name="title_pref_gemini_settings">Gemini-instellingen</string>
-  <string name="title_pref_gemini_enabled">Gemini spraakopdrachten</string>
+  <string name="title_pref_gemini_enabled">Gemini-spraakopdrachten</string>
   <string name="title_pref_category_automatic_description_summary">Krijg gedetailleerde AI-afbeeldingsbeschrijvingen als je Afbeelding beschrijven selecteert in het SandFly-menu.\n\nJe kunt ook automatische beschrijvingen krijgen als je de focus op een afbeelding of icoon plaatst. Automatische beschrijvingen werken zonder internetverbinding.</string>
   <string name="title_pref_icon_detection">Automatische icoonbeschrijvingen</string>
   <string name="title_pref_image_description">Automatische afbeeldingsbeschrijvingen</string>
@@ -824,7 +824,7 @@
   <string name="screen_search_keyword_hint">zoekwoord is %1$s</string>
   <string name="screen_search_no_keyword_hint">Nog geen zoekwoord. Als je een nieuwe zoekopdracht wilt starten, tik je met 3 vingers en houd je vast of open je schermzoeken via het SandFly-menu.</string>
   <string name="screen_search_no_keyword_hint_pre_r">Nog geen zoekwoord. Als je een nieuwe zoekopdracht wilt starten swipe je naar links en dan omlaag of open je schermzoeken via het SandFly-menu.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Het brailletoetsenbord is niet ingeschakeld. Ga naar SandFly instellingen, stel het brailletoetsenbord in en probeer het opnieuw.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Het brailletoetsenbord is niet ingeschakeld. Ga naar Instellingen voor SandFly, stel het brailletoetsenbord in en probeer het opnieuw.</string>
   <string name="suggestions_window_available">Suggesties beschikbaar</string>
   <string name="suggestions_window_available_with_gesture">Suggesties beschikbaar. Zo open je ze: %1$s</string>
   <string name="heads_up_window_available">Melding beschikbaar</string>
@@ -839,7 +839,7 @@
   <string name="training_navigate_up">Omhoog navigeren</string>
   <string name="training_tip">Tip</string>
   <string name="tv_training_overview_step_title">Hoe SandFly werkt</string>
-  <string name="tv_training_overview_step_summary">SandFly is een schermlezer gebaseerd op Google\'s TalkBack. Het leest de tekst op het scherm voor en geeft u gesproken feedback, zodat u uw apparaat kunt gebruiken zonder naar het scherm te kijken.\n\nAls SandFly is ingeschakeld, wordt een geselecteerd item op het scherm hardop uitgesproken, soms met extra informatie of context toegevoegd.\n\nDruk op Selecteren om door te gaan. De Select-knop bevindt zich in het midden van het richtingspad, de grote, ronde knop bovenaan uw afstandsbediening.</string>
+  <string name="tv_training_overview_step_summary">SandFly is een schermlezer gebaseerd op TalkBack van Google. Het leest de tekst op het scherm voor en geeft gesproken feedback, zodat je je apparaat kunt gebruiken zonder naar het scherm te kijken.\n\nAls SandFly aan staat, wordt een geselecteerd item op het scherm uitgesproken, soms met extra informatie of context.\n\nDruk op Selecteren om door te gaan. De knop Selecteren zit in het midden van de richtingstoetsen, de grote ronde knop bovenaan je afstandsbediening.</string>
   <string name="tv_training_remote_step_title">Je afstandsbediening gebruiken</string>
   <string name="tv_training_remote_step_summary">Beweeg de cursor over het scherm met de ronde richtingsknop bovenaan de afstandsbediening. Als je iets wilt selecteren, druk je in het midden van de richtingsknop bovenaan de afstandsbediening.\n\nIn de 2e rij aan de linkerkant vind je de terugknop. Aan de rechterkant zit de knop voor de Spraakassistent.\n\nIn de 3e rij aan de linkerkant heb je de homeknop. Aan de rechterkant zit de knop Dempen.\n\nIn de 4e rij heb je aan de linkerkant de YouTube-sneltoets. Aan de rechterkant zit de Netflix-sneltoets.\n\nIn de onderste rij staan 2 kleine knoppen. De knop aan de linkerkant is de aan/uit-knop. Met de knop aan de rechterkant open je het invoermenu van de tv.\n\nDe volumeknoppen zitten aan de rechterkant van de afstandsbediening.\n\nDruk op Selecteren om door te gaan.</string>
   <string name="tv_training_shortcut_step_title">Snelkoppeling voor SandFly</string>
@@ -982,8 +982,8 @@
   <string name="typing_text_with_braille_keyboard_text">Je kunt ook typen met het brailletoetsenbord. Je vindt dit toetsenbord in de SandFly-instellingen.</string>
   <string name="other_ways_to_type_title">Andere manieren om te typen</string>
   <string name="other_ways_to_type_text">Er zijn andere manieren om te typen in SandFly. Je kunt bijvoorbeeld dubbeltikken om een letter in te voeren.</string>
-  <string name="basic_other_ways_to_type_text">Er zijn andere manieren om SandFly in te typen. U kunt bijvoorbeeld dubbeltikken om een ​​letter in te voeren. Je kunt dit later wijzigen in SandFly instellingen &gt; Schermtoetsenbord &gt; Typemethode.</string>
-  <string name="basic_other_ways_to_type_text_tts">Er zijn andere manieren om SandFly in te typen. U kunt bijvoorbeeld dubbeltikken om een ​​letter in te voeren. Je kunt dit later wijzigen via SandFly Instellingen, Schermtoetsenbord en Typemethode.</string>
+  <string name="basic_other_ways_to_type_text">Er zijn andere manieren om te typen in SandFly. Je kunt bijvoorbeeld dubbeltikken om een letter in te voeren. Je kunt dit later wijzigen via Instellingen voor SandFly &gt; Schermtoetsenbord &gt; Typemethode.</string>
+  <string name="basic_other_ways_to_type_text_tts">Er zijn andere manieren om te typen in SandFly. Je kunt bijvoorbeeld dubbeltikken om een letter in te voeren. Je kunt dit later wijzigen via Instellingen voor SandFly, dan Schermtoetsenbord en dan Typemethode.</string>
   <string name="change_typing_preference_text">Voorkeur voor typen wijzigen</string>
   <string name="moving_cursor_title">De cursor verplaatsen</string>
   <string name="moving_cursor_text">Als je een tekstvak hebt geactiveerd, kun je de cursor tussen letters verplaatsen door omhoog of omlaag te swipen.\n\nProbeer dit in het onderstaande tekstvak.</string>
@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Als je je meldingsgeschiedenis wilt checken, swipe je met 2 vingers omlaag vanaf de bovenkant van het scherm</string>
   <string name="image_description_playground_title">Probeer beschrijvingen van afbeeldingen te krijgen</string>
   <string name="image_description_playground_content_one">Als je de focus op een afbeelding plaatst, open je het SandFly-menu en selecteer je Afbeelding beschrijven.\n\nHieronder staat één foto. Probeer een beschrijving te krijgen.</string>
-  <string name="image_description_playground_content_two">U kunt de instellingen voor de afbeeldingsbeschrijving op elk gewenst moment wijzigen in SandFly instellingen &gt; Automatische beschrijvingen.</string>
-  <string name="image_description_playground_content_two_tts">U kunt de instellingen voor de afbeeldingsbeschrijving op elk gewenst moment wijzigen via Instellingen SandFly en vervolgens Automatische beschrijvingen.</string>
+  <string name="image_description_playground_content_two">Je kunt de instellingen voor afbeeldingsbeschrijvingen op elk moment wijzigen via Instellingen voor SandFly &gt; Automatische beschrijvingen.</string>
+  <string name="image_description_playground_content_two_tts">Je kunt de instellingen voor afbeeldingsbeschrijvingen op elk moment wijzigen via Instellingen voor SandFly en dan Automatische beschrijvingen.</string>
   <string name="image_description_sample_image_content_description">Voorbeeldafbeelding. Tik met 3 vingers om het SandFly-menu te openen en selecteer Afbeelding beschrijven om een beschrijving te horen.</string>
   <string name="practice_gestures_title">Gebaren oefenen</string>
   <string name="practice_keyboard_gestures_title">Sneltoetsen oefenen</string>
@@ -1254,7 +1254,7 @@
   <string name="shortcut_column_left">Vorige kolom</string>
   <string name="shortcut_column_right">Volgende kolom</string>
   <string name="table_navigation_not_supported">Tabelnavigatie niet ondersteund</string>
-  <string name="pref_auto_enter_table_navigation_title">Schakel over naar tabelnavigatie in tabellen</string>
+  <string name="pref_auto_enter_table_navigation_title">Overschakelen naar tabelnavigatie in tabellen</string>
   <string name="title_text_formatting_menu">Tekstopmaak beschrijven</string>
   <string name="summary_text_formatting_menu">Voor wijzigingen zoals vet, cursief en onderstrepen</string>
   <string name="title_text_formatting_inline">Tekstopmaak voorlezen</string>
@@ -1297,14 +1297,14 @@
   <string name="close_string">Sluiten</string>
   <string name="talkback_label">SandFly</string>
     <string name="title_pref_tts_engine">Tekst-naar-spraak-engine</string>
-    <string name="title_pref_system_tts_settings">Systeem tekst-naar-spraak-instellingen</string>
+    <string name="title_pref_system_tts_settings">Tekst-naar-spraak-instellingen van systeem</string>
     <string name="title_selector_vertical_navigation">Verticale navigatie</string>
     <string name="summary_selector_vertical_navigation">Ga naar het item onder of boven, voorbij de andere items in de rij</string>
     <string name="title_selector_switch_tts_engine">Spraakmotor</string>
-    <string name="summary_selector_switch_tts_engine">Schakel tussen geïnstalleerde spraakengines</string>
-    <string name="title_selector_voice_profile">Spraakprofiel</string>
+    <string name="summary_selector_switch_tts_engine">Schakelen tussen geïnstalleerde spraakengines</string>
+    <string name="title_selector_voice_profile">Stemprofiel</string>
     <string name="title_pref_voice_profiles">Stemprofielen</string>
-    <string name="voice_profile_default">SandFly standaard</string>
+    <string name="voice_profile_default">SandFly-standaard</string>
     <string name="voice_profile_in_use">In gebruik: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">Gesproken taal is niet beschikbaar tijdens gebruik van een stemprofiel</string>
     <string name="speech_engine_unavailable_with_profile">Spraakengine niet beschikbaar tijdens gebruik van een stemprofiel</string>
@@ -1313,10 +1313,10 @@
     <string name="shortcut_voice_profiles">Kies stemprofiel</string>
     <string name="shortcut_previous_voice_profile">Vorig stemprofiel</string>
     <string name="shortcut_next_voice_profile">Volgende stemprofiel</string>
-    <string name="title_pref_voice_profile_in_use">Spraakprofiel in gebruik</string>
-    <string name="title_pref_add_voice_profile">Voeg stemprofiel toe</string>
-    <string name="voice_profile_new_name">Spraakprofiel <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Een stemprofiel heet al <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="title_pref_voice_profile_in_use">Stemprofiel in gebruik</string>
+    <string name="title_pref_add_voice_profile">Stemprofiel toevoegen</string>
+    <string name="voice_profile_new_name">Stemprofiel <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="voice_profile_name_taken">Er is al een stemprofiel met de naam <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Naam</string>
     <string name="title_pref_voice_profile_language">Taal</string>
     <string name="title_pref_voice_profile_voice">Stem</string>
@@ -1324,23 +1324,23 @@
     <string name="voice_profile_loading">Laden</string>
     <string name="voice_profile_not_installed"><xliff:g id="name" example="Eloquence">%1$s</xliff:g>, niet geïnstalleerd</string>
     <string name="voice_profile_voice_in_language"><xliff:g id="voice" example="en-us-x-tpf-local">%1$s</xliff:g>, <xliff:g id="language" example="English (United States)">%2$s</xliff:g></string>
-    <string name="voice_profile_move_up">Ga omhoog</string>
-    <string name="voice_profile_move_down">Ga naar beneden</string>
+    <string name="voice_profile_move_up">Omhoog verplaatsen</string>
+    <string name="voice_profile_move_down">Omlaag verplaatsen</string>
     <string name="voice_profile_rename">Hernoemen</string>
-    <string name="voice_profile_moved_above">Verplaatst naar boven <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="voice_profile_moved_below">Verplaatst naar beneden <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_above">Verplaatst boven <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_moved_below">Verplaatst onder <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> verwijderd</string>
-    <string name="title_pref_delete_voice_profile">Spraakprofiel verwijderen</string>
+    <string name="title_pref_delete_voice_profile">Stemprofiel verwijderen</string>
     <string name="voice_profile_delete_confirm"><xliff:g id="name" example="Reading">%1$s</xliff:g> verwijderen?</string>
     <string name="voice_profile_delete">Verwijderen</string>
     <string name="summary_pref_tts_engine_default">Systeemstandaard</string>
-    <string name="title_pref_speech_pitch">Spraak toonhoogte</string>
+    <string name="title_pref_speech_pitch">Toonhoogte van spraak</string>
     <string name="title_pref_speech_stream">Spraakvolume</string>
-    <string name="summary_selector_speech_stream">Schakel tussen de bereikbaarheids-, media-, bel- en belvolumes</string>
+    <string name="summary_selector_speech_stream">Schakelen tussen het volume voor toegankelijkheid, media, beltoon en gesprekken</string>
     <string name="speech_stream_accessibility">Toegankelijkheidsvolume</string>
     <string name="speech_stream_media">Mediavolume</string>
     <string name="speech_stream_ring">Belvolume</string>
-    <string name="speech_stream_call">Belvolume, oortje</string>
+    <string name="speech_stream_call">Gespreksvolume, oorspeaker</string>
     <string-array name="pref_speech_stream_entries">
         <item>@string/speech_stream_accessibility</item>
         <item>@string/speech_stream_media</item>
@@ -1348,17 +1348,17 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Stuur lange tekst zin voor zin</string>
-    <string name="summary_pref_speak_in_phrases">Bij spraakengines die traag stoppen, zoals Gryphon, stopt het wegvegen lange tekst in één keer. Veel motoren pauzeren langer tussen zinnen die afzonderlijk worden verzonden, dus laat dit uitgeschakeld als de jouwe snel stopt.</string>
-    <string name="battery_optimization_notification_title">Batterijoptimalisatie kan stoppen SandFly</string>
+    <string name="summary_pref_speak_in_phrases">Voor spraakengines die traag stoppen, zoals Gryphon, zodat een veegbeweging lange tekst meteen stopt. Veel engines pauzeren langer tussen zinnen die apart worden verzonden, dus laat dit uit als je engine snel stopt.</string>
+    <string name="battery_optimization_notification_title">Batterijoptimalisatie kan SandFly stoppen</string>
     <string name="battery_optimization_notification_text">Op deze telefoon kan de batterijbesparing SandFly stoppen nadat het scherm is uitgeschakeld, zodat het stil blijft totdat het opnieuw wordt opgestart. Tik om batterijoptimalisatie te openen, kies Alle apps, zoek SandFly en kies Niet optimaliseren.</string>
     <string name="title_pref_mute_speech_while_recording">Stil tijdens het opnemen</string>
     <string name="summary_pref_mute_speech_while_recording">Terwijl een app opneemt zonder dat er een koptelefoon is aangesloten, spreekt SandFly alleen als reactie op jouw gebaren, toetsen en typen, en blijft hij stil bij zaken als meldingen, zodat deze niet worden opgenomen.</string>
     <string name="title_pref_switch_languages">Automatisch van taal wisselen</string>
     <string name="title_pref_switch_dialects">Automatisch van dialect wisselen</string>
     <string name="category_collapsed">Samengevouwen sectie</string>
-    <string name="category_expanded">Uitgebreide sectie</string>
+    <string name="category_expanded">Uitgevouwen sectie</string>
     <string name="title_pref_speak_nav_bar_buttons">Spreek navigatiebalkknoppen uit</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Met lift om te activeren op de navigatiebalk, zegt u de knop waarop u tikt, zoals Terug of Thuis.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Als Optillen om te activeren wordt gebruikt op de navigatiebalk, wordt de knop uitgesproken die met een tik is ingedrukt, zoals Terug of Startscherm.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Batterij <xliff:g id="battery_level" example="73">%1$s</xliff:g> procent</string>
     <string name="template_battery_level_unknown">Batterijniveau onbekend</string>
@@ -1367,49 +1367,49 @@
     <string name="summary_pref_screen_announcements">Kies wat SandFly zegt wanneer het scherm wordt in- of uitgeschakeld en wanneer de telefoon wordt ontgrendeld</string>
     <string name="title_screen_announcements_screen_off">Wanneer het scherm wordt uitgeschakeld</string>
     <string name="title_screen_announcements_screen_on">Wanneer het scherm wordt ingeschakeld</string>
-    <string name="title_screen_announcements_unlock">Wanneer de telefoon is ontgrendeld</string>
-    <string name="title_pref_say_screen_off">Zeg \'Scherm uit\'</string>
-    <string name="title_pref_say_device_unlocked">Zeg \'Apparaat ontgrendeld\'</string>
-    <string name="title_pref_announce_time">Tijd</string>
+    <string name="title_screen_announcements_unlock">Wanneer de telefoon wordt ontgrendeld</string>
+    <string name="title_pref_say_screen_off">\'Scherm uit\' uitspreken</string>
+    <string name="title_pref_say_device_unlocked">\'Apparaat ontgrendeld\' uitspreken</string>
+    <string name="title_pref_announce_time">Tijdstip</string>
     <string name="title_pref_announce_ringer_mode">Belmodus</string>
-    <string name="summary_pref_announce_ringer_mode">Zeg wanneer het belsignaal is ingesteld op trillen of stil</string>
+    <string name="summary_pref_announce_ringer_mode">Melden wanneer het belsignaal op trillen of stil staat</string>
     <string name="title_pref_category_feedback">Feedback</string>
     <string name="title_pref_category_typing_and_braille">Typen en braille</string>
     <string name="title_pref_category_apps">Apps</string>
     <string name="title_pref_touch_activation">Aanraken en activeren</string>
     <string name="title_pref_navigation">Navigatie</string>
     <string name="title_pref_category_more">Meer</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Reserveer gebaren voor Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">Voorkomt dat de SandFly enkele en dubbele tikken met twee vingers verwerkt, zodat Samsung Vibration Watch deze kan gebruiken. Schakel Vibration Watch in de toegankelijkheidsinstellingen van uw horloge in.</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Gebaren reserveren voor Vibration Watch</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">SandFly verwerkt geen enkele en dubbele tikken met twee vingers meer, zodat Samsung Vibration Watch ze kan gebruiken. Zet Vibration Watch aan in de toegankelijkheidsinstellingen van je horloge.</string>
     <string name="shortcut_reserved_for_vibration_watch">Gereserveerd voor Vibration Watch in Geavanceerde instellingen</string>
-    <string name="title_pref_speakerphone_away_from_ear">Luidspreker wanneer deze niet bij uw oor is</string>
+    <string name="title_pref_speakerphone_away_from_ear">Luidspreker wanneer de telefoon niet bij je oor is</string>
     <string name="summary_pref_speakerphone_away_from_ear">Schakelt tijdens een gesprek over naar de luidspreker als u de telefoon van uw oor haalt, en terug naar het oorstuk als u hem weer omhoog houdt.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Heeft toestemming nodig die Android niet aan schermlezers geeft. Om het toe te staan, voert u dit commando uit met adb or Shizuku, then come back to this screen: %1$s</string>
-    <string name="action_copy_command">Kopieer opdracht</string>
+    <string name="summary_pref_speakerphone_needs_permission">Vereist een recht dat Android niet aan schermlezers geeft. Voer deze opdracht uit met adb of Shizuku om het te verlenen en ga daarna terug naar dit scherm: %1$s</string>
+    <string name="action_copy_command">Opdracht kopiëren</string>
     <string name="command_copied">Commando gekopieerd</string>
-    <string name="title_pref_speech_control">Laat andere apps spreken</string>
-    <string name="summary_pref_speech_control">Apps die u toestaat, kunnen tekst zeggen met uw SandFly-stem. Er wordt niets gezegd terwijl het apparaat is vergrendeld.</string>
+    <string name="title_pref_speech_control">Andere apps laten spreken</string>
+    <string name="summary_pref_speech_control">Apps die je toestaat, kunnen tekst uitspreken met de stem van SandFly. Terwijl het apparaat is vergrendeld, wordt niets uitgesproken.</string>
     <string name="title_pref_speech_control_sound">Speel een geluid af voordat andere apps spreken</string>
     <string name="speech_control_apps_category">Apps</string>
-    <string name="speech_control_no_apps">Er zijn nog geen apps gevraagd om te spreken.</string>
-    <string name="speech_control_ask_title">Toestaan ​​dat <xliff:g id="app" example="Tasker">%1$s</xliff:g> door SandFly spreekt?</string>
-    <string name="speech_control_ask_text">Het kan tekst zeggen met uw SandFly-stem. Je kunt dit wijzigen in Geavanceerde instellingen.</string>
+    <string name="speech_control_no_apps">Nog geen apps hebben gevraagd om te spreken.</string>
+    <string name="speech_control_ask_title">Toestaan dat <xliff:g id="app" example="Tasker">%1$s</xliff:g> via SandFly spreekt?</string>
+    <string name="speech_control_ask_text">De app kan tekst uitspreken met je SandFly-stem. Je kunt dit wijzigen in Geavanceerde instellingen.</string>
     <string name="speech_control_allow">Toestaan</string>
     <string name="speech_control_deny">Niet toestaan</string>
-    <string name="permission_speak_label">spreek via SandFly</string>
-    <string name="permission_speak_description">Laat de app vragen om tekst in te spreken met uw SandFly-stem. SandFly vraagt ​​je voordat de app kan spreken.</string>
-    <string name="permission_braille_display_label">vraag om een brailleleesregel te zijn voor SandFly</string>
-    <string name="permission_braille_display_description">Laat de app vragen om een brailleleesregel te zijn voor SandFly. Als u hem in SandFly toestaat, kan hij alles op het scherm lezen en uw apparaat bedienen. SandFly vraagt ​​je eerst.</string>
-    <string name="title_pref_phonetic_letters_mode">Spreek letters fonetisch uit</string>
+    <string name="permission_speak_label">spreken via SandFly</string>
+    <string name="permission_speak_description">Hiermee kan de app vragen om tekst uit te spreken met je SandFly-stem. SandFly vraagt het je voordat de app kan spreken.</string>
+    <string name="permission_braille_display_label">vragen om brailleleesregel voor SandFly te zijn</string>
+    <string name="permission_braille_display_description">Hiermee kan de app vragen om een brailleleesregel voor SandFly te zijn. Als je dit in SandFly toestaat, kan de app alles op het scherm lezen en je apparaat bedienen. SandFly vraagt het je eerst.</string>
+    <string name="title_pref_phonetic_letters_mode">Letters fonetisch uitspreken</string>
     <string name="phonetic_letters_mode_off">Uit</string>
-    <string name="phonetic_letters_mode_after_letter_delay">Na de brief, vertraagd, zoals \"h, hotel\"</string>
-    <string name="phonetic_letters_mode_after_letter_no_delay">Na de brief geen vertraging, zoals \"h hotel\"</string>
-    <string name="phonetic_letters_mode_instead_of_letter">In plaats van de letter, zoals \'hotel\'</string>
+    <string name="phonetic_letters_mode_after_letter_delay">Na de letter, met pauze, zoals ‘h, Hendrik’</string>
+    <string name="phonetic_letters_mode_after_letter_no_delay">Na de letter, zonder pauze, zoals ‘h Hendrik’</string>
+    <string name="phonetic_letters_mode_instead_of_letter">In plaats van de letter, zoals ‘Hendrik’</string>
     <string name="title_pref_emoji_speech">Emoji</string>
     <string name="emoji_speech_engine">Gelezen door spraakengine</string>
-    <string name="emoji_speech_names">Gelezen door SandFly</string>
+    <string name="emoji_speech_names">Voorgelezen door SandFly</string>
     <string name="emoji_speech_none">Geen</string>
-    <string name="summary_selector_menu_emoji">Verander hoe emoji worden gelezen</string>
+    <string name="summary_selector_menu_emoji">Wijzigen hoe emoji worden gelezen</string>
     <string name="emoji_speech_state">Emoji: <xliff:g example="Read by SandFly" id="state">%1$s</xliff:g></string>
     <string name="title_pref_emoji_repeat_count">Tel herhaalde emoji</string>
     <string name="emoji_repeat_count_off">Uit</string>
@@ -1418,40 +1418,40 @@
     <string name="emoji_repeat_count_4">4 of meer</string>
     <string name="emoji_repeat_count_5">5 of meer</string>
     <string name="emoji_repeat_count_6">6 of meer</string>
-    <string name="pref_table_headers_category_title">Tafel lezen</string>
-    <string name="pref_table_column_headers_title">Lees kolomkoppen</string>
-    <string name="pref_table_column_headers_entry_after">Na mobiele gegevens</string>
-    <string name="pref_table_column_headers_entry_before">Vóór mobiele gegevens</string>
-    <string name="pref_table_column_headers_entry_off">Lees niet</string>
-    <string name="pref_table_speak_row_column_numbers_title">Spreek rij- en kolomnummers uit</string>
-    <string name="pref_table_speak_row_column_numbers_summary">Kondig rij- en kolomnummers aan voor tabelcellen</string>
-    <string name="title_pref_speak_volume_changes">Spreek volumeveranderingen</string>
-    <string name="summary_pref_speak_volume_changes">Zeg het nieuwe volume nadat u op de volumetoetsen hebt gedrukt</string>
-    <string name="title_pref_speak_notifications">Spreek meldingen uit</string>
-    <string name="summary_pref_speak_notifications">Lees nieuwe meldingen hardop wanneer ze binnenkomen. Inkomende oproepen worden altijd gelezen.</string>
-    <string name="title_pref_notification_list">Gebruik de notificatielijst van SandFly</string>
+    <string name="pref_table_headers_category_title">Tabellen voorlezen</string>
+    <string name="pref_table_column_headers_title">Kolomkoppen voorlezen</string>
+    <string name="pref_table_column_headers_entry_after">Na celgegevens</string>
+    <string name="pref_table_column_headers_entry_before">Vóór celgegevens</string>
+    <string name="pref_table_column_headers_entry_off">Niet voorlezen</string>
+    <string name="pref_table_speak_row_column_numbers_title">Rij- en kolomnummers uitspreken</string>
+    <string name="pref_table_speak_row_column_numbers_summary">Rij- en kolomnummers van tabelcellen uitspreken</string>
+    <string name="title_pref_speak_volume_changes">Volumewijzigingen uitspreken</string>
+    <string name="summary_pref_speak_volume_changes">Zegt het nieuwe volume na het indrukken van de volumeknoppen</string>
+    <string name="title_pref_speak_notifications">Meldingen uitspreken</string>
+    <string name="summary_pref_speak_notifications">Leest nieuwe meldingen voor wanneer ze binnenkomen. Inkomende oproepen worden altijd voorgelezen.</string>
+    <string name="title_pref_notification_list">Meldingenlijst van SandFly gebruiken</string>
     <string name="title_pref_notification_parts">Meldingsdetails</string>
-    <string name="title_pref_play_installer">Verschijnen geïnstalleerd vanaf Google Afspelen</string>
-    <string name="summary_pref_play_installer">Vertel andere apps dat Google Play geïnstalleerd is SandFly. Sommige apps, zoals sommige bankapps, schakelen toegankelijkheidsservices uit die ergens anders zijn geïnstalleerd. Heeft Shizuku nodig en verandert alleen welke apps te horen krijgen waar SandFly vandaan komt.</string>
-    <string name="summary_pref_play_installer_pending">Aan, maar Google Afspelen is nog niet opgenomen als installatieprogramma. SandFly stelt dit in als Shizuku beschikbaar is.</string>
+    <string name="title_pref_play_installer">Weergeven als geïnstalleerd via Google Play</string>
+    <string name="summary_pref_play_installer">Laat andere apps weten dat SandFly via Google Play is geïnstalleerd. Sommige apps, zoals bepaalde bank-apps, zetten toegankelijkheidsservices uit die ergens anders vandaan zijn geïnstalleerd. Vereist Shizuku en wijzigt alleen wat apps te horen krijgen over waar SandFly vandaan komt.</string>
+    <string name="summary_pref_play_installer_pending">Aan, maar Google Play is nog niet geregistreerd als installatiebron. SandFly stelt dit in zodra Shizuku beschikbaar is.</string>
     <string name="notification_part_title">Titel</string>
     <string name="notification_part_text">Tekst</string>
     <string name="notification_part_app">App-naam</string>
-    <string name="notification_part_time">Tijd</string>
+    <string name="notification_part_time">Tijdstip</string>
     <string name="notification_part_playback">Afspelen of pauzeren</string>
     <string name="notification_list_title">Meldingen</string>
     <string name="notification_list_empty">Geen meldingen</string>
     <string name="notification_list_no_access">Toegang tot meldingen is uitgeschakeld</string>
-    <string name="notification_list_grant_access">Schakel toegang tot meldingen in</string>
+    <string name="notification_list_grant_access">Toegang tot meldingen aanzetten</string>
     <string name="notification_list_quick_settings">Snelle instellingen</string>
     <string name="notification_list_dismiss">Sluiten</string>
     <string name="notification_list_show_all">Toon alles</string>
-    <string name="notification_list_show_less">Laat minder zien</string>
+    <string name="notification_list_show_less">Minder tonen</string>
     <string name="notification_list_clear_all">Alles wissen</string>
     <string name="notification_list_send">Verzenden</string>
-    <string name="notification_list_playing">Spelen</string>
+    <string name="notification_list_playing">Wordt afgespeeld</string>
     <string name="notification_list_paused">Gepauzeerd</string>
-    <string name="notification_list_play">Spelen</string>
+    <string name="notification_list_play">Afspelen</string>
     <string name="notification_list_pause">Onderbreken</string>
     <string name="notification_list_previous">Vorige</string>
     <string name="notification_list_next">Volgende</string>
@@ -1459,7 +1459,7 @@
         <item quantity="one">%d melding</item>
         <item quantity="other">%d meldingen</item>
     </plurals>
-    <string name="title_pref_quick_settings">Gebruik de snelle instellingen van SandFly</string>
+    <string name="title_pref_quick_settings">Snelle instellingen van SandFly gebruiken</string>
     <string name="title_pref_quick_settings_items">Paneel voor snelle instellingen</string>
     <string name="quick_settings_title">Snelle instellingen</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1479,7 +1479,7 @@
     <string name="quick_settings_brightness">Helderheid</string>
     <string name="quick_settings_adaptive_brightness">Adaptieve helderheid</string>
     <string name="quick_settings_media_volume">Mediavolume</string>
-    <string name="quick_settings_call_volume">Belvolume</string>
+    <string name="quick_settings_call_volume">Gespreksvolume</string>
     <string name="quick_settings_ring_volume">Belvolume</string>
     <string name="quick_settings_notification_volume">Meldingsvolume</string>
     <string name="quick_settings_alarm_volume">Alarmvolume</string>
@@ -1487,7 +1487,7 @@
     <string name="quick_settings_system_volume">Systeemaudiovolume</string>
     <string name="quick_settings_data_saver">Gegevensbesparing</string>
     <string name="quick_settings_night_light">Nachtlampje</string>
-    <string name="quick_settings_extra_dim">Extra afm</string>
+    <string name="quick_settings_extra_dim">Extra gedimd</string>
     <string name="quick_settings_color_inversion">Kleurinversie</string>
     <string name="quick_settings_color_correction">Kleurcorrectie</string>
     <string name="quick_settings_microphone_access">Microfoontoegang</string>
@@ -1500,7 +1500,7 @@
     <string name="quick_settings_next_alarm">Volgende alarm</string>
     <string name="quick_settings_no_alarm">Geen wekker</string>
     <string name="quick_settings_settings">Instellingen</string>
-    <string name="quick_settings_power_menu">Vermogensmenu</string>
+    <string name="quick_settings_power_menu">Aan/uit-menu</string>
     <string name="quick_settings_add_system_tile">Systeemtegel toevoegen</string>
     <string name="quick_settings_no_system_tiles">Er zijn geen systeemtegels om toe te voegen</string>
     <string name="quick_settings_tile_not_found">%1$s staat niet in de snelle instellingen van het systeem</string>
@@ -1516,7 +1516,7 @@
     <string name="quick_settings_connected">Verbonden</string>
     <string name="quick_settings_battery">Batterij</string>
     <string name="quick_settings_battery_charging">%1$s, opladen</string>
-    <string name="quick_settings_battery_full">%1$s, in rekening gebracht</string>
+    <string name="quick_settings_battery_full">%1$s, opgeladen</string>
     <string name="quick_settings_sound">Geluid</string>
     <string name="quick_settings_vibrate">Trillen</string>
     <string name="quick_settings_mute">Dempen</string>
@@ -1524,10 +1524,10 @@
     <string name="quick_settings_off">Uit</string>
     <string name="quick_settings_unavailable">Niet beschikbaar</string>
     <string name="quick_settings_edit">Bewerken</string>
-    <string name="quick_settings_system">Systeem snelle instellingen</string>
+    <string name="quick_settings_system">Snelle instellingen van systeem</string>
     <string name="quick_settings_open_settings">Instellingen openen</string>
-    <string name="quick_settings_add_control">Voeg controle toe</string>
-    <string name="quick_settings_add_tile">Voeg app-tegel toe</string>
+    <string name="quick_settings_add_control">Bedieningselement toevoegen</string>
+    <string name="quick_settings_add_tile">App-tegel toevoegen</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Aantal kolommen</string>
     <string name="quick_settings_move">Verplaatsen</string>
@@ -1542,37 +1542,37 @@
     <string name="quick_settings_remove">Verwijderen</string>
     <string name="quick_settings_added">%1$s toegevoegd</string>
     <string name="quick_settings_removed">%1$s verwijderd</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aan. Houd 2 vingers 5 seconden op het scherm om uit te schakelen. Om dit bericht niet langer weer te geven, schakelt u SandFly instellingen &gt; Geavanceerde instellingen &gt; Toon instructies voor het uitschakelen van SandFly uit.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aan. Houd 2 vingers 5 seconden op het scherm om het uit te schakelen. Als je dit bericht niet meer wilt zien, zet je Instellingen voor SandFly &gt; Geavanceerde instellingen &gt; Instructies tonen om SandFly uit te zetten uit.</string>
     <string name="edge_gestures_title">Randen</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Nog een snelkoppeling om de bladermodus in of uit te schakelen</string>
     <string name="title_pref_vibration_strength">Trillingssterkte</string>
     <string name="title_pref_audio_output_device">Audio-uitvoerapparaat</string>
-    <string name="dialog_title_audio_output_device">Kies waar je SandFly geluid wilt afspelen</string>
+    <string name="dialog_title_audio_output_device">Kies waar SandFly-geluid wordt afgespeeld</string>
     <string name="value_audio_output_device_default">Systeemstandaard</string>
-    <string name="value_audio_output_device_speaker">Telefoon luidspreker</string>
-    <string name="value_audio_output_device_bluetooth_or_wired">Verbonden Bluetooth apparaat of bedraad</string>
+    <string name="value_audio_output_device_speaker">Telefoonluidspreker</string>
+    <string name="value_audio_output_device_bluetooth_or_wired">Verbonden Bluetooth- of bekabeld apparaat</string>
     <string name="value_audio_output_device_disconnected">losgekoppeld</string>
-    <string name="value_audio_output_device_bluetooth_default">Bluetooth audioapparaat</string>
+    <string name="value_audio_output_device_bluetooth_default">Bluetooth-audioapparaat</string>
     <string name="value_audio_output_device_wired_headset">Bedrade hoofdtelefoon</string>
     <string name="value_audio_output_device_wired_headphones">Bedrade hoofdtelefoon</string>
-    <string name="value_audio_output_device_usb_headset">USB hoofdtelefoon</string>
-    <string name="value_audio_output_device_usb_device">USB audioapparaat</string>
+    <string name="value_audio_output_device_usb_headset">USB-headset</string>
+    <string name="value_audio_output_device_usb_device">USB-audioapparaat</string>
     <string name="title_pref_speaker_devices">Telefoonluidspreker bij deze apparaten</string>
     <string name="summary_pref_speaker_devices_none">Geen</string>
-    <string name="summary_pref_speaker_devices_no_devices">Nog geen Bluetooth of bekabelde apparaten aangesloten</string>
+    <string name="summary_pref_speaker_devices_no_devices">Nog geen Bluetooth- of bekabelde apparaten verbonden</string>
     <string name="pref_reduce_window_delay_summary">SandFly leest nieuwe schermen sneller wanneer animaties zijn uitgeschakeld. Hierdoor worden animaties voor de hele telefoon uitgeschakeld.</string>
-    <string name="dialog_message_detailed_ai_description">Geselecteerde afbeeldingen worden naar de Gemini API van Google gestuurd om te worden beschreven. Als AI op het apparaat is ingeschakeld, worden ze in plaats daarvan op deze telefoon beschreven en niet verzonden.\n\nMet een gratis API-sleutel kan Google behouden wat het ontvangt, het gebruiken om zijn producten te verbeteren en mensen het te laten beoordelen. Generatieve AI is experimenteel en zal dus fouten maken. De <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> zijn van toepassing.</string>
-    <string name="dialog_message_detailed_ai_promotion">Gedetailleerde beeldbeschrijvingen worden mogelijk gemaakt door generatieve AI. Geselecteerde afbeeldingen worden naar de Gemini API van Google gestuurd om te worden beschreven. Als AI op het apparaat is ingeschakeld, worden ze in plaats daarvan op deze telefoon beschreven en niet verzonden.\n\nMet een gratis API-sleutel kan Google behouden wat het ontvangt, het gebruiken om zijn producten te verbeteren en mensen het te laten beoordelen. Generatieve AI is experimenteel en zal dus fouten maken. Je kunt gedetailleerde afbeeldingsbeschrijvingen op elk gewenst moment uitschakelen in de instellingen SandFly.\n\nDe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> is van toepassing.</string>
-    <string name="dialog_message_screen_overview_promotion">Er wordt een screenshot van het scherm naar de Gemini API van Google gestuurd om te worden beschreven, wat enkele seconden duurt. Als AI op het apparaat is ingeschakeld, wordt het in plaats daarvan op deze telefoon beschreven en niet verzonden.\n\nMet een gratis API-sleutel kan Google behouden wat het ontvangt, het gebruiken om zijn producten te verbeteren en mensen het te laten beoordelen. Generatieve AI is experimenteel en zal dus fouten maken. De <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> zijn van toepassing.</string>
-    <string name="shortcut_title_open_app">Applicatie openen</string>
-    <string name="shortcut_open_app">Open <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Scroll naar boven</string>
-    <string name="shortcut_write_reading_control">Schrijf de letter van een leescontrole</string>
-    <string name="title_pref_reading_control_letters">Handgeschreven Alfabetletters</string>
+    <string name="dialog_message_detailed_ai_description">Geselecteerde afbeeldingen worden naar de Gemini API van Google gestuurd om te worden beschreven. Als AI op het apparaat aanstaat, worden ze in plaats daarvan op deze telefoon beschreven en niet verstuurd.\n\nMet een gratis API-sleutel kan Google bewaren wat het ontvangt, het gebruiken om zijn producten te verbeteren en het door mensen laten beoordelen. Generatieve AI is experimenteel en maakt dus fouten. De <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> zijn van toepassing.</string>
+    <string name="dialog_message_detailed_ai_promotion">Gedetailleerde afbeeldingsbeschrijvingen worden gemaakt met generatieve AI. Geselecteerde afbeeldingen worden naar de Gemini API van Google gestuurd om te worden beschreven. Als AI op het apparaat aanstaat, worden ze in plaats daarvan op deze telefoon beschreven en niet verstuurd.\n\nMet een gratis API-sleutel kan Google bewaren wat het ontvangt, het gebruiken om zijn producten te verbeteren en het door mensen laten beoordelen. Generatieve AI is experimenteel en maakt dus fouten. Je kunt gedetailleerde afbeeldingsbeschrijvingen op elk moment uitzetten in Instellingen voor SandFly.\n\nDe <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> zijn van toepassing.</string>
+    <string name="dialog_message_screen_overview_promotion">Er wordt een screenshot van het scherm naar de Gemini API van Google gestuurd om te worden beschreven. Dat duurt enkele seconden. Als AI op het apparaat aanstaat, wordt het in plaats daarvan op deze telefoon beschreven en niet verstuurd.\n\nMet een gratis API-sleutel kan Google bewaren wat het ontvangt, het gebruiken om zijn producten te verbeteren en het door mensen laten beoordelen. Generatieve AI is experimenteel en maakt dus fouten. De <xliff:g id="Gemini API terms" example="Gemini API Additional Terms of Service">%1$s</xliff:g> zijn van toepassing.</string>
+    <string name="shortcut_title_open_app">App openen</string>
+    <string name="shortcut_open_app"><xliff:g id="app_name" example="Gmail">%1$s</xliff:g> openen</string>
+    <string name="shortcut_scroll_to_top">Naar boven scrollen</string>
+    <string name="shortcut_write_reading_control">Letter van een leesinstelling schrijven</string>
+    <string name="title_pref_reading_control_letters">Handgeschreven letters</string>
     <string name="reading_control_letter_none">Geen</string>
-    <string name="handwriting_prompt">Schrijf een alfabetbrief</string>
+    <string name="handwriting_prompt">Schrijf een letter</string>
     <string name="handwriting_closed">Handschrift gesloten</string>
-    <string name="handwriting_no_match">Geen leescontrole begint met <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Geen leesinstelling begint met <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Schrijf de naam van een app om deze te openen</string>
     <string name="handwriting_app_prompt">Schrijf de naam van een app</string>
     <string name="handwriting_no_app">Geen app begint met <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
@@ -1586,8 +1586,8 @@
     <string name="handwriting_download_failed">Handschriftherkenning kon niet worden gedownload. Controleer de internetverbinding.</string>
     <string name="handwriting_unsupported_language">Handschriftherkenning is niet beschikbaar in deze taal</string>
     <string name="title_pref_handwriting_keyboard">Handschrifttoetsenbord</string>
-    <string name="summary_pref_handwriting_keyboard">Schakel handschrift SandFly in de toetsenbordinstellingen van Android in</string>
-    <string name="title_pref_handwriting_wait">Wacht na het schrijven</string>
+    <string name="summary_pref_handwriting_keyboard">Zet SandFly-handschrift aan in de toetsenbordinstellingen van Android</string>
+    <string name="title_pref_handwriting_wait">Wachttijd na schrijven</string>
     <string name="value_handwriting_wait_200">0,2 seconden</string>
     <string name="value_handwriting_wait_300">0,3 seconden</string>
     <string name="value_handwriting_wait_400">0,4 seconden</string>
@@ -1599,7 +1599,7 @@
     <string name="handwriting_space">Spatiebalk</string>
     <string name="handwriting_new_line">Nieuwe regel</string>
     <string name="handwriting_tutorial_intro">Handschrifttoetsenbord-tutorial. Schrijf met één vinger waar dan ook op het scherm. Wat je schrijft, wordt getypt als je even stopt. Veeg met drie vingers naar beneden om de tutorial te beëindigen.</string>
-    <string name="handwriting_tutorial_write_letter">Schrijf de alfabetletter a.</string>
+    <string name="handwriting_tutorial_write_letter">Schrijf de letter a.</string>
     <string name="handwriting_tutorial_write_word">Schrijf nu het woord hi (h gevolgd door i).</string>
     <string name="handwriting_tutorial_typed">Getypt <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Veeg met twee vingers naar rechts om een ​​spatie te typen.</string>
@@ -1607,35 +1607,35 @@
     <string name="handwriting_tutorial_deleted">Verwijderd.</string>
     <string name="handwriting_tutorial_next_reading">Als handschrift wordt herkend als een ander teken, zoals een hoofdletter, veegt u met twee vingers omhoog om de volgende herkenningssuggestie te kiezen. Probeer het nu.</string>
     <string name="handwriting_tutorial_read_back">Tik met twee vingers om de tekst vóór de cursor te lezen.</string>
-    <string name="handwriting_tutorial_new_line">Veeg met twee vingers omlaag om een ​​nieuwe regel in te voegen of voer een tekstveldactie uit, zoals Verzenden.</string>
-    <string name="handwriting_tutorial_not_that">Dat was nog een gebaar.</string>
-    <string name="handwriting_tutorial_done">Nieuwe lijn. Les afgerond. Veeg met drie vingers naar beneden om het toetsenbord te verbergen, en met drie vingers naar rechts of links om van toetsenbord te wisselen. Om de tutorial opnieuw te openen, tikt u met drie vingers.</string>
-    <string name="handwriting_tutorial_finished">Les beëindigd. Om het weer te openen, tikt u met drie vingers.</string>
+    <string name="handwriting_tutorial_new_line">Veeg met twee vingers omlaag om een nieuwe regel in te voegen of de actie van het tekstveld uit te voeren, zoals Verzenden.</string>
+    <string name="handwriting_tutorial_not_that">Dat was een ander gebaar.</string>
+    <string name="handwriting_tutorial_done">Nieuwe regel. Tutorial voltooid. Veeg met drie vingers omlaag om het toetsenbord te verbergen, en met drie vingers naar rechts of links om van toetsenbord te wisselen. Tik met drie vingers om de tutorial opnieuw te openen.</string>
+    <string name="handwriting_tutorial_finished">Tutorial beëindigd. Tik met drie vingers om hem opnieuw te openen.</string>
     <string name="handwriting_no_alternatives">Geen andere suggesties</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> of <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> van <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Lege tekst</string>
     <string name="handwriting_not_available">Handschriftherkenning is niet beschikbaar op dit apparaat</string>
-    <string name="shortcut_scroll_to_bottom">Scroll naar beneden</string>
+    <string name="shortcut_scroll_to_bottom">Naar beneden scrollen</string>
     <string name="shortcut_refresh">Vernieuwen</string>
-    <string name="shortcut_system_notifications">Systeemmeldingsschaduw</string>
-    <string name="shortcut_system_quick_settings">Systeem snelle instellingen</string>
+    <string name="shortcut_system_notifications">Meldingenpaneel van systeem</string>
+    <string name="shortcut_system_quick_settings">Snelle instellingen van systeem</string>
     <string name="shortcut_lock_screen">Vergrendel het apparaatscherm</string>
-    <string name="shortcut_power_menu">Vermogensmenu</string>
-    <string name="shortcut_increase_media_volume">Verhoog het mediavolume</string>
-    <string name="shortcut_decrease_media_volume">Verlaag het mediavolume</string>
-    <string name="title_clear_selection">Duidelijke selectie</string>
+    <string name="shortcut_power_menu">Aan/uit-menu</string>
+    <string name="shortcut_increase_media_volume">Mediavolume verhogen</string>
+    <string name="shortcut_decrease_media_volume">Mediavolume verlagen</string>
+    <string name="title_clear_selection">Selectie wissen</string>
     <string name="title_pref_brightness">Helderheid</string>
     <string name="summary_support_change_brightness">Verhoog of verlaag de helderheid van het scherm, zelfs als het scherm verborgen is</string>
     <string name="title_pref_shortcut_3finger_4tap">Viervoudig tikken met 3 vingers</string>
     <string name="title_pref_shortcut_2finger_rotate_clockwise">Draai met 2 vingers met de klok mee</string>
     <string name="title_pref_shortcut_2finger_rotate_counterclockwise">Draai met 2 vingers tegen de klok in</string>
-    <string name="title_pref_shortcut_2finger_scrub">Schrob met 2 vingers</string>
+    <string name="title_pref_shortcut_2finger_scrub">Snel heen en weer vegen met 2 vingers</string>
     <string name="title_pref_shortcut_2finger_pinch">Knijp met 2 vingers</string>
-    <string name="title_pref_shortcut_2finger_spread">Verdeel met 2 vingers</string>
+    <string name="title_pref_shortcut_2finger_spread">Uiteenspreiden met 2 vingers</string>
     <string name="title_pref_shortcut_3finger_pinch">Knijp met 3 vingers</string>
-    <string name="title_pref_shortcut_3finger_spread">Verspreid met 3 vingers</string>
+    <string name="title_pref_shortcut_3finger_spread">Uiteenspreiden met 3 vingers</string>
     <string name="title_pref_shortcut_4finger_pinch">Knijp met 4 vingers</string>
-    <string name="title_pref_shortcut_4finger_spread">Verspreid met 4 vingers</string>
+    <string name="title_pref_shortcut_4finger_spread">Uiteenspreiden met 4 vingers</string>
     <string name="title_pref_shortcut_edge_bottom_up">Veeg omhoog vanaf de onderrand</string>
     <string name="title_pref_shortcut_edge_bottom_long_up">Veeg lang omhoog vanaf de onderkant</string>
     <string name="title_pref_shortcut_edge_top_left_down">Veeg vanaf linksboven naar beneden</string>
@@ -1650,14 +1650,14 @@
     <string name="title_pref_shortcut_edge_right_top_long_left">Veeg lang naar links vanaf de rechterrand, bovenste helft</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">Veeg naar links vanaf de rechterrand, onderste helft</string>
     <string name="title_pref_shortcut_edge_right_bottom_long_left">Veeg lang naar links vanaf de rechterrand, onderste helft</string>
-    <string name="value_type_confirmation_lift_to_type_except_action_key">Houd uw vinger vast om een toets te selecteren en til deze vervolgens op. Dubbeltik voor Enter, Klaar of Verzenden.</string>
-    <string name="value_type_confirmation_tap_to_type">Tik op een willekeurige toets om deze te typen, of houd uw vinger vast om een toets te selecteren en til deze vervolgens op</string>
+    <string name="value_type_confirmation_lift_to_type_except_action_key">Houd je vinger op een toets om die te selecteren en til je vinger dan op. Dubbeltik voor Enter, Klaar of Verzenden.</string>
+    <string name="value_type_confirmation_tap_to_type">Tik op een toets om die te typen, of houd je vinger op een toets om die te selecteren en til je vinger dan op</string>
     <string name="title_pref_multi_tap_timeout">Tijd tussen tikken met één vinger</string>
     <string name="value_multi_tap_timeout_100ms">0,1 seconden</string>
     <string name="value_multi_tap_timeout_150ms">0,15 seconden</string>
     <string name="value_multi_tap_timeout_200ms">0,2 seconden</string>
     <string name="value_multi_tap_timeout_250ms">0,25 seconden (standaard)</string>
-    <string name="title_pref_rotor_step_degrees">Rotoromwenteling per stap</string>
+    <string name="title_pref_rotor_step_degrees">Rotordraaiing per stap</string>
     <string name="title_pref_edge_first_click_mm">Afstand tot eerste klik</string>
     <string name="title_pref_edge_second_click_mm">Afstand van de eerste tot de tweede klik</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1673,68 +1673,68 @@
     <string name="value_rotor_step_45">45 graden</string>
     <string name="value_rotor_step_60">60 graden</string>
     <string name="title_pref_low_latency_audio">Audio met lage latentie</string>
-    <string name="summary_pref_low_latency_audio">Speel de geluiden en spraak van SandFly af via het snelste audiopad van de telefoon, zodat u ze eerder hoort. Schakel het uit als spraak of geluiden wegvallen of verkeerd klinken.</string>
+    <string name="summary_pref_low_latency_audio">Speelt de geluiden en spraak van SandFly af via het snelste audiopad van de telefoon, zodat je ze eerder hoort. Zet dit uit als spraak of geluiden haperen of verkeerd klinken.</string>
     <string name="value_focus_delay_200ms_default">0,2 seconden (standaard)</string>
     <string name="value_focus_delay_300ms">0,3 seconden</string>
-    <string name="title_pref_lift_to_activate">Til op om te activeren</string>
-    <string name="summary_support_change_lift_to_activate">Wijzig waar het optillen van uw vinger een item activeert</string>
+    <string name="title_pref_lift_to_activate">Optillen om te activeren</string>
+    <string name="summary_support_change_lift_to_activate">Wijzigen waar het optillen van je vinger een item activeert</string>
     <string name="value_lift_to_activate_disabled">Uitgeschakeld</string>
     <string name="value_lift_to_activate_navigation_bar">Alleen op de navigatiebalk</string>
     <string name="value_lift_to_activate_entire_screen">Hele scherm</string>
     <string name="template_lift_to_activate_changed">Optillen om te activeren: <xliff:g id="mode">%1$s</xliff:g></string>
-    <string name="title_pref_wrap_around">Wikkel rond</string>
-    <string name="summary_pref_wrap_around">Als u voorbij het laatste item veegt, gaat u naar het eerste, en voorbij het eerste item gaat u naar het laatste. Wanneer uitgeschakeld, wordt aan het einde een geluid afgespeeld.</string>
+    <string name="title_pref_wrap_around">Rondgaan</string>
+    <string name="summary_pref_wrap_around">Als je voorbij het laatste item veegt, ga je naar het eerste, en voorbij het eerste naar het laatste. Als deze optie uit staat, klinkt er aan het einde een geluid.</string>
     <string name="title_pref_fix_stuck_touch_exploration">Vastgelopen aanraakverkenning repareren</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">Zonder de toestemming DUMP kan SandFly alleen zeggen dat verkenning via aanraking mogelijk vastloopt. Om het probleem te laten oplossen, voer je het volgende uit: adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
     <string name="stuck_touch_exploration_fixing">Aanraakverkenning repareren</string>
     <string name="stuck_touch_exploration_fixed">Aanraakverkenning opgelost</string>
     <string name="stuck_touch_exploration_not_fixed">Aanraakverkenning loopt nog steeds vast. Start de telefoon opnieuw op om het probleem te verhelpen.</string>
     <string name="stuck_touch_exploration_restart">Aanraakverkenning loopt mogelijk vast. Start de telefoon opnieuw op om het probleem te verhelpen.</string>
-    <string name="stuck_touch_exploration_grant_dump">Aanraakverkenning loopt mogelijk vast. Start de telefoon opnieuw op om het probleem te repareren, of verleen SandFly de DUMP toestemming bij ADB zodat het probleem kan worden opgelost.</string>
+    <string name="stuck_touch_exploration_grant_dump">Verkennen via aanraking loopt mogelijk vast. Start de telefoon opnieuw op om dit op te lossen, of geef SandFly via ADB de DUMP-machtiging zodat SandFly het kan oplossen.</string>
     <string name="title_pref_window_names">Vensternamen</string>
     <string name="window_names_always">Altijd</string>
-    <string name="window_names_until_first_item">Snijd altijd af bij het eerste item</string>
-    <string name="window_names_window_opens">Alleen als er een raam opengaat</string>
+    <string name="window_names_until_first_item">Altijd, onderbroken door het eerste item</string>
+    <string name="window_names_window_opens">Alleen als er een venster opengaat</string>
     <string name="window_names_never">Nooit</string>
     <string name="title_pref_selector_links_controls_web_only">Links en bedieningselementen alleen in webinhoud</string>
-    <string name="title_pref_selector_auto_switch">Wijzig de leescontrole automatisch</string>
-    <string name="title_pref_touch_stops_speech">Stop de spraak wanneer u het scherm aanraakt</string>
+    <string name="title_pref_selector_auto_switch">Leesinstelling automatisch wijzigen</string>
+    <string name="title_pref_touch_stops_speech">Spraak stoppen bij aanraken van het scherm</string>
     <string name="title_pref_focus_new_windows">Verplaats de focus naar nieuwe vensters</string>
     <string name="title_pref_volume_keys_adjust_sliders">Volumetoetsen passen schuifregelaars aan</string>
     <string name="summary_pref_volume_keys_adjust_sliders">Wanneer een schuifregelaar focus heeft, veranderen volume omhoog en omlaag de waarde ervan in plaats van het volume</string>
     <string name="title_pref_volume_keys_move_cursor">Volumetoetsen verplaatsen de cursor</string>
     <string name="summary_pref_volume_keys_move_cursor">Wanneer een tekstveld focus heeft, verplaatst volume omhoog de cursor een teken terug, terwijl volume omlaag de cursor verder verplaatst</string>
-    <string name="summary_support_wrap_around">Schakel de verpakking van het laatste item naar het eerste in of uit</string>
-    <string name="wrap_around_on">Wikkel rond</string>
-    <string name="wrap_around_off">Wikkel rond af</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tablet omhoog gehouden, gezichten weg</string>
+    <string name="summary_support_wrap_around">Rondgaan van het laatste item naar het eerste in- of uitschakelen</string>
+    <string name="wrap_around_on">Rondgaan: aan</string>
+    <string name="wrap_around_off">Rondgaan: uit</string>
+    <string name="title_selector_tablet_held_up_faces_away">Rechtop gehouden tablet naar buiten gericht</string>
     <string name="summary_support_tablet_held_up_faces_away">Voor het brailletoetsenbord op een tablet of uitgeklapte telefoon</string>
-    <string name="tablet_held_up_faces_away_on">Tablet omhoog gehouden, gezichten weg</string>
-    <string name="tablet_held_up_faces_away_off">Tablet omhoog gehouden, gezichten weg</string>
+    <string name="tablet_held_up_faces_away_on">Rechtop gehouden tablet naar buiten gericht: aan</string>
+    <string name="tablet_held_up_faces_away_off">Rechtop gehouden tablet naar buiten gericht: uit</string>
     <string name="title_keyboard_echo_on_screen">Toetsenbordecho op het scherm</string>
-    <string name="title_keyboard_echo_physical">Fysieke toetsenbordecho</string>
+    <string name="title_keyboard_echo_physical">Echo van fysiek toetsenbord</string>
     <string name="title_keyboard_echo_braille_keyboard">Echo van brailletoetsenbord</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Echo van handschrifttoetsenbord</string>
     <string name="title_keyboard_echo_braille_display">Echo van brailleleesregel</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="title_pref_interrupt_typing">Onderbreek de spraak tijdens het typen</string>
+    <string name="title_pref_interrupt_typing">Spraak onderbreken tijdens typen</string>
     <string name="pref_interrupt_typing_entry_always">Altijd</string>
     <string name="pref_interrupt_typing_entry_edit_fields">In bewerkingsvelden</string>
-    <string name="pref_interrupt_typing_entry_keyboard_echo">Op toetsenbordecho</string>
-    <string name="title_pref_interrupt_enter">Onderbreek de toespraak bij Enter</string>
-    <string name="pref_node_desc_order_entry_name_state_role_pos">Naam, staat, type</string>
-    <string name="pref_node_desc_order_entry_role_state_name_pos">Type, staat, naam</string>
-    <string name="pref_node_desc_order_entry_state_role_name_pos">Staat, type, naam</string>
+    <string name="pref_interrupt_typing_entry_keyboard_echo">Bij toetsenbordecho</string>
+    <string name="title_pref_interrupt_enter">Spraak onderbreken bij Enter</string>
+    <string name="pref_node_desc_order_entry_name_state_role_pos">Naam, status, type</string>
+    <string name="pref_node_desc_order_entry_role_state_name_pos">Type, status, naam</string>
+    <string name="pref_node_desc_order_entry_state_role_name_pos">Status, type, naam</string>
     <string name="item_detail_name">Naam</string>
-    <string name="item_detail_type">Typen</string>
-    <string name="item_detail_state">Staat</string>
-    <string name="action_move_up">Ga omhoog</string>
-    <string name="action_move_down">Ga naar beneden</string>
+    <string name="item_detail_type">Type</string>
+    <string name="item_detail_state">Status</string>
+    <string name="action_move_up">Omhoog verplaatsen</string>
+    <string name="action_move_down">Omlaag verplaatsen</string>
     <string name="template_list_position">Positie <xliff:g id="position" example="2">%1$d</xliff:g> van <xliff:g id="count" example="3">%2$d</xliff:g></string>
-    <string name="template_item_details_order_picked_up">Opgehaald <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
-    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> gedaald. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_picked_up"><xliff:g id="detail" example="Name">%1$s</xliff:g> opgepakt. <xliff:g id="position" example="Position 1 of 3">%2$s</xliff:g></string>
+    <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> neergezet. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly zegt de details van een item in deze volgorde. Als u dit wilt wijzigen, houdt u uw vinger op een detail en sleept u het vervolgens omhoog of omlaag. Terwijl SandFly is ingeschakeld, dubbeltikt u, houdt u vast en sleept u vervolgens. U kunt ook de acties Omhoog en Omlaag gebruiken.</string>
-    <string name="title_pref_speak_items_before_scroll">Spreek items uit voordat ze in beeld verschijnen</string>
+    <string name="title_pref_speak_items_before_scroll">Items uitspreken voordat ze in beeld scrollen</string>
     <string name="gemini_error_api_key">Gemini heeft de API-sleutel niet geaccepteerd. Controleer de sleutel in Instellingen voor automatische beschrijvingen.</string>
     <string name="gemini_error_quota">De gebruikslimiet voor uw Gemini API-sleutel is bereikt. Probeer het later opnieuw.</string>
     <string name="gemini_error_busy">Gemini is momenteel bezig. Probeer het zo nog eens.</string>
@@ -1742,11 +1742,11 @@
     <string name="gemini_error_with_code">Gemini kon niet antwoorden, fout <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">Gemini kon niet antwoorden, fout <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason"><xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. Kan geen gedetailleerdere afbeeldingsbeschrijving krijgen: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
-    <string name="image_qna_ask_by_voice">Vraag het met uw stem</string>
+    <string name="image_qna_ask_by_voice">Vragen met spraak</string>
     <string name="image_qna_stop_listening">Stop met luisteren</string>
     <string name="image_qna_type_question">Typ een vraag</string>
     <string name="shortcut_dictate">Dicteren</string>
-    <string name="title_pref_ai_dictation">Correct dicteren met AI</string>
+    <string name="title_pref_ai_dictation">Dicteren corrigeren met AI</string>
     <string name="dictation_not_corrected">Niet gecorrigeerd. Getypt zoals herkend.</string>
     <string name="dictation_nothing_recognized">Niets herkend</string>
     <string name="dictation_unavailable">Spraakherkenning niet beschikbaar</string>
@@ -1767,11 +1767,11 @@
     <string name="dictation_whisper_use">Gebruiken</string>
     <string name="title_pref_dictation_ai_service">AI-service voor dicteren</string>
     <string name="dictation_ai_same">Dezelfde als voor automatische beschrijvingen</string>
-    <string name="title_pref_browse_mode_per_app">Onthoud de bladermodus in elke app</string>
+    <string name="title_pref_browse_mode_per_app">Bladermodus per app onthouden</string>
     <string name="title_pref_export_settings">Instellingen exporteren</string>
     <string name="title_pref_import_settings">Instellingen importeren</string>
     <string name="settings_export_done">Instellingen geëxporteerd. API-sleutels zijn niet inbegrepen</string>
     <string name="settings_export_failed">Instellingen konden niet worden geëxporteerd</string>
     <string name="settings_import_done">Instellingen geïmporteerd</string>
-    <string name="settings_import_failed">Dit bestand is geen SandFly of Backtalk instellingenbestand, of kon niet worden gelezen</string>
+    <string name="settings_import_failed">Dit bestand is geen SandFly- of Backtalk-instellingenbestand, of het kon niet worden gelezen</string>
 </resources>

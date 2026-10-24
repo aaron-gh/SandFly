@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pause_backtalk">இடைநிறுத்தம் SandFly</string>
-    <string name="summary_pause_backtalk">SandFlyஐ மீண்டும் தொடங்கும் வரை பேச்சு, சைகைகளை முடக்கி, தொடுவதன் மூலம் ஆராயவும்</string>
-    <string name="keycombo_menu_global_pause_backtalk">இடைநிறுத்தவும் அல்லது மீண்டும் தொடங்கவும் SandFly</string>
+    <string name="title_pause_backtalk">SandFly-ஐ இடைநிறுத்து</string>
+    <string name="summary_pause_backtalk">SandFly-ஐ மீண்டும் தொடங்கும் வரை பேச்சு, சைகைகள், “தொடுவதன் மூலம் அறிக” ஆகியவற்றை முடக்கும்</string>
+    <string name="keycombo_menu_global_pause_backtalk">SandFly-ஐ இடைநிறுத்தவும் அல்லது மீண்டும் தொடங்கவும்</string>
     <string name="backtalk_paused">SandFly இடைநிறுத்தப்பட்டது</string>
     <string name="backtalk_resumed">SandFly மீண்டும் தொடங்கப்பட்டது</string>
     <string name="notification_title_backtalk_paused">SandFly இடைநிறுத்தப்பட்டது</string>
     <string name="notification_message_backtalk_paused">மீண்டும் தொடங்க தட்டவும்</string>
     <string name="notification_channel_backtalk_paused">SandFly இடைநிறுத்தப்பட்டது</string>
-    <string name="dialog_title_pause_backtalk">இடைநிறுத்தம் SandFly?</string>
+    <string name="dialog_title_pause_backtalk">SandFly-ஐ இடைநிறுத்தவா?</string>
     <string name="dialog_button_pause_backtalk">இடைநிறுத்து</string>
-    <string name="dialog_message_pause_backtalk">SandFly இடைநிறுத்தப்பட்டிருக்கும் போது, அது சைகைகளைப் பேசவோ பதிலளிக்கவோ இல்லை, மேலும் ஸ்கிரீன் ரீடர் ஆன் செய்யாதது போல் திரை இயங்குகிறது.</string>
-    <string name="message_resume_keyguard">தொடர, „SandFly இடைநிறுத்தப்பட்டுள்ளது“ என்ற அறிவிப்பைத் தட்டவும், ஒலியளவைக் குறைக்கும் பொத்தானை 3 முறை விரைவாக அழுத்தவும் அல்லது பூட்டுத் திரை தோன்றும் வகையில் மொபைலைப் பூட்டி மீண்டும் இயக்கவும்.</string>
-    <string name="message_resume_screen_on">மீண்டும் தொடங்க, SandFly இடைநிறுத்தப்பட்ட அறிவிப்பைத் தட்டவும், ஒலியளவை 3 முறை விரைவாகக் குறைக்கவும் அல்லது திரையை அணைத்து மீண்டும் இயக்கவும்.</string>
-    <string name="message_resume_manual">மீண்டும் தொடங்க, SandFly இடைநிறுத்தப்பட்ட அறிவிப்பைத் தட்டவும் அல்லது ஒலியளவை 3 முறை விரைவாகக் குறைக்கவும்.</string>
-    <string name="message_resume_key_combo">நீங்கள் <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> ஐ அழுத்தவும்.</string>
-    <string name="title_pref_resume_backtalk">ரெஸ்யூம் SandFly</string>
-    <string name="value_resume_keyguard">பூட்டுத் திரை காண்பிக்கும் போது</string>
+    <string name="dialog_message_pause_backtalk">SandFly இடைநிறுத்தப்பட்டிருக்கும்போது அது பேசாது, சைகைகளுக்குப் பதிலளிக்காது. திரை வாசிப்பான் இயக்கத்தில் இல்லாதது போலத் திரை செயல்படும்.</string>
+    <string name="message_resume_keyguard">தொடர, “SandFly இடைநிறுத்தப்பட்டது” அறிவிப்பைத் தட்டவும், ஒலியளவைக் குறைக்கும் பட்டனை விரைவாக 3 முறை அழுத்தவும் அல்லது பூட்டுத் திரை தோன்றும்படி ஃபோனைப் பூட்டி மீண்டும் எழுப்பவும்.</string>
+    <string name="message_resume_screen_on">தொடர, “SandFly இடைநிறுத்தப்பட்டது” அறிவிப்பைத் தட்டவும், ஒலியளவைக் குறைக்கும் பட்டனை விரைவாக 3 முறை அழுத்தவும் அல்லது திரையை அணைத்து மீண்டும் இயக்கவும்.</string>
+    <string name="message_resume_manual">தொடர, “SandFly இடைநிறுத்தப்பட்டது” அறிவிப்பைத் தட்டவும் அல்லது ஒலியளவைக் குறைக்கும் பட்டனை விரைவாக 3 முறை அழுத்தவும்.</string>
+    <string name="message_resume_key_combo">நீங்கள் <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g> ஐயும் அழுத்தலாம்.</string>
+    <string name="title_pref_resume_backtalk">SandFly-ஐ மீண்டும் தொடங்குதல்</string>
+    <string name="value_resume_keyguard">பூட்டுத் திரை தோன்றும்போது</string>
     <string name="value_resume_screen_on">திரை இயக்கப்படும் போது</string>
     <string name="value_resume_manual">அறிவிப்பு அல்லது குறுக்குவழியிலிருந்து மட்டுமே</string>
 </resources>

@@ -7,9 +7,9 @@
     <string name="title_pref_problem_report_app">Апликација где се то дешава</string>
     <string name="title_pref_problem_report_description">Опис</string>
     <string name="dialog_message_problem_report_description">Шта се дешава и шта сте очекивали.</string>
-    <string name="title_pref_problem_report_steps">Кораци за репродукцију софтверског проблема</string>
+    <string name="title_pref_problem_report_steps">Кораци за репродукцију</string>
     <string name="title_pref_problem_report_email">Имејл за одговоре</string>
-    <string name="title_pref_problem_report_device">Укључите информације о уређају</string>
+    <string name="title_pref_problem_report_device">Укључи информације о уређају</string>
     <string name="title_pref_problem_report_log">Укључи дневник SandFly</string>
     <string name="summary_pref_problem_report_log">Може да садржи текст са екрана</string>
     <string name="title_pref_problem_report_send">Пошаљи</string>
@@ -21,8 +21,8 @@
     <string name="problem_report_no_connection">Повратне информације нису послате. Проверите интернет везу.</string>
     <string name="problem_report_not_sent">Повратне информације нису послате. Покушајте поново касније.</string>
     <string-array name="problem_report_type_entries">
-        <item>Неправилно понашање</item>
-        <item>Црасх</item>
+        <item>Погрешно понашање</item>
+        <item>Рушење</item>
         <item>Споро или не реагује</item>
         <item>Предлог</item>
     </string-array>
@@ -30,25 +30,25 @@
         <item>Говор</item>
         <item>Покрети</item>
         <item>Истраживање додиром</item>
-        <item>Контроле за читање и меније</item>
+        <item>Контроле читања и менији</item>
         <item>Куцање и тастатуре</item>
         <item>Тастатура са Брајевом азбуком</item>
         <item>Брајев екран</item>
-        <item>Звукови и вибрације</item>
+        <item>Звук и вибрација</item>
         <item>Обавештења</item>
-        <item>Веб садржај</item>
+        <item>Веб-садржај</item>
         <item>Скрипте</item>
         <item>Подешавања</item>
         <item>Ажурирања</item>
         <item>Друго</item>
     </string-array>
     <string name="title_report_new">Пошаљи повратне информације</string>
-    <string name="title_report_inbox">Инбок</string>
+    <string name="title_report_inbox">Пријемно сандуче</string>
     <string name="title_report_drafts">Нацрти</string>
     <string name="report_inbox_empty">Нису послате повратне информације</string>
     <string name="report_drafts_empty">Нема нацрта</string>
     <string name="report_just_now">управо сада</string>
-    <string name="report_untitled">Унтитлед</string>
+    <string name="report_untitled">Без наслова</string>
     <string name="report_draft_summary">Промењено <xliff:g id="when" example="5 minutes ago">%1$s</xliff:g></string>
     <string name="report_sent_at">послато <xliff:g id="when" example="2 days ago">%1$s</xliff:g></string>
     <plurals name="report_new_replies">
@@ -57,7 +57,7 @@
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> нових одговора</item>
     </plurals>
     <string name="report_status_changed">статус промењен</string>
-    <string name="report_status_open">Отворено питање</string>
+    <string name="report_status_open">Отворено</string>
     <string name="report_status_completed">Затворено, завршено</string>
     <string name="report_status_not_planned">Затворено, није планирано</string>
     <string name="report_status_duplicate">Затворено, дупликат</string>
@@ -67,7 +67,7 @@
     <string name="title_report_messages">Поруке</string>
     <string name="report_message_from_developer">Програмер, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">Ви, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
-    <string name="title_report_reply">Одговори</string>
+    <string name="title_report_reply">Одговор</string>
     <string name="title_report_reply_text">Ваш одговор</string>
     <string name="title_report_send_reply">Пошаљи одговор</string>
     <string name="report_reply_sent">Одговор је послат.</string>
@@ -80,6 +80,6 @@
     <string name="button_report_delete">Избриши</string>
     <string name="report_missing">Ове повратне информације више нису у пријемном сандучету.</string>
     <string name="notification_channel_problem_reports">Одговори на повратне информације</string>
-    <string name="report_notification_reply">Одговори на <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
+    <string name="report_notification_reply">Одговор на <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini-ren API gakoa</string>
-    <string name="summary_pref_gemini_api_key_built_in">Aplikazio honetan integratutako gakoa erabiltzen</string>
+    <string name="summary_pref_gemini_api_key_built_in">Aplikazio honetan integratutako gakoa erabiltzen da</string>
     <string name="gemini_api_key_dialog_message">Lortu doako API gako bat Google AI Studio-n (aistudio.google.com/apikey) eta itsatsi hemen. Gakoa kentzeko, garbitu eremua eta gorde.\n\nAzaltzen dituzun irudiak eta pantailak Google-ra bidaltzen dira. Doako mailan, Google-k haiek erabil ditzake bere produktuak hobetzeko.</string>
     <string name="gemini_api_key_hint">API gakoa</string>
     <string name="gemini_api_key_save">Gorde</string>
@@ -11,13 +11,13 @@
     <string name="gemini_model_automatic">Automatikoa</string>
     <string name="summary_pref_gemini_model_automatic">Automatikoa: Gemini Flash, gero Flash-Lite Flash okupatuta dagoenean</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, gero Flash-Lite okupatuta dagoenean</string>
-    <string name="gemini_model_loading">Ereduak eskuratzen...</string>
-    <string name="gemini_model_list_failed">Ezin izan dira modeloak eskuratu: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_loading">Ereduak eskuratzen…</string>
+    <string name="gemini_model_list_failed">Ezin izan dira ereduak eskuratu: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Ezarri lehenik Gemini API gako bat</string>
     <string name="ai_service_address_hint">Helbidea, adibidez https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Eredua</string>
-    <string name="ai_service_address_invalid">Helbideak https://.-rekin hasi behar du Ez da ezer gorde.</string>
-    <string name="dialog_message_ai_service_consent">Irudiak eta pantaila-argazkiak <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> helbidera bidaltzen dira deskribatzeko, eta horrek segundo batzuk behar ditu. Bere baldintzak eta pribatutasun politika aplikatzen dira. AI generatiboa esperimentala da, beraz, akatsak egingo ditu.</string>
+    <string name="ai_service_address_invalid">Helbideak https:// aurrizkiarekin hasi behar du. Ez da ezer gorde.</string>
+    <string name="dialog_message_ai_service_consent">Irudiak eta pantaila-argazkiak <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> zerbitzura bidaltzen dira deskribatzeko, eta segundo batzuk behar dira. Zerbitzuaren baldintzak eta pribatutasun-gidalerroak aplikatzen dira. AA sortzailea esperimentala da; beraz, akatsak egingo ditu.</string>
     <string name="ai_service_error_api_key">AI zerbitzuak ez du onartu API gakoa. Egiaztatu bere ezarpenak Deskribapen automatikoak atalean.</string>
     <string name="ai_service_error_quota">AI zerbitzuaren erabilera mugara iritsi da. Saiatu berriro geroago.</string>
     <string name="ai_service_error_busy">AI zerbitzua lanpetuta dago orain. Saiatu berriro une batean.</string>
@@ -32,7 +32,7 @@
     <string name="ai_provider_none">Bat ere ez</string>
     <string name="ai_service_not_set_up">Ez dago AI zerbitzurik erabiltzen. Konfiguratu bat edo aukeratu bat Deskribapen automatikoen ezarpenetan.</string>
     <string name="ai_provider_none_set_up">Ez dago AI zerbitzurik konfiguratuta. Konfiguratu bat beheko ezarpenetan.</string>
-    <string name="ai_provider_other">Beste zerbitzu batzuk</string>
+    <string name="ai_provider_other">Beste zerbitzu bat</string>
     <string name="title_pref_category_ai_services">AI zerbitzuak</string>
     <string name="title_pref_ai_provider">Adimen artifizialeko zerbitzua</string>
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> ezarpenak</string>
@@ -46,8 +46,8 @@
     <string name="ai_provider_set">Konfiguratuta</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API gakoa</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> eredua</string>
-    <string name="ai_provider_choose_model">Ez aukeratua</string>
-    <string name="ai_provider_key_message">Itsatsi zure <xliff:g id="service" example="Claude">%1$s</xliff:g> API gakoa. Ezabatzeko, garbitu eremua eta gorde. Deskribatzen dituzun irudiak eta pantailak <xliff:g id="service" example="Claude">%1$s</xliff:g> helbidera bidaltzen dira.</string>
+    <string name="ai_provider_choose_model">Ez da aukeratu</string>
+    <string name="ai_provider_key_message">Itsatsi <xliff:g id="service" example="Claude">%1$s</xliff:g> zerbitzuko API gakoa. Kentzeko, hustu eremua eta gorde. Deskribatzeko eskatzen dituzun irudiak eta pantailak <xliff:g id="service" example="Claude">%1$s</xliff:g> zerbitzura bidaltzen dira.</string>
     <string name="ai_provider_needs_key">Ezarri lehenik <xliff:g id="service" example="Claude">%1$s</xliff:g> API gakoa</string>
     <string name="ai_provider_needs_address">Ezarri helbidea lehenik</string>
     <string name="ai_provider_enter_model">Idatzi ereduaren izena</string>

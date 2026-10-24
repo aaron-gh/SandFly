@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">Indikátor výběru</string>
   <string name="title_pref_category_manage_gestures">Gesta</string>
   <string name="title_pref_manage_labels">Vlastní štítky</string>
-  <string name="title_pref_category_context_menu">Upravit nabídku čtečky SandFly</string>
+  <string name="title_pref_category_context_menu">Nabídka SandFly</string>
   <string name="title_pref_category_selector_menu">Ovládání čtení</string>
   <string name="title_pref_category_navigation_menu">Upravit možnosti navigace</string>
   <string name="title_pref_manage_keyboard_shortcuts">Klávesové zkratky</string>
@@ -1360,7 +1360,7 @@
     <string name="stuck_touch_exploration_grant_dump">Prozkoumání dotykem se možná zaseklo. Pro opravu restartujte telefon, nebo udělte SandFly oprávnění DUMP pomocí ADB, aby ho SandFly mohl opravit.</string>
     <string name="title_pref_window_names">Názvy oken</string>
     <string name="window_names_always">Vždy</string>
-    <string name="window_names_until_first_item">Vždy, přerušit první položkou</string>
+    <string name="window_names_until_first_item">Vždy, přeruší první položka</string>
     <string name="window_names_window_opens">Pouze při otevření okna</string>
     <string name="window_names_never">Nikdy</string>
     <string name="title_pref_focus_new_windows">Přesouvat zaměření do nových oken</string>
@@ -1370,9 +1370,9 @@
     <string name="title_keyboard_echo_braille_display">Hlasový doprovod hmatového displeje</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_selector_vertical_navigation">Vertikální navigace</string>
-    <string name="summary_selector_vertical_navigation">Přesuňte se na položku pod nebo nad, za ostatní položky v řádku</string>
+    <string name="summary_selector_vertical_navigation">Přechod na položku pod nebo nad, přes ostatní položky řádku</string>
     <string name="title_pref_speech_stream">Hlasitost řeči</string>
-    <string name="summary_selector_speech_stream">Přepínejte mezi dostupností, médii, hlasitostí vyzvánění a hovorů</string>
+    <string name="summary_selector_speech_stream">Přepínání mezi hlasitostí přístupnosti, médií, vyzvánění a hovorů</string>
     <string name="speech_stream_accessibility">Hlasitost zvuků pro usnadnění přístupu</string>
     <string name="speech_stream_media">Hlasitost médií</string>
     <string name="speech_stream_ring">Hlasitost vyzvánění</string>
@@ -1383,12 +1383,12 @@
         <item>@string/speech_stream_ring</item>
         <item>@string/speech_stream_call</item>
     </string-array>
-    <string name="title_pref_play_installer">Zdá se, že je nainstalováno z Google Play</string>
-    <string name="summary_pref_play_installer">Řekněte ostatním aplikacím, že Google Play je nainstalováno SandFly. Některé aplikace, například některé bankovní aplikace, vypnou služby usnadnění, které byly nainstalovány odkudkoli jinde. Potřebuje Shizuku a mění pouze to, co je aplikacím řečeno o tom, odkud SandFly pochází.</string>
+    <string name="title_pref_play_installer">Zobrazovat jako nainstalováno z Google Play</string>
+    <string name="summary_pref_play_installer">Sděluje ostatním aplikacím, že SandFly byl nainstalován z Google Play. Některé aplikace, například některé bankovní aplikace, vypínají služby usnadnění přístupu nainstalované z jiného zdroje. Vyžaduje Shizuku a mění pouze to, co se aplikace dozví o zdroji instalace SandFly.</string>
     <string name="summary_pref_play_installer_pending">Zapnuto, ale Google Play ještě není zaznamenáno jako instalační program. SandFly nastaví, když je k dispozici Shizuku.</string>
     <string name="notification_list_show_all">Zobrazit vše</string>
-    <string name="notification_list_show_less">Ukažte méně</string>
-    <string name="title_pref_quick_settings">Použijte rychlá nastavení SandFly</string>
+    <string name="notification_list_show_less">Zobrazit méně</string>
+    <string name="title_pref_quick_settings">Používat rychlé nastavení SandFly</string>
     <string name="title_pref_quick_settings_items">Panel rychlého nastavení</string>
     <string name="quick_settings_title">Rychlé nastavení</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1425,12 +1425,12 @@
     <string name="quick_settings_font_size">Velikost písma</string>
     <string name="quick_settings_media">Média</string>
     <string name="quick_settings_no_media">Žádná média</string>
-    <string name="quick_settings_media_output">Mediální výstup</string>
+    <string name="quick_settings_media_output">Výstup médií</string>
     <string name="quick_settings_next_alarm">Další budík</string>
-    <string name="quick_settings_no_alarm">Žádný alarm</string>
+    <string name="quick_settings_no_alarm">Žádný budík</string>
     <string name="quick_settings_settings">Nastavení</string>
     <string name="quick_settings_power_menu">Nabídka napájení</string>
-    <string name="quick_settings_add_system_tile">Přidejte dlaždici systému</string>
+    <string name="quick_settings_add_system_tile">Přidat dlaždici systému</string>
     <string name="quick_settings_no_system_tiles">Žádné systémové dlaždice k přidání</string>
     <string name="quick_settings_tile_not_found">%1$s není v rychlém nastavení systému</string>
     <string name="quick_settings_never">Nikdy</string>
@@ -1449,7 +1449,7 @@
     <string name="quick_settings_connected">Připojeno</string>
     <string name="quick_settings_battery">Baterie</string>
     <string name="quick_settings_battery_charging">%1$s, nabíjení</string>
-    <string name="quick_settings_battery_full">%1$s, zpoplatněno</string>
+    <string name="quick_settings_battery_full">%1$s, nabito</string>
     <string name="quick_settings_sound">Zvuk</string>
     <string name="quick_settings_vibrate">Vibrace</string>
     <string name="quick_settings_mute">Ztlumit</string>
@@ -1458,12 +1458,12 @@
     <string name="quick_settings_unavailable">Není k dispozici</string>
     <string name="quick_settings_edit">Upravit</string>
     <string name="quick_settings_system">Rychlé nastavení systému</string>
-    <string name="quick_settings_open_settings">Otevřete nastavení</string>
-    <string name="quick_settings_add_control">Přidat kontrolu</string>
+    <string name="quick_settings_open_settings">Otevřít nastavení</string>
+    <string name="quick_settings_add_control">Přidat ovládací prvek</string>
     <string name="quick_settings_add_tile">Přidat dlaždici aplikace</string>
     <string name="quick_settings_tile_name">%1$s, %2$s</string>
     <string name="quick_settings_columns">Počet sloupců</string>
-    <string name="quick_settings_move">Pohybujte se</string>
+    <string name="quick_settings_move">Přesunout</string>
     <string name="quick_settings_move_title">Posunout %1$s</string>
     <string name="quick_settings_cell">Řádek %1$d, sloupec %2$d</string>
     <string name="quick_settings_cell_with_item">%1$s, %2$s</string>
@@ -1479,13 +1479,13 @@
     <string name="quick_settings_removed">%1$s odstraněno</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Další zkratka pro zapnutí nebo vypnutí režimu prohlížení</string>
     <string name="title_pref_vibration_strength">Síla vibrací</string>
-    <string name="shortcut_scroll_to_top">Přejděte nahoru</string>
+    <string name="shortcut_scroll_to_top">Přejít na začátek</string>
     <string name="shortcut_write_reading_control">Napsat písmeno ovládacího prvku čtení</string>
     <string name="title_pref_reading_control_letters">Ručně psaná písmena</string>
     <string name="reading_control_letter_none">Žádné</string>
     <string name="handwriting_prompt">Napište písmeno abecedy</string>
     <string name="handwriting_closed">Rukopis uzavřen</string>
-    <string name="handwriting_no_match">Žádná kontrola čtení nezačíná <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Žádný ovládací prvek čtení nezačíná na <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Napsat název aplikace a otevřít ji</string>
     <string name="handwriting_app_prompt">Napište název aplikace</string>
     <string name="handwriting_no_app">Žádná aplikace nezačíná na <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
@@ -1500,7 +1500,7 @@
     <string name="handwriting_unsupported_language">Rozpoznávání rukopisu není v tomto jazyce k dispozici</string>
     <string name="title_pref_handwriting_keyboard">Klávesnice pro psaní rukou</string>
     <string name="summary_pref_handwriting_keyboard">Zapněte ruční psaní SandFly v nastavení klávesnice Android</string>
-    <string name="title_pref_handwriting_wait">Po napsání počkejte</string>
+    <string name="title_pref_handwriting_wait">Čekání po napsání</string>
     <string name="value_handwriting_wait_200">0,2 sekundy</string>
     <string name="value_handwriting_wait_300">0,3 sekundy</string>
     <string name="value_handwriting_wait_400">0,4 sekundy</string>
@@ -1511,8 +1511,8 @@
     <string name="handwriting_keyboard_name">SandFly rukopis</string>
     <string name="handwriting_space">Mezerník</string>
     <string name="handwriting_new_line">Nový řádek</string>
-    <string name="handwriting_tutorial_intro">Kurz klávesnice pro ruční psaní. Pište jedním prstem kamkoli na obrazovku. To, co píšete, se píše, když se na chvíli zastavíte. Chcete-li výukový program ukončit, přejeďte třemi prsty dolů.</string>
-    <string name="handwriting_tutorial_write_letter">Write the alphabet letter a.</string>
+    <string name="handwriting_tutorial_intro">Výukový program klávesnice pro psaní rukou. Pište jedním prstem kdekoli na obrazovce. Napsaný text se zadá, když se na chvíli zastavíte. Výukový program ukončíte přejetím třemi prsty dolů.</string>
+    <string name="handwriting_tutorial_write_letter">Napište písmeno a.</string>
     <string name="handwriting_tutorial_write_word">Nyní napište slovo hi.</string>
     <string name="handwriting_tutorial_typed">Zadali jste <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
     <string name="handwriting_tutorial_space">Přejeďte dvěma prsty doprava a vložte mezeru.</string>
@@ -1521,20 +1521,20 @@
     <string name="handwriting_tutorial_next_reading">Pokud je rukopis rozpoznán jako jiný znak, například velké písmeno, přejeďte dvěma prsty nahoru a vyberte další návrh rozpoznání. Zkuste to teď.</string>
     <string name="handwriting_tutorial_read_back">Klepnutím dvěma prsty přečtete text před kurzorem.</string>
     <string name="handwriting_tutorial_new_line">Přejetím dvěma prsty dolů vložte nový řádek nebo proveďte akci textového pole, například Odeslat.</string>
-    <string name="handwriting_tutorial_not_that">To bylo další gesto.</string>
-    <string name="handwriting_tutorial_done">Nová řada. Výukový program dokončen. Přejetím třemi prsty dolů klávesnici skryjete a třemi prsty doprava nebo doleva přepnete klávesnice. Chcete-li znovu otevřít výukový program, klepněte třemi prsty.</string>
-    <string name="handwriting_tutorial_finished">Kurz skončil. Chcete-li jej znovu otevřít, klepněte třemi prsty.</string>
+    <string name="handwriting_tutorial_not_that">To bylo jiné gesto.</string>
+    <string name="handwriting_tutorial_done">Nový řádek. Výukový program je dokončen. Přejetím třemi prsty dolů klávesnici skryjete a přejetím třemi prsty doprava nebo doleva přepnete klávesnici. Výukový program znovu otevřete klepnutím třemi prsty.</string>
+    <string name="handwriting_tutorial_finished">Výukový program skončil. Znovu jej otevřete klepnutím třemi prsty.</string>
     <string name="handwriting_no_alternatives">Žádné další návrhy</string>
-    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> of <xliff:g id="count" example="5">%3$d</xliff:g></string>
+    <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> z <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Prázdný text</string>
     <string name="handwriting_not_available">Na tomto zařízení není k dispozici rozpoznávání rukopisu</string>
-    <string name="shortcut_scroll_to_bottom">Přejděte dolů</string>
+    <string name="shortcut_scroll_to_bottom">Přejít na konec</string>
     <string name="shortcut_refresh">Obnovit</string>
     <string name="shortcut_system_quick_settings">Rychlé nastavení systému</string>
     <string name="shortcut_lock_screen">Zamkněte obrazovku zařízení</string>
     <string name="shortcut_power_menu">Nabídka napájení</string>
-    <string name="shortcut_increase_media_volume">Zvyšte hlasitost médií</string>
-    <string name="shortcut_decrease_media_volume">Snižte hlasitost médií</string>
+    <string name="shortcut_increase_media_volume">Zvýšit hlasitost médií</string>
+    <string name="shortcut_decrease_media_volume">Snížit hlasitost médií</string>
     <string name="title_pref_shortcut_edge_top_left_long_down">Dlouhé přejetí dolů z levého horního rohu</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">Dlouhé přejetí dolů z pravého horního rohu</string>
     <string name="title_pref_shortcut_edge_left_top_right">Přejetí doprava z levého okraje, horní polovina</string>
@@ -1556,16 +1556,16 @@
     <string name="value_distance_50mm">5 cm</string>
     <string name="title_pref_selector_links_controls_web_only">Odkazy a ovládací prvky pouze ve webovém obsahu</string>
     <string name="title_pref_selector_auto_switch">Automaticky změnit ovládání čtení</string>
-    <string name="title_pref_touch_stops_speech">Zastavte řeč při dotyku obrazovky</string>
+    <string name="title_pref_touch_stops_speech">Zastavit řeč při dotyku obrazovky</string>
     <string name="title_pref_volume_keys_move_cursor">Tlačítka hlasitosti pohybují kurzorem</string>
     <string name="summary_pref_volume_keys_move_cursor">Když je textové pole aktivní, zvýšení hlasitosti přesune kurzor zpět o znak a snížení hlasitosti jej posune dál</string>
-    <string name="title_keyboard_echo_handwriting_keyboard">Rukopis klávesnice echo</string>
+    <string name="title_keyboard_echo_handwriting_keyboard">Hlasový doprovod klávesnice pro psaní rukou</string>
     <string name="image_qna_ask_by_voice">Zeptejte se hlasem</string>
-    <string name="image_qna_stop_listening">Přestaň poslouchat</string>
+    <string name="image_qna_stop_listening">Zastavit poslech</string>
     <string name="image_qna_type_question">Zadejte otázku</string>
     <string name="shortcut_dictate">Diktovat</string>
-    <string name="title_pref_ai_dictation">Správný diktát s AI</string>
-    <string name="dictation_not_corrected">Neopraveno. Zapsáno jako rozpoznáno.</string>
+    <string name="title_pref_ai_dictation">Opravovat diktování pomocí AI</string>
+    <string name="dictation_not_corrected">Neopraveno. Zapsáno tak, jak bylo rozpoznáno.</string>
     <string name="dictation_nothing_recognized">Nic nebylo rozpoznáno</string>
     <string name="dictation_unavailable">Rozpoznávání řeči není k dispozici</string>
     <string name="dictation_field_gone">Textové pole uzavřeno. Nic nebylo napsáno.</string>

@@ -2,18 +2,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="shortcut_announce_status">Izgovori status</string>
     <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> od <xliff:g id="max_level" example="4">%2$d</xliff:g> palic</string>
-    <string name="status_wifi_off">Wi-Fi off</string>
+    <string name="status_wifi_off">Wi-Fi izklopljen</string>
     <string name="status_wifi_not_connected">Wi-Fi ni povezan</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
     <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
     <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
     <string name="status_mobile">Mobilni</string>
-    <string name="status_mobile_no_service">Ni mobilne storitve</string>
+    <string name="status_mobile_no_service">Ni mobilnega omrežja</string>
     <string name="status_do_not_disturb">Ne moti</string>
-    <string name="status_ringer_vibrate">Vibriraj</string>
+    <string name="status_ringer_vibrate">Vibriranje</string>
     <string name="status_ringer_silent">Tiho</string>
     <string name="status_airplane_mode">Letalski način</string>
-    <string name="title_pref_status_readout">Odčitavanje stanja</string>
+    <string name="title_pref_status_readout">Branje stanja</string>
     <string name="status_item_time">Čas</string>
     <string name="status_item_time_summary">Trenutni čas</string>
     <string name="status_item_battery">Baterija</string>
@@ -21,9 +21,9 @@
     <string name="status_item_wifi">Wi-Fi</string>
     <string name="status_item_wifi_summary">Ime omrežja in moč signala</string>
     <string name="status_item_mobile">Mobilno omrežje</string>
-    <string name="status_item_mobile_summary">Nosilec, vrsta omrežja in moč signala</string>
+    <string name="status_item_mobile_summary">Operater, vrsta omrežja in moč signala</string>
     <string name="status_item_ringer">Zvonjenje in Ne moti</string>
-    <string name="status_item_ringer_summary">Samo, ko zvonjenje ni nastavljeno na zvonjenje ali je vklopljen način Ne moti</string>
+    <string name="status_item_ringer_summary">Samo ko je zvonjenje nastavljeno na vibriranje ali tiho ali je vklopljen način »Ne moti«</string>
     <string name="status_item_airplane_mode">Letalski način</string>
     <string name="status_item_airplane_mode_summary">Samo, ko je vklopljen letalski način</string>
 </resources>

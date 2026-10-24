@@ -92,7 +92,7 @@
     <string name="script_inspect_no_item">Nijedna stavka nije fokusirana</string>
     <string name="script_inspect_copied">Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="script_inspect_no_id">Nema ID-a, pa je pravila ne mogu imenovati. Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="shortcut_copy_screen_tree">Kopiranje stabla ekrana</string>
+    <string name="shortcut_copy_screen_tree">Kopiraj stablo ekrana</string>
     <string name="script_tree_copied">Kopirano stavki: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Nema prozora za kopiranje</string>
     <string name="script_tree_clip_label">Stablo ekrana</string>
@@ -112,7 +112,7 @@
     <string name="script_binding_turn_off">Isključi</string>
     <string name="script_binding_restore">Vrati zadane postavke</string>
     <string name="script_binding_restored">Zadane postavke su vraćene</string>
-    <string name="script_binding_perform">Izvedi pokret ili tipke</string>
+    <string name="script_binding_perform">Izvedite pokret ili pritisnite tipke</string>
     <string name="script_binding_perform_summary">Dodjeljivanje sljedećeg pokreta ili tipki pritisnutih s modifikacijskom tipkom SandFlya</string>
     <string name="script_binding_perform_message">Izvedite pokret ili pritisnite tipke.</string>
     <string name="script_binding_assign_title">Dodijeliti <xliff:g id="binding">%1$s</xliff:g> komandi <xliff:g id="command">%2$s</xliff:g>?</string>
@@ -138,7 +138,7 @@
     <string name="script_source_remove">Ukloni izvor</string>
     <string name="script_source_remove_title">Ukloniti <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_source_remove_message">Skripte instalirane iz njega ostaju instalirane.</string>
-    <string name="scripts_auto_update">Ažurirajte skripte automatski</string>
+    <string name="scripts_auto_update">Automatski ažuriraj skripte</string>
     <string name="scripts_check_updates">Provjeri ima li ažuriranja</string>
     <string name="scripts_checking_updates">Provjera ažuriranja…</string>
     <string name="scripts_updates_category">Ažuriranja</string>
@@ -148,7 +148,7 @@
         <item quantity="few"><xliff:g id="count" example="2">%1$d</xliff:g> skripte ažurirane: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> ažuriranih skripti: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Ažuriranja su navedena pod Ažuriranja</string>
+    <string name="scripts_updates_to_approve">Ažuriranja su navedena u odjeljku „Ažuriranja“</string>
     <string name="scripts_update_check_failed">Neki izvori se nisu mogli provjeriti</string>
     <string name="scripts_up_to_date">Sve skripte su ažurirane</string>
 </resources>

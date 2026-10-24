@@ -54,7 +54,7 @@
     <string name="sound_theme_install_failed">SandFly kon nie die klanktema installeer nie. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">Skakels na klanktemas moet met https begin.</string>
     <string name="title_pref_theme_sounds_of">Klanke van <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
-    <string name="title_pref_theme_sounds_reset">Gebruik SandFly se klanke vir almal</string>
+    <string name="title_pref_theme_sounds_reset">Gebruik SandFly se klanke vir alles</string>
     <string name="theme_sounds_reset_confirm">Verwyder al die klanke van hierdie tema en gebruik SandFly se eie?</string>
     <string name="theme_sounds_reset_button">Verwyder</string>
     <string name="theme_sounds_category">Klanke</string>
@@ -69,7 +69,7 @@
     <string name="theme_sound_braille_new_line">Braille-sleutelbord: nuwe reël</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">Kies ’n klanklêer</string>
-    <string name="theme_sound_preview">Voorskou</string>
+    <string name="theme_sound_preview">Luister</string>
     <string name="theme_sound_none">Geen klank nie</string>
     <string name="theme_sound_summary_no_sound">Geen klank nie</string>
     <string name="theme_sound_action_set_none">Stel na geen klank nie</string>
@@ -80,8 +80,8 @@
     <string name="theme_sound_failed">SandFly kon nie daardie lêer lees nie.</string>
     <string name="title_pref_sound_theme_install_source">Uit \'n bron</string>
     <string name="summary_pref_sound_theme_install_source">Temalêers in \'n bewaarplek op GitHub, GitLab, Codeberg, Gitea of Bitbucket.</string>
-    <string name="sound_theme_sources">Klank tema bronne</string>
+    <string name="sound_theme_sources">Klanktemabronne</string>
     <string name="sound_theme_source_empty">Geen klanktemas in hierdie bron nie</string>
     <string name="sound_theme_source_failed">Kon nie klanktemas laai nie. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Klanktemas wat daaruit geïnstalleer word, bly geïnstalleer.</string>
+    <string name="sound_theme_source_remove_message">Klanktemas wat daaruit geïnstalleer is, bly geïnstalleer.</string>
 </resources>

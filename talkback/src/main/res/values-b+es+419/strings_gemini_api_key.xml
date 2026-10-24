@@ -11,14 +11,14 @@
     <string name="gemini_model_automatic">Automático</string>
     <string name="summary_pref_gemini_model_automatic">Automático: Gemini Flash, luego Flash-Lite cuando Flash está ocupado</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, luego Flash-Lite cuando esté ocupado</string>
-    <string name="gemini_model_loading">Obteniendo los modelos...</string>
+    <string name="gemini_model_loading">Obteniendo los modelos…</string>
     <string name="gemini_model_list_failed">No se pudieron obtener los modelos: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Configura primero una clave API de Gemini</string>
     <string name="ai_service_address_hint">Dirección, como https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Modelo</string>
     <string name="ai_service_address_invalid">La dirección debe comenzar con https://. No se guardó nada.</string>
     <string name="dialog_message_ai_service_consent">Las imágenes y capturas de pantalla se envían a <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> para ser descritas, lo que lleva varios segundos. Se aplican sus propios términos y política de privacidad. La IA generativa es experimental, por lo que cometerá errores.</string>
-    <string name="ai_service_error_api_key">El servicio de IA no ha aceptado la clave API. Revisa sus configuración en Descripciones automáticas.</string>
+    <string name="ai_service_error_api_key">El servicio de IA no aceptó la clave de API. Revisa su configuración en Descripciones automáticas.</string>
     <string name="ai_service_error_quota">Se ha alcanzado el límite de uso del servicio de IA. Vuelve a intentarlo más tarde.</string>
     <string name="ai_service_error_busy">El servicio de IA está ocupado en este momento. Inténtalo de nuevo en un momento.</string>
     <string name="ai_service_error_timeout">El servicio de IA ha tardado demasiado en responder. Inténtalo de nuevo.</string>
@@ -31,7 +31,7 @@
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Ninguno</string>
     <string name="ai_service_not_set_up">No hay ningún servicio de IA en uso. Configura uno o elígelo en los configuración de Descripciones automáticas.</string>
-    <string name="ai_provider_none_set_up">No hay ningún servicio de IA configurado. Configura uno en sus configuración de abajo.</string>
+    <string name="ai_provider_none_set_up">No hay ningún servicio de IA configurado. Configura uno en su configuración, abajo.</string>
     <string name="ai_provider_other">Otro servicio</string>
     <string name="title_pref_category_ai_services">Servicios de IA</string>
     <string name="title_pref_ai_provider">Servicio de IA</string>
@@ -49,6 +49,6 @@
     <string name="ai_provider_choose_model">No elegido</string>
     <string name="ai_provider_key_message">Pega tu clave API de <xliff:g id="service" example="Claude">%1$s</xliff:g>. Para eliminarla, vacía el campo y guarda. Las imágenes y pantallas que solicites describir se envían a <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Configura primero la clave API de <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="ai_provider_needs_address">Establecer la dirección primero</string>
-    <string name="ai_provider_enter_model">Introduzca un nombre de modelo</string>
+    <string name="ai_provider_needs_address">Primero establece la dirección</string>
+    <string name="ai_provider_enter_model">Ingresa un nombre de modelo</string>
 </resources>

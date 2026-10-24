@@ -1314,7 +1314,7 @@
     <string name="title_pref_voice_profile_in_use">Profil vocal utilisé</string>
     <string name="title_pref_add_voice_profile">Ajouter un profil vocal</string>
     <string name="voice_profile_new_name">Profil vocal <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Un profil vocal s\'appelle déjà <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_name_taken">Il existe déjà un profil vocal nommé <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Nom</string>
     <string name="title_pref_voice_profile_language">Langue</string>
     <string name="title_pref_voice_profile_voice">Voix</string>
@@ -1563,7 +1563,7 @@
     <string name="title_pref_speech_stream">Volume de la voix</string>
     <string name="summary_selector_speech_stream">Basculez entre les volumes d\'accessibilité, de média, de sonnerie et d\'appel</string>
     <string name="speech_stream_accessibility">Volume d\'accessibilité</string>
-    <string name="speech_stream_media">Volume des médias</string>
+    <string name="speech_stream_media">Volume multimédia</string>
     <string name="speech_stream_ring">Volume de la sonnerie</string>
     <string name="speech_stream_call">Volume d\'appel, écouteur</string>
     <string-array name="pref_speech_stream_entries">
@@ -1577,7 +1577,7 @@
     <string name="summary_pref_play_installer_pending">Activé, mais Google Play n\'est pas encore enregistré en tant qu\'installateur. SandFly le définit lorsque Shizuku est disponible.</string>
     <string name="notification_list_show_all">Afficher tout</string>
     <string name="notification_list_show_less">Afficher moins</string>
-    <string name="title_pref_quick_settings">Utilisez les paramètres rapides de SandFly</string>
+    <string name="title_pref_quick_settings">Utiliser les paramètres rapides de SandFly</string>
     <string name="title_pref_quick_settings_items">Panneau de paramètres rapides</string>
     <string name="quick_settings_title">Réglages rapides</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
@@ -1596,7 +1596,7 @@
     <string name="quick_settings_nfc">NFC</string>
     <string name="quick_settings_brightness">Luminosité</string>
     <string name="quick_settings_adaptive_brightness">Luminosité adaptative</string>
-    <string name="quick_settings_media_volume">Volume des médias</string>
+    <string name="quick_settings_media_volume">Volume multimédia</string>
     <string name="quick_settings_call_volume">Volume d\'appel</string>
     <string name="quick_settings_ring_volume">Volume de la sonnerie</string>
     <string name="quick_settings_notification_volume">Volume des notifications</string>
@@ -1612,7 +1612,7 @@
     <string name="quick_settings_camera_access">Accès à la caméra</string>
     <string name="quick_settings_screen_timeout">Délai de mise en veille de l’écran</string>
     <string name="quick_settings_font_size">Taille de la police</string>
-    <string name="quick_settings_media">Médias</string>
+    <string name="quick_settings_media">Multimédia</string>
     <string name="quick_settings_no_media">Aucun média</string>
     <string name="quick_settings_media_output">Sortie multimédia</string>
     <string name="quick_settings_next_alarm">Alarme suivante</string>
@@ -1630,8 +1630,8 @@
     </plurals>
     <plurals name="quick_settings_minutes">
         <item quantity="one">%d minute</item>
-        <item quantity="many">%d minute</item>
-        <item quantity="other">%d minute</item>
+        <item quantity="many">%d minutes</item>
+        <item quantity="other">%d minutes</item>
     </plurals>
     <string name="quick_settings_connected">Connecté</string>
     <string name="quick_settings_battery">Batterie</string>
@@ -1671,7 +1671,7 @@
     <string name="reading_control_letter_none">Aucun</string>
     <string name="handwriting_prompt">Écrire une lettre</string>
     <string name="handwriting_closed">Écriture manuscrite fermée</string>
-    <string name="handwriting_no_match">Aucune commande de lecture ne commence par <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
+    <string name="handwriting_no_match">Aucun contrôle de lecture ne commence par <xliff:g id="letter" example="Q">%1$s</xliff:g></string>
     <string name="shortcut_write_app_name">Écrire le nom d\'une application pour l\'ouvrir</string>
     <string name="handwriting_app_prompt">Écrivez le nom d\'une application</string>
     <string name="handwriting_no_app">Aucune application ne commence par <xliff:g id="letters" example="WHA">%1$s</xliff:g></string>
@@ -1685,7 +1685,7 @@
     <string name="handwriting_download_failed">La reconnaissance de l\'écriture manuscrite n\'a pas pu être téléchargée. Vérifiez la connexion Internet.</string>
     <string name="handwriting_unsupported_language">La reconnaissance de l\'écriture manuscrite n\'est pas disponible dans cette langue</string>
     <string name="title_pref_handwriting_keyboard">Clavier d\'écriture manuscrite</string>
-    <string name="summary_pref_handwriting_keyboard">Activez l\'écriture manuscrite SandFly dans les paramètres du clavier de Android</string>
+    <string name="summary_pref_handwriting_keyboard">Activez l\'écriture manuscrite SandFly dans les paramètres du clavier d\'Android</string>
     <string name="title_pref_handwriting_wait">Délai après l’écriture</string>
     <string name="value_handwriting_wait_200">0,2 seconde</string>
     <string name="value_handwriting_wait_300">0,3 seconde</string>
@@ -1697,18 +1697,18 @@
     <string name="handwriting_keyboard_name">Écriture manuscrite SandFly</string>
     <string name="handwriting_space">Espace</string>
     <string name="handwriting_new_line">Nouvelle ligne</string>
-    <string name="handwriting_tutorial_intro">Tutoriel sur le clavier d\'écriture manuscrite. Écrivez avec un doigt n\'importe où sur l\'écran. Ce que vous écrivez est tapé lorsque vous vous arrêtez un instant. Pour terminer le didacticiel, faites glisser trois doigts vers le bas.</string>
+    <string name="handwriting_tutorial_intro">Tutoriel du clavier d\'écriture manuscrite. Écrivez avec un doigt n\'importe où sur l\'écran. Ce que vous écrivez est saisi lorsque vous vous arrêtez un instant. Pour terminer le tutoriel, balayez l\'écran vers le bas avec trois doigts.</string>
     <string name="handwriting_tutorial_write_letter">Écrivez la lettre a.</string>
     <string name="handwriting_tutorial_write_word">Écrivez maintenant le mot hi.</string>
     <string name="handwriting_tutorial_typed">Tapé <xliff:g id="text" example="a">%1$s</xliff:g>.</string>
-    <string name="handwriting_tutorial_space">Faites glisser vers la droite avec deux doigts pour saisir un espace.</string>
+    <string name="handwriting_tutorial_space">Balayez vers la droite avec deux doigts pour saisir un espace.</string>
     <string name="handwriting_tutorial_delete">Balayez vers la gauche avec deux doigts pour supprimer le caractère avant le curseur.</string>
     <string name="handwriting_tutorial_deleted">Supprimé.</string>
     <string name="handwriting_tutorial_next_reading">Si un autre caractère est saisi, par exemple une majuscule, balayez vers le haut avec deux doigts pour choisir la suggestion suivante. Essayez maintenant.</string>
     <string name="handwriting_tutorial_read_back">Appuyez avec deux doigts pour lire le texte avant le curseur.</string>
     <string name="handwriting_tutorial_new_line">Balayez vers le bas avec deux doigts pour insérer une nouvelle ligne ou exécuter l’action du champ, par exemple Envoyer.</string>
     <string name="handwriting_tutorial_not_that">C\'était un autre geste.</string>
-    <string name="handwriting_tutorial_done">Nouvelle ligne. Tutoriel terminé. Faites glisser votre doigt vers le bas avec trois doigts pour masquer le clavier, et vers la droite ou la gauche avec trois doigts pour changer de clavier. Pour ouvrir à nouveau le didacticiel, appuyez avec trois doigts.</string>
+    <string name="handwriting_tutorial_done">Nouvelle ligne. Tutoriel terminé. Balayez l\'écran vers le bas avec trois doigts pour masquer le clavier, et vers la droite ou la gauche avec trois doigts pour changer de clavier. Pour rouvrir le tutoriel, appuyez avec trois doigts.</string>
     <string name="handwriting_tutorial_finished">Tutoriel terminé. Pour l\'ouvrir à nouveau, appuyez avec trois doigts.</string>
     <string name="handwriting_no_alternatives">Aucune autre suggestion</string>
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> de <xliff:g id="count" example="5">%3$d</xliff:g></string>
@@ -1719,18 +1719,18 @@
     <string name="shortcut_system_quick_settings">Paramètres rapides du système</string>
     <string name="shortcut_lock_screen">Verrouiller l’écran</string>
     <string name="shortcut_power_menu">Menu d\'alimentation</string>
-    <string name="shortcut_increase_media_volume">Augmenter le volume des médias</string>
-    <string name="shortcut_decrease_media_volume">Diminuer le volume des médias</string>
-    <string name="title_pref_shortcut_edge_top_left_long_down">Balayez longuement vers le bas depuis le coin supérieur gauche</string>
-    <string name="title_pref_shortcut_edge_top_right_long_down">Balayez longuement vers le bas depuis le coin supérieur droit</string>
-    <string name="title_pref_shortcut_edge_left_top_right">Faites glisser votre doigt vers la droite depuis le bord gauche, moitié supérieure</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">Balayage long vers la droite depuis le bord gauche, moitié supérieure</string>
-    <string name="title_pref_shortcut_edge_left_bottom_right">Balayez vers la droite depuis le bord gauche, la moitié inférieure</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">Balayage long vers la droite à partir du bord gauche, moitié inférieure</string>
-    <string name="title_pref_shortcut_edge_right_top_left">Balayez vers la gauche depuis le bord droit, moitié supérieure</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">Balayage long vers la gauche depuis le bord droit, moitié supérieure</string>
-    <string name="title_pref_shortcut_edge_right_bottom_left">Balayez vers la gauche à partir du bord droit, moitié inférieure</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">Balayage long vers la gauche à partir du bord droit, moitié inférieure</string>
+    <string name="shortcut_increase_media_volume">Augmenter le volume multimédia</string>
+    <string name="shortcut_decrease_media_volume">Baisser le volume multimédia</string>
+    <string name="title_pref_shortcut_edge_top_left_long_down">Balayer longuement vers le bas depuis le haut à gauche</string>
+    <string name="title_pref_shortcut_edge_top_right_long_down">Balayer longuement vers le bas depuis le haut à droite</string>
+    <string name="title_pref_shortcut_edge_left_top_right">Balayer vers la droite depuis le bord gauche, moitié supérieure</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">Balayer longuement vers la droite depuis le bord gauche, moitié supérieure</string>
+    <string name="title_pref_shortcut_edge_left_bottom_right">Balayer vers la droite depuis le bord gauche, moitié inférieure</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">Balayer longuement vers la droite depuis le bord gauche, moitié inférieure</string>
+    <string name="title_pref_shortcut_edge_right_top_left">Balayer vers la gauche depuis le bord droit, moitié supérieure</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">Balayer longuement vers la gauche depuis le bord droit, moitié supérieure</string>
+    <string name="title_pref_shortcut_edge_right_bottom_left">Balayer vers la gauche depuis le bord droit, moitié inférieure</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">Balayer longuement vers la gauche depuis le bord droit, moitié inférieure</string>
     <string name="title_pref_edge_first_click_mm">Distance jusqu\'au premier clic</string>
     <string name="title_pref_edge_second_click_mm">Distance du premier au deuxième clic</string>
     <string name="value_distance_5mm">0,5 cm</string>
@@ -1742,7 +1742,7 @@
     <string name="value_distance_50mm">5 cm</string>
     <string name="title_pref_selector_links_controls_web_only">Liens et contrôles uniquement dans le contenu Web</string>
     <string name="title_pref_selector_auto_switch">Changer automatiquement de commande de lecture</string>
-    <string name="title_pref_touch_stops_speech">Arrêter de parler lorsque vous touchez l\'écran</string>
+    <string name="title_pref_touch_stops_speech">Arrêter la synthèse vocale au toucher de l\'écran</string>
     <string name="title_pref_volume_keys_move_cursor">Les touches de volume déplacent le curseur</string>
     <string name="summary_pref_volume_keys_move_cursor">Quand un champ de texte a le focus, Volume plus recule le curseur d’un caractère et Volume moins l’avance</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Écho du clavier d\'écriture manuscrite</string>
@@ -1751,10 +1751,10 @@
     <string name="image_qna_type_question">Tapez une question</string>
     <string name="shortcut_dictate">Dicter</string>
     <string name="title_pref_ai_dictation">Corriger la dictée avec l\'IA</string>
-    <string name="dictation_not_corrected">Non corrigé. Tapé comme reconnu.</string>
-    <string name="dictation_nothing_recognized">Rien de reconnu</string>
+    <string name="dictation_not_corrected">Non corrigé. Saisi tel que reconnu.</string>
+    <string name="dictation_nothing_recognized">Aucune parole reconnue</string>
     <string name="dictation_unavailable">Reconnaissance vocale indisponible</string>
-    <string name="dictation_field_gone">Champ de texte fermé. Rien de tapé.</string>
+    <string name="dictation_field_gone">Champ de texte fermé. Rien n\'a été saisi.</string>
     <string name="dictation_transcription_failed">Voix non transcrite. Rien de tapé.</string>
     <string name="title_pref_dictation">Dictée</string>
     <string name="title_pref_dictation_rambler_live">Transcription en direct Rambler</string>

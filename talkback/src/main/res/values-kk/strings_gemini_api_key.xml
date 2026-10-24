@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API кілті</string>
-    <string name="summary_pref_gemini_api_key_built_in">Осы қолданбаға енгізілген кілтті пайдалану</string>
-    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey сайтында Google AI Studio сайтынан тегін API кілтін алыңыз және оны осы жерге қойыңыз. Кілтті жою үшін өрісті тазалап, сақтаңыз.\n\nСіз сипаттайтын кескіндер мен экрандар Google мекенжайына жіберіледі. Тегін деңгейде Google оларды өз өнімдерін жақсарту үшін пайдалана алады.</string>
+    <string name="summary_pref_gemini_api_key_built_in">Осы қолданбаға кіріктірілген кілт пайдаланылуда</string>
+    <string name="gemini_api_key_dialog_message">Google AI Studio-дан aistudio.google.com/apikey мекенжайы бойынша тегін API кілтін алып, осы жерге қойыңыз. Кілтті жою үшін өрісті тазалап, сақтаңыз.\n\nСипаттауын сұраған суреттер мен экрандар Google-ға жіберіледі. Тегін тарифте Google оларды өз өнімдерін жақсарту үшін пайдалана алады.</string>
     <string name="gemini_api_key_hint">API кілті</string>
     <string name="gemini_api_key_save">Сақтау</string>
-    <string name="gemini_api_key_get">Кілтті алыңыз</string>
+    <string name="gemini_api_key_get">Кілт алу</string>
     <string name="title_pref_gemini_model">Gemini үлгісі</string>
     <string name="gemini_model_automatic">Автоматты</string>
     <string name="summary_pref_gemini_model_automatic">Автоматты: Gemini Flash, содан кейін Flash бос емес кезде Flash-Lite</string>
@@ -14,10 +14,10 @@
     <string name="gemini_model_list_failed">Үлгілерді алу мүмкін болмады: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">Алдымен Gemini API кілтін орнатыңыз</string>
     <string name="gemini_api_terms_link">Gemini API қосымша қызмет көрсету шарттары</string>
-    <string name="ai_service_address_hint">Https://openrouter.ai/api/v1 сияқты мекенжай</string>
+    <string name="ai_service_address_hint">Мекенжай, мысалы, https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Үлгі</string>
-    <string name="ai_service_address_invalid">Мекенжай https://. деп басталуы керек Ештеңе сақталмады.</string>
-    <string name="dialog_message_ai_service_consent">Суреттер мен скриншоттар сипатталу үшін <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> мекенжайына жіберіледі, бұл бірнеше секундты алады. Оның жеке шарттары мен құпиялылық саясаты қолданылады. Генеративті AI эксперименталды, сондықтан ол қателіктер жібереді.</string>
+    <string name="ai_service_address_invalid">Мекенжай https:// деп басталуы керек. Ештеңе сақталмады.</string>
+    <string name="dialog_message_ai_service_consent">Суреттер мен скриншоттар сипаттау үшін <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> қызметіне жіберіледі, бұл бірнеше секундқа созылады. Қызметтің өз шарттары мен құпиялық саясаты қолданылады. Генеративтік ЖИ сынақ кезеңінде, сондықтан қателеседі.</string>
     <string name="ai_service_error_api_key">AI қызметі API кілтін қабылдамады. Оның параметрлерін Автоматты сипаттамаларда тексеріңіз.</string>
     <string name="ai_service_error_quota">AI қызметін пайдалану шегіне жетті. Әрекетті кейінірек қайталаңыз.</string>
     <string name="ai_service_error_busy">AI қызметі қазір бос емес. Біраз уақыттан кейін қайталап көріңіз.</string>
@@ -39,16 +39,16 @@
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, орнатылмаған</string>
     <string name="ai_provider_in_use">Қолдануда</string>
     <string name="ai_provider_not_set_up">Орнатылмаған</string>
-    <string name="ai_provider_not_ready">Алдымен үлгіні таңдаңыз</string>
+    <string name="ai_provider_not_ready">Алдымен модельді таңдаңыз</string>
     <string name="ai_provider_address">Мекенжай</string>
-    <string name="ai_provider_address_message">OpenAI-үйлесімді сөйлесу API және https://example.com/v1. сияқты кескін енгізуі бар қызмет мекенжайы</string>
+    <string name="ai_provider_address_message">OpenAI-мен үйлесімді чат API-і және сурет енгізу мүмкіндігі бар қызметтің мекенжайы, мысалы, https://example.com/v1.</string>
     <string name="ai_provider_not_set">Орнатылмаған</string>
     <string name="ai_provider_set">Конфигурацияланған</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API кілті</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> үлгісі</string>
     <string name="ai_provider_choose_model">Таңдалмаған</string>
-    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API кілтін қойыңыз. Оны жою үшін өрісті тазалап, сақтаңыз. Сіз сипаттайтын кескіндер мен экрандар <xliff:g id="service" example="Claude">%1$s</xliff:g> мекенжайына жіберіледі.</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API кілтін қойыңыз. Жою үшін өрісті тазалап, сақтаңыз. Сипаттауын сұраған суреттер мен экрандар <xliff:g id="service" example="Claude">%1$s</xliff:g> қызметіне жіберіледі.</string>
     <string name="ai_provider_needs_key">Алдымен <xliff:g id="service" example="Claude">%1$s</xliff:g> API кілтін орнатыңыз</string>
     <string name="ai_provider_needs_address">Алдымен мекенжайды орнатыңыз</string>
-    <string name="ai_provider_enter_model">Үлгі атауын енгізіңіз</string>
+    <string name="ai_provider_enter_model">Модель атауын енгізіңіз</string>
 </resources>

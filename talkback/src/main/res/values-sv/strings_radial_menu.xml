@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_radial_menu">Cirkelmeny</string>
-    <string name="summary_pref_radial_menu">Visa menyn SandFly som en cirkel i mitten av skärmen. Skjut till ett objekt och lyft för att välja det.</string>
-    <string name="template_radial_menu_submenu"><xliff:g id="title" example="Navigation">%1$s</xliff:g> meny</string>
+    <string name="summary_pref_radial_menu">Visar SandFly-menyn som en cirkel mitt på skärmen. Dra till ett objekt och lyft fingret för att välja det.</string>
+    <string name="template_radial_menu_submenu"><xliff:g id="title" example="Navigation">%1$s</xliff:g>-meny</string>
     <string name="radial_menu_cancel">Avbryt</string>
     <string name="radial_menu_closed">Menyn stängd</string>
-    <string name="hint_radial_menu">Tryck på mitten av skärmen och glid mot ett objekt och lyft sedan för att välja det. Lyft i mitten för att stänga.</string>
+    <string name="hint_radial_menu">Tryck mitt på skärmen och dra mot ett objekt. Lyft fingret för att välja det. Lyft fingret i mitten för att stänga.</string>
 </resources>

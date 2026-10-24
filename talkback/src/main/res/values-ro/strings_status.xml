@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="shortcut_announce_status">Vorbește starea</string>
+    <string name="shortcut_announce_status">Rostește starea</string>
     <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> din <xliff:g id="max_level" example="4">%2$d</xliff:g> bare</string>
     <string name="status_wifi_off">Wi-Fi oprit</string>
     <string name="status_wifi_not_connected">Wi-Fi nu este conectat</string>
@@ -8,22 +8,22 @@
     <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
     <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
     <string name="status_mobile">Mobil</string>
-    <string name="status_mobile_no_service">Niciun serviciu mobil</string>
+    <string name="status_mobile_no_service">Fără serviciu mobil</string>
     <string name="status_do_not_disturb">Nu deranja</string>
-    <string name="status_ringer_vibrate">Vibrați</string>
-    <string name="status_ringer_silent">Tăcut</string>
+    <string name="status_ringer_vibrate">Vibrații</string>
+    <string name="status_ringer_silent">Silențios</string>
     <string name="status_airplane_mode">Modul avion</string>
     <string name="title_pref_status_readout">Citirea stării</string>
-    <string name="status_item_time">Timpul</string>
+    <string name="status_item_time">Ora</string>
     <string name="status_item_time_summary">Ora curentă</string>
-    <string name="status_item_battery">Bateria</string>
+    <string name="status_item_battery">Baterie</string>
     <string name="status_item_battery_summary">Nivelul bateriei, încărcarea și economisirea bateriei</string>
     <string name="status_item_wifi">Wi-Fi</string>
     <string name="status_item_wifi_summary">Numele rețelei și puterea semnalului</string>
     <string name="status_item_mobile">Rețea mobilă</string>
     <string name="status_item_mobile_summary">Operator, tip de rețea și puterea semnalului</string>
-    <string name="status_item_ringer">Sună și Nu deranja</string>
-    <string name="status_item_ringer_summary">Numai când soneria nu este setată să sune sau Nu deranjați este activată</string>
+    <string name="status_item_ringer">Sonerie și Nu deranja</string>
+    <string name="status_item_ringer_summary">Doar când soneria este setată pe vibrații sau silențios ori când Nu deranja este activat</string>
     <string name="status_item_airplane_mode">Modul avion</string>
     <string name="status_item_airplane_mode_summary">Numai când modul avion este activat</string>
 </resources>

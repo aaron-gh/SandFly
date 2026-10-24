@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="shortcut_announce_status">സംസാര നില</string>
-    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> of <xliff:g id="max_level" example="4">%2$d</xliff:g> ബാറുകൾ</string>
+    <string name="shortcut_announce_status">നില പറയുക</string>
+    <string name="template_status_bars"><xliff:g id="max_level" example="4">%2$d</xliff:g> ബാറുകളിൽ <xliff:g id="level" example="3">%1$d</xliff:g></string>
     <string name="status_wifi_off">Wi-Fi ഓഫ്</string>
     <string name="status_wifi_not_connected">Wi-Fi ബന്ധിപ്പിച്ചിട്ടില്ല</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
@@ -10,10 +10,10 @@
     <string name="status_mobile">മൊബൈൽ</string>
     <string name="status_mobile_no_service">മൊബൈൽ സേവനമില്ല</string>
     <string name="status_do_not_disturb">ശല്യപ്പെടുത്തരുത്</string>
-    <string name="status_ringer_vibrate">വൈബ്രേറ്റ് ചെയ്യുക</string>
+    <string name="status_ringer_vibrate">വൈബ്രേറ്റ്</string>
     <string name="status_ringer_silent">നിശബ്ദം</string>
     <string name="status_airplane_mode">വിമാന മോഡ്</string>
-    <string name="title_pref_status_readout">സ്റ്റാറ്റസ് റീഡൗട്ട്</string>
+    <string name="title_pref_status_readout">നില വായന</string>
     <string name="status_item_time">സമയം</string>
     <string name="status_item_time_summary">നിലവിലെ സമയം</string>
     <string name="status_item_battery">ബാറ്ററി</string>
@@ -22,8 +22,8 @@
     <string name="status_item_wifi_summary">നെറ്റ്‌വർക്കിൻ്റെ പേരും സിഗ്നൽ ശക്തിയും</string>
     <string name="status_item_mobile">മൊബൈൽ നെറ്റ്‌വർക്ക്</string>
     <string name="status_item_mobile_summary">കാരിയർ, നെറ്റ്‌വർക്ക് തരം, സിഗ്നൽ ശക്തി</string>
-    <string name="status_item_ringer">റിംഗർ ചെയ്യുക, ശല്യപ്പെടുത്തരുത്</string>
-    <string name="status_item_ringer_summary">റിംഗർ റിംഗുചെയ്യാൻ സജ്ജീകരിക്കാത്തപ്പോൾ അല്ലെങ്കിൽ ശല്യപ്പെടുത്തരുത് ഓണായിരിക്കുമ്പോൾ മാത്രം</string>
+    <string name="status_item_ringer">റിംഗറും ശല്യപ്പെടുത്തരുത് മോഡും</string>
+    <string name="status_item_ringer_summary">റിംഗർ വൈബ്രേറ്റിലോ നിശബ്‌ദമോ ആയിരിക്കുമ്പോൾ, അല്ലെങ്കിൽ ശല്യപ്പെടുത്തരുത് ഓണായിരിക്കുമ്പോൾ മാത്രം</string>
     <string name="status_item_airplane_mode">വിമാന മോഡ്</string>
     <string name="status_item_airplane_mode_summary">വിമാന മോഡ് ഓണായിരിക്കുമ്പോൾ മാത്രം</string>
 </resources>

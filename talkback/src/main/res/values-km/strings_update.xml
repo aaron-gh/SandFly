@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_check_for_updates">ពិនិត្យមើលបច្ចុប្បន្នភាព</string>
-    <string name="summary_pref_check_for_updates_version">កំណែ <xliff:g id="version" example="0.1.0">%1$s</xliff:g> បង្កើត<xliff:g id="build" example="96">%2$d</xliff:g></string>
-    <string name="title_pref_auto_update_check">ពិនិត្យដោយស្វ័យប្រវត្តិសម្រាប់ការអាប់ដេត</string>
-    <string name="summary_pref_auto_update_check">ពិនិត្យម្តងក្នុងមួយថ្ងៃ ហើយបង្ហាញការជូនដំណឹងនៅពេលដែលមានការសាងសង់ថ្មី។</string>
-    <string name="title_pref_dev_builds">ការអភិវឌ្ឍន៍ការកសាង</string>
+    <string name="summary_pref_check_for_updates_version">កំណែ <xliff:g id="version" example="0.1.0">%1$s</xliff:g> build <xliff:g id="build" example="96">%2$d</xliff:g></string>
+    <string name="title_pref_auto_update_check">ពិនិត្យរកការអាប់ដេតដោយស្វ័យប្រវត្តិ</string>
+    <string name="summary_pref_auto_update_check">ពិនិត្យម្ដងក្នុងមួយថ្ងៃ ហើយបង្ហាញការជូនដំណឹងនៅពេលមានកំណែថ្មី</string>
+    <string name="title_pref_dev_builds">កំណែអភិវឌ្ឍន៍</string>
     <string name="update_notification_title">SandFly មានការអាប់ដេត</string>
-    <string name="update_notification_text">សាងសង់<xliff:g id="build" example="97">%1$d</xliff:g>។ ប៉ះដើម្បីដំឡើង។</string>
-    <string name="update_dialog_title">SandFlyសាងសង់<xliff:g id="build" example="97">%1$d</xliff:g>មាន</string>
+    <string name="update_notification_text">Build <xliff:g id="build" example="97">%1$d</xliff:g>។ ប៉ះដើម្បីដំឡើង។</string>
+    <string name="update_dialog_title">មាន SandFly build <xliff:g id="build" example="97">%1$d</xliff:g> ហើយ</string>
     <string name="update_dialog_install">ដំឡើង</string>
     <string name="update_checking">កំពុងពិនិត្យមើលបច្ចុប្បន្នភាព</string>
     <string name="update_up_to_date">SandFly ទាន់សម័យ</string>
-    <string name="update_check_failed">មិនអាចពិនិត្យមើលបច្ចុប្បន្នភាពបានទេ។</string>
+    <string name="update_check_failed">មិនអាចពិនិត្យមើលបច្ចុប្បន្នភាពបានទេ</string>
     <string name="update_downloading">កំពុងទាញយកបច្ចុប្បន្នភាព</string>
     <string name="update_already_downloading">ការអាប់ដេតកំពុងទាញយករួចហើយ</string>
-    <string name="update_ready_title">SandFlyបានទាញយកបច្ចុប្បន្នភាព</string>
+    <string name="update_ready_title">បានទាញយកបច្ចុប្បន្នភាព SandFly</string>
     <string name="update_ready_text">ប៉ះដើម្បីដំឡើង។</string>
-    <string name="update_install_failed">មិនអាចដំឡើងបច្ចុប្បន្នភាពបានទេ។</string>
+    <string name="update_install_failed">មិនអាចដំឡើងបច្ចុប្បន្នភាពបានទេ</string>
     <string name="update_install_canceled">ការអាប់ដេតត្រូវបានលុបចោល</string>
     <string name="update_allow_install">អនុញ្ញាតឱ្យ SandFly ដំឡើងកម្មវិធី បន្ទាប់មកសាកល្បងអាប់ដេតម្តងទៀត</string>
 </resources>

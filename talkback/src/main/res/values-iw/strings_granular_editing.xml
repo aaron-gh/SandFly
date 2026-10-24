@@ -11,40 +11,40 @@
     <string name="granular_editing_space">רווח</string>
     <string name="granular_editing_new_line">שורה חדשה</string>
     <string name="granular_editing_tab">תו טאב</string>
-    <string name="granular_editing_empty">אין טקסט. השתמש ב-Add text בסוף, ב-More.</string>
-    <string name="granular_editing_edit">ערוך</string>
-    <string name="granular_editing_insert_before">הכנס לפני</string>
-    <string name="granular_editing_insert_after">הכנס אחרי</string>
+    <string name="granular_editing_empty">אין טקסט. אפשר להשתמש ב״הוספת טקסט בסוף״ בתפריט ״עוד״.</string>
+    <string name="granular_editing_edit">עריכה</string>
+    <string name="granular_editing_insert_before">הוספה לפני</string>
+    <string name="granular_editing_insert_after">הוספה אחרי</string>
     <string name="granular_editing_delete">מחיקה</string>
     <string name="granular_editing_select">בחירה</string>
-    <string name="granular_editing_unselect">בטל בחירה</string>
+    <string name="granular_editing_unselect">ביטול בחירה</string>
     <string name="granular_editing_selected">נבחר</string>
     <string name="granular_editing_save">שמירה</string>
     <string name="granular_editing_more">עוד</string>
-    <string name="granular_editing_undo">בטל</string>
-    <string name="granular_editing_redo">בצע שוב את העריכה האחרונה שבוטלה</string>
+    <string name="granular_editing_undo">ביטול</string>
+    <string name="granular_editing_redo">ביצוע מחדש</string>
     <string name="granular_editing_find">חיפוש</string>
-    <string name="granular_editing_find_next">מצא את הבא</string>
+    <string name="granular_editing_find_next">חיפוש הבא</string>
     <string name="granular_editing_replace">החלף</string>
-    <string name="granular_editing_replace_with">החלף ב</string>
-    <string name="granular_editing_replace_all">החלף הכל</string>
-    <string name="granular_editing_add_at_end">הוסף טקסט בסוף</string>
-    <string name="granular_editing_clear_selection">בטל את הבחירה בכל הטקסט</string>
-    <string name="granular_editing_cut_selected">גזור את הטקסט שנבחר</string>
-    <string name="granular_editing_delete_selected">מחק את הבחירה</string>
+    <string name="granular_editing_replace_with">החלפה ב</string>
+    <string name="granular_editing_replace_all">החלפת הכול</string>
+    <string name="granular_editing_add_at_end">הוספת טקסט בסוף</string>
+    <string name="granular_editing_clear_selection">ניקוי הבחירה</string>
+    <string name="granular_editing_cut_selected">גזירת הטקסט שנבחר</string>
+    <string name="granular_editing_delete_selected">מחיקת הבחירה</string>
     <string name="granular_editing_copied">הועתק</string>
     <string name="granular_editing_deleted">נמחק</string>
     <string name="granular_editing_not_found">לא נמצא</string>
     <plurals name="granular_editing_replaced">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> הוחלף</item>
-        <item quantity="two"><xliff:g id="count" example="3">%d</xliff:g> הוחלף</item>
-        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> הוחלף</item>
+        <item quantity="two"><xliff:g id="count" example="3">%d</xliff:g> הוחלפו</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> הוחלפו</item>
     </plurals>
     <string name="granular_editing_save_changes">לשמור שינויים?</string>
     <string name="granular_editing_copy_changes">להעתיק את הטקסט שהשתנה?</string>
-    <string name="granular_editing_discard">לזרוק</string>
-    <string name="granular_editing_keep_editing">תמשיך לערוך</string>
-    <string name="granular_editing_not_saved">לא נשמר: שדה הטקסט נעלם. הטקסט מועתק.</string>
+    <string name="granular_editing_discard">ביטול</string>
+    <string name="granular_editing_keep_editing">המשך עריכה</string>
+    <string name="granular_editing_not_saved">לא נשמר: שדה הטקסט כבר לא קיים. הטקסט הועתק.</string>
     <string name="granular_editing_no_text">אין טקסט לעריכה</string>
     <string name="granular_editing_password">לא זמין בשדות הסיסמה</string>
 </resources>

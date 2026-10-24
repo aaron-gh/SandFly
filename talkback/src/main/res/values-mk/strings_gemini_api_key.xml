@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API клуч</string>
-    <string name="summary_pref_gemini_api_key_built_in">Користење на клучот вграден во оваа апликација</string>
-    <string name="gemini_api_key_dialog_message">Добијте бесплатен API клуч од Google AI Studio, на aistudio.google.com/apikey и залепете го овде. За да го отстраните клучот, исчистете го полето и зачувајте.\n\nСликите и екраните што ги опишувате се испраќаат на Google. На слободното ниво, Google може да ги користи за да ги подобри своите производи.</string>
+    <string name="summary_pref_gemini_api_key_built_in">Се користи клучот вграден во апликацијава</string>
+    <string name="gemini_api_key_dialog_message">Добијте бесплатен API-клуч од Google AI Studio на aistudio.google.com/apikey и залепете го овде. За да го отстраните клучот, испразнете го полето и зачувајте.\n\nСликите и екраните за кои барате опис се испраќаат до Google. Со бесплатниот план, Google може да ги користи за подобрување на своите производи.</string>
     <string name="gemini_api_key_hint">API клуч</string>
     <string name="gemini_api_key_save">Зачувај</string>
-    <string name="gemini_api_key_get">Земете клуч</string>
+    <string name="gemini_api_key_get">Добиј клуч</string>
     <string name="title_pref_gemini_model">Gemini модел</string>
     <string name="gemini_model_automatic">Автоматски</string>
     <string name="summary_pref_gemini_model_automatic">Автоматски: Gemini Flash, потоа Flash-Lite кога Flash е зафатен</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, потоа Flash-Lite кога е зафатено</string>
     <string name="gemini_model_loading">Добивање на моделите…</string>
-    <string name="gemini_model_list_failed">Не можев да ги добијам моделите: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Прво поставете клуч Gemini API</string>
-    <string name="gemini_api_terms_link">Gemini Дополнителни услови за користење на API</string>
+    <string name="gemini_model_list_failed">Не можеа да се добијат моделите: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">Прво поставете API-клуч за Gemini</string>
+    <string name="gemini_api_terms_link">Дополнителни услови за користење на Gemini API</string>
     <string name="ai_service_address_hint">Адреса, како што е https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Модел</string>
     <string name="ai_service_address_invalid">Адресата мора да започнува со https://. Ништо не е зачувано.</string>
-    <string name="dialog_message_ai_service_consent">Сликите и сликите од екранот се испраќаат до <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> за да се опишат, што трае неколку секунди. Важат нејзините сопствени услови и политика за приватност. Генеративната вештачка интелигенција е експериментална, така што ќе прави грешки.</string>
-    <string name="ai_service_error_api_key">Услугата за вештачка интелигенција не го прифати клучот API. Проверете ги неговите поставки во Автоматски описи.</string>
+    <string name="dialog_message_ai_service_consent">Сликите и снимките од екранот се испраќаат до <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> за опис, што трае неколку секунди. Важат условите и политиката за приватност на таа услуга. Генеративната ВИ е експериментална, па ќе прави грешки.</string>
+    <string name="ai_service_error_api_key">Услугата за ВИ не го прифати API-клучот. Проверете ги нејзините поставки во „Автоматски описи“.</string>
     <string name="ai_service_error_quota">Ограничувањето за користење на услугата за вештачка интелигенција е достигнато. Обидете се повторно подоцна.</string>
     <string name="ai_service_error_busy">Услугата за вештачка интелигенција е зафатена во моментов. Обидете се повторно за момент.</string>
     <string name="ai_service_error_timeout">На услугата за вештачка интелигенција и требаше премногу долго за да одговори. Обидете се повторно.</string>
@@ -30,12 +30,12 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Нема</string>
-    <string name="ai_service_not_set_up">Не се користи услуга за вештачка интелигенција. Поставете еден или изберете еден во поставките за Автоматски описи.</string>
-    <string name="ai_provider_none_set_up">Не е поставена услуга за вештачка интелигенција. Поставете еден во неговите поставки подолу.</string>
+    <string name="ai_service_not_set_up">Не се користи ниедна услуга за ВИ. Поставете или изберете една во поставките за „Автоматски описи“.</string>
+    <string name="ai_provider_none_set_up">Не е поставена ниедна услуга за ВИ. Поставете една во нејзините поставки подолу.</string>
     <string name="ai_provider_other">Друга услуга</string>
     <string name="title_pref_category_ai_services">Услуги за вештачка интелигенција</string>
     <string name="title_pref_ai_provider">Услуга за вештачка интелигенција</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> поставки</string>
+    <string name="title_ai_provider_settings">Поставки за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, не е поставен</string>
     <string name="ai_provider_in_use">Во употреба</string>
     <string name="ai_provider_not_set_up">Не е поставено</string>
@@ -44,11 +44,11 @@
     <string name="ai_provider_address_message">Адреса на услуга со OpenAI компатибилен API за разговор и внесување слика, како што е https://example.com/v1.</string>
     <string name="ai_provider_not_set">Не е поставено</string>
     <string name="ai_provider_set">Конфигуриран</string>
-    <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API клуч</string>
+    <string name="title_pref_gemini_api_key_of">API клуч за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> модел</string>
     <string name="ai_provider_choose_model">Не е избрано</string>
-    <string name="ai_provider_key_message">Залепете го вашиот клуч <xliff:g id="service" example="Claude">%1$s</xliff:g> API. За да го отстраните, исчистете го полето и зачувајте. Сликите и екраните што ги опишувате се испраќаат на <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
-    <string name="ai_provider_needs_key">Прво поставете го копчето <xliff:g id="service" example="Claude">%1$s</xliff:g> API</string>
+    <string name="ai_provider_key_message">Залепете го вашиот API-клуч за <xliff:g id="service" example="Claude">%1$s</xliff:g>. За да го отстраните, испразнете го полето и зачувајте. Сликите и екраните за кои барате опис се испраќаат до <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_needs_key">Прво поставете го API-клучот за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Прво поставете ја адресата</string>
     <string name="ai_provider_enter_model">Внесете име на модел</string>
 </resources>

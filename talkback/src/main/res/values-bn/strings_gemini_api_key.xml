@@ -9,19 +9,19 @@
     <string name="gemini_api_terms_link">Gemini API-এর অতিরিক্ত পরিষেবার শর্তাবলী</string>
     <string name="title_pref_gemini_model">Gemini মডেল</string>
     <string name="gemini_model_automatic">স্বয়ংক্রিয়</string>
-    <string name="summary_pref_gemini_model_automatic">স্বয়ংক্রিয়: Gemini ফ্ল্যাশ, তারপর ফ্ল্যাশ ব্যস্ত থাকলে ফ্ল্যাশ-লাইট৷</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, তারপর ফ্ল্যাশ-লাইট যখন ব্যস্ত থাকে</string>
-    <string name="gemini_model_loading">মডেলগুলো পাওয়া যাচ্ছে...</string>
+    <string name="summary_pref_gemini_model_automatic">স্বয়ংক্রিয়: Gemini Flash, Flash ব্যস্ত থাকলে Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ব্যস্ত থাকলে Flash-Lite</string>
+    <string name="gemini_model_loading">মডেলগুলো পাওয়া যাচ্ছে…</string>
     <string name="gemini_model_list_failed">মডেলগুলি পাওয়া যায়নি: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
     <string name="gemini_model_needs_key">প্রথমে একটি Gemini API কী সেট করুন</string>
     <string name="ai_service_address_hint">ঠিকানা, যেমন https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">মডেল</string>
-    <string name="ai_service_address_invalid">ঠিকানাটি অবশ্যই https://. দিয়ে শুরু হবে কিছুই সংরক্ষিত হয়নি৷</string>
-    <string name="dialog_message_ai_service_consent">চিত্র এবং স্ক্রিনশটগুলি বর্ণনা করার জন্য <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> এ পাঠানো হয়, যা কয়েক সেকেন্ড সময় নেয়। এর নিজস্ব শর্তাবলী এবং গোপনীয়তা নীতি প্রযোজ্য। জেনারেটিভ এআই পরীক্ষামূলক, তাই এটি ভুল করবে।</string>
+    <string name="ai_service_address_invalid">ঠিকানাটি https:// দিয়ে শুরু হতে হবে। কিছুই সেভ করা হয়নি।</string>
+    <string name="dialog_message_ai_service_consent">বর্ণনার জন্য ছবি ও স্ক্রিনশট <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>-এ পাঠানো হয়, এতে কয়েক সেকেন্ড সময় লাগে। পরিষেবাটির নিজস্ব শর্তাবলি ও গোপনীয়তা নীতি প্রযোজ্য। জেনারেটিভ AI পরীক্ষামূলক, তাই এটি ভুল করবে।</string>
     <string name="ai_service_error_api_key">AI পরিষেবা API কী গ্রহণ করেনি। স্বয়ংক্রিয় বিবরণে এর সেটিংস পরীক্ষা করুন।</string>
     <string name="ai_service_error_quota">AI পরিষেবার ব্যবহারের সীমা পৌঁছে গেছে। পরে আবার চেষ্টা করুন.</string>
     <string name="ai_service_error_busy">এআই পরিষেবা এখন ব্যস্ত। কিছুক্ষণের মধ্যে আবার চেষ্টা করুন।</string>
-    <string name="ai_service_error_timeout">AI পরিষেবাটি উত্তর দিতে খুব বেশি সময় নিয়েছে। আবার চেষ্টা করুন</string>
+    <string name="ai_service_error_timeout">AI পরিষেবাটি উত্তর দিতে খুব বেশি সময় নিয়েছে। আবার চেষ্টা করুন।</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API কী</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> মডেল</string>
     <string name="ai_provider_choose_model">নির্বাচিত হয়নি</string>
-    <string name="ai_provider_key_message">আপনার <xliff:g id="service" example="Claude">%1$s</xliff:g> API কী পেস্ট করুন। এটি অপসারণ করতে, ক্ষেত্রটি সাফ করুন এবং সংরক্ষণ করুন। আপনার বর্ণনা করা ছবি এবং স্ক্রীন <xliff:g id="service" example="Claude">%1$s</xliff:g> এ পাঠানো হয়েছে।</string>
+    <string name="ai_provider_key_message">আপনার <xliff:g id="service" example="Claude">%1$s</xliff:g> API কী পেস্ট করুন। সরাতে ফিল্ডটি খালি করে সেভ করুন। আপনি যেসব ছবি ও স্ক্রিনের বর্ণনা চান, সেগুলি <xliff:g id="service" example="Claude">%1$s</xliff:g>-এ পাঠানো হয়।</string>
     <string name="ai_provider_needs_key">প্রথমে <xliff:g id="service" example="Claude">%1$s</xliff:g> API কী সেট করুন</string>
     <string name="ai_provider_needs_address">আগে ঠিকানা সেট করুন</string>
     <string name="ai_provider_enter_model">একটি মডেলের নাম লিখুন</string>

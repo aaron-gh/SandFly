@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API atslēga</string>
-    <string name="summary_pref_gemini_api_key_built_in">Izmantojot šajā lietotnē iebūvēto atslēgu</string>
-    <string name="gemini_api_key_dialog_message">Iegūstiet bezmaksas API atslēgu no Google AI Studio vietnē aistudio.google.com/apikey un ielīmējiet to šeit. Lai noņemtu atslēgu, notīriet lauku un saglabājiet.\n\nJūsu aprakstītie attēli un ekrāni tiek nosūtīti uz Google. Bezmaksas līmenī Google var tos izmantot, lai uzlabotu savus produktus.</string>
+    <string name="summary_pref_gemini_api_key_built_in">Tiek izmantota šajā lietotnē iebūvētā atslēga</string>
+    <string name="gemini_api_key_dialog_message">Iegūstiet bezmaksas API atslēgu vietnē Google AI Studio, aistudio.google.com/apikey, un ielīmējiet to šeit. Lai noņemtu atslēgu, notīriet lauku un saglabājiet.\n\nAttēli un ekrāni, kuru aprakstu pieprasāt, tiek nosūtīti uzņēmumam Google. Bezmaksas plānā Google var tos izmantot savu produktu uzlabošanai.</string>
     <string name="gemini_api_key_hint">API atslēga</string>
     <string name="gemini_api_key_save">Saglabāt</string>
-    <string name="gemini_api_key_get">Paņemiet atslēgu</string>
+    <string name="gemini_api_key_get">Iegūt atslēgu</string>
     <string name="title_pref_gemini_model">Gemini modelis</string>
     <string name="gemini_model_automatic">Automātiski</string>
     <string name="summary_pref_gemini_model_automatic">Automātiski: Gemini Flash, pēc tam Flash-Lite, kad Flash ir aizņemts</string>
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, pēc tam Flash-Lite, kad tas ir aizņemts</string>
     <string name="gemini_model_loading">Modeļu iegūšana…</string>
     <string name="gemini_model_list_failed">Nevarēja iegūt modeļus: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Vispirms iestatiet API atslēgu Gemini</string>
+    <string name="gemini_model_needs_key">Vispirms iestatiet Gemini API atslēgu</string>
     <string name="gemini_api_terms_link">Gemini API papildu pakalpojumu sniegšanas noteikumi</string>
     <string name="ai_service_address_hint">Adrese, piemēram, https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Modelis</string>
     <string name="ai_service_address_invalid">Adresei jāsākas ar https://. Nekas netika saglabāts.</string>
-    <string name="dialog_message_ai_service_consent">Attēli un ekrānuzņēmumi tiek nosūtīti uz <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, lai tos aprakstītu, un tas aizņem vairākas sekundes. Tiek piemēroti tā noteikumi un privātuma politika. Ģeneratīvais AI ir eksperimentāls, tāpēc tas pieļaus kļūdas.</string>
+    <string name="dialog_message_ai_service_consent">Attēli un ekrānuzņēmumi aprakstīšanai tiek nosūtīti uz <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, un tas aizņem vairākas sekundes. Ir spēkā šī pakalpojuma noteikumi un privātuma politika. Ģeneratīvais MI ir eksperimentāls, tāpēc tas kļūdīsies.</string>
     <string name="ai_service_error_api_key">AI pakalpojums nepieņēma API atslēgu. Pārbaudiet tā iestatījumus sadaļā Automātiskie apraksti.</string>
     <string name="ai_service_error_quota">Ir sasniegts AI pakalpojuma lietošanas ierobežojums. Vēlāk mēģiniet vēlreiz.</string>
     <string name="ai_service_error_busy">AI pakalpojums šobrīd ir aizņemts. Pēc brīža mēģiniet vēlreiz.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API atslēga</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modelis</string>
     <string name="ai_provider_choose_model">Nav izvēlēts</string>
-    <string name="ai_provider_key_message">Ielīmējiet savu <xliff:g id="service" example="Claude">%1$s</xliff:g> API atslēgu. Lai to noņemtu, notīriet lauku un saglabājiet. Jūsu aprakstītie attēli un ekrāni tiek nosūtīti uz <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Ielīmējiet savu <xliff:g id="service" example="Claude">%1$s</xliff:g> API atslēgu. Lai to noņemtu, notīriet lauku un saglabājiet. Attēli un ekrāni, kuru aprakstu pieprasāt, tiek nosūtīti uz <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Vispirms iestatiet API atslēgu <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Vispirms iestatiet adresi</string>
     <string name="ai_provider_enter_model">Ievadiet modeļa nosaukumu</string>

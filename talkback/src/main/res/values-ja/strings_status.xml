@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="shortcut_announce_status">発言ステータス</string>
-    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g>/<xliff:g id="max_level" example="4">%2$d</xliff:g> バー</string>
+    <string name="shortcut_announce_status">ステータスを読み上げ</string>
+    <string name="template_status_bars"><xliff:g id="max_level" example="4">%2$d</xliff:g> 本中 <xliff:g id="level" example="3">%1$d</xliff:g> 本</string>
     <string name="status_wifi_off">Wi-Fi オフ</string>
-    <string name="status_wifi_not_connected">Wi-Fi 接続されていません</string>
+    <string name="status_wifi_not_connected">Wi-Fi 未接続</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
     <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
     <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
     <string name="status_mobile">モバイル</string>
     <string name="status_mobile_no_service">モバイルサービスなし</string>
-    <string name="status_do_not_disturb">邪魔しないでください</string>
-    <string name="status_ringer_vibrate">振動する</string>
+    <string name="status_do_not_disturb">サイレント モード</string>
+    <string name="status_ringer_vibrate">バイブレーション</string>
     <string name="status_ringer_silent">サイレント</string>
     <string name="status_airplane_mode">機内モード</string>
-    <string name="title_pref_status_readout">ステータスの読み出し</string>
-    <string name="status_item_time">時間</string>
+    <string name="title_pref_status_readout">ステータスの読み上げ</string>
+    <string name="status_item_time">時刻</string>
     <string name="status_item_time_summary">現在時刻</string>
     <string name="status_item_battery">バッテリー</string>
     <string name="status_item_battery_summary">バッテリー残量、充電、バッテリーセーバー</string>
@@ -22,8 +22,8 @@
     <string name="status_item_wifi_summary">ネットワーク名と信号強度</string>
     <string name="status_item_mobile">モバイルネットワーク</string>
     <string name="status_item_mobile_summary">キャリア、ネットワークの種類、信号強度</string>
-    <string name="status_item_ringer">着信音と応答不可</string>
-    <string name="status_item_ringer_summary">着信音が鳴るように設定されていない場合、または「おやすみモード」がオンになっている場合のみ</string>
+    <string name="status_item_ringer">着信音とサイレント モード</string>
+    <string name="status_item_ringer_summary">着信音がバイブレーションまたはサイレントに設定されている場合、または「サイレント モード」がオンの場合のみ</string>
     <string name="status_item_airplane_mode">機内モード</string>
     <string name="status_item_airplane_mode_summary">機内モードがオンの場合のみ</string>
 </resources>

@@ -6,19 +6,19 @@
     <string name="script_install_label">Installer SandFly-skriptet</string>
     <string name="script_import_nothing">Det er ingen skriptfil å installere.</string>
     <string name="script_import_cannot_open">Filen kunne ikke åpnes.</string>
-    <string name="script_import_repository">Denne lenken er til et helt depot. Åpne skriptet du ønsker, og del deretter koblingen.</string>
+    <string name="script_import_repository">Denne lenken går til et helt repositorium. Åpne skriptet du vil ha, og del lenken til det.</string>
     <string name="script_import_summary">.lua-fil, eller .zip med main.lua</string>
     <string name="scripts_category_app">App-skript</string>
     <string name="scripts_category_global">Globale plugins</string>
     <string name="scripts_none">Ingen skript installert</string>
     <string name="scripts_all_off">Slå av alle skript</string>
-    <string name="scripts_all_off_summary">Skript forblir installert og beholder sine egne brytere. Slå alle skript på eller av-bevegelsen gjør det samme.</string>
+    <string name="scripts_all_off_summary">Skriptene forblir installert og beholder sine egne brytere. Bevegelsen «Slå alle skript på eller av» gjør det samme.</string>
     <string name="shortcut_toggle_scripts">Slå alle skript på eller av</string>
     <string name="scripts_now_off">Skript av</string>
     <string name="scripts_now_on">Skript på</string>
     <string name="scripts_unavailable">Skript er ikke tilgjengelig på denne enheten</string>
     <string name="script_add_example">Legg til eksempelskriptet</string>
-    <string name="script_add_example_summary">Sier navnet på hver app du bytter til. Et manus å starte fra.</string>
+    <string name="script_add_example_summary">Sier navnet på hver app du bytter til. Et skript å begynne med.</string>
     <string name="script_state_on">På</string>
     <string name="script_state_off">Av</string>
     <string name="script_runs_in">Kjører i <xliff:g id="apps">%1$s</xliff:g></string>
@@ -32,37 +32,37 @@
     <string name="script_update_title">Oppdatere <xliff:g id="name">%1$s</xliff:g> til <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nye tillatelser:</string>
     <string name="script_update_button">Oppdater</string>
-    <string name="script_update_replaces">Dette erstatter versjon <xliff:g id="version">%1$s</xliff:g> med <xliff:g id="author">%2$s</xliff:g>, og beholder sine data og innstillinger.</string>
-    <string name="script_update_other_author">Den nye er av <xliff:g id="author">%1$s</xliff:g>, en annen forfatter. Oppdater bare hvis du stoler på det.</string>
+    <string name="script_update_replaces">Dette erstatter versjon <xliff:g id="version">%1$s</xliff:g> av <xliff:g id="author">%2$s</xliff:g> og beholder dataene og innstillingene.</string>
+    <string name="script_update_other_author">Den nye er laget av <xliff:g id="author">%1$s</xliff:g>, en annen forfatter. Oppdater bare hvis du stoler på den.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> installert</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> oppdatert til <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Import mislyktes. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Tillat bare pålitelige skript.</string>
-    <string name="script_permission_screen">Les skjermen</string>
-    <string name="script_permission_actions">Klikk, rull, skriv og flytt fokus</string>
-    <string name="script_permission_speech">Hør og endre SandFly sin tale</string>
-    <string name="script_permission_passwords">Les passordfeltene</string>
-    <string name="script_permission_input">Legg til bevegelser, taster, menyelementer og lesekontroller</string>
-    <string name="script_permission_network">Bruk internett</string>
-    <string name="script_permission_clipboard">Les og endre utklippstavlen</string>
-    <string name="script_permission_system">Gå tilbake eller hjem, åpne varsler og apper</string>
-    <string name="script_permission_notifications">Les og endre talte varsler</string>
-    <string name="script_permission_events">Se all aktivitet i hver app, inkludert skriving</string>
-    <string name="script_permission_dialogs">Vis dialoger over alle apper</string>
-    <string name="script_permission_java">Kjør Java-kode med alle SandFlys tilgang, i hver app</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Tillat bare for pålitelige skript.</string>
+    <string name="script_permission_screen">Lese skjermen</string>
+    <string name="script_permission_actions">Klikke, rulle, skrive og flytte fokus</string>
+    <string name="script_permission_speech">Motta og endre talen til SandFly</string>
+    <string name="script_permission_passwords">Lese passordfelt</string>
+    <string name="script_permission_input">Legge til bevegelser, taster, menyelementer og lesekontroller</string>
+    <string name="script_permission_network">Bruke internett</string>
+    <string name="script_permission_clipboard">Lese og endre utklippstavlen</string>
+    <string name="script_permission_system">Gå tilbake eller til startskjermen, åpne varsler og apper</string>
+    <string name="script_permission_notifications">Lese og endre varsler som leses opp</string>
+    <string name="script_permission_events">Se all aktivitet i alle apper, inkludert skriving</string>
+    <string name="script_permission_dialogs">Vise dialogbokser over alle apper</string>
+    <string name="script_permission_java">Kjøre Java-kode med all tilgangen SandFly har, i alle apper</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Slå på</string>
     <string name="script_permissions_title">Tillatelser</string>
     <string name="script_permissions_none">Ingen</string>
     <string name="script_settings_category">Innstillinger</string>
     <string name="script_list_filter">Filter</string>
-    <string name="script_button_off">Slå på manuset først</string>
-    <string name="script_permissions_summary">Å slå av en stopper delene som trenger det.</string>
+    <string name="script_button_off">Slå på skriptet først</string>
+    <string name="script_permissions_summary">Hvis du slår av en tillatelse, stopper delene som trenger den.</string>
     <string name="script_install_permissions_note">Du kan slå av disse senere.</string>
-    <string name="script_manage_category">Administrer</string>
-    <string name="script_move_up">Løp tidligere</string>
+    <string name="script_manage_category">Administrasjon</string>
+    <string name="script_move_up">Kjør tidligere</string>
     <string name="script_move_down">Kjør senere</string>
-    <string name="script_order_summary">Rekkefølge for skript som endrer samme tale. App-skript kjører først.</string>
+    <string name="script_order_summary">Rekkefølge for skript som endrer den samme talen. App-skript kjøres først.</string>
     <string name="script_log">Logg</string>
     <string name="script_log_summary">Utdata og feil siden SandFly startet</string>
     <string name="script_clear_storage">Slett lagrede data</string>
@@ -76,10 +76,10 @@
     <string name="script_log_copy">Kopier logg</string>
     <string name="script_log_copied">Logg kopiert</string>
     <string name="script_log_entry"><xliff:g id="time">%1$s</xliff:g>, <xliff:g id="level">%2$s</xliff:g></string>
-    <string name="script_api_too_old">Trenger script API <xliff:g id="needed">%1$d</xliff:g> eller nyere. Denne SandFly har <xliff:g id="current">%2$d</xliff:g>, så det kan hende at deler ikke fungerer.</string>
-    <string name="script_api_untested">Testet opp til script API <xliff:g id="tested">%1$d</xliff:g>. Denne SandFly har <xliff:g id="current">%2$d</xliff:g>, så den fungerer kanskje ikke som forventet.</string>
-    <string name="script_state_incompatible">Fungerer kanskje ikke med denne SandFly</string>
-    <string name="script_api_range">Script API <xliff:g id="min">%1$d</xliff:g> til <xliff:g id="tested">%2$d</xliff:g></string>
+    <string name="script_api_too_old">Krever skript-API <xliff:g id="needed">%1$d</xliff:g> eller nyere. Denne SandFly-versjonen har <xliff:g id="current">%2$d</xliff:g>, så enkelte deler fungerer kanskje ikke.</string>
+    <string name="script_api_untested">Testet opp til skript-API <xliff:g id="tested">%1$d</xliff:g>. Denne SandFly-versjonen har <xliff:g id="current">%2$d</xliff:g>, så skriptet fungerer kanskje ikke som forventet.</string>
+    <string name="script_state_incompatible">Fungerer kanskje ikke med denne versjonen av SandFly</string>
+    <string name="script_api_range">Skript-API <xliff:g id="min">%1$d</xliff:g> til <xliff:g id="tested">%2$d</xliff:g></string>
     <string name="script_compatibility_title">Kompatibilitet</string>
     <string name="script_install_anyway">Installer uansett</string>
     <string name="script_update_anyway">Oppdater uansett</string>
@@ -87,40 +87,40 @@
     <string name="script_homepage_confirm_title">Åpne denne adressen?</string>
     <string name="script_homepage_open">Åpne</string>
     <string name="script_homepage_failed">Ingen app kan åpne <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> slått av etter gjentatte feil. Se påloggingen i Scripts.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ble slått av etter gjentatte feil. Se loggen i Skript.</string>
     <string name="shortcut_inspect_item">Inspiser fokusert element</string>
-    <string name="script_inspect_no_item">Ingen ting har fokus</string>
+    <string name="script_inspect_no_item">Ingen elementer har fokus</string>
     <string name="script_inspect_copied">Kopiert. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Ingen id, så regler kan ikke navngi det. Kopiert. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Ingen id, så regler kan ikke vise til det. Kopiert. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopier skjermtreet</string>
-    <string name="script_tree_copied">Kopierte <xliff:g id="count">%1$d</xliff:g> elementer</string>
+    <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> elementer kopiert</string>
     <string name="script_tree_none">Ingen vindu å kopiere</string>
     <string name="script_tree_clip_label">Skjermtre</string>
-    <string name="summary_copy_screen_tree_menu">Kopier alle elementer på skjermen som JSON, for å skrive skript</string>
-    <string name="script_inspect_clip_label">Varedetaljer</string>
-    <string name="summary_inspect_item_menu">Si og kopier detaljer om elementet du var på, for å skrive manus</string>
-    <string name="script_keys_backtalk_modifier">SandFly modifikator</string>
+    <string name="summary_copy_screen_tree_menu">Kopiere alle elementer på skjermen som JSON, for å skrive skript</string>
+    <string name="script_inspect_clip_label">Elementdetaljer</string>
+    <string name="summary_inspect_item_menu">Lese opp og kopiere detaljer om elementet som sist var i fokus, for å skrive skript</string>
+    <string name="script_keys_backtalk_modifier">SandFly-modifikatortast</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, deretter <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Kommandoer</string>
-    <string name="script_commands_summary">Bevegelser og taster til et kjørende skript kommer før SandFly. Slå av en for å beholde SandFly.</string>
+    <string name="script_commands_summary">Bevegelser og taster i et kjørende skript går foran SandFlys. Slå av skriptets for å beholde SandFlys.</string>
     <string name="script_binding_gesture">Bevegelse: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Taster: <xliff:g id="keys">%1$s</xliff:g></string>
-    <string name="script_binding_menu">SandFly meny</string>
+    <string name="script_binding_menu">SandFly-meny</string>
     <string name="script_binding_control">Lesekontroller</string>
     <string name="script_binding_none">Ingen</string>
     <string name="script_binding_turn_on">Slå på</string>
     <string name="script_binding_turn_off">Slå av</string>
     <string name="script_binding_restore">Gjenopprett standardinnstillinger</string>
     <string name="script_binding_restored">Standarder gjenopprettet</string>
-    <string name="script_binding_perform">Utfør bevegelser eller taster</string>
-    <string name="script_binding_perform_summary">Tilordne neste bevegelse, eller taster trykket med SandFly-modifikatoren</string>
+    <string name="script_binding_perform">Utfør en bevegelse eller trykk på taster</string>
+    <string name="script_binding_perform_summary">Tilordne neste bevegelse, eller taster trykket med SandFly-modifikatortasten</string>
     <string name="script_binding_perform_message">Gjør bevegelsen eller trykk på tastene.</string>
     <string name="script_binding_assign_title">Tilordne <xliff:g id="binding">%1$s</xliff:g> til <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Tilordne</string>
     <string name="script_binding_choose_gesture">Velg gest</string>
-    <string name="script_binding_type_keys">Skriv inn nøkler</string>
+    <string name="script_binding_type_keys">Skriv inn taster</string>
     <string name="script_binding_type_keys_summary">Som sf+shift+n, eller sf+t, s</string>
-    <string name="script_binding_bad_keys">Kan ikke bruke disse nøklene. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_binding_bad_keys">Disse tastene kan ikke brukes. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">Den legger til:</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
     <string name="script_sources">Skriptkilder</string>
@@ -147,7 +147,7 @@
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> skript oppdatert: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> skript oppdatert: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
-    <string name="scripts_updates_to_approve">Oppdateringer er oppført under Oppdateringer</string>
+    <string name="scripts_updates_to_approve">Oppdateringer er oppført under «Oppdateringer»</string>
     <string name="scripts_update_check_failed">Noen kilder kunne ikke kontrolleres</string>
     <string name="scripts_up_to_date">Alle skript er oppdatert</string>
 </resources>

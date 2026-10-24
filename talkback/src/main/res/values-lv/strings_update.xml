@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_check_for_updates">Pārbaudiet, vai nav atjauninājumu</string>
+    <string name="title_pref_check_for_updates">Meklēt atjauninājumus</string>
     <string name="summary_pref_check_for_updates_version">Versija <xliff:g id="version" example="0.1.0">%1$s</xliff:g>, būvējums <xliff:g id="build" example="96">%2$d</xliff:g></string>
-    <string name="title_pref_auto_update_check">Automātiski pārbaudiet atjauninājumus</string>
-    <string name="summary_pref_auto_update_check">Pārbaudiet reizi dienā un parādiet paziņojumu, kad ir pieejams jauns būvējums</string>
-    <string name="title_pref_dev_builds">Attīstība būvē</string>
+    <string name="title_pref_auto_update_check">Automātiski pārbaudīt atjauninājumus</string>
+    <string name="summary_pref_auto_update_check">Pārbauda reizi dienā un parāda paziņojumu, kad ir pieejams jauns būvējums</string>
+    <string name="title_pref_dev_builds">Izstrādes versijas</string>
     <string name="update_notification_title">SandFly ir pieejams atjauninājums</string>
     <string name="update_notification_text">Būvējums <xliff:g id="build" example="97">%1$d</xliff:g>. Pieskarieties, lai instalētu.</string>
     <string name="update_dialog_title">SandFly būvējums <xliff:g id="build" example="97">%1$d</xliff:g> ir pieejams</string>
-    <string name="update_dialog_install">Instalējiet</string>
+    <string name="update_dialog_install">Instalēt</string>
     <string name="update_checking">Notiek atjauninājumu pārbaude</string>
     <string name="update_up_to_date">SandFly ir atjaunināts</string>
     <string name="update_check_failed">Nevarēja pārbaudīt, vai nav atjauninājumu</string>

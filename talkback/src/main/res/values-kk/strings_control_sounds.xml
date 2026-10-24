@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">Дыбыстар мен тербелістерді басқару</string>
-    <string name="summary_pref_control_sounds">Түймешіктер, құсбелгілер, өңдеу өрістері мен тізім элементтері сияқты әрбір басқару түрін, NVDA үшін Unspoken сияқты фокустық дыбыс пен дірілдің орнына тақырыптағы өз дыбысы мен өз дірілін беріңіз. Дыбыс басқару элементі экранда тұрған жерден шығады және SandFly оның қандай басқару құралы екенін айтып қалдырады.</string>
-    <string name="title_pref_control_sounds_speak_roles">Бақылау түрін әлі де айтыңыз</string>
-    <string name="summary_pref_control_sounds_speak_roles">Басқару дыбысы ойнағанда, оның қандай басқару құралы екенін айтыңыз, мысалы, түйме. Бұл әрбір дыбыс тақырыбына арналған.</string>
+    <string name="title_pref_control_sounds">Басқару элементтерінің дыбыстары мен дірілдері</string>
+    <string name="summary_pref_control_sounds">Түймелер, құсбелгі ұяшықтары, өңдеу өрістері және тізім элементтері сияқты басқару элементінің әр түрі фокус дыбысы мен дірілінің орнына тақырыптан өз дыбысы мен дірілін алады, Unspoken NVDA үшін істейтіндей. Дыбыс элементтің экрандағы орнынан шығады, ал SandFly элемент түрін айтпайды.</string>
+    <string name="title_pref_control_sounds_speak_roles">Басқару элементінің түрін бәрібір айту</string>
+    <string name="summary_pref_control_sounds_speak_roles">Басқару элементінің дыбысы ойнағанда да элемент түрі айтылады, мысалы, түйме. Барлық дыбыс тақырыптарына қолданылады.</string>
     <string name="title_pref_control_sounds_3d">3D аудио</string>
     <string name="pref_control_sounds_3d_headphones">Құлаққаппен</string>
     <string name="pref_control_sounds_3d_always">Әрқашан</string>
     <string name="pref_control_sounds_3d_never">Ешқашан, тек солға және оңға</string>
-    <string name="individual_sound_control_button">Басқару дыбысы: түйме</string>
-    <string name="individual_sound_control_checkbox">Басқару дыбысы: құсбелгі қойыңыз</string>
-    <string name="individual_sound_control_radio_button">Басқару дыбысы: радио түйме</string>
-    <string name="individual_sound_control_edit_text">Дыбысты басқару: өңдеу өрісі</string>
-    <string name="individual_sound_control_combo_box">Басқару дыбысы: ашылмалы тізім</string>
-    <string name="individual_sound_control_slider">Басқару дыбысы: жүгірткі</string>
-    <string name="individual_sound_control_link">Басқару дыбысы: сілтеме</string>
-    <string name="individual_sound_control_image">Басқару дыбысы: сурет</string>
-    <string name="individual_sound_control_clock">Басқару дыбысы: сағат</string>
-    <string name="individual_sound_control_tab">Басқару дыбысы: қойындысы</string>
-    <string name="individual_sound_control_menu_item">Басқару дыбысы: мәзір тармағы</string>
-    <string name="individual_sound_control_list_item">Басқару дыбысы: тізім элементі</string>
-    <string name="individual_sound_control_tree_item">Басқару дыбысы: ағаш элементі</string>
+    <string name="individual_sound_control_button">Басқару элементінің дыбысы: түйме</string>
+    <string name="individual_sound_control_checkbox">Басқару элементінің дыбысы: құсбелгі</string>
+    <string name="individual_sound_control_radio_button">Басқару элементінің дыбысы: радио түйме</string>
+    <string name="individual_sound_control_edit_text">Басқару элементінің дыбысы: өңдеу өрісі</string>
+    <string name="individual_sound_control_combo_box">Басқару элементінің дыбысы: ашылмалы тізім</string>
+    <string name="individual_sound_control_slider">Басқару элементінің дыбысы: жүгірткі</string>
+    <string name="individual_sound_control_link">Басқару элементінің дыбысы: сілтеме</string>
+    <string name="individual_sound_control_image">Басқару элементінің дыбысы: сурет</string>
+    <string name="individual_sound_control_clock">Басқару элементінің дыбысы: сағат</string>
+    <string name="individual_sound_control_tab">Басқару элементінің дыбысы: қойындысы</string>
+    <string name="individual_sound_control_menu_item">Басқару элементінің дыбысы: мәзір тармағы</string>
+    <string name="individual_sound_control_list_item">Басқару элементінің дыбысы: тізім элементі</string>
+    <string name="individual_sound_control_tree_item">Басқару элементінің дыбысы: ағаш элементі</string>
 </resources>

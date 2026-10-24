@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="title_pref_control_sounds">ஒலிகள் மற்றும் அதிர்வுகளைக் கட்டுப்படுத்தவும்</string>
-    <string name="summary_pref_control_sounds">பொத்தான்கள், தேர்வுப்பெட்டிகள், எடிட் ஃபீல்டுகள் மற்றும் பட்டியல் உருப்படிகள், அதன் சொந்த ஒலி மற்றும் தீமில் இருந்து அதன் சொந்த அதிர்வு, கவனம் ஒலி மற்றும் அதிர்வு ஆகியவற்றிற்குப் பதிலாக, அன்ஸ்போக்கன் என்விடிஏவில் செய்வது போன்ற ஒவ்வொரு வகையான கட்டுப்பாட்டையும் கொடுங்கள். திரையில் கட்டுப்பாடு இருக்கும் இடத்திலிருந்து ஒலி வருகிறது, மேலும் SandFly அது எந்த வகையான கட்டுப்பாடு என்று கூறுகிறது.</string>
-    <string name="title_pref_control_sounds_speak_roles">இன்னும் சொல்லுங்கள் கட்டுப்பாடு வகை</string>
-    <string name="summary_pref_control_sounds_speak_roles">ஒரு கட்டுப்பாட்டு ஒலி இயங்கும் போது, பட்டன் போன்ற எந்த வகையான கட்டுப்பாடு என்று சொல்லுங்கள். இது ஒவ்வொரு ஒலி தீம்.</string>
+    <string name="title_pref_control_sounds">கட்டுப்பாடுகளின் ஒலிகளும் அதிர்வுகளும்</string>
+    <string name="summary_pref_control_sounds">பட்டன்கள், தேர்வுப்பெட்டிகள், திருத்தும் புலங்கள், பட்டியல் உருப்படிகள் போன்ற ஒவ்வொரு வகைக் கட்டுப்பாட்டுக்கும் ஃபோகஸ் ஒலி மற்றும் அதிர்வுக்குப் பதிலாகத் தீமிலிருந்து தனி ஒலியும் அதிர்வும் கிடைக்கும், NVDA-க்கு Unspoken செய்வது போல. ஒலி திரையில் கட்டுப்பாடு இருக்கும் இடத்திலிருந்து வரும், SandFly கட்டுப்பாட்டின் வகையைச் சொல்லாது.</string>
+    <string name="title_pref_control_sounds_speak_roles">கட்டுப்பாட்டின் வகையையும் சொல்</string>
+    <string name="summary_pref_control_sounds_speak_roles">கட்டுப்பாட்டு ஒலி இயங்கும்போதும் கட்டுப்பாட்டின் வகை சொல்லப்படும், எ.கா. பட்டன். எல்லா ஒலித் தீம்களுக்கும் பொருந்தும்.</string>
     <string name="title_pref_control_sounds_3d">3டி ஆடியோ</string>
     <string name="pref_control_sounds_3d_headphones">ஹெட்ஃபோன்களுடன்</string>
     <string name="pref_control_sounds_3d_always">எப்போதும்</string>
-    <string name="pref_control_sounds_3d_never">ஒருபோதும், இடது மற்றும் வலது மட்டுமே</string>
-    <string name="individual_sound_control_button">ஒலியைக் கட்டுப்படுத்தவும்: பொத்தான்</string>
-    <string name="individual_sound_control_checkbox">கட்டுப்பாட்டு ஒலி: தேர்வுப்பெட்டி</string>
-    <string name="individual_sound_control_radio_button">ஒலியைக் கட்டுப்படுத்தவும்: ரேடியோ பொத்தான்</string>
-    <string name="individual_sound_control_edit_text">ஒலியைக் கட்டுப்படுத்தவும்: திருத்த புலம்</string>
-    <string name="individual_sound_control_combo_box">ஒலியைக் கட்டுப்படுத்தவும்: கீழ்தோன்றும் பட்டியல்</string>
-    <string name="individual_sound_control_slider">கட்டுப்பாட்டு ஒலி: ஸ்லைடர்</string>
-    <string name="individual_sound_control_link">கட்டுப்பாட்டு ஒலி: இணைப்பு</string>
-    <string name="individual_sound_control_image">கட்டுப்பாட்டு ஒலி: படம்</string>
-    <string name="individual_sound_control_clock">கட்டுப்பாட்டு ஒலி: கடிகாரம்</string>
-    <string name="individual_sound_control_tab">கட்டுப்பாட்டு ஒலி: தாவல்</string>
-    <string name="individual_sound_control_menu_item">கட்டுப்பாட்டு ஒலி: மெனு உருப்படி</string>
-    <string name="individual_sound_control_list_item">கட்டுப்பாட்டு ஒலி: பட்டியல் உருப்படி</string>
-    <string name="individual_sound_control_tree_item">கட்டுப்பாட்டு ஒலி: மரம் உருப்படி</string>
+    <string name="pref_control_sounds_3d_never">ஒருபோதும் இல்லை, இடது மற்றும் வலது மட்டும்</string>
+    <string name="individual_sound_control_button">கட்டுப்பாட்டின் ஒலி: பொத்தான்</string>
+    <string name="individual_sound_control_checkbox">கட்டுப்பாட்டின் ஒலி: தேர்வுப்பெட்டி</string>
+    <string name="individual_sound_control_radio_button">கட்டுப்பாட்டின் ஒலி: ரேடியோ பொத்தான்</string>
+    <string name="individual_sound_control_edit_text">கட்டுப்பாட்டின் ஒலி: திருத்த புலம்</string>
+    <string name="individual_sound_control_combo_box">கட்டுப்பாட்டின் ஒலி: கீழ்தோன்றும் பட்டியல்</string>
+    <string name="individual_sound_control_slider">கட்டுப்பாட்டின் ஒலி: ஸ்லைடர்</string>
+    <string name="individual_sound_control_link">கட்டுப்பாட்டின் ஒலி: இணைப்பு</string>
+    <string name="individual_sound_control_image">கட்டுப்பாட்டின் ஒலி: படம்</string>
+    <string name="individual_sound_control_clock">கட்டுப்பாட்டின் ஒலி: கடிகாரம்</string>
+    <string name="individual_sound_control_tab">கட்டுப்பாட்டின் ஒலி: தாவல்</string>
+    <string name="individual_sound_control_menu_item">கட்டுப்பாட்டின் ஒலி: மெனு உருப்படி</string>
+    <string name="individual_sound_control_list_item">கட்டுப்பாட்டின் ஒலி: பட்டியல் உருப்படி</string>
+    <string name="individual_sound_control_tree_item">கட்டுப்பாட்டின் ஒலி: ட்ரீ உருப்படி</string>
 </resources>

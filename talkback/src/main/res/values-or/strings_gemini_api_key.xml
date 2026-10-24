@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_gemini_api_key">Gemini API କି</string>
-    <string name="summary_pref_gemini_api_key_built_in">ଏହି ଆପରେ ନିର୍ମିତ ଚାବିକୁ ବ୍ୟବହାର କରି |</string>
-    <string name="gemini_api_key_dialog_message">Aistudio.google.com/apikey ରେ Google AI ଷ୍ଟୁଡିଓରୁ ଏକ ମାଗଣା API ଚାବି ପାଆନ୍ତୁ ଏବଂ ଏହାକୁ ଏଠାରେ ଲେପନ କରନ୍ତୁ | ତୁମର ଚାବି ହଟାଇବା ପାଇଁ, ଫିଲ୍ଡ ସଫା କର ଏବଂ ସେଭ୍ କର | \n\n ଚିତ୍ର ଏବଂ ସ୍କ୍ରିନ୍ ଯାହା ତୁମେ ବର୍ଣ୍ଣନା କର Google କୁ ପଠାଯାଏ | ମାଗଣା ସ୍ତରରେ, Google ଏହାର ଉତ୍ପାଦରେ ଉନ୍ନତି ଆଣିବା ପାଇଁ ସେମାନଙ୍କୁ ବ୍ୟବହାର କରିପାରିବ |</string>
+    <string name="summary_pref_gemini_api_key_built_in">ଏହି ଆପରେ ଥିବା କି ବ୍ୟବହାର କରାଯାଉଛି</string>
+    <string name="gemini_api_key_dialog_message">aistudio.google.com/apikeyରେ Google AI Studioରୁ ଏକ ମାଗଣା API କୀ ନେଇ ଏଠାରେ ପେଷ୍ଟ କରନ୍ତୁ। କୀ ହଟାଇବାକୁ ଫିଲ୍ଡ ଖାଲି କରି ସେଭ୍ କରନ୍ତୁ।\n\nଆପଣ ବର୍ଣ୍ଣନା ମାଗୁଥିବା ଛବି ଓ ସ୍କ୍ରିନ୍ Googleକୁ ପଠାଯାଏ। ମାଗଣା ସ୍ତରରେ Google ସେଗୁଡ଼ିକୁ ନିଜ ଉତ୍ପାଦ ଉନ୍ନତ କରିବାକୁ ବ୍ୟବହାର କରିପାରେ।</string>
     <string name="gemini_api_key_hint">API କି</string>
     <string name="gemini_api_key_save">ସେଭ କରନ୍ତୁ</string>
-    <string name="gemini_api_key_get">ଏକ ଚାବି ପାଆନ୍ତୁ |</string>
-    <string name="title_pref_gemini_model">Gemini ମଡେଲ୍ |</string>
-    <string name="gemini_model_automatic">ସ୍ୱୟଂଚାଳିତ |</string>
-    <string name="summary_pref_gemini_model_automatic">ସ୍ୱୟଂଚାଳିତ: Gemini ଫ୍ଲାସ୍, ତାପରେ ଫ୍ଲାସ୍ ବ୍ୟସ୍ତ ଥିବାବେଳେ ଫ୍ଲାସ୍-ଲାଇଟ୍ |</string>
-    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ତାପରେ ବ୍ୟସ୍ତ ଥିବାବେଳେ ଫ୍ଲାସ୍-ଲାଇଟ୍ |</string>
-    <string name="gemini_model_loading">ମଡେଲଗୁଡିକ ପାଇବା…</string>
-    <string name="gemini_model_list_failed">ମଡେଲଗୁଡିକ ପାଇପାରିଲା ନାହିଁ: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">ପ୍ରଥମେ Gemini API କି ସେଟ୍ କରନ୍ତୁ |</string>
-    <string name="gemini_api_terms_link">Gemini API ଅତିରିକ୍ତ ସେବା ସର୍ତ୍ତାବଳୀ |</string>
-    <string name="ai_service_address_hint">ଠିକଣା, ଯେପରିକି https://openrouter.ai/api/v1 |</string>
-    <string name="ai_service_model_hint">ମଡେଲ୍ |</string>
-    <string name="ai_service_address_invalid">ଠିକଣା ନିଶ୍ଚିତ ଭାବରେ https://. ରୁ ଆରମ୍ଭ ହେବ କିଛି ସଞ୍ଚୟ ହୋଇନାହିଁ |</string>
-    <string name="dialog_message_ai_service_consent">ବର୍ଣ୍ଣନା କରିବାକୁ ଚିତ୍ର ଏବଂ ସ୍କ୍ରିନସଟ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> କୁ ପଠାଯାଏ, ଯାହାକି ଅନେକ ସେକେଣ୍ଡ ନେଇଥାଏ | ଏହାର ନିଜସ୍ୱ ସର୍ତ୍ତାବଳୀ ଏବଂ ଗୋପନୀୟତା ନୀତି ପ୍ରଯୁଜ୍ୟ | ଜେନେରେଟିଭ୍ AI ପରୀକ୍ଷାମୂଳକ, ତେଣୁ ଏହା ଭୁଲ୍ କରିବ |</string>
+    <string name="gemini_api_key_get">କି ପାଆନ୍ତୁ</string>
+    <string name="title_pref_gemini_model">Gemini ମଡେଲ୍</string>
+    <string name="gemini_model_automatic">ସ୍ୱୟଂଚାଳିତ</string>
+    <string name="summary_pref_gemini_model_automatic">ସ୍ୱୟଂଚାଳିତ: Gemini Flash, Flash ବ୍ୟସ୍ତ ଥିଲେ Flash-Lite</string>
+    <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ବ୍ୟସ୍ତ ଥିବାବେଳେ Flash-Lite</string>
+    <string name="gemini_model_loading">ମଡେଲଗୁଡ଼ିକ ପାଉଛି…</string>
+    <string name="gemini_model_list_failed">ମଡେଲଗୁଡ଼ିକ ପାଇହେଲା ନାହିଁ: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
+    <string name="gemini_model_needs_key">ପ୍ରଥମେ Gemini API କି ସେଟ୍ କରନ୍ତୁ</string>
+    <string name="gemini_api_terms_link">Gemini API ଅତିରିକ୍ତ ସେବା ସର୍ତ୍ତାବଳୀ</string>
+    <string name="ai_service_address_hint">ଠିକଣା, ଯେପରିକି https://openrouter.ai/api/v1</string>
+    <string name="ai_service_model_hint">ମଡେଲ୍</string>
+    <string name="ai_service_address_invalid">ଠିକଣା https://ରେ ଆରମ୍ଭ ହେବା ଆବଶ୍ୟକ। କିଛି ସେଭ୍ ହୋଇନାହିଁ।</string>
+    <string name="dialog_message_ai_service_consent">ବର୍ଣ୍ଣନା ପାଇଁ ଛବି ଓ ସ୍କ୍ରିନସଟ୍ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>କୁ ପଠାଯାଏ, ଏଥିରେ କିଛି ସେକେଣ୍ଡ ଲାଗେ। ସେହି ସେବାର ନିଜସ୍ୱ ସର୍ତ୍ତାବଳୀ ଓ ଗୋପନୀୟତା ନୀତି ପ୍ରଯୁଜ୍ୟ। ଜେନେରେଟିଭ୍ AI ପରୀକ୍ଷାମୂଳକ, ତେଣୁ ଏହା ଭୁଲ୍ କରିବ।</string>
     <string name="ai_service_error_api_key">AI ସେବା API ଚାବିକୁ ଗ୍ରହଣ କଲା ନାହିଁ | ସ୍ୱୟଂଚାଳିତ ବର୍ଣ୍ଣନାରେ ଏହାର ସେଟିଂସମୂହ ଯାଞ୍ଚ କରନ୍ତୁ |</string>
     <string name="ai_service_error_quota">AI ସେବାର ବ୍ୟବହାର ସୀମା ପହଞ୍ଚିସାରିଛି | ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
     <string name="ai_service_error_busy">AI ସେବା ବର୍ତ୍ତମାନ ବ୍ୟସ୍ତ ଅଛି | ଏକ ମୁହୂର୍ତ୍ତରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
@@ -30,25 +30,25 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">କିଛି ନାହିଁ</string>
-    <string name="ai_service_not_set_up">କ A ଣସି AI ସେବା ବ୍ୟବହାରରେ ନାହିଁ | ଗୋଟିଏ ସେଟ୍ ଅପ୍ କରନ୍ତୁ କିମ୍ବା ସ୍ୱୟଂଚାଳିତ ବର୍ଣ୍ଣନା ସେଟିଂସମୂହରେ ଗୋଟିଏ ବାଛନ୍ତୁ |</string>
-    <string name="ai_provider_none_set_up">କ No ଣସି AI ସେବା ସେଟ୍ ଅପ୍ ହୋଇନାହିଁ | ନିମ୍ନରେ ଏହାର ସେଟିଂସମୂହରେ ଗୋଟିଏ ସେଟ୍ ଅପ୍ କରନ୍ତୁ |</string>
-    <string name="ai_provider_other">ଅନ୍ୟାନ୍ୟ ସେବା |</string>
-    <string name="title_pref_category_ai_services">AI ସେବାଗୁଡିକ |</string>
+    <string name="ai_service_not_set_up">କୌଣସି AI ସେବା ବ୍ୟବହାରରେ ନାହିଁ | ଗୋଟିଏ ସେଟ୍ ଅପ୍ କରନ୍ତୁ କିମ୍ବା ସ୍ୱୟଂଚାଳିତ ବର୍ଣ୍ଣନା ସେଟିଂସମୂହରେ ଗୋଟିଏ ବାଛନ୍ତୁ |</string>
+    <string name="ai_provider_none_set_up">କୌଣସି AI ସେବା ସେଟ୍ ଅପ୍ ହୋଇନାହିଁ | ନିମ୍ନରେ ଏହାର ସେଟିଂସମୂହରେ ଗୋଟିଏ ସେଟ୍ ଅପ୍ କରନ୍ତୁ |</string>
+    <string name="ai_provider_other">ଅନ୍ୟାନ୍ୟ ସେବା</string>
+    <string name="title_pref_category_ai_services">AI ସେବାଗୁଡିକ</string>
     <string name="title_pref_ai_provider">AI ସେବା</string>
-    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> ସେଟିଙ୍ଗ୍ |</string>
-    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ସେଟ୍ ଅପ୍ ନୁହେଁ |</string>
-    <string name="ai_provider_in_use">ବ୍ୟବହାରରେ |</string>
-    <string name="ai_provider_not_set_up">ସେଟ୍ ଅପ୍ ହୋଇନାହିଁ |</string>
-    <string name="ai_provider_not_ready">ପ୍ରଥମେ ଏକ ମଡେଲ୍ ବାଛନ୍ତୁ |</string>
+    <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> ସେଟିଙ୍ଗ୍</string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ସେଟ୍ ଅପ୍ ନୁହେଁ</string>
+    <string name="ai_provider_in_use">ବ୍ୟବହାରରେ</string>
+    <string name="ai_provider_not_set_up">ସେଟ୍ ଅପ୍ ହୋଇନାହିଁ</string>
+    <string name="ai_provider_not_ready">ପ୍ରଥମେ ଏକ ମଡେଲ୍ ବାଛନ୍ତୁ</string>
     <string name="ai_provider_address">ଠିକଣା</string>
-    <string name="ai_provider_address_message">OpenAI- ସୁସଙ୍ଗତ ଚାଟ୍ API ଏବଂ ପ୍ରତିଛବି ଇନପୁଟ୍ ସହିତ ଏକ ସେବାର ଠିକଣା, ଯେପରିକି https://example.com/v1. |</string>
-    <string name="ai_provider_not_set">ସେଟ୍ ହୋଇନାହିଁ |</string>
+    <string name="ai_provider_address_message">OpenAI-ସୁସଙ୍ଗତ ଚାଟ୍ API ଓ ଛବି ଇନପୁଟ୍ ଥିବା ଏକ ସେବାର ଠିକଣା, ଯେପରି https://example.com/v1।</string>
+    <string name="ai_provider_not_set">ସେଟ୍ ହୋଇନାହିଁ</string>
     <string name="ai_provider_set">ବିନ୍ୟାସିତ</string>
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API କି</string>
-    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ମଡେଲ୍ |</string>
-    <string name="ai_provider_choose_model">ମନୋନୀତ ନୁହେଁ |</string>
-    <string name="ai_provider_key_message">ଆପଣଙ୍କର <xliff:g id="service" example="Claude">%1$s</xliff:g> API କି ଲେପନ କରନ୍ତୁ | ଏହାକୁ ହଟାଇବା ପାଇଁ, ଫିଲ୍ଡ ସଫା କର ଏବଂ ସେଭ୍ କର | ଚିତ୍ର ଏବଂ ପରଦା ଯାହାକୁ ଆପଣ ବର୍ଣ୍ଣନା କରନ୍ତି <xliff:g id="service" example="Claude">%1$s</xliff:g> କୁ ପଠାଯାଏ |</string>
-    <string name="ai_provider_needs_key">ପ୍ରଥମେ <xliff:g id="service" example="Claude">%1$s</xliff:g> API କି ସେଟ୍ କରନ୍ତୁ |</string>
-    <string name="ai_provider_needs_address">ପ୍ରଥମେ ଠିକଣା ସେଟ୍ କରନ୍ତୁ |</string>
-    <string name="ai_provider_enter_model">ଏକ ମଡେଲ୍ ନାମ ପ୍ରବେଶ କରନ୍ତୁ |</string>
+    <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ମଡେଲ୍</string>
+    <string name="ai_provider_choose_model">ମନୋନୀତ ନୁହେଁ</string>
+    <string name="ai_provider_key_message">ଆପଣଙ୍କ <xliff:g id="service" example="Claude">%1$s</xliff:g> API କୀ ପେଷ୍ଟ କରନ୍ତୁ। ହଟାଇବାକୁ ଫିଲ୍ଡ ଖାଲି କରି ସେଭ୍ କରନ୍ତୁ। ଆପଣ ବର୍ଣ୍ଣନା ମାଗୁଥିବା ଛବି ଓ ସ୍କ୍ରିନ୍ <xliff:g id="service" example="Claude">%1$s</xliff:g>କୁ ପଠାଯାଏ।</string>
+    <string name="ai_provider_needs_key">ପ୍ରଥମେ <xliff:g id="service" example="Claude">%1$s</xliff:g> API କି ସେଟ୍ କରନ୍ତୁ</string>
+    <string name="ai_provider_needs_address">ପ୍ରଥମେ ଠିକଣା ସେଟ୍ କରନ୍ତୁ</string>
+    <string name="ai_provider_enter_model">ଏକ ମଡେଲ୍ ନାମ ପ୍ରବେଶ କରନ୍ତୁ</string>
 </resources>

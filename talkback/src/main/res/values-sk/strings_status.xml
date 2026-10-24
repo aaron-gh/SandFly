@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="shortcut_announce_status">Hovorte o stave</string>
-    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> z <xliff:g id="max_level" example="4">%2$d</xliff:g> taktov</string>
-    <string name="status_wifi_off">Zľava Wi-Fi</string>
+    <string name="shortcut_announce_status">Vysloviť stav</string>
+    <string name="template_status_bars"><xliff:g id="level" example="3">%1$d</xliff:g> z <xliff:g id="max_level" example="4">%2$d</xliff:g> dielikov</string>
+    <string name="status_wifi_off">Wi-Fi vypnuté</string>
     <string name="status_wifi_not_connected">Wi-Fi nepripojené</string>
     <string name="template_status_wifi">Wi-Fi, <xliff:g id="bars" example="3 of 4 bars">%1$s</xliff:g></string>
     <string name="template_status_wifi_named">Wi-Fi <xliff:g id="network_name" example="Home">%1$s</xliff:g>, <xliff:g id="bars" example="3 of 4 bars">%2$s</xliff:g></string>
     <string name="template_status_mobile"><xliff:g id="network" example="T-Mobile, 5G">%1$s</xliff:g>, <xliff:g id="bars" example="2 of 4 bars">%2$s</xliff:g></string>
     <string name="status_mobile">Mobil</string>
-    <string name="status_mobile_no_service">Žiadna mobilná služba</string>
+    <string name="status_mobile_no_service">Žiadna mobilná sieť</string>
     <string name="status_do_not_disturb">Nerušiť</string>
-    <string name="status_ringer_vibrate">Vibrovať</string>
+    <string name="status_ringer_vibrate">Vibrovanie</string>
     <string name="status_ringer_silent">Tichý</string>
     <string name="status_airplane_mode">Režim v lietadle</string>
-    <string name="title_pref_status_readout">Odčítanie stavu</string>
+    <string name="title_pref_status_readout">Čítanie stavu</string>
     <string name="status_item_time">Čas</string>
     <string name="status_item_time_summary">Aktuálny čas</string>
     <string name="status_item_battery">Batéria</string>
@@ -23,7 +23,7 @@
     <string name="status_item_mobile">Mobilná sieť</string>
     <string name="status_item_mobile_summary">Operátor, typ siete a sila signálu</string>
     <string name="status_item_ringer">Zvonenie a režim Nerušiť</string>
-    <string name="status_item_ringer_summary">Iba vtedy, keď nie je zvonenie nastavené na zvonenie alebo je zapnutý režim Nerušiť</string>
+    <string name="status_item_ringer_summary">Iba keď je zvonenie nastavené na vibrovanie alebo tichý režim, alebo je zapnutý režim Nerušiť</string>
     <string name="status_item_airplane_mode">Režim v lietadle</string>
     <string name="status_item_airplane_mode_summary">Iba keď je zapnutý režim v lietadle</string>
 </resources>
