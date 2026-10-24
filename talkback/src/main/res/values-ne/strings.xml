@@ -1384,8 +1384,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch ले प्रयोग गर्न सकोस् भनेर SandFly ले दुई औंलाले एक पटक र दुई पटक ट्याप गर्ने इसाराहरू ह्यान्डल गर्न छोड्छ। आफ्नो घडीको सर्वसुलभता सेटिङमा Vibration Watch अन गर्नुहोस्।</string>
     <string name="shortcut_reserved_for_vibration_watch">उन्नत सेटिङहरूमा Vibration Watch को लागि आरक्षित</string>
     <string name="title_pref_speakerphone_away_from_ear">तपाईंको कानबाट टाढा हुँदा स्पिकर</string>
-    <string name="summary_pref_speakerphone_away_from_ear">कलको क्रममा, तपाईंले फोनलाई आफ्नो कानबाट टाढा लैजाँदा स्पिकरमा स्विच गर्नुहोस्, र तपाईंले यसलाई फेरि समात्दा इयरपिसमा फर्कनुहोस्।</string>
-    <string name="summary_pref_speakerphone_needs_permission">Android ले स्क्रिन रिडरहरूलाई नदिने अनुमति चाहिन्छ। यसलाई प्रदान गर्न, यो आदेश adb or Shizuku, then come back to this screen: %1$s सँग चलाउनुहोस्</string>
+    <string name="summary_pref_speakerphone_away_from_ear">कलको समयमा फोन कानबाट टाढा लैजाँदा स्पिकरमा र फेरि कानमा लगाउँदा इयरपिसमा स्विच गर्छ।</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android ले स्क्रिन रिडरहरूलाई नदिने अनुमति चाहिन्छ। यो दिन adb वा Shizuku बाट यो कमान्ड चलाउनुहोस्, त्यसपछि यही स्क्रिनमा फर्कनुहोस्: %1$s</string>
     <string name="action_copy_command">आदेश प्रतिलिपि गर्नुहोस्</string>
     <string name="command_copied">आदेश प्रतिलिपि गरियो</string>
     <string name="title_pref_speech_control">अन्य एपहरूलाई बोल्न दिनुहोस्</string>
@@ -1427,7 +1427,7 @@
     <string name="pref_table_speak_row_column_numbers_title">पङ्क्ति र स्तम्भ नम्बरहरू बोल्नुहोस्</string>
     <string name="pref_table_speak_row_column_numbers_summary">तालिकाका कक्षहरूको पङ्क्ति र स्तम्भ नम्बर बोल्छ</string>
     <string name="title_pref_speak_volume_changes">भोल्युम परिवर्तनहरू बोल्नुहोस्</string>
-    <string name="summary_pref_speak_volume_changes">भोल्युम कुञ्जीहरू थिचेपछि नयाँ भोल्युम भन्नुहोस्</string>
+    <string name="summary_pref_speak_volume_changes">भोल्युम कीहरू थिचेपछि नयाँ भोल्युम भन्छ</string>
     <string name="title_pref_speak_notifications">सूचनाहरू बोल्नुहोस्</string>
     <string name="summary_pref_speak_notifications">नयाँ सूचनाहरू आउँदा ठूलो स्वरमा पढ्छ। आगमन कलहरू सधैँ पढिन्छन्।</string>
     <string name="title_pref_notification_list">SandFly को सूचना सूची प्रयोग गर्नुहोस्</string>

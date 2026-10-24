@@ -1382,8 +1382,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly ଦୁଇ ଆଙ୍ଗୁଠିର ଏକ ଓ ଦୁଇଥର ଟ୍ୟାପ୍ ପରିଚାଳନା କରିବା ବନ୍ଦ କରେ, ଯାହାଫଳରେ Samsung Vibration Watch ସେଗୁଡ଼ିକ ବ୍ୟବହାର କରିପାରିବ। ଆପଣଙ୍କ ଘଣ୍ଟାର ଆକ୍ସେସିବିଲିଟି ସେଟିଂସରେ Vibration Watch ସକ୍ଷମ କରନ୍ତୁ।</string>
     <string name="shortcut_reserved_for_vibration_watch">ଉନ୍ନତ ସେଟିଂସମୂହରେ Vibration Watch ପାଇଁ ସଂରକ୍ଷିତ</string>
     <string name="title_pref_speakerphone_away_from_ear">କାନରୁ ଦୂରରେ ଥିବାବେଳେ ସ୍ପିକର୍</string>
-    <string name="summary_pref_speakerphone_away_from_ear">ଏକ କଲ୍ ସମୟରେ, ଯେତେବେଳେ ଆପଣ ଫୋନ୍ କୁ କାନରୁ ନେଇଯାଆନ୍ତି, ଏବଂ ଯେତେବେଳେ ଆପଣ ଏହାକୁ ପୁନର୍ବାର ଧରିଥିବେ ସେତେବେଳେ ସ୍ପିକରକୁ ସୁଇଚ୍ କରନ୍ତୁ |</string>
-    <string name="summary_pref_speakerphone_needs_permission">ଏକ ଅନୁମତି ଆବଶ୍ୟକ ଯାହାକି Android ସ୍କ୍ରିନ୍ ପାଠକମାନଙ୍କୁ ଦେଇନଥାଏ | ଏହାକୁ ମଞ୍ଜୁର କରିବାକୁ, adb or Shizuku, then come back to this screen: %1$s ସହିତ ଏହି ନିର୍ଦ୍ଦେଶକୁ ଚଲାନ୍ତୁ</string>
+    <string name="summary_pref_speakerphone_away_from_ear">କଲ୍ ସମୟରେ ଫୋନ୍‌କୁ କାନରୁ ଦୂରେଇ ନେଲେ ସ୍ପିକର୍‌କୁ ଏବଂ ପୁଣି କାନ ପାଖକୁ ଆଣିଲେ ଇୟରପିସ୍‌କୁ ସୁଇଚ୍ କରେ।</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android ସ୍କ୍ରିନ୍ ରିଡର୍‌କୁ ଦେଉନଥିବା ଏକ ଅନୁମତି ଆବଶ୍ୟକ। ଏହା ଦେବା ପାଇଁ adb କିମ୍ବା Shizuku ସହ ଏହି କମାଣ୍ଡ ଚଲାନ୍ତୁ, ତାପରେ ଏହି ସ୍କ୍ରିନ୍‌କୁ ଫେରନ୍ତୁ: %1$s</string>
     <string name="action_copy_command">କମାଣ୍ଡ୍ କପି କରନ୍ତୁ</string>
     <string name="command_copied">ନିର୍ଦ୍ଦେଶ କପି ହୋଇଛି</string>
     <string name="title_pref_speech_control">ଅନ୍ୟ ଆପ୍ସକୁ କହିବାକୁ ଦିଅ</string>
@@ -1425,7 +1425,7 @@
     <string name="pref_table_speak_row_column_numbers_title">ଧାଡି ଏବଂ ସ୍ତମ୍ଭ ସଂଖ୍ୟା କୁହନ୍ତୁ</string>
     <string name="pref_table_speak_row_column_numbers_summary">ଟେବୁଲ୍ ସେଲର ଧାଡ଼ି ଓ ସ୍ତମ୍ଭ ନମ୍ବର କହେ</string>
     <string name="title_pref_speak_volume_changes">ଭଲ୍ୟୁମ୍ ପରିବର୍ତ୍ତନ କୁହନ୍ତୁ</string>
-    <string name="summary_pref_speak_volume_changes">ଭଲ୍ୟୁମ୍ କୀ ଦବାଇବା ପରେ ନୂଆ ଭଲ୍ୟୁମ୍ କୁହ</string>
+    <string name="summary_pref_speak_volume_changes">ଭଲ୍ୟୁମ୍ କୀ ଦବାଇବା ପରେ ନୂଆ ଭଲ୍ୟୁମ୍ କହେ</string>
     <string name="title_pref_speak_notifications">ବିଜ୍ଞପ୍ତିଗୁଡିକ କୁହନ୍ତୁ</string>
     <string name="summary_pref_speak_notifications">ନୂଆ ବିଜ୍ଞପ୍ତି ଆସିଲେ ଉଚ୍ଚ ସ୍ୱରରେ ପଢ଼େ। ଇନକମିଂ କଲ୍ ସବୁବେଳେ ପଢ଼ାଯାଏ।</string>
     <string name="title_pref_notification_list">SandFly ର ବିଜ୍ଞପ୍ତି ତାଲିକା ବ୍ୟବହାର କରନ୍ତୁ</string>

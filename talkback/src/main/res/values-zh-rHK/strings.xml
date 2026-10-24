@@ -1382,8 +1382,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly 會停止處理兩指輕按一下和兩下，讓 Samsung Vibration Watch 可以使用這些手勢。請在手錶的無障礙設定中啟用 Vibration Watch。</string>
     <string name="shortcut_reserved_for_vibration_watch">為進階設定中的Vibration Watch保留</string>
     <string name="title_pref_speakerphone_away_from_ear">手機離開耳邊時使用揚聲器</string>
-    <string name="summary_pref_speakerphone_away_from_ear">通話期間，當您將手機從耳邊拿開時，會切換到揚聲器；當您再次拿起手機時，會切換到聽筒。</string>
-    <string name="summary_pref_speakerphone_needs_permission">需要 Android 未授予螢幕閱讀器的權限。要授予它，請使用 adb or Shizuku, then come back to this screen: %1$s 運行此命令</string>
+    <string name="summary_pref_speakerphone_away_from_ear">通話期間，將手機從耳邊移開時切換至揚聲器，再次貼近耳邊時切換回聽筒。</string>
+    <string name="summary_pref_speakerphone_needs_permission">需要 Android 不會授予螢幕閱讀器的權限。如要授予，請使用 adb 或 Shizuku 執行此指令，然後返回此畫面：%1$s</string>
     <string name="action_copy_command">複製指令</string>
     <string name="command_copied">命令已複製</string>
     <string name="title_pref_speech_control">允許其他應用程式朗讀</string>
@@ -1425,7 +1425,7 @@
     <string name="pref_table_speak_row_column_numbers_title">讀出列號和欄號</string>
     <string name="pref_table_speak_row_column_numbers_summary">讀出表格儲存格的列號和欄號</string>
     <string name="title_pref_speak_volume_changes">讀出音量變化</string>
-    <string name="summary_pref_speak_volume_changes">按音量鍵後說出新音量</string>
+    <string name="summary_pref_speak_volume_changes">按下音量鍵後讀出新音量</string>
     <string name="title_pref_speak_notifications">說出通知</string>
     <string name="summary_pref_speak_notifications">收到新通知時朗讀。一律朗讀來電。</string>
     <string name="title_pref_notification_list">使用 SandFly 的通知列表</string>

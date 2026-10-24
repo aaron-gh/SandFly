@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly хоёр хуруугаар нэг ба давхар товших үйлдлийг боловсруулахаа больж, Samsung Vibration Watch-д ашиглах боломж олгоно. Цагныхаа хүртээмжийн тохиргооноос Vibration Watch-г идэвхжүүлнэ үү.</string>
     <string name="shortcut_reserved_for_vibration_watch">Нарийвчилсан тохиргоонд Vibration Watch-д нөөцөлсөн</string>
     <string name="title_pref_speakerphone_away_from_ear">Чихнээсээ хол байх үед чанга яригч</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Дуудлагын үеэр утсаа чихнээсээ салгахад чанга яригч руу, дахин дээш өргөхөд чихэвч рүү шилжинэ.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Дэлгэц уншигчдад Android өгдөггүй зөвшөөрөл шаардлагатай. Үүнийг зөвшөөрөхийн тулд энэ тушаалыг adb or Shizuku, then come back to this screen: %1$s ашиглан ажиллуулна уу.</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Дуудлагын үеэр утсаа чихнээсээ холдуулахад чанга яригч руу, дахин чихэндээ ойртуулахад ярианы чанга яригч руу шилжинэ.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android дэлгэц уншигчид олгодоггүй зөвшөөрөл шаардлагатай. Үүнийг олгохын тулд энэ командыг adb эсвэл Shizuku-аар ажиллуулаад, энэ дэлгэц рүү буцна уу: %1$s</string>
     <string name="action_copy_command">Тушаалыг хуулах</string>
     <string name="command_copied">Командыг хуулсан</string>
     <string name="title_pref_speech_control">Бусад аппад ярихыг зөвшөөрөх</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">Мөр, баганын дугаарыг хэлэх</string>
     <string name="pref_table_speak_row_column_numbers_summary">Хүснэгтийн нүднүүдийн мөр, баганын дугаарыг зарлана</string>
     <string name="title_pref_speak_volume_changes">Дууны түвшний өөрчлөлтийг хэлэх</string>
-    <string name="summary_pref_speak_volume_changes">Дууны түвшний товчлуурыг дарсны дараа шинэ дууг хэлнэ үү</string>
+    <string name="summary_pref_speak_volume_changes">Дууны түвшний товчлуурыг дарсны дараа шинэ дууны түвшинг хэлнэ</string>
     <string name="title_pref_speak_notifications">Мэдэгдлийг уншиж өгөх</string>
     <string name="summary_pref_speak_notifications">Шинэ мэдэгдлийг ирэх үед чангаар уншина. Ирж буй дуудлагыг үргэлж уншина.</string>
     <string name="title_pref_notification_list">SandFly-н мэдэгдлийн жагсаалтыг ашиглах</string>

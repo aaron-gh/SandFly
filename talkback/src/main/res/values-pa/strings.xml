@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly ਦੋ-ਉਂਗਲਾਂ ਵਾਲੀਆਂ ਇੱਕ ਅਤੇ ਦੋ ਵਾਰ ਟੈਪਾਂ ਨੂੰ ਸੰਭਾਲਣਾ ਬੰਦ ਕਰ ਦਿੰਦਾ ਹੈ ਤਾਂ ਜੋ Samsung Vibration Watch ਉਹਨਾਂ ਨੂੰ ਵਰਤ ਸਕੇ। ਆਪਣੀ ਘੜੀ ਦੀਆਂ ਪਹੁੰਚਯੋਗਤਾ ਸੈਟਿੰਗਾਂ ਵਿੱਚ Vibration Watch ਚਾਲੂ ਕਰੋ।</string>
     <string name="shortcut_reserved_for_vibration_watch">ਉੱਨਤ ਸੈਟਿੰਗਾਂ ਵਿੱਚ Vibration Watch ਲਈ ਰਾਖਵਾਂ</string>
     <string name="title_pref_speakerphone_away_from_ear">ਤੁਹਾਡੇ ਕੰਨ ਤੋਂ ਦੂਰ ਹੋਣ \'ਤੇ ਸਪੀਕਰ</string>
-    <string name="summary_pref_speakerphone_away_from_ear">ਕਾਲ ਦੇ ਦੌਰਾਨ, ਜਦੋਂ ਤੁਸੀਂ ਫ਼ੋਨ ਨੂੰ ਆਪਣੇ ਕੰਨ ਤੋਂ ਦੂਰ ਲੈ ਜਾਂਦੇ ਹੋ, ਤਾਂ ਸਪੀਕਰ \'ਤੇ ਸਵਿਚ ਕਰਦਾ ਹੈ, ਅਤੇ ਜਦੋਂ ਤੁਸੀਂ ਇਸਨੂੰ ਦੁਬਾਰਾ ਫੜਦੇ ਹੋ ਤਾਂ ਵਾਪਸ ਈਅਰਪੀਸ \'ਤੇ ਜਾਂਦਾ ਹੈ।</string>
-    <string name="summary_pref_speakerphone_needs_permission">ਇੱਕ ਇਜਾਜ਼ਤ ਦੀ ਲੋੜ ਹੈ ਜੋ Android ਸਕ੍ਰੀਨ ਰੀਡਰਾਂ ਨੂੰ ਨਹੀਂ ਦਿੰਦਾ ਹੈ। ਇਹ ਦੇਣ ਲਈ, ਇਸ ਕਮਾਂਡ ਨੂੰ adb or Shizuku, then come back to this screen: %1$s ਨਾਲ ਚਲਾਓ</string>
+    <string name="summary_pref_speakerphone_away_from_ear">ਕਾਲ ਦੌਰਾਨ ਫ਼ੋਨ ਨੂੰ ਕੰਨ ਤੋਂ ਦੂਰ ਕਰਨ ’ਤੇ ਸਪੀਕਰ ’ਤੇ ਅਤੇ ਮੁੜ ਕੰਨ ਨਾਲ ਲਾਉਣ ’ਤੇ ਈਅਰਪੀਸ ’ਤੇ ਬਦਲਦਾ ਹੈ।</string>
+    <string name="summary_pref_speakerphone_needs_permission">ਇੱਕ ਇਜਾਜ਼ਤ ਦੀ ਲੋੜ ਹੈ ਜੋ Android ਸਕ੍ਰੀਨ ਰੀਡਰਾਂ ਨੂੰ ਨਹੀਂ ਦਿੰਦਾ। ਇਹ ਦੇਣ ਲਈ adb ਜਾਂ Shizuku ਨਾਲ ਇਹ ਕਮਾਂਡ ਚਲਾਓ, ਫਿਰ ਇਸ ਸਕ੍ਰੀਨ ’ਤੇ ਵਾਪਸ ਆਓ: %1$s</string>
     <string name="action_copy_command">ਕਮਾਂਡ ਕਾਪੀ ਕਰੋ</string>
     <string name="command_copied">ਕਮਾਂਡ ਕਾਪੀ ਕੀਤੀ ਗਈ</string>
     <string name="title_pref_speech_control">ਹੋਰ ਐਪਾਂ ਨੂੰ ਬੋਲਣ ਦਿਓ</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">ਕਤਾਰ ਅਤੇ ਕਾਲਮ ਨੰਬਰ ਬੋਲੋ</string>
     <string name="pref_table_speak_row_column_numbers_summary">ਟੇਬਲ ਸੈੱਲਾਂ ਦੇ ਕਤਾਰ ਅਤੇ ਕਾਲਮ ਨੰਬਰ ਬੋਲਦਾ ਹੈ</string>
     <string name="title_pref_speak_volume_changes">ਆਵਾਜ਼ ਵਿੱਚ ਬਦਲਾਅ ਬੋਲੋ</string>
-    <string name="summary_pref_speak_volume_changes">ਵਾਲੀਅਮ ਕੁੰਜੀਆਂ ਦਬਾਉਣ ਤੋਂ ਬਾਅਦ ਨਵਾਂ ਵਾਲੀਅਮ ਕਹੋ</string>
+    <string name="summary_pref_speak_volume_changes">ਵਾਲੀਅਮ ਕੁੰਜੀਆਂ ਦਬਾਉਣ ਤੋਂ ਬਾਅਦ ਨਵਾਂ ਵਾਲੀਅਮ ਬੋਲਦਾ ਹੈ</string>
     <string name="title_pref_speak_notifications">ਸੂਚਨਾਵਾਂ ਬੋਲੋ</string>
     <string name="summary_pref_speak_notifications">ਨਵੀਆਂ ਸੂਚਨਾਵਾਂ ਆਉਣ ’ਤੇ ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਪੜ੍ਹਦਾ ਹੈ। ਆਉਣ ਵਾਲੀਆਂ ਕਾਲਾਂ ਹਮੇਸ਼ਾ ਪੜ੍ਹੀਆਂ ਜਾਂਦੀਆਂ ਹਨ।</string>
     <string name="title_pref_notification_list">SandFly ਦੀ ਸੂਚਨਾ ਸੂਚੀ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>

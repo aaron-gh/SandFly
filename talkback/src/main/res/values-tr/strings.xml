@@ -1384,7 +1384,7 @@
     <string name="shortcut_reserved_for_vibration_watch">Gelişmiş Ayarlar\'da Vibration Watch için ayrılmıştır</string>
     <string name="title_pref_speakerphone_away_from_ear">Kulaktan uzaktayken hoparlör</string>
     <string name="summary_pref_speakerphone_away_from_ear">Arama sırasında, telefonu kulağınızdan uzaklaştırdığınızda hoparlöre, tekrar kaldırdığınızda ise kulaklığa geçer.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Android\'nin ekran okuyuculara vermediği bir izne ihtiyacı var. Bunu vermek için bu komutu adb or Shizuku, then come back to this screen: %1$s ile çalıştırın.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android\'in ekran okuyuculara vermediği bir izin gerekir. Bu izni vermek için bu komutu adb veya Shizuku ile çalıştırın, ardından bu ekrana dönün: %1$s</string>
     <string name="action_copy_command">Komutu kopyala</string>
     <string name="command_copied">Komut kopyalandı</string>
     <string name="title_pref_speech_control">Diğer uygulamaların konuşmasına izin ver</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">Satır ve sütun numaralarını söyle</string>
     <string name="pref_table_speak_row_column_numbers_summary">Tablo hücrelerinin satır ve sütun numaralarını söyler</string>
     <string name="title_pref_speak_volume_changes">Ses düzeyi değişikliklerini söyle</string>
-    <string name="summary_pref_speak_volume_changes">Ses seviyesi tuşlarına bastıktan sonra yeni ses seviyesini söyleyin</string>
+    <string name="summary_pref_speak_volume_changes">Ses tuşlarına basıldıktan sonra yeni ses seviyesini söyler</string>
     <string name="title_pref_speak_notifications">Bildirimleri sesli olarak söyle</string>
     <string name="summary_pref_speak_notifications">Yeni bildirimleri geldiklerinde sesli okur. Gelen aramalar her zaman okunur.</string>
     <string name="title_pref_notification_list">SandFly\'ın bildirim listesini kullan</string>

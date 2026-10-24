@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly slutar hantera enkel- och dubbeltryck med två fingrar så att Samsung Vibration Watch kan använda dem. Aktivera Vibration Watch i klockans tillgänglighetsinställningar.</string>
     <string name="shortcut_reserved_for_vibration_watch">Reserverad för Vibration Watch i avancerade inställningar</string>
     <string name="title_pref_speakerphone_away_from_ear">Högtalare när telefonen inte är vid örat</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Under ett samtal växlar du till högtalaren när du tar bort telefonen från örat och tillbaka till hörluren när du håller upp den igen.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Behöver en behörighet som Android inte ger till skärmläsare. För att bevilja det, kör det här kommandot med adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Växlar under ett samtal till högtalaren när du tar bort telefonen från örat, och tillbaka till hörluren när du håller den mot örat igen.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Kräver en behörighet som Android inte ger skärmläsare. Kör det här kommandot med adb eller Shizuku för att bevilja den och gå sedan tillbaka till den här skärmen: %1$s</string>
     <string name="action_copy_command">Kopiera kommando</string>
     <string name="command_copied">Kommandot kopierat</string>
     <string name="title_pref_speech_control">Låt andra appar tala</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">Läs upp rad- och kolumnnummer</string>
     <string name="pref_table_speak_row_column_numbers_summary">Läser upp rad- och kolumnnummer för tabellceller</string>
     <string name="title_pref_speak_volume_changes">Läs upp volymändringar</string>
-    <string name="summary_pref_speak_volume_changes">Säg den nya volymen när du har tryckt på volymknapparna</string>
+    <string name="summary_pref_speak_volume_changes">Säger den nya volymen efter tryck på volymknapparna</string>
     <string name="title_pref_speak_notifications">Tala aviseringar</string>
     <string name="summary_pref_speak_notifications">Läser upp nya aviseringar när de kommer. Inkommande samtal läses alltid upp.</string>
     <string name="title_pref_notification_list">Använd SandFlys aviseringslista</string>

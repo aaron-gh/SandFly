@@ -1386,8 +1386,8 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly दोन-बोटांनी एकल आणि दुहेरी टॅप हाताळणे थांबवते जेणेकरून Samsung Vibration Watch त्यांचा वापर करू शकेल. तुमच्या घड्याळाच्या प्रवेशयोग्यता सेटिंग्जमध्ये Vibration Watch सक्षम करा.</string>
     <string name="shortcut_reserved_for_vibration_watch">प्रगत सेटिंग्जमध्ये Vibration Watch साठी आरक्षित</string>
     <string name="title_pref_speakerphone_away_from_ear">तुमच्या कानापासून दूर असताना स्पीकर</string>
-    <string name="summary_pref_speakerphone_away_from_ear">कॉल दरम्यान, जेव्हा तुम्ही फोन तुमच्या कानापासून दूर नेता तेव्हा स्पीकरवर स्विच करते आणि जेव्हा तुम्ही तो पुन्हा धरता तेव्हा इअरपीसवर स्विच करते.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Android स्क्रीन वाचकांना देत नाही अशी परवानगी आवश्यक आहे. ते मंजूर करण्यासाठी, ही कमांड adb or Shizuku, then come back to this screen: %1$s सह चालवा</string>
+    <string name="summary_pref_speakerphone_away_from_ear">कॉलदरम्यान फोन कानापासून दूर नेल्यावर स्पीकरवर आणि पुन्हा कानाजवळ आणल्यावर इअरपीसवर स्विच करते.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android स्क्रीन रीडरना देत नाही अशी परवानगी आवश्यक आहे. ती देण्यासाठी adb किंवा Shizuku ने ही कमांड चालवा, नंतर या स्क्रीनवर परत या: %1$s</string>
     <string name="action_copy_command">कमांड कॉपी करा</string>
     <string name="command_copied">कमांड कॉपी केली</string>
     <string name="title_pref_speech_control">इतर ॲप्सना बोलू द्या</string>
@@ -1429,7 +1429,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="pref_table_speak_row_column_numbers_title">पंक्ती आणि स्तंभ क्रमांक बोला</string>
     <string name="pref_table_speak_row_column_numbers_summary">टेबल सेलचे पंक्ती आणि स्तंभ क्रमांक बोलते</string>
     <string name="title_pref_speak_volume_changes">व्हॉल्यूममधील बदल बोला</string>
-    <string name="summary_pref_speak_volume_changes">तुम्ही व्हॉल्यूम की दाबल्यानंतर नवीन व्हॉल्यूम म्हणा</string>
+    <string name="summary_pref_speak_volume_changes">व्हॉल्यूम की दाबल्यानंतर नवीन व्हॉल्यूम सांगते</string>
     <string name="title_pref_speak_notifications">सूचना बोला</string>
     <string name="summary_pref_speak_notifications">नवीन सूचना आल्यावर मोठ्याने वाचते. येणारे कॉल नेहमी वाचले जातात.</string>
     <string name="title_pref_notification_list">SandFly ची सूचना सूची वापरा</string>

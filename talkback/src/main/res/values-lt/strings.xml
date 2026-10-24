@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nebeapdoroja vieno ir dvigubo bakstelėjimo dviem pirštais, kad juos galėtų naudoti „Samsung Vibration Watch“. Įjunkite „Vibration Watch“ laikrodžio pritaikymo neįgaliesiems nustatymuose.</string>
     <string name="shortcut_reserved_for_vibration_watch">Išplėstiniuose nustatymuose rezervuota Vibration Watch</string>
     <string name="title_pref_speakerphone_away_from_ear">Garsiakalbis toli nuo ausies</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Pokalbio metu persijungia į garsiakalbį, kai atitraukiate telefoną nuo ausies, ir grįžta į ausinę, kai vėl ją laikote.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Reikia leidimo, kurio Android nesuteikia ekrano skaitytuvams. Norėdami tai suteikti, paleiskite šią komandą su adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Pokalbio metu, atitraukus telefoną nuo ausies, perjungia į garsiakalbį, o vėl priglaudus prie ausies – atgal į ausinį garsiakalbį.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Reikia leidimo, kurio Android nesuteikia ekrano skaitytuvams. Kad jį suteiktumėte, paleiskite šią komandą per adb arba Shizuku ir grįžkite į šį ekraną: %1$s</string>
     <string name="action_copy_command">Kopijuoti komandą</string>
     <string name="command_copied">Komanda nukopijuota</string>
     <string name="title_pref_speech_control">Leisti kitoms programoms kalbėti</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">Sakyti eilučių ir stulpelių numerius</string>
     <string name="pref_table_speak_row_column_numbers_summary">Sakyti lentelės langelių eilučių ir stulpelių numerius</string>
     <string name="title_pref_speak_volume_changes">Sakyti garsumo pokyčius</string>
-    <string name="summary_pref_speak_volume_changes">Paspaudę garsumo klavišus ištarkite naują garsumą</string>
+    <string name="summary_pref_speak_volume_changes">Paspaudus garsumo klavišus pasakyti naują garsumą</string>
     <string name="title_pref_speak_notifications">Ištarti pranešimus</string>
     <string name="summary_pref_speak_notifications">Garsiai skaityti naujus pranešimus, kai jie gaunami. Gaunami skambučiai visada skaitomi.</string>
     <string name="title_pref_notification_list">Naudoti SandFly pranešimų sąrašą</string>

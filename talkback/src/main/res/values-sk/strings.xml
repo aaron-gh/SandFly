@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly prestane spracúvať jednoduché a dvojité klepnutia dvoma prstami, aby ich mohol používať Samsung Vibration Watch. Zapnite Vibration Watch v nastaveniach dostupnosti hodiniek.</string>
     <string name="shortcut_reserved_for_vibration_watch">Vyhradené pre Vibration Watch v rozšírených nastaveniach</string>
     <string name="title_pref_speakerphone_away_from_ear">Reproduktor, keď telefón nie je pri uchu</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Počas hovoru sa prepne na reproduktor, keď si vezmete telefón z ucha, a späť na slúchadlo, keď ho znova podržíte.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Vyžaduje povolenie, ktoré Android nedáva čítačkám obrazovky. Ak to chcete udeliť, spustite tento príkaz s adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Počas hovoru prepne na reproduktor, keď telefón oddialite od ucha, a späť na slúchadlo, keď ho znova priložíte k uchu.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Vyžaduje povolenie, ktoré Android čítačkám obrazovky neudeľuje. Ak ho chcete udeliť, spustite tento príkaz cez adb alebo Shizuku a potom sa vráťte na túto obrazovku: %1$s</string>
     <string name="action_copy_command">Kopírovať príkaz</string>
     <string name="command_copied">Príkaz bol skopírovaný</string>
     <string name="title_pref_speech_control">Povoliť ostatným aplikáciám hovoriť</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">Vysloviť čísla riadkov a stĺpcov</string>
     <string name="pref_table_speak_row_column_numbers_summary">Oznamuje čísla riadkov a stĺpcov buniek tabuľky</string>
     <string name="title_pref_speak_volume_changes">Vyslovovať zmeny hlasitosti</string>
-    <string name="summary_pref_speak_volume_changes">Po stlačení tlačidiel hlasitosti vyslovte novú hlasitosť</string>
+    <string name="summary_pref_speak_volume_changes">Po stlačení tlačidiel hlasitosti vysloviť novú hlasitosť</string>
     <string name="title_pref_speak_notifications">Vyslovovať upozornenia</string>
     <string name="summary_pref_speak_notifications">Čítať nové upozornenia nahlas, keď prídu. Prichádzajúce hovory sa čítajú vždy.</string>
     <string name="title_pref_notification_list">Používať zoznam upozornení SandFly</string>

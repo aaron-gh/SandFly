@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nu mai procesează atingerile simple și duble cu două degete, ca Samsung Vibration Watch să le poată folosi. Activați Vibration Watch în setările de accesibilitate ale ceasului.</string>
     <string name="shortcut_reserved_for_vibration_watch">Rezervat pentru Vibration Watch în Setări avansate</string>
     <string name="title_pref_speakerphone_away_from_ear">Difuzor când telefonul e departe de ureche</string>
-    <string name="summary_pref_speakerphone_away_from_ear">În timpul unui apel, comută la difuzor când scoateți telefonul de la ureche și înapoi la cască când îl țineți din nou sus.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Are nevoie de o permisiune pe care Android nu o acordă cititorilor de ecran. Pentru a o acorda, rulați această comandă cu adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="summary_pref_speakerphone_away_from_ear">În timpul unui apel, comută la difuzor când îndepărtați telefonul de ureche și înapoi la casca telefonului când îl duceți din nou la ureche.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Necesită o permisiune pe care Android nu o acordă cititoarelor de ecran. Pentru a o acorda, rulați această comandă cu adb sau Shizuku, apoi reveniți la acest ecran: %1$s</string>
     <string name="action_copy_command">Copiază comanda</string>
     <string name="command_copied">Comanda a fost copiată</string>
     <string name="title_pref_speech_control">Lasă alte aplicații să vorbească</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">Rostește numerele rândurilor și coloanelor</string>
     <string name="pref_table_speak_row_column_numbers_summary">Anunță numerele rândului și coloanei pentru celulele tabelului</string>
     <string name="title_pref_speak_volume_changes">Rostește modificările volumului</string>
-    <string name="summary_pref_speak_volume_changes">Spuneți noul volum după ce apăsați tastele de volum</string>
+    <string name="summary_pref_speak_volume_changes">Rostește volumul nou după apăsarea butoanelor de volum</string>
     <string name="title_pref_speak_notifications">Rostește notificările</string>
     <string name="summary_pref_speak_notifications">Citește cu voce tare notificările noi când sosesc. Apelurile primite sunt citite întotdeauna.</string>
     <string name="title_pref_notification_list">Folosește lista de notificări SandFly</string>

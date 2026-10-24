@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly više ne obrađuje jednostruke i dvostruke dodire sa dva prsta da bi ih Samsung Vibration Watch mogao koristiti. Uključite Vibration Watch u podešavanjima pristupačnosti sata.</string>
     <string name="shortcut_reserved_for_vibration_watch">Rezervisano za Vibration Watch u naprednim podešavanjima</string>
     <string name="title_pref_speakerphone_away_from_ear">Zvučnik kada telefon nije uz uvo</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Tokom poziva, prebacuje se na zvučnik kada odvojite telefon od uha i vraća se na slušalicu kada ga ponovo držite.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Potrebna je dozvola koju Android ne daje čitačima ekrana. Da biste to odobrili, pokrenite ovu komandu sa adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Tokom poziva prebacuje na zvučnik kada odmaknete telefon od uha, a nazad na slušalicu kada ga ponovo prinesete uhu.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Potrebna je dozvola koju Android ne daje čitačima ekrana. Da biste je dodelili, pokrenite ovu komandu pomoću adb-a ili Shizuku-a, pa se vratite na ovaj ekran: %1$s</string>
     <string name="action_copy_command">Kopiraj komandu</string>
     <string name="command_copied">Komanda je kopirana</string>
     <string name="title_pref_speech_control">Dozvoli drugim aplikacijama da govore</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">Izgovaraj brojeve redova i kolona</string>
     <string name="pref_table_speak_row_column_numbers_summary">Izgovara brojeve reda i kolone za ćelije tabele</string>
     <string name="title_pref_speak_volume_changes">Izgovaraj promene jačine zvuka</string>
-    <string name="summary_pref_speak_volume_changes">Izgovorite novu jačinu zvuka nakon što pritisnete tastere za jačinu zvuka</string>
+    <string name="summary_pref_speak_volume_changes">Izgovara novu jačinu zvuka posle pritiska tastera za jačinu zvuka</string>
     <string name="title_pref_speak_notifications">Izgovaraj obaveštenja</string>
     <string name="summary_pref_speak_notifications">Čitanje novih obaveštenja naglas kada stignu. Dolazni pozivi se uvek čitaju.</string>
     <string name="title_pref_notification_list">Koristi listu obaveštenja SandFly-a</string>

@@ -1381,7 +1381,7 @@
     <string name="shortcut_reserved_for_vibration_watch">詳細設定の Vibration Watch 用に予約されています</string>
     <string name="title_pref_speakerphone_away_from_ear">耳から離したときにスピーカー</string>
     <string name="summary_pref_speakerphone_away_from_ear">通話中に電話機を耳から離すとスピーカーに切り替わり、再び持ち上げると受話口に戻ります。</string>
-    <string name="summary_pref_speakerphone_needs_permission">Android がスクリーン リーダーに与えない許可が必要です。許可するには、adb or Shizuku, then come back to this screen: %1$s を指定してこのコマンドを実行します</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android がスクリーン リーダーに付与しない権限が必要です。付与するには、adb または Shizuku で次のコマンドを実行してから、この画面に戻ってください: %1$s</string>
     <string name="action_copy_command">コマンドをコピー</string>
     <string name="command_copied">コマンドがコピーされました</string>
     <string name="title_pref_speech_control">他のアプリの読み上げを許可</string>
@@ -1423,7 +1423,7 @@
     <string name="pref_table_speak_row_column_numbers_title">行番号と列番号を読み上げる</string>
     <string name="pref_table_speak_row_column_numbers_summary">表のセルの行番号と列番号を読み上げます</string>
     <string name="title_pref_speak_volume_changes">音量の変更を読み上げる</string>
-    <string name="summary_pref_speak_volume_changes">音量キーを押した後、新しい音量を言います</string>
+    <string name="summary_pref_speak_volume_changes">音量キーを押した後に新しい音量を読み上げます</string>
     <string name="title_pref_speak_notifications">通知を読み上げる</string>
     <string name="summary_pref_speak_notifications">新しい通知が届いたときに読み上げます。着信は常に読み上げられます。</string>
     <string name="title_pref_notification_list">SandFly の通知リストを使用する</string>

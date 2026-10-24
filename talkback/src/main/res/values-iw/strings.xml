@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly מפסיק לטפל בהקשה אחת ובהקשה כפולה עם שתי אצבעות, כדי ש-Samsung Vibration Watch יוכל להשתמש בהן. יש להפעיל את Vibration Watch בהגדרות הנגישות של השעון.</string>
     <string name="shortcut_reserved_for_vibration_watch">שמור עבור Vibration Watch בהגדרות מתקדמות</string>
     <string name="title_pref_speakerphone_away_from_ear">רמקול כשהטלפון רחוק מהאוזן</string>
-    <string name="summary_pref_speakerphone_away_from_ear">במהלך שיחה, עובר לרמקול כאשר אתה מרחיק את הטלפון מהאוזן, וחוזר לאפרכסת כאשר אתה מחזיק אותה שוב.</string>
-    <string name="summary_pref_speakerphone_needs_permission">צריך הרשאה ש-Android לא נותנת לקוראי מסך. כדי להעניק זאת, הפעל פקודה זו עם adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="summary_pref_speakerphone_away_from_ear">במהלך שיחה, עובר לרמקול כשמרחיקים את הטלפון מהאוזן, וחוזר לאפרכסת כשמקרבים אותו שוב לאוזן.</string>
+    <string name="summary_pref_speakerphone_needs_permission">נדרשת הרשאה ש-Android לא מעניק לקוראי מסך. כדי להעניק אותה, יש להריץ את הפקודה הזו באמצעות adb או Shizuku ואז לחזור למסך הזה: %1$s</string>
     <string name="action_copy_command">העתק פקודה</string>
     <string name="command_copied">הפקודה הועתקה</string>
     <string name="title_pref_speech_control">מתן אפשרות לאפליקציות אחרות לדבר</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">הקראת מספרי שורות ועמודות</string>
     <string name="pref_table_speak_row_column_numbers_summary">הכרזה על מספרי שורות ועמודות עבור תאי טבלה</string>
     <string name="title_pref_speak_volume_changes">אמור שינויים בעוצמת הקול</string>
-    <string name="summary_pref_speak_volume_changes">אמור את עוצמת הקול החדשה לאחר שתלחץ על מקשי עוצמת הקול</string>
+    <string name="summary_pref_speak_volume_changes">הקראת עוצמת הקול החדשה אחרי לחיצה על מקשי עוצמת הקול</string>
     <string name="title_pref_speak_notifications">הקראת התראות</string>
     <string name="summary_pref_speak_notifications">הקראת התראות חדשות כשהן מגיעות. שיחות נכנסות מוקראות תמיד.</string>
     <string name="title_pref_notification_list">שימוש ברשימת ההתראות של SandFly</string>

@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly slutter å håndtere enkelt- og dobbelttrykk med to fingre, slik at Samsung Vibration Watch kan bruke dem. Slå på Vibration Watch i klokkens tilgjengelighetsinnstillinger.</string>
     <string name="shortcut_reserved_for_vibration_watch">Reservert for Vibration Watch i avanserte innstillinger</string>
     <string name="title_pref_speakerphone_away_from_ear">Høyttaler når telefonen ikke er ved øret</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Under en samtale bytter du til høyttaleren når du tar telefonen vekk fra øret, og tilbake til ørepluggen når du holder den opp igjen.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Trenger en tillatelse som Android ikke gir til skjermlesere. For å gi det, kjør denne kommandoen med adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Bytter til høyttaleren under en samtale når du tar telefonen bort fra øret, og tilbake til øretelefonen når du holder den mot øret igjen.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Krever en tillatelse som Android ikke gir skjermlesere. For å gi den, kjør denne kommandoen med adb eller Shizuku, og gå deretter tilbake til denne skjermen: %1$s</string>
     <string name="action_copy_command">Kopier kommando</string>
     <string name="command_copied">Kommandoen er kopiert</string>
     <string name="title_pref_speech_control">La andre apper snakke</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">Si rad- og kolonnenummer</string>
     <string name="pref_table_speak_row_column_numbers_summary">Kunngjør rad- og kolonnenummer for tabellceller</string>
     <string name="title_pref_speak_volume_changes">Les volumendringer</string>
-    <string name="summary_pref_speak_volume_changes">Si det nye volumet etter at du har trykket på volumtastene</string>
+    <string name="summary_pref_speak_volume_changes">Sier det nye volumet etter at volumknappene er trykket</string>
     <string name="title_pref_speak_notifications">Les varsler</string>
     <string name="summary_pref_speak_notifications">Leser opp nye varsler når de kommer. Innkommende anrop leses alltid opp.</string>
     <string name="title_pref_notification_list">Bruk SandFlys varslingsliste</string>

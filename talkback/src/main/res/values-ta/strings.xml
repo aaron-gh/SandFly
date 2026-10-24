@@ -1384,7 +1384,7 @@
     <string name="shortcut_reserved_for_vibration_watch">மேம்பட்ட அமைப்புகளில் Vibration Watch க்கு ஒதுக்கப்பட்டுள்ளது</string>
     <string name="title_pref_speakerphone_away_from_ear">உங்கள் காதில் இருந்து விலகி இருக்கும்போது ஸ்பீக்கர்</string>
     <string name="summary_pref_speakerphone_away_from_ear">அழைப்பின் போது, உங்கள் காதில் இருந்து ஃபோனை எடுக்கும்போது ஸ்பீக்கருக்கு மாறுகிறது, மீண்டும் அதை உயர்த்தும்போது இயர்பீஸுக்குத் திரும்பும்.</string>
-    <string name="summary_pref_speakerphone_needs_permission">ஸ்க்ரீன் ரீடர்களுக்கு Android வழங்காத அனுமதி தேவை. அதை வழங்க, இந்த கட்டளையை adb or Shizuku, then come back to this screen: %1$s உடன் இயக்கவும்</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android திரை வாசிப்பான்களுக்கு வழங்காத அனுமதி தேவை. அதை வழங்க, adb அல்லது Shizuku மூலம் இந்தக் கட்டளையை இயக்கி, பின்னர் இந்தத் திரைக்குத் திரும்பவும்: %1$s</string>
     <string name="action_copy_command">கட்டளையை நகலெடுக்கவும்</string>
     <string name="command_copied">கட்டளை நகலெடுக்கப்பட்டது</string>
     <string name="title_pref_speech_control">பிற ஆப்ஸைப் பேச அனுமதி</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">வரிசை, நெடுவரிசை எண்களைச் சொல்</string>
     <string name="pref_table_speak_row_column_numbers_summary">அட்டவணைக் கலங்களின் வரிசை, நெடுவரிசை எண்களைச் சொல்லும்</string>
     <string name="title_pref_speak_volume_changes">ஒலியளவு மாற்றங்களைச் சொல்</string>
-    <string name="summary_pref_speak_volume_changes">வால்யூம் கீகளை அழுத்திய பிறகு புதிய வால்யூமைக் கூறவும்</string>
+    <string name="summary_pref_speak_volume_changes">ஒலியளவு பட்டன்களை அழுத்திய பிறகு புதிய ஒலியளவைச் சொல்லும்</string>
     <string name="title_pref_speak_notifications">அறிவிப்புகளைப் படி</string>
     <string name="summary_pref_speak_notifications">புதிய அறிவிப்புகள் வரும்போது அவற்றைச் சத்தமாகப் படிக்கும். உள்வரும் அழைப்புகள் எப்போதும் படிக்கப்படும்.</string>
     <string name="title_pref_notification_list">SandFly இன் அறிவிப்புப் பட்டியலைப் பயன்படுத்தவும்</string>

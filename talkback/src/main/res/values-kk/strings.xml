@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly екі саусақпен бір рет және екі рет түртуді өңдемейді, сонда Samsung Vibration Watch оларды пайдалана алады. Vibration Watch функциясын сағаттың арнайы мүмкіндіктер параметрлерінен қосыңыз.</string>
     <string name="shortcut_reserved_for_vibration_watch">Қосымша параметрлерде Vibration Watch үшін сақталған</string>
     <string name="title_pref_speakerphone_away_from_ear">Телефон құлақтан алыс болғанда динамик</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Қоңырау кезінде телефонды құлағыңыздан алған кезде динамикке ауысады, ал қайта көтерген кезде құлаққапқа қайтады.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Android экраннан оқу құралдарына бермейтін рұқсатты қажет етеді. Оны беру үшін осы пәрменді adb or Shizuku, then come back to this screen: %1$s арқылы іске қосыңыз</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Қоңырау кезінде телефонды құлақтан алыстатқанда динамикке ауысады, ал қайта құлаққа тосқанда сөйлесу динамигіне қайтады.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Android экраннан оқу құралдарына бермейтін рұқсат қажет. Оны беру үшін осы пәрменді adb немесе Shizuku арқылы орындаңыз, содан кейін осы экранға оралыңыз: %1$s</string>
     <string name="action_copy_command">Пәрменді көшіру</string>
     <string name="command_copied">Пәрмен көшірілді</string>
     <string name="title_pref_speech_control">Басқа қолданбаларға сөйлеуге рұқсат беру</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">Жол және баған сандарын айту</string>
     <string name="pref_table_speak_row_column_numbers_summary">Кесте ұяшықтары үшін жол және баған нөмірлерін хабарлау</string>
     <string name="title_pref_speak_volume_changes">Дыбыс деңгейінің өзгерісін айту</string>
-    <string name="summary_pref_speak_volume_changes">Дыбыс деңгейі пернелерін басқаннан кейін жаңа дыбыс деңгейін айтыңыз</string>
+    <string name="summary_pref_speak_volume_changes">Дыбыс деңгейі түймелері басылғаннан кейін жаңа дыбыс деңгейін айтады</string>
     <string name="title_pref_speak_notifications">Хабарландыруларды айту</string>
     <string name="summary_pref_speak_notifications">Жаңа хабарландыруларды келген кезде дауыстап оқиды. Кіріс қоңыраулар әрқашан оқылады.</string>
     <string name="title_pref_notification_list">SandFly хабарландырулар тізімін пайдалану</string>

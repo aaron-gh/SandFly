@@ -1383,8 +1383,8 @@
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly berhenti mengendalikan ketikan tunggal dan ketikan dua kali dengan dua jari supaya Samsung Vibration Watch boleh menggunakannya. Dayakan Vibration Watch dalam tetapan kebolehaksesan jam tangan anda.</string>
     <string name="shortcut_reserved_for_vibration_watch">Dikhaskan untuk Vibration Watch dalam Tetapan Lanjutan</string>
     <string name="title_pref_speakerphone_away_from_ear">Pembesar suara apabila jauh dari telinga anda</string>
-    <string name="summary_pref_speakerphone_away_from_ear">Semasa panggilan, beralih kepada pembesar suara apabila anda menjauhkan telefon dari telinga anda dan kembali ke alat dengar apabila anda memegangnya semula.</string>
-    <string name="summary_pref_speakerphone_needs_permission">Memerlukan kebenaran yang Android tidak diberikan kepada pembaca skrin. Untuk memberikannya, jalankan arahan ini dengan adb or Shizuku, then come back to this screen: %1$s</string>
+    <string name="summary_pref_speakerphone_away_from_ear">Semasa panggilan, beralih kepada pembesar suara apabila anda menjauhkan telefon dari telinga, dan kembali kepada pembesar suara telinga apabila anda mendekatkannya semula.</string>
+    <string name="summary_pref_speakerphone_needs_permission">Memerlukan kebenaran yang tidak diberikan oleh Android kepada pembaca skrin. Untuk memberikannya, jalankan arahan ini dengan adb atau Shizuku, kemudian kembali ke skrin ini: %1$s</string>
     <string name="action_copy_command">Salin arahan</string>
     <string name="command_copied">Perintah disalin</string>
     <string name="title_pref_speech_control">Biarkan apl lain bercakap</string>
@@ -1426,7 +1426,7 @@
     <string name="pref_table_speak_row_column_numbers_title">Sebut nombor baris dan lajur</string>
     <string name="pref_table_speak_row_column_numbers_summary">Menyebut nombor baris dan lajur bagi sel jadual</string>
     <string name="title_pref_speak_volume_changes">Sebut perubahan kelantangan</string>
-    <string name="summary_pref_speak_volume_changes">Sebut kelantangan baharu selepas anda menekan kekunci kelantangan</string>
+    <string name="summary_pref_speak_volume_changes">Menyebut kelantangan baharu selepas kekunci kelantangan ditekan</string>
     <string name="title_pref_speak_notifications">Sebut pemberitahuan</string>
     <string name="summary_pref_speak_notifications">Membaca pemberitahuan baharu dengan kuat apabila diterima. Panggilan masuk sentiasa dibaca.</string>
     <string name="title_pref_notification_list">Gunakan senarai pemberitahuan SandFly</string>
