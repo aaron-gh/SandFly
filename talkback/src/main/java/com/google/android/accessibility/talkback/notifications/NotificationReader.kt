@@ -708,7 +708,6 @@ object NotificationReader {
     val duringCalls = settings.duringCalls
     if (duringCalls) flags = flags or FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE
     queued += readout
-    // Silenced speech, such as during a call, goes to SandFly's speech, which drops it.
     if (voice != null && !isSilenced(overMedia, duringCalls)) {
       if (settings.soundBefore) feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
       whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
@@ -743,9 +742,19 @@ object NotificationReader {
     speakInSandFlyVoice(readout, flags, sound = settings.soundBefore)
   }
 
-  /** Hands [readout], queued, to SandFly's speech with [flags], after a chime if [sound]. */
+  /**
+   * Hands [readout], queued, to SandFly's speech with [flags], after a chime if [sound]. While
+   * speech is silenced, such as during a call, it ends unread: SandFly's speech would drop it
+   * without saying it ended, and it would hold back the notifications for other voices.
+   */
   private fun speakInSandFlyVoice(readout: Readout, flags: Int, sound: Boolean) {
     val feedback = feedback ?: return
+    val settings = readout.settings
+    if (isSilenced(settings.media != MediaBehavior.SKIP, settings.duringCalls)) {
+      LogUtils.d(TAG, "Not reading a notification of %s while speech is silenced", readout.info.packageName)
+      onDone(readout, SpeechController.STATUS_INTERRUPTED)
+      return
+    }
     val options =
       SpeakOptions.create()
         .setQueueMode(SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH)
@@ -755,7 +764,11 @@ object NotificationReader {
         .setCompletedAction { status -> onDone(readout, status) }
     val speech = Feedback.speech(readout.text, options)
     if (sound) speech.sound(R.raw.chime_down)
-    feedback.returnFeedback(EVENT_ID_UNTRACKED, speech)
+    // Nothing is said while SandFly is paused.
+    if (!feedback.returnFeedback(EVENT_ID_UNTRACKED, speech)) {
+      LogUtils.d(TAG, "Not reading a notification of %s: SandFly's speech didn't take it", readout.info.packageName)
+      onDone(readout, SpeechController.STATUS_INTERRUPTED)
+    }
   }
 
   private fun onStarted(readout: Readout) {
