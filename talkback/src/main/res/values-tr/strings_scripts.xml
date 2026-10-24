@@ -3,21 +3,21 @@
     <string name="title_pref_scripts">Komut dosyaları</string>
     <string name="summary_pref_scripts">SandFly\'ın uygulamalarda çalışma şeklini değiştir</string>
     <string name="script_import">Komut dosyasını içe aktar</string>
-    <string name="script_install_label">SandFly betiğini yükle</string>
-    <string name="script_import_nothing">Yüklenecek bir betik dosyası yok.</string>
+    <string name="script_install_label">SandFly komut dosyasını yükle</string>
+    <string name="script_import_nothing">Yüklenecek bir komut dosyası yok.</string>
     <string name="script_import_cannot_open">Dosya açılamadı.</string>
     <string name="script_import_repository">Bu bağlantı bir deponun tamamına ait. İstediğiniz komut dosyasını açın, ardından onun bağlantısını paylaşın.</string>
     <string name="script_import_summary">.lua dosyası veya main.lua içeren .zip</string>
     <string name="scripts_category_app">Uygulama komut dosyaları</string>
     <string name="scripts_category_global">Genel eklentiler</string>
     <string name="scripts_none">Hiçbir komut dosyası yüklü değil</string>
-    <string name="scripts_all_off">Tüm betikleri kapat</string>
-    <string name="scripts_all_off_summary">Komut dosyaları yüklü kalır ve kendi anahtarlarını korur. “Tüm betikleri açma veya kapatma” hareketi de aynı işi yapar.</string>
-    <string name="shortcut_toggle_scripts">Tüm betikleri açma veya kapatma</string>
+    <string name="scripts_all_off">Tüm komut dosyalarını kapat</string>
+    <string name="scripts_all_off_summary">Komut dosyaları yüklü kalır ve kendi anahtarlarını korur. “Tüm komut dosyalarını açma veya kapatma” hareketi de aynı işi yapar.</string>
+    <string name="shortcut_toggle_scripts">Tüm komut dosyalarını açma veya kapatma</string>
     <string name="scripts_now_off">Komut dosyaları kapalı</string>
     <string name="scripts_now_on">Komut dosyaları açık</string>
-    <string name="scripts_unavailable">Betikler bu cihazda kullanılamıyor</string>
-    <string name="script_add_example">Örnek betiği ekle</string>
+    <string name="scripts_unavailable">Komut dosyaları bu cihazda kullanılamıyor</string>
+    <string name="script_add_example">Örnek komut dosyasını ekle</string>
     <string name="script_add_example_summary">Geçtiğiniz her uygulamanın adını söyler. Başlangıç için bir komut dosyası.</string>
     <string name="script_state_on">Açık</string>
     <string name="script_state_off">Kapalı</string>
@@ -37,7 +37,7 @@
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> yüklendi</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> olarak güncellendi</string>
     <string name="script_import_failed">İçe aktarma başarısız oldu. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Yalnızca güvenilir betiklere izin verin.</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Yalnızca güvenilir komut dosyalarına izin verin.</string>
     <string name="script_permission_screen">Ekranı okumak</string>
     <string name="script_permission_actions">Tıklama, kaydırma, yazma ve odağı taşıma</string>
     <string name="script_permission_speech">SandFly konuşmasını alma ve değiştirme</string>
@@ -56,7 +56,7 @@
     <string name="script_permissions_none">Yok</string>
     <string name="script_settings_category">Ayarlar</string>
     <string name="script_list_filter">Filtre</string>
-    <string name="script_button_off">Önce betiği açın</string>
+    <string name="script_button_off">Önce komut dosyasını açın</string>
     <string name="script_permissions_summary">Bir izni kapatmak, o izni gerektiren bölümleri durdurur.</string>
     <string name="script_install_permissions_note">Bunları daha sonra kapatabilirsiniz.</string>
     <string name="script_manage_category">Yönetim</string>
@@ -79,7 +79,7 @@
     <string name="script_api_too_old">Komut dosyası API\'si <xliff:g id="needed">%1$d</xliff:g> veya üzeri gerekir. Bu SandFly\'da <xliff:g id="current">%2$d</xliff:g> var, bu nedenle bazı bölümler çalışmayabilir.</string>
     <string name="script_api_untested">Komut dosyası API\'si <xliff:g id="tested">%1$d</xliff:g> sürümüne kadar test edildi. Bu SandFly\'da <xliff:g id="current">%2$d</xliff:g> var, bu nedenle beklendiği gibi çalışmayabilir.</string>
     <string name="script_state_incompatible">SandFly\'ın bu sürümüyle çalışmayabilir</string>
-    <string name="script_api_range">Betik API\'si <xliff:g id="min">%1$d</xliff:g> ile <xliff:g id="tested">%2$d</xliff:g> arası</string>
+    <string name="script_api_range">Komut dosyası API\'si <xliff:g id="min">%1$d</xliff:g> ile <xliff:g id="tested">%2$d</xliff:g> arası</string>
     <string name="script_compatibility_title">Uyumluluk</string>
     <string name="script_install_anyway">Yine de yükle</string>
     <string name="script_update_anyway">Yine de güncelle</string>
@@ -131,13 +131,13 @@
     <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea veya Bitbucket\'teki bir havuzun adresi değil.</string>
     <string name="script_source_exists">Bu kaynak zaten eklenmiş.</string>
     <string name="script_source_loading">Yükleniyor</string>
-    <string name="script_source_empty">Bu kaynakta betik yok</string>
-    <string name="script_source_failed">Betikler yüklenemedi. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_empty">Bu kaynakta komut dosyası yok</string>
+    <string name="script_source_failed">Komut dosyaları yüklenemedi. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">Tekrar dene</string>
     <string name="script_source_downloading"><xliff:g id="name">%1$s</xliff:g> indiriliyor</string>
     <string name="script_source_remove">Kaynağı kaldır</string>
     <string name="script_source_remove_title"><xliff:g id="name">%1$s</xliff:g> kaldırılsın mı?</string>
-    <string name="script_source_remove_message">Buradan yüklenen betikler yüklü kalır.</string>
+    <string name="script_source_remove_message">Buradan yüklenen komut dosyaları yüklü kalır.</string>
     <string name="scripts_auto_update">Komut dosyalarını otomatik olarak güncelle</string>
     <string name="scripts_check_updates">Güncellemeleri denetle</string>
     <string name="scripts_checking_updates">Güncellemeler kontrol ediliyor…</string>
@@ -149,5 +149,5 @@
     </plurals>
     <string name="scripts_updates_to_approve">Güncellemeler “Güncellemeler” bölümünde listelenir</string>
     <string name="scripts_update_check_failed">Bazı kaynaklar kontrol edilemedi</string>
-    <string name="scripts_up_to_date">Tüm betikler güncel</string>
+    <string name="scripts_up_to_date">Tüm komut dosyaları güncel</string>
 </resources>

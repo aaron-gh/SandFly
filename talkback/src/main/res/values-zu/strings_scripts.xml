@@ -10,10 +10,10 @@
     <string name="script_import_summary">Ifayela le-.lua, noma i-.zip ene-main.lua</string>
     <string name="scripts_category_app">Iziskripthi zohlelo lokusebenza</string>
     <string name="scripts_category_global">Ama-plugin ajikelele</string>
-    <string name="scripts_none">Azikho izikripthi ezifakiwe</string>
-    <string name="scripts_all_off">Vala zonke izikripthi</string>
-    <string name="scripts_all_off_summary">Iziskripthi zihlala zifakiwe futhi zigcina amaswishi azo. Ukunyakaza okuthi “Vula noma uvale zonke izikripthi” kwenza okufanayo.</string>
-    <string name="shortcut_toggle_scripts">Vula noma uvale zonke izikripthi</string>
+    <string name="scripts_none">Azikho iziskripthi ezifakiwe</string>
+    <string name="scripts_all_off">Vala zonke iziskripthi</string>
+    <string name="scripts_all_off_summary">Iziskripthi zihlala zifakiwe futhi zigcina amaswishi azo. Ukunyakaza okuthi “Vula noma uvale zonke iziskripthi” kwenza okufanayo.</string>
+    <string name="shortcut_toggle_scripts">Vula noma uvale zonke iziskripthi</string>
     <string name="scripts_now_off">Iziskripthi zivaliwe</string>
     <string name="scripts_now_on">Iziskripthi zivuliwe</string>
     <string name="scripts_unavailable">Iziskripthi azitholakali kule divayisi</string>
@@ -37,7 +37,7 @@
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ifakiwe</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> ibuyekezelwe ku-<xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Ukungenisa kwehlulekile. <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Vumela kuphela izikripthi ezethembekile.</string>
+    <string name="script_permission_sensitive"><xliff:g id="permission">%1$s</xliff:g>. Vumela kuphela iziskripthi ezethembekile.</string>
     <string name="script_permission_screen">Ukufunda isikrini</string>
     <string name="script_permission_actions">Ukuchofoza, ukuskrola, ukuthayipha nokuhambisa ukugxila</string>
     <string name="script_permission_speech">Ukwamukela nokushintsha inkulumo ye-SandFly</string>
@@ -131,8 +131,8 @@
     <string name="script_source_invalid">Akulona ikheli lenqolobane ku-GitHub, GitLab, Codeberg, Gitea noma Bitbucket.</string>
     <string name="script_source_exists">Lo mthombo usuvele ungeziwe.</string>
     <string name="script_source_loading">Iyalayisha</string>
-    <string name="script_source_empty">Azikho izikripthi kulo mthombo</string>
-    <string name="script_source_failed">Ayikwazanga ukulayisha izikripthi. <xliff:g id="reason">%1$s</xliff:g></string>
+    <string name="script_source_empty">Azikho iziskripthi kulo mthombo</string>
+    <string name="script_source_failed">Ayikwazanga ukulayisha iziskripthi. <xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_source_retry">Zama futhi</string>
     <string name="script_source_downloading">Iyalanda <xliff:g id="name">%1$s</xliff:g></string>
     <string name="script_source_remove">Susa umthombo</string>
@@ -145,9 +145,9 @@
     <string name="script_update_available"><xliff:g id="name" example="WhatsApp messages">%1$s</xliff:g> <xliff:g id="version" example="3.4">%2$s</xliff:g></string>
     <plurals name="scripts_updated">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> iskripthi sibuyekeziwe: <xliff:g id="names" example="WhatsApp messages">%2$s</xliff:g></item>
-        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> izikripthi ezibuyekeziwe: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
+        <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> iziskripthi ezibuyekeziwe: <xliff:g id="names" example="WhatsApp messages, YouTube actions">%2$s</xliff:g></item>
     </plurals>
     <string name="scripts_updates_to_approve">Izibuyekezo zibhalwe ngaphansi kokuthi “Izibuyekezo”</string>
     <string name="scripts_update_check_failed">Eminye imithombo ayikwazanga ukubhekwa</string>
-    <string name="scripts_up_to_date">Zonke izikripthi zisesikhathini samanje</string>
+    <string name="scripts_up_to_date">Zonke iziskripthi zisesikhathini samanje</string>
 </resources>

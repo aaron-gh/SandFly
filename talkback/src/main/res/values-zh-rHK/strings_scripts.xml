@@ -2,8 +2,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_scripts">腳本</string>
     <string name="summary_pref_scripts">更改 SandFly 在應用程式中的工作方式</string>
-    <string name="script_import">匯入指令碼</string>
-    <string name="script_install_label">安裝 SandFly 指令碼</string>
+    <string name="script_import">匯入腳本</string>
+    <string name="script_install_label">安裝 SandFly 腳本</string>
     <string name="script_import_nothing">沒有可安裝的腳本檔案。</string>
     <string name="script_import_cannot_open">無法開啟該檔案。</string>
     <string name="script_import_repository">此連結指向整個存放庫。請開啟所需的腳本，然後分享該腳本的連結。</string>
@@ -123,7 +123,7 @@
     <string name="script_binding_bad_keys">無法使用這些按鍵。<xliff:g id="reason">%1$s</xliff:g></string>
     <string name="script_install_adds">會新增：</string>
     <string name="script_install_command"><xliff:g id="title">%1$s</xliff:g>: <xliff:g id="bindings">%2$s</xliff:g></string>
-    <string name="script_sources">指令碼來源</string>
+    <string name="script_sources">腳本來源</string>
     <string name="script_sources_none">未添加來源</string>
     <string name="script_source_add">新增來源</string>
     <string name="script_source_add_button">新增</string>
