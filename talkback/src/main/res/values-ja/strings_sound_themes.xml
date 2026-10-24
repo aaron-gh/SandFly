@@ -9,12 +9,12 @@
     <string name="sound_theme_by">作成: <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">ライセンス: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>音。</item>
-        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g>音。</item>
+        <item quantity="one">サウンド <xliff:g id="count" example="1">%d</xliff:g> 個。</item>
+        <item quantity="other">サウンド <xliff:g id="count" example="13">%d</xliff:g> 個。</item>
     </plurals>
     <plurals name="sound_theme_vibrations">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>振動。</item>
-        <item quantity="other">振動<xliff:g id="count" example="13">%d</xliff:g>。</item>
+        <item quantity="one">振動 <xliff:g id="count" example="1">%d</xliff:g> 個。</item>
+        <item quantity="other">振動 <xliff:g id="count" example="13">%d</xliff:g> 個。</item>
     </plurals>
     <string name="sound_theme_control_sounds_on">コントロールの音と振動をオンにします。</string>
     <string name="sound_theme_control_sounds_off">コントロールの音と振動をオフにします。</string>

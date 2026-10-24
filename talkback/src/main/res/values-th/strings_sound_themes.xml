@@ -9,12 +9,12 @@
     <string name="sound_theme_by">โดย <xliff:g id="author" example="Bryan Smart">%1$s</xliff:g></string>
     <string name="sound_theme_license">ใบอนุญาต: <xliff:g id="license" example="GPL-2.0">%1$s</xliff:g></string>
     <plurals name="sound_theme_sounds">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> เสียง.</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> เสียง</item>
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> เสียง</item>
     </plurals>
     <plurals name="sound_theme_vibrations">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> แรงสั่นสะเทือน</item>
-        <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> การสั่นสะเทือน</item>
+        <item quantity="one">การสั่น <xliff:g id="count" example="1">%d</xliff:g> รูปแบบ</item>
+        <item quantity="other">การสั่น <xliff:g id="count" example="13">%d</xliff:g> รูปแบบ</item>
     </plurals>
     <string name="sound_theme_control_sounds_on">เปิดเสียงและการสั่นของตัวควบคุม</string>
     <string name="sound_theme_control_sounds_off">ปิดเสียงและการสั่นของตัวควบคุม</string>
