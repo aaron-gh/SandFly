@@ -3,10 +3,10 @@
     <string name="title_pref_on_device_ai">ଅନ୍-ଡିଭାଇସ୍ AI</string>
     <string name="summary_pref_on_device_ai">କୌଣସି API ଚାବି ବିନା ଏହି ଫୋନରେ ଏକ ମଡେଲ ସହିତ ପ୍ରତିଛବି ବର୍ଣ୍ଣନା କରନ୍ତୁ ଏବଂ ସ୍କ୍ରିନ୍ ବର୍ଣ୍ଣନା କରନ୍ତୁ</string>
     <string name="pref_on_device_ai_enable">ଅନ୍-ଡିଭାଇସ୍ AI ବ୍ୟବହାର କରନ୍ତୁ</string>
-    <string name="pref_on_device_ai_enable_summary">ପ୍ରତିଛବି ଏବଂ ସ୍କ୍ରିନସଟଗୁଡିକ ଏହି ଫୋନରେ ବର୍ଣ୍ଣନା କରାଯାଇଛି ଏବଂ Google କୁ କେବେବି ପଠାଯାଏ ନାହିଁ | ଏହା କ୍ଲାଉଡ୍ ଠାରୁ ଧୀର ଏବଂ ଅଧିକ ବ୍ୟାଟେରୀ ବ୍ୟବହାର କରେ |</string>
+    <string name="pref_on_device_ai_enable_summary">ଛବି ଓ ସ୍କ୍ରିନସଟ୍ ଏହି ଫୋନ୍‌ରେ ହିଁ ବର୍ଣ୍ଣନା କରାଯାଏ ଏବଂ କେବେ ବି Googleକୁ ପଠାଯାଏ ନାହିଁ। ଏହା କ୍ଲାଉଡ୍ ଠାରୁ ଧୀର ଏବଂ ଅଧିକ ବ୍ୟାଟେରୀ ଖର୍ଚ୍ଚ କରେ।</string>
     <string name="pref_on_device_ai_enable_needs_model">ପ୍ରଥମେ ଏକ ମଡେଲ୍ ଡାଉନଲୋଡ୍ କିମ୍ବା ଆମଦାନୀ କରନ୍ତୁ।</string>
     <string name="pref_on_device_ai_unsupported_cpu">ଉପଲବ୍ଧ ନାହିଁ | ଏହି ଫୋନରେ 64-ବିଟ୍ ARM ସଞ୍ଚାଳକ ନାହିଁ |</string>
-    <string name="pref_on_device_ai_not_enough_ram">ଏହି ମଡେଲ୍ ପାଇଁ ଉପଲବ୍ଧ ନୁହେଁ | ଏହି ଫୋନରେ ପର୍ଯ୍ୟାପ୍ତ ସ୍ମୃତି ନାହିଁ |</string>
+    <string name="pref_on_device_ai_not_enough_ram">ଏହି ମଡେଲ୍ ପାଇଁ ଉପଲବ୍ଧ ନାହିଁ। ଏହି ଫୋନ୍‌ରେ ଯଥେଷ୍ଟ ମେମୋରୀ ନାହିଁ।</string>
     <string name="pref_on_device_ai_model">ମଡେଲ୍</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
@@ -19,7 +19,7 @@
     <string name="pref_on_device_ai_download">ମଡେଲ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">Hugging Faceରୁ ଥରେ ଡାଉନଲୋଡ୍ କରେ। ତାପରେ ନେଟୱାର୍କ ଦେଇ କିଛି ପଠାଯାଏ ନାହିଁ।</string>
     <string name="pref_on_device_ai_downloading">ଡାଉନଲୋଡ୍ ହେଉଛି, %1$d%%</string>
-    <string name="pref_on_device_ai_downloading_summary">%1$s। ବନ୍ଦ କରିବାକୁ ଟ୍ୟାପ୍ କରନ୍ତୁ | ଯଦି ଆପଣ ଏହାକୁ ପୁନର୍ବାର ଆରମ୍ଭ କରନ୍ତି ତେବେ ଏହା ଏଠାରୁ ଚାଲିଥାଏ |</string>
+    <string name="pref_on_device_ai_downloading_summary">%1$s। ବନ୍ଦ କରିବାକୁ ଟ୍ୟାପ୍ କରନ୍ତୁ। ପୁଣି ଆରମ୍ଭ କଲେ ଏଠାରୁ ଜାରି ରହିବ।</string>
     <string name="on_device_ai_progress_sizes">%2$s ର %1$s</string>
     <string name="on_device_ai_progress_with_time">%1$s, %2$s ବାକି ଅଛି</string>
     <string name="on_device_ai_announce_progress">ଡାଉନଲୋଡ୍ ହେଉଛି, %1$d ପ୍ରତିଶତ</string>

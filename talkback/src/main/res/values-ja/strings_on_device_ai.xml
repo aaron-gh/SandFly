@@ -3,10 +3,10 @@
     <string name="title_pref_on_device_ai">オンデバイスAI</string>
     <string name="summary_pref_on_device_ai">API キーなしで、この携帯電話のモデルで画像と画面の説明を記述します</string>
     <string name="pref_on_device_ai_enable">オンデバイス AI を使用</string>
-    <string name="pref_on_device_ai_enable_summary">画像やスクリーンショットはこの携帯電話に記載されており、Google に送信されることはありません。クラウドよりも遅く、バッテリーの消費量も多くなります。</string>
+    <string name="pref_on_device_ai_enable_summary">画像とスクリーンショットはこのスマートフォン上で説明され、Google に送信されることはありません。クラウドより遅く、バッテリーの消費量も多くなります。</string>
     <string name="pref_on_device_ai_enable_needs_model">まずモデルをダウンロードまたはインポートしてください。</string>
     <string name="pref_on_device_ai_unsupported_cpu">利用不可。この携帯電話には 64 ビット ARM プロセッサが搭載されていません。</string>
-    <string name="pref_on_device_ai_not_enough_ram">このモデルでは使用できません。この携帯電話には十分なメモリがありません。</string>
+    <string name="pref_on_device_ai_not_enough_ram">このモデルでは使用できません。このスマートフォンのメモリが不足しています。</string>
     <string name="pref_on_device_ai_model">モデル</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>

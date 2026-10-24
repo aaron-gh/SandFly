@@ -3,10 +3,10 @@
     <string name="title_pref_on_device_ai">AI במכשיר</string>
     <string name="summary_pref_on_device_ai">תאר תמונה ותאר מסך עם דגם בטלפון זה, ללא מפתח API</string>
     <string name="pref_on_device_ai_enable">שימוש ב-AI במכשיר</string>
-    <string name="pref_on_device_ai_enable_summary">תמונות וצילומי מסך מתוארים בטלפון זה ואינם נשלחים לעולם אל Google. הוא איטי יותר מהענן וצורך יותר סוללה.</string>
+    <string name="pref_on_device_ai_enable_summary">תמונות וצילומי מסך מתוארים בטלפון הזה ולעולם לא נשלחים ל-Google. זה איטי יותר מהענן וצורך יותר סוללה.</string>
     <string name="pref_on_device_ai_enable_needs_model">יש להוריד או לייבא מודל תחילה.</string>
     <string name="pref_on_device_ai_unsupported_cpu">לא זמין. לטלפון הזה אין מעבד ARM של 64 סיביות.</string>
-    <string name="pref_on_device_ai_not_enough_ram">לא זמין עבור דגם זה. לטלפון הזה אין מספיק זיכרון.</string>
+    <string name="pref_on_device_ai_not_enough_ram">לא זמין למודל הזה. בטלפון הזה אין מספיק זיכרון.</string>
     <string name="pref_on_device_ai_model">מודל</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
@@ -19,7 +19,7 @@
     <string name="pref_on_device_ai_download">הורדת מודל (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">הורדה חד-פעמית מ-Hugging Face. אחרי זה שום דבר לא נשלח ברשת.</string>
     <string name="pref_on_device_ai_downloading">מוריד, %1$d%%</string>
-    <string name="pref_on_device_ai_downloading_summary">%1$s. הקש כדי לעצור. זה ממשיך מכאן אם אתה מתחיל את זה שוב.</string>
+    <string name="pref_on_device_ai_downloading_summary">%1$s. הקשה עוצרת. אם מתחילים שוב, ההורדה ממשיכה מכאן.</string>
     <string name="on_device_ai_progress_sizes">%1$s מתוך %2$s</string>
     <string name="on_device_ai_progress_with_time">%1$s, %2$s נותרו</string>
     <string name="on_device_ai_announce_progress">מוריד, %1$d אחוז</string>
@@ -46,7 +46,7 @@
     <string name="manage_models_delete">מחיקה</string>
     <string name="manage_models_deleted">%1$s נמחק</string>
     <string name="pref_on_device_ai_import">שימוש בקובץ מודל מהאחסון</string>
-    <string name="pref_on_device_ai_import_summary">בחר קובץ Gemma 4 litertlm שכבר הורדת.</string>
+    <string name="pref_on_device_ai_import_summary">יש לבחור קובץ Gemma 4 litertlm שכבר הורד.</string>
     <string name="on_device_ai_import_done">המודל הותקן</string>
     <string name="on_device_ai_import_failed">הקובץ הזה אינו קובץ מודל Gemma 4 נתמך.</string>
     <string name="pref_on_device_ai_timeout">מגבלת זמן לתשובות</string>

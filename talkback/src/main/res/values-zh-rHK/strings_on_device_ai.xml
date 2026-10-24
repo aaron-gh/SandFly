@@ -3,10 +3,10 @@
     <string name="title_pref_on_device_ai">裝置端 AI</string>
     <string name="summary_pref_on_device_ai">使用此手機上的型號描述圖像並描述螢幕，無需 API 金鑰</string>
     <string name="pref_on_device_ai_enable">使用裝置端 AI</string>
-    <string name="pref_on_device_ai_enable_summary">圖片和螢幕截圖均在此手機上進行描述，並且絕不會發送至Google。它比雲端速度慢並且消耗更多電池。</string>
+    <string name="pref_on_device_ai_enable_summary">圖片和螢幕截圖會在這部手機上描述，絕不會傳送至 Google。速度比雲端慢，並且較耗電。</string>
     <string name="pref_on_device_ai_enable_needs_model">請先下載或匯入模型。</string>
     <string name="pref_on_device_ai_unsupported_cpu">無法使用。這款手機沒有 64 位元 ARM 處理器。</string>
-    <string name="pref_on_device_ai_not_enough_ram">不適用於該型號。此手機內存不足。</string>
+    <string name="pref_on_device_ai_not_enough_ram">不適用於此模型。此手機記憶體不足。</string>
     <string name="pref_on_device_ai_model">模型</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
@@ -19,7 +19,7 @@
     <string name="pref_on_device_ai_download">下載模型（%1$s）</string>
     <string name="pref_on_device_ai_download_summary">從 Hugging Face 下載一次。之後不會透過網絡傳送任何內容。</string>
     <string name="pref_on_device_ai_downloading">正在下載，%1$d%%</string>
-    <string name="pref_on_device_ai_downloading_summary">%1$s。點擊即可停止。如果您再次開始，它會從這裡繼續。</string>
+    <string name="pref_on_device_ai_downloading_summary">%1$s。輕按即可停止。再次開始時，會從這裡繼續。</string>
     <string name="on_device_ai_progress_sizes">%1$s / %2$s</string>
     <string name="on_device_ai_progress_with_time">%1$s，剩餘 %2$s</string>
     <string name="on_device_ai_announce_progress">正在下載，百分之%1$d</string>
@@ -45,7 +45,7 @@
     <string name="manage_models_delete">刪除</string>
     <string name="manage_models_deleted">%1$s 已刪除</string>
     <string name="pref_on_device_ai_import">使用儲存空間中的模型檔案</string>
-    <string name="pref_on_device_ai_import_summary">選擇您已下載的 Gemma 4 litertlm 檔案。</string>
+    <string name="pref_on_device_ai_import_summary">選擇你已下載的 Gemma 4 litertlm 檔案。</string>
     <string name="on_device_ai_import_done">模型已安裝</string>
     <string name="on_device_ai_import_failed">該檔案不是支援的 Gemma 4 模型檔案。</string>
     <string name="pref_on_device_ai_timeout">回答時間限制</string>

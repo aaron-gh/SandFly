@@ -3,7 +3,7 @@
     <string name="title_pref_on_device_ai">آن ڈیوائس AI</string>
     <string name="summary_pref_on_device_ai">تصویر کی وضاحت کریں اور اس فون کے ماڈل کے ساتھ اسکرین کی وضاحت کریں، بغیر کسی API کلید کے</string>
     <string name="pref_on_device_ai_enable">آن ڈیوائس AI استعمال کریں</string>
-    <string name="pref_on_device_ai_enable_summary">تصاویر اور اسکرین شاٹس اس فون پر بیان کیے گئے ہیں اور کبھی بھی Google پر نہیں بھیجے جاتے۔ یہ بادل سے سست ہے اور زیادہ بیٹری استعمال کرتا ہے۔</string>
+    <string name="pref_on_device_ai_enable_summary">تصاویر اور اسکرین شاٹس کی وضاحت اسی فون پر کی جاتی ہے اور انہیں کبھی Google کو نہیں بھیجا جاتا۔ یہ کلاؤڈ سے سست ہے اور زیادہ بیٹری استعمال کرتا ہے۔</string>
     <string name="pref_on_device_ai_enable_needs_model">پہلے ماڈل ڈاؤن لوڈ یا درآمد کریں۔</string>
     <string name="pref_on_device_ai_unsupported_cpu">دستیاب نہیں۔ اس فون میں 64 بٹ ARM پروسیسر نہیں ہے۔</string>
     <string name="pref_on_device_ai_not_enough_ram">اس ماڈل کے لیے دستیاب نہیں ہے۔ اس فون میں کافی میموری نہیں ہے۔</string>
@@ -19,7 +19,7 @@
     <string name="pref_on_device_ai_download">ماڈل ڈاؤن لوڈ کریں (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">Hugging Face سے ایک بار ڈاؤن لوڈ ہوتا ہے۔ اس کے بعد نیٹ ورک پر کچھ نہیں بھیجا جاتا۔</string>
     <string name="pref_on_device_ai_downloading">ڈاؤن لوڈ ہو رہا ہے، %1$d%%</string>
-    <string name="pref_on_device_ai_downloading_summary">%1$s روکنے کے لیے تھپتھپائیں۔ اگر آپ اسے دوبارہ شروع کرتے ہیں تو یہ یہاں سے جاری رہتا ہے۔</string>
+    <string name="pref_on_device_ai_downloading_summary">%1$s۔ روکنے کے لیے تھپتھپائیں۔ دوبارہ شروع کرنے پر یہ یہیں سے جاری رہے گا۔</string>
     <string name="on_device_ai_progress_sizes">%2$s میں سے %1$s</string>
     <string name="on_device_ai_progress_with_time">%1$s، %2$s باقی</string>
     <string name="on_device_ai_announce_progress">ڈاؤن لوڈ ہو رہا ہے، %1$d فیصد</string>

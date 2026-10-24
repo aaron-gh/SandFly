@@ -3,10 +3,10 @@
     <string name="title_pref_on_device_ai">IA no dispositivo</string>
     <string name="summary_pref_on_device_ai">Descreva a imagem e descreva a tela com um modelo deste telefone, sem chave de API</string>
     <string name="pref_on_device_ai_enable">Usar IA no dispositivo</string>
-    <string name="pref_on_device_ai_enable_summary">Imagens e capturas de tela são descritas neste telefone e nunca são enviadas para Google. É mais lento que a nuvem e consome mais bateria.</string>
+    <string name="pref_on_device_ai_enable_summary">As imagens e capturas de ecrã são descritas neste telemóvel e nunca são enviadas para a Google. É mais lento do que a nuvem e gasta mais bateria.</string>
     <string name="pref_on_device_ai_enable_needs_model">Transfira ou importe primeiro um modelo.</string>
     <string name="pref_on_device_ai_unsupported_cpu">Não disponível. Este telefone não possui um processador ARM de 64 bits.</string>
-    <string name="pref_on_device_ai_not_enough_ram">Não disponível para este modelo. Este telefone não tem memória suficiente.</string>
+    <string name="pref_on_device_ai_not_enough_ram">Não disponível para este modelo. Este telemóvel não tem memória suficiente.</string>
     <string name="pref_on_device_ai_model">Modelo</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
@@ -19,7 +19,7 @@
     <string name="pref_on_device_ai_download">Transferir modelo (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">Transfere uma vez a partir do Hugging Face. Depois disso, nada é enviado pela rede.</string>
     <string name="pref_on_device_ai_downloading">A transferir, %1$d%%</string>
-    <string name="pref_on_device_ai_downloading_summary">%1$s. Toque para parar. Ele continua a partir daqui se você começar novamente.</string>
+    <string name="pref_on_device_ai_downloading_summary">%1$s. Toque para parar. Se voltar a iniciar, continua a partir daqui.</string>
     <string name="on_device_ai_progress_sizes">%1$s de %2$s</string>
     <string name="on_device_ai_progress_with_time">%1$s, %2$s restantes</string>
     <string name="on_device_ai_announce_progress">A transferir, %1$d por cento</string>

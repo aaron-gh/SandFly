@@ -3,10 +3,10 @@
     <string name="title_pref_on_device_ai">စက်ပေါ်ရှိ AI</string>
     <string name="summary_pref_on_device_ai">ပုံဖော်ပြပြီး API သော့မပါသော ဤဖုန်းရှိ မော်ဒယ်တစ်ခုဖြင့် မျက်နှာပြင်ကို ဖော်ပြပါ</string>
     <string name="pref_on_device_ai_enable">စက်ပေါ်ရှိ AI ကို သုံးရန်</string>
-    <string name="pref_on_device_ai_enable_summary">ပုံများနှင့် ဖန်သားပြင်ဓာတ်ပုံများကို ဤဖုန်းတွင် ဖော်ပြထားပြီး Googleသို့ ဘယ်သောအခါမှ ပေးပို့မည်မဟုတ်ပါ။ ၎င်းသည် cloud ထက် နှေးကွေးပြီး ဘက်ထရီ ပိုသုံးသည်။</string>
+    <string name="pref_on_device_ai_enable_summary">ပုံများနှင့် ဖန်သားပြင်ဓာတ်ပုံများကို ဤဖုန်းပေါ်တွင်ပင် ဖော်ပြပြီး Google သို့ ဘယ်တော့မှ မပို့ပါ။ cloud ထက် နှေးပြီး ဘက်ထရီ ပိုကုန်သည်။</string>
     <string name="pref_on_device_ai_enable_needs_model">မော်ဒယ်ကို ဦးစွာဒေါင်းလုဒ်လုပ်ပါ သို့မဟုတ် ထည့်သွင်းပါ။</string>
     <string name="pref_on_device_ai_unsupported_cpu">မရရှိနိုင်ပါ။ ဤဖုန်းတွင် 64-bit ARM ပရိုဆက်ဆာ မပါဝင်ပါ။</string>
-    <string name="pref_on_device_ai_not_enough_ram">ဤမော်ဒယ်အတွက် မရရှိနိုင်ပါ။ ဤဖုန်းတွင် လုံလောက်သော memory မရှိပါ။</string>
+    <string name="pref_on_device_ai_not_enough_ram">ဤမော်ဒယ်အတွက် မရနိုင်ပါ။ ဤဖုန်းတွင် မှတ်ဉာဏ် မလုံလောက်ပါ။</string>
     <string name="pref_on_device_ai_model">မော်ဒယ်</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
@@ -19,7 +19,7 @@
     <string name="pref_on_device_ai_download">မော်ဒယ် ဒေါင်းလုဒ်လုပ်ရန် (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">Hugging Face မှ တစ်ကြိမ် ဒေါင်းလုဒ်လုပ်သည်။ ထို့နောက် ကွန်ရက်မှတစ်ဆင့် ဘာမျှ မပို့ပါ။</string>
     <string name="pref_on_device_ai_downloading">ဒေါင်းလုဒ်လုပ်နေသည်၊ %1$d%%</string>
-    <string name="pref_on_device_ai_downloading_summary">%1$s။ ရပ်ရန် တို့ပါ။ ပြန်စရင် ဒီကနေ ဆက်သွားမယ်။</string>
+    <string name="pref_on_device_ai_downloading_summary">%1$s။ ရပ်ရန် တို့ပါ။ ပြန်စလျှင် ဤနေရာမှ ဆက်လုပ်မည်။</string>
     <string name="on_device_ai_progress_sizes">%1$s / %2$s</string>
     <string name="on_device_ai_progress_with_time">%1$s၊ %2$s ကျန်သည်</string>
     <string name="on_device_ai_announce_progress">ဒေါင်းလုဒ်လုပ်နေသည်၊ %1$d ရာခိုင်နှုန်း</string>

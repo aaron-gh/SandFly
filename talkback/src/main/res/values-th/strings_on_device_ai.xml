@@ -3,10 +3,10 @@
     <string name="title_pref_on_device_ai">AI บนอุปกรณ์</string>
     <string name="summary_pref_on_device_ai">อธิบายรูปภาพและอธิบายหน้าจอด้วยรุ่นบนโทรศัพท์เครื่องนี้ โดยไม่ต้องใช้คีย์ API</string>
     <string name="pref_on_device_ai_enable">ใช้ AI บนอุปกรณ์</string>
-    <string name="pref_on_device_ai_enable_summary">รูปภาพและภาพหน้าจอมีการอธิบายไว้ในโทรศัพท์เครื่องนี้ และจะไม่ส่งไปที่ Google มันช้ากว่าคลาวด์และใช้แบตเตอรี่มากกว่า</string>
+    <string name="pref_on_device_ai_enable_summary">รูปภาพและภาพหน้าจอจะได้รับการอธิบายบนโทรศัพท์เครื่องนี้ และจะไม่ถูกส่งไปยัง Google วิธีนี้ช้ากว่าคลาวด์และใช้แบตเตอรี่มากกว่า</string>
     <string name="pref_on_device_ai_enable_needs_model">ดาวน์โหลดหรือนำเข้าโมเดลก่อน</string>
     <string name="pref_on_device_ai_unsupported_cpu">ไม่สามารถใช้ได้ โทรศัพท์เครื่องนี้ไม่มีโปรเซสเซอร์ ARM 64 บิต</string>
-    <string name="pref_on_device_ai_not_enough_ram">ไม่มีจำหน่ายสำหรับรุ่นนี้ โทรศัพท์เครื่องนี้มีหน่วยความจำไม่เพียงพอ</string>
+    <string name="pref_on_device_ai_not_enough_ram">ใช้ไม่ได้กับโมเดลนี้ โทรศัพท์เครื่องนี้มีหน่วยความจำไม่พอ</string>
     <string name="pref_on_device_ai_model">โมเดล</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
     <string name="on_device_ai_model_entry">%1$s, %2$s%3$s. %4$s %5$s</string>
@@ -19,7 +19,7 @@
     <string name="pref_on_device_ai_download">ดาวน์โหลดโมเดล (%1$s)</string>
     <string name="pref_on_device_ai_download_summary">ดาวน์โหลดครั้งเดียวจาก Hugging Face หลังจากนั้นจะไม่มีอะไรถูกส่งผ่านเครือข่าย</string>
     <string name="pref_on_device_ai_downloading">กำลังดาวน์โหลด %1$d%%</string>
-    <string name="pref_on_device_ai_downloading_summary">%1$s. แตะเพื่อหยุด มันจะดำเนินต่อไปจากที่นี่หากคุณเริ่มต้นใหม่อีกครั้ง</string>
+    <string name="pref_on_device_ai_downloading_summary">%1$s แตะเพื่อหยุด หากเริ่มอีกครั้ง การดาวน์โหลดจะทำต่อจากจุดนี้</string>
     <string name="on_device_ai_progress_sizes">%1$s จาก %2$s</string>
     <string name="on_device_ai_progress_with_time">%1$s, %2$s เหลือ</string>
     <string name="on_device_ai_announce_progress">กำลังดาวน์โหลด %1$d เปอร์เซ็นต์</string>
