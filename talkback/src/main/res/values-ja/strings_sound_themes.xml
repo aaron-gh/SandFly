@@ -35,9 +35,9 @@
     <string name="summary_pref_theme_sounds">このテーマのサウンドを独自のサウンド ファイルに置き換えます。</string>
     <string name="sound_themes_install_category">テーマをインストール</string>
     <string name="title_pref_sound_theme_install_file">ファイルから</string>
-    <string name="summary_pref_sound_theme_install_file">テーマファイルはZIPファイルです。別のアプリから SandFly を使用して開いたり、共有したりすることもできます。</string>
+    <string name="summary_pref_sound_theme_install_file">テーマ ファイルは ZIP ファイルです。別のアプリから SandFly で開くか、SandFly に共有することもできます。</string>
     <string name="title_pref_sound_theme_install_link">リンクから</string>
-    <string name="summary_pref_sound_theme_install_link">テーマ ファイル、またはテーマが含まれる GitHub リポジトリへのリンク。ブラウザから SandFly とリンクを共有することもできます。</string>
+    <string name="summary_pref_sound_theme_install_link">テーマ ファイル、またはテーマを含む GitHub リポジトリへのリンクです。ブラウザから SandFly にリンクを共有することもできます。</string>
     <string name="title_pref_sound_theme_install_source">ソースから</string>
     <string name="summary_pref_sound_theme_install_source">GitHub、GitLab、Codeberg、Gitea、または Bitbucket のリポジトリ内のテーマ ファイル。</string>
     <string name="sound_theme_sources">サウンドテーマのソース</string>
@@ -51,7 +51,7 @@
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>をインストールしますか?</string>
     <string name="sound_theme_install_and_use">インストールして使用</string>
     <string name="sound_theme_install">インストール</string>
-    <string name="sound_theme_install_replaces">これにより、インストールされている同じ名前のテーマが置き換えられます。</string>
+    <string name="sound_theme_install_replaces">インストール済みの同じ名前のテーマを置き換えます。</string>
     <string name="sound_theme_install_skipped">除外:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> をインストールしました。</string>
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> がインストールされました。現在使用中です。</string>

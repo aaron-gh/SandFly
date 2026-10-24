@@ -29,29 +29,29 @@
         <item quantity="other">儲存主題，帶有<xliff:g id="count" example="13">%d</xliff:g>聲音。</item>
     </plurals>
     <string name="sound_theme_export_failed">SandFly 無法儲存主題檔案。</string>
-    <string name="sound_theme_no_picker">此裝置上沒有可用於選擇檔案的應用程式。</string>
+    <string name="sound_theme_no_picker">這部裝置上沒有可選擇檔案的應用程式。</string>
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>的設定</string>
     <string name="title_pref_theme_sounds">音效</string>
     <string name="summary_pref_theme_sounds">用您自己的聲音檔案替換該主題的任何聲音。</string>
     <string name="sound_themes_install_category">安裝主題</string>
     <string name="title_pref_sound_theme_install_file">從檔案</string>
-    <string name="summary_pref_sound_theme_install_file">主題檔案是一個 ZIP 檔案。您也可以從另一個應用程式使用 SandFly 開啟或共用它。</string>
+    <string name="summary_pref_sound_theme_install_file">主題檔案是 ZIP 檔案。你也可以從其他應用程式用 SandFly 開啟主題檔案，或分享到 SandFly。</string>
     <string name="title_pref_sound_theme_install_link">從連結</string>
-    <string name="summary_pref_sound_theme_install_link">指向主題檔案或包含主題的 GitHub 儲存庫的連結。您也可以透過瀏覽器與 SandFly 分享連結。</string>
+    <string name="summary_pref_sound_theme_install_link">主題檔案的連結，或包含主題的 GitHub 存放區連結。你也可以從瀏覽器將連結分享到 SandFly。</string>
     <string name="title_pref_sound_theme_install_source">從來源</string>
     <string name="summary_pref_sound_theme_install_source">GitHub、GitLab、Codeberg、Gitea 或 Bitbucket 上儲存庫中的主題檔案。</string>
     <string name="sound_theme_sources">聲音主題來源</string>
     <string name="sound_theme_source_empty">此來源中沒有聲音主題</string>
     <string name="sound_theme_source_failed">無法載入聲音主題。<xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">從這個來源安裝的聲音主題會保持安裝狀態。</string>
-    <string name="sound_theme_link_message">輸入或貼上指向主題檔案或其中包含主題的 GitHub 儲存庫的連結。</string>
+    <string name="sound_theme_link_message">輸入或貼上主題檔案的連結，或包含主題的 GitHub 存放區連結。</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">安裝聲音主題</string>
     <string name="sound_theme_install_reading">正在讀取聲音主題</string>
     <string name="sound_theme_install_title">安裝<xliff:g id="theme" example="Unspoken">%1$s</xliff:g>？</string>
     <string name="sound_theme_install_and_use">安裝與使用</string>
     <string name="sound_theme_install">安裝</string>
-    <string name="sound_theme_install_replaces">這將替換已安裝的同名主題。</string>
+    <string name="sound_theme_install_replaces">這會取代已安裝的同名主題。</string>
     <string name="sound_theme_install_skipped">省略：\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">已安裝<xliff:g id="theme" example="Unspoken">%1$s</xliff:g>。</string>
     <string name="sound_theme_installed_in_use">已安裝 <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>。現在正在使用中。</string>

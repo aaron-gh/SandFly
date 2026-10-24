@@ -29,29 +29,29 @@
         <item quantity="other">Imehifadhi mandhari, yenye sauti <xliff:g id="count" example="13">%d</xliff:g>.</item>
     </plurals>
     <string name="sound_theme_export_failed">SandFly haikuweza kuhifadhi faili ya mandhari.</string>
-    <string name="sound_theme_no_picker">Hakuna programu kwenye kifaa hiki ya kuchagua faili nayo.</string>
+    <string name="sound_theme_no_picker">Hakuna programu kwenye kifaa hiki ya kuchagua faili.</string>
     <string name="sound_theme_settings_category">Mipangilio ya <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">Sauti</string>
     <string name="summary_pref_theme_sounds">Badilisha sauti yoyote ya mada hii na faili ya sauti yako mwenyewe.</string>
     <string name="sound_themes_install_category">Sakinisha mandhari</string>
     <string name="title_pref_sound_theme_install_file">Kutoka kwa faili</string>
-    <string name="summary_pref_sound_theme_install_file">Faili ya mandhari ni faili ya ZIP. Unaweza pia kufungua moja, au kuishiriki, na SandFly kutoka kwa programu nyingine.</string>
+    <string name="summary_pref_sound_theme_install_file">Faili ya mandhari ni faili ya ZIP. Unaweza pia kuifungua kwa SandFly, au kuishiriki kwa SandFly kutoka programu nyingine.</string>
     <string name="title_pref_sound_theme_install_link">Kutoka kwa kiungo</string>
-    <string name="summary_pref_sound_theme_install_link">Kiungo cha faili ya mandhari, au kwa hazina ya GitHub yenye mandhari ndani yake. Unaweza pia kushiriki kiungo na SandFly kutoka kwa kivinjari chako.</string>
+    <string name="summary_pref_sound_theme_install_link">Kiungo cha faili ya mandhari, au cha hazina ya GitHub yenye mandhari. Unaweza pia kushiriki kiungo kwa SandFly kutoka kwenye kivinjari.</string>
     <string name="title_pref_sound_theme_install_source">Kutoka kwa chanzo</string>
     <string name="summary_pref_sound_theme_install_source">Faili za mandhari kwenye hazina kwenye GitHub, GitLab, Codeberg, Gitea au Bitbucket.</string>
     <string name="sound_theme_sources">Vyanzo vya mandhari ya sauti</string>
     <string name="sound_theme_source_empty">Hakuna mandhari ya sauti katika chanzo hiki</string>
     <string name="sound_theme_source_failed">Imeshindwa kupakia mandhari ya sauti. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">Mandhari ya sauti yaliyosakinishwa kutoka humo yatabaki yamesakinishwa.</string>
-    <string name="sound_theme_link_message">Ingiza au ubandike kiungo cha faili ya mandhari, au kwenye hazina ya GitHub yenye mandhari ndani yake.</string>
+    <string name="sound_theme_link_message">Weka au ubandike kiungo cha faili ya mandhari, au cha hazina ya GitHub yenye mandhari.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Sakinisha mandhari ya sauti</string>
     <string name="sound_theme_install_reading">Inasoma mandhari ya sauti</string>
     <string name="sound_theme_install_title">Sakinisha <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_install_and_use">Sakinisha na utumie</string>
     <string name="sound_theme_install">Sakinisha</string>
-    <string name="sound_theme_install_replaces">Hii inachukua nafasi ya mandhari iliyosakinishwa ya jina moja.</string>
+    <string name="sound_theme_install_replaces">Hii itachukua nafasi ya mandhari iliyosakinishwa yenye jina hilohilo.</string>
     <string name="sound_theme_install_skipped">Imeachwa:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> imesakinishwa.</string>
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> imesakinishwa. Inatumika sasa.</string>

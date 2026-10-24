@@ -29,29 +29,29 @@
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ஒலிகளுடன் தீம் சேமிக்கப்பட்டது.</item>
     </plurals>
     <string name="sound_theme_export_failed">SandFly ஆல் தீம் கோப்பைச் சேமிக்க முடியவில்லை.</string>
-    <string name="sound_theme_no_picker">கோப்புகளைத் தேர்வுசெய்ய இந்தச் சாதனத்தில் எந்தப் பயன்பாடும் இல்லை.</string>
+    <string name="sound_theme_no_picker">கோப்புகளைத் தேர்வுசெய்ய இந்தச் சாதனத்தில் ஆப்ஸ் எதுவும் இல்லை.</string>
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> இன் அமைப்புகள்</string>
     <string name="title_pref_theme_sounds">ஒலிகள்</string>
     <string name="summary_pref_theme_sounds">இந்த தீமின் எந்த ஒலியையும் உங்கள் சொந்த ஒலிக் கோப்புடன் மாற்றவும்.</string>
     <string name="sound_themes_install_category">தீமை நிறுவு</string>
     <string name="title_pref_sound_theme_install_file">ஒரு கோப்பிலிருந்து</string>
-    <string name="summary_pref_sound_theme_install_file">தீம் கோப்பு ஒரு ZIP கோப்பு. நீங்கள் ஒன்றைத் திறக்கலாம் அல்லது மற்றொரு பயன்பாட்டிலிருந்து SandFly உடன் பகிரலாம்.</string>
+    <string name="summary_pref_sound_theme_install_file">தீம் கோப்பு என்பது ZIP கோப்பு. வேறு ஆப்ஸிலிருந்து அதை SandFly மூலம் திறக்கலாம் அல்லது SandFly-க்குப் பகிரலாம்.</string>
     <string name="title_pref_sound_theme_install_link">ஒரு இணைப்பிலிருந்து</string>
-    <string name="summary_pref_sound_theme_install_link">தீம் கோப்பிற்கான இணைப்பு அல்லது தீம் உள்ள GitHub களஞ்சியத்திற்கான இணைப்பு. உங்கள் உலாவியில் இருந்து SandFly உடன் இணைப்பையும் பகிரலாம்.</string>
+    <string name="summary_pref_sound_theme_install_link">தீம் கோப்பின் அல்லது தீம் உள்ள GitHub களஞ்சியத்தின் இணைப்பு. உலாவியிலிருந்து SandFly-க்கு இணைப்பைப் பகிரலாம்.</string>
     <string name="title_pref_sound_theme_install_source">ஒரு மூலத்திலிருந்து</string>
     <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea அல்லது Bitbucket இல் உள்ள களஞ்சியத்தில் உள்ள தீம் கோப்புகள்.</string>
     <string name="sound_theme_sources">ஒலி தீம் ஆதாரங்கள்</string>
     <string name="sound_theme_source_empty">இந்த மூலத்தில் ஒலி தீம்கள் இல்லை</string>
     <string name="sound_theme_source_failed">ஒலி தீம்களை ஏற்ற முடியவில்லை. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">அதிலிருந்து நிறுவப்பட்ட ஒலி தீம்கள் நிறுவப்பட்டிருக்கும்.</string>
-    <string name="sound_theme_link_message">தீம் கோப்பு அல்லது தீம் உள்ள GitHub களஞ்சியத்தில் இணைப்பை உள்ளிடவும் அல்லது ஒட்டவும்.</string>
+    <string name="sound_theme_link_message">தீம் கோப்பின் அல்லது தீம் உள்ள GitHub களஞ்சியத்தின் இணைப்பை உள்ளிடவும் அல்லது ஒட்டவும்.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">ஒலி தீமை நிறுவு</string>
     <string name="sound_theme_install_reading">ஒலி தீமைப் படிக்கிறது</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ஐ நிறுவவா?</string>
     <string name="sound_theme_install_and_use">நிறுவி பயன்படுத்து</string>
     <string name="sound_theme_install">நிறுவு</string>
-    <string name="sound_theme_install_replaces">இது அதே பெயரில் நிறுவப்பட்ட கருப்பொருளை மாற்றுகிறது.</string>
+    <string name="sound_theme_install_replaces">இது அதே பெயரில் நிறுவப்பட்டுள்ள தீமை மாற்றும்.</string>
     <string name="sound_theme_install_skipped">விடுபட்டது:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> நிறுவப்பட்டது.</string>
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> நிறுவப்பட்டது. அது இப்போது பயன்பாட்டில் உள்ளது.</string>

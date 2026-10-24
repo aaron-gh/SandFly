@@ -29,15 +29,15 @@
         <item quantity="other">บันทึกธีมแล้ว โดยมี <xliff:g id="count" example="13">%d</xliff:g> เสียง</item>
     </plurals>
     <string name="sound_theme_export_failed">SandFly ไม่สามารถบันทึกไฟล์ธีมได้</string>
-    <string name="sound_theme_no_picker">ไม่มีแอปในอุปกรณ์นี้ให้เลือกไฟล์</string>
+    <string name="sound_theme_no_picker">ไม่มีแอปในอุปกรณ์นี้สำหรับเลือกไฟล์</string>
     <string name="sound_theme_settings_category">การตั้งค่าของ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">เสียง</string>
     <string name="summary_pref_theme_sounds">แทนที่เสียงของธีมนี้ด้วยไฟล์เสียงของคุณเอง</string>
     <string name="sound_themes_install_category">ติดตั้งธีม</string>
     <string name="title_pref_sound_theme_install_file">จากไฟล์</string>
-    <string name="summary_pref_sound_theme_install_file">ไฟล์ธีมเป็นไฟล์ ZIP คุณยังสามารถเปิดหรือแชร์ด้วย SandFly จากแอปอื่นได้</string>
+    <string name="summary_pref_sound_theme_install_file">ไฟล์ธีมคือไฟล์ ZIP คุณยังเปิดไฟล์ด้วย SandFly หรือแชร์ไปยัง SandFly จากแอปอื่นได้ด้วย</string>
     <string name="title_pref_sound_theme_install_link">จากลิงก์</string>
-    <string name="summary_pref_sound_theme_install_link">ลิงก์ไปยังไฟล์ธีม หรือไปยังที่เก็บ GitHub ที่มีธีมอยู่ในนั้น คุณยังสามารถแชร์ลิงก์กับ SandFly จากเบราว์เซอร์ของคุณได้</string>
+    <string name="summary_pref_sound_theme_install_link">ลิงก์ไปยังไฟล์ธีม หรือไปยังที่เก็บ GitHub ที่มีธีม คุณยังแชร์ลิงก์ไปยัง SandFly จากเบราว์เซอร์ได้ด้วย</string>
     <string name="title_pref_sound_theme_install_source">จากแหล่งที่มา</string>
     <string name="summary_pref_sound_theme_install_source">ไฟล์ธีมในพื้นที่เก็บข้อมูลบน GitHub, GitLab, Codeberg, Gitea หรือ Bitbucket</string>
     <string name="sound_theme_sources">แหล่งที่มาของธีมเสียง</string>
@@ -51,7 +51,7 @@
     <string name="sound_theme_install_title">ติดตั้ง <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ไหม</string>
     <string name="sound_theme_install_and_use">ติดตั้งและใช้งาน</string>
     <string name="sound_theme_install">ติดตั้ง</string>
-    <string name="sound_theme_install_replaces">ซึ่งจะแทนที่ธีมที่ติดตั้งซึ่งมีชื่อเดียวกัน</string>
+    <string name="sound_theme_install_replaces">ธีมนี้จะแทนที่ธีมที่ติดตั้งไว้ซึ่งมีชื่อเดียวกัน</string>
     <string name="sound_theme_install_skipped">ข้ามไป:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">ติดตั้ง <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> แล้ว</string>
     <string name="sound_theme_installed_in_use">ติดตั้ง <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> แล้ว และกำลังใช้งานอยู่</string>

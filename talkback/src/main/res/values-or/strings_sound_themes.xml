@@ -29,29 +29,29 @@
         <item quantity="other"><xliff:g id="count" example="13">%d</xliff:g> ଧ୍ୱନି ସହିତ ଥିମ୍ ସଞ୍ଚୟ କଲେ |</item>
     </plurals>
     <string name="sound_theme_export_failed">SandFly ଥିମ୍ ଫାଇଲ୍ ସେଭ୍ କରିପାରିଲା ନାହିଁ।</string>
-    <string name="sound_theme_no_picker">ସହିତ ଫାଇଲ୍ ବାଛିବା ପାଇଁ ଏହି ଡିଭାଇସରେ କୌଣସି ଆପ୍ ନାହିଁ |</string>
+    <string name="sound_theme_no_picker">ଏହି ଡିଭାଇସରେ ଫାଇଲ୍ ବାଛିବା ପାଇଁ କୌଣସି ଆପ୍ ନାହିଁ।</string>
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ର ସେଟିଂସମୂହ</string>
     <string name="title_pref_theme_sounds">ସାଉଣ୍ଡ</string>
     <string name="summary_pref_theme_sounds">ଏହି ଥିମର ଯେକୌଣସି ଧ୍ୱନିକୁ ନିଜର ଏକ ସାଉଣ୍ଡ ଫାଇଲ୍ ସହିତ ବଦଳାନ୍ତୁ |</string>
     <string name="sound_themes_install_category">ଏକ ଥିମ୍ ସଂସ୍ଥାପନ କରନ୍ତୁ</string>
     <string name="title_pref_sound_theme_install_file">ଏକ ଫାଇଲ୍ ରୁ</string>
-    <string name="summary_pref_sound_theme_install_file">ଏକ ଥିମ୍ ଫାଇଲ୍ ହେଉଛି ଏକ ଜିପ୍ ଫାଇଲ୍ | ଅନ୍ୟ ଏକ ଆପରୁ SandFly ସହିତ ଆପଣ ଏହାକୁ ଖୋଲିପାରିବେ, କିମ୍ବା ସେୟାର କରିପାରିବେ |</string>
+    <string name="summary_pref_sound_theme_install_file">ଥିମ୍ ଫାଇଲ୍ ଏକ ZIP ଫାଇଲ୍। ଅନ୍ୟ ଏକ ଆପ୍‌ରୁ ଏହାକୁ SandFlyରେ ଖୋଲିପାରିବେ କିମ୍ବା SandFlyକୁ ସେୟାର୍ କରିପାରିବେ।</string>
     <string name="title_pref_sound_theme_install_link">ଏକ ଲିଙ୍କରୁ</string>
-    <string name="summary_pref_sound_theme_install_link">ଏକ ଥିମ୍ ଫାଇଲ୍ ସହିତ ଏକ ଲିଙ୍କ୍, କିମ୍ବା ଏଥିରେ ଥିମ୍ ସହିତ GitHub ରେପୋଜିଟୋରୀ ସହିତ | ଆପଣ ନିଜ ବ୍ରାଉଜରରୁ SandFly ସହିତ ଏକ ଲିଙ୍କ୍ ମଧ୍ୟ ଅଂଶୀଦାର କରିପାରିବେ |</string>
+    <string name="summary_pref_sound_theme_install_link">ଏକ ଥିମ୍ ଫାଇଲ୍‌ର କିମ୍ବା ଥିମ୍ ଥିବା GitHub ରିପୋଜିଟୋରୀର ଲିଙ୍କ୍। ବ୍ରାଉଜରରୁ SandFlyକୁ ଲିଙ୍କ୍ ସେୟାର୍ ମଧ୍ୟ କରିପାରିବେ।</string>
     <string name="title_pref_sound_theme_install_source">ଏକ ଉତ୍ସରୁ</string>
     <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea କିମ୍ବା Bitbucket ରେ ଏକ ସଂଗ୍ରହାଳୟରେ ଥିମ୍ ଫାଇଲଗୁଡିକ |</string>
     <string name="sound_theme_sources">ଶବ୍ଦ ଥିମ୍ ଉତ୍ସଗୁଡିକ</string>
     <string name="sound_theme_source_empty">ଏହି ଉତ୍ସରେ କୌଣସି ଧ୍ୱନି ଥିମ୍ ନାହିଁ</string>
     <string name="sound_theme_source_failed">ଧ୍ୱନି ଥିମ୍ ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ। <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">ଏଥିରୁ ସଂସ୍ଥାପିତ ଧ୍ୱନି ଥିମଗୁଡ଼ିକ ସଂସ୍ଥାପିତ ରହିବ।</string>
-    <string name="sound_theme_link_message">ଏକ ଥିମ୍ ଫାଇଲ୍, କିମ୍ବା ଏଥିରେ ଥିମ୍ ସହିତ GitHub ରେପୋଜିଟୋରୀକୁ ଏକ ଲିଙ୍କ୍ ପ୍ରବେଶ କିମ୍ବା ଲେପନ କର |</string>
+    <string name="sound_theme_link_message">ଏକ ଥିମ୍ ଫାଇଲ୍‌ର କିମ୍ବା ଥିମ୍ ଥିବା GitHub ରିପୋଜିଟୋରୀର ଲିଙ୍କ୍ ଲେଖନ୍ତୁ କିମ୍ବା ପେଷ୍ଟ କରନ୍ତୁ।</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">ଧ୍ୱନି ଥିମ୍ ସଂସ୍ଥାପନ କରନ୍ତୁ</string>
     <string name="sound_theme_install_reading">ଧ୍ୱନି ଥିମ୍ ପଢ଼ାଯାଉଛି</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ସଂସ୍ଥାପନ କରିବେ?</string>
     <string name="sound_theme_install_and_use">ସଂସ୍ଥାପନ ଏବଂ ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="sound_theme_install">ସଂସ୍ଥାପନ କରନ୍ତୁ</string>
-    <string name="sound_theme_install_replaces">ଏହା ସମାନ ନାମର ସ୍ଥାପିତ ଥିମ୍ କୁ ବଦଳାଇଥାଏ |</string>
+    <string name="sound_theme_install_replaces">ଏହା ସମାନ ନାମର ଇନଷ୍ଟଲ୍ ହୋଇଥିବା ଥିମ୍‌କୁ ବଦଳାଇବ।</string>
     <string name="sound_theme_install_skipped">ବାଦ୍ ଦିଆଗଲା:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ସଂସ୍ଥାପିତ ହେଲା।</string>
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ସଂସ୍ଥାପିତ ହେଲା। ଏହା ବର୍ତ୍ତମାନ ବ୍ୟବହୃତ ହେଉଛି।</string>

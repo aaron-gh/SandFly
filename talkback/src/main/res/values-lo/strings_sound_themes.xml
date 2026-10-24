@@ -29,34 +29,34 @@
         <item quantity="other">ບັນທຶກຫົວຂໍ້, ດ້ວຍສຽງ <xliff:g id="count" example="13">%d</xliff:g>.</item>
     </plurals>
     <string name="sound_theme_export_failed">SandFly ບໍ່ສາມາດບັນທຶກໄຟລ໌ຮູບແບບໄດ້.</string>
-    <string name="sound_theme_no_picker">ບໍ່ມີແອັບຯໃນອຸປະກອນນີ້ເພື່ອເລືອກໄຟລ໌ດ້ວຍ.</string>
+    <string name="sound_theme_no_picker">ບໍ່ມີແອັບໃນອຸປະກອນນີ້ສຳລັບເລືອກໄຟລ໌.</string>
     <string name="sound_theme_settings_category">ການຕັ້ງຄ່າ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">ສຽງ</string>
     <string name="summary_pref_theme_sounds">ແທນທີ່ສຽງຂອງຫົວຂໍ້ນີ້ດ້ວຍໄຟລ໌ສຽງຂອງທ່ານເອງ.</string>
     <string name="sound_themes_install_category">ຕິດຕັ້ງຮູບແບບສີສັນ</string>
     <string name="title_pref_sound_theme_install_file">ຈາກໄຟລ໌</string>
-    <string name="summary_pref_sound_theme_install_file">ໄຟລ໌ຫົວຂໍ້ແມ່ນໄຟລ໌ ZIP. ນອກນັ້ນທ່ານຍັງສາມາດເປີດອັນຫນຶ່ງ, ຫຼືແບ່ງປັນມັນ, ດ້ວຍ SandFly ຈາກແອັບຯອື່ນ.</string>
+    <string name="summary_pref_sound_theme_install_file">ໄຟລ໌ຮູບແບບແມ່ນໄຟລ໌ ZIP. ທ່ານຍັງສາມາດເປີດມັນດ້ວຍ SandFly ຫຼື ແບ່ງປັນມັນໄປຫາ SandFly ຈາກແອັບອື່ນໄດ້.</string>
     <string name="title_pref_sound_theme_install_link">ຈາກລິ້ງ</string>
-    <string name="summary_pref_sound_theme_install_link">ລິ້ງໄປຫາໄຟລ໌ຮູບແບບສີສັນ ຫຼືໄປຫາບ່ອນເກັບຂໍ້ມູນ GitHub ທີ່ມີຮູບແບບສີສັນຢູ່ໃນນັ້ນ. ນອກນັ້ນທ່ານຍັງສາມາດແບ່ງປັນການເຊື່ອມຕໍ່ກັບ SandFly ຈາກຕົວທ່ອງເວັບຂອງທ່ານ.</string>
+    <string name="summary_pref_sound_theme_install_link">ລິ້ງໄປຫາໄຟລ໌ຮູບແບບ ຫຼື ບ່ອນເກັບ GitHub ທີ່ມີຮູບແບບຢູ່ໃນນັ້ນ. ທ່ານຍັງແບ່ງປັນລິ້ງໄປຫາ SandFly ຈາກໂປຣແກຣມທ່ອງເວັບໄດ້.</string>
     <string name="title_pref_sound_theme_install_source">ຈາກແຫຼ່ງ</string>
     <string name="summary_pref_sound_theme_install_source">ໄຟລ໌ຫົວຂໍ້ຢູ່ໃນບ່ອນເກັບມ້ຽນໃນ GitHub, GitLab, Codeberg, Gitea ຫຼື Bitbucket.</string>
     <string name="sound_theme_sources">ແຫຼ່ງຮູບແບບສຽງ</string>
     <string name="sound_theme_source_empty">ບໍ່ມີຮູບແບບສຽງໃນແຫຼ່ງນີ້</string>
     <string name="sound_theme_source_failed">ບໍ່ສາມາດໂຫຼດຮູບແບບສຽງໄດ້. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">ຮູບແບບສຽງທີ່ຕິດຕັ້ງຈາກແຫຼ່ງນີ້ຈະຍັງຄົງຕິດຕັ້ງຢູ່.</string>
-    <string name="sound_theme_link_message">ໃສ່ ຫຼືວາງລິ້ງໄປຫາໄຟລ໌ຮູບແບບສີສັນ ຫຼືໃສ່ບ່ອນເກັບຂໍ້ມູນ GitHub ທີ່ມີຮູບແບບສີສັນຢູ່ໃນນັ້ນ.</string>
+    <string name="sound_theme_link_message">ໃສ່ ຫຼື ວາງລິ້ງໄປຫາໄຟລ໌ຮູບແບບ ຫຼື ໄປຫາບ່ອນເກັບ GitHub ທີ່ມີຮູບແບບຢູ່ໃນນັ້ນ.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">ຕິດຕັ້ງຮູບແບບສຽງ</string>
     <string name="sound_theme_install_reading">ກຳລັງອ່ານຮູບແບບສຽງ</string>
     <string name="sound_theme_install_title">ຕິດຕັ້ງ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ບໍ?</string>
     <string name="sound_theme_install_and_use">ຕິດຕັ້ງແລະນໍາໃຊ້</string>
     <string name="sound_theme_install">ຕິດຕັ້ງ</string>
-    <string name="sound_theme_install_replaces">ນີ້ແທນທີ່ຫົວຂໍ້ທີ່ຕິດຕັ້ງຂອງຊື່ດຽວກັນ.</string>
+    <string name="sound_theme_install_replaces">ອັນນີ້ຈະແທນທີ່ຮູບແບບທີ່ຕິດຕັ້ງແລ້ວທີ່ມີຊື່ດຽວກັນ.</string>
     <string name="sound_theme_install_skipped">ຂ້າມໄປ:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed">ຕິດຕັ້ງ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ແລ້ວ.</string>
     <string name="sound_theme_installed_in_use">ຕິດຕັ້ງ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ແລ້ວ. ຕອນນີ້ກຳລັງໃຊ້ຢູ່.</string>
     <string name="sound_theme_install_nothing">ບໍ່ມີຮູບແບບສຽງທີ່ຈະຕິດຕັ້ງ.</string>
-    <string name="sound_theme_install_not_a_theme">ນີ້ບໍ່ແມ່ນຊຸດຮູບແບບສຽງທີ່ SandFly ໃຊ້ໄດ້: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_not_a_theme">ນີ້ບໍ່ແມ່ນຮູບແບບສຽງທີ່ SandFly ໃຊ້ໄດ້: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
     <string name="sound_theme_install_failed">SandFly ບໍ່ສາມາດຕິດຕັ້ງຮູບແບບສຽງໄດ້. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">ລິ້ງໄປຫາຮູບແບບສຽງຕ້ອງເລີ່ມຕົ້ນດ້ວຍ https.</string>
     <string name="title_pref_theme_sounds_of">ສຽງຂອງ <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>

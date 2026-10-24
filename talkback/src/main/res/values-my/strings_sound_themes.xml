@@ -35,23 +35,23 @@
     <string name="summary_pref_theme_sounds">ဤအခင်းအကျင်း၏ မည်သည့်အသံကိုမဆို သင့်ကိုယ်ပိုင်အသံဖိုင်ဖြင့် အစားထိုးပါ။</string>
     <string name="sound_themes_install_category">အပြင်အဆင် ထည့်သွင်းရန်</string>
     <string name="title_pref_sound_theme_install_file">ဖိုင်တစ်ခုမှ</string>
-    <string name="summary_pref_sound_theme_install_file">အပြင်အဆင်ဖိုင်သည် ZIP ဖိုင်တစ်ခုဖြစ်သည်။ အခြားအက်ပ်တစ်ခုမှ SandFly ဖြင့်လည်း ဖွင့်နိုင်သည်၊ သို့မဟုတ် မျှဝေနိုင်သည်။</string>
+    <string name="summary_pref_sound_theme_install_file">အပြင်အဆင်ဖိုင်သည် ZIP ဖိုင် ဖြစ်သည်။ အခြားအက်ပ်မှ ၎င်းကို SandFly ဖြင့် ဖွင့်နိုင်သည် သို့မဟုတ် SandFly သို့ မျှဝေနိုင်သည်။</string>
     <string name="title_pref_sound_theme_install_link">လင့်ခ်တစ်ခုမှ</string>
-    <string name="summary_pref_sound_theme_install_link">အပြင်အဆင်ဖိုင်တစ်ခုသို့ လင့်ခ်တစ်ခု သို့မဟုတ် ၎င်းတွင်ရှိသော အပြင်အဆင်တစ်ခုပါရှိသော GitHub သိုလှောင်ခန်းသို့။ သင့်ဘရောက်ဆာမှ SandFly လင့်ခ်ကိုလည်း မျှဝေနိုင်သည်။</string>
+    <string name="summary_pref_sound_theme_install_link">အပြင်အဆင်ဖိုင်သို့ သို့မဟုတ် အပြင်အဆင်ပါသော GitHub repository သို့ လင့်ခ်။ ဘရောက်ဆာမှ SandFly သို့ လင့်ခ်ကို မျှဝေနိုင်သည်။</string>
     <string name="title_pref_sound_theme_install_source">အရင်းအမြစ်တစ်ခုမှ</string>
     <string name="summary_pref_sound_theme_install_source">GitHub၊ GitLab၊ Codeberg၊ Gitea သို့မဟုတ် Bitbucket ရှိ သိုလှောင်ခန်းရှိ ဆောင်ပုဒ်ဖိုင်များ။</string>
     <string name="sound_theme_sources">အသံ အပြင်အဆင် ရင်းမြစ်များ</string>
     <string name="sound_theme_source_empty">ဤရင်းမြစ်တွင် အသံအပြင်အဆင်များ မရှိပါ</string>
     <string name="sound_theme_source_failed">အသံအပြင်အဆင်များကို တင်၍မရပါ။ <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">၎င်းမှ ထည့်သွင်းထားသော အသံအပြင်အဆင်များ ဆက်လက် ထည့်သွင်းထားမည်။</string>
-    <string name="sound_theme_link_message">အပြင်အဆင်ဖိုင်တစ်ခုသို့ လင့်ခ်တစ်ခုကို ထည့်ပါ သို့မဟုတ် GitHub သိုလှောင်ခန်းသို့ ၎င်းတွင် ဆောင်ပုဒ်တစ်ခု ထည့်ပါ သို့မဟုတ် ကူးထည့်ပါ။</string>
+    <string name="sound_theme_link_message">အပြင်အဆင်ဖိုင်သို့ သို့မဟုတ် အပြင်အဆင်ပါသော GitHub repository သို့ လင့်ခ်ကို ထည့်ပါ သို့မဟုတ် ကူးထည့်ပါ။</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">အသံ အပြင်အဆင် ထည့်သွင်းရန်</string>
     <string name="sound_theme_install_reading">အသံအပြင်အဆင်ကို ဖတ်နေသည်</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ထည့်သွင်းမလား။</string>
     <string name="sound_theme_install_and_use">ထည့်သွင်းပြီး အသုံးပြုရန်</string>
     <string name="sound_theme_install">ထည့်သွင်းရန်</string>
-    <string name="sound_theme_install_replaces">၎င်းသည် အမည်တူထည့်သွင်းထားသည့် အပြင်အဆင်ကို အစားထိုးသည်။</string>
+    <string name="sound_theme_install_replaces">၎င်းသည် အမည်တူ ထည့်သွင်းထားသော အပြင်အဆင်ကို အစားထိုးမည်။</string>
     <string name="sound_theme_install_skipped">ချန်လှပ်ထားသည်-\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ထည့်သွင်းထားသည်။</string>
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ကို ထည့်သွင်းပြီးပါပြီ။ ယခု အသုံးပြုနေသည်။</string>

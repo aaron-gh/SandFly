@@ -35,22 +35,22 @@
         <item quantity="other">Зберегла тему, з <xliff:g id="count" example="13">%d</xliff:g> звуками.</item>
     </plurals>
     <string name="sound_theme_export_failed">SandFly не вдалося зберегти файл теми.</string>
-    <string name="sound_theme_no_picker">На цьому пристрої немає програми для вибору файлів.</string>
+    <string name="sound_theme_no_picker">На цьому пристрої немає додатка для вибору файлів.</string>
     <string name="sound_theme_settings_category">Налаштування <xliff:g id="theme" example="Unspoken">%1$s</xliff:g></string>
     <string name="title_pref_theme_sounds">Звуки</string>
     <string name="summary_pref_theme_sounds">Замініть будь-який звук цієї теми власним звуковим файлом.</string>
     <string name="sound_themes_install_category">Встановити тему</string>
     <string name="title_pref_sound_theme_install_file">З файлу</string>
-    <string name="summary_pref_sound_theme_install_file">Файл теми — це ZIP-файл. Ви також можете відкрити його або поділитися ним із SandFly з іншої програми.</string>
+    <string name="summary_pref_sound_theme_install_file">Файл теми — це ZIP-файл. Його також можна відкрити в SandFly або надіслати в SandFly з іншого додатка.</string>
     <string name="title_pref_sound_theme_install_link">З посилання</string>
-    <string name="summary_pref_sound_theme_install_link">Посилання на файл теми або на репозиторій GitHub із темою в ньому. Ви також можете поділитися посиланням із SandFly у своєму браузері.</string>
+    <string name="summary_pref_sound_theme_install_link">Посилання на файл теми або на репозиторій GitHub, що містить тему. Посиланням також можна поділитися із SandFly з браузера.</string>
     <string name="title_pref_sound_theme_install_source">З джерела</string>
     <string name="summary_pref_sound_theme_install_source">Файли тем у репозиторії на GitHub, GitLab, Codeberg, Gitea або Bitbucket.</string>
     <string name="sound_theme_sources">Джерела звукових тем</string>
     <string name="sound_theme_source_empty">У цьому джерелі немає звукових тем</string>
     <string name="sound_theme_source_failed">Не вдалося завантажити звукові теми. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">Звукові теми, встановлені з нього, залишаються встановленими.</string>
-    <string name="sound_theme_link_message">Введіть або вставте посилання на файл теми або на репозиторій GitHub із темою.</string>
+    <string name="sound_theme_link_message">Введіть або вставте посилання на файл теми чи на репозиторій GitHub, що містить тему.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Встановити звукову тему</string>
     <string name="sound_theme_install_reading">Читання звукової теми</string>
