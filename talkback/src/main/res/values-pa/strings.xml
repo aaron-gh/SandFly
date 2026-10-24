@@ -69,7 +69,7 @@
   <string name="summary_pref_allow_frequent_content_change_announcement">ਇਸ ਵਿੱਚ ਡਾਊਨਲੋਡ ਕਰਨ, ਡਰਾਈਵਿੰਗ ਦਿਸ਼ਾਵਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨ ਅਤੇ ਹੋਰ ਚੀਜ਼ਾਂ ਕਰਨ ਵੇਲੇ ਦੇ ਅੱਪਡੇਟ ਸ਼ਾਮਲ ਹੁੰਦੇ ਹਨ। ਬੰਦ ਹੋਣ \'ਤੇ ਵੀ ਤੁਹਾਨੂੰ ਕਦੇ-ਕਦਾਈਂ ਅੱਪਡੇਟ ਪ੍ਰਾਪਤ ਹੋਣਗੇ।</string>
   <string name="title_pref_explore_by_touch">ਸਪੱਰਸ਼ ਰਾਹੀਂ ਪੜਚੋਲ ਕਰੋ</string>
   <string name="title_pref_category_controls">ਕੰਟਰੋਲ</string>
-  <string name="title_pref_category_reduce_latency_summary">ਇਹ ਸੈਟਿੰਗਾਂ ਤੁਹਾਡੇ ਵੱਲੋਂ ਸਕ੍ਰੀਨ ਨੂੰ ਛੂਹਣ ਤੋਂ ਬਾਅਦ SandFly ਤੇਜ਼ੀ ਨਾਲ ਜਵਾਬ ਦਿੰਦੀਆਂ ਹਨ</string>
+  <string name="title_pref_category_reduce_latency_summary">ਇਹ ਸੈਟਿੰਗਾਂ ਸਕ੍ਰੀਨ ਨੂੰ ਛੂਹਣ ਤੋਂ ਬਾਅਦ SandFly ਨੂੰ ਤੇਜ਼ੀ ਨਾਲ ਜਵਾਬ ਦੇਣ ਯੋਗ ਬਣਾਉਂਦੀਆਂ ਹਨ</string>
   <string name="reset_latency_settings_title">ਦੇਰੀ ਸੰਬੰਧੀ ਸਾਰੀਆਂ ਸੈਟਿੰਗਾਂ ਨੂੰ ਰੀਸੈੱਟ ਕਰੋ</string>
   <string name="title_pref_single_tap">ਕਿਰਿਆਸ਼ੀਲ ਕਰਨ ਲਈ ਇੱਕ ਵਾਰ ਟੈਪ ਕਰੋ</string>
   <string name="summary_pref_single_tap">ਕਿਰਿਆਸ਼ੀਲ ਕਰਨ ਲਈ ਫੋਕਸ ਕੀਤੀ ਆਈਟਮ \'ਤੇ ਇੱਕ ਵਾਰ ਟੈਪ ਕਰੋ। ਡਬਲ ਟੈਪ ਨਾਲੋਂ ਜ਼ਿਆਦਾ ਤੇਜ਼ੀ ਨਾਲ ਨੈਵੀਗੇਟ ਕਰੋ।</string>
@@ -1639,13 +1639,13 @@
     <string name="title_pref_shortcut_edge_top_left_long_down">ਉੱਪਰ ਖੱਬੇ ਤੋਂ ਹੇਠਾਂ ਵੱਲ ਲੰਮਾ ਸਵਾਈਪ ਕਰੋ</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">ਉੱਪਰ ਸੱਜੇ ਤੋਂ ਹੇਠਾਂ ਵੱਲ ਲੰਮਾ ਸਵਾਈਪ ਕਰੋ</string>
     <string name="title_pref_shortcut_edge_left_top_right">ਖੱਬੇ ਕਿਨਾਰੇ ਤੋਂ ਸੱਜੇ ਪਾਸੇ ਵੱਲ ਸਵਾਈਪ ਕਰੋ, ਉੱਪਰਲਾ ਅੱਧ</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">ਖੱਬੇ ਕਿਨਾਰੇ ਤੋਂ ਸੱਜੇ ਪਾਸੇ ਲੰਮਾ ਸਵਾਈਪ ਕਰੋ, ਉੱਪਰਲਾ ਅੱਧ</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">ਖੱਬੇ ਕਿਨਾਰੇ ਤੋਂ ਸੱਜੇ ਵੱਲ ਲੰਮਾ ਸਵਾਈਪ ਕਰੋ, ਉੱਪਰਲਾ ਅੱਧ</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">ਖੱਬੇ ਕਿਨਾਰੇ ਤੋਂ ਸੱਜੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ, ਹੇਠਲਾ ਅੱਧ</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">ਖੱਬੇ ਕਿਨਾਰੇ ਤੋਂ ਸੱਜੇ ਪਾਸੇ ਲੰਮਾ ਸਵਾਈਪ ਕਰੋ, ਹੇਠਾਂ ਅੱਧਾ</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">ਖੱਬੇ ਕਿਨਾਰੇ ਤੋਂ ਸੱਜੇ ਵੱਲ ਲੰਮਾ ਸਵਾਈਪ ਕਰੋ, ਹੇਠਲਾ ਅੱਧ</string>
     <string name="title_pref_shortcut_edge_right_top_left">ਸੱਜੇ ਕਿਨਾਰੇ ਤੋਂ ਖੱਬੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ, ਉੱਪਰਲਾ ਅੱਧ</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">ਸੱਜੇ ਕਿਨਾਰੇ ਤੋਂ ਖੱਬੇ ਪਾਸੇ ਲੰਮਾ ਸਵਾਈਪ ਕਰੋ, ਉੱਪਰਲੇ ਅੱਧ</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">ਸੱਜੇ ਕਿਨਾਰੇ ਤੋਂ ਖੱਬੇ ਵੱਲ ਲੰਮਾ ਸਵਾਈਪ ਕਰੋ, ਉੱਪਰਲਾ ਅੱਧ</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">ਸੱਜੇ ਕਿਨਾਰੇ ਤੋਂ ਖੱਬੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ, ਹੇਠਲਾ ਅੱਧ</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">ਸੱਜੇ ਕਿਨਾਰੇ ਤੋਂ ਖੱਬੇ ਪਾਸੇ ਲੰਮਾ ਸਵਾਈਪ ਕਰੋ, ਹੇਠਾਂ ਅੱਧਾ</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">ਸੱਜੇ ਕਿਨਾਰੇ ਤੋਂ ਖੱਬੇ ਵੱਲ ਲੰਮਾ ਸਵਾਈਪ ਕਰੋ, ਹੇਠਲਾ ਅੱਧ</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">ਕੋਈ ਵੀ ਕੁੰਜੀ ਚੁਣਨ ਲਈ ਉਂਗਲ ਨੂੰ ਫੜੋ, ਫਿਰ ਚੁੱਕੋ। Enter, Done, ਜਾਂ Send ਲਈ ਡਬਲ-ਟੈਪ ਕਰੋ।</string>
     <string name="value_type_confirmation_tap_to_type">ਕਿਸੇ ਵੀ ਕੁੰਜੀ ਨੂੰ ਟਾਈਪ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ, ਜਾਂ ਕਿਸੇ ਵੀ ਕੁੰਜੀ ਨੂੰ ਚੁਣਨ ਲਈ ਉਂਗਲ ਨੂੰ ਫੜੋ, ਫਿਰ ਚੁੱਕੋ</string>
     <string name="title_pref_multi_tap_timeout">ਇੱਕ ਉਂਗਲ ਦੇ ਟੈਪ ਦੇ ਵਿਚਕਾਰ ਸਮਾਂ</string>

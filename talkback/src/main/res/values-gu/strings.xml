@@ -69,7 +69,7 @@
   <string name="summary_pref_allow_frequent_content_change_announcement">ડ્રાઇવિંગના દિશાનિર્દેશો ડાઉનલોડ કરતી વખતે, તેનું પાલન કરતી વખતે અને વધુ કાર્યો કરતી વખતે અપડેટ શામેલ કરે છે. જ્યારે બંધ હોય, ત્યારે પણ તમને ઓછી વખત મોકલવામાં આવતી અપડેટ પ્રાપ્ત થશે.</string>
   <string name="title_pref_explore_by_touch">સ્પર્શ કરીને શોધખોળ કરો</string>
   <string name="title_pref_category_controls">નિયંત્રણો</string>
-  <string name="title_pref_category_reduce_latency_summary">તમે સ્ક્રીનને ટચ કરો તે પછી આ સેટિંગ્સ SandFly ઝડપથી પ્રતિસાદ આપે છે</string>
+  <string name="title_pref_category_reduce_latency_summary">આ સેટિંગ સ્ક્રીનને ટચ કર્યા પછી SandFlyને ઝડપથી પ્રતિસાદ આપતું બનાવે છે</string>
   <string name="reset_latency_settings_title">વિલંબ માટેના બધા સેટિંગ રીસેટ કરો</string>
   <string name="title_pref_single_tap">સક્રિય કરવા માટે એક વાર ટૅપ કરો</string>
   <string name="summary_pref_single_tap">સક્રિય કરવા માટે ફોકસ કરેલી આઇટમ પર એકવાર ટૅપ કરો. બે વાર ટૅપિંગની સરખામણીમાં ઝડપી નૅવિગેશન.</string>
@@ -1639,13 +1639,13 @@
     <string name="title_pref_shortcut_edge_top_left_long_down">ઉપર ડાબેથી નીચે લાંબો સ્વાઇપ કરો</string>
     <string name="title_pref_shortcut_edge_top_right_long_down">ઉપર જમણી બાજુએથી નીચે લાંબો સ્વાઇપ કરો</string>
     <string name="title_pref_shortcut_edge_left_top_right">ડાબી ધારથી જમણે સ્વાઇપ કરો, ઉપરનો અડધો ભાગ</string>
-    <string name="title_pref_shortcut_edge_left_top_long_right">ડાબી ધારથી જમણી બાજુએ લાંબો સ્વાઇપ કરો, ઉપરના અડધા</string>
+    <string name="title_pref_shortcut_edge_left_top_long_right">ડાબી કિનારીથી જમણે લાંબો સ્વાઇપ કરો, ઉપરનો અડધો ભાગ</string>
     <string name="title_pref_shortcut_edge_left_bottom_right">ડાબી ધારથી જમણી બાજુએ સ્વાઇપ કરો, નીચેનો અડધો ભાગ</string>
-    <string name="title_pref_shortcut_edge_left_bottom_long_right">ડાબી ધારથી જમણી બાજુએ લાંબો સ્વાઇપ કરો, નીચે અડધા</string>
+    <string name="title_pref_shortcut_edge_left_bottom_long_right">ડાબી કિનારીથી જમણે લાંબો સ્વાઇપ કરો, નીચેનો અડધો ભાગ</string>
     <string name="title_pref_shortcut_edge_right_top_left">જમણી ધારથી ડાબે સ્વાઇપ કરો, ઉપરનો અડધો ભાગ</string>
-    <string name="title_pref_shortcut_edge_right_top_long_left">જમણી કિનારીથી ડાબે લાંબો સ્વાઇપ કરો, ઉપરના અડધા</string>
+    <string name="title_pref_shortcut_edge_right_top_long_left">જમણી કિનારીથી ડાબે લાંબો સ્વાઇપ કરો, ઉપરનો અડધો ભાગ</string>
     <string name="title_pref_shortcut_edge_right_bottom_left">જમણી કિનારીથી ડાબે સ્વાઇપ કરો, નીચેનો અડધો ભાગ</string>
-    <string name="title_pref_shortcut_edge_right_bottom_long_left">જમણી કિનારીથી ડાબી બાજુએ લાંબો સ્વાઇપ કરો, અડધા નીચે</string>
+    <string name="title_pref_shortcut_edge_right_bottom_long_left">જમણી કિનારીથી ડાબે લાંબો સ્વાઇપ કરો, નીચેનો અડધો ભાગ</string>
     <string name="value_type_confirmation_lift_to_type_except_action_key">કોઈપણ કી પસંદ કરવા માટે આંગળી પકડી રાખો, પછી ઉપાડો. Enter, Done અથવા Send માટે બે વાર ટૅપ કરો.</string>
     <string name="value_type_confirmation_tap_to_type">કોઈપણ કીને ટાઈપ કરવા માટે તેને ટેપ કરો અથવા કોઈપણ કી પસંદ કરવા માટે આંગળી પકડી રાખો, પછી ઉપાડો</string>
     <string name="title_pref_multi_tap_timeout">એક આંગળીના ટેપ વચ્ચેનો સમય</string>
