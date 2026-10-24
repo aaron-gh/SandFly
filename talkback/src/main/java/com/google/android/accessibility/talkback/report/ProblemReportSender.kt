@@ -274,20 +274,22 @@ object ProblemReportSender {
 
   /**
    * The log, after SandFly's last crash and last turn-off if there were any, which the log doesn't
-   * reach back to, and then the ends of the logs of SandFly's other processes, such as the one that
-   * runs on-device AI.
+   * reach back to, and how its last processes ended, and then the ends of the logs of SandFly's
+   * other processes, such as the one that runs on-device AI.
    */
   @WorkerThread
   private fun logWithCrash(context: Context): String? {
     val crash = CrashLog.read(context)
     val turnOff = TurnOffLog.read(context)
+    val exits = ExitReasons.describe(context)
     val others = otherProcessLogs(context)
     val log = readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)
-    if (crash == null && turnOff == null && others.isEmpty()) return log
+    if (crash == null && turnOff == null && exits == null && others.isEmpty()) return log
     val head =
       (if (crash == null) "" else "Last crash:\n$crash\n\n") +
         (if (turnOff == null) "" else "Last turn-off:\n$turnOff\n\n") +
-        (if (crash == null && turnOff == null) "" else "Log:\n")
+        (if (exits == null) "" else "Process exits:\n$exits\n\n") +
+        (if (crash == null && turnOff == null && exits == null) "" else "Log:\n")
     // The crash, as much of the end of the log as fits, and the other processes' logs.
     val room = (ProblemReport.MAX_LOG - head.length - others.length).coerceAtLeast(0)
     return head + log.orEmpty().takeLast(room) + others
