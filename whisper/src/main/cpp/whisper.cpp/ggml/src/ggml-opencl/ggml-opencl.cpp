@@ -12847,16 +12847,16 @@ static ggml_backend_buffer_t ggml_backend_opencl_buffer_type_alloc_buffer(ggml_b
     return ggml_backend_buffer_init(buffer_type, ggml_backend_opencl_buffer_interface, ctx, size);
 }
 
+// SandFly: whisper.cpp sizes and allocates the model's tensors before it creates the backend, so
+// the backend context may not exist yet when the buffer type is first asked about them.
 static size_t ggml_backend_opencl_buffer_type_get_alignment(ggml_backend_buffer_type_t buffer_type) {
-    ggml_backend_opencl_device_context * dev_ctx = (ggml_backend_opencl_device_context *) buffer_type->device->context;
-    return dev_ctx->backend_ctx->alignment;
+    return ggml_cl_init(buffer_type->device)->alignment;
 }
 
 static size_t ggml_backend_opencl_buffer_type_get_max_size(ggml_backend_buffer_type_t buffer_type) {
     static size_t max_size = -1;
     if (max_size == (size_t)-1) {
-        ggml_backend_opencl_device_context * dev_ctx = (ggml_backend_opencl_device_context *) buffer_type->device->context;
-        max_size = dev_ctx->backend_ctx->max_alloc_size;
+        max_size = ggml_cl_init(buffer_type->device)->max_alloc_size;
     }
     return max_size;
 }
@@ -12878,8 +12878,7 @@ static size_t ggml_backend_opencl_buffer_type_get_alloc_size(ggml_backend_buffer
     // subbuffer would overlap the next tensor in the pool. Reserve the worst-case
     // carve slack: at most 5 components (q5_K), i.e. 4 aligned gaps.
     if (ggml_is_quantized(tensor->type)) {
-        ggml_backend_opencl_device_context * dev_ctx = (ggml_backend_opencl_device_context *) buft->device->context;
-        size += 4 * dev_ctx->backend_ctx->alignment;
+        size += 4 * ggml_cl_init(buft->device)->alignment;
     }
 #endif // GGML_OPENCL_SOA_Q
     return size;

@@ -35,9 +35,9 @@ object WhisperEngines {
   /**
    * Transcribes with the model in [file], on the GPU when [gpu] is true and it can. The model is
    * loaded for each transcription and closed after it, so that it takes no memory between
-   * dictations.
+   * dictations. [build] tells this install of SandFly from others, as [load] says.
    */
-  fun transcriber(file: File, gpu: Boolean): SpeechTranscriber? =
+  fun transcriber(file: File, gpu: Boolean, build: String): SpeechTranscriber? =
     object : SpeechTranscriber {
       @Volatile private var model: WhisperModel? = null
       @Volatile private var cancelled = false
@@ -46,7 +46,7 @@ object WhisperEngines {
         if (cancelled) return null
         val loaded =
           try {
-            WhisperModel.load(file, gpu && gpuAvailable())
+            load(file, gpu && gpuAvailable(), build)
           } catch (e: IOException) {
             LogUtils.e(TAG, "Could not load %s: %s", file.name, e)
             return null
@@ -68,4 +68,28 @@ object WhisperEngines {
         model?.cancel()
       }
     }
+
+  /**
+   * Loads the model in [file], on the GPU if [gpu]. A crash in the GPU driver or the GPU build stops
+   * SandFly while it loads, so a marker is kept during the load. If it is still there, SandFly
+   * stopped during the last load, and this install, [build], loads on the CPU from then on.
+   */
+  private fun load(file: File, gpu: Boolean, build: String): WhisperModel {
+    if (!gpu) return WhisperModel.load(file, gpu = false)
+    val marker = File(file.parentFile, ".${file.name}.gpu-loading")
+    if (runCatching { marker.readText() }.getOrNull() == build) {
+      LogUtils.w(TAG, "SandFly stopped while loading %s on the GPU, so it runs on the CPU", file.name)
+      return WhisperModel.load(file, gpu = false)
+    }
+    try {
+      marker.writeText(build)
+    } catch (e: IOException) {
+      LogUtils.w(TAG, "Cannot mark the GPU load: %s", e)
+    }
+    try {
+      return WhisperModel.load(file, gpu = true)
+    } finally {
+      marker.delete()
+    }
+  }
 }

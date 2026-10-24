@@ -256,6 +256,7 @@ class AiDictation(
       WhisperEngines.transcriber(
         WhisperModels.get(service).file(model),
         DictationSettings.whisperOnGpu(prefs),
+        installKey(),
       ) ?: return null
     transcriber = whisper
     try {
@@ -264,6 +265,14 @@ class AiDictation(
       transcriber = null
     }
   }
+
+  /** When this install of SandFly was installed or updated, which tells it from others. */
+  private fun installKey(): String =
+    try {
+      service.packageManager.getPackageInfo(service.packageName, 0).lastUpdateTime.toString()
+    } catch (e: PackageManager.NameNotFoundException) {
+      ""
+    }
 
   private fun recognitionFailed(used: Recognition, error: Int) {
     continuous = null
