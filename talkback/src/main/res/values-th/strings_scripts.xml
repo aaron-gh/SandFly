@@ -32,8 +32,8 @@
     <string name="script_update_title">อัปเดต <xliff:g id="name">%1$s</xliff:g> เป็น <xliff:g id="version">%2$s</xliff:g> หรือไม่</string>
     <string name="script_update_new_permissions">สิทธิ์ใหม่:</string>
     <string name="script_update_button">อัปเดต</string>
-    <string name="script_update_replaces">ซึ่งจะแทนที่เวอร์ชัน <xliff:g id="version">%1$s</xliff:g> ด้วย <xliff:g id="author">%2$s</xliff:g> และเก็บข้อมูลและการตั้งค่าไว้</string>
-    <string name="script_update_other_author">อันใหม่คือโดย <xliff:g id="author">%1$s</xliff:g> ผู้เขียนคนอื่น อัปเดตเฉพาะเมื่อคุณเชื่อถือเท่านั้น</string>
+    <string name="script_update_replaces">สคริปต์นี้จะแทนที่เวอร์ชัน <xliff:g id="version">%1$s</xliff:g> ของ <xliff:g id="author">%2$s</xliff:g> โดยเก็บข้อมูลและการตั้งค่าไว้</string>
+    <string name="script_update_other_author">สคริปต์ใหม่เป็นของ <xliff:g id="author">%1$s</xliff:g> ซึ่งเป็นผู้เขียนคนอื่น อัปเดตเฉพาะเมื่อคุณเชื่อถือ</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ติดตั้งแล้ว</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> อัปเดตเป็น <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">การนำเข้าล้มเหลว <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">การตั้งค่า</string>
     <string name="script_list_filter">ตัวกรอง</string>
     <string name="script_button_off">เปิดสคริปต์ก่อน</string>
-    <string name="script_permissions_summary">การปิดเครื่องจะหยุดชิ้นส่วนที่จำเป็นต้องใช้</string>
+    <string name="script_permissions_summary">การปิดสิทธิ์จะหยุดส่วนที่ต้องใช้สิทธิ์นั้น</string>
     <string name="script_install_permissions_note">คุณสามารถปิดสิ่งเหล่านี้ได้ในภายหลัง</string>
     <string name="script_manage_category">การจัดการ</string>
     <string name="script_move_up">เรียกใช้ก่อน</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">เปิดที่อยู่นี้ใช่ไหม</string>
     <string name="script_homepage_open">เปิด</string>
     <string name="script_homepage_failed">ไม่มีแอปที่เปิด <xliff:g id="address">%1$s</xliff:g> ได้</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ปิดหลังจากเกิดข้อผิดพลาดซ้ำๆ ดูบันทึกในสคริปต์</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ถูกปิดหลังเกิดข้อผิดพลาดซ้ำๆ ดูบันทึกได้ใน “สคริปต์”</string>
     <string name="shortcut_inspect_item">ตรวจสอบรายการที่โฟกัส</string>
     <string name="script_inspect_no_item">ไม่มีรายการที่โฟกัสอยู่</string>
     <string name="script_inspect_copied">คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>

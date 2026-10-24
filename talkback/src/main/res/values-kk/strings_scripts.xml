@@ -32,8 +32,8 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> нұсқасына жаңартылсын ба?</string>
     <string name="script_update_new_permissions">Жаңа рұқсаттар:</string>
     <string name="script_update_button">Жаңарту</string>
-    <string name="script_update_replaces">Бұл <xliff:g id="version">%1$s</xliff:g> нұсқасын <xliff:g id="author">%2$s</xliff:g> нұсқасына ауыстырады және оның деректері мен параметрлерін сақтайды.</string>
-    <string name="script_update_other_author">Жаңасы <xliff:g id="author">%1$s</xliff:g> авторы, басқа автор. Тек сенсеңіз ғана жаңартыңыз.</string>
+    <string name="script_update_replaces">Бұл <xliff:g id="author">%2$s</xliff:g> жасаған <xliff:g id="version">%1$s</xliff:g> нұсқасын ауыстырады, оның деректері мен параметрлері сақталады.</string>
+    <string name="script_update_other_author">Жаңа нұсқаның авторы басқа: <xliff:g id="author">%1$s</xliff:g>. Сенім артсаңыз ғана жаңартыңыз.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> орнатылды</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> нұсқасына жаңартылды</string>
     <string name="script_import_failed">Импорттау сәтсіз аяқталды. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Параметрлер</string>
     <string name="script_list_filter">Сүзгі</string>
     <string name="script_button_off">Алдымен скриптті қосыңыз</string>
-    <string name="script_permissions_summary">Біреуін өшіру қажет бөліктерді тоқтатады.</string>
+    <string name="script_permissions_summary">Рұқсатты өшірсеңіз, оны қажет ететін бөліктер тоқтайды.</string>
     <string name="script_install_permissions_note">Оларды кейінірек өшіруге болады.</string>
     <string name="script_manage_category">Басқару</string>
     <string name="script_move_up">Ертерек іске қосу</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Бұл мекенжайды ашу керек пе?</string>
     <string name="script_homepage_open">Ашу</string>
     <string name="script_homepage_failed">Ешбір қолданба <xliff:g id="address">%1$s</xliff:g> аша алмайды</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> қайталанатын қателерден кейін өшірілді. Скрипттерде оның журналын қараңыз.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> қайталанған қателерге байланысты өшірілді. Журналын «Скрипттер» бөлімінен қараңыз.</string>
     <string name="shortcut_inspect_item">Фокустағы элементті тексеру</string>
     <string name="script_inspect_no_item">Ешбір элементте фокус жоқ</string>
     <string name="script_inspect_copied">Көшірілді. <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">Дереккөз қосу</string>
     <string name="script_source_add_button">Қосу</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea немесе Bitbucket репозиторийінің мекенжайы емес.</string>
+    <string name="script_source_invalid">Бұл GitHub, GitLab, Codeberg, Gitea немесе Bitbucket репозиторийінің мекенжайы емес.</string>
     <string name="script_source_exists">Бұл дереккөз әлдеқашан қосылған.</string>
     <string name="script_source_loading">Жүктелуде</string>
     <string name="script_source_empty">Бұл дереккөзде скрипттер жоқ</string>

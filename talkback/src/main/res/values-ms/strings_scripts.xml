@@ -32,8 +32,8 @@
     <string name="script_update_title">Kemas kini <xliff:g id="name">%1$s</xliff:g> kepada <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Keizinan baharu:</string>
     <string name="script_update_button">Kemas kini</string>
-    <string name="script_update_replaces">Ini menggantikan versi <xliff:g id="version">%1$s</xliff:g> dengan <xliff:g id="author">%2$s</xliff:g>, dan menyimpan data serta tetapannya.</string>
-    <string name="script_update_other_author">Yang baharu ialah oleh <xliff:g id="author">%1$s</xliff:g>, pengarang lain. Kemas kini hanya jika anda mempercayainya.</string>
+    <string name="script_update_replaces">Ini menggantikan versi <xliff:g id="version">%1$s</xliff:g> oleh <xliff:g id="author">%2$s</xliff:g>, dan mengekalkan data serta tetapannya.</string>
+    <string name="script_update_other_author">Yang baharu oleh <xliff:g id="author">%1$s</xliff:g>, pengarang yang berbeza. Kemas kini hanya jika anda mempercayainya.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> dipasang</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> dikemas kini kepada <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Import gagal. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Tetapan</string>
     <string name="script_list_filter">Penapis</string>
     <string name="script_button_off">Hidupkan skrip dahulu</string>
-    <string name="script_permissions_summary">Mematikan satu menghentikan bahagian yang memerlukannya.</string>
+    <string name="script_permissions_summary">Mematikan kebenaran akan menghentikan bahagian yang memerlukannya.</string>
     <string name="script_install_permissions_note">Anda boleh mematikan ini kemudian.</string>
     <string name="script_manage_category">Pengurusan</string>
     <string name="script_move_up">Jalankan lebih awal</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Buka alamat ini?</string>
     <string name="script_homepage_open">Buka</string>
     <string name="script_homepage_failed">Tiada apl yang boleh membuka <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> dimatikan selepas kesilapan berulang. Lihat log masuknya Skrip.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> dimatikan selepas ralat berulang. Lihat lognya dalam Skrip.</string>
     <string name="shortcut_inspect_item">Periksa item yang difokuskan</string>
     <string name="script_inspect_no_item">Tiada item mempunyai fokus</string>
     <string name="script_inspect_copied">Disalin. <xliff:g id="details">%1$s</xliff:g></string>

@@ -32,8 +32,8 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g>을 <xliff:g id="version">%2$s</xliff:g>로 업데이트하시겠습니까?</string>
     <string name="script_update_new_permissions">새로운 권한:</string>
     <string name="script_update_button">업데이트</string>
-    <string name="script_update_replaces">이는 버전 <xliff:g id="version">%1$s</xliff:g>을 <xliff:g id="author">%2$s</xliff:g>로 대체하고 해당 데이터와 설정을 유지합니다.</string>
-    <string name="script_update_other_author">새로운 작품은 다른 작가 <xliff:g id="author">%1$s</xliff:g>의 작품입니다. 신뢰할 수 있는 경우에만 업데이트하세요.</string>
+    <string name="script_update_replaces"><xliff:g id="author">%2$s</xliff:g>의 버전 <xliff:g id="version">%1$s</xliff:g>을(를) 대체하며, 데이터와 설정은 유지됩니다.</string>
+    <string name="script_update_other_author">새 스크립트의 작성자는 다른 작성자인 <xliff:g id="author">%1$s</xliff:g>입니다. 신뢰하는 경우에만 업데이트하세요.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> 설치됨</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>가 <xliff:g id="version">%2$s</xliff:g>로 업데이트됨</string>
     <string name="script_import_failed">가져오기에 실패했습니다. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">설정</string>
     <string name="script_list_filter">필터</string>
     <string name="script_button_off">먼저 스크립트를 켜세요</string>
-    <string name="script_permissions_summary">하나를 끄면 필요한 부품이 중지됩니다.</string>
+    <string name="script_permissions_summary">권한을 끄면 그 권한이 필요한 부분이 중지됩니다.</string>
     <string name="script_install_permissions_note">나중에 이 권한을 끌 수 있습니다.</string>
     <string name="script_manage_category">관리</string>
     <string name="script_move_up">더 일찍 실행</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">이 주소를 열까요?</string>
     <string name="script_homepage_open">열기</string>
     <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g>을(를) 열 수 있는 앱이 없습니다</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> 반복된 오류로 인해 꺼졌습니다. 스크립트의 로그인을 참조하세요.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> 스크립트가 반복된 오류로 꺼졌습니다. 로그는 \'스크립트\'에서 확인하세요.</string>
     <string name="shortcut_inspect_item">포커스된 항목 검사</string>
     <string name="script_inspect_no_item">포커스가 있는 항목이 없습니다</string>
     <string name="script_inspect_copied">복사되었습니다. <xliff:g id="details">%1$s</xliff:g></string>

@@ -32,8 +32,8 @@
     <string name="script_update_title">Оновити <xliff:g id="name">%1$s</xliff:g> на <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Нові дозволи:</string>
     <string name="script_update_button">Оновити</string>
-    <string name="script_update_replaces">Це замінить версію <xliff:g id="version">%1$s</xliff:g> на <xliff:g id="author">%2$s</xliff:g> та збереже її дані та налаштування.</string>
-    <string name="script_update_other_author">Новий автор <xliff:g id="author">%1$s</xliff:g>, інший автор. Оновлюйте, лише якщо ви довіряєте.</string>
+    <string name="script_update_replaces">Це замінить версію <xliff:g id="version">%1$s</xliff:g> від <xliff:g id="author">%2$s</xliff:g> і збереже її дані та налаштування.</string>
+    <string name="script_update_other_author">Новий скрипт від іншого автора: <xliff:g id="author">%1$s</xliff:g>. Оновлюйте, лише якщо довіряєте йому.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> встановлено</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> оновлено до <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Помилка імпорту. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Налаштування</string>
     <string name="script_list_filter">Фільтр</string>
     <string name="script_button_off">Спочатку увімкніть скрипт</string>
-    <string name="script_permissions_summary">Вимкнення одного зупиняє частини, які цього потребують.</string>
+    <string name="script_permissions_summary">Вимкнення дозволу зупиняє частини, яким він потрібен.</string>
     <string name="script_install_permissions_note">Ви можете вимкнути їх пізніше.</string>
     <string name="script_manage_category">Керування</string>
     <string name="script_move_up">Виконувати раніше</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Відкрити цю адресу?</string>
     <string name="script_homepage_open">Відкрити</string>
     <string name="script_homepage_failed">Жодна програма не може відкрити <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> вимкнено після повторних помилок. Перегляньте його журнал у сценаріях.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> вимкнено після повторних помилок. Його журнал — у розділі «Скрипти».</string>
     <string name="shortcut_inspect_item">Оглянути елемент у фокусі</string>
     <string name="script_inspect_no_item">Жоден елемент не має фокусу</string>
     <string name="script_inspect_copied">Скопійовано. <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">Додати джерело</string>
     <string name="script_source_add_button">Додати</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">Це не адреса сховища на GitHub, GitLab, Codeberg, Gitea або Bitbucket.</string>
+    <string name="script_source_invalid">Це не адреса репозиторію на GitHub, GitLab, Codeberg, Gitea або Bitbucket.</string>
     <string name="script_source_exists">Це джерело вже додано.</string>
     <string name="script_source_loading">Завантаження</string>
     <string name="script_source_empty">У цьому джерелі немає скриптів</string>

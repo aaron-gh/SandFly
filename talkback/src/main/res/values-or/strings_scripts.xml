@@ -32,8 +32,8 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> କୁ <xliff:g id="version">%2$s</xliff:g> କୁ ଅପଡେଟ୍ କରିବେ?</string>
     <string name="script_update_new_permissions">ନୂତନ ଅନୁମତି:</string>
     <string name="script_update_button">ଅଦ୍ୟତନ କରନ୍ତୁ</string>
-    <string name="script_update_replaces">ଏହା <xliff:g id="version">%1$s</xliff:g> ସଂସ୍କରଣ <xliff:g id="author">%2$s</xliff:g> ଦ୍ୱାରା ବଦଳାଇଥାଏ, ଏବଂ ଏହାର ତଥ୍ୟ ଏବଂ ସେଟିଙ୍ଗଗୁଡ଼ିକୁ ରଖେ |</string>
-    <string name="script_update_other_author">ଏକ ନୂତନ ଲେଖକ <xliff:g id="author">%1$s</xliff:g> ଦ୍ୱାରା | ଯଦି ଆପଣ ଏହାକୁ ବିଶ୍ trust ାସ କରନ୍ତି ତେବେ ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
+    <string name="script_update_replaces">ଏହା <xliff:g id="author">%2$s</xliff:g>ଙ୍କ ସଂସ୍କରଣ <xliff:g id="version">%1$s</xliff:g>କୁ ବଦଳାଏ, ଏବଂ ଏହାର ଡାଟା ଓ ସେଟିଂସ୍ ରଖେ।</string>
+    <string name="script_update_other_author">ନୂଆଟି ଅନ୍ୟ ଜଣେ ଲେଖକ <xliff:g id="author">%1$s</xliff:g>ଙ୍କର। ଆପଣ ଭରସା କରୁଥିଲେ ହିଁ ଅପଡେଟ୍ କରନ୍ତୁ।</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ସଂସ୍ଥାପିତ ହେଲା</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> କୁ ଅଦ୍ୟତନ ହୋଇଛି</string>
     <string name="script_import_failed">ଆମଦାନୀ ବିଫଳ ହେଲା। <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">ସେଟିଂସ</string>
     <string name="script_list_filter">ଫିଲ୍ଟର୍</string>
     <string name="script_button_off">ପ୍ରଥମେ ସ୍କ୍ରିପ୍ଟ ଚାଲୁ କରନ୍ତୁ</string>
-    <string name="script_permissions_summary">ଗୋଟିଏ ବନ୍ଦ କରିବା ଆବଶ୍ୟକ କରୁଥିବା ଅଂଶଗୁଡ଼ିକୁ ବନ୍ଦ କରିଦିଏ |</string>
+    <string name="script_permissions_summary">ଏକ ଅନୁମତି ବନ୍ଦ କଲେ ତାହା ଆବଶ୍ୟକ କରୁଥିବା ଅଂଶଗୁଡ଼ିକ ବନ୍ଦ ହୋଇଯାଏ।</string>
     <string name="script_install_permissions_note">ଆପଣ ପରେ ଏହାକୁ ବନ୍ଦ କରିପାରିବେ।</string>
     <string name="script_manage_category">ପରିଚାଳନା</string>
     <string name="script_move_up">ପୂର୍ବରୁ ଚଲାନ୍ତୁ</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">ଏହି ଠିକଣା ଖୋଲିବେ?</string>
     <string name="script_homepage_open">ଖୋଲନ୍ତୁ</string>
     <string name="script_homepage_failed">କୌଣସି ଆପ୍ <xliff:g id="address">%1$s</xliff:g> ଖୋଲିପାରିବ ନାହିଁ</string>
-    <string name="script_turned_off">ବାରମ୍ବାର ତ୍ରୁଟି ପରେ <xliff:g id="name">%1$s</xliff:g> ବନ୍ଦ ହୋଇଗଲା | ସ୍କ୍ରିପ୍ଟରେ ଏହାର ଲଗ୍ ଦେଖନ୍ତୁ |</string>
+    <string name="script_turned_off">ବାରମ୍ବାର ତ୍ରୁଟି ପରେ <xliff:g id="name">%1$s</xliff:g> ବନ୍ଦ ହୋଇଗଲା। ଏହାର ଲଗ୍ “ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ”ରେ ଦେଖନ୍ତୁ।</string>
     <string name="shortcut_inspect_item">ଫୋକସ୍ ଆଇଟମ୍ ଯାଞ୍ଚ କରନ୍ତୁ</string>
     <string name="script_inspect_no_item">କୌଣସି ବସ୍ତୁର ଫୋକସ୍ ନାହିଁ</string>
     <string name="script_inspect_copied">କପି କରାଯାଇଛି। <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">ଉତ୍ସ ଯୋଡନ୍ତୁ</string>
     <string name="script_source_add_button">ଯୋଡନ୍ତୁ</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea କିମ୍ବା Bitbucket ରେ ଏକ ସଂଗ୍ରହାଳୟର ଠିକଣା ନୁହେଁ |</string>
+    <string name="script_source_invalid">ଏହା GitHub, GitLab, Codeberg, Gitea କିମ୍ବା Bitbucketରେ ଥିବା ରିପୋଜିଟୋରୀର ଠିକଣା ନୁହେଁ।</string>
     <string name="script_source_exists">ଏହି ଉତ୍ସ ପୂର୍ବରୁ ଯୋଗ କରାଯାଇଛି।</string>
     <string name="script_source_loading">ଲୋଡ ହେଉଛି</string>
     <string name="script_source_empty">ଏହି ଉତ୍ସରେ କୌଣସି ସ୍କ୍ରିପ୍ଟ ନାହିଁ</string>

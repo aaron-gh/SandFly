@@ -32,8 +32,8 @@
     <string name="script_update_title">Posodobiti <xliff:g id="name">%1$s</xliff:g> na <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nova dovoljenja:</string>
     <string name="script_update_button">Posodobi</string>
-    <string name="script_update_replaces">To zamenja različico <xliff:g id="version">%1$s</xliff:g> z <xliff:g id="author">%2$s</xliff:g> in ohrani njene podatke in nastavitve.</string>
-    <string name="script_update_other_author">Nova je od <xliff:g id="author">%1$s</xliff:g>, drugega avtorja. Posodobite le, če mu zaupate.</string>
+    <string name="script_update_replaces">To zamenja različico <xliff:g id="version">%1$s</xliff:g> avtorja <xliff:g id="author">%2$s</xliff:g> in ohrani njene podatke in nastavitve.</string>
+    <string name="script_update_other_author">Novi je od drugega avtorja: <xliff:g id="author">%1$s</xliff:g>. Posodobite le, če mu zaupate.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> nameščen</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> posodobljeno na <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Uvoz ni uspel. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Nastavitve</string>
     <string name="script_list_filter">Filter</string>
     <string name="script_button_off">Najprej vklopite skript</string>
-    <string name="script_permissions_summary">Izklop enega zaustavi dele, ki ga potrebujejo.</string>
+    <string name="script_permissions_summary">Izklop dovoljenja ustavi dele, ki ga potrebujejo.</string>
     <string name="script_install_permissions_note">Te lahko pozneje izklopite.</string>
     <string name="script_manage_category">Upravljanje</string>
     <string name="script_move_up">Zaženi prej</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Odpreti ta naslov?</string>
     <string name="script_homepage_open">Odpri</string>
     <string name="script_homepage_failed">Nobena aplikacija ne more odpreti <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> se je izklopil po ponavljajočih se napakah. Oglejte si njegov dnevnik v Skriptih.</string>
+    <string name="script_turned_off">Skript <xliff:g id="name">%1$s</xliff:g> se je izklopil po ponavljajočih se napakah. Njegov dnevnik je v razdelku Skripte.</string>
     <string name="shortcut_inspect_item">Preglej element v fokusu</string>
     <string name="script_inspect_no_item">Noben element nima fokusa</string>
     <string name="script_inspect_copied">Kopirano. <xliff:g id="details">%1$s</xliff:g></string>

@@ -32,8 +32,8 @@
     <string name="script_update_title">Ungependa kusasisha <xliff:g id="name">%1$s</xliff:g> hadi <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Ruhusa mpya:</string>
     <string name="script_update_button">Sasisha</string>
-    <string name="script_update_replaces">Hii inachukua nafasi ya toleo la <xliff:g id="version">%1$s</xliff:g> kwa <xliff:g id="author">%2$s</xliff:g>, na huhifadhi data na mipangilio yake.</string>
-    <string name="script_update_other_author">Mpya ni <xliff:g id="author">%1$s</xliff:g>, mwandishi tofauti. Sasisha ikiwa tu unaiamini.</string>
+    <string name="script_update_replaces">Hii inachukua nafasi ya toleo <xliff:g id="version">%1$s</xliff:g> la <xliff:g id="author">%2$s</xliff:g>, na huhifadhi data na mipangilio yake.</string>
+    <string name="script_update_other_author">Mpya imeandikwa na <xliff:g id="author">%1$s</xliff:g>, mwandishi tofauti. Sasisha tu ikiwa unaiamini.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> imesakinishwa</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> imesasishwa hadi <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Imeshindwa kuleta. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Mipangilio</string>
     <string name="script_list_filter">Chuja</string>
     <string name="script_button_off">Washa skripti kwanza</string>
-    <string name="script_permissions_summary">Kuzima moja husimamisha sehemu zinazohitaji.</string>
+    <string name="script_permissions_summary">Kuzima ruhusa husimamisha sehemu zinazoihitaji.</string>
     <string name="script_install_permissions_note">Unaweza kuzima hizi baadaye.</string>
     <string name="script_manage_category">Udhibiti</string>
     <string name="script_move_up">Endesha mapema</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Ungependa kufungua anwani hii?</string>
     <string name="script_homepage_open">Fungua</string>
     <string name="script_homepage_failed">Hakuna programu inayoweza kufungua <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> imezimwa baada ya hitilafu zinazorudiwa. Tazama kumbukumbu yake katika Hati.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> imezimwa baada ya hitilafu za mara kwa mara. Angalia kumbukumbu yake katika Skripti.</string>
     <string name="shortcut_inspect_item">Kagua kipengee kilicholengwa</string>
     <string name="script_inspect_no_item">Hakuna kipengee chenye fokasi</string>
     <string name="script_inspect_copied">Imenakiliwa. <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">Ongeza chanzo</string>
     <string name="script_source_add_button">Ongeza</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">Sio anwani ya hazina kwenye GitHub, GitLab, Codeberg, Gitea au Bitbucket.</string>
+    <string name="script_source_invalid">Si anwani ya hazina kwenye GitHub, GitLab, Codeberg, Gitea au Bitbucket.</string>
     <string name="script_source_exists">Chanzo hiki tayari kimeongezwa.</string>
     <string name="script_source_loading">Inapakia</string>
     <string name="script_source_empty">Hakuna skripti katika chanzo hiki</string>

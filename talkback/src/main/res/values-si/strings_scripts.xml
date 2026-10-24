@@ -32,8 +32,8 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> වෙත යාවත්කාලීන කරන්නද?</string>
     <string name="script_update_new_permissions">නව අවසර:</string>
     <string name="script_update_button">යාවත්කාලීන කරන්න</string>
-    <string name="script_update_replaces">මෙය <xliff:g id="version">%1$s</xliff:g> අනුවාදය <xliff:g id="author">%2$s</xliff:g> මගින් ප්‍රතිස්ථාපනය කරයි, සහ එහි දත්ත සහ සැකසීම් තබා ගනී.</string>
-    <string name="script_update_other_author">අලුත් එක වෙනස් කර්තෘවරයෙකු වන <xliff:g id="author">%1$s</xliff:g> විසිනි. ඔබ එය විශ්වාස කරන්නේ නම් පමණක් යාවත්කාලීන කරන්න.</string>
+    <string name="script_update_replaces">මෙය <xliff:g id="author">%2$s</xliff:g> ගේ <xliff:g id="version">%1$s</xliff:g> අනුවාදය ප්‍රතිස්ථාපනය කර, එහි දත්ත සහ සැකසීම් තබා ගනී.</string>
+    <string name="script_update_other_author">අලුත් එක වෙනත් කතුවරයෙකු වන <xliff:g id="author">%1$s</xliff:g> විසිනි. ඔබ විශ්වාස කරන්නේ නම් පමණක් යාවත්කාලීන කරන්න.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ස්ථාපනය කර ඇත</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> වෙත යාවත්කාලීන කරන ලදී</string>
     <string name="script_import_failed">ආයාත කිරීම අසාර්ථක විය. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">සැකසීම්</string>
     <string name="script_list_filter">පෙරහන</string>
     <string name="script_button_off">මුලින්ම ස්ක්‍රිප්ට් එක ඔන් කරන්න</string>
-    <string name="script_permissions_summary">එකක් නිවා දැමීමෙන් අවශ්‍ය කොටස් නතර වේ.</string>
+    <string name="script_permissions_summary">අවසරයක් අක්‍රිය කිරීමෙන් එය අවශ්‍ය කොටස් නතර වේ.</string>
     <string name="script_install_permissions_note">ඔබට පසුව මේවා අක්‍රිය කළ හැක.</string>
     <string name="script_manage_category">කළමනාකරණය</string>
     <string name="script_move_up">කලින් ධාවනය කරන්න</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">මෙම ලිපිනය විවෘත කරන්නද?</string>
     <string name="script_homepage_open">විවෘත කරන්න</string>
     <string name="script_homepage_failed">කිසිදු යෙදුමකට <xliff:g id="address">%1$s</xliff:g> විවෘත කළ නොහැක</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> නැවත නැවත දෝෂ වලින් පසුව අක්‍රිය කර ඇත. එහි log in Scripts බලන්න.</string>
+    <string name="script_turned_off">නැවත නැවත දෝෂ නිසා <xliff:g id="name">%1$s</xliff:g> අක්‍රිය විය. එහි ලොගය “ස්ක්‍රිප්ට්” හි බලන්න.</string>
     <string name="shortcut_inspect_item">ෆෝකස් කළ අයිතමය පරීක්ෂා කරන්න</string>
     <string name="script_inspect_no_item">කිසිදු අයිතමයක ෆෝකස් නැත</string>
     <string name="script_inspect_copied">පිටපත් කර ඇත. <xliff:g id="details">%1$s</xliff:g></string>

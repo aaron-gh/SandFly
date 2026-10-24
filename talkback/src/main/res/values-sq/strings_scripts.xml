@@ -32,8 +32,8 @@
     <string name="script_update_title">Të përditësohet <xliff:g id="name">%1$s</xliff:g> në <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Lejet e reja:</string>
     <string name="script_update_button">Përditëso</string>
-    <string name="script_update_replaces">Kjo zëvendëson versionin <xliff:g id="version">%1$s</xliff:g> me <xliff:g id="author">%2$s</xliff:g> dhe ruan të dhënat dhe cilësimet e tij.</string>
-    <string name="script_update_other_author">E reja është nga <xliff:g id="author">%1$s</xliff:g>, një autor tjetër. Përditësoni vetëm nëse i besoni.</string>
+    <string name="script_update_replaces">Kjo zëvendëson versionin <xliff:g id="version">%1$s</xliff:g> nga <xliff:g id="author">%2$s</xliff:g> dhe ruan të dhënat dhe cilësimet e tij.</string>
+    <string name="script_update_other_author">I riu është nga <xliff:g id="author">%1$s</xliff:g>, një autor tjetër. Përditësojeni vetëm nëse i besoni.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> u instalua</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> u përditësua në <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Importi dështoi. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Cilësimet</string>
     <string name="script_list_filter">Filtro</string>
     <string name="script_button_off">Fillimisht aktivizo skriptin</string>
-    <string name="script_permissions_summary">Fikja e njërës ndalon pjesët që kanë nevojë për të.</string>
+    <string name="script_permissions_summary">Çaktivizimi i një leje ndalon pjesët që kanë nevojë për të.</string>
     <string name="script_install_permissions_note">Mund t\'i çaktivizoni më vonë.</string>
     <string name="script_manage_category">Menaxhimi</string>
     <string name="script_move_up">Ekzekuto më herët</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Të hapet kjo adresë?</string>
     <string name="script_homepage_open">Hap</string>
     <string name="script_homepage_failed">Asnjë aplikacion nuk mund të hapë <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> fiket pas gabimeve të përsëritura. Shih regjistrin e tij në Skriptet.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> u çaktivizua pas gabimeve të përsëritura. Shihni regjistrin e tij te “Skriptet”.</string>
     <string name="shortcut_inspect_item">Inspekto artikullin e fokusuar</string>
     <string name="script_inspect_no_item">Asnjë artikull nuk ka fokus</string>
     <string name="script_inspect_copied">U kopjua. <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">Shto burim</string>
     <string name="script_source_add_button">Shto</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">Jo adresa e një depoje në GitHub, GitLab, Codeberg, Gitea ose Bitbucket.</string>
+    <string name="script_source_invalid">Nuk është adresa e një depoje në GitHub, GitLab, Codeberg, Gitea ose Bitbucket.</string>
     <string name="script_source_exists">Ky burim është shtuar tashmë.</string>
     <string name="script_source_loading">Po ngarkohet</string>
     <string name="script_source_empty">Nuk ka skripta në këtë burim</string>

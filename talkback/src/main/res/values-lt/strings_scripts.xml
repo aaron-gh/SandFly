@@ -32,8 +32,8 @@
     <string name="script_update_title">Atnaujinti <xliff:g id="name">%1$s</xliff:g> į <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nauji leidimai:</string>
     <string name="script_update_button">Atnaujinti</string>
-    <string name="script_update_replaces">Tai pakeičia versiją <xliff:g id="version">%1$s</xliff:g> į <xliff:g id="author">%2$s</xliff:g> ir išsaugo jos duomenis bei nustatymus.</string>
-    <string name="script_update_other_author">Naujasis yra <xliff:g id="author">%1$s</xliff:g>, kito autoriaus. Atnaujinkite tik tuo atveju, jei pasitikite.</string>
+    <string name="script_update_replaces">Tai pakeis <xliff:g id="author">%2$s</xliff:g> versiją <xliff:g id="version">%1$s</xliff:g> ir išsaugos jos duomenis bei nustatymus.</string>
+    <string name="script_update_other_author">Naujojo autorius yra kitas: <xliff:g id="author">%1$s</xliff:g>. Atnaujinkite tik jei juo pasitikite.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> įdiegta</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> atnaujinta į <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Importuoti nepavyko. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Nustatymai</string>
     <string name="script_list_filter">Filtruoti</string>
     <string name="script_button_off">Pirmiausia įjunkite scenarijų</string>
-    <string name="script_permissions_summary">Išjungus, sustabdomos dalys, kurioms to reikia.</string>
+    <string name="script_permissions_summary">Išjungus leidimą, sustabdomos jo reikalaujančios dalys.</string>
     <string name="script_install_permissions_note">Vėliau galėsite juos išjungti.</string>
     <string name="script_manage_category">Tvarkymas</string>
     <string name="script_move_up">Paleisti anksčiau</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Atidaryti šį adresą?</string>
     <string name="script_homepage_open">Atidaryti</string>
     <string name="script_homepage_failed">Jokia programa negali atidaryti <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> išjungtas po pasikartojančių klaidų. Žiūrėkite jo prisijungimą Skriptuose.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> išjungtas po pasikartojančių klaidų. Jo žurnalą rasite skiltyje „Scenarijai“.</string>
     <string name="shortcut_inspect_item">Tikrinti sufokusuotą elementą</string>
     <string name="script_inspect_no_item">Nė vienas elementas neturi fokusavimo</string>
     <string name="script_inspect_copied">Nukopijuota. <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">Pridėti šaltinį</string>
     <string name="script_source_add_button">Pridėti</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">Ne saugyklos adresas GitHub, GitLab, Codeberg, Gitea ar Bitbucket.</string>
+    <string name="script_source_invalid">Tai ne GitHub, GitLab, Codeberg, Gitea ar Bitbucket saugyklos adresas.</string>
     <string name="script_source_exists">Šis šaltinis jau pridėtas.</string>
     <string name="script_source_loading">Įkeliama</string>
     <string name="script_source_empty">Šiame šaltinyje nėra scenarijų</string>

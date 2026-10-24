@@ -32,8 +32,8 @@
     <string name="script_update_title">ອັບເດດ <xliff:g id="name">%1$s</xliff:g> ເປັນ <xliff:g id="version">%2$s</xliff:g> ບໍ?</string>
     <string name="script_update_new_permissions">ການອະນຸຍາດໃໝ່:</string>
     <string name="script_update_button">ອັບເດດ</string>
-    <string name="script_update_replaces">ນີ້ແທນທີ່ເວີຊັນ <xliff:g id="version">%1$s</xliff:g> ໂດຍ <xliff:g id="author">%2$s</xliff:g>, ແລະຮັກສາຂໍ້ມູນ ແລະການຕັ້ງຄ່າຂອງມັນໄວ້.</string>
-    <string name="script_update_other_author">ອັນໃໝ່ແມ່ນໂດຍ <xliff:g id="author">%1$s</xliff:g>, ຜູ້ຂຽນອື່ນ. ອັບເດດພຽງແຕ່ຖ້າທ່ານເຊື່ອມັນ.</string>
+    <string name="script_update_replaces">ອັນນີ້ຈະແທນທີ່ເວີຊັນ <xliff:g id="version">%1$s</xliff:g> ຂອງ <xliff:g id="author">%2$s</xliff:g> ແລະ ຮັກສາຂໍ້ມູນ ແລະ ການຕັ້ງຄ່າຂອງມັນໄວ້.</string>
+    <string name="script_update_other_author">ອັນໃໝ່ສ້າງໂດຍ <xliff:g id="author">%1$s</xliff:g>, ເຊິ່ງເປັນຜູ້ສ້າງຄົນອື່ນ. ອັບເດດສະເພາະເມື່ອທ່ານເຊື່ອຖືມັນເທົ່ານັ້ນ.</string>
     <string name="script_installed">ຕິດຕັ້ງ <xliff:g id="name">%1$s</xliff:g> ແລ້ວ</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> ອັບເດດເປັນ <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">ການນຳເຂົ້າລົ້ມເຫລວ. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">ການຕັ້ງຄ່າ</string>
     <string name="script_list_filter">ການກັ່ນຕອງ</string>
     <string name="script_button_off">ເປີດສະຄຣິບກ່ອນ</string>
-    <string name="script_permissions_summary">ການປິດອັນໜຶ່ງຈະຢຸດພາກສ່ວນທີ່ຕ້ອງການ.</string>
+    <string name="script_permissions_summary">ການປິດການອະນຸຍາດຈະຢຸດສ່ວນທີ່ຕ້ອງການມັນ.</string>
     <string name="script_install_permissions_note">ທ່ານສາມາດປິດສິ່ງເຫຼົ່ານີ້ໄດ້ໃນພາຍຫຼັງ.</string>
     <string name="script_manage_category">ການຈັດການ</string>
     <string name="script_move_up">ດຳເນີນການກ່ອນ</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">ເປີດທີ່ຢູ່ນີ້ບໍ?</string>
     <string name="script_homepage_open">ເປີດ</string>
     <string name="script_homepage_failed">ບໍ່ມີແອັບໃດທີ່ເປີດ <xliff:g id="address">%1$s</xliff:g> ໄດ້</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g>ປິດຫຼັງຈາກເກີດຄວາມຜິດພາດຊ້ຳໆ. ເບິ່ງບັນທຶກຂອງມັນຢູ່ໃນ Scripts.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ຖືກປິດຫຼັງຈາກເກີດຂໍ້ຜິດພາດຊ້ຳໆ. ເບິ່ງບັນທຶກຂອງມັນໃນ “ສະຄຣິບ”.</string>
     <string name="shortcut_inspect_item">ກວດກາລາຍການທີ່ໂຟກັສ</string>
     <string name="script_inspect_no_item">ບໍ່ມີລາຍການທີ່ຖືກໂຟກັສ</string>
     <string name="script_inspect_copied">ສຳເນົາແລ້ວ. <xliff:g id="details">%1$s</xliff:g></string>

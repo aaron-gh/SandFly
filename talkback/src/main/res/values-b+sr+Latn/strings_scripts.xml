@@ -32,8 +32,8 @@
     <string name="script_update_title">Ažurirati <xliff:g id="name">%1$s</xliff:g> na <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nove dozvole:</string>
     <string name="script_update_button">Ažuriraj</string>
-    <string name="script_update_replaces">Ovo zamenjuje verziju <xliff:g id="version">%1$s</xliff:g> sa <xliff:g id="author">%2$s</xliff:g> i zadržava njene podatke i podešavanja.</string>
-    <string name="script_update_other_author">Novi je od <xliff:g id="author">%1$s</xliff:g>, drugog autora. Ažurirajte samo ako mu verujete.</string>
+    <string name="script_update_replaces">Ovo zamenjuje verziju <xliff:g id="version">%1$s</xliff:g> autora <xliff:g id="author">%2$s</xliff:g> i zadržava njene podatke i podešavanja.</string>
+    <string name="script_update_other_author">Novu je napisao drugi autor: <xliff:g id="author">%1$s</xliff:g>. Ažurirajte samo ako mu verujete.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> instaliran</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> ažurirano na <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Uvoz nije uspeo. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Podešavanja</string>
     <string name="script_list_filter">Filter</string>
     <string name="script_button_off">Prvo uključite skriptu</string>
-    <string name="script_permissions_summary">Isključivanje jednog zaustavlja delove kojima je to potrebno.</string>
+    <string name="script_permissions_summary">Isključivanje dozvole zaustavlja delove kojima je potrebna.</string>
     <string name="script_install_permissions_note">Možete ih isključiti kasnije.</string>
     <string name="script_manage_category">Upravljanje</string>
     <string name="script_move_up">Pokreni ranije</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Otvoriti ovu adresu?</string>
     <string name="script_homepage_open">Otvori</string>
     <string name="script_homepage_failed">Nijedna aplikacija ne može da otvori <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> se isključuje nakon ponovljenih grešaka. Pogledajte njegov dnevnik u Skriptama.</string>
+    <string name="script_turned_off">Skripta <xliff:g id="name">%1$s</xliff:g> je isključena posle ponovljenih grešaka. Njen dnevnik je u odeljku Skripte.</string>
     <string name="shortcut_inspect_item">Pregledaj fokusiranu stavku</string>
     <string name="script_inspect_no_item">Nijedna stavka nema fokus</string>
     <string name="script_inspect_copied">Kopirano. <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">Dodaj izvor</string>
     <string name="script_source_add_button">Dodaj</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">Nije adresa spremišta na GitHub, GitLab, Codeberg, Gitea ili Bitbucket.</string>
+    <string name="script_source_invalid">Ovo nije adresa spremišta na GitHub-u, GitLab-u, Codeberg-u, Gitea-i ili Bitbucket-u.</string>
     <string name="script_source_exists">Ovaj izvor je već dodat.</string>
     <string name="script_source_loading">Učitava se</string>
     <string name="script_source_empty">Nema skripti u ovom izvoru</string>

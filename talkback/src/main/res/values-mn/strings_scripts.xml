@@ -32,8 +32,8 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g>-г <xliff:g id="version">%2$s</xliff:g> болгож шинэчлэх үү?</string>
     <string name="script_update_new_permissions">Шинэ зөвшөөрөл:</string>
     <string name="script_update_button">Шинэчлэх</string>
-    <string name="script_update_replaces">Энэ нь <xliff:g id="version">%1$s</xliff:g> хувилбарыг <xliff:g id="author">%2$s</xliff:g>-ээр сольж, өгөгдөл болон тохиргоог нь хадгалдаг.</string>
-    <string name="script_update_other_author">Шинэ нь <xliff:g id="author">%1$s</xliff:g>, өөр зохиолч юм. Зөвхөн итгэж байгаа тохиолдолд л шинэчилнэ үү.</string>
+    <string name="script_update_replaces">Энэ нь <xliff:g id="author">%2$s</xliff:g>-н <xliff:g id="version">%1$s</xliff:g> хувилбарыг орлох бөгөөд өгөгдөл, тохиргоог нь хадгална.</string>
+    <string name="script_update_other_author">Шинэ хувилбарыг өөр зохиогч <xliff:g id="author">%1$s</xliff:g> бичсэн. Итгэж байвал л шинэчилнэ үү.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> суулгасан</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g>-г <xliff:g id="version">%2$s</xliff:g> болгож шинэчилсэн</string>
     <string name="script_import_failed">Импорт хийж чадсангүй. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Тохиргоо</string>
     <string name="script_list_filter">Шүүлтүүр</string>
     <string name="script_button_off">Эхлээд скриптийг асаана уу</string>
-    <string name="script_permissions_summary">Нэг унтраах нь шаардлагатай хэсгүүдийг зогсооно.</string>
+    <string name="script_permissions_summary">Зөвшөөрлийг унтраавал түүнийг шаарддаг хэсгүүд зогсоно.</string>
     <string name="script_install_permissions_note">Та эдгээрийг дараа унтрааж болно.</string>
     <string name="script_manage_category">Удирдлага</string>
     <string name="script_move_up">Эрт ажиллуулах</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Энэ хаягийг нээх үү?</string>
     <string name="script_homepage_open">Нээх</string>
     <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g>-г нээх апп алга</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> давтан алдаа гарсны дараа унтарсан. Скриптийн бүртгэлийг харна уу.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> давтан алдааны улмаас унтарлаа. Бүртгэлийг нь «Скриптүүд» хэсгээс харна уу.</string>
     <string name="shortcut_inspect_item">Фокуст байгаа зүйлийг шалгах</string>
     <string name="script_inspect_no_item">Фокустай элемент алга</string>
     <string name="script_inspect_copied">Хуулсан. <xliff:g id="details">%1$s</xliff:g></string>

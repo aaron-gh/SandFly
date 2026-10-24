@@ -32,8 +32,8 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g>ге жаңыртылсынбы?</string>
     <string name="script_update_new_permissions">Жаңы уруксаттар:</string>
     <string name="script_update_button">Жаңыртуу</string>
-    <string name="script_update_replaces">Бул <xliff:g id="version">%1$s</xliff:g> версиясын <xliff:g id="author">%2$s</xliff:g> менен алмаштырып, анын дайындарын жана жөндөөлөрүн сактайт.</string>
-    <string name="script_update_other_author">Жаңысы <xliff:g id="author">%1$s</xliff:g>, башка автор. Ишенсеңиз гана жаңыртыңыз.</string>
+    <string name="script_update_replaces">Бул <xliff:g id="author">%2$s</xliff:g> жазган <xliff:g id="version">%1$s</xliff:g> версиясын алмаштырат, анын дайындары жана жөндөөлөрү сакталат.</string>
+    <string name="script_update_other_author">Жаңысынын автору башка: <xliff:g id="author">%1$s</xliff:g>. Ишенсеңиз гана жаңыртыңыз.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> орнотулду</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> версиясына жаңыртылды</string>
     <string name="script_import_failed">Импорттолбой калды. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Параметрлер</string>
     <string name="script_list_filter">Фильтр</string>
     <string name="script_button_off">Адегенде скриптти күйгүзүңүз</string>
-    <string name="script_permissions_summary">Бирин өчүрүү керек болгон бөлүктөрүн токтотот.</string>
+    <string name="script_permissions_summary">Уруксатты өчүрсөңүз, ага муктаж бөлүктөр токтойт.</string>
     <string name="script_install_permissions_note">Буларды кийинчерээк өчүрө аласыз.</string>
     <string name="script_manage_category">Башкаруу</string>
     <string name="script_move_up">Эртерээк иштетүү</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Бул дарек ачылсынбы?</string>
     <string name="script_homepage_open">Ачуу</string>
     <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> дарегин ача турган колдонмо жок</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> turned off after repeated errors. Скрипттерде анын журналын караңыз.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> кайталанган каталардан улам өчүрүлдү. Анын журналын «Скрипттер» бөлүмүнөн караңыз.</string>
     <string name="shortcut_inspect_item">Фокусталган нерсени текшерүү</string>
     <string name="script_inspect_no_item">Эч бир элементте фокус жок</string>
     <string name="script_inspect_copied">Көчүрүлдү. <xliff:g id="details">%1$s</xliff:g></string>

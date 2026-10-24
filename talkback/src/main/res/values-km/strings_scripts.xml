@@ -32,8 +32,8 @@
     <string name="script_update_title">ធ្វើបច្ចុប្បន្នភាព <xliff:g id="name">%1$s</xliff:g> ទៅ <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">ការអនុញ្ញាតថ្មី៖</string>
     <string name="script_update_button">ធ្វើបច្ចុប្បន្នភាព</string>
-    <string name="script_update_replaces">វាជំនួសកំណែ <xliff:g id="version">%1$s</xliff:g> ដោយ <xliff:g id="author">%2$s</xliff:g> ហើយរក្សាទិន្នន័យ និងការកំណត់របស់វា។</string>
-    <string name="script_update_other_author">អត្ថបទថ្មីគឺដោយ <xliff:g id="author">%1$s</xliff:g> ដែលជាអ្នកនិពន្ធផ្សេង។ ធ្វើបច្ចុប្បន្នភាពលុះត្រាតែអ្នកជឿជាក់។</string>
+    <string name="script_update_replaces">វានឹងជំនួសកំណែ <xliff:g id="version">%1$s</xliff:g> ដោយ <xliff:g id="author">%2$s</xliff:g> ហើយរក្សាទិន្នន័យ និងការកំណត់របស់វា។</string>
+    <string name="script_update_other_author">កំណែថ្មីគឺដោយ <xliff:g id="author">%1$s</xliff:g> ដែលជាអ្នកនិពន្ធផ្សេង។ ធ្វើបច្ចុប្បន្នភាព លុះត្រាតែអ្នកទុកចិត្តវា។</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> បានដំឡើង</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> បានធ្វើបច្ចុប្បន្នភាពទៅ <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">ការនាំចូលបានបរាជ័យ។ <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">ការកំណត់</string>
     <string name="script_list_filter">តម្រង</string>
     <string name="script_button_off">បើកស្គ្រីបជាមុនសិន</string>
-    <string name="script_permissions_summary">ការបិទមួយនឹងបញ្ឈប់ផ្នែកដែលត្រូវការ។</string>
+    <string name="script_permissions_summary">ការបិទការអនុញ្ញាតមួយ នឹងបញ្ឈប់ផ្នែកដែលត្រូវការវា។</string>
     <string name="script_install_permissions_note">អ្នកអាចបិទទាំងនេះនៅពេលក្រោយ។</string>
     <string name="script_manage_category">ការគ្រប់គ្រង</string>
     <string name="script_move_up">ដំណើរការមុន</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">បើកអាសយដ្ឋាននេះ?</string>
     <string name="script_homepage_open">បើក</string>
     <string name="script_homepage_failed">គ្មានកម្មវិធីណាអាចបើក <xliff:g id="address">%1$s</xliff:g> បានទេ</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g>បានបិទបន្ទាប់ពីមានកំហុសម្តងហើយម្តងទៀត។ មើលកំណត់ហេតុរបស់វានៅក្នុងស្គ្រីប។</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ត្រូវបានបិទ បន្ទាប់ពីមានបញ្ហាដដែលៗ។ មើលកំណត់ហេតុរបស់វានៅក្នុង «ស្គ្រីប»។</string>
     <string name="shortcut_inspect_item">ពិនិត្យធាតុដែលផ្តោតលើ</string>
     <string name="script_inspect_no_item">គ្មានធាតុណាដែលផ្តោត</string>
     <string name="script_inspect_copied">បានចម្លង។ <xliff:g id="details">%1$s</xliff:g></string>

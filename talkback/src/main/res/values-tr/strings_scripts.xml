@@ -32,8 +32,8 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> olarak güncellensin mi?</string>
     <string name="script_update_new_permissions">Yeni izinler:</string>
     <string name="script_update_button">Güncelle</string>
-    <string name="script_update_replaces">Bu, <xliff:g id="version">%1$s</xliff:g> sürümünü <xliff:g id="author">%2$s</xliff:g> ile değiştirir ve verilerini ve ayarlarını korur.</string>
-    <string name="script_update_other_author">Yenisi farklı bir yazar olan <xliff:g id="author">%1$s</xliff:g>\'den. Yalnızca güveniyorsanız güncelleyin.</string>
+    <string name="script_update_replaces">Bu, <xliff:g id="author">%2$s</xliff:g> tarafından yazılan <xliff:g id="version">%1$s</xliff:g> sürümünün yerini alır ve verilerini ve ayarlarını korur.</string>
+    <string name="script_update_other_author">Yenisi farklı bir yazara, <xliff:g id="author">%1$s</xliff:g> kişisine ait. Yalnızca güveniyorsanız güncelleyin.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> yüklendi</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> olarak güncellendi</string>
     <string name="script_import_failed">İçe aktarma başarısız oldu. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Ayarlar</string>
     <string name="script_list_filter">Filtre</string>
     <string name="script_button_off">Önce betiği açın</string>
-    <string name="script_permissions_summary">Birini kapatmak, ona ihtiyaç duyan parçaları durdurur.</string>
+    <string name="script_permissions_summary">Bir izni kapatmak, o izni gerektiren bölümleri durdurur.</string>
     <string name="script_install_permissions_note">Bunları daha sonra kapatabilirsiniz.</string>
     <string name="script_manage_category">Yönetim</string>
     <string name="script_move_up">Daha erken çalıştır</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Bu adres açılsın mı?</string>
     <string name="script_homepage_open">Aç</string>
     <string name="script_homepage_failed">Hiçbir uygulama <xliff:g id="address">%1$s</xliff:g> adresini açamıyor</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> tekrarlanan hatalardan sonra kapatıldı. Komut Dosyaları\'ndaki günlüğüne bakın.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> tekrarlanan hatalar nedeniyle kapatıldı. Günlüğünü Komut dosyaları bölümünde görebilirsiniz.</string>
     <string name="shortcut_inspect_item">Odaklanılan öğeyi incele</string>
     <string name="script_inspect_no_item">Odakta öğe yok</string>
     <string name="script_inspect_copied">Kopyalandı. <xliff:g id="details">%1$s</xliff:g></string>

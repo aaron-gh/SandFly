@@ -32,8 +32,8 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> ကို <xliff:g id="version">%2$s</xliff:g> သို့ အပ်ဒိတ်လုပ်မလား။</string>
     <string name="script_update_new_permissions">ခွင့်ပြုချက်အသစ်များ-</string>
     <string name="script_update_button">အပ်ဒိတ်</string>
-    <string name="script_update_replaces">၎င်းသည် <xliff:g id="version">%1$s</xliff:g> ဗားရှင်းကို <xliff:g id="author">%2$s</xliff:g> ဖြင့် အစားထိုးပြီး ၎င်း၏ဒေတာနှင့် ဆက်တင်များကို သိမ်းဆည်းထားသည်။</string>
-    <string name="script_update_other_author">အသစ်သည် အခြားစာရေးဆရာ <xliff:g id="author">%1$s</xliff:g> မှ ဖန်တီးထားခြင်း ဖြစ်သည်။ ယုံကြည်မှသာလျှင် အပ်ဒိတ်လုပ်ပါ။</string>
+    <string name="script_update_replaces">၎င်းသည် <xliff:g id="author">%2$s</xliff:g> ၏ ဗားရှင်း <xliff:g id="version">%1$s</xliff:g> ကို အစားထိုးပြီး ၎င်း၏ ဒေတာနှင့် ဆက်တင်များကို ထိန်းထားသည်။</string>
+    <string name="script_update_other_author">အသစ်ကို အခြားရေးသူ <xliff:g id="author">%1$s</xliff:g> က ရေးထားသည်။ ယုံကြည်မှသာ အပ်ဒိတ်လုပ်ပါ။</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ထည့်သွင်းထားသည်</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> ကို <xliff:g id="version">%2$s</xliff:g> သို့ အပ်ဒိတ်လုပ်ထားသည်</string>
     <string name="script_import_failed">တင်သွင်းမှု မအောင်မြင်ပါ။ <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">ဆက်တင်များ</string>
     <string name="script_list_filter">စစ်ထုတ်ရန်</string>
     <string name="script_button_off">စခရစ်ကို ဦးစွာ ဖွင့်ပါ</string>
-    <string name="script_permissions_summary">တစ်ချက်ပိတ်လိုက်ခြင်းဖြင့် ၎င်းလိုအပ်သော အစိတ်အပိုင်းများကို ရပ်တန့်စေသည်။</string>
+    <string name="script_permissions_summary">ခွင့်ပြုချက်တစ်ခုကို ပိတ်လျှင် ၎င်းလိုအပ်သည့် အပိုင်းများ ရပ်သွားသည်။</string>
     <string name="script_install_permissions_note">ဒါတွေကို နောက်မှ ပိတ်နိုင်ပါတယ်။</string>
     <string name="script_manage_category">စီမံခန့်ခွဲမှု</string>
     <string name="script_move_up">အရင် လုပ်ဆောင်ရန်</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">ဤလိပ်စာကိုဖွင့်မလား။</string>
     <string name="script_homepage_open">ဖွင့်ရန်</string>
     <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> ကို ဖွင့်နိုင်သော အက်ပ် မရှိပါ</string>
-    <string name="script_turned_off">ထပ်ခါတလဲလဲ အမှားများပြီးနောက် <xliff:g id="name">%1$s</xliff:g> ပိတ်ထားသည်။ ၎င်း၏ log in Scripts ကိုကြည့်ပါ။</string>
+    <string name="script_turned_off">အမှားများ ထပ်ခါထပ်ခါ ဖြစ်သဖြင့် <xliff:g id="name">%1$s</xliff:g> ကို ပိတ်လိုက်သည်။ ၎င်း၏ မှတ်တမ်းကို “စခရစ်များ” တွင် ကြည့်ပါ။</string>
     <string name="shortcut_inspect_item">ဖိုကပ်စ်ရှိ အရာကို စစ်ဆေးရန်</string>
     <string name="script_inspect_no_item">ဖိုကပ်စ်ရှိသော အရာ မရှိပါ</string>
     <string name="script_inspect_copied">ကူးယူပြီးပါပြီ။ <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">အရင်းအမြစ်ထည့်ပါ</string>
     <string name="script_source_add_button">ထည့်ပါ</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">GitHub၊ GitLab၊ Codeberg၊ Gitea သို့မဟုတ် Bitbucket ရှိ သိုလှောင်မှု၏လိပ်စာမဟုတ်ပါ။</string>
+    <string name="script_source_invalid">GitHub၊ GitLab၊ Codeberg၊ Gitea သို့မဟုတ် Bitbucket ရှိ repository ၏ လိပ်စာ မဟုတ်ပါ။</string>
     <string name="script_source_exists">ဤအရင်းအမြစ်ကို ထည့်သွင်းပြီးဖြစ်သည်။</string>
     <string name="script_source_loading">တင်နေသည်</string>
     <string name="script_source_empty">ဤရင်းမြစ်တွင် စခရစ်များ မရှိပါ</string>

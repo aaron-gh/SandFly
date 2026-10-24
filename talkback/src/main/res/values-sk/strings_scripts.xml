@@ -32,8 +32,8 @@
     <string name="script_update_title">Aktualizovať <xliff:g id="name">%1$s</xliff:g> na <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nové povolenia:</string>
     <string name="script_update_button">Aktualizovať</string>
-    <string name="script_update_replaces">Toto nahradí verziu <xliff:g id="version">%1$s</xliff:g> verziou <xliff:g id="author">%2$s</xliff:g> a zachová jej údaje a nastavenia.</string>
-    <string name="script_update_other_author">Nový je od <xliff:g id="author">%1$s</xliff:g>, iného autora. Aktualizujte iba vtedy, ak tomu dôverujete.</string>
+    <string name="script_update_replaces">Nahradí verziu <xliff:g id="version">%1$s</xliff:g> od autora <xliff:g id="author">%2$s</xliff:g> a zachová jej údaje a nastavenia.</string>
+    <string name="script_update_other_author">Nový je od iného autora: <xliff:g id="author">%1$s</xliff:g>. Aktualizujte, iba ak mu dôverujete.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> nainštalovaný</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> aktualizované na <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Import zlyhal. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Nastavenia</string>
     <string name="script_list_filter">Filter</string>
     <string name="script_button_off">Najprv zapnite skript</string>
-    <string name="script_permissions_summary">Vypnutím jedného zastavíte časti, ktoré to potrebujú.</string>
+    <string name="script_permissions_summary">Vypnutím povolenia sa zastavia časti, ktoré ho potrebujú.</string>
     <string name="script_install_permissions_note">Neskôr ich môžete vypnúť.</string>
     <string name="script_manage_category">Správa</string>
     <string name="script_move_up">Spúšťať skôr</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Chcete otvoriť túto adresu?</string>
     <string name="script_homepage_open">Otvoriť</string>
     <string name="script_homepage_failed">Žiadna aplikácia nemôže otvoriť <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> sa po opakovaných chybách vypol. Pozrite si jeho prihlásenie v skriptoch.</string>
+    <string name="script_turned_off">Skript <xliff:g id="name">%1$s</xliff:g> sa po opakovaných chybách vypol. Jeho denník nájdete v sekcii Skriptá.</string>
     <string name="shortcut_inspect_item">Skontrolovať zameranú položku</string>
     <string name="script_inspect_no_item">Žiadna položka nemá fokus</string>
     <string name="script_inspect_copied">Skopírované. <xliff:g id="details">%1$s</xliff:g></string>

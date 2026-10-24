@@ -32,8 +32,8 @@
     <string name="script_update_title">Buyekeza i-<xliff:g id="name">%1$s</xliff:g> ibe ngu-<xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Izimvume ezintsha:</string>
     <string name="script_update_button">Buyekeza</string>
-    <string name="script_update_replaces">Lokhu kungena esikhundleni senguqulo <xliff:g id="version">%1$s</xliff:g> ngokuthi <xliff:g id="author">%2$s</xliff:g>, futhi igcina idatha yayo nezilungiselelo.</string>
-    <string name="script_update_other_author">Entsha ibhalwe <xliff:g id="author">%1$s</xliff:g>, umbhali ohlukile. Buyekeza kuphela uma uyethemba.</string>
+    <string name="script_update_replaces">Lokhu kuthatha indawo yenguqulo <xliff:g id="version">%1$s</xliff:g> ka-<xliff:g id="author">%2$s</xliff:g>, futhi kugcina idatha nezilungiselelo zayo.</string>
+    <string name="script_update_other_author">Entsha yenziwe ngu-<xliff:g id="author">%1$s</xliff:g>, umbhali ohlukile. Buyekeza kuphela uma uyethemba.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> ifakiwe</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> ibuyekezelwe ku-<xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Ukungenisa kwehlulekile. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Amasethingi</string>
     <string name="script_list_filter">Hlunga</string>
     <string name="script_button_off">Vula iskripthi kuqala</string>
-    <string name="script_permissions_summary">Ukucisha okukodwa kumisa izingxenye ezidingayo.</string>
+    <string name="script_permissions_summary">Ukuvala imvume kumisa izingxenye eziyidingayo.</string>
     <string name="script_install_permissions_note">Ungakwazi ukuvala lokhu ngokuhamba kwesikhathi.</string>
     <string name="script_manage_category">Ukuphatha</string>
     <string name="script_move_up">Qalisa ngaphambili</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Vula leli kheli?</string>
     <string name="script_homepage_open">Vula</string>
     <string name="script_homepage_failed">Alukho uhlelo lokusebenza olungavula <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ivaliwe ngemva kwamaphutha aphindaphindiwe. Bona ukungena kwayo ku-Scripts.</string>
+    <string name="script_turned_off">I-<xliff:g id="name">%1$s</xliff:g> ivaliwe ngemva kwamaphutha aphindaphindiwe. Bona ilogu yayo ku-Iziskripthi.</string>
     <string name="shortcut_inspect_item">Hlola into okugxilwe kuyo</string>
     <string name="script_inspect_no_item">Ayikho into enokugxila</string>
     <string name="script_inspect_copied">Kukopishiwe. <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">Engeza umthombo</string>
     <string name="script_source_add_button">Engeza</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">Akulona ikheli lekhosombe ku-GitHub, GitLab, Codeberg, Gitea noma i-Bitbucket.</string>
+    <string name="script_source_invalid">Akulona ikheli lenqolobane ku-GitHub, GitLab, Codeberg, Gitea noma Bitbucket.</string>
     <string name="script_source_exists">Lo mthombo usuvele ungeziwe.</string>
     <string name="script_source_loading">Iyalayisha</string>
     <string name="script_source_empty">Azikho izikripthi kulo mthombo</string>

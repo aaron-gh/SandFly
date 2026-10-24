@@ -32,8 +32,8 @@
     <string name="script_update_title">Oppdatere <xliff:g id="name">%1$s</xliff:g> til <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nye tillatelser:</string>
     <string name="script_update_button">Oppdater</string>
-    <string name="script_update_replaces">Dette erstatter versjon <xliff:g id="version">%1$s</xliff:g> med <xliff:g id="author">%2$s</xliff:g>, og beholder sine data og innstillinger.</string>
-    <string name="script_update_other_author">Den nye er av <xliff:g id="author">%1$s</xliff:g>, en annen forfatter. Oppdater bare hvis du stoler på det.</string>
+    <string name="script_update_replaces">Dette erstatter versjon <xliff:g id="version">%1$s</xliff:g> av <xliff:g id="author">%2$s</xliff:g> og beholder dataene og innstillingene.</string>
+    <string name="script_update_other_author">Den nye er laget av <xliff:g id="author">%1$s</xliff:g>, en annen forfatter. Oppdater bare hvis du stoler på den.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> installert</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> oppdatert til <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Import mislyktes. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Innstillinger</string>
     <string name="script_list_filter">Filter</string>
     <string name="script_button_off">Slå på skriptet først</string>
-    <string name="script_permissions_summary">Å slå av en stopper delene som trenger det.</string>
+    <string name="script_permissions_summary">Hvis du slår av en tillatelse, stopper delene som trenger den.</string>
     <string name="script_install_permissions_note">Du kan slå av disse senere.</string>
     <string name="script_manage_category">Administrasjon</string>
     <string name="script_move_up">Kjør tidligere</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Åpne denne adressen?</string>
     <string name="script_homepage_open">Åpne</string>
     <string name="script_homepage_failed">Ingen app kan åpne <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> slått av etter gjentatte feil. Se påloggingen i Scripts.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> ble slått av etter gjentatte feil. Se loggen i Skript.</string>
     <string name="shortcut_inspect_item">Inspiser fokusert element</string>
     <string name="script_inspect_no_item">Ingen elementer har fokus</string>
     <string name="script_inspect_copied">Kopiert. <xliff:g id="details">%1$s</xliff:g></string>

@@ -32,8 +32,8 @@
     <string name="script_update_title">Atualizar <xliff:g id="name">%1$s</xliff:g> para <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Novas permissões:</string>
     <string name="script_update_button">Atualizar</string>
-    <string name="script_update_replaces">Isto substitui a versão <xliff:g id="version">%1$s</xliff:g> por <xliff:g id="author">%2$s</xliff:g> e mantém seus dados e configurações.</string>
-    <string name="script_update_other_author">O novo é de <xliff:g id="author">%1$s</xliff:g>, um autor diferente. Atualize apenas se você confiar.</string>
+    <string name="script_update_replaces">Isto substitui a versão <xliff:g id="version">%1$s</xliff:g> de <xliff:g id="author">%2$s</xliff:g> e mantém os dados e configurações dela.</string>
+    <string name="script_update_other_author">O novo é de <xliff:g id="author">%1$s</xliff:g>, outro autor. Atualize somente se confiar nele.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> instalado</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> atualizado para <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Falha na importação. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Configurações</string>
     <string name="script_list_filter">Filtro</string>
     <string name="script_button_off">Ative o script primeiro</string>
-    <string name="script_permissions_summary">Desligar um interrompe as peças que precisam dele.</string>
+    <string name="script_permissions_summary">Desativar uma permissão interrompe as partes que precisam dela.</string>
     <string name="script_install_permissions_note">Você pode desativá-las mais tarde.</string>
     <string name="script_manage_category">Gerenciamento</string>
     <string name="script_move_up">Executar mais cedo</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Abrir este endereço?</string>
     <string name="script_homepage_open">Abrir</string>
     <string name="script_homepage_failed">Nenhum aplicativo pode abrir <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> desativado após erros repetidos. Veja seu log em Scripts.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> foi desativado após erros repetidos. Veja o registro em Scripts.</string>
     <string name="shortcut_inspect_item">Inspecionar item em foco</string>
     <string name="script_inspect_no_item">Nenhum item tem foco</string>
     <string name="script_inspect_copied">Copiado. <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">Adicionar fonte</string>
     <string name="script_source_add_button">Adicionar</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">Não é o endereço de um repositório em GitHub, GitLab, Codeberg, Gitea ou Bitbucket.</string>
+    <string name="script_source_invalid">Não é o endereço de um repositório no GitHub, GitLab, Codeberg, Gitea ou Bitbucket.</string>
     <string name="script_source_exists">Esta fonte já foi adicionada.</string>
     <string name="script_source_loading">Carregando</string>
     <string name="script_source_empty">Não há scripts nesta fonte</string>

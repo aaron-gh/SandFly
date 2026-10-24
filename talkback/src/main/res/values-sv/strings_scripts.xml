@@ -32,8 +32,8 @@
     <string name="script_update_title">Uppdatera <xliff:g id="name">%1$s</xliff:g> till <xliff:g id="version">%2$s</xliff:g>?</string>
     <string name="script_update_new_permissions">Nya behörigheter:</string>
     <string name="script_update_button">Uppdatera</string>
-    <string name="script_update_replaces">Detta ersätter version <xliff:g id="version">%1$s</xliff:g> med <xliff:g id="author">%2$s</xliff:g> och behåller dess data och inställningar.</string>
-    <string name="script_update_other_author">Den nya är av <xliff:g id="author">%1$s</xliff:g>, en annan författare. Uppdatera bara om du litar på det.</string>
+    <string name="script_update_replaces">Detta ersätter version <xliff:g id="version">%1$s</xliff:g> av <xliff:g id="author">%2$s</xliff:g> och behåller dess data och inställningar.</string>
+    <string name="script_update_other_author">Det nya är av <xliff:g id="author">%1$s</xliff:g>, en annan författare. Uppdatera bara om du litar på det.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> installerat</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> uppdaterad till <xliff:g id="version">%2$s</xliff:g></string>
     <string name="script_import_failed">Importen misslyckades. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">Inställningar</string>
     <string name="script_list_filter">Filtrera</string>
     <string name="script_button_off">Aktivera skriptet först</string>
-    <string name="script_permissions_summary">Att stänga av en stoppar de delar som behöver det.</string>
+    <string name="script_permissions_summary">Om du stänger av en behörighet stoppas de delar som behöver den.</string>
     <string name="script_install_permissions_note">Du kan stänga av dessa senare.</string>
     <string name="script_manage_category">Hantering</string>
     <string name="script_move_up">Kör tidigare</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">Öppna den här adressen?</string>
     <string name="script_homepage_open">Öppna</string>
     <string name="script_homepage_failed">Ingen app kan öppna <xliff:g id="address">%1$s</xliff:g></string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> avstängd efter upprepade fel. Se dess inloggning i Skript.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> stängdes av efter upprepade fel. Se loggen under Skript.</string>
     <string name="shortcut_inspect_item">Inspektera fokuserat objekt</string>
     <string name="script_inspect_no_item">Inget objekt har fokus</string>
     <string name="script_inspect_copied">Kopierat. <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">Lägg till källa</string>
     <string name="script_source_add_button">Lägg till</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">Det här är inte adressen till ett kodförråd på GitHub, GitLab, Codeberg, Gitea eller Bitbucket.</string>
+    <string name="script_source_invalid">Inte adressen till ett arkiv på GitHub, GitLab, Codeberg, Gitea eller Bitbucket.</string>
     <string name="script_source_exists">Denna källa har redan lagts till.</string>
     <string name="script_source_loading">Läser in</string>
     <string name="script_source_empty">Inga skript i den här källan</string>

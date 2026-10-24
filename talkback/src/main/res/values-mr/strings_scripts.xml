@@ -32,8 +32,8 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> वर अपडेट करायचे?</string>
     <string name="script_update_new_permissions">नवीन परवानग्या:</string>
     <string name="script_update_button">अपडेट करा</string>
-    <string name="script_update_replaces">हे आवृत्ती <xliff:g id="version">%1$s</xliff:g> <xliff:g id="author">%2$s</xliff:g> ने बदलते आणि त्याचा डेटा आणि सेटिंग्ज ठेवते.</string>
-    <string name="script_update_other_author">नवीन <xliff:g id="author">%1$s</xliff:g>, वेगळ्या लेखकाचे आहे. तुमचा विश्वास असेल तरच अपडेट करा.</string>
+    <string name="script_update_replaces">हे <xliff:g id="author">%2$s</xliff:g> यांची आवृत्ती <xliff:g id="version">%1$s</xliff:g> बदलते आणि तिचा डेटा व सेटिंग्ज ठेवते.</string>
+    <string name="script_update_other_author">नवीन स्क्रिप्ट वेगळ्या लेखकाची, <xliff:g id="author">%1$s</xliff:g> यांची आहे. विश्वास असेल तरच अपडेट करा.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> इंस्टॉल केले</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> वर अपडेट केले</string>
     <string name="script_import_failed">आयात अयशस्वी. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">सेटिंग्ज</string>
     <string name="script_list_filter">फिल्टर करा</string>
     <string name="script_button_off">प्रथम स्क्रिप्ट चालू करा</string>
-    <string name="script_permissions_summary">एक बंद केल्याने आवश्यक असलेले भाग थांबतात.</string>
+    <string name="script_permissions_summary">परवानगी बंद केल्यास तिची गरज असलेले भाग थांबतात.</string>
     <string name="script_install_permissions_note">तुम्ही हे नंतर बंद करू शकता.</string>
     <string name="script_manage_category">व्यवस्थापन</string>
     <string name="script_move_up">आधी चालवा</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">हा पत्ता उघडायचा?</string>
     <string name="script_homepage_open">उघडा</string>
     <string name="script_homepage_failed">कोणतेही ॲप <xliff:g id="address">%1$s</xliff:g> उघडू शकत नाही</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> वारंवार त्रुटींनंतर बंद केले. त्याचे लॉग इन स्क्रिप्ट पहा.</string>
+    <string name="script_turned_off">वारंवार त्रुटींमुळे <xliff:g id="name">%1$s</xliff:g> बंद झाले. त्याचा लॉग “स्क्रिप्ट” मध्ये पाहा.</string>
     <string name="shortcut_inspect_item">फोकस केलेला आयटम तपासा</string>
     <string name="script_inspect_no_item">कोणत्याही आयटमवर फोकस नाही</string>
     <string name="script_inspect_copied">कॉपी केले. <xliff:g id="details">%1$s</xliff:g></string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">स्त्रोत जोडा</string>
     <string name="script_source_add_button">जोडा</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">GitHub, GitLab, Codeberg, Gitea किंवा Bitbucket वरील भांडाराचा पत्ता नाही.</string>
+    <string name="script_source_invalid">ही GitHub, GitLab, Codeberg, Gitea किंवा Bitbucket वरील रिपॉझिटरीचा पत्ता नाही.</string>
     <string name="script_source_exists">हा स्रोत आधीच जोडलेला आहे.</string>
     <string name="script_source_loading">लोड होत आहे</string>
     <string name="script_source_empty">या स्त्रोतामध्ये स्क्रिप्ट नाहीत</string>

@@ -32,8 +32,8 @@
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> ஐ <xliff:g id="version">%2$s</xliff:g> க்கு புதுப்பிக்கவா?</string>
     <string name="script_update_new_permissions">புதிய அனுமதிகள்:</string>
     <string name="script_update_button">புதுப்பிக்கவும்</string>
-    <string name="script_update_replaces">இது பதிப்பு <xliff:g id="version">%1$s</xliff:g> ஐ <xliff:g id="author">%2$s</xliff:g> ஆல் மாற்றுகிறது, மேலும் அதன் தரவு மற்றும் அமைப்புகளை வைத்திருக்கும்.</string>
-    <string name="script_update_other_author">புதியது வேறு ஆசிரியரான <xliff:g id="author">%1$s</xliff:g> என்பவரால் எழுதப்பட்டது. நீங்கள் நம்பினால் மட்டுமே புதுப்பிக்கவும்.</string>
+    <string name="script_update_replaces">இது <xliff:g id="author">%2$s</xliff:g> எழுதிய பதிப்பு <xliff:g id="version">%1$s</xliff:g>-ஐ மாற்றும், அதன் தரவையும் அமைப்புகளையும் வைத்திருக்கும்.</string>
+    <string name="script_update_other_author">புதியதை வேறு ஆசிரியரான <xliff:g id="author">%1$s</xliff:g> எழுதியுள்ளார். நம்பினால் மட்டும் புதுப்பிக்கவும்.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> நிறுவப்பட்டது</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> க்கு புதுப்பிக்கப்பட்டது</string>
     <string name="script_import_failed">இறக்குமதி தோல்வியடைந்தது. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">அமைப்புகள்</string>
     <string name="script_list_filter">வடிகட்டி</string>
     <string name="script_button_off">முதலில் ஸ்கிரிப்டை இயக்கவும்</string>
-    <string name="script_permissions_summary">ஒன்றை அணைப்பது தேவையான பகுதிகளை நிறுத்துகிறது.</string>
+    <string name="script_permissions_summary">அனுமதியை முடக்கினால் அது தேவைப்படும் பகுதிகள் நின்றுவிடும்.</string>
     <string name="script_install_permissions_note">இவற்றை நீங்கள் பின்னர் முடக்கலாம்.</string>
     <string name="script_manage_category">நிர்வாகம்</string>
     <string name="script_move_up">முன்னதாக இயக்கவும்</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">இந்த முகவரியைத் திறக்கவா?</string>
     <string name="script_homepage_open">திற</string>
     <string name="script_homepage_failed"><xliff:g id="address">%1$s</xliff:g> ஐத் திறக்கக்கூடிய ஆப்ஸ் எதுவும் இல்லை</string>
-    <string name="script_turned_off">மீண்டும் மீண்டும் பிழைகளுக்குப் பிறகு <xliff:g id="name">%1$s</xliff:g> முடக்கப்பட்டது. அதன் லாக் இன் ஸ்கிரிப்ட்களைப் பார்க்கவும்.</string>
+    <string name="script_turned_off">தொடர் பிழைகளால் <xliff:g id="name">%1$s</xliff:g> முடக்கப்பட்டது. அதன் பதிவை “ஸ்கிரிப்டுகள்” என்பதில் பார்க்கவும்.</string>
     <string name="shortcut_inspect_item">ஃபோகஸ் செய்த உருப்படியைச் சரிபார்</string>
     <string name="script_inspect_no_item">எந்த உருப்படியிலும் ஃபோகஸ் இல்லை</string>
     <string name="script_inspect_copied">நகலெடுக்கப்பட்டது. <xliff:g id="details">%1$s</xliff:g></string>

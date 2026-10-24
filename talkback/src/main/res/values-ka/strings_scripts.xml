@@ -32,8 +32,8 @@
     <string name="script_update_title">განახლდეს <xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> ვერსიამდე?</string>
     <string name="script_update_new_permissions">ახალი ნებართვები:</string>
     <string name="script_update_button">განახლება</string>
-    <string name="script_update_replaces">ეს ცვლის <xliff:g id="version">%1$s</xliff:g> ვერსიას <xliff:g id="author">%2$s</xliff:g>-ით და ინახავს მის მონაცემებსა და პარამეტრებს.</string>
-    <string name="script_update_other_author">ახალი არის <xliff:g id="author">%1$s</xliff:g>, განსხვავებული ავტორი. განაახლეთ მხოლოდ იმ შემთხვევაში, თუ მას ენდობით.</string>
+    <string name="script_update_replaces">ეს ჩაანაცვლებს <xliff:g id="author">%2$s</xliff:g>-ის ვერსიას <xliff:g id="version">%1$s</xliff:g> და შეინარჩუნებს მის მონაცემებსა და პარამეტრებს.</string>
+    <string name="script_update_other_author">ახალი ვერსიის ავტორი სხვაა: <xliff:g id="author">%1$s</xliff:g>. განაახლეთ მხოლოდ მაშინ, თუ ენდობით.</string>
     <string name="script_installed"><xliff:g id="name">%1$s</xliff:g> დაინსტალირდა</string>
     <string name="script_updated"><xliff:g id="name">%1$s</xliff:g> განახლებულია <xliff:g id="version">%2$s</xliff:g>-ზე</string>
     <string name="script_import_failed">იმპორტი ვერ მოხერხდა. <xliff:g id="reason">%1$s</xliff:g></string>
@@ -57,7 +57,7 @@
     <string name="script_settings_category">პარამეტრები</string>
     <string name="script_list_filter">ფილტრი</string>
     <string name="script_button_off">ჯერ ჩართეთ სკრიპტი</string>
-    <string name="script_permissions_summary">ერთის გამორთვა აჩერებს ნაწილებს, რომლებსაც ეს სჭირდებათ.</string>
+    <string name="script_permissions_summary">ნებართვის გამორთვა აჩერებს სკრიპტის იმ ნაწილებს, რომლებსაც ის სჭირდება.</string>
     <string name="script_install_permissions_note">შეგიძლიათ გამორთოთ ისინი მოგვიანებით.</string>
     <string name="script_manage_category">მართვა</string>
     <string name="script_move_up">ადრე გაშვება</string>
@@ -87,7 +87,7 @@
     <string name="script_homepage_confirm_title">გაიხსნას ეს მისამართი?</string>
     <string name="script_homepage_open">გახსნა</string>
     <string name="script_homepage_failed">ვერცერთი აპი ვერ ხსნის <xliff:g id="address">%1$s</xliff:g>-ს</string>
-    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> გამორთულია განმეორებითი შეცდომების შემდეგ. იხილეთ მისი შესვლა სკრიპტებში.</string>
+    <string name="script_turned_off"><xliff:g id="name">%1$s</xliff:g> გამოირთო განმეორებითი შეცდომების გამო. მისი ჟურნალი იხილეთ „სკრიპტები“-ში.</string>
     <string name="shortcut_inspect_item">ფოკუსში მყოფი ელემენტის შემოწმება</string>
     <string name="script_inspect_no_item">არცერთ ელემენტზე არ არის ფოკუსი</string>
     <string name="script_inspect_copied">კოპირებულია. <xliff:g id="details">%1$s</xliff:g></string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly-ის მოდიფიკატორი კლავიში</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, შემდეგ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ბრძანებები</string>
-    <string name="script_commands_summary">გაშვებული სკრიპტის ჟესტებსა და კლავიშებს უპირატესობა აქვს SandFly-ისაზე. SandFly-ისის შესანარჩუნებლად გამორთეთ სკრიპტისა.</string>
+    <string name="script_commands_summary">გაშვებული სკრიპტის ჟესტებსა და კლავიშებს უპირატესობა აქვს SandFly-ის ჟესტებსა და კლავიშებზე. SandFly-ის ჟესტის ან კლავიშის შესანარჩუნებლად გამორთეთ სკრიპტისა.</string>
     <string name="script_binding_gesture">ჟესტი: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">კლავიშები: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly მენიუ</string>
@@ -128,7 +128,7 @@
     <string name="script_source_add">წყაროს დამატება</string>
     <string name="script_source_add_button">დამატება</string>
     <string name="script_source_hint">github.com/owner/repository</string>
-    <string name="script_source_invalid">არა საცავის მისამართი GitHub, GitLab, Codeberg, Gitea ან Bitbucket-ზე.</string>
+    <string name="script_source_invalid">ეს არ არის GitHub-ის, GitLab-ის, Codeberg-ის, Gitea-ს ან Bitbucket-ის საცავის მისამართი.</string>
     <string name="script_source_exists">ეს წყარო უკვე დამატებულია.</string>
     <string name="script_source_loading">იტვირთება</string>
     <string name="script_source_empty">ამ წყაროში სკრიპტები არ არის</string>
