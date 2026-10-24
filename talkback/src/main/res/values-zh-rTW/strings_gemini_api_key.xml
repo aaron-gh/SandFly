@@ -18,9 +18,9 @@
     <string name="ai_service_model_hint">模型</string>
     <string name="ai_service_address_invalid">位址必須以 https:// 開頭。未儲存任何內容。</string>
     <string name="dialog_message_ai_service_consent">圖片和截圖被送到<xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>進行描述，這需要幾秒鐘的時間。適用其自己的條款和隱私權政策。生成式人工智慧是實驗性的，所以它會犯錯。</string>
-    <string name="ai_service_error_api_key">AI 服務不接受 API 金鑰。檢查自動描述中的設定。</string>
-    <string name="ai_service_error_quota">AI服務已達到使用上限。稍後再試。</string>
-    <string name="ai_service_error_busy">AI 服務現在很忙。稍後再試一次。</string>
+    <string name="ai_service_error_api_key">AI 服務不接受 API 金鑰。請在「自動描述」中檢查其設定。</string>
+    <string name="ai_service_error_quota">AI 服務已達使用上限。請稍後再試。</string>
+    <string name="ai_service_error_busy">AI 服務目前忙碌中。請稍後再試。</string>
     <string name="ai_service_error_timeout">AI 服務回應時間過長。再試一次。</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
