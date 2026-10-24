@@ -31,7 +31,7 @@
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Няма</string>
     <string name="ai_service_not_set_up">Не се използва AI услуга. Задайте такъв или изберете такъв в настройките за автоматични описания.</string>
-    <string name="ai_provider_none_set_up">Не е настроена AI услуга. Задайте такъв в настройките му по-долу.</string>
+    <string name="ai_provider_none_set_up">Няма настроена услуга с ИИ. Настройте някоя в настройките ѝ по-долу.</string>
     <string name="ai_provider_other">Друга услуга</string>
     <string name="title_pref_category_ai_services">AI услуги</string>
     <string name="title_pref_ai_provider">AI услуга</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of">API ключ за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">Модел на <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Не е избран</string>
-    <string name="ai_provider_key_message">Поставете вашия <xliff:g id="service" example="Claude">%1$s</xliff:g> API ключ. За да го премахнете, изчистете полето и запазете. Изображенията и екраните, които описвате, се изпращат на <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Поставете API ключа си за <xliff:g id="service" example="Claude">%1$s</xliff:g>. За да го премахнете, изчистете полето и запазете. Изображенията и екраните, за които искате описание, се изпращат до <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Първо задайте <xliff:g id="service" example="Claude">%1$s</xliff:g> API ключа</string>
     <string name="ai_provider_needs_address">Първо задайте адреса</string>
     <string name="ai_provider_enter_model">Въведете име на модел</string>

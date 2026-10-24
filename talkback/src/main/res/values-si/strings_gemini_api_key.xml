@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API අමතර සේවා කොන්දේසි</string>
     <string name="ai_service_address_hint">ලිපිනය, https://openrouter.ai/api/v1 වැනි</string>
     <string name="ai_service_model_hint">ආකෘතිය</string>
-    <string name="ai_service_address_invalid">ලිපිනය https://. වලින් ආරම්භ විය යුතුය කිසිවක් සුරැකී නැත.</string>
+    <string name="ai_service_address_invalid">ලිපිනය https:// වලින් ආරම්භ විය යුතුය. කිසිවක් සුරැකුණේ නැත.</string>
     <string name="dialog_message_ai_service_consent">පින්තූර සහ තිරපිටපත් විස්තර කිරීමට <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> වෙත යවනු ලැබේ, එයට තත්පර කිහිපයක් ගතවේ. එහිම නියමයන් සහ රහස්‍යතා ප්‍රතිපත්තිය අදාළ වේ. උත්පාදක AI පර්යේෂණාත්මක ය, එබැවින් එය වැරදි සිදු කරනු ඇත.</string>
     <string name="ai_service_error_api_key">AI සේවාව API යතුර පිළිගත්තේ නැත. ස්වයංක්‍රීය විස්තර තුළ එහි සැකසුම් පරීක්ෂා කරන්න.</string>
     <string name="ai_service_error_quota">AI සේවාවේ භාවිත සීමාව ළඟා වී ඇත. පසුව නැවත උත්සාහ කරන්න.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API යතුර</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ආකෘතිය</string>
     <string name="ai_provider_choose_model">තෝරා නැත</string>
-    <string name="ai_provider_key_message">ඔබගේ <xliff:g id="service" example="Claude">%1$s</xliff:g> API යතුර අලවන්න. එය ඉවත් කිරීමට, ක්ෂේත්රය හිස් කර සුරකින්න. ඔබ විස්තර කරන පින්තූර සහ තිර <xliff:g id="service" example="Claude">%1$s</xliff:g> වෙත යවනු ලැබේ.</string>
+    <string name="ai_provider_key_message">ඔබේ <xliff:g id="service" example="Claude">%1$s</xliff:g> API යතුර අලවන්න. එය ඉවත් කිරීමට ක්ෂේත්‍රය හිස් කර සුරකින්න. ඔබ විස්තරයක් ඉල්ලන රූප සහ තිර <xliff:g id="service" example="Claude">%1$s</xliff:g> වෙත යවනු ලැබේ.</string>
     <string name="ai_provider_needs_key">පළමුව <xliff:g id="service" example="Claude">%1$s</xliff:g> API යතුර සකසන්න</string>
     <string name="ai_provider_needs_address">මුලින්ම ලිපිනය සකසන්න</string>
     <string name="ai_provider_enter_model">මොඩලයේ නම ඇතුළත් කරන්න</string>

@@ -31,7 +31,7 @@
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Nėra</string>
     <string name="ai_service_not_set_up">AI paslauga nenaudojama. Nustatykite arba pasirinkite automatinių aprašų nustatymuose.</string>
-    <string name="ai_provider_none_set_up">AI paslauga nenustatyta. Nustatykite jį toliau pateiktuose nustatymuose.</string>
+    <string name="ai_provider_none_set_up">Nenustatyta jokia DI paslauga. Nustatykite vieną jos nustatymuose toliau.</string>
     <string name="ai_provider_other">Kita paslauga</string>
     <string name="title_pref_category_ai_services">AI paslaugos</string>
     <string name="title_pref_ai_provider">AI paslauga</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API raktas</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modelis</string>
     <string name="ai_provider_choose_model">Nepasirinkta</string>
-    <string name="ai_provider_key_message">Įklijuokite <xliff:g id="service" example="Claude">%1$s</xliff:g> API raktą. Norėdami jį pašalinti, išvalykite lauką ir išsaugokite. Jūsų aprašyti vaizdai ir ekranai siunčiami adresu <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Įklijuokite savo „<xliff:g id="service" example="Claude">%1$s</xliff:g>“ API raktą. Norėdami jį pašalinti, išvalykite lauką ir išsaugokite. Vaizdai ir ekranai, kurių aprašymo prašote, siunčiami į „<xliff:g id="service" example="Claude">%1$s</xliff:g>“.</string>
     <string name="ai_provider_needs_key">Pirmiausia nustatykite API raktą <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Pirmiausia nustatykite adresą</string>
     <string name="ai_provider_enter_model">Įveskite modelio pavadinimą</string>

@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">លក្ខខណ្ឌប្រើប្រាស់បន្ថែមរបស់ Gemini API</string>
     <string name="ai_service_address_hint">អាសយដ្ឋាន ដូចជា https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">ម៉ូដែល</string>
-    <string name="ai_service_address_invalid">អាសយដ្ឋានត្រូវតែចាប់ផ្តើមដោយ https://. គ្មានអ្វីត្រូវបានរក្សាទុកទេ។</string>
+    <string name="ai_service_address_invalid">អាសយដ្ឋានត្រូវតែចាប់ផ្ដើមដោយ https://។ គ្មានអ្វីត្រូវបានរក្សាទុកទេ។</string>
     <string name="dialog_message_ai_service_consent">រូបភាព និងរូបថតអេក្រង់ត្រូវបានផ្ញើទៅ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ដើម្បីពិពណ៌នា ដែលចំណាយពេលច្រើនវិនាទី។ លក្ខខណ្ឌផ្ទាល់ខ្លួន និងគោលការណ៍ឯកជនភាពត្រូវបានអនុវត្ត។ Generative AI គឺជាការពិសោធន៍ ដូច្នេះវានឹងធ្វើឱ្យមានកំហុស។</string>
     <string name="ai_service_error_api_key">សេវាកម្ម AI មិនទទួលយកសោ API ទេ។ ពិនិត្យការកំណត់របស់វានៅក្នុងការពិពណ៌នាដោយស្វ័យប្រវត្តិ។</string>
     <string name="ai_service_error_quota">ដែនកំណត់នៃការប្រើប្រាស់សេវាកម្ម AI ត្រូវបានឈានដល់។ ព្យាយាមម្តងទៀតនៅពេលក្រោយ។</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of">សោ API របស់ <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">ម៉ូដែល <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">មិនបានជ្រើសរើស</string>
-    <string name="ai_provider_key_message">បិទភ្ជាប់ <xliff:g id="service" example="Claude">%1$s</xliff:g> សោ API របស់អ្នក។ ដើម្បីលុបវាចេញ សូមសម្អាតវាល ហើយរក្សាទុក។ រូបភាព និងអេក្រង់ដែលអ្នកពណ៌នាត្រូវបានផ្ញើទៅ <xliff:g id="service" example="Claude">%1$s</xliff:g>។</string>
+    <string name="ai_provider_key_message">បិទភ្ជាប់សោ API <xliff:g id="service" example="Claude">%1$s</xliff:g> របស់អ្នក។ ដើម្បីលុបវា សូមសម្អាតប្រអប់ ហើយរក្សាទុក។ រូបភាព និងអេក្រង់ដែលអ្នកស្នើឱ្យពណ៌នា ត្រូវបានផ្ញើទៅ <xliff:g id="service" example="Claude">%1$s</xliff:g>។</string>
     <string name="ai_provider_needs_key">កំណត់សោ API <xliff:g id="service" example="Claude">%1$s</xliff:g>ជាមុនសិន</string>
     <string name="ai_provider_needs_address">កំណត់អាសយដ្ឋានជាមុន</string>
     <string name="ai_provider_enter_model">បញ្ចូលឈ្មោះម៉ូដែល</string>

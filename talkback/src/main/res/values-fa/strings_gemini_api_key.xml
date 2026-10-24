@@ -16,7 +16,7 @@
     <string name="gemini_model_needs_key">ابتدا یک کلید API Gemini تنظیم کنید</string>
     <string name="ai_service_address_hint">آدرس، مانند https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">مدل</string>
-    <string name="ai_service_address_invalid">آدرس باید با https://. شروع شود هیچ چیز ذخیره نشد.</string>
+    <string name="ai_service_address_invalid">نشانی باید با https:// شروع شود. چیزی ذخیره نشد.</string>
     <string name="dialog_message_ai_service_consent">تصاویر و اسکرین شات ها برای توضیح به <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ارسال می شوند که چند ثانیه طول می کشد. شرایط و سیاست حفظ حریم خصوصی آن اعمال می شود. هوش مصنوعی مولد آزمایشی است، بنابراین اشتباه می کند.</string>
     <string name="ai_service_error_api_key">سرویس هوش مصنوعی کلید API را نپذیرفت. تنظیمات آن را در توضیحات خودکار بررسی کنید.</string>
     <string name="ai_service_error_quota">محدودیت استفاده از سرویس هوش مصنوعی رسیده است. بعداً دوباره امتحان کنید.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of">کلید API سرویس <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">مدل <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">انتخاب نشده است</string>
-    <string name="ai_provider_key_message">کلید API سرویس <xliff:g id="service" example="Claude">%1$s</xliff:g> خود را جای‌گذاری کنید. برای حذف آن، کادر را پاک و ذخیره کنید. تصاویر و صفحه‌هایی که توصیف می‌کنید به <xliff:g id="service" example="Claude">%1$s</xliff:g> ارسال می‌شوند.</string>
+    <string name="ai_provider_key_message">کلید API ‏<xliff:g id="service" example="Claude">%1$s</xliff:g> را جای‌گذاری کنید. برای حذف آن، کادر را خالی کنید و ذخیره کنید. تصاویر و صفحه‌هایی که توصیفشان را درخواست می‌کنید به <xliff:g id="service" example="Claude">%1$s</xliff:g> ارسال می‌شوند.</string>
     <string name="ai_provider_needs_key">ابتدا کلید <xliff:g id="service" example="Claude">%1$s</xliff:g> API را تنظیم کنید</string>
     <string name="ai_provider_needs_address">ابتدا آدرس را تنظیم کنید</string>
     <string name="ai_provider_enter_model">نام مدل را وارد کنید</string>

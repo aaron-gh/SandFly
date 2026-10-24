@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API अतिरिक्त सेवा अटी</string>
     <string name="ai_service_address_hint">पत्ता, जसे की https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">मॉडेल</string>
-    <string name="ai_service_address_invalid">पत्ता https://. ने सुरू होणे आवश्यक आहे काहीही जतन केलेले नाही.</string>
+    <string name="ai_service_address_invalid">पत्ता https:// ने सुरू व्हायला हवा. काहीही सेव्ह केले नाही.</string>
     <string name="dialog_message_ai_service_consent">वर्णन करण्यासाठी प्रतिमा आणि स्क्रीनशॉट <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> वर पाठवले जातात, ज्याला काही सेकंद लागतात. त्याच्या स्वतःच्या अटी आणि गोपनीयता धोरण लागू. जनरेटिव्ह एआय प्रायोगिक आहे, त्यामुळे त्यात चुका होतील.</string>
     <string name="ai_service_error_api_key">AI सेवेने API की स्वीकारली नाही. स्वयंचलित वर्णनांमध्ये त्याची सेटिंग्ज तपासा.</string>
     <string name="ai_service_error_quota">AI सेवेची वापर मर्यादा गाठली आहे. नंतर पुन्हा प्रयत्न करा.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API की</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> मॉडेल</string>
     <string name="ai_provider_choose_model">निवडले नाही</string>
-    <string name="ai_provider_key_message">तुमची <xliff:g id="service" example="Claude">%1$s</xliff:g> API की पेस्ट करा. ते काढण्यासाठी, फील्ड साफ करा आणि जतन करा. तुम्ही वर्णन केलेल्या प्रतिमा आणि स्क्रीन <xliff:g id="service" example="Claude">%1$s</xliff:g> वर पाठवल्या जातात.</string>
+    <string name="ai_provider_key_message">तुमची <xliff:g id="service" example="Claude">%1$s</xliff:g> API की पेस्ट करा. ती काढण्यासाठी फील्ड रिकामे करा आणि सेव्ह करा. तुम्ही वर्णन मागितलेल्या इमेज आणि स्क्रीन <xliff:g id="service" example="Claude">%1$s</xliff:g> ला पाठवल्या जातात.</string>
     <string name="ai_provider_needs_key">प्रथम <xliff:g id="service" example="Claude">%1$s</xliff:g> API की सेट करा</string>
     <string name="ai_provider_needs_address">प्रथम पत्ता सेट करा</string>
     <string name="ai_provider_enter_model">मॉडेलचे नाव एंटर करा</string>

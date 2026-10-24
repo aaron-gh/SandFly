@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API 추가 서비스 약관</string>
     <string name="ai_service_address_hint">주소(예: https://openrouter.ai/api/v1)</string>
     <string name="ai_service_model_hint">모델</string>
-    <string name="ai_service_address_invalid">주소는 https://.로 시작해야 합니다. 저장된 내용이 없습니다.</string>
+    <string name="ai_service_address_invalid">주소는 https://로 시작해야 합니다. 저장된 내용이 없습니다.</string>
     <string name="dialog_message_ai_service_consent">설명을 위해 이미지와 스크린샷이 <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>로 전송되는데, 이 작업에는 몇 초가 걸립니다. 자체 약관 및 개인 정보 보호 정책이 적용됩니다. 생성 AI는 실험적이므로 실수를 할 수 있습니다.</string>
     <string name="ai_service_error_api_key">AI 서비스가 API 키를 수락하지 않았습니다. 자동 설명에서 설정을 확인하세요.</string>
     <string name="ai_service_error_quota">AI 서비스 이용 한도에 도달했습니다. 나중에 다시 시도하세요.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 키</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> 모델</string>
     <string name="ai_provider_choose_model">선택되지 않음</string>
-    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 키를 붙여넣으세요. 제거하려면 필드를 지우고 저장하세요. 귀하가 설명하는 이미지와 화면이 <xliff:g id="service" example="Claude">%1$s</xliff:g>로 전송됩니다.</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 키를 붙여넣으세요. 삭제하려면 입력란을 비우고 저장하세요. 설명을 요청한 이미지와 화면은 <xliff:g id="service" example="Claude">%1$s</xliff:g>(으)로 전송됩니다.</string>
     <string name="ai_provider_needs_key"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 키를 먼저 설정하세요</string>
     <string name="ai_provider_needs_address">주소를 먼저 설정하세요.</string>
     <string name="ai_provider_enter_model">모델명을 입력하세요</string>

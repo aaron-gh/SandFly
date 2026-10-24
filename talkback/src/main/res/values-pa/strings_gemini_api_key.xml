@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API ਸੇਵਾ ਦੀਆਂ ਵਧੀਕ ਸ਼ਰਤਾਂ</string>
     <string name="ai_service_address_hint">ਪਤਾ, ਜਿਵੇਂ ਕਿ https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">ਮਾਡਲ</string>
-    <string name="ai_service_address_invalid">ਪਤਾ https://. ਨਾਲ ਸ਼ੁਰੂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ ਕੁਝ ਵੀ ਸੁਰੱਖਿਅਤ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਸੀ।</string>
+    <string name="ai_service_address_invalid">ਪਤਾ https:// ਨਾਲ ਸ਼ੁਰੂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ। ਕੁਝ ਵੀ ਰੱਖਿਅਤ ਨਹੀਂ ਕੀਤਾ ਗਿਆ।</string>
     <string name="dialog_message_ai_service_consent">ਚਿੱਤਰਾਂ ਅਤੇ ਸਕ੍ਰੀਨਸ਼ੌਟਸ ਨੂੰ ਵਰਣਨ ਕਰਨ ਲਈ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> \'ਤੇ ਭੇਜਿਆ ਜਾਂਦਾ ਹੈ, ਜਿਸ ਵਿੱਚ ਕਈ ਸਕਿੰਟ ਲੱਗਦੇ ਹਨ। ਇਸ ਦੀਆਂ ਆਪਣੀਆਂ ਸ਼ਰਤਾਂ ਅਤੇ ਗੋਪਨੀਯਤਾ ਨੀਤੀ ਲਾਗੂ ਹੁੰਦੀ ਹੈ। ਜਨਰੇਟਿਵ AI ਪ੍ਰਯੋਗਾਤਮਕ ਹੈ, ਇਸ ਲਈ ਇਹ ਗਲਤੀਆਂ ਕਰੇਗਾ।</string>
     <string name="ai_service_error_api_key">AI ਸੇਵਾ ਨੇ API ਕੁੰਜੀ ਨੂੰ ਸਵੀਕਾਰ ਨਹੀਂ ਕੀਤਾ। ਆਟੋਮੈਟਿਕ ਵਰਣਨ ਵਿੱਚ ਇਸ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਦੀ ਜਾਂਚ ਕਰੋ।</string>
     <string name="ai_service_error_quota">AI ਸੇਵਾ ਦੀ ਵਰਤੋਂ ਦੀ ਸੀਮਾ ਪੂਰੀ ਹੋ ਗਈ ਹੈ। ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API ਕੁੰਜੀ</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ਮਾਡਲ</string>
     <string name="ai_provider_choose_model">ਨਹੀਂ ਚੁਣਿਆ ਗਿਆ</string>
-    <string name="ai_provider_key_message">ਆਪਣੀ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ਕੁੰਜੀ ਪੇਸਟ ਕਰੋ। ਇਸਨੂੰ ਹਟਾਉਣ ਲਈ, ਖੇਤਰ ਨੂੰ ਸਾਫ਼ ਕਰੋ ਅਤੇ ਸੁਰੱਖਿਅਤ ਕਰੋ। ਚਿੱਤਰ ਅਤੇ ਸਕ੍ਰੀਨਾਂ ਜੋ ਤੁਸੀਂ ਵਰਣਨ ਕਰਦੇ ਹੋ <xliff:g id="service" example="Claude">%1$s</xliff:g> \'ਤੇ ਭੇਜੇ ਜਾਂਦੇ ਹਨ।</string>
+    <string name="ai_provider_key_message">ਆਪਣੀ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ਕੁੰਜੀ ਪੇਸਟ ਕਰੋ। ਇਸਨੂੰ ਹਟਾਉਣ ਲਈ ਖੇਤਰ ਖਾਲੀ ਕਰਕੇ ਰੱਖਿਅਤ ਕਰੋ। ਜਿਨ੍ਹਾਂ ਚਿੱਤਰਾਂ ਅਤੇ ਸਕ੍ਰੀਨਾਂ ਦਾ ਵਰਣਨ ਤੁਸੀਂ ਮੰਗਦੇ ਹੋ, ਉਹ <xliff:g id="service" example="Claude">%1$s</xliff:g> ਨੂੰ ਭੇਜੀਆਂ ਜਾਂਦੀਆਂ ਹਨ।</string>
     <string name="ai_provider_needs_key">ਪਹਿਲਾਂ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ਕੁੰਜੀ ਸੈੱਟ ਕਰੋ</string>
     <string name="ai_provider_needs_address">ਪਹਿਲਾਂ ਪਤਾ ਸੈੱਟ ਕਰੋ</string>
     <string name="ai_provider_enter_model">ਇੱਕ ਮਾਡਲ ਨਾਮ ਦਰਜ ਕਰੋ</string>

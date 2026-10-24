@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API ၏ နောက်ထပ်ဝန်ဆောင်မှုစည်းမျဉ်းများ</string>
     <string name="ai_service_address_hint">လိပ်စာ၊ ဥပမာ https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">မော်ဒယ်</string>
-    <string name="ai_service_address_invalid">လိပ်စာသည် https://. ဖြင့် အစပြုရမည်ဖြစ်ပြီး မည်သည့်အရာကိုမျှ မသိမ်းဆည်းပါ။</string>
+    <string name="ai_service_address_invalid">လိပ်စာသည် https:// ဖြင့် စရမည်။ ဘာမျှ မသိမ်းရသေးပါ။</string>
     <string name="dialog_message_ai_service_consent">ပုံများနှင့် ဖန်သားပြင်ဓာတ်ပုံများကို ဖော်ပြရန်အတွက် <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>သို့ ပေးပို့ပြီး စက္ကန့်များစွာကြာသည်။ ၎င်း၏ကိုယ်ပိုင်စည်းမျဉ်းများနှင့် ကိုယ်ရေးကိုယ်တာမူဝါဒကို ကျင့်သုံးသည်။ Generative AI သည် စမ်းသပ်ဆဲဖြစ်သောကြောင့် အမှားအယွင်းများ ရှိလာမည်ဖြစ်သည်။</string>
     <string name="ai_service_error_api_key">AI ဝန်ဆောင်မှုသည် API သော့ကို လက်မခံပါ။ အလိုအလျောက်ဖော်ပြချက်များထဲတွင် ၎င်း၏ဆက်တင်များကို စစ်ဆေးပါ။</string>
     <string name="ai_service_error_quota">AI ဝန်ဆောင်မှု၏ အသုံးပြုမှုကန့်သတ်ချက် ပြည့်သွားပါပြီ။ နောက်မှ ထပ်စမ်းကြည့်ပါ။</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API သော့</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> မော်ဒယ်</string>
     <string name="ai_provider_choose_model">ရွေးထားခြင်းမရှိ</string>
-    <string name="ai_provider_key_message">သင်၏ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ကီးကို ကူးထည့်ပါ။ ၎င်းကိုဖယ်ရှားရန် အကွက်ကိုရှင်းလင်းပြီး သိမ်းဆည်းပါ။ သင်ဖော်ပြသော ပုံများနှင့် စခရင်များကို <xliff:g id="service" example="Claude">%1$s</xliff:g> သို့ ပေးပို့သည်။</string>
+    <string name="ai_provider_key_message">သင်၏ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ကီးကို ကူးထည့်ပါ။ ဖယ်ရှားရန် အကွက်ကို ရှင်းပြီး သိမ်းပါ။ ဖော်ပြချက် တောင်းသော ပုံများနှင့် ဖန်သားပြင်များကို <xliff:g id="service" example="Claude">%1$s</xliff:g> သို့ ပို့သည်။</string>
     <string name="ai_provider_needs_key"><xliff:g id="service" example="Claude">%1$s</xliff:g> API ကီးကို ဦးစွာ သတ်မှတ်ပါ</string>
     <string name="ai_provider_needs_address">လိပ်စာကို အရင်သတ်မှတ်ပါ</string>
     <string name="ai_provider_enter_model">မော်ဒယ်အမည်ကို ထည့်သွင်းပါ</string>

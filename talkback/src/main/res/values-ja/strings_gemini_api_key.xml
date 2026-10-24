@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API追加利用規約</string>
     <string name="ai_service_address_hint">アドレス（https://openrouter.ai/api/v1 など）</string>
     <string name="ai_service_model_hint">モデル</string>
-    <string name="ai_service_address_invalid">アドレスは https://. で始まる必要があります。何も保存されませんでした。</string>
+    <string name="ai_service_address_invalid">アドレスは https:// で始まる必要があります。何も保存されませんでした。</string>
     <string name="dialog_message_ai_service_consent">画像とスクリーンショットは説明のために <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> に送信されます。これには数秒かかります。独自の規約とプライバシー ポリシーが適用されます。生成 AI は実験的なものであるため、間違いを犯す可能性があります。</string>
     <string name="ai_service_error_api_key">AI サービスは API キーを受け入れませんでした。自動の説明で設定を確認してください。</string>
     <string name="ai_service_error_quota">AIサービスの利用制限に達しました。後でもう一度試してください。</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> APIキー</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g>モデル</string>
     <string name="ai_provider_choose_model">未選択</string>
-    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API キーを貼り付けます。これを削除するには、フィールドをクリアして保存します。あなたが説明した画像や画面は<xliff:g id="service" example="Claude">%1$s</xliff:g>に送信されます。</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> の API キーを貼り付けてください。削除するには、フィールドを空にして保存します。説明をリクエストした画像や画面は <xliff:g id="service" example="Claude">%1$s</xliff:g> に送信されます。</string>
     <string name="ai_provider_needs_key">最初に <xliff:g id="service" example="Claude">%1$s</xliff:g> API キーを設定してください</string>
     <string name="ai_provider_needs_address">最初にアドレスを設定してください</string>
     <string name="ai_provider_enter_model">モデル名を入力してください</string>

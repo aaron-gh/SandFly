@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API ಹೆಚ್ಚುವರಿ ಸೇವಾ ನಿಯಮಗಳು</string>
     <string name="ai_service_address_hint">ವಿಳಾಸ, ಉದಾಹರಣೆಗೆ https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">ಮಾದರಿ</string>
-    <string name="ai_service_address_invalid">ವಿಳಾಸವು https://. ನೊಂದಿಗೆ ಪ್ರಾರಂಭವಾಗಬೇಕು ಏನನ್ನೂ ಉಳಿಸಲಾಗಿಲ್ಲ.</string>
+    <string name="ai_service_address_invalid">ವಿಳಾಸವು https:// ನಿಂದ ಪ್ರಾರಂಭವಾಗಬೇಕು. ಏನನ್ನೂ ಉಳಿಸಲಾಗಿಲ್ಲ.</string>
     <string name="dialog_message_ai_service_consent">ಚಿತ್ರಗಳು ಮತ್ತು ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ಗಳನ್ನು ವಿವರಿಸಲು <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ಗೆ ಕಳುಹಿಸಲಾಗುತ್ತದೆ, ಇದು ಹಲವಾರು ಸೆಕೆಂಡುಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ. ಅದರ ಸ್ವಂತ ನಿಯಮಗಳು ಮತ್ತು ಗೌಪ್ಯತೆ ನೀತಿ ಅನ್ವಯಿಸುತ್ತದೆ. ಜನರೇಟಿವ್ AI ಪ್ರಾಯೋಗಿಕವಾಗಿದೆ, ಆದ್ದರಿಂದ ಇದು ತಪ್ಪುಗಳನ್ನು ಮಾಡುತ್ತದೆ.</string>
     <string name="ai_service_error_api_key">AI ಸೇವೆಯು API ಕೀಯನ್ನು ಸ್ವೀಕರಿಸಲಿಲ್ಲ. ಸ್ವಯಂಚಾಲಿತ ವಿವರಣೆಗಳಲ್ಲಿ ಅದರ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.</string>
     <string name="ai_service_error_quota">AI ಸೇವೆಯ ಬಳಕೆಯ ಮಿತಿಯನ್ನು ತಲುಪಲಾಗಿದೆ. ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API ಕೀ</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ಮಾದರಿ</string>
     <string name="ai_provider_choose_model">ಆಯ್ಕೆಯಾಗಿಲ್ಲ</string>
-    <string name="ai_provider_key_message">ನಿಮ್ಮ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ಕೀಯನ್ನು ಅಂಟಿಸಿ. ಅದನ್ನು ತೆಗೆದುಹಾಕಲು, ಕ್ಷೇತ್ರವನ್ನು ತೆರವುಗೊಳಿಸಿ ಮತ್ತು ಉಳಿಸಿ. ನೀವು ವಿವರಿಸುವ ಚಿತ್ರಗಳು ಮತ್ತು ಪರದೆಗಳನ್ನು <xliff:g id="service" example="Claude">%1$s</xliff:g> ಗೆ ಕಳುಹಿಸಲಾಗಿದೆ.</string>
+    <string name="ai_provider_key_message">ನಿಮ್ಮ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ಕೀ ಅಂಟಿಸಿ. ಅದನ್ನು ತೆಗೆದುಹಾಕಲು ಕ್ಷೇತ್ರವನ್ನು ಖಾಲಿ ಮಾಡಿ ಉಳಿಸಿ. ನೀವು ವಿವರಣೆ ಕೇಳುವ ಚಿತ್ರಗಳು ಮತ್ತು ಸ್ಕ್ರೀನ್‌ಗಳನ್ನು <xliff:g id="service" example="Claude">%1$s</xliff:g> ಗೆ ಕಳುಹಿಸಲಾಗುತ್ತದೆ.</string>
     <string name="ai_provider_needs_key">ಮೊದಲು <xliff:g id="service" example="Claude">%1$s</xliff:g> API ಕೀಯನ್ನು ಹೊಂದಿಸಿ</string>
     <string name="ai_provider_needs_address">ಮೊದಲು ವಿಳಾಸವನ್ನು ಹೊಂದಿಸಿ</string>
     <string name="ai_provider_enter_model">ಮಾಡೆಲ್ ಹೆಸರನ್ನು ನಮೂದಿಸಿ</string>

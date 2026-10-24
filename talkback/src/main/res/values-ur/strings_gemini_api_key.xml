@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API سروس کی اضافی شرائط</string>
     <string name="ai_service_address_hint">پتہ، جیسے https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">ماڈل</string>
-    <string name="ai_service_address_invalid">پتہ https://. سے شروع ہونا چاہیے کچھ بھی محفوظ نہیں ہوا۔</string>
+    <string name="ai_service_address_invalid">پتہ https:// سے شروع ہونا چاہیے۔ کچھ بھی محفوظ نہیں ہوا۔</string>
     <string name="dialog_message_ai_service_consent">تصاویر اور اسکرین شاٹس کو بیان کرنے کے لیے <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> پر بھیجا جاتا ہے، جس میں کئی سیکنڈ لگتے ہیں۔ اس کی اپنی شرائط اور رازداری کی پالیسی لاگو ہوتی ہے۔ جنریٹو AI تجرباتی ہے، اس لیے اس سے غلطیاں ہوں گی۔</string>
     <string name="ai_service_error_api_key">AI سروس نے API کلید کو قبول نہیں کیا۔ خودکار وضاحتوں میں اس کی ترتیبات چیک کریں۔</string>
     <string name="ai_service_error_quota">AI سروس کے استعمال کی حد پوری ہو گئی ہے۔ بعد میں دوبارہ کوشش کریں۔</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API کلید</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ماڈل</string>
     <string name="ai_provider_choose_model">منتخب نہیں کیا گیا</string>
-    <string name="ai_provider_key_message">اپنی <xliff:g id="service" example="Claude">%1$s</xliff:g> API کلید چسپاں کریں۔ اسے ہٹانے کے لیے، فیلڈ کو صاف کریں اور محفوظ کریں۔ وہ تصاویر اور اسکرینیں جو آپ بیان کرتے ہیں <xliff:g id="service" example="Claude">%1$s</xliff:g> پر بھیجی جاتی ہیں۔</string>
+    <string name="ai_provider_key_message">اپنی <xliff:g id="service" example="Claude">%1$s</xliff:g> API کلید چسپاں کریں۔ اسے ہٹانے کے لیے فیلڈ خالی کر کے محفوظ کریں۔ جن تصاویر اور اسکرینز کی وضاحت آپ مانگتے ہیں وہ <xliff:g id="service" example="Claude">%1$s</xliff:g> کو بھیجی جاتی ہیں۔</string>
     <string name="ai_provider_needs_key">پہلے <xliff:g id="service" example="Claude">%1$s</xliff:g> API کلید سیٹ کریں</string>
     <string name="ai_provider_needs_address">پہلے ایڈریس سیٹ کریں</string>
     <string name="ai_provider_enter_model">ماڈل کا نام درج کریں</string>

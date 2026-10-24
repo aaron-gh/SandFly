@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini APIની સેવાની વધારાની શરતો</string>
     <string name="ai_service_address_hint">સરનામું, જેમ કે https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">મોડલ</string>
-    <string name="ai_service_address_invalid">સરનામું https://. થી શરૂ થવું જોઈએ કંઈપણ સાચવવામાં આવ્યું નથી.</string>
+    <string name="ai_service_address_invalid">સરનામું https://થી શરૂ થવું જોઈએ. કંઈ સાચવવામાં આવ્યું નથી.</string>
     <string name="dialog_message_ai_service_consent">વર્ણન કરવા માટે છબીઓ અને સ્ક્રીનશૉટ્સ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> પર મોકલવામાં આવે છે, જેમાં ઘણી સેકન્ડ લાગે છે. તેની પોતાની શરતો અને ગોપનીયતા નીતિ લાગુ થાય છે. જનરેટિવ AI પ્રાયોગિક છે, તેથી તે ભૂલો કરશે.</string>
     <string name="ai_service_error_api_key">AI સેવાએ API કી સ્વીકારી નથી. સ્વચાલિત વર્ણનોમાં તેની સેટિંગ્સ તપાસો.</string>
     <string name="ai_service_error_quota">AI સેવાની વપરાશ મર્યાદા પહોંચી ગઈ છે. પછીથી ફરી પ્રયાસ કરો.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API કી</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> મોડલ</string>
     <string name="ai_provider_choose_model">પસંદ કરેલ નથી</string>
-    <string name="ai_provider_key_message">તમારી <xliff:g id="service" example="Claude">%1$s</xliff:g> API કી પેસ્ટ કરો. તેને દૂર કરવા માટે, ક્ષેત્ર સાફ કરો અને સાચવો. તમે વર્ણવેલ છબીઓ અને સ્ક્રીનો <xliff:g id="service" example="Claude">%1$s</xliff:g> પર મોકલવામાં આવે છે.</string>
+    <string name="ai_provider_key_message">તમારી <xliff:g id="service" example="Claude">%1$s</xliff:g> API કી પેસ્ટ કરો. તેને દૂર કરવા માટે ફીલ્ડ ખાલી કરો અને સાચવો. તમે જેનું વર્ણન માગો છો તે છબીઓ અને સ્ક્રીન <xliff:g id="service" example="Claude">%1$s</xliff:g>ને મોકલવામાં આવે છે.</string>
     <string name="ai_provider_needs_key">પહેલા <xliff:g id="service" example="Claude">%1$s</xliff:g> API કી સેટ કરો</string>
     <string name="ai_provider_needs_address">પહેલા સરનામું સેટ કરો</string>
     <string name="ai_provider_enter_model">મોડેલનું નામ દાખલ કરો</string>

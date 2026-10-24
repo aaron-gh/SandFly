@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API అదనపు సేవా నిబంధనలు</string>
     <string name="ai_service_address_hint">చిరునామా, ఉదాహరణకు https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">మోడల్</string>
-    <string name="ai_service_address_invalid">చిరునామా తప్పనిసరిగా https://.తో ప్రారంభం కావాలి ఏదీ సేవ్ చేయబడలేదు.</string>
+    <string name="ai_service_address_invalid">చిరునామా https://తో ప్రారంభం కావాలి. ఏదీ సేవ్ చేయబడలేదు.</string>
     <string name="dialog_message_ai_service_consent">చిత్రాలు మరియు స్క్రీన్‌షాట్‌లు వివరించడానికి <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>కి పంపబడతాయి, దీనికి చాలా సెకన్ల సమయం పడుతుంది. దాని స్వంత నిబంధనలు మరియు గోప్యతా విధానం వర్తిస్తాయి. ఉత్పాదక AI ప్రయోగాత్మకమైనది, కాబట్టి ఇది తప్పులు చేస్తుంది.</string>
     <string name="ai_service_error_api_key">AI సేవ API కీని అంగీకరించలేదు. స్వయంచాలక వివరణలలో దాని సెట్టింగ్‌లను తనిఖీ చేయండి.</string>
     <string name="ai_service_error_quota">AI సేవ యొక్క వినియోగ పరిమితిని చేరుకున్నారు. తర్వాత మళ్లీ ప్రయత్నించండి.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API కీ</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> మోడల్</string>
     <string name="ai_provider_choose_model">ఎంపిక చేయలేదు</string>
-    <string name="ai_provider_key_message">మీ <xliff:g id="service" example="Claude">%1$s</xliff:g> API కీని అతికించండి. దాన్ని తీసివేయడానికి, ఫీల్డ్‌ను క్లియర్ చేసి, సేవ్ చేయండి. మీరు వివరించే చిత్రాలు మరియు స్క్రీన్‌లు <xliff:g id="service" example="Claude">%1$s</xliff:g>కి పంపబడతాయి.</string>
+    <string name="ai_provider_key_message">మీ <xliff:g id="service" example="Claude">%1$s</xliff:g> API కీని అతికించండి. దాన్ని తీసివేయడానికి, ఫీల్డ్‌ను ఖాళీ చేసి సేవ్ చేయండి. మీరు వివరణ అడిగిన చిత్రాలు, స్క్రీన్‌లు <xliff:g id="service" example="Claude">%1$s</xliff:g>కి పంపబడతాయి.</string>
     <string name="ai_provider_needs_key">ముందుగా <xliff:g id="service" example="Claude">%1$s</xliff:g> API కీని సెట్ చేయండి</string>
     <string name="ai_provider_needs_address">మొదట చిరునామాను సెట్ చేయండి</string>
     <string name="ai_provider_enter_model">మోడల్ పేరును నమోదు చేయండి</string>

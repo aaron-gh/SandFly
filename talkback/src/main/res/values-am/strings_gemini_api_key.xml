@@ -16,7 +16,7 @@
     <string name="gemini_model_needs_key">መጀመሪያ Gemini API ቁልፍ ያዘጋጁ</string>
     <string name="ai_service_address_hint">አድራሻ፣ እንደ https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">ሞዴል</string>
-    <string name="ai_service_address_invalid">አድራሻው በ https://. መጀመር አለበት ምንም ነገር አልተቀመጠም።</string>
+    <string name="ai_service_address_invalid">አድራሻው በ https:// መጀመር አለበት። ምንም አልተቀመጠም።</string>
     <string name="dialog_message_ai_service_consent">ምስሎች እና ቅጽበታዊ ገጽ እይታዎች ለመግለፅ ወደ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ይላካሉ፣ ይህም በርካታ ሰከንዶች ይወስዳል። የራሱ ውሎች እና የግላዊነት ፖሊሲ ይተገበራል። Generative AI የሙከራ ነው, ስለዚህ ስህተቶችን ያደርጋል.</string>
     <string name="ai_service_error_api_key">የ AI አገልግሎቱ የኤፒአይ ቁልፍን አልተቀበለም። ቅንብሮቹን በራስ-ሰር መግለጫዎች ውስጥ ያረጋግጡ።</string>
     <string name="ai_service_error_quota">የ AI አገልግሎት የአጠቃቀም ገደብ ላይ ደርሷል። ቆይተው እንደገና ይሞክሩ።</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> የኤፒአይ ቁልፍ</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> ሞዴል</string>
     <string name="ai_provider_choose_model">አልተመረጠም</string>
-    <string name="ai_provider_key_message">የእርስዎን <xliff:g id="service" example="Claude">%1$s</xliff:g> API ቁልፍ ለጥፍ። እሱን ለማስወገድ መስኩን ያጽዱ እና ያስቀምጡ። እርስዎ የሚገልጹዋቸው ምስሎች እና ስክሪኖች ወደ <xliff:g id="service" example="Claude">%1$s</xliff:g> ይላካሉ።</string>
+    <string name="ai_provider_key_message">የ<xliff:g id="service" example="Claude">%1$s</xliff:g> API ቁልፍዎን ይለጥፉ። ለማስወገድ መስኩን ያጽዱ እና ያስቀምጡ። እንዲገለጹ የሚጠይቋቸው ምስሎች እና ማያ ገጾች ወደ <xliff:g id="service" example="Claude">%1$s</xliff:g> ይላካሉ።</string>
     <string name="ai_provider_needs_key">መጀመሪያ የ<xliff:g id="service" example="Claude">%1$s</xliff:g> ኤፒአይ ቁልፍ ያዘጋጁ</string>
     <string name="ai_provider_needs_address">መጀመሪያ አድራሻውን ያዘጋጁ</string>
     <string name="ai_provider_enter_model">የሞዴል ስም ያስገቡ</string>

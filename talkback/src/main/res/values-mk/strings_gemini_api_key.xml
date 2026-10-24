@@ -31,7 +31,7 @@
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Нема</string>
     <string name="ai_service_not_set_up">Не се користи услуга за вештачка интелигенција. Поставете еден или изберете еден во поставките за Автоматски описи.</string>
-    <string name="ai_provider_none_set_up">Не е поставена услуга за вештачка интелигенција. Поставете еден во неговите поставки подолу.</string>
+    <string name="ai_provider_none_set_up">Не е поставена ниедна услуга за ВИ. Поставете една во нејзините поставки подолу.</string>
     <string name="ai_provider_other">Друга услуга</string>
     <string name="title_pref_category_ai_services">Услуги за вештачка интелигенција</string>
     <string name="title_pref_ai_provider">Услуга за вештачка интелигенција</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of">API клуч за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> модел</string>
     <string name="ai_provider_choose_model">Не е избрано</string>
-    <string name="ai_provider_key_message">Залепете го вашиот клуч <xliff:g id="service" example="Claude">%1$s</xliff:g> API. За да го отстраните, исчистете го полето и зачувајте. Сликите и екраните што ги опишувате се испраќаат на <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Залепете го вашиот API-клуч за <xliff:g id="service" example="Claude">%1$s</xliff:g>. За да го отстраните, испразнете го полето и зачувајте. Сликите и екраните за кои барате опис се испраќаат до <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Прво поставете го API-клучот за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Прво поставете ја адресата</string>
     <string name="ai_provider_enter_model">Внесете име на модел</string>

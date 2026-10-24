@@ -16,7 +16,7 @@
     <string name="gemini_model_needs_key">Əvvəlcə Gemini API açarı təyin edin</string>
     <string name="ai_service_address_hint">Ünvan, məsələn, https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
-    <string name="ai_service_address_invalid">Ünvan https://. ilə başlamalıdır. Heç nə yadda saxlanmayıb.</string>
+    <string name="ai_service_address_invalid">Ünvan https:// ilə başlamalıdır. Heç nə yadda saxlanmadı.</string>
     <string name="dialog_message_ai_service_consent">Şəkillər və skrinşotlar təsvir edilmək üçün <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>-a göndərilir ki, bu da bir neçə saniyə çəkir. Onun öz şərtləri və məxfilik siyasəti tətbiq edilir. Generativ AI eksperimentaldır, buna görə də səhvlər edəcək.</string>
     <string name="ai_service_error_api_key">AI xidməti API açarını qəbul etmədi. Onun parametrlərini Avtomatik təsvirlərdə yoxlayın.</string>
     <string name="ai_service_error_quota">AI xidmətinin istifadə limitinə çatıldı. Daha sonra yenidən cəhd edin.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API açarı</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modeli</string>
     <string name="ai_provider_choose_model">Seçilməyib</string>
-    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API açarınızı yapışdırın. Onu silmək üçün sahəni təmizləyin və yadda saxlayın. Təsvir etdiyiniz şəkillər və ekranlar <xliff:g id="service" example="Claude">%1$s</xliff:g> ünvanına göndərilir.</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API açarınızı yapışdırın. Silmək üçün sahəni boşaldın və yadda saxlayın. Təsvir etdirdiyiniz şəkillər və ekranlar <xliff:g id="service" example="Claude">%1$s</xliff:g> xidmətinə göndərilir.</string>
     <string name="ai_provider_needs_key">Əvvəlcə <xliff:g id="service" example="Claude">%1$s</xliff:g> API açarını təyin edin</string>
     <string name="ai_provider_needs_address">Əvvəlcə ünvanı təyin edin</string>
     <string name="ai_provider_enter_model">Model adı daxil edin</string>

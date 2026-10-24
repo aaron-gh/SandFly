@@ -16,7 +16,7 @@
     <string name="gemini_model_needs_key">Ezarri lehenik Gemini API gako bat</string>
     <string name="ai_service_address_hint">Helbidea, adibidez https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Eredua</string>
-    <string name="ai_service_address_invalid">Helbideak https://.-rekin hasi behar du Ez da ezer gorde.</string>
+    <string name="ai_service_address_invalid">Helbideak https:// aurrizkiarekin hasi behar du. Ez da ezer gorde.</string>
     <string name="dialog_message_ai_service_consent">Irudiak eta pantaila-argazkiak <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> helbidera bidaltzen dira deskribatzeko, eta horrek segundo batzuk behar ditu. Bere baldintzak eta pribatutasun politika aplikatzen dira. AI generatiboa esperimentala da, beraz, akatsak egingo ditu.</string>
     <string name="ai_service_error_api_key">AI zerbitzuak ez du onartu API gakoa. Egiaztatu bere ezarpenak Deskribapen automatikoak atalean.</string>
     <string name="ai_service_error_quota">AI zerbitzuaren erabilera mugara iritsi da. Saiatu berriro geroago.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API gakoa</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> eredua</string>
     <string name="ai_provider_choose_model">Ez da aukeratu</string>
-    <string name="ai_provider_key_message">Itsatsi zure <xliff:g id="service" example="Claude">%1$s</xliff:g> API gakoa. Ezabatzeko, garbitu eremua eta gorde. Deskribatzen dituzun irudiak eta pantailak <xliff:g id="service" example="Claude">%1$s</xliff:g> helbidera bidaltzen dira.</string>
+    <string name="ai_provider_key_message">Itsatsi <xliff:g id="service" example="Claude">%1$s</xliff:g> zerbitzuko API gakoa. Kentzeko, hustu eremua eta gorde. Deskribatzeko eskatzen dituzun irudiak eta pantailak <xliff:g id="service" example="Claude">%1$s</xliff:g> zerbitzura bidaltzen dira.</string>
     <string name="ai_provider_needs_key">Ezarri lehenik <xliff:g id="service" example="Claude">%1$s</xliff:g> API gakoa</string>
     <string name="ai_provider_needs_address">Ezarri helbidea lehenik</string>
     <string name="ai_provider_enter_model">Idatzi ereduaren izena</string>

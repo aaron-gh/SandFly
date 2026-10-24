@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API қосымша қызмет көрсету шарттары</string>
     <string name="ai_service_address_hint">Мекенжай, мысалы, https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Үлгі</string>
-    <string name="ai_service_address_invalid">Мекенжай https://. деп басталуы керек Ештеңе сақталмады.</string>
+    <string name="ai_service_address_invalid">Мекенжай https:// деп басталуы керек. Ештеңе сақталмады.</string>
     <string name="dialog_message_ai_service_consent">Суреттер мен скриншоттар сипатталу үшін <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> мекенжайына жіберіледі, бұл бірнеше секундты алады. Оның жеке шарттары мен құпиялылық саясаты қолданылады. Генеративті AI эксперименталды, сондықтан ол қателіктер жібереді.</string>
     <string name="ai_service_error_api_key">AI қызметі API кілтін қабылдамады. Оның параметрлерін Автоматты сипаттамаларда тексеріңіз.</string>
     <string name="ai_service_error_quota">AI қызметін пайдалану шегіне жетті. Әрекетті кейінірек қайталаңыз.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API кілті</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> үлгісі</string>
     <string name="ai_provider_choose_model">Таңдалмаған</string>
-    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API кілтін қойыңыз. Оны жою үшін өрісті тазалап, сақтаңыз. Сіз сипаттайтын кескіндер мен экрандар <xliff:g id="service" example="Claude">%1$s</xliff:g> мекенжайына жіберіледі.</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API кілтін қойыңыз. Жою үшін өрісті тазалап, сақтаңыз. Сипаттауын сұраған суреттер мен экрандар <xliff:g id="service" example="Claude">%1$s</xliff:g> қызметіне жіберіледі.</string>
     <string name="ai_provider_needs_key">Алдымен <xliff:g id="service" example="Claude">%1$s</xliff:g> API кілтін орнатыңыз</string>
     <string name="ai_provider_needs_address">Алдымен мекенжайды орнатыңыз</string>
     <string name="ai_provider_enter_model">Модель атауын енгізіңіз</string>

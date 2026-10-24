@@ -24,7 +24,7 @@
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Brak</string>
     <string name="ai_service_not_set_up">Żadna usługa AI nie jest używana. Skonfiguruj lub wybierz w ustawieniach opisów automatycznych.</string>
-    <string name="ai_provider_none_set_up">Nie skonfigurowano żadnej usługi AI. Skonfiguruj go w ustawieniach poniżej.</string>
+    <string name="ai_provider_none_set_up">Nie skonfigurowano żadnej usługi AI. Skonfiguruj jedną w jej ustawieniach poniżej.</string>
     <string name="ai_provider_other">Inna usługa</string>
     <string name="title_pref_category_ai_services">Usługi AI</string>
     <string name="title_pref_ai_provider">Usługa AI</string>
@@ -40,7 +40,7 @@
     <string name="title_pref_gemini_api_key_of">Klucz API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">Model <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Nie wybrano</string>
-    <string name="ai_provider_key_message">Wklej swój klucz API <xliff:g id="service" example="Claude">%1$s</xliff:g>. Aby go usunąć, wyczyść pole i zapisz. Obrazy i zrzuty ekranu, które opisujesz, są wysyłane do <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Wklej swój klucz API usługi <xliff:g id="service" example="Claude">%1$s</xliff:g>. Aby go usunąć, wyczyść pole i zapisz. Obrazy i ekrany, których opis zlecasz, są wysyłane do <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Najpierw ustaw klucz API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Najpierw ustaw adres</string>
     <string name="ai_provider_enter_model">Wprowadź nazwę modelu</string>

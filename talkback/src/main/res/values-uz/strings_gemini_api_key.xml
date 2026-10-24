@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API qoʻshimcha xizmat koʻrsatish shartlari</string>
     <string name="ai_service_address_hint">Manzil, masalan, https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
-    <string name="ai_service_address_invalid">Manzil https://. bilan boshlanishi kerak Hech narsa saqlanmadi.</string>
+    <string name="ai_service_address_invalid">Manzil https:// bilan boshlanishi kerak. Hech narsa saqlanmadi.</string>
     <string name="dialog_message_ai_service_consent">Tasvirlar va skrinshotlar tasvirlash uchun <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ga yuboriladi, bu bir necha soniya davom etadi. Uning shaxsiy shartlari va maxfiylik siyosati amal qiladi. Generativ AI eksperimentaldir, shuning uchun u xato qiladi.</string>
     <string name="ai_service_error_api_key">AI xizmati API kalitini qabul qilmadi. Avtomatik tavsiflarda uning sozlamalarini tekshiring.</string>
     <string name="ai_service_error_quota">AI xizmatidan foydalanish chegarasiga yetdi. Keyinroq qayta urinib ko‘ring.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API kaliti</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> modeli</string>
     <string name="ai_provider_choose_model">Tanlanmagan</string>
-    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API kalitingizni joylashtiring. Uni olib tashlash uchun maydonni tozalang va saqlang. Siz tasvirlagan tasvirlar va ekranlar <xliff:g id="service" example="Claude">%1$s</xliff:g> manziliga yuboriladi.</string>
+    <string name="ai_provider_key_message"><xliff:g id="service" example="Claude">%1$s</xliff:g> API kalitingizni joylashtiring. Oʻchirish uchun maydonni boʻshatib, saqlang. Tavsifini soʻragan rasm va ekranlaringiz <xliff:g id="service" example="Claude">%1$s</xliff:g> xizmatiga yuboriladi.</string>
     <string name="ai_provider_needs_key">Avval <xliff:g id="service" example="Claude">%1$s</xliff:g> API kalitini o\'rnating</string>
     <string name="ai_provider_needs_address">Avval manzilni belgilang</string>
     <string name="ai_provider_enter_model">Model nomini kiriting</string>

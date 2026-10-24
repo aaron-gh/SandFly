@@ -31,7 +31,7 @@
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Ништа</string>
     <string name="ai_service_not_set_up">Ниједна АИ услуга није у употреби. Подесите један или изаберите један у подешавањима аутоматских описа.</string>
-    <string name="ai_provider_none_set_up">Ниједна АИ услуга није подешена. Подесите га у његовим подешавањима испод.</string>
+    <string name="ai_provider_none_set_up">Ниједна AI услуга није подешена. Подесите једну у њеним подешавањима испод.</string>
     <string name="ai_provider_other">Друга услуга</string>
     <string name="title_pref_category_ai_services">АИ услуге</string>
     <string name="title_pref_ai_provider">АИ услуга</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of">API кључ за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> модел</string>
     <string name="ai_provider_choose_model">Није изабрано</string>
-    <string name="ai_provider_key_message">Налепите свој <xliff:g id="service" example="Claude">%1$s</xliff:g> АПИ кључ. Да бисте га уклонили, обришите поље и сачувајте. Слике и екрани које описујете се шаљу на <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">Налепите свој API кључ за <xliff:g id="service" example="Claude">%1$s</xliff:g>. Да бисте га уклонили, испразните поље и сачувајте. Слике и екрани за које тражите опис шаљу се услузи <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Прво поставите API кључ за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_address">Прво поставите адресу</string>
     <string name="ai_provider_enter_model">Унесите назив модела</string>

@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API 附加服務條款</string>
     <string name="ai_service_address_hint">地址，例如 https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">模型</string>
-    <string name="ai_service_address_invalid">地址必須以 https://. 開頭 沒有儲存任何內容。</string>
+    <string name="ai_service_address_invalid">位址必須以 https:// 開頭。未儲存任何內容。</string>
     <string name="dialog_message_ai_service_consent">圖片和截圖被送到<xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>進行描述，這需要幾秒鐘的時間。適用其自己的條款和隱私權政策。生成式人工智慧是實驗性的，所以它會犯錯。</string>
     <string name="ai_service_error_api_key">AI 服務不接受 API 金鑰。檢查自動描述中的設定。</string>
     <string name="ai_service_error_quota">AI服務已達到使用上限。稍後再試。</string>
@@ -31,7 +31,7 @@
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">無</string>
     <string name="ai_service_not_set_up">沒有使用任何人工智慧服務。設定一項或在自動描述設定中選擇一項。</string>
-    <string name="ai_provider_none_set_up">未設定AI服務。在下面的設定中進行設定。</string>
+    <string name="ai_provider_none_set_up">未設定 AI 服務。請在下方相應的設定中設定一個。</string>
     <string name="ai_provider_other">其他服務</string>
     <string name="title_pref_category_ai_services">人工智慧服務</string>
     <string name="title_pref_ai_provider">人工智慧服務</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API 金鑰</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> 模型</string>
     <string name="ai_provider_choose_model">未選擇</string>
-    <string name="ai_provider_key_message">貼上您的 <xliff:g id="service" example="Claude">%1$s</xliff:g> API 金鑰。若要刪除它，請清除該欄位並儲存。您描述的圖像和螢幕將發送至 <xliff:g id="service" example="Claude">%1$s</xliff:g>。</string>
+    <string name="ai_provider_key_message">貼上你的 <xliff:g id="service" example="Claude">%1$s</xliff:g> API 金鑰。如要移除，請清空欄位並儲存。你要求描述的圖片和畫面會傳送至 <xliff:g id="service" example="Claude">%1$s</xliff:g>。</string>
     <string name="ai_provider_needs_key">請先設定 <xliff:g id="service" example="Claude">%1$s</xliff:g> API 金鑰</string>
     <string name="ai_provider_needs_address">先設定地址</string>
     <string name="ai_provider_enter_model">輸入模型名稱</string>

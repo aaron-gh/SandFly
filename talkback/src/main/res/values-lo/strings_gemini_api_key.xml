@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">ເງື່ອນໄຂການໃຫ້ບໍລິການເພີ່ມເຕີມຂອງ Gemini API</string>
     <string name="ai_service_address_hint">ທີ່ຢູ່ ເຊັ່ນ: https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">ຕົວແບບ</string>
-    <string name="ai_service_address_invalid">ທີ່ຢູ່ຕ້ອງເລີ່ມຕົ້ນດ້ວຍ https://. ບໍ່ມີຫຍັງຖືກບັນທຶກໄວ້.</string>
+    <string name="ai_service_address_invalid">ທີ່ຢູ່ຕ້ອງເລີ່ມດ້ວຍ https://. ບໍ່ມີຫຍັງຖືກບັນທຶກ.</string>
     <string name="dialog_message_ai_service_consent">ຮູບພາບ ແລະຮູບໜ້າຈໍຖືກສົ່ງໄປໃຫ້ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ເພື່ອອະທິບາຍ, ເຊິ່ງໃຊ້ເວລາຫຼາຍວິນາທີ. ຂໍ້ກຳນົດຂອງຕົນເອງ ແລະນະໂຍບາຍຄວາມເປັນສ່ວນຕົວນຳໃຊ້. Generative AI ແມ່ນການທົດລອງ, ດັ່ງນັ້ນມັນຈະເຮັດຜິດພາດ.</string>
     <string name="ai_service_error_api_key">ບໍລິການ AI ບໍ່ຍອມຮັບລະຫັດ API. ກວດເບິ່ງການຕັ້ງຄ່າຂອງມັນຢູ່ໃນຄໍາອະທິບາຍອັດຕະໂນມັດ.</string>
     <string name="ai_service_error_quota">ຮອດຂີດຈຳກັດການນຳໃຊ້ບໍລິການ AI ແລ້ວ. ລອງໃໝ່ໃນພາຍຫຼັງ.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of">ລະຫັດ API ຂອງ <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">ຕົວແບບ <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">ບໍ່ໄດ້ເລືອກ</string>
-    <string name="ai_provider_key_message">ວາງລະຫັດ API <xliff:g id="service" example="Claude">%1$s</xliff:g> ຂອງທ່ານ. ເພື່ອເອົາມັນອອກ, ລ້າງຊ່ອງຂໍ້ມູນແລະບັນທຶກ. ຮູບພາບ ແລະໜ້າຈໍທີ່ທ່ານອະທິບາຍແມ່ນຖືກສົ່ງໄປຫາ <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
+    <string name="ai_provider_key_message">ວາງລະຫັດ API ຂອງ <xliff:g id="service" example="Claude">%1$s</xliff:g>. ເພື່ອລຶບອອກ, ໃຫ້ລ້າງຊ່ອງ ແລ້ວບັນທຶກ. ຮູບພາບ ແລະ ໜ້າຈໍທີ່ທ່ານຂໍໃຫ້ອະທິບາຍຈະຖືກສົ່ງໄປຫາ <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">ຕັ້ງລະຫັດ API <xliff:g id="service" example="Claude">%1$s</xliff:g> ກ່ອນ</string>
     <string name="ai_provider_needs_address">ຕັ້ງທີ່ຢູ່ກ່ອນ</string>
     <string name="ai_provider_enter_model">ໃສ່ຊື່ຕົວແບບ</string>

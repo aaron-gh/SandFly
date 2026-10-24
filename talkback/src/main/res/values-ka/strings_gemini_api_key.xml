@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API მომსახურების დამატებითი პირობები</string>
     <string name="ai_service_address_hint">მისამართი, როგორიცაა https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">მოდელი</string>
-    <string name="ai_service_address_invalid">მისამართი უნდა დაიწყოს https://.-ით არაფერი შენახულა.</string>
+    <string name="ai_service_address_invalid">მისამართი უნდა იწყებოდეს https://-ით. არაფერი შენახულა.</string>
     <string name="dialog_message_ai_service_consent">სურათები და ეკრანის ანაბეჭდები იგზავნება <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>-ზე აღსაწერად, რასაც რამდენიმე წამი სჭირდება. მოქმედებს მისი საკუთარი პირობები და კონფიდენციალურობის პოლიტიკა. გენერაციული AI ექსპერიმენტულია, ამიტომ შეცდომებს დაუშვებს.</string>
     <string name="ai_service_error_api_key">AI სერვისმა არ მიიღო API გასაღები. შეამოწმეთ მისი პარამეტრები ავტომატურ აღწერილობებში.</string>
     <string name="ai_service_error_quota">AI სერვისის გამოყენების ლიმიტი მიღწეულია. სცადეთ მოგვიანებით.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API გასაღები</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> მოდელი</string>
     <string name="ai_provider_choose_model">არჩეული არ არის</string>
-    <string name="ai_provider_key_message">ჩასვით თქვენი <xliff:g id="service" example="Claude">%1$s</xliff:g> API გასაღები. მის მოსაშორებლად გაასუფთავეთ ველი და შეინახეთ. თქვენ მიერ აღწერილი სურათები და ეკრანები იგზავნება <xliff:g id="service" example="Claude">%1$s</xliff:g>-ზე.</string>
+    <string name="ai_provider_key_message">ჩასვით თქვენი <xliff:g id="service" example="Claude">%1$s</xliff:g> API გასაღები. წასაშლელად გაასუფთავეთ ველი და შეინახეთ. სურათები და ეკრანები, რომელთა აღწერასაც ითხოვთ, იგზავნება <xliff:g id="service" example="Claude">%1$s</xliff:g>-ში.</string>
     <string name="ai_provider_needs_key">ჯერ დააყენეთ <xliff:g id="service" example="Claude">%1$s</xliff:g> API გასაღები</string>
     <string name="ai_provider_needs_address">ჯერ დააყენეთ მისამართი</string>
     <string name="ai_provider_enter_model">შეიყვანეთ მოდელის სახელი</string>

@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">Gemini API கூடுதல் சேவை விதிமுறைகள்</string>
     <string name="ai_service_address_hint">முகவரி, எடுத்துக்காட்டாக https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">மாடல்</string>
-    <string name="ai_service_address_invalid">முகவரி https://. உடன் தொடங்க வேண்டும், எதுவும் சேமிக்கப்படவில்லை.</string>
+    <string name="ai_service_address_invalid">முகவரி https:// என்று தொடங்க வேண்டும். எதுவும் சேமிக்கப்படவில்லை.</string>
     <string name="dialog_message_ai_service_consent">படங்கள் மற்றும் ஸ்கிரீன்ஷாட்கள் <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> க்கு அனுப்பப்பட்டு விவரிக்கப்பட வேண்டும், இதற்கு பல வினாடிகள் ஆகும். அதன் சொந்த விதிமுறைகள் மற்றும் தனியுரிமைக் கொள்கை பொருந்தும். ஜெனரேட்டிவ் AI சோதனையானது, எனவே அது தவறுகளை செய்யும்.</string>
     <string name="ai_service_error_api_key">AI சேவை API விசையை ஏற்கவில்லை. தானியங்கி விளக்கங்களில் அதன் அமைப்புகளைச் சரிபார்க்கவும்.</string>
     <string name="ai_service_error_quota">AI சேவையின் பயன்பாட்டு வரம்பை அடைந்துவிட்டது. பிறகு முயற்சிக்கவும்.</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> API விசை</string>
     <string name="title_pref_gemini_model_of"><xliff:g id="service" example="Claude">%1$s</xliff:g> மாடல்</string>
     <string name="ai_provider_choose_model">தேர்ந்தெடுக்கப்படவில்லை</string>
-    <string name="ai_provider_key_message">உங்கள் <xliff:g id="service" example="Claude">%1$s</xliff:g> API விசையை ஒட்டவும். அதை அகற்ற, புலத்தை அழித்து சேமிக்கவும். நீங்கள் விவரிக்கும் படங்கள் மற்றும் திரைகள் <xliff:g id="service" example="Claude">%1$s</xliff:g>க்கு அனுப்பப்படும்.</string>
+    <string name="ai_provider_key_message">உங்கள் <xliff:g id="service" example="Claude">%1$s</xliff:g> API விசையை ஒட்டவும். அதை அகற்ற, புலத்தைக் காலியாக்கிச் சேமிக்கவும். விளக்கம் கேட்கும் படங்களும் திரைகளும் <xliff:g id="service" example="Claude">%1$s</xliff:g>க்கு அனுப்பப்படும்.</string>
     <string name="ai_provider_needs_key">முதலில் <xliff:g id="service" example="Claude">%1$s</xliff:g> API விசையை அமைக்கவும்</string>
     <string name="ai_provider_needs_address">முதலில் முகவரியை அமைக்கவும்</string>
     <string name="ai_provider_enter_model">மாடல் பெயரை உள்ளிடவும்</string>

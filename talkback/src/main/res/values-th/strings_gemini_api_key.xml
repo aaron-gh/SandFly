@@ -16,7 +16,7 @@
     <string name="gemini_api_terms_link">ข้อกำหนดในการให้บริการเพิ่มเติมของ Gemini API</string>
     <string name="ai_service_address_hint">ที่อยู่ เช่น https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">โมเดล</string>
-    <string name="ai_service_address_invalid">ที่อยู่ต้องขึ้นต้นด้วย https://. ไม่มีการบันทึกอะไรเลย</string>
+    <string name="ai_service_address_invalid">ที่อยู่ต้องขึ้นต้นด้วย https:// ไม่มีการบันทึกข้อมูลใด</string>
     <string name="dialog_message_ai_service_consent">รูปภาพและภาพหน้าจอจะถูกส่งไปยัง <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> เพื่ออธิบาย ซึ่งใช้เวลาหลายวินาที เป็นไปตามข้อกำหนดและนโยบายความเป็นส่วนตัวของตนเอง Generative AI อยู่ระหว่างการทดลอง ดังนั้นมันจะเกิดข้อผิดพลาด</string>
     <string name="ai_service_error_api_key">บริการ AI ไม่ยอมรับคีย์ API ตรวจสอบการตั้งค่าในคำอธิบายอัตโนมัติ</string>
     <string name="ai_service_error_quota">ถึงขีดจำกัดการใช้งานบริการ AI แล้ว ลองอีกครั้งในภายหลัง</string>
@@ -47,7 +47,7 @@
     <string name="title_pref_gemini_api_key_of">คีย์ API ของ <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">โมเดล <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">ไม่ได้เลือก</string>
-    <string name="ai_provider_key_message">วางคีย์ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ของคุณ หากต้องการลบออก ให้ล้างฟิลด์และบันทึก รูปภาพและหน้าจอที่คุณอธิบายจะถูกส่งไปยัง <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_key_message">วางคีย์ API ของ <xliff:g id="service" example="Claude">%1$s</xliff:g> หากต้องการลบ ให้ล้างช่องแล้วบันทึก รูปภาพและหน้าจอที่คุณขอให้อธิบายจะถูกส่งไปยัง <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_needs_key">ตั้งค่าคีย์ <xliff:g id="service" example="Claude">%1$s</xliff:g> API ก่อน</string>
     <string name="ai_provider_needs_address">ตั้งค่าที่อยู่ก่อน</string>
     <string name="ai_provider_enter_model">ป้อนชื่อโมเดล</string>
