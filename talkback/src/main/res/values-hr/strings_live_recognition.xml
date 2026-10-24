@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Povezivanje s Geminijem…</string>
     <string name="live_recognition_cloud_title">Slati slike s kamere Geminiju?</string>
     <string name="live_recognition_cloud_message">Scene, Pokaži i pročitaj, Otkrivanje osoba i Otkrivanje vrata svakih nekoliko sekundi šalju sliku s kamere Googleovu Gemini API-ju. Tekst se prepoznaje na ovom telefonu.\n\nS besplatnim API ključem Google može zadržati ono što primi, koristiti to za poboljšanje svojih proizvoda i dati to ljudima na pregled. Generativna umjetna inteligencija je eksperimentalna pa će griješiti.</string>
+    <string name="live_recognition_service_title">Slati slike s kamere na <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Scene, Pokaži i pročitaj, Otkrivanje osoba i Otkrivanje vrata svakih nekoliko sekundi šalju sliku s kamere na <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>. Tekst se prepoznaje na ovom telefonu.\n\nPrimjenjuju se uvjeti i pravila o privatnosti te usluge. Generativna umjetna inteligencija je eksperimentalna pa će griješiti.</string>
     <string name="live_recognition_send">Pošalji slike</string>
     <string name="live_recognition_camera_permission">Nema dopuštenja za kameru</string>
     <string name="live_recognition_camera_error">Kamera se nije mogla otvoriti</string>

@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">მიმდინარეობს Gemini-სთან დაკავშირება…</string>
     <string name="live_recognition_cloud_title">გაეგზავნოს კამერის სურათები Gemini-ს?</string>
     <string name="live_recognition_cloud_message">„სცენები“, „მიუთითე და წაიკითხე“, „ადამიანების აღმოჩენა“ და „კარების აღმოჩენა“ ყოველ რამდენიმე წამში კამერიდან სურათს უგზავნიან Google-ის Gemini API-ს. ტექსტი ამოიცნობა ამ ტელეფონზე.\n\nუფასო API გასაღებით Google-ს შეუძლია შეინახოს მიღებული, გამოიყენოს ის თავისი პროდუქტების გასაუმჯობესებლად და მისცეს ადამიანებს გადასახედად. გენერაციული AI ექსპერიმენტულია, ამიტომ ის შეცდომებს დაუშვებს.</string>
+    <string name="live_recognition_service_title">გაეგზავნოს კამერის სურათები <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>-ს?</string>
+    <string name="live_recognition_service_message">„სცენები“, „მიუთითე და წაიკითხე“, „ადამიანების აღმოჩენა“ და „კარების აღმოჩენა“ ყოველ რამდენიმე წამში კამერიდან სურათს უგზავნიან <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>-ს. ტექსტი ამოიცნობა ამ ტელეფონზე.\n\nმოქმედებს სერვისის პირობები და კონფიდენციალურობის პოლიტიკა. გენერაციული AI ექსპერიმენტულია, ამიტომ ის შეცდომებს დაუშვებს.</string>
     <string name="live_recognition_send">სურათების გაგზავნა</string>
     <string name="live_recognition_camera_permission">კამერის ნებართვა არ არის</string>
     <string name="live_recognition_camera_error">კამერის გახსნა ვერ მოხერხდა</string>

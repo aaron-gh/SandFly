@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Pripája sa ku Gemini…</string>
     <string name="live_recognition_cloud_title">Odosielať snímky z fotoaparátu do Gemini?</string>
     <string name="live_recognition_cloud_message">Scény, Ukázať a čítať, Detekcia osôb a Detekcia dverí každých niekoľko sekúnd odosielajú snímku z fotoaparátu do rozhrania Gemini API od Googlu. Text sa rozpoznáva v tomto telefóne.\n\nS bezplatným kľúčom API môže Google uchovávať, čo dostane, používať to na zlepšovanie svojich produktov a nechať to kontrolovať ľuďmi. Generatívna AI je experimentálna, takže bude robiť chyby.</string>
+    <string name="live_recognition_service_title">Odosielať snímky z fotoaparátu do <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Scény, Ukázať a čítať, Detekcia osôb a Detekcia dverí každých niekoľko sekúnd odosielajú snímku z fotoaparátu do <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>. Text sa rozpoznáva v tomto telefóne.\n\nPlatia zmluvné podmienky a pravidlá ochrany súkromia služby. Generatívna AI je experimentálna, takže bude robiť chyby.</string>
     <string name="live_recognition_send">Odoslať snímky</string>
     <string name="live_recognition_camera_permission">Chýba povolenie pre fotoaparát</string>
     <string name="live_recognition_camera_error">Fotoaparát sa nepodarilo otvoriť</string>

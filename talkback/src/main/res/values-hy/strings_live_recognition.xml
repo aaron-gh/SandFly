@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Միացում Gemini-ին…</string>
     <string name="live_recognition_cloud_title">Ուղարկե՞լ տեսախցիկի պատկերները Gemini-ին</string>
     <string name="live_recognition_cloud_message">«Տեսարաններ», «Ցույց տուր և կարդա», «Մարդկանց հայտնաբերում» և «Դռների հայտնաբերում» ռեժիմները մի քանի վայրկյանը մեկ տեսախցիկից պատկեր են ուղարկում Google-ի Gemini API-ին։ Տեքստը ճանաչվում է այս հեռախոսում։\n\nԱնվճար API բանալիով Google-ը կարող է պահել ստացածը, օգտագործել այն իր արտադրանքը բարելավելու համար և տալ մարդկանց՝ ստուգելու։ Գեներատիվ AI-ը փորձնական է, ուստի սխալներ կանի։</string>
+    <string name="live_recognition_service_title">Ուղարկե՞լ տեսախցիկի պատկերները <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>-ին</string>
+    <string name="live_recognition_service_message">«Տեսարաններ», «Ցույց տուր և կարդա», «Մարդկանց հայտնաբերում» և «Դռների հայտնաբերում» ռեժիմները մի քանի վայրկյանը մեկ տեսախցիկից պատկեր են ուղարկում <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>-ին։ Տեքստը ճանաչվում է այս հեռախոսում։\n\nԳործում են ծառայության պայմաններն ու գաղտնիության քաղաքականությունը։ Գեներատիվ AI-ը փորձնական է, ուստի սխալներ կանի։</string>
     <string name="live_recognition_send">Ուղարկել պատկերները</string>
     <string name="live_recognition_camera_permission">Տեսախցիկի թույլտվություն չկա</string>
     <string name="live_recognition_camera_error">Չհաջողվեց բացել տեսախցիկը</string>

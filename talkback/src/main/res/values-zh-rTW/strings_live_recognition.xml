@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">正在連線至 Gemini…</string>
     <string name="live_recognition_cloud_title">要將相機影像傳送給 Gemini 嗎？</string>
     <string name="live_recognition_cloud_message">「場景」、「指向並朗讀」、「人物偵測」和「門偵測」每隔幾秒就會將一張相機影像傳送到 Google 的 Gemini API。文字會在這支手機上辨識。\n\n使用免費 API 金鑰時，Google 可能會保留收到的內容、用於改善產品，並交由人工審查。生成式 AI 仍處於實驗階段，因此會出錯。</string>
+    <string name="live_recognition_service_title">要將相機影像傳送到 <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> 嗎？</string>
+    <string name="live_recognition_service_message">「場景」、「指向並朗讀」、「人物偵測」和「門偵測」每隔幾秒就會將一張相機影像傳送到 <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>。文字會在這支手機上辨識。\n\n適用該服務的條款及隱私權政策。生成式 AI 仍處於實驗階段，因此會出錯。</string>
     <string name="live_recognition_send">傳送影像</string>
     <string name="live_recognition_camera_permission">沒有相機權限</string>
     <string name="live_recognition_camera_error">無法開啟相機</string>

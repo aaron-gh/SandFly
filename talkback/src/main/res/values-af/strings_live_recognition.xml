@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Koppel tans aan Gemini…</string>
     <string name="live_recognition_cloud_title">Stuur kamerabeelde na Gemini?</string>
     <string name="live_recognition_cloud_message">Tonele, Wys en lees, Mensbespeuring en Deurbespeuring stuur elke paar sekondes \'n beeld van die kamera na Google se Gemini API. Teks word op hierdie foon herken.\n\nMet \'n gratis API-sleutel kan Google hou wat dit ontvang, dit gebruik om sy produkte te verbeter en mense dit laat nagaan. Generatiewe KI is eksperimenteel en sal dus foute maak.</string>
+    <string name="live_recognition_service_title">Stuur kamerabeelde na <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Tonele, Wys en lees, Mensbespeuring en Deurbespeuring stuur elke paar sekondes \'n beeld van die kamera na <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>. Teks word op hierdie foon herken.\n\nDie diens se eie bepalings en privaatheidsbeleid geld. Generatiewe KI is eksperimenteel en sal dus foute maak.</string>
     <string name="live_recognition_send">Stuur beelde</string>
     <string name="live_recognition_camera_permission">Geen kameratoestemming nie</string>
     <string name="live_recognition_camera_error">Die kamera kon nie oopgemaak word nie</string>

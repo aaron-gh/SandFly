@@ -778,7 +778,7 @@ SandFly can describe images and screens with a model that runs on your phone, so
 
 ### Live recognition
 
-A camera screen like VoiceOver's Live Recognition, with Scenes, Text, Point and Speak, People detection and Door detection, and a **Live recognition** reading control that turns each mode on and off. Text is recognized on the phone; the other modes use Gemini Live with your Gemini API key. For more information, see [Live recognition](README.md#live-recognition).
+A camera screen like VoiceOver's Live Recognition, with Scenes, Text, Point and Speak, People detection and Door detection, and a **Live recognition** reading control that turns each mode on and off. Text is recognized on the phone; the other modes use what Describe image uses: the on-device model, the AI service in use, or Gemini Live. For more information, see [Live recognition](README.md#live-recognition).
 
 ### Clear error messages
 

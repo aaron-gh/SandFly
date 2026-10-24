@@ -41,7 +41,7 @@ internal class GeminiLiveSession(
   private val onResult: (String) -> Unit,
   private val onFailure: (Int) -> Unit,
   connect: (Request, WebSocketListener) -> WebSocket = { request, listener -> client.newWebSocket(request, listener) },
-) : AutoCloseable {
+) : FrameDescriber {
   private val handler = Handler(Looper.getMainLooper())
   private val response = GeminiLiveResponse()
   // Volatile so that the camera thread can check canRequest before it encodes a frame.
@@ -92,11 +92,11 @@ internal class GeminiLiveSession(
   }
 
   /** Whether [describe] would send a frame now. Can be called from any thread. */
-  fun canRequest(): Boolean = ready && !closed && !pending &&
+  override fun canRequest(): Boolean = ready && !closed && !pending &&
     SystemClock.elapsedRealtime() - lastRequest >= REQUEST_INTERVAL_MS
 
-  fun describe(jpeg: String, modes: Set<RecognitionMode>, pointAbove: Boolean) {
-    if (!canRequest() || modes.none { it.cloud }) return
+  override fun describe(jpeg: String, modes: Set<RecognitionMode>, pointAbove: Boolean) {
+    if (!canRequest() || modes.none { it.usesAi }) return
     pending = true
     answerStarted = false
     response.clear()

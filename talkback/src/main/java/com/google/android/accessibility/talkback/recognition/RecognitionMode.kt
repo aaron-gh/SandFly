@@ -19,7 +19,7 @@ package com.google.android.accessibility.talkback.recognition
 import com.google.android.accessibility.talkback.R
 
 /** Live recognition modes, in reading control order. Each turns on and off by itself. */
-enum class RecognitionMode(val label: Int, val cloud: Boolean) {
+enum class RecognitionMode(val label: Int, val usesAi: Boolean) {
   SCENES(R.string.live_recognition_scenes, true),
   TEXT(R.string.live_recognition_text, false),
   POINT_AND_SPEAK(R.string.live_recognition_point, true),

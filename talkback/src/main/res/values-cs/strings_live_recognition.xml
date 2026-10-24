@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Připojování ke Gemini…</string>
     <string name="live_recognition_cloud_title">Odesílat snímky z fotoaparátu do Gemini?</string>
     <string name="live_recognition_cloud_message">Scény, Ukázat a číst, Detekce osob a Detekce dveří každých několik sekund odesílají snímek z fotoaparátu do rozhraní Gemini API od Googlu. Text se rozpoznává v tomto telefonu.\n\nS bezplatným klíčem API může Google uchovávat, co obdrží, používat to ke zlepšování svých produktů a nechat to kontrolovat lidmi. Generativní AI je experimentální, takže bude dělat chyby.</string>
+    <string name="live_recognition_service_title">Odesílat snímky z fotoaparátu do <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>?</string>
+    <string name="live_recognition_service_message">Scény, Ukázat a číst, Detekce osob a Detekce dveří každých několik sekund odesílají snímek z fotoaparátu do <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>. Text se rozpoznává v tomto telefonu.\n\nPlatí smluvní podmínky a zásady ochrany soukromí služby. Generativní AI je experimentální, takže bude dělat chyby.</string>
     <string name="live_recognition_send">Odeslat snímky</string>
     <string name="live_recognition_camera_permission">Chybí oprávnění k fotoaparátu</string>
     <string name="live_recognition_camera_error">Fotoaparát se nepodařilo otevřít</string>

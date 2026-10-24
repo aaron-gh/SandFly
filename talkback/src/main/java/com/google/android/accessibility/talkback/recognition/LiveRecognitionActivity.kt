@@ -47,16 +47,16 @@ import androidx.camera.core.resolutionselector.ResolutionStrategy
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
+import androidx.core.content.edit
 import androidx.lifecycle.LiveData
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.actor.gemini.AiService
 import com.google.android.accessibility.talkback.actor.gemini.GeminiApiKey
 import com.google.android.accessibility.talkback.pause.PauseController
-import com.google.android.accessibility.utils.Performance
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.monitor.RecentUserInput
-import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.vision.common.InputImage
@@ -79,8 +79,8 @@ class LiveRecognitionActivity : ComponentActivity() {
   private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(this) }
   private val recognizer by lazy { TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS) }
   private var recognizerUsed = false
-  // Read by the camera thread, to encode a frame only when Gemini can take one.
-  @Volatile private var session: GeminiLiveSession? = null
+  // Read by the camera thread, to encode a frame only when it can be described.
+  @Volatile private var describer: FrameDescriber? = null
   private var cameraProvider: ProcessCameraProvider? = null
   private var analysis: ImageAnalysis? = null
   private var preview: Preview? = null
@@ -154,7 +154,7 @@ class LiveRecognitionActivity : ComponentActivity() {
         id = View.generateViewId()
         setText(R.string.live_recognition_point_below)
       })
-      // Sent with each request, so the session keeps running.
+      // Sent with each request, so recognition keeps running.
       setOnCheckedChangeListener { _, checked -> pointAbove = checked == above.id }
     })
     setContentView(ScrollView(this).apply { addView(column); fitsSystemWindows = true })
@@ -185,7 +185,7 @@ class LiveRecognitionActivity : ComponentActivity() {
   }
 
   override fun onDestroy() {
-    session?.close()
+    describer?.close()
     if (recognizerUsed) recognizer.close()
     worker.shutdown()
     super.onDestroy()
@@ -208,29 +208,47 @@ class LiveRecognitionActivity : ComponentActivity() {
       cameraPermission.launch(Manifest.permission.CAMERA)
       return
     }
-    if (mode.cloud) {
-      if (GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY).isBlank()) {
-        updateSwitches()
-        report(R.string.gemini_model_needs_key)
-        return
-      }
-      if (!prefs.getBoolean(CLOUD_CONSENT_PREF, false)) {
-        updateSwitches()
-        dialogOpen = true
-        AlertDialog.Builder(this).setTitle(R.string.live_recognition_cloud_title)
-          .setMessage(R.string.live_recognition_cloud_message)
-          .setNegativeButton(android.R.string.cancel, null)
-          .setPositiveButton(R.string.live_recognition_send) { _, _ ->
-            prefs.edit().putBoolean(CLOUD_CONSENT_PREF, true).apply()
-            dialogOpen = false
-            if (resumed) toggle(mode)
-          }.setOnDismissListener { dialogOpen = false }.show()
-        return
-      }
+    if (mode.usesAi && !canUseAi(mode)) {
+      updateSwitches()
+      return
     }
     enabled.add(mode)
     reconcile()
     speakMode(mode)
+  }
+
+  /**
+   * Whether the modes that use AI can be turned on: an AI service is in use, and the user agreed to
+   * images being sent to it, which this asks once. When it asks, [mode] is turned on after Send.
+   */
+  private fun canUseAi(mode: RecognitionMode): Boolean {
+    val backend = AiBackend.of(this, prefs)
+    if (backend == AiBackend.NONE) {
+      report(R.string.ai_service_not_set_up)
+      return false
+    }
+    if (backend == AiBackend.GEMINI && GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY).isBlank()) {
+      report(R.string.gemini_model_needs_key)
+      return false
+    }
+    // Nothing leaves the phone with on-device AI.
+    if (backend == AiBackend.ON_DEVICE) return true
+    val host = if (backend == AiBackend.SERVICE) AiService.host(prefs) else null
+    val consent = if (host == null) CLOUD_CONSENT_PREF else SERVICE_CONSENT_PREF + host
+    if (prefs.getBoolean(consent, false)) return true
+    dialogOpen = true
+    AlertDialog.Builder(this)
+      .setTitle(if (host == null) getString(R.string.live_recognition_cloud_title)
+        else getString(R.string.live_recognition_service_title, host))
+      .setMessage(if (host == null) getString(R.string.live_recognition_cloud_message)
+        else getString(R.string.live_recognition_service_message, host))
+      .setNegativeButton(android.R.string.cancel, null)
+      .setPositiveButton(R.string.live_recognition_send) { _, _ ->
+        prefs.edit { putBoolean(consent, true) }
+        dialogOpen = false
+        if (resumed) toggle(mode)
+      }.setOnDismissListener { dialogOpen = false }.show()
+    return false
   }
 
   private fun updateSwitches() { switches.forEach { (mode, view) -> view.isChecked = mode in enabled } }
@@ -254,8 +272,8 @@ class LiveRecognitionActivity : ComponentActivity() {
     val token = ++generation
     LogUtils.i(TAG, "Modes: %s", enabled)
     TalkBackService.getInstance()?.speechController?.stopUtteranceGroup(SpeechController.UTTERANCE_GROUP_LIVE_RECOGNITION)
-    session?.close()
-    session = null
+    describer?.close()
+    describer = null
     cameraState?.removeObservers(this)
     cameraState = null
     analysis?.clearAnalyzer()
@@ -275,23 +293,56 @@ class LiveRecognitionActivity : ComponentActivity() {
     window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     handler.post(runningCheck)
     status.setText(R.string.live_recognition_camera_on)
-    if (enabled.any { it.cloud }) {
-      status.setText(R.string.live_recognition_connecting)
-      session = GeminiLiveSession(
-        GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY),
-        Locale.getDefault().toLanguageTag(),
-        onReady = { if (generation == token) status.setText(R.string.live_recognition_camera_on) },
-        onResult = { if (generation == token) announceResult(SOURCE_GEMINI, it) },
-        onFailure = { message ->
-          if (generation == token) {
-            enabled.removeAll { it.cloud }
-            reconcile()
-            report(message)
-          }
-        }
-      )
-    }
+    if (enabled.any { it.usesAi }) describer = createDescriber(token)
     startCamera(token)
+  }
+
+  /** Describes frames with what Describe image uses: see [AiBackend]. */
+  private fun createDescriber(token: Int): FrameDescriber? {
+    val language = Locale.getDefault().toLanguageTag()
+    val onResult = { text: String -> if (generation == token) announceResult(SOURCE_AI, text) }
+    fun stopAi(message: String?) {
+      if (generation != token) return
+      enabled.removeAll { it.usesAi }
+      reconcile()
+      if (message != null) report(message)
+    }
+    return when (val backend = AiBackend.of(this, prefs)) {
+      AiBackend.GEMINI -> {
+        status.setText(R.string.live_recognition_connecting)
+        GeminiLiveSession(
+          GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY),
+          language,
+          onReady = { if (generation == token) status.setText(R.string.live_recognition_camera_on) },
+          onResult = onResult,
+          onFailure = { stopAi(getString(it)) },
+        )
+      }
+      AiBackend.ON_DEVICE, AiBackend.SERVICE -> {
+        val questions = LiveRecognition.imageQuestions(this)
+        val plain = backend == AiBackend.ON_DEVICE && AiBackend.usesPlainPrompts(this)
+        RequestDescriber(
+          prompt = { modes, above ->
+            if (plain) GeminiLiveProtocol.plainPrompt(modes, above, language)
+            else GeminiLiveProtocol.imagePrompt(modes, above, language)
+          },
+          ask = questions::ask,
+          cancel = questions::cancel,
+          // The on-device model takes the next frame as soon as it is free; a service is paid for.
+          minIntervalMs = if (backend == AiBackend.ON_DEVICE) 0 else GeminiLiveSession.REQUEST_INTERVAL_MS,
+          maxResultAgeMs = REQUEST_MAX_RESULT_AGE_MS,
+          onResult = onResult,
+          // A cancelled request said why itself, such as the phone being low on memory.
+          onFailure = { stopAi(it?.userMessage(this)) },
+        )
+      }
+      AiBackend.NONE -> {
+        enabled.removeAll { it.usesAi }
+        updateSwitches()
+        report(R.string.ai_service_not_set_up)
+        null
+      }
+    }
   }
 
   private fun startCamera(token: Int) {
@@ -311,8 +362,8 @@ class LiveRecognitionActivity : ComponentActivity() {
         newAnalysis.setAnalyzer(worker) { frame ->
           val now = SystemClock.elapsedRealtime()
           // Gemini takes a frame every few seconds at most, so most frames are only read for text.
-          val cloud = session?.canRequest() == true
-          if (generation != token || now - lastFrame < FRAME_INTERVAL_MS || !(text || cloud) ||
+          val ai = describer?.canRequest() == true
+          if (generation != token || now - lastFrame < FRAME_INTERVAL_MS || !(text || ai) ||
               !processing.compareAndSet(false, true)) {
             frame.close()
             return@setAnalyzer
@@ -323,7 +374,7 @@ class LiveRecognitionActivity : ComponentActivity() {
             val rotation = frame.imageInfo.rotationDegrees
             val bitmap = if (rotation == 0) raw else Bitmap.createBitmap(raw, 0, 0, raw.width, raw.height,
               Matrix().apply { postRotate(rotation.toFloat()) }, true).also { raw.recycle() }
-            val jpeg = if (!cloud) null else ByteArrayOutputStream().use {
+            val jpeg = if (!ai) null else ByteArrayOutputStream().use {
               bitmap.compress(Bitmap.CompressFormat.JPEG, JPEG_QUALITY, it)
               Base64.encodeToString(it.toByteArray(), Base64.NO_WRAP)
             }
@@ -357,7 +408,7 @@ class LiveRecognitionActivity : ComponentActivity() {
   private fun processFrame(bitmap: Bitmap, jpeg: String?, token: Int, capturedAt: Long) {
     fun release() { bitmap.recycle(); processing.set(false) }
     if (generation != token || !resumed) { release(); return }
-    if (jpeg != null) session?.describe(jpeg, enabled.toSet(), pointAbove)
+    if (jpeg != null) describer?.describe(jpeg, enabled.toSet(), pointAbove)
     if (RecognitionMode.TEXT !in enabled) { release(); return }
     try {
       recognizerUsed = true
@@ -417,23 +468,21 @@ class LiveRecognitionActivity : ComponentActivity() {
     }
   }
 
-  private fun report(message: Int) { status.setText(message); speak(getString(message), true) }
-  private fun speak(text: String, interrupt: Boolean) {
-    TalkBackService.getInstance()?.speechController?.speak(text, Performance.EVENT_ID_UNTRACKED,
-      SpeechController.SpeakOptions.create()
-        // The user turned recognition on, so it is spoken even while other audio plays.
-        .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)
-        .setUtteranceGroup(if (interrupt) SpeechController.UTTERANCE_GROUP_DEFAULT else SpeechController.UTTERANCE_GROUP_LIVE_RECOGNITION)
-        .setQueueMode(
-        if (interrupt) SpeechController.QUEUE_MODE_INTERRUPT else SpeechController.QUEUE_MODE_QUEUE))
-  }
+  private fun report(message: Int) = report(getString(message))
+  private fun report(message: String) { status.text = message; speak(message, true) }
+  private fun speak(text: String, interrupt: Boolean) = LiveRecognition.speak(text, interrupt)
+
 
   companion object {
     const val EXTRA_MODE = "recognition_mode"
     /** Whether the user agreed to camera images being sent to Gemini. */
     private const val CLOUD_CONSENT_PREF = "pref_live_recognition_cloud_consent"
     private const val SOURCE_TEXT = "text"
-    private const val SOURCE_GEMINI = "gemini"
+    private const val SOURCE_AI = "ai"
+    /** The first part of the key that says the user agreed to images going to an AI service. */
+    private const val SERVICE_CONSENT_PREF = "pref_live_recognition_consent_"
+    /** How old an answer from the on-device model or an AI service can be when it comes. */
+    private const val REQUEST_MAX_RESULT_AGE_MS = 30_000L
     private const val FRAME_INTERVAL_MS = 1_000L
     private const val CHECK_INTERVAL_MS = 500L
     private const val JPEG_QUALITY = 70

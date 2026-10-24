@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Geminira konektatzen…</string>
     <string name="live_recognition_cloud_title">Kamerako irudiak Geminira bidali nahi dituzu?</string>
     <string name="live_recognition_cloud_message">Eszenak, Seinalatu eta irakurri, Pertsonak hautematea eta Ateak hautematea moduek segundo gutxitik behin kamerako irudi bat bidaltzen diote Google-ren Gemini APIari. Testua telefono honetan ezagutzen da.\n\nDoako API-gako batekin, Google-k jasotzen duena gorde dezake, bere produktuak hobetzeko erabil dezake eta pertsonei berrikusarazi diezaieke. AI sortzailea esperimentala da; beraz, akatsak egingo ditu.</string>
+    <string name="live_recognition_service_title">Kamerako irudiak <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> zerbitzura bidali nahi dituzu?</string>
+    <string name="live_recognition_service_message">Eszenak, Seinalatu eta irakurri, Pertsonak hautematea eta Ateak hautematea moduek segundo gutxitik behin kamerako irudi bat bidaltzen diote <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> zerbitzuari. Testua telefono honetan ezagutzen da.\n\nZerbitzuaren beraren baldintzak eta pribatutasun-gidalerroak aplikatzen dira. AA sortzailea esperimentala da; beraz, akatsak egingo ditu.</string>
     <string name="live_recognition_send">Bidali irudiak</string>
     <string name="live_recognition_camera_permission">Ez dago kamera erabiltzeko baimenik</string>
     <string name="live_recognition_camera_error">Ezin izan da ireki kamera</string>

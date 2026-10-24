@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Gemini से कनेक्ट हो रहा है…</string>
     <string name="live_recognition_cloud_title">कैमरे की इमेज Gemini को भेजें?</string>
     <string name="live_recognition_cloud_message">दृश्य, इशारा करें और पढ़ें, लोगों की पहचान और दरवाज़ों की पहचान हर कुछ सेकंड में कैमरे की एक इमेज Google के Gemini API को भेजते हैं. टेक्स्ट की पहचान इसी फ़ोन पर होती है.\n\nमुफ़्त API कुंजी के साथ, Google को जो मिलता है उसे वह रख सकता है, अपने प्रॉडक्ट बेहतर बनाने के लिए इस्तेमाल कर सकता है, और लोगों से उसकी समीक्षा करवा सकता है. जनरेटिव एआई एक्सपेरिमेंटल है, इसलिए इससे गलतियां होंगी.</string>
+    <string name="live_recognition_service_title">कैमरे की इमेज <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> को भेजें?</string>
+    <string name="live_recognition_service_message">दृश्य, इशारा करें और पढ़ें, लोगों की पहचान और दरवाज़ों की पहचान हर कुछ सेकंड में कैमरे की एक इमेज <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g> को भेजते हैं. टेक्स्ट की पहचान इसी फ़ोन पर होती है.\n\nइस सेवा की अपनी शर्तें और निजता नीति लागू होती हैं. जनरेटिव एआई एक्सपेरिमेंटल है, इसलिए इससे गलतियां होंगी.</string>
     <string name="live_recognition_send">इमेज भेजें</string>
     <string name="live_recognition_camera_permission">कैमरे की अनुमति नहीं है</string>
     <string name="live_recognition_camera_error">कैमरा नहीं खोला जा सका</string>

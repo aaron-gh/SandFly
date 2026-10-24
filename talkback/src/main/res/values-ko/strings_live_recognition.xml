@@ -14,6 +14,8 @@
     <string name="live_recognition_connecting">Gemini에 연결 중…</string>
     <string name="live_recognition_cloud_title">카메라 이미지를 Gemini로 전송하시겠습니까?</string>
     <string name="live_recognition_cloud_message">장면, 가리켜서 읽기, 사람 감지, 문 감지는 몇 초마다 카메라 이미지를 Google의 Gemini API로 전송합니다. 텍스트는 이 휴대전화에서 인식됩니다.\n\n무료 API 키를 사용하면 Google이 받은 내용을 보관하고, 제품 개선에 사용하고, 사람이 검토하게 할 수 있습니다. 생성형 AI는 실험 단계이므로 실수를 합니다.</string>
+    <string name="live_recognition_service_title">카메라 이미지를 <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>(으)로 전송하시겠습니까?</string>
+    <string name="live_recognition_service_message">장면, 가리켜서 읽기, 사람 감지, 문 감지는 몇 초마다 카메라 이미지를 <xliff:g id="host" example="api.anthropic.com">%1$s</xliff:g>(으)로 전송합니다. 텍스트는 이 휴대전화에서 인식됩니다.\n\n서비스 자체의 약관과 개인정보처리방침이 적용됩니다. 생성형 AI는 실험 단계이므로 실수를 합니다.</string>
     <string name="live_recognition_send">이미지 전송</string>
     <string name="live_recognition_camera_permission">카메라 권한 없음</string>
     <string name="live_recognition_camera_error">카메라를 열 수 없습니다</string>

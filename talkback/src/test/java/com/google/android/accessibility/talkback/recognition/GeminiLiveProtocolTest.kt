@@ -48,6 +48,21 @@ class GeminiLiveProtocolTest {
     assertFalse(message.has("clientContent"))
   }
 
+  @Test fun imagePromptHasTheInstructionsAndOnlyTheRequestedModes() {
+    val prompt = GeminiLiveProtocol.imagePrompt(setOf(RecognitionMode.PEOPLE), false, "de-DE")
+    assertTrue(prompt.contains("Respond in de-DE"))
+    assertTrue(prompt.contains("this image"))
+    assertTrue(prompt.contains("People:"))
+    assertFalse(prompt.contains("Doors:"))
+  }
+
+  @Test fun plainPromptAsksShortQuestionsForEachMode() {
+    val prompt = GeminiLiveProtocol.plainPrompt(
+      setOf(RecognitionMode.DOORS, RecognitionMode.POINT_AND_SPEAK, RecognitionMode.TEXT), false, "en-GB")
+    assertEquals("What text is below the pointing finger? Is there a door in this image? Where is it, and is it open? " +
+      "Answer in one short sentence, in en-GB.", prompt)
+  }
+
   @Test(expected = IllegalArgumentException::class) fun textAloneNeverCreatesCloudRequest() {
     GeminiLiveProtocol.request(setOf(RecognitionMode.TEXT), true)
   }
