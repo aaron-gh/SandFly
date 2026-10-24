@@ -69,7 +69,7 @@ object ProblemReportSender {
    * The lowest priority of this process's log lines that a report holds: debug. Verbose lines come
    * many a second while SandFly reads, and would leave room for only the last second or two.
    */
-  private const val MAIN_LOG_PRIORITY = "*:D"
+  internal const val MAIN_LOG_PRIORITY = "*:D"
   private const val HTTP_BAD_REQUEST = 400
   private const val HTTP_TOO_LARGE = 413
 
@@ -110,7 +110,10 @@ object ProblemReportSender {
           LogUtils.e(TAG, "Report not sent: %s", e)
           Result.NOT_SENT to null
         }
-      if (withLog && result == Result.SENT) CrashLog.clear(appContext)
+      if (withLog && result == Result.SENT) {
+        CrashLog.clear(appContext)
+        TurnOffLog.clear(appContext)
+      }
       val token = answer?.optString("token")?.takeIf { it.isNotEmpty() }
       mainHandler.post {
         isSending = false
@@ -270,16 +273,21 @@ object ProblemReportSender {
   private const val MAX_ANSWER_BYTES = 4 * 1024 * 1024
 
   /**
-   * The log, after SandFly's last crash if there was one, which the log doesn't reach back to, and
-   * then the ends of the logs of SandFly's other processes, such as the one that runs on-device AI.
+   * The log, after SandFly's last crash and last turn-off if there were any, which the log doesn't
+   * reach back to, and then the ends of the logs of SandFly's other processes, such as the one that
+   * runs on-device AI.
    */
   @WorkerThread
   private fun logWithCrash(context: Context): String? {
     val crash = CrashLog.read(context)
+    val turnOff = TurnOffLog.read(context)
     val others = otherProcessLogs(context)
     val log = readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)
-    if (crash == null && others.isEmpty()) return log
-    val head = if (crash == null) "" else "Last crash:\n$crash\n\nLog:\n"
+    if (crash == null && turnOff == null && others.isEmpty()) return log
+    val head =
+      (if (crash == null) "" else "Last crash:\n$crash\n\n") +
+        (if (turnOff == null) "" else "Last turn-off:\n$turnOff\n\n") +
+        (if (crash == null && turnOff == null) "" else "Log:\n")
     // The crash, as much of the end of the log as fits, and the other processes' logs.
     val room = (ProblemReport.MAX_LOG - head.length - others.length).coerceAtLeast(0)
     return head + log.orEmpty().takeLast(room) + others
@@ -329,7 +337,7 @@ object ProblemReportSender {
    * the lines of [priority] or higher, in logcat's filter format, if it isn't null.
    */
   @WorkerThread
-  private fun readLog(pid: Int, lines: Int, priority: String? = null): String? {
+  internal fun readLog(pid: Int, lines: Int, priority: String? = null): String? {
     val process =
       try {
         ProcessBuilder(
