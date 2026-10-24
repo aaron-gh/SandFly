@@ -51,7 +51,7 @@
     <string name="on_device_ai_import_done">Model nainštalovaný</string>
     <string name="on_device_ai_import_failed">Tento súbor nie je podporovaným súborom modelu Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Časový limit na odpovede</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly prestane čakať po tak dlhom čase. Popis obrazovky trvá dlhšie ako popis obrazu.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Po tomto čase SandFly prestane čakať. „Opísať obrazovku“ trvá dlhšie ako „Opísať obrázok“.</string>
     <string name="on_device_ai_choose_timeout">Časový limit na odpovede</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minúta</item>
@@ -61,7 +61,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Procesor</string>
     <string name="pref_on_device_ai_short_prompts">Kratšie popisy obrazovky</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Obrazovka s popisom vyžaduje menej podrobností, takže odpovedá skôr. Ak chcete získať podrobnejšie popisy, túto možnosť vypnite.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">„Opísať obrazovku“ žiada menej podrobností, takže odpovedá skôr. Pre úplnejšie popisy túto možnosť vypnite.</string>
     <string name="on_device_ai_error_network">Sťahovanie sa zastavilo. Skontrolujte pripojenie a skúste to znova. Bude pokračovať tam, kde sa zastavilo.</string>
     <string name="on_device_ai_error_http">Sťahovací server neprijal požiadavku. Skúste to neskôr alebo namiesto toho importujte súbor.</string>
     <string name="on_device_ai_error_corrupt">Súbor nezodpovedal očakávanému modelu a bol odstránený. Skúste to znova.</string>

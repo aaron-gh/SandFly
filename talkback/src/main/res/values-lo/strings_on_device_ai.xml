@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">ໃຊ້ AI ໃນອຸປະກອນ</string>
     <string name="pref_on_device_ai_enable_summary">ຮູບພາບ ແລະຮູບໜ້າຈໍຖືກອະທິບາຍໄວ້ໃນໂທລະສັບໜ່ວຍນີ້ ແລະຈະບໍ່ຖືກສົ່ງໄປຫາ Google. ມັນຊ້າກວ່າຄລາວ ແລະໃຊ້ແບັດເຕີຣີຫຼາຍກວ່າ.</string>
     <string name="pref_on_device_ai_enable_needs_model">ດາວໂຫຼດ ຫຼື ນຳເຂົ້າໂມເດວກ່ອນ.</string>
-    <string name="pref_on_device_ai_unsupported_cpu">ບໍ່ມີໃຫ້. ໂທລະສັບນີ້ບໍ່ມີໂປເຊດເຊີ ARM 64-bit.</string>
+    <string name="pref_on_device_ai_unsupported_cpu">ບໍ່ສາມາດໃຊ້ໄດ້. ໂທລະສັບນີ້ບໍ່ມີໂປຣເຊສເຊີ ARM 64 ບິດ.</string>
     <string name="pref_on_device_ai_not_enough_ram">ໃຊ້ບໍ່ໄດ້ກັບໂມເດວນີ້. ໂທລະສັບນີ້ມີໜ່ວຍຄວາມຈຳບໍ່ພຽງພໍ.</string>
     <string name="pref_on_device_ai_model">ຕົວແບບ</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">ຕິດຕັ້ງຕົວແບບແລ້ວ</string>
     <string name="on_device_ai_import_failed">ໄຟລ໌ນັ້ນບໍ່ແມ່ນໄຟລ໌ຮູບແບບ Gemma 4 ທີ່ຮອງຮັບ.</string>
     <string name="pref_on_device_ai_timeout">ກໍານົດເວລາສໍາລັບຄໍາຕອບ</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly ຢຸດລໍຖ້າຫຼັງຈາກດົນນີ້. ໜ້າຈໍອະທິບາຍໃຊ້ເວລາດົນກວ່າການອະທິບາຍພາບ.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly ຢຸດລໍຖ້າຫຼັງຈາກເວລານີ້. “ອະທິບາຍໜ້າຈໍ” ໃຊ້ເວລາດົນກວ່າ “ອະທິບາຍຮູບ”.</string>
     <string name="on_device_ai_choose_timeout">ກໍານົດເວລາສໍາລັບຄໍາຕອບ</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d ນາທີ</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">ໂປເຊດເຊີ</string>
     <string name="pref_on_device_ai_short_prompts">ຄຳອະທິບາຍໜ້າຈໍສັ້ນກວ່າ</string>
-    <string name="pref_on_device_ai_short_prompts_summary">ອະ​ທິ​ບາຍ​ຫນ້າ​ຈໍ​ຮຽກ​ຮ້ອງ​ໃຫ້​ມີ​ລາຍ​ລະ​ອຽດ​ຫນ້ອຍ​, ສະ​ນັ້ນ​ມັນ​ຈະ​ຕອບ​ໄວ​ກວ່າ​. ປິດອັນນີ້ສຳລັບຄຳອະທິບາຍທີ່ເຕັມກວ່າ.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“ອະທິບາຍໜ້າຈໍ” ຂໍລາຍລະອຽດໜ້ອຍລົງ, ຈຶ່ງຕອບໄວຂຶ້ນ. ປິດສິ່ງນີ້ເພື່ອຄຳອະທິບາຍທີ່ຄົບຖ້ວນກວ່າ.</string>
     <string name="on_device_ai_error_network">ການດາວໂຫຼດຢຸດ. ກວດເບິ່ງການເຊື່ອມຕໍ່ຂອງທ່ານແລ້ວລອງໃໝ່ອີກຄັ້ງ. ມັນຈະສືບຕໍ່ໄປບ່ອນທີ່ມັນຢຸດ.</string>
     <string name="on_device_ai_error_http">ເຊີບເວີດາວໂຫຼດບໍ່ຍອມຮັບການຮ້ອງຂໍ. ລອງໃໝ່ໃນພາຍຫຼັງ, ຫຼືນຳເຂົ້າໄຟລ໌ແທນ.</string>
     <string name="on_device_ai_error_corrupt">ໄຟລ໌ບໍ່ກົງກັບຮູບແບບທີ່ຄາດໄວ້ ແລະຖືກລຶບຖິ້ມ. ລອງອີກຄັ້ງ.</string>

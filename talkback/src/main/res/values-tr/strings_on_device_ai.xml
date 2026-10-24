@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">Cihazdaki yapay zekayı kullan</string>
     <string name="pref_on_device_ai_enable_summary">Görüntüler ve ekran görüntüleri bu telefonda açıklanır ve hiçbir zaman Google\'a gönderilmez. Buluttan daha yavaştır ve daha fazla pil kullanır.</string>
     <string name="pref_on_device_ai_enable_needs_model">Önce bir modeli indirin veya içe aktarın.</string>
-    <string name="pref_on_device_ai_unsupported_cpu">Müsait değil. Bu telefonda 64 bit ARM işlemci bulunmuyor.</string>
+    <string name="pref_on_device_ai_unsupported_cpu">Kullanılamıyor. Bu telefonda 64 bit ARM işlemci yok.</string>
     <string name="pref_on_device_ai_not_enough_ram">Bu model için mevcut değildir. Bu telefonun yeterli hafızası yok.</string>
     <string name="pref_on_device_ai_model">Model</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Model yüklendi</string>
     <string name="on_device_ai_import_failed">Bu dosya desteklenen bir Gemma 4 model dosyası değil.</string>
     <string name="pref_on_device_ai_timeout">Cevaplar için süre sınırı</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFlyBu kadar uzun süreden sonra beklemeyi bırakır. Açıklama ekranı, açıklama görüntüsünden daha uzun sürer.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly bu süreden sonra beklemeyi bırakır. “Ekranı açıkla”, “Resmi açıkla” işleminden daha uzun sürer.</string>
     <string name="on_device_ai_choose_timeout">Cevaplar için süre sınırı</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d dakika</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">İşlemci</string>
     <string name="pref_on_device_ai_short_prompts">Daha kısa ekran açıklamaları</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Açıklama ekranı daha az ayrıntı sorduğundan daha erken yanıt verir. Daha kapsamlı açıklamalar için bunu kapatın.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“Ekranı açıkla” daha az ayrıntı ister, bu yüzden daha çabuk yanıt verir. Daha kapsamlı açıklamalar için bunu kapatın.</string>
     <string name="on_device_ai_error_network">İndirme durduruldu. Bağlantınızı kontrol edip tekrar deneyin. Durduğu yerden devam edecek.</string>
     <string name="on_device_ai_error_http">İndirme sunucusu isteği kabul etmedi. Daha sonra tekrar deneyin veya bunun yerine bir dosyayı içe aktarın.</string>
     <string name="on_device_ai_error_corrupt">Dosya beklenen modelle eşleşmedi ve silindi. Tekrar deneyin.</string>

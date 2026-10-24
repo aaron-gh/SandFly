@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">උපාංගයේ AI භාවිතා කරන්න</string>
     <string name="pref_on_device_ai_enable_summary">රූප සහ තිර රූ මෙම දුරකථනයේම විස්තර කෙරෙන අතර කිසිවිටෙක Google වෙත නොයවයි. එය වලාකුළු සේවාවට වඩා මන්දගාමී වන අතර වැඩි බැටරියක් භාවිත කරයි.</string>
     <string name="pref_on_device_ai_enable_needs_model">මුලින්ම මොඩලයක් බාගත කරන්න හෝ ආයාත කරන්න.</string>
-    <string name="pref_on_device_ai_unsupported_cpu">ලද නොහැක. මෙම දුරකථනයේ 64-bit ARM ප්‍රොසෙසරයක් නොමැත.</string>
+    <string name="pref_on_device_ai_unsupported_cpu">ලබා ගත නොහැක. මෙම දුරකථනයේ 64-bit ARM ප්‍රොසෙසරයක් නැත.</string>
     <string name="pref_on_device_ai_not_enough_ram">මෙම ආකෘතිය සඳහා ලබා ගත නොහැක. මෙම දුරකථනයට ප්‍රමාණවත් මතකයක් නොමැත.</string>
     <string name="pref_on_device_ai_model">ආකෘතිය</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">ආකෘතිය ස්ථාපනය කර ඇත</string>
     <string name="on_device_ai_import_failed">එම ගොනුව සහය දක්වන Gemma 4 මාදිලි ගොනුවක් නොවේ.</string>
     <string name="pref_on_device_ai_timeout">පිළිතුරු සඳහා කාල සීමාව</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly මෙතරම් කාලයක් බලා සිටීම නතර කරයි. විස්තර තිරය රූපය විස්තර කිරීමට වඩා වැඩි කාලයක් ගතවේ.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. මෙපමණ කාලයකට පසු SandFly බලා සිටීම නවත්වයි. “තිරය ​​විස්තර කරන්න” සඳහා “රූපය විස්තර කරන්න” ට වඩා වැඩි කාලයක් ගතවේ.</string>
     <string name="on_device_ai_choose_timeout">පිළිතුරු සඳහා කාල සීමාව</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d විනාඩි</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">ප්‍රොසෙසරය</string>
     <string name="pref_on_device_ai_short_prompts">කෙටි තිර විස්තර</string>
-    <string name="pref_on_device_ai_short_prompts_summary">විස්තර අඩු විස්තර සඳහා තිරය අසයි, එබැවින් එය ඉක්මනින් පිළිතුරු දෙයි. සම්පූර්ණ විස්තර සඳහා මෙය අක්‍රිය කරන්න.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“තිරය ​​විස්තර කරන්න” අඩු විස්තර ඉල්ලන බැවින් ඉක්මනින් පිළිතුරු දෙයි. වඩාත් සම්පූර්ණ විස්තර සඳහා මෙය අක්‍රිය කරන්න.</string>
     <string name="on_device_ai_error_network">බාගත කිරීම නතර විය. ඔබගේ සම්බන්ධතාවය පරීක්ෂා කර නැවත උත්සාහ කරන්න. එය නතර වූ තැන ඉදිරියට ගෙන යනු ඇත.</string>
     <string name="on_device_ai_error_http">බාගත සේවාදායකය ඉල්ලීම පිළිගත්තේ නැත. පසුව නැවත උත්සාහ කරන්න, නැතහොත් ඒ වෙනුවට ගොනුවක් ආයාත කරන්න.</string>
     <string name="on_device_ai_error_corrupt">ගොනුව අපේක්ෂිත ආකෘතියට නොගැලපෙන අතර මකා දමන ලදී. නැවත උත්සාහ කරන්න.</string>

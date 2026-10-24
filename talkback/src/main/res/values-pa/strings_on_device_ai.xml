@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">ਆਨ-ਡਿਵਾਈਸ AI ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
     <string name="pref_on_device_ai_enable_summary">ਚਿੱਤਰਾਂ ਅਤੇ ਸਕ੍ਰੀਨਸ਼ਾਟਾਂ ਦਾ ਵਰਣਨ ਇਸੇ ਫ਼ੋਨ ’ਤੇ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਅਤੇ ਕਦੇ ਵੀ Google ਨੂੰ ਨਹੀਂ ਭੇਜਿਆ ਜਾਂਦਾ। ਇਹ ਕਲਾਊਡ ਨਾਲੋਂ ਹੌਲੀ ਹੈ ਅਤੇ ਵੱਧ ਬੈਟਰੀ ਵਰਤਦਾ ਹੈ।</string>
     <string name="pref_on_device_ai_enable_needs_model">ਪਹਿਲਾਂ ਇੱਕ ਮਾਡਲ ਡਾਊਨਲੋਡ ਜਾਂ ਆਯਾਤ ਕਰੋ।</string>
-    <string name="pref_on_device_ai_unsupported_cpu">ਉਪਲਭਦ ਨਹੀ. ਇਸ ਫੋਨ \'ਚ 64-ਬਿਟ ARM ਪ੍ਰੋਸੈਸਰ ਨਹੀਂ ਹੈ।</string>
+    <string name="pref_on_device_ai_unsupported_cpu">ਉਪਲਬਧ ਨਹੀਂ। ਇਸ ਫ਼ੋਨ ਵਿੱਚ 64-ਬਿੱਟ ARM ਪ੍ਰੋਸੈਸਰ ਨਹੀਂ ਹੈ।</string>
     <string name="pref_on_device_ai_not_enough_ram">ਇਸ ਮਾਡਲ ਲਈ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਇਸ ਫ਼ੋਨ ਵਿੱਚ ਲੋੜੀਂਦੀ ਮੈਮੋਰੀ ਨਹੀਂ ਹੈ।</string>
     <string name="pref_on_device_ai_model">ਮਾਡਲ</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">ਮਾਡਲ ਸਥਾਪਿਤ ਕੀਤਾ ਗਿਆ</string>
     <string name="on_device_ai_import_failed">ਉਹ ਫ਼ਾਈਲ ਇੱਕ ਸਮਰਥਿਤ Gemma 4 ਮਾਡਲ ਫ਼ਾਈਲ ਨਹੀਂ ਹੈ।</string>
     <string name="pref_on_device_ai_timeout">ਜਵਾਬਾਂ ਲਈ ਸਮਾਂ ਸੀਮਾ</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s। SandFly ਇੰਨੀ ਦੇਰ ਬਾਅਦ ਇੰਤਜ਼ਾਰ ਕਰਨਾ ਬੰਦ ਕਰ ਦਿੰਦਾ ਹੈ। ਵਰਣਨ ਸਕ੍ਰੀਨ ਚਿੱਤਰ ਦਾ ਵਰਣਨ ਕਰਨ ਨਾਲੋਂ ਜ਼ਿਆਦਾ ਸਮਾਂ ਲੈਂਦੀ ਹੈ।</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s। ਇੰਨੇ ਸਮੇਂ ਬਾਅਦ SandFly ਉਡੀਕ ਕਰਨਾ ਬੰਦ ਕਰ ਦਿੰਦਾ ਹੈ। “ਸਕ੍ਰੀਨ ਦਾ ਵਰਣਨ ਕਰੋ” ਨੂੰ “ਚਿੱਤਰ ਦਾ ਵਰਣਨ ਕਰੋ” ਨਾਲੋਂ ਵੱਧ ਸਮਾਂ ਲੱਗਦਾ ਹੈ।</string>
     <string name="on_device_ai_choose_timeout">ਜਵਾਬਾਂ ਲਈ ਸਮਾਂ ਸੀਮਾ</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d ਮਿੰਟ</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">ਪ੍ਰੋਸੈਸਰ</string>
     <string name="pref_on_device_ai_short_prompts">ਸਕ੍ਰੀਨ ਦੇ ਛੋਟੇ ਵਰਣਨ</string>
-    <string name="pref_on_device_ai_short_prompts_summary">ਵਰਣਨ ਸਕ੍ਰੀਨ ਘੱਟ ਵੇਰਵਿਆਂ ਲਈ ਪੁੱਛਦੀ ਹੈ, ਇਸਲਈ ਇਹ ਜਲਦੀ ਜਵਾਬ ਦਿੰਦੀ ਹੈ। ਪੂਰੇ ਵੇਰਵੇ ਲਈ ਇਸਨੂੰ ਬੰਦ ਕਰੋ।</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“ਸਕ੍ਰੀਨ ਦਾ ਵਰਣਨ ਕਰੋ” ਘੱਟ ਵੇਰਵੇ ਮੰਗਦਾ ਹੈ, ਇਸ ਲਈ ਜਲਦੀ ਜਵਾਬ ਦਿੰਦਾ ਹੈ। ਵੱਧ ਪੂਰੇ ਵਰਣਨਾਂ ਲਈ ਇਸਨੂੰ ਬੰਦ ਕਰੋ।</string>
     <string name="on_device_ai_error_network">ਡਾਊਨਲੋਡ ਰੁਕ ਗਿਆ। ਆਪਣਾ ਕਨੈਕਸ਼ਨ ਜਾਂਚੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ। ਇਹ ਉੱਥੋਂ ਹੀ ਜਾਰੀ ਹੋਵੇਗਾ ਜਿੱਥੇ ਰੁਕਿਆ ਸੀ।</string>
     <string name="on_device_ai_error_http">ਡਾਊਨਲੋਡ ਸਰਵਰ ਨੇ ਬੇਨਤੀ ਸਵੀਕਾਰ ਨਹੀਂ ਕੀਤੀ। ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ, ਜਾਂ ਇਸਦੀ ਬਜਾਏ ਇੱਕ ਫਾਈਲ ਆਯਾਤ ਕਰੋ।</string>
     <string name="on_device_ai_error_corrupt">ਫ਼ਾਈਲ ਉਮੀਦ ਕੀਤੇ ਮਾਡਲ ਨਾਲ ਮੇਲ ਨਹੀਂ ਖਾਂਦੀ ਸੀ ਅਤੇ ਮਿਟਾ ਦਿੱਤੀ ਗਈ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>

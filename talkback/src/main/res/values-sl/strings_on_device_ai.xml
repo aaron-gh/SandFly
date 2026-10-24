@@ -51,7 +51,7 @@
     <string name="on_device_ai_import_done">Model nameščen</string>
     <string name="on_device_ai_import_failed">Ta datoteka ni podprta datoteka modela Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Časovna omejitev za odgovore</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly po tem času neha čakati. Opis zaslona traja dlje kot opis slike.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Po tem času SandFly neha čakati. »Opis vsebine zaslona« traja dlje kot »Opis slike«.</string>
     <string name="on_device_ai_choose_timeout">Časovna omejitev za odgovore</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minuta</item>
@@ -61,7 +61,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Procesor</string>
     <string name="pref_on_device_ai_short_prompts">Krajši opisi zaslona</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Zaslon za opis zahteva manj podrobnosti, zato odgovori prej. Turn this off for fuller descriptions.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">»Opis vsebine zaslona« zahteva manj podrobnosti, zato odgovori prej. Za popolnejše opise to izklopite.</string>
     <string name="on_device_ai_error_network">Prenos se je ustavil. Preverite povezavo in poskusite znova. Nadaljeval bo tam, kjer se je ustavil.</string>
     <string name="on_device_ai_error_http">Strežnik za prenos je zavrnil zahtevo. Poskusite znova pozneje ali namesto tega uvozite datoteko.</string>
     <string name="on_device_ai_error_corrupt">Datoteka se ni ujemala s pričakovanim modelom in je bila izbrisana. Poskusite znova.</string>

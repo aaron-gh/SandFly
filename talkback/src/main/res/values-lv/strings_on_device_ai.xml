@@ -50,7 +50,7 @@
     <string name="on_device_ai_import_done">Modelis uzstādīts</string>
     <string name="on_device_ai_import_failed">Šis fails nav atbalstīts Gemma 4 modeļa fails.</string>
     <string name="pref_on_device_ai_timeout">Atbilžu laika ierobežojums</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly pārstāj gaidīt pēc tik ilga laika. Ekrāna aprakstīšana aizņem vairāk laika nekā attēla aprakstīšana.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Pēc šī laika SandFly pārstāj gaidīt. “Aprakstīt ekrānā redzamo saturu” aizņem vairāk laika nekā “Aprakstīt attēlu”.</string>
     <string name="on_device_ai_choose_timeout">Atbilžu laika ierobežojums</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="zero">%1$d minūtes</item>
@@ -59,7 +59,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Procesors</string>
     <string name="pref_on_device_ai_short_prompts">Īsāki ekrāna apraksti</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Apraksta ekrānā tiek prasīts mazāk informācijas, lai tas atbildētu ātrāk. Izslēdziet šo opciju, lai iegūtu pilnīgākus aprakstus.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“Aprakstīt ekrānā redzamo saturu” pieprasa mazāk detaļu, tāpēc atbild ātrāk. Izslēdziet, lai saņemtu pilnīgākus aprakstus.</string>
     <string name="on_device_ai_error_network">Lejupielāde tika pārtraukta. Pārbaudiet savienojumu un mēģiniet vēlreiz. Tas turpinās tur, kur apstājās.</string>
     <string name="on_device_ai_error_http">Lejupielādes serveris nepieņēma pieprasījumu. Vēlāk mēģiniet vēlreiz vai importējiet failu.</string>
     <string name="on_device_ai_error_corrupt">Fails neatbilda paredzētajam modelim un tika izdzēsts. Mēģiniet vēlreiz.</string>

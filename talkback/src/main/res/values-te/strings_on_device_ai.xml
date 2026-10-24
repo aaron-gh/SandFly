@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">మోడల్ ఇన్‌స్టాల్ చేయబడింది</string>
     <string name="on_device_ai_import_failed">ఆ ఫైల్ మద్దతు ఉన్న Gemma 4 మోడల్ ఫైల్ కాదు.</string>
     <string name="pref_on_device_ai_timeout">సమాధానాలకు కాల పరిమితి</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly చాలా కాలం తర్వాత వేచి ఉండటం ఆపివేయబడింది. డిస్క్రైబ్ స్క్రీన్ ఇమేజ్‌ని వివరించడం కంటే ఎక్కువ సమయం పడుతుంది.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. ఇంత సమయం తర్వాత SandFly వేచి ఉండటం ఆపుతుంది. “ఇమేజ్‌ను వివరించండి” కంటే “స్క్రీన్‌లో ఉన్న సమాచారం గురించి వివరించండి” ఎక్కువ సమయం తీసుకుంటుంది.</string>
     <string name="on_device_ai_choose_timeout">సమాధానాలకు కాల పరిమితి</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d నిమిషం</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">ప్రాసెసర్</string>
     <string name="pref_on_device_ai_short_prompts">స్క్రీన్ యొక్క చిన్న వివరణలు</string>
-    <string name="pref_on_device_ai_short_prompts_summary">డిస్క్రైబ్ స్క్రీన్ తక్కువ వివరాలను అడుగుతుంది, కనుక ఇది త్వరగా సమాధానం ఇస్తుంది. పూర్తి వివరణల కోసం దీన్ని ఆఫ్ చేయండి.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“స్క్రీన్‌లో ఉన్న సమాచారం గురించి వివరించండి” తక్కువ వివరాలు అడుగుతుంది, కాబట్టి త్వరగా సమాధానం ఇస్తుంది. పూర్తి వివరణల కోసం దీన్ని ఆఫ్ చేయండి.</string>
     <string name="on_device_ai_error_network">డౌన్‌లోడ్ ఆగిపోయింది. మీ కనెక్షన్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి. ఆగిపోయిన చోటే కొనసాగుతుంది.</string>
     <string name="on_device_ai_error_http">డౌన్‌లోడ్ సర్వర్ అభ్యర్థనను అంగీకరించలేదు. తర్వాత మళ్లీ ప్రయత్నించండి లేదా బదులుగా ఫైల్‌ను దిగుమతి చేయండి.</string>
     <string name="on_device_ai_error_corrupt">ఫైల్ ఆశించిన మోడల్‌తో సరిపోలలేదు మరియు తొలగించబడింది. మళ్లీ ప్రయత్నించండి.</string>

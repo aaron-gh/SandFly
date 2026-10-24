@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Modello installato</string>
     <string name="on_device_ai_import_failed">Il file non è un file del modello Gemma 4 supportato.</string>
     <string name="pref_on_device_ai_timeout">Tempo limite per le risposte</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. Trascorso questo tempo, SandFly smette di attendere. Descrivi la schermata richiede più tempo di Descrivi l\'immagine.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Dopo questo tempo SandFly smette di attendere. «Descrivi la schermata» richiede più tempo di «Descrivi l\'immagine».</string>
     <string name="on_device_ai_choose_timeout">Tempo limite per le risposte</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minuto</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Processore</string>
     <string name="pref_on_device_ai_short_prompts">Descrizioni della schermata più brevi</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Descrivi la schermata richiede meno dettagli e risponde prima. Disattiva per descrizioni più complete.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">«Descrivi la schermata» chiede meno dettagli, quindi risponde prima. Disattiva per descrizioni più complete.</string>
     <string name="on_device_ai_error_network">Il download si è interrotto. Controlla la connessione e riprova. Riprenderà dal punto in cui si è interrotto.</string>
     <string name="on_device_ai_error_http">Il server di download non ha accettato la richiesta. Riprova più tardi oppure importa un file.</string>
     <string name="on_device_ai_error_corrupt">Il file non corrispondeva al modello previsto ed è stato eliminato. Riprova.</string>

@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">オンデバイス AI を使用</string>
     <string name="pref_on_device_ai_enable_summary">画像とスクリーンショットはこのスマートフォン上で説明され、Google に送信されることはありません。クラウドより遅く、バッテリーの消費量も多くなります。</string>
     <string name="pref_on_device_ai_enable_needs_model">まずモデルをダウンロードまたはインポートしてください。</string>
-    <string name="pref_on_device_ai_unsupported_cpu">利用不可。この携帯電話には 64 ビット ARM プロセッサが搭載されていません。</string>
+    <string name="pref_on_device_ai_unsupported_cpu">使用できません。このスマートフォンには 64 ビット ARM プロセッサが搭載されていません。</string>
     <string name="pref_on_device_ai_not_enough_ram">このモデルでは使用できません。このスマートフォンのメモリが不足しています。</string>
     <string name="pref_on_device_ai_model">モデル</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">モデルをインストールしました</string>
     <string name="on_device_ai_import_failed">そのファイルはサポートされている Gemma 4 モデル ファイルではありません。</string>
     <string name="pref_on_device_ai_timeout">回答の制限時間</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s。 SandFly は、これほど長い時間が経過すると待機を停止します。画面の説明は画像の説明よりも時間がかかります。</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s。この時間が経過すると SandFly は待機をやめます。[画面の説明] は [画像の説明] より時間がかかります。</string>
     <string name="on_device_ai_choose_timeout">回答の制限時間</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d分</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">プロセッサ</string>
     <string name="pref_on_device_ai_short_prompts">画面の説明を短くする</string>
-    <string name="pref_on_device_ai_short_prompts_summary">「説明」画面で要求される詳細が少なくなるため、すぐに回答が得られます。詳しい説明を表示するには、これをオフにします。</string>
+    <string name="pref_on_device_ai_short_prompts_summary">[画面の説明] で求める詳細を減らすため、回答が早くなります。詳しい説明が必要な場合はオフにします。</string>
     <string name="on_device_ai_error_network">ダウンロードが停止しました。接続を確認して、もう一度お試しください。停止した位置から再開されます。</string>
     <string name="on_device_ai_error_http">ダウンロード サーバーはリクエストを受け入れませんでした。後でもう一度試すか、代わりにファイルをインポートしてください。</string>
     <string name="on_device_ai_error_corrupt">ファイルは予期されたモデルと一致しなかったため、削除されました。もう一度やり直してください。</string>

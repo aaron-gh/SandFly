@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">მოდელი დაინსტალირებულია</string>
     <string name="on_device_ai_import_failed">ეს ფაილი არ არის Gemma 4 მოდელის მხარდაჭერილი ფაილი.</string>
     <string name="pref_on_device_ai_timeout">პასუხების დროის ლიმიტი</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly წყვეტს ლოდინს ამ ხნის შემდეგ. აღწერის ეკრანს უფრო მეტი დრო სჭირდება, ვიდრე სურათის აღწერას.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. ამ დროის შემდეგ SandFly ლოდინს წყვეტს. „ეკრანის აღწერა“ უფრო დიდხანს გრძელდება, ვიდრე „აღწერე სურათი“.</string>
     <string name="on_device_ai_choose_timeout">პასუხების დროის ლიმიტი</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d წუთი</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">პროცესორი</string>
     <string name="pref_on_device_ai_short_prompts">ეკრანის მოკლე აღწერა</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Describe ეკრანი ითხოვს ნაკლებ დეტალებს, ასე რომ, ის უფრო ადრე პასუხობს. გამორთეთ ეს უფრო სრულყოფილი აღწერისთვის.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">„ეკრანის აღწერა“ ნაკლებ დეტალს ითხოვს, ამიტომ უფრო სწრაფად პასუხობს. უფრო სრული აღწერებისთვის გამორთეთ.</string>
     <string name="on_device_ai_error_network">ჩამოტვირთვა შეწყდა. შეამოწმეთ თქვენი კავშირი და სცადეთ ხელახლა. ის გააგრძელებს იქ, სადაც გაჩერდა.</string>
     <string name="on_device_ai_error_http">ჩამოტვირთვის სერვერმა მოთხოვნა არ მიიღო. სცადეთ მოგვიანებით ან სანაცვლოდ შემოიტანეთ ფაილი.</string>
     <string name="on_device_ai_error_corrupt">ფაილი არ ემთხვეოდა მოსალოდნელ მოდელს და წაიშალა. სცადეთ ხელახლა.</string>

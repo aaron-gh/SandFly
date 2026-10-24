@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">ಮಾಡೆಲ್ ಇನ್‌ಸ್ಟಾಲ್ ಆಗಿದೆ</string>
     <string name="on_device_ai_import_failed">ಆ ಫೈಲ್ ಬೆಂಬಲಿತ Gemma 4 ಮಾದರಿ ಫೈಲ್ ಅಲ್ಲ.</string>
     <string name="pref_on_device_ai_timeout">ಉತ್ತರಗಳಿಗೆ ಸಮಯದ ಮಿತಿ</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly ಬಹಳ ಸಮಯದ ನಂತರ ಕಾಯುವುದನ್ನು ನಿಲ್ಲಿಸುತ್ತದೆ. ಚಿತ್ರವನ್ನು ವಿವರಿಸುವುದಕ್ಕಿಂತ ಪರದೆಯನ್ನು ವಿವರಿಸಲು ಹೆಚ್ಚು ಸಮಯ ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. ಇಷ್ಟು ಸಮಯದ ನಂತರ SandFly ಕಾಯುವುದನ್ನು ನಿಲ್ಲಿಸುತ್ತದೆ. “ಸ್ಕ್ರೀನ್ ಅನ್ನು ವಿವರಿಸಿ” “ಚಿತ್ರದ ವಿವರಣೆ ಪಡೆಯಿರಿ” ಗಿಂತ ಹೆಚ್ಚು ಸಮಯ ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ.</string>
     <string name="on_device_ai_choose_timeout">ಉತ್ತರಗಳಿಗೆ ಸಮಯದ ಮಿತಿ</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d ನಿಮಿಷ</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">ಪ್ರೊಸೆಸರ್</string>
     <string name="pref_on_device_ai_short_prompts">ಪರದೆಯ ಚಿಕ್ಕ ವಿವರಣೆಗಳು</string>
-    <string name="pref_on_device_ai_short_prompts_summary">ಪರದೆಯು ಕಡಿಮೆ ವಿವರಗಳನ್ನು ಕೇಳುತ್ತದೆ ಎಂದು ವಿವರಿಸಿ, ಆದ್ದರಿಂದ ಅದು ಬೇಗ ಉತ್ತರಿಸುತ್ತದೆ. ಸಂಪೂರ್ಣ ವಿವರಣೆಗಾಗಿ ಇದನ್ನು ಆಫ್ ಮಾಡಿ.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“ಸ್ಕ್ರೀನ್ ಅನ್ನು ವಿವರಿಸಿ” ಕಡಿಮೆ ವಿವರಗಳನ್ನು ಕೇಳುತ್ತದೆ, ಆದ್ದರಿಂದ ಬೇಗ ಉತ್ತರಿಸುತ್ತದೆ. ಹೆಚ್ಚು ಸಂಪೂರ್ಣ ವಿವರಣೆಗಳಿಗಾಗಿ ಇದನ್ನು ಆಫ್ ಮಾಡಿ.</string>
     <string name="on_device_ai_error_network">ಡೌನ್‌ಲೋಡ್ ನಿಲ್ಲಿಸಲಾಗಿದೆ. ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ. ಅದು ಎಲ್ಲಿ ನಿಲ್ಲಿಸಿದೆಯೋ ಅಲ್ಲಿಗೆ ಮುಂದುವರಿಯುತ್ತದೆ.</string>
     <string name="on_device_ai_error_http">ಡೌನ್‌ಲೋಡ್ ಸರ್ವರ್ ವಿನಂತಿಯನ್ನು ಸ್ವೀಕರಿಸಲಿಲ್ಲ. ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಬದಲಿಗೆ ಫೈಲ್ ಅನ್ನು ಆಮದು ಮಾಡಿ.</string>
     <string name="on_device_ai_error_corrupt">ಫೈಲ್ ನಿರೀಕ್ಷಿತ ಮಾದರಿಗೆ ಹೊಂದಿಕೆಯಾಗಲಿಲ್ಲ ಮತ್ತು ಅಳಿಸಲಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>

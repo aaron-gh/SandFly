@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">Використовувати AI на пристрої</string>
     <string name="pref_on_device_ai_enable_summary">Зображення та знімки екрана описуються на цьому телефоні й ніколи не надсилаються в Google. Це повільніше, ніж у хмарі, і витрачає більше заряду акумулятора.</string>
     <string name="pref_on_device_ai_enable_needs_model">Спочатку завантажте або імпортуйте модель.</string>
-    <string name="pref_on_device_ai_unsupported_cpu">Не доступний. Цей телефон не має 64-розрядного процесора ARM.</string>
+    <string name="pref_on_device_ai_unsupported_cpu">Недоступно. У цьому телефоні немає 64-розрядного процесора ARM.</string>
     <string name="pref_on_device_ai_not_enough_ram">Недоступно для цієї моделі. У цьому телефоні недостатньо пам\'яті.</string>
     <string name="pref_on_device_ai_model">Модель</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -51,7 +51,7 @@
     <string name="on_device_ai_import_done">Модель встановлено</string>
     <string name="on_device_ai_import_failed">Цей файл не є підтримуваним файлом моделі Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Ліміт часу для відповідей</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly перестає чекати після цього часу. Опис екрана займає більше часу, ніж опис зображення.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Після цього часу SandFly перестає чекати. «Описати, що на екрані» триває довше, ніж «Опис зображення».</string>
     <string name="on_device_ai_choose_timeout">Ліміт часу для відповідей</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d хвилина</item>
@@ -61,7 +61,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Процесор</string>
     <string name="pref_on_device_ai_short_prompts">Коротші описи екрана</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Екран опису запитує менше деталей, тому відповідає швидше. Вимкніть це, щоб отримати повніший опис.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">«Описати, що на екрані» запитує менше деталей, тож відповідає швидше. Вимкніть, щоб отримувати повніші описи.</string>
     <string name="on_device_ai_error_network">Завантаження зупинилося. Перевірте підключення та повторіть спробу. Воно продовжиться з того місця, де зупинилося.</string>
     <string name="on_device_ai_error_http">Сервер завантаження не прийняв запит. Спробуйте пізніше або імпортуйте файл.</string>
     <string name="on_device_ai_error_corrupt">Файл не відповідав очікуваній моделі та був видалений. Спробуйте знову.</string>

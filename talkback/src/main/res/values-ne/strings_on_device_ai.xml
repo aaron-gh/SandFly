@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">डिभाइसमै चल्ने AI प्रयोग गर्नुहोस्</string>
     <string name="pref_on_device_ai_enable_summary">छविहरू र स्क्रिनसटहरू यस फोनमा वर्णन गरिएका छन् र Google मा कहिल्यै पठाइँदैन। यो क्लाउड भन्दा ढिलो छ र अधिक ब्याट्री प्रयोग गर्दछ।</string>
     <string name="pref_on_device_ai_enable_needs_model">पहिले मोडेल डाउनलोड वा आयात गर्नुहोस्।</string>
-    <string name="pref_on_device_ai_unsupported_cpu">उपलब्ध छैन। यो फोनमा ६४ बिट एआरएम प्रोसेसर छैन।</string>
+    <string name="pref_on_device_ai_unsupported_cpu">उपलब्ध छैन। यो फोनमा 64-बिट ARM प्रोसेसर छैन।</string>
     <string name="pref_on_device_ai_not_enough_ram">यो मोडेलको लागि उपलब्ध छैन। यो फोनमा पर्याप्त मेमोरी छैन।</string>
     <string name="pref_on_device_ai_model">मोडेल</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">मोडेल स्थापना गरियो</string>
     <string name="on_device_ai_import_failed">त्यो फाइल समर्थित Gemma 4 मोडेल फाइल होइन।</string>
     <string name="pref_on_device_ai_timeout">उत्तरहरूको लागि समय सीमा</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s। SandFly यति लामो समय पछि पर्खन रोक्छ। वर्णन स्क्रिनले छवि वर्णन गर्नु भन्दा बढी समय लिन्छ।</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s। यति समयपछि SandFly ले पर्खन छोड्छ। “स्क्रिनमा देखिएको कुरा वर्णन गर्नुहोस्” लाई “यो फोटोका बारेमा वर्णन गर्नुहोस्” भन्दा बढी समय लाग्छ।</string>
     <string name="on_device_ai_choose_timeout">उत्तरहरूको लागि समय सीमा</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d मिनेट</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">प्रोसेसर</string>
     <string name="pref_on_device_ai_short_prompts">स्क्रिनका छोटा विवरणहरू</string>
-    <string name="pref_on_device_ai_short_prompts_summary">वर्णन स्क्रिनले कम विवरणहरूको लागि सोध्छ, त्यसैले यसले चाँडै जवाफ दिन्छ। पूर्ण विवरणहरूको लागि यसलाई बन्द गर्नुहोस्।</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“स्क्रिनमा देखिएको कुरा वर्णन गर्नुहोस्” ले कम विवरण माग्छ, त्यसैले छिटो जवाफ दिन्छ। थप पूर्ण विवरणका लागि यसलाई बन्द गर्नुहोस्।</string>
     <string name="on_device_ai_error_network">डाउनलोड रोकियो। आफ्नो जडान जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्। जहाँ रोकिएको थियो त्यहीँ जारी रहनेछ।</string>
     <string name="on_device_ai_error_http">डाउनलोड सर्भरले अनुरोध स्वीकार गरेन। पछि पुन: प्रयास गर्नुहोस्, वा यसको सट्टा फाइल आयात गर्नुहोस्।</string>
     <string name="on_device_ai_error_corrupt">फाइल अपेक्षित मोडेलसँग मेल खाएन र मेटियो। पुन: प्रयास गर्नुहोस्।</string>

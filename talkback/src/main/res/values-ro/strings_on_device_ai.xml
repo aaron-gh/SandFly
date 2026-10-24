@@ -50,7 +50,7 @@
     <string name="on_device_ai_import_done">Model instalat</string>
     <string name="on_device_ai_import_failed">Fișierul respectiv nu este un fișier model Gemma 4 acceptat.</string>
     <string name="pref_on_device_ai_timeout">Limită de timp pentru răspunsuri</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly nu mai așteaptă după atât de mult. Ecranul de descriere durează mai mult decât imaginea descrisă.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. După acest interval, SandFly nu mai așteaptă. „Descrie ecranul” durează mai mult decât „Descrie imaginea”.</string>
     <string name="on_device_ai_choose_timeout">Limită de timp pentru răspunsuri</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minut</item>
@@ -59,7 +59,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Procesor</string>
     <string name="pref_on_device_ai_short_prompts">Descrieri mai scurte ale ecranului</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Ecranul de descriere solicită mai puține detalii, astfel încât să răspundă mai devreme. Dezactivați această opțiune pentru descrieri mai complete.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">„Descrie ecranul” cere mai puține detalii, așa că răspunde mai repede. Dezactivați pentru descrieri mai complete.</string>
     <string name="on_device_ai_error_network">Descărcarea s-a oprit. Verificați conexiunea și încercați din nou. Va continua de unde s-a oprit.</string>
     <string name="on_device_ai_error_http">Serverul de descărcare nu a acceptat cererea. Încercați din nou mai târziu sau importați un fișier.</string>
     <string name="on_device_ai_error_corrupt">Fișierul nu se potrivește cu modelul așteptat și a fost șters. Încearcă din nou.</string>

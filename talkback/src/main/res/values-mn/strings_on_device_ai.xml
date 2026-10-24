@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Загвар суулгасан</string>
     <string name="on_device_ai_import_failed">Энэ файл нь дэмжигдсэн Gemma 4 загварын файл биш юм.</string>
     <string name="pref_on_device_ai_timeout">Хариулт өгөх хугацаа</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly энэ удаан хугацааны дараа хүлээхээ болино. Дүрслэх дэлгэц нь зургийг дүрслэхээс илүү урт хугацаа шаарддаг.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Энэ хугацааны дараа SandFly хүлээхээ болино. «Дэлгэцийг тайлбарлах» нь «Зургийг тодорхойлох»-ээс удаан үргэлжилдэг.</string>
     <string name="on_device_ai_choose_timeout">Хариулт өгөх хугацаа</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d минут</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Процессор</string>
     <string name="pref_on_device_ai_short_prompts">Дэлгэцийн товч тайлбар</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Дэлгэцийг тайлбарлах нь илүү бага мэдээлэл шаарддаг тул илүү хурдан хариулдаг. Илүү дэлгэрэнгүй тайлбар авахын тулд үүнийг унтраа.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">«Дэлгэцийг тайлбарлах» цөөн дэлгэрэнгүй асуудаг тул илүү хурдан хариулна. Илүү бүрэн тайлбар авахын тулд үүнийг унтраана уу.</string>
     <string name="on_device_ai_error_network">Татаж авалт зогссон. Холболтоо шалгаад дахин оролдоно уу. Зогссон газраасаа үргэлжилнэ.</string>
     <string name="on_device_ai_error_http">Татаж авах сервер хүсэлтийг хүлээж аваагүй. Дараа дахин оролдох эсвэл оронд нь файл импортлоно уу.</string>
     <string name="on_device_ai_error_corrupt">Файл нь хүлээгдэж буй загвартай таарахгүй байсан тул устгасан. Дахин оролдоно уу.</string>

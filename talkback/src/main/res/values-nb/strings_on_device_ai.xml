@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Modell installert</string>
     <string name="on_device_ai_import_failed">Den filen er ikke en støttet Gemma 4-modellfil.</string>
     <string name="pref_on_device_ai_timeout">Frist for svar</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly slutter å vente etter så lenge. Beskriv-skjermen tar lengre tid enn beskriv-bildet.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly slutter å vente etter så lang tid. «Beskriv skjermen» tar lengre tid enn «Beskriv bildet».</string>
     <string name="on_device_ai_choose_timeout">Frist for svar</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minutt</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Prosessor</string>
     <string name="pref_on_device_ai_short_prompts">Kortere skjermbeskrivelser</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Beskriv skjermen ber om færre detaljer, så den svarer raskere. Slå av dette for mer fullstendige beskrivelser.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">«Beskriv skjermen» ber om færre detaljer, så den svarer raskere. Slå av dette for mer fullstendige beskrivelser.</string>
     <string name="on_device_ai_error_network">Nedlastingen stoppet. Sjekk tilkoblingen og prøv igjen. Den vil fortsette der den stoppet.</string>
     <string name="on_device_ai_error_http">Nedlastingsserveren godtok ikke forespørselen. Prøv igjen senere, eller importer en fil i stedet.</string>
     <string name="on_device_ai_error_corrupt">Filen samsvarte ikke med den forventede modellen og ble slettet. Prøv igjen.</string>

@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Modeli u instalua</string>
     <string name="on_device_ai_import_failed">Ai skedar nuk është një skedar modeli Gemma 4 i mbështetur.</string>
     <string name="pref_on_device_ai_timeout">Afati kohor për përgjigjet</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly ndalon së prituri pas kaq shumë kohësh. Ekrani i përshkrimit zgjat më shumë se përshkrimi i imazhit.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Pas kësaj kohe SandFly ndalon së prituri. “Përshkruaj ekranin” zgjat më shumë se “Përshkruaj imazhin”.</string>
     <string name="on_device_ai_choose_timeout">Afati kohor për përgjigjet</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minutë</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Procesori</string>
     <string name="pref_on_device_ai_short_prompts">Përshkrime më të shkurtra të ekranit</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Ekrani i përshkrimit kërkon më pak detaje, kështu që ai përgjigjet më shpejt. Çaktivizo këtë për përshkrime më të plota.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“Përshkruaj ekranin” kërkon më pak detaje, ndaj përgjigjet më shpejt. Çaktivizojeni për përshkrime më të plota.</string>
     <string name="on_device_ai_error_network">Shkarkimi u ndal. Kontrollo lidhjen tënde dhe provo sërish. Do të vazhdojë aty ku është ndalur.</string>
     <string name="on_device_ai_error_http">Serveri i shkarkimit nuk e pranoi kërkesën. Provo sërish më vonë ose importo një skedar në vend të kësaj.</string>
     <string name="on_device_ai_error_corrupt">Skedari nuk përputhej me modelin e pritur dhe u fshi. Provo sërish.</string>

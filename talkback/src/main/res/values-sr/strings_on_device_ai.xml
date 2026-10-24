@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">Користи AI на уређају</string>
     <string name="pref_on_device_ai_enable_summary">Слике и снимци екрана описују се на овом телефону и никада се не шаљу Google-у. Спорије је од облака и троши више батерије.</string>
     <string name="pref_on_device_ai_enable_needs_model">Прво преузмите или увезите модел.</string>
-    <string name="pref_on_device_ai_unsupported_cpu">Није доступно. Овај телефон нема 64-битни АРМ процесор.</string>
+    <string name="pref_on_device_ai_unsupported_cpu">Није доступно. Овај телефон нема 64-битни ARM процесор.</string>
     <string name="pref_on_device_ai_not_enough_ram">Није доступно за овај модел. Овај телефон нема довољно меморије.</string>
     <string name="pref_on_device_ai_model">Модел</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -50,7 +50,7 @@
     <string name="on_device_ai_import_done">Модел инсталиран</string>
     <string name="on_device_ai_import_failed">Та датотека није подржана датотека модела Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Временско ограничење за одговоре</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly престаје да чека након оволико времена. Описивање екрана траје дуже од описа слике.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. После оволико времена SandFly престаје да чека. „Опиши екран” траје дуже од „Опиши слику”.</string>
     <string name="on_device_ai_choose_timeout">Временско ограничење за одговоре</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d минут</item>
@@ -59,7 +59,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Процесор</string>
     <string name="pref_on_device_ai_short_prompts">Краћи описи екрана</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Екран за опис тражи мање детаља, па одговара брже. Искључите ово за потпуније описе.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">„Опиши екран” тражи мање детаља, па брже одговара. Искључите ово за потпуније описе.</string>
     <string name="on_device_ai_error_network">Преузимање је заустављено. Проверите своју везу и покушајте поново. Наставиће тамо где је стало.</string>
     <string name="on_device_ai_error_http">Сервер за преузимање није прихватио захтев. Покушајте поново касније или уместо тога увезите датотеку.</string>
     <string name="on_device_ai_error_corrupt">Датотека није одговарала очекиваном моделу и избрисана је. Покушајте поново.</string>

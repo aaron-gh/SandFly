@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">Naudoti įrenginio AI</string>
     <string name="pref_on_device_ai_enable_summary">Vaizdai ir ekrano kopijos aprašomi šiame telefone ir niekada nesiunčiami „Google“. Tai lėčiau nei debesyje ir naudoja daugiau akumuliatoriaus energijos.</string>
     <string name="pref_on_device_ai_enable_needs_model">Pirmiausia atsisiųskite arba importuokite modelį.</string>
-    <string name="pref_on_device_ai_unsupported_cpu">Nėra. Šis telefonas neturi 64 bitų ARM procesoriaus.</string>
+    <string name="pref_on_device_ai_unsupported_cpu">Nepasiekiama. Šiame telefone nėra 64 bitų ARM procesoriaus.</string>
     <string name="pref_on_device_ai_not_enough_ram">Šiam modeliui neprieinama. Šiame telefone nepakanka atminties.</string>
     <string name="pref_on_device_ai_model">Modelis</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -51,7 +51,7 @@
     <string name="on_device_ai_import_done">Modelis įdiegtas</string>
     <string name="on_device_ai_import_failed">Šis failas nėra palaikomas Gemma 4 modelio failas.</string>
     <string name="pref_on_device_ai_timeout">Atsakymų laiko riba</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly nustoja laukti po tiek laiko. Apibūdinti ekraną užtrunka ilgiau nei aprašyti vaizdą.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Po tiek laiko SandFly nustoja laukti. „Aprašykite ekraną“ trunka ilgiau nei „Vaizdo apibūdinimas“.</string>
     <string name="on_device_ai_choose_timeout">Atsakymų laiko riba</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minutę</item>
@@ -61,7 +61,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Procesorius</string>
     <string name="pref_on_device_ai_short_prompts">Trumpesni ekrano aprašymai</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Aprašymo ekrane prašoma pateikti mažiau informacijos, todėl jis atsako greičiau. Išjunkite tai, jei norite gauti išsamesnius aprašymus.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">„Aprašykite ekraną“ prašo mažiau detalių, todėl atsako greičiau. Išjunkite, jei norite išsamesnių aprašų.</string>
     <string name="on_device_ai_error_network">Atsisiuntimas sustabdytas. Patikrinkite ryšį ir bandykite dar kartą. Jis tęsis ten, kur sustojo.</string>
     <string name="on_device_ai_error_http">Atsisiuntimo serveris nepriėmė užklausos. Vėliau bandykite dar kartą arba importuokite failą.</string>
     <string name="on_device_ai_error_corrupt">Failas neatitiko numatyto modelio ir buvo ištrintas. Bandykite dar kartą.</string>

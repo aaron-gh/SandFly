@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">ติดตั้งโมเดลแล้ว</string>
     <string name="on_device_ai_import_failed">ไฟล์นั้นไม่ใช่ไฟล์โมเดล Gemma 4 ที่รองรับ</string>
     <string name="pref_on_device_ai_timeout">การจำกัดเวลาสำหรับคำตอบ</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly หยุดรอหลังจากนี้มานาน หน้าจออธิบายใช้เวลานานกว่าคำอธิบายรูปภาพ</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s SandFly จะหยุดรอหลังจากเวลานี้ “อธิบายหน้าจอ” ใช้เวลานานกว่า “อธิบายรูปภาพ”</string>
     <string name="on_device_ai_choose_timeout">การจำกัดเวลาสำหรับคำตอบ</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d นาที</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">หน่วยประมวลผล</string>
     <string name="pref_on_device_ai_short_prompts">คำอธิบายหน้าจอที่สั้นลง</string>
-    <string name="pref_on_device_ai_short_prompts_summary">หน้าจออธิบายจะขอรายละเอียดน้อยลง จึงตอบได้เร็วกว่า ปิดตัวเลือกนี้เพื่อดูคำอธิบายที่สมบูรณ์ยิ่งขึ้น</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“อธิบายหน้าจอ” จะขอรายละเอียดน้อยลง จึงตอบได้เร็วขึ้น ปิดตัวเลือกนี้เพื่อให้ได้คำอธิบายที่ครบถ้วนกว่า</string>
     <string name="on_device_ai_error_network">การดาวน์โหลดหยุดลง ตรวจสอบการเชื่อมต่อแล้วลองอีกครั้ง การดาวน์โหลดจะทำต่อจากจุดที่หยุด</string>
     <string name="on_device_ai_error_http">เซิร์ฟเวอร์ดาวน์โหลดไม่ยอมรับคำขอ ลองอีกครั้งในภายหลังหรือนำเข้าไฟล์แทน</string>
     <string name="on_device_ai_error_corrupt">ไฟล์ไม่ตรงกับโมเดลที่คาดไว้และถูกลบไปแล้ว ลองอีกครั้ง</string>

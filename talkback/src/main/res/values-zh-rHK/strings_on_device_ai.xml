@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">模型已安裝</string>
     <string name="on_device_ai_import_failed">該檔案不是支援的 Gemma 4 模型檔案。</string>
     <string name="pref_on_device_ai_timeout">回答時間限制</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s。 SandFly 等了這麼久就停止了。描述螢幕比描述影像花費更長的時間。</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s。超過這段時間後，SandFly 便會停止等待。「描述畫面」比「描述圖片」需時更長。</string>
     <string name="on_device_ai_choose_timeout">回答時間限制</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d分鐘</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">處理器</string>
     <string name="pref_on_device_ai_short_prompts">較短的螢幕描述</string>
-    <string name="pref_on_device_ai_short_prompts_summary">描述螢幕要求的詳細資訊較少，因此它會更快回答。關閉此功能以獲得更完整的描述。</string>
+    <string name="pref_on_device_ai_short_prompts_summary">「描述畫面」要求的細節較少，因此回應較快。如需更完整的描述，請關閉此功能。</string>
     <string name="on_device_ai_error_network">下載已停止。請檢查連線，然後再試一次。下載會從停止的位置繼續。</string>
     <string name="on_device_ai_error_http">下載伺服器拒絕了要求。請稍後再試，或改為匯入檔案。</string>
     <string name="on_device_ai_error_corrupt">檔案與預期的模型不符，已被刪除。請再試一次。</string>

@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">온디바이스 AI 사용</string>
     <string name="pref_on_device_ai_enable_summary">이미지와 스크린샷은 이 휴대전화에서 설명되며 Google로 전송되지 않습니다. 클라우드보다 느리고 배터리를 더 많이 사용합니다.</string>
     <string name="pref_on_device_ai_enable_needs_model">먼저 모델을 다운로드하거나 가져오세요.</string>
-    <string name="pref_on_device_ai_unsupported_cpu">사용할 수 없습니다. 이 전화기에는 64비트 ARM 프로세서가 없습니다.</string>
+    <string name="pref_on_device_ai_unsupported_cpu">사용할 수 없습니다. 이 휴대전화에는 64비트 ARM 프로세서가 없습니다.</string>
     <string name="pref_on_device_ai_not_enough_ram">이 모델에서는 사용할 수 없습니다. 이 휴대전화에는 메모리가 부족합니다.</string>
     <string name="pref_on_device_ai_model">모델</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">모델 설치됨</string>
     <string name="on_device_ai_import_failed">해당 파일은 지원되는 Gemma 4 모델 파일이 아닙니다.</string>
     <string name="pref_on_device_ai_timeout">답변 시간 제한</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly 이 시간이 지나면 더 이상 기다리지 않습니다. 설명 화면이 이미지 설명보다 오래 걸립니다.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. 이 시간이 지나면 SandFly가 더 이상 기다리지 않습니다. \'화면 설명\'은(는) \'이미지 설명\'보다 오래 걸립니다.</string>
     <string name="on_device_ai_choose_timeout">답변 시간 제한</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d분</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">프로세서</string>
     <string name="pref_on_device_ai_short_prompts">더 짧은 화면 설명</string>
-    <string name="pref_on_device_ai_short_prompts_summary">설명 화면에서는 더 적은 세부정보를 요구하므로 더 빨리 답변합니다. 자세한 설명을 보려면 이 기능을 끄세요.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">\'화면 설명\'에서 요청하는 세부정보가 줄어 더 빨리 응답합니다. 더 자세한 설명을 원하면 이 설정을 끄세요.</string>
     <string name="on_device_ai_error_network">다운로드가 중지되었습니다. 연결을 확인하고 다시 시도하세요. 멈춘 곳에서 계속됩니다.</string>
     <string name="on_device_ai_error_http">다운로드 서버가 요청을 수락하지 않았습니다. 나중에 다시 시도하거나 대신 파일을 가져오세요.</string>
     <string name="on_device_ai_error_corrupt">파일이 예상 모델과 일치하지 않아 삭제되었습니다. 다시 시도해 보세요.</string>

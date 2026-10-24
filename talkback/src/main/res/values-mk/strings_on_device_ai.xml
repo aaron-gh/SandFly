@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Моделот е инсталиран</string>
     <string name="on_device_ai_import_failed">Таа датотека не е поддржана датотека на моделот Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Временско ограничување за одговори</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly престанува да чека по толку време. Екранот за опишување трае подолго од описот на сликата.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. По ова време SandFly престанува да чека. „Опиши го екранот“ трае подолго од „Опиши ја сликата“.</string>
     <string name="on_device_ai_choose_timeout">Временско ограничување за одговори</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d минута</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Процесор</string>
     <string name="pref_on_device_ai_short_prompts">Пократки описи на екранот</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Опис на екранот бара помалку детали, така што одговара порано. Исклучете го ова за поцелосни описи.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">„Опиши го екранот“ бара помалку детали, па одговара побрзо. Исклучете за поцелосни описи.</string>
     <string name="on_device_ai_error_network">Преземањето престана. Проверете ја врската и обидете се повторно. Ќе продолжи таму каде што застана.</string>
     <string name="on_device_ai_error_http">Серверот за преземање не го прифати барањето. Обидете се повторно подоцна или наместо тоа увезете датотека.</string>
     <string name="on_device_ai_error_corrupt">Датотеката не одговараше на очекуваниот модел и беше избришана. Обидете се повторно.</string>

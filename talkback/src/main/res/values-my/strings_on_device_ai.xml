@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">မော်ဒယ်တပ်ဆင်ထားသည်</string>
     <string name="on_device_ai_import_failed">ထိုဖိုင်သည် ပံ့ပိုးထားသော Gemma 4 မော်ဒယ်ဖိုင်မဟုတ်ပါ။</string>
     <string name="pref_on_device_ai_timeout">အဖြေများအတွက် အချိန်ကန့်သတ်ချက်</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s။ SandFly အကြာကြီးစောင့်ပြီးမှ ရပ်လိုက်ပါ။ ဖော်ပြရန် မျက်နှာပြင်သည် ပုံဖော်ပြသည်ထက် ပိုကြာသည်။</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s။ ဤမျှကြာပြီးနောက် SandFly က စောင့်ခြင်း ရပ်သည်။ “စခရင်ကို ဖော်ပြရန်” သည် “ပုံကို ရှင်းပြရန်” ထက် ပိုကြာသည်။</string>
     <string name="on_device_ai_choose_timeout">အဖြေများအတွက် အချိန်ကန့်သတ်ချက်</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d မိနစ်</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">ပရိုဆက်ဆာ</string>
     <string name="pref_on_device_ai_short_prompts">ပိုတိုသော မျက်နှာပြင်ဖော်ပြချက်များ</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Describe screen သည် အနည်းငယ်သောအသေးစိတ်အချက်အလက်များအတွက် တောင်းဆိုသောကြောင့် ၎င်းသည် အမြန်ဖြေကြားပါသည်။ ပိုမိုပြည့်စုံသော ဖော်ပြချက်များအတွက် ၎င်းကို ပိတ်ပါ။</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“စခရင်ကို ဖော်ပြရန်” သည် အသေးစိတ် နည်းနည်းသာ တောင်းသဖြင့် ပိုမြန်မြန် ဖြေသည်။ ပိုပြည့်စုံသော ဖော်ပြချက်အတွက် ဤဆက်တင်ကို ပိတ်ပါ။</string>
     <string name="on_device_ai_error_network">ဒေါင်းလုဒ် ရပ်သွားသည်။ ချိတ်ဆက်မှုကို စစ်ပြီး ထပ်စမ်းပါ။ ရပ်ခဲ့သည့်နေရာမှ ဆက်လုပ်မည်။</string>
     <string name="on_device_ai_error_http">ဒေါင်းလုဒ်ဆာဗာသည် တောင်းဆိုချက်ကို လက်မခံပါ။ နောက်မှ ထပ်စမ်းကြည့်ပါ သို့မဟုတ် ၎င်းအစား ဖိုင်တစ်ခုကို တင်သွင်းပါ။</string>
     <string name="on_device_ai_error_corrupt">ဖိုင်သည် မျှော်လင့်ထားသည့်ပုံစံနှင့် ကိုက်ညီမှုမရှိသဖြင့် ဖျက်ပစ်ခဲ့သည်။ ထပ်ကြိုးစားပါ။</string>

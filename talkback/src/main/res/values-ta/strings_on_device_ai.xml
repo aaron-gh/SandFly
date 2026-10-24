@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">மாடல் நிறுவப்பட்டது</string>
     <string name="on_device_ai_import_failed">அந்த கோப்பு ஆதரிக்கப்படும் Gemma 4 மாதிரி கோப்பு அல்ல.</string>
     <string name="pref_on_device_ai_timeout">பதில்களுக்கான கால வரம்பு</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly நீண்ட காலத்திற்குப் பிறகு காத்திருப்பதை நிறுத்துகிறது. படத்தை விவரிக்கும் திரையை விவரிக்க அதிக நேரம் எடுக்கும்.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. இவ்வளவு நேரத்துக்குப் பிறகு SandFly காத்திருப்பதை நிறுத்தும். “படத்தை விளக்கு” என்பதை விட “திரையில் உள்ளவற்றை விளக்கு” அதிக நேரம் எடுக்கும்.</string>
     <string name="on_device_ai_choose_timeout">பதில்களுக்கான கால வரம்பு</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d நிமிடம்</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">செயலி</string>
     <string name="pref_on_device_ai_short_prompts">திரையின் சுருக்கமான விளக்கங்கள்</string>
-    <string name="pref_on_device_ai_short_prompts_summary">குறைவான விவரங்களைக் கேட்கும் திரையை விவரிக்கவும், எனவே அது விரைவில் பதிலளிக்கும். முழுமையான விளக்கங்களுக்கு இதை முடக்கவும்.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“திரையில் உள்ளவற்றை விளக்கு” குறைவான விவரங்களைக் கேட்பதால் விரைவாகப் பதிலளிக்கும். முழுமையான விளக்கங்களுக்கு இதை முடக்கவும்.</string>
     <string name="on_device_ai_error_network">பதிவிறக்கம் நிறுத்தப்பட்டது. உங்கள் இணைப்பைச் சரிபார்த்து மீண்டும் முயலவும். அது நின்ற இடத்திலேயே தொடரும்.</string>
     <string name="on_device_ai_error_http">பதிவிறக்க சேவையகம் கோரிக்கையை ஏற்கவில்லை. பிறகு முயற்சிக்கவும் அல்லது அதற்குப் பதிலாக ஒரு கோப்பை இறக்குமதி செய்யவும்.</string>
     <string name="on_device_ai_error_corrupt">கோப்பு எதிர்பார்த்த மாதிரியுடன் பொருந்தவில்லை மற்றும் நீக்கப்பட்டது. மீண்டும் முயற்சிக்கவும்.</string>

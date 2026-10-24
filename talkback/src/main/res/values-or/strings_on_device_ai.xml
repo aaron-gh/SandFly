@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">ଅନ୍-ଡିଭାଇସ୍ AI ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="pref_on_device_ai_enable_summary">ଛବି ଓ ସ୍କ୍ରିନସଟ୍ ଏହି ଫୋନ୍‌ରେ ହିଁ ବର୍ଣ୍ଣନା କରାଯାଏ ଏବଂ କେବେ ବି Googleକୁ ପଠାଯାଏ ନାହିଁ। ଏହା କ୍ଲାଉଡ୍ ଠାରୁ ଧୀର ଏବଂ ଅଧିକ ବ୍ୟାଟେରୀ ଖର୍ଚ୍ଚ କରେ।</string>
     <string name="pref_on_device_ai_enable_needs_model">ପ୍ରଥମେ ଏକ ମଡେଲ୍ ଡାଉନଲୋଡ୍ କିମ୍ବା ଆମଦାନୀ କରନ୍ତୁ।</string>
-    <string name="pref_on_device_ai_unsupported_cpu">ଉପଲବ୍ଧ ନାହିଁ | ଏହି ଫୋନରେ 64-ବିଟ୍ ARM ସଞ୍ଚାଳକ ନାହିଁ |</string>
+    <string name="pref_on_device_ai_unsupported_cpu">ଉପଲବ୍ଧ ନାହିଁ। ଏହି ଫୋନ୍‌ରେ 64-ବିଟ୍ ARM ପ୍ରୋସେସର୍ ନାହିଁ।</string>
     <string name="pref_on_device_ai_not_enough_ram">ଏହି ମଡେଲ୍ ପାଇଁ ଉପଲବ୍ଧ ନାହିଁ। ଏହି ଫୋନ୍‌ରେ ଯଥେଷ୍ଟ ମେମୋରୀ ନାହିଁ।</string>
     <string name="pref_on_device_ai_model">ମଡେଲ୍</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">ମଡେଲ୍ ସଂସ୍ଥାପିତ ହୋଇଛି</string>
     <string name="on_device_ai_import_failed">ସେହି ଫାଇଲ୍ ସମର୍ଥିତ Gemma 4 ମଡେଲ୍ ଫାଇଲ୍ ନୁହେଁ।</string>
     <string name="pref_on_device_ai_timeout">ଉତ୍ତର ପାଇଁ ସମୟ ସୀମା</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s। SandFly ଏହି ଦୀର୍ଘ ସମୟ ଅପେକ୍ଷା କରିବା ବନ୍ଦ କରିଦିଏ | ଚିତ୍ର ବର୍ଣ୍ଣନା କରିବା ଅପେକ୍ଷା ସ୍କ୍ରିନ୍ ବର୍ଣ୍ଣନା ଅଧିକ ସମୟ ନେଇଥାଏ |</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s। ଏତିକି ସମୟ ପରେ SandFly ଅପେକ୍ଷା କରିବା ବନ୍ଦ କରେ। “ସ୍କ୍ରିନର ବର୍ଣ୍ଣନା କରନ୍ତୁ” “ଇମେଜର ବର୍ଣ୍ଣନା କରନ୍ତୁ” ଠାରୁ ଅଧିକ ସମୟ ନିଏ।</string>
     <string name="on_device_ai_choose_timeout">ଉତ୍ତର ପାଇଁ ସମୟ ସୀମା</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d ମିନିଟ୍</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">ପ୍ରୋସେସର୍</string>
     <string name="pref_on_device_ai_short_prompts">ପରଦାର ଛୋଟ ବର୍ଣ୍ଣନା</string>
-    <string name="pref_on_device_ai_short_prompts_summary">ସ୍କ୍ରିନ୍ ବର୍ଣ୍ଣନା କରନ୍ତୁ କମ୍ ବିବରଣୀ ମାଗେ, ତେଣୁ ଏହା ଶୀଘ୍ର ଉତ୍ତର ଦିଏ | ପୂର୍ଣ୍ଣ ବର୍ଣ୍ଣନା ପାଇଁ ଏହାକୁ ବନ୍ଦ କରନ୍ତୁ |</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“ସ୍କ୍ରିନର ବର୍ଣ୍ଣନା କରନ୍ତୁ” କମ୍ ବିବରଣୀ ମାଗେ, ତେଣୁ ଶୀଘ୍ର ଉତ୍ତର ଦିଏ। ଅଧିକ ସମ୍ପୂର୍ଣ୍ଣ ବର୍ଣ୍ଣନା ପାଇଁ ଏହାକୁ ବନ୍ଦ କରନ୍ତୁ।</string>
     <string name="on_device_ai_error_network">ଡାଉନଲୋଡ୍ ବନ୍ଦ ହୋଇଗଲା। ଆପଣଙ୍କ ସଂଯୋଗ ଯାଞ୍ଚ କରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ। ଯେଉଁଠି ବନ୍ଦ ହୋଇଥିଲା ସେଠାରୁ ଏହା ଜାରି ରହିବ।</string>
     <string name="on_device_ai_error_http">ଡାଉନଲୋଡ୍ ସର୍ଭର ଅନୁରୋଧ ଗ୍ରହଣ କଲା ନାହିଁ | ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ, କିମ୍ବା ଏହା ପରିବର୍ତ୍ତେ ଏକ ଫାଇଲ ଆମଦାନି କରନ୍ତୁ |</string>
     <string name="on_device_ai_error_corrupt">ଫାଇଲଟି ଆଶା କରାଯାଉଥିବା ମଡେଲ ସହିତ ମେଳ ଖାଉ ନଥିଲା ଏବଂ ଡିଲିଟ ହୋଇଯାଇଥିଲା | ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>

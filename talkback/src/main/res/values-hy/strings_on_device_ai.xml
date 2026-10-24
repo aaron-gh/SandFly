@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Մոդելը տեղադրվեց</string>
     <string name="on_device_ai_import_failed">Այդ ֆայլը Gemma 4 մոդելի աջակցվող ֆայլ չէ։</string>
     <string name="pref_on_device_ai_timeout">Պատասխանների ժամանակի սահմանափակում</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s։ Այս ժամանակից հետո SandFly-ը դադարում է սպասել։ «Նկարագրիր էկրանը» գործառույթն ավելի երկար է տևում, քան «Նկարագրել պատկերը»։</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s։ Այսքան ժամանակ անց SandFly-ը դադարում է սպասել։ «Նկարագրիր էկրանը»-ն ավելի երկար է տևում, քան «Նկարագրել պատկերը»-ն։</string>
     <string name="on_device_ai_choose_timeout">Պատասխանների ժամանակի սահմանափակում</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d րոպե</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Պրոցեսոր</string>
     <string name="pref_on_device_ai_short_prompts">Էկրանի ավելի կարճ նկարագրություններ</string>
-    <string name="pref_on_device_ai_short_prompts_summary">«Նկարագրիր էկրանը» գործառույթը պահանջում է ավելի քիչ մանրամասներ, ուստի ավելի շուտ է պատասխանում։ Անջատեք՝ ավելի ամբողջական նկարագրությունների համար։</string>
+    <string name="pref_on_device_ai_short_prompts_summary">«Նկարագրիր էկրանը»-ը պահանջում է ավելի քիչ մանրամասներ, ուստի ավելի շուտ է պատասխանում։ Ավելի ամբողջական նկարագրությունների համար անջատեք։</string>
     <string name="on_device_ai_error_network">Ներբեռնումը դադարեց։ Ստուգեք ինտերնետ կապը և նորից փորձեք։ Այն կշարունակվի այնտեղից, որտեղ դադարել էր։</string>
     <string name="on_device_ai_error_http">Ներբեռնման սերվերը չընդունեց հարցումը։ Փորձեք ավելի ուշ կամ ներմուծեք ֆայլ։</string>
     <string name="on_device_ai_error_corrupt">Ֆայլը չհամապատասխանեց սպասվող մոդելին և ջնջվեց։ Նորից փորձեք։</string>

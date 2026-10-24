@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">បានដំឡើងម៉ូដែល</string>
     <string name="on_device_ai_import_failed">ឯកសារនោះមិនមែនជាឯកសារគំរូ Gemma 4 ដែលគាំទ្រទេ។</string>
     <string name="pref_on_device_ai_timeout">ពេលវេលាកំណត់សម្រាប់ចម្លើយ</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s។ SandFly ឈប់រង់ចាំយូរទៅ។ អេក្រង់ពណ៌នាចំណាយពេលយូរជាងពណ៌នារូបភាព។</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s។ SandFly ឈប់រង់ចាំបន្ទាប់ពីរយៈពេលនេះ។ «ពណ៌នាអេក្រង់» ចំណាយពេលយូរជាង «ពណ៌នា​រូបភាព»។</string>
     <string name="on_device_ai_choose_timeout">ពេលវេលាកំណត់សម្រាប់ចម្លើយ</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d នាទី</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">ប្រព័ន្ធដំណើរការ</string>
     <string name="pref_on_device_ai_short_prompts">ការពិពណ៌នាអេក្រង់ខ្លីជាង</string>
-    <string name="pref_on_device_ai_short_prompts_summary">ពណ៌នាអេក្រង់សួររកព័ត៌មានលម្អិតតិចជាងនេះ ដូច្នេះវានឹងឆ្លើយឆាប់ជាង។ បិទវាសម្រាប់ការពិពណ៌នាពេញលេញ។</string>
+    <string name="pref_on_device_ai_short_prompts_summary">«ពណ៌នាអេក្រង់» សុំព័ត៌មានលម្អិតតិចជាង ដូច្នេះឆ្លើយបានលឿនជាង។ បិទវា ដើម្បីទទួលបានការពណ៌នាពេញលេញជាង។</string>
     <string name="on_device_ai_error_network">ការទាញយកបានឈប់។ ពិនិត្យការតភ្ជាប់របស់អ្នក ហើយព្យាយាមម្តងទៀត។ វានឹងបន្តទៅកន្លែងដែលវាឈប់។</string>
     <string name="on_device_ai_error_http">ម៉ាស៊ីនមេទាញយកមិនបានទទួលយកសំណើទេ។ សូមព្យាយាមម្ដងទៀតនៅពេលក្រោយ ឬនាំចូលឯកសារជំនួសវិញ។</string>
     <string name="on_device_ai_error_corrupt">ឯកសារមិនត្រូវគ្នានឹងគំរូដែលបានរំពឹងទុកទេ ហើយត្រូវបានលុប។ ព្យាយាមម្តងទៀត។</string>

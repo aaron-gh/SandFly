@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">שימוש ב-AI במכשיר</string>
     <string name="pref_on_device_ai_enable_summary">תמונות וצילומי מסך מתוארים בטלפון הזה ולעולם לא נשלחים ל-Google. זה איטי יותר מהענן וצורך יותר סוללה.</string>
     <string name="pref_on_device_ai_enable_needs_model">יש להוריד או לייבא מודל תחילה.</string>
-    <string name="pref_on_device_ai_unsupported_cpu">לא זמין. לטלפון הזה אין מעבד ARM של 64 סיביות.</string>
+    <string name="pref_on_device_ai_unsupported_cpu">לא זמין. בטלפון הזה אין מעבד ARM של 64 סיביות.</string>
     <string name="pref_on_device_ai_not_enough_ram">לא זמין למודל הזה. בטלפון הזה אין מספיק זיכרון.</string>
     <string name="pref_on_device_ai_model">מודל</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -50,7 +50,7 @@
     <string name="on_device_ai_import_done">המודל הותקן</string>
     <string name="on_device_ai_import_failed">הקובץ הזה אינו קובץ מודל Gemma 4 נתמך.</string>
     <string name="pref_on_device_ai_timeout">מגבלת זמן לתשובות</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly מפסיק לחכות לאחר זמן רב כל כך. מסך תיאור לוקח יותר זמן מאשר תמונה תיאור.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. אחרי הזמן הזה SandFly מפסיק לחכות. ״תיאור המסך״ לוקח יותר זמן מ״תיאור תמונה״.</string>
     <string name="on_device_ai_choose_timeout">מגבלת זמן לתשובות</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d דקה</item>
@@ -59,7 +59,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">מעבד</string>
     <string name="pref_on_device_ai_short_prompts">תיאורי מסך קצרים יותר</string>
-    <string name="pref_on_device_ai_short_prompts_summary">מסך תאר מבקש פחות פרטים, כך שהוא עונה מוקדם יותר. כבה את זה לתיאורים מלאים יותר.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">״תיאור המסך״ מבקש פחות פרטים, ולכן עונה מהר יותר. כדי לקבל תיאורים מלאים יותר, יש לכבות את האפשרות.</string>
     <string name="on_device_ai_error_network">ההורדה נעצרה. יש לבדוק את החיבור ולנסות שוב. היא תמשיך מהמקום שבו נעצרה.</string>
     <string name="on_device_ai_error_http">שרת ההורדה לא קיבל את הבקשה. אפשר לנסות שוב מאוחר יותר או לייבא קובץ.</string>
     <string name="on_device_ai_error_corrupt">הקובץ לא תאם למודל הצפוי ונמחק. אפשר לנסות שוב.</string>

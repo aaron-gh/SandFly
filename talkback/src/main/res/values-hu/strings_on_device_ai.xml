@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Modell telepítve</string>
     <string name="on_device_ai_import_failed">Ez a fájl nem támogatott Gemma 4 modellfájl.</string>
     <string name="pref_on_device_ai_timeout">Válaszok időkorlátja</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. A SandFly ennyi idő után abbahagyja a várakozást. A Képernyő leírása tovább tart, mint a Képleírás.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. A SandFly ennyi idő után abbahagyja a várakozást. A(z) „Képernyő leírása” tovább tart, mint a(z) „Képleírás”.</string>
     <string name="on_device_ai_choose_timeout">Válaszok időkorlátja</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d perc</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Processzor</string>
     <string name="pref_on_device_ai_short_prompts">Rövidebb képernyőleírások</string>
-    <string name="pref_on_device_ai_short_prompts_summary">A Képernyő leírása kevesebb részletet kér, így hamarabb válaszol. Kapcsolja ki a részletesebb leírásokhoz.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">A(z) „Képernyő leírása” kevesebb részletet kér, így hamarabb válaszol. Részletesebb leírásokhoz kapcsolja ki.</string>
     <string name="on_device_ai_error_network">A letöltés leállt. Ellenőrizze a kapcsolatot, és próbálja újra. Ott folytatódik, ahol leállt.</string>
     <string name="on_device_ai_error_http">A letöltési szerver nem fogadta el a kérést. Próbálja újra később, vagy importáljon inkább egy fájlt.</string>
     <string name="on_device_ai_error_corrupt">A fájl nem egyezett a várt modellel, ezért törölve lett. Próbálja újra.</string>

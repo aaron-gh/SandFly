@@ -5,7 +5,7 @@
     <string name="pref_on_device_ai_enable">Құрылғыдағы AI пайдалану</string>
     <string name="pref_on_device_ai_enable_summary">Суреттер мен скриншоттар осы телефонда сипатталады және ешқашан Google-ға жіберілмейді. Бұл бұлттағы қызметтен баяу және батареяны көбірек жұмсайды.</string>
     <string name="pref_on_device_ai_enable_needs_model">Алдымен модельді жүктеп алыңыз не импорттаңыз.</string>
-    <string name="pref_on_device_ai_unsupported_cpu">Жоқ. Бұл телефонда 64-биттік ARM процессоры жоқ.</string>
+    <string name="pref_on_device_ai_unsupported_cpu">Қолжетімсіз. Бұл телефонда 64 биттік ARM процессоры жоқ.</string>
     <string name="pref_on_device_ai_not_enough_ram">Бұл үлгі үшін қолжетімді емес. Бұл телефонның жады жеткіліксіз.</string>
     <string name="pref_on_device_ai_model">Үлгі</string>
     <string name="on_device_ai_model_summary">%1$s, %2$s</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Үлгі орнатылды</string>
     <string name="on_device_ai_import_failed">Бұл файл қолдау көрсетілетін Gemma 4 үлгісі файлы емес.</string>
     <string name="pref_on_device_ai_timeout">Жауаптар үшін уақыт шегі</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly ұзақ уақыт күтуді тоқтатады. Сипаттау экраны суретті сипаттаудан ұзағырақ уақыт алады.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Осы уақыттан кейін SandFly күтуді тоқтатады. «Экранды сипаттаңыз» «Суретті сипаттау» әрекетінен ұзағырақ созылады.</string>
     <string name="on_device_ai_choose_timeout">Жауаптар үшін уақыт шегі</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d минут</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Процессор</string>
     <string name="pref_on_device_ai_short_prompts">Қысқа экран сипаттамалары</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Сипаттама экраны азырақ мәліметтерді сұрайды, сондықтан ол тезірек жауап береді. Толық сипаттамалар үшін мұны өшіріңіз.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">«Экранды сипаттаңыз» азырақ мәлімет сұрайды, сондықтан тезірек жауап береді. Толығырақ сипаттама үшін өшіріңіз.</string>
     <string name="on_device_ai_error_network">Жүктеп алу тоқтатылды. Байланысты тексеріп, әрекетті қайталаңыз. Тоқтаған жерінен жалғастырады.</string>
     <string name="on_device_ai_error_http">Жүктеп алу сервері сұрауды қабылдамады. Әрекетті кейінірек қайталаңыз немесе оның орнына файлды импорттаңыз.</string>
     <string name="on_device_ai_error_corrupt">Файл күтілген үлгіге сәйкес келмеді және жойылды. Қайтадан байқап көріңіз.</string>

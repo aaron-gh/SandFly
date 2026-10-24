@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Модель орнотулду</string>
     <string name="on_device_ai_import_failed">Бул файл колдоого алынган Gemma 4 үлгү файлы эмес.</string>
     <string name="pref_on_device_ai_timeout">Жооптор үчүн убакыт чеги</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly ушунча убакыттан кийин күтүүнү токтотот. Сүрөттөө экраны сүрөттү сүрөттөөгө караганда көбүрөөк убакытты талап кылат.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Ушунча убакыттан кийин SandFly күтүүнү токтотот. «Экранды сүрөттөп берүү» «Сүрөт тууралуу учкай маалымат» дан көбүрөөк убакыт алат.</string>
     <string name="on_device_ai_choose_timeout">Жооптор үчүн убакыт чеги</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d мүнөт</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Процессор</string>
     <string name="pref_on_device_ai_short_prompts">Кыскараак экран сүрөттөмөлөрү</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Сүрөттөө экраны азыраак маалымат сурайт, андыктан ал тезирээк жооп берет. Толук сүрөттөмөлөр үчүн муну өчүрүңүз.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">«Экранды сүрөттөп берүү» азыраак маалымат сурайт, ошондуктан тезирээк жооп берет. Толугураак сүрөттөмө үчүн муну өчүрүңүз.</string>
     <string name="on_device_ai_error_network">Жүктөп алуу токтотулду. Туташууңузду текшерип, кайра аракет кылыңыз. Ал токтогон жерден улана берет.</string>
     <string name="on_device_ai_error_http">Жүктөө сервери сурамды кабыл алган жок. Кийинчерээк кайра аракет кылыңыз же анын ордуна файлды импорттоңуз.</string>
     <string name="on_device_ai_error_corrupt">Файл күтүлгөн моделге дал келген жок жана өчүрүлдү. Кайра аракет кылыңыз.</string>
