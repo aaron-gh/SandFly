@@ -6,7 +6,7 @@
     <string name="script_install_label">Installera SandFly-skriptet</string>
     <string name="script_import_nothing">Det finns ingen skriptfil att installera.</string>
     <string name="script_import_cannot_open">Filen kunde inte öppnas.</string>
-    <string name="script_import_repository">Denna länk är till ett helt arkiv. Öppna det skript du vill ha och dela sedan dess länk.</string>
+    <string name="script_import_repository">Den här länken går till ett helt arkiv. Öppna skriptet du vill ha och dela sedan dess länk.</string>
     <string name="script_import_summary">.lua-fil eller .zip med main.lua</string>
     <string name="scripts_category_app">App-skript</string>
     <string name="scripts_category_global">Globala plugins</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Läsa och ändra aviseringar som läses upp</string>
     <string name="script_permission_events">Se all aktivitet i alla appar, inklusive inskrivning</string>
     <string name="script_permission_dialogs">Visa dialogrutor ovanpå alla appar</string>
-    <string name="script_permission_java">Kör Java-kod med alla SandFlys åtkomst, i varje app</string>
+    <string name="script_permission_java">Köra Java-kod med all åtkomst som SandFly har, i alla appar</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Aktivera</string>
     <string name="script_permissions_title">Behörigheter</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Hantering</string>
     <string name="script_move_up">Kör tidigare</string>
     <string name="script_move_down">Kör senare</string>
-    <string name="script_order_summary">Beställ för manus som ändrar samma tal. Appskript körs först.</string>
+    <string name="script_order_summary">Ordning för skript som ändrar samma tal. Appskript körs först.</string>
     <string name="script_log">Logg</string>
     <string name="script_log_summary">Utdata och fel sedan SandFly startade</string>
     <string name="script_clear_storage">Rensa lagrad data</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Inspektera fokuserat objekt</string>
     <string name="script_inspect_no_item">Inget objekt har fokus</string>
     <string name="script_inspect_copied">Kopierat. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Inget id, så regler kan inte namnge det. Kopierade. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Inget id, så regler kan inte hänvisa till det. Kopierat. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopiera skärmträd</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> objekt kopierade</string>
     <string name="script_tree_none">Inget fönster att kopiera</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly-modifierartangent</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, sedan <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Kommandon</string>
-    <string name="script_commands_summary">Gestures and keys of a running script come before SandFly\'s. Stäng av en för att behålla SandFlys.</string>
+    <string name="script_commands_summary">Rörelser och tangenter i ett skript som körs går före SandFlys. Stäng av skriptets för att behålla SandFlys.</string>
     <string name="script_binding_gesture">Gest: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Tangenter: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly-menyn</string>

@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Окулуучу билдирмелерди окуу жана өзгөртүү</string>
     <string name="script_permission_events">Ар бир колдонмодогу бардык аракеттерди, анын ичинде терүүнү көрүү</string>
     <string name="script_permission_dialogs">Диалогдорду каалаган колдонмонун үстүнөн көрсөтүү</string>
-    <string name="script_permission_java">Ар бир колдонмодо Java кодун SandFlyнын бардык мүмкүнчүлүгү менен иштетиңиз</string>
+    <string name="script_permission_java">Ар бир колдонмодо SandFly\'дын бардык уруксаттары менен Java кодун иштетүү</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Күйгүзүү</string>
     <string name="script_permissions_title">Уруксаттар</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Башкаруу</string>
     <string name="script_move_up">Эртерээк иштетүү</string>
     <string name="script_move_down">Кийинчерээк иштетүү</string>
-    <string name="script_order_summary">Бир эле кепти өзгөрткөн сценарийлерге заказ бериңиз. Колдонмо скрипттери биринчи иштетилет.</string>
+    <string name="script_order_summary">Бир эле кепти өзгөрткөн скрипттердин тартиби. Колдонмо скрипттери биринчи иштейт.</string>
     <string name="script_log">Журнал</string>
     <string name="script_log_summary">SandFly иштетилгенден бери чыгаруу жана каталар</string>
     <string name="script_clear_storage">Сакталган маалыматтарды тазалоо</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Фокусталган нерсени текшерүү</string>
     <string name="script_inspect_no_item">Эч бир элементте фокус жок</string>
     <string name="script_inspect_copied">Көчүрүлдү. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">No id, so rules can\'t name it. Көчүрүлгөн. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Идентификатору жок, ошондуктан эрежелер ага шилтей албайт. Көчүрүлдү. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Экран дарагын көчүрүү</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> элемент көчүрүлдү</string>
     <string name="script_tree_none">Көчүрүү үчүн терезе жок</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly өзгөрткүч баскычы</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, андан кийин <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Командалар</string>
-    <string name="script_commands_summary">Иштеп жаткан скрипттин жаңсоолору жана баскычтары SandFly\'дан мурун келет. Turn one off to keep SandFly\'s.</string>
+    <string name="script_commands_summary">Иштеп жаткан скрипттин жаңсоолору жана баскычтары SandFly\'дыкынан артыкчылыктуу. SandFly\'дыкын калтыруу үчүн скрипттикин өчүрүңүз.</string>
     <string name="script_binding_gesture">Жаңсоо: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Баскычтар: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly меню</string>

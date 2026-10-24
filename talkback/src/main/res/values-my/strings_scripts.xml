@@ -6,7 +6,7 @@
     <string name="script_install_label">SandFly စခရစ် ထည့်သွင်းရန်</string>
     <string name="script_import_nothing">ထည့်သွင်းရန် စခရစ်ဖိုင် မရှိပါ။</string>
     <string name="script_import_cannot_open">ဖိုင်ကို ဖွင့်၍မရပါ။</string>
-    <string name="script_import_repository">ဤလင့်ခ်သည် သိုလှောင်ရုံတစ်ခုလုံးသို့ဖြစ်သည်။ သင်အလိုရှိသော ဇာတ်ညွှန်းကိုဖွင့်ပါ၊ ထို့နောက် ၎င်း၏လင့်ခ်ကို မျှဝေပါ။</string>
+    <string name="script_import_repository">ဤလင့်ခ်သည် repository တစ်ခုလုံးသို့ ဖြစ်သည်။ လိုချင်သော စခရစ်ကို ဖွင့်ပြီး ၎င်း၏ လင့်ခ်ကို မျှဝေပါ။</string>
     <string name="script_import_summary">.lua ဖိုင် သို့မဟုတ် main.lua ပါသော .zip</string>
     <string name="scripts_category_app">အက်ပ် စခရစ်များ</string>
     <string name="scripts_category_global">အထွေထွေ ပလပ်အင်များ</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">အသံထွက်ဖတ်သော အကြောင်းကြားချက်များကို ဖတ်ခြင်းနှင့် ပြောင်းခြင်း</string>
     <string name="script_permission_events">စာရိုက်ခြင်းအပါအဝင် အက်ပ်တိုင်းရှိ လုပ်ဆောင်ချက်အားလုံးကို မြင်ခြင်း</string>
     <string name="script_permission_dialogs">မည်သည့်အက်ပ်အပေါ်တွင်မဆို ဒိုင်ယာလော့ခ်များ ပြသခြင်း</string>
-    <string name="script_permission_java">အက်ပ်တိုင်းတွင် SandFly ၏ဝင်ရောက်ခွင့်အားလုံးဖြင့် Java ကုဒ်ကိုဖွင့်ပါ</string>
+    <string name="script_permission_java">အက်ပ်တိုင်းတွင် SandFly ၏ ဝင်ခွင့်အားလုံးဖြင့် Java ကုဒ် လုပ်ဆောင်ခြင်း</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ဖွင့်ရန်</string>
     <string name="script_permissions_title">ခွင့်ပြုချက်များ</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">စီမံခန့်ခွဲမှု</string>
     <string name="script_move_up">အရင် လုပ်ဆောင်ရန်</string>
     <string name="script_move_down">နောက်မှ လုပ်ဆောင်ရန်</string>
-    <string name="script_order_summary">တူညီသောမိန့်ခွန်းကိုပြောင်းလဲသော script များအတွက်အမိန့်။ အက်ပ်စခရစ်များကို ဦးစွာလုပ်ဆောင်သည်။</string>
+    <string name="script_order_summary">တူညီသော စကားပြောကို ပြောင်းသည့် စခရစ်များ၏ အစီအစဉ်။ အက်ပ်စခရစ်များ အရင်လုပ်ဆောင်သည်။</string>
     <string name="script_log">မှတ်တမ်း</string>
     <string name="script_log_summary">SandFly စတင်ကတည်းက အထွက်နှင့် အမှားများ</string>
     <string name="script_clear_storage">သိမ်းဆည်းထားသော ဒေတာကို ရှင်းလင်းပါ</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ဖိုကပ်စ်ရှိ အရာကို စစ်ဆေးရန်</string>
     <string name="script_inspect_no_item">ဖိုကပ်စ်ရှိသော အရာ မရှိပါ</string>
     <string name="script_inspect_copied">ကူးယူပြီးပါပြီ။ <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ID မရှိတဲ့အတွက် စည်းကမ်းတွေက နာမည်ပေးလို့မရပါဘူး။ ကူးယူသည်။ <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id မရှိသဖြင့် စည်းမျဉ်းများက ၎င်းကို ညွှန်း၍မရပါ။ ကူးယူပြီး။ <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">မျက်နှာပြင် ဖွဲ့စည်းပုံကို ကူးယူရန်</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ပစ္စည်းများကို ကူးယူထားသည်</string>
     <string name="script_tree_none">ကူးယူရန် ဝင်းဒိုးမရှိပါ</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly မွမ်းမံခလုတ်</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g> ထို့နောက် <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ကွန်မန်းများ</string>
-    <string name="script_commands_summary">လည်ပတ်နေသော script တစ်ခု၏ လက်ဟန်များနှင့် သော့များသည် SandFly ၏ ရှေ့တွင် ရှိသည်။ SandFly ထားရှိရန် တစ်ခုပိတ်ပါ။</string>
+    <string name="script_commands_summary">လုပ်ဆောင်နေသော စခရစ်၏ လက်ဟန်များနှင့် ခလုတ်များသည် SandFly ၏ လက်ဟန်နှင့် ခလုတ်များထက် ဦးစားပေးသည်။ SandFly ၏အရာကို ဆက်သုံးရန် စခရစ်၏အရာကို ပိတ်ပါ။</string>
     <string name="script_binding_gesture">အမူအရာ- <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">ခလုတ်များ- <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly မီနူး</string>

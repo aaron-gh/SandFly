@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">អាន និងផ្លាស់ប្ដូរការជូនដំណឹងដែលត្រូវបានអាន</string>
     <string name="script_permission_events">មើលសកម្មភាពទាំងអស់នៅក្នុងគ្រប់កម្មវិធី រួមទាំងការវាយបញ្ចូលផងដែរ</string>
     <string name="script_permission_dialogs">បង្ហាញប្រអប់នៅពីលើកម្មវិធីណាក៏បាន</string>
-    <string name="script_permission_java">ដំណើរការកូដ Java ជាមួយនឹងការចូលប្រើទាំងអស់របស់ SandFly នៅគ្រប់កម្មវិធី</string>
+    <string name="script_permission_java">ដំណើរការកូដ Java ដោយមានសិទ្ធិចូលប្រើទាំងអស់របស់ SandFly នៅក្នុងគ្រប់កម្មវិធី</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">បើក</string>
     <string name="script_permissions_title">ការអនុញ្ញាត</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">ការគ្រប់គ្រង</string>
     <string name="script_move_up">ដំណើរការមុន</string>
     <string name="script_move_down">ដំណើរការនៅពេលក្រោយ</string>
-    <string name="script_order_summary">បញ្ជាទិញស្គ្រីបដែលផ្លាស់ប្តូរការនិយាយដូចគ្នា។ ស្គ្រីបកម្មវិធីដំណើរការដំបូង។</string>
+    <string name="script_order_summary">លំដាប់សម្រាប់ស្គ្រីបដែលប្ដូរការនិយាយដូចគ្នា។ ស្គ្រីបកម្មវិធីដំណើរការមុន។</string>
     <string name="script_log">កំណត់ហេតុ</string>
     <string name="script_log_summary">លទ្ធផល និងកំហុសចាប់តាំងពី SandFly ចាប់ផ្តើម</string>
     <string name="script_clear_storage">សម្អាតទិន្នន័យដែលបានរក្សាទុក</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ពិនិត្យធាតុដែលផ្តោតលើ</string>
     <string name="script_inspect_no_item">គ្មានធាតុណាដែលផ្តោត</string>
     <string name="script_inspect_copied">បានចម្លង។ <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">គ្មានលេខសម្គាល់ ដូច្នេះច្បាប់មិនអាចដាក់ឈ្មោះវាបានទេ។ ចម្លង។ <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">គ្មាន id ដូច្នេះច្បាប់មិនអាចសំដៅលើវាបានទេ។ បានចម្លង។ <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">ចម្លងរចនាសម្ព័ន្ធអេក្រង់</string>
     <string name="script_tree_copied">បានចម្លងធាតុ <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">មិនមានបង្អួចសម្រាប់ចម្លងទេ</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">គ្រាប់ចុចកែប្រែ SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g> បន្ទាប់មក <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ពាក្យបញ្ជា</string>
-    <string name="script_commands_summary">កាយវិការ និងសោនៃស្គ្រីបដែលកំពុងដំណើរការគឺនៅពីមុខ SandFly។ បិទមួយដើម្បីរក្សា SandFly។</string>
+    <string name="script_commands_summary">កាយវិការ និងគ្រាប់ចុចរបស់ស្គ្រីបដែលកំពុងដំណើរការ មានអាទិភាពលើរបស់ SandFly។ បិទរបស់ស្គ្រីប ដើម្បីរក្សារបស់ SandFly។</string>
     <string name="script_binding_gesture">កាយវិការ៖ <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">គ្រាប់ចុច៖ <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">ម៉ឺនុយ SandFly</string>

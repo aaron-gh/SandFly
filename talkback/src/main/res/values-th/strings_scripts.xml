@@ -6,7 +6,7 @@
     <string name="script_install_label">ติดตั้งสคริปต์ SandFly</string>
     <string name="script_import_nothing">ไม่มีไฟล์สคริปต์ที่จะติดตั้ง</string>
     <string name="script_import_cannot_open">ไม่สามารถเปิดไฟล์ได้</string>
-    <string name="script_import_repository">ลิงก์นี้ไปยังพื้นที่เก็บข้อมูลทั้งหมด เปิดสคริปต์ที่คุณต้องการ จากนั้นแชร์ลิงก์</string>
+    <string name="script_import_repository">ลิงก์นี้ชี้ไปยังที่เก็บทั้งหมด เปิดสคริปต์ที่ต้องการ แล้วแชร์ลิงก์ของสคริปต์นั้น</string>
     <string name="script_import_summary">ไฟล์ .lua หรือ .zip ที่มี main.lua</string>
     <string name="scripts_category_app">สคริปต์ของแอป</string>
     <string name="scripts_category_global">ปลั๊กอินส่วนกลาง</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">อ่านและเปลี่ยนการแจ้งเตือนที่อ่านออกเสียง</string>
     <string name="script_permission_events">เห็นกิจกรรมทั้งหมดในทุกแอป รวมถึงการพิมพ์</string>
     <string name="script_permission_dialogs">แสดงกล่องโต้ตอบบนแอปใดก็ได้</string>
-    <string name="script_permission_java">เรียกใช้โค้ด Java ด้วยการเข้าถึงทั้งหมดของ SandFly ในทุกแอป</string>
+    <string name="script_permission_java">เรียกใช้โค้ด Java ด้วยสิทธิ์เข้าถึงทั้งหมดของ SandFly ในทุกแอป</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">เปิด</string>
     <string name="script_permissions_title">สิทธิ์</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">การจัดการ</string>
     <string name="script_move_up">เรียกใช้ก่อน</string>
     <string name="script_move_down">เรียกใช้ทีหลัง</string>
-    <string name="script_order_summary">ลำดับสคริปต์ที่เปลี่ยนคำพูดเดียวกัน สคริปต์ของแอปจะทำงานก่อน</string>
+    <string name="script_order_summary">ลำดับของสคริปต์ที่เปลี่ยนเสียงพูดเดียวกัน สคริปต์ของแอปจะทำงานก่อน</string>
     <string name="script_log">บันทึก</string>
     <string name="script_log_summary">ผลลัพธ์และข้อผิดพลาดตั้งแต่ SandFly เริ่มต้น</string>
     <string name="script_clear_storage">ล้างข้อมูลที่เก็บไว้</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ตรวจสอบรายการที่โฟกัส</string>
     <string name="script_inspect_no_item">ไม่มีรายการที่โฟกัสอยู่</string>
     <string name="script_inspect_copied">คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ไม่มีรหัส ดังนั้นกฎจึงไม่สามารถตั้งชื่อได้ คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">ไม่มี id กฎจึงอ้างถึงไม่ได้ คัดลอกแล้ว <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">คัดลอกโครงสร้างหน้าจอ</string>
     <string name="script_tree_copied">คัดลอก <xliff:g id="count">%1$d</xliff:g> รายการแล้ว</string>
     <string name="script_tree_none">ไม่มีหน้าต่างให้คัดลอก</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">ตัวแก้ไข SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g> จากนั้น <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">คำสั่ง</string>
-    <string name="script_commands_summary">ท่าทางและปุ่มของสคริปต์ที่รันอยู่มาก่อน SandFly\'s ปิดอันหนึ่งเพื่อเก็บ SandFly ไว้</string>
+    <string name="script_commands_summary">ท่าทางสัมผัสและปุ่มของสคริปต์ที่ทำงานอยู่มีลำดับก่อนของ SandFly ปิดของสคริปต์เพื่อใช้ของ SandFly</string>
     <string name="script_binding_gesture">ท่าทาง: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">ปุ่ม: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">เมนูของ SandFly</string>

@@ -6,7 +6,7 @@
     <string name="script_install_label">Sakinisha skripti ya SandFly</string>
     <string name="script_import_nothing">Hakuna faili ya skripti ya kusakinisha.</string>
     <string name="script_import_cannot_open">Faili haikuweza kufunguliwa.</string>
-    <string name="script_import_repository">Kiungo hiki ni cha hazina nzima. Fungua hati unayotaka, kisha ushiriki kiungo chake.</string>
+    <string name="script_import_repository">Kiungo hiki ni cha hazina nzima. Fungua skripti unayotaka, kisha ushiriki kiungo chake.</string>
     <string name="script_import_summary">.lua faili, au .zip iliyo na main.lua</string>
     <string name="scripts_category_app">Skripti za programu</string>
     <string name="scripts_category_global">Programu-jalizi za jumla</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Kusoma na kubadilisha arifa zinazotamkwa</string>
     <string name="script_permission_events">Kuona shughuli zote katika kila programu, ikiwemo kuandika</string>
     <string name="script_permission_dialogs">Kuonyesha vidirisha juu ya programu yoyote</string>
-    <string name="script_permission_java">Endesha msimbo wa Java na ufikiaji wote wa SandFly, katika kila programu</string>
+    <string name="script_permission_java">Kuendesha msimbo wa Java kwa ufikiaji wote wa SandFly, katika kila programu</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Washa</string>
     <string name="script_permissions_title">Ruhusa</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Udhibiti</string>
     <string name="script_move_up">Endesha mapema</string>
     <string name="script_move_down">Endesha baadaye</string>
-    <string name="script_order_summary">Agiza kwa hati zinazobadilisha usemi sawa. Hati za programu huendeshwa kwanza.</string>
+    <string name="script_order_summary">Mpangilio wa skripti zinazobadilisha matamshi yaleyale. Skripti za programu huendeshwa kwanza.</string>
     <string name="script_log">Kumbukumbu</string>
     <string name="script_log_summary">Matokeo na hitilafu tangu SandFly ianze</string>
     <string name="script_clear_storage">Futa data iliyohifadhiwa</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Kagua kipengee kilicholengwa</string>
     <string name="script_inspect_no_item">Hakuna kipengee chenye fokasi</string>
     <string name="script_inspect_copied">Imenakiliwa. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Hakuna kitambulisho, kwa hivyo sheria haziwezi kuipa jina. Imenakiliwa. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Hakuna id, kwa hivyo sheria haziwezi kukirejelea. Imenakiliwa. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Nakili mti wa skrini</string>
     <string name="script_tree_copied">Vipengee <xliff:g id="count">%1$d</xliff:g> vimenakiliwa</string>
     <string name="script_tree_none">Hakuna dirisha la kunakili</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">Kitufe cha kurekebisha cha SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, kisha <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Amri</string>
-    <string name="script_commands_summary">Ishara na funguo za hati inayoendeshwa huja kabla ya SandFly\'s. Zima moja ili kuweka SandFly ya.</string>
+    <string name="script_commands_summary">Ishara na vitufe vya skripti inayoendeshwa hutangulia vile vya SandFly. Zima cha skripti ili kubaki na cha SandFly.</string>
     <string name="script_binding_gesture">Ishara: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Vitufe: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">Menyu ya SandFly</string>

@@ -6,7 +6,7 @@
     <string name="script_install_label">SandFly स्क्रिप्ट स्थापित करा</string>
     <string name="script_import_nothing">स्थापित करण्यासाठी स्क्रिप्ट फाइल नाही.</string>
     <string name="script_import_cannot_open">फाइल उघडता आली नाही.</string>
-    <string name="script_import_repository">ही लिंक संपूर्ण भांडाराची आहे. तुम्हाला हवी असलेली स्क्रिप्ट उघडा, त्यानंतर त्याची लिंक शेअर करा.</string>
+    <string name="script_import_repository">ही लिंक संपूर्ण रिपॉझिटरीची आहे. हवी असलेली स्क्रिप्ट उघडा, नंतर तिची लिंक शेअर करा.</string>
     <string name="script_import_summary">.lua फाइल, किंवा main.lua असलेली .zip</string>
     <string name="scripts_category_app">ॲप स्क्रिप्ट्स</string>
     <string name="scripts_category_global">सामान्य प्लगइन</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">बोलल्या जाणाऱ्या सूचना वाचणे आणि बदलणे</string>
     <string name="script_permission_events">टायपिंगसह प्रत्येक ॲपमधील सर्व ॲक्टिव्हिटी पाहणे</string>
     <string name="script_permission_dialogs">कोणत्याही ॲपवर डायलॉग दाखवणे</string>
-    <string name="script_permission_java">प्रत्येक ॲपमध्ये SandFly च्या सर्व प्रवेशासह Java कोड चालवा</string>
+    <string name="script_permission_java">प्रत्येक अ‍ॅपमध्ये SandFly च्या सर्व अ‍ॅक्सेससह Java कोड चालवणे</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">सुरू करा</string>
     <string name="script_permissions_title">परवानग्या</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">व्यवस्थापन</string>
     <string name="script_move_up">आधी चालवा</string>
     <string name="script_move_down">नंतर चालवा</string>
-    <string name="script_order_summary">समान भाषण बदलणाऱ्या स्क्रिप्टचा क्रम. ॲप स्क्रिप्ट प्रथम चालतात.</string>
+    <string name="script_order_summary">एकच भाषण बदलणाऱ्या स्क्रिप्टचा क्रम. अ‍ॅप स्क्रिप्ट आधी चालतात.</string>
     <string name="script_log">लॉग</string>
     <string name="script_log_summary">SandFly सुरू झाल्यापासून आउटपुट आणि त्रुटी</string>
     <string name="script_clear_storage">संग्रहित डेटा साफ करा</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">फोकस केलेला आयटम तपासा</string>
     <string name="script_inspect_no_item">कोणत्याही आयटमवर फोकस नाही</string>
     <string name="script_inspect_copied">कॉपी केले. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">आयडी नाही, त्यामुळे नियम त्याला नाव देऊ शकत नाहीत. कॉपी केले. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id नाही, त्यामुळे नियम त्याचा उल्लेख करू शकत नाहीत. कॉपी केले. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">स्क्रीन ट्री कॉपी करा</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> आयटम कॉपी केले</string>
     <string name="script_tree_none">कॉपी करण्यासाठी कोणतीही विंडो नाही</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly मॉडिफायर की</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, नंतर <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">आज्ञा</string>
-    <string name="script_commands_summary">चालू स्क्रिप्टचे जेश्चर आणि की SandFly च्या आधी येतात. SandFly ठेवण्यासाठी एक बंद करा.</string>
+    <string name="script_commands_summary">चालू स्क्रिप्टचे जेश्चर आणि की SandFly च्या जेश्चर आणि कीपेक्षा प्राधान्य घेतात. SandFly चे ठेवण्यासाठी स्क्रिप्टचे बंद करा.</string>
     <string name="script_binding_gesture">जेश्चर: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">की: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly मेनू</string>

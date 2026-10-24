@@ -6,7 +6,7 @@
     <string name="script_install_label">SandFly ස්ක්‍රිප්ට් ස්ථාපනය කරන්න</string>
     <string name="script_import_nothing">ස්ථාපනය කිරීමට ස්ක්‍රිප්ට් ගොනුවක් නොමැත.</string>
     <string name="script_import_cannot_open">ගොනුව විවෘත කළ නොහැකි විය.</string>
-    <string name="script_import_repository">මෙම සබැඳිය සම්පූර්ණ ගබඩාවකට වේ. ඔබට අවශ්‍ය ස්ක්‍රිප්ට් එක විවෘත කරන්න, ඉන්පසු එහි සබැඳිය බෙදා ගන්න.</string>
+    <string name="script_import_repository">මෙම සබැඳිය සම්පූර්ණ ගබඩාවකට යොමු වේ. ඔබට අවශ්‍ය ස්ක්‍රිප්ට් එක විවෘත කර එහි සබැඳිය බෙදා ගන්න.</string>
     <string name="script_import_summary">.lua ගොනුව, හෝ main.lua සහිත .zip</string>
     <string name="scripts_category_app">යෙදුම් ස්ක්‍රිප්ට්</string>
     <string name="scripts_category_global">පොදු ප්ලගින</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">කියවන දැනුම්දීම් කියවීම සහ වෙනස් කිරීම</string>
     <string name="script_permission_events">ටයිප් කිරීම ඇතුළුව සෑම යෙදුමකම සියලු ක්‍රියාකාරකම් දැකීම</string>
     <string name="script_permission_dialogs">ඕනෑම යෙදුමක් මත සංවාද පෙන්වීම</string>
-    <string name="script_permission_java">සෑම යෙදුමකම SandFly හි සියලුම ප්‍රවේශයන් සමඟ ජාවා කේතය ධාවනය කරන්න</string>
+    <string name="script_permission_java">සෑම යෙදුමකම SandFly හි සියලු ප්‍රවේශය සමඟ Java කේතය ධාවනය කිරීම</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ක්‍රියාත්මක කරන්න</string>
     <string name="script_permissions_title">අවසර</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">කළමනාකරණය</string>
     <string name="script_move_up">කලින් ධාවනය කරන්න</string>
     <string name="script_move_down">පසුව ධාවනය කරන්න</string>
-    <string name="script_order_summary">එකම කථාව වෙනස් කරන ස්ක්‍රිප්ට් සඳහා ඇණවුම් කරන්න. යෙදුම් ස්ක්‍රිප්ට් පළමුව ක්‍රියාත්මක වේ.</string>
+    <string name="script_order_summary">එකම කථනය වෙනස් කරන ස්ක්‍රිප්ට්වල අනුපිළිවෙළ. යෙදුම් ස්ක්‍රිප්ට් පළමුව ක්‍රියාත්මක වේ.</string>
     <string name="script_log">ලොගය</string>
     <string name="script_log_summary">SandFly ආරම්භයේ සිට ප්‍රතිදානය සහ දෝෂ</string>
     <string name="script_clear_storage">ගබඩා කර ඇති දත්ත හිස් කරන්න</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ෆෝකස් කළ අයිතමය පරීක්ෂා කරන්න</string>
     <string name="script_inspect_no_item">කිසිදු අයිතමයක ෆෝකස් නැත</string>
     <string name="script_inspect_copied">පිටපත් කර ඇත. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">හැඳුනුම්පත නැත, එබැවින් රීතිවලට එය නම් කළ නොහැක. පිටපත් කර ඇත. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id නැත, එබැවින් නීතිවලට එය සඳහන් කළ නොහැක. පිටපත් කළා. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">තිර ට්‍රී පිටපත් කරන්න</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> අයිතම පිටපත් කරන ලදී</string>
     <string name="script_tree_none">පිටපත් කිරීමට කවුළුවක් නැත</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly විකරණ යතුර</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, පසුව <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">විධාන</string>
-    <string name="script_commands_summary">ධාවන ස්ක්‍රිප්ට් එකක අභිනයන් සහ යතුරු SandFly ට පෙර පැමිණේ. SandFlys තබා ගැනීමට එකක් ක්‍රියාවිරහිත කරන්න.</string>
+    <string name="script_commands_summary">ධාවනය වන ස්ක්‍රිප්ට් එකක ඉංගිත සහ යතුරු SandFly හි ඒවාට වඩා ප්‍රමුඛ වේ. SandFly හි එක තබා ගැනීමට ස්ක්‍රිප්ට් එකේ එක අක්‍රිය කරන්න.</string>
     <string name="script_binding_gesture">අභිනය: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">යතුරු: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly මෙනුව</string>

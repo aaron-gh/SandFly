@@ -6,7 +6,7 @@
     <string name="script_install_label">SandFly ସ୍କ୍ରିପ୍ଟ ସଂସ୍ଥାପନ କରନ୍ତୁ</string>
     <string name="script_import_nothing">ସଂସ୍ଥାପନ କରିବାକୁ କୌଣସି ସ୍କ୍ରିପ୍ଟ ଫାଇଲ୍ ନାହିଁ।</string>
     <string name="script_import_cannot_open">ଫାଇଲ୍ ଖୋଲାଯାଇପାରିଲା ନାହିଁ।</string>
-    <string name="script_import_repository">ଏହି ଲିଙ୍କ୍ ଏକ ପୁରା ସଂଗ୍ରହାଳୟ ସହିତ | ଆପଣ ଚାହୁଁଥିବା ସ୍କ୍ରିପ୍ଟ ଖୋଲନ୍ତୁ, ତା’ପରେ ଏହାର ଲିଙ୍କ୍ ଅଂଶୀଦାର କରନ୍ତୁ |</string>
+    <string name="script_import_repository">ଏହି ଲିଙ୍କ୍ ସମ୍ପୂର୍ଣ୍ଣ ରିପୋଜିଟୋରୀର। ଆପଣ ଚାହୁଁଥିବା ସ୍କ୍ରିପ୍ଟ ଖୋଲନ୍ତୁ, ତାପରେ ଏହାର ଲିଙ୍କ୍ ସେୟାର୍ କରନ୍ତୁ।</string>
     <string name="script_import_summary">.lua ଫାଇଲ୍, କିମ୍ବା main.lua ଥିବା .zip</string>
     <string name="scripts_category_app">ଆପ୍ ସ୍କ୍ରିପ୍ଟଗୁଡିକ</string>
     <string name="scripts_category_global">ଗ୍ଲୋବାଲ୍ ପ୍ଲଗଇନ୍</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">ପଢ଼ାଯାଉଥିବା ବିଜ୍ଞପ୍ତି ପଢ଼ିବା ଏବଂ ବଦଳାଇବା</string>
     <string name="script_permission_events">ଟାଇପିଂ ସହିତ ପ୍ରତ୍ୟେକ ଆପ୍‌ର ସମସ୍ତ କାର୍ଯ୍ୟକଳାପ ଦେଖିବା</string>
     <string name="script_permission_dialogs">ଯେକୌଣସି ଆପ୍ ଉପରେ ଡାଏଲଗ୍ ଦେଖାଇବା</string>
-    <string name="script_permission_java">ପ୍ରତ୍ୟେକ ଆପରେ SandFly ର ସମସ୍ତ ଆକ୍ସେସ୍ ସହିତ ଜାଭା କୋଡ୍ ଚଲାନ୍ତୁ</string>
+    <string name="script_permission_java">ପ୍ରତ୍ୟେକ ଆପ୍‌ରେ SandFlyର ସମସ୍ତ ଆକ୍ସେସ୍ ସହିତ Java କୋଡ୍ ଚଲାଇବା</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ଚାଲୁ କରନ୍ତୁ</string>
     <string name="script_permissions_title">ଅନୁମତି</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">ପରିଚାଳନା</string>
     <string name="script_move_up">ପୂର୍ବରୁ ଚଲାନ୍ତୁ</string>
     <string name="script_move_down">ପରେ ଚଲାନ୍ତୁ</string>
-    <string name="script_order_summary">ସମାନ ବକ୍ତବ୍ୟ ପରିବର୍ତ୍ତନ କରୁଥିବା ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ପାଇଁ ଅର୍ଡର | ଆପ୍ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ପ୍ରଥମେ ଚାଲିଥାଏ |</string>
+    <string name="script_order_summary">ସମାନ ସ୍ପିଚ୍ ବଦଳାଉଥିବା ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକର କ୍ରମ। ଆପ୍ ସ୍କ୍ରିପ୍ଟଗୁଡ଼ିକ ପ୍ରଥମେ ଚାଲେ।</string>
     <string name="script_log">ଲଗ୍</string>
     <string name="script_log_summary">SandFly ଆରମ୍ଭରୁ ଆଉଟପୁଟ୍ ଏବଂ ତ୍ରୁଟି</string>
     <string name="script_clear_storage">ଗଚ୍ଛିତ ତଥ୍ୟ ସଫା କରନ୍ତୁ</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ଫୋକସ୍ ଆଇଟମ୍ ଯାଞ୍ଚ କରନ୍ତୁ</string>
     <string name="script_inspect_no_item">କୌଣସି ବସ୍ତୁର ଫୋକସ୍ ନାହିଁ</string>
     <string name="script_inspect_copied">କପି କରାଯାଇଛି। <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">କୌଣସି id ନାହିଁ, ତେଣୁ ନିୟମ ଏହାର ନାମ ଦେଇପାରିବ ନାହିଁ | କପି କରାଯାଇଛି | <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id ନାହିଁ, ତେଣୁ ନିୟମଗୁଡ଼ିକ ଏହାକୁ ସୂଚାଇପାରିବ ନାହିଁ। କପି କରାଗଲା। <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">ସ୍କ୍ରିନ୍ ଟ୍ରି କପି କରନ୍ତୁ</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g>ଟି ଆଇଟମ କପି କରାଯାଇଛି</string>
     <string name="script_tree_none">କପି କରିବାକୁ କୌଣସି ୱିଣ୍ଡୋ ନାହିଁ</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly ମୋଡିଫାୟର୍ କି</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ତାପରେ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ନିର୍ଦ୍ଦେଶଗୁଡ଼ିକ</string>
-    <string name="script_commands_summary">ଏକ ଚାଲୁଥିବା ସ୍କ୍ରିପ୍ଟର ଅଙ୍ଗଭଙ୍ଗୀ ଏବଂ ଚାବି SandFly ପୂର୍ବରୁ ଆସେ | SandFly ରଖିବା ପାଇଁ ଗୋଟିଏ ବନ୍ଦ କରନ୍ତୁ |</string>
+    <string name="script_commands_summary">ଚାଲୁଥିବା ସ୍କ୍ରିପ୍ଟର ଜେଶ୍ଚର ଓ କିଗୁଡ଼ିକ SandFlyର ଜେଶ୍ଚର ଓ କି ଠାରୁ ଅଗ୍ରାଧିକାର ପାଏ। SandFlyର ରଖିବାକୁ ସ୍କ୍ରିପ୍ଟର ବନ୍ଦ କରନ୍ତୁ।</string>
     <string name="script_binding_gesture">ଅଙ୍ଗଭଙ୍ଗୀ: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">କି: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly ମେନୁ</string>

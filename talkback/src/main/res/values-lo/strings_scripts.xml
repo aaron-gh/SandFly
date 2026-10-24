@@ -6,7 +6,7 @@
     <string name="script_install_label">ຕິດຕັ້ງສະຄຣິບ SandFly</string>
     <string name="script_import_nothing">ບໍ່ມີໄຟລ໌ສະຄຣິບເພື່ອຕິດຕັ້ງ.</string>
     <string name="script_import_cannot_open">ບໍ່ສາມາດເປີດໄຟລ໌ໄດ້.</string>
-    <string name="script_import_repository">ລິ້ງນີ້ແມ່ນໄປຫາບ່ອນເກັບມ້ຽນທັງໝົດ. ເປີດສະຄຣິບທີ່ທ່ານຕ້ອງການ, ຈາກນັ້ນແບ່ງປັນລິ້ງຂອງມັນ.</string>
+    <string name="script_import_repository">ລິ້ງນີ້ໄປຫາບ່ອນເກັບທັງໝົດ. ເປີດສະຄຣິບທີ່ຕ້ອງການ, ແລ້ວແບ່ງປັນລິ້ງຂອງມັນ.</string>
     <string name="script_import_summary">ໄຟລ໌ .lua ຫຼື .zip ທີ່ມີ main.lua</string>
     <string name="scripts_category_app">ສະຄຣິບແອັບ</string>
     <string name="scripts_category_global">ປລັກອິນທົ່ວໄປ</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">ອ່ານ ແລະ ປ່ຽນການແຈ້ງເຕືອນທີ່ອ່ານອອກສຽງ</string>
     <string name="script_permission_events">ເບິ່ງການເຄື່ອນໄຫວທັງໝົດໃນທຸກໆແອັບ, ລວມທັງການພິມ</string>
     <string name="script_permission_dialogs">ສະແດງກ່ອງໂຕ້ຕອບເທິງແອັບໃດກໍໄດ້</string>
-    <string name="script_permission_java">ແລ່ນລະຫັດ Java ດ້ວຍການເຂົ້າເຖິງທັງໝົດຂອງ SandFly, ໃນທຸກແອັບ</string>
+    <string name="script_permission_java">ແລ່ນລະຫັດ Java ດ້ວຍສິດເຂົ້າເຖິງທັງໝົດຂອງ SandFly ໃນທຸກແອັບ</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ເປີດ</string>
     <string name="script_permissions_title">ການອະນຸຍາດ</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">ການຈັດການ</string>
     <string name="script_move_up">ດຳເນີນການກ່ອນ</string>
     <string name="script_move_down">ດຳເນີນການພາຍຫຼັງ</string>
-    <string name="script_order_summary">ຄໍາສັ່ງສໍາລັບສະຄິບທີ່ປ່ຽນຄໍາເວົ້າດຽວກັນ. ສະຄຣິບແອັບເຮັດວຽກກ່ອນ.</string>
+    <string name="script_order_summary">ລຳດັບຂອງສະຄຣິບທີ່ປ່ຽນສຽງເວົ້າດຽວກັນ. ສະຄຣິບແອັບເຮັດວຽກກ່ອນ.</string>
     <string name="script_log">ບັນທຶກ</string>
     <string name="script_log_summary">ຜົນອອກ ແລະ ຂໍ້ຜິດພາດນັບຕັ້ງແຕ່ SandFly ເລີ່ມ</string>
     <string name="script_clear_storage">ລຶບຂໍ້ມູນທີ່ເກັບໄວ້</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ກວດກາລາຍການທີ່ໂຟກັສ</string>
     <string name="script_inspect_no_item">ບໍ່ມີລາຍການທີ່ຖືກໂຟກັສ</string>
     <string name="script_inspect_copied">ສຳເນົາແລ້ວ. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ບໍ່ມີ id, ດັ່ງນັ້ນກົດລະບຽບບໍ່ສາມາດຕັ້ງຊື່ມັນໄດ້. ສຳເນົາແລ້ວ. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">ບໍ່ມີ id, ສະນັ້ນກົດບໍ່ສາມາດອ້າງອີງມັນໄດ້. ສຳເນົາແລ້ວ. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">ສຳເນົາໂຄງສ້າງໜ້າຈໍ</string>
     <string name="script_tree_copied">ສຳເນົາລາຍການ <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">ບໍ່ມີປ່ອງຢ້ຽມໃຫ້ສຳເນົາ</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">ປຸ່ມປັບແຕ່ງ SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ຈາກນັ້ນ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ຄໍາສັ່ງ</string>
-    <string name="script_commands_summary">ທ່າທາງ ແລະກະແຈຂອງສະຄຣິບທີ່ໃຊ້ຢູ່ກ່ອນໜ້າ SandFly. ປິດອັນໜຶ່ງເພື່ອຮັກສາໄວ້ SandFly.</string>
+    <string name="script_commands_summary">ທ່າທາງ ແລະ ປຸ່ມຂອງສະຄຣິບທີ່ກຳລັງເຮັດວຽກມີສິດກ່ອນຂອງ SandFly. ປິດອັນຂອງສະຄຣິບເພື່ອໃຊ້ອັນຂອງ SandFly.</string>
     <string name="script_binding_gesture">ທ່າທາງ: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">ປຸ່ມ: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">ເມນູ SandFly</string>

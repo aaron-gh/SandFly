@@ -6,7 +6,7 @@
     <string name="script_install_label">Installer SandFly-skriptet</string>
     <string name="script_import_nothing">Det er ingen skriptfil å installere.</string>
     <string name="script_import_cannot_open">Filen kunne ikke åpnes.</string>
-    <string name="script_import_repository">Denne lenken er til et helt depot. Åpne skriptet du ønsker, og del deretter koblingen.</string>
+    <string name="script_import_repository">Denne lenken går til et helt repositorium. Åpne skriptet du vil ha, og del lenken til det.</string>
     <string name="script_import_summary">.lua-fil, eller .zip med main.lua</string>
     <string name="scripts_category_app">App-skript</string>
     <string name="scripts_category_global">Globale plugins</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Lese og endre varsler som leses opp</string>
     <string name="script_permission_events">Se all aktivitet i alle apper, inkludert skriving</string>
     <string name="script_permission_dialogs">Vise dialogbokser over alle apper</string>
-    <string name="script_permission_java">Kjør Java-kode med alle SandFlys tilgang, i hver app</string>
+    <string name="script_permission_java">Kjøre Java-kode med all tilgangen SandFly har, i alle apper</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Slå på</string>
     <string name="script_permissions_title">Tillatelser</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Administrasjon</string>
     <string name="script_move_up">Kjør tidligere</string>
     <string name="script_move_down">Kjør senere</string>
-    <string name="script_order_summary">Rekkefølge for skript som endrer samme tale. App-skript kjører først.</string>
+    <string name="script_order_summary">Rekkefølge for skript som endrer den samme talen. App-skript kjøres først.</string>
     <string name="script_log">Logg</string>
     <string name="script_log_summary">Utdata og feil siden SandFly startet</string>
     <string name="script_clear_storage">Slett lagrede data</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Inspiser fokusert element</string>
     <string name="script_inspect_no_item">Ingen elementer har fokus</string>
     <string name="script_inspect_copied">Kopiert. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Ingen id, så regler kan ikke navngi det. Kopiert. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Ingen id, så regler kan ikke vise til det. Kopiert. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopier skjermtreet</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> elementer kopiert</string>
     <string name="script_tree_none">Ingen vindu å kopiere</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly-modifikatortast</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, deretter <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Kommandoer</string>
-    <string name="script_commands_summary">Bevegelser og taster til et kjørende skript kommer før SandFly. Slå av en for å beholde SandFly.</string>
+    <string name="script_commands_summary">Bevegelser og taster i et kjørende skript går foran SandFlys. Slå av skriptets for å beholde SandFlys.</string>
     <string name="script_binding_gesture">Bevegelse: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Taster: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly-meny</string>

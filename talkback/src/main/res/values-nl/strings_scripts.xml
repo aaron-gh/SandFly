@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Gesproken meldingen lezen en wijzigen</string>
     <string name="script_permission_events">Alle activiteit in elke app zien, inclusief typen</string>
     <string name="script_permission_dialogs">Dialoogvensters boven elke app tonen</string>
-    <string name="script_permission_java">Voer Java-code uit met alle toegang van SandFly, in elke app</string>
+    <string name="script_permission_java">Java-code uitvoeren met alle toegang van SandFly, in elke app</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Aanzetten</string>
     <string name="script_permissions_title">Machtigingen</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Beheer</string>
     <string name="script_move_up">Eerder uitvoeren</string>
     <string name="script_move_down">Later uitvoeren</string>
-    <string name="script_order_summary">Bestel voor scripts die dezelfde spraak wijzigen. App-scripts worden eerst uitgevoerd.</string>
+    <string name="script_order_summary">Volgorde voor scripts die dezelfde spraak wijzigen. App-scripts worden eerst uitgevoerd.</string>
     <string name="script_log">Logboek</string>
     <string name="script_log_summary">Uitvoer en fouten sinds het starten van SandFly</string>
     <string name="script_clear_storage">Opgeslagen gegevens wissen</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Gefocust item inspecteren</string>
     <string name="script_inspect_no_item">Geen enkel item heeft focus</string>
     <string name="script_inspect_copied">Gekopieerd. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Geen ID, dus regels kunnen het niet benoemen. Gekopieerd. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Geen id, dus regels kunnen er niet naar verwijzen. Gekopieerd. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Schermboom kopiëren</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> items gekopieerd</string>
     <string name="script_tree_none">Geen venster om te kopiëren</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly-modificatietoets</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, dan <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Commando\'s</string>
-    <string name="script_commands_summary">Gebaren en sleutels van een lopend script komen vóór SandFly\'s. Schakel er één uit om SandFly\'s te behouden.</string>
+    <string name="script_commands_summary">Gebaren en toetsen van een actief script gaan voor die van SandFly. Zet die van het script uit om die van SandFly te houden.</string>
     <string name="script_binding_gesture">Gebaar: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Toetsen: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly-menu</string>

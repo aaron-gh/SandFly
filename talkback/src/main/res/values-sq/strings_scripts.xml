@@ -6,7 +6,7 @@
     <string name="script_install_label">Instalo skriptin SandFly</string>
     <string name="script_import_nothing">Nuk ka asnjë skedar skripti për të instaluar.</string>
     <string name="script_import_cannot_open">Skedari nuk mund të hapej.</string>
-    <string name="script_import_repository">Kjo lidhje është në një depo të tërë. Hapni skriptin që dëshironi, më pas ndajeni lidhjen e tij.</string>
+    <string name="script_import_repository">Kjo lidhje të çon te një depo e tërë. Hapni skriptin që dëshironi, pastaj ndani lidhjen e tij.</string>
     <string name="script_import_summary">Skedar .lua ose .zip me main.lua</string>
     <string name="scripts_category_app">Skriptet e aplikacioneve</string>
     <string name="scripts_category_global">Shtojcat globale</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Leximi dhe ndryshimi i njoftimeve që lexohen me zë</string>
     <string name="script_permission_events">Shikimi i gjithë aktivitetit në çdo aplikacion, përfshirë shkrimin</string>
     <string name="script_permission_dialogs">Shfaqja e dialogëve mbi çdo aplikacion</string>
-    <string name="script_permission_java">Ekzekutoni kodin Java me të gjithë aksesin e SandFly, në çdo aplikacion</string>
+    <string name="script_permission_java">Ekzekutimi i kodit Java me të gjitha qasjet e SandFly, në çdo aplikacion</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Aktivizo</string>
     <string name="script_permissions_title">Lejet</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Menaxhimi</string>
     <string name="script_move_up">Ekzekuto më herët</string>
     <string name="script_move_down">Ekzekuto më vonë</string>
-    <string name="script_order_summary">Porosit për skriptet që ndryshojnë të njëjtin fjalim. Skriptet e aplikacioneve ekzekutohen së pari.</string>
+    <string name="script_order_summary">Radha e skripteve që ndryshojnë të njëjtin të folur. Skriptet e aplikacioneve ekzekutohen të parat.</string>
     <string name="script_log">Regjistri</string>
     <string name="script_log_summary">Dalja dhe gabimet që nga nisja e SandFly</string>
     <string name="script_clear_storage">Pastro të dhënat e ruajtura</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Inspekto artikullin e fokusuar</string>
     <string name="script_inspect_no_item">Asnjë artikull nuk ka fokus</string>
     <string name="script_inspect_copied">U kopjua. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Nuk ka id, kështu që rregullat nuk mund ta emërtojnë atë. E kopjuar. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Nuk ka id, prandaj rregullat nuk mund t\'i referohen. U kopjua. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopjo pemën e ekranit</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> elemente u kopjuan</string>
     <string name="script_tree_none">Nuk ka dritare për të kopjuar</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">Tasti modifikues i SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, pastaj <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komandat</string>
-    <string name="script_commands_summary">Gjestet dhe tastet e një skripti ekzekutues vijnë përpara SandFly. Fike njërën për të mbajtur SandFly.</string>
+    <string name="script_commands_summary">Gjestet dhe tastet e një skripti që po ekzekutohet kanë përparësi ndaj atyre të SandFly. Çaktivizoni atë të skriptit për të mbajtur atë të SandFly.</string>
     <string name="script_binding_gesture">Gjest: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Tastet: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">Menuja SandFly</string>

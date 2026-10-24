@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">చదివే నోటిఫికేషన్‌లను చదవడం, మార్చడం</string>
     <string name="script_permission_events">టైపింగ్‌తో సహా ప్రతి యాప్‌లోని అన్ని కార్యకలాపాలను చూడడం</string>
     <string name="script_permission_dialogs">ఏదైనా యాప్‌పై డైలాగ్‌లను చూపడం</string>
-    <string name="script_permission_java">ప్రతి యాప్‌లో SandFly యొక్క మొత్తం యాక్సెస్‌తో Java కోడ్‌ని అమలు చేయండి</string>
+    <string name="script_permission_java">ప్రతి యాప్‌లో SandFly మొత్తం యాక్సెస్‌తో Java కోడ్‌ను రన్ చేయడం</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ఆన్ చేయండి</string>
     <string name="script_permissions_title">అనుమతులు</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">నిర్వహణ</string>
     <string name="script_move_up">ముందుగా నడపండి</string>
     <string name="script_move_down">తర్వాత అమలు చేయండి</string>
-    <string name="script_order_summary">అదే ప్రసంగాన్ని మార్చే స్క్రిప్ట్‌ల కోసం ఆర్డర్ చేయండి. యాప్ స్క్రిప్ట్‌లు ముందుగా రన్ అవుతాయి.</string>
+    <string name="script_order_summary">ఒకే ప్రసంగాన్ని మార్చే స్క్రిప్ట్‌ల క్రమం. యాప్ స్క్రిప్ట్‌లు ముందుగా రన్ అవుతాయి.</string>
     <string name="script_log">లాగ్</string>
     <string name="script_log_summary">SandFly ప్రారంభించినప్పటి నుండి అవుట్‌పుట్ మరియు లోపాలు</string>
     <string name="script_clear_storage">నిల్వ చేసిన డేటాను క్లియర్ చేయండి</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ఫోకస్ చేసిన అంశాన్ని తనిఖీ చేయి</string>
     <string name="script_inspect_no_item">ఏ అంశంపైనా ఫోకస్ లేదు</string>
     <string name="script_inspect_copied">కాపీ చేయబడింది. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ఐడి లేదు, కాబట్టి నియమాలు దీనికి పేరు పెట్టలేవు. కాపీ చేయబడింది. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id లేదు, కాబట్టి నియమాలు దీన్ని సూచించలేవు. కాపీ చేయబడింది. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">స్క్రీన్ ట్రీని కాపీ చేయి</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> అంశాలు కాపీ చేయబడ్డాయి</string>
     <string name="script_tree_none">కాపీ చేయడానికి విండో లేదు</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly మాడిఫైయర్</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ఆపై <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ఆదేశాలు</string>
-    <string name="script_commands_summary">నడుస్తున్న స్క్రిప్ట్ యొక్క సంజ్ఞలు మరియు కీలు SandFlys కంటే ముందు వస్తాయి. SandFlyలను ఉంచడానికి ఒకదాన్ని ఆఫ్ చేయండి.</string>
+    <string name="script_commands_summary">అమలవుతున్న స్క్రిప్ట్ సంజ్ఞలు, కీలకు SandFly వాటి కంటే ప్రాధాన్యత ఉంటుంది. SandFlyవి ఉంచడానికి స్క్రిప్ట్‌వి ఆఫ్ చేయండి.</string>
     <string name="script_binding_gesture">సంజ్ఞ: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">కీలు: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly మెను</string>

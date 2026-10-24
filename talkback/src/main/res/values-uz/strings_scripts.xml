@@ -6,7 +6,7 @@
     <string name="script_install_label">SandFly skriptini oʻrnatish</string>
     <string name="script_import_nothing">O\'rnatish uchun skript fayli yo\'q.</string>
     <string name="script_import_cannot_open">Faylni ochib boʻlmadi.</string>
-    <string name="script_import_repository">Bu havola butun omborga tegishli. O\'zingiz xohlagan skriptni oching, keyin uning havolasini baham ko\'ring.</string>
+    <string name="script_import_repository">Bu havola butun repozitoriyga olib boradi. Kerakli skriptni oching, soʻng uning havolasini ulashing.</string>
     <string name="script_import_summary">.lua fayli yoki main.lua bor .zip</string>
     <string name="scripts_category_app">Ilova skriptlari</string>
     <string name="scripts_category_global">Global plaginlar</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Ovoz chiqarib oʻqiladigan bildirishnomalarni oʻqish va oʻzgartirish</string>
     <string name="script_permission_events">Har bir ilovadagi barcha harakatlarni, jumladan yozishni koʻrish</string>
     <string name="script_permission_dialogs">Har qanday ilova ustida dialog oynalarini koʻrsatish</string>
-    <string name="script_permission_java">Har bir ilovada SandFly ruxsati bilan Java kodini ishga tushiring</string>
+    <string name="script_permission_java">Har bir ilovada SandFly’ning barcha ruxsatlari bilan Java kodini ishga tushirish</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Yoqish</string>
     <string name="script_permissions_title">Ruxsatlar</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Boshqaruv</string>
     <string name="script_move_up">Oldinroq ishga tushirish</string>
     <string name="script_move_down">Keyinroq ishga tushirish</string>
-    <string name="script_order_summary">Xuddi shu nutqni o\'zgartiradigan skriptlarga buyurtma bering. Ilova skriptlari birinchi bo\'lib ishlaydi.</string>
+    <string name="script_order_summary">Bir xil nutqni oʻzgartiradigan skriptlar tartibi. Avval ilova skriptlari ishlaydi.</string>
     <string name="script_log">Jurnal</string>
     <string name="script_log_summary">SandFly boshlanganidan beri chiqish va xatolar</string>
     <string name="script_clear_storage">Saqlangan ma\'lumotlarni o\'chirish</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Fokusdagi elementni tekshirish</string>
     <string name="script_inspect_no_item">Hech bir elementda fokus yoʻq</string>
     <string name="script_inspect_copied">Ko‘chirildi. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Id yo\'q, shuning uchun qoidalar uni nomlay olmaydi. Ko‘chirildi. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id yoʻq, shuning uchun qoidalar unga murojaat qila olmaydi. Nusxalandi. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Ekran daraxtini nusxalash</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ta element nusxalandi</string>
     <string name="script_tree_none">Nusxa olish uchun oyna yo‘q</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly modifikator tugmasi</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, keyin <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Buyruqlar</string>
-    <string name="script_commands_summary">Ishlayotgan skriptning imo-ishoralari va tugmalari SandFly dan oldin keladi. SandFly-ni saqlab qolish uchun birini o\'chiring.</string>
+    <string name="script_commands_summary">Ishlayotgan skriptning ishoralari va tugmalari SandFly’nikidan ustun turadi. SandFly’nikini saqlash uchun skriptnikini oʻchiring.</string>
     <string name="script_binding_gesture">Imo-ishora: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Tugmalar: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly menyusi</string>

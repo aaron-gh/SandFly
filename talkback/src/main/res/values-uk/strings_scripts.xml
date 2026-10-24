@@ -6,7 +6,7 @@
     <string name="script_install_label">Встановити скрипт SandFly</string>
     <string name="script_import_nothing">Немає файлу скрипту для встановлення.</string>
     <string name="script_import_cannot_open">Не вдалося відкрити файл.</string>
-    <string name="script_import_repository">Це посилання на ціле сховище. Відкрийте потрібний сценарій і поділіться його посиланням.</string>
+    <string name="script_import_repository">Це посилання на весь репозиторій. Відкрийте потрібний скрипт і поділіться його посиланням.</string>
     <string name="script_import_summary">Файл .lua або .zip із main.lua</string>
     <string name="scripts_category_app">Скрипти застосунків</string>
     <string name="scripts_category_global">Глобальні плагіни</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Читати та змінювати голосові сповіщення</string>
     <string name="script_permission_events">Бачити всі дії в кожній програмі, зокрема введення тексту</string>
     <string name="script_permission_dialogs">Показувати діалогові вікна над будь-якою програмою</string>
-    <string name="script_permission_java">Запускайте код Java з усім доступом SandFly у кожній програмі</string>
+    <string name="script_permission_java">Запуск коду Java з усім доступом SandFly у будь-якому додатку</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Увімкнути</string>
     <string name="script_permissions_title">Дозволи</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Керування</string>
     <string name="script_move_up">Виконувати раніше</string>
     <string name="script_move_down">Виконувати пізніше</string>
-    <string name="script_order_summary">Замовлення сценаріїв, які змінюють те саме мовлення. Спочатку запускаються сценарії додатків.</string>
+    <string name="script_order_summary">Порядок скриптів, що змінюють те саме мовлення. Скрипти додатків виконуються першими.</string>
     <string name="script_log">Журнал</string>
     <string name="script_log_summary">Вивід і помилки з моменту запуску SandFly</string>
     <string name="script_clear_storage">Очистити збережені дані</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Оглянути елемент у фокусі</string>
     <string name="script_inspect_no_item">Жоден елемент не має фокусу</string>
     <string name="script_inspect_copied">Скопійовано. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Немає ідентифікатора, тому правила не можуть його назвати. Скопійовано. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Немає id, тому правила не можуть на нього посилатися. Скопійовано. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Копіювати дерево екрана</string>
     <string name="script_tree_copied">Скопійовано елементів: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Немає вікна для копіювання</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">Клавіша-модифікатор SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, потім <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Команди</string>
-    <string name="script_commands_summary">Жести та клавіші запущеного сценарію передують SandFly. Вимкніть один, щоб зберегти SandFly.</string>
+    <string name="script_commands_summary">Жести й клавіші запущеного скрипту мають пріоритет над жестами й клавішами SandFly. Щоб залишити жест чи клавішу SandFly, вимкніть їх у скрипті.</string>
     <string name="script_binding_gesture">Жест: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Клавіші: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">Меню SandFly</string>

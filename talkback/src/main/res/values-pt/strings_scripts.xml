@@ -6,7 +6,7 @@
     <string name="script_install_label">Instalar script do SandFly</string>
     <string name="script_import_nothing">Não há arquivo de script para instalar.</string>
     <string name="script_import_cannot_open">O arquivo não pôde ser aberto.</string>
-    <string name="script_import_repository">Este link é para um repositório completo. Abra o script desejado e compartilhe seu link.</string>
+    <string name="script_import_repository">Este link é de um repositório inteiro. Abra o script desejado e compartilhe o link dele.</string>
     <string name="script_import_summary">Arquivo .lua ou .zip com main.lua</string>
     <string name="scripts_category_app">Scripts de aplicativos</string>
     <string name="scripts_category_global">Plug-ins globais</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Ler e alterar notificações lidas em voz alta</string>
     <string name="script_permission_events">Ver todas as atividades em todos os apps, incluindo a digitação</string>
     <string name="script_permission_dialogs">Mostrar caixas de diálogo sobre qualquer app</string>
-    <string name="script_permission_java">Execute o código Java com todo o acesso do SandFly, em todos os aplicativos</string>
+    <string name="script_permission_java">Executar código Java com todo o acesso do SandFly, em qualquer app</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Ativar</string>
     <string name="script_permissions_title">Permissões</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Gerenciamento</string>
     <string name="script_move_up">Executar mais cedo</string>
     <string name="script_move_down">Executar mais tarde</string>
-    <string name="script_order_summary">Peça scripts que alterem o mesmo discurso. Os scripts do aplicativo são executados primeiro.</string>
+    <string name="script_order_summary">Ordem dos scripts que alteram a mesma fala. Os scripts de apps são executados primeiro.</string>
     <string name="script_log">Registro</string>
     <string name="script_log_summary">Saída e erros desde que o SandFly foi iniciado</string>
     <string name="script_clear_storage">Limpar dados armazenados</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Inspecionar item em foco</string>
     <string name="script_inspect_no_item">Nenhum item tem foco</string>
     <string name="script_inspect_copied">Copiado. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Sem identificação, então as regras não podem nomeá-lo. Copiado. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Sem id, então as regras não podem se referir a ele. Copiado. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Copiar árvore de tela</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> itens copiados</string>
     <string name="script_tree_none">Nenhuma janela para copiar</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">Tecla modificadora do SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, depois <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Comandos</string>
-    <string name="script_commands_summary">Gestos e teclas de um script em execução vêm antes de SandFly. Desligue um para manter SandFly.</string>
+    <string name="script_commands_summary">Os gestos e teclas de um script em execução têm prioridade sobre os do SandFly. Desative o do script para manter o do SandFly.</string>
     <string name="script_binding_gesture">Gesto: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Teclas: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">Menu do SandFly</string>

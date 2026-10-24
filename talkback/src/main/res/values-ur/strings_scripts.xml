@@ -6,7 +6,7 @@
     <string name="script_install_label">SandFly اسکرپٹ انسٹال کریں</string>
     <string name="script_import_nothing">انسٹال کرنے کے لیے کوئی اسکرپٹ فائل نہیں ہے۔</string>
     <string name="script_import_cannot_open">فائل نہیں کھولی جا سکی۔</string>
-    <string name="script_import_repository">یہ لنک ایک پورے ذخیرہ کا ہے۔ آپ جو اسکرپٹ چاہتے ہیں اسے کھولیں، پھر اس کا لنک شیئر کریں۔</string>
+    <string name="script_import_repository">یہ لنک پوری ریپازٹری کا ہے۔ مطلوبہ اسکرپٹ کھولیں، پھر اس کا لنک شیئر کریں۔</string>
     <string name="script_import_summary">.lua فائل، یا main.lua والی .zip</string>
     <string name="scripts_category_app">ایپ اسکرپٹس</string>
     <string name="scripts_category_global">عمومی پلگ انز</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">بولی جانے والی اطلاعات پڑھنا اور تبدیل کرنا</string>
     <string name="script_permission_events">ٹائپنگ سمیت ہر ایپ کی تمام سرگرمی دیکھنا</string>
     <string name="script_permission_dialogs">کسی بھی ایپ کے اوپر ڈائیلاگ دکھانا</string>
-    <string name="script_permission_java">ہر ایپ میں SandFly کی تمام رسائی کے ساتھ جاوا کوڈ چلائیں</string>
+    <string name="script_permission_java">ہر ایپ میں SandFly کی تمام رسائی کے ساتھ Java کوڈ چلانا</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">آن کریں</string>
     <string name="script_permissions_title">اجازتیں</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">انتظام</string>
     <string name="script_move_up">پہلے چلائیں</string>
     <string name="script_move_down">بعد میں چلائیں</string>
-    <string name="script_order_summary">ایک ہی تقریر کو تبدیل کرنے والے اسکرپٹس کے لیے ترتیب دیں۔ ایپ اسکرپٹس پہلے چلتی ہیں۔</string>
+    <string name="script_order_summary">ایک ہی تقریر کو تبدیل کرنے والی اسکرپٹس کی ترتیب۔ ایپ اسکرپٹس پہلے چلتی ہیں۔</string>
     <string name="script_log">لاگ</string>
     <string name="script_log_summary">SandFly شروع ہونے کے بعد سے آؤٹ پٹ اور خرابیاں</string>
     <string name="script_clear_storage">ذخیرہ شدہ ڈیٹا کو صاف کریں</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">فوکس شدہ آئٹم کا معائنہ کریں</string>
     <string name="script_inspect_no_item">کسی بھی شے پر فوکس نہیں ہے</string>
     <string name="script_inspect_copied">کاپی ہو گیا۔ <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">کوئی آئی ڈی نہیں، لہذا قواعد اس کا نام نہیں لے سکتے۔ کاپی <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id نہیں ہے، اس لیے قواعد اس کا حوالہ نہیں دے سکتے۔ کاپی ہو گیا۔ <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">اسکرین ٹری کو کاپی کریں</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> آئٹمز کاپی ہو گئے</string>
     <string name="script_tree_none">کاپی کرنے کے لیے کوئی ونڈو نہیں</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly موڈیفائر کلید</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>، پھر <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">کمانڈز</string>
-    <string name="script_commands_summary">چلنے والی اسکرپٹ کے اشارے اور کلیدیں SandFly\'s سے پہلے آتے ہیں۔ SandFly رکھنے کے لیے ایک کو آف کریں۔</string>
+    <string name="script_commands_summary">چلنے والی اسکرپٹ کے اشارے اور کلیدیں SandFly کے اشاروں اور کلیدوں پر ترجیح رکھتی ہیں۔ SandFly والا رکھنے کے لیے اسکرپٹ والا بند کریں۔</string>
     <string name="script_binding_gesture">اشارہ: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">کلیدیں: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly مینو</string>

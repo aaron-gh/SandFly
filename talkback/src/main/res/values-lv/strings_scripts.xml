@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Lasīt un mainīt izrunātos paziņojumus</string>
     <string name="script_permission_events">Redzēt visas darbības katrā lietotnē, tostarp rakstīšanu</string>
     <string name="script_permission_dialogs">Rādīt dialoglodziņus pāri jebkurai lietotnei</string>
-    <string name="script_permission_java">Palaidiet Java kodu ar visu SandFly piekļuvi katrā lietotnē</string>
+    <string name="script_permission_java">Palaist Java kodu ar visām SandFly piekļuves tiesībām katrā lietotnē</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Ieslēgt</string>
     <string name="script_permissions_title">Atļaujas</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Pārvaldība</string>
     <string name="script_move_up">Palaist agrāk</string>
     <string name="script_move_down">Palaist vēlāk</string>
-    <string name="script_order_summary">Pasūtiet skriptus, kas maina vienu un to pašu runu. Vispirms tiek palaisti lietotņu skripti.</string>
+    <string name="script_order_summary">Secība skriptiem, kas maina vienu un to pašu runu. Lietotņu skripti darbojas vispirms.</string>
     <string name="script_log">Žurnāls</string>
     <string name="script_log_summary">Izvade un kļūdas kopš SandFly palaišanas</string>
     <string name="script_clear_storage">Notīrīt saglabātos datus</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Pārbaudīt fokusēto vienumu</string>
     <string name="script_inspect_no_item">Nevienam vienumam nav fokusa</string>
     <string name="script_inspect_copied">Kopēts. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Nav id, tāpēc noteikumi to nevar nosaukt. Kopēts. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Nav id, tāpēc noteikumi uz to nevar atsaukties. Nokopēts. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Kopēt ekrāna koku</string>
     <string name="script_tree_copied">Kopēti vienumi: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Nav loga, ko kopēt</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly modifikatora taustiņš</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, pēc tam <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komandas</string>
-    <string name="script_commands_summary">Darbojošā skripta žesti un taustiņi ir pirms SandFly. Izslēdziet vienu, lai saglabātu SandFly.</string>
+    <string name="script_commands_summary">Darbojoša skripta žestiem un taustiņiem ir prioritāte pār SandFly žestiem un taustiņiem. Lai saglabātu SandFly žestu vai taustiņu, izslēdziet skripta.</string>
     <string name="script_binding_gesture">Žests: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Taustiņi: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly izvēlne</string>

@@ -6,7 +6,7 @@
     <string name="script_install_label">SandFly betiğini yükle</string>
     <string name="script_import_nothing">Yüklenecek bir betik dosyası yok.</string>
     <string name="script_import_cannot_open">Dosya açılamadı.</string>
-    <string name="script_import_repository">Bu bağlantı tüm bir depoya yöneliktir. İstediğiniz betiği açın ve bağlantısını paylaşın.</string>
+    <string name="script_import_repository">Bu bağlantı bir deponun tamamına ait. İstediğiniz komut dosyasını açın, ardından onun bağlantısını paylaşın.</string>
     <string name="script_import_summary">.lua dosyası veya main.lua içeren .zip</string>
     <string name="scripts_category_app">Uygulama komut dosyaları</string>
     <string name="scripts_category_global">Genel eklentiler</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Sesli bildirimleri okuma ve değiştirme</string>
     <string name="script_permission_events">Yazma dahil her uygulamadaki tüm etkinliği görme</string>
     <string name="script_permission_dialogs">Herhangi bir uygulamanın üzerinde iletişim kutusu gösterme</string>
-    <string name="script_permission_java">Her uygulamada SandFly\'nin tüm erişimiyle Java kodunu çalıştırın</string>
+    <string name="script_permission_java">Her uygulamada SandFly\'ın tüm erişimiyle Java kodu çalıştırma</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Etkinleştir</string>
     <string name="script_permissions_title">İzinler</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Yönetim</string>
     <string name="script_move_up">Daha erken çalıştır</string>
     <string name="script_move_down">Daha sonra çalıştır</string>
-    <string name="script_order_summary">Aynı konuşmayı değiştiren senaryolar için sipariş verin. Önce uygulama komut dosyaları çalıştırılır.</string>
+    <string name="script_order_summary">Aynı konuşmayı değiştiren komut dosyalarının sırası. Önce uygulama komut dosyaları çalışır.</string>
     <string name="script_log">Günlük</string>
     <string name="script_log_summary">SandFly başladığından bu yana çıktı ve hatalar</string>
     <string name="script_clear_storage">Saklanan verileri temizle</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Odaklanılan öğeyi incele</string>
     <string name="script_inspect_no_item">Odakta öğe yok</string>
     <string name="script_inspect_copied">Kopyalandı. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Kimlik yok, dolayısıyla kurallar onu adlandıramaz. Kopyalandı. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Kimliği yok, bu nedenle kurallar ona başvuramaz. Kopyalandı. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Ekran ağacını kopyala</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> öğe kopyalandı</string>
     <string name="script_tree_none">Kopyalanacak pencere yok</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly değiştirici tuşu</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ardından <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komutlar</string>
-    <string name="script_commands_summary">Çalışan bir betiğin jestleri ve tuşları SandFly\'lardan önce gelir. SandFly\'leri korumak için birini kapatın.</string>
+    <string name="script_commands_summary">Çalışan bir komut dosyasının hareketleri ve tuşları SandFly\'ınkilerden önce gelir. SandFly\'ınkini korumak için komut dosyasınınkini kapatın.</string>
     <string name="script_binding_gesture">Hareket: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Tuşlar: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly menüsü</string>

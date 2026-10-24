@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Уншигдах мэдэгдлийг унших, өөрчлөх</string>
     <string name="script_permission_events">Апп бүрийн бүх үйлдлийг, бичихийг оролцуулан харах</string>
     <string name="script_permission_dialogs">Ямар ч програм дээр харилцах цонхыг харуулах</string>
-    <string name="script_permission_java">SandFly-ийн бүх хандалттай Java кодыг програм бүрт ажиллуул</string>
+    <string name="script_permission_java">Апп бүрт SandFly-н бүх хандалтаар Java код ажиллуулах</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Асаах</string>
     <string name="script_permissions_title">Зөвшөөрөл</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Удирдлага</string>
     <string name="script_move_up">Эрт ажиллуулах</string>
     <string name="script_move_down">Дараа ажиллуулах</string>
-    <string name="script_order_summary">Ижил яриаг өөрчилдөг скриптүүдийг захиалах. Апп скриптүүд эхлээд ажиллана.</string>
+    <string name="script_order_summary">Ижил яриаг өөрчилдөг скриптүүдийн дараалал. Аппын скриптүүд эхэлж ажиллана.</string>
     <string name="script_log">Бүртгэл</string>
     <string name="script_log_summary">SandFly эхэлснээс хойшхи гаралт болон алдаа</string>
     <string name="script_clear_storage">Хадгалагдсан өгөгдлийг арилгах</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Фокуст байгаа зүйлийг шалгах</string>
     <string name="script_inspect_no_item">Фокустай элемент алга</string>
     <string name="script_inspect_copied">Хуулсан. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ID байхгүй тул дүрмээр нэрлэх боломжгүй. Хуулсан. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id байхгүй тул дүрэм үүнийг заах боломжгүй. Хуулсан. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Дэлгэцийн модыг хуулах</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> зүйлийг хуулсан</string>
     <string name="script_tree_none">Хуулах цонх байхгүй</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly өөрчлөгч товч</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, дараа нь <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Тушаалууд</string>
-    <string name="script_commands_summary">Ажиллаж байгаа скриптийн дохио зангаа болон товчлуурууд SandFly-ийн өмнө ирдэг. SandFly-г хадгалахын тулд нэгийг нь унтраа.</string>
+    <string name="script_commands_summary">Ажиллаж буй скриптийн дохио, товчлуурууд SandFly-н дохио, товчлууруудаас давуу эрхтэй. SandFly-н дохио эсвэл товчийг үлдээхийн тулд скриптийнхийг унтраана уу.</string>
     <string name="script_binding_gesture">Зангаа: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Товчлуурууд: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly цэс</string>

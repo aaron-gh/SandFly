@@ -6,7 +6,7 @@
     <string name="script_install_label">SandFly სკრიპტის ინსტალაცია</string>
     <string name="script_import_nothing">დასაინსტალირებელი სკრიპტის ფაილი არ არის.</string>
     <string name="script_import_cannot_open">ფაილის გახსნა ვერ მოხერხდა.</string>
-    <string name="script_import_repository">ეს ბმული არის მთელი საცავი. გახსენით თქვენთვის სასურველი სკრიპტი, შემდეგ გააზიარეთ მისი ბმული.</string>
+    <string name="script_import_repository">ეს ბმული მთელ საცავზე მიუთითებს. გახსენით სასურველი სკრიპტი და გააზიარეთ მისი ბმული.</string>
     <string name="script_import_summary">.lua ფაილი ან .zip, რომელშიც არის main.lua</string>
     <string name="scripts_category_app">აპლიკაციის სკრიპტები</string>
     <string name="scripts_category_global">გლობალური დანამატები</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">გახმოვანებული შეტყობინებების წაკითხვა და შეცვლა</string>
     <string name="script_permission_events">ყველა აპში ყველა მოქმედების ნახვა, აკრეფის ჩათვლით</string>
     <string name="script_permission_dialogs">დიალოგების ჩვენება ნებისმიერი აპის ზემოდან</string>
-    <string name="script_permission_java">გაუშვით Java კოდი SandFly-ის ყველა წვდომით, ყველა აპში</string>
+    <string name="script_permission_java">Java კოდის გაშვება SandFly-ის სრული წვდომით, ყველა აპში</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ჩართვა</string>
     <string name="script_permissions_title">ნებართვები</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">მართვა</string>
     <string name="script_move_up">ადრე გაშვება</string>
     <string name="script_move_down">მოგვიანებით გაშვება</string>
-    <string name="script_order_summary">Order for scripts that change the same speech. აპის სკრიპტები პირველ რიგში გაშვებულია.</string>
+    <string name="script_order_summary">ერთსა და იმავე მეტყველებას რომ ცვლიან, იმ სკრიპტების თანმიმდევრობა. აპის სკრიპტები პირველად ეშვება.</string>
     <string name="script_log">ჟურნალი</string>
     <string name="script_log_summary">SandFly-ის გაშვების შემდეგ გამოტანა და შეცდომები</string>
     <string name="script_clear_storage">შენახული მონაცემების გასუფთავება</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ფოკუსში მყოფი ელემენტის შემოწმება</string>
     <string name="script_inspect_no_item">არცერთ ელემენტზე არ არის ფოკუსი</string>
     <string name="script_inspect_copied">კოპირებულია. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">არ არის id, ამიტომ წესები მას არ ასახელებს. კოპირებულია. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id არ აქვს, ამიტომ წესები მას ვერ მიუთითებს. დაკოპირდა. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">ეკრანის ხის კოპირება</string>
     <string name="script_tree_copied">დაკოპირებულია <xliff:g id="count">%1$d</xliff:g> ერთეული</string>
     <string name="script_tree_none">კოპირების ფანჯარა არ არის</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly-ის მოდიფიკატორი კლავიში</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, შემდეგ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ბრძანებები</string>
-    <string name="script_commands_summary">გაშვებული სკრიპტის ჟესტები და კლავიშები მოდის SandFly-ზე წინ. გამორთეთ ერთი SandFly-ების შესანარჩუნებლად.</string>
+    <string name="script_commands_summary">გაშვებული სკრიპტის ჟესტებსა და კლავიშებს უპირატესობა აქვს SandFly-ისაზე. SandFly-ისის შესანარჩუნებლად გამორთეთ სკრიპტისა.</string>
     <string name="script_binding_gesture">ჟესტი: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">კლავიშები: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly მენიუ</string>

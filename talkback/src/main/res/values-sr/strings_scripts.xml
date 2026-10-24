@@ -6,7 +6,7 @@
     <string name="script_install_label">Инсталирај SandFly скрипту</string>
     <string name="script_import_nothing">Не постоји датотека скрипте за инсталирање.</string>
     <string name="script_import_cannot_open">Датотеку није било могуће отворити.</string>
-    <string name="script_import_repository">Ова веза је до целог спремишта. Отворите скрипту коју желите, а затим поделите њену везу.</string>
+    <string name="script_import_repository">Ова веза води до целог спремишта. Отворите скрипту коју желите, а затим поделите њену везу.</string>
     <string name="script_import_summary">Датотека .lua или .zip са main.lua</string>
     <string name="scripts_category_app">Скрипте апликације</string>
     <string name="scripts_category_global">Глобални додаци</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">Читање и мењање изговорених обавештења</string>
     <string name="script_permission_events">Увид у све активности у свакој апликацији, укључујући куцање</string>
     <string name="script_permission_dialogs">Приказивање дијалога преко било које апликације</string>
-    <string name="script_permission_java">Покрените Јава код са свим приступима SandFly, у свакој апликацији</string>
+    <string name="script_permission_java">Покретање Java кода са свим приступом који SandFly има, у свакој апликацији</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">Укључи</string>
     <string name="script_permissions_title">Дозволе</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">Управљање</string>
     <string name="script_move_up">Покрени раније</string>
     <string name="script_move_down">Покрени касније</string>
-    <string name="script_order_summary">Ред за скрипте које мењају исти говор. Прво се покрећу скрипте апликације.</string>
+    <string name="script_order_summary">Редослед скрипти које мењају исти говор. Скрипте апликација се покрећу прве.</string>
     <string name="script_log">Дневник</string>
     <string name="script_log_summary">Излаз и грешке од покретања SandFly-а</string>
     <string name="script_clear_storage">Обриши сачуване податке</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">Прегледај фокусирану ставку</string>
     <string name="script_inspect_no_item">Ниједна ставка нема фокус</string>
     <string name="script_inspect_copied">Копирано. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">Нема ИД-а, тако да га правила не могу именовати. Копирано. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">Нема ID, па правила не могу да упуте на њега. Копирано. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">Копирај стабло екрана</string>
     <string name="script_tree_copied">Копиране ставке: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Нема прозора за копирање</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly модификаторски тастер</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, затим <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Команде</string>
-    <string name="script_commands_summary">Покрети и тастери покренуте скрипте долазе испред SandFly. Искључите један да бисте задржали SandFly.</string>
+    <string name="script_commands_summary">Покрети и тастери покренуте скрипте имају предност над онима из SandFly-а. Искључите их у скрипти да бисте задржали оне из SandFly-а.</string>
     <string name="script_binding_gesture">Покрет: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Тастери: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly мени</string>

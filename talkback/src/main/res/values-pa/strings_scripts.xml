@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">ਬੋਲੀਆਂ ਜਾਣ ਵਾਲੀਆਂ ਸੂਚਨਾਵਾਂ ਪੜ੍ਹਨਾ ਅਤੇ ਬਦਲਣਾ</string>
     <string name="script_permission_events">ਟਾਈਪਿੰਗ ਸਮੇਤ ਹਰ ਐਪ ਦੀ ਸਾਰੀ ਗਤੀਵਿਧੀ ਦੇਖਣਾ</string>
     <string name="script_permission_dialogs">ਕਿਸੇ ਵੀ ਐਪ ਉੱਤੇ ਡਾਇਲਾਗ ਦਿਖਾਉਣਾ</string>
-    <string name="script_permission_java">ਹਰੇਕ ਐਪ ਵਿੱਚ, SandFly ਦੀ ਸਾਰੀ ਪਹੁੰਚ ਨਾਲ Java ਕੋਡ ਚਲਾਓ</string>
+    <string name="script_permission_java">ਹਰੇਕ ਐਪ ਵਿੱਚ SandFly ਦੀ ਸਾਰੀ ਪਹੁੰਚ ਨਾਲ Java ਕੋਡ ਚਲਾਉਣਾ</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ਚਾਲੂ ਕਰੋ</string>
     <string name="script_permissions_title">ਇਜਾਜ਼ਤਾਂ</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">ਪ੍ਰਬੰਧਨ</string>
     <string name="script_move_up">ਪਹਿਲਾਂ ਚਲਾਓ</string>
     <string name="script_move_down">ਬਾਅਦ ਵਿੱਚ ਚਲਾਓ</string>
-    <string name="script_order_summary">ਸਕ੍ਰਿਪਟਾਂ ਲਈ ਆਰਡਰ ਜੋ ਇੱਕੋ ਬੋਲੀ ਨੂੰ ਬਦਲਦੀਆਂ ਹਨ। ਐਪ ਸਕ੍ਰਿਪਟਾਂ ਪਹਿਲਾਂ ਚੱਲਦੀਆਂ ਹਨ।</string>
+    <string name="script_order_summary">ਇੱਕੋ ਬੋਲੀ ਨੂੰ ਬਦਲਣ ਵਾਲੀਆਂ ਸਕ੍ਰਿਪਟਾਂ ਦਾ ਕ੍ਰਮ। ਐਪ ਸਕ੍ਰਿਪਟਾਂ ਪਹਿਲਾਂ ਚੱਲਦੀਆਂ ਹਨ।</string>
     <string name="script_log">ਲਾਗ</string>
     <string name="script_log_summary">SandFly ਸ਼ੁਰੂ ਹੋਣ ਤੋਂ ਬਾਅਦ ਆਉਟਪੁੱਟ ਅਤੇ ਤਰੁੱਟੀਆਂ</string>
     <string name="script_clear_storage">ਸਟੋਰ ਕੀਤੇ ਡੇਟਾ ਨੂੰ ਸਾਫ਼ ਕਰੋ</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ਫੋਕਸ ਆਈਟਮ ਦੀ ਜਾਂਚ ਕਰੋ</string>
     <string name="script_inspect_no_item">ਕਿਸੇ ਵੀ ਆਈਟਮ \'ਤੇ ਫੋਕਸ ਨਹੀਂ ਹੈ</string>
     <string name="script_inspect_copied">ਕਾਪੀ ਕੀਤਾ। <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ਕੋਈ ਆਈਡੀ ਨਹੀਂ ਹੈ, ਇਸ ਲਈ ਨਿਯਮ ਇਸ ਨੂੰ ਨਾਮ ਨਹੀਂ ਦੇ ਸਕਦੇ। ਕਾਪੀ ਕੀਤਾ। <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id ਨਹੀਂ ਹੈ, ਇਸ ਲਈ ਨਿਯਮ ਇਸਦਾ ਹਵਾਲਾ ਨਹੀਂ ਦੇ ਸਕਦੇ। ਕਾਪੀ ਕੀਤਾ। <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">ਸਕ੍ਰੀਨ ਟ੍ਰੀ ਕਾਪੀ ਕਰੋ</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ਆਈਟਮਾਂ ਨੂੰ ਕਾਪੀ ਕੀਤਾ ਗਿਆ</string>
     <string name="script_tree_none">ਕਾਪੀ ਕਰਨ ਲਈ ਕੋਈ ਵਿੰਡੋ ਨਹੀਂ ਹੈ</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly ਮੋਡੀਫਾਇਰ ਕੁੰਜੀ</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ਫਿਰ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ਕਮਾਂਡਾਂ</string>
-    <string name="script_commands_summary">ਚੱਲ ਰਹੀ ਸਕ੍ਰਿਪਟ ਦੇ ਸੰਕੇਤ ਅਤੇ ਕੁੰਜੀਆਂ SandFly\'s ਤੋਂ ਪਹਿਲਾਂ ਆਉਂਦੀਆਂ ਹਨ। SandFly ਰੱਖਣ ਲਈ ਇੱਕ ਬੰਦ ਕਰੋ।</string>
+    <string name="script_commands_summary">ਚੱਲ ਰਹੀ ਸਕ੍ਰਿਪਟ ਦੇ ਇਸ਼ਾਰੇ ਅਤੇ ਕੁੰਜੀਆਂ SandFly ਦੇ ਇਸ਼ਾਰਿਆਂ ਅਤੇ ਕੁੰਜੀਆਂ ਤੋਂ ਪਹਿਲਾਂ ਲਾਗੂ ਹੁੰਦੀਆਂ ਹਨ। SandFly ਵਾਲਾ ਰੱਖਣ ਲਈ ਸਕ੍ਰਿਪਟ ਵਾਲਾ ਬੰਦ ਕਰੋ।</string>
     <string name="script_binding_gesture">ਸੰਕੇਤ: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">ਕੁੰਜੀਆਂ: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly ਮੀਨੂ</string>

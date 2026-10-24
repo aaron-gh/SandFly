@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">読み上げる通知の読み取りと変更</string>
     <string name="script_permission_events">入力を含む、すべてのアプリでのすべての操作を確認する</string>
     <string name="script_permission_dialogs">任意のアプリ上にダイアログを表示する</string>
-    <string name="script_permission_java">すべてのアプリで、SandFly のすべてのアクセス権を使用して Java コードを実行します</string>
+    <string name="script_permission_java">すべてのアプリで、SandFly のすべてのアクセス権を使って Java コードを実行する</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ON にする</string>
     <string name="script_permissions_title">権限</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">管理</string>
     <string name="script_move_up">先に実行</string>
     <string name="script_move_down">後で実行</string>
-    <string name="script_order_summary">同じスピーチを変更するスクリプトの順序。アプリスクリプトが最初に実行されます。</string>
+    <string name="script_order_summary">同じ読み上げを変更するスクリプトの実行順序です。アプリのスクリプトが先に実行されます。</string>
     <string name="script_log">ログ</string>
     <string name="script_log_summary">SandFly 開始以降の出力とエラー</string>
     <string name="script_clear_storage">保存データを消去</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">フォーカス中の項目を検査</string>
     <string name="script_inspect_no_item">フォーカスのある項目はありません</string>
     <string name="script_inspect_copied">コピーしました。<xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ID がないため、ルールで名前を付けることはできません。コピーされました。 <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">ID がないため、ルールで指定できません。コピーしました。<xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">画面ツリーをコピー</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> 個の項目をコピーしました</string>
     <string name="script_tree_none">コピーするウィンドウがありません</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly 修飾キー</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>、次に <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">コマンド</string>
-    <string name="script_commands_summary">実行中のスクリプトのジェスチャとキーは SandFly の前に来ます。 SandFly を維持するには、1 つをオフにします。</string>
+    <string name="script_commands_summary">実行中のスクリプトのジェスチャーとキーは、SandFly のものより優先されます。SandFly のものを使うには、スクリプト側をオフにします。</string>
     <string name="script_binding_gesture">ジェスチャー: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">キー: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFlyメニュー</string>

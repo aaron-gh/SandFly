@@ -6,7 +6,7 @@
     <string name="script_install_label">SandFly സ്ക്രിപ്റ്റ് ഇൻസ്റ്റാൾ ചെയ്യുക</string>
     <string name="script_import_nothing">ഇൻസ്റ്റാൾ ചെയ്യാൻ സ്‌ക്രിപ്റ്റ് ഫയലൊന്നുമില്ല.</string>
     <string name="script_import_cannot_open">ഫയൽ തുറക്കാൻ കഴിഞ്ഞില്ല.</string>
-    <string name="script_import_repository">ഈ ലിങ്ക് ഒരു മുഴുവൻ സംഭരണിയിലേക്കുള്ളതാണ്. നിങ്ങൾക്ക് ആവശ്യമുള്ള സ്ക്രിപ്റ്റ് തുറക്കുക, തുടർന്ന് അതിൻ്റെ ലിങ്ക് പങ്കിടുക.</string>
+    <string name="script_import_repository">ഈ ലിങ്ക് ഒരു മുഴുവൻ റിപ്പോസിറ്ററിയിലേക്കുള്ളതാണ്. ആവശ്യമുള്ള സ്ക്രിപ്റ്റ് തുറന്ന് അതിന്റെ ലിങ്ക് പങ്കിടുക.</string>
     <string name="script_import_summary">.lua ഫയൽ, അല്ലെങ്കിൽ main.lua ഉള്ള .zip</string>
     <string name="scripts_category_app">ആപ്പ് സ്ക്രിപ്റ്റുകൾ</string>
     <string name="scripts_category_global">പൊതു പ്ലഗിനുകൾ</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">സംസാരിക്കുന്ന അറിയിപ്പുകൾ വായിക്കലും മാറ്റലും</string>
     <string name="script_permission_events">ടൈപ്പിംഗ് ഉൾപ്പെടെ എല്ലാ ആപ്പിലെയും എല്ലാ പ്രവർത്തനവും കാണൽ</string>
     <string name="script_permission_dialogs">ഏത് ആപ്പിന് മുകളിലും ഡയലോഗുകൾ കാണിക്കൽ</string>
-    <string name="script_permission_java">എല്ലാ ആപ്പിലും SandFly-ൻ്റെ എല്ലാ ആക്‌സസുകളോടും കൂടി Java കോഡ് പ്രവർത്തിപ്പിക്കുക</string>
+    <string name="script_permission_java">എല്ലാ ആപ്പിലും SandFly-ന്റെ മുഴുവൻ ആക്സസോടെ Java കോഡ് റൺ ചെയ്യൽ</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ഓണാക്കുക</string>
     <string name="script_permissions_title">അനുമതികൾ</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">മാനേജ്മെന്റ്</string>
     <string name="script_move_up">നേരത്തെ പ്രവർത്തിപ്പിക്കുക</string>
     <string name="script_move_down">പിന്നീട് പ്രവർത്തിപ്പിക്കുക</string>
-    <string name="script_order_summary">ഒരേ സംഭാഷണം മാറ്റുന്ന സ്ക്രിപ്റ്റുകൾക്ക് ഓർഡർ നൽകുക. ആപ്പ് സ്ക്രിപ്റ്റുകൾ ആദ്യം പ്രവർത്തിക്കുന്നു.</string>
+    <string name="script_order_summary">ഒരേ സംഭാഷണം മാറ്റുന്ന സ്ക്രിപ്റ്റുകളുടെ ക്രമം. ആപ്പ് സ്ക്രിപ്റ്റുകൾ ആദ്യം പ്രവർത്തിക്കുന്നു.</string>
     <string name="script_log">ലോഗ്</string>
     <string name="script_log_summary">SandFly ആരംഭിച്ചതു മുതലുള്ള ഔട്ട്‌പുട്ടും പിശകുകളും</string>
     <string name="script_clear_storage">സംഭരിച്ച ഡാറ്റ മായ്‌ക്കുക</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ഫോക്കസ് ചെയ്ത ഇനം പരിശോധിക്കുക</string>
     <string name="script_inspect_no_item">ഒരു ഇനത്തിനും ഫോക്കസ് ഇല്ല</string>
     <string name="script_inspect_copied">പകർത്തി. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ഐഡി ഇല്ല, അതിനാൽ നിയമങ്ങൾക്ക് പേരിടാൻ കഴിയില്ല. പകർത്തി. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id ഇല്ല, അതിനാൽ നിയമങ്ങൾക്ക് ഇതിനെ സൂചിപ്പിക്കാനാകില്ല. പകർത്തി. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">സ്ക്രീൻ ട്രീ പകർത്തുക</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ഇനങ്ങൾ പകർത്തി</string>
     <string name="script_tree_none">പകർത്താൻ വിൻഡോ ഇല്ല</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly മോഡിഫയർ</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, പിന്നെ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">കമാൻഡുകൾ</string>
-    <string name="script_commands_summary">റൺ ചെയ്യുന്ന സ്‌ക്രിപ്റ്റിൻ്റെ ആംഗ്യങ്ങളും കീകളും SandFly-ന് മുമ്പായി വരുന്നു. SandFly കൾ സൂക്ഷിക്കാൻ ഒരെണ്ണം ഓഫാക്കുക.</string>
+    <string name="script_commands_summary">പ്രവർത്തിക്കുന്ന സ്ക്രിപ്റ്റിന്റെ ജെസ്ചറുകൾക്കും കീകൾക്കും SandFly-ന്റേതിനെക്കാൾ മുൻഗണനയുണ്ട്. SandFly-ന്റേത് നിലനിർത്താൻ സ്ക്രിപ്റ്റിന്റേത് ഓഫാക്കുക.</string>
     <string name="script_binding_gesture">ആംഗ്യം: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">കീകൾ: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly മെനു</string>

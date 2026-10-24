@@ -6,7 +6,7 @@
     <string name="script_install_label">SandFly ஸ்கிரிப்டை நிறுவவும்</string>
     <string name="script_import_nothing">நிறுவுவதற்கு ஸ்கிரிப்ட் கோப்பு எதுவும் இல்லை.</string>
     <string name="script_import_cannot_open">கோப்பை திறக்க முடியவில்லை.</string>
-    <string name="script_import_repository">இந்த இணைப்பு முழு களஞ்சியத்திற்கும் உள்ளது. நீங்கள் விரும்பும் ஸ்கிரிப்டைத் திறந்து, அதன் இணைப்பைப் பகிரவும்.</string>
+    <string name="script_import_repository">இந்த இணைப்பு முழுக் களஞ்சியத்திற்கானது. வேண்டிய ஸ்கிரிப்டைத் திறந்து அதன் இணைப்பைப் பகிரவும்.</string>
     <string name="script_import_summary">.lua கோப்பு, அல்லது main.lua உள்ள .zip</string>
     <string name="scripts_category_app">ஆப்ஸ் ஸ்கிரிப்டுகள்</string>
     <string name="scripts_category_global">பொது செருகுநிரல்கள்</string>
@@ -49,7 +49,7 @@
     <string name="script_permission_notifications">படிக்கப்படும் அறிவிப்புகளைப் படித்தல் மற்றும் மாற்றுதல்</string>
     <string name="script_permission_events">தட்டச்சு உட்பட ஒவ்வொரு ஆப்ஸிலும் உள்ள எல்லாச் செயல்பாடுகளையும் பார்த்தல்</string>
     <string name="script_permission_dialogs">எந்த ஆப்ஸின் மேலும் உரையாடல்களைக் காட்டுதல்</string>
-    <string name="script_permission_java">ஒவ்வொரு பயன்பாட்டிலும் SandFly இன் அனைத்து அணுகலுடனும் ஜாவா குறியீட்டை இயக்கவும்</string>
+    <string name="script_permission_java">ஒவ்வொரு ஆப்ஸிலும் SandFly-இன் எல்லா அணுகலுடனும் Java குறியீட்டை இயக்குதல்</string>
     <string name="script_dialog_title"><xliff:g id="script">%1$s</xliff:g>: <xliff:g id="title">%2$s</xliff:g></string>
     <string name="script_enabled">ஆன் செய்</string>
     <string name="script_permissions_title">அனுமதிகள்</string>
@@ -62,7 +62,7 @@
     <string name="script_manage_category">நிர்வாகம்</string>
     <string name="script_move_up">முன்னதாக இயக்கவும்</string>
     <string name="script_move_down">பிறகு இயக்கு</string>
-    <string name="script_order_summary">அதே பேச்சை மாற்றும் ஸ்கிரிப்ட்களுக்கான ஆர்டர். ஆப்ஸ் ஸ்கிரிப்டுகள் முதலில் இயங்கும்.</string>
+    <string name="script_order_summary">ஒரே பேச்சை மாற்றும் ஸ்கிரிப்ட்களின் வரிசை. ஆப்ஸ் ஸ்கிரிப்ட்கள் முதலில் இயங்கும்.</string>
     <string name="script_log">பதிவு</string>
     <string name="script_log_summary">SandFly தொடங்கியதிலிருந்து வெளியீடு மற்றும் பிழைகள்</string>
     <string name="script_clear_storage">சேமிக்கப்பட்ட தரவை அழிக்கவும்</string>
@@ -91,7 +91,7 @@
     <string name="shortcut_inspect_item">ஃபோகஸ் செய்த உருப்படியைச் சரிபார்</string>
     <string name="script_inspect_no_item">எந்த உருப்படியிலும் ஃபோகஸ் இல்லை</string>
     <string name="script_inspect_copied">நகலெடுக்கப்பட்டது. <xliff:g id="details">%1$s</xliff:g></string>
-    <string name="script_inspect_no_id">ஐடி இல்லை, எனவே விதிகளால் பெயரிட முடியாது. நகலெடுக்கப்பட்டது. <xliff:g id="details">%1$s</xliff:g></string>
+    <string name="script_inspect_no_id">id இல்லை, எனவே விதிகளால் இதைக் குறிப்பிட முடியாது. நகலெடுக்கப்பட்டது. <xliff:g id="details">%1$s</xliff:g></string>
     <string name="shortcut_copy_screen_tree">திரை ட்ரீயை நகலெடு</string>
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> உருப்படிகள் நகலெடுக்கப்பட்டன</string>
     <string name="script_tree_none">நகலெடுக்க சாளரம் இல்லை</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly மாற்றி</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, பிறகு <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">கட்டளைகள்</string>
-    <string name="script_commands_summary">இயங்கும் ஸ்கிரிப்ட்டின் சைகைகள் மற்றும் விசைகள் SandFlyக்கு முன் வரும். SandFly ஐ வைத்திருக்க, ஒன்றை அணைக்கவும்.</string>
+    <string name="script_commands_summary">இயங்கும் ஸ்கிரிப்ட்டின் சைகைகளும் விசைகளும் SandFly-இன் சைகைகள், விசைகளைவிட முன்னுரிமை பெறும். SandFly-இனுடையதை வைத்திருக்க ஸ்கிரிப்ட்டினுடையதை முடக்கவும்.</string>
     <string name="script_binding_gesture">சைகை: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">விசைகள்: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly மெனு</string>
