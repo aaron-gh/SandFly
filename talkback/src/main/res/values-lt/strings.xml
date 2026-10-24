@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Siųsti ilgą tekstą po vieną sakinį</string>
-    <string name="summary_pref_speak_in_phrases">Kalbos varikliuose, kurie lėtai sustoja, pvz., Gryphon, todėl perbraukus tolyn ilgas tekstas sustabdomas iš karto. Daugelis variklių daro ilgesnę pauzę tarp atskirai siunčiamų sakinių, todėl palikite tai išjungti, jei jūsiškis greitai sustoja.</string>
+    <string name="summary_pref_speak_in_phrases">Lėtai sustojantiems kalbos varikliams, pvz., Gryphon, kad perbraukus ilgas tekstas sustotų iš karto. Daugelis variklių daro ilgesnę pauzę tarp atskirai siunčiamų sakinių, todėl palikite išjungtą, jei jūsų variklis sustoja greitai.</string>
     <string name="battery_optimization_notification_title">Akumuliatoriaus optimizavimas gali sustabdyti SandFly</string>
     <string name="battery_optimization_notification_text">Šiame telefone akumuliatoriaus tausojimo priemonė gali sustabdyti SandFly išsijungus ekranui, tada SandFly nekalba, kol nepaleidžiamas iš naujo. Palieskite, kad atidarytumėte akumuliatoriaus optimizavimą, pasirinkite „Visos programos“, raskite SandFly ir pasirinkite „Neoptimizuoti“.</string>
     <string name="title_pref_mute_speech_while_recording">Įrašymo metu tylu</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Sutrauktas skyrius</string>
     <string name="category_expanded">Išplėstas skyrius</string>
     <string name="title_pref_speak_nav_bar_buttons">Ištarti naršymo juostos mygtukus</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Naršymo juostoje suaktyvinę pakėlimą pasakykite mygtuką, kurį paspaudžia bakstelėjimas, pvz., Atgal arba Home.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Kai naršymo juostoje naudojamas aktyvinimas pakeliant pirštą, pasakomas bakstelėjimu paspaustas mygtukas, pvz., „Atgal“ arba „Pagrindinis“.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Baterija <xliff:g id="battery_level" example="73">%1$s</xliff:g> proc</string>
     <string name="template_battery_level_unknown">Akumuliatoriaus lygis nežinomas</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Sakyti garsumo pokyčius</string>
     <string name="summary_pref_speak_volume_changes">Paspaudę garsumo klavišus ištarkite naują garsumą</string>
     <string name="title_pref_speak_notifications">Ištarti pranešimus</string>
-    <string name="summary_pref_speak_notifications">Garsiai skaitykite naujus pranešimus, kai jie ateina. Įeinantys skambučiai visada skaitomi.</string>
+    <string name="summary_pref_speak_notifications">Garsiai skaityti naujus pranešimus, kai jie gaunami. Gaunami skambučiai visada skaitomi.</string>
     <string name="title_pref_notification_list">Naudoti SandFly pranešimų sąrašą</string>
     <string name="title_pref_notification_parts">Išsami pranešimo informacija</string>
     <string name="title_pref_play_installer">Rodyti kaip įdiegtą iš Google Play</string>

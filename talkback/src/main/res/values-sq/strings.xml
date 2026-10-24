@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Dërgo tekstin e gjatë fjali pas fjalie</string>
-    <string name="summary_pref_speak_in_phrases">Për motorët e të folurit që ndalojnë ngadalë, si p.sh. Gryphon, kështu që rrëshqitja larg ndalon menjëherë tekstin e gjatë. Shumë motorë ndalojnë më gjatë midis fjalive të dërguara veçmas, kështu që lëreni këtë nëse e juaja ndalon shpejt.</string>
+    <string name="summary_pref_speak_in_phrases">Për motorët e të folurit që ndalen ngadalë, si Gryphon, që një rrëshqitje ta ndalë menjëherë tekstin e gjatë. Shumë motorë bëjnë pauza më të gjata mes fjalive të dërguara veçmas, prandaj lëreni të çaktivizuar nëse motori juaj ndalet shpejt.</string>
     <string name="battery_optimization_notification_title">Optimizimi i baterisë mund të ndalojë SandFly</string>
     <string name="battery_optimization_notification_text">Në këtë telefon, kursyesi i baterisë mund ta ndalojë SandFly pasi fiket ekrani, kështu që SandFly hesht derisa të riniset. Prekni për të hapur optimizimin e baterisë, zgjidhni Të gjitha aplikacionet, gjeni SandFly dhe zgjidhni Mos optimizo.</string>
     <string name="title_pref_mute_speech_while_recording">I qetë gjatë regjistrimit</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Seksioni i palosur</string>
     <string name="category_expanded">Seksioni i zgjeruar</string>
     <string name="title_pref_speak_nav_bar_buttons">Thuaj butonat e shiritit të navigimit</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Me ngritjen për t\'u aktivizuar në shiritin e navigimit, thoni butonin që shtyp një trokitje, si p.sh. Prapa ose Home.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Kur në shiritin e navigimit përdoret aktivizimi me ngritjen e gishtit, thotë butonin e shtypur me trokitje, si Prapa ose Ekrani bazë.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Bateria <xliff:g id="battery_level" example="73">%1$s</xliff:g> përqind</string>
     <string name="template_battery_level_unknown">Niveli i baterisë i panjohur</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Lexo ndryshimet e volumit</string>
     <string name="summary_pref_speak_volume_changes">Thoni volumin e ri pasi të keni shtypur tastet e volumit</string>
     <string name="title_pref_speak_notifications">Lexo njoftimet me zë</string>
-    <string name="summary_pref_speak_notifications">Lexoni me zë të lartë njoftimet e reja kur të mbërrijnë. Thirrjet hyrëse lexohen gjithmonë.</string>
+    <string name="summary_pref_speak_notifications">Lexon me zë njoftimet e reja kur mbërrijnë. Telefonatat hyrëse lexohen gjithmonë.</string>
     <string name="title_pref_notification_list">Përdor listën e njoftimeve të SandFly</string>
     <string name="title_pref_notification_parts">Detajet e njoftimit</string>
     <string name="title_pref_play_installer">Shfaqet i instaluar nga Google Play</string>

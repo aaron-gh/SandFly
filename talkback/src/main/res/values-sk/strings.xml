@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Posielať dlhý text po vetách</string>
-    <string name="summary_pref_speak_in_phrases">V prípade rečových nástrojov, ktoré sa pomaly zastavujú, ako je napríklad Gryphon, potiahnutie prstom zastaví naraz dlhý text. Mnoho motorov sa medzi jednotlivými vetami zastaví dlhšie, takže ak sa vaša rýchlo zastaví, nechajte túto možnosť vypnutú.</string>
+    <string name="summary_pref_speak_in_phrases">Pre rečové moduly, ktoré sa zastavujú pomaly, napríklad Gryphon, aby potiahnutie prstom hneď zastavilo dlhý text. Mnohé moduly robia dlhšie pauzy medzi samostatne odoslanými vetami, preto túto možnosť nechajte vypnutú, ak sa váš modul zastavuje rýchlo.</string>
     <string name="battery_optimization_notification_title">Optimalizácia batérie môže zastaviť SandFly</string>
     <string name="battery_optimization_notification_text">V tomto telefóne môže šetrič batérie po vypnutí obrazovky zastaviť SandFly a ten potom mlčí, kým sa znova nespustí. Klepnutím otvorte optimalizáciu batérie, vyberte Všetky aplikácie, nájdite SandFly a vyberte Neoptimalizovať.</string>
     <string name="title_pref_mute_speech_while_recording">Ticho pri nahrávaní</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Zbalená sekcia</string>
     <string name="category_expanded">Rozbalená sekcia</string>
     <string name="title_pref_speak_nav_bar_buttons">Vysloviť tlačidlá navigačnej lišty</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Zdvihnutím aktivujte navigačnú lištu a povedzte tlačidlo, ktoré stlačí ťuknutie, napríklad Späť alebo Domov.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Keď sa na navigačnom paneli používa aktivácia zdvihnutím prsta, vysloví sa tlačidlo stlačené klepnutím, napríklad Späť alebo Plocha.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Batéria <xliff:g id="battery_level" example="73">%1$s</xliff:g> percent</string>
     <string name="template_battery_level_unknown">Úroveň batérie neznáma</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Vyslovovať zmeny hlasitosti</string>
     <string name="summary_pref_speak_volume_changes">Po stlačení tlačidiel hlasitosti vyslovte novú hlasitosť</string>
     <string name="title_pref_speak_notifications">Vyslovovať upozornenia</string>
-    <string name="summary_pref_speak_notifications">Prečítajte si nové upozornenia nahlas, keď prídu. Prichádzajúce hovory sa vždy čítajú.</string>
+    <string name="summary_pref_speak_notifications">Čítať nové upozornenia nahlas, keď prídu. Prichádzajúce hovory sa čítajú vždy.</string>
     <string name="title_pref_notification_list">Používať zoznam upozornení SandFly</string>
     <string name="title_pref_notification_parts">Podrobnosti oznámenia</string>
     <string name="title_pref_play_installer">Zobrazovať ako nainštalované z Google Play</string>

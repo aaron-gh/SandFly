@@ -1351,7 +1351,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">लांब मजकूर एकावेळी एक वाक्य पाठवा</string>
-    <string name="summary_pref_speak_in_phrases">स्पीच इंजिनसाठी जे थांबण्यास धीमे आहेत, जसे की ग्रिफॉन, म्हणून स्वाइप केल्याने लांब मजकूर एकाच वेळी थांबतो. अनेक इंजिन स्वतंत्रपणे पाठवलेल्या वाक्यांमध्ये जास्त वेळ थांबतात, त्यामुळे तुमचे त्वरीत थांबल्यास हे बंद करा.</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon सारख्या उशिरा थांबणाऱ्या स्पीच इंजिनसाठी, जेणेकरून स्वाइप केल्यावर लांब मजकूर लगेच थांबेल. अनेक इंजिन स्वतंत्रपणे पाठवलेल्या वाक्यांमध्ये जास्त विराम घेतात, त्यामुळे तुमचे इंजिन लवकर थांबत असल्यास हे बंद ठेवा.</string>
     <string name="battery_optimization_notification_title">बॅटरी ऑप्टिमायझेशन SandFly थांबवू शकते</string>
     <string name="battery_optimization_notification_text">या फोनवर, स्क्रीन बंद झाल्यानंतर बॅटरी सेव्हर SandFly थांबवू शकतो, त्यामुळे ते रीस्टार्ट होईपर्यंत काहीही बोलत नाही. बॅटरी ऑप्टिमायझेशन उघडण्यासाठी टॅप करा, सर्व ॲप्स निवडा, SandFly शोधा आणि ऑप्टिमाइझ करू नका निवडा.</string>
     <string name="title_pref_mute_speech_while_recording">रेकॉर्डिंग करताना शांत</string>
@@ -1361,7 +1361,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="category_collapsed">संकुचित विभाग</string>
     <string name="category_expanded">विस्तारित विभाग</string>
     <string name="title_pref_speak_nav_bar_buttons">नेव्हिगेशन बार बटणे बोला</string>
-    <string name="summary_pref_speak_nav_bar_buttons">नेव्हिगेशन बारवर सक्रिय करण्यासाठी लिफ्टसह, टॅपने दाबले जाणारे बटण म्हणा, जसे की बॅक किंवा होम.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">नेव्हिगेशन बारवर बोट उचलून सक्रिय करा वापरताना, टॅपने दाबलेले बटण सांगते, जसे की मागे किंवा होम.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">बॅटरी <xliff:g id="battery_level" example="73">%1$s</xliff:g> टक्के</string>
     <string name="template_battery_level_unknown">बॅटरी पातळी अज्ञात</string>
@@ -1431,7 +1431,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="title_pref_speak_volume_changes">व्हॉल्यूममधील बदल बोला</string>
     <string name="summary_pref_speak_volume_changes">तुम्ही व्हॉल्यूम की दाबल्यानंतर नवीन व्हॉल्यूम म्हणा</string>
     <string name="title_pref_speak_notifications">सूचना बोला</string>
-    <string name="summary_pref_speak_notifications">नवीन सूचना आल्यावर मोठ्याने वाचा. येणारे कॉल नेहमी वाचले जातात.</string>
+    <string name="summary_pref_speak_notifications">नवीन सूचना आल्यावर मोठ्याने वाचते. येणारे कॉल नेहमी वाचले जातात.</string>
     <string name="title_pref_notification_list">SandFly ची सूचना सूची वापरा</string>
     <string name="title_pref_notification_parts">सूचना तपशील</string>
     <string name="title_pref_play_installer">Google Play वरून इंस्टॉल केलेले दिसते</string>

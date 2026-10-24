@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Invia il testo lungo una frase alla volta</string>
-    <string name="summary_pref_speak_in_phrases">Per i motori vocali lenti da arrestare, come Gryphon, lo scorrimento interrompe il testo lungo contemporaneamente. Molti motori fanno pause più lunghe tra le frasi inviate separatamente, quindi lascialo disattivato se il tuo si ferma rapidamente.</string>
+    <string name="summary_pref_speak_in_phrases">Per i motori di sintesi vocale lenti a fermarsi, come Gryphon, in modo che uno scorrimento interrompa subito il testo lungo. Molti motori fanno pause più lunghe tra frasi inviate separatamente, quindi lascia l\'opzione disattivata se il tuo motore si ferma rapidamente.</string>
     <string name="battery_optimization_notification_title">L\'ottimizzazione della batteria può interrompere SandFly</string>
     <string name="battery_optimization_notification_text">Su questo telefono il risparmio energetico può interrompere SandFly dopo lo spegnimento dello schermo; SandFly resta muto finché non viene riavviato. Tocca per aprire l\'ottimizzazione della batteria, scegli Tutte le app, trova SandFly e scegli Non ottimizzare.</string>
     <string name="title_pref_mute_speech_while_recording">Silenzioso durante la registrazione</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Sezione compressa</string>
     <string name="category_expanded">Sezione ampliata</string>
     <string name="title_pref_speak_nav_bar_buttons">Pronuncia i pulsanti della barra di navigazione</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Con Lift da attivare sulla barra di navigazione, pronuncia il pulsante premuto con un tocco, ad esempio Indietro o Home.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Con «Solleva il dito per attivare» sulla barra di navigazione, pronuncia il pulsante premuto con il tocco, ad esempio Indietro o Home.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Batteria <xliff:g id="battery_level" example="73">%1$s</xliff:g> percento</string>
     <string name="template_battery_level_unknown">Livello della batteria sconosciuto</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Leggi le variazioni di volume</string>
     <string name="summary_pref_speak_volume_changes">Pronuncia il nuovo volume dopo aver premuto i tasti del volume</string>
     <string name="title_pref_speak_notifications">Pronuncia le notifiche</string>
-    <string name="summary_pref_speak_notifications">Leggi ad alta voce le nuove notifiche quando arrivano. Le chiamate in arrivo vengono sempre lette.</string>
+    <string name="summary_pref_speak_notifications">Legge ad alta voce le nuove notifiche quando arrivano. Le chiamate in arrivo vengono sempre lette.</string>
     <string name="title_pref_notification_list">Utilizza l\'elenco delle notifiche di SandFly</string>
     <string name="title_pref_notification_parts">Dettagli della notifica</string>
     <string name="title_pref_play_installer">Sembra installato da Google Play</string>

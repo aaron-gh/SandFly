@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Uzun metni cümle cümle gönder</string>
-    <string name="summary_pref_speak_in_phrases">Gryphon gibi durması yavaş olan konuşma motorları için, hızlıca kaydırmak uzun metni tek seferde durdurur. Çoğu motor, ayrı olarak gönderilen cümleler arasında daha uzun süre duraklar, bu nedenle sizinki hızlı bir şekilde durursa bunu kapalı bırakın.</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon gibi geç duran konuşma motorları için; böylece kaydırma uzun metni hemen durdurur. Birçok motor ayrı gönderilen cümleler arasında daha uzun duraklar, bu nedenle motorunuz hızlı duruyorsa bunu kapalı bırakın.</string>
     <string name="battery_optimization_notification_title">Pil optimizasyonu SandFly\'ı durdurabilir</string>
     <string name="battery_optimization_notification_text">Bu telefonda pil tasarrufu, ekran kapandıktan sonra SandFly\'ı durdurabilir; SandFly yeniden başlatılana kadar konuşmaz. Pil optimizasyonunu açmak için dokunun, Tüm uygulamalar\'ı seçin, SandFly\'ı bulun ve Optimize etme\'yi seçin.</string>
     <string name="title_pref_mute_speech_while_recording">Kayıt sırasında sessiz</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Daraltılmış bölüm</string>
     <string name="category_expanded">Genişletilmiş bölüm</string>
     <string name="title_pref_speak_nav_bar_buttons">Gezinme çubuğu düğmelerini seslendir</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Gezinme çubuğunda etkinleştirilecek kaldırma özelliğiyle, bir dokunuşun bastığı düğmeyi (Geri veya Ana Sayfa gibi) söyleyin.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Gezinme çubuğunda parmağı kaldırarak etkinleştirme kullanıldığında, dokunmayla basılan düğmeyi (ör. Geri veya Ana ekran) söyler.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Pil yüzde <xliff:g id="battery_level" example="73">%1$s</xliff:g></string>
     <string name="template_battery_level_unknown">Pil seviyesi bilinmiyor</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Ses düzeyi değişikliklerini söyle</string>
     <string name="summary_pref_speak_volume_changes">Ses seviyesi tuşlarına bastıktan sonra yeni ses seviyesini söyleyin</string>
     <string name="title_pref_speak_notifications">Bildirimleri sesli olarak söyle</string>
-    <string name="summary_pref_speak_notifications">Yeni bildirimler geldiğinde yüksek sesle okuyun. Gelen aramalar her zaman okunur.</string>
+    <string name="summary_pref_speak_notifications">Yeni bildirimleri geldiklerinde sesli okur. Gelen aramalar her zaman okunur.</string>
     <string name="title_pref_notification_list">SandFly\'ın bildirim listesini kullan</string>
     <string name="title_pref_notification_parts">Bildirim ayrıntıları</string>
     <string name="title_pref_play_installer">Google Play\'den yüklenmiş olarak görün</string>

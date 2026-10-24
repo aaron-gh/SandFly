@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">שליחת טקסט ארוך משפט אחר משפט</string>
-    <string name="summary_pref_speak_in_phrases">עבור מנועי דיבור שאיטיים לעצור, כגון Gryphon, אז החלקה משם עוצרת טקסט ארוך בבת אחת. מנועים רבים עוצרים זמן רב יותר בין משפט שנשלח בנפרד, אז השאר את זה כבוי אם שלך מפסיק במהירות.</string>
+    <string name="summary_pref_speak_in_phrases">למנועי דיבור שעוצרים לאט, כמו Gryphon, כדי שהחלקה תעצור טקסט ארוך מיד. מנועים רבים משהים זמן רב יותר בין משפטים שנשלחים בנפרד, ולכן כדאי להשאיר את זה כבוי אם המנוע שלך עוצר מהר.</string>
     <string name="battery_optimization_notification_title">אופטימיזציה של הסוללה עלולה לעצור את SandFly</string>
     <string name="battery_optimization_notification_text">בטלפון הזה, החיסכון בסוללה עלול לעצור את SandFly אחרי כיבוי המסך, ואז אין דיבור עד שהוא מופעל מחדש. יש להקיש כדי לפתוח את אופטימיזציית הסוללה, לבחור \'כל האפליקציות\', למצוא את SandFly ולבחור \'ללא אופטימיזציה\'.</string>
     <string name="title_pref_mute_speech_while_recording">שקט בזמן ההקלטה</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">קטע מכווץ</string>
     <string name="category_expanded">קטע מורחב</string>
     <string name="title_pref_speak_nav_bar_buttons">הקראת לחצני סרגל הניווט</string>
-    <string name="summary_pref_speak_nav_bar_buttons">עם הרמה להפעלה בסרגל הניווט, אמור את הלחצן שעליו לוחצת הקשה, כגון חזרה או בית.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">כשבסרגל הניווט פועלת הפעלה בהרמת האצבע, מוקרא הלחצן שנלחץ בהקשה, כמו ״הקודם״ או ״דף הבית״.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">סוללה <xliff:g id="battery_level" example="73">%1$s</xliff:g> אחוז</string>
     <string name="template_battery_level_unknown">רמת הסוללה לא ידועה</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">אמור שינויים בעוצמת הקול</string>
     <string name="summary_pref_speak_volume_changes">אמור את עוצמת הקול החדשה לאחר שתלחץ על מקשי עוצמת הקול</string>
     <string name="title_pref_speak_notifications">הקראת התראות</string>
-    <string name="summary_pref_speak_notifications">קרא התראות חדשות בקול כשהן מגיעות. שיחות נכנסות נקראות תמיד.</string>
+    <string name="summary_pref_speak_notifications">הקראת התראות חדשות כשהן מגיעות. שיחות נכנסות מוקראות תמיד.</string>
     <string name="title_pref_notification_list">שימוש ברשימת ההתראות של SandFly</string>
     <string name="title_pref_notification_parts">פרטי הודעה</string>
     <string name="title_pref_play_installer">נראה מותקן מ-Google Play</string>

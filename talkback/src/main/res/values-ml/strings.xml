@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">നീളമുള്ള ടെക്സ്റ്റ് ഓരോ വാക്യമായി അയയ്ക്കുക</string>
-    <string name="summary_pref_speak_in_phrases">Gryphon പോലെയുള്ള സ്‌പീച്ച് എഞ്ചിനുകൾ നിർത്താൻ സാവധാനമുള്ളതിനാൽ സ്വൈപ്പുചെയ്യുന്നത് നീളമുള്ള ടെക്‌സ്‌റ്റ് ഒറ്റയടിക്ക് നിർത്തുന്നു. പല എഞ്ചിനുകളും വെവ്വേറെ അയയ്‌ക്കുന്ന വാക്യങ്ങൾക്കിടയിൽ കൂടുതൽ സമയം നിർത്തുന്നു, അതിനാൽ നിങ്ങളുടേത് പെട്ടെന്ന് നിർത്തുകയാണെങ്കിൽ ഇത് ഒഴിവാക്കുക.</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon പോലെ നിർത്താൻ വൈകുന്ന സ്‌പീച്ച് എഞ്ചിനുകൾക്കായി, സ്വൈപ്പ് ചെയ്യുമ്പോൾ നീണ്ട ടെക്‌സ്‌റ്റ് ഉടൻ നിൽക്കാൻ. പല എഞ്ചിനുകളും വെവ്വേറെ അയച്ച വാക്യങ്ങൾക്കിടയിൽ കൂടുതൽ നേരം നിർത്തുന്നതിനാൽ, നിങ്ങളുടെ എഞ്ചിൻ പെട്ടെന്ന് നിൽക്കുന്നുണ്ടെങ്കിൽ ഇത് ഓഫായി വെക്കുക.</string>
     <string name="battery_optimization_notification_title">ബാറ്ററി ഒപ്റ്റിമൈസേഷൻ SandFly നിർത്തിയേക്കാം</string>
     <string name="battery_optimization_notification_text">ഈ ഫോണിൽ, സ്‌ക്രീൻ ഓഫായതിന് ശേഷം ബാറ്ററി സേവറിന് SandFly നിർത്താനാകും, അതിനാൽ അത് പുനരാരംഭിക്കുന്നത് വരെ നിശബ്ദമായിരിക്കും. ബാറ്ററി ഒപ്റ്റിമൈസേഷൻ തുറക്കാൻ ടാപ്പ് ചെയ്യുക, എല്ലാ ആപ്പുകളും തിരഞ്ഞെടുക്കുക, SandFly കണ്ടെത്തി ഒപ്റ്റിമൈസ് ചെയ്യരുത് തിരഞ്ഞെടുക്കുക.</string>
     <string name="title_pref_mute_speech_while_recording">റെക്കോർഡിംഗ് സമയത്ത് നിശബ്ദത</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">ചുരുക്കിയ വിഭാഗം</string>
     <string name="category_expanded">വിപുലീകരിച്ച വിഭാഗം</string>
     <string name="title_pref_speak_nav_bar_buttons">നാവിഗേഷൻ ബാർ ബട്ടണുകൾ പറയുക</string>
-    <string name="summary_pref_speak_nav_bar_buttons">നാവിഗേഷൻ ബാറിൽ സജീവമാക്കാൻ ലിഫ്റ്റ് ഉപയോഗിച്ച്, ബാക്ക് അല്ലെങ്കിൽ ഹോം പോലുള്ള ഒരു ടാപ്പ് അമർത്തുന്ന ബട്ടൺ പറയുക.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">നാവിഗേഷൻ ബാറിൽ വിരൽ ഉയർത്തി സജീവമാക്കുക ഉപയോഗിക്കുമ്പോൾ, ടാപ്പ് അമർത്തിയ ബട്ടൺ പറയുന്നു, ഉദാഹരണത്തിന് മടങ്ങുക അല്ലെങ്കിൽ ഹോം.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">ബാറ്ററി <xliff:g id="battery_level" example="73">%1$s</xliff:g> ശതമാനം</string>
     <string name="template_battery_level_unknown">ബാറ്ററി നില അജ്ഞാതമാണ്</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">വോളിയം മാറ്റങ്ങൾ സംസാരിക്കുക</string>
     <string name="summary_pref_speak_volume_changes">നിങ്ങൾ വോളിയം കീകൾ അമർത്തിയാൽ പുതിയ വോളിയം പറയുക</string>
     <string name="title_pref_speak_notifications">അറിയിപ്പുകൾ വായിക്കുക</string>
-    <string name="summary_pref_speak_notifications">പുതിയ അറിയിപ്പുകൾ വരുമ്പോൾ ഉറക്കെ വായിക്കുക. ഇൻകമിംഗ് കോളുകൾ എപ്പോഴും വായിക്കും.</string>
+    <string name="summary_pref_speak_notifications">പുതിയ അറിയിപ്പുകൾ വരുമ്പോൾ ഉറക്കെ വായിക്കുന്നു. ഇൻകമിംഗ് കോളുകൾ എപ്പോഴും വായിക്കും.</string>
     <string name="title_pref_notification_list">SandFly-ൻ്റെ അറിയിപ്പ് ലിസ്റ്റ് ഉപയോഗിക്കുക</string>
     <string name="title_pref_notification_parts">അറിയിപ്പ് വിശദാംശങ്ങൾ</string>
     <string name="title_pref_play_installer">Google Play-ൽ നിന്ന് ഇൻസ്റ്റാൾ ചെയ്തതായി ദൃശ്യമാകും</string>

@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Испраќај долг текст реченица по реченица</string>
-    <string name="summary_pref_speak_in_phrases">За говорните мотори кои бавно запираат, како што е Gryphon, така што со лизгање настрана се запира долгиот текст одеднаш. Многу мотори паузираат подолго помеѓу речениците испратени одделно, затоа исклучете го ова ако вашата брзо престане.</string>
+    <string name="summary_pref_speak_in_phrases">За говорни мотори што бавно запираат, како Gryphon, за повлекувањето веднаш да го запре долгиот текст. Многу мотори прават подолга пауза меѓу реченици испратени одделно, па оставете го исклучено ако вашиот мотор брзо запира.</string>
     <string name="battery_optimization_notification_title">Оптимизацијата на батеријата може да запре SandFly</string>
     <string name="battery_optimization_notification_text">На овој телефон штедачот на батерија може да го запре SandFly откако ќе се исклучи екранот, па SandFly не зборува додека не се рестартира. Допрете за да ја отворите оптимизацијата на батеријата, изберете Сите апликации, најдете го SandFly и изберете Не оптимизирај.</string>
     <string name="title_pref_mute_speech_while_recording">Тивко за време на снимање</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Собран дел</string>
     <string name="category_expanded">Проширен дел</string>
     <string name="title_pref_speak_nav_bar_buttons">Изговарај ги копчињата на лентата за навигација</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Со лифт за активирање на лентата за навигација, кажете го копчето што ќе го притисне допирот, како што се Назад или Дома.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Кога на лентата за навигација се користи активирање со подигање на прстот, се изговара копчето притиснато со допир, на пример „Назад“ или „Почетен екран“.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Батерија <xliff:g id="battery_level" example="73">%1$s</xliff:g> проценти</string>
     <string name="template_battery_level_unknown">Нивото на батеријата е непознато</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Изговарај промени на јачината</string>
     <string name="summary_pref_speak_volume_changes">Кажете ја новата јачина откако ќе ги притиснете копчињата за јачина на звук</string>
     <string name="title_pref_speak_notifications">Изговарај известувања</string>
-    <string name="summary_pref_speak_notifications">Читајте ги новите известувања гласно кога ќе пристигнат. Дојдовните повици секогаш се читаат.</string>
+    <string name="summary_pref_speak_notifications">Ги чита гласно новите известувања кога ќе пристигнат. Дојдовните повици секогаш се читаат.</string>
     <string name="title_pref_notification_list">Користи ја листата со известувања на SandFly</string>
     <string name="title_pref_notification_parts">Детали за известување</string>
     <string name="title_pref_play_installer">Прикажи како инсталирано од Google Play</string>

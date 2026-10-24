@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">გრძელი ტექსტის წინადადებებად გაგზავნა</string>
-    <string name="summary_pref_speak_in_phrases">მეტყველების ძრავებისთვის, რომლებიც ნელა ჩერდებიან, მაგალითად, Gryphon, ასე რომ, გადაფურცვლა ერთდროულად აჩერებს გრძელ ტექსტს. ბევრი ძრავა უფრო დიდხანს ჩერდება ცალ-ცალკე გაგზავნილ წინადადებებს შორის, ასე რომ, გამორთეთ ეს, თუ თქვენი სწრაფად გაჩერდება.</string>
+    <string name="summary_pref_speak_in_phrases">მეტყველების ძრავებისთვის, რომლებიც ნელა ჩერდება, მაგალითად Gryphon, რომ გადაფურცვლამ გრძელი ტექსტი მაშინვე შეაჩეროს. ბევრი ძრავა ცალ-ცალკე გაგზავნილ წინადადებებს შორის უფრო დიდ პაუზას აკეთებს, ამიტომ დატოვეთ გამორთული, თუ თქვენი ძრავა სწრაფად ჩერდება.</string>
     <string name="battery_optimization_notification_title">ბატარეის ოპტიმიზაციამ შეიძლება SandFly შეაჩეროს</string>
     <string name="battery_optimization_notification_text">ამ ტელეფონზე ბატარეის დამზოგმა შეიძლება ეკრანის გამორთვის შემდეგ SandFly შეაჩეროს და ის ხელახლა გაშვებამდე აღარაფერს წაიკითხავს. შეეხეთ ბატარეის ოპტიმიზაციის გასახსნელად, აირჩიეთ „ყველა აპი“, იპოვეთ SandFly და აირჩიეთ „არ მოხდეს ოპტიმიზაცია“.</string>
     <string name="title_pref_mute_speech_while_recording">ჩუმად ჩაწერისას</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">ჩაკეცილი განყოფილება</string>
     <string name="category_expanded">გაფართოებული განყოფილება</string>
     <string name="title_pref_speak_nav_bar_buttons">ნავიგაციის ზოლის ღილაკების წარმოთქმა</string>
-    <string name="summary_pref_speak_nav_bar_buttons">ნავიგაციის ზოლზე გასააქტიურებლად ლიფტით, თქვით ღილაკი, რომელსაც აჭერს შეხება, როგორიცაა უკან ან მთავარი.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">როცა ნავიგაციის ზოლზე აქტივაცია თითის აწევით ხდება, წარმოთქვამს შეხებით დაჭერილ ღილაკს, მაგალითად „უკან“ ან „მთავარი“.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">ბატარეა <xliff:g id="battery_level" example="73">%1$s</xliff:g> პროცენტი</string>
     <string name="template_battery_level_unknown">ბატარეის დონე უცნობია</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">ხმის დონის ცვლილებების წარმოთქმა</string>
     <string name="summary_pref_speak_volume_changes">თქვით ახალი ხმა ხმის ღილაკების დაჭერის შემდეგ</string>
     <string name="title_pref_speak_notifications">შეტყობინებების წარმოთქმა</string>
-    <string name="summary_pref_speak_notifications">წაიკითხეთ ახალი შეტყობინებები ხმამაღლა, როდესაც ისინი ჩამოდიან. შემომავალი ზარები ყოველთვის იკითხება.</string>
+    <string name="summary_pref_speak_notifications">ახალ შეტყობინებებს ხმამაღლა კითხულობს მიღებისას. შემომავალი ზარები ყოველთვის იკითხება.</string>
     <string name="title_pref_notification_list">SandFly-ის შეტყობინებების სიის გამოყენება</string>
     <string name="title_pref_notification_parts">შეტყობინების დეტალები</string>
     <string name="title_pref_play_installer">Google Play-დან დაინსტალირებულად ჩვენება</string>

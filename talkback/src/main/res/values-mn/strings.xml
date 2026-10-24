@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Урт текстийг өгүүлбэр өгүүлбэрээр илгээх</string>
-    <string name="summary_pref_speak_in_phrases">Gryphon зэрэг удаан зогсдог ярианы хөдөлгүүрүүдийн хувьд шударснаар урт текстийг нэг дор зогсооно. Олон хөдөлгүүрүүд тусад нь илгээсэн өгүүлбэрүүдийн хооронд удаан зогсдог тул таных хурдан зогсвол үүнийг унтраа.</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon зэрэг удаан зогсдог ярианы хөдөлгүүрт зориулсан бөгөөд шудрахад урт текст шууд зогсоно. Олон хөдөлгүүр тусад нь илгээсэн өгүүлбэрүүдийн хооронд удаан завсарладаг тул таны хөдөлгүүр хурдан зогсдог бол үүнийг унтраастай үлдээнэ үү.</string>
     <string name="battery_optimization_notification_title">Батерейг оновчлох нь SandFly-г зогсоох боломжтой</string>
     <string name="battery_optimization_notification_text">Энэ утсанд дэлгэц унтарсны дараа батарей хэмнэгч SandFly-г зогсоож болох бөгөөд дахин эхлүүлэх хүртэл юу ч хэлэхгүй. Батарейны оновчлолыг нээхийн тулд товшоод, «Бүх апп»-ыг сонгож, SandFly-г олоод «Оновчлохгүй»-г сонгоно уу.</string>
     <string name="title_pref_mute_speech_while_recording">Бичлэг хийж байхдаа чимээгүй</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Хураагдсан хэсэг</string>
     <string name="category_expanded">Өргөтгөсөн хэсэг</string>
     <string name="title_pref_speak_nav_bar_buttons">Навигацийн самбарын товчлууруудыг хэлэх</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Навигацийн талбар дээр идэвхжүүлэхийн тулд өргөх товчлуураар Буцах эсвэл Нүүр гэх мэт товшилтоор дарах товчлуурыг хэлнэ үү.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Навигацийн самбар дээр хуруугаа өргөж идэвхжүүлэхийг ашиглах үед товшилтоор дарагдсан товчлуурыг хэлнэ, жишээ нь Буцах эсвэл Нүүр.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Батерей <xliff:g id="battery_level" example="73">%1$s</xliff:g> хувь</string>
     <string name="template_battery_level_unknown">Батерейны түвшин тодорхойгүй байна</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Дууны түвшний өөрчлөлтийг хэлэх</string>
     <string name="summary_pref_speak_volume_changes">Дууны түвшний товчлуурыг дарсны дараа шинэ дууг хэлнэ үү</string>
     <string name="title_pref_speak_notifications">Мэдэгдлийг уншиж өгөх</string>
-    <string name="summary_pref_speak_notifications">Шинэ мэдэгдлүүдийг ирэхэд чангаар уншаарай. Ирж буй дуудлагыг байнга уншдаг.</string>
+    <string name="summary_pref_speak_notifications">Шинэ мэдэгдлийг ирэх үед чангаар уншина. Ирж буй дуудлагыг үргэлж уншина.</string>
     <string name="title_pref_notification_list">SandFly-н мэдэгдлийн жагсаалтыг ашиглах</string>
     <string name="title_pref_notification_parts">Мэдэгдлийн дэлгэрэнгүй</string>
     <string name="title_pref_play_installer">Google Play-ээс суулгасан харагдана</string>

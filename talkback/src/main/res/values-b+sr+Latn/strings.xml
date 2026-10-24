@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Šalji dugačak tekst rečenicu po rečenicu</string>
-    <string name="summary_pref_speak_in_phrases">Za govorne mašine koje se sporo zaustavljaju, kao što je Griphon, tako da prevlačenje u stranu zaustavlja dugačak tekst odjednom. Mnogi motori pauziraju duže između rečenica koje se šalju zasebno, pa ostavite ovo isključeno ako vaša brzo stane.</string>
+    <string name="summary_pref_speak_in_phrases">Za govorne mehanizme koji se sporo zaustavljaju, kao što je Gryphon, da prevlačenje odmah zaustavi dug tekst. Mnogi mehanizmi prave dužu pauzu između rečenica poslatih zasebno, pa ovo ostavite isključeno ako se vaš mehanizam brzo zaustavlja.</string>
     <string name="battery_optimization_notification_title">Optimizacija baterije može da zaustavi SandFly</string>
     <string name="battery_optimization_notification_text">Na ovom telefonu ušteda baterije može da zaustavi SandFly kada se ekran isključi, pa SandFly ćuti dok se ponovo ne pokrene. Dodirnite da biste otvorili optimizaciju baterije, izaberite Sve aplikacije, pronađite SandFly i izaberite Ne optimizuj.</string>
     <string name="title_pref_mute_speech_while_recording">Tiho tokom snimanja</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Skupljeni odeljak</string>
     <string name="category_expanded">Prošireni odeljak</string>
     <string name="title_pref_speak_nav_bar_buttons">Izgovaraj dugmad na traci za navigaciju</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Sa podizanjem za aktiviranje na traci za navigaciju, izgovorite dugme koje pritisne dodir, na primer Nazad ili Početna.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Kada se na traci za navigaciju koristi aktiviranje podizanjem prsta, izgovara se dugme pritisnuto dodirom, na primer Nazad ili Početni ekran.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Baterija <xliff:g id="battery_level" example="73">%1$s</xliff:g> procenata</string>
     <string name="template_battery_level_unknown">Nivo baterije nepoznat</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Izgovaraj promene jačine zvuka</string>
     <string name="summary_pref_speak_volume_changes">Izgovorite novu jačinu zvuka nakon što pritisnete tastere za jačinu zvuka</string>
     <string name="title_pref_speak_notifications">Izgovaraj obaveštenja</string>
-    <string name="summary_pref_speak_notifications">Pročitajte nova obaveštenja naglas kada stignu. Dolazni pozivi se uvek čitaju.</string>
+    <string name="summary_pref_speak_notifications">Čitanje novih obaveštenja naglas kada stignu. Dolazni pozivi se uvek čitaju.</string>
     <string name="title_pref_notification_list">Koristi listu obaveštenja SandFly-a</string>
     <string name="title_pref_notification_parts">Detalji obaveštenja</string>
     <string name="title_pref_play_installer">Prikazuj kao instalirano iz Google Play-a</string>

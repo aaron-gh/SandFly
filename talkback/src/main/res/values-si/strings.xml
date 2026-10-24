@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">දිගු පෙළ වරකට එක් වාක්‍යයක් ලෙස යවන්න</string>
-    <string name="summary_pref_speak_in_phrases">Gryphon වැනි කථන යන්ත්‍ර නැවැත්වීමට ප්‍රමාද වන බැවින් ඉවතට ස්වයිප් කිරීම දිගු අකුරු එකවර නතර කරයි. බොහෝ එන්ජින් වෙන වෙනම යවන ලද වාක්‍ය අතර දිගු විරාමයක් ලබා දෙයි, එබැවින් ඔබේ එක ඉක්මනින් නතර වුවහොත් මෙය ක්‍රියා විරහිත කරන්න.</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon වැනි නැවතීමට ප්‍රමාද වන කථන එන්ජින් සඳහා, ස්වයිප් කළ විට දිගු පෙළ වහාම නතර වීමට. බොහෝ එන්ජින් වෙන වෙනම යවන වාක්‍ය අතර දිගු විරාම තබන බැවින්, ඔබේ එන්ජිම ඉක්මනින් නතර වේ නම් මෙය අක්‍රියව තබන්න.</string>
     <string name="battery_optimization_notification_title">බැටරි ප්‍රශස්තකරණය SandFly නැවැත්විය හැක</string>
     <string name="battery_optimization_notification_text">මෙම දුරකථනයේ, තිරය ක්‍රියා විරහිත වූ පසු බැටරි සුරැකුමට SandFly නැවැත්විය හැක, එබැවින් එය නැවත ආරම්භ වන තෙක් එය නිශ්ශබ්ද වේ. බැටරි ප්‍රශස්තිකරණය විවෘත කිරීමට තට්ටු කරන්න, සියලුම යෙදුම් තෝරන්න, SandFly සොයාගෙන ප්‍රශස්ත නොකරන්න තෝරන්න.</string>
     <string name="title_pref_mute_speech_while_recording">පටිගත කිරීමේදී නිහඬයි</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">හකුළන ලද කොටස</string>
     <string name="category_expanded">පුළුල් කරන ලද කොටස</string>
     <string name="title_pref_speak_nav_bar_buttons">සංචාලන තීරු බොත්තම් කියන්න</string>
-    <string name="summary_pref_speak_nav_bar_buttons">සංචාලන තීරුව මත සක්‍රිය කිරීමට සෝපානය සමඟින්, ආපසු හෝ නිවස වැනි ටැප් එකක් එබූ බොත්තම කියන්න.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">සංචාලන තීරුවේ ඇඟිල්ල ඔසවා සක්‍රිය කිරීම භාවිත වන විට, තට්ටු කිරීමෙන් එබූ බොත්තම කියයි, උදා. ආපසු හෝ මුල් පිටුව.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">බැටරිය සියයට <xliff:g id="battery_level" example="73">%1$s</xliff:g></string>
     <string name="template_battery_level_unknown">බැටරි මට්ටම නොදනී</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">හඬ පරිමා වෙනස්කම් කියන්න</string>
     <string name="summary_pref_speak_volume_changes">ඔබ වෙළුම් යතුරු එබීමෙන් පසු නව පරිමාව කියන්න</string>
     <string name="title_pref_speak_notifications">දැනුම්දීම් කියවන්න</string>
-    <string name="summary_pref_speak_notifications">නව දැනුම්දීම් පැමිණෙන විට ශබ්ද නඟා කියවන්න. එන ඇමතුම් සෑම විටම කියවනු ලැබේ.</string>
+    <string name="summary_pref_speak_notifications">නව දැනුම්දීම් පැමිණි විට ශබ්ද නඟා කියවයි. එන ඇමතුම් සැමවිටම කියවේ.</string>
     <string name="title_pref_notification_list">SandFly හි දැනුම්දීම් ලැයිස්තුව භාවිතා කරන්න</string>
     <string name="title_pref_notification_parts">දැනුම්දීම් විස්තර</string>
     <string name="title_pref_play_installer">Google Play වෙතින් ස්ථාපනය කර ඇති බව පෙනේ</string>

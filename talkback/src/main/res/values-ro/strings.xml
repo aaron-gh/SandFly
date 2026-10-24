@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Trimite textul lung câte o propoziție</string>
-    <string name="summary_pref_speak_in_phrases">Pentru motoarele de vorbire care se opresc lent, cum ar fi Gryphon, prin urmare, glisarea oprește simultan textul lung. Multe motoare fac o pauză mai lungă între propoziții trimise separat, așa că oprește această opțiune dacă a ta se oprește rapid.</string>
+    <string name="summary_pref_speak_in_phrases">Pentru motoarele de vorbire care se opresc greu, cum ar fi Gryphon, astfel încât o glisare să oprească imediat textul lung. Multe motoare fac pauze mai lungi între propozițiile trimise separat, așa că lăsați opțiunea dezactivată dacă motorul dvs. se oprește repede.</string>
     <string name="battery_optimization_notification_title">Optimizarea bateriei poate opri SandFly</string>
     <string name="battery_optimization_notification_text">Pe acest telefon, economisirea bateriei poate opri SandFly după ce se stinge ecranul, iar SandFly rămâne tăcut până la repornire. Atingeți pentru a deschide optimizarea bateriei, alegeți Toate aplicațiile, găsiți SandFly și alegeți Nu optimizați.</string>
     <string name="title_pref_mute_speech_while_recording">Silențios în timpul înregistrării</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Secțiune restrânsă</string>
     <string name="category_expanded">Secțiune extinsă</string>
     <string name="title_pref_speak_nav_bar_buttons">Rostește butoanele barei de navigare</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Cu lift pentru a activa pe bara de navigare, rostiți butonul pe care îl apăsați o atingere, cum ar fi Înapoi sau Acasă.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Când pe bara de navigare se folosește activarea prin ridicarea degetului, rostește butonul apăsat prin atingere, de exemplu Înapoi sau Ecran de pornire.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Bateria <xliff:g id="battery_level" example="73">%1$s</xliff:g> la sută</string>
     <string name="template_battery_level_unknown">Nivelul bateriei necunoscut</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Rostește modificările volumului</string>
     <string name="summary_pref_speak_volume_changes">Spuneți noul volum după ce apăsați tastele de volum</string>
     <string name="title_pref_speak_notifications">Rostește notificările</string>
-    <string name="summary_pref_speak_notifications">Citiți cu voce tare noile notificări când sosesc. Apelurile primite sunt întotdeauna citite.</string>
+    <string name="summary_pref_speak_notifications">Citește cu voce tare notificările noi când sosesc. Apelurile primite sunt citite întotdeauna.</string>
     <string name="title_pref_notification_list">Folosește lista de notificări SandFly</string>
     <string name="title_pref_notification_parts">Detaliile notificării</string>
     <string name="title_pref_play_installer">Apare instalat din Google Play</string>

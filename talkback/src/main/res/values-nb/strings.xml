@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Send lang tekst en setning om gangen</string>
-    <string name="summary_pref_speak_in_phrases">For talemotorer som er trege til å stoppe, for eksempel Gryphon, stopper lang tekst på en gang å sveipe bort. Mange motorer pauser lenger mellom setninger som sendes separat, så la dette være av hvis din stopper raskt.</string>
+    <string name="summary_pref_speak_in_phrases">For talemotorer som er trege til å stoppe, for eksempel Gryphon, slik at et sveip stopper lang tekst med en gang. Mange motorer tar lengre pause mellom setninger som sendes hver for seg, så la dette være av hvis motoren din stopper raskt.</string>
     <string name="battery_optimization_notification_title">Batterioptimalisering kan stoppe SandFly</string>
     <string name="battery_optimization_notification_text">På denne telefonen kan batterispareren stoppe SandFly etter at skjermen slår seg av, så den blir stille til den startes på nytt. Trykk for å åpne batterioptimalisering, velg Alle apper, finn SandFly og velg Ikke optimaliser.</string>
     <string name="title_pref_mute_speech_while_recording">Stille under opptak</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Skjult del</string>
     <string name="category_expanded">Utvidet seksjon</string>
     <string name="title_pref_speak_nav_bar_buttons">Les knapper på navigasjonslinjen</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Med løft for å aktivere på navigasjonslinjen, si knappen som et trykk trykker på, for eksempel Tilbake eller Hjem.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Når løft for å aktivere brukes på navigasjonsraden, sies knappen et trykk trykket på, for eksempel Tilbake eller Startside.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Batteri <xliff:g id="battery_level" example="73">%1$s</xliff:g> prosent</string>
     <string name="template_battery_level_unknown">Batterinivå ukjent</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Les volumendringer</string>
     <string name="summary_pref_speak_volume_changes">Si det nye volumet etter at du har trykket på volumtastene</string>
     <string name="title_pref_speak_notifications">Les varsler</string>
-    <string name="summary_pref_speak_notifications">Les nye varsler høyt når de kommer. Innkommende anrop leses alltid.</string>
+    <string name="summary_pref_speak_notifications">Leser opp nye varsler når de kommer. Innkommende anrop leses alltid opp.</string>
     <string name="title_pref_notification_list">Bruk SandFlys varslingsliste</string>
     <string name="title_pref_notification_parts">Varslingsdetaljer</string>
     <string name="title_pref_play_installer">Vises installert fra Google Play</string>

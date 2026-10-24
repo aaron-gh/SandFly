@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">長文字逐句傳送</string>
-    <string name="summary_pref_speak_in_phrases">對於停止速度較慢的語音引擎（例如 Gryphon），因此向遠處滑動會立即停止長文字。許多引擎在單獨發送的句子之間暫停時間較長，因此如果您的引擎停止得很快，請將其關閉。</string>
+    <string name="summary_pref_speak_in_phrases">適用於停止較慢的語音引擎（例如 Gryphon），讓滑動手勢可立即停止長文字。許多引擎在分開傳送的句子之間停頓較長，因此如果你的引擎停止得很快，請保持關閉。</string>
     <string name="battery_optimization_notification_title">電池優化可能會停止 SandFly</string>
     <string name="battery_optimization_notification_text">在這部手機上，螢幕關閉後省電模式可能會停止 SandFly，令 SandFly 在重新啟動前不會發聲。輕按即可開啟電池優化，選擇「所有應用程式」，找到 SandFly 並選擇「不要優化」。</string>
     <string name="title_pref_mute_speech_while_recording">錄音時保持安靜</string>
@@ -1357,7 +1357,7 @@
     <string name="category_collapsed">折疊部分</string>
     <string name="category_expanded">展開部分</string>
     <string name="title_pref_speak_nav_bar_buttons">說出導覽列按鈕</string>
-    <string name="summary_pref_speak_nav_bar_buttons">在導覽列上啟動抬起按鈕後，說出點擊按下的按鈕，例如「返回」或「首頁」。</string>
+    <string name="summary_pref_speak_nav_bar_buttons">在導覽列上使用「放開手指即啟用」時，讀出輕按所按下的按鈕，例如「返回」或「主畫面」。</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">電量為百分之<xliff:g id="battery_level" example="73">%1$s</xliff:g></string>
     <string name="template_battery_level_unknown">電池電量未知</string>
@@ -1427,7 +1427,7 @@
     <string name="title_pref_speak_volume_changes">讀出音量變化</string>
     <string name="summary_pref_speak_volume_changes">按音量鍵後說出新音量</string>
     <string name="title_pref_speak_notifications">說出通知</string>
-    <string name="summary_pref_speak_notifications">當新通知到達時大聲朗讀。來電始終會被讀取。</string>
+    <string name="summary_pref_speak_notifications">收到新通知時朗讀。一律朗讀來電。</string>
     <string name="title_pref_notification_list">使用 SandFly 的通知列表</string>
     <string name="title_pref_notification_parts">通知詳情</string>
     <string name="title_pref_play_installer">顯示為從 Google Play 安裝</string>

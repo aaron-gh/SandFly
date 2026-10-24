@@ -1345,7 +1345,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">長いテキストを 1 文ずつ送信</string>
-    <string name="summary_pref_speak_in_phrases">Gryphon などの音声エンジンの場合、停止が遅いため、スワイプすると長いテキストが一度に停止します。多くのエンジンは、別々に送信されるセンテンスの間に一時停止時間が長くなるため、エンジンがすぐに停止する場合は、これをオフのままにしておきます。</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon など停止に時間がかかる音声エンジン向けで、スワイプすると長いテキストがすぐに停止します。多くのエンジンは個別に送られた文の間で長めに間を置くため、使用中のエンジンがすぐに停止する場合はオフのままにしてください。</string>
     <string name="battery_optimization_notification_title">バッテリーの最適化によって SandFly が停止することがあります</string>
     <string name="battery_optimization_notification_text">このスマートフォンでは、画面がオフになった後にバッテリー セーバーが SandFly を停止することがあり、再起動するまで読み上げが行われません。タップして [電池の最適化] を開き、[すべてのアプリ] を選択して SandFly を探し、[最適化しない] を選択してください。</string>
     <string name="title_pref_mute_speech_while_recording">録音中は読み上げない</string>
@@ -1355,7 +1355,7 @@
     <string name="category_collapsed">折りたたみ済み</string>
     <string name="category_expanded">展開済み</string>
     <string name="title_pref_speak_nav_bar_buttons">ナビゲーション バーのボタンを読み上げる</string>
-    <string name="summary_pref_speak_nav_bar_buttons">ナビゲーション バーでリフトを有効にすると、「戻る」や「ホーム」など、タップで押すボタンを言います。</string>
+    <string name="summary_pref_speak_nav_bar_buttons">ナビゲーション バーで指を離して有効化を使うとき、タップで押されたボタン（「戻る」や「ホーム」など）を読み上げます。</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">バッテリー <xliff:g id="battery_level" example="73">%1$s</xliff:g> パーセント</string>
     <string name="template_battery_level_unknown">電池残量不明</string>
@@ -1425,7 +1425,7 @@
     <string name="title_pref_speak_volume_changes">音量の変更を読み上げる</string>
     <string name="summary_pref_speak_volume_changes">音量キーを押した後、新しい音量を言います</string>
     <string name="title_pref_speak_notifications">通知を読み上げる</string>
-    <string name="summary_pref_speak_notifications">新しい通知が到着したら読み上げます。着信通話は常に読み取られます。</string>
+    <string name="summary_pref_speak_notifications">新しい通知が届いたときに読み上げます。着信は常に読み上げられます。</string>
     <string name="title_pref_notification_list">SandFly の通知リストを使用する</string>
     <string name="title_pref_notification_parts">通知内容</string>
     <string name="title_pref_play_installer">Google Play からインストールしたように見せる</string>

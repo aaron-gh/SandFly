@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Stuur lange tekst zin voor zin</string>
-    <string name="summary_pref_speak_in_phrases">Bij spraakengines die traag stoppen, zoals Gryphon, stopt het wegvegen lange tekst in één keer. Veel motoren pauzeren langer tussen zinnen die afzonderlijk worden verzonden, dus laat dit uitgeschakeld als de jouwe snel stopt.</string>
+    <string name="summary_pref_speak_in_phrases">Voor spraakengines die traag stoppen, zoals Gryphon, zodat een veegbeweging lange tekst meteen stopt. Veel engines pauzeren langer tussen zinnen die apart worden verzonden, dus laat dit uit als je engine snel stopt.</string>
     <string name="battery_optimization_notification_title">Batterijoptimalisatie kan SandFly stoppen</string>
     <string name="battery_optimization_notification_text">Op deze telefoon kan de batterijbesparing SandFly stoppen nadat het scherm is uitgeschakeld, zodat het stil blijft totdat het opnieuw wordt opgestart. Tik om batterijoptimalisatie te openen, kies Alle apps, zoek SandFly en kies Niet optimaliseren.</string>
     <string name="title_pref_mute_speech_while_recording">Stil tijdens het opnemen</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Samengevouwen sectie</string>
     <string name="category_expanded">Uitgevouwen sectie</string>
     <string name="title_pref_speak_nav_bar_buttons">Spreek navigatiebalkknoppen uit</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Met lift om te activeren op de navigatiebalk, zegt u de knop waarop u tikt, zoals Terug of Thuis.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Als Optillen om te activeren wordt gebruikt op de navigatiebalk, wordt de knop uitgesproken die met een tik is ingedrukt, zoals Terug of Startscherm.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Batterij <xliff:g id="battery_level" example="73">%1$s</xliff:g> procent</string>
     <string name="template_battery_level_unknown">Batterijniveau onbekend</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Volumewijzigingen uitspreken</string>
     <string name="summary_pref_speak_volume_changes">Zeg het nieuwe volume nadat u op de volumetoetsen hebt gedrukt</string>
     <string name="title_pref_speak_notifications">Meldingen uitspreken</string>
-    <string name="summary_pref_speak_notifications">Lees nieuwe meldingen hardop wanneer ze binnenkomen. Inkomende oproepen worden altijd gelezen.</string>
+    <string name="summary_pref_speak_notifications">Leest nieuwe meldingen voor wanneer ze binnenkomen. Inkomende oproepen worden altijd voorgelezen.</string>
     <string name="title_pref_notification_list">Meldingenlijst van SandFly gebruiken</string>
     <string name="title_pref_notification_parts">Meldingsdetails</string>
     <string name="title_pref_play_installer">Weergeven als geïnstalleerd via Google Play</string>

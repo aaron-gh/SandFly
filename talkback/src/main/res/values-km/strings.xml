@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">ផ្ញើអត្ថបទវែងមួយប្រយោគម្ដងៗ</string>
-    <string name="summary_pref_speak_in_phrases">សម្រាប់ម៉ាស៊ីននិយាយដែលយឺតក្នុងការបញ្ឈប់ដូចជា Gryphon ដូច្នេះការអូសទៅឆ្ងាយនឹងបញ្ឈប់អត្ថបទវែងក្នុងពេលតែមួយ។ ម៉ាស៊ីនជាច្រើនផ្អាកយូរជាងរវាងប្រយោគដែលបានផ្ញើដោយឡែកពីគ្នា ដូច្នេះសូមទុកវាចោល ប្រសិនបើអ្នកឈប់លឿន។</string>
+    <string name="summary_pref_speak_in_phrases">សម្រាប់ម៉ាស៊ីននិយាយដែលឈប់យឺត ដូចជា Gryphon ដើម្បីឱ្យការអូសបញ្ឈប់អត្ថបទវែងភ្លាមៗ។ ម៉ាស៊ីនជាច្រើនផ្អាកយូរជាងរវាងប្រយោគដែលផ្ញើដាច់ៗពីគ្នា ដូច្នេះទុកវាឱ្យបិទ ប្រសិនបើម៉ាស៊ីនរបស់អ្នកឈប់លឿន។</string>
     <string name="battery_optimization_notification_title">ការបង្កើនប្រសិទ្ធភាពថ្មអាចបញ្ឈប់ SandFly</string>
     <string name="battery_optimization_notification_text">នៅលើទូរសព្ទនេះ កម្មវិធីសន្សំសំចៃថ្មអាចបញ្ឈប់ SandFly បន្ទាប់ពីអេក្រង់បិទ ដូច្នេះវានៅស្ងៀមរហូតដល់វាចាប់ផ្តើមឡើងវិញ។ ចុចដើម្បីបើកការបង្កើនប្រសិទ្ធភាពថ្ម ជ្រើសរើសកម្មវិធីទាំងអស់ ស្វែងរក SandFly ហើយជ្រើសរើស កុំបង្កើនប្រសិទ្ធភាព។</string>
     <string name="title_pref_mute_speech_while_recording">ស្ងាត់ពេលថត</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">ផ្នែកដែលបានបង្រួម</string>
     <string name="category_expanded">ផ្នែកដែលបានពង្រីក</string>
     <string name="title_pref_speak_nav_bar_buttons">និយាយប៊ូតុងរបាររុករក</string>
-    <string name="summary_pref_speak_nav_bar_buttons">ជាមួយនឹងការលើកដើម្បីធ្វើឱ្យសកម្មនៅលើរបាររុករក សូមនិយាយប៊ូតុងដែលចុចដូចជា ថយក្រោយ ឬទំព័រដើម។</string>
+    <string name="summary_pref_speak_nav_bar_buttons">នៅពេលប្រើ «លើកដើម្បីបើកដំណើរការ» លើរបាររុករក វានិយាយប៊ូតុងដែលការចុចបានចុច ដូចជា ថយក្រោយ ឬ ទំព័រដើម។</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">ថ្ម <xliff:g id="battery_level" example="73">%1$s</xliff:g> ភាគរយ</string>
     <string name="template_battery_level_unknown">កម្រិតថ្មមិនស្គាល់</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">និយាយការផ្លាស់ប្តូរកម្រិតសំឡេង</string>
     <string name="summary_pref_speak_volume_changes">និយាយកម្រិតសំឡេងថ្មីបន្ទាប់ពីអ្នកចុចគ្រាប់ចុចកម្រិតសំឡេង</string>
     <string name="title_pref_speak_notifications">និយាយការជូនដំណឹង</string>
-    <string name="summary_pref_speak_notifications">អានការជូនដំណឹងថ្មីឱ្យឮៗនៅពេលពួកគេមកដល់។ ការហៅចូលត្រូវបានអានជានិច្ច។</string>
+    <string name="summary_pref_speak_notifications">អានការជូនដំណឹងថ្មីៗឱ្យឮ នៅពេលវាមកដល់។ ការហៅចូលតែងតែត្រូវបានអាន។</string>
     <string name="title_pref_notification_list">ប្រើបញ្ជីជូនដំណឹងរបស់ SandFly</string>
     <string name="title_pref_notification_parts">ព័ត៌មានលម្អិតនៃការជូនដំណឹង</string>
     <string name="title_pref_play_installer">បង្ហាញថាបានដំឡើងពី Google Play</string>

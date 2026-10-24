@@ -1347,7 +1347,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">ଲମ୍ବା ପାଠ ଥରକେ ଗୋଟିଏ ବାକ୍ୟ କରି ପଠାନ୍ତୁ</string>
-    <string name="summary_pref_speak_in_phrases">ବକ୍ତବ୍ୟ ଇଞ୍ଜିନ୍ ପାଇଁ, ଯେପରିକି ଗ୍ରିଫନ୍ ବନ୍ଦ କରିବାକୁ ମନ୍ଥର, ତେଣୁ ସ୍ୱିପ୍ କରିବା ଏକକାଳୀନ ଲମ୍ବା ପାଠକୁ ବନ୍ଦ କରିଦିଏ | ଅନେକ ଇଞ୍ଜିନ୍ ପୃଥକ ଭାବରେ ପଠାଯାଇଥିବା ବାକ୍ୟ ମଧ୍ୟରେ ଅଧିକ ସମୟ ବିରାମ ଦିଅନ୍ତି, ତେଣୁ ଯଦି ତୁମର ଶୀଘ୍ର ବନ୍ଦ ହୋଇଯାଏ ତେବେ ଏହାକୁ ଛାଡିଦିଅ |</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon ପରି ଧୀରେ ବନ୍ଦ ହେଉଥିବା ସ୍ପିଚ୍ ଇଞ୍ଜିନ୍ ପାଇଁ, ଯାହାଫଳରେ ସ୍ୱାଇପ୍ କଲେ ଲମ୍ବା ଟେକ୍ସଟ୍ ତୁରନ୍ତ ବନ୍ଦ ହୁଏ। ଅନେକ ଇଞ୍ଜିନ୍ ଅଲଗା ଭାବେ ପଠାଯାଇଥିବା ବାକ୍ୟ ମଧ୍ୟରେ ଅଧିକ ସମୟ ବିରତି ନିଅନ୍ତି, ତେଣୁ ଆପଣଙ୍କ ଇଞ୍ଜିନ୍ ଶୀଘ୍ର ବନ୍ଦ ହେଉଥିଲେ ଏହାକୁ ବନ୍ଦ ରଖନ୍ତୁ।</string>
     <string name="battery_optimization_notification_title">ବ୍ୟାଟେରୀ ଅପ୍ଟିମାଇଜେସନ୍ SandFlyକୁ ବନ୍ଦ କରିପାରେ</string>
     <string name="battery_optimization_notification_text">ଏହି ଫୋନରେ, ସ୍କ୍ରିନ୍ ବନ୍ଦ ହେବା ପରେ ବ୍ୟାଟେରୀ ସେଭର୍ SandFly କୁ ବନ୍ଦ କରିପାରେ, ତେଣୁ ପୁଣି ଆରମ୍ଭ ନହେବା ପର୍ଯ୍ୟନ୍ତ ଏହା କିଛି କହେ ନାହିଁ। ବ୍ୟାଟେରୀ ଅପ୍ଟିମାଇଜେସନ୍ ଖୋଲିବାକୁ ଟ୍ୟାପ୍ କରନ୍ତୁ, ସମସ୍ତ ଆପ୍ ବାଛନ୍ତୁ, SandFly ଖୋଜନ୍ତୁ ଏବଂ ଅପ୍ଟିମାଇଜ୍ କରନ୍ତୁ ନାହିଁ ବାଛନ୍ତୁ।</string>
     <string name="title_pref_mute_speech_while_recording">ରେକର୍ଡିଂ କରିବା ସମୟରେ ଶାନ୍ତ</string>
@@ -1357,7 +1357,7 @@
     <string name="category_collapsed">ସଙ୍କୁଚିତ ବିଭାଗ</string>
     <string name="category_expanded">ବିସ୍ତାରିତ ବିଭାଗ</string>
     <string name="title_pref_speak_nav_bar_buttons">ନାଭିଗେସନ୍ ବାର୍ ବଟନ୍ କୁହନ୍ତୁ</string>
-    <string name="summary_pref_speak_nav_bar_buttons">ନାଭିଗେସନ୍ ବାର୍ ରେ ସକ୍ରିୟ ହେବାକୁ ଲିଫ୍ଟ ସହିତ, ଏକ ଟ୍ୟାପ୍ ପ୍ରେସ୍ କରୁଥିବା ବଟନ୍ କୁହ, ଯେପରିକି ବ୍ୟାକ୍ କିମ୍ବା ହୋମ୍ |</string>
+    <string name="summary_pref_speak_nav_bar_buttons">ନାଭିଗେସନ୍ ବାର୍‌ରେ ଆଙ୍ଗୁଠି ଉଠାଇ ସକ୍ରିୟ କରିବା ବ୍ୟବହାର ହେଲେ, ଟ୍ୟାପ୍ ଦ୍ୱାରା ଦବାଯାଇଥିବା ବଟନ୍ କହେ, ଯେପରି ପଛକୁ କିମ୍ବା ହୋମ୍।</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">ବ୍ୟାଟେରୀ <xliff:g id="battery_level" example="73">%1$s</xliff:g> ପ୍ରତିଶତ</string>
     <string name="template_battery_level_unknown">ବ୍ୟାଟେରୀ ସ୍ତର ଅଜ୍ଞାତ</string>
@@ -1427,7 +1427,7 @@
     <string name="title_pref_speak_volume_changes">ଭଲ୍ୟୁମ୍ ପରିବର୍ତ୍ତନ କୁହନ୍ତୁ</string>
     <string name="summary_pref_speak_volume_changes">ଭଲ୍ୟୁମ୍ କୀ ଦବାଇବା ପରେ ନୂଆ ଭଲ୍ୟୁମ୍ କୁହ</string>
     <string name="title_pref_speak_notifications">ବିଜ୍ଞପ୍ତିଗୁଡିକ କୁହନ୍ତୁ</string>
-    <string name="summary_pref_speak_notifications">ସେମାନେ ପହଞ୍ଚିବା ପରେ ଉଚ୍ଚ ବିଜ୍ଞପ୍ତିଗୁଡିକ ଉଚ୍ଚ ସ୍ୱରରେ ପ .ନ୍ତୁ | ଆସୁଥିବା କଲ୍ ସବୁବେଳେ ପ read ାଯାଏ |</string>
+    <string name="summary_pref_speak_notifications">ନୂଆ ବିଜ୍ଞପ୍ତି ଆସିଲେ ଉଚ୍ଚ ସ୍ୱରରେ ପଢ଼େ। ଇନକମିଂ କଲ୍ ସବୁବେଳେ ପଢ଼ାଯାଏ।</string>
     <string name="title_pref_notification_list">SandFly ର ବିଜ୍ଞପ୍ତି ତାଲିକା ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="title_pref_notification_parts">ବିଜ୍ଞପ୍ତି ବିବରଣୀ</string>
     <string name="title_pref_play_installer">Google Play ରୁ ଇନଷ୍ଟଲ୍ ହୋଇଥିବା ଭଳି ଦେଖାନ୍ତୁ</string>

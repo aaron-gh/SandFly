@@ -1339,7 +1339,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">పొడవైన వచనాన్ని ఒక్కో వాక్యంగా పంపు</string>
-    <string name="summary_pref_speak_in_phrases">Gryphon వంటి స్పీచ్ ఇంజిన్‌ల కోసం నెమ్మదిగా ఆగిపోతుంది, కాబట్టి దూరంగా స్వైప్ చేయడం వల్ల పొడవైన వచనం ఒకేసారి ఆగిపోతుంది. చాలా ఇంజిన్‌లు విడిగా పంపిన వాక్యాల మధ్య ఎక్కువసేపు పాజ్ చేస్తాయి, కాబట్టి మీది త్వరగా ఆగిపోతే దీన్ని నిలిపివేయండి.</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon వంటి ఆలస్యంగా ఆగే స్పీచ్ ఇంజిన్‌ల కోసం, స్వైప్ చేసినప్పుడు పొడవైన టెక్స్ట్ వెంటనే ఆగేలా. చాలా ఇంజిన్‌లు విడిగా పంపిన వాక్యాల మధ్య ఎక్కువ విరామం తీసుకుంటాయి, కాబట్టి మీ ఇంజిన్ త్వరగా ఆగితే దీన్ని ఆఫ్‌లోనే ఉంచండి.</string>
     <string name="battery_optimization_notification_title">బ్యాటరీ ఆప్టిమైజేషన్ SandFlyను ఆపవచ్చు</string>
     <string name="battery_optimization_notification_text">ఈ ఫోన్‌లో, స్క్రీన్ ఆఫ్ అయిన తర్వాత బ్యాటరీ సేవర్ SandFlyని ఆపివేయగలదు, కనుక ఇది రీస్టార్ట్ అయ్యే వరకు నిశ్శబ్దంగా ఉంటుంది. బ్యాటరీ ఆప్టిమైజేషన్‌ని తెరవడానికి నొక్కండి, అన్ని యాప్‌లను ఎంచుకోండి, SandFlyని కనుగొని, ఆప్టిమైజ్ చేయవద్దు ఎంచుకోండి.</string>
     <string name="title_pref_mute_speech_while_recording">రికార్డింగ్ సమయంలో నిశ్శబ్దం</string>
@@ -1349,7 +1349,7 @@
     <string name="category_collapsed">కుదించబడిన విభాగం</string>
     <string name="category_expanded">విస్తరించిన విభాగం</string>
     <string name="title_pref_speak_nav_bar_buttons">నావిగేషన్ బార్ బటన్‌లను చెప్పు</string>
-    <string name="summary_pref_speak_nav_bar_buttons">నావిగేషన్ బార్‌లో యాక్టివేట్ చేయడానికి లిఫ్ట్‌తో, బ్యాక్ లేదా హోమ్ వంటి ట్యాప్ నొక్కిన బటన్‌ని చెప్పండి.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">నావిగేషన్ బార్‌లో వేలు ఎత్తి యాక్టివేట్ చేయడం ఉపయోగించినప్పుడు, ట్యాప్‌తో నొక్కిన బటన్‌ను చెబుతుంది, ఉదా. వెనుకకు లేదా హోమ్.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">బ్యాటరీ <xliff:g id="battery_level" example="73">%1$s</xliff:g> శాతం</string>
     <string name="template_battery_level_unknown">బ్యాటరీ స్థాయి తెలియదు</string>
@@ -1419,7 +1419,7 @@
     <string name="title_pref_speak_volume_changes">వాల్యూమ్ మార్పులను చదవండి</string>
     <string name="summary_pref_speak_volume_changes">మీరు వాల్యూమ్ కీలను నొక్కిన తర్వాత కొత్త వాల్యూమ్ చెప్పండి</string>
     <string name="title_pref_speak_notifications">నోటిఫికేషన్‌లను చదవండి</string>
-    <string name="summary_pref_speak_notifications">కొత్త నోటిఫికేషన్‌లు వచ్చినప్పుడు వాటిని బిగ్గరగా చదవండి. ఇన్‌కమింగ్ కాల్‌లు ఎల్లప్పుడూ చదవబడతాయి.</string>
+    <string name="summary_pref_speak_notifications">కొత్త నోటిఫికేషన్‌లు వచ్చినప్పుడు వాటిని బిగ్గరగా చదువుతుంది. ఇన్‌కమింగ్ కాల్‌లు ఎల్లప్పుడూ చదవబడతాయి.</string>
     <string name="title_pref_notification_list">SandFly నోటిఫికేషన్ జాబితాను ఉపయోగించండి</string>
     <string name="title_pref_notification_parts">నోటిఫికేషన్ వివరాలు</string>
     <string name="title_pref_play_installer">Google Play నుండి ఇన్‌స్టాల్ చేయబడినట్లు కనిపిస్తుంది</string>

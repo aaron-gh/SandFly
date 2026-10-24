@@ -1349,7 +1349,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">ส่งข้อความยาวทีละประโยค</string>
-    <string name="summary_pref_speak_in_phrases">สำหรับกลไกเสียงพูดที่หยุดช้า เช่น กริฟฟอน การปัดออกไปจะหยุดข้อความยาวๆ ในคราวเดียว กลไกหลายตัวหยุดนานขึ้นระหว่างประโยคที่ส่งแยกกัน ดังนั้นไม่ต้องสนใจหากคุณหยุดอย่างรวดเร็ว</string>
+    <string name="summary_pref_speak_in_phrases">สำหรับเอนจินเสียงพูดที่หยุดช้า เช่น Gryphon เพื่อให้การปัดหยุดข้อความยาวได้ทันที เอนจินจำนวนมากเว้นช่วงนานขึ้นระหว่างประโยคที่ส่งแยกกัน จึงควรปิดไว้หากเอนจินของคุณหยุดได้เร็ว</string>
     <string name="battery_optimization_notification_title">การเพิ่มประสิทธิภาพแบตเตอรี่อาจหยุด SandFly</string>
     <string name="battery_optimization_notification_text">ในโทรศัพท์เครื่องนี้ โหมดประหยัดแบตเตอรี่อาจหยุด SandFly หลังจากหน้าจอปิด ทำให้ไม่มีเสียงพูดจนกว่าจะรีสตาร์ท แตะเพื่อเปิดการเพิ่มประสิทธิภาพแบตเตอรี่ เลือกแอปทั้งหมด ค้นหา SandFly แล้วเลือกไม่ต้องเพิ่มประสิทธิภาพ</string>
     <string name="title_pref_mute_speech_while_recording">เงียบขณะบันทึก</string>
@@ -1359,7 +1359,7 @@
     <string name="category_collapsed">ส่วนที่ยุบ</string>
     <string name="category_expanded">ส่วนที่ขยาย</string>
     <string name="title_pref_speak_nav_bar_buttons">พูดปุ่มแถบนำทาง</string>
-    <string name="summary_pref_speak_nav_bar_buttons">ด้วยการยกเพื่อเปิดใช้งานบนแถบนำทาง ให้พูดปุ่มที่มีการแตะ เช่น ย้อนกลับหรือหน้าแรก</string>
+    <string name="summary_pref_speak_nav_bar_buttons">เมื่อใช้ “ยกเพื่อเปิดใช้งาน” บนแถบนำทาง จะพูดปุ่มที่ถูกกดด้วยการแตะ เช่น กลับ หรือ หน้าแรก</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">แบตเตอรี่ <xliff:g id="battery_level" example="73">%1$s</xliff:g> เปอร์เซ็นต์</string>
     <string name="template_battery_level_unknown">ไม่ทราบระดับแบตเตอรี่</string>
@@ -1429,7 +1429,7 @@
     <string name="title_pref_speak_volume_changes">พูดการเปลี่ยนแปลงระดับเสียง</string>
     <string name="summary_pref_speak_volume_changes">พูดระดับเสียงใหม่หลังจากที่คุณกดปุ่มปรับระดับเสียง</string>
     <string name="title_pref_speak_notifications">พูดการแจ้งเตือน</string>
-    <string name="summary_pref_speak_notifications">อ่านออกเสียงการแจ้งเตือนใหม่เมื่อมาถึง สายเรียกเข้าจะถูกอ่านเสมอ</string>
+    <string name="summary_pref_speak_notifications">อ่านออกเสียงการแจ้งเตือนใหม่เมื่อได้รับ สายเรียกเข้าจะอ่านเสมอ</string>
     <string name="title_pref_notification_list">ใช้รายการแจ้งเตือนของ SandFly</string>
     <string name="title_pref_notification_parts">รายละเอียดการแจ้งเตือน</string>
     <string name="title_pref_play_installer">แสดงว่าติดตั้งจาก Google Play</string>

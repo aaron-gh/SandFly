@@ -1349,7 +1349,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Sūtīt garu tekstu pa vienam teikumam</string>
-    <string name="summary_pref_speak_in_phrases">Runas programmām, kas lēnām apstājas, piemēram, Gryphon, tāpēc, vilkjot prom, garš teksts tiek apturēts uzreiz. Daudzi dzinēji ietur ilgāku pauzi starp atsevišķi nosūtītiem teikumiem, tāpēc atstājiet šo opciju, ja jūsu darbība ātri apstājas.</string>
+    <string name="summary_pref_speak_in_phrases">Runas programmām, kas apstājas lēni, piemēram, Gryphon, lai vilkšana garu tekstu apturētu uzreiz. Daudzas programmas ietur garāku pauzi starp atsevišķi nosūtītiem teikumiem, tāpēc atstājiet izslēgtu, ja jūsu programma apstājas ātri.</string>
     <string name="battery_optimization_notification_title">Akumulatora optimizācija var apturēt SandFly</string>
     <string name="battery_optimization_notification_text">Šajā tālrunī akumulatora jaudas taupīšanas režīms var apturēt SandFly pēc ekrāna izslēgšanas, tāpēc tas apklust, līdz tiek restartēts. Pieskarieties, lai atvērtu akumulatora optimizāciju, izvēlieties Visas lietotnes, atrodiet SandFly un izvēlieties Neoptimizēt.</string>
     <string name="title_pref_mute_speech_while_recording">Kluss ierakstīšanas laikā</string>
@@ -1359,7 +1359,7 @@
     <string name="category_collapsed">Sakļauta sadaļa</string>
     <string name="category_expanded">Izvērsta sadaļa</string>
     <string name="title_pref_speak_nav_bar_buttons">Izrunāt navigācijas joslas pogas</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Kad navigācijas joslā aktivizētu pacelšanas taustiņu, pasakiet pogu, ko nospiež pieskāriens, piemēram, Atpakaļ vai Sākums.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Ja navigācijas joslā tiek izmantota aktivizēšana, paceļot pirkstu, tiek izrunāta ar pieskārienu nospiestā poga, piemēram, “Atpakaļ” vai “Sākums”.</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Akumulators <xliff:g id="battery_level" example="73">%1$s</xliff:g> procenti</string>
     <string name="template_battery_level_unknown">Akumulatora līmenis nav zināms</string>
@@ -1429,7 +1429,7 @@
     <string name="title_pref_speak_volume_changes">Izrunāt skaļuma izmaiņas</string>
     <string name="summary_pref_speak_volume_changes">Pēc skaļuma taustiņu nospiešanas pasakiet jauno skaļumu</string>
     <string name="title_pref_speak_notifications">Izrunāt paziņojumus</string>
-    <string name="summary_pref_speak_notifications">Lasiet skaļi jaunus paziņojumus, kad tie tiek saņemti. Ienākošie zvani vienmēr tiek lasīti.</string>
+    <string name="summary_pref_speak_notifications">Nolasīt jaunus paziņojumus skaļi, kad tie tiek saņemti. Ienākošie zvani vienmēr tiek nolasīti.</string>
     <string name="title_pref_notification_list">Izmantot SandFly paziņojumu sarakstu</string>
     <string name="title_pref_notification_parts">Paziņojuma informācija</string>
     <string name="title_pref_play_installer">Rādīt kā instalētu no Google Play</string>

@@ -1348,7 +1348,7 @@
         <item>@string/speech_stream_call</item>
     </string-array>
     <string name="title_pref_speak_in_phrases">Ұзын мәтінді сөйлем бойынша жіберу</string>
-    <string name="summary_pref_speak_in_phrases">Gryphon сияқты баяу тоқтайтын сөйлеу қозғалтқыштары үшін сырғыту ұзақ мәтінді бірден тоқтатады. Көптеген қозғалтқыштар бөлек жіберілген сөйлемдер арасында ұзағырақ үзіліс жасайды, сондықтан сіздікі тез тоқтаса, оны өшіріңіз.</string>
+    <string name="summary_pref_speak_in_phrases">Gryphon сияқты баяу тоқтайтын сөйлеу жүйелеріне арналған: сырғыту ұзақ мәтінді бірден тоқтатады. Көп жүйе бөлек жіберілген сөйлемдер арасында ұзағырақ кідіреді, сондықтан жүйеңіз тез тоқтаса, мұны өшірулі қалдырыңыз.</string>
     <string name="battery_optimization_notification_title">Батареяны оңтайландыру SandFly-ды тоқтатуы мүмкін</string>
     <string name="battery_optimization_notification_text">Бұл телефонда экран өшкеннен кейін батарея үнемдегіш SandFly қызметін тоқтатуы мүмкін, сонда ол қайта іске қосылғанша ештеңе айтпайды. Батареяны оңтайландыруды ашу үшін түртіңіз, «Барлық қолданбалар» тармағын таңдап, SandFly-ды тауып, «Оңтайландырмау» опциясын таңдаңыз.</string>
     <string name="title_pref_mute_speech_while_recording">Жазу кезінде тыныш</string>
@@ -1358,7 +1358,7 @@
     <string name="category_collapsed">Жиырылған бөлім</string>
     <string name="category_expanded">Кеңейтілген бөлім</string>
     <string name="title_pref_speak_nav_bar_buttons">Шарлау жолағы түймелерін айту</string>
-    <string name="summary_pref_speak_nav_bar_buttons">Навигация жолағында белсендіру үшін көтеру түймесін пайдаланып, «Артқа» немесе «Үйге» сияқты түрту басқан түймені айтыңыз.</string>
+    <string name="summary_pref_speak_nav_bar_buttons">Навигация жолағында саусақты көтеру арқылы іске қосу қолданылғанда, түрту арқылы басылған түймені айтады, мысалы, «Артқа» немесе «Негізгі экран».</string>
     <string name="template_setting_limit"><xliff:g id="limit" example="Minimum">%1$s</xliff:g>, <xliff:g id="value" example="0.15 seconds">%2$s</xliff:g></string>
     <string name="template_battery_level">Батарея <xliff:g id="battery_level" example="73">%1$s</xliff:g> пайыз</string>
     <string name="template_battery_level_unknown">Батарея деңгейі белгісіз</string>
@@ -1428,7 +1428,7 @@
     <string name="title_pref_speak_volume_changes">Дыбыс деңгейінің өзгерісін айту</string>
     <string name="summary_pref_speak_volume_changes">Дыбыс деңгейі пернелерін басқаннан кейін жаңа дыбыс деңгейін айтыңыз</string>
     <string name="title_pref_speak_notifications">Хабарландыруларды айту</string>
-    <string name="summary_pref_speak_notifications">Жаңа хабарландырулар келгенде дауыстап оқыңыз. Кіріс қоңыраулар әрқашан оқылады.</string>
+    <string name="summary_pref_speak_notifications">Жаңа хабарландыруларды келген кезде дауыстап оқиды. Кіріс қоңыраулар әрқашан оқылады.</string>
     <string name="title_pref_notification_list">SandFly хабарландырулар тізімін пайдалану</string>
     <string name="title_pref_notification_parts">Хабарландыру мәліметтері</string>
     <string name="title_pref_play_installer">Google Play-ден орнатылған болып көріну</string>
