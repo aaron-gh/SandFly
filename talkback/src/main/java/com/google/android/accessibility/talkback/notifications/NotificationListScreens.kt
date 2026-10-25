@@ -285,6 +285,11 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
           Outcome.RULE -> R.string.notification_outcome_rule
           Outcome.BUSY -> R.string.notification_outcome_busy
           Outcome.CALL -> R.string.notification_outcome_call
+          Outcome.WAITING -> R.string.notification_outcome_waiting
+          Outcome.READ_IN_SANDFLY_VOICE -> R.string.notification_outcome_sandfly_voice
+          Outcome.SILENCED -> R.string.notification_outcome_silenced
+          Outcome.CANCELLED -> R.string.notification_outcome_cancelled
+          Outcome.TOO_MANY -> R.string.notification_outcome_too_many
         }
       )
   }

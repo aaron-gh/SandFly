@@ -42,7 +42,9 @@ object NotificationHistory {
   @MainThread fun all(): List<Entry> = entries.toList().asReversed()
 
   /** The newest notification that was read. */
-  @MainThread fun lastRead(): Entry? = entries.lastOrNull { it.outcome == Outcome.READ }
+  @MainThread
+  fun lastRead(): Entry? =
+    entries.lastOrNull { it.outcome == Outcome.READ || it.outcome == Outcome.READ_IN_SANDFLY_VOICE }
 
   @MainThread
   fun add(entry: Entry) {
@@ -50,9 +52,6 @@ object NotificationHistory {
     while (entries.size > MAX) entries.removeFirst()
     notifyListeners()
   }
-
-  /** Marks the newest entry of [info] as stopped while it was read. */
-  @MainThread fun markStopped(info: NotificationInfo) = mark(info, Outcome.STOPPED)
 
   /** Changes the outcome of the newest entry of [info], such as one left unread after all. */
   @MainThread

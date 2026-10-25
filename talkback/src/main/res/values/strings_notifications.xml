@@ -401,6 +401,16 @@
     <string name="notification_outcome_busy">Not read: another notification was read</string>
     <!-- Outcome in the notification history: an incoming call, announced as calls always are. -->
     <string name="notification_outcome_call">Announced as a call</string>
+    <!-- Outcome in the notification history: a notification to be read whose speech hasn't started yet. -->
+    <string name="notification_outcome_waiting">Waiting to be read</string>
+    <!-- Outcome in the notification history: read in SandFly's own voice because the engine of the voice profile chosen for it failed. -->
+    <string name="notification_outcome_sandfly_voice">Read in SandFly\'s voice: voice profile failed</string>
+    <!-- Outcome in the notification history: not read because speech was silenced, such as during a call, or SandFly was paused. -->
+    <string name="notification_outcome_silenced">Not read: speech silenced</string>
+    <!-- Outcome in the notification history: stopped before its speech started. -->
+    <string name="notification_outcome_cancelled">Not read: stopped before it started</string>
+    <!-- Outcome in the notification history: dropped because too many notifications were waiting to be read. -->
+    <string name="notification_outcome_too_many">Not read: too many notifications waiting</string>
     <!-- Action that adds a rule. -->
     <string name="notification_rule_add">Add a rule</string>
     <!-- Action that adds a ready-made rule. -->
