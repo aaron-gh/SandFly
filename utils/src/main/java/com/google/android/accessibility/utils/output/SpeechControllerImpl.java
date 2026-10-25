@@ -1091,7 +1091,7 @@ public class SpeechControllerImpl implements SpeechController {
       speak(
           mContext.getString(R.string.function_on),
           QUEUE_MODE_BIT_UNINTERRUPTIBLE_BY_NEW_SPEECH,
-          /* flags= */ 0,
+          FeedbackItem.FLAG_FORCE_FEEDBACK_ALL,
           /* speechParams= */ null,
           EVENT_ID_UNTRACKED);
     } else {
@@ -1099,7 +1099,7 @@ public class SpeechControllerImpl implements SpeechController {
       speak(
           mContext.getString(R.string.function_off),
           QUEUE_MODE_BIT_UNINTERRUPTIBLE_BY_NEW_SPEECH,
-          /* flags= */ 0,
+          FeedbackItem.FLAG_FORCE_FEEDBACK_ALL,
           /* speechParams= */ null,
           EVENT_ID_UNTRACKED);
       isMuteSpeech = true;
