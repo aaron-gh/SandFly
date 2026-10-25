@@ -50,6 +50,16 @@ enum class Outcome {
   BUSY,
   /** An incoming call, announced as calls always are. */
   CALL,
+  /** To be read, and not started yet. */
+  WAITING,
+  /** Read in SandFly's voice, as its voice profile's engine failed. */
+  READ_IN_SANDFLY_VOICE,
+  /** Not read, as speech was silenced, such as during a call, or SandFly was paused. */
+  SILENCED,
+  /** Not read, as it was stopped before it started. */
+  CANCELLED,
+  /** Not read, as too many notifications were waiting. */
+  TOO_MANY,
 }
 
 /** What to do with a notification. */

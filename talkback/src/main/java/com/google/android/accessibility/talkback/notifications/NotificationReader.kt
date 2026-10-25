@@ -142,16 +142,22 @@ object NotificationReader {
     val decision: Decision,
     var text: CharSequence,
     val settings: NotificationSettings,
+    /** Whether what happens to it goes in the history: not for a notification said again. */
+    val recorded: Boolean = true,
   ) {
     var started = false
     var cancelled = false
     /** Whether it ended, read or not. */
     var done = false
+    /** Whether speech was silenced when it was to be said. */
+    var silenced = false
+    /** Whether it is said in SandFly's voice after its voice profile's engine failed. */
+    var fellBack = false
     /** The ID of the voice profile it is read with, or empty for SandFly's voice. */
     var voiceKey = ""
     val speak = Runnable { NotificationReader.speak(this) }
 
-    fun copy() = Readout(info, decision, text, settings)
+    fun copy() = Readout(info, decision, text, settings, recorded = false)
   }
 
   private val stopAfterLimit = Runnable { stop() }
@@ -467,8 +473,15 @@ object NotificationReader {
         ?.let { text = it }
     }
     if (settings.history) {
+      // A notification to be read is marked read once its speech starts.
+      val outcome =
+        when {
+          !decision.read -> decision.outcome
+          text.isBlank() -> Outcome.EMPTY
+          else -> Outcome.WAITING
+        }
       NotificationHistory.add(
-        NotificationHistory.Entry(info, System.currentTimeMillis(), decision.outcome, text.toString(), decision.rules)
+        NotificationHistory.Entry(info, System.currentTimeMillis(), outcome, text.toString(), decision.rules)
       )
     }
     if (!decision.read || text.isBlank()) {
@@ -485,7 +498,7 @@ object NotificationReader {
   }
 
   private fun holdForTouch(readout: Readout) {
-    while (heldForTouch.size >= MAX_WAITING) heldForTouch.removeAt(0)
+    while (heldForTouch.size >= MAX_WAITING) record(heldForTouch.removeAt(0), Outcome.TOO_MANY)
     if (heldForTouch.isEmpty()) handler.postDelayed(releaseHeld, TOUCH_WAIT_MS)
     heldForTouch += readout
     LogUtils.d(TAG, "Holding a notification of %s until the touch ends", readout.info.packageName)
@@ -569,7 +582,13 @@ object NotificationReader {
     val settings = settings(context)
     val voiceProfile = settings.app(entry.info.packageName).voiceProfile
     speak(
-      Readout(entry.info, Decision(Outcome.READ, entry.spoken, voiceProfile = voiceProfile), entry.spoken, settings),
+      Readout(
+        entry.info,
+        Decision(Outcome.READ, entry.spoken, voiceProfile = voiceProfile),
+        entry.spoken,
+        settings,
+        recorded = false,
+      ),
       repeat = true,
     )
     return true
@@ -582,7 +601,7 @@ object NotificationReader {
     val current = reading
     LogUtils.d(TAG, "Stopping notification speech")
     cancelAll()
-    if (current != null) NotificationHistory.markStopped(current.info)
+    if (current != null) record(current, Outcome.STOPPED)
     SpokenSchedules.cancelSummary()
     stopSpeech?.run()
     voices.values.forEach { it.stop() }
@@ -610,7 +629,10 @@ object NotificationReader {
         readout.info.postedAtMillis == postedAtMillis &&
         (title.isEmpty() || readout.info.title == title)
     waiting.filter(::matches).forEach { cancel(it) }
-    heldForVoice.removeAll(::matches)
+    heldForVoice.filter(::matches).forEach {
+      heldForVoice.remove(it)
+      record(it, Outcome.CANCELLED)
+    }
     queued.filter(::matches).forEach { it.cancelled = true }
     repeating.removeAll(::matches)
     if (reading?.let(::matches) == true) stop()
@@ -663,7 +685,7 @@ object NotificationReader {
       speak(readout)
       return
     }
-    while (waiting.size >= MAX_WAITING) cancel(waiting.first())
+    while (waiting.size >= MAX_WAITING) cancel(waiting.first(), Outcome.TOO_MANY)
     waiting += readout
     handler.postDelayed(readout.speak, delay)
   }
@@ -684,7 +706,7 @@ object NotificationReader {
       interrupt = readout.decision.priority || settings.queueBehavior == QueueBehavior.INTERRUPT
       if (!interrupt && settings.queueBehavior == QueueBehavior.SKIP) {
         LogUtils.d(TAG, "Not reading a notification while another is read")
-        if (settings.history) NotificationHistory.mark(readout.info, Outcome.BUSY)
+        record(readout, Outcome.BUSY)
         return
       }
       if (interrupt) {
@@ -696,7 +718,7 @@ object NotificationReader {
     if (others.isNotEmpty()) {
       if (!interrupt) {
         LogUtils.d(TAG, "Holding a notification of %s until another voice finishes", readout.info.packageName)
-        while (heldForVoice.size >= MAX_WAITING) heldForVoice.removeAt(0)
+        while (heldForVoice.size >= MAX_WAITING) record(heldForVoice.removeAt(0), Outcome.TOO_MANY)
         heldForVoice += readout
         return
       }
@@ -714,6 +736,7 @@ object NotificationReader {
       if (settings.soundBefore) feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
       whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
         if (readout.cancelled || isSilenced(overMedia, duringCalls)) {
+          if (!readout.cancelled) readout.silenced = true
           onDone(readout, SpeechController.STATUS_INTERRUPTED)
           return@whenSandFlyIsQuiet
         }
@@ -733,7 +756,8 @@ object NotificationReader {
                   onDone(readout, SpeechController.STATUS_INTERRUPTED)
                   return
                 }
-                LogUtils.w(TAG, "Reading a notification of %s in SandFly's voice", readout.info.packageName)
+                LogUtils.e(TAG, "Reading a notification of %s in SandFly's voice", readout.info.packageName)
+                readout.fellBack = true
                 speakInSandFlyVoice(readout, flags, sound = false)
               }
             },
@@ -754,6 +778,7 @@ object NotificationReader {
     val settings = readout.settings
     if (isSilenced(settings.media != MediaBehavior.SKIP, settings.duringCalls)) {
       LogUtils.d(TAG, "Not reading a notification of %s while speech is silenced", readout.info.packageName)
+      readout.silenced = true
       onDone(readout, SpeechController.STATUS_INTERRUPTED)
       return
     }
@@ -769,6 +794,7 @@ object NotificationReader {
     // Nothing is said while SandFly is paused.
     if (!feedback.returnFeedback(EVENT_ID_UNTRACKED, speech)) {
       LogUtils.d(TAG, "Not reading a notification of %s: SandFly's speech didn't take it", readout.info.packageName)
+      readout.silenced = true
       onDone(readout, SpeechController.STATUS_INTERRUPTED)
     }
   }
@@ -780,6 +806,7 @@ object NotificationReader {
     LogUtils.d(TAG, "Reading a notification of %s", readout.info.packageName)
     reading = readout
     readout.started = true
+    record(readout, if (readout.fellBack) Outcome.READ_IN_SANDFLY_VOICE else Outcome.READ)
     decider.markSpoken(readout.info.packageName, readout.decision, System.currentTimeMillis())
     val settings = readout.settings
     sensors?.start(settings)
@@ -791,6 +818,11 @@ object NotificationReader {
   }
 
   private fun onDone(readout: Readout, status: Int) {
+    if (!readout.done && !readout.started) {
+      // Speech that ends as spoken without having started was silenced by SandFly's speech.
+      val silenced = readout.silenced || status == SpeechController.STATUS_SPOKEN
+      record(readout, if (silenced) Outcome.SILENCED else Outcome.CANCELLED)
+    }
     readout.done = true
     queued.remove(readout)
     if (reading === readout) {
@@ -903,19 +935,28 @@ object NotificationReader {
   private fun localeOf(text: CharSequence): Locale? =
     (text as? Spanned)?.getSpans(0, text.length, LocaleSpan::class.java)?.firstOrNull()?.locale
 
-  private fun cancel(readout: Readout) {
+  private fun cancel(readout: Readout, outcome: Outcome = Outcome.CANCELLED) {
     readout.cancelled = true
     handler.removeCallbacks(readout.speak)
-    waiting.remove(readout)
+    if (waiting.remove(readout)) record(readout, outcome)
+  }
+
+  /** Records in the history what happened to [readout]. */
+  private fun record(readout: Readout, outcome: Outcome) {
+    if (!readout.recorded) return
+    LogUtils.d(TAG, "A notification of %s: %s", readout.info.packageName, outcome)
+    if (readout.settings.history) NotificationHistory.mark(readout.info, outcome)
   }
 
   private fun cancelAll() {
     waiting.toList().forEach { cancel(it) }
     queued.forEach { it.cancelled = true }
     queued.clear()
+    heldForVoice.forEach { record(it, Outcome.CANCELLED) }
     heldForVoice.clear()
     handler.removeCallbacksAndMessages(QUIET_TOKEN)
     handler.removeCallbacksAndMessages(DND_TOKEN)
+    heldForTouch.forEach { record(it, Outcome.CANCELLED) }
     heldForTouch.clear()
     handler.removeCallbacks(releaseHeld)
     reading?.cancelled = true
