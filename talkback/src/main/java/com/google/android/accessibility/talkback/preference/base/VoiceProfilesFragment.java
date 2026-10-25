@@ -272,9 +272,13 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
   }
 
   /**
-   * Asks for the name of profile {@code id}, or of a new profile if {@code id} is empty, starting
-   * with {@code name}. OK can't be pressed while the name is blank or another profile's, and the
-   * field says when it is another profile's, since every profile needs a name of its own.
+   * Asks for the name of profile {@code id}, starting with its name {@code name}, or of a new
+   * profile if {@code id} is empty, with {@code name} as the hint and the name when the field is
+   * left empty. OK can't be pressed while the name is another profile's, or blank when renaming,
+   * and the field says when it is another profile's, since every profile needs a name of its own.
+   *
+   * <p>Nothing is selected to begin with: Gboard-based keyboards such as PixelBoard keep Shift on
+   * for every letter after replacing a selection of several words.
    */
   static void askForName(
       Context context,
@@ -284,13 +288,18 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
       String name,
       NameListener listener) {
     String defaultName = context.getString(R.string.voice_profile_default);
+    boolean adding = id.isEmpty();
     EditText field = new KeyboardSafeEditText(context);
     field.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
     field.setSingleLine(true);
     field.setFilters(
         new InputFilter[] {new InputFilter.LengthFilter(VoiceProfiles.MAX_NAME_LENGTH)});
-    field.setText(name);
-    field.selectAll();
+    if (adding) {
+      field.setHint(name);
+    } else {
+      field.setText(name);
+      field.setSelection(field.length());
+    }
     AlertDialog dialog =
         new AlertDialog.Builder(context)
             .setTitle(titleResId)
@@ -298,7 +307,7 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
             .setPositiveButton(
                 android.R.string.ok,
                 (shown, which) -> {
-                  String entered = field.getText().toString().trim();
+                  String entered = enteredName(field, adding, name);
                   if (!entered.isEmpty()
                       && !VoiceProfiles.isNameTaken(prefs, id, entered, defaultName)) {
                     listener.onName(entered);
@@ -309,7 +318,7 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
     Button ok = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
     Runnable check =
         () -> {
-          String entered = field.getText().toString().trim();
+          String entered = enteredName(field, adding, name);
           boolean taken =
               !entered.isEmpty() && VoiceProfiles.isNameTaken(prefs, id, entered, defaultName);
           ok.setEnabled(!entered.isEmpty() && !taken);
@@ -331,6 +340,12 @@ public class VoiceProfilesFragment extends TalkbackBaseFragment {
           }
         });
     field.requestFocus();
+  }
+
+  /** The name in {@code field}, or {@code suggested} for a new profile when it is left empty. */
+  private static String enteredName(EditText field, boolean adding, String suggested) {
+    String entered = field.getText().toString().trim();
+    return entered.isEmpty() && adding ? suggested : entered;
   }
 
   /** Adds a profile that sounds like Backtalk's default to begin with, and opens its settings. */
