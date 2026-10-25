@@ -21,6 +21,7 @@ import android.media.AudioAttributes
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import android.provider.Settings
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
@@ -40,7 +41,8 @@ import java.util.Locale
  *
  * The engine is connected only while there is something to say, and released [IDLE_MS] after, as
  * an engine kept connected while idle can be stopped by Android or the engine itself, and the
- * connection doesn't come back.
+ * connection doesn't come back. Text the engine fails, or takes without starting to say it, is said
+ * in SandFly's voice instead.
  */
 class NotificationVoice(private val context: Context) {
   /** Told when an utterance starts and when it ends, on the main thread. */
@@ -75,6 +77,12 @@ class NotificationVoice(private val context: Context) {
   private val listeners = HashMap<String, Listener>()
   /** The piece of a request each utterance the engine speaks is. */
   private val pieces = HashMap<String, Piece>()
+  /** Requests the engine took and hasn't started saying, in the order they were sent. */
+  private val unstarted = LinkedHashMap<String, Request>()
+  /** Requests the engine is saying. */
+  private val speaking = HashSet<String>()
+  /** Since when the engine, saying nothing, has had text to start on. */
+  private var waitingSince = 0L
   private var nextId = 0
   /** The engine's voice named in the profile, found once, since listing voices is slow. */
   private var foundVoice: Voice? = null
@@ -86,9 +94,10 @@ class NotificationVoice(private val context: Context) {
     }
   }
   private val initTimeout = Runnable {
-    LogUtils.w(TAG, "%s didn't start within %d ms", profile?.engine, INIT_TIMEOUT_MS)
+    LogUtils.e(TAG, "%s didn't start within %d ms", profile?.engine, INIT_TIMEOUT_MS)
     unavailable()
   }
+  private val startTimeout = Runnable { checkStarted() }
 
   /** The profile the voice is set up from. */
   val currentProfile: VoiceProfile?
@@ -126,9 +135,12 @@ class NotificationVoice(private val context: Context) {
   private fun disconnect() {
     handler.removeCallbacks(release)
     handler.removeCallbacks(initTimeout)
+    handler.removeCallbacks(startTimeout)
     val sent = listeners.values.toList()
     listeners.clear()
     pieces.clear()
+    unstarted.clear()
+    speaking.clear()
     runCatching { tts?.shutdown() }
     tts = null
     ready = false
@@ -156,7 +168,7 @@ class NotificationVoice(private val context: Context) {
     if (tts == null || tts !== connection) return
     handler.removeCallbacks(initTimeout)
     if (status != TextToSpeech.SUCCESS) {
-      LogUtils.w(TAG, "%s didn't start: %d", profile?.engine, status)
+      LogUtils.e(TAG, "%s didn't start: %d", profile?.engine, status)
       unavailable()
       return
     }
@@ -172,26 +184,33 @@ class NotificationVoice(private val context: Context) {
         override fun onStart(utteranceId: String) {
           handler.post {
             val piece = pieces[utteranceId] ?: return@post
-            if (piece.first) listeners[piece.request]?.onStart()
+            if (!piece.first) return@post
+            unstarted.remove(piece.request)
+            speaking += piece.request
+            handler.removeCallbacks(startTimeout)
+            listeners[piece.request]?.onStart()
           }
         }
 
         override fun onDone(utteranceId: String) {
           handler.post {
             val piece = pieces.remove(utteranceId) ?: return@post
-            if (piece.last) listeners.remove(piece.request)?.onDone(true)
+            if (piece.last) {
+              speaking.remove(piece.request)
+              listeners.remove(piece.request)?.onDone(true)
+              watchStart()
+            }
             releaseWhenIdle()
           }
         }
 
         @Deprecated("Deprecated in Java")
         override fun onError(utteranceId: String) {
-          handler.post { endRequest(utteranceId) }
+          handler.post { onFailed(utteranceId, TextToSpeech.ERROR) }
         }
 
         override fun onError(utteranceId: String, errorCode: Int) {
-          LogUtils.w(TAG, "The engine failed to say %s: %d", utteranceId, errorCode)
-          handler.post { endRequest(utteranceId) }
+          handler.post { onFailed(utteranceId, errorCode) }
         }
 
         override fun onStop(utteranceId: String, interrupted: Boolean) {
@@ -210,8 +229,66 @@ class NotificationVoice(private val context: Context) {
   private fun endRequest(utteranceId: String) {
     val request = pieces.remove(utteranceId)?.request ?: return
     pieces.values.removeAll { it.request == request }
+    unstarted.remove(request)
+    speaking.remove(request)
     listeners.remove(request)?.onDone(false)
+    watchStart()
     releaseWhenIdle()
+  }
+
+  /** A request the engine failed before saying any of it is said in SandFly's voice instead. */
+  private fun onFailed(utteranceId: String, errorCode: Int) {
+    val request = pieces[utteranceId]?.request?.let { unstarted[it] }
+    if (request == null) {
+      LogUtils.e(TAG, "%s failed to say %s: %d", profile?.engine, utteranceId, errorCode)
+      endRequest(utteranceId)
+      return
+    }
+    LogUtils.e(TAG, "%s failed to say %s, said in SandFly's voice: %d", profile?.engine, request.id, errorCode)
+    forget(request.id)
+    request.listener?.onUnavailable()
+    watchStart()
+    releaseWhenIdle()
+  }
+
+  /** Drops what is kept about request [id], without telling its listener. */
+  private fun forget(id: String) {
+    pieces.values.removeAll { it.request == id }
+    unstarted.remove(id)
+    speaking.remove(id)
+    listeners.remove(id)
+  }
+
+  /**
+   * Checks that the engine starts saying the next request it took, once it says nothing, as an
+   * engine can take text and never say it or report anything.
+   */
+  private fun watchStart() {
+    handler.removeCallbacks(startTimeout)
+    if (unstarted.isEmpty() || speaking.isNotEmpty()) return
+    waitingSince = SystemClock.uptimeMillis()
+    handler.postDelayed(startTimeout, START_TIMEOUT_MS)
+  }
+
+  private fun checkStarted() {
+    if (unstarted.isEmpty() || speaking.isNotEmpty()) return
+    val waited = SystemClock.uptimeMillis() - waitingSince
+    // The engine can be saying another app's text, such as SandFly's when both use it.
+    val busy = runCatching { tts?.isSpeaking }.getOrNull() == true
+    if (busy && waited < BUSY_START_TIMEOUT_MS) {
+      handler.postDelayed(startTimeout, START_TIMEOUT_MS)
+      return
+    }
+    LogUtils.e(TAG, "%s didn't start saying the text within %d ms", profile?.engine, waited)
+    // Sent again on a new connection, or said in SandFly's voice if that was done already.
+    val waiting = unstarted.values.toList()
+    waiting.forEach { forget(it.id) }
+    disconnect()
+    val (again, given) = waiting.partition { !it.retried }
+    again.forEach { it.retried = true }
+    pending += again
+    given.forEach { it.listener?.onUnavailable() }
+    if (pending.isNotEmpty()) connect() else releaseWhenIdle()
   }
 
   /**
@@ -305,6 +382,7 @@ class NotificationVoice(private val context: Context) {
     val params =
       Bundle().apply { putFloat(TextToSpeech.Engine.KEY_PARAM_VOLUME, volume.coerceIn(0f, 1f)) }
     request.listener?.let { listeners[request.id] = it }
+    unstarted[request.id] = request
     val text = request.text.let { if (it.length > MAX_LENGTH) it.subSequence(0, MAX_LENGTH) else it }
     // With phrases on, long text is sent a sentence at a time, as SandFly's own speech sends it.
     val starts =
@@ -319,10 +397,9 @@ class NotificationVoice(private val context: Context) {
       val queueMode =
         if (i == 0 && request.flush) TextToSpeech.QUEUE_FLUSH else TextToSpeech.QUEUE_ADD
       if (tts.speak(piece, queueMode, params, pieceId) != TextToSpeech.SUCCESS) {
-        LogUtils.w(TAG, "%s didn't take %s", profile.engine, pieceId)
+        LogUtils.e(TAG, "%s didn't take %s", profile.engine, pieceId)
         if (i == 0) {
-          pieces.remove(pieceId)
-          listeners.remove(request.id)
+          forget(request.id)
           if (request.retried) {
             request.listener?.onUnavailable()
             releaseWhenIdle()
@@ -344,14 +421,21 @@ class NotificationVoice(private val context: Context) {
     }
     // The detected language applies to this text only.
     if (request.locale != null) applyVoice()
+    // Text sent behind other text the engine hasn't started on waits for the same check.
+    if (unstarted.size == 1 && request.id in unstarted) watchStart()
   }
 
   /** Stops what the voice is saying and what waits to be said. */
   @MainThread
   fun stop() {
-    val dropped = pending.toList()
+    // Text the engine hasn't started on ends now, so it isn't said in SandFly's voice later.
+    val dropped = pending.toList() + unstarted.values
     pending.clear()
-    dropped.forEach { it.listener?.onDone(false) }
+    dropped.forEach {
+      forget(it.id)
+      it.listener?.onDone(false)
+    }
+    handler.removeCallbacks(startTimeout)
     if (ready) runCatching { tts?.stop() }
     releaseWhenIdle()
   }
@@ -369,6 +453,10 @@ class NotificationVoice(private val context: Context) {
     const val IDLE_MS = 10_000L
     /** How long the engine has to start before the text is said in SandFly's voice. */
     const val INIT_TIMEOUT_MS = 10_000L
+    /** How long the engine has to start saying text it took, once it says nothing else. */
+    const val START_TIMEOUT_MS = 5_000L
+    /** How long the engine has to start saying text while it says another app's. */
+    const val BUSY_START_TIMEOUT_MS = 20_000L
     /** Android's limit on the text of one utterance. */
     val MAX_LENGTH = TextToSpeech.getMaxSpeechInputLength()
   }

@@ -145,6 +145,8 @@ object NotificationReader {
   ) {
     var started = false
     var cancelled = false
+    /** Whether it ended, read or not. */
+    var done = false
     /** The ID of the voice profile it is read with, or empty for SandFly's voice. */
     var voiceKey = ""
     val speak = Runnable { NotificationReader.speak(this) }
@@ -772,6 +774,8 @@ object NotificationReader {
   }
 
   private fun onStarted(readout: Readout) {
+    // A start reported after the end would leave it read forever, holding back other voices.
+    if (readout.done) return
     queued.remove(readout)
     LogUtils.d(TAG, "Reading a notification of %s", readout.info.packageName)
     reading = readout
@@ -787,6 +791,7 @@ object NotificationReader {
   }
 
   private fun onDone(readout: Readout, status: Int) {
+    readout.done = true
     queued.remove(readout)
     if (reading === readout) {
       reading = null
