@@ -29,6 +29,7 @@ import android.telephony.TelephonyManager;
 import androidx.annotation.IntDef;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.monitor.CallStateMonitor;
+import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.monitor.AudioPlaybackMonitor;
 import com.google.android.accessibility.utils.monitor.HeadphoneStateMonitor;
@@ -87,6 +88,8 @@ public class VoiceActionMonitor implements VoiceActionDelegate {
           // that is left to finish.
           if (isListeningForVoice()) {
             interruptTalkBackAudio(MEDIA_RECORDER);
+            // A voice profile's engine reading a notification isn't SandFly's speech.
+            NotificationReader.onVoiceInputStarted();
           }
         }
 

@@ -623,6 +623,29 @@ object NotificationReader {
   }
 
   /**
+   * Called when voice input, such as dictation, starts while speech plays from the speaker, so the
+   * microphone doesn't pick up notifications: the one being read stops, and those handed to speech
+   * or held behind them end unread, as speech is silenced. SandFly's speech is stopped by the
+   * caller; the voice profiles' engines are stopped here.
+   */
+  @JvmStatic
+  @MainThread
+  fun onVoiceInputStarted() {
+    val handed = listOfNotNull(reading) + queued
+    if (handed.isEmpty()) return
+    LogUtils.d(TAG, "Voice input started; silencing %d notifications", handed.size)
+    handed.forEach {
+      it.silenced = true
+      it.cancelled = true
+    }
+    voices.values.forEach { it.stop() }
+    stopSpeech?.run()
+    // Ends those still waiting to be taken by speech. The notifications held behind them are then
+    // left unread, as speech is silenced.
+    handed.forEach { onDone(it, SpeechController.STATUS_INTERRUPTED) }
+  }
+
+  /**
    * Called when a notification goes away: a notification being read that the user dismissed, or
    * that its app took back, stops when the settings say so.
    */
