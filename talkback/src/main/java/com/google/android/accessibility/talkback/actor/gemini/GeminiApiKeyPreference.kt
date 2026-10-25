@@ -72,6 +72,8 @@ object GeminiApiKeyPreference {
         isSingleLine = true
         setHint(R.string.gemini_api_key_hint)
         setText(GeminiApiKey.userKey(prefs))
+        // Android offers Paste only for a field with input focus.
+        post { requestFocus() }
       }
     // Lines the field up with the dialog's message.
     val padding = (24 * context.resources.displayMetrics.density).toInt()

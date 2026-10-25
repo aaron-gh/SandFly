@@ -26,7 +26,6 @@ import android.text.InputType
 import android.text.format.DateFormat
 import android.view.ViewGroup
 import android.widget.CheckBox
-import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.annotation.StringRes
@@ -40,6 +39,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.VoiceProfiles
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.Date
 import java.util.concurrent.Executors
@@ -174,7 +174,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
         setPadding(padding, padding / 2, padding, 0)
       }
     val edit =
-      EditText(context).apply {
+      KeyboardSafeEditText(context).apply {
         setText(text)
         // The title labels the field when there is no hint.
         this.hint = hint ?: title
@@ -184,7 +184,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     layout.addView(edit, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     val second =
       secondHint?.let {
-        EditText(context).apply {
+        KeyboardSafeEditText(context).apply {
           setText(secondText)
           this.hint = it
           inputType = InputType.TYPE_CLASS_TEXT
