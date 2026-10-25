@@ -138,6 +138,35 @@ public class TextEventInterpreterEventOrderTest {
         sent);
   }
 
+  /** A selection event in an empty field, which reports its hint as its text. */
+  private AccessibilityEvent hintSelection(String hint) {
+    AccessibilityEvent event = selection(hint, 0);
+    event.setItemCount(0);
+    return event;
+  }
+
+  @Test
+  public void firstCharacterInAFieldWithAHintIsReadOnce() {
+    send(textChange("cm", "Name", 0, 0, 2));
+    send(hintSelection("Name"));
+    sent.clear();
+    time += 1000;
+    send(selection("n", 1));
+    send(textChange("", "n", 0, 1, 0));
+    assertEquals(List.of(TextEventInterpretation.TEXT_ADD), sent);
+  }
+
+  @Test
+  public void firstWordInAFieldWithAHintIsReadOnce() {
+    send(textChange("cm", "Name", 0, 0, 2));
+    send(hintSelection("Name"));
+    sent.clear();
+    time += 1000;
+    send(selection("hello", 5));
+    send(textChange("", "hello", 0, 5, 0));
+    assertEquals(List.of(TextEventInterpretation.TEXT_ADD), sent);
+  }
+
   @Test
   public void aCursorMoveIsRead() {
     send(selection("cm", 1));
