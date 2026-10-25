@@ -100,6 +100,16 @@ object NotificationReader {
    * missed. Later ones don't extend it, so a touch that seems never to end doesn't gather them.
    */
   private const val TOUCH_WAIT_MS = 10_000L
+  /** How often notifications handed to speech are checked for having been lost by it. */
+  private const val SPEECH_CHECK_MS = 2_000L
+  /** How long SandFly's speech can be quiet while reading a notification before it is ended. */
+  private const val SPEECH_QUIET_MS = 6_000L
+  /**
+   * How long a notification handed to speech has to start while no other is read, which covers
+   * waiting for SandFly to be quiet and a voice profile's engine starting and failing over to
+   * SandFly's voice, before it is given up.
+   */
+  private const val START_WAIT_MS = 60_000L
 
   private val handler = Handler(Looper.getMainLooper())
   private var context: Context? = null
@@ -155,12 +165,17 @@ object NotificationReader {
     var fellBack = false
     /** The ID of the voice profile it is read with, or empty for SandFly's voice. */
     var voiceKey = ""
+    /** When it was handed to speech. */
+    var handedAt = 0L
+    /** Since when SandFly's speech has been quiet while reading it, or 0. */
+    var quietSince = 0L
     val speak = Runnable { NotificationReader.speak(this) }
 
     fun copy() = Readout(info, decision, text, settings, recorded = false)
   }
 
   private val stopAfterLimit = Runnable { stop() }
+  private val checkSpeech = Runnable { checkSpeech() }
   private val repeat =
     object : Runnable {
       override fun run() {
@@ -732,6 +747,8 @@ object NotificationReader {
     val duringCalls = settings.duringCalls
     if (duringCalls) flags = flags or FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE
     queued += readout
+    readout.handedAt = SystemClock.uptimeMillis()
+    watchSpeech()
     if (voice != null && !isSilenced(overMedia, duringCalls)) {
       if (settings.soundBefore) feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
       whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
@@ -758,6 +775,9 @@ object NotificationReader {
                 }
                 LogUtils.e(TAG, "Reading a notification of %s in SandFly's voice", readout.info.packageName)
                 readout.fellBack = true
+                // SandFly's voice reads it now, so notifications for it aren't held behind it.
+                readout.voiceKey = ""
+                readout.handedAt = SystemClock.uptimeMillis()
                 speakInSandFlyVoice(readout, flags, sound = false)
               }
             },
@@ -806,6 +826,7 @@ object NotificationReader {
     LogUtils.d(TAG, "Reading a notification of %s", readout.info.packageName)
     reading = readout
     readout.started = true
+    watchSpeech()
     record(readout, if (readout.fellBack) Outcome.READ_IN_SANDFLY_VOICE else Outcome.READ)
     decider.markSpoken(readout.info.packageName, readout.decision, System.currentTimeMillis())
     val settings = readout.settings
@@ -841,6 +862,42 @@ object NotificationReader {
       handler.removeCallbacks(repeat)
       handler.postDelayed(repeat, minutes * 60_000L)
     }
+  }
+
+  /** Checks the notifications handed to speech until none is left, as [checkSpeech] says. */
+  private fun watchSpeech() {
+    handler.removeCallbacks(checkSpeech)
+    if (reading != null || queued.isNotEmpty()) handler.postDelayed(checkSpeech, SPEECH_CHECK_MS)
+  }
+
+  /**
+   * Ends the notifications that speech lost, as nothing else would end them and they would hold
+   * back the notifications for other voices for good, which would show as waiting to be read:
+   * one SandFly's speech stopped saying without reporting it, and ones that didn't start while no
+   * other was read, such as text that SandFly's speech dropped. A voice profile's engine that
+   * stops saying a notification ends it itself.
+   */
+  private fun checkSpeech() {
+    val now = SystemClock.uptimeMillis()
+    reading?.takeIf { it.voiceKey.isEmpty() }?.let { readout ->
+      if (isSandFlySpeaking()) {
+        readout.quietSince = 0L
+      } else if (readout.quietSince == 0L) {
+        readout.quietSince = now
+      } else if (now - readout.quietSince >= SPEECH_QUIET_MS) {
+        LogUtils.e(TAG, "SandFly's speech stopped reading a notification of %s without ending it", readout.info.packageName)
+        onDone(readout, SpeechController.STATUS_INTERRUPTED)
+      }
+    }
+    if (reading == null) {
+      queued.filter { now - it.handedAt >= START_WAIT_MS }.forEach { readout ->
+        if (readout.done || readout.started) return@forEach
+        LogUtils.e(TAG, "A notification of %s didn't start within %d ms", readout.info.packageName, now - readout.handedAt)
+        readout.cancelled = true
+        onDone(readout, SpeechController.STATUS_INTERRUPTED)
+      }
+    }
+    watchSpeech()
   }
 
   /**
@@ -965,6 +1022,7 @@ object NotificationReader {
     handler.removeCallbacks(repeat)
     sensors?.stop()
     handler.removeCallbacks(stopAfterLimit)
+    handler.removeCallbacks(checkSpeech)
     abandonFocus()
   }
 

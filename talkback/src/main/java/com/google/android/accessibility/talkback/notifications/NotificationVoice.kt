@@ -42,7 +42,7 @@ import java.util.Locale
  * The engine is connected only while there is something to say, and released [IDLE_MS] after, as
  * an engine kept connected while idle can be stopped by Android or the engine itself, and the
  * connection doesn't come back. Text the engine fails, or takes without starting to say it, is said
- * in SandFly's voice instead.
+ * in SandFly's voice instead, and text it stops saying without reporting it is ended.
  */
 class NotificationVoice(private val context: Context) {
   /** Told when an utterance starts and when it ends, on the main thread. */
@@ -83,6 +83,8 @@ class NotificationVoice(private val context: Context) {
   private val speaking = HashSet<String>()
   /** Since when the engine, saying nothing, has had text to start on. */
   private var waitingSince = 0L
+  /** Since when the engine has said nothing while a request it started hasn't ended, or 0. */
+  private var quietSince = 0L
   private var nextId = 0
   /** The engine's voice named in the profile, found once, since listing voices is slow. */
   private var foundVoice: Voice? = null
@@ -98,6 +100,7 @@ class NotificationVoice(private val context: Context) {
     unavailable()
   }
   private val startTimeout = Runnable { checkStarted() }
+  private val speakingCheck = Runnable { checkSpeaking() }
 
   /** The profile the voice is set up from. */
   val currentProfile: VoiceProfile?
@@ -136,6 +139,7 @@ class NotificationVoice(private val context: Context) {
     handler.removeCallbacks(release)
     handler.removeCallbacks(initTimeout)
     handler.removeCallbacks(startTimeout)
+    handler.removeCallbacks(speakingCheck)
     val sent = listeners.values.toList()
     listeners.clear()
     pieces.clear()
@@ -188,6 +192,7 @@ class NotificationVoice(private val context: Context) {
             unstarted.remove(piece.request)
             speaking += piece.request
             handler.removeCallbacks(startTimeout)
+            watchSpeaking()
             listeners[piece.request]?.onStart()
           }
         }
@@ -289,6 +294,41 @@ class NotificationVoice(private val context: Context) {
     pending += again
     given.forEach { it.listener?.onUnavailable() }
     if (pending.isNotEmpty()) connect() else releaseWhenIdle()
+  }
+
+  /**
+   * Checks that the requests the engine is saying end, as an engine can stop saying text without
+   * reporting it, such as when it is stopped while another app listens for voice input. A
+   * notification left reading would hold back the notifications for other voices for good.
+   */
+  private fun watchSpeaking() {
+    handler.removeCallbacks(speakingCheck)
+    if (speaking.isEmpty()) return
+    quietSince = 0L
+    handler.postDelayed(speakingCheck, SPEAKING_CHECK_MS)
+  }
+
+  private fun checkSpeaking() {
+    if (speaking.isEmpty()) return
+    val now = SystemClock.uptimeMillis()
+    // The engine is speaking while it says the pieces of a request, and between them.
+    if (runCatching { tts?.isSpeaking }.getOrNull() == true) {
+      quietSince = 0L
+    } else if (quietSince == 0L) {
+      quietSince = now
+    } else if (now - quietSince >= QUIET_MS) {
+      LogUtils.e(TAG, "%s stopped saying %s without ending it", profile?.engine, speaking.joinToString())
+      val ended = speaking.toList()
+      speaking.clear()
+      ended.forEach { id ->
+        pieces.values.removeAll { it.request == id }
+        listeners.remove(id)?.onDone(false)
+      }
+      watchStart()
+      releaseWhenIdle()
+      return
+    }
+    handler.postDelayed(speakingCheck, SPEAKING_CHECK_MS)
   }
 
   /**
@@ -457,6 +497,10 @@ class NotificationVoice(private val context: Context) {
     const val START_TIMEOUT_MS = 5_000L
     /** How long the engine has to start saying text while it says another app's. */
     const val BUSY_START_TIMEOUT_MS = 20_000L
+    /** How often the engine is checked for still saying the text it started. */
+    const val SPEAKING_CHECK_MS = 2_000L
+    /** How long the engine can say nothing before the text it started is ended. */
+    const val QUIET_MS = 6_000L
     /** Android's limit on the text of one utterance. */
     val MAX_LENGTH = TextToSpeech.getMaxSpeechInputLength()
   }
