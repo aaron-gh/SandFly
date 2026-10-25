@@ -104,6 +104,7 @@ class ScriptCommandFragment : ScriptScreenFragment() {
       KeyboardSafeEditText(requireContext()).apply {
         inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS
         hint = getString(R.string.script_binding_type_keys_summary)
+        post { requestFocus() }
       }
     dialog(getString(R.string.script_binding_type_keys)) {
       setView(field)

@@ -118,6 +118,7 @@ class ScriptDialogs(private val context: Context) {
           this.hint = hint
           inputType = InputType.TYPE_CLASS_TEXT
           setSelectAllOnFocus(true)
+          post { requestFocus() }
         }
       setView(field)
       setPositiveButton(AndroidR.string.ok) { _, _ -> finish(field.text.toString()) }

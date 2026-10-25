@@ -117,6 +117,8 @@ class AiProviderFragment : TalkbackBaseFragment() {
       isSingleLine = true
       setHint(hint)
       setText(value)
+      // Android offers Paste only for a field with input focus.
+      post { requestFocus() }
     }
 
   /** [view] lined up with the dialog's message. */
