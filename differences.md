@@ -353,7 +353,7 @@ The tutorial speaks each instruction itself, even while other audio plays, and s
 
 In the lessons on Back, Home, recent apps, notifications, screen search and turning speech off, the tutorial takes those gestures and says what they do, instead of leaving the tutorial or turning speech off. In **Gesture practice**, every gesture says its name and action without performing it, except moving to the next and previous item and activating, so that you can reach **End practice**. **Practice gestures** in gesture settings opens this lesson.
 
-**Contents** lists the lessons, says which are done, and opens any of them. The tutorial reopens at the lesson you were on, or at the next one if that lesson was done. In a lesson, the Back gesture doesn't leave it: the tutorial says to use **Contents** instead. Back still closes the keyboard and menus, and from **Contents** it closes the tutorial.
+**Contents** lists the lessons, says which are done, and opens any of them. The tutorial reopens at the lesson you were on, or at the next one if that lesson was done. In a lesson, gestures don't leave it: the tutorial takes Back, Home, recent apps, notifications, quick settings, all apps, the lock screen, the power menu, the accessibility button, opening an app, and opening the tutorial or practice gestures again, and says what it would have done. It takes turning speech off and pausing SandFly in the same way. Back still closes the keyboard and menus. From **Contents**, all of these work, and Back closes the tutorial.
 
 Limitations:
 

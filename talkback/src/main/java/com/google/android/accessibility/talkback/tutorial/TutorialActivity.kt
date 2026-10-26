@@ -56,6 +56,7 @@ import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
+import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.selector.SelectorController
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -137,6 +138,16 @@ class TutorialActivity : AppCompatActivity() {
         if (!taken && focused && action == getString(R.string.shortcut_value_back) && keepsBack()) {
           speakNow(getString(R.string.sandfly_tutorial_back_in_lesson))
           return true
+        }
+        if (!taken && focused && lessonIndex >= 0) {
+          if (leavesLesson(action)) {
+            speakNow(getString(R.string.sandfly_tutorial_not_in_lesson, actionName(action)))
+            return true
+          }
+          if (TutorialLessons.SILENCING_ACTIONS.any { getString(it) == action }) {
+            speakNow(getString(R.string.sandfly_tutorial_not_in_lesson_short, actionName(action)))
+            return true
+          }
         }
         return taken
       }
@@ -475,6 +486,11 @@ class TutorialActivity : AppCompatActivity() {
     val insets = ViewCompat.getRootWindowInsets(window.decorView)
     return insets?.isVisible(WindowInsetsCompat.Type.ime()) != true
   }
+
+  /** Whether [action] leaves the tutorial. */
+  private fun leavesLesson(action: String): Boolean =
+    OpenAppActions.isAction(action) ||
+      TutorialLessons.LEAVING_ACTIONS.any { getString(it) == action }
 
   /** Starts the wait before the instruction is said again, as the user has done something. */
   private fun userActed() {

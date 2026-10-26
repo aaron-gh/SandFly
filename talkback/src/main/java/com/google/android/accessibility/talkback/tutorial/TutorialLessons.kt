@@ -648,6 +648,31 @@ internal object TutorialLessons {
       R.string.shortcut_value_action_setting_activate_current_action,
     )
 
+  /**
+   * Actions that a lesson takes and doesn't do, unless a step teaches them, as they leave the
+   * tutorial. Back is taken too, apart from closing the keyboard.
+   */
+  val LEAVING_ACTIONS =
+    listOf(
+      R.string.shortcut_value_home,
+      R.string.shortcut_value_overview,
+      R.string.shortcut_value_notifications,
+      R.string.shortcut_value_system_notifications,
+      R.string.shortcut_value_quick_settings,
+      R.string.shortcut_value_system_quick_settings,
+      R.string.shortcut_value_all_apps,
+      R.string.shortcut_value_lock_screen,
+      R.string.shortcut_value_power_menu,
+      R.string.shortcut_value_a11y_button,
+      R.string.shortcut_value_a11y_button_long_press,
+      R.string.shortcut_value_tutorial,
+      R.string.shortcut_value_practice_gestures,
+    )
+
+  /** Actions that a lesson takes in the same way, as they turn speech or SandFly off. */
+  val SILENCING_ACTIONS =
+    listOf(R.string.shortcut_value_toggle_voice_feedback, R.string.shortcut_value_pause_backtalk)
+
   /** The list item that the scrolling lesson moves to. */
   const val SCROLL_TARGET = 15
 
