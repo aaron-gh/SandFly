@@ -349,7 +349,7 @@ TalkBack's tutorial is a series of pages that describe gestures, with a few prac
 
 The tutorial has 16 lessons in five chapters: Basics, Reading, Controls and text, Getting around, and Practice. Each lesson has an instruction and items to practise on. Each step waits until you have done what it says with your own gestures, then gives the next step. For example, the step that teaches swiping waits until a swipe right reaches a particular item, the step that teaches exploring by touch waits until you have touched four squares, and the step that teaches headings waits until the **Headings** reading control has jumped to a particular heading.
 
-The instructions name the gesture that each action has in your gesture settings, one-finger gestures first. When an action has no gesture, the step says so, and **Skip step** goes on without it.
+The tutorial speaks each instruction itself, even while other audio plays, and says it again after 25 seconds without a gesture or touch, up to three times. When a lesson is done, it says which gesture starts the next lesson and moves focus to **Next lesson**. The instructions name the gesture that each action has in your gesture settings, one-finger gestures first. When an action has no gesture, the step says so, and **Skip step** goes on without it.
 
 In the lessons on Back, Home, recent apps, notifications, screen search and turning speech off, the tutorial takes those gestures and says what they do, instead of leaving the tutorial or turning speech off. In **Gesture practice**, every gesture says its name and action without performing it, except moving to the next and previous item and activating, so that you can reach **End practice**. **Practice gestures** in gesture settings opens this lesson.
 

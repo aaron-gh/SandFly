@@ -10,6 +10,10 @@
     <string name="sandfly_tutorial_progress"><xliff:g id="done" example="2">%1$d</xliff:g> of <xliff:g id="count" example="4">%2$d</xliff:g>.</string>
     <!-- Said and shown when every step of a lesson is done. [CHAR LIMIT=NONE] -->
     <string name="sandfly_tutorial_lesson_complete">Lesson complete.</string>
+    <!-- Said when a lesson is done, as focus moves to the Next lesson button, such as "Lesson complete. Double-tap to start the next lesson." [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_lesson_complete_next">Lesson complete. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> to start the next lesson.</string>
+    <!-- Said when the last lesson is done, as focus moves to the Finish tutorial button. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_lesson_complete_last">Lesson complete. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> to finish the tutorial.</string>
     <!-- Instruction shown instead of a step's when the action it teaches has no gesture, such as "Next item has no gesture." [CHAR LIMIT=NONE] -->
     <string name="sandfly_tutorial_no_gesture"><xliff:g id="action" example="Next item">%1$s</xliff:g> has no gesture. Assign one in Gestures settings, or use Skip step.</string>
     <!-- Buttons at the bottom of a lesson. [CHAR LIMIT=30] -->
