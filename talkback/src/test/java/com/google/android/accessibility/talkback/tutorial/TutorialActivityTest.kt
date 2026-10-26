@@ -124,4 +124,15 @@ class TutorialActivityTest {
       assertNotNull(lesson.id, activity.find(activity.getString(lesson.title)))
     }
   }
+
+  @Test
+  fun backStaysInALessonAndClosesFromContents() {
+    val activity = open("move").get()
+    activity.onBackPressedDispatcher.onBackPressed()
+    assertFalse(activity.isFinishing)
+    assertNotNull(activity.find(activity.getString(R.string.sandfly_tutorial_item_eggs)))
+    activity.find(activity.getString(R.string.sandfly_tutorial_contents))!!.performClick()
+    activity.onBackPressedDispatcher.onBackPressed()
+    assertTrue(activity.isFinishing)
+  }
 }
