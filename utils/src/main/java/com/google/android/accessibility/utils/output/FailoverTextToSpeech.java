@@ -305,6 +305,30 @@ public class FailoverTextToSpeech {
 
   private final Runnable dropHeldSpeech = this::dropHeldSpeech;
 
+  /**
+   * How long speech waits after a phone call ends for the audio mode to leave the call. Until then,
+   * Android still plays it on the call's output, such as a Bluetooth headset's call audio, which the
+   * headset closes a moment later.
+   */
+  private static final long CALL_END_WAIT_MS = 3_000;
+
+  /** How often the audio mode is checked while speech waits for it. */
+  private static final long CALL_END_POLL_MS = 50;
+
+  /** How long after a phone call was last seen that a call audio mode still belongs to it. */
+  private static final long CALL_SEEN_MS = 10_000;
+
+  /** When a phone call was last seen active, or 0. */
+  private long phoneCallSeenAt;
+
+  /** Speech waiting for the audio mode to leave a phone call that ended, in order. */
+  private final List<Runnable> afterCallSpeech = new ArrayList<>();
+
+  /** When the first speech in {@link #afterCallSpeech} started waiting. */
+  private long afterCallWaitSince;
+
+  private final Runnable speakAfterCall = this::speakAfterCall;
+
   /** The text of recent utterances, by ID, to match a resumed utterance with its held speech. */
   private final Map<String, CharSequence> utteranceTexts = recentMap();
 
@@ -669,6 +693,57 @@ public class FailoverTextToSpeech {
       boolean preventDeviceSleep,
       boolean flushGlobalTtsQueue,
       EventId eventId) {
+    if (!TextUtils.isEmpty(text) && (!afterCallSpeech.isEmpty() || callAudioEnding())) {
+      if (afterCallSpeech.isEmpty()) {
+        afterCallWaitSince = SystemClock.uptimeMillis();
+        mHandler.postDelayed(speakAfterCall, CALL_END_POLL_MS);
+      }
+      LogUtils.d(
+          TAG,
+          "Speech %s waits for the ended call's audio",
+          params.get(Engine.KEY_PARAM_UTTERANCE_ID));
+      afterCallSpeech.add(
+          () ->
+              speakNow(
+                  text,
+                  locale,
+                  pitch,
+                  rate,
+                  params,
+                  customFlags,
+                  stream,
+                  volume,
+                  preventDeviceSleep,
+                  flushGlobalTtsQueue,
+                  eventId));
+      return;
+    }
+    speakNow(
+        text,
+        locale,
+        pitch,
+        rate,
+        params,
+        customFlags,
+        stream,
+        volume,
+        preventDeviceSleep,
+        flushGlobalTtsQueue,
+        eventId);
+  }
+
+  private void speakNow(
+      CharSequence text,
+      @Nullable Locale locale,
+      float pitch,
+      float rate,
+      Map<String, String> params,
+      Map<String, Integer> customFlags,
+      int stream,
+      float volume,
+      boolean preventDeviceSleep,
+      boolean flushGlobalTtsQueue,
+      EventId eventId) {
     String utteranceId = params.get(Engine.KEY_PARAM_UTTERANCE_ID);
     addRecentUtteranceId(utteranceId);
 
@@ -720,6 +795,58 @@ public class FailoverTextToSpeech {
 
       mHandler.onUtteranceCompleted(params.get(Engine.KEY_PARAM_UTTERANCE_ID), /* success= */ true);
     }
+  }
+
+  /**
+   * Whether a phone call has ended but the audio mode still belongs to it. The mode is a call's,
+   * and the call is over, and it was a phone call: the mode is a phone call's, or a phone call was
+   * seen shortly before. A voice call in an app has a call mode with no phone call.
+   */
+  private boolean callAudioEnding() {
+    int mode = audioManager.getMode();
+    if (mode != AudioManager.MODE_IN_CALL && mode != AudioManager.MODE_IN_COMMUNICATION) {
+      return false;
+    }
+    int callState;
+    try {
+      callState =
+          telephonyManager == null ? TelephonyManager.CALL_STATE_IDLE : telephonyManager.getCallState();
+    } catch (SecurityException e) {
+      // Without the phone permission, the end of a call can't be told.
+      return false;
+    }
+    long now = SystemClock.uptimeMillis();
+    if (callState != TelephonyManager.CALL_STATE_IDLE) {
+      phoneCallSeenAt = now;
+      return false;
+    }
+    return mode == AudioManager.MODE_IN_CALL
+        || (phoneCallSeenAt != 0 && now - phoneCallSeenAt < CALL_SEEN_MS);
+  }
+
+  /** Speaks the speech that waited, once the ended call's audio mode is gone or after a while. */
+  private void speakAfterCall() {
+    long waited = SystemClock.uptimeMillis() - afterCallWaitSince;
+    if (inCall() && waited < CALL_END_WAIT_MS) {
+      mHandler.postDelayed(speakAfterCall, CALL_END_POLL_MS);
+      return;
+    }
+    if (inCall()) {
+      // The mode stayed: it isn't the ended call's, so speech doesn't wait for it again.
+      phoneCallSeenAt = 0;
+    }
+    LogUtils.d(TAG, "Speaking %d utterances after %d ms for the ended call's audio", afterCallSpeech.size(), waited);
+    List<Runnable> waiting = new ArrayList<>(afterCallSpeech);
+    afterCallSpeech.clear();
+    for (Runnable speech : waiting) {
+      speech.run();
+    }
+  }
+
+  /** Drops speech waiting for an ended call's audio mode. */
+  private void dropAfterCallSpeech() {
+    afterCallSpeech.clear();
+    mHandler.removeCallbacks(speakAfterCall);
   }
 
   /** Adjust volume if we are in a phone call and speaking with phone audio stream */
@@ -800,6 +927,7 @@ public class FailoverTextToSpeech {
 
   /** Stops speech from all applications. No utterance callbacks will be sent. */
   public void stopAll() {
+    dropAfterCallSpeech();
     dropHeldSpeech();
     stopLowLatencySpeech();
     try {
@@ -814,6 +942,7 @@ public class FailoverTextToSpeech {
 
   /** Stops all speech that originated from TalkBack. No utterance callbacks will be sent. */
   public void stopFromTalkBack() {
+    dropAfterCallSpeech();
     if (holdLowLatencySpeech()) {
       // The engine keeps making the held speech, so it can carry on if speech is paused.
       allowDeviceSleep();
