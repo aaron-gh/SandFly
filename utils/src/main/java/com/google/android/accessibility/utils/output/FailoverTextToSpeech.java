@@ -1475,7 +1475,15 @@ public class FailoverTextToSpeech {
   private void checkAudioMode() {
     int mode = audioManager.getMode();
     if (mode != lastAudioMode) {
+      boolean callEnded =
+          (lastAudioMode == AudioManager.MODE_IN_CALL
+                  || lastAudioMode == AudioManager.MODE_IN_COMMUNICATION)
+              && mode == AudioManager.MODE_NORMAL;
       lastAudioMode = mode;
+      // From Android 12, the player follows mode changes itself.
+      if (callEnded && android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.S) {
+        LowLatencyAudio.remakeTracks();
+      }
       audioModeChangedAt = SystemClock.uptimeMillis();
     }
   }

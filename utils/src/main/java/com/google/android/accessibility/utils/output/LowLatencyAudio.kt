@@ -21,6 +21,7 @@ import android.media.AudioAttributes
 import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioTrack
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.Process
@@ -569,6 +570,25 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     }
   }
 
+  /**
+   * Replaces the track with a new one, which takes the output Android picks now. A track keeps the
+   * output it was made for in some cases, such as the earpiece after a call.
+   */
+  private fun remake() {
+    synchronized(lock) {
+      if (released || broken) return
+      if (thread != null) {
+        remakeTrack = true
+        interrupt(track)
+        return
+      }
+      track?.release()
+      primed = false
+      track = createTrack()
+      if (track == null) giveUp()
+    }
+  }
+
   /** Stops using the low-latency track: everything waiting plays the usual way. */
   private fun giveUp() {
     synchronized(lock) {
@@ -932,6 +952,17 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     @JvmStatic
     fun players(): List<LowLatencyAudio> = synchronized(instances) { instances.values.toList() }
 
+    /**
+     * Makes every player's track again, so that it plays where Android sends audio now. Called when a
+     * call ends: a track that played during the call could stay on the call's output.
+     */
+    @JvmStatic
+    fun remakeTracks() {
+      val players = synchronized(instances) { instances.values.toList() }
+      LogUtils.d(TAG, "A call ended, making %d low-latency tracks again", players.size)
+      for (player in players) player.remake()
+    }
+
     /** Stops every speech stream of every player made so far, without making new ones. */
     @JvmStatic
     fun stopAllStreams() {
@@ -947,7 +978,41 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     fun shutdownAll() {
       val players = synchronized(instances) { instances.values.toList().also { instances.clear() } }
       for (player in players) player.shutdown()
+      stopWatchingCalls()
     }
+
+    // Whether the audio mode was a call's when last seen, and the listener that sees it change.
+    @Volatile private var inCall = false
+    private var modeWatcher: Pair<AudioManager, AudioManager.OnModeChangedListener>? = null
+
+    /** Remakes the tracks whenever a call ends, from Android 12, which reports mode changes. */
+    private fun watchCalls(context: Context) {
+      if (modeWatcher != null || Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return
+      val audioManager = context.getSystemService(AudioManager::class.java) ?: return
+      inCall = isCallMode(audioManager.mode)
+      val listener =
+        AudioManager.OnModeChangedListener { mode ->
+          val wasInCall = inCall
+          inCall = isCallMode(mode)
+          if (wasInCall && mode == AudioManager.MODE_NORMAL) remakeTracks()
+        }
+      try {
+        audioManager.addOnModeChangedListener({ it.run() }, listener)
+        modeWatcher = audioManager to listener
+      } catch (e: RuntimeException) {
+        LogUtils.w(TAG, "Cannot follow the audio mode: %s", e)
+      }
+    }
+
+    private fun stopWatchingCalls() {
+      val (audioManager, listener) = synchronized(instances) { modeWatcher.also { modeWatcher = null } } ?: return
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        runCatching { audioManager.removeOnModeChangedListener(listener) }
+      }
+    }
+
+    private fun isCallMode(mode: Int): Boolean =
+      mode == AudioManager.MODE_IN_CALL || mode == AudioManager.MODE_IN_COMMUNICATION
 
     /**
      * The player for [attributes]' usage, one for each kind of audio, or null if the device cannot
@@ -956,6 +1021,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     @JvmStatic
     fun get(context: Context, attributes: AudioAttributes): LowLatencyAudio? =
       synchronized(instances) {
+        watchCalls(context.applicationContext)
         instances
           .getOrPut(attributes.usage) { LowLatencyAudio(context.applicationContext, attributes) }
           .takeIf { it.track != null && !it.broken }
