@@ -44,6 +44,7 @@ import com.google.android.accessibility.braille.brailledisplay.platform.connect.
 import com.google.android.accessibility.braille.brailledisplay.platform.lib.Utils;
 import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.SettingsUtils;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -543,6 +544,15 @@ public class BtConnectManager extends ConnectManager {
         @Override
         public void onUnBonded(BluetoothDevice device) {
           BrailleDisplayLog.d(TAG, "onUnBonded");
+          // Pairing failed or was rejected. Without this, the display stayed "connecting" and
+          // choosing it again did nothing.
+          ConnectableDevice bonding = bondingDevice.get();
+          if (bonding != null && bonding.address().equals(device.getAddress())) {
+            BrailleDisplayLog.e(TAG, "Pairing with the braille display failed");
+            bondingDevice.set(null);
+            connectManagerCallback.onConnectFailure(
+                bonding, ConnectStage.RFCOMM, new IOException("Pairing failed"));
+          }
           connectManagerCallback.onDeviceDeleted(
               ConnectableBluetoothDevice.builder().setBluetoothDevice(device).build());
         }
