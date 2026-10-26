@@ -30,6 +30,8 @@ import com.google.android.accessibility.talkback.actor.gemini.GeminiActor.Gemini
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
 import com.google.android.accessibility.talkback.actor.gemini.screenqa.OverviewResponse;
 import com.google.android.accessibility.talkback.imagecaption.Result;
+import com.google.android.accessibility.talkback.dictation.DictationSettings;
+import com.google.android.accessibility.talkback.dictation.GoogleSpeechLanguages;
 import com.google.android.accessibility.talkback.utils.SpeechRecognizerPerformer;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -48,12 +50,19 @@ public class BottomSheetResultOverlay {
 
   public BottomSheetResultOverlay(TalkBackService service, GeminiChatMetricProcessor chatMetrics) {
     context = service.getBaseContext();
+    SpeechRecognizerPerformer recognizer =
+        new SpeechRecognizerPerformer(
+            service, SPEECH_RECOGNIZER_TIMEOUT_MS, /* partialResultFastFeedback= */ false);
+    // Questions are recognized as dictation is: Google on-device recognition first when it has the
+    // phone's language, as the phone's default service may fail for other apps.
+    recognizer.setPreferredService(
+        () ->
+            DictationSettings.INSTANCE.googleInstalled(service)
+                    && !Boolean.FALSE.equals(GoogleSpeechLanguages.INSTANCE.hasPhoneLanguage())
+                ? DictationSettings.INSTANCE.getGOOGLE_SERVICE()
+                : null);
     imageCaptionResultBottomSheet =
-        new ImageCaptionResultBottomSheet(
-            service,
-            new SpeechRecognizerPerformer(
-                service, SPEECH_RECOGNIZER_TIMEOUT_MS, /* partialResultFastFeedback= */ false),
-            chatMetrics);
+        new ImageCaptionResultBottomSheet(service, recognizer, chatMetrics);
   }
 
   public void setPipeline(Pipeline.FeedbackReturner pipeline) {
