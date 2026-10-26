@@ -59,6 +59,7 @@ import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.selector.SelectorController
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 
 /**
@@ -90,6 +91,7 @@ class TutorialActivity : AppCompatActivity() {
   private var lostWindowFocus = false
   private var shown = false
   private var speechDelay = SPEECH_DELAY_MS
+  private var repeats = 0
   private var reading = false
   /** Said when continuous reading stops, so that it doesn't interrupt the reading. */
   private var afterReading: (() -> Unit)? = null
@@ -117,6 +119,7 @@ class TutorialActivity : AppCompatActivity() {
   private val hooks =
     object : TutorialHooks.Listener {
       override fun onGesture(gestureId: Int, action: String): Boolean {
+        userActed()
         lastAction = action
         lastActionTime = SystemClock.uptimeMillis()
         val focused = hasWindowFocus()
@@ -214,10 +217,12 @@ class TutorialActivity : AppCompatActivity() {
   override fun onResume() {
     super.onResume()
     TutorialHooks.listener = hooks
+    userActed()
   }
 
   override fun onPause() {
     super.onPause()
+    handler.removeCallbacks(repeatInstruction)
     if (TutorialHooks.listener === hooks) TutorialHooks.listener = null
   }
 
@@ -308,6 +313,7 @@ class TutorialActivity : AppCompatActivity() {
   }
 
   private fun onInput(input: TutorialInput) {
+    userActed()
     speechDelay = SPEECH_DELAY_MS
     val step = step ?: return
     val key = step.check(input, stepContext)
@@ -355,12 +361,24 @@ class TutorialActivity : AppCompatActivity() {
       if (next == null) getString(R.string.sandfly_tutorial_finish)
       else getString(R.string.sandfly_tutorial_next_lesson, getString(next.title))
     val since = lastActionTime
-    speakLater(getString(R.string.sandfly_tutorial_lesson_complete)) {
+    speakLater(completionText()) {
       // Unless the user went on with gestures meanwhile.
       if (lastActionTime == since && lessonDone) focus(nextButton)
       // Changed after focus has moved, so that SandFly doesn't read it again.
       if (lessonDone) showInstruction()
     }
+  }
+
+  /** Said when the lesson is done: how to go on, as focus moves to the button that does. */
+  private fun completionText(): String {
+    val activate =
+      gestureName(R.string.shortcut_value_action_setting_activate_current_action)
+        ?: return getString(R.string.sandfly_tutorial_lesson_complete)
+    return getString(
+      if (lessonIndex + 1 < TutorialLessons.all.size) R.string.sandfly_tutorial_lesson_complete_next
+      else R.string.sandfly_tutorial_lesson_complete_last,
+      activate,
+    )
   }
 
   /** Skips the step, or goes to the next lesson once this one is done. */
@@ -443,9 +461,33 @@ class TutorialActivity : AppCompatActivity() {
     return !performed
   }
 
+  /** Starts the wait before the instruction is said again, as the user has done something. */
+  private fun userActed() {
+    repeats = 0
+    handler.removeCallbacks(repeatInstruction)
+    if (lessonIndex >= 0 && lesson?.id != TutorialLessons.PRACTICE_LESSON) {
+      handler.postDelayed(repeatInstruction, REPEAT_MS)
+    }
+  }
+
+  /** Says the instruction again when nothing has happened for a while, a few times at most. */
+  private val repeatInstruction =
+    object : Runnable {
+      override fun run() {
+        if (lessonIndex < 0) return
+        if (hasWindowFocus() && !reading) {
+          val text = if (lessonDone) completionText() else instruction?.text?.toString()
+          if (text != null) speak(text, SpeechController.QUEUE_MODE_QUEUE, null)
+          repeats++
+        }
+        if (repeats < MAX_REPEATS) handler.postDelayed(this, REPEAT_MS)
+      }
+    }
+
   // Contents
 
   private fun showContents() {
+    handler.removeCallbacks(repeatInstruction)
     lessonIndex = -1
     instruction = null
     lessonText = null
@@ -700,6 +742,7 @@ class TutorialActivity : AppCompatActivity() {
 
     override fun performAccessibilityAction(host: View, action: Int, args: Bundle?): Boolean {
       if (action == AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS) {
+        userActed()
         instructionFocused = target == Targets.INSTRUCTION
         if (target == Targets.HEADING) {
           lessonText?.let { speakLater(it) }
@@ -786,7 +829,11 @@ class TutorialActivity : AppCompatActivity() {
       @Suppress("DEPRECATION") window.decorView.announceForAccessibility(text)
       return
     }
-    val options = SpeechController.SpeakOptions.create().setQueueMode(queueMode)
+    // Forced, as speech the user asks for is: SandFly drops other speech while audio plays.
+    val options =
+      SpeechController.SpeakOptions.create()
+        .setQueueMode(queueMode)
+        .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)
     if (then != null) {
       options.setCompletedAction { handler.post { if (!isDestroyed) then() } }
     }
@@ -873,6 +920,10 @@ class TutorialActivity : AppCompatActivity() {
     /** Lets SandFly start saying the result of a gesture before the tutorial adds to it. */
     private const val SPEECH_DELAY_MS = 300L
     private const val GESTURE_SPEECH_DELAY_MS = 1000L
+
+    /** How long without any gesture, touch or input before the instruction is said again. */
+    private const val REPEAT_MS = 25_000L
+    private const val MAX_REPEATS = 3
 
     /** How long SandFly has to focus the first item of the window when it opens. */
     private const val FIRST_FOCUS_MS = 2500L
