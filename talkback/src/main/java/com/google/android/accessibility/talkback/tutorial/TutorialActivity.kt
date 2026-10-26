@@ -134,6 +134,10 @@ class TutorialActivity : AppCompatActivity() {
           speakNow(actionName(action))
         }
         handler.post { onInput(TutorialInput.Gesture(gestureId, action)) }
+        if (!taken && focused && action == getString(R.string.shortcut_value_back) && keepsBack()) {
+          speakNow(getString(R.string.sandfly_tutorial_back_in_lesson))
+          return true
+        }
         return taken
       }
 
@@ -185,7 +189,8 @@ class TutorialActivity : AppCompatActivity() {
       this,
       object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-          if (lessonIndex >= 0) showContents() else finish()
+          if (keepsBack()) speakNow(getString(R.string.sandfly_tutorial_back_in_lesson))
+          else finish()
         }
       },
     )
@@ -459,6 +464,16 @@ class TutorialActivity : AppCompatActivity() {
     val performed = TutorialLessons.PRACTICE_PERFORMED.any { getString(it) == action }
     if (performed) speakLater(text) else speakNow(text)
     return !performed
+  }
+
+  /**
+   * Whether Back stays in the lesson, so that a gesture made while learning doesn't leave it.
+   * Back still closes the keyboard, and closes the tutorial from Contents.
+   */
+  private fun keepsBack(): Boolean {
+    if (lessonIndex < 0) return false
+    val insets = ViewCompat.getRootWindowInsets(window.decorView)
+    return insets?.isVisible(WindowInsetsCompat.Type.ime()) != true
   }
 
   /** Starts the wait before the instruction is said again, as the user has done something. */
