@@ -21,6 +21,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
+import com.google.android.accessibility.braille.brailledisplay.BrailleDisplayLog;
 import com.google.android.accessibility.braille.common.lib.ActionReceiver;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,6 +31,7 @@ import java.util.Objects;
 /** A BroadcastReceiver that listens for the bonding of this device with a bluetooth device. */
 public class BtConnectStateReceiver
     extends ActionReceiver<BtConnectStateReceiver, BtConnectStateReceiver.Callback> {
+  private static final String TAG = "BtConnectStateReceiver";
 
   /** The callback associated with the actions of this receiver. */
   public interface Callback {
@@ -56,6 +58,15 @@ public class BtConnectStateReceiver
       if (bondState == BluetoothDevice.BOND_BONDED) {
         callback.onBonded(bluetoothDevice);
       } else if (bondState == BluetoothDevice.BOND_NONE) {
+        if (extras.getInt(BluetoothDevice.EXTRA_PREVIOUS_BOND_STATE, BluetoothDevice.BOND_NONE)
+            == BluetoothDevice.BOND_BONDING) {
+          // The reason is a hidden extra: 1 authentication failed, 2 rejected by the remote
+          // device, 3 canceled, 4 remote device down, 9 authentication timeout.
+          BrailleDisplayLog.e(
+              TAG,
+              "Pairing failed, reason "
+                  + extras.getInt("android.bluetooth.device.extra.REASON", -1));
+        }
         callback.onUnBonded(bluetoothDevice);
       }
     } else if (Objects.equals(action, BluetoothDevice.ACTION_ACL_CONNECTED)) {
