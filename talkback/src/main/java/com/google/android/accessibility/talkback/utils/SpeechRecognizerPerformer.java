@@ -28,6 +28,7 @@ import static com.google.android.accessibility.talkback.permission.PermissionReq
 import android.Manifest;
 import android.Manifest.permission;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -48,6 +49,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.List;
+import java.util.function.Supplier;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -92,6 +94,13 @@ public class SpeechRecognizerPerformer {
   private String cachedResult = "";
 
   private @Nullable Intent recognizerIntent;
+
+  // The recognition service to use first, or null for the phone's default one.
+  private @Nullable Supplier<ComponentName> preferredService;
+  // The service of the recognizer now listening, null for the default one.
+  private @Nullable ComponentName usedService;
+  // Whether this session already moved to the other service after a failure.
+  private boolean switchedService;
 
   /** Interface for communicating with SpeechRecognizerRequester user. */
   public interface SpeechRecognizerRequester {
@@ -167,6 +176,9 @@ public class SpeechRecognizerPerformer {
           }
           LogUtils.v(TAG, "Speech recognizer onError() error=%d", error);
           stopListeningDelayHandler.removeMessages();
+          if (switchToOtherService(error)) {
+            return;
+          }
           // Note: This will only occur if user turned off mic permissions after initial use.
           if (error == ERROR_INSUFFICIENT_PERMISSIONS) {
             hasMicPermission = false;
@@ -278,6 +290,54 @@ public class SpeechRecognizerPerformer {
     this.speechRecognizerRequester = speechRecognizerRequester;
   }
 
+  /**
+   * Sets the recognition service to try first, asked each time listening starts; it gives null for
+   * the phone's default one. When either fails for another reason than hearing no words, the
+   * session goes on with the other.
+   */
+  public void setPreferredService(@Nullable Supplier<ComponentName> preferredService) {
+    this.preferredService = preferredService;
+  }
+
+  /**
+   * Starts listening again on the other recognition service after [error], once per session, when
+   * the error is the service's rather than the user's. Some phones' default service fails at once
+   * for apps other than its own. Returns whether it did.
+   */
+  private boolean switchToOtherService(int error) {
+    if (!sessionActive || switchedService || !isServiceError(error)) {
+      return false;
+    }
+    ComponentName preferred = preferredService == null ? null : preferredService.get();
+    if (preferred == null) {
+      return false;
+    }
+    ComponentName other = usedService == null ? preferred : null;
+    LogUtils.e(
+        TAG,
+        "Speech recognition by %s failed with error %d, using %s",
+        usedService == null ? "the default service" : usedService.flattenToShortString(),
+        error,
+        other == null ? "the default service" : other.flattenToShortString());
+    switchedService = true;
+    reset();
+    startListening(other);
+    return true;
+  }
+
+  private static boolean isServiceError(int error) {
+    return error == SpeechRecognizer.ERROR_CLIENT
+        || error == SpeechRecognizer.ERROR_SERVER
+        || error == SpeechRecognizer.ERROR_SERVER_DISCONNECTED
+        || error == SpeechRecognizer.ERROR_LANGUAGE_NOT_SUPPORTED
+        || error == SpeechRecognizer.ERROR_LANGUAGE_UNAVAILABLE
+        || error == SpeechRecognizer.ERROR_CANNOT_CHECK_SUPPORT
+        || error == SpeechRecognizer.ERROR_AUDIO
+        || error == SpeechRecognizer.ERROR_NETWORK
+        || error == SpeechRecognizer.ERROR_NETWORK_TIMEOUT
+        || error == SpeechRecognizer.ERROR_TOO_MANY_REQUESTS;
+  }
+
   public void doListening() {
     if (speechRecognizerRequester == null) {
       LogUtils.e(TAG, "doListening:Speech listener's not set.");
@@ -296,6 +356,7 @@ public class SpeechRecognizerPerformer {
     }
 
     sessionActive = true;
+    switchedService = false;
     if (!hasMicPermission()) {
       if (ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO)
           == PackageManager.PERMISSION_GRANTED) {
@@ -322,11 +383,16 @@ public class SpeechRecognizerPerformer {
   /** Start the speech recognition session. */
   @VisibleForTesting
   void startListening() {
+    startListening(preferredService == null ? null : preferredService.get());
+  }
+
+  private void startListening(@Nullable ComponentName service) {
     if (isListening) {
       return;
     }
 
     if (speechRecognizer == null) {
+      usedService = service;
       createSpeechObjects();
     }
     cachedResult = "";
@@ -438,8 +504,11 @@ public class SpeechRecognizerPerformer {
       return;
     }
     // Checks if user can use voice recognition.
-    speechRecognizer = SpeechRecognizer.createSpeechRecognizer(context);
-    if (!SpeechRecognizer.isRecognitionAvailable(context)) {
+    speechRecognizer =
+        usedService == null
+            ? SpeechRecognizer.createSpeechRecognizer(context)
+            : SpeechRecognizer.createSpeechRecognizer(context, usedService);
+    if (usedService == null && !SpeechRecognizer.isRecognitionAvailable(context)) {
       speechRecognizerRequester.onFeedbackEvent(
           SpeechRecognizerRequester.EVENT_FEATURE_UNAVAILABLE);
     }
