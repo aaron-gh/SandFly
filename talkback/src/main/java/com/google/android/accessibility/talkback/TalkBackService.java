@@ -1046,6 +1046,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     Updater.stopAutomaticChecks();
     ReportInbox.stopFollowing();
+    ExitAfterTurnOff.schedule(getApplication());
     ShizukuGrants.onServiceDestroyed();
     HandwritingKeyboardHost.setFeedback(null);
     instance = null;
@@ -1989,6 +1990,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   @Override
   protected void onServiceConnected() {
+    ExitAfterTurnOff.cancel();
     super.onServiceConnected();
     // A report sent after the screen reader is turned off, from a new process, includes its log.
     ProblemReportSender.rememberProcess(this, "screen reader");
