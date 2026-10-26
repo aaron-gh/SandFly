@@ -82,6 +82,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -411,6 +413,7 @@ public class FailoverTextToSpeech {
         if (PREF_TTS_ENGINE_KEY.equals(key)) {
           preferredTtsEngine = readPreferredEngine(sharedPrefs);
           updateDefaultEngine();
+          updateWarmEngines();
         } else if (PREF_USE_ACCESSIBILITY_STREAM_KEY.equals(key)
             || PREF_SPEECH_STREAM_KEY.equals(key)
             || PREF_ROUTE_FORCED_KEY.equals(key)) {
@@ -430,6 +433,7 @@ public class FailoverTextToSpeech {
           readLanguageSwitches(sharedPrefs);
         } else if (VoiceProfiles.isProfileKey(key)) {
           readVoiceProfile(sharedPrefs);
+          updateWarmEngines();
         }
       };
 
@@ -458,6 +462,24 @@ public class FailoverTextToSpeech {
 
   /** Whether the engine in use was started for a change of voice profile. */
   private boolean engineForVoiceProfile;
+
+  /** How long speech waits for an engine that a change of voice profile starts. */
+  private static final long MAX_VOICE_PROFILE_ENGINE_WAIT_MS = 3000;
+
+  /** When speech stops waiting for the engine that a change of voice profile starts. */
+  private long voiceProfileEngineWaitEnd;
+
+  /**
+   * Engines of the voice profiles and of SandFly default other than the one in use, kept started so
+   * that changing voice profile doesn't wait for an engine to start.
+   */
+  private final Map<String, TextToSpeech> warmEngines = new HashMap<>();
+
+  /** The engines in {@link #warmEngines} that have started. */
+  private final Set<String> warmEnginesReady = new HashSet<>();
+
+  /** The voices of the engines in {@link #warmEngines}, listed when they started. */
+  private final Map<String, Set<Voice>> warmEngineVoices = new HashMap<>();
 
   /** The rate adjustment specified in {@link Settings}. */
   private float defaultRate;
@@ -991,6 +1013,12 @@ public class FailoverTextToSpeech {
 
     TextToSpeechUtils.attemptTtsShutdown(tempTts);
     tempTts = null;
+    for (TextToSpeech warm : warmEngines.values()) {
+      TextToSpeechUtils.attemptTtsShutdown(warm);
+    }
+    warmEngines.clear();
+    warmEnginesReady.clear();
+    warmEngineVoices.clear();
     if (speechCacheManager != null) {
       speechCacheManager.shutDown();
     }
@@ -1270,6 +1298,10 @@ public class FailoverTextToSpeech {
       updateDefaultEngine();
     } finally {
       switchingForVoiceProfile = false;
+    }
+    if (tts != null && isStartingVoiceProfileEngine()) {
+      // Speech waits for the new engine, so nothing more is said in the old voice.
+      stopFromTalkBack();
     }
     if (tts != null && tempTts == null) {
       synchronized (ttsLock) {
@@ -2296,6 +2328,9 @@ public class FailoverTextToSpeech {
     final int generation = ++tempTtsGeneration;
     tempTtsEngine = engine;
     tempTtsForVoiceProfile = switchingForVoiceProfile;
+    if (switchingForVoiceProfile) {
+      voiceProfileEngineWaitEnd = SystemClock.uptimeMillis() + MAX_VOICE_PROFILE_ENGINE_WAIT_MS;
+    }
     tempTts =
         new TextToSpeech(context, status -> mHandler.onTtsInitialized(status, generation), engine);
   }
@@ -2357,21 +2392,46 @@ public class FailoverTextToSpeech {
     this.tempTts = null;
     this.tempTtsEngine = null;
 
-    synchronized (ttsLock) {
-      cachedTtsLocale = null;
-      engineVoices = null;
-      missingVoice = null;
-    }
-
     if (status != TextToSpeech.SUCCESS) {
+      synchronized (ttsLock) {
+        cachedTtsLocale = null;
+        engineVoices = null;
+        missingVoice = null;
+      }
       attemptTtsFailover(tempTtsEngine);
       return;
+    }
+
+    useEngine(tempTts, tempTtsEngine, tempTtsForVoiceProfile, /* voices= */ null);
+  }
+
+  /**
+   * Makes a started engine the one in use.
+   *
+   * @param engine its package, or null to ask the engine
+   * @param forVoiceProfile whether it is for a change of voice profile
+   * @param voices its voices if already listed, or null
+   */
+  @SuppressWarnings("deprecation")
+  private void useEngine(
+      TextToSpeech newTts,
+      @Nullable String engine,
+      boolean forVoiceProfile,
+      @Nullable Set<Voice> voices) {
+    final Set<Voice> oldVoices;
+    synchronized (ttsLock) {
+      oldVoices = engineVoices;
+      cachedTtsLocale = null;
+      // An engine kept started may have another language set.
+      mLastUtteranceLocale = null;
+      engineVoices = voices;
+      missingVoice = null;
     }
 
     final boolean isSwitchingEngines = (tts != null);
 
     if (isSwitchingEngines) {
-      TextToSpeechUtils.attemptTtsShutdown(tts);
+      retireEngine(tts, ttsEngine, oldVoices, engine);
     }
     // Speech from an engine that is gone never finishes, so it must not hold up the new engine's.
     mHandler.removeCallbacks(dropHeldSpeech);
@@ -2385,25 +2445,26 @@ public class FailoverTextToSpeech {
     engineQuietSince = 0;
     unfinishedUtterances.clear();
 
-    tts = tempTts;
+    tts = newTts;
     tts.setOnUtteranceProgressListener(lowLatencyRouter);
 
-    if (tempTtsEngine == null) {
+    if (engine == null) {
       ttsEngine = TextToSpeechCompatUtils.getCurrentEngine(tts);
     } else {
-      ttsEngine = tempTtsEngine;
+      ttsEngine = engine;
     }
 
     updateDefaultLocale();
 
     applyAudioAttributes();
 
-    LogUtils.i(TAG, "Switched to TTS engine: %s", tempTtsEngine);
+    LogUtils.i(TAG, "Switched to TTS engine: %s", engine);
 
-    engineForVoiceProfile = tempTtsForVoiceProfile;
+    engineForVoiceProfile = forVoiceProfile;
     for (FailoverTtsListener mListener : listeners) {
-      mListener.onTtsInitialized(isSwitchingEngines, tempTtsEngine);
+      mListener.onTtsInitialized(isSwitchingEngines, engine);
     }
+    updateWarmEngines();
   }
 
   /**
@@ -2552,10 +2613,151 @@ public class FailoverTextToSpeech {
 
   private @Nullable String getTargetEngine() {
     VoiceProfile profile = VoiceProfiles.active();
-    String preferred = profile != null ? profile.engine() : preferredTtsEngine;
+    return engineToUse(profile != null ? profile.engine() : preferredTtsEngine);
+  }
+
+  /** Returns {@code preferred} if it is installed, otherwise the system's default engine. */
+  private @Nullable String engineToUse(@Nullable String preferred) {
     return (preferred != null && installedTtsEngines.contains(preferred))
         ? preferred
         : defaultTtsEngine;
+  }
+
+  /** Returns the engines of the voice profiles and of SandFly default, if there are profiles. */
+  private Set<String> voiceProfileEngines() {
+    Set<String> targets = new HashSet<>();
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(context);
+    List<String> ids = VoiceProfiles.ids(prefs);
+    if (ids.isEmpty()) {
+      return targets;
+    }
+    for (String id : ids) {
+      targets.add(engineToUse(VoiceProfiles.read(prefs, id).engine()));
+    }
+    targets.add(engineToUse(preferredTtsEngine));
+    targets.remove(null);
+    return targets;
+  }
+
+  /**
+   * Starts the engines of {@link #voiceProfileEngines} other than the one in use, and shuts down
+   * the others kept started.
+   */
+  private void updateWarmEngines() {
+    if (tts == null) {
+      // The first engine starts on its own.
+      return;
+    }
+    Set<String> targets = voiceProfileEngines();
+    targets.remove(ttsEngine);
+    targets.remove(tempTtsEngine);
+    for (String engine : new ArrayList<>(warmEngines.keySet())) {
+      if (!targets.contains(engine)) {
+        TextToSpeechUtils.attemptTtsShutdown(warmEngines.remove(engine));
+        warmEnginesReady.remove(engine);
+        warmEngineVoices.remove(engine);
+      }
+    }
+    for (String engine : targets) {
+      if (!warmEngines.containsKey(engine)) {
+        LogUtils.i(TAG, "Starting TTS engine for voice profiles: %s", engine);
+        TextToSpeech[] started = new TextToSpeech[1];
+        started[0] =
+            new TextToSpeech(
+                context,
+                status -> mHandler.post(() -> handleWarmEngineStarted(engine, started[0], status)),
+                engine);
+        warmEngines.put(engine, started[0]);
+      }
+    }
+  }
+
+  private void handleWarmEngineStarted(String engine, TextToSpeech started, int status) {
+    if (warmEngines.get(engine) != started) {
+      // It was shut down, or replaced, before it started.
+      return;
+    }
+    if (status != TextToSpeech.SUCCESS) {
+      LogUtils.w(TAG, "TTS engine for voice profiles failed to start: %s", engine);
+      warmEngines.remove(engine);
+      TextToSpeechUtils.attemptTtsShutdown(started);
+      return;
+    }
+    warmEnginesReady.add(engine);
+    try {
+      warmEngineVoices.put(engine, started.getVoices());
+    } catch (RuntimeException e) {
+      // Listed again when the engine is used.
+    }
+  }
+
+  /**
+   * Moves to {@code engine} at once if it is kept started.
+   *
+   * @return whether it was
+   */
+  private boolean useWarmEngine(String engine) {
+    if (tts == null || !warmEnginesReady.contains(engine)) {
+      return false;
+    }
+    TextToSpeech warm = warmEngines.remove(engine);
+    warmEnginesReady.remove(engine);
+    Set<Voice> voices = warmEngineVoices.remove(engine);
+    if (tempTts != null) {
+      // Another engine starting is no longer wanted.
+      TextToSpeechUtils.attemptTtsShutdown(tempTts);
+      tempTts = null;
+      tempTtsEngine = null;
+      tempTtsGeneration++;
+    }
+    ttsFailures = 0;
+    LogUtils.i(TAG, "Using started TTS engine: %s", engine);
+    useEngine(warm, engine, switchingForVoiceProfile, voices);
+    return true;
+  }
+
+  /**
+   * Shuts down an engine no longer in use, or keeps it started if a voice profile or SandFly
+   * default uses it.
+   */
+  private void retireEngine(
+      TextToSpeech retired,
+      @Nullable String engine,
+      @Nullable Set<Voice> voices,
+      @Nullable String newEngine) {
+    if (engine == null
+        || engine.equals(newEngine)
+        || warmEngines.containsKey(engine)
+        || !voiceProfileEngines().contains(engine)) {
+      TextToSpeechUtils.attemptTtsShutdown(retired);
+      return;
+    }
+    try {
+      // Reports on speech it was making would be taken for the new engine's.
+      retired.setOnUtteranceProgressListener(null);
+      retired.stop();
+    } catch (RuntimeException e) {
+      TextToSpeechUtils.attemptTtsShutdown(retired);
+      return;
+    }
+    warmEngines.put(engine, retired);
+    warmEnginesReady.add(engine);
+    warmEngineVoices.put(engine, voices);
+  }
+
+  /**
+   * Whether speech should wait for an engine being started for a change of voice profile, so that
+   * it is said in the profile's voice.
+   */
+  public boolean isStartingVoiceProfileEngine() {
+    return tempTts != null
+        && tempTtsForVoiceProfile
+        && SystemClock.uptimeMillis() < voiceProfileEngineWaitEnd;
+  }
+
+  /** How long speech can still wait for the engine of a change of voice profile, in ms. */
+  public long voiceProfileEngineWaitLeft() {
+    return Math.max(0, voiceProfileEngineWaitEnd - SystemClock.uptimeMillis());
   }
 
   /** Whether the engine in use was started for a change of voice profile. */
@@ -2583,7 +2785,9 @@ public class FailoverTextToSpeech {
     }
     if (ttsEngine == null || !ttsEngine.equals(targetEngine)) {
       if (installedTtsEngines.contains(targetEngine)) {
-        setTtsEngine(targetEngine, true);
+        if (!useWarmEngine(targetEngine)) {
+          setTtsEngine(targetEngine, true);
+        }
       } else if (!installedTtsEngines.isEmpty()) {
         // We'll take whatever TTS we can get.
         setTtsEngine(installedTtsEngines.getFirst(), true);
