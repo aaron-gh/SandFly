@@ -2653,9 +2653,11 @@ public class FailoverTextToSpeech {
     targets.remove(tempTtsEngine);
     for (String engine : new ArrayList<>(warmEngines.keySet())) {
       if (!targets.contains(engine)) {
-        TextToSpeechUtils.attemptTtsShutdown(warmEngines.remove(engine));
-        warmEnginesReady.remove(engine);
-        warmEngineVoices.remove(engine);
+        dropWarmEngine(engine);
+      } else if (warmEnginesReady.contains(engine) && !isConnected(warmEngines.get(engine))) {
+        // Started again below.
+        LogUtils.w(TAG, "TTS engine for voice profiles stopped: %s", engine);
+        dropWarmEngine(engine);
       }
     }
     for (String engine : targets) {
@@ -2669,6 +2671,25 @@ public class FailoverTextToSpeech {
                 engine);
         warmEngines.put(engine, started[0]);
       }
+    }
+  }
+
+  private void dropWarmEngine(String engine) {
+    TextToSpeechUtils.attemptTtsShutdown(warmEngines.remove(engine));
+    warmEnginesReady.remove(engine);
+    warmEngineVoices.remove(engine);
+  }
+
+  /**
+   * Whether {@code engine} is still connected. A connection whose engine was stopped, such as by
+   * Android, is never made again, and everything sent to it fails.
+   */
+  private static boolean isConnected(TextToSpeech engine) {
+    try {
+      // Fails when not connected. It stops only this connection's speech, and it has none.
+      return engine.stop() == TextToSpeech.SUCCESS;
+    } catch (RuntimeException e) {
+      return false;
     }
   }
 
@@ -2698,6 +2719,12 @@ public class FailoverTextToSpeech {
    */
   private boolean useWarmEngine(String engine) {
     if (tts == null || !warmEnginesReady.contains(engine)) {
+      return false;
+    }
+    if (!isConnected(warmEngines.get(engine))) {
+      // Started as usual instead, with speech waiting for it.
+      LogUtils.w(TAG, "TTS engine for voice profiles stopped: %s", engine);
+      dropWarmEngine(engine);
       return false;
     }
     TextToSpeech warm = warmEngines.remove(engine);
