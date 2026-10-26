@@ -2683,6 +2683,7 @@ public class SpeechControllerImpl implements SpeechController {
     mDelegate.onTtsReady();
     // The previous engine may not have shut down correctly, so make sure to
     // clear the "current" speech item.
+    final FeedbackItem cutOffItem = currentFeedbackItem;
     if (currentFeedbackItem != null) {
       onFragmentCompleted(
           currentFeedbackItem.getUtteranceId(),
@@ -2692,7 +2693,27 @@ public class SpeechControllerImpl implements SpeechController {
       currentFeedbackItem = null;
     }
 
-    if (wasSwitchingEngines && ttsChangeAnnouncementEnabled && !mSkipNextTTSChangeAnnouncement) {
+    // A change of voice profile speaks the profile's name, which the engine's would cover. The
+    // name may still have been speaking on the old engine, so it is said again on the new one.
+    final boolean forVoiceProfile = wasSwitchingEngines && failoverTts.isEngineForVoiceProfile();
+    final CharSequence cutOffText = (cutOffItem == null) ? null : cutOffItem.getAggregateText();
+    if (forVoiceProfile && !TextUtils.isEmpty(cutOffText)) {
+      speak(
+          cutOffText,
+          null,
+          null,
+          QUEUE_MODE_QUEUE,
+          FeedbackItem.FLAG_NO_HISTORY
+              | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
+              | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE,
+          UTTERANCE_GROUP_DEFAULT,
+          null,
+          null,
+          EVENT_ID_UNTRACKED);
+    } else if (wasSwitchingEngines
+        && ttsChangeAnnouncementEnabled
+        && !mSkipNextTTSChangeAnnouncement
+        && !forVoiceProfile) {
       speakCurrentEngine();
     } else if (!feedbackQueue.isEmpty()) {
       speakNextItem();
