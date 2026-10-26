@@ -20,6 +20,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.tutorial.TutorialActivity;
 
 /**
  * An activity that shows a dialog to let the user choose between the touch tutorial and the
@@ -35,9 +36,7 @@ public class TutorialChooserActivity extends Activity {
     View touchTutorialButton = findViewById(R.id.touch_tutorial_button);
     touchTutorialButton.setOnClickListener(
         v -> {
-          startActivity(
-              TrainingActivity.createTrainingIntent(
-                  this, TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL));
+          startActivity(TutorialActivity.intent(this));
           finish();
         });
 

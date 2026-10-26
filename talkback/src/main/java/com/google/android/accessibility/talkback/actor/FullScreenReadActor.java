@@ -37,6 +37,7 @@ import com.google.android.accessibility.talkback.eventprocessor.EventState;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
+import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -320,10 +321,14 @@ public class FullScreenReadActor {
   public void setReadingState(@ReadState int newState) {
     LogUtils.v(TAG, "Continuous reading switching to mode: %s", newState);
 
+    boolean wasActive = isActive();
     previousState = currentState;
     currentState = newState;
 
     speechController.setShouldInjectAutoReadingCallbacks(isActive(), nodeSpokenRunnable);
+    if (wasActive != isActive()) {
+      TutorialHooks.onContinuousReading(isActive());
+    }
   }
 
   /**

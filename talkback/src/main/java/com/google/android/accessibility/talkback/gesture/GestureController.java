@@ -122,6 +122,7 @@ import com.google.android.accessibility.talkback.selector.SelectorController.Set
 import com.google.android.accessibility.talkback.status.StatusReader;
 import com.google.android.accessibility.talkback.trainingcommon.TrainingActivity;
 import com.google.android.accessibility.talkback.trainingcommon.content.TutorialGestureUses;
+import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.talkback.utils.DateTimeUtils;
 import com.google.android.accessibility.talkback.utils.DebugProperties;
 import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
@@ -901,6 +902,9 @@ public class GestureController {
         gestureId,
         GestureShortcutMapping.getGestureString(service, gestureId),
         action);
+    if (TutorialHooks.onGesture(gestureId, action)) {
+      return;
+    }
     String fallbackAction = action;
     if (!turnsScriptsOff(action)
         && Scripts.onGesture(gestureId, () -> performAction(fallbackAction, eventId))) {

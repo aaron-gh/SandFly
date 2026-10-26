@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Name of SandFly's interactive tutorial, and the heading of its list of lessons. [CHAR LIMIT=40] -->
+    <string name="sandfly_tutorial_title">SandFly tutorial</string>
+    <!-- Heading of a tutorial lesson, such as "Moving between items, lesson 3 of 17". [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_lesson_heading"><xliff:g id="lesson" example="Moving between items">%1$s</xliff:g>, lesson <xliff:g id="number" example="3">%2$d</xliff:g> of <xliff:g id="count" example="17">%3$d</xliff:g></string>
+    <!-- Instruction of a lesson with several steps, such as "Step 1 of 2: Swipe right to move to the next item." [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_step">Step <xliff:g id="number" example="1">%1$d</xliff:g> of <xliff:g id="count" example="2">%2$d</xliff:g>: <xliff:g id="instruction" example="Swipe right to move to the next item.">%3$s</xliff:g></string>
+    <!-- Said when a step needs several things done, such as "2 of 4." after the second of four items is found. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_progress"><xliff:g id="done" example="2">%1$d</xliff:g> of <xliff:g id="count" example="4">%2$d</xliff:g>.</string>
+    <!-- Said and shown when every step of a lesson is done. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_lesson_complete">Lesson complete.</string>
+    <!-- Instruction shown instead of a step's when the action it teaches has no gesture, such as "Next item has no gesture." [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_no_gesture"><xliff:g id="action" example="Next item">%1$s</xliff:g> has no gesture. Assign one in Gestures settings, or use Skip step.</string>
+    <!-- Buttons at the bottom of a lesson. [CHAR LIMIT=30] -->
+    <string name="sandfly_tutorial_contents">Contents</string>
+    <string name="sandfly_tutorial_skip_step">Skip step</string>
+    <!-- Button shown when a lesson is done, such as "Next lesson: Activating items". [CHAR LIMIT=60] -->
+    <string name="sandfly_tutorial_next_lesson">Next lesson: <xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
+    <!-- Button shown when the last lesson is done. [CHAR LIMIT=30] -->
+    <string name="sandfly_tutorial_finish">Finish tutorial</string>
+    <!-- Button at the end of the list of lessons. [CHAR LIMIT=30] -->
+    <string name="sandfly_tutorial_close">Close tutorial</string>
+    <!-- Text above the list of lessons. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_contents_intro">Lessons, in order. Each one can be opened on its own.</string>
+    <!-- State of a lesson in the list of lessons that has been completed. [CHAR LIMIT=20] -->
+    <string name="sandfly_tutorial_done">Done</string>
+
+    <!-- Chapters of the tutorial, headings in the list of lessons. [CHAR LIMIT=40] -->
+    <string name="sandfly_tutorial_chapter_basics">Basics</string>
+    <string name="sandfly_tutorial_chapter_reading">Reading</string>
+    <string name="sandfly_tutorial_chapter_controls">Controls and text</string>
+    <string name="sandfly_tutorial_chapter_getting_around">Getting around</string>
+    <string name="sandfly_tutorial_chapter_practice">Practice</string>
+
+    <!-- In the instructions below, the first placeholders are the names of the user's gestures, which start with a capital letter, such as "Swipe right" or "Double-tap". Keep them at the start of a sentence. -->
+
+    <!-- Lesson: Welcome. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_welcome_title">Welcome</string>
+    <string name="sandfly_tutorial_welcome_intro">This tutorial teaches SandFly\'s gestures. Each lesson gives an instruction, waits until you have done it with your own gestures, then gives the next one. The instruction is the first item after the name of the lesson. Contents lists every lesson, and the tutorial reopens at the lesson you were on.</string>
+    <string name="sandfly_tutorial_welcome_start"><xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> anywhere on the screen to start.</string>
+
+    <!-- Lesson: Exploring by touch. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_explore_title">Exploring by touch</string>
+    <string name="sandfly_tutorial_explore_intro">Touching the screen speaks the item under your finger. Touching an item doesn\'t activate it.</string>
+    <string name="sandfly_tutorial_explore_find">Slide one finger around the screen and find the four squares: Sun, Moon, Star and Cloud.</string>
+    <string name="sandfly_tutorial_explore_activate">Touch Star and lift your finger. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> anywhere to activate it.</string>
+    <!-- Squares in the Exploring by touch lesson. [CHAR LIMIT=20] -->
+    <string name="sandfly_tutorial_tile_sun">Sun</string>
+    <string name="sandfly_tutorial_tile_moon">Moon</string>
+    <string name="sandfly_tutorial_tile_star">Star</string>
+    <string name="sandfly_tutorial_tile_cloud">Cloud</string>
+
+    <!-- Lesson: Moving between items. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_move_title">Moving between items</string>
+    <string name="sandfly_tutorial_move_intro">Swiping moves to the next or previous item on the screen, in reading order.</string>
+    <string name="sandfly_tutorial_move_next"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> to move to the next item. Continue until you reach <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_move_previous"><xliff:g id="gesture" example="Swipe left">%1$s</xliff:g> to move to the previous item. Go back to <xliff:g id="item" example="Bread">%2$s</xliff:g>.</string>
+    <!-- Items of a shopping list in the Moving between items lesson. [CHAR LIMIT=30] -->
+    <string name="sandfly_tutorial_item_apples">Apples</string>
+    <string name="sandfly_tutorial_item_bread">Bread</string>
+    <string name="sandfly_tutorial_item_cheese">Cheese</string>
+    <string name="sandfly_tutorial_item_dates">Dates</string>
+    <string name="sandfly_tutorial_item_eggs">Eggs</string>
+
+    <!-- Lesson: Activating items. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_activate_title">Activating items</string>
+    <string name="sandfly_tutorial_activate_intro">Activating works on the item with focus, wherever you tap the screen.</string>
+    <string name="sandfly_tutorial_activate_button">Move to <xliff:g id="button" example="Ring the bell">%2$s</xliff:g>. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> to activate it.</string>
+    <string name="sandfly_tutorial_activate_check_box">Check <xliff:g id="check_box" example="Extra cheese">%1$s</xliff:g> the same way.</string>
+    <string name="sandfly_tutorial_activate_hold">Some items do something else when held. Move to <xliff:g id="button" example="Details">%2$s</xliff:g>. <xliff:g id="gesture" example="Double-tap and hold">%1$s</xliff:g> to hold it.</string>
+    <!-- Practice items of the Activating items lesson. [CHAR LIMIT=40] -->
+    <string name="sandfly_tutorial_bell">Ring the bell</string>
+    <string name="sandfly_tutorial_bell_rung">Times rung: <xliff:g id="count" example="1">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_extra_cheese">Extra cheese</string>
+    <string name="sandfly_tutorial_details">Details</string>
+    <!-- Shown when the Details button is held: details of a restaurant booking. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_details_shown">Table for 2 at 7 PM, by the window.</string>
+
+    <!-- Lesson: Pausing speech. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_pause_title">Pausing speech</string>
+    <string name="sandfly_tutorial_pause_intro">Speech can be paused in the middle of an item, and resumed where it stopped.</string>
+    <string name="sandfly_tutorial_pause_pause">Move to the story below. <xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> while it is read to pause speech, and again to resume.</string>
+    <string name="sandfly_tutorial_pause_resume"><xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> again to resume speech.</string>
+    <!-- Text read in the Pausing speech lesson. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_story">Sandflies are small flies that live on beaches, on riverbanks and in forests. They are most active at dawn and dusk, when the air is still. Only the females bite, because they need blood to produce their eggs. The bites itch for days, so people who visit sandfly country carry insect repellent. Sandflies are weak fliers, and even a light breeze keeps them away.</string>
+
+    <!-- Lesson: Reading controls. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_reading_controls_title">Reading controls</string>
+    <string name="sandfly_tutorial_reading_controls_intro">Reading controls choose what swiping up and down does, such as moving by word or by character, or changing the speech rate. Swiping right and left still moves between items.</string>
+    <string name="sandfly_tutorial_reading_controls_move">Move to the sentence below.</string>
+    <!-- Asks to change the reading control to one that is named, such as Words. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_choose_reading_control"><xliff:g id="gesture" example="Swipe down then up">%1$s</xliff:g> or <xliff:g id="gesture" example="Swipe up then down">%2$s</xliff:g> to change the reading control. Choose <xliff:g id="reading_control" example="Words">%3$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_reading_controls_next_word"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> to move to the next word. Move three words.</string>
+    <string name="sandfly_tutorial_reading_controls_characters">Change the reading control to <xliff:g id="reading_control" example="Characters">%2$s</xliff:g>. <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> to move by one character.</string>
+    <!-- Sentence read word by word in the Reading controls lesson. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_sentence">The quick brown fox jumps over the lazy dog.</string>
+
+    <!-- Lesson: Headings. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_headings_title">Headings</string>
+    <string name="sandfly_tutorial_headings_intro">Screens and web pages divide their content with headings. The Headings reading control jumps from one heading to the next.</string>
+    <string name="sandfly_tutorial_headings_jump"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> to jump to the next heading. Jump to <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <!-- Weather forecast in the Headings lesson: three headings, each with a line of text. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_forecast_today">Today</string>
+    <string name="sandfly_tutorial_forecast_today_text">Sunny and warm, with a light wind.</string>
+    <string name="sandfly_tutorial_forecast_tomorrow">Tomorrow</string>
+    <string name="sandfly_tutorial_forecast_tomorrow_text">Cloudy in the morning, with rain from midday.</string>
+    <string name="sandfly_tutorial_forecast_weekend">Weekend</string>
+    <string name="sandfly_tutorial_forecast_weekend_text">Windy on Saturday, clear on Sunday.</string>
+
+    <!-- Lesson: Reading continuously. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_continuous_title">Reading continuously</string>
+    <string name="sandfly_tutorial_continuous_intro">SandFly can read from the focused item to the end of the screen without swiping. Touching the screen stops reading.</string>
+    <string name="sandfly_tutorial_continuous_move">Move to the first line of the recipe.</string>
+    <string name="sandfly_tutorial_continuous_read"><xliff:g id="gesture" example="Swipe down then right">%1$s</xliff:g> to read from the focused item.</string>
+    <string name="sandfly_tutorial_continuous_read_from_menu"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> to open the SandFly menu, then choose <xliff:g id="command" example="Read from focused item">%2$s</xliff:g>.</string>
+    <!-- Recipe read in the Reading continuously lesson, one line per item. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_recipe_1">Pancakes: mix flour, eggs and milk into a smooth batter.</string>
+    <string name="sandfly_tutorial_recipe_2">Heat a little butter in a frying pan.</string>
+    <string name="sandfly_tutorial_recipe_3">Pour in enough batter to cover the pan thinly.</string>
+    <string name="sandfly_tutorial_recipe_4">Turn the pancake over when the underside is golden.</string>
+    <string name="sandfly_tutorial_recipe_5">Serve with lemon and sugar.</string>
+
+    <!-- Lesson: Scrolling lists. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_scrolling_title">Scrolling lists</string>
+    <string name="sandfly_tutorial_scrolling_intro">Lists show only some of their items at a time. Swiping past the last item shown scrolls the list.</string>
+    <string name="sandfly_tutorial_scrolling_swipe"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> through the list until you reach <xliff:g id="item" example="Item 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_scrolling_page"><xliff:g id="gesture" example="Swipe right then left">%1$s</xliff:g> to scroll forward by a page.</string>
+    <!-- Items of the list in the Scrolling lists lesson, such as "Item 15". [CHAR LIMIT=20] -->
+    <string name="sandfly_tutorial_list_item">Item <xliff:g id="number" example="15">%1$d</xliff:g></string>
+
+    <!-- Lesson: Sliders. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_sliders_title">Sliders</string>
+    <string name="sandfly_tutorial_sliders_intro">When a slider has focus, swiping up and down changes its value.</string>
+    <string name="sandfly_tutorial_sliders_change">Move to the <xliff:g id="slider" example="Brightness">%3$s</xliff:g> slider. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> or <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> to change its value.</string>
+    <string name="sandfly_tutorial_sliders_highest">Set <xliff:g id="slider" example="Brightness">%1$s</xliff:g> to 100 percent, its highest value.</string>
+    <!-- Name of the slider in the Sliders lesson. [CHAR LIMIT=30] -->
+    <string name="sandfly_tutorial_brightness">Brightness</string>
+
+    <!-- Lesson: Actions. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_actions_title">Actions</string>
+    <string name="sandfly_tutorial_actions_intro">Some items have actions besides activating, such as Archive or Delete for a message. While such an item has focus, the Actions reading control goes through them.</string>
+    <string name="sandfly_tutorial_actions_archive">Move to the message. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> or <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> to go through its actions. <xliff:g id="gesture" example="Double-tap">%3$s</xliff:g> to perform the action you hear. Perform <xliff:g id="action" example="Archive">%4$s</xliff:g>.</string>
+    <!-- Message in the Actions lesson, and its actions. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_message">Message from Sam: Lunch at noon?</string>
+    <string name="sandfly_tutorial_message_reply">Reply</string>
+    <string name="sandfly_tutorial_message_archive">Archive</string>
+    <string name="sandfly_tutorial_message_delete">Delete</string>
+
+    <!-- Lesson: Typing. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_typing_title">Typing</string>
+    <string name="sandfly_tutorial_typing_intro">Activating a text field opens the keyboard. Touch a key to hear it, and lift your finger to type it.</string>
+    <string name="sandfly_tutorial_typing_open">Move to the <xliff:g id="field" example="Name">%2$s</xliff:g> field. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> to start typing.</string>
+    <string name="sandfly_tutorial_typing_type">Type the word <xliff:g id="word" example="cat">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_typing_delete">Delete the last letter with the keyboard\'s Delete key.</string>
+    <!-- Label of the text field in the Typing lesson. [CHAR LIMIT=30] -->
+    <string name="sandfly_tutorial_name">Name</string>
+    <!-- Word typed in the Typing lesson: a short word that is easy to type on this language's keyboard, in lowercase. [CHAR LIMIT=10] -->
+    <string name="sandfly_tutorial_typing_word">cat</string>
+
+    <!-- Lesson: Back, Home and notifications. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_system_title">Back, Home and notifications</string>
+    <string name="sandfly_tutorial_system_intro">These gestures work on every screen. In this lesson, the tutorial says what each one does instead of doing it.</string>
+    <string name="sandfly_tutorial_system_back"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> to go back.</string>
+    <string name="sandfly_tutorial_system_home"><xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g> to go to the Home screen.</string>
+    <string name="sandfly_tutorial_system_overview"><xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g> to show recent apps.</string>
+    <string name="sandfly_tutorial_system_notifications"><xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g> to open notifications.</string>
+
+    <!-- Lesson: SandFly menu. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_menu_title">SandFly menu</string>
+    <string name="sandfly_tutorial_menu_intro">The SandFly menu has commands for the focused item and the current screen.</string>
+    <string name="sandfly_tutorial_menu_open"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> to open the SandFly menu. Swipe through its commands. <xliff:g id="gesture" example="Swipe down then left">%2$s</xliff:g> closes the menu.</string>
+    <string name="sandfly_tutorial_menu_close"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> to close the menu.</string>
+
+    <!-- Lesson: Useful commands. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_commands_title">Useful commands</string>
+    <string name="sandfly_tutorial_commands_intro">These commands work on every screen.</string>
+    <string name="sandfly_tutorial_commands_status"><xliff:g id="gesture" example="Triple-tap with 2 fingers">%1$s</xliff:g> to hear the time, the battery level and other status.</string>
+    <string name="sandfly_tutorial_commands_copy"><xliff:g id="gesture" example="Triple-tap with 3 fingers">%1$s</xliff:g> to copy the last text SandFly spoke to the clipboard.</string>
+    <string name="sandfly_tutorial_commands_search"><xliff:g id="gesture" example="Swipe left then down">%1$s</xliff:g> to search for text on the screen. In this lesson, the tutorial says what it does instead.</string>
+    <string name="sandfly_tutorial_commands_speech_off"><xliff:g id="gesture" example="Double-tap with 3 fingers">%1$s</xliff:g> to turn speech off, and again to turn it on. In this lesson, the tutorial says what it does instead.</string>
+
+    <!-- Lesson: Gesture practice. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_practice_title">Gesture practice</string>
+    <string name="sandfly_tutorial_practice_intro">Each gesture says its name and action instead of performing it. Moving to the next and previous item and activating still work.</string>
+    <string name="sandfly_tutorial_practice_step">Make any gesture to hear what it does. To stop, activate <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <!-- Said for each gesture in Gesture practice, such as "Swipe right: Next item". [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: <xliff:g id="action" example="Next item">%2$s</xliff:g></string>
+    <string name="sandfly_tutorial_end_practice">End practice</string>
+</resources>

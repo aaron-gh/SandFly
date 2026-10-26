@@ -17,8 +17,6 @@
 package com.google.android.accessibility.talkback.training;
 
 import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_FIRST_RUN_KEYBOARD_TUTORIAL;
-import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_FIRST_RUN_TUTORIAL;
-import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL;
 import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_FOR_TV;
 import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_FOR_WATCH;
 import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_KEYBOARD;
@@ -32,6 +30,8 @@ import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.trainingcommon.TrainingActivity;
 import com.google.android.accessibility.talkback.trainingcommon.TutorialChooserActivity;
+import com.google.android.accessibility.talkback.tutorial.TutorialActivity;
+import com.google.android.accessibility.talkback.tutorial.TutorialLessons;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor;
@@ -57,8 +57,7 @@ public class TutorialInitiator {
       return TrainingActivity.createTrainingIntent(
           context, TRAINING_ID_FIRST_RUN_KEYBOARD_TUTORIAL, /* showExitBanner= */ true);
     } else {
-      return TrainingActivity.createTrainingIntent(
-          context, TRAINING_ID_FIRST_RUN_TUTORIAL, /* showExitBanner= */ true);
+      return TutorialActivity.intent(context);
     }
   }
 
@@ -81,11 +80,14 @@ public class TutorialInitiator {
         && inputDeviceMonitor.hasPhysicalKeyboard()) {
       return TrainingActivity.createTrainingIntent(context, TRAINING_ID_TUTORIAL_KEYBOARD);
     } else {
-      return TrainingActivity.createTrainingIntent(context, TRAINING_ID_TUTORIAL);
+      return TutorialActivity.intent(context);
     }
   }
 
   public static Intent createPracticeGesturesIntent(Context context) {
+    if (!FormFactorUtils.isAndroidWear()) {
+      return TutorialActivity.intent(context, TutorialLessons.PRACTICE_LESSON);
+    }
     return TrainingActivity.createTrainingIntent(
         context,
         FeatureSupport.isMultiFingerGestureSupported()
