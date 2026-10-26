@@ -18,6 +18,8 @@ package com.google.android.accessibility.utils.output
 
 import android.content.Context
 import android.media.AudioAttributes
+import android.media.AudioDeviceCallback
+import android.media.AudioDeviceInfo
 import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioTrack
@@ -26,6 +28,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.Process
 import android.os.SystemClock
+import androidx.annotation.VisibleForTesting
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.nio.ByteBuffer
 import java.util.ArrayDeque
@@ -55,6 +58,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
   val sampleRate: Int
 
   private val burstFrames: Int
+  private val audioManager = context.getSystemService(AudioManager::class.java)
   private val mainHandler = Handler(Looper.getMainLooper())
   private val lock = java.lang.Object()
   private val clips = ArrayList<PlayingClip>()
@@ -99,9 +103,14 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
   private var held = false
   // Whether this hold has filled up already, so it is reported once.
   private var holdFull = false
+  // The media output the track is sent to while Android puts accessibility audio on the earpiece
+  // outside a call, or null to play where Android routes it.
+  @Volatile private var detour: AudioDeviceInfo? = null
+  // Whether the detour is kept because the track itself went to the earpiece, while Android reports
+  // another output for accessibility audio. It is kept until a call starts or the media output goes.
+  private var stickyDetour = false
 
   init {
-    val audioManager = context.getSystemService(AudioManager::class.java)
     sampleRate =
       audioManager?.getProperty(AudioManager.PROPERTY_OUTPUT_SAMPLE_RATE)?.toIntOrNull()
         ?: DEFAULT_RATE
@@ -805,9 +814,19 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         .setBufferSizeInBytes(minBytes)
         .build()
         .also {
+          detour?.let { device -> it.setPreferredDevice(device) }
           fitBuffer(it)
           // Moving to another output, such as Bluetooth, can lose or gain the fast path.
-          it.addOnRoutingChangedListener({ routed -> fitBuffer(routed as AudioTrack) }, mainHandler)
+          it.addOnRoutingChangedListener(
+            { routed ->
+              fitBuffer(routed as AudioTrack)
+              ROUTES.execute {
+                LogUtils.d(TAG, "Track on %s", describe(routed.routedDevice))
+                followMedia()
+              }
+            },
+            mainHandler,
+          )
         }
     } catch (e: RuntimeException) {
       LogUtils.e(TAG, "Cannot create a low-latency track: %s", e)
@@ -837,6 +856,42 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
         output.bufferSizeInFrames,
         fast,
       )
+    } catch (e: IllegalStateException) {
+      // Released already.
+    }
+  }
+
+  /**
+   * Sends the track to the media output while Android puts accessibility audio on the earpiece
+   * outside a call, and back to Android's choice when it stops. After a call on One UI, accessibility
+   * audio can stay on the earpiece while other audio goes back to Bluetooth or the speaker. Runs on
+   * [ROUTES]: asking Android for outputs can take hundreds of milliseconds while a call starts.
+   */
+  private fun followMedia() {
+    val am = audioManager ?: return
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || released || broken) return
+    val output = track ?: return
+    val target =
+      try {
+        val ours = am.getAudioDevicesForAttributes(attributes).firstOrNull()?.type
+        val media = am.getAudioDevicesForAttributes(MEDIA_ATTRIBUTES).firstOrNull()
+        val send =
+          sendToMedia(am.mode, ours, output.routedDevice?.type, media?.type, stickyDetour)
+        stickyDetour = send && ours != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE
+        media.takeIf { send }
+      } catch (e: RuntimeException) {
+        LogUtils.w(TAG, "Cannot find the media output: %s", e)
+        return
+      }
+    detour = target
+    if (output.preferredDevice?.id == target?.id) return
+    if (target == null) {
+      LogUtils.d(TAG, "Track plays where Android routes it again")
+    } else {
+      LogUtils.d(TAG, "Accessibility audio is on the earpiece outside a call, sending the track to %s", describe(target))
+    }
+    try {
+      output.setPreferredDevice(target)
     } catch (e: IllegalStateException) {
       // Released already.
     }
@@ -907,6 +962,41 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
 
     private val instances = HashMap<Int, LowLatencyAudio>()
 
+    private val MEDIA_ATTRIBUTES by lazy {
+      AudioAttributes.Builder()
+        .setUsage(AudioAttributes.USAGE_MEDIA)
+        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+        .build()
+    }
+
+    /** How long after an output or mode change the tracks' routes are checked again. */
+    private const val ROUTE_SETTLE_MS = 1_000L
+
+    private val routeHandler by lazy { Handler(Looper.getMainLooper()) }
+
+    // Checks the players' routes, in order, off the main thread.
+    private val ROUTES = singleThreadExecutor("LowLatencyAudio routes")
+
+    /**
+     * Whether a track should play on the media output, of type [mediaOutput], rather than where
+     * Android routes it: outside a call, while Android routes accessibility audio ([ours]) or the
+     * track itself ([routed]) to the earpiece. [sticky] keeps it there after the track went to the
+     * earpiece, until a call starts or the media output goes.
+     */
+    @VisibleForTesting
+    @JvmStatic
+    fun sendToMedia(mode: Int, ours: Int?, routed: Int?, mediaOutput: Int?, sticky: Boolean): Boolean =
+      mode == AudioManager.MODE_NORMAL &&
+        mediaOutput != null &&
+        mediaOutput != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE &&
+        (ours == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE ||
+          routed == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE ||
+          sticky)
+
+    /** An output's name and type, for the log. */
+    private fun describe(device: AudioDeviceInfo?): String =
+      if (device == null) "no output" else "${device.productName} (type ${device.type})"
+
     // Runs every player's watchdog while its audio thread runs. Its thread ends when none is.
     private val WATCHDOG =
       ScheduledThreadPoolExecutor(1) { Thread(it, "LowLatencyAudio watchdog") }
@@ -963,6 +1053,9 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
       for (player in players) player.remake()
     }
 
+    /** Whether a player sends its track to the media output, away from the earpiece. */
+    @JvmStatic fun isAvoidingEarpiece(): Boolean = players().any { it.detour != null }
+
     /** Stops every speech stream of every player made so far, without making new ones. */
     @JvmStatic
     fun stopAllStreams() {
@@ -978,36 +1071,79 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     fun shutdownAll() {
       val players = synchronized(instances) { instances.values.toList().also { instances.clear() } }
       for (player in players) player.shutdown()
-      stopWatchingCalls()
+      stopWatchingRoutes()
     }
 
-    // Whether the audio mode was a call's when last seen, and the listener that sees it change.
-    @Volatile private var inCall = false
-    private var modeWatcher: Pair<AudioManager, AudioManager.OnModeChangedListener>? = null
+    /**
+     * Checks every player's route now and once Android has settled, for when the mode, the outputs
+     * or the communication device change.
+     */
+    private fun followMediaAll() {
+      val check = Runnable { ROUTES.execute { for (player in players()) player.followMedia() } }
+      routeHandler.removeCallbacksAndMessages(FOLLOW_MEDIA_TOKEN)
+      routeHandler.post(check)
+      routeHandler.postAtTime(check, FOLLOW_MEDIA_TOKEN, SystemClock.uptimeMillis() + ROUTE_SETTLE_MS)
+    }
 
-    /** Remakes the tracks whenever a call ends, from Android 12, which reports mode changes. */
-    private fun watchCalls(context: Context) {
-      if (modeWatcher != null || Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return
+    private val FOLLOW_MEDIA_TOKEN = Any()
+
+    // Whether the audio mode was a call's when last seen.
+    @Volatile private var inCall = false
+
+    /** The listeners [watchRoutes] registered, to remove them again. */
+    private class RouteWatcher(
+      val audioManager: AudioManager,
+      val modeListener: AudioManager.OnModeChangedListener,
+      val communicationListener: AudioManager.OnCommunicationDeviceChangedListener,
+      val deviceCallback: AudioDeviceCallback,
+    )
+
+    private var routeWatcher: RouteWatcher? = null
+
+    /**
+     * From Android 12, which reports mode changes, remakes the tracks whenever a call ends, and checks
+     * their routes when the mode, the outputs or the communication device change.
+     */
+    private fun watchRoutes(context: Context) {
+      if (routeWatcher != null || Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return
       val audioManager = context.getSystemService(AudioManager::class.java) ?: return
       inCall = isCallMode(audioManager.mode)
-      val listener =
+      val modeListener =
         AudioManager.OnModeChangedListener { mode ->
           val wasInCall = inCall
           inCall = isCallMode(mode)
           if (wasInCall && mode == AudioManager.MODE_NORMAL) remakeTracks()
+          followMediaAll()
+        }
+      val communicationListener =
+        AudioManager.OnCommunicationDeviceChangedListener { followMediaAll() }
+      val deviceCallback =
+        object : AudioDeviceCallback() {
+          override fun onAudioDevicesAdded(addedDevices: Array<out AudioDeviceInfo>?) =
+            followMediaAll()
+
+          override fun onAudioDevicesRemoved(removedDevices: Array<out AudioDeviceInfo>?) =
+            followMediaAll()
         }
       try {
-        audioManager.addOnModeChangedListener({ it.run() }, listener)
-        modeWatcher = audioManager to listener
+        audioManager.addOnModeChangedListener({ it.run() }, modeListener)
+        audioManager.addOnCommunicationDeviceChangedListener({ it.run() }, communicationListener)
+        audioManager.registerAudioDeviceCallback(deviceCallback, routeHandler)
+        routeWatcher = RouteWatcher(audioManager, modeListener, communicationListener, deviceCallback)
       } catch (e: RuntimeException) {
-        LogUtils.w(TAG, "Cannot follow the audio mode: %s", e)
+        LogUtils.w(TAG, "Cannot follow the audio mode and outputs: %s", e)
       }
     }
 
-    private fun stopWatchingCalls() {
-      val (audioManager, listener) = synchronized(instances) { modeWatcher.also { modeWatcher = null } } ?: return
+    private fun stopWatchingRoutes() {
+      val watcher = synchronized(instances) { routeWatcher.also { routeWatcher = null } } ?: return
+      routeHandler.removeCallbacksAndMessages(FOLLOW_MEDIA_TOKEN)
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-        runCatching { audioManager.removeOnModeChangedListener(listener) }
+        runCatching { watcher.audioManager.removeOnModeChangedListener(watcher.modeListener) }
+        runCatching {
+          watcher.audioManager.removeOnCommunicationDeviceChangedListener(watcher.communicationListener)
+        }
+        runCatching { watcher.audioManager.unregisterAudioDeviceCallback(watcher.deviceCallback) }
       }
     }
 
@@ -1021,7 +1157,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     @JvmStatic
     fun get(context: Context, attributes: AudioAttributes): LowLatencyAudio? =
       synchronized(instances) {
-        watchCalls(context.applicationContext)
+        watchRoutes(context.applicationContext)
         instances
           .getOrPut(attributes.usage) { LowLatencyAudio(context.applicationContext, attributes) }
           .takeIf { it.track != null && !it.broken }
