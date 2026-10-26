@@ -18,6 +18,10 @@
     <string name="sandfly_tutorial_no_gesture"><xliff:g id="action" example="Next item">%1$s</xliff:g> has no gesture. Assign one in Gestures settings, or use Skip step.</string>
     <!-- Said when the Back gesture is made in a lesson, which it doesn't leave. [CHAR LIMIT=NONE] -->
     <string name="sandfly_tutorial_back_in_lesson">Back doesn\'t leave a lesson. To choose another lesson, use Contents.</string>
+    <!-- Said when a gesture whose action would leave the tutorial, such as Home, is made in a lesson, which takes it. [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_not_in_lesson"><xliff:g id="action" example="Home">%1$s</xliff:g> isn\'t done in a lesson. To leave the tutorial, use Close tutorial in Contents.</string>
+    <!-- Said when a gesture that turns speech or SandFly off is made in a lesson, which takes it, such as "Turn speech on or off isn't done in a lesson." [CHAR LIMIT=NONE] -->
+    <string name="sandfly_tutorial_not_in_lesson_short"><xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g> isn\'t done in a lesson.</string>
     <!-- Buttons at the bottom of a lesson. [CHAR LIMIT=30] -->
     <string name="sandfly_tutorial_contents">Contents</string>
     <string name="sandfly_tutorial_skip_step">Skip step</string>

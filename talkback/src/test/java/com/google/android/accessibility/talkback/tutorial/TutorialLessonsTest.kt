@@ -143,6 +143,18 @@ class TutorialLessonsTest {
   }
 
   @Test
+  fun stepsThatTeachLeavingGesturesTakeThem() {
+    val kept = TutorialLessons.LEAVING_ACTIONS + TutorialLessons.SILENCING_ACTIONS
+    for (lesson in TutorialLessons.all) {
+      for (step in lesson.steps) {
+        for (action in step.actions.filter { it in kept }) {
+          assertTrue(context.getString(action), action in step.taken)
+        }
+      }
+    }
+  }
+
+  @Test
   fun systemGesturesAreTakenInTheirSteps() {
     val lesson = TutorialLessons.all[TutorialLessons.indexOf("system")]
     for (step in lesson.steps) {
