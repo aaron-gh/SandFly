@@ -103,10 +103,10 @@ class AiServiceTest {
   @Test
   fun eachServiceKeepsItsOwnKey() {
     val prefs = FakeSharedPreferences()
-    AiProvider.MISTRAL.setApiKey(prefs, "mistral key")
-    AiProvider.OPENAI.setApiKey(prefs, "openai key")
-    assertEquals("mistral key", AiProvider.MISTRAL.apiKey(prefs))
-    assertEquals("openai key", AiProvider.OPENAI.apiKey(prefs))
+    AiProvider.MISTRAL.setApiKey(prefs, "mistral-key")
+    AiProvider.OPENAI.setApiKey(prefs, "openai-key")
+    assertEquals("mistral-key", AiProvider.MISTRAL.apiKey(prefs))
+    assertEquals("openai-key", AiProvider.OPENAI.apiKey(prefs))
   }
 
   @Test

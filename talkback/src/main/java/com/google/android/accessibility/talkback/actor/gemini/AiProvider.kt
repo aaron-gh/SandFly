@@ -77,7 +77,7 @@ enum class AiProvider(
     when (this) {
       GEMINI -> GeminiApiKey.userKey(prefs)
       NONE -> ""
-      else -> prefs.getString(keyPref, null)?.trim().orEmpty()
+      else -> GeminiApiKey.clean(prefs.getString(keyPref, null))
     }
 
   fun model(prefs: SharedPreferences): String =
@@ -88,7 +88,7 @@ enum class AiProvider(
     if (this == OTHER) prefs.getString(PREF_OTHER_ADDRESS, null)?.trim().orEmpty() else address
 
   fun setApiKey(prefs: SharedPreferences, key: String) {
-    if (this == GEMINI) GeminiApiKey.setUserKey(prefs, key) else prefs.putOrRemove(keyPref, key)
+    if (this == GEMINI) GeminiApiKey.setUserKey(prefs, key) else prefs.putOrRemove(keyPref, GeminiApiKey.clean(key))
   }
 
   fun setModel(prefs: SharedPreferences, model: String) {
