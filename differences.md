@@ -343,6 +343,24 @@ Each control sound comes from where the element is on the screen: from the left 
 
 On Android 13 and later, SandFly uses 3D when its audio plays on wired or USB headphones, a hearing aid, a Bluetooth media device, or a Bluetooth LE headset. Bluetooth LE speakers, broadcasts, and call audio don't count. On earlier versions, any connected audio device counts. To play the sounds in 3D on the speaker as well, or never, change **3D audio** for the theme. Each theme has its own **Control sounds and vibrations** and **3D audio** settings.
 
+## Tutorial
+
+TalkBack's tutorial is a series of pages that describe gestures, with a few practice areas. SandFly replaces it with an interactive tutorial, modelled on the VoiceOver tutorial on the Mac. To open it, go to **SandFly tutorial** in SandFly settings. It also opens the first time SandFly is turned on.
+
+The tutorial has 16 lessons in five chapters: Basics, Reading, Controls and text, Getting around, and Practice. Each lesson has an instruction and items to practise on. Each step waits until you have done what it says with your own gestures, then gives the next step. For example, the step that teaches swiping waits until a swipe right reaches a particular item, the step that teaches exploring by touch waits until you have touched four squares, and the step that teaches headings waits until the **Headings** reading control has jumped to a particular heading.
+
+The instructions name the gesture that each action has in your gesture settings, one-finger gestures first. When an action has no gesture, the step says so, and **Skip step** goes on without it.
+
+In the lessons on Back, Home, recent apps, notifications, screen search and turning speech off, the tutorial takes those gestures and says what they do, instead of leaving the tutorial or turning speech off. In **Gesture practice**, every gesture says its name and action without performing it, except moving to the next and previous item and activating, so that you can reach **End practice**. **Practice gestures** in gesture settings opens this lesson.
+
+**Contents** lists the lessons, says which are done, and opens any of them. The tutorial reopens at the lesson you were on, or at the next one if that lesson was done. The Back gesture goes from a lesson to **Contents**, and from **Contents** closes the tutorial.
+
+Limitations:
+
+*   The tutorial only sees gestures that SandFly recognizes. Gestures that Android handles itself, such as Android's own navigation gestures when **Handle gestures in SandFly** is off, aren't taken, so they can leave the tutorial. Gesture practice can't say them.
+*   The slider and actions lessons need **Reading controls** > **Change reading control automatically** turned on, which it is by default.
+*   The keyboard tutorial for physical keyboards is unchanged. Wear OS watches and TVs keep their own tutorials.
+
 ## Gestures
 
 ### Default gestures

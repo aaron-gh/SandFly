@@ -427,6 +427,17 @@
             android:theme="@style/NotificationReplyTheme"
             android:windowSoftInputMode="stateVisible|adjustResize" />
 
+        <!-- SandFly's interactive tutorial. In the service's process, which tells it each gesture. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.tutorial.TutorialActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode|fontScale"
+            android:exported="false"
+            android:label="@string/sandfly_tutorial_title"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.google.android.accessibility.talkback.TutorialAffinity"
+            android:theme="@style/NotificationListTheme"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- Granular editing: the focused text split into pieces to edit one at a time. -->
         <activity
             android:name="com.google.android.accessibility.talkback.granularediting.GranularEditingActivity"

@@ -255,6 +255,7 @@ import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId;
 import com.google.android.accessibility.talkback.trainingcommon.TutorialShortcuts;
+import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.talkback.report.ProblemReportSender;
 import com.google.android.accessibility.talkback.report.ReportInbox;
 import com.google.android.accessibility.talkback.report.TurnOffLog;
@@ -1049,6 +1050,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     ExitAfterTurnOff.schedule(getApplication());
     ShizukuGrants.onServiceDestroyed();
     HandwritingKeyboardHost.setFeedback(null);
+    TutorialHooks.setFeedback(null);
     instance = null;
     // Shutdown and unregister all components.
     shutdownInfrastructure();
@@ -2888,6 +2890,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                     : getBrailleImeForTalkBack().getBrailleImeForBrailleDisplay());
 
     HandwritingKeyboardHost.setFeedback(pipeline.getFeedbackReturner());
+    TutorialHooks.setFeedback(pipeline.getFeedbackReturner());
     TalkBackForBrailleIme talkBackForBrailleIme =
         new TalkBackForBrailleImeImpl(
             this,
@@ -4209,6 +4212,13 @@ public class TalkBackService extends AccessibilityServiceCompat
     final int touchscreenState = getResources().getConfiguration().touchscreen;
 
     return touchscreenState != Configuration.TOUCHSCREEN_NOTOUCH && supportsTouchScreen;
+  }
+
+  /** The SandFly tutorial was closed, so it doesn't open again when SandFly starts. */
+  public void onTutorialClosed() {
+    if (ipcClientCallback != null && !hasTrainingFinishedByUser()) {
+      ipcClientCallback.onTrainingFinish();
+    }
   }
 
   public void showTutorial() {
