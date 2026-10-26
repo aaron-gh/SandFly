@@ -2683,7 +2683,7 @@ public class SpeechControllerImpl implements SpeechController {
     mDelegate.onTtsReady();
     // The previous engine may not have shut down correctly, so make sure to
     // clear the "current" speech item.
-    final FeedbackItem cutOffItem = currentFeedbackItem;
+    mHandler.removeCallbacks(speakAfterVoiceProfileEngineWait);
     if (currentFeedbackItem != null) {
       onFragmentCompleted(
           currentFeedbackItem.getUtteranceId(),
@@ -2693,27 +2693,11 @@ public class SpeechControllerImpl implements SpeechController {
       currentFeedbackItem = null;
     }
 
-    // A change of voice profile speaks the profile's name, which the engine's would cover. The
-    // name may still have been speaking on the old engine, so it is said again on the new one.
-    final boolean forVoiceProfile = wasSwitchingEngines && failoverTts.isEngineForVoiceProfile();
-    final CharSequence cutOffText = (cutOffItem == null) ? null : cutOffItem.getAggregateText();
-    if (forVoiceProfile && !TextUtils.isEmpty(cutOffText)) {
-      speak(
-          cutOffText,
-          null,
-          null,
-          QUEUE_MODE_QUEUE,
-          FeedbackItem.FLAG_NO_HISTORY
-              | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
-              | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_MICROPHONE_ACTIVE,
-          UTTERANCE_GROUP_DEFAULT,
-          null,
-          null,
-          EVENT_ID_UNTRACKED);
-    } else if (wasSwitchingEngines
+    // A change of voice profile speaks the profile's name, which the engine's would cover.
+    if (wasSwitchingEngines
         && ttsChangeAnnouncementEnabled
         && !mSkipNextTTSChangeAnnouncement
-        && !forVoiceProfile) {
+        && !failoverTts.isEngineForVoiceProfile()) {
       speakCurrentEngine();
     } else if (!feedbackQueue.isEmpty()) {
       speakNextItem();
@@ -2738,6 +2722,14 @@ public class SpeechControllerImpl implements SpeechController {
    * @return {@code false} if there are no more queued speech items.
    */
   private boolean speakNextItem() {
+    if (!feedbackQueue.isEmpty() && failoverTts.isStartingVoiceProfileEngine()) {
+      // Speech waits for a voice profile's engine to start, to be said in the profile's voice.
+      currentFeedbackItem = null;
+      mHandler.removeCallbacks(speakAfterVoiceProfileEngineWait);
+      mHandler.postDelayed(
+          speakAfterVoiceProfileEngineWait, failoverTts.voiceProfileEngineWaitLeft() + 1);
+      return false;
+    }
     final FeedbackItem previousItem = currentFeedbackItem;
     final FeedbackItem nextItem = (feedbackQueue.isEmpty() ? null : feedbackQueue.remove(0));
 
@@ -2816,6 +2808,15 @@ public class SpeechControllerImpl implements SpeechController {
    * will be via the binder thread.
    */
   private final Handler mHandler = new Handler();
+
+  private final Runnable speakAfterVoiceProfileEngineWait = this::speakAfterVoiceProfileEngineWait;
+
+  /** Speaks the queue in the old engine if a voice profile's engine takes too long to start. */
+  private void speakAfterVoiceProfileEngineWait() {
+    if (currentFeedbackItem == null && failoverTts.isReady()) {
+      speakNextItem();
+    }
+  }
 
   private final AudioManager.OnAudioFocusChangeListener mAudioFocusListener =
       new AudioManager.OnAudioFocusChangeListener() {
