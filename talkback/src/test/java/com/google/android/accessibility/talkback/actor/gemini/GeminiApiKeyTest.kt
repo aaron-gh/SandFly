@@ -49,6 +49,20 @@ class GeminiApiKeyTest {
   }
 
   @Test
+  fun lineBreaksAndInvisibleCharactersAreRemoved() {
+    val prefs = FakeSharedPreferences()
+    GeminiApiKey.setUserKey(prefs, "sk-proj-ab\ncd\u200B ef\u00A0")
+    assertEquals("sk-proj-abcdef", GeminiApiKey.userKey(prefs))
+  }
+
+  @Test
+  fun aStoredKeyIsCleanedWhenRead() {
+    val prefs = FakeSharedPreferences()
+    prefs.edit().putString(GeminiApiKey.PREF_KEY, "ab\r\ncd").apply()
+    assertEquals("abcd", GeminiApiKey.userKey(prefs))
+  }
+
+  @Test
   fun blankKeyRemovesTheUserKey() {
     val prefs = FakeSharedPreferences()
     GeminiApiKey.setUserKey(prefs, "mine")
