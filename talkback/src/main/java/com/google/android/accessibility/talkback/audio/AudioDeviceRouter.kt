@@ -702,18 +702,18 @@ class AudioDeviceRouter @JvmOverloads constructor(
     }
   }
 
+  /**
+   * The phone speaker. Never the earpiece: while Android doesn't offer the speaker for a moment, such
+   * as when a call ends, routing to the earpiece kept speech there.
+   */
   @VisibleForTesting
   fun findSpeakerDevice(am: AudioManager): AudioDeviceInfo? {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-      val commDevices = am.availableCommunicationDevices
-      val speaker = commDevices.find { it.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER }
+      val speaker = am.availableCommunicationDevices.find { it.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER }
       if (speaker != null) return speaker
-      val earpiece = commDevices.find { it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE }
-      if (earpiece != null) return earpiece
     }
-    val allDevices = am.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
-    return allDevices.find { it.isSink && it.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER }
-      ?: allDevices.find { it.isSink && it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE }
+    return am.getDevices(AudioManager.GET_DEVICES_OUTPUTS)
+      .find { it.isSink && it.type == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER }
   }
 
   /**
