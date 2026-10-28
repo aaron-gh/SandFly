@@ -30,6 +30,10 @@
           android:targetClass="com.google.android.accessibility.talkback.recognition.LiveRecognitionActivity" />
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.translation.TranslationFragment"
+        android:key="pref_translation_screen"
+        android:title="@string/translation_title" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.preference.base.SoundAndVibrationFragment"
         android:key="@string/pref_sound_and_vibration_key"
         android:title="@string/title_pref_sound_and_vibration" />

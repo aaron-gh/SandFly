@@ -117,6 +117,7 @@ import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
+import com.google.android.accessibility.talkback.translation.TranslateCommand;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.AnnounceType;
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting;
@@ -184,6 +185,7 @@ public class GestureController {
   private final ListEdgeScroller listEdgeScroller;
   private final PullToRefresh pullToRefresh;
   private final HandwritingCommand handwritingCommand;
+  private final TranslateCommand translateCommand;
   private final HandwritingAppLauncher handwritingAppLauncher;
   private final AiDictation dictation;
 
@@ -241,6 +243,7 @@ public class GestureController {
     pullToRefresh = new PullToRefresh(service, pipeline, accessibilityFocusMonitor);
     handwritingCommand = new HandwritingCommand(service, pipeline, actorState, selectorController);
     handwritingAppLauncher = new HandwritingAppLauncher(service, pipeline, actorState);
+    translateCommand = new TranslateCommand(service);
     dictation = new AiDictation(service, pipeline);
   }
 
@@ -250,6 +253,7 @@ public class GestureController {
     pullToRefresh.cancel();
     handwritingCommand.shutdown();
     handwritingAppLauncher.shutdown();
+    translateCommand.shutdown();
     dictation.shutdown();
   }
 
@@ -849,6 +853,10 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.part().setSpeech(Feedback.Speech.create(SPELL_LAST)));
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_translate_last_spoken_phrase))) {
+      translateCommand.translateLast();
+      result = true;
     } else if (FeatureFlagReader.enableSpeechPitchKeyboard(service)
         && action.equals(service.getString(R.string.shortcut_value_speech_pitch_decrease))) {
       result = speechRateAndPitchActor.changeSpeechPitch(false);
