@@ -535,6 +535,10 @@ Next container and Previous container (Action + Control + Alt + Right or Left ar
 
 In Telegram and its forks, such as Nekogram, the quote of the message that a message replies to was a separate item, often cut off. SandFly reads it with its message, after the time, as "replying to" the sender and text, with the whole quoted text when the quoted message is loaded. The quote isn't focused on its own, so the quoted message can't be opened from it.
 
+### Web posts reached with a site's keyboard shortcuts
+
+When a web page moves focus to an element such as a post, as Mastodon does with J and K, TalkBack read only the element's text that isn't in a link, so a post was read without its author, the person who boosted it, its time, and its hashtags. SandFly reads the text of the links in it as well, but not its buttons. The spaces between links are no longer read as "Space".
+
 ### Touching the home screen
 
 Touching between the icons of the home screen no longer says the page, such as "Home screen 1 of 2". Swiping still reaches it. On Android 13 and later, SandFly clears Android's cached copy of the home screen when it opens again, so that its icons can be reached after you leave a launcher's app list, as in Hyperion.
