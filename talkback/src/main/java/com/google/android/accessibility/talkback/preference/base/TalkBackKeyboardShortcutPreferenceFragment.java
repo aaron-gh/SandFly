@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.preference.base;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -26,9 +27,12 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
+import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.TalkBackService.TalkbackServiceStateNotifier.TalkBackServiceStateChangeListener;
+import com.google.android.accessibility.talkback.commands.CommandBindings;
+import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
@@ -231,10 +235,10 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
       keyComboModel.saveKeyCombo(key, defaultKeyCombo);
 
       // Update UI.
-      KeyboardShortcutDialogPreference keyboardShortcutDialogPreference =
-          (KeyboardShortcutDialogPreference) findPreference(key);
-      keyboardShortcutDialogPreference.setKeyCombo(defaultKeyCombo);
-      keyboardShortcutDialogPreference.notifyChanged();
+      if (findPreference(key) instanceof KeyboardShortcutDialogPreference preference) {
+        preference.setKeyCombo(defaultKeyCombo);
+        preference.notifyChanged();
+      }
     }
 
     ArrowKeyNav.reset(getContext());
@@ -342,32 +346,53 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
           viewSystemKeyboardShortcutsPreferenceClickListener);
     }
 
-    updateDialogAndResetKeymapPreference();
-
     initPreferenceUIs(getPreferenceScreen());
-    if (FeatureFlagReader.enableNewKeymap(getContext())
-        && keymap.equals(getString(R.string.new_keymap_entry_value))) {
-      updateDialogPreferencesTitle();
-    }
+    addCommandCategories();
+    updateDialogAndResetKeymapPreference();
   }
 
-  private void updateDialogPreferencesTitle() {
-    Set<String> keySet = getKeyComboManager().getKeyComboModel().getKeyComboMap().keySet();
-    String browseModeCommandTitleTemplate =
-        getString(R.string.template_keycombo_menu_browse_mode_command);
-    for (String key : keySet) {
-      KeyboardShortcutDialogPreference preference = findPreference(key);
-      if (preference != null
-          && preference.getTitle().toString().equals(browseModeCommandTitleTemplate)) {
-        TalkBackPhysicalKeyboardShortcut action =
-            TalkBackPhysicalKeyboardShortcut.getActionFromKey(getContext().getResources(), key);
-        if (action == null || action.getKeyStrRes() == -1) {
+  /** Adds every command, by category, each with its keyboard shortcut. */
+  private void addCommandCategories() {
+    Context context = getContext();
+    KeyComboManager keyComboManager = getKeyComboManager();
+    KeyComboModel model = keyComboManager.getKeyComboModel();
+    if (context == null || model == null) {
+      return;
+    }
+    Set<String> browseModeOnlyCommands =
+        keyComboManager.isBrowseModeSupported()
+            ? keyComboManager.getBrowseModeOnlyCommands()
+            : Set.of();
+    String browseModeTitle = getString(R.string.template_keycombo_menu_browse_mode_command);
+    for (Commands.Category category : Commands.categories(context)) {
+      AccessibilitySuitePreferenceCategory group = new AccessibilitySuitePreferenceCategory(context);
+      group.setKey("pref_keyboard_commands_" + category.getTitleRes());
+      group.setTitle(category.getTitleRes());
+      group.setIconSpaceReserved(false);
+      getPreferenceScreen().addPreference(group);
+      for (Commands.Command command : category.getCommands()) {
+        String key = CommandBindings.keyboardKey(context, model, command);
+        if (findPreference(key) != null) {
+          // A keymap without a key of its own for this command keeps it under the command.
           continue;
         }
-        String keyCommandDescription = action.getDescription(getContext().getResources());
-        preference.setTitle(String.format(browseModeCommandTitleTemplate, keyCommandDescription));
+        CharSequence title =
+            browseModeOnlyCommands.contains(key)
+                ? String.format(browseModeTitle, command.getLabel())
+                : command.getLabel();
+        KeyboardShortcutDialogPreference preference =
+            new KeyboardShortcutDialogPreference(context, key, title);
+        preference.setIconSpaceReserved(false);
+        preference.setOnPreferenceChangeListener(preferenceChangeListener);
+        if (!CommandBindings.isCustomizable(context, key)) {
+          preference.setEnabled(false);
+          preference.setSummary(
+              getString(R.string.shortcut_not_customizable, preference.getSummary().toString()));
+        }
+        group.addPreference(preference);
       }
     }
+    collapseCategories();
   }
 
   /** Updates select keymap preference with available keymaps. */
@@ -433,11 +458,17 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   }
 
   private void setUpDialogPreference(Consumer<KeyboardShortcutDialogPreference> consumer) {
-    final Set<String> keySet = getKeyComboManager().getKeyComboModel().getKeyComboMap().keySet();
-    for (String key : keySet) {
-      KeyboardShortcutDialogPreference preference = findPreference(key);
-      if (preference != null) {
-        consumer.accept(preference);
+    forEachDialogPreference(getPreferenceScreen(), consumer);
+  }
+
+  private static void forEachDialogPreference(
+      PreferenceGroup group, Consumer<KeyboardShortcutDialogPreference> consumer) {
+    for (int i = 0; i < group.getPreferenceCount(); i++) {
+      Preference preference = group.getPreference(i);
+      if (preference instanceof KeyboardShortcutDialogPreference dialogPreference) {
+        consumer.accept(dialogPreference);
+      } else if (preference instanceof PreferenceGroup childGroup) {
+        forEachDialogPreference(childGroup, consumer);
       }
     }
   }
@@ -445,9 +476,10 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   private void updateDialogAndResetKeymapPreference() {
     resetKeymapPreference.setEnabled(isServiceActive());
     setUpDialogPreference(
-        preference -> {
-          preference.setEnabled(isServiceActive());
-        });
+        preference ->
+            preference.setEnabled(
+                isServiceActive()
+                    && CommandBindings.isCustomizable(getContext(), preference.getKey())));
   }
 
   private boolean isServiceActive() {
@@ -463,7 +495,9 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
               resetKeymapPreference.setEnabled(isServiceActive);
               setUpDialogPreference(
                   preference -> {
-                    preference.setEnabled(isServiceActive);
+                    preference.setEnabled(
+                        isServiceActive
+                            && CommandBindings.isCustomizable(getContext(), preference.getKey()));
                     if (isServiceActive) {
                       preference.updateKeyComboManager();
                       preference.onTriggerModifierChanged();

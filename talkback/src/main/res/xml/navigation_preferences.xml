@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Where focus goes as the user moves through the screen. -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.preference.base.TouchActivationFragment"
+      android:key="@string/pref_touch_activation_key"
+      android:title="@string/title_pref_touch_activation" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.directtouch.DirectTouchFragment"
+      android:key="@string/pref_direct_touch_key"
+      android:title="@string/title_pref_direct_touch" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.preference.base.FocusIndicatorPrefFragment"
+      android:key="@string/pref_category_manage_focus_indicator_key"
+      android:title="@string/title_pref_category_manage_focus_indicator" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_wrap_around_default"
       android:key="@string/pref_wrap_around_key"

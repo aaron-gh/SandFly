@@ -16,7 +16,6 @@
 
 package com.google.android.accessibility.talkback.preference.base;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
@@ -24,40 +23,20 @@ import android.text.TextUtils;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceDialogFragmentCompat;
-import androidx.preference.PreferenceGroup;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
-import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
-import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
-import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
-/** Panel holding a set of verbosity preferences. Recreated when verbosity value changes. */
+/** Panel holding the verbosity preferences: what is spoken for items, text and screen changes. */
 public class VerbosityPrefFragment extends TalkbackBaseFragment {
   private static final String TAG = "VerbosityPrefFragment";
 
-  // Member data
   private SharedPreferences preferences;
-  private String verbosityValue; // String identifier for selected verbosity.
-  private ImmutableMap<String, Boolean> switchPreferenceKeyValueMap;
-  private ImmutableMap<String, Integer> listPreferenceKeyValueMap;
-
-  /**
-   * Contains preferences that can be modified through means outside of the VerbosityPrefFragment
-   * UI. In practice, the most common such method is a keyboard shortcut. If a preference's keyboard
-   * shortcut is pressed while the VerbosityPrefFragment is visible, the fragment's UI must be
-   * updated to reflect the new value, or else the UI and the actual preference value will fall out
-   * of sync. Hence, these preferences are observed for changes. Maps a preference's key to its
-   * default value.
-   */
-  private ImmutableMap<String, String> externallyModifiedListPreferences;
-
   @Nullable private TwoStatePreference tellTimePreference;
 
   public VerbosityPrefFragment() {
@@ -70,20 +49,14 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
   }
 
   @Override
-  public void onAttach(Context context) {
-    super.onAttach(context);
-  }
-
-  @Override
   public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
     super.onCreatePreferences(savedInstanceState, rootKey);
-    buildMap();
+    preferences = SharedPreferencesUtils.getSharedPreferences(getContext());
     setupTellTimePreference();
     setupEmojiRepeatCountPreference();
-    updatePreferences();
   }
 
-  /** Counting repeated emoji only applies while Backtalk names emoji. */
+  /** Counting repeated emoji only applies while SandFly names emoji. */
   private void setupEmojiRepeatCountPreference() {
     Preference emoji = findPreference(R.string.pref_emoji_speech_key);
     Preference repeatCount = findPreference(R.string.pref_emoji_repeat_count_key);
@@ -130,184 +103,13 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     }
   }
 
-  private void buildMap() {
-    switchPreferenceKeyValueMap =
-        ImmutableMap.<String, Boolean>builder()
-            .put(
-                getString(R.string.pref_a11y_hints_key),
-                getResources().getBoolean(R.bool.pref_a11y_hints_default))
-            .put(
-                getString(R.string.pref_intonation_key),
-                getResources().getBoolean(R.bool.pref_intonation_default))
-            .put(
-                getString(R.string.pref_speak_roles_key),
-                getResources().getBoolean(R.bool.pref_speak_roles_default))
-            .put(
-                getString(R.string.pref_speak_container_element_positions_key),
-                getResources().getBoolean(R.bool.pref_speak_container_element_positions_default))
-            .put(
-                getString(R.string.pref_table_speak_row_column_numbers_key),
-                getResources().getBoolean(R.bool.pref_table_speak_row_column_numbers_default))
-            .put(
-                getString(R.string.pref_verbose_scroll_announcement_key),
-                getResources().getBoolean(R.bool.pref_verbose_scroll_announcement_default))
-            .put(
-                getString(R.string.pref_allow_frequent_content_change_announcement_key),
-                getResources()
-                    .getBoolean(R.bool.pref_allow_frequent_content_change_announcement_default))
-            .put(
-                getString(R.string.pref_speak_element_ids_key),
-                getResources().getBoolean(R.bool.pref_speak_element_ids_default))
-            // TODO Speak punctuation and symbols Change to ListPreference
-            // Consider reorder the Verbosity settings discuss the design with Aki
-            // Verbosity preset levels for Speak punctuation and symbols and Speak element type
-            // b/297956957  b/328144817
-            .put(
-                getString(R.string.pref_punctuation_key),
-                getResources().getBoolean(R.bool.pref_punctuation_default))
-            .put(
-                getString(R.string.pref_speak_time_key),
-                getResources().getBoolean(R.bool.pref_tell_time_default))
-            .put(
-                getString(R.string.pref_formatting_inline_key),
-                getResources().getBoolean(R.bool.pref_formatting_inline_default))
-            .buildOrThrow();
-
-    listPreferenceKeyValueMap =
-        ImmutableMap.<String, Integer>builder()
-            .put(
-                getString(R.string.pref_capital_letters_key), R.string.pref_capital_letters_default)
-            .put(
-                getString(R.string.pref_phonetic_letters_mode_key),
-                R.string.pref_phonetic_letters_mode_default)
-            .put(
-                getString(R.string.pref_punctuation_verbosity),
-                R.string.pref_punctuation_verbosity_default)
-            .buildOrThrow();
-
-    externallyModifiedListPreferences =
-        ImmutableMap.of(
-            getString(R.string.pref_punctuation_verbosity),
-            getString(R.string.pref_punctuation_verbosity_default));
-  }
-
-  /**
-   * Collects all verbosity-controlled preferences.
-   *
-   * <p>Note: Speak element ids and Punctuation preference are not included.
-   */
-  private ArrayList<Preference> collectDetailedPreferences() {
-    ArrayList<Preference> detailedPrefs = new ArrayList<>();
-    PreferenceGroup prefGroup =
-        (PreferenceGroup) findPreference(R.string.pref_verbosity_category_preset_settings_key);
-    if (prefGroup == null) {
-      return detailedPrefs;
-    }
-
-    // For each preference... collect
-    for (int p = 0; p < prefGroup.getPreferenceCount(); p++) {
-      Preference preference = prefGroup.getPreference(p);
-      if (preference != null) {
-        detailedPrefs.add(preference);
-      }
-    }
-    return detailedPrefs;
-  }
-
-  /**
-   * Copies new key and new value to Preference list.
-   *
-   * @param detailedPrefs Preference list which sets up new key and new value.
-   */
-  private void copyVerbosityToUi(ArrayList<Preference> detailedPrefs) {
-    // For each detailed preference...
-    for (Preference preference : detailedPrefs) {
-      // Change active key to verbosity key.
-      String key = preference.getKey();
-
-      // Restores the old key to the custom verbosity pref key, For example,
-      // pref_verbosity_preset_value_high_pref_a11y_hints restores to pref_a11y_hints
-      key = VerbosityPreferences.restoreToCustomVerbosityPrefKey(getResources(), key);
-
-      // Creates new key by adding prefix verbosityVaule. For example, pref_a11y_hints becomes
-      // pref_verbosity_preset_value_low_pref_a11y_hints
-      String verbosityPrefKey = VerbosityPreferences.toVerbosityPrefKey(verbosityValue, key);
-
-      preference.setKey(verbosityPrefKey);
-
-      // Retrieve verbosity preference value and update UI element.
-      if (preference instanceof TwoStatePreference prefSwitch) {
-        boolean value =
-            VerbosityPreferences.getPreferenceVerbosityBool(
-                preferences,
-                getResources(),
-                verbosityValue,
-                key,
-                getDefaultValueForSwitchPreferences(key));
-        prefSwitch.setChecked(value);
-      } else if (preference instanceof ListPreference) {
-        ListPreference prefList = (ListPreference) preference;
-        String value =
-            VerbosityPreferences.getPreferenceVerbosityString(
-                preferences,
-                getResources(),
-                verbosityValue,
-                key,
-                getDefaultValueForListPreferences(key));
-        if (value != null) {
-          prefList.setValue(value);
-        }
-      } else {
-        LogUtils.e(TAG, "Unhandled preference type %s", preference.getClass().getSimpleName());
-      }
-    }
-  }
-
-  private void setPreferenceDetailsEnable(ArrayList<Preference> detailedPrefs, boolean enable) {
-    // For each detailed preference... set preference enable or disable.
-    for (Preference preference : detailedPrefs) {
-      preference.setEnabled(enable);
-    }
-  }
-
-  // Returns the default value for the given SwitchPreference key.
-  private boolean getDefaultValueForSwitchPreferences(String key) {
-    Boolean value = true;
-    if (key != null) {
-      value = switchPreferenceKeyValueMap.get(key);
-    }
-    return value == null || value;
-  }
-
-  // Returns the default value for the given ListPreference key.
-  private String getDefaultValueForListPreferences(String key) {
-    Integer value = null;
-    if (key != null) {
-      value = listPreferenceKeyValueMap.get(key);
-    }
-    return value == null ? null : getString(value);
-  }
-
   @Override
   public void onResume() {
     super.onResume();
-    String verbosityValueString =
-        preferences.getString(
-            getString(R.string.pref_verbosity_preset_key),
-            getString(R.string.pref_verbosity_preset_value_default));
-    updateFragment(verbosityValueString);
-
     Preference itemDetailsOrder = findPreference(R.string.pref_node_desc_order_key);
     if (itemDetailsOrder != null) {
       itemDetailsOrder.setSummary(ItemDetailsOrderFragment.getSummary(getContext()));
     }
-
-    // Attach listeners after verbosity values are copied to active, so that copying verbosity does
-    // not invoke preference-change listener.
-    attachPreferenceListeners();
-  }
-
-  private void attachPreferenceListeners() {
     preferences.registerOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
   }
 
@@ -317,115 +119,32 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     preferences.unregisterOnSharedPreferenceChangeListener(onSharedPreferenceChangeListener);
   }
 
-  /** Listener for preference changes. */
+  /** Shows changes made outside this screen, such as by a keyboard shortcut, while it is open. */
   private final OnSharedPreferenceChangeListener onSharedPreferenceChangeListener =
-      new OnSharedPreferenceChangeListener() {
-        @Override
-        public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-          if (!isAdded() || (getActivity() == null)) {
-            LogUtils.w(
-                TAG, "Fragment is not attached to activity, do not update verbosity setting page.");
-            return;
+      (prefs, key) -> {
+        if (!isAdded() || (getActivity() == null)) {
+          LogUtils.w(
+              TAG, "Fragment is not attached to activity, do not update verbosity setting page.");
+          return;
+        }
+        if (TextUtils.equals(key, getString(R.string.pref_punctuation_key))) {
+          if (findPreference(R.string.pref_punctuation_key) instanceof TwoStatePreference p) {
+            p.setChecked(
+                prefs.getBoolean(key, getResources().getBoolean(R.bool.pref_punctuation_default)));
           }
-
-          // Handles ListPreference changed case and case where the verbosity is changed
-          // using the selector and the fragment is visible.
-          if (TextUtils.equals(key, getString(R.string.pref_verbosity_preset_key))) {
-            ListPreference preference =
-                (ListPreference) findPreference(R.string.pref_verbosity_preset_key);
-
-            String newValueString =
-                preferences.getString(
-                    getString(R.string.pref_verbosity_preset_key),
-                    getString(R.string.pref_verbosity_preset_value_default));
-            if (preference != null) {
-              preference.setValue(newValueString);
-            }
-
-            updateFragment(newValueString);
-
-            // Announce new verbosity. If the verbosity is changed using the selector,
-            // GestureController.changeVerbosity will also call this method. SpeechController
-            // will then deduplicate the announcement event so only one is spoken.
-            announceVerbosityChange(newValueString);
-          } else if (TextUtils.equals(key, getString(R.string.pref_punctuation_key))) {
-            // TODO: remove legacy code.
-            TwoStatePreference preference =
-                (TwoStatePreference) findPreference(R.string.pref_punctuation_key);
-            boolean punctuationOn =
-                prefs.getBoolean(
-                    getString(R.string.pref_punctuation_key),
-                    getResources().getBoolean(R.bool.pref_punctuation_default));
-
-            if (preference != null) {
-              preference.setChecked(punctuationOn);
-            }
-          } else if (externallyModifiedListPreferences.containsKey(
-              // The incoming key might be prefixed with the current preset verbosity level (ex:
-              // "pref_verbosity_preset_value_custom_pref_punctuation_verbosity"). This prefix must
-              // be stripped since externallyModifiedListPreferences expects the bare preference
-              // key ("pref_punctuation_verbosity" in this example).
-              VerbosityPreferences.restoreToCustomVerbosityPrefKey(getResources(), key))) {
-            ListPreference preference = (ListPreference) findPreference(key);
-            String newValueString =
-                preferences.getString(key, externallyModifiedListPreferences.get(key));
-            if (preference != null) {
-              preference.setValue(newValueString);
-            }
-          } else if (TextUtils.equals(key, getString(R.string.pref_speak_time_key))) {
-            if (tellTimePreference != null) {
-              boolean tellTimeOn =
-                  prefs.getBoolean(
-                      getString(R.string.pref_speak_time_key),
-                      getResources().getBoolean(R.bool.pref_tell_time_default));
-              tellTimePreference.setChecked(tellTimeOn);
-            }
+        } else if (TextUtils.equals(key, getString(R.string.pref_punctuation_verbosity))) {
+          if (findPreference(R.string.pref_punctuation_verbosity) instanceof ListPreference p) {
+            p.setValue(prefs.getString(key, getString(R.string.pref_punctuation_verbosity_default)));
+          }
+        } else if (TextUtils.equals(key, getString(R.string.pref_speak_time_key))) {
+          if (tellTimePreference != null) {
+            tellTimePreference.setChecked(
+                prefs.getBoolean(key, getResources().getBoolean(R.bool.pref_tell_time_default)));
           }
         }
       };
 
-  /** Replace preference fragment if the verbosity value has changed */
-  private void updateFragment(String newValueString) {
-    if (TextUtils.equals(verbosityValue, newValueString)) {
-      return;
-    }
-
-    updatePreferences();
-  }
-
-  private void updatePreferences() {
-    Context context = getContext();
-    if (context == null) {
-      return;
-    }
-
-    preferences = SharedPreferencesUtils.getSharedPreferences(context);
-    verbosityValue =
-        SharedPreferencesUtils.getStringPref(
-            preferences,
-            getResources(),
-            R.string.pref_verbosity_preset_key,
-            R.string.pref_verbosity_preset_value_default);
-
-    ArrayList<Preference> detailedPrefs = collectDetailedPreferences();
-    copyVerbosityToUi(detailedPrefs); // Cheap, just reading preferences.
-
-    // Disable default verbosity preference details if it is high or low.
-    setPreferenceDetailsEnable(
-        detailedPrefs, !VerbosityPreferences.isVerbosityValueHighOrLow(verbosityValue, context));
-  }
-
   private Preference findPreference(int keyId) {
     return getPreferenceScreen().findPreference(getString(keyId));
-  }
-
-  private void announceVerbosityChange(String newValueString) {
-    Context context = getContext();
-    String announcement =
-        VerbosityPreferences.getVerbosityChangeAnnouncement(newValueString, context);
-    if (announcement == null) {
-      return;
-    }
-    PreferencesActivityUtils.announceText(announcement, context);
   }
 }

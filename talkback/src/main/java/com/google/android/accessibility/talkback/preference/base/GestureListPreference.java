@@ -28,24 +28,14 @@ import androidx.annotation.IntDef;
 import androidx.annotation.Nullable;
 import com.google.android.accessibility.material.preference.AccessibilitySuiteDialogPreference;
 import com.google.android.accessibility.talkback.R;
-import com.google.android.accessibility.talkback.actor.GestureReporter;
-import com.google.android.accessibility.talkback.actor.ImageCaptioner;
-import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
-import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
-import com.google.android.accessibility.talkback.gesture.NavigationGestureActions;
-import com.google.android.accessibility.talkback.gesture.OpenAppActions;
-import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
-import com.google.android.accessibility.utils.FeatureSupport;
-import com.google.android.accessibility.utils.FormFactorUtils;
-import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.StringBuilderUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableList;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.util.Optional;
 
 /**
  * A {@link DialogPreference} which contains a list for all TalkBack supported actions. It works
@@ -77,7 +67,6 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
     super(context, attributeSet);
     // Change preference title to multi-line style.
     setSingleLineTitle(false);
-    populateActionItems();
   }
 
   @Override
@@ -113,16 +102,10 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
     return GesturePreferenceFragmentCompat.create(this);
   }
 
-  /**
-   * Returns all supported actions, ending with one to open each app on the home screen. The apps
-   * are looked up each time, since only one gesture's list is shown at a time.
-   */
+  /** Returns all commands by category, as {@link Commands} lists them. */
   public ActionItem[] getActionItems() {
-    ImmutableList.Builder<ActionItem> builder = ImmutableList.builder();
-    builder.addAll(items);
-    addActionItemsToList(builder, createOpenApp());
-    ImmutableList<ActionItem> allItems = builder.build();
-    return allItems.toArray(new ActionItem[allItems.size()]);
+    populateActionItems();
+    return items.toArray(new ActionItem[items.size()]);
   }
 
   /** The setter of the preference value. */
@@ -167,14 +150,12 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
       return summaryWhenDisabled;
     }
     String value = getCurrentValue();
-    @Nullable String openAppLabel = OpenAppActions.label(getContext(), value);
-    if (openAppLabel != null) {
-      return openAppLabel;
+    if (TextUtils.equals(value, getContext().getString(R.string.shortcut_value_unassigned))) {
+      return getContext().getResources().getString(R.string.shortcut_unassigned);
     }
-    Optional<ActionItem> item =
-        items.stream().filter((s) -> TextUtils.equals(s.value, value)).findFirst();
-    if (item.isPresent()) {
-      return item.get().text;
+    @Nullable String label = Commands.label(getContext(), value);
+    if (label != null) {
+      return label;
     }
     LogUtils.w(TAG, "%s - Can't find the value from supported action list.", getTitle());
     return getContext().getResources().getString(R.string.shortcut_unassigned);
@@ -187,508 +168,13 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
             getContext().getResources().getString(R.string.shortcut_unassigned),
             getContext().getResources().getString(R.string.shortcut_value_unassigned),
             TYPE_ACTION_ITEM));
-    addActionItemsToList(builder, createBasicNavigation());
-    for (NavigationGestureActions.Category category : NavigationGestureActions.CATEGORIES) {
-      addActionItemsToList(builder, createNavigationCategory(category));
+    for (Commands.Category category : Commands.categories(getContext())) {
+      builder.add(new ActionItem(getContext().getString(category.getTitleRes()), TYPE_TITLE));
+      for (Commands.Command command : category.getCommands()) {
+        builder.add(new ActionItem(command.getLabel(), command.getValue(), TYPE_ACTION_ITEM));
+      }
     }
-    addActionItemsToList(builder, createSystemActions());
-    addActionItemsToList(builder, createReadingControl());
-    addActionItemsToList(builder, createMenuControl());
-    addActionItemsToList(builder, createTextEditing());
-    addActionItemsToList(builder, createSpecialFeatures());
     items = builder.build();
-  }
-
-  private static void addActionItemsToList(
-      ImmutableList.Builder<ActionItem> builder, ImmutableList<ActionItem> items) {
-    // Skips if only has title without any items.
-    if ((items.size() == 1) && (items.get(0).viewType == TYPE_TITLE)) {
-      return;
-    }
-    builder.addAll(items);
-  }
-
-  private ImmutableList<ActionItem> createBasicNavigation() {
-    ImmutableList.Builder<ActionItem> builder =
-        createActionListBuilder(
-            R.string.shortcut_title_basic_navigation,
-            R.array.shortcut_basic_navigation,
-            R.array.shortcut_value_basic_navigation);
-    Resources resources = getContext().getResources();
-
-    // TODO: Remove scroll left/right/up/down once 2-finger pass through is ready.
-    if (FeatureSupport.isMultiFingerGestureSupported() && !FormFactorUtils.isAndroidWear()) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_scroll_up),
-              resources.getString(R.string.shortcut_value_scroll_up),
-              TYPE_ACTION_ITEM));
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_scroll_down),
-              resources.getString(R.string.shortcut_value_scroll_down),
-              TYPE_ACTION_ITEM));
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_scroll_left),
-              resources.getString(R.string.shortcut_value_scroll_left),
-              TYPE_ACTION_ITEM));
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_scroll_right),
-              resources.getString(R.string.shortcut_value_scroll_right),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (FeatureFlagReader.enableTableNavigation(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_row_up),
-              resources.getString(R.string.shortcut_value_row_up),
-              TYPE_ACTION_ITEM));
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_row_down),
-              resources.getString(R.string.shortcut_value_row_down),
-              TYPE_ACTION_ITEM));
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_column_left),
-              resources.getString(R.string.shortcut_value_column_left),
-              TYPE_ACTION_ITEM));
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_column_right),
-              resources.getString(R.string.shortcut_value_column_right),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (FeatureFlagReader.enableDoubleClickKeyboard(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_perform_double_click_action),
-              resources.getString(R.string.shortcut_value_perform_double_click_action),
-              TYPE_ACTION_ITEM));
-    }
-
-    return builder.build();
-  }
-
-  private ImmutableList<ActionItem> createNavigationCategory(
-      NavigationGestureActions.Category category) {
-    ImmutableList.Builder<ActionItem> builder =
-        createActionListBuilder(category.getTitleRes(), 0, 0);
-    Resources resources = getContext().getResources();
-    for (NavigationGestureActions.Action action : category.getActions()) {
-      builder.add(
-          new ActionItem(
-              resources.getString(action.getLabelRes()), action.getValue(), TYPE_ACTION_ITEM));
-    }
-    return builder.build();
-  }
-
-  private ImmutableList<ActionItem> createSystemActions() {
-    ImmutableList.Builder<ActionItem> builder =
-        createActionListBuilder(
-            R.string.shortcut_title_system_actions,
-            R.array.shortcut_system_actions,
-            R.array.shortcut_value_system_actions);
-    Resources resources = getContext().getResources();
-    if (FeatureSupport.supportGetSystemActions(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_all_apps),
-              resources.getString(R.string.shortcut_value_all_apps),
-              TYPE_ACTION_ITEM));
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_a11y_button),
-              resources.getString(R.string.shortcut_value_a11y_button),
-              TYPE_ACTION_ITEM));
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_a11y_button_long_press),
-              resources.getString(R.string.shortcut_value_a11y_button_long_press),
-              TYPE_ACTION_ITEM));
-    }
-    return builder.build();
-  }
-
-  private ImmutableList<ActionItem> createReadingControl() {
-    ImmutableList.Builder<ActionItem> builder =
-        createActionListBuilder(
-            R.string.shortcut_title_reading_control,
-            R.array.shortcut_reading_control,
-            R.array.shortcut_value_reading_control);
-    if (FeatureFlagReader.enableTextFormattingInline(getContext())) {
-      Resources resources = getContext().getResources();
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.title_switch_text_formatting),
-              resources.getString(R.string.shortcut_value_control_text_formatting),
-              TYPE_ACTION_ITEM));
-    }
-    if (FeatureFlagReader.enableTextFormattingSummary(getContext())) {
-      Resources resources = getContext().getResources();
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.title_text_formatting_menu),
-              resources.getString(R.string.shortcut_value_describe_text_formatting),
-              TYPE_ACTION_ITEM));
-    }
-    return builder.build();
-  }
-
-  private ImmutableList<ActionItem> createMenuControl() {
-    return createActionListBuilder(
-            R.string.shortcut_title_menu_control,
-            R.array.shortcut_menu_control,
-            R.array.shortcut_value_menu_control)
-        .build();
-  }
-
-  private ImmutableList<ActionItem> createTextEditing() {
-    ImmutableList.Builder<ActionItem> builder =
-        createActionListBuilder(
-            R.string.shortcut_title_text_editing,
-            R.array.shortcut_text_editing,
-            R.array.shortcut_value_text_editing);
-    Resources resources = getContext().getResources();
-    if (FeatureSupport.supportSwitchToInputMethod() && !FormFactorUtils.isAndroidWear()) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_braille_keyboard),
-              resources.getString(R.string.shortcut_value_braille_keyboard),
-              TYPE_ACTION_ITEM));
-    }
-    return builder.build();
-  }
-
-  private ImmutableList<ActionItem> createSpecialFeatures() {
-    ImmutableList.Builder<ActionItem> builder =
-        createActionListBuilder(R.string.shortcut_title_special_features, 0, 0);
-    Resources resources = getContext().getResources();
-
-    if (FeatureSupport.supportMediaControls()) {
-      // Due to the PH flag should controls the default 2-fingers double tap actions as well but the
-      // default is set in xml which does not apply for PH flag. This is a trick that it always
-      // invoke voice input + media control action but in the case the flag is false, this action
-      // only direct to media control. This design makes we can use the PH flag to control on the
-      // air without duplicating xml file.
-      builder.add(
-          new ActionItem(
-              resources.getString(
-                  FeatureFlagReader.enableVoiceDictationShortcut(getContext())
-                      ? R.string.shortcut_media_control_or_voice_input
-                      : R.string.shortcut_media_control),
-              resources.getString(R.string.shortcut_value_media_control_or_voice_input),
-              TYPE_ACTION_ITEM));
-
-      if (FeatureFlagReader.enableVoiceDictationShortcut(getContext())) {
-        builder.add(
-            new ActionItem(
-                resources.getString(R.string.shortcut_media_control),
-                resources.getString(R.string.shortcut_value_media_control),
-                TYPE_ACTION_ITEM));
-      }
-    }
-
-    if (FeatureFlagReader.enableVoiceDictationShortcut(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_voice_input),
-              resources.getString(R.string.shortcut_value_voice_input),
-              TYPE_ACTION_ITEM));
-    }
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_increase_volume),
-            resources.getString(R.string.shortcut_value_increase_volume),
-            TYPE_ACTION_ITEM));
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_decrease_volume),
-            resources.getString(R.string.shortcut_value_decrease_volume),
-            TYPE_ACTION_ITEM));
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_read_notifications),
-            resources.getString(R.string.shortcut_value_read_notifications),
-            TYPE_ACTION_ITEM));
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_read_last_notification),
-            resources.getString(R.string.shortcut_value_read_last_notification),
-            TYPE_ACTION_ITEM));
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_stop_notification),
-            resources.getString(R.string.shortcut_value_stop_notification),
-            TYPE_ACTION_ITEM));
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_toggle_notification_speech),
-            resources.getString(R.string.shortcut_value_toggle_notification_speech),
-            TYPE_ACTION_ITEM));
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_increase_media_volume),
-            resources.getString(R.string.shortcut_value_increase_media_volume),
-            TYPE_ACTION_ITEM));
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_decrease_media_volume),
-            resources.getString(R.string.shortcut_value_decrease_media_volume),
-            TYPE_ACTION_ITEM));
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_next_track),
-            resources.getString(R.string.shortcut_value_next_track),
-            TYPE_ACTION_ITEM));
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_previous_track),
-            resources.getString(R.string.shortcut_value_previous_track),
-            TYPE_ACTION_ITEM));
-
-    if (TalkbackFeatureSupport.supportSpeechRecognize()) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_voice_commands),
-              resources.getString(R.string.shortcut_value_voice_commands),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (!FormFactorUtils.isAndroidWear()) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.title_show_screen_search),
-              resources.getString(R.string.shortcut_value_screen_search),
-              TYPE_ACTION_ITEM));
-    }
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.title_show_hide_screen),
-            resources.getString(R.string.shortcut_value_show_hide_screen),
-            TYPE_ACTION_ITEM));
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.title_pause_backtalk),
-            resources.getString(R.string.shortcut_value_pause_backtalk),
-            TYPE_ACTION_ITEM));
-
-    if (FeatureSupport.supportPassthrough()) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_pass_through_next),
-              resources.getString(R.string.shortcut_value_pass_through_next_gesture),
-              TYPE_ACTION_ITEM));
-    }
-
-    SharedPreferences preferences = SharedPreferencesUtils.getSharedPreferences(getContext());
-    if (preferences.getBoolean(resources.getString(R.string.pref_tree_debug_key), false)) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_print_node_tree),
-              resources.getString(R.string.shortcut_value_print_node_tree),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (preferences.getBoolean(resources.getString(R.string.pref_performance_stats_key), false)) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_print_performance_stats),
-              resources.getString(R.string.shortcut_value_print_performance_stats),
-              TYPE_ACTION_ITEM));
-    }
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_show_custom_actions),
-            resources.getString(R.string.shortcut_value_show_custom_actions),
-            TYPE_ACTION_ITEM));
-
-    if (FeatureSupport.supportBrailleDisplay(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_braille_display_settings),
-              resources.getString(R.string.shortcut_value_braille_display_settings),
-              TYPE_ACTION_ITEM));
-    }
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_tutorial),
-            resources.getString(R.string.shortcut_value_tutorial),
-            TYPE_ACTION_ITEM));
-
-    // TODO: We hide it for phone because the announcement is too verbose upon wakeup.
-    //  making it not as helpful as wear devices. After we have overall review of speaking time on
-    //  phone and fix all technical issues, we would reopen it for phones.
-    if (FormFactorUtils.isAndroidWear()) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_control_speak_time),
-              resources.getString(R.string.shortcut_value_control_telling_time),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (FeatureFlagReader.enableAnnounceBatteryState(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_announce_battery_state),
-              resources.getString(R.string.shortcut_value_announce_battery_state),
-              TYPE_ACTION_ITEM));
-    }
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_announce_status),
-            resources.getString(R.string.shortcut_value_announce_status),
-            TYPE_ACTION_ITEM));
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_inspect_item),
-            resources.getString(R.string.shortcut_value_inspect_item),
-            TYPE_ACTION_ITEM));
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_copy_screen_tree),
-            resources.getString(R.string.shortcut_value_copy_screen_tree),
-            TYPE_ACTION_ITEM));
-
-    builder.add(
-        new ActionItem(
-            resources.getString(R.string.shortcut_toggle_scripts),
-            resources.getString(R.string.shortcut_value_toggle_scripts),
-            TYPE_ACTION_ITEM));
-
-    if (FeatureFlagReader.enableAnnounceCurrentTimeAndDate(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_announce_current_time_and_date),
-              resources.getString(R.string.shortcut_value_announce_current_time_and_date),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (FeatureFlagReader.enableAnnounceCurrentTitle(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_announce_current_title),
-              resources.getString(R.string.shortcut_value_announce_current_title),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (FeatureFlagReader.enableAnnouncePhoneticPronunciation(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_announce_phonetic_pronunciation),
-              resources.getString(R.string.shortcut_value_announce_phonetic_pronunciation),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (FeatureFlagReader.enableSpeechPitchKeyboard(getContext())) {
-      builder
-          .add(
-              new ActionItem(
-                  resources.getString(R.string.shortcut_speech_pitch_decrease),
-                  resources.getString(R.string.shortcut_value_speech_pitch_decrease),
-                  TYPE_ACTION_ITEM))
-          .add(
-              new ActionItem(
-                  resources.getString(R.string.shortcut_speech_pitch_increase),
-                  resources.getString(R.string.shortcut_value_speech_pitch_increase),
-                  TYPE_ACTION_ITEM));
-    }
-
-    if (FeatureFlagReader.enableSpeechRateKeyboard(getContext())) {
-      builder
-          .add(
-              new ActionItem(
-                  resources.getString(R.string.shortcut_speech_rate_decrease),
-                  resources.getString(R.string.shortcut_value_speech_rate_decrease),
-                  TYPE_ACTION_ITEM))
-          .add(
-              new ActionItem(
-                  resources.getString(R.string.shortcut_speech_rate_increase),
-                  resources.getString(R.string.shortcut_value_speech_rate_increase),
-                  TYPE_ACTION_ITEM));
-    }
-
-    if (!FormFactorUtils.isAndroidWear()) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_practice_gestures),
-              resources.getString(R.string.shortcut_value_practice_gestures),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (GestureReporter.ENABLED && SettingsUtils.allowLinksOutOfSettings(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_report_gesture),
-              resources.getString(R.string.shortcut_value_report_gesture),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (FeatureSupport.supportBrailleDisplay(getContext())
-        && FeatureFlagReader.useGestureBrailleDisplayOnOff(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.shortcut_toggle_braille_display),
-              resources.getString(R.string.shortcut_value_toggle_braille_display),
-              TYPE_ACTION_ITEM));
-    }
-
-    if (ImageCaptioner.supportsImageCaption(getContext())) {
-      builder.add(
-          new ActionItem(
-              resources.getString(R.string.title_image_caption),
-              resources.getString(R.string.shortcut_value_describe_image),
-              TYPE_ACTION_ITEM));
-      if (GeminiConfiguration.screenOverviewEnabled(getContext())) {
-        builder.add(
-            new ActionItem(
-                resources.getString(R.string.title_summarize_view),
-                resources.getString(R.string.shortcut_value_screen_overview),
-                TYPE_ACTION_ITEM));
-      }
-    }
-
-    return builder.build();
-  }
-
-  private ImmutableList<ActionItem> createOpenApp() {
-    ImmutableList.Builder<ActionItem> builder =
-        createActionListBuilder(R.string.shortcut_title_open_app, 0, 0);
-    for (OpenAppActions.App app : OpenAppActions.apps(getContext())) {
-      builder.add(new ActionItem(app.getLabel(), app.getValue(), TYPE_ACTION_ITEM));
-    }
-    return builder.build();
-  }
-
-  private ImmutableList.Builder<ActionItem> createActionListBuilder(
-      int titleId, int shortcutId, int valueId) {
-    ImmutableList.Builder<ActionItem> builder = ImmutableList.builder();
-    Resources resources = getContext().getResources();
-    builder.add(new ActionItem(resources.getString(titleId), TYPE_TITLE));
-    if (shortcutId != 0) {
-      builder.addAll(
-          ActionItem.createItemsFromArray(
-              resources.getStringArray(shortcutId), resources.getStringArray(valueId)));
-    }
-    return builder;
   }
 
   /**

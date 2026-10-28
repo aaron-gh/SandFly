@@ -21,6 +21,8 @@ import android.content.SharedPreferences;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.utils.TalkBackSharedPreferencesUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import java.util.ArrayList;
+import java.util.List;
 
 /** Key value store to make key combo code persistent. */
 public class KeyComboPersister {
@@ -66,6 +68,21 @@ public class KeyComboPersister {
   public boolean contains(String key) {
     return prefs.contains(
         TalkBackSharedPreferencesUtils.getKeyForKeyComboCode(this.keyPrefix, key));
+  }
+
+  /** Returns the saved keys that start with {@code start}. */
+  public List<String> keysStartingWith(String start) {
+    String codeSuffix = TalkBackSharedPreferencesUtils.getKeyForKeyComboCode(null, "");
+    String keyStart = TalkBackSharedPreferencesUtils.getKeyForKeyComboCode(keyPrefix, start);
+    keyStart = keyStart.substring(0, keyStart.length() - codeSuffix.length());
+    List<String> keys = new ArrayList<>();
+    for (String prefKey : prefs.getAll().keySet()) {
+      if (prefKey.startsWith(keyStart) && prefKey.endsWith(codeSuffix)) {
+        String key = prefKey.substring(keyStart.length() - start.length());
+        keys.add(key.substring(0, key.length() - codeSuffix.length()));
+      }
+    }
+    return keys;
   }
 
   public KeyCombo getKeyCombo(String key) {

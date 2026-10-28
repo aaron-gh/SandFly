@@ -21,6 +21,7 @@ import android.content.SharedPreferences;
 import android.view.KeyEvent;
 import androidx.annotation.Nullable;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
@@ -45,6 +46,7 @@ public class DefaultKeyComboModel implements KeyComboModel {
 
     loadTriggerModifierFromPreferences();
     addKeyCombos();
+    addCommandShortcuts();
   }
 
   private void loadTriggerModifierFromPreferences() {
@@ -844,6 +846,13 @@ public class DefaultKeyComboModel implements KeyComboModel {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_column_bounds));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_table_bounds));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_table_bounds));
+  }
+
+  /** Adds the keyboard shortcuts set for commands that have no keyboard action of their own. */
+  private void addCommandShortcuts() {
+    for (String key : persister.keysStartingWith(Commands.SHORTCUT_KEY_PREFIX)) {
+      keyComboMap.put(key, persister.getKeyCombo(key));
+    }
   }
 
   private void addKeyCombo(String key) {

@@ -677,7 +677,6 @@ public class SelectorController implements UserInputEventListener {
           Setting.VERTICAL_NAVIGATION,
           // TODO Supports special content.
           Setting.SPEECH_RATE,
-          Setting.VERBOSITY,
           Setting.PUNCTUATION,
           Setting.EMOJI,
           Setting.KEYBOARD_ECHO_ON_SCREEN,
@@ -1968,7 +1967,7 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case VERBOSITY -> {
-        changeVerbosity(eventId, isNext);
+        // The verbosity presets were removed; the setting is never shown.
         return;
       }
       case PUNCTUATION -> {
@@ -2390,51 +2389,6 @@ public class SelectorController implements UserInputEventListener {
     showQuickMenuActionOverlay(eventId, actorState.getLanguageState().getCurrentLanguageString());
   }
 
-  /** Set the current verbosity preset to the previous or next verbosity preset. */
-  private void changeVerbosity(EventId eventId, boolean isNext) {
-    List<String> verbosities =
-        Arrays.asList(context.getResources().getStringArray(R.array.pref_verbosity_preset_values));
-    int verbositiesSize = verbosities.size();
-    if (verbositiesSize == 0) {
-      return;
-    }
-
-    // Get the index of the current verbosity preset.
-    String verbosityPresetKey = context.getString(R.string.pref_verbosity_preset_key);
-    String currentVerbosity =
-        prefs.getString(
-            verbosityPresetKey, context.getString(R.string.pref_verbosity_preset_value_default));
-    int index = verbosities.indexOf(currentVerbosity);
-
-    // Change the verbosity preset.
-    if (isNext) {
-      index++;
-      if (index >= verbositiesSize || index < 0) {
-        // User has reached end of list so wrap to start of list.
-        index = 0;
-      }
-    } else { // Choose previous preset.
-      index--;
-      if (index >= verbositiesSize || index < 0) {
-        // User has reached start of list so wrap to end of list.
-        index = verbositiesSize - 1;
-      }
-    }
-
-    String newVerbosity = verbosities.get(index);
-    analytics.onManuallyChangeSetting(verbosityPresetKey, TalkBackAnalytics.TYPE_SELECTOR);
-    prefs.edit().putString(verbosityPresetKey, newVerbosity).apply();
-    // Announce new preset. If the TalkBackVerbosityPreferencesActivity fragment is visible,
-    // the fragment's OnSharedPreferenceChangeListener.onSharedPreferenceChanged will also call this
-    // method. SpeechController will then deduplicate the announcement event so only one is spoken.
-    announceSetting(
-        eventId,
-        VerbosityPreferences.getVerbosityChangeAnnouncement(newVerbosity, context),
-        getAdjustSelectedSettingGestures());
-    showQuickMenuActionOverlay(
-        eventId, VerbosityPreferences.verbosityValueToName(newVerbosity, context));
-  }
-
   /** Moves how emoji are read to the next or previous choice of the Emoji setting. */
   private void cycleEmojiSpeech(EventId eventId, boolean isNext) {
     String[] values = context.getResources().getStringArray(R.array.pref_emoji_speech_values);
@@ -2501,30 +2455,6 @@ public class SelectorController implements UserInputEventListener {
         context.getString(R.string.punctuation_state, punctuationEntries[punctuationLevel]),
         getAdjustSelectedSettingGestures());
     showQuickMenuActionOverlay(eventId, punctuationEntries[punctuationLevel]);
-  }
-
-  /** Validate the verbosity index and set verbosity string if necessary */
-  public void changeVerbosity(EventId eventId, int newIndex) {
-    List<String> verbosities =
-        Arrays.asList(context.getResources().getStringArray(R.array.pref_verbosity_preset_values));
-    if (newIndex >= verbosities.size() || newIndex < 0) {
-      return;
-    }
-
-    // Get the index of the current verbosity preset.
-    String verbosityPresetKey = context.getString(R.string.pref_verbosity_preset_key);
-    String currentVerbosity =
-        prefs.getString(
-            verbosityPresetKey, context.getString(R.string.pref_verbosity_preset_value_default));
-    int currentIndex = verbosities.indexOf(currentVerbosity);
-    String newVerbosity = verbosities.get(newIndex);
-    if (currentIndex != newIndex) {
-      prefs.edit().putString(verbosityPresetKey, newVerbosity).apply();
-    }
-    announceSetting(
-        eventId,
-        VerbosityPreferences.getVerbosityChangeAnnouncement(newVerbosity, context),
-        getAdjustSelectedSettingGestures());
   }
 
   private void toggleTextFormatting(EventId eventId) {

@@ -93,6 +93,7 @@ import com.google.android.accessibility.talkback.Feedback.TalkBackUI.Item;
 import com.google.android.accessibility.talkback.Feedback.TriggerIntent.Action;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
 import com.google.android.accessibility.talkback.actor.SystemActionPerformer;
@@ -340,6 +341,12 @@ public class GestureController {
                   .setWrap(true));
     } else if (OpenAppActions.isAction(action)) {
       result = OpenAppActions.open(service, action);
+    } else if (Commands.keyboardActionOf(service, action) != null) {
+      KeyComboManager keyComboManager = service.getKeyComboManager();
+      result =
+          keyComboManager != null
+              && keyComboManager.performKeyboardAction(
+                  Commands.keyboardActionOf(service, action), eventId);
     } else if (NavigationGestureActions.isAction(action)) {
       result =
           NavigationGestureActions.perform(

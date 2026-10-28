@@ -34,6 +34,7 @@ import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel;
@@ -107,6 +108,24 @@ public class KeyboardShortcutDialogPreference extends Preference
     init(null);
   }
 
+  /** Creates the preference for the keyboard shortcut kept under {@code key}. */
+  public KeyboardShortcutDialogPreference(Context context, String key, CharSequence title) {
+    super(context);
+    setKey(key);
+    setTitle(title);
+    init(null);
+  }
+
+  /** Returns the name of the command whose keyboard shortcut is kept under {@code key}. */
+  private CharSequence titleOf(String key) {
+    Preference preference = getPreferenceManager().findPreference(key);
+    if (preference != null && preference.getTitle() != null) {
+      return preference.getTitle();
+    }
+    CharSequence title = Commands.labelOfKeyboardKey(getContext(), key);
+    return title == null ? key : title;
+  }
+
   static KeyComboManager getKeyComboManager(Context context) {
     KeyComboManager keyComboManager;
     if (TalkBackService.getInstance() != null) {
@@ -129,6 +148,13 @@ public class KeyboardShortcutDialogPreference extends Preference
     updateKeyComboManager();
     supportedSequenceKeyInfra = keyComboManager.isSequenceKeyInfraSupported();
     setTemporaryKeyCombo(getKeyComboForKey(getKey()));
+  }
+
+  @Nullable private Runnable keyComboChangeListener;
+
+  /** Sets what runs after this or another shortcut changes through this preference's dialogs. */
+  public void setKeyComboChangeListener(@Nullable Runnable listener) {
+    keyComboChangeListener = listener;
   }
 
   public void updateKeyComboManager() {
@@ -468,18 +494,8 @@ public class KeyboardShortcutDialogPreference extends Preference
 
   /** Shows dialog if there is duplicate key assigned. */
   private void showOverrideKeyComboDialog(final String key) {
-    final Preference currentActionPreference = getPreferenceManager().findPreference(key);
-    if (currentActionPreference == null) {
-      return;
-    }
-
-    final Preference newActionPreference = getPreferenceManager().findPreference(getKey());
-    if (newActionPreference == null) {
-      return;
-    }
-
-    CharSequence currentAction = currentActionPreference.getTitle();
-    CharSequence newAction = newActionPreference.getTitle();
+    CharSequence currentAction = titleOf(key);
+    CharSequence newAction = getTitle();
     setKeyEventSource(KEY_EVENT_SOURCE_ACTIVITY);
     showOverrideKeyComboDialog(
         currentAction,
@@ -552,6 +568,9 @@ public class KeyboardShortcutDialogPreference extends Preference
   }
 
   private void notifyListener(String key, Object newValue) {
+    if (keyComboChangeListener != null) {
+      keyComboChangeListener.run();
+    }
     Preference preference = getPreferenceManager().findPreference(key);
     if (!(preference instanceof KeyboardShortcutDialogPreference)) {
       return;
@@ -565,7 +584,7 @@ public class KeyboardShortcutDialogPreference extends Preference
 
   private void showSetUpKeyComboDialog() {
     if (supportedSequenceKeyInfra) {
-      CharSequence title = getPreferenceManager().findPreference(getKey()).getTitle();
+      CharSequence title = getTitle();
       A11yAlertDialogWrapper wrapper =
           A11yAlertDialogWrapper.materialDialogBuilder(getContext())
               .setTitle(getContext().getString(R.string.keyboard_assignment_dialog_title, title))
@@ -822,14 +841,7 @@ public class KeyboardShortcutDialogPreference extends Preference
 
   /** Handles duplicate shortcut if the shortcut is already assigned to another action. */
   private void handleDuplicateShortcut(TextView errorTextView, String conflictingKey) {
-    final Preference currentActionPreference =
-        getPreferenceManager().findPreference(conflictingKey);
-
-    if (currentActionPreference == null) {
-      return;
-    }
-
-    CharSequence currentAction = currentActionPreference.getTitle();
+    CharSequence currentAction = titleOf(conflictingKey);
     String message = getContext().getString(R.string.already_in_use_error_message, currentAction);
     showError(errorTextView, message);
   }

@@ -63,7 +63,7 @@ object WindowNamesSetting {
         res.getBoolean(R.bool.pref_first_item_interrupts_window_name_default),
       )
     val speakSystemWindowNames =
-      VerbosityPreferences.getPreferenceValueBool(
+      VerbosityPreferences.getPresetValueBool(
         prefs,
         res,
         res.getString(R.string.pref_speak_system_window_titles_key),

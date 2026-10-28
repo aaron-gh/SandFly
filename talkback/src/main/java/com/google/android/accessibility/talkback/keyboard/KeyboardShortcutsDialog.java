@@ -42,15 +42,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.commands.CommandBindings;
+import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.actor.search.StringMatcher;
 import com.google.android.accessibility.talkback.actor.search.StringMatcher.MatchResult;
-import com.google.android.accessibility.talkback.compositor.KeyComboManagerUtils;
 import com.google.android.accessibility.talkback.dialog.BaseDialog;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -60,8 +61,6 @@ public class KeyboardShortcutsDialog extends BaseDialog {
   private static final String TAG = "KeyboardShortcutsDialog";
 
   // TODO: b/404273230 - Update the category prefix.
-  private static final String CATEGORY_GLOBAL_PREFIX = "keycombo_shortcut_global_";
-  private static final String CATEGORY_OTHERS_PREFIX = "keycombo_shortcut_other_";
 
   private @Nullable KeyComboManager keyComboManager;
 
@@ -229,54 +228,35 @@ public class KeyboardShortcutsDialog extends BaseDialog {
     this.keyComboManager = keyComboManager;
   }
 
+  /** Returns the commands that have a keyboard shortcut, by command category. */
   private Map<String, List<ItemData>> groupCommandsByCategory() {
-    Map<String, List<ItemData>> categoryToCommandsMap = new HashMap<>();
-    if (keyComboManager == null) {
+    Map<String, List<ItemData>> categoryToCommandsMap = new LinkedHashMap<>();
+    KeyComboModel model = keyComboManager == null ? null : keyComboManager.getKeyComboModel();
+    if (model == null) {
       return categoryToCommandsMap;
     }
 
-    // TODO: b/404273230 - Update the category to commands map.
-    List<ItemData> globalCommandsList = new ArrayList<>();
-    List<ItemData> othersCommandsList = new ArrayList<>();
-    List<ItemData> navigationCommandsList = new ArrayList<>();
-
     ImmutableSet<String> browseModeOnlyCommands = keyComboManager.getBrowseModeOnlyCommands();
     String browseModeCommandTitleTemplate =
-        browseModeOnlyCommands.isEmpty()
-            ? ""
-            : context.getString(R.string.template_keycombo_menu_browse_mode_command);
-    for (String key : keyComboManager.getKeyComboModel().getKeyComboMap().keySet()) {
-      TalkBackPhysicalKeyboardShortcut action =
-          TalkBackPhysicalKeyboardShortcut.getActionFromKey(context.getResources(), key);
-      if (action == null || action.getKeyStrRes() == -1) {
-        continue;
+        context.getString(R.string.template_keycombo_menu_browse_mode_command);
+    for (Commands.Category category : Commands.categories(context)) {
+      List<ItemData> commands = new ArrayList<>();
+      for (Commands.Command command : category.getCommands()) {
+        String key = CommandBindings.keyboardKey(context, model, command);
+        String keyComboString = CommandBindings.keyboardShortcutText(keyComboManager, key);
+        if (keyComboString == null) {
+          continue;
+        }
+        String commandName =
+            browseModeOnlyCommands.contains(key)
+                ? String.format(browseModeCommandTitleTemplate, command.getLabel())
+                : command.getLabel();
+        commands.add(new ItemData(commandName, keyComboString));
       }
-
-      String commandName =
-          browseModeOnlyCommands.contains(key) && !browseModeCommandTitleTemplate.isEmpty()
-              ? String.format(
-                  browseModeCommandTitleTemplate, action.getDescription(context.getResources()))
-              : action.getDescription(context.getResources());
-      String keyComboString =
-          KeyComboManagerUtils.getKeyComboStringRepresentation(
-              context, keyComboManager, action.getKeyStrRes());
-      if (key.startsWith(CATEGORY_GLOBAL_PREFIX)) {
-        globalCommandsList.add(new ItemData(commandName, keyComboString));
-      } else if (key.startsWith(CATEGORY_OTHERS_PREFIX)) {
-        othersCommandsList.add(new ItemData(commandName, keyComboString));
-      } else {
-        navigationCommandsList.add(new ItemData(commandName, keyComboString));
+      if (!commands.isEmpty()) {
+        categoryToCommandsMap.put(context.getString(category.getTitleRes()), commands);
       }
     }
-
-    // TODO: b/404273230 - Update the categories names.
-    categoryToCommandsMap.put(
-        context.getString(R.string.keycombo_menu_category_global), globalCommandsList);
-    categoryToCommandsMap.put(
-        context.getString(R.string.keycombo_menu_category_other), othersCommandsList);
-    categoryToCommandsMap.put(
-        context.getString(R.string.keycombo_menu_category_navigation), navigationCommandsList);
-
     return categoryToCommandsMap;
   }
 

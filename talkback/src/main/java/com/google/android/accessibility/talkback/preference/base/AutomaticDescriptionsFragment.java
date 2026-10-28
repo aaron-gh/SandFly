@@ -46,6 +46,7 @@ import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceClickListener;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.TalkBackAnalyticsImpl;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
@@ -110,7 +111,7 @@ public class AutomaticDescriptionsFragment extends TalkbackBaseFragment {
 
   @Override
   protected CharSequence getTitle() {
-    return getText(R.string.title_pref_auto_image_captioning);
+    return getText(R.string.title_pref_image_and_screen_descriptions);
   }
 
   @Override
@@ -123,6 +124,13 @@ public class AutomaticDescriptionsFragment extends TalkbackBaseFragment {
 
     analytics = new TalkBackAnalyticsImpl(context);
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
+
+    if (!LiveRecognition.isSupported(context)) {
+      Preference liveRecognition = findPreference("pref_live_recognition_screen");
+      if (liveRecognition != null) {
+        liveRecognition.setVisible(false);
+      }
+    }
 
     if (aiCoreEndpoint == null) {
       aiCoreEndpoint = new AiCoreEndpoint(context, /* withService= */ false);
@@ -161,6 +169,7 @@ public class AutomaticDescriptionsFragment extends TalkbackBaseFragment {
   public void onResume() {
     super.onResume();
     AiProviderPreferences.refresh(this);
+    updateGeminiSettingsSummary();
 
     // Cancels the download completion notification because users may be led to the settings page by
     // the notification.
@@ -830,5 +839,23 @@ public class AutomaticDescriptionsFragment extends TalkbackBaseFragment {
     public void onRejected() {
       analytics.onImageCaptionEventFromSettings(logKeys.uninstallDeny);
     }
+  }
+
+  /** Says on the Gemini settings entry whether Gemini is on. */
+  private void updateGeminiSettingsSummary() {
+    Preference geminiSettings = findPreference(getString(R.string.pref_gemini_settings_key));
+    if (geminiSettings == null || context == null) {
+      return;
+    }
+    boolean hasOptIn =
+        SharedPreferencesUtils.getBooleanPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_gemini_enabled_key,
+            R.bool.pref_gemini_opt_in_default);
+    geminiSettings.setSummary(
+        hasOptIn
+            ? R.string.summary_pref_gemini_support_enabled
+            : R.string.summary_pref_gemini_support_disabled);
   }
 }

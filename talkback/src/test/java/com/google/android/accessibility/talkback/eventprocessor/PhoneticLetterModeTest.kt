@@ -52,29 +52,36 @@ class PhoneticLetterModeTest {
 
   @Test
   fun defaultIsWithTheLetter() {
-    setPreset(custom)
     assertEquals(PhoneticLetterMode.AFTER_LETTER_DELAY, PhoneticLetterMode.read(prefs, res))
   }
 
   @Test
-  fun highAndLowPresetsHaveFixedModes() {
+  fun removingHighAndLowPresetsKeepsTheirModes() {
     setPreset(res.getString(R.string.pref_verbosity_preset_value_high))
+    VerbosityPreferences.removePresets(prefs, res)
     assertEquals(PhoneticLetterMode.AFTER_LETTER_DELAY, PhoneticLetterMode.read(prefs, res))
-    setPreset(res.getString(R.string.pref_verbosity_preset_value_low))
-    assertEquals(PhoneticLetterMode.OFF, PhoneticLetterMode.read(prefs, res))
-  }
 
-  @Test
-  fun customPresetReadsItsOwnMode() {
-    setPreset(custom)
-    prefs
+    val lowPrefs = FakeSharedPreferences()
+    lowPrefs
       .edit()
       .putString(
-        VerbosityPreferences.toVerbosityPrefKey(custom, modeKey),
-        PhoneticLetterMode.INSTEAD_OF_LETTER,
+        res.getString(R.string.pref_verbosity_preset_key),
+        res.getString(R.string.pref_verbosity_preset_value_low),
       )
       .apply()
+    VerbosityPreferences.removePresets(lowPrefs, res)
+    assertEquals(PhoneticLetterMode.OFF, PhoneticLetterMode.read(lowPrefs, res))
+  }
+
+  @Test
+  fun removingCustomPresetKeepsItsMode() {
+    setPreset(custom)
+    val customMode = VerbosityPreferences.toVerbosityPrefKey(custom, modeKey)
+    prefs.edit().putString(customMode, PhoneticLetterMode.INSTEAD_OF_LETTER).apply()
+    VerbosityPreferences.removePresets(prefs, res)
     assertEquals(PhoneticLetterMode.INSTEAD_OF_LETTER, PhoneticLetterMode.read(prefs, res))
+    assertFalse(prefs.contains(customMode))
+    assertFalse(prefs.contains(res.getString(R.string.pref_verbosity_preset_key)))
   }
 
   @Test
@@ -85,9 +92,10 @@ class PhoneticLetterModeTest {
       .putBoolean(oldKey, true)
       .apply()
     PhoneticLetterMode.migrate(prefs, res)
-    setPreset(custom)
-    assertEquals(PhoneticLetterMode.OFF, PhoneticLetterMode.read(prefs, res))
     assertEquals(PhoneticLetterMode.AFTER_LETTER_DELAY, prefs.getString(modeKey, null))
+    setPreset(custom)
+    VerbosityPreferences.removePresets(prefs, res)
+    assertEquals(PhoneticLetterMode.OFF, PhoneticLetterMode.read(prefs, res))
   }
 
   @Test
