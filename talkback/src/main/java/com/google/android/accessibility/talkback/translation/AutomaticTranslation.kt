@@ -58,6 +58,8 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
   /** Recent translations, by [translationKey]. */
   private val translations = LruCache<String, String>(MAX_TRANSLATIONS)
   private val pending = ArrayDeque<Held>()
+  /** Texts identified in each language, up to [DOWNLOAD_AFTER_TEXTS], by hash. */
+  private val sightings = mutableMapOf<String, MutableSet<Int>>()
   /** Languages whose download was announced, so that it is said once. */
   private val announcedDownloads = mutableSetOf<String>()
   private var announcedNotSetUp = false
@@ -139,7 +141,11 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
     val to = TranslationSettings.target(prefs)
     val key = translationKey(service, from, to, text)
     translations.get(key)?.let { return done(spoken(it, to)) }
-    engine.translate(text, service, from, to) { result ->
+    // A language model is downloaded only for a language heard in several texts, not for one text
+    // taken for another language.
+    val seen = sightings.getOrPut(from) { mutableSetOf() }
+    if (seen.size < DOWNLOAD_AFTER_TEXTS) seen += text.hashCode()
+    engine.translate(text, service, from, to, download = seen.size >= DOWNLOAD_AFTER_TEXTS) { result ->
       when (result) {
         is Translator.Result.Done -> {
           translations.put(key, result.translation.text)
@@ -233,7 +239,15 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
     /** The language of [text], [NO_LANGUAGE] when it has none, or null when it can't be told now. */
     fun detect(text: String, done: (String?) -> Unit)
 
-    fun translate(text: String, service: TranslationService, from: String, to: String, done: (Translator.Result) -> Unit)
+    /** Translates [text]; with [download], missing language models start downloading. */
+    fun translate(
+      text: String,
+      service: TranslationService,
+      from: String,
+      to: String,
+      download: Boolean,
+      done: (Translator.Result) -> Unit,
+    )
 
     fun close()
   }
@@ -271,8 +285,9 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
       service: TranslationService,
       from: String,
       to: String,
+      download: Boolean,
       done: (Translator.Result) -> Unit,
-    ) = translator.translateNow(text, service, from, to, done)
+    ) = translator.translateNow(text, service, from, to, download, done)
 
     override fun close() {
       translator.shutdown()
@@ -292,32 +307,38 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
     private const val MAX_WAIT_MS = 3_000L
     private const val MAX_LANGUAGES = 500
     private const val MAX_TRANSLATIONS = 300
+    /** How many texts in a language it takes to download its on-device model. */
+    private const val DOWNLOAD_AFTER_TEXTS = 3
 
     private var instance: AutomaticTranslation? = null
 
-    /** Starts or stops automatic translation as its switch says. Main thread only. */
+    /**
+     * Starts or stops translation as the switches say: Automatic translation takes all speech,
+     * Translate notifications only notifications. Main thread only.
+     */
     @JvmStatic
     fun update(context: Context) {
-      val on = TranslationSettings.auto(SharedPreferencesUtils.getSharedPreferences(context))
-      if (on && instance == null) {
-        instance =
-          AutomaticTranslation(context, PhoneEngine(context.applicationContext)).also {
-            SpeechControllerImpl.setSpeechHold(it)
-          }
-      } else if (!on && instance != null) {
-        stop()
-      }
+      val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+      val auto = TranslationSettings.auto(prefs)
+      if (!auto && !TranslationSettings.notifications(prefs)) return stop()
+      val translation =
+        instance ?: AutomaticTranslation(context, PhoneEngine(context.applicationContext)).also { instance = it }
+      SpeechControllerImpl.setSpeechHold(if (auto) translation else null)
     }
 
+    /** Whether notifications are translated: Automatic translation or Translate notifications is on. */
+    @JvmStatic
+    fun translatesNotifications(): Boolean = instance != null
+
     /**
-     * Gives [done] the translation of [text] while Automatic translation is on, else [text], on the
-     * main thread. For speech that SandFly's speech doesn't say, such as notifications read in the
-     * voice chosen for their app.
+     * Gives [done] the translation of [text], or [text] itself when it isn't translated or
+     * translation is off, on the main thread. For notifications, which are translated before they
+     * are queued.
      */
     @JvmStatic
     fun translate(text: CharSequence, done: (CharSequence) -> Unit) {
-      val auto = instance ?: return done(text)
-      auto.process(text, done)
+      val translation = instance ?: return done(text)
+      translation.process(text, done)
     }
 
     @JvmStatic

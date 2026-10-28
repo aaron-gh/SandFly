@@ -30,6 +30,10 @@
         android:defaultValue="false"
         android:key="pref_translation_auto"
         android:title="@string/title_pref_translation_auto" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_translation_notifications"
+        android:title="@string/title_pref_translation_notifications" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="pref_translation_auto_service_choice"
         android:persistent="false"

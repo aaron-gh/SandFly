@@ -170,9 +170,17 @@ object NotificationReader {
     var handedAt = 0L
     /** Since when SandFly's speech has been quiet while reading it, or 0. */
     var quietSince = 0L
+    /** Whether its text went to translation, so SandFly's speech doesn't translate it again. */
+    var translationChecked = false
+    /** Whether its text is a translation. */
+    var translated = false
     val speak = Runnable { NotificationReader.speak(this) }
 
-    fun copy() = Readout(info, decision, text, settings, recorded = false)
+    fun copy() =
+      Readout(info, decision, text, settings, recorded = false).also {
+        it.translationChecked = translationChecked
+        it.translated = translated
+      }
   }
 
   private val stopAfterLimit = Runnable { stop() }
@@ -506,9 +514,26 @@ object NotificationReader {
     }
     val readout = Readout(info, decision, text, settings)
     val next = { if (holdForTouch) holdForTouch(readout) else schedule(readout) }
+    // Private notifications aren't translated, so that their text is never sent to a service.
+    val translated = { if (decision.private) next() else translate(context, readout, next) }
     if (settings.detectLanguage && !decision.private) {
-      detectLanguage(context, readout) { next() }
+      detectLanguage(context, readout) { translated() }
     } else {
+      translated()
+    }
+  }
+
+  /**
+   * Translates [readout]'s text into the target language, while notifications are translated, then
+   * runs [next].
+   */
+  private fun translate(context: Context, readout: Readout, next: () -> Unit) {
+    if (!AutomaticTranslation.translatesNotifications()) return next()
+    val original = readout.text
+    AutomaticTranslation.translate(original) { text ->
+      readout.translationChecked = true
+      readout.translated = text !== original
+      readout.text = text
       next()
     }
   }
@@ -781,38 +806,32 @@ object NotificationReader {
           onDone(readout, SpeechController.STATUS_INTERRUPTED)
           return@whenSandFlyIsQuiet
         }
-        // SandFly's speech translates what it says; the app's own voice is given the translation.
-        AutomaticTranslation.translate(readout.text) { text ->
-          if (readout.cancelled) {
-            onDone(readout, SpeechController.STATUS_INTERRUPTED)
-            return@translate
-          }
-          voice.speak(
-            text,
-            flush = interrupt,
-            locale = localeOf(text),
-            listener =
-              object : NotificationVoice.Listener {
-                override fun onStart() = onStarted(readout)
+        // A translation is read in the voice profile's own voice, not one for its language.
+        voice.speak(
+          if (readout.translated) readout.text.toString() else readout.text,
+          flush = interrupt,
+          locale = if (readout.translated) null else localeOf(readout.text),
+          listener =
+            object : NotificationVoice.Listener {
+              override fun onStart() = onStarted(readout)
 
-                override fun onDone(spoken: Boolean) =
-                  onDone(readout, if (spoken) SpeechController.STATUS_SPOKEN else SpeechController.STATUS_INTERRUPTED)
+              override fun onDone(spoken: Boolean) =
+                onDone(readout, if (spoken) SpeechController.STATUS_SPOKEN else SpeechController.STATUS_INTERRUPTED)
 
-                override fun onUnavailable() {
-                  if (readout.cancelled) {
-                    onDone(readout, SpeechController.STATUS_INTERRUPTED)
-                    return
-                  }
-                  LogUtils.e(TAG, "Reading a notification of %s in SandFly's voice", readout.info.packageName)
-                  readout.fellBack = true
-                  // SandFly's voice reads it now, so notifications for it aren't held behind it.
-                  readout.voiceKey = ""
-                  readout.handedAt = SystemClock.uptimeMillis()
-                  speakInSandFlyVoice(readout, flags, sound = false)
+              override fun onUnavailable() {
+                if (readout.cancelled) {
+                  onDone(readout, SpeechController.STATUS_INTERRUPTED)
+                  return
                 }
-              },
-          )
-        }
+                LogUtils.e(TAG, "Reading a notification of %s in SandFly's voice", readout.info.packageName)
+                readout.fellBack = true
+                // SandFly's voice reads it now, so notifications for it aren't held behind it.
+                readout.voiceKey = ""
+                readout.handedAt = SystemClock.uptimeMillis()
+                speakInSandFlyVoice(readout, flags, sound = false)
+              }
+            },
+        )
       }
       return
     }
@@ -840,6 +859,7 @@ object NotificationReader {
         .setUtteranceGroup(SpeechController.UTTERANCE_GROUP_NOTIFICATIONS)
         .setStartingAction { onStarted(readout) }
         .setCompletedAction { status -> onDone(readout, status) }
+    if (readout.translationChecked) options.setSpeechParams(AutomaticTranslation.untranslated())
     val speech = Feedback.speech(readout.text, options)
     if (sound) speech.sound(R.raw.chime_down)
     // Nothing is said while SandFly is paused.

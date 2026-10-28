@@ -833,11 +833,13 @@ Text over 5,000 characters is cut. A translation is kept until the phrase or the
 
 With **Settings > Translation > Automatic translation** on, speech in another language than **Translate into** is translated before it is spoken, notifications included, also those read in the voice chosen for their app. The **Automatic translation** reading control, under special features in Reading controls and off by default, turns it on and off.
 
+**Translate notifications** translates only notifications, with Automatic translation off. A notification is translated before it is queued, so it keeps its place. One read with a voice profile, chosen for all notifications, an app or a rule, is read in that profile's voice, without a voice for the target language. Private notifications aren't translated, so their text is never sent to a service.
+
 The language of each utterance is identified on the phone with ML Kit language identification, which has to be at least 70% sure. Speech already in the target language, in one of **Languages not translated**, or, when **Translate from** is a language, in any other language, is spoken as it is and never sent to a service. Text with fewer than three letters isn't checked. Recent languages and translations are remembered, so going back to an item doesn't translate it again.
 
 **Automatic translation service** is On-device, Google Cloud Translation, DeepL, Microsoft Translator or LibreTranslate; the AI service takes too long for every utterance. It is the Translation service unless that is the AI service, and then On-device. Its settings, such as an API key, show under it.
 
-The sounds and vibrations of an utterance play at once; its words come when the translation does. Speech after it waits for it, so the order stays the same, and newer speech that interrupts drops it, except notifications. A translation that takes longer than 3 seconds, or fails, gives way to the original text. On-device languages that aren't downloaded start downloading, which is said once; until they are, that speech is spoken untranslated. On an Android 17 emulator, moving between items took as long with Automatic translation on as off.
+The sounds and vibrations of an utterance play at once; its words come when the translation does. Speech after it waits for it, so the order stays the same, and newer speech that interrupts drops it, except notifications. A translation that takes longer than 3 seconds, or fails, gives way to the original text. An on-device language that isn't downloaded starts downloading once text in it has been identified three times, which is said once, so that one phrase taken for another language doesn't download a model; until then, that speech is spoken untranslated. On an Android 17 emulator, moving between items took as long with Automatic translation on as off.
 
 ## Image and screen descriptions
 
