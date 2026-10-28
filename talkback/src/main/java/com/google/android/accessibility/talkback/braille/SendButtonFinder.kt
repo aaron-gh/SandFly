@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.braille
 
 import android.graphics.Rect
+import android.util.Log
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Role
@@ -29,6 +30,8 @@ import java.util.Locale
  * keyboard's submit gesture has to press the send button next to the field instead.
  */
 object SendButtonFinder {
+  private const val TAG = "SendButtonFinder"
+
   /** Stops a search through a huge window from holding up the keyboard. */
   private const val MAX_NODES = 3000
 
@@ -53,7 +56,12 @@ object SendButtonFinder {
     field: AccessibilityNodeInfoCompat,
     sendWords: Collection<String>,
   ): AccessibilityNodeInfoCompat? {
-    val root = AccessibilityNodeInfoUtils.getRoot(field) ?: return null
+    val root =
+      AccessibilityNodeInfoUtils.getRoot(field)
+        ?: run {
+          Log.i(TAG, "No root for the field")
+          return null
+        }
     val fieldBounds = Rect().also { field.getBoundsInScreen(it) }
     var best: Candidate? = null
     val queue = ArrayDeque<AccessibilityNodeInfoCompat>().apply { add(root) }
@@ -65,16 +73,28 @@ object SendButtonFinder {
         node.getChild(i)?.let { queue.add(it) }
       }
       val strength = matchStrength(node, sendWords)
-      if (strength == Strength.NONE || node.isEditable || !node.isVisibleToUser) {
+      if (strength == Strength.NONE) {
         continue
       }
-      val target = clickTarget(node) ?: continue
+      // Each view that looks like a send button is logged with why it was skipped, as an app whose
+      // send button isn't found can't be seen from here.
+      if (node.isEditable || !node.isVisibleToUser) {
+        skipped(node, if (node.isEditable) "editable" else "not visible")
+        continue
+      }
+      val target = clickTarget(node)
+      if (target == null) {
+        skipped(node, "nothing clickable")
+        continue
+      }
       if (!target.isEnabled || target == field) {
+        skipped(node, if (target == field) "is the field" else "disabled")
         continue
       }
       val bounds = Rect().also { target.getBoundsInScreen(it) }
       // A container around the field, such as the whole compose bar, would click the wrong thing.
       if (bounds.contains(fieldBounds)) {
+        skipped(node, "contains the field, $bounds")
         continue
       }
       val sameRow = bounds.top < fieldBounds.bottom && bounds.bottom > fieldBounds.top
@@ -86,15 +106,30 @@ object SendButtonFinder {
           !isButton(node) &&
           !isButton(target)
       ) {
+        skipped(node, "not a button outside the field's row, $bounds")
         continue
       }
       val candidate = Candidate(target, sameRow, strength, distance(bounds, fieldBounds))
+      Log.i(TAG, "Candidate ${describe(node)}, same row $sameRow, $strength, $bounds")
       if (best == null || candidate.isBetterThan(best)) {
         best = candidate
       }
     }
+    Log.i(
+      TAG,
+      "Field ${field.className} at $fieldBounds, words $sendWords, $visited views searched" +
+        (if (queue.isEmpty()) "" else " (stopped at the limit)") +
+        ", send button: ${best?.node?.let { describe(it) }}",
+    )
     return best?.node
   }
+
+  private fun skipped(node: AccessibilityNodeInfoCompat, reason: String) {
+    Log.i(TAG, "Skipped ${describe(node)}: $reason")
+  }
+
+  private fun describe(node: AccessibilityNodeInfoCompat): String =
+    "${node.className} \"${node.contentDescription ?: node.text}\" id=${node.viewIdResourceName}"
 
   /** Returns whether [viewId], such as `com.whatsapp:id/send`, names a send button. */
   @JvmStatic

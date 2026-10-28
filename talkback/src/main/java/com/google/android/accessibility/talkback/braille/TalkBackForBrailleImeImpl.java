@@ -16,6 +16,7 @@ import static com.google.common.collect.ImmutableSet.toImmutableSet;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Region;
+import android.util.Log;
 import android.view.WindowManager;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
@@ -166,12 +167,19 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
   public boolean clickSendButton(List<String> sendWords) {
     AccessibilityNodeInfoCompat inputFocus = createFocusFinder().findFocusCompat(FOCUS_INPUT);
     if (inputFocus == null) {
+      Log.i("SendButtonFinder", "No input focus to find a send button for");
       return false;
     }
     inputFocus.refresh();
     AccessibilityNodeInfoCompat sendButton = SendButtonFinder.find(inputFocus, sendWords);
-    return sendButton != null
-        && sendButton.performAction(AccessibilityNodeInfoCompat.ACTION_CLICK);
+    if (sendButton == null) {
+      return false;
+    }
+    boolean clicked = sendButton.performAction(AccessibilityNodeInfoCompat.ACTION_CLICK);
+    if (!clicked) {
+      Log.i("SendButtonFinder", "The send button didn't take the click");
+    }
+    return clicked;
   }
 
   @Override
