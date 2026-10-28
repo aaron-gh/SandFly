@@ -74,6 +74,7 @@ object TranslationSettings {
   const val PREF_MICROSOFT_REGION = "pref_translation_microsoft_region"
   const val PREF_LIBRETRANSLATE_ADDRESS = "pref_translation_libretranslate_address"
   const val PREF_AUTO = "pref_translation_auto"
+  const val PREF_NOTIFICATIONS = "pref_translation_notifications"
   const val PREF_AUTO_SERVICE = "pref_translation_auto_service"
   const val PREF_UNTRANSLATED = "pref_translation_untranslated"
 
@@ -106,6 +107,9 @@ object TranslationSettings {
   fun auto(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_AUTO, false)
 
   fun setAuto(prefs: SharedPreferences, on: Boolean) = prefs.edit { putBoolean(PREF_AUTO, on) }
+
+  /** Whether notifications in another language are translated, also with Automatic translation off. */
+  fun notifications(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_NOTIFICATIONS, false)
 
   /**
    * The service of Automatic translation: the chosen one; else the Translation service, unless it

@@ -50,6 +50,7 @@ class AutomaticTranslationTest {
     val waiting = mutableMapOf<String, (Translator.Result) -> Unit>()
     var slow = false
     var translated = 0
+    val downloads = mutableListOf<Boolean>()
     var closed = false
 
     override fun detect(text: String, done: (String?) -> Unit) =
@@ -60,9 +61,11 @@ class AutomaticTranslationTest {
       service: TranslationService,
       from: String,
       to: String,
+      download: Boolean,
       done: (Translator.Result) -> Unit,
     ) {
       translated++
+      downloads += download
       val result: Translator.Result =
         translations[text]?.let { Translator.Result.Done(Translation(it, from, to)) }
           ?: Translator.Result.Failed(TranslationFailure(TranslationFailure.Kind.OTHER), service)
@@ -193,6 +196,29 @@ class AutomaticTranslationTest {
     auto.close()
     assertEquals(listOf("Guten Morgen"), spoken)
     assertTrue(engine.closed)
+  }
+
+  @Test
+  fun translateNotifications_translatesNotificationsWithoutAutomaticTranslation() {
+    prefs.edit().putBoolean(TranslationSettings.PREF_NOTIFICATIONS, true).commit()
+    AutomaticTranslation.update(context)
+    assertTrue(AutomaticTranslation.translatesNotifications())
+    prefs.edit().putBoolean(TranslationSettings.PREF_NOTIFICATIONS, false).commit()
+    AutomaticTranslation.update(context)
+    assertFalse(AutomaticTranslation.translatesNotifications())
+    val texts = mutableListOf<CharSequence>()
+    AutomaticTranslation.translate("Guten Morgen") { texts += it }
+    assertEquals(listOf("Guten Morgen"), texts.map { it.toString() })
+  }
+
+  @Test
+  fun languageModels_downloadOnlyForALanguageHeardInThreeTexts() {
+    engine.languages["Wie geht es dir"] = "de"
+    engine.languages["Bis morgen am Bahnhof"] = "de"
+    say("Guten Morgen")
+    say("Wie geht es dir")
+    say("Bis morgen am Bahnhof")
+    assertEquals(listOf(false, false, true), engine.downloads)
   }
 
   @Test

@@ -61,10 +61,12 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
     onClick("pref_translation_swap_action") { swap() }
     onClick("pref_translation_auto_service_choice") { chooseAutoService() }
     onClick("pref_translation_untranslated_choice") { chooseUntranslated() }
-    findPreference<Preference>(TranslationSettings.PREF_AUTO)!!.setOnPreferenceChangeListener { _, _ ->
-      // After the switch has saved its value.
-      view?.post { refresh() }
-      true
+    for (key in listOf(TranslationSettings.PREF_AUTO, TranslationSettings.PREF_NOTIFICATIONS)) {
+      findPreference<Preference>(key)!!.setOnPreferenceChangeListener { _, _ ->
+        // After the switch has saved its value.
+        view?.post { refresh() }
+        true
+      }
     }
   }
 
@@ -91,11 +93,11 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
     find("pref_translation_swap_action").isVisible = source != null
 
     findPreference<Preference>("pref_translation_auto_service_choice")!!.apply {
-      isEnabled = TranslationSettings.auto(prefs)
+      isEnabled = autoServiceUsed()
       summary = serviceSummary(autoService())
     }
     findPreference<Preference>("pref_translation_untranslated_choice")!!.apply {
-      isEnabled = TranslationSettings.auto(prefs)
+      isEnabled = autoServiceUsed()
       val untranslated = TranslationSettings.untranslated(prefs)
       summary =
         if (untranslated.isEmpty()) getString(R.string.translation_untranslated_none)
@@ -106,6 +108,9 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
 
   private fun autoService(): TranslationService = TranslationSettings.autoService(prefs, onDevice != null)
 
+  /** Whether Automatic translation's service is used: for all speech, or for notifications. */
+  private fun autoServiceUsed(): Boolean = TranslationSettings.auto(prefs) || TranslationSettings.notifications(prefs)
+
   /**
    * A category of settings for each service in use, the Translation service and Automatic
    * translation's, for those that have settings.
@@ -115,7 +120,7 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
     serviceCategories.clear()
     val services = buildList {
       add(service())
-      if (TranslationSettings.auto(prefs)) add(autoService())
+      if (autoServiceUsed()) add(autoService())
     }.distinct().filter { it != TranslationService.AI }
     for ((index, service) in services.withIndex()) {
       val category =
