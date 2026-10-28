@@ -42,8 +42,15 @@ class MlKitTranslation : OnDeviceTranslation {
       .toMap()
   private val downloading = mutableSetOf<String>()
   private var identifier: LanguageIdentifier? = null
-  private var translator: Translator? = null
-  private var translatorPair: Pair<String, String>? = null
+  /** A client for each language pair in use, the least recently used closed beyond [MAX_CLIENTS]. */
+  private val translators =
+    object : LinkedHashMap<Pair<String, String>, Translator>(MAX_CLIENTS + 1, 0.75f, true) {
+      override fun removeEldestEntry(eldest: MutableMap.MutableEntry<Pair<String, String>, Translator>): Boolean {
+        if (size <= MAX_CLIENTS) return false
+        eldest.value.close()
+        return true
+      }
+    }
 
   override val languages: Set<String> = codes.keys
 
@@ -97,7 +104,9 @@ class MlKitTranslation : OnDeviceTranslation {
 
   override fun delete(language: String, done: (Boolean) -> Unit) {
     val code = codes[language] ?: return done(false)
-    if (translatorPair?.let { language in it.toList() } == true) closeTranslator()
+    translators.entries.removeAll { (pair, client) ->
+      (language in pair.toList()).also { if (it) client.close() }
+    }
     models
       .deleteDownloadedModel(TranslateRemoteModel.Builder(code).build())
       .addOnCompleteListener { task -> done(task.isSuccessful) }
@@ -107,15 +116,13 @@ class MlKitTranslation : OnDeviceTranslation {
     val source = codes[from]
     val target = codes[to]
     if (source == null || target == null) return done(null)
-    if (translatorPair != from to to) {
-      closeTranslator()
-      translator =
+    val client =
+      translators.getOrPut(from to to) {
         com.google.mlkit.nl.translate.Translation.getClient(
           TranslatorOptions.Builder().setSourceLanguage(source).setTargetLanguage(target).build()
         )
-      translatorPair = from to to
-    }
-    translator!!
+      }
+    client
       .translate(text)
       .addOnSuccessListener { done(it) }
       .addOnFailureListener { e ->
@@ -125,19 +132,15 @@ class MlKitTranslation : OnDeviceTranslation {
   }
 
   override fun close() {
-    closeTranslator()
+    translators.values.forEach { it.close() }
+    translators.clear()
     identifier?.close()
     identifier = null
-  }
-
-  private fun closeTranslator() {
-    translator?.close()
-    translator = null
-    translatorPair = null
   }
 
   private companion object {
     const val TAG = "MlKitTranslation"
     const val MIN_CONFIDENCE = 0.5f
+    const val MAX_CLIENTS = 3
   }
 }

@@ -331,6 +331,7 @@
     <string name="pref_selector_switch_tts_engine_key" translatable="false">pref_selector_switch_tts_engine_key</string>
     <string name="pref_selector_speech_stream_key" translatable="false">pref_selector_speech_stream_key</string>
     <string name="pref_selector_sound_mode_key" translatable="false">pref_selector_sound_mode_key</string>
+    <string name="pref_selector_auto_translation_key" translatable="false">pref_selector_auto_translation_key</string>
     <string name="pref_selector_vertical_navigation_key" translatable="false">pref_selector_vertical_navigation_key</string>
     <string name="pref_selector_voice_profile_key" translatable="false">pref_selector_voice_profile_key</string>
     <string name="pref_selector_voice_profile_moved_key" translatable="false">pref_selector_voice_profile_moved</string>
@@ -1703,6 +1704,7 @@
     <bool name="pref_selector_switch_tts_engine_default">false</bool>
     <bool name="pref_selector_speech_stream_default">false</bool>
     <bool name="pref_selector_sound_mode_default">false</bool>
+    <bool name="pref_selector_auto_translation_default">false</bool>
     <bool name="pref_selector_vertical_navigation_default">false</bool>
     <bool name="pref_selector_voice_profile_default">false</bool>
     <bool name="pref_selector_touch_focus_latency_default">false</bool>
@@ -2039,6 +2041,7 @@
     <string name="selector_switch_tts_engine" translatable="false">SELECTOR_SWITCH_TTS_ENGINE</string>
     <string name="selector_speech_stream" translatable="false">SELECTOR_SPEECH_STREAM</string>
     <string name="selector_sound_mode" translatable="false">SELECTOR_SOUND_MODE</string>
+    <string name="selector_auto_translation" translatable="false">SELECTOR_AUTO_TRANSLATION</string>
     <string name="selector_vertical_navigation" translatable="false">SELECTOR_VERTICAL_NAVIGATION</string>
     <string name="selector_voice_profile" translatable="false">SELECTOR_VOICE_PROFILE</string>
     <string name="selector_touch_focus_latency_change" translatable="false">SELECTOR_TOUCH_FOCUS_LATENCY_CHANGE</string>
