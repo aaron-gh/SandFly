@@ -343,6 +343,10 @@ Each control sound comes from where the element is on the screen: from the left 
 
 On Android 13 and later, SandFly uses 3D when its audio plays on wired or USB headphones, a hearing aid, a Bluetooth media device, or a Bluetooth LE headset. Bluetooth LE speakers, broadcasts, and call audio don't count. On earlier versions, any connected audio device counts. To play the sounds in 3D on the speaker as well, or never, change **3D audio** for the theme. Each theme has its own **Control sounds and vibrations** and **3D audio** settings.
 
+### Sound mode reading control
+
+The **Sound mode** reading control, which you can turn on in **Reading controls**, sets the ringer to Sound, Vibrate or Mute when you swipe up or down. Vibrate is left out on devices without a vibrator. Android only lets SandFly turn Mute on or off with **Do Not Disturb access**; without it, SandFly opens that setting.
+
 ## Tutorial
 
 TalkBack's tutorial is a series of pages that describe gestures, with a few practice areas. SandFly replaces it with an interactive tutorial, modelled on the VoiceOver tutorial on the Mac. To open it, go to **SandFly tutorial** in SandFly settings. It also opens the first time SandFly is turned on.

@@ -228,6 +228,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_change_a11y_volume_key,
         R.string.selector_a11y_volume_change,
         R.bool.pref_selector_a11y_volume_default),
+    SOUND_MODE(
+        R.string.pref_selector_sound_mode_key,
+        R.string.selector_sound_mode,
+        R.bool.pref_selector_sound_mode_default),
     CHANGE_BRIGHTNESS(
         R.string.pref_selector_change_brightness_key,
         R.string.selector_brightness_change,
@@ -684,6 +688,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.AUDIO_FOCUS,
           Setting.SCROLLING_SEQUENTIAL,
           Setting.CHANGE_ACCESSIBILITY_VOLUME,
+          Setting.SOUND_MODE,
           Setting.CHANGE_BRIGHTNESS,
           Setting.CHANGE_TOUCH_FOCUS_LATENCY,
           Setting.CHANGE_TYPING_FOCUS_LATENCY,
@@ -1011,6 +1016,10 @@ public class SelectorController implements UserInputEventListener {
       }
       case CHANGE_ACCESSIBILITY_VOLUME -> {
         actionDescription = context.getString(R.string.title_pref_a11y_volume);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case SOUND_MODE -> {
+        actionDescription = context.getString(R.string.quick_settings_sound_mode);
         hint = getAdjustSelectedSettingGestures();
       }
       case CHANGE_BRIGHTNESS -> {
@@ -1986,6 +1995,12 @@ public class SelectorController implements UserInputEventListener {
       }
       case CHANGE_ACCESSIBILITY_VOLUME -> {
         changeAccessibilityVolume(eventId, isNext);
+        return;
+      }
+      case SOUND_MODE -> {
+        String displayText = SoundModeControl.change(context, isNext);
+        announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
+        showQuickMenuActionOverlay(eventId, displayText);
         return;
       }
       case CHANGE_BRIGHTNESS -> {
