@@ -1,70 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-      android:defaultValue=""
-      android:key="@string/pref_tts_engine_key"
-      android:title="@string/title_pref_tts_engine" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-      android:fragment="com.google.android.accessibility.talkback.preference.base.VoiceProfilesFragment"
-      android:key="@string/pref_voice_profiles_screen_key"
-      android:persistent="false"
-      android:title="@string/title_pref_voice_profiles" />
-  <com.google.android.accessibility.talkback.preference.base.SpeechRatePreference
-      android:defaultValue="@integer/pref_speech_rate_default_int"
-      android:key="@string/pref_speech_rate_seekbar_key_int"
-      android:title="@string/title_pref_talkback_speech_rate" />
-  <com.google.android.accessibility.material.preference.AccessibilitySeekBarPreference
-      android:key="@string/pref_speech_pitch_seekbar_key_int"
-      android:persistent="false"
-      android:title="@string/title_pref_speech_pitch" />
-  <com.google.android.accessibility.material.preference.AccessibilitySeekBarPreference
-      android:key="@string/pref_speech_volume_seekbar_key_int"
-      android:persistent="false"
-      android:title="@string/title_pref_speech_volume" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
-      android:key="@string/pref_speech_stream_key"
-      android:title="@string/title_pref_speech_stream"
-      android:entries="@array/pref_speech_stream_entries"
-      android:entryValues="@array/pref_speech_stream_values"
-      android:summary="%s" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="@bool/pref_switch_languages_default"
-      android:key="@string/pref_switch_languages_key"
-      android:title="@string/title_pref_switch_languages" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="@bool/pref_switch_dialects_default"
-      android:key="@string/pref_switch_dialects_key"
-      android:title="@string/title_pref_switch_dialects" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="@bool/pref_intonation_default"
-      android:key="@string/pref_intonation_key"
-      android:summary="@string/summary_pref_intonation"
-      android:title="@string/title_pref_intonation" />
-  <ListPreference
-      android:defaultValue="@string/pref_phonetic_letters_mode_default"
-      android:dialogTitle="@string/title_pref_phonetic_letters_mode"
-      android:entries="@array/pref_phonetic_letters_mode_entries"
-      android:entryValues="@array/pref_phonetic_letters_mode_values"
-      android:key="@string/pref_phonetic_letters_mode_key"
-      android:summary="%s"
-      android:title="@string/title_pref_phonetic_letters_mode" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="@bool/pref_speak_in_phrases_default"
-      android:key="@string/pref_speak_in_phrases_key"
-      android:title="@string/title_pref_speak_in_phrases"
-      android:summary="@string/summary_pref_speak_in_phrases" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="@bool/pref_mute_speech_while_recording_default"
-      android:key="@string/pref_mute_speech_while_recording_key"
-      android:title="@string/title_pref_mute_speech_while_recording"
-      android:summary="@string/summary_pref_mute_speech_while_recording" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-      android:fragment="com.google.android.accessibility.talkback.speechcontrol.SpeechControlFragment"
-      android:key="pref_speech_control_screen"
-      android:title="@string/title_pref_speech_control" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-      android:key="@string/pref_system_tts_settings_key"
-      android:title="@string/title_pref_system_tts_settings"
-      android:summary="@string/summary_tts_settings" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_speech_category_voice"
+      android:title="@string/speech_category_voice">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue=""
+        android:key="@string/pref_tts_engine_key"
+        android:title="@string/title_pref_tts_engine" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.preference.base.VoiceProfilesFragment"
+        android:key="@string/pref_voice_profiles_screen_key"
+        android:persistent="false"
+        android:title="@string/title_pref_voice_profiles" />
+    <com.google.android.accessibility.talkback.preference.base.SpeechRatePreference
+        android:defaultValue="@integer/pref_speech_rate_default_int"
+        android:key="@string/pref_speech_rate_seekbar_key_int"
+        android:title="@string/title_pref_talkback_speech_rate" />
+    <com.google.android.accessibility.material.preference.AccessibilitySeekBarPreference
+        android:key="@string/pref_speech_pitch_seekbar_key_int"
+        android:persistent="false"
+        android:title="@string/title_pref_speech_pitch" />
+    <com.google.android.accessibility.material.preference.AccessibilitySeekBarPreference
+        android:key="@string/pref_speech_volume_seekbar_key_int"
+        android:persistent="false"
+        android:title="@string/title_pref_speech_volume" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="@string/pref_system_tts_settings_key"
+        android:title="@string/title_pref_system_tts_settings"
+        android:summary="@string/summary_tts_settings" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_speech_category_languages"
+      android:title="@string/speech_category_languages">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_switch_languages_default"
+        android:key="@string/pref_switch_languages_key"
+        android:title="@string/title_pref_switch_languages" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_switch_dialects_default"
+        android:key="@string/pref_switch_dialects_key"
+        android:title="@string/title_pref_switch_dialects" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_speech_category_pronunciation"
+      android:title="@string/speech_category_pronunciation">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_intonation_default"
+        android:key="@string/pref_intonation_key"
+        android:summary="@string/summary_pref_intonation"
+        android:title="@string/title_pref_intonation" />
+    <ListPreference
+        android:defaultValue="@string/pref_phonetic_letters_mode_default"
+        android:dialogTitle="@string/title_pref_phonetic_letters_mode"
+        android:entries="@array/pref_phonetic_letters_mode_entries"
+        android:entryValues="@array/pref_phonetic_letters_mode_values"
+        android:key="@string/pref_phonetic_letters_mode_key"
+        android:summary="%s"
+        android:title="@string/title_pref_phonetic_letters_mode" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_speak_in_phrases_default"
+        android:key="@string/pref_speak_in_phrases_key"
+        android:title="@string/title_pref_speak_in_phrases"
+        android:summary="@string/summary_pref_speak_in_phrases" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_speech_category_stopping"
+      android:title="@string/speech_category_stopping">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_touch_stops_speech_default"
+        android:key="@string/pref_touch_stops_speech_key"
+        android:title="@string/title_pref_touch_stops_speech" />
+    <ListPreference
+        android:defaultValue="@string/pref_interrupt_typing_default"
+        android:entries="@array/pref_interrupt_typing_entries"
+        android:entryValues="@array/pref_interrupt_typing_values"
+        android:key="@string/pref_interrupt_typing_key"
+        android:summary="%s"
+        android:title="@string/title_pref_interrupt_typing" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_interrupt_enter_default"
+        android:key="@string/pref_interrupt_enter_key"
+        android:title="@string/title_pref_interrupt_enter" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_proximity_default"
+        android:key="@string/pref_proximity_key"
+        android:title="@string/title_pref_cover_proximity_sensor" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_mute_speech_while_recording_default"
+        android:key="@string/pref_mute_speech_while_recording_key"
+        android:title="@string/title_pref_mute_speech_while_recording"
+        android:summary="@string/summary_pref_mute_speech_while_recording" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_speech_category_other_apps"
+      android:title="@string/speech_category_other_apps">
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.speechcontrol.SpeechControlFragment"
+        android:key="pref_speech_control_screen"
+        android:title="@string/title_pref_speech_control" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 </PreferenceScreen>

@@ -192,6 +192,13 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
         }
       }
     }
+    if (!FormFactorUtils.isAndroidWear()) {
+      Preference vibrationWatch =
+          findPreference(getString(R.string.pref_reserve_vibration_watch_gestures_key));
+      if (vibrationWatch != null) {
+        vibrationWatch.setVisible(false);
+      }
+    }
     getCustomizationMap().forEach(this::runPreferencesCustomization);
     collapseCategories();
   }

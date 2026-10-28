@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.preference.base.FocusIndicatorPrefFragment"
+      android:key="@string/pref_category_manage_focus_indicator_key"
+      android:title="@string/title_pref_category_manage_focus_indicator" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_reduce_window_delay_default"
+      android:key="@string/pref_reduce_window_delay_key"
+      android:summary="@string/pref_reduce_window_delay_summary"
+      android:title="@string/pref_reduce_window_delay_title"/>
+</PreferenceScreen>

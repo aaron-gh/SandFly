@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_volume_keys_adjust_sliders_default"
+      android:key="@string/pref_volume_keys_adjust_sliders_key"
+      android:summary="@string/summary_pref_volume_keys_adjust_sliders"
+      android:title="@string/title_pref_volume_keys_adjust_sliders" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_volume_keys_move_cursor_default"
+      android:key="@string/pref_volume_keys_move_cursor_key"
+      android:summary="@string/summary_pref_volume_keys_move_cursor"
+      android:title="@string/title_pref_volume_keys_move_cursor" />
+  <com.google.android.accessibility.talkback.preference.base.AccessibilityFooterPreference
+      android:key="@string/pref_speech_footer_key"
+      android:title="@string/title_pref_speech_footer"
+      android:selectable="false" />
+</PreferenceScreen>

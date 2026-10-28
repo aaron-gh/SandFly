@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- How touches focus and activate items. -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-      android:key="@string/pref_category_latency_reduction_shortcut_key"
-      android:title="@string/title_pref_latency_reduction"
-      android:summary="@string/talkback_latency_reduction_summary"
-      android:fragment="com.google.android.accessibility.talkback.preference.base.TalkBackLatencyReductionPreferenceFragment" />
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
   <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
       android:defaultValue="@string/pref_lift_to_activate_default"
       android:dialogTitle="@string/title_pref_lift_to_activate"
@@ -19,32 +14,26 @@
       android:key="@string/pref_single_tap_key"
       android:summary="@string/summary_pref_single_tap"
       android:title="@string/title_pref_single_tap" />
-  <com.google.android.accessibility.talkback.preference.base.CommandSwitchPreference
-      android:defaultValue="@bool/pref_fix_stuck_touch_exploration_default"
-      android:key="@string/pref_fix_stuck_touch_exploration_key"
-      android:title="@string/title_pref_fix_stuck_touch_exploration" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="@bool/pref_touch_stops_speech_default"
-      android:key="@string/pref_touch_stops_speech_key"
-      android:title="@string/title_pref_touch_stops_speech" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.preference.base.FocusDelayPrefFragment"
+      android:key="@string/pref_touch_focus_time_out_key"
+      app:summary="%s"
+      android:title="@string/title_pref_touch_focus_timeout" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="true"
       android:key="pref_speak_nav_bar_buttons"
       android:summary="@string/summary_pref_speak_nav_bar_buttons"
       android:title="@string/title_pref_speak_nav_bar_buttons" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="@bool/pref_volume_keys_adjust_sliders_default"
-      android:key="@string/pref_volume_keys_adjust_sliders_key"
-      android:summary="@string/summary_pref_volume_keys_adjust_sliders"
-      android:title="@string/title_pref_volume_keys_adjust_sliders" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="@bool/pref_volume_keys_move_cursor_default"
-      android:key="@string/pref_volume_keys_move_cursor_key"
-      android:summary="@string/summary_pref_volume_keys_move_cursor"
-      android:title="@string/title_pref_volume_keys_move_cursor" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="false"
-      android:key="@string/pref_reserve_vibration_watch_gestures_key"
-      android:title="@string/title_pref_reserve_vibration_watch_gestures"
-      android:summary="@string/summary_pref_reserve_vibration_watch_gestures" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.directtouch.DirectTouchFragment"
+      android:key="@string/pref_direct_touch_key"
+      android:title="@string/title_pref_direct_touch" />
+  <com.google.android.accessibility.talkback.preference.base.CommandSwitchPreference
+      android:defaultValue="@bool/pref_fix_stuck_touch_exploration_default"
+      android:key="@string/pref_fix_stuck_touch_exploration_key"
+      android:title="@string/title_pref_fix_stuck_touch_exploration" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:title="@string/reset_latency_settings_title"
+      android:key="@string/pref_reset_latency_settings_key"
+      app:allowDividerBelow="true"/>
 </PreferenceScreen>

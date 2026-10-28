@@ -106,61 +106,13 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
       }
     }
 
-    if (FormFactorUtils.isAndroidTv()) {
-      Preference preference = findPreferenceByResId(R.string.pref_tutorial_and_help_key);
-      if (preference != null) {
-        preference.setTitle(
-            TvTutorialInitiator.shouldShowTraining(VendorConfigReader.retrieveConfig(context))
-                ? R.string.title_pref_category_tutorial
-                : R.string.title_pref_category_help_no_tutorial);
-        preference.setFragment(TutorialAndHelpFragment.class.getName());
-      }
-    } else {
-      updateTutorialAndHelpPreferencesForPhoneOrTablet();
-    }
-
     // During setup, do not allow user access below settings.
     if (!SettingsUtils.allowLinksOutOfSettings(context)) {
-      removePreference(R.string.pref_category_apps_key, R.string.pref_manage_labels_key);
+      hidePreference(R.string.pref_manage_labels_key);
     }
 
     if (!ImageCaptioner.supportsImageCaption(context)) {
-      removePreference(R.string.pref_category_audio_key, R.string.pref_auto_image_captioning_key);
-    }
-    Updater.setUpPreferences(this);
-    SettingsBackup.setUpPreferences(this);
-  }
-
-  private void updateTutorialAndHelpPreferencesForPhoneOrTablet() {
-    Preference preference = findPreferenceByResId(R.string.pref_tutorial_and_help_key);
-    if (preference != null) {
-      preference.setIntent(TutorialInitiator.createTutorialIntent(getActivity()));
-    }
-    preference = findPreferenceByResId(R.string.pref_help_and_feedback_key);
-    if (preference != null) {
-      if (HelpAndFeedbackUtils.supportsHelpAndFeedback(context)) {
-        preference.setOnPreferenceClickListener(
-            preference1 -> {
-              HelpAndFeedbackUtils.launchHelpAndFeedback(getActivity());
-              return true;
-            });
-      } else {
-        preference.setTitle(R.string.title_pref_help);
-        PreferenceActionHelper.assignWebIntentToPreference(this, preference, WebPage.WEB_PAGE_HELP);
-      }
-    }
-    preference = findPreferenceByResId(R.string.pref_gup_key);
-    if (preference != null) {
-      preference.setOnPreferenceClickListener(
-          gUpPreference -> {
-            if (NetworkUtils.isNetworkConnected(context)) {
-              settingsMetricStore.onGupPreferenceClicked();
-            }
-            return false;
-          });
-      Intent intent = new Intent(Intent.ACTION_VIEW);
-      intent.setData(Uri.parse(GUP_SUPPORT_PORTAL_URL));
-      preference.setIntent(intent);
+      hidePreference(R.string.pref_auto_image_captioning_key);
     }
   }
 
@@ -180,11 +132,8 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
     hatsSurveyRequester.ifPresent(requester -> requester.setOnSurveyAvailableListener(null));
   }
 
-  private void removePreference(int categoryKeyId, int preferenceKeyId) {
-    final PreferenceGroup category = (PreferenceGroup) findPreferenceByResId(categoryKeyId);
-    if (category != null) {
-      PreferenceSettingsUtils.hidePreference(context, category, preferenceKeyId);
-    }
+  private void hidePreference(int preferenceKeyId) {
+    PreferenceSettingsUtils.hidePreference(context, getPreferenceScreen(), preferenceKeyId);
   }
 
   private void assignNewFeaturesIntent() {

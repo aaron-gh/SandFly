@@ -21,34 +21,17 @@ import static com.google.android.accessibility.utils.SettingsUtils.isTouchExplor
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
-import com.google.android.accessibility.utils.FormFactorUtils;
-import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 
-/** Settings for how touches focus and activate items. */
-public class TouchActivationFragment extends TalkbackBaseFragment {
+/** Touch: how touching the screen focuses and activates items. */
+public class TouchActivationFragment extends TalkBackLatencyReductionPreferenceFragment {
 
   public TouchActivationFragment() {
-    super(R.xml.touch_activation_preferences);
-  }
-
-  @Override
-  public CharSequence getTitle() {
-    return getText(R.string.title_pref_touch_activation);
-  }
-
-  @Override
-  public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-    super.onCreatePreferences(savedInstanceState, rootKey);
-    if (!FormFactorUtils.isAndroidWear()) {
-      PreferenceSettingsUtils.hidePreference(
-          getContext(), getPreferenceScreen(), R.string.pref_reserve_vibration_watch_gestures_key);
-    }
+    super(R.xml.touch_activation_preferences, R.string.title_pref_touch);
   }
 
   @Override

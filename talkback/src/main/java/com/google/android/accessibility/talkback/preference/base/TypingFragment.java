@@ -25,16 +25,11 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor;
 
-/** Typing: dictation, keyboard echo, the keyboards and speech while typing. */
-public class TypingFragment extends TalkbackBaseFragment {
+/** Typing: the on-screen keyboard, keyboard echo, dictation and other ways to type. */
+public class TypingFragment extends TalkBackLatencyReductionPreferenceFragment {
 
   public TypingFragment() {
-    super(R.xml.typing_preferences);
-  }
-
-  @Override
-  public CharSequence getTitle() {
-    return getText(R.string.title_pref_typing);
+    super(R.xml.typing_preferences, R.string.title_pref_typing);
   }
 
   @Override
