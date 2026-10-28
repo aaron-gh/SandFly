@@ -834,9 +834,9 @@ public class KeyComboMapper {
    *
    * @param performedAction the action generating from key combos.
    */
-  /** Performs a Quick Nav command other than Toggle. */
+  /** Performs an arrow key navigation command other than Toggle. */
   @CanIgnoreReturnValue
-  boolean performQuickNavCommand(QuickNavCommand command) {
+  boolean performArrowKeyNavCommand(ArrowKeyNavCommand command) {
     TalkBackPhysicalKeyboardShortcut action = command.getAction();
     if (action != null) {
       EventId eventId =

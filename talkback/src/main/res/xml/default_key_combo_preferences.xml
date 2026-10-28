@@ -72,50 +72,50 @@
             android:title="@string/keycombo_menu_perform_long_click" />
     </PreferenceCategory>
     <PreferenceCategory
-        android:key="pref_quick_nav_category"
-        android:title="@string/keycombo_menu_category_quick_nav">
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_toggle"
-            android:title="@string/quick_nav_toggle" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_next_item"
+        android:key="pref_arrow_key_nav_category"
+        android:title="@string/keycombo_menu_category_arrow_key_nav">
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_toggle"
+            android:title="@string/arrow_key_nav_toggle" />
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_next_item"
             android:title="@string/keycombo_menu_navigate_next" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_previous_item"
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_previous_item"
             android:title="@string/keycombo_menu_navigate_previous" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_reading_control_down"
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_reading_control_down"
             android:title="@string/keycombo_menu_global_adjust_reading_setting_next" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_reading_control_up"
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_reading_control_up"
             android:title="@string/keycombo_menu_global_adjust_reading_settings_previous" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_click"
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_click"
             android:title="@string/keycombo_menu_perform_click" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_next_reading_control"
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_next_reading_control"
             android:title="@string/keycombo_menu_global_scroll_forward_reading_menu" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_previous_reading_control"
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_previous_reading_control"
             android:title="@string/keycombo_menu_global_scroll_backward_reading_menu" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_first_item"
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_first_item"
             android:title="@string/keycombo_menu_navigate_first" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_last_item"
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_last_item"
             android:title="@string/keycombo_menu_navigate_last" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_page_up"
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_page_up"
             android:title="@string/title_viewpager_breakout_page_up" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_page_down"
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_page_down"
             android:title="@string/title_viewpager_breakout_page_down" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_page_left"
-            android:title="@string/quick_nav_page_left" />
-        <com.google.android.accessibility.talkback.preference.base.QuickNavKeyPreference
-            android:key="quick_nav_keys_page_right"
-            android:title="@string/quick_nav_page_right" />
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_page_left"
+            android:title="@string/arrow_key_nav_page_left" />
+        <com.google.android.accessibility.talkback.preference.base.ArrowKeyNavKeyPreference
+            android:key="arrow_key_nav_keys_page_right"
+            android:title="@string/arrow_key_nav_page_right" />
     </PreferenceCategory>
     <PreferenceCategory
         android:key="@string/pref_global_actions_category_key"

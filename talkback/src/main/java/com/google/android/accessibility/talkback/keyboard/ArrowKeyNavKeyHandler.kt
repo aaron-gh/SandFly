@@ -20,16 +20,16 @@ import android.content.Context
 import android.view.KeyEvent
 
 /**
- * Turns key events into [QuickNavCommand]s. A key that is also part of two keys pressed together
+ * Turns key events into [ArrowKeyNavCommand]s. A key that is also part of two keys pressed together
  * acts when it is released, unless the second key was pressed meanwhile; other keys act when
- * pressed. Toggle works while Quick Nav is off too, and in a text field being edited only commands
- * of two keys together and Toggle work, so that single arrow keys move the cursor.
+ * pressed. Toggle works while arrow key navigation is off too, and in a text field being edited
+ * only commands of two keys together and Toggle work, so that single arrow keys move the cursor.
  */
-class QuickNavKeyHandler(private val context: Context, private val callbacks: Callbacks) {
+class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks: Callbacks) {
 
   interface Callbacks {
     /** Performs [command], including Toggle. */
-    fun perform(command: QuickNavCommand)
+    fun perform(command: ArrowKeyNavCommand)
 
     /** Whether the focused input is a text field being edited. */
     fun isEditingText(): Boolean
@@ -38,12 +38,12 @@ class QuickNavKeyHandler(private val context: Context, private val callbacks: Ca
   /** Keys other than modifiers that are down, in the order they went down, with their down time. */
   private val heldKeys = LinkedHashMap<Int, Long>()
 
-  /** Keys whose down event Quick Nav consumed, so their up event is consumed too. */
+  /** Keys whose down event arrow key navigation consumed, so their up event is consumed too. */
   private val consumedKeys = HashSet<Int>()
 
   /** A key whose command waits for its release, in case a second key is pressed with it. */
   private var pendingKey = KeyEvent.KEYCODE_UNKNOWN
-  private var pendingCommand: QuickNavCommand? = null
+  private var pendingCommand: ArrowKeyNavCommand? = null
 
   /** Forgets every key, such as when key events may have been lost. */
   fun reset() {
@@ -53,7 +53,8 @@ class QuickNavKeyHandler(private val context: Context, private val callbacks: Ca
   }
 
   /**
-   * Handles a key event that nothing before Quick Nav consumed. Returns true to consume it.
+   * Handles a key event that nothing before arrow key navigation consumed. Returns true to consume
+   * it.
    *
    * @param canAct whether commands may run; keys are still tracked when false.
    */
@@ -69,7 +70,7 @@ class QuickNavKeyHandler(private val context: Context, private val callbacks: Ca
     }
   }
 
-  /** Notes a key event that something before Quick Nav consumed. */
+  /** Notes a key event that something before arrow key navigation consumed. */
   fun onKeyEventConsumedElsewhere(event: KeyEvent) {
     if (event.action == KeyEvent.ACTION_UP) {
       heldKeys.remove(event.keyCode)
@@ -93,11 +94,11 @@ class QuickNavKeyHandler(private val context: Context, private val callbacks: Ca
       return false
     }
 
-    val on = QuickNav.isOn(context)
+    val on = ArrowKeyNav.isOn(context)
     val modifiers = event.modifiers and KeyCombo.KEY_EVENT_MODIFIER_MASK
     if (otherKey != null) {
-      val command = QuickNav.commandFor(context, QuickNav.keys(modifiers, otherKey, keyCode))
-      if (command != null && (on || command == QuickNavCommand.TOGGLE)) {
+      val command = ArrowKeyNav.commandFor(context, ArrowKeyNav.keys(modifiers, otherKey, keyCode))
+      if (command != null && (on || command == ArrowKeyNavCommand.TOGGLE)) {
         // The first key's own command, if it waits, doesn't run.
         clearPending()
         consumedKeys += keyCode
@@ -106,8 +107,9 @@ class QuickNavKeyHandler(private val context: Context, private val callbacks: Ca
       }
     }
 
-    val command = QuickNav.commandFor(context, QuickNav.keys(modifiers, keyCode)) ?: return false
-    if (command != QuickNavCommand.TOGGLE && (!on || callbacks.isEditingText())) {
+    val command =
+      ArrowKeyNav.commandFor(context, ArrowKeyNav.keys(modifiers, keyCode)) ?: return false
+    if (command != ArrowKeyNavCommand.TOGGLE && (!on || callbacks.isEditingText())) {
       return false
     }
     consumedKeys += keyCode
@@ -137,10 +139,10 @@ class QuickNavKeyHandler(private val context: Context, private val callbacks: Ca
 
   /** Whether [keyCode] with [modifiers] is the first of two keys of an assigned command. */
   private fun startsTwoKeyCommand(modifiers: Int, keyCode: Int): Boolean =
-    QuickNavCommand.entries.any {
-      val keys = QuickNav.keysFor(context, it)
+    ArrowKeyNavCommand.entries.any {
+      val keys = ArrowKeyNav.keysFor(context, it)
       val prefix = KeyCombo.extractPrefixKeyCode(keys)
-      keys != QuickNav.UNASSIGNED &&
+      keys != ArrowKeyNav.UNASSIGNED &&
         prefix != KeyEvent.KEYCODE_UNKNOWN &&
         KeyCombo.extractModifiers(keys) == modifiers &&
         (prefix == keyCode || KeyCombo.extractKeyCode(keys) == keyCode)

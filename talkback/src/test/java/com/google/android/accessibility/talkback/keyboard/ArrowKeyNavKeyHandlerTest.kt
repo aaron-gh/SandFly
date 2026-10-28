@@ -35,26 +35,26 @@ import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
-class QuickNavKeyHandlerTest {
+class ArrowKeyNavKeyHandlerTest {
   private lateinit var context: Context
-  private lateinit var handler: QuickNavKeyHandler
-  private val performed = mutableListOf<QuickNavCommand>()
+  private lateinit var handler: ArrowKeyNavKeyHandler
+  private val performed = mutableListOf<ArrowKeyNavCommand>()
   private var editingText = false
   private var time = 1_000L
 
   @Before
   fun setUp() {
     context = RuntimeEnvironment.getApplication()
-    QuickNav.reset(context)
-    QuickNav.setOn(context, false)
+    ArrowKeyNav.reset(context)
+    ArrowKeyNav.setOn(context, false)
     handler =
-      QuickNavKeyHandler(
+      ArrowKeyNavKeyHandler(
         context,
-        object : QuickNavKeyHandler.Callbacks {
-          override fun perform(command: QuickNavCommand) {
+        object : ArrowKeyNavKeyHandler.Callbacks {
+          override fun perform(command: ArrowKeyNavCommand) {
             performed += command
-            if (command == QuickNavCommand.TOGGLE) {
-              QuickNav.setOn(context, !QuickNav.isOn(context))
+            if (command == ArrowKeyNavCommand.TOGGLE) {
+              ArrowKeyNav.setOn(context, !ArrowKeyNav.isOn(context))
             }
           }
 
@@ -93,32 +93,32 @@ class QuickNavKeyHandlerTest {
     assertTrue(up(KEYCODE_DPAD_RIGHT))
     // The left arrow's down went to the app, so its up does too.
     assertFalse(up(KEYCODE_DPAD_LEFT))
-    assertEquals(listOf(QuickNavCommand.TOGGLE), performed)
-    assertTrue(QuickNav.isOn(context))
+    assertEquals(listOf(ArrowKeyNavCommand.TOGGLE), performed)
+    assertTrue(ArrowKeyNav.isOn(context))
   }
 
   @Test
   fun on_rightAlone_nextItemOnRelease() {
-    QuickNav.setOn(context, true)
+    ArrowKeyNav.setOn(context, true)
     assertTrue(down(KEYCODE_DPAD_RIGHT))
     assertTrue(performed.isEmpty())
     assertTrue(up(KEYCODE_DPAD_RIGHT))
-    assertEquals(listOf(QuickNavCommand.NEXT_ITEM), performed)
+    assertEquals(listOf(ArrowKeyNavCommand.NEXT_ITEM), performed)
   }
 
   @Test
   fun on_upAndDownTogether_clicksOnly() {
-    QuickNav.setOn(context, true)
+    ArrowKeyNav.setOn(context, true)
     assertTrue(down(KEYCODE_DPAD_UP))
     assertTrue(down(KEYCODE_DPAD_DOWN))
     assertTrue(up(KEYCODE_DPAD_UP))
     assertTrue(up(KEYCODE_DPAD_DOWN))
-    assertEquals(listOf(QuickNavCommand.CLICK), performed)
+    assertEquals(listOf(ArrowKeyNavCommand.CLICK), performed)
   }
 
   @Test
   fun on_rotorKeys_eitherOrder() {
-    QuickNav.setOn(context, true)
+    ArrowKeyNav.setOn(context, true)
     down(KEYCODE_DPAD_UP)
     down(KEYCODE_DPAD_RIGHT)
     up(KEYCODE_DPAD_RIGHT)
@@ -128,24 +128,24 @@ class QuickNavKeyHandlerTest {
     up(KEYCODE_DPAD_UP)
     up(KEYCODE_DPAD_LEFT)
     assertEquals(
-      listOf(QuickNavCommand.NEXT_READING_CONTROL, QuickNavCommand.PREVIOUS_READING_CONTROL),
+      listOf(ArrowKeyNavCommand.NEXT_READING_CONTROL, ArrowKeyNavCommand.PREVIOUS_READING_CONTROL),
       performed,
     )
   }
 
   @Test
   fun on_modifierCommands_actOnPress() {
-    QuickNav.setOn(context, true)
+    ArrowKeyNav.setOn(context, true)
     assertTrue(down(KEYCODE_DPAD_UP, KeyEvent.META_CTRL_ON or KeyEvent.META_CTRL_LEFT_ON))
-    assertEquals(listOf(QuickNavCommand.FIRST_ITEM), performed)
+    assertEquals(listOf(ArrowKeyNavCommand.FIRST_ITEM), performed)
     assertTrue(up(KEYCODE_DPAD_UP, KeyEvent.META_CTRL_ON or KeyEvent.META_CTRL_LEFT_ON))
     assertTrue(down(KEYCODE_DPAD_DOWN, KeyEvent.META_ALT_ON or KeyEvent.META_ALT_LEFT_ON))
-    assertEquals(listOf(QuickNavCommand.FIRST_ITEM, QuickNavCommand.PAGE_DOWN), performed)
+    assertEquals(listOf(ArrowKeyNavCommand.FIRST_ITEM, ArrowKeyNavCommand.PAGE_DOWN), performed)
   }
 
   @Test
   fun on_unassignedKeysPass() {
-    QuickNav.setOn(context, true)
+    ArrowKeyNav.setOn(context, true)
     assertFalse(down(KEYCODE_N))
     assertFalse(up(KEYCODE_N))
     assertTrue(performed.isEmpty())
@@ -153,23 +153,23 @@ class QuickNavKeyHandlerTest {
 
   @Test
   fun editingText_singleArrowsPass_toggleWorks() {
-    QuickNav.setOn(context, true)
+    ArrowKeyNav.setOn(context, true)
     editingText = true
     assertFalse(down(KEYCODE_DPAD_LEFT))
     assertTrue(performed.isEmpty())
     assertTrue(down(KEYCODE_DPAD_RIGHT))
     up(KEYCODE_DPAD_RIGHT)
     up(KEYCODE_DPAD_LEFT)
-    assertEquals(listOf(QuickNavCommand.TOGGLE), performed)
-    assertFalse(QuickNav.isOn(context))
+    assertEquals(listOf(ArrowKeyNavCommand.TOGGLE), performed)
+    assertFalse(ArrowKeyNav.isOn(context))
   }
 
   @Test
   fun reassignedKeys() {
-    QuickNav.setOn(context, true)
-    QuickNav.save(context, QuickNavCommand.NEXT_ITEM, QuickNav.keys(0, KEYCODE_N))
+    ArrowKeyNav.setOn(context, true)
+    ArrowKeyNav.save(context, ArrowKeyNavCommand.NEXT_ITEM, ArrowKeyNav.keys(0, KEYCODE_N))
     assertTrue(down(KEYCODE_N))
-    assertEquals(listOf(QuickNavCommand.NEXT_ITEM), performed)
+    assertEquals(listOf(ArrowKeyNavCommand.NEXT_ITEM), performed)
     up(KEYCODE_N)
     // Right is no longer assigned alone, so it goes to the app.
     assertFalse(down(KEYCODE_DPAD_RIGHT))
@@ -178,9 +178,12 @@ class QuickNavKeyHandlerTest {
   @Test
   fun twoKeys_storedInEitherOrder() {
     assertEquals(
-      QuickNav.keys(0, KEYCODE_DPAD_UP, KEYCODE_DPAD_DOWN),
-      QuickNav.keys(0, KEYCODE_DPAD_DOWN, KEYCODE_DPAD_UP),
+      ArrowKeyNav.keys(0, KEYCODE_DPAD_UP, KEYCODE_DPAD_DOWN),
+      ArrowKeyNav.keys(0, KEYCODE_DPAD_DOWN, KEYCODE_DPAD_UP),
     )
-    assertEquals(QuickNavCommand.CLICK, QuickNav.commandFor(context, QuickNavCommand.CLICK.defaultKeys))
+    assertEquals(
+      ArrowKeyNavCommand.CLICK,
+      ArrowKeyNav.commandFor(context, ArrowKeyNavCommand.CLICK.defaultKeys),
+    )
   }
 }
