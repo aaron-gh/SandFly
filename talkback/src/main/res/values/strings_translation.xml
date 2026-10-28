@@ -76,6 +76,26 @@
     <string name="title_pref_translation_languages">On-device languages</string>
     <!-- Summary of On-device languages. [CHAR LIMIT=NONE] -->
     <string name="translation_languages_summary">Downloaded: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <!-- Action that downloads every language for on-device translation that isn't downloaded. [CHAR LIMIT=60] -->
+    <string name="title_pref_translation_download_all">Download all languages</string>
+    <!-- Message of the dialog of Download all languages: how many languages and their size. [CHAR LIMIT=NONE] -->
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> language, about <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> languages, about <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <!-- Summary of Download all languages while they download. [CHAR LIMIT=NONE] -->
+    <string name="translation_download_all_progress">Downloading, <xliff:g id="done" example="12">%1$d</xliff:g> of <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <!-- Summary of Download all languages when every language is downloaded, and spoken when the downloads end. [CHAR LIMIT=NONE] -->
+    <string name="translation_all_downloaded">All languages downloaded</string>
+    <!-- Spoken when Download all languages ends with languages that failed to download. [CHAR LIMIT=NONE] -->
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> language not downloaded</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> languages not downloaded</item>
+    </plurals>
+    <!-- Title of the dialog that stops Download all languages. [CHAR LIMIT=60] -->
+    <string name="translation_download_all_stop_title">Stop downloading languages?</string>
+    <!-- Button that stops Download all languages. [CHAR LIMIT=30] -->
+    <string name="translation_download_all_stop">Stop</string>
     <!-- Switch: on-device language models download only on Wi-Fi. [CHAR LIMIT=60] -->
     <string name="title_pref_translation_wifi_only">Download languages on Wi-Fi only</string>
     <!-- A language in the On-device languages list whose model is on the phone. [CHAR LIMIT=NONE] -->
