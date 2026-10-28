@@ -21,7 +21,6 @@ import static com.google.android.accessibility.talkback.imagecaption.ImageCaptio
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Build;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -201,14 +200,12 @@ public class AccessibilityNodeFeedbackUtils {
   }
 
   /**
-   * Returns the supplemental description that Android 16 added, which apps such as Chrome set on
-   * containers, such as a web page's article named by aria-labelledby. Empty before Android 16.
+   * Returns the supplemental description, which apps such as Chrome set on containers, such as a
+   * web page's article named by aria-labelledby, and on form controls named by a label. Before
+   * Android 16, AndroidX keeps it in the node's extras, where Chrome puts it too.
    */
   public static CharSequence getSupplementalDescription(AccessibilityNodeInfoCompat node) {
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.BAKLAVA) {
-      return "";
-    }
-    CharSequence description = node.unwrap().getSupplementalDescription();
+    CharSequence description = node.getSupplementalDescription();
     return description == null ? "" : description;
   }
 
