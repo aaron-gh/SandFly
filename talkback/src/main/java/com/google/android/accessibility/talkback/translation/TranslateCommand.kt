@@ -118,7 +118,10 @@ class TranslateCommand(private val service: TalkBackService) {
   }
 
   private fun options(flags: Int): SpeechController.SpeakOptions =
-    SpeechController.SpeakOptions.create().setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT).setFlags(flags)
+    SpeechController.SpeakOptions.create()
+      .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
+      .setFlags(flags)
+      .setSpeechParams(AutomaticTranslation.untranslated())
 
   private fun settingsKey(translationService: TranslationService): String =
     listOf(

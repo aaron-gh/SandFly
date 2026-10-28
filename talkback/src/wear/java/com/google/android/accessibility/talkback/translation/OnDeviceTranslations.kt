@@ -19,4 +19,6 @@ package com.google.android.accessibility.talkback.translation
 object OnDeviceTranslations {
   /** Watches have no on-device translation. */
   @JvmStatic fun get(): OnDeviceTranslation? = null
+
+  const val isAvailable = false
 }

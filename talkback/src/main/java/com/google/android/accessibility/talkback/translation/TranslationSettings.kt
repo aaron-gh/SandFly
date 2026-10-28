@@ -73,6 +73,12 @@ object TranslationSettings {
   const val PREF_WIFI_ONLY = "pref_translation_wifi_only"
   const val PREF_MICROSOFT_REGION = "pref_translation_microsoft_region"
   const val PREF_LIBRETRANSLATE_ADDRESS = "pref_translation_libretranslate_address"
+  const val PREF_AUTO = "pref_translation_auto"
+  const val PREF_AUTO_SERVICE = "pref_translation_auto_service"
+  const val PREF_UNTRANSLATED = "pref_translation_untranslated"
+
+  /** The services Automatic translation can use; AI services take too long for every utterance. */
+  val AUTO_SERVICES = TranslationService.entries.filter { it != TranslationService.AI }
 
   /** [PREF_SOURCE] when the language is detected. */
   const val DETECT = "auto"
@@ -96,6 +102,35 @@ object TranslationSettings {
 
   fun setService(prefs: SharedPreferences, service: TranslationService) =
     prefs.edit { putString(PREF_SERVICE, service.id) }
+
+  fun auto(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_AUTO, false)
+
+  fun setAuto(prefs: SharedPreferences, on: Boolean) = prefs.edit { putBoolean(PREF_AUTO, on) }
+
+  /**
+   * The service of Automatic translation: the chosen one; else the Translation service, unless it
+   * is the AI service; else on-device translation, or Google Cloud Translation without it.
+   */
+  fun autoService(prefs: SharedPreferences, onDeviceAvailable: Boolean): TranslationService {
+    val chosen = TranslationService.of(prefs.getString(PREF_AUTO_SERVICE, null))
+    val main = service(prefs, onDeviceAvailable)
+    return when {
+      chosen != null && chosen in AUTO_SERVICES && (chosen != TranslationService.ON_DEVICE || onDeviceAvailable) -> chosen
+      main in AUTO_SERVICES -> main
+      onDeviceAvailable -> TranslationService.ON_DEVICE
+      else -> TranslationService.GOOGLE_CLOUD
+    }
+  }
+
+  fun setAutoService(prefs: SharedPreferences, service: TranslationService) =
+    prefs.edit { putString(PREF_AUTO_SERVICE, service.id) }
+
+  /** Languages that Automatic translation leaves as they are, besides the target language. */
+  fun untranslated(prefs: SharedPreferences): Set<String> =
+    prefs.getStringSet(PREF_UNTRANSLATED, null).orEmpty().mapNotNull { TranslationLanguages.normalize(it) }.toSet()
+
+  fun setUntranslated(prefs: SharedPreferences, languages: Set<String>) =
+    prefs.edit { putStringSet(PREF_UNTRANSLATED, languages) }
 
   /** The language text is in, or null to detect it. */
   fun source(prefs: SharedPreferences): String? =

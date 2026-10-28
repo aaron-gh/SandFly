@@ -351,6 +351,10 @@
             android:key="@string/pref_selector_sound_mode_key"
             android:title="@string/quick_settings_sound_mode"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:defaultValue="@bool/pref_selector_auto_translation_default"
+            android:key="@string/pref_selector_auto_translation_key"
+            android:title="@string/title_pref_translation_auto"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_brightness_default"
             android:key="@string/pref_selector_change_brightness_key"

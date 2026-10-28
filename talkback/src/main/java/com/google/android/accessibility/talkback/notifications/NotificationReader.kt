@@ -47,6 +47,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeNotificationStateChangedFeedbackRule
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService
 import com.google.android.accessibility.talkback.scripting.Scripts
+import com.google.android.accessibility.talkback.translation.AutomaticTranslation
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem
@@ -780,31 +781,38 @@ object NotificationReader {
           onDone(readout, SpeechController.STATUS_INTERRUPTED)
           return@whenSandFlyIsQuiet
         }
-        voice.speak(
-          readout.text,
-          flush = interrupt,
-          locale = localeOf(readout.text),
-          listener =
-            object : NotificationVoice.Listener {
-              override fun onStart() = onStarted(readout)
+        // SandFly's speech translates what it says; the app's own voice is given the translation.
+        AutomaticTranslation.translate(readout.text) { text ->
+          if (readout.cancelled) {
+            onDone(readout, SpeechController.STATUS_INTERRUPTED)
+            return@translate
+          }
+          voice.speak(
+            text,
+            flush = interrupt,
+            locale = localeOf(text),
+            listener =
+              object : NotificationVoice.Listener {
+                override fun onStart() = onStarted(readout)
 
-              override fun onDone(spoken: Boolean) =
-                onDone(readout, if (spoken) SpeechController.STATUS_SPOKEN else SpeechController.STATUS_INTERRUPTED)
+                override fun onDone(spoken: Boolean) =
+                  onDone(readout, if (spoken) SpeechController.STATUS_SPOKEN else SpeechController.STATUS_INTERRUPTED)
 
-              override fun onUnavailable() {
-                if (readout.cancelled) {
-                  onDone(readout, SpeechController.STATUS_INTERRUPTED)
-                  return
+                override fun onUnavailable() {
+                  if (readout.cancelled) {
+                    onDone(readout, SpeechController.STATUS_INTERRUPTED)
+                    return
+                  }
+                  LogUtils.e(TAG, "Reading a notification of %s in SandFly's voice", readout.info.packageName)
+                  readout.fellBack = true
+                  // SandFly's voice reads it now, so notifications for it aren't held behind it.
+                  readout.voiceKey = ""
+                  readout.handedAt = SystemClock.uptimeMillis()
+                  speakInSandFlyVoice(readout, flags, sound = false)
                 }
-                LogUtils.e(TAG, "Reading a notification of %s in SandFly's voice", readout.info.packageName)
-                readout.fellBack = true
-                // SandFly's voice reads it now, so notifications for it aren't held behind it.
-                readout.voiceKey = ""
-                readout.handedAt = SystemClock.uptimeMillis()
-                speakInSandFlyVoice(readout, flags, sound = false)
-              }
-            },
-        )
+              },
+          )
+        }
       }
       return
     }

@@ -39,6 +39,16 @@
     <!-- Spoken after Swap languages. [CHAR LIMIT=NONE] -->
     <string name="translation_swapped">From <xliff:g id="source" example="German">%1$s</xliff:g> into <xliff:g id="target" example="English">%2$s</xliff:g></string>
 
+    <!-- Settings category, switch and reading control: speech in another language than the target language is translated before it is spoken. [CHAR LIMIT=40] -->
+    <string name="title_pref_translation_auto">Automatic translation</string>
+    <!-- Spoken by the Automatic translation reading control. [CHAR LIMIT=NONE] -->
+    <string name="translation_auto_state">Automatic translation <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <!-- Setting that chooses the translation service of Automatic translation. [CHAR LIMIT=60] -->
+    <string name="title_pref_translation_auto_service">Automatic translation service</string>
+    <!-- Setting that chooses languages Automatic translation leaves as they are, such as languages the user understands. [CHAR LIMIT=60] -->
+    <string name="title_pref_translation_untranslated">Languages not translated</string>
+    <!-- Summary of Languages not translated when none is chosen. [CHAR LIMIT=40] -->
+    <string name="translation_untranslated_none">None</string>
     <!-- Settings category about how translations are spoken. [CHAR LIMIT=40] -->
     <string name="translation_category_speech">Speech</string>
     <!-- Switch: translations are spoken with a text-to-speech voice for the target language. [CHAR LIMIT=60] -->

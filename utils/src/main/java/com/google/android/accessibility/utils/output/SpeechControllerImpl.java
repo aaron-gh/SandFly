@@ -81,6 +81,7 @@ import java.util.ListIterator;
 import java.util.Locale;
 import java.util.PriorityQueue;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import org.checkerframework.checker.initialization.qual.UnknownInitialization;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -118,6 +119,28 @@ public class SpeechControllerImpl implements SpeechController {
 
   public static void setSpeechFilter(@Nullable SpeechFilter filter) {
     speechFilter = filter;
+  }
+
+  /**
+   * SandFly: takes speech to change it before it is spoken, such as Automatic translation, which
+   * translates it. Called on the main thread for each utterance, in order.
+   */
+  public interface SpeechHold {
+    /**
+     * Returns true when it takes [text], and then calls [release] once, on the main thread: with the
+     * text to speak, or with null when the utterance was dropped, such as when newer speech
+     * interrupted it. Returns false to let [text] be spoken now.
+     */
+    boolean hold(CharSequence text, int queueMode, int flags, Consumer<@Nullable CharSequence> release);
+  }
+
+  /** Marks speech that a [SpeechHold] has released, so that it isn't held again. */
+  public static final String SPEECH_PARAM_RELEASED = "sandfly.released";
+
+  private static volatile @Nullable SpeechHold speechHold;
+
+  public static void setSpeechHold(@Nullable SpeechHold hold) {
+    speechHold = hold;
   }
 
   /** Prefix for utterance IDs. */
@@ -1191,6 +1214,46 @@ public class SpeechControllerImpl implements SpeechController {
       @Nullable CharSequence filtered = filter.filter(text);
       if (filtered != null) {
         text = filtered;
+      }
+    }
+
+    @Nullable SpeechHold hold = speechHold;
+    boolean released = speechParams != null && speechParams.containsKey(SPEECH_PARAM_RELEASED);
+    if (hold != null && !fromScript && !released && !TextUtils.isEmpty(text)) {
+      @Nullable Bundle heldParams = speechParams;
+      boolean held =
+          hold.hold(
+              text,
+              queueMode,
+              flags,
+              heldText -> {
+                if (heldText == null) {
+                  if (completedAction != null) {
+                    completedAction.run(STATUS_INTERRUPTED);
+                  }
+                  return;
+                }
+                Bundle releasedParams = heldParams == null ? new Bundle() : new Bundle(heldParams);
+                releasedParams.putBoolean(SPEECH_PARAM_RELEASED, true);
+                // The sounds and vibrations played when the utterance was held.
+                speak(
+                    heldText,
+                    /* earcons= */ null,
+                    /* haptics= */ null,
+                    queueMode,
+                    flags,
+                    utteranceGroup,
+                    releasedParams,
+                    nonSpeechParams,
+                    startAction,
+                    rangeStartCallback,
+                    completedAction,
+                    eventId);
+              });
+      if (held) {
+        // Sounds and vibrations confirm a gesture at once, rather than after the translation.
+        playEarconsAndHaptics(earcons, haptics, nonSpeechParams, eventId);
+        return;
       }
     }
 

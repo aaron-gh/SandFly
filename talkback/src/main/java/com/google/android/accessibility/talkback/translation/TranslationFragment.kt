@@ -28,7 +28,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.net.toUri
 import androidx.preference.Preference
-import androidx.preference.PreferenceCategory
+import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.gemini.AiService
 import com.google.android.accessibility.talkback.actor.gemini.AiTextRequests
@@ -45,6 +47,7 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
   private lateinit var prefs: SharedPreferences
   private val onDevice: OnDeviceTranslation? by lazy { OnDeviceTranslations.get() }
   private var downloaded: Set<String> = emptySet()
+  private val serviceCategories = mutableListOf<String>()
 
   override fun getTitle(): CharSequence = getString(R.string.translation_title)
 
@@ -56,10 +59,13 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
     onClick("pref_translation_target_choice") { chooseTarget() }
     onClick("pref_translation_second_target_choice") { chooseSecondTarget() }
     onClick("pref_translation_swap_action") { swap() }
-    onClick("pref_translation_address_row") { askAddress() }
-    onClick("pref_translation_key_row") { askKey(service()) }
-    onClick("pref_translation_region_row") { askRegion() }
-    onClick("pref_translation_languages_row") { chooseOnDeviceLanguage() }
+    onClick("pref_translation_auto_service_choice") { chooseAutoService() }
+    onClick("pref_translation_untranslated_choice") { chooseUntranslated() }
+    findPreference<Preference>(TranslationSettings.PREF_AUTO)!!.setOnPreferenceChangeListener { _, _ ->
+      // After the switch has saved its value.
+      view?.post { refresh() }
+      true
+    }
   }
 
   override fun onStart() {
@@ -84,39 +90,98 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
     }
     find("pref_translation_swap_action").isVisible = source != null
 
-    findPreference<PreferenceCategory>("pref_translation_service_settings")!!.apply {
-      isVisible = service != TranslationService.AI
-      title = getString(R.string.title_ai_provider_settings, getString(service.label))
+    findPreference<Preference>("pref_translation_auto_service_choice")!!.apply {
+      isEnabled = TranslationSettings.auto(prefs)
+      summary = serviceSummary(autoService())
     }
-    find("pref_translation_address_row").apply {
-      isVisible = service == TranslationService.LIBRETRANSLATE
-      summary = TranslationSettings.libreTranslateAddress(prefs)
-    }
-    find("pref_translation_key_row").apply {
-      isVisible = service.needsKey || service == TranslationService.LIBRETRANSLATE
-      title = getString(R.string.title_pref_gemini_api_key_of, getString(service.label))
+    findPreference<Preference>("pref_translation_untranslated_choice")!!.apply {
+      isEnabled = TranslationSettings.auto(prefs)
+      val untranslated = TranslationSettings.untranslated(prefs)
       summary =
-        getString(
-          if (TranslationSettings.apiKey(prefs, service).isEmpty()) R.string.ai_provider_not_set
-          else R.string.ai_provider_set
-        )
+        if (untranslated.isEmpty()) getString(R.string.translation_untranslated_none)
+        else ListFormatter.getInstance().format(TranslationLanguages.sorted(untranslated).map { TranslationLanguages.name(it) })
     }
-    find("pref_translation_region_row").apply {
-      isVisible = service == TranslationService.MICROSOFT
-      summary = TranslationSettings.microsoftRegion(prefs).ifEmpty { getString(R.string.translation_region_global) }
-    }
-    find("pref_translation_languages_row").apply {
-      isVisible = service == TranslationService.ON_DEVICE
-      summary =
-        if (downloaded.isEmpty()) null
-        else
-          getString(
-            R.string.translation_languages_summary,
-            ListFormatter.getInstance().format(TranslationLanguages.sorted(downloaded).map { TranslationLanguages.name(it) }),
-          )
-    }
-    findPreference<Preference>(TranslationSettings.PREF_WIFI_ONLY)?.isVisible = service == TranslationService.ON_DEVICE
+    refreshServiceSettings()
   }
+
+  private fun autoService(): TranslationService = TranslationSettings.autoService(prefs, onDevice != null)
+
+  /**
+   * A category of settings for each service in use, the Translation service and Automatic
+   * translation's, for those that have settings.
+   */
+  private fun refreshServiceSettings() {
+    for (key in serviceCategories) findPreference<Preference>(key)?.let { preferenceScreen.removePreference(it) }
+    serviceCategories.clear()
+    val services = buildList {
+      add(service())
+      if (TranslationSettings.auto(prefs)) add(autoService())
+    }.distinct().filter { it != TranslationService.AI }
+    for ((index, service) in services.withIndex()) {
+      val category =
+        AccessibilitySuitePreferenceCategory(requireContext()).apply {
+          key = "pref_translation_${service.id}_settings"
+          order = SERVICE_CATEGORY_ORDER + index
+          title = getString(R.string.title_ai_provider_settings, getString(service.label))
+        }
+      preferenceScreen.addPreference(category)
+      serviceCategories += category.key
+      if (service == TranslationService.LIBRETRANSLATE) {
+        category.addPreference(row(getString(R.string.ai_provider_address), TranslationSettings.libreTranslateAddress(prefs)) { askAddress() })
+      }
+      if (service.needsKey || service == TranslationService.LIBRETRANSLATE) {
+        val set = TranslationSettings.apiKey(prefs, service).isNotEmpty()
+        category.addPreference(
+          row(
+            getString(R.string.title_pref_gemini_api_key_of, getString(service.label)),
+            getString(if (set) R.string.ai_provider_set else R.string.ai_provider_not_set),
+          ) {
+            askKey(service)
+          }
+        )
+      }
+      if (service == TranslationService.MICROSOFT) {
+        category.addPreference(
+          row(
+            getString(R.string.title_pref_translation_region),
+            TranslationSettings.microsoftRegion(prefs).ifEmpty { getString(R.string.translation_region_global) },
+          ) {
+            askRegion()
+          }
+        )
+      }
+      if (service == TranslationService.ON_DEVICE) {
+        val summary =
+          if (downloaded.isEmpty()) null
+          else
+            getString(
+              R.string.translation_languages_summary,
+              ListFormatter.getInstance().format(TranslationLanguages.sorted(downloaded).map { TranslationLanguages.name(it) }),
+            )
+        category.addPreference(row(getString(R.string.title_pref_translation_languages), summary) { chooseOnDeviceLanguage() })
+        category.addPreference(
+          AccessibilitySuiteSwitchPreference(requireContext()).apply {
+            key = TranslationSettings.PREF_WIFI_ONLY
+            setDefaultValue(false)
+            isIconSpaceReserved = false
+            setTitle(R.string.title_pref_translation_wifi_only)
+          }
+        )
+      }
+    }
+  }
+
+  private fun row(title: String, summary: String?, onClick: () -> Unit): Preference =
+    AccessibilitySuitePreference(requireContext()).apply {
+      isPersistent = false
+      isIconSpaceReserved = false
+      this.title = title
+      this.summary = summary
+      setOnPreferenceClickListener {
+        onClick()
+        true
+      }
+    }
 
   private fun refreshDownloaded() {
     onDevice?.downloaded {
@@ -164,6 +229,47 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
           TranslationSettings.Missing.ADDRESS -> askAddress()
           null -> {}
         }
+      }
+      .setNegativeButton(R.string.on_device_ai_cancel, null)
+      .show()
+  }
+
+  private fun chooseAutoService() {
+    val choices = TranslationSettings.AUTO_SERVICES.filter { it != TranslationService.ON_DEVICE || onDevice != null }
+    AlertDialog.Builder(requireContext())
+      .setTitle(R.string.title_pref_translation_auto_service)
+      .setSingleChoiceItems(choices.map { getString(it.label) }.toTypedArray(), choices.indexOf(autoService())) {
+        dialog,
+        which ->
+        dialog.dismiss()
+        val chosen = choices[which]
+        TranslationSettings.setAutoService(prefs, chosen)
+        refresh()
+        when (TranslationSettings.missing(prefs, chosen)) {
+          TranslationSettings.Missing.API_KEY -> askKey(chosen)
+          TranslationSettings.Missing.ADDRESS -> askAddress()
+          null -> {}
+        }
+      }
+      .setNegativeButton(R.string.on_device_ai_cancel, null)
+      .show()
+  }
+
+  /** Chooses the languages Automatic translation leaves as they are, from all languages. */
+  private fun chooseUntranslated() {
+    val languages = TranslationLanguages.sorted()
+    val chosen = TranslationSettings.untranslated(prefs).toMutableSet()
+    AlertDialog.Builder(requireContext())
+      .setTitle(R.string.title_pref_translation_untranslated)
+      .setMultiChoiceItems(
+        languages.map { TranslationLanguages.name(it) }.toTypedArray(),
+        languages.map { it in chosen }.toBooleanArray(),
+      ) { _, which, checked ->
+        if (checked) chosen += languages[which] else chosen -= languages[which]
+      }
+      .setPositiveButton(R.string.gemini_api_key_save) { _, _ ->
+        TranslationSettings.setUntranslated(prefs, chosen)
+        refresh()
       }
       .setNegativeButton(R.string.on_device_ai_cancel, null)
       .show()
@@ -373,6 +479,11 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
   }
 
   private fun find(key: String): Preference = findPreference(key)!!
+
+  private companion object {
+    /** After Automatic translation and before Speech. */
+    const val SERVICE_CATEGORY_ORDER = 60
+  }
 
   private fun onClick(key: String, action: () -> Unit) {
     find(key).setOnPreferenceClickListener {

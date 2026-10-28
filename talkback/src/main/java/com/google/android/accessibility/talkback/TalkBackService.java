@@ -259,6 +259,7 @@ import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.talkback.report.ProblemReportSender;
 import com.google.android.accessibility.talkback.report.ReportInbox;
 import com.google.android.accessibility.talkback.report.TurnOffLog;
+import com.google.android.accessibility.talkback.translation.AutomaticTranslation;
 import com.google.android.accessibility.talkback.update.Updater;
 import com.google.android.accessibility.talkback.updatetasks.TalkBackUpdateHelper;
 import com.google.android.accessibility.talkback.utils.DiagnosticOverlayControllerImpl;
@@ -997,6 +998,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (gestureController != null) {
       gestureController.shutdown();
     }
+    AutomaticTranslation.stop();
 
     if (directTouchController != null) {
       directTouchController.shutdown();
@@ -3554,6 +3556,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     FocusProcessorForLogicalNavigation.setWrapAround(
         getBooleanPref(R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default));
+    AutomaticTranslation.update(this);
     FocusFeedbackMapper.setTouchStopsSpeech(
         getBooleanPref(
             R.string.pref_touch_stops_speech_key, R.bool.pref_touch_stops_speech_default));

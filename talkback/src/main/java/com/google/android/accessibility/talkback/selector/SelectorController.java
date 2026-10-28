@@ -110,6 +110,7 @@ import com.google.android.accessibility.talkback.scripting.ScriptReadingControl;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting.DescriptionAndHint;
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
+import com.google.android.accessibility.talkback.translation.TranslationSettings;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
@@ -232,6 +233,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_sound_mode_key,
         R.string.selector_sound_mode,
         R.bool.pref_selector_sound_mode_default),
+    AUTO_TRANSLATION(
+        R.string.pref_selector_auto_translation_key,
+        R.string.selector_auto_translation,
+        R.bool.pref_selector_auto_translation_default),
     CHANGE_BRIGHTNESS(
         R.string.pref_selector_change_brightness_key,
         R.string.selector_brightness_change,
@@ -689,6 +694,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.SCROLLING_SEQUENTIAL,
           Setting.CHANGE_ACCESSIBILITY_VOLUME,
           Setting.SOUND_MODE,
+          Setting.AUTO_TRANSLATION,
           Setting.CHANGE_BRIGHTNESS,
           Setting.CHANGE_TOUCH_FOCUS_LATENCY,
           Setting.CHANGE_TYPING_FOCUS_LATENCY,
@@ -1020,6 +1026,10 @@ public class SelectorController implements UserInputEventListener {
       }
       case SOUND_MODE -> {
         actionDescription = context.getString(R.string.quick_settings_sound_mode);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case AUTO_TRANSLATION -> {
+        actionDescription = context.getString(R.string.title_pref_translation_auto);
         hint = getAdjustSelectedSettingGestures();
       }
       case CHANGE_BRIGHTNESS -> {
@@ -2003,6 +2013,10 @@ public class SelectorController implements UserInputEventListener {
         showQuickMenuActionOverlay(eventId, displayText);
         return;
       }
+      case AUTO_TRANSLATION -> {
+        switchOnOrOffAutoTranslation(eventId);
+        return;
+      }
       case CHANGE_BRIGHTNESS -> {
         changeBrightness(eventId, /* increase= */ !isNext);
         return;
@@ -2573,6 +2587,17 @@ public class SelectorController implements UserInputEventListener {
         getAdjustSelectedSettingGestures());
     showQuickMenuActionOverlay(
         eventId, context.getString(!audioFocusOn ? R.string.value_on : R.string.value_off));
+  }
+
+  private void switchOnOrOffAutoTranslation(EventId eventId) {
+    boolean on = !TranslationSettings.INSTANCE.auto(prefs);
+    TranslationSettings.INSTANCE.setAuto(prefs, on);
+    String state = context.getString(on ? R.string.value_on : R.string.value_off);
+    announceSetting(
+        eventId,
+        context.getString(R.string.translation_auto_state, state),
+        getAdjustSelectedSettingGestures());
+    showQuickMenuActionOverlay(eventId, state);
   }
 
   /** Perform scrolling to previous/next page. */

@@ -22,4 +22,7 @@ object OnDeviceTranslations {
   /** ML Kit's translation, one for the process, since its models are shared. Main thread only. */
   @JvmStatic
   fun get(): OnDeviceTranslation? = instance ?: MlKitTranslation().also { instance = it }
+
+  /** Whether [get] gives a translation, without making one. */
+  const val isAvailable = true
 }
