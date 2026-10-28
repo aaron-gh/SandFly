@@ -52,6 +52,7 @@ import android.os.SystemClock;
 import android.provider.Settings;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Size;
 import android.view.KeyEvent;
@@ -125,9 +126,13 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSet;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.lang.Thread.UncaughtExceptionHandler;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -202,6 +207,11 @@ public class BrailleIme extends InputMethodService {
   private static final int CALIBRATION_EARCON_DELAY_MS = 500;
   private static final int CALIBRATION_EARCON_REPEAT_COUNT = 3;
   private static final int CALIBRATION_ANNOUNCEMENT_REPEAT_MS = 8000;
+  /**
+   * How long to wait before each try at pressing a chat app's send button, while it updates for
+   * the text just committed.
+   */
+  private static final int[] SEND_BUTTON_ATTEMPT_DELAYS_MS = {100, 200, 300};
 
   // An Immutable set includes the granularities which are related to editing.
   private static final ImmutableSet<CursorGranularity> VALID_GRANULARITIES =
@@ -745,28 +755,93 @@ public class BrailleIme extends InputMethodService {
    * <p>By far the most common case is for an application to specify a single action (as opposed to
    * multiple). We don't currently support the distinguishment of multiple actions in that case.
    *
-   * <p>Return {@code true} if the keyboard should remain showing.
+   * <p>Chat apps such as Messages, WhatsApp and Telegram send with a button next to the field
+   * instead: their fields specify no action, or say not to perform it on enter, and ignore it. For
+   * those, the send button is pressed, and the action is the fallback when there is none.
    */
   private void performEditorAction(InputConnection inputConnection) {
     EditorInfo editorInfo = getCurrentInputEditorInfo();
     int editorAction = editorInfo.imeOptions & EditorInfo.IME_MASK_ACTION;
     BrailleImeLog.d(TAG, "performEnterAction editorAction = " + editorAction);
-    if (editorAction != EditorInfo.IME_ACTION_UNSPECIFIED
-        && editorAction != EditorInfo.IME_ACTION_NONE) {
-      if (TextUtils.equals(editorInfo.packageName, Constants.ANDROID_MESSAGES_PACKAGE_NAME)) {
-        // Messages uses async thread to check conditions when performing submit. We pend the task
-        // with 50 millis seconds to avoid perform action failed.
-        new Handler().postDelayed(() -> inputConnection.performEditorAction(editorAction), 50);
-      } else {
-        inputConnection.performEditorAction(editorAction);
-      }
-      if (editorAction == EditorInfo.IME_ACTION_NEXT) {
-        BrailleCommonTalkBackSpeaker.getInstance().speak(getString(R.string.perform_action_next));
-      } else {
-        BrailleCommonTalkBackSpeaker.getInstance()
-            .speak(getString(R.string.perform_action_submitting));
-      }
+    if (!hasEditorAction(editorAction)
+        || editorAction == EditorInfo.IME_ACTION_SEND
+        || (editorInfo.imeOptions & EditorInfo.IME_FLAG_NO_ENTER_ACTION) != 0) {
+      clickSendButton(inputConnection, editorInfo, editorAction, /* attempt= */ 0);
+    } else {
+      performEditorAction(inputConnection, editorInfo, editorAction);
     }
+  }
+
+  private void performEditorAction(
+      InputConnection inputConnection, EditorInfo editorInfo, int editorAction) {
+    if (TextUtils.equals(editorInfo.packageName, Constants.ANDROID_MESSAGES_PACKAGE_NAME)) {
+      // Messages uses async thread to check conditions when performing submit. We pend the task
+      // with 50 millis seconds to avoid perform action failed.
+      new Handler().postDelayed(() -> inputConnection.performEditorAction(editorAction), 50);
+    } else {
+      inputConnection.performEditorAction(editorAction);
+    }
+    if (editorAction == EditorInfo.IME_ACTION_NEXT) {
+      BrailleCommonTalkBackSpeaker.getInstance().speak(getString(R.string.perform_action_next));
+    } else {
+      BrailleCommonTalkBackSpeaker.getInstance()
+          .speak(getString(R.string.perform_action_submitting));
+    }
+  }
+
+  /**
+   * Presses the send button next to the field, trying again while the app updates for the text
+   * just committed, since some, like WhatsApp, only show it once the field has text. Without one,
+   * performs the editor action, or presses enter in a single line field.
+   */
+  private void clickSendButton(
+      InputConnection inputConnection, EditorInfo editorInfo, int editorAction, int attempt) {
+    mainHandler.postDelayed(
+        () -> {
+          if (talkBackForBrailleIme != null
+              && talkBackForBrailleIme.clickSendButton(getSendWords(editorInfo))) {
+            BrailleCommonTalkBackSpeaker.getInstance()
+                .speak(getString(R.string.perform_action_submitting));
+          } else if (attempt + 1 < SEND_BUTTON_ATTEMPT_DELAYS_MS.length) {
+            clickSendButton(inputConnection, editorInfo, editorAction, attempt + 1);
+          } else if (hasEditorAction(editorAction)) {
+            performEditorAction(inputConnection, editorInfo, editorAction);
+          } else if (!isMultiLine(editorInfo)) {
+            inputConnection.sendKeyEvent(
+                new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+            inputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
+            BrailleCommonTalkBackSpeaker.getInstance()
+                .speak(getString(R.string.perform_action_submitting));
+          } else {
+            BrailleCommonTalkBackSpeaker.getInstance()
+                .speak(getString(R.string.perform_action_no_send_button));
+          }
+        },
+        SEND_BUTTON_ATTEMPT_DELAYS_MS[attempt]);
+  }
+
+  /** Returns the words a send button for {@code editorInfo} can be labeled with. */
+  private List<String> getSendWords(EditorInfo editorInfo) {
+    Set<String> words = new LinkedHashSet<>();
+    if (!TextUtils.isEmpty(editorInfo.actionLabel)) {
+      words.add(editorInfo.actionLabel.toString());
+    }
+    CharSequence send = getTextForImeAction(EditorInfo.IME_ACTION_SEND);
+    if (!TextUtils.isEmpty(send)) {
+      words.add(send.toString());
+    }
+    words.add("Send");
+    return new ArrayList<>(words);
+  }
+
+  private static boolean hasEditorAction(int editorAction) {
+    return editorAction != EditorInfo.IME_ACTION_UNSPECIFIED
+        && editorAction != EditorInfo.IME_ACTION_NONE;
+  }
+
+  private static boolean isMultiLine(EditorInfo editorInfo) {
+    return (editorInfo.inputType & InputType.TYPE_MASK_CLASS) == InputType.TYPE_CLASS_TEXT
+        && (editorInfo.inputType & InputType.TYPE_TEXT_FLAG_MULTI_LINE) != 0;
   }
 
   private void updateInputView() {

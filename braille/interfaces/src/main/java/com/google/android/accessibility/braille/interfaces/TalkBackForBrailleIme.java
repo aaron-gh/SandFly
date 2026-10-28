@@ -21,6 +21,7 @@ import android.view.WindowManager;
 import com.google.android.accessibility.braille.interfaces.ScreenReaderActionPerformer.ScreenReaderAction;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import java.util.List;
 
 /** Exposes some TalkBack behavior to BrailleIme. */
 public interface TalkBackForBrailleIme {
@@ -47,6 +48,13 @@ public interface TalkBackForBrailleIme {
    * text navigation acts on the field being typed in.
    */
   void focusInputField();
+
+  /**
+   * Clicks the button next to the input focused edit field that sends what was typed, such as the
+   * send button of a chat app, and returns whether it found one. {@code sendWords} are the words
+   * such a button can be labeled with, like "Send" in the user's language.
+   */
+  boolean clickSendButton(List<String> sendWords);
 
   /**
    * BrailleIme invokes this when it becomes active. When TalkBack gets this signal, it should enter
