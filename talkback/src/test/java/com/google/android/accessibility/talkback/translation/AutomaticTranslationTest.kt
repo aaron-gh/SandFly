@@ -50,22 +50,47 @@ class AutomaticTranslationTest {
     val waiting = mutableMapOf<String, (Translator.Result) -> Unit>()
     var slow = false
     var translated = 0
-    val downloads = mutableListOf<Boolean>()
+    val downloads = mutableListOf<Translator.Downloads>()
+    /** Identification confidence by text; others are identified surely. */
+    val confidences = mutableMapOf<String, Float>()
+    /** Whether the language models are on the phone; when not, downloads wait for [finishDownload]. */
+    var modelsDownloaded = true
+    private val downloadsDone = mutableListOf<() -> Unit>()
+    val said = mutableListOf<String>()
     var closed = false
 
-    override fun detect(text: String, done: (String?) -> Unit) =
-      done(languages[text] ?: AutomaticTranslation.NO_LANGUAGE)
+    override fun detect(text: String, done: (AutomaticTranslation.Detection?) -> Unit) =
+      done(
+        AutomaticTranslation.Detection(languages[text] ?: AutomaticTranslation.NO_LANGUAGE, confidences[text] ?: 0.95f)
+      )
 
     override fun translate(
       text: String,
       service: TranslationService,
       from: String,
       to: String,
-      download: Boolean,
+      downloads: Translator.Downloads,
+      onDownloaded: () -> Unit,
       done: (Translator.Result) -> Unit,
     ) {
       translated++
-      downloads += download
+      this.downloads += downloads
+      if (!modelsDownloaded) {
+        val failed = Translator.Result.Failed(TranslationFailure(TranslationFailure.Kind.DOWNLOADING), service)
+        when (downloads) {
+          Translator.Downloads.NONE -> done(failed)
+          Translator.Downloads.START -> {
+            downloadsDone += onDownloaded
+            done(Translator.Result.Downloading(listOf(from)))
+            done(failed)
+          }
+          Translator.Downloads.WAIT -> {
+            done(Translator.Result.Downloading(listOf(from)))
+            downloadsDone += { translate(text, service, from, to, Translator.Downloads.NONE, {}, done) }
+          }
+        }
+        return
+      }
       val result: Translator.Result =
         translations[text]?.let { Translator.Result.Done(Translation(it, from, to)) }
           ?: Translator.Result.Failed(TranslationFailure(TranslationFailure.Kind.OTHER), service)
@@ -73,6 +98,17 @@ class AutomaticTranslationTest {
     }
 
     fun answer(text: String) = waiting.remove(text)!!.invoke(Translator.Result.Done(Translation(translations[text]!!, "de", "en")))
+
+    fun finishDownload() {
+      modelsDownloaded = true
+      val done = downloadsDone.toList()
+      downloadsDone.clear()
+      done.forEach { it() }
+    }
+
+    override fun speak(text: CharSequence, history: Boolean) {
+      said += text.toString()
+    }
 
     override fun close() {
       closed = true
@@ -212,13 +248,56 @@ class AutomaticTranslationTest {
   }
 
   @Test
-  fun languageModels_downloadOnlyForALanguageHeardInThreeTexts() {
+  fun languageModels_downloadAtOnceForSureText_andForLessSureTextTheSecondTime() {
     engine.languages["Wie geht es dir"] = "de"
     engine.languages["Bis morgen am Bahnhof"] = "de"
+    engine.confidences["Guten Morgen"] = 0.75f
+    engine.confidences["Wie geht es dir"] = 0.75f
+    say("Bis morgen am Bahnhof")
     say("Guten Morgen")
     say("Wie geht es dir")
-    say("Bis morgen am Bahnhof")
-    assertEquals(listOf(false, false, true), engine.downloads)
+    assertEquals(
+      listOf(Translator.Downloads.START, Translator.Downloads.NONE, Translator.Downloads.START),
+      engine.downloads,
+    )
+  }
+
+  @Test
+  fun afterADownload_theUtteranceSaidUntranslatedIsSaidAgainTranslated() {
+    engine.modelsDownloaded = false
+    say("Bonjour tout le monde")
+    assertEquals(listOf("Bonjour tout le monde"), spoken)
+    engine.finishDownload()
+    assertEquals(listOf("Downloading French for on-device translation", "Hello everyone"), engine.said)
+  }
+
+  @Test
+  fun afterADownload_aHintAfterTheUtteranceDoesNotStopItBeingSaidAgain() {
+    engine.modelsDownloaded = false
+    say("Bonjour tout le monde", SpeechController.QUEUE_MODE_INTERRUPT)
+    say("Double-tap to activate")
+    engine.finishDownload()
+    assertEquals("Hello everyone", engine.said.last())
+  }
+
+  @Test
+  fun afterADownload_nothingIsSaidAgainOnceTheUserMovedOn() {
+    engine.modelsDownloaded = false
+    say("Bonjour tout le monde", SpeechController.QUEUE_MODE_INTERRUPT)
+    say("Good morning", SpeechController.QUEUE_MODE_INTERRUPT)
+    engine.finishDownload()
+    assertEquals(listOf("Downloading French for on-device translation"), engine.said)
+  }
+
+  @Test
+  fun notifications_waitForTheirLanguageModel() {
+    engine.modelsDownloaded = false
+    val texts = mutableListOf<String>()
+    auto.translateNotification("Bonjour tout le monde") { texts += it.toString() }
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofSeconds(10))
+    assertTrue(texts.isEmpty())
+    engine.finishDownload()
+    assertEquals(listOf("Hello everyone"), texts)
   }
 
   @Test

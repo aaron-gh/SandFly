@@ -95,20 +95,21 @@ class Translator(context: Context) {
 
   /**
    * Translates [text] from [from] into [to] with [service], for Automatic translation, alongside
-   * [translate]. The translation fails at once when a language model isn't downloaded; with
-   * [download], the missing models start downloading first, with [Result.Downloading].
+   * [translate]. [downloads] says what happens when a language model isn't downloaded;
+   * [onDownloaded] is told when models that [Downloads.START] started have all downloaded.
    */
   fun translateNow(
     text: String,
     service: TranslationService,
     from: String,
     to: String,
-    download: Boolean,
+    downloads: Downloads,
+    onDownloaded: () -> Unit,
     onResult: (Result) -> Unit,
-  ) = run(text, service, from, to, second = null, if (download) Downloads.START else Downloads.NONE, onResult)
+  ) = run(text, service, from, to, second = null, downloads, onDownloaded, onResult)
 
   /** What happens when on-device language models aren't downloaded. */
-  private enum class Downloads {
+  enum class Downloads {
     /** They are downloaded, and then the text is translated. */
     WAIT,
     /** They start downloading, and the translation fails. */
@@ -124,13 +125,14 @@ class Translator(context: Context) {
     target: String,
     second: String?,
     downloads: Downloads,
+    onDownloaded: () -> Unit = {},
     report: (Result) -> Unit,
   ) {
     val fail: (Kind, String) -> Unit = { kind, detail -> report(Result.Failed(TranslationFailure(kind, detail), service)) }
     if (!isSetUp(service)) return fail(Kind.NOT_SET_UP, "")
     val input = text.take(TranslationApis.MAX_TEXT)
     when (service) {
-      TranslationService.ON_DEVICE -> onDevice(input, source, target, second, downloads, report, fail)
+      TranslationService.ON_DEVICE -> onDevice(input, source, target, second, downloads, onDownloaded, report, fail)
       TranslationService.AI -> {
         val ai = ai(appContext)
         ai.cancel()
@@ -233,6 +235,7 @@ class Translator(context: Context) {
     target: String,
     second: String?,
     downloads: Downloads,
+    onDownloaded: () -> Unit,
     report: (Result) -> Unit,
     fail: (Kind, String) -> Unit,
   ) {
@@ -244,7 +247,7 @@ class Translator(context: Context) {
       when {
         from == to -> report(Result.Done(Translation(text, from, to)))
         unsupported != null -> fail(Kind.LANGUAGE, unsupported)
-        else -> withModels(models, from, to, downloads, report, fail) {
+        else -> withModels(models, from, to, downloads, onDownloaded, report, fail) {
           models.translate(text, from, to) { translated ->
             if (translated == null) fail(Kind.OTHER, "") else report(Result.Done(Translation(translated, from, to)))
           }
@@ -270,6 +273,7 @@ class Translator(context: Context) {
     from: String,
     to: String,
     downloads: Downloads,
+    onDownloaded: () -> Unit,
     report: (Result) -> Unit,
     fail: (Kind, String) -> Unit,
     translate: () -> Unit,
@@ -282,18 +286,20 @@ class Translator(context: Context) {
       if (downloads == Downloads.NONE) return@downloaded fail(Kind.DOWNLOADING, "")
       report(Result.Downloading(missing))
       val wifiOnly = TranslationSettings.wifiOnly(prefs)
-      if (downloads == Downloads.START) {
-        for (language in missing) models.download(language, wifiOnly) {}
-        return@downloaded fail(Kind.DOWNLOADING, "")
-      }
       var left = missing.size
       var failed = false
       for (language in missing) {
         models.download(language, wifiOnly) { ok ->
           failed = failed || !ok
-          if (--left == 0) if (failed) fail(Kind.CONNECTION, "") else translate()
+          if (--left > 0) return@download
+          when {
+            downloads == Downloads.START -> if (!failed) onDownloaded()
+            failed -> fail(Kind.CONNECTION, "")
+            else -> translate()
+          }
         }
       }
+      if (downloads == Downloads.START) fail(Kind.DOWNLOADING, "")
     }
   }
 
