@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title of the settings entry and screen that list every screen reader command; each command shows its gestures and keyboard shortcuts. [CHAR LIMIT=40] -->
+    <string name="title_pref_commands">Commands</string>
+    <!-- Group of commands that activate the focused item or open menus for it. [CHAR LIMIT=40] -->
+    <string name="commands_category_activation">Activation</string>
+    <!-- Group of commands that scroll lists and pages. [CHAR LIMIT=40] -->
+    <string name="commands_category_scrolling">Scrolling</string>
+    <!-- Group of commands that move through tables. [CHAR LIMIT=40] -->
+    <string name="commands_category_tables">Tables</string>
+    <!-- Group of commands for web pages: browse mode, lists of headings and links, page addresses. [CHAR LIMIT=40] -->
+    <string name="commands_category_web">Web</string>
+    <!-- Group of commands that change speech: rate, pitch, volume, voice profile, language. [CHAR LIMIT=40] -->
+    <string name="commands_category_speech">Speech</string>
+    <!-- Group of commands that play or pause media, change tracks and change volume. [CHAR LIMIT=40] -->
+    <string name="commands_category_media">Media and volume</string>
+    <!-- Group of commands that control the screen reader itself: pause it, hide the screen, open its tutorial. [CHAR LIMIT=40] -->
+    <string name="commands_category_sandfly">SandFly</string>
+    <!-- Heading above the gestures assigned to a command. [CHAR LIMIT=40] -->
+    <string name="command_gestures">Gestures</string>
+    <!-- Heading above the keyboard shortcut of a command. [CHAR LIMIT=40] -->
+    <string name="command_keyboard_shortcut">Keyboard shortcut</string>
+    <!-- Button that assigns another gesture to the command shown. [CHAR LIMIT=40] -->
+    <string name="command_add_gesture">Add gesture</string>
+    <!-- Shown in place of the gestures of a command that has none. [CHAR LIMIT=40] -->
+    <string name="command_no_gestures">No gestures</string>
+    <!-- Title of the list of gestures to choose from when adding a gesture to a command. [CHAR LIMIT=40] -->
+    <string name="command_choose_gesture">Choose gesture</string>
+    <!-- Button in the dialog for a gesture of a command: removes the gesture from the command. [CHAR LIMIT=40] -->
+    <string name="command_remove_gesture">Remove gesture</string>
+    <!-- Dialog message when the chosen gesture runs another command. %1$s is the gesture, %2$s the command it runs now, %3$s the command it will run. [CHAR LIMIT=NONE] -->
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> runs <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Use it for <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> instead?</string>
+    <!-- Button that confirms using a gesture for a different command. [CHAR LIMIT=40] -->
+    <string name="command_replace">Replace</string>
+    <!-- Announcement after a gesture is assigned to a command. %1$s is the gesture, %2$s the command. [CHAR LIMIT=NONE] -->
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <!-- Title of the settings entry and screen with braille display and braille keyboard settings. [CHAR LIMIT=40] -->
+    <string name="title_pref_braille">Braille</string>
+    <!-- Title of the settings entry and screen for automatic image descriptions, describing the screen and live recognition. [CHAR LIMIT=40] -->
+    <string name="title_pref_image_and_screen_descriptions">Image and screen descriptions</string>
+    <!-- Title of the settings entry and screen for sounds, vibration and audio output. [CHAR LIMIT=40] -->
+    <string name="title_pref_audio">Audio</string>
+    <!-- Title of the settings entry and screen for speech: voice, rate, pitch, language. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech">Speech</string>
+    <!-- Title of the settings entry and screen for typing: keyboards, dictation, keyboard echo. [CHAR LIMIT=40] -->
+    <string name="title_pref_typing">Typing</string>
+    <!-- Group of verbosity settings for what is spoken about each item: hints, roles, positions. [CHAR LIMIT=40] -->
+    <string name="verbosity_category_items">Items</string>
+    <!-- Group of verbosity settings for how text is read: punctuation, capital letters, emoji. [CHAR LIMIT=40] -->
+    <string name="verbosity_category_text">Text and symbols</string>
+    <!-- Group of verbosity settings for what is spoken when the screen changes: window names, scrolling, volume. [CHAR LIMIT=40] -->
+    <string name="verbosity_category_announcements">Announcements</string>
+</resources>

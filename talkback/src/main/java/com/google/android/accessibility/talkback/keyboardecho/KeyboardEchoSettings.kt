@@ -130,7 +130,7 @@ object KeyboardEchoSettings {
     val res = context.resources
     val default = res.getString(R.string.pref_keyboard_echo_default)
     fun presetValue(keyResId: Int): String =
-      VerbosityPreferences.getPreferenceValueString(prefs, res, res.getString(keyResId), default)
+      VerbosityPreferences.getPresetValueString(prefs, res, res.getString(keyResId), default)
         ?: default
     val editor = prefs.edit()
     var changed = false

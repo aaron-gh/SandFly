@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="@string/pref_brailledisplay_key"
+      android:title="@string/title_pref_brailledisplay">
+    <intent
+        android:targetPackage="@string/app_id"
+        android:targetClass="com.google.android.accessibility.braille.brailledisplay.settings.BrailleDisplaySettingsActivity" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="@string/pref_brailleime_key"
+      android:title="@string/title_pref_brailleime">
+    <intent
+        android:targetPackage="@string/app_id"
+        android:targetClass="com.google.android.accessibility.brailleime.settings.BrailleImePreferencesActivity" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+</PreferenceScreen>

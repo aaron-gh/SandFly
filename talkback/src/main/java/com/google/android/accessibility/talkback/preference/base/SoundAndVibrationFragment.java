@@ -61,13 +61,7 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
 
   @Override
   public CharSequence getTitle() {
-    // Changes title by supporting vibration or not. Preference Vibration Feedback will be removed
-    // by TalkBackPreferenceFilter if this device doesn't support vibration.
-    int titleResid =
-        FeatureSupport.isVibratorSupported(getContext())
-            ? R.string.title_pref_sound_and_vibration
-            : R.string.title_pref_sound;
-    return getText(titleResid);
+    return getText(R.string.title_pref_audio);
   }
 
   /** Listens to shared preference changes and updates the preference items accordingly. */

@@ -59,6 +59,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.compositor.GestureShortcutProvider;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
@@ -1215,6 +1216,10 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     @Nullable String openAppLabel = OpenAppActions.label(context, actionKeyString);
     if (openAppLabel != null) {
       return openAppLabel;
+    }
+    @Nullable String commandLabel = Commands.label(context, actionKeyString);
+    if (commandLabel != null) {
+      return commandLabel;
     }
     return context.getString(R.string.shortcut_unassigned);
   }

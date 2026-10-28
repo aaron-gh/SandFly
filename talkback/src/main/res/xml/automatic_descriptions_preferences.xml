@@ -31,5 +31,15 @@
       android:key="@string/pref_on_device_ai_key"
       android:summary="@string/summary_pref_on_device_ai"
       android:title="@string/title_pref_on_device_ai" />
-
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_live_recognition_screen"
+      android:title="@string/live_recognition_title">
+    <intent
+        android:targetPackage="@string/app_id"
+        android:targetClass="com.google.android.accessibility.talkback.recognition.LiveRecognitionActivity" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.preference.base.GeminiSettingsFragment"
+      android:key="@string/pref_gemini_settings_key"
+      android:title="@string/title_pref_gemini_settings" />
 </PreferenceScreen>

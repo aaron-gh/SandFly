@@ -86,12 +86,6 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
       return;
     }
 
-    if (!LiveRecognition.isSupported(context)) {
-      Preference liveRecognition = findPreference("pref_live_recognition_screen");
-      if (liveRecognition != null) {
-        liveRecognition.setVisible(false);
-      }
-    }
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
     settingsMetricStore = new SettingsMetricStore(context);
 
@@ -105,33 +99,10 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
 
     assignNewFeaturesIntent();
 
-    // Changes title from Sound and Vibration to Sound if this device doesn't support vibration.
-    if (!FeatureSupport.isVibratorSupported(context)) {
-      Preference preference = findPreferenceByResId(R.string.pref_sound_and_vibration_key);
-      if (preference != null) {
-        preference.setTitle(R.string.title_pref_sound);
-      }
-    }
-
-    updatePhysicalKeyboardPreference();
-
-    // Remove braille settings if none of braille feature supported.
-    if (!FeatureSupport.supportBrailleDisplay(context)
-        && !FeatureSupport.supportBrailleKeyboard(context)) {
-      removePreference(R.string.pref_category_typing_key, R.string.pref_brailleime_key);
-      removePreference(R.string.pref_category_typing_key, R.string.pref_brailledisplay_key);
-    } else {
-      boolean isMultiTouchSupported =
-          context
-              .getPackageManager()
-              .hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN_MULTITOUCH_JAZZHAND);
-      if (!isMultiTouchSupported) {
-        final Preference brailleKeyboardCategory =
-            findPreferenceByResId(R.string.pref_brailleime_key);
-        if (brailleKeyboardCategory != null) {
-          brailleKeyboardCategory.setEnabled(false);
-          brailleKeyboardCategory.setSummary(R.string.summary_pref_brailleime_disabled);
-        }
+    if (!BrailleFragment.isSupported(context)) {
+      Preference braille = findPreference("pref_braille_screen");
+      if (braille != null) {
+        braille.setVisible(false);
       }
     }
 
@@ -156,27 +127,8 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
     if (!ImageCaptioner.supportsImageCaption(context)) {
       removePreference(R.string.pref_category_audio_key, R.string.pref_auto_image_captioning_key);
     }
-    updateGeminiPreferenceState();
     Updater.setUpPreferences(this);
     SettingsBackup.setUpPreferences(this);
-  }
-
-  private void updateGeminiPreferenceState() {
-    Preference geminiSupport = findPreferenceByResId(R.string.pref_gemini_settings_key);
-    if (geminiSupport != null) {
-      boolean hasOptIn =
-          SharedPreferencesUtils.getBooleanPref(
-              prefs,
-              context.getResources(),
-              R.string.pref_gemini_enabled_key,
-              R.bool.pref_gemini_opt_in_default);
-      geminiSupport.setSummary(
-          hasOptIn
-              ? R.string.summary_pref_gemini_support_enabled
-              : R.string.summary_pref_gemini_support_disabled);
-    } else {
-      removePreference(R.string.pref_category_controls_key, R.string.pref_gemini_settings_key);
-    }
   }
 
   private void updateTutorialAndHelpPreferencesForPhoneOrTablet() {
@@ -212,31 +164,10 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
     }
   }
 
-  private void updatePhysicalKeyboardPreference() {
-    Preference preference = findPreferenceByResId(R.string.pref_physical_keyboard_key);
-    if (preference == null) {
-      return;
-    }
-
-    // Assign physical keyboard settings if it is available.
-    InputDeviceMonitor inputDeviceMonitor = new InputDeviceMonitor(context);
-    if (inputDeviceMonitor.hasPhysicalKeyboard()) {
-      Intent intent = new Intent(Settings.ACTION_HARD_KEYBOARD_SETTINGS);
-      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-      if (PreferenceSettingsUtils.canHandleIntent(context, intent)) {
-        preference.setIntent(intent);
-      }
-    } else {
-      removePreference(R.string.pref_category_typing_key, R.string.pref_physical_keyboard_key);
-    }
-  }
-
   @Override
   public void onResume() {
     super.onResume();
     updateSurveyOption();
-    updateGeminiPreferenceState();
-    updatePhysicalKeyboardPreference();
     updateTtsOverlay();
 
     // Disable watermark when user enters TalkBack settings.

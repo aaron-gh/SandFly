@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.dictation.DictationFragment"
+      android:key="pref_dictation_screen"
+      android:title="@string/title_pref_dictation" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoFragment"
+      android:key="@string/pref_keyboard_echo_screen_key"
+      android:title="@string/title_pref_keyboard_echo" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.preference.base.OnScreenKeyboardFragment"
+      android:key="@string/pref_on_screen_keyboard_key"
+      android:title="@string/title_pref_on_screen_keyboard" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="@string/pref_physical_keyboard_key"
+      android:title="@string/title_pref_physical_keyboard" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="@string/pref_handwriting_keyboard_key"
+      android:summary="@string/summary_pref_handwriting_keyboard"
+      android:title="@string/title_pref_handwriting_keyboard">
+    <intent android:action="android.settings.INPUT_METHOD_SETTINGS" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_handwriting_wait_default"
+      android:dialogTitle="@string/title_pref_handwriting_wait"
+      android:entries="@array/pref_handwriting_wait_entries"
+      android:entryValues="@array/pref_handwriting_wait_values"
+      android:key="@string/pref_handwriting_wait_key"
+      android:summary="%s"
+      android:title="@string/title_pref_handwriting_wait" />
+  <ListPreference
+      android:defaultValue="@string/pref_interrupt_typing_default"
+      android:entries="@array/pref_interrupt_typing_entries"
+      android:entryValues="@array/pref_interrupt_typing_values"
+      android:key="@string/pref_interrupt_typing_key"
+      android:summary="%s"
+      android:title="@string/title_pref_interrupt_typing" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_interrupt_enter_default"
+      android:key="@string/pref_interrupt_enter_key"
+      android:title="@string/title_pref_interrupt_enter" />
+</PreferenceScreen>

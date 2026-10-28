@@ -126,12 +126,6 @@
             android:summary="@string/summary_speech_rate"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
-            android:defaultValue="@bool/pref_selector_verbosity_default"
-            android:key="@string/pref_selector_verbosity_key"
-            android:title="@string/pref_verbosity_title"
-            android:summary="@string/summary_selector_menu_verbosity"/>
-        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
-            android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_punctuation_default"
             android:key="@string/pref_selector_punctuation_key"
             android:title="@string/pref_punctuation_title"

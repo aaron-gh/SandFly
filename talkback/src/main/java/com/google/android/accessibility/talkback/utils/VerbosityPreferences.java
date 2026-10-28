@@ -33,6 +33,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -47,31 +48,142 @@ public class VerbosityPreferences {
 
   private VerbosityPreferences() {} // Do not instantiate.
 
+  /** Reads a setting that the verbosity presets once kept a copy of for each preset. */
   public static boolean getPreferenceValueBool(
       SharedPreferences preferences, Resources resources, String key, boolean defaultValue) {
-
-    // If no verbosity selected... use old preference. Otherwise use verbosity rule or custom value.
-    String verbosityValue =
-        SharedPreferencesUtils.getStringPref(
-            preferences, resources, R.string.pref_verbosity_preset_key, 0); // Default to null.
-    if (verbosityValue == null) {
-      return preferences.getBoolean(key, defaultValue);
-    }
-    return getPreferenceVerbosityBool(preferences, resources, verbosityValue, key, defaultValue);
+    return preferences.getBoolean(key, defaultValue);
   }
 
+  /** Reads a setting that the verbosity presets once kept a copy of for each preset. */
   public static String getPreferenceValueString(
       SharedPreferences preferences, Resources resources, String key, String defaultValue) {
+    return preferences.getString(key, defaultValue);
+  }
 
-    // If no verbosity selected... use old preference. Otherwise use verbosity rule or custom value.
-    String verbosityValue =
+  /**
+   * Reads a setting as the verbosity preset chosen before presets were removed had it, for
+   * migrations that run before {@link #removePresets}.
+   */
+  public static boolean getPresetValueBool(
+      SharedPreferences preferences, Resources resources, String key, boolean defaultValue) {
+    String preset =
         SharedPreferencesUtils.getStringPref(
             preferences, resources, R.string.pref_verbosity_preset_key, 0); // Default to null.
-    if (verbosityValue == null) {
+    if (preset == null) {
+      return preferences.getBoolean(key, defaultValue);
+    }
+    return getPreferenceVerbosityBool(preferences, resources, preset, key, defaultValue);
+  }
+
+  /**
+   * Reads a setting as the verbosity preset chosen before presets were removed had it, for
+   * migrations that run before {@link #removePresets}.
+   */
+  public static String getPresetValueString(
+      SharedPreferences preferences, Resources resources, String key, String defaultValue) {
+    String preset =
+        SharedPreferencesUtils.getStringPref(
+            preferences, resources, R.string.pref_verbosity_preset_key, 0); // Default to null.
+    if (preset == null) {
       return preferences.getString(key, defaultValue);
     }
-    return getPreferenceVerbosityString(preferences, resources, verbosityValue, key, defaultValue);
+    return getPreferenceVerbosityString(preferences, resources, preset, key, defaultValue);
   }
+
+  /**
+   * Gives each setting that the verbosity presets controlled the value it had in the preset that
+   * was chosen, under the setting's own key, and removes the preset and its copies. Does nothing
+   * once they are gone, so imported settings from before are moved too.
+   */
+  public static void removePresets(SharedPreferences preferences, Resources resources) {
+    String presetKey = resources.getString(R.string.pref_verbosity_preset_key);
+    String[] presets = resources.getStringArray(R.array.pref_verbosity_preset_values);
+    List<String> copies = new ArrayList<>();
+    for (String presetValue : presets) {
+      for (int keyId : PRESET_SWITCHES) {
+        copies.add(toVerbosityPrefKey(presetValue, resources.getString(keyId)));
+      }
+      for (int keyId : PRESET_LISTS) {
+        copies.add(toVerbosityPrefKey(presetValue, resources.getString(keyId)));
+      }
+    }
+    boolean found = preferences.contains(presetKey);
+    for (String copy : copies) {
+      found |= preferences.contains(copy);
+    }
+    if (!found) {
+      return;
+    }
+    String preset =
+        preferences.getString(
+            presetKey, resources.getString(R.string.pref_verbosity_preset_value_default));
+    boolean custom = !isPresetHighOrLow(preset, resources);
+    SharedPreferences.Editor editor = preferences.edit();
+    for (int i = 0; i < PRESET_SWITCHES.length; i++) {
+      String key = resources.getString(PRESET_SWITCHES[i]);
+      if (custom && !preferences.contains(toVerbosityPrefKey(preset, key))) {
+        continue;
+      }
+      editor.putBoolean(
+          key,
+          getPreferenceVerbosityBool(
+              preferences,
+              resources,
+              preset,
+              key,
+              resources.getBoolean(PRESET_SWITCH_DEFAULTS[i])));
+    }
+    for (int i = 0; i < PRESET_LISTS.length; i++) {
+      String key = resources.getString(PRESET_LISTS[i]);
+      if (custom && !preferences.contains(toVerbosityPrefKey(preset, key))) {
+        continue;
+      }
+      String value =
+          getPreferenceVerbosityString(
+              preferences, resources, preset, key, resources.getString(PRESET_LIST_DEFAULTS[i]));
+      if (value != null) {
+        editor.putString(key, value);
+      }
+    }
+    editor.remove(presetKey);
+    for (String copy : copies) {
+      editor.remove(copy);
+    }
+    editor.apply();
+  }
+
+  private static boolean isPresetHighOrLow(String preset, Resources resources) {
+    return TextUtils.equals(preset, resources.getString(R.string.pref_verbosity_preset_value_high))
+        || TextUtils.equals(preset, resources.getString(R.string.pref_verbosity_preset_value_low));
+  }
+
+  /** The switches that the verbosity presets controlled, with their defaults below. */
+  private static final int[] PRESET_SWITCHES = {
+    R.string.pref_a11y_hints_key,
+    R.string.pref_speak_container_element_positions_key,
+    R.string.pref_table_speak_row_column_numbers_key,
+    R.string.pref_verbose_scroll_announcement_key,
+    R.string.pref_speak_roles_key,
+    R.string.pref_intonation_key,
+  };
+
+  private static final int[] PRESET_SWITCH_DEFAULTS = {
+    R.bool.pref_a11y_hints_default,
+    R.bool.pref_speak_container_element_positions_default,
+    R.bool.pref_table_speak_row_column_numbers_default,
+    R.bool.pref_verbose_scroll_announcement_default,
+    R.bool.pref_speak_roles_default,
+    R.bool.pref_intonation_default,
+  };
+
+  /** The lists that the verbosity presets controlled, with their defaults below. */
+  private static final int[] PRESET_LISTS = {
+    R.string.pref_phonetic_letters_mode_key, R.string.pref_capital_letters_key,
+  };
+
+  private static final int[] PRESET_LIST_DEFAULTS = {
+    R.string.pref_phonetic_letters_mode_default, R.string.pref_capital_letters_default,
+  };
 
   public static boolean getPreferenceVerbosityBool(
       SharedPreferences preferences,

@@ -82,7 +82,6 @@ import static com.google.android.accessibility.talkback.analytics.TalkBackAnalyt
 import static com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.VOICE_COMMAND_TYPE_SPEECH_RATE_INCREASE;
 import static com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.VOICE_COMMAND_TYPE_START_SELECT;
 import static com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.VOICE_COMMAND_TYPE_TALKBACK_SETTING;
-import static com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.VOICE_COMMAND_TYPE_VERBOSITY;
 import static com.google.android.accessibility.talkback.analytics.TalkBackAnalytics.VOICE_COMMAND_UNRECOGNIZED;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CUSTOM_ACTION;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
@@ -144,7 +143,6 @@ public class VoiceCommandProcessor {
   private boolean echoNotRecognizedTextEnabled;
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
-  private List<String> verbosityCommandList;
   private List<String> granularityCommandList;
 
   private static final int[] typeCommandResArray = {
@@ -209,19 +207,6 @@ public class VoiceCommandProcessor {
   private static final int[] overviewCommandResArray = {
     R.string.voice_commands_overview, R.string.voice_commands_recent_apps,
     R.string.voice_commands_recent, R.string.voice_commands_recents
-  };
-
-  private static final int[] verbosityCommandArray = {
-    R.string.voice_commands_verbosity_parameter,
-    R.string.voice_commands_parameter_verbosity,
-    R.string.voice_commands_change_verbosity_to_parameter
-  };
-
-  private static final int[] verbosityParameters = {
-    R.string.pref_verbosity_preset_entry_high,
-    R.string.pref_verbosity_preset_entry_custom,
-    R.string.pref_verbosity_preset_entry_low,
-    R.string.voice_commands_homophone_high_and_hi
   };
 
   private static final int[] granularityCommandArray = {
@@ -438,30 +423,6 @@ public class VoiceCommandProcessor {
         speakDelayed(service.getString(R.string.voice_commands_no_next_link_feedback));
       }
       handleVoiceCommandRecognized(VOICE_COMMAND_TYPE_NEXT_LINK);
-      return true;
-    }
-
-    // verbosity command
-    // support command format:
-    //             low/high/custom verbosity
-    //             verbosity low/high/custom
-    //             change verbosity to low/high/custom
-    if (verbosityCommandList == null) {
-      verbosityCommandList = getCommandList(verbosityCommandArray, verbosityParameters);
-    }
-    String verbosityCommand = equals(command, verbosityCommandList);
-    if (verbosityCommand != null) {
-      int verbosityCommandIndex = contains(verbosityCommand, verbosityParameters);
-      // TODO workaround for the homophones high and hi.
-      if (LocaleUtils.isDefaultLocale(LocaleUtils.LANGUAGE_EN)
-          && containsWord(verbosityCommand, R.string.voice_commands_homophone_high_and_hi)) {
-        verbosityCommandIndex = 0;
-      }
-      if (verbosityCommandIndex >= 0) {
-        selectorController.changeVerbosity(eventId, verbosityCommandIndex);
-      }
-
-      handleVoiceCommandRecognized(VOICE_COMMAND_TYPE_VERBOSITY);
       return true;
     }
 

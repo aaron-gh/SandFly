@@ -2665,6 +2665,8 @@ public class TalkBackService extends AccessibilityServiceCompat
             screenStateMonitor.state,
             processorPhoneticLetters);
 
+    keyComboManager.setCommandPerformer(gestureController::performAction);
+
     pauseController =
         new PauseController(
             this,
@@ -3213,11 +3215,14 @@ public class TalkBackService extends AccessibilityServiceCompat
     // Verbosity's switch for notifications with the screen off became the Notifications one.
     NotificationSettings.migrateScreenOff(
         prefs,
-        VerbosityPreferences.getPreferenceValueBool(
+        VerbosityPreferences.getPresetValueBool(
             prefs,
             getResources(),
             getString(R.string.pref_screenoff_key),
             getResources().getBoolean(R.bool.pref_screenoff_default)));
+    // The verbosity presets were removed: each setting keeps the chosen preset's value.
+    PhoneticLetterMode.migrate(prefs, getResources());
+    VerbosityPreferences.removePresets(prefs, getResources());
     VoiceProfiles.moveReadingControl(
         prefs,
         getString(R.string.pref_selector_voice_profile_moved_key),

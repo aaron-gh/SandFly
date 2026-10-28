@@ -56,7 +56,7 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
 
   @Override
   public CharSequence getTitle() {
-    return getText(R.string.tts_preferences_title);
+    return getText(R.string.title_pref_speech);
   }
 
   @Override

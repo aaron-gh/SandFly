@@ -46,6 +46,7 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.actor.DirectionNavigationActor;
 import com.google.android.accessibility.talkback.actor.FullScreenReadActor;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
@@ -303,6 +304,28 @@ public class KeyComboManager
     this.pipeline = pipeline;
     this.browseModeEnabled = false;
     this.scheduler = Executors.newScheduledThreadPool(1);
+  }
+
+  /** Runs a command by its value, as a gesture assigned to it would. */
+  public interface CommandPerformer {
+    void perform(String commandValue, @Nullable EventId eventId);
+  }
+
+  @Nullable private CommandPerformer commandPerformer;
+
+  /** Sets what runs commands whose keyboard shortcuts are kept under {@link Commands} keys. */
+  public void setCommandPerformer(@Nullable CommandPerformer commandPerformer) {
+    this.commandPerformer = commandPerformer;
+  }
+
+  /** Performs a keyboard action for a gesture or another input. Returns whether it worked. */
+  public boolean performKeyboardAction(
+      TalkBackPhysicalKeyboardShortcut action, @Nullable EventId eventId) {
+    if (keyComboMapper == null) {
+      return false;
+    }
+    interrupt(action);
+    return keyComboMapper.performKeyComboAction(action, eventId);
   }
 
   /** Terminates instances to prevent leakage. */
@@ -1167,6 +1190,21 @@ public class KeyComboManager
         continue;
       }
       if (match == EXACT_MATCH) {
+        @Nullable String commandValue = Commands.valueOfShortcutKey(key);
+        if (commandValue != null) {
+          // A command without a keyboard action of its own runs as a gesture would run it.
+          if (commandPerformer == null) {
+            continue;
+          }
+          commandPerformer.perform(
+              commandValue,
+              Performance.getInstance()
+                  .onKeyComboEventReceived(
+                      TalkBackPhysicalKeyboardShortcut.ACTION_UNKNOWN
+                          .getKeyboardShortcutOrdinal()));
+          performedCombo = true;
+          return true;
+        }
         TalkBackPhysicalKeyboardShortcut action =
             TalkBackPhysicalKeyboardShortcut.getActionFromKey(context.getResources(), key);
         EventId eventId =

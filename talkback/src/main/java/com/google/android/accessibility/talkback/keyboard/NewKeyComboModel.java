@@ -21,6 +21,7 @@ import android.content.SharedPreferences;
 import android.view.KeyEvent;
 import androidx.annotation.Nullable;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
@@ -46,6 +47,7 @@ public class NewKeyComboModel implements KeyComboModel {
 
     loadTriggerModifierFromPreferences();
     addKeyCombos();
+    addCommandShortcuts();
   }
 
   private void loadTriggerModifierFromPreferences() {
@@ -1480,6 +1482,13 @@ public class NewKeyComboModel implements KeyComboModel {
     if (FeatureFlagReader.enableOpenVoiceCommands(context)
         && TalkbackFeatureSupport.supportSpeechRecognize()) {
       addKeyCombo(context.getString(R.string.keycombo_shortcut_other_open_voice_commands));
+    }
+  }
+
+  /** Adds the keyboard shortcuts set for commands that have no keyboard action of their own. */
+  private void addCommandShortcuts() {
+    for (String key : persister.keysStartingWith(Commands.SHORTCUT_KEY_PREFIX)) {
+      keyComboMap.put(key, persister.getKeyCombo(key));
     }
   }
 
