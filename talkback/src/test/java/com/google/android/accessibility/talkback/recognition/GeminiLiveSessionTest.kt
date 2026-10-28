@@ -93,7 +93,7 @@ class GeminiLiveSessionTest {
   @Test fun apiKeyIsSentInAHeaderAndNotInTheAddress() {
     connect().close()
     assertEquals("test-key", socket.request().header("x-goog-api-key"))
-    assertFalse(socket.request().url().toString().contains("test-key"))
+    assertFalse(socket.request().url.toString().contains("test-key"))
   }
 
   @Test fun setupNamesTheLiveModel() {
