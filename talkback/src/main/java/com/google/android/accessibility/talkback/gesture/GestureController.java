@@ -83,6 +83,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
@@ -434,6 +435,10 @@ public class GestureController {
       changeMediaVolume(eventId, /* decrease= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_decrease_media_volume))) {
       changeMediaVolume(eventId, /* decrease= */ true);
+    } else if (action.equals(service.getString(R.string.shortcut_value_next_track))) {
+      result = dispatchMediaKey(KeyEvent.KEYCODE_MEDIA_NEXT);
+    } else if (action.equals(service.getString(R.string.shortcut_value_previous_track))) {
+      result = dispatchMediaKey(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
     } else if (action.equals(service.getString(R.string.shortcut_value_back))) {
       result =
           pipeline.returnFeedback(
@@ -1195,6 +1200,17 @@ public class GestureController {
         eventId,
         volumeText,
         decrease ? Item.ITEM_ACCESSIBILITY_VOLUME_DECREASE : Item.ITEM_ACCESSIBILITY_VOLUME_INCREASE);
+  }
+
+  /** Sends a media key press to the active media session. */
+  private boolean dispatchMediaKey(int keyCode) {
+    AudioManager audioManager = (AudioManager) service.getSystemService(Context.AUDIO_SERVICE);
+    if (audioManager == null) {
+      return false;
+    }
+    audioManager.dispatchMediaKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, keyCode));
+    audioManager.dispatchMediaKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, keyCode));
+    return true;
   }
 
   private void refreshVolumeChangedListener(EventId eventId) {

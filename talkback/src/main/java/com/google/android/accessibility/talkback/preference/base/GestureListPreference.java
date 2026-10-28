@@ -446,6 +446,18 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
             resources.getString(R.string.shortcut_value_decrease_media_volume),
             TYPE_ACTION_ITEM));
 
+    builder.add(
+        new ActionItem(
+            resources.getString(R.string.shortcut_next_track),
+            resources.getString(R.string.shortcut_value_next_track),
+            TYPE_ACTION_ITEM));
+
+    builder.add(
+        new ActionItem(
+            resources.getString(R.string.shortcut_previous_track),
+            resources.getString(R.string.shortcut_value_previous_track),
+            TYPE_ACTION_ITEM));
+
     if (TalkbackFeatureSupport.supportSpeechRecognize()) {
       builder.add(
           new ActionItem(
