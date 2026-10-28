@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_quick_settings_default"
+      android:key="@string/pref_quick_settings_key"
+      android:title="@string/title_pref_quick_settings"/>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.quicksettings.QuickSettingsItemsFragment"
+      android:key="@string/pref_quick_settings_items_key"
+      android:title="@string/title_pref_quick_settings_items"/>
+</PreferenceScreen>

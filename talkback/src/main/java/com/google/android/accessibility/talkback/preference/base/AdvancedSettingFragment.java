@@ -20,33 +20,71 @@ import android.content.Context;
 import android.os.Bundle;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.backup.SettingsBackup;
 import com.google.android.accessibility.talkback.shizuku.PlayInstaller;
+import com.google.android.accessibility.talkback.training.TutorialInitiator;
+import com.google.android.accessibility.talkback.trainingcommon.tv.TvTutorialInitiator;
+import com.google.android.accessibility.talkback.trainingcommon.tv.VendorConfigReader;
+import com.google.android.accessibility.talkback.update.Updater;
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
+import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 
 /**
- * Settings that most people never change. Touch and activation, navigation and the settings for
- * apps have screens of their own on the main settings screen.
+ * A small screen of the main settings screen, such as Pause and turn off or Updates and
+ * installation. It sets up whichever of the settings below its screen has.
  */
 public class AdvancedSettingFragment extends TalkbackBaseFragment {
+  private final int titleResId;
 
   public AdvancedSettingFragment() {
-    super(R.xml.advanced_preferences);
+    this(R.xml.pause_preferences, R.string.title_pref_pause);
+  }
+
+  protected AdvancedSettingFragment(int xmlResId, int titleResId) {
+    super(xmlResId);
+    this.titleResId = titleResId;
   }
 
   @Override
   public CharSequence getTitle() {
-    return getText(R.string.title_pref_advanced_settings);
+    return getText(titleResId);
   }
 
   @Override
   public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
     super.onCreatePreferences(savedInstanceState, rootKey);
-
     // TODO hide preference until the feature stable.
     if (!TalkbackFeatureSupport.supportTalkBackExitBanner(getContext())) {
       PreferenceSettingsUtils.hidePreference(
           getContext(), getPreferenceScreen(), R.string.pref_show_exit_watermark_key);
+    }
+    Updater.setUpPreferences(this);
+    SettingsBackup.setUpPreferences(this);
+    setUpHelp();
+  }
+
+  /** The tutorial, or on a TV its help screen, and gesture practice. */
+  private void setUpHelp() {
+    Preference tutorial = findPreference(getString(R.string.pref_tutorial_and_help_key));
+    if (tutorial != null) {
+      if (FormFactorUtils.isAndroidTv()) {
+        tutorial.setTitle(
+            TvTutorialInitiator.shouldShowTraining(VendorConfigReader.retrieveConfig(getContext()))
+                ? R.string.title_pref_category_tutorial
+                : R.string.title_pref_category_help_no_tutorial);
+        tutorial.setFragment(TutorialAndHelpFragment.class.getName());
+      } else {
+        tutorial.setIntent(TutorialInitiator.createTutorialIntent(getActivity()));
+      }
+    }
+    Preference practice = findPreference("pref_practice_gestures_help");
+    if (practice != null) {
+      if (FormFactorUtils.isAndroidWear() || FormFactorUtils.isAndroidTv()) {
+        practice.setVisible(false);
+      } else {
+        practice.setIntent(TutorialInitiator.createPracticeGesturesIntent(getContext()));
+      }
     }
   }
 

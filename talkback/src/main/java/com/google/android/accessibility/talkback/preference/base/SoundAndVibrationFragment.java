@@ -55,13 +55,21 @@ public class SoundAndVibrationFragment extends TalkbackBaseFragment {
   /** Preferences managed by this activity. */
   private SharedPreferences prefs;
 
+  private final int titleResId;
+
   public SoundAndVibrationFragment() {
-    super(R.xml.sound_and_vibration_preferences);
+    this(R.xml.sound_and_vibration_preferences, R.string.title_pref_sound_and_vibration);
+  }
+
+  /** A screen with some of the sound settings, which this class keeps up to date. */
+  protected SoundAndVibrationFragment(int xmlResId, int titleResId) {
+    super(xmlResId);
+    this.titleResId = titleResId;
   }
 
   @Override
   public CharSequence getTitle() {
-    return getText(R.string.title_pref_audio);
+    return getText(titleResId);
   }
 
   /** Listens to shared preference changes and updates the preference items accordingly. */

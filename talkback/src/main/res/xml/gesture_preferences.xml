@@ -16,6 +16,19 @@
       android:defaultValue="@string/pref_gesture_set_value_default"
       android:entries="@array/pref_gesture_set_entries"
       android:entryValues="@array/pref_gesture_set_values" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_multi_tap_timeout_default"
+      android:dialogTitle="@string/title_pref_multi_tap_timeout"
+      android:entries="@array/pref_multi_tap_timeout_entries"
+      android:entryValues="@array/pref_multi_tap_timeout_values"
+      android:key="@string/pref_multi_tap_timeout_key"
+      android:summary="%s"
+      android:title="@string/title_pref_multi_tap_timeout" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="false"
+      android:key="@string/pref_reserve_vibration_watch_gestures_key"
+      android:title="@string/title_pref_reserve_vibration_watch_gestures"
+      android:summary="@string/summary_pref_reserve_vibration_watch_gestures" />
   <!-- One finger gestures -->
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_category_1finger_shortcuts_key"

@@ -47,13 +47,23 @@ public class TalkBackLatencyReductionPreferenceFragment extends TalkbackBaseFrag
   private Context context;
   private SharedPreferences prefs;
 
+  private final int xmlResId;
+  private final int titleResId;
+
   public TalkBackLatencyReductionPreferenceFragment() {
-    super(R.xml.latency_reduction_preferences);
+    this(R.xml.touch_activation_preferences, R.string.title_pref_touch);
+  }
+
+  /** A screen with some of the delay settings, which this class keeps up to date. */
+  protected TalkBackLatencyReductionPreferenceFragment(int xmlResId, int titleResId) {
+    super(xmlResId);
+    this.xmlResId = xmlResId;
+    this.titleResId = titleResId;
   }
 
   @Override
   public CharSequence getTitle() {
-    return getText(R.string.title_pref_latency_reduction);
+    return getText(titleResId);
   }
 
   /** Updates fragment whenever their values change. */
@@ -171,7 +181,7 @@ public class TalkBackLatencyReductionPreferenceFragment extends TalkbackBaseFrag
   }
 
   private int getPreferenceResourceId() {
-    return R.xml.latency_reduction_preferences;
+    return xmlResId;
   }
 
   @Override
@@ -245,7 +255,9 @@ public class TalkBackLatencyReductionPreferenceFragment extends TalkbackBaseFrag
 
     Preference resetTypeLatencyPreferenceScreen =
         (Preference) findPreference(getString(R.string.pref_reset_latency_settings_key));
-    resetTypeLatencyPreferenceScreen.setOnPreferenceClickListener(resetPreferenceClickListener);
+    if (resetTypeLatencyPreferenceScreen != null) {
+      resetTypeLatencyPreferenceScreen.setOnPreferenceClickListener(resetPreferenceClickListener);
+    }
 
     if (reset) {
       ListPreference multiTapTimeoutPreference =
