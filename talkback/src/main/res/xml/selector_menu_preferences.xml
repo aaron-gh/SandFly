@@ -3,7 +3,7 @@
     android:key="@string/pref_category_manage_selector_menu_key">
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
         android:key="@string/pref_show_selector_menu_reading_control_category_key"
-        android:title="@string/menu_category_reading_controls">
+        android:title="@string/title_pref_navigation">
         <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
             android:defaultValue="@bool/pref_selector_auto_switch_default"
             android:key="@string/pref_selector_auto_switch_key"
@@ -118,6 +118,10 @@
             android:key="@string/pref_selector_granularity_key"
             android:title="@string/title_granularity_default"
             android:summary="@string/summary_granularity_default"/>
+    </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+        android:key="pref_show_selector_menu_speech_category"
+        android:title="@string/commands_category_speech">
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:layout="@layout/listitem_2texts"
             android:defaultValue="@bool/pref_selector_speech_rate_default"

@@ -20,17 +20,19 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
+import com.google.android.accessibility.talkback.contextmenu.TalkbackMenuProcessor;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import java.util.List;
 
-/** Panel holding a set of context menu preferences. */
-public class ContextMenuFragment extends TalkbackBaseFragment {
-
-  private SharedPreferences.OnSharedPreferenceChangeListener listener;
+/** SandFly menu: the items in the menu, in order, and those that aren't. */
+public class ContextMenuFragment extends ItemListFragment {
 
   // Prevents from runtime exception that will occur in some cases during state restore if the
   // no-argument constructor is not available.
@@ -49,92 +51,73 @@ public class ContextMenuFragment extends TalkbackBaseFragment {
     super.onCreate(bundle);
   }
 
-  /** Preferences managed by this fragment. */
   @Override
-  public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-    super.onCreatePreferences(savedInstanceState, rootKey);
-
-    final Context context = getContext();
-    if (context == null) {
-      return;
-    }
-
-    SharedPreferences prefs = getPreferenceManager().getSharedPreferences();
-
-    Preference preferenceGranularityDetail =
-        findPreference(
-            context.getString(R.string.pref_show_context_menu_granularity_detail_setting_key));
-
-    if (!SharedPreferencesUtils.getBooleanPref(
-        prefs,
-        context.getResources(),
-        R.string.pref_show_context_menu_granularity_setting_key,
-        R.bool.pref_show_context_menu_granularity_default)) {
-      if (preferenceGranularityDetail != null) {
-        preferenceGranularityDetail.setEnabled(false);
-      }
-    }
-
-    listener =
-        (preference, keyString) -> {
-          if (preferenceGranularityDetail == null) {
-            return;
-          }
-          if (TextUtils.equals(
-              keyString,
-              context.getString(R.string.pref_show_context_menu_granularity_setting_key))) {
-            if (SharedPreferencesUtils.getBooleanPref(
-                preference,
-                context.getResources(),
-                R.string.pref_show_context_menu_granularity_setting_key,
-                R.bool.pref_show_context_menu_granularity_default)) {
-              preferenceGranularityDetail.setEnabled(true);
-            } else {
-              preferenceGranularityDetail.setEnabled(false);
-            }
-          }
-        };
-    prefs.registerOnSharedPreferenceChangeListener(listener);
-
-    // For screen overview menu item.
-    Preference screenOverviewPreference =
-        findPreference(
-            context.getString(R.string.pref_show_context_menu_summarize_view_setting_key));
-    if (screenOverviewPreference != null) {
-      boolean visible = ImageCaptioner.supportsImageCaption(context);
-      screenOverviewPreference.setVisible(visible);
-      if (visible && GeminiConfiguration.isScreenQnaActionsEnabled(context)) {
-        screenOverviewPreference.setSummary(R.string.summary_screen_overview);
-      }
-    }
-
-    // For describe-image menu item.
-    Preference describeImagePreference =
-        findPreference(
-            context.getString(R.string.pref_show_context_menu_image_caption_setting_key));
-    if (describeImagePreference != null) {
-      describeImagePreference.setVisible(ImageCaptioner.supportsImageCaption(context));
-    }
-
-    // For Keyboard shortcuts menu item.
-    Preference keyboardShortcutsPreference =
-        findPreference(
-            context.getString(R.string.pref_show_context_menu_show_keyboard_shortcuts_setting_key));
-    if (keyboardShortcutsPreference != null) {
-      keyboardShortcutsPreference.setVisible(
-          FeatureFlagReader.enableShowKeyboardShortcutsDialog(context));
-    }
-
-    collapseCategories();
+  protected String getOrderKey() {
+    return ItemOrder.SANDFLY_MENU_KEY;
   }
 
   @Override
-  public void onDestroy() {
-    SharedPreferences prefs = getPreferenceManager().getSharedPreferences();
-    if (listener != null) {
-      prefs.unregisterOnSharedPreferenceChangeListener(listener);
-      listener = null;
+  protected int getNotInListTitle() {
+    return R.string.item_list_not_in_sandfly_menu;
+  }
+
+  @Override
+  protected List<String> defaultOrder(Context context) {
+    return TalkbackMenuProcessor.defaultOrderKeys(context);
+  }
+
+  @Override
+  protected void hideUnavailable(PreferenceScreen screen) {
+    Context context = requireContext();
+    hide(
+        screen,
+        R.string.pref_show_context_menu_summarize_view_setting_key,
+        ImageCaptioner.supportsImageCaption(context));
+    Preference screenOverview =
+        screen.findPreference(
+            context.getString(R.string.pref_show_context_menu_summarize_view_setting_key));
+    if (screenOverview != null && GeminiConfiguration.isScreenQnaActionsEnabled(context)) {
+      screenOverview.setSummary(R.string.summary_screen_overview);
     }
-    super.onDestroy();
+    hide(
+        screen,
+        R.string.pref_show_context_menu_image_caption_setting_key,
+        ImageCaptioner.supportsImageCaption(context));
+    hide(
+        screen,
+        R.string.pref_show_context_menu_show_keyboard_shortcuts_setting_key,
+        FeatureFlagReader.enableShowKeyboardShortcutsDialog(context));
+    updateNavigationOptions(screen);
+  }
+
+  private void hide(PreferenceScreen screen, int keyResId, boolean visible) {
+    Preference preference = screen.findPreference(getString(keyResId));
+    if (preference != null && !visible) {
+      preference.setVisible(false);
+    }
+  }
+
+  @Override
+  protected void onMembershipChanged(String key, boolean inList) {
+    if (TextUtils.equals(key, getString(R.string.pref_show_context_menu_granularity_setting_key))) {
+      updateNavigationOptions(getPreferenceScreen());
+    }
+  }
+
+  /** The navigation options only apply while Navigation is in the menu. */
+  private void updateNavigationOptions(PreferenceScreen screen) {
+    Preference navigationOptions =
+        screen.findPreference(
+            getString(R.string.pref_show_context_menu_granularity_detail_setting_key));
+    if (navigationOptions == null) {
+      return;
+    }
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(requireContext());
+    navigationOptions.setEnabled(
+        SharedPreferencesUtils.getBooleanPref(
+            prefs,
+            getResources(),
+            R.string.pref_show_context_menu_granularity_setting_key,
+            R.bool.pref_show_context_menu_granularity_default));
   }
 }

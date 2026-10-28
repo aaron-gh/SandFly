@@ -84,6 +84,7 @@ import com.google.android.accessibility.talkback.Feedback.TalkBackUI.Item;
 import com.google.android.accessibility.talkback.Interpretation;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.UserInterface.UserInputEventListener;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.compositor.Compositor;
@@ -132,8 +133,10 @@ import com.google.common.collect.ImmutableList;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Optional;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -1788,7 +1791,7 @@ public class SelectorController implements UserInputEventListener {
     @Nullable AccessibilityNodeInfoCompat node =
         accessibilityFocusMonitor.getAccessibilityFocus(false);
 
-    for (Setting setting : SELECTOR_SETTINGS) {
+    for (Setting setting : orderedSettings()) {
       if (hiddenSettings.contains(setting)) {
         continue;
       }
@@ -1797,6 +1800,47 @@ public class SelectorController implements UserInputEventListener {
       }
     }
     return filteredSettingsBuilder.build();
+  }
+
+  @Nullable private String orderedSettingsSource;
+  private ImmutableList<Setting> orderedSettings = SELECTOR_SETTINGS;
+
+  /** Returns every reading control in the order the user gave them in Reading controls. */
+  private ImmutableList<Setting> orderedSettings() {
+    String saved = prefs.getString(ItemOrder.READING_CONTROLS_KEY, null);
+    if (saved == null) {
+      return SELECTOR_SETTINGS;
+    }
+    if (!saved.equals(orderedSettingsSource)) {
+      orderedSettings = orderSettings(context, ItemOrder.stored(saved));
+      orderedSettingsSource = saved;
+    }
+    return orderedSettings;
+  }
+
+  /** Returns {@link #SELECTOR_SETTINGS} in the order of the setting keys in {@code keys}. */
+  public static ImmutableList<Setting> orderSettings(Context context, List<String> keys) {
+    Map<String, Setting> byKey = new HashMap<>();
+    List<String> defaults = new ArrayList<>();
+    for (Setting setting : SELECTOR_SETTINGS) {
+      String key = context.getString(setting.prefKeyResId);
+      byKey.put(key, setting);
+      defaults.add(key);
+    }
+    ImmutableList.Builder<Setting> builder = ImmutableList.builder();
+    for (String key : ItemOrder.ordered(keys, defaults)) {
+      builder.add(byKey.get(key));
+    }
+    return builder.build();
+  }
+
+  /** Returns the setting key of each reading control, in the default order. */
+  public static List<String> defaultOrderKeys(Context context) {
+    List<String> keys = new ArrayList<>();
+    for (Setting setting : SELECTOR_SETTINGS) {
+      keys.add(context.getString(setting.prefKeyResId));
+    }
+    return keys;
   }
 
   /** Announces the quick menu item or action, and the usage hint. */
