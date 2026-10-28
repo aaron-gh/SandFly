@@ -377,10 +377,10 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_toggle_browse_mode))) {
       KeyComboManager keyComboManager = service.getKeyComboManager();
       result = keyComboManager != null && keyComboManager.toggleBrowseModeByUser();
-    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_quick_nav))) {
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_arrow_key_nav))) {
       KeyComboManager keyComboManager = service.getKeyComboManager();
       if (keyComboManager != null) {
-        keyComboManager.toggleQuickNav();
+        keyComboManager.toggleArrowKeyNav();
       }
       result = keyComboManager != null;
     } else if (action.equals(service.getString(R.string.shortcut_value_refresh))) {

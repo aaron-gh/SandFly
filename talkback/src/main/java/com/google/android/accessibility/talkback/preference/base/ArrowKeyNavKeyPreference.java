@@ -31,8 +31,8 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
-import com.google.android.accessibility.talkback.keyboard.QuickNav;
-import com.google.android.accessibility.talkback.keyboard.QuickNavCommand;
+import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
+import com.google.android.accessibility.talkback.keyboard.ArrowKeyNavCommand;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.ServiceKeyEventListener;
@@ -40,42 +40,42 @@ import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
 import java.util.LinkedHashSet;
 
 /**
- * Keys of a Quick Nav command on the Keyboard shortcuts screen. Its dialog takes a key or two keys
- * pressed together, with or without modifiers.
+ * Keys of an arrow key navigation command on the Keyboard shortcuts screen. Its dialog takes a key
+ * or two keys pressed together, with or without modifiers.
  */
-public class QuickNavKeyPreference extends Preference
+public class ArrowKeyNavKeyPreference extends Preference
     implements DialogInterface.OnKeyListener, ServiceKeyEventListener {
 
-  private @Nullable QuickNavCommand command;
-  private long keys = QuickNav.UNASSIGNED;
+  private @Nullable ArrowKeyNavCommand command;
+  private long keys = ArrowKeyNav.UNASSIGNED;
   private final LinkedHashSet<Integer> heldKeys = new LinkedHashSet<>();
   private @Nullable KeyComboManager keyComboManager;
   private @Nullable Dialog dialog;
   private @Nullable TextView keysView;
   private @Nullable TextView errorView;
 
-  /** Whether SandFly receives the keys before the dialog, so the dialog's own listener ignores them. */
+  /** Whether SandFly receives keys before the dialog, so the dialog's own listener ignores them. */
   private boolean keysFromService;
 
-  public QuickNavKeyPreference(Context context, AttributeSet attrs) {
+  public ArrowKeyNavKeyPreference(Context context, AttributeSet attrs) {
     super(context, attrs);
     init();
   }
 
-  public QuickNavKeyPreference(Context context) {
+  public ArrowKeyNavKeyPreference(Context context) {
     super(context);
     init();
   }
 
   private void init() {
     setPersistent(false);
-    command = QuickNavCommand.fromPrefKey(getKey());
+    command = ArrowKeyNavCommand.fromPrefKey(getKey());
   }
 
   @Override
   public void setKey(String key) {
     super.setKey(key);
-    command = QuickNavCommand.fromPrefKey(key);
+    command = ArrowKeyNavCommand.fromPrefKey(key);
   }
 
   /** Shows the keys again, such as after they were reset. */
@@ -88,7 +88,7 @@ public class QuickNavKeyPreference extends Preference
     if (command == null) {
       return null;
     }
-    return describe(QuickNav.keysFor(getContext(), command));
+    return describe(ArrowKeyNav.keysFor(getContext(), command));
   }
 
   @Override
@@ -101,11 +101,11 @@ public class QuickNavKeyPreference extends Preference
 
   private String describe(long keys) {
     return KeyboardShortcutDialogPreference.getKeyComboManager(getContext())
-        .getQuickNavKeysStringRepresentation(keys);
+        .getArrowKeyNavKeysStringRepresentation(keys);
   }
 
   private void showDialog() {
-    keys = QuickNav.keysFor(getContext(), command);
+    keys = ArrowKeyNav.keysFor(getContext(), command);
     heldKeys.clear();
     View view =
         LayoutInflater.from(getContext())
@@ -113,7 +113,7 @@ public class QuickNavKeyPreference extends Preference
     keysView = view.findViewById(R.id.assigned_combination);
     errorView = view.findViewById(R.id.error_message);
     TextView instruction = view.findViewById(R.id.instruction);
-    instruction.setText(R.string.quick_nav_assign_instruction);
+    instruction.setText(R.string.arrow_key_nav_assign_instruction);
 
     A11yAlertDialogWrapper wrapper =
         A11yAlertDialogWrapper.materialDialogBuilder(getContext())
@@ -133,7 +133,7 @@ public class QuickNavKeyPreference extends Preference
           }
           Button clear = wrapper.getButton(DialogInterface.BUTTON_NEUTRAL);
           if (clear != null) {
-            clear.setOnClickListener(v -> setKeys(QuickNav.UNASSIGNED));
+            clear.setOnClickListener(v -> setKeys(ArrowKeyNav.UNASSIGNED));
           }
         });
     shownDialog.setOnKeyListener(this);
@@ -205,7 +205,7 @@ public class QuickNavKeyPreference extends Preference
     }
     if (otherKey != null) {
       heldKeys.add(keyCode);
-      setKeys(QuickNav.keys(modifiers, otherKey, keyCode));
+      setKeys(ArrowKeyNav.keys(modifiers, otherKey, keyCode));
       return true;
     }
 
@@ -227,7 +227,7 @@ public class QuickNavKeyPreference extends Preference
         }
         case KeyEvent.KEYCODE_DEL -> {
           heldKeys.add(keyCode);
-          setKeys(QuickNav.UNASSIGNED);
+          setKeys(ArrowKeyNav.UNASSIGNED);
           return true;
         }
         default -> {}
@@ -241,7 +241,7 @@ public class QuickNavKeyPreference extends Preference
     }
 
     heldKeys.add(keyCode);
-    setKeys(QuickNav.keys(modifiers, keyCode));
+    setKeys(ArrowKeyNav.keys(modifiers, keyCode));
     return true;
   }
 
@@ -253,21 +253,22 @@ public class QuickNavKeyPreference extends Preference
     if (errorView == null) {
       return;
     }
-    QuickNavCommand owner = QuickNav.commandFor(getContext(), newKeys);
+    ArrowKeyNavCommand owner = ArrowKeyNav.commandFor(getContext(), newKeys);
     if (owner == null || owner == command) {
       errorView.setVisibility(View.GONE);
       return;
     }
     String message =
         getContext()
-            .getString(R.string.already_in_use_error_message, getContext().getString(owner.getTitle()));
+            .getString(
+                R.string.already_in_use_error_message, getContext().getString(owner.getTitle()));
     errorView.setText(message);
     errorView.setVisibility(View.VISIBLE);
     PreferencesActivityUtils.announceText(message, getContext());
   }
 
   private void save() {
-    QuickNavCommand owner = QuickNav.commandFor(getContext(), keys);
+    ArrowKeyNavCommand owner = ArrowKeyNav.commandFor(getContext(), keys);
     if (owner == null || owner == command) {
       saveAndClose(/* clearedOwner= */ null);
       return;
@@ -297,15 +298,15 @@ public class QuickNavKeyPreference extends Preference
     overrideDialog.show();
   }
 
-  private void saveAndClose(@Nullable QuickNavCommand clearedOwner) {
+  private void saveAndClose(@Nullable ArrowKeyNavCommand clearedOwner) {
     if (clearedOwner != null) {
-      QuickNav.save(getContext(), clearedOwner, QuickNav.UNASSIGNED);
+      ArrowKeyNav.save(getContext(), clearedOwner, ArrowKeyNav.UNASSIGNED);
       Preference ownerPreference = getPreferenceManager().findPreference(clearedOwner.getPrefKey());
-      if (ownerPreference instanceof QuickNavKeyPreference quickNavKeyPreference) {
-        quickNavKeyPreference.refresh();
+      if (ownerPreference instanceof ArrowKeyNavKeyPreference arrowKeyNavKeyPreference) {
+        arrowKeyNavKeyPreference.refresh();
       }
     }
-    QuickNav.save(getContext(), command, keys);
+    ArrowKeyNav.save(getContext(), command, keys);
     notifyChanged();
     if (dialog != null) {
       dialog.dismiss();

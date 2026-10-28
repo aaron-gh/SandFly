@@ -217,7 +217,7 @@ public class KeyComboManager
   private ScheduledExecutorService scheduler;
   private Future<Boolean> scheduleToOpenSearchApp;
   private NewKeymapNotificationDialog newKeymapNotificationDialog;
-  private final QuickNavKeyHandler quickNavKeyHandler;
+  private final ArrowKeyNavKeyHandler arrowKeyNavKeyHandler;
 
   private enum KeyComboPassThroughState {
     // KeyComboPassThrough is not enabled and TalkBack will act on key events as normal.
@@ -239,13 +239,13 @@ public class KeyComboManager
     sharedPreferences = SharedPreferencesUtils.getSharedPreferences(context);
     initializeDefaultPreferenceValues();
     keyComboModel = createKeyComboModel();
-    quickNavKeyHandler =
-        new QuickNavKeyHandler(
+    arrowKeyNavKeyHandler =
+        new ArrowKeyNavKeyHandler(
             context,
-            new QuickNavKeyHandler.Callbacks() {
+            new ArrowKeyNavKeyHandler.Callbacks() {
               @Override
-              public void perform(QuickNavCommand command) {
-                performQuickNavCommand(command);
+              public void perform(ArrowKeyNavCommand command) {
+                performArrowKeyNavCommand(command);
               }
 
               @Override
@@ -327,7 +327,7 @@ public class KeyComboManager
     // sent, causing the partially-matched key history to become inconsistent.
     // The following method will cause the key history to be reset.
     setMatchKeyCombo(matchKeyCombo);
-    quickNavKeyHandler.reset();
+    arrowKeyNavKeyHandler.reset();
     serviceState = newState;
   }
 
@@ -341,12 +341,12 @@ public class KeyComboManager
   public boolean onKeyEvent(KeyEvent event, EventId eventId) {
     if (keyEventDelegate != null) {
       if (keyEventDelegate.onKeyEvent(event, eventId)) {
-        quickNavKeyHandler.onKeyEventConsumedElsewhere(event);
+        arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
         return true;
       }
     }
 
-    if (quickNavKeyHandler.onKeyEvent(
+    if (arrowKeyNavKeyHandler.onKeyEvent(
         event,
         /* canAct= */ serviceState == SERVICE_STATE_ACTIVE
             && matchKeyCombo
@@ -570,22 +570,22 @@ public class KeyComboManager
     return true;
   }
 
-  /** Turns Quick Nav on or off. */
-  public void toggleQuickNav() {
-    boolean on = !QuickNav.isOn(context);
-    QuickNav.setOn(context, on);
+  /** Turns arrow key navigation on or off. */
+  public void toggleArrowKeyNav() {
+    boolean on = !ArrowKeyNav.isOn(context);
+    ArrowKeyNav.setOn(context, on);
     pipeline.returnFeedback(
         EVENT_ID_UNTRACKED,
         Feedback.speech(
-            context.getString(on ? R.string.quick_nav_on : R.string.quick_nav_off),
+            context.getString(on ? R.string.arrow_key_nav_on : R.string.arrow_key_nav_off),
             INTERRUPTIVE_SPEAK_OPTIONS));
   }
 
-  private void performQuickNavCommand(QuickNavCommand command) {
-    if (command == QuickNavCommand.TOGGLE) {
-      toggleQuickNav();
+  private void performArrowKeyNavCommand(ArrowKeyNavCommand command) {
+    if (command == ArrowKeyNavCommand.TOGGLE) {
+      toggleArrowKeyNav();
     } else if (keyComboMapper != null) {
-      keyComboMapper.performQuickNavCommand(command);
+      keyComboMapper.performArrowKeyNavCommand(command);
     }
   }
 
@@ -602,9 +602,9 @@ public class KeyComboManager
             accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false));
   }
 
-  /** Returns how the given Quick Nav keys are written, such as "Arrow Up + Arrow Down". */
-  public String getQuickNavKeysStringRepresentation(long keys) {
-    if (keys == QuickNav.UNASSIGNED) {
+  /** Returns how arrow key navigation keys are written, such as "Arrow Up + Arrow Down". */
+  public String getArrowKeyNavKeysStringRepresentation(long keys) {
+    if (keys == ArrowKeyNav.UNASSIGNED) {
       return context.getString(R.string.keycombo_unassigned);
     }
     StringBuilder sb = new StringBuilder();

@@ -527,13 +527,13 @@ When you turn on **Controls** > **Touch and activation** > **Volume keys adjust 
 
 **Navigation > Remember browse mode in each app**, off by default, keeps browse mode as you last turned it on or off in each app. In an app where you haven't turned it on or off, browse mode is off, unless Smart browse mode turns it on in web content.
 
-### Quick Nav
+### Arrow key navigation
 
-Quick Nav works as in VoiceOver on iOS: while it is on, arrow keys navigate without the Action key. It is off by default and stays as you last left it. The default keys are VoiceOver's:
+While arrow key navigation is on, arrow keys navigate without the Action key, alone or two pressed together. It is off by default and stays as you last left it. The default keys are the same as VoiceOver's on iOS:
 
 | Command | Keys |
 | --- | --- |
-| Turn Quick Nav on or off | Left and Right arrows together |
+| Turn arrow key navigation on or off | Left and Right arrows together |
 | Navigate to next or previous item | Right or Left arrow |
 | Adjust reading control down or up | Down or Up arrow |
 | Perform click | Up and Down arrows together |
@@ -541,7 +541,7 @@ Quick Nav works as in VoiceOver on iOS: while it is on, arrow keys navigate with
 | Navigate to first or last item | Ctrl + Up or Ctrl + Down arrow |
 | Page up, Page down, Page left, Page right | Alt + Up, Down, Left or Right arrow |
 
-Every command can be assigned other keys in **Keyboard shortcuts** > **Quick Nav**: a key or two keys pressed together, with or without modifier keys. **Reset keymap** also resets them. **Turn Quick Nav on or off** is also a gesture action, in **Menu and controls**.
+Every command can be assigned other keys in **Keyboard shortcuts** > **Arrow key navigation**: a key or two keys pressed together, with or without modifier keys. **Reset keymap** also resets them. **Turn arrow key navigation on or off** is also a gesture action, in **Menu and controls**.
 
 A key that is part of two keys pressed together acts when it is released, so that the two keys together don't also perform the first key's command. While a text field is being edited, single keys go to the text field, so that the arrow keys move the cursor; keys pressed together still work.
 
