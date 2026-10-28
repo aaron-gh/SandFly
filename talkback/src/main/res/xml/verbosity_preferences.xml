@@ -25,16 +25,6 @@
         android:persistent="false"
         android:title="@string/pref_node_desc_order_title" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-        android:defaultValue="@bool/pref_formatting_inline_default"
-        android:key="@string/pref_formatting_inline_key"
-        android:summary="@string/summary_text_formatting_verbosity"
-        android:title="@string/title_text_formatting_inline" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-        android:key="@string/pref_formatting_inline_detail_key"
-        android:dependency="@string/pref_formatting_inline_key"
-        android:title="@string/title_text_formatting_verbosity_options"
-        android:fragment="com.google.android.accessibility.talkback.preference.base.TextFormattingDetailFragment" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_speak_element_ids_default"
         android:key="@string/pref_speak_element_ids_key"
         android:summary="@string/summary_pref_speak_element_ids"
@@ -81,6 +71,16 @@
         android:key="@string/pref_count_repeated_symbols_key"
         android:summary="@string/summary_pref_count_repeated_symbols"
         android:title="@string/title_pref_count_repeated_symbols" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_formatting_inline_default"
+        android:key="@string/pref_formatting_inline_key"
+        android:summary="@string/summary_text_formatting_verbosity"
+        android:title="@string/title_text_formatting_inline" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="@string/pref_formatting_inline_detail_key"
+        android:dependency="@string/pref_formatting_inline_key"
+        android:title="@string/title_text_formatting_verbosity_options"
+        android:fragment="com.google.android.accessibility.talkback.preference.base.TextFormattingDetailFragment" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_table_headers_category_key"

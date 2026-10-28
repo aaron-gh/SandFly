@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoFragment"
+      android:key="@string/pref_keyboard_echo_screen_key"
+      android:title="@string/title_pref_keyboard_echo" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_typing_category_keyboard"
       android:title="@string/title_pref_on_screen_keyboard">
@@ -27,10 +31,6 @@
         android:title="@string/title_pref_cache_keyboard_keys"
         android:summary="@string/summary_cache_keyboard_keys"
         android:key="@string/pref_cache_keyboard_keys" />
-    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
-        android:fragment="com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoFragment"
-        android:key="@string/pref_keyboard_echo_screen_key"
-        android:title="@string/title_pref_keyboard_echo" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_typing_category_other"
