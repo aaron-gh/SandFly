@@ -50,4 +50,12 @@
     <string name="verbosity_category_text">Text and symbols</string>
     <!-- Group of verbosity settings for what is spoken when the screen changes: window names, scrolling, volume. [CHAR LIMIT=40] -->
     <string name="verbosity_category_announcements">Announcements</string>
+    <!-- Heading of the reading controls or SandFly menu items that are in the list, in its order; each can be moved or removed. [CHAR LIMIT=40] -->
+    <string name="item_list_current">Current</string>
+    <!-- Heading of the other settings of the Reading controls or SandFly menu screen. [CHAR LIMIT=40] -->
+    <string name="item_list_options">Options</string>
+    <!-- Heading above the groups of reading controls that aren't in the reading controls; tapping one adds it. [CHAR LIMIT=60] -->
+    <string name="item_list_not_in_reading_controls">Not in reading controls</string>
+    <!-- Heading above the groups of SandFly menu items that aren't in the menu; tapping one adds it. [CHAR LIMIT=60] -->
+    <string name="item_list_not_in_sandfly_menu">Not in SandFly menu</string>
 </resources>

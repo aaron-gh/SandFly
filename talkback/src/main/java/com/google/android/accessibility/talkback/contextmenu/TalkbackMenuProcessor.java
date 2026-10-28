@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.contextmenu;
 
 import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.view.Menu;
@@ -30,6 +31,7 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.DimScreenActor;
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration;
@@ -49,7 +51,11 @@ import com.google.android.accessibility.utils.monitor.ScreenMonitor;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -269,8 +275,137 @@ public class TalkbackMenuProcessor {
     setSkipRefocusAndWindowAnnounce(menu, R.id.vibration_feedback, true);
 
     menu.sortItemsByOrder();
+    applySavedOrder(menu);
 
     return true;
+  }
+
+  /**
+   * The items that SandFly menu settings list, in the menu's default order: each setting key with
+   * the IDs of the menu items it shows.
+   */
+  private static final int[][] MENU_ITEMS = {
+    {R.string.pref_show_context_menu_typo_suggestions_setting_key, R.id.typo_suggestions_menu},
+    {R.string.pref_show_context_menu_custom_action_setting_key, R.id.custom_action_menu},
+    {R.string.pref_show_context_menu_page_navigation_setting_key, R.id.viewpager_menu},
+    {R.string.pref_show_context_menu_labeling_setting_key, R.id.labeling_breakout_add_label},
+    {R.string.pref_show_context_menu_image_caption_setting_key, R.id.image_caption_menu},
+    {R.string.pref_show_context_menu_summarize_view_setting_key, R.id.summarize_view_menu},
+    {R.string.pref_show_context_menu_granularity_setting_key, R.id.granularity_menu},
+    {R.string.pref_show_context_menu_read_from_top_setting_key, R.id.read_from_top},
+    {R.string.pref_show_context_menu_read_from_current_setting_key, R.id.read_from_current},
+    {
+      R.string.pref_show_context_menu_copy_last_spoken_phrase_setting_key,
+      R.id.copy_last_utterance_to_clipboard
+    },
+    {
+      R.string.pref_show_context_menu_spell_last_spoken_phrase_setting_key,
+      R.id.spell_last_utterance
+    },
+    {
+      R.string.pref_show_context_menu_repeat_last_spoken_phrase_setting_key,
+      R.id.repeat_last_utterance
+    },
+    {R.string.pref_show_context_menu_text_formatting_setting_key, R.id.text_formatting},
+    {
+      R.string.pref_show_context_menu_keyboard_echo_on_screen_setting_key,
+      R.id.keyboard_echo_on_screen_menu
+    },
+    {
+      R.string.pref_show_context_menu_keyboard_echo_physical_setting_key,
+      R.id.keyboard_echo_physical_menu
+    },
+    {
+      R.string.pref_show_context_menu_keyboard_echo_braille_keyboard_setting_key,
+      R.id.keyboard_echo_braille_keyboard_menu
+    },
+    {
+      R.string.pref_show_context_menu_keyboard_echo_braille_display_setting_key,
+      R.id.keyboard_echo_braille_display_menu
+    },
+    {
+      R.string.pref_show_context_menu_keyboard_echo_handwriting_keyboard_setting_key,
+      R.id.keyboard_echo_handwriting_keyboard_menu
+    },
+    {R.string.pref_show_context_menu_verbosity_setting_key, R.id.verbosity},
+    {R.string.pref_show_context_menu_language_setting_key, R.id.language_menu},
+    {R.string.pref_show_context_menu_emoji_setting_key, R.id.emoji_menu},
+    {R.string.pref_show_context_menu_voice_profile_setting_key, R.id.voice_profile_menu},
+    {R.string.pref_show_context_menu_audio_ducking_setting_key, R.id.audio_ducking},
+    {R.string.pref_show_context_menu_sound_feedback_setting_key, R.id.sound_feedback},
+    {R.string.pref_show_context_menu_vibration_feedback_setting_key, R.id.vibration_feedback},
+    {R.string.pref_show_context_menu_find_on_screen_setting_key, R.id.screen_search},
+    {
+      R.string.pref_show_context_menu_dim_or_brighten_setting_key,
+      R.id.enable_dimming,
+      R.id.disable_dimming
+    },
+    {R.string.pref_show_context_menu_voice_commands_setting_key, R.id.voice_commands},
+    {R.string.pref_show_context_menu_pause_backtalk_setting_key, R.id.pause_backtalk},
+    {
+      R.string.pref_show_context_menu_show_keyboard_shortcuts_setting_key,
+      R.id.show_keyboard_shortcuts
+    },
+    {R.string.pref_show_context_menu_talkback_settings_setting_key, R.id.talkback_settings},
+    {R.string.pref_show_context_menu_send_feedback_setting_key, R.id.send_feedback},
+    {R.string.pref_show_context_menu_tts_settings_setting_key, R.id.tts_settings},
+    {R.string.pref_show_context_menu_system_action_setting_key, R.id.window_menu},
+    {
+      R.string.pref_show_context_menu_braille_display_settings_setting_key,
+      R.id.braille_display_settings
+    },
+    {R.string.pref_show_context_menu_inspect_item_setting_key, R.id.inspect_item},
+    {R.string.pref_show_context_menu_copy_screen_tree_setting_key, R.id.copy_screen_tree},
+    {
+      R.string.pref_show_context_menu_control_telling_time_setting_key,
+      R.id.enable_telling_time,
+      R.id.disable_telling_time
+    },
+  };
+
+  /** Returns the setting key of each SandFly menu item, in the menu's default order. */
+  public static List<String> defaultOrderKeys(Context context) {
+    List<String> keys = new ArrayList<>();
+    for (int[] item : MENU_ITEMS) {
+      keys.add(context.getString(item[0]));
+    }
+    return keys;
+  }
+
+  /**
+   * Puts the items that SandFly menu settings list in the order saved there. Other items, such as
+   * script commands, keep their places.
+   */
+  private void applySavedOrder(ContextMenu menu) {
+    List<String> saved =
+        ItemOrder.stored(
+            SharedPreferencesUtils.getSharedPreferences(service), ItemOrder.SANDFLY_MENU_KEY);
+    if (saved.isEmpty()) {
+      return;
+    }
+    List<String> order = ItemOrder.ordered(saved, defaultOrderKeys(service));
+    Map<Integer, Integer> rankById = new HashMap<>();
+    for (int[] item : MENU_ITEMS) {
+      int rank = order.indexOf(service.getString(item[0]));
+      for (int i = 1; i < item.length; i++) {
+        rankById.put(item[i], rank);
+      }
+    }
+    List<ContextMenuItem> items = menu.getItems();
+    List<ContextMenuItem> ranked = new ArrayList<>();
+    for (ContextMenuItem item : items) {
+      if (rankById.containsKey(item.getItemId())) {
+        ranked.add(item);
+      }
+    }
+    ranked.sort(
+        (a, b) -> Integer.compare(rankById.get(a.getItemId()), rankById.get(b.getItemId())));
+    List<ContextMenuItem> result = new ArrayList<>();
+    int next = 0;
+    for (ContextMenuItem item : items) {
+      result.add(rankById.containsKey(item.getItemId()) ? ranked.get(next++) : item);
+    }
+    menu.setItems(result);
   }
 
   private boolean showMenuItem(@StringRes int prefKeyId, @BoolRes int defaultValueResId) {

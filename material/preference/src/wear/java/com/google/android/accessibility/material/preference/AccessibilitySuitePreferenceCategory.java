@@ -32,4 +32,10 @@ public class AccessibilitySuitePreferenceCategory extends ComposePreferenceCateg
 
   /** Categories are not collapsible on the wear platform. */
   public void setCollapsible(CharSequence collapsedSummary, CharSequence expandedSummary) {}
+
+  public boolean isCollapsed() {
+    return false;
+  }
+
+  public void setCollapsed(boolean collapsed) {}
 }

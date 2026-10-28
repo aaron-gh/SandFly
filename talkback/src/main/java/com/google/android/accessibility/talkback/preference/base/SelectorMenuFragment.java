@@ -15,14 +15,18 @@
  */
 package com.google.android.accessibility.talkback.preference.base;
 
-import android.os.Bundle;
+import android.content.Context;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.recognition.LiveRecognition;
+import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.utils.FeatureSupport;
+import java.util.List;
 
-/** Panel holding a set of selector menu preferences. */
-public class SelectorMenuFragment extends TalkbackBaseFragment {
+/** Reading controls: the controls in the list, in order, and those that aren't. */
+public class SelectorMenuFragment extends ItemListFragment {
 
   // Prevents from runtime exception that will occur in some cases during state restore if the
   // no-argument constructor is not available.
@@ -31,13 +35,26 @@ public class SelectorMenuFragment extends TalkbackBaseFragment {
   }
 
   @Override
-  public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-    super.onCreatePreferences(savedInstanceState, rootKey);
-    collapseCategories();
+  protected String getOrderKey() {
+    return ItemOrder.READING_CONTROLS_KEY;
+  }
+
+  @Override
+  protected int getNotInListTitle() {
+    return R.string.item_list_not_in_reading_controls;
+  }
+
+  @Override
+  protected List<String> defaultOrder(Context context) {
+    return SelectorController.defaultOrderKeys(context);
+  }
+
+  @Override
+  protected void hideUnavailable(PreferenceScreen screen) {
     if (!LiveRecognition.isSupported(requireContext())
         || !FeatureSupport.doesServiceHandleDoubleTap()) {
       Preference liveRecognition =
-          findPreference(getString(R.string.pref_selector_live_recognition_key));
+          screen.findPreference(getString(R.string.pref_selector_live_recognition_key));
       if (liveRecognition != null) {
         liveRecognition.setVisible(false);
       }
