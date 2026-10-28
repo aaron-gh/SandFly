@@ -173,7 +173,7 @@ internal class RamblerLive(private val apiKey: String, private val url: String =
       override fun onMessage(webSocket: WebSocket, bytes: ByteString) = handle(bytes.utf8())
 
       override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
-        LogUtils.w(TAG, "Session failed: %s (HTTP %s)", t, response?.code())
+        LogUtils.w(TAG, "Session failed: %s (HTTP %s)", t, response?.code)
         endEarly()
       }
 

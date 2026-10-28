@@ -76,8 +76,8 @@ internal class GeminiLiveSession(
       override fun onMessage(webSocket: WebSocket, text: String) { receive(text) }
       override fun onMessage(webSocket: WebSocket, bytes: ByteString) { receive(bytes.utf8()) }
       override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
-        LogUtils.w(TAG, "Connection failed: %s, HTTP %s", t.javaClass.simpleName, response?.code())
-        handler.post { fail(if (response?.code() in listOf(401, 403))
+        LogUtils.w(TAG, "Connection failed: %s, HTTP %s", t.javaClass.simpleName, response?.code)
+        handler.post { fail(if (response?.code in listOf(401, 403))
           R.string.gemini_error_api_key else R.string.live_recognition_connection_error) }
       }
       override fun onClosing(webSocket: WebSocket, code: Int, reason: String) {
