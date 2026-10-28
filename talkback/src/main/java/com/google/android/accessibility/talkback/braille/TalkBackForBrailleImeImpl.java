@@ -44,6 +44,7 @@ import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.input.TextEventFilter.TypingInput;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -159,6 +160,18 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
                 .setInitialFocusType(FocusActionInfo.SYNCED_INPUT_FOCUS)
                 .setForceMuteFeedback(true)
                 .build()));
+  }
+
+  @Override
+  public boolean clickSendButton(List<String> sendWords) {
+    AccessibilityNodeInfoCompat inputFocus = createFocusFinder().findFocusCompat(FOCUS_INPUT);
+    if (inputFocus == null) {
+      return false;
+    }
+    inputFocus.refresh();
+    AccessibilityNodeInfoCompat sendButton = SendButtonFinder.find(inputFocus, sendWords);
+    return sendButton != null
+        && sendButton.performAction(AccessibilityNodeInfoCompat.ACTION_CLICK);
   }
 
   @Override
