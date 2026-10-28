@@ -33,6 +33,7 @@ class SendButtonFinderTest {
     )
     assertTrue(SendButtonFinder.isSendViewId("Compose:Draft:Send"))
     assertTrue(SendButtonFinder.isSendViewId("org.example:id/sendButton"))
+    assertTrue(SendButtonFinder.isSendViewId("app.pachli.current:id/composeTootButton"))
   }
 
   @Test
@@ -57,6 +58,7 @@ class SendButtonFinderTest {
       Strength.WEAK,
       SendButtonFinder.labelStrength("Send end-to-end encrypted message", sendWords),
     )
+    assertEquals(Strength.WEAK, SendButtonFinder.labelStrength("Send unlisted post", sendWords))
   }
 
   @Test

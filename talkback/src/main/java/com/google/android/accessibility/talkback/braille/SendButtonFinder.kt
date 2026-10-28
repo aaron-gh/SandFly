@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.braille
 import android.graphics.Rect
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
+import com.google.android.accessibility.utils.Role
 import java.util.ArrayDeque
 import java.util.Locale
 
@@ -36,6 +37,9 @@ object SendButtonFinder {
 
   /** Labels longer than this are text, such as a message that starts with "Send", not a button. */
   private const val MAX_LABEL_LENGTH = 50
+
+  /** Words in the view ids of send buttons. */
+  private val SEND_ID_WORDS = setOf("send", "toot")
 
   /**
    * Returns the view to click to send what was typed in [field], or null if its window has none.
@@ -74,9 +78,14 @@ object SendButtonFinder {
         continue
       }
       val sameRow = bounds.top < fieldBounds.bottom && bounds.bottom > fieldBounds.top
-      // Away from the field, only a view the app calls a send button will do, not a message that
-      // just says "Send".
-      if (!sameRow && !isSendViewId(node.viewIdResourceName)) {
+      // Away from the field, such as in the toolbar under Pachli's post field, only a view the app
+      // calls a send button or a button labeled like one will do, not a message that says "Send".
+      if (
+        !sameRow &&
+          !isSendViewId(node.viewIdResourceName) &&
+          !isButton(node) &&
+          !isButton(target)
+      ) {
         continue
       }
       val candidate = Candidate(target, sameRow, strength, distance(bounds, fieldBounds))
@@ -93,13 +102,19 @@ object SendButtonFinder {
     if (viewId.isNullOrEmpty()) {
       return false
     }
-    // Ids look like "send", "send_message_button_icon", "sendButton" or "Compose:Draft:Send".
+    // Ids look like "send", "send_message_button_icon", "sendButton", "Compose:Draft:Send", or
+    // "composeTootButton" in Mastodon apps such as Pachli.
     val name = viewId.substringAfter(":id/")
     return name
       .replace(Regex("([a-z0-9])([A-Z])"), "$1 $2")
       .lowercase(Locale.ROOT)
       .split(Regex("[^a-z0-9]+"))
-      .contains("send")
+      .any { it in SEND_ID_WORDS }
+  }
+
+  private fun isButton(node: AccessibilityNodeInfoCompat): Boolean {
+    val role = Role.getRole(node)
+    return role == Role.ROLE_BUTTON || role == Role.ROLE_IMAGE_BUTTON
   }
 
   /**
