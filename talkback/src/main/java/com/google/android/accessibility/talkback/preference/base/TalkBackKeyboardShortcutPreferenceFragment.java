@@ -33,6 +33,8 @@ import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel;
+import com.google.android.accessibility.talkback.keyboard.QuickNav;
+import com.google.android.accessibility.talkback.keyboard.QuickNavCommand;
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter;
@@ -233,6 +235,13 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
           (KeyboardShortcutDialogPreference) findPreference(key);
       keyboardShortcutDialogPreference.setKeyCombo(defaultKeyCombo);
       keyboardShortcutDialogPreference.notifyChanged();
+    }
+
+    QuickNav.reset(getContext());
+    for (QuickNavCommand command : QuickNavCommand.values()) {
+      if (findPreference(command.getPrefKey()) instanceof QuickNavKeyPreference preference) {
+        preference.refresh();
+      }
     }
   }
 

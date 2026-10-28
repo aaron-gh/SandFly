@@ -575,6 +575,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     REFRESH(R.string.shortcut_value_refresh, R.string.shortcut_refresh),
     TOGGLE_BROWSE_MODE(
         R.string.shortcut_value_toggle_browse_mode, R.string.keycombo_menu_other_toggle_browse_mode),
+    TOGGLE_QUICK_NAV(R.string.shortcut_value_toggle_quick_nav, R.string.quick_nav_toggle),
     PREV_CONTAINER(R.string.shortcut_value_prev_container, R.string.shortcut_prev_container),
     NEXT_CONTAINER(R.string.shortcut_value_next_container, R.string.shortcut_next_container),
     PREVIOUS_WINDOW(R.string.shortcut_value_previous_window, R.string.shortcut_previous_window),

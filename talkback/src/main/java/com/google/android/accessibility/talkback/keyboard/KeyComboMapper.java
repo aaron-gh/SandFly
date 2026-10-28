@@ -25,6 +25,11 @@ import static com.google.android.accessibility.talkback.Feedback.Focus.Action.LO
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.READ_NODE_LINK_URL;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.NEXT_GRANULARITY;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.PREVIOUS_GRANULARITY;
+import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.SCROLL_DOWN;
+import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.SCROLL_LEFT;
+import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.SCROLL_RIGHT;
+import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.SCROLL_UP;
+import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED;
 import static com.google.android.accessibility.talkback.Feedback.Keyboard.Action.SHOW_KEYBOARD_SHORTCUTS_DIALOG;
 import static com.google.android.accessibility.talkback.Feedback.Speech.Action.COPY_LAST;
 import static com.google.android.accessibility.talkback.Feedback.Speech.Action.TOGGLE_VOICE_FEEDBACK;
@@ -94,6 +99,7 @@ import com.google.android.accessibility.talkback.utils.DateTimeUtils;
 import com.google.android.accessibility.talkback.utils.GeminiCommandUtils;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
@@ -828,6 +834,30 @@ public class KeyComboMapper {
    *
    * @param performedAction the action generating from key combos.
    */
+  /** Performs a Quick Nav command other than Toggle. */
+  @CanIgnoreReturnValue
+  boolean performQuickNavCommand(QuickNavCommand command) {
+    TalkBackPhysicalKeyboardShortcut action = command.getAction();
+    if (action != null) {
+      EventId eventId =
+          Performance.getInstance().onKeyComboEventReceived(action.getKeyboardShortcutOrdinal());
+      interruptByKeyCombo(action);
+      return performKeyComboAction(action, eventId);
+    }
+    interruptByKeyCombo(TalkBackPhysicalKeyboardShortcut.ACTION_UNKNOWN);
+    // SandFly's scroll directions are the way the content moves: page up moves it down.
+    FocusDirection.Action scroll =
+        switch (command) {
+          case PAGE_UP -> SCROLL_DOWN;
+          case PAGE_DOWN -> SCROLL_UP;
+          case PAGE_LEFT -> SCROLL_RIGHT;
+          case PAGE_RIGHT -> SCROLL_LEFT;
+          default -> null;
+        };
+    return scroll != null
+        && pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.focusDirection(scroll));
+  }
+
   void interruptByKeyCombo(TalkBackPhysicalKeyboardShortcut performedAction) {
     if (performedAction
             == TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_DEFAULT /* next in default keymap */

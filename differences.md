@@ -527,6 +527,24 @@ When you turn on **Controls** > **Touch and activation** > **Volume keys adjust 
 
 **Navigation > Remember browse mode in each app**, off by default, keeps browse mode as you last turned it on or off in each app. In an app where you haven't turned it on or off, browse mode is off, unless Smart browse mode turns it on in web content.
 
+### Quick Nav
+
+Quick Nav works as in VoiceOver on iOS: while it is on, arrow keys navigate without the Action key. It is off by default and stays as you last left it. The default keys are VoiceOver's:
+
+| Command | Keys |
+| --- | --- |
+| Turn Quick Nav on or off | Left and Right arrows together |
+| Navigate to next or previous item | Right or Left arrow |
+| Adjust reading control down or up | Down or Up arrow |
+| Perform click | Up and Down arrows together |
+| Select next or previous reading control | Up and Right, or Up and Left arrows together |
+| Navigate to first or last item | Ctrl + Up or Ctrl + Down arrow |
+| Page up, Page down, Page left, Page right | Alt + Up, Down, Left or Right arrow |
+
+Every command can be assigned other keys in **Keyboard shortcuts** > **Quick Nav**: a key or two keys pressed together, with or without modifier keys. **Reset keymap** also resets them. **Turn Quick Nav on or off** is also a gesture action, in **Menu and controls**.
+
+A key that is part of two keys pressed together acts when it is released, so that the two keys together don't also perform the first key's command. While a text field is being edited, single keys go to the text field, so that the arrow keys move the cursor; keys pressed together still work.
+
 ### Container navigation
 
 Next container and Previous container (Action + Control + Alt + Right or Left arrow, or a four-finger swipe right or left) also stop at toolbars, tab bars, navigation bars, search bars and panes, besides lists, grids and scroll views. A bar inside a bar, such as a search bar in a toolbar, is one stop. Previous container moves to the start of the container, as Next container does, not its last item, except in web content.
