@@ -45,7 +45,7 @@ androidx-viewpager2 = "androidx.viewpager2:viewpager2:1.1.0"
 # Used directly by the TalkBack sources
 guava = "com.google.guava:guava:33.7.2-android"
 checker-qual = "org.checkerframework:checker-qual:4.3.1"
-errorprone-annotations = "com.google.errorprone:error_prone_annotations:2.50.0"
+errorprone-annotations = "com.google.errorprone:error_prone_annotations:2.51.0"
 
 # Auto-value
 auto-value-annotations = { module = "com.google.auto.value:auto-value-annotations", version.ref = "autoValue" }
