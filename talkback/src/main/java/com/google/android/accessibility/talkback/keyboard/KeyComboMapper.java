@@ -834,30 +834,6 @@ public class KeyComboMapper {
    *
    * @param performedAction the action generating from key combos.
    */
-  /** Performs an arrow key navigation command other than Toggle. */
-  @CanIgnoreReturnValue
-  boolean performArrowKeyNavCommand(ArrowKeyNavCommand command) {
-    TalkBackPhysicalKeyboardShortcut action = command.getAction();
-    if (action != null) {
-      EventId eventId =
-          Performance.getInstance().onKeyComboEventReceived(action.getKeyboardShortcutOrdinal());
-      interruptByKeyCombo(action);
-      return performKeyComboAction(action, eventId);
-    }
-    interruptByKeyCombo(TalkBackPhysicalKeyboardShortcut.ACTION_UNKNOWN);
-    // SandFly's scroll directions are the way the content moves: page up moves it down.
-    FocusDirection.Action scroll =
-        switch (command) {
-          case PAGE_UP -> SCROLL_DOWN;
-          case PAGE_DOWN -> SCROLL_UP;
-          case PAGE_LEFT -> SCROLL_RIGHT;
-          case PAGE_RIGHT -> SCROLL_LEFT;
-          default -> null;
-        };
-    return scroll != null
-        && pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.focusDirection(scroll));
-  }
-
   void interruptByKeyCombo(TalkBackPhysicalKeyboardShortcut performedAction) {
     if (performedAction
             == TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_DEFAULT /* next in default keymap */

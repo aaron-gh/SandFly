@@ -16,7 +16,11 @@
 
 package com.google.android.accessibility.talkback.preference.base;
 
+import static com.google.android.accessibility.utils.preference.PreferencesActivity.FRAGMENT_ARGS;
+import static com.google.android.accessibility.utils.preference.PreferencesActivity.FRAGMENT_NAME;
+
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -26,9 +30,13 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import androidx.annotation.IntDef;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceDialogFragmentCompat;
+import androidx.preference.PreferenceFragmentCompat;
 import com.google.android.accessibility.material.preference.AccessibilitySuiteDialogPreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.commands.Commands;
+import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity.TalkBackSubSettings;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.StringBuilderUtils;
@@ -69,6 +77,35 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
     setSingleLineTitle(false);
   }
 
+  /** Creates the preference for [key], which runs [defaultValue]'s command until changed. */
+  public GestureListPreference(
+      Context context, String key, CharSequence title, String defaultValue) {
+    super(context);
+    setKey(key);
+    setTitle(title);
+    setSingleLineTitle(false);
+    initialValue = defaultValue;
+  }
+
+  /**
+   * Shows the list of commands for {@code preference} from {@code fragment}: a dialog where the
+   * form factor has one, otherwise a screen of its own.
+   */
+  public static void showCommandList(
+      PreferenceFragmentCompat fragment, GestureListPreference preference) {
+    Fragment dialog = preference.createDialogFragment();
+    if (dialog instanceof PreferenceDialogFragmentCompat dialogFragment) {
+      dialogFragment.setTargetFragment(fragment, 0);
+      dialogFragment.show(fragment.getParentFragmentManager(), preference.getKey());
+      return;
+    }
+    Intent intent = new Intent(fragment.getContext(), TalkBackSubSettings.class);
+    intent.putExtra(FRAGMENT_NAME, GesturePreferenceFragmentCompat.class.getCanonicalName());
+    intent.putExtra(
+        FRAGMENT_ARGS, GesturePreferenceFragmentCompat.createBundleForFragmentArguments(preference));
+    fragment.startActivity(intent);
+  }
+
   @Override
   public CharSequence getSummary() {
     return getCurrentActionText();
@@ -78,6 +115,11 @@ public final class GestureListPreference extends AccessibilitySuiteDialogPrefere
   protected Object onGetDefaultValue(TypedArray a, int index) {
     initialValue = a.getString(index);
     return initialValue;
+  }
+
+  /** Shows the command the preference runs now, after it changed elsewhere. */
+  public void refresh() {
+    notifyChanged();
   }
 
   /** Updates the summary of preference to default value. */

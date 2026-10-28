@@ -20,7 +20,7 @@ import android.content.Context
 import android.view.KeyEvent
 
 /**
- * Turns key events into [ArrowKeyNavCommand]s. A key that is also part of two keys pressed together
+ * Turns key events into the commands [ArrowKeys] run. A key that is also part of two keys pressed together
  * acts when it is released, unless the second key was pressed meanwhile; other keys act when
  * pressed. Toggle works while arrow key navigation is off too, and in a text field being edited
  * only commands of two keys together and Toggle work, so that single arrow keys move the cursor.
@@ -28,8 +28,8 @@ import android.view.KeyEvent
 class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks: Callbacks) {
 
   interface Callbacks {
-    /** Performs [command], including Toggle. */
-    fun perform(command: ArrowKeyNavCommand)
+    /** Runs the command saved as [command], including turning arrow key navigation off. */
+    fun perform(command: String)
 
     /** Whether the focused input is a text field being edited. */
     fun isEditingText(): Boolean
@@ -43,7 +43,7 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
 
   /** A key whose command waits for its release, in case a second key is pressed with it. */
   private var pendingKey = KeyEvent.KEYCODE_UNKNOWN
-  private var pendingCommand: ArrowKeyNavCommand? = null
+  private var pendingCommand: String? = null
 
   /** Forgets every key, such as when key events may have been lost. */
   fun reset() {
@@ -97,8 +97,8 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
     val on = ArrowKeyNav.isOn(context)
     val modifiers = event.modifiers and KeyCombo.KEY_EVENT_MODIFIER_MASK
     if (otherKey != null) {
-      val command = ArrowKeyNav.commandFor(context, ArrowKeyNav.keys(modifiers, otherKey, keyCode))
-      if (command != null && (on || command == ArrowKeyNavCommand.TOGGLE)) {
+      val command = commandFor(ArrowKeyNav.keys(modifiers, otherKey, keyCode))
+      if (command != null && (on || command == ArrowKeyNav.TOGGLE)) {
         // The first key's own command, if it waits, doesn't run.
         clearPending()
         consumedKeys += keyCode
@@ -107,9 +107,8 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
       }
     }
 
-    val command =
-      ArrowKeyNav.commandFor(context, ArrowKeyNav.keys(modifiers, keyCode)) ?: return false
-    if (command != ArrowKeyNavCommand.TOGGLE && (!on || callbacks.isEditingText())) {
+    val command = commandFor(ArrowKeyNav.keys(modifiers, keyCode)) ?: return false
+    if (command != ArrowKeyNav.TOGGLE && (!on || callbacks.isEditingText())) {
       return false
     }
     consumedKeys += keyCode
@@ -120,6 +119,12 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
       callbacks.perform(command)
     }
     return true
+  }
+
+  /** The command that the arrow keys pressed as [keys] run, or null. */
+  private fun commandFor(keys: Long): String? {
+    val arrowKeys = ArrowKeyNav.arrowKeysFor(keys) ?: return null
+    return ArrowKeyNav.commandFor(context, arrowKeys).takeIf { it != ArrowKeyNav.UNASSIGNED }
   }
 
   private fun onKeyUp(keyCode: Int): Boolean {
@@ -137,15 +142,14 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
     return true
   }
 
-  /** Whether [keyCode] with [modifiers] is the first of two keys of an assigned command. */
+  /** Whether [keyCode] with [modifiers] is one of two keys pressed together that run a command. */
   private fun startsTwoKeyCommand(modifiers: Int, keyCode: Int): Boolean =
-    ArrowKeyNavCommand.entries.any {
-      val keys = ArrowKeyNav.keysFor(context, it)
-      val prefix = KeyCombo.extractPrefixKeyCode(keys)
-      keys != ArrowKeyNav.UNASSIGNED &&
-        prefix != KeyEvent.KEYCODE_UNKNOWN &&
-        KeyCombo.extractModifiers(keys) == modifiers &&
-        (prefix == keyCode || KeyCombo.extractKeyCode(keys) == keyCode)
+    ArrowKeys.entries.any {
+      it.isTwoKeys &&
+        KeyCombo.extractModifiers(it.keys) == modifiers &&
+        (KeyCombo.extractPrefixKeyCode(it.keys) == keyCode ||
+          KeyCombo.extractKeyCode(it.keys) == keyCode) &&
+        ArrowKeyNav.commandFor(context, it) != ArrowKeyNav.UNASSIGNED
     }
 
   private fun clearPending() {

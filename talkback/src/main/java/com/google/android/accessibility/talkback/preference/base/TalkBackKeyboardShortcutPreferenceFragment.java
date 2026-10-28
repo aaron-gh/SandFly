@@ -25,9 +25,11 @@ import android.text.TextUtils;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
+import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.TalkBackService.TalkbackServiceStateNotifier.TalkBackServiceStateChangeListener;
@@ -38,7 +40,7 @@ import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel;
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
-import com.google.android.accessibility.talkback.keyboard.ArrowKeyNavCommand;
+import com.google.android.accessibility.talkback.keyboard.ArrowKeys;
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter;
@@ -242,11 +244,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     }
 
     ArrowKeyNav.reset(getContext());
-    for (ArrowKeyNavCommand command : ArrowKeyNavCommand.values()) {
-      if (findPreference(command.getPrefKey()) instanceof ArrowKeyNavKeyPreference preference) {
-        preference.refresh();
-      }
-    }
+    refreshArrowKeys();
   }
 
   private KeyComboManager getKeyComboManager() {
@@ -347,8 +345,67 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     }
 
     initPreferenceUIs(getPreferenceScreen());
+    addArrowKeys();
     addCommandCategories();
     updateDialogAndResetKeymapPreference();
+  }
+
+  /**
+   * Adds arrow key navigation: whether it is on, and the command each of its arrow keys runs, chosen
+   * from the same list as a gesture's.
+   */
+  private void addArrowKeys() {
+    Context context = getContext();
+    if (context == null) {
+      return;
+    }
+    ArrowKeyNav.migrate(SharedPreferencesUtils.getSharedPreferences(context));
+    KeyComboManager keyComboManager = getKeyComboManager();
+    PreferenceCategory category = new PreferenceCategory(context);
+    category.setKey("pref_arrow_key_nav_category");
+    category.setTitle(R.string.keycombo_menu_category_arrow_key_nav);
+    category.setIconSpaceReserved(false);
+    getPreferenceScreen().addPreference(category);
+    AccessibilitySuiteSwitchPreference on = new AccessibilitySuiteSwitchPreference(context);
+    on.setKey(ArrowKeyNav.onKey());
+    on.setTitle(R.string.keycombo_menu_category_arrow_key_nav);
+    on.setDefaultValue(false);
+    on.setIconSpaceReserved(false);
+    category.addPreference(on);
+    for (ArrowKeys arrowKeys : ArrowKeys.values()) {
+      GestureListPreference preference =
+          new GestureListPreference(
+              context,
+              ArrowKeyNav.prefKey(arrowKeys),
+              keyComboManager.getArrowKeysStringRepresentation(arrowKeys.getKeys()),
+              arrowKeys.getDefaultCommand());
+      preference.setIconSpaceReserved(false);
+      category.addPreference(preference);
+    }
+  }
+
+  /** Shows the commands the arrow keys run now, such as after a reset or the list closes. */
+  private void refreshArrowKeys() {
+    for (ArrowKeys arrowKeys : ArrowKeys.values()) {
+      if (findPreference(ArrowKeyNav.prefKey(arrowKeys)) instanceof GestureListPreference preference) {
+        preference.refresh();
+      }
+    }
+  }
+
+  @Override
+  public void onDisplayPreferenceDialog(Preference preference) {
+    if (preference instanceof GestureListPreference gesturePreference) {
+      GestureListPreference.showCommandList(this, gesturePreference);
+    } else {
+      super.onDisplayPreferenceDialog(preference);
+    }
+  }
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    refreshArrowKeys();
   }
 
   /** Adds every command, by category, each with its keyboard shortcut. */

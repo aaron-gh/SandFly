@@ -212,6 +212,7 @@ import com.google.android.accessibility.talkback.interpreters.UiChangeEventInter
 import com.google.android.accessibility.talkback.ipc.IpcService;
 import com.google.android.accessibility.talkback.ipc.IpcService.IpcClientCallback;
 import com.google.android.accessibility.talkback.ipc.IpcService.ServerOnDestroyListener;
+import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.talkback.labeling.CustomLabelManager;
@@ -3223,6 +3224,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     // The verbosity presets were removed: each setting keeps the chosen preset's value.
     PhoneticLetterMode.migrate(prefs, getResources());
     VerbosityPreferences.removePresets(prefs, getResources());
+    // Arrow key navigation's own commands became arrow keys that run any command.
+    ArrowKeyNav.migrate(prefs);
     VoiceProfiles.moveReadingControl(
         prefs,
         getString(R.string.pref_selector_voice_profile_moved_key),
