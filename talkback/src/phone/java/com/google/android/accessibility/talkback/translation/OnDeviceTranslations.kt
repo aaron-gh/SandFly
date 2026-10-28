@@ -19,9 +19,18 @@ package com.google.android.accessibility.talkback.translation
 object OnDeviceTranslations {
   private var instance: OnDeviceTranslation? = null
 
-  /** ML Kit's translation, one for the process, since its models are shared. Main thread only. */
+  /**
+   * ML Kit's translation, one for the process, since its models are shared, or null before the
+   * device is first unlocked after it starts, when ML Kit isn't set up. Main thread only.
+   */
   @JvmStatic
-  fun get(): OnDeviceTranslation? = instance ?: MlKitTranslation().also { instance = it }
+  fun get(): OnDeviceTranslation? =
+    instance
+      ?: try {
+        MlKitTranslation().also { instance = it }
+      } catch (e: IllegalStateException) {
+        null
+      }
 
   /** Whether [get] gives a translation, without making one. */
   const val isAvailable = true
