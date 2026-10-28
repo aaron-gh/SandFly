@@ -57,9 +57,11 @@ object SettingsBackup {
   private const val DEVICE = "device"
   private const val CREDENTIAL = "credential"
 
-  /** API keys stay on the phone, since the file can be shared or synced anywhere. */
-  @VisibleForTesting
-  val SECRET_KEYS = setOf("pref_gemini_api_key", "pref_ai_service_api_key")
+  /**
+   * API keys stay on the phone, since the file can be shared or synced anywhere. Each has "api_key"
+   * in its name, such as pref_gemini_api_key and pref_ai_claude_api_key.
+   */
+  private fun isSecret(key: String): Boolean = key.contains("api_key")
 
   private val SKIPPED_FILES = setOf(MigrationFiles.STATE_PREFS)
 
@@ -149,7 +151,7 @@ object SettingsBackup {
         val prefs = storageContext.getSharedPreferences(name, Context.MODE_PRIVATE)
         val values = JSONObject()
         for ((key, value) in prefs.all) {
-          if (key in SECRET_KEYS || isSkipped(context, name, key)) continue
+          if (isSecret(key) || isSkipped(context, name, key)) continue
           encode(value)?.let { values.put(key, it) }
         }
         storageFiles.put(exportedName(context, name), values)
@@ -188,7 +190,7 @@ object SettingsBackup {
         val values = storageFiles.optJSONObject(file) ?: return false
         val decoded = mutableMapOf<String, Any>()
         for (key in values.keys()) {
-          if (key in SECRET_KEYS || isSkipped(context, name, key)) continue
+          if (isSecret(key) || isSkipped(context, name, key)) continue
           decoded[key] = decode(values.optJSONObject(key)) ?: return false
         }
         edits += storageContext.getSharedPreferences(name, Context.MODE_PRIVATE) to decoded
@@ -197,7 +199,7 @@ object SettingsBackup {
     for ((prefs, values) in edits) {
       val editor = prefs.edit()
       for (key in prefs.all.keys) {
-        if (key !in values && key !in SECRET_KEYS && !isSkipped(context, null, key)) {
+        if (key !in values && !isSecret(key) && !isSkipped(context, null, key)) {
           editor.remove(key)
         }
       }
@@ -292,7 +294,7 @@ object SettingsBackup {
   }
 
   private fun isBacktalkSettingKept(key: String) =
-    key !in SECRET_KEYS &&
+    !isSecret(key) &&
       key !in BACKTALK_SKIPPED_KEYS &&
       key !in MigrationFiles.SKIPPED_PREF_KEYS &&
       BACKTALK_SKIPPED_FRAGMENTS.none { key.contains(it) }
