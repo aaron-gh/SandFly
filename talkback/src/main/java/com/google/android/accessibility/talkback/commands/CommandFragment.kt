@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.commands
 
 import android.os.Bundle
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
@@ -27,7 +28,9 @@ import com.google.android.accessibility.talkback.preference.base.KeyboardShortcu
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
-/** One command: the gestures and the keyboard shortcut that run it, to change or add to. */
+/**
+ * One command: the gestures, arrow keys and keyboard shortcut that run it, to change or add to.
+ */
 class CommandFragment : TalkbackBaseFragment() {
 
   private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(requireContext()) }
@@ -38,11 +41,43 @@ class CommandFragment : TalkbackBaseFragment() {
 
   override fun getTitle(): CharSequence = command?.label ?: getString(R.string.title_pref_commands)
 
-  private var gestures: List<CommandBindings.GestureSlot> = emptyList()
+  /** The gestures, then the arrow keys of arrow key navigation: each can run one command. */
+  private class Section(
+    val name: String,
+    @StringRes val title: Int,
+    @StringRes val none: Int,
+    @StringRes val add: Int,
+    @StringRes val choose: Int,
+    @StringRes val remove: Int,
+    val slots: List<CommandBindings.GestureSlot>,
+  )
+
+  private var sections: List<Section> = emptyList()
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     preferenceManager.setStorageDeviceProtected()
-    gestures = readGestures(this)
+    val gestures = readGestures(this)
+    sections =
+      listOf(
+        Section(
+          "gestures",
+          R.string.command_gestures,
+          R.string.command_no_gestures,
+          R.string.command_add_gesture,
+          R.string.command_choose_gesture,
+          R.string.command_remove_gesture,
+          gestures,
+        ),
+        Section(
+          "arrow_keys",
+          R.string.keycombo_menu_category_arrow_key_nav,
+          R.string.command_no_arrow_keys,
+          R.string.command_add_arrow_keys,
+          R.string.command_choose_arrow_keys,
+          R.string.command_remove_arrow_keys,
+          CommandBindings.arrowKeys(requireContext()),
+        ),
+      )
     preferenceScreen = preferenceManager.createPreferenceScreen(requireContext())
   }
 
@@ -57,51 +92,9 @@ class CommandFragment : TalkbackBaseFragment() {
     screen.removeAll()
     val command = command ?: return
 
-    val gestureCategory =
-      AccessibilitySuitePreferenceCategory(context).apply {
-        key = "pref_command_gestures"
-        title = getString(R.string.command_gestures)
-        isIconSpaceReserved = false
-      }
-    screen.addPreference(gestureCategory)
-    val assigned = gestures.filter { it.value(context, prefs) == command.value }
-    if (assigned.isEmpty()) {
-      gestureCategory.addPreference(
-        AccessibilitySuitePreference(context).apply {
-          key = "pref_command_no_gestures"
-          isPersistent = false
-          isIconSpaceReserved = false
-          isSelectable = false
-          title = getString(R.string.command_no_gestures)
-        }
-      )
+    for (section in sections) {
+      addSection(section, command)
     }
-    for (gesture in assigned) {
-      gestureCategory.addPreference(
-        AccessibilitySuitePreference(context).apply {
-          key = "pref_command_gesture_${gesture.key}"
-          isPersistent = false
-          isIconSpaceReserved = false
-          title = gesture.name
-          setOnPreferenceClickListener {
-            confirmRemove(gesture)
-            true
-          }
-        }
-      )
-    }
-    gestureCategory.addPreference(
-      AccessibilitySuitePreference(context).apply {
-        key = "pref_command_add_gesture"
-        isPersistent = false
-        isIconSpaceReserved = false
-        title = getString(R.string.command_add_gesture)
-        setOnPreferenceClickListener {
-          chooseGesture(command, gestures)
-          true
-        }
-      }
-    )
 
     val manager = CommandBindings.keyComboManager(context)
     val model = manager.keyComboModel ?: return
@@ -122,10 +115,60 @@ class CommandFragment : TalkbackBaseFragment() {
     )
   }
 
-  private fun confirmRemove(gesture: CommandBindings.GestureSlot) {
+  /** Adds [section]: what of it runs [command], or a line saying nothing does, then Add. */
+  private fun addSection(section: Section, command: Commands.Command) {
+    val context = requireContext()
+    val category =
+      AccessibilitySuitePreferenceCategory(context).apply {
+        key = "pref_command_${section.name}"
+        title = getString(section.title)
+        isIconSpaceReserved = false
+      }
+    preferenceScreen.addPreference(category)
+    val assigned = section.slots.filter { it.value(context, prefs) == command.value }
+    if (assigned.isEmpty()) {
+      category.addPreference(
+        AccessibilitySuitePreference(context).apply {
+          key = "pref_command_no_${section.name}"
+          isPersistent = false
+          isIconSpaceReserved = false
+          isSelectable = false
+          title = getString(section.none)
+        }
+      )
+    }
+    for (slot in assigned) {
+      category.addPreference(
+        AccessibilitySuitePreference(context).apply {
+          key = "pref_command_slot_${slot.key}"
+          isPersistent = false
+          isIconSpaceReserved = false
+          title = slot.name
+          setOnPreferenceClickListener {
+            confirmRemove(slot, section.remove)
+            true
+          }
+        }
+      )
+    }
+    category.addPreference(
+      AccessibilitySuitePreference(context).apply {
+        key = "pref_command_add_${section.name}"
+        isPersistent = false
+        isIconSpaceReserved = false
+        title = getString(section.add)
+        setOnPreferenceClickListener {
+          chooseGesture(command, section.slots, section.choose)
+          true
+        }
+      }
+    )
+  }
+
+  private fun confirmRemove(gesture: CommandBindings.GestureSlot, @StringRes remove: Int) {
     AlertDialog.Builder(requireContext())
       .setTitle(gesture.name)
-      .setPositiveButton(R.string.command_remove_gesture) { _, _ ->
+      .setPositiveButton(remove) { _, _ ->
         assign(gesture, getString(R.string.shortcut_value_unassigned))
       }
       .setNegativeButton(android.R.string.cancel, null)
@@ -135,6 +178,7 @@ class CommandFragment : TalkbackBaseFragment() {
   private fun chooseGesture(
     command: Commands.Command,
     gestures: List<CommandBindings.GestureSlot>,
+    @StringRes chooseTitle: Int,
   ) {
     val context = requireContext()
     val unassigned = getString(R.string.shortcut_value_unassigned)
@@ -149,7 +193,7 @@ class CommandFragment : TalkbackBaseFragment() {
         }
       }
     AlertDialog.Builder(context)
-      .setTitle(R.string.command_choose_gesture)
+      .setTitle(chooseTitle)
       .setItems(names.toTypedArray()) { _, which ->
         val gesture = choices[which]
         val current = gesture.value(context, prefs)

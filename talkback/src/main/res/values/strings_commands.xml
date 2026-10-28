@@ -90,4 +90,12 @@
     <string name="title_pref_updates">Updates and installation</string>
     <!-- Audio output setting: which volume control, such as Accessibility volume or Media volume, sets how loud speech is. [CHAR LIMIT=60] -->
     <string name="title_pref_speech_stream_control">Volume control for speech</string>
+    <!-- Shown in place of the arrow keys of a command that no arrow keys run. [CHAR LIMIT=40] -->
+    <string name="command_no_arrow_keys">No arrow keys</string>
+    <!-- Button that assigns arrow keys of arrow key navigation to the command shown. [CHAR LIMIT=40] -->
+    <string name="command_add_arrow_keys">Add arrow keys</string>
+    <!-- Title of the list of arrow keys to choose from when adding arrow keys to a command. [CHAR LIMIT=40] -->
+    <string name="command_choose_arrow_keys">Choose arrow keys</string>
+    <!-- Button in the dialog for arrow keys of a command: the keys no longer run the command. [CHAR LIMIT=40] -->
+    <string name="command_remove_arrow_keys">Remove arrow keys</string>
 </resources>

@@ -102,26 +102,9 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
 
   @Override
   public void onDisplayPreferenceDialog(Preference preference) {
-    if (preference instanceof GestureListPreference) {
-      // In createDialogFragment, we create PreferenceDialogFragmentCompat for Handset & Auto and
-      // null for Wear.
-      Fragment fragment = ((GestureListPreference) preference).createDialogFragment();
-      if (fragment instanceof PreferenceDialogFragmentCompat) {
-        PreferenceDialogFragmentCompat dialogFragment = (PreferenceDialogFragmentCompat) fragment;
-        dialogFragment.setTargetFragment(this, 0);
-        dialogFragment.show(getParentFragmentManager(), preference.getKey());
-      } else {
-        shouldUpdatePreferenceOnResume = true;
-        // For wear and phone devices, instead of dialog, we use a new fragment to show the
-        // available action items.
-        Intent intent = new Intent(getContext(), TalkBackSubSettings.class);
-        intent.putExtra(FRAGMENT_NAME, GesturePreferenceFragmentCompat.class.getCanonicalName());
-        Bundle bundle =
-            GesturePreferenceFragmentCompat.createBundleForFragmentArguments(
-                (GestureListPreference) preference);
-        intent.putExtra(FRAGMENT_ARGS, bundle);
-        startActivity(intent);
-      }
+    if (preference instanceof GestureListPreference gesturePreference) {
+      shouldUpdatePreferenceOnResume = true;
+      GestureListPreference.showCommandList(this, gesturePreference);
     } else {
       super.onDisplayPreferenceDialog(preference);
     }

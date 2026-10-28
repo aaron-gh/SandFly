@@ -61,7 +61,7 @@ class CommandCategoryFragment : TalkbackBaseFragment() {
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     preferenceManager.setStorageDeviceProtected()
-    gestures = readGestures(this)
+    gestures = readGestures(this) + CommandBindings.arrowKeys(requireContext())
     preferenceScreen = preferenceManager.createPreferenceScreen(requireContext())
   }
 

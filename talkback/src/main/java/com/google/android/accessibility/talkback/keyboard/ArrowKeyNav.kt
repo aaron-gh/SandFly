@@ -17,26 +17,27 @@
 package com.google.android.accessibility.talkback.keyboard
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.view.KeyEvent
-import androidx.annotation.StringRes
 import androidx.core.content.edit
-import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
- * Arrow key navigation: while it is on, arrow keys, alone or two pressed together, navigate
- * without the Action key, with VoiceOver's keys on iOS as defaults. Each command's keys are a key
- * or two keys pressed together, with or without modifiers, stored like a [KeyCombo] code: two keys
- * as prefix key (the lower key code) and key, so the order they are pressed in doesn't matter.
+ * Arrow key navigation: while it is on, the arrow keys, alone, two pressed together, or with Control
+ * or Alt, run commands without the Action key. Each of these [ArrowKeys] runs a command, as a gesture
+ * does, saved as the command's value; the defaults are VoiceOver's keys on iOS.
  */
 object ArrowKeyNav {
   private const val PREF_ON = "pref_arrow_key_nav_on"
-  const val PREF_KEYS_PREFIX = "arrow_key_nav_keys_"
+  private const val PREF_PREFIX = "arrow_key_nav_slot_"
 
-  /** Keys of a command with no keys assigned. */
-  const val UNASSIGNED = 0L
+  /** The value of the command that turns arrow key navigation on or off. */
+  const val TOGGLE = "TOGGLE_ARROW_KEY_NAV"
 
-  /** Returns the keys for [first] alone, or [first] and [second] pressed together. */
+  /** The value of no command. */
+  const val UNASSIGNED = "UNASSIGNED"
+
+  /** Returns the key code for [first] alone, or [first] and [second] pressed together. */
   @JvmStatic
   @JvmOverloads
   fun keys(modifiers: Int, first: Int, second: Int = KeyEvent.KEYCODE_UNKNOWN): Long {
@@ -48,123 +49,136 @@ object ArrowKeyNav {
 
   /** Whether arrow key navigation is on. */
   @JvmStatic
-  fun isOn(context: Context): Boolean =
-    SharedPreferencesUtils.getSharedPreferences(context).getBoolean(PREF_ON, false)
+  fun isOn(context: Context): Boolean = prefs(context).getBoolean(PREF_ON, false)
 
   @JvmStatic
   fun setOn(context: Context, on: Boolean) {
-    SharedPreferencesUtils.getSharedPreferences(context).edit { putBoolean(PREF_ON, on) }
+    prefs(context).edit { putBoolean(PREF_ON, on) }
   }
 
-  /** The keys assigned to [command], or [UNASSIGNED]. */
-  @JvmStatic
-  fun keysFor(context: Context, command: ArrowKeyNavCommand): Long =
-    SharedPreferencesUtils.getSharedPreferences(context)
-      .getLong(command.prefKey, command.defaultKeys)
+  /** The setting key of whether arrow key navigation is on. */
+  @JvmStatic fun onKey(): String = PREF_ON
 
-  @JvmStatic
-  fun save(context: Context, command: ArrowKeyNavCommand, keys: Long) {
-    SharedPreferencesUtils.getSharedPreferences(context).edit {
-      if (keys == command.defaultKeys) remove(command.prefKey) else putLong(command.prefKey, keys)
-    }
-  }
+  /** The setting key of the command that [arrowKeys] run. */
+  @JvmStatic fun prefKey(arrowKeys: ArrowKeys): String = PREF_PREFIX + arrowKeys.name.lowercase()
 
-  /** The command [keys] are assigned to, or null. */
+  /** The value of the command that [arrowKeys] run. */
   @JvmStatic
-  fun commandFor(context: Context, keys: Long): ArrowKeyNavCommand? =
-    if (keys == UNASSIGNED) null
-    else ArrowKeyNavCommand.entries.firstOrNull { keysFor(context, it) == keys }
+  fun commandFor(context: Context, arrowKeys: ArrowKeys): String =
+    prefs(context).getString(prefKey(arrowKeys), arrowKeys.defaultCommand) ?: UNASSIGNED
 
-  /** Assigns every command its default keys. */
+  /** The arrow keys pressed as [keys], or null when they aren't arrow keys this lists. */
+  @JvmStatic
+  fun arrowKeysFor(keys: Long): ArrowKeys? = ArrowKeys.entries.firstOrNull { it.keys == keys }
+
+  /** Gives every arrow key its default command. */
   @JvmStatic
   fun reset(context: Context) {
-    SharedPreferencesUtils.getSharedPreferences(context).edit {
-      ArrowKeyNavCommand.entries.forEach { remove(it.prefKey) }
+    prefs(context).edit { ArrowKeys.entries.forEach { remove(prefKey(it)) } }
+  }
+
+  private fun prefs(context: Context): SharedPreferences =
+    SharedPreferencesUtils.getSharedPreferences(context)
+
+  /**
+   * Moves keys saved for the commands arrow key navigation had of its own to the arrow keys that run
+   * the matching commands. Keys other than these arrow keys are dropped.
+   */
+  @JvmStatic
+  fun migrate(prefs: SharedPreferences) {
+    val saved = OLD_COMMANDS.keys.filter { prefs.contains(OLD_PREFIX + it) }
+    if (saved.isEmpty()) {
+      return
+    }
+    val commandByKeys = HashMap<Long, String>()
+    for ((name, old) in OLD_COMMANDS) {
+      val keys = prefs.getLong(OLD_PREFIX + name, old.second)
+      if (keys != 0L) {
+        commandByKeys[keys] = old.first
+      }
+    }
+    prefs.edit {
+      for (arrowKeys in ArrowKeys.entries) {
+        putString(prefKey(arrowKeys), commandByKeys[arrowKeys.keys] ?: UNASSIGNED)
+      }
+      OLD_COMMANDS.keys.forEach { remove(OLD_PREFIX + it) }
     }
   }
+
+  private const val OLD_PREFIX = "arrow_key_nav_keys_"
+  private const val L = KeyEvent.KEYCODE_DPAD_LEFT
+  private const val R = KeyEvent.KEYCODE_DPAD_RIGHT
+  private const val U = KeyEvent.KEYCODE_DPAD_UP
+  private const val D = KeyEvent.KEYCODE_DPAD_DOWN
+  private const val CTRL = KeyEvent.META_CTRL_ON
+  private const val ALT = KeyEvent.META_ALT_ON
+
+  /** The commands arrow key navigation had of its own: the command now, and the default keys. */
+  private val OLD_COMMANDS: Map<String, Pair<String, Long>> =
+    mapOf(
+      "toggle" to (TOGGLE to keys(0, L, R)),
+      "next_item" to ("NEXT" to keys(0, R)),
+      "previous_item" to ("PREVIOUS" to keys(0, L)),
+      "reading_control_down" to ("SELECTED_SETTING_NEXT_ACTION" to keys(0, D)),
+      "reading_control_up" to ("SELECTED_SETTING_PREVIOUS_ACTION" to keys(0, U)),
+      "click" to ("PERFORM_CLICK_ACTION" to keys(0, U, D)),
+      "next_reading_control" to ("SELECT_NEXT_SETTING" to keys(0, U, R)),
+      "previous_reading_control" to ("SELECT_PREVIOUS_SETTING" to keys(0, U, L)),
+      "first_item" to ("FIRST_IN_SCREEN" to keys(CTRL, U)),
+      "last_item" to ("LAST_IN_SCREEN" to keys(CTRL, D)),
+      "page_up" to ("SCROLL_BACK" to keys(ALT, U)),
+      "page_down" to ("SCROLL_FORWARD" to keys(ALT, D)),
+      "page_left" to ("SCROLL_RIGHT" to keys(ALT, L)),
+      "page_right" to ("SCROLL_LEFT" to keys(ALT, R)),
+    )
 }
 
-private const val LEFT = KeyEvent.KEYCODE_DPAD_LEFT
-private const val RIGHT = KeyEvent.KEYCODE_DPAD_RIGHT
-private const val UP = KeyEvent.KEYCODE_DPAD_UP
-private const val DOWN = KeyEvent.KEYCODE_DPAD_DOWN
+/** The arrow keys that arrow key navigation listens for, each with its default command. */
+enum class ArrowKeys(val keys: Long, val defaultCommand: String) {
+  RIGHT(ArrowKeyNav.keys(0, KeyEvent.KEYCODE_DPAD_RIGHT), "NEXT"),
+  LEFT(ArrowKeyNav.keys(0, KeyEvent.KEYCODE_DPAD_LEFT), "PREVIOUS"),
+  DOWN(ArrowKeyNav.keys(0, KeyEvent.KEYCODE_DPAD_DOWN), "SELECTED_SETTING_NEXT_ACTION"),
+  UP(ArrowKeyNav.keys(0, KeyEvent.KEYCODE_DPAD_UP), "SELECTED_SETTING_PREVIOUS_ACTION"),
+  LEFT_RIGHT(
+    ArrowKeyNav.keys(0, KeyEvent.KEYCODE_DPAD_LEFT, KeyEvent.KEYCODE_DPAD_RIGHT),
+    ArrowKeyNav.TOGGLE,
+  ),
+  UP_DOWN(
+    ArrowKeyNav.keys(0, KeyEvent.KEYCODE_DPAD_UP, KeyEvent.KEYCODE_DPAD_DOWN),
+    "PERFORM_CLICK_ACTION",
+  ),
+  UP_RIGHT(
+    ArrowKeyNav.keys(0, KeyEvent.KEYCODE_DPAD_UP, KeyEvent.KEYCODE_DPAD_RIGHT),
+    "SELECT_NEXT_SETTING",
+  ),
+  UP_LEFT(
+    ArrowKeyNav.keys(0, KeyEvent.KEYCODE_DPAD_UP, KeyEvent.KEYCODE_DPAD_LEFT),
+    "SELECT_PREVIOUS_SETTING",
+  ),
+  DOWN_RIGHT(
+    ArrowKeyNav.keys(0, KeyEvent.KEYCODE_DPAD_DOWN, KeyEvent.KEYCODE_DPAD_RIGHT),
+    ArrowKeyNav.UNASSIGNED,
+  ),
+  DOWN_LEFT(
+    ArrowKeyNav.keys(0, KeyEvent.KEYCODE_DPAD_DOWN, KeyEvent.KEYCODE_DPAD_LEFT),
+    ArrowKeyNav.UNASSIGNED,
+  ),
+  CTRL_UP(ArrowKeyNav.keys(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_UP), "FIRST_IN_SCREEN"),
+  CTRL_DOWN(ArrowKeyNav.keys(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_DOWN), "LAST_IN_SCREEN"),
+  CTRL_LEFT(
+    ArrowKeyNav.keys(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_LEFT),
+    ArrowKeyNav.UNASSIGNED,
+  ),
+  CTRL_RIGHT(
+    ArrowKeyNav.keys(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_RIGHT),
+    ArrowKeyNav.UNASSIGNED,
+  ),
+  ALT_UP(ArrowKeyNav.keys(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_DPAD_UP), "SCROLL_BACK"),
+  ALT_DOWN(ArrowKeyNav.keys(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_DPAD_DOWN), "SCROLL_FORWARD"),
+  ALT_LEFT(ArrowKeyNav.keys(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_DPAD_LEFT), "SCROLL_RIGHT"),
+  ALT_RIGHT(ArrowKeyNav.keys(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_DPAD_RIGHT), "SCROLL_LEFT");
 
-/** Arrow key navigation commands, with VoiceOver's keys on iOS as defaults. */
-enum class ArrowKeyNavCommand(
-  @StringRes val title: Int,
-  /** The keyboard shortcut action the command performs; null for Toggle and the page commands. */
-  val action: TalkBackPhysicalKeyboardShortcut?,
-  val defaultKeys: Long,
-) {
-  TOGGLE(R.string.arrow_key_nav_toggle, null, ArrowKeyNav.keys(0, LEFT, RIGHT)),
-  NEXT_ITEM(
-    R.string.keycombo_menu_navigate_next,
-    TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_DEFAULT,
-    ArrowKeyNav.keys(0, RIGHT),
-  ),
-  PREVIOUS_ITEM(
-    R.string.keycombo_menu_navigate_previous,
-    TalkBackPhysicalKeyboardShortcut.NAVIGATE_PREVIOUS_DEFAULT,
-    ArrowKeyNav.keys(0, LEFT),
-  ),
-  READING_CONTROL_DOWN(
-    R.string.keycombo_menu_global_adjust_reading_setting_next,
-    TalkBackPhysicalKeyboardShortcut.ADJUST_READING_MENU_DOWN,
-    ArrowKeyNav.keys(0, DOWN),
-  ),
-  READING_CONTROL_UP(
-    R.string.keycombo_menu_global_adjust_reading_settings_previous,
-    TalkBackPhysicalKeyboardShortcut.ADJUST_READING_MENU_UP,
-    ArrowKeyNav.keys(0, UP),
-  ),
-  CLICK(
-    R.string.keycombo_menu_perform_click,
-    TalkBackPhysicalKeyboardShortcut.PERFORM_CLICK,
-    ArrowKeyNav.keys(0, UP, DOWN),
-  ),
-  NEXT_READING_CONTROL(
-    R.string.keycombo_menu_global_scroll_forward_reading_menu,
-    TalkBackPhysicalKeyboardShortcut.SELECT_NEXT_READING_MENU,
-    ArrowKeyNav.keys(0, UP, RIGHT),
-  ),
-  PREVIOUS_READING_CONTROL(
-    R.string.keycombo_menu_global_scroll_backward_reading_menu,
-    TalkBackPhysicalKeyboardShortcut.SELECT_PREVIOUS_READING_MENU,
-    ArrowKeyNav.keys(0, UP, LEFT),
-  ),
-  FIRST_ITEM(
-    R.string.keycombo_menu_navigate_first,
-    TalkBackPhysicalKeyboardShortcut.NAVIGATE_FIRST,
-    ArrowKeyNav.keys(KeyEvent.META_CTRL_ON, UP),
-  ),
-  LAST_ITEM(
-    R.string.keycombo_menu_navigate_last,
-    TalkBackPhysicalKeyboardShortcut.NAVIGATE_LAST,
-    ArrowKeyNav.keys(KeyEvent.META_CTRL_ON, DOWN),
-  ),
-  PAGE_UP(
-    R.string.title_viewpager_breakout_page_up,
-    null,
-    ArrowKeyNav.keys(KeyEvent.META_ALT_ON, UP),
-  ),
-  PAGE_DOWN(
-    R.string.title_viewpager_breakout_page_down,
-    null,
-    ArrowKeyNav.keys(KeyEvent.META_ALT_ON, DOWN),
-  ),
-  PAGE_LEFT(R.string.arrow_key_nav_page_left, null, ArrowKeyNav.keys(KeyEvent.META_ALT_ON, LEFT)),
-  PAGE_RIGHT(
-    R.string.arrow_key_nav_page_right,
-    null,
-    ArrowKeyNav.keys(KeyEvent.META_ALT_ON, RIGHT),
-  );
-
-  /** Preference key of the command's keys, also the key of its preference on screen. */
-  val prefKey: String
-    get() = ArrowKeyNav.PREF_KEYS_PREFIX + name.lowercase()
-
-  companion object {
-    @JvmStatic
-    fun fromPrefKey(key: String?): ArrowKeyNavCommand? = entries.firstOrNull { it.prefKey == key }
-  }
+  /** Whether these are two keys pressed together. */
+  val isTwoKeys: Boolean
+    get() = KeyCombo.extractPrefixKeyCode(keys) != KeyEvent.KEYCODE_UNKNOWN
 }

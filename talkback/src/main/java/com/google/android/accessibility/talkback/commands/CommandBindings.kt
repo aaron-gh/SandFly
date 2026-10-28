@@ -23,6 +23,8 @@ import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
+import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav
+import com.google.android.accessibility.talkback.keyboard.ArrowKeys
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter
@@ -101,6 +103,20 @@ object CommandBindings {
         else -> emptyList()
       }
     }
+
+  /** Returns the arrow keys of arrow key navigation, each of which runs a command. */
+  @JvmStatic
+  fun arrowKeys(context: Context): List<GestureSlot> {
+    ArrowKeyNav.migrate(SharedPreferencesUtils.getSharedPreferences(context))
+    val manager = keyComboManager(context)
+    return ArrowKeys.entries.map {
+      GestureSlot(
+        ArrowKeyNav.prefKey(it),
+        manager.getArrowKeysStringRepresentation(it.keys),
+        it.defaultCommand,
+      )
+    }
+  }
 
   /** Returns the key combo manager of the running screen reader, or one for settings. */
   @JvmStatic

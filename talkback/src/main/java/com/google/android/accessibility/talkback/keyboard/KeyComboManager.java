@@ -245,8 +245,13 @@ public class KeyComboManager
             context,
             new ArrowKeyNavKeyHandler.Callbacks() {
               @Override
-              public void perform(ArrowKeyNavCommand command) {
-                performArrowKeyNavCommand(command);
+              public void perform(String command) {
+                performCommandFromKeyboard(
+                    command,
+                    Performance.getInstance()
+                        .onKeyComboEventReceived(
+                            TalkBackPhysicalKeyboardShortcut.ACTION_UNKNOWN
+                                .getKeyboardShortcutOrdinal()));
               }
 
               @Override
@@ -604,11 +609,17 @@ public class KeyComboManager
             INTERRUPTIVE_SPEAK_OPTIONS));
   }
 
-  private void performArrowKeyNavCommand(ArrowKeyNavCommand command) {
-    if (command == ArrowKeyNavCommand.TOGGLE) {
-      toggleArrowKeyNav();
-    } else if (keyComboMapper != null) {
-      keyComboMapper.performArrowKeyNavCommand(command);
+  /**
+   * Runs the command saved as {@code command} for a key press: by its keyboard action when it has
+   * one, otherwise as a gesture would run it.
+   */
+  private void performCommandFromKeyboard(String command, @Nullable EventId eventId) {
+    @Nullable
+    TalkBackPhysicalKeyboardShortcut action = Commands.keyboardActionFor(context, command);
+    if (action != null) {
+      performKeyboardAction(action, eventId);
+    } else if (commandPerformer != null) {
+      commandPerformer.perform(command, eventId);
     }
   }
 
@@ -625,11 +636,8 @@ public class KeyComboManager
             accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false));
   }
 
-  /** Returns how arrow key navigation keys are written, such as "Arrow Up + Arrow Down". */
-  public String getArrowKeyNavKeysStringRepresentation(long keys) {
-    if (keys == ArrowKeyNav.UNASSIGNED) {
-      return context.getString(R.string.keycombo_unassigned);
-    }
+  /** Returns how arrow keys are written, such as "Arrow Up + Arrow Down". */
+  public String getArrowKeysStringRepresentation(long keys) {
     StringBuilder sb = new StringBuilder();
     appendModifiers(KeyCombo.extractModifiers(keys), sb);
     appendKey(KeyCombo.extractPrefixKeyCode(keys), sb);
@@ -1196,7 +1204,7 @@ public class KeyComboManager
           if (commandPerformer == null) {
             continue;
           }
-          commandPerformer.perform(
+          performCommandFromKeyboard(
               commandValue,
               Performance.getInstance()
                   .onKeyComboEventReceived(
