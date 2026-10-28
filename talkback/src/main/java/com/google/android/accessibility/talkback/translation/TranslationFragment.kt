@@ -22,6 +22,7 @@ import android.content.SharedPreferences
 import android.icu.text.ListFormatter
 import android.os.Bundle
 import android.text.InputType
+import android.text.format.Formatter
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.Toast
@@ -72,9 +73,31 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
 
   override fun onStart() {
     super.onStart()
+    AllLanguageDownloads.addListener(downloadsChanged)
     refresh()
     refreshDownloaded()
   }
+
+  override fun onStop() {
+    AllLanguageDownloads.removeListener(downloadsChanged)
+    super.onStop()
+  }
+
+  /** Lists the downloaded languages again as each downloads, and says each quarter of the way. */
+  private val downloadsChanged: () -> Unit = {
+    if (isAdded) {
+      refreshDownloaded()
+      val progress = AllLanguageDownloads.progress
+      val quarter = progress?.let { it.done * 4 / it.total } ?: -1
+      if (progress != null && quarter > announcedQuarter && quarter in 1..3) {
+        view?.announceForAccessibility(
+          getString(R.string.translation_download_all_progress, progress.done, progress.total)
+        )
+      }
+      announcedQuarter = quarter
+    }
+  }
+  private var announcedQuarter = -1
 
   private fun service(): TranslationService = TranslationSettings.service(prefs, onDevice != null)
 
@@ -164,6 +187,7 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
               ListFormatter.getInstance().format(TranslationLanguages.sorted(downloaded).map { TranslationLanguages.name(it) }),
             )
         category.addPreference(row(getString(R.string.title_pref_translation_languages), summary) { chooseOnDeviceLanguage() })
+        category.addPreference(downloadAllRow())
         category.addPreference(
           AccessibilitySuiteSwitchPreference(requireContext()).apply {
             key = TranslationSettings.PREF_WIFI_ONLY
@@ -174,6 +198,61 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
         )
       }
     }
+  }
+
+  /** Download all languages: what is left to download, or how far the downloads are. */
+  private fun downloadAllRow(): Preference {
+    val models = onDevice
+    val missing = missingLanguages()
+    val progress = AllLanguageDownloads.progress
+    val summary =
+      when {
+        progress != null -> getString(R.string.translation_download_all_progress, progress.done, progress.total)
+        downloaded.isNotEmpty() && missing.isEmpty() -> getString(R.string.translation_all_downloaded)
+        else -> null
+      }
+    return row(getString(R.string.title_pref_translation_download_all), summary) {
+      if (models == null) return@row
+      if (AllLanguageDownloads.isRunning) confirmStopDownloads() else confirmDownloadAll(models)
+    }.apply { isEnabled = progress != null || (downloaded.isNotEmpty() && missing.isNotEmpty()) }
+  }
+
+  /** The on-device languages that aren't downloaded, known once the downloaded ones are listed. */
+  private fun missingLanguages(): List<String> =
+    if (downloaded.isEmpty()) emptyList()
+    else TranslationLanguages.sorted(onDevice?.languages.orEmpty() - downloaded).filter { onDevice?.isDownloading(it) != true }
+
+  private fun confirmDownloadAll(models: OnDeviceTranslation) {
+    val missing = missingLanguages()
+    if (missing.isEmpty()) return
+    val size = Formatter.formatShortFileSize(requireContext(), missing.size * LANGUAGE_BYTES)
+    AlertDialog.Builder(requireContext())
+      .setTitle(R.string.title_pref_translation_download_all)
+      .setMessage(resources.getQuantityString(R.plurals.translation_download_all_message, missing.size, missing.size, size))
+      .setPositiveButton(R.string.on_device_ai_metered_download) { _, _ ->
+        val appContext = requireContext().applicationContext
+        AllLanguageDownloads.start(models, missing, TranslationSettings.wifiOnly(prefs)) { progress ->
+          val text =
+            if (progress.failed == 0) appContext.getString(R.string.translation_all_downloaded)
+            else
+              appContext.resources.getQuantityString(
+                R.plurals.translation_download_all_failed,
+                progress.failed,
+                progress.failed,
+              )
+          Toast.makeText(appContext, text, Toast.LENGTH_LONG).show()
+        }
+      }
+      .setNegativeButton(R.string.on_device_ai_cancel, null)
+      .show()
+  }
+
+  private fun confirmStopDownloads() {
+    AlertDialog.Builder(requireContext())
+      .setTitle(R.string.translation_download_all_stop_title)
+      .setPositiveButton(R.string.translation_download_all_stop) { _, _ -> AllLanguageDownloads.stop() }
+      .setNegativeButton(R.string.on_device_ai_cancel, null)
+      .show()
   }
 
   private fun row(title: String, summary: String?, onClick: () -> Unit): Preference =
@@ -488,6 +567,8 @@ class TranslationFragment : TalkbackBaseFragment(R.xml.translation_preferences) 
   private companion object {
     /** After Automatic translation and before Speech. */
     const val SERVICE_CATEGORY_ORDER = 60
+    /** About the size of one language's model. */
+    const val LANGUAGE_BYTES = 30L * 1000 * 1000
   }
 
   private fun onClick(key: String, action: () -> Unit) {
