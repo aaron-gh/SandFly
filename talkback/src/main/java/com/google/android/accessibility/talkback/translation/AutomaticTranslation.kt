@@ -328,10 +328,17 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
     override fun detect(text: String, done: (Detection?) -> Unit) {
       val client =
         identifier
-          ?: LanguageIdentification.getClient(
-              LanguageIdentificationOptions.Builder().setConfidenceThreshold(MIN_CONFIDENCE).build()
-            )
-            .also { identifier = it }
+          ?: try {
+            LanguageIdentification.getClient(
+                LanguageIdentificationOptions.Builder().setConfidenceThreshold(MIN_CONFIDENCE).build()
+              )
+              .also { identifier = it }
+          } catch (e: IllegalStateException) {
+            // ML Kit isn't set up until the device is first unlocked after it starts.
+            LogUtils.w(TAG, "No language identification: %s", e)
+            null
+          }
+      if (client == null) return done(null)
       client
         .identifyPossibleLanguages(text)
         .addOnSuccessListener { found ->
