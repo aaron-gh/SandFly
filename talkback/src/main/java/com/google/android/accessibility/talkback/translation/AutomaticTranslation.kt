@@ -53,13 +53,18 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
   private val appContext = context.applicationContext
   private val prefs = SharedPreferencesUtils.getSharedPreferences(appContext)
   private val handler = Handler(Looper.getMainLooper())
-  /** The language of recent text, or [NO_LANGUAGE]. */
-  private val languages = LruCache<String, String>(MAX_LANGUAGES)
+  /** The language of recent text, [NO_LANGUAGE] for none. */
+  private val languages = LruCache<String, Detection>(MAX_LANGUAGES)
   /** Recent translations, by [translationKey]. */
   private val translations = LruCache<String, String>(MAX_TRANSLATIONS)
   private val pending = ArrayDeque<Held>()
-  /** Texts identified in each language, up to [DOWNLOAD_AFTER_TEXTS], by hash. */
+  /** Texts identified less surely in each language, up to [DOWNLOAD_AFTER_TEXTS], by hash. */
   private val sightings = mutableMapOf<String, MutableSet<Int>>()
+  /**
+   * The text of the item the user came to last, by moving or reading on, to say its translation
+   * once a model is downloaded.
+   */
+  private var lastSeen: String? = null
   /** Languages whose download was announced, so that it is said once. */
   private val announcedDownloads = mutableSetOf<String>()
   private var announcedNotSetUp = false
@@ -90,41 +95,66 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
   ): Boolean {
     if (queueMode and SpeechController.QUEUE_MODE_BIT_INTERRUPT != 0) dropPending()
     val plain = text.toString()
-    val known = if (letters(plain) < MIN_LETTERS) NO_LANGUAGE else languages.get(plain)
+    // Speech queued behind an item, such as its usage hint, leaves the user on that item.
+    val moved = queueMode and SpeechController.QUEUE_MODE_BIT_INTERRUPT != 0 ||
+      flags and FeedbackItem.FLAG_ADVANCE_CONTINUOUS_READING != 0
+    if (moved || lastSeen == null) lastSeen = plain
+    val known = if (letters(plain) < MIN_LETTERS) NO_LANGUAGE else languages.get(plain)?.language
     if (pending.isEmpty() && known != null && !translates(known)) return false
     val held =
       Held(text, queueMode and SpeechController.QUEUE_MODE_BIT_UNINTERRUPTIBLE_BY_NEW_SPEECH != 0, release)
     pending.addLast(held)
-    process(text) { held.ready(it) }
+    process(text, notification = false) { held.ready(it) }
     return true
   }
 
   /**
    * Gives [done] the translation of [text], or [text] when it isn't translated, isn't translated
-   * in time or can't be translated, on the main thread.
+   * in time or can't be translated, on the main thread. A [notification] waits for a language
+   * model that is downloading, since it isn't what the user is moving through.
    */
-  private fun process(text: CharSequence, done: (CharSequence) -> Unit) {
+  private fun process(text: CharSequence, notification: Boolean, done: (CharSequence) -> Unit) {
     val plain = text.toString()
     var finished = false
+    val timeout = Runnable {
+      if (!finished) {
+        finished = true
+        done(text)
+      }
+    }
     val finish = { result: CharSequence ->
       if (!finished) {
         finished = true
+        handler.removeCallbacks(timeout)
         done(result)
       }
     }
     if (letters(plain) < MIN_LETTERS) return finish(text)
-    handler.postDelayed({ finish(text) }, MAX_WAIT_MS)
-    val withLanguage = { language: String? ->
-      if (language != null && translates(language)) translate(plain, language) { finish(it ?: text) }
-      else finish(text)
+    handler.postDelayed(timeout, MAX_WAIT_MS)
+    val waitForDownload = {
+      handler.removeCallbacks(timeout)
+      handler.postDelayed(timeout, MAX_DOWNLOAD_WAIT_MS)
+      Unit
+    }
+    val withLanguage = { detection: Detection? ->
+      if (detection != null && translates(detection.language)) {
+        translate(plain, detection, notification, waitForDownload) { finish(it ?: text) }
+      } else {
+        finish(text)
+      }
     }
     val known = languages.get(plain)
     if (known != null) return withLanguage(known)
-    engine.detect(plain) { language ->
-      if (language != null) languages.put(plain, language)
-      if (!finished) withLanguage(language)
+    engine.detect(plain) { detection ->
+      if (detection != null) languages.put(plain, detection)
+      if (!finished) withLanguage(detection)
     }
   }
+
+  /** Gives [done] the translation of a notification's [text], as [process] does. */
+  @VisibleForTesting
+  internal fun translateNotification(text: CharSequence, done: (CharSequence) -> Unit) =
+    process(text, notification = true, done)
 
   /** Whether text in [language] is translated: it isn't the target or a language left as it is. */
   private fun translates(language: String): Boolean {
@@ -135,23 +165,41 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
       TranslationSettings.untranslated(prefs).none { TranslationLanguages.same(it, language) }
   }
 
-  /** Gives [done] the translation of [text] to speak, or null when it failed. */
-  private fun translate(text: String, from: String, done: (CharSequence?) -> Unit) {
+  /**
+   * Gives [done] the translation of [text] to speak, or null when it failed. A language model that
+   * isn't downloaded is downloaded for text identified surely enough, and then a [notification]
+   * waits for it, through [waitForDownload], and other speech is said again translated, when
+   * nothing has been said since.
+   */
+  private fun translate(
+    text: String,
+    detection: Detection,
+    notification: Boolean,
+    waitForDownload: () -> Unit,
+    done: (CharSequence?) -> Unit,
+  ) {
+    val from = detection.language
     val service = TranslationSettings.autoService(prefs, engine.onDeviceAvailable)
     val to = TranslationSettings.target(prefs)
     val key = translationKey(service, from, to, text)
     translations.get(key)?.let { return done(spoken(it, to)) }
-    // A language model is downloaded only for a language heard in several texts, not for one text
-    // taken for another language.
-    val seen = sightings.getOrPut(from) { mutableSetOf() }
-    if (seen.size < DOWNLOAD_AFTER_TEXTS) seen += text.hashCode()
-    engine.translate(text, service, from, to, download = seen.size >= DOWNLOAD_AFTER_TEXTS) { result ->
+    val downloads =
+      when {
+        !downloadsFor(text, detection) -> Translator.Downloads.NONE
+        notification -> Translator.Downloads.WAIT
+        else -> Translator.Downloads.START
+      }
+    val onDownloaded = { if (lastSeen == text) sayAgain(text, from) }
+    engine.translate(text, service, from, to, downloads, onDownloaded) { result ->
       when (result) {
         is Translator.Result.Done -> {
           translations.put(key, result.translation.text)
           done(spoken(result.translation.text, to))
         }
-        is Translator.Result.Downloading -> announceDownload(result.languages)
+        is Translator.Result.Downloading -> {
+          announceDownload(result.languages)
+          if (downloads == Translator.Downloads.WAIT) waitForDownload()
+        }
         is Translator.Result.Failed -> {
           if (result.failure.kind == TranslationFailure.Kind.NOT_SET_UP) announceNotSetUp(service)
           else if (result.failure.kind != TranslationFailure.Kind.DOWNLOADING) {
@@ -160,6 +208,29 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
           done(null)
         }
       }
+    }
+  }
+
+  /**
+   * Whether text in a language whose model isn't downloaded downloads it: text identified surely,
+   * at once, and text identified less surely only once it is the second such text in the language,
+   * so that one phrase taken for another language doesn't download a model.
+   */
+  private fun downloadsFor(text: String, detection: Detection): Boolean {
+    if (detection.confidence >= SURE_CONFIDENCE && letters(text) >= SURE_LETTERS) return true
+    val seen = sightings.getOrPut(detection.language) { mutableSetOf() }
+    if (seen.size < DOWNLOAD_AFTER_TEXTS) seen += text.hashCode()
+    return seen.size >= DOWNLOAD_AFTER_TEXTS
+  }
+
+  /** Says the translation of [text], which was said untranslated while its model downloaded. */
+  private fun sayAgain(text: String, from: String) {
+    val service = TranslationSettings.autoService(prefs, engine.onDeviceAvailable)
+    val to = TranslationSettings.target(prefs)
+    engine.translate(text, service, from, to, Translator.Downloads.NONE, {}) { result ->
+      if (result !is Translator.Result.Done || lastSeen != text) return@translate
+      translations.put(translationKey(service, from, to, text), result.translation.text)
+      engine.speak(spoken(result.translation.text, to), history = true)
     }
   }
 
@@ -209,18 +280,7 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
     )
   }
 
-  private fun status(text: String) {
-    TalkBackService.getInstance()
-      ?.speechController
-      ?.speak(
-        text,
-        EVENT_ID_UNTRACKED,
-        SpeechController.SpeakOptions.create()
-          .setQueueMode(SpeechController.QUEUE_MODE_QUEUE)
-          .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL or FeedbackItem.FLAG_NO_HISTORY)
-          .setSpeechParams(untranslated()),
-      )
-  }
+  private fun status(text: String) = engine.speak(text, history = false)
 
   @VisibleForTesting
   internal fun close() {
@@ -237,20 +297,27 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
     val onDeviceAvailable: Boolean
 
     /** The language of [text], [NO_LANGUAGE] when it has none, or null when it can't be told now. */
-    fun detect(text: String, done: (String?) -> Unit)
+    fun detect(text: String, done: (Detection?) -> Unit)
 
-    /** Translates [text]; with [download], missing language models start downloading. */
+    /** Translates [text], as [Translator.translateNow] does. */
     fun translate(
       text: String,
       service: TranslationService,
       from: String,
       to: String,
-      download: Boolean,
+      downloads: Translator.Downloads,
+      onDownloaded: () -> Unit,
       done: (Translator.Result) -> Unit,
     )
 
+    /** Says [text], which is never translated; in the speech history when [history]. */
+    fun speak(text: CharSequence, history: Boolean)
+
     fun close()
   }
+
+  /** A language, and how sure its identification was, from 0 to 1. */
+  internal data class Detection(val language: String, val confidence: Float)
 
   /** ML Kit language identification on the phone, and [Translator]. */
   private class PhoneEngine(context: Context) : Engine {
@@ -258,7 +325,7 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
     private var identifier: LanguageIdentifier? = null
     override val onDeviceAvailable = OnDeviceTranslations.isAvailable
 
-    override fun detect(text: String, done: (String?) -> Unit) {
+    override fun detect(text: String, done: (Detection?) -> Unit) {
       val client =
         identifier
           ?: LanguageIdentification.getClient(
@@ -266,10 +333,13 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
             )
             .also { identifier = it }
       client
-        .identifyLanguage(text)
-        .addOnSuccessListener { code ->
+        .identifyPossibleLanguages(text)
+        .addOnSuccessListener { found ->
+          val best = found.maxByOrNull { it.confidence }
+          val code = best?.languageTag.orEmpty()
           // Romanized text, such as "ja-Latn", is not in its language's script.
-          done((if (code.endsWith("-Latn")) null else TranslationLanguages.normalize(code)) ?: NO_LANGUAGE)
+          val language = (if (code.endsWith("-Latn")) null else TranslationLanguages.normalize(code)) ?: NO_LANGUAGE
+          done(Detection(language, if (language == NO_LANGUAGE) 0f else best!!.confidence))
         }
         .addOnFailureListener { e ->
           // Google Play services downloads language identification when it is first asked for.
@@ -285,9 +355,24 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
       service: TranslationService,
       from: String,
       to: String,
-      download: Boolean,
+      downloads: Translator.Downloads,
+      onDownloaded: () -> Unit,
       done: (Translator.Result) -> Unit,
-    ) = translator.translateNow(text, service, from, to, download, done)
+    ) = translator.translateNow(text, service, from, to, downloads, onDownloaded, done)
+
+    override fun speak(text: CharSequence, history: Boolean) {
+      val flags = if (history) 0 else FeedbackItem.FLAG_FORCE_FEEDBACK_ALL or FeedbackItem.FLAG_NO_HISTORY
+      TalkBackService.getInstance()
+        ?.speechController
+        ?.speak(
+          text,
+          EVENT_ID_UNTRACKED,
+          SpeechController.SpeakOptions.create()
+            .setQueueMode(SpeechController.QUEUE_MODE_QUEUE)
+            .setFlags(flags)
+            .setSpeechParams(untranslated()),
+        )
+    }
 
     override fun close() {
       translator.shutdown()
@@ -305,10 +390,15 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
     private const val MIN_CONFIDENCE = 0.7f
     /** Speech is spoken untranslated when its translation takes longer. */
     private const val MAX_WAIT_MS = 3_000L
+    /** How long a notification waits for a language model that downloads for it. */
+    private const val MAX_DOWNLOAD_WAIT_MS = 30_000L
+    /** Identification this sure, of text this long, downloads a language model at once. */
+    private const val SURE_CONFIDENCE = 0.9f
+    private const val SURE_LETTERS = 12
     private const val MAX_LANGUAGES = 500
     private const val MAX_TRANSLATIONS = 300
-    /** How many texts in a language it takes to download its on-device model. */
-    private const val DOWNLOAD_AFTER_TEXTS = 3
+    /** How many less surely identified texts in a language download its on-device model. */
+    private const val DOWNLOAD_AFTER_TEXTS = 2
 
     private var instance: AutomaticTranslation? = null
 
@@ -338,7 +428,7 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
     @JvmStatic
     fun translate(text: CharSequence, done: (CharSequence) -> Unit) {
       val translation = instance ?: return done(text)
-      translation.process(text, done)
+      translation.translateNotification(text, done)
     }
 
     @JvmStatic
