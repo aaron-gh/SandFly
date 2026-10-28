@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Gesture action that translates the last phrase the screen reader spoke and speaks the translation. [CHAR LIMIT=130] -->
+    <string name="title_translate_last_spoken_phrase">Translate last spoken phrase</string>
+    <!-- Title of the settings entry and screen for translation. [CHAR LIMIT=40] -->
+    <string name="translation_title">Translation</string>
+
+    <!-- Translation service: ML Kit translation on the phone, with downloaded language models. [CHAR LIMIT=40] -->
+    <string name="translation_service_on_device">On-device</string>
+    <!-- Translation service: the on-device AI model or AI service (Gemini, Claude and others) set up in Automatic descriptions. [CHAR LIMIT=40] -->
+    <string name="translation_service_ai">AI service</string>
+    <!-- Translation service. Product name. [CHAR LIMIT=40] -->
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <!-- Translation service. Product name. [CHAR LIMIT=40] -->
+    <string name="translation_service_deepl">DeepL</string>
+    <!-- Translation service. Product name. [CHAR LIMIT=40] -->
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <!-- Translation service. Product name. [CHAR LIMIT=40] -->
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+
+    <!-- Setting that chooses the translation service. [CHAR LIMIT=40] -->
+    <string name="title_pref_translation_service">Translation service</string>
+    <!-- Summary of a translation service that still needs an API key or address. [CHAR LIMIT=NONE] -->
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, not set up</string>
+    <!-- Setting that chooses the language text is translated from. [CHAR LIMIT=40] -->
+    <string name="title_pref_translation_source">Translate from</string>
+    <!-- Setting that chooses the language text is translated into. [CHAR LIMIT=40] -->
+    <string name="title_pref_translation_target">Translate into</string>
+    <!-- Setting that chooses the language that text already in the target language is translated into. [CHAR LIMIT=60] -->
+    <string name="title_pref_translation_second_target">Translate text in the target language into</string>
+    <!-- Choice of Translate from: the language of the text is detected. [CHAR LIMIT=40] -->
+    <string name="translation_detect">Detect language</string>
+    <!-- Choice of Translate into: the language of the device. [CHAR LIMIT=60] -->
+    <string name="translation_device_language">Device language (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <!-- Choice of Translate text in the target language into: the text is not translated. [CHAR LIMIT=40] -->
+    <string name="translation_second_none">Don\'t translate</string>
+    <!-- Action that swaps the languages of Translate from and Translate into. [CHAR LIMIT=40] -->
+    <string name="title_pref_translation_swap">Swap languages</string>
+    <!-- Spoken after Swap languages. [CHAR LIMIT=NONE] -->
+    <string name="translation_swapped">From <xliff:g id="source" example="German">%1$s</xliff:g> into <xliff:g id="target" example="English">%2$s</xliff:g></string>
+
+    <!-- Settings category about how translations are spoken. [CHAR LIMIT=40] -->
+    <string name="translation_category_speech">Speech</string>
+    <!-- Switch: translations are spoken with a text-to-speech voice for the target language. [CHAR LIMIT=60] -->
+    <string name="title_pref_translation_target_voice">Use a voice for the target language</string>
+    <!-- Switch: the language the text was in is spoken before the translation. [CHAR LIMIT=60] -->
+    <string name="title_pref_translation_say_source">Say the original language</string>
+    <!-- Switch: each translation is copied to the clipboard. [CHAR LIMIT=60] -->
+    <string name="title_pref_translation_copy">Copy translations to the clipboard</string>
+
+    <!-- Message of the dialog for a translation service's API key. [CHAR LIMIT=NONE] -->
+    <string name="translation_key_message">Paste your <xliff:g id="service" example="DeepL">%1$s</xliff:g> API key. To remove it, clear the field and save. Text that you translate is sent to <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <!-- Setting: the Azure region of the user's Microsoft Translator resource. [CHAR LIMIT=40] -->
+    <string name="title_pref_translation_region">Region</string>
+    <!-- Message of the dialog for the Microsoft Translator region. [CHAR LIMIT=NONE] -->
+    <string name="translation_region_message">The region of your Translator resource in Azure, such as westeurope. Leave it empty for a global resource.</string>
+    <!-- Summary of Region when none is set. [CHAR LIMIT=40] -->
+    <string name="translation_region_global">Global</string>
+    <!-- Message of the dialog for the address of a LibreTranslate server. [CHAR LIMIT=NONE] -->
+    <string name="translation_address_message">The address of a LibreTranslate server, such as https://libretranslate.com. Servers other than your own may need an API key.</string>
+    <!-- Hint of the field for the LibreTranslate server address. [CHAR LIMIT=60] -->
+    <string name="translation_address_hint">Address, such as https://libretranslate.com</string>
+    <!-- Setting: the languages downloaded for on-device translation. [CHAR LIMIT=40] -->
+    <string name="title_pref_translation_languages">On-device languages</string>
+    <!-- Summary of On-device languages. [CHAR LIMIT=NONE] -->
+    <string name="translation_languages_summary">Downloaded: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <!-- Switch: on-device language models download only on Wi-Fi. [CHAR LIMIT=60] -->
+    <string name="title_pref_translation_wifi_only">Download languages on Wi-Fi only</string>
+    <!-- A language in the On-device languages list whose model is on the phone. [CHAR LIMIT=NONE] -->
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, downloaded</string>
+    <!-- A language in the On-device languages list whose model is downloading. [CHAR LIMIT=NONE] -->
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, downloading</string>
+    <!-- Title of the dialog that downloads a language for on-device translation. [CHAR LIMIT=60] -->
+    <string name="translation_download_title">Download <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <!-- Message of the dialog that downloads a language for on-device translation. [CHAR LIMIT=NONE] -->
+    <string name="translation_download_message">About 30 MB.</string>
+    <!-- Spoken when a language for on-device translation has downloaded. [CHAR LIMIT=NONE] -->
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> downloaded</string>
+    <!-- Spoken when a language for on-device translation failed to download. [CHAR LIMIT=NONE] -->
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> not downloaded</string>
+
+    <!-- Spoken when Translate last spoken phrase has no phrase. [CHAR LIMIT=NONE] -->
+    <string name="translation_nothing">Nothing to translate</string>
+    <!-- Spoken while the languages for on-device translation download, before the translation. [CHAR LIMIT=NONE] -->
+    <string name="translation_downloading">Downloading <xliff:g id="languages" example="German and English">%1$s</xliff:g> for on-device translation</string>
+    <!-- Spoken when the text is already in the target language. [CHAR LIMIT=NONE] -->
+    <string name="translation_already_in">Already in <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <!-- Spoken before a translation: the language the text was in. [CHAR LIMIT=NONE] -->
+    <string name="translation_from">From <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <!-- Spoken when a translation service has no API key. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_no_key">Enter the <xliff:g id="service" example="DeepL">%1$s</xliff:g> API key in Translation settings.</string>
+    <!-- Spoken when the LibreTranslate address is missing or invalid. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_no_address">Enter the <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> address in Translation settings.</string>
+    <!-- Spoken when the languages for on-device translation failed to download. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_download">Languages for on-device translation could not be downloaded.</string>
+    <!-- Spoken when a translation service can't be reached. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> could not be reached.</string>
+    <!-- Spoken when a translation service refuses the API key. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> did not accept the API key.</string>
+    <!-- Spoken when the usage limit of a translation service is reached. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> usage limit reached.</string>
+    <!-- Spoken when the service doesn't translate a language. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g> translation does not support <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <!-- Spoken when the language of the text could not be detected. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_not_detected">Language not detected</string>
+    <!-- Spoken when the languages for on-device translation are still downloading. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_downloading">Languages for on-device translation are still downloading</string>
+    <!-- Spoken when language detection is still downloading, which happens once, on first use. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_detection_downloading">Language detection is downloading. Try again in a moment.</string>
+    <!-- Spoken when a translation failed. [CHAR LIMIT=NONE] -->
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> could not translate the text.</string>
+    <!-- Spoken when a translation failed, with the service's message. [CHAR LIMIT=NONE] -->
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> could not translate the text: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+</resources>

@@ -808,6 +808,27 @@ Apps can give SandFly a braille display that it can't connect to on its own, suc
 
 SandFly only uses a display from an app once you allow it, after a warning that the app will be able to read the screen and control the device. SandFly asks when it finds such an app, and **Displays from other apps** in braille display settings lists them, to allow or stop allowing each one. A notification says which app is in use. A display connected through Bluetooth or USB comes first, and one from an app waits while it's connected. [Providing a braille display from another app](docs/braille-display-api.md) describes the API for app developers.
 
+## Translation
+
+**Translate last spoken phrase**, a gesture action under **Reading control**, translates what SandFly said last and speaks the translation. Done again right after, it translates the same phrase again, not the translation, so a language changed in between takes effect. The translation stays in the speech history, so Repeat, Spell and Copy last spoken phrase work on it. Messages such as "Nothing to translate" don't.
+
+**Settings > Translation** has:
+
+- **Translation service**:
+  - On-device (the default on phones): ML Kit translation, in 59 languages. Each language's model, about 30 MB, downloads from Google the first time it is needed, with English, which translation between two other languages goes through. **On-device languages** lists the languages, downloads one or deletes a downloaded one; **Download languages on Wi-Fi only** holds downloads until Wi-Fi. The language is detected with ML Kit language identification, which Google Play services downloads the first time; until then, SandFly says "Language detection is downloading". Not on Wear OS.
+  - AI service: whatever Automatic descriptions uses, the on-device AI model, Gemini, Claude, OpenAI or another AI service, in one request that also returns the detected language. The default on Wear OS.
+  - Google Cloud Translation, DeepL and Microsoft Translator, with your API key (and, for Microsoft, the Azure region of your resource, empty for a global one). A DeepL key ending in ":fx" uses DeepL's free API. Choosing one without a key asks for it.
+  - LibreTranslate, at https://libretranslate.com or the address of your own server (https only), with an API key if the server needs one.
+- **Translate from**: Detect language (the default), or a language.
+- **Translate into**: Device language (the default), or a language.
+- **Translate text in the target language into** (only while the language is detected): a second language for text that is already in the target language, such as German for an English speaker reading both, or Don't translate (the default), which says "Already in English".
+- **Swap languages** (only while Translate from is a language).
+- **Use a voice for the target language** (on by default): the translation is marked with its language, so the voice changes as for other text in that language, following **Switch language automatically**.
+- **Say the original language** (off by default): "From German:" before the translation.
+- **Copy translations to the clipboard** (off by default).
+
+Text over 5,000 characters is cut. A translation is kept until the phrase or the settings change, so repeating the gesture doesn't ask the service again. API keys stay out of exported settings.
+
 ## Image and screen descriptions
 
 ### AI services

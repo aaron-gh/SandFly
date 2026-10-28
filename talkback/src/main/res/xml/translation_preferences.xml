@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_translation_service_choice"
+      android:persistent="false"
+      android:title="@string/title_pref_translation_service" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_translation_source_choice"
+      android:persistent="false"
+      android:title="@string/title_pref_translation_source" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_translation_target_choice"
+      android:persistent="false"
+      android:title="@string/title_pref_translation_target" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_translation_second_target_choice"
+      android:persistent="false"
+      android:title="@string/title_pref_translation_second_target" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="pref_translation_swap_action"
+      android:persistent="false"
+      android:title="@string/title_pref_translation_swap" />
+
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_translation_service_settings"
+      android:title="@string/translation_title">
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="pref_translation_address_row"
+        android:persistent="false"
+        android:title="@string/ai_provider_address" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="pref_translation_key_row"
+        android:persistent="false"
+        android:title="@string/gemini_api_key_hint" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="pref_translation_region_row"
+        android:persistent="false"
+        android:title="@string/title_pref_translation_region" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="pref_translation_languages_row"
+        android:persistent="false"
+        android:title="@string/title_pref_translation_languages" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_translation_wifi_only"
+        android:title="@string/title_pref_translation_wifi_only" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_translation_speech"
+      android:title="@string/translation_category_speech">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="true"
+        android:key="pref_translation_target_voice"
+        android:title="@string/title_pref_translation_target_voice" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_translation_say_source"
+        android:title="@string/title_pref_translation_say_source" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_translation_copy"
+        android:title="@string/title_pref_translation_copy" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+
+</PreferenceScreen>
