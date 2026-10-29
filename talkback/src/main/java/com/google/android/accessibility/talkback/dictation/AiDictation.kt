@@ -85,6 +85,18 @@ class AiDictation(
     )
   private var phase = Phase.IDLE
   private var field: AccessibilityNodeInfoCompat? = null
+  /** When speech was last heard while recording, for Auto stop after silence. */
+  @Volatile private var lastSpeechAt = 0L
+  private val autoStop =
+    object : Runnable {
+      override fun run() {
+        if (phase != Phase.RECORDING) return
+        val wait = DictationSettings.autoStopMs(prefs)
+        if (wait <= 0) return
+        val silent = SystemClock.elapsedRealtime() - lastSpeechAt
+        if (silent >= wait) stopRecording() else handler.postDelayed(this, minOf(wait - silent, AUTO_STOP_CHECK_MS))
+      }
+    }
   /** Gets the text instead of a field, for [listen], or null. */
   private var onText: ((String?) -> Unit)? = null
 
@@ -179,6 +191,10 @@ class AiDictation(
   /** Starts recording for [used]. Returns false when it can't. */
   private fun startRecording(used: Recognition): Boolean {
     recognition = used
+    // Counts from the start too, so that recording stops when nothing is said.
+    heardSpeech()
+    handler.removeCallbacks(autoStop)
+    if (DictationSettings.autoStopMs(prefs) > 0) handler.postDelayed(autoStop, AUTO_STOP_CHECK_MS)
     if (used == Recognition.GOOGLE || used == Recognition.ANDROID) {
       val request = generation
       val recognizer =
@@ -187,6 +203,7 @@ class AiDictation(
           if (used == Recognition.GOOGLE) DictationSettings.GOOGLE_SERVICE else null,
           onDone = { text -> if (request == generation) recognized(text, cleaned = false) },
           onFailed = { error -> if (request == generation) recognitionFailed(used, error) },
+          onSpeech = ::heardSpeech,
         )
       if (!recognizer.start()) return false
       continuous = recognizer
@@ -203,6 +220,7 @@ class AiDictation(
       AudioCapture(
         onLimit = { handler.post { if (phase == Phase.RECORDING) stopRecording() } },
         onChunk = session?.let { live -> { pcm -> live.send(pcm) } },
+        onSpeech = ::heardSpeech,
       )
     if (!recorder.start()) {
       session?.cancel()
@@ -213,7 +231,12 @@ class AiDictation(
     return true
   }
 
+  private fun heardSpeech() {
+    lastSpeechAt = SystemClock.elapsedRealtime()
+  }
+
   private fun stopRecording() {
+    handler.removeCallbacks(autoStop)
     phase = Phase.WORKING
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
@@ -525,6 +548,8 @@ class AiDictation(
 
   internal companion object {
     private const val TAG = "AiDictation"
+    /** How often Auto stop after silence checks, at most. */
+    private const val AUTO_STOP_CHECK_MS = 250L
     /** How long progress tones play while speech is recognized or corrected. */
     private const val WORK_TONES_MS = 10 * 60_000L
     private const val HTTP_TOO_MANY_REQUESTS = 429
