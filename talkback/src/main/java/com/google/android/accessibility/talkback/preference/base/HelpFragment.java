@@ -16,11 +16,36 @@
 
 package com.google.android.accessibility.talkback.preference.base;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.widget.Toast;
+import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
 
-/** Help and feedback: the tutorial, gesture practice and problem reports. */
+/** Help and feedback: the tutorial, gesture practice, problem reports and the privacy policy. */
 public class HelpFragment extends AdvancedSettingFragment {
   public HelpFragment() {
     super(R.xml.help_and_feedback_preferences, R.string.title_pref_help_and_feedback);
+  }
+
+  @Override
+  public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+    super.onCreatePreferences(savedInstanceState, rootKey);
+    Preference privacy = findPreference(getString(R.string.pref_privacy_policy_key));
+    if (privacy != null) {
+      privacy.setOnPreferenceClickListener(
+          preference -> {
+            String url = getString(R.string.privacy_policy_url);
+            try {
+              startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+            } catch (ActivityNotFoundException e) {
+              // Watches often have no browser: show the address to open elsewhere.
+              Toast.makeText(getContext(), url, Toast.LENGTH_LONG).show();
+            }
+            return true;
+          });
+    }
   }
 }
