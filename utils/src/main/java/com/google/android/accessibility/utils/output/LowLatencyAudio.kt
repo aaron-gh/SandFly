@@ -109,6 +109,8 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
   // Whether the detour is kept because the track itself went to the earpiece, while Android reports
   // another output for accessibility audio. It is kept until a call starts or the media output goes.
   private var stickyDetour = false
+  // When the track was last sent to the media output again after it went to the earpiece.
+  private var lastResend = 0L
 
   init {
     sampleRate =
@@ -875,27 +877,51 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
       try {
         val ours = am.getAudioDevicesForAttributes(attributes).firstOrNull()?.type
         val media = am.getAudioDevicesForAttributes(MEDIA_ATTRIBUTES).firstOrNull()
+        val routed = output.routedDevice?.type
         val send =
-          sendToMedia(am.mode, ours, output.routedDevice?.type, media?.type, stickyDetour)
-        stickyDetour = send && ours != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE
+          sendToMedia(am.mode, ours, routed, media?.type, stickyDetour, detour != null)
+        stickyDetour =
+          send && ours != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE && ours != media?.type
         media.takeIf { send }
       } catch (e: RuntimeException) {
         LogUtils.w(TAG, "Cannot find the media output: %s", e)
         return
       }
     detour = target
-    if (output.preferredDevice?.id == target?.id) return
-    if (target == null) {
-      LogUtils.d(TAG, "Track plays where Android routes it again")
-    } else {
-      LogUtils.d(TAG, "Accessibility audio is on the earpiece outside a call, sending the track to %s", describe(target))
-    }
     try {
+      if (output.preferredDevice?.id == target?.id) {
+        if (target == null || output.routedDevice?.type != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE) {
+          return
+        }
+        // The track was sent to the media output while it still played there, which Android
+        // ignores, and then went to the earpiece with the rest of accessibility audio. Setting
+        // the same device again is ignored too, so it is cleared first.
+        val now = SystemClock.uptimeMillis()
+        if (now - lastResend < ROUTE_SETTLE_MS) {
+          recheckRoute(lastResend + ROUTE_SETTLE_MS)
+          return
+        }
+        lastResend = now
+        LogUtils.d(TAG, "Track went to the earpiece, sending it to %s again", describe(target))
+        output.setPreferredDevice(null)
+      } else if (target == null) {
+        LogUtils.d(TAG, "Track plays where Android routes it again")
+      } else {
+        LogUtils.d(TAG, "Accessibility audio is on the earpiece outside a call, sending the track to %s", describe(target))
+      }
       output.setPreferredDevice(target)
     } catch (e: IllegalStateException) {
       // Released already.
     }
   }
+
+  /** Checks the track's route again at [uptime], once however often it is asked. */
+  private fun recheckRoute(uptime: Long) {
+    routeHandler.removeCallbacksAndMessages(recheckToken)
+    routeHandler.postAtTime({ ROUTES.execute { followMedia() } }, recheckToken, uptime)
+  }
+
+  private val recheckToken = Any()
 
   /**
    * Grows the buffer after the mixer ran short, which otherwise pops, or crackles and slows audio
@@ -981,17 +1007,28 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
      * Whether a track should play on the media output, of type [mediaOutput], rather than where
      * Android routes it: outside a call, while Android routes accessibility audio ([ours]) or the
      * track itself ([routed]) to the earpiece. [sticky] keeps it there after the track went to the
-     * earpiece, until a call starts or the media output goes.
+     * earpiece, until a call starts or the media output goes. A track already sent there
+     * ([detoured]) stays while Android routes accessibility audio to the media output as well.
      */
     @VisibleForTesting
     @JvmStatic
-    fun sendToMedia(mode: Int, ours: Int?, routed: Int?, mediaOutput: Int?, sticky: Boolean): Boolean =
+    fun sendToMedia(
+      mode: Int,
+      ours: Int?,
+      routed: Int?,
+      mediaOutput: Int?,
+      sticky: Boolean,
+      detoured: Boolean = false,
+    ): Boolean =
       mode == AudioManager.MODE_NORMAL &&
         mediaOutput != null &&
         mediaOutput != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE &&
         (ours == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE ||
           routed == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE ||
-          sticky)
+          sticky ||
+          // While other audio plays on the media output, One UI routes accessibility audio there
+          // too, and back to the earpiece when it stops.
+          (detoured && ours == mediaOutput))
 
     /** An output's name and type, for the log. */
     private fun describe(device: AudioDeviceInfo?): String =
