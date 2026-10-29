@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">Hướng dẫn về bàn phím SandFly</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Mục tiếp theo">%1$s</xliff:g> chưa có phím tắt. Hãy gán một phím tắt trong Lệnh hoặc dùng Bỏ qua bước.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Chế độ duyệt web cần Sơ đồ bàn phím nâng cao. Chọn sơ đồ này trong <xliff:g id="settings_path" example="Cài đặt SandFly &gt; Phím tắt &gt; Chọn sơ đồ bàn phím">%1$s</xliff:g> hoặc dùng Bỏ qua bước.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> hai lần</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Đã hoàn tất bài học. Nhấn <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> để bắt đầu bài học tiếp theo.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Đã hoàn tất bài học. Nhấn <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> để hoàn tất hướng dẫn.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Trang web</string>
+
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Hướng dẫn này dạy các phím tắt của SandFly. Hầu hết các phím tắt dùng phím <xliff:g id="key" example="Action">%1$s</xliff:g> cùng với các phím khác. <xliff:g id="location" example="Phím Hành động là phím Windows, nằm cạnh phím Alt bên trái.">%2$s</xliff:g> Ctrl dừng lời nói. Mỗi bài học đưa ra một chỉ dẫn, chờ đến khi bạn nhấn các phím được nêu, rồi đưa ra chỉ dẫn tiếp theo. Chỉ dẫn là mục đầu tiên sau tên bài học. Mục lục liệt kê mọi bài học, và hướng dẫn mở lại ở bài học bạn đang học.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Phím Hành động là phím Windows, nằm cạnh phím Alt bên trái. Trên bàn phím Apple, đó là phím Command, nằm cạnh phím cách.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Phím Alt nằm cạnh phím cách.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Nhấn <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> để bắt đầu.</string>
+
+    <string name="sandfly_keyboard_tutorial_move_intro">Mục tiếp theo và Mục trước di chuyển qua các mục trên màn hình theo thứ tự đọc.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Nhấn <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> để di chuyển đến mục tiếp theo. Tiếp tục cho đến khi bạn đến <xliff:g id="item" example="Trứng">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Nhấn <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> để di chuyển đến mục trước. Quay lại <xliff:g id="item" example="Bánh mì">%2$s</xliff:g>.</string>
+
+    <string name="sandfly_keyboard_tutorial_activate_intro">Kích hoạt áp dụng cho mục được đặt tiêu điểm.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Di chuyển đến <xliff:g id="button" example="Rung chuông">%2$s</xliff:g>. Nhấn <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> để kích hoạt.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Đánh dấu <xliff:g id="check_box" example="Thêm phô mai">%2$s</xliff:g> bằng <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Một số mục thực hiện việc khác khi được giữ. Di chuyển đến <xliff:g id="button" example="Chi tiết">%2$s</xliff:g>. Nhấn <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> để giữ mục đó.</string>
+
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Chế độ điều khiển chức năng đọc quyết định tác dụng của thao tác di chuyển lên và xuống, chẳng hạn như di chuyển theo từ hoặc theo ký tự. Mục tiếp theo và Mục trước vẫn di chuyển giữa các mục.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Nhấn <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> hoặc <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> để thay đổi chế độ điều khiển chức năng đọc. Chọn <xliff:g id="reading_control" example="Từ">%3$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Nhấn <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> để di chuyển đến từ tiếp theo. Di chuyển qua ba từ.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Thay đổi chế độ điều khiển chức năng đọc thành <xliff:g id="reading_control" example="Ký tự">%2$s</xliff:g>. Nhấn <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> để di chuyển từng ký tự.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Nhấn <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> để chuyển đến tiêu đề tiếp theo. Chuyển đến <xliff:g id="heading" example="Cuối tuần">%2$s</xliff:g>.</string>
+
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly có thể đọc từ mục được đặt tiêu điểm đến cuối màn hình. Ctrl dừng đọc.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Nhấn <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> để đọc từ mục được đặt tiêu điểm.</string>
+
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Danh sách chỉ hiển thị một số mục cùng lúc. Di chuyển qua mục cuối cùng đang hiển thị sẽ cuộn danh sách.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Nhấn <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> cho đến khi bạn đến <xliff:g id="item" example="Mục 15">%2$s</xliff:g>.</string>
+
+    <string name="sandfly_keyboard_tutorial_actions_intro">Một số mục có các thao tác ngoài kích hoạt, chẳng hạn như Lưu trữ hoặc Xoá đối với tin nhắn. Trình đơn thao tác liệt kê các thao tác đó.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Di chuyển đến tin nhắn. Nhấn <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> để mở các thao tác của tin nhắn. Chọn <xliff:g id="action" example="Lưu trữ">%2$s</xliff:g>.</string>
+
+    <string name="sandfly_keyboard_tutorial_typing_intro">Kích hoạt một trường văn bản cho phép bạn nhập vào trường đó.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Di chuyển đến trường <xliff:g id="field" example="Tên">%2$s</xliff:g>. Nhấn <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> để bắt đầu nhập.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Xoá chữ cái cuối cùng bằng phím Backspace.</string>
+
+    <string name="sandfly_keyboard_tutorial_system_intro">Android có các phím tắt riêng dùng phím Hành động. Các phím tắt này hoạt động trên mọi màn hình. Trong bài học này, hướng dẫn cho biết mỗi phím tắt làm gì thay vì thực hiện.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Nhấn <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> để quay lại.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Nhấn <xliff:g id="keys" example="Action + H">%1$s</xliff:g> để chuyển đến Màn hình chính.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Nhấn <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> để hiển thị ứng dụng gần đây. Alt + Tab chuyển đổi giữa các ứng dụng.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Nhấn <xliff:g id="keys" example="Action + N">%1$s</xliff:g> để mở thông báo.</string>
+
+    <string name="sandfly_keyboard_tutorial_menu_open">Nhấn <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> để mở Trình đơn SandFly. Di chuyển qua các lệnh trong trình đơn. Esc đóng trình đơn.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Nhấn Esc để đóng trình đơn.</string>
+
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Danh sách phím tắt</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly liệt kê mọi phím tắt cùng với lệnh của phím tắt đó.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Nhấn <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> để mở danh sách. Esc đóng danh sách.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Nhấn Esc để đóng danh sách.</string>
+
+    <string name="sandfly_keyboard_tutorial_commands_copy">Nhấn <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> để sao chép văn bản gần đây nhất mà SandFly đọc vào bảng nhớ tạm.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Nhấn <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> để tìm văn bản trên màn hình. Trong bài học này, hướng dẫn cho biết lệnh làm gì thay vì thực hiện lệnh.</string>
+
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Chế độ duyệt web</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">Ở chế độ duyệt web, các chữ cái đơn lẻ chuyển đến mục tiếp theo thuộc một loại, chẳng hạn như H cho tiêu đề, K cho đường liên kết và B cho nút. Shift cùng với chữ cái sẽ chuyển ngược lại. Chế độ duyệt web tắt trong khi bạn nhập vào một trường văn bản.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Nhấn <xliff:g id="keys" example="Action twice">%1$s</xliff:g> để bật chế độ duyệt web.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Nhấn <xliff:g id="keys" example="H">%1$s</xliff:g> để chuyển đến tiêu đề tiếp theo. Chuyển đến <xliff:g id="heading" example="Cuối tuần">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Nhấn <xliff:g id="keys" example="Action twice">%1$s</xliff:g> để tắt chế độ duyệt web.</string>
+
+    <string name="sandfly_keyboard_tutorial_practice_title">Thực hành bàn phím</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Mỗi phím tắt đọc các phím và lệnh của nó thay vì chạy lệnh. Mục tiếp theo, Mục trước và kích hoạt vẫn hoạt động.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Nhấn phím tắt bất kỳ để nghe tác dụng của phím tắt đó. Để dừng, kích hoạt <xliff:g id="button" example="Kết thúc thực hành">%1$s</xliff:g>.</string>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">Vodič za tastaturu u SandFlyu</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Sljedeća stavka">%1$s</xliff:g> nema prečicu na tastaturi. Dodijelite je u odjeljku Komande ili koristite Preskoči korak.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Način rada za pregledanje zahtijeva Poboljšan raspored tipki. Odaberite ga u <xliff:g id="settings_path" example="Postavke SandFlya &gt; Prečice na tastaturi &gt; Izaberite mapu tipki">%1$s</xliff:g> ili koristite Preskoči korak.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Radnja">%1$s</xliff:g> dvaput</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lekcija završena. Pritisnite <xliff:g id="keys" example="Radnja + Razmak">%1$s</xliff:g> za početak sljedeće lekcije.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lekcija završena. Pritisnite <xliff:g id="keys" example="Radnja + Razmak">%1$s</xliff:g> za završetak vodiča.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Web stranice</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Ovaj vodič uči prečice na tastaturi u SandFlyu. Većina njih koristi tipku <xliff:g id="key" example="Radnja">%1$s</xliff:g> s drugim tipkama. <xliff:g id="location" example="Tipka Radnja je tipka Windows, pored lijeve tipke Alt.">%2$s</xliff:g> Ctrl zaustavlja govor. Svaka lekcija daje uputu, čeka dok ne pritisnete tipke koje navodi, a zatim daje sljedeću. Uputa je prva stavka nakon naziva lekcije. Sadržaj navodi sve lekcije, a vodič se ponovo otvara na lekciji na kojoj ste stali.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Tipka Radnja je tipka Windows, pored lijeve tipke Alt. Na Apple tastaturama to je tipka Command, pored razmaknice.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Tipka Alt je pored razmaknice.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Pritisnite <xliff:g id="keys" example="Radnja + Razmak">%1$s</xliff:g> za početak.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">Sljedeća stavka i Prethodna stavka pomiču kroz stavke na ekranu redoslijedom čitanja.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Pritisnite <xliff:g id="keys" example="Radnja + Strelica udesno">%1$s</xliff:g> za prelazak na sljedeću stavku. Nastavite dok ne dođete do stavke <xliff:g id="item" example="Jaja">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Pritisnite <xliff:g id="keys" example="Radnja + Strelica ulijevo">%1$s</xliff:g> za prelazak na prethodnu stavku. Vratite se na stavku <xliff:g id="item" example="Hljeb">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">Aktiviranje djeluje na stavku koja je u fokusu.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Prijeđite na stavku <xliff:g id="button" example="Pozvoni zvonom">%2$s</xliff:g>. Pritisnite <xliff:g id="keys" example="Radnja + Razmak">%1$s</xliff:g> za aktiviranje.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Označite <xliff:g id="check_box" example="Dodatni sir">%2$s</xliff:g> pomoću <xliff:g id="keys" example="Radnja + Razmak">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Neke stavke rade nešto drugo kad se zadrže. Prijeđite na stavku <xliff:g id="button" example="Detalji">%2$s</xliff:g>. Pritisnite <xliff:g id="keys" example="Radnja + Shift + Razmak">%1$s</xliff:g> za zadržavanje.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Kontrole za čitanje određuju šta radi pomicanje gore i dolje, na primjer pomak po riječima ili po znakovima. Sljedeća stavka i Prethodna stavka i dalje pomiču između stavki.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Pritisnite <xliff:g id="keys" example="Radnja + Shift + Strelica udesno">%1$s</xliff:g> ili <xliff:g id="keys" example="Radnja + Shift + Strelica ulijevo">%2$s</xliff:g> za promjenu kontrole za čitanje. Odaberite <xliff:g id="reading_control" example="Riječi">%3$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Pritisnite <xliff:g id="keys" example="Radnja + Strelica nadolje">%1$s</xliff:g> za prelazak na sljedeću riječ. Pomaknite se za tri riječi.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Promijenite kontrolu za čitanje u <xliff:g id="reading_control" example="Znakovi">%2$s</xliff:g>. Pritisnite <xliff:g id="keys" example="Radnja + Strelica nadolje">%1$s</xliff:g> za pomak za jedan znak.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Pritisnite <xliff:g id="keys" example="Radnja + Strelica nadolje">%1$s</xliff:g> za skok na sljedeći naslov. Skočite na <xliff:g id="heading" example="Vikend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly može čitati od fokusirane stavke do kraja ekrana. Ctrl zaustavlja čitanje.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Pritisnite <xliff:g id="keys" example="Radnja + Ctrl + R">%1$s</xliff:g> za čitanje od fokusirane stavke.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Liste odjednom prikazuju samo neke stavke. Pomicanje preko posljednje prikazane stavke pomiče listu.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Pritišćite <xliff:g id="keys" example="Radnja + Strelica udesno">%1$s</xliff:g> dok ne dođete do stavke <xliff:g id="item" example="Stavka 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Neke stavke osim aktiviranja imaju i druge radnje, na primjer Arhiviraj ili Izbriši kod poruke. Meni radnji ih navodi.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Prijeđite na poruku. Pritisnite <xliff:g id="keys" example="Radnja + Ctrl + A">%1$s</xliff:g> da otvorite njezine radnje. Odaberite <xliff:g id="action" example="Arhiviraj">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Aktiviranje tekstnog polja omogućava pisanje u njega.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Prijeđite na polje <xliff:g id="field" example="Ime">%2$s</xliff:g>. Pritisnite <xliff:g id="keys" example="Radnja + Razmak">%1$s</xliff:g> za početak pisanja.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Izbrišite posljednje slovo tipkom Backspace.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android ima vlastite prečice na tastaturi s tipkom Radnja. Rade na svakom ekranu. U ovoj lekciji vodič umjesto izvršavanja kaže šta svaka od njih radi.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Pritisnite <xliff:g id="keys" example="Radnja + Esc">%1$s</xliff:g> za povratak.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Pritisnite <xliff:g id="keys" example="Radnja + H">%1$s</xliff:g> za odlazak na početni ekran.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Pritisnite <xliff:g id="keys" example="Radnja + Tab">%1$s</xliff:g> za prikaz nedavnih aplikacija. Alt + Tab prebacuje između aplikacija.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Pritisnite <xliff:g id="keys" example="Radnja + N">%1$s</xliff:g> za otvaranje obavještenja.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">Pritisnite <xliff:g id="keys" example="Radnja + Ctrl + M">%1$s</xliff:g> za otvaranje menija SandFlya. Prođite kroz njegove komande. Esc zatvara meni.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Pritisnite Esc za zatvaranje menija.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Lista prečica na tastaturi</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly navodi svaku prečicu na tastaturi s njezinom komandom.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Pritisnite <xliff:g id="keys" example="Radnja + Shift + /">%1$s</xliff:g> za otvaranje liste. Esc je zatvara.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Pritisnite Esc za zatvaranje liste.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">Pritisnite <xliff:g id="keys" example="Radnja + Ctrl + C">%1$s</xliff:g> za kopiranje posljednjeg teksta koji je SandFly izgovorio u međumemoriju.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Pritisnite <xliff:g id="keys" example="Radnja + Ctrl + /">%1$s</xliff:g> za pretraživanje teksta na ekranu. U ovoj lekciji vodič umjesto toga kaže šta prečica radi.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Način rada za pregledanje</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">U načinu rada za pregledanje pojedinačna slova skaču na sljedeću stavku određene vrste, na primjer H za naslove, K za linkove i B za dugmad. Shift sa slovom skače unazad. Način rada za pregledanje se isključuje dok pišete u tekstnom polju.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Pritisnite <xliff:g id="keys" example="Radnja dvaput">%1$s</xliff:g> za uključivanje načina rada za pregledanje.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Pritisnite <xliff:g id="keys" example="H">%1$s</xliff:g> za skok na sljedeći naslov. Skočite na <xliff:g id="heading" example="Vikend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Pritisnite <xliff:g id="keys" example="Radnja dvaput">%1$s</xliff:g> za isključivanje načina rada za pregledanje.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Vježba tastature</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Svaka prečica na tastaturi umjesto izvršavanja izgovara svoje tipke i komandu. Sljedeća stavka, Prethodna stavka i aktiviranje i dalje rade.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Pritisnite bilo koju prečicu na tastaturi da biste čuli šta radi. Za završetak aktivirajte <xliff:g id="button" example="Završi vježbu">%1$s</xliff:g>.</string>
+</resources>

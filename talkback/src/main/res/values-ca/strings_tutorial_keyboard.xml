@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">Tutorial del teclat de SandFly</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Element següent">%1$s</xliff:g> no té cap tecla de drecera. Assigna-n\'hi una a Ordres o utilitza Omet el pas.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">El mode de navegació necessita el Mapa de teclat millorat. Tria\'l a <xliff:g id="settings_path" example="Configuració de SandFly &gt; Tecles de drecera &gt; Tria un mapa de teclat">%1$s</xliff:g> o utilitza Omet el pas.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Acció">%1$s</xliff:g> dues vegades</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lliçó completada. Prem <xliff:g id="keys" example="Acció + Espai">%1$s</xliff:g> per començar la lliçó següent.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lliçó completada. Prem <xliff:g id="keys" example="Acció + Espai">%1$s</xliff:g> per acabar el tutorial.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Pàgines web</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Aquest tutorial ensenya les tecles de drecera de SandFly. La majoria fan servir la tecla <xliff:g id="key" example="Acció">%1$s</xliff:g> amb altres tecles. <xliff:g id="location" example="La tecla Acció és la tecla Windows, al costat de la tecla Alt de l\'esquerra.">%2$s</xliff:g> Ctrl atura la veu. Cada lliçó dona una instrucció, espera que hagis premut les tecles que indica i després dona la següent. La instrucció és el primer element després del nom de la lliçó. Contingut mostra totes les lliçons, i el tutorial es torna a obrir a la lliçó on eres.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">La tecla Acció és la tecla Windows, al costat de la tecla Alt de l\'esquerra. Als teclats d\'Apple, és la tecla Ordre, al costat de la barra espaiadora.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">La tecla Alt és al costat de la barra espaiadora.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Prem <xliff:g id="keys" example="Acció + Espai">%1$s</xliff:g> per començar.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">Element següent i Element anterior recorren els elements de la pantalla en ordre de lectura.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Prem <xliff:g id="keys" example="Acció + Fletxa dreta">%1$s</xliff:g> per anar a l\'element següent. Continua fins a arribar a <xliff:g id="item" example="Ous">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Prem <xliff:g id="keys" example="Acció + Fletxa esquerra">%1$s</xliff:g> per anar a l\'element anterior. Torna a <xliff:g id="item" example="Pa">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">L\'activació actua sobre l\'element que té el focus.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Ves a <xliff:g id="button" example="Fes sonar la campana">%2$s</xliff:g>. Prem <xliff:g id="keys" example="Acció + Espai">%1$s</xliff:g> per activar-lo.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Marca <xliff:g id="check_box" example="Formatge extra">%2$s</xliff:g> amb <xliff:g id="keys" example="Acció + Espai">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Alguns elements fan una altra cosa si els mantens premuts. Ves a <xliff:g id="button" example="Detalls">%2$s</xliff:g>. Prem <xliff:g id="keys" example="Acció + Maj + Espai">%1$s</xliff:g> per mantenir-lo premut.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Els controls de lectura trien què fa moure\'s cap amunt i cap avall, com ara moure\'s per paraules o per caràcters. Element següent i Element anterior continuen movent-se entre elements.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Prem <xliff:g id="keys" example="Acció + Maj + Fletxa dreta">%1$s</xliff:g> o <xliff:g id="keys" example="Acció + Maj + Fletxa esquerra">%2$s</xliff:g> per canviar el control de lectura. Tria <xliff:g id="reading_control" example="Paraules">%3$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Prem <xliff:g id="keys" example="Acció + Fletxa avall">%1$s</xliff:g> per anar a la paraula següent. Avança tres paraules.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Canvia el control de lectura a <xliff:g id="reading_control" example="Caràcters">%2$s</xliff:g>. Prem <xliff:g id="keys" example="Acció + Fletxa avall">%1$s</xliff:g> per avançar un caràcter.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Prem <xliff:g id="keys" example="Acció + Fletxa avall">%1$s</xliff:g> per saltar a l\'encapçalament següent. Salta a <xliff:g id="heading" example="Cap de setmana">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly pot llegir des de l\'element enfocat fins al final de la pantalla. Ctrl atura la lectura.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Prem <xliff:g id="keys" example="Acció + Ctrl + R">%1$s</xliff:g> per llegir a partir de l\'element enfocat.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Les llistes només mostren alguns dels seus elements alhora. Si passes més enllà de l\'últim element visible, la llista es desplaça.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Prem <xliff:g id="keys" example="Acció + Fletxa dreta">%1$s</xliff:g> fins a arribar a <xliff:g id="item" example="Element 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Alguns elements tenen accions a més d\'activar-los, com ara Arxiva o Suprimeix en un missatge. El menú d\'accions les mostra.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Ves al missatge. Prem <xliff:g id="keys" example="Acció + Ctrl + A">%1$s</xliff:g> per obrir les seves accions. Tria <xliff:g id="action" example="Arxiva">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">En activar un camp de text, hi pots escriure.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Ves al camp <xliff:g id="field" example="Nom">%2$s</xliff:g>. Prem <xliff:g id="keys" example="Acció + Espai">%1$s</xliff:g> per començar a escriure.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Suprimeix l\'última lletra amb Retrocés.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android té les seves pròpies tecles de drecera amb la tecla Acció. Funcionen a totes les pantalles. En aquesta lliçó, el tutorial diu què fa cadascuna en lloc de fer-ho.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Prem <xliff:g id="keys" example="Acció + Esc">%1$s</xliff:g> per tornar enrere.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Prem <xliff:g id="keys" example="Acció + H">%1$s</xliff:g> per anar a la pantalla d\'inici.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Prem <xliff:g id="keys" example="Acció + Tab">%1$s</xliff:g> per mostrar les aplicacions recents. Alt + Tab canvia entre aplicacions.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Prem <xliff:g id="keys" example="Acció + N">%1$s</xliff:g> per obrir les notificacions.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">Prem <xliff:g id="keys" example="Acció + Ctrl + M">%1$s</xliff:g> per obrir el menú de SandFly. Recorre les seves ordres. Esc tanca el menú.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Prem Esc per tancar el menú.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Llista de tecles de drecera</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly mostra cada tecla de drecera amb la seva ordre.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Prem <xliff:g id="keys" example="Acció + Maj + /">%1$s</xliff:g> per obrir la llista. Esc la tanca.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Prem Esc per tancar la llista.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">Prem <xliff:g id="keys" example="Acció + Ctrl + C">%1$s</xliff:g> per copiar al porta-retalls el darrer text que ha dit SandFly.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Prem <xliff:g id="keys" example="Acció + Ctrl + /">%1$s</xliff:g> per cercar text a la pantalla. En aquesta lliçó, el tutorial diu què fa en lloc de fer-ho.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Mode de navegació</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">En el mode de navegació, una sola lletra salta a l\'element següent d\'un tipus, com ara H per als encapçalaments, K per als enllaços i B per als botons. Maj amb la lletra salta enrere. El mode de navegació es desactiva mentre escrius en un camp de text.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Prem <xliff:g id="keys" example="Acció dues vegades">%1$s</xliff:g> per activar el mode de navegació.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Prem <xliff:g id="keys" example="H">%1$s</xliff:g> per saltar a l\'encapçalament següent. Salta a <xliff:g id="heading" example="Cap de setmana">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Prem <xliff:g id="keys" example="Acció dues vegades">%1$s</xliff:g> per desactivar el mode de navegació.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Pràctica de teclat</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Cada tecla de drecera diu les seves tecles i la seva ordre en lloc d\'executar-la. Element següent, Element anterior i activar continuen funcionant.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Prem qualsevol tecla de drecera per sentir què fa. Per aturar-te, activa <xliff:g id="button" example="Acaba la pràctica">%1$s</xliff:g>.</string>
+</resources>

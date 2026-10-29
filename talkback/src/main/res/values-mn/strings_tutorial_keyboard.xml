@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly-н гарын заавар</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Дараагийн зүйл">%1$s</xliff:g>-д гарын товчлол байхгүй. «Тушаалууд» хэсэгт товчлол онооно уу эсвэл «Алхмыг алгасах»-ыг ашиглана уу.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Үзэх горимд «Сайжруулсан гарын зураг» шаардлагатай. Үүнийг <xliff:g id="settings_path" example="SandFly-н тохиргоо &gt; Гарын товчлол &gt; Гарны зураглалыг сонгох">%1$s</xliff:g> хэсэгт сонгоно уу эсвэл «Алхмыг алгасах»-ыг ашиглана уу.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> хоёр удаа</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Хичээл дууслаа. Дараагийн хичээлийг эхлүүлэхийн тулд <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Хичээл дууслаа. Зааврыг дуусгахын тулд <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Веб хуудас</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Энэ заавар SandFly-н гарын товчлолыг заана. Тэдгээрийн ихэнх нь <xliff:g id="key" example="Action">%1$s</xliff:g> товчийг бусад товчтой хамт ашигладаг. <xliff:g id="location" example="Тусгай товч нь зүүн талын Alt товчны хажууд байх Windows товч юм.">%2$s</xliff:g> Ctrl яриаг зогсооно. Хичээл бүр нэг заавар өгч, түүнд нэрлэсэн товчнуудыг таныг дарах хүртэл хүлээгээд, дараагийнхыг өгнө. Заавар нь хичээлийн нэрийн дараах эхний зүйл юм. «Агуулга» бүх хичээлийг жагсаах ба заавар таны зогссон хичээлээс дахин нээгдэнэ.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Тусгай товч нь зүүн талын Alt товчны хажууд байх Windows товч юм. Apple-н гар дээр энэ нь Зай авах товчны хажууд байх Command товч юм.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt товч нь Зай авах товчны хажууд байдаг.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Эхлэхийн тулд <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">«Дараагийн зүйл» болон «Өмнөх зүйл» нь дэлгэц дээрх зүйлсээр унших дарааллаар шилжинэ.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Дараагийн зүйл рүү шилжихийн тулд <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> дээр дарна уу. <xliff:g id="item" example="Өндөг">%2$s</xliff:g> хүртэл үргэлжлүүлнэ үү.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Өмнөх зүйл рүү шилжихийн тулд <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> дээр дарна уу. <xliff:g id="item" example="Талх">%2$s</xliff:g> руу буцна уу.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">Идэвхжүүлэлт нь фокустай зүйл дээр ажиллана.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button"><xliff:g id="button" example="Хонх дуугаргах">%2$s</xliff:g> руу шилжинэ үү. Үүнийг идэвхжүүлэхийн тулд <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box"><xliff:g id="check_box" example="Нэмэлт бяслаг">%2$s</xliff:g>-г <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>-ээр тэмдэглэнэ үү.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Зарим зүйл удаан дарахад өөр үйлдэл хийдэг. <xliff:g id="button" example="Дэлгэрэнгүй">%2$s</xliff:g> руу шилжинэ үү. Үүнийг удаан дарахын тулд <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Уншилтын хяналт нь дээш доош шилжих үйлдэл юу хийхийг сонгоно, жишээ нь үг эсвэл тэмдэгтээр шилжих. «Дараагийн зүйл» болон «Өмнөх зүйл» зүйлсийн хооронд шилжсээр байна.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Уншилтын хяналтыг өөрчлөхийн тулд <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> эсвэл <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> дээр дарна уу. <xliff:g id="reading_control" example="Үг">%3$s</xliff:g>-г сонгоно уу.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Дараагийн үг рүү шилжихийн тулд <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> дээр дарна уу. Гурван үгээр шилжинэ үү.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Уншилтын хяналтыг <xliff:g id="reading_control" example="Тэмдэгт">%2$s</xliff:g> болгож өөрчилнө үү. Нэг тэмдэгтээр шилжихийн тулд <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Дараагийн гарчиг руу үсрэхийн тулд <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> дээр дарна уу. <xliff:g id="heading" example="Амралтын өдрүүд">%2$s</xliff:g> гарчиг руу үсэрнэ үү.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly фокустай зүйлээс дэлгэцийн төгсгөл хүртэл уншиж чадна. Ctrl уншилтыг зогсооно.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Фокустай зүйлээс уншихын тулд <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Жагсаалт нь нэг удаад зүйлсийнхээ зөвхөн хэсгийг харуулдаг. Харагдаж буй сүүлийн зүйлээс цааш шилжихэд жагсаалт гүйлгэгдэнэ.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="item" example="Зүйл 15">%2$s</xliff:g> хүртэл <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Зарим зүйл идэвхжүүлэхээс гадна өөр үйлдэлтэй байдаг, жишээ нь мессежийн Архивлах эсвэл Устгах. Үйлдлийн цэс тэдгээрийг жагсаана.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Мессеж рүү шилжинэ үү. Түүний үйлдлүүдийг нээхийн тулд <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> дээр дарна уу. <xliff:g id="action" example="Архивлах">%2$s</xliff:g>-г сонгоно уу.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Текстийн талбарыг идэвхжүүлснээр түүнд бичих боломжтой болно.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open"><xliff:g id="field" example="Нэр">%2$s</xliff:g> талбар руу шилжинэ үү. Бичиж эхлэхийн тулд <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Сүүлийн үсгийг Ухраах товчоор устгана уу.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android нь Тусгай товчтой өөрийн гарын товчлолуудтай. Тэдгээр нь дэлгэц бүр дээр ажиллана. Энэ хичээлд заавар товчлол бүрийг гүйцэтгэхийн оронд юу хийдгийг хэлнэ.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Буцахын тулд <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Нүүр дэлгэц рүү очихын тулд <xliff:g id="keys" example="Action + H">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Сүүлийн аппуудыг харуулахын тулд <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> дээр дарна уу. Alt + Tab аппуудын хооронд шилжинэ.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Мэдэгдлүүдийг нээхийн тулд <xliff:g id="keys" example="Action + N">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">SandFly цэсийг нээхийн тулд <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> дээр дарна уу. Түүний тушаалуудаар шилжинэ үү. Esc цэсийг хаана.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Цэсийг хаахын тулд Esc дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Гарын товчлолын жагсаалт</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly гарын товчлол бүрийг тушаалтай нь жагсаана.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Жагсаалтыг нээхийн тулд <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> дээр дарна уу. Esc үүнийг хаана.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Жагсаалтыг хаахын тулд Esc дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">SandFly-н сүүлд хэлсэн текстийг санах ойд хуулахын тулд <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> дээр дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Дэлгэц дээрх текстийг хайхын тулд <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> дээр дарна уу. Энэ хичээлд заавар үүнийг гүйцэтгэхийн оронд юу хийдгийг хэлнэ.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Үзэх горим</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">Үзэх горимд дан үсэг нь тодорхой төрлийн дараагийн зүйл рүү үсэрнэ, жишээ нь гарчиг руу H, холбоос руу K, товч руу B. Shift-тэй үсэг арагш үсэрнэ. Текстийн талбарт бичиж байх үед үзэх горим унтарна.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Үзэх горимыг асаахын тулд <xliff:g id="keys" example="Action twice">%1$s</xliff:g> дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Дараагийн гарчиг руу үсрэхийн тулд <xliff:g id="keys" example="H">%1$s</xliff:g> дээр дарна уу. <xliff:g id="heading" example="Амралтын өдрүүд">%2$s</xliff:g> гарчиг руу үсэрнэ үү.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Үзэх горимыг унтраахын тулд <xliff:g id="keys" example="Action twice">%1$s</xliff:g> дарна уу.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Гарын дадлага</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Гарын товчлол бүр гүйцэтгэгдэхийн оронд өөрийн товчнууд болон тушаалыг хэлнэ. «Дараагийн зүйл», «Өмнөх зүйл» болон идэвхжүүлэх нь ажилласаар байна.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Юу хийдгийг сонсохын тулд дурын гарын товчлол дээр дарна уу. Зогсоохын тулд <xliff:g id="button" example="Дадлагыг дуусгах">%1$s</xliff:g>-г идэвхжүүлнэ үү.</string>
+</resources>

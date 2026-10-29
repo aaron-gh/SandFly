@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">Водич за SandFly тастатуру</string>
+    <string name="sandfly_keyboard_tutorial_no_key">„<xliff:g id="command" example="Следећа ставка">%1$s</xliff:g>“ нема тастерску пречицу. Доделите је у одељку „Команде“ или користите „Прескочи корак“.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Режим прегледања захтева „Побољшани распоред тастера“. Изаберите га у одељку <xliff:g id="settings_path" example="Подешавања SandFly-а &gt; Тастерске пречице &gt; Изабери распоред тастера">%1$s</xliff:g> или користите „Прескочи корак“.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> двапут</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Лекција је завршена. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> – почетак следеће лекције.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Лекција је завршена. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> – завршавање водича.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Веб-странице</string>
+
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Овај водич учи SandFly тастерске пречице. Већина њих користи тастер <xliff:g id="key" example="Action">%1$s</xliff:g> са другим тастерима. <xliff:g id="location" example="Тастер Радња је тастер Windows, поред левог тастера Alt.">%2$s</xliff:g> Ctrl зауставља говор. Свака лекција даје упутство, чека да притиснете тастере које наводи, а затим даје следеће. Упутство је прва ставка после назива лекције. „Садржај“ наводи све лекције, а водич се поново отвара на лекцији на којој сте стали.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Тастер Радња је тастер Windows, поред левог тастера Alt. На Apple тастатурама то је тастер Command, поред размакнице.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Тастер Alt је поред размакнице.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g> – почетак.</string>
+
+    <string name="sandfly_keyboard_tutorial_move_intro">„Следећа ставка“ и „Претходна ставка“ прелазе кроз ставке на екрану редоследом читања.</string>
+    <string name="sandfly_keyboard_tutorial_move_next"><xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> – прелазак на следећу ставку. Наставите док не стигнете до „<xliff:g id="item" example="Јаја">%2$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous"><xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> – прелазак на претходну ставку. Вратите се на „<xliff:g id="item" example="Хлеб">%2$s</xliff:g>“.</string>
+
+    <string name="sandfly_keyboard_tutorial_activate_intro">Активирање ради на ставци у фокусу.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Пређите на „<xliff:g id="button" example="Позвони звоном">%2$s</xliff:g>“. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> – активирање.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Означите „<xliff:g id="check_box" example="Додатни сир">%2$s</xliff:g>“ помоћу <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Неке ставке раде нешто друго када се задрже. Пређите на „<xliff:g id="button" example="Детаљи">%2$s</xliff:g>“. <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> – задржавање.</string>
+
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Контроле читања одређују шта ради кретање нагоре и надоле, на пример кретање по речима или знаковима. „Следећа ставка“ и „Претходна ставка“ и даље прелазе између ставки.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control"><xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> или <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> – промена контроле читања. Изаберите „<xliff:g id="reading_control" example="Речи">%3$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_next_word"><xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> – прелазак на следећу реч. Померите се за три речи.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Промените контролу читања на „<xliff:g id="reading_control" example="Знакови">%2$s</xliff:g>“. <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> – померање за један знак.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump"><xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> – прелазак на следећи наслов. Пређите на „<xliff:g id="heading" example="Викенд">%2$s</xliff:g>“.</string>
+
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly може да чита од ставке у фокусу до краја екрана. Ctrl зауставља читање.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read"><xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> – читање од ставке у фокусу.</string>
+
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Листе приказују само део ставки одједном. Кретање после последње приказане ставке помера листу.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> – кретање кроз листу. Стигните до „<xliff:g id="item" example="Ставка 15">%2$s</xliff:g>“.</string>
+
+    <string name="sandfly_keyboard_tutorial_actions_intro">Неке ставке осим активирања имају и друге радње, на пример „Архивирај“ или „Избриши“ за поруку. Мени радњи их наводи.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Пређите на поруку. <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> – отварање њених радњи. Изаберите „<xliff:g id="action" example="Архивирај">%2$s</xliff:g>“.</string>
+
+    <string name="sandfly_keyboard_tutorial_typing_intro">Активирање поља за текст омогућава унос у њега.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Пређите на поље „<xliff:g id="field" example="Име">%2$s</xliff:g>“. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> – почетак уноса.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Избришите последње слово тастером Backspace.</string>
+
+    <string name="sandfly_keyboard_tutorial_system_intro">Android има своје тастерске пречице са тастером Радња. Раде на сваком екрану. У овој лекцији водич уместо извршавања каже шта свака од њих ради.</string>
+    <string name="sandfly_keyboard_tutorial_system_back"><xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> – повратак назад.</string>
+    <string name="sandfly_keyboard_tutorial_system_home"><xliff:g id="keys" example="Action + H">%1$s</xliff:g> – одлазак на почетни екран.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview"><xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> – приказ недавних апликација. Alt + Tab прелази између апликација.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications"><xliff:g id="keys" example="Action + N">%1$s</xliff:g> – отварање обавештења.</string>
+
+    <string name="sandfly_keyboard_tutorial_menu_open"><xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> – отварање SandFly менија. Прођите кроз његове команде. Esc затвара мени.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Esc – затварање менија.</string>
+
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Листа тастерских пречица</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly наводи сваку тастерску пречицу са њеном командом.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open"><xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> – отварање листе. Esc је затвара.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Esc – затварање листе.</string>
+
+    <string name="sandfly_keyboard_tutorial_commands_copy"><xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> – копирање последњег текста који је SandFly изговорио у привремену меморију.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search"><xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> – претрага текста на екрану. У овој лекцији водич уместо тога каже шта команда ради.</string>
+
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Режим прегледања</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">У режиму прегледања појединачна слова прелазе на следећу ставку одређене врсте, на пример H на наслове, K на линкове и B на дугмад. Shift са словом прелази уназад. Режим прегледања се искључује док уносите текст у поље за текст.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on"><xliff:g id="keys" example="Action twice">%1$s</xliff:g> – укључивање режима прегледања.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading"><xliff:g id="keys" example="H">%1$s</xliff:g> – прелазак на следећи наслов. Пређите на „<xliff:g id="heading" example="Викенд">%2$s</xliff:g>“.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off"><xliff:g id="keys" example="Action twice">%1$s</xliff:g> – искључивање режима прегледања.</string>
+
+    <string name="sandfly_keyboard_tutorial_practice_title">Вежба тастатуре</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Свака тастерска пречица уместо извршавања изговара своје тастере и команду. „Следећа ставка“, „Претходна ставка“ и активирање и даље раде.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Притисните било коју тастерску пречицу да бисте чули шта ради. Да бисте престали, активирајте „<xliff:g id="button" example="Заврши вежбу">%1$s</xliff:g>“.</string>
+</resources>

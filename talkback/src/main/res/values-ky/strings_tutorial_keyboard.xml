@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly баскычтоп үйрөткүчү</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Кийинки нерсе">%1$s</xliff:g> аракетинин ыкчам баскычы жок. Аны «Командалар» бөлүмүнөн дайындаңыз же «Кадамды өткөрүп жиберүү» баскычын колдонуңуз.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Кароо режими үчүн «Жакшыртылган баскычтардын айкалыш конфигурациясы» керек. Аны <xliff:g id="settings_path" example="SandFly параметрлери &gt; Ыкчам баскычтар &gt; Баскычтардын жайгашуусун тандоо">%1$s</xliff:g> бөлүмүнөн тандаңыз же «Кадамды өткөрүп жиберүү» баскычын колдонуңуз.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> эки жолу</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Сабак бүттү. Кийинки сабакты баштоо үчүн <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Сабак бүттү. Үйрөткүчтү бүтүрүү үчүн <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Веб баракчалар</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Бул үйрөткүч SandFly\'дын ыкчам баскычтарын үйрөтөт. Алардын көбү <xliff:g id="key" example="Action">%1$s</xliff:g> баскычын башка баскычтар менен бирге колдонот. <xliff:g id="location" example="Аракет баскычы – сол жактагы Alt баскычынын жанындагы Windows баскычы.">%2$s</xliff:g> Ctrl кепти токтотот. Ар бир сабак көрсөтмө берет, сиз анда аталган баскычтарды басканыңызды күтөт, андан кийин кийинкисин берет. Көрсөтмө – сабактын аталышынан кийинки биринчи нерсе. «Мазмуну» бардык сабактарды көрсөтөт, ал эми үйрөткүч сиз токтогон сабактан кайра ачылат.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Аракет баскычы – сол жактагы Alt баскычынын жанындагы Windows баскычы. Apple баскычтопторунда бул Боштук баскычынын жанындагы Command баскычы.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt баскычы Боштук баскычынын жанында.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Баштоо үчүн <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">«Кийинки нерсе» жана «Мурунку нерсе» экрандагы нерселер боюнча окуу ирети менен өтөт.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Кийинки нерсеге өтүү үчүн <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> баскычын басыңыз. <xliff:g id="item" example="Жумуртка">%2$s</xliff:g> нерсесине жеткенче улантыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Мурунку нерсеге өтүү үчүн <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> баскычын басыңыз. <xliff:g id="item" example="Нан">%2$s</xliff:g> нерсесине кайтыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">Иштетүү тандалган нерсеге таасир этет.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button"><xliff:g id="button" example="Коңгуроону кагуу">%2$s</xliff:g> нерсесине өтүңүз. Аны иштетүү үчүн <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box"><xliff:g id="check_box" example="Кошумча сыр">%2$s</xliff:g> белгисин <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> баскычы менен коюңуз.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Айрым нерселер басып турганда башка аракет аткарат. <xliff:g id="button" example="Чоо-жайы">%2$s</xliff:g> нерсесине өтүңүз. Аны басып туруу үчүн <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Окууну башкаруу элементтери өйдө жана ылдый жылуу эмне кыларын тандайт, мисалы, сөз же символ боюнча жылуу. «Кийинки нерсе» жана «Мурунку нерсе» мурдагыдай нерселердин ортосунда өтөт.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Окууну башкаруу элементин өзгөртүү үчүн <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> же <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> баскычын басыңыз. <xliff:g id="reading_control" example="Сөздөр">%3$s</xliff:g> тандаңыз.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Кийинки сөзгө өтүү үчүн <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> баскычын басыңыз. Үч сөзгө жылыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Окууну башкаруу элементин <xliff:g id="reading_control" example="Символдор">%2$s</xliff:g> кылып өзгөртүңүз. Бир символго жылуу үчүн <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Кийинки аталышка өтүү үчүн <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> баскычын басыңыз. <xliff:g id="heading" example="Дем алыш күндөрү">%2$s</xliff:g> аталышына өтүңүз.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly тандалган нерседен экрандын аягына чейин окуй алат. Ctrl окууну токтотот.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Тандалган нерседен баштап окуу үчүн <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Тизмелер нерселеринин бир бөлүгүн гана көрсөтөт. Көрсөтүлгөн акыркы нерседен ары жылуу тизмени сыдырат.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="item" example="Нерсе 15">%2$s</xliff:g> нерсесине жеткенче <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Айрым нерселердин иштетүүдөн башка аракеттери бар, мисалы, билдирүү үчүн Архивдөө же Өчүрүү. Аракеттер менюсу аларды көрсөтөт.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Билдирүүгө өтүңүз. Анын аракеттерин ачуу үчүн <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> баскычын басыңыз. <xliff:g id="action" example="Архивдөө">%2$s</xliff:g> тандаңыз.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Текст талаасын иштетсеңиз, анда тере аласыз.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open"><xliff:g id="field" example="Аты">%2$s</xliff:g> талаасына өтүңүз. Терүүнү баштоо үчүн <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Акыркы тамганы Backspace баскычы менен өчүрүңүз.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android\'де Аракет баскычы менен өзүнүн ыкчам баскычтары бар. Алар ар бир экранда иштейт. Бул сабакта үйрөткүч ар бирин аткаруунун ордуна эмне кыларын айтат.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Артка кайтуу үчүн <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Башкы экранга өтүү үчүн <xliff:g id="keys" example="Action + H">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Акыркы колдонмолорду көрсөтүү үчүн <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> баскычын басыңыз. Alt + Tab колдонмолордун ортосунда которот.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Билдирмелерди ачуу үчүн <xliff:g id="keys" example="Action + N">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">SandFly менюсун ачуу үчүн <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> баскычын басыңыз. Анын командалары боюнча өтүңүз. Esc менюну жабат.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Менюну жабуу үчүн Esc баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Ыкчам баскычтардын тизмеси</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly ар бир ыкчам баскычты анын командасы менен тизмелейт.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Тизмени ачуу үчүн <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> баскычын басыңыз. Esc аны жабат.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Тизмени жабуу үчүн Esc баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">SandFly акыркы айткан текстти алмашуу буферине көчүрүү үчүн <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> баскычын басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Экрандан текст издөө үчүн <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> баскычын басыңыз. Бул сабакта үйрөткүч аны аткаруунун ордуна эмне кыларын айтат.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Кароо режими</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">Кароо режиминде жалгыз тамгалар белгилүү түрдөгү кийинки нерсеге өтөт, мисалы, H – аталыштарга, K – шилтемелерге, B – баскычтарга. Тамга Shift менен артка өтөт. Текст талаасында терип жатканда кароо режими өчөт.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Кароо режимин күйгүзүү үчүн <xliff:g id="keys" example="Action twice">%1$s</xliff:g> басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Кийинки аталышка өтүү үчүн <xliff:g id="keys" example="H">%1$s</xliff:g> баскычын басыңыз. <xliff:g id="heading" example="Дем алыш күндөрү">%2$s</xliff:g> аталышына өтүңүз.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Кароо режимин өчүрүү үчүн <xliff:g id="keys" example="Action twice">%1$s</xliff:g> басыңыз.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Баскычтоп көнүгүүсү</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Ар бир ыкчам баскыч аткарылбай, өзүнүн баскычтарын жана командасын айтат. «Кийинки нерсе», «Мурунку нерсе» жана иштетүү мурдагыдай иштейт.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Эмне кыларын угуу үчүн каалаган ыкчам баскычты басыңыз. Токтотуу үчүн <xliff:g id="button" example="Көнүгүүнү бүтүрүү">%1$s</xliff:g> баскычын иштетиңиз.</string>
+</resources>

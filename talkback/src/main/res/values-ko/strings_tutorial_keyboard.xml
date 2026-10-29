@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly 키보드 튜토리얼</string>
+    <string name="sandfly_keyboard_tutorial_no_key">‘<xliff:g id="command" example="Next item">%1$s</xliff:g>’에 할당된 단축키가 없습니다. 명령에서 할당하거나 단계 건너뛰기를 사용하세요.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">탐색 모드에는 향상된 키맵이 필요합니다. <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g>에서 선택하거나 단계 건너뛰기를 사용하세요.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> 두 번</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">레슨 완료. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>을(를) 누르면 다음 레슨을 시작합니다.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">레슨 완료. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>을(를) 누르면 튜토리얼을 마칩니다.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">웹페이지</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">이 튜토리얼에서는 SandFly의 단축키를 배웁니다. 대부분의 단축키는 <xliff:g id="key" example="Action">%1$s</xliff:g> 키를 다른 키와 함께 사용합니다. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl 키를 누르면 음성이 중지됩니다. 각 레슨은 안내를 제공하고, 안내에 나온 키를 누를 때까지 기다린 다음 다음 안내를 제공합니다. 안내는 레슨 이름 다음의 첫 번째 항목입니다. 목차에는 모든 레슨이 있으며, 튜토리얼은 마지막으로 진행한 레슨에서 다시 열립니다.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">작업 키는 Windows 키이며 왼쪽 Alt 키 옆에 있습니다. Apple 키보드에서는 스페이스 바 옆에 있는 Command 키입니다.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt 키는 스페이스 바 옆에 있습니다.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g>을(를) 누르면 시작합니다.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">다음 항목과 이전 항목은 읽기 순서에 따라 화면의 항목 간에 이동합니다.</string>
+    <string name="sandfly_keyboard_tutorial_move_next"><xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>을(를) 누르면 다음 항목으로 이동합니다. ‘<xliff:g id="item" example="Eggs">%2$s</xliff:g>’에 도달할 때까지 계속하세요.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous"><xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g>을(를) 누르면 이전 항목으로 이동합니다. ‘<xliff:g id="item" example="Bread">%2$s</xliff:g>’(으)로 돌아가세요.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">활성화는 포커스가 있는 항목에 적용됩니다.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">‘<xliff:g id="button" example="Ring the bell">%2$s</xliff:g>’(으)로 이동하세요. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>을(를) 누르면 활성화됩니다.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g>(으)로 ‘<xliff:g id="check_box" example="Extra cheese">%2$s</xliff:g>’을(를) 선택하세요.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">일부 항목은 길게 누르면 다른 작업을 합니다. ‘<xliff:g id="button" example="Details">%2$s</xliff:g>’(으)로 이동하세요. <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g>을(를) 누르면 길게 누릅니다.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">읽기 제어 설정은 위아래로 이동할 때의 기능을 정합니다. 예를 들어 단어나 문자 단위로 이동합니다. 다음 항목과 이전 항목은 계속 항목 간에 이동합니다.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control"><xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> 또는 <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g>을(를) 누르면 읽기 제어 설정이 변경됩니다. ‘<xliff:g id="reading_control" example="Words">%3$s</xliff:g>’을(를) 선택하세요.</string>
+    <string name="sandfly_keyboard_tutorial_next_word"><xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g>을(를) 누르면 다음 단어로 이동합니다. 세 단어를 이동하세요.</string>
+    <string name="sandfly_keyboard_tutorial_characters">읽기 제어 설정을 ‘<xliff:g id="reading_control" example="Characters">%2$s</xliff:g>’(으)로 변경하세요. <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g>을(를) 누르면 한 문자씩 이동합니다.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump"><xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g>을(를) 누르면 다음 제목으로 건너뜁니다. ‘<xliff:g id="heading" example="Weekend">%2$s</xliff:g>’(으)로 건너뛰세요.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly는 포커스가 있는 항목부터 화면 끝까지 읽을 수 있습니다. Ctrl 키를 누르면 읽기가 중지됩니다.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read"><xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g>을(를) 누르면 포커스가 있는 항목부터 읽습니다.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">목록은 한 번에 일부 항목만 표시합니다. 표시된 마지막 항목을 지나 이동하면 목록이 스크롤됩니다.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">‘<xliff:g id="item" example="Item 15">%2$s</xliff:g>’에 도달할 때까지 <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g>을(를) 누르세요.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">일부 항목에는 활성화 외에 메시지의 보관처리나 삭제 같은 작업이 있습니다. 작업 메뉴에 이러한 작업이 표시됩니다.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">메시지로 이동하세요. <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g>을(를) 누르면 메시지의 작업이 열립니다. ‘<xliff:g id="action" example="Archive">%2$s</xliff:g>’을(를) 선택하세요.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">텍스트 입력란을 활성화하면 입력란에 입력할 수 있습니다.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">‘<xliff:g id="field" example="Name">%2$s</xliff:g>’ 입력란으로 이동하세요. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>을(를) 누르면 입력을 시작합니다.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">백스페이스 키로 마지막 글자를 삭제하세요.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android에는 작업 키를 사용하는 자체 단축키가 있습니다. 이 단축키는 모든 화면에서 작동합니다. 이 레슨에서는 실행하는 대신 튜토리얼이 각 단축키의 기능을 알려 줍니다.</string>
+    <string name="sandfly_keyboard_tutorial_system_back"><xliff:g id="keys" example="Action + Esc">%1$s</xliff:g>을(를) 누르면 뒤로 이동합니다.</string>
+    <string name="sandfly_keyboard_tutorial_system_home"><xliff:g id="keys" example="Action + H">%1$s</xliff:g>을(를) 누르면 홈 화면으로 이동합니다.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview"><xliff:g id="keys" example="Action + Tab">%1$s</xliff:g>을(를) 누르면 최근 사용 앱이 표시됩니다. Alt + Tab을 누르면 앱 간에 전환됩니다.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications"><xliff:g id="keys" example="Action + N">%1$s</xliff:g>을(를) 누르면 알림이 열립니다.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open"><xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g>을(를) 누르면 SandFly 메뉴가 열립니다. 메뉴의 명령을 탐색하세요. Esc 키를 누르면 메뉴가 닫힙니다.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Esc 키를 눌러 메뉴를 닫으세요.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">단축키 목록</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly는 모든 단축키를 명령과 함께 표시합니다.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open"><xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g>을(를) 누르면 목록이 열립니다. Esc 키를 누르면 목록이 닫힙니다.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Esc 키를 눌러 목록을 닫으세요.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy"><xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g>을(를) 누르면 SandFly가 마지막으로 말한 텍스트가 클립보드에 복사됩니다.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search"><xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g>을(를) 누르면 화면에서 텍스트를 검색합니다. 이 레슨에서는 실행하는 대신 튜토리얼이 그 기능을 알려 줍니다.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">탐색 모드</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">탐색 모드에서는 글자 하나를 누르면 특정 종류의 다음 항목으로 건너뜁니다. 예를 들어 H는 제목, K는 링크, B는 버튼입니다. 글자와 함께 Shift 키를 누르면 뒤로 건너뜁니다. 텍스트 입력란에 입력하는 동안에는 탐색 모드가 중지됩니다.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on"><xliff:g id="keys" example="Action twice">%1$s</xliff:g> 누르면 탐색 모드가 사용 설정됩니다.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading"><xliff:g id="keys" example="H">%1$s</xliff:g> 키를 누르면 다음 제목으로 건너뜁니다. ‘<xliff:g id="heading" example="Weekend">%2$s</xliff:g>’(으)로 건너뛰세요.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off"><xliff:g id="keys" example="Action twice">%1$s</xliff:g> 누르면 탐색 모드가 중지됩니다.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">키보드 연습</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">각 단축키는 실행되지 않고 키와 명령을 말합니다. 다음 항목, 이전 항목, 활성화는 그대로 작동합니다.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">아무 단축키나 누르면 그 기능을 들을 수 있습니다. 끝내려면 ‘<xliff:g id="button" example="End practice">%1$s</xliff:g>’을(를) 활성화하세요.</string>
+</resources>

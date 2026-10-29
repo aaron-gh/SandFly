@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly-tastaturvejledning</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Næste element">%1$s</xliff:g> har ingen tastaturgenvej. Tildel en under Kommandoer, eller brug Spring trin over.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Browsertilstand kræver Forbedret tastaturoversigt. Vælg den under <xliff:g id="settings_path" example="SandFly-indstillinger &gt; Tastaturgenveje &gt; Vælg en tastaturoversigt">%1$s</xliff:g>, eller brug Spring trin over.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Handling">%1$s</xliff:g> to gange</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lektion fuldført. Tryk på <xliff:g id="keys" example="Handling + Mellemrum">%1$s</xliff:g> for at starte næste lektion.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lektion fuldført. Tryk på <xliff:g id="keys" example="Handling + Mellemrum">%1$s</xliff:g> for at afslutte vejledningen.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Websider</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Denne vejledning lærer dig SandFlys tastaturgenveje. De fleste af dem bruger <xliff:g id="key" example="Handling">%1$s</xliff:g>-tasten sammen med andre taster. <xliff:g id="location" example="Handlingstasten er Windows-tasten ved siden af den venstre Alt-tast.">%2$s</xliff:g> Ctrl stopper talen. Hver lektion giver en instruktion, venter, til du har trykket på de taster, den nævner, og giver derefter den næste. Instruktionen er det første element efter lektionens navn. Indhold viser alle lektioner, og vejledningen åbnes igen ved den lektion, du var i gang med.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Handlingstasten er Windows-tasten ved siden af den venstre Alt-tast. På Apple-tastaturer er det Kommando-tasten ved siden af mellemrumstasten.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt-tasten er ved siden af mellemrumstasten.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Tryk på <xliff:g id="keys" example="Handling + Mellemrum">%1$s</xliff:g> for at starte.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">Næste element og Forrige element flytter gennem elementerne på skærmen i læserækkefølge.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Tryk på <xliff:g id="keys" example="Handling + Højrepil">%1$s</xliff:g> for at gå til næste element. Fortsæt, indtil du når <xliff:g id="item" example="Æg">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Tryk på <xliff:g id="keys" example="Handling + Venstrepil">%1$s</xliff:g> for at gå til forrige element. Gå tilbage til <xliff:g id="item" example="Brød">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">Aktivering virker på det element, der har fokus.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Gå til <xliff:g id="button" example="Ring med klokken">%2$s</xliff:g>. Tryk på <xliff:g id="keys" example="Handling + Mellemrum">%1$s</xliff:g> for at aktivere den.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Markér <xliff:g id="check_box" example="Ekstra ost">%2$s</xliff:g> med <xliff:g id="keys" example="Handling + Mellemrum">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Nogle elementer gør noget andet, når de holdes. Gå til <xliff:g id="button" example="Detaljer">%2$s</xliff:g>. Tryk på <xliff:g id="keys" example="Handling + Shift + Mellemrum">%1$s</xliff:g> for at holde den.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Indstillinger for oplæsning bestemmer, hvad det gør at flytte op og ned, f.eks. at flytte ord for ord eller tegn for tegn. Næste element og Forrige element flytter stadig mellem elementer.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Tryk på <xliff:g id="keys" example="Handling + Shift + Højrepil">%1$s</xliff:g> eller <xliff:g id="keys" example="Handling + Shift + Venstrepil">%2$s</xliff:g> for at skifte indstilling for oplæsning. Vælg <xliff:g id="reading_control" example="Ord">%3$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Tryk på <xliff:g id="keys" example="Handling + Nedpil">%1$s</xliff:g> for at gå til næste ord. Flyt tre ord.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Skift indstillingen for oplæsning til <xliff:g id="reading_control" example="Tegn">%2$s</xliff:g>. Tryk på <xliff:g id="keys" example="Handling + Nedpil">%1$s</xliff:g> for at flytte ét tegn.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Tryk på <xliff:g id="keys" example="Handling + Nedpil">%1$s</xliff:g> for at hoppe til næste overskrift. Hop til <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly kan læse fra elementet i fokus til slutningen af skærmen. Ctrl stopper oplæsningen.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Tryk på <xliff:g id="keys" example="Handling + Ctrl + R">%1$s</xliff:g> for at læse fra elementet i fokus.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Lister viser kun nogle af deres elementer ad gangen. Når du flytter forbi det sidste viste element, rulles listen.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Tryk på <xliff:g id="keys" example="Handling + Højrepil">%1$s</xliff:g>, indtil du når <xliff:g id="item" example="Element 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Nogle elementer har andre handlinger end aktivering, f.eks. Arkivér eller Slet for en besked. Handlingsmenuen viser dem.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Gå til beskeden. Tryk på <xliff:g id="keys" example="Handling + Ctrl + A">%1$s</xliff:g> for at åbne dens handlinger. Vælg <xliff:g id="action" example="Arkivér">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Når du aktiverer et tekstfelt, kan du skrive i det.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Gå til feltet <xliff:g id="field" example="Navn">%2$s</xliff:g>. Tryk på <xliff:g id="keys" example="Handling + Mellemrum">%1$s</xliff:g> for at begynde at skrive.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Slet det sidste bogstav med Backspace.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android har sine egne tastaturgenveje med Handlingstasten. De virker på alle skærme. I denne lektion siger vejledningen, hvad hver genvej gør, i stedet for at udføre den.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Tryk på <xliff:g id="keys" example="Handling + Esc">%1$s</xliff:g> for at gå tilbage.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Tryk på <xliff:g id="keys" example="Handling + H">%1$s</xliff:g> for at gå til startskærmen.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Tryk på <xliff:g id="keys" example="Handling + Tab">%1$s</xliff:g> for at vise seneste apps. Alt + Tab skifter mellem apps.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Tryk på <xliff:g id="keys" example="Handling + N">%1$s</xliff:g> for at åbne notifikationer.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">Tryk på <xliff:g id="keys" example="Handling + Ctrl + M">%1$s</xliff:g> for at åbne SandFly-menuen. Gå gennem dens kommandoer. Esc lukker menuen.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Tryk på Esc for at lukke menuen.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Liste over tastaturgenveje</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly viser hver tastaturgenvej med dens kommando.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Tryk på <xliff:g id="keys" example="Handling + Shift + /">%1$s</xliff:g> for at åbne listen. Esc lukker den.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Tryk på Esc for at lukke listen.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">Tryk på <xliff:g id="keys" example="Handling + Ctrl + C">%1$s</xliff:g> for at kopiere den seneste tekst, SandFly læste op, til udklipsholderen.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Tryk på <xliff:g id="keys" example="Handling + Ctrl + /">%1$s</xliff:g> for at søge efter tekst på skærmen. I denne lektion siger vejledningen i stedet, hvad den gør.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Browsertilstand</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">I browsertilstand hopper enkelte bogstaver til næste element af en bestemt type, f.eks. H for overskrifter, K for links og B for knapper. Shift sammen med bogstavet hopper tilbage. Browsertilstand slås fra, mens du skriver i et tekstfelt.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Tryk på <xliff:g id="keys" example="Handling to gange">%1$s</xliff:g> for at slå browsertilstand til.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Tryk på <xliff:g id="keys" example="H">%1$s</xliff:g> for at hoppe til næste overskrift. Hop til <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Tryk på <xliff:g id="keys" example="Handling to gange">%1$s</xliff:g> for at slå browsertilstand fra.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Øv tastaturet</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Hver tastaturgenvej siger sine taster og sin kommando i stedet for at udføre den. Næste element, Forrige element og aktivering virker stadig.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Tryk på en vilkårlig tastaturgenvej for at høre, hvad den gør. Aktivér <xliff:g id="button" example="Afslut øvelse">%1$s</xliff:g> for at stoppe.</string>
+</resources>

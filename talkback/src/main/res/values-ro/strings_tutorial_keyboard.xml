@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">Tutorial SandFly pentru tastatură</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Elementul următor">%1$s</xliff:g> nu are nicio comandă rapidă de la tastatură. Atribuie una în Comenzi sau folosește Omite pasul.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Modul de navigare necesită Configurare de taste îmbunătățită. Alege-o în <xliff:g id="settings_path" example="Setări SandFly &gt; Comenzi rapide de la tastatură &gt; Alege o aranjare a tastelor">%1$s</xliff:g> sau folosește Omite pasul.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> de două ori</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lecție finalizată. Apasă <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pentru a începe lecția următoare.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lecție finalizată. Apasă <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pentru a încheia tutorialul.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Pagini web</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Acest tutorial te învață comenzile rapide de la tastatură ale SandFly. Majoritatea folosesc tasta <xliff:g id="key" example="Action">%1$s</xliff:g> împreună cu alte taste. <xliff:g id="location" example="Tasta de acțiuni este tasta Windows, de lângă tasta Alt din stânga.">%2$s</xliff:g> Ctrl oprește vorbirea. Fiecare lecție dă o instrucțiune, așteaptă până apeși tastele pe care le numește, apoi o dă pe următoarea. Instrucțiunea este primul element după numele lecției. Cuprins listează toate lecțiile, iar tutorialul se redeschide la lecția la care ai rămas.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Tasta de acțiuni este tasta Windows, de lângă tasta Alt din stânga. Pe tastaturile Apple, este tasta Comandă, de lângă bara de spațiu.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Tasta Alt se află lângă bara de spațiu.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Apasă <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pentru a începe.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">Elementul următor și Elementul anterior parcurg elementele de pe ecran în ordinea de citire.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Apasă <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> pentru a trece la elementul următor. Continuă până ajungi la <xliff:g id="item" example="Ouă">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Apasă <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> pentru a trece la elementul anterior. Revino la <xliff:g id="item" example="Pâine">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">Activarea se aplică elementului focalizat.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Mergi la <xliff:g id="button" example="Sună clopoțelul">%2$s</xliff:g>. Apasă <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pentru a-l activa.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Bifează <xliff:g id="check_box" example="Brânză în plus">%2$s</xliff:g> cu <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Unele elemente fac altceva când sunt ținute apăsat. Mergi la <xliff:g id="button" example="Detalii">%2$s</xliff:g>. Apasă <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> pentru a-l ține apăsat.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Comenzile pentru citire aleg ce face deplasarea în sus și în jos, cum ar fi deplasarea pe cuvinte sau pe caractere. Elementul următor și Elementul anterior trec în continuare de la un element la altul.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Apasă <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> sau <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> pentru a schimba comanda pentru citire. Alege <xliff:g id="reading_control" example="Cuvinte">%3$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Apasă <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> pentru a trece la cuvântul următor. Deplasează-te trei cuvinte.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Schimbă comanda pentru citire la <xliff:g id="reading_control" example="Caractere">%2$s</xliff:g>. Apasă <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> pentru a te deplasa cu un caracter.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Apasă <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> pentru a sări la titlul următor. Sari la <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly poate citi de la elementul focalizat până la sfârșitul ecranului. Ctrl oprește citirea.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Apasă <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> pentru a citi de la elementul focalizat.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Listele afișează doar o parte din elemente odată. Deplasarea dincolo de ultimul element afișat derulează lista.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Apasă <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> până ajungi la <xliff:g id="item" example="Elementul 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Unele elemente au acțiuni în afară de activare, cum ar fi Arhivează sau Șterge pentru un mesaj. Meniul de acțiuni le listează.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Mergi la mesaj. Apasă <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> pentru a-i deschide acțiunile. Alege <xliff:g id="action" example="Arhivează">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Activarea unui câmp de text îți permite să scrii în el.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Mergi la câmpul <xliff:g id="field" example="Nume">%2$s</xliff:g>. Apasă <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> pentru a începe să scrii.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Șterge ultima literă cu Backspace.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android are propriile comenzi rapide de la tastatură cu tasta de acțiuni. Acestea funcționează pe orice ecran. În această lecție, tutorialul spune ce face fiecare în loc s-o execute.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Apasă <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> pentru a reveni.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Apasă <xliff:g id="keys" example="Action + H">%1$s</xliff:g> pentru a accesa ecranul de pornire.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Apasă <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> pentru a afișa aplicațiile recente. Alt + Tab comută între aplicații.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Apasă <xliff:g id="keys" example="Action + N">%1$s</xliff:g> pentru a deschide notificările.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">Apasă <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> pentru a deschide meniul SandFly. Parcurge comenzile lui. Esc închide meniul.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Apasă Esc pentru a închide meniul.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Lista comenzilor rapide de la tastatură</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly listează fiecare comandă rapidă de la tastatură cu comanda ei.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Apasă <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> pentru a deschide lista. Esc o închide.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Apasă Esc pentru a închide lista.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">Apasă <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> pentru a copia în clipboard ultimul text rostit de SandFly.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Apasă <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> pentru a căuta text pe ecran. În această lecție, tutorialul spune ce face comanda în loc s-o execute.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Modul de navigare</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">În modul de navigare, literele individuale sar la următorul element de un anumit tip, cum ar fi H pentru titluri, K pentru linkuri și B pentru butoane. Shift cu litera sare înapoi. Modul de navigare se dezactivează cât timp scrii într-un câmp de text.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Apasă <xliff:g id="keys" example="Action twice">%1$s</xliff:g> pentru a activa modul de navigare.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Apasă <xliff:g id="keys" example="H">%1$s</xliff:g> pentru a sări la titlul următor. Sari la <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Apasă <xliff:g id="keys" example="Action twice">%1$s</xliff:g> pentru a dezactiva modul de navigare.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Exersarea tastaturii</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Fiecare comandă rapidă de la tastatură își spune tastele și comanda în loc s-o execute. Elementul următor, Elementul anterior și activarea funcționează în continuare.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Apasă orice comandă rapidă de la tastatură pentru a auzi ce face. Pentru a opri, activează <xliff:g id="button" example="Încheie exersarea">%1$s</xliff:g>.</string>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly ကီးဘုတ် အသုံးပြုနည်း</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="နောက်တစ်ခု">%1$s</xliff:g> တွင် လက်ကွက်ဖြတ်လမ်း မရှိပါ။ “ကွန်မန်းများ” တွင် တစ်ခု သတ်မှတ်ပါ သို့မဟုတ် “အဆင့်ကို ကျော်ရန်” ကို သုံးပါ။</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">ဘရောက်စ်မုဒ်အတွက် “အဆင့်မြင့်ကီးမြေပုံ” လိုအပ်သည်။ ၎င်းကို <xliff:g id="settings_path" example="SandFly ဆက်တင်များ &gt; လက်ကွက်ဖြတ်လမ်းများ &gt; ကီးမြေပုံတစ်ခု ရွေးပါ">%1$s</xliff:g> တွင် ရွေးပါ သို့မဟုတ် “အဆင့်ကို ကျော်ရန်” ကို သုံးပါ။</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> နှစ်ချက်</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">သင်ခန်းစာ ပြီးပါပြီ။ နောက်သင်ခန်းစာ စရန် <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">သင်ခန်းစာ ပြီးပါပြီ။ သင်ခန်းစာ အားလုံးကို အဆုံးသတ်ရန် <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">ဝဘ်စာမျက်နှာများ</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">ဤသင်ခန်းစာသည် SandFly ၏ လက်ကွက်ဖြတ်လမ်းများကို သင်ပေးသည်။ ၎င်းတို့အများစုသည် <xliff:g id="key" example="Action">%1$s</xliff:g> ကီးကို အခြားကီးများနှင့် တွဲသုံးသည်။ <xliff:g id="location" example="‘လုပ်ဆောင်ချက်’ ကီးသည် ဘယ်ဘက် Alt ကီး၏ ဘေးရှိ Windows ကီး ဖြစ်သည်။">%2$s</xliff:g> Ctrl က စကားပြောခြင်းကို ရပ်သည်။ သင်ခန်းစာတစ်ခုချင်းစီက ညွှန်ကြားချက်တစ်ခု ပေးပြီး ၎င်းဖော်ပြသည့် ကီးများကို သင်နှိပ်သည်အထိ စောင့်ကာ နောက်ညွှန်ကြားချက်ကို ပေးသည်။ ညွှန်ကြားချက်သည် သင်ခန်းစာအမည်နောက်ရှိ ပထမအကြောင်းအရာ ဖြစ်သည်။ “မာတိကာ” တွင် သင်ခန်းစာအားလုံးကို ပြပြီး သင်ခန်းစာသည် သင်ရောက်နေခဲ့သည့် သင်ခန်းစာတွင် ပြန်ပွင့်သည်။</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">‘လုပ်ဆောင်ချက်’ ကီးသည် ဘယ်ဘက် Alt ကီး၏ ဘေးရှိ Windows ကီး ဖြစ်သည်။ Apple ကီးဘုတ်များတွင် ၎င်းသည် နေရာခြားခလုတ်၏ ဘေးရှိ Command ကီး ဖြစ်သည်။</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt ကီးသည် နေရာခြားခလုတ်၏ ဘေးတွင် ရှိသည်။</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">စတင်ရန် <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">“နောက်တစ်ခု” နှင့် “ယခင်တစ်ခု” သည် စခရင်ပေါ်ရှိ အကြောင်းအရာများကို ဖတ်သည့်အစဉ်အတိုင်း ဖြတ်ရွှေ့သည်။</string>
+    <string name="sandfly_keyboard_tutorial_move_next">နောက်အကြောင်းအရာသို့ ရွှေ့ရန် <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> ကို နှိပ်ပါ။ <xliff:g id="item" example="ကြက်ဥ">%2$s</xliff:g> သို့ ရောက်သည်အထိ ဆက်လုပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">ယခင်အကြောင်းအရာသို့ ရွှေ့ရန် <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> ကို နှိပ်ပါ။ <xliff:g id="item" example="ပေါင်မုန့်">%2$s</xliff:g> သို့ ပြန်သွားပါ။</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">စတင်အသုံးပြုခြင်းသည် ဖိုကပ်စ်ရှိ အကြောင်းအရာပေါ်တွင် အလုပ်လုပ်သည်။</string>
+    <string name="sandfly_keyboard_tutorial_activate_button"><xliff:g id="button" example="ခေါင်းလောင်း တီးရန်">%2$s</xliff:g> သို့ သွားပါ။ ၎င်းကို စတင်အသုံးပြုရန် <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box"><xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ဖြင့် <xliff:g id="check_box" example="ချိစ် အပို">%2$s</xliff:g> ကို အမှန်ခြစ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">အချို့အကြောင်းအရာများသည် ဖိထားသည့်အခါ အခြားအရာကို လုပ်သည်။ <xliff:g id="button" example="အသေးစိတ်">%2$s</xliff:g> သို့ သွားပါ။ ၎င်းကို ဖိထားရန် <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">စာဖတ်ခြင်းထိန်းချုပ်မှုများသည် စကားလုံးအလိုက် သို့မဟုတ် အက္ခရာအလိုက် ရွှေ့ခြင်းကဲ့သို့ အပေါ်နှင့် အောက်သို့ ရွှေ့ခြင်း လုပ်မည့်အရာကို ရွေးသည်။ “နောက်တစ်ခု” နှင့် “ယခင်တစ်ခု” သည် အကြောင်းအရာများအကြား ဆက်ရွှေ့သည်။</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">စာဖတ်ခြင်းထိန်းချုပ်မှုကို ပြောင်းရန် <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> သို့မဟုတ် <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> ကို နှိပ်ပါ။ <xliff:g id="reading_control" example="စကားလုံးများ">%3$s</xliff:g> ကို ရွေးပါ။</string>
+    <string name="sandfly_keyboard_tutorial_next_word">နောက်စကားလုံးသို့ ရွှေ့ရန် <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> ကို နှိပ်ပါ။ စကားလုံး သုံးလုံး ရွှေ့ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_characters">စာဖတ်ခြင်းထိန်းချုပ်မှုကို <xliff:g id="reading_control" example="အက္ခရာများ">%2$s</xliff:g> သို့ ပြောင်းပါ။ အက္ခရာတစ်လုံး ရွှေ့ရန် <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">နောက်ခေါင်းစီးသို့ ခုန်ရန် <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> ကို နှိပ်ပါ။ <xliff:g id="heading" example="စနေ၊ တနင်္ဂနွေ">%2$s</xliff:g> သို့ ခုန်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly သည် ဖိုကပ်စ်ရှိ အကြောင်းအရာမှ စခရင်အဆုံးထိ ဖတ်နိုင်သည်။ Ctrl က ဖတ်ခြင်းကို ရပ်သည်။</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">ဖိုကပ်စ်ရှိ အကြောင်းအရာမှ ဖတ်ရန် <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">စာရင်းများသည် ၎င်းတို့၏ အကြောင်းအရာ အချို့ကိုသာ တစ်ကြိမ်လျှင် ပြသည်။ ပြထားသော နောက်ဆုံးအကြောင်းအရာကို ကျော်၍ ရွှေ့လျှင် စာရင်းကို လှိမ့်သည်။</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="item" example="အကြောင်းအရာ 15">%2$s</xliff:g> သို့ ရောက်သည်အထိ <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">အချို့အကြောင်းအရာများတွင် စတင်အသုံးပြုခြင်းအပြင် မက်ဆေ့ဂျ်အတွက် “မှတ်တမ်းသိမ်းရန်” သို့မဟုတ် “ဖျက်ရန်” ကဲ့သို့ လုပ်ဆောင်ချက်များ ရှိသည်။ လုပ်ဆောင်ချက်များ မီနူးက ၎င်းတို့ကို ပြသည်။</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">မက်ဆေ့ဂျ်သို့ သွားပါ။ ၎င်း၏ လုပ်ဆောင်ချက်များကို ဖွင့်ရန် <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> ကို နှိပ်ပါ။ <xliff:g id="action" example="မှတ်တမ်းသိမ်းရန်">%2$s</xliff:g> ကို ရွေးပါ။</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">စာသားအကွက်ကို စတင်အသုံးပြုလျှင် ၎င်းတွင် စာရိုက်နိုင်သည်။</string>
+    <string name="sandfly_keyboard_tutorial_typing_open"><xliff:g id="field" example="အမည်">%2$s</xliff:g> အကွက်သို့ သွားပါ။ စာရိုက်ခြင်း စတင်ရန် <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">နောက်ဆုံးစာလုံးကို နောက်ပြန်ခလုတ်ဖြင့် ဖျက်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android တွင် ‘လုပ်ဆောင်ချက်’ ကီးဖြင့် ၎င်း၏ကိုယ်ပိုင် လက်ကွက်ဖြတ်လမ်းများ ရှိသည်။ ၎င်းတို့သည် စခရင်တိုင်းတွင် အလုပ်လုပ်သည်။ ဤသင်ခန်းစာတွင် သင်ခန်းစာက ဖြတ်လမ်းတစ်ခုချင်းစီကို မလုပ်ဘဲ ၎င်းလုပ်သည့်အရာကို ပြောသည်။</string>
+    <string name="sandfly_keyboard_tutorial_system_back">နောက်သို့ ပြန်သွားရန် <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_system_home">ပင်မ စခရင်သို့ သွားရန် <xliff:g id="keys" example="Action + H">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">လတ်တလော သုံးခဲ့ အက်ပ်များကို ပြရန် <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> ကို နှိပ်ပါ။ Alt + Tab က အက်ပ်များအကြား ပြောင်းသည်။</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">အကြောင်းကြားချက်များကို ဖွင့်ရန် <xliff:g id="keys" example="Action + N">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">SandFly မီနူး ဖွင့်ရန် <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> ကို နှိပ်ပါ။ ၎င်း၏ ကွန်မန်းများကို ဖြတ်ရွှေ့ပါ။ Esc က မီနူးကို ပိတ်သည်။</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">မီနူးကို ပိတ်ရန် Esc ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">လက်ကွက်ဖြတ်လမ်း စာရင်း</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly သည် လက်ကွက်ဖြတ်လမ်းတိုင်းကို ၎င်း၏ ကွန်မန်းနှင့်အတူ ပြသည်။</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">စာရင်းကို ဖွင့်ရန် <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> ကို နှိပ်ပါ။ Esc က ၎င်းကို ပိတ်သည်။</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">စာရင်းကို ပိတ်ရန် Esc ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">SandFly နောက်ဆုံးပြောခဲ့သည့် စာသားကို ကလစ်ဘုတ်သို့ ကူးရန် <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> ကို နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">စခရင်ပေါ်ရှိ စာသားကို ရှာရန် <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> ကို နှိပ်ပါ။ ဤသင်ခန်းစာတွင် သင်ခန်းစာက ၎င်းကို မလုပ်ဘဲ ၎င်းလုပ်သည့်အရာကို ပြောသည်။</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">ဘရောက်စ်မုဒ်</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">ဘရောက်စ်မုဒ်တွင် စာလုံးတစ်လုံးတည်းက ခေါင်းစီးများအတွက် H၊ လင့်ခ်များအတွက် K နှင့် ခလုတ်များအတွက် B ကဲ့သို့ အမျိုးအစားတစ်ခု၏ နောက်အကြောင်းအရာသို့ ခုန်သည်။ စာလုံးနှင့် Shift တွဲနှိပ်လျှင် နောက်သို့ ခုန်သည်။ စာသားအကွက်တွင် စာရိုက်နေစဉ် ဘရောက်စ်မုဒ် ပိတ်သည်။</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">ဘရောက်စ်မုဒ် ဖွင့်ရန် <xliff:g id="keys" example="Action twice">%1$s</xliff:g> နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">နောက်ခေါင်းစီးသို့ ခုန်ရန် <xliff:g id="keys" example="H">%1$s</xliff:g> ကို နှိပ်ပါ။ <xliff:g id="heading" example="စနေ၊ တနင်္ဂနွေ">%2$s</xliff:g> သို့ ခုန်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">ဘရောက်စ်မုဒ် ပိတ်ရန် <xliff:g id="keys" example="Action twice">%1$s</xliff:g> နှိပ်ပါ။</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">ကီးဘုတ် လေ့ကျင့်ခြင်း</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">လက်ကွက်ဖြတ်လမ်းတစ်ခုချင်းစီသည် ကွန်မန်းကို လုပ်ဆောင်မည့်အစား ၎င်း၏ ကီးများနှင့် ကွန်မန်းကို ပြောသည်။ “နောက်တစ်ခု”၊ “ယခင်တစ်ခု” နှင့် စတင်အသုံးပြုခြင်းတို့ ဆက်အလုပ်လုပ်သည်။</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">လက်ကွက်ဖြတ်လမ်းတစ်ခုခုကို နှိပ်ပြီး ၎င်းလုပ်သည့်အရာကို နားထောင်ပါ။ ရပ်ရန် <xliff:g id="button" example="လေ့ကျင့်ခြင်း အဆုံးသတ်ရန်">%1$s</xliff:g> ကို စတင်အသုံးပြုပါ။</string>
+</resources>

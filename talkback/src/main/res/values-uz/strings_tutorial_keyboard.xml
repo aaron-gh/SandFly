@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly klaviatura darsligi</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Keyingi element">%1$s</xliff:g> uchun tezkor tugma yoʻq. Uni “Buyruqlar” boʻlimida tayinlang yoki “Qadamni oʻtkazib yuborish”dan foydalaning.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Kezish rejimi uchun “Yaxshilangan terilma” kerak. Uni <xliff:g id="settings_path" example="SandFly sozlamalari &gt; Tezkor tugmalar &gt; Terilmani tanlash">%1$s</xliff:g> boʻlimida tanlang yoki “Qadamni oʻtkazib yuborish”dan foydalaning.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> tugmasini ikki marta</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Dars tugadi. Keyingi darsni boshlash uchun <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tugmalarini bosing.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Dars tugadi. Darslikni tugatish uchun <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tugmalarini bosing.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Veb-sahifalar</string>
+
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Bu darslik SandFly tezkor tugmalarini oʻrgatadi. Ularning aksariyati <xliff:g id="key" example="Action">%1$s</xliff:g> tugmasini boshqa tugmalar bilan birga ishlatadi. <xliff:g id="location" example="Amal tugmasi – chap Alt tugmasi yonidagi Windows tugmasi.">%2$s</xliff:g> Ctrl nutqni toʻxtatadi. Har bir dars koʻrsatma beradi, unda aytilgan tugmalarni bosguningizcha kutadi, keyin keyingisini beradi. Koʻrsatma – dars nomidan keyingi birinchi element. “Mundarija” barcha darslarni koʻrsatadi, darslik esa siz toʻxtagan darsdan qayta ochiladi.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Amal tugmasi – chap Alt tugmasi yonidagi Windows tugmasi. Apple klaviaturalarida bu Boʻsh joy tugmasi yonidagi Command tugmasi.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt tugmasi Boʻsh joy tugmasi yonida joylashgan.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Boshlash uchun <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tugmalarini bosing.</string>
+
+    <string name="sandfly_keyboard_tutorial_move_intro">Keyingi element va Avvalgi element ekrandagi elementlar boʻylab oʻqish tartibida oʻtadi.</string>
+    <string name="sandfly_keyboard_tutorial_move_next"><xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> tugmalari bilan keyingi elementga oʻting. <xliff:g id="item" example="Tuxum">%2$s</xliff:g> elementiga yetguncha davom eting.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous"><xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> tugmalari bilan avvalgi elementga oʻting. <xliff:g id="item" example="Non">%2$s</xliff:g> elementiga qayting.</string>
+
+    <string name="sandfly_keyboard_tutorial_activate_intro">Faollashtirish fokusdagi elementga taʼsir qiladi.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button"><xliff:g id="button" example="Qoʻngʻiroqni chalish">%2$s</xliff:g> elementiga oʻting. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tugmalari bilan uni faollashtiring.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box"><xliff:g id="check_box" example="Qoʻshimcha pishloq">%2$s</xliff:g> belgisini <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tugmalari bilan qoʻying.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Ayrim elementlar bosib turilganda boshqa amalni bajaradi. <xliff:g id="button" example="Tafsilotlar">%2$s</xliff:g> elementiga oʻting. <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> tugmalari bilan uni bosib turing.</string>
+
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Oʻqish boshqaruvi tepaga va pastga oʻtish nima qilishini tanlaydi, masalan, soʻz yoki belgi boʻyicha oʻtish. Keyingi element va Avvalgi element avvalgidek elementlar orasida oʻtadi.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Oʻqish boshqaruvini oʻzgartirish uchun <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> yoki <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> tugmalarini bosing. <xliff:g id="reading_control" example="So‘zlar">%3$s</xliff:g> tanlang.</string>
+    <string name="sandfly_keyboard_tutorial_next_word"><xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> tugmalari bilan keyingi soʻzga oʻting. Uch soʻz oʻting.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Oʻqish boshqaruvini <xliff:g id="reading_control" example="Belgilar">%2$s</xliff:g> qilib oʻzgartiring. <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> tugmalari bilan bitta belgiga oʻting.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump"><xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> tugmalari bilan keyingi sarlavhaga oʻting. <xliff:g id="heading" example="Dam olish kunlari">%2$s</xliff:g> sarlavhasiga oʻting.</string>
+
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly fokusdagi elementdan ekran oxirigacha oʻqiy oladi. Ctrl oʻqishni toʻxtatadi.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read"><xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> tugmalari bilan fokusdagi elementdan oʻqing.</string>
+
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Roʻyxatlar bir vaqtda elementlarining faqat bir qismini koʻrsatadi. Koʻrsatilgan oxirgi elementdan keyin oʻtish roʻyxatni varaqlaydi.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next"><xliff:g id="item" example="Element 15">%2$s</xliff:g> elementiga yetguncha <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> tugmalarini bosing.</string>
+
+    <string name="sandfly_keyboard_tutorial_actions_intro">Ayrim elementlarda faollashtirishdan tashqari amallar bor, masalan, xabar uchun Arxivlash yoki Oʻchirish. Amallar menyusi ularni koʻrsatadi.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Xabarga oʻting. Uning amallarini ochish uchun <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> tugmalarini bosing. <xliff:g id="action" example="Arxivlash">%2$s</xliff:g> amalini tanlang.</string>
+
+    <string name="sandfly_keyboard_tutorial_typing_intro">Matn maydonini faollashtirsangiz, unga yozish mumkin.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open"><xliff:g id="field" example="Ism">%2$s</xliff:g> maydoniga oʻting. <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> tugmalari bilan yozishni boshlang.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Oxirgi harfni Backspace bilan oʻchiring.</string>
+
+    <string name="sandfly_keyboard_tutorial_system_intro">Androidning Amal tugmasi bilan ishlaydigan oʻz tezkor tugmalari bor. Ular har bir ekranda ishlaydi. Bu darsda darslik har birini bajarish oʻrniga nima qilishini aytadi.</string>
+    <string name="sandfly_keyboard_tutorial_system_back"><xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> tugmalari bilan orqaga qayting.</string>
+    <string name="sandfly_keyboard_tutorial_system_home"><xliff:g id="keys" example="Action + H">%1$s</xliff:g> tugmalari bilan bosh ekranga oʻting.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview"><xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> tugmalari bilan soʻnggi ilovalarni koʻrsating. Alt + Tab ilovalar orasida almashtiradi.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications"><xliff:g id="keys" example="Action + N">%1$s</xliff:g> tugmalari bilan bildirishnomalarni oching.</string>
+
+    <string name="sandfly_keyboard_tutorial_menu_open"><xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> tugmalari bilan SandFly menyusini oching. Uning buyruqlari boʻylab oʻting. Esc menyuni yopadi.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Esc tugmasi bilan menyuni yoping.</string>
+
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Tezkor tugmalar roʻyxati</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly har bir tezkor tugmani uning buyrugʻi bilan koʻrsatadi.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open"><xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> tugmalari bilan roʻyxatni oching. Esc uni yopadi.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Esc tugmasi bilan roʻyxatni yoping.</string>
+
+    <string name="sandfly_keyboard_tutorial_commands_copy"><xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> tugmalari SandFly oxirgi aytgan matnni vaqtinchalik xotiraga nusxalaydi.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search"><xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> tugmalari ekrandan matn qidiradi. Bu darsda darslik uni bajarish oʻrniga nima qilishini aytadi.</string>
+
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Kezish rejimi</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">Kezish rejimida yakka harflar maʼlum turdagi keyingi elementga oʻtadi, masalan, sarlavhalar uchun H, havolalar uchun K va tugmalar uchun B. Harf bilan Shift orqaga oʻtadi. Matn maydoniga yozayotganingizda kezish rejimi oʻchadi.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Kezish rejimini yoqish uchun <xliff:g id="keys" example="Action twice">%1$s</xliff:g> bosing.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading"><xliff:g id="keys" example="H">%1$s</xliff:g> tugmasi bilan keyingi sarlavhaga oʻting. <xliff:g id="heading" example="Dam olish kunlari">%2$s</xliff:g> sarlavhasiga oʻting.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Kezish rejimini oʻchirish uchun <xliff:g id="keys" example="Action twice">%1$s</xliff:g> bosing.</string>
+
+    <string name="sandfly_keyboard_tutorial_practice_title">Klaviatura mashqi</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Har bir tezkor tugma bajarilish oʻrniga oʻz tugmalari va buyrugʻini aytadi. Keyingi element, Avvalgi element va faollashtirish ishlashda davom etadi.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Nima qilishini eshitish uchun istalgan tezkor tugmani bosing. Toʻxtatish uchun <xliff:g id="button" example="Mashqni tugatish">%1$s</xliff:g> tugmasini faollashtiring.</string>
+</resources>

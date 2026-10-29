@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">Výukový program klávesnice SandFly</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Další položka">%1$s</xliff:g> nemá žádnou klávesovou zkratku. Přiřaďte ji v části Příkazy nebo použijte Přeskočit krok.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Režim procházení vyžaduje Vylepšenou mapu kláves. Vyberte ji v části <xliff:g id="settings_path" example="Nastavení funkce SandFly &gt; Klávesové zkratky &gt; Vybrat mapování kláves">%1$s</xliff:g> nebo použijte Přeskočit krok.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Akce">%1$s</xliff:g> dvakrát</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lekce dokončena. Stisknutím <xliff:g id="keys" example="Akce + Mezerník">%1$s</xliff:g> zahájíte další lekci.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lekce dokončena. Stisknutím <xliff:g id="keys" example="Akce + Mezerník">%1$s</xliff:g> výukový program dokončíte.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Webové stránky</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">Tento výukový program učí klávesové zkratky SandFly. Většina z nich používá klávesu <xliff:g id="key" example="Akce">%1$s</xliff:g> s dalšími klávesami. <xliff:g id="location" example="Klávesa Akce je klávesa Windows vedle levé klávesy Alt.">%2$s</xliff:g> Ctrl zastaví řeč. Každá lekce zadá pokyn, počká, až stisknete klávesy, které uvádí, a pak zadá další. Pokyn je první položka za názvem lekce. Obsah uvádí všechny lekce a výukový program se znovu otevře na lekci, ve které jste skončili.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">Klávesa Akce je klávesa Windows vedle levé klávesy Alt. Na klávesnicích Apple je to klávesa Command vedle mezerníku.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Klávesa Alt je vedle mezerníku.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Začněte stisknutím <xliff:g id="keys" example="Akce + Mezerník">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">Další položka a Předchozí položka procházejí položky na obrazovce v pořadí čtení.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Stisknutím <xliff:g id="keys" example="Akce + Šipka vpravo">%1$s</xliff:g> se přesunete na další položku. Pokračujte, dokud nedojdete na položku <xliff:g id="item" example="Vejce">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Stisknutím <xliff:g id="keys" example="Akce + Šipka vlevo">%1$s</xliff:g> se přesunete na předchozí položku. Vraťte se na položku <xliff:g id="item" example="Chléb">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">Aktivace působí na zaměřenou položku.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Přejděte na položku <xliff:g id="button" example="Zazvonit na zvonek">%2$s</xliff:g>. Stisknutím <xliff:g id="keys" example="Akce + Mezerník">%1$s</xliff:g> ji aktivujete.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Zaškrtněte <xliff:g id="check_box" example="Sýr navíc">%2$s</xliff:g> pomocí <xliff:g id="keys" example="Akce + Mezerník">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Některé položky po podržení dělají něco jiného. Přejděte na položku <xliff:g id="button" example="Podrobnosti">%2$s</xliff:g>. Stisknutím <xliff:g id="keys" example="Akce + Shift + Mezerník">%1$s</xliff:g> ji podržíte.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Ovládání čtení určuje, co dělá přesun nahoru a dolů, například přesun po slovech nebo po znacích. Další položka a Předchozí položka dál přesouvají mezi položkami.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Stisknutím <xliff:g id="keys" example="Akce + Shift + Šipka vpravo">%1$s</xliff:g> nebo <xliff:g id="keys" example="Akce + Shift + Šipka vlevo">%2$s</xliff:g> změníte ovládací prvek čtení. Vyberte <xliff:g id="reading_control" example="Slova">%3$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Stisknutím <xliff:g id="keys" example="Akce + Šipka dolů">%1$s</xliff:g> se přesunete na další slovo. Přesuňte se o tři slova.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Změňte ovládací prvek čtení na <xliff:g id="reading_control" example="Znaky">%2$s</xliff:g>. Stisknutím <xliff:g id="keys" example="Akce + Šipka dolů">%1$s</xliff:g> se přesunete o jeden znak.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Stisknutím <xliff:g id="keys" example="Akce + Šipka dolů">%1$s</xliff:g> přeskočíte na další nadpis. Přeskočte na <xliff:g id="heading" example="Víkend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly umí číst od zaměřené položky až do konce obrazovky. Ctrl čtení zastaví.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Stisknutím <xliff:g id="keys" example="Akce + Ctrl + R">%1$s</xliff:g> spustíte čtení od zaměřené položky.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Seznamy zobrazují najednou jen některé položky. Přesun za poslední zobrazenou položku seznam posune.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Tiskněte <xliff:g id="keys" example="Akce + Šipka vpravo">%1$s</xliff:g>, dokud nedojdete na položku <xliff:g id="item" example="Položka 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Některé položky mají kromě aktivace i další akce, například Archivovat nebo Smazat u zprávy. Nabídka akcí je uvádí.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Přejděte na zprávu. Stisknutím <xliff:g id="keys" example="Akce + Ctrl + A">%1$s</xliff:g> otevřete její akce. Vyberte <xliff:g id="action" example="Archivovat">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Po aktivaci textového pole do něj můžete psát.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Přejděte na pole <xliff:g id="field" example="Jméno">%2$s</xliff:g>. Stisknutím <xliff:g id="keys" example="Akce + Mezerník">%1$s</xliff:g> začnete psát.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Smažte poslední písmeno klávesou Backspace.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android má vlastní klávesové zkratky s klávesou Akce. Fungují na každé obrazovce. V této lekci výukový program místo provedení řekne, co každá z nich dělá.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Stisknutím <xliff:g id="keys" example="Akce + Esc">%1$s</xliff:g> se vrátíte zpět.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Stisknutím <xliff:g id="keys" example="Akce + H">%1$s</xliff:g> přejdete na plochu.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Stisknutím <xliff:g id="keys" example="Akce + Tab">%1$s</xliff:g> zobrazíte poslední aplikace. Alt + Tab přepíná mezi aplikacemi.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Stisknutím <xliff:g id="keys" example="Akce + N">%1$s</xliff:g> otevřete oznámení.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">Stisknutím <xliff:g id="keys" example="Akce + Ctrl + M">%1$s</xliff:g> otevřete nabídku SandFly. Projděte její příkazy. Esc nabídku zavře.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Stisknutím Esc nabídku zavřete.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Seznam klávesových zkratek</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly uvádí každou klávesovou zkratku s jejím příkazem.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Stisknutím <xliff:g id="keys" example="Akce + Shift + /">%1$s</xliff:g> otevřete seznam. Esc ho zavře.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Stisknutím Esc seznam zavřete.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">Stisknutím <xliff:g id="keys" example="Akce + Ctrl + C">%1$s</xliff:g> zkopírujete do schránky poslední text, který SandFly vyslovil.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Stisknutím <xliff:g id="keys" example="Akce + Ctrl + /">%1$s</xliff:g> vyhledáte text na obrazovce. V této lekci výukový program místo toho řekne, co zkratka dělá.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Režim procházení</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">V režimu procházení jednotlivá písmena přeskakují na další položku určitého druhu, například H na nadpisy, K na odkazy a B na tlačítka. Shift s písmenem přeskakuje zpět. Při psaní do textového pole se režim procházení vypne.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Stisknutím <xliff:g id="keys" example="Akce dvakrát">%1$s</xliff:g> zapnete režim procházení.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Stisknutím <xliff:g id="keys" example="H">%1$s</xliff:g> přeskočíte na další nadpis. Přeskočte na <xliff:g id="heading" example="Víkend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Stisknutím <xliff:g id="keys" example="Akce dvakrát">%1$s</xliff:g> vypnete režim procházení.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Procvičování klávesnice</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Každá klávesová zkratka místo provedení řekne své klávesy a příkaz. Další položka, Předchozí položka a aktivace fungují dál.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Stiskněte libovolnou klávesovou zkratku a uslyšíte, co dělá. Procvičování ukončíte aktivací tlačítka <xliff:g id="button" example="Ukončit procvičování">%1$s</xliff:g>.</string>
+</resources>

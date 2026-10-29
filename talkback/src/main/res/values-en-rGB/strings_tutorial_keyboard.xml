@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly keyboard tutorial</string>
+    <string name="sandfly_keyboard_tutorial_no_key"><xliff:g id="command" example="Next item">%1$s</xliff:g> has no keyboard shortcut. Assign one in Commands, or use Skip step.</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">Browse mode needs the Enhanced keymap. Choose it in <xliff:g id="settings_path" example="SandFly settings &gt; Keyboard shortcuts &gt; Choose a keymap">%1$s</xliff:g>, or use Skip step.</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="Action">%1$s</xliff:g> twice</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">Lesson complete. Press <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> to start the next lesson.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">Lesson complete. Press <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> to finish the tutorial.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">Web pages</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">This tutorial teaches SandFly\'s keyboard shortcuts. Most of them use the <xliff:g id="key" example="Action">%1$s</xliff:g> key with other keys. <xliff:g id="location" example="The Action key is the Windows key, next to the left Alt key.">%2$s</xliff:g> Ctrl stops speech. Each lesson gives an instruction, waits until you have pressed the keys it names, then gives the next one. The instruction is the first item after the name of the lesson. Contents lists every lesson, and the tutorial reopens at the lesson you were on.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">The Action key is the Windows key, next to the left Alt key. On Apple keyboards, it\'s the Command key, next to the space bar.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">The Alt key is next to the space bar.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">Press <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> to start.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">Next item and Previous item move through the items on the screen in reading order.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">Press <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> to move to the next item. Continue until you reach <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">Press <xliff:g id="keys" example="Action + Left arrow">%1$s</xliff:g> to move to the previous item. Go back to <xliff:g id="item" example="Bread">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">Activating works on the item that has focus.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">Move to <xliff:g id="button" example="Ring the bell">%2$s</xliff:g>. Press <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> to activate it.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">Check <xliff:g id="check_box" example="Extra cheese">%2$s</xliff:g> with <xliff:g id="keys" example="Action + Space">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">Some items do something else when held. Move to <xliff:g id="button" example="Details">%2$s</xliff:g>. Press <xliff:g id="keys" example="Action + Shift + Space">%1$s</xliff:g> to hold it.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">Reading controls choose what moving up and down does, such as moving by word or by character. Next item and Previous item still move between items.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">Press <xliff:g id="keys" example="Action + Shift + Right arrow">%1$s</xliff:g> or <xliff:g id="keys" example="Action + Shift + Left arrow">%2$s</xliff:g> to change the reading control. Choose <xliff:g id="reading_control" example="Words">%3$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_next_word">Press <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> to move to the next word. Move three words.</string>
+    <string name="sandfly_keyboard_tutorial_characters">Change the reading control to <xliff:g id="reading_control" example="Characters">%2$s</xliff:g>. Press <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> to move by one character.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">Press <xliff:g id="keys" example="Action + Down arrow">%1$s</xliff:g> to jump to the next heading. Jump to <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly can read from the focused item to the end of the screen. Ctrl stops reading.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">Press <xliff:g id="keys" example="Action + Ctrl + R">%1$s</xliff:g> to read from the focused item.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">Lists show only some of their items at a time. Moving past the last item shown scrolls the list.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">Press <xliff:g id="keys" example="Action + Right arrow">%1$s</xliff:g> until you reach <xliff:g id="item" example="Item 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">Some items have actions besides activating, such as Archive or Delete for a message. The actions menu lists them.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">Move to the message. Press <xliff:g id="keys" example="Action + Ctrl + A">%1$s</xliff:g> to open its actions. Choose <xliff:g id="action" example="Archive">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">Activating a text field lets you type in it.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">Move to the <xliff:g id="field" example="Name">%2$s</xliff:g> field. Press <xliff:g id="keys" example="Action + Space">%1$s</xliff:g> to start typing.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Delete the last letter with Backspace.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android has its own keyboard shortcuts with the Action key. They work on every screen. In this lesson, the tutorial says what each one does instead of doing it.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">Press <xliff:g id="keys" example="Action + Esc">%1$s</xliff:g> to go back.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">Press <xliff:g id="keys" example="Action + H">%1$s</xliff:g> to go to the Home screen.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">Press <xliff:g id="keys" example="Action + Tab">%1$s</xliff:g> to show recent apps. Alt + Tab switches between apps.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">Press <xliff:g id="keys" example="Action + N">%1$s</xliff:g> to open notifications.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">Press <xliff:g id="keys" example="Action + Ctrl + M">%1$s</xliff:g> to open the SandFly menu. Move through its commands. Esc closes the menu.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Press Esc to close the menu.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">Keyboard shortcut list</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly lists every keyboard shortcut with its command.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">Press <xliff:g id="keys" example="Action + Shift + /">%1$s</xliff:g> to open the list. Esc closes it.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Press Esc to close the list.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">Press <xliff:g id="keys" example="Action + Ctrl + C">%1$s</xliff:g> to copy the last text SandFly spoke to the clipboard.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">Press <xliff:g id="keys" example="Action + Ctrl + /">%1$s</xliff:g> to search for text on the screen. In this lesson, the tutorial says what it does instead.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">Browse mode</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">In browse mode, single letters jump to the next item of a kind, such as H for headings, K for links and B for buttons. Shift with the letter jumps back. Browse mode turns off while you type in a text field.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">Press <xliff:g id="keys" example="Action twice">%1$s</xliff:g> to turn on browse mode.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">Press <xliff:g id="keys" example="H">%1$s</xliff:g> to jump to the next heading. Jump to <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">Press <xliff:g id="keys" example="Action twice">%1$s</xliff:g> to turn off browse mode.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">Keyboard practice</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">Each keyboard shortcut says its keys and command instead of running it. Next item, Previous item and activating still work.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">Press any keyboard shortcut to hear what it does. To stop, activate <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+</resources>

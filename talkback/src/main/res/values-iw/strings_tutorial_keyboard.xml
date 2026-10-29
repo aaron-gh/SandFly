@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">מדריך המקלדת של SandFly</string>
+    <string name="sandfly_keyboard_tutorial_no_key">ל\"<xliff:g id="command" example="הפריט הבא">%1$s</xliff:g>\" אין מקש קיצור. אפשר להקצות מקש קיצור ב\"פקודות\" או להשתמש ב\"דילוג על השלב\".</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">מצב הסמן דורש את \"מפת מקשים משופרת\". בוחרים בה ב<xliff:g id="settings_path" example="ההגדרות של SandFly &gt; מקשי קיצור &gt; בחירת מפת מקשים">%1$s</xliff:g>, או משתמשים ב\"דילוג על השלב\".</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="מקש הפעולה">%1$s</xliff:g> פעמיים</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">השיעור הושלם. לוחצים על <xliff:g id="keys" example="מקש הפעולה + רווח">%1$s</xliff:g> כדי להתחיל את השיעור הבא.</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">השיעור הושלם. לוחצים על <xliff:g id="keys" example="מקש הפעולה + רווח">%1$s</xliff:g> כדי לסיים את המדריך.</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">דפי אינטרנט</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">המדריך הזה מלמד את מקשי הקיצור של SandFly. רובם משתמשים ב<xliff:g id="key" example="מקש הפעולה">%1$s</xliff:g> יחד עם מקשים אחרים. <xliff:g id="location" example="מקש הפעולה הוא מקש Windows, ליד מקש Alt השמאלי.">%2$s</xliff:g> ‏Ctrl עוצר את הדיבור. כל שיעור נותן הוראה, מחכה עד שלוחצים על המקשים שהיא מציינת, ואז נותן את ההוראה הבאה. ההוראה היא הפריט הראשון אחרי שם השיעור. ב\"תוכן העניינים\" מופיעים כל השיעורים, והמדריך נפתח מחדש בשיעור שבו הפסקת.</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">מקש הפעולה הוא מקש Windows, ליד מקש Alt השמאלי. במקלדות של Apple, זה מקש Command, ליד מקש הרווח.</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">מקש Alt נמצא ליד מקש הרווח.</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start">לוחצים על <xliff:g id="keys" example="מקש הפעולה + רווח">%1$s</xliff:g> כדי להתחיל.</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">\"הפריט הבא\" ו\"הפריט הקודם\" עוברים בין הפריטים במסך לפי סדר ההקראה.</string>
+    <string name="sandfly_keyboard_tutorial_move_next">לוחצים על <xliff:g id="keys" example="מקש הפעולה + חץ ימינה">%1$s</xliff:g> כדי לעבור לפריט הבא. ממשיכים עד שמגיעים אל \"<xliff:g id="item" example="ביצים">%2$s</xliff:g>\".</string>
+    <string name="sandfly_keyboard_tutorial_move_previous">לוחצים על <xliff:g id="keys" example="מקש הפעולה + חץ שמאלה">%1$s</xliff:g> כדי לעבור לפריט הקודם. חוזרים אל \"<xliff:g id="item" example="לחם">%2$s</xliff:g>\".</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">ההפעלה פועלת על הפריט המודגש.</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">עוברים אל \"<xliff:g id="button" example="צלצול בפעמון">%2$s</xliff:g>\". לוחצים על <xliff:g id="keys" example="מקש הפעולה + רווח">%1$s</xliff:g> כדי להפעיל אותו.</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box">מסמנים את \"<xliff:g id="check_box" example="תוספת גבינה">%2$s</xliff:g>\" בעזרת <xliff:g id="keys" example="מקש הפעולה + רווח">%1$s</xliff:g>.</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">חלק מהפריטים עושים משהו אחר כשלוחצים עליהם לחיצה ארוכה. עוברים אל \"<xliff:g id="button" example="פרטים">%2$s</xliff:g>\". לוחצים על <xliff:g id="keys" example="מקש הפעולה + Shift + רווח">%1$s</xliff:g> כדי ללחוץ עליו לחיצה ארוכה.</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">כפתורי ההקראה קובעים מה עושה מעבר למעלה ולמטה, כמו מעבר לפי מילה או לפי תו. \"הפריט הבא\" ו\"הפריט הקודם\" עדיין עוברים בין פריטים.</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control">לוחצים על <xliff:g id="keys" example="מקש הפעולה + Shift + חץ ימינה">%1$s</xliff:g> או <xliff:g id="keys" example="מקש הפעולה + Shift + חץ שמאלה">%2$s</xliff:g> כדי לשנות את כפתור ההקראה. בוחרים \"<xliff:g id="reading_control" example="מילים">%3$s</xliff:g>\".</string>
+    <string name="sandfly_keyboard_tutorial_next_word">לוחצים על <xliff:g id="keys" example="מקש הפעולה + חץ למטה">%1$s</xliff:g> כדי לעבור למילה הבאה. עוברים שלוש מילים.</string>
+    <string name="sandfly_keyboard_tutorial_characters">משנים את כפתור ההקראה ל\"<xliff:g id="reading_control" example="תווים">%2$s</xliff:g>\". לוחצים על <xliff:g id="keys" example="מקש הפעולה + חץ למטה">%1$s</xliff:g> כדי לעבור תו אחד.</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump">לוחצים על <xliff:g id="keys" example="מקש הפעולה + חץ למטה">%1$s</xliff:g> כדי לקפוץ לכותרת הבאה. קופצים אל \"<xliff:g id="heading" example="סוף שבוע">%2$s</xliff:g>\".</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">‏SandFly יכולה להקריא מהפריט המודגש ועד סוף המסך. ‏Ctrl עוצר את ההקראה.</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read">לוחצים על <xliff:g id="keys" example="מקש הפעולה + Ctrl + R">%1$s</xliff:g> כדי להקריא מהפריט המודגש.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">רשימות מציגות רק חלק מהפריטים שלהן בכל פעם. מעבר הלאה מהפריט האחרון שמוצג גולל את הרשימה.</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">לוחצים על <xliff:g id="keys" example="מקש הפעולה + חץ ימינה">%1$s</xliff:g> עד שמגיעים אל \"<xliff:g id="item" example="פריט 15">%2$s</xliff:g>\".</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">לחלק מהפריטים יש פעולות נוספות מלבד הפעלה, כמו \"העברה לארכיון\" או \"מחיקה\" להודעה. תפריט הפעולות מציג אותן.</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">עוברים אל ההודעה. לוחצים על <xliff:g id="keys" example="מקש הפעולה + Ctrl + A">%1$s</xliff:g> כדי לפתוח את הפעולות שלה. בוחרים \"<xliff:g id="action" example="העברה לארכיון">%2$s</xliff:g>\".</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">הפעלה של שדה טקסט מאפשרת להקליד בו.</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">עוברים לשדה \"<xliff:g id="field" example="שם">%2$s</xliff:g>\". לוחצים על <xliff:g id="keys" example="מקש הפעולה + רווח">%1$s</xliff:g> כדי להתחיל להקליד.</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">מוחקים את האות האחרונה בעזרת מקש Backspace.</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">ל-Android יש מקשי קיצור משלה עם מקש הפעולה. הם פועלים בכל מסך. בשיעור הזה, המדריך אומר מה כל אחד מהם עושה במקום לבצע אותו.</string>
+    <string name="sandfly_keyboard_tutorial_system_back">לוחצים על <xliff:g id="keys" example="מקש הפעולה + Esc">%1$s</xliff:g> כדי לחזור אחורה.</string>
+    <string name="sandfly_keyboard_tutorial_system_home">לוחצים על <xliff:g id="keys" example="מקש הפעולה + H">%1$s</xliff:g> כדי לעבור למסך הבית.</string>
+    <string name="sandfly_keyboard_tutorial_system_overview">לוחצים על <xliff:g id="keys" example="מקש הפעולה + Tab">%1$s</xliff:g> כדי להציג את האפליקציות האחרונות. ‏Alt + Tab עובר בין אפליקציות.</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications">לוחצים על <xliff:g id="keys" example="מקש הפעולה + N">%1$s</xliff:g> כדי לפתוח את ההתראות.</string>
+    <string name="sandfly_keyboard_tutorial_menu_open">לוחצים על <xliff:g id="keys" example="מקש הפעולה + Ctrl + M">%1$s</xliff:g> כדי לפתוח את תפריט SandFly. עוברים בין הפקודות שלו. ‏Esc סוגר את התפריט.</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">לוחצים על Esc כדי לסגור את התפריט.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">רשימת מקשי הקיצור</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">‏SandFly מציגה את כל מקשי הקיצור עם הפקודה של כל אחד מהם.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open">לוחצים על <xliff:g id="keys" example="מקש הפעולה + Shift + /">%1$s</xliff:g> כדי לפתוח את הרשימה. ‏Esc סוגר אותה.</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">לוחצים על Esc כדי לסגור את הרשימה.</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy">לוחצים על <xliff:g id="keys" example="מקש הפעולה + Ctrl + C">%1$s</xliff:g> כדי להעתיק ללוח את הטקסט האחרון ש-SandFly הקריאה.</string>
+    <string name="sandfly_keyboard_tutorial_commands_search">לוחצים על <xliff:g id="keys" example="מקש הפעולה + Ctrl + /">%1$s</xliff:g> כדי לחפש טקסט במסך. בשיעור הזה, המדריך אומר מה הפקודה עושה במקום לבצע אותה.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">מצב הסמן</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">במצב הסמן, אותיות בודדות קופצות לפריט הבא מסוג מסוים, כמו H לכותרות, K לקישורים ו-B לכפתורים. ‏Shift יחד עם האות קופץ אחורה. מצב הסמן מושבת בזמן ההקלדה בשדה טקסט.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on">לוחצים על <xliff:g id="keys" example="מקש הפעולה פעמיים">%1$s</xliff:g> כדי להפעיל את מצב הסמן.</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading">לוחצים על <xliff:g id="keys" example="H">%1$s</xliff:g> כדי לקפוץ לכותרת הבאה. קופצים אל \"<xliff:g id="heading" example="סוף שבוע">%2$s</xliff:g>\".</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off">לוחצים על <xliff:g id="keys" example="מקש הפעולה פעמיים">%1$s</xliff:g> כדי להשבית את מצב הסמן.</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">תרגול מקלדת</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">כל מקש קיצור אומר את המקשים ואת הפקודה שלו במקום לבצע אותה. \"הפריט הבא\", \"הפריט הקודם\" והפעלה עדיין פועלים.</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">לוחצים על מקש קיצור כלשהו כדי לשמוע מה הוא עושה. כדי לעצור, מפעילים את \"<xliff:g id="button" example="סיום התרגול">%1$s</xliff:g>\".</string>
+</resources>

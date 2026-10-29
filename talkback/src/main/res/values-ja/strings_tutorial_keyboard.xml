@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_keyboard_tutorial_title">SandFly キーボード チュートリアル</string>
+    <string name="sandfly_keyboard_tutorial_no_key">「<xliff:g id="command" example="次の項目">%1$s</xliff:g>」にはキーボード ショートカットがありません。[コマンド] で割り当てるか、[ステップをスキップ] を使用します。</string>
+    <string name="sandfly_keyboard_tutorial_needs_enhanced_keymap">ブラウズモードには [拡張キーマップ] が必要です。<xliff:g id="settings_path" example="[SandFly の設定] &gt; [キーボード ショートカット] &gt; [キーマップを選択]">%1$s</xliff:g> で選択するか、[ステップをスキップ] を使用します。</string>
+    <string name="sandfly_keyboard_tutorial_key_twice"><xliff:g id="key" example="アクション">%1$s</xliff:g>を 2 回</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_next">レッスン完了。<xliff:g id="keys" example="アクション + スペース">%1$s</xliff:g>を押して次のレッスンを開始します。</string>
+    <string name="sandfly_keyboard_tutorial_lesson_complete_last">レッスン完了。<xliff:g id="keys" example="アクション + スペース">%1$s</xliff:g>を押してチュートリアルを終了します。</string>
+    <string name="sandfly_keyboard_tutorial_chapter_web">ウェブページ</string>
+    <string name="sandfly_keyboard_tutorial_welcome_intro">このチュートリアルでは SandFly のキーボード ショートカットを学びます。ほとんどのショートカットは、<xliff:g id="key" example="アクション">%1$s</xliff:g> キーと他のキーを組み合わせて使います。<xliff:g id="location" example="アクション キーは Windows キーで、左の Alt キーの隣にあります。">%2$s</xliff:g>Ctrl キーで読み上げが止まります。各レッスンでは指示が出され、指示されたキーを押すと次の指示に進みます。指示はレッスン名の次の項目です。[目次] にはすべてのレッスンがあり、チュートリアルは前回のレッスンから再開します。</string>
+    <string name="sandfly_keyboard_tutorial_action_key_location">アクション キーは Windows キーで、左の Alt キーの隣にあります。Apple のキーボードでは、スペースバーの隣にある command キーです。</string>
+    <string name="sandfly_keyboard_tutorial_alt_key_location">Alt キーはスペースバーの隣にあります。</string>
+    <string name="sandfly_keyboard_tutorial_welcome_start"><xliff:g id="keys" example="アクション + スペース">%1$s</xliff:g>を押して開始します。</string>
+    <string name="sandfly_keyboard_tutorial_move_intro">[次の項目] と [前の項目] で、画面上の項目を読み上げ順に移動します。</string>
+    <string name="sandfly_keyboard_tutorial_move_next"><xliff:g id="keys" example="アクション + 右矢印">%1$s</xliff:g>を押して次の項目に移動します。「<xliff:g id="item" example="卵">%2$s</xliff:g>」まで進んでください。</string>
+    <string name="sandfly_keyboard_tutorial_move_previous"><xliff:g id="keys" example="アクション + 左矢印">%1$s</xliff:g>を押して前の項目に移動します。「<xliff:g id="item" example="パン">%2$s</xliff:g>」まで戻ってください。</string>
+    <string name="sandfly_keyboard_tutorial_activate_intro">有効化はフォーカスのある項目に対して行われます。</string>
+    <string name="sandfly_keyboard_tutorial_activate_button">「<xliff:g id="button" example="ベルを鳴らす">%2$s</xliff:g>」に移動します。<xliff:g id="keys" example="アクション + スペース">%1$s</xliff:g>を押して有効にします。</string>
+    <string name="sandfly_keyboard_tutorial_activate_check_box"><xliff:g id="keys" example="アクション + スペース">%1$s</xliff:g>で「<xliff:g id="check_box" example="チーズ増量">%2$s</xliff:g>」をオンにします。</string>
+    <string name="sandfly_keyboard_tutorial_activate_hold">項目によっては、長押しすると別の動作をします。「<xliff:g id="button" example="詳細">%2$s</xliff:g>」に移動します。<xliff:g id="keys" example="アクション + Shift + スペース">%1$s</xliff:g>を押して長押しします。</string>
+    <string name="sandfly_keyboard_tutorial_reading_controls_intro">読み上げコントロールは、上下の移動の動作を決めます。たとえば単語や文字単位での移動です。[次の項目] と [前の項目] では引き続き項目間を移動します。</string>
+    <string name="sandfly_keyboard_tutorial_choose_reading_control"><xliff:g id="keys" example="アクション + Shift + 右矢印">%1$s</xliff:g>または<xliff:g id="keys" example="アクション + Shift + 左矢印">%2$s</xliff:g>を押して読み上げコントロールを変更します。「<xliff:g id="reading_control" example="単語">%3$s</xliff:g>」を選択してください。</string>
+    <string name="sandfly_keyboard_tutorial_next_word"><xliff:g id="keys" example="アクション + 下矢印">%1$s</xliff:g>を押して次の単語に移動します。3 単語移動してください。</string>
+    <string name="sandfly_keyboard_tutorial_characters">読み上げコントロールを「<xliff:g id="reading_control" example="文字">%2$s</xliff:g>」に変更します。<xliff:g id="keys" example="アクション + 下矢印">%1$s</xliff:g>を押して 1 文字移動します。</string>
+    <string name="sandfly_keyboard_tutorial_headings_jump"><xliff:g id="keys" example="アクション + 下矢印">%1$s</xliff:g>を押して次の見出しに移動します。「<xliff:g id="heading" example="週末">%2$s</xliff:g>」に移動してください。</string>
+    <string name="sandfly_keyboard_tutorial_continuous_intro">SandFly は、フォーカスのある項目から画面の最後まで読み上げます。Ctrl キーで読み上げが止まります。</string>
+    <string name="sandfly_keyboard_tutorial_continuous_read"><xliff:g id="keys" example="アクション + Ctrl + R">%1$s</xliff:g>を押して、フォーカスのある項目から読み上げます。</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_intro">リストには一度に一部の項目しか表示されません。表示されている最後の項目を越えて移動すると、リストがスクロールします。</string>
+    <string name="sandfly_keyboard_tutorial_scrolling_next">「<xliff:g id="item" example="項目 15">%2$s</xliff:g>」に到達するまで <xliff:g id="keys" example="アクション + 右矢印">%1$s</xliff:g>を押してください。</string>
+    <string name="sandfly_keyboard_tutorial_actions_intro">項目によっては、有効化以外の操作があります。たとえばメッセージの「アーカイブ」や「削除」です。操作メニューにそれらの操作が一覧表示されます。</string>
+    <string name="sandfly_keyboard_tutorial_actions_archive">メッセージに移動します。<xliff:g id="keys" example="アクション + Ctrl + A">%1$s</xliff:g>を押して操作を開きます。「<xliff:g id="action" example="アーカイブ">%2$s</xliff:g>」を選択してください。</string>
+    <string name="sandfly_keyboard_tutorial_typing_intro">テキスト フィールドを有効にすると、そのフィールドに入力できます。</string>
+    <string name="sandfly_keyboard_tutorial_typing_open">「<xliff:g id="field" example="名前">%2$s</xliff:g>」フィールドに移動します。<xliff:g id="keys" example="アクション + スペース">%1$s</xliff:g>を押して入力を開始します。</string>
+    <string name="sandfly_keyboard_tutorial_typing_delete">Backspace キーで最後の 1 文字を削除します。</string>
+    <string name="sandfly_keyboard_tutorial_system_intro">Android には、アクション キーを使う独自のキーボード ショートカットがあります。これらはすべての画面で使えます。このレッスンでは、実行する代わりにチュートリアルが各ショートカットの動作を読み上げます。</string>
+    <string name="sandfly_keyboard_tutorial_system_back"><xliff:g id="keys" example="アクション + Esc">%1$s</xliff:g>を押して戻ります。</string>
+    <string name="sandfly_keyboard_tutorial_system_home"><xliff:g id="keys" example="アクション + H">%1$s</xliff:g>を押してホーム画面に移動します。</string>
+    <string name="sandfly_keyboard_tutorial_system_overview"><xliff:g id="keys" example="アクション + Tab">%1$s</xliff:g>を押して最近使ったアプリを表示します。Alt + Tab でアプリを切り替えます。</string>
+    <string name="sandfly_keyboard_tutorial_system_notifications"><xliff:g id="keys" example="アクション + N">%1$s</xliff:g>を押して通知を開きます。</string>
+    <string name="sandfly_keyboard_tutorial_menu_open"><xliff:g id="keys" example="アクション + Ctrl + M">%1$s</xliff:g>を押して SandFly メニューを開きます。メニューのコマンドを順に移動します。Esc キーでメニューが閉じます。</string>
+    <string name="sandfly_keyboard_tutorial_menu_close">Esc キーを押してメニューを閉じます。</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_title">キーボード ショートカットの一覧</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_intro">SandFly では、すべてのキーボード ショートカットがコマンドとともに一覧表示されます。</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_open"><xliff:g id="keys" example="アクション + Shift + /">%1$s</xliff:g>を押して一覧を開きます。Esc キーで閉じます。</string>
+    <string name="sandfly_keyboard_tutorial_shortcut_list_close">Esc キーを押して一覧を閉じます。</string>
+    <string name="sandfly_keyboard_tutorial_commands_copy"><xliff:g id="keys" example="アクション + Ctrl + C">%1$s</xliff:g>を押して、SandFly が最後に読み上げたテキストをクリップボードにコピーします。</string>
+    <string name="sandfly_keyboard_tutorial_commands_search"><xliff:g id="keys" example="アクション + Ctrl + /">%1$s</xliff:g>を押して、画面上のテキストを検索します。このレッスンでは、実行する代わりにチュートリアルが動作を読み上げます。</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_title">ブラウズモード</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_intro">ブラウズモードでは、1 文字のキーで特定の種類の次の項目に移動します。たとえば H キーで見出し、K キーでリンク、B キーでボタンです。Shift キーを押しながら押すと前に戻ります。テキスト フィールドに入力している間、ブラウズモードは OFF になります。</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_on"><xliff:g id="keys" example="アクションを 2 回">%1$s</xliff:g>押してブラウズモードを ON にします。</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_heading"><xliff:g id="keys" example="H">%1$s</xliff:g> キーを押して次の見出しに移動します。「<xliff:g id="heading" example="週末">%2$s</xliff:g>」に移動してください。</string>
+    <string name="sandfly_keyboard_tutorial_browse_mode_off"><xliff:g id="keys" example="アクションを 2 回">%1$s</xliff:g>押してブラウズモードを OFF にします。</string>
+    <string name="sandfly_keyboard_tutorial_practice_title">キーボードの練習</string>
+    <string name="sandfly_keyboard_tutorial_practice_intro">各キーボード ショートカットは、実行される代わりにキーとコマンドが読み上げられます。[次の項目]、[前の項目]、有効化はそのまま使えます。</string>
+    <string name="sandfly_keyboard_tutorial_practice_step">任意のキーボード ショートカットを押すと、その動作が読み上げられます。終了するには「<xliff:g id="button" example="練習を終了">%1$s</xliff:g>」を有効にします。</string>
+</resources>
