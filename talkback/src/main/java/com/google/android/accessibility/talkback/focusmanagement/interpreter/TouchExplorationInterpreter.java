@@ -28,6 +28,7 @@ import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
+import com.google.android.accessibility.talkback.screenelements.ScreenElements;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
@@ -234,6 +235,12 @@ public class TouchExplorationInterpreter implements AccessibilityEventListener {
 
     if (touchedFocusableNode != null && HomeScreenPages.isPage(context, touchedFocusableNode)) {
       // Between the icons of the home screen, focus stays on the icon touched last.
+      postDelayHandler.cancelPendingEmptyTouchAction(/* dispatchPendingActionImmediately= */ false);
+      return false;
+    }
+    if (touchedFocusableNode != null && ScreenElements.isCoveredHost(touchedFocusableNode)) {
+      // Between recognised screen elements over an app view that has nothing of its own to read,
+      // focus stays on the element touched last.
       postDelayHandler.cancelPendingEmptyTouchAction(/* dispatchPendingActionImmediately= */ false);
       return false;
     }

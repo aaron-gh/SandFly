@@ -1262,6 +1262,13 @@ public class FocusProcessorForLogicalNavigation {
         return setAccessibilityFocusInternal(next, navigationAction, eventId);
       }
       @Nullable AccessibilityNodeInfoCompat anchor = ScreenElements.anchor(index);
+      if (anchor != null && ScreenElements.isCoveredHost(anchor)) {
+        // A view the elements cover is passed over, also a WebView, which would otherwise take the
+        // swipe into its own web navigation.
+        @Nullable AccessibilityNodeInfoCompat past = ScreenElements.pastCoveredHost(anchor, forward);
+        // At the window's edge, the swipe goes on as SandFly's own: to the next window, or around.
+        return past == null ? null : setAccessibilityFocusInternal(past, navigationAction, eventId);
+      }
       if (!forward) {
         return anchor != null && setAccessibilityFocusInternal(anchor, navigationAction, eventId);
       }
@@ -1544,13 +1551,22 @@ public class FocusProcessorForLogicalNavigation {
 
     AccessibilityNodeInfoCompat target = navigationResult.getNode();
 
-    // Recognised screen elements anchored to the target come between it and the pivot.
+    // Recognised screen elements anchored to the target come between it and the pivot, and a view
+    // they cover is passed over for its elements.
     if (target != null
-        && logicalDirection == TraversalStrategy.SEARCH_FOCUS_BACKWARD
         && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
         && ScreenElements.isShowing()
         && target.getWindowId() == ScreenElements.getHostWindow()) {
-      @Nullable AccessibilityNodeInfoCompat element = ScreenElements.lastBefore(target);
+      @Nullable AccessibilityNodeInfoCompat element = null;
+      if (logicalDirection == TraversalStrategy.SEARCH_FOCUS_BACKWARD) {
+        element = ScreenElements.lastBefore(target);
+      } else if (logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD
+          && ScreenElements.isCoveredHost(target)) {
+        if (ScreenElements.getNeedsOrder()) {
+          orderScreenElements();
+        }
+        element = ScreenElements.firstAfter(target);
+      }
       if (element != null) {
         return setAccessibilityFocusInternal(element, navigationAction, eventId);
       }
@@ -1723,6 +1739,25 @@ public class FocusProcessorForLogicalNavigation {
     AccessibilityNodeInfoCompat middlePivot =
         TraversalStrategyUtils.searchFocus(
             traversalStrategy, nativePivot, navigationAction.searchDirection, nodeFilterOrWebView);
+    // A view that recognised screen elements cover, such as a game's view or a WebView with only a
+    // canvas, is passed over for its elements, before a WebView would take over navigation.
+    if (middlePivot != null
+        && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
+        && ScreenElements.isShowing()
+        && ScreenElements.isCoveredHost(middlePivot)) {
+      if (ScreenElements.getNeedsOrder()) {
+        orderScreenElements();
+      }
+      boolean forward =
+          TraversalStrategyUtils.getLogicalDirection(
+                  navigationAction.searchDirection, WindowUtils.isScreenLayoutRTL(service))
+              == TraversalStrategy.SEARCH_FOCUS_FORWARD;
+      @Nullable AccessibilityNodeInfoCompat element =
+          forward ? ScreenElements.firstAfter(middlePivot) : ScreenElements.lastBefore(middlePivot);
+      if (element != null) {
+        return NavigationResult.create(element);
+      }
+    }
     return findTargetFromMiddlePivot(
         middlePivot, navigationAction, nodeFilter, traversalStrategy, eventId);
   }
