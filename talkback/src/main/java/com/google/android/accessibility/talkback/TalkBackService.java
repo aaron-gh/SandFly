@@ -2066,7 +2066,15 @@ public class TalkBackService extends AccessibilityServiceCompat
       lockedBootCompletedPending = false;
     }
 
-    boolean shouldShowTutorial = shouldShowTutorial();
+    // Someone who used an earlier version gets the new features pages of an update before the
+    // tutorial, even if they never finished the tutorial of that version.
+    boolean showedNewFeatures =
+        !isFirstTimeUser()
+            && Settings.Secure.getInt(getContentResolver(), Settings.Global.DEVICE_PROVISIONED, 1)
+                != 0
+            && !OnboardingInitiator.hasOnboardingForNewFeaturesBeenShown(prefs, this)
+            && OnboardingInitiator.showOnboardingIfNecessary(this);
+    boolean shouldShowTutorial = !showedNewFeatures && shouldShowTutorial();
 
     if (shouldShowTutorial) {
       // Ignore Onboarding for the first-time user.
