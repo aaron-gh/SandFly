@@ -45,6 +45,7 @@ import static com.google.android.accessibility.talkback.trainingcommon.PageConfi
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_TRANSLATION;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_ARROW_KEYS;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_COMMANDS;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_DICTATION;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_PRO;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_UPDATE_WELCOME;
 
@@ -131,6 +132,10 @@ final class OnboardingConfigs {
   static final PageConfig.Builder sandflyCommands =
       PageConfig.builder(PAGE_ID_SANDFLY_COMMANDS, R.string.new_features_0_2_0_commands_title)
           .addText(R.string.new_features_0_2_0_commands);
+
+  static final PageConfig.Builder sandflyDictation =
+      PageConfig.builder(PAGE_ID_SANDFLY_DICTATION, R.string.new_features_0_2_0_dictation_title)
+          .addText(R.string.new_features_0_2_0_dictation);
 
   static final PageConfig.Builder sandflyPro =
       PageConfig.builder(PAGE_ID_SANDFLY_PRO, R.string.new_features_0_2_0_pro_title)
@@ -236,7 +241,8 @@ final class OnboardingConfigs {
                 sandflySettings,
                 sandflyTranslation,
                 sandflyArrowKeys,
-                sandflyCommands))
+                sandflyCommands,
+                sandflyDictation))
         .addPageEndOfSection(sandflyPro)
         .setButtons(DEFAULT_BUTTONS);
   }
