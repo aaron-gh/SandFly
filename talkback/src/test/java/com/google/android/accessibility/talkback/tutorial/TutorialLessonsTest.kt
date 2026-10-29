@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.tutorial
 
 import android.content.Context
+import android.view.KeyEvent
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting
@@ -66,9 +67,10 @@ class TutorialLessonsTest {
 
   @Test
   fun everyInstructionHasAnArgumentForEachPlaceholder() {
-    for (lesson in TutorialLessons.all) {
+    for (lesson in TutorialLessons.all + TutorialLessons.keyboard) {
       for (step in lesson.steps) {
-        val others = step.names.size + if (step.listItem > 0) 1 else 0
+        val others =
+          step.names.size + (if (step.listItem > 0) 1 else 0) + if (step.systemKey != 0) 1 else 0
         assertTrue(
           context.getResources().getResourceEntryName(step.text),
           placeholders(step.text) <= step.actions.size + others,
@@ -125,7 +127,7 @@ class TutorialLessonsTest {
   @Test
   fun choosingWordsNeedsTheWordsReadingControl() {
     val step = step("reading_controls", 1)
-    val gesture = TutorialInput.Gesture(0, context.getString(R.string.shortcut_value_select_next_setting))
+    val gesture = TutorialInput.Command(context.getString(R.string.shortcut_value_select_next_setting))
     assertNull(step.check(gesture, FakeContext(context)))
     assertNotNull(
       step.check(gesture, FakeContext(context, readingControl = Setting.GRANULARITY_WORDS))
@@ -152,6 +154,33 @@ class TutorialLessonsTest {
         }
       }
     }
+  }
+
+  @Test
+  fun keyboardLessonIdsAreUniqueWithPractice() {
+    val ids = TutorialLessons.keyboard.map { it.id }
+    assertEquals(ids.size, ids.toSet().size)
+    assertTrue(TutorialLessons.PRACTICE_LESSON in ids)
+  }
+
+  @Test
+  fun keyboardSystemStepsWaitForTheirOwnKey() {
+    val lesson = TutorialLessons.keyboard.first { it.id == "system" }
+    for (step in lesson.steps) {
+      assertTrue(step.systemKey in TutorialHooks.SYSTEM_KEY_CODES)
+      assertNotNull(step.check(TutorialInput.SystemKey(step.systemKey), FakeContext(context)))
+      assertNull(step.check(TutorialInput.SystemKey(KeyEvent.KEYCODE_A), FakeContext(context)))
+    }
+  }
+
+  @Test
+  fun browseModeStepsWaitForBrowseModeToChange() {
+    val lesson = TutorialLessons.keyboard.first { it.id == "browse_mode" }
+    val on = TutorialInput.BrowseMode(enabled = true)
+    val off = TutorialInput.BrowseMode(enabled = false)
+    assertNotNull(lesson.steps[0].check(on, FakeContext(context)))
+    assertNull(lesson.steps[0].check(off, FakeContext(context)))
+    assertNotNull(lesson.steps[2].check(off, FakeContext(context)))
   }
 
   @Test

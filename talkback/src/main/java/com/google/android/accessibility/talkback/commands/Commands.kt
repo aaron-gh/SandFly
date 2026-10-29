@@ -116,6 +116,25 @@ object Commands {
     return actions[value]
   }
 
+  @Volatile private var actionValues: Map<TalkBackPhysicalKeyboardShortcut, String>? = null
+
+  /**
+   * Returns the value of the command that the keyboard [action] runs: the command that has it as
+   * its keyboard action, otherwise the keyboard action's own command.
+   */
+  @JvmStatic
+  fun valueOfKeyboardAction(context: Context, action: TalkBackPhysicalKeyboardShortcut): String {
+    val values =
+      actionValues
+        ?: categoriesWithoutApps(context)
+          .flatMap { it.commands }
+          .mapNotNull { command -> command.keyboardAction?.let { it to command.value } }
+          .distinctBy { it.first }
+          .toMap()
+          .also { actionValues = it }
+    return values[action] ?: keyboardValue(context, action)
+  }
+
   /** Returns the commands available on this device, by category, ending with Open app. */
   @JvmStatic
   fun categories(context: Context): List<Category> = Builder(context, withApps = true).build()

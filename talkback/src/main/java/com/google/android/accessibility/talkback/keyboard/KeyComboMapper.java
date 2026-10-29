@@ -46,7 +46,6 @@ import static com.google.android.accessibility.talkback.contextmenu.ListMenuMana
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.VOICE_PROFILE;
 import static com.google.android.accessibility.talkback.selector.SelectorController.Setting.ACTIONS;
-import static com.google.android.accessibility.talkback.trainingcommon.TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_KEYBOARD;
 import static com.google.android.accessibility.utils.input.CursorGranularity.CHARACTER;
 import static com.google.android.accessibility.utils.input.CursorGranularity.DEFAULT;
 import static com.google.android.accessibility.utils.input.CursorGranularity.LINE;
@@ -93,8 +92,8 @@ import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
 import com.google.android.accessibility.talkback.preference.base.TalkBackKeyboardShortcutPreferenceFragment;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.AnnounceType;
-import com.google.android.accessibility.talkback.training.TutorialInitiator;
-import com.google.android.accessibility.talkback.trainingcommon.TrainingActivity;
+import com.google.android.accessibility.talkback.tutorial.TutorialActivity;
+import com.google.android.accessibility.talkback.tutorial.TutorialLessons;
 import com.google.android.accessibility.talkback.utils.DateTimeUtils;
 import com.google.android.accessibility.talkback.utils.GeminiCommandUtils;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
@@ -922,15 +921,12 @@ public class KeyComboMapper {
   }
 
   private void showTutorial() {
-    Intent intent =
-        TrainingActivity.createTrainingIntent(accessibilityService, TRAINING_ID_TUTORIAL_KEYBOARD);
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    accessibilityService.startActivity(intent);
+    accessibilityService.startActivity(TutorialActivity.keyboardIntent(accessibilityService));
   }
 
   private void openLearnModePage() {
-    Intent intent = TutorialInitiator.createPracticeKeyboardShortcutsIntent(accessibilityService);
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    Intent intent =
+        TutorialActivity.keyboardIntent(accessibilityService, TutorialLessons.PRACTICE_LESSON);
     accessibilityService.startActivity(intent);
   }
 

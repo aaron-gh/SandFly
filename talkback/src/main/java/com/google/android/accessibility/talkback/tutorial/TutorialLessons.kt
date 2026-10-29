@@ -16,14 +16,22 @@
 
 package com.google.android.accessibility.talkback.tutorial
 
+import android.view.KeyEvent
 import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting
 
 /** Something the user did that a tutorial step can wait for. */
 internal sealed interface TutorialInput {
-  /** A gesture and the action assigned to it, after the action has run or been taken. */
-  data class Gesture(val gestureId: Int, val action: String) : TutorialInput
+  /**
+   * A gesture or keys and the command assigned to them, after the command has run or been taken.
+   */
+  data class Command(val action: String) : TutorialInput
+
+  /** One of Android's own shortcuts with the Action key, [keyCode] with it, taken by the tutorial. */
+  data class SystemKey(val keyCode: Int) : TutorialInput
+
+  data class BrowseMode(val enabled: Boolean) : TutorialInput
 
   data class Focused(val target: String) : TutorialInput
 
@@ -47,10 +55,13 @@ internal sealed interface TutorialInput {
 
 /** What a step check can ask about SandFly's state. */
 internal interface StepContext {
-  /** Whether [action] is the action key in [key], such as R.string.shortcut_value_next. */
+  /**
+   * Whether [action] is the command in [key]: a command value such as R.string.shortcut_value_next,
+   * or a keyboard action's key such as R.string.keycombo_shortcut_navigate_down.
+   */
   fun isAction(action: String, @StringRes key: Int): Boolean
 
-  /** Whether the last gesture, made in the last few seconds, had the action key in [key]. */
+  /** Whether the last gesture or keys, in the last few seconds, ran the command in [key]. */
   fun recentAction(@StringRes key: Int): Boolean
 
   /** The reading control that is selected. */
@@ -83,10 +94,10 @@ internal enum class Practice {
 }
 
 /**
- * One instruction of a lesson. [text] has a %n$s placeholder for the gesture of each action in
- * [actions], followed by one for each string in [names] and for list item [listItem]. When one of
- * the actions has no gesture, [altText] with [altActions] is used, if every one of those has a
- * gesture.
+ * One instruction of a lesson. [text] has a %n$s placeholder for the gesture or keys of each action
+ * in [actions], or of Android's shortcut [systemKey], followed by one for each string in [names]
+ * and for list item [listItem]. When one of the actions has no gesture or keys, [altText] with
+ * [altActions] is used, if every one of those has them.
  */
 internal class TutorialStep(
   @StringRes val text: Int,
@@ -102,6 +113,10 @@ internal class TutorialStep(
   val distinct: Boolean = false,
   /** Says nothing when the step is done, because speech is paused or reading continues. */
   val silent: Boolean = false,
+  /** The key that Android acts on with the Action key, which the tutorial takes in this step. */
+  val systemKey: Int = 0,
+  /** Only possible while browse mode is available. */
+  val needsBrowseMode: Boolean = false,
   val check: StepCheck,
 )
 
@@ -112,6 +127,8 @@ internal class TutorialLesson(
   @StringRes val intro: Int,
   val practice: Practice,
   val steps: List<TutorialStep>,
+  /** [intro] has placeholders for the name of the key that most keyboard shortcuts use and where it is. */
+  val introNamesKey: Boolean = false,
 )
 
 /** Practice item keys. */
@@ -147,8 +164,8 @@ internal object Targets {
 }
 
 internal object TutorialLessons {
-  private fun gesture(@StringRes vararg actions: Int): StepCheck = { input, c ->
-    if (input is TutorialInput.Gesture && actions.any { c.isAction(input.action, it) }) "" else null
+  private fun command(@StringRes vararg actions: Int): StepCheck = { input, c ->
+    if (input is TutorialInput.Command && actions.any { c.isAction(input.action, it) }) "" else null
   }
 
   private fun focused(target: String): StepCheck = { input, _ ->
@@ -170,11 +187,22 @@ internal object TutorialLessons {
     if (input is TutorialInput.Clicked && input.target == target) target else null
   }
 
-  /** A gesture with one of [actions] left [setting] selected. */
+  /** The Name field holds the typing word as [expected] changes it, in any case. */
+  private fun typed(expected: (String) -> String): StepCheck = { input, c ->
+    if (
+      input is TutorialInput.TextChanged &&
+        input.target == Targets.NAME &&
+        input.text.trim().equals(expected(c.string(R.string.sandfly_tutorial_typing_word)), true)
+    )
+      ""
+    else null
+  }
+
+  /** A gesture or keys with one of [actions] left [setting] selected. */
   private fun readingControl(setting: Setting, @StringRes vararg actions: Int): StepCheck =
     { input, c ->
       if (
-        input is TutorialInput.Gesture &&
+        input is TutorialInput.Command &&
           actions.any { c.isAction(input.action, it) } &&
           c.readingControl == setting
       )
@@ -205,7 +233,7 @@ internal object TutorialLessons {
               R.string.sandfly_tutorial_welcome_start,
               actions = listOf(R.string.shortcut_value_action_setting_activate_current_action),
             ) { input, c ->
-              gesture(R.string.shortcut_value_action_setting_activate_current_action)(input, c)
+              command(R.string.shortcut_value_action_setting_activate_current_action)(input, c)
                 ?: clicked(Targets.INSTRUCTION)(input, c)
             }
           ),
@@ -307,12 +335,12 @@ internal object TutorialLessons {
               R.string.sandfly_tutorial_pause_pause,
               actions = listOf(R.string.shortcut_value_pause_or_resume_feedback),
               silent = true,
-              check = gesture(R.string.shortcut_value_pause_or_resume_feedback),
+              check = command(R.string.shortcut_value_pause_or_resume_feedback),
             ),
             TutorialStep(
               R.string.sandfly_tutorial_pause_resume,
               actions = listOf(R.string.shortcut_value_pause_or_resume_feedback),
-              check = gesture(R.string.shortcut_value_pause_or_resume_feedback),
+              check = command(R.string.shortcut_value_pause_or_resume_feedback),
             ),
           ),
       ),
@@ -426,7 +454,7 @@ internal object TutorialLessons {
             TutorialStep(
               R.string.sandfly_tutorial_scrolling_page,
               actions = listOf(R.string.shortcut_value_scroll_forward),
-              check = gesture(R.string.shortcut_value_scroll_forward),
+              check = command(R.string.shortcut_value_scroll_forward),
             ),
           ),
       ),
@@ -542,25 +570,25 @@ internal object TutorialLessons {
               R.string.sandfly_tutorial_system_back,
               actions = listOf(R.string.shortcut_value_back),
               taken = listOf(R.string.shortcut_value_back),
-              check = gesture(R.string.shortcut_value_back),
+              check = command(R.string.shortcut_value_back),
             ),
             TutorialStep(
               R.string.sandfly_tutorial_system_home,
               actions = listOf(R.string.shortcut_value_home),
               taken = listOf(R.string.shortcut_value_home),
-              check = gesture(R.string.shortcut_value_home),
+              check = command(R.string.shortcut_value_home),
             ),
             TutorialStep(
               R.string.sandfly_tutorial_system_overview,
               actions = listOf(R.string.shortcut_value_overview),
               taken = listOf(R.string.shortcut_value_overview),
-              check = gesture(R.string.shortcut_value_overview),
+              check = command(R.string.shortcut_value_overview),
             ),
             TutorialStep(
               R.string.sandfly_tutorial_system_notifications,
               actions = listOf(R.string.shortcut_value_notifications),
               taken = listOf(R.string.shortcut_value_notifications),
-              check = gesture(R.string.shortcut_value_notifications),
+              check = command(R.string.shortcut_value_notifications),
             ),
           ),
       ),
@@ -577,14 +605,14 @@ internal object TutorialLessons {
               actions =
                 listOf(R.string.shortcut_value_talkback_breakout, R.string.shortcut_value_back),
               silent = true,
-              check = gesture(R.string.shortcut_value_talkback_breakout),
+              check = command(R.string.shortcut_value_talkback_breakout),
             ),
             TutorialStep(
               R.string.sandfly_tutorial_menu_close,
               actions = listOf(R.string.shortcut_value_back),
             ) { input, c ->
               if (input == TutorialInput.WindowFocusReturned) ""
-              else gesture(R.string.shortcut_value_back)(input, c)
+              else command(R.string.shortcut_value_back)(input, c)
             },
           ),
       ),
@@ -599,24 +627,24 @@ internal object TutorialLessons {
             TutorialStep(
               R.string.sandfly_tutorial_commands_status,
               actions = listOf(R.string.shortcut_value_announce_status),
-              check = gesture(R.string.shortcut_value_announce_status),
+              check = command(R.string.shortcut_value_announce_status),
             ),
             TutorialStep(
               R.string.sandfly_tutorial_commands_copy,
               actions = listOf(R.string.shortcut_value_copy_last_spoken_phrase),
-              check = gesture(R.string.shortcut_value_copy_last_spoken_phrase),
+              check = command(R.string.shortcut_value_copy_last_spoken_phrase),
             ),
             TutorialStep(
               R.string.sandfly_tutorial_commands_search,
               actions = listOf(R.string.shortcut_value_screen_search),
               taken = listOf(R.string.shortcut_value_screen_search),
-              check = gesture(R.string.shortcut_value_screen_search),
+              check = command(R.string.shortcut_value_screen_search),
             ),
             TutorialStep(
               R.string.sandfly_tutorial_commands_speech_off,
               actions = listOf(R.string.shortcut_value_toggle_voice_feedback),
               taken = listOf(R.string.shortcut_value_toggle_voice_feedback),
-              check = gesture(R.string.shortcut_value_toggle_voice_feedback),
+              check = command(R.string.shortcut_value_toggle_voice_feedback),
             ),
           ),
       ),
@@ -636,6 +664,369 @@ internal object TutorialLessons {
           ),
       ),
     )
+
+  private val click = R.string.shortcut_value_perform_click_action
+  private val moveDown = R.string.keycombo_shortcut_navigate_down
+
+  /** Android's own shortcut with the Action key and [keyCode], taken in this step. */
+  private fun systemKeyStep(@StringRes text: Int, keyCode: Int) =
+    TutorialStep(text, systemKey = keyCode) { input, _ ->
+      if (input is TutorialInput.SystemKey && input.keyCode == keyCode) "" else null
+    }
+
+  private fun windowClosed(): StepCheck = { input, _ ->
+    if (input == TutorialInput.WindowFocusReturned) "" else null
+  }
+
+  /** The keyboard tutorial's lessons, with the user's keyboard shortcuts. */
+  val keyboard: List<TutorialLesson> =
+    listOf(
+      TutorialLesson(
+        id = "welcome",
+        chapter = R.string.sandfly_tutorial_chapter_basics,
+        title = R.string.sandfly_tutorial_welcome_title,
+        intro = R.string.sandfly_keyboard_tutorial_welcome_intro,
+        practice = Practice.NONE,
+        introNamesKey = true,
+        steps =
+          listOf(
+            TutorialStep(R.string.sandfly_keyboard_tutorial_welcome_start, actions = listOf(click)) {
+              input,
+              c ->
+              command(click)(input, c) ?: clicked(Targets.INSTRUCTION)(input, c)
+            }
+          ),
+      ),
+      TutorialLesson(
+        id = "move",
+        chapter = R.string.sandfly_tutorial_chapter_basics,
+        title = R.string.sandfly_tutorial_move_title,
+        intro = R.string.sandfly_keyboard_tutorial_move_intro,
+        practice = Practice.SHOPPING_LIST,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_move_next,
+              actions = listOf(R.string.shortcut_value_next),
+              names = listOf(R.string.sandfly_tutorial_item_eggs),
+              check = focusedBy(Targets.EGGS, R.string.shortcut_value_next),
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_move_previous,
+              actions = listOf(R.string.shortcut_value_previous),
+              names = listOf(R.string.sandfly_tutorial_item_bread),
+              check = focusedBy(Targets.BREAD, R.string.shortcut_value_previous),
+            ),
+          ),
+      ),
+      TutorialLesson(
+        id = "activate",
+        chapter = R.string.sandfly_tutorial_chapter_basics,
+        title = R.string.sandfly_tutorial_activate_title,
+        intro = R.string.sandfly_keyboard_tutorial_activate_intro,
+        practice = Practice.CONTROLS,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_activate_button,
+              actions = listOf(click),
+              names = listOf(R.string.sandfly_tutorial_bell),
+              check = clicked(Targets.BELL),
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_activate_check_box,
+              actions = listOf(click),
+              names = listOf(R.string.sandfly_tutorial_extra_cheese),
+            ) { input, _ ->
+              if (
+                input is TutorialInput.Checked &&
+                  input.target == Targets.EXTRA_CHEESE &&
+                  input.checked
+              )
+                ""
+              else null
+            },
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_activate_hold,
+              actions = listOf(R.string.shortcut_value_perform_long_click_action),
+              names = listOf(R.string.sandfly_tutorial_details),
+            ) { input, _ ->
+              if (input is TutorialInput.LongClicked && input.target == Targets.DETAILS) "" else null
+            },
+          ),
+      ),
+      TutorialLesson(
+        id = "reading_controls",
+        chapter = R.string.sandfly_tutorial_chapter_reading,
+        title = R.string.sandfly_tutorial_reading_controls_title,
+        intro = R.string.sandfly_keyboard_tutorial_reading_controls_intro,
+        practice = Practice.SENTENCE,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_tutorial_reading_controls_move,
+              check = focused(Targets.SENTENCE),
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_choose_reading_control,
+              actions = readingControlActions,
+              names = listOf(R.string.granularity_word),
+              check = readingControl(Setting.GRANULARITY_WORDS, *readingControlActions.toIntArray()),
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_next_word,
+              actions = listOf(moveDown),
+              count = 3,
+              check = readingControl(Setting.GRANULARITY_WORDS, moveDown),
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_characters,
+              actions = listOf(moveDown),
+              names = listOf(R.string.granularity_character),
+              check = readingControl(Setting.GRANULARITY_CHARACTERS, moveDown),
+            ),
+          ),
+      ),
+      TutorialLesson(
+        id = "headings",
+        chapter = R.string.sandfly_tutorial_chapter_reading,
+        title = R.string.sandfly_tutorial_headings_title,
+        intro = R.string.sandfly_tutorial_headings_intro,
+        practice = Practice.FORECAST,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_choose_reading_control,
+              actions = readingControlActions,
+              names = listOf(R.string.granularity_native_heading),
+              check =
+                readingControl(Setting.GRANULARITY_HEADINGS, *readingControlActions.toIntArray()),
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_headings_jump,
+              actions = listOf(moveDown),
+              names = listOf(R.string.sandfly_tutorial_forecast_weekend),
+            ) { input, c ->
+              if (
+                input is TutorialInput.Focused &&
+                  input.target == Targets.WEEKEND &&
+                  c.readingControl == Setting.GRANULARITY_HEADINGS
+              )
+                ""
+              else null
+            },
+          ),
+      ),
+      TutorialLesson(
+        id = "continuous_reading",
+        chapter = R.string.sandfly_tutorial_chapter_reading,
+        title = R.string.sandfly_tutorial_continuous_title,
+        intro = R.string.sandfly_keyboard_tutorial_continuous_intro,
+        practice = Practice.RECIPE,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_tutorial_continuous_move,
+              check = focused(Targets.RECIPE_FIRST),
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_continuous_read,
+              actions = listOf(R.string.shortcut_value_read_from_current),
+            ) { input, _ ->
+              if (input == TutorialInput.ReadingStarted) "" else null
+            },
+          ),
+      ),
+      TutorialLesson(
+        id = "scrolling",
+        chapter = R.string.sandfly_tutorial_chapter_controls,
+        title = R.string.sandfly_tutorial_scrolling_title,
+        intro = R.string.sandfly_keyboard_tutorial_scrolling_intro,
+        practice = Practice.LONG_LIST,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_scrolling_next,
+              actions = listOf(R.string.shortcut_value_next),
+              listItem = SCROLL_TARGET,
+              check = focused(Targets.listItem(SCROLL_TARGET)),
+            )
+          ),
+      ),
+      TutorialLesson(
+        id = "actions",
+        chapter = R.string.sandfly_tutorial_chapter_controls,
+        title = R.string.sandfly_tutorial_actions_title,
+        intro = R.string.sandfly_keyboard_tutorial_actions_intro,
+        practice = Practice.MESSAGE,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_actions_archive,
+              actions = listOf(R.string.shortcut_value_show_custom_actions),
+              names = listOf(R.string.sandfly_tutorial_message_archive),
+            ) { input, _ ->
+              if (
+                input is TutorialInput.CustomAction &&
+                  input.target == Targets.MESSAGE &&
+                  input.label == R.string.sandfly_tutorial_message_archive
+              )
+                ""
+              else null
+            }
+          ),
+      ),
+      TutorialLesson(
+        id = "typing",
+        chapter = R.string.sandfly_tutorial_chapter_controls,
+        title = R.string.sandfly_tutorial_typing_title,
+        intro = R.string.sandfly_keyboard_tutorial_typing_intro,
+        practice = Practice.TEXT_FIELD,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_typing_open,
+              actions = listOf(click),
+              names = listOf(R.string.sandfly_tutorial_name),
+              check = clicked(Targets.NAME),
+            ),
+            TutorialStep(
+              R.string.sandfly_tutorial_typing_type,
+              names = listOf(R.string.sandfly_tutorial_typing_word),
+              check = typed { it },
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_typing_delete,
+              check = typed { it.dropLast(1) },
+            ),
+          ),
+      ),
+      TutorialLesson(
+        id = "system",
+        chapter = R.string.sandfly_tutorial_chapter_getting_around,
+        title = R.string.sandfly_tutorial_system_title,
+        intro = R.string.sandfly_keyboard_tutorial_system_intro,
+        practice = Practice.NONE,
+        steps =
+          listOf(
+            systemKeyStep(R.string.sandfly_keyboard_tutorial_system_back, KeyEvent.KEYCODE_ESCAPE),
+            systemKeyStep(R.string.sandfly_keyboard_tutorial_system_home, KeyEvent.KEYCODE_H),
+            systemKeyStep(R.string.sandfly_keyboard_tutorial_system_overview, KeyEvent.KEYCODE_TAB),
+            systemKeyStep(
+              R.string.sandfly_keyboard_tutorial_system_notifications,
+              KeyEvent.KEYCODE_N,
+            ),
+          ),
+      ),
+      TutorialLesson(
+        id = "menu",
+        chapter = R.string.sandfly_tutorial_chapter_getting_around,
+        title = R.string.sandfly_tutorial_menu_title,
+        intro = R.string.sandfly_tutorial_menu_intro,
+        practice = Practice.NONE,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_menu_open,
+              actions = listOf(R.string.shortcut_value_talkback_breakout),
+              silent = true,
+              check = command(R.string.shortcut_value_talkback_breakout),
+            ),
+            TutorialStep(R.string.sandfly_keyboard_tutorial_menu_close, check = windowClosed()),
+          ),
+      ),
+      TutorialLesson(
+        id = "shortcut_list",
+        chapter = R.string.sandfly_tutorial_chapter_getting_around,
+        title = R.string.sandfly_keyboard_tutorial_shortcut_list_title,
+        intro = R.string.sandfly_keyboard_tutorial_shortcut_list_intro,
+        practice = Practice.NONE,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_shortcut_list_open,
+              actions = listOf(R.string.keycombo_shortcut_other_show_keyboard_shortcuts_dialog),
+              silent = true,
+              check = command(R.string.keycombo_shortcut_other_show_keyboard_shortcuts_dialog),
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_shortcut_list_close,
+              check = windowClosed(),
+            ),
+          ),
+      ),
+      TutorialLesson(
+        id = "commands",
+        chapter = R.string.sandfly_tutorial_chapter_getting_around,
+        title = R.string.sandfly_tutorial_commands_title,
+        intro = R.string.sandfly_tutorial_commands_intro,
+        practice = Practice.NONE,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_commands_copy,
+              actions = listOf(R.string.shortcut_value_copy_last_spoken_phrase),
+              check = command(R.string.shortcut_value_copy_last_spoken_phrase),
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_commands_search,
+              actions = listOf(R.string.shortcut_value_screen_search),
+              taken = listOf(R.string.shortcut_value_screen_search),
+              check = command(R.string.shortcut_value_screen_search),
+            ),
+          ),
+      ),
+      TutorialLesson(
+        id = "browse_mode",
+        chapter = R.string.sandfly_keyboard_tutorial_chapter_web,
+        title = R.string.sandfly_keyboard_tutorial_browse_mode_title,
+        intro = R.string.sandfly_keyboard_tutorial_browse_mode_intro,
+        practice = Practice.FORECAST,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_browse_mode_on,
+              actions = listOf(R.string.shortcut_value_toggle_browse_mode),
+              needsBrowseMode = true,
+            ) { input, _ ->
+              if (input == TutorialInput.BrowseMode(enabled = true)) "" else null
+            },
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_browse_mode_heading,
+              actions = listOf(R.string.keycombo_shortcut_navigate_next_heading),
+              names = listOf(R.string.sandfly_tutorial_forecast_weekend),
+              needsBrowseMode = true,
+              check = focusedBy(Targets.WEEKEND, R.string.keycombo_shortcut_navigate_next_heading),
+            ),
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_browse_mode_off,
+              actions = listOf(R.string.shortcut_value_toggle_browse_mode),
+              needsBrowseMode = true,
+            ) { input, _ ->
+              if (input == TutorialInput.BrowseMode(enabled = false)) "" else null
+            },
+          ),
+      ),
+      TutorialLesson(
+        id = PRACTICE_LESSON,
+        chapter = R.string.sandfly_tutorial_chapter_practice,
+        title = R.string.sandfly_keyboard_tutorial_practice_title,
+        intro = R.string.sandfly_keyboard_tutorial_practice_intro,
+        practice = Practice.END_PRACTICE,
+        steps =
+          listOf(
+            TutorialStep(
+              R.string.sandfly_keyboard_tutorial_practice_step,
+              names = listOf(R.string.sandfly_tutorial_end_practice),
+              check = clicked(Targets.END_PRACTICE),
+            )
+          ),
+      ),
+    )
+
+  /** The commands that keyboard practice still runs, so that End practice can be reached. */
+  val KEYBOARD_PRACTICE_PERFORMED =
+    listOf(R.string.shortcut_value_next, R.string.shortcut_value_previous, click)
 
   /** The lesson whose gestures are said instead of done, apart from moving and activating. */
   const val PRACTICE_LESSON = "practice"
@@ -667,6 +1058,10 @@ internal object TutorialLessons {
       R.string.shortcut_value_a11y_button_long_press,
       R.string.shortcut_value_tutorial,
       R.string.shortcut_value_practice_gestures,
+      R.string.keycombo_shortcut_global_show_learn_mode_page,
+      R.string.keycombo_shortcut_other_open_talkback_settings,
+      R.string.keycombo_shortcut_other_open_tts_settings,
+      R.string.keycombo_shortcut_other_report_issue,
     )
 
   /** Actions that a lesson takes in the same way, as they turn speech or SandFly off. */

@@ -31,6 +31,7 @@ import android.text.InputType
 import android.text.TextWatcher
 import android.util.TypedValue
 import android.view.Gravity
+import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
@@ -55,8 +56,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.commands.CommandBindings
+import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
+import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav
+import com.google.android.accessibility.talkback.keyboard.KeyCombo
+import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.selector.SelectorController
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -67,7 +73,8 @@ import com.google.android.accessibility.utils.output.SpeechController
  * SandFly's tutorial: lessons in chapters, each with an instruction and practice items. Each step
  * waits until the user has done what it says, with their own gestures, then says the next one.
  * Gestures that would leave the tutorial are taken in the steps that teach them, and said instead.
- * The tutorial remembers the lesson it was on and the lessons that are done.
+ * The keyboard tutorial does the same with the user's keyboard shortcuts and its own lessons. The
+ * tutorial remembers the lesson it was on and the lessons that are done.
  */
 class TutorialActivity : AppCompatActivity() {
   private val handler = Handler(Looper.getMainLooper())
@@ -81,6 +88,9 @@ class TutorialActivity : AppCompatActivity() {
   /** Said after the lesson's heading when it first has focus. */
   private var lessonText: String? = null
   private var heading: View? = null
+
+  /** Whether this is the keyboard tutorial. */
+  private var keyboard = false
 
   private var lessonIndex = -1
   private var stepIndex = 0
@@ -97,18 +107,21 @@ class TutorialActivity : AppCompatActivity() {
   /** Said when continuous reading stops, so that it doesn't interrupt the reading. */
   private var afterReading: (() -> Unit)? = null
 
+  private val lessons: List<TutorialLesson>
+    get() = if (keyboard) TutorialLessons.keyboard else TutorialLessons.all
+
   private val lesson: TutorialLesson?
-    get() = TutorialLessons.all.getOrNull(lessonIndex)
+    get() = lessons.getOrNull(lessonIndex)
 
   private val step: TutorialStep?
     get() = if (lessonDone) null else lesson?.steps?.getOrNull(stepIndex)
 
   private val stepContext =
     object : StepContext {
-      override fun isAction(action: String, key: Int) = action == getString(key)
+      override fun isAction(action: String, key: Int) = action == commandValue(key)
 
       override fun recentAction(key: Int) =
-        lastAction == getString(key) &&
+        lastAction == commandValue(key) &&
           SystemClock.uptimeMillis() - lastActionTime < RECENT_ACTION_MS
 
       override val readingControl: SelectorController.Setting
@@ -119,7 +132,35 @@ class TutorialActivity : AppCompatActivity() {
 
   private val hooks =
     object : TutorialHooks.Listener {
-      override fun onGesture(gestureId: Int, action: String): Boolean {
+      override fun onGesture(gestureId: Int, action: String): Boolean =
+        onCommand(action) { GestureShortcutMapping.getGestureString(this@TutorialActivity, gestureId) }
+
+      override fun onKeys(keys: String?, command: String): Boolean = onCommand(command) { keys }
+
+      override fun onSystemKeys(keyCode: Int): Boolean {
+        if (!hasWindowFocus() || lessonIndex < 0) return false
+        userActed()
+        val name = systemKeyLabel(keyCode)
+        when {
+          lesson?.id == TutorialLessons.PRACTICE_LESSON && !lessonDone ->
+            speakNow(getString(R.string.sandfly_tutorial_practice_gesture, systemKeyName(keyCode), name))
+          step?.systemKey == keyCode -> {
+            speakNow(name)
+            handler.post { onInput(TutorialInput.SystemKey(keyCode)) }
+          }
+          keyCode == KeyEvent.KEYCODE_ESCAPE ->
+            speakNow(getString(R.string.sandfly_tutorial_back_in_lesson))
+          else -> speakNow(getString(R.string.sandfly_tutorial_not_in_lesson, name))
+        }
+        return true
+      }
+
+      override fun onBrowseMode(enabled: Boolean) {
+        handler.post { onInput(TutorialInput.BrowseMode(enabled)) }
+      }
+
+      /** A gesture or keys ran [action]: [inputName] names them, for practice. */
+      private fun onCommand(action: String, inputName: () -> String?): Boolean {
         userActed()
         lastAction = action
         lastActionTime = SystemClock.uptimeMillis()
@@ -127,14 +168,14 @@ class TutorialActivity : AppCompatActivity() {
         val taken =
           focused &&
             if (lesson?.id == TutorialLessons.PRACTICE_LESSON && !lessonDone) {
-              practice(gestureId, action)
+              practice(inputName(), action)
             } else {
-              step?.taken?.any { getString(it) == action } == true
+              step?.taken?.any { commandValue(it) == action } == true
             }
         if (taken && lesson?.id != TutorialLessons.PRACTICE_LESSON) {
           speakNow(actionName(action))
         }
-        handler.post { onInput(TutorialInput.Gesture(gestureId, action)) }
+        handler.post { onInput(TutorialInput.Command(action)) }
         if (!taken && focused && action == getString(R.string.shortcut_value_back) && keepsBack()) {
           speakNow(getString(R.string.sandfly_tutorial_back_in_lesson))
           return true
@@ -144,7 +185,7 @@ class TutorialActivity : AppCompatActivity() {
             speakNow(getString(R.string.sandfly_tutorial_not_in_lesson, actionName(action)))
             return true
           }
-          if (TutorialLessons.SILENCING_ACTIONS.any { getString(it) == action }) {
+          if (TutorialLessons.SILENCING_ACTIONS.any { commandValue(it) == action }) {
             speakNow(getString(R.string.sandfly_tutorial_not_in_lesson_short, actionName(action)))
             return true
           }
@@ -167,7 +208,8 @@ class TutorialActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setTitle(R.string.sandfly_tutorial_title)
+    keyboard = intent.getBooleanExtra(EXTRA_KEYBOARD, false)
+    setTitle(titleRes())
     mapping = GestureShortcutMapping(this)
 
     content = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL }
@@ -206,23 +248,35 @@ class TutorialActivity : AppCompatActivity() {
       },
     )
 
-    val requested = TutorialLessons.indexOf(intent.getStringExtra(EXTRA_LESSON))
-    val saved = TutorialLessons.indexOf(prefs().getString(PREF_LESSON, null))
-    val done = prefs().getStringSet(PREF_DONE, emptySet()) ?: emptySet()
+    openStartLesson(intent)
+  }
+
+  /** Opens the lesson that [intent] asks for, or the one the tutorial was on. */
+  private fun openStartLesson(intent: Intent) {
+    val requested = indexOf(intent.getStringExtra(EXTRA_LESSON))
+    val saved = indexOf(prefs().getString(prefLesson(), null))
+    val done = prefs().getStringSet(prefDone(), emptySet()) ?: emptySet()
     when {
       requested >= 0 -> openLesson(requested)
       saved < 0 -> openLesson(0)
       // A lesson that was finished goes on to the next.
-      TutorialLessons.all[saved].id in done && saved + 1 < TutorialLessons.all.size ->
-        openLesson(saved + 1)
+      lessons[saved].id in done && saved + 1 < lessons.size -> openLesson(saved + 1)
       else -> openLesson(saved)
     }
   }
 
   override fun onNewIntent(intent: Intent) {
     super.onNewIntent(intent)
+    val keyboard = intent.getBooleanExtra(EXTRA_KEYBOARD, false)
+    if (keyboard != this.keyboard) {
+      // The other tutorial, which has lessons of its own.
+      this.keyboard = keyboard
+      setTitle(titleRes())
+      openStartLesson(intent)
+      return
+    }
     // Opened again, so that the lesson is read again.
-    val requested = TutorialLessons.indexOf(intent.getStringExtra(EXTRA_LESSON))
+    val requested = indexOf(intent.getStringExtra(EXTRA_LESSON))
     when {
       requested >= 0 -> openLesson(requested)
       lessonIndex >= 0 -> openLesson(lessonIndex)
@@ -267,13 +321,13 @@ class TutorialActivity : AppCompatActivity() {
   // Lessons
 
   private fun openLesson(index: Int) {
-    val lesson = TutorialLessons.all[index]
+    val lesson = lessons[index]
     lessonIndex = index
     stepIndex = 0
     hits.clear()
     lessonDone = false
     afterReading = null
-    prefs().edit { putString(PREF_LESSON, lesson.id) }
+    prefs().edit { putString(prefLesson(), lesson.id) }
 
     content.removeAllViews()
     val heading =
@@ -282,12 +336,13 @@ class TutorialActivity : AppCompatActivity() {
             R.string.sandfly_tutorial_lesson_heading,
             getString(lesson.title),
             index + 1,
-            TutorialLessons.all.size,
+            lessons.size,
           )
         )
         .apply { accessibilityDelegate = Watch(Targets.HEADING, heading = true) }
     content.addView(heading)
-    val intro = text(getString(lesson.intro))
+    val introText = introOf(lesson)
+    val intro = text(introText)
     val instruction = watched(text(""), Targets.INSTRUCTION)
     if (index == 0) {
       // Before Android 13, Android recognizes the double tap itself and activates the focus.
@@ -301,7 +356,7 @@ class TutorialActivity : AppCompatActivity() {
     addPractice(lesson.practice)
     bottomBar.visibility = View.VISIBLE
     nextButton.setText(R.string.sandfly_tutorial_skip_step)
-    lessonText = getString(lesson.intro) + "\n" + showInstruction()
+    lessonText = introText + "\n" + showInstruction()
     scroll.scrollTo(0, 0)
     // When the window opens, SandFly focuses its first item, the heading, itself.
     if (hasWindowFocus()) heading.post { focus(heading) }
@@ -344,7 +399,7 @@ class TutorialActivity : AppCompatActivity() {
       return
     }
     // A gesture's action, such as a scroll, can take a while to be said.
-    speechDelay = if (input is TutorialInput.Gesture) GESTURE_SPEECH_DELAY_MS else SPEECH_DELAY_MS
+    speechDelay = if (input is TutorialInput.Command) GESTURE_SPEECH_DELAY_MS else SPEECH_DELAY_MS
     val done = {
       if (!step.silent) sound()
       nextStep(say = !step.silent)
@@ -369,10 +424,10 @@ class TutorialActivity : AppCompatActivity() {
 
   private fun completeLesson(lesson: TutorialLesson) {
     lessonDone = true
-    val done = HashSet(prefs().getStringSet(PREF_DONE, emptySet()) ?: emptySet())
+    val done = HashSet(prefs().getStringSet(prefDone(), emptySet()) ?: emptySet())
     done += lesson.id
-    prefs().edit { putStringSet(PREF_DONE, done) }
-    val next = TutorialLessons.all.getOrNull(lessonIndex + 1)
+    prefs().edit { putStringSet(prefDone(), done) }
+    val next = lessons.getOrNull(lessonIndex + 1)
     nextButton.text =
       if (next == null) getString(R.string.sandfly_tutorial_finish)
       else getString(R.string.sandfly_tutorial_next_lesson, getString(next.title))
@@ -388,11 +443,18 @@ class TutorialActivity : AppCompatActivity() {
   /** Said when the lesson is done: how to go on, as focus moves to the button that does. */
   private fun completionText(): String {
     val activate =
-      gestureName(R.string.shortcut_value_action_setting_activate_current_action)
-        ?: return getString(R.string.sandfly_tutorial_lesson_complete)
+      inputName(
+        if (keyboard) R.string.shortcut_value_perform_click_action
+        else R.string.shortcut_value_action_setting_activate_current_action
+      ) ?: return getString(R.string.sandfly_tutorial_lesson_complete)
+    val last = lessonIndex + 1 >= lessons.size
     return getString(
-      if (lessonIndex + 1 < TutorialLessons.all.size) R.string.sandfly_tutorial_lesson_complete_next
-      else R.string.sandfly_tutorial_lesson_complete_last,
+      when {
+        keyboard && last -> R.string.sandfly_keyboard_tutorial_lesson_complete_last
+        keyboard -> R.string.sandfly_keyboard_tutorial_lesson_complete_next
+        last -> R.string.sandfly_tutorial_lesson_complete_last
+        else -> R.string.sandfly_tutorial_lesson_complete_next
+      },
       activate,
     )
   }
@@ -403,35 +465,133 @@ class TutorialActivity : AppCompatActivity() {
       nextStep(say = true)
       return
     }
-    if (lessonIndex + 1 < TutorialLessons.all.size) {
+    if (lessonIndex + 1 < lessons.size) {
       openLesson(lessonIndex + 1)
     } else {
-      prefs().edit { remove(PREF_LESSON) }
+      prefs().edit { remove(prefLesson()) }
       finish()
     }
   }
 
-  /** The instruction of [step] with the user's gestures, or what to do when one has none. */
+  /**
+   * The instruction of [step] with the user's gestures or keys, or what to do when one has none.
+   */
   private fun instructionOf(step: TutorialStep): String {
+    if (step.needsBrowseMode && !CommandBindings.keyComboManager(this).isBrowseModeSupported) {
+      return getString(R.string.sandfly_keyboard_tutorial_needs_enhanced_keymap, keymapPath())
+    }
     val names = step.names.map { getString(it) }.toMutableList()
     if (step.listItem > 0) names += getString(R.string.sandfly_tutorial_list_item, step.listItem)
-    gestureNames(step.actions)?.let {
+    if (step.systemKey != 0) {
+      return getString(step.text, systemKeyName(step.systemKey), *names.toTypedArray())
+    }
+    inputNames(step.actions)?.let {
       return getString(step.text, *(it + names).toTypedArray())
     }
     if (step.altText != 0) {
-      gestureNames(step.altActions)?.let {
+      inputNames(step.altActions)?.let {
         return getString(step.altText, *(it + names).toTypedArray())
       }
     }
-    val missing = step.actions.first { gestureName(it) == null }
+    val missing = step.actions.first { inputName(it) == null }
     return getString(
-      R.string.sandfly_tutorial_no_gesture,
-      actionName(getString(missing)),
+      if (keyboard) R.string.sandfly_keyboard_tutorial_no_key
+      else R.string.sandfly_tutorial_no_gesture,
+      actionName(commandValue(missing)),
     )
   }
 
-  private fun gestureNames(actions: List<Int>): List<String>? =
-    actions.map { gestureName(it) ?: return null }
+  private fun inputNames(actions: List<Int>): List<String>? =
+    actions.map { inputName(it) ?: return null }
+
+  /** The keys or the gesture that run [action], as the user has them. */
+  private fun inputName(@StringRes action: Int): String? =
+    if (keyboard) keyName(action) else gestureName(action)
+
+  /**
+   * The value of the command in [res]: a command value, or a keyboard action's key, which stands for
+   * the command that the keyboard action runs.
+   */
+  private fun commandValue(@StringRes res: Int): String {
+    val key = getString(res)
+    val action = TalkBackPhysicalKeyboardShortcut.getActionFromKey(resources, key)
+    return if (action == TalkBackPhysicalKeyboardShortcut.ACTION_UNKNOWN) key
+    else Commands.valueOfKeyboardAction(this, action)
+  }
+
+  /**
+   * The keys that run the command in [action]: its keyboard shortcut, or else the arrow keys that
+   * run it while arrow key navigation is on.
+   */
+  private fun keyName(@StringRes action: Int): String? {
+    val manager = CommandBindings.keyComboManager(this)
+    val model = manager.keyComboModel ?: return null
+    val value = commandValue(action)
+    if (value == getString(R.string.shortcut_value_toggle_browse_mode)) {
+      // Browse mode turns on and off with the key that keyboard shortcuts use, pressed twice.
+      if (!manager.isBrowseModeSupported) return null
+      return getString(
+        R.string.sandfly_keyboard_tutorial_key_twice,
+        manager.getTriggerKeyUserFacingName(model.triggerModifier),
+      )
+    }
+    val key =
+      Commands.keyboardActionFor(this, value)?.getKey(resources)?.takeIf {
+        model.keyComboMap.containsKey(it)
+      } ?: Commands.shortcutKey(value)
+    CommandBindings.keyboardShortcutText(manager, key)?.let {
+      return it
+    }
+    if (!ArrowKeyNav.isOn(this)) return null
+    return CommandBindings.arrowKeys(this)
+      .firstOrNull { it.value(this, prefs()) == value }
+      ?.name
+      ?.toString()
+  }
+
+  /** Android's own shortcut with the Action key and [keyCode], such as "Action + H". */
+  private fun systemKeyName(keyCode: Int): String =
+    CommandBindings.keyComboManager(this)
+      .getArrowKeysStringRepresentation(
+        KeyCombo.computeKeyComboCode(KeyEvent.META_META_ON, keyCode)
+      )
+
+  /** What Android's own shortcut with the Action key and [keyCode] does. */
+  private fun systemKeyLabel(keyCode: Int): String =
+    actionName(
+      getString(
+        when (keyCode) {
+          KeyEvent.KEYCODE_ESCAPE -> R.string.shortcut_value_back
+          KeyEvent.KEYCODE_H -> R.string.shortcut_value_home
+          KeyEvent.KEYCODE_TAB -> R.string.shortcut_value_overview
+          else -> R.string.shortcut_value_notifications
+        }
+      )
+    )
+
+  /** Where the keymap is chosen, as a settings path. */
+  private fun keymapPath(): String =
+    listOf(
+        R.string.talkback_preferences_title,
+        R.string.title_pref_manage_keyboard_shortcuts,
+        R.string.keycombo_menu_select_keymap,
+      )
+      .joinToString(" > ") { getString(it) }
+
+  /** The introduction of [lesson], with the key that keyboard shortcuts use where it names it. */
+  private fun introOf(lesson: TutorialLesson): String {
+    if (!lesson.introNamesKey) return getString(lesson.intro)
+    val manager = CommandBindings.keyComboManager(this)
+    val modifier = manager.keyComboModel?.triggerModifier ?: KeyEvent.META_META_ON
+    return getString(
+      lesson.intro,
+      manager.getTriggerKeyUserFacingName(modifier),
+      getString(
+        if (modifier == KeyEvent.META_ALT_ON) R.string.sandfly_keyboard_tutorial_alt_key_location
+        else R.string.sandfly_keyboard_tutorial_action_key_location
+      ),
+    )
+  }
 
   /**
    * The name of a gesture assigned to [action]. One-finger gestures come first, as the easiest to
@@ -456,23 +616,29 @@ class TutorialActivity : AppCompatActivity() {
       }
   }
 
-  /** The name of the action with key [action]. */
+  /** The name of the command saved as [action]. */
   private fun actionName(action: String): String =
-    // Double tap's own action has no name in the list of actions that gestures can have.
-    if (action == getString(R.string.shortcut_value_action_setting_activate_current_action)) {
-      getString(R.string.shortcut_perform_click_action)
-    } else {
-      GestureShortcutMapping.getActionString(this, action)
+    when {
+      // Double tap's own action has no name in the list of actions that gestures can have.
+      action == getString(R.string.shortcut_value_action_setting_activate_current_action) ->
+        getString(R.string.shortcut_perform_click_action)
+      keyboard -> Commands.label(this, action) ?: GestureShortcutMapping.getActionString(this, action)
+      else -> GestureShortcutMapping.getActionString(this, action)
     }
 
-  /** In gesture practice, says what the gesture does. Returns true if it isn't done. */
-  private fun practice(gestureId: Int, action: String): Boolean {
+  /**
+   * In practice, says what the gesture or keys named [inputName] do. Returns true if it isn't
+   * done.
+   */
+  private fun practice(inputName: String?, action: String): Boolean {
     val actionName = actionName(action)
-    val gestureName = GestureShortcutMapping.getGestureString(this, gestureId)
     val text =
-      if (gestureName == null) actionName
-      else getString(R.string.sandfly_tutorial_practice_gesture, gestureName, actionName)
-    val performed = TutorialLessons.PRACTICE_PERFORMED.any { getString(it) == action }
+      if (inputName == null) actionName
+      else getString(R.string.sandfly_tutorial_practice_gesture, inputName, actionName)
+    val performed =
+      (if (keyboard) TutorialLessons.KEYBOARD_PRACTICE_PERFORMED
+        else TutorialLessons.PRACTICE_PERFORMED)
+        .any { commandValue(it) == action }
     if (performed) speakLater(text) else speakNow(text)
     return !performed
   }
@@ -490,7 +656,7 @@ class TutorialActivity : AppCompatActivity() {
   /** Whether [action] leaves the tutorial. */
   private fun leavesLesson(action: String): Boolean =
     OpenAppActions.isAction(action) ||
-      TutorialLessons.LEAVING_ACTIONS.any { getString(it) == action }
+      TutorialLessons.LEAVING_ACTIONS.any { commandValue(it) == action }
 
   /** Starts the wait before the instruction is said again, as the user has done something. */
   private fun userActed() {
@@ -524,12 +690,12 @@ class TutorialActivity : AppCompatActivity() {
     lessonText = null
     afterReading = null
     content.removeAllViews()
-    val title = heading(getString(R.string.sandfly_tutorial_title))
+    val title = heading(getString(titleRes()))
     content.addView(title)
     content.addView(text(getString(R.string.sandfly_tutorial_contents_intro)))
-    val done = prefs().getStringSet(PREF_DONE, emptySet()) ?: emptySet()
+    val done = prefs().getStringSet(prefDone(), emptySet()) ?: emptySet()
     var chapter = 0
-    TutorialLessons.all.forEachIndexed { index, lesson ->
+    lessons.forEachIndexed { index, lesson ->
       if (lesson.chapter != chapter) {
         chapter = lesson.chapter
         content.addView(heading(getString(chapter)))
@@ -938,12 +1104,26 @@ class TutorialActivity : AppCompatActivity() {
 
   private fun prefs() = SharedPreferencesUtils.getSharedPreferences(this)
 
+  private fun prefLesson() = if (keyboard) PREF_KEYBOARD_LESSON else PREF_LESSON
+
+  private fun prefDone() = if (keyboard) PREF_KEYBOARD_DONE else PREF_DONE
+
+  private fun titleRes() =
+    if (keyboard) R.string.sandfly_keyboard_tutorial_title else R.string.sandfly_tutorial_title
+
+  private fun indexOf(id: String?): Int = lessons.indexOfFirst { it.id == id }
+
   companion object {
     /** The ID of the lesson to open, instead of the one the tutorial was last on. */
     const val EXTRA_LESSON = "lesson"
 
+    /** Opens the keyboard tutorial. */
+    const val EXTRA_KEYBOARD = "keyboard"
+
     private const val PREF_LESSON = "pref_sandfly_tutorial_lesson"
     private const val PREF_DONE = "pref_sandfly_tutorial_done"
+    private const val PREF_KEYBOARD_LESSON = "pref_sandfly_keyboard_tutorial_lesson"
+    private const val PREF_KEYBOARD_DONE = "pref_sandfly_keyboard_tutorial_done"
 
     /** How long a gesture counts as the one that moved focus. */
     private const val RECENT_ACTION_MS = 3000L
@@ -974,5 +1154,11 @@ class TutorialActivity : AppCompatActivity() {
       Intent(context, TutorialActivity::class.java)
         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         .apply { if (lesson != null) putExtra(EXTRA_LESSON, lesson) }
+
+    /** Opens the keyboard tutorial, at [lesson] if given. */
+    @JvmStatic
+    @JvmOverloads
+    fun keyboardIntent(context: Context, lesson: String? = null): Intent =
+      intent(context, lesson).putExtra(EXTRA_KEYBOARD, true)
   }
 }

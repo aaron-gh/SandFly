@@ -43,9 +43,7 @@ public class TutorialChooserActivity extends Activity {
     View keyboardTutorialButton = findViewById(R.id.keyboard_tutorial_button);
     keyboardTutorialButton.setOnClickListener(
         v -> {
-          startActivity(
-              TrainingActivity.createTrainingIntent(
-                  this, TrainingConfig.TrainingId.TRAINING_ID_TUTORIAL_KEYBOARD));
+          startActivity(TutorialActivity.keyboardIntent(this));
           finish();
         });
   }
