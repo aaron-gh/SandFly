@@ -28,6 +28,7 @@ import androidx.preference.PreferenceViewHolder
 import com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi
 import com.google.android.accessibility.talkback.soundthemes.SoundThemes
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.FormFactorUtils
@@ -61,6 +62,9 @@ class IndividualFeedbackFragment : TalkbackBaseFragment() {
         // Watches have no edge gestures.
         continue
       }
+      if (!SandflyAi.isAvailable && item in IndividualFeedbackSettings.AGENT_SOUNDS) {
+        continue
+      }
       sounds.addPreference(
         FeedbackSwitch(
           context,
@@ -80,6 +84,11 @@ class IndividualFeedbackFragment : TalkbackBaseFragment() {
         if (
           !BrailleKeyboardVibrations.isAvailable() &&
             item in IndividualFeedbackSettings.BRAILLE_KEYBOARD_VIBRATIONS
+        ) {
+          continue
+        }
+        if (
+          !SandflyAi.isAvailable && item in IndividualFeedbackSettings.AGENT_SOUND_VIBRATIONS
         ) {
           continue
         }

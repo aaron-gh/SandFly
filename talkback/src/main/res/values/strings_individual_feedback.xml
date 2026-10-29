@@ -47,6 +47,16 @@
     <string name="individual_sound_column_wrap">Column wrap</string>
     <!-- Sound played when moving back from the start of a row of a grid or table to the end of the row before. [CHAR LIMIT=60] -->
     <string name="individual_sound_column_wrap_back">Column wrap back</string>
+    <!-- Sound played when SandFly AI's agent starts a task. [CHAR LIMIT=60] -->
+    <string name="individual_sound_agentic_interaction_start">Agent task started</string>
+    <!-- Sound played when SandFly AI's agent finishes a task. [CHAR LIMIT=60] -->
+    <string name="individual_sound_agentic_interaction_complete">Agent task complete</string>
+    <!-- Sound played when SandFly AI's agent asks a question or asks to confirm an action. [CHAR LIMIT=60] -->
+    <string name="individual_sound_agentic_interaction_ask">Agent question</string>
+    <!-- Sound played when SandFly AI's safety check stops an action of the agent. [CHAR LIMIT=60] -->
+    <string name="individual_sound_agentic_interaction_sensitive_stop">Agent stopped at a sensitive action</string>
+    <!-- Sound played when SandFly AI's agent fails. [CHAR LIMIT=60] -->
+    <string name="individual_sound_agentic_interaction_fail">Agent task failed</string>
     <!-- Sound played for a spelling error. [CHAR LIMIT=60] -->
     <string name="individual_sound_typo">Spelling error</string>
     <!-- Sound played before a link in text. [CHAR LIMIT=60] -->

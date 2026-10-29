@@ -41,7 +41,7 @@ object SoundVibrations {
    * The switches of vibrations that only sound themes give, by sound resource name: each kind of
    * control can have its own vibration in a theme. Without one, a control plays the focus
    * vibration. A link shares the switch of the link vibration. Navigation sounds without a SandFly
-   * vibration have them too.
+   * vibration and the agent sounds have them too.
    */
   val THEME_ONLY_SWITCHES: Map<String, String> =
     ControlSounds.SOUNDS.keys.associateWith {
@@ -49,7 +49,8 @@ object SoundVibrations {
     } +
       NavigationSounds.SOUNDS.keys
         .filter { it !in NavigationSounds.PATTERNS }
-        .associateWith { "${it}_pattern" }
+        .associateWith { "${it}_pattern" } +
+      AgentSounds.SOUNDS.keys.associateWith { "${it}_pattern" }
 
   /** The name of the switch that turns off the vibration of a sound, by its resource name. */
   @JvmStatic
