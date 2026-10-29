@@ -66,6 +66,19 @@
             android:title="@string/title_summarize_view"
             app:singleLineTitle="false"
             android:summary="@string/summary_screen_overview_no_actions"/>
+        <!-- SandFly Pro's items, titled by the module and hidden in builds without it. -->
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_recognize_screen_default"
+            android:key="@string/pref_show_context_menu_recognize_screen_setting_key"
+            android:order="28"
+            app:singleLineTitle="false"/>
+        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
+            android:layout="@layout/listitem_2texts"
+            android:defaultValue="@bool/pref_show_context_menu_screen_recognition_app_default"
+            android:key="@string/pref_show_context_menu_screen_recognition_app_setting_key"
+            android:order="29"
+            app:singleLineTitle="false"/>
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
         android:key="@string/pref_show_context_menu_navigation_category_key"

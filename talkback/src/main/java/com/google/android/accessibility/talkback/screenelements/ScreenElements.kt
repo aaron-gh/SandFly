@@ -27,6 +27,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import android.view.Gravity
 import android.view.View
 import android.view.ViewConfiguration
@@ -80,14 +81,20 @@ object ScreenElements {
 
   /** Why the screen may have changed under the elements. */
   enum class Change {
-    /** A new window or screen: the elements are gone. */
+    /** Another app or the system took the screen: the elements are gone. */
     WINDOW,
-    /** The app's nodes changed, or an element was tapped: the elements may be out of date. */
+    /**
+     * The app with the elements reported a change, or an element was tapped: the elements stay
+     * until a screenshot shows that the screen changed.
+     */
     CONTENT,
   }
 
   interface Listener {
-    /** Called on the main thread, at most once per [SETTLE_MS], after things settle. */
+    /**
+     * Called on the main thread once events stop for [SETTLE_MS], or every [MAX_WAIT_MS] while an
+     * app keeps sending them.
+     */
     fun onScreenChanged(packageName: String, change: Change)
   }
 
@@ -113,6 +120,7 @@ object ScreenElements {
 
   private var pendingPackage: String? = null
   private var pendingChange: Change? = null
+  private var pendingSince = 0L
   private val notify = Runnable {
     val pkg = pendingPackage
     val change = pendingChange
@@ -163,11 +171,19 @@ object ScreenElements {
     this.labels.putAll(labels)
     val current = windows ?: return
     current.show(elements)
+    LogUtils.d(TAG, "Showing %d elements and %d labels over window %d of %s", elements.size, labels.size, windowId, packageName)
     if (focused != null) {
       val index = elements.indices.firstOrNull { elements[it].bounds.contains(focused.centerX(), focused.centerY()) }
       // The new windows take a moment to reach accessibility services.
       if (index != null) handler.postDelayed({ current.focus(index) }, REFOCUS_DELAY_MS)
     }
+  }
+
+  /** Removes the elements, logging [reason]. */
+  @JvmStatic
+  fun clear(reason: String) {
+    if (isShowing) LogUtils.d(TAG, "Removing %d elements: %s", windows?.elements?.size ?: 0, reason)
+    clear()
   }
 
   @JvmStatic
@@ -336,14 +352,17 @@ object ScreenElements {
       }
       AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> {
         if (pkg == own) return
-        if (showing) clear()
+        // Apps, games above all, report state changes of their own window all the time, so those
+        // only lead to a check of the screen.
+        if (showing && pkg == hostPackage) {
+          scheduleChange(pkg, Change.CONTENT)
+          return
+        }
+        if (showing) clear("window of $pkg")
         scheduleChange(pkg, Change.WINDOW)
       }
       AccessibilityEvent.TYPE_VIEW_SCROLLED -> {
-        if (showing && event.windowId == hostWindowId) {
-          clear()
-          scheduleChange(pkg, Change.WINDOW)
-        }
+        if (showing && event.windowId == hostWindowId) scheduleChange(pkg, Change.CONTENT)
       }
       AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED -> {
         if (
@@ -359,14 +378,19 @@ object ScreenElements {
 
   private fun scheduleChange(pkg: String?, change: Change) {
     if (pkg == null || listener == null) return
+    val now = SystemClock.uptimeMillis()
+    if (pendingChange == null) pendingSince = now
     // A window change outweighs a content change that is still waiting.
     if (pendingChange != Change.WINDOW || pendingPackage != pkg) pendingChange = change
     pendingPackage = pkg
     handler.removeCallbacks(notify)
-    handler.postDelayed(notify, SETTLE_MS)
+    // An app that never stops sending events still gets its screen checked.
+    val delay = minOf(SETTLE_MS, pendingSince + MAX_WAIT_MS - now).coerceAtLeast(0)
+    handler.postDelayed(notify, delay)
   }
 
   private const val SETTLE_MS = 800L
+  private const val MAX_WAIT_MS = 3000L
   private const val REFOCUS_DELAY_MS = 300L
 }
 
