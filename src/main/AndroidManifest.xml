@@ -22,9 +22,12 @@
     </intent>
   </queries>
 
+  <!-- No Android backup: settings hold API keys, which mustn't go to cloud backups. Export
+       settings, which leaves the keys out, moves settings to another phone. -->
   <application
      android:name="com.google.android.accessibility.talkback.TalkBackApplication"
      android:label="@string/talkback_title"
+     android:allowBackup="false"
      android:enableOnBackInvokedCallback="true"
      />
 
