@@ -657,6 +657,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     CLEAR_SELECTION(
         R.string.shortcut_value_clear_selection, R.string.title_clear_selection),
     COPY(R.string.shortcut_value_copy, android.R.string.copy),
+    ADD_TO_CLIPBOARD(R.string.shortcut_value_add_to_clipboard, R.string.shortcut_add_to_clipboard),
+    CLIPBOARD_HISTORY(R.string.shortcut_value_clipboard_history, R.string.title_clipboard_history),
     CUT(R.string.shortcut_value_cut, android.R.string.cut),
     GRANULAR_EDITING(R.string.shortcut_value_granular_editing, R.string.granular_editing_title),
     DICTATE(R.string.shortcut_value_dictate, R.string.shortcut_dictate),

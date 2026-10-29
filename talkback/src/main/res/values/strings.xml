@@ -2219,6 +2219,14 @@
     <string name="title_read_from_top">Read from top</string>
     <!-- Label for the menu item that lets the user copies the last spoken phrase. [CHAR_LIMIT=130] -->
     <string name="title_copy_last_spoken_phrase">Copy last spoken phrase</string>
+    <!-- Label for the command that adds the text of the focused item, or the selected text, to the end of the text on the clipboard. [CHAR_LIMIT=40] -->
+    <string name="shortcut_add_to_clipboard">Add to clipboard</string>
+    <!-- Title of the screen, command and SandFly menu item listing the texts copied, newest first. [CHAR_LIMIT=40] -->
+    <string name="title_clipboard_history">Clipboard history</string>
+    <!-- Shown in the clipboard history when nothing has been copied. [CHAR_LIMIT=NONE] -->
+    <string name="clipboard_history_empty">Nothing copied</string>
+    <!-- Action at the end of the clipboard history that removes every text from it. [CHAR_LIMIT=40] -->
+    <string name="clipboard_history_clear">Clear history</string>
     <!-- Label for the menu item that lets the user spells the last spoken phrase. [CHAR_LIMIT=130] -->
     <string name="title_spell_last_spoken_phrase">Spell last spoken phrase</string>
     <!-- Label for the menu item that lets the user repeats the last spoken phrase. [CHAR_LIMIT=130] -->
@@ -3216,6 +3224,8 @@
     Description: This is spoken to the user. [CHAR LIMIT=NONE]
   -->
   <string name="template_text_copied">copied, <xliff:g id="text">%1$s</xliff:g></string>
+  <!-- Spoken after the text was added to the end of the text on the clipboard. [CHAR_LIMIT=NONE] -->
+  <string name="template_text_added_to_clipboard">added to clipboard, <xliff:g id="text">%1$s</xliff:g></string>
 
   <!-- Names of buttons used in screen search -->
   <!-- Label for the button that will close screen search window -->

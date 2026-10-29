@@ -27,6 +27,7 @@ import static com.google.android.accessibility.talkback.Feedback.ContinuousRead.
 import static com.google.android.accessibility.talkback.Feedback.DimScreen.Action.BRIGHTEN;
 import static com.google.android.accessibility.talkback.Feedback.DimScreen.Action.DIM;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CLEAR_SELECTION;
+import static com.google.android.accessibility.talkback.Feedback.EditText.Action.APPEND_COPY;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.COPY;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CURSOR_TO_BEGINNING;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CURSOR_TO_END;
@@ -115,6 +116,7 @@ import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
+import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryFragment;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
@@ -676,6 +678,12 @@ public class GestureController {
       AccessibilityNodeInfoCompat node =
           accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
       result = pipeline.returnFeedback(eventId, Feedback.edit(node, COPY));
+    } else if (action.equals(service.getString(R.string.shortcut_value_add_to_clipboard))) {
+      AccessibilityNodeInfoCompat node =
+          accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
+      result = pipeline.returnFeedback(eventId, Feedback.edit(node, APPEND_COPY));
+    } else if (action.equals(service.getString(R.string.shortcut_value_clipboard_history))) {
+      result = ClipboardHistoryFragment.open(service);
     } else if (action.equals(service.getString(R.string.shortcut_value_cut))) {
       AccessibilityNodeInfoCompat node = getEditTextFocus();
       if (node == null) {

@@ -54,6 +54,10 @@
       android:orderInCategory="23"
       android:title="@string/talkback_show_talkback_settings" />
   <item
+      android:id="@+id/clipboard_history"
+      android:orderInCategory="22"
+      android:title="@string/title_clipboard_history" />
+  <item
       android:id="@+id/send_feedback"
       android:orderInCategory="23"
       android:title="@string/title_pref_problem_report" />

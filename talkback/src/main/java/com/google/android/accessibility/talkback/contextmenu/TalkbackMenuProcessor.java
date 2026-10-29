@@ -356,6 +356,7 @@ public class TalkbackMenuProcessor {
       R.id.show_keyboard_shortcuts
     },
     {R.string.pref_show_context_menu_talkback_settings_setting_key, R.id.talkback_settings},
+    {R.string.pref_show_context_menu_clipboard_history_setting_key, R.id.clipboard_history},
     {R.string.pref_show_context_menu_send_feedback_setting_key, R.id.send_feedback},
     {R.string.pref_show_context_menu_tts_settings_setting_key, R.id.tts_settings},
     {R.string.pref_show_context_menu_system_action_setting_key, R.id.window_menu},
@@ -495,6 +496,14 @@ public class TalkbackMenuProcessor {
             R.string.pref_show_context_menu_talkback_settings_setting_key,
             R.bool.pref_show_context_menu_talkback_settings_default)) {
       menu.removeItem(R.id.talkback_settings);
+    }
+
+    // The history can hold private text, so it isn't shown on the lock screen.
+    if (ScreenMonitor.isDeviceLocked(service)
+        || !showMenuItem(
+            R.string.pref_show_context_menu_clipboard_history_setting_key,
+            R.bool.pref_show_context_menu_clipboard_history_default)) {
+      menu.removeItem(R.id.clipboard_history);
     }
 
     if (ScreenMonitor.isDeviceLocked(service)

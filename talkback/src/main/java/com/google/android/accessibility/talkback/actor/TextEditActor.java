@@ -22,7 +22,6 @@ import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.ACTIO
 import static androidx.core.view.accessibility.AccessibilityNodeInfoCompat.FOCUS_INPUT;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.SELECTION_MODE_OFF;
 import static com.google.android.accessibility.talkback.compositor.CompositorUtils.joinCharSequences;
-import static com.google.android.accessibility.talkback.utils.ClipboardUtils.copyToClipboard;
 import static com.google.android.accessibility.utils.output.FeedbackItem.FLAG_FORCE_FEEDBACK_ALL;
 import static com.google.android.accessibility.utils.output.FeedbackItem.FLAG_NO_HISTORY;
 import static com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH;
@@ -47,6 +46,7 @@ import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.monitor.InputMethodMonitor;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.ClipboardHistory;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils.SpellingSuggestion;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FocusFinder;
@@ -64,6 +64,9 @@ import com.google.android.accessibility.utils.output.EditTextActionHistory;
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -430,7 +433,7 @@ public class TextEditActor implements VoiceDictationDelegate {
   private boolean copySelected(EventId eventId) {
     CopySelection copySelection = stateReader.copySelection();
     CharSequence selected = copySelection.allText();
-    if (!copyToClipboard(clipboard, selected)) {
+    if (!ClipboardHistory.copy(service, selected)) {
       return false;
     }
     copySelection.clear();
@@ -492,9 +495,9 @@ public class TextEditActor implements VoiceDictationDelegate {
       copyData = selectedNodeText;
       result =
           PerformActionUtils.performAction(node, AccessibilityNodeInfoCompat.ACTION_COPY, eventId);
-    } else if (!TextUtils.isEmpty(nodeText)) {
-      copyData = nodeText;
-      result = copyToClipboard(clipboard, copyData);
+    } else {
+      copyData = TextUtils.isEmpty(nodeText) ? childrenText(node) : nodeText;
+      result = ClipboardHistory.copy(service, copyData);
     }
     turnOffSelectionMode(node, eventId, /* clearSelection= */ true);
     CharSequence copiedText = CompositorUtils.refineInputText(service, copyData);
@@ -505,6 +508,91 @@ public class TextEditActor implements VoiceDictationDelegate {
                 service.getString(R.string.template_text_copied), copiedText);
     pipeline.returnFeedback(eventId, Feedback.speech(textToSpeak, SPEAK_OPTIONS));
     return result;
+  }
+
+  /**
+   * Adds the text Copy would copy from {@code node} to the end of the clipboard's text, on a new
+   * line, and says what was added.
+   */
+  public boolean appendCopy(@Nullable AccessibilityNodeInfoCompat node, EventId eventId) {
+    @Nullable CopySelection copySelection = stateReader.copySelection();
+    @Nullable CharSequence added = null;
+    boolean fromCopySelection = false;
+    if (copySelection != null
+        && copySelection.hasContent()
+        && (node == null || copySelection.isActive() || !hasAppSelection(node))) {
+      added = copySelection.allText();
+      fromCopySelection = true;
+    } else if (node != null && !node.isPassword()) {
+      @Nullable CharSequence selected = AccessibilityNodeInfoUtils.getSelectedNodeText(node);
+      added =
+          AccessibilityNodeInfoUtils.isTextSelectable(node) && !TextUtils.isEmpty(selected)
+              ? selected
+              : AccessibilityNodeInfoUtils.getNodeText(node);
+      if (TextUtils.isEmpty(added)) {
+        added = childrenText(node);
+      }
+    }
+    if (TextUtils.isEmpty(added)) {
+      pipeline.returnFeedback(
+          eventId,
+          Feedback.speech(service.getString(R.string.cannot_copy_feedback), SPEAK_OPTIONS));
+      return false;
+    }
+    ClipboardHistory.append(service, added);
+    if (fromCopySelection) {
+      copySelection.clear();
+      pipeline.returnFeedback(eventId, Feedback.focusDirection(SELECTION_MODE_OFF));
+    } else if (node != null) {
+      turnOffSelectionMode(node, eventId, /* clearSelection= */ true);
+    }
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.speech(
+            SpannableUtils.getSpannedFormattedString(
+                service.getString(R.string.template_text_added_to_clipboard),
+                SpeechCleanupUtils.shortenLongTextFeedback(
+                    service, CompositorUtils.refineInputText(service, added))),
+            SPEAK_OPTIONS));
+    return true;
+  }
+
+  // How many items childrenText looks through, so that a whole list isn't walked.
+  private static final int MAX_CHILDREN_TEXT_NODES = 50;
+
+  /**
+   * The texts of the items inside {@code node}, such as the title and summary of a row that has no
+   * text of its own, one per line, or null if there are none.
+   */
+  private static @Nullable CharSequence childrenText(AccessibilityNodeInfoCompat node) {
+    List<CharSequence> texts = new ArrayList<>();
+    ArrayDeque<AccessibilityNodeInfoCompat> pending = new ArrayDeque<>();
+    for (int i = 0; i < node.getChildCount(); i++) {
+      AccessibilityNodeInfoCompat child = node.getChild(i);
+      if (child != null) {
+        pending.add(child);
+      }
+    }
+    int visited = 0;
+    while (!pending.isEmpty() && visited++ < MAX_CHILDREN_TEXT_NODES) {
+      AccessibilityNodeInfoCompat child = pending.removeFirst();
+      if (!child.isVisibleToUser() || child.isPassword()) {
+        continue;
+      }
+      CharSequence text = AccessibilityNodeInfoUtils.getNodeText(child);
+      if (!TextUtils.isEmpty(text)) {
+        texts.add(text);
+        continue;
+      }
+      // Depth first, so that the texts stay in reading order.
+      for (int i = child.getChildCount() - 1; i >= 0; i--) {
+        AccessibilityNodeInfoCompat grandchild = child.getChild(i);
+        if (grandchild != null) {
+          pending.addFirst(grandchild);
+        }
+      }
+    }
+    return texts.isEmpty() ? null : TextUtils.join("\n", texts);
   }
 
   /** Executes and announces cut text in edit-text. Modifies edit history. */
