@@ -27,6 +27,13 @@
     <string name="script_author">Аутор: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">Инсталирати <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Може:</string>
+    <string name="script_signed">Потписао SandFly.</string>
+    <string name="script_signature_changed">SandFly потпис се не подудара: измењено након потписивања или га није потписао SandFly.</string>
+    <string name="script_unsigned">Није потписао SandFly.</string>
+    <string name="script_from_file">Из датотеке.</string>
+    <string name="script_from_link">Са везе <xliff:g id="link">%1$s</xliff:g>.</string>
+    <string name="script_from_source">Из извора скрипте <xliff:g id="source">%1$s</xliff:g>.</string>
+    <string name="script_from_sandfly">Укључено у SandFly.</string>
     <string name="script_install_no_permissions">Нису потребне дозволе.</string>
     <string name="script_install_button">Инсталирај</string>
     <string name="script_update_title">Ажурирати <xliff:g id="name">%1$s</xliff:g> на <xliff:g id="version">%2$s</xliff:g>?</string>

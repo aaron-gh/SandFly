@@ -27,6 +27,13 @@
     <string name="script_author">Af <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">Vil du installere <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Scriptet kan:</string>
+    <string name="script_signed">Signeret af SandFly.</string>
+    <string name="script_signature_changed">SandFly-signaturen passer ikke: ændret efter signering, eller ikke signeret af SandFly.</string>
+    <string name="script_unsigned">Ikke signeret af SandFly.</string>
+    <string name="script_from_file">Fra en fil.</string>
+    <string name="script_from_link">Fra <xliff:g id="link">%1$s</xliff:g>.</string>
+    <string name="script_from_source">Fra scriptkilden <xliff:g id="source">%1$s</xliff:g>.</string>
+    <string name="script_from_sandfly">Følger med SandFly.</string>
     <string name="script_install_no_permissions">Kræver ingen tilladelser.</string>
     <string name="script_install_button">Installer</string>
     <string name="script_update_title">Vil du opdatere <xliff:g id="name">%1$s</xliff:g> til <xliff:g id="version">%2$s</xliff:g>?</string>

@@ -27,6 +27,13 @@
     <string name="script_author">작성자: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g>을(를) 설치하시겠습니까?</string>
     <string name="script_install_can">다음을 수행할 수 있습니다.</string>
+    <string name="script_signed">SandFly에서 서명했습니다.</string>
+    <string name="script_signature_changed">SandFly 서명이 일치하지 않습니다. 서명 후 변경되었거나 SandFly에서 서명하지 않았습니다.</string>
+    <string name="script_unsigned">SandFly에서 서명하지 않았습니다.</string>
+    <string name="script_from_file">파일에서 가져왔습니다.</string>
+    <string name="script_from_link"><xliff:g id="link">%1$s</xliff:g>에서 가져왔습니다.</string>
+    <string name="script_from_source">스크립트 소스 <xliff:g id="source">%1$s</xliff:g>에서 가져왔습니다.</string>
+    <string name="script_from_sandfly">SandFly에 포함되어 있습니다.</string>
     <string name="script_install_no_permissions">권한이 필요하지 않습니다.</string>
     <string name="script_install_button">설치</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g>을 <xliff:g id="version">%2$s</xliff:g>로 업데이트하시겠습니까?</string>

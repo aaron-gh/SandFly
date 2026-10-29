@@ -27,6 +27,13 @@
     <string name="script_author">Tác giả: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">Cài đặt <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Tập lệnh này có thể:</string>
+    <string name="script_signed">Đã được SandFly ký.</string>
+    <string name="script_signature_changed">Chữ ký SandFly không khớp: đã bị thay đổi sau khi ký hoặc không phải do SandFly ký.</string>
+    <string name="script_unsigned">Chưa được SandFly ký.</string>
+    <string name="script_from_file">Từ một tệp.</string>
+    <string name="script_from_link">Từ <xliff:g id="link">%1$s</xliff:g>.</string>
+    <string name="script_from_source">Từ nguồn tập lệnh <xliff:g id="source">%1$s</xliff:g>.</string>
+    <string name="script_from_sandfly">Đi kèm với SandFly.</string>
     <string name="script_install_no_permissions">Không cần quyền nào.</string>
     <string name="script_install_button">Cài đặt</string>
     <string name="script_update_title">Cập nhật <xliff:g id="name">%1$s</xliff:g> lên <xliff:g id="version">%2$s</xliff:g>?</string>

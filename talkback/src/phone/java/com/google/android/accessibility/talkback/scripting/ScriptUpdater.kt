@@ -172,8 +172,12 @@ object ScriptUpdater {
         if (compareVersions(manifest.version, script.manifest.version) <= 0) break
         val origin = originOf(source, file.file)
         val ownSource = script.origin == origin || (script.origin.isEmpty() && source.address == official)
+        // SandFly's own scripts update on their own only when SandFly signed the new version, so
+        // that someone who can change that repository can't change the installed scripts.
         val safe =
           ownSource &&
+            (source.address != official || pkg.signature == ScriptSignature.Status.SIGNED) &&
+            pkg.signature != ScriptSignature.Status.CHANGED &&
             manifest.author == script.manifest.author &&
             (manifest.permissions - script.manifest.permissions).isEmpty() &&
             manifest.compatibility == ApiCompatibility.COMPATIBLE
@@ -240,6 +244,14 @@ object ScriptUpdater {
           .toString(),
       )
     }
+
+  /** The name of the source [available] comes from. */
+  fun sourceTitle(context: Context, available: Available): String {
+    val address = available.origin.substringBefore(SEPARATOR)
+    return (ScriptSources.all(context).firstOrNull { it.address == address }
+        ?: ScriptSource.parse(address))
+      ?.title ?: address
+  }
 
   /** Downloads the version in [available], to be installed after the usual question. */
   @Throws(IOException::class)

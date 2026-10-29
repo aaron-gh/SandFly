@@ -37,13 +37,15 @@ class ScriptsFragment : ScriptInstallFragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     val path = arguments?.getString(ARG_IMPORT_FILE) ?: return
+    val link = arguments?.getString(ARG_IMPORT_LINK)
     // Asked about once, not again when the screen is recreated.
     arguments?.remove(ARG_IMPORT_FILE)
+    arguments?.remove(ARG_IMPORT_LINK)
     if (savedInstanceState != null) return
     // Only ScriptImportActivity's copy, whatever path the arguments name.
     val file = File(requireContext().cacheDir, ScriptImportActivity.SHARED_FILE)
     if (File(path) != file) return
-    read {
+    read(link?.let { ScriptFrom.Link(it) } ?: ScriptFrom.File) {
       try {
         file.readBytes()
       } finally {
@@ -90,7 +92,9 @@ class ScriptsFragment : ScriptInstallFragment() {
         category.action(getString(R.string.script_update_available, update.name, update.version)) {
           toast(getString(R.string.script_source_downloading, update.name))
           val context = requireContext().applicationContext
-          read(origin = update.origin) { ScriptUpdater.download(context, update) }
+          read(ScriptFrom.Source(ScriptUpdater.sourceTitle(context, update)), update.origin) {
+            ScriptUpdater.download(context, update)
+          }
         }
       }
     }
@@ -99,7 +103,7 @@ class ScriptsFragment : ScriptInstallFragment() {
         getString(R.string.script_add_example),
         getString(R.string.script_add_example_summary),
       ) {
-        read { store.exampleBytes() }
+        read(ScriptFrom.BuiltIn) { store.exampleBytes() }
       }
     }
     val (global, app) = store.all().partition { it.manifest.isGlobal }
@@ -146,7 +150,7 @@ class ScriptsFragment : ScriptInstallFragment() {
 
   private fun importScript(uri: Uri) {
     val resolver = requireContext().contentResolver
-    read {
+    read(ScriptFrom.File) {
       resolver.openInputStream(uri)?.use { it.readAtMost(ScriptPackage.MAX_BYTES + 1) }
         ?: throw IOException("The file could not be opened")
     }
@@ -155,5 +159,7 @@ class ScriptsFragment : ScriptInstallFragment() {
   companion object {
     /** A script to ask about installing as the screen opens, from [ScriptImportActivity]. */
     const val ARG_IMPORT_FILE = "import_file"
+    /** The link [ARG_IMPORT_FILE] was downloaded from, if it wasn't a file. */
+    const val ARG_IMPORT_LINK = "import_link"
   }
 }

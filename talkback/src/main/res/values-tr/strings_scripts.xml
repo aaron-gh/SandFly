@@ -27,6 +27,13 @@
     <string name="script_author"><xliff:g id="author">%1$s</xliff:g> tarafından</string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> yüklensin mi?</string>
     <string name="script_install_can">Şunları yapabilir:</string>
+    <string name="script_signed">SandFly tarafından imzalandı.</string>
+    <string name="script_signature_changed">SandFly imzası eşleşmiyor: imzalandıktan sonra değiştirildi veya SandFly tarafından imzalanmadı.</string>
+    <string name="script_unsigned">SandFly tarafından imzalanmadı.</string>
+    <string name="script_from_file">Bir dosyadan.</string>
+    <string name="script_from_link"><xliff:g id="link">%1$s</xliff:g> bağlantısından.</string>
+    <string name="script_from_source"><xliff:g id="source">%1$s</xliff:g> komut dosyası kaynağından.</string>
+    <string name="script_from_sandfly">SandFly ile birlikte gelir.</string>
     <string name="script_install_no_permissions">Hiçbir izne gerek yok.</string>
     <string name="script_install_button">Yükle</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="version">%2$s</xliff:g> olarak güncellensin mi?</string>
