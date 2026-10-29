@@ -122,6 +122,13 @@ public class SpeechControllerImpl implements SpeechController {
     speechFilter = filter;
   }
 
+  // SandFly: the speech dictionary, which says text the user chose differently.
+  private static volatile @Nullable SpeechFilter dictionaryFilter;
+
+  public static void setDictionaryFilter(@Nullable SpeechFilter filter) {
+    dictionaryFilter = filter;
+  }
+
   /**
    * SandFly: takes speech to change it before it is spoken, such as Automatic translation, which
    * translates it. Called on the main thread for each utterance, in order.
@@ -1219,8 +1226,17 @@ public class SpeechControllerImpl implements SpeechController {
       }
     }
 
-    @Nullable SpeechHold hold = speechHold;
     boolean released = speechParams != null && speechParams.containsKey(SPEECH_PARAM_RELEASED);
+    // Speech a hold released has been through the dictionary already.
+    @Nullable SpeechFilter dictionary = dictionaryFilter;
+    if (dictionary != null && !released && !TextUtils.isEmpty(text)) {
+      @Nullable CharSequence said = dictionary.filter(text);
+      if (said != null) {
+        text = said;
+      }
+    }
+
+    @Nullable SpeechHold hold = speechHold;
     if (hold != null && !fromScript && !released && !TextUtils.isEmpty(text)) {
       @Nullable Bundle heldParams = speechParams;
       boolean held =
