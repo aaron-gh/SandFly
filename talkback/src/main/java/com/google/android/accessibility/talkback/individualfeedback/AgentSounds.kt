@@ -16,22 +16,21 @@
 
 package com.google.android.accessibility.talkback.individualfeedback
 
-import com.google.android.accessibility.talkback.R
-
 /**
- * Sounds for SandFly AI's agent: a task starting, finishing, asking the person something, stopping
- * at an action the safety check blocks, and failing. SandFly has no sounds or vibrations of its own
- * for them: each plays only what a sound theme gives it.
+ * Sounds for SandFly Pro's agent: a task starting, finishing, asking the person something,
+ * stopping at an action the safety check blocks, and failing. They are SandFly's own raw sounds,
+ * made by tools/agent_sounds.py, which a sound theme can replace. They have no SandFly vibrations:
+ * they vibrate only with a theme's.
  */
 object AgentSounds {
-  /** The ID that stands for each sound, by the name of its theme sound and sound switch. */
+  /** The resource names of the sounds, which are also their theme sound and switch names. */
   @JvmField
-  val SOUNDS: Map<String, Int> =
-    linkedMapOf(
-      "agentic_interaction_start" to R.id.agentic_interaction_start,
-      "agentic_interaction_complete" to R.id.agentic_interaction_complete,
-      "agentic_interaction_ask" to R.id.agentic_interaction_ask,
-      "agentic_interaction_sensitive_stop" to R.id.agentic_interaction_sensitive_stop,
-      "agentic_interaction_fail" to R.id.agentic_interaction_fail,
+  val NAMES: Set<String> =
+    linkedSetOf(
+      "agentic_interaction_start",
+      "agentic_interaction_complete",
+      "agentic_interaction_ask",
+      "agentic_interaction_sensitive_stop",
+      "agentic_interaction_fail",
     )
 }

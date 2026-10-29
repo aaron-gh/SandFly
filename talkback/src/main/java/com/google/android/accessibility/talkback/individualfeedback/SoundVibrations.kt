@@ -50,7 +50,7 @@ object SoundVibrations {
       NavigationSounds.SOUNDS.keys
         .filter { it !in NavigationSounds.PATTERNS }
         .associateWith { "${it}_pattern" } +
-      AgentSounds.SOUNDS.keys.associateWith { "${it}_pattern" }
+      AgentSounds.NAMES.associateWith { "${it}_pattern" }
 
   /** The name of the switch that turns off the vibration of a sound, by its resource name. */
   @JvmStatic

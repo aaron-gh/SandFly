@@ -25,7 +25,6 @@ import androidx.core.content.ContextCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.controlsounds.ControlSounds
 import com.google.android.accessibility.talkback.controlsounds.ControlSoundsSettings
-import com.google.android.accessibility.talkback.individualfeedback.AgentSounds
 import com.google.android.accessibility.talkback.individualfeedback.FeedbackItem
 import com.google.android.accessibility.talkback.individualfeedback.IndividualFeedbackSettings
 import com.google.android.accessibility.talkback.individualfeedback.NavigationSounds
@@ -251,11 +250,10 @@ object SoundThemes {
 
   /**
    * Whether the sound [key] has no sound of SandFly's own, so that it plays only a theme's: screen
-   * on, the navigation sounds and the agent sounds.
+   * on and the navigation sounds.
    */
   @JvmStatic
-  fun hasNoOwnSound(key: String): Boolean =
-    key == SCREEN_ON || key in NavigationSounds.SOUNDS || key in AgentSounds.SOUNDS
+  fun hasNoOwnSound(key: String): Boolean = key == SCREEN_ON || key in NavigationSounds.SOUNDS
 
   /** The sound files of [theme], by item key. */
   @JvmStatic

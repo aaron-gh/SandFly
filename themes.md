@@ -157,11 +157,11 @@ play is left out when the theme is installed, and SandFly says so.
 | `insertion_point_moved` | Moving by character, word, line or paragraph moves the cursor in a text field being edited (plays no sound in the SandFly theme) |
 | `column_wrap` | Swiping forward to an item on a row below (plays no sound in the SandFly theme) |
 | `column_wrap_back` | Swiping back to an item on a row above (plays no sound in the SandFly theme) |
-| `agentic_interaction_start` | The SandFly Pro agent starts a task (plays no sound in the SandFly theme) |
-| `agentic_interaction_complete` | The agent finishes a task (plays no sound in the SandFly theme) |
-| `agentic_interaction_ask` | The agent asks a question or asks to confirm an action (plays no sound in the SandFly theme) |
-| `agentic_interaction_sensitive_stop` | The safety check stops an action of the agent (plays no sound in the SandFly theme) |
-| `agentic_interaction_fail` | The agent can't finish a task (plays no sound in the SandFly theme) |
+| `agentic_interaction_start` | The SandFly Pro agent starts a task |
+| `agentic_interaction_complete` | The agent finishes a task |
+| `agentic_interaction_ask` | The agent asks a question or asks to confirm an action |
+| `agentic_interaction_sensitive_stop` | The safety check stops an action of the agent |
+| `agentic_interaction_fail` | The agent can't finish a task |
 | `typo` | Spelling error |
 | `hyperlink` | Link |
 | `formatting` | Formatted text |
