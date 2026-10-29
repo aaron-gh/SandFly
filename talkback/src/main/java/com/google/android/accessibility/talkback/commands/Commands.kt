@@ -733,6 +733,12 @@ object Commands {
           Key.SCREEN_OVERVIEW,
           available = captions && GeminiConfiguration.screenOverviewEnabled(context),
         )
+        // SandFly Pro's screen recognition commands, named by the module.
+        SandflyAi.features?.let {
+          for ((value, label) in it.commands(context)) {
+            commands.add(Command(value, label, null))
+          }
+        }
       }
 
     private fun braille() =
@@ -779,9 +785,6 @@ object Commands {
         SandflyAi.features?.let {
           val value = context.getString(R.string.shortcut_value_ai_agent)
           commands.add(Command(value, it.agentCommandLabel(context), null))
-          for ((proValue, label) in it.commands(context)) {
-            commands.add(Command(proValue, label, null))
-          }
         }
         gesture(R.string.shortcut_value_toggle_arrow_key_nav, R.string.arrow_key_nav_toggle)
         gesture(R.string.shortcut_value_toggle_scripts, R.string.shortcut_toggle_scripts)

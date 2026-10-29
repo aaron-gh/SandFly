@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.menurules.NodeMenuRuleProcessor
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.ScriptMenuItem;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
+import com.google.android.accessibility.talkback.sandflyai.SandflyAiFeatures;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
@@ -294,6 +295,11 @@ public class TalkbackMenuProcessor {
     {R.string.pref_show_context_menu_labeling_setting_key, R.id.labeling_breakout_add_label},
     {R.string.pref_show_context_menu_image_caption_setting_key, R.id.image_caption_menu},
     {R.string.pref_show_context_menu_summarize_view_setting_key, R.id.summarize_view_menu},
+    {R.string.pref_show_context_menu_recognize_screen_setting_key, R.id.recognize_screen_menu},
+    {
+      R.string.pref_show_context_menu_screen_recognition_app_setting_key,
+      R.id.screen_recognition_app_menu
+    },
     {R.string.pref_show_context_menu_granularity_setting_key, R.id.granularity_menu},
     {R.string.pref_show_context_menu_read_from_top_setting_key, R.id.read_from_top},
     {R.string.pref_show_context_menu_read_from_current_setting_key, R.id.read_from_current},
@@ -873,12 +879,30 @@ public class TalkbackMenuProcessor {
   }
 
   private void addSandflyProItems(ContextMenu menu) {
-    if (SandflyAi.getFeatures() == null) {
+    addSandflyProItem(
+        menu,
+        R.id.recognize_screen_menu,
+        R.string.pref_show_context_menu_recognize_screen_setting_key,
+        R.bool.pref_show_context_menu_recognize_screen_default,
+        SandflyAi.COMMAND_RECOGNIZE_SCREEN);
+    addSandflyProItem(
+        menu,
+        R.id.screen_recognition_app_menu,
+        R.string.pref_show_context_menu_screen_recognition_app_setting_key,
+        R.bool.pref_show_context_menu_screen_recognition_app_default,
+        SandflyAi.COMMAND_SCREEN_RECOGNITION_IN_APP);
+  }
+
+  private void addSandflyProItem(
+      ContextMenu menu, int itemId, @StringRes int showKey, @BoolRes int showDefault, String command) {
+    SandflyAiFeatures features = SandflyAi.getFeatures();
+    if (features == null || !showMenuItem(showKey, showDefault)) {
       return;
     }
-    for (Pair<CharSequence, Runnable> item : SandflyAi.getFeatures().menuItems(service)) {
+    @Nullable Pair<CharSequence, Runnable> item = features.menuItem(service, command);
+    if (item != null) {
       addAfterMenuCloses(
-          menu, R.id.sandfly_pro_command, ORDER_IMAGE_CAPTION, item.getFirst(), node -> item.getSecond().run());
+          menu, itemId, ORDER_IMAGE_CAPTION, item.getFirst(), node -> item.getSecond().run());
     }
   }
 
