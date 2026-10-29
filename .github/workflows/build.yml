@@ -18,11 +18,25 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HAS_SANDFLY_AI: ${{ secrets.SANDFLY_AI_DEPLOY_KEY != '' }}
     steps:
       # The full history gives the build number (commits since buildNumberBase in version.gradle) and the release notes.
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
+
+      # SandFly AI, the paid features, from the private repository aaron-gh/sandfly-ai.
+      # SANDFLY_AI_DEPLOY_KEY is the private half of a read-only deploy key of that repository.
+      # Builds without it, such as pull requests from forks, have no AI features.
+      - name: Check out SandFly AI
+        if: env.HAS_SANDFLY_AI == 'true'
+        uses: actions/checkout@v7
+        with:
+          repository: aaron-gh/sandfly-ai
+          ssh-key: ${{ secrets.SANDFLY_AI_DEPLOY_KEY }}
+          path: sandfly-ai
+          persist-credentials: false
 
       - uses: actions/setup-java@v6
         with:

@@ -27,6 +27,7 @@ import com.google.android.accessibility.talkback.gesture.NavigationGestureAction
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut as Key
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.FormFactorUtils
@@ -753,6 +754,11 @@ object Commands {
           Key.SEARCH_SCREEN_FOR_ITEM,
           available = !wear,
         )
+        // SandFly AI names its own command, so its label is only in builds that include it.
+        SandflyAi.features?.let {
+          val value = context.getString(R.string.shortcut_value_ai_agent)
+          commands.add(Command(value, it.agentCommandLabel(context), null))
+        }
         gesture(R.string.shortcut_value_toggle_arrow_key_nav, R.string.arrow_key_nav_toggle)
         gesture(R.string.shortcut_value_toggle_scripts, R.string.shortcut_toggle_scripts)
         keyboard(Key.OPEN_TALKBACK_SETTINGS)

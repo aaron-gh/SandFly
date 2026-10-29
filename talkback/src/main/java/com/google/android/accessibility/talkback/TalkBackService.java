@@ -241,6 +241,7 @@ import com.google.android.accessibility.talkback.scripting.ScriptHostFactory;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.SelectorEventNotifier;
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
 import com.google.android.accessibility.talkback.soundthemes.SoundThemes;
 import com.google.android.accessibility.talkback.soundthemes.ThemeFeedback;
@@ -1052,6 +1053,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     ReportInbox.stopFollowing();
     ExitAfterTurnOff.schedule(getApplication());
     ShizukuGrants.onServiceDestroyed();
+    if (SandflyAi.getFeatures() != null) {
+      SandflyAi.getFeatures().onServiceDestroyed(this);
+    }
     HandwritingKeyboardHost.setFeedback(null);
     TutorialHooks.setFeedback(null);
     instance = null;
@@ -2044,6 +2048,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     Updater.startAutomaticChecks(this);
     ReportInbox.startFollowing(this);
     ShizukuGrants.onServiceConnected(this);
+    if (SandflyAi.getFeatures() != null) {
+      SandflyAi.getFeatures().onServiceConnected(this);
+    }
     // Turns Backtalk under its old app ID off, before this one says it is on.
     AppIdHandOver.onServiceConnected(this, this::refreshGestureDetection);
 
@@ -4675,7 +4682,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     displayIdToTouchInteractionMonitors.clear();
   }
 
-  protected Pipeline.@Nullable FeedbackReturner getFeedbackReturner() {
+  /** Public for the SandFly AI module, which runs outside this package. */
+  public Pipeline.@Nullable FeedbackReturner getFeedbackReturner() {
     if (pipeline != null) {
       return pipeline.getFeedbackReturner();
     }

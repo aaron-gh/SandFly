@@ -30,7 +30,7 @@ import android.os.ParcelFileDescriptor
 import java.util.concurrent.TimeUnit
 import rikka.shizuku.Shizuku
 
-/** A command that SandFly's quick settings run as the shell user, through Shizuku. */
+/** A command that SandFly runs as the shell user, through Shizuku. */
 enum class ShizukuCommand {
   WIFI,
   BLUETOOTH,
@@ -52,7 +52,11 @@ enum class ShizukuCommand {
   /** Adds an app's tile to the system's quick settings, which SystemUI needs to run it. */
   ADD_TILE,
   /** Clicks an app's tile in the system's quick settings, without opening them. */
-  CLICK_TILE;
+  CLICK_TILE,
+  /** Types text as key events, into apps that have no text field to set text in. */
+  INPUT_TEXT,
+  /** Sends key events: up to 100 key code names, separated by spaces. */
+  INPUT_KEYEVENT;
 
   /**
    * The command, as adb would run it after `adb shell`, or null if [argument] isn't one it takes.
@@ -80,6 +84,12 @@ enum class ShizukuCommand {
       CAMERA_BLOCKED -> sensorCommand(on, user, "camera")
       ADD_TILE -> component?.let { listOf("cmd", "statusbar", "add-tile", it) }
       CLICK_TILE -> component?.let { listOf("cmd", "statusbar", "click-tile", it) }
+      // input text reads %s as a space.
+      INPUT_TEXT ->
+        argument
+          .takeIf { it.isNotEmpty() && it.length <= MAX_TEXT && it.none { c -> c.isISOControl() } }
+          ?.let { listOf("input", "text", it.replace(" ", "%s")) }
+      INPUT_KEYEVENT -> KEY_CODES.matchEntire(argument)?.let { listOf("input", "keyevent") + argument.split(' ') }
     }
   }
 
@@ -97,6 +107,10 @@ enum class ShizukuCommand {
     fun argument(on: Boolean, userId: Int): String = argument(on) + "@" + userId
 
     private val SWITCH = Regex("""(on|off)(?:@(\d{1,6}))?""")
+
+    private const val MAX_TEXT = 1000
+
+    private val KEY_CODES = Regex("""KEYCODE_[A-Z0-9_]{1,30}( KEYCODE_[A-Z0-9_]{1,30}){0,99}""")
 
     private val COMPONENT =
       Regex(

@@ -12,6 +12,10 @@ apply from: 'version.gradle'
 
 dependencies {
     implementation project(':talkback')
+    // SandFly AI, when sandfly-ai/ is checked out (see settings.gradle). SandFly finds it by name.
+    if (findProject(':sandflyai') != null) {
+        phoneImplementation project(':sandflyai')
+    }
 }
 
 // SandFly's signing key: SANDFLY_KEYSTORE, or ~/.android/sandfly-release.jks, with its password in
