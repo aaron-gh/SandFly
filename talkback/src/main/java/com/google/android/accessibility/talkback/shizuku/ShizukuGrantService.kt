@@ -16,9 +16,12 @@
 
 package com.google.android.accessibility.talkback.shizuku
 
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.ContextWrapper
 import android.net.wifi.WifiManager
+import android.os.Handler
+import android.os.HandlerThread
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
 import java.io.InputStream
@@ -156,6 +159,73 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
       e.toString()
     }
 
+  private var clipboard: ClipboardManager? = null
+  private var clipListener: ClipboardManager.OnPrimaryClipChangedListener? = null
+  @Volatile private var clipWatcher: IClipboardWatcher? = null
+
+  override fun watchClipboard(watcher: IClipboardWatcher?) {
+    synchronized(this) {
+      clipWatcher = watcher
+      val manager = shellClipboard() ?: return
+      val listener = clipListener
+      if (watcher != null && listener == null) {
+        val added = ClipboardManager.OnPrimaryClipChangedListener { onClipChanged() }
+        manager.addPrimaryClipChangedListener(added)
+        clipListener = added
+      } else if (watcher == null && listener != null) {
+        manager.removePrimaryClipChangedListener(listener)
+        clipListener = null
+      }
+    }
+  }
+
+  /** Tells the watcher the new clip's text. The shell may read the clipboard in the background. */
+  private fun onClipChanged() {
+    val watcher = clipWatcher ?: return
+    val clip =
+      try {
+        clipboard?.primaryClip
+      } catch (e: RuntimeException) {
+        null
+      } ?: return
+    if (clip.description?.extras?.getBoolean(EXTRA_IS_SENSITIVE) == true || clip.itemCount == 0) {
+      return
+    }
+    val text = clip.getItemAt(0).text?.toString()?.take(MAX_CLIP_LENGTH)
+    if (text.isNullOrBlank()) return
+    try {
+      watcher.onClipText(text)
+    } catch (e: Exception) {
+      // SandFly has stopped.
+      watchClipboard(null)
+    }
+  }
+
+  /**
+   * A ClipboardManager that calls as the shell, which may read the clipboard in the background.
+   * Android's own would name SandFly's package, which the clipboard service refuses from the
+   * shell's user ID. Its listeners run on a thread of their own.
+   */
+  private fun shellClipboard(): ClipboardManager? {
+    clipboard?.let { return it }
+    val base = context ?: return null
+    val shell =
+      object : ContextWrapper(base) {
+        override fun getPackageName(): String = SHELL_PACKAGE
+        override fun getOpPackageName(): String = SHELL_PACKAGE
+      }
+    return try {
+      val thread = HandlerThread("clipboard").apply { start() }
+      ClipboardManager::class.java
+        .getDeclaredConstructor(Context::class.java, Handler::class.java)
+        .apply { isAccessible = true }
+        .newInstance(shell, Handler(thread.looper))
+        .also { clipboard = it }
+    } catch (e: Exception) {
+      null
+    }
+  }
+
   override fun install(
     apks: Array<ParcelFileDescriptor>?,
     sizes: LongArray?,
@@ -227,6 +297,10 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     /** Installing is slower than a setting change, so it gets longer than the other commands. */
     const val INSTALL_TIMEOUT_SECONDS = 120L
     const val SHELL_PACKAGE = "com.android.shell"
+    /** ClipDescription.EXTRA_IS_SENSITIVE, from Android 13, set on clips such as passwords. */
+    const val EXTRA_IS_SENSITIVE = "android.content.extra.IS_SENSITIVE"
+    /** The clipboard history keeps no more of a text than this. */
+    const val MAX_CLIP_LENGTH = 10_000
     /** Context.TETHERING_SERVICE, which isn't public. */
     const val TETHERING_SERVICE = "tethering"
     /** TetheringManager.TETHERING_WIFI. */

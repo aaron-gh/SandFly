@@ -246,6 +246,7 @@ import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.SelectorEventNotifier;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
 import com.google.android.accessibility.talkback.screenelements.ScreenElements;
+import com.google.android.accessibility.talkback.shizuku.ShizukuClipboard;
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
 import com.google.android.accessibility.talkback.soundthemes.SoundThemes;
 import com.google.android.accessibility.talkback.soundthemes.ThemeFeedback;
@@ -1166,6 +1167,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (SystemPanelClicker.shouldDrop(event.getPackageName())
         && event.getEventType() != AccessibilityEvent.TYPE_TOUCH_INTERACTION_END
         && event.getEventType() != AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED) {
+      return;
+    }
+    // Android says that the shell pasted from the clipboard each time SandFly reads a copy through
+    // Shizuku for the clipboard history.
+    if (ShizukuClipboard.isReadToast(event)) {
       return;
     }
     if (scriptHost != null) {

@@ -26,7 +26,7 @@ import org.json.JSONException
 /**
  * The texts SandFly put on the clipboard, newest first, and those it found there while one of its
  * own windows had focus: since Android 10, apps can't read the clipboard from the background, so
- * texts other apps copy are only seen that way.
+ * texts other apps copy are only seen that way, unless Shizuku reads them (ShizukuClipboard).
  *
  * Kept in a file of its own, apart from the settings, so that it is not exported with them.
  */

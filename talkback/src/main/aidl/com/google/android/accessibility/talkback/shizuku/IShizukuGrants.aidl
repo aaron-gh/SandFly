@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.shizuku;
 
+import com.google.android.accessibility.talkback.shizuku.IClipboardWatcher;
+
 /**
  * Runs as the shell user through Shizuku. Grants SandFly one of a few fixed permissions, and runs
  * the fixed commands of SandFly's quick settings.
@@ -52,4 +54,10 @@ interface IShizukuGrants {
         in long[] sizes,
         String packageName,
         String installer) = 4;
+
+    /**
+     * Tells [watcher] the text of each clip put on the clipboard from now on, except clips marked
+     * sensitive, such as passwords. Null stops telling the watcher told before.
+     */
+    void watchClipboard(IClipboardWatcher watcher) = 5;
 }

@@ -125,6 +125,9 @@ object ShizukuGrants {
       val callbacks = permissionCallbacks
       permissionCallbacks = mutableListOf()
       callbacks.forEach { it(grantResult == PackageManager.PERMISSION_GRANTED) }
+      if (grantResult == PackageManager.PERMISSION_GRANTED) {
+        serviceContext?.let(ShizukuClipboard::start)
+      }
     }
 
   private val binderReceived = Shizuku.OnBinderReceivedListener {
@@ -132,7 +135,11 @@ object ShizukuGrants {
     onShizukuReady()
   }
 
-  private val binderDead = Shizuku.OnBinderDeadListener { failPendingRequests() }
+  private val binderDead =
+    Shizuku.OnBinderDeadListener {
+      failPendingRequests()
+      ShizukuClipboard.stop()
+    }
 
   init {
     Shizuku.addRequestPermissionResultListener(permissionListener)
@@ -206,6 +213,7 @@ object ShizukuGrants {
   @JvmStatic
   fun onServiceDestroyed() {
     serviceContext = null
+    ShizukuClipboard.stop()
     Shizuku.removeBinderReceivedListener(binderReceived)
   }
 
@@ -216,6 +224,7 @@ object ShizukuGrants {
     if (!hasShizukuPermission() && !askAtStart(prefs)) return
     withShizukuPermission { allowed ->
       if (allowed) {
+        ShizukuClipboard.start(context)
         requestAll(context, wantedAtStart(context, prefs)) { granted ->
           LogUtils.i(TAG, "Granted at start through Shizuku: %s", granted)
         }
