@@ -52,4 +52,18 @@ class ScreenElementsTest {
   fun anElementAboveEveryNodeHasNoAnchor() {
     assertEquals(-1, ScreenElements.anchorIndex(Rect(0, 0, 100, 20), listOf(page)))
   }
+
+  @Test
+  fun elementsAreReadInRowsFromTopToBottomAndLeftToRight() {
+    fun element(label: String, bounds: Rect) = ScreenElement(label, ScreenElement.Role.BUTTON, bounds)
+    val title = element("Title", Rect(300, 550, 800, 650))
+    val help = element("Help", Rect(930, 270, 1020, 360))
+    val coins = element("Coins", Rect(400, 740, 680, 800))
+    val left = element("Left", Rect(100, 1000, 400, 1100))
+    val right = element("Right", Rect(500, 1010, 900, 1090))
+    assertEquals(
+      listOf("Help", "Title", "Coins", "Left", "Right"),
+      ScreenElements.inReadingOrder(listOf(right, title, coins, help, left)).map { it.label },
+    )
+  }
 }
