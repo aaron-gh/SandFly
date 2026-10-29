@@ -610,6 +610,14 @@ public class KeyComboManager
   }
 
   /**
+   * Runs the command saved as {@code command}, as a key or gesture assigned to it would, for
+   * callers outside the keyboard such as the SandFly Pro agent.
+   */
+  public void performCommand(String command) {
+    performCommandFromKeyboard(command, EVENT_ID_UNTRACKED);
+  }
+
+  /**
    * Runs the command saved as {@code command} for a key press: by its keyboard action when it has
    * one, otherwise as a gesture would run it.
    */
