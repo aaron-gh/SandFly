@@ -17,29 +17,63 @@
 package com.google.android.accessibility.talkback.gesture
 
 import android.content.SharedPreferences
+import com.google.android.accessibility.talkback.keyboard.KeyCombo
 import org.json.JSONException
 import org.json.JSONObject
 
 /**
- * Settings > Gestures > Gestures in apps: gestures that run another command in one app, while
- * that app's window is the last one shown. Each gesture is named by its preference key on the
- * Gestures screen, without a gesture set, and the command by its value.
+ * Settings > Gestures > Gestures in apps, and Keyboard shortcuts in apps: gestures and keyboard
+ * shortcuts that run another command in one app, while that app's window is the last one shown.
+ * Each gesture is named by its preference key on the Gestures screen, without a gesture set, each
+ * keyboard shortcut by [keyName], and the command by its value.
  */
 object AppGestures {
 
   const val KEY = "pref_app_gestures"
 
-  /** The gestures of an app: what each runs there, and the app's name for the settings. */
-  data class App(val name: String, val gestures: Map<String, String>)
+  /**
+   * The gestures and keyboard shortcuts of an app: what each runs there, and the app's name for
+   * the settings.
+   */
+  data class App(
+    val name: String,
+    val gestures: Map<String, String>,
+    val keys: Map<String, String> = emptyMap(),
+  )
 
   @Volatile private var apps: Map<String, App> = emptyMap()
+
+  // The keyboard shortcuts of each app, as key combinations.
+  @Volatile private var appKeys: Map<String, List<Pair<KeyCombo, String>>> = emptyMap()
 
   // The package of the window shown last.
   @Volatile private var app: String = ""
 
   @JvmStatic
   fun load(prefs: SharedPreferences) {
-    apps = read(prefs)
+    val read = read(prefs)
+    apps = read
+    appKeys =
+      read
+        .mapValues { (_, app) -> app.keys.mapNotNull { (name, value) -> keyCombo(name)?.let { it to value } } }
+        .filterValues { it.isNotEmpty() }
+  }
+
+  /** The keyboard shortcuts of the app shown, with the command each runs there. */
+  @JvmStatic fun keys(): List<Pair<KeyCombo, String>> = appKeys[app].orEmpty()
+
+  /** The name a keyboard shortcut is kept under. */
+  @JvmStatic
+  fun keyName(keyCombo: KeyCombo): String =
+    "${keyCombo.keyComboCode}:${keyCombo.isTriggerModifierUsed}"
+
+  /** The key combination kept under [name], or null if it isn't one. */
+  @JvmStatic
+  fun keyCombo(name: String): KeyCombo? {
+    val parts = name.split(':')
+    val code = parts.getOrNull(0)?.toLongOrNull() ?: return null
+    val trigger = parts.getOrNull(1)?.toBooleanStrictOrNull() ?: return null
+    return KeyCombo(code, trigger)
   }
 
   /** Notes the app whose window is shown. */
@@ -73,9 +107,11 @@ object AppGestures {
       root.keys().asSequence().associateWith { packageName ->
         val app = root.getJSONObject(packageName)
         val gestures = app.optJSONObject("gestures") ?: JSONObject()
+        val keys = app.optJSONObject("keys") ?: JSONObject()
         App(
           app.optString("name", packageName),
           gestures.keys().asSequence().associateWith { gestures.getString(it) },
+          keys.keys().asSequence().associateWith { keys.getString(it) },
         )
       }
     } catch (e: JSONException) {
@@ -88,7 +124,12 @@ object AppGestures {
     for ((packageName, app) in apps) {
       val gestures = JSONObject()
       app.gestures.forEach { (key, value) -> gestures.put(key, value) }
-      root.put(packageName, JSONObject().put("name", app.name).put("gestures", gestures))
+      val keys = JSONObject()
+      app.keys.forEach { (key, value) -> keys.put(key, value) }
+      root.put(
+        packageName,
+        JSONObject().put("name", app.name).put("gestures", gestures).put("keys", keys),
+      )
     }
     return root.toString()
   }

@@ -42,6 +42,7 @@ import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.talkback.gesture.AppGestures;
 import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
@@ -1209,6 +1210,29 @@ public class KeyComboManager
         previousKeyComboTime = currentKeyComboTime;
         hasPartialMatch = true;
         return true;
+      }
+    }
+
+    // The keyboard shortcuts of the app shown come before the keymap's.
+    for (kotlin.Pair<KeyCombo, String> appKey : AppGestures.keys()) {
+      final int match = keyCombo.matchWith(triggerModifier, appKey.getFirst());
+      if (match == EXACT_MATCH) {
+        String commandValue = appKey.getSecond();
+        // Unassigned in the app: the keys go to the app.
+        if (commandPerformer == null
+            || context.getString(R.string.shortcut_value_unassigned).equals(commandValue)) {
+          return false;
+        }
+        performCommandFromKeyboard(
+            commandValue,
+            Performance.getInstance()
+                .onKeyComboEventReceived(
+                    TalkBackPhysicalKeyboardShortcut.ACTION_UNKNOWN.getKeyboardShortcutOrdinal()));
+        performedCombo = true;
+        return true;
+      }
+      if (match == PARTIAL_MATCH) {
+        hasPartialMatch = true;
       }
     }
 

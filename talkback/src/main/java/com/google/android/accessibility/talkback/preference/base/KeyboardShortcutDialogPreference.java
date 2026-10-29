@@ -44,6 +44,7 @@ import com.google.android.accessibility.utils.ServiceKeyEventListener;
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
 import com.google.android.accessibility.utils.material.MaterialComponentUtils;
 import com.google.common.collect.ImmutableSet;
+import java.util.function.Consumer;
 
 /**
  * A {@link Preference} which contains two dialogs, setUpKeyComboDialog and keyAlreadyInUseDialog.
@@ -118,7 +119,8 @@ public class KeyboardShortcutDialogPreference extends Preference
 
   /** Returns the name of the command whose keyboard shortcut is kept under {@code key}. */
   private CharSequence titleOf(String key) {
-    Preference preference = getPreferenceManager().findPreference(key);
+    Preference preference =
+        getPreferenceManager() == null ? null : getPreferenceManager().findPreference(key);
     if (preference != null && preference.getTitle() != null) {
       return preference.getTitle();
     }
@@ -151,6 +153,22 @@ public class KeyboardShortcutDialogPreference extends Preference
   }
 
   @Nullable private Runnable keyComboChangeListener;
+
+  // Takes the keys recorded in place of the keymap, for keyboard shortcuts kept elsewhere.
+  @Nullable private Consumer<KeyCombo> recordListener;
+
+  /**
+   * Makes the dialog give the keys recorded to {@code listener}, which keeps them, instead of
+   * saving them in the keymap as the shortcut of this preference's key.
+   */
+  public void setRecordListener(@Nullable Consumer<KeyCombo> listener) {
+    recordListener = listener;
+  }
+
+  /** Shows the dialog that records keys. */
+  public void showRecordDialog() {
+    showSetUpKeyComboDialog();
+  }
 
   /** Sets what runs after this or another shortcut changes through this preference's dialogs. */
   public void setKeyComboChangeListener(@Nullable Runnable listener) {
@@ -682,6 +700,14 @@ public class KeyboardShortcutDialogPreference extends Preference
     if (!isValidKeyCombo(this.tempKeyCombo)) {
       instructionText.setTextColor(Color.RED);
       PreferencesActivityUtils.announceText(instructionText.getText().toString(), getContext());
+      return;
+    }
+
+    if (recordListener != null) {
+      recordListener.accept(this.tempKeyCombo);
+      if (setUpKeyComboDialog != null) {
+        setUpKeyComboDialog.dismiss();
+      }
       return;
     }
 

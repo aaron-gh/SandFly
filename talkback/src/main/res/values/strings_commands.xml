@@ -34,6 +34,10 @@
     <string name="app_gestures_remove_app">Remove app</string>
     <!-- Title of the list of commands a gesture can run in an app. [CHAR LIMIT=40] -->
     <string name="app_gestures_choose_command">Choose command</string>
+    <!-- Title of the settings screen of the apps in which keyboard shortcuts run other commands than elsewhere. [CHAR LIMIT=40] -->
+    <string name="title_pref_app_keyboard_shortcuts">Keyboard shortcuts in apps</string>
+    <!-- Action on an app's screen in Gestures in apps that records keys to run another command in the app. [CHAR LIMIT=40] -->
+    <string name="app_keys_add">Add keyboard shortcut</string>
     <!-- Button in the dialog for a gesture of a command: removes the gesture from the command. [CHAR LIMIT=40] -->
     <string name="command_remove_gesture">Remove gesture</string>
     <!-- Dialog message when the chosen gesture runs another command. %1$s is the gesture, %2$s the command it runs now, %3$s the command it will run. [CHAR LIMIT=NONE] -->

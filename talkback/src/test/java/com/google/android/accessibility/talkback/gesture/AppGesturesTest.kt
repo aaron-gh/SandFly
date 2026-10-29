@@ -17,6 +17,8 @@
 package com.google.android.accessibility.talkback.gesture
 
 import android.content.Context
+import android.view.KeyEvent
+import com.google.android.accessibility.talkback.keyboard.KeyCombo
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -57,8 +59,33 @@ class AppGesturesTest {
 
   @Test
   fun appsSurviveSaving() {
-    val apps = mapOf("com.example" to AppGestures.App("Example", mapOf("a" to "B", "c" to "UNASSIGNED")))
+    val apps =
+      mapOf("com.example" to AppGestures.App("Example", mapOf("a" to "B", "c" to "UNASSIGNED"), mapOf("1:true" to "D")))
     assertEquals(apps, AppGestures.fromJson(AppGestures.toJson(apps)))
+  }
+
+  @Test
+  fun keyboardShortcutsRunTheAppsCommandOnlyInThatApp() {
+    val keys = KeyCombo(KeyEvent.META_META_ON, KeyEvent.KEYCODE_K, /* triggerModifierUsed= */ true)
+    AppGestures.write(
+      prefs,
+      mapOf(
+        "com.example.player" to
+          AppGestures.App("Player", emptyMap(), mapOf(AppGestures.keyName(keys) to "FAST_FORWARD"))
+      ),
+    )
+    AppGestures.load(prefs)
+    AppGestures.onWindowShown("com.example.player")
+    assertEquals(listOf(keys to "FAST_FORWARD"), AppGestures.keys())
+    AppGestures.onWindowShown("com.example.mail")
+    assertEquals(emptyList<Pair<KeyCombo, String>>(), AppGestures.keys())
+  }
+
+  @Test
+  fun keyNamesKeepTheKeys() {
+    val keys = KeyCombo(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_J, /* triggerModifierUsed= */ false)
+    assertEquals(keys, AppGestures.keyCombo(AppGestures.keyName(keys)))
+    assertNull(AppGestures.keyCombo("not keys"))
   }
 
   @Test
