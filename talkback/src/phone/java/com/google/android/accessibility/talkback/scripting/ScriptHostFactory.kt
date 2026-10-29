@@ -25,5 +25,6 @@ object ScriptHostFactory {
     service: AccessibilityService,
     feedback: Pipeline.FeedbackReturner,
     resume: Runnable,
-  ): ScriptHost? = LazyScriptHost(service, feedback, resume)
+    services: ScriptServices,
+  ): ScriptHost? = LazyScriptHost(service, feedback, resume, services)
 }

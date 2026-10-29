@@ -37,12 +37,14 @@ import com.google.android.accessibility.talkback.focusmanagement.record.FocusAct
 import com.google.android.accessibility.talkback.speechcontrol.ExternalSpeech
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_INTERRUPT
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_QUEUE
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 import java.io.IOException
 import java.util.Locale
+import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.math.roundToInt
 
@@ -50,6 +52,7 @@ class ScriptFeedback(
   private val service: AccessibilityService,
   private val pipeline: Pipeline.FeedbackReturner,
   private val resumeBacktalk: Runnable,
+  val services: ScriptServices,
 ) {
   private val mainHandler = Handler(Looper.getMainLooper())
   // Sounds scripts are playing now. Android gives an app only so many audio tracks, and Backtalk's
@@ -60,14 +63,35 @@ class ScriptFeedback(
 
   class Voice(val rate: Float = 1f, val pitch: Float = 1f, val language: String? = null)
 
-  fun speak(text: String, interrupt: Boolean, voice: Voice = Voice()) {
+  /** Speaks [text]. [done], if given, learns whether it was spoken to the end. */
+  fun speak(
+    text: String,
+    interrupt: Boolean,
+    voice: Voice = Voice(),
+    done: ((Boolean) -> Unit)? = null,
+  ) {
     val options =
       ExternalSpeech.options(
         if (interrupt) QUEUE_MODE_INTERRUPT else QUEUE_MODE_QUEUE,
         ExternalSpeech.params(voice.rate, voice.pitch),
       )
+    if (done != null) {
+      val finished = AtomicBoolean()
+      val finish = { spoken: Boolean -> if (finished.compareAndSet(false, true)) done(spoken) }
+      options.setCompletedAction { status -> finish(status == SpeechController.STATUS_SPOKEN) }
+      // Speech that never starts, such as while SandFly is muted, may never complete.
+      mainHandler.postDelayed({ finish(false) }, SPEECH_WAIT_LIMIT_MS)
+    }
     give(Feedback.speech(inLanguage(text, voice.language), options))
   }
+
+  fun stopSpeech() = onMain { services.stopSpeech() }
+
+  fun showBraille(text: String) = onMain { services.showBraille(text) }
+
+  fun runCommand(value: String, done: (Boolean) -> Unit) = onMain { done(services.runCommand(value)) }
+
+  fun lastSpeech(done: (String?) -> Unit) = onMain { done(services.lastSpeech()) }
 
   fun playAudio(samples: FloatArray, sampleRate: Int, volume: Float) {
     if (!soundOn() || !startPlaying()) return
@@ -206,7 +230,7 @@ class ScriptFeedback(
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, feedback)
   }
 
-  private fun onMain(action: () -> Unit) {
+  fun onMain(action: () -> Unit) {
     mainHandler.post(action)
   }
 
@@ -214,6 +238,7 @@ class ScriptFeedback(
     const val TAG = "ScriptFeedback"
     const val RELEASE_DELAY_MS = 200L
     const val MAX_PLAYING = 4
+    const val SPEECH_WAIT_LIMIT_MS = 120_000L
     val SONIFICATION: AudioAttributes =
       AudioAttributes.Builder()
         .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)

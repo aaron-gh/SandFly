@@ -108,6 +108,22 @@ class NodeRule(
     get() = hideInside || group
 }
 
+/** What scripts can do with the running SandFly beyond giving feedback. Called on the main thread. */
+interface ScriptServices {
+  /** Runs the command saved as [value], as a gesture assigned to it would. */
+  fun runCommand(value: String): Boolean
+
+  fun stopSpeech()
+
+  fun isSpeaking(): Boolean
+
+  /** The text of the last thing SandFly said, as Copy last spoken phrase copies it. */
+  fun lastSpeech(): String?
+
+  /** Shows [text] on a connected braille display for a while, as an announcement. */
+  fun showBraille(text: CharSequence)
+}
+
 class ScriptMenuItem(
   val title: String,
   private val action: (AccessibilityNodeInfoCompat?) -> Unit,

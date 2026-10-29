@@ -39,6 +39,7 @@ class LazyScriptHost(
   private val service: AccessibilityService,
   private val feedback: Pipeline.FeedbackReturner,
   private val resume: Runnable,
+  private val services: ScriptServices,
 ) : ScriptHost, ScriptStore.Listener {
   private val store = ScriptStore.get(service)
   // Outlives the engine, so that a restart still knows which activity is in front.
@@ -112,7 +113,7 @@ class LazyScriptHost(
   private fun start() {
     try {
       LuaEngine.checkAvailable()
-      manager = ScriptManager(service, ScriptFeedback(service, feedback, resume), activation)
+      manager = ScriptManager(service, ScriptFeedback(service, feedback, resume, services), activation)
     } catch (e: LinkageError) {
       LogUtils.e(TAG, "Scripts are unavailable: %s", e)
       unavailable = true

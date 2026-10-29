@@ -46,6 +46,25 @@ class ManifestParserTest {
     assertThrows(ManifestException::class.java) { rule(json) }.message.orEmpty()
 
   @Test
+  fun aScriptTestedWithVersionOneNeedsNoWarning() {
+    assertEquals(ApiCompatibility.COMPATIBLE, parse().compatibility)
+  }
+
+  @Test
+  fun aScriptForALaterVersionIsTooNew() {
+    val later =
+      """{"id":"s","name":"n","author":"a","minApiVersion":${ScriptManifest.API_VERSION + 1},""" +
+        """"testedApiVersion":${ScriptManifest.API_VERSION + 1}}"""
+    assertEquals(ApiCompatibility.SANDFLY_TOO_OLD, ScriptManifest.parse(later).compatibility)
+  }
+
+  @Test
+  fun aRuleCanMatchStates() {
+    val parsed = rule("""{"match":{"className":"CheckBox","checked":false},"label":"Off"}""")
+    assertEquals(mapOf("checked" to false), parsed.match!!.states)
+  }
+
+  @Test
   fun theSmallestManifestIsAScriptForAllApps() {
     val parsed = parse()
 

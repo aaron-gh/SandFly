@@ -26,6 +26,7 @@ import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache
+import com.google.android.accessibility.talkback.translation.Translator
 import java.util.concurrent.CountDownLatch
 import org.json.JSONObject
 
@@ -37,6 +38,11 @@ class ScriptManager(
 
   val store: ScriptStore = ScriptStore.get(service)
   val dialogs = ScriptDialogs(service)
+  val device = ScriptDevice(service)
+  val touch = ScriptTouch(service)
+  val screen = ScriptScreen(service)
+  /** Used on the main thread only. */
+  val translator by lazy { Translator(service) }
 
   private val mainHandler = Handler(Looper.getMainLooper())
   private val scriptHandler = startScriptThread()
@@ -246,6 +252,7 @@ class ScriptManager(
       events.clear()
       actions.clear()
       dialogs.close()
+      screen.close()
       bindings = ScriptBindings.EMPTY
       rules = ScriptRules.EMPTY
       rulesSource = emptyList()
@@ -279,6 +286,9 @@ class ScriptManager(
     service
       .findFocus(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY)
       ?.let(AccessibilityNodeInfoCompat::wrap)
+
+  fun inputFocusedNode(): AccessibilityNodeInfoCompat? =
+    service.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.let(AccessibilityNodeInfoCompat::wrap)
 
   fun activeRoot(): AccessibilityNodeInfoCompat? =
     service.rootInActiveWindow?.let(AccessibilityNodeInfoCompat::wrap)

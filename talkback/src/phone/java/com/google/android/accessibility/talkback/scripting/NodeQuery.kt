@@ -33,10 +33,13 @@ data class NodeQuery(
   val parentId: String? = null,
   val inside: NodeQuery? = null,
   val has: NodeQuery? = null,
+  /** Wanted values of the item's states, such as checked = true. */
+  val states: Map<String, Boolean> = emptyMap(),
 ) {
   fun matches(node: AccessibilityNodeInfoCompat, textOf: TextOf = PLAIN_TEXT): Boolean =
     (id == null || idMatches(id, node.viewIdResourceName)) &&
       (clickable == null || node.isClickable == clickable) &&
+      states.all { (state, wanted) -> STATES.getValue(state)(node) == wanted } &&
       (className == null || node.className?.toString()?.endsWith(className) == true) &&
       (contentDescription == null || node.contentDescription?.toString() == contentDescription) &&
       (text == null || textOf(node) == text) &&
@@ -105,7 +108,24 @@ data class NodeQuery(
     private const val MAX_HAS_VISITED = 60
     private val PLAIN_TEXT: TextOf = { it.text?.toString() }
 
+    private val STATES: Map<String, (AccessibilityNodeInfoCompat) -> Boolean> =
+      mapOf(
+        "checkable" to { it.isCheckable },
+        "checked" to { it.isChecked },
+        "longClickable" to { it.isLongClickable },
+        "focusable" to { it.isFocusable },
+        "focused" to { it.isFocused },
+        "selected" to { it.isSelected },
+        "enabled" to { it.isEnabled },
+        "editable" to { it.isEditable },
+        "scrollable" to { it.isScrollable },
+        "visible" to { it.isVisibleToUser },
+        "heading" to { it.isHeading },
+        "password" to { it.isPassword },
+      )
+
     val KEYS =
+      STATES.keys +
       setOf(
         "id",
         "text",
@@ -134,6 +154,7 @@ data class NodeQuery(
         inside = if (nested) null else json.optJSONObject("inside")?.let { of(it, nested = true) },
         // One level too: a nested one would search everything inside every item it looks at.
         has = if (nested) null else json.optJSONObject("has")?.let { of(it, nested = true) },
+        states = STATES.keys.filter(json::has).associateWith(json::getBoolean),
       )
     }
 
