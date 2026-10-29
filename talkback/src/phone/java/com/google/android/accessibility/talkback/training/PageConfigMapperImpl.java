@@ -124,6 +124,8 @@ public final class PageConfigMapperImpl implements PageConfigMapper {
         return OnboardingConfigs.sandflyArrowKeys.build();
       case PAGE_ID_SANDFLY_COMMANDS:
         return OnboardingConfigs.sandflyCommands.build();
+      case PAGE_ID_SANDFLY_DICTATION:
+        return OnboardingConfigs.sandflyDictation.build();
       case PAGE_ID_SANDFLY_PRO:
         return OnboardingConfigs.sandflyPro.build();
       case PAGE_ID_UPDATE_WELCOME:
