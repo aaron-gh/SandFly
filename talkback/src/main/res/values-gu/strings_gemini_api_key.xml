@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">મોડલ</string>
     <string name="ai_service_address_invalid">સરનામું https://થી શરૂ થવું જોઈએ. કંઈ સાચવવામાં આવ્યું નથી.</string>
     <string name="dialog_message_ai_service_consent">વર્ણન માટે છબીઓ અને સ્ક્રીનશૉટ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>ને મોકલવામાં આવે છે, જેમાં થોડી સેકન્ડ લાગે છે. સેવાની પોતાની શરતો અને ગોપનીયતા નીતિ લાગુ થાય છે. જનરેટિવ AI પ્રાયોગિક છે, તેથી તે ભૂલો કરશે.</string>
-    <string name="ai_service_error_api_key">AI સેવાએ API કી સ્વીકારી નથી. સ્વચાલિત વર્ણનોમાં તેની સેટિંગ્સ તપાસો.</string>
+    <string name="ai_service_error_api_key">AI સેવાએ API કી સ્વીકારી નથી. “છબી અને સ્ક્રીનના વર્ણનો”માં તેની સેટિંગ્સ તપાસો.</string>
     <string name="ai_service_error_quota">AI સેવાની વપરાશ મર્યાદા પહોંચી ગઈ છે. પછીથી ફરી પ્રયાસ કરો.</string>
     <string name="ai_service_error_busy">AI સેવા અત્યારે વ્યસ્ત છે. થોડીવારમાં ફરી પ્રયાસ કરો.</string>
     <string name="ai_service_error_timeout">AI સેવાએ જવાબ આપવામાં ઘણો સમય લીધો. ફરી પ્રયાસ કરો.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">એકપણ નહીં</string>
-    <string name="ai_service_not_set_up">કોઈ AI સેવા ઉપયોગમાં નથી. એક સેટ કરો અથવા સ્વચાલિત વર્ણન સેટિંગ્સમાં એક પસંદ કરો.</string>
+    <string name="ai_service_not_set_up">કોઈ AI સેવા ઉપયોગમાં નથી. એક સેટ કરો અથવા “છબી અને સ્ક્રીનના વર્ણનો” સેટિંગ્સમાં એક પસંદ કરો.</string>
     <string name="ai_provider_none_set_up">કોઈ AI સેવા સેટ કરેલી નથી. નીચે તેની સેટિંગ્સમાં એક સેટ કરો.</string>
     <string name="ai_provider_other">અન્ય સેવા</string>
     <string name="title_pref_category_ai_services">AI સેવાઓ</string>

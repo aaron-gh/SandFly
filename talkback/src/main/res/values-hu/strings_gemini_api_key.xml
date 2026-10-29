@@ -19,9 +19,9 @@
     <string name="ai_service_address_invalid">A címnek https:// előtaggal kell kezdődnie. Semmi sem lett mentve.</string>
     <string name="dialog_message_ai_service_consent">A képeket és képernyőképeket leírás céljából a(z) <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> kapja meg, ami néhány másodpercig tart. A szolgáltatás saját feltételei és adatvédelmi irányelvei érvényesek. A generatív MI kísérleti jellegű, ezért hibázni fog.</string>
     <string name="ai_service_error_api_key">Az AI-szolgáltatás nem fogadta el az API-kulcsot. Ellenőrizze a beállításait a Kép- és képernyőleírások menüpontban.</string>
-    <string name="ai_service_error_quota">Elérte az AI szolgáltatás használati korlátját. Próbálja újra később.</string>
-    <string name="ai_service_error_busy">Az AI szolgáltatás jelenleg foglalt. Próbálja újra egy pillanat múlva.</string>
-    <string name="ai_service_error_timeout">Az AI-szolgáltatás túl sokáig tartott a válaszadáshoz. Próbáld újra.</string>
+    <string name="ai_service_error_quota">Elérte az AI-szolgáltatás használati korlátját. Próbálja újra később.</string>
+    <string name="ai_service_error_busy">Az AI-szolgáltatás jelenleg foglalt. Próbálja újra egy pillanat múlva.</string>
+    <string name="ai_service_error_timeout">Az AI-szolgáltatás túl sokáig tartott a válaszadáshoz. Próbálja újra.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -33,8 +33,8 @@
     <string name="ai_service_not_set_up">Nincs AI-szolgáltatás használatban. Állítson be egyet, vagy válasszon egyet a Kép- és képernyőleírások beállításainál.</string>
     <string name="ai_provider_none_set_up">Nincs AI-szolgáltatás beállítva. Állítson be egyet az alábbi beállításokban.</string>
     <string name="ai_provider_other">Egyéb szolgáltatás</string>
-    <string name="title_pref_category_ai_services">AI szolgáltatások</string>
-    <string name="title_pref_ai_provider">AI szolgáltatás</string>
+    <string name="title_pref_category_ai_services">AI-szolgáltatások</string>
+    <string name="title_pref_ai_provider">AI-szolgáltatás</string>
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> beállításai</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, nincs beállítva</string>
     <string name="ai_provider_in_use">Használatban</string>

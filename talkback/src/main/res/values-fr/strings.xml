@@ -13,7 +13,7 @@
   <string name="label_manager_summary_title">Gérer les libellés personnalisés</string>
   <string name="label_manager_package_title">Gérer les libellés pour %1$s</string>
   <string name="manage_label">Gérer les libellés</string>
-  <string name="label_manager_no_packages_message">Vous n\'avez aucune étiquette personnalisée pour le moment\n\n<b>Comment créer une étiquette personnalisée </b>\nSélectionnez une image sans étiquette, puis ajoutez-en une depuis le menu SandFly</string>
+  <string name="label_manager_no_packages_message">Vous n\'avez aucun libellé personnalisé pour le moment\n\n<b>Comment créer un libellé personnalisé</b>\nSélectionnez une image sans libellé, puis ajoutez-en un depuis le menu SandFly</string>
   <string name="label_manager_timestamp_text">Dernière modification : %1$s</string>
   <string name="search_mode_cancel">Recherche annulée</string>
   <string name="notification_type_status_started">Commencé</string>
@@ -142,8 +142,8 @@
   <string name="keycombo_menu_category_navigation">Actions de navigation</string>
   <string name="keycombo_menu_navigate_next">Accéder à l\'élément suivant</string>
   <string name="keycombo_menu_navigate_previous">Accéder à l\'élément précédent</string>
-  <string name="keycombo_menu_navigate_up">Accéder à la catégorie précédente (selon les commandes de lecture)</string>
-  <string name="keycombo_menu_navigate_down">Accéder à la catégorie suivante (selon les commandes de lecture)</string>
+  <string name="keycombo_menu_navigate_up">Accéder à la catégorie précédente (selon les contrôles de lecture)</string>
+  <string name="keycombo_menu_navigate_down">Accéder à la catégorie suivante (selon les contrôles de lecture)</string>
   <string name="keycombo_menu_navigate_first">Accéder au premier élément</string>
   <string name="keycombo_menu_navigate_last">Accéder au dernier élément</string>
   <string name="keycombo_menu_navigate_next_window">Accéder à la fenêtre ou à l\'élément système suivant</string>
@@ -192,7 +192,7 @@
   <string name="keycombo_menu_other_language_options">Afficher les langues installées</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Copier la dernière expression énoncée</string>
   <string name="keycombo_menu_other_open_tts_settings">Accéder aux paramètres de synthèse vocale</string>
-  <string name="keycombo_menu_other_open_talkback_settings">Accéder aux paramètres de SandFly</string>
+  <string name="keycombo_menu_other_open_talkback_settings">Accéder aux paramètres SandFly</string>
   <string name="keycombo_menu_other_report_issue">Envoyer des commentaires</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Lecture de la saisie par cycle</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Afficher la liste des raccourcis clavier</string>
@@ -406,8 +406,8 @@
   <string name="talkback_menu_more_options_text">D\'autres options de menu sont disponibles une fois la configuration terminée ou lorsque vous déverrouillez votre appareil</string>
   <string name="talkback_menu_title_content_description">Menu SandFly. Pour parcourir les options du menu SandFly, balayez vers la droite.\n\nPour revenir au tutoriel, balayez vers la gauche ou la droite avec deux doigts depuis le bord de votre écran.</string>
   <string name="shortcut_show_language_options">Changer la langue parlée</string>
-  <string name="shortcut_select_next_setting">Commande de lecture suivante</string>
-  <string name="shortcut_select_previous_setting">Commande de lecture précédente</string>
+  <string name="shortcut_select_next_setting">Contrôle de lecture suivant</string>
+  <string name="shortcut_select_previous_setting">Contrôle de lecture précédent</string>
   <string name="shortcut_pass_through_next">Désactiver ponctuellement le geste TalkBack</string>
   <string name="shortcut_a11y_button">Raccourci d\'accessibilité</string>
   <string name="shortcut_a11y_button_long_press">Cliquer de manière prolongée sur le raccourci d\'accessibilité</string>
@@ -510,7 +510,7 @@
   <string name="summary_show_hide_screen">Masquer l\'écran pour qu\'il ne soit pas visible dans les lieux publics. Après avoir masqué l\'écran, rétablir l\'état normal</string>
   <string name="summary_control_speak_time">Définir si l\'heure est énoncée ou non lorsque vous allumez l\'écran</string>
   <string name="summary_show_keyboard_shortcuts_preferences">Ouvrir la liste des raccourcis clavier</string>
-  <string name="summary_talkback_preferences">Accéder aux paramètres de SandFly</string>
+  <string name="summary_talkback_preferences">Accéder aux paramètres SandFly</string>
   <string name="summary_braile_display_preferences">Ouvrir les paramètres de la plage braille</string>
   <string name="summary_system_actions">Sélectionnez \"Toutes les applis\", puis \"Réglages rapides\"</string>
   <string name="summary_tts_settings">Accéder aux paramètres de synthèse vocale</string>
@@ -747,7 +747,7 @@
   <string name="value_tv_remote_mode_seek_control">Mode de curseur</string>
   <string name="value_hint_tv_remote_mode_seek_control">Appuyez sur les boutons représentant des flèches pour modifier la valeur, ou appuyez sur \"Sélectionner\" pour quitter ce mode.</string>
   <string name="reset_user_language_preference">Par défaut</string>
-  <string name="title_pref_selector_speech_rate">Débit</string>
+  <string name="title_pref_selector_speech_rate">Vitesse d\'élocution</string>
   <string name="title_pref_selector_verbosity">Niveau de détail</string>
   <string name="title_pref_selector_punctuation">Ponctuation</string>
   <string name="title_pref_selector_audio_focus">Atténuation audio</string>
@@ -847,7 +847,7 @@
   <string name="new_feature_in_talkback_title">Nouvelles fonctionnalités de SandFly</string>
   <string name="exit_tutorial_title">Vous avez terminé ?</string>
   <string name="exit_tutorial_content">Vous pouvez revenir au tutoriel à tout moment dans les paramètres SandFly.</string>
-  <string name="exit_onboarding_content">Vous pouvez retourner dans les paramètres de SandFly à tout moment pour découvrir de nouvelles fonctionnalités.</string>
+  <string name="exit_onboarding_content">Vous pouvez retourner dans les paramètres SandFly à tout moment pour découvrir de nouvelles fonctionnalités.</string>
   <string name="keep_reviewing_tutorial_button">Continuer le tutoriel</string>
   <string name="welcome_to_updated_talkback_title">Bienvenue dans la nouvelle version de SandFly</string>
   <string name="navigation_heading">Navigation</string>
@@ -865,7 +865,7 @@
   <string name="new_shortcut_gesture_cut_text_announcement">Texte coupé. En général, cela coupe le texte que vous avez sélectionné. Balayez l\'écran vers la droite pour continuer.</string>
   <string name="new_shortcut_gesture_selection_mode_text">Pour activer ou désactiver le mode de sélection de texte, appuyez deux fois et maintenez la pression avec deux doigts.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Mode de sélection activé ou désactivé. En général, cela active ou désactive le mode de sélection de texte lorsque le curseur se trouve dans un champ de saisie. Balayez l\'écran vers la droite pour continuer.</string>
-  <string name="new_shortcut_gesture_reading_menu_text">Pour utiliser les commandes de lecture, balayez l\'écran vers la gauche ou vers la droite avec trois doigts. Vous pouvez également balayer l\'écran vers le haut ou vers le bas avec trois doigts.</string>
+  <string name="new_shortcut_gesture_reading_menu_text">Pour utiliser les contrôles de lecture, balayez l\'écran vers la gauche ou vers la droite avec trois doigts. Vous pouvez également balayer l\'écran vers le haut ou vers le bas avec trois doigts.</string>
   <string name="new_shortcut_gesture_note">Remarque : Vous avez personnalisé plusieurs gestes. Certaines de ces informations peuvent donc être inexactes. Pour consulter les gestes que vous utilisez, accédez aux paramètres SandFly.</string>
   <string name="welcome_to_android11_text">De nouveaux gestes ont été ajoutés pour rendre l\'utilisation de SandFly plus simple et rapide.\n\nVous pouvez les essayer sur cet écran. Retrouvez ces informations à tout moment dans les paramètres SandFly.</string>
   <string name="new_gesture_notification_title">Nouveaux gestes dans SandFly</string>
@@ -886,7 +886,7 @@
   <string name="announcing_text_formatting_middle">Envie de faire un essai ? Voici un exemple de texte mis en forme :</string>
   <string name="announcing_text_formatting_tail">Si vous souhaitez modifier la façon dont le texte mis en forme est annoncé, vous pouvez accéder à %1$s.</string>
   <string name="text_formatting_options_settings_path">Paramètres SandFly &gt; Niveau de détail &gt; Options de mise en forme du texte</string>
-  <string name="text_formatting_options_settings_path_tts">\"Paramètres SandFly\", puis \"Niveau de détail\", puis \"Options de formatage du texte\"</string>
+  <string name="text_formatting_options_settings_path_tts">\"Paramètres SandFly\", puis \"Niveau de détail\", puis \"Options de mise en forme du texte\"</string>
   <string name="announcing_text_formatiing_sample">Ce texte est en &lt;b&gt;gras&lt;/b&gt;, un cri confiant,
 &lt;br&gt;tandis que celui-ci est &lt;u&gt;souligné&lt;/u&gt;, un murmure, sans aucun doute.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;Les roses sont rouges&lt;/span&gt;, un classique, c\'est vrai.
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Paramètres de la plage braille</string>
   <string name="keyboard_smart_browse_mode_title">Clavier : mode navigation intelligente</string>
   <string name="keyboard_smart_browse_mode_text">Le mode navigation intelligente de SandFly désactive le mode navigation dans un champ de saisie pour vous aider à saisir du texte à l\'aide d\'un clavier physique lorsque vous naviguez sur le Web. Il le réactive ensuite lorsque vous passez à un champ qui n\'est pas un champ de saisie sur le Web afin que vous puissiez continuer à naviguer efficacement. Vous pouvez activer ou désactiver le mode de navigation intelligente en accédant à <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Paramètres SandFly &gt; Paramètres avancés</string>
-  <string name="advanced_settings_link_tts">\"Paramètres SandFly\", puis \"Paramètres avancés\"</string>
   <string name="keyboard_tutorial_title">Tutoriel du clavier</string>
   <string name="keyboard_tutorial_text">SandFly inclut désormais un tutoriel sur le clavier. Ce tutoriel a été conçu pour vous aider à apprendre les raccourcis clavier ainsi que les commandes du jeu de raccourcis clavier amélioré lorsque vous utilisez un clavier physique. Pour accéder au tutoriel, accédez à <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Paramètres SandFly &gt; Tutoriel SandFly</string>
-  <string name="tutorial_link_tts">\"Paramètres SandFly\", puis \"Tutoriel SandFly\"</string>
   <string name="tutorial_entry_point_title">Tutoriel</string>
   <string name="welcome_to_talkback_title">Bienvenue dans SandFly</string>
   <string name="talkback_is_on">SandFly est activé</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">Utilisez les menus et les commandes</string>
   <string name="menus_talkback_menu_text">Le menu SandFly comprend des paramètres et des commandes dont vous pourriez souvent avoir besoin.\n\nOuvrez le menu SandFly maintenant en appuyant sur l\'écran avec trois doigts.</string>
   <string name="menus_talkback_menu_text_pre_r">Le menu SandFly comprend des paramètres et des commandes dont vous pourriez souvent avoir besoin.\n\nPour l\'ouvrir, balayez l\'écran vers le bas, puis vers la droite.</string>
-  <string name="menus_selector_text">Ces raccourcis peuvent vous aider à modifier rapidement des paramètres (par exemple, pour passer de la lecture caractère par caractère à celle mot par mot ou pour modifier la vitesse d\'élocution de SandFly).\n\nPour modifier rapidement vos commandes de lecture, balayez l\'écran vers la gauche ou vers la droite avec trois doigts.\n\nNotez que vous pourrez personnaliser le menu SandFly et vos commandes de lecture plus tard dans les paramètres SandFly.</string>
-  <string name="menus_selector_text_pre_r">Ces raccourcis peuvent vous aider à modifier rapidement des paramètres (par exemple, pour passer de la lecture caractère par caractère à celle mot par mot ou pour modifier la vitesse d\'élocution de SandFly).\n\nPour modifier rapidement vos commandes de lecture, balayez l\'écran vers le bas, puis vers le haut.\n\nSachez que vous pouvez personnaliser le menu SandFly et vos commandes de lecture plus tard dans les paramètres SandFly.</string>
+  <string name="menus_selector_text">Ces raccourcis peuvent vous aider à modifier rapidement des paramètres (par exemple, pour passer de la lecture caractère par caractère à celle mot par mot ou pour modifier la vitesse d\'élocution de SandFly).\n\nPour modifier rapidement vos contrôles de lecture, balayez l\'écran vers la gauche ou vers la droite avec trois doigts.\n\nNotez que vous pourrez personnaliser le menu SandFly et vos contrôles de lecture plus tard dans les paramètres SandFly.</string>
+  <string name="menus_selector_text_pre_r">Ces raccourcis peuvent vous aider à modifier rapidement des paramètres (par exemple, pour passer de la lecture caractère par caractère à celle mot par mot ou pour modifier la vitesse d\'élocution de SandFly).\n\nPour modifier rapidement vos contrôles de lecture, balayez l\'écran vers le bas, puis vers le haut.\n\nSachez que vous pouvez personnaliser le menu SandFly et vos contrôles de lecture plus tard dans les paramètres SandFly.</string>
   <string name="all_set_title">Tout est prêt</string>
   <string name="all_set_text">Vous êtes prêt à utiliser SandFly.\n\nContinuez à explorer d\'autres sujets dès maintenant, ou consultez ces informations dans les paramètres SandFly quand vous le souhaitez.</string>
   <string name="talkback_tutorial_text">Balayez l\'écran vers la droite pour sélectionner une rubrique. Pour une expérience optimale, activez SandFly avant de commencer.</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Plus</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Réserver des gestes pour Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly ne traite plus les appuis simples et doubles avec deux doigts, afin que Samsung Vibration Watch puisse les utiliser. Activez Vibration Watch dans les paramètres d\'accessibilité de votre montre.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Réservé pour Vibration Watch dans les paramètres avancés</string>
     <string name="title_pref_speakerphone_away_from_ear">Haut-parleur loin de l\'oreille</string>
     <string name="summary_pref_speakerphone_away_from_ear">Pendant un appel, passe au haut-parleur lorsque vous éloignez le téléphone de votre oreille, et revient à l\'écouteur lorsque vous le rapprochez.</string>
     <string name="summary_pref_speakerphone_needs_permission">Nécessite une autorisation qu\'Android n\'accorde pas aux lecteurs d\'écran. Pour l\'accorder, exécutez cette commande avec adb ou Shizuku, puis revenez sur cet écran : %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Applications</string>
     <string name="speech_control_no_apps">Aucune application n\'a encore demandé à parler.</string>
     <string name="speech_control_ask_title">Autoriser <xliff:g id="app" example="Tasker">%1$s</xliff:g> à parler via SandFly ?</string>
-    <string name="speech_control_ask_text">Elle pourra énoncer du texte avec votre voix SandFly. Vous pouvez modifier ce choix dans les paramètres avancés.</string>
     <string name="speech_control_allow">Autoriser</string>
     <string name="speech_control_deny">Ne pas autoriser</string>
     <string name="permission_speak_label">parler via SandFly</string>
@@ -1441,7 +1435,6 @@
         <item quantity="many">%d notifications</item>
         <item quantity="other">%d notifications</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly activé. Maintenez deux doigts sur l\'écran pendant 5 secondes pour le désactiver. Pour ne plus afficher ce message, désactivez Paramètres SandFly &gt; Paramètres avancés &gt; Afficher les instructions pour désactiver SandFly.</string>
     <string name="edge_gestures_title">Bords</string>
     <string name="title_pref_audio_output_device">Périphérique de sortie audio</string>
     <string name="dialog_title_audio_output_device">Choisir la sortie du son de SandFly</string>
@@ -1524,7 +1517,7 @@
     <string name="summary_support_wrap_around">Activer ou désactiver le passage du dernier élément au premier</string>
     <string name="wrap_around_on">Navigation en boucle activée</string>
     <string name="wrap_around_off">Navigation en boucle désactivée</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tablette tenue droite, écran vers l\'extérieur</string>
+    <string name="title_selector_tablet_held_up_faces_away">Écran de la tablette tenue à la verticale tourné à l’opposé de vous</string>
     <string name="summary_support_tablet_held_up_faces_away">Pour le clavier braille sur une tablette ou un téléphone déplié</string>
     <string name="tablet_held_up_faces_away_on">Tablette tenue droite, écran vers l\'extérieur activé</string>
     <string name="tablet_held_up_faces_away_off">Tablette tenue droite, écran vers l\'extérieur désactivé</string>
@@ -1666,7 +1659,7 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Un autre raccourci pour activer ou désactiver le mode navigation</string>
     <string name="title_pref_vibration_strength">Intensité des vibrations</string>
     <string name="shortcut_scroll_to_top">Aller au début</string>
-    <string name="shortcut_write_reading_control">Écrire la lettre d’une commande de lecture</string>
+    <string name="shortcut_write_reading_control">Écrire la lettre d’un contrôle de lecture</string>
     <string name="title_pref_reading_control_letters">Lettres manuscrites</string>
     <string name="reading_control_letter_none">Aucun</string>
     <string name="handwriting_prompt">Écrire une lettre</string>
@@ -1741,7 +1734,7 @@
     <string name="value_distance_40mm">4 cm</string>
     <string name="value_distance_50mm">5 cm</string>
     <string name="title_pref_selector_links_controls_web_only">Liens et contrôles uniquement dans le contenu Web</string>
-    <string name="title_pref_selector_auto_switch">Changer automatiquement de commande de lecture</string>
+    <string name="title_pref_selector_auto_switch">Changer automatiquement de contrôle de lecture</string>
     <string name="title_pref_touch_stops_speech">Arrêter la synthèse vocale au toucher de l\'écran</string>
     <string name="title_pref_volume_keys_move_cursor">Les touches de volume déplacent le curseur</string>
     <string name="summary_pref_volume_keys_move_cursor">Quand un champ de texte a le focus, Volume plus recule le curseur d’un caractère et Volume moins l’avance</string>
@@ -1770,7 +1763,6 @@
     <string name="title_pref_whisper_models">Modèles Whisper</string>
     <string name="dictation_whisper_use">Utiliser</string>
     <string name="title_pref_dictation_ai_service">Service d’IA pour la dictée</string>
-    <string name="dictation_ai_same">Le même que pour les descriptions automatiques</string>
     <string name="title_pref_browse_mode_per_app">Mémoriser le mode navigation pour chaque application</string>
     <string name="title_pref_export_settings">Exporter les paramètres</string>
     <string name="title_pref_import_settings">Importer les paramètres</string>
@@ -1798,4 +1790,12 @@
         <item>1 minute</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Arrêt automatique après un silence</string>
+    <string name="dictation_ai_same">Comme pour « Descriptions d\'images et d\'écran »</string>
+    <string name="navigation_settings_link">Paramètres SandFly &gt; Navigation</string>
+    <string name="navigation_settings_link_tts">Paramètres SandFly, puis Navigation</string>
+    <string name="shortcut_reserved_for_vibration_watch">Réservé à Vibration Watch dans « Gestes »</string>
+    <string name="speech_control_ask_text">Cette application peut énoncer du texte avec votre voix SandFly. Vous pouvez modifier ce choix dans Paramètres, Voix, Autoriser d\'autres applications à parler.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly activé. Maintenez deux doigts sur l\'écran pendant 5 secondes pour le désactiver. Pour ne plus afficher ce message, désactivez Paramètres SandFly &gt; Pause et désactivation &gt; Afficher les instructions pour désactiver SandFly.</string>
+    <string name="tutorial_link">Paramètres SandFly &gt; Aide et commentaires &gt; Tutoriel SandFly</string>
+    <string name="tutorial_link_tts">Paramètres SandFly, puis Aide et commentaires, puis Tutoriel SandFly</string>
 </resources>

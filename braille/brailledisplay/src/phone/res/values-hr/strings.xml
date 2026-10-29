@@ -3,7 +3,7 @@
   <string name="braille_ime_name">Hardverska brajična tipkovnica</string>
   <string name="bd_application_name">Android alati za pristupačnost</string>
   <string name="bd_ime_unavailable_activity_name">Brajična tipkovnica SandFlya nije dostupna</string>
-  <string name="bd_ime_disabled_dialog_title">Uključite brajičinu tipkovnicu SandFlya</string>
+  <string name="bd_ime_disabled_dialog_title">Uključite brajičnu tipkovnicu SandFlya</string>
   <string name="bd_ime_disabled_dialog_message">Da biste koristili brajev redak za pisanje, uključite ga u postavkama unosa.</string>
   <string name="bd_ime_disabled_dialog_title_positive">Postavke unosa</string>
   <string name="bd_ime_not_default_dialog_title">Promijenite način unosa</string>
@@ -40,7 +40,7 @@
   <string name="bd_preference_scan_inactivated_title">Potraži novi uređaj</string>
   <string name="bd_preference_scan_activated_title">Traženje uređaja…</string>
   <string name="bd_preference_languages_and_commands_category_title">Jezici i naredbe</string>
-  <string name="pref_codes_title">Jezik</string>
+  <string name="pref_codes_title">Jezici</string>
   <string name="pref_preferred_output_codes_title">Željeni jezik čitanja</string>
   <string name="pref_preferred_input_codes_title">Željeni jezik pisanja</string>
   <string name="pref_preferred_braille_grade_title">Preferirani stupanj brajice</string>
@@ -226,7 +226,7 @@
   <string name="bd_cmd_open_talkback_menu">Otvaranje izbornika SandFlya</string>
   <string name="bd_cmd_toggle_voice_feedback">Uključivanje ili isključivanje govora SandFlya</string>
   <string name="bd_cmd_read_stop">Zaustavljanje čitanja</string>
-  <string name="bd_cmd_talkback_settings">Otvaranje SandFlyovih postavki</string>
+  <string name="bd_cmd_talkback_settings">Otvaranje postavki SandFlya</string>
   <string name="bd_cmd_switch_to_next_input_language">Prelazak na sljedeći jezik pisanja</string>
   <string name="bd_cmd_switch_to_next_output_language">Prelazak na sljedeći jezik čitanja</string>
   <string name="bd_cmd_toggle_contracted_mode">Izmjenjivanje kratkopisa i punog pisma</string>
@@ -322,15 +322,15 @@
   <string name="popup_message_history_consent_dialog_msg">Time će se neke poruke, kao što su obavijesti i alarmi, pohraniti u SandFly. Tu postavku uvijek možete izmijeniti.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Uključi</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Ne, hvala</string>
-    <string name="external_display_channel">Brajični retci iz drugih aplikacija</string>
-    <string name="external_display_ask_title">Dopustiti da <xliff:g id="app" example="Notetaker">%1$s</xliff:g> bude Brailleov zaslon za SandFly?</string>
+    <string name="external_display_channel">Brajevi retci iz drugih aplikacija</string>
+    <string name="external_display_ask_title">Dopustiti da <xliff:g id="app" example="Notetaker">%1$s</xliff:g> bude brajev redak za SandFly?</string>
     <string name="external_display_ask_text">SandFly neće ga koristiti dok mu vi to ne dopustite.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> moći će čitati sve što SandFly prikazuje na brajici, a to može biti bilo što na zaslonu, uključujući poruke i ono što upisujete. Moći će i upravljati vašim uređajem kao vi brajičnim zaslonom: tipkati, otvarati aplikacije i izvršavati bilo koju naredbu SandFlyja. Dopustite samo aplikacije kojima vjerujete.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> moći će čitati sve što SandFly prikazuje na brajici, a to može biti bilo što na zaslonu, uključujući poruke i ono što upisujete. Moći će i upravljati vašim uređajem kao vi brajevim retkom: tipkati, otvarati aplikacije i izvršavati bilo koju naredbu SandFlyja. Dopustite samo aplikacije kojima vjerujete.</string>
     <string name="external_display_allow">Dopusti</string>
     <string name="external_display_deny">Ne dopuštaj</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> je vaš brajev zaslon</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> je vaš brajev redak</string>
     <string name="external_display_in_use_text">Dok ga SandFly koristi, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> može čitati zaslon i upravljati uređajem.</string>
     <string name="external_displays_title">Prikazi iz drugih aplikacija</string>
-    <string name="external_displays_summary">Aplikacije koje dopustite mogu biti Brailleovi zasloni za SandFly. Aplikacija koja je Brailleov zaslon može čitati zaslon i upravljati uređajem.</string>
-    <string name="external_displays_none">Nijedna aplikacija ne može biti brajev zaslon.</string>
+    <string name="external_displays_summary">Aplikacije koje dopustite mogu biti brajevi retci za SandFly. Aplikacija koja je brajev redak može čitati zaslon i upravljati uređajem.</string>
+    <string name="external_displays_none">Nijedna aplikacija ne može biti brajev redak.</string>
 </resources>

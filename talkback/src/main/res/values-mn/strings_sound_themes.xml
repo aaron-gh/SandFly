@@ -20,15 +20,15 @@
     <string name="sound_theme_control_sounds_off">Удирдлагын элементийн дуу, чичиргээг унтраана.</string>
     <string name="sound_theme_use">Энэ дууны загварыг ашиглах</string>
     <string name="sound_theme_about">Энэ дууны загварын тухай</string>
-    <string name="sound_theme_export">Сэдвийн файл болгон хадгалах</string>
+    <string name="sound_theme_export">Загварын файл болгон хадгалах</string>
     <string name="sound_theme_remove">Устгах</string>
-    <string name="sound_theme_remove_confirm"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> сэдвийг устгах уу?</string>
+    <string name="sound_theme_remove_confirm"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> загварыг устгах уу?</string>
     <string name="sound_theme_remove_button">Устгах</string>
     <plurals name="sound_theme_exported">
         <item quantity="one">Загварыг <xliff:g id="count" example="1">%d</xliff:g> дуугаар хадгалсан.</item>
         <item quantity="other">Загварыг <xliff:g id="count" example="13">%d</xliff:g> дуутай хадгалсан.</item>
     </plurals>
-    <string name="sound_theme_export_failed">SandFly сэдвийн файлыг хадгалж чадсангүй.</string>
+    <string name="sound_theme_export_failed">SandFly загварын файлыг хадгалж чадсангүй.</string>
     <string name="sound_theme_no_picker">Энэ төхөөрөмж дээр файл сонгох програм байхгүй байна.</string>
     <string name="sound_theme_settings_category"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>-ийн тохиргоо</string>
     <string name="title_pref_theme_sounds">Дуунууд</string>
@@ -41,24 +41,24 @@
     <string name="title_pref_sound_theme_install_source">Эх сурвалжаас</string>
     <string name="summary_pref_sound_theme_install_source">GitHub, GitLab, Codeberg, Gitea эсвэл Bitbucket дээрх репозитор дахь загвар файлууд.</string>
     <string name="sound_theme_sources">Дууны загварын эх сурвалж</string>
-    <string name="sound_theme_source_empty">Энэ эх сурвалжид дууны сэдэв алга</string>
-    <string name="sound_theme_source_failed">Дууны сэдвүүдийг ачаалж чадсангүй. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Үүнээс суулгасан дууны сэдвүүд суулгасан хэвээр үлдэнэ.</string>
-    <string name="sound_theme_link_message">Сэдвийн файл эсвэл дотор нь сэдэвтэй GitHub репозиторын холбоосыг оруулах буюу буулгана уу.</string>
+    <string name="sound_theme_source_empty">Энэ эх сурвалжид дууны загвар алга</string>
+    <string name="sound_theme_source_failed">Дууны загваруудыг ачаалж чадсангүй. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Үүнээс суулгасан дууны загварууд суулгасан хэвээр үлдэнэ.</string>
+    <string name="sound_theme_link_message">Загварын файл эсвэл дотор нь загвартай GitHub репозиторын холбоосыг оруулах буюу буулгана уу.</string>
     <string name="sound_theme_link_hint">https://</string>
     <string name="sound_theme_install_label">Дууны загвар суулгах</string>
-    <string name="sound_theme_install_reading">Дууны сэдвийг уншиж байна</string>
+    <string name="sound_theme_install_reading">Дууны загварыг уншиж байна</string>
     <string name="sound_theme_install_title"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> суулгах уу?</string>
     <string name="sound_theme_install_and_use">Суулгах, ашиглах</string>
     <string name="sound_theme_install">Суулгах</string>
-    <string name="sound_theme_install_replaces">Энэ нь ижил нэртэй суулгасан сэдвийг орлоно.</string>
+    <string name="sound_theme_install_replaces">Энэ нь ижил нэртэй суулгасан загварыг орлоно.</string>
     <string name="sound_theme_install_skipped">Орхигдсон:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> суулгасан.</string>
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>-г суулгалаа. Одоо ашиглагдаж байна.</string>
-    <string name="sound_theme_install_nothing">Суулгах дууны сэдэв алга.</string>
+    <string name="sound_theme_install_nothing">Суулгах дууны загвар алга.</string>
     <string name="sound_theme_install_not_a_theme">Энэ нь SandFly ашиглаж чадах дууны загвар биш: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
-    <string name="sound_theme_install_failed">SandFly дууны сэдвийг суулгаж чадсангүй. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_install_https_only">Дууны сэдвүүдийн холбоос https-ээр эхлэх ёстой.</string>
+    <string name="sound_theme_install_failed">SandFly дууны загварыг суулгаж чадсангүй. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_https_only">Дууны загваруудын холбоос https-ээр эхлэх ёстой.</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g>-ын дуунууд</string>
     <string name="title_pref_theme_sounds_reset">Бүгдэд SandFly-ийн дууг ашиглах</string>
     <string name="theme_sounds_reset_confirm">Энэ загварын бүх дууг устгаад SandFly-ийн өөрийнх нь дууг ашиглах уу?</string>

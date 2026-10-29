@@ -296,7 +296,7 @@
   <string name="summary_pref_intonation">Відтворювати видалені літери голосом із вищим тоном</string>
   <string name="title_pref_brailledisplay">Брайлівський дисплей</string>
   <string name="title_pref_brailleime">Брайлівська клавіатура</string>
-  <string name="summary_pref_brailleime_disabled">Ваш пристрій не підтримує клавіатуру Брайля</string>
+  <string name="summary_pref_brailleime_disabled">Ваш пристрій не підтримує брайлівську клавіатуру</string>
   <string name="title_pref_speech_footer">Щоб змінити гучність спеціальних можливостей на будь-якому екрані, утримуйте 1 палець на екрані та натисніть клавішу збільшення або зменшення гучності.</string>
   <string name="title_pref_vibration">Вібровідгук</string>
   <string name="title_pref_soundback">Звуковий відгук</string>
@@ -824,7 +824,7 @@
   <string name="screen_search_keyword_hint">ключове слово: %1$s</string>
   <string name="screen_search_no_keyword_hint">Ключового слова ще немає. Щоб почати новий пошук, натисніть і втримуйте екран трьома пальцями або відкрийте пошук на екрані в меню SandFly.</string>
   <string name="screen_search_no_keyword_hint_pre_r">Ключового слова ще немає. Щоб почати новий пошук, проведіть пальцем уліво, а потім униз, або відкрийте пошук на екрані в меню SandFly.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Брайлівську клавіатуру не ввімкнено. Налаштуйте її в параметрах SandFly і повторіть спробу.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Брайлівську клавіатуру не ввімкнено. Перейдіть у налаштування SandFly, налаштуйте брайлівську клавіатуру й повторіть спробу.</string>
   <string name="suggestions_window_available">Є пропозиції</string>
   <string name="suggestions_window_available_with_gesture">Є пропозиції. Щоб перейти до них, %1$s</string>
   <string name="heads_up_window_available">Доступне сповіщення</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">Натисніть, щоб дізнатися про нові жести, якими можна ефективніше працювати з SandFly.</string>
   <string name="dump_node_tree_description">Дерево вузлів записано в журнали.</string>
   <string name="report_gesture_description">Виберіть зі списку нещодавно використаних неправильні жести та їх очікуваний результат.</string>
-  <string name="update_welcome_talkback_16.1">У цьому оновленні SandFly додано підтримку функції \"Опис екрана\" іншими мовами й інші покращення якості, щоб користуватися SandFly було зручніше.\n\nДокладніше про ці зміни ви дізнаєтеся на кількох наступних екранах.\n\nЦю інформацію можна переглянути згодом, вибравши \"Налаштування SandFly\" &gt; \"Нові функції в SandFly\".</string>
-  <string name="update_welcome_talkback_16.1_tts">У цьому оновленні SandFly додано підтримку функції \"Опис екрана\" іншими мовами й інші покращення якості, щоб користуватися SandFly було зручніше.\n\nДокладніше про ці зміни ви дізнаєтеся на кількох наступних екранах.\n\nЦю інформацію можна переглянути згодом, вибравши \"Налаштування SandFly\", а потім – \"Нові функції в SandFly\".</string>
+  <string name="update_welcome_talkback_16.1">У цьому оновленні SandFly додано підтримку функції \"Описати, що на екрані\" іншими мовами й інші покращення якості, щоб користуватися SandFly було зручніше.\n\nДокладніше про ці зміни ви дізнаєтеся на кількох наступних екранах.\n\nЦю інформацію можна переглянути згодом, вибравши \"Налаштування SandFly\" &gt; \"Нові функції в SandFly\".</string>
+  <string name="update_welcome_talkback_16.1_tts">У цьому оновленні SandFly додано підтримку функції \"Описати, що на екрані\" іншими мовами й інші покращення якості, щоб користуватися SandFly було зручніше.\n\nДокладніше про ці зміни ви дізнаєтеся на кількох наступних екранах.\n\nЦю інформацію можна переглянути згодом, вибравши \"Налаштування SandFly\", а потім – \"Нові функції в SandFly\".</string>
   <string name="shortcut_for_dictation_title">Комбінація клавіш для голосового вводу</string>
   <string name="shortcut_for_dictation_content">Коли відображається клавіатура Gboard, ви можете двічі торкнутись екрана двома пальцями, щоб почати або зупинити голосовий ввід.
 &lt;br&gt;
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">Роздільне натискання всюди</string>
   <string name="split_tap_everywhere_text">Тепер ви можете використовувати роздільне натискання всюди, щоб активувати навіть ті об’єкти, які розташовані за межами клавіатури. Для цього проведіть по екрану одним пальцем, а потім, не піднімаючи його, торкніться екрана іншим пальцем, щоб активувати виділений об’єкт.</string>
   <string name="keyboard_enhanced_keymap_title">Клавіатура: розширена розкладка</string>
-  <string name="keyboard_enhanced_keymap_text">У SandFly тепер є «Покращена розкладка клавіш» для фізичних клавіатур, що містить різноманітні нові команди та комбінації клавіш. Це покращення включає «режим перегляду» для більш ефективної веб-навігації, спрощення навігації та взаємодії для користувачів SandFly, які покладаються на фізичні клавіатури. Ви можете переключитися на «Покращену розкладку клавіш» у <xliff:g id="settings_path">%1$s</xliff:g>.\n\nЯкщо ви користуєтеся дисплеєм Брайля, ви також можете використовувати нові ярлики режиму перегляду, щоб переходити через вміст безпосередньо з дисплея Брайля. Деякі ярлики дисплея Брайля були змінені відповідно до цієї зміни. Ви можете переглянути список усіх ярликів для дисплея Брайля в <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">У SandFly тепер є «Покращена розкладка клавіш» для фізичних клавіатур, що містить різноманітні нові команди та комбінації клавіш. Це покращення включає «режим перегляду» для більш ефективної веб-навігації, спрощення навігації та взаємодії для користувачів SandFly, які покладаються на фізичні клавіатури. Ви можете переключитися на «Покращену розкладку клавіш» у <xliff:g id="settings_path">%1$s</xliff:g>.\n\nЯкщо ви користуєтеся брайлівським дисплеєм, ви також можете використовувати нові ярлики режиму перегляду, щоб переходити через вміст безпосередньо з брайлівського дисплея. Деякі ярлики брайлівського дисплея були змінені відповідно до цієї зміни. Ви можете переглянути список усіх ярликів для брайлівського дисплея в <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">\"Налаштування SandFly\" &gt; \"Комбінації клавіш\"</string>
   <string name="keyboard_shortcuts_link_tts">\"Налаштування SandFly\", а потім – \"Комбінації клавіш\"</string>
   <string name="braille_display_settings_link">Налаштування брайлівського дисплея</string>
   <string name="keyboard_smart_browse_mode_title">Клавіатура: розумний режим перегляду</string>
   <string name="keyboard_smart_browse_mode_text">Коли ви переглядаєте вебсторінки, розумний режим перегляду SandFly вимикає режим перегляду в полі редагування, щоб ви могли вводити текст за допомогою фізичної клавіатури. Потім, коли ви на вебсайті переходите в поле, яке не можна редагувати, режим перегляду знову вмикається, щоб ви могли ефективно переглядати сторінки. Розумний режим перегляду можна ввімкнути або вимкнути, вибравши <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">\"Налаштування SandFly\" &gt; \"Розширені налаштування\"</string>
-  <string name="advanced_settings_link_tts">\"Налаштування SandFly\", а потім – \"Розширені налаштування\"</string>
   <string name="keyboard_tutorial_title">Навчальний посібник із використання клавіатури</string>
   <string name="keyboard_tutorial_text">Тепер у SandFly є посібник із використання клавіатури, який допоможе вам вивчити комбінації клавіш і команди для розширеної розкладки під час використання фізичної клавіатури. Щоб переглянути навчальний посібник, виберіть <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">\"Налаштування SandFly\" &gt; \"Навчальний посібник SandFly\"</string>
-  <string name="tutorial_link_tts">\"Налаштування SandFly\", а потім – \"Навчальний посібник SandFly\"</string>
   <string name="tutorial_entry_point_title">Навчальний посібник</string>
   <string name="welcome_to_talkback_title">Вітаємо в SandFly</string>
   <string name="talkback_is_on">Функцію SandFly увімкнено</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">Використовуйте меню й елементи керування</string>
   <string name="menus_talkback_menu_text">Меню SandFly містить налаштування й елементи керування, які можуть бути вам часто потрібними.\n\nВідкрийте це меню, провівши пальцем по екрану вниз, а потім праворуч.</string>
   <string name="menus_talkback_menu_text_pre_r">Меню SandFly містить налаштування й елементи керування, які можуть бути вам часто потрібними.\n\nВідкрийте це меню, провівши пальцем по екрану вниз, а потім праворуч.</string>
-  <string name="menus_selector_text">За допомогою цих жестів можна швидко змінити налаштування читання (наприклад, по символах чи словах) чи швидкість мовлення SandFly.\n\nЩоб швидко змінити елементи керування читанням, проведіть трьома пальцями по екрану ліворуч або праворуч.\n\nВи можете будь-коли налаштувати меню SandFly і елементи керування читанням у параметрах SandFly.</string>
-  <string name="menus_selector_text_pre_r">За допомогою цих жестів можна швидко змінити налаштування читання (наприклад, по символах чи словах) чи швидкість мовлення SandFly.\n\nЩоб швидко змінити елементи керування читанням, проведіть пальцем униз, а потім угору.\n\nВи можете будь-коли налаштувати меню SandFly і елементи керування читанням у параметрах SandFly.</string>
+  <string name="menus_selector_text">За допомогою цих жестів можна швидко змінити налаштування читання (наприклад, по символах чи словах) чи швидкість мовлення SandFly.\n\nЩоб швидко змінити елементи керування читанням, проведіть трьома пальцями по екрану ліворуч або праворуч.\n\nВи можете будь-коли налаштувати меню SandFly і елементи керування читанням у налаштуваннях SandFly.</string>
+  <string name="menus_selector_text_pre_r">За допомогою цих жестів можна швидко змінити налаштування читання (наприклад, по символах чи словах) чи швидкість мовлення SandFly.\n\nЩоб швидко змінити елементи керування читанням, проведіть пальцем униз, а потім угору.\n\nВи можете будь-коли налаштувати меню SandFly і елементи керування читанням у налаштуваннях SandFly.</string>
   <string name="all_set_title">Готово</string>
   <string name="all_set_text">Ви готові використовувати SandFly.\n\nВи можете ознайомитися з іншими темами зараз або переглянути цю інформацію пізніше через налаштування SandFly.</string>
   <string name="talkback_tutorial_text">Проведіть пальцем по екрану вправо, щоб вибрати тему. Для оптимальної роботи ввімкніть функцію SandFly, перш ніж почати.</string>
@@ -1069,8 +1065,8 @@
   <string name="checking_notifications_tips">Щоб переглянути історію сповіщень, проведіть двома пальцями вниз від верхнього краю екрана</string>
   <string name="image_description_playground_title">Спробуйте отримати описи зображень</string>
   <string name="image_description_playground_content_one">Виділивши зображення, відкрийте меню SandFly і виберіть опцію \"Опис зображення\".\n\nНижче наведено фотографію. Спробуйте отримати її опис.</string>
-  <string name="image_description_playground_content_two">Ви можете будь-коли змінити налаштування опису зображень у розділі Налаштування SandFly &gt; Автоматичні описи.</string>
-  <string name="image_description_playground_content_two_tts">Ви можете будь-коли змінити налаштування опису зображення в налаштуваннях SandFly, а потім – у Автоматичних описах.</string>
+  <string name="image_description_playground_content_two">Ви можете будь-коли змінити налаштування опису зображень у розділі «Налаштування SandFly &gt; Описи зображень і екрана».</string>
+  <string name="image_description_playground_content_two_tts">Ви можете будь-коли змінити налаштування опису зображень у розділі «Налаштування SandFly», а потім «Описи зображень і екрана».</string>
   <string name="image_description_sample_image_content_description">Зразок зображення. Торкніться екрана трьома пальцями, щоб відкрити меню SandFly, і виберіть опцію \"Опис зображення\", щоб прослухати опис.</string>
   <string name="practice_gestures_title">Практика жестів</string>
   <string name="practice_keyboard_gestures_title">Спробуйте комбінації клавіш</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Більше</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Зарезервувати жести для Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly припиняє обробляти одинарні й подвійні дотики двома пальцями, щоб їх міг використовувати Samsung Vibration Watch. Увімкніть Vibration Watch у налаштуваннях спеціальних можливостей годинника.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Зарезервовано для Vibration Watch у Розширених налаштуваннях</string>
     <string name="title_pref_speakerphone_away_from_ear">Динамік на відстані від вуха</string>
     <string name="summary_pref_speakerphone_away_from_ear">Під час дзвінка перемикає на гучномовець, коли ви віддаляєте телефон від вуха, і назад на розмовний динамік, коли знову підносите його до вуха.</string>
     <string name="summary_pref_speakerphone_needs_permission">Потрібен дозвіл, який Android не надає програмам зчитування з екрана. Щоб надати його, виконайте цю команду через adb або Shizuku, а потім поверніться на цей екран: %1$s</string>
@@ -1393,13 +1388,12 @@
     <string name="speech_control_apps_category">Додатки</string>
     <string name="speech_control_no_apps">Жодна програма ще не попросила говорити.</string>
     <string name="speech_control_ask_title">Дозволити <xliff:g id="app" example="Tasker">%1$s</xliff:g> говорити через SandFly?</string>
-    <string name="speech_control_ask_text">Він може вимовляти текст вашим голосом SandFly. Ви можете змінити це в Розширених налаштуваннях.</string>
     <string name="speech_control_allow">Дозволити</string>
     <string name="speech_control_deny">Не дозволяти</string>
     <string name="permission_speak_label">говорити через SandFly</string>
     <string name="permission_speak_description">Дозволяє додатку просити озвучити текст вашим голосом SandFly. SandFly запитує вас, перш ніж додаток зможе говорити.</string>
-    <string name="permission_braille_display_label">запит на роль дисплея Брайля для SandFly</string>
-    <string name="permission_braille_display_description">Дозволяє додатку просити дозволу працювати як дисплей Брайля для SandFly. Якщо ви дозволите це в SandFly, він зможе читати все на екрані й керувати пристроєм. SandFly спершу запитує вас.</string>
+    <string name="permission_braille_display_label">запит на роль брайлівського дисплея для SandFly</string>
+    <string name="permission_braille_display_description">Дозволяє додатку просити дозволу працювати як брайлівський дисплей для SandFly. Якщо ви дозволите це в SandFly, він зможе читати все на екрані й керувати пристроєм. SandFly спершу запитує вас.</string>
     <string name="title_pref_phonetic_letters_mode">Промовляти букви фонетично</string>
     <string name="phonetic_letters_mode_off">Вимкнено</string>
     <string name="phonetic_letters_mode_after_letter_delay">Після літери, з паузою, наприклад «г, Галина»</string>
@@ -1440,7 +1434,7 @@
     <string name="notification_part_time">Час</string>
     <string name="notification_part_playback">Відтворюється або призупинено</string>
     <string name="notification_list_title">Сповіщення</string>
-    <string name="notification_list_empty">Немає повідомлень</string>
+    <string name="notification_list_empty">Немає сповіщень</string>
     <string name="notification_list_no_access">Доступ до сповіщень вимкнено</string>
     <string name="notification_list_grant_access">Увімкнути доступ до сповіщень</string>
     <string name="notification_list_quick_settings">Швидкі налаштування</string>
@@ -1550,7 +1544,6 @@
     <string name="quick_settings_remove">Видалити</string>
     <string name="quick_settings_added">%1$s додано</string>
     <string name="quick_settings_removed">%1$s видалено</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly увімкнено. Щоб вимкнути, утримуйте 2 пальці на екрані протягом 5 секунд. Щоб більше не показувати це повідомлення, вимкніть налаштування SandFly &gt; Додаткові налаштування &gt; Показати інструкції щодо вимкнення SandFly.</string>
     <string name="edge_gestures_title">Жести від країв екрана</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Ще один ярлик для ввімкнення або вимкнення режиму перегляду</string>
     <string name="title_pref_vibration_strength">Сила вібрації</string>
@@ -1721,9 +1714,9 @@
     <string name="tablet_held_up_faces_away_off">Піднятий планшет екраном від вас: вимкнено</string>
     <string name="title_keyboard_echo_on_screen">Відлуння екранної клавіатури</string>
     <string name="title_keyboard_echo_physical">Відлуння фізичної клавіатури</string>
-    <string name="title_keyboard_echo_braille_keyboard">Ехо клавіатури Брайля</string>
+    <string name="title_keyboard_echo_braille_keyboard">Ехо брайлівської клавіатури</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Ехо клавіатури рукописного тексту</string>
-    <string name="title_keyboard_echo_braille_display">Відлуння дисплея Брайля</string>
+    <string name="title_keyboard_echo_braille_display">Відлуння брайлівського дисплея</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Переривати мовлення під час введення</string>
     <string name="pref_interrupt_typing_entry_always">Завжди</string>
@@ -1743,7 +1736,7 @@
     <string name="template_item_details_order_dropped">Відпущено: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly говорить деталі елемента в цьому порядку. Щоб змінити його, натисніть і утримуйте деталь, а потім перетягніть її вгору або вниз. Коли SandFly увімкнено, двічі торкніться й утримуйте, а потім перетягніть. Ви також можете використовувати дії «Перемістити вгору» та «Перемістити вниз».</string>
     <string name="title_pref_speak_items_before_scroll">Озвучувати елементи до їх прокручування в поле зору</string>
-    <string name="gemini_error_api_key">Gemini не прийняв ключ API. Перевірте ключ у налаштуваннях автоматичних описів.</string>
+    <string name="gemini_error_api_key">Gemini не прийняв ключ API. Перевірте ключ у розділі «Описи зображень і екрана».</string>
     <string name="gemini_error_quota">Досягнуто ліміту використання для вашого ключа Gemini API. Повторіть спробу пізніше.</string>
     <string name="gemini_error_busy">Gemini зараз зайнятий. Повторіть спробу за мить.</string>
     <string name="gemini_error_timeout">Gemini надто довго відповідав. Спробуйте знову.</string>
@@ -1774,7 +1767,6 @@
     <string name="title_pref_whisper_models">Моделі Whisper</string>
     <string name="dictation_whisper_use">Використовувати</string>
     <string name="title_pref_dictation_ai_service">Сервіс ШІ для диктування</string>
-    <string name="dictation_ai_same">Той самий, що для автоматичних описів</string>
     <string name="title_pref_browse_mode_per_app">Запам\'ятовувати режим перегляду в кожній програмі</string>
     <string name="title_pref_export_settings">Експорт налаштувань</string>
     <string name="title_pref_import_settings">Імпорт налаштувань</string>
@@ -1802,4 +1794,12 @@
     <string name="shortcut_previous_track">Попередній трек</string>
     <string name="sound_mode_needs_access">Надайте доступ до режиму «Не турбувати», щоб вмикати й вимикати режим «Без звуку».</string>
     <string name="title_pref_dictation_auto_stop">Автоматична зупинка після тиші</string>
+    <string name="dictation_ai_same">Як у розділі «Описи зображень і екрана»</string>
+    <string name="navigation_settings_link">Налаштування SandFly &gt; Навігація</string>
+    <string name="navigation_settings_link_tts">«Налаштування SandFly», потім «Навігація»</string>
+    <string name="shortcut_reserved_for_vibration_watch">Зарезервовано для Vibration Watch у розділі «Жести»</string>
+    <string name="speech_control_ask_text">Програма може озвучувати текст голосом SandFly. Змінити це можна в розділі «Налаштування», «Мовлення», «Дозволити іншим програмам озвучувати текст».</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly увімкнено. Щоб вимкнути цю функцію, утримуйте 2 пальці на екрані протягом 5 секунд. Щоб припинити показ цього повідомлення, вимкніть параметр «Налаштування SandFly &gt; Пауза й вимкнення &gt; Відображати вказівки з вимкнення SandFly».</string>
+    <string name="tutorial_link">Налаштування SandFly &gt; Довідка й відгуки &gt; Навчальний посібник SandFly</string>
+    <string name="tutorial_link_tts">«Налаштування SandFly», потім «Довідка й відгуки», потім «Навчальний посібник SandFly»</string>
 </resources>

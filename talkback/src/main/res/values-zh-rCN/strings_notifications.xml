@@ -35,7 +35,7 @@
     <string name="notification_format_message">占位符：{app}、{title}、{text}、{content}（全文）、{bigtext}、{subtext}、{ticker}、{category} 和 {time}。</string>
     <string name="notification_private_format_title">私密通知的朗读内容</string>
     <string name="notification_private_format_message">代替私密通知的内容读出。占位符：{app}、{category} 和 {time}。</string>
-    <string name="notification_category_voice">声音</string>
+    <string name="notification_category_voice">语音</string>
     <string name="notification_voice_title">语音</string>
     <string name="notification_voice_sandfly">SandFly的语音</string>
     <string name="notification_detect_language_title">检测语言</string>
@@ -172,7 +172,7 @@
     <string name="notification_outcome_read">已朗读</string>
     <string name="notification_outcome_stopped">朗读中已停止</string>
     <string name="notification_outcome_speech_off">未朗读：通知语音已关闭</string>
-    <string name="notification_outcome_dnd">未朗读：请勿打扰</string>
+    <string name="notification_outcome_dnd">未朗读：免打扰</string>
     <string name="notification_outcome_touching">未朗读：屏幕被触摸</string>
     <string name="notification_outcome_app">未朗读：应用</string>
     <string name="notification_outcome_ongoing">未朗读：正在进行中</string>

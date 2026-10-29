@@ -12,7 +12,7 @@
     <string name="scripts_category_global">កម្មវិធីជំនួយសកល</string>
     <string name="scripts_none">មិនមានស្គ្រីបដែលបានដំឡើងទេ</string>
     <string name="scripts_all_off">បិទស្គ្រីបទាំងអស់</string>
-    <string name="scripts_all_off_summary">ស្គ្រីបនៅតែដំឡើង ហើយរក្សាកុងតាក់ផ្ទាល់ខ្លួន។ កាយវិការ «បើក ឬបិទស្គ្រីបទាំងអស់» ធ្វើដូចគ្នា។</string>
+    <string name="scripts_all_off_summary">ស្គ្រីបនៅតែដំឡើង ហើយរក្សាកុងតាក់ផ្ទាល់ខ្លួន។ ចលនា «បើក ឬបិទស្គ្រីបទាំងអស់» ធ្វើដូចគ្នា។</string>
     <string name="shortcut_toggle_scripts">បើក ឬបិទស្គ្រីបទាំងអស់</string>
     <string name="scripts_now_off">ស្គ្រីបបិទ</string>
     <string name="scripts_now_on">ស្គ្រីបបើក</string>
@@ -42,7 +42,7 @@
     <string name="script_permission_actions">ចុច រំកិល វាយ និងផ្លាស់ទីការផ្ដោត</string>
     <string name="script_permission_speech">ទទួល និងផ្លាស់ប្ដូរការនិយាយរបស់ SandFly</string>
     <string name="script_permission_passwords">អានវាលពាក្យសម្ងាត់</string>
-    <string name="script_permission_input">បន្ថែមកាយវិការ គ្រាប់ចុច ធាតុម៉ឺនុយ និងការគ្រប់គ្រងការអាន</string>
+    <string name="script_permission_input">បន្ថែមចលនា គ្រាប់ចុច ធាតុម៉ឺនុយ និងការគ្រប់គ្រងការអាន</string>
     <string name="script_permission_network">ប្រើអ៊ីនធឺណិត</string>
     <string name="script_permission_clipboard">អាន និងផ្លាស់ប្តូរក្ដារតម្បៀតខ្ទាស់</string>
     <string name="script_permission_system">ថយក្រោយ ឬទៅអេក្រង់ដើម បើកការជូនដំណឹង និងកម្មវិធី</string>
@@ -102,8 +102,8 @@
     <string name="script_keys_backtalk_modifier">គ្រាប់ចុចកែប្រែ SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g> បន្ទាប់មក <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ពាក្យបញ្ជា</string>
-    <string name="script_commands_summary">កាយវិការ និងគ្រាប់ចុចរបស់ស្គ្រីបដែលកំពុងដំណើរការ មានអាទិភាពលើរបស់ SandFly។ បិទរបស់ស្គ្រីប ដើម្បីរក្សារបស់ SandFly។</string>
-    <string name="script_binding_gesture">កាយវិការ៖ <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_commands_summary">ចលនា និងគ្រាប់ចុចរបស់ស្គ្រីបដែលកំពុងដំណើរការ មានអាទិភាពលើរបស់ SandFly។ បិទរបស់ស្គ្រីប ដើម្បីរក្សារបស់ SandFly។</string>
+    <string name="script_binding_gesture">ចលនា៖ <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">គ្រាប់ចុច៖ <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">ម៉ឺនុយ SandFly</string>
     <string name="script_binding_control">ការគ្រប់គ្រងការអាន</string>
@@ -112,12 +112,12 @@
     <string name="script_binding_turn_off">បិទ</string>
     <string name="script_binding_restore">ស្តារលំនាំដើមឡើងវិញ</string>
     <string name="script_binding_restored">បានស្ដារលំនាំដើម</string>
-    <string name="script_binding_perform">ធ្វើកាយវិការ ឬចុចគ្រាប់ចុច</string>
-    <string name="script_binding_perform_summary">កំណត់កាយវិការបន្ទាប់ ឬគ្រាប់ចុចដែលចុចជាមួយគ្រាប់ចុចកែប្រែ SandFly</string>
-    <string name="script_binding_perform_message">ធ្វើកាយវិការ ឬចុចគ្រាប់ចុច។</string>
+    <string name="script_binding_perform">ធ្វើចលនា ឬចុចគ្រាប់ចុច</string>
+    <string name="script_binding_perform_summary">កំណត់ចលនាបន្ទាប់ ឬគ្រាប់ចុចដែលចុចជាមួយគ្រាប់ចុចកែប្រែ SandFly</string>
+    <string name="script_binding_perform_message">ធ្វើចលនា ឬចុចគ្រាប់ចុច។</string>
     <string name="script_binding_assign_title">កំណត់ <xliff:g id="binding">%1$s</xliff:g> ទៅ <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">ចាត់តាំង</string>
-    <string name="script_binding_choose_gesture">ជ្រើសរើសកាយវិការ</string>
+    <string name="script_binding_choose_gesture">ជ្រើសរើសចលនា</string>
     <string name="script_binding_type_keys">វាយគ្រាប់ចុច</string>
     <string name="script_binding_type_keys_summary">ដូចជា sf+shift+n ឬ sf+t, s</string>
     <string name="script_binding_bad_keys">មិនអាចប្រើសោទាំងនេះបានទេ។ <xliff:g id="reason">%1$s</xliff:g></string>

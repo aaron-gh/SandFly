@@ -546,7 +546,7 @@
   <string name="summary_visited_links">Saltar entre enlaces que has abierto anteriormente en páginas web</string>
   <string name="summary_unvisited_links">Saltar entre enlaces que no has abierto en páginas web</string>
   <string name="summary_radios">Pasa de un botón de selección a otro en páginas web</string>
-  <string name="summary_search">Ir a otros resultados de Búsqueda Directa</string>
+  <string name="summary_search">Ir a otros resultados de Búsqueda directa</string>
   <string name="summary_row_column">Pasa de una fila o una columna a otra en una tabla</string>
   <string name="summary_row">Pasa de una fila a otra en una tabla</string>
   <string name="summary_column">Pasa de una columna a otra en una tabla</string>
@@ -822,8 +822,8 @@
   <string name="no_navigate_typo_gesture">Para usar esta función, ve a los ajustes de SandFly y añade un gesto para el corrector ortográfico</string>
   <string name="use_spelling_suggestion_hint">Toca dos veces para reemplazar el texto</string>
   <string name="screen_search_keyword_hint">la palabra clave es %1$s</string>
-  <string name="screen_search_no_keyword_hint">Aún no hay palabras clave. Para iniciar una nueva búsqueda, mantén pulsado con tres dedos o abre Búsqueda Directa desde el menú de SandFly.</string>
-  <string name="screen_search_no_keyword_hint_pre_r">Aún no hay palabras clave. Para iniciar una nueva búsqueda, desliza hacia la izquierda y luego hacia abajo, o abre Búsqueda Directa desde el menú de SandFly.</string>
+  <string name="screen_search_no_keyword_hint">Aún no hay palabras clave. Para iniciar una nueva búsqueda, mantén pulsado con tres dedos o abre Búsqueda directa desde el menú de SandFly.</string>
+  <string name="screen_search_no_keyword_hint_pre_r">Aún no hay palabras clave. Para iniciar una nueva búsqueda, desliza hacia la izquierda y luego hacia abajo, o abre Búsqueda directa desde el menú de SandFly.</string>
   <string name="switch_to_braille_keyboard_failure_msg">El teclado braille no está activado. Configúralo en los ajustes de SandFly e inténtalo de nuevo.</string>
   <string name="suggestions_window_available">Hay sugerencias disponibles</string>
   <string name="suggestions_window_available_with_gesture">Hay sugerencias disponibles. Para acceder, %1$s.</string>
@@ -881,7 +881,7 @@
   <string name="shortcut_for_dictation_content_without_google_play">Ahora, cuando Gboard esté en pantalla, puedes tocar dos veces con dos dedos para iniciar el dictado y, después, volver a tocar dos veces con dos dedos para detenerlo.</string>
   <string name="announcing_text_formatting_title">Anunciar el formato del texto</string>
   <string name="announcing_text_formatting_header">Ahora SandFly puede anunciar cambios en el formato del texto, como negrita, cursiva y color. Para empezar:</string>
-  <string name="announcing_text_formatting_option1">Selecciona el elemento con formato, abre el menú de SandFly y luego selecciona \"Describir formato de texto\", o bien...</string>
+  <string name="announcing_text_formatting_option1">Selecciona el elemento con formato, abre el menú de SandFly y luego selecciona \"Describir el formato del texto\", o bien...</string>
   <string name="announcing_text_formatting_option2">Añade un control de lectura para el formato de texto que active o desactive el anuncio de los cambios de formato.</string>
   <string name="announcing_text_formatting_middle">Cuando quieras probarlo, aquí tienes un ejemplo de texto con formato:</string>
   <string name="announcing_text_formatting_tail">Si quieres cambiar cómo se anuncia el texto con formato, ve a %1$s.</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Ajustes de la pantalla braille</string>
   <string name="keyboard_smart_browse_mode_title">Teclado: modo de navegación inteligente</string>
   <string name="keyboard_smart_browse_mode_text">El modo de navegación inteligente de SandFly desactiva el modo de navegación en un campo de edición para ayudarte a escribir con un teclado físico cuando navegas por la Web. Después, se vuelve a activar cuando pasas a un campo que no se puede editar en la Web para que puedas seguir navegando de forma eficiente. Puedes activar o desactivar el modo de navegación inteligente en <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Ajustes de SandFly &gt; Ajustes avanzados</string>
-  <string name="advanced_settings_link_tts">Ajustes de SandFly y, a continuación, Ajustes avanzados</string>
   <string name="keyboard_tutorial_title">Tutorial del teclado</string>
   <string name="keyboard_tutorial_text">SandFly ahora incluye un tutorial del teclado, diseñado para ayudarte a aprender las combinaciones de teclas y los comandos del mapa de teclas mejorado al usar un teclado físico. Para acceder al tutorial, ve a <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Ajustes de SandFly &gt; Tutorial de SandFly</string>
-  <string name="tutorial_link_tts">Ajustes de SandFly y, a continuación, Tutorial de SandFly</string>
   <string name="tutorial_entry_point_title">Tutorial</string>
   <string name="welcome_to_talkback_title">Te damos la bienvenida a SandFly</string>
   <string name="talkback_is_on">SandFly está activado</string>
@@ -1039,10 +1035,10 @@
   <string name="container_item_exit_subtext_pre_r">Para salir de este contenedor, desliza hacia abajo</string>
   <string name="voice_commands_title">Comandos de voz</string>
   <string name="voice_commands_text">Puedes controlar SandFly rápidamente con la voz.\n\nPor ejemplo, puedes decir un comando para cambiar la navegación, pasar al siguiente encabezado o copiar texto.\n\nPara probarlo ahora, desliza el dedo hacia la derecha y luego hacia arriba.</string>
-  <string name="using_screen_search_title">Usar Búsqueda Directa</string>
-  <string name="using_screen_search_text">La función Búsqueda Directa te permite buscar contenido específico en la pantalla.\n\nPara probarla, abre el menú de SandFly tocando con 3 dedos y busca \"Búsqueda Directa\" en el menú. Escribe una palabra clave, como \"siguiente\", para encontrar elementos con ese texto en la pantalla.\n\nIntenta buscar \"siguiente\" ahora para encontrar el botón Siguiente.</string>
-  <string name="screen_search_navigation_title">Desplazarse por Búsqueda Directa</string>
-  <string name="screen_search_navigation_text">Puedes moverte rápidamente entre los diferentes resultados de Búsqueda Directa después de seleccionar un resultado.\n\nPara ello, usa los controles de lectura deslizando 3 dedos hacia la izquierda o hacia la derecha y busca el elemento llamado \"Búsqueda Directa\".\n\nPruébalo ahora. Abajo hay una lista de 3 botones, todos ellos con el texto \"acción\". Busca \"acción\" con Búsqueda Directa y, a continuación, desplázate por Búsqueda Directa para ir de uno a otro.</string>
+  <string name="using_screen_search_title">Usar Búsqueda directa</string>
+  <string name="using_screen_search_text">La función Búsqueda directa te permite buscar contenido específico en la pantalla.\n\nPara probarla, abre el menú de SandFly tocando con 3 dedos y busca \"Búsqueda directa\" en el menú. Escribe una palabra clave, como \"siguiente\", para encontrar elementos con ese texto en la pantalla.\n\nIntenta buscar \"siguiente\" ahora para encontrar el botón Siguiente.</string>
+  <string name="screen_search_navigation_title">Desplazarse por Búsqueda directa</string>
+  <string name="screen_search_navigation_text">Puedes moverte rápidamente entre los diferentes resultados de Búsqueda directa después de seleccionar un resultado.\n\nPara ello, usa los controles de lectura deslizando 3 dedos hacia la izquierda o hacia la derecha y busca el elemento llamado \"Búsqueda directa\".\n\nPruébalo ahora. Abajo hay una lista de 3 botones, todos ellos con el texto \"acción\". Busca \"acción\" con Búsqueda directa y, a continuación, desplázate por Búsqueda directa para ir de uno a otro.</string>
   <string name="screen_search_action_button_1_text">Acción 1</string>
   <string name="screen_search_action_button_2_text">Acción 2</string>
   <string name="screen_search_action_button_3_text">Acción 3</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Más</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reservar gestos para Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly deja de gestionar los toques y dobles toques con dos dedos para que Samsung Vibration Watch pueda usarlos. Activa Vibration Watch en los ajustes de accesibilidad del reloj.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch en Ajustes avanzados</string>
     <string name="title_pref_speakerphone_away_from_ear">Altavoz al alejar el teléfono de la oreja</string>
     <string name="summary_pref_speakerphone_away_from_ear">Durante una llamada, cambia al altavoz cuando alejas el teléfono de la oreja, y vuelve al auricular cuando lo acercas de nuevo.</string>
     <string name="summary_pref_speakerphone_needs_permission">Necesita un permiso que Android no concede a los lectores de pantalla. Para concederlo, ejecuta este comando con adb o Shizuku y vuelve a esta pantalla: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Aplicaciones</string>
     <string name="speech_control_no_apps">Todavía no hay aplicaciones que hayan pedido hablar.</string>
     <string name="speech_control_ask_title">¿Permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> hable a través de SandFly?</string>
-    <string name="speech_control_ask_text">Puede decir texto con tu voz de SandFly. Puedes cambiarlo en Ajustes avanzados.</string>
     <string name="speech_control_allow">Permitir</string>
     <string name="speech_control_deny">No permitir</string>
     <string name="permission_speak_label">hablar a través de SandFly</string>
@@ -1441,7 +1435,6 @@
         <item quantity="many">%d notificaciones</item>
         <item quantity="other">%d notificaciones</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly está activado. Mantén pulsada la pantalla con 2 dedos durante 5 segundos para desactivarlo. Para que no se muestre este mensaje, desactiva Ajustes de SandFly &gt; Ajustes avanzados &gt; Mostrar instrucciones para desactivar SandFly.</string>
     <string name="edge_gestures_title">Bordes</string>
     <string name="title_pref_audio_output_device">Dispositivo de salida de audio</string>
     <string name="dialog_title_audio_output_device">Dónde reproducir el sonido de SandFly</string>
@@ -1524,7 +1517,7 @@
     <string name="summary_support_wrap_around">Activa o desactiva el paso del último elemento al primero</string>
     <string name="wrap_around_on">Navegación circular activada</string>
     <string name="wrap_around_off">Navegación circular desactivada</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tableta en alto orientada hacia fuera</string>
+    <string name="title_selector_tablet_held_up_faces_away">Pantalla de la tablet en posición vertical orientada en dirección contraria a ti</string>
     <string name="summary_support_tablet_held_up_faces_away">Para el teclado braille en una tableta o un teléfono desplegado</string>
     <string name="tablet_held_up_faces_away_on">Tableta en alto orientada hacia fuera activado</string>
     <string name="tablet_held_up_faces_away_off">Tableta en alto orientada hacia fuera desactivado</string>
@@ -1770,7 +1763,6 @@
     <string name="title_pref_whisper_models">Modelos de Whisper</string>
     <string name="dictation_whisper_use">Usar</string>
     <string name="title_pref_dictation_ai_service">Servicio de IA para el dictado</string>
-    <string name="dictation_ai_same">El mismo que las descripciones automáticas</string>
     <string name="title_pref_browse_mode_per_app">Recordar el modo de navegación en cada aplicación</string>
     <string name="title_pref_export_settings">Exportar configuración</string>
     <string name="title_pref_import_settings">Importar configuración</string>
@@ -1798,4 +1790,12 @@
         <item>1 minuto</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Detener automáticamente tras un silencio</string>
+    <string name="dictation_ai_same">Igual que en \"Descripciones de imagen y pantalla\"</string>
+    <string name="navigation_settings_link">Ajustes de SandFly &gt; Navegación</string>
+    <string name="navigation_settings_link_tts">Ajustes de SandFly y, luego, Navegación</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch en \"Gestos\"</string>
+    <string name="speech_control_ask_text">Puede decir texto con tu voz de SandFly. Puedes cambiarlo en Ajustes, Voz, Permitir que otras aplicaciones hablen.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly está activado. Mantén pulsada la pantalla con 2 dedos durante 5 segundos para desactivarlo. Para que no se muestre este mensaje, desactiva Ajustes de SandFly &gt; Pausar y desactivar &gt; Mostrar instrucciones para desactivar SandFly.</string>
+    <string name="tutorial_link">Ajustes de SandFly &gt; Ayuda y comentarios &gt; Tutorial de SandFly</string>
+    <string name="tutorial_link_tts">Ajustes de SandFly, luego Ayuda y comentarios y, luego, Tutorial de SandFly</string>
 </resources>

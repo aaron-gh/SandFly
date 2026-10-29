@@ -13,7 +13,7 @@
   <string name="label_manager_summary_title">Dhibiti lebo maalumu</string>
   <string name="label_manager_package_title">Simamia Lebo za %1$s</string>
   <string name="manage_label">Dhibiti lebo</string>
-  <string name="label_manager_no_packages_message">Kwa sasa hakuna lebo maalumu\n\n<b>Jinsi ya kutengeneza lebo maalumu</b>\nNenda kwenye picha isiyo na lebo kisha weka lebo kupitia menyu ya kipengele cha SandFly</string>
+  <string name="label_manager_no_packages_message">Kwa sasa hakuna lebo maalumu\n\n<b>Jinsi ya kutengeneza lebo maalumu</b>\nNenda kwenye picha isiyo na lebo kisha weka lebo kupitia Menyu ya SandFly</string>
   <string name="label_manager_timestamp_text">Mara ya mwisho ilirekebishwa %1$s</string>
   <string name="search_mode_cancel">Utafutaji umeghairiwa.</string>
   <string name="notification_type_status_started">Imeanza</string>
@@ -106,7 +106,7 @@
   <string name="pref_verbosity_preset_entry_high">Juu</string>
   <string name="pref_verbosity_preset_entry_custom">Maalum</string>
   <string name="pref_verbosity_preset_entry_low">Chini</string>
-  <string name="pref_verbosity_category_preset_settings_title">Maelezo kuhusu wingi wa maneno</string>
+  <string name="pref_verbosity_category_preset_settings_title">Maelezo kuhusu Maneno mengi</string>
   <string name="pref_verbosity_preset_change">Sasa umewasha kipengele cha %1$s cha maneno mengi.</string>
   <string name="pref_gesture_set_entry_0">0</string>
   <string name="pref_gesture_set_entry_1">1</string>
@@ -174,8 +174,8 @@
   <string name="keycombo_menu_global_speech_volume_increase">Ongeza sauti ya matamshi</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Punguza sauti ya matamshi</string>
   <string name="keycombo_menu_global_refocus_current_node">Tamka kipengee kinachoangaziwa kwa sasa</string>
-  <string name="keycombo_menu_granularity_increase">Mipangilio ya maelekezo inayofuata</string>
-  <string name="keycombo_menu_granularity_decrease">Mipangilio ya maelekezo iliyotangulia</string>
+  <string name="keycombo_menu_granularity_increase">Mipangilio ya usogezaji inayofuata</string>
+  <string name="keycombo_menu_granularity_decrease">Mipangilio ya usogezaji iliyotangulia</string>
   <string name="keycombo_menu_category_other">Vitendo vingine</string>
   <string name="keycombo_menu_other_read_from_top">Soma kutoka juu</string>
   <string name="keycombo_menu_other_read_from_cursor_item">Soma kuanzia kipengee kilichoangaziwa</string>
@@ -187,7 +187,7 @@
   <string name="keycombo_menu_other_show_link_list">Onyesha orodha ya viungo</string>
   <string name="keycombo_menu_other_show_control_list">Onyesha orodha ya vidhibiti</string>
   <string name="keycombo_menu_other_show_table_list">Onyesha orodha ya majedwali</string>
-  <string name="keycombo_menu_other_talkback_context_menu">Onyesha menyu SandFly</string>
+  <string name="keycombo_menu_other_talkback_context_menu">Onyesha Menyu ya SandFly</string>
   <string name="keycombo_menu_other_custom_actions">Onyesha vitendo</string>
   <string name="keycombo_menu_other_language_options">Onyesha lugha zilizosakinishwa</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Nakili kauli ya mwisho iliyotamkwa</string>
@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">Maelezo ya kiotomatiki</string>
   <string name="title_pref_gemini_settings">Mipangilio ya Gemini</string>
   <string name="title_pref_gemini_enabled">Amri za sauti za Gemini</string>
-  <string name="title_pref_category_automatic_description_summary">Pata maelezo ya kina ya picha ya AI unapochagua \“Fafanua picha\” kwenye menyu ya SandFly.\n\nUnaweza pia kupata maelezo ya kiotomatiki ukiangazia picha au aikoni. Kipengele cha maelezo ya kiotomatiki hufanya kazi bila muunganisho wa intaneti.</string>
+  <string name="title_pref_category_automatic_description_summary">Pata maelezo ya kina ya picha ya AI unapochagua \“Toa maelezo kuhusu picha\” kwenye menyu ya SandFly.\n\nUnaweza pia kupata maelezo ya kiotomatiki ukiangazia picha au aikoni. Kipengele cha maelezo ya kiotomatiki hufanya kazi bila muunganisho wa intaneti.</string>
   <string name="title_pref_icon_detection">Maelezo ya aikoni yanayowekwa kiotomatiki</string>
   <string name="title_pref_image_description">Maelezo ya picha yanayowekwa kiotomatiki</string>
   <string name="title_pref_text_recognition">Maelezo ya maandishi katika picha yanayowekwa kiotomatiki</string>
@@ -418,12 +418,12 @@
   <string name="label_search_result_table">Jedwali</string>
   <string name="shortcut_media_control">Cheza au usimamishe maudhui</string>
   <string name="shortcut_voice_input">Anza au uache kuweka data kwa kutamka</string>
-  <string name="shortcut_media_control_or_voice_input">Cheza au usitishe maudhui, anza au uache kuweka data kwa kutamka</string>
+  <string name="shortcut_media_control_or_voice_input">Cheza au usimamishe maudhui, anza au uache kuweka data kwa kutamka</string>
   <string name="shortcut_increase_volume">Ongeza sauti</string>
   <string name="shortcut_decrease_volume">Punguza sauti</string>
   <string name="shortcut_all_apps">Programu zote</string>
   <string name="shortcut_braille_keyboard">Tumia kibodi ya nukta nundu</string>
-  <string name="shortcut_braille_display_settings">Sogeza kwenye mipangilio ya onyesho la braille</string>
+  <string name="shortcut_braille_display_settings">Sogeza kwenye mipangilio ya skrini ya nukta nundu</string>
   <string name="shortcut_tutorial">Anzisha mafunzo</string>
   <string name="shortcut_control_speak_time">Tamka au usitamke wakati</string>
   <string name="shortcut_enable_speak_time">Tamka wakati</string>
@@ -812,7 +812,7 @@
   <string name="audio_focus_state">Kipengele cha upunguzaji wa sauti: %1$s</string>
   <string name="sound_feedback_state">Kipengele cha majibu yanayotamkwa: %1$s</string>
   <string name="vibration_feedback_state">Kipengele cha majibu kwa mtetemo: %1$s</string>
-  <string name="text_formatting_state">Muundo wa kutamka maandishi %1$s</string>
+  <string name="text_formatting_state">Tamka muundo wa maandishi <xliff:g example="on" id="state">%1$s</xliff:g></string>
   <string name="typing_echo_change">Kibodi halisi inayotoa sauti unapoandika %1$s</string>
   <string name="gesture_1_or_2">%1$s au %2$s</string>
   <string name="adjust_granularity_hint">%1$s ili usome kulingana na %2$s</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">Gusa ili upate maelezo kuhusu jinsi ya kutumia SandFly haraka ukitumia ishara mpya.</string>
   <string name="dump_node_tree_description">Mfumo wa data wa ngazi umechapishwa kwenye kumbukumbu.</string>
   <string name="report_gesture_description">Hizi ni ishara zilizotekelezwa hivi majuzi, tafadhali ripoti ishara isiyo sahihi na ishara inayotarajiwa.</string>
-  <string name="update_welcome_talkback_16.1">Sasisho hili la SandFly linakuwezesha utumie kipengele cha Kufafanua maudhui yaliyo kwenye skrini katika lugha zaidi pamoja na maboresho mengine yanayofanya SandFly iwe rahisi kuitumia.\n\nUtapata maelezo zaidi kuhusu mabadiliko haya katika skrini chache zinazofuata.\n\nUnaweza kusoma maelezo haya baadaye katika mipangilio ya SandFly &gt; Vipengele vipya kwenye SandFly.</string>
-  <string name="update_welcome_talkback_16.1_tts">Sasisho hili la SandFly linakuwezesha utumie kipengele cha Kufafanua maudhui yaliyo kwenye skrini katika lugha zaidi pamoja na maboresho mengine yanayofanya SandFly iwe rahisi kuitumia.\n\nUtapata maelezo zaidi kuhusu mabadiliko haya katika skrini chache zinazofuata.\n\nUnaweza kusoma maelezo haya baadaye katika mipangilio ya SandFly kisha Vipengele vipya kwenye SandFly.</string>
+  <string name="update_welcome_talkback_16.1">Sasisho hili la SandFly linakuwezesha utumie kipengele cha Toa maelezo kuhusu skrini katika lugha zaidi pamoja na maboresho mengine yanayofanya SandFly iwe rahisi kuitumia.\n\nUtapata maelezo zaidi kuhusu mabadiliko haya katika skrini chache zinazofuata.\n\nUnaweza kusoma maelezo haya baadaye katika mipangilio ya SandFly &gt; Vipengele vipya kwenye SandFly.</string>
+  <string name="update_welcome_talkback_16.1_tts">Sasisho hili la SandFly linakuwezesha utumie kipengele cha Toa maelezo kuhusu skrini katika lugha zaidi pamoja na maboresho mengine yanayofanya SandFly iwe rahisi kuitumia.\n\nUtapata maelezo zaidi kuhusu mabadiliko haya katika skrini chache zinazofuata.\n\nUnaweza kusoma maelezo haya baadaye katika mipangilio ya SandFly kisha Vipengele vipya kwenye SandFly.</string>
   <string name="shortcut_for_dictation_title">Njia ya mkato ya kuandika kwa kutamka</string>
   <string name="shortcut_for_dictation_content">Sasa unaweza kugusa mara mbili ukitumia vidole viwili ili uanze au uache kuandika kwa kutamka unapotumia Gboard.
 &lt;br&gt;
@@ -881,12 +881,12 @@
   <string name="shortcut_for_dictation_content_without_google_play">Wakati Gboard iko kwenye skrini, sasa unaweza kugusa mara mbili ukitumia vidole viwili ili uanze kuandika kwa kutamka, kisha uguse mara mbili ukitumia vidole viwili ili uache.</string>
   <string name="announcing_text_formatting_title">Kutangaza muundo wa maandishi</string>
   <string name="announcing_text_formatting_header">SandFly sasa inaweza kutangaza mabadiliko katika uumbizaji wa maandishi, kama vile herufi nzito, italiki na rangi ya maandishi. Ili kuanza:</string>
-  <string name="announcing_text_formatting_option1">Angazia kipengee chenye muundo, fungua menyu ya SandFly kisha uteue \"Fafanua muundo wa maandishi\" au</string>
+  <string name="announcing_text_formatting_option1">Angazia kipengee chenye muundo, fungua menyu ya SandFly kisha uteue \"Eleza muundo wa maandishi\" au</string>
   <string name="announcing_text_formatting_option2">Weka kidhibiti cha kusoma cha muundo wa maandishi ambacho kitawasha au kuzima kutangaza mabadiliko ya muundo.</string>
   <string name="announcing_text_formatting_middle">Ukiwa tayari kujaribu, huu hapa ni mfano wa maandishi yaliyowekewa muundo:</string>
   <string name="announcing_text_formatting_tail">Iwapo ungependa kubadilisha jinsi muundo wa maandishi unavyotangazwa, unaweza kwenda katika %1$s.</string>
-  <string name="text_formatting_options_settings_path">Mipangilio ya SandFly &gt; Kipima maneno &gt; Chaguo za muundo wa maandishi</string>
-  <string name="text_formatting_options_settings_path_tts">Mipangilio ya SandFly kisha Kipima maneno kisha Chaguo za muundo wa maandishi</string>
+  <string name="text_formatting_options_settings_path">Mipangilio ya SandFly &gt; Maneno mengi &gt; Chaguo za muundo wa maandishi</string>
+  <string name="text_formatting_options_settings_path_tts">Mipangilio ya SandFly kisha Maneno mengi kisha Chaguo za muundo wa maandishi</string>
   <string name="announcing_text_formatiing_sample">Maandishi haya yana &lt;b&gt;herufi nzito&lt;/b&gt;, kumetameta kwa ujasiri,
 &lt;br&gt;Wakati haya &lt;u&gt;yamepigwa mstari&lt;/u&gt;, dokezo, bila shaka.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;Mawaridi ni mekundu&lt;/span&gt;, tangu jadi, ni kweli,
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">Mguso wa kugawa kila mahali</string>
   <string name="split_tap_everywhere_text">Sasa unaweza kutumia mguso wa kugawa kila mahali ili uwezeshe vipengee, hata nje ya kibodi. Ili ukitumie, pekua skrini ukitumia kidole kimoja, kisha bila kuondoa kidole cha kwanza, gusa skrini ukitumia kidole kingine ili uwezeshe kipengee kinachoangaziwa kwa sasa.</string>
   <string name="keyboard_enhanced_keymap_title">Kibodi: Ramani ya vitufe iliyoboreshwa</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly sasa ina \"Ramani ya vitufe iliyoboreshwa\" ya kibodi halisi, inayoangazia amri na njia za mkato mbalimbali. Uboreshaji huu unajumuisha \"hali ya kuvinjari\" kwa usogezaji bora zaidi wa wavuti, kurahisisha urambazaji na mwingiliano kwa watumiaji SandFly wanaotegemea kibodi halisi. Unaweza kubadilisha hadi \"Ramani ya vitufe Iliyoboreshwa\" katika <xliff:g id="settings_path">%1$s</xliff:g>.\n\nIkiwa unatumia onyesho la Breli, unaweza pia kutumia mikato mpya ya hali ya kuvinjari ili kupitia maudhui moja kwa moja kutoka kwenye onyesho lako la Breli. Baadhi ya njia za mkato za onyesho la Braille zilibadilishwa ili kushughulikia mabadiliko haya. Unaweza kuona orodha ya mikato yote ya onyesho la Braille katika <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly sasa ina \"Ramani ya vitufe iliyoboreshwa\" ya kibodi halisi, inayoangazia amri na njia za mkato mbalimbali. Uboreshaji huu unajumuisha \"hali ya kuvinjari\" kwa usogezaji bora zaidi wa wavuti, kurahisisha urambazaji na mwingiliano kwa watumiaji wa SandFly wanaotegemea kibodi halisi. Unaweza kubadilisha hadi \"Ramani ya vitufe iliyoboreshwa\" katika <xliff:g id="settings_path">%1$s</xliff:g>.\n\nIkiwa unatumia skrini ya nukta nundu, unaweza pia kutumia mikato mpya ya hali ya kuvinjari ili kupitia maudhui moja kwa moja kutoka kwenye skrini yako ya nukta nundu. Baadhi ya njia za mkato za skrini ya nukta nundu zilibadilishwa ili kushughulikia mabadiliko haya. Unaweza kuona orodha ya mikato yote ya skrini ya nukta nundu katika <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">Mipangilio ya SandFly &gt; Mikato ya kibodi</string>
   <string name="keyboard_shortcuts_link_tts">Mipangilio ya SandFly kisha Mikato ya kibodi</string>
   <string name="braille_display_settings_link">Mipangilio ya skrini ya nukta nundu</string>
   <string name="keyboard_smart_browse_mode_title">Kibodi: Hali mahiri ya kuvinjari</string>
   <string name="keyboard_smart_browse_mode_text">Hali mahiri ya kuvinjari ya SandFly huzima hali ya kuvinjari kwenye sehemu ya kubadilisha ili ikusaidie kuandika ukitumia kibodi halisi unapovinjari katika wavuti. Kisha huwasha tena unapobadilisha hadi kwenye sehemu isiyoweza kubadilishwa katika wavuti ili uweze kuendelea kuvinjari kwa urahisi. Unaweza kuwasha au kuzima \"Hali mahiri ya kuvinjari\" katika <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Mipangilio ya SandFly &gt; Mipangilio ya kina</string>
-  <string name="advanced_settings_link_tts">Mipangilio ya SandFly kisha Mipangilio ya kina</string>
   <string name="keyboard_tutorial_title">Mafunzo ya kibodi</string>
   <string name="keyboard_tutorial_text">SandFly sasa inajumuisha Mafunzo ya Kibodi yaliyobuniwa ili kukusaidia ujifunze mikato ya kibodi na amri za Ramani ya vitufe iliyoboreshwa unapotumia kibodi halisi. Ili ufikie mafunzo, nenda kwenye: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Mipangilio ya SandFly &gt; Mafunzo ya SandFly</string>
-  <string name="tutorial_link_tts">Mipangilio ya SandFly kisha Mafunzo ya SandFly</string>
   <string name="tutorial_entry_point_title">Mafunzo</string>
   <string name="welcome_to_talkback_title">Karibu kwenye SandFly</string>
   <string name="talkback_is_on">SandFly imewashwa</string>
@@ -1069,8 +1065,8 @@
   <string name="checking_notifications_tips">Ili uangalie historia ya arifa zako, telezesha chini kwa vidole 2 kuanzia sehemu ya juu ya skrini yako</string>
   <string name="image_description_playground_title">Jaribu kupata maelezo kuhusu picha</string>
   <string name="image_description_playground_content_one">Unapoangazia picha, fungua menyu ya SandFly na uchague “Toa maelezo kuhusu picha”.\n\nKuna picha moja hapa chini. Jaribu kupata maelezo yake.</string>
-  <string name="image_description_playground_content_two">Unaweza kubadilisha mipangilio ya maelezo ya picha wakati wowote katika Mipangilio ya SandFly &gt; Maelezo ya kiotomatiki.</string>
-  <string name="image_description_playground_content_two_tts">Unaweza kubadilisha mipangilio ya maelezo ya picha wakati wowote katika Mipangilio ya SandFly, kisha Maelezo ya kiotomatiki.</string>
+  <string name="image_description_playground_content_two">Unaweza kubadilisha mipangilio ya maelezo ya picha wakati wowote katika Mipangilio ya SandFly &gt; Maelezo ya picha na skrini.</string>
+  <string name="image_description_playground_content_two_tts">Unaweza kubadilisha mipangilio ya maelezo ya picha wakati wowote katika Mipangilio ya SandFly, kisha Maelezo ya picha na skrini.</string>
   <string name="image_description_sample_image_content_description">Mfano wa picha; gusa kwa vidole 3 ili ufungue menyu ya SandFly na uchague \"Toa maelezo kuhusu picha\" ili usikilize maelezo.</string>
   <string name="practice_gestures_title">Jaribu kutumia ishara</string>
   <string name="practice_keyboard_gestures_title">Mazoezi ya mikato ya kibodi</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">Badili utumie usogezaji wa jedwali katika majedwali</string>
   <string name="title_text_formatting_menu">Eleza muundo wa maandishi</string>
   <string name="summary_text_formatting_menu">Kwa mabadiliko kama vile herufi nzito, italiki, kupigia mstari na mengineyo</string>
-  <string name="title_text_formatting_inline">Muundo wa kutamka maandishi</string>
+  <string name="title_text_formatting_inline">Tamka muundo wa maandishi</string>
   <string name="title_switch_text_formatting">Tamka muundo wa maandishi</string>
   <string name="summary_text_formatting_verbosity">Kwa mabadiliko kama vile herufi nzito na italiki</string>
   <string name="summary_text_formatting_selector">Bainisha ikiwa hatua za kuweka muundo, kama vile herufi nzito na italiki, zitasomwa kwa sauti</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Zaidi</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Tengea Vibration Watch ishara</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly huacha kushughulikia kugusa mara moja na mara mbili kwa vidole viwili ili Samsung Vibration Watch iweze kuvitumia. Washa Vibration Watch katika mipangilio ya ufikivu ya saa yako.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Imehifadhiwa kwa Vibration Watch katika Mipangilio ya Kina</string>
     <string name="title_pref_speakerphone_away_from_ear">Spika ukiwa mbali na sikio lako</string>
     <string name="summary_pref_speakerphone_away_from_ear">Wakati wa simu, hubadilisha kwenda spika unapoondoa simu sikioni, na kurudi kwenye spika ya sikio unapoiweka sikioni tena.</string>
     <string name="summary_pref_speakerphone_needs_permission">Inahitaji ruhusa ambayo Android haitoi kwa visoma skrini. Ili kuitoa, endesha amri hii kwa adb au Shizuku, kisha urudi kwenye skrini hii: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Programu</string>
     <string name="speech_control_no_apps">Bado hakuna programu ambazo zimeomba kuzungumza.</string>
     <string name="speech_control_ask_title">Ungependa kuruhusu <xliff:g id="app" example="Tasker">%1$s</xliff:g> izungumze kupitia SandFly?</string>
-    <string name="speech_control_ask_text">Inaweza kusema maandishi kwa sauti yako ya SandFly. Unaweza kubadilisha hili katika Mipangilio ya kina.</string>
     <string name="speech_control_allow">Ruhusu</string>
     <string name="speech_control_deny">Usiruhusu</string>
     <string name="permission_speak_label">zungumza kupitia SandFly</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Ondoa</string>
     <string name="quick_settings_added">%1$s imeongezwa</string>
     <string name="quick_settings_removed">%1$s imeondolewa</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly imewashwa. Shikilia vidole 2 kwenye skrini kwa sekunde 5 ili kuizima. Ili kuacha kuonyesha ujumbe huu, zima Mipangilio ya SandFly &gt; Mipangilio ya kina &gt; Onyesha maagizo ya kuzima SandFly.</string>
     <string name="edge_gestures_title">Kingo</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Njia nyingine ya mkato ya kuwasha au kuzima modi ya kuvinjari</string>
     <string name="title_pref_vibration_strength">Nguvu ya mtetemo</string>
@@ -1713,9 +1706,9 @@
     <string name="tablet_held_up_faces_away_off">Kompyuta kibao iliyoinuliwa imeelekea nje: imezimwa</string>
     <string name="title_keyboard_echo_on_screen">Mwangwi wa kibodi kwenye skrini</string>
     <string name="title_keyboard_echo_physical">Mwangwi wa kibodi halisi</string>
-    <string name="title_keyboard_echo_braille_keyboard">Mwangwi wa kibodi ya Breli</string>
+    <string name="title_keyboard_echo_braille_keyboard">Mwangwi wa kibodi ya nukta nundu</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Mwangwi wa kibodi ya mwandiko</string>
-    <string name="title_keyboard_echo_braille_display">Mwangwi wa onyesho la Breli</string>
+    <string name="title_keyboard_echo_braille_display">Mwangwi wa skrini ya nukta nundu</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Katiza matamshi unapoandika</string>
     <string name="pref_interrupt_typing_entry_always">Daima</string>
@@ -1735,8 +1728,8 @@
     <string name="template_item_details_order_dropped">Imeachiliwa <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly inasema maelezo ya kipengee kwa mpangilio huu. Ili kuibadilisha, gusa na ushikilie maelezo, kisha yaburute juu au chini. Ukiwasha SandFly, gusa mara mbili na ushikilie, kisha uburute. Unaweza pia kutumia vitendo vya Sogeza juu na Sogeza chini.</string>
     <string name="title_pref_speak_items_before_scroll">Tamka vipengee kabla havijasogezwa kwenye mwonekano</string>
-    <string name="gemini_error_api_key">Gemini haikukubali ufunguo wa API. Angalia ufunguo katika mipangilio ya maelezo ya Kiotomatiki.</string>
-    <string name="gemini_error_quota">Kikomo cha matumizi ya ufunguo wako wa Gemini API kimefikiwa. Jaribu tena baadaye.</string>
+    <string name="gemini_error_api_key">Gemini haikukubali ufunguo wa API. Angalia ufunguo katika mipangilio ya Maelezo ya picha na skrini.</string>
+    <string name="gemini_error_quota">Kikomo cha matumizi ya ufunguo wako wa API wa Gemini kimefikiwa. Jaribu tena baadaye.</string>
     <string name="gemini_error_busy">Gemini ina shughuli nyingi sasa hivi. Jaribu tena baada ya muda mfupi.</string>
     <string name="gemini_error_timeout">Gemini ilichukua muda mrefu sana kujibu. Jaribu tena.</string>
     <string name="gemini_error_with_code">Gemini haikuweza kujibu, hitilafu <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Miundo ya Whisper</string>
     <string name="dictation_whisper_use">Tumia</string>
     <string name="title_pref_dictation_ai_service">Huduma ya AI ya imla</string>
-    <string name="dictation_ai_same">Sawa na maelezo ya kiotomatiki</string>
     <string name="title_pref_browse_mode_per_app">Kumbuka hali ya kuvinjari katika kila programu</string>
     <string name="title_pref_export_settings">Hamisha mipangilio</string>
     <string name="title_pref_import_settings">Ingiza mipangilio</string>
@@ -1779,7 +1771,7 @@
     <string name="arrow_key_nav_on">Usogezaji kwa vitufe vya vishale umewashwa</string>
     <string name="arrow_key_nav_page_left">Ukurasa wa kushoto</string>
     <string name="arrow_key_nav_page_right">Ukurasa wa kulia</string>
-    <string name="arrow_key_nav_toggle">Washa au zima usogezaji kwa vishale</string>
+    <string name="arrow_key_nav_toggle">Washa au zima usogezaji kwa vitufe vya vishale</string>
     <string name="keycombo_menu_category_arrow_key_nav">Usogezaji kwa vitufe vya vishale</string>
     <string-array name="pref_dictation_auto_stop_entries">
         <item>Imezimwa</item>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">Wimbo uliotangulia</string>
     <string name="sound_mode_needs_access">Ruhusu ufikiaji wa Usinisumbue ili uwashe au uzime Nyamazisha.</string>
     <string name="title_pref_dictation_auto_stop">Simamisha kiotomatiki baada ya kimya</string>
+    <string name="dictation_ai_same">Sawa na Maelezo ya picha na skrini</string>
+    <string name="navigation_settings_link">Mipangilio ya SandFly &gt; Usogezaji</string>
+    <string name="navigation_settings_link_tts">Mipangilio ya SandFly kisha Usogezaji</string>
+    <string name="shortcut_reserved_for_vibration_watch">Imetengewa Vibration Watch katika Ishara</string>
+    <string name="speech_control_ask_text">Inaweza kutamka maandishi kwa sauti yako ya SandFly. Unaweza kubadilisha hali hii katika Mipangilio, Matamshi, Ruhusu programu zingine zizungumze.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">Umewasha SandFly. Shikilia skrini kwa sekunde 5 ukitumia vidole 2 ili uizime. Ili uache kuonyesha ujumbe huu, zima Mipangilio ya SandFly &gt; Sitisha na uzime &gt; Onyesha maagizo ya kuzima SandFly.</string>
+    <string name="tutorial_link">Mipangilio ya SandFly &gt; Usaidizi na maoni &gt; Mafunzo ya SandFly</string>
+    <string name="tutorial_link_tts">Mipangilio ya SandFly kisha Usaidizi na maoni kisha Mafunzo ya SandFly</string>
 </resources>

@@ -3,7 +3,7 @@
     <!-- Title of the settings screen for running AI on the phone. [CHAR LIMIT=40] -->
     <string name="title_pref_on_device_ai">端侧 AI</string>
     <!-- Summary of the on-device AI entry in the main settings. [CHAR LIMIT=NONE] -->
-    <string name="summary_pref_on_device_ai">用本手机上的模型描述图像和屏幕，无需 API 密钥</string>
+    <string name="summary_pref_on_device_ai">用本手机上的模型执行“描述图片”和“描述屏幕内容”，无需 API 密钥</string>
 
     <!-- Switch that turns on-device AI on. [CHAR LIMIT=40] -->
     <string name="pref_on_device_ai_enable">使用端侧 AI</string>
@@ -100,7 +100,7 @@
     <!-- Entry that sets how long to wait for an answer. [CHAR LIMIT=40] -->
     <string name="pref_on_device_ai_timeout">回答时间上限</string>
     <!-- Summary of the time limit entry. %1$s is the current limit, like "3 minutes". [CHAR LIMIT=NONE] -->
-    <string name="pref_on_device_ai_timeout_summary">%1$s。超过此时长后 SandFly 停止等待。描述屏幕比描述图像耗时更久。</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s。超过此时长后 SandFly 停止等待。“描述屏幕内容”比“描述图片”耗时更久。</string>
     <!-- Title of the time limit dialog. [CHAR LIMIT=40] -->
     <string name="on_device_ai_choose_timeout">回答时间上限</string>
     <!-- A time limit in minutes. [CHAR LIMIT=20] -->
@@ -110,7 +110,7 @@
     <string name="pref_on_device_ai_processor">处理器</string>
     <string name="pref_on_device_ai_short_prompts">更简短的屏幕描述</string>
     <!-- Summary of that switch. [CHAR LIMIT=NONE] -->
-    <string name="pref_on_device_ai_short_prompts_summary">描述屏幕时要求更少的细节，因此回答更快。关闭可获得更完整的描述。</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“描述屏幕内容”要求更少的细节，因此回答更快。关闭可获得更完整的描述。</string>
 
     <!-- Switch that runs the model on the GPU. [CHAR LIMIT=60] -->
     <!-- Summary of the GPU switch. [CHAR LIMIT=NONE] -->

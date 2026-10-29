@@ -42,7 +42,7 @@
     <string name="script_permission_actions">Klicka, rulla, skriva och flytta fokus</string>
     <string name="script_permission_speech">Ta emot och ändra SandFlys tal</string>
     <string name="script_permission_passwords">Läsa lösenordsfält</string>
-    <string name="script_permission_input">Lägga till gester, tangenter, menyalternativ och läskontroller</string>
+    <string name="script_permission_input">Lägga till rörelser, tangenter, menyalternativ och läsinställningar</string>
     <string name="script_permission_network">Använda internet</string>
     <string name="script_permission_clipboard">Läsa och ändra urklipp</string>
     <string name="script_permission_system">Gå tillbaka eller till startskärmen, öppna aviseringar och appar</string>
@@ -103,7 +103,7 @@
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, sedan <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Kommandon</string>
     <string name="script_commands_summary">Rörelser och tangenter i ett skript som körs går före SandFlys. Stäng av skriptets för att behålla SandFlys.</string>
-    <string name="script_binding_gesture">Gest: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_gesture">Rörelse: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Tangenter: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly-menyn</string>
     <string name="script_binding_control">Läsinställningar</string>
@@ -112,12 +112,12 @@
     <string name="script_binding_turn_off">Inaktivera</string>
     <string name="script_binding_restore">Återställ standardinställningar</string>
     <string name="script_binding_restored">Standardvärden återställda</string>
-    <string name="script_binding_perform">Utför en gest eller tryck på tangenter</string>
+    <string name="script_binding_perform">Utför en rörelse eller tryck på tangenter</string>
     <string name="script_binding_perform_summary">Tilldela nästa rörelse eller tangenter som trycks med SandFly-modifierartangenten</string>
-    <string name="script_binding_perform_message">Gör gesten eller tryck på tangenterna.</string>
+    <string name="script_binding_perform_message">Gör rörelsen eller tryck på tangenterna.</string>
     <string name="script_binding_assign_title">Tilldela <xliff:g id="binding">%1$s</xliff:g> till <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Tilldela</string>
-    <string name="script_binding_choose_gesture">Välj gest</string>
+    <string name="script_binding_choose_gesture">Välj rörelse</string>
     <string name="script_binding_type_keys">Skriv tangenter</string>
     <string name="script_binding_type_keys_summary">Som sf+shift+n, eller sf+t, s</string>
     <string name="script_binding_bad_keys">Dessa tangenter kan inte användas. <xliff:g id="reason">%1$s</xliff:g></string>

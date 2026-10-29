@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">დათვალიერების რეჟიმის გამოსაყენებლად უნდა გადართოთ ნაგულისხმევი კლავიშთა განლაგებიდან გაუმჯობესებულ განლაგებაზე. ეს ცვლილება განაახლებს ბრაილის ეკრანის ზოგიერთ ბრძანებას</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">პარამეტრები</string>
   <string name="bd_command_change_dialog_title">ზოგიერთი ბრძანება განახლდა</string>
-  <string name="bd_command_change_dialog_message">ბრაილის ეკრანის ეს ბრძანებები განახლდა SandFly-ის ამ ვერსიაში:\n\n• წინა ერთეული: დააჭირეთ წერტილებს 1, 7\n\n• შემდეგი ერთეული: დააჭირეთ წერტილებს 4, 8\n\n• წაკითხვის მართვის წინა საშუალება: დააჭირეთ წერტილებს 2, 3, 7, 8\n\n• კითხვის მართვის შემდეგი საშუალება: დააჭირეთ წერტილებს 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">ბრაილის ეკრანის ეს ბრძანებები განახლდა SandFly-ის ამ ვერსიაში:\n\n• წინა ერთეული: დააჭირეთ წერტილებს 1, 7\n\n• შემდეგი ერთეული: დააჭირეთ წერტილებს 4, 8\n\n• წაკითხვის მართვის წინა საშუალება: დააჭირეთ წერტილებს 2, 3, 7, 8\n\n• წაკითხვის მართვის შემდეგი საშუალება: დააჭირეთ წერტილებს 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">შეკვეცილი ბრაილი</string>
   <string name="bd_preference_braille_uncontracted">შეუკვეცელი ბრაილი</string>
   <string name="bd_braille_grade_tips">ბრაილის ეკრანის გამოყენებით შემოკლებულსა და შეუმოკლებელს შორის სწრაფად გადასართავად დააჭირეთ შორისის ღილაკს და წერტილებს 1, 2, 4, 5.\n\nეს ბრძანება იმუშავებს, თუ სარგებლობთ ენით, რომელსაც ბრაილის ორივე დონე აქვს.</string>
@@ -302,10 +302,10 @@
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">ზოგიერთი ბრძანება მიუწვდომელია.</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_message">ბრძანებები ნავიგაციისთვის, ბრაილის პარამეტრებისთვის და ზოგიერთი SandFly ფუნქციისთვის მიუწვდომელია ბეჭდვის ან რედაქტირების დროს.\n\nამ ბრძანებების გამოსაყენებლად, თავიდან დახურეთ კლავიატურა.</string>
   <string name="bd_caption_tutorial_dialog_title">სუბტიტრები თქვენს ბრაილის ეკრანზე</string>
-  <string name="bd_caption_tutorial_dialog_message">ვიდეოს სუბტიტრების საჩვენებლად/დასამალად დააჭირეთ ინტერვალს და 1, 4, 7, 8.\n\nმხარდაჭერილი მედიისთვის სუბტიტრების ავტომატურად საჩვენებლად პარამეტრებში ჩართეთ ბრაილის ეკრანზე სუბტიტრების ჩვენება.</string>
+  <string name="bd_caption_tutorial_dialog_message">ვიდეოს სუბტიტრების საჩვენებლად/დასამალად დააჭირეთ ინტერვალს და 1, 4, 7, 8.\n\nმხარდაჭერილი მედიისთვის სუბტიტრების ავტომატურად საჩვენებლად ჩართეთ პარამეტრი „სუბტიტრების ჩვენება ბრაილის ეკრანზე“.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">ამ შეტყობინების ჩვენება ყოველთვის, როდესაც ხელმისაწვდომია სუბტიტრები</string>
   <string name="bd_usb_connect_dialog_title">ბრაილის ეკრანი დაკავშირებულია USB-სთან</string>
-  <string name="bd_usb_connect_dialog_message">თქვენი %s-ის ბატარეა იტენება თქვენს ბრაილის ეკრანზე.\n\nთუ Bluetooth-ზე გადართვა გჭირდებათ, გათიშეთ USB ან USB ჰაბი და გადადით SandFly-ის პარამეტრებზე &gt; ბრაილის ეკრანზე</string>
+  <string name="bd_usb_connect_dialog_message">თქვენი %s-ის ბატარეა იტენება თქვენს ბრაილის ეკრანზე.\n\nთუ Bluetooth-ზე გადართვა გჭირდებათ, გათიშეთ USB ან USB ჰაბი და გადადით აქ: SandFly-ის პარამეტრები &gt; ბრაილის ეკრანი</string>
   <string name="bd_device">ტელეფონი</string>
   <string name="bd_battery_low_dialog_title">%s ბატარეა იცლება</string>
   <string name="bd_battery_low_dialog_message">თქვენი %s-ის ბატარეა ტენის ბრაილის ეკრანს.\n\nბატარეის დაზოგვისთვის:\n\n

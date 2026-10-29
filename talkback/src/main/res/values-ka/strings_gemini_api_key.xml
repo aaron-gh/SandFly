@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">მოდელი</string>
     <string name="ai_service_address_invalid">მისამართი უნდა იწყებოდეს https://-ით. არაფერი შენახულა.</string>
     <string name="dialog_message_ai_service_consent">სურათები და ეკრანის ანაბეჭდები აღსაწერად იგზავნება <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>-ში, რასაც რამდენიმე წამი სჭირდება. მოქმედებს ამ სერვისის საკუთარი პირობები და კონფიდენციალურობის პოლიტიკა. გენერაციული AI ექსპერიმენტულია, ამიტომ შეცდომებს დაუშვებს.</string>
-    <string name="ai_service_error_api_key">AI სერვისმა არ მიიღო API გასაღები. შეამოწმეთ მისი პარამეტრები ავტომატურ აღწერილობებში.</string>
+    <string name="ai_service_error_api_key">AI სერვისმა არ მიიღო API გასაღები. შეამოწმეთ მისი პარამეტრები აქ: „სურათებისა და ეკრანის აღწერილობები“.</string>
     <string name="ai_service_error_quota">AI სერვისის გამოყენების ლიმიტი მიღწეულია. სცადეთ მოგვიანებით.</string>
     <string name="ai_service_error_busy">AI სერვისი ახლა დატვირთულია. ცოტა ხანში სცადეთ ხელახლა.</string>
     <string name="ai_service_error_timeout">AI სერვისს ძალიან დიდი დრო დასჭირდა პასუხის გასაცემად. სცადეთ ხელახლა.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">არცერთი</string>
-    <string name="ai_service_not_set_up">AI სერვისი არ გამოიყენება. დააყენეთ ერთი ან აირჩიეთ ერთი ავტომატური აღწერილობების პარამეტრებში.</string>
+    <string name="ai_service_not_set_up">AI სერვისი არ გამოიყენება. დააყენეთ ან აირჩიეთ სერვისი აქ: „სურათებისა და ეკრანის აღწერილობები“.</string>
     <string name="ai_provider_none_set_up">AI სერვისი არ არის დაყენებული. დააყენეთ ერთი მის პარამეტრებში ქვემოთ.</string>
     <string name="ai_provider_other">სხვა სერვისი</string>
     <string name="title_pref_category_ai_services">AI სერვისები</string>

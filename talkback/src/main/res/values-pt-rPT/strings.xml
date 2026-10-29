@@ -187,14 +187,14 @@
   <string name="keycombo_menu_other_show_link_list">Mostrar lista de links</string>
   <string name="keycombo_menu_other_show_control_list">Mostrar lista de controlos</string>
   <string name="keycombo_menu_other_show_table_list">Mostrar lista de tabelas</string>
-  <string name="keycombo_menu_other_talkback_context_menu">Mostrar menu SandFly</string>
+  <string name="keycombo_menu_other_talkback_context_menu">Mostrar menu do SandFly</string>
   <string name="keycombo_menu_other_custom_actions">Mostrar ações</string>
   <string name="keycombo_menu_other_language_options">Mostrar idiomas instalados</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Copiar última expressão falada</string>
   <string name="keycombo_menu_other_open_tts_settings">Abra as definições de conversão de texto em voz</string>
   <string name="keycombo_menu_other_open_talkback_settings">Abrir as definições do SandFly</string>
   <string name="keycombo_menu_other_report_issue">Enviar feedback</string>
-  <string name="keycombo_menu_other_cycle_typing_echo">Eco da digitação de ciclo</string>
+  <string name="keycombo_menu_other_cycle_typing_echo">Alternar eco do teclado</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Mostrar a lista de atalhos de teclado</string>
   <string name="keycombo_menu_category_web">Ações de navegação na Web</string>
   <string name="keycombo_menu_other_read_current_url">Dizer URL da página</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Outros</string>
   <string name="shortcut_unassigned">Tocar para atribuir</string>
   <string name="shortcut_not_customizable">%1$s, não personalizável</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Indisponível quando o relógio com vibração está ativado</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Indisponível quando o Vibration Watch está ativado</string>
   <string name="shortcut_next">Item seguinte</string>
   <string name="shortcut_previous">Item anterior</string>
   <string name="shortcut_scroll_forward">Deslocar para a frente</string>
@@ -422,7 +422,7 @@
   <string name="shortcut_increase_volume">Aumentar volume</string>
   <string name="shortcut_decrease_volume">Diminuir volume</string>
   <string name="shortcut_all_apps">Todas as apps</string>
-  <string name="shortcut_braille_keyboard">Mudar para teclado braille</string>
+  <string name="shortcut_braille_keyboard">Mudar para teclado de braille</string>
   <string name="shortcut_braille_display_settings">Navegar p/ definições do ecrã em braille</string>
   <string name="shortcut_tutorial">Abrir tutorial</string>
   <string name="shortcut_control_speak_time">Dizer ou não as horas</string>
@@ -685,7 +685,7 @@
   <string name="button_disable_all_events">Desativar tudo</string>
   <string name="button_enable_all_events">Ativar tudo</string>
   <string name="dialog_title_disable_exploration">Desativar a funcionalidade Explorar através do toque?</string>
-  <string name="dialog_message_disable_exploration">Tem a certeza de que quer desativar a funcionalidade Tocar para explorar?\n\nO seu dispositivo vai deixar de responder a gestos de atalho ou de pronunciar itens quando toca no ecrã.</string>
+  <string name="dialog_message_disable_exploration">Tem a certeza de que quer desativar a funcionalidade Explorar Através do Toque?\n\nO seu dispositivo vai deixar de responder a gestos de atalho ou de pronunciar itens quando toca no ecrã.</string>
   <string name="dialog_title_enable_tree_debug">Ativar a depuração da árvore de nós?</string>
   <string name="dialog_message_enable_tree_debug">Tem a certeza de que quer ativar a depuração da árvore de nós?\n\nA depuração da árvore de nós expõe o conteúdo do seu ecrã aos registos do seu dispositivo, que podem ser lidos por outras aplicações.</string>
   <string name="dialog_title_enable_tree_debug_gesture">Reatribuir gesto de toque triplo com 4 dedos?</string>
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">Use o toque dividido em qualquer lugar</string>
   <string name="split_tap_everywhere_text">Já pode usar o toque dividido em qualquer lugar para ativar itens, mesmo fora do teclado. Para o usar, explore o ecrã com um dedo e, sem levantar o primeiro dedo, toque no ecrã com outro dedo para ativar o item atualmente focado.</string>
   <string name="keyboard_enhanced_keymap_title">Teclado: mapa de teclas melhorado</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly agora possui um \"mapa de teclado aprimorado\" para teclados físicos, apresentando uma variedade de novos comandos e atalhos. Este aprimoramento inclui um “modo de navegação” para uma navegação na web mais eficiente, simplificando a navegação e a interação para usuários SandFly que dependem de teclados físicos. Você pode mudar para o \"Mapa de teclado aprimorado\" em <xliff:g id="settings_path">%1$s</xliff:g>.\n\nSe você usa uma linha Braille, também pode usar os novos atalhos do modo de navegação para navegar pelo conteúdo diretamente da sua linha Braille. Alguns atalhos do display Braille foram alterados para acomodar essa mudança. Você pode ver uma lista de todos os atalhos do display Braille em <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">O SandFly tem agora um \"Mapa de teclas melhorado\" para teclados físicos, com vários comandos e atalhos novos. Inclui um \"modo de navegação\" para navegar na Web de forma mais eficiente, o que simplifica a navegação e a interação para os utilizadores do SandFly que usam teclados físicos. Pode mudar para o \"Mapa de teclas melhorado\" em <xliff:g id="settings_path">%1$s</xliff:g>.\n\nSe usar um ecrã em braille, também pode usar os novos atalhos do modo de navegação para percorrer o conteúdo diretamente a partir do ecrã em braille. Alguns atalhos do ecrã em braille foram alterados para acomodar esta alteração. Pode ver uma lista de todos os atalhos do ecrã em braille em <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">Definições do SandFly &gt; Atalhos de teclado</string>
   <string name="keyboard_shortcuts_link_tts">Definições do SandFly e, de seguida, Atalhos de teclado</string>
   <string name="braille_display_settings_link">Definições do ecrã em braille</string>
   <string name="keyboard_smart_browse_mode_title">Teclado: modo de navegação inteligente</string>
   <string name="keyboard_smart_browse_mode_text">O modo de navegação inteligente do SandFly desativa o modo de navegação num campo de edição para ajudar a escrever com um teclado físico quando navega na Web. De seguida, volta a ativá-lo quando salta para um campo não editável na Web para que possa continuar a navegar de forma eficiente. Pode ativar ou desativar o \"Modo de navegação inteligente\" em <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Definições do SandFly &gt; Definições avançadas</string>
-  <string name="advanced_settings_link_tts">Definições do SandFly e, de seguida, Definições avançadas</string>
   <string name="keyboard_tutorial_title">Tutorial do teclado</string>
   <string name="keyboard_tutorial_text">O SandFly agora inclui um tutorial de teclado concebido para ajudar a aprender os atalhos de teclado e os comandos do mapa de teclas melhorado quando usa um teclado físico. Para aceder ao tutorial, navegue para: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Definições do SandFly &gt; Tutorial do SandFly</string>
-  <string name="tutorial_link_tts">Definições do SandFly e, de seguida, Tutorial do SandFly</string>
   <string name="tutorial_entry_point_title">Tutorial</string>
   <string name="welcome_to_talkback_title">Damos-lhe as boas-vindas ao SandFly</string>
   <string name="talkback_is_on">SandFly está ativado</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Mais</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reservar gestos para Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">O SandFly deixa de processar toques simples e duplos com dois dedos para que o Samsung Vibration Watch os possa utilizar. Ative o Vibration Watch nas definições de acessibilidade do relógio.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch em Definições avançadas</string>
     <string name="title_pref_speakerphone_away_from_ear">Alto-falante quando longe do ouvido</string>
     <string name="summary_pref_speakerphone_away_from_ear">Durante uma chamada, muda para o altifalante quando afasta o telemóvel do ouvido e volta ao auscultador quando o aproxima novamente do ouvido.</string>
     <string name="summary_pref_speakerphone_needs_permission">Precisa de uma autorização que o Android não concede a leitores de ecrã. Para a conceder, execute este comando com adb ou Shizuku e volte a este ecrã: %1$s</string>
@@ -1390,16 +1385,15 @@
     <string name="title_pref_speech_control">Permitir que outras aplicações falem</string>
     <string name="summary_pref_speech_control">As apps que permitir podem dizer texto com a voz do SandFly. Nada é dito enquanto o dispositivo está bloqueado.</string>
     <string name="title_pref_speech_control_sound">Reproduzir um som antes de outras aplicações falarem</string>
-    <string name="speech_control_apps_category">Aplicativos</string>
+    <string name="speech_control_apps_category">Aplicações</string>
     <string name="speech_control_no_apps">Nenhuma aplicação pediu para falar ainda.</string>
     <string name="speech_control_ask_title">Permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale através do SandFly?</string>
-    <string name="speech_control_ask_text">A app pode dizer texto com a sua voz do SandFly. Pode alterar isto nas definições avançadas.</string>
     <string name="speech_control_allow">Permitir</string>
     <string name="speech_control_deny">Não permitir</string>
     <string name="permission_speak_label">falar pelo SandFly</string>
     <string name="permission_speak_description">Permite que a app peça para dizer texto com a sua voz do SandFly. O SandFly pergunta-lhe antes de a app poder falar.</string>
-    <string name="permission_braille_display_label">pedir para ser uma linha braille do SandFly</string>
-    <string name="permission_braille_display_description">Permite que a app peça para funcionar como linha braille do SandFly. Se permitir no SandFly, poderá ler tudo no ecrã e controlar o dispositivo. O SandFly pergunta-lhe primeiro.</string>
+    <string name="permission_braille_display_label">pedir para ser um ecrã em braille do SandFly</string>
+    <string name="permission_braille_display_description">Permite que a app peça para funcionar como ecrã em braille do SandFly. Se permitir no SandFly, poderá ler tudo no ecrã e controlar o dispositivo. O SandFly pergunta-lhe primeiro.</string>
     <string name="title_pref_phonetic_letters_mode">Falar letras foneticamente</string>
     <string name="phonetic_letters_mode_off">Desativado</string>
     <string name="phonetic_letters_mode_after_letter_delay">Depois da letra, com pausa, como “h, hotel”</string>
@@ -1546,7 +1540,6 @@
     <string name="quick_settings_remove">Remover</string>
     <string name="quick_settings_added">%1$s adicionado</string>
     <string name="quick_settings_removed">%1$s removido</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ativado. Mantenha 2 dedos no ecrã durante 5 segundos para desativar. Para deixar de mostrar esta mensagem, desative Definições do SandFly &gt; Definições avançadas &gt; Mostrar instruções para desativar o SandFly.</string>
     <string name="edge_gestures_title">Bordas</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Outro atalho para ativar ou desativar o modo de navegação</string>
     <string name="title_pref_vibration_strength">Força de vibração</string>
@@ -1712,14 +1705,14 @@
     <string name="wrap_around_on">Navegação circular: ativado</string>
     <string name="wrap_around_off">Navegação circular: desativado</string>
     <string name="title_selector_tablet_held_up_faces_away">Tablet levantado com o ecrã para fora</string>
-    <string name="summary_support_tablet_held_up_faces_away">Para o teclado braille num tablet ou telemóvel aberto</string>
+    <string name="summary_support_tablet_held_up_faces_away">Para o teclado de braille num tablet ou telemóvel aberto</string>
     <string name="tablet_held_up_faces_away_on">Tablet levantado com o ecrã para fora: ativado</string>
     <string name="tablet_held_up_faces_away_off">Tablet levantado com o ecrã para fora: desativado</string>
     <string name="title_keyboard_echo_on_screen">Eco do teclado na tela</string>
     <string name="title_keyboard_echo_physical">Eco do teclado físico</string>
-    <string name="title_keyboard_echo_braille_keyboard">Eco do teclado Braille</string>
+    <string name="title_keyboard_echo_braille_keyboard">Eco do teclado de braille</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Eco do teclado de escrita manual</string>
-    <string name="title_keyboard_echo_braille_display">Eco do ecrã braille</string>
+    <string name="title_keyboard_echo_braille_display">Eco do ecrã em braille</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Interromper a fala ao digitar</string>
     <string name="pref_interrupt_typing_entry_always">Sempre</string>
@@ -1765,12 +1758,11 @@
     <string name="dictation_google_download">Transferir <xliff:g id="language" example="English">%1$s</xliff:g> para reconhecimento no dispositivo</string>
     <string name="dictation_recognition_android">Reconhecimento de voz do Android</string>
     <string name="dictation_recognition_automatic_using">Automático: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
-    <string name="dictation_rambler_needs_key">Rambler, precisa de uma chave da API Gemini</string>
+    <string name="dictation_rambler_needs_key">Rambler, precisa de uma chave de API do Gemini</string>
     <string name="dictation_whisper_needs_model">Whisper, precisa de um modelo transferido</string>
     <string name="title_pref_whisper_models">Modelos do Whisper</string>
     <string name="dictation_whisper_use">Utilizar</string>
     <string name="title_pref_dictation_ai_service">Serviço de IA para ditado</string>
-    <string name="dictation_ai_same">O mesmo das descrições automáticas</string>
     <string name="title_pref_browse_mode_per_app">Memorizar o modo de navegação em cada aplicação</string>
     <string name="title_pref_export_settings">Exportar configurações</string>
     <string name="title_pref_import_settings">Importar configurações</string>
@@ -1798,4 +1790,12 @@
         <item>1 minuto</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Paragem automática após silêncio</string>
+    <string name="dictation_ai_same">O mesmo de Descrições de imagens e do ecrã</string>
+    <string name="navigation_settings_link">Definições do SandFly &gt; Navegação</string>
+    <string name="navigation_settings_link_tts">Definições do SandFly e, de seguida, Navegação</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch em Gestos</string>
+    <string name="speech_control_ask_text">A app pode dizer texto com a voz do SandFly. Pode alterar isto em Definições, Fala, Permitir que outras aplicações falem.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ativado. Mantenha 2 dedos no ecrã durante 5 segundos para o desativar. Para deixar de apresentar esta mensagem, desative Definições do SandFly &gt; Pausa e desativação &gt; Mostrar instruções para desativar o SandFly.</string>
+    <string name="tutorial_link">Definições do SandFly &gt; Ajuda e comentários &gt; Tutorial do SandFly</string>
+    <string name="tutorial_link_tts">Definições do SandFly e, de seguida, Ajuda e comentários e, de seguida, Tutorial do SandFly</string>
 </resources>

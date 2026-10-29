@@ -73,7 +73,7 @@
   <string name="reset_latency_settings_title">Lähtesta kõik viivituse seaded</string>
   <string name="title_pref_single_tap">Üks puudutus aktiveerimiseks</string>
   <string name="summary_pref_single_tap">Aktiveerimiseks puudutage esile tõstetud üksust ühe korra. Kiirem navigeerimine võrreldes topeltpuudutusega.</string>
-  <string name="pref_verbosity_title">Sõnaohtrus</string>
+  <string name="pref_verbosity_title">Paljusõnalisus</string>
   <string name="pref_punctuation_title">Loe ette kirjavahemärgid ja sümbolid</string>
   <string name="title_pref_category_manage_focus_indicator">Fookusenäidik</string>
   <string name="title_pref_category_manage_gestures">Liigutused</string>
@@ -88,10 +88,10 @@
   <string name="title_pref_show_tos">Teenusetingimused</string>
   <string name="title_pref_show_privacy_policy">Privaatsuseeskirjad</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Sõrmejälje liigutused</string>
-  <string name="title_pref_category_tutorial">SandFlyi õpetused</string>
+  <string name="title_pref_category_tutorial">SandFlyi õpetus</string>
   <string name="title_pref_category_help_no_tutorial">Abi</string>
   <string name="title_pref_advanced_settings">Täpsemad seaded</string>
-  <string name="title_pref_show_exit_watermark">Kuva SandFlyi väljalüiltamise juhised</string>
+  <string name="title_pref_show_exit_watermark">Kuva SandFlyi väljalülitamise juhised</string>
   <string name="summary_pref_show_exit_watermark">Kui SandFly lülitub sisse, kuvatakse selle väljalülitamise juhised</string>
   <string name="talkback_exit_watermark_text">SandFly on sisse lülitatud. Väljalülitamiseks hoidke kahte sõrme viis sekundit ekraanil. Kui te ei soovi seda teadet enam näha, puudutage kolme sõrmega, et avada SandFlyi menüü.</string>
   <string name="talkback_exit_watermark_hint_text">Kuvatakse bänner, mis näitab, et SandFly on sisse lülitatud. SandFlyi väljalülitamiseks hoidke kahte sõrme 5 sekundit ekraanil. Selle bänneri eemaldamiseks avage SandFlyi seaded.</string>
@@ -142,8 +142,8 @@
   <string name="keycombo_menu_category_navigation">Navigeerimistoimingud</string>
   <string name="keycombo_menu_navigate_next">Järgmisele üksusele navigeerimine</string>
   <string name="keycombo_menu_navigate_previous">Eelmisele üksusele navigeerimine</string>
-  <string name="keycombo_menu_navigate_up">Eelmisse kategooriasse liikumine (lugemise juhtimise järgi)</string>
-  <string name="keycombo_menu_navigate_down">Järgmisse kategooriasse liikumine (lugemise juhtimise järgi)</string>
+  <string name="keycombo_menu_navigate_up">Eelmisse kategooriasse liikumine (lugemise juhtelementide järgi)</string>
+  <string name="keycombo_menu_navigate_down">Järgmisse kategooriasse liikumine (lugemise juhtelementide järgi)</string>
   <string name="keycombo_menu_navigate_first">Esimesele üksusele navigeerimine</string>
   <string name="keycombo_menu_navigate_last">Viimasele üksusele navigeerimine</string>
   <string name="keycombo_menu_navigate_next_window">Järgmisse aknasse või süsteemielementi liikumine</string>
@@ -165,7 +165,7 @@
   <string name="keycombo_menu_global_recent">Hiljutised rakendused</string>
   <string name="keycombo_menu_global_notifications">Märguanded</string>
   <string name="keycombo_menu_global_play_pause_media">Meedia esitamine või peatamine</string>
-  <string name="keycombo_menu_global_scroll_forward_reading_menu">Lugemise juhtelement Vali järgmine</string>
+  <string name="keycombo_menu_global_scroll_forward_reading_menu">Vali järgmine lugemise juhtelement</string>
   <string name="keycombo_menu_global_scroll_backward_reading_menu">Vali eelmine lugemise juhtelement</string>
   <string name="keycombo_menu_global_adjust_reading_settings_previous">Lugemise juhtelemendi üles liigutamine</string>
   <string name="keycombo_menu_global_adjust_reading_setting_next">Lugemise juhtelemendi alla liigutamine</string>
@@ -389,7 +389,7 @@
   <string name="shortcut_talkback_breakout">SandFlyi menüü avamine</string>
   <string name="shortcut_pause_or_resume_feedback">Kõne peatamine või jätkamine</string>
   <string name="shortcut_toggle_voice_feedback">Kõne sisse- või väljalülitamine</string>
-  <string name="shortcut_read_from_top">Lugemine ülalt alates</string>
+  <string name="shortcut_read_from_top">Lugemine alates ülalt</string>
   <string name="shortcut_read_from_current">Lugemine alates esiletõstetud üksusest</string>
   <string name="shortcut_print_node_tree">Prindi sõlmepuu</string>
   <string name="shortcut_print_performance_stats">Prindi toimivusstatistika</string>
@@ -406,13 +406,13 @@
   <string name="talkback_menu_more_options_text">Rohkem menüüvalikuid on saadaval pärast seadistuse lõpetamist või seadme avamist.</string>
   <string name="talkback_menu_title_content_description">SandFlyi menüü. SandFlyi menüü valikute vaatamiseks pühkige paremale.\n\nÕpetusse naasmiseks pühkige kahe sõrmega ekraani servast vasakule või paremale.</string>
   <string name="shortcut_show_language_options">Kõneldava keele muutmine</string>
-  <string name="shortcut_select_next_setting">Järgmine juhtelement</string>
-  <string name="shortcut_select_previous_setting">Eelmine juhtelement</string>
+  <string name="shortcut_select_next_setting">Järgmine lugemise juhtelement</string>
+  <string name="shortcut_select_previous_setting">Eelmine lugemise juhtelement</string>
   <string name="shortcut_pass_through_next">Süsteemiliigutuse kasutamine</string>
   <string name="shortcut_a11y_button">Juurdepääsetavuse otsetee</string>
   <string name="shortcut_a11y_button_long_press">Juurdepääsetavuse otsetee hoidmine</string>
-  <string name="shortcut_selected_setting_next_action">Lugemise juhtimise alla või edasi liigutamine</string>
-  <string name="shortcut_selected_setting_previous_action">Lugemise juhtimise üles või tagasi liigutamine</string>
+  <string name="shortcut_selected_setting_next_action">Lugemise juhtelemendi alla või edasi liigutamine</string>
+  <string name="shortcut_selected_setting_previous_action">Lugemise juhtelemendi üles või tagasi liigutamine</string>
   <string name="label_screen_search_result">Otsingutulemus</string>
   <string name="label_search_result_landmark_search">Otsing</string>
   <string name="label_search_result_table">Tabel</string>
@@ -422,7 +422,7 @@
   <string name="shortcut_increase_volume">Helitugevuse suurendamine</string>
   <string name="shortcut_decrease_volume">Helitugevuse vähendamine</string>
   <string name="shortcut_all_apps">Kõik rakendused</string>
-  <string name="shortcut_braille_keyboard">Braillei aktiveerimine</string>
+  <string name="shortcut_braille_keyboard">Braille klaviatuurile lülitamine</string>
   <string name="shortcut_braille_display_settings">Braille ekraani seadetele navigeerimine</string>
   <string name="shortcut_tutorial">Õpetuse avamine</string>
   <string name="shortcut_control_speak_time">Ütle aeg või ära ütle aega</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">Puudutage, et vaadata, kuidas SandFlyi uute liigutuste abil kiiremini kasutada.</string>
   <string name="dump_node_tree_description">Sõlmepuu on logidesse prinditud.</string>
   <string name="report_gesture_description">Siin on hiljuti tehtud liigutused. Teavitage, milline liigutus on vale ja mida liigutuselt ootate.</string>
-  <string name="update_welcome_talkback_16.1">See SandFlyi värskendus hõlmab rohkemates keeltes ekraani kirjeldamise tuge ja muid kvaliteeditäiustusi, mis hõlbustavad SandFlyi kasutamist.\n\nJärgmistel kuvadel saate nende muudatuste kohta lisateavet.\n\nKui soovite selle teabe hiljem üle vaadata, leiate selle menüüst SandFlyi seaded &gt; SandFlyi uued funktsioonid.</string>
-  <string name="update_welcome_talkback_16.1_tts">See SandFlyi värskendus hõlmab rohkemates keeltes ekraani kirjeldamise tuge ja muid kvaliteeditäiustusi, mis hõlbustavad SandFlyi kasutamist.\n\nJärgmistel kuvadel saate nende muudatuste kohta lisateavet.\n\nKui soovite selle teabe hiljem üle vaadata, avage menüü SandFlyi seaded ja tehke valik SandFlyi uued funktsioonid.</string>
+  <string name="update_welcome_talkback_16.1">See SandFlyi värskendus hõlmab rohkemates keeltes funktsiooni Ekraani kirjeldamine tuge ja muid kvaliteeditäiustusi, mis hõlbustavad SandFlyi kasutamist.\n\nJärgmistel kuvadel saate nende muudatuste kohta lisateavet.\n\nKui soovite selle teabe hiljem üle vaadata, leiate selle menüüst SandFlyi seaded &gt; SandFlyi uued funktsioonid.</string>
+  <string name="update_welcome_talkback_16.1_tts">See SandFlyi värskendus hõlmab rohkemates keeltes funktsiooni Ekraani kirjeldamine tuge ja muid kvaliteeditäiustusi, mis hõlbustavad SandFlyi kasutamist.\n\nJärgmistel kuvadel saate nende muudatuste kohta lisateavet.\n\nKui soovite selle teabe hiljem üle vaadata, avage menüü SandFlyi seaded ja tehke valik SandFlyi uued funktsioonid.</string>
   <string name="shortcut_for_dictation_title">Häälsisestuse otsetee</string>
   <string name="shortcut_for_dictation_content">Gboardi kasutades saate nüüd kasutada kahe sõrmega topeltpuudutust, et käivitada või peatada häälsisestus.
 &lt;br&gt;
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Braille ekraani seaded</string>
   <string name="keyboard_smart_browse_mode_title">Klaviatuur: nutikas sirvimisrežiim</string>
   <string name="keyboard_smart_browse_mode_text">SandFlyi nutikas sirvimisrežiim lülitab muudetaval väljal sirvimisrežiimi välja, et aidata teil veebi sirvimise ajal füüsilise klaviatuuri abil teksti sisestada. Kui liigute veebis mittemuudetavale väljale, lülitab see sirvimisrežiimi uuesti sisse, et saaksite hõlpsasti edasi sirvida. Funktsiooni „Nutikas sirvimisrežiim“ saate sisse või välja lülitada menüüs <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">SandFlyi seaded &gt; Täpsemad seaded</string>
-  <string name="advanced_settings_link_tts">SandFlyi seaded, seejärel Täpsemad seaded</string>
   <string name="keyboard_tutorial_title">Klaviatuuriõpetused</string>
   <string name="keyboard_tutorial_text">SandFly hõlmab nüüd klaviatuuriõpetusi, mis on loodud selleks, et aidata teil füüsilise klaviatuuri kasutamisel selgeks õppida täiustatud klahvitabeli klaviatuuri otseteed ja käsud. Õpetuste avamiseks tehke järgmised valikud: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFlyi seaded &gt; SandFlyi õpetused</string>
-  <string name="tutorial_link_tts">SandFlyi seaded ja siis SandFlyi õpetused</string>
   <string name="tutorial_entry_point_title">Õpetused</string>
   <string name="welcome_to_talkback_title">Tere tulemast SandFlyi</string>
   <string name="talkback_is_on">SandFly on sisse lülitatud</string>
@@ -1068,7 +1064,7 @@
   <string name="checking_notifications_text_tail_tts">Saate kontrollida, millistes rakendustes on märguanded sisse lülitatud, tehes valiku Seaded ja seejärel Märguanded.</string>
   <string name="checking_notifications_tips">Märguannete ajaloo vaatamiseks tõmmake kahe sõrmega ekraani ülaservast alla</string>
   <string name="image_description_playground_title">Proovige hankida pildikirjeldused</string>
-  <string name="image_description_playground_content_one">Kui pilt on esile tõstetud, avage SandFlyi menüü ja tehke valik „Kirjelda pilti“.\n\nAllpool on üks foto. Proovige hankida selle kirjeldus.</string>
+  <string name="image_description_playground_content_one">Kui pilt on esile tõstetud, avage SandFlyi menüü ja tehke valik „Pildi kirjeldamine“.\n\nAllpool on üks foto. Proovige hankida selle kirjeldus.</string>
     <string name="image_description_playground_content_two">Pildikirjelduse seadeid saate igal ajal muuta menüüs SandFlyi seaded &gt; Pildi- ja ekraanikirjeldused.</string>
     <string name="image_description_playground_content_two_tts">Pildikirjelduse seadeid saate igal ajal muuta, valides „SandFlyi seaded“ ning seejärel „Pildi- ja ekraanikirjeldused“.</string>
   <string name="image_description_sample_image_content_description">Näidispilt; puudutage kolme sõrmega ekraani, et avada SandFlyi menüü, ja tehke kirjelduse kuulamiseks valik „Pildi kirjeldamine“.</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">Lülitu tabelites tabelis navigeerimisele</string>
   <string name="title_text_formatting_menu">Tekstivormingu kirjeldamine</string>
   <string name="summary_text_formatting_menu">Selliste muudatuste kohta nagu paksus kirjas, kursiivis, allajoonitud tekst jm</string>
-  <string name="title_text_formatting_inline">Loe ette teksti vormindusega seotud teave</string>
+  <string name="title_text_formatting_inline">Loe ette tekstivorming</string>
   <string name="title_switch_text_formatting">Loe ette tekstivorming</string>
   <string name="summary_text_formatting_verbosity">Selliste muudatuste kohta nagu paksu kirja või kursiivi kasutamine</string>
   <string name="summary_text_formatting_selector">Saate muuta, kas vorming (nt paks ja kursiivis tekst) loetakse ette</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Rohkem</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reserveeri liigutused funktsioonile Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly lõpetab kahe sõrmega puudutuste ja topeltpuudutuste töötlemise, et Samsung Vibration Watch saaks neid kasutada. Lubage Vibration Watch kella juurdepääsetavuse seadetes.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Reserveeritud funktsioonile Vibration Watch jaotises Täpsemad seaded</string>
     <string name="title_pref_speakerphone_away_from_ear">Kõlar, kui telefon pole kõrva ääres</string>
     <string name="summary_pref_speakerphone_away_from_ear">Kõne ajal lülitub kõlarile, kui viite telefoni kõrvast eemale, ja tagasi kuularile, kui tõstate selle uuesti kõrva äärde.</string>
     <string name="summary_pref_speakerphone_needs_permission">Vajab luba, mida Android ekraanilugejatele ei anna. Loa andmiseks käitage see käsk adb või Shizuku abil ja avage seejärel uuesti see kuva: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Rakendused</string>
     <string name="speech_control_no_apps">Ükski rakendus pole veel kõne esitamiseks luba küsinud.</string>
     <string name="speech_control_ask_title">Kas lubada rakendusel <xliff:g id="app" example="Tasker">%1$s</xliff:g> SandFly kaudu kõnet esitada?</string>
-    <string name="speech_control_ask_text">Rakendus saab teksti esitada teie SandFlyi häälega. Saate seda muuta jaotises Täpsemad seaded.</string>
     <string name="speech_control_allow">Luba</string>
     <string name="speech_control_deny">Ära luba</string>
     <string name="permission_speak_label">kõne esitamine SandFly kaudu</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d märguanne</item>
         <item quantity="other">%d märguannet</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly on sees. Väljalülitamiseks hoidke kahte sõrme 5 sekundit ekraanil. Selle teate peitmiseks lülitage välja SandFlyi seaded &gt; Täpsemad seaded &gt; Kuva SandFlyi väljalülitamise juhised.</string>
     <string name="edge_gestures_title">Servad</string>
     <string name="title_pref_audio_output_device">Heliväljundseade</string>
     <string name="dialog_title_audio_output_device">SandFlyi heli väljundi valimine</string>
@@ -1523,10 +1516,10 @@
     <string name="summary_support_wrap_around">Viimaselt üksuselt esimesele liikumise sisse- või väljalülitamine</string>
     <string name="wrap_around_on">Ringiga liikumine on sees</string>
     <string name="wrap_around_off">Ringiga liikumine on väljas</string>
-    <string name="title_selector_tablet_held_up_faces_away">Püsti hoitud tahvelarvuti ekraan on eemale suunatud</string>
+    <string name="title_selector_tablet_held_up_faces_away">Püsti hoitud tahvelarvuti ekraan on teist eemale</string>
     <string name="summary_support_tablet_held_up_faces_away">Braille klaviatuurile tahvelarvutis või lahtivolditud telefonis</string>
-    <string name="tablet_held_up_faces_away_on">Püsti hoitud tahvelarvuti ekraan on eemale suunatud: sees</string>
-    <string name="tablet_held_up_faces_away_off">Püsti hoitud tahvelarvuti ekraan on eemale suunatud: väljas</string>
+    <string name="tablet_held_up_faces_away_on">Püsti hoitud tahvelarvuti ekraan on teist eemale: sees</string>
+    <string name="tablet_held_up_faces_away_off">Püsti hoitud tahvelarvuti ekraan on teist eemale: väljas</string>
     <string name="title_keyboard_echo_on_screen">Ekraanil kuvatava klaviatuuri kaja</string>
     <string name="title_keyboard_echo_physical">Füüsilise klaviatuuri kaja</string>
     <string name="title_keyboard_echo_braille_keyboard">Braille klaviatuuri kaja</string>
@@ -1765,8 +1758,7 @@
     <string name="dictation_whisper_needs_model">Whisper, vajab allalaaditud mudelit</string>
     <string name="title_pref_whisper_models">Whisperi mudelid</string>
     <string name="dictation_whisper_use">Kasuta</string>
-    <string name="title_pref_dictation_ai_service">Tehisintellekti teenus dikteerimiseks</string>
-    <string name="dictation_ai_same">Sama mis automaatsetel kirjeldustel</string>
+    <string name="title_pref_dictation_ai_service">AI-teenus dikteerimiseks</string>
     <string name="title_pref_browse_mode_per_app">Jäta iga rakenduse sirvimisrežiim meelde</string>
     <string name="title_pref_export_settings">Ekspordi seaded</string>
     <string name="title_pref_import_settings">Impordi seaded</string>
@@ -1794,4 +1786,12 @@
         <item>1 minut</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automaatne peatamine pärast vaikust</string>
+    <string name="dictation_ai_same">Sama mis jaotises Pildi- ja ekraanikirjeldused</string>
+    <string name="navigation_settings_link">SandFlyi seaded &gt; Navigeerimine</string>
+    <string name="navigation_settings_link_tts">SandFlyi seaded, seejärel Navigeerimine</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reserveeritud funktsioonile Vibration Watch jaotises Liigutused</string>
+    <string name="speech_control_ask_text">See saab teksti öelda teie SandFlyi häälega. Seda saate muuta jaotises Seaded &gt; Kõne &gt; Luba teistel rakendustel kõnet esitada.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly on sisse lülitatud. Väljalülitamiseks hoidke kahte sõrme viis sekundit ekraanil. Kui te ei soovi seda teadet enam näha, lülitage välja SandFlyi seaded &gt; Peatamine ja väljalülitamine &gt; Kuva SandFlyi väljalülitamise juhised.</string>
+    <string name="tutorial_link">SandFlyi seaded &gt; Abi ja tagasiside &gt; SandFlyi õpetus</string>
+    <string name="tutorial_link_tts">SandFlyi seaded, seejärel Abi ja tagasiside, seejärel SandFlyi õpetus</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">በመሣሪያ ላይ ያለ ሰው ሠራሽ አስተውሎት</string>
-    <string name="summary_pref_on_device_ai">ምስልን ግለጽ እና ማያ ገፅን ግለጽ ያለ API ቁልፍ በዚህ ስልክ ላይ ባለ ሞዴል</string>
+    <string name="summary_pref_on_device_ai">«ምስሉን ይግለጹት» እና «ማያ ገፅን ይግለፁ» ያለ API ቁልፍ በዚህ ስልክ ላይ ባለ ሞዴል</string>
     <string name="pref_on_device_ai_enable">በመሣሪያ ላይ ያለ ሰው ሠራሽ አስተውሎትን ተጠቀም</string>
     <string name="pref_on_device_ai_enable_summary">ምስሎች እና ቅጽበታዊ ገጽ እይታዎች በዚህ ስልክ ላይ ይገለጻሉ እና በጭራሽ ወደ Google አይላኩም። ከደመናው ይልቅ ቀርፋፋ ነው እና ተጨማሪ ባትሪ ይጠቀማል።</string>
     <string name="pref_on_device_ai_enable_needs_model">መጀመሪያ ሞዴል ያውርዱ ወይም ያስመጡ።</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">ሞዴል ተጭኗል</string>
     <string name="on_device_ai_import_failed">ያ ፋይል የሚደገፍ የGemma 4 ሞዴል ፋይል አይደለም።</string>
     <string name="pref_on_device_ai_timeout">የመልሶች የጊዜ ገደብ</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s። SandFly ከዚህ ጊዜ በኋላ መጠበቅ ያቆማል። ማያ ገፅን ግለጽ ከምስልን ግለጽ የበለጠ ጊዜ ይወስዳል።</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s። SandFly ከዚህ ጊዜ በኋላ መጠበቅ ያቆማል። «ማያ ገፅን ይግለፁ» ከ«ምስሉን ይግለጹት» የበለጠ ጊዜ ይወስዳል።</string>
     <string name="on_device_ai_choose_timeout">የመልሶች የጊዜ ገደብ</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d ደቂቃ</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">ፕሮሰሰር</string>
     <string name="pref_on_device_ai_short_prompts">አጠር ያሉ የማያ ገፅ መግለጫዎች</string>
-    <string name="pref_on_device_ai_short_prompts_summary">ማያ ገፅን ግለጽ ያነሱ ዝርዝሮችን ይጠይቃል፣ ስለዚህ ቶሎ ይመልሳል። ለተሟሉ መግለጫዎች ይህን ያጥፉ።</string>
+    <string name="pref_on_device_ai_short_prompts_summary">«ማያ ገፅን ይግለፁ» ያነሱ ዝርዝሮችን ይጠይቃል፣ ስለዚህ ቶሎ ይመልሳል። ለተሟሉ መግለጫዎች ይህን ያጥፉ።</string>
     <string name="on_device_ai_error_network">ማውረዱ ቆሟል። ግንኙነትዎን ይፈትሹ እና እንደገና ይሞክሩ። ከቆመበት ይቀጥላል።</string>
     <string name="on_device_ai_error_http">የማውረጃ አገልጋዩ ጥያቄውን አልተቀበለም። ቆይተው እንደገና ይሞክሩ፣ ወይም በምትኩ ፋይል ያስመጡ።</string>
     <string name="on_device_ai_error_corrupt">ፋይሉ ከሚጠበቀው ሞዴል ጋር አልተዛመደም እና ተሰርዟል። እንደገና ይሞክሩ።</string>

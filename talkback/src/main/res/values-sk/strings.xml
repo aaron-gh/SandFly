@@ -13,7 +13,7 @@
   <string name="label_manager_summary_title">Správa vlastných štítkov</string>
   <string name="label_manager_package_title">Správa štítkov aplikácie %1$s</string>
   <string name="manage_label">Spravovať štítok</string>
-  <string name="label_manager_no_packages_message">Momentálne nemáte žiadne vlastné štítky.\n\n<b>Postup vytvorenia vlastného štítka</b>\nPrejdite na neoznačený obrázok a v ponuke aplikácie SandFly pridajte štítok.</string>
+  <string name="label_manager_no_packages_message">Momentálne nemáte žiadne vlastné štítky.\n\n<b>Postup vytvorenia vlastného štítka</b>\nPrejdite na neoznačený obrázok a v ponuke SandFly pridajte štítok.</string>
   <string name="label_manager_timestamp_text">Posledná úprava: %1$s</string>
   <string name="search_mode_cancel">Vyhľadávanie bolo zrušené</string>
   <string name="notification_type_status_started">Začaté</string>
@@ -74,7 +74,7 @@
   <string name="title_pref_single_tap">Aktivácia jedným klepnutím</string>
   <string name="summary_pref_single_tap">Označenú položku aktivujete jedným klepnutím. Rýchlejšie prechádzanie ako dvojité klepnutie.</string>
   <string name="pref_verbosity_title">Podrobnosť</string>
-  <string name="pref_punctuation_title">Vyslovovanie interpunkcie a symbolov</string>
+  <string name="pref_punctuation_title">Vyslovovať interpunkciu a symboly</string>
   <string name="title_pref_category_manage_focus_indicator">Indikátor výberu</string>
   <string name="title_pref_category_manage_gestures">Gestá</string>
   <string name="title_pref_manage_labels">Vlastné štítky</string>
@@ -93,7 +93,7 @@
   <string name="title_pref_advanced_settings">Rozšírené nastavenia</string>
   <string name="title_pref_show_exit_watermark">Zobrazovať pokyny, ako vypnúť SandFly</string>
   <string name="summary_pref_show_exit_watermark">Keď sa SandFly zapne, zobrazí sa, ako ho vypnúť</string>
-  <string name="talkback_exit_watermark_text">Aplikácia SandFly je zapnutá. Ak ju chcete vypnúť, pridržte päť sekúnd dva prsty na obrazovke. Zobrazovanie tejto správy zastavíte v ponuke aplikácie SandFly, ktorú otvoríte klepnutím troma prstami.</string>
+  <string name="talkback_exit_watermark_text">Aplikácia SandFly je zapnutá. Ak ju chcete vypnúť, pridržte päť sekúnd dva prsty na obrazovke. Zobrazovanie tejto správy zastavíte v ponuke SandFly, ktorú otvoríte klepnutím troma prstami.</string>
   <string name="talkback_exit_watermark_hint_text">Zobrazuje sa banner s informáciou, že aplikácia SandFly je zapnutá. Ak chcete SandFly vypnúť, pridržte päť sekúnd dva prsty na obrazovke. Ak chcete tento banner odstrániť, prejdite do nastavení aplikácie SandFly.</string>
   <string name="reset_gesture_settings_title">Resetovať nastavenia gest</string>
   <string name="one_finger_gestures_title">1 prst</string>
@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">Automatické opisy</string>
   <string name="title_pref_gemini_settings">Nastavenia Gemini</string>
   <string name="title_pref_gemini_enabled">Hlasové príkazy Gemini</string>
-  <string name="title_pref_category_automatic_description_summary">Keď v ponuke čítačky SandFly vyberiete Opísať obrázok, získate podrobné opisy obrázkov pomocou umelej inteligencie.\n\nAutomatické opisy môžete získať aj tak, že označíte obrázok alebo ikonu. Automatické opisy fungujú aj bez internetového pripojenia.</string>
+  <string name="title_pref_category_automatic_description_summary">Keď v ponuke SandFly vyberiete Opísať obrázok, získate podrobné opisy obrázkov pomocou umelej inteligencie.\n\nAutomatické opisy môžete získať aj tak, že označíte obrázok alebo ikonu. Automatické opisy fungujú aj bez internetového pripojenia.</string>
   <string name="title_pref_icon_detection">Automatické opisy ikon</string>
   <string name="title_pref_image_description">Automatické opisy obrázkov</string>
   <string name="title_pref_text_recognition">Automatické opisy textu na obrázkoch</string>
@@ -358,7 +358,7 @@
   <string name="screen_dimmed">Obrazovka je skrytá</string>
   <string name="screen_brightness_restored">Obrazovka je zobrazená</string>
   <string name="screen_dimming_exit_instruction_line1">Služba dostupnosti SandFly skryla obrazovku</string>
-  <string name="screen_dimming_exit_instruction_line2">Ak to chcete zmeniť, <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> a otvorte tak ponuku aplikácie SandFly, vyberte „<xliff:g id="menu item" example="show screen">%2$s</xliff:g>“ a potom dvakrát klepnite.</string>
+  <string name="screen_dimming_exit_instruction_line2">Ak to chcete zmeniť, <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> a otvorte tak ponuku SandFly, vyberte „<xliff:g id="menu item" example="show screen">%2$s</xliff:g>“ a potom dvakrát klepnite.</string>
   <string name="shortcut_title_basic_navigation">Základná navigácia</string>
   <string name="shortcut_title_system_actions">Systémové akcie</string>
   <string name="shortcut_title_reading_control">Čítanie</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Iné</string>
   <string name="shortcut_unassigned">Klepnite a priraďte príkaz</string>
   <string name="shortcut_not_customizable">%1$s, nie je možné prispôsobiť</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Keď je v hodinkách zapnuté vibrovanie, nie je k dispozícii</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Nie je k dispozícii, keď je zapnutá funkcia Vibration Watch</string>
   <string name="shortcut_next">Ďalšia položka</string>
   <string name="shortcut_previous">Predchádzajúca položka</string>
   <string name="shortcut_scroll_forward">Posunúť vpred</string>
@@ -386,7 +386,7 @@
   <string name="shortcut_notifications">Upozornenia</string>
   <string name="shortcut_quick_settings">Rýchle nastavenia</string>
   <string name="shortcut_show_custom_actions">Zobraziť vlastné akcie</string>
-  <string name="shortcut_talkback_breakout">Otvoriť ponuku aplikácie SandFly</string>
+  <string name="shortcut_talkback_breakout">Otvoriť ponuku SandFly</string>
   <string name="shortcut_pause_or_resume_feedback">Pozastaviť alebo obnoviť reč</string>
   <string name="shortcut_toggle_voice_feedback">Zapnúť alebo vypnúť reč</string>
   <string name="shortcut_read_from_top">Čítať zhora</string>
@@ -401,10 +401,10 @@
   <string name="shortcut_perform_click_action">Aktivovať</string>
   <string name="shortcut_perform_double_click_action">Dvakrát kliknúť</string>
   <string name="shortcut_perform_long_click_action">Pridržať</string>
-  <string name="talkback_menu_title">Ponuka aplikácie SandFly</string>
+  <string name="talkback_menu_title">Ponuka SandFly</string>
   <string name="talkback_menu_close_button_text">@string/close_string</string>
   <string name="talkback_menu_more_options_text">Po dokončení nastavenia alebo odomknutí zariadenia sú k dispozícii ďalšie možnosti ponuky</string>
-  <string name="talkback_menu_title_content_description">Ponuka aplikácie SandFly. Potiahnutím doprava preskúmate možnosti v ponuke aplikácie SandFly.\n\nK návodu sa vrátite potiahnutím dvoma prstami doľava alebo doprava od okraja obrazovky.</string>
+  <string name="talkback_menu_title_content_description">Ponuka SandFly. Potiahnutím doprava preskúmate možnosti v ponuke SandFly.\n\nK návodu sa vrátite potiahnutím dvoma prstami doľava alebo doprava od okraja obrazovky.</string>
   <string name="shortcut_show_language_options">Zmeniť hovorený jazyk</string>
   <string name="shortcut_select_next_setting">Ďalší ovládací prvok čítania</string>
   <string name="shortcut_select_previous_setting">Predchádzajúci ovládací prvok čítania</string>
@@ -422,8 +422,8 @@
   <string name="shortcut_increase_volume">Zvýšiť hlasitosť</string>
   <string name="shortcut_decrease_volume">Znížiť hlasitosť</string>
   <string name="shortcut_all_apps">Všetky aplikácie</string>
-  <string name="shortcut_braille_keyboard">Braillova klávesnica</string>
-  <string name="shortcut_braille_display_settings">Prejsť do nastavení Braillovho displeja</string>
+  <string name="shortcut_braille_keyboard">Braillovská klávesnica</string>
+  <string name="shortcut_braille_display_settings">Prejsť do nastavení braillovského displeja</string>
   <string name="shortcut_tutorial">Otvoriť návod</string>
   <string name="shortcut_control_speak_time">Hlásiť alebo nehlásiť čas</string>
   <string name="shortcut_enable_speak_time">Hlásiť čas</string>
@@ -432,7 +432,7 @@
   <string name="speak_time_off">Hlásenie času je vypnuté</string>
   <string name="shortcut_practice_gestures">Precvičovanie gest</string>
   <string name="shortcut_report_gesture">Nahlásiť problém s gestom</string>
-  <string name="shortcut_toggle_braille_display">Vypnutie alebo zapnutie Braillovho displeja</string>
+  <string name="shortcut_toggle_braille_display">Vypnutie alebo zapnutie braillovského displeja</string>
   <string name="shortcut_announce_current_time_and_date">Prečítať aktuálny dátum a čas</string>
   <string name="shortcut_announce_battery_state">Prečítať percentá batérie</string>
   <string name="shortcut_announce_current_title">Vyslovovanie názvu okna</string>
@@ -511,7 +511,7 @@
   <string name="summary_control_speak_time">Vyberte, či sa bude hlásiť čas, keď zapnete obrazovku</string>
   <string name="summary_show_keyboard_shortcuts_preferences">Otvoriť zoznam klávesových skratiek</string>
   <string name="summary_talkback_preferences">Otvorenie nastavení aplikácie SandFly</string>
-  <string name="summary_braile_display_preferences">Otvoriť nastavenia Braillovho displeja</string>
+  <string name="summary_braile_display_preferences">Otvoriť nastavenia braillovského displeja</string>
   <string name="summary_system_actions">Prejsť do všetkých aplikácií a rýchlych nastavení</string>
   <string name="summary_tts_settings">Otvorenie nastavení prevodu textu na reč</string>
   <string name="not_editable">Nedá sa upraviť</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{Žiadne zhody na tejto obrazovke}=1{# zhoda}few{# zhody}many{# matches}other{# zhôd}}</string>
   <string name="msg_no_matches">Žiadne zhody na tejto obrazovke</string>
   <string name="dialog_title_continuous_reading_mode">Ako funguje plynulé čítanie</string>
-  <string name="dialog_message_continuous_reading_mode">Po výbere položky Čítať zhora alebo Čítať od zameranej položky môžete pri čítaní textu stále prejsť na predchádzajúcu alebo ďalšiu položku. Uľahčí vám to vracať sa späť alebo preskakovať dopredu.\n\nAk chcete upraviť hlasitosť, keď SandFly nahlas číta, stlačte tlačidlo zvýšenia alebo zníženia hlasitosti.</string>
+  <string name="dialog_message_continuous_reading_mode">Po výbere položky Čítať zhora alebo Čítať od označenej položky môžete pri čítaní textu stále prejsť na predchádzajúcu alebo ďalšiu položku. Uľahčí vám to vracať sa späť alebo preskakovať dopredu.\n\nAk chcete upraviť hlasitosť, keď SandFly nahlas číta, stlačte tlačidlo zvýšenia alebo zníženia hlasitosti.</string>
   <string name="always_show_this_message_label">Vždy zobraziť túto správu</string>
   <string name="dialog_title_voice_commands">Ovládajte aplikáciu SandFly hlasovými príkazmi</string>
   <string name="dialog_message_voice_commands">Môžete napríklad povedať:\n\n• kopírovať;\n• prečítať od označenej položky;\n• nájsť [uložiť];\n• hovoriť [rýchlejšie];\n• nastavenia aplikácie SandFly.\n\nAk chcete zobraziť zoznam všetkých hlasových príkazov, povedzte „<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>“.</string>
@@ -822,9 +822,9 @@
   <string name="no_navigate_typo_gesture">Ak to chcete použiť, prejdite do nastavení aplikácie SandFly a pridajte gesto pre kontrolu pravopisu</string>
   <string name="use_spelling_suggestion_hint">Text nahradíte dvojitým klepnutím</string>
   <string name="screen_search_keyword_hint">kľúčové slovo je %1$s</string>
-  <string name="screen_search_no_keyword_hint">Zatiaľ nemáte žiadne kľúčové slovo. Ak chcete začať nové vyhľadávanie, klepnite troma prstami a pridržte ich alebo otvorte priame vyhľadávanie v ponuke aplikácie SandFly.</string>
-  <string name="screen_search_no_keyword_hint_pre_r">Zatiaľ nemáte žiadne kľúčové slovo. Ak chcete začať nové vyhľadávanie, potiahnite doľava a nadol alebo otvorte priame vyhľadávanie v ponuke aplikácie SandFly.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Braillova klávesnica nie je zapnutá. Nakonfigurujte ju v nastaveniach SandFly a skúste to znova.</string>
+  <string name="screen_search_no_keyword_hint">Zatiaľ nemáte žiadne kľúčové slovo. Ak chcete začať nové vyhľadávanie, klepnite troma prstami a pridržte ich alebo otvorte priame vyhľadávanie v ponuke SandFly.</string>
+  <string name="screen_search_no_keyword_hint_pre_r">Zatiaľ nemáte žiadne kľúčové slovo. Ak chcete začať nové vyhľadávanie, potiahnite doľava a nadol alebo otvorte priame vyhľadávanie v ponuke SandFly.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Braillovská klávesnica nie je zapnutá. Nakonfigurujte ju v nastaveniach aplikácie SandFly a skúste to znova.</string>
   <string name="suggestions_window_available">K dispozícii sú návrhy</string>
   <string name="suggestions_window_available_with_gesture">K dispozícii sú návrhy. Ak ich chcete zobraziť, %1$s</string>
   <string name="heads_up_window_available">K dispozícii je upozornenie</string>
@@ -881,12 +881,12 @@
   <string name="shortcut_for_dictation_content_without_google_play">Keď je na obrazovke klávesnica Gboard, môžete teraz dvojitým klepnutím dvoma prstami spustiť diktovanie a potom ho dvojitým klepnutím dvoma prstami zastaviť.</string>
   <string name="announcing_text_formatting_title">Oznamovanie formátu textu</string>
   <string name="announcing_text_formatting_header">SandFly teraz dokáže oznamovať zmeny vo formáte textu, ako sú tučné písmo, kurzíva a farba textu. Začíname:</string>
-  <string name="announcing_text_formatting_option1">Označte formátovanú položku, otvorte ponuku aplikácie SandFly a vyberte Opísať formát textu, prípadne</string>
+  <string name="announcing_text_formatting_option1">Označte formátovanú položku, otvorte ponuku SandFly a vyberte „Opísať formátovanie textu“, prípadne</string>
   <string name="announcing_text_formatting_option2">Pridajte pre formátovanie textu ovládanie čítania, ktoré bude zapínať alebo vypínať oznamovanie zmien formátu.</string>
   <string name="announcing_text_formatting_middle">Keď to budete chcieť vyskúšať, tu je príklad formátovaného textu:</string>
   <string name="announcing_text_formatting_tail">Ak chcete zmeniť spôsob oznamovania formátu textu, prejdite do sekcie %1$s.</string>
-  <string name="text_formatting_options_settings_path">Nastavenia aplikácie SandFlyu &gt; Podrobnosť &gt; Možnosti formátu textu</string>
-  <string name="text_formatting_options_settings_path_tts">Nastavenia aplikácie SandFly, potom Podrobnosť a nakoniec Možnosti formátu textu</string>
+  <string name="text_formatting_options_settings_path">Nastavenia aplikácie SandFly &gt; Podrobnosť &gt; Možnosti formátovania textu</string>
+  <string name="text_formatting_options_settings_path_tts">Nastavenia aplikácie SandFly, potom Podrobnosť a nakoniec Možnosti formátovania textu</string>
   <string name="announcing_text_formatiing_sample">Tento text je &lt;b&gt;tučný&lt;/b&gt;, čo znamená sebavedomie,
 &lt;br&gt;zatiaľ čo tento text je &lt;u&gt;podčiarknutý&lt;/u&gt;, čo je nepochybne šepkanie.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;Ruže sú červené&lt;/span&gt;, skutočná klasika.
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">Rozdelené klepnutie všade</string>
   <string name="split_tap_everywhere_text">Teraz môžete položky aktivovať rozdeleným klepnutím všade, dokonca aj mimo klávesnice. Ak ho chcete vyskúšať, jedným prstom preskúmajte, čo je na obrazovke, ale nezdvíhajte ho. Klepnite na obrazovku iným prstom, čím aktivujete aktuálne označenú položku.</string>
   <string name="keyboard_enhanced_keymap_title">Klávesnica: zlepšená mapa klávesov</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly má teraz „Vylepšenú mapu kláves“ pre fyzické klávesnice, ktorá obsahuje množstvo nových príkazov a skratiek. Toto vylepšenie zahŕňa „režim prehliadania“ pre efektívnejšiu webovú navigáciu, zefektívnenie navigácie a interakcie pre SandFly používateľov, ktorí sa spoliehajú na fyzické klávesnice. Môžete prepnúť na \"Vylepšenú mapu kláves\" v <xliff:g id="settings_path">%1$s</xliff:g>.\n\nAk používate Braillov displej, môžete tiež použiť nové skratky režimu prehliadania na prechádzanie obsahom priamo z Braillovho displeja. Niektoré skratky Braillovho displeja boli zmenené, aby sa prispôsobili tejto zmene. V <xliff:g id="braille_display_settings_path">%2$s</xliff:g> môžete vidieť zoznam všetkých skratiek pre Braillovo zobrazenie.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly má teraz „Vylepšenú mapu kláves“ pre fyzické klávesnice, ktorá obsahuje množstvo nových príkazov a skratiek. Toto vylepšenie zahŕňa „režim prehliadania“ pre efektívnejšiu webovú navigáciu, zefektívnenie navigácie a interakcie pre SandFly používateľov, ktorí sa spoliehajú na fyzické klávesnice. Môžete prepnúť na \"Vylepšenú mapu kláves\" v <xliff:g id="settings_path">%1$s</xliff:g>.\n\nAk používate braillovský displej, môžete tiež použiť nové skratky režimu prehliadania na prechádzanie obsahom priamo z braillovského displeja. Niektoré skratky braillovského displeja boli zmenené, aby sa prispôsobili tejto zmene. V <xliff:g id="braille_display_settings_path">%2$s</xliff:g> môžete vidieť zoznam všetkých skratiek pre Braillovo zobrazenie.</string>
   <string name="keyboard_shortcuts_link">Nastavenia aplikácie SandFly &gt; Klávesové skratky</string>
   <string name="keyboard_shortcuts_link_tts">Nastavenia aplikácie SandFly, potom Klávesové skratky</string>
   <string name="braille_display_settings_link">Nastavenia braillovského displeja</string>
   <string name="keyboard_smart_browse_mode_title">Klávesnica: inteligentný režim prehliadania</string>
   <string name="keyboard_smart_browse_mode_text">Inteligentný režim prehliadania aplikácie SandFly vypne režim prehliadania v poli úprav, aby ste mohli pri prehliadaní internetu písať pomocou fyzickej klávesnice. Potom ho znova zapne, keď prejdete na internete na pole, v ktorom nie je možné vykonávať úpravy, aby ste mohli efektívne pokračovať v prehliadaní. Inteligentný režim prehliadania môžete zapnúť alebo vypnúť v sekcii <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Nastavenia aplikácie SandFly &gt; Rozšírené nastavenia</string>
-  <string name="advanced_settings_link_tts">Nastavenia aplikácie SandFly a potom Rozšírené nastavenia</string>
   <string name="keyboard_tutorial_title">Návod na používanie klávesnice</string>
   <string name="keyboard_tutorial_text">V aplikácii SandFly teraz nájdete návod na používanie klávesnice, pomocou ktorého sa môžete naučiť klávesové skratky a príkazy zlepšenej mapy klávesov pri používaní fyzickej klávesnice. Ak chcete získať prístup k návodu, prejdite do sekcie <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Nastavenia aplikácie SandFly &gt; Návod k aplikácii SandFly</string>
-  <string name="tutorial_link_tts">Nastavenia aplikácie SandFly a potom Návod k aplikácii SandFly</string>
   <string name="tutorial_entry_point_title">Návod</string>
   <string name="welcome_to_talkback_title">Vitajte v aplikácii SandFly</string>
   <string name="talkback_is_on">Aplikácia SandFly je zapnutá</string>
@@ -946,10 +942,10 @@
   <string name="adjusting_volume_second_instruction">pritom stlačte klávesy na zvýšenie a zníženie hlasitosti na bočnej strane zariadenia.</string>
   <string name="adjusting_volume_tail">O niekoľko sekúnd sa ozve nová hlasitosť dostupnosti.\n\nSkúste hlasitosť upraviť teraz.</string>
   <string name="menus_title">Používanie ponúk a ovládaní</string>
-  <string name="menus_talkback_menu_text">Ponuka aplikácie SandFly zahŕňa nastavenia a ovládanie, ktoré môžete potrebovať pravidelne.\n\nOtvorte teraz ponuku aplikácie SandFly klepnutím troma prstami na obrazovku.</string>
-  <string name="menus_talkback_menu_text_pre_r">Ponuka aplikácie SandFly zahŕňa nastavenia a ovládanie, ktoré môžete potrebovať pravidelne.\n\nOtvorte teraz ponuku aplikácie SandFly potiahnutím nadol a potom doprava.</string>
-  <string name="menus_selector_text">Tieto skratky vám môžu pomôcť rýchlo meniť nastavenia, napríklad prepnúť navigáciu zo znakov na slová alebo zmeniť rýchlosť reči aplikácie SandFly.\n\nAk chcete rýchlo zmeniť ovládanie čítania, potiahnite troma prstami doľava alebo doprava.\n\nPonuku aplikácie SandFly a ovládanie čítania si môžete prispôsobiť neskôr v jej nastaveniach.</string>
-  <string name="menus_selector_text_pre_r">Tieto skratky vám môžu pomôcť rýchlo meniť nastavenia, napríklad prepnúť navigáciu zo znakov na slová alebo zmeniť rýchlosť reči aplikácie SandFly.\n\nAk chcete rýchlo zmeniť ovládanie čítania, potiahnite nadol a potom nahor.\n\nPonuku aplikácie SandFly a ovládanie čítania si môžete prispôsobiť neskôr v jej nastaveniach.</string>
+  <string name="menus_talkback_menu_text">Ponuka SandFly zahŕňa nastavenia a ovládanie, ktoré môžete potrebovať pravidelne.\n\nOtvorte teraz ponuku SandFly klepnutím troma prstami na obrazovku.</string>
+  <string name="menus_talkback_menu_text_pre_r">Ponuka SandFly zahŕňa nastavenia a ovládanie, ktoré môžete potrebovať pravidelne.\n\nOtvorte teraz ponuku SandFly potiahnutím nadol a potom doprava.</string>
+  <string name="menus_selector_text">Tieto skratky vám môžu pomôcť rýchlo meniť nastavenia, napríklad prepnúť navigáciu zo znakov na slová alebo zmeniť rýchlosť reči aplikácie SandFly.\n\nAk chcete rýchlo zmeniť ovládanie čítania, potiahnite troma prstami doľava alebo doprava.\n\nPonuku SandFly a ovládanie čítania si môžete prispôsobiť neskôr v jej nastaveniach.</string>
+  <string name="menus_selector_text_pre_r">Tieto skratky vám môžu pomôcť rýchlo meniť nastavenia, napríklad prepnúť navigáciu zo znakov na slová alebo zmeniť rýchlosť reči aplikácie SandFly.\n\nAk chcete rýchlo zmeniť ovládanie čítania, potiahnite nadol a potom nahor.\n\nPonuku SandFly a ovládanie čítania si môžete prispôsobiť neskôr v jej nastaveniach.</string>
   <string name="all_set_title">Hotovo</string>
   <string name="all_set_text">SandFly môžete začať používať.\n\nPrečítajte si viac o ďalších témach alebo tieto informácie kedykoľvek skontrolujte v nastaveniach aplikácie SandFly.</string>
   <string name="talkback_tutorial_text">Potiahnutím doprava vyberte tému. Ak chcete získať najlepšie prostredie, pred začatím zapnite funkciu SandFly.</string>
@@ -990,12 +986,12 @@
   <string name="edit_box_text">Vitajte v aplikácii SandFly</string>
   <string name="selecting_text_title">Výber textu</string>
   <string name="selecting_text_text">Presuňte v textovom poli kurzor na začiatok textu, ktorý chcete vybrať.\n\nDvojitým klepnutím a pridržaním dvoma prstami spustite režim výberu. Potom kurzor presuňte na koniec textu. Ukončite režim výberu opätovným dvojitým klepnutím a pridržaním dvoma prstami.\n\nSkúste v textovom poli nižšie vybrať slovo Vitajte.</string>
-  <string name="selecting_text_text_pre_r">Presuňte v textovom poli kurzor na začiatok textu, ktorý chcete vybrať.\n\nPotiahnutím nadol a potom doprava otvorte ponuku aplikácie SandFly. Dvakrát klepnite na akcie a potom spustite režim výberu. Presuňte kurzor na koniec textu.\n\nOtvorte znova ponuku aplikácie SandFly, potom ukončite režim výberu dvojitým klepnutím na akcie.\n\nSkúste v textovom poli nižšie vybrať slovo Vitajte.</string>
+  <string name="selecting_text_text_pre_r">Presuňte v textovom poli kurzor na začiatok textu, ktorý chcete vybrať.\n\nPotiahnutím nadol a potom doprava otvorte ponuku SandFly. Dvakrát klepnite na akcie a potom spustite režim výberu. Presuňte kurzor na koniec textu.\n\nOtvorte znova ponuku SandFly, potom ukončite režim výberu dvojitým klepnutím na akcie.\n\nSkúste v textovom poli nižšie vybrať slovo Vitajte.</string>
   <string name="copy_cut_paste_title">Kopírovanie, vystrihnutie a prilepenie</string>
   <string name="copy_text">Po výbere textu ho skopírujte dvojitým klepnutím troma prstami.\n\nSkúste v textom poli nižšie skopírovať slovo.</string>
   <string name="cut_paste_text">Text vystrihnete dvojitým klepnutím a pridržaním troma prstami.\n\nPrilepíte ho trojitým klepnutím troma prstami.\n\nSkúste v textovom poli nižšie prilepiť slovo.</string>
-  <string name="copy_text_pre_r">Po výbere textu ho môžete skopírovať v ponuke aplikácie SandFly. Otvorte ju potiahnutím nadol a potom doprava. Dvakrát klepnite na akcie a potom text skopírujte.\n\nSkúste v textovom poli nižšie skopírovať slovo.</string>
-  <string name="cut_paste_text_pre_r">Ak chcete vystrihnúť alebo prilepiť text, otvorte ponuku aplikácie SandFly a dvakrát klepnite na akcie.\n\nSkúste v textovom poli nižšie prilepiť slovo.</string>
+  <string name="copy_text_pre_r">Po výbere textu ho môžete skopírovať v ponuke SandFly. Otvorte ju potiahnutím nadol a potom doprava. Dvakrát klepnite na akcie a potom text skopírujte.\n\nSkúste v textovom poli nižšie skopírovať slovo.</string>
+  <string name="cut_paste_text_pre_r">Ak chcete vystrihnúť alebo prilepiť text, otvorte ponuku SandFly a dvakrát klepnite na akcie.\n\nSkúste v textovom poli nižšie prilepiť slovo.</string>
   <string name="edit_box_hint_paste_text">Sem prilepte text</string>
   <string name="typo_correction_title">Jazykové korektúry</string>
   <string name="typo_correction_text">Pomocou jazykovej korektúry môžete skontrolovať pravopis alebo gramatiku v textovom poli.\n\nAk to chcete vyskúšať označte textové pole s pravopisnými chybami nižšie. Potom potiahnite troma prstami doprava, kým nenájdete možnosť Jazyková korektúra.</string>
@@ -1040,7 +1036,7 @@
   <string name="voice_commands_title">Hlasové príkazy</string>
   <string name="voice_commands_text">SandFly môžete rýchlo ovládať hlasom.\n\nHlasovým príkazom môžete napríklad zmeniť navigáciu, prejsť na ďalší nadpis či skopírovať text.\n\nVyskúšajte si to. Potiahnite doprava a potom nahor.</string>
   <string name="using_screen_search_title">Používanie priameho vyhľadávania</string>
-  <string name="using_screen_search_text">Pomocou funkcie priameho vyhľadávania môžete nájsť konkrétny obsah na obrazovke.\n\nAk ju chcete vyskúšať, klepnutím troma prstami otvorte ponuku aplikácie SandFly a v ponuke nájdite Priame vyhľadávanie. Napíšte kľúčové slovo, napríklad „ďalšie“, ak chcete na obrazovke vyhľadať položky s týmto textom.\n\nSkúste vyhľadať „ďalšie“ a nájsť tak ďalšie tlačidlo.</string>
+  <string name="using_screen_search_text">Pomocou funkcie priameho vyhľadávania môžete nájsť konkrétny obsah na obrazovke.\n\nAk ju chcete vyskúšať, klepnutím troma prstami otvorte ponuku SandFly a v ponuke nájdite Priame vyhľadávanie. Napíšte kľúčové slovo, napríklad „ďalšie“, ak chcete na obrazovke vyhľadať položky s týmto textom.\n\nSkúste vyhľadať „ďalšie“ a nájsť tak ďalšie tlačidlo.</string>
   <string name="screen_search_navigation_title">Pohyb pomocou priameho vyhľadávania</string>
   <string name="screen_search_navigation_text">Po výbere výsledku sa môžete pomocou priameho vyhľadávania rýchlo pohybovať medzi rôznymi výsledkami vyhľadávania.\n\nAk to chcete urobiť, použite potiahnutím troma prstami doľava alebo doprava ovládanie čítania a nájdite položku s názvom Priame vyhľadávanie.\n\nVyskúšajte to. Nižšie je zoznam troch tlačidiel s textom „akcia“. Vyhľadajte výraz „akcia“ pomocou priameho vyhľadávania a potom sa pomocou priameho vyhľadávania presúvajte medzi tlačidlami.</string>
   <string name="screen_search_action_button_1_text">1. akcia</string>
@@ -1068,10 +1064,10 @@
   <string name="checking_notifications_text_tail_tts">Výberom položky Nastavenia a potom Upozornenia môžete skontrolovať, ktoré aplikácie majú zapnuté upozornenia.</string>
   <string name="checking_notifications_tips">Ak si chcete pozrieť históriu upozornení, potiahnite dvoma prstami zhora obrazovky nadol</string>
   <string name="image_description_playground_title">Skúste získať opisy obrázkov</string>
-  <string name="image_description_playground_content_one">Keď označíte obrázok, otvorte ponuku aplikácie SandFly a vyberte Opísať obrázok.\n\nNižšie je jedna fotka. Skúste získať jej opis.</string>
-  <string name="image_description_playground_content_two">Nastavenia popisu obrázkov môžete kedykoľvek zmeniť v nastaveniach SandFly &gt; Automatické popisy.</string>
-  <string name="image_description_playground_content_two_tts">Nastavenia popisu obrázkov môžete kedykoľvek zmeniť v nastaveniach SandFly a potom v časti Automatické popisy.</string>
-  <string name="image_description_sample_image_content_description">Vzorový obrázok, klepnutím troma prstami otvorte ponuku aplikácie SandFly a výberom položky Opísať obrázok si prehrajte opis.</string>
+  <string name="image_description_playground_content_one">Keď označíte obrázok, otvorte ponuku SandFly a vyberte Opísať obrázok.\n\nNižšie je jedna fotka. Skúste získať jej opis.</string>
+  <string name="image_description_playground_content_two">Nastavenia popisu obrázkov môžete kedykoľvek zmeniť v nastaveniach aplikácie SandFly &gt; Opisy obrázkov a obrazovky.</string>
+  <string name="image_description_playground_content_two_tts">Nastavenia popisu obrázkov môžete kedykoľvek zmeniť v nastaveniach aplikácie SandFly a potom v časti Opisy obrázkov a obrazovky.</string>
+  <string name="image_description_sample_image_content_description">Vzorový obrázok, klepnutím troma prstami otvorte ponuku SandFly a výberom položky Opísať obrázok si prehrajte opis.</string>
   <string name="practice_gestures_title">Precvičovanie gest</string>
   <string name="practice_keyboard_gestures_title">Precvičte si klávesové skratky</string>
   <string name="pref_gesture_set_key_title">Skupina gest</string>
@@ -1104,7 +1100,7 @@
   <string name="wear_training_volume_up_text">Potiahnite doprava a potom nahor</string>
   <string name="wear_training_volume_down_title">Zníženie hlasitosti</string>
   <string name="wear_training_volume_down_text">Potiahnite doprava a potom nadol</string>
-  <string name="wear_training_open_talkback_menu_title">Otvorenie ponuky aplikácie SandFly</string>
+  <string name="wear_training_open_talkback_menu_title">Otvorenie ponuky SandFly</string>
   <string name="wear_training_open_talkback_menu_text">Ak chcete otvoriť nastavenia a ovládacie prvky, ktoré často používate, potiahnite nadol a doprava</string>
   <string name="wear_training_typing_title">Písanie</string>
   <string name="wear_training_typing_text1">Ak chcete písať pomocou klávesnice, pohybujte po nej prstom. Keď začujete písmeno, ktoré chcete napísať, zdvihnite prst.</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Viac</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezervovať gestá na Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly prestane spracúvať jednoduché a dvojité klepnutia dvoma prstami, aby ich mohol používať Samsung Vibration Watch. Zapnite Vibration Watch v nastaveniach dostupnosti hodiniek.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Vyhradené pre Vibration Watch v rozšírených nastaveniach</string>
     <string name="title_pref_speakerphone_away_from_ear">Reproduktor, keď telefón nie je pri uchu</string>
     <string name="summary_pref_speakerphone_away_from_ear">Počas hovoru prepne na reproduktor, keď telefón oddialite od ucha, a späť na slúchadlo, keď ho znova priložíte k uchu.</string>
     <string name="summary_pref_speakerphone_needs_permission">Vyžaduje povolenie, ktoré Android čítačkám obrazovky neudeľuje. Ak ho chcete udeliť, spustite tento príkaz cez adb alebo Shizuku a potom sa vráťte na túto obrazovku: %1$s</string>
@@ -1393,12 +1388,11 @@
     <string name="speech_control_apps_category">Aplikácie</string>
     <string name="speech_control_no_apps">Žiadna aplikácia zatiaľ nepožiadala o hovorenie.</string>
     <string name="speech_control_ask_title">Povoliť <xliff:g id="app" example="Tasker">%1$s</xliff:g> hovoriť cez SandFly?</string>
-    <string name="speech_control_ask_text">Môže povedať text vaším hlasom SandFly. Môžete to zmeniť v rozšírených nastaveniach.</string>
     <string name="speech_control_allow">Povoliť</string>
     <string name="speech_control_deny">Nepovoliť</string>
     <string name="permission_speak_label">hovorenie cez SandFly</string>
     <string name="permission_speak_description">Umožňuje aplikácii požiadať o vyslovenie textu vaším hlasom SandFly. SandFly sa vás opýta skôr, ako môže aplikácia hovoriť.</string>
-    <string name="permission_braille_display_label">žiadať o funkciu Braillovho displeja pre SandFly</string>
+    <string name="permission_braille_display_label">žiadať o funkciu braillovského displeja pre SandFly</string>
     <string name="permission_braille_display_description">Umožňuje aplikácii požiadať, aby fungovala ako braillovský displej pre SandFly. Ak to v SandFly povolíte, aplikácia môže čítať všetko na obrazovke a ovládať zariadenie. SandFly sa vás najprv opýta.</string>
     <string name="title_pref_phonetic_letters_mode">Vyslovovať písmená foneticky</string>
     <string name="phonetic_letters_mode_off">Vypnuté</string>
@@ -1550,7 +1544,6 @@
     <string name="quick_settings_remove">Odstrániť</string>
     <string name="quick_settings_added">%1$s pridané</string>
     <string name="quick_settings_removed">%1$s odstránené</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly zapnuté. Pre vypnutie podržte 2 prsty na obrazovke na 5 sekúnd. Ak chcete zastaviť zobrazovanie tejto správy, vypnite nastavenia SandFly &gt; Rozšírené nastavenia &gt; Zobraziť pokyny na vypnutie SandFly.</string>
     <string name="edge_gestures_title">Okraje</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Ďalšia skratka na zapnutie alebo vypnutie režimu prehliadania</string>
     <string name="title_pref_vibration_strength">Sila vibrácií</string>
@@ -1716,14 +1709,14 @@
     <string name="wrap_around_on">Cyklický pohyb: zapnuté</string>
     <string name="wrap_around_off">Cyklický pohyb: vypnuté</string>
     <string name="title_selector_tablet_held_up_faces_away">Zdvihnutý tablet otočený obrazovkou od vás</string>
-    <string name="summary_support_tablet_held_up_faces_away">Pre braillovu klávesnicu na tablete alebo rozloženom telefóne</string>
+    <string name="summary_support_tablet_held_up_faces_away">Pre braillovskú klávesnicu na tablete alebo rozloženom telefóne</string>
     <string name="tablet_held_up_faces_away_on">Zdvihnutý tablet otočený obrazovkou od vás: zapnuté</string>
     <string name="tablet_held_up_faces_away_off">Zdvihnutý tablet otočený obrazovkou od vás: vypnuté</string>
     <string name="title_keyboard_echo_on_screen">Ozvena klávesnice na obrazovke</string>
     <string name="title_keyboard_echo_physical">Ozvena fyzickej klávesnice</string>
-    <string name="title_keyboard_echo_braille_keyboard">Ozvena Braillovej klávesnice</string>
+    <string name="title_keyboard_echo_braille_keyboard">Ozvena braillovskej klávesnice</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Ozvena klávesnice na písanie rukou</string>
-    <string name="title_keyboard_echo_braille_display">Ozvena Braillovho displeja</string>
+    <string name="title_keyboard_echo_braille_display">Ozvena braillovského displeja</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Prerušiť reč pri písaní</string>
     <string name="pref_interrupt_typing_entry_always">Vždy</string>
@@ -1743,8 +1736,8 @@
     <string name="template_item_details_order_dropped">Pustené: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly hovorí podrobnosti položky v tomto poradí. Ak ho chcete zmeniť, pridržte podrobnosť a potom ju potiahnite nahor alebo nadol. Keď je SandFly zapnutý, dvakrát klepnite, podržte a potom potiahnite. Môžete použiť aj akcie Presunúť nahor a Presunúť nadol.</string>
     <string name="title_pref_speak_items_before_scroll">Vyslovovať položky skôr, ako sa posunú do zobrazenia</string>
-    <string name="gemini_error_api_key">Gemini neakceptoval API kľúč. Skontrolujte kľúč v nastaveniach automatických popisov.</string>
-    <string name="gemini_error_quota">Dosiahli ste limit použitia pre váš kľúč API Gemini. Skúste to znova neskôr.</string>
+    <string name="gemini_error_api_key">Gemini neakceptoval API kľúč. Skontrolujte kľúč v sekcii „Opisy obrázkov a obrazovky“.</string>
+    <string name="gemini_error_quota">Dosiahli ste limit použitia pre váš Gemini API kľúč. Skúste to znova neskôr.</string>
     <string name="gemini_error_busy">Gemini je práve zaneprázdnený. Skúste to znova o chvíľu.</string>
     <string name="gemini_error_timeout">Gemini odpovedal príliš dlho. Skúste to znova.</string>
     <string name="gemini_error_with_code">Gemini nemohol odpovedať, chyba <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
@@ -1769,12 +1762,11 @@
     <string name="dictation_google_download">Stiahnuť <xliff:g id="language" example="English">%1$s</xliff:g> na rozpoznávanie v zariadení</string>
     <string name="dictation_recognition_android">Rozpoznávanie reči Android</string>
     <string name="dictation_recognition_automatic_using">Automaticky: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
-    <string name="dictation_rambler_needs_key">Rambler, vyžaduje kľúč Gemini API</string>
+    <string name="dictation_rambler_needs_key">Rambler, vyžaduje Gemini API kľúč</string>
     <string name="dictation_whisper_needs_model">Whisper, vyžaduje stiahnutý model</string>
     <string name="title_pref_whisper_models">Modely Whisper</string>
     <string name="dictation_whisper_use">Použiť</string>
     <string name="title_pref_dictation_ai_service">Služba AI na diktovanie</string>
-    <string name="dictation_ai_same">Rovnaká ako pre automatické opisy</string>
     <string name="title_pref_browse_mode_per_app">Pamätať si režim prehliadania v každej aplikácii</string>
     <string name="title_pref_export_settings">Exportovať nastavenia</string>
     <string name="title_pref_import_settings">Importovať nastavenia</string>
@@ -1802,4 +1794,12 @@
     <string name="shortcut_previous_track">Predchádzajúca skladba</string>
     <string name="sound_mode_needs_access">Na zapnutie alebo vypnutie stlmenia povoľte prístup k režimu Nerušiť.</string>
     <string name="title_pref_dictation_auto_stop">Automatické zastavenie po tichu</string>
+    <string name="dictation_ai_same">Rovnaká ako v sekcii „Opisy obrázkov a obrazovky“</string>
+    <string name="navigation_settings_link">Nastavenia aplikácie SandFly > Navigácia</string>
+    <string name="navigation_settings_link_tts">Nastavenia aplikácie SandFly a potom Navigácia</string>
+    <string name="shortcut_reserved_for_vibration_watch">Vyhradené pre Vibration Watch v sekcii „Gestá“</string>
+    <string name="speech_control_ask_text">Môže vyslovovať text hlasom SandFly. Môžete to zmeniť v sekcii Nastavenia, Reč, Povoliť ostatným aplikáciám hovoriť.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">Aplikácia SandFly je zapnutá. Ak ju chcete vypnúť, pridržte päť sekúnd dva prsty na obrazovke. Ak chcete zastaviť zobrazovanie tejto správy, vypnite Nastavenia aplikácie SandFly &gt; Pozastavenie a vypnutie &gt; Zobrazovať pokyny, ako vypnúť SandFly.</string>
+    <string name="tutorial_link">Nastavenia aplikácie SandFly &gt; Pomocník a spätná väzba &gt; Návod k aplikácii SandFly</string>
+    <string name="tutorial_link_tts">Nastavenia aplikácie SandFly, potom Pomocník a spätná väzba a potom Návod k aplikácii SandFly</string>
 </resources>

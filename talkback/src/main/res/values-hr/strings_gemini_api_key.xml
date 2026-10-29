@@ -12,7 +12,7 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, zatim Flash-Lite kada je zauzet</string>
     <string name="gemini_model_loading">Preuzimanje modela…</string>
     <string name="gemini_model_list_failed">Nije moguće dohvatiti modele: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Prvo postavite Gemini API ključ</string>
+    <string name="gemini_model_needs_key">Prvo postavite ključ za Gemini API</string>
     <string name="gemini_api_terms_link">Dodatni uvjeti pružanja usluge za Gemini API</string>
     <string name="ai_service_address_hint">Adresa, kao što je https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
@@ -21,7 +21,7 @@
     <string name="ai_service_error_api_key">AI usluga nije prihvatila API ključ. Provjerite njezine postavke u odjeljku Opisi slika i zaslona.</string>
     <string name="ai_service_error_quota">Dosegnuto je ograničenje upotrebe AI usluge. Pokušajte ponovno kasnije.</string>
     <string name="ai_service_error_busy">AI usluga je trenutno zauzeta. Pokušajte ponovno za trenutak.</string>
-    <string name="ai_service_error_timeout">AI službi trebalo je predugo da odgovori. Pokušajte ponovno.</string>
+    <string name="ai_service_error_timeout">AI usluzi trebalo je predugo da odgovori. Pokušajte ponovno.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>

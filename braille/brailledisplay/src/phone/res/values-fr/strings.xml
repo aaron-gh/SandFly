@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Pour utiliser le mode navigation, passez du jeu de raccourcis clavier par défaut au jeu de raccourcis clavier amélioré. Cela mettra à jour certaines commandes de votre plage braille.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Paramètres</string>
   <string name="bd_command_change_dialog_title">Certaines commandes ont été mises à jour</string>
-  <string name="bd_command_change_dialog_message">Les commandes de plage braille suivantes ont été mises à jour dans cette version de SandFly :\n\n• Élément précédent : appuyer sur les points 1 et 7\n\n• Élément suivant : appuyer sur les points 4 et 8\n\n• Contrôle de la lecture précédent : appuyer sur les points 2, 3, 7 et 8\n\n• Contrôle de la lecture suivante : appuyer sur les points 5, 6, 7 et 8</string>
+  <string name="bd_command_change_dialog_message">Les commandes de plage braille suivantes ont été mises à jour dans cette version de SandFly :\n\n• Élément précédent : appuyer sur les points 1 et 7\n\n• Élément suivant : appuyer sur les points 4 et 8\n\n• Contrôle de lecture précédent : appuyer sur les points 2, 3, 7 et 8\n\n• Contrôle de lecture suivant : appuyer sur les points 5, 6, 7 et 8</string>
   <string name="bd_preference_braille_contracted">Braille abrégé</string>
   <string name="bd_preference_braille_uncontracted">Braille intégral</string>
   <string name="bd_braille_grade_tips">Pour basculer rapidement entre le braille abrégé et le braille intégral avec une plage braille, appuyez sur la barre d\'espacement et sur les points 1, 2, 4 et 5.\n\nCette commande fonctionne si vous utilisez une langue qui emploie ces deux niveaux de braille.</string>
@@ -205,8 +205,8 @@
   <string name="bd_cmd_control_previous">Commande précédente</string>
   <string name="bd_cmd_list_next">Lien suivant</string>
   <string name="bd_cmd_list_previous">Lien précédent</string>
-  <string name="bd_cmd_next_reading_control">Contrôle de la lecture suivant</string>
-  <string name="bd_cmd_previous_reading_control">Contrôle de la lecture précédent</string>
+  <string name="bd_cmd_next_reading_control">Contrôle de lecture suivant</string>
+  <string name="bd_cmd_previous_reading_control">Contrôle de lecture précédent</string>
   <string name="bd_cmd_toggle_auto_scroll">Activer ou désactiver le défilement automatique</string>
   <string name="bd_cmd_increase_auto_scroll_duration">Augmenter la durée d\'affichage</string>
   <string name="bd_cmd_decrease_auto_scroll_duration">Diminuer la durée d\'affichage</string>
@@ -217,14 +217,14 @@
   <string name="bd_cmd_global_home">Accueil</string>
   <string name="bd_cmd_global_notifications">Ouvrir les notifications</string>
   <string name="bd_cmd_global_recents">Ouvrir les applis récentes</string>
-  <string name="bd_cmd_quick_settings">Ouvrir la fenêtre de configuration rapide</string>
+  <string name="bd_cmd_quick_settings">Ouvrir les Réglages rapides</string>
   <string name="bd_cmd_global_all_apps">Accéder à toutes les applis</string>
   <string name="bd_cmd_toggle_screen_search">Afficher la recherche sur l\'écran</string>
   <string name="bd_cmd_edit_custom_label">Modifier une étiquette personnalisée</string>
   <string name="bd_cmd_open_talkback_menu">Ouvrir le menu SandFly</string>
   <string name="bd_cmd_toggle_voice_feedback">Activer ou désactiver la lecture vocale SandFly</string>
   <string name="bd_cmd_read_stop">Arrêter la lecture</string>
-  <string name="bd_cmd_talkback_settings">Accéder aux paramètres de SandFly</string>
+  <string name="bd_cmd_talkback_settings">Accéder aux paramètres SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">Passer à la langue de saisie suivante</string>
   <string name="bd_cmd_switch_to_next_output_language">Passer à la langue de lecture suivante</string>
   <string name="bd_cmd_toggle_contracted_mode">Basculer entre les formes abrégée et non abrégée</string>
@@ -283,7 +283,7 @@
   <string name="bd_cmd_subcategory_title_window">Fenêtre</string>
   <string name="bd_cmd_subcategory_title_place_on_page">Position sur la page</string>
   <string name="bd_cmd_subcategory_title_web_content">Contenu Web</string>
-  <string name="bd_cmd_subcategory_title_reading_controls">Contrôle de la lecture</string>
+  <string name="bd_cmd_subcategory_title_reading_controls">Contrôles de lecture</string>
   <string name="bd_cmd_subcategory_title_auto_scroll">Défilement automatique</string>
   <string name="bd_cmd_subcategory_title_move_cursor">Déplacer le curseur</string>
   <string name="bd_cmd_subcategory_title_select">Sélectionner</string>
@@ -305,7 +305,7 @@
   <string name="bd_caption_tutorial_dialog_message">Pour afficher/masquer sous-titres de cette vidéo, appuyez sur Espace et points 1, 4, 7 et 8.\n\nPour afficher automatiquement sous-titres des contenus multimédias compatibles, activez \"Afficher les sous-titres sur la plage braille\" dans paramètres.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Toujours afficher ce message lorsque des sous-titres sont disponibles</string>
   <string name="bd_usb_connect_dialog_title">Plage braille connectée via USB</string>
-  <string name="bd_usb_connect_dialog_message">La batterie de votre %s recharge votre plage braille.\n\nPour passer au Bluetooth, débranchez votre câble ou concentrateur USB, puis accédez aux paramètres de SandFly &gt; Plage braille.</string>
+  <string name="bd_usb_connect_dialog_message">La batterie de votre %s recharge votre plage braille.\n\nPour passer au Bluetooth, débranchez votre câble ou concentrateur USB, puis accédez à Paramètres SandFly &gt; Plage braille.</string>
   <string name="bd_device">téléphone</string>
   <string name="bd_battery_low_dialog_title">%s batterie faible</string>
   <string name="bd_battery_low_dialog_message">La batterie de votre %s est en train de charger votre plage braille.\n\nPour économiser de la batterie :\n\n

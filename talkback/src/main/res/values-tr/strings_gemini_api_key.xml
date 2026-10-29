@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Adres https:// ile başlamalıdır. Hiçbir şey kaydedilmedi.</string>
     <string name="dialog_message_ai_service_consent">Görüntüler ve ekran görüntüleri açıklanmak üzere <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> hizmetine gönderilir; bu birkaç saniye sürer. Hizmetin kendi şartları ve gizlilik politikası geçerlidir. Üretken yapay zeka deneyseldir, bu nedenle hata yapacaktır.</string>
-    <string name="ai_service_error_api_key">AI hizmeti API anahtarını kabul etmedi. Görsel ve ekran açıklamaları bölümündeki ayarlarını kontrol edin.</string>
-    <string name="ai_service_error_quota">AI hizmetinin kullanım sınırına ulaşıldı. Daha sonra tekrar deneyin.</string>
-    <string name="ai_service_error_busy">AI hizmeti şu anda meşgul. Birazdan tekrar deneyin.</string>
-    <string name="ai_service_error_timeout">AI hizmetinin yanıt vermesi çok uzun sürdü. Tekrar deneyin.</string>
+    <string name="ai_service_error_api_key">Yapay zeka hizmeti API anahtarını kabul etmedi. Görsel ve ekran açıklamaları bölümündeki ayarlarını kontrol edin.</string>
+    <string name="ai_service_error_quota">Yapay zeka hizmetinin kullanım sınırına ulaşıldı. Daha sonra tekrar deneyin.</string>
+    <string name="ai_service_error_busy">Yapay zeka hizmeti şu anda meşgul. Birazdan tekrar deneyin.</string>
+    <string name="ai_service_error_timeout">Yapay zeka hizmetinin yanıt vermesi çok uzun sürdü. Tekrar deneyin.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Yok</string>
-    <string name="ai_service_not_set_up">Hiçbir AI hizmeti kullanımda değil. Görsel ve ekran açıklamaları ayarlarından bir tane ayarlayın veya seçin.</string>
-    <string name="ai_provider_none_set_up">Hiçbir AI hizmeti ayarlanmadı. Aşağıdaki ayarlarından bir tane ayarlayın.</string>
+    <string name="ai_service_not_set_up">Hiçbir yapay zeka hizmeti kullanımda değil. Görsel ve ekran açıklamaları ayarlarından bir tane ayarlayın veya seçin.</string>
+    <string name="ai_provider_none_set_up">Hiçbir yapay zeka hizmeti ayarlanmadı. Aşağıdaki ayarlarından bir tane ayarlayın.</string>
     <string name="ai_provider_other">Diğer hizmet</string>
     <string name="title_pref_category_ai_services">Yapay zeka hizmetleri</string>
     <string name="title_pref_ai_provider">Yapay zeka hizmeti</string>

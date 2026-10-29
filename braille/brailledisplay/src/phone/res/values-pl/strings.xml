@@ -209,8 +209,8 @@
   <string name="bd_cmd_control_previous">Poprzednia kontrolka</string>
   <string name="bd_cmd_list_next">Następny link</string>
   <string name="bd_cmd_list_previous">Poprzedni link</string>
-  <string name="bd_cmd_next_reading_control">Następne ustawienie czytania</string>
-  <string name="bd_cmd_previous_reading_control">Poprzednie ustawienie czytania</string>
+  <string name="bd_cmd_next_reading_control">Następny element sterowania czytaniem</string>
+  <string name="bd_cmd_previous_reading_control">Poprzedni element sterowania czytaniem</string>
   <string name="bd_cmd_toggle_auto_scroll">Włącz lub wyłącz automatyczne przewijanie</string>
   <string name="bd_cmd_increase_auto_scroll_duration">Wydłuż czas wyświetlania</string>
   <string name="bd_cmd_decrease_auto_scroll_duration">Skróć czas wyświetlania</string>
@@ -304,7 +304,7 @@
   <string name="bd_turn_off_bd_confirm_dialog_message">Możesz je włączyć ponownie w dowolnym momencie w ustawieniach SandFly</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Wyłącz</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Niektóre polecenia nie są dostępne</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Polecenia nawigacji, ustawień brejlowskich i niektóre funkcje SandFly nie są dostępne podczas wpisywania i edytowania.\n\n\Aby używać tych poleceń, najpierw zamknij klawiaturę.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">Polecenia nawigacji, ustawień brajlowskich i niektóre funkcje SandFly nie są dostępne podczas wpisywania i edytowania.\n\nAby używać tych poleceń, najpierw zamknij klawiaturę.</string>
   <string name="bd_caption_tutorial_dialog_title">Napisy na monitorze brajlowskim</string>
   <string name="bd_caption_tutorial_dialog_message">Aby wyświetlić lub ukryć napisy do tego filmu, naciśnij spację i punkty 1, 4, 7, 8.\n\nAby napisy otwierały się automatycznie, włącz w ustawieniach opcję Pokaż napisy na monitorze brajlowskim.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Zawsze pokazuj tę wiadomość, gdy są dostępne napisy</string>
@@ -325,14 +325,14 @@
   <string name="popup_message_history_consent_dialog_positive_btn">Włącz</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Nie, dziękuję</string>
     <string name="external_display_channel">Wyświetlacze brajlowskie z innych aplikacji</string>
-    <string name="external_display_ask_title">Zezwolić, aby <xliff:g id="app" example="Notetaker">%1$s</xliff:g> było wyświetlaczem brajlowskim dla SandFly?</string>
+    <string name="external_display_ask_title">Zezwolić, aby <xliff:g id="app" example="Notetaker">%1$s</xliff:g> było monitorem brajlowskim dla SandFly?</string>
     <string name="external_display_ask_text">SandFly nie użyje go, dopóki na to nie pozwolisz.</string>
     <string name="external_display_warning">Aplikacja <xliff:g id="app" example="Notetaker">%1$s</xliff:g> będzie mogła odczytać wszystko, co SandFly wyświetla w brajlu, czyli dowolną zawartość ekranu, w tym wiadomości i wpisywany tekst. Będzie też mogła sterować urządzeniem tak jak Ty za pomocą monitora brajlowskiego: pisać, otwierać aplikacje i uruchamiać dowolne polecenia SandFly. Zezwalaj tylko zaufanym aplikacjom.</string>
     <string name="external_display_allow">Zezwól</string>
     <string name="external_display_deny">Nie zezwalaj</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> to Twój wyświetlacz brajlowski</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> to Twój monitor brajlowski</string>
     <string name="external_display_in_use_text">Podczas gdy SandFly go używa, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> może czytać zawartość ekranu i sterować urządzeniem.</string>
     <string name="external_displays_title">Wyświetlacze z innych aplikacji</string>
-    <string name="external_displays_summary">Aplikacje, na które zezwalasz, mogą być monitorami brajlowskimi dla SandFly. Aplikacja będąca wyświetlaczem brajlowskim może czytać zawartość ekranu i sterować urządzeniem.</string>
-    <string name="external_displays_none">Żadna aplikacja nie może być wyświetlaczem brajlowskim.</string>
+    <string name="external_displays_summary">Aplikacje, na które zezwalasz, mogą być monitorami brajlowskimi dla SandFly. Aplikacja będąca monitorem brajlowskim może czytać zawartość ekranu i sterować urządzeniem.</string>
+    <string name="external_displays_none">Żadna aplikacja nie może być monitorem brajlowskim.</string>
 </resources>

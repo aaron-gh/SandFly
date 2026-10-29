@@ -24,7 +24,7 @@
     <!-- Switch that turns every script off at once without changing which ones are on. [CHAR LIMIT=40] -->
     <string name="scripts_all_off">关闭所有脚本</string>
     <!-- Summary of the switch that turns every script off. [CHAR LIMIT=NONE] -->
-    <string name="scripts_all_off_summary">脚本保持安装并保留各自的开关。“一键开关所有脚本”手势作用相同。</string>
+    <string name="scripts_all_off_summary">脚本保持安装并保留各自的开关。“开启或关闭所有脚本”手势作用相同。</string>
     <!-- Gesture and keyboard action that turns every script off, or back on. [CHAR LIMIT=NONE] -->
     <string name="shortcut_toggle_scripts">开启或关闭所有脚本</string>
     <!-- Spoken when every script was turned off. [CHAR LIMIT=NONE] -->
@@ -86,7 +86,7 @@
     <!-- What the passwords permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_passwords">读取密码框</string>
     <!-- What the input permission lets a script do. [CHAR LIMIT=NONE] -->
-    <string name="script_permission_input">添加手势、按键、菜单项和阅读控件</string>
+    <string name="script_permission_input">添加手势、按键、菜单项和朗读控件</string>
     <!-- What the network permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_network">使用互联网</string>
     <!-- What the clipboard permission lets a script do. [CHAR LIMIT=NONE] -->
@@ -217,7 +217,7 @@
     <!-- A script's command is an item in the SandFly menu. [CHAR LIMIT=NONE] -->
     <string name="script_binding_menu">SandFly 菜单</string>
     <!-- A script's command is a reading control. [CHAR LIMIT=NONE] -->
-    <string name="script_binding_control">阅读控件</string>
+    <string name="script_binding_control">朗读控件</string>
     <!-- Summary of a command that has no way to run it. [CHAR LIMIT=NONE] -->
     <string name="script_binding_none">无</string>
     <!-- Turns on a gesture, keys, menu item or reading control of a command. [CHAR LIMIT=40] -->

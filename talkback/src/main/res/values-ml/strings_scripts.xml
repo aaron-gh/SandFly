@@ -42,7 +42,7 @@
     <string name="script_permission_actions">ക്ലിക്ക് ചെയ്യൽ, സ്ക്രോൾ ചെയ്യൽ, ടൈപ്പ് ചെയ്യൽ, ഫോക്കസ് നീക്കൽ</string>
     <string name="script_permission_speech">SandFly-യുടെ സംസാരം സ്വീകരിക്കലും മാറ്റലും</string>
     <string name="script_permission_passwords">പാസ്‌വേഡ് ഫീൽഡുകൾ വായിക്കുക</string>
-    <string name="script_permission_input">ആംഗ്യങ്ങൾ, കീകൾ, മെനു ഇനങ്ങൾ, വായന നിയന്ത്രണങ്ങൾ എന്നിവ ചേർക്കൽ</string>
+    <string name="script_permission_input">ജെസ്‌ച്ചറുകൾ, കീകൾ, മെനു ഇനങ്ങൾ, വായനാ നിയന്ത്രണങ്ങൾ എന്നിവ ചേർക്കൽ</string>
     <string name="script_permission_network">ഇന്റർനെറ്റ് ഉപയോഗിക്കൽ</string>
     <string name="script_permission_clipboard">ക്ലിപ്പ്ബോർഡ് വായിക്കലും മാറ്റലും</string>
     <string name="script_permission_system">പിന്നോട്ട് അല്ലെങ്കിൽ ഹോമിലേക്ക് പോകൽ, അറിയിപ്പുകളും ആപ്പുകളും തുറക്കൽ</string>
@@ -103,7 +103,7 @@
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, പിന്നെ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">കമാൻഡുകൾ</string>
     <string name="script_commands_summary">പ്രവർത്തിക്കുന്ന സ്ക്രിപ്റ്റിന്റെ ജെസ്ചറുകൾക്കും കീകൾക്കും SandFly-ന്റേതിനെക്കാൾ മുൻഗണനയുണ്ട്. SandFly-ന്റേത് നിലനിർത്താൻ സ്ക്രിപ്റ്റിന്റേത് ഓഫാക്കുക.</string>
-    <string name="script_binding_gesture">ആംഗ്യം: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_gesture">ജെസ്‌ച്ചർ: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">കീകൾ: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly മെനു</string>
     <string name="script_binding_control">വായനാ നിയന്ത്രണങ്ങൾ</string>
@@ -112,12 +112,12 @@
     <string name="script_binding_turn_off">ഓഫാക്കുക</string>
     <string name="script_binding_restore">ഡിഫോൾട്ടുകൾ പുനഃസ്ഥാപിക്കുക</string>
     <string name="script_binding_restored">ഡിഫോൾട്ടുകൾ പുനഃസ്ഥാപിച്ചു</string>
-    <string name="script_binding_perform">ആംഗ്യം കാണിക്കുക അല്ലെങ്കിൽ കീകൾ അമർത്തുക</string>
+    <string name="script_binding_perform">ജെസ്‌ച്ചർ ചെയ്യുക അല്ലെങ്കിൽ കീകൾ അമർത്തുക</string>
     <string name="script_binding_perform_summary">അടുത്ത ജെസ്ചറോ SandFly മോഡിഫയറിനൊപ്പം അമർത്തിയ കീകളോ അസൈൻ ചെയ്യുക</string>
-    <string name="script_binding_perform_message">ആംഗ്യം കാണിക്കുക അല്ലെങ്കിൽ കീകൾ അമർത്തുക.</string>
+    <string name="script_binding_perform_message">ജെസ്‌ച്ചർ ചെയ്യുക അല്ലെങ്കിൽ കീകൾ അമർത്തുക.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> <xliff:g id="command">%2$s</xliff:g>-ലേക്ക് അസൈൻ ചെയ്യണോ?</string>
     <string name="script_binding_assign">അസൈൻ ചെയ്യുക</string>
-    <string name="script_binding_choose_gesture">ആംഗ്യം തിരഞ്ഞെടുക്കുക</string>
+    <string name="script_binding_choose_gesture">ജെസ്‌ച്ചർ തിരഞ്ഞെടുക്കുക</string>
     <string name="script_binding_type_keys">കീകൾ ടൈപ്പ് ചെയ്യുക</string>
     <string name="script_binding_type_keys_summary">sf+shift+n അല്ലെങ്കിൽ sf+t, s പോലെ</string>
     <string name="script_binding_bad_keys">ഈ കീകൾ ഉപയോഗിക്കാൻ കഴിയില്ല. <xliff:g id="reason">%1$s</xliff:g></string>

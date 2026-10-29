@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">Модель</string>
     <string name="ai_service_address_invalid">Адрес должен начинаться с https://. Ничего не сохранено.</string>
     <string name="dialog_message_ai_service_consent">Изображения и скриншоты отправляются в <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для описания, это занимает несколько секунд. Действуют собственные условия и политика конфиденциальности этого сервиса. Генеративный ИИ находится на экспериментальной стадии, поэтому будет ошибаться.</string>
-    <string name="ai_service_error_api_key">Сервис ИИ не принял ключ API. Проверьте его настройки в разделе «Автоматические описания».</string>
-    <string name="ai_service_error_quota">Достигнут лимит использования службы AI. Повторите попытку позже.</string>
-    <string name="ai_service_error_busy">Служба искусственного интеллекта сейчас занята. Повторите попытку через минуту.</string>
-    <string name="ai_service_error_timeout">Служба искусственного интеллекта слишком долго отвечала. Попробуйте еще раз.</string>
+    <string name="ai_service_error_api_key">ИИ-сервис не принял ключ API. Проверьте его настройки в разделе «Описания изображений и экрана».</string>
+    <string name="ai_service_error_quota">Достигнут лимит использования ИИ-сервиса. Повторите попытку позже.</string>
+    <string name="ai_service_error_busy">ИИ-сервис сейчас занят. Повторите попытку через минуту.</string>
+    <string name="ai_service_error_timeout">ИИ-сервис слишком долго отвечал. Попробуйте ещё раз.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Нет</string>
-    <string name="ai_service_not_set_up">Сервис ИИ не используется. Настройте или выберите его в настройках «Автоматические описания».</string>
-    <string name="ai_provider_none_set_up">Сервис ИИ не настроен. Настройте один из них в его настройках ниже.</string>
+    <string name="ai_service_not_set_up">ИИ-сервис не используется. Настройте или выберите его в разделе «Описания изображений и экрана».</string>
+    <string name="ai_provider_none_set_up">Ни один ИИ-сервис не настроен. Настройте сервис в его настройках ниже.</string>
     <string name="ai_provider_other">Другой сервис</string>
     <string name="title_pref_category_ai_services">ИИ-сервисы</string>
     <string name="title_pref_ai_provider">ИИ-сервис</string>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">I-AI ekudivayisi</string>
-    <string name="summary_pref_on_device_ai">Okuthi “Chaza isithombe” nokuthi “Isikrini esichazayo” ngemodeli ekule foni, ngaphandle kokhiye we-API</string>
+    <string name="summary_pref_on_device_ai">Okuthi “Chaza isithombe” nokuthi “Chaza isikrini” ngemodeli ekule foni, ngaphandle kokhiye we-API</string>
     <string name="pref_on_device_ai_enable">Sebenzisa i-AI ekudivayisi</string>
     <string name="pref_on_device_ai_enable_summary">Izithombe nezithombe-skrini zichazwa kule foni futhi azithunyelwa ku-Google. Ihamba kancane kunefu futhi isebenzisa ibhethri eliningi.</string>
     <string name="pref_on_device_ai_enable_needs_model">Landa noma ngenisa imodeli kuqala.</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Imodeli ifakiwe</string>
     <string name="on_device_ai_import_failed">Lelo fayela alilona ifayela eliyimodeli ye-Gemma 4 elisekelwayo.</string>
     <string name="pref_on_device_ai_timeout">Umkhawulo wesikhathi sezimpendulo</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. I-SandFly iyayeka ukulinda ngemva kwalesi sikhathi. Okuthi “Isikrini esichazayo” kuthatha isikhathi eside kunokuthi “Chaza isithombe”.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. I-SandFly iyayeka ukulinda ngemva kwalesi sikhathi. Okuthi “Chaza isikrini” kuthatha isikhathi eside kunokuthi “Chaza isithombe”.</string>
     <string name="on_device_ai_choose_timeout">Umkhawulo wesikhathi sezimpendulo</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d iminithi</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Iphrosesa</string>
     <string name="pref_on_device_ai_short_prompts">Izincazelo zesikrini ezimfushane</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Okuthi “Isikrini esichazayo” kucela imininingwane embalwa, ngakho kuphendula ngokushesha. Vala lokhu ukuze uthole izincazelo ezigcwele kakhulu.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">Okuthi “Chaza isikrini” kucela imininingwane embalwa, ngakho kuphendula ngokushesha. Vala lokhu ukuze uthole izincazelo ezigcwele kakhulu.</string>
     <string name="on_device_ai_error_network">Ukulanda kumisiwe. Hlola uxhumo lwakho bese uyazama futhi. Izoqhubeka lapho ime khona.</string>
     <string name="on_device_ai_error_http">Iseva yokulanda ayizange isamukele isicelo. Zama futhi kamuva, noma ngenisa ifayela esikhundleni salokho.</string>
     <string name="on_device_ai_error_corrupt">Ifayela alizange lifane nemodeli ebilindelwe futhi lisusiwe. Zama futhi.</string>

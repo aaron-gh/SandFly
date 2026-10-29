@@ -10,10 +10,10 @@
   <string name="actions">Thao tác</string>
   <string name="system_actions">Thao tác trên hệ thống</string>
   <string name="talkback_preferences_subtitle">Phiên bản %1$s</string>
-  <string name="label_manager_summary_title">Quản lý nhãn tuỳ chỉnh</string>
+  <string name="label_manager_summary_title">Quản lý nhãn tùy chỉnh</string>
   <string name="label_manager_package_title">Quản lý nhãn cho %1$s</string>
   <string name="manage_label">Quản lý nhãn</string>
-  <string name="label_manager_no_packages_message">Hiện không có nhãn tuỳ chỉnh nào\n\n<b>Cách tạo nhãn tuỳ chỉnh</b>\nChuyển đến một hình ảnh chưa gắn nhãn rồi thêm một nhãn từ trình đơn SandFly</string>
+  <string name="label_manager_no_packages_message">Hiện không có nhãn tùy chỉnh nào\n\n<b>Cách tạo nhãn tùy chỉnh</b>\nChuyển đến một hình ảnh chưa gắn nhãn rồi thêm một nhãn từ trình đơn SandFly</string>
   <string name="label_manager_timestamp_text">Sửa đổi lần cuối %1$s</string>
   <string name="search_mode_cancel">Đã hủy tìm kiếm.</string>
   <string name="notification_type_status_started">Đã bắt đầu</string>
@@ -193,7 +193,7 @@
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Sao chép cụm từ được nói gần đây nhất</string>
   <string name="keycombo_menu_other_open_tts_settings">Mở phần cài đặt chuyển văn bản sang lời nói</string>
   <string name="keycombo_menu_other_open_talkback_settings">Mở phần cài đặt SandFly</string>
-  <string name="keycombo_menu_other_report_issue">Gửi ý kiến phản hồi</string>
+  <string name="keycombo_menu_other_report_issue">Gửi phản hồi</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Chuyển đổi tuần tự mức phản hồi âm thanh khi gõ phím</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Hiện danh sách phím tắt</string>
   <string name="keycombo_menu_category_web">Thao tác di chuyển trên web</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Khác</string>
   <string name="shortcut_unassigned">Nhấn để gán</string>
   <string name="shortcut_not_customizable">%1$s, không tùy chỉnh được</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Không sử dụng được khi chế độ rung của đồng hồ đang bật</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Không sử dụng được khi Vibration Watch đang bật</string>
   <string name="shortcut_next">Mục tiếp theo</string>
   <string name="shortcut_previous">Mục trước</string>
   <string name="shortcut_scroll_forward">Di chuyển về phía trước</string>
@@ -406,7 +406,7 @@
   <string name="talkback_menu_more_options_text">Có thêm lựa chọn trên trình đơn sau khi bạn thiết lập xong hoặc mở khoá thiết bị</string>
   <string name="talkback_menu_title_content_description">Trình đơn SandFly. Vuốt sang phải để khám phá các lựa chọn khác trong trình đơn SandFly.\n\nĐể quay lại phần hướng dẫn, hãy dùng 2 ngón tay vuốt sang trái hoặc sang phải từ mép màn hình.</string>
   <string name="shortcut_show_language_options">Thay đổi ngôn ngữ nói</string>
-  <string name="shortcut_select_next_setting">Chế độ điều khiển đọc tiếp theo</string>
+  <string name="shortcut_select_next_setting">Chế độ điều khiển chức năng đọc tiếp theo</string>
   <string name="shortcut_select_previous_setting">Chế độ điều khiển chức năng đọc trước đó</string>
   <string name="shortcut_pass_through_next">Bỏ qua cử chỉ SandFly để dùng cử chỉ hệ thống</string>
   <string name="shortcut_a11y_button">Lối tắt hỗ trợ tiếp cận</string>
@@ -418,7 +418,7 @@
   <string name="label_search_result_table">Bảng</string>
   <string name="shortcut_media_control">Phát hoặc tạm dừng nhạc/video</string>
   <string name="shortcut_voice_input">Bắt đầu hoặc kết thúc phương thức nhập bằng giọng nói</string>
-  <string name="shortcut_media_control_or_voice_input">Phát/tạm dừng nội dung nghe nhìn, bắt đầu hoặc kết thúc phương thức nhập bằng giọng nói</string>
+  <string name="shortcut_media_control_or_voice_input">Phát hoặc tạm dừng nhạc/video, bắt đầu hoặc kết thúc phương thức nhập bằng giọng nói</string>
   <string name="shortcut_increase_volume">Tăng âm lượng</string>
   <string name="shortcut_decrease_volume">Giảm âm lượng</string>
   <string name="shortcut_all_apps">Tất cả ứng dụng</string>
@@ -818,8 +818,8 @@
   <string name="adjust_granularity_hint">%1$s để đọc theo %2$s</string>
   <string name="adjust_typo_hint">%1$s để xem nội dung đề xuất.</string>
   <string name="use_action_hint">Nhấn đúp để thực hiện thao tác</string>
-  <string name="no_adjust_setting_gesture">Để sử dụng cử chỉ này, hãy chuyển đến phần cài đặt của SandFly rồi thêm cử chỉ cho \"<xliff:g example="selected setting next action">%1$s</xliff:g>\"</string>
-  <string name="no_navigate_typo_gesture">Để sử dụng công cụ này, hãy chuyển đến phần cài đặt của SandFly rồi thêm một cử chỉ cho công cụ kiểm tra lỗi chính tả</string>
+  <string name="no_adjust_setting_gesture">Để sử dụng cử chỉ này, hãy chuyển đến Cài đặt SandFly rồi thêm cử chỉ cho \"<xliff:g example="selected setting next action">%1$s</xliff:g>\"</string>
+  <string name="no_navigate_typo_gesture">Để sử dụng công cụ này, hãy chuyển đến Cài đặt SandFly rồi thêm một cử chỉ cho công cụ kiểm tra lỗi chính tả</string>
   <string name="use_spelling_suggestion_hint">Nhấn đúp để thay thế văn bản</string>
   <string name="screen_search_keyword_hint">từ khoá là %1$s</string>
   <string name="screen_search_no_keyword_hint">Chưa có từ khoá nào. Để bắt đầu một lượt tìm kiếm mới, hãy nhấn và giữ bằng 3 ngón tay hoặc mở tính năng tìm kiếm trên màn hình từ trình đơn SandFly.</string>
@@ -851,7 +851,7 @@
   <string name="keep_reviewing_tutorial_button">Tiếp tục xem</string>
   <string name="welcome_to_updated_talkback_title">Chào mừng bạn đến với SandFly phiên bản mới</string>
   <string name="navigation_heading">Cách di chuyển</string>
-  <string name="setting_selector_heading">Thao tác điều khiển chức năng đọc</string>
+  <string name="setting_selector_heading">Chế độ điều khiển chức năng đọc</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Để tạm dừng hoặc phát nội dung nghe nhìn trong ứng dụng video hoặc nhạc, hãy nhấn đúp bằng 2 ngón tay. Hãy thử ngay.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Các ứng dụng khác có thể dùng cử chỉ này cho những việc như trả lời hoặc kết thúc cuộc gọi điện thoại. Không phải ứng dụng nào cũng hỗ trợ cử chỉ này.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Nội dung nghe nhìn đã tạm dừng hoặc đang phát. Thông thường, thao tác này sẽ tạm dừng hoặc phát video/bản nhạc hiện tại. Hãy vuốt sang phải để tiếp tục.</string>
@@ -865,7 +865,7 @@
   <string name="new_shortcut_gesture_cut_text_announcement">Đã cắt văn bản. Thông thường, thao tác này sẽ cắt văn bản mà bạn đã chọn. Vuốt sang phải để tiếp tục.</string>
   <string name="new_shortcut_gesture_selection_mode_text">Để bắt đầu hoặc kết thúc chế độ lựa chọn văn bản, hãy nhấn đúp và giữ bằng 2 ngón tay.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Đã bật hoặc tắt chế độ lựa chọn. Thông thường, thao tác này sẽ bắt đầu hoặc dừng chế độ lựa chọn văn bản khi con trỏ nằm trong một trường nhập dữ liệu. Hãy vuốt sang phải để tiếp tục.</string>
-  <string name="new_shortcut_gesture_reading_menu_text">Để dùng các thao tác điều khiển chức năng đọc, hãy vuốt sang trái hoặc sang phải bằng 3 ngón tay. Bạn cũng có thể vuốt lên hoặc vuốt xuống bằng 3 ngón tay.</string>
+  <string name="new_shortcut_gesture_reading_menu_text">Để dùng các chế độ điều khiển chức năng đọc, hãy vuốt sang trái hoặc sang phải bằng 3 ngón tay. Bạn cũng có thể vuốt lên hoặc vuốt xuống bằng 3 ngón tay.</string>
   <string name="new_shortcut_gesture_note">Lưu ý: Bạn đã tùy chỉnh một số cử chỉ nên thông tin này có thể không chính xác. Để xem các cử chỉ của bạn, hãy chuyển đến phần cài đặt SandFly.</string>
   <string name="welcome_to_android11_text">Chúng tôi đã thêm các cử chỉ mới để giúp bạn dùng SandFly nhanh hơn và dễ dàng hơn.\n\nBạn có thể dùng thử các cử chỉ mới trên màn hình này. Bạn có thể xem lại thông tin này trong phần cài đặt SandFly bất cứ lúc nào.</string>
   <string name="new_gesture_notification_title">Cử chỉ mới trong SandFly</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Cài đặt màn hình chữ nổi</string>
   <string name="keyboard_smart_browse_mode_title">Bàn phím: Chế độ duyệt web thông minh</string>
   <string name="keyboard_smart_browse_mode_text">Khi bạn duyệt web, chế độ duyệt web thông minh của SandFly sẽ tắt chế độ duyệt web trong trường chỉnh sửa để bạn có thể nhập bằng bàn phím vật lý. Sau đó, chế độ này sẽ bật lại khi bạn chuyển sang một trường không phải trường chỉnh sửa trên web để bạn có thể tiếp tục duyệt web một cách hiệu quả. Bạn có thể bật hoặc tắt \"Chế độ duyệt web thông minh\" ở <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Cài đặt SandFly &gt; Cài đặt nâng cao</string>
-  <string name="advanced_settings_link_tts">Cài đặt SandFly rồi vào phần Cài đặt nâng cao</string>
   <string name="keyboard_tutorial_title">Hướng dẫn dùng bàn phím</string>
   <string name="keyboard_tutorial_text">SandFly hiện có một phần Hướng dẫn dùng bàn phím được thiết kế để giúp bạn tìm hiểu các phím tắt và lệnh cho Sơ đồ bàn phím nâng cao khi dùng bàn phím thực. Để xem hướng dẫn, hãy chuyển đến: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Cài đặt SandFly &gt; Hướng dẫn về SandFly</string>
-  <string name="tutorial_link_tts">Cài đặt SandFly rồi vào phần Hướng dẫn về SandFly</string>
   <string name="tutorial_entry_point_title">Hướng dẫn</string>
   <string name="welcome_to_talkback_title">Chào mừng bạn đến với SandFly</string>
   <string name="talkback_is_on">SandFly đang bật</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">Sử dụng các trình đơn và chế độ điều khiển</string>
   <string name="menus_talkback_menu_text">Trình đơn SandFly có các chế độ cài đặt và thao tác điều khiển mà bạn có thể cần dùng thường xuyên.\n\nBây giờ, hãy mở trình đơn SandFly bằng cách dùng 3 ngón tay nhấn vào màn hình.</string>
   <string name="menus_talkback_menu_text_pre_r">Trình đơn SandFly có các chế độ cài đặt và thao tác điều khiển mà bạn có thể cần dùng thường xuyên.\n\nBây giờ, hãy mở trình đơn SandFly bằng cách vuốt xuống rồi vuốt sang phải.</string>
-  <string name="menus_selector_text">Những phím tắt này có thể giúp bạn nhanh chóng thay đổi các chế độ cài đặt, chẳng hạn như chuyển đổi cách di chuyển từ ký tự sang từ hoặc thay đổi tốc độ nói của SandFly.\n\nĐể thay đổi nhanh các thao tác điều khiển chức năng đọc, hãy dùng 3 ngón tay vuốt sang trái hoặc sang phải.\n\nBạn có thể tuỳ chỉnh trình đơn SandFly và các thao tác điều khiển chức năng đọc bất cứ lúc nào trong phần cài đặt SandFly.</string>
-  <string name="menus_selector_text_pre_r">Những phím tắt này có thể giúp bạn nhanh chóng thay đổi các chế độ cài đặt, chẳng hạn như chuyển đổi cách di chuyển từ ký tự sang từ hoặc thay đổi tốc độ nói của SandFly.\n\nĐể thay đổi nhanh các thao tác điều khiển chức năng đọc, hãy vuốt xuống rồi vuốt lên.\n\nBạn có thể tuỳ chỉnh trình đơn SandFly và các thao tác điều khiển chức năng đọc bất cứ lúc nào trong phần cài đặt SandFly.</string>
+  <string name="menus_selector_text">Những phím tắt này có thể giúp bạn nhanh chóng thay đổi các chế độ cài đặt, chẳng hạn như chuyển đổi cách di chuyển từ ký tự sang từ hoặc thay đổi tốc độ nói của SandFly.\n\nĐể thay đổi nhanh các chế độ điều khiển chức năng đọc, hãy dùng 3 ngón tay vuốt sang trái hoặc sang phải.\n\nBạn có thể tuỳ chỉnh trình đơn SandFly và các chế độ điều khiển chức năng đọc bất cứ lúc nào trong phần cài đặt SandFly.</string>
+  <string name="menus_selector_text_pre_r">Những phím tắt này có thể giúp bạn nhanh chóng thay đổi các chế độ cài đặt, chẳng hạn như chuyển đổi cách di chuyển từ ký tự sang từ hoặc thay đổi tốc độ nói của SandFly.\n\nĐể thay đổi nhanh các chế độ điều khiển chức năng đọc, hãy vuốt xuống rồi vuốt lên.\n\nBạn có thể tuỳ chỉnh trình đơn SandFly và các chế độ điều khiển chức năng đọc bất cứ lúc nào trong phần cài đặt SandFly.</string>
   <string name="all_set_title">Đã xong!</string>
   <string name="all_set_text">Bạn hiện có thể dùng SandFly.\n\nBạn có thể tiếp tục tìm hiểu về các chủ đề khác ngay bây giờ hoặc xem lại thông tin này bất cứ lúc nào trong phần Cài đặt SandFly.</string>
   <string name="talkback_tutorial_text">Vuốt sang phải để chọn một chủ đề. Để có trải nghiệm tốt nhất, hãy bật SandFly trước khi bắt đầu.</string>
@@ -1069,8 +1065,8 @@
   <string name="checking_notifications_tips">Để kiểm tra nhật ký thông báo, hãy dùng 2 ngón tay vuốt xuống từ đầu màn hình</string>
   <string name="image_description_playground_title">Thử nghe nội dung mô tả hình ảnh</string>
   <string name="image_description_playground_content_one">Khi bạn đã lấy tiêu điểm vào một hình ảnh, hãy mở trình đơn SandFly rồi chọn \"Mô tả hình ảnh\".\n\nCó một bức ảnh ở bên dưới. Hãy thử nghe nội dung mô tả hình ảnh đó.</string>
-  <string name="image_description_playground_content_two">Bạn có thể thay đổi chế độ cài đặt tính năng mô tả hình ảnh bất cứ lúc nào trong phần Cài đặt SandFly &gt; Mô tả tự động.</string>
-  <string name="image_description_playground_content_two_tts">Bạn có thể thay đổi chế độ cài đặt tính năng mô tả hình ảnh bất cứ lúc nào bằng cách chọn Mô tả tự động trong phần Cài đặt SandFly.</string>
+  <string name="image_description_playground_content_two">Bạn có thể thay đổi chế độ cài đặt tính năng mô tả hình ảnh bất cứ lúc nào trong phần Cài đặt SandFly &gt; Mô tả hình ảnh và màn hình.</string>
+  <string name="image_description_playground_content_two_tts">Bạn có thể thay đổi chế độ cài đặt tính năng mô tả hình ảnh bất cứ lúc nào bằng cách chọn Mô tả hình ảnh và màn hình trong phần Cài đặt SandFly.</string>
   <string name="image_description_sample_image_content_description">Hình ảnh minh hoạ; nhấn bằng 3 ngón tay để mở trình đơn SandFly rồi chọn \"Mô tả hình ảnh\" để nghe nội dung mô tả.</string>
   <string name="practice_gestures_title">Thực hành cử chỉ</string>
   <string name="practice_keyboard_gestures_title">Thực hành sử dụng các phím tắt</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Khác</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Dành cử chỉ cho Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly ngừng xử lý thao tác nhấn một lần và nhấn đúp bằng hai ngón tay để Samsung Vibration Watch có thể dùng các cử chỉ này. Hãy bật Vibration Watch trong phần cài đặt hỗ trợ tiếp cận của đồng hồ.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Dành cho Vibration Watch trong phần Cài đặt nâng cao</string>
     <string name="title_pref_speakerphone_away_from_ear">Dùng loa ngoài khi đưa điện thoại ra xa tai</string>
     <string name="summary_pref_speakerphone_away_from_ear">Trong cuộc gọi, chuyển sang loa ngoài khi bạn đưa điện thoại ra xa tai, và chuyển lại loa trong khi bạn áp điện thoại lên tai.</string>
     <string name="summary_pref_speakerphone_needs_permission">Cần một quyền mà Android không cấp cho trình đọc màn hình. Để cấp quyền, hãy chạy lệnh này bằng adb hoặc Shizuku rồi quay lại màn hình này: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Ứng dụng</string>
     <string name="speech_control_no_apps">Chưa có ứng dụng nào yêu cầu đọc.</string>
     <string name="speech_control_ask_title">Cho phép <xliff:g id="app" example="Tasker">%1$s</xliff:g> đọc thông qua SandFly?</string>
-    <string name="speech_control_ask_text">Ứng dụng này có thể đọc văn bản bằng giọng nói SandFly của bạn. Bạn có thể thay đổi điều này trong phần Cài đặt nâng cao.</string>
     <string name="speech_control_allow">Cho phép</string>
     <string name="speech_control_deny">Không cho phép</string>
     <string name="permission_speak_label">đọc thông qua SandFly</string>
@@ -1524,7 +1518,6 @@
     <string name="quick_settings_remove">Xoá</string>
     <string name="quick_settings_added">Đã thêm %1$s</string>
     <string name="quick_settings_removed">Đã xoá %1$s</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly đang bật. Giữ 2 ngón tay trên màn hình trong 5 giây để tắt. Để không hiện thông báo này nữa, hãy tắt mục Cài đặt SandFly &gt; Cài đặt nâng cao &gt; Hiện hướng dẫn tắt SandFly.</string>
     <string name="edge_gestures_title">Cạnh màn hình</string>
     <string name="title_pref_audio_output_device">Thiết bị đầu ra âm thanh</string>
     <string name="dialog_title_audio_output_device">Chọn nơi phát âm thanh của SandFly</string>
@@ -1618,7 +1611,7 @@
     <string name="summary_support_wrap_around">Bật hoặc tắt chế độ quay vòng từ mục cuối cùng về mục đầu tiên</string>
     <string name="wrap_around_on">Đã bật quay vòng</string>
     <string name="wrap_around_off">Đã tắt quay vòng</string>
-    <string name="title_selector_tablet_held_up_faces_away">Máy tính bảng giơ lên quay ra ngoài</string>
+    <string name="title_selector_tablet_held_up_faces_away">Màn hình máy tính bảng hướng ra xa khi cầm thẳng đứng</string>
     <string name="summary_support_tablet_held_up_faces_away">Dành cho bàn phím chữ nổi trên máy tính bảng hoặc điện thoại đang mở</string>
     <string name="tablet_held_up_faces_away_on">Đã bật máy tính bảng giơ lên quay ra ngoài</string>
     <string name="tablet_held_up_faces_away_off">Đã tắt máy tính bảng giơ lên quay ra ngoài</string>
@@ -1645,7 +1638,7 @@
     <string name="template_item_details_order_dropped">Đã thả <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly đọc chi tiết của một mục theo thứ tự này. Để thay đổi, hãy chạm và giữ một chi tiết rồi kéo lên hoặc xuống. Khi SandFly đang bật, hãy nhấn đúp và giữ rồi kéo. Bạn cũng có thể dùng thao tác Di chuyển lên và Di chuyển xuống.</string>
     <string name="title_pref_speak_items_before_scroll">Đọc các mục trước khi chúng được cuộn vào màn hình</string>
-    <string name="gemini_error_api_key">Gemini không chấp nhận khoá API. Hãy kiểm tra khoá trong phần cài đặt Mô tả tự động.</string>
+    <string name="gemini_error_api_key">Gemini không chấp nhận khoá API. Hãy kiểm tra khoá trong phần cài đặt Mô tả hình ảnh và màn hình.</string>
     <string name="gemini_error_quota">Đã đạt đến giới hạn sử dụng của khoá API Gemini. Hãy thử lại sau.</string>
     <string name="gemini_error_busy">Gemini hiện đang bận. Hãy thử lại sau giây lát.</string>
     <string name="gemini_error_timeout">Gemini phản hồi quá lâu. Hãy thử lại.</string>
@@ -1674,7 +1667,7 @@
     </string-array>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Phím tắt khác để bật hoặc tắt chế độ duyệt</string>
     <string name="title_pref_vibration_strength">Cường độ rung</string>
-    <string name="shortcut_write_reading_control">Viết chữ cái của một chế độ điều khiển đọc</string>
+    <string name="shortcut_write_reading_control">Viết chữ cái của một chế độ điều khiển chức năng đọc</string>
     <string name="title_pref_reading_control_letters">Chữ cái viết tay</string>
     <string name="reading_control_letter_none">Không có</string>
     <string name="handwriting_prompt">Viết một chữ cái</string>
@@ -1742,7 +1735,7 @@
     <string name="value_distance_30mm">3 cm</string>
     <string name="value_distance_40mm">4 cm</string>
     <string name="value_distance_50mm">5 cm</string>
-    <string name="title_pref_selector_auto_switch">Tự động đổi chế độ điều khiển đọc</string>
+    <string name="title_pref_selector_auto_switch">Tự động đổi chế độ điều khiển chức năng đọc</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Phản hồi khi dùng bàn phím viết tay</string>
     <string name="image_qna_ask_by_voice">Hỏi bằng giọng nói</string>
     <string name="image_qna_stop_listening">Dừng nghe</string>
@@ -1768,7 +1761,6 @@
     <string name="title_pref_whisper_models">Mô hình Whisper</string>
     <string name="dictation_whisper_use">Sử dụng</string>
     <string name="title_pref_dictation_ai_service">Dịch vụ AI cho tính năng nhập bằng giọng nói</string>
-    <string name="dictation_ai_same">Giống như tính năng tự động mô tả</string>
     <string name="title_pref_browse_mode_per_app">Ghi nhớ chế độ duyệt trong từng ứng dụng</string>
     <string name="arrow_key_nav_assign_instruction">Nhấn một phím hoặc hai phím cùng lúc, có hoặc không có phím bổ trợ. Nhấn Backspace để xoá, Ctrl + Backspace để đặt lại về mặc định, Enter để lưu hoặc Escape để huỷ.</string>
     <string name="arrow_key_nav_off">Đã tắt điều hướng bằng phím mũi tên</string>
@@ -1790,4 +1782,12 @@
     <string name="shortcut_previous_track">Bản nhạc trước</string>
     <string name="sound_mode_needs_access">Cấp quyền truy cập Không làm phiền để bật hoặc tắt Tắt tiếng.</string>
     <string name="title_pref_dictation_auto_stop">Tự động dừng sau khoảng lặng</string>
+    <string name="dictation_ai_same">Giống như Mô tả hình ảnh và màn hình</string>
+    <string name="navigation_settings_link">Cài đặt SandFly &gt; Điều hướng</string>
+    <string name="navigation_settings_link_tts">Cài đặt SandFly rồi chọn Điều hướng</string>
+    <string name="shortcut_reserved_for_vibration_watch">Dành cho Vibration Watch trong phần Cử chỉ</string>
+    <string name="speech_control_ask_text">Ứng dụng này có thể đọc văn bản bằng giọng nói SandFly của bạn. Bạn có thể thay đổi tùy chọn này trong phần Cài đặt, Lời nói, Cho phép ứng dụng khác đọc.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly đang bật. Giữ 2 ngón tay trên màn hình trong 5 giây để tắt. Nếu muốn ngừng hiện thông báo này, hãy tắt Cài đặt SandFly &gt; Tạm dừng và tắt &gt; Hiện hướng dẫn tắt SandFly.</string>
+    <string name="tutorial_link">Cài đặt SandFly &gt; Trợ giúp và phản hồi &gt; Hướng dẫn về SandFly</string>
+    <string name="tutorial_link_tts">Cài đặt SandFly, chọn Trợ giúp và phản hồi rồi chọn Hướng dẫn về SandFly</string>
 </resources>

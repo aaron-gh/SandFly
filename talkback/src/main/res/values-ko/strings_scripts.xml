@@ -42,7 +42,7 @@
     <string name="script_permission_actions">클릭, 스크롤, 입력 및 포커스 이동</string>
     <string name="script_permission_speech">SandFly 음성 출력 확인 및 변경</string>
     <string name="script_permission_passwords">비밀번호 필드 읽기</string>
-    <string name="script_permission_input">제스처, 키, 메뉴 항목 및 읽기 컨트롤 추가</string>
+    <string name="script_permission_input">동작, 키, 메뉴 항목 및 읽기 제어 설정 추가</string>
     <string name="script_permission_network">인터넷 사용</string>
     <string name="script_permission_clipboard">클립보드 읽기 및 변경</string>
     <string name="script_permission_system">뒤로 또는 홈으로 이동, 알림 및 앱 열기</string>
@@ -103,7 +103,7 @@
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, 그다음 <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">명령</string>
     <string name="script_commands_summary">실행 중인 스크립트의 동작과 키가 SandFly의 동작과 키보다 우선합니다. SandFly의 것을 유지하려면 스크립트의 항목을 끄세요.</string>
-    <string name="script_binding_gesture">제스처: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_gesture">동작: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">키: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly 메뉴</string>
     <string name="script_binding_control">읽기 제어 설정</string>
@@ -112,9 +112,9 @@
     <string name="script_binding_turn_off">사용 중지</string>
     <string name="script_binding_restore">기본값 복원</string>
     <string name="script_binding_restored">기본값 복원됨</string>
-    <string name="script_binding_perform">제스처 또는 키 수행</string>
+    <string name="script_binding_perform">동작 또는 키 수행</string>
     <string name="script_binding_perform_summary">다음 동작 또는 SandFly 보조키와 함께 누른 키 할당</string>
-    <string name="script_binding_perform_message">제스처를 하거나 키를 누르세요.</string>
+    <string name="script_binding_perform_message">동작을 하거나 키를 누르세요.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>을(를) <xliff:g id="command">%2$s</xliff:g>에 할당할까요?</string>
     <string name="script_binding_assign">할당</string>
     <string name="script_binding_choose_gesture">동작 선택</string>

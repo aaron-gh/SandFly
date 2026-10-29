@@ -77,12 +77,12 @@
   <string name="pref_punctuation_title">যতিচিহ্ন আৰু চিহ্ন উচ্চাৰণ কৰক</string>
   <string name="title_pref_category_manage_focus_indicator">ফ’কাছৰ সূচক</string>
   <string name="title_pref_category_manage_gestures">আঙুলিৰ স্পৰ্শৰে নিৰ্দেশসমূহ</string>
-  <string name="title_pref_manage_labels">উপযোগিতা অনুসৰি সৃষ্টি কৰা লেবেলসমূহ</string>
+  <string name="title_pref_manage_labels">কাষ্টম লেবেলসমূহ</string>
   <string name="title_pref_category_context_menu">SandFlyৰ মেনু</string>
   <string name="title_pref_category_selector_menu">পঢ়াৰ নিয়ন্ত্ৰণ</string>
   <string name="title_pref_category_navigation_menu">নেভিগেশ্বনৰ বিকল্পসমূহ সম্পাদনা কৰক</string>
   <string name="title_pref_manage_keyboard_shortcuts">কীব\'ৰ্ডৰ শ্বৰ্টকাটসমূহ</string>
-  <string name="title_pref_export_custom_labels">উপযোগিতা অনুসৰি বনোৱা লেবেল ৰপ্তানি কৰক</string>
+  <string name="title_pref_export_custom_labels">কাষ্টম লেবেল ৰপ্তানি কৰক</string>
   <string name="title_pref_help_and_feedback">সহায় আৰু প্ৰতিক্ৰিয়া</string>
   <string name="title_pref_help">সহায়</string>
   <string name="title_pref_show_tos">সেৱাৰ চৰ্তাৱলী</string>
@@ -295,7 +295,7 @@
   <string name="talkback_latency_reduction_summary">আপুনি স্ক্ৰীন স্পৰ্শ কৰাৰ পাছত SandFlyক দ্ৰুত সঁহাৰি দিয়াওক</string>
   <string name="summary_pref_intonation">মচা বৰ্ণসমূহ অধিক উচ্চ ভইচত কওক</string>
   <string name="title_pref_brailledisplay">ব্ৰেইল ডিছপ্লে’</string>
-  <string name="title_pref_brailleime">ব্ৰেইল কীব\'র্ড</string>
+  <string name="title_pref_brailleime">ব্ৰেইল কীব’ৰ্ড</string>
   <string name="summary_pref_brailleime_disabled">আপোনাৰ ডিভাইচটোৱে ব্ৰেইল কীব’ৰ্ড সমৰ্থন নকৰে</string>
   <string name="title_pref_speech_footer">যিকোনো স্ক্ৰীনৰ পৰা সাধ্য সুবিধাৰ ভলিউম সলনি কৰিবলৈ, ১ টা আঙুলিৰে স্ক্ৰীনখনত টিপি ধৰি ৰাখি ভলিউম বঢ়োৱা বা কমোৱা কীটো টিপক।</string>
   <string name="title_pref_vibration">কম্পনৰ প্ৰতিক্ৰিয়া</string>
@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">স্বয়ংক্ৰিয় বিৱৰণ</string>
   <string name="title_pref_gemini_settings">Geminiৰ ছেটিং</string>
   <string name="title_pref_gemini_enabled">Gemini ভইচ কামাণ্ড</string>
-  <string name="title_pref_category_automatic_description_summary">আপুনি SandFlyৰ মেনুৰ পৰা \“প্ৰতিচ্ছবি বৰ্ণনা কৰক\” বাছনি কৰিলে সবিশেষপূৰ্ণ AI প্ৰতিচ্ছবিৰ বিৱৰণ লাভ কৰিব।\n\nআপুনি কোনো প্ৰতিচ্ছবি বা চিহ্নত ফ’কাছ কৰিলে স্বয়ংক্ৰিয় বিৱৰণো পাব পাৰে। স্বয়ংক্ৰিয় বিৱৰণে ইণ্টাৰনেট সংযোগৰ অবিহনে কাম কৰে।</string>
+  <string name="title_pref_category_automatic_description_summary">আপুনি SandFlyৰ মেনুৰ পৰা \“প্ৰতিচ্ছবিখনৰ বিৱৰণ দিয়ক\” বাছনি কৰিলে সবিশেষপূৰ্ণ AI প্ৰতিচ্ছবিৰ বিৱৰণ লাভ কৰিব।\n\nআপুনি কোনো প্ৰতিচ্ছবি বা চিহ্নত ফ’কাছ কৰিলে স্বয়ংক্ৰিয় বিৱৰণো পাব পাৰে। স্বয়ংক্ৰিয় বিৱৰণে ইণ্টাৰনেট সংযোগৰ অবিহনে কাম কৰে।</string>
   <string name="title_pref_icon_detection">স্বয়ংক্ৰিয় চিহ্নৰ বিৱৰণ</string>
   <string name="title_pref_image_description">স্বয়ংক্ৰিয় প্ৰতিচ্ছবিৰ বিৱৰণ</string>
   <string name="title_pref_text_recognition">প্ৰতিচ্ছবিত থকা পাঠৰ বাবে স্বয়ংক্ৰিয় বিৱৰণ</string>
@@ -369,7 +369,7 @@
   <string name="shortcut_not_customizable">%1$s, কাষ্টমাইজ কৰিব নোৱাৰি</string>
   <string name="shortcut_disabled_due_to_vibration_watch">ঘড়ীৰ কম্পন সুবিধাটো অন থাকোঁতে উপলব্ধ নহয়</string>
   <string name="shortcut_next">পৰৱৰ্তী বস্তু</string>
-  <string name="shortcut_previous">পূর্বৱতী বস্তু</string>
+  <string name="shortcut_previous">পূৰ্বৱৰ্তী বস্তু</string>
   <string name="shortcut_scroll_forward">আগলৈ স্ক্ৰ\'ল কৰক</string>
   <string name="shortcut_scroll_back">পিছলৈ স্ক্ৰ\'ল কৰক</string>
   <string name="shortcut_scroll_up">ওপৰলৈ স্ক্ৰ’ল কৰক</string>
@@ -389,7 +389,7 @@
   <string name="shortcut_talkback_breakout">SandFlyৰ মেনুখন খোলক</string>
   <string name="shortcut_pause_or_resume_feedback">কথন পজ অথবা পুনৰ আৰম্ভ কৰক</string>
   <string name="shortcut_toggle_voice_feedback">কথন অন অথবা অফ কৰক</string>
-  <string name="shortcut_read_from_top">শীর্ষৰ পৰা পঢ়ক</string>
+  <string name="shortcut_read_from_top">শীৰ্ষৰ পৰা পঢ়ক</string>
   <string name="shortcut_read_from_current">ফ’কাছ কৰা বস্তুৰ পৰা পঢ়ক</string>
   <string name="shortcut_print_node_tree">ন\'ড ট্ৰী প্ৰিণ্ট কৰক</string>
   <string name="shortcut_print_performance_stats">প্ৰিন্ট প্ৰদৰ্শনৰ তথ্য</string>
@@ -418,12 +418,12 @@
   <string name="label_search_result_table">তালিকা</string>
   <string name="shortcut_media_control">মিডিয়া প্লে’ অথবা পজ কৰক</string>
   <string name="shortcut_voice_input">কথনৰ দ্বাৰা লিখন আৰম্ভ বা শেষ কৰক</string>
-  <string name="shortcut_media_control_or_voice_input">মিডিয়া প্লে’ বা পজ কৰক, কথনৰ দ্বাৰা লিখন আৰম্ভ বা শেষ কৰক</string>
+  <string name="shortcut_media_control_or_voice_input">মিডিয়া প্লে’ অথবা পজ কৰক, কথনৰ দ্বাৰা লিখন আৰম্ভ বা শেষ কৰক</string>
   <string name="shortcut_increase_volume">ভলিউম বঢ়াওক</string>
   <string name="shortcut_decrease_volume">ভলিউম কমাওক</string>
   <string name="shortcut_all_apps">আটাইবোৰ এপ্‌</string>
-  <string name="shortcut_braille_keyboard">ব্ৰেইল কীব’র্ডলৈ সলনি কৰক</string>
-  <string name="shortcut_braille_display_settings">ব্ৰেইল ডিছপ্লে\'ৰ ছেটিঙলৈ নেভিগে’ট কৰক</string>
+  <string name="shortcut_braille_keyboard">ব্ৰেইল কীব’ৰ্ডলৈ সলনি কৰক</string>
+  <string name="shortcut_braille_display_settings">ব্ৰেইল ডিছপ্লে’ৰ ছেটিঙলৈ নেভিগে’ট কৰক</string>
   <string name="shortcut_tutorial">টিউট’ৰিয়েল খোলক</string>
   <string name="shortcut_control_speak_time">সময় কৈ শুনাওক বা নুশুনাব</string>
   <string name="shortcut_enable_speak_time">সময় কৈ শুনোৱাৰ সুবিধা</string>
@@ -477,12 +477,12 @@
   <string name="title_copy_last_spoken_phrase">অন্তিম কথিত বাক্যাংশ প্ৰতিলিপি কৰক</string>
   <string name="title_spell_last_spoken_phrase">অন্তিম কথিত বাক্যাংশ বানান কৰক</string>
   <string name="title_repeat_last_spoken_phrase">অন্তিম কথিত বাক্যাংশ পুনৰাবৃত্তি কৰক</string>
-  <string name="title_custom_action">কাৰ্যবিলাক</string>
+  <string name="title_custom_action">কাৰ্য</string>
   <string name="title_show_hide_screen">স্ক্ৰীন লুকুৱাওক অথবা দেখুৱাওক</string>
   <string name="title_control_speak_time">সময় কৈ শুনোৱাৰ সুবিধা</string>
   <string name="title_show_screen_search">স্ক্ৰীন সন্ধান</string>
   <string name="title_show_voice_commands">ভইচ কামাণ্ড</string>
-  <string name="title_show_keyboard_shortcuts">কীব’ৰ্ডৰ শ্বৰ্টকাট</string>
+  <string name="title_show_keyboard_shortcuts">কীব\'ৰ্ডৰ শ্বৰ্টকাটসমূহ</string>
   <string name="talkback_show_talkback_settings">SandFlyৰ ছেটিং</string>
   <string name="title_show_braille_display_settings">ব্ৰেইল ডিছপ্লে’ৰ ছেটিং</string>
   <string name="title_granularity_default">ডিফ’ল্ট নেভিগেশ্বন</string>
@@ -684,8 +684,8 @@
   <string name="dialog_message_dim_screen">গোপনীয়তা উন্নত কৰিবলৈ এইটোৱে ডিছপ্লে’ অফ কৰে। কিছুমান সমল তথাপি দেখুওৱা হ’ব পাৰে, যেনে- ডিছপ্লে’খন পুনৰ অন কৰিবলৈ দিয়া বাৰ্তা বা SandFlyৰ দৰে দিব্যাংগসকলৰ বাবে থকা সুবিধাসমূহৰ মেনু।</string>
   <string name="button_disable_all_events">আটাইবোৰ অক্ষম কৰক</string>
   <string name="button_enable_all_events">আটাইবোৰ সক্ষম কৰক</string>
-  <string name="dialog_title_disable_exploration">স্পৰ্শৰ দ্বাৰা অন্বেষণ কার্য অক্ষম কৰিবনে?</string>
-  <string name="dialog_message_disable_exploration">স্পৰ্শৰ দ্বাৰা অন্বেষণ কৰা সুবিধা অফ কৰিবনে?\n\n আপুনি স্ক্ৰীন স্পর্শ কৰিলে আপোনাৰ ডিভাইচে ভৱিষ্যতে শ্বর্টকার্ট নিৰ্দেশসমূহৰ প্ৰতি আৰু সঁহাৰি নজনাব বা বস্তুবোৰ নকব।</string>
+  <string name="dialog_title_disable_exploration">“স্পৰ্শৰ দ্বাৰা অন্বেষণ কৰক” অফ কৰিবনে?</string>
+  <string name="dialog_message_disable_exploration">“স্পৰ্শৰ দ্বাৰা অন্বেষণ কৰক” অফ কৰিবনে?\n\n আপুনি স্ক্ৰীন স্পর্শ কৰিলে আপোনাৰ ডিভাইচে ভৱিষ্যতে শ্বর্টকার্ট নিৰ্দেশসমূহৰ প্ৰতি আৰু সঁহাৰি নজনাব বা বস্তুবোৰ নকব।</string>
   <string name="dialog_title_enable_tree_debug">ন\'ড ট্ৰীৰ ডিবাগিং সক্ষম কৰিবনে?</string>
   <string name="dialog_message_enable_tree_debug">আপুনি ন\'ড ট্ৰীৰ ডিবাগিং অন কৰিবলৈ নিশ্চিতনে?\n\nন\'ড ট্ৰীৰ ডিবাগিংএ আপোনাৰ স্ক্ৰীনৰ সমল ডিভাইচৰ ল\'গবোৰত প্ৰদর্শন কৰে, যিবোৰ অন্য এপ্লিকেশ্বনসমূহে পঢ়িব পাৰে।</string>
   <string name="dialog_title_enable_tree_debug_gesture">৪ টা আঙুলিৰ নিৰ্দেশেৰে তিনিবাৰ টিপাটো পুনৰ আৱণ্টন কৰিব নেকি?</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{এইখন স্ক্ৰীনত কোনো মিল পোৱা নগ’ল}=1{# টা মিল}one{# টা মিল}other{# টা মিল}}</string>
   <string name="msg_no_matches">এইখন স্ক্ৰীনত কোনো মিল পোৱা নগ’ল</string>
   <string name="dialog_title_continuous_reading_mode">একেৰাহে পঢ়িব পৰা ম\'ডে কেনেকৈ কাম কৰে</string>
-  <string name="dialog_message_continuous_reading_mode">\"একেবাৰে ওপৰৰ পৰা পঢ়ক\" অথবা \"ফ’কাছ কৰা বস্তুটোৰ পৰা পঢ়ক\" বাছনি কৰাৰ পাছত, পাঠখিনি পঢ়ি থকা অৱস্থাতো আপুনি পূৰ্বৱৰ্তী অথবা পৰৱৰ্তী বস্তুটোলৈ নেভিগে’ট কৰিব পাৰে। এইটোৱে আপোনাক উভতি যাবলৈ অথবা এৰি সহজে আগবাঢ়িবলৈ দিয়ে।\n\nSandFlyএ কথা কৈ থকাৰ সময়ত ভলিউম মিলাবলৈ ভলিউম বঢ়োৱা অথবা কমোৱা কীটো টিপক।</string>
+  <string name="dialog_message_continuous_reading_mode">\"শীৰ্ষৰ পৰা পঢ়ক\" অথবা \"ফ’কাছ কৰা বস্তুৰ পৰা পঢ়ক\" বাছনি কৰাৰ পাছত, পাঠখিনি পঢ়ি থকা অৱস্থাতো আপুনি পূৰ্বৱৰ্তী অথবা পৰৱৰ্তী বস্তুটোলৈ নেভিগে’ট কৰিব পাৰে। এইটোৱে আপোনাক উভতি যাবলৈ অথবা এৰি সহজে আগবাঢ়িবলৈ দিয়ে।\n\nSandFlyএ কথা কৈ থকাৰ সময়ত ভলিউম মিলাবলৈ ভলিউম বঢ়োৱা অথবা কমোৱা কীটো টিপক।</string>
   <string name="always_show_this_message_label">এই বাৰ্তাটো সদায় দেখুৱাওক</string>
   <string name="dialog_title_voice_commands">SandFly নিয়ন্ত্ৰণ কৰিবলৈ কণ্ঠস্বৰৰ নিৰ্দেশ ব্যৱহাৰ কৰক</string>
   <string name="dialog_message_voice_commands">আপুনি এয়া কৈ চাব পাৰে:\n\n• প্ৰতিলিপি কৰক\n• ফ’কাছ কৰা বস্তুটোৰ পৰা পঢ়ক\n• [ছেভ] বিচাৰক\n• [ক্ষিপ্ৰতাৰে] কওক\n• SandFlyৰ ছেটিং\n\nআটাইবোৰ কণ্ঠস্বৰৰ নিৰ্দেশৰ এখন সূচী পাবলৈ \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" বুলি কওক</string>
@@ -824,7 +824,7 @@
   <string name="screen_search_keyword_hint">কীৱৰ্ড হৈছে %1$s</string>
   <string name="screen_search_no_keyword_hint">এতিয়ালৈকে কোনো কীৱৰ্ড নাই। নতুনকৈ কিবা সন্ধান কৰিবলৈ, ৩ টা আঙুলিৰে টিপি কিছু সময় ধৰি থাকক বা SandFlyৰ মেনুখনৰ পৰা স্ক্ৰীনত সন্ধান কৰাটো খোলক।</string>
   <string name="screen_search_no_keyword_hint_pre_r">এতিয়ালৈকে কোনো কীৱৰ্ড নাই। নতুনকৈ কিবা সন্ধান কৰিবলৈ, প্ৰথমে বাওঁফালে ছোৱাইপ কৰি তাৰ পাছত তললৈ ছোৱাইপ কৰক বা SandFlyৰ মেনুখনৰ পৰা স্ক্ৰীনত সন্ধান কৰাটো খোলক।</string>
-  <string name="switch_to_braille_keyboard_failure_msg">ব্ৰেইল কীব’র্ড অন কৰা হোৱা নাই। SandFlyৰ ছেটিঙলৈ যাওক, ব্ৰেইল কীব’র্ড ছেট আপ কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
+  <string name="switch_to_braille_keyboard_failure_msg">ব্ৰেইল কীব’ৰ্ড অন কৰা হোৱা নাই। SandFlyৰ ছেটিঙলৈ যাওক, ব্ৰেইল কীব’ৰ্ড ছেট আপ কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
   <string name="suggestions_window_available">পৰামৰ্শ উপলব্ধ</string>
   <string name="suggestions_window_available_with_gesture">পৰামৰ্শ উপলব্ধ। %1$s এক্সেছ কৰিবলৈ</string>
   <string name="heads_up_window_available">জাননী উপলব্ধ</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">নতুন নিৰ্দেশসমূহৰ সৈতে SandFly কেনেকৈ দ্ৰুততাৰে ব্যৱহাৰ কৰিব পাৰি জানিবলৈ টিপক।</string>
   <string name="dump_node_tree_description">লগত ন’ড ট্ৰী প্ৰিণ্ট কৰা হৈছে।</string>
   <string name="report_gesture_description">শেহতীয়াকৈ এইসমূহ নিৰ্দেশ ব্যৱহাৰ কৰা হৈছে, অনুগ্ৰহ কৰি কোনটো নিৰ্দেশ ভুল সেই বিষয়ে অভিযোগ দিয়ক আৰু সঠিক নিৰ্দেশ কি হোৱা উচিত সেয়া আমাক জনাওক।</string>
-  <string name="update_welcome_talkback_16.1">SandFlyৰ এই আপডে’টটোৱে অধিক ভাষাত স্ক্ৰীনৰ বৰ্ণনা দিয়া সুবিধাৰ সমৰ্থন আৰু ইয়াক ব্যৱহাৰ কৰিবলৈ সহজ কৰি তোলা আন গুণগত মানৰ উন্নীতকৰণ আগবঢ়ায়।\n\nএই সালসলনিসমূহৰ বিষয়ে আপুনি পৰৱৰ্তী কেইখনমান স্ক্ৰীনত অধিক জানিবলৈ পাব।\n\nআপুনি পাছত SandFlyৰ ছেটিং &gt; SandFlyৰ নতুন সুবিধালৈ গৈ এই তথ্য পৰ্যালোচনা কৰিব পাৰে।</string>
-  <string name="update_welcome_talkback_16.1_tts">SandFlyৰ এই আপডে’টটোৱে অধিক ভাষাত স্ক্ৰীনৰ বৰ্ণনা দিয়া সুবিধাৰ সমৰ্থন আৰু ইয়াক ব্যৱহাৰ কৰিবলৈ সহজ কৰি তোলা আন গুণগত মানৰ উন্নীতকৰণ আগবঢ়ায়।\n\nএই সালসলনিসমূহৰ বিষয়ে আপুনি পৰৱৰ্তী কেইখনমান স্ক্ৰীনত অধিক জানিবলৈ পাব।\n\nআপুনি পাছত SandFlyৰ ছেটিং আৰু তাৰ পাছত SandFlyৰ নতুন সুবিধালৈ গৈ এই তথ্য পৰ্যালোচনা কৰিব পাৰে।</string>
+  <string name="update_welcome_talkback_16.1">SandFlyৰ এই আপডে’টটোৱে অধিক ভাষাত “স্ক্ৰীনখন বৰ্ণনা কৰক” সুবিধাৰ সমৰ্থন আৰু ইয়াক ব্যৱহাৰ কৰিবলৈ সহজ কৰি তোলা আন গুণগত মানৰ উন্নীতকৰণ আগবঢ়ায়।\n\nএই সালসলনিসমূহৰ বিষয়ে আপুনি পৰৱৰ্তী কেইখনমান স্ক্ৰীনত অধিক জানিবলৈ পাব।\n\nআপুনি পাছত SandFlyৰ ছেটিং &gt; SandFlyত থকা নতুন সুবিধালৈ গৈ এই তথ্য পৰ্যালোচনা কৰিব পাৰে।</string>
+  <string name="update_welcome_talkback_16.1_tts">SandFlyৰ এই আপডে’টটোৱে অধিক ভাষাত “স্ক্ৰীনখন বৰ্ণনা কৰক” সুবিধাৰ সমৰ্থন আৰু ইয়াক ব্যৱহাৰ কৰিবলৈ সহজ কৰি তোলা আন গুণগত মানৰ উন্নীতকৰণ আগবঢ়ায়।\n\nএই সালসলনিসমূহৰ বিষয়ে আপুনি পৰৱৰ্তী কেইখনমান স্ক্ৰীনত অধিক জানিবলৈ পাব।\n\nআপুনি পাছত SandFlyৰ ছেটিং আৰু তাৰ পাছত SandFlyত থকা নতুন সুবিধালৈ গৈ এই তথ্য পৰ্যালোচনা কৰিব পাৰে।</string>
   <string name="shortcut_for_dictation_title">ভইচ টাইপিঙৰ বাবে শ্বৰ্টকাট</string>
   <string name="shortcut_for_dictation_content">Gboard ব্যৱহাৰ কৰাৰ সময়ত, আপুনি এতিয়া ভইচ টাইপিং আৰম্ভ বা বন্ধ কৰিবলৈ দুটা আঙুলিৰে দুবাৰ টিপাৰ সুবিধা ব্যৱহাৰ কৰিব পাৰে।
 &lt;br&gt;
@@ -881,12 +881,12 @@
   <string name="shortcut_for_dictation_content_without_google_play">Gboard স্ক্ৰীনখনত ওলাই থাকিলে, আপুনি এতিয়া ভইচেৰে দিয়া শ্ৰুতলিপি আৰম্ভ কৰিবলৈ দুটা আঙুলিৰে দুবাৰ টিপা আৰু তাৰ পাছত সেয়া বন্ধ কৰিবলৈ দুটা আঙুলিৰে দুবাৰ টিপাৰ সুবিধা ব্যৱহাৰ কৰিব পাৰে।</string>
   <string name="announcing_text_formatting_title">পাঠৰ ফৰ্মেটিং ঘোষণা কৰা</string>
   <string name="announcing_text_formatting_header">SandFlyএ এতিয়া ব’ল্ড, ইটালিক আৰু পাঠৰ ৰঙৰ দৰে পাঠৰ ফৰ্মেটিঙৰ ক্ষেত্ৰত কৰা সালসলনি ঘোষণা কৰিব পাৰে। আৰম্ভ কৰিবলৈ:</string>
-  <string name="announcing_text_formatting_option1">ফৰ্মেটিং থকা বস্তুটোত ফ’কাছ কৰক, SandFly মেনুখন খোলক আৰু \"পাঠৰ ফৰ্মেটিং বৰ্ণনা কৰক\" বাছনি কৰক বা</string>
+  <string name="announcing_text_formatting_option1">ফৰ্মেটিং থকা বস্তুটোত ফ’কাছ কৰক, SandFlyৰ মেনুখন খোলক আৰু \"পাঠৰ ফৰ্মেট বৰ্ণনা কৰক\" বাছনি কৰক বা</string>
   <string name="announcing_text_formatting_option2">পাঠৰ ফৰ্মেটিঙৰ বাবে এটা পঢ়াৰ নিয়ন্ত্ৰণ যোগ দিয়ক যিয়ে ফৰ্মেটিঙৰ ক্ষেত্ৰত কৰা সালসলনিৰ ঘোষণা অন বা অফ কৰিব।</string>
   <string name="announcing_text_formatting_middle">আপুনি এইটো ব্যৱহাৰ কৰি চাবলৈ সাজু হ’লে, এয়া হৈছে ফৰ্মেট কৰা পাঠৰ এটা উদাহৰণ:</string>
   <string name="announcing_text_formatting_tail">যদি আপুনি ফৰ্মেট কৰা পাঠ কেনেকৈ ঘোষণা কৰা হয় সেয়া সলনি কৰিব বিচাৰে, আপুনি %1$sলৈ যাব পাৰে।</string>
-  <string name="text_formatting_options_settings_path">SandFlyৰ ছেটিং &gt; শব্দৰ বাহুল্যতা &gt; পাঠ ফৰ্মেটিঙৰ বিকল্প</string>
-  <string name="text_formatting_options_settings_path_tts">SandFlyৰ ছেটিং, তাৰ পাছত শব্দৰ বাহুল্যতা, তাৰ পাছত পাঠ ফর্মেটিঙৰ বিকল্প</string>
+  <string name="text_formatting_options_settings_path">SandFlyৰ ছেটিং &gt; শব্দৰ বাহুল্যতা &gt; পাঠ ফৰ্মেটিঙৰ বিকল্পসমূহ</string>
+  <string name="text_formatting_options_settings_path_tts">SandFlyৰ ছেটিং, তাৰ পাছত শব্দৰ বাহুল্যতা, তাৰ পাছত পাঠ ফৰ্মেটিঙৰ বিকল্পসমূহ</string>
   <string name="announcing_text_formatiing_sample">এই পাঠটো &lt;b&gt;ব’ল্ড&lt;/b&gt;ত আছে, এটা আত্মবিশ্বাসী উচ্চ স্বৰ,
 &lt;br&gt;যদিও এইটো &lt;u&gt;আণ্ডাৰলাইন কৰা আছে&lt;/u&gt;, এটা ফুচফুচনি, কোনো সন্দেহ নাই।&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;গোলাপ ফুলবোৰ ৰঙা&lt;/span&gt;, এটা ক্লাছিক, এয়া সত্য,
@@ -897,8 +897,8 @@
 &lt;br&gt;
 &lt;br&gt;ৰঙে স্প্লেশ্ব কৰিব পাৰে, এক সজীৱ ডিছপ্লে’,
 &lt;br&gt;&lt;font color=\"#db372d\"&gt;উজ্জ্বল ৰঙা&lt;/font&gt;ৰ পৰা &lt;font color=\"#128937\"&gt;সতেজ সেউজীয়া&lt;/font&gt;লৈ এক মৃদু দোলনশীল গতি।</string>
-  <string name="update_welcome_talkback_16.2">SandFlyৰ এই আপডে’টটোৱে SandFly ব্যৱহাৰ কৰাটো সহজ কৰি তুলিবলৈ কৰা অন্য উন্নীতকৰণসমূহৰ লগতে কায়িক কীব’ৰ্ডৰ বাবে এটা নতুন \"বৰ্ধিত কীমেপ\", পাঠৰ ফৰ্মেটিং সম্পৰ্কীয় ঘোষণাৰ সমৰ্থন আৰু এটা নতুনকৈ ডিজাইন কৰা ছেটিঙৰ লে’আউট আগবঢ়ায়।\n\nআপুনি পৰৱৰ্তী কেইখনমান স্ক্ৰীনত এই সালসলনিসমূহৰ বিষয়ে অধিক জানিব।\n\nআপুনি এই তথ্যখিনি পাছত SandFlyৰ ছেটিং &gt; SandFlyৰ নতুন সুবিধাসমূহত পৰ্যালোচনা কৰিব পাৰে।</string>
-  <string name="update_welcome_talkback_16.2_tts">SandFlyৰ এই আপডে’টটোৱে SandFly ব্যৱহাৰ কৰাটো সহজ কৰি তুলিবলৈ কৰা অন্য উন্নীতকৰণসমূহৰ লগতে কায়িক কীব’ৰ্ডৰ বাবে এটা নতুন \"বৰ্ধিত কীমেপ\", পাঠৰ ফৰ্মেটিং সম্পৰ্কীয় ঘোষণাৰ সমৰ্থন আৰু এটা নতুনকৈ ডিজাইন কৰা ছেটিঙৰ লে’আউট আগবঢ়ায়।\n\nআপুনি পৰৱৰ্তী কেইখনমান স্ক্ৰীনত এই সালসলনিসমূহৰ বিষয়ে অধিক জানিব।\n\nআপুনি এই তথ্যখিনি পাছত SandFlyৰ ছেটিং, তাৰ পাছত SandFlyৰ নতুন সুবিধাসমূহত পৰ্যালোচনা কৰিব পাৰে।</string>
+  <string name="update_welcome_talkback_16.2">SandFlyৰ এই আপডে’টটোৱে SandFly ব্যৱহাৰ কৰাটো সহজ কৰি তুলিবলৈ কৰা অন্য উন্নীতকৰণসমূহৰ লগতে কায়িক কীব’ৰ্ডৰ বাবে এটা নতুন \"বৰ্ধিত কীমেপ\", পাঠৰ ফৰ্মেটিং সম্পৰ্কীয় ঘোষণাৰ সমৰ্থন আৰু এটা নতুনকৈ ডিজাইন কৰা ছেটিঙৰ লে’আউট আগবঢ়ায়।\n\nআপুনি পৰৱৰ্তী কেইখনমান স্ক্ৰীনত এই সালসলনিসমূহৰ বিষয়ে অধিক জানিব।\n\nআপুনি এই তথ্যখিনি পাছত SandFlyৰ ছেটিং &gt; SandFlyত থকা নতুন সুবিধাত পৰ্যালোচনা কৰিব পাৰে।</string>
+  <string name="update_welcome_talkback_16.2_tts">SandFlyৰ এই আপডে’টটোৱে SandFly ব্যৱহাৰ কৰাটো সহজ কৰি তুলিবলৈ কৰা অন্য উন্নীতকৰণসমূহৰ লগতে কায়িক কীব’ৰ্ডৰ বাবে এটা নতুন \"বৰ্ধিত কীমেপ\", পাঠৰ ফৰ্মেটিং সম্পৰ্কীয় ঘোষণাৰ সমৰ্থন আৰু এটা নতুনকৈ ডিজাইন কৰা ছেটিঙৰ লে’আউট আগবঢ়ায়।\n\nআপুনি পৰৱৰ্তী কেইখনমান স্ক্ৰীনত এই সালসলনিসমূহৰ বিষয়ে অধিক জানিব।\n\nআপুনি এই তথ্যখিনি পাছত SandFlyৰ ছেটিং, তাৰ পাছত SandFlyত থকা নতুন সুবিধাত পৰ্যালোচনা কৰিব পাৰে।</string>
   <string name="new_settings_layout_title">নতুন ছেটিঙৰ লে’আউট</string>
   <string name="new_settings_layout_text">সুবিধাসমূহ বিচাৰি পোৱাটো সহজ কৰি তুলিবলৈ ছেটিঙৰ গোটসমূহ আপডে’ট কৰা হৈছে। কীব’ৰ্ডৰ ছেটিঙৰ দৰে নতুন ছেটিঙৰ শিতানসমূহো উপলব্ধ।</string>
   <string name="split_tap_everywhere_title">আটাইবোৰ ঠাইতে ক্ষিপ্ৰ টাইপিং</string>
@@ -907,15 +907,11 @@
   <string name="keyboard_enhanced_keymap_text">SandFlyৰ এতিয়া কায়িক কীব’ৰ্ডৰ বাবে এক \"বৰ্ধিত কীমেপ\" আছে, য’ত বিভিন্ন ধৰণৰ নতুন কামাণ্ড আৰু শ্বৰ্টকাটৰ সুবিধা আছে। এই উন্নীতকৰণটোত ৱেবত আগতকৈ ভালকৈ নেভিগে’ট কৰিবলৈ এটা \"ব্ৰাউজ ম’ড\"ৰ সুবিধা, কায়িক কীব’ৰ্ডৰ ওপৰত নিৰ্ভৰশীল SandFly ব্যৱহাৰকাৰীৰ বাবে নেভিগেশ্বন আৰু ভাব-বিনিময় সুশৃংখলিত কৰা আদি অন্তৰ্ভুক্ত। আপুনি <xliff:g id="settings_path">%1$s</xliff:g>ত \"বৰ্ধিত কীমেপ\"লৈ সলনি কৰিব পাৰে।\n\nযদি আপুনি কোনো ব্ৰেইল ডিছপ্লে’ ব্যৱহাৰ কৰে, আপুনি নিজৰ ব্ৰেইল ডিছপ্লে’ৰ পৰা পোনপটীয়াকৈ সমল লাভ কৰিবলৈ নতুন ব্ৰাউজ ম’ডৰ শ্বৰ্টকাটসমূহো ব্যৱহাৰ কৰিব পাৰে। এই সালসলনিটোৰ সৈতে খাপ খুৱাবলৈ কিছুমান ব্ৰেইল ডিছপ্লে’ৰ শ্বৰ্টকাট সলনি কৰা হৈছে। আপুনি <xliff:g id="braille_display_settings_path">%2$s</xliff:g>ত ব্ৰেইল ডিছপ্লে’ৰ আটাইবোৰ শ্বৰ্টকাটৰ এখন সূচী চাব পাৰে।</string>
   <string name="keyboard_shortcuts_link">SandFlyৰ ছেটিং &gt; কীব’ৰ্ডৰ শ্বৰ্টকাট</string>
   <string name="keyboard_shortcuts_link_tts">SandFlyৰ ছেটিং, তাৰ পাছত কীব’ৰ্ডৰ শ্বৰ্টকাট</string>
-  <string name="braille_display_settings_link">ব্ৰেইলি ডিছপ্লে’ৰ ছেটিং</string>
+  <string name="braille_display_settings_link">ব্ৰেইল ডিছপ্লে’ৰ ছেটিং</string>
   <string name="keyboard_smart_browse_mode_title">কীব’ৰ্ড: স্মাৰ্ট ব্ৰাউজ ম’ড</string>
   <string name="keyboard_smart_browse_mode_text">SandFlyৰ স্মাৰ্ট ব্ৰাউজ ম’ডে আপুনি ৱেব ব্ৰাউজ কৰাৰ সময়ত কায়িক কীব’ৰ্ডৰ জৰিয়তে টাইপ কৰাত সহায় কৰিবলৈ এটা সম্পাদনা ক্ষেত্ৰত ব্ৰাউজ ম’ড অফ কৰে। তাৰ পাছত আপুনি ৱেবত সম্পাদনা নকৰা ক্ষেত্ৰলৈ পোনপটীয়াকৈ যাওঁতে ই সেইটো পুনৰ অন কৰে যাতে আপুনি দক্ষতাৰে ব্ৰাউজ কৰি থাকিব পাৰে। আপুনি <xliff:g id="settings_path">%1$s</xliff:g>ত \"স্মাৰ্ট ব্ৰাউজ ম’ড\" অন বা অফ কৰিব পাৰে।</string>
-  <string name="advanced_settings_link">SandFlyৰ ছেটিং &gt; উচ্চখাপৰ ছেটিং</string>
-  <string name="advanced_settings_link_tts">SandFlyৰ ছেটিং, উচ্চখাপৰ ছেটিং</string>
   <string name="keyboard_tutorial_title">কীব’ৰ্ড টিউট’ৰিয়েল</string>
   <string name="keyboard_tutorial_text">SandFlyত এতিয়া এটা কীব’ৰ্ডৰ টিউট’ৰিয়েল অন্তৰ্ভুক্ত, যিটো কায়িক কীব’ৰ্ড ব্যৱহাৰ কৰাৰ সময়ত বৰ্ধিত কীমেপৰ বাবে কীব’ৰ্ডৰ শ্বৰ্টকাট আৰু নিৰ্দেশ সমূহৰ বিষয়ে জনাত আপোনাক সহায় কৰিবলৈ ডিজাইন কৰা হৈছে। টিউট’ৰিয়েলটো এক্সেছ কৰিবলৈ, ইয়ালৈ নেভিগে’ট কৰক: <xliff:g id="settings_path">%1$s</xliff:g>।</string>
-  <string name="tutorial_link">SandFlyৰ ছেটিং &gt; SandFlyৰ টিউট’ৰিয়েল</string>
-  <string name="tutorial_link_tts">SandFlyৰ ছেটিং, তাৰ পাছত SandFlyৰ টিউট’ৰিয়েল</string>
   <string name="tutorial_entry_point_title">টিউট’ৰিয়েল</string>
   <string name="welcome_to_talkback_title">SandFlyলৈ স্বাগতম</string>
   <string name="talkback_is_on">SandFly অন আছে</string>
@@ -1068,10 +1064,10 @@
   <string name="checking_notifications_text_tail_tts">আপুনি জাননী অন কৰা এপ্‌সমূহ প্ৰথমে ছেটিং, তাৰ পাছত জাননীলৈ গৈ চাব পাৰে।</string>
   <string name="checking_notifications_tips">জাননীৰ ইতিহাস চাবলৈ, আপোনাৰ স্ক্ৰীনৰ একেবাৰে ওপৰৰ পৰা তললৈ ২ টা আঙুলিৰে ছোৱাইপ কৰক</string>
   <string name="image_description_playground_title">প্ৰতিচ্ছবিৰ বিৱৰণ পাবলৈ চেষ্টা কৰক</string>
-  <string name="image_description_playground_content_one">আপুনি কোনো প্ৰতিচ্ছবিত ফ’কাছ হৈ থাকোঁতে, SandFlyৰ মেনুখন খোলক আৰু \"প্ৰতিচ্ছবি বৰ্ণনা কৰক\" বাছনি কৰক।\n\nতলত এখন ফট’ আছে। ইয়াৰ বাবে বৰ্ণনা এটা লাভ কৰিবলৈ চেষ্টা কৰক।</string>
-  <string name="image_description_playground_content_two">আপুনি SandFlyৰ ছেটিং &gt; স্বয়ংক্ৰিয় বিৱৰণত যিকোনো সময়তে প্ৰতিচ্ছবিৰ বিৱৰণৰ ছেটিং সলনি কৰিব পাৰে।</string>
-  <string name="image_description_playground_content_two_tts">আপুনি প্ৰথমে SandFlyৰ ছেটিঙলৈ গৈ তাৰ পাছত স্বয়ংক্ৰিয় বিৱৰণলৈ গৈ যিকোনো সময়তে প্ৰতিচ্ছবিৰ বিৱৰণৰ ছেটিং সলনি কৰিব পাৰে।</string>
-  <string name="image_description_sample_image_content_description">আৰ্হি প্ৰতিচ্ছবি; SandFlyৰ মেনুখন খুলিবলৈ ৩ টা আঙুলিৰে টিপক আৰু বিৱৰণটো শুনিবলৈ \"প্ৰতিচ্ছবিৰ বিৱৰণ দিয়ক\" বাছনি কৰক।</string>
+  <string name="image_description_playground_content_one">আপুনি কোনো প্ৰতিচ্ছবিত ফ’কাছ হৈ থাকোঁতে, SandFlyৰ মেনুখন খোলক আৰু \"প্ৰতিচ্ছবিখনৰ বিৱৰণ দিয়ক\" বাছনি কৰক।\n\nতলত এখন ফট’ আছে। ইয়াৰ বাবে বৰ্ণনা এটা লাভ কৰিবলৈ চেষ্টা কৰক।</string>
+  <string name="image_description_playground_content_two">আপুনি SandFlyৰ ছেটিং &gt; প্ৰতিচ্ছবি আৰু স্ক্ৰীনৰ বিৱৰণত যিকোনো সময়তে প্ৰতিচ্ছবিৰ বিৱৰণৰ ছেটিং সলনি কৰিব পাৰে।</string>
+  <string name="image_description_playground_content_two_tts">আপুনি প্ৰথমে SandFlyৰ ছেটিঙলৈ গৈ তাৰ পাছত প্ৰতিচ্ছবি আৰু স্ক্ৰীনৰ বিৱৰণলৈ গৈ যিকোনো সময়তে প্ৰতিচ্ছবিৰ বিৱৰণৰ ছেটিং সলনি কৰিব পাৰে।</string>
+  <string name="image_description_sample_image_content_description">আৰ্হি প্ৰতিচ্ছবি; SandFlyৰ মেনুখন খুলিবলৈ ৩ টা আঙুলিৰে টিপক আৰু বিৱৰণটো শুনিবলৈ \"প্ৰতিচ্ছবিখনৰ বিৱৰণ দিয়ক\" বাছনি কৰক।</string>
   <string name="practice_gestures_title">অনুশীলনৰ নিৰ্দেশ</string>
   <string name="practice_keyboard_gestures_title">কীব’ৰ্ডৰ শ্বৰ্টকাটৰ অনুশীলন কৰক</string>
   <string name="pref_gesture_set_key_title">নিৰ্দেশৰ ছেট</string>
@@ -1106,7 +1102,7 @@
   <string name="wear_training_volume_down_text">প্ৰথমে সোঁফালে তাৰ পাছত তললৈ ছোৱাইপ কৰক</string>
   <string name="wear_training_open_talkback_menu_title">SandFlyৰ মেনুখন খোলক</string>
   <string name="wear_training_open_talkback_menu_text">আপোনাক সঘনাই প্ৰয়োজন হ’ব পৰা ছেটিং আৰু নিয়ন্ত্ৰণসমূহ খুলিবলৈ, প্ৰথমে তললৈ আৰু তাৰ পাছত সোঁফালে ছোৱাইপ কৰক</string>
-  <string name="wear_training_typing_title">টাইপ কৰি আছে</string>
+  <string name="wear_training_typing_title">টাইপিং</string>
   <string name="wear_training_typing_text1">কীব’ৰ্ডৰ জৰিয়তে টাইপ কৰিবলৈ, কীব’ৰ্ডৰ ওপৰত আপোনাৰ আঙুলি পিছলাই নিয়ক। আপুনি টাইপ কৰিবলৈ বিচৰা আখৰটো শুনিলে আপোনাৰ আঙুলি উঠাওক।</string>
   <string name="wear_training_typing_text2">কীব’ৰ্ডখন লুকুৱাবলৈ আৰু আপোনাৰ ইনপুটটো পৰীক্ষাৰ কৰিবলৈ, ২ টা আঙুলিৰে আপোনাৰ স্ক্ৰীনখনৰ একেবাৰে ওপৰৰ পৰা তললৈ ছোৱাইপ কৰক।</string>
   <string name="wear_training_typing_text3">কীব’ৰ্ডখনলৈ উভতি যাবলৈ, ২ টা আঙুলিৰে আপোনাৰ স্ক্ৰীনখনৰ একেবাৰে তলৰ পৰা ওপৰলৈ ছোৱাইপ কৰক।</string>
@@ -1132,7 +1128,7 @@
   <string name="title_pref_blue">নীলা</string>
   <string name="title_pref_grey">ছাই-বৰণীয়া</string>
   <string name="survey_setting_title">আপোনাৰ মতামত শ্বেয়াৰ কৰক</string>
-  <string name="title_summarize_view">স্ক্ৰীনখন বর্ণনা কৰক</string>
+  <string name="title_summarize_view">স্ক্ৰীনখন বৰ্ণনা কৰক</string>
   <string name="detected_result">চিনাক্ত কৰা হৈছে: %1$s</string>
   <string name="title_image_caption">প্ৰতিচ্ছবিখনৰ বিৱৰণ দিয়ক</string>
   <string name="image_caption_with_gemini_prefix">এই প্ৰতিচ্ছবিৰ বৰ্ণনা দিয়ক। সঁহাৰিটোত মাৰ্কআপ ব্যৱহাৰ নকৰিব।</string>
@@ -1221,7 +1217,7 @@
   <string name="delete_icon_detection_dialog_title">চিহ্নৰ স্বয়ংক্ৰিয় বিৱৰণ মচিবনে?</string>
   <string name="delete_image_description_dialog_title">প্ৰতিচ্ছবিৰ স্বয়ংক্ৰিয় বিৱৰণ মচিবনে?</string>
   <string name="delete_all_image_captioning_dialog_title">প্ৰতিচ্ছবি আৰু চিহ্নৰ স্বয়ংক্ৰিয় বিৱৰণ মচিবনে?</string>
-  <string name="delete_dialog_message">বৰ্ণনা পাছত পুনৰ লাভ কৰিবলৈ, আপুনি SandFly ছেটিঙৰ পৰা এই সুবিধাটো ডাউনল’ড কৰিব পাৰে</string>
+  <string name="delete_dialog_message">বৰ্ণনা পাছত পুনৰ লাভ কৰিবলৈ, আপুনি SandFlyৰ ছেটিঙৰ পৰা এই সুবিধাটো ডাউনল’ড কৰিব পাৰে</string>
   <string name="delete_all_dialog_message">এইটোৱে চিহ্ন আৰু প্ৰতিচ্ছবি দুয়োটাৰ বাবেই স্বয়ংক্ৰিয় বিৱৰণ মচে।\n\nপাছত পুনৰ বিৱৰণ পাবলৈ, আপুনি SandFlyৰ ছেটিঙৰ পৰা এই সুবিধাসমূহ ডাউনল’ড কৰিব পাৰে।</string>
   <string name="delete_dialog_positive_button_text">মচক</string>
   <string name="delete_dialog_negative_button_text">বাতিল কৰক</string>
@@ -1257,11 +1253,11 @@
   <string name="pref_auto_enter_table_navigation_title">টেবুলত টেবুল নেভিগেশ্বনলৈ সলনি কৰক</string>
   <string name="title_text_formatting_menu">পাঠৰ ফৰ্মেট বৰ্ণনা কৰক</string>
   <string name="summary_text_formatting_menu">ব’ল্ড কৰা, ইটালিক কৰা, আণ্ডাৰলাইন কৰা আৰু তেনেধৰণৰ বহুতো সালসলনিৰ বাবে</string>
-  <string name="title_text_formatting_inline">পাঠ কোৱাৰ ফৰ্মেটিং</string>
+  <string name="title_text_formatting_inline">পাঠৰ ফৰ্মেটিং কওক</string>
   <string name="title_switch_text_formatting">পাঠৰ ফৰ্মেটিং কওক</string>
   <string name="summary_text_formatting_verbosity">ব’ল্ড কৰা, ইটালিক কৰাৰ দৰে সালসলনি</string>
   <string name="summary_text_formatting_selector">ব’ল্ড আৰু ইটালিকৰ দৰে ফৰ্মেটিং ডাঙৰকৈ পঢ়া হয় নে নহয় সলনি কৰক</string>
-  <string name="title_text_formatting_verbosity_options">পাঠ ফর্মেটিঙৰ বিকল্পসমূহ</string>
+  <string name="title_text_formatting_verbosity_options">পাঠ ফৰ্মেটিঙৰ বিকল্পসমূহ</string>
   <string name="title_text_formatting_options">ফর্মেটিঙৰ বিকল্পসমূহ</string>
   <string name="header_text_formatting_options">পাঠ ফর্মেটিঙৰ ঘোষণাসমূহ</string>
   <string name="title_formatting_optoin_bold">ব’ল্ড</string>
@@ -1312,7 +1308,7 @@
     <string name="shortcut_previous_voice_profile">পূৰ্বৱৰ্তী কণ্ঠৰ প্ৰ’ফাইল</string>
     <string name="shortcut_next_voice_profile">পৰৱৰ্তী কণ্ঠৰ প্ৰ’ফাইল</string>
     <string name="title_pref_voice_profile_in_use">ব্যৱহাৰ হৈ থকা কণ্ঠৰ প্ৰ’ফাইল</string>
-    <string name="title_pref_add_voice_profile">কণ্ঠৰ প্ৰ\'ফাইল যোগ কৰক</string>
+    <string name="title_pref_add_voice_profile">কণ্ঠৰ প্ৰ’ফাইল যোগ কৰক</string>
     <string name="voice_profile_new_name">কণ্ঠৰ প্ৰ’ফাইল <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken"><xliff:g id="name" example="Reading">%1$s</xliff:g> নামৰ এটা কণ্ঠৰ প্ৰ’ফাইল ইতিমধ্যে আছে</string>
     <string name="title_pref_voice_profile_name">নাম</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">অধিক</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watchৰ বাবে নিৰ্দেশ সংৰক্ষিত কৰক</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFlyএ দুটা আঙুলিৰে এবাৰ আৰু দুবাৰ টিপা নিয়ন্ত্ৰণ কৰা বন্ধ কৰে, যাতে Samsung Vibration Watchএ সেইবোৰ ব্যৱহাৰ কৰিব পাৰে। আপোনাৰ ঘড়ীৰ সাধ্য সুবিধাৰ ছেটিঙত Vibration Watch সক্ষম কৰক।</string>
-    <string name="shortcut_reserved_for_vibration_watch">উচ্চখাপৰ ছেটিঙত Vibration Watchৰ বাবে সংৰক্ষিত</string>
     <string name="title_pref_speakerphone_away_from_ear">কাণৰ পৰা আঁতৰালে স্পীকাৰ</string>
     <string name="summary_pref_speakerphone_away_from_ear">কলৰ সময়ত, আপুনি ফ’নটো কাণৰ পৰা আঁতৰালে স্পীকাৰলৈ সলনি কৰে, আৰু পুনৰ কাণত ধৰিলে ইয়েৰপিচলৈ সলনি কৰে।</string>
     <string name="summary_pref_speakerphone_needs_permission">Androidএ স্ক্ৰীন ৰীডাৰক নিদিয়া এটা অনুমতিৰ প্ৰয়োজন। এইটো দিবলৈ, adb বা Shizukuৰে এই কামাণ্ডটো চলাওক, তাৰ পাছত এই স্ক্ৰীনলৈ উভতি আহক: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">এপ</string>
     <string name="speech_control_no_apps">এতিয়ালৈকে কোনো এপে কথা ক’বলৈ অনুৰোধ কৰা নাই।</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g>ক SandFlyৰ জৰিয়তে কথা ক’বলৈ অনুমতি দিবনে?</string>
-    <string name="speech_control_ask_text">ই আপোনাৰ SandFly কণ্ঠত পাঠ ক’ব পাৰে। আপুনি উচ্চখাপৰ ছেটিঙত এইটো সলনি কৰিব পাৰে।</string>
     <string name="speech_control_allow">অনুমতি দিয়ক</string>
     <string name="speech_control_deny">অনুমতি নিদিব</string>
     <string name="permission_speak_label">SandFlyৰ জৰিয়তে কথা কোৱা</string>
@@ -1422,7 +1416,7 @@
     <string name="notification_part_app">এপৰ নাম</string>
     <string name="notification_part_time">সময়</string>
     <string name="notification_part_playback">প্লে’ হৈ আছে বা পজ কৰা আছে</string>
-    <string name="notification_list_title">জাননীসমূহ</string>
+    <string name="notification_list_title">জাননী</string>
     <string name="notification_list_empty">কোনো জাননী নাই</string>
     <string name="notification_list_no_access">জাননীৰ এক্সেছ অফ আছে</string>
     <string name="notification_list_grant_access">জাননীৰ এক্সেছ অন কৰক</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%dটা জাননী</item>
         <item quantity="other">%dটা জাননী</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly অন আছে। অফ কৰিবলৈ স্ক্ৰীনত ২ টা আঙুলি ৫ ছেকেণ্ডৰ বাবে ধৰি ৰাখক। এই বাৰ্তাটো দেখুওৱা বন্ধ কৰিবলৈ, SandFlyৰ ছেটিং &gt; উচ্চখাপৰ ছেটিং &gt; SandFly অফ কৰাৰ নিৰ্দেশনা দেখুৱাওক অফ কৰক।</string>
     <string name="edge_gestures_title">কাষ</string>
     <string name="title_pref_audio_output_device">অডিঅ’ আউটপুট ডিভাইচ</string>
     <string name="dialog_title_audio_output_device">SandFlyৰ ধ্বনি ক’ত বজাব বাছনি কৰক</string>
@@ -1550,7 +1543,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> এৰি দিয়া হ’ল। <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFlyএ এটা বস্তুৰ সবিশেষ এই ক্ৰমত কয়। সলনি কৰিবলৈ, এটা সবিশেষ স্পৰ্শ কৰি ধৰি ৰাখক, তাৰ পাছত ওপৰলৈ বা তললৈ টানি নিয়ক। SandFly অন থাকিলে, দুবাৰ টিপি ধৰি ৰাখক, তাৰ পাছত টানি নিয়ক। আপুনি “ওপৰলৈ নিয়ক” আৰু “তললৈ নিয়ক” কাৰ্যও ব্যৱহাৰ কৰিব পাৰে।</string>
     <string name="title_pref_speak_items_before_scroll">বস্তুবোৰ স্ক্ৰ’ল হৈ দৃশ্যমান হোৱাৰ আগতে কওক</string>
-    <string name="gemini_error_api_key">Geminiএ API কীটো গ্ৰহণ নকৰিলে। স্বয়ংক্ৰিয় বিৱৰণৰ ছেটিঙত কীটো পৰীক্ষা কৰক।</string>
+    <string name="gemini_error_api_key">Geminiএ API কীটো গ্ৰহণ নকৰিলে। “প্ৰতিচ্ছবি আৰু স্ক্ৰীনৰ বিৱৰণ”ৰ ছেটিঙত কীটো পৰীক্ষা কৰক।</string>
     <string name="gemini_error_quota">আপোনাৰ Gemini API কীৰ ব্যৱহাৰৰ সীমা পাৰ হৈছে। পিছত পুনৰ চেষ্টা কৰক।</string>
     <string name="gemini_error_busy">Gemini এই মুহূৰ্তত ব্যস্ত। অলপ পিছত পুনৰ চেষ্টা কৰক।</string>
     <string name="gemini_error_timeout">Geminiএ উত্তৰ দিবলৈ অতি বেছি সময় ল’লে। পুনৰ চেষ্টা কৰক।</string>
@@ -1746,7 +1739,7 @@
     <string name="image_qna_stop_listening">শুনা বন্ধ কৰক</string>
     <string name="image_qna_type_question">এটা প্ৰশ্ন টাইপ কৰক</string>
     <string name="shortcut_dictate">শ্ৰুতিলিখন</string>
-    <string name="title_pref_ai_dictation">এআইৰ সহায়ত ডিক্টেচন শুধৰাওক</string>
+    <string name="title_pref_ai_dictation">এআইৰ সহায়ত শ্ৰুতিলিখন শুধৰাওক</string>
     <string name="dictation_not_corrected">শুধৰণি কৰা হোৱা নাই। চিনাক্ত কৰা অনুসৰি টাইপ কৰা হৈছে।</string>
     <string name="dictation_nothing_recognized">একো চিনি নাপালে</string>
     <string name="dictation_unavailable">বাক্য চিনাক্তকৰণ উপলব্ধ নহয়</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper মডেল</string>
     <string name="dictation_whisper_use">ব্যৱহাৰ কৰক</string>
     <string name="title_pref_dictation_ai_service">শ্ৰুতিলিখনৰ বাবে এআই সেৱা</string>
-    <string name="dictation_ai_same">স্বয়ংক্ৰিয় বিৱৰণৰ দৰে একে</string>
     <string name="title_pref_browse_mode_per_app">প্ৰতিটো এপত ব্ৰাউজ মোড মনত ৰাখিব</string>
     <string name="title_pref_export_settings">ছেটিংছ ৰপ্তানি কৰক</string>
     <string name="title_pref_import_settings">ছেটিংছ আমদানি কৰক</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">পূৰ্বৱৰ্তী ট্ৰেক</string>
     <string name="sound_mode_needs_access">নিস্তব্ধ অন বা অফ কৰিবলৈ “অসুবিধা নিদিব”ৰ এক্সেছৰ অনুমতি দিয়ক।</string>
     <string name="title_pref_dictation_auto_stop">নীৰৱতাৰ পাছত স্বয়ংক্ৰিয়ভাৱে বন্ধ</string>
+    <string name="dictation_ai_same">“প্ৰতিচ্ছবি আৰু স্ক্ৰীনৰ বিৱৰণ”ৰ দৰে একে</string>
+    <string name="navigation_settings_link">SandFlyৰ ছেটিং &gt; নেভিগেশ্বন</string>
+    <string name="navigation_settings_link_tts">SandFlyৰ ছেটিং, তাৰ পাছত নেভিগেশ্বন</string>
+    <string name="shortcut_reserved_for_vibration_watch">“আঙুলিৰ স্পৰ্শৰে নিৰ্দেশসমূহ”ত Vibration Watchৰ বাবে সংৰক্ষিত</string>
+    <string name="speech_control_ask_text">ই আপোনাৰ SandFly কণ্ঠত পাঠ ক’ব পাৰে। আপুনি ইয়াক “ছেটিং”, “কথন”, “অন্য এপক কথা ক’বলৈ দিয়ক”ত সলনি কৰিব পাৰে।</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly অন হৈ আছে। অফ কৰিবলৈ স্ক্ৰীনত ২ টা আঙুলিৰে ৫ ছেকেণ্ডৰ বাবে হেঁচি ৰাখক। এই বাৰ্তাটো দেখুওৱা বন্ধ কৰিবলৈ, SandFlyৰ ছেটিং &gt; পজ আৰু অফ কৰা &gt; “SandFly অফ কৰাৰ নিৰ্দেশনা দেখুৱাওক” অফ কৰক।</string>
+    <string name="tutorial_link">SandFlyৰ ছেটিং &gt; সহায় আৰু প্ৰতিক্ৰিয়া &gt; SandFlyৰ টিউট’ৰিয়েল</string>
+    <string name="tutorial_link_tts">SandFlyৰ ছেটিং, তাৰ পাছত সহায় আৰু প্ৰতিক্ৰিয়া, তাৰ পাছত SandFlyৰ টিউট’ৰিয়েল</string>
 </resources>

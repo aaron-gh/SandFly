@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">כדי להשתמש במצב סמן, צריך להחליף את מפת המקשים שמוגדרת כברירת מחדל במפת המקשים המשופרת. השינוי הזה יעדכן חלק מהפקודות של צג הברייל</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">הגדרות</string>
   <string name="bd_command_change_dialog_title">חלק מהפקודות עודכנו</string>
-  <string name="bd_command_change_dialog_message">‏הפקודות של צג הברייל שעודכנו בגרסה הזו של SandFly:‏\n\n• הפריט הקודם: לוחצים על הנקודות 1 ו-7\n\n• הפריט הבא: לוחצים על הנקודות 4 ו-8\n\n• הממשק הקודם לשליטה בהקראה: לוחצים על הנקודות 2, 3, 7 ו-8\n\n• הממשק הבא לשליטה בהקראה: לוחצים על הנקודות 5, 6, 7 ו-8</string>
+  <string name="bd_command_change_dialog_message">‏הפקודות של צג הברייל שעודכנו בגרסה הזו של SandFly:‏\n\n• הפריט הקודם: לוחצים על הנקודות 1 ו-7\n\n• הפריט הבא: לוחצים על הנקודות 4 ו-8\n\n• כפתור ההקראה הקודם: לוחצים על הנקודות 2, 3, 7 ו-8\n\n• כפתור ההקראה הבא: לוחצים על הנקודות 5, 6, 7 ו-8</string>
   <string name="bd_preference_braille_contracted">ברייל מכווץ</string>
   <string name="bd_preference_braille_uncontracted">ברייל לא מכווץ</string>
   <string name="bd_braille_grade_tips">‏כדי לעבור במהירות בין מצב ברייל מכווץ למצב ברייל לא מכווץ באמצעות צג ברייל, לוחצים על מקש הרווח ועל הנקודות 1, 2, 4 ו-5.\n\nהפקודה הזו פועלת כשמשתמשים בשפה עם שתי רמות ברייל.</string>
@@ -189,8 +189,8 @@
   <string name="bd_cmd_nav_item_previous">הפריט הקודם</string>
   <string name="bd_cmd_scroll_forward">גלילה קדימה</string>
   <string name="bd_cmd_scroll_backward">גלילה אחורה</string>
-  <string name="bd_cmd_move_by_reading_granularity_or_adjust_reading_control_forward">העברת ההתמקדות ברכיב הממשק קדימה או התאמה של הממשק לשליטה בהקראה כלפי מעלה</string>
-  <string name="bd_cmd_move_by_reading_granularity_or_adjust_reading_control_backward">העברת ההתמקדות ברכיב הממשק אחורה או התאמה של הממשק לשליטה בהקראה כלפי מטה</string>
+  <string name="bd_cmd_move_by_reading_granularity_or_adjust_reading_control_forward">העברת ההתמקדות ברכיב הממשק קדימה או התאמה של כפתור ההקראה כלפי מעלה</string>
+  <string name="bd_cmd_move_by_reading_granularity_or_adjust_reading_control_backward">העברת ההתמקדות ברכיב הממשק אחורה או התאמה של כפתור ההקראה כלפי מטה</string>
   <string name="bd_cmd_nav_character_next">התו הבא</string>
   <string name="bd_cmd_nav_character_previous">התו הקודם</string>
   <string name="bd_cmd_nav_word_next">המילה הבאה</string>
@@ -226,7 +226,7 @@
   <string name="bd_cmd_open_talkback_menu">‏פתיחה של תפריט SandFly</string>
   <string name="bd_cmd_toggle_voice_feedback">‏הפעלה או השבתה של הדיבור ב-SandFly</string>
   <string name="bd_cmd_read_stop">הפסקת הקריאה</string>
-  <string name="bd_cmd_talkback_settings">‏פתיחה של הגדרות SandFly</string>
+  <string name="bd_cmd_talkback_settings">‏פתיחת ההגדרות של SandFly</string>
   <string name="bd_cmd_switch_to_next_input_language">מעבר לשפת ההקלדה הבאה</string>
   <string name="bd_cmd_switch_to_next_output_language">מעבר לשפת ההקראה הבאה</string>
   <string name="bd_cmd_toggle_contracted_mode">מעבר בין מצב מקוצר ומצב לא מקוצר</string>
@@ -304,7 +304,7 @@
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">חלק מהפקודות לא זמינות</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_message">‏הפקודות לניווט, הגדרות הברייל וחלק מהתכונות של SandFly לא זמינות בזמן הקלדה או עריכה.\n\nכדי להשתמש בפקודות האלה, יש לסגור קודם את המקלדת.</string>
   <string name="bd_caption_tutorial_dialog_title">כתוביות בצג הברייל</string>
-  <string name="bd_caption_tutorial_dialog_message">‏כדי להפעיל או להשבית את הכתוביות בסרטון הזה, מקישים על מקש הרווח ועל הנקודות 1, 4, 7 ו-8.\n\nכדי שכתוביות תמיד יופעלו בסוגי מדיה שנתמכים, מפעילים את \"הפעלת כתוביות בצג הברייל\" בהגדרות.</string>
+  <string name="bd_caption_tutorial_dialog_message">‏כדי להפעיל או להשבית את הכתוביות בסרטון הזה, מקישים על מקש הרווח ועל הנקודות 1, 4, 7 ו-8.\n\nכדי שכתוביות תמיד יופעלו בסוגי מדיה שנתמכים, מפעילים את \"קבלת כתוביות בצג הברייל\" בהגדרות.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">ההודעה הזו מוצגת בכל פעם שיש כתוביות</string>
   <string name="bd_usb_connect_dialog_title">‏צג הברייל מחובר ל-USB</string>
   <string name="bd_usb_connect_dialog_message">‏הסוללה של %s טוענת את צג הברייל.\n\nאם צריך לעבור ל-Bluetooth, יש לנתק את ה-USB או את מפצל ה-USB ולעבור להגדרות של SandFly &gt; \'צג ברייל\'.</string>

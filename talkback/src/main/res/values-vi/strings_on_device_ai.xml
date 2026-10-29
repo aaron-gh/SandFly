@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">AI trên thiết bị</string>
-    <string name="summary_pref_on_device_ai">Mô tả hình ảnh và mô tả màn hình bằng một mô hình trên điện thoại này, không cần khoá API</string>
+    <string name="summary_pref_on_device_ai">Mô tả hình ảnh và Mô tả nội dung trên màn hình bằng một mô hình trên điện thoại này, không cần khoá API</string>
     <string name="pref_on_device_ai_enable">Dùng AI trên thiết bị</string>
     <string name="pref_on_device_ai_enable_summary">Hình ảnh và ảnh chụp màn hình được mô tả trên điện thoại này và không bao giờ được gửi đến Google. Cách này chậm hơn đám mây và tốn pin hơn.</string>
     <string name="pref_on_device_ai_enable_needs_model">Hãy tải xuống hoặc nhập một mô hình trước.</string>
@@ -48,14 +48,14 @@
     <string name="on_device_ai_import_done">Đã cài đặt mô hình</string>
     <string name="on_device_ai_import_failed">Tệp đó không phải là tệp mô hình Gemma 4 được hỗ trợ.</string>
     <string name="pref_on_device_ai_timeout">Giới hạn thời gian trả lời</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly ngừng chờ sau khoảng thời gian này. Mô tả màn hình mất nhiều thời gian hơn mô tả hình ảnh.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. SandFly ngừng chờ sau khoảng thời gian này. Mô tả nội dung trên màn hình mất nhiều thời gian hơn Mô tả hình ảnh.</string>
     <string name="on_device_ai_choose_timeout">Giới hạn thời gian trả lời</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="other">%1$d phút</item>
     </plurals>
     <string name="pref_on_device_ai_processor">Bộ xử lý</string>
     <string name="pref_on_device_ai_short_prompts">Mô tả màn hình ngắn hơn</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Tính năng mô tả màn hình yêu cầu ít chi tiết hơn nên trả lời nhanh hơn. Tắt tuỳ chọn này để có nội dung mô tả đầy đủ hơn.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">Mô tả nội dung trên màn hình yêu cầu ít chi tiết hơn nên trả lời nhanh hơn. Tắt tuỳ chọn này để có nội dung mô tả đầy đủ hơn.</string>
     <string name="on_device_ai_error_network">Quá trình tải xuống đã dừng. Hãy kiểm tra kết nối rồi thử lại. Quá trình tải sẽ tiếp tục từ chỗ đã dừng.</string>
     <string name="on_device_ai_error_http">Máy chủ tải xuống không chấp nhận yêu cầu. Hãy thử lại sau hoặc nhập một tệp.</string>
     <string name="on_device_ai_error_corrupt">Tệp không khớp với mô hình dự kiến nên đã bị xoá. Hãy thử lại.</string>

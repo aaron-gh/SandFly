@@ -13,7 +13,7 @@
   <string name="label_manager_summary_title">حسب ضرورت لیبلز کا نظم کریں</string>
   <string name="label_manager_package_title">%1$s کیلئے لیبلز کا نظم کریں</string>
   <string name="manage_label">لیبل کا نظم کریں</string>
-  <string name="label_manager_no_packages_message">‏فی الحال کوئی حسب ضرورت لیبلز موجود نہیں ہیں\n\n<b>حسب ضرورت لیبل بنانے کا طریقہ</b>\nبغیر لیبل والی ایک تصویر پر نیویگیٹ کریں اور SandFly مینیو سے ایک لیبل شامل کریں</string>
+  <string name="label_manager_no_packages_message">‏فی الحال کوئی حسب ضرورت لیبلز موجود نہیں ہیں\n\n<b>حسب ضرورت لیبل بنانے کا طریقہ</b>\nبغیر لیبل والی ایک تصویر پر نیویگیٹ کریں اور SandFly مینو سے ایک لیبل شامل کریں</string>
   <string name="label_manager_timestamp_text">آخری بار ترمیم کیا گیا %1$s</string>
   <string name="search_mode_cancel">تلاش منسوخ ہو گئی۔</string>
   <string name="notification_type_status_started">شروع ہوا</string>
@@ -93,7 +93,7 @@
   <string name="title_pref_advanced_settings">جدید ترین ترتیبات</string>
   <string name="title_pref_show_exit_watermark">‏‫SandFly کو آف کرنے کے لیے ہدایات دکھائیں</string>
   <string name="summary_pref_show_exit_watermark">SandFly آن ہونے پر اسے آف کرنے کا طریقہ دکھاتا ہے</string>
-  <string name="talkback_exit_watermark_text">‏‫SandFly آن ہے۔ آف کرنے کے لیے 2 انگلیاں اسکرین پر 5 سیکنڈ تک دبائے رکھیں۔ اس پیغام کو دکھانا بند کرنے کے لیے، SandFly مینیو کھولنے کے لیے 3 انگلیوں سے تھپتھپائیں۔</string>
+  <string name="talkback_exit_watermark_text">‏‫SandFly آن ہے۔ آف کرنے کے لیے 2 انگلیاں اسکرین پر 5 سیکنڈ تک دبائے رکھیں۔ اس پیغام کو دکھانا بند کرنے کے لیے، SandFly مینو کھولنے کے لیے 3 انگلیوں سے تھپتھپائیں۔</string>
   <string name="talkback_exit_watermark_hint_text">‏بینر دکھا رہا ہے جو ظاہر کرتا ہے کہ SandFly آن ہے۔ ‫SandFly آف کرنے کے لیے، 2 انگلیاں اسکرین پر 5 سیکنڈ تک دبائے رکھیں۔ اس بینر کو ہٹانے کے لیے، SandFly کی ترتیبات پر جائیں۔</string>
   <string name="reset_gesture_settings_title">اشاروں کی ترتیبات ری سیٹ کریں</string>
   <string name="one_finger_gestures_title">1 انگلی</string>
@@ -362,12 +362,12 @@
   <string name="shortcut_title_basic_navigation">بنیادی نیویگیشن</string>
   <string name="shortcut_title_system_actions">سسٹم کی کارروائیاں</string>
   <string name="shortcut_title_reading_control">پڑھنا</string>
-  <string name="shortcut_title_menu_control">مینیو اور کنٹرولز</string>
+  <string name="shortcut_title_menu_control">مینو اور کنٹرولز</string>
   <string name="shortcut_title_text_editing">متن میں ترمیم کریں</string>
   <string name="shortcut_title_special_features">دیگر</string>
   <string name="shortcut_unassigned">تفویض کرنے کیلئے تھپتھپائیں</string>
   <string name="shortcut_not_customizable">%1$s، حسب ضرورت بنانے لائق نہیں ہے</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">وائبریشن گھڑی آن ہونے پر دستیاب نہیں ہے</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Vibration Watch آن ہونے پر دستیاب نہیں ہے</string>
   <string name="shortcut_next">اگلا آئٹم</string>
   <string name="shortcut_previous">پچھلا آئٹم</string>
   <string name="shortcut_scroll_forward">آگے سکرول کریں</string>
@@ -386,7 +386,7 @@
   <string name="shortcut_notifications">اطلاعات</string>
   <string name="shortcut_quick_settings">فوری ترتیبات</string>
   <string name="shortcut_show_custom_actions">حسب ضرورت کارروائیاں دکھائیں</string>
-  <string name="shortcut_talkback_breakout">‏SandFly مینیو کھولیں</string>
+  <string name="shortcut_talkback_breakout">‏SandFly مینو کھولیں</string>
   <string name="shortcut_pause_or_resume_feedback">اسپیچ موقوف یا دوبارہ شروع کریں</string>
   <string name="shortcut_toggle_voice_feedback">اسپیچ آن یا آف کریں</string>
   <string name="shortcut_read_from_top">سب سے اوپر سے پڑھیں</string>
@@ -401,13 +401,13 @@
   <string name="shortcut_perform_click_action">فعال کریں</string>
   <string name="shortcut_perform_double_click_action">دوہرا کلک کریں</string>
   <string name="shortcut_perform_long_click_action">ٹچ کریں اور دبائے رکھیں</string>
-  <string name="talkback_menu_title">‏SandFly مینیو</string>
+  <string name="talkback_menu_title">‏SandFly مینو</string>
   <string name="talkback_menu_close_button_text">@string/close_string</string>
-  <string name="talkback_menu_more_options_text">آپ کے سیٹ اپ مکمل کرنے یا اپنے آلے کو غیر مقفل کرنے کے بعد مینیو کے مزید اختیارات دستیاب ہوتے ہیں</string>
-  <string name="talkback_menu_title_content_description">‏SandFly مینو۔ SandFly مینیو میں اختیارات کو دریافت کرنے کے لیے بائیں سوائپ کریں۔‎\n\nٹیوٹوریل پر واپس جانے کے لیے، اپنی اسکرین کے کنارے سے دائیں یا بائیں سوائپ کریں کے لیے 2 انگلیوں سے استعمال کریں۔</string>
+  <string name="talkback_menu_more_options_text">آپ کے سیٹ اپ مکمل کرنے یا اپنے آلے کو غیر مقفل کرنے کے بعد مینو کے مزید اختیارات دستیاب ہوتے ہیں</string>
+  <string name="talkback_menu_title_content_description">‏SandFly مینو۔ SandFly مینو میں اختیارات کو دریافت کرنے کے لیے بائیں سوائپ کریں۔‎\n\nٹیوٹوریل پر واپس جانے کے لیے، اپنی اسکرین کے کنارے سے دائیں یا بائیں سوائپ کریں کے لیے 2 انگلیوں سے استعمال کریں۔</string>
   <string name="shortcut_show_language_options">بول چال کی زبان تبدیل کریں</string>
-  <string name="shortcut_select_next_setting">پڑھنے سے متعلق اگلا کنٹرول</string>
-  <string name="shortcut_select_previous_setting">پڑھنے سے متعلق پچھلا کنٹرول</string>
+  <string name="shortcut_select_next_setting">اگلا ریڈنگ کنٹرول</string>
+  <string name="shortcut_select_previous_setting">پچھلا ریڈنگ کنٹرول</string>
   <string name="shortcut_pass_through_next">بالواسطہ سسٹم کا اشارہ</string>
   <string name="shortcut_a11y_button">ایکسیسبیلٹی شارٹ کٹ</string>
   <string name="shortcut_a11y_button_long_press">ایکسیسبیلٹی شارٹ کٹ ہولڈ کریں</string>
@@ -448,7 +448,7 @@
   <string name="shortcut_show_learn_mode_page">کی بورڈ شارٹ کٹس کی مشق کریں</string>
   <string name="shortcut_announce_phonetic_pronunciation">فوکسڈ آئٹم کے لیے صوتیاتی تلفظ کے ساتھ حروف بولیں</string>
   <string name="shortcut_cycle_punctuation_verbosity">سائیکل اوقاف کی سطح</string>
-  <string name="title_local_breakout_no_items">کوئی مینیو آئٹمز نہیں ہیں۔</string>
+  <string name="title_local_breakout_no_items">کوئی مینو آئٹمز نہیں ہیں۔</string>
   <string name="title_web_breakout_next_section">اگلا سیکشن</string>
   <string name="title_web_breakout_next_list">اگلی فہرست</string>
   <string name="title_web_breakout_next_control">اگلا کنٹرول</string>
@@ -473,7 +473,7 @@
   <string name="title_labeling_controls">لیبلز</string>
   <string name="title_labeling_show_or_hide_controls">لیبلز شامل کریں یا ان میں ترمیم کریں</string>
   <string name="title_granularity">نیویگیشن</string>
-  <string name="title_read_from_top">اوپر سے پڑھیں</string>
+  <string name="title_read_from_top">سب سے اوپر سے پڑھیں</string>
   <string name="title_copy_last_spoken_phrase">آخری بولے گئے جملے کو کاپی کریں</string>
   <string name="title_spell_last_spoken_phrase">آخری بولے گئے جملے کے ہجے کریں</string>
   <string name="title_repeat_last_spoken_phrase">آخری بولے گئے جملے کو دہرائیں</string>
@@ -542,7 +542,7 @@
   <string name="summary_listitems">ویب صفحات پر فہرست کے آئٹمز کے درمیان جائیں</string>
   <string name="summary_lists">ویب صفحات پر فہرستوں کے درمیان جائیں</string>
   <string name="summary_tables">ویب صفحات پر ٹیبلز کے درمیان جائیں</string>
-  <string name="summary_comboboxes">ویب صفحات پر ڈراپ ڈاؤن مینیوز جیسے سبھی کومبو باکسز پر جائيں</string>
+  <string name="summary_comboboxes">ویب صفحات پر ڈراپ ڈاؤن مینوز جیسے سبھی کومبو باکسز پر جائيں</string>
   <string name="summary_visited_links">ان لنکس کے درمیان جائیں جنہیں آپ نے پہلے ویب صفحات پر کھولا ہے</string>
   <string name="summary_unvisited_links">ان لنکس کے درمیان جائیں جنہیں آپ نے ویب صفحات پر نہیں کھولا ہے</string>
   <string name="summary_radios">ویب صفحات پر ریڈیو بٹنز کے درمیان جائیں</string>
@@ -681,11 +681,11 @@
   <string name="label_choose_app_to_import">لیبلز درآمد کرنے کیلئے ایپلیکیشن منتخب کریں:</string>
   <string name="label_choose_app_to_export">لیبلز برآمد کرنے کیلئے ایپلیکیشن منتخب کریں:</string>
   <string name="dialog_title_dim_screen">اسکرین چھپائیں؟</string>
-  <string name="dialog_message_dim_screen">‏یہ رازداری کو بہتر بنانے کے ليے ڈسپلے کو آف کرتا ہے۔ کچھ مواد اب بھی دکھایا جا سکتا ہے، جیسے ڈسپلے کو دوبارہ آن کرنے کے لیے پیغامات، یا SandFly جیسی ایکسیسبیلٹی خصوصیات کے لیے مینیوز۔</string>
+  <string name="dialog_message_dim_screen">‏یہ رازداری کو بہتر بنانے کے ليے ڈسپلے کو آف کرتا ہے۔ کچھ مواد اب بھی دکھایا جا سکتا ہے، جیسے ڈسپلے کو دوبارہ آن کرنے کے لیے پیغامات، یا SandFly جیسی ایکسیسبیلٹی خصوصیات کے لیے مینوز۔</string>
   <string name="button_disable_all_events">تمام کو غیر فعال کریں</string>
   <string name="button_enable_all_events">تمام کو فعال کریں</string>
   <string name="dialog_title_disable_exploration">ٹچ کرکے دریافت کریں کو غیر فعال کریں؟</string>
-  <string name="dialog_message_disable_exploration">‏کیا آپ واقعی ٹچ کر کے دریافت کریں کو آف کرنا چاہتے ہیں؟\n\nآپ کے ذریعے ٹچ کیے جانے پر آپ کا آلہ شارٹ کٹ اشاروں یا اسپیک آئٹمز پر مزید ردعمل کا اظہار نہیں کرے گا۔</string>
+  <string name="dialog_message_disable_exploration">‏کیا آپ واقعی «ٹچ کرکے دریافت کریں» کو آف کرنا چاہتے ہیں؟\n\nآپ کا آلہ شارٹ کٹ اشاروں پر ردعمل نہیں دے گا اور اسکرین کو ٹچ کرنے پر آئٹمز نہیں بولے گا۔</string>
   <string name="dialog_title_enable_tree_debug">نوڈ ٹری ڈیبگ کرنے کو فعال کریں؟</string>
   <string name="dialog_message_enable_tree_debug">‏کیا آپ واقعی نوڈ ٹری ڈیبگ کرنے کو آن کرنا چاہتے ہیں؟\n\nنوڈ ٹری ڈیبگ کرنا آپ کے آلہ کے لاگز میں آپ کی اسکرین کا مواد دکھاتا ہے، جسے دیگر ایپلیکیشنز کے ذریعے پڑھا جا سکتا ہے۔</string>
   <string name="dialog_title_enable_tree_debug_gesture">تین بار تھپتھپانے کی کاروائی کو 4 انگلیوں کے اشارے کے ساتھ دوبارہ تفویض کریں؟</string>
@@ -822,9 +822,9 @@
   <string name="no_navigate_typo_gesture">‏اس کو استعمال کرنے کے لیے SandFly کی ترتیبات پر جائیں اور املا کی جانچ کے لیے اشارہ شامل کریں</string>
   <string name="use_spelling_suggestion_hint">ٹیکسٹ کو تبدیل کرنے لیے دو بار تھپتھپائیں</string>
   <string name="screen_search_keyword_hint">کلیدی لفظ %1$s ہے</string>
-  <string name="screen_search_no_keyword_hint">‏ابھی تک کوئی کلیدی لفظ نہیں۔ نئی تلاش شروع کرنے کے لیے، 3 انگلیوں سے تھپتھپائیں اور دبائے رکھیں یا SandFly مینیو سے سکرین پر تلاش کھولیں۔</string>
-  <string name="screen_search_no_keyword_hint_pre_r">‏ابھی تک کوئی کلیدی لفظ نہیں۔ نئی تلاش شروع کرنے کے لیے، بائیں پھر نیچے سوائپ کریں یا SandFly مینیو سے سکرین پر تلاش کھولیں۔</string>
-  <string name="switch_to_braille_keyboard_failure_msg">‏بریل کی بورڈ آن نہیں ہے۔ SandFly ترتیبات پر جائیں، بریل کی بورڈ سیٹ اپ کریں اور دوبارہ کوشش کریں۔</string>
+  <string name="screen_search_no_keyword_hint">‏ابھی تک کوئی کلیدی لفظ نہیں۔ نئی تلاش شروع کرنے کے لیے، 3 انگلیوں سے تھپتھپائیں اور دبائے رکھیں یا SandFly مینو سے سکرین پر تلاش کھولیں۔</string>
+  <string name="screen_search_no_keyword_hint_pre_r">‏ابھی تک کوئی کلیدی لفظ نہیں۔ نئی تلاش شروع کرنے کے لیے، بائیں پھر نیچے سوائپ کریں یا SandFly مینو سے سکرین پر تلاش کھولیں۔</string>
+  <string name="switch_to_braille_keyboard_failure_msg">‏بریل کی بورڈ آن نہیں ہے۔ SandFly کی ترتیبات پر جائیں، بریل کی بورڈ سیٹ اپ کریں اور دوبارہ کوشش کریں۔</string>
   <string name="suggestions_window_available">تجاویز دستیاب ہیں</string>
   <string name="suggestions_window_available_with_gesture">تجاویز دستیاب ہیں۔ رسائی حاصل کرنے کیلئے، %1$s</string>
   <string name="heads_up_window_available">اطلاع دستیاب ہے</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">‏SandFly کو نئے اشاروں کے ساتھ تیزی سے استعمال کرنے کا طریقہ سیکھنے کیلئے تھپتھپائیں۔</string>
   <string name="dump_node_tree_description">نوڈ ٹری کو لاگز پر پرنٹ کر دیا گیا ہے۔</string>
   <string name="report_gesture_description">یہاں پر حال ہی میں کیے گئے اشارے ہیں براہ کرم اطلاع دیں کہ کون سا اشارہ غلط ہے اور کس کی توقع ہے۔</string>
-  <string name="update_welcome_talkback_16.1">‏اس SandFly اپ ڈیٹ میں اسکرین کی وضاحت کرنے کی سہولت مزید زبانوں میں دستیاب ہے اور کوالٹی سے متعلق دیگر بہتریاں بھی کی گئی ہیں جو SandFly کو استعمال میں آسان بناتی ہیں۔‎\n\nآپ اگلی چند اسکرینز میں ان تبدیلیوں کے بارے میں مزید جانیں گے۔‎\n\n‎آپ بعد میں SandFly کی ترتیبات &gt; SandFly میں نئی خصوصیات میں ان معلومات کا جائزہ لے سکتے ہیں۔</string>
-  <string name="update_welcome_talkback_16.1_tts">‏اس SandFly اپ ڈیٹ میں اسکرین کی وضاحت کرنے کی سہولت مزید زبانوں میں دستیاب ہے اور کوالٹی سے متعلق دیگر بہتریاں بھی کی گئی ہیں جو SandFly کو استعمال میں آسان بناتی ہیں۔‎\n\nآپ اگلی چند اسکرینز میں ان تبدیلیوں کے بارے میں مزید جانیں گے۔‎\n\nآپ بعد میں SandFly کی ترتیبات، پھر SandFly میں نئی خصوصیات میں اس معلومات کا جائزہ لے سکتے ہیں۔</string>
+  <string name="update_welcome_talkback_16.1">‏اس SandFly اپ ڈیٹ میں «اسکرین کی وضاحت کریں» کی سہولت مزید زبانوں میں دستیاب ہے اور کوالٹی سے متعلق دیگر بہتریاں بھی کی گئی ہیں جو SandFly کو استعمال میں آسان بناتی ہیں۔‎\n\nآپ اگلی چند اسکرینز میں ان تبدیلیوں کے بارے میں مزید جانیں گے۔‎\n\n‎آپ بعد میں SandFly کی ترتیبات &gt; SandFly میں نئی خصوصیات میں ان معلومات کا جائزہ لے سکتے ہیں۔</string>
+  <string name="update_welcome_talkback_16.1_tts">‏اس SandFly اپ ڈیٹ میں «اسکرین کی وضاحت کریں» کی سہولت مزید زبانوں میں دستیاب ہے اور کوالٹی سے متعلق دیگر بہتریاں بھی کی گئی ہیں جو SandFly کو استعمال میں آسان بناتی ہیں۔‎\n\nآپ اگلی چند اسکرینز میں ان تبدیلیوں کے بارے میں مزید جانیں گے۔‎\n\nآپ بعد میں SandFly کی ترتیبات، پھر SandFly میں نئی خصوصیات میں اس معلومات کا جائزہ لے سکتے ہیں۔</string>
   <string name="shortcut_for_dictation_title">صوتی ٹائپنگ کے لیے شارٹ کٹ</string>
   <string name="shortcut_for_dictation_content">‏‫Gboard استعمال کرنے کے دوران، اب آپ صوتی ٹائپنگ شروع کرنے یا بند کرنے کے لیے دو انگلیوں سے دو بار تھپتھپا سکتے ہیں۔
 ‫&lt;br&gt;
@@ -881,12 +881,12 @@
   <string name="shortcut_for_dictation_content_without_google_play">‏‫Gboard اسکرین پر ہونے پر، اب آپ صوتی ڈکٹیشن شروع کرنے کے لیے دو انگلیوں سے دو بار تھپتھپا سکتے ہیں، پھر رکنے کے لیے دو انگلیوں سے دو بار تھپتھپا سکتے ہیں۔</string>
   <string name="announcing_text_formatting_title">ٹیکسٹ فارمیٹنگ کا اعلان کرنا</string>
   <string name="announcing_text_formatting_header">‏‫SandFly اب ٹیکسٹ فارمیٹنگ میں تبدیلیاں جیسے بولڈ، ترچھا اور رنگ کے بارے میں اعلان کر سکتا ہے۔ شروع کرنے کیلئے:</string>
-  <string name="announcing_text_formatting_option1">‏فارمیٹنگ والے آئٹم پر فوکس کریں، SandFly مینیو کھولیں اور \"ٹیکسٹ فارمیٹنگ کی وضاحت کریں\" کو منتخب کریں یا</string>
+  <string name="announcing_text_formatting_option1">‏فارمیٹنگ والے آئٹم پر فوکس کریں، SandFly مینو کھولیں اور \"ٹیکسٹ فارمیٹنگ کی وضاحت کریں\" کو منتخب کریں یا</string>
   <string name="announcing_text_formatting_option2">ٹیکسٹ فارمیٹنگ کے لیے ایک ریڈنگ کنٹرول شامل کریں جو فارمیٹنگ کی تبدیلیوں کے اعلان کو آن یا آف کرتا ہے۔</string>
   <string name="announcing_text_formatting_middle">جب آپ اسے آزمانے کے لیے تیار ہوں تو فارمیٹ کردہ ٹیکسٹ کی ایک مثال پیش خدمت ہے:</string>
   <string name="announcing_text_formatting_tail">اگر آپ فارمیٹ کردہ ٹیکسٹ کے اعلان کے طریقے کو تبدیل کرنا چاہتے ہیں تو آپ %1$s پر جا سکتے ہیں۔</string>
-  <string name="text_formatting_options_settings_path">‏‫SandFly کی ترتیبات &gt; لفاظی &gt; ٹیکسٹ فارمیٹنگ کے اختیارات</string>
-  <string name="text_formatting_options_settings_path_tts">‏‫SandFly کی ترتیبات پھر لفاظی پھر ٹیکسٹ فارمیٹنگ کے اختیارات</string>
+  <string name="text_formatting_options_settings_path">‏‫SandFly کی ترتیبات &gt; طوالت بیانی &gt; ٹیکسٹ سے متعلق فارمیٹنگ کے اختیارات</string>
+  <string name="text_formatting_options_settings_path_tts">‏‫SandFly کی ترتیبات پھر طوالت بیانی پھر ٹیکسٹ سے متعلق فارمیٹنگ کے اختیارات</string>
   <string name="announcing_text_formatiing_sample">‏یہ ٹیکسٹ &lt;b&gt;بولڈ‎&lt;/b&gt;‎ میں ہے، ایک پر اعتماد آواز،
 &lt;br&gt;جبکہ یہ &lt;u&gt;انڈرلائنڈ‎&lt;/u&gt;‎ ہے، جو کہ بلاشبہ ایک سرگوشی ہے۔&lt;br&gt;
 &lt;br&gt;‫‎&lt;span style=\"background-color:#f08080;\"&gt;‎گلاب سرخ ہوتے ہیں‎&lt;/span&gt;‎، ایک کلاسک، یہ سچ ہے،
@@ -897,8 +897,8 @@
 &lt;br&gt;
 &lt;br&gt;رنگ بکھر سکتے ہیں، ایک وائبرنٹ ڈسپلے،
 &lt;br&gt; ‫‎&lt;font color=\"#db372d\"&gt;‎آتشیں سرخ‎&lt;/font&gt;‎ سے لے کر ‎&lt;font color=\"#128937\"&gt;‎سبز و شاداب سبز‎&lt;/font&gt;‎ کی نرم لہروں تک۔</string>
-  <string name="update_welcome_talkback_16.2">‏اس SandFly اپ ڈیٹ میں فزیکل کی بورڈز کے لیے ایک نیا \"بہتر کردہ کی میپ\"، ٹیکسٹ فارمیٹنگ کے اعلانات کے لیے سپورٹ اور ترتیبات کا دوبارہ ڈیزائن کردہ ایک لے آؤٹ دستیاب ہے، نیز دیگر بہتریاں بھی شامل کی گئی ہیں تاکہ SandFly کو استعمال میں مزید آسان بنایا جا سکے۔‎\n\nآپ اگلی چند اسکرینز میں ان تبدیلیوں کے بارے میں مزید جانیں گے۔‎\n\nآپ بعد میں SandFly کی ترتیبات &gt; SandFly میں موجود نئی خصوصیات میں اس معلومات کا جائزہ لے سکتے ہیں۔</string>
-  <string name="update_welcome_talkback_16.2_tts">‏اس SandFly اپ ڈیٹ میں فزیکل کی بورڈز کے لیے ایک نیا \"بہتر کردہ کی میپ\"، ٹیکسٹ فارمیٹنگ کے اعلانات کے لیے سپورٹ اور ترتیبات کا دوبارہ ڈیزائن کردہ ایک لے آؤٹ دستیاب ہے، نیز دیگر بہتریاں بھی شامل کی گئی ہیں تاکہ SandFly کو استعمال میں مزید آسان بنایا جا سکے۔‎\n\nآپ اگلی چند اسکرینز میں ان تبدیلیوں کے بارے میں مزید جانیں گے۔‎\n\nآپ بعد میں SandFly کی ترتیبات پھر SandFly میں موجود نئی خصوصیات میں اس معلومات کا جائزہ لے سکتے ہیں۔</string>
+  <string name="update_welcome_talkback_16.2">‏اس SandFly اپ ڈیٹ میں فزیکل کی بورڈز کے لیے ایک نیا \"بہتر کردہ کی میپ\"، ٹیکسٹ فارمیٹنگ کے اعلانات کے لیے سپورٹ اور ترتیبات کا دوبارہ ڈیزائن کردہ ایک لے آؤٹ دستیاب ہے، نیز دیگر بہتریاں بھی شامل کی گئی ہیں تاکہ SandFly کو استعمال میں مزید آسان بنایا جا سکے۔‎\n\nآپ اگلی چند اسکرینز میں ان تبدیلیوں کے بارے میں مزید جانیں گے۔‎\n\nآپ بعد میں SandFly کی ترتیبات &gt; SandFly میں نئی خصوصیات میں اس معلومات کا جائزہ لے سکتے ہیں۔</string>
+  <string name="update_welcome_talkback_16.2_tts">‏اس SandFly اپ ڈیٹ میں فزیکل کی بورڈز کے لیے ایک نیا \"بہتر کردہ کی میپ\"، ٹیکسٹ فارمیٹنگ کے اعلانات کے لیے سپورٹ اور ترتیبات کا دوبارہ ڈیزائن کردہ ایک لے آؤٹ دستیاب ہے، نیز دیگر بہتریاں بھی شامل کی گئی ہیں تاکہ SandFly کو استعمال میں مزید آسان بنایا جا سکے۔‎\n\nآپ اگلی چند اسکرینز میں ان تبدیلیوں کے بارے میں مزید جانیں گے۔‎\n\nآپ بعد میں SandFly کی ترتیبات پھر SandFly میں نئی خصوصیات میں اس معلومات کا جائزہ لے سکتے ہیں۔</string>
   <string name="new_settings_layout_title">ترتیبات کا نیا لے آؤٹ</string>
   <string name="new_settings_layout_text">خصوصیات کو تلاش کرنا آسان بنانے کے لیے ترتیبات کے گروپس کو اپ ڈیٹ کر دیا گیا ہے۔ ترتیبات کے نئے زمرے بھی دستیاب ہیں، جیسے کی بورڈ کی ترتیبات۔</string>
   <string name="split_tap_everywhere_title">ہر جگہ اسپلٹ تھپتھپائیں</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">بریل ڈسپلے کی ترتیبات</string>
   <string name="keyboard_smart_browse_mode_title">کی بورڈ: اسمارٹ براؤز وضع</string>
   <string name="keyboard_smart_browse_mode_text">‏‫SandFly کی اسمارٹ براؤز وضع آپ کے ویب پر براؤز کرتے وقت فزیکل کی بورڈ کے ساتھ ٹائپ کرنے میں آپ کی مدد کرنے کے لیے ترمیمی فیلڈ پر موجود براؤز وضع کو آف کر دیتی ہے۔ پھر جب آپ ویب پر کسی غیر ترمیمی فیلڈ پر جاتے ہیں تو یہ اسے دوبارہ آن کر دیتی ہے تاکہ آپ مؤثر طریقے سے براؤز کرنا جاری رکھ سکیں۔ آپ <xliff:g id="settings_path">%1$s</xliff:g> میں \"اسمارٹ براؤز وضع\" کو آن یا آف کر سکتے ہیں۔</string>
-  <string name="advanced_settings_link">‏‫SandFly کی ترتیبات &gt; جدید ترین ترتیبات</string>
-  <string name="advanced_settings_link_tts">‏‫SandFly کی ترتیبات پھر جدید ترین ترتیبات</string>
   <string name="keyboard_tutorial_title">کی بورڈ ٹیوٹوریل</string>
   <string name="keyboard_tutorial_text">‏‫SandFly میں اب ایک کی بورڈ ٹیوٹوریل شامل ہے جو آپ کو فزیکل کی بورڈ استعمال کرتے وقت بہتر کردہ کی میپ کے لیے کی بورڈ شارٹ کٹس اور کمانڈز سیکھنے میں مدد کرنے کے لیے ڈیزائن کیا گیا ہے۔ ٹیوٹوریل تک رسائی حاصل کرنے کے لیے، اس پر نیویگیٹ کریں: <xliff:g id="settings_path">%1$s</xliff:g>۔</string>
-  <string name="tutorial_link">‏‫SandFly کی ترتیبات &gt; SandFly ٹیوٹوریل</string>
-  <string name="tutorial_link_tts">‏‫SandFly کی ترتیبات پھر SandFly ٹیوٹوریل</string>
   <string name="tutorial_entry_point_title">ٹیوٹوریل</string>
   <string name="welcome_to_talkback_title">‏SandFly میں خیر مقدم ہے</string>
   <string name="talkback_is_on">SandFly آن ہے</string>
@@ -946,10 +942,10 @@
   <string name="adjusting_volume_second_instruction">ہولڈ کرتے وقت، اپنے آلے کے سائیڈ پر والیوم بڑھانے کا بٹن یا والیوم کم کرنے کا بٹن دبائیں</string>
   <string name="adjusting_volume_tail">‏آپ کو چند سیکنڈ کے بعد نیا ایکسیسبیلٹی والیوم سنائی دے گا۔\n\nابھی ایکسیسبیلٹی والیوم کو ایڈجسٹ کرنے کی کوشش کریں۔</string>
   <string name="menus_title">مینوز اور کنٹرولز استعمال کریں</string>
-  <string name="menus_talkback_menu_text">‏SandFly ان ترتیبات اور کنٹرولز پر مشتمل ہے جن کی آپ کو اکثر ضرورت پڑ سکتی ہے۔\n\nاسکرین پر 3 انگلیوں سے تھپتھپا کر SandFly مینیو ابھی کھولیں۔</string>
-  <string name="menus_talkback_menu_text_pre_r">‏SandFly میں وہ ترتیبات اور کنٹرولز شامل ہیں جن کی آپ کو اکثر و بیشتر ضرورت پڑ سکتی ہے۔\n\nپہلے نیچے پھر دائیں طرف سوائپ کر کے SandFly مینیو ابھی کھولیں۔</string>
-  <string name="menus_selector_text">‏یہ شارٹ کٹس فوری طور پر ترتیبات تبدیل کرنے میں آپ کی مدد کر سکتے ہیں، جیسے آپ کی نیویگیشن کو الفاظ سے حروف پر سوئچ کرنا یا SandFly کی اسپیچ کی شرح کو تبدیل کرنا۔\n\nاپنے ریڈنگ کنٹرولز کو فوری طور پر تبدیل کرنے کیلئے، 3 انگلیوں سے بائیں طرف سوائپ کریں یا 3 انگلیوں سے دائیں طرف سوائپ کریں۔\n\nآپ بعد میں SandFly کی ترتیبات میں SandFly مینیو اور اپنے ریڈنگ کنٹرولز کو حسب ضرورت بنا سکتے ہیں۔</string>
-  <string name="menus_selector_text_pre_r">‏یہ شارٹ کٹس فوری طور پر ترتیبات تبدیل کرنے میں آپ کی مدد کر سکتے ہیں، جیسے آپ کی نیویگیشن کو الفاظ سے حروف پر سوئچ کرنا یا SandFly کی اسپیچ کی شرح کو تبدیل کرنا۔\n\nاپنے ریڈنگ کنٹرولز کو فوری طور پر تبدیل کرنے کیلئے، پہلے نیچے کی طرف اور پھر واپس اوپر کی طرف سوائپ کریں۔\n\nآپ بعد میں SandFly کی ترتیبات میں SandFly مینیو اور اپنے ریڈنگ کنٹرولز کو حسب ضرورت بنا سکتے ہیں۔</string>
+  <string name="menus_talkback_menu_text">‏SandFly ان ترتیبات اور کنٹرولز پر مشتمل ہے جن کی آپ کو اکثر ضرورت پڑ سکتی ہے۔\n\nاسکرین پر 3 انگلیوں سے تھپتھپا کر SandFly مینو ابھی کھولیں۔</string>
+  <string name="menus_talkback_menu_text_pre_r">‏SandFly میں وہ ترتیبات اور کنٹرولز شامل ہیں جن کی آپ کو اکثر و بیشتر ضرورت پڑ سکتی ہے۔\n\nپہلے نیچے پھر دائیں طرف سوائپ کر کے SandFly مینو ابھی کھولیں۔</string>
+  <string name="menus_selector_text">‏یہ شارٹ کٹس فوری طور پر ترتیبات تبدیل کرنے میں آپ کی مدد کر سکتے ہیں، جیسے آپ کی نیویگیشن کو الفاظ سے حروف پر سوئچ کرنا یا SandFly کی اسپیچ کی شرح کو تبدیل کرنا۔\n\nاپنے ریڈنگ کنٹرولز کو فوری طور پر تبدیل کرنے کیلئے، 3 انگلیوں سے بائیں طرف سوائپ کریں یا 3 انگلیوں سے دائیں طرف سوائپ کریں۔\n\nآپ بعد میں SandFly کی ترتیبات میں SandFly مینو اور اپنے ریڈنگ کنٹرولز کو حسب ضرورت بنا سکتے ہیں۔</string>
+  <string name="menus_selector_text_pre_r">‏یہ شارٹ کٹس فوری طور پر ترتیبات تبدیل کرنے میں آپ کی مدد کر سکتے ہیں، جیسے آپ کی نیویگیشن کو الفاظ سے حروف پر سوئچ کرنا یا SandFly کی اسپیچ کی شرح کو تبدیل کرنا۔\n\nاپنے ریڈنگ کنٹرولز کو فوری طور پر تبدیل کرنے کیلئے، پہلے نیچے کی طرف اور پھر واپس اوپر کی طرف سوائپ کریں۔\n\nآپ بعد میں SandFly کی ترتیبات میں SandFly مینو اور اپنے ریڈنگ کنٹرولز کو حسب ضرورت بنا سکتے ہیں۔</string>
   <string name="all_set_title">سب کچھ تیار ہے!</string>
   <string name="all_set_text">‏آپ SandFly استعمال کرنے کے لیے تیار ہیں۔‎\n\nابھی دیگر موضوعات کے بارے میں جاننا جاری رکھیں یا SandFly کی ترتیبات میں کسی بھی وقت اس معلومات کا جائزہ لیں۔</string>
   <string name="talkback_tutorial_text">‏کوئی موضوع منتخب کرنے کے لیے بائيں سوائپ کریں۔ بہترین تجربے کے لیے، شروع کرنے سے پہلے SandFly کو آن کریں۔</string>
@@ -990,12 +986,12 @@
   <string name="edit_box_text">‏SandFly میں خوش آمدید</string>
   <string name="selecting_text_title">ٹیکسٹ منتخب کرنا</string>
   <string name="selecting_text_text">‏ٹیکسٹ باکس میں، کرسر کو اس ٹیکسٹ کے شروع میں لے جائيں جس کو آپ منتخب کرنا چاہتے ہیں۔\n\nانتخاب موڈ شروع کرنے کے لیے 2 انگلیوں سے دو بار تھپتھپائیں اور دبائے رکھیں۔ پھر کرسر کو ٹیکسٹ کے آخر میں لے جائیں۔ انتخاب موڈ کو ختم کرنے کے لئے دوبارہ 2 انگلیوں سے دو بار تھپتھپائیں اور دبائے رکھیں۔‎\n\nذیل میں موجود ٹیکسٹ باکس میں لفظ \"خوش آمدید\" منتخب کر کے دیکھیں۔</string>
-  <string name="selecting_text_text_pre_r">‏ٹیکسٹ باکس میں، کرسر کو اس ٹیکسٹ کے شروع میں لے جائيں جس کو آپ منتخب کرنا چاہتے ہیں۔\n\n‎‏SandFly مینیو کھولنے کیلئے نیچے اور پھر دائیں سوائپ کریں۔ کاروائیوں پر دو بار تھپتھپائیں اور اس کے بعد انتخاب موڈ شروع کریں۔ کرسر کو ٹیکسٹ کے آخر تک لے جائیں۔‎\n\n‏SandFly مینیو کو دوبارہ کھولیں اس کے بعد انتخاب موڈ ختم کرنے کیلئے کاروائیوں پر دو بار تھپتھپائیں۔‎\n\nذیل میں موجود ٹیکسٹ باکس میں لفظ \"خوش آمدید\" منتخب کر کے دیکھیں۔</string>
+  <string name="selecting_text_text_pre_r">‏ٹیکسٹ باکس میں، کرسر کو اس ٹیکسٹ کے شروع میں لے جائيں جس کو آپ منتخب کرنا چاہتے ہیں۔\n\n‎‏SandFly مینو کھولنے کیلئے نیچے اور پھر دائیں سوائپ کریں۔ کاروائیوں پر دو بار تھپتھپائیں اور اس کے بعد انتخاب موڈ شروع کریں۔ کرسر کو ٹیکسٹ کے آخر تک لے جائیں۔‎\n\n‏SandFly مینو کو دوبارہ کھولیں اس کے بعد انتخاب موڈ ختم کرنے کیلئے کاروائیوں پر دو بار تھپتھپائیں۔‎\n\nذیل میں موجود ٹیکسٹ باکس میں لفظ \"خوش آمدید\" منتخب کر کے دیکھیں۔</string>
   <string name="copy_cut_paste_title">کاپی، کٹ اور پیسٹ کریں</string>
   <string name="copy_text">‏ٹیکسٹ منتخب کرنے کے بعد 3 انگلیوں سے دو بار تھپتھپا کر اسے کاپی کریں۔‎\n\nذیل میں موجود ٹیکسٹ باکس میں کوئی لفظ کاپی کر کے دیکھیں۔</string>
   <string name="cut_paste_text">‏ٹیکسٹ کٹ کرنے کے لئے، 3 انگلیوں سے دو بار تھپتھائیں اور دبائے رکھیں۔‎\n\nٹیکسٹ کو پیسٹ کرنے کے لئے 3 انگلیوں سے تین بار تھپتھپائیں۔‎\n\nذیل میں موجود ٹیکسٹ باکس میں کوئی لفظ پیسٹ کر کے دیکھیں۔</string>
-  <string name="copy_text_pre_r">‏ٹیکسٹ منتخب کرنے کے بعد آپ اسے SandFly مینیو میں کاپی کر سکتے ہیں۔ SandFly مینیو کھولنے کے لئے نیچے پھر دائیں سوائپ کریں۔ کاروائیوں پر دو بار تھپتھپائیں اور پھر کاپی کریں۔‎\n\nذیل میں موجود ٹیکسٹ باکس میں کوئی لفظ کاپی کر کے دیکھیں۔</string>
-  <string name="cut_paste_text_pre_r">‏ٹیکسٹ کو کٹ یا پیسٹ کرنے کے لئے SandFly مینیو کھولیں اور کاروائیوں پر دو بار تھپتھپائیں۔‎\n\nذیل میں موجود ٹیکسٹ باکس میں کوئی لفظ پیسٹ کر کے دیکھیں۔</string>
+  <string name="copy_text_pre_r">‏ٹیکسٹ منتخب کرنے کے بعد آپ اسے SandFly مینو میں کاپی کر سکتے ہیں۔ SandFly مینو کھولنے کے لئے نیچے پھر دائیں سوائپ کریں۔ کاروائیوں پر دو بار تھپتھپائیں اور پھر کاپی کریں۔‎\n\nذیل میں موجود ٹیکسٹ باکس میں کوئی لفظ کاپی کر کے دیکھیں۔</string>
+  <string name="cut_paste_text_pre_r">‏ٹیکسٹ کو کٹ یا پیسٹ کرنے کے لئے SandFly مینو کھولیں اور کاروائیوں پر دو بار تھپتھپائیں۔‎\n\nذیل میں موجود ٹیکسٹ باکس میں کوئی لفظ پیسٹ کر کے دیکھیں۔</string>
   <string name="edit_box_hint_paste_text">یہاں ٹیکسٹ پیسٹ کریں</string>
   <string name="typo_correction_title">پروف ریڈنگ</string>
   <string name="typo_correction_text">‏آپ ٹیکسٹ باکس میں ہجے یا گرامر کو چیک کرنے کے لیے پروف ریڈنگ کا استعمال کر سکتے ہیں۔\n\nاسے آزمانے کے لیے، نیچے دیے گئے اس ٹیکسٹ باکس پر توجہ دیں، جس میں املا کی غلطیاں ہیں۔ پھر، آپ کو \"پروف ریڈ\" ملنے تک 3 انگلیوں سے دائیں سوائپ کریں۔</string>
@@ -1038,9 +1034,9 @@
   <string name="container_item_subtext_pre_r">اگلے کنٹینر پر جانے کے لیے، نیچے سوائپ کریں</string>
   <string name="container_item_exit_subtext_pre_r">اس کنٹینر سے باہر نکلنے کے لیے، نیچے سوائپ کریں</string>
   <string name="voice_commands_title">صوتی کمانڈز</string>
-  <string name="voice_commands_text">‏آپ SandFly کو فوری طور پر کنٹرول کرنے کے لئے اپنی آواز کا بھی استعمال کر سکتے ہیں۔‎\n\nمثلا، نیویگشن تبدیل کرنے کے لئے کوئی کمانڈ دیں، اگلی ہیڈنگ پر جائیں، ٹیکسٹ کاپی کریں اور بہت کچھ کریں۔‎\n\nاسے ابھی آزمانے کے لئے دائیں اور پھر اوپر سوائپ کریں۔</string>
+  <string name="voice_commands_text">‏آپ SandFly کو فوری طور پر کنٹرول کرنے کے لئے اپنی آواز کا بھی استعمال کر سکتے ہیں۔‎\n\nمثلا، نیویگیشن تبدیل کرنے کے لئے کوئی کمانڈ دیں، اگلی ہیڈنگ پر جائیں، ٹیکسٹ کاپی کریں اور بہت کچھ کریں۔‎\n\nاسے ابھی آزمانے کے لئے دائیں اور پھر اوپر سوائپ کریں۔</string>
   <string name="using_screen_search_title">اسکرین پر تلاش کا استعمال کرنا</string>
-  <string name="using_screen_search_text">‏اسکرین پر تلاش کی خصوصیت آپ کو اسکرین پر مخصوص مواد دیکھنے کی اجازت دیتی ہے \n\nاسے آزمانے کے لیے، 3 انگلیوں کی مدد سے تھپتھپا کر SandFly مینیو کو کھولیں اور مینیو میں “اسکرین پر تلاش” خصوصیت تلاش کریں۔ اسکرین پر اس ٹیکسٹ کے ساتھ آئٹمز تلاش کرنے کے لیے ایک کلیدی لفظ جیسے \"اگلا\" ٹائپ کریں۔\n\nاگلا بٹن تلاش کرنے کے لیے ابھی \"اگلا\" تلاش کرنے کی کوشش کریں۔</string>
+  <string name="using_screen_search_text">‏اسکرین پر تلاش کی خصوصیت آپ کو اسکرین پر مخصوص مواد دیکھنے کی اجازت دیتی ہے \n\nاسے آزمانے کے لیے، 3 انگلیوں کی مدد سے تھپتھپا کر SandFly مینو کو کھولیں اور مینو میں “اسکرین پر تلاش” خصوصیت تلاش کریں۔ اسکرین پر اس ٹیکسٹ کے ساتھ آئٹمز تلاش کرنے کے لیے ایک کلیدی لفظ جیسے \"اگلا\" ٹائپ کریں۔\n\nاگلا بٹن تلاش کرنے کے لیے ابھی \"اگلا\" تلاش کرنے کی کوشش کریں۔</string>
   <string name="screen_search_navigation_title">اسکرین پر تلاش کے ذریعے نیویگیٹ کریں</string>
   <string name="screen_search_navigation_text">‏آپ نتیجہ منتخب کرنے کے بعد سکرین پر تلاش سے تلاش کے مختلف نتائج کے مابین تیزی سے منتقل ہو سکتے ہیں۔\n\nایسا کرنے کے لیے، 3 انگلیوں کی مدد سے دائیں یا بائیں سوائپ کر کے ریڈنگ کنٹرولز کا استعمال کریں اور سکرین پر تلاش نامی آئٹم تلاش کریں۔\n\nآئیے ابھی اسے آزماتے ہیں۔ ذیل میں 3 بٹنز کی فہرست دی گئی ہے، ان سبھی ٹیکسٹ میں \"ایکشن\" شامل ہیں۔ اسکرین پر تلاش کا استعمال کر کے \"ایکشن\" تلاش کریں، پھر ان کے مابین منتقل ہونے کے لیے اسکرین پر تلاش کے ذریعے نیویگیٹ کریں۔</string>
   <string name="screen_search_action_button_1_text">ایکشن 1</string>
@@ -1068,10 +1064,10 @@
   <string name="checking_notifications_text_tail_tts">آپ ترتیبات اور پھر اطلاعات میں جا کر چیک کر سکتے ہیں کہ کن ایپس میں اطلاعات آن ہیں۔</string>
   <string name="checking_notifications_tips">اپنی اطلاع کی سرگزشت چیک کرنے کے لیے، اپنی اسکرین کے اوپری حصے سے 2 انگلیوں سے نیچے کی طرف سوائپ کریں</string>
   <string name="image_description_playground_title">تصویر کی وضاحتیں حاصل کرنے کی کوشش کریں</string>
-  <string name="image_description_playground_content_one">‏آپ کے کسی تصویر پر فوکس کرتے وقت، SandFly مینیو کو کھولیں اور \"تصویر کی وضاحت کریں\" کو منتخب کریں۔\n\nذیل میں ایک تصویر ہے۔ اس کی تفصیل حاصل کرنے کی کوشش کریں۔</string>
-  <string name="image_description_playground_content_two">آپ کسی بھی وقت SandFly ترتیبات &gt; خودکار تفصیلات میں تصویر کی تفصیل کی ترتیبات تبدیل کر سکتے ہیں۔</string>
-  <string name="image_description_playground_content_two_tts">آپ تصویر کی تفصیل کی ترتیبات کو کسی بھی وقت SandFly ترتیبات میں پھر خودکار تفصیلات میں تبدیل کر سکتے ہیں۔</string>
-  <string name="image_description_sample_image_content_description">‏نمونہ تصویر؛ SandFly مینیو کو کھولنے کے لیے 3 انگلیوں کی مدد سے تھپتھپائیں اور تفصیلات سننے کے لیے \"تصویر کی وضاحت کریں\" کو منتخب کریں۔</string>
+  <string name="image_description_playground_content_one">‏آپ کے کسی تصویر پر فوکس کرتے وقت، SandFly مینو کو کھولیں اور \"تصویر کی وضاحت کریں\" کو منتخب کریں۔\n\nذیل میں ایک تصویر ہے۔ اس کی تفصیل حاصل کرنے کی کوشش کریں۔</string>
+  <string name="image_description_playground_content_two">آپ کسی بھی وقت SandFly کی ترتیبات &gt; تصویر اور اسکرین کی تفصیلات میں تصویر کی تفصیل کی ترتیبات تبدیل کر سکتے ہیں۔</string>
+  <string name="image_description_playground_content_two_tts">آپ تصویر کی تفصیل کی ترتیبات کو کسی بھی وقت SandFly کی ترتیبات میں پھر تصویر اور اسکرین کی تفصیلات میں تبدیل کر سکتے ہیں۔</string>
+  <string name="image_description_sample_image_content_description">‏نمونہ تصویر؛ SandFly مینو کو کھولنے کے لیے 3 انگلیوں کی مدد سے تھپتھپائیں اور تفصیلات سننے کے لیے \"تصویر کی وضاحت کریں\" کو منتخب کریں۔</string>
   <string name="practice_gestures_title">اشاروں کی مشق کریں</string>
   <string name="practice_keyboard_gestures_title">کی بورڈ شارٹ کٹس کی مشق کریں</string>
   <string name="pref_gesture_set_key_title">اشارے کا سیٹ</string>
@@ -1104,7 +1100,7 @@
   <string name="wear_training_volume_up_text">بائیں اور پھر اوپر سوائپ کریں</string>
   <string name="wear_training_volume_down_title">والیوم کم کریں</string>
   <string name="wear_training_volume_down_text">بائیں اور پھر نیچے سوائپ کریں</string>
-  <string name="wear_training_open_talkback_menu_title">‏SandFly مینیو کھولیں</string>
+  <string name="wear_training_open_talkback_menu_title">‏SandFly مینو کھولیں</string>
   <string name="wear_training_open_talkback_menu_text">ترتیبات اور کنٹرولز کو کھولنے کے لیے آپ کو اکثر ضرورت پڑ سکتی ہے، نیچے اور پھر بائیں سوائپ کریں</string>
   <string name="wear_training_typing_title">ٹائپنگ</string>
   <string name="wear_training_typing_text1">کی بورڈ سے ٹائپ کرنے کے لیے، اپنی انگلی کو کی بورڈ پر منتقل کریں۔ جب آپ وہ حرف سنیں جسے آپ ٹائپ کرنا چاہتے ہیں تو اپنی انگلی اٹھا لیں۔</string>
@@ -1132,7 +1128,7 @@
   <string name="title_pref_blue">نیلا</string>
   <string name="title_pref_grey">خاکستری</string>
   <string name="survey_setting_title">اپنے تاثرات کا اشتراک کریں</string>
-  <string name="title_summarize_view">اسکرین کی وضاخت کریں</string>
+  <string name="title_summarize_view">اسکرین کی وضاحت کریں</string>
   <string name="detected_result">پتا چلا: %1$s</string>
   <string name="title_image_caption">تصویر کی وضاحت کریں</string>
   <string name="image_caption_with_gemini_prefix">اس تصویر کی وضاحت کریں۔ جواب میں کوئی مارک اپ استعمال نہ کریں۔</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">ٹیبل میں ٹیبل نیویگیشن پر سوئچ کریں</string>
   <string name="title_text_formatting_menu">ٹیکسٹ فارمیٹنگ کی وضاحت کریں</string>
   <string name="summary_text_formatting_menu">بولڈ، ترچھا، خط کشیدہ اور مزید جیسی تبدیلیوں کے لیے</string>
-  <string name="title_text_formatting_inline">بولے گئے ٹیکسٹ سے متعلق فارمیٹنگ</string>
+  <string name="title_text_formatting_inline">ٹیکسٹ کی فارمیٹنگ بولیں</string>
   <string name="title_switch_text_formatting">ٹیکسٹ کی فارمیٹنگ بولیں</string>
   <string name="summary_text_formatting_verbosity">بولڈ اور ترچھا جیسی تبدیلیوں کے لیے</string>
   <string name="summary_text_formatting_selector">تبدیل کریں کہ آیا فارمیٹنگ، جیسے بولڈ اور ترچھا کو بلند آواز میں سننا ہے یا نہیں</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">مزید</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch کے لیے اشاروں کو محفوظ کریں</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly دو انگلیوں سے سنگل اور ڈبل ٹیپس کو ہینڈل کرنا بند کر دیتا ہے تاکہ Samsung Vibration Watch انہیں استعمال کر سکے۔ اپنی گھڑی کی ایکسیسبیلٹی کی ترتیبات میں Vibration Watch فعال کریں۔</string>
-    <string name="shortcut_reserved_for_vibration_watch">اعلی درجے کی ترتیبات میں Vibration Watch کے لیے محفوظ ہے</string>
     <string name="title_pref_speakerphone_away_from_ear">اسپیکر جب آپ کے کان سے دور ہو</string>
     <string name="summary_pref_speakerphone_away_from_ear">کال کے دوران فون کان سے ہٹانے پر اسپیکر پر اور دوبارہ کان سے لگانے پر ایئر پیس پر سوئچ کرتا ہے۔</string>
     <string name="summary_pref_speakerphone_needs_permission">ایک اجازت درکار ہے جو Android اسکرین ریڈرز کو نہیں دیتا۔ اسے دینے کے لیے یہ کمانڈ adb یا Shizuku سے چلائیں، پھر اس اسکرین پر واپس آئیں: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">ایپس</string>
     <string name="speech_control_no_apps">ابھی تک کسی ایپ نے بولنے کی اجازت نہیں مانگی۔</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> کو SandFly کے ذریعے بولنے کی اجازت دیں؟</string>
-    <string name="speech_control_ask_text">یہ آپ کی SandFly آواز میں متن کہہ سکتا ہے۔ آپ اسے اعلیٰ ترتیبات میں تبدیل کر سکتے ہیں۔</string>
     <string name="speech_control_allow">اجازت دیں</string>
     <string name="speech_control_deny">اجازت نہ دیں</string>
     <string name="permission_speak_label">SandFly کے ذریعے بولنا</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">ہٹا دیں</string>
     <string name="quick_settings_added">%1$s شامل کر دیا گیا</string>
     <string name="quick_settings_removed">%1$s ہٹا دیا گیا</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly آن ہے۔ آف کرنے کے لیے اسکرین پر 2 انگلیاں 5 سیکنڈ تک رکھیں۔ یہ پیغام دکھانا بند کرنے کے لیے، SandFly کی ترتیبات &gt; جدید ترین ترتیبات &gt; SandFly کو آف کرنے کے لیے ہدایات دکھائیں کو آف کریں۔</string>
     <string name="edge_gestures_title">کنارے</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">براؤز موڈ کو آن یا آف کرنے کے لیے ایک اور شارٹ کٹ</string>
     <string name="title_pref_vibration_strength">کمپن کی طاقت</string>
@@ -1735,7 +1728,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> چھوڑ دیا گیا۔ <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly کسی آئٹم کی تفصیلات اس ترتیب میں بتاتا ہے۔ اسے تبدیل کرنے کے لیے، کسی تفصیل کو چھو کر دبائے رکھیں، پھر اسے اوپر یا نیچے گھسیٹیں۔ SandFly آن ہونے پر، دو بار تھپتھپا کر دبائے رکھیں، پھر گھسیٹیں۔ آپ \"اوپر منتقل کریں\" اور \"نیچے منتقل کریں\" کارروائیاں بھی استعمال کر سکتے ہیں۔</string>
     <string name="title_pref_speak_items_before_scroll">آئٹمز کو اسکرول ہو کر نظر آنے سے پہلے بولیں</string>
-    <string name="gemini_error_api_key">Gemini نے API کلید کو قبول نہیں کیا۔ خودکار وضاحت کی ترتیبات میں کلید کو چیک کریں۔</string>
+    <string name="gemini_error_api_key">Gemini نے API کلید کو قبول نہیں کیا۔ «تصویر اور اسکرین کی تفصیلات» کی ترتیبات میں کلید کو چیک کریں۔</string>
     <string name="gemini_error_quota">آپ کی Gemini API کلید کے استعمال کی حد تک پہنچ گئی ہے۔ بعد میں دوبارہ کوشش کریں۔</string>
     <string name="gemini_error_busy">Gemini ابھی مصروف ہے۔ ایک لمحے میں دوبارہ کوشش کریں۔</string>
     <string name="gemini_error_timeout">Gemini کو جواب دینے میں بہت زیادہ وقت لگا۔ دوبارہ کوشش کریں۔</string>
@@ -1746,7 +1739,7 @@
     <string name="image_qna_stop_listening">سننا بند کریں</string>
     <string name="image_qna_type_question">ایک سوال ٹائپ کریں</string>
     <string name="shortcut_dictate">لکھوائیں</string>
-    <string name="title_pref_ai_dictation">AI کے ذریعے ڈکٹیشن درست کریں</string>
+    <string name="title_pref_ai_dictation">AI کے ذریعے املا درست کریں</string>
     <string name="dictation_not_corrected">درست نہیں کیا گیا۔ جیسا پہچانا گیا ویسا ٹائپ کیا گیا۔</string>
     <string name="dictation_nothing_recognized">کچھ بھی شناخت نہیں ہوا</string>
     <string name="dictation_unavailable">تقریر کی شناخت دستیاب نہیں ہے</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper ماڈلز</string>
     <string name="dictation_whisper_use">استعمال کریں</string>
     <string name="title_pref_dictation_ai_service">املا کیلئے AI سروس</string>
-    <string name="dictation_ai_same">خودکار تفصیلات والی ہی</string>
     <string name="title_pref_browse_mode_per_app">ہر ایپ میں براؤز موڈ کو یاد رکھیں</string>
     <string name="title_pref_export_settings">ترتیبات برآمد کریں</string>
     <string name="title_pref_import_settings">ترتیبات درآمد کریں</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">پچھلا ٹریک</string>
     <string name="sound_mode_needs_access">«خاموش» آن یا آف کرنے کیلئے «ڈسٹرب نہ کریں» تک رسائی کی اجازت دیں۔</string>
     <string name="title_pref_dictation_auto_stop">خاموشی کے بعد خودکار اسٹاپ</string>
+    <string name="dictation_ai_same">«تصویر اور اسکرین کی تفصیلات» جیسی</string>
+    <string name="navigation_settings_link">‏‫SandFly کی ترتیبات &gt; نیویگیشن</string>
+    <string name="navigation_settings_link_tts">‏‫SandFly کی ترتیبات پھر نیویگیشن</string>
+    <string name="shortcut_reserved_for_vibration_watch">‏«اشارے» میں Vibration Watch کے لیے مخصوص</string>
+    <string name="speech_control_ask_text">یہ آپ کی SandFly آواز میں ٹیکسٹ بول سکتی ہے۔ آپ اسے «ترتیبات»، «اسپیچ»، «دوسری ایپس کو بولنے دیں» میں تبدیل کر سکتے ہیں۔</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">‏‫SandFly آن ہے۔ آف کرنے کے لیے 2 انگلیاں اسکرین پر 5 سیکنڈ تک دبائے رکھیں۔ اس پیغام کو دکھانا بند کرنے کے لیے، «SandFly کی ترتیبات &gt; موقوف کریں اور آف کریں &gt; SandFly کو آف کرنے کے لیے ہدایات دکھائیں» کو آف کریں۔</string>
+    <string name="tutorial_link">‏‫SandFly کی ترتیبات &gt; مدد اور تاثرات &gt; SandFly ٹیوٹوریل</string>
+    <string name="tutorial_link_tts">‏‫SandFly کی ترتیبات پھر مدد اور تاثرات پھر SandFly ٹیوٹوریل</string>
 </resources>

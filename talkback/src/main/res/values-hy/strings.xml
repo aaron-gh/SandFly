@@ -73,7 +73,7 @@
   <string name="reset_latency_settings_title">Զրոյացնել հապաղման բոլոր կարգավորումները</string>
   <string name="title_pref_single_tap">Մեկ անգամ հպեք՝ ակտիվացնելու համար</string>
   <string name="summary_pref_single_tap">Մեկ անգամ հպեք ընդգծված տարրին՝ այն ակտիվացնելու համար։ Ինտերֆեյսում նավիգացիան ավելի արագ կլինի, քան կրկնակի սեղմման ժամանակ։</string>
-  <string name="pref_verbosity_title">Խոսքի ծավալը</string>
+  <string name="pref_verbosity_title">Մանրամասնում</string>
   <string name="pref_punctuation_title">Հնչեցնել կետադրական և մյուս նշանները</string>
   <string name="title_pref_category_manage_focus_indicator">Ֆոկուսի ցուցիչ</string>
   <string name="title_pref_category_manage_gestures">Ժեստեր</string>
@@ -106,8 +106,8 @@
   <string name="pref_verbosity_preset_entry_high">Բարձր</string>
   <string name="pref_verbosity_preset_entry_custom">Հատուկ</string>
   <string name="pref_verbosity_preset_entry_low">Ցածր</string>
-  <string name="pref_verbosity_category_preset_settings_title">Խոսքի ծավալի մանրամասներ</string>
-  <string name="pref_verbosity_preset_change">%1$s շատախոսությունն այժմ ակտիվ է։</string>
+  <string name="pref_verbosity_category_preset_settings_title">Մանրամասնման պարամետրեր</string>
+  <string name="pref_verbosity_preset_change"><xliff:g id="preset_name" example="High">%1$s</xliff:g> մանրամասնումն այժմ ակտիվ է։</string>
   <string name="pref_gesture_set_entry_0">0</string>
   <string name="pref_gesture_set_entry_1">1</string>
   <string name="keycombo_keymap_changes_instruction_title">Թարմացրեք ձեր SandFly-ի ստեղների շարվածքը</string>
@@ -142,8 +142,8 @@
   <string name="keycombo_menu_category_navigation">Նավիգացիայի գործողություններ</string>
   <string name="keycombo_menu_navigate_next">Անցնել հաջորդ տարրին</string>
   <string name="keycombo_menu_navigate_previous">Անցնել նախորդ տարրին</string>
-  <string name="keycombo_menu_navigate_up">Անցնել նախորդ կատեգորիա (ընթերցման կառավարման հիման վրա)</string>
-  <string name="keycombo_menu_navigate_down">Անցնել հաջորդ կատեգորիա (ընթերցման կառավարման հիման վրա)</string>
+  <string name="keycombo_menu_navigate_up">Անցնել նախորդ կատեգորիա (ընթերցման կառավարման տարրերի հիման վրա)</string>
+  <string name="keycombo_menu_navigate_down">Անցնել հաջորդ կատեգորիա (ընթերցման կառավարման տարրերի հիման վրա)</string>
   <string name="keycombo_menu_navigate_first">Անցնել առաջին տարրին</string>
   <string name="keycombo_menu_navigate_last">Անցնել վերջին տարրին</string>
   <string name="keycombo_menu_navigate_next_window">Անցնել հաջորդ պատուհան կամ համակարգի տարրին</string>
@@ -187,7 +187,7 @@
   <string name="keycombo_menu_other_show_link_list">Ցույց տալ հղումների ցանկը</string>
   <string name="keycombo_menu_other_show_control_list">Ցույց տալ կարգավորումների ցանկը</string>
   <string name="keycombo_menu_other_show_table_list">Ցույց տալ աղյուսակների ցանկը</string>
-  <string name="keycombo_menu_other_talkback_context_menu">Ցուցադրել SandFly ընտրացանկը</string>
+  <string name="keycombo_menu_other_talkback_context_menu">Ցուցադրել SandFly-ի ընտրացանկը</string>
   <string name="keycombo_menu_other_custom_actions">Ցույց տալ գործողությունները</string>
   <string name="keycombo_menu_other_language_options">Ցույց տալ տեղադրված լեզուները</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Պատճենել վերջին հնչեցված արտահայտությունը</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Այլ</string>
   <string name="shortcut_unassigned">Հպեք՝ նշանակելու համար</string>
   <string name="shortcut_not_customizable">«%1$s» ժեստը հնարավոր չէ կարգավորել</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Հասանելի չէ, երբ միացված է թրթռոցով ժամացույցը</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Հասանելի չէ, երբ միացված է Vibration Watch-ը</string>
   <string name="shortcut_next">Հաջորդ տարրը</string>
   <string name="shortcut_previous">Նախորդ տարրը</string>
   <string name="shortcut_scroll_forward">Թերթել առաջ</string>
@@ -473,14 +473,14 @@
   <string name="title_labeling_controls">Պիտակներ</string>
   <string name="title_labeling_show_or_hide_controls">Պիտակների ավելացում և փոփոխում</string>
   <string name="title_granularity">Նավիգացիա</string>
-  <string name="title_read_from_top">Ընթերցել վերևից</string>
+  <string name="title_read_from_top">Կարդալ վերևից</string>
   <string name="title_copy_last_spoken_phrase">Պատճենել վերջին հնչեցվածը</string>
   <string name="title_spell_last_spoken_phrase">Տառ առ տառ ասել վերջին հնչեցվածը</string>
   <string name="title_repeat_last_spoken_phrase">Կրկնել վերջին հնչեցվածը</string>
   <string name="title_custom_action">Գործողություններ</string>
   <string name="title_show_hide_screen">Թաքցնել կամ ցուցադրել էկրանը</string>
   <string name="title_control_speak_time">Հնչեցնել ժամանակը</string>
-  <string name="title_show_screen_search">Որոնել էկրանին</string>
+  <string name="title_show_screen_search">Որոնում էկրանին</string>
   <string name="title_show_voice_commands">Ձայնային կառավարում</string>
   <string name="title_show_keyboard_shortcuts">Ստեղնային դյուրանցումներ</string>
   <string name="talkback_show_talkback_settings">SandFly-ի կարգավորումներ</string>
@@ -668,7 +668,7 @@
   <string name="label_dialog_text">Մուտքագրեք տեքստ ընտրված տարրի պիտակի համար\nՆերքին անվանումը՝ %1$s</string>
   <string name="label_dialog_edit_hint">Պիտակի տեքստը</string>
   <string name="label_import">Ներմուծել հատուկ պիտակներ</string>
-  <string name="label_import_dialog_title">Անհատականացված պիտակների ներմուծում SandFly</string>
+  <string name="label_import_dialog_title">Հատուկ պիտակների ներմուծում SandFly</string>
   <string name="label_import_dialog_message">Ընտրեք՝ հակասության դեպքում փոխարինել, թե պահպանել առկա պիտակները</string>
   <string name="label_import_dialog_skip">Պահպանել</string>
   <string name="label_import_dialog_override">Վրագրել</string>
@@ -684,7 +684,7 @@
   <string name="dialog_message_dim_screen">Գործառույթն անջատում է էկրանը գաղտնիության ապահովման համար։ Որոշ բովանդակություն նախկինի պես կարող է ցուցադրվել, օրինակ՝ էկրանի միացման մասին հաղորդագրությունները կամ հատուկ գործառույթների, օրինակ՝ SandFly-ի ընտրացանկերը։</string>
   <string name="button_disable_all_events">Անջատել բոլորը</string>
   <string name="button_enable_all_events">Միացնել բոլորը</string>
-  <string name="dialog_title_disable_exploration">Անջատե՞լ գործառույթը</string>
+  <string name="dialog_title_disable_exploration">Անջատե՞լ Հպումով ուսումնասիրումը</string>
   <string name="dialog_message_disable_exploration">Իսկապե՞ս ուզում եք անջատել «Հպումով ուսումնասիրում» գործիքը:\n\nՁեր սարքն այլևս չի արձագանքի կարճուղի ժեստերին կամ ձայնային տարրերին՝ էկրանին հպվելու ժամանակ:</string>
   <string name="dialog_title_enable_tree_debug">Միացնե՞լ Հանգույցի ծառի կարգաբերումը:</string>
   <string name="dialog_message_enable_tree_debug">Իսկապե՞ս ուզում եք միացնել հանգույցի ծառի կարգաբերումը:\n\nՀանգույցի ծառի կարգաբերումը ձեր էկրանի բովանդակությունը կարտապատկերի սարքի գրանցամատյաններում, որոնք կարող են ընթերցվել այլ ծրագրերի կողմից:</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">Հպեք՝ իմանալու, թե ինչպես ավելի արագ օգտագործել SandFly-ը նոր ժեստերի օգնությամբ։</string>
   <string name="dump_node_tree_description">Հանգույցի ծառը տպվել է մատյանում։</string>
   <string name="report_gesture_description">Սրանք վերջերս արված ժեստերն են։ Խնդրում ենք հայտնել, թե որ ժեստն է սխալ և ինչ գործողություն էիք ակնկալում։</string>
-  <string name="update_welcome_talkback_16.1">SandFly-ի այս թարմացման մեջ էկրանի նկարագրության գործառույթն աջակցում է ավելի շատ լեզուներ։ Բացի այդ՝ կատարվել են որակի այլ բարելավումներ, որոնց շնորհիվ SandFly-ից օգտվելն ավելի հեշտ է դարձել։\n\nՓոփոխությունների մասին ավելի մանրամասն կիմանաք հաջորդ մի քանի էկրաններից։\n\nԱյս տեղեկություններին կարող եք ավելի ուշ ծանոթանալ՝ անցնելով SandFly-ի կարգավորումներ &gt; Նոր գործառույթներ SandFly-ում։</string>
-  <string name="update_welcome_talkback_16.1_tts">SandFly-ի այս թարմացման մեջ էկրանի նկարագրության գործառույթն աջակցում է ավելի շատ լեզուներ։ Բացի այդ՝ կատարվել են որակի այլ բարելավումներ, որոնց շնորհիվ SandFly-ից օգտվելն ավելի հեշտ է դարձել։\n\nՓոփոխությունների մասին ավելի մանրամասն կիմանաք հաջորդ մի քանի էկրաններից։\n\nԱյս տեղեկություններին կարող եք ավելի ուշ ծանոթանալ՝ անցնելով SandFly-ի կարգավորումներ, ապա՝ Նոր գործառույթներ SandFly-ում։</string>
+  <string name="update_welcome_talkback_16.1">SandFly-ի այս թարմացման մեջ «Նկարագրել էկրանը» գործառույթն աջակցում է ավելի շատ լեզուներ։ Բացի այդ՝ կատարվել են որակի այլ բարելավումներ, որոնց շնորհիվ SandFly-ից օգտվելն ավելի հեշտ է դարձել։\n\nՓոփոխությունների մասին ավելի մանրամասն կիմանաք հաջորդ մի քանի էկրաններից։\n\nԱյս տեղեկություններին կարող եք ավելի ուշ ծանոթանալ՝ անցնելով SandFly-ի կարգավորումներ &gt; Նոր գործառույթներ SandFly-ում։</string>
+  <string name="update_welcome_talkback_16.1_tts">SandFly-ի այս թարմացման մեջ «Նկարագրել էկրանը» գործառույթն աջակցում է ավելի շատ լեզուներ։ Բացի այդ՝ կատարվել են որակի այլ բարելավումներ, որոնց շնորհիվ SandFly-ից օգտվելն ավելի հեշտ է դարձել։\n\nՓոփոխությունների մասին ավելի մանրամասն կիմանաք հաջորդ մի քանի էկրաններից։\n\nԱյս տեղեկություններին կարող եք ավելի ուշ ծանոթանալ՝ անցնելով SandFly-ի կարգավորումներ, ապա՝ Նոր գործառույթներ SandFly-ում։</string>
   <string name="shortcut_for_dictation_title">Դյուրանցում ձայնային մուտքագրման համար</string>
   <string name="shortcut_for_dictation_content">Gboard-ն օգտագործելիս դուք կարող եք սկսել կամ դադարեցնել ձայնային մուտքագրումը՝ երկու մատով կրկնակի հպելով էկրանին։
 &lt;br&gt;
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Բրայլյան էկրանի կարգավորումներ</string>
   <string name="keyboard_smart_browse_mode_title">Ստեղնաշար․ խելացի դիտարկման ռեժիմ</string>
   <string name="keyboard_smart_browse_mode_text">SandFly-ի խելացի դիտարկման ռեժիմն անջատում է խմբագրման դաշտում դիտարկման ռեժիմը, որպեսզի վեբ բովանդակություն դիտարկելիս կարողանաք տեքստ մուտքագրել ֆիզիկական ստեղնաշարի միջոցով։ Դիտարկման ռեժիմը նորից միանում է, երբ դուրս եք գալիս վեբ էջի խմբագրման դաշտից, որպեսզի կարողանաք արդյունավետորեն շարունակել դիտարկումը։ Դուք կարող եք միացնել կամ անջատել «Խելացի դիտարկման ռեժիմը»՝ անցնելով <xliff:g id="settings_path">%1$s</xliff:g>։</string>
-  <string name="advanced_settings_link">SandFly-ի կարգավորումներ &gt; Լրացուցիչ կարգավորումներ</string>
-  <string name="advanced_settings_link_tts">SandFly-ի կարգավորումներ, ապա Լրացուցիչ կարգավորումներ</string>
   <string name="keyboard_tutorial_title">Ստեղնաշարի ուղեցույց</string>
   <string name="keyboard_tutorial_text">SandFly-ն այժմ ներառում է ստեղնաշարի ուղեցույց, որը նախատեսված է ֆիզիկական ստեղնաշարի միջոցով ստեղների ընդլայնված շարվածքի ստեղնային դյուրանցումներն ու հրամանները սովորելու համար։ Ուղեցույցը բացելու համար անցեք <xliff:g id="settings_path">%1$s</xliff:g>։</string>
-  <string name="tutorial_link">SandFly-ի կարգավորումներ &gt; SandFly-ի ուղեցույց</string>
-  <string name="tutorial_link_tts">SandFly-ի կարգավորումներ, ապա SandFly-ի ուղեցույց</string>
   <string name="tutorial_entry_point_title">Ուղեցույց</string>
   <string name="welcome_to_talkback_title">Ներկայացնում ենք SandFly-ը</string>
   <string name="talkback_is_on">SandFly միացված է</string>
@@ -967,7 +963,7 @@
   <string name="screen_search_link_subtext">Թույլ է տալիս որոշակի տարրեր գտնել էկրանին</string>
   <string name="additional_tips_link_text">Ամենօրյա առաջադրանքներ</string>
   <string name="additional_tips_link_subtext">Իմացեք, թե ինչպես կատարել զանգեր, ուղարկել հաղորդագրություններ և անել այլ գործողություններ</string>
-  <string name="practice_gestures_link_text">Ժեստերի օգտագործման պրակտիկա</string>
+  <string name="practice_gestures_link_text">Ժեստերի օգտագործման վարժություններ</string>
   <string name="practice_gestures_link_subtext">Փորձեք տարբեր ժեստեր՝ համապատասխան գործողությանը ծանոթանալու համար</string>
   <string name="choose_tutorial_title">Ընտրեք, թե ինչպես եք ուզում փոխազդել SandFly-ի հետ</string>
   <string name="touch_tutorial_button">Հպման ուղեցույց</string>
@@ -1042,7 +1038,7 @@
   <string name="using_screen_search_title">Էկրանին որոնման օգտագործում</string>
   <string name="using_screen_search_text">Էկրանին որոնման գործառույթի միջոցով կարող եք որոշակի բովանդակություն որոնել էկրանին։\n\nԳործառույթը փորձելու համար բացեք SandFly-ի ընտրացանկը՝ հպելով 3 մատով, և ընտրացանկում գտեք «Որոնում էկրանին»։ Մուտքագրեք հիմնաբառ, օրինակ՝ «հաջորդ»՝ էկրանին այդ տեքստով տարրեր գտնելու համար։\n\nՓորձեք որոնել «հաջորդ» հիմա՝ «Հաջորդ» կոճակը գտնելու համար։</string>
   <string name="screen_search_navigation_title">Ինչպես անցնել որոնման մեկ արդյունքից մյուսը</string>
-  <string name="screen_search_navigation_text">Էկրանին որոնման արդյունք ընտրելուց հետո կարող եք արագ անցում կատարել արդյունքների միջև։\n\nԴա անելու համար օգտագործեք ընթերցման կառավարումը՝ 3 մատը սահեցնելով ձախ կամ աջ, և գտեք «Որոնում էկրանին» տարրը։\n\nԵկեք փորձենք։ Ներքևում 3 կոճակ կա, որոնք պարունակում են «գործողություն» բառը։ Որոնեք «գործողություն» էկրանին որոնման միջոցով, այնուհետև փորձեք անցնել մեկ արդյունքից մյուսը։</string>
+  <string name="screen_search_navigation_text">Էկրանին որոնման արդյունք ընտրելուց հետո կարող եք արագ անցում կատարել արդյունքների միջև։\n\nԴա անելու համար օգտագործեք ընթերցման կառավարման տարրերը՝ 3 մատը սահեցնելով ձախ կամ աջ, և գտեք «Որոնում էկրանին» տարրը։\n\nԵկեք փորձենք։ Ներքևում 3 կոճակ կա, որոնք պարունակում են «գործողություն» բառը։ Որոնեք «գործողություն» էկրանին որոնման միջոցով, այնուհետև փորձեք անցնել մեկ արդյունքից մյուսը։</string>
   <string name="screen_search_action_button_1_text">Գործողություն 1</string>
   <string name="screen_search_action_button_2_text">Գործողություն 2</string>
   <string name="screen_search_action_button_3_text">Գործողություն 3</string>
@@ -1069,15 +1065,15 @@
   <string name="checking_notifications_tips">Ծանուցումների պատմությունը տեսնելու համար 2 մատը էկրանի վերևից սահեցրեք ներքև։</string>
   <string name="image_description_playground_title">Ստացեք պատկերների նկարագրությունները</string>
   <string name="image_description_playground_content_one">Երբ կենտրոնացած եք որևէ պատկերի վրա, բացեք SandFly-ի ընտրացանկը և ընտրեք «Նկարագրել պատկերը»։\n\nՆերքևում մեկ լուսանկար է։ Փորձեք ստանալ դրա նկարագրությունը։</string>
-  <string name="image_description_playground_content_two">Պատկերների նկարագրության կարգավորումները կարող եք ցանկացած պահի փոխել՝ SandFly-ի կարգավորումներ &gt; Ավտոմատ նկարագրություններ։</string>
-  <string name="image_description_playground_content_two_tts">Դուք ցանկացած ժամանակ կարող եք փոխել պատկերի նկարագրության կարգավորումները SandFly կարգավորումներում, այնուհետև ավտոմատ նկարագրություններում:</string>
+  <string name="image_description_playground_content_two">Պատկերների նկարագրության կարգավորումները կարող եք ցանկացած պահի փոխել՝ SandFly-ի կարգավորումներ &gt; Պատկերների և էկրանի նկարագրություններ։</string>
+  <string name="image_description_playground_content_two_tts">Դուք ցանկացած ժամանակ կարող եք փոխել պատկերի նկարագրության կարգավորումները «SandFly-ի կարգավորումներ» › «Պատկերների և էկրանի նկարագրություններ» բաժնում:</string>
   <string name="image_description_sample_image_content_description">Պատկերի նմուշ․ երեք մատով հպեք՝ SandFly-ի ընտրացանկը բացելու համար, և ընտրեք «Նկարագրել պատկերը»։</string>
-  <string name="practice_gestures_title">Ժեստերի օգտագործման պրակտիկա</string>
+  <string name="practice_gestures_title">Ժեստերի օգտագործման վարժություններ</string>
   <string name="practice_keyboard_gestures_title">Սովորեք ստեղնային դյուրանցումները</string>
   <string name="pref_gesture_set_key_title">Ժեստերի հավաքածու</string>
   <string name="practice_gestures_text">Փորձեք SandFly-ի ցանկացած ժեստ այս էկրանին և իմացեք դրա հնարավորությունները։\n\nԵրկու մատով հպեք էկրանին։ Փորձեք 2, 3 կամ 4 մատով մեկ, երկու կամ երեք անգամ հպել էկրանին։\n\nԿարող եք նաև 2, 3 կամ 4 մատով կրկնակի հպել և պահել։</string>
   <string name="practice_gestures_text_pre_r">Փորձեք SandFly-ի ցանկացած ժեստ այս էկրանին և իմացեք դրա հնարավորությունները։\n\nՓորձեք մատը սահեցնել էկրանի վրայով այնպես, որ ստացվի ուղիղ անկյուն։ Օրինակ՝ սահեցրեք ներքև, ապա աջ՝ առանց էկրանից կտրելու։</string>
-  <string name="practice_keyboard_gestures_text">Ֆիզիկական ստեղնաշարի վրա սեղմեք ստեղնը կամ ստեղնային համադրությունը, որպեսզի լսեք, թե ինչ գործողություն է այն կատարում։ Դուրս գալու համար սեղմեք Ctrl + W կամ Escape։\n\nԴուք կարող եք փորձել SandFly-ը նաև այստեղ։</string>
+  <string name="practice_keyboard_gestures_text">Ֆիզիկական ստեղնաշարի վրա սեղմեք ստեղնը կամ ստեղնային համադրությունը, որպեսզի լսեք, թե ինչ գործողություն է այն կատարում։ Դուրս գալու համար սեղմեք Ctrl + W կամ Escape։\n\nԱյստեղ կարող եք նաև փորձել SandFly-ի ժեստերը։</string>
   <string name="button_1">Կոճակ 1</string>
   <string name="button_2">Կոճակ 2</string>
   <string name="button_3">Կոճակ 3</string>
@@ -1132,7 +1128,7 @@
   <string name="title_pref_blue">Կապույտ</string>
   <string name="title_pref_grey">Մոխրագույն</string>
   <string name="survey_setting_title">Հայտնեք ձեր կարծիքը</string>
-  <string name="title_summarize_view">Նկարագրիր էկրանը</string>
+  <string name="title_summarize_view">Նկարագրել էկրանը</string>
   <string name="detected_result">Հայտնաբերվել է՝ %1$s</string>
   <string name="title_image_caption">Նկարագրել պատկերը</string>
   <string name="image_caption_with_gemini_prefix">Նկարագրիր այս պատկերը՝ առանց նշագրում օգտագործելու։</string>
@@ -1254,7 +1250,7 @@
   <string name="shortcut_column_left">Նախորդ սյունակ</string>
   <string name="shortcut_column_right">Հաջորդ սյունակ</string>
   <string name="table_navigation_not_supported">Աղյուսակում նավիգացիան չի աջակցվում</string>
-  <string name="pref_auto_enter_table_navigation_title">Անցնել աղյուսակների նավարկությանը աղյուսակներում</string>
+  <string name="pref_auto_enter_table_navigation_title">Անցնել աղյուսակների նավիգացիային աղյուսակներում</string>
   <string name="title_text_formatting_menu">Նկարագրել տեքստի ձևաչափումը</string>
   <string name="summary_text_formatting_menu">Օրինակ՝ թավ, շեղ, ընդգծում և այլն</string>
   <string name="title_text_formatting_inline">Հնչեցնել տեքստի ձևաչափը</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Այլ</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Ժեստերը պահել Vibration Watch-ի համար</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly-ը դադարում է մշակել երկու մատով մեկ և կրկնակի հպումները, որպեսզի Samsung Vibration Watch-ը կարողանա օգտագործել դրանք։ Միացրեք Vibration Watch-ը ժամացույցի հատուկ գործառույթների կարգավորումներում։</string>
-    <string name="shortcut_reserved_for_vibration_watch">Պահված է Vibration Watch-ի համար «Լրացուցիչ կարգավորումներ» բաժնում</string>
     <string name="title_pref_speakerphone_away_from_ear">Բարձրախոս, երբ հեռախոսը ականջից հեռու է</string>
     <string name="summary_pref_speakerphone_away_from_ear">Զանգի ժամանակ միացնում է բարձրախոսը, երբ հեռախոսը հեռացնում եք ականջից, և նորից անցնում է ականջի բարձրախոսին, երբ այն մոտեցնում եք ականջին։</string>
     <string name="summary_pref_speakerphone_needs_permission">Անհրաժեշտ է թույլտվություն, որը Android-ը չի տալիս էկրանի ընթերցիչներին։ Այն տրամադրելու համար գործարկեք այս հրամանը adb-ով կամ Shizuku-ով, ապա վերադարձեք այս էկրան՝ %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Հավելվածներ</string>
     <string name="speech_control_no_apps">Ոչ մի հավելված դեռ չի խնդրել խոսել:</string>
     <string name="speech_control_ask_title">Թույլատրե՞լ <xliff:g id="app" example="Tasker">%1$s</xliff:g>-ին խոսել SandFly-ի միջոցով:</string>
-    <string name="speech_control_ask_text">Այն կարող է տեքստ ասել ձեր SandFly ձայնով: Դուք կարող եք սա փոխել Ընդլայնված կարգավորումներում:</string>
     <string name="speech_control_allow">Թույլատրել</string>
     <string name="speech_control_deny">Չթույլատրել</string>
     <string name="permission_speak_label">խոսել SandFly-ի միջոցով</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Հեռացնել</string>
     <string name="quick_settings_added">%1$s ավելացված է</string>
     <string name="quick_settings_removed">%1$s հեռացվել է</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly միացված: Անջատելու համար էկրանին պահեք 2 մատը 5 վայրկյան: Այս հաղորդագրության ցուցադրումը դադարեցնելու համար անջատեք SandFly կարգավորումները &gt; Ընդլայնված կարգավորումներ &gt; Ցույց տալ SandFly անջատման հրահանգները:</string>
     <string name="edge_gestures_title">Եզրեր</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Մեկ այլ դյուրանցում զննարկման ռեժիմը միացնելու կամ անջատելու համար</string>
     <string name="title_pref_vibration_strength">Թրթռման ուժը</string>
@@ -1713,9 +1706,9 @@
     <string name="tablet_held_up_faces_away_off">Բարձրացված պլանշետի էկրանը ձեզանից շրջված: անջատված է</string>
     <string name="title_keyboard_echo_on_screen">Էկրանի ստեղնաշարի արձագանք</string>
     <string name="title_keyboard_echo_physical">Ֆիզիկական ստեղնաշարի արձագանք</string>
-    <string name="title_keyboard_echo_braille_keyboard">Բրայլի ստեղնաշարի արձագանք</string>
+    <string name="title_keyboard_echo_braille_keyboard">Բրայլյան ստեղնաշարի արձագանք</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Ձեռագիր ստեղնաշարի արձագանք</string>
-    <string name="title_keyboard_echo_braille_display">Բրայլի էկրանի արձագանք</string>
+    <string name="title_keyboard_echo_braille_display">Բրայլյան էկրանի արձագանք</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Ընդհատել խոսքը մուտքագրելիս</string>
     <string name="pref_interrupt_typing_entry_always">Միշտ</string>
@@ -1735,8 +1728,8 @@
     <string name="template_item_details_order_dropped">Թողնված է՝ <xliff:g id="detail" example="Name">%1$s</xliff:g>: <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly-ը տարրի մանրամասները կարդում է այս հերթականությամբ։ Այն փոխելու համար հպեք մանրամասնին և պահեք, ապա քաշեք վեր կամ վար։ Երբ SandFly-ը միացված է, կրկնակի հպեք և պահեք, ապա քաշեք։ Կարող եք նաև օգտագործել «Տեղափոխել վերև» և «Տեղափոխել ներքև» գործողությունները։</string>
     <string name="title_pref_speak_items_before_scroll">Հնչեցնել տարրերը մինչև դրանց ոլորվելը տեսադաշտ</string>
-    <string name="gemini_error_api_key">Gemini-ը չընդունեց API բանալին։ Ստուգեք բանալին ավտոմատ նկարագրությունների կարգավորումներում։</string>
-    <string name="gemini_error_quota">Ձեր Gemini API բանալիի օգտագործման սահմանաչափը հասել է: Փորձեք ավելի ուշ:</string>
+    <string name="gemini_error_api_key">Gemini-ը չընդունեց API բանալին։ Ստուգեք բանալին «Պատկերների և էկրանի նկարագրություններ» բաժնի կարգավորումներում։</string>
+    <string name="gemini_error_quota">Ձեր Gemini API-ի բանալու օգտագործման սահմանաչափը հասել է: Փորձեք ավելի ուշ:</string>
     <string name="gemini_error_busy">Gemini-ը այս պահին զբաղված է։ Մի փոքր անց նորից փորձեք։</string>
     <string name="gemini_error_timeout">Gemini-ն շատ երկար պատասխանեց։ Նորից փորձեք։</string>
     <string name="gemini_error_with_code">Gemini-ն չկարողացավ պատասխանել, սխալ <xliff:g id="http_status" example="400">%1$d</xliff:g>։</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper-ի մոդելներ</string>
     <string name="dictation_whisper_use">Օգտագործել</string>
     <string name="title_pref_dictation_ai_service">AI ծառայություն թելադրության համար</string>
-    <string name="dictation_ai_same">Նույնը, ինչ ավտոմատ նկարագրությունների համար</string>
     <string name="title_pref_browse_mode_per_app">Հիշել զննման ռեժիմը յուրաքանչյուր հավելվածում</string>
     <string name="title_pref_export_settings">Արտահանել կարգավորումները</string>
     <string name="title_pref_import_settings">Ներմուծել կարգավորումները</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">Նախորդ կատարումը</string>
     <string name="sound_mode_needs_access">Թույլատրեք «Չանհանգստացնել» ռեժիմի մուտքը՝ «Խլացնել» ռեժիմը միացնելու կամ անջատելու համար։</string>
     <string name="title_pref_dictation_auto_stop">Ավտոմատ կանգ լռությունից հետո</string>
+    <string name="dictation_ai_same">Նույնը, ինչ «Պատկերների և էկրանի նկարագրություններ»-ում</string>
+    <string name="navigation_settings_link">SandFly-ի կարգավորումներ &gt; Նավիգացիա</string>
+    <string name="navigation_settings_link_tts">SandFly-ի կարգավորումներ, ապա Նավիգացիա</string>
+    <string name="shortcut_reserved_for_vibration_watch">Պահված է Vibration Watch-ի համար «Ժեստեր» բաժնում</string>
+    <string name="speech_control_ask_text">Այն կարող է տեքստ հնչեցնել SandFly-ի ձեր ձայնով։ Դա կարող եք փոխել «Կարգավորումներ» › «Խոսք» › «Թույլատրել այլ հավելվածներին հնչեցնել» բաժնում։</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly-ը միացված է։ Այն անջատելու համար 2 մատը 5 վայրկյան հպած պահեք էկրանին։ Այս հաղորդագրությունն այլևս չցուցադրելու համար անջատեք SandFly-ի կարգավորումներ &gt; Դադարեցում և անջատում &gt; Ցույց տալ SandFly-ն անջատելու ցուցումները։</string>
+    <string name="tutorial_link">SandFly-ի կարգավորումներ &gt; Օգնություն և հետադարձ կապ &gt; SandFly-ի ուղեցույց</string>
+    <string name="tutorial_link_tts">SandFly-ի կարգավորումներ, ապա Օգնություն և հետադարձ կապ, հետո SandFly-ի ուղեցույց</string>
 </resources>

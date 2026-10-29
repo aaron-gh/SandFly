@@ -142,8 +142,8 @@
   <string name="keycombo_menu_category_navigation">Mga pagkilos sa navigation</string>
   <string name="keycombo_menu_navigate_next">Mag-navigate sa susunod na item</string>
   <string name="keycombo_menu_navigate_previous">Mag-navigate sa nakaraang item</string>
-  <string name="keycombo_menu_navigate_up">Pumunta sa nakaraang kategorya (batay sa reading controls)</string>
-  <string name="keycombo_menu_navigate_down">Pumunta sa susunod na kategorya (batay sa reading controls)</string>
+  <string name="keycombo_menu_navigate_up">Pumunta sa nakaraang kategorya (batay sa mga kontrol sa pagbabasa)</string>
+  <string name="keycombo_menu_navigate_down">Pumunta sa susunod na kategorya (batay sa mga kontrol sa pagbabasa)</string>
   <string name="keycombo_menu_navigate_first">Mag-navigate sa unang item</string>
   <string name="keycombo_menu_navigate_last">Mag-navigate sa huling item</string>
   <string name="keycombo_menu_navigate_next_window">Pumunta sa susunod na window o element ng system</string>
@@ -163,7 +163,7 @@
   <string name="keycombo_menu_global_back">Bumalik</string>
   <string name="keycombo_menu_global_home">Home</string>
   <string name="keycombo_menu_global_recent">Mga kamakailang app</string>
-  <string name="keycombo_menu_global_notifications">Mga Notification</string>
+  <string name="keycombo_menu_global_notifications">Mga notification</string>
   <string name="keycombo_menu_global_play_pause_media">Mag-play o mag-pause ng media</string>
   <string name="keycombo_menu_global_scroll_forward_reading_menu">Piliin ang susunod na kontrol sa pagbabasa</string>
   <string name="keycombo_menu_global_scroll_backward_reading_menu">Piliin ang nakaraang kontrol sa pagbabasa</string>
@@ -383,7 +383,7 @@
   <string name="shortcut_back">Bumalik</string>
   <string name="shortcut_home">Home</string>
   <string name="shortcut_overview">Overview</string>
-  <string name="shortcut_notifications">Mga Notification</string>
+  <string name="shortcut_notifications">Mga notification</string>
   <string name="shortcut_quick_settings">Mga Mabilisang Setting</string>
   <string name="shortcut_show_custom_actions">Ipakita ang mga custom na pagkilos</string>
   <string name="shortcut_talkback_breakout">Buksan ang menu ng SandFly</string>
@@ -418,7 +418,7 @@
   <string name="label_search_result_table">Talahanayan</string>
   <string name="shortcut_media_control">Mag-play o mag-pause ng media</string>
   <string name="shortcut_voice_input">Simulan o tapusin ang pag-input gamit ang boses</string>
-  <string name="shortcut_media_control_or_voice_input">I-play o i-pause ang media, simulan o tapusin ang pag-input gamit ang boses</string>
+  <string name="shortcut_media_control_or_voice_input">Mag-play o mag-pause ng media, simulan o tapusin ang pag-input gamit ang boses</string>
   <string name="shortcut_increase_volume">Lakasan</string>
   <string name="shortcut_decrease_volume">Hinaan</string>
   <string name="shortcut_all_apps">Lahat ng app</string>
@@ -824,7 +824,7 @@
   <string name="screen_search_keyword_hint">ang keyword ay %1$s</string>
   <string name="screen_search_no_keyword_hint">Wala pang keyword. Para magsimula ng bagong paghahanap, mag-tap at mag-hold gamit ang 3 daliri o buksan ang paghahanap sa screen sa menu ng SandFly.</string>
   <string name="screen_search_no_keyword_hint_pre_r">Wala pang keyword. Para magsimula ng bagong paghahanap, mag-swipe pakaliwa at pagkatapos ay pababa o buksan ang paghahanap sa screen sa menu ng SandFly.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Hindi naka-on ang Braille keyboard. Pumunta sa setting ng SandFly at i-set up ang Braille keyboard.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Hindi naka-on ang Braille keyboard. Pumunta sa Mga setting ng SandFly at i-set up ang Braille keyboard.</string>
   <string name="suggestions_window_available">May mga available na suhestyon</string>
   <string name="suggestions_window_available_with_gesture">May mga available na suhestyon. Para i-access ang mga ito, %1$s</string>
   <string name="heads_up_window_available">May notification</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Mga setting ng braille display</string>
   <string name="keyboard_smart_browse_mode_title">Keyboard: Smart browse mode</string>
   <string name="keyboard_smart_browse_mode_text">Ino-off ng smart browse mode ng SandFly ang browse mode sa isang field ng pag-edit para tulungan kang mag-type gamit ang isang pisikal na keyboard kapag nagba-browse ka sa web. Pagkatapos, io-on ulit nito ito kapag lumipat ka sa isang field sa web na hindi pang-edit para patuloy kang makapag-browse nang efficient. Puwede mong i-on o i-off ang \"Smart browse mode\" sa <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Mga setting ng SandFly &gt; Mga advanced na setting</string>
-  <string name="advanced_settings_link_tts">Mga setting ng SandFly pagkatapos ay Mga advanced na setting</string>
   <string name="keyboard_tutorial_title">Tutorial sa keyboard</string>
   <string name="keyboard_tutorial_text">Mayroon na ngayong Tutorial sa Keyboard ang SandFly na idinisenyo para tulungan kang matutunan ang mga keyboard shortcut at command para sa Pinahusay na keymap kapag gumagamit ng pisikal na keyboard. Para i-access ang tutorial, mag-navigate papunta sa: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Mga setting ng SandFly &gt; Tutorial sa SandFly</string>
-  <string name="tutorial_link_tts">Mga setting ng SandFly pagkatapos ay tutorial sa SandFly</string>
   <string name="tutorial_entry_point_title">Tutorial</string>
   <string name="welcome_to_talkback_title">Welcome sa SandFly</string>
   <string name="talkback_is_on">Naka-on ang SandFly</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Higit pa</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Ireserba ang mga galaw para sa Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Hindi na pinapangasiwaan ng SandFly ang single tap at double tap gamit ang dalawang daliri para magamit ng Samsung Vibration Watch ang mga ito. I-enable ang Vibration Watch sa mga setting ng accessibility ng iyong relo.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Nakareserba para sa Vibration Watch sa Mga advanced na setting</string>
     <string name="title_pref_speakerphone_away_from_ear">Speaker kapag malayo sa iyong tainga</string>
     <string name="summary_pref_speakerphone_away_from_ear">Habang may tawag, lumilipat sa speaker kapag inilayo mo ang telepono sa iyong tainga, at bumabalik sa earpiece kapag itinapat mo ulit ito.</string>
     <string name="summary_pref_speakerphone_needs_permission">Kailangan ng pahintulot na hindi ibinibigay ng Android sa mga screen reader. Para ibigay ito, patakbuhin ang command na ito gamit ang adb o Shizuku, pagkatapos ay bumalik sa screen na ito: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Mga app</string>
     <string name="speech_control_no_apps">Wala pang app na humiling na magsalita.</string>
     <string name="speech_control_ask_title">Payagan ang <xliff:g id="app" example="Tasker">%1$s</xliff:g> na magsalita sa pamamagitan ng SandFly?</string>
-    <string name="speech_control_ask_text">Puwede itong magsabi ng text gamit ang iyong boses ng SandFly. Puwede mo itong baguhin sa Mga advanced na setting.</string>
     <string name="speech_control_allow">Payagan</string>
     <string name="speech_control_deny">Huwag payagan</string>
     <string name="permission_speak_label">magsalita sa pamamagitan ng SandFly</string>
@@ -1422,7 +1416,7 @@
     <string name="notification_part_app">Pangalan ng app</string>
     <string name="notification_part_time">Oras</string>
     <string name="notification_part_playback">Nagpe-play o naka-pause</string>
-    <string name="notification_list_title">Mga Notification</string>
+    <string name="notification_list_title">Mga notification</string>
     <string name="notification_list_empty">Walang notification</string>
     <string name="notification_list_no_access">Naka-off ang access sa notification</string>
     <string name="notification_list_grant_access">I-on ang access sa notification</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d notification</item>
         <item quantity="other">%d na notification</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">Naka-on ang SandFly. I-hold ang 2 daliri sa screen sa loob ng 5 segundo para i-off. Para ihinto ang pagpapakita ng mensaheng ito, i-off ang mga setting ng SandFly &gt; Mga advanced na setting &gt; Ipakita ang mga tagubilin para sa pag-off sa SandFly.</string>
     <string name="edge_gestures_title">Mga gilid</string>
     <string name="title_pref_audio_output_device">Device ng audio output</string>
     <string name="dialog_title_audio_output_device">Piliin kung saan ipe-play ang tunog ng SandFly</string>
@@ -1523,7 +1516,7 @@
     <string name="summary_support_wrap_around">I-on o i-off ang pagbalik mula sa huling item papunta sa una</string>
     <string name="wrap_around_on">Naka-on ang bumalik sa simula</string>
     <string name="wrap_around_off">Naka-off ang bumalik sa simula</string>
-    <string name="title_selector_tablet_held_up_faces_away">Nakaharap palayo ang nakataas na tablet</string>
+    <string name="title_selector_tablet_held_up_faces_away">Nakaharap palayo ang screen kapag nakataas ang tablet</string>
     <string name="summary_support_tablet_held_up_faces_away">Para sa braille keyboard sa tablet o nakabukas na foldable na telepono</string>
     <string name="tablet_held_up_faces_away_on">Naka-on ang nakaharap palayo ang nakataas na tablet</string>
     <string name="tablet_held_up_faces_away_off">Naka-off ang nakaharap palayo ang nakataas na tablet</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Mga model ng Whisper</string>
     <string name="dictation_whisper_use">Gamitin</string>
     <string name="title_pref_dictation_ai_service">Serbisyo ng AI para sa pagdidikta</string>
-    <string name="dictation_ai_same">Kapareho ng mga awtomatikong paglalarawan</string>
     <string name="title_pref_browse_mode_per_app">Tandaan ang browse mode sa bawat app</string>
     <string name="title_pref_export_settings">I-export ang mga setting</string>
     <string name="title_pref_import_settings">I-import ang mga setting</string>
@@ -1794,4 +1786,12 @@
         <item>1 minuto</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Awtomatikong ihinto kapag tahimik</string>
+    <string name="dictation_ai_same">Kapareho ng Mga paglalarawan ng larawan at screen</string>
+    <string name="navigation_settings_link">Mga setting ng SandFly &gt; Navigation</string>
+    <string name="navigation_settings_link_tts">Mga setting ng SandFly pagkatapos ay Navigation</string>
+    <string name="shortcut_reserved_for_vibration_watch">Nakareserba para sa Vibration Watch sa Mga Galaw</string>
+    <string name="speech_control_ask_text">Puwede itong magsabi ng text gamit ang iyong boses sa SandFly. Puwede mo itong baguhin sa Mga Setting, Pagsasalita, Payagang magsalita ang ibang app.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">Naka-on ang SandFly. I-hold ang 2 daliri sa screen sa loob ng 5 segundo para i-off. Para ihinto ang pagpapakita ng mensaheng ito, i-off ang Mga setting ng SandFly &gt; I-pause at i-off &gt; Ipakita ang mga tagubilin para sa pag-off sa SandFly.</string>
+    <string name="tutorial_link">Mga setting ng SandFly &gt; Tulong at feedback &gt; Tutorial sa SandFly</string>
+    <string name="tutorial_link_tts">Mga setting ng SandFly pagkatapos ay Tulong at feedback pagkatapos ay Tutorial sa SandFly</string>
 </resources>

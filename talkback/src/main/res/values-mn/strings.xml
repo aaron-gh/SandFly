@@ -10,10 +10,10 @@
   <string name="actions">Үйлдлүүд</string>
   <string name="system_actions">Системийн үйлдлүүд</string>
   <string name="talkback_preferences_subtitle">Хувилбар %1$s</string>
-  <string name="label_manager_summary_title">Тусгай шошгуудыг удирдах</string>
+  <string name="label_manager_summary_title">Захиалгат шошгуудыг удирдах</string>
   <string name="label_manager_package_title">%1$s-н шошгыг удирдах</string>
   <string name="manage_label">Шошгыг удирдах</string>
-  <string name="label_manager_no_packages_message">Одоогоор ямар ч тусгай шошго байхгүй байна\n\n<b>Тусгай шошго хэрхэн үүсгэх вэ</b>\nШошгогүй зураг руу шилжиж, SandFly цэсээс шошго нэмнэ үү</string>
+  <string name="label_manager_no_packages_message">Одоогоор ямар ч захиалгат шошго байхгүй байна\n\n<b>Захиалгат шошго хэрхэн үүсгэх вэ</b>\nШошгогүй зураг руу шилжиж, SandFly цэсээс шошго нэмнэ үү</string>
   <string name="label_manager_timestamp_text">Сүүлд өөрчилсөн цаг %1$s</string>
   <string name="search_mode_cancel">Хайлтыг цуцалсан.</string>
   <string name="notification_type_status_started">Эхэлсэн</string>
@@ -82,7 +82,7 @@
   <string name="title_pref_category_selector_menu">Уншилтын хяналт</string>
   <string name="title_pref_category_navigation_menu">Навигацын сонголтыг засах</string>
   <string name="title_pref_manage_keyboard_shortcuts">Гарын товчлол</string>
-  <string name="title_pref_export_custom_labels">Тусгай шошгыг экспортлох</string>
+  <string name="title_pref_export_custom_labels">Захиалгат шошгыг экспортлох</string>
   <string name="title_pref_help_and_feedback">Тусламж, санал хүсэлт</string>
   <string name="title_pref_help">Тусламж</string>
   <string name="title_pref_show_tos">Үйлчилгээний нөхцөл</string>
@@ -93,7 +93,7 @@
   <string name="title_pref_advanced_settings">Дэвшилтэт тохиргоо</string>
   <string name="title_pref_show_exit_watermark">SandFly-г унтраах зааварчилгааг харуулна уу</string>
   <string name="summary_pref_show_exit_watermark">SandFly асахад түүнийг хэрхэн унтраахыг харуулна</string>
-  <string name="talkback_exit_watermark_text">SandFly асаалттай байна. Унтраахын тулд дэлгэц дээр 2 хуруугаараа 5 секундийн турш удаан дарна уу. Үүнийг харуулахыг зогсоохын тулд 3 хуруугаараа товшиж SandFly-н цэсийг нээнэ үү.</string>
+  <string name="talkback_exit_watermark_text">SandFly асаалттай байна. Унтраахын тулд дэлгэц дээр 2 хуруугаараа 5 секундийн турш удаан дарна уу. Үүнийг харуулахыг зогсоохын тулд 3 хуруугаараа товшиж SandFly цэсийг нээнэ үү.</string>
   <string name="talkback_exit_watermark_hint_text">SandFly-г асаалттайг заах баннерыг харуулж байна. SandFly-г унтраахын тулд 5 секундийн турш дэлгэц дээр 2 хуруугаараа удаан дарна уу. Энэ баннерыг хасахын тулд SandFly-н Тохиргоо руу очно уу.</string>
   <string name="reset_gesture_settings_title">Зангааны тохиргоог шинэчлэх</string>
   <string name="one_finger_gestures_title">1 хурууны</string>
@@ -111,10 +111,10 @@
   <string name="pref_gesture_set_entry_0">0</string>
   <string name="pref_gesture_set_entry_1">1</string>
   <string name="keycombo_keymap_changes_instruction_title">SandFly-н гарын зургаа шинэчилнэ үү</string>
-  <string name="keycombo_keymap_changes_activity_content">Товчлуурын шууд холбооснуудыг ашигласаар байхын тулд Тохиргоо руу очоод сонгодог гарын зургаас өгөгдмөл гарын зураг руу сэлгэнэ үү.
-      &lt;br&gt;&lt;br&gt;&lt;b&gt;Өгөгдмөл гарын зургийн ялгаа юу вэ?&lt;/b&gt;
-      &lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;Навигац болон веб навигацын илүү олон үйлдэл бий.&lt;/li&gt;
-      &lt;li&gt;Зарим тохируулагч товч өөр байна.&lt;/li&gt;&lt;/ul&gt;</string>
+  <string name="keycombo_keymap_changes_activity_content"><![CDATA[Гарын товчлолуудыг ашигласаар байхын тулд Тохиргоо руу очоод сонгодог гарын зургаас өгөгдмөл гарын зураг руу сэлгэнэ үү.
+      <br><br><b>Өгөгдмөл гарын зургийн ялгаа юу вэ?</b>
+      <br><br><ul><li>Навигац болон веб навигацын илүү олон үйлдэл бий.</li>
+      <li>Зарим тохируулагч товч өөр байна.</li></ul>]]></string>
   <string name="keycombo_keymap_changes_activity_content_learn_more">Гарын зургуудын талаар нэмэлт мэдээлэл авах</string>
   <string name="keycombo_go_to_settings">Тохиргоо руу очих</string>
   <string name="keycombo_new_keymap_notification_dialog_positive_button">Ойлголоо</string>
@@ -128,7 +128,7 @@
   <string name="keycombo_menu_category_select_keymap">Гарны зураглал</string>
   <string name="keycombo_menu_select_keymap">Гарны зураглалыг сонгох</string>
   <string name="keycombo_menu_reset_keymap">Гарны зураглалыг дахин тохируулах</string>
-  <string name="keycombo_menu_view_system_keyboard_shortcuts">Системийн товчлуурын шууд холбооснуудыг харах</string>
+  <string name="keycombo_menu_view_system_keyboard_shortcuts">Системийн гарын товчлолуудыг харах</string>
   <string name="keycombo_menu_choose_trigger_modifier">Засах товчлуурыг сонгох</string>
   <string name="keycombo_menu_alert_title_trigger_modifier">%1$s-г тохируулагч товчоо болгон ашиглах уу?</string>
   <string name="keycombo_menu_alert_message_trigger_modifier">SandFly одоогоор <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g>-г таны тохируулагч товч болгон ашигладаг.</string>
@@ -142,8 +142,8 @@
   <string name="keycombo_menu_category_navigation">Навигацын үйлдэл</string>
   <string name="keycombo_menu_navigate_next">Дараагийн зүйлд навигац хий</string>
   <string name="keycombo_menu_navigate_previous">Өмнөх зүйлд навигац хий</string>
-  <string name="keycombo_menu_navigate_up">Өмнөх ангилал руу шилжих (унших хяналтад тулгуурлан)</string>
-  <string name="keycombo_menu_navigate_down">Дараагийн ангилал руу шилжих (унших хяналтад тулгуурлан)</string>
+  <string name="keycombo_menu_navigate_up">Өмнөх ангилал руу шилжих (уншилтын хяналтад тулгуурлан)</string>
+  <string name="keycombo_menu_navigate_down">Дараагийн ангилал руу шилжих (уншилтын хяналтад тулгуурлан)</string>
   <string name="keycombo_menu_navigate_first">Эхний зүйлд навигац хий</string>
   <string name="keycombo_menu_navigate_last">Сүүлийн зүйлд навигац хий</string>
   <string name="keycombo_menu_navigate_next_window">Дараагийн цонх, системийн элемент рүү шилжих</string>
@@ -163,7 +163,7 @@
   <string name="keycombo_menu_global_back">Буцах</string>
   <string name="keycombo_menu_global_home">Нүүр</string>
   <string name="keycombo_menu_global_recent">Сүүлийн апп</string>
-  <string name="keycombo_menu_global_notifications">Мэдэгдэл</string>
+  <string name="keycombo_menu_global_notifications">Мэдэгдлүүд</string>
   <string name="keycombo_menu_global_play_pause_media">Медиаг тоглуулах эсвэл түр зогсоох</string>
   <string name="keycombo_menu_global_scroll_forward_reading_menu">Дараагийн уншилтын хяналтыг сонгох</string>
   <string name="keycombo_menu_global_scroll_backward_reading_menu">Өмнөх уншилтын хяналтыг сонгох</string>
@@ -195,7 +195,7 @@
   <string name="keycombo_menu_other_open_talkback_settings">SandFly-н тохиргоог нээх</string>
   <string name="keycombo_menu_other_report_issue">Санал хүсэлт илгээх</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Шивэх цуурайн түвшнийг сэлгэх</string>
-  <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Товчлуурын шууд холбоосны жагсаалтыг харуулна уу</string>
+  <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Гарын товчлолын жагсаалтыг харуулна уу</string>
   <string name="keycombo_menu_category_web">Веб навигацын үйл ажиллагаа</string>
   <string name="keycombo_menu_other_read_current_url">Хуудасны URL-г унших</string>
   <string name="keycombo_menu_other_read_link_url">URL-г чангаар унших</string>
@@ -272,7 +272,7 @@
   <string name="clear_button_in_keycombo_assign_dialog">Арилгах</string>
   <string name="already_in_use_error_message">Одоогоор \"%1$s\"-д оноосон</string>
   <string name="invalid_shortcut_message">Энэ товчлолыг ашиглах боломжгүй. Өөр товчны хослол туршиж үзнэ үү.</string>
-  <string name="keyboard_assignment_dialog_title">\"%1$s\"-н товчлуурын шууд холбоос</string>
+  <string name="keyboard_assignment_dialog_title">\"<xliff:g>%1$s</xliff:g>\"-н гарын товчлол</string>
   <string name="keycombo_assign_dialog_new_instruction">Шинэ товчлол тохируулахын тулд %1$s + товчин дээр дарна уу. Та мөн %1$s + control эсвэл shift + товчин дээр дарж болно. Хэрэв та %1$s + O эсвэл R дээр дарвал дараа нь удалгүй гуравдагч товчин дээр дарах шаардлагатай. Товчлолыг арилгахын тулд ухраах товчин дээр, өгөгдмөл тохиргоо руу шинэчлэхийн тулд Ctrl + ухраах товчин дээр дарна уу. Хадгалахын тулд Enter дээр, цуцлахын тулд Escape дээр дарна уу.</string>
   <string name="keycombo_sequence_key_assignment_instruction">Хэрэв та %1$s + O эсвэл R товчийг ашиглаж байвал гуравдагч товчин дээр дарах шаардлагатай</string>
   <string name="invalid_modifier_key_as_third_key_message">Хэрэв та %1$s + O эсвэл R товчийг ашиглаж байвал гуравдагч товчин дээр дарах шаардлагатай. Гуравдагч товч нь Esc, ухраах, Enter, тохируулагч товч байж болохгүй.</string>
@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">Автомат тайлбарууд</string>
   <string name="title_pref_gemini_settings">Gemini-н тохиргоо</string>
   <string name="title_pref_gemini_enabled">Gemini дуут тушаалууд</string>
-  <string name="title_pref_category_automatic_description_summary">Та SandFly-н цэсээс \“Зураг тайлбарлах\”-ыг сонгохдоо ХОУ-аар үүсгэсэн зургийн нарийвчилсан тайлбарыг аваарай.\n\nТа мөн зураг эсвэл дүрс тэмдэг сонгохдоо автомат тайлбар авах боломжтой. Автомат тайлбар интернэт холболтгүйгээр ажилладаг.</string>
+  <string name="title_pref_category_automatic_description_summary">Та SandFly цэсээс \“Зургийг тайлбарлах\”-ыг сонгохдоо ХОУ-аар үүсгэсэн зургийн нарийвчилсан тайлбарыг аваарай.\n\nТа мөн зураг эсвэл дүрс тэмдэг сонгохдоо автомат тайлбар авах боломжтой. Автомат тайлбар интернэт холболтгүйгээр ажилладаг.</string>
   <string name="title_pref_icon_detection">Дүрс тэмдгийн автомат тайлбар</string>
   <string name="title_pref_image_description">Зургийн автомат тайлбар</string>
   <string name="title_pref_text_recognition">Зураг дахь текстийн автомат тайлбар</string>
@@ -358,7 +358,7 @@
   <string name="screen_dimmed">Дэлгэцийг нуусан</string>
   <string name="screen_brightness_restored">Дэлгэцийг харуулж байна</string>
   <string name="screen_dimming_exit_instruction_line1">SandFly хандалтын үйлчилгээ дэлгэцийг нуусан байна</string>
-  <string name="screen_dimming_exit_instruction_line2">Үүнийг өөрчлөхийн тулд SandFly-н цэсийг <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> нээж \"<xliff:g id="menu item" example="show screen">%2$s</xliff:g>\"-г сонгоод дараа нь хоёр товшино уу.</string>
+  <string name="screen_dimming_exit_instruction_line2">Үүнийг өөрчлөхийн тулд SandFly цэсийг <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> нээж \"<xliff:g id="menu item" example="show screen">%2$s</xliff:g>\"-г сонгоод дараа нь хоёр товшино уу.</string>
   <string name="shortcut_title_basic_navigation">Үндсэн шилжилт</string>
   <string name="shortcut_title_system_actions">Системийн үйлдлүүд</string>
   <string name="shortcut_title_reading_control">Унших</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Бусад</string>
   <string name="shortcut_unassigned">Оноохын тулд товших</string>
   <string name="shortcut_not_customizable">%1$s, өөрчлөх боломжгүй</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Чичирхийлдэг цаг асаалттай байхад боломжгүй</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Vibration Watch асаалттай байхад боломжгүй</string>
   <string name="shortcut_next">Дараагийн зүйл</string>
   <string name="shortcut_previous">Өмнөх зүйл</string>
   <string name="shortcut_scroll_forward">Цааш нь гүйлгэж харах</string>
@@ -383,7 +383,7 @@
   <string name="shortcut_back">Буцах</string>
   <string name="shortcut_home">Нүүр</string>
   <string name="shortcut_overview">Тойм</string>
-  <string name="shortcut_notifications">Мэдэгдэл</string>
+  <string name="shortcut_notifications">Мэдэгдлүүд</string>
   <string name="shortcut_quick_settings">Шуурхай тохиргоо</string>
   <string name="shortcut_show_custom_actions">Захиалгат үйлдлийг харуулах</string>
   <string name="shortcut_talkback_breakout">SandFly цэсийг нээх</string>
@@ -404,10 +404,10 @@
   <string name="talkback_menu_title">SandFly цэс</string>
   <string name="talkback_menu_close_button_text">@string/close_string</string>
   <string name="talkback_menu_more_options_text">Тохируулаад эсвэл төхөөрөмжийн түгжээг тайлж цэсийн бусад сонголтыг ав</string>
-  <string name="talkback_menu_title_content_description">SandFly-н цэс. SandFly-н цэсийн сонголтуудыг судлахын тулд баруун тийш шударна уу.\n\nЗаавар луу буцахын тулд дэлгэцийнхээ ирмэгээс зүүн эсвэл баруун тийш шудрахад 2 хуруугаа ашиглана уу.</string>
+  <string name="talkback_menu_title_content_description">SandFly цэс. SandFly цэсийн сонголтуудыг судлахын тулд баруун тийш шударна уу.\n\nЗаавар луу буцахын тулд дэлгэцийнхээ ирмэгээс зүүн эсвэл баруун тийш шудрахад 2 хуруугаа ашиглана уу.</string>
   <string name="shortcut_show_language_options">Ярианы хэлийг өөрчлөх</string>
-  <string name="shortcut_select_next_setting">Дараагийн унших хяналт</string>
-  <string name="shortcut_select_previous_setting">Өмнөх унших хяналт</string>
+  <string name="shortcut_select_next_setting">Дараагийн уншилтын хяналт</string>
+  <string name="shortcut_select_previous_setting">Өмнөх уншилтын хяналт</string>
   <string name="shortcut_pass_through_next">Системийн зангаагаар дамжих</string>
   <string name="shortcut_a11y_button">Хандалтын товчлол</string>
   <string name="shortcut_a11y_button_long_press">Хандалтын товчлолыг барих</string>
@@ -445,7 +445,7 @@
   <string name="shortcut_toggle_braille_contracted_mode">Бичиглэлтэй (2-р түвшин), бичиглэлгүй (1-р түвшин) хооронд сэлгэх</string>
   <string name="shortcut_toggle_braille_on_screen_overlay">Дэлгэцийн брайлыг холбогдсон брайл дэлгэцэд харуулах, нуух</string>
   <string name="shortcut_toggle_sound_feedback">Дуут дохиог (earcon чимээ) асаах, унтраах</string>
-  <string name="shortcut_show_learn_mode_page">Товчлуурын шууд холбоосыг давтах</string>
+  <string name="shortcut_show_learn_mode_page">Гарын товчлолыг давтах</string>
   <string name="shortcut_announce_phonetic_pronunciation">Сонгосон зүйлийн хувьд авиа зүйн дуудлагаар үсгийг нь уншина уу</string>
   <string name="shortcut_cycle_punctuation_verbosity">Цэг, таслалын түвшнийг сэлгэх</string>
   <string name="title_local_breakout_no_items">Цэс хоосон</string>
@@ -477,12 +477,12 @@
   <string name="title_copy_last_spoken_phrase">Сүүлд хэлсэн хэллэгийг хуулах</string>
   <string name="title_spell_last_spoken_phrase">Сүүлд хэлсэн хэллэгийг үсэглэх</string>
   <string name="title_repeat_last_spoken_phrase">Сүүлд хэлсэн хэллэгийг давтах</string>
-  <string name="title_custom_action">Үйлдэл</string>
+  <string name="title_custom_action">Үйлдлүүд</string>
   <string name="title_show_hide_screen">Дэлгэцийг нуух эсвэл харуулах</string>
   <string name="title_control_speak_time">Цаг хэд болж байгааг хэлэх</string>
   <string name="title_show_screen_search">Дэлгэцийн хайлт</string>
   <string name="title_show_voice_commands">Дуут тушаал</string>
-  <string name="title_show_keyboard_shortcuts">Товчлуурын шууд холбоос</string>
+  <string name="title_show_keyboard_shortcuts">Гарын товчлол</string>
   <string name="talkback_show_talkback_settings">SandFly-н тохиргоо</string>
   <string name="title_show_braille_display_settings">Брайл дэлгэцийн тохиргоо</string>
   <string name="title_granularity_default">Өгөгдмөл навигац</string>
@@ -509,7 +509,7 @@
   <string name="summary_voice_commands">SandFly-г дуу хоолойгоороо хянах</string>
   <string name="summary_show_hide_screen">Дэлгэцийг нууснаар таны дэлгэц олон нийтийн газарт бусдад харагдахгүй. Дэлгэцээ нуусны дараа үүнийг хэвийн төлөвт буцаана уу.</string>
   <string name="summary_control_speak_time">Дэлгэцийг асаахад цаг хэд болж байгааг чангаар хэлэх эсэхийг өөрчилнө үү</string>
-  <string name="summary_show_keyboard_shortcuts_preferences">Товчлуурын шууд холбоосыг нээнэ үү</string>
+  <string name="summary_show_keyboard_shortcuts_preferences">Гарын товчлолыг нээнэ үү</string>
   <string name="summary_talkback_preferences">SandFly-н тохиргоог нээх</string>
   <string name="summary_braile_display_preferences">Брайл дэлгэцийн тохиргоог нээ</string>
   <string name="summary_system_actions">Бүх апп болон Шуурхай тохиргоонд очих</string>
@@ -667,8 +667,8 @@
   <string name="label_dialog_confirm_label_remove">Шошгыг хассан</string>
   <string name="label_dialog_text">Текстийг энэ элементийн шошгоор ашиглахаар оруулна уу\nДотоод харагдцын нэр: %1$s</string>
   <string name="label_dialog_edit_hint">Шошгоны текст</string>
-  <string name="label_import">Тусгай шошгыг импортлох</string>
-  <string name="label_import_dialog_title">SandFly-н тусгай шошгыг импортлох</string>
+  <string name="label_import">Захиалгат шошгыг импортлох</string>
+  <string name="label_import_dialog_title">SandFly-н захиалгат шошгыг импортлох</string>
   <string name="label_import_dialog_message">Зөрчил гарсан тохиолдолд байгаа шошгыг дарах, эсвэл алгасах эсэхээ сонгоно уу</string>
   <string name="label_import_dialog_skip">Алгасах</string>
   <string name="label_import_dialog_override">Дарж бичих</string>
@@ -685,7 +685,7 @@
   <string name="button_disable_all_events">Бүгдийг цуцлах</string>
   <string name="button_enable_all_events">Бүгдийг идэвхжүүлэх</string>
   <string name="dialog_title_disable_exploration">Хүрэлтээр сонсохыг идэвхгүй болгох уу?</string>
-  <string name="dialog_message_disable_exploration">Хүрэлтээр сонсохыг унтраах уу?\n\nТа төхөөрөмжний дэлгэцэнд хүрч товчлол дохиог хийх буюу эсвэл ярихад таны төхөөрөмж хариу өгөхгүй.</string>
+  <string name="dialog_message_disable_exploration">Хүрэлтээр сонсохыг унтраах уу?\n\nТаны төхөөрөмж товчлолын зангаанд хариу өгөхгүй бөгөөд дэлгэцэд хүрэхэд зүйлсийг уншихгүй.</string>
   <string name="dialog_title_enable_tree_debug">Зангилаа модон дебаг-г идэвхжүүлэх үү?</string>
   <string name="dialog_message_enable_tree_debug">Та зангилаа модон дебаг-г идэвхжүүлэхдээ итгэлтэй байна уу?\n\nЗангилаа модон дебаг нь таны дэлгэцийн агуулгыг таны төхөөрөмжийн лог-т нээлттэй болгосноор өөр аппликейшнүүдэд унших боломж олгоно.</string>
   <string name="dialog_title_enable_tree_debug_gesture">4 хуруугаар гурав товших зангааг дахин оноох уу?</string>
@@ -822,9 +822,9 @@
   <string name="no_navigate_typo_gesture">Үүнийг ашиглахын тулд SandFly-н тохиргоо руу очиж, зөв бичгийн алдаа шалгах хэрэгсэлд зориулан зангаа нэмнэ үү</string>
   <string name="use_spelling_suggestion_hint">Текстийг солихын тулд хоёр товшино уу</string>
   <string name="screen_search_keyword_hint">түлхүүр үг нь %1$s юм</string>
-  <string name="screen_search_no_keyword_hint">Одоогоор ямар ч түлхүүр үг байхгүй. Шинэ хайлт эхлүүлэхийн тулд 3 хуруугаараа товшоод удаан дарах эсвэл SandFly-н цэсээс дэлгэцийн хайлтыг нээнэ үү.</string>
-  <string name="screen_search_no_keyword_hint_pre_r">Одоогоор ямар ч түлхүүр үг байхгүй. Шинэ хайлт эхлүүлэхийн тулд зүүн тийш, дараа нь доош шудрах эсвэл SandFly-н цэсээс дэлгэцийн хайлтыг нээнэ үү.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Брайл гарыг асаагаагүй байна. SandFly тохиргоо руу очиж, Брайл гарыг тохируулаад дахин оролдоно уу.</string>
+  <string name="screen_search_no_keyword_hint">Одоогоор ямар ч түлхүүр үг байхгүй. Шинэ хайлт эхлүүлэхийн тулд 3 хуруугаараа товшоод удаан дарах эсвэл SandFly цэсээс дэлгэцийн хайлтыг нээнэ үү.</string>
+  <string name="screen_search_no_keyword_hint_pre_r">Одоогоор ямар ч түлхүүр үг байхгүй. Шинэ хайлт эхлүүлэхийн тулд зүүн тийш, дараа нь доош шудрах эсвэл SandFly цэсээс дэлгэцийн хайлтыг нээнэ үү.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Брайл гарыг асаагаагүй байна. SandFly-н тохиргоо руу очиж, Брайл гарыг тохируулаад дахин оролдоно уу.</string>
   <string name="suggestions_window_available">Зөвлөмж боломжтой байна</string>
   <string name="suggestions_window_available_with_gesture">Зөвлөмж боломжтой байна. Хандахын тулд %1$s</string>
   <string name="heads_up_window_available">Мэдэгдэл боломжтой</string>
@@ -851,7 +851,7 @@
   <string name="keep_reviewing_tutorial_button">Үргэлжлүүлэн хянах</string>
   <string name="welcome_to_updated_talkback_title">Шинэчилсэн SandFly-д тавтай морилно уу</string>
   <string name="navigation_heading">Навигац</string>
-  <string name="setting_selector_heading">Унших хяналт</string>
+  <string name="setting_selector_heading">Уншилтын хяналт</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Видео эсвэл хөгжмийн аппад медиаг түр зогсоох эсвэл тоглуулахын тулд 2 хуруугаараа хоёр товшино уу. Одоо туршиж үзнэ үү.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Бусад апп энэ зангааг утасны дуудлагад хариулах эсвэл дуудлагыг дуусгахад ашиглаж болно. Энэ зангааг бүх апп дэмждэггүй байж болзошгүй.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Медиаг түр зогсоосон буюу эсвэл тоглуулж байна. Энэ нь ихэвчлэн одоогийн видео эсвэл хөгжмийг тоглуулах буюу эсвэл түр зогсооно. Үргэлжлүүлэхийн тулд баруун тийш шударна уу.</string>
@@ -865,7 +865,7 @@
   <string name="new_shortcut_gesture_cut_text_announcement">Текстийг тайрсан. Энэ нь ихэвчлэн таны сонгосон текстийг тайрна. Үргэлжлүүлэхийн тулд баруун тийш шударна уу.</string>
   <string name="new_shortcut_gesture_selection_mode_text">Текстийн сонголтын горимыг эхлүүлэх эсвэл дуусгахын тулд 2 хуруугаараа хоёр товшоод, удаан дарна уу.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Сонголтын горим асаалттай эсвэл унтарсан. Энэ нь ихэвчлэн таныг оролтын талбарт байх үед текстийн сонголтыг горимыг эхлүүлэх буюу эсвэл зогсооно. Үргэлжлүүлэхийн тулд баруун тийш шударна уу.</string>
-  <string name="new_shortcut_gesture_reading_menu_text">Унших хяналтыг ашиглахын тулд 3 хуруугаараа зүүн эсвэл баруун тийш шударна уу. Та мөн 3 хуруугаараа дээш эсвэл доош шудрах боломжтой.</string>
+  <string name="new_shortcut_gesture_reading_menu_text">Уншилтын хяналтыг ашиглахын тулд 3 хуруугаараа зүүн эсвэл баруун тийш шударна уу. Та мөн 3 хуруугаараа дээш эсвэл доош шудрах боломжтой.</string>
   <string name="new_shortcut_gesture_note">Санамж: Та зарим зангаагаа өөрчилсөн тул энэ мэдээлэл оновчтой биш байж болзошгүй. Зангаагаа шалгахын тулд SandFly-н тохиргоо руу очно уу.</string>
   <string name="welcome_to_android11_text">SandFly-г ашиглахад илүү хурдан бөгөөд илүү хялбар болгохын тулд шинэ зангаанууд нэмсэн.\n\nЭнэ дэлгэц дээр та шинэ зангаануудыг туршиж үзэх боломжтой. Та энэ мэдээллийг хүссэн үедээ SandFly-н тохиргооноос шалгах боломжтой.</string>
   <string name="new_gesture_notification_title">SandFly-н шинэ зангаанууд</string>
@@ -881,12 +881,12 @@
   <string name="shortcut_for_dictation_content_without_google_play">Gboard дэлгэц дээр байх үед та одоо дуугаар бичихийг эхлүүлэхийн тулд хоёр хуруугаараа хоёр товших, дараа нь зогсоохын тулд хоёр хуруугаар хоёр товшихыг ашиглах боломжтой боллоо.</string>
   <string name="announcing_text_formatting_title">Текстийн форматыг мэдэгдэх</string>
   <string name="announcing_text_formatting_header">SandFly одоо тод, налуу, текстийн өнгө зэрэг текстийн форматын өөрчлөлтийг мэдэгдэх боломжтой боллоо. Эхлэхийн тулд:</string>
-  <string name="announcing_text_formatting_option1">Форматтай зүйл дээр төвлөрч, SandFly-н цэсийг нээгээд, \"Текстийн форматыг тайлбарлах\" гэснийг сонгох эсвэл</string>
+  <string name="announcing_text_formatting_option1">Форматтай зүйл дээр төвлөрч, SandFly цэсийг нээгээд, \"Текстийн форматыг тайлбарлах\" гэснийг сонгох эсвэл</string>
   <string name="announcing_text_formatting_option2">Форматын өөрчлөлтийн мэдэгдлийг асаах эсвэл унтраах текстийн форматын уншилтын хяналтыг нэмнэ үү.</string>
   <string name="announcing_text_formatting_middle">Та үүнийг туршиж үзэхэд бэлэн болсон үед форматалсан текстийн жишээ энд байна:</string>
   <string name="announcing_text_formatting_tail">Хэрэв та форматалсан текстийг хэрхэн мэдэгдэхийг өөрчлөхийг хүсвэл %1$s руу очих боломжтой.</string>
-  <string name="text_formatting_options_settings_path">SandFly-н тохиргоо &gt; Нуршсан дэлгэрэнгүй байдал &gt; Текстийн форматын сонголтууд</string>
-  <string name="text_formatting_options_settings_path_tts">SandFly-н тохиргоо, дараа нь Нуршсан дэлгэрэнгүй байдал, тэгээд Текстийн форматын сонголтууд</string>
+  <string name="text_formatting_options_settings_path">SandFly-н тохиргоо &gt; Нуршуу &gt; Текстийн форматын сонголтууд</string>
+  <string name="text_formatting_options_settings_path_tts">SandFly-н тохиргоо, дараа нь Нуршуу, тэгээд Текстийн форматын сонголтууд</string>
   <string name="announcing_text_formatiing_sample">Энэ текст &lt;b&gt;тод&lt;/b&gt; бөгөөд итгэлтэйгээр бүгдийг өөртөө татна
 &lt;br&gt;Харин энэ &lt;u&gt;доогуур зураастай&lt;/u&gt; бөгөөд эргэлзээгүйгээр яг л шивнээ мэт.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;Сарнай улаан өнгөтэй&lt;/span&gt; шиг сонгодог бас үнэн
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">Бүх хэсэгт тусад нь товших</string>
   <string name="split_tap_everywhere_text">Та одоо зүйлсийг идэвхжүүлэхийн тулд тусдаа товшилтыг гараас гадуур ч хамаагүй бүх хэсэгт ашиглах боломжтой. Тусдаа товшилтыг ашиглахын тулд нэг хуруугаараа дэлгэцийг судлаад, эхний хуруугаа өргөхгүйгээр одоо сонгосон зүйлийг идэвхжүүлэхийн тулд нөгөө хуруугаараа дэлгэц дээр товшино уу.</string>
   <string name="keyboard_enhanced_keymap_title">Гар: Сайжруулсан гарын зураг</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly одоо олон төрлийн шинэ команд, товчлолыг агуулсан физик гарны \"Сайжруулсан товчлуурын зураг\"-тай боллоо. Энэхүү сайжруулалт нь физик гар ашигладаг SandFly хэрэглэгчдэд илүү үр дүнтэй вэб навигац, навигац болон харилцан үйлчлэлийг хялбаршуулах \"харах горим\"-ыг агуулдаг. Та <xliff:g id="settings_path">%1$s</xliff:g> доторх \"Сайжруулсан товчлуурын зураг\" руу шилжиж болно.\n\nХэрэв та Брайл дэлгэц ашигладаг бол шинэ хайлтын горимын товчлолуудыг ашиглан өөрийн Брайл дэлгэцээсээ контентыг шууд үзэх боломжтой. Энэ өөрчлөлтийг хангахын тулд зарим Брайл дэлгэцийн товчлолыг өөрчилсөн. Та <xliff:g id="braille_display_settings_path">%2$s</xliff:g> дотор Брайл дэлгэцийн бүх товчлолын жагсаалтыг харах боломжтой.</string>
-  <string name="keyboard_shortcuts_link">SandFly-н тохиргоо &gt; Товчлуурын шууд холбоос</string>
-  <string name="keyboard_shortcuts_link_tts">SandFly-н тохиргоо, дараа нь Товчлуурын шууд холбоос</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly одоо олон төрлийн шинэ тушаал, товчлолыг агуулсан физик гарны \"Сайжруулсан товчлуурын зураг\"-тай боллоо. Энэхүү сайжруулалт нь физик гар ашигладаг SandFly хэрэглэгчдэд илүү үр дүнтэй вэб навигац, навигац болон харилцан үйлчлэлийг хялбаршуулах \"харах горим\"-ыг агуулдаг. Та <xliff:g id="settings_path">%1$s</xliff:g> доторх \"Сайжруулсан товчлуурын зураг\" руу шилжиж болно.\n\nХэрэв та Брайл дэлгэц ашигладаг бол шинэ хайлтын горимын товчлолуудыг ашиглан өөрийн Брайл дэлгэцээсээ контентыг шууд үзэх боломжтой. Энэ өөрчлөлтийг хангахын тулд зарим Брайл дэлгэцийн товчлолыг өөрчилсөн. Та <xliff:g id="braille_display_settings_path">%2$s</xliff:g> дотор Брайл дэлгэцийн бүх товчлолын жагсаалтыг харах боломжтой.</string>
+  <string name="keyboard_shortcuts_link">SandFly-н тохиргоо &gt; Гарын товчлол</string>
+  <string name="keyboard_shortcuts_link_tts">SandFly-н тохиргоо, дараа нь Гарын товчлол</string>
   <string name="braille_display_settings_link">Брайл дэлгэцийн тохиргоо</string>
   <string name="keyboard_smart_browse_mode_title">Гар: Ухаалаг үзэх горим</string>
   <string name="keyboard_smart_browse_mode_text">SandFly-н ухаалаг үзэх горим таныг вебийг үзэх үед биет гараар бичихэд тань туслахын тулд засах талбар дээрх үзэх горимыг унтраадаг. Дараа нь таныг веб дээрх засах боломжгүй талбар луу очих үед үүнийг дахин асаах тул та үр ашигтайгаар тасралтгүй үзэх боломжтой. Та \"Ухаалаг үзэх горим\"-ыг <xliff:g id="settings_path">%1$s</xliff:g>-с асаах, унтраах боломжтой.</string>
-  <string name="advanced_settings_link">SandFly-н тохиргоо &gt; Нарийвчилсан тохиргоо</string>
-  <string name="advanced_settings_link_tts">SandFly-н тохиргоо, дараа нь Нарийвчилсан тохиргоо</string>
   <string name="keyboard_tutorial_title">Гарын заавар</string>
-  <string name="keyboard_tutorial_text">SandFly-д одоо биет гарыг ашиглах үед танд Сайжруулсан гарын зургийн товчлуурын шууд холбоос, тушаалыг сурахад туслахаар зориулалттай Гарын заавар багтсан. Зааварт хандахын тулд дараах руу шилжинэ үү: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFly-н тохиргоо &gt; SandFly-н заавар</string>
-  <string name="tutorial_link_tts">SandFly-н тохиргоо, дараа нь SandFly-н заавар</string>
+  <string name="keyboard_tutorial_text">SandFly-д одоо биет гарыг ашиглах үед танд Сайжруулсан гарын зургийн гарын товчлол, тушаалыг сурахад туслахаар зориулалттай Гарын заавар багтсан. Зааварт хандахын тулд дараах руу шилжинэ үү: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <string name="tutorial_entry_point_title">Заавар</string>
   <string name="welcome_to_talkback_title">SandFly-д тавтай морилно уу</string>
   <string name="talkback_is_on">SandFly асаалттай байна</string>
@@ -946,10 +942,10 @@
   <string name="adjusting_volume_second_instruction">Удаан дарж байхдаа төхөөрөмжийнхөө хажуу талд байх дууны түвшнийг нэмэх эсвэл дууны түвшнийг багасгах товчлуурыг дарна уу</string>
   <string name="adjusting_volume_tail">Та хэдэн секундийн дараа хандалтын шинэ дууны түвшнийг сонсоно.\n\nХандалтын дууны түвшнийг одоо тохируулж үзнэ үү.</string>
   <string name="menus_title">Цэс болон тохиргоог ашиглах</string>
-  <string name="menus_talkback_menu_text">SandFly-н цэсэд танд тогтмол хэрэгтэй байж болох тохиргоо болон хяналт багтсан байдаг.\n\n3 хуруугаараа дэлгэц дээр товшиж, SandFly-н цэсийг одоо нээнэ үү.</string>
-  <string name="menus_talkback_menu_text_pre_r">SandFly-н цэсэд танд тогтмол хэрэгтэй байж болох тохиргоо болон хяналт багтсан байдаг.\n\nДоош, дараа нь баруун тийш шударч, SandFly-н цэсийг одоо нээнэ үү.</string>
-  <string name="menus_selector_text">Эдгээр товчлол нь танд навигацаа тэмдэгтээс үг рүү сэлгэх эсвэл SandFly-н ярианы хурдыг өөрчлөх зэрэг тохиргоог шуурхай өөрчлөхөд тусална.\n\nУнших хяналтаа шуурхай өөрчлөхийн тулд 3 хуруугаараа зүүн тийш шудрах эсвэл 3 хуруугаараа баруун тийш шударна уу.\n\nТа дараа нь SandFly-н тохиргоо хэсэгт SandFly-н цэс болон унших хяналтаа өөрчлөх боломжтой.</string>
-  <string name="menus_selector_text_pre_r">Эдгээр товчлол нь танд навигацаа тэмдэгтээс үг рүү сэлгэх эсвэл SandFly-н ярианы хурдыг өөрчлөх зэрэг тохиргоог шуурхай өөрчлөхөд тусална.\n\nУнших хяналтаа шуурхай өөрчлөхийн тулд доош, дараа нь арагш шударна уу.\n\nТа дараа нь SandFly-н тохиргоо хэсэгт SandFly-н цэс болон унших хяналтаа өөрчлөх боломжтой.</string>
+  <string name="menus_talkback_menu_text">SandFly цэсэд танд тогтмол хэрэгтэй байж болох тохиргоо болон хяналт багтсан байдаг.\n\n3 хуруугаараа дэлгэц дээр товшиж, SandFly цэсийг одоо нээнэ үү.</string>
+  <string name="menus_talkback_menu_text_pre_r">SandFly цэсэд танд тогтмол хэрэгтэй байж болох тохиргоо болон хяналт багтсан байдаг.\n\nДоош, дараа нь баруун тийш шударч, SandFly цэсийг одоо нээнэ үү.</string>
+  <string name="menus_selector_text">Эдгээр товчлол нь танд навигацаа тэмдэгтээс үг рүү сэлгэх эсвэл SandFly-н ярианы хурдыг өөрчлөх зэрэг тохиргоог шуурхай өөрчлөхөд тусална.\n\nУншилтын хяналтаа шуурхай өөрчлөхийн тулд 3 хуруугаараа зүүн тийш шудрах эсвэл 3 хуруугаараа баруун тийш шударна уу.\n\nТа дараа нь SandFly-н тохиргоо хэсэгт SandFly цэс болон уншилтын хяналтаа өөрчлөх боломжтой.</string>
+  <string name="menus_selector_text_pre_r">Эдгээр товчлол нь танд навигацаа тэмдэгтээс үг рүү сэлгэх эсвэл SandFly-н ярианы хурдыг өөрчлөх зэрэг тохиргоог шуурхай өөрчлөхөд тусална.\n\nУншилтын хяналтаа шуурхай өөрчлөхийн тулд доош, дараа нь арагш шударна уу.\n\nТа дараа нь SandFly-н тохиргоо хэсэгт SandFly цэс болон уншилтын хяналтаа өөрчлөх боломжтой.</string>
   <string name="all_set_title">Тохируулж дууслаа!</string>
   <string name="all_set_text">Та SandFly-г ашиглахад бэлэн боллоо.\n\nБусад сэдвийн талаар одоо үргэлжлүүлэн сурах эсвэл энэ мэдээллийг SandFly-н тохиргоонд хүссэн үедээ хянаарай.</string>
   <string name="talkback_tutorial_text">Сэдэв сонгохын тулд баруун тийш шударна уу. Шилдэг хэрэглээг авах бол эхлүүлэхээсээ өмнө SandFly-г асаана уу.</string>
@@ -990,12 +986,12 @@
   <string name="edit_box_text">SandFly-д тавтай морилно уу</string>
   <string name="selecting_text_title">Текст сонгох</string>
   <string name="selecting_text_text">Текстийн хайрцагт курсорыг сонгохыг хүсэж буй текстийнхээ эхлэл рүү зөөнө үү.\n\nСонголтын горимыг эхлүүлэхийн тулд 2 хуруугаараа хоёр товшоод удаан дарна уу. Дараа нь курсорыг текстийн төгсгөлд аваачна уу. Сонголтын горимыг дуусгахын тулд 2 хуруугаараа дахин хоёр товшоод, удаан дарна уу.\n\nДоорх текстийн хайрцгаас \"Тавтай морил\" гэсэн үгийг сонгож үзнэ үү.</string>
-  <string name="selecting_text_text_pre_r">Текстийн хайрцагт курсорыг сонгохыг хүсэж буй текстийнхээ эхлэл рүү зөөнө үү.\n\nSandFly-н цэсийг нээхийн тулд доош, дараа нь баруун тийш шударна уу. Үйлдэл дээр хоёр товшоод, дараа нь сонголтын горимыг эхлүүлнэ үү. Курсорыг текстийн төгсгөл рүү аваачна уу.\n\nСонголтын горимыг дуусгахын тулд SandFly-н цэсийг дахин нээгээд, дараа нь үйлдэл дээр хоёр товшино уу.\n\nДоорх текстийн хайрцгаас \"Тавтай морил\" гэсэн үгийг сонгож үзнэ үү.</string>
+  <string name="selecting_text_text_pre_r">Текстийн хайрцагт курсорыг сонгохыг хүсэж буй текстийнхээ эхлэл рүү зөөнө үү.\n\nSandFly цэсийг нээхийн тулд доош, дараа нь баруун тийш шударна уу. Үйлдэл дээр хоёр товшоод, дараа нь сонголтын горимыг эхлүүлнэ үү. Курсорыг текстийн төгсгөл рүү аваачна уу.\n\nСонголтын горимыг дуусгахын тулд SandFly цэсийг дахин нээгээд, дараа нь үйлдэл дээр хоёр товшино уу.\n\nДоорх текстийн хайрцгаас \"Тавтай морил\" гэсэн үгийг сонгож үзнэ үү.</string>
   <string name="copy_cut_paste_title">Хуулах, таслах болон буулгах</string>
   <string name="copy_text">Текстийг сонгосны дараа 3 хуруугаараа үүнийг хоёр товшиж хуулна уу.\n\nДоорх текстийн хайрцгийн үгийг хуулж үзнэ үү.</string>
   <string name="cut_paste_text">Текстийг тайрахын тулд 3 хуруугаараа хоёр товшоод, удаан дарна уу.\n\nТекстийг буулгахын тулд 3 хуруугаараа гурав товшино уу.\n\nДоорх текстийн хайрцгийн үгийг буулгаж үзнэ үү</string>
-  <string name="copy_text_pre_r">Та текстийг сонгосныхоо дараа үүнийг SandFly-н цэсэд хуулах боломжтой. SandFly-н цэсийг нээхийн тулд доош, дараа нь баруун тийш шударна уу. Хоёр товшоод, дараа нь хуулна уу.\n\nДоорх текстийн хайрцаг дахь үгийг хуулж үзнэ үү.</string>
-  <string name="cut_paste_text_pre_r">Текстийг тайрах эсвэл буулгахын тулд SandFly-н цэсийг нээгээд, үйлдлүүд дээр хоёр товшино уу.\n\nДоорх текстийн хайрцгийн үгийг буулгаж үзнэ үү.</string>
+  <string name="copy_text_pre_r">Та текстийг сонгосныхоо дараа үүнийг SandFly цэсэд хуулах боломжтой. SandFly цэсийг нээхийн тулд доош, дараа нь баруун тийш шударна уу. Хоёр товшоод, дараа нь хуулна уу.\n\nДоорх текстийн хайрцаг дахь үгийг хуулж үзнэ үү.</string>
+  <string name="cut_paste_text_pre_r">Текстийг тайрах эсвэл буулгахын тулд SandFly цэсийг нээгээд, үйлдлүүд дээр хоёр товшино уу.\n\nДоорх текстийн хайрцгийн үгийг буулгаж үзнэ үү.</string>
   <string name="edit_box_hint_paste_text">Текстийг энд буулгана уу</string>
   <string name="typo_correction_title">Хяналтын уншилт</string>
   <string name="typo_correction_text">Та текстийн хайрцаг дотор зөв бичиг эсвэл хэл зүйн дүрмийг шалгахад хянан уншихыг ашиглах боломжтой.\n\nҮүнийг туршиж үзэхийн тулд зөв бичгийн алдаанууд агуулж буй доорх текстийн хайрцгийг сонгоно уу. Дараа нь та \"Хяналтын уншилт\"-ыг олох хүртлээ 3 хуруугаараа баруун тийш шударна уу.</string>
@@ -1040,7 +1036,7 @@
   <string name="voice_commands_title">Дуут тушаал</string>
   <string name="voice_commands_text">Та SandFly-г шуурхай хянахын тулд дуу хоолойгоо ашиглах боломжтой.\n\nЖишээ нь, навигацыг өөрчлөх, дараагийн гарчиг руу шилжих, текстийг хуулах болон бусад зүйлийг хийх тушаалыг хэлнэ үү.\n\nҮүнийг одоо оролдож үзэхийн тулд баруун тийш дараа нь дээш шударна уу.</string>
   <string name="using_screen_search_title">Дэлгэцийн хайлтыг ашиглаж байна</string>
-  <string name="using_screen_search_text">Дэлгэцийн хайлт онцлог танд дэлгэц дээрх тодорхой контентыг хайхыг зөвшөөрдөг.\n\nУг онцлогийг туршиж үзэхийн тулд 3 хуруугаараа товшиж SandFly-н цэсийг нээгээд, цэсээс “дэлгэцийн хайлт”-ыг олно уу. Дэлгэц дээрх тексттэй зүйлийг олохын тулд “Дараагийн” зэрэг түлхүүр үг бичиж оруулна уу.\n\nДараагийн товчийг олохын тулд одоо “дараагийн” гэснийг хайж үзнэ үү.</string>
+  <string name="using_screen_search_text">Дэлгэцийн хайлт онцлог танд дэлгэц дээрх тодорхой контентыг хайхыг зөвшөөрдөг.\n\nУг онцлогийг туршиж үзэхийн тулд 3 хуруугаараа товшиж SandFly цэсийг нээгээд, цэсээс “дэлгэцийн хайлт”-ыг олно уу. Дэлгэц дээрх тексттэй зүйлийг олохын тулд “Дараагийн” зэрэг түлхүүр үг бичиж оруулна уу.\n\nДараагийн товчийг олохын тулд одоо “дараагийн” гэснийг хайж үзнэ үү.</string>
   <string name="screen_search_navigation_title">Дэлгэцийн хайлтаар шилжих</string>
   <string name="screen_search_navigation_text">Та илэрц сонгосныхоо дараа дэлгэцийн хайлтаас өөр өөр хайлтын илэрцийн хооронд түргэн очих боломжтой.\n\nИнгэхийн тулд 3 хуруугаараа зүүн эсвэл баруун тийш шударч уншилтын хяналтыг ашиглан дэлгэцийн хайлт нэртэй зүйлийг олно уу.\n\nҮүнийг одоо туршиж үзэцгээе. 3 товчны жагсаалт доор байгаа ба тэдгээр товч бүгд “үйлдэл” гэсэн текстийг агуулж байна. Дэлгэцийн хайлтыг ашиглан “үйлдэл” гэснийг хайж, дараа нь тэдгээрийн хооронд очихын тулд дэлгэцийн хайлтаар шилжинэ үү.</string>
   <string name="screen_search_action_button_1_text">1-р үйлдэл</string>
@@ -1068,12 +1064,12 @@
   <string name="checking_notifications_text_tail_tts">Та ямар аппуудад мэдэгдлийг асаасан болохыг Тохиргоо, дараа нь Мэдэгдэлд шалгах боломжтой.</string>
   <string name="checking_notifications_tips">Мэдэгдлийн түүхээ шалгахын тулд дэлгэцийнхээ дээд талаас 2 хуруугаараа доош шударна уу</string>
   <string name="image_description_playground_title">Зургийн тайлбар авахаар оролдох</string>
-  <string name="image_description_playground_content_one">Та зураг сонгосон байхдаа SandFly-н цэсийг нээж, \"Зургийг тайлбарлах\"-ыг сонгоно уу.\n\nДоор нэг зураг байна. Энэ зурагт тайлбар авахаар оролдоно уу.</string>
-  <string name="image_description_playground_content_two">Зургийн тайлбарын тохиргоог хүссэн үедээ SandFly-н тохиргоо &gt; Автомат тайлбарууд хэсэгт өөрчилж болно.</string>
-  <string name="image_description_playground_content_two_tts">Та зургийн тайлбарын тохиргоог хүссэн үедээ SandFly тохиргоо, дараа нь Автомат тайлбар хэсэгт өөрчлөх боломжтой.</string>
+  <string name="image_description_playground_content_one">Та зураг сонгосон байхдаа SandFly цэсийг нээж, \"Зургийг тайлбарлах\"-ыг сонгоно уу.\n\nДоор нэг зураг байна. Энэ зурагт тайлбар авахаар оролдоно уу.</string>
+  <string name="image_description_playground_content_two">Зургийн тайлбарын тохиргоог хүссэн үедээ SandFly-н тохиргоо &gt; Зураг ба дэлгэцийн тайлбар хэсэгт өөрчилж болно.</string>
+  <string name="image_description_playground_content_two_tts">Та зургийн тайлбарын тохиргоог хүссэн үедээ SandFly-н тохиргоо, дараа нь Зураг ба дэлгэцийн тайлбар хэсэгт өөрчлөх боломжтой.</string>
   <string name="image_description_sample_image_content_description">Түүвэр зураг. SandFly цэсийг нээхийн тулд 3 хуруугаараа товшиж, тайлбар сонсохын тулд \"Зургийг тайлбарлах\"-ыг сонгоно уу.</string>
   <string name="practice_gestures_title">Зангаанууд дээр дадлага хийх</string>
-  <string name="practice_keyboard_gestures_title">Товчлуурын шууд холбоосыг давтах</string>
+  <string name="practice_keyboard_gestures_title">Гарын товчлолыг давтах</string>
   <string name="pref_gesture_set_key_title">Зангааны багц</string>
   <string name="practice_gestures_text">Тухайн зангаа нь юу хийдгийг сонсохын тулд энэ дэлгэц дээр SandFly-н дурын зангааг оролдож үзнэ үү.\n\n2 хуруугаараа дэлгэц дээр товшино уу. 2, 3, эсвэл 4 хуруугаараа нэг, хоёр, гурван удаа товшиж, үргэлжлүүлэн давтана уу.\n\nТа мөн 2, 3, эсвэл 4 хуруугаараа хоёр товшоод удаан дарах боломжтой.</string>
   <string name="practice_gestures_text_pre_r">Тухайн зангаа нь юу хийдгийг сонсохын тулд энэ дэлгэц дээр SandFly-н дурын зангааг оролдож үзнэ үү.\n\nХоёр шудралтаар тэгш өнцөг үүсгэдэг дурын зангааг оролдож үзнэ үү. Жишээ нь, дунд нь хуруугаа авахгүйгээр доош дараа нь баруун тийш шударна уу.</string>
@@ -1104,7 +1100,7 @@
   <string name="wear_training_volume_up_text">Баруун, дараа нь дээш шударна уу</string>
   <string name="wear_training_volume_down_title">Дууны түвшнийг багасгах</string>
   <string name="wear_training_volume_down_text">Баруун, дараа нь доош шударна уу</string>
-  <string name="wear_training_open_talkback_menu_title">SandFly-н цэсийг нээх</string>
+  <string name="wear_training_open_talkback_menu_title">SandFly цэсийг нээх</string>
   <string name="wear_training_open_talkback_menu_text">Тохиргоо болон тохируулгын сонголт нээхийн тулд та ихэнхдээ доош, дараа нь баруун тийш шудрах шаардлагатай байж магадгүй</string>
   <string name="wear_training_typing_title">Бичиж байна</string>
   <string name="wear_training_typing_text1">Гар ашиглаж бичихийн тулд хуруугаа гар дээгүүр хөдөлгөнө үү. Бичихийг хүссэн үсгийг сонсох үедээ хуруугаа өргөнө үү.</string>
@@ -1134,7 +1130,7 @@
   <string name="survey_setting_title">Санал хүсэлтээ хуваалцах</string>
   <string name="title_summarize_view">Дэлгэцийг тайлбарлах</string>
   <string name="detected_result">Илэрсэн: %1$s</string>
-  <string name="title_image_caption">Зургийг тодорхойлох</string>
+  <string name="title_image_caption">Зургийг тайлбарлах</string>
   <string name="image_caption_with_gemini_prefix">Энэ зургийг тайлбарла. Хариултад тэмдэглэгээт бүү ашигла.</string>
   <string name="image_qna_with_history">Энэ нь зургийн талаарх хэрэглэгч, ХОУ-ы туслахын хоорондох харилцан яриа юм. Доор өгөгдсөн түүхэд тулгуурлан ХЭРЭГЛЭГЧИЙН сүүлийн мессежид хариулж, харилцан яриаг үргэлжлүүлээрэй. Эдгээр зааварчилгааг дагана уу:
 **Зааварчилгаа:**
@@ -1352,7 +1348,7 @@
     <string name="battery_optimization_notification_title">Батерейг оновчлох нь SandFly-г зогсоох боломжтой</string>
     <string name="battery_optimization_notification_text">Энэ утсанд дэлгэц унтарсны дараа батарей хэмнэгч SandFly-г зогсоож болох бөгөөд дахин эхлүүлэх хүртэл юу ч хэлэхгүй. Батарейны оновчлолыг нээхийн тулд товшоод, «Бүх апп»-ыг сонгож, SandFly-г олоод «Оновчлохгүй»-г сонгоно уу.</string>
     <string name="title_pref_mute_speech_while_recording">Бичлэг хийж байхдаа чимээгүй</string>
-    <string name="summary_pref_mute_speech_while_recording">Чихэвч холбоогүй үед апп бичлэг хийж байх хооронд SandFly зөвхөн таны дохио, товчлуур, бичихэд хариу болгон ярьж, мэдэгдэл зэргийг бичигдэхгүйн тулд уншихгүй.</string>
+    <string name="summary_pref_mute_speech_while_recording">Чихэвч холбоогүй үед апп бичлэг хийж байх хооронд SandFly зөвхөн таны зангаа, товчлуур, бичихэд хариу болгон ярьж, мэдэгдэл зэргийг бичигдэхгүйн тулд уншихгүй.</string>
     <string name="title_pref_switch_languages">Хэлийг автоматаар солих</string>
     <string name="title_pref_switch_dialects">Аялгууг автоматаар солих</string>
     <string name="category_collapsed">Хураагдсан хэсэг</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Бусад</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch-д зангаа нөөцлөх</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly хоёр хуруугаар нэг ба давхар товших үйлдлийг боловсруулахаа больж, Samsung Vibration Watch-д ашиглах боломж олгоно. Цагныхаа хүртээмжийн тохиргооноос Vibration Watch-г идэвхжүүлнэ үү.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Нарийвчилсан тохиргоонд Vibration Watch-д нөөцөлсөн</string>
     <string name="title_pref_speakerphone_away_from_ear">Чихнээсээ хол байх үед чанга яригч</string>
     <string name="summary_pref_speakerphone_away_from_ear">Дуудлагын үеэр утсаа чихнээсээ холдуулахад чанга яригч руу, дахин чихэндээ ойртуулахад ярианы чанга яригч руу шилжинэ.</string>
     <string name="summary_pref_speakerphone_needs_permission">Android дэлгэц уншигчид олгодоггүй зөвшөөрөл шаардлагатай. Үүнийг олгохын тулд энэ командыг adb эсвэл Shizuku-аар ажиллуулаад, энэ дэлгэц рүү буцна уу: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Аппууд</string>
     <string name="speech_control_no_apps">Одоогоор ямар ч програм ярихыг хүсээгүй байна.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g>-д SandFly-ээр ярихыг зөвшөөрөх үү?</string>
-    <string name="speech_control_ask_text">Энэ нь таны SandFly хоолойгоор текст хэлэх боломжтой. Та үүнийг Нарийвчилсан тохиргооноос өөрчилж болно.</string>
     <string name="speech_control_allow">Зөвшөөрөх</string>
     <string name="speech_control_deny">Зөвшөөрөхгүй</string>
     <string name="permission_speak_label">SandFly дамжуулан ярих</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Устгах</string>
     <string name="quick_settings_added">%1$s нэмсэн</string>
     <string name="quick_settings_removed">%1$s хасагдсан</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly асаалттай. Унтраахын тулд дэлгэцэн дээр 2 хуруугаа 5 секунд барина уу. Энэ мессежийг харуулахыг зогсоохын тулд SandFly тохиргоо &gt; Нарийвчилсан тохиргоо &gt; SandFly унтраах зааврыг харуулах гэснийг унтраа.</string>
     <string name="edge_gestures_title">Ирмэгүүд</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Үзэх горимыг асаах эсвэл унтраах өөр нэг товчлол</string>
     <string name="title_pref_vibration_strength">Чичиргээний хүч</string>
@@ -1735,7 +1728,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> тавигдсан. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly нь тухайн зүйлийн дэлгэрэнгүйг энэ дарааллаар заана. Үүнийг өөрчлөхийн тулд тодорхой зүйлийг удаан дарж, дээш эсвэл доош чирнэ үү. SandFly асаалттай үед давхар товшоод удаан дараад чирнэ үү. Та мөн дээш, доош зөөх үйлдлүүдийг ашиглаж болно.</string>
     <string name="title_pref_speak_items_before_scroll">Зүйлсийг харагдахаас өмнө хэлэх</string>
-    <string name="gemini_error_api_key">Gemini API түлхүүрийг хүлээн аваагүй. Автомат тайлбарын тохиргооноос түлхүүрээ шалгана уу.</string>
+    <string name="gemini_error_api_key">Gemini API түлхүүрийг хүлээн аваагүй. «Зураг ба дэлгэцийн тайлбар» тохиргооноос түлхүүрээ шалгана уу.</string>
     <string name="gemini_error_quota">Таны Gemini API түлхүүрийн хэрэглээний хязгаарт хүрсэн байна. Дараа дахин оролдоно уу.</string>
     <string name="gemini_error_busy">Gemini яг одоо завгүй байна. Хэсэг хугацааны дараа дахин оролдоно уу.</string>
     <string name="gemini_error_timeout">Gemini хариулахад хэтэрхий удсан. Дахин оролдоно уу.</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper загварууд</string>
     <string name="dictation_whisper_use">Ашиглах</string>
     <string name="title_pref_dictation_ai_service">Хэлж бичүүлэхэд зориулсан AI үйлчилгээ</string>
-    <string name="dictation_ai_same">Автомат тайлбаруудынхтай ижил</string>
     <string name="title_pref_browse_mode_per_app">Апп тус бүрт хөтлөх горимыг санах</string>
     <string name="title_pref_export_settings">Тохиргоог экспортлох</string>
     <string name="title_pref_import_settings">Тохиргоог импортлох</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">Өмнөх дуу</string>
     <string name="sound_mode_needs_access">Дууг хаах горимыг асаах эсвэл унтраахын тулд «Бүү саад бол»-ын хандалтыг зөвшөөрнө үү.</string>
     <string name="title_pref_dictation_auto_stop">Чимээгүй болсны дараа автоматаар зогсоох</string>
+    <string name="dictation_ai_same">«Зураг ба дэлгэцийн тайлбар»-тай ижил</string>
+    <string name="navigation_settings_link">SandFly-н тохиргоо &gt; Навигац</string>
+    <string name="navigation_settings_link_tts">SandFly-н тохиргоо, дараа нь Навигац</string>
+    <string name="shortcut_reserved_for_vibration_watch">«Зангаа» хэсэгт Vibration Watch-д нөөцөлсөн</string>
+    <string name="speech_control_ask_text">Энэ нь таны SandFly-н дуу хоолойгоор текст уншуулж чадна. Үүнийг «Тохиргоо», «Яриа», «Бусад аппад ярихыг зөвшөөрөх» хэсгээс өөрчилж болно.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly асаалттай байна. Унтраахын тулд дэлгэц дээр 2 хуруугаараа 5 секундийн турш удаан дарна уу. Энэ мессежийг харуулахыг зогсоохын тулд SandFly-н тохиргоо &gt; Түр зогсоох ба унтраах &gt; SandFly-г унтраах зааварчилгааг харуулна уу гэснийг унтраана уу.</string>
+    <string name="tutorial_link">SandFly-н тохиргоо &gt; Тусламж, санал хүсэлт &gt; SandFly-н заавар</string>
+    <string name="tutorial_link_tts">SandFly-н тохиргоо, дараа нь Тусламж, санал хүсэлт, тэгээд SandFly-н заавар</string>
 </resources>

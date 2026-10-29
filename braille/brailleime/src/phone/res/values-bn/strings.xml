@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="braille_ime_service_name">SandFly ব্রেইল কীবোর্ড</string>
-  <string name="braille_ime_bd_mode_name">ব্রেইল প্রদর্শন ইনপুট</string>
+  <string name="braille_ime_bd_mode_name">ব্রেইল ডিসপ্লে ইনপুট</string>
   <string name="switch_to_tabletop_announcement">\'টেবিলটপ\' মোড। আপনার ডিভাইস এমনভাবে রাখুন যাতে চার্জিং পোর্ট বাঁদিকে থাকে।</string>
   <string name="calibration_tip_announcement">ডটের অবস্থান আপডেট করতে, %dটি আঙুল দিয়ে প্রেস করে ধরে থাকুন।</string>
   <string name="bring_ime_settings_page">কোনও কীবোর্ড চালু করা নেই, কীবোর্ড সেটিংসে যান</string>
@@ -97,7 +97,7 @@
   <string name="bk_pref_category_title_place_on_page">পৃষ্ঠায় নির্দিষ্ট অংশ</string>
   <string name="bk_pref_category_title_granularity">গ্র্যানুলারিটি</string>
   <string name="bk_pref_category_title_editing">এডিটিং</string>
-  <string name="bk_pref_category_title_typing">টাইপ করছেন</string>
+  <string name="bk_pref_category_title_typing">টাইপিং</string>
   <string name="bk_pref_category_title_keyboard">কীবোর্ড</string>
   <string name="not_enough_touch_points_dialog_title">আপনার ডিভাইসে ব্রেইল কীবোর্ড কাজ করে না</string>
   <string name="not_enough_touch_points_dialog_message">আপনার ডিভাইসে একসাথে অনেকগুলি টাচ পয়েন্ট কাজ করে না। আরও তথ্যের জন্য আপনার ডিভাইস প্রস্তুতকারকের সাথে যোগাযোগ করুন।</string>
@@ -105,8 +105,8 @@
   <string name="talkback_off_dialog_positive_button">অ্যাক্সেসিবিলিটি সেটিংসে গিয়ে চালু করুন</string>
   <string name="talkback_suspend_dialog_title">ব্রেইল কীবোর্ড ব্যবহার করতে SandFly আবার চালু করুন</string>
   <string name="talkback_off_or_suspend_dialog_message">SandFly চালু থাকলে ব্রেইল চিহ্ন লিখতে স্ক্রিনে ট্যাপ করতে পারেন।</string>
-  <string name="talkback_off_custom_gestures_dialog_title">অঙ্গভঙ্গি বদলাতে SandFly চালু করুন</string>
-  <string name="talkback_off_custom_gestures_dialog_message">SandFly বন্ধ আছে। ব্রেইল কীবোর্ডের অঙ্গভঙ্গি বদলাতে এটি চালু করুন।</string>
+  <string name="talkback_off_custom_gestures_dialog_title">জেসচার বদলাতে SandFly চালু করুন</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly বন্ধ আছে। ব্রেইল কীবোর্ডের জেসচার বদলাতে এটি চালু করুন।</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">সেটিংসে যান</string>
   <string name="reset_gestures_dialog_title">সব জেসচার রিসেট করতে চান?</string>
   <string name="reset_gestures_dialog_message">সমস্ত ব্রেইল কীবোর্ড জেসচার ডিফল্টে রিসেট করা হবে</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">ডিফল্টে রিসেট করুন</string>
   <string name="custom_gestures_dialog_remove_button">জেসচার সরিয়ে দিন</string>
   <string name="change_gestures_dialog_message_title">কোনও জেসচার কীভাবে পরিবর্তন করতে হয়</string>
-  <string name="change_gestures_dialog_message">পরবর্তী স্ক্রিনে ব্রেইল কীবোর্ড খুলবে এবং আপনি SandFly-এর অঙ্গভঙ্গি ব্যবহার করতে পারবেন না।\n\nব্রেইল কীবোর্ড খুললে, যে অঙ্গভঙ্গিটি ব্যবহার করতে চান সেটি করুন। কীবোর্ড বন্ধ করে অঙ্গভঙ্গি পরিবর্তন বাতিল করতে দুই আঙুল দিয়ে নিচের দিকে সোয়াইপ করুন।\n\nব্যবহারযোগ্য অঙ্গভঙ্গি দেখুন\n</string>
+  <string name="change_gestures_dialog_message">পরবর্তী স্ক্রিনে ব্রেইল কীবোর্ড খুলবে এবং আপনি SandFly-এর জেসচার ব্যবহার করতে পারবেন না।\n\nব্রেইল কীবোর্ড খুললে, যে জেসচারটি ব্যবহার করতে চান সেটি করুন। কীবোর্ড বন্ধ করে জেসচার পরিবর্তন বাতিল করতে দুই আঙুল দিয়ে নিচের দিকে সোয়াইপ করুন।\n\nব্যবহারযোগ্য জেসচার দেখুন\n</string>
   <string name="change_gestures_dialog_message_link">উপলভ্য জেসচার দেখুন</string>
   <string name="change_gestures_dialog_dont_show_checkbox">এই মেসেজ আবার দেখতে চাই না</string>
   <string name="change_gestures_dialog_positive_button">চালিয়ে যান</string>
@@ -136,8 +136,8 @@
   <string name="tutorial_intro_description">ব্রেইল কীবোর্ড দিয়ে স্ক্রিনে ট্যাপ করে ছয়-ডট ব্রেইল লিখতে পারেন।\n\nআপনি ইউনিফাইড ইংলিশ ব্রেইল ব্যবহার করছেন। টাইপ করার ভাষা বদলাতে SandFly সেটিংসে যান।\n\nব্রেইল টাইপ করতে ফোনটি অন্যভাবে ধরতে ও ব্যবহার করতে হবে।</string>
   <string name="next_step">পরের</string>
   <string name="leave_keyboard">ব্রেইল কীবোর্ড থেকে বেড়িয়ে যান</string>
-  <string name="hold_six_fingers_description">ব্রেইল কীবোর্ডে SandFly-এর সাধারণ অঙ্গভঙ্গি ব্যবহার করতে পারবেন না।\n\nশুরু করতে, টাইপ করার সময় ছয়টি ব্রেইল ডটের অবস্থান সেট করি।</string>
-  <string name="rotate_orientation_description_1">এখন থেকে SandFly-এর সাধারণ অঙ্গভঙ্গি ব্যবহার করতে পারবেন না। ব্রেইল কীবোর্ড ব্যবহারের সময় SandFly উপলভ্য থাকে না।</string>
+  <string name="hold_six_fingers_description">ব্রেইল কীবোর্ডে SandFly-এর সাধারণ জেসচার ব্যবহার করতে পারবেন না।\n\nশুরু করতে, টাইপ করার সময় ছয়টি ব্রেইল ডটের অবস্থান সেট করি।</string>
+  <string name="rotate_orientation_description_1">এখন থেকে SandFly-এর সাধারণ জেসচার ব্যবহার করতে পারবেন না। ব্রেইল কীবোর্ড ব্যবহারের সময় SandFly উপলভ্য থাকে না।</string>
   <string name="rotate_orientation_description_2">শুরু করার জন্য, এইভাবে আপনার ফোনটি ধরুন: স্ক্রিনটি আপনার থেকে দূরে সরিয়ে নিয়ে গিয়ে।</string>
   <string name="tap_to_continue">চালিয়ে যেতে যেকোনও জায়গায় ডবল ট্যাপ করুন</string>
   <string name="instruction_type_letter_a">\"A\" অক্ষরটি টাইপ করতে আপনার বাঁহাতের তর্জনী দিয়ে ডট ১-এ ট্যাপ করুন</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">কার্সর সামনে আনা হয়েছে</string>
   <string name="result_swipe_down_2_fingers">কীবোর্ড লুকান</string>
   <string name="result_swipe_down_3_fingers">পরের কীবোর্ড</string>
-  <string name="rotate_orientation_announcement">এখন থেকে SandFly-এর সাধারণ অঙ্গভঙ্গি ব্যবহার করতে পারবেন না। ব্রেইল কীবোর্ড ব্যবহারের সময় SandFly উপলভ্য থাকে না।\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">এখন থেকে SandFly-এর সাধারণ জেসচার ব্যবহার করতে পারবেন না। ব্রেইল কীবোর্ড ব্যবহারের সময় SandFly উপলভ্য থাকে না।\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">প্রথমে আপনার ফোনটি ঘোরান যাতে স্ক্রিনটি আপনার থেকে দূরে সরিয়ে নিয়ে যাওয়া যায়।\n\nএরপরে, ফোনটিকে অনুভূমিকভাবে ঘুরিয়ে ল্যান্ডস্কেপ অবস্থানে নিয়ে আসুন। আপনাকে ফোনের প্রান্তগুলি ধরতে হবে। আপনার ডান হাতটি USB পোর্টের শেষে ধরে রাখা উচিত। তিনটি মাঝের আঙুল স্ক্রিনের উপর রাখুন এবং বৃদ্ধাঙ্গুষ্ঠ ও কনিষ্ঠা ব্যবহার করে ফোনটি ধরুন।\n\nআপনি প্রস্তুত হয়ে গেলে, চালিয়ে যেতে স্ক্রিনে ডবল ট্যাপ করুন।\n\nব্রেইল কীবোর্ড থেকে বেরিয়ে যেতে, ৩টি আঙুল ব্যবহার করে নিচের দিকে সোয়াইপ করুন। এটি করার ফলে আপনার আসল কীবোর্ডটি ফিরে আসবে।</string>
   <string name="rotate_orientation_continue_announcement">আপনার ফোনটি উল্লম্ব অবস্থানে রয়েছে। চালিয়ে যেতে, আপনার ফোনটিকে অনুভূমিকভাবে ঘোরান যাতে লম্বা দিকটি নিচে থাকে। তারপরে আপনার থেকে দূরে সরিয়ে নিয়ে যেতে আপনার স্ক্রিনটি ঘোরান। আপনি প্রস্তুত হয়ে গেলে, চালিয়ে যেতে স্ক্রিনে ডবল ট্যাপ করুন।</string>
   <string name="type_letter_a_announcement">স্ক্রিনটি আপনার থেকে দূরে সরিয়ে রাখুন। ফোনের প্রান্তগুলিতে দুই হাতে আপনার ফোনটি এমন ভাবে ধরুন যাতে তিনটি মাঝের আঙুল ব্যবহার করে স্ক্রিন স্পর্শ করতে পারেন।\n\nআপনার বাঁহাতের তর্জনী ডট ১-এর উপরে থাকতে হবে। এবার, \"A\" অক্ষরটি টাইপ করতে ডট ১-এ ট্যাপ করুন।</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">অন্য কীবোর্ডে পাল্টাতে, ৩টি আঙুল ব্যবহার করে নিচের দিকে সোয়াইপ করুন। এখনই ব্যবহার করে দেখুন।</string>
   <string name="swipe_down_3_fingers_completed_announcement">পরের কীবোর্ড। সাধারনত, এটি করলেই পরের কীবোর্ডে পাল্টে যাবে। এই সময়, আপনি ব্রেইল কীবোর্ডে রয়েছেন কারণ আপনি এখনও টিউটোরিয়াল ব্যবহার করছেন।</string>
   <string name="swipe_up_3_fingers_announcement">এছাড়াও আপনি টেবিলের উপর ফোনটি স্বাভাবিক অবস্থায় রেখে টেবিলটপ মোডে টাইপ করতে পারেন টিউটোরিয়াল সম্পূর্ণ করার জন্য, ৩টি আঙ্গুল দিয়ে উপরের দিকে সোয়াইপ করে \'টিউটোরিয়াল সম্পূর্ণ করুন\' বিকল্পটি খুঁজুন</string>
-  <string name="open_context_menu_announcement">বিকল্প মেনু খোলা আছে। ফোনটি উল্টে স্ক্রিন আপনার দিকে রাখুন এবং স্বাভাবিকভাবে ধরুন। এখন আপনি নেভিগেট করতে SandFly-এর সাধারণ অঙ্গভঙ্গি ব্যবহার করতে পারেন। আরও বিকল্প দেখতে ডান দিকে সোয়াইপ করুন।</string>
+  <string name="open_context_menu_announcement">বিকল্প মেনু খোলা আছে। ফোনটি উল্টে স্ক্রিন আপনার দিকে রাখুন এবং স্বাভাবিকভাবে ধরুন। এখন আপনি নেভিগেট করতে SandFly-এর সাধারণ জেসচার ব্যবহার করতে পারেন। আরও বিকল্প দেখতে ডান দিকে সোয়াইপ করুন।</string>
   <string name="hold_six_fingers_announcement">%s\nটেবিলের উপর আপনার ডিভাইসটি স্বাভাবিক অবস্থায় রাখুন। তারপরে, ট্যাপ করে প্রতিটি হাতের মাঝের ৩টি আঙ্গুল দিয়ে এমনভাবে স্ক্রিনটি ধরে থাকুন, যাতে আপনি সহজেই টাইপ করতে পারেন।</string>
   <string name="hold_six_fingers_inactive_announcement">টেবিলের উপর আপনার ডিভাইসটি স্বাভাবিক অবস্থায় রাখুন। তারপরে, ট্যাপ করে প্রতিটি হাতের মাঝের ৩টি আঙ্গুল দিয়ে এমনভাবে স্ক্রিনটি ধরে থাকুন, যাতে আপনি সহজেই টাইপ করতে পারেন।</string>
   <string name="finish_tutorial_announcement">ব্রেইল কীবোর্ড দেখানো হচ্ছে। আপনার ফোনটি ঘোরান যাতে স্ক্রিনটি আপনার থেকে দূরে সরিয়ে নিয়ে যাওয়া যায়। ফোনটিকে অনুভূমিকভাবে ঘুরিয়ে ল্যান্ডস্কেপ অবস্থানে নিয়ে আসুন। তারপর টাইপ করা শুরু করুন।</string>
@@ -184,7 +184,7 @@
   <string name="perform_delete_word_announcement">শব্দ মোছা হয়েছে</string>
   <string name="continue_tutorial_announcement">টিউটোরিয়ালটি চলতে দিন। %1$s</string>
   <string name="switch_on_screen_keyboard_announcement">ব্রেইল টাচস্ক্রিন কীবোর্ডে পাল্টানো হচ্ছে</string>
-  <string name="braille_keyboard_strip_summary">একটি এক্সটার্নাল ব্রেইল প্রদর্শন কানেক্ট করা হয়েছে, ফোনে টেক্সট টাইপ করার জন্য এটি ব্যবহার করতে পারবেন।\n\nতাছাড়া, টাচস্ক্রিন ব্রেইল কীবোর্ডে অথবা পরবর্তী ইনপুট পদ্ধতিতেও আপনি পাল্টে নিতে পারবেন।</string>
+  <string name="braille_keyboard_strip_summary">একটি এক্সটার্নাল ব্রেইল ডিসপ্লে কানেক্ট করা হয়েছে, ফোনে টেক্সট টাইপ করার জন্য এটি ব্যবহার করতে পারবেন।\n\nতাছাড়া, টাচস্ক্রিন ব্রেইল কীবোর্ডে অথবা পরবর্তী ইনপুট পদ্ধতিতেও আপনি পাল্টে নিতে পারবেন।</string>
   <string name="braille_keyboard_strip_summary_no_multitouch">এই ডিভাইসে টেক্সট লিখতে আপনি কানেক্ট করা এক্সটার্নাল ব্রেইল ডিসপ্লে ব্যবহার করতে পারেন।\n\nআপনি পরবর্তী ইনপুট পদ্ধতিতেও পরিবর্তন করতে পারবেন।</string>
   <string name="braille_keyboard_strip_touch_screen_button">ব্রেইল টাচস্ক্রিন কীবোর্ডে পাল্টে নিন</string>
   <string name="braille_keyboard_strip_next_keyboard_button">পরবর্তী ইনপুট পদ্ধতিতে পাল্টে নিন</string>

@@ -107,7 +107,7 @@
   <string name="pref_verbosity_preset_entry_custom">តាម​បំណង</string>
   <string name="pref_verbosity_preset_entry_low">ទាប</string>
   <string name="pref_verbosity_category_preset_settings_title">ព័ត៌មាន​លម្អិត​អំពីកម្រិតនិយាយ</string>
-  <string name="pref_verbosity_preset_change">មុខងារ​បរិយាយកម្រិត %1$s ដំណើរការ​ហើយ​ឥឡូវ​នេះ។</string>
+  <string name="pref_verbosity_preset_change">កម្រិតនិយាយ <xliff:g id="preset_name" example="High">%1$s</xliff:g> ដំណើរការ​ហើយ​ឥឡូវ​នេះ។</string>
   <string name="pref_gesture_set_entry_0">0</string>
   <string name="pref_gesture_set_entry_1">1</string>
   <string name="keycombo_keymap_changes_instruction_title">ធ្វើបច្ចុប្បន្នភាពផែនទីគ្រាប់ចុច SandFly របស់អ្នក</string>
@@ -423,7 +423,7 @@
   <string name="shortcut_decrease_volume">បន្ថយកម្រិតសំឡេង</string>
   <string name="shortcut_all_apps">កម្មវិធីទាំងអស់</string>
   <string name="shortcut_braille_keyboard">ប្ដូរទៅក្ដារចុចអក្សរស្ទាប</string>
-  <string name="shortcut_braille_display_settings">រុករកទៅកាន់ការកំណត់អក្សរប្រៃយ៍</string>
+  <string name="shortcut_braille_display_settings">រុករកទៅកាន់ការកំណត់ឧបករណ៍បង្ហាញអក្សរស្ទាប</string>
   <string name="shortcut_tutorial">បើក​មេរៀន</string>
   <string name="shortcut_control_speak_time">ប្រាប់ពេលវេលា ឬកុំប្រាប់ពេលវេលា</string>
   <string name="shortcut_enable_speak_time">ប្រាប់ពេលវេលា</string>
@@ -684,8 +684,8 @@
   <string name="dialog_message_dim_screen">សកម្មភាពនេះបិទផ្ទាំងអេក្រង់ ដើម្បីកែលម្អឯកជនភាព។ ខ្លឹមសារមួយចំនួននៅតែអាចបង្ហាញ ដូចជាសារសម្រាប់បើកផ្ទាំងអេក្រង់វិញ ឬម៉ឺនុយសម្រាប់មុខងារភាពងាយស្រួល ដូចជា SandFly ជាដើម។</string>
   <string name="button_disable_all_events">បិទ​ទាំង​អស់</string>
   <string name="button_enable_all_events">បើក​ទាំង​អស់</string>
-  <string name="dialog_title_disable_exploration">បិទ​ការ​​រុករក​​ដោយ​​ប៉ះ​?</string>
-  <string name="dialog_message_disable_exploration">តើ​អ្នក​ប្រាកដ​ជា​ចង់​បិទ​ការ​រុករក​តាម​ការ​ប៉ះ?\n\nឧបករណ៍​របស់​អ្នក​នឹង​លែង​ឆ្លើយតប​កាយវិការ​ផ្លូវកាត់ ឬ​និយាយ​​ធាតុ​ណាមួយ​ពេល​អ្នក​ប៉ះ​អេក្រង់។</string>
+  <string name="dialog_title_disable_exploration">បិទ «រកមើលដោយការប៉ះ»?</string>
+  <string name="dialog_message_disable_exploration">តើ​អ្នក​ប្រាកដ​ជា​ចង់​បិទ «រកមើលដោយការប៉ះ»?\n\nឧបករណ៍​របស់​អ្នក​នឹង​លែង​ឆ្លើយតប​ចលនា​ផ្លូវកាត់ ឬ​និយាយ​​ធាតុ​ណាមួយ​ពេល​អ្នក​ប៉ះ​អេក្រង់។</string>
   <string name="dialog_title_enable_tree_debug">បើក​ការ​​បំបាត់​កំហុស​ដើម​ថ្នាំង​?</string>
   <string name="dialog_message_enable_tree_debug">តើ​អ្នក​ប្រាកដ​ជា​ចង់​បើក​ការ​បំបាត់​កំហុស​ដើម​ថ្នាំង​?\n\nបំបាត់​កំហុស​ដើម​ថ្នាំង​បង្ហាញ​មាតិកា​នៃ​អេក្រង់​របស់​អ្នក​ទៅ​កាន់​កំណត់​ហេតុ​ឧបករណ៍​របស់​អ្នក​ ដែល​អ្នក​​អាច​អាន​តាម​​កម្មវិធី​ផ្សេង​ទៀត​។</string>
   <string name="dialog_title_enable_tree_debug_gesture">កំណត់ការចុចបីដងឡើងវិញដោយប្រើចលនាម្រាមដៃបួន 4 ឬ?</string>
@@ -790,8 +790,8 @@
   <string name="dialog_title_voice_commands">ប្រើឃ្លាបញ្ជាដោយសំឡេង ដើម្បីគ្រប់គ្រងមុខងារ SandFly</string>
   <string name="dialog_message_voice_commands">ទាំងនេះជាអ្វីមួយចំនួនដែលអ្នកអាចនិយាយបាន៖\n\n• ចម្លង\n• អានពីធាតុដែលបានផ្ដោត\n• ស្វែងរក [អ្វីដែលបានរក្សាទុក]\n• និយាយ [កាន់តែលឿន]\n• ការកំណត់ SandFly\n\nនិយាយថា \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" ដើម្បីមើលបញ្ជីឃ្លាបញ្ជាដោយសំឡេងទាំងអស់</string>
   <string name="start_voice_command">ប្រើ​ការបញ្ជាដោយ​សំឡេង</string>
-  <string name="dialog_title_pass_through_mode">រំលងកាយវិការ SandFly ដើម្បីប្រើកាយវិការប្រព័ន្ធ</string>
-  <string name="dialog_message_pass_through_mode">នៅពេលអ្នកឮសំឡេងរោទិ៍ អ្នកអាចប្រើកាយវិការប្រព័ន្ធដែលមិនត្រូវបានគាំទ្រដោយ SandFly។ នេះត្រូវបានគេស្គាល់ថាជាកាយវិការឆ្លងកាត់។</string>
+  <string name="dialog_title_pass_through_mode">រំលងចលនា SandFly ដើម្បីប្រើចលនាប្រព័ន្ធ</string>
+  <string name="dialog_message_pass_through_mode">នៅពេលអ្នកឮសំឡេងរោទិ៍ អ្នកអាចប្រើចលនាប្រព័ន្ធដែលមិនត្រូវបានគាំទ្រដោយ SandFly។ នេះត្រូវបានគេស្គាល់ថាជាចលនាឆ្លងកាត់។</string>
   <string name="dialog_title_voice_input_download">ដំឡើងកំណែ Gboard ដើម្បីប្រើការ​បញ្ចូល​ដោយប្រើសំឡេង</string>
   <string name="dialog_message_voice_input_download">ឥឡូវនេះ ការចុចពីរដងដោយម្រាមដៃ 2 អាចបើកការ​បញ្ចូល​ដោយប្រើសំឡេងបាន រាល់ពេលដែល Gboard កំពុងដំណើរការ។ ដើម្បីប្រើចលនានេះ សូមដំឡើង Gboard ទៅកំណែចុងក្រោយបំផុត។</string>
   <string name="label_update_gboard">ដំឡើងកំណែនៅក្នុង​ Google Play</string>
@@ -818,7 +818,7 @@
   <string name="adjust_granularity_hint">%1$s ដើម្បីអានដោយ %2$s</string>
   <string name="adjust_typo_hint">%1$s ដើម្បីទទួលបានការណែនាំ។</string>
   <string name="use_action_hint">ចុចពីរដង ដើម្បីធ្វើសកម្មភាព</string>
-  <string name="no_adjust_setting_gesture">ដើម្បីប្រើវា សូមចូលទៅកាន់ការកំណត់ SandFly ហើយបន្ថែមកាយវិការសម្រាប់ \'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
+  <string name="no_adjust_setting_gesture">ដើម្បីប្រើវា សូមចូលទៅកាន់ការកំណត់ SandFly ហើយបន្ថែមចលនាសម្រាប់ \'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
   <string name="no_navigate_typo_gesture">ដើម្បីប្រើចលនានេះ សូមចូលទៅកាន់ការកំណត់ SandFly រួចបញ្ចូលចលនាដើម្បីពិនិត្យអក្ខរាវិរុទ្ធ</string>
   <string name="use_spelling_suggestion_hint">ចុចពីរដង ដើម្បីជំនួសអក្សរ</string>
   <string name="screen_search_keyword_hint">ពាក្យគន្លឹះគឺ %1$s</string>
@@ -866,10 +866,10 @@
   <string name="new_shortcut_gesture_selection_mode_text">ដើម្បីចាប់ផ្តើម ឬបញ្ចប់មុខងារជ្រើសរើសអត្ថបទ សូមចុចពីរដងឱ្យជាប់ដោយប្រើម្រាមដៃ 2។</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">មុខងារជ្រើសរើស​ត្រូវបានបើក ឬបិទ។ ជាធម្មតា សកម្មភាពនេះនឹងចាប់ផ្ដើម ឬបឈ្ឈប់មុខងារ​ជ្រើសរើសអក្សរ នៅពេលដែលអ្នកស្ថិតក្នុង​កន្លែងបញ្ចូល។ សូមអូសទៅស្ដាំ ដើម្បីបន្ត។</string>
   <string name="new_shortcut_gesture_reading_menu_text">ដើម្បីប្រើ​ការគ្រប់គ្រង​ការអាន សូមអូសទៅឆ្វេង ឬស្ដាំ​ដោយប្រើម្រាមដៃ 3។ អ្នកក៏អាច​អូសឡើងលើ ឬចុះក្រោម​ដោយប្រើម្រាមដៃ 3 បានផងដែរ។</string>
-  <string name="new_shortcut_gesture_note">ចំណាំ៖ អ្នកបានប្ដូរកាយវិការមួយចំនួនរបស់អ្នកតាមបំណង ដូច្នេះព័ត៌មាននេះប្រហែលជាមិនត្រឹមត្រូវទេ។ ដើម្បីពិនិត្យមើលកាយវិការរបស់អ្នក សូមចូលទៅកាន់ការកំណត់ SandFly។</string>
-  <string name="welcome_to_android11_text">កាយវិការថ្មីត្រូវបានបន្ថែមដើម្បីធ្វើឱ្យ SandFly លឿន និងងាយស្រួលប្រើ។\n\n នៅលើអេក្រង់នេះ អ្នកអាចសាកល្បងប្រើកាយវិការថ្មី។ អ្នកអាចពិនិត្យមើលព័ត៌មាននេះនៅក្នុងការកំណត់ SandFly នៅពេលណាក៏បាន។</string>
-  <string name="new_gesture_notification_title">កាយវិការថ្មីនៅក្នុង SandFly</string>
-  <string name="new_gesture_notification_content">ចុចដើម្បីស្វែងយល់ពីរបៀបប្រើ SandFly កាន់តែលឿនជាមួយនឹងកាយវិការថ្មី។</string>
+  <string name="new_shortcut_gesture_note">ចំណាំ៖ អ្នកបានប្ដូរចលនាមួយចំនួនរបស់អ្នកតាមបំណង ដូច្នេះព័ត៌មាននេះប្រហែលជាមិនត្រឹមត្រូវទេ។ ដើម្បីពិនិត្យមើលចលនារបស់អ្នក សូមចូលទៅកាន់ការកំណត់ SandFly។</string>
+  <string name="welcome_to_android11_text">ចលនាថ្មីត្រូវបានបន្ថែមដើម្បីធ្វើឱ្យ SandFly លឿន និងងាយស្រួលប្រើ។\n\n នៅលើអេក្រង់នេះ អ្នកអាចសាកល្បងប្រើចលនាថ្មី។ អ្នកអាចពិនិត្យមើលព័ត៌មាននេះនៅក្នុងការកំណត់ SandFly នៅពេលណាក៏បាន។</string>
+  <string name="new_gesture_notification_title">ចលនាថ្មីនៅក្នុង SandFly</string>
+  <string name="new_gesture_notification_content">ចុចដើម្បីស្វែងយល់ពីរបៀបប្រើ SandFly កាន់តែលឿនជាមួយនឹងចលនាថ្មី។</string>
   <string name="dump_node_tree_description">មែកធាងណូត​ត្រូវបានបោះពុម្ព​ទៅកំណត់ហេតុ។</string>
   <string name="report_gesture_description">ទាំងនេះគឺជាចលនា​ដែលបានធ្វើឡើងថ្មីៗនេះ សូមរាយការណ៍ថា​ចលនាណាមិនត្រឹមត្រូវ ហើយគួរធ្វើចលនាដូចម្ដេច​ទើបត្រឹមត្រូវ។</string>
   <string name="update_welcome_talkback_16.1">កំណែ SandFly ថ្មីនេះដាក់ចេញលទ្ធភាពប្រើប្រាស់ \"ពណ៌នាអេក្រង់\" ជាភាសាកាន់តែច្រើន និងការកែលម្អគុណភាពផ្សេងទៀតដែលធ្វើឱ្យ SandFly កាន់តែងាយស្រួលប្រើ។\n\nអ្នកនឹងស្វែងយល់បន្ថែមអំពីការផ្លាស់ប្ដូរទាំងនេះនៅក្នុងអេក្រង់ពីរបីបន្ទាប់ទៀត។\n\nអ្នកអាចពិនិត្យមើលព័ត៌មាននេះនៅពេលក្រោយនៅក្នុង ការកំណត់ SandFly &gt; មុខងារថ្មីៗនៅក្នុង SandFly។</string>
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">ការចុចផ្ដាច់នៅគ្រប់ទីកន្លែង</string>
   <string name="split_tap_everywhere_text">ឥឡូវនេះ អ្នកអាចប្រើការចុចផ្ដាច់នៅគ្រប់ទីកន្លែង ដើម្បីបើកដំណើរការធាតុ សូម្បីនៅក្រៅក្ដារចុចក៏ដោយ។ ដើម្បីប្រើវា សូមរុករកអេក្រង់ដោយប្រើម្រាមដៃមួយ បន្ទាប់មកដោយមិនលើកម្រាមដៃទីមួយ សូមចុចលើអេក្រង់ដោយប្រើម្រាមដៃមួយទៀត ដើម្បីបើកដំណើរការធាតុដែលផ្ដោតលើបច្ចុប្បន្ន។</string>
   <string name="keyboard_enhanced_keymap_title">ក្ដារចុច៖ ផែនទីគ្រាប់ចុចប្រសើរជាងមុន</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly ឥឡូវនេះមាន \"ផែនទីគ្រាប់ចុចដែលបានកែលម្អ\" សម្រាប់ក្តារចុចរូបវ័ន្ត ដែលបង្ហាញនូវពាក្យបញ្ជា និងផ្លូវកាត់ថ្មីៗជាច្រើន។ ការធ្វើឱ្យប្រសើរនេះរួមបញ្ចូល \"របៀបរុករក\" សម្រាប់ការរុករកគេហទំព័រដែលមានប្រសិទ្ធភាពជាងមុន ការសម្រួលការរុករក និងអន្តរកម្មសម្រាប់អ្នកប្រើប្រាស់ SandFly ដែលពឹងផ្អែកលើក្តារចុចរាងកាយ។ អ្នកអាចប្តូរទៅ \"ផែនទីគន្លឹះដែលបានកែលម្អ\" នៅក្នុង <xliff:g id="settings_path">%1$s</xliff:g>.\n\n ប្រសិនបើអ្នកប្រើការបង្ហាញអក្សរស្ទាប អ្នកក៏អាចប្រើផ្លូវកាត់នៃរបៀបរុករកថ្មីដើម្បីឆ្លងកាត់មាតិកាដោយផ្ទាល់ពីការបង្ហាញអក្សរស្ទាបរបស់អ្នក។ ផ្លូវកាត់ការបង្ហាញអក្សរស្ទាបមួយចំនួនត្រូវបានផ្លាស់ប្តូរ ដើម្បីសម្រួលដល់ការផ្លាស់ប្តូរនេះ។ អ្នកអាចមើលឃើញបញ្ជីផ្លូវកាត់បង្ហាញអក្សរស្ទាបទាំងអស់ក្នុង <xliff:g id="braille_display_settings_path">%2$s</xliff:g>។</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly ឥឡូវនេះមាន \"ផែនទីគ្រាប់ចុចដែលបានកែលម្អ\" សម្រាប់ក្តារចុចរូបវ័ន្ត ដែលបង្ហាញនូវពាក្យបញ្ជា និងផ្លូវកាត់ថ្មីៗជាច្រើន។ ការធ្វើឱ្យប្រសើរនេះរួមបញ្ចូល \"របៀបរុករក\" សម្រាប់ការរុករកគេហទំព័រដែលមានប្រសិទ្ធភាពជាងមុន ការសម្រួលការរុករក និងអន្តរកម្មសម្រាប់អ្នកប្រើប្រាស់ SandFly ដែលពឹងផ្អែកលើក្តារចុចរាងកាយ។ អ្នកអាចប្តូរទៅ \"ផែនទីគន្លឹះដែលបានកែលម្អ\" នៅក្នុង <xliff:g id="settings_path">%1$s</xliff:g>.\n\n ប្រសិនបើអ្នកប្រើឧបករណ៍បង្ហាញអក្សរស្ទាប អ្នកក៏អាចប្រើផ្លូវកាត់នៃរបៀបរុករកថ្មីដើម្បីឆ្លងកាត់មាតិកាដោយផ្ទាល់ពីឧបករណ៍បង្ហាញអក្សរស្ទាបរបស់អ្នក។ ផ្លូវកាត់ឧបករណ៍បង្ហាញអក្សរស្ទាបមួយចំនួនត្រូវបានផ្លាស់ប្តូរ ដើម្បីសម្រួលដល់ការផ្លាស់ប្តូរនេះ។ អ្នកអាចមើលឃើញបញ្ជីផ្លូវកាត់ឧបករណ៍បង្ហាញអក្សរស្ទាបទាំងអស់ក្នុង <xliff:g id="braille_display_settings_path">%2$s</xliff:g>។</string>
   <string name="keyboard_shortcuts_link">ការកំណត់ SandFly &gt; ផ្លូវកាត់ក្ដារចុច</string>
   <string name="keyboard_shortcuts_link_tts">\"ការកំណត់ SandFly\" បន្ទាប់មក \"ផ្លូវកាត់ក្ដារចុច\"</string>
   <string name="braille_display_settings_link">ការកំណត់ឧបករណ៍បង្ហាញអក្សរស្ទាប</string>
   <string name="keyboard_smart_browse_mode_title">ក្ដារចុច៖ មុខងាររុករកឆ្លាតវៃ</string>
   <string name="keyboard_smart_browse_mode_text">មុខងាររុករកឆ្លាតវៃរបស់ SandFly បិទមុខងាររុករកនៅលើកន្លែងកែ ដើម្បីជួយអ្នកវាយបញ្ចូលដោយប្រើក្ដារចុចរូបវន្ត នៅពេលអ្នករុករកលើវេប។ បន្ទាប់មក វាបើកមុខងារនេះវិញ នៅពេលអ្នកផ្លោះទៅកន្លែងបញ្ចូលដែលមិនមែនជាកន្លែងកែនៅលើវេប ដើម្បីឱ្យអ្នកអាចបន្តរុករកប្រកបដោយប្រសិទ្ធភាព។ អ្នកអាចបើក ឬបិទ \"មុខងាររុករកឆ្លាតវៃ\" នៅក្នុង <xliff:g id="settings_path">%1$s</xliff:g>។</string>
-  <string name="advanced_settings_link">ការកំណត់ SandFly &gt; ការកំណត់កម្រិតខ្ពស់</string>
-  <string name="advanced_settings_link_tts">\"ការកំណត់ SandFly\" បន្ទាប់មក \"ការកំណត់កម្រិតខ្ពស់\"</string>
   <string name="keyboard_tutorial_title">មេរៀនអំពីក្ដារចុច</string>
   <string name="keyboard_tutorial_text">ឥឡូវនេះ SandFly រួមបញ្ចូលមេរៀនក្ដារចុចដែលត្រូវបានរចនាឡើង ដើម្បីជួយអ្នកស្វែងយល់អំពីផ្លូវកាត់ក្ដារចុច និងឃ្លាបញ្ជាសម្រាប់ផែនទីគ្រាប់ចុចប្រសើរជាងមុន នៅពេលប្រើក្ដារចុចរូបវន្ត។ ដើម្បីចូលមើលមេរៀន សូមចូលទៅកាន់៖ <xliff:g id="settings_path">%1$s</xliff:g>។</string>
-  <string name="tutorial_link">ការកំណត់ SandFly &gt; មេរៀនអំពី SandFly</string>
-  <string name="tutorial_link_tts">\"ការកំណត់ SandFly\" បន្ទាប់មក \"មេរៀនអំពី SandFly\"</string>
   <string name="tutorial_entry_point_title">មេរៀន</string>
   <string name="welcome_to_talkback_title">សូមស្វាគមន៍មកកាន់ SandFly</string>
   <string name="talkback_is_on">SandFly ត្រូវបានបើក</string>
@@ -948,7 +944,7 @@
   <string name="menus_title">ប្រើម៉ឺនុយ និងការគ្រប់គ្រង</string>
   <string name="menus_talkback_menu_text">ម៉ឺនុយ SandFly រួមបញ្ចូលការកំណត់ និងការគ្រប់គ្រង ដែលអ្នកអាចនឹងត្រូវការញឹកញាប់។\n\nបើកម៉ឺនុយ SandFly ឥឡូវនេះ ដោយចុចអេក្រង់ដោយប្រើម្រាមដៃ 3។</string>
   <string name="menus_talkback_menu_text_pre_r">ម៉ឺនុយ SandFly រួមបញ្ចូលការកំណត់ និងការគ្រប់គ្រង ដែលអ្នកអាចនឹងត្រូវការញឹកញាប់។\n\nបើកម៉ឺនុយ SandFly ឥឡូវនេះ ដោយអូសចុះក្រោម រួចទៅស្ដាំ។</string>
-  <string name="menus_selector_text">ផ្លូវកាត់ទាំងនេះអាចជួយឱ្យអ្នកប្ដូរការកំណត់បានយ៉ាងរហ័សដូចជា ការប្ដូរការរុករករបស់អ្នកពីតួអក្សរទៅជាពាក្យ ឬការប្ដូរល្បឿននៃការនិយាយរបស់ SandFly ជាដើម។\n\nដើម្បីប្ដូរការគ្រប់គ្រងការអានរបស់អ្នកបានយ៉ាងរហ័ស សូមអូសទៅឆ្វេងដោយប្រើម្រាមដៃ 3 ឬអូសទៅស្ដាំដោយប្រើម្រាមដៃ 3។\n\nអ្នកអាចប្ដូរម៉ឺនុយមុខងារតបវិញ និងការគ្រប់គ្រងការអានរបស់អ្នកតាមបំណងនៅពេលក្រោយនៅក្នុងការកំណត់ SandFly។</string>
+  <string name="menus_selector_text">ផ្លូវកាត់ទាំងនេះអាចជួយឱ្យអ្នកប្ដូរការកំណត់បានយ៉ាងរហ័សដូចជា ការប្ដូរការរុករករបស់អ្នកពីតួអក្សរទៅជាពាក្យ ឬការប្ដូរល្បឿននៃការនិយាយរបស់ SandFly ជាដើម។\n\nដើម្បីប្ដូរការគ្រប់គ្រងការអានរបស់អ្នកបានយ៉ាងរហ័ស សូមអូសទៅឆ្វេងដោយប្រើម្រាមដៃ 3 ឬអូសទៅស្ដាំដោយប្រើម្រាមដៃ 3។\n\nអ្នកអាចប្ដូរម៉ឺនុយ SandFly និងការគ្រប់គ្រងការអានរបស់អ្នកតាមបំណងនៅពេលក្រោយនៅក្នុងការកំណត់ SandFly។</string>
   <string name="menus_selector_text_pre_r">ផ្លូវកាត់ទាំងនេះអាចជួយឱ្យអ្នកប្ដូរការកំណត់បានយ៉ាងរហ័សដូចជា ការប្ដូរការរុករករបស់អ្នកពីតួអក្សរទៅជាពាក្យ ឬការប្ដូរល្បឿននៃការនិយាយរបស់ SandFly ជាដើម។\n\nដើម្បីប្ដូរការគ្រប់គ្រងការអានរបស់អ្នកបានយ៉ាងរហ័ស សូមអូសចុះក្រោម រួចឡើងលើវិញ។\n\nអ្នកអាចប្ដូរម៉ឺនុយ SandFly និងការគ្រប់គ្រងការអានរបស់អ្នកតាមបំណងនៅពេលក្រោយនៅក្នុងការកំណត់ SandFly។</string>
   <string name="all_set_title">រួចហើយ!</string>
   <string name="all_set_text">អ្នករួចរាល់ក្នុងការប្រើប្រាស់ SandFly។\n\nបន្តស្វែងយល់អំពីប្រធានបទផ្សេងទៀតឥឡូវនេះ ឬពិនិត្យមើលព័ត៌មាននេះគ្រប់ពេលនៅក្នុងការកំណត់ SandFly។</string>
@@ -990,7 +986,7 @@
   <string name="edit_box_text">សូមស្វាគមន៍មកកាន់ SandFly</string>
   <string name="selecting_text_title">ការជ្រើសរើសអត្ថបទ</string>
   <string name="selecting_text_text">នៅក្នុងប្រអប់អត្ថបទ សូមរំកិលទស្សន៍ទ្រនិច​ទៅផ្នែកខាងដើមនៃអត្ថបទ​ដែលអ្នកចង់ជ្រើសរើស។\n\nប្រើម្រាមដៃ 2 ចុចពីរដង ហើយសង្កត់ឱ្យជាប់ ដើម្បីចាប់ផ្ដើមមុខងារជ្រើសរើស។ បន្ទាប់មក រំកិល​ទស្សន៍ទ្រនិច​ទៅផ្នែកខាងចុង​នៃអត្ថបទ​។ ចុចពីរដង ហើយសង្កត់ឱ្យជាប់​ម្ដងទៀត​ដោយប្រើម្រាមដៃ 2 ដើម្បីបញ្ឈប់​មុខងារ​ជ្រើសរើស​។\n\nសាកល្បង​ជ្រើសរើស​ពាក្យ \"ស្វាគមន៍\" នៅក្នុង​ប្រអប់អត្ថបទ​ខាងក្រោម​។</string>
-  <string name="selecting_text_text_pre_r">រំកិលទស្សន៍ទ្រនិចទៅផ្នែកចាប់ផ្ដើមនៃអក្សរដែលអ្នកចង់ជ្រើសរើស នៅក្នុងប្រអប់អក្សរ។\n\nអូសចុះក្រោម រួចអូសទៅស្ដាំ ដើម្បីបើកម៉ឺនុយមុខងារ SandFly។ ចុចពីរដងលើសកម្មភាព រួចចាប់ផ្ដើមមុខងារជ្រើសរើស។ រំកិលទស្សន៍ទ្រនិចទៅផ្នែកខាងចុងនៃអក្សរ។\n\nបើកម៉ឺនុយមុខងារ SandFly ម្ដងទៀត បន្ទាប់មកចុចពីរដងលើសកម្មភាព ដើម្បីបញ្ឈប់មុខងារជ្រើសរើស។\n\nសាកល្បងជ្រើសរើសពាក្យ \"ស្វាគមន៍\" នៅក្នុងប្រអប់អក្សរខាងក្រោម។</string>
+  <string name="selecting_text_text_pre_r">រំកិលទស្សន៍ទ្រនិចទៅផ្នែកចាប់ផ្ដើមនៃអក្សរដែលអ្នកចង់ជ្រើសរើស នៅក្នុងប្រអប់អក្សរ។\n\nអូសចុះក្រោម រួចអូសទៅស្ដាំ ដើម្បីបើកម៉ឺនុយ SandFly។ ចុចពីរដងលើសកម្មភាព រួចចាប់ផ្ដើមមុខងារជ្រើសរើស។ រំកិលទស្សន៍ទ្រនិចទៅផ្នែកខាងចុងនៃអក្សរ។\n\nបើកម៉ឺនុយ SandFly ម្ដងទៀត បន្ទាប់មកចុចពីរដងលើសកម្មភាព ដើម្បីបញ្ឈប់មុខងារជ្រើសរើស។\n\nសាកល្បងជ្រើសរើសពាក្យ \"ស្វាគមន៍\" នៅក្នុងប្រអប់អក្សរខាងក្រោម។</string>
   <string name="copy_cut_paste_title">ចម្លង កាត់ និងដាក់ចូល</string>
   <string name="copy_text">បន្ទាប់ពី​ជ្រើសរើស​អត្ថបទ​ហើយ សូមចម្លងវា​ដោយប្រើម្រាមដៃ 3 ចុចពីរដង។\n\nសាកល្បង​ចម្លងពាក្យណាមួយ​នៅក្នុង​ប្រអប់អត្ថបទ​ខាងក្រោម​។</string>
   <string name="cut_paste_text">ដើម្បីកាត់​អត្ថបទ សូមចុចពីរដងឱ្យជាប់​ដោយប្រើម្រាមដៃ 3។\n\nដើម្បី​ដាក់ចូល​អត្ថបទ សូមចុចបីដង​ដោយប្រើម្រាមដៃ 3។\n\nសាកល្បង​ដាក់ចូល​ពាក្យណាមួយ​នៅក្នុង​ប្រអប់អត្ថបទ​ខាងក្រោម។</string>
@@ -1069,14 +1065,14 @@
   <string name="checking_notifications_tips">ដើម្បីពិនិត្យមើលប្រវត្តិនៃការជូនដំណឹងរបស់អ្នក សូមអូសពីផ្នែកខាងលើនៃអេក្រង់របស់អ្នកចុះក្រោមដោយប្រើម្រាមដៃ 2</string>
   <string name="image_description_playground_title">សាកល្បងយកការពណ៌នារូបភាព</string>
   <string name="image_description_playground_content_one">នៅពេលអ្នកផ្ដោតលើរូបភាព សូមបើកម៉ឺនុយ SandFly រួចជ្រើសរើស “ពណ៌នារូបភាព”។\n\nមានរូបថតមួយសន្លឹកនៅខាងក្រោម។ សាកល្បងយកការពណ៌នាសម្រាប់រូបភាពនោះ។</string>
-  <string name="image_description_playground_content_two">អ្នកអាចផ្លាស់ប្តូរការកំណត់ការពិពណ៌នារូបភាពបានគ្រប់ពេលនៅក្នុងការកំណត់ SandFly &gt; ការពិពណ៌នាដោយស្វ័យប្រវត្តិ។</string>
-  <string name="image_description_playground_content_two_tts">អ្នកអាចផ្លាស់ប្តូរការកំណត់ការពិពណ៌នារូបភាពបានគ្រប់ពេលនៅក្នុងការកំណត់ SandFly បន្ទាប់មកការពិពណ៌នាដោយស្វ័យប្រវត្តិ។</string>
+  <string name="image_description_playground_content_two">អ្នកអាចផ្លាស់ប្តូរការកំណត់ការពិពណ៌នារូបភាពបានគ្រប់ពេលនៅក្នុងការកំណត់ SandFly &gt; ការពណ៌នារូបភាព និងអេក្រង់។</string>
+  <string name="image_description_playground_content_two_tts">អ្នកអាចផ្លាស់ប្តូរការកំណត់ការពិពណ៌នារូបភាពបានគ្រប់ពេលនៅក្នុងការកំណត់ SandFly បន្ទាប់មកការពណ៌នារូបភាព និងអេក្រង់។</string>
   <string name="image_description_sample_image_content_description">រូបភាពគំរូ ចុចដោយប្រើម្រាមដៃ 3 ដើម្បីបើកម៉ឺនុយ SandFly រួចជ្រើសរើស \"ពណ៌នារូបភាព\" ដើម្បីស្ដាប់ឮការពណ៌នា។</string>
   <string name="practice_gestures_title">អនុវត្តចលនា</string>
   <string name="practice_keyboard_gestures_title">អនុវត្ដផ្លូវកាត់​ក្ដារ​ចុច</string>
   <string name="pref_gesture_set_key_title">សំណុំចលនា</string>
-  <string name="practice_gestures_text">សាកល្បងកាយវិការ SandFly ណាមួយនៅលើអេក្រង់នេះ ដើម្បីស្តាប់ថាតើកាយវិការនោះធ្វើអ្វី។\n\nប៉ះអេក្រង់ដោយប្រើម្រាមដៃ 2 ។ បន្តអនុវត្តដោយការប៉ះម្តង ពីរដង ឬបីដងដោយប្រើម្រាមដៃ 2, 3, ឬ 4 ។\n\nអ្នកក៏អាចចុចពីរដងហើយសង្កត់ដោយប្រើម្រាមដៃ 2, 3 ឬ 4 ។</string>
-  <string name="practice_gestures_text_pre_r">សាកល្បងកាយវិការ SandFly ណាមួយនៅលើអេក្រង់នេះ ដើម្បីស្តាប់ថាតើកាយវិការនោះធ្វើអ្វី។\n\nសាកល្បងកាយវិការណាមួយដែលការអូសពីរបង្កើតជាមុំកែង។ ឧទាហរណ៍ អូសចុះក្រោម ហើយបន្ទាប់មកទៅស្តាំ ដោយមិនលើកម្រាមដៃរបស់អ្នកនៅចន្លោះ។</string>
+  <string name="practice_gestures_text">សាកល្បងចលនា SandFly ណាមួយនៅលើអេក្រង់នេះ ដើម្បីស្តាប់ថាតើចលនានោះធ្វើអ្វី។\n\nប៉ះអេក្រង់ដោយប្រើម្រាមដៃ 2 ។ បន្តអនុវត្តដោយការប៉ះម្តង ពីរដង ឬបីដងដោយប្រើម្រាមដៃ 2, 3, ឬ 4 ។\n\nអ្នកក៏អាចចុចពីរដងហើយសង្កត់ដោយប្រើម្រាមដៃ 2, 3 ឬ 4 ។</string>
+  <string name="practice_gestures_text_pre_r">សាកល្បងចលនា SandFly ណាមួយនៅលើអេក្រង់នេះ ដើម្បីស្តាប់ថាតើចលនានោះធ្វើអ្វី។\n\nសាកល្បងចលនាណាមួយដែលការអូសពីរបង្កើតជាមុំកែង។ ឧទាហរណ៍ អូសចុះក្រោម ហើយបន្ទាប់មកទៅស្តាំ ដោយមិនលើកម្រាមដៃរបស់អ្នកនៅចន្លោះ។</string>
   <string name="practice_keyboard_gestures_text">សង្កត់គ្រាប់ចុចក្ដារចុចរូបវន្ត ឬបន្សំគ្រាប់ចុច ដើម្បីស្ដាប់ឮថាវាមានមុខងារអ្វី។ សង្កត់ Ctrl + W ឬ Escape ដើម្បីចាកចេញ។\n\nអ្នកក៏អាចអនុវត្តចលនា SandFly នៅទីនេះបានផងដែរ។</string>
   <string name="button_1">ប៊ូតុង​ទី 1</string>
   <string name="button_2">ប៊ូតុងទី 2</string>
@@ -1303,18 +1299,18 @@
     <string name="title_selector_switch_tts_engine">ម៉ាស៊ីននិយាយ</string>
     <string name="summary_selector_switch_tts_engine">ប្តូររវាងម៉ាស៊ីននិយាយដែលបានដំឡើង</string>
     <string name="title_selector_voice_profile">កម្រងព័ត៌មានសំឡេង</string>
-    <string name="title_pref_voice_profiles">ទម្រង់សំឡេង</string>
+    <string name="title_pref_voice_profiles">កម្រងព័ត៌មានសំឡេង</string>
     <string name="voice_profile_default">លំនាំដើមរបស់ SandFly</string>
     <string name="voice_profile_in_use">កំពុងប្រើ៖ <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="spoken_language_unavailable_with_profile">ភាសានិយាយមិនអាចប្រើបានទេ ខណៈពេលកំពុងប្រើកម្រងព័ត៌មានសំឡេង</string>
-    <string name="speech_engine_unavailable_with_profile">ម៉ាស៊ីននិយាយមិនអាចប្រើបានទេ ពេលប្រើទម្រង់សំឡេង</string>
+    <string name="speech_engine_unavailable_with_profile">ម៉ាស៊ីននិយាយមិនអាចប្រើបានទេ ពេលប្រើកម្រងព័ត៌មានសំឡេង</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g> កំពុងប្រើ</string>
-    <string name="no_voice_profiles">មិនមានទម្រង់សំឡេងទេ</string>
-    <string name="shortcut_voice_profiles">ជ្រើសរើសទម្រង់សំឡេង</string>
-    <string name="shortcut_previous_voice_profile">ទម្រង់សំឡេងពីមុន</string>
+    <string name="no_voice_profiles">មិនមានកម្រងព័ត៌មានសំឡេងទេ</string>
+    <string name="shortcut_voice_profiles">ជ្រើសរើសកម្រងព័ត៌មានសំឡេង</string>
+    <string name="shortcut_previous_voice_profile">កម្រងព័ត៌មានសំឡេងពីមុន</string>
     <string name="shortcut_next_voice_profile">កម្រងព័ត៌មានសំឡេងបន្ទាប់</string>
     <string name="title_pref_voice_profile_in_use">កម្រងព័ត៌មានសំឡេងដែលកំពុងប្រើ</string>
-    <string name="title_pref_add_voice_profile">បន្ថែមទម្រង់សំឡេង</string>
+    <string name="title_pref_add_voice_profile">បន្ថែមកម្រងព័ត៌មានសំឡេង</string>
     <string name="voice_profile_new_name">កម្រងព័ត៌មានសំឡេង <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">មានកម្រងព័ត៌មានសំឡេងឈ្មោះ <xliff:g id="name" example="Reading">%1$s</xliff:g> រួចហើយ</string>
     <string name="title_pref_voice_profile_name">ឈ្មោះ</string>
@@ -1352,7 +1348,7 @@
     <string name="battery_optimization_notification_title">ការបង្កើនប្រសិទ្ធភាពថ្មអាចបញ្ឈប់ SandFly</string>
     <string name="battery_optimization_notification_text">នៅលើទូរសព្ទនេះ កម្មវិធីសន្សំសំចៃថ្មអាចបញ្ឈប់ SandFly បន្ទាប់ពីអេក្រង់បិទ ដូច្នេះវានៅស្ងៀមរហូតដល់វាចាប់ផ្តើមឡើងវិញ។ ចុចដើម្បីបើកការបង្កើនប្រសិទ្ធភាពថ្ម ជ្រើសរើសកម្មវិធីទាំងអស់ ស្វែងរក SandFly ហើយជ្រើសរើស កុំបង្កើនប្រសិទ្ធភាព។</string>
     <string name="title_pref_mute_speech_while_recording">ស្ងាត់ពេលថត</string>
-    <string name="summary_pref_mute_speech_while_recording">ខណៈពេលដែលកម្មវិធីកំពុងថតដោយមិនបានភ្ជាប់កាស SandFly និយាយតែជាការឆ្លើយតបនឹងកាយវិការ គ្រាប់ចុច និងការវាយអក្សររបស់អ្នកប៉ុណ្ណោះ ហើយនៅស្ងៀមសម្រាប់អ្វីៗដូចជាការជូនដំណឹង ដើម្បីកុំឱ្យវាត្រូវបានថត។</string>
+    <string name="summary_pref_mute_speech_while_recording">ខណៈពេលដែលកម្មវិធីកំពុងថតដោយមិនបានភ្ជាប់កាស SandFly និយាយតែជាការឆ្លើយតបនឹងចលនា គ្រាប់ចុច និងការវាយអក្សររបស់អ្នកប៉ុណ្ណោះ ហើយនៅស្ងៀមសម្រាប់អ្វីៗដូចជាការជូនដំណឹង ដើម្បីកុំឱ្យវាត្រូវបានថត។</string>
     <string name="title_pref_switch_languages">ប្តូរភាសាដោយស្វ័យប្រវត្តិ</string>
     <string name="title_pref_switch_dialects">ប្តូរគ្រាមភាសាដោយស្វ័យប្រវត្តិ</string>
     <string name="category_collapsed">ផ្នែកដែលបានបង្រួម</string>
@@ -1379,9 +1375,8 @@
     <string name="title_pref_touch_activation">ប៉ះនិងធ្វើឱ្យសកម្ម</string>
     <string name="title_pref_navigation">ការរុករក</string>
     <string name="title_pref_category_more">ច្រើនទៀត</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">បម្រុងទុកកាយវិការសម្រាប់ Vibration Watch</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">បម្រុងទុកចលនាសម្រាប់ Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly ឈប់ដោះស្រាយការប៉ះម្ដង និងប៉ះពីរដងដោយម្រាមដៃពីរ ដើម្បីឱ្យ Samsung Vibration Watch អាចប្រើវាបាន។ បើក Vibration Watch នៅក្នុងការកំណត់ភាពងាយស្រួលនៃនាឡិការបស់អ្នក។</string>
-    <string name="shortcut_reserved_for_vibration_watch">បានបម្រុងទុកសម្រាប់ Vibration Watch នៅក្នុងការកំណត់កម្រិតខ្ពស់</string>
     <string name="title_pref_speakerphone_away_from_ear">ឧបករណ៍បំពងសំឡេងពេលនៅឆ្ងាយពីត្រចៀករបស់អ្នក</string>
     <string name="summary_pref_speakerphone_away_from_ear">ក្នុងពេលហៅទូរសព្ទ ប្ដូរទៅឧបករណ៍បំពងសំឡេង នៅពេលអ្នកយកទូរសព្ទចេញពីត្រចៀក ហើយត្រឡប់ទៅឧបករណ៍ស្ដាប់ត្រចៀកវិញ នៅពេលអ្នកដាក់វាទៅត្រចៀកម្ដងទៀត។</string>
     <string name="summary_pref_speakerphone_needs_permission">ត្រូវការការអនុញ្ញាតដែល Android មិនផ្ដល់ឱ្យកម្មវិធីអានអេក្រង់។ ដើម្បីផ្ដល់វា សូមដំណើរការពាក្យបញ្ជានេះដោយប្រើ adb ឬ Shizuku រួចត្រឡប់មកអេក្រង់នេះវិញ៖ %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">កម្មវិធី</string>
     <string name="speech_control_no_apps">មិនទាន់មានកម្មវិធីណាមួយសុំនិយាយនៅឡើយទេ</string>
     <string name="speech_control_ask_title">អនុញ្ញាតឱ្យ <xliff:g id="app" example="Tasker">%1$s</xliff:g> និយាយតាមរយៈ SandFly ឬ?</string>
-    <string name="speech_control_ask_text">វាអាចនិយាយអត្ថបទជាសំឡេង SandFly របស់អ្នក។ អ្នកអាចផ្លាស់ប្តូរវានៅក្នុងការកំណត់កម្រិតខ្ពស់។</string>
     <string name="speech_control_allow">អនុញ្ញាត</string>
     <string name="speech_control_deny">មិនអនុញ្ញាត</string>
     <string name="permission_speak_label">និយាយតាមរយៈSandFly</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">ដកចេញ</string>
     <string name="quick_settings_added">បានបន្ថែម %1$s</string>
     <string name="quick_settings_removed">បានដក %1$s ចេញ</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly បើក។ សង្កត់ម្រាមដៃ 2 នៅលើអេក្រង់រយៈពេល 5 វិនាទីដើម្បីបិទ។ ដើម្បីបញ្ឈប់ការបង្ហាញសារនេះ សូមបិទ SandFly ការកំណត់ &gt; ការកំណត់កម្រិតខ្ពស់ &gt; បង្ហាញការណែនាំសម្រាប់ការបិទ SandFly។</string>
     <string name="edge_gestures_title">គែម</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ផ្លូវកាត់មួយទៀតដើម្បីបើក ឬបិទមុខងាររុករក</string>
     <string name="title_pref_vibration_strength">កម្លាំងរំញ័រ</string>
@@ -1608,7 +1601,7 @@
     <string name="handwriting_tutorial_next_reading">ប្រសិនបើការសរសេរដោយដៃត្រូវបានទទួលស្គាល់ថាជាតួអក្សរផ្សេងទៀត ដូចជាអក្សរធំ អូសឡើងលើដោយប្រើម្រាមដៃពីរ ដើម្បីជ្រើសរើសការណែនាំអំពីការទទួលស្គាល់បន្ទាប់។ សាកល្បងវាឥឡូវនេះ។</string>
     <string name="handwriting_tutorial_read_back">ប៉ះដោយប្រើម្រាមដៃពីរដើម្បីអានអត្ថបទមុនទស្សន៍ទ្រនិច។</string>
     <string name="handwriting_tutorial_new_line">អូសចុះក្រោមដោយប្រើម្រាមដៃពីរ ដើម្បីបញ្ចូលបន្ទាត់ថ្មី ឬធ្វើសកម្មភាពវាលអត្ថបទ ដូចជា ផ្ញើ។</string>
-    <string name="handwriting_tutorial_not_that">នោះជាកាយវិការមួយទៀត។</string>
+    <string name="handwriting_tutorial_not_that">នោះជាចលនាមួយទៀត។</string>
     <string name="handwriting_tutorial_done">បន្ទាត់ថ្មី។ ការបង្រៀនបានបញ្ចប់។ អូសចុះក្រោមដោយប្រើម្រាមដៃបី ដើម្បីលាក់ក្តារចុច ហើយស្តាំ ឬឆ្វេងដោយប្រើម្រាមដៃបីដើម្បីប្តូរក្តារចុច។ ដើម្បីបើកការបង្រៀនម្តងទៀត សូមប៉ះដោយម្រាមដៃបី។</string>
     <string name="handwriting_tutorial_finished">ការបង្រៀនបានបញ្ចប់។ ដើម្បីបើកវាម្តងទៀត សូមប៉ះដោយម្រាមដៃបី។</string>
     <string name="handwriting_no_alternatives">មិនមានការណែនាំផ្សេងទៀតទេ</string>
@@ -1715,7 +1708,7 @@
     <string name="title_keyboard_echo_physical">សំឡេងក្តារចុចរូបវ័ន្ត</string>
     <string name="title_keyboard_echo_braille_keyboard">សំឡេងក្ដារចុចអក្សរស្ទាប</string>
     <string name="title_keyboard_echo_handwriting_keyboard">បន្ទរក្តារចុចសរសេរដោយដៃ</string>
-    <string name="title_keyboard_echo_braille_display">អេកូបង្ហាញអក្សរស្ទាប</string>
+    <string name="title_keyboard_echo_braille_display">អេកូឧបករណ៍បង្ហាញអក្សរស្ទាប</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">រំខានការនិយាយនៅពេលវាយ</string>
     <string name="pref_interrupt_typing_entry_always">ជានិច្ច</string>
@@ -1735,8 +1728,8 @@
     <string name="template_item_details_order_dropped">ទម្លាក់ <xliff:g id="detail" example="Name">%1$s</xliff:g>។ <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly និយាយព័ត៌មានលម្អិតរបស់ធាតុនៅក្នុងលំដាប់នេះ។ ដើម្បីផ្លាស់ប្តូរវា សូមប៉ះព័ត៌មានលម្អិតមួយឱ្យជាប់ បន្ទាប់មកអូសវាឡើងលើ ឬចុះក្រោម។ ជាមួយនឹងការបើក SandFly ចុចពីរដងឱ្យជាប់ រួចអូស។ អ្នកក៏អាចប្រើសកម្មភាពផ្លាស់ទីឡើងលើ និងផ្លាស់ទីចុះក្រោមផងដែរ។</string>
     <string name="title_pref_speak_items_before_scroll">និយាយធាតុមុនពេលវារំកិលចូលក្នុងទិដ្ឋភាព</string>
-    <string name="gemini_error_api_key">Gemini មិនទទួលយកសោ API ទេ។ ពិនិត្យមើលសោនៅក្នុងការកំណត់ការពិពណ៌នាដោយស្វ័យប្រវត្តិ។</string>
-    <string name="gemini_error_quota">ដែនកំណត់នៃការប្រើប្រាស់សម្រាប់សោ Gemini API របស់អ្នកត្រូវបានឈានដល់។ ព្យាយាមម្តងទៀតនៅពេលក្រោយ។</string>
+    <string name="gemini_error_api_key">Gemini មិនទទួលយកសោ API ទេ។ ពិនិត្យមើលសោនៅក្នុងការកំណត់ការពណ៌នារូបភាព និងអេក្រង់។</string>
+    <string name="gemini_error_quota">ដែនកំណត់នៃការប្រើប្រាស់សម្រាប់សោ API របស់ Gemini របស់អ្នកត្រូវបានឈានដល់។ ព្យាយាមម្តងទៀតនៅពេលក្រោយ។</string>
     <string name="gemini_error_busy">Gemini ពេលនេះរវល់។ ព្យាយាមម្តងទៀតក្នុងពេលបន្តិចទៀត។</string>
     <string name="gemini_error_timeout">Gemini ចំណាយពេលយូរពេកក្នុងការឆ្លើយ។ ព្យាយាមម្តងទៀត។</string>
     <string name="gemini_error_with_code">Gemini មិនអាចឆ្លើយបានទេ កំហុស <xliff:g id="http_status" example="400">%1$d</xliff:g>។</string>
@@ -1746,7 +1739,7 @@
     <string name="image_qna_stop_listening">ឈប់ស្តាប់</string>
     <string name="image_qna_type_question">វាយសំណួរ</string>
     <string name="shortcut_dictate">សរសេរតាមការប្រាប់</string>
-    <string name="title_pref_ai_dictation">កែការសរសេរតាមសំឡេងដោយប្រើ AI</string>
+    <string name="title_pref_ai_dictation">កែការសរសេរតាមការប្រាប់ដោយប្រើ AI</string>
     <string name="dictation_not_corrected">មិនបានកែ។ បានវាយបញ្ចូលតាមការស្គាល់។</string>
     <string name="dictation_nothing_recognized">មិនបានសម្គាល់អ្វីទេ</string>
     <string name="dictation_unavailable">ការសម្គាល់សំឡេងមិនអាចប្រើបានទេ</string>
@@ -1761,12 +1754,11 @@
     <string name="dictation_google_download">ទាញយក <xliff:g id="language" example="English">%1$s</xliff:g> សម្រាប់ការទទួលស្គាល់នៅលើឧបករណ៍</string>
     <string name="dictation_recognition_android">ការទទួលស្គាល់ការនិយាយរបស់ Android</string>
     <string name="dictation_recognition_automatic_using">ស្វ័យប្រវត្តិ៖ <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
-    <string name="dictation_rambler_needs_key">Rambler ត្រូវការសោ API Gemini</string>
+    <string name="dictation_rambler_needs_key">Rambler ត្រូវការសោ API របស់ Gemini</string>
     <string name="dictation_whisper_needs_model">Whisper ត្រូវការម៉ូដែលដែលបានទាញយក</string>
     <string name="title_pref_whisper_models">ម៉ូដែល Whisper</string>
     <string name="dictation_whisper_use">ប្រើ</string>
     <string name="title_pref_dictation_ai_service">សេវាកម្ម AI សម្រាប់ការសរសេរតាមការប្រាប់</string>
-    <string name="dictation_ai_same">ដូចគ្នានឹងការពណ៌នាដោយស្វ័យប្រវត្តិ</string>
     <string name="title_pref_browse_mode_per_app">ចងចាំរបៀបរុករកនៅក្នុងកម្មវិធីនីមួយៗ</string>
     <string name="title_pref_export_settings">នាំចេញការកំណត់</string>
     <string name="title_pref_import_settings">នាំចូលការកំណត់</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">បទមុន</string>
     <string name="sound_mode_needs_access">អនុញ្ញាតការចូលប្រើ «កុំរំខាន» ដើម្បីបើក ឬបិទ «បិទសំឡេង»។</string>
     <string name="title_pref_dictation_auto_stop">ឈប់ដោយស្វ័យប្រវត្តិក្រោយពេលស្ងាត់</string>
+    <string name="dictation_ai_same">ដូចនឹង «ការពណ៌នារូបភាព និងអេក្រង់»</string>
+    <string name="navigation_settings_link">ការកំណត់ SandFly > ការរុករក</string>
+    <string name="navigation_settings_link_tts">\"ការកំណត់ SandFly\" បន្ទាប់មក \"ការរុករក\"</string>
+    <string name="shortcut_reserved_for_vibration_watch">បម្រុងទុកសម្រាប់ Vibration Watch នៅក្នុង «ចលនា»</string>
+    <string name="speech_control_ask_text">វាអាចនិយាយអក្សរដោយប្រើសំឡេង SandFly របស់អ្នក។ អ្នកអាចប្ដូរការកំណត់នេះនៅក្នុង ការកំណត់ > ការនិយាយ > អនុញ្ញាតឱ្យកម្មវិធីផ្សេងទៀតនិយាយ។</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly បើក។ ប្រើម្រាមដៃ 2 ចុចឱ្យជាប់លើអេក្រង់រយៈពេល 5 វិនាទី ដើម្បីបិទ។ ដើម្បីបញ្ឈប់ការបង្ហាញសារនេះ សូមបិទ ការកំណត់ SandFly &gt; ផ្អាក និងបិទ &gt; បង្ហាញការណែនាំអំពីការបិទ SandFly។</string>
+    <string name="tutorial_link">ការកំណត់ SandFly > ជំនួយ និងមតិកែលម្អ > មេរៀនអំពីមុខងារ SandFly</string>
+    <string name="tutorial_link_tts">\"ការកំណត់ SandFly\" បន្ទាប់មក \"ជំនួយ និងមតិកែលម្អ\" បន្ទាប់មក \"មេរៀនអំពីមុខងារ SandFly\"</string>
 </resources>

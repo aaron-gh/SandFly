@@ -12,13 +12,13 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ຈາກນັ້ນ Flash-Lite ເມື່ອມັນບໍ່ຫວ່າງ</string>
     <string name="gemini_model_loading">ກຳລັງຮັບຕົວແບບ…</string>
     <string name="gemini_model_list_failed">ບໍ່ສາມາດຮັບຕົວແບບໄດ້: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">ຕັ້ງລະຫັດ API Gemini ກ່ອນ</string>
+    <string name="gemini_model_needs_key">ຕັ້ງລະຫັດ API ຂອງ Gemini ກ່ອນ</string>
     <string name="gemini_api_terms_link">ເງື່ອນໄຂການໃຫ້ບໍລິການເພີ່ມເຕີມຂອງ Gemini API</string>
     <string name="ai_service_address_hint">ທີ່ຢູ່ ເຊັ່ນ: https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">ຕົວແບບ</string>
     <string name="ai_service_address_invalid">ທີ່ຢູ່ຕ້ອງເລີ່ມດ້ວຍ https://. ບໍ່ມີຫຍັງຖືກບັນທຶກ.</string>
     <string name="dialog_message_ai_service_consent">ຮູບພາບ ແລະ ຮູບໜ້າຈໍຈະຖືກສົ່ງໄປ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ເພື່ອອະທິບາຍ ເຊິ່ງໃຊ້ເວລາຫຼາຍວິນາທີ. ຂໍ້ກຳນົດ ແລະ ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວຂອງບໍລິການນັ້ນມີຜົນບັງຄັບໃຊ້. AI ແບບສ້າງເນື້ອຫາຍັງຢູ່ໃນຂັ້ນທົດລອງ, ສະນັ້ນມັນຈະເຮັດຜິດພາດ.</string>
-    <string name="ai_service_error_api_key">ບໍລິການ AI ບໍ່ຍອມຮັບລະຫັດ API. ກວດເບິ່ງການຕັ້ງຄ່າຂອງມັນຢູ່ໃນຄໍາອະທິບາຍອັດຕະໂນມັດ.</string>
+    <string name="ai_service_error_api_key">ບໍລິການ AI ບໍ່ຍອມຮັບລະຫັດ API. ກວດເບິ່ງການຕັ້ງຄ່າຂອງມັນຢູ່ໃນຄຳອະທິບາຍຮູບ ແລະ ໜ້າຈໍ.</string>
     <string name="ai_service_error_quota">ຮອດຂີດຈຳກັດການນຳໃຊ້ບໍລິການ AI ແລ້ວ. ລອງໃໝ່ໃນພາຍຫຼັງ.</string>
     <string name="ai_service_error_busy">ການບໍລິການ AI ບໍ່ຫວ່າງໃນຂະນະນີ້. ກະລຸນາລອງໃໝ່ໃນອີກຈັກໜ່ອຍ.</string>
     <string name="ai_service_error_timeout">ບໍລິການ AI ໃຊ້ເວລາດົນເກີນໄປທີ່ຈະຕອບ. ລອງອີກຄັ້ງ.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">ບໍ່ມີ</string>
-    <string name="ai_service_not_set_up">ບໍ່ມີບໍລິການ AI ທີ່ໃຊ້ຢູ່. ຕັ້ງຄ່າອັນໜຶ່ງ ຫຼືເລືອກອັນໜຶ່ງໃນການຕັ້ງຄ່າຄຳອະທິບາຍອັດຕະໂນມັດ.</string>
+    <string name="ai_service_not_set_up">ບໍ່ມີບໍລິການ AI ທີ່ໃຊ້ຢູ່. ຕັ້ງຄ່າອັນໜຶ່ງ ຫຼືເລືອກອັນໜຶ່ງໃນການຕັ້ງຄ່າຄຳອະທິບາຍຮູບ ແລະ ໜ້າຈໍ.</string>
     <string name="ai_provider_none_set_up">ບໍ່ມີການບໍລິການ AI ຖືກຕັ້ງຄ່າ. ຕັ້ງຄ່າອັນນຶ່ງໃນການຕັ້ງຄ່າຂອງມັນຂ້າງລຸ່ມນີ້.</string>
     <string name="ai_provider_other">ບໍລິການອື່ນໆ</string>
     <string name="title_pref_category_ai_services">ບໍລິການ AI</string>

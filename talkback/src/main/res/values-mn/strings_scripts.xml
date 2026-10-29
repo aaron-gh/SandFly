@@ -12,7 +12,7 @@
     <string name="scripts_category_global">Глобал залгаасууд</string>
     <string name="scripts_none">Суулгасан скрипт байхгүй байна</string>
     <string name="scripts_all_off">Бүх скриптийг унтраах</string>
-    <string name="scripts_all_off_summary">Скриптүүд суулгасан хэвээр үлдэж, өөрсдийн сэлгүүрийг хадгална. «Бүх скриптийг асаах эсвэл унтраах» дохио ч мөн адил ажиллана.</string>
+    <string name="scripts_all_off_summary">Скриптүүд суулгасан хэвээр үлдэж, өөрсдийн сэлгүүрийг хадгална. «Бүх скриптийг асаах эсвэл унтраах» зангаа ч мөн адил ажиллана.</string>
     <string name="shortcut_toggle_scripts">Бүх скриптийг асаах эсвэл унтраах</string>
     <string name="scripts_now_off">Скриптүүд унтраалттай</string>
     <string name="scripts_now_on">Скриптүүд асаалттай</string>
@@ -42,7 +42,7 @@
     <string name="script_permission_actions">Дарах, гүйлгэх, бичих, фокусыг зөөх</string>
     <string name="script_permission_speech">SandFly-н яриаг авах, өөрчлөх</string>
     <string name="script_permission_passwords">Нууц үгийн талбарыг унших</string>
-    <string name="script_permission_input">Дохио, товч, цэсийн зүйл, уншилтын хяналт нэмэх</string>
+    <string name="script_permission_input">Зангаа, товч, цэсийн зүйл, уншилтын хяналт нэмэх</string>
     <string name="script_permission_network">Интернет ашиглах</string>
     <string name="script_permission_clipboard">Түр санах ойг уншиж, өөрчлөх</string>
     <string name="script_permission_system">Буцах эсвэл нүүр дэлгэц рүү очих, мэдэгдэл болон аппыг нээх</string>
@@ -102,7 +102,7 @@
     <string name="script_keys_backtalk_modifier">SandFly өөрчлөгч товч</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, дараа нь <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Тушаалууд</string>
-    <string name="script_commands_summary">Ажиллаж буй скриптийн дохио, товчлуурууд SandFly-н дохио, товчлууруудаас давуу эрхтэй. SandFly-н дохио эсвэл товчийг үлдээхийн тулд скриптийнхийг унтраана уу.</string>
+    <string name="script_commands_summary">Ажиллаж буй скриптийн зангаа, товчлуурууд SandFly-н зангаа, товчлууруудаас давуу эрхтэй. SandFly-н зангаа эсвэл товчийг үлдээхийн тулд скриптийнхийг унтраана уу.</string>
     <string name="script_binding_gesture">Зангаа: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Товчлуурууд: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly цэс</string>
@@ -112,12 +112,12 @@
     <string name="script_binding_turn_off">Унтраах</string>
     <string name="script_binding_restore">Өгөгдмөлүүдийг сэргээх</string>
     <string name="script_binding_restored">Өгөгдмөлүүдийг сэргээсэн</string>
-    <string name="script_binding_perform">Дохио хийх эсвэл товч дарах</string>
-    <string name="script_binding_perform_summary">Дараагийн дохио эсвэл SandFly өөрчлөгч товчтой хамт дарсан товчлууруудыг оноох</string>
-    <string name="script_binding_perform_message">Дохио хийх эсвэл товчийг дарна уу.</string>
+    <string name="script_binding_perform">Зангаа хийх эсвэл товч дарах</string>
+    <string name="script_binding_perform_summary">Дараагийн зангаа эсвэл SandFly өөрчлөгч товчтой хамт дарсан товчлууруудыг оноох</string>
+    <string name="script_binding_perform_message">Зангаа хийх эсвэл товчийг дарна уу.</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g>-г <xliff:g id="command">%2$s</xliff:g>-д оноох уу?</string>
     <string name="script_binding_assign">Оноох</string>
-    <string name="script_binding_choose_gesture">Дохио сонгох</string>
+    <string name="script_binding_choose_gesture">Зангаа сонгох</string>
     <string name="script_binding_type_keys">Товчлуур бичих</string>
     <string name="script_binding_type_keys_summary">Жишээ нь sf+shift+n эсвэл sf+t, s</string>
     <string name="script_binding_bad_keys">Эдгээр товчийг ашиглах боломжгүй. <xliff:g id="reason">%1$s</xliff:g></string>

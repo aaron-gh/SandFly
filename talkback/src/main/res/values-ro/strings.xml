@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Altele</string>
   <string name="shortcut_unassigned">Atinge pentru a atribui</string>
   <string name="shortcut_not_customizable">%1$s, nu se poate personaliza</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Indisponibilă când este pornit ceasul cu vibrații</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Indisponibilă când Vibration Watch este pornit</string>
   <string name="shortcut_next">Elementul următor</string>
   <string name="shortcut_previous">Elementul anterior</string>
   <string name="shortcut_scroll_forward">Derulează înainte</string>
@@ -406,8 +406,8 @@
   <string name="talkback_menu_more_options_text">Mai multe opțiuni de meniu sunt disponibile după ce finalizezi configurarea sau deblochezi dispozitivul</string>
   <string name="talkback_menu_title_content_description">Meniul SandFly. Glisează spre dreapta pentru a explora opțiunile din meniul SandFly.\n\nPentru a reveni la tutorial, glisează spre stânga sau spre dreapta cu două degete dinspre marginea ecranului.</string>
   <string name="shortcut_show_language_options">Schimbă limba vorbită</string>
-  <string name="shortcut_select_next_setting">Următoarea comandă de lectură</string>
-  <string name="shortcut_select_previous_setting">Comanda de lectură anterioară</string>
+  <string name="shortcut_select_next_setting">Următoarea comandă pentru citire</string>
+  <string name="shortcut_select_previous_setting">Comanda pentru citire anterioară</string>
   <string name="shortcut_pass_through_next">Gest de sistem direct</string>
   <string name="shortcut_a11y_button">Comanda rapidă de accesibilitate</string>
   <string name="shortcut_a11y_button_long_press">Comanda rapidă pentru ținerea apăsată a butonului de accesibilitate</string>
@@ -473,7 +473,7 @@
   <string name="title_labeling_controls">Etichete</string>
   <string name="title_labeling_show_or_hide_controls">Adaugă sau editează etichete</string>
   <string name="title_granularity">Navigare</string>
-  <string name="title_read_from_top">Citește începând de sus</string>
+  <string name="title_read_from_top">Citește de sus</string>
   <string name="title_copy_last_spoken_phrase">Copiază ultima expresie rostită</string>
   <string name="title_spell_last_spoken_phrase">Rostește pe litere ultima expresie</string>
   <string name="title_repeat_last_spoken_phrase">Repetă ultima expresie rostită</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{Nu sunt potriviri pe acest ecran}=1{# potrivire}few{# potriviri}other{# de potriviri}}</string>
   <string name="msg_no_matches">Nu sunt rezultate pe acest ecran</string>
   <string name="dialog_title_continuous_reading_mode">Cum funcționează citirea continuă</string>
-  <string name="dialog_message_continuous_reading_mode">După ce selectezi Citește începând de sus sau Citește de la elementul focalizat, poți naviga la elementul anterior sau următor în timp ce textul este citit. Astfel, poți să te întorci sau să treci mai departe cu ușurință.\n\nPentru a ajusta volumul în timp ce SandFly rostește conținut, apasă pe butonul de creștere sau de reducere a volumului.</string>
+  <string name="dialog_message_continuous_reading_mode">După ce selectezi „Citește de sus” sau „Citește din elementul focalizat”, poți naviga la elementul anterior sau următor în timp ce textul este citit. Astfel, poți să te întorci sau să treci mai departe cu ușurință.\n\nPentru a ajusta volumul în timp ce SandFly rostește conținut, apasă pe butonul de creștere sau de reducere a volumului.</string>
   <string name="always_show_this_message_label">Afișează acest mesaj întotdeauna</string>
   <string name="dialog_title_voice_commands">Folosește comenzi vocale pentru a controla SandFly</string>
   <string name="dialog_message_voice_commands">Iată câteva lucruri pe care le poți spune:\n\n• „Copiază”;\n• „Citește de la elementul focalizat”;\n• „Caută [salvează]”;\n• „Vorbește [mai repede]”;\n• „Setări SandFly”.\n\nRostește „<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>” pentru lista completă a comenzilor vocale.</string>
@@ -851,7 +851,7 @@
   <string name="keep_reviewing_tutorial_button">Continuă examinarea</string>
   <string name="welcome_to_updated_talkback_title">Bun venit la versiunea SandFly actualizată</string>
   <string name="navigation_heading">Navigare</string>
-  <string name="setting_selector_heading">Comenzi de citire</string>
+  <string name="setting_selector_heading">Comenzi pentru citire</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Ca să întrerupi sau să redai elemente media într-o aplicație video sau de muzică, atinge de două ori cu două degete. Încearcă acum.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Alte aplicații pot folosi acest gest pentru acțiuni precum răspunsul la un apel telefonic sau încheierea acestuia. Gestul poate să nu fie acceptat de toate aplicațiile.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Conținut media întrerupt sau în redare. De obicei, această acțiune va întrerupe sau va reda videoclipul sau melodia actuală. Glisează spre dreapta ca să continui.</string>
@@ -865,7 +865,7 @@
   <string name="new_shortcut_gesture_cut_text_announcement">S-a decupat textul. De obicei, această acțiune va decupa textul selectat. Glisează spre dreapta ca să continui.</string>
   <string name="new_shortcut_gesture_selection_mode_text">Ca să începi sau să închei modul de selectare a textului, atinge de două ori și ține apăsat cu două degete.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Modul de selectare este activat sau dezactivat. De obicei, această acțiune va porni sau va opri modul de selectare a textului dacă ești într-un câmp de introducere a textului. Glisează spre dreapta ca să continui.</string>
-  <string name="new_shortcut_gesture_reading_menu_text">Ca să folosești comenzile de citire, glisează spre stânga sau spre dreapta cu trei degete. Poți și să glisezi în sus sau în jos cu trei degete.</string>
+  <string name="new_shortcut_gesture_reading_menu_text">Ca să folosești comenzile pentru citire, glisează spre stânga sau spre dreapta cu trei degete. Poți și să glisezi în sus sau în jos cu trei degete.</string>
   <string name="new_shortcut_gesture_note">Notă: ai personalizat unele gesturi, așa că este posibil ca aceste informații să nu fie exacte. Ca să examinezi gesturile, accesează setările SandFly.</string>
   <string name="welcome_to_android11_text">S-au adăugat gesturi noi pentru a face SandFly mai rapid și mai ușor de folosit.\n\nPe acest ecran poți testa gesturile noi. Poți consulta informațiile oricând în setările SandFly.</string>
   <string name="new_gesture_notification_title">Gesturi noi în SandFly</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Setări pentru afișajul Braille</string>
   <string name="keyboard_smart_browse_mode_title">Tastatură: modul de navigare inteligentă</string>
   <string name="keyboard_smart_browse_mode_text">Modul de navigare inteligentă SandFly dezactivează modul de navigare într-un câmp de editare pentru a te ajuta să scrii cu o tastatură fizică atunci când navighezi pe web. Apoi îl reactivează când treci la un câmp care nu este de editare pe web, astfel încât să poți continua să navighezi eficient. Poți să activezi sau să dezactivezi Modul de navigare inteligentă în <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Setări SandFly &gt; Setări avansate</string>
-  <string name="advanced_settings_link_tts">Setări SandFly, apoi Setări avansate</string>
   <string name="keyboard_tutorial_title">Tutorial pentru tastatură</string>
   <string name="keyboard_tutorial_text">SandFly include acum un Tutorial pentru tastatură, creat pentru a te ajuta să înveți comenzile rapide de la tastatură și comenzile pentru configurarea de taste îmbunătățită când folosești o tastatură fizică. Pentru a accesa tutorialul, navighează la: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Setări SandFly &gt; Tutorial SandFly</string>
-  <string name="tutorial_link_tts">Setări SandFly, apoi Tutorial SandFly</string>
   <string name="tutorial_entry_point_title">Tutorial</string>
   <string name="welcome_to_talkback_title">Bun venit la SandFly</string>
   <string name="talkback_is_on">SandFly este activat</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">Folosește meniuri și comenzi</string>
   <string name="menus_talkback_menu_text">Meniul SandFly conține setări și opțiuni de care este posibil să ai nevoie frecvent.\n\nDeschide acum meniul SandFly atingând ecranul cu trei degete.</string>
   <string name="menus_talkback_menu_text_pre_r">Meniul SandFly conține setări și opțiuni de care este posibil să ai nevoie frecvent.\n\nDeschide acum meniul SandFly glisând în jos, apoi la dreapta.</string>
-  <string name="menus_selector_text">Aceste comenzi rapide te pot ajuta să modifici rapid setările, de exemplu să schimbi navigarea de la caractere la cuvinte sau să schimbi ritmul vorbirii din SandFly.\n\nCa să schimbi rapid comenzile de citire, glisează spre stânga sau dreapta cu trei degete.\n\nPoți personaliza meniul SandFly și comenzile de citire din setările SandFly.</string>
-  <string name="menus_selector_text_pre_r">Aceste comenzi rapide te pot ajuta să modifici rapid setările, de exemplu să schimbi navigarea de la caractere la cuvinte sau să schimbi ritmul vorbirii din SandFly.\n\nCa să schimbi rapid comenzile de citire, glisează în jos și apoi în sus.\n\nPoți personaliza meniul SandFly și comenzile de citire mai târziu din setările SandFly.</string>
+  <string name="menus_selector_text">Aceste comenzi rapide te pot ajuta să modifici rapid setările, de exemplu să schimbi navigarea de la caractere la cuvinte sau să schimbi ritmul vorbirii din SandFly.\n\nCa să schimbi rapid comenzile pentru citire, glisează spre stânga sau dreapta cu trei degete.\n\nPoți personaliza meniul SandFly și comenzile pentru citire din setările SandFly.</string>
+  <string name="menus_selector_text_pre_r">Aceste comenzi rapide te pot ajuta să modifici rapid setările, de exemplu să schimbi navigarea de la caractere la cuvinte sau să schimbi ritmul vorbirii din SandFly.\n\nCa să schimbi rapid comenzile pentru citire, glisează în jos și apoi în sus.\n\nPoți personaliza meniul SandFly și comenzile pentru citire mai târziu din setările SandFly.</string>
   <string name="all_set_title">Gata!</string>
   <string name="all_set_text">Ești gata să folosești SandFly.\n\nAflă în continuare despre alte subiecte acum sau examinează oricând aceste informații din setările SandFly.</string>
   <string name="talkback_tutorial_text">Glisează la dreapta pentru a selecta un subiect. Pentru o experiență optimă, activează SandFly înainte să începi.</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">Comută la navigarea în tabel în tabele</string>
   <string name="title_text_formatting_menu">Descrie formatarea textului</string>
   <string name="summary_text_formatting_menu">Pentru modificări precum aldin, cursiv, subliniat și altele</string>
-  <string name="title_text_formatting_inline">Formatarea textului pentru rostire</string>
+  <string name="title_text_formatting_inline">Rostește formatarea textului</string>
   <string name="title_switch_text_formatting">Rostește formatarea textului</string>
   <string name="summary_text_formatting_verbosity">Pentru modificări precum aldin și cursiv</string>
   <string name="summary_text_formatting_selector">Schimbă opțiunea de citire a formatării, cum ar fi caracterele aldine și cursive</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Mai multe</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezervă gesturi pentru Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nu mai procesează atingerile simple și duble cu două degete, ca Samsung Vibration Watch să le poată folosi. Activați Vibration Watch în setările de accesibilitate ale ceasului.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Rezervat pentru Vibration Watch în Setări avansate</string>
     <string name="title_pref_speakerphone_away_from_ear">Difuzor când telefonul e departe de ureche</string>
     <string name="summary_pref_speakerphone_away_from_ear">În timpul unui apel, comută la difuzor când îndepărtați telefonul de ureche și înapoi la casca telefonului când îl duceți din nou la ureche.</string>
     <string name="summary_pref_speakerphone_needs_permission">Necesită o permisiune pe care Android nu o acordă cititoarelor de ecran. Pentru a o acorda, rulați această comandă cu adb sau Shizuku, apoi reveniți la acest ecran: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Aplicații</string>
     <string name="speech_control_no_apps">Nicio aplicație nu a cerut încă să vorbească.</string>
     <string name="speech_control_ask_title">Permiți aplicației <xliff:g id="app" example="Tasker">%1$s</xliff:g> să vorbească prin SandFly?</string>
-    <string name="speech_control_ask_text">Poate rosti text cu vocea dvs. SandFly. Puteți modifica acest lucru în Setări avansate.</string>
     <string name="speech_control_allow">Permite</string>
     <string name="speech_control_deny">Nu permite</string>
     <string name="permission_speak_label">vorbire prin SandFly</string>
@@ -1546,7 +1540,6 @@
     <string name="quick_settings_remove">Elimină</string>
     <string name="quick_settings_added">%1$s adăugat</string>
     <string name="quick_settings_removed">%1$s eliminat</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly activat. Țineți 2 degete pe ecran timp de 5 secunde pentru a-l dezactiva. Pentru a nu mai afișa acest mesaj, dezactivați Setări SandFly &gt; Setări avansate &gt; Afișează instrucțiunile pentru dezactivarea SandFly.</string>
     <string name="edge_gestures_title">Margini</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">O altă comandă rapidă pentru a activa sau dezactiva modul de navigare</string>
     <string name="title_pref_vibration_strength">Intensitatea vibrațiilor</string>
@@ -1740,7 +1733,7 @@
     <string name="item_details_order_footer">SandFly spune detaliile unui articol în această ordine. Pentru a-l schimba, atingeți lung un detaliu, apoi trageți-l în sus sau în jos. Cu SandFly activat, atingeți de două ori și mențineți apăsat, apoi trageți. De asemenea, puteți utiliza acțiunile Mutare în sus și Mutare în jos.</string>
     <string name="title_pref_speak_items_before_scroll">Rostește elementele înainte să fie derulate în vizualizare</string>
     <string name="gemini_error_api_key">Gemini nu a acceptat cheia API. Verificați cheia în setările Descrieri de imagini și ecran.</string>
-    <string name="gemini_error_quota">Limita de utilizare pentru cheia dvs. API Gemini a fost atinsă. Încercați din nou mai târziu.</string>
+    <string name="gemini_error_quota">Limita de utilizare pentru cheia API Gemini a fost atinsă. Încercați din nou mai târziu.</string>
     <string name="gemini_error_busy">Gemini este ocupat acum. Încercați din nou peste un moment.</string>
     <string name="gemini_error_timeout">Gemini a durat prea mult să răspundă. Încearcă din nou.</string>
     <string name="gemini_error_with_code">Gemini nu a putut răspunde, eroare <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
@@ -1770,7 +1763,6 @@
     <string name="title_pref_whisper_models">Modele Whisper</string>
     <string name="dictation_whisper_use">Folosește</string>
     <string name="title_pref_dictation_ai_service">Serviciu AI pentru dictare</string>
-    <string name="dictation_ai_same">Același ca pentru descrierile automate</string>
     <string name="title_pref_browse_mode_per_app">Reține modul de navigare în fiecare aplicație</string>
     <string name="title_pref_export_settings">Exportă setările</string>
     <string name="title_pref_import_settings">Importă setările</string>
@@ -1798,4 +1790,12 @@
         <item>1 minut</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Oprire automată după liniște</string>
+    <string name="dictation_ai_same">La fel ca în Descrieri de imagini și ecran</string>
+    <string name="navigation_settings_link">Setări SandFly &gt; Navigare</string>
+    <string name="navigation_settings_link_tts">Setări SandFly, apoi Navigare</string>
+    <string name="shortcut_reserved_for_vibration_watch">Rezervat pentru Vibration Watch în Gesturi</string>
+    <string name="speech_control_ask_text">Poate rosti text cu vocea SandFly. Poți schimba acest lucru în Setări, Vorbire, Lasă alte aplicații să vorbească.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly este activat. Apasă lung ecranul cu două degete timp de 5 secunde pentru a-l dezactiva. Pentru a nu mai afișa acest mesaj, dezactivează Setări SandFly &gt; Întrerupere și dezactivare &gt; Afișează instrucțiunile pentru dezactivarea SandFly.</string>
+    <string name="tutorial_link">Setări SandFly &gt; Ajutor și feedback &gt; Tutorial SandFly</string>
+    <string name="tutorial_link_tts">Setări SandFly, apoi Ajutor și feedback, apoi Tutorial SandFly</string>
 </resources>

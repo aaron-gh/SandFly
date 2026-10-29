@@ -26,8 +26,8 @@
   <string name="right_hand">dešinės rankos</string>
   <string name="switch_to_language_announcement">Perjungta į: %s</string>
   <string name="braille_keyboard">Brailio rašmenų klaviatūra</string>
-  <string name="set_up_braille_keyboard">Brailio rašto klaviatūros nustatymas</string>
-  <string name="how_to_use_braille_keyboard">Kaip naudoti Brailio rašto klaviatūrą</string>
+  <string name="set_up_braille_keyboard">Brailio rašmenų klaviatūros nustatymas</string>
+  <string name="how_to_use_braille_keyboard">Kaip naudoti Brailio rašmenų klaviatūrą</string>
   <string name="use_brailleime_pref_dialog_case_ime_enabled">Jei norite naudoti Brailio rašmenų klaviatūrą, atidarykite įprastą klaviatūrą, tada palieskite klaviatūros pasirinkimo piktogramą %1$s (įprastai pateikiama apatiniame dešiniajame kampe). Pasirinkite katalogą „%2$s“.</string>
   <string name="use_brailleime_pref_dialog_case_ime_disabled_settings">1. Toliau palieskite „Nustatymai“. Kitame ekrane įjunkite „%1$s“.\n\n2. Atidarykite įprastą klaviatūrą, tada palieskite įvesties metodo perjungimo piktogramą %2$s (įprastai pateikiama apatiniame dešiniajame kampe).\n\n3. Pasirinkite katalogą „%1$s“.</string>
   <string name="use_brailleime_pref_dialog_case_ime_enabled_gboard">Jei nematote klaviatūrų perjungimo parinkties, pabandykite įdiegti „%s“, „Google“ klaviatūrą.</string>
@@ -42,7 +42,7 @@
   <string name="preferred_typing_language_title">Pageidaujama teksto vedimo kalba</string>
   <string name="preferred_braille_grade_title">Pageidaujamas Brailio rašmenų laipsnis</string>
   <string name="switch_input_code_gesture_tip_dialog_title">Spartusis kalbos keitimas vedant tekstą</string>
-  <string name="switch_input_code_gesture_tip_dialog_message">Jei norite pakeisti kalbą, kai vedate tekstą Brailio rašto klaviatūra, perbraukite aukštyn trimis pirštais. Tada pasirinkite „perjungti į kitą kalbą“.</string>
+  <string name="switch_input_code_gesture_tip_dialog_message">Jei norite pakeisti kalbą, kai vedate tekstą Brailio rašmenų klaviatūra, perbraukite aukštyn trimis pirštais. Tada pasirinkite „perjungti į kitą kalbą“.</string>
   <string name="title_pref_accumulate_presses">Visų paspaustų taškų įtraukimas</string>
   <string name="summary_pref_accumulate_presses">Kiekvienas paspaustas taškas yra įvesties dalis, net jei jis atleidžiamas anksčiau nei kiti taškai</string>
   <string name="title_pref_reverse_dots">Sukeisti kairiuosius ir dešiniuosius taškus</string>
@@ -106,10 +106,10 @@
   <string name="talkback_suspend_dialog_title">„SandFly“ atnaujinimas norint naudoti Brailio rašmenų klaviatūrą</string>
   <string name="talkback_off_or_suspend_dialog_message">Kai „SandFly“ įjungta, galite paliesti ekraną, kad įvestumėte Brailio rašmenų simbolius.</string>
   <string name="talkback_off_custom_gestures_dialog_title">Įjunkite „SandFly“, kad pakeistumėte gestą</string>
-  <string name="talkback_off_custom_gestures_dialog_message">„SandFly“ išjungta. Įjunkite, kad galėtumėte keisti Brailio rašto klaviatūros gestus.</string>
+  <string name="talkback_off_custom_gestures_dialog_message">„SandFly“ išjungta. Įjunkite, kad galėtumėte keisti Brailio rašmenų klaviatūros gestus.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Eiti į nustatymus</string>
   <string name="reset_gestures_dialog_title">Visus gestus nustatyti iš naujo?</string>
-  <string name="reset_gestures_dialog_message">Visi Brailio rašto klaviatūros gestai bus nustatyti į numatytuosius</string>
+  <string name="reset_gestures_dialog_message">Visi Brailio rašmenų klaviatūros gestai bus nustatyti į numatytuosius</string>
   <string name="reset_gestures_dialog_positive_button">Nustatyti iš naujo</string>
   <string name="reset_to_default_dialog_title">Nustatyti iš naujo į numatytuosius nustatymus?</string>
   <string name="reset_to_default_dialog_message">Gestas bus iš naujo nustatytas į „%s“.\n\nJei bet kuriam kitam veiksmui naudojamas šis gestas, jis bus pakeistas.</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Nustatyti iš naujo į numatytuosius nustatymus</string>
   <string name="custom_gestures_dialog_remove_button">Pašalinti gestą</string>
   <string name="change_gestures_dialog_message_title">Kaip pakeisti gestą</string>
-  <string name="change_gestures_dialog_message">Kitame ekrane bus atidaryta Brailio rašto klaviatūra ir negalėsite naudoti „SandFly“ gestų.\n\nKai bus atidaryta Brailio rašto klaviatūra, atlikite norimą naudoti gestą arba, jei norite uždaryti Brailio rašto klaviatūrą ir atšaukti gesto pakeitimą, dviem pirštais perbraukite žemyn.\n\nŽr. pasiekiamus gestus\n</string>
+  <string name="change_gestures_dialog_message">Kitame ekrane bus atidaryta Brailio rašmenų klaviatūra ir negalėsite naudoti „SandFly“ gestų.\n\nKai bus atidaryta Brailio rašmenų klaviatūra, atlikite norimą naudoti gestą arba, jei norite uždaryti Brailio rašmenų klaviatūrą ir atšaukti gesto pakeitimą, dviem pirštais perbraukite žemyn.\n\nŽr. pasiekiamus gestus\n</string>
   <string name="change_gestures_dialog_message_link">Žr. pasiekiamus gestus</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Neberodyti šio pranešimo</string>
   <string name="change_gestures_dialog_positive_button">Tęsti</string>
@@ -193,7 +193,7 @@
   <string name="index_of_spelling_suggestion">%1$d iš %2$d</string>
   <string name="grammar_suggestion">Gramatikos pasiūlymas</string>
   <string name="spelling_suggestion">Rašybos pasiūlymas</string>
-  <string name="custom_gesture_hint_announcement">Rodoma Brailio rašto klaviatūra. %1$s. %2$s</string>
+  <string name="custom_gesture_hint_announcement">Rodoma Brailio rašmenų klaviatūra. <xliff:g id="layout">%1$s</xliff:g>. <xliff:g id="custom_gesture_hint_announcement_repeat">%2$s</xliff:g></string>
   <string name="custom_gesture_hint_announcement_repeat">%1$s. %2$s.</string>
   <string name="custom_gesture_perform">Atlikite gestą, kurį norite naudoti veiksmui „%s“</string>
   <string name="custom_gesture_action">„%s“</string>
@@ -203,7 +203,7 @@
   <string name="custom_gesture_conflict_try_another">Šis gestas naudojamas veiksmui „%1$s“ ir jo pakeisti negalima. Išbandykite kitą gestą. %2$s</string>
   <string name="custom_gesture_cannot_used">Šio gesto naudoti negalima</string>
   <string name="custom_gesture_no_gesture">Neatliktas joks gestas</string>
-  <string name="custom_gesture_try_another">Išbandykite kitą gestą. Jei norite peržiūrėti visų pasiekiamų gestų sąrašą, eikite į „SandFly“ Brailio rašto klaviatūros pagalbos centrą. <xliff:g id="cancel">%s</xliff:g></string>
+  <string name="custom_gesture_try_another">Išbandykite kitą gestą. Jei norite peržiūrėti visų pasiekiamų gestų sąrašą, eikite į „SandFly“ Brailio rašmenų klaviatūros pagalbos centrą. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Gestai nesutampa</string>
   <string name="custom_gesture_perform_again">Atlikite gestą, kurį norite naudoti dar kartą. %s</string>
     <string name="tabletop_port_left_announcement">Stalo režimas, įkrovimo prievadas kairėje</string>

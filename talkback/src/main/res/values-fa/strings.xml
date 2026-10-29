@@ -13,7 +13,7 @@
   <string name="label_manager_summary_title">مدیریت برچسب‌های سفارشی</string>
   <string name="label_manager_package_title">مدیریت برچسب‌ها برای %1$s</string>
   <string name="manage_label">مدیریت برچسب</string>
-  <string name="label_manager_no_packages_message">‏درحال‌حاضر برچسب سفارشی ندارید\n\n<b>نحوه ایجاد برچسب سفارشی</b>\nبه یکی از تصاویر بدون برچسب پیمایش کنید و ازطریق منوِ SandFly برچسب اضافه کنید</string>
+  <string name="label_manager_no_packages_message">‏درحال‌حاضر برچسب سفارشی ندارید\n\n<b>نحوه ایجاد برچسب سفارشی</b>\nبه یکی از تصاویر بدون برچسب پیمایش کنید و ازطریق منو SandFly برچسب اضافه کنید</string>
   <string name="label_manager_timestamp_text">تاریخ آخرین تغییر %1$s</string>
   <string name="search_mode_cancel">جستجو لغو شد.</string>
   <string name="notification_type_status_started">شروع شد</string>
@@ -187,7 +187,7 @@
   <string name="keycombo_menu_other_show_link_list">نمایش فهرست پیوندها</string>
   <string name="keycombo_menu_other_show_control_list">نمایش فهرست کنترل‌ها</string>
   <string name="keycombo_menu_other_show_table_list">نمایش فهرست جدول‌ها</string>
-  <string name="keycombo_menu_other_talkback_context_menu">‏نمایش منوِ SandFly</string>
+  <string name="keycombo_menu_other_talkback_context_menu">‏نمایش منو SandFly</string>
   <string name="keycombo_menu_other_custom_actions">نمایش کنش‌ها</string>
   <string name="keycombo_menu_other_language_options">نمایش زبان‌های نصب‌شده</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">کپی کردن آخرین عبارت گفته‌شده</string>
@@ -358,7 +358,7 @@
   <string name="screen_dimmed">صفحه‌نمایش پنهان شده است</string>
   <string name="screen_brightness_restored">صفحه‌نمایش نمایان است</string>
   <string name="screen_dimming_exit_instruction_line1">‏سرویس دسترس‌پذیری SandFly صفحه‌نمایش را پنهان کرده است</string>
-  <string name="screen_dimming_exit_instruction_line2">‏برای تغییر این مورد، <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> تا منوِ SandFly باز شود، «<xliff:g id="menu item" example="show screen">%2$s</xliff:g>» را انتخاب کنید، سپس دو تک‌ضرب بزنید.</string>
+  <string name="screen_dimming_exit_instruction_line2">‏برای تغییر این مورد، <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> تا منو SandFly باز شود، «<xliff:g id="menu item" example="show screen">%2$s</xliff:g>» را انتخاب کنید، سپس دو تک‌ضرب بزنید.</string>
   <string name="shortcut_title_basic_navigation">پیمایش پایه</string>
   <string name="shortcut_title_system_actions">کنش‌های سیستم</string>
   <string name="shortcut_title_reading_control">خواندن</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">غیره</string>
   <string name="shortcut_unassigned">برای اختصاص دادن تک‌ضرب بزنید</string>
   <string name="shortcut_not_customizable">%1$s، سفارشی‌سازی نمی‌شود</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">هنگام روشن بودن «ساعت لرزشی» دردسترس نیست</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">هنگام روشن بودن Vibration Watch دردسترس نیست</string>
   <string name="shortcut_next">مورد بعدی</string>
   <string name="shortcut_previous">مورد قبلی</string>
   <string name="shortcut_scroll_forward">پیمایش به‌جلو</string>
@@ -401,7 +401,7 @@
   <string name="shortcut_perform_click_action">فعال کردن</string>
   <string name="shortcut_perform_double_click_action">دوکلیک کردن</string>
   <string name="shortcut_perform_long_click_action">لمس کردن و نگه داشتن</string>
-  <string name="talkback_menu_title">‏منوِ SandFly</string>
+  <string name="talkback_menu_title">‏منو SandFly</string>
   <string name="talkback_menu_close_button_text">@string/close_string</string>
   <string name="talkback_menu_more_options_text">پس‌از تکمیل راه‌اندازی یا باز کردن قفل دستگاهتان، گزینه‌های منو بیشتری دردسترس قرار می‌گیرد</string>
   <string name="talkback_menu_title_content_description">‏منو SandFly. برای کاوش گزینه‌های منو SandFly، تند به‌راست بکشید.\n\nبرای برگشتن به آموزش گام‌به‌گام، با ۲ انگشت تند از لبه صفحه‌نمایش به چپ یا راست بکشید.</string>
@@ -786,7 +786,7 @@
   <string name="msg_matches_found">{matches,plural, =0{مورد منطبقی در این صفحه وجود ندارد}=1{‫# مورد منطبق}one{‫# مورد منطبق}other{‫# مورد منطبق}}</string>
   <string name="msg_no_matches">هیچ مورد منطبقی در این صفحه وجود ندارد</string>
   <string name="dialog_title_continuous_reading_mode">روش کار «خواندن بی‌وقفه»</string>
-  <string name="dialog_message_continuous_reading_mode">‏پس‌از انتخاب «خواندن از بالا» یا «خواندن از مورد متمرکزشده»، همچنان می‌توانید درحین خوانده شدن نوشتار، به مورد قبلی یا بعدی بروید. این کار به شما اجازه می‌دهد به‌راحتی به‌عقب برگردید یا به‌جلو بروید.\n\nبرای تنظیم میزان صدا درحین صحبت کردن SandFly، کلید افزایش صدا یا کاهش صدا را فشار دهید.</string>
+  <string name="dialog_message_continuous_reading_mode">‏پس‌از انتخاب «خواندن از بالا» یا «خواندن از مورد کانونی‌شده»، همچنان می‌توانید درحین خوانده شدن نوشتار، به مورد قبلی یا بعدی بروید. این کار به شما اجازه می‌دهد به‌راحتی به‌عقب برگردید یا به‌جلو بروید.\n\nبرای تنظیم میزان صدا درحین صحبت کردن SandFly، کلید افزایش صدا یا کاهش صدا را فشار دهید.</string>
   <string name="always_show_this_message_label">همیشه این پیام نشان داده شود</string>
   <string name="dialog_title_voice_commands">‏استفاده از فرمان‌های صوتی برای کنترل کردن SandFly</string>
   <string name="dialog_message_voice_commands">‏برخی‌از چیزهایی که می‌توانید بگویید:\n\n• ‏«کپی کن»\n• ‏«از مورد کانونی‌شده بخوان»\n• «[ذخیره] را پیدا کن»\n• ‏«[سریع‌تر] صحبت کن»\n• «تنظیمات SandFly»‏\n\nبرای مشاهده فهرستی از همه فرمان‌های صوتی، بگویید «<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>»</string>
@@ -873,8 +873,8 @@
   <string name="new_gesture_notification_content">‏برای آشنایی با نحوه استفاده سریع‌تر از SandFly با اشاره‌های جدید تک‌ضرب بزنید.</string>
   <string name="dump_node_tree_description">ساختار درختی گره‌ها در گزارش‌ها چاپ شد.</string>
   <string name="report_gesture_description">این‌ها اشاره‌هایی هستند که اخیراً اجرا شده‌اند، لطفاً گزارش دهید که کدام اشتباه است و چه کنشی انتظار می‌رود.</string>
-  <string name="update_welcome_talkback_16.1">‏این به‌روزرسانی SandFly پشتیبانی از ویژگی توصیف صفحه را در زبان‌های بیشتر و همچنین بهبودهای دیگری اضافه می‌کند که استفاده از SandFly را آسان‌تر می‌سازد.\n\n در چند صفحه بعدی با این تغییرات بیشتر آشنا می‌شوید. \n\n بعداً می‌توانید این اطلاعات را در تنظیمات SandFly &gt; ویژگی‌های جدید در SandFly مرور کنید.</string>
-  <string name="update_welcome_talkback_16.1_tts">‏این به‌روزرسانی SandFly پشتیبانی از ویژگی توضیح صفحه را در زبان‌های بیشتر اضافه می‌کند و همچنین بهبودهایی دارد که استفاده از SandFly را آسان‌تر می‌سازد.\n\nدر چند صفحه بعدی، درباره این تغییرات بیشتر خواهید آموخت.\n\nبعداً می‌توانید این اطلاعات را در تنظیمات SandFly، سپس در بخش ویژگی‌های جدید در SandFly مرور کنید.</string>
+  <string name="update_welcome_talkback_16.1">‏این به‌روزرسانی SandFly پشتیبانی از ویژگی «شرح صفحه‌نمایش» را در زبان‌های بیشتر و همچنین بهبودهای دیگری اضافه می‌کند که استفاده از SandFly را آسان‌تر می‌سازد.\n\n در چند صفحه بعدی با این تغییرات بیشتر آشنا می‌شوید. \n\n بعداً می‌توانید این اطلاعات را در تنظیمات SandFly &gt; ویژگی‌های جدید SandFly مرور کنید.</string>
+  <string name="update_welcome_talkback_16.1_tts">‏این به‌روزرسانی SandFly پشتیبانی از ویژگی «شرح صفحه‌نمایش» را در زبان‌های بیشتر اضافه می‌کند و همچنین بهبودهایی دارد که استفاده از SandFly را آسان‌تر می‌سازد.\n\nدر چند صفحه بعدی، درباره این تغییرات بیشتر خواهید آموخت.\n\nبعداً می‌توانید این اطلاعات را در تنظیمات SandFly، سپس در بخش ویژگی‌های جدید SandFly مرور کنید.</string>
   <string name="shortcut_for_dictation_title">میان‌بر برای تایپ صوتی</string>
   <string name="shortcut_for_dictation_content">‏هنگام استفاده از Gboard، می‌توانید از دو تک‌ضرب دو انگشتی برای شروع یا توقف تایپ صوتی استفاده کنید.
 &lt;br&gt;
@@ -898,8 +898,8 @@
 &lt;br&gt;
 &lt;br&gt;رنگ‌ها می‌توانند پاشیده شوند، نمایشی زنده،
 &lt;br&gt;از &lt;font color=\"#db372d\"&gt;قرمز آتشین&lt;/font&gt; تا جنبشی ملایم از &lt;font color=\"#128937\"&gt;سبز خرم&lt;/font&gt;.</string>
-  <string name="update_welcome_talkback_16.2">‏این به‌روزرسانی SandFly «نقشه‌کلید بهبودیافته» جدیدی برای صفحه‌کلیدهای فیزیکی، پشتیبانی از اعلام قالب‌بندی نوشتار، و چیدمان تنظیمات بازطراحی‌شده‌ای به‌همراه بهبودهای دیگر ارائه می‌کند تا استفاده از SandFly آسان‌تر شود.\n\nدر چند صفحه بعدی با این تغییرات بیشتر آشنا خواهید شد.\n\nمی‌توانید این اطلاعات را بعداً در «تنظیمات SandFly &gt; ویژگی‌های جدید در SandFly» مرور کنید.</string>
-  <string name="update_welcome_talkback_16.2_tts">‏این به‌روزرسانی SandFly «نقشه‌کلید بهبودیافته» جدیدی برای صفحه‌کلیدهای فیزیکی، پشتیبانی از اعلام قالب‌بندی نوشتار، و چیدمان تنظیمات بازطراحی‌شده‌ای به‌همراه بهبودهای دیگر ارائه می‌کند تا استفاده از SandFly آسان‌تر شود.\n\nدر چند صفحه بعدی با این تغییرات بیشتر آشنا خواهید شد.\n\nمی‌توانید این اطلاعات را بعداً در «تنظیمات SandFly» و سپس «ویژگی‌های جدید در SandFly» مرور کنید.</string>
+  <string name="update_welcome_talkback_16.2">‏این به‌روزرسانی SandFly «نقشه‌کلید بهبودیافته» جدیدی برای صفحه‌کلیدهای فیزیکی، پشتیبانی از اعلام قالب‌بندی نوشتار، و چیدمان تنظیمات بازطراحی‌شده‌ای به‌همراه بهبودهای دیگر ارائه می‌کند تا استفاده از SandFly آسان‌تر شود.\n\nدر چند صفحه بعدی با این تغییرات بیشتر آشنا خواهید شد.\n\nمی‌توانید این اطلاعات را بعداً در «تنظیمات SandFly &gt; ویژگی‌های جدید SandFly» مرور کنید.</string>
+  <string name="update_welcome_talkback_16.2_tts">‏این به‌روزرسانی SandFly «نقشه‌کلید بهبودیافته» جدیدی برای صفحه‌کلیدهای فیزیکی، پشتیبانی از اعلام قالب‌بندی نوشتار، و چیدمان تنظیمات بازطراحی‌شده‌ای به‌همراه بهبودهای دیگر ارائه می‌کند تا استفاده از SandFly آسان‌تر شود.\n\nدر چند صفحه بعدی با این تغییرات بیشتر آشنا خواهید شد.\n\nمی‌توانید این اطلاعات را بعداً در «تنظیمات SandFly» و سپس «ویژگی‌های جدید SandFly» مرور کنید.</string>
   <string name="new_settings_layout_title">چیدمان جدید تنظیمات</string>
   <string name="new_settings_layout_text">گروه‌های تنظیمات به‌روز شده است تا پیدا کردن ویژگی‌ها آسان‌تر شود. دسته‌های تنظیمات جدیدی نیز (مثل تنظیمات صفحه‌کلید) دردسترس هستند.</string>
   <string name="split_tap_everywhere_title">تایپ دوانگشتی در همه‌جا</string>
@@ -911,12 +911,8 @@
   <string name="braille_display_settings_link">تنظیمات نمایشگر بریل</string>
   <string name="keyboard_smart_browse_mode_title">صفحه‌کلید: «حالت مرور هوشمند»</string>
   <string name="keyboard_smart_browse_mode_text">‏«حالت مرور هوشمند» در SandFly، با خاموش کردن «حالت مرور» در فیلدهای ویرایش، به شما کمک می‌کند هنگام مرور وب با صفحه‌کلید فیزیکی تایپ کنید. سپس وقتی‌که به فیلدهای غیرویرایشی در وب می‌روید، «حالت مرور» را دوباره روشن می‌کند تا بتوانید به مرور کارآمد ادامه دهید. می‌توانید «حالت مرور هوشمند» را در <xliff:g id="settings_path">%1$s</xliff:g> روشن یا خاموش کنید.</string>
-  <string name="advanced_settings_link">‏«تنظیمات SandFly &gt; تنظیمات پیشرفته»</string>
-  <string name="advanced_settings_link_tts">‏«تنظیمات SandFly» سپس «تنظیمات پیشرفته»</string>
   <string name="keyboard_tutorial_title">آموزش گام‌به‌گام صفحه‌کلید</string>
   <string name="keyboard_tutorial_text">‏اکنون «آموزش گام‌به‌گام صفحه‌کلید» به SandFly اضافه شده است که برای کمک به شما در یادگیری فرمان‌ها و میان‌برهای صفحه‌کلید برای «نقشه‌کلید بهبودیافته» هنگام استفاده از صفحه‌کلید فیزیکی طراحی شده است. برای دسترسی به آموزش گام‌به‌گام، به <xliff:g id="settings_path">%1$s</xliff:g> بروید.</string>
-  <string name="tutorial_link">‏«تنظیمات SandFly &gt; آموزش گام‌به‌گام SandFly»</string>
-  <string name="tutorial_link_tts">‏«تنظیمات SandFly» و سپس «آموزش گام‌به‌گام SandFly»</string>
   <string name="tutorial_entry_point_title">آموزش گام‌به‌گام</string>
   <string name="welcome_to_talkback_title">‏به SandFly خوش آمدید</string>
   <string name="talkback_is_on">‏‫SandFly روشن است</string>
@@ -947,10 +943,10 @@
   <string name="adjusting_volume_second_instruction">همان‌طور که انگشتتان را نگه داشته‌اید، کلید افزایش صدا یا کاهش صدا را در کنار دستگاه فشار دهید.</string>
   <string name="adjusting_volume_tail">‏بعداز چند ثانیه، میزان صدای جدید دسترس‌پذیری را می‌شنوید.\n\nهمین‌حالا تنظیم میزان صدای دسترس‌پذیری را امتحان کنید.</string>
   <string name="menus_title">استفاده از منوها و کنترل‌ها</string>
-  <string name="menus_talkback_menu_text">‏منوِ SandFly شامل تنظیمات و کنترل‌هایی می‌شود که ممکن است اغلب نیاز داشته باشید.\n\nاکنون با ضربه زدن روی صفحه با ۳ انگشت، منوِ SandFly را باز کنید.</string>
-  <string name="menus_talkback_menu_text_pre_r">‏منوِ SandFly شامل تنظیمات و کنترل‌هایی می‌شود که ممکن است اغلب به آن‌ها نیاز داشته باشید.\n\nاکنون با تند به پایین سپس به راست کشیدن، منوِ SandFly را باز کنید.</string>
-  <string name="menus_selector_text">‏این میان‌برها می‌توانند به شما کمک کنند تنظیمات را به‌سرعت تغییر دهید، مثلاً پیمایش را از نویسه به کلمه تغییر دهید یا سرعت گفتار SandFly را تغییر دهید.\n\nبرای تغییر دادن سریع کنترل‌های خواندن، با ۳ انگشت تند به چپ یا راست بکشید.\n\nمی‌توانید منوِ SandFly و کنترل‌های خواندن را بعداً در تنظیمات SandFly سفارشی کنید.</string>
-  <string name="menus_selector_text_pre_r">‏این میان‌برها می‌توانند به شما کمک کنند تنظیمات را به‌سرعت تغییر دهید، مثلاً پیمایش را از نویسه به کلمه تغییر دهید یا سرعت گفتار SandFly را تغییر دهید.\n\nبرای تغییر دادن سریع کنترل‌های خواندن، تند به پایین و سپس به بالا بکشید.\n\nمی‌توانید منوِ SandFly و کنترل‌های خواندن را بعداً در تنظیمات SandFly سفارشی کنید.</string>
+  <string name="menus_talkback_menu_text">‏منو SandFly شامل تنظیمات و کنترل‌هایی می‌شود که ممکن است اغلب نیاز داشته باشید.\n\nاکنون با ضربه زدن روی صفحه با ۳ انگشت، منو SandFly را باز کنید.</string>
+  <string name="menus_talkback_menu_text_pre_r">‏منو SandFly شامل تنظیمات و کنترل‌هایی می‌شود که ممکن است اغلب به آن‌ها نیاز داشته باشید.\n\nاکنون با تند به پایین سپس به راست کشیدن، منو SandFly را باز کنید.</string>
+  <string name="menus_selector_text">‏این میان‌برها می‌توانند به شما کمک کنند تنظیمات را به‌سرعت تغییر دهید، مثلاً پیمایش را از نویسه به کلمه تغییر دهید یا سرعت گفتار SandFly را تغییر دهید.\n\nبرای تغییر دادن سریع کنترل‌های خواندن، با ۳ انگشت تند به چپ یا راست بکشید.\n\nمی‌توانید منو SandFly و کنترل‌های خواندن را بعداً در تنظیمات SandFly سفارشی کنید.</string>
+  <string name="menus_selector_text_pre_r">‏این میان‌برها می‌توانند به شما کمک کنند تنظیمات را به‌سرعت تغییر دهید، مثلاً پیمایش را از نویسه به کلمه تغییر دهید یا سرعت گفتار SandFly را تغییر دهید.\n\nبرای تغییر دادن سریع کنترل‌های خواندن، تند به پایین و سپس به بالا بکشید.\n\nمی‌توانید منو SandFly و کنترل‌های خواندن را بعداً در تنظیمات SandFly سفارشی کنید.</string>
   <string name="all_set_title">همه چیز آماده است!</string>
   <string name="all_set_text">‏برای استفاده از SandFly آماده‌اید.\n\nمی‌توانید به یادگیری موضوع‌های دیگر ادامه دهید، یا این اطلاعات را هر زمان خواستید در تنظیمات SandFly مرور کنید.</string>
   <string name="talkback_tutorial_text">‏برای انتخاب موضوع تند به راست بکشید. برای داشتن بهترین تجربه، قبل‌از آغاز به کار، SandFly را روشن کنید.</string>
@@ -991,12 +987,12 @@
   <string name="edit_box_text">‏به SandFly خوش آمدید</string>
   <string name="selecting_text_title">انتخاب نوشتار</string>
   <string name="selecting_text_text">‏در چارگوش نوشتاری، مکان‌نما را به ابتدای نوشتاری که می‌خواهید انتخاب کنید ببرید.\n\nبرای فعال کردن حالت انتخاب، با ۲ انگشت دو تک‌ضرب بزنید و نگه دارید. سپس مکان‌نما را به انتهای نوشتار ببرید. دوباره با ۲ انگشت دو تک‌ضرب بزنید و نگه دارید تا حالت انتخاب غیرفعال شود.\n\nکلمه «خوش آمدید» را در چارگوش نوشتاری زیر انتخاب کنید.</string>
-  <string name="selecting_text_text_pre_r">‏در چارگوش نوشتاری، مکان‌نما را به ابتدای نوشتاری که می‌خواهید انتخاب کنید ببرید.\n\nتند به‌سمت پایین و سپس راست بکشید تا منوِ SandFly باز شود. روی کنش‌ها دو تک‌ضرب بزنید و سپس حالت انتخاب را فعال کنید. مکان‌نما را به‌انتهای نوشتار ببرید.\n\nمنوِ SandFly را دوباره باز کنید، سپس روی کنش‌ها دو تک‌ضرب بزنید تا حالت انتخاب غیرفعال شود.\n\nکلمه «خوش آمدید» را در چارگوش نوشتاری زیر انتخاب کنید.</string>
+  <string name="selecting_text_text_pre_r">‏در چارگوش نوشتاری، مکان‌نما را به ابتدای نوشتاری که می‌خواهید انتخاب کنید ببرید.\n\nتند به‌سمت پایین و سپس راست بکشید تا منو SandFly باز شود. روی کنش‌ها دو تک‌ضرب بزنید و سپس حالت انتخاب را فعال کنید. مکان‌نما را به‌انتهای نوشتار ببرید.\n\nمنو SandFly را دوباره باز کنید، سپس روی کنش‌ها دو تک‌ضرب بزنید تا حالت انتخاب غیرفعال شود.\n\nکلمه «خوش آمدید» را در چارگوش نوشتاری زیر انتخاب کنید.</string>
   <string name="copy_cut_paste_title">کپی کردن، بریدن، و جای‌گذاری</string>
   <string name="copy_text">‏پس‌از انتخاب نوشتار، با ۳ انگشت دو تک‌ضرب بزنید تا نوشتار کپی شود.\n\nکلمه‌ای را در چارگوش نوشتاری زیر کپی کنید.</string>
   <string name="cut_paste_text">‏برای بریدن نوشتار، با ۳ انگشت دو تک‌ضرب بزنید و نگه دارید.\n\nبرای جای‌گذاری نوشتار، با ۳ انگشت سه تک‌ضرب بزنید.\n\nکلمه‌ای را در چارگوش نوشتاری زیر جای‌گذاری کنید.</string>
   <string name="copy_text_pre_r">‏پس‌از انتخاب نوشتار، می‌توانید آن را در منو SandFly کپی کنید. برای باز کردن منو SandFly، تند به‌سمت پایین و سپس راست بکشید. روی کنش‌ها دو تک‌ضرب بزنید و سپس کپی کنید.\n\nکلمه‌ای را در چارگوش نوشتاری زیر کپی کنید.</string>
-  <string name="cut_paste_text_pre_r">‏برای بریدن یا جای‌گذاری نوشتار، منوِ SandFly را باز کنید و روی کنش‌ها دو تک‌ضرب بزنید.\n\nکلمه‌ای را در چارگوش نوشتاری زیر جای‌گذاری کنید.</string>
+  <string name="cut_paste_text_pre_r">‏برای بریدن یا جای‌گذاری نوشتار، منو SandFly را باز کنید و روی کنش‌ها دو تک‌ضرب بزنید.\n\nکلمه‌ای را در چارگوش نوشتاری زیر جای‌گذاری کنید.</string>
   <string name="edit_box_hint_paste_text">نوشتار را اینجا جای‌گذاری کنید</string>
   <string name="typo_correction_title">نمونه‌خوانی</string>
   <string name="typo_correction_text">‏می‌توانید از نمونه‌خوانی برای بررسی املا و دستور زبان در چارگوش نوشتاری استفاده کنید.\n\nبرای امتحان کردن این ویژگی، روی چارگوش نوشتاری زیر که غلط‌های املایی دارد تمرکز کنید. سپس با ۳ انگشت تند به‌راست بکشید تا «نمونه‌خوانی» را پیدا کنید.</string>
@@ -1069,9 +1065,9 @@
   <string name="checking_notifications_text_tail_tts">در بخش «تنظیمات» و سپس «اعلان‌ها» می‌توانید بررسی کنید اعلان کدام برنامه‌ها روشن است.</string>
   <string name="checking_notifications_tips">برای بررسی سابقه اعلان، با ۲ انگشت از بالای صفحه تند به‌پایین بکشید</string>
   <string name="image_description_playground_title">شرح تصویر دریافت کنید</string>
-  <string name="image_description_playground_content_one">‏وقتی تصویری را کانونی کردید، منوِ SandFly را باز کنید و «شرح تصویر» را انتخاب کنید.\n\nدر بخش زیر عکسی وجود دارد. سعی کنید شرح آن را دریافت کنید.</string>
-  <string name="image_description_playground_content_two">‏هر زمان‌که بخواهید می‌توانید تنظیمات شرح تصویر را در «تنظیمات SandFly &gt; توضیحات خودکار» تغییر دهید.</string>
-  <string name="image_description_playground_content_two_tts">‏هر زمان‌که بخواهید می‌توانید تنظیمات شرح تصویر را در «تنظیمات SandFly» سپس «توضیحات خودکار» تغییر دهید.</string>
+  <string name="image_description_playground_content_one">‏وقتی تصویری را کانونی کردید، منو SandFly را باز کنید و «شرح تصویر» را انتخاب کنید.\n\nدر بخش زیر عکسی وجود دارد. سعی کنید شرح آن را دریافت کنید.</string>
+  <string name="image_description_playground_content_two">‏هر زمان‌که بخواهید می‌توانید تنظیمات شرح تصویر را در «تنظیمات SandFly &gt; توصیف تصویر و صفحه» تغییر دهید.</string>
+  <string name="image_description_playground_content_two_tts">‏هر زمان‌که بخواهید می‌توانید تنظیمات شرح تصویر را در «تنظیمات SandFly» سپس «توصیف تصویر و صفحه» تغییر دهید.</string>
   <string name="image_description_sample_image_content_description">‏تصویر نمونه؛ با ۳ انگشت تک‌ضرب بزنید تا منو SandFly باز شود و «شرح تصویر» را انتخاب کنید تا شرح را بشنوید.</string>
   <string name="practice_gestures_title">تمرین اشاره‌ها</string>
   <string name="practice_keyboard_gestures_title">تمرین میان‌برهای صفحه‌کلید</string>
@@ -1367,8 +1363,7 @@
     <string name="title_pref_navigation">پیمایش</string>
     <string name="title_pref_category_more">بیشتر</string>
     <string name="title_pref_reserve_vibration_watch_gestures">رزرو اشاره‌ها برای Vibration Watch</string>
-    <string name="summary_pref_reserve_vibration_watch_gestures">‏SandFly دیگر تک‌ضرب و دو تک‌ضرب دوانگشتی را مدیریت نمی‌کند تا «ساعت لرزشی» Samsung بتواند از آن‌ها استفاده کند. «ساعت لرزشی» را در تنظیمات دسترس‌پذیری ساعتتان فعال کنید.</string>
-    <string name="shortcut_reserved_for_vibration_watch">در «تنظیمات پیشرفته» برای Vibration Watch رزرو شده است</string>
+    <string name="summary_pref_reserve_vibration_watch_gestures">‏SandFly دیگر تک‌ضرب و دو تک‌ضرب دوانگشتی را مدیریت نمی‌کند تا Samsung Vibration Watch بتواند از آن‌ها استفاده کند. Vibration Watch را در تنظیمات دسترس‌پذیری ساعتتان فعال کنید.</string>
     <string name="title_pref_speakerphone_away_from_ear">بلندگو هنگام دور بودن از گوش</string>
     <string name="summary_pref_speakerphone_away_from_ear">درحین تماس، وقتی تلفن را از گوشتان دور می‌کنید به بلندگو می‌رود، و وقتی دوباره آن را بالا می‌آورید به گوشی برمی‌گردد.</string>
     <string name="summary_pref_speakerphone_needs_permission">‏به اجازه‌ای نیاز دارد که Android به صفحه‌خوان‌ها نمی‌دهد. برای دادن آن، این فرمان را با adb یا Shizuku اجرا کنید و سپس به این صفحه برگردید: %1$s</string>
@@ -1380,7 +1375,6 @@
     <string name="speech_control_apps_category">برنامه‌ها</string>
     <string name="speech_control_no_apps">هنوز هیچ برنامه‌ای درخواست گفتار نکرده است.</string>
     <string name="speech_control_ask_title">‏به <xliff:g id="app" example="Tasker">%1$s</xliff:g> اجازه داده شود ازطریق SandFly گفتار پخش کند؟</string>
-    <string name="speech_control_ask_text">‏این برنامه می‌تواند نوشتار را با صدای SandFly شما بگوید. می‌توانید این را در «تنظیمات پیشرفته» تغییر دهید.</string>
     <string name="speech_control_allow">اجازه دادن</string>
     <string name="speech_control_deny">اجازه ندادن</string>
     <string name="permission_speak_label">‏گفتار ازطریق SandFly</string>
@@ -1441,7 +1435,6 @@
         <item quantity="one">‏%d اعلان</item>
         <item quantity="other">‏%d اعلان</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">‏‫SandFly روشن است. برای خاموش کردن آن، ۲ انگشت را ۵ ثانیه روی صفحه‌نمایش نگه دارید. برای متوقف کردن نمایش این پیام، «تنظیمات SandFly &gt; تنظیمات پیشرفته &gt; نمایش دستورالعمل‌های خاموش کردن SandFly» را خاموش کنید.</string>
     <string name="edge_gestures_title">لبه‌ها</string>
     <string name="title_pref_audio_output_device">دستگاه خروجی صدا</string>
     <string name="dialog_title_audio_output_device">‏انتخاب محل پخش صدای SandFly</string>
@@ -1524,7 +1517,7 @@
     <string name="summary_support_wrap_around">روشن یا خاموش کردن رفتن از آخرین مورد به اولین مورد</string>
     <string name="wrap_around_on">چرخش از انتها به ابتدا روشن</string>
     <string name="wrap_around_off">چرخش از انتها به ابتدا خاموش</string>
-    <string name="title_selector_tablet_held_up_faces_away">رو به بیرون بودن رایانه لوحی بالانگه‌داشته</string>
+    <string name="title_selector_tablet_held_up_faces_away">صفحهٔ تبلت هنگام عمودی نگه داشتن رو به بیرون باشد</string>
     <string name="summary_support_tablet_held_up_faces_away">برای صفحه‌کلید بریل در رایانه لوحی یا تلفن تاشوی باز</string>
     <string name="tablet_held_up_faces_away_on">رو به بیرون بودن رایانه لوحی بالانگه‌داشته روشن</string>
     <string name="tablet_held_up_faces_away_off">رو به بیرون بودن رایانه لوحی بالانگه‌داشته خاموش</string>
@@ -1551,14 +1544,14 @@
     <string name="template_item_details_order_dropped">‏<xliff:g id="detail" example="Name">%1$s</xliff:g> رها شد. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">‏SandFly جزئیات هر مورد را به این ترتیب می‌گوید. برای تغییر آن، جزئیاتی را لمس کنید و نگه دارید، سپس آن را به بالا یا پایین بکشید. وقتی SandFly روشن است، دو تک‌ضرب بزنید و نگه دارید، سپس بکشید. همچنین می‌توانید از کنش‌های «انتقال به بالا» و «انتقال به پایین» استفاده کنید.</string>
     <string name="title_pref_speak_items_before_scroll">خواندن موارد پیش‌از پیمایش آن‌ها به داخل صفحه</string>
-    <string name="gemini_error_api_key">‏Gemini کلید API را نپذیرفت. کلید را در تنظیمات «توضیحات خودکار» بررسی کنید.</string>
+    <string name="gemini_error_api_key">‏Gemini کلید API را نپذیرفت. کلید را در تنظیمات «توصیف تصویر و صفحه» بررسی کنید.</string>
     <string name="gemini_error_quota">‏به محدودیت استفاده کلید API ‏Gemini شما رسیده‌اید. بعداً دوباره امتحان کنید.</string>
     <string name="gemini_error_busy">‏Gemini درحال‌حاضر مشغول است. چند لحظه دیگر دوباره امتحان کنید.</string>
     <string name="gemini_error_timeout">‏پاسخ Gemini بیش از حد طول کشید. دوباره امتحان کنید.</string>
     <string name="gemini_error_with_code">‏Gemini نتوانست پاسخ دهد، خطای <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
     <string name="gemini_error_with_details">‏Gemini نتوانست پاسخ دهد، خطای <xliff:g id="http_status" example="400">%1$d</xliff:g>: <xliff:g id="details" example="User location is not supported for the API use.">%2$s</xliff:g></string>
     <string name="detailed_image_description_fallback_result_with_reason">‏<xliff:g id="fallback_result" example="Text in image: Hello world!!">%1$s</xliff:g>. شرح دقیق‌تر تصویر دریافت نشد: <xliff:g id="reason" example="Gemini is busy right now. Try again in a moment.">%2$s</xliff:g></string>
-    <string name="title_selector_vertical_navigation">ناوبری عمودی</string>
+    <string name="title_selector_vertical_navigation">پیمایش عمودی</string>
     <string name="summary_selector_vertical_navigation">به آیتم زیر یا بالا بروید و از دیگر موارد ردیف بگذرید</string>
     <string name="title_pref_speech_stream">میزان صدای گفتار</string>
     <string name="summary_selector_speech_stream">جابه‌جایی بین بلندی صدای دسترس‌پذیری، رسانه، زنگ و تماس</string>
@@ -1767,7 +1760,6 @@
     <string name="title_pref_whisper_models">مدل‌های Whisper</string>
     <string name="dictation_whisper_use">استفاده</string>
     <string name="title_pref_dictation_ai_service">سرویس هوش مصنوعی برای دیکته</string>
-    <string name="dictation_ai_same">همان توضیحات خودکار</string>
     <string name="title_pref_browse_mode_per_app">به‌خاطر سپردن حالت مرور در هر برنامه</string>
     <string name="title_pref_export_settings">صدور تنظیمات</string>
     <string name="title_pref_import_settings">وارد کردن تنظیمات</string>
@@ -1795,4 +1787,12 @@
     <string name="shortcut_previous_track">آهنگ قبلی</string>
     <string name="sound_mode_needs_access">برای روشن یا خاموش کردن «بی صدا»، دسترسی «مزاحم نشوید» را مجاز کنید.</string>
     <string name="title_pref_dictation_auto_stop">توقف خودکار پس از سکوت</string>
+    <string name="dictation_ai_same">مانند «توصیف تصویر و صفحه»</string>
+    <string name="navigation_settings_link">‏«تنظیمات SandFly &gt; پیمایش»</string>
+    <string name="navigation_settings_link_tts">‏«تنظیمات SandFly» سپس «پیمایش»</string>
+    <string name="shortcut_reserved_for_vibration_watch">‏رزروشده برای Vibration Watch در «اشاره‌ها»</string>
+    <string name="speech_control_ask_text">می‌تواند نوشتار را با صدای SandFly شما بگوید. این مورد را می‌توانید در «تنظیمات» سپس «گفتار» سپس «اجازه گفتار به برنامه‌های دیگر» تغییر دهید.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">‏SandFly روشن است. برای خاموش کردن آن، ۲ انگشت را ۵ ثانیه روی صفحه‌نمایش نگه دارید. برای متوقف کردن نمایش این پیام، «تنظیمات SandFly &gt; توقف موقت و خاموش کردن &gt; نمایش دستورالعمل‌های خاموش کردن SandFly» را خاموش کنید.</string>
+    <string name="tutorial_link">‏«تنظیمات SandFly &gt; راهنما و بازخورد &gt; آموزش گام‌به‌گام SandFly»</string>
+    <string name="tutorial_link_tts">‏«تنظیمات SandFly» سپس «راهنما و بازخورد» سپس «آموزش گام‌به‌گام SandFly»</string>
 </resources>

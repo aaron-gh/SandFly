@@ -467,16 +467,16 @@
     <!-- Braille key: space. -->
 
     <!-- Name of the notification channel for braille displays that other apps provide.  [CHAR_LIMIT=50] -->
-    <string name="external_display_channel">来自其他应用的盲文显示器</string>
+    <string name="external_display_channel">来自其他应用的盲文显示屏</string>
 
     <!-- Asks whether an app may be a braille display for SandFly.  [CHAR_LIMIT=100] -->
-    <string name="external_display_ask_title">允许 <xliff:g id="app" example="Notetaker">%1$s</xliff:g> 作为 SandFly 的盲文显示器吗？</string>
+    <string name="external_display_ask_title">允许 <xliff:g id="app" example="Notetaker">%1$s</xliff:g> 作为 SandFly 的盲文显示屏吗？</string>
 
     <!-- Text of the notification that asks whether an app may be a braille display.  [CHAR_LIMIT=100] -->
     <string name="external_display_ask_text">在你允许之前，SandFly 不会使用它。</string>
 
     <!-- Warns what an app can do as a braille display, before the user allows it.  [CHAR_LIMIT=NONE] -->
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> 将能够读取 SandFly 以盲文显示的所有内容，这可能是屏幕上的任何内容，包括消息和你输入的内容。它还能像使用盲文显示器一样控制你的设备：输入、打开应用以及执行任何 SandFly 命令。只允许你信任的应用。</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> 将能够读取 SandFly 以盲文显示的所有内容，这可能是屏幕上的任何内容，包括消息和你输入的内容。它还能像使用盲文显示屏一样控制你的设备：输入、打开应用以及执行任何 SandFly 命令。只允许你信任的应用。</string>
 
     <!-- Button that lets an app be a braille display.  [CHAR_LIMIT=20] -->
     <string name="external_display_allow">允许</string>
@@ -485,7 +485,7 @@
     <string name="external_display_deny">不允许</string>
 
     <!-- Notification shown while an app is SandFly's braille display.  [CHAR_LIMIT=60] -->
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> 正在作为你的盲文显示器</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> 正在作为你的盲文显示屏</string>
 
     <!-- Notification text shown while an app is SandFly's braille display.  [CHAR_LIMIT=100] -->
     <string name="external_display_in_use_text">在 SandFly 使用它期间，<xliff:g id="app" example="Notetaker">%1$s</xliff:g> 可以读取屏幕并控制设备。</string>
@@ -494,8 +494,8 @@
     <string name="external_displays_title">来自其他应用的显示器</string>
 
     <!-- Explains the list of apps that can be braille displays.  [CHAR_LIMIT=NONE] -->
-    <string name="external_displays_summary">你允许的应用可以作为 SandFly 的盲文显示器。作为盲文显示器的应用可以读取屏幕并控制设备。</string>
+    <string name="external_displays_summary">你允许的应用可以作为 SandFly 的盲文显示屏。作为盲文显示屏的应用可以读取屏幕并控制设备。</string>
 
     <!-- Shown when no installed app can be a braille display.  [CHAR_LIMIT=60] -->
-    <string name="external_displays_none">没有应用可作为盲文显示器。</string>
+    <string name="external_displays_none">没有应用可作为盲文显示屏。</string>
 </resources>

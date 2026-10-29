@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Sirvimisrežiimi kasutamiseks peate vaikeklahvitabelilt lülituma täiustatud klahvitabelile. See muudatus värskendab mõnda teie Braille ekraani käsku.</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Seaded</string>
   <string name="bd_command_change_dialog_title">Mõnda käsku on värskendatud</string>
-  <string name="bd_command_change_dialog_message">Selles SandFlyi versioonis värskendati järgmisi Braille ekraani käske.\n\n• Eelmine üksus: vajutage punkte 1, 7\n\n• Järgmine üksus: vajutage punkte 4, 8\n\n• Eelmine lugemise juhtimine: vajutage punkte 2, 3, 7, 8\n\n• Järgmine lugemise juhtimine: vajutage punkte 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Selles SandFlyi versioonis värskendati järgmisi Braille ekraani käske.\n\n• Eelmine üksus: vajutage punkte 1, 7\n\n• Järgmine üksus: vajutage punkte 4, 8\n\n• Eelmine lugemise juhtelement: vajutage punkte 2, 3, 7, 8\n\n• Järgmine lugemise juhtelement: vajutage punkte 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Lühendatud Braille</string>
   <string name="bd_preference_braille_uncontracted">Lühendamata Braille</string>
   <string name="bd_braille_grade_tips">Braille ekraani abil kiiresti lühendatud ja lühendamata Braille vahel vahetamiseks vajutage tühikut ning punkte 1, 2, 4 ja 5.\n\nSee käsk töötab, kui kasutate mõlema Braille klassiga keelt.</string>
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">See talletab mõned sõnumid (nt märguanded ja äratused) SandFlyi. Seda seadet saab igal ajal muuta.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Lülita sisse</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Tänan, ei</string>
-    <string name="external_display_channel">Teiste rakenduste punktkirjakuvarid</string>
-    <string name="external_display_ask_title">Kas lubada rakendusel <xliff:g id="app" example="Notetaker">%1$s</xliff:g> olla SandFly punktkirjakuvar?</string>
+    <string name="external_display_channel">Teiste rakenduste Braille ekraanid</string>
+    <string name="external_display_ask_title">Kas lubada rakendusel <xliff:g id="app" example="Notetaker">%1$s</xliff:g> olla SandFlyi Braille ekraan?</string>
     <string name="external_display_ask_text">SandFly ei kasuta seda enne, kui annate loa.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> saab lugeda kõike, mida SandFly punktkirjas kuvab. See võib olla mis tahes ekraanil olev sisu, sealhulgas sõnumid ja teie sisestatud tekst. Samuti saab see teie seadet juhtida nagu punktkirjakuvariga: sisestada teksti, avada rakendusi ja käivitada kõiki SandFly käske. Andke luba ainult usaldusväärsetele rakendustele.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> saab lugeda kõike, mida SandFly punktkirjas kuvab. See võib olla mis tahes ekraanil olev sisu, sealhulgas sõnumid ja teie sisestatud tekst. Samuti saab see teie seadet juhtida nagu Braille ekraaniga: sisestada teksti, avada rakendusi ja käivitada kõiki SandFly käske. Andke luba ainult usaldusväärsetele rakendustele.</string>
     <string name="external_display_allow">Luba</string>
     <string name="external_display_deny">Ära luba</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> on teie punktkirjakuvar</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> on teie Braille ekraan</string>
     <string name="external_display_in_use_text">Kui SandFly seda kasutab, saab <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ekraani lugeda ja seadet juhtida.</string>
     <string name="external_displays_title">Teiste rakenduste kuvarid</string>
-    <string name="external_displays_summary">Rakendused, millele annate loa, saavad olla SandFly punktkirjakuvarid. Punktkirjakuvarina toimiv rakendus saab ekraani lugeda ja seadet juhtida.</string>
-    <string name="external_displays_none">Ükski rakendus ei saa olla punktkirjakuvar.</string>
+    <string name="external_displays_summary">Rakendused, millele annate loa, saavad olla SandFlyi Braille ekraanid. Braille ekraanina toimiv rakendus saab ekraani lugeda ja seadet juhtida.</string>
+    <string name="external_displays_none">Ükski rakendus ei saa olla Braille ekraan.</string>
 </resources>

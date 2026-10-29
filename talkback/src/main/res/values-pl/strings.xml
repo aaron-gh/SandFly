@@ -94,7 +94,7 @@
   <string name="title_pref_show_exit_watermark">Pokazuj instrukcje wyłączania funkcji SandFly</string>
   <string name="summary_pref_show_exit_watermark">Gdy funkcja SandFly jest włączona, wyświetla się komunikat, który pomaga ją szybko wyłączyć</string>
   <string name="talkback_exit_watermark_text">Funkcja SandFly jest włączona. Aby ją wyłączyć, przytrzymaj 2 palce na ekranie przez 5 sekund. Aby przestać wyświetlać ten komunikat, dotknij ekranu 3 palcami, co spowoduje otwarcie menu SandFly.</string>
-  <string name="talkback_exit_watermark_hint_text">Wyświetlam baner informujący o włączeniu funkcji SandFly. Aby wyłączyć SandFly, przytrzymaj 2 palce na ekranie przez 5 sekund. Aby usunąć ten baner, otwórz ustawienia funkcji SandFly.</string>
+  <string name="talkback_exit_watermark_hint_text">Wyświetlam baner informujący o włączeniu funkcji SandFly. Aby wyłączyć SandFly, przytrzymaj 2 palce na ekranie przez 5 sekund. Aby usunąć ten baner, otwórz ustawienia SandFly.</string>
   <string name="reset_gesture_settings_title">Resetowanie ustawień gestów</string>
   <string name="one_finger_gestures_title">1 palec</string>
   <string name="one_finger_back_forth_gestures_title">1 palec, tam i z powrotem</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Inne</string>
   <string name="shortcut_unassigned">Kliknij, by przypisać</string>
   <string name="shortcut_not_customizable">%1$s, nie można dostosować</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Niedostępne, gdy zegarek wibracyjny jest wyłączony</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Niedostępne, gdy włączona jest funkcja Vibration Watch</string>
   <string name="shortcut_next">Następny element</string>
   <string name="shortcut_previous">Poprzedni element</string>
   <string name="shortcut_scroll_forward">Przewiń do przodu</string>
@@ -406,8 +406,8 @@
   <string name="talkback_menu_more_options_text">Więcej opcji menu będzie dostępnych po zakończeniu konfiguracji lub odblokowaniu urządzenia</string>
   <string name="talkback_menu_title_content_description">Menu SandFly. Aby poznać więcej opcji menu SandFly, przesuń palcem w prawo.\n\nAby wrócić do samouczka, przesuń 2 palcami w lewo lub w prawo od krawędzi ekranu.</string>
   <string name="shortcut_show_language_options">Zmień język wypowiedzi</string>
-  <string name="shortcut_select_next_setting">Następne ustawienie czytania</string>
-  <string name="shortcut_select_previous_setting">Poprzednie ustawienie czytania</string>
+  <string name="shortcut_select_next_setting">Następny element sterowania czytaniem</string>
+  <string name="shortcut_select_previous_setting">Poprzedni element sterowania czytaniem</string>
   <string name="shortcut_pass_through_next">Gest systemowy przepuszczenia</string>
   <string name="shortcut_a11y_button">Skrót ułatwień dostępu</string>
   <string name="shortcut_a11y_button_long_press">Przytrzymaj skrót ułatwień dostępu</string>
@@ -758,7 +758,7 @@
   <string name="message_pref_touch_focus_latency">Przy mniejszym opóźnieniu zaznaczenia podczas pisania SandFly szybciej odtwarza komunikaty po dotknięciu klawiatury</string>
   <string name="message_pref_typing_method_prefix">Aby uzyskać najmniejsze opóźnienie podczas pisania, wybierz opcję „Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie podnieś palec”</string>
   <string name="message_pref_typing_method_postfix">W każdej chwili możesz też wpisać tekst przy użyciu funkcji podzielonego kliknięcia. Aby to zrobić, przytrzymaj palcem wybrany przycisk klawiatury i kliknij ekran innym palcem.</string>
-  <string name="title_pref_talkback_speech_rate">Tempo mowy w SandFly</string>
+  <string name="title_pref_talkback_speech_rate">Szybkość mowy</string>
   <string name="title_pref_selector_adjustable_widget_slider">Dostosuj suwak</string>
   <string name="title_pref_selector_typo_granularity">Korekta</string>
   <string name="hint_no_typo_found">Nie znaleziono literówek.</string>
@@ -851,7 +851,7 @@
   <string name="keep_reviewing_tutorial_button">Pozostań w samouczku</string>
   <string name="welcome_to_updated_talkback_title">Witamy w nowej wersji SandFly</string>
   <string name="navigation_heading">Nawigacja</string>
-  <string name="setting_selector_heading">Elementy sterujące czytaniem</string>
+  <string name="setting_selector_heading">Sterowanie czytaniem</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Aby wstrzymać bądź włączyć odtwarzanie multimediów w aplikacji do filmów lub muzyki, kliknij dwukrotnie 2 palcami. Spróbuj to zrobić teraz.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Inne aplikacje mogą używać tego gestu np. do odbierania lub kończenia połączenia telefonicznego. Niektóre aplikacje mogą nie obsługiwać tego gestu.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Wstrzymanie lub włączenie odtwarzania multimediów. Zwykle powoduje to wstrzymanie lub włączenie odtwarzania bieżącego filmu bądź muzyki. Przesuń palcem w prawo, by kontynuować.</string>
@@ -865,7 +865,7 @@
   <string name="new_shortcut_gesture_cut_text_announcement">Wycięto tekst. Zwykle funkcja ta wycina zaznaczony tekst. Przesuń palcem w prawo, aby kontynuować.</string>
   <string name="new_shortcut_gesture_selection_mode_text">Aby włączyć lub wyłączyć tryb zaznaczania tekstu, kliknij dwukrotnie i przytrzymaj 2 palcami.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Włączenie lub wyłączenie trybu zaznaczania. Zwykle powoduje to uruchomienie lub zatrzymanie trybu zaznaczania, jeśli znajdujesz się w polu do wprowadzania danych. Przesuń palcem w prawo, by kontynuować.</string>
-  <string name="new_shortcut_gesture_reading_menu_text">Aby użyć elementów sterujących czytaniem, przesuń 3 palcami w lewo lub w prawo. Możesz też przesunąć po ekranie 3 palcami w górę lub w dół.</string>
+  <string name="new_shortcut_gesture_reading_menu_text">Aby użyć sterowania czytaniem, przesuń 3 palcami w lewo lub w prawo. Możesz też przesunąć po ekranie 3 palcami w górę lub w dół.</string>
   <string name="new_shortcut_gesture_note">Uwaga: niektóre gesty zostały dostosowane, więc te informacje mogą być niedokładne. Aby zobaczyć swoje gesty, otwórz ustawienia SandFly.</string>
   <string name="welcome_to_android11_text">Dodaliśmy nowe gesty, które pozwalają łatwiej i szybciej obsługiwać SandFly.\n\nNa tym ekranie możesz je wypróbować. Te informacje możesz w dowolnej chwili sprawdzić w ustawieniach SandFly.</string>
   <string name="new_gesture_notification_title">Nowe gesty w SandFly</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Ustawienia monitora brajlowskiego</string>
   <string name="keyboard_smart_browse_mode_title">Klawiatura: inteligentny tryb przeglądania</string>
   <string name="keyboard_smart_browse_mode_text">Inteligentny tryb przeglądania w ramach funkcji SandFly wyłącza tryb przeglądania w polu edycji, aby ułatwić pisanie na klawiaturze fizycznej podczas poruszania się po internecie. Następnie włącza go ponownie, gdy przejdziesz do pola innego niż pole edycji w przeglądarce internetowej, aby umożliwić Ci dalsze efektywne przeglądanie. Tryb ten możesz włączyć lub wyłączyć w sekcji %1$s.</string>
-  <string name="advanced_settings_link">Ustawienia SandFly &gt; Ustawienia zaawansowane</string>
-  <string name="advanced_settings_link_tts">Ustawienia SandFly, a następnie Ustawienia zaawansowane</string>
   <string name="keyboard_tutorial_title">Samouczek dotyczący klawiatury</string>
   <string name="keyboard_tutorial_text">SandFly zawiera teraz samouczek dotyczący klawiatury, który pomaga poznać skróty klawiszowe i polecenia ulepszonej mapy klawiszy podczas korzystania z klawiatury fizycznej. Aby uzyskać dostęp do samouczka, przejdź do: %1$s.</string>
-  <string name="tutorial_link">Ustawienia SandFly &gt; Samouczek SandFly</string>
-  <string name="tutorial_link_tts">Ustawienia SandFly, a następnie Samouczek SandFly</string>
   <string name="tutorial_entry_point_title">Samouczek</string>
   <string name="welcome_to_talkback_title">Witamy w SandFly</string>
   <string name="talkback_is_on">Funkcja SandFly jest włączona</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">Korzystanie z menu i elementów sterujących</string>
   <string name="menus_talkback_menu_text">Menu SandFly zawiera ustawienia i elementy sterujące, których możesz często potrzebować.\n\nOtwórz teraz menu SandFly, klikając ekran 3 palcami.</string>
   <string name="menus_talkback_menu_text_pre_r">Menu SandFly zawiera ustawienia i elementy sterujące, których możesz często potrzebować.\n\nOtwórz teraz menu SandFly, przesuwając palcem w dół, a potem w prawo.</string>
-  <string name="menus_selector_text">Te skróty pomogą Ci szybko zmienić ustawienia, np. przełączyć nawigację ze znaków na słowa lub zmienić szybkość mowy dla funkcji SandFly.\n\nAby szybko zmienić elementy sterujące czytaniem, przesuń 3 palcami w lewo lub w prawo.\n\nMożesz dostosować menu SandFly i elementy sterujące później w ustawieniach SandFly.</string>
-  <string name="menus_selector_text_pre_r">Te skróty pomogą Ci szybko zmienić ustawienia, np. przełączyć nawigację ze znaków na słowa lub zmienić szybkość mowy dla funkcji SandFly.\n\nAby szybko zmienić elementy sterujące czytaniem, przesuń w dół, a potem z powrotem w górę.\n\nMożesz dostosować menu SandFly i elementy sterujące później w ustawieniach SandFly.</string>
+  <string name="menus_selector_text">Te skróty pomogą Ci szybko zmienić ustawienia, np. przełączyć nawigację ze znaków na słowa lub zmienić szybkość mowy dla funkcji SandFly.\n\nAby szybko zmienić element sterowania czytaniem, przesuń 3 palcami w lewo lub w prawo.\n\nMożesz dostosować menu SandFly i sterowanie czytaniem później w ustawieniach SandFly.</string>
+  <string name="menus_selector_text_pre_r">Te skróty pomogą Ci szybko zmienić ustawienia, np. przełączyć nawigację ze znaków na słowa lub zmienić szybkość mowy dla funkcji SandFly.\n\nAby szybko zmienić element sterowania czytaniem, przesuń w dół, a potem z powrotem w górę.\n\nMożesz dostosować menu SandFly i sterowanie czytaniem później w ustawieniach SandFly.</string>
   <string name="all_set_title">Wszystko gotowe</string>
   <string name="all_set_text">Możesz już zacząć używać SandFly.\n\nPoznaj teraz wskazówki dotyczące innych tematów. W dowolnej chwili możesz tu wrócić przez ustawienia SandFly.</string>
   <string name="talkback_tutorial_text">Aby wybrać temat, przesuń palcem w prawo. Aby uzyskać najlepszy efekt, przed rozpoczęciem włącz SandFly.</string>
@@ -982,8 +978,8 @@
   <string name="typing_text_with_braille_keyboard_text">Możesz też pisać przy użyciu klawiatury brajlowskiej. Znajdź ją w ustawieniach SandFly.</string>
   <string name="other_ways_to_type_title">Inne sposoby pisania</string>
   <string name="other_ways_to_type_text">Funkcja SandFly zapewnia inne sposoby pisania. Możesz na przykład kliknąć dwukrotnie, aby wpisać literę.</string>
-  <string name="basic_other_ways_to_type_text">SandFly zapewnia inne sposoby pisania. Możesz na przykład kliknąć dwukrotnie, aby wpisać literę. Później możesz to zmienić. W tym celu wybierz Ustawienia funkcji SandFly &gt; Klawiatura ekranowa &gt; Ustawienia pisania.</string>
-  <string name="basic_other_ways_to_type_text_tts">SandFly zapewnia inne sposoby pisania. Możesz na przykład kliknąć dwukrotnie, aby wpisać literę. Później możesz to zmienić. W tym celu otwórz Ustawienia funkcji SandFly, a następnie wybierz opcje Klawiatura ekranowa i Ustawienia pisania.</string>
+  <string name="basic_other_ways_to_type_text">SandFly zapewnia inne sposoby pisania. Możesz na przykład kliknąć dwukrotnie, aby wpisać literę. Później możesz to zmienić. W tym celu wybierz Ustawienia SandFly &gt; Klawiatura ekranowa &gt; Metoda pisania.</string>
+  <string name="basic_other_ways_to_type_text_tts">SandFly zapewnia inne sposoby pisania. Możesz na przykład kliknąć dwukrotnie, aby wpisać literę. Później możesz to zmienić. W tym celu otwórz Ustawienia SandFly, a następnie wybierz Klawiatura ekranowa i Metoda pisania.</string>
   <string name="change_typing_preference_text">Zmień ustawienia pisania</string>
   <string name="moving_cursor_title">Przenoszenie kursora</string>
   <string name="moving_cursor_text">Po aktywowaniu pola tekstowego możesz przenosić kursor między literami, przesuwając palcem w górę lub w dół.\n\nSpróbuj zrobić to teraz w polu tekstowym poniżej.</string>
@@ -1069,8 +1065,8 @@
   <string name="checking_notifications_tips">Aby sprawdzić historię powiadomień, przesuń 2 palcami w dół od górnej krawędzi ekranu</string>
   <string name="image_description_playground_title">Spróbuj uzyskać opisy obrazów</string>
   <string name="image_description_playground_content_one">Gdy masz już zaznaczony obraz, otwórz menu SandFly i wybierz „Opisz obraz”.\n\nPoniżej znajduje się 1 zdjęcie. Spróbuj uzyskać jego opis.</string>
-  <string name="image_description_playground_content_two">Ustawienia opisów obrazów możesz zmienić w każdej chwili, wybierając Ustawienia SandFly &gt; Opisy obrazów i ikon.</string>
-  <string name="image_description_playground_content_two_tts">Ustawienia opisów obrazów możesz zmienić w każdej chwili, wybierając kolejno Ustawienia SandFly oraz Opisy obrazów i ikon.</string>
+  <string name="image_description_playground_content_two">Ustawienia opisów obrazów możesz zmienić w każdej chwili, wybierając Ustawienia SandFly &gt; Opisy obrazów i ekranu.</string>
+  <string name="image_description_playground_content_two_tts">Ustawienia opisów obrazów możesz zmienić w każdej chwili, wybierając kolejno Ustawienia SandFly oraz Opisy obrazów i ekranu.</string>
   <string name="image_description_sample_image_content_description">Przykładowy obraz: naciśnij 3 palcami, aby otworzyć menu SandFly, i wybierz „Opisz obraz” w celu wysłuchania opisu.</string>
   <string name="practice_gestures_title">Ćwiczenie gestów</string>
   <string name="practice_keyboard_gestures_title">Opanuj skróty klawiszowe</string>
@@ -1571,7 +1567,7 @@
     <string name="title_keyboard_echo_physical">Echo klawiatury fizycznej</string>
     <string name="title_keyboard_echo_braille_keyboard">Echo klawiatury brajlowskiej</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Echo klawiatury pisma ręcznego</string>
-    <string name="title_keyboard_echo_braille_display">Echo wyświetlacza brajlowskiego</string>
+    <string name="title_keyboard_echo_braille_display">Echo monitora brajlowskiego</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="image_qna_ask_by_voice">Zapytaj głosem</string>
     <string name="image_qna_stop_listening">Przestań słuchać</string>
@@ -1597,7 +1593,6 @@
     <string name="title_pref_whisper_models">Modele Whisper</string>
     <string name="dictation_whisper_use">Używaj</string>
     <string name="title_pref_dictation_ai_service">Usługa AI do dyktowania</string>
-    <string name="dictation_ai_same">Ta sama co dla automatycznych opisów</string>
     <string name="title_pref_browse_mode_per_app">Zapamiętaj tryb przeglądania w każdej aplikacji</string>
     <string name="title_pref_export_settings">Eksportuj ustawienia</string>
     <string name="title_pref_import_settings">Importuj ustawienia</string>
@@ -1625,4 +1620,12 @@
     <string name="shortcut_previous_track">Poprzedni utwór</string>
     <string name="sound_mode_needs_access">Zezwól na dostęp do trybu Nie przeszkadzać, aby włączać i wyłączać wyciszenie.</string>
     <string name="title_pref_dictation_auto_stop">Automatyczne zatrzymanie po ciszy</string>
+    <string name="dictation_ai_same">Jak w sekcji „Opisy obrazów i ekranu”</string>
+    <string name="navigation_settings_link">Ustawienia SandFly > Nawigacja</string>
+    <string name="navigation_settings_link_tts">Ustawienia SandFly, a następnie Nawigacja</string>
+    <string name="shortcut_reserved_for_vibration_watch">Zarezerwowane dla Vibration Watch w sekcji „Gesty”</string>
+    <string name="speech_control_ask_text">Może odczytywać tekst głosem używanym w SandFly. Możesz to zmienić w sekcji Ustawienia, Mowa, Zezwalaj innym aplikacjom na odczytywanie tekstu przez SandFly.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">Funkcja SandFly jest włączona. Aby ją wyłączyć, przytrzymaj 2 palce na ekranie przez 5 sekund. Aby przestać wyświetlać ten komunikat, wyłącz opcję Ustawienia SandFly &gt; Wstrzymywanie i wyłączanie &gt; Pokazuj instrukcje wyłączania funkcji SandFly.</string>
+    <string name="tutorial_link">Ustawienia SandFly &gt; Pomoc i opinie &gt; Samouczek SandFly</string>
+    <string name="tutorial_link_tts">Ustawienia SandFly, Pomoc i opinie, a następnie Samouczek SandFly</string>
 </resources>

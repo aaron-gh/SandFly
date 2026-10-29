@@ -12,13 +12,13 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, kisha Flash-Lite ikiwa ina shughuli nyingi</string>
     <string name="gemini_model_loading">Inapata miundo…</string>
     <string name="gemini_model_list_failed">Imeshindwa kupata miundo: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Weka ufunguo wa Gemini API kwanza</string>
+    <string name="gemini_model_needs_key">Weka Ufunguo wa API wa Gemini kwanza</string>
     <string name="gemini_api_terms_link">Sheria na Masharti ya Ziada ya Gemini API</string>
     <string name="ai_service_address_hint">Anwani, kama vile https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Muundo</string>
     <string name="ai_service_address_invalid">Anwani lazima ianze na https://. Hakuna chochote kilichohifadhiwa.</string>
     <string name="dialog_message_ai_service_consent">Picha na picha za skrini hutumwa kwa <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ili zielezwe, jambo linalochukua sekunde kadhaa. Masharti na sera ya faragha ya huduma hiyo yenyewe hutumika. AI zalishi ni ya majaribio, kwa hivyo itafanya makosa.</string>
-    <string name="ai_service_error_api_key">Huduma ya AI haikukubali ufunguo wa API. Angalia mipangilio yake katika Maelezo ya kiotomatiki.</string>
+    <string name="ai_service_error_api_key">Huduma ya AI haikukubali ufunguo wa API. Angalia mipangilio yake katika Maelezo ya picha na skrini.</string>
     <string name="ai_service_error_quota">Kikomo cha matumizi ya huduma ya AI kimefikiwa. Jaribu tena baadaye.</string>
     <string name="ai_service_error_busy">Huduma ya AI ina shughuli nyingi sasa hivi. Jaribu tena baada ya muda mfupi.</string>
     <string name="ai_service_error_timeout">Huduma ya AI ilichukua muda mrefu sana kujibu. Jaribu tena.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Hamna</string>
-    <string name="ai_service_not_set_up">Hakuna huduma ya AI inayotumika. Sanidi au uchague moja katika mipangilio ya Maelezo ya kiotomatiki.</string>
+    <string name="ai_service_not_set_up">Hakuna huduma ya AI inayotumika. Sanidi au uchague moja katika mipangilio ya Maelezo ya picha na skrini.</string>
     <string name="ai_provider_none_set_up">Hakuna huduma ya AI iliyosanidiwa. Sanidi moja katika mipangilio yake hapa chini.</string>
     <string name="ai_provider_other">Huduma nyingine</string>
     <string name="title_pref_category_ai_services">Huduma za AI</string>

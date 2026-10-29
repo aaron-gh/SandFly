@@ -82,7 +82,7 @@
   <string name="title_pref_category_selector_menu">Kontrol pembacaan</string>
   <string name="title_pref_category_navigation_menu">Edit opsi navigasi</string>
   <string name="title_pref_manage_keyboard_shortcuts">Pintasan keyboard</string>
-  <string name="title_pref_export_custom_labels">Ekspor label kustom</string>
+  <string name="title_pref_export_custom_labels">Ekspor label khusus</string>
   <string name="title_pref_help_and_feedback">Bantuan &amp; masukan</string>
   <string name="title_pref_help">Bantuan</string>
   <string name="title_pref_show_tos">Persyaratan Layanan</string>
@@ -667,8 +667,8 @@
   <string name="label_dialog_confirm_label_remove">Label dihapus</string>
   <string name="label_dialog_text">Ketikkan teks yang akan digunakan sebagai label untuk elemen ini\nNama tampilan internal: %1$s</string>
   <string name="label_dialog_edit_hint">Teks label</string>
-  <string name="label_import">Impor label kustom</string>
-  <string name="label_import_dialog_title">Impor label kustom ke SandFly</string>
+  <string name="label_import">Impor label khusus</string>
+  <string name="label_import_dialog_title">Impor label khusus ke SandFly</string>
   <string name="label_import_dialog_message">Jika sudah ada label dengan nama yang sama, pilih apakah Anda ingin mengganti atau melewati label yang sudah ada tersebut</string>
   <string name="label_import_dialog_skip">Lewati</string>
   <string name="label_import_dialog_override">Ganti</string>
@@ -685,7 +685,7 @@
   <string name="button_disable_all_events">Nonaktifkan semua</string>
   <string name="button_enable_all_events">Aktifkan semua</string>
   <string name="dialog_title_disable_exploration">Nonaktifkan fitur Jelajahi dengan sentuhan?</string>
-  <string name="dialog_message_disable_exploration">Yakin ingin menonaktifkan fitur Jelajahi dengan sentuhan?\n\nPerangkat tidak akan lagi menanggapi isyarat pintasan atau mengucapkan item saat Anda menyentuh layar.</string>
+  <string name="dialog_message_disable_exploration">Yakin ingin menonaktifkan fitur Jelajahi dengan sentuhan?\n\nPerangkat tidak akan lagi menanggapi gestur pintasan atau mengucapkan item saat Anda menyentuh layar.</string>
   <string name="dialog_title_enable_tree_debug">Aktifkan Debug Pohon Node?</string>
   <string name="dialog_message_enable_tree_debug">Yakin ingin mengaktifkan debug pohon node?\n\nDebug pohon node menampilkan konten layar ke log perangkat sehingga dapat dibaca oleh aplikasi lain.</string>
   <string name="dialog_title_enable_tree_debug_gesture">Tetapkan ulang gestur ketuk tiga kali dengan 4 jari?</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">Ketuk untuk mempelajari cara menggunakan SandFly lebih cepat dengan gestur baru.</string>
   <string name="dump_node_tree_description">Pohon node telah dicetak ke log.</string>
   <string name="report_gesture_description">Berikut adalah gestur yang baru-baru ini dilakukan. Laporkan mana gestur yang salah dan mana yang benar.</string>
-  <string name="update_welcome_talkback_16.1">Update SandFly ini memperkenalkan dukungan untuk fitur Deskripsikan layar dalam lebih banyak bahasa dan peningkatan kualitas lainnya yang mempermudah penggunaan SandFly.\n\nAnda akan mempelajari lebih lanjut perubahan ini di beberapa layar berikutnya.\n\nAnda dapat meninjau informasi ini nanti di setelan SandFly &gt; Fitur baru di SandFly.</string>
-  <string name="update_welcome_talkback_16.1_tts">Update SandFly ini memperkenalkan dukungan untuk fitur Deskripsikan layar dalam lebih banyak bahasa dan peningkatan kualitas lainnya yang mempermudah penggunaan SandFly.\n\nAnda akan mempelajari lebih lanjut perubahan ini di beberapa layar berikutnya.\n\nAnda dapat meninjau informasi ini nanti di setelan SandFly, lalu Fitur baru di SandFly.</string>
+  <string name="update_welcome_talkback_16.1">Update SandFly ini memperkenalkan dukungan untuk fitur Deskripsikan layar dalam lebih banyak bahasa dan peningkatan kualitas lainnya yang mempermudah penggunaan SandFly.\n\nAnda akan mempelajari lebih lanjut perubahan ini di beberapa layar berikutnya.\n\nAnda dapat meninjau informasi ini nanti di setelan SandFly &gt; Fitur-fitur baru di SandFly.</string>
+  <string name="update_welcome_talkback_16.1_tts">Update SandFly ini memperkenalkan dukungan untuk fitur Deskripsikan layar dalam lebih banyak bahasa dan peningkatan kualitas lainnya yang mempermudah penggunaan SandFly.\n\nAnda akan mempelajari lebih lanjut perubahan ini di beberapa layar berikutnya.\n\nAnda dapat meninjau informasi ini nanti di setelan SandFly, lalu Fitur-fitur baru di SandFly.</string>
   <string name="shortcut_for_dictation_title">Pintasan untuk dikte</string>
   <string name="shortcut_for_dictation_content">Saat menggunakan Gboard, Anda kini dapat menggunakan ketuk dua kali dengan dua jari untuk memulai atau menghentikan dikte.
 &lt;br&gt;
@@ -881,7 +881,7 @@
   <string name="shortcut_for_dictation_content_without_google_play">Saat Gboard ditampilkan di layar, Anda kini dapat menggunakan ketuk dua kali dengan dua jari untuk memulai ketik dengan suara, lalu ketuk dua kali dengan dua jari untuk menghentikannya.</string>
   <string name="announcing_text_formatting_title">Mengumumkan pemformatan teks</string>
   <string name="announcing_text_formatting_header">SandFly kini dapat mengumumkan perubahan format teks, seperti huruf tebal, huruf miring, dan warna teks. Untuk memulai:</string>
-  <string name="announcing_text_formatting_option1">Fokuskan pada item dengan pemformatan, buka menu SandFly, lalu pilih \"Deskripsikan pemformatan teks\", atau</string>
+  <string name="announcing_text_formatting_option1">Fokuskan pada item dengan pemformatan, buka menu SandFly, lalu pilih \"Jelaskan pemformatan teks\", atau</string>
   <string name="announcing_text_formatting_option2">Tambahkan kontrol pembacaan format teks, yang dapat mengaktifkan atau menonaktifkan pengumuman tentang perubahan format.</string>
   <string name="announcing_text_formatting_middle">Jika Anda sudah siap mencoba, berikut contoh teks berformat:</string>
   <string name="announcing_text_formatting_tail">Jika Anda ingin mengubah cara teks berformat diumumkan, Anda dapat membuka %1$s.</string>
@@ -897,25 +897,21 @@
 &lt;br&gt;
 &lt;br&gt;Warna dapat memercik, meriah seperti pesta,
 &lt;br&gt;Dari &lt;font color=\"#db372d\"&gt;merah menyala&lt;/font&gt; hingga &lt;font color=\"#128937\"&gt;hijau daun&lt;/font&gt; yang bersahaja.</string>
-  <string name="update_welcome_talkback_16.2">Update SandFly ini memperkenalkan \"Peta tombol yang ditingkatkan\" baru untuk keyboard fisik, dukungan untuk pengumuman pemformatan teks, dan tata letak setelan yang didesain ulang, beserta peningkatan lainnya untuk mempermudah penggunaan SandFly.\n\nAnda akan mempelajari lebih lanjut perubahan ini di beberapa layar berikutnya.\n\nAnda dapat meninjau informasi ini nanti di setelan SandFly &gt; Fitur baru di SandFly.</string>
-  <string name="update_welcome_talkback_16.2_tts">Update SandFly ini memperkenalkan \"Peta tombol yang ditingkatkan\" baru untuk keyboard fisik, dukungan untuk pengumuman pemformatan teks, dan tata letak setelan yang didesain ulang, beserta peningkatan lainnya untuk mempermudah penggunaan SandFly.\n\nAnda akan mempelajari lebih lanjut perubahan ini di beberapa layar berikutnya.\n\nAnda dapat meninjau informasi ini nanti di setelan SandFly, lalu Fitur baru di SandFly.</string>
+  <string name="update_welcome_talkback_16.2">Update SandFly ini memperkenalkan \"Peta tombol yang ditingkatkan\" baru untuk keyboard fisik, dukungan untuk pengumuman pemformatan teks, dan tata letak setelan yang didesain ulang, beserta peningkatan lainnya untuk mempermudah penggunaan SandFly.\n\nAnda akan mempelajari lebih lanjut perubahan ini di beberapa layar berikutnya.\n\nAnda dapat meninjau informasi ini nanti di setelan SandFly &gt; Fitur-fitur baru di SandFly.</string>
+  <string name="update_welcome_talkback_16.2_tts">Update SandFly ini memperkenalkan \"Peta tombol yang ditingkatkan\" baru untuk keyboard fisik, dukungan untuk pengumuman pemformatan teks, dan tata letak setelan yang didesain ulang, beserta peningkatan lainnya untuk mempermudah penggunaan SandFly.\n\nAnda akan mempelajari lebih lanjut perubahan ini di beberapa layar berikutnya.\n\nAnda dapat meninjau informasi ini nanti di setelan SandFly, lalu Fitur-fitur baru di SandFly.</string>
   <string name="new_settings_layout_title">Tata letak setelan baru</string>
   <string name="new_settings_layout_text">Pengelompokan setelan telah diperbarui agar fitur lebih mudah ditemukan. Kategori setelan baru juga tersedia, seperti setelan keyboard.</string>
   <string name="split_tap_everywhere_title">Ketuk terpisah di mana saja</string>
   <string name="split_tap_everywhere_text">Anda kini dapat menggunakan ketuk terpisah di mana saja untuk mengaktifkan item, bahkan di luar keyboard. Untuk menggunakannya, jelajahi layar dengan satu jari, lalu tanpa mengangkat jari pertama, ketuk layar dengan jari lain untuk mengaktifkan item yang saat ini difokuskan.</string>
   <string name="keyboard_enhanced_keymap_title">Keyboard: Peta tombol yang ditingkatkan</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly kini memiliki \"Peta tombol yang ditingkatkan\" untuk papan ketik fisik, yang menampilkan beragam perintah dan pintasan baru. Peningkatan ini mencakup \"mode penelusuran\" untuk navigasi web yang lebih efisien, menyederhanakan navigasi dan interaksi untuk SandFly pengguna yang mengandalkan keyboard fisik. Anda dapat beralih ke \"Peta kunci yang disempurnakan\" di <xliff:g id="settings_path">%1$s</xliff:g>.\n\nJika Anda menggunakan tampilan Braille, Anda juga dapat menggunakan pintasan mode penelusuran baru untuk menelusuri konten langsung dari tampilan Braille Anda. Beberapa pintasan tampilan Braille diubah untuk mengakomodasi perubahan ini. Anda dapat melihat daftar semua pintasan tampilan Braille di <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly kini memiliki \"Peta tombol yang ditingkatkan\" untuk keyboard fisik, yang menampilkan beragam perintah dan pintasan baru. Peningkatan ini mencakup \"mode penelusuran\" untuk navigasi web yang lebih efisien, menyederhanakan navigasi dan interaksi untuk pengguna SandFly yang mengandalkan keyboard fisik. Anda dapat beralih ke \"Peta tombol yang ditingkatkan\" di <xliff:g id="settings_path">%1$s</xliff:g>.\n\nJika Anda menggunakan penampil braille, Anda juga dapat menggunakan pintasan mode penelusuran baru untuk menelusuri konten langsung dari penampil braille Anda. Beberapa pintasan penampil braille diubah untuk mengakomodasi perubahan ini. Anda dapat melihat daftar semua pintasan penampil braille di <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">Setelan SandFly &gt; Pintasan keyboard</string>
   <string name="keyboard_shortcuts_link_tts">Setelan SandFly, lalu Pintasan keyboard</string>
   <string name="braille_display_settings_link">Setelan penampil braille</string>
   <string name="keyboard_smart_browse_mode_title">Keyboard: Mode penjelajahan cerdas</string>
   <string name="keyboard_smart_browse_mode_text">Mode penjelajahan cerdas SandFly menonaktifkan mode penjelajahan di kolom edit untuk membantu Anda mengetik dengan keyboard fisik saat menjelajahi web. Kemudian, fitur ini akan diaktifkan kembali saat Anda beralih ke kolom non-edit di web sehingga Anda dapat terus menjelajah dengan efisien. Anda dapat mengaktifkan atau menonaktifkan \"Mode penjelajahan cerdas\" di <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Setelan SandFly &gt; Setelan lanjutan</string>
-  <string name="advanced_settings_link_tts">Setelan SandFly, lalu Setelan lanjutan</string>
   <string name="keyboard_tutorial_title">Tutorial keyboard</string>
-  <string name="keyboard_tutorial_text">SandFly kini menyertakan Tutorial Keyboard yang dirancang untuk membantu Anda mempelajari pintasan dan perintah keyboard untuk Peta tombol yang ditingkatkan saat menggunakan keyboard fisik. Untuk mengakses tutorial, buka: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Setelan SandFly &gt; Tutorial SandFly</string>
-  <string name="tutorial_link_tts">Setelan SandFly, lalu Tutorial SandFly</string>
+  <string name="keyboard_tutorial_text">SandFly kini menyertakan Tutorial Keyboard yang dirancang untuk membantu Anda mempelajari pintasan keyboard dan perintah untuk Peta tombol yang ditingkatkan saat menggunakan keyboard fisik. Untuk mengakses tutorial, buka: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <string name="tutorial_entry_point_title">Tutorial</string>
   <string name="welcome_to_talkback_title">Selamat datang di SandFly</string>
   <string name="talkback_is_on">SandFly aktif</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Lainnya</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Cadangkan gestur untuk Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly tidak lagi menangani ketuk sekali dan ketuk dua kali dengan dua jari agar Samsung Vibration Watch dapat menggunakannya. Aktifkan Vibration Watch di setelan aksesibilitas smartwatch Anda.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Dicadangkan untuk Vibration Watch di Setelan lanjutan</string>
     <string name="title_pref_speakerphone_away_from_ear">Speaker saat jauh dari telinga</string>
     <string name="summary_pref_speakerphone_away_from_ear">Selama panggilan, beralih ke speaker saat ponsel dijauhkan dari telinga, dan kembali ke speaker telinga saat ponsel didekatkan lagi ke telinga.</string>
     <string name="summary_pref_speakerphone_needs_permission">Memerlukan izin yang tidak diberikan Android kepada pembaca layar. Untuk memberikannya, jalankan perintah ini dengan adb atau Shizuku, lalu kembali ke layar ini: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Aplikasi</string>
     <string name="speech_control_no_apps">Belum ada aplikasi yang meminta izin untuk berbicara.</string>
     <string name="speech_control_ask_title">Izinkan <xliff:g id="app" example="Tasker">%1$s</xliff:g> berbicara melalui SandFly?</string>
-    <string name="speech_control_ask_text">Aplikasi ini dapat mengucapkan teks dengan suara SandFly Anda. Anda dapat mengubahnya di Setelan lanjutan.</string>
     <string name="speech_control_allow">Izinkan</string>
     <string name="speech_control_deny">Jangan izinkan</string>
     <string name="permission_speak_label">berbicara melalui SandFly</string>
@@ -1459,9 +1453,9 @@
         <item quantity="one">%d notifikasi</item>
         <item quantity="other">%d notifikasi</item>
     </plurals>
-    <string name="title_pref_quick_settings">Gunakan pengaturan cepat SandFly</string>
-    <string name="title_pref_quick_settings_items">Panel pengaturan cepat</string>
-    <string name="quick_settings_title">Pengaturan cepat</string>
+    <string name="title_pref_quick_settings">Gunakan setelan cepat SandFly</string>
+    <string name="title_pref_quick_settings_items">Panel setelan cepat</string>
+    <string name="quick_settings_title">Setelan cepat</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">Data seluler</string>
@@ -1503,7 +1497,7 @@
     <string name="quick_settings_power_menu">Menu daya</string>
     <string name="quick_settings_add_system_tile">Tambahkan kotak sistem</string>
     <string name="quick_settings_no_system_tiles">Tidak ada ubin sistem untuk ditambahkan</string>
-    <string name="quick_settings_tile_not_found">%1$s tidak ada dalam pengaturan cepat sistem</string>
+    <string name="quick_settings_tile_not_found">%1$s tidak ada dalam setelan cepat sistem</string>
     <string name="quick_settings_never">Tidak pernah</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d detik</item>
@@ -1524,7 +1518,7 @@
     <string name="quick_settings_off">Nonaktif</string>
     <string name="quick_settings_unavailable">Tidak tersedia</string>
     <string name="quick_settings_edit">Sunting</string>
-    <string name="quick_settings_system">Pengaturan cepat sistem</string>
+    <string name="quick_settings_system">Setelan cepat sistem</string>
     <string name="quick_settings_open_settings">Buka pengaturan</string>
     <string name="quick_settings_add_control">Tambahkan kontrol</string>
     <string name="quick_settings_add_tile">Tambahkan kotak aplikasi</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Hapus</string>
     <string name="quick_settings_added">%1$s ditambahkan</string>
     <string name="quick_settings_removed">%1$s dihapus</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aktif. Tahan 2 jari di layar selama 5 detik untuk menonaktifkan. Untuk berhenti menampilkan pesan ini, nonaktifkan setelan SandFly &gt; Setelan lanjutan &gt; Tampilkan petunjuk untuk menonaktifkan SandFly.</string>
     <string name="edge_gestures_title">Tepi</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Pintasan lain untuk mengaktifkan atau menonaktifkan mode penelusuran</string>
     <string name="title_pref_vibration_strength">Kekuatan getaran</string>
@@ -1618,7 +1611,7 @@
     <string name="shortcut_scroll_to_bottom">Gulir ke bawah</string>
     <string name="shortcut_refresh">Segarkan</string>
     <string name="shortcut_system_notifications">Panel notifikasi sistem</string>
-    <string name="shortcut_system_quick_settings">Pengaturan cepat sistem</string>
+    <string name="shortcut_system_quick_settings">Setelan cepat sistem</string>
     <string name="shortcut_lock_screen">Kunci layar perangkat</string>
     <string name="shortcut_power_menu">Menu daya</string>
     <string name="shortcut_increase_media_volume">Tingkatkan volume media</string>
@@ -1715,7 +1708,7 @@
     <string name="title_keyboard_echo_physical">Gema keyboard fisik</string>
     <string name="title_keyboard_echo_braille_keyboard">Gema keyboard braille</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Gema keyboard tulisan tangan</string>
-    <string name="title_keyboard_echo_braille_display">Gema layar braille</string>
+    <string name="title_keyboard_echo_braille_display">Gema penampil braille</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Interupsi ucapan saat mengetik</string>
     <string name="pref_interrupt_typing_entry_always">Selalu</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Model Whisper</string>
     <string name="dictation_whisper_use">Gunakan</string>
     <string name="title_pref_dictation_ai_service">Layanan AI untuk dikte</string>
-    <string name="dictation_ai_same">Sama dengan deskripsi otomatis</string>
     <string name="title_pref_browse_mode_per_app">Ingat mode jelajah di setiap aplikasi</string>
     <string name="title_pref_export_settings">Ekspor pengaturan</string>
     <string name="title_pref_import_settings">Impor pengaturan</string>
@@ -1794,4 +1786,12 @@
         <item>1 menit</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Berhenti otomatis setelah hening</string>
+    <string name="dictation_ai_same">Sama dengan Deskripsi gambar dan layar</string>
+    <string name="navigation_settings_link">Setelan SandFly &gt; Navigasi</string>
+    <string name="navigation_settings_link_tts">Setelan SandFly, lalu Navigasi</string>
+    <string name="shortcut_reserved_for_vibration_watch">Dicadangkan untuk Vibration Watch di Gestur</string>
+    <string name="speech_control_ask_text">Aplikasi ini dapat mengucapkan teks dengan suara SandFly Anda. Anda dapat mengubahnya di Setelan, Ucapan, Izinkan aplikasi lain berbicara.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aktif. Tahan 2 jari di layar selama 5 detik untuk menonaktifkannya. Agar pesan ini tidak muncul lagi, nonaktifkan Setelan SandFly &gt; Jeda dan nonaktifkan &gt; Tampilkan petunjuk untuk menonaktifkan SandFly.</string>
+    <string name="tutorial_link">Setelan SandFly &gt; Bantuan &amp; masukan &gt; Tutorial SandFly</string>
+    <string name="tutorial_link_tts">Setelan SandFly, lalu Bantuan &amp; masukan, lalu Tutorial SandFly</string>
 </resources>

@@ -66,10 +66,10 @@
     <string name="theme_sound_summary_none">Nema zvuka. Reproducira se zvuk fokusa.</string>
     <string name="theme_sound_summary_android_keyboard">Zvuk tastature Androida</string>
     <string name="theme_sound_use_android_keyboard">Koristi zvuk tastature Androida</string>
-    <string name="theme_sound_braille_character">Brailleva tastatura: pisanje znaka</string>
-    <string name="theme_sound_braille_space">Brailleva tastatura: razmak</string>
-    <string name="theme_sound_braille_delete">Brailleva tastatura: brisanje</string>
-    <string name="theme_sound_braille_new_line">Brailleva tastatura: novi red</string>
+    <string name="theme_sound_braille_character">Tastatura s Braillevim pismom: pisanje znaka</string>
+    <string name="theme_sound_braille_space">Tastatura s Braillevim pismom: razmak</string>
+    <string name="theme_sound_braille_delete">Tastatura s Braillevim pismom: brisanje</string>
+    <string name="theme_sound_braille_new_line">Tastatura s Braillevim pismom: novi red</string>
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <string name="theme_sound_choose">Odaberi zvučni fajl</string>
     <string name="theme_sound_preview">Preslušaj</string>
@@ -83,8 +83,8 @@
     <string name="theme_sound_failed">SandFly nije mogao pročitati taj fajl.</string>
     <string name="title_pref_sound_theme_install_source">Iz izvora</string>
     <string name="summary_pref_sound_theme_install_source">Datoteke tema u spremištu na GitHub, GitLab, Codeberg, Gitea ili Bitbucket.</string>
-    <string name="sound_theme_sources">Izvori zvučnih tema</string>
-    <string name="sound_theme_source_empty">Nema zvučnih tema u ovom izvoru</string>
-    <string name="sound_theme_source_failed">Nije moguće učitati zvučne teme. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">Zvučne teme instalirane s njega ostaju instalirane.</string>
+    <string name="sound_theme_sources">Izvori tema zvukova</string>
+    <string name="sound_theme_source_empty">Nema tema zvukova u ovom izvoru</string>
+    <string name="sound_theme_source_failed">Nije moguće učitati teme zvukova. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_source_remove_message">Teme zvukova instalirane s njega ostaju instalirane.</string>
 </resources>

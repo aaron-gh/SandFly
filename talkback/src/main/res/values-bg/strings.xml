@@ -411,8 +411,8 @@
   <string name="shortcut_pass_through_next">Временно преминаване към системен жест</string>
   <string name="shortcut_a11y_button">Пряк път към функцията за достъпност</string>
   <string name="shortcut_a11y_button_long_press">Пряк път за задържане на бутона за достъпност</string>
-  <string name="shortcut_selected_setting_next_action">Преместване на „Управление на четенето“ надолу или напред</string>
-  <string name="shortcut_selected_setting_previous_action">Преместване на „Управление на четенето“ нагоре или назад</string>
+  <string name="shortcut_selected_setting_next_action">Преместване на контролата за четене надолу или напред</string>
+  <string name="shortcut_selected_setting_previous_action">Преместване на контролата за четене нагоре или назад</string>
   <string name="label_screen_search_result">Резултат от търсенето</string>
   <string name="label_search_result_landmark_search">Търсене</string>
   <string name="label_search_result_table">Таблица</string>
@@ -882,7 +882,7 @@
   <string name="announcing_text_formatting_title">Съобщаване на форматирането на текста</string>
   <string name="announcing_text_formatting_header">SandFly вече може да съобщава за промени във форматирането на текста, като например удебелен шрифт, курсив и цвят на текста. За да започнете:</string>
   <string name="announcing_text_formatting_option1">поставете фокуса върху форматирания фрагмент, отворете менюто на SandFly и изберете „Описване на форматирането на текста“; или</string>
-  <string name="announcing_text_formatting_option2">добавете контрола за управление на четенето за форматиране на текста, която ще включва или изключва съобщаването на промените във форматирането.</string>
+  <string name="announcing_text_formatting_option2">добавете контрола за четене за форматиране на текста, която ще включва или изключва съобщаването на промените във форматирането.</string>
   <string name="announcing_text_formatting_middle">Когато имате готовност да изпробвате функцията, ето примерен форматиран текст:</string>
   <string name="announcing_text_formatting_tail">Ако искате да промените начина, по който се изговаря форматираният текст, можете да отворите %1$s.</string>
   <string name="text_formatting_options_settings_path">„Настройки на SandFly &gt; Детайлност на говора &gt; Опции за форматиране на текста“</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Настройки за екрана за брайлово писмо</string>
   <string name="keyboard_smart_browse_mode_title">Клавиатура: „Интелигентен режим за четене“</string>
   <string name="keyboard_smart_browse_mode_text">Интелигентният режим за четене на SandFly изключва режима за четене в поле за редактиране, за да ви помага да пишете с физическа клавиатура, когато сърфирате в мрежата. След това го включва отново, когато преминете към поле в мрежата, което не може да се редактира, за да продължите да сърфирате ефективно. Имате възможност да включите или изключите „Интелигентен режим за четене“ от <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">„Настройки на SandFly &gt; Разширени настройки“</string>
-  <string name="advanced_settings_link_tts">„Настройки на SandFly“ и след това „Разширени настройки“</string>
   <string name="keyboard_tutorial_title">Урок за клавиатурата</string>
   <string name="keyboard_tutorial_text">В SandFly вече има урок за клавиатурата, който има за цел да ви помогне да научите клавишните комбинации и командите за „Подобрена клавиатурна подредба“, когато използвате физическа клавиатура. За достъп до урока отворете <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">„Настройки на SandFly &gt; Обучение за SandFly“</string>
-  <string name="tutorial_link_tts">„Настройки на SandFly“ и след това „Обучение за SandFly“</string>
   <string name="tutorial_entry_point_title">Урок</string>
   <string name="welcome_to_talkback_title">Добре дошли в SandFly</string>
   <string name="talkback_is_on">Функцията SandFly е включена</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">Използване на менюта и контроли</string>
   <string name="menus_talkback_menu_text">Менюто на SandFly съдържа често използвани настройки и контроли.\n\nОтворете го сега, като докоснете екрана с три пръста.</string>
   <string name="menus_talkback_menu_text_pre_r">Менюто на SandFly съдържа често използвани настройки и контроли.\n\nОтворете го сега, като прекарате пръст надолу и след това надясно.</string>
-  <string name="menus_selector_text">Тези клавишни комбинации могат да ви помогнат бързо да променяте настройките, като например да превключвате към навигиране по знаци или думи или да променяте скоростта на говора на SandFly.\n\nЗа бърза промяна на контролите за четене прекарайте три пръста наляво или надясно.\n\nИмате възможност да персонализирате менюто на SandFly и контролите за четене по-късно от настройките на услугата.</string>
-  <string name="menus_selector_text_pre_r">Тези клавишни комбинации могат да ви помогнат бързо да променяте настройките, като например да превключвате към навигиране по знаци или думи или да променяте скоростта на говора на SandFly.\n\nЗа бърза промяна на контролите за четене прекарайте пръст надолу и след това нагоре.\n\nИмате възможност да персонализирате менюто на SandFly и контролите за четене по-късно от настройките на услугата.</string>
+  <string name="menus_selector_text">Тези клавишни комбинации могат да ви помогнат бързо да променяте настройките, като например да превключвате към навигиране по знаци или думи или да променяте скоростта на говора на SandFly.\n\nЗа бърза промяна на контролите за четене прекарайте три пръста наляво или надясно.\n\nИмате възможност да персонализирате менюто на SandFly и контролите за четене по-късно от настройките на SandFly.</string>
+  <string name="menus_selector_text_pre_r">Тези клавишни комбинации могат да ви помогнат бързо да променяте настройките, като например да превключвате към навигиране по знаци или думи или да променяте скоростта на говора на SandFly.\n\nЗа бърза промяна на контролите за четене прекарайте пръст надолу и след това нагоре.\n\nИмате възможност да персонализирате менюто на SandFly и контролите за четене по-късно от настройките на SandFly.</string>
   <string name="all_set_title">Готово!</string>
   <string name="all_set_text">Вече можете да използвате SandFly.\n\nМожете да продължите да учите за други теми сега или да прегледате тази информация по всяко време от настройките на SandFly.</string>
   <string name="talkback_tutorial_text">Прекарайте пръст надясно, за да изберете тема. За най-добра практическа работа включете SandFly, преди да започнете.</string>
@@ -1069,8 +1065,8 @@
   <string name="checking_notifications_tips">За да проверите историята на известията си, от горната част на екрана плъзнете 2 пръста надолу</string>
   <string name="image_description_playground_title">Опитайте да получите описания на изображенията</string>
   <string name="image_description_playground_content_one">Когато фокусът ви е върху изображение, отворете менюто на SandFly и изберете „Описание на изображението“.\n\nПо-долу има една снимка. Опитайте да получите описание за нея.</string>
-  <string name="image_description_playground_content_two">Можете да промените настройките за описанията на изображенията по всяко време от „Настройки на SandFly &gt; Автоматични описания“.</string>
-  <string name="image_description_playground_content_two_tts">По всяко време можете да промените настройките за описанията на изображенията, като изберете „Настройки на SandFly“ и след това „Автоматични описания“.</string>
+  <string name="image_description_playground_content_two">Можете да промените настройките за описанията на изображенията по всяко време от „Настройки на SandFly &gt; Описания на изображения и екрана“.</string>
+  <string name="image_description_playground_content_two_tts">По всяко време можете да промените настройките за описанията на изображенията, като изберете „Настройки на SandFly“ и след това „Описания на изображения и екрана“.</string>
   <string name="image_description_sample_image_content_description">Примерно изображение. Докоснете с 3 пръста, за да отворите менюто на SandFly, и изберете „Описание на изображението“, за да чуете описание.</string>
   <string name="practice_gestures_title">Упражняване на жестовете</string>
   <string name="practice_keyboard_gestures_title">Упражняване на клавишните комбинации</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Още</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Запазване на жестове за Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly спира да обработва единичните и двукратните докосвания с два пръста, за да може Samsung Vibration Watch да ги използва. Активирайте Vibration Watch в настройките за достъпност на часовника си.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Запазено за Vibration Watch в „Разширени настройки“</string>
     <string name="title_pref_speakerphone_away_from_ear">Високоговорител, когато телефонът е далеч от ухото</string>
     <string name="summary_pref_speakerphone_away_from_ear">По време на обаждане превключва към високоговорителя, когато отдалечите телефона от ухото си, и обратно към слушалката, когато го доближите отново.</string>
     <string name="summary_pref_speakerphone_needs_permission">Изисква разрешение, което Android не дава на екранните четци. За да го предоставите, изпълнете тази команда с adb или Shizuku, след което се върнете на този екран: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Приложения</string>
     <string name="speech_control_no_apps">Още няма приложения, поискали изговаряне.</string>
     <string name="speech_control_ask_title">Да се разреши ли на <xliff:g id="app" example="Tasker">%1$s</xliff:g> да изговаря чрез SandFly?</string>
-    <string name="speech_control_ask_text">Приложението може да изговаря текст с гласа на SandFly. Можете да промените това в „Разширени настройки“.</string>
     <string name="speech_control_allow">Разрешаване</string>
     <string name="speech_control_deny">Без разрешаване</string>
     <string name="permission_speak_label">изговаряне чрез SandFly</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d известие</item>
         <item quantity="other">%d известия</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly е включен. Задръжте 2 пръста на екрана за 5 секунди, за да го изключите. За да спрете показването на това съобщение, изключете „Настройки на SandFly &gt; Разширени настройки &gt; Показване на инструкции за изключване на SandFly“.</string>
     <string name="edge_gestures_title">Ръбове</string>
     <string name="title_pref_audio_output_device">Устройство за аудиоизход</string>
     <string name="dialog_title_audio_output_device">Изберете къде да се възпроизвежда звукът на SandFly</string>
@@ -1523,7 +1516,7 @@
     <string name="summary_support_wrap_around">Включване или изключване на прехода от последния към първия елемент</string>
     <string name="wrap_around_on">Цикличното придвижване е включено</string>
     <string name="wrap_around_off">Цикличното придвижване е изключено</string>
-    <string name="title_selector_tablet_held_up_faces_away">Вдигнат таблет, обърнат навън</string>
+    <string name="title_selector_tablet_held_up_faces_away">Екранът на вдигнатия таблет е обърнат от вас</string>
     <string name="summary_support_tablet_held_up_faces_away">За брайловата клавиатура на таблет или разгънат телефон</string>
     <string name="tablet_held_up_faces_away_on">Вдигнат таблет, обърнат навън: вкл.</string>
     <string name="tablet_held_up_faces_away_off">Вдигнат таблет, обърнат навън: изкл.</string>
@@ -1550,7 +1543,7 @@
     <string name="template_item_details_order_dropped">Пуснато: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly изговаря подробностите за елемента в този ред. За да го промените, докоснете и задръжте подробност, след което я плъзнете нагоре или надолу. Когато SandFly е включен, докоснете двукратно и задръжте, след което плъзнете. Можете също да използвате действията „Преместване нагоре“ и „Преместване надолу“.</string>
     <string name="title_pref_speak_items_before_scroll">Изговаряне на елементите, преди да бъдат превъртени в изгледа</string>
-    <string name="gemini_error_api_key">Gemini не прие API ключа. Проверете ключа в настройките за автоматични описания.</string>
+    <string name="gemini_error_api_key">Gemini не прие API ключа. Проверете ключа в „Описания на изображения и екрана“.</string>
     <string name="gemini_error_quota">Лимитът за използване на вашия API ключ за Gemini е достигнат. Опитайте отново по-късно.</string>
     <string name="gemini_error_busy">Gemini е зает в момента. Опитайте отново след малко.</string>
     <string name="gemini_error_timeout">Gemini не отговори навреме. Опитайте отново.</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Модели на Whisper</string>
     <string name="dictation_whisper_use">Използване</string>
     <string name="title_pref_dictation_ai_service">AI услуга за диктовка</string>
-    <string name="dictation_ai_same">Същата като за автоматичните описания</string>
     <string name="title_pref_browse_mode_per_app">Запомняне на режима на преглед във всяко приложение</string>
     <string name="title_pref_export_settings">Експортиране на настройки</string>
     <string name="title_pref_import_settings">Импортиране на настройки</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">Предишна песен</string>
     <string name="sound_mode_needs_access">Разрешете достъп до „Не безпокойте“, за да включвате и изключвате „Без звук“.</string>
     <string name="title_pref_dictation_auto_stop">Автоматично спиране след тишина</string>
+    <string name="dictation_ai_same">Като в „Описания на изображения и екрана“</string>
+    <string name="navigation_settings_link">Настройки на SandFly &gt; Навигиране</string>
+    <string name="navigation_settings_link_tts">„Настройки на SandFly“, след това „Навигиране“</string>
+    <string name="shortcut_reserved_for_vibration_watch">Запазено за Vibration Watch в „Жестове“</string>
+    <string name="speech_control_ask_text">Приложението може да изговаря текст с гласа на SandFly. Можете да промените това в „Настройки“, „Говор“, „Изговаряне от други приложения“.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">Функцията SandFly е включена. Докоснете екрана с два пръста и задръжте в продължение на 5 секунди, за да я изключите. За да спрете показването на това съобщение, изключете „Настройки на SandFly &gt; Пауза и изключване &gt; Показване на инструкции за изключване на SandFly“.</string>
+    <string name="tutorial_link">Настройки на SandFly &gt; Помощ и отзиви &gt; Обучение за SandFly</string>
+    <string name="tutorial_link_tts">„Настройки на SandFly“, след това „Помощ и отзиви“, след това „Обучение за SandFly“</string>
 </resources>

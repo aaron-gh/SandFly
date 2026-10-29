@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">Төхөөрөмж дээрх AI</string>
-    <string name="summary_pref_on_device_ai">«Зургийг тодорхойлох» болон «Дэлгэцийг тайлбарлах» энэ утсан дээрх загвараар, API түлхүүргүйгээр</string>
+    <string name="summary_pref_on_device_ai">«Зургийг тайлбарлах» болон «Дэлгэцийг тайлбарлах» энэ утсан дээрх загвараар, API түлхүүргүйгээр</string>
     <string name="pref_on_device_ai_enable">Төхөөрөмж дээрх AI ашиглах</string>
     <string name="pref_on_device_ai_enable_summary">Зураг болон дэлгэцийн агшныг энэ утсан дээр тайлбарладаг бөгөөд Google руу хэзээ ч илгээдэггүй. Энэ нь клоудаас удаан бөгөөд батерей илүү зарцуулдаг.</string>
     <string name="pref_on_device_ai_enable_needs_model">Эхлээд загвар татаж авах эсвэл импортлоно уу.</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">Загвар суулгасан</string>
     <string name="on_device_ai_import_failed">Энэ файл нь дэмжигдсэн Gemma 4 загварын файл биш юм.</string>
     <string name="pref_on_device_ai_timeout">Хариулт өгөх хугацаа</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. Энэ хугацааны дараа SandFly хүлээхээ болино. «Дэлгэцийг тайлбарлах» нь «Зургийг тодорхойлох»-ээс удаан үргэлжилдэг.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Энэ хугацааны дараа SandFly хүлээхээ болино. «Дэлгэцийг тайлбарлах» нь «Зургийг тайлбарлах»-ээс удаан үргэлжилдэг.</string>
     <string name="on_device_ai_choose_timeout">Хариулт өгөх хугацаа</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d минут</item>

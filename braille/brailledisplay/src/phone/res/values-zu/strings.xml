@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Ukuze usebenzise imodi yokubhrawuza, uzodinga ukushintsha usuka kumephu esemqoka ezenzakalelayo uye kumephu esemqoka ethuthukisiwe. Lolu shintsho luzobuyekeza eminye imiyalo yakho yesibonisi se-braille</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Amasethingi</string>
   <string name="bd_command_change_dialog_title">Eminye imiyalo ibuyekeziwe</string>
-  <string name="bd_command_change_dialog_message">Imiyalo yesibonisi sebraille ibuyekeziwe kuSandFly:\n\n• Okwangaphambilini: Cindezela amachashazi 1, 7\n\n• Kokulandelayo: Cindezela amachashazi 4, 8\n\n• Isilawuli esifundayo sangaphambilini: Cindezela amachashazi 2, 3, 7, 8\n\n• Isilawuli esifundayo esilandelayo: Cindezela amachashazi 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Imiyalo yesibonisi sebraille ibuyekeziwe kuSandFly:\n\n• Into yangaphambilini: Cindezela amachashazi 1, 7\n\n• Into elandelayo: Cindezela amachashazi 4, 8\n\n• Ukulawula kokufunda kwangaphambilini: Cindezela amachashazi 2, 3, 7, 8\n\n• Ukulawula kokufunda okulandelayo: Cindezela amachashazi 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">I-braille enenkontileka</string>
   <string name="bd_preference_braille_uncontracted">I-braille engenankontileka</string>
   <string name="bd_braille_grade_tips">Ukuze ushintshe ngokushesha phakathi kwenkontileka nengenayo inkontileka usebenzisa isibonisi se-braille, cindezela isikhala namachashazi 1, 2, 4, 5.\n\nLo myalo usebenza uma usebenzisa ulimi olunawo womabili amabanga e-braille.</string>
@@ -67,7 +67,7 @@
   <string name="bd_commands_bindings_instructions">Sebenzisa okhiye bokuzulazula ukuze uhambise ukugxila esikrinini. Sebenzisa okhiye be-braille ukuze ufake umbhalo ebhokisini lombhalo.\n\nNgezansi yiyo yonke imiyalo esekelwa idivayisi yakho.</string>
   <string name="bd_commands_bindings_category_basic_controls_title">Izilawuli eziyisisekelo</string>
   <string name="bd_commands_bindings_category_basic_controls_summary">Phena futhi wenze kusebenze</string>
-  <string name="bd_commands_bindings_category_navigation_title">Ukufuna</string>
+  <string name="bd_commands_bindings_category_navigation_title">Ukuzulazula</string>
   <string name="bd_commands_bindings_category_navigation_summary">Ukuhamba ngaphakathi kwezinto</string>
   <string name="bd_commands_bindings_category_system_actions_title">Izenzo zesistimu</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Emuva, ekhaya, izaziso nokuningi</string>
@@ -187,8 +187,8 @@
   <string name="bd_cmd_nav_item_previous">Into yangaphambilini</string>
   <string name="bd_cmd_scroll_forward">Skrolela phambili</string>
   <string name="bd_cmd_scroll_backward">Skrolela emuva</string>
-  <string name="bd_cmd_move_by_reading_granularity_or_adjust_reading_control_forward">Hambisa ukugxilisa kokuzulazula kuye phambili noma lungisa isilawuli esifundayo siye phezulu</string>
-  <string name="bd_cmd_move_by_reading_granularity_or_adjust_reading_control_backward">Hambisa ukugxilisa kokuzulazula kuye emuva noma lungisa isilawuli esifundayo siye phansi</string>
+  <string name="bd_cmd_move_by_reading_granularity_or_adjust_reading_control_forward">Hambisa ukugxilisa kokuzulazula kuye phambili noma lungisa isilawuli sokufunda siye phezulu</string>
+  <string name="bd_cmd_move_by_reading_granularity_or_adjust_reading_control_backward">Hambisa ukugxilisa kokuzulazula kuye emuva noma lungisa isilawuli sokufunda siye phansi</string>
   <string name="bd_cmd_nav_character_next">Uhlamvu olulandelayo</string>
   <string name="bd_cmd_nav_character_previous">Uhlamvu lwangaphambili</string>
   <string name="bd_cmd_nav_word_next">Igama elilandelayo</string>
@@ -219,7 +219,7 @@
   <string name="bd_cmd_global_recents">Vula ama-app wakamuva</string>
   <string name="bd_cmd_quick_settings">Vula Amasethingi Asheshayo</string>
   <string name="bd_cmd_global_all_apps">Vula wonke ama-app</string>
-  <string name="bd_cmd_toggle_screen_search">Vula isikrinikufuna</string>
+  <string name="bd_cmd_toggle_screen_search">Vula usesho lwesikrini</string>
   <string name="bd_cmd_edit_custom_label">Hlela ilebula engokwezifiso</string>
   <string name="bd_cmd_open_talkback_menu">Vula imenyu ye-SandFly</string>
   <string name="bd_cmd_toggle_voice_feedback">Vula noma uvale inkulumo ye-SandFly</string>
@@ -309,10 +309,10 @@
   <string name="bd_device">ifoni</string>
   <string name="bd_battery_low_dialog_title">Ibhethri le-%s liphansi</string>
   <string name="bd_battery_low_dialog_message">Ibhethri lakho le-%s lishaja isibonisi sakho se-braille.\n\nUkuze wonge ibhethri:\n\n
-    1. Iya kumasethingi ezibonisi ze-braille\n
+    1. Iya kumasethingi esibonisi se-braille\n
     2. Nqamula isibonisi sakho se-braille ku-USB\n
-    2. Xhuma kusibonisi sakho se-braille usebenzisa i-Bluetooth</string>
-  <string name="bd_battery_low_dialog_button">Amasethingi okubonisa e-Braille</string>
+    3. Xhuma kusibonisi sakho se-braille usebenzisa i-Bluetooth</string>
+  <string name="bd_battery_low_dialog_button">Amasethingi esibonisi se-braille</string>
   <string name="popup_message_history_title">Umlayezo nomlando wezaziso</string>
   <string name="popup_message_history_clear">Sula konke</string>
   <string name="popup_message_history_empty">Akunalutho</string>

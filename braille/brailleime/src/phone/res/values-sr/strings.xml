@@ -10,7 +10,7 @@
   <string name="switched_to_uncontracted_announcement">Прешли сте у режим пуне Брајеве азбуке</string>
   <string name="braille_ime_displayed_name">тастатура са Брајевом азбуком</string>
   <string name="multiple_languages_braille_ime_displayed_name">тастатура са Брајевом азбуком, %s</string>
-  <string name="input_view_caption">SandFly Брајева тастатура – за помоћ посетите g.co/help/braille</string>
+  <string name="input_view_caption">SandFly тастатура са Брајевом азбуком – за помоћ посетите g.co/help/braille</string>
   <string name="perform_action_next">Даље</string>
   <string name="perform_action_submitting">Текст се шаље</string>
   <string name="calibration_step1_hold_left_or_right_finger_announcement">Ажурира се положај тачака. Хајде прво да снимимо тачке: %s.</string>
@@ -28,10 +28,10 @@
   <string name="braille_keyboard">Тастатура са Брајевом азбуком</string>
   <string name="set_up_braille_keyboard">Подесите тастатуру са Брајевом азбуком</string>
   <string name="how_to_use_braille_keyboard">Како да користите тастатуру са Брајевом азбуком</string>
-  <string name="use_brailleime_pref_dialog_case_ime_enabled">Да бисте користили Брајеву тастатуру, отворите обичну тастатуру, па додирните икону за избор тастатуре %1$s (обично је у доњем десном углу). Изаберите %2$s.</string>
+  <string name="use_brailleime_pref_dialog_case_ime_enabled">Да бисте користили тастатуру са Брајевом азбуком, отворите обичну тастатуру, па додирните икону за избор тастатуре %1$s (обично је у доњем десном углу). Изаберите %2$s.</string>
   <string name="use_brailleime_pref_dialog_case_ime_disabled_settings">1. Додирните Подешавања у наставку. На следећем екрану укључите %1$s\n\n2. Отворите обичну тастатуру, па додирните да бисте променили метод уноса %2$s (обично је у доњем десном углу).\n\n3. Изаберите %1$s.</string>
   <string name="use_brailleime_pref_dialog_case_ime_enabled_gboard">Ако не видите опцију да пређете на другу тастатуру, пробајте да инсталирате %s, Google тастатуру.</string>
-  <string name="use_brailleime_pref_dialog_case_ime_disabled_turn_on">1. Укључите Брајеву тастатуру у наставку.\n\n2. Отворите обичну тастатуру, па додирните да бисте променили метод уноса %2$s (обично је у доњем десном углу).\n\n3. Изаберите %1$s.</string>
+  <string name="use_brailleime_pref_dialog_case_ime_disabled_turn_on">1. Укључите тастатуру са Брајевом азбуком у наставку.\n\n2. Отворите обичну тастатуру, па додирните да бисте променили метод уноса %2$s (обично је у доњем десном углу).\n\n3. Изаберите %1$s.</string>
   <string name="use_brailleime_pref_dialog_case_ime_disabled_turn_on_gboard">Ако не можете да пређете на другу тастатуру, пробајте да инсталирате %s, Google тастатуру.</string>
   <string name="use_brailleime_pref_button_case_ime_disabled_settings">Подешавања</string>
   <string name="use_brailleime_pref_button_case_ime_disabled_turn_on">Укључи</string>
@@ -55,7 +55,7 @@
   <string name="context_menu_switch_contracted_status_selection">Пређи у режим %s Брајеве азбуке</string>
   <string name="contracted">краткописна</string>
   <string name="uncontracted">пуне</string>
-  <string name="context_menu_review_gestures_selection">Прегледајте поруке</string>
+  <string name="context_menu_review_gestures_selection">Прегледајте покрете</string>
   <string name="context_menu_tutorial_selection">Отвори водич</string>
   <string name="context_menu_tutorial_finish">Доврши водич</string>
   <string name="context_menu_settings_selection">Подешавања</string>
@@ -106,10 +106,10 @@
   <string name="talkback_suspend_dialog_title">Наставите да користите SandFly да бисте користили тастатуру са Брајевом азбуком</string>
   <string name="talkback_off_or_suspend_dialog_message">Када је SandFly укључен, можете да додирнете екран да бисте уносили Брајеве симболе.</string>
   <string name="talkback_off_custom_gestures_dialog_title">Укључите SandFly да бисте променили покрет</string>
-  <string name="talkback_off_custom_gestures_dialog_message">SandFly је искључен. Укључите га да бисте променили покрете за Брајеву тастатуру.</string>
+  <string name="talkback_off_custom_gestures_dialog_message">SandFly је искључен. Укључите га да бисте променили покрете за тастатуру са Брајевом азбуком.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Иди у Подешавања</string>
   <string name="reset_gestures_dialog_title">Желите да ресетујете све покрете?</string>
-  <string name="reset_gestures_dialog_message">Сви покрети за Брајеву тастатуру ће се ресетовати на подразумеване</string>
+  <string name="reset_gestures_dialog_message">Сви покрети за тастатуру са Брајевом азбуком ће се ресетовати на подразумеване</string>
   <string name="reset_gestures_dialog_positive_button">Ресетуј</string>
   <string name="reset_to_default_dialog_title">Желите да ресетујете на подразумевано?</string>
   <string name="reset_to_default_dialog_message">Покрет ће бити ресетован на „%s“.\n\nАко нека друга радња користи овај покрет, то ће бити замењено.</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Ресетуј на подразумевано</string>
   <string name="custom_gestures_dialog_remove_button">Уклони покрет</string>
   <string name="change_gestures_dialog_message_title">Како да промените покрет</string>
-  <string name="change_gestures_dialog_message">На следећем екрану ће се отворити Брајева тастатура и нећете моћи да користите SandFly покрете.\n\nКада се отвори Брајева тастатура, обавите покрет који желите да користите или превуците надоле са 2 прста да бисте затворили Брајеву тастатуру и отказали промену покрета.\n\nПогледајте доступне покрете\n</string>
+  <string name="change_gestures_dialog_message">На следећем екрану ће се отворити тастатура са Брајевом азбуком и нећете моћи да користите SandFly покрете.\n\nКада се отвори тастатура са Брајевом азбуком, обавите покрет који желите да користите или превуците надоле са 2 прста да бисте затворили тастатуру са Брајевом азбуком и отказали промену покрета.\n\nПогледајте доступне покрете\n</string>
   <string name="change_gestures_dialog_message_link">Погледајте доступне покрете</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Не приказуј ову поруку поново</string>
   <string name="change_gestures_dialog_positive_button">Настави</string>
@@ -137,7 +137,7 @@
   <string name="next_step">Даље</string>
   <string name="leave_keyboard">Затвори тастатуру са Брајевом азбуком</string>
   <string name="hold_six_fingers_description">Нећете моћи да користите стандардне SandFly покрете на тастатури са Брајевом азбуком.\n\nДа бисте започели, подесите положај 6 тачака за коришћење Брајеве азбуке при уносу текста.</string>
-  <string name="rotate_orientation_description_1">Од сада више нећете моћи да користите уобичајене SandFly покрете. SandFly није доступан када користите тастатуруру са Брајевом азбуком.</string>
+  <string name="rotate_orientation_description_1">Од сада више нећете моћи да користите уобичајене SandFly покрете. SandFly није доступан када користите тастатуру са Брајевом азбуком.</string>
   <string name="rotate_orientation_description_2">Да бисте започели, држите телефон овако, тако да је екран окренут од вас.</string>
   <string name="tap_to_continue">Двапут додирните било где да бисте наставили</string>
   <string name="instruction_type_letter_a">Додирните 1. тачку левим кажипрстом да бисте унели слово А</string>
@@ -193,7 +193,7 @@
   <string name="index_of_spelling_suggestion">%1$d %2$d</string>
   <string name="grammar_suggestion">Граматички предлог</string>
   <string name="spelling_suggestion">Правописни предлог</string>
-  <string name="custom_gesture_hint_announcement">Приказује се Брајева тастатура. %1$s. %2$s</string>
+  <string name="custom_gesture_hint_announcement">Приказује се тастатура са Брајевом азбуком. <xliff:g id="layout">%1$s</xliff:g>. <xliff:g id="custom_gesture_hint_announcement_repeat">%2$s</xliff:g></string>
   <string name="custom_gesture_hint_announcement_repeat">%1$s. %2$s.</string>
   <string name="custom_gesture_perform">Направите покрет који желите да користите за: %s</string>
   <string name="custom_gesture_action">„%s“</string>
@@ -203,7 +203,7 @@
   <string name="custom_gesture_conflict_try_another">Овај покрет се користи за „%1$s“ и не може да се промени. Пробајте са другим покретом. %2$s</string>
   <string name="custom_gesture_cannot_used">Овај покрет не може да се користи</string>
   <string name="custom_gesture_no_gesture">Није направљен ниједан покрет</string>
-  <string name="custom_gesture_try_another">Пробајте са другим покретом. Да бисте видели листу свих доступних покрета, идите у центар за помоћ за SandFly Брајеву тастатуру. <xliff:g id="cancel">%s</xliff:g></string>
+  <string name="custom_gesture_try_another">Пробајте са другим покретом. Да бисте видели листу свих доступних покрета, идите у центар за помоћ за SandFly тастатуру са Брајевом азбуком. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Покрети се не подударају</string>
   <string name="custom_gesture_perform_again">Поновите покрет који желите да користите. %s</string>
     <string name="tabletop_port_left_announcement">Стони режим, порт за пуњење на левој страни</string>

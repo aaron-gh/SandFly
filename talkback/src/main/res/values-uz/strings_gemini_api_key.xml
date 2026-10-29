@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Manzil https:// bilan boshlanishi kerak. Hech narsa saqlanmadi.</string>
     <string name="dialog_message_ai_service_consent">Rasmlar va skrinshotlar tavsiflash uchun <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> xizmatiga yuboriladi, bu bir necha soniya davom etadi. Shu xizmatning oʻz shartlari va maxfiylik siyosati amal qiladi. Generativ SI tajriba bosqichida, shuning uchun xato qiladi.</string>
-    <string name="ai_service_error_api_key">AI xizmati API kalitini qabul qilmadi. Avtomatik tavsiflarda uning sozlamalarini tekshiring.</string>
+    <string name="ai_service_error_api_key">AI xizmati API kalitini qabul qilmadi. “Rasm va ekran tavsiflari” boʻlimida uning sozlamalarini tekshiring.</string>
     <string name="ai_service_error_quota">AI xizmatidan foydalanish chegarasiga yetdi. Keyinroq qayta urinib ko‘ring.</string>
     <string name="ai_service_error_busy">AI xizmati hozir band. Birozdan keyin qayta urinib ko‘ring.</string>
     <string name="ai_service_error_timeout">AI xizmati javob berish uchun juda uzoq vaqt talab qildi. Qayta urinib ko\'ring.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Hech qanday</string>
-    <string name="ai_service_not_set_up">Hech qanday AI xizmati ishlatilmaydi. Bittasini sozlang yoki Avtomatik tavsiflar sozlamalarida birini tanlang.</string>
+    <string name="ai_service_not_set_up">Hech qanday AI xizmati ishlatilmaydi. Bittasini sozlang yoki “Rasm va ekran tavsiflari” sozlamalarida birini tanlang.</string>
     <string name="ai_provider_none_set_up">Hech qanday AI xizmati sozlanmagan. Quyidagi sozlamalardan birini sozlang.</string>
     <string name="ai_provider_other">Boshqa xizmat</string>
     <string name="title_pref_category_ai_services">AI xizmatlari</string>

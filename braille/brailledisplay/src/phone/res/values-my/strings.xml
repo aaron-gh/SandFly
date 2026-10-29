@@ -7,7 +7,7 @@
   <string name="bd_ime_disabled_dialog_message">သင့်မျက်မမြင်စာဖတ်ကိရိယာကို စာရိုက်ရာတွင်သုံးရန် လက်ကွက် ဆက်တင်များတွင် ၎င်းကို ဖွင့်ပါ</string>
   <string name="bd_ime_disabled_dialog_title_positive">လက်ကွက် ဆက်တင်များ</string>
   <string name="bd_ime_not_default_dialog_title">လက်ကွက်ကို ပြောင်းပါ</string>
-  <string name="bd_ime_not_default_dialog_message">ဆက်ရိုက်ရန် SandFly ဘရေးလ် ကီးဘုတ်ကို သင်၏ စာရိုက်နည်းအဖြစ် သတ်မှတ်ပါ</string>
+  <string name="bd_ime_not_default_dialog_message">ဆက်ရိုက်ရန် SandFly မျက်မမြင်စာရေးစနစ် လက်ကွက်ကို သင်၏ စာရိုက်နည်းအဖြစ် သတ်မှတ်ပါ</string>
   <string name="bd_ime_not_default_dialog_positive">လက်ကွက်ပြောင်းရန်</string>
   <string name="type_unlabeled">အညွှန်းတပ်မထားပါ</string>
   <string name="type_unlabeled_edittext">အညွှန်းတပ်မထားသော တည်းဖြတ်ရန် အကွက်</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">ဘရောက်စ်မုဒ်သုံးရန် မူရင်းကီးမြေပုံမှ အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံသို့ ပြောင်းရပါမည်။ ဤအပြောင်းအလဲသည် သင်၏ မျက်မမြင်စာဖတ်ကိရိယာ ကွန်မန်းအချို့ကို အပ်ဒိတ်လုပ်ပါမည်</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">ဆက်တင်များ</string>
   <string name="bd_command_change_dialog_title">ကွန်မန်းအချို့ကို အပ်ဒိတ်လုပ်ထားသည်</string>
-  <string name="bd_command_change_dialog_message">ဤ SandFly ဗားရှင်း၌ မျက်မမြင်စာဖတ်ကိရိယာကွန်မန်း အပ်ဒိတ်ရှိ-\n\n• ယခင်ဖိုင်- ဒေါ့(တ်) ၁၊ ၇ ကိုနှိပ်\n\n• နောက်ဖိုင်- ဒေါ့(တ်) ၄၊ ၈ ကိုနှိပ်\n\n• ယခင်စာဖတ်ထိန်းချုပ်မှု- ဒေါ့(တ်) ၂၊ ၃၊ ၇၊ ၈ ကိုနှိပ်\n\n• နောက်စာဖတ်ထိန်းချုပ်မှု- ဒေါ့(တ်) ၅၊ ၆၊ ၇၊ ၈ ကိုနှိပ်</string>
+  <string name="bd_command_change_dialog_message">ဤ SandFly ဗားရှင်း၌ မျက်မမြင်စာဖတ်ကိရိယာကွန်မန်း အပ်ဒိတ်ရှိ-\n\n• ယခင်တစ်ခု- ဒေါ့(တ်) ၁၊ ၇ ကိုနှိပ်\n\n• နောက်တစ်ခု- ဒေါ့(တ်) ၄၊ ၈ ကိုနှိပ်\n\n• ယခင် စာဖတ်ခြင်းထိန်းချုပ်မှု- ဒေါ့(တ်) ၂၊ ၃၊ ၇၊ ၈ ကိုနှိပ်\n\n• နောက်ထပ် စာဖတ်ခြင်းထိန်းချုပ်မှု- ဒေါ့(တ်) ၅၊ ၆၊ ၇၊ ၈ ကိုနှိပ်</string>
   <string name="bd_preference_braille_contracted">ချုံ့ထားသော မျက်မမြင်စာရေးစနစ်</string>
   <string name="bd_preference_braille_uncontracted">မျက်မမြင်စာရေးစနစ် အရှည်</string>
   <string name="bd_braille_grade_tips">ချုံ့ထားသောနှင့် ချုံ့မထားသော မျက်မမြင်စာရေးစနစ်အကြား မျက်မမြင်စာဖတ်ကိရိယာသုံး၍ အမြန်ပြောင်းရန် နေရာခြားခလုတ် နှင့် အစက် ၁၊ ၂၊ ၄၊ ၅ နှိပ်ပါ။\n\nသင်သည် မျက်မမြင်စာရေးစနစ် အဆင့်နှစ်ဆင့်လုံးပါသည့် ဘာသာစကားကို အသုံးပြုပါက ဤကွန်မန်းသည် အလုပ်လုပ်သည်။</string>
@@ -219,8 +219,8 @@
   <string name="bd_cmd_global_recents">လတ်တလောသုံးအက်ပ်များ ဖွင့်ရန်</string>
   <string name="bd_cmd_quick_settings">အမြန်ဆက်တင်များ ဖွင့်ရန်</string>
   <string name="bd_cmd_global_all_apps">အက်ပ်အားလုံး ဖွင့်ရန်</string>
-  <string name="bd_cmd_toggle_screen_search">မြင်လွှာတွင်ရှာဖွေခြင်း ဖွင့်ရန်</string>
-  <string name="bd_cmd_edit_custom_label">စိတ်ကြိုက်အညွန်း ပြင်ဆင်ရန်</string>
+  <string name="bd_cmd_toggle_screen_search">စခရင်တွင်ရှာဖွေခြင်း ဖွင့်ရန်</string>
+  <string name="bd_cmd_edit_custom_label">စိတ်ကြိုက်အညွှန်း ပြင်ဆင်ရန်</string>
   <string name="bd_cmd_open_talkback_menu">SandFly မီနူး ဖွင့်ရန်</string>
   <string name="bd_cmd_toggle_voice_feedback">SandFly စကားသံ ဖွင့် (သို့) ပိတ်ရန်</string>
   <string name="bd_cmd_read_stop">ဖတ်နေသည်ကို ရပ်ရန်</string>
@@ -302,7 +302,7 @@
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">အချို့ကွန်မန်းများ မရနိုင်ပါ</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_message">လမ်းညွှန်ခြင်း၊ မျက်မမြင်စာရေးစနစ် ဆက်တင်နှင့် SandFly ဝန်ဆောင်မှုအချို့အတွက် ကွန်မန်းများကို စာရိုက် (သို့) တည်းဖြတ်နေစဉ် မရနိုင်ပါ။\n\n၎င်းကွန်မန်းများသုံးရန် ကီးဘုတ်အရင်ပိတ်ပါ။</string>
   <string name="bd_caption_tutorial_dialog_title">သင့်မျက်မမြင်စာဖတ်ကိရိယာရှိ စာတန်းများ</string>
-  <string name="bd_caption_tutorial_dialog_message">ဤဗီဒီယိုတွင် စာတန်းပြရန်၊ ဖျောက်ရန် နေရာခြားခလုတ်နှင့် ဒေါ့(တ်) ၁၊ ၄၊ ၇၊ ၈ နှိပ်ပါ။\n\nပံ့ပိုးထားသော မီဒီယာအတွက် စာတန်းအော်တိုပြရန် ဆက်တင်များရှိ မျက်မမြင်စာဖတ်ကိရိယာတွင် ‘စာတန်းများပြပါ’ ကိုဖွင့်ပါ။</string>
+  <string name="bd_caption_tutorial_dialog_message">ဤဗီဒီယိုတွင် စာတန်းပြရန်၊ ဖျောက်ရန် နေရာခြားခလုတ်နှင့် ဒေါ့(တ်) ၁၊ ၄၊ ၇၊ ၈ နှိပ်ပါ။\n\nပံ့ပိုးထားသော မီဒီယာအတွက် စာတန်းအော်တိုပြရန် ဆက်တင်များရှိ ‘မျက်မမြင်စာဖတ်ကိရိယာတွင် စာတန်းများ ပြပါ’ ကိုဖွင့်ပါ။</string>
   <string name="bd_caption_tutorial_dialog_checkbox">စာတန်းများ ရနိုင်သည့်အခါ ဤမက်ဆေ့ဂျ်ကို အမြဲပြပါ</string>
   <string name="bd_usb_connect_dialog_title">မျက်မမြင်စာဖတ်ကိရိယာကို USB နှင့် ချိတ်ဆက်ထားသည်</string>
   <string name="bd_usb_connect_dialog_message">သင့် %s ၏ ဘက်ထရီက မျက်မမြင်စာဖတ်ကိရိယာကို အားသွင်းနေသည်။\n\nဘလူးတုသ်သို့ ပြောင်းရန်လိုအပ်ပါက USB (သို့) USB ပလတ်ခုံကို ချိတ်ဆက်မှုဖြုတ်ပြီး SandFly ဆက်တင်များ &gt; မျက်မမြင်စာဖတ်ကိရိယာသို့ သွားပါ။</string>
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">၎င်းသည် SandFlyတွင် အကြောင်းကြားချက်များနှင့် နှိုးစက်များကဲ့သို့သော မက်ဆေ့ဂျ်အချို့ကို သိမ်းဆည်းမည်ဖြစ်သည်။ သင်သည် ဤဆက်တင်ကို အချိန်မရွေး ပြောင်းလဲနိုင်သည်။</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ဖွင့်ရန်</string>
   <string name="popup_message_history_consent_dialog_negative_btn">မလိုပါ</string>
-    <string name="external_display_channel">အခြားအက်ပ်များမှ ဘရေးလ် ဖန်သားပြင်များ</string>
+    <string name="external_display_channel">အခြားအက်ပ်များမှ မျက်မမြင်စာဖတ်ကိရိယာများ</string>
     <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ကို SandFly အတွက် မျက်မမြင်စာဖတ်ကိရိယာအဖြစ် ခွင့်ပြုမလား။</string>
     <string name="external_display_ask_text">သင် ခွင့်မပြုမချင်း SandFly က ၎င်းကို မသုံးပါ။</string>
     <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> သည် SandFly က ဘရေးလ်ဖြင့် ပြသသမျှကို ဖတ်နိုင်မည်ဖြစ်ပြီး ၎င်းတွင် မက်ဆေ့ချ်များနှင့် သင်ရိုက်သည့်အရာများအပါအဝင် မျက်နှာပြင်ပေါ်ရှိ မည်သည့်အရာမဆို ပါဝင်နိုင်သည်။ မျက်မမြင်စာဖတ်ကိရိယာဖြင့် သင်လုပ်နိုင်သကဲ့သို့ စက်ကိုလည်း ထိန်းချုပ်နိုင်မည်- စာရိုက်ခြင်း၊ အက်ပ်ဖွင့်ခြင်းနှင့် SandFly ညွှန်ကြားချက် မည်သည့်ခုကိုမဆို လုပ်ဆောင်ခြင်း။ သင်ယုံကြည်သော အက်ပ်များကိုသာ ခွင့်ပြုပါ။</string>
     <string name="external_display_allow">ခွင့်ပြုပါ</string>
     <string name="external_display_deny">ခွင့်မပြုပါ</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> သည် သင်၏ ဘရေးလ် ဖန်သားပြင် ဖြစ်သည်</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> သည် သင်၏ မျက်မမြင်စာဖတ်ကိရိယာ ဖြစ်သည်</string>
     <string name="external_display_in_use_text">SandFly အသုံးပြုနေစဉ်၊ <xliff:g id="app" example="Notetaker">%1$s</xliff:g> မျက်နှာပြင်ကို ဖတ်ပြီး စက်ပစ္စည်းကို ထိန်းချုပ်နိုင်သည်။</string>
     <string name="external_displays_title">အခြားအက်ပ်များမှ ဖန်သားပြင်များ</string>
     <string name="external_displays_summary">သင်ခွင့်ပြုသော အက်ပ်များသည် SandFly အတွက် မျက်မမြင်စာဖတ်ကိရိယာ ဖြစ်နိုင်သည်။ မျက်မမြင်စာဖတ်ကိရိယာအဖြစ် လုပ်ဆောင်သော အက်ပ်သည် မျက်နှာပြင်ကို ဖတ်နိုင်ပြီး စက်ကို ထိန်းချုပ်နိုင်သည်။</string>
-    <string name="external_displays_none">ဘရေးလ် ဖန်သားပြင် ဖြစ်နိုင်သည့် အက်ပ် မရှိပါ။</string>
+    <string name="external_displays_none">မျက်မမြင်စာဖတ်ကိရိယာ ဖြစ်နိုင်သည့် အက်ပ် မရှိပါ။</string>
 </resources>

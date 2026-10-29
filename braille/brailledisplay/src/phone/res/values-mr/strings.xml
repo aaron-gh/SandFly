@@ -4,7 +4,7 @@
   <string name="bd_application_name">Android Accessibility Suite</string>
   <string name="bd_ime_unavailable_activity_name">SandFly ब्रेल कीबोर्ड उपलब्ध नाही</string>
   <string name="bd_ime_disabled_dialog_title">SandFly ब्रेल कीबोर्ड सुरू करा</string>
-  <string name="bd_ime_disabled_dialog_message">टाइप करण्यासाठी तुमचे ब्रेल प्रदर्शन वापरण्याकरिता, ते सुरू करण्यासाठी इनपुट सेटिंग्जवर जा</string>
+  <string name="bd_ime_disabled_dialog_message">टाइप करण्यासाठी तुमचे ब्रेल डिस्प्ले वापरण्याकरिता, ते सुरू करण्यासाठी इनपुट सेटिंग्जवर जा</string>
   <string name="bd_ime_disabled_dialog_title_positive">इनपुट सेटिंग्ज</string>
   <string name="bd_ime_not_default_dialog_title">तुमच्या इनपुट पद्धतीवर स्विच करा</string>
   <string name="bd_ime_not_default_dialog_message">टाइप करणे पुढे सुरू ठेवण्यासाठी, तुमची इनपुट पद्धत म्हणून SandFly ब्रेल कीबोर्ड सेट करा</string>
@@ -33,7 +33,7 @@
   <string name="bd_preferences_banner_location_permission_not_granted_subtitle">तुम्हाला ब्रेल डिस्प्ले वापरता येण्यासाठी तुम्ही %s करिता \"स्थान\" परवानगी सुरू करणे आवश्यक आहे</string>
   <string name="bd_preferences_banner_permission_not_granted_button">परवानगी सेटिंग्ज</string>
   <string name="bd_preferences_banner_permission_not_granted_system_dialog_button">परवानगी अपडेट करा</string>
-  <string name="bd_preferences_banner_location_settings_not_enabled_subtitle">ब्रेल प्रदर्शन वापरण्यासाठी, %s ला तुमच्या डिव्हाइसचे स्थान अ‍ॅक्सेस करण्याची आवश्यकता आहे</string>
+  <string name="bd_preferences_banner_location_settings_not_enabled_subtitle">ब्रेल डिस्प्ले वापरण्यासाठी, %s ला तुमच्या डिव्हाइसचे स्थान अ‍ॅक्सेस करण्याची आवश्यकता आहे</string>
   <string name="bd_preferences_banner_location_settings_not_enabled_button">स्थान सेटिंग्ज</string>
   <string name="bd_preference_enabler_title">ब्रेल डिस्प्ले वापरा</string>
   <string name="bd_preference_connection_category_title">डिव्हाइस</string>
@@ -153,9 +153,9 @@
   <string name="bd_preference_caption_title">ब्रेल डिस्प्लेवर कॅप्शन दाखवा</string>
   <string name="bd_preference_caption_summary">व्हिडिओ आणि इतर मीडियासाठी</string>
   <string name="bd_bt_connection_with_device_failed_message">%s शी कनेक्ट करू शकत नाही. पुन्हा प्रयत्न करा.</string>
-  <string name="bd_bt_connection_failed_message">ब्रेल प्रदर्शनाशी कनेक्ट करू शकत नाही. पुन्हा प्रयत्न करा.</string>
-  <string name="bd_bt_connection_disconnected_message">ब्रेल प्रदर्शन डिस्‍कनेक्‍ट झाले</string>
-  <string name="bd_switch_to_braille_hardware_message">बाह्य ब्रेल प्रदर्शनावर स्विच करत आहे</string>
+  <string name="bd_bt_connection_failed_message">ब्रेल डिस्प्लेशी कनेक्ट करू शकत नाही. पुन्हा प्रयत्न करा.</string>
+  <string name="bd_bt_connection_disconnected_message">ब्रेल डिस्प्ले डिस्‍कनेक्‍ट झाले</string>
+  <string name="bd_switch_to_braille_hardware_message">बाह्य ब्रेल डिस्प्लेवर स्विच करत आहे</string>
   <string name="bd_affix_label_disabled">बंद केले आहे</string>
   <string name="duration_short">लहान</string>
   <string name="duration_medium">मध्‍यम</string>
@@ -228,9 +228,9 @@
   <string name="bd_cmd_switch_to_next_input_language">पुढील टाइप करण्याच्या भाषेवर स्विच करा</string>
   <string name="bd_cmd_switch_to_next_output_language">पुढील वाचायच्या भाषेवर स्विच करा</string>
   <string name="bd_cmd_toggle_contracted_mode">संक्षिप्त केलेले आणि संक्षिप्त न केलेले यांदरम्यान स्विच करा</string>
-  <string name="bd_cmd_help">ब्रेल प्रदर्शन कमांड उघडा</string>
-  <string name="bd_cmd_braille_display_settings">ब्रेल प्रदर्शन सेटिंग्ज उघडा</string>
-  <string name="bd_cmd_turn_off_braille_display">ब्रेल प्रदर्शन बंद करा</string>
+  <string name="bd_cmd_help">ब्रेल डिस्प्ले कमांड उघडा</string>
+  <string name="bd_cmd_braille_display_settings">ब्रेल डिस्प्ले सेटिंग्ज उघडा</string>
+  <string name="bd_cmd_turn_off_braille_display">ब्रेल डिस्प्ले बंद करा</string>
   <string name="bd_cmd_play_pause_media">मीडिया प्ले करा किंवा थांबवा</string>
   <string name="bd_cmd_switch_to_next_input_method">पुढील कीबोर्डवर स्विच करा</string>
   <string name="bd_cmd_select_all">सर्व मजकूर निवडा</string>
@@ -296,7 +296,7 @@
   <string name="bd_cmd_subcategory_title_controls">नियंत्रणे</string>
   <string name="bd_cmd_subcategory_web_navigation_description">ब्राउझ मोडमध्ये प्रवेश करण्यासाठी कमांड वापरून, त्यानंतर खालील अक्षरे किंवा नंबर यांचे शॉर्टकट टाइप करून तुम्ही वेब पेज झटपट नेव्हिगेट करू शकता\n\nहे शॉर्टकट ब्राउझ मोडमध्ये प्रवेश केल्याशिवायदेखील वापरले जाऊ शकतात, पण तुम्हाला \"पुढील\" कमांडमध्ये ८ बिंदू जोडणे आवश्यक आहे</string>
   <string name="bd_cmd_subcategory_title_web_navigation">सारणी नेव्हिगेशन</string>
-  <string name="bd_turn_off_bd_confirm_dialog_title">ब्रेल प्रदर्शन सेटिंग बंद करायचे आहे का?</string>
+  <string name="bd_turn_off_bd_confirm_dialog_title">ब्रेल डिस्प्ले सेटिंग बंद करायचे आहे का?</string>
   <string name="bd_turn_off_bd_confirm_dialog_message">तुम्ही ते SandFly सेटिंग्जमध्ये कधीही पुन्हा सुरू करू शकता</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">बंद करा</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">काही कमांड उपलब्ध नाहीत</string>
@@ -304,15 +304,15 @@
   <string name="bd_caption_tutorial_dialog_title">तुमच्या ब्रेल डिस्प्लेवरील कॅप्शन</string>
   <string name="bd_caption_tutorial_dialog_message">व्हिडिओसाठी, कॅप्शन दाखवण्यासाठी किंवा लपवण्यासाठी, स्पेस व बिंदू १, ४, ७, ८ प्रेस करा.\n\nसपोर्ट असलेल्या मीडियासाठी आपोआप कॅप्शन दाखवण्यासाठी, सेटिंग्ज मध्ये ब्रेल डिस्प्लेवर कॅप्शन दाखवा सुरू करा.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">कॅप्शन उपलब्ध असताना हा मेसेज नेहमी दाखवा</string>
-  <string name="bd_usb_connect_dialog_title">ब्रेल प्रदर्शन USB शी कनेक्ट केले आहे</string>
-  <string name="bd_usb_connect_dialog_message">तुमची %s ची बॅटरी तुमचे ब्रेल प्रदर्शन चार्ज करत आहे.\n\nतुम्हाला ब्लूटूथवर स्विच करायचे असल्यास, तुमचा USB किंवा USB हब डिस्कनेक्ट करा आणि SandFly सेटिंग्ज &gt; ब्रेल प्रदर्शनवर जा.</string>
+  <string name="bd_usb_connect_dialog_title">ब्रेल डिस्प्ले USB शी कनेक्ट केले आहे</string>
+  <string name="bd_usb_connect_dialog_message">तुमची %s ची बॅटरी तुमचे ब्रेल डिस्प्ले चार्ज करत आहे.\n\nतुम्हाला ब्लूटूथवर स्विच करायचे असल्यास, तुमचा USB किंवा USB हब डिस्कनेक्ट करा आणि SandFly सेटिंग्ज &gt; ब्रेल डिस्प्लेवर जा.</string>
   <string name="bd_device">फोन</string>
   <string name="bd_battery_low_dialog_title">%s बॅटरी कमी आहे</string>
-  <string name="bd_battery_low_dialog_message">तुमच्या %s ची बॅटरी तुमचे ब्रेल प्रदर्शन चार्ज करत आहे.\n\nबॅटरीची बचत करण्यासाठी:\n\n
-    1. ब्रेल प्रदर्शन सेटिंग्जवर जा\n
-    2. USB वरून तुमचे ब्रेल प्रदर्शन डिस्कनेक्ट करा\n
-    3. ब्लूटूथ वापरून तुमचे ब्रेल प्रदर्शन कनेक्ट करा</string>
-  <string name="bd_battery_low_dialog_button">ब्रेल प्रदर्शन सेटिंग्ज</string>
+  <string name="bd_battery_low_dialog_message">तुमच्या %s ची बॅटरी तुमचे ब्रेल डिस्प्ले चार्ज करत आहे.\n\nबॅटरीची बचत करण्यासाठी:\n\n
+    1. ब्रेल डिस्प्ले सेटिंग्जवर जा\n
+    2. USB वरून तुमचे ब्रेल डिस्प्ले डिस्कनेक्ट करा\n
+    3. ब्लूटूथ वापरून तुमचे ब्रेल डिस्प्ले कनेक्ट करा</string>
+  <string name="bd_battery_low_dialog_button">ब्रेल डिस्प्ले सेटिंग्ज</string>
   <string name="popup_message_history_title">मेसेज आणि नोटिफिकेशन इतिहास</string>
   <string name="popup_message_history_clear">सर्व साफ करा</string>
   <string name="popup_message_history_empty">रिक्त</string>

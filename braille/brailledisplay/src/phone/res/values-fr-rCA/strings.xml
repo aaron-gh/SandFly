@@ -305,7 +305,7 @@
   <string name="bd_caption_tutorial_dialog_message">Espace+points 1, 4, 7 et 8 pour afficher ou masquer les sous-titres.\n\nPour les afficher automatiquement, activez « Afficher les sous-titres » sur l\'afficheur braille dans les paramètres.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Toujours afficher ce message lorsque les sous-titres sont accessibles</string>
   <string name="bd_usb_connect_dialog_title">Afficheur braille connecté à l\'USB</string>
-  <string name="bd_usb_connect_dialog_message">La batterie de votre %s recharge votre plage braille.\n\nPour passer au Bluetooth, débranchez votre câble ou concentrateur USB, puis accédez aux paramètres de SandFly &gt; Plage braille.</string>
+  <string name="bd_usb_connect_dialog_message">La batterie de votre %s recharge votre afficheur braille.\n\nPour passer au Bluetooth, débranchez votre câble ou concentrateur USB, puis accédez à Paramètres de SandFly &gt; Afficheur braille.</string>
   <string name="bd_device">téléphone</string>
   <string name="bd_battery_low_dialog_title">Pile de %s faible</string>
   <string name="bd_battery_low_dialog_message">La pile de votre %s recharge votre afficheur braille en ce moment.\n\nPour prolonger l\'autonomie de la pile :\n\n
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">Cette option vous permettra de stocker certains messages, comme les notifications et les alarmes, dans SandFly. Vous pouvez modifier ce paramètre à tout moment.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Activer</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Non merci</string>
-    <string name="external_display_channel">Plages braille d’autres applications</string>
-    <string name="external_display_ask_title">Autoriser <xliff:g id="app" example="Notetaker">%1$s</xliff:g> à servir de plage braille pour SandFly ?</string>
+    <string name="external_display_channel">Afficheurs braille d’autres applications</string>
+    <string name="external_display_ask_title">Autoriser <xliff:g id="app" example="Notetaker">%1$s</xliff:g> à servir d\'afficheur braille pour SandFly ?</string>
     <string name="external_display_ask_text">SandFly ne l’utilisera pas sans votre autorisation.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> pourra lire tout ce que SandFly affiche en braille, soit n’importe quel contenu à l’écran, y compris vos messages et ce que vous saisissez. Cette application pourra aussi contrôler votre appareil comme avec une plage braille : saisir du texte, ouvrir des applications et exécuter toutes les commandes SandFly. N’autorisez que les applications auxquelles vous faites confiance.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> pourra lire tout ce que SandFly affiche en braille, soit n’importe quel contenu à l’écran, y compris vos messages et ce que vous saisissez. Cette application pourra aussi contrôler votre appareil comme avec un afficheur braille : saisir du texte, ouvrir des applications et exécuter toutes les commandes SandFly. N’autorisez que les applications auxquelles vous faites confiance.</string>
     <string name="external_display_allow">Autoriser</string>
     <string name="external_display_deny">Ne pas autoriser</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> est votre plage braille</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> est votre afficheur braille</string>
     <string name="external_display_in_use_text">Pendant que SandFly l’utilise, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> peut lire l’écran et contrôler l’appareil.</string>
-    <string name="external_displays_title">Plages d’autres applications</string>
-    <string name="external_displays_summary">Les applications que vous autorisez peuvent servir de plages braille pour SandFly. Une telle application peut lire l’écran et contrôler l’appareil.</string>
-    <string name="external_displays_none">Aucune application ne peut servir de plage braille.</string>
+    <string name="external_displays_title">Afficheurs d’autres applications</string>
+    <string name="external_displays_summary">Les applications que vous autorisez peuvent servir d\'afficheurs braille pour SandFly. Une telle application peut lire l’écran et contrôler l’appareil.</string>
+    <string name="external_displays_none">Aucune application ne peut servir d\'afficheur braille.</string>
 </resources>

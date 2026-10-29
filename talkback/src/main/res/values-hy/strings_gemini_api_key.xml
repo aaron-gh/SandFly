@@ -12,13 +12,13 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, ապա Flash-Lite, երբ այն զբաղված է</string>
     <string name="gemini_model_loading">Մոդելների ստացում…</string>
     <string name="gemini_model_list_failed">Չհաջողվեց ստանալ մոդելները՝ <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Նախ սահմանեք Gemini API բանալի</string>
+    <string name="gemini_model_needs_key">Նախ սահմանեք Gemini API-ի բանալի</string>
     <string name="gemini_api_terms_link">Gemini API-ի օգտագործման լրացուցիչ պայմաններ</string>
     <string name="ai_service_address_hint">Հասցե, օրինակ՝ https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Մոդել</string>
     <string name="ai_service_address_invalid">Հասցեն պետք է սկսվի https://-ով։ Ոչինչ չի պահվել։</string>
     <string name="dialog_message_ai_service_consent">Պատկերներն ու սքրինշոթները նկարագրության համար ուղարկվում են <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, ինչը տևում է մի քանի վայրկյան։ Գործում են ծառայության սեփական պայմաններն ու գաղտնիության քաղաքականությունը։ Գեներատիվ ԱԲ-ն փորձնական է, ուստի սխալներ է անելու։</string>
-    <string name="ai_service_error_api_key">AI ծառայությունը չի ընդունել API բանալին: Ստուգեք դրա կարգավորումները Ավտոմատ նկարագրություններում:</string>
+    <string name="ai_service_error_api_key">AI ծառայությունը չի ընդունել API բանալին: Ստուգեք դրա կարգավորումները «Պատկերների և էկրանի նկարագրություններ» բաժնում:</string>
     <string name="ai_service_error_quota">AI ծառայության օգտագործման սահմանաչափը սպառվել է։ Փորձեք ավելի ուշ։</string>
     <string name="ai_service_error_busy">AI ծառայությունն այս պահին զբաղված է։ Քիչ անց նորից փորձեք։</string>
     <string name="ai_service_error_timeout">AI ծառայությունը չափազանց երկար էր պատասխանում։ Նորից փորձեք։</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Ոչ մեկը</string>
-    <string name="ai_service_not_set_up">AI ծառայություն չի օգտագործվում: Ստեղծեք մեկը կամ ընտրեք մեկը Ավտոմատ նկարագրությունների կարգավորումներում:</string>
+    <string name="ai_service_not_set_up">AI ծառայություն չի օգտագործվում: Ստեղծեք մեկը կամ ընտրեք մեկը «Պատկերների և էկրանի նկարագրություններ» բաժնի կարգավորումներում:</string>
     <string name="ai_provider_none_set_up">AI ծառայություն չի ստեղծվել: Ստեղծեք մեկը ստորև նշված կարգավորումներում:</string>
     <string name="ai_provider_other">Այլ ծառայություն</string>
     <string name="title_pref_category_ai_services">AI ծառայություններ</string>

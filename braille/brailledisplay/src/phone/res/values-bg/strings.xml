@@ -283,7 +283,7 @@
   <string name="bd_cmd_subcategory_title_window">Прозорец</string>
   <string name="bd_cmd_subcategory_title_place_on_page">Място на страницата</string>
   <string name="bd_cmd_subcategory_title_web_content">Уеб съдържание</string>
-  <string name="bd_cmd_subcategory_title_reading_controls">Управление на четенето</string>
+  <string name="bd_cmd_subcategory_title_reading_controls">Контроли за четене</string>
   <string name="bd_cmd_subcategory_title_auto_scroll">Автоматично превъртане</string>
   <string name="bd_cmd_subcategory_title_move_cursor">Преместване на курсора</string>
   <string name="bd_cmd_subcategory_title_select">Избиране</string>
@@ -305,7 +305,7 @@
   <string name="bd_caption_tutorial_dialog_message">За вкл./изкл. на надписите за този клип натиснете интервал и точки 1, 4, 7, 8.\n\nЗа автоматични надписи, ако се поддържат, включете „Показване на надписите на екрана за брайлово писмо“ в настройките.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Това съобщение да се показва винаги при наличие на надписи</string>
   <string name="bd_usb_connect_dialog_title">Екранът за брайлово писмо е свързан към USB</string>
-  <string name="bd_usb_connect_dialog_message">Батерията на %s зарежда екрана за брайлово писмо.\n\nАко трябва да превключите към Bluetooth, прекратете връзката с USB порта или USB концентратора и отворете настройките за SandFly &gt; „Екран за брайлово писмо“.</string>
+  <string name="bd_usb_connect_dialog_message">Батерията на %s зарежда екрана за брайлово писмо.\n\nАко трябва да превключите към Bluetooth, прекратете връзката с USB порта или USB концентратора и отворете „Настройки на SandFly &gt; Екран за брайлово писмо“.</string>
   <string name="bd_device">телефон</string>
   <string name="bd_battery_low_dialog_title">Батерията е изтощена: %s</string>
   <string name="bd_battery_low_dialog_message">Батерията на %s зарежда екрана за брайлово писмо.\n\nЗа да пестите от заряда ѝ:\n\n
@@ -321,14 +321,14 @@
   <string name="popup_message_history_consent_dialog_positive_btn">Включване</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Не, благодаря</string>
     <string name="external_display_channel">Брайлови дисплеи от други приложения</string>
-    <string name="external_display_ask_title">Да се разреши ли на <xliff:g id="app" example="Notetaker">%1$s</xliff:g> да бъде брайлов дисплей за SandFly?</string>
+    <string name="external_display_ask_title">Да се разреши ли на <xliff:g id="app" example="Notetaker">%1$s</xliff:g> да бъде екран за брайлово писмо за SandFly?</string>
     <string name="external_display_ask_text">SandFly няма да го използва, докато не разрешите.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ще може да чете всичко, което SandFly показва на Брайл, включително всяко съдържание на екрана, съобщенията и текста, който въвеждате. Приложението ще може и да управлява устройството като брайлов дисплей: да въвежда текст, да отваря приложения и да изпълнява всяка команда на SandFly. Разрешавайте достъп само на приложения, на които имате доверие.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> ще може да чете всичко, което SandFly показва на Брайл, включително всяко съдържание на екрана, съобщенията и текста, който въвеждате. Приложението ще може и да управлява устройството като екран за брайлово писмо: да въвежда текст, да отваря приложения и да изпълнява всяка команда на SandFly. Разрешавайте достъп само на приложения, на които имате доверие.</string>
     <string name="external_display_allow">Разрешаване</string>
     <string name="external_display_deny">Забрана</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> е вашият брайлов дисплей</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> е вашият екран за брайлово писмо</string>
     <string name="external_display_in_use_text">Докато SandFly го използва, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> може да чете екрана и да управлява устройството.</string>
     <string name="external_displays_title">Дисплеи от други приложения</string>
-    <string name="external_displays_summary">Приложенията, на които разрешите, могат да бъдат брайлови дисплеи за SandFly. Такова приложение може да чете екрана и да управлява устройството.</string>
-    <string name="external_displays_none">Нито едно приложение не може да бъде брайлов дисплей.</string>
+    <string name="external_displays_summary">Приложенията, на които разрешите, могат да бъдат екрани за брайлово писмо за SandFly. Такова приложение може да чете екрана и да управлява устройството.</string>
+    <string name="external_displays_none">Нито едно приложение не може да бъде екран за брайлово писмо.</string>
 </resources>

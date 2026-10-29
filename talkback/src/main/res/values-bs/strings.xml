@@ -81,7 +81,7 @@
   <string name="title_pref_category_context_menu">Meni SandFlya</string>
   <string name="title_pref_category_selector_menu">Kontrole za čitanje</string>
   <string name="title_pref_category_navigation_menu">Uredite opcije navigacije</string>
-  <string name="title_pref_manage_keyboard_shortcuts">Prečice tastature</string>
+  <string name="title_pref_manage_keyboard_shortcuts">Prečice na tastaturi</string>
   <string name="title_pref_export_custom_labels">Izvezi prilagođene oznake</string>
   <string name="title_pref_help_and_feedback">Pomoć i povratne informacije</string>
   <string name="title_pref_help">Pomoć</string>
@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">Automatski opisi</string>
   <string name="title_pref_gemini_settings">Postavke Geminija</string>
   <string name="title_pref_gemini_enabled">Glasovne komande za Gemini</string>
-  <string name="title_pref_category_automatic_description_summary">Dobijte detaljne opise AI slike kada odaberete \\"Opiši sliku\\" u meniju SandFlya.\n\nTakođer možete dobijati automatske opise kada fokusirate sliku ili ikonu. Automatski opisi funkcioniraju bez internetske veze.</string>
+  <string name="title_pref_category_automatic_description_summary">Dobijte detaljne opise AI slike kada odaberete \"Opis slike\" u meniju SandFlya.\n\nTakođer možete dobijati automatske opise kada fokusirate sliku ili ikonu. Automatski opisi funkcioniraju bez internetske veze.</string>
   <string name="title_pref_icon_detection">Automatski opisi ikona</string>
   <string name="title_pref_image_description">Automatski opisi slika</string>
   <string name="title_pref_text_recognition">Automatski opisi teksta na slikama</string>
@@ -422,7 +422,7 @@
   <string name="shortcut_increase_volume">Pojačavanje</string>
   <string name="shortcut_decrease_volume">Stišavanje</string>
   <string name="shortcut_all_apps">Sve aplikacije</string>
-  <string name="shortcut_braille_keyboard">Prebacivanje na Braillevu tastaturu</string>
+  <string name="shortcut_braille_keyboard">Prebacivanje na tastaturu s Braillevim pismom</string>
   <string name="shortcut_braille_display_settings">Idite na postavke za Brailleov ekran</string>
   <string name="shortcut_tutorial">Otvaranje vodiča</string>
   <string name="shortcut_control_speak_time">Izgovaranje vremena ili izostanak izgovaranja vremena</string>
@@ -473,14 +473,14 @@
   <string name="title_labeling_controls">Oznake</string>
   <string name="title_labeling_show_or_hide_controls">Dodavanje ili uređivanje oznaka</string>
   <string name="title_granularity">Navigacija</string>
-  <string name="title_read_from_top">Čitaj od vrha</string>
+  <string name="title_read_from_top">Čitanje od vrha</string>
   <string name="title_copy_last_spoken_phrase">Kopiranje posljednje izgovorene fraze</string>
   <string name="title_spell_last_spoken_phrase">Izgovaranje posljednje fraze slovo po slovo</string>
   <string name="title_repeat_last_spoken_phrase">Ponavljanje posljednje izgovorene fraze</string>
   <string name="title_custom_action">Radnje</string>
   <string name="title_show_hide_screen">Sakrivanje ili prikazivanje ekrana</string>
-  <string name="title_control_speak_time">Reci vrijeme</string>
-  <string name="title_show_screen_search">Pregled glavnog ekrana</string>
+  <string name="title_control_speak_time">Govori vrijeme</string>
+  <string name="title_show_screen_search">Pretraživanje ekrana</string>
   <string name="title_show_voice_commands">Glasovne komande</string>
   <string name="title_show_keyboard_shortcuts">Prečice na tastaturi</string>
   <string name="talkback_show_talkback_settings">Postavke SandFlya</string>
@@ -546,7 +546,7 @@
   <string name="summary_visited_links">Prelazite na linkove koje ste prethodno otvorili na web stranicama</string>
   <string name="summary_unvisited_links">Prelazite na linkove koje niste otvorili na web stranicama</string>
   <string name="summary_radios">Prelazite na dugmad za odabir na web stranicama</string>
-  <string name="summary_search">Preskočite na druge rezultate pregleda glavnog ekrana</string>
+  <string name="summary_search">Preskočite na druge rezultate pretraživanja ekrana</string>
   <string name="summary_row_column">Prelazite s redova na redove i s kolona na kolone u tabeli</string>
   <string name="summary_row">Prelazite s reda na red u tabeli</string>
   <string name="summary_column">Prelazite s kolone na kolonu u tabeli</string>
@@ -685,7 +685,7 @@
   <string name="button_disable_all_events">Onemogući sve</string>
   <string name="button_enable_all_events">Omogući sve</string>
   <string name="dialog_title_disable_exploration">Želite li onemogućiti Istraživanje dodirom?</string>
-  <string name="dialog_message_disable_exploration">Jeste li sigurni da želite isključiti Istraživanje dodirom?\n\nVaš uređaj više neće reagirati na pokrete prečica ili izgovarati stavke kada dodirnete ekran.</string>
+  <string name="dialog_message_disable_exploration">Jeste li sigurni da želite isključiti „Istraži dodirom“?\n\nVaš uređaj više neće reagirati na pokrete prečica ili izgovarati stavke kada dodirnete ekran.</string>
   <string name="dialog_title_enable_tree_debug">Želite li uključiti ispravljanje grešaka na čvoru stabla?</string>
   <string name="dialog_message_enable_tree_debug">Jeste li sigurni da želite uključiti ispravljanje grešaka na čvoru stabla?\n\nIspravljanje grešaka na čvoru stabla izlaže sadržaj ekrana zapisima vašeg uređaja, što druge aplikacije mogu pročitati.</string>
   <string name="dialog_title_enable_tree_debug_gesture">Ponovo dodijeliti pokret trostrukog dodira s 4 prsta?</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{Nema podudaranja na ekranu}=1{# podudaranje}one{# podudaranje}few{# podudaranja}other{# podudaranja}}</string>
   <string name="msg_no_matches">Nema podudaranja na ovom ekranu</string>
   <string name="dialog_title_continuous_reading_mode">Kako funkcionira neprekidno čitanje</string>
-  <string name="dialog_message_continuous_reading_mode">Nakon što odaberete \"Čitaj od vrha\" ili \"Čitaj od fokusirane stavke\", i dalje se možete kretati na prethodnu ili sljedeću stavku za vrijeme čitanja teksta. Na ovaj način se možete lako vratiti ili preskočiti sadržaj.\n\nDa podesite jačinu zvuka dok SandFly govori, pritisnite dugme za pojačavanje ili stišavanje zvuka.</string>
+  <string name="dialog_message_continuous_reading_mode">Nakon što odaberete \"Čitanje od vrha\" ili \"Čitanje od fokusirane stavke\", i dalje se možete kretati na prethodnu ili sljedeću stavku za vrijeme čitanja teksta. Na ovaj način se možete lako vratiti ili preskočiti sadržaj.\n\nDa podesite jačinu zvuka dok SandFly govori, pritisnite dugme za pojačavanje ili stišavanje zvuka.</string>
   <string name="always_show_this_message_label">Uvijek prikaži ovu poruku</string>
   <string name="dialog_title_voice_commands">Koristite glasovne komande da upravljate SandFlyom</string>
   <string name="dialog_message_voice_commands">Evo šta možete reći:\n\n• Kopiraj.\n• Čitaj od fokusirane stavke.\n• Pronađi [sačuvaj].\n• Govori [brže].\n• Postavke SandFlya.\n\nRecite \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" da vidite listu svih glasovnih komandi</string>
@@ -822,9 +822,9 @@
   <string name="no_navigate_typo_gesture">Da koristite ovo, idite u postavke SandFlya i dodajte pokret za provjeru pravopisa</string>
   <string name="use_spelling_suggestion_hint">Dvaput dodirnite da zamijenite tekst</string>
   <string name="screen_search_keyword_hint">ključna riječ je %1$s</string>
-  <string name="screen_search_no_keyword_hint">Još nema ključne riječi. Da započnete novo pretraživanje, dodirnite i zadržite s 3 prsta ili otvorite pregled glavnog ekrana putem menija SandFlya.</string>
-  <string name="screen_search_no_keyword_hint_pre_r">Još nema ključne riječi. Da započnete novo pretraživanje, prevucite ulijevo, a zatim nadolje ili otvorite pregled glavnog ekrana putem menija SandFlya.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Brailleva tastatura nije uključena. Idite u postavke SandFlya, postavite je i pokušajte ponovo.</string>
+  <string name="screen_search_no_keyword_hint">Još nema ključne riječi. Da započnete novo pretraživanje, dodirnite i zadržite s 3 prsta ili otvorite pretraživanje ekrana putem menija SandFlya.</string>
+  <string name="screen_search_no_keyword_hint_pre_r">Još nema ključne riječi. Da započnete novo pretraživanje, prevucite ulijevo, a zatim nadolje ili otvorite pretraživanje ekrana putem menija SandFlya.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Tastatura s Braillevim pismom nije uključena. Idite u postavke SandFlya, postavite tastaturu s Braillevim pismom i pokušajte ponovo.</string>
   <string name="suggestions_window_available">Prijedlozi su dostupni</string>
   <string name="suggestions_window_available_with_gesture">Prijedlozi su dostupni. Da pristupite, %1$s</string>
   <string name="heads_up_window_available">Dostupno je obavještenje</string>
@@ -881,7 +881,7 @@
   <string name="shortcut_for_dictation_content_without_google_play">Kada je Gboard tastatura na ekranu, sada možete dvaput dodirnuti s dva prsta da započnete glasovno diktiranje, a zatim dvaput dodirnuti s dva prsta da ga zaustavite.</string>
   <string name="announcing_text_formatting_title">Obavještenje o formatiranju teksta</string>
   <string name="announcing_text_formatting_header">SandFly vas sada može obavijestiti o promjenama formatiranja teksta, kao što su boldirano, kurziv ili boja teksta. Da započnete:</string>
-  <string name="announcing_text_formatting_option1">Fokusirajte se na stavku s formatiranjem, otvorite meni SandFlya i odaberite \"Opiši formatiranje teksta\".</string>
+  <string name="announcing_text_formatting_option1">Fokusirajte se na stavku s formatiranjem, otvorite meni SandFlya i odaberite \"Opis formatiranja teksta\" ili</string>
   <string name="announcing_text_formatting_option2">Ili dodajte kontrolu za čitanje za formatiranje teksta koja će uključiti ili isključiti obavještenja o promjenama formatiranja.</string>
   <string name="announcing_text_formatting_middle">Kada budete spremni da isprobate ovo, evo primjera formatiranog teksta:</string>
   <string name="announcing_text_formatting_tail">Ako želite promijeniti način obavještenja o formatiranom tekstu, možete otići u %1$s.</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Postavke Brailleovog ekrana</string>
   <string name="keyboard_smart_browse_mode_title">Tastatura: pametni način rada za pregledanje</string>
   <string name="keyboard_smart_browse_mode_text">SandFlyov pametni način rada za pregledanje isključuje način rada za pregledanje u polju za uređivanje da vam pomogne da pišete pomoću fizičke tastature kada pregledate web. Zatim ga ponovo uključuje kada na webu pređete na polje koje se ne uređuje da možete nastaviti efikasno pregledati. Možete uključiti ili isključiti \"Pametni način rada za pregledanje\" odlaskom u <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Postavke SandFlya &gt; Napredne postavke</string>
-  <string name="advanced_settings_link_tts">Postavke SandFlya, a zatim Napredne postavke</string>
   <string name="keyboard_tutorial_title">Vodič za tastaturu</string>
   <string name="keyboard_tutorial_text">SandFly sada uključuje vodič za tastaturu koji je osmišljen da vam pomogne da naučite prečice na tastaturi i komande za poboljšani raspored tipki kada koristite fizičku tastaturu. Da pristupite vodiču, idite u <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Postavke SandFlya &gt; Vodič za SandFly</string>
-  <string name="tutorial_link_tts">Postavke SandFlya, a zatim Vodič za SandFly</string>
   <string name="tutorial_entry_point_title">Vodič</string>
   <string name="welcome_to_talkback_title">Dobro došli u SandFly</string>
   <string name="talkback_is_on">SandFly je uključen</string>
@@ -1039,10 +1035,10 @@
   <string name="container_item_exit_subtext_pre_r">Da izađete iz ovog spremnika, prevucite nadolje</string>
   <string name="voice_commands_title">Glasovne komande</string>
   <string name="voice_commands_text">Možete brzo kontrolirati SandFly pomoću glasa.\n\nNaprimjer, izgovorite komandu da promijenite navigaciju, pređete na sljedeći naslov, kopirate tekst i još mnogo toga.\n\nDa to sada isprobate, prevucite udesno, a zatim nagore.</string>
-  <string name="using_screen_search_title">Korištenje pregleda glavnog ekrana</string>
-  <string name="using_screen_search_text">Funkcija pregleda glavnog ekrana vam omogućava da potražite određeni sadržaj na ekranu.\n\nDa je isprobate, otvorite meni SandFlya dodirom s 3 prsta i pronađite \"pregled glavnog ekrana\" na meniju. Unesite ključnu riječ, npr. \"naprijed\" da na ekranu pronađete stavke koje sadržavaju taj tekst.\n\nPokušajte sada pretražiti \"naprijed\" da pronađete dugme za naprijed.</string>
-  <string name="screen_search_navigation_title">Kretanje pomoću pregleda glavnog ekrana</string>
-  <string name="screen_search_navigation_text">Nakon što odaberete rezultat, možete brzo prelaziti između rezultata pretraživanja u pregledu glavnog ekrana.\n\nDa to uradite, koristite kontrole za čitanje prevlačenjem ulijevo ili udesno s 3 prsta i pronađite stavku pod nazivom \"pregled glavnog ekrana\".\n\nIsprobajte ovo sada. U nastavku je lista od 3 dugmeta i na svakom od njih se nalazi tekst \"radnja\". Pretražite riječ \"radnja\" pomoću pregleda glavnog ekrana, a zatim se krećite između dugmadi koristeći pregled glavnog ekrana.</string>
+  <string name="using_screen_search_title">Korištenje pretraživanja ekrana</string>
+  <string name="using_screen_search_text">Funkcija pretraživanja ekrana vam omogućava da potražite određeni sadržaj na ekranu.\n\nDa je isprobate, otvorite meni SandFlya dodirom s 3 prsta i pronađite \"Pretraživanje ekrana\" na meniju. Unesite ključnu riječ, npr. \"naprijed\" da na ekranu pronađete stavke koje sadržavaju taj tekst.\n\nPokušajte sada pretražiti \"naprijed\" da pronađete dugme za naprijed.</string>
+  <string name="screen_search_navigation_title">Kretanje pomoću pretraživanja ekrana</string>
+  <string name="screen_search_navigation_text">Nakon što odaberete rezultat, možete brzo prelaziti između rezultata pretraživanja ekrana.\n\nDa to uradite, koristite kontrole za čitanje prevlačenjem ulijevo ili udesno s 3 prsta i pronađite stavku pod nazivom \"Pretraživanje ekrana\".\n\nIsprobajte ovo sada. U nastavku je lista od 3 dugmeta i na svakom od njih se nalazi tekst \"radnja\". Pretražite riječ \"radnja\" pomoću pretraživanja ekrana, a zatim se krećite između dugmadi koristeći pretraživanje ekrana.</string>
   <string name="screen_search_action_button_1_text">1. radnja</string>
   <string name="screen_search_action_button_2_text">2. radnja</string>
   <string name="screen_search_action_button_3_text">3. radnja</string>
@@ -1068,10 +1064,10 @@
   <string name="checking_notifications_text_tail_tts">Da provjerite koje aplikacije imaju uključena obavještenja, idite u Postavke, a zatim Obavještenja.</string>
   <string name="checking_notifications_tips">Da provjerite historiju obavještenja, prevucite s vrha ekrana nadolje s 2 prsta</string>
   <string name="image_description_playground_title">Pokušajte preuzeti opise slika</string>
-  <string name="image_description_playground_content_one">Kada fokusirate sliku, otvorite meni SandFlya i odaberite \"Opiši sliku\".\n\nJedna slika se nalazi u nastavku. Pokušajte dobiti njen opis.</string>
+  <string name="image_description_playground_content_one">Kada fokusirate sliku, otvorite meni SandFlya i odaberite \"Opis slike\".\n\nJedna slika se nalazi u nastavku. Pokušajte dobiti njen opis.</string>
     <string name="image_description_playground_content_two">Postavke za opise slika možete promijeniti bilo kada u Postavkama SandFlya &gt; Opisi slika i ekrana.</string>
     <string name="image_description_playground_content_two_tts">Postavke za opise slika možete promijeniti bilo kada u Postavkama SandFlya, a zatim Opisi slika i ekrana.</string>
-  <string name="image_description_sample_image_content_description">Slika primjera; otvaranje menija SandFlya dodirom s 3 prsta i odabir \"Opiši sliku\" radi slušanja opisa.</string>
+  <string name="image_description_sample_image_content_description">Slika primjera; otvaranje menija SandFlya dodirom s 3 prsta i odabir \"Opis slike\" radi slušanja opisa.</string>
   <string name="practice_gestures_title">Vježbanje pokreta</string>
   <string name="practice_keyboard_gestures_title">Vježbajte prečice na tastaturi</string>
   <string name="pref_gesture_set_key_title">Skup pokreta</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">Prelazak na kretanje u tabeli u tabelama</string>
   <string name="title_text_formatting_menu">Opis formatiranja teksta</string>
   <string name="summary_text_formatting_menu">Za promjene kao što su boldiranje, kurziv, podvlačenje i drugo</string>
-  <string name="title_text_formatting_inline">Formatiranje teksta za govor</string>
+  <string name="title_text_formatting_inline">Izgovaranje formatiranja teksta</string>
   <string name="title_switch_text_formatting">Izgovaranje formatiranja teksta</string>
   <string name="summary_text_formatting_verbosity">Za promjene kao što su boldirano i kurziv</string>
   <string name="summary_text_formatting_selector">Promijenite hoće li se formatiranje, npr. boldirano i kurziv, čitati naglas</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Više</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezerviraj pokrete za Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly prestaje obrađivati jednostruke i dvostruke dodire s dva prsta kako bi ih Samsung Vibration Watch mogao koristiti. Uključite Vibration Watch u postavkama pristupačnosti sata.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Rezervirano za Vibration Watch u Naprednim postavkama</string>
     <string name="title_pref_speakerphone_away_from_ear">Zvučnik kada je telefon daleko od uha</string>
     <string name="summary_pref_speakerphone_away_from_ear">Tokom poziva prebacuje na zvučnik kada odmaknete telefon od uha, a nazad na slušalicu kada ga ponovo prislonite.</string>
     <string name="summary_pref_speakerphone_needs_permission">Potrebno je odobrenje koje Android ne daje čitačima ekrana. Da ga dodijelite, pokrenite ovu komandu putem adb-a ili Shizukua, a zatim se vratite na ovaj ekran: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Aplikacije</string>
     <string name="speech_control_no_apps">Nijedna aplikacija još nije zatražila da govori.</string>
     <string name="speech_control_ask_title">Dozvoliti aplikaciji <xliff:g id="app" example="Tasker">%1$s</xliff:g> da govori putem SandFlya?</string>
-    <string name="speech_control_ask_text">Može izgovarati tekst vašim glasom SandFlya. Ovo možete promijeniti u Naprednim postavkama.</string>
     <string name="speech_control_allow">Dozvoli</string>
     <string name="speech_control_deny">Nemoj dozvoliti</string>
     <string name="permission_speak_label">govor putem SandFlya</string>
@@ -1441,7 +1435,6 @@
         <item quantity="few">%d obavještenja</item>
         <item quantity="other">%d obavještenja</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly je uključen. Zadržite 2 prsta na ekranu 5 sekundi da ga isključite. Da zaustavite prikazivanje ove poruke, isključite Postavke SandFlya &gt; Napredne postavke &gt; Prikaži uputstva za isključivanje SandFlya.</string>
     <string name="edge_gestures_title">Rubovi</string>
     <string name="title_pref_audio_output_device">Uređaj za izlaz zvuka</string>
     <string name="dialog_title_audio_output_device">Odaberite gdje se reproducira zvuk SandFlya</string>
@@ -1524,13 +1517,13 @@
     <string name="summary_support_wrap_around">Uključivanje ili isključivanje prelaska s posljednje stavke na prvu</string>
     <string name="wrap_around_on">Kružno kretanje je uključeno</string>
     <string name="wrap_around_off">Kružno kretanje je isključeno</string>
-    <string name="title_selector_tablet_held_up_faces_away">Uspravan tablet okrenut od vas</string>
-    <string name="summary_support_tablet_held_up_faces_away">Za Braillevu tastaturu na tabletu ili rasklopljenom telefonu</string>
+    <string name="title_selector_tablet_held_up_faces_away">Podignut tablet okrenut je od vas</string>
+    <string name="summary_support_tablet_held_up_faces_away">Za tastaturu s Braillevim pismom na tabletu ili rasklopljenom telefonu</string>
     <string name="tablet_held_up_faces_away_on">Uspravan tablet okrenut od vas je uključeno</string>
     <string name="tablet_held_up_faces_away_off">Uspravan tablet okrenut od vas je isključeno</string>
     <string name="title_keyboard_echo_on_screen">Eho tastature na ekranu</string>
     <string name="title_keyboard_echo_physical">Eho fizičke tastature</string>
-    <string name="title_keyboard_echo_braille_keyboard">Eho Brailleve tastature</string>
+    <string name="title_keyboard_echo_braille_keyboard">Eho tastature s Braillevim pismom</string>
     <string name="title_keyboard_echo_braille_display">Eho Brailleovog ekrana</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Prekidanje govora pri pisanju</string>
@@ -1770,7 +1763,6 @@
     <string name="title_pref_whisper_models">Whisper modeli</string>
     <string name="dictation_whisper_use">Koristi</string>
     <string name="title_pref_dictation_ai_service">AI usluga za diktiranje</string>
-    <string name="dictation_ai_same">Isto kao za automatske opise</string>
     <string name="title_pref_browse_mode_per_app">Zapamti način pregledavanja u svakoj aplikaciji</string>
     <string name="title_pref_export_settings">Izvoz postavki</string>
     <string name="title_pref_import_settings">Uvezi postavke</string>
@@ -1798,4 +1790,12 @@
         <item>1 minuta</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automatsko zaustavljanje nakon tišine</string>
+    <string name="dictation_ai_same">Isto kao u odjeljku „Opisi slika i ekrana“</string>
+    <string name="navigation_settings_link">Postavke SandFlya &gt; Navigacija</string>
+    <string name="navigation_settings_link_tts">„Postavke SandFlya“, zatim „Navigacija“</string>
+    <string name="shortcut_reserved_for_vibration_watch">Rezervirano za Vibration Watch u odjeljku „Pokreti“</string>
+    <string name="speech_control_ask_text">Aplikacija može izgovarati tekst glasom SandFlya. Ovo možete promijeniti u odjeljku „Postavke“, „Govor“, „Dozvoli drugim aplikacijama da govore“.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly je uključen. Zadržite 2 prsta na ekranu 5 sekundi da ga isključite. Da zaustavite prikazivanje ove poruke, isključite „Postavke SandFlya &gt; Pauziranje i isključivanje &gt; Prikaži uputstva za isključivanje SandFlya“.</string>
+    <string name="tutorial_link">Postavke SandFlya &gt; Pomoć i povratne informacije &gt; Vodič za SandFly</string>
+    <string name="tutorial_link_tts">„Postavke SandFlya“, zatim „Pomoć i povratne informacije“, zatim „Vodič za SandFly“</string>
 </resources>

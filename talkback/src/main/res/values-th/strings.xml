@@ -165,10 +165,10 @@
   <string name="keycombo_menu_global_recent">แอปล่าสุด</string>
   <string name="keycombo_menu_global_notifications">การแจ้งเตือน</string>
   <string name="keycombo_menu_global_play_pause_media">เล่นหรือหยุดสื่อชั่วคราว</string>
-  <string name="keycombo_menu_global_scroll_forward_reading_menu">เลือกตัวควบคุมการอ่านถัดไป</string>
-  <string name="keycombo_menu_global_scroll_backward_reading_menu">เลือกตัวควบคุมการอ่านก่อนหน้า</string>
-  <string name="keycombo_menu_global_adjust_reading_settings_previous">ปรับตัวควบคุมการอ่านขึ้น</string>
-  <string name="keycombo_menu_global_adjust_reading_setting_next">ปรับตัวควบคุมการอ่านลง</string>
+  <string name="keycombo_menu_global_scroll_forward_reading_menu">เลือกการควบคุมการอ่านถัดไป</string>
+  <string name="keycombo_menu_global_scroll_backward_reading_menu">เลือกการควบคุมการอ่านก่อนหน้า</string>
+  <string name="keycombo_menu_global_adjust_reading_settings_previous">ปรับการควบคุมการอ่านขึ้น</string>
+  <string name="keycombo_menu_global_adjust_reading_setting_next">ปรับการควบคุมการอ่านลง</string>
   <string name="keycombo_menu_global_hide_or_show_screen">ซ่อนหรือแสดงหน้าจอ</string>
   <string name="keycombo_menu_global_toggle_key_combo_pass_through_once">ผ่านไปยังระบบ</string>
   <string name="keycombo_menu_global_speech_volume_increase">เพิ่มระดับเสียงพูด</string>
@@ -320,7 +320,7 @@
   <string name="title_pref_touch_explore_timeout">ความล่าช้าโฟกัสการพิมพ์</string>
   <string name="message_pref_touch_explore_latency">การหน่วงเวลาที่สั้นลงจะทำให้ SandFly พูดเร็วขึ้นหลังจากที่คุณแตะแป้นพิมพ์\n\nเลือกการหน่วงเวลา</string>
   <string name="title_pref_touch_focus_timeout">ความล่าช้าโฟกัส</string>
-  <string name="title_pref_talkback_gesture_detection">จัดการการแตะสัมผัสใน SandFly</string>
+  <string name="title_pref_talkback_gesture_detection">จัดการท่าทางสัมผัสใน SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">ปิดและเปิด SandFly ขึ้นมาใหม่เพื่อเปิดใช้การตั้งค่า</string>
   <string name="title_pref_auto_image_captioning">คำอธิบายอัตโนมัติ</string>
   <string name="title_pref_gemini_settings">การตั้งค่า Gemini</string>
@@ -865,7 +865,7 @@
   <string name="new_shortcut_gesture_cut_text_announcement">ตัดข้อความแล้ว โดยทั่วไปการดำเนินการนี้จะตัดข้อความที่คุณได้เลือกไว้ เลื่อนไปทางขวาเพื่อดำเนินการต่อ</string>
   <string name="new_shortcut_gesture_selection_mode_text">หากต้องการเริ่มหรือจบโหมดการเลือกข้อความ ให้ใช้ 2 นิ้วแตะ 2 ครั้งแล้วค้างไว้</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">โหมดการเลือกเปิดหรือปิดอยู่ โดยทั่วไปท่าทางสัมผัสนี้จะเริ่มหรือหยุดโหมดการเลือกข้อความเมื่อคุณอยู่ในช่องป้อนข้อมูล เลื่อนไปทางขวาเพื่อดำเนินการต่อ</string>
-  <string name="new_shortcut_gesture_reading_menu_text">หากต้องการใช้ตัวควบคุมการอ่าน ให้ใช้ 3 นิ้วปัดไปทางซ้ายหรือขวา หรือจะใช้ 3 นิ้วปัดขึ้นหรือลงก็ได้เช่นกัน</string>
+  <string name="new_shortcut_gesture_reading_menu_text">หากต้องการใช้การควบคุมการอ่าน ให้ใช้ 3 นิ้วปัดไปทางซ้ายหรือขวา หรือจะใช้ 3 นิ้วปัดขึ้นหรือลงก็ได้เช่นกัน</string>
   <string name="new_shortcut_gesture_note">หมายเหตุ: ข้อมูลนี้อาจไม่ถูกต้องทั้งหมดเนื่องจากคุณได้ปรับแต่งท่าทางสัมผัสบางอย่าง หากต้องการตรวจสอบท่าทางสัมผัส ให้ไปที่การตั้งค่า SandFly</string>
   <string name="welcome_to_android11_text">เราได้เพิ่มท่าทางสัมผัสใหม่เพื่อให้ SandFly ใช้งานได้เร็วขึ้นและง่ายขึ้น\n\nคุณลองใช้ท่าทางสัมผัสใหม่ได้ในหน้าจอนี้ คุณดูข้อมูลนี้ในการตั้งค่า SandFly ได้ทุกเมื่อ</string>
   <string name="new_gesture_notification_title">ท่าทางสัมผัสใหม่ใน SandFly</string>
@@ -911,12 +911,8 @@
   <string name="braille_display_settings_link">การตั้งค่าจอแสดงผลอักษรเบรลล์</string>
   <string name="keyboard_smart_browse_mode_title">แป้นพิมพ์: โหมดอ่านอัจฉริยะ</string>
   <string name="keyboard_smart_browse_mode_text">โหมดอ่านอัจฉริยะของ SandFly จะปิดโหมดอ่านในช่องแก้ไขเพื่อช่วยให้คุณพิมพ์ด้วยแป้นพิมพ์จริงได้เมื่อท่องเว็บ จากนั้นโหมดนี้จะเปิดอีกครั้งเมื่อคุณข้ามไปยังช่องที่ไม่ใช่ช่องแก้ไขบนเว็บเพื่อให้คุณสามารถเรียกดูได้อย่างมีประสิทธิภาพต่อไป คุณเปิดหรือปิด \"โหมดอ่านอัจฉริยะ\" ได้ใน<xliff:g id="settings_path">%1$s</xliff:g></string>
-  <string name="advanced_settings_link">การตั้งค่า SandFly &gt; การตั้งค่าขั้นสูง</string>
-  <string name="advanced_settings_link_tts">การตั้งค่า SandFly จากนั้นไปที่ \"การตั้งค่าขั้นสูง\"</string>
   <string name="keyboard_tutorial_title">บทแนะนำเกี่ยวกับแป้นพิมพ์</string>
   <string name="keyboard_tutorial_text">ตอนนี้ SandFly มีบทแนะนำเกี่ยวกับแป้นพิมพ์ที่ออกแบบมาเพื่อช่วยให้คุณเรียนรู้เรื่องแป้นพิมพ์ลัดและคำสั่งสำหรับคีย์แมปที่ปรับปรุงแล้วเมื่อใช้แป้นพิมพ์จริง หากต้องการอ่านบทแนะนำ ให้ไปที่<xliff:g id="settings_path">%1$s</xliff:g></string>
-  <string name="tutorial_link">การตั้งค่า SandFly &gt; บทแนะนำของ SandFly</string>
-  <string name="tutorial_link_tts">การตั้งค่า SandFly จากนั้นไปที่ \"บทแนะนำของ SandFly\"</string>
   <string name="tutorial_entry_point_title">บทแนะนำ</string>
   <string name="welcome_to_talkback_title">ยินดีต้อนรับสู่ SandFly</string>
   <string name="talkback_is_on">SandFly เปิดอยู่</string>
@@ -950,7 +946,7 @@
   <string name="menus_talkback_menu_text">เมนู SandFly มีการตั้งค่าและการควบคุมที่คุณอาจต้องการใช้บ่อยๆ\n\nเปิดเมนู SandFly เลยโดยใช้ 3 นิ้วแตะหน้าจอ</string>
   <string name="menus_talkback_menu_text_pre_r">เมนู SandFly มีการตั้งค่าและการควบคุมที่คุณอาจต้องการใช้บ่อยๆ\n\nเปิดเมนู SandFly เลยโดยปัดลงแล้วไปทางขวา</string>
   <string name="menus_selector_text">ทางลัดเหล่านี้ช่วยให้คุณเปลี่ยนแปลงการตั้งค่าได้อย่างรวดเร็ว เช่น เปลี่ยนการนำทางจากอักขระเป็นคำ หรือเปลี่ยนความเร็วในการพูดของ SandFly\n\nหากต้องการเปลี่ยนการควบคุมการอ่านอย่างรวดเร็ว ให้ใช้ 3 นิ้วปัดไปทางซ้ายหรือขวา\n\nคุณปรับแต่งเมนู SandFly และการควบคุมการอ่านภายหลังได้ในการตั้งค่า SandFly</string>
-  <string name="menus_selector_text_pre_r">ทางลัดเหล่านี้ช่วยให้คุณเปลี่ยนแปลงการตั้งค่าได้อย่างรวดเร็ว เช่น เปลี่ยนการนำทางจากอักขระเป็นคำ หรือเปลี่ยนความเร็วในการพูดของ SandFly\n\nหากต้องการเปลี่ยนตัวควบคุมการอ่านอย่างรวดเร็ว ให้ปัดลงแล้วกลับขึ้นไป\n\nคุณปรับแต่งเมนู SandFly และตัวควบคุมการอ่านภายหลังได้ในการตั้งค่า SandFly</string>
+  <string name="menus_selector_text_pre_r">ทางลัดเหล่านี้ช่วยให้คุณเปลี่ยนแปลงการตั้งค่าได้อย่างรวดเร็ว เช่น เปลี่ยนการนำทางจากอักขระเป็นคำ หรือเปลี่ยนความเร็วในการพูดของ SandFly\n\nหากต้องการเปลี่ยนการควบคุมการอ่านอย่างรวดเร็ว ให้ปัดลงแล้วกลับขึ้นไป\n\nคุณปรับแต่งเมนู SandFly และการควบคุมการอ่านภายหลังได้ในการตั้งค่า SandFly</string>
   <string name="all_set_title">เรียบร้อยแล้ว</string>
   <string name="all_set_text">คุณพร้อมที่จะใช้ SandFly แล้ว\n\nเรียนรู้หัวข้ออื่นๆ ต่อเลย หรือดูข้อมูลนี้ได้ทุกเมื่อในการตั้งค่า SandFly</string>
   <string name="talkback_tutorial_text">ปัดไปทางขวาเพื่อเลือกหัวข้อ โปรดเปิด SandFly ก่อนเริ่มต้นใช้งานเพื่อให้ได้รับประสบการณ์การใช้งานที่ดีที่สุด</string>
@@ -1043,7 +1039,7 @@
   <string name="using_screen_search_title">กำลังใช้การค้นหาในหน้าจอ</string>
   <string name="using_screen_search_text">ฟีเจอร์การค้นหาในหน้าจอช่วยให้คุณค้นหาเนื้อหาที่เฉพาะเจาะจงบนหน้าจอได้\n\nหากต้องการลองใช้ ให้เปิดเมนู SandFly ด้วยการใช้ 3 นิ้วแตะหน้าจอ แล้วค้นหา \"การค้นหาในหน้าจอ\" ในเมนู พิมพ์คีย์เวิร์ด เช่น \"ถัดไป\" เพื่อค้นหารายการที่มีข้อความนั้นในหน้าจอ\n\nลองค้นหาคำว่า \"ถัดไป\" ตอนนี้เลยเพื่อหาปุ่มถัดไป</string>
   <string name="screen_search_navigation_title">ไปยังส่วนต่างๆ โดยการค้นหาในหน้าจอ</string>
-  <string name="screen_search_navigation_text">คุณสามารถย้ายไปมาระหว่างผลการค้นหาต่างๆ จากการค้นหาในหน้าจอได้อย่างรวดเร็วหลังจากเลือกผลการค้นหาแล้ว\n\nโดยการใช้ตัวควบคุมการอ่านด้วยการปัดไปทางซ้ายหรือขวาโดยใช้ 3 นิ้ว และค้นหารายการที่เรียกว่าการค้นหาในหน้าจอ\n\nลองเลย ด้านล่างคือรายการของปุ่ม 3 ปุ่ม ซึ่งทั้งหมดมีข้อความว่า \"การดำเนินการ\" ค้นหา \"การดำเนินการ\" โดยใช้การค้นหาบนหน้าจอ จากนั้นนำทางโดยใช้การค้นหาในหน้าจอเพื่อเลื่อนไปมาระหว่างปุ่มต่างๆ</string>
+  <string name="screen_search_navigation_text">คุณสามารถย้ายไปมาระหว่างผลการค้นหาต่างๆ จากการค้นหาในหน้าจอได้อย่างรวดเร็วหลังจากเลือกผลการค้นหาแล้ว\n\nโดยการใช้การควบคุมการอ่านด้วยการปัดไปทางซ้ายหรือขวาโดยใช้ 3 นิ้ว และค้นหารายการที่เรียกว่าการค้นหาในหน้าจอ\n\nลองเลย ด้านล่างคือรายการของปุ่ม 3 ปุ่ม ซึ่งทั้งหมดมีข้อความว่า \"การดำเนินการ\" ค้นหา \"การดำเนินการ\" โดยใช้การค้นหาบนหน้าจอ จากนั้นนำทางโดยใช้การค้นหาในหน้าจอเพื่อเลื่อนไปมาระหว่างปุ่มต่างๆ</string>
   <string name="screen_search_action_button_1_text">การดำเนินการ 1</string>
   <string name="screen_search_action_button_2_text">การดำเนินการ 2</string>
   <string name="screen_search_action_button_3_text">การดำเนินการ 3</string>
@@ -1070,8 +1066,8 @@
   <string name="checking_notifications_tips">หากต้องการตรวจสอบประวัติการแจ้งเตือน ให้ใช้ 2 นิ้วปัดลงจากด้านบนของหน้าจอ</string>
   <string name="image_description_playground_title">ลองฟังคำอธิบายรูปภาพ</string>
   <string name="image_description_playground_content_one">เมื่อคุณโฟกัสที่รูปภาพ ให้เปิดเมนู SandFly แล้วเลือก \"อธิบายรูปภาพ\"\n\nมีรูปภาพด้านล่างนี้ 1 รูป ลองฟังคำอธิบายรูปภาพดูสิ</string>
-  <string name="image_description_playground_content_two">คุณสามารถเปลี่ยนการตั้งค่าคำอธิบายรูปภาพได้ตลอดเวลาในการตั้งค่า SandFly &gt; คำอธิบายอัตโนมัติ</string>
-  <string name="image_description_playground_content_two_tts">คุณเปลี่ยนการตั้งค่าคำอธิบายรูปภาพได้ทุกเมื่อในการตั้งค่า SandFly จากนั้นเลือกคำอธิบายอัตโนมัติ</string>
+  <string name="image_description_playground_content_two">คุณสามารถเปลี่ยนการตั้งค่าคำอธิบายรูปภาพได้ตลอดเวลาในการตั้งค่า SandFly &gt; คำอธิบายรูปภาพและหน้าจอ</string>
+  <string name="image_description_playground_content_two_tts">คุณเปลี่ยนการตั้งค่าคำอธิบายรูปภาพได้ทุกเมื่อในการตั้งค่า SandFly จากนั้นเลือกคำอธิบายรูปภาพและหน้าจอ</string>
   <string name="image_description_sample_image_content_description">สุ่มตัวอย่างรูปภาพโดยใช้ 3 นิ้วแตะเพื่อเปิดเมนู SandFly แล้วเลือก \"อธิบายรูปภาพ\" เพื่อฟังคำอธิบาย</string>
   <string name="practice_gestures_title">ใช้ท่าทางสัมผัส</string>
   <string name="practice_keyboard_gestures_title">ฝึกใช้แป้นพิมพ์ลัด</string>
@@ -1353,7 +1349,7 @@
     <string name="battery_optimization_notification_title">การเพิ่มประสิทธิภาพแบตเตอรี่อาจหยุด SandFly</string>
     <string name="battery_optimization_notification_text">ในโทรศัพท์เครื่องนี้ โหมดประหยัดแบตเตอรี่อาจหยุด SandFly หลังจากหน้าจอปิด ทำให้ไม่มีเสียงพูดจนกว่าจะรีสตาร์ท แตะเพื่อเปิดการเพิ่มประสิทธิภาพแบตเตอรี่ เลือกแอปทั้งหมด ค้นหา SandFly แล้วเลือกไม่ต้องเพิ่มประสิทธิภาพ</string>
     <string name="title_pref_mute_speech_while_recording">เงียบขณะบันทึก</string>
-    <string name="summary_pref_mute_speech_while_recording">ในขณะที่แอปบันทึกโดยไม่ต้องเชื่อมต่อหูฟัง SandFly พูดเฉพาะตอบรับท่าทาง ปุ่ม และการพิมพ์ของคุณเท่านั้น และเงียบไว้สำหรับสิ่งต่างๆ เช่น การแจ้งเตือน เพื่อไม่ให้มีการบันทึก</string>
+    <string name="summary_pref_mute_speech_while_recording">ในขณะที่แอปบันทึกโดยไม่ต้องเชื่อมต่อหูฟัง SandFly พูดเฉพาะตอบรับท่าทางสัมผัส แป้น และการพิมพ์ของคุณเท่านั้น และเงียบไว้สำหรับสิ่งต่างๆ เช่น การแจ้งเตือน เพื่อไม่ให้มีการบันทึก</string>
     <string name="title_pref_switch_languages">สลับภาษาโดยอัตโนมัติ</string>
     <string name="title_pref_switch_dialects">สลับสำเนียงโดยอัตโนมัติ</string>
     <string name="category_collapsed">ส่วนที่ยุบ</string>
@@ -1382,7 +1378,6 @@
     <string name="title_pref_category_more">เพิ่มเติม</string>
     <string name="title_pref_reserve_vibration_watch_gestures">สงวนท่าทางสัมผัสไว้สำหรับ Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly จะหยุดจัดการการแตะครั้งเดียวและแตะสองครั้งด้วยสองนิ้ว เพื่อให้ Samsung Vibration Watch ใช้ได้ เปิด Vibration Watch ในการตั้งค่าการช่วยเหลือพิเศษของนาฬิกา</string>
-    <string name="shortcut_reserved_for_vibration_watch">สงวนไว้สำหรับ Vibration Watch ในการตั้งค่าขั้นสูง</string>
     <string name="title_pref_speakerphone_away_from_ear">ลำโพงเมื่ออยู่ห่างจากหูของคุณ</string>
     <string name="summary_pref_speakerphone_away_from_ear">ระหว่างการโทร จะสลับไปใช้ลำโพงเมื่อคุณยกโทรศัพท์ออกจากหู และกลับไปใช้ลำโพงสนทนาเมื่อคุณยกขึ้นแนบหูอีกครั้ง</string>
     <string name="summary_pref_speakerphone_needs_permission">ต้องใช้สิทธิ์ที่ Android ไม่ให้แก่โปรแกรมอ่านหน้าจอ หากต้องการให้สิทธิ์ ให้เรียกใช้คำสั่งนี้ด้วย adb หรือ Shizuku แล้วกลับมาที่หน้าจอนี้: %1$s</string>
@@ -1394,12 +1389,11 @@
     <string name="speech_control_apps_category">แอป</string>
     <string name="speech_control_no_apps">ยังไม่มีแอปใดขอให้พูด</string>
     <string name="speech_control_ask_title">อนุญาตให้ <xliff:g id="app" example="Tasker">%1$s</xliff:g> พูดผ่าน SandFly หรือไม่</string>
-    <string name="speech_control_ask_text">สามารถพูดข้อความด้วยเสียง SandFly ของคุณได้ คุณสามารถเปลี่ยนสิ่งนี้ได้ในการตั้งค่าขั้นสูง</string>
     <string name="speech_control_allow">อนุญาต</string>
     <string name="speech_control_deny">ไม่อนุญาต</string>
     <string name="permission_speak_label">พูดผ่าน SandFly</string>
     <string name="permission_speak_description">ให้แอปขอพูดข้อความด้วยเสียง SandFly ของคุณ SandFly ถามคุณก่อนที่แอปจะพูดได้</string>
-    <string name="permission_braille_display_label">ขอเป็นเครื่องแสดงอักษรเบรลล์สำหรับ SandFly</string>
+    <string name="permission_braille_display_label">ขอเป็นจอแสดงผลอักษรเบรลล์สำหรับ SandFly</string>
     <string name="permission_braille_display_description">อนุญาตให้แอปขอเป็นจอแสดงผลอักษรเบรลล์ของ SandFly หากคุณอนุญาตใน SandFly แอปจะอ่านทุกอย่างบนหน้าจอและควบคุมอุปกรณ์ของคุณได้ SandFly จะถามคุณก่อน</string>
     <string name="title_pref_phonetic_letters_mode">พูดตัวอักษรตามสัทศาสตร์</string>
     <string name="phonetic_letters_mode_off">ปิด</string>
@@ -1543,7 +1537,6 @@
     <string name="quick_settings_remove">ลบ</string>
     <string name="quick_settings_added">%1$s เพิ่มแล้ว</string>
     <string name="quick_settings_removed">%1$s ลบแล้ว</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly เปิด กด 2 นิ้วบนหน้าจอเป็นเวลา 5 วินาทีเพื่อปิด หากต้องการหยุดแสดงข้อความนี้ ให้ปิดการตั้งค่า SandFly &gt; การตั้งค่าขั้นสูง &gt; แสดงคำแนะนำในการปิด SandFly</string>
     <string name="edge_gestures_title">ขอบ</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ทางลัดอื่นสำหรับเปิดหรือปิดโหมดเรียกดู</string>
     <string name="title_pref_vibration_strength">ความแรงของการสั่นสะเทือน</string>
@@ -1736,8 +1729,8 @@
     <string name="template_item_details_order_dropped">วาง <xliff:g id="detail" example="Name">%1$s</xliff:g> แล้ว <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly จะพูดรายละเอียดของรายการตามลำดับนี้ หากต้องการเปลี่ยน ให้แตะรายละเอียดค้างไว้ แล้วลากขึ้นหรือลง เมื่อเปิด SandFly อยู่ ให้แตะสองครั้งค้างไว้แล้วลาก คุณยังใช้การดำเนินการเลื่อนขึ้นและเลื่อนลงได้ด้วย</string>
     <string name="title_pref_speak_items_before_scroll">พูดรายการก่อนที่จะเลื่อนเข้ามาในมุมมอง</string>
-    <string name="gemini_error_api_key">Gemini ไม่ยอมรับคีย์ API ตรวจสอบคีย์ในการตั้งค่าคำอธิบายอัตโนมัติ</string>
-    <string name="gemini_error_quota">ถึงขีดจำกัดการใช้งานสำหรับคีย์ Gemini API ของคุณแล้ว ลองอีกครั้งในภายหลัง</string>
+    <string name="gemini_error_api_key">Gemini ไม่ยอมรับคีย์ API ตรวจสอบคีย์ในการตั้งค่าคำอธิบายรูปภาพและหน้าจอ</string>
+    <string name="gemini_error_quota">ถึงขีดจำกัดการใช้งานสำหรับคีย์ API ของ Gemini ของคุณแล้ว ลองอีกครั้งในภายหลัง</string>
     <string name="gemini_error_busy">Gemini ไม่ว่างในขณะนี้ โปรดลองอีกครั้งในอีกสักครู่</string>
     <string name="gemini_error_timeout">Gemini ใช้เวลาตอบนานเกินไป ลองอีกครั้ง</string>
     <string name="gemini_error_with_code">Gemini ไม่สามารถตอบได้ เกิดข้อผิดพลาด <xliff:g id="http_status" example="400">%1$d</xliff:g></string>
@@ -1747,7 +1740,7 @@
     <string name="image_qna_stop_listening">หยุดฟัง</string>
     <string name="image_qna_type_question">พิมพ์คำถาม</string>
     <string name="shortcut_dictate">พิมพ์ตามเสียงอ่าน</string>
-    <string name="title_pref_ai_dictation">แก้ไขการพิมพ์ด้วยเสียงด้วย AI</string>
+    <string name="title_pref_ai_dictation">แก้ไขการพิมพ์ตามเสียงพูดด้วย AI</string>
     <string name="dictation_not_corrected">ไม่ได้แก้ไข พิมพ์ตามที่จดจำได้</string>
     <string name="dictation_nothing_recognized">ไม่รู้จำอะไรเลย</string>
     <string name="dictation_unavailable">การรู้จำเสียงไม่พร้อมใช้งาน</string>
@@ -1766,8 +1759,7 @@
     <string name="dictation_whisper_needs_model">Whisper ต้องใช้โมเดลที่ดาวน์โหลดแล้ว</string>
     <string name="title_pref_whisper_models">โมเดล Whisper</string>
     <string name="dictation_whisper_use">ใช้</string>
-    <string name="title_pref_dictation_ai_service">บริการเอไอสำหรับการพิมพ์ตามเสียงพูด</string>
-    <string name="dictation_ai_same">เหมือนกับคำอธิบายอัตโนมัติ</string>
+    <string name="title_pref_dictation_ai_service">บริการ AI สำหรับการพิมพ์ตามเสียงพูด</string>
     <string name="title_pref_browse_mode_per_app">จำโหมดเรียกดูในแต่ละแอป</string>
     <string name="title_pref_export_settings">ส่งออกการตั้งค่า</string>
     <string name="title_pref_import_settings">นำเข้าการตั้งค่า</string>
@@ -1795,4 +1787,12 @@
     <string name="shortcut_previous_track">แทร็กก่อนหน้า</string>
     <string name="sound_mode_needs_access">อนุญาตการเข้าถึงห้ามรบกวนเพื่อเปิดหรือปิดปิดเสียง</string>
     <string name="title_pref_dictation_auto_stop">หยุดอัตโนมัติหลังจากเงียบ</string>
+    <string name="dictation_ai_same">เหมือนกับ คำอธิบายรูปภาพและหน้าจอ</string>
+    <string name="navigation_settings_link">การตั้งค่า SandFly > การนำทาง</string>
+    <string name="navigation_settings_link_tts">การตั้งค่า SandFly จากนั้นไปที่ \"การนำทาง\"</string>
+    <string name="shortcut_reserved_for_vibration_watch">สงวนไว้สำหรับ Vibration Watch ใน \"ท่าทางสัมผัส\"</string>
+    <string name="speech_control_ask_text">แอปนี้พูดข้อความด้วยเสียง SandFly ของคุณได้ เปลี่ยนการตั้งค่านี้ได้ที่ การตั้งค่า > การพูด > อนุญาตให้แอปอื่นพูด</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly เปิดอยู่ ใช้ 2 นิ้วกดหน้าจอค้างไว้ 5 วินาทีเพื่อปิด หากต้องการหยุดแสดงข้อความนี้ ให้ปิด การตั้งค่า SandFly &gt; หยุดชั่วคราวและปิด &gt; แสดงวิธีการปิด SandFly</string>
+    <string name="tutorial_link">การตั้งค่า SandFly > ความช่วยเหลือและความคิดเห็น > บทแนะนำของ SandFly</string>
+    <string name="tutorial_link_tts">การตั้งค่า SandFly จากนั้นไปที่ \"ความช่วยเหลือและความคิดเห็น\" จากนั้นไปที่ \"บทแนะนำของ SandFly\"</string>
 </resources>

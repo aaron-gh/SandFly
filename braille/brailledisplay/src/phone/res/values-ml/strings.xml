@@ -42,7 +42,7 @@
   <string name="bd_preference_languages_and_commands_category_title">ഭാഷകളും കമാൻഡുകളും</string>
   <string name="pref_codes_title">ഭാഷകൾ</string>
   <string name="pref_preferred_output_codes_title">വായിക്കുന്നതിനായി തിരഞ്ഞെടുത്ത ഭാഷ</string>
-  <string name="pref_preferred_input_codes_title">ടൈപ്പ് ചെയ്യുന്നതിനായി തിരഞ്ഞെടുത്ത ഭാഷ</string>
+  <string name="pref_preferred_input_codes_title">ടൈപ്പ് ചെയ്യാൻ മുൻഗണന നൽകുന്ന ഭാഷ</string>
   <string name="pref_preferred_braille_grade_title">തിരഞ്ഞെടുത്ത ബ്രെയ്‌ലി ഗ്രേഡ്</string>
   <string name="bd_switch_input_code_gesture_tip_dialog_title">ടൈപ്പ് ചെയ്യുന്ന ഭാഷ വേഗത്തിൽ മാറ്റുക</string>
   <string name="bd_switch_output_code_gesture_tip_dialog_title">വായിക്കുന്നതിനുള്ള ഭാഷ വേഗത്തിൽ മാറ്റുക</string>
@@ -302,7 +302,7 @@
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">ചില കമാൻഡുകൾ ലഭ്യമല്ല</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_message">ടൈപ്പോ എഡിറ്റോ ചെയ്യുമ്പോൾ നാവിഗേഷൻ, ബ്രെയ്‌ലി ക്രമീകരണം, ചില SandFly ഫീച്ചറുകൾ എന്നിവയ്ക്കുള്ള കമാൻഡുകൾ ലഭ്യമല്ല.\n\nഈ കമാൻഡുകൾ ഉപയോഗിക്കാൻ ആദ്യം കീബോർഡ് അടയ്ക്കൂ.</string>
   <string name="bd_caption_tutorial_dialog_title">നിങ്ങളുടെ ബ്രെയ്‌ലി ഡിസ്‌പ്ലേയിൽ സബ്‌ടൈറ്റിലുകൾ</string>
-  <string name="bd_caption_tutorial_dialog_message">ഈ വീഡിയോയിൽ സബ്‌ടൈറ്റിൽ കാണിക്കാനോ മറയ്ക്കാനോ, സ്‌പെയ്‌സും 1, 4, 7, 8 ഡോട്ടുകളും അമർത്തുക.\n\nപിന്തുണയുള്ള മീഡിയയിൽ സ്വയമേവ സബ്‌ടൈറ്റിൽ കാണിക്കാൻ, ക്രമീകരണത്തിലെ ബ്രെയ്‌ലി ഡിസ്‌പ്ലേയിൽ \'സബ്‌ടൈറ്റിലുകൾ കാണിക്കുക\' ഓണാക്കുക.</string>
+  <string name="bd_caption_tutorial_dialog_message">ഈ വീഡിയോയിൽ സബ്‌ടൈറ്റിൽ കാണിക്കാനോ മറയ്ക്കാനോ, സ്‌പെയ്‌സും 1, 4, 7, 8 ഡോട്ടുകളും അമർത്തുക.\n\nപിന്തുണയുള്ള മീഡിയയിൽ സ്വയമേവ സബ്‌ടൈറ്റിൽ കാണിക്കാൻ, ക്രമീകരണത്തിൽ \'ബ്രെയ്‌ലി ഡിസ്‌പ്ലേയിൽ സബ്‌ടൈറ്റിലുകൾ കാണിക്കുക\' ഓണാക്കുക.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">സബ്‌ടൈറ്റിലുകൾ ലഭ്യമാകുമ്പോഴെല്ലാം ഈ സന്ദേശം കാണിക്കുക</string>
   <string name="bd_usb_connect_dialog_title">ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ, USB-യിലേക്ക് കണക്റ്റ് ചെയ്തു</string>
   <string name="bd_usb_connect_dialog_message">നിങ്ങളുടെ %s എന്നതിന്റെ ബാറ്ററി, ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ചാർജ് ചെയ്യുന്നുണ്ട്.\n\nനിങ്ങൾക്ക് Bluetooth-ലേക്ക് മാറണമെങ്കിൽ, USB അല്ലെങ്കിൽ USB ഹബ് വിച്ഛേദിച്ച് SandFly ക്രമീകരണം &gt; ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ എന്നതിലേക്ക് പോകുക.</string>
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">അറിയിപ്പുകളും അലാറങ്ങളും പോലുള്ള ചില സന്ദേശങ്ങൾ ഇത് SandFly-ൽ സംഭരിക്കും. ഏതുസമയത്തും നിങ്ങൾക്ക് ഈ ക്രമീകരണത്തിൽ മാറ്റം വരുത്താം.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">ഓണാക്കുക</string>
   <string name="popup_message_history_consent_dialog_negative_btn">വേണ്ട</string>
-    <string name="external_display_channel">മറ്റ് ആപ്പുകളിൽ നിന്നുള്ള ബ്രെയിൽ ഡിസ്പ്ലേകൾ</string>
-    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly-ന് ബ്രെയിൽ ഡിസ്‌പ്ലേ ആകാൻ അനുവദിക്കണോ?</string>
+    <string name="external_display_channel">മറ്റ് ആപ്പുകളിൽ നിന്നുള്ള ബ്രെയ്‌ലി ഡിസ്പ്ലേകൾ</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly-ന് ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ആകാൻ അനുവദിക്കണോ?</string>
     <string name="external_display_ask_text">നിങ്ങൾ അനുവദിക്കുന്നതുവരെ SandFly അത് ഉപയോഗിക്കില്ല.</string>
-    <string name="external_display_warning">SandFly ബ്രെയിലിൽ കാണിക്കുന്നതെല്ലാം <xliff:g id="app" example="Notetaker">%1$s</xliff:g>-ന് വായിക്കാനാകും, സന്ദേശങ്ങളും നിങ്ങൾ ടൈപ്പ് ചെയ്യുന്നതും ഉൾപ്പെടെ സ്ക്രീനിലെ എന്തും ആകാം അത്. ബ്രെയിൽ ഡിസ്‌പ്ലേ ഉപയോഗിച്ച് നിങ്ങൾ ചെയ്യുന്നതുപോലെ ഉപകരണം നിയന്ത്രിക്കാനും അതിന് കഴിയും: ടൈപ്പ് ചെയ്യാനും ആപ്പുകൾ തുറക്കാനും ഏത് SandFly കമാൻഡും പ്രവർത്തിപ്പിക്കാനും. നിങ്ങൾ വിശ്വസിക്കുന്ന ആപ്പുകളെ മാത്രം അനുവദിക്കുക.</string>
+    <string name="external_display_warning">SandFly ബ്രെയ്‌ലിയിൽ കാണിക്കുന്നതെല്ലാം <xliff:g id="app" example="Notetaker">%1$s</xliff:g>-ന് വായിക്കാനാകും, സന്ദേശങ്ങളും നിങ്ങൾ ടൈപ്പ് ചെയ്യുന്നതും ഉൾപ്പെടെ സ്ക്രീനിലെ എന്തും ആകാം അത്. ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ഉപയോഗിച്ച് നിങ്ങൾ ചെയ്യുന്നതുപോലെ ഉപകരണം നിയന്ത്രിക്കാനും അതിന് കഴിയും: ടൈപ്പ് ചെയ്യാനും ആപ്പുകൾ തുറക്കാനും ഏത് SandFly കമാൻഡും പ്രവർത്തിപ്പിക്കാനും. നിങ്ങൾ വിശ്വസിക്കുന്ന ആപ്പുകളെ മാത്രം അനുവദിക്കുക.</string>
     <string name="external_display_allow">അനുവദിക്കുക</string>
     <string name="external_display_deny">അനുവദിക്കരുത്</string>
     <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> എന്നത് നിങ്ങളുടെ ബ്രെയ്‌ലി ഡിസ്‌പ്ലേയാണ്</string>
     <string name="external_display_in_use_text">SandFly ഇത് ഉപയോഗിക്കുമ്പോൾ, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ന് സ്‌ക്രീൻ വായിക്കാനും ഉപകരണം നിയന്ത്രിക്കാനും കഴിയും.</string>
     <string name="external_displays_title">മറ്റ് ആപ്പുകളിൽ നിന്നുള്ള ഡിസ്പ്ലേകൾ</string>
-    <string name="external_displays_summary">നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകൾ SandFly എന്നതിനുള്ള ബ്രെയിലി ഡിസ്പ്ലേകളാകാം. ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ആയ ഒരു ആപ്പിന് സ്‌ക്രീൻ വായിക്കാനും ഉപകരണം നിയന്ത്രിക്കാനും കഴിയും.</string>
-    <string name="external_displays_none">ആപ്പുകൾക്കൊന്നും ബ്രെയിലി ഡിസ്പ്ലേകളാകാൻ കഴിയില്ല.</string>
+    <string name="external_displays_summary">നിങ്ങൾ അനുവദിക്കുന്ന ആപ്പുകൾ SandFly എന്നതിനുള്ള ബ്രെയ്‌ലി ഡിസ്പ്ലേകളാകാം. ബ്രെയ്‌ലി ഡിസ്‌പ്ലേ ആയ ഒരു ആപ്പിന് സ്‌ക്രീൻ വായിക്കാനും ഉപകരണം നിയന്ത്രിക്കാനും കഴിയും.</string>
+    <string name="external_displays_none">ആപ്പുകൾക്കൊന്നും ബ്രെയ്‌ലി ഡിസ്പ്ലേകളാകാൻ കഴിയില്ല.</string>
 </resources>

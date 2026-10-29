@@ -42,7 +42,7 @@
     <string name="script_permission_actions">לחיצה, גלילה, הקלדה והזזת המיקוד</string>
     <string name="script_permission_speech">קבלה ושינוי של הדיבור של SandFly</string>
     <string name="script_permission_passwords">קריאת שדות סיסמה</string>
-    <string name="script_permission_input">הוספת תנועות, מקשים, פריטי תפריט ופקדי קריאה</string>
+    <string name="script_permission_input">הוספת תנועות, מקשים, פריטי תפריט וכפתורי הקראה</string>
     <string name="script_permission_network">שימוש באינטרנט</string>
     <string name="script_permission_clipboard">קריאה ושינוי של הלוח</string>
     <string name="script_permission_system">חזרה אחורה או למסך הבית, פתיחת התראות ואפליקציות</string>
@@ -103,7 +103,7 @@
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ואז <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">פקודות</string>
     <string name="script_commands_summary">תנועות ומקשים של סקריפט פועל קודמים לאלה של SandFly. כדי לשמור על אלה של SandFly, יש להשבית אותם בסקריפט.</string>
-    <string name="script_binding_gesture">מחווה: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_gesture">תנועה: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">מקשים: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">תפריט SandFly</string>
     <string name="script_binding_control">כפתורי ההקראה</string>
@@ -117,7 +117,7 @@
     <string name="script_binding_perform_message">יש לבצע את התנועה או ללחוץ על המקשים.</string>
     <string name="script_binding_assign_title">להקצות את <xliff:g id="binding">%1$s</xliff:g> ל-<xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">הקצאה</string>
-    <string name="script_binding_choose_gesture">בחירת מחווה</string>
+    <string name="script_binding_choose_gesture">בחירת תנועה</string>
     <string name="script_binding_type_keys">הקלדת מקשים</string>
     <string name="script_binding_type_keys_summary">כמו sf+shift+n, או sf+t, s</string>
     <string name="script_binding_bad_keys">לא ניתן להשתמש במקשים האלה. <xliff:g id="reason">%1$s</xliff:g></string>

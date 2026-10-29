@@ -79,16 +79,16 @@
   <string name="title_pref_category_manage_gestures">Jestlər</string>
   <string name="title_pref_manage_labels">Fərdi etiketlər</string>
   <string name="title_pref_category_context_menu">SandFly menyusu</string>
-  <string name="title_pref_category_selector_menu">Oxuma nizamlayıcıları</string>
+  <string name="title_pref_category_selector_menu">Oxuma kontrolları</string>
   <string name="title_pref_category_navigation_menu">Naviqasiya seçimlərini redaktə edin</string>
   <string name="title_pref_manage_keyboard_shortcuts">Klaviatura qısayolları</string>
-  <string name="title_pref_export_custom_labels">Xüsusi etiketləri ixrac edin</string>
+  <string name="title_pref_export_custom_labels">Fərdi etiketləri ixrac edin</string>
   <string name="title_pref_help_and_feedback">Yardım və rəy</string>
   <string name="title_pref_help">Yardım</string>
   <string name="title_pref_show_tos">Xidmət Şərtləri</string>
   <string name="title_pref_show_privacy_policy">Məxfilik siyasəti</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Barmaq izi işarələri</string>
-  <string name="title_pref_category_tutorial">SandFly ilə bağlı təlimat</string>
+  <string name="title_pref_category_tutorial">SandFly dərsliyi</string>
   <string name="title_pref_category_help_no_tutorial">Kömək</string>
   <string name="title_pref_advanced_settings">Qabaqcıl ayarlar</string>
   <string name="title_pref_show_exit_watermark">SandFly-i söndürmək üçün təlimatları göstərin</string>
@@ -406,8 +406,8 @@
   <string name="talkback_menu_more_options_text">Ayarlamanı tamamladıqdan və ya cihazın kilidini açdıqdan sonra daha çox menyu seçimi əlçatan olacaq</string>
   <string name="talkback_menu_title_content_description">SandFly menyusu. Sağa çəkərək SandFly menyusunda seçimləri araşdırın.\n\nTəlimata qayıtmaq üçün ekranın kənarından 2 barmaqla sol və ya sağa çəkin.</string>
   <string name="shortcut_show_language_options">Danışıq dilini dəyişin</string>
-  <string name="shortcut_select_next_setting">Növbəti oxuma nizamlayıcısı</string>
-  <string name="shortcut_select_previous_setting">Əvvəlki oxuma nizamlayıcısı</string>
+  <string name="shortcut_select_next_setting">Növbəti oxuma kontrolu</string>
+  <string name="shortcut_select_previous_setting">Əvvəlki oxuma kontrolu</string>
   <string name="shortcut_pass_through_next">Keçid sistem jesti</string>
   <string name="shortcut_a11y_button">Əlçatımlıq qısayolu</string>
   <string name="shortcut_a11y_button_long_press">Əlçatımlıq qısayolunu basıb saxlayın</string>
@@ -667,7 +667,7 @@
   <string name="label_dialog_confirm_label_remove">Etiket silindi</string>
   <string name="label_dialog_text">Bu element etiketi kimi istifadə olunacaq mətni daxil edin\nDaxili baxış adı: %1$s</string>
   <string name="label_dialog_edit_hint">Etiket mətni</string>
-  <string name="label_import">Xüsusi etiketləri import edin</string>
+  <string name="label_import">Fərdi etiketləri import edin</string>
   <string name="label_import_dialog_title">Fərdi etiketləri SandFly-a import et</string>
   <string name="label_import_dialog_message">Konflikt zamanı mövcud etiketləri əvəzləmək və ya üzərindən keçmək istəyib istəmədiyinizi seçin</string>
   <string name="label_import_dialog_skip">Ötürün</string>
@@ -685,7 +685,7 @@
   <string name="button_disable_all_events">Hamısını deaktiv edin</string>
   <string name="button_enable_all_events">Hamısını aktiv edin</string>
   <string name="dialog_title_disable_exploration">Toxunuşla Kəşf funksiyası deaktiv edilsin?</string>
-  <string name="dialog_message_disable_exploration">Toxunuşla Kəşffunksiyasını söndürmək istəyirsiniz?\n\nCihazınızdan bir daha rəy gəlməyəcək.</string>
+  <string name="dialog_message_disable_exploration">“Toxunuşla kəşf” funksiyasını söndürmək istəyirsiniz?\n\nCihazınızdan bir daha rəy gəlməyəcək.</string>
   <string name="dialog_title_enable_tree_debug">Ağac düyünü debağı aktiv edilsin?</string>
   <string name="dialog_message_enable_tree_debug">Debaq funksiyasını aktiv etmək istədiyinizə əminsiniz?\n\nDebaq funksiyası ekranınızın kontentini cihazınızın jurnalına yönəldir və digər tətbiqlər də onu oxuyur.</string>
   <string name="dialog_title_enable_tree_debug_gesture">4 barmaq jesti ilə üç dəfə toxunma yenidən təyin edilsin?</string>
@@ -747,7 +747,7 @@
   <string name="value_tv_remote_mode_seek_control">Slayder rejimi</string>
   <string name="value_hint_tv_remote_mode_seek_control">Dəyəri dəyişmək üçün ox düymələrinə basın, və ya bitirmək üçün seçim düyməsinə basın.</string>
   <string name="reset_user_language_preference">Defolt</string>
-  <string name="title_pref_selector_speech_rate">Nitq diapazonu</string>
+  <string name="title_pref_selector_speech_rate">Nitq sürəti</string>
   <string name="title_pref_selector_verbosity">Söz yığını</string>
   <string name="title_pref_selector_punctuation">Punktuasiya</string>
   <string name="title_pref_selector_audio_focus">Audio effekt</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{Bu ekranda uyğunluq yoxdur}=1{# uyğunluq}other{# uyğunluq}}</string>
   <string name="msg_no_matches">Bu ekranda nəticə yoxdur</string>
   <string name="dialog_title_continuous_reading_mode">Davamlı oxu haqqında</string>
-  <string name="dialog_message_continuous_reading_mode">\"Yuxarıdan oxu\" və ya \"Fokuslanmış elementdən oxu\" seçəndən sonra da mətn oxunarkən əvvəlki və ya növbəti elementə keçə bilərsiniz. Bu, asan geri və ya irəli hərəkət imkanı verir.\n\nSandFly danışarkən səs səviyyəsini tənzimləmək üçün səs artırma və ya azaltma düyməsini basın.</string>
+  <string name="dialog_message_continuous_reading_mode">\"Başdan oxuyun\" və ya \"Fokuslanmış elementdən oxu\" seçəndən sonra da mətn oxunarkən əvvəlki və ya növbəti elementə keçə bilərsiniz. Bu, asan geri və ya irəli hərəkət imkanı verir.\n\nSandFly danışarkən səs səviyyəsini tənzimləmək üçün səs artırma və ya azaltma düyməsini basın.</string>
   <string name="always_show_this_message_label">Bu mesajı həmişə göstərin</string>
   <string name="dialog_title_voice_commands">İSandFly\'i idarə etmək üçün səs əmrlərindən istifadə edin</string>
   <string name="dialog_message_voice_commands">Bunları deyə bilərsiniz:\n\n• Kopyala\n• Fokuslanmış elementdən oxu\n• Tap [yadda saxla]\n• Danış [daha sürətli]\n• SandFly ayarları\n\nBütün səs əmrlərinin siyahısı üçün \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" deyin</string>
@@ -812,7 +812,7 @@
   <string name="audio_focus_state">Səsin azaldılması: %1$s</string>
   <string name="sound_feedback_state">Səsli rəy: %1$s</string>
   <string name="vibration_feedback_state">Vibrasiyalı rəy: %1$s</string>
-  <string name="text_formatting_state">Mətn səsləndirmə formatı %1$s</string>
+  <string name="text_formatting_state">Mətn formatlamasını səsləndirin: <xliff:g example="on" id="state">%1$s</xliff:g></string>
   <string name="typing_echo_change">Fiziki valyutada %1$s səs səviyyəsi</string>
   <string name="gesture_1_or_2">%1$s və ya %2$s</string>
   <string name="adjust_granularity_hint">%2$s üzrə oxumaq üçün %1$s</string>
@@ -851,7 +851,7 @@
   <string name="keep_reviewing_tutorial_button">Nəzərdən keçirməyə davam edin</string>
   <string name="welcome_to_updated_talkback_title">Güncəllənmiş SandFly\'ə xoş gəlmisiniz</string>
   <string name="navigation_heading">Naviqasiya</string>
-  <string name="setting_selector_heading">Oxuma nizamlayıcıları</string>
+  <string name="setting_selector_heading">Oxuma kontrolları</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Video və ya musiqi tətbiqində mediaya pauza vermək və ya onu ifa etdirmək üçün 2 barmaq ilə iki dəfə toxunun. İndi sınayın.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Digər tətbiqlər telefon zəngini cavablandırmaq və ya onu sonlandırmaq kimi əməliyyatları yerinə yetirmək üçün bu jestdən istifadə edə bilər. Bu jest bütün tətbiqlər tərəfindən dəstəklənməyə bilər.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Media durdurulub və ya oxudulur. Adətən, bununla cari video və ya musiqi durdurulur və ya oxudulur. Davam etmək üçün sağa çəkin.</string>
@@ -865,15 +865,15 @@
   <string name="new_shortcut_gesture_cut_text_announcement">Mətn kəsildi. Adətən, bununla seçdiyiniz mətn kəsilir. Davam etmək üçün sağa çəkin.</string>
   <string name="new_shortcut_gesture_selection_mode_text">Mətn seçimi rejimini başlatmaq və ya sonlandırmaq üçün 2 barmaq ilə iki dəfə toxunub saxlayın.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Seçim rejimi aktiv və ya deaktivdir. Adətən, bununla daxiletmə sahəsinin içində olduqda mətn seçmə rejimi başladılır və ya dayandırılır. Davam etmək üçün sağa çəkin.</string>
-  <string name="new_shortcut_gesture_reading_menu_text">Oxuma nizamlayıcılarını istifadə etmək üçün 3 barmaq ilə sola və ya sağa çəkin. 3 barmaqla yuxarı və ya aşağı çəkə də bilərsiniz.</string>
+  <string name="new_shortcut_gesture_reading_menu_text">Oxuma kontrollarından istifadə etmək üçün 3 barmaq ilə sola və ya sağa çəkin. 3 barmaqla yuxarı və ya aşağı çəkə də bilərsiniz.</string>
   <string name="new_shortcut_gesture_note">Qeyd: Jestlərinizin bəzilərini fərdiləşdirmisiniz, buna görə də bu məlumatlar dəqiq olmaya bilər. Jestlərinizi nəzərdən keçirmək üçün SandFly ayarlarına keçin.</string>
   <string name="welcome_to_android11_text">SandFly\'in istifadəsini daha sürətli və daha asan etmək üçün yeni jestlər əlavə edilib.\n\nBu ekranda yeni jestləri sınaya bilərsiniz. Bu məlumatları SandFly ayarlarında istənilən vaxt nəzərdən keçirə bilərsiniz.</string>
   <string name="new_gesture_notification_title">SandFly\'də yeni jestlər</string>
   <string name="new_gesture_notification_content">SandFly funksiyasını yeni jestlərlə daha sürətli istifadə etmək qaydasını öyrənmək üçün toxunun.</string>
   <string name="dump_node_tree_description">Qovşaq strukturu girişlərə çap edilib.</string>
   <string name="report_gesture_description">Bu yaxınlarda icra edilmiş jestləri təqdim edirik, hansı jestin yanlış olduğunu və nə gözlədiyinizi bildirin.</string>
-  <string name="update_welcome_talkback_16.1">Bu SandFly güncəllənməsi daha çox dildə \"Ekranı təsvir et\" funksiyasına dəstək verən və SandFly-dən istifadəni asanlaşdıran digər keyfiyyət təkmilləşdirmələrini təqdim edir.\n\nBu dəyişikliklər haqqında növbəti ekranlarda daha ətraflı məlumat alacaqsınız.\n\nSonra bu məlumatı SandFly ayarları &gt; SandFly-də yeni funksiyalar bölməsində yenidən nəzərdən keçirə bilərsiniz.</string>
-  <string name="update_welcome_talkback_16.1_tts">Bu SandFly güncəllənməsi daha çox dildə \"Ekranı təsvir et\" funksiyasına dəstək verən və SandFly-dən istifadəni asanlaşdıran digər keyfiyyət təkmilləşdirmələrini təqdim edir.\n\nBu dəyişikliklər haqqında növbəti ekranlarda daha ətraflı məlumat alacaqsınız.\n\nSonra bu məlumatı SandFly ayarları, SandFly-də yeni funksiyalar bölməsində yenidən nəzərdən keçirə bilərsiniz.</string>
+  <string name="update_welcome_talkback_16.1">Bu SandFly güncəllənməsi daha çox dildə \"Ekranı təsvir edin\" funksiyasına dəstək verən və SandFly-dən istifadəni asanlaşdıran digər keyfiyyət təkmilləşdirmələrini təqdim edir.\n\nBu dəyişikliklər haqqında növbəti ekranlarda daha ətraflı məlumat alacaqsınız.\n\nSonra bu məlumatı SandFly ayarları &gt; SandFly\'də yeni funksiyalar bölməsində yenidən nəzərdən keçirə bilərsiniz.</string>
+  <string name="update_welcome_talkback_16.1_tts">Bu SandFly güncəllənməsi daha çox dildə \"Ekranı təsvir edin\" funksiyasına dəstək verən və SandFly-dən istifadəni asanlaşdıran digər keyfiyyət təkmilləşdirmələrini təqdim edir.\n\nBu dəyişikliklər haqqında növbəti ekranlarda daha ətraflı məlumat alacaqsınız.\n\nSonra bu məlumatı SandFly ayarları, SandFly\'də yeni funksiyalar bölməsində yenidən nəzərdən keçirə bilərsiniz.</string>
   <string name="shortcut_for_dictation_title">Səslə yazma üçün qısayol</string>
   <string name="shortcut_for_dictation_content">Gboard-dan istifadə edərkən artıq iki barmaqla iki dəfə toxunmaqla səslə yazmağı başlada və ya dayandıra bilərsiniz.
 &lt;br&gt;
@@ -881,12 +881,12 @@
   <string name="shortcut_for_dictation_content_without_google_play">Ekranda Gboard olduqda artıq iki barmaqla iki dəfə toxunaraq səsli diktəyə başlaya və yenə iki barmaqla iki dəfə toxunaraq onu dayandıra bilərsiniz.</string>
   <string name="announcing_text_formatting_title">Mətn formatının səsləndirilməsi</string>
   <string name="announcing_text_formatting_header">SandFly artıq mətn formatında qalın, kursiv və mətn rəngi kimi dəyişiklikləri səsləndirə bilər. Başlamaq üçün:</string>
-  <string name="announcing_text_formatting_option1">Formatlanmış elementi seçin, SandFly menyusunu açın və \"Mətn formatını təsvir edin\" seçin, yaxud</string>
+  <string name="announcing_text_formatting_option1">Formatlanmış elementi seçin, SandFly menyusunu açın və \"Mətnin formatını təsvir edin\" seçin, yaxud</string>
   <string name="announcing_text_formatting_option2">Mətn formatı üçün format dəyişikliklərinin elanını aktiv və ya deaktiv edəcək oxuma kontrolu əlavə edin.</string>
   <string name="announcing_text_formatting_middle">Sınamağa hazır olduğunuz zaman formatlanmış mətnin nümunəsi buradadır:</string>
   <string name="announcing_text_formatting_tail">Formatlanmış mətnin səsləndirilmə qaydasını dəyişmək istəyirsinizsə, %1$s bölməsinə keçə bilərsiniz.</string>
-  <string name="text_formatting_options_settings_path">SandFly ayarları &gt; Çox sözlülük &gt; Mətn formatı seçimləri</string>
-  <string name="text_formatting_options_settings_path_tts">SandFly ayarları, Çox sözlülük, Mətn formatı seçimləri</string>
+  <string name="text_formatting_options_settings_path">SandFly ayarları &gt; Söz yığını &gt; Mətn formatı seçimləri</string>
+  <string name="text_formatting_options_settings_path_tts">SandFly ayarları, Söz yığını, Mətn formatı seçimləri</string>
   <string name="announcing_text_formatiing_sample">Bu mətn &lt;b&gt;qalın&lt;/b&gt; hərflərlə yazılıb, inamlı çağırışdır,
 &lt;br&gt;&lt;u&gt;Altından xətt çəkilib&lt;/u&gt;, əlbəttə, pıçıltıdır.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;Qızılgüllər qırmızı&lt;/span&gt;, ənənəvi, həqiqətdir,
@@ -897,8 +897,8 @@
 &lt;br&gt;
 &lt;br&gt;Rənglər önə çıxa bilər, canlı displey,
 &lt;br&gt;&lt;font color=\"#db372d\"&gt;Kəskin qırmızıdan&lt;/font&gt; &lt;font color=\"#128937\"&gt;yumşaq yaşılın&lt;/font&gt; zərif tonuna qədər.</string>
-  <string name="update_welcome_talkback_16.2">Bu SandFly güncəllənməsi fiziki klaviaturalar üçün yeni \"Təkmilləşdirilmiş klaviatura düzülüşü\", mətn formatı səsləndirmələri üçün dəstək və yenidən dizayn edilmiş ayarlar düzəni, həmçinin SandFly-dən istifadəni asanlaşdıran digər təkmilləşdirmələri təqdim edir.\n\nBu dəyişikliklər haqqında növbəti bir neçə ekranda ətraflı məlumat alacaqsınız.\n\nBu məlumatı daha sonra SandFly ayarları &gt; SandFly-də yeni funksiyalar bölməsində nəzərdən keçirə bilərsiniz.</string>
-  <string name="update_welcome_talkback_16.2_tts">Bu SandFly güncəllənməsi fiziki klaviaturalar üçün yeni \"Təkmilləşdirilmiş klaviatura düzülüşü\", mətn formatı səsləndirmələri üçün dəstək və yenidən dizayn edilmiş ayarlar düzəni, həmçinin SandFly-dən istifadəni asanlaşdıran digər təkmilləşdirmələri təqdim edir.\n\nBu dəyişikliklər haqqında növbəti bir neçə ekranda ətraflı məlumat alacaqsınız.\n\nBu məlumatı daha sonra SandFly ayarları, SandFly-də yeni funksiyalar bölməsində nəzərdən keçirə bilərsiniz.</string>
+  <string name="update_welcome_talkback_16.2">Bu SandFly güncəllənməsi fiziki klaviaturalar üçün yeni \"Təkmilləşdirilmiş klaviatura düzülüşü\", mətn formatı səsləndirmələri üçün dəstək və yenidən dizayn edilmiş ayarlar düzəni, həmçinin SandFly-dən istifadəni asanlaşdıran digər təkmilləşdirmələri təqdim edir.\n\nBu dəyişikliklər haqqında növbəti bir neçə ekranda ətraflı məlumat alacaqsınız.\n\nBu məlumatı daha sonra SandFly ayarları &gt; SandFly\'də yeni funksiyalar bölməsində nəzərdən keçirə bilərsiniz.</string>
+  <string name="update_welcome_talkback_16.2_tts">Bu SandFly güncəllənməsi fiziki klaviaturalar üçün yeni \"Təkmilləşdirilmiş klaviatura düzülüşü\", mətn formatı səsləndirmələri üçün dəstək və yenidən dizayn edilmiş ayarlar düzəni, həmçinin SandFly-dən istifadəni asanlaşdıran digər təkmilləşdirmələri təqdim edir.\n\nBu dəyişikliklər haqqında növbəti bir neçə ekranda ətraflı məlumat alacaqsınız.\n\nBu məlumatı daha sonra SandFly ayarları, SandFly\'də yeni funksiyalar bölməsində nəzərdən keçirə bilərsiniz.</string>
   <string name="new_settings_layout_title">Yeni ayarlar düzəni</string>
   <string name="new_settings_layout_text">Funksiyaları asanlıqla tapmaq üçün ayar qrupları güncəllənib. Klaviatura ayarları kimi yeni ayarlar kateqoriyaları da əlçatandır.</string>
   <string name="split_tap_everywhere_title">Hər yerdə bölünmüş toxunma</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Brayl displeyi ayarları</string>
   <string name="keyboard_smart_browse_mode_title">Klaviatura: Smart axtarış rejimi</string>
   <string name="keyboard_smart_browse_mode_text">SandFly smart axtarış rejimi vebdə axtarış edərkən fiziki klaviaturadan istifadə edərək yazmağınıza kömək etmək üçün redaktə sahəsində axtarış rejimini söndürür. Daha sonra vebdə redaktə edilməyən sahəyə keçdiyiniz zaman onu yenidən yandırır ki, səmərəli şəkildə baxmağa davam edə biləsiniz. <xliff:g id="settings_path">%1$s</xliff:g> bölməsində \"Smart axtarış rejimini\" aktiv və ya deaktiv edə bilərsiniz.</string>
-  <string name="advanced_settings_link">SandFly ayarları &gt; Təkmil ayarlar</string>
-  <string name="advanced_settings_link_tts">SandFly ayarları, sonra Təkmil ayarlar</string>
   <string name="keyboard_tutorial_title">Klaviatura təlimatı</string>
   <string name="keyboard_tutorial_text">SandFly artıq fiziki klaviaturadan istifadə edərkən Təkmilləşdirilmiş klaviatura düzülüşü üçün klaviatura qısayollarını və əmrlərini öyrənməyinizə kömək etmək məqsədilə yaradılmış Klaviatura təlimatını da özündə birləşdirir. Təlimata daxil olmaq üçün bura keçin: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFly ayarları &gt; SandFly təlimatı</string>
-  <string name="tutorial_link_tts">SandFly ayarları, sonra SandFly təlimatı</string>
   <string name="tutorial_entry_point_title">Dərslik</string>
   <string name="welcome_to_talkback_title">SandFly\'ə xoş gəlmisiniz</string>
   <string name="talkback_is_on">SandFly aktivdir</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">Menyu və nizamlayıcılardan istifadə edin</string>
   <string name="menus_talkback_menu_text">SandFly menyusuna tez-tez ehtiyacınız ola biləcək ayarlar və nizamlayıcılar daxildir.\n\nİndi 3 barmaqla ekrana toxunaraq SandFly menyusunu açın.</string>
   <string name="menus_talkback_menu_text_pre_r">SandFly menyusuna tez-tez ehtiyacınız ola biləcək ayarlar və nizamlayıcılar daxildir.\n\nİndi aşağı, sonra sağa çəkərək SandFly menyusunu açın.</string>
-  <string name="menus_selector_text">Bu qısayollar naviqasiyanı simvollardan sözlərə keçirmək və ya SandFly\'in danışıq sürətini dəyişdirmək kimi ayarları cəld dəyişdirməyə kömək edə bilər.\n\nOxu nizamlayıcılarını cəld dəyişmək üçün 3 barmaqla sola çəkin və ya 3 barmaqla sağa çəkin.\n\nSandFly menyusunu və oxu nizamlayıcılarını daha sonra SandFly ayarlarında fərdiləşdirə bilərsiniz.</string>
-  <string name="menus_selector_text_pre_r">Bu qısayollar naviqasiyanı simvollardan sözlərə keçirmək və ya SandFly\'in danışıq sürətini dəyişdirmək kimi ayarları cəld dəyişdirməyə kömək edə bilər.\n\nOxu nizamlayıcılarını cəld dəyişmək üçün aşağı, sonra yuxarı çəkin.\n\nSandFly menyusunu və oxu nizamlayıcılarını daha sonra SandFly ayarlarında fərdiləşdirə bilərsiniz.</string>
+  <string name="menus_selector_text">Bu qısayollar naviqasiyanı simvollardan sözlərə keçirmək və ya SandFly\'in danışıq sürətini dəyişdirmək kimi ayarları cəld dəyişdirməyə kömək edə bilər.\n\nOxuma kontrollarını cəld dəyişmək üçün 3 barmaqla sola çəkin və ya 3 barmaqla sağa çəkin.\n\nSandFly menyusunu və oxuma kontrollarını daha sonra SandFly ayarlarında fərdiləşdirə bilərsiniz.</string>
+  <string name="menus_selector_text_pre_r">Bu qısayollar naviqasiyanı simvollardan sözlərə keçirmək və ya SandFly\'in danışıq sürətini dəyişdirmək kimi ayarları cəld dəyişdirməyə kömək edə bilər.\n\nOxuma kontrollarını cəld dəyişmək üçün aşağı, sonra yuxarı çəkin.\n\nSandFly menyusunu və oxuma kontrollarını daha sonra SandFly ayarlarında fərdiləşdirə bilərsiniz.</string>
   <string name="all_set_title">Hər şey hazırdır!</string>
   <string name="all_set_text">SandFly\'dən istifadə etməyə hazırsınız.\n\nİndi digər mövzular haqqında öyrənməyə davam edin, yaxud SandFly ayarlarında bu məlumatları istənilən vaxt nəzərdən keçirin.</string>
   <string name="talkback_tutorial_text">Mövzu seçmək üçün sağa sürüşdürün. Ən yaxşı təcrübə üçün başlamazdan əvvəl SandFly-i aktiv edin.</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">Cədvəllərdə cədvəl naviqasiyasına keç</string>
   <string name="title_text_formatting_menu">Mətnin formatını təsvir edin</string>
   <string name="summary_text_formatting_menu">Qalın, kursiv, altından xətt və s. kimi dəyişikliklər üçün</string>
-  <string name="title_text_formatting_inline">Mətnin oxudulması formatı</string>
+  <string name="title_text_formatting_inline">Mətn formatlamasını səsləndirin</string>
   <string name="title_switch_text_formatting">Mətn formatlamasını səsləndirin</string>
   <string name="summary_text_formatting_verbosity">Qalın və kursiv kimi dəyişikliklər üçün</string>
   <string name="summary_text_formatting_selector">Qalın və kursiv kimi formatın ucadan oxunub-oxunmayacağını dəyişin</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Digər</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Jestləri Vibration Watch üçün ayır</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly iki barmaqla tək və ikiqat toxunuşları emal etmir ki, Samsung Vibration Watch onlardan istifadə edə bilsin. Vibration Watch funksiyasını saatınızın xüsusi imkanlar ayarlarında aktiv edin.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Qabaqcıl ayarlarda Vibration Watch üçün ayrılıb</string>
     <string name="title_pref_speakerphone_away_from_ear">Qulaqdan uzaq olduqda dinamik</string>
     <string name="summary_pref_speakerphone_away_from_ear">Zəng zamanı telefonu qulağınızdan uzaqlaşdırdıqda dinamikə, yenidən qulağınıza tutduqda qulaq dinamikinə keçir.</string>
     <string name="summary_pref_speakerphone_needs_permission">Android-in ekran oxuyucularına vermədiyi icazə tələb olunur. İcazə vermək üçün bu əmri adb və ya Shizuku ilə icra edin, sonra bu ekrana qayıdın: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Tətbiqlər</string>
     <string name="speech_control_no_apps">Hələ heç bir tətbiq danışmaq üçün icazə istəməyib.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> tətbiqinə SandFly vasitəsilə danışmağa icazə verilsin?</string>
-    <string name="speech_control_ask_text">Tətbiq mətni SandFly səsinizlə səsləndirə bilər. Bunu Qabaqcıl ayarlarda dəyişə bilərsiniz.</string>
     <string name="speech_control_allow">İcazə verin</string>
     <string name="speech_control_deny">İcazə verməyin</string>
     <string name="permission_speak_label">SandFly vasitəsilə danışmaq</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d bildiriş</item>
         <item quantity="other">%d bildiriş</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aktivdir. Deaktiv etmək üçün 2 barmağınızı ekranda 5 saniyə basıb saxlayın. Bu mesajın göstərilməsini dayandırmaq üçün SandFly ayarları &gt; Qabaqcıl ayarlar &gt; SandFly-ı söndürmək üçün təlimatları göstərin ayarını deaktiv edin.</string>
     <string name="edge_gestures_title">Kənarlar</string>
     <string name="title_pref_audio_output_device">Audio çıxış cihazı</string>
     <string name="dialog_title_audio_output_device">SandFly səsinin oxudulacağı yeri seçin</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper modelləri</string>
     <string name="dictation_whisper_use">İstifadə edin</string>
     <string name="title_pref_dictation_ai_service">Diktə üçün AI xidməti</string>
-    <string name="dictation_ai_same">Avtomatik təsvirlərdəki ilə eyni</string>
     <string name="title_pref_browse_mode_per_app">Hər bir tətbiqdə baxış rejimini yadda saxla</string>
     <string name="title_pref_export_settings">Parametrləri ixrac edin</string>
     <string name="title_pref_import_settings">Parametrləri idxal edin</string>
@@ -1794,4 +1786,12 @@
         <item>1 dəqiqə</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Sükutdan sonra avtomatik dayandır</string>
+    <string name="dictation_ai_same">Şəkil və ekran təsvirləri ilə eyni</string>
+    <string name="navigation_settings_link">SandFly ayarları &gt; Naviqasiya</string>
+    <string name="navigation_settings_link_tts">SandFly ayarları, sonra Naviqasiya</string>
+    <string name="shortcut_reserved_for_vibration_watch">Jestlər bölməsində Vibration Watch üçün ayrılıb</string>
+    <string name="speech_control_ask_text">Mətni SandFly səsinizlə səsləndirə bilər. Bunu Ayarlar, Nitq, “Digər tətbiqlərə danışmağa icazə ver” bölməsində dəyişə bilərsiniz.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aktivdir. Söndürmək üçün 2 barmağınızı ekranda 5 saniyə basıb saxlayın. Bu mesajın göstərilməsini dayandırmaq üçün SandFly ayarları &gt; Fasilə və deaktiv etmə &gt; SandFly-i söndürmək üçün təlimatları göstərin seçimini deaktiv edin.</string>
+    <string name="tutorial_link">SandFly ayarları &gt; Yardım və rəy &gt; SandFly dərsliyi</string>
+    <string name="tutorial_link_tts">SandFly ayarları, sonra Yardım və rəy, sonra SandFly dərsliyi</string>
 </resources>

@@ -12,13 +12,13 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, bese kuba i-Flash-Lite uma imatasa</string>
     <string name="gemini_model_loading">Ithola amamodeli…</string>
     <string name="gemini_model_list_failed">Ayikwazanga ukuthola amamodeli: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Setha ukhiye we-Gemini API kuqala</string>
+    <string name="gemini_model_needs_key">Setha ukhiye we-API we-Gemini kuqala</string>
     <string name="gemini_api_terms_link">Imigomo Yesevisi Eyengeziwe ye-Gemini API</string>
     <string name="ai_service_address_hint">Ikheli, njengokuthi https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Imodeli</string>
     <string name="ai_service_address_invalid">Ikheli kufanele liqale ngokuthi https://. Akukho lutho olulondoloziwe.</string>
     <string name="dialog_message_ai_service_consent">Izithombe nezithombe-skrini zithunyelwa ku-<xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ukuze zichazwe, okuthatha imizuzwana embalwa. Kusebenza imigomo nenqubomgomo yobumfihlo yalelo sevisi. I-AI ekhiqizayo isesesigabeni sokuhlola, ngakho izokwenza amaphutha.</string>
-    <string name="ai_service_error_api_key">Isevisi ye-AI ayizange yamukele ukhiye we-API. Hlola izilungiselelo zayo ezincazelweni ezizenzakalelayo.</string>
+    <string name="ai_service_error_api_key">Isevisi ye-AI ayizange yamukele ukhiye we-API. Hlola amasethingi ayo ngaphansi kokuthi Izincazelo zezithombe nezesikrini.</string>
     <string name="ai_service_error_quota">Umkhawulo wokusetshenziswa kwesevisi ye-AI ufinyelelwe. Zama futhi emuva kwesikhathi.</string>
     <string name="ai_service_error_busy">Isevisi ye-AI imatasa njengamanje. Zama futhi ngemva kwesikhashana.</string>
     <string name="ai_service_error_timeout">Isevisi ye-AI ithathe isikhathi eside kakhulu ukuphendula. Zama futhi.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Lutho</string>
-    <string name="ai_service_not_set_up">Ayikho isevisi ye-AI esebenzayo. Setha eyodwa noma khetha eyodwa kuzilungiselelo zezincazelo ezizenzakalelayo.</string>
+    <string name="ai_service_not_set_up">Ayikho isevisi ye-AI esebenzayo. Setha eyodwa noma khetha eyodwa kumasethingi okuthi Izincazelo zezithombe nezesikrini.</string>
     <string name="ai_provider_none_set_up">Ayikho isevisi ye-AI esethiwe. Setha eyodwa kuzilungiselelo zayo ngezansi.</string>
     <string name="ai_provider_other">Enye isevisi</string>
     <string name="title_pref_category_ai_services">Amasevisi e-AI</string>

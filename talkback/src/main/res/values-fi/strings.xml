@@ -49,7 +49,7 @@
   <string name="title_pref_a11y_hints">Lausu käyttövinkit ääneen</string>
   <string name="summary_pref_a11y_hints">Sano kohteen kuvauksen jälkeen, miten sitä käytetään</string>
   <string name="pref_speak_container_element_positions_title">Lue säilön tiedot ääneen</string>
-  <string name="pref_speak_time_title">Aika puhuttuna</string>
+  <string name="pref_speak_time_title">Sano aika ääneen</string>
   <string name="pref_speak_time_summary">Kun laitat näytön päälle</string>
   <string name="summary_speak_container_element_positions">Sano, kun siirryt luetteloihin, ruudukkoihin ja muihin säiliöihin tai poistut niistä</string>
   <string name="reset_letency_reduction_settings_dialog_title">Nollataanko viiveasetukset?</string>
@@ -82,19 +82,19 @@
   <string name="title_pref_category_selector_menu">Lukuasetukset</string>
   <string name="title_pref_category_navigation_menu">Muokkaa navigointivaihtoehtoja</string>
   <string name="title_pref_manage_keyboard_shortcuts">Pikanäppäimet</string>
-  <string name="title_pref_export_custom_labels">Vie muokatut tunnisteet</string>
+  <string name="title_pref_export_custom_labels">Vie omat tunnisteet</string>
   <string name="title_pref_help_and_feedback">Ohjeet ja palaute</string>
   <string name="title_pref_help">Ohje</string>
   <string name="title_pref_show_tos">Käyttöehdot</string>
   <string name="title_pref_show_privacy_policy">Tietosuojakäytäntö</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Sormenjälkieleet</string>
-  <string name="title_pref_category_tutorial">SandFly-ohje</string>
+  <string name="title_pref_category_tutorial">SandFly-opetusohjelma</string>
   <string name="title_pref_category_help_no_tutorial">Ohje</string>
   <string name="title_pref_advanced_settings">Lisäasetukset</string>
   <string name="title_pref_show_exit_watermark">Näytä ohjeet SandFlyin laittamiseen pois päältä</string>
   <string name="summary_pref_show_exit_watermark">Kun SandFly laitetaan päälle, näytä, miten sen saa pois päältä</string>
   <string name="talkback_exit_watermark_text">SandFly päällä. Laita se pois päältä painamalla näyttöä kahdella sormella viiden sekunnin ajan. Jos et halua enää nähdä viestiä, avaa SandFly-valikko napauttamalla kolmella sormella.</string>
-  <string name="talkback_exit_watermark_hint_text">Banneri näkyvillä, SandFly on päällä. Laita SandFly pois päältä painamalla näyttöä kahdella sormella viiden sekunnin ajan. Voit poistaa bannerin SandFlyin asetuksista.</string>
+  <string name="talkback_exit_watermark_hint_text">Banneri näkyvillä, SandFly on päällä. Laita SandFly pois päältä painamalla näyttöä kahdella sormella viiden sekunnin ajan. Voit poistaa bannerin SandFly-asetuksista.</string>
   <string name="reset_gesture_settings_title">Nollaa eleasetukset</string>
   <string name="one_finger_gestures_title">1 sormi</string>
   <string name="one_finger_back_forth_gestures_title">1 sormen edestakainen ele</string>
@@ -422,10 +422,10 @@
   <string name="shortcut_increase_volume">Lisää äänenvoimakkuutta</string>
   <string name="shortcut_decrease_volume">Pienennä äänenvoimakkuutta</string>
   <string name="shortcut_all_apps">Kaikki sovellukset</string>
-  <string name="shortcut_braille_keyboard">Vaihda pistekirjoitukseen</string>
+  <string name="shortcut_braille_keyboard">Vaihda pistekirjoitusnäppäimistöön</string>
   <string name="shortcut_braille_display_settings">Siirry pistekirjoitusnäytön asetuksiin</string>
   <string name="shortcut_tutorial">Avaa ohje</string>
-  <string name="shortcut_control_speak_time">Aika puhuttuna tai aikaa ei puhuta</string>
+  <string name="shortcut_control_speak_time">Sano aika ääneen tai älä sano aikaa</string>
   <string name="shortcut_enable_speak_time">Sano aika ääneen</string>
   <string name="speak_time_on">Sano aika ääneen päällä</string>
   <string name="shortcut_disable_speak_time">Aikaa ei puhuta</string>
@@ -667,8 +667,8 @@
   <string name="label_dialog_confirm_label_remove">Tunniste poistettu</string>
   <string name="label_dialog_text">Kirjoita elementin tunnisteena käytettävä teksti\nSisäisen näkymän nimi: %1$s</string>
   <string name="label_dialog_edit_hint">Tunnisteteksti</string>
-  <string name="label_import">Tuo muokatut tunnisteet</string>
-  <string name="label_import_dialog_title">Tuo muokatut tunnisteet SandFlyiin</string>
+  <string name="label_import">Tuo omat tunnisteet</string>
+  <string name="label_import_dialog_title">Tuo omat tunnisteet SandFlyiin</string>
   <string name="label_import_dialog_message">Valitse, haluatko ohittaa olemassa olevat tunnisteet vai korvata ne uusilla, jos näissä on ristiriita.</string>
   <string name="label_import_dialog_skip">Ohita</string>
   <string name="label_import_dialog_override">Korvaa</string>
@@ -685,7 +685,7 @@
   <string name="button_disable_all_events">Poista kaikki käytöstä</string>
   <string name="button_enable_all_events">Ota kaikki käyttöön</string>
   <string name="dialog_title_disable_exploration">Poistetaanko kosketuksella tutkiminen käytöstä?</string>
-  <string name="dialog_message_disable_exploration">Haluatko varmasti poistaa kosketuksella tutkimisen käytöstä?\n\nLaitteesi ei enää vastaa pikaeleisiin tai sano kohteiden nimiä koskettaessasi ruutua.</string>
+  <string name="dialog_message_disable_exploration">Haluatko varmasti poistaa käytöstä asetuksen Kosketuksella tutkiminen?\n\nLaitteesi ei enää vastaa pikaeleisiin tai sano kohteiden nimiä koskettaessasi ruutua.</string>
   <string name="dialog_title_enable_tree_debug">Käytetäänkö solmupuun virheenkorjausta?</string>
   <string name="dialog_message_enable_tree_debug">Haluatko varmasti ottaa solmupuun virheenkorjauksen käyttöön?\n\nRuudun sisältö saattaa tällöin päätyä laitteen lokitiedostoihin, jotka saattavat olla muiden sovellusten luettavissa.</string>
   <string name="dialog_title_enable_tree_debug_gesture">Määritetäänkö neljän sormen kolmoisnapautusele uudelleen?</string>
@@ -747,7 +747,7 @@
   <string name="value_tv_remote_mode_seek_control">Liukusäädintila</string>
   <string name="value_hint_tv_remote_mode_seek_control">Muuta arvoa nuolipainikkeilla tai lopeta painamalla Valitse.</string>
   <string name="reset_user_language_preference">Oletus</string>
-  <string name="title_pref_selector_speech_rate">Puheen nopeus</string>
+  <string name="title_pref_selector_speech_rate">Puhenopeus</string>
   <string name="title_pref_selector_verbosity">Puheen määrä</string>
   <string name="title_pref_selector_punctuation">Välimerkit</string>
   <string name="title_pref_selector_audio_focus">Äänen vaimennus</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{Ei vastaavuuksia tässä näkymässä}=1{# vastaavuus}other{# vastaavuutta}}</string>
   <string name="msg_no_matches">Ei tuloksia tällä näytöllä</string>
   <string name="dialog_title_continuous_reading_mode">Miten jatkuva lukeminen toimii</string>
-  <string name="dialog_message_continuous_reading_mode">Kun olet valinnut \"Lue alusta alkaen\" tai \"Lue kohdennetusta kohteesta alkaen\", voit edelleen siirtyä edelliseen tai seuraavaan kohtaan samalla kun tekstiä luetaan. Tämä helpottaa eteen- ja taaksepäin siirtymistä.\n\nVoit säätää SandFlyn äänenvoimakkuutta lukemisen aikana äänenvoimakkuuden lisäys- ja vähennyspainikkeilla.</string>
+  <string name="dialog_message_continuous_reading_mode">Kun olet valinnut \"Lue alusta alkaen\" tai \"Lue korostetusta kohteesta\", voit edelleen siirtyä edelliseen tai seuraavaan kohtaan samalla kun tekstiä luetaan. Tämä helpottaa eteen- ja taaksepäin siirtymistä.\n\nVoit säätää SandFlyn äänenvoimakkuutta lukemisen aikana äänenvoimakkuuden lisäys- ja vähennyspainikkeilla.</string>
   <string name="always_show_this_message_label">Näytä tämä viesti aina</string>
   <string name="dialog_title_voice_commands">Ohjaa SandFlyia äänikomennoilla</string>
   <string name="dialog_message_voice_commands">Kokeile vaikka näitä:\n\n• Kopioi\n• Lue korostetusta kohteesta alkaen\n• Etsi [tallennus]\n• Puhu [nopeammin]\n• SandFly-asetukset\n\nSano \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\", niin näet kaikki mahdolliset komennot</string>
@@ -819,7 +819,7 @@
   <string name="adjust_typo_hint">%1$s, niin näet ehdotuksia</string>
   <string name="use_action_hint">Suorita toiminto kaksoisnapauttamalla</string>
   <string name="no_adjust_setting_gesture">Jos haluat käyttää tätä, siirry SandFly-asetuksiin ja lisää ele toiminnolle \"<xliff:g example="selected setting next action">%1$s</xliff:g>\"</string>
-  <string name="no_navigate_typo_gesture">Jos haluat käyttää tätä, palaa SandFlyin asetuksiin ja lisää ele oikeinkirjoituksen tarkistusta varten</string>
+  <string name="no_navigate_typo_gesture">Jos haluat käyttää tätä, palaa SandFly-asetuksiin ja lisää ele oikeinkirjoituksen tarkistusta varten</string>
   <string name="use_spelling_suggestion_hint">Korvaa teksti kaksoisnapauttamalla</string>
   <string name="screen_search_keyword_hint">avainsana on %1$s</string>
   <string name="screen_search_no_keyword_hint">Ei vielä avainsanaa. Aloita uusi haku koskettamalla pitkään kolmella sormella tai avaamalla näyttöhaku SandFly-valikosta.</string>
@@ -846,7 +846,7 @@
   <string name="tv_training_shortcut_step_summary">Voit käyttää SandFlyia nopeasti painamalla alas‑ ja takaisin-painikkeita samaan aikaan kolmen sekunnin ajan. Tämä laittaa SandFlyin päälle tai pois päältä.\n\nVoit käyttää pikakomentoa myös television asetuksista.\n\nJatka painamalla Valitse.</string>
   <string name="new_feature_in_talkback_title">SandFlyin uudet ominaisuudet</string>
   <string name="exit_tutorial_title">Oletko valmis?</string>
-  <string name="exit_tutorial_content">Voit palata ohjeisiin milloin tahansa SandFlyin asetuksissa.</string>
+  <string name="exit_tutorial_content">Voit palata ohjeisiin milloin tahansa SandFly-asetuksissa.</string>
   <string name="exit_onboarding_content">Voit milloin tahansa palata SandFly-asetuksiin tarkistamaan uudet ominaisuudet.</string>
   <string name="keep_reviewing_tutorial_button">Jatka ohjeiden parissa</string>
   <string name="welcome_to_updated_talkback_title">Tervetuloa uuteen SandFlyiin</string>
@@ -866,8 +866,8 @@
   <string name="new_shortcut_gesture_selection_mode_text">Voit aloittaa tai lopettaa tekstin valintatilan kaksoisnapauttamalla kahdella sormella ja pitämällä painettuna.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Valintatila päällä tai poissa päältä. Tekstin valintatila otetaan yleensä käyttöön tai poistetaan käytöstä, kun olet syötekentässä. Pyyhkäise oikealle jatkaaksesi.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Voit käyttää lukuasetuksia pyyhkäisemällä oikealle tai vasemmalle kolmella sormella. Voit myös pyyhkäistä ylös tai alas kolmella sormella.</string>
-  <string name="new_shortcut_gesture_note">Huom. Olet muokannut joitakin eleitä, joten nämä tiedot eivät välttämättä ole oikein. Voit tarkistaa eleesi SandFlyin asetuksista.</string>
-  <string name="welcome_to_android11_text">SandFlyiin on lisätty uusia eleitä, jotta sen käyttö olisi entistä nopeampaa ja helpompaa.\n\nTällä näytöllä voit kokeilla uusia eleitä. Voit lukea nämä tiedot milloin tahansa SandFlyin asetuksista.</string>
+  <string name="new_shortcut_gesture_note">Huom. Olet muokannut joitakin eleitä, joten nämä tiedot eivät välttämättä ole oikein. Voit tarkistaa eleesi SandFly-asetuksista.</string>
+  <string name="welcome_to_android11_text">SandFlyiin on lisätty uusia eleitä, jotta sen käyttö olisi entistä nopeampaa ja helpompaa.\n\nTällä näytöllä voit kokeilla uusia eleitä. Voit lukea nämä tiedot milloin tahansa SandFly-asetuksista.</string>
   <string name="new_gesture_notification_title">SandFlyin uudet eleet</string>
   <string name="new_gesture_notification_content">Napauta, niin näet ohjeet SandFlyin nopeampaan käyttöön uusilla eleillä.</string>
   <string name="dump_node_tree_description">Solmupuu on lisätty lokeihin.</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Pistekirjoitusnäytön asetukset</string>
   <string name="keyboard_smart_browse_mode_title">Näppäimistö: Älykäs selaustila</string>
   <string name="keyboard_smart_browse_mode_text">SandFlyn älykäs selaustila laittaa selaustilan pois päältä muokkauskentässä, jotta voit kirjoittaa fyysisellä näppäimistöllä selatessasi verkkoa. Se laittaa selaustilan takaisin päälle, kun siirryt verkossa muuhun kuin muokkauskenttään, jotta voit jatkaa selaamista tehokkaasti. Voit laittaa älykkään selaustilan päälle tai pois päältä täällä: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">SandFly-asetukset &gt; Lisäasetukset</string>
-  <string name="advanced_settings_link_tts">SandFly-asetukset ja sitten Lisäasetukset</string>
   <string name="keyboard_tutorial_title">Näppäimistöohje</string>
   <string name="keyboard_tutorial_text">SandFlyssa on nyt näppäimistöohje, jonka avulla voit oppia fyysisen näppäimistön parannetun näppäinkartan pikanäppäimet ja komennot. Pääset ohjeeseen siirtymällä kohtaan <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFly-asetukset &gt; SandFly-ohje</string>
-  <string name="tutorial_link_tts">SandFly-asetukset ja sitten SandFly-ohje</string>
   <string name="tutorial_entry_point_title">Ohje</string>
   <string name="welcome_to_talkback_title">Tervetuloa käyttämään SandFlyia</string>
   <string name="talkback_is_on">SandFly on päällä</string>
@@ -923,8 +919,8 @@
   <string name="turn_off_talkback">Laita SandFly pois päältä</string>
   <string name="tap_again_to_turn_off">Laita se pois päältä napauttamalla uudelleen</string>
   <string name="talkback_turn_off_description_pointer_and_touch">SandFly lukee näytölläsi olevan sisällön ääneen ja muuttaa navigoinnin toimintaa laitteellasi. Laita se pois päältä valitsemalla \"Laita SandFly pois päältä\" tai napauttamalla sitä kaksi kertaa.</string>
-  <string name="welcome_to_talkback_text">SandFly antaa äänipalautetta, joten voit käyttää laitetta näyttöä katsomatta. SandFly voi auttaa, jos näytön näkemisessä on vaikeuksia. \n\nJos haluat laittaa SandFlyin päälle tai pois päältä nopeasti äänenvoimakkuuspainikkeilla, voit ottaa pikanäppäimen käyttöön SandFlyin asetuksissa &gt; SandFly-pikanäppäimet.\n\nKun SandFly on päällä, näytöllä korostettu kohde sanotaan ääneen.\n\nPyyhkäisemällä oikealle siirryt seuraavaan kohteeseen ja pyyhkäisemällä vasemmalle siirryt edelliseen.\n\nPyyhkäise oikealle löytääksesi Seuraava-painikkeen.</string>
-  <string name="welcome_to_talkback_text_tts">SandFly antaa äänipalautetta, joten voit käyttää laitetta näyttöä katsomatta. SandFly voi auttaa, jos näytön näkemisessä on vaikeuksia. \n\nJos haluat laittaa SandFlyin päälle tai pois päältä nopeasti äänenvoimakkuuspainikkeilla, voit ottaa pikanäppäimen käyttöön SandFlyin asetuksissa &gt; SandFly-pikanäppäimet.\n\nKun SandFly on päällä, näytöllä korostettu kohde sanotaan ääneen.\n\nPyyhkäisemällä oikealle siirryt seuraavaan kohteeseen ja pyyhkäisemällä vasemmalle siirryt edelliseen.\n\nPyyhkäise oikealle löytääksesi Seuraava-painikkeen.</string>
+  <string name="welcome_to_talkback_text">SandFly antaa äänipalautetta, joten voit käyttää laitetta näyttöä katsomatta. SandFly voi auttaa, jos näytön näkemisessä on vaikeuksia. \n\nJos haluat laittaa SandFlyin päälle tai pois päältä nopeasti äänenvoimakkuuspainikkeilla, voit ottaa pikanäppäimen käyttöön SandFly-asetuksissa &gt; SandFly-pikanäppäimet.\n\nKun SandFly on päällä, näytöllä korostettu kohde sanotaan ääneen.\n\nPyyhkäisemällä oikealle siirryt seuraavaan kohteeseen ja pyyhkäisemällä vasemmalle siirryt edelliseen.\n\nPyyhkäise oikealle löytääksesi Seuraava-painikkeen.</string>
+  <string name="welcome_to_talkback_text_tts">SandFly antaa äänipalautetta, joten voit käyttää laitetta näyttöä katsomatta. SandFly voi auttaa, jos näytön näkemisessä on vaikeuksia. \n\nJos haluat laittaa SandFlyin päälle tai pois päältä nopeasti äänenvoimakkuuspainikkeilla, voit ottaa pikanäppäimen käyttöön SandFly-asetuksissa &gt; SandFly-pikanäppäimet.\n\nKun SandFly on päällä, näytöllä korostettu kohde sanotaan ääneen.\n\nPyyhkäisemällä oikealle siirryt seuraavaan kohteeseen ja pyyhkäisemällä vasemmalle siirryt edelliseen.\n\nPyyhkäise oikealle löytääksesi Seuraava-painikkeen.</string>
   <string name="welcome_to_talkback_page_idle_announcement">Pyyhkäise oikealle löytääksesi Seuraava-painikkeen</string>
   <string name="explore_by_touch_title">Tutustu vetämällä sormellasi</string>
   <string name="explore_by_touch_text">Voit myös korostaa kohteen vetämällä sormeasi näytön poikki.\n\nKokeile nyt koskettamalla näyttöä ja vetämällä kohti vasenta alakulmaa, kunnes löydät Seuraava-painikkeen.</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">Valikoiden ja säätimien käyttö</string>
   <string name="menus_talkback_menu_text">SandFly-valikosta löydät asetukset ja säätimet, joita saatat tarvita usein.\n\nAvaa nyt SandFly-valikko napauttamalla näyttöä kolmella sormella.</string>
   <string name="menus_talkback_menu_text_pre_r">SandFly-valikosta löydät asetukset ja säätimet, joita saatat tarvita usein.\n\nAvaa nyt SandFly-valikko pyyhkäisemällä alas ja sitten oikealle.</string>
-  <string name="menus_selector_text">Näillä pikanäppäimillä voit muuttaa asetuksia nopeasti, esimerkiksi vaihtaa navigoinnin merkeistä sanoihin tai muuttaa SandFlyin puhenopeutta.\n\nVoit vaihtaa lukuasetuksia nopeasti pyyhkäisemällä kolmella sormella oikealle tai vasemmalle.\n\nVoit muokata SandFly-valikkoa ja lukuasetuksia myöhemmin SandFlyin asetuksista.</string>
-  <string name="menus_selector_text_pre_r">Näillä pikanäppäimillä voit muuttaa asetuksia nopeasti, esimerkiksi vaihtaa navigoinnin merkeistä sanoihin tai muuttaa SandFlyin puhenopeutta.\n\nVoit vaihtaa lukuasetuksia nopeasti pyyhkäisemällä alas ja sitten ylös.\n\nVoit muokata SandFly-valikkoa ja lukuasetuksia myöhemmin SandFlyin asetuksista.</string>
+  <string name="menus_selector_text">Näillä pikanäppäimillä voit muuttaa asetuksia nopeasti, esimerkiksi vaihtaa navigoinnin merkeistä sanoihin tai muuttaa SandFlyin puhenopeutta.\n\nVoit vaihtaa lukuasetuksia nopeasti pyyhkäisemällä kolmella sormella oikealle tai vasemmalle.\n\nVoit muokata SandFly-valikkoa ja lukuasetuksia myöhemmin SandFly-asetuksista.</string>
+  <string name="menus_selector_text_pre_r">Näillä pikanäppäimillä voit muuttaa asetuksia nopeasti, esimerkiksi vaihtaa navigoinnin merkeistä sanoihin tai muuttaa SandFlyin puhenopeutta.\n\nVoit vaihtaa lukuasetuksia nopeasti pyyhkäisemällä alas ja sitten ylös.\n\nVoit muokata SandFly-valikkoa ja lukuasetuksia myöhemmin SandFly-asetuksista.</string>
   <string name="all_set_title">Valmista tuli</string>
   <string name="all_set_text">Olet valmis käyttämään SandFlyia.\n\nVoit tutustua muihin aiheisiin nyt tai katsoa nämä tiedot milloin tahansa SandFly-asetuksista.</string>
   <string name="talkback_tutorial_text">Valitse aihe pyyhkäisemällä oikealle. Saat parhaan kokemuksen, kun laitat SandFlyin päälle ennen kuin aloitat.</string>
@@ -1221,8 +1217,8 @@
   <string name="delete_icon_detection_dialog_title">Poistetaanko automaattiset kuvakkeiden kuvaukset?</string>
   <string name="delete_image_description_dialog_title">Poistetaanko automaattiset kuvien kuvaukset?</string>
   <string name="delete_all_image_captioning_dialog_title">Poistetaanko automaattiset kuvien ja kuvakkeiden kuvaukset?</string>
-  <string name="delete_dialog_message">Jos haluat kuvauksia taas myöhemmin, voit ladata ominaisuuden SandFlyin asetuksista</string>
-  <string name="delete_all_dialog_message">Tämä poistaa sekä kuvakkeiden että kuvien automaattiset kuvaukset.\n\nJos haluat kuvauksia taas myöhemmin, voit ladata nämä ominaisuudet SandFlyin asetuksista.</string>
+  <string name="delete_dialog_message">Jos haluat kuvauksia taas myöhemmin, voit ladata ominaisuuden SandFly-asetuksista</string>
+  <string name="delete_all_dialog_message">Tämä poistaa sekä kuvakkeiden että kuvien automaattiset kuvaukset.\n\nJos haluat kuvauksia taas myöhemmin, voit ladata nämä ominaisuudet SandFly-asetuksista.</string>
   <string name="delete_dialog_positive_button_text">Poista</string>
   <string name="delete_dialog_negative_button_text">Peru</string>
   <string name="delete_icon_description_hint">Automaattiset kuvakkeiden kuvaukset poistettu</string>
@@ -1258,7 +1254,7 @@
   <string name="title_text_formatting_menu">Kuvaile tekstin muotoilua</string>
   <string name="summary_text_formatting_menu">Lihavointi, kursivointi, alleviivaus ja muut</string>
   <string name="title_text_formatting_inline">Lue tekstin muotoilu ääneen</string>
-  <string name="title_switch_text_formatting">Sano tekstin muotoilu</string>
+  <string name="title_switch_text_formatting">Lue tekstin muotoilu ääneen</string>
   <string name="summary_text_formatting_verbosity">Lihavointi, kursivointi ja muut</string>
   <string name="summary_text_formatting_selector">Valitse, luetaanko lihavointi, kursivointi ja muu muotoilu ääneen</string>
   <string name="title_text_formatting_verbosity_options">Tekstin muotoiluasetukset</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Lisää</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Varaa eleet Vibration Watchille</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly ei käsittele kahden sormen napautuksia ja kaksoisnapautuksia, jotta Samsung Vibration Watch voi käyttää niitä. Ota Vibration Watch käyttöön kellon esteettömyysasetuksista.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Varattu Vibration Watchille Lisäasetuksissa</string>
     <string name="title_pref_speakerphone_away_from_ear">Kaiutin, kun puhelin ei ole korvalla</string>
     <string name="summary_pref_speakerphone_away_from_ear">Vaihtaa puhelun aikana kaiuttimeen, kun siirrät puhelimen pois korvalta, ja takaisin kuulokkeeseen, kun nostat sen taas korvalle.</string>
     <string name="summary_pref_speakerphone_needs_permission">Vaatii luvan, jota Android ei anna näytönlukuohjelmille. Anna lupa suorittamalla tämä komento adb:llä tai Shizukulla ja palaa sitten tälle näytölle: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Sovellukset</string>
     <string name="speech_control_no_apps">Mikään sovellus ei ole vielä pyytänyt lupaa puhua.</string>
     <string name="speech_control_ask_title">Sallitaanko sovelluksen <xliff:g id="app" example="Tasker">%1$s</xliff:g> puhua SandFlyn kautta?</string>
-    <string name="speech_control_ask_text">Se voi sanoa tekstiä SandFlyn äänellä. Voit muuttaa tätä Lisäasetuksissa.</string>
     <string name="speech_control_allow">Salli</string>
     <string name="speech_control_deny">Älä salli</string>
     <string name="permission_speak_label">puhua SandFlyn kautta</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d ilmoitus</item>
         <item quantity="other">%d ilmoitusta</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly päällä. Laita se pois päältä painamalla näyttöä kahdella sormella viiden sekunnin ajan. Jos et halua enää nähdä viestiä, poista käytöstä SandFly-asetukset &gt; Lisäasetukset &gt; Näytä ohjeet SandFlyn laittamiseen pois päältä.</string>
     <string name="edge_gestures_title">Reunat</string>
     <string name="title_pref_audio_output_device">Äänen ulostulolaite</string>
     <string name="dialog_title_audio_output_device">Valitse, missä SandFlyn ääni toistetaan</string>
@@ -1523,10 +1516,10 @@
     <string name="summary_support_wrap_around">Ota viimeisestä kohteesta ensimmäiseen kiertäminen käyttöön tai pois käytöstä</string>
     <string name="wrap_around_on">Kierrä alkuun päällä</string>
     <string name="wrap_around_off">Kierrä alkuun pois päältä</string>
-    <string name="title_selector_tablet_held_up_faces_away">Pystyssä pidetty tabletti osoittaa poispäin</string>
+    <string name="title_selector_tablet_held_up_faces_away">Pystyssä pidetyn tabletin näyttö poispäin</string>
     <string name="summary_support_tablet_held_up_faces_away">Pistekirjoitusnäppäimistölle tabletilla tai avatulla taittopuhelimella</string>
-    <string name="tablet_held_up_faces_away_on">Pystyssä pidetty tabletti osoittaa poispäin, päällä</string>
-    <string name="tablet_held_up_faces_away_off">Pystyssä pidetty tabletti osoittaa poispäin, pois päältä</string>
+    <string name="tablet_held_up_faces_away_on">Pystyssä pidetyn tabletin näyttö poispäin, päällä</string>
+    <string name="tablet_held_up_faces_away_off">Pystyssä pidetyn tabletin näyttö poispäin, pois päältä</string>
     <string name="title_keyboard_echo_on_screen">Näyttönäppäimistön kaiku</string>
     <string name="title_keyboard_echo_physical">Fyysisen näppäimistön kaiku</string>
     <string name="title_keyboard_echo_braille_keyboard">Pistekirjoitusnäppäimistön kaiku</string>
@@ -1551,7 +1544,7 @@
     <string name="item_details_order_footer">SandFly sanoo kohteen tiedot tässä järjestyksessä. Voit muuttaa järjestystä koskettamalla tietoa pitkään ja vetämällä sitä ylös tai alas. Kun SandFly on päällä, kaksoisnapauta ja pidä painettuna ja vedä sitten. Voit myös käyttää toimintoja Siirrä ylös ja Siirrä alas.</string>
     <string name="title_pref_speak_items_before_scroll">Sano kohteet ennen kuin ne vierittyvät näkyviin</string>
     <string name="gemini_error_api_key">Gemini ei hyväksynyt API-avainta. Tarkista avain kohdan Kuvien ja näytön kuvaukset asetuksista.</string>
-    <string name="gemini_error_quota">Gemini API ‑avaimesi käyttöraja on täynnä. Yritä myöhemmin uudelleen.</string>
+    <string name="gemini_error_quota">Gemini-API-avaimesi käyttöraja on täynnä. Yritä myöhemmin uudelleen.</string>
     <string name="gemini_error_busy">Gemini on juuri nyt ruuhkautunut. Yritä hetken kuluttua uudelleen.</string>
     <string name="gemini_error_timeout">Geminin vastaus kesti liian kauan. Yritä uudelleen.</string>
     <string name="gemini_error_with_code">Gemini ei voinut vastata, virhe <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
@@ -1662,7 +1655,7 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Toinen pikakuvake selaustilan kytkemiseksi päälle tai pois</string>
     <string name="title_pref_vibration_strength">Tärinän voimakkuus</string>
     <string name="shortcut_scroll_to_top">Vieritä ylös</string>
-    <string name="shortcut_write_reading_control">Kirjoita lukusäätimen kirjain</string>
+    <string name="shortcut_write_reading_control">Kirjoita lukuasetuksen kirjain</string>
     <string name="title_pref_reading_control_letters">Käsinkirjoitettavat kirjaimet</string>
     <string name="reading_control_letter_none">Ei mitään</string>
     <string name="handwriting_prompt">Kirjoita kirjain</string>
@@ -1761,12 +1754,11 @@
     <string name="dictation_google_download">Lataa <xliff:g id="language" example="English">%1$s</xliff:g> laitteen tunnistusta varten</string>
     <string name="dictation_recognition_android">Androidin puheentunnistus</string>
     <string name="dictation_recognition_automatic_using">Automaattinen: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
-    <string name="dictation_rambler_needs_key">Rambler, tarvitsee Gemini API ‑avaimen</string>
+    <string name="dictation_rambler_needs_key">Rambler, tarvitsee Gemini-API-avaimen</string>
     <string name="dictation_whisper_needs_model">Whisper, tarvitsee ladatun mallin</string>
     <string name="title_pref_whisper_models">Whisper-mallit</string>
     <string name="dictation_whisper_use">Käytä</string>
     <string name="title_pref_dictation_ai_service">Tekoälypalvelu sanelulle</string>
-    <string name="dictation_ai_same">Sama kuin automaattisissa kuvauksissa</string>
     <string name="title_pref_browse_mode_per_app">Muista kunkin sovelluksen selaustila</string>
     <string name="title_pref_export_settings">Vie asetukset</string>
     <string name="title_pref_import_settings">Tuo asetukset</string>
@@ -1794,4 +1786,12 @@
         <item>1 minuutti</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automaattinen pysäytys hiljaisuuden jälkeen</string>
+    <string name="dictation_ai_same">Sama kuin kohdassa Kuvien ja näytön kuvaukset</string>
+    <string name="navigation_settings_link">SandFly-asetukset &gt; Navigointi</string>
+    <string name="navigation_settings_link_tts">SandFly-asetukset, sitten Navigointi</string>
+    <string name="shortcut_reserved_for_vibration_watch">Varattu Vibration Watchille kohdassa Eleet</string>
+    <string name="speech_control_ask_text">Se voi sanoa tekstiä SandFlyn äänellä. Voit muuttaa tätä kohdassa Asetukset &gt; Puhe &gt; Salli muiden sovellusten puhua.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly päällä. Laita se pois päältä painamalla näyttöä kahdella sormella viiden sekunnin ajan. Jos et halua enää nähdä viestiä, laita pois päältä SandFly-asetukset &gt; Keskeytys ja sammutus &gt; Näytä ohjeet SandFlyin laittamiseen pois päältä.</string>
+    <string name="tutorial_link">SandFly-asetukset &gt; Ohjeet ja palaute &gt; SandFly-opetusohjelma</string>
+    <string name="tutorial_link_tts">SandFly-asetukset, sitten Ohjeet ja palaute, sitten SandFly-opetusohjelma</string>
 </resources>

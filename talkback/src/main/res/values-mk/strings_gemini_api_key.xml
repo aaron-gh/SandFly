@@ -12,13 +12,13 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, потоа Flash-Lite кога е зафатено</string>
     <string name="gemini_model_loading">Добивање на моделите…</string>
     <string name="gemini_model_list_failed">Не можеа да се добијат моделите: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Прво поставете API-клуч за Gemini</string>
+    <string name="gemini_model_needs_key">Прво поставете Gemini API клуч</string>
     <string name="gemini_api_terms_link">Дополнителни услови за користење на Gemini API</string>
     <string name="ai_service_address_hint">Адреса, како што е https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Модел</string>
     <string name="ai_service_address_invalid">Адресата мора да започнува со https://. Ништо не е зачувано.</string>
     <string name="dialog_message_ai_service_consent">Сликите и снимките од екранот се испраќаат до <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> за опис, што трае неколку секунди. Важат условите и политиката за приватност на таа услуга. Генеративната ВИ е експериментална, па ќе прави грешки.</string>
-    <string name="ai_service_error_api_key">Услугата за ВИ не го прифати API-клучот. Проверете ги нејзините поставки во „Автоматски описи“.</string>
+    <string name="ai_service_error_api_key">Услугата за вештачка интелигенција не го прифати API-клучот. Проверете ги нејзините поставки во „Описи на слики и екран“.</string>
     <string name="ai_service_error_quota">Ограничувањето за користење на услугата за вештачка интелигенција е достигнато. Обидете се повторно подоцна.</string>
     <string name="ai_service_error_busy">Услугата за вештачка интелигенција е зафатена во моментов. Обидете се повторно за момент.</string>
     <string name="ai_service_error_timeout">На услугата за вештачка интелигенција и требаше премногу долго за да одговори. Обидете се повторно.</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Нема</string>
-    <string name="ai_service_not_set_up">Не се користи ниедна услуга за ВИ. Поставете или изберете една во поставките за „Автоматски описи“.</string>
-    <string name="ai_provider_none_set_up">Не е поставена ниедна услуга за ВИ. Поставете една во нејзините поставки подолу.</string>
+    <string name="ai_service_not_set_up">Не се користи ниедна услуга за вештачка интелигенција. Поставете или изберете една во „Описи на слики и екран“.</string>
+    <string name="ai_provider_none_set_up">Не е поставена ниедна услуга за вештачка интелигенција. Поставете една во нејзините поставки подолу.</string>
     <string name="ai_provider_other">Друга услуга</string>
     <string name="title_pref_category_ai_services">Услуги за вештачка интелигенција</string>
     <string name="title_pref_ai_provider">Услуга за вештачка интелигенција</string>

@@ -20,13 +20,13 @@
     <string name="notification_reading_title">Märguannete ettelugemine</string>
     <string name="notification_apps_title">Rakendused</string>
     <string name="notification_words_title">Sõnad ja asendused</string>
-    <string name="notification_kinds_title">Teavituste tüübid</string>
+    <string name="notification_kinds_title">Märguannete tüübid</string>
     <string name="notification_when_title">Millal lugeda</string>
     <string name="notification_rules_title">Reeglid</string>
     <string name="notification_repeats_title">Kordused</string>
     <string name="notification_stop_title">Lugemise peatamine</string>
     <string name="notification_schedules_title">Kokkuvõte ja aeg</string>
-    <string name="notification_history_title">Teavituste ajalugu</string>
+    <string name="notification_history_title">Märguannete ajalugu</string>
     <string name="notification_test_title">Saada testmärguanne</string>
     <string name="notification_automation_title">Automatiseerimine</string>
     <string name="notification_automation_allowed_title">Luba automatiseerimisrakendused</string>
@@ -65,7 +65,7 @@
     <string name="notification_skip_ongoing_summary">Näiteks navigeerimine ja taimerid</string>
     <string name="notification_skip_foreground_title">Jäta töötavate rakenduste märguanded vahele</string>
     <string name="notification_skip_foreground_summary">Näiteks VPN või salvesti</string>
-    <string name="notification_skip_progress_title">Jäta edenemisteated vahele</string>
+    <string name="notification_skip_progress_title">Jäta edenemismärguanded vahele</string>
     <string name="notification_skip_group_summaries_title">Jäta rühma kokkuvõtted vahele</string>
     <string name="notification_skip_group_summaries_summary">Näiteks \"3 uut sõnumit\"</string>
     <string name="notification_skip_low_priority_title">Jäta madala prioriteediga märguanded vahele</string>
@@ -158,7 +158,7 @@
     <string name="notification_invalid_regex">Pole kehtiv regulaaravaldis</string>
     <string name="notification_edit">Muuda</string>
     <string name="notification_remove">Eemalda</string>
-    <string name="notification_history_keep">Säilita teavituste ajalugu</string>
+    <string name="notification_history_keep">Säilita märguannete ajalugu</string>
     <string name="notification_history_clear">Tühjenda ajalugu</string>
     <string name="notification_history_category">Märguanded</string>
     <string name="notification_history_empty">Märguandeid pole</string>
@@ -299,7 +299,7 @@
     <string name="notification_action_voice">loe hääleprofiiliga</string>
     <string name="notification_action_voice_value">loe profiiliga <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">loe SandFly häälega</string>
-    <string name="notification_voice_removed">Eemaldatud häälprofiil</string>
+    <string name="notification_voice_removed">Eemaldatud hääleprofiil</string>
     <string name="notification_action_format_value">kasuta kõnevormingut <xliff:g id="format" example="{app}: {title}">%1$s</xliff:g></string>
     <string name="notification_action_max_words_value">loe kuni <xliff:g id="words" example="10 words">%1$s</xliff:g></string>
     <string name="notification_off">Väljas</string>

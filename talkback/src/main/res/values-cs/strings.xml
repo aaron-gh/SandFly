@@ -192,7 +192,7 @@
   <string name="keycombo_menu_other_language_options">Zobrazit nainstalované jazyky</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Zkopírovat poslední vyslovenou frázi</string>
   <string name="keycombo_menu_other_open_tts_settings">Otevřít nastavení převodu textu na řeč</string>
-  <string name="keycombo_menu_other_open_talkback_settings">Otevření nastavení SandFly</string>
+  <string name="keycombo_menu_other_open_talkback_settings">Otevření nastavení funkce SandFly</string>
   <string name="keycombo_menu_other_report_issue">Odeslat zpětnou vazbu</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Vyslovování zadávaného textu</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Zobrazit seznam klávesových zkratek</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Jiné</string>
   <string name="shortcut_unassigned">Klepnutím přiřaďte</string>
   <string name="shortcut_not_customizable">%1$s, nelze přizpůsobit</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Nedostupné, když jsou na hodinkách zapnuté vibrace</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Nedostupné, když je zapnutá funkce Vibration Watch</string>
   <string name="shortcut_next">Další položka</string>
   <string name="shortcut_previous">Předchozí položka</string>
   <string name="shortcut_scroll_forward">Posun vpřed</string>
@@ -510,7 +510,7 @@
   <string name="summary_show_hide_screen">Skryje obrazovku, aby ji na veřejných místech neviděli ostatní lidé. Po skrytí obrazovku vrátí do běžného stavu.</string>
   <string name="summary_control_speak_time">Určete, jestli se bude říkat čas nahlas, když zapnete obrazovku</string>
   <string name="summary_show_keyboard_shortcuts_preferences">Otevřít seznam klávesových zkratek</string>
-  <string name="summary_talkback_preferences">Otevření nastavení SandFly</string>
+  <string name="summary_talkback_preferences">Otevření nastavení funkce SandFly</string>
   <string name="summary_braile_display_preferences">Otevřít nastavení hmatového displeje</string>
   <string name="summary_system_actions">Přejít na všechny aplikace a rychlé nastavení</string>
   <string name="summary_tts_settings">Otevřít nastavení převodu textu na řeč</string>
@@ -818,13 +818,13 @@
   <string name="adjust_granularity_hint">%1$s spustíte čtení po %2$s</string>
   <string name="adjust_typo_hint">Gesto pro návrhy: %1$s.</string>
   <string name="use_action_hint">Dvojitým klepnutím provedete akci</string>
-  <string name="no_adjust_setting_gesture">Chcete-li toto gesto použít, v nastavení aplikace SandFly přidejte gesto pro %1$s</string>
-  <string name="no_navigate_typo_gesture">Pokud chcete toto gesto použít, v nastavení aplikace SandFly přidejte gesto pro kontrolu pravopisu</string>
+  <string name="no_adjust_setting_gesture">Chcete-li toto gesto použít, v nastavení funkce SandFly přidejte gesto pro <xliff:g example="selected setting next action">%1$s</xliff:g></string>
+  <string name="no_navigate_typo_gesture">Pokud chcete toto gesto použít, v nastavení funkce SandFly přidejte gesto pro kontrolu pravopisu</string>
   <string name="use_spelling_suggestion_hint">Dvojitým klepnutím nahradíte text</string>
   <string name="screen_search_keyword_hint">klíčové slovo je %1$s</string>
   <string name="screen_search_no_keyword_hint">Zatím nemáte žádná klíčová slova. Pokud chcete zahájit nové vyhledávání, klepněte třemi prsty a podržte je nebo v nabídce SandFly otevřete přímé vyhledávání.</string>
   <string name="screen_search_no_keyword_hint_pre_r">Zatím nemáte žádná klíčová slova. Pokud chcete zahájit nové vyhledávání, přejeďte doleva a pak dolů nebo v nabídce SandFly otevřete přímé vyhledávání.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Braillská klávesnice není zapnuta. Nakonfigurujte ji v nastavení SandFly a zkuste to znovu.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Braillská klávesnice není zapnuta. Nakonfigurujte ji v nastavení funkce SandFly a zkuste to znovu.</string>
   <string name="suggestions_window_available">Jsou k dispozici návrhy</string>
   <string name="suggestions_window_available_with_gesture">Jsou k dispozici návrhy Otevřete je tímto gestem: %1$s</string>
   <string name="heads_up_window_available">Je k dispozici oznámení</string>
@@ -846,8 +846,8 @@
   <string name="tv_training_shortcut_step_summary">Pokud chcete používat zkratku funkce SandFly, stiskněte zároveň tlačítka Dolů a Zpět a 3 sekundy je držte. Tím se funkce SandFly buď zapne, nebo vypne.\n\nTuto zkratku můžete použít také v nastavení televize.\n\nPokračujte stisknutím tlačítka Vybrat.</string>
   <string name="new_feature_in_talkback_title">Nové funkce aplikace SandFly</string>
   <string name="exit_tutorial_title">Kontrola dokončena?</string>
-  <string name="exit_tutorial_content">V nastavení aplikace SandFly se k výuce můžete kdykoli vrátit.</string>
-  <string name="exit_onboarding_content">V nastavení aplikace SandFly se k přehledu nových funkcí můžete kdykoli vrátit.</string>
+  <string name="exit_tutorial_content">V nastavení funkce SandFly se k výuce můžete kdykoli vrátit.</string>
+  <string name="exit_onboarding_content">V nastavení funkce SandFly se k přehledu nových funkcí můžete kdykoli vrátit.</string>
   <string name="keep_reviewing_tutorial_button">Pokračovat v kontrole</string>
   <string name="welcome_to_updated_talkback_title">Vítá vás aktualizovaná aplikace SandFly</string>
   <string name="navigation_heading">Navigace</string>
@@ -866,14 +866,14 @@
   <string name="new_shortcut_gesture_selection_mode_text">Spuštění nebo ukončení režimu výběru textu: Dvakrát klepněte a podržte obrazovku dvěma prsty.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Režim výběru je zapnutý nebo vypnutý. Tato akce obvykle zahájí nebo ukončí režim výběru, když se nacházíte uvnitř zadávacího pole. Pokračujte přejetím prstem doprava.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Chcete-li použít ovládání čtení, přejeďte třemi prsty doleva a potom doprava. Můžete také přejet třemi prsty nahoru a poté dolů.</string>
-  <string name="new_shortcut_gesture_note">Poznámka: Některá gesta už jste si upravili, proto tyto informace mohou být nepřesné. Pokud si chcete prohlédnout svá gesta, přejděte do nastavení aplikace SandFly.</string>
-  <string name="welcome_to_android11_text">Přidali jsme nová gesta, aby byla aplikace SandFly rychlejší a uživatelsky přívětivější.\n\nNa této obrazovce si nová gesta můžete vyzkoušet. Tyto informace si můžete kdykoli přečíst v nastavení aplikace SandFly.</string>
+  <string name="new_shortcut_gesture_note">Poznámka: Některá gesta už jste si upravili, proto tyto informace mohou být nepřesné. Pokud si chcete prohlédnout svá gesta, přejděte do nastavení funkce SandFly.</string>
+  <string name="welcome_to_android11_text">Přidali jsme nová gesta, aby byla aplikace SandFly rychlejší a uživatelsky přívětivější.\n\nNa této obrazovce si nová gesta můžete vyzkoušet. Tyto informace si můžete kdykoli přečíst v nastavení funkce SandFly.</string>
   <string name="new_gesture_notification_title">Nová gesta funkce SandFly</string>
   <string name="new_gesture_notification_content">Klepnutím zobrazíte návod, jak čtečku SandFly používat rychleji pomocí nových gest.</string>
   <string name="dump_node_tree_description">Strom uzlů byl uložen do protokolů.</string>
   <string name="report_gesture_description">Zde jsou naposledy provedená gesta. Nahlaste, které gesto je špatně a co je očekáváno.</string>
-  <string name="update_welcome_talkback_16.1">Tato aktualizace aplikace SandFly přináší podporu funkce Popis obrazovky ve více jazycích a další vylepšení kvality, která usnadňují používání.\n\nVíce se o těchto změnách dozvíte na několika dalších obrazovkách.\n\nTyto informace si můžete kdykoli později přečíst v nastavení aplikace SandFly &gt; Nové funkce aplikace SandFly.</string>
-  <string name="update_welcome_talkback_16.1_tts">Tato aktualizace aplikace SandFly přináší podporu funkce Popis obrazovky ve více jazycích a další vylepšení kvality, která usnadňují používání.\n\nVíce se o těchto změnách dozvíte na několika dalších obrazovkách.\n\nTyto informace si můžete kdykoli přečíst v nastavení aplikace SandFly v sekci Nové funkce aplikace SandFly.</string>
+  <string name="update_welcome_talkback_16.1">Tato aktualizace aplikace SandFly přináší podporu funkce Popsat obrazovku ve více jazycích a další vylepšení kvality, která usnadňují používání.\n\nVíce se o těchto změnách dozvíte na několika dalších obrazovkách.\n\nTyto informace si můžete kdykoli později přečíst v nastavení funkce SandFly &gt; Nové funkce aplikace SandFly.</string>
+  <string name="update_welcome_talkback_16.1_tts">Tato aktualizace aplikace SandFly přináší podporu funkce Popsat obrazovku ve více jazycích a další vylepšení kvality, která usnadňují používání.\n\nVíce se o těchto změnách dozvíte na několika dalších obrazovkách.\n\nTyto informace si můžete kdykoli přečíst v nastavení funkce SandFly v sekci Nové funkce aplikace SandFly.</string>
   <string name="shortcut_for_dictation_title">Zkratka pro hlasové zadávání</string>
   <string name="shortcut_for_dictation_content">Při používání Gboardu teď můžete dvojitým klepnutím dvěma prsty spustit nebo zastavit hlasové zadávání.
 &lt;br&gt;
@@ -897,8 +897,8 @@
 &lt;br&gt;
 &lt;br&gt;Cákáním barvami se dá vytvořit pestrý obraz.
 &lt;br&gt;Třeba &lt;font color=\"#db372d\"&gt;ohnivě červený&lt;/font&gt; nebo &lt;font color=\"#128937\"&gt;zelený&lt;/font&gt;.</string>
-  <string name="update_welcome_talkback_16.2">Tato aktualizace funkce SandFly přináší novou vylepšenou mapu kláves pro fyzické klávesnice, podporu oznamování formátování textu a přepracované rozvržení nastavení spolu s dalšími vylepšeními, která usnadňují používání.\n\nNa dalších několika obrazovkách se o těchto změnách dozvíte více.\n\nTyto informace si můžete později přečíst v sekci Nastavení funkce SandFly &gt; Nové vlastnosti funkce SandFly.</string>
-  <string name="update_welcome_talkback_16.2_tts">Tato aktualizace funkce SandFly přináší novou vylepšenou mapu kláves pro fyzické klávesnice, podporu oznamování formátování textu a přepracované rozvržení nastavení spolu s dalšími vylepšeními, která usnadňují používání.\n\nNa dalších několika obrazovkách se o těchto změnách dozvíte více.\n\nTyto informace si můžete později přečíst v sekci Nastavení funkce SandFly a pak Nové vlastnosti funkce SandFly.</string>
+  <string name="update_welcome_talkback_16.2">Tato aktualizace funkce SandFly přináší novou vylepšenou mapu kláves pro fyzické klávesnice, podporu oznamování formátování textu a přepracované rozvržení nastavení spolu s dalšími vylepšeními, která usnadňují používání.\n\nNa dalších několika obrazovkách se o těchto změnách dozvíte více.\n\nTyto informace si můžete později přečíst v sekci Nastavení funkce SandFly &gt; Nové funkce aplikace SandFly.</string>
+  <string name="update_welcome_talkback_16.2_tts">Tato aktualizace funkce SandFly přináší novou vylepšenou mapu kláves pro fyzické klávesnice, podporu oznamování formátování textu a přepracované rozvržení nastavení spolu s dalšími vylepšeními, která usnadňují používání.\n\nNa dalších několika obrazovkách se o těchto změnách dozvíte více.\n\nTyto informace si můžete později přečíst v sekci Nastavení funkce SandFly a pak Nové funkce aplikace SandFly.</string>
   <string name="new_settings_layout_title">Nové rozvržení nastavení</string>
   <string name="new_settings_layout_text">Skupiny nastavení byly aktualizovány, aby bylo snazší najít jednotlivé funkce. K dispozici jsou také nové kategorie nastavení, například nastavení klávesnice.</string>
   <string name="split_tap_everywhere_title">Rozdělené klepnutí všude</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Nastavení hmatového displeje</string>
   <string name="keyboard_smart_browse_mode_title">Klávesnice: Chytrý režim procházení</string>
   <string name="keyboard_smart_browse_mode_text">Chytrý režim procházení funkce SandFly vypne v upravitelných polích režim procházení, abyste na webech mohli snáz psát pomocí fyzické klávesnice. Když na webu přejdete na pole, které nelze upravovat, režim procházení se zase zapne, abyste mohli efektivně pokračovat v prohlížení. Chytrý režim procházení můžete zapnout nebo vypnout v sekci %1$s.</string>
-  <string name="advanced_settings_link">Nastavení funkce SandFly &gt; Rozšířená nastavení</string>
-  <string name="advanced_settings_link_tts">Nastavení funkce SandFly a pak Rozšířená nastavení</string>
   <string name="keyboard_tutorial_title">Výukový program ovládání pomocí klávesnice</string>
   <string name="keyboard_tutorial_text">SandFly teď zahrnuje výukový program ovládání pomocí klávesnice, který vám pomůže naučit se klávesové zkratky a příkazy pro vylepšenou mapu kláves při používání fyzické klávesnice. Výukový program najdete v sekci %1$s.</string>
-  <string name="tutorial_link">Nastavení funkce SandFly &gt; Výukový program SandFly</string>
-  <string name="tutorial_link_tts">Nastavení funkce SandFly a pak Výukový program SandFly</string>
   <string name="tutorial_entry_point_title">Výukový program</string>
   <string name="welcome_to_talkback_title">Vítá vás SandFly</string>
   <string name="talkback_is_on">Funkce SandFly je zapnutá</string>
@@ -923,8 +919,8 @@
   <string name="turn_off_talkback">Vypnout funkci SandFly</string>
   <string name="tap_again_to_turn_off">Dalším klepnutím funkci vypnete</string>
   <string name="talkback_turn_off_description_pointer_and_touch">Čtečka SandFly čte nahlas obsah na obrazovce a mění způsob fungování navigace na zařízení. Pokud ji chcete vypnout, vyberte Vypnout funkci SandFly nebo na ni dvakrát klepněte.</string>
-  <string name="welcome_to_talkback_text">Funkce SandFly poskytuje hlasovou odezvu, abyste zařízení mohli používat a nemuseli se přitom dívat na displej. Může pomoct i lidem, kteří na displej dobře nevidí. \n\nPokud chcete funkci SandFly rychle zapínat a vypínat tlačítky hlasitosti, můžete si nastavit zkratku v sekci Nastavení aplikace SandFly &gt; Zkratka funkce SandFly.\n\nKdyž je zapnutá funkce SandFly, hlasově oznamuje položku vybranou na obrazovce.\n\nPřejetím doprava přejdete na další položku, přejetím doleva přejdete na předchozí položku.\n\nPřejeďte teď prstem doprava, abyste se dostali na tlačítko Další.</string>
-  <string name="welcome_to_talkback_text_tts">Funkce SandFly poskytuje hlasovou odezvu, abyste zařízení mohli používat a nemuseli se přitom dívat na displej. Může být užitečná pro všechny, kdo na displej dobře nevidí. \n\nPokud chcete funkci SandFly rychle zapínat a vypínat tlačítky hlasitosti, můžete si nastavit zkratku v sekci Nastavení aplikace SandFly a pak Zkratka funkce SandFly.\n\nKdyž je funkce SandFly zapnutá, hlasově oznamuje položku vybranou na obrazovce.\n\nPřejetím doprava přejdete na další položku, přejetím doleva přejdete na předchozí položku.\n\nPřejeďte teď prstem doprava, abyste se dostali na tlačítko Další.</string>
+  <string name="welcome_to_talkback_text">Funkce SandFly poskytuje hlasovou odezvu, abyste zařízení mohli používat a nemuseli se přitom dívat na displej. Může pomoct i lidem, kteří na displej dobře nevidí. \n\nPokud chcete funkci SandFly rychle zapínat a vypínat tlačítky hlasitosti, můžete si nastavit zkratku v sekci Nastavení funkce SandFly &gt; Zkratka funkce SandFly.\n\nKdyž je zapnutá funkce SandFly, hlasově oznamuje položku vybranou na obrazovce.\n\nPřejetím doprava přejdete na další položku, přejetím doleva přejdete na předchozí položku.\n\nPřejeďte teď prstem doprava, abyste se dostali na tlačítko Další.</string>
+  <string name="welcome_to_talkback_text_tts">Funkce SandFly poskytuje hlasovou odezvu, abyste zařízení mohli používat a nemuseli se přitom dívat na displej. Může být užitečná pro všechny, kdo na displej dobře nevidí. \n\nPokud chcete funkci SandFly rychle zapínat a vypínat tlačítky hlasitosti, můžete si nastavit zkratku v sekci Nastavení funkce SandFly a pak Zkratka funkce SandFly.\n\nKdyž je funkce SandFly zapnutá, hlasově oznamuje položku vybranou na obrazovce.\n\nPřejetím doprava přejdete na další položku, přejetím doleva přejdete na předchozí položku.\n\nPřejeďte teď prstem doprava, abyste se dostali na tlačítko Další.</string>
   <string name="welcome_to_talkback_page_idle_announcement">Přejeďte teď prstem doprava, abyste se dostali na tlačítko Další</string>
   <string name="explore_by_touch_title">Prozkoumávejte přetažením prstu</string>
   <string name="explore_by_touch_text">Položku můžete vybrat také přejetím prstem po obrazovce.\n\nVyzkoušejte to. Klepněte na obrazovku a jeďte prstem směrem k levému dolnímu rohu, dokud nenajdete tlačítko Další.</string>
@@ -948,10 +944,10 @@
   <string name="menus_title">Používání nabídek a ovládacích prvků</string>
   <string name="menus_talkback_menu_text">Nabídka SandFly obsahuje nastavení a ovládací prvky, které můžete často potřebovat.\n\nZkuste teď nabídku SandFly otevřít klepnutím třemi prsty na obrazovku.</string>
   <string name="menus_talkback_menu_text_pre_r">Nabídka SandFly obsahuje nastavení a ovládací prvky, které můžete často potřebovat.\n\nZkuste teď nabídku SandFly otevřít přejetím prstem dolů a poté doprava.</string>
-  <string name="menus_selector_text">Tyto zkratky vám pomohou rychle změnit nastavení, například přepnout z procházení po znacích na procházení po slovech nebo upravit rychlost řeči aplikace SandFly.\n\nOvládací prvky čtení můžete rychle změnit přejetím třemi prsty doleva nebo doprava.\n\nNabídku SandFly a ovládací prvky čtení si později v nastavení aplikace SandFly můžete přizpůsobit.</string>
-  <string name="menus_selector_text_pre_r">Tyto zkratky vám pomohou rychle změnit nastavení, například přepnout z procházení po znacích na procházení po slovech nebo upravit rychlost řeči aplikace SandFly.\n\nOvládací prvky čtení lze rychle změnit přejetím prstem dolů a potom zpět nahoru.\n\nNabídku SandFly a ovládací prvky čtení si později v nastavení aplikace SandFly můžete přizpůsobit.</string>
+  <string name="menus_selector_text">Tyto zkratky vám pomohou rychle změnit nastavení, například přepnout z procházení po znacích na procházení po slovech nebo upravit rychlost řeči aplikace SandFly.\n\nOvládací prvky čtení můžete rychle změnit přejetím třemi prsty doleva nebo doprava.\n\nNabídku SandFly a ovládací prvky čtení si později v nastavení funkce SandFly můžete přizpůsobit.</string>
+  <string name="menus_selector_text_pre_r">Tyto zkratky vám pomohou rychle změnit nastavení, například přepnout z procházení po znacích na procházení po slovech nebo upravit rychlost řeči aplikace SandFly.\n\nOvládací prvky čtení lze rychle změnit přejetím prstem dolů a potom zpět nahoru.\n\nNabídku SandFly a ovládací prvky čtení si později v nastavení funkce SandFly můžete přizpůsobit.</string>
   <string name="all_set_title">Hotovo!</string>
-  <string name="all_set_text">Jste připraveni používat funkci SandFly.\n\nPokračujte s výukou v dalších tématech nebo si tyto informace přečtěte kdykoli v nastavení SandFly.</string>
+  <string name="all_set_text">Jste připraveni používat funkci SandFly.\n\nPokračujte s výukou v dalších tématech nebo si tyto informace přečtěte kdykoli v nastavení funkce SandFly.</string>
   <string name="talkback_tutorial_text">Přejetím doprava vyberte téma. Nejlepších výsledků dosáhnete, když nejdřív zapnete funkci SandFly.</string>
   <string name="basic_navigation_link_text">Základní navigace</string>
   <string name="basic_navigation_link_subtext">Přecházejte mezi položkami, posouvejte, používejte nabídky a provádějte další akce</string>
@@ -979,11 +975,11 @@
   <string name="typing_text_title">Psaní textu</string>
   <string name="basic_typing_text_text">Když přejdete do textového pole, v dolní části obrazovky se otevře klávesnice.</string>
   <string name="typing_text_text">Pohybujte prstem po klávesnici. Až uslyšíte písmeno, které chcete napsat, prst zvedněte.\n\nZkuste aktivovat textové pole níže a napsat svoje jméno.</string>
-  <string name="typing_text_with_braille_keyboard_text">Můžete psát také pomocí braillské klávesnice. Najdete ji v nastavení SandFly.</string>
+  <string name="typing_text_with_braille_keyboard_text">Můžete psát také pomocí braillské klávesnice. Najdete ji v nastavení funkce SandFly.</string>
   <string name="other_ways_to_type_title">Jiné způsoby psaní</string>
   <string name="other_ways_to_type_text">V aplikaci SandFly se dá psát i jinak. Můžete například zadávat písmena dvojitým klepnutím.</string>
-  <string name="basic_other_ways_to_type_text">V aplikaci SandFly se dá psát i jinak. Můžete například zadávat písmena dvojitým klepnutím. Můžete to později změnit v nastavení aplikace SandFly &gt; Klávesnice na obrazovce &gt; Předvolba psaní.</string>
-  <string name="basic_other_ways_to_type_text_tts">V aplikaci SandFly se dá psát i jinak. Můžete například zadávat písmena dvojitým klepnutím. Můžete to později změnit v nastavení aplikace SandFly. Přejděte v něm na Klávesnice na obrazovce a pak na Předvolba psaní.</string>
+  <string name="basic_other_ways_to_type_text">V aplikaci SandFly se dá psát i jinak. Můžete například zadávat písmena dvojitým klepnutím. Můžete to později změnit v nastavení funkce SandFly &gt; Softwarová klávesnice &gt; Způsob psaní.</string>
+  <string name="basic_other_ways_to_type_text_tts">V aplikaci SandFly se dá psát i jinak. Můžete například zadávat písmena dvojitým klepnutím. Můžete to později změnit v nastavení funkce SandFly. Přejděte v něm na Softwarová klávesnice a pak na Způsob psaní.</string>
   <string name="change_typing_preference_text">Změnit nastavení psaní</string>
   <string name="moving_cursor_title">Přesunutí kurzoru</string>
   <string name="moving_cursor_text">Když máte aktivované textové pole, můžete přejížděním prstem nahoru a dolů přesouvat kurzor mezi písmeny.\n\nVyzkoušejte si to v textovém poli níže.</string>
@@ -1004,8 +1000,8 @@
   <string name="typo_correction_text_supported_but_not_english_pre_r">Pomocí kontroly pravopisu můžete kontrolovat pravopis nebo gramatiku v textových polích.\n\nPokud to chcete vyzkoušet, vyberte textové pole níže a zadejte nějaké slovo s pravopisnou chybou. Po výběru pole přejíždějte prstem dolů a potom nahoru, dokud nenajdete možnost Kontrola pravopisu.</string>
   <string name="typo_correction_editbox_hint">Pište sem</string>
   <string name="read_by_character_title">Čtení po znacích, slovech nebo odstavcích</string>
-  <string name="read_by_character_text">Někdy se vám může hodit nechat si přečíst text po znacích.\n\nProvedete to tak, že třemi prsty přejedete doprava, dokud neuslyšíte zprávu „%1$s“. Potom přejetím prstem nahoru posunete výběr o slovo zpět. Přejetím dolů posunete výběr o slovo dopředu.\n\nZkuste to. Když přejedete třemi prsty doprava, můžete zvolit také čtení po slovech nebo odstavcích.</string>
-  <string name="read_by_character_text_pre_r">Někdy se vám může hodit nechat si přečíst text po znacích.\n\nProvedete to tak, že přejedete prstem dolů a potom nahoru, dokud neuslyšíte zprávu „%1$s“. Potom přejetím prstem nahoru posunete výběr o slovo zpět. Přejetím dolů posunete výběr o slovo dopředu.\n\nZkuste to. Když přejedete prstem dolů a pak nahoru, můžete také zvolit čtení po slovech nebo odstavcích.</string>
+  <string name="read_by_character_text">Někdy se vám může hodit nechat si přečíst text po znacích.\n\nProvedete to tak, že třemi prsty přejedete doprava, dokud neuslyšíte zprávu „<xliff:g example="characters">%1$s</xliff:g>“. Potom přejetím prstem nahoru posunete výběr o znak zpět. Přejetím dolů posunete výběr o znak dopředu.\n\nZkuste to. Když přejedete třemi prsty doprava, můžete zvolit také čtení po slovech nebo odstavcích.</string>
+  <string name="read_by_character_text_pre_r">Někdy se vám může hodit nechat si přečíst text po znacích.\n\nProvedete to tak, že přejedete prstem dolů a potom nahoru, dokud neuslyšíte zprávu „<xliff:g example="characters">%1$s</xliff:g>“. Potom přejetím prstem nahoru posunete výběr o znak zpět. Přejetím dolů posunete výběr o znak dopředu.\n\nZkuste to. Když přejedete prstem dolů a pak nahoru, můžete také zvolit čtení po slovech nebo odstavcích.</string>
   <string name="jump_between_controls_title">Přeskakování mezi ovládacími prvky</string>
   <string name="jump_between_controls_text">Ovládací prvky jsou interaktivní položky jako tlačítka, zaškrtávací políčka a textová pole.\n\nNa některých stránkách můžete chtít přeskakovat mezi ovládacími prvky, abyste rychle našli nějakou akci, například další tlačítko.\n\nProvedete to tak, že třemi prsty přejedete doprava, dokud neuslyšíte zprávu „%1$s“. Potom přejetím prstem nahoru přejdete na předchozí ovládací prvek na stránce. Přejetím dolů přejdete na další ovládací prvek na stránce.\n\nZkuste to. Přepněte na ovládací prvky a najděte další tlačítko.</string>
   <string name="jump_between_controls_text_pre_r">Ovládací prvky jsou interaktivní položky jako tlačítka, zaškrtávací políčka a textová pole.\n\nNa některých stránkách můžete chtít přeskakovat mezi ovládacími prvky, abyste rychle našli nějakou akci, například další tlačítko.\n\nProvedete to tak, že přejedete prstem dolů a potom nahoru, dokud neuslyšíte zprávu „%1$s“. Potom přejetím prstem nahoru přejdete na předchozí ovládací prvek na stránce. Přejetím dolů přejdete na další ovládací prvek na stránce.\n\nZkuste to. Přepněte na ovládací prvky a najděte další tlačítko.</string>
@@ -1069,8 +1065,8 @@
   <string name="checking_notifications_tips">Pokud chcete zkontrolovat historii oznámení, přejeďte dvěma prsty po obrazovce shora dolů</string>
   <string name="image_description_playground_title">Zkuste si nechat popsat obrázky</string>
   <string name="image_description_playground_content_one">Když je vybrán obrázek, otevřete nabídku SandFly a vyberte Popsat obrázek.\n\nNíže je fotka. Zkuste k ní získat popis.</string>
-  <string name="image_description_playground_content_two">Nastavení popisů obrázků můžete kdykoli změnit v nastavení SandFly &gt; Popisy obrázků a ikon.</string>
-  <string name="image_description_playground_content_two_tts">Nastavení popisů obrázků můžete kdykoli změnit v nastavení SandFly a pak Popisy obrázků a ikon.</string>
+  <string name="image_description_playground_content_two">Nastavení popisů obrázků můžete kdykoli změnit v nastavení funkce SandFly &gt; Popisy obrázků a obrazovky.</string>
+  <string name="image_description_playground_content_two_tts">Nastavení popisů obrázků můžete kdykoli změnit v nastavení funkce SandFly a pak Popisy obrázků a obrazovky.</string>
   <string name="image_description_sample_image_content_description">Ukázkový obrázek. Klepnutím třemi prsty otevřete nabídku SandFly, vyberte Popsat obrázek a poslechněte si popis.</string>
   <string name="practice_gestures_title">Procvičování gest</string>
   <string name="practice_keyboard_gestures_title">Procvičte si klávesové zkratky</string>
@@ -1221,8 +1217,8 @@
   <string name="delete_icon_detection_dialog_title">Smazat automatické popisy ikon?</string>
   <string name="delete_image_description_dialog_title">Smazat automatické popisy obrázků?</string>
   <string name="delete_all_image_captioning_dialog_title">Smazat automatické popisy obrázků a ikon?</string>
-  <string name="delete_dialog_message">Pokud budete chtít získat popisy později, můžete si tuto funkci stáhnout z nastavení SandFly</string>
-  <string name="delete_all_dialog_message">Tímhle smažete automatické popisy ikon i obrázků.\n\nPokud budete chtít získat popisy později, můžete si tyto funkce stáhnout z nastavení SandFly.</string>
+  <string name="delete_dialog_message">Pokud budete chtít získat popisy později, můžete si tuto funkci stáhnout z nastavení funkce SandFly</string>
+  <string name="delete_all_dialog_message">Tímhle smažete automatické popisy ikon i obrázků.\n\nPokud budete chtít získat popisy později, můžete si tyto funkce stáhnout z nastavení funkce SandFly.</string>
   <string name="delete_dialog_positive_button_text">Smazat</string>
   <string name="delete_dialog_negative_button_text">Zrušit</string>
   <string name="delete_icon_description_hint">Automatické popisy ikon byly smazány</string>
@@ -1258,7 +1254,7 @@
   <string name="title_text_formatting_menu">Popsat formátování textu</string>
   <string name="summary_text_formatting_menu">Změna formátu na tučný, kurzívu, podtržený apod.</string>
   <string name="title_text_formatting_inline">Vyslovovat formátování textu</string>
-  <string name="title_switch_text_formatting">Číst formátování textu</string>
+  <string name="title_switch_text_formatting">Vyslovovat formátování textu</string>
   <string name="summary_text_formatting_verbosity">Pro změny, jako je tučné písmo a kurzíva</string>
   <string name="summary_text_formatting_selector">Určete, jestli se mají číst nahlas informace o formátování, např. tučné písmo nebo kurzíva</string>
   <string name="title_text_formatting_verbosity_options">Možnosti formátování textu</string>
@@ -1584,7 +1580,6 @@
     <string name="title_pref_whisper_models">Modely Whisper</string>
     <string name="dictation_whisper_use">Použít</string>
     <string name="title_pref_dictation_ai_service">Služba AI pro diktování</string>
-    <string name="dictation_ai_same">Stejná jako pro automatické popisy</string>
     <string name="title_pref_browse_mode_per_app">Pamatovat režim procházení v každé aplikaci</string>
     <string name="title_pref_export_settings">Export nastavení</string>
     <string name="title_pref_import_settings">Importovat nastavení</string>
@@ -1612,4 +1607,12 @@
     <string name="shortcut_previous_track">Předchozí skladba</string>
     <string name="sound_mode_needs_access">Pro zapnutí nebo vypnutí ztlumení povolte přístup k režimu Nerušit.</string>
     <string name="title_pref_dictation_auto_stop">Automatické zastavení po tichu</string>
+    <string name="dictation_ai_same">Stejná jako v části „Popisy obrázků a obrazovky“</string>
+    <string name="navigation_settings_link">Nastavení funkce SandFly > Navigace</string>
+    <string name="navigation_settings_link_tts">Nastavení funkce SandFly a pak Navigace</string>
+    <string name="shortcut_reserved_for_vibration_watch">Vyhrazeno pro Vibration Watch v části „Gesta“</string>
+    <string name="speech_control_ask_text">Může vyslovovat text hlasem SandFly. Změnit to můžete v části Nastavení, Řeč, Povolit ostatním aplikacím mluvit.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">Je zapnutá funkce SandFly. Vypnete ji tak, že na pět sekund podržíte na obrazovce dva prsty. Pokud tuto zprávu chcete skrýt, vypněte Nastavení funkce SandFly &gt; Pozastavení a vypnutí &gt; Zobrazit pokyny k vypnutí funkce SandFly.</string>
+    <string name="tutorial_link">Nastavení funkce SandFly &gt; Nápověda a zpětná vazba &gt; Výukový program SandFly</string>
+    <string name="tutorial_link_tts">Nastavení funkce SandFly, pak Nápověda a zpětná vazba a pak Výukový program SandFly</string>
 </resources>

@@ -12,13 +12,13 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g> ตามด้วย Flash-Lite เมื่อโมเดลไม่ว่าง</string>
     <string name="gemini_model_loading">กำลังรับโมเดล…</string>
     <string name="gemini_model_list_failed">ไม่สามารถรับโมเดลได้: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">ตั้งค่าคีย์ API Gemini ก่อน</string>
+    <string name="gemini_model_needs_key">ตั้งค่าคีย์ API ของ Gemini ก่อน</string>
     <string name="gemini_api_terms_link">ข้อกำหนดในการให้บริการเพิ่มเติมของ Gemini API</string>
     <string name="ai_service_address_hint">ที่อยู่ เช่น https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">โมเดล</string>
     <string name="ai_service_address_invalid">ที่อยู่ต้องขึ้นต้นด้วย https:// ไม่มีการบันทึกข้อมูลใด</string>
     <string name="dialog_message_ai_service_consent">รูปภาพและภาพหน้าจอจะถูกส่งไปยัง <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> เพื่อให้อธิบาย ซึ่งใช้เวลาหลายวินาที ข้อกำหนดและนโยบายความเป็นส่วนตัวของบริการนั้นมีผลบังคับใช้ Generative AI ยังอยู่ในขั้นทดลอง จึงอาจผิดพลาดได้</string>
-    <string name="ai_service_error_api_key">บริการ AI ไม่ยอมรับคีย์ API ตรวจสอบการตั้งค่าในคำอธิบายอัตโนมัติ</string>
+    <string name="ai_service_error_api_key">บริการ AI ไม่ยอมรับคีย์ API ตรวจสอบการตั้งค่าในคำอธิบายรูปภาพและหน้าจอ</string>
     <string name="ai_service_error_quota">ถึงขีดจำกัดการใช้งานบริการ AI แล้ว ลองอีกครั้งในภายหลัง</string>
     <string name="ai_service_error_busy">บริการ AI ไม่ว่างในขณะนี้ โปรดลองอีกครั้งในอีกสักครู่</string>
     <string name="ai_service_error_timeout">บริการ AI ใช้เวลาตอบนานเกินไป ลองอีกครั้ง</string>
@@ -30,11 +30,11 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">ไม่มี</string>
-    <string name="ai_service_not_set_up">ไม่มีการใช้บริการ AI ตั้งค่าหนึ่งหรือเลือกหนึ่งรายการในการตั้งค่าคำอธิบายอัตโนมัติ</string>
+    <string name="ai_service_not_set_up">ไม่มีการใช้บริการ AI ตั้งค่าหนึ่งหรือเลือกหนึ่งรายการในการตั้งค่าคำอธิบายรูปภาพและหน้าจอ</string>
     <string name="ai_provider_none_set_up">ไม่มีการตั้งค่าบริการ AI ตั้งค่าหนึ่งในการตั้งค่าด้านล่าง</string>
     <string name="ai_provider_other">บริการอื่นๆ</string>
-    <string name="title_pref_category_ai_services">บริการเอไอ</string>
-    <string name="title_pref_ai_provider">บริการเอไอ</string>
+    <string name="title_pref_category_ai_services">บริการ AI</string>
+    <string name="title_pref_ai_provider">บริการ AI</string>
     <string name="title_ai_provider_settings">การตั้งค่า <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g> ไม่ได้ตั้งค่า</string>
     <string name="ai_provider_in_use">ใช้งานอยู่</string>

@@ -56,11 +56,11 @@
   <string name="message_reset_letency_reduction_settings_confirm_dialog">Lokhu kuzosetha kabusha onke amasethingi okubambezeleka abe azenzakalelayo</string>
   <string name="reset_button_in_reset_letency_reduction_settings_confirm_dialog">Setha kabusha</string>
   <string name="gestures_announce_reset_latency_reduction_settings">Amasethingi okunciphisa ukubambezeleka asethwe kabusha.</string>
-  <string name="Reset_gesture_settings_dialog_title">Setha kabusha ukuthintwa?</string>
-  <string name="Reset_gesture_settings_set_dialog_title">Setha kabusha ukuthinta kwesethi yamanje?</string>
-  <string name="message_reset_gesture_settings_confirm_dialog">Lokhu kuzosetha kabusha konke ukuthintwa kubuyele kulokho obekwenzeka ngokuzenzakalela kwasekuqaleni.\n\nUzolahlekelwa yinoma yiziphi izinguquko osuzenzile.</string>
+  <string name="Reset_gesture_settings_dialog_title">Setha kabusha ukunyakaza?</string>
+  <string name="Reset_gesture_settings_set_dialog_title">Setha kabusha ukunyakaza kwesethi yamanje?</string>
+  <string name="message_reset_gesture_settings_confirm_dialog">Lokhu kuzosetha kabusha konke ukunyakaza kubuyele kulokho obekwenzeka ngokuzenzakalela kwasekuqaleni.\n\nUzolahlekelwa yinoma yiziphi izinguquko osuzenzile.</string>
   <string name="reset_button_in_reset_gesture_settings_confirm_dialog">Setha kabusha</string>
-  <string name="gestures_announce_reset_gesture_settings">Amasethingi wokuthinta asethwe kabusha.</string>
+  <string name="gestures_announce_reset_gesture_settings">Amasethingi wokunyakaza asethwe kabusha.</string>
   <string name="pref_speak_roles_title">Khuluma uhlobo lwento</string>
   <string name="pref_speak_roles_summary">Njengenkinobho noma ibhokisi lokuhlola</string>
   <string name="title_pref_speak_element_ids">Khuluma ama-ID ento</string>
@@ -76,18 +76,18 @@
   <string name="pref_verbosity_title">I-Verbosity</string>
   <string name="pref_punctuation_title">Khuluma izimpawu zokuloba nezimpawu</string>
   <string name="title_pref_category_manage_focus_indicator">Inkomba yokugxila</string>
-  <string name="title_pref_category_manage_gestures">Okwenziwayo</string>
+  <string name="title_pref_category_manage_gestures">Ukunyakaza</string>
   <string name="title_pref_manage_labels">Amalebula angokwezifiso</string>
   <string name="title_pref_category_context_menu">Imenyu ye-SandFly</string>
   <string name="title_pref_category_selector_menu">Izilawuli zokufunda</string>
   <string name="title_pref_category_navigation_menu">Hlela izinketho zokuzulazula</string>
   <string name="title_pref_manage_keyboard_shortcuts">Izinqamuleli zekhibhodi</string>
-  <string name="title_pref_export_custom_labels">Thumela amalebula wangokwezifiso</string>
+  <string name="title_pref_export_custom_labels">Thumela amalebula angokwezifiso</string>
   <string name="title_pref_help_and_feedback">Usizo nempendulo</string>
   <string name="title_pref_help">Usizo</string>
   <string name="title_pref_show_tos">Imigomo Yesevisi</string>
   <string name="title_pref_show_privacy_policy">Inqubomgomo yobumfihlo</string>
-  <string name="title_pref_category_fingerprint_touch_shortcuts">Ukuthinta kwezigxivizo zeminwe</string>
+  <string name="title_pref_category_fingerprint_touch_shortcuts">Ukunyakaza kwezigxivizo zeminwe</string>
   <string name="title_pref_category_tutorial">Okokufundisa kwe-SandFly</string>
   <string name="title_pref_category_help_no_tutorial">Usizo</string>
   <string name="title_pref_advanced_settings">Amasethingi athuthukisiwe</string>
@@ -95,7 +95,7 @@
   <string name="summary_pref_show_exit_watermark">Uma i-SandFly ivuleka, ibonisa ukuthi ivalwa kanjani</string>
   <string name="talkback_exit_watermark_text">ISandFly ivuliwe. Beka iminwe emi-2 esikrinini imizuzwana emi-5 ukuze uvale. Ukuze uyeke ukubonisa lo myalezo, thepha ngeminwe emi-3 ukuze uvule imenyu yeSandFly.</string>
   <string name="talkback_exit_watermark_hint_text">Ibonisa isibhengezo kubonisa ukuthi iSandFly ivuliwe. Ukuze uvale iSandFly, bamba iminwe emi-2 esikrinini imizuzwana emi-5. Ukuze ususe lesi sibhengezo, iya Kumasethingi eSandFly.</string>
-  <string name="reset_gesture_settings_title">Setha kabusha amasethingi wokuthinta</string>
+  <string name="reset_gesture_settings_title">Setha kabusha amasethingi wokunyakaza</string>
   <string name="one_finger_gestures_title">umunwe o-1</string>
   <string name="one_finger_back_forth_gestures_title">umunwe o-1 emuva naphambili</string>
   <string name="one_finger_angle_gestures_title">i-engeli yomunwe o-1</string>
@@ -174,8 +174,8 @@
   <string name="keycombo_menu_global_speech_volume_increase">Kuphula ivolumu yenkulumo</string>
   <string name="keycombo_menu_global_speech_volume_decrease">Nciphisa ivolumu yenkulumo</string>
   <string name="keycombo_menu_global_refocus_current_node">Khuluma ngokugxilwe kukho manje</string>
-  <string name="keycombo_menu_granularity_increase">Isilungiselo sokuzula esilandelayo</string>
-  <string name="keycombo_menu_granularity_decrease">Isethingi sokuzula sangaphambilini</string>
+  <string name="keycombo_menu_granularity_increase">Isethingi sokuzulazula esilandelayo</string>
+  <string name="keycombo_menu_granularity_decrease">Isethingi sokuzulazula sangaphambilini</string>
   <string name="keycombo_menu_category_other">Ezinye izenzo</string>
   <string name="keycombo_menu_other_read_from_top">Funda kusukela phezulu</string>
   <string name="keycombo_menu_other_read_from_cursor_item">Funda okuvela entweni egxilisiwe</string>
@@ -187,12 +187,12 @@
   <string name="keycombo_menu_other_show_link_list">Bonisa uhlu lwamalinki</string>
   <string name="keycombo_menu_other_show_control_list">Bonisa uhlu lwezilawuli</string>
   <string name="keycombo_menu_other_show_table_list">Bonisa uhlu lwamathebula</string>
-  <string name="keycombo_menu_other_talkback_context_menu">Bonisa imenyu SandFly</string>
+  <string name="keycombo_menu_other_talkback_context_menu">Bonisa imenyu ye-SandFly</string>
   <string name="keycombo_menu_other_custom_actions">Bonisa izenzo</string>
   <string name="keycombo_menu_other_language_options">Bonisa izilimi ezifakiwe</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Kopisha umshwana okhulunywayo wokugcina</string>
   <string name="keycombo_menu_other_open_tts_settings">Vula amasethingi okuguqula-umbhalo-ube-inkulumo</string>
-  <string name="keycombo_menu_other_open_talkback_settings">Vula izilungiselelo ze-SandFly</string>
+  <string name="keycombo_menu_other_open_talkback_settings">Vula amasethingi weSandFly</string>
   <string name="keycombo_menu_other_report_issue">Thumela impendulo</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Umsindo womjikelezo wokuthayipha</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Bonisa uhlu lwezinqamuleli zekhibhodi</string>
@@ -309,7 +309,7 @@
   <string name="title_pref_log_level">Ileveli yokukhishwa kwelogi</string>
   <string name="title_pref_diagnosis_mode">Imodi yokuxilonga</string>
   <string name="title_pref_tts_overlay">Bonisa ukuphuma kwenkulumo</string>
-  <string name="title_pref_multiple_gesture_set">Sekela amasethi okuthinta amaningi</string>
+  <string name="title_pref_multiple_gesture_set">Sekela amasethi okunyakaza amaningi</string>
   <string name="title_pref_echo_recognized_text_speech">Inkulumo eyaziwayo ye-echo</string>
   <string name="title_pref_tree_debug">Nika amandla i-node tree debugging</string>
   <string name="summary_pref_tree_debug_tv">Sebenzisa ukhiye wokusesha izwi ukuze uphrinte isihlahla se-node esikhundleni sokusesha</string>
@@ -418,7 +418,7 @@
   <string name="label_search_result_table">Ithebula</string>
   <string name="shortcut_media_control">Dlala noma phumuza imidiya</string>
   <string name="shortcut_voice_input">Qala noma uqede ukuthayipha ngezwi</string>
-  <string name="shortcut_media_control_or_voice_input">Dlala noma umise imidiya, uqale noma uqede ukuthayipha ngezwi</string>
+  <string name="shortcut_media_control_or_voice_input">Dlala noma phumuza imidiya, uqale noma uqede ukuthayipha ngezwi</string>
   <string name="shortcut_increase_volume">Khuphula ivolumu</string>
   <string name="shortcut_decrease_volume">Nciphisa ivolumu</string>
   <string name="shortcut_all_apps">Zonke izinhlelo zokusebenza</string>
@@ -430,8 +430,8 @@
   <string name="speak_time_on">Ukukhuluma isikhathi kuvuliwe</string>
   <string name="shortcut_disable_speak_time">Ungasikhulumi isikhathi</string>
   <string name="speak_time_off">Ukukhuluma isikhathi kuvaliwe</string>
-  <string name="shortcut_practice_gestures">Phinda phinda ukuthinta</string>
-  <string name="shortcut_report_gesture">Bika inkinga yokuthinta</string>
+  <string name="shortcut_practice_gestures">Phinda phinda ukunyakaza</string>
+  <string name="shortcut_report_gesture">Bika inkinga yokunyakaza</string>
   <string name="shortcut_toggle_braille_display">Vula noma vala isibonisi se-braille</string>
   <string name="shortcut_announce_current_time_and_date">Khuluma usuku nesikhathi samanje</string>
   <string name="shortcut_announce_battery_state">Memezela iphesenti lebhethri</string>
@@ -484,7 +484,7 @@
   <string name="title_show_voice_commands">Imiyalo yezwi</string>
   <string name="title_show_keyboard_shortcuts">Izinqamuleli zekhibhodi</string>
   <string name="talkback_show_talkback_settings">Amasethingi weSandFly</string>
-  <string name="title_show_braille_display_settings">Amasethingi okubonisa e-Braille</string>
+  <string name="title_show_braille_display_settings">Amasethingi esibonisi se-braille</string>
   <string name="title_granularity_default">Ukuzulazula okuzenzakalelayo</string>
   <string name="title_action_dismiss">Susa</string>
   <string name="title_action_expand">Nweba</string>
@@ -509,7 +509,7 @@
   <string name="summary_voice_commands">Lawula i-SandFly ngezwi lakho</string>
   <string name="summary_show_hide_screen">Fihla isibonisi ukuze isikrini sakho singabonakali kwabanye ezindaweni zomphakathi. Ngemuva kokufihla isikrini sakho, sibuyisele esimweni esivamile.</string>
   <string name="summary_control_speak_time">Shintsha ukuthi isikhathi sikhulunyelwa phezulu yini lapho uvula isikrini</string>
-  <string name="summary_show_keyboard_shortcuts_preferences">Vula uhlu lwesinqamuleli sekhibhodi</string>
+  <string name="summary_show_keyboard_shortcuts_preferences">Vula uhlu lwezinqamuleli zekhibhodi</string>
   <string name="summary_talkback_preferences">Vula amasethingi e-SandFly</string>
   <string name="summary_braile_display_preferences">Vula amasethingi esibonisi se-Braille</string>
   <string name="summary_system_actions">Iya kuwo wonke ama-app Namasethingi Asheshayo</string>
@@ -620,7 +620,7 @@
   <string name="title_pref_shortcut_3finger_1tap_hold">Thepha futhi ubambe ngeminwe emi-3</string>
   <string name="title_pref_shortcut_2finger_3tap_hold">Thepha kathathu futhi ubambe ngeminwe emi-2</string>
   <string name="title_pref_shortcut_3finger_3tap_hold">Thepha kathathu futhi ubambe ngeminwe emi-3</string>
-  <string name="gesture_name_unknown">Ukuthinta okungaziwa</string>
+  <string name="gesture_name_unknown">Ukunyakaza okungaziwa</string>
   <string name="gesture_name_pass_through">Dlule uye ku-gesture yesistimu</string>
   <string name="gesture_name_touch_explore">Ukuhlola kokuthinta</string>
   <string name="gesture_name_double_tap">Thepha kabili</string>
@@ -667,8 +667,8 @@
   <string name="label_dialog_confirm_label_remove">Ilebuli isusiwe</string>
   <string name="label_dialog_text">Faka umbhalo ozosetshenziswa njengelebula yale nto\nIgama lokubuka langaphakathi: %1$s</string>
   <string name="label_dialog_edit_hint">Thumela umbhalo onelebula</string>
-  <string name="label_import">Ngenisa amalebuli wangokwezifiso</string>
-  <string name="label_import_dialog_title">Ngenisa amalebula wangokwezifiso ku-SandFly</string>
+  <string name="label_import">Ngenisa amalebula angokwezifiso</string>
+  <string name="label_import_dialog_title">Ngenisa amalebula angokwezifiso ku-SandFly</string>
   <string name="label_import_dialog_message">Khetha ukuthi uyafuna yini ukukhipha noma weqe amalebula akhona uma kuba khona ukushayisana</string>
   <string name="label_import_dialog_skip">Yeqa</string>
   <string name="label_import_dialog_override">Khipha</string>
@@ -685,18 +685,18 @@
   <string name="button_disable_all_events">Khubaza konke</string>
   <string name="button_enable_all_events">Nika amandla konke</string>
   <string name="dialog_title_disable_exploration">Khubaza Ukuhlola ngokuthinta?</string>
-  <string name="dialog_message_disable_exploration">Ingabe uqinisekile ukuthi ufuna ukuvala Ukuhlola ngokuthinta?\n\nIdivayisi yakho ngeke isakwazi ukuphendula kusinqamuleli sokuthinta noma ukhulume izinto uma uthinta isikrini.</string>
+  <string name="dialog_message_disable_exploration">Ingabe uqinisekile ukuthi ufuna ukuvala Ukuhlola ngokuthinta?\n\nIdivayisi yakho ngeke isakwazi ukuphendula kusinqamuleli sokunyakaza noma ukhulume izinto uma uthinta isikrini.</string>
   <string name="dialog_title_enable_tree_debug">Nika amandla ukulungisa amaphutha kwenodi yesihlahla?</string>
   <string name="dialog_message_enable_tree_debug">Ingabe uqinisekile ukuthi ufuna ukuvula ukulungisa amaphutha wenodi yesihlahla?\n\nUkulungisa amaphutha wenodi yesihlahla kuveza okuqukethwe kwesikrini sakho kumalogi wedivayisi yakho, okungafundwa ezinye izinhlelo zokusebenza.</string>
   <string name="dialog_title_enable_tree_debug_gesture">Nikeza kabusha ukuthepha kathathu ngeminwe engu-4?</string>
-  <string name="dialog_message_enable_tree_debug_gesture">Ukuqinisekisa lokhu kuzonikeza ukuthepha okuthathu ngeminwe engu-4 ukuze uphrinte isihlahla senodi.\n\nUma ukhansela, ukulungisa iphutha lenodi yesihlahla kuzonikwa amandla kodwa ukunyakaza ngeke kunikezwe, futhi uzodinga ukusetha lokhu kumasethingi okuthinta.\n\nEkukhubazeni ukulungisa iphutha lenodi yesihlahla, isenzo sangaphambilini sokuthinta, uma sikhona, ngeke sibuyiselwe.</string>
+  <string name="dialog_message_enable_tree_debug_gesture">Ukuqinisekisa lokhu kuzonikeza ukuthepha okuthathu ngeminwe engu-4 ukuze uphrinte isihlahla senodi.\n\nUma ukhansela, ukulungisa iphutha lenodi yesihlahla kuzonikwa amandla kodwa ukunyakaza ngeke kunikezwe, futhi uzodinga ukusetha lokhu kumasethingi okunyakaza.\n\nEkukhubazeni ukulungisa iphutha lenodi yesihlahla, isenzo sangaphambilini sokunyakaza, uma sikhona, ngeke sibuyiselwe.</string>
   <string name="dialog_title_enable_performance_stats">Nika amandla izibalo zokusebenza?</string>
   <string name="dialog_message_enable_performance_stats">Ingabe uqinisekile ukuthi ufuna ukuvula izibalo zokusebenza?\n\nIzibalo zokusebenza zingadla imemori namandla amaningi.</string>
   <string name="dialog_title_extend_log_level">Nika amandla ukungena kwe-verbose?</string>
   <string name="dialog_message_extend_log_level">Ukungena kwe-verbose kungasiza ekulungiseni amaphutha kodwa kungabangela ulwazi lomuntu siqu ukuthi luvele ekulungiseni amaphutha kwesistimu yokuloga.\n\n  Ingabe ufuna ukunika amandla ukungena kwe-verbose?</string>
   <string name="dialog_ok_buggon_extend_log_level">Yebo, nika amandla ukungena kwe-verbose</string>
   <string name="dialog_title_diagnosis_mode">Nika amandla imodi yokuxilonga?</string>
-  <string name="dialog_message_diagnosis_mode">Imodi yokuxilonga isiza ukulungisa amaphutha.  Imodi yokuxilonga ikhipha ukuthepha kokuthinta ngeminwe emi-4, ukuze uthathe okuqukethwe kwesikrini kumalogu wesistimu.  Okuqukethwe kwesikrini kungase kufake phakathi ulwazi lomuntu siqu. \n\n Ingabe ufuna ukunika amandla imodi yokuxilonga?</string>
+  <string name="dialog_message_diagnosis_mode">Imodi yokuxilonga isiza ukulungisa amaphutha.  Imodi yokuxilonga ikhipha ukuthepha kokunyakaza ngeminwe emi-4, ukuze uthathe okuqukethwe kwesikrini kumalogu wesistimu.  Okuqukethwe kwesikrini kungase kufake phakathi ulwazi lomuntu siqu. \n\n Ingabe ufuna ukunika amandla imodi yokuxilonga?</string>
   <string name="title_request_phone_permission">Vumela ifoni ifinyelele?</string>
   <string name="message_request_phone_permission">Lokhu kusiza i-SandFly inciphise izimemezelo uma usocingweni</string>
   <string name="continue_button">Qhubeka</string>
@@ -747,7 +747,7 @@
   <string name="value_tv_remote_mode_seek_control">Imodi yesilayida</string>
   <string name="value_hint_tv_remote_mode_seek_control">Cindezela izinkinobho zomcibisholo ukuze ushintshe inani, noma cindezela ukukhetha ukuze uqedele.</string>
   <string name="reset_user_language_preference">Okuzenzekelayo</string>
-  <string name="title_pref_selector_speech_rate">Ukulinganisela izwi</string>
+  <string name="title_pref_selector_speech_rate">Isivinini senkulumo</string>
   <string name="title_pref_selector_verbosity">I-Verbosity</string>
   <string name="title_pref_selector_punctuation">Izimpawu zolimi</string>
   <string name="title_pref_selector_audio_focus">Ukudakha komsindo</string>
@@ -788,10 +788,10 @@
   <string name="dialog_message_continuous_reading_mode">Ngemva kokukhetha okuthi “Funda kusukela phezulu” noma “Funda okuvela entweni egxilisiwe”, usengaya entweni edlule noma elandelayo ngenkathi kufundwa umbhalo. Lokhu kukuvumela ukuthi ubuyele emuva noma weqe uye phambili kalula.\n\nUkuze ulungise ivolumu ngenkathi i-SandFly ikhuluma, cindezela ukhiye wokukhulisa noma wokwehlisa ivolumu.</string>
   <string name="always_show_this_message_label">Njalo bonisa lo mlayezo</string>
   <string name="dialog_title_voice_commands">Sebenzisa imiyalo yezwi ukuze ulawula i-SandFly</string>
-  <string name="dialog_message_voice_commands">Nazi ezinye izinto ongazisho:\n\n• Kopisha\n• Funda entweni elandelayo egxilisiwe\n• Thola [londoloza]\n• Khuluma [ngokushesha]\n• Amasethingi we-SandFly\n\nIthi \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" ukuthola uhlu lwayo yonke imiyalo yezwi</string>
+  <string name="dialog_message_voice_commands">Nazi ezinye izinto ongazisho:\n\n• Kopisha\n• Funda okuvela entweni egxilisiwe\n• Thola [londoloza]\n• Khuluma [ngokushesha]\n• Amasethingi we-SandFly\n\nIthi \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" ukuthola uhlu lwayo yonke imiyalo yezwi</string>
   <string name="start_voice_command">Sebenzisa imiyalo yezwi</string>
-  <string name="dialog_title_pass_through_mode">Yeqa ukuthinta kwe-SandFly ukuze usebenzise ukuthinta kwesistimu</string>
-  <string name="dialog_message_pass_through_mode">Uma uzwa i-chime, ungasebenzisa ukuthinta kwesistimu okungasekelwe yi-SandFly. Lokhu kwaziwa njengokuthinta kokudlula.</string>
+  <string name="dialog_title_pass_through_mode">Yeqa ukunyakaza kwe-SandFly ukuze usebenzise ukunyakaza kwesistimu</string>
+  <string name="dialog_message_pass_through_mode">Uma uzwa i-chime, ungasebenzisa ukunyakaza kwesistimu okungasekelwe yi-SandFly. Lokhu kwaziwa njengokunyakaza kokudlula.</string>
   <string name="dialog_title_voice_input_download">Buyekeza iGboard ukuze usebenzise ukuthayipha ngezwi</string>
   <string name="dialog_message_voice_input_download">Ukuthepha kabili ngeminwe emibili manje sekungavula ukuthayipha ngezwi noma nini lapho iGboard isebenza. Ukuze usebenzise lesi senzo, buyekeza iGboard ibe uhlelo lwakamuva.</string>
   <string name="label_update_gboard">Buyekeza kuGoogle Play</string>
@@ -818,12 +818,12 @@
   <string name="adjust_granularity_hint">%1$s ukuze ufunde nge-%2$s</string>
   <string name="adjust_typo_hint">%1$s ukuze uthole iziphakamiso.</string>
   <string name="use_action_hint">Thepha kabili ukuze wenze isenzo</string>
-  <string name="no_adjust_setting_gesture">Ukuze usebenzise lokhu, iya kumasethingi e-SandFly bese ungeze ukuthinta kwe-\'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
-  <string name="no_navigate_typo_gesture">Ukuze usebenzise lokhu, iya kumasethingi e-SandFly bese ungeze ukuthinta kokuhlola kokupela</string>
+  <string name="no_adjust_setting_gesture">Ukuze usebenzise lokhu, iya kumasethingi e-SandFly bese ungeze ukunyakaza kwe-\'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
+  <string name="no_navigate_typo_gesture">Ukuze usebenzise lokhu, iya kumasethingi e-SandFly bese ungeze ukunyakaza kokuhlola kokupela</string>
   <string name="use_spelling_suggestion_hint">Thepha kabili ukuze umiselele umbhalo</string>
   <string name="screen_search_keyword_hint">igama elisemqoka ngu-%1$s</string>
-  <string name="screen_search_no_keyword_hint">Alikho igama elisemqoka okwamanje. Ukuze uqale usesho olusha, thepha futhi ubambe ngeminwe engu-3 noma vula isikrinikufuna kumenyu yeSandFly.</string>
-  <string name="screen_search_no_keyword_hint_pre_r">Alikho igama elisemqoka okwamanje. Ukuze uqale usesho olusha, swayiphela kwesokunxele bese phansi noma vula isikrinikufuna kumenyu yeSandFly.</string>
+  <string name="screen_search_no_keyword_hint">Alikho igama elisemqoka okwamanje. Ukuze uqale usesho olusha, thepha futhi ubambe ngeminwe engu-3 noma vula usesho lwesikrini kumenyu yeSandFly.</string>
+  <string name="screen_search_no_keyword_hint_pre_r">Alikho igama elisemqoka okwamanje. Ukuze uqale usesho olusha, swayiphela kwesokunxele bese phansi noma vula usesho lwesikrini kumenyu yeSandFly.</string>
   <string name="switch_to_braille_keyboard_failure_msg">Ikhibhodi ye-Braille ayivuliwe. Iya kumasethingi e-SandFly, setha ikhibhodi ye-Braille, bese uyazama futhi.</string>
   <string name="suggestions_window_available">Iziphakamiso ziyatholakala</string>
   <string name="suggestions_window_available_with_gesture">Iziphakamiso ziyatholakala. Ukuze ufinyelele, %1$s</string>
@@ -853,7 +853,7 @@
   <string name="navigation_heading">Ukuzulazula</string>
   <string name="setting_selector_heading">Izilawuli zokufunda</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Ukuze umise kancane noma udlale imidiya kuhlelo lokusebenza levidiyo noma lomculo, thepha kabili ngeminwe emi-2. Izame manje.</string>
-  <string name="new_shortcut_gesture_pause_or_play_media_subtext">Ezinye izinhlelo zokusebenza zingasebenzisa lokhu kuthinta ngezinto ezifana nokuphendula noma ukuphelisa ikholi yefoni. Lokhu kuthinta kungahle kungasekelwa yizo zonke izinhlelo zokusebenza.</string>
+  <string name="new_shortcut_gesture_pause_or_play_media_subtext">Ezinye izinhlelo zokusebenza zingasebenzisa lokhu kunyakaza ngezinto ezifana nokuphendula noma ukuphelisa ikholi yefoni. Lokhu kunyakaza kungahle kungasekelwa yizo zonke izinhlelo zokusebenza.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Imidiya iphunyuziwe noma iyadlala. Ngokuvamile, lokhu kuzophumuza noma kudlale ividiyo noma umculo wamanje. Swayiphela kwesokudla ukuze uqhubeke.</string>
   <string name="new_shortcut_gesture_stop_speech_text">Ukuze umise i-SandFly ekukhulumeni okwesikhashana, thepha ngeminwe emi-2.</string>
   <string name="new_shortcut_gesture_stop_speech_announcement">Inkulumo ye-SandFly imisiwe. Ngokuvamile, lokhu kuzomisa umshwana wamanje lowo i-SandFly ewushoyo. Swayiphela kwesokudla ukuze uqhubeke.</string>
@@ -866,14 +866,14 @@
   <string name="new_shortcut_gesture_selection_mode_text">Ukuze uqalise noma uphelise imodi yokukhetha umbhalo, thepha kabili bese ubamba ngeminwe emi-2.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Imodi yokukhetha ivuliwe noma ivaliwe. Ngokuvamile, lokhu kuzoqalisa noma kumise imodi yokukhetha umbhalo lapho ungaphakathi kwenkambu yokokufaka. Swayiphela kwesokudla ukuze uqhubeke.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Ukuze usebenzise izilawuli zokufunda, swayiphela ngakwesokunxele noma ngakwesokudla ngeminwe emi-3. Futhi ungaswayiphela phezulu noma phansi ngeminwe emi-3.</string>
-  <string name="new_shortcut_gesture_note">Qaphela: Wenze ngendlela oyifisayo okunye kokuthinta kwakho, ngakho lolu lwazi kungenzeka lunganembi. Ukuze ubuyekeze ukuthinta kwakho, iya kumasethingi we-SandFly.</string>
-  <string name="welcome_to_android11_text">Ukuthinta okusha kungeziwe ukwenza i-SandFly isheshe futhi ibelula ukusebenziseka.\n\nKulesi sikrini, ungahlola ukuthinta okusha. Ungabuyekeza lolu lwazi kumasethingi e-SandFly noma kunini.</string>
-  <string name="new_gesture_notification_title">Ukuthinta okusha ku-SandFly</string>
-  <string name="new_gesture_notification_content">Thepha ukuze ufunde ukuthi uyisebenzisa kanjani i-SandFly ngokushesha ngokuthinta okusha.</string>
+  <string name="new_shortcut_gesture_note">Qaphela: Wenze ngendlela oyifisayo okunye kokunyakaza kwakho, ngakho lolu lwazi kungenzeka lunganembi. Ukuze ubuyekeze ukunyakaza kwakho, iya kumasethingi we-SandFly.</string>
+  <string name="welcome_to_android11_text">Ukunyakaza okusha kungeziwe ukwenza i-SandFly isheshe futhi ibelula ukusebenziseka.\n\nKulesi sikrini, ungahlola ukunyakaza okusha. Ungabuyekeza lolu lwazi kumasethingi e-SandFly noma kunini.</string>
+  <string name="new_gesture_notification_title">Ukunyakaza okusha ku-SandFly</string>
+  <string name="new_gesture_notification_content">Thepha ukuze ufunde ukuthi uyisebenzisa kanjani i-SandFly ngokushesha ngokunyakaza okusha.</string>
   <string name="dump_node_tree_description">Isihlahla se-node siphrintwe kumalogu.</string>
-  <string name="report_gesture_description">Nakhu ukuthinta okwenziwe kamuva, sicela ubike ukuthi yikuphi ukuthinta okungalungile nokuthi yini elindelekile.</string>
-  <string name="update_welcome_talkback_16.1">Lesi sibuyekezo seSandFly sethula usekelo lwesikrini esithi Chaza ngezilimi ezengeziwe nokunye ukuthuthukiswa kwekhwalithi okwenza kube lula nakakhulu ukusebenzisa iSandFly.\n\nUzofunda kabanzi ngalolu shintsho ezikrinini ezimbalwa ezilandelayo.\n\nUngabuyekeza lolu lwazi ngesinye isikhathi kumaSethingi eSandFly &gt; Izakhi ezintsha kuSandFly.</string>
-  <string name="update_welcome_talkback_16.1_tts">Lesi sibuyekezo seSandFly sethula usekelo lwesikrini esithi Chaza ngezilimi ezengeziwe nokunye ukuthuthukiswa kwekhwalithi okwenza kube lula nakakhulu ukusebenzisa iSandFly.\n\nUzofunda kabanzi ngalolu shintsho ezikrinini ezimbalwa ezilandelayo.\n\nUngabuyekeza lolu lwazi ngesinye isikhathi kumasethingi eSandFly bese uya kokuthi Izakhi ezintsha kuSandFly.</string>
+  <string name="report_gesture_description">Nakhu ukunyakaza okwenziwe kamuva, sicela ubike ukuthi yikuphi ukunyakaza okungalungile nokuthi yini elindelekile.</string>
+  <string name="update_welcome_talkback_16.1">Lesi sibuyekezo seSandFly sethula usekelo lokuthi Chaza isikrini ngezilimi ezengeziwe nokunye ukuthuthukiswa kwekhwalithi okwenza kube lula nakakhulu ukusebenzisa iSandFly.\n\nUzofunda kabanzi ngalolu shintsho ezikrinini ezimbalwa ezilandelayo.\n\nUngabuyekeza lolu lwazi ngesinye isikhathi kumaSethingi eSandFly &gt; Izakhi ezintsha ku-SandFly.</string>
+  <string name="update_welcome_talkback_16.1_tts">Lesi sibuyekezo seSandFly sethula usekelo lokuthi Chaza isikrini ngezilimi ezengeziwe nokunye ukuthuthukiswa kwekhwalithi okwenza kube lula nakakhulu ukusebenzisa iSandFly.\n\nUzofunda kabanzi ngalolu shintsho ezikrinini ezimbalwa ezilandelayo.\n\nUngabuyekeza lolu lwazi ngesinye isikhathi kumasethingi eSandFly bese uya kokuthi Izakhi ezintsha ku-SandFly.</string>
   <string name="shortcut_for_dictation_title">Isinqamuleli sokuthayipha ngezwi</string>
   <string name="shortcut_for_dictation_content">Ngenkathi usebenzisa iGboard, manje ungasebenzisa ukuthepha kabili kweminwe emibili ukuze uqale noma umise ukuthayipha ngezwi.
 &lt;br&gt;
@@ -881,12 +881,12 @@
   <string name="shortcut_for_dictation_content_without_google_play">Lapho iGboard isesikrinini, manje usungasebenzisa ukuthepha kabili kweminwe emibili ukuqalisa ukubizela, bese-ke kuba ukuthepha kabili kweminwe emibili ukukumisa.</string>
   <string name="announcing_text_formatting_title">Imemezela ukufometha kombhalo</string>
   <string name="announcing_text_formatting_header">ISandFly manje ingamemezela izinguquko ekufomethweni kombhalo, njengokugqamile, ama-ithalikhi, nombala wombhalo. Ukuze uqalise:</string>
-  <string name="announcing_text_formatting_option1">Gxila entweni enokufometha, vula imenyu yeSandFly, bese ukhetha okuthi \"Chaza ukufometha umbhalo\", noma</string>
+  <string name="announcing_text_formatting_option1">Gxila entweni enokufometha, vula imenyu yeSandFly, bese ukhetha okuthi \"Chaza ukufometha kombhalo\", noma</string>
   <string name="announcing_text_formatting_option2">Engeza isilawuli sokufunda sokufometha umbhalo esizovula noma sivala isimemezelo sezinguquko zokufometha.</string>
   <string name="announcing_text_formatting_middle">Uma usukulungele ukuyizama, nasi isibonelo sombhalo ofomethiwe:</string>
   <string name="announcing_text_formatting_tail">Uma ufuna ukushintsha indlela umbhalo ofomethwe omemezelwa ngayo, ungaya kokuthi %1$s.</string>
-  <string name="text_formatting_options_settings_path">Amasethingi eSandFly &gt; Ukukhuluma ngokuningiliziwe &gt; Okungakhethwa kukho kokufometha umbhalo</string>
-  <string name="text_formatting_options_settings_path_tts">Amasethingi eSandFly bese kuba Ukukhuluma kakhulu bese kuba Okungakhethwa kukho kokufometha umbhalo</string>
+  <string name="text_formatting_options_settings_path">Amasethingi eSandFly &gt; I-Verbosity &gt; Okukhethwa kukho kokufometha umbhalo</string>
+  <string name="text_formatting_options_settings_path_tts">Amasethingi eSandFly bese kuba I-Verbosity bese kuba Okukhethwa kukho kokufometha umbhalo</string>
   <string name="announcing_text_formatiing_sample">Lo mbhalo &lt;b&gt;bold&lt;/b&gt;, ukusimemezelo sokuzethemba,
 &lt;br&gt;Ngenkathi lokhu &lt;u&gt;kudwetshelwe&lt;/u&gt;, ukuhleba, akukho ukungabaza.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;Izimbali zibomvu&lt;/span&gt;, okwakudala, kuyiqiniso,
@@ -897,8 +897,8 @@
 &lt;br&gt;
 &lt;br&gt;Imibala ingachaphazeka, ibonise ngokugqamile,
 &lt;br&gt;Kusuka &lt;font color=\"#db372d\"&gt;kokubomvu okuvuthayo&lt;/font&gt; kuya font color=\"#128937\"&gt;kumbala oluhlaza okotshani&lt;/font&gt; othambile.</string>
-  <string name="update_welcome_talkback_16.2">Lesi sibuyekezo seSandFly sethula \"Imephu esemqoka ethuthukisiwe\" entsha yamakhibhodi angokoqobo, ukusekelwa kwezimemezelo zokufometha umbhalo, kanye nokuhlelwa kabusha kwamasethingi, kanye nokunye ukuthuthukiswa okwenza iSandFly ibe lula ukuyisebenzisa.\n\nUzofunda kabanzi ngalezi zinguquko ezikrinini ezimbalwa ezilandelayo.\n\nUngabuyekeza lolu lwazi kamuva kumasethingi eSandFly &gt; Izakhi ezintsha kuSandFly.</string>
-  <string name="update_welcome_talkback_16.2_tts">Lesi sibuyekezo seSandFly sethula \"Imephu esemqoka ethuthukisiwe\" entsha yamakhibhodi angokoqobo, ukusekelwa kwezimemezelo zokufometha umbhalo, kanye nokuhlelwa kabusha kwamasethingi, kanye nokunye ukuthuthukiswa okwenza iSandFly ibe lula ukuyisebenzisa.\n\nUzofunda kabanzi ngalezi zinguquko ezikrinini ezimbalwa ezilandelayo.\n\nUngabuyekeza lolu lwazi kamuva kumasethingi eSandFly bese Izakhi ezintsha kuSandFly.</string>
+  <string name="update_welcome_talkback_16.2">Lesi sibuyekezo seSandFly sethula \"Imephu esemqoka ethuthukisiwe\" entsha yamakhibhodi angokoqobo, ukusekelwa kwezimemezelo zokufometha umbhalo, kanye nokuhlelwa kabusha kwamasethingi, kanye nokunye ukuthuthukiswa okwenza iSandFly ibe lula ukuyisebenzisa.\n\nUzofunda kabanzi ngalezi zinguquko ezikrinini ezimbalwa ezilandelayo.\n\nUngabuyekeza lolu lwazi kamuva kumasethingi eSandFly &gt; Izakhi ezintsha ku-SandFly.</string>
+  <string name="update_welcome_talkback_16.2_tts">Lesi sibuyekezo seSandFly sethula \"Imephu esemqoka ethuthukisiwe\" entsha yamakhibhodi angokoqobo, ukusekelwa kwezimemezelo zokufometha umbhalo, kanye nokuhlelwa kabusha kwamasethingi, kanye nokunye ukuthuthukiswa okwenza iSandFly ibe lula ukuyisebenzisa.\n\nUzofunda kabanzi ngalezi zinguquko ezikrinini ezimbalwa ezilandelayo.\n\nUngabuyekeza lolu lwazi kamuva kumasethingi eSandFly bese Izakhi ezintsha ku-SandFly.</string>
   <string name="new_settings_layout_title">Uhlaka lwamasethingi amasha</string>
   <string name="new_settings_layout_text">Amaqembu amasethingi abuyekeziwe ukuze enze izakhi zitholakale kalula. Izigaba zamasethingi amasha nazo ziyatholakala, njengamasethingi ekhibhodi.</string>
   <string name="split_tap_everywhere_title">Thepha ngokuhlukanisa yonke indawo</string>
@@ -907,15 +907,11 @@
   <string name="keyboard_enhanced_keymap_text">SandFly manje \"seinemephu engukhiye ethuthukisiwe\" yamakhibhodi aphathekayo, afaka imiyalo emisha ehlukahlukene nezinqamuleli. Lesi sithuthukisi sihlanganisa \"imodi yokudlulisa amehlo\" yokuzulazula kwewebhu okusebenza kahle kakhudlwana, ukuzulazula okuqondisayo nokusebenzisana kubasebenzisi SandFly abathembele kumakhibhodi aphathekayo. Ungashintshela kokuthi \"Imephu engukhiye ethuthukisiwe\" kokuthi <xliff:g id="settings_path">%1$s</xliff:g>.\n\nUma usebenzisa isibonisi se-Braille, ungasebenzisa futhi izinqamuleli zemodi yokuphequlula entsha ukuze unqamule okuqukethwe ngokuqondile kusibonisi sakho se-Braille. Ezinye izinqamuleli zokubonisa ze-Braille zishintshiwe ukuze zivumelane nalolu shintsho. Ungabona uhlu lwazo zonke izinqamuleli zokubonisa ze-Braille kokuthi <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">Amasethingi eSandFly &gt; Izinqamuleli zekhibhodi</string>
   <string name="keyboard_shortcuts_link_tts">Amasethingi eSandFly bese kuba Izinqamuleli zekhibhodi</string>
-  <string name="braille_display_settings_link">Amasethingi okubonisa eBraille</string>
+  <string name="braille_display_settings_link">Amasethingi esibonisi se-braille</string>
   <string name="keyboard_smart_browse_mode_title">Ikhibhodi: Imodi yokubhrawuza esmathi</string>
   <string name="keyboard_smart_browse_mode_text">Imodi yokubhrawuza esmathi yeSandFly ivala imodi yokubhrawuza endaweni yokuhlela ukuze ikusize uthayiphe ngekhibhodi engokoqobo uma ubhrawuza iwebhu. Ibe isiyivula futhi uma ugxumela endaweni yokungahleli kuwebhu ukuze uqhubeke ubhrawuza ngendlela ephumelelayo. Ungavula noma uvale \"Imodi yokubhrawuza esmathi\" ku-<xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Amasethingi eSandFly &gt; Amasethingi athuthukisiwe</string>
-  <string name="advanced_settings_link_tts">Amasethingi eSandFly bese kuba Amasethingi athuthukisiwe</string>
   <string name="keyboard_tutorial_title">Okokufundisa kwekhibhodi</string>
   <string name="keyboard_tutorial_text">ISandFly manje ifaka Isifundo Sekhibhodi esiklanyelwe ukukusiza ufunde izinqamuleli zekhibhodi nemiyalo Yemephu esemqoka ethuthukisiwe uma usebenzisa ikhibhodi engokoqobo. Ukuze ufinyelele okokufundisa, funa lapha: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Amasethingi eSandFly &gt; Okokufundisa kweSandFly</string>
-  <string name="tutorial_link_tts">Amasethingi eSandFly bese kuba okokufundisa kweSandFly</string>
   <string name="tutorial_entry_point_title">Isifundo</string>
   <string name="welcome_to_talkback_title">Siyakwamukela ku-SandFly</string>
   <string name="talkback_is_on">I-SandFly ivuliwe</string>
@@ -932,8 +928,8 @@
   <string name="scrolling_text">Ungaphrakthiza kulesi sikrini uze uthole inkinobho \"Elandelayo\".</string>
   <string name="scrolling_item_text">Zama ukuskrola ngokuswayipha phezulu naphansi ngeminwe engu-2</string>
   <string name="scrolling_text_completed">Wenze umsebenzi omuhle! Uskrole waze wafika ezansi kwesikrini.\n\nSwayipha uye ngakwesokudla ukuze uthole inkinobho yokulandelayo.</string>
-  <string name="system_gestures_title">Nezela umunwe ongu-1 kuma-gesture esistimu</string>
-  <string name="system_gestures_text">Lokhu kusho ukuthi lapho usebenzisa i-SandFly, ungaya eskrinini sasekhaya ngokuswayiphela phezulu ukusuka phansi ngeminwe engu-2 esikhundleni songu-1.\n\nUkuzama lama gesture manje kuzovala okokufundisa. Ungase ufune ukulinda kuze kube yilapho usukuqedile okokufundisa.</string>
+  <string name="system_gestures_title">Nezela umunwe ongu-1 ekunyakazeni kwesistimu</string>
+  <string name="system_gestures_text">Lokhu kusho ukuthi lapho usebenzisa i-SandFly, ungaya eskrinini sasekhaya ngokuswayiphela phezulu ukusuka phansi ngeminwe engu-2 esikhundleni songu-1.\n\nUkuzama lokhu kunyakaza manje kuzovala okokufundisa. Ungase ufune ukulinda kuze kube yilapho usukuqedile okokufundisa.</string>
   <string name="system_gestures_home_text">Ukuze uye esikrinini sakho sasekhaya, swayiphela phezulu ukusuka phansi esikrinini sakho ngeminwe engu-2.</string>
   <string name="system_gestures_overview_screen_text">Ukuze uye kuma-app akho akamuva, swayiphela phezulu ukusuka phansi kwesikrini sakho ngeminwe engu-2 futhi ubambe. Bese uyadedela. Lokhu kukuyisa kusikrini sokubuka konke.</string>
   <string name="system_gestures_back_text">Ukuze ubuyele emuva, qala ngakwesokunxele noma ngakwesokudla sonqenqema bese uswayipha kuya maphakathi kwesikrini sakho ngeminwe engu-2.</string>
@@ -967,8 +963,8 @@
   <string name="screen_search_link_subtext">Bheka izinto ezithile esikrinini</string>
   <string name="additional_tips_link_text">Imisebenzi yansuku zonke</string>
   <string name="additional_tips_link_subtext">Funda ukwenza amakholi, ukuthumela imiyalezo, nokuningi</string>
-  <string name="practice_gestures_link_text">Phinda phinda ukuthinta</string>
-  <string name="practice_gestures_link_subtext">Zama ukuthinta okuhlukahlukene ukuze ufunde ukuthi enzani</string>
+  <string name="practice_gestures_link_text">Phinda phinda ukunyakaza</string>
+  <string name="practice_gestures_link_subtext">Zama ukunyakaza okuhlukahlukene ukuze ufunde ukuthi enzani</string>
   <string name="choose_tutorial_title">Khetha ukuthi ungathanda ukusebenzisana kanjani neSandFly</string>
   <string name="touch_tutorial_button">Okokufundisa okuthintwayo</string>
   <string name="keyboard_tutorial_button">Okokufundisa kwekhibhodi</string>
@@ -1028,7 +1024,7 @@
   <string name="content_heading">Okuqukethwe</string>
   <string name="content_text">Qhubekela kusihloko esilandelayo.</string>
   <string name="find_next_button_text">Swayiphela kwesokudla njengamanje ukuze uthole inkinobho elandelayo.</string>
-  <string name="container_find_finish_button_text">Uphumile ohlwini lweziqukathi. Ungakwazi ukwengeza iziqukathi kuzilawuli zakho ezifundayo noma nini ukuze ufinyelele kalula.\n\nSwayiphela kwesokudla ukuze uthole inkinobho yokuqeda.</string>
+  <string name="container_find_finish_button_text">Uphumile ohlwini lweziqukathi. Ungakwazi ukwengeza iziqukathi kuzilawuli zakho zokufunda noma nini ukuze ufinyelele kalula.\n\nSwayiphela kwesokudla ukuze uthole inkinobho yokuqeda.</string>
   <string name="jump_between_container_title">Gxumela phakathi kweziqukathi</string>
   <string name="jump_between_containers_text">Ukuze uphume esiqukathini, njengohlu noma igridi, swayiphela kwesokunxele noma kwesokudla ngeminwe emi-4. Lokhu kuyasiza uma ufuna ukuphuma ohlwini olude lwezinto.\n\nUkuze uzame manje, swayiphela kwesokudla ukuze ufake uhlu. Bese, swayiphela kwesokudla ngeminwe emi-4 ukuze uye esiqukathi esilandelayo.</string>
   <string name="jump_between_containers_text_pre_r">Ukuphuma esitsheni, njengohlu noma igridi, kuyasiza uma ufuna ukuphuma ohlwini olude lwezinto.\n\nUkuze uzame manje, swayiphela phansi bese uya phezulu kuze kube yilapho uzwa okuthi \"%1$s\". Bese, swayiphela phansi ukuze uye esiqukathini esilandelayo.</string>
@@ -1039,10 +1035,10 @@
   <string name="container_item_exit_subtext_pre_r">Ukuze uphume kulesi siqukathi, swayiphela phansi</string>
   <string name="voice_commands_title">Imiyalo yezwi</string>
   <string name="voice_commands_text">Ungasebenzisa izwi lakho ukulawula i-SandFly ngokushesha.\n\nIsibonelo, isho umyalo ukuze ushintshe ukuzula, yeqela kusihloko esilandelayo, kopisha umbhalo, nokuningi.\n\nKuzame manje, swayiphela kwesokudla bese phezulu.</string>
-  <string name="using_screen_search_title">Ukusebenzisa isikrinikufuna</string>
-  <string name="using_screen_search_text">Isakhi sesikrinikufuna sikuvumela ukuthi ubheke okuqukethwe okuthile esikrinini.\n\nUkukuzama, vula imenyu yeSandFly ngokuthepha ngeminwe emi-3, futhi uthole \"isikrinikufuna\" kumenyu. Thayipha igama elisemqoka, njengelithi “okulandelayo”, ukuze uthole izinto ezinalowo mbhalo esikrinini.\n\nZama ukusesha okuthi “okulandelayo” manje ukuze uthole inkinobho elandelayo.</string>
+  <string name="using_screen_search_title">Ukusebenzisa usesho lwesikrini</string>
+  <string name="using_screen_search_text">Isakhi sosesho lwesikrini sikuvumela ukuthi ubheke okuqukethwe okuthile esikrinini.\n\nUkukuzama, vula imenyu yeSandFly ngokuthepha ngeminwe emi-3, futhi uthole \"usesho lwesikrini\" kumenyu. Thayipha igama elisemqoka, njengelithi “okulandelayo”, ukuze uthole izinto ezinalowo mbhalo esikrinini.\n\nZama ukusesha okuthi “okulandelayo” manje ukuze uthole inkinobho elandelayo.</string>
   <string name="screen_search_navigation_title">Funa ngesikrinikufuna</string>
-  <string name="screen_search_navigation_text">Ungahamba ngokushesha phakathi kwemiphumela yosesho ehlukene kusikrinikufuna ngemva kokukhetha umphumela.\n\nUkwenza lokhu, sebenzisa izilawuli zokufunda ngokuswayiphela kwesokunxele noma kwesokudla ngeminwe emi-3, futhi uthole into ebizwa ngokuthi yisikrinikufuna.\n\nMasikuzame manje. Ngezansi kunohlu lwezinkinobho ezi-3, zonke ziqukethe umbhalo othi “isenzo”. Sesha elithi \"isenzo\" usebenzisa isikrinikufuna, bese ufuna ngesikrinikufuna ukuze uhambe phakathi kwawo.</string>
+  <string name="screen_search_navigation_text">Ungahamba ngokushesha phakathi kwemiphumela yosesho ehlukene kusesho lwesikrini ngemva kokukhetha umphumela.\n\nUkwenza lokhu, sebenzisa izilawuli zokufunda ngokuswayiphela kwesokunxele noma kwesokudla ngeminwe emi-3, futhi uthole into ebizwa ngokuthi wusesho lwesikrini.\n\nMasikuzame manje. Ngezansi kunohlu lwezinkinobho ezi-3, zonke ziqukethe umbhalo othi “isenzo”. Sesha elithi \"isenzo\" usebenzisa usesho lwesikrini, bese ufuna ngosesho lwesikrini ukuze uhambe phakathi kwawo.</string>
   <string name="screen_search_action_button_1_text">Isenzo 1</string>
   <string name="screen_search_action_button_2_text">Isenzo 2</string>
   <string name="screen_search_action_button_3_text">Isenzo 3</string>
@@ -1068,16 +1064,16 @@
   <string name="checking_notifications_text_tail_tts">Ungahlola ukuthi yimaphi ama-app anezaziso ezivuliwe Kumasethingi Nasezazisweni.</string>
   <string name="checking_notifications_tips">Ukuze uhlole umlando wakho wezaziso, swayiphela phansi ngeminwe engu-2 kusuka ngaphezulu kusikrini sakho</string>
   <string name="image_description_playground_title">Zama ukuthola izincazelo zesithombe</string>
-  <string name="image_description_playground_content_one">Uma ugxile emfanekisweni, vula imenyu yeSandFly bese ukhetha okuthi “Chaza umfanekiso”.\n\nKunesithombe esisodwa ngezansi. Zama ukuthola incazelo yaso.</string>
-  <string name="image_description_playground_content_two">Ungashintsha izilungiselelo zencazelo yesithombe noma nini ku-Amasethingi weSandFly &gt; Izincazelo ezizenzekelayo.</string>
-  <string name="image_description_playground_content_two_tts">Ungashintsha izilungiselelo zencazelo yesithombe noma nini ku-Amasethingi weSandFly, bese Izincazelo ezizenzekelayo.</string>
+  <string name="image_description_playground_content_one">Uma ugxile emfanekisweni, vula imenyu yeSandFly bese ukhetha okuthi “Chaza isithombe”.\n\nKunesithombe esisodwa ngezansi. Zama ukuthola incazelo yaso.</string>
+  <string name="image_description_playground_content_two">Ungashintsha izilungiselelo zencazelo yesithombe noma nini ku-Amasethingi weSandFly &gt; Izincazelo zezithombe nezesikrini.</string>
+  <string name="image_description_playground_content_two_tts">Ungashintsha izilungiselelo zencazelo yesithombe noma nini ku-Amasethingi weSandFly, bese Izincazelo zezithombe nezesikrini.</string>
   <string name="image_description_sample_image_content_description">Isampula lesithombe; thepha ngeminwe engu-3 ukuze uvule imenyu yeSandFly bese ukhetha okuthi \"Chaza isithombe\" ukuze uzwe incazelo.</string>
-  <string name="practice_gestures_title">Phinda phinda ukuthinta</string>
+  <string name="practice_gestures_title">Phinda phinda ukunyakaza</string>
   <string name="practice_keyboard_gestures_title">Phrakthiza izinqamuleli zekhibhodi</string>
   <string name="pref_gesture_set_key_title">Isethi yokunyakazisa umzimba</string>
-  <string name="practice_gestures_text">Zama noma yikuphi ukuthinta kwe-SandFly kulesi sikrini ukuze uzwe ukuthi kwenza kuphi ukuthinta.\n\nThepha isikrini ngeminwe emi-2. Qhubeka nokuziqeqesha ngokuthepha kanye, kabili, noma kathathu ngeminwe emi-2, 3, noma emi-4.\n\nFuthi ungathepha kabili futhi ubambe ngeminwe emi-2, 3, noma emi-4.</string>
-  <string name="practice_gestures_text_pre_r">Zama noma yikuphi ukuthinta kwe-SandFly kulesi sikrini ukuze uzwe ukuthi kwenza kuphi ukuthinta.\n\nZama noma yikuphi ukuthinta lapho ukuswayipha okubili kwenza i-engeli engakwesokudla. Isibonelo, swayiphela phansi bese kwesokudla, ngaphandle kokuphakamisa umunwe wakho phakathi.</string>
-  <string name="practice_keyboard_gestures_text">Cindezela ukhiye wekhibhodi ophathekayo noma inhlanganisela yokhiye ukuze uzwe ukuthi yenzani. Cindezela u-Ctrl + W, noma u-Escape ukuze uphume.\n\nUngaphinda usebenzise iSandFly gesture lapha.</string>
+  <string name="practice_gestures_text">Zama noma yikuphi ukunyakaza kwe-SandFly kulesi sikrini ukuze uzwe ukuthi kwenza kuphi ukunyakaza.\n\nThepha isikrini ngeminwe emi-2. Qhubeka nokuziqeqesha ngokuthepha kanye, kabili, noma kathathu ngeminwe emi-2, 3, noma emi-4.\n\nFuthi ungathepha kabili futhi ubambe ngeminwe emi-2, 3, noma emi-4.</string>
+  <string name="practice_gestures_text_pre_r">Zama noma yikuphi ukunyakaza kwe-SandFly kulesi sikrini ukuze uzwe ukuthi kwenza kuphi ukunyakaza.\n\nZama noma yikuphi ukunyakaza lapho ukuswayipha okubili kwenza i-engeli engakwesokudla. Isibonelo, swayiphela phansi bese kwesokudla, ngaphandle kokuphakamisa umunwe wakho phakathi.</string>
+  <string name="practice_keyboard_gestures_text">Cindezela ukhiye wekhibhodi ophathekayo noma inhlanganisela yokhiye ukuze uzwe ukuthi yenzani. Cindezela u-Ctrl + W, noma u-Escape ukuze uphume.\n\nUngaphinda usebenzise ukunyakaza kweSandFly lapha.</string>
   <string name="button_1">Inkinobho 1</string>
   <string name="button_2">Inkinobho 2</string>
   <string name="button_3">Inkinobho 3</string>
@@ -1132,7 +1128,7 @@
   <string name="title_pref_blue">Okuluhlaza okwesibhakabhaka</string>
   <string name="title_pref_grey">Okumpunga</string>
   <string name="survey_setting_title">Yabelana ngempendulo yakho</string>
-  <string name="title_summarize_view">Isikrini esichazayo</string>
+  <string name="title_summarize_view">Chaza isikrini</string>
   <string name="detected_result">Itholiwe: %1$s</string>
   <string name="title_image_caption">Chaza isithombe</string>
   <string name="image_caption_with_gemini_prefix">Chaza lesi sithombe. Ungasebenzisi noma iyiphi imakhaphu empendulweni.</string>
@@ -1179,7 +1175,7 @@
   <string name="screen_overview_top_images_header">Izithombe ezinkulu:</string>
   <string name="screen_overview_heres_the_elements">Nazi izakhi engizithole ku-app:</string>
   <string name="screen_overview_no_result">Ayikwazi ukufinyeza isikrini</string>
-  <string name="image_caption_no_result">Ayikwazi ukuchaza umfanekiso</string>
+  <string name="image_caption_no_result">Ayikwazi ukuchaza isithombe</string>
   <string name="image_caption_with_hide_screen">Izincazelo zesithombe azitholakali uma isikrini sifihliwe. Bonisa isikrini sakho bese uyazama futhi.</string>
   <string name="action_text_like_button">Maka njengempendulo enhle</string>
   <string name="action_text_dislike_button">Maka njengempendulo embi</string>
@@ -1306,17 +1302,17 @@
     <string name="title_pref_voice_profiles">Amaphrofayili ezwi</string>
     <string name="voice_profile_default">Okuzenzakalelayo kwe-SandFly</string>
     <string name="voice_profile_in_use">Iyasebenza: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="spoken_language_unavailable_with_profile">Ulimi olukhulunywayo alutholakali ngenkathi usebenzisa iphrofayela yezwi</string>
-    <string name="speech_engine_unavailable_with_profile">Injini yenkulumo ayitholakali ngenkathi usebenzisa iphrofayela yezwi</string>
+    <string name="spoken_language_unavailable_with_profile">Ulimi olukhulunywayo alutholakali ngenkathi usebenzisa iphrofayili yezwi</string>
+    <string name="speech_engine_unavailable_with_profile">Injini yenkulumo ayitholakali ngenkathi usebenzisa iphrofayili yezwi</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, iyasebenza</string>
     <string name="no_voice_profiles">Awekho amaphrofayili ezwi</string>
-    <string name="shortcut_voice_profiles">Khetha iphrofayela yezwi</string>
-    <string name="shortcut_previous_voice_profile">Iphrofayela yezwi yangaphambilini</string>
+    <string name="shortcut_voice_profiles">Khetha iphrofayili yezwi</string>
+    <string name="shortcut_previous_voice_profile">Iphrofayili yezwi yangaphambilini</string>
     <string name="shortcut_next_voice_profile">Iphrofayili yezwi elandelayo</string>
-    <string name="title_pref_voice_profile_in_use">Iphrofayela yezwi esetshenziswayo</string>
-    <string name="title_pref_add_voice_profile">Engeza iphrofayela yezwi</string>
-    <string name="voice_profile_new_name">Iphrofayela yezwi <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Kakade kukhona iphrofayela yezwi ebizwa ngokuthi <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="title_pref_voice_profile_in_use">Iphrofayili yezwi esetshenziswayo</string>
+    <string name="title_pref_add_voice_profile">Engeza iphrofayili yezwi</string>
+    <string name="voice_profile_new_name">Iphrofayili yezwi <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="voice_profile_name_taken">Kakade kukhona iphrofayili yezwi ebizwa ngokuthi <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Igama</string>
     <string name="title_pref_voice_profile_language">Ulimi</string>
     <string name="title_pref_voice_profile_voice">Izwi</string>
@@ -1352,7 +1348,7 @@
     <string name="battery_optimization_notification_title">Ukuthuthukisa ibhethri kungamisa SandFly</string>
     <string name="battery_optimization_notification_text">Kule foni, isilondolozi sebhethri singamisa i-SandFly ngemva kokuthi isikrini sivaliwe, ngakho i-SandFly ithula ize iqaliswe kabusha. Thepha ukuze uvule ukulungiselelwa kwebhethri, khetha Zonke izinhlelo zokusebenza, thola i-SandFly bese ukhetha okuthi Ungalungiseleli.</string>
     <string name="title_pref_mute_speech_while_recording">Kuthule ngenkathi uqopha</string>
-    <string name="summary_pref_mute_speech_while_recording">Ngenkathi uhlelo lokusebenza lurekhoda ngaphandle kwama-headphone axhunyiwe, SandFly ikhuluma kuphela ngokuphendula ukuthinta kwakho, okhiye nokuthayipha, futhi lihlala lithule ezintweni ezifana nezaziso, ukuze zingarekhodwa.</string>
+    <string name="summary_pref_mute_speech_while_recording">Ngenkathi uhlelo lokusebenza lurekhoda ngaphandle kwama-headphone axhunyiwe, SandFly ikhuluma kuphela ngokuphendula ukunyakaza kwakho, okhiye nokuthayipha, futhi lihlala lithule ezintweni ezifana nezaziso, ukuze zingarekhodwa.</string>
     <string name="title_pref_switch_languages">Shintsha ulimi ngokuzenzakalelayo</string>
     <string name="title_pref_switch_dialects">Shintsha ulimi lwesigodi ngokuzenzakalelayo</string>
     <string name="category_collapsed">Isigaba esigoqiwe</string>
@@ -1379,9 +1375,8 @@
     <string name="title_pref_touch_activation">Thinta kanye nokwenza kusebenze</string>
     <string name="title_pref_navigation">Ukuzulazula</string>
     <string name="title_pref_category_more">Okuningi</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Gcinela i-Vibration Watch ukuthinta</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Gcinela i-Vibration Watch ukunyakaza</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">I-SandFly iyayeka ukuphatha ukuthepha okukodwa nokukabili ngeminwe emibili ukuze i-Samsung Vibration Watch ikwazi ukukusebenzisa. Vula i-Vibration Watch kumasethingi okufinyeleleka ewashi lakho.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Kugcinelwe i-Vibration Watch ku-Izilungiselelo Ezithuthukile</string>
     <string name="title_pref_speakerphone_away_from_ear">Isikhulumi uma ukude nendlebe yakho</string>
     <string name="summary_pref_speakerphone_away_from_ear">Ngesikhathi socingo, ishintshela kusipikha lapho ususa ifoni endlebeni, bese ibuyela kusipikha sendlebe lapho uyibuyisela endlebeni.</string>
     <string name="summary_pref_speakerphone_needs_permission">Idinga imvume i-Android engayiniki izifundi zesikrini. Ukuze uyinikeze, qalisa lo myalo nge-adb noma i-Shizuku, bese ubuyela kulesi sikrini: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Izinhlelo zokusebenza</string>
     <string name="speech_control_no_apps">Azikho izinhlelo zokusebenza ezicele ukukhuluma okwamanje.</string>
     <string name="speech_control_ask_title">Vumela u-<xliff:g id="app" example="Tasker">%1$s</xliff:g> ukuthi akhulume nge-SandFly?</string>
-    <string name="speech_control_ask_text">Lingasho umbhalo ngezwi lakho le-SandFly. Ungashintsha lokhu kumasethingi athuthukisiwe.</string>
     <string name="speech_control_allow">Vumela</string>
     <string name="speech_control_deny">Ungavumeli</string>
     <string name="permission_speak_label">ukukhuluma nge-SandFly</string>
@@ -1443,7 +1437,7 @@
     <string name="notification_list_empty">Azikho izaziso</string>
     <string name="notification_list_no_access">Ukufinyelela kwesaziso kuvaliwe</string>
     <string name="notification_list_grant_access">Vula ukufinyelela kwezaziso</string>
-    <string name="notification_list_quick_settings">Izilungiselelo ezisheshayo</string>
+    <string name="notification_list_quick_settings">Amasethingi asheshayo</string>
     <string name="notification_list_dismiss">Susa</string>
     <string name="notification_list_show_all">Bonisa konke</string>
     <string name="notification_list_show_less">Bonisa okuncane</string>
@@ -1459,9 +1453,9 @@
         <item quantity="one">%d isaziso</item>
         <item quantity="other">%d izaziso</item>
     </plurals>
-    <string name="title_pref_quick_settings">Sebenzisa izilungiselelo ezisheshayo ze-SandFly</string>
-    <string name="title_pref_quick_settings_items">Iphaneli yezilungiselelo ezisheshayo</string>
-    <string name="quick_settings_title">Izilungiselelo ezisheshayo</string>
+    <string name="title_pref_quick_settings">Sebenzisa amasethingi asheshayo e-SandFly</string>
+    <string name="title_pref_quick_settings_items">Iphaneli yamasethingi asheshayo</string>
+    <string name="quick_settings_title">Amasethingi asheshayo</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">Idatha yeselula</string>
@@ -1503,7 +1497,7 @@
     <string name="quick_settings_power_menu">Imenyu yamandla</string>
     <string name="quick_settings_add_system_tile">Engeza ithayela lesistimu</string>
     <string name="quick_settings_no_system_tiles">Awekho amathayela esistimu azokwengezwa</string>
-    <string name="quick_settings_tile_not_found">%1$s ayikho kuzilungiselelo ezisheshayo zesistimu</string>
+    <string name="quick_settings_tile_not_found">%1$s ayikho kumasethingi asheshayo esistimu</string>
     <string name="quick_settings_never">Neze</string>
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d isekhondi</item>
@@ -1524,7 +1518,7 @@
     <string name="quick_settings_off">Kuvaliwe</string>
     <string name="quick_settings_unavailable">Ayitholakali</string>
     <string name="quick_settings_edit">Hlela</string>
-    <string name="quick_settings_system">Izilungiselelo ezisheshayo zesistimu</string>
+    <string name="quick_settings_system">Amasethingi asheshayo esistimu</string>
     <string name="quick_settings_open_settings">Vula izilungiselelo</string>
     <string name="quick_settings_add_control">Engeza ukulawula</string>
     <string name="quick_settings_add_tile">Engeza ithayela lohlelo lokusebenza</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Susa</string>
     <string name="quick_settings_added">%1$s kwengeziwe</string>
     <string name="quick_settings_removed">%1$s isusiwe</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">I-SandFly ivuliwe. Bamba iminwe emi-2 esikrinini imizuzwana emi-5 ukuze uyivale. Ukuze uyeke ukubonisa lo mlayezo, vala Amasethingi weSandFly &gt; Amasethingi athuthukisiwe &gt; Bonisa imiyalelo yokuvala iSandFly.</string>
     <string name="edge_gestures_title">Imiphetho</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Esinye isinqamuleli sokuvula noma ukuvala imodi yokudlulisa amehlo</string>
     <string name="title_pref_vibration_strength">Amandla okudlidliza</string>
@@ -1618,7 +1611,7 @@
     <string name="shortcut_scroll_to_bottom">Skrolela phansi</string>
     <string name="shortcut_refresh">Vuselela</string>
     <string name="shortcut_system_notifications">Iphaneli yezaziso zesistimu</string>
-    <string name="shortcut_system_quick_settings">Izilungiselelo ezisheshayo zesistimu</string>
+    <string name="shortcut_system_quick_settings">Amasethingi asheshayo esistimu</string>
     <string name="shortcut_lock_screen">Khiya isikrini sedivayisi</string>
     <string name="shortcut_power_menu">Imenyu yamandla</string>
     <string name="shortcut_increase_media_volume">Khulisa ivolumu yemidiya</string>
@@ -1735,8 +1728,8 @@
     <string name="template_item_details_order_dropped">Kuyekelwe <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly isho imininingwane yento ngalolu hlelo. Ukuze uyishintshe, thinta futhi ubambe imininingwane, bese uyihudulela phezulu noma phansi. Ngokuvula okuthi SandFly, thepha kabili bese ubamba, bese uyahudula. Ungasebenzisa futhi izenzo zokuthi Hambisa phezulu futhi Hambisa phansi.</string>
     <string name="title_pref_speak_items_before_scroll">Isho izinto ngaphambi kokuba ziskrolelwe ekubukeni</string>
-    <string name="gemini_error_api_key">Gemini ayizange yamukele ukhiye we-API. Hlola ukhiye kuzilungiselelo zezincazelo ezizenzakalelayo.</string>
-    <string name="gemini_error_quota">Umkhawulo wokusetshenziswa wokhiye wakho we-API Gemini ufinyelelwe. Zama futhi emuva kwesikhathi.</string>
+    <string name="gemini_error_api_key">Gemini ayizange yamukele ukhiye we-API. Hlola ukhiye kumasethingi okuthi Izincazelo zezithombe nezesikrini.</string>
+    <string name="gemini_error_quota">Umkhawulo wokusetshenziswa wokhiye wakho we-API we-Gemini ufinyelelwe. Zama futhi emuva kwesikhathi.</string>
     <string name="gemini_error_busy">Gemini imatasa njengamanje. Zama futhi ngemva kwesikhashana.</string>
     <string name="gemini_error_timeout">Gemini kuthathe isikhathi eside kakhulu ukuphendula. Zama futhi.</string>
     <string name="gemini_error_with_code">Gemini ayikwazanga ukuphendula, iphutha <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
@@ -1746,7 +1739,7 @@
     <string name="image_qna_stop_listening">Yeka ukulalela</string>
     <string name="image_qna_type_question">Thayipha umbuzo</string>
     <string name="shortcut_dictate">Bhala ngezwi</string>
-    <string name="title_pref_ai_dictation">Lungisa ukubhala ngezwi nge-AI</string>
+    <string name="title_pref_ai_dictation">Lungisa ukubhalisa ngezwi nge-AI</string>
     <string name="dictation_not_corrected">Akulungisiwe. Kuthayiphwe njengoba kuqashelwe.</string>
     <string name="dictation_nothing_recognized">Akukho okuqashelwe</string>
     <string name="dictation_unavailable">Ukunakwa kwenkulumo akutholakali</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Amamodeli e-Whisper</string>
     <string name="dictation_whisper_use">Sebenzisa</string>
     <string name="title_pref_dictation_ai_service">Isevisi ye-AI yokubhalisa ngezwi</string>
-    <string name="dictation_ai_same">Kuyafana nezincazelo ezizenzekelayo</string>
     <string name="title_pref_browse_mode_per_app">Khumbula imodi yokuphequlula kuhlelo lokusebenza ngalunye</string>
     <string name="title_pref_export_settings">Thumela izilungiselelo</string>
     <string name="title_pref_import_settings">Ngenisa izilungiselelo</string>
@@ -1779,8 +1771,8 @@
     <string name="arrow_key_nav_on">Ukuzulazula ngokhiye bemicibisholo kuvuliwe</string>
     <string name="arrow_key_nav_page_left">Ikhasi ngakwesokunxele</string>
     <string name="arrow_key_nav_page_right">Ikhasi ngakwesokudla</string>
-    <string name="arrow_key_nav_toggle">Vula noma vala ukuzulazula ngomcibisholo</string>
-    <string name="keycombo_menu_category_arrow_key_nav">Ukuzulazula ngemicibisholo</string>
+    <string name="arrow_key_nav_toggle">Vula noma vala ukuzulazula ngokhiye bemicibisholo</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Ukuzulazula ngokhiye bemicibisholo</string>
     <string-array name="pref_dictation_auto_stop_entries">
         <item>Kuvaliwe</item>
         <item>Imizuzwana emi-3</item>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">Ingoma edlule</string>
     <string name="sound_mode_needs_access">Vumela ukufinyelela kokuthi Ungaphazamisi ukuze uvule noma uvale okuthi Thulisa.</string>
     <string name="title_pref_dictation_auto_stop">Misa ngokuzenzakalelayo ngemva kokuthula</string>
+    <string name="dictation_ai_same">Kufana nokuthi Izincazelo zezithombe nezesikrini</string>
+    <string name="navigation_settings_link">Amasethingi weSandFly &gt; Ukuzulazula</string>
+    <string name="navigation_settings_link_tts">Amasethingi weSandFly bese kuba Ukuzulazula</string>
+    <string name="shortcut_reserved_for_vibration_watch">Igcinelwe i-Vibration Watch ngaphansi kokuthi Ukunyakaza</string>
+    <string name="speech_control_ask_text">Ingasho umbhalo ngezwi lakho le-SandFly. Ungashintsha lokhu ngaphansi kokuthi Amasethingi, Inkulumo, Vumela ezinye izinhlelo zokusebenza zikhulume.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">ISandFly ivuliwe. Beka iminwe emi-2 esikrinini imizuzwana emi-5 ukuze uvale. Ukuze uyeke ukubonisa lo myalezo, vala okuthi Amasethingi weSandFly &gt; Misa isikhashana futhi uvale &gt; Bonisa imiyalelo yokuvala iSandFly.</string>
+    <string name="tutorial_link">Amasethingi weSandFly &gt; Usizo nempendulo &gt; Okokufundisa kwe-SandFly</string>
+    <string name="tutorial_link_tts">Amasethingi weSandFly bese kuba Usizo nempendulo bese kuba Okokufundisa kwe-SandFly</string>
 </resources>

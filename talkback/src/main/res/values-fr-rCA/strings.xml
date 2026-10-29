@@ -94,7 +94,7 @@
   <string name="title_pref_show_exit_watermark">Afficher les instructions pour désactiver SandFly</string>
   <string name="summary_pref_show_exit_watermark">Lorsque SandFly s\'active, afficher comment le désactiver</string>
   <string name="talkback_exit_watermark_text">La fonctionnalité SandFly est activée. Maintenez deux doigts sur l\'écran pendant cinq secondes pour la désactiver. Pour arrêter l\'affichage de ce message, touchez l\'écran avec trois doigts pour ouvrir le menu SandFly.</string>
-  <string name="talkback_exit_watermark_hint_text">Affichage d\'une bannière indiquant que SandFly est activée. Pour désactiver SandFly, maintenez deux doigts sur l\'écran pendant cinq secondes. Pour retirer cette bannière, accédez aux paramètres SandFly.</string>
+  <string name="talkback_exit_watermark_hint_text">Affichage d\'une bannière indiquant que SandFly est activée. Pour désactiver SandFly, maintenez deux doigts sur l\'écran pendant cinq secondes. Pour retirer cette bannière, accédez aux paramètres de SandFly.</string>
   <string name="reset_gesture_settings_title">Réinitialiser les paramètres des gestes</string>
   <string name="one_finger_gestures_title">Un doigt</string>
   <string name="one_finger_back_forth_gestures_title">Un doigt en va-et-vient</string>
@@ -846,7 +846,7 @@
   <string name="tv_training_shortcut_step_summary">Pour accéder au raccourci SandFly, maintenez le bouton de déplacement vers le bas et le bouton Précédent enfoncés simultanément pendant trois secondes. Cela permet d\'activer ou de désactiver SandFly.\n\nVous pouvez accéder à ce raccourci dans les paramètres de votre téléviseur.\n\nAppuyez sur Sélectionner pour continuer.</string>
   <string name="new_feature_in_talkback_title">Nouvelles fonctionnalités de SandFly</string>
   <string name="exit_tutorial_title">Vous avez terminé de rédiger l\'avis?</string>
-  <string name="exit_tutorial_content">Vous pouvez revenir au tutoriel à n\'importe quel moment dans les paramètres SandFly.</string>
+  <string name="exit_tutorial_content">Vous pouvez revenir au tutoriel à n\'importe quel moment dans les paramètres de SandFly.</string>
   <string name="exit_onboarding_content">Vous pouvez revenir pour examiner les nouvelles fonctionnalités à tout moment dans les paramètres de SandFly.</string>
   <string name="keep_reviewing_tutorial_button">Poursuivre la rédaction de l\'avis</string>
   <string name="welcome_to_updated_talkback_title">Bienvenue dans la version mise à jour de SandFly</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Paramètres de l\'afficheur braille</string>
   <string name="keyboard_smart_browse_mode_title">Clavier : mode Parcourir intelligent</string>
   <string name="keyboard_smart_browse_mode_text">Le mode Parcourir intelligent de SandFly désactive ce mode sur un champ de modification pour vous aider à taper avec un clavier physique lorsque vous naviguez sur le Web. Il le réactive ensuite lorsque vous passez à un champ autre que le champ de modification sur le Web afin que vous puissiez continuer à naviguer efficacement. Vous pouvez activer ou désactiver le « mode Parcourir intelligent » dans <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Paramètres de SandFly &gt; Paramètres avancés</string>
-  <string name="advanced_settings_link_tts">Paramètres de SandFly, puis Paramètres avancés</string>
   <string name="keyboard_tutorial_title">Tutoriel sur le clavier</string>
   <string name="keyboard_tutorial_text">SandFly comprend désormais un tutoriel sur le clavier conçu pour vous aider à apprendre les raccourcis-clavier et les commandes du mappage du clavier amélioré lorsque vous utilisez un clavier physique. Pour accéder au tutoriel, naviguez vers : <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Paramètres de SandFly &gt; Tutoriel SandFly</string>
-  <string name="tutorial_link_tts">Paramètres de SandFly, puis Tutoriel SandFly</string>
   <string name="tutorial_entry_point_title">Tutoriel</string>
   <string name="welcome_to_talkback_title">Bienvenue dans SandFly</string>
   <string name="talkback_is_on">SandFly est activée</string>
@@ -924,7 +920,7 @@
   <string name="tap_again_to_turn_off">Touchez à nouveau pour la désactiver</string>
   <string name="talkback_turn_off_description_pointer_and_touch">La fonctionnalité SandFly lit le contenu de votre écran à haute voix et change la façon dont la navigation fonctionne sur votre appareil. Pour la désactiver, sélectionnez « Désactiver SandFly » ou touchez-la deux fois.</string>
   <string name="welcome_to_talkback_text">SandFly fournit une rétroaction vocale qui vous permet d\'utiliser votre appareil sans regarder l\'écran. SandFly peut être utile aux personnes qui ont du mal à voir l\'écran. \n\nSi vous souhaitez activer ou désactiver rapidement SandFly à l\'aide des touches de volume, vous pouvez configurer un raccourci dans Paramètres de SandFly &gt; Raccourci SandFly.\n\nLorsque SandFly est activée, l\'élément sélectionné à l\'écran est énoncé.\n\nBalayez l\'écran vers la droite pour passer à l\'élément suivant et vers la gauche pour revenir à l\'élément précédent.\n\nBalayez maintenant l\'écran vers la droite pour trouver le bouton Suivant.</string>
-  <string name="welcome_to_talkback_text_tts">SandFly fournit une rétroaction vocale qui vous permet d\'utiliser votre appareil sans regarder l\'écran. SandFly peut être utile aux personnes qui ont du mal à voir l\'écran. \n\nSi vous souhaitez activer ou désactiver rapidement SandFly à l\'aide des touches de volume, vous pouvez configurer un raccourci dans les paramètres SandFly en sélectionnant Raccourci SandFly.\n\nLorsque SandFly est activée, l\'élément sélectionné à l\'écran est énoncé.\n\nBalayez l\'écran vers la droite pour passer à l\'élément suivant et vers la gauche pour revenir à l\'élément précédent.\n\nBalayez maintenant l\'écran vers la droite pour trouver le bouton suivant.</string>
+  <string name="welcome_to_talkback_text_tts">SandFly fournit une rétroaction vocale qui vous permet d\'utiliser votre appareil sans regarder l\'écran. SandFly peut être utile aux personnes qui ont du mal à voir l\'écran. \n\nSi vous souhaitez activer ou désactiver rapidement SandFly à l\'aide des touches de volume, vous pouvez configurer un raccourci dans les paramètres de SandFly en sélectionnant Raccourci SandFly.\n\nLorsque SandFly est activée, l\'élément sélectionné à l\'écran est énoncé.\n\nBalayez l\'écran vers la droite pour passer à l\'élément suivant et vers la gauche pour revenir à l\'élément précédent.\n\nBalayez maintenant l\'écran vers la droite pour trouver le bouton suivant.</string>
   <string name="welcome_to_talkback_page_idle_announcement">Balayez maintenant l\'écran vers la droite pour trouver le bouton suivant</string>
   <string name="explore_by_touch_title">Faire glisser un doigt pour explorer</string>
   <string name="explore_by_touch_text">Vous pouvez aussi sélectionner un élément en faisant glisser un doigt sur l\'écran.\n\nFaites un essai maintenant en touchant l\'écran, puis en faisant glisser un doigt vers le coin inférieur gauche jusqu\'à ce que vous trouviez le bouton Suivant.</string>
@@ -1028,7 +1024,7 @@
   <string name="content_heading">Contenu</string>
   <string name="content_text">Passez au titre suivant.</string>
   <string name="find_next_button_text">Balayez l\'écran vers la droite pour trouver le bouton Suivant.</string>
-  <string name="container_find_finish_button_text">Vous avez quitté la liste des conteneurs. Vous pouvez ajouter des conteneurs à vos contrôles de lecture à tout moment pour un accès plus facile.\n\nBalayez l\'écran vers la droite pour trouver le bouton Terminer.</string>
+  <string name="container_find_finish_button_text">Vous avez quitté la liste des conteneurs. Vous pouvez ajouter des conteneurs à vos commandes de lecture à tout moment pour un accès plus facile.\n\nBalayez l\'écran vers la droite pour trouver le bouton Terminer.</string>
   <string name="jump_between_container_title">Sauter entre les conteneurs</string>
   <string name="jump_between_containers_text">Pour quitter un conteneur, comme une liste ou une grille, balayez l\'écran vers la gauche ou la droite avec quatre doigts. Cela est utile lorsque vous souhaitez sortir d\'une longue liste d\'éléments.\n\nPour essayer de le faire maintenant, balayez l\'écran vers la droite pour accéder à la liste. Ensuite, balayez l\'écran vers la droite avec quatre doigts pour accéder au conteneur suivant.</string>
   <string name="jump_between_containers_text_pre_r">Quitter un conteneur, comme une liste ou une grille, est utile lorsque vous souhaitez sortir d\'une longue liste d\'éléments.\n\nPour essayer de le faire maintenant, balayez l\'écran vers le bas, puis vers le haut jusqu\'à ce que vous entendiez « %1$s ». Ensuite, balayez l\'écran vers le bas pour passer au conteneur suivant.</string>
@@ -1221,7 +1217,7 @@
   <string name="delete_icon_detection_dialog_title">Supprimer les descriptions automatiques d\'icônes?</string>
   <string name="delete_image_description_dialog_title">Supprimer les descriptions automatiques d\'images?</string>
   <string name="delete_all_image_captioning_dialog_title">Supprimer les descriptions automatiques d\'images et d\'icônes?</string>
-  <string name="delete_dialog_message">Pour obtenir à nouveau des descriptions par la suite, vous pouvez télécharger cette fonctionnalité à partir des paramètres SandFly</string>
+  <string name="delete_dialog_message">Pour obtenir à nouveau des descriptions par la suite, vous pouvez télécharger cette fonctionnalité à partir des paramètres de SandFly</string>
   <string name="delete_all_dialog_message">Cette action supprime les descriptions automatiques d\'icônes et d\'images.\n\nPour obtenir à nouveau les descriptions ultérieurement, vous pouvez télécharger ces fonctionnalités à partir des paramètres de SandFly.</string>
   <string name="delete_dialog_positive_button_text">Supprimer</string>
   <string name="delete_dialog_negative_button_text">Annuler</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Plus</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Réserver des gestes pour Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly ne traite plus les touchers simples et doubles à deux doigts, afin que Samsung Vibration Watch puisse les utiliser. Activez Vibration Watch dans les paramètres d\'accessibilité de votre montre.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Réservé à Vibration Watch dans les paramètres avancés</string>
     <string name="title_pref_speakerphone_away_from_ear">Haut-parleur lorsque le téléphone est éloigné de l\'oreille</string>
     <string name="summary_pref_speakerphone_away_from_ear">Pendant un appel, passe au haut-parleur lorsque vous éloignez le téléphone de votre oreille, et revient à l\'écouteur lorsque vous le rapprochez.</string>
     <string name="summary_pref_speakerphone_needs_permission">Nécessite une autorisation qu\'Android n\'accorde pas aux lecteurs d\'écran. Pour l\'accorder, exécutez cette commande avec adb ou Shizuku, puis revenez à cet écran : %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Applications</string>
     <string name="speech_control_no_apps">Aucune application n\'a encore demandé à parler.</string>
     <string name="speech_control_ask_title">Autoriser <xliff:g id="app" example="Tasker">%1$s</xliff:g> à parler au moyen de SandFly?</string>
-    <string name="speech_control_ask_text">Elle peut énoncer du texte avec votre voix SandFly. Vous pouvez modifier ce choix dans les paramètres avancés.</string>
     <string name="speech_control_allow">Autoriser</string>
     <string name="speech_control_deny">Ne pas autoriser</string>
     <string name="permission_speak_label">parler au moyen de SandFly</string>
@@ -1441,7 +1435,6 @@
         <item quantity="many">%d notifications</item>
         <item quantity="other">%d notifications</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly activé. Maintenez deux doigts sur l\'écran pendant cinq secondes pour le désactiver. Pour ne plus afficher ce message, désactivez Paramètres de SandFly &gt; Paramètres avancés &gt; Afficher les instructions pour désactiver SandFly.</string>
     <string name="edge_gestures_title">Bords</string>
     <string name="title_pref_audio_output_device">Sortie audio</string>
     <string name="dialog_title_audio_output_device">Choisir la sortie audio de SandFly</string>
@@ -1524,7 +1517,7 @@
     <string name="summary_support_wrap_around">Activer ou désactiver le passage du dernier élément au premier</string>
     <string name="wrap_around_on">Navigation en boucle activée</string>
     <string name="wrap_around_off">Navigation en boucle désactivée</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tablette tenue droite, écran vers l\'extérieur</string>
+    <string name="title_selector_tablet_held_up_faces_away">Écran de la tablette tenue à la verticale tourné à l’opposé de vous</string>
     <string name="summary_support_tablet_held_up_faces_away">Pour le clavier braille sur une tablette ou un téléphone déplié</string>
     <string name="tablet_held_up_faces_away_on">Tablette tenue droite, écran vers l\'extérieur activé</string>
     <string name="tablet_held_up_faces_away_off">Tablette tenue droite, écran vers l\'extérieur désactivé</string>
@@ -1579,7 +1572,7 @@
     <string name="notification_list_show_less">Afficher moins</string>
     <string name="title_pref_quick_settings">Utiliser les paramètres rapides de SandFly</string>
     <string name="title_pref_quick_settings_items">Panneau de paramètres rapides</string>
-    <string name="quick_settings_title">Réglages rapides</string>
+    <string name="quick_settings_title">Paramètres rapides</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">Données mobiles</string>
@@ -1770,7 +1763,6 @@
     <string name="title_pref_whisper_models">Modèles Whisper</string>
     <string name="dictation_whisper_use">Utiliser</string>
     <string name="title_pref_dictation_ai_service">Service d’IA pour la dictée</string>
-    <string name="dictation_ai_same">Le même que pour les descriptions automatiques</string>
     <string name="title_pref_browse_mode_per_app">Mémoriser le mode navigation pour chaque application</string>
     <string name="title_pref_export_settings">Exporter les paramètres</string>
     <string name="title_pref_import_settings">Importer les paramètres</string>
@@ -1798,4 +1790,12 @@
         <item>1 minute</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Arrêt automatique après un silence</string>
+    <string name="dictation_ai_same">Comme pour « Descriptions d\'images et d\'écran »</string>
+    <string name="navigation_settings_link">Paramètres de SandFly &gt; Navigation</string>
+    <string name="navigation_settings_link_tts">Paramètres de SandFly, puis Navigation</string>
+    <string name="shortcut_reserved_for_vibration_watch">Réservé à Vibration Watch dans « Gestes »</string>
+    <string name="speech_control_ask_text">Cette application peut énoncer du texte avec votre voix SandFly. Vous pouvez modifier ce choix dans Paramètres, Voix, Autoriser d\'autres applications à parler.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">La fonctionnalité SandFly est activée. Maintenez deux doigts sur l\'écran pendant cinq secondes pour la désactiver. Pour arrêter l\'affichage de ce message, désactivez Paramètres de SandFly &gt; Pause et désactivation &gt; Afficher les instructions pour désactiver SandFly.</string>
+    <string name="tutorial_link">Paramètres de SandFly &gt; Aide et commentaires &gt; Tutoriel sur SandFly</string>
+    <string name="tutorial_link_tts">Paramètres de SandFly, puis Aide et commentaires, puis Tutoriel sur SandFly</string>
 </resources>

@@ -10,10 +10,10 @@
   <string name="actions">Handlinger</string>
   <string name="system_actions">Systemhandlinger</string>
   <string name="talkback_preferences_subtitle">Versjon %1$s</string>
-  <string name="label_manager_summary_title">Administrer egendefinerte etiketter</string>
+  <string name="label_manager_summary_title">Administrer tilpassede etiketter</string>
   <string name="label_manager_package_title">Administrer etiketter for %1$s</string>
   <string name="manage_label">Administrer etiketter</string>
-  <string name="label_manager_no_packages_message">Det finnes for øyeblikket ingen egendefinerte etiketter\n\n<b>Slik oppretter du egendefinerte etiketter</b>\nGå til et umerket bilde og legg til en etikett fra SandFly-menyen</string>
+  <string name="label_manager_no_packages_message">Det finnes for øyeblikket ingen tilpassede etiketter\n\n<b>Slik oppretter du tilpassede etiketter</b>\nGå til et umerket bilde og legg til en etikett fra SandFly-menyen</string>
   <string name="label_manager_timestamp_text">Sist endret %1$s</string>
   <string name="search_mode_cancel">Søket er avbrutt.</string>
   <string name="notification_type_status_started">Startet</string>
@@ -472,7 +472,7 @@
   <string name="title_viewpager_breakout_page_right">Side til høyre</string>
   <string name="title_labeling_controls">Etiketter</string>
   <string name="title_labeling_show_or_hide_controls">Legg til eller endre etiketter</string>
-  <string name="title_granularity">Navigasjon</string>
+  <string name="title_granularity">Navigering</string>
   <string name="title_read_from_top">Les fra toppen</string>
   <string name="title_copy_last_spoken_phrase">Kopier den siste uttalte frasen</string>
   <string name="title_spell_last_spoken_phrase">Stav den siste uttalte frasen</string>
@@ -881,7 +881,7 @@
   <string name="shortcut_for_dictation_content_without_google_play">Når Gboard er på skjermen, kan du bruke et dobbelttrykk med to fingre for å starte diktering og et dobbelttrykk med to fingre for å stoppe.</string>
   <string name="announcing_text_formatting_title">Vi lanserer tekstformatering</string>
   <string name="announcing_text_formatting_header">Nå kan SandFly lese opp endringer i tekstformatering, for eksempel fet, kursiv og tekstfarge. Slik kommer du i gang:</string>
-  <string name="announcing_text_formatting_option1">Fokuser på elementet med formatering, åpne SandFly-menyen, og velg «Beskriv tekstformatering», eller</string>
+  <string name="announcing_text_formatting_option1">Fokuser på elementet med formatering, åpne SandFly-menyen, og velg «Beskriv tekstformateringen», eller</string>
   <string name="announcing_text_formatting_option2">Legg til en lesekontroll for tekstformatering som slår av eller på opplesing av formateringsendringer.</string>
   <string name="announcing_text_formatting_middle">Når du er klar til å prøve formatert tekst, kan du se et eksempel på det her:</string>
   <string name="announcing_text_formatting_tail">Hvis du vil endre hvordan formatert tekst leses opp, kan du gå til %1$s.</string>
@@ -909,13 +909,9 @@
   <string name="keyboard_shortcuts_link_tts">SandFly-innstillinger og så Hurtigtaster</string>
   <string name="braille_display_settings_link">Innstillinger for leselister</string>
   <string name="keyboard_smart_browse_mode_title">Tastatur: smart surfemodus</string>
-  <string name="keyboard_smart_browse_mode_text">Med smart surfemodus i SandFly slås surfemodus av i redigeringsfelter, slik at du kan skrive med et fysisk tastatur når du surfer på nettet. Deretter slås det på igjen når du hopper til et felt på nettet som ikke kan redigeres, slik at du kan fortsette å surfe effektivt. Du kan slå «smart surfemodus» av eller på i <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">SandFly-innstillinger &gt; Avanserte innstillinger</string>
-  <string name="advanced_settings_link_tts">SandFly-innstillinger og så Avanserte innstillinger</string>
+  <string name="keyboard_smart_browse_mode_text">Med smart surfemodus i SandFly slås surfemodus av i redigeringsfelter, slik at du kan skrive med et fysisk tastatur når du surfer på nettet. Deretter slås det på igjen når du hopper til et felt på nettet som ikke kan redigeres, slik at du kan fortsette å surfe effektivt. Du kan slå «Smart surfemodus» av eller på i <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <string name="keyboard_tutorial_title">Tastaturveiledning</string>
   <string name="keyboard_tutorial_text">Nå har SandFly en tastaturveiledning som er laget for å hjelpe deg med å lære hurtigtastene og kommandoene for det utvidede tastaturoppsettet når du bruker et fysisk tastatur. For å åpne veiledningen, gå til <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFly-innstillinger &gt; SandFly-veiledning</string>
-  <string name="tutorial_link_tts">SandFly-innstillinger og så SandFly-veiledning</string>
   <string name="tutorial_entry_point_title">Veiledning</string>
   <string name="welcome_to_talkback_title">Velkommen til SandFly</string>
   <string name="talkback_is_on">SandFly er på</string>
@@ -1106,7 +1102,7 @@
   <string name="wear_training_volume_down_text">Sveip til høyre og så ned</string>
   <string name="wear_training_open_talkback_menu_title">Åpne SandFly-menyen</string>
   <string name="wear_training_open_talkback_menu_text">For å åpne innstillinger og kontroller du kanskje trenger ofte, sveip ned og så mot høyre</string>
-  <string name="wear_training_typing_title">Skriver</string>
+  <string name="wear_training_typing_title">Skriving</string>
   <string name="wear_training_typing_text1">For å skrive med tastaturet, dra fingeren over det. Når du hører bokstaven du vil skrive inn, løfter du fingeren.</string>
   <string name="wear_training_typing_text2">For å skjule tastaturet og sjekke inndataene, sveip ned fra toppen av skjermen med to fingre.</string>
   <string name="wear_training_typing_text3">For å gå tilbake til tastaturet, sveip opp fra bunnen av skjermen med to fingre.</string>
@@ -1309,12 +1305,12 @@
     <string name="spoken_language_unavailable_with_profile">Talespråk er utilgjengelig når du bruker en stemmeprofil</string>
     <string name="speech_engine_unavailable_with_profile">Talemotoren er utilgjengelig mens du bruker en stemmeprofil</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, i bruk</string>
-    <string name="no_voice_profiles">Ingen taleprofiler</string>
+    <string name="no_voice_profiles">Ingen stemmeprofiler</string>
     <string name="shortcut_voice_profiles">Velg stemmeprofil</string>
-    <string name="shortcut_previous_voice_profile">Forrige taleprofil</string>
-    <string name="shortcut_next_voice_profile">Neste taleprofil</string>
+    <string name="shortcut_previous_voice_profile">Forrige stemmeprofil</string>
+    <string name="shortcut_next_voice_profile">Neste stemmeprofil</string>
     <string name="title_pref_voice_profile_in_use">Stemmeprofil i bruk</string>
-    <string name="title_pref_add_voice_profile">Legg til taleprofil</string>
+    <string name="title_pref_add_voice_profile">Legg til stemmeprofil</string>
     <string name="voice_profile_new_name">Stemmeprofil <xliff:g id="number" example="2">%1$d</xliff:g></string>
     <string name="voice_profile_name_taken">Det finnes allerede en stemmeprofil som heter <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Navn</string>
@@ -1330,7 +1326,7 @@
     <string name="voice_profile_moved_above">Flyttet over <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_moved_below">Flyttet under <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="voice_profile_deleted"><xliff:g id="name" example="Reading">%1$s</xliff:g> slettet</string>
-    <string name="title_pref_delete_voice_profile">Slett taleprofil</string>
+    <string name="title_pref_delete_voice_profile">Slett stemmeprofil</string>
     <string name="voice_profile_delete_confirm">Vil du slette <xliff:g id="name" example="Reading">%1$s</xliff:g>?</string>
     <string name="voice_profile_delete">Slett</string>
     <string name="summary_pref_tts_engine_default">Systemstandard</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Mer</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reserver bevegelser for Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly slutter å håndtere enkelt- og dobbelttrykk med to fingre, slik at Samsung Vibration Watch kan bruke dem. Slå på Vibration Watch i klokkens tilgjengelighetsinnstillinger.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Reservert for Vibration Watch i avanserte innstillinger</string>
     <string name="title_pref_speakerphone_away_from_ear">Høyttaler når telefonen ikke er ved øret</string>
     <string name="summary_pref_speakerphone_away_from_ear">Bytter til høyttaleren under en samtale når du tar telefonen bort fra øret, og tilbake til øretelefonen når du holder den mot øret igjen.</string>
     <string name="summary_pref_speakerphone_needs_permission">Krever en tillatelse som Android ikke gir skjermlesere. For å gi den, kjør denne kommandoen med adb eller Shizuku, og gå deretter tilbake til denne skjermen: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Apper</string>
     <string name="speech_control_no_apps">Ingen apper har bedt om å få snakke ennå.</string>
     <string name="speech_control_ask_title">Vil du la <xliff:g id="app" example="Tasker">%1$s</xliff:g> snakke gjennom SandFly?</string>
-    <string name="speech_control_ask_text">Den kan si tekst med din SandFly-stemme. Du kan endre dette i Avanserte innstillinger.</string>
     <string name="speech_control_allow">Tillat</string>
     <string name="speech_control_deny">Ikke tillat</string>
     <string name="permission_speak_label">snakke gjennom SandFly</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Fjern</string>
     <string name="quick_settings_added">%1$s lagt til</string>
     <string name="quick_settings_removed">%1$s fjernet</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly på. Hold 2 fingre på skjermen i 5 sekunder for å slå av. For å slutte å vise denne meldingen, slå av SandFly-innstillinger &gt; Avanserte innstillinger &gt; Vis instruksjoner for å slå av SandFly.</string>
     <string name="edge_gestures_title">Kanter</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">En annen snarvei for å slå surfemodus på eller av</string>
     <string name="title_pref_vibration_strength">Vibrasjonsstyrke</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper-modeller</string>
     <string name="dictation_whisper_use">Bruk</string>
     <string name="title_pref_dictation_ai_service">AI-tjeneste for diktering</string>
-    <string name="dictation_ai_same">Samme som for automatiske beskrivelser</string>
     <string name="title_pref_browse_mode_per_app">Husk surfemodus i hver app</string>
     <string name="title_pref_export_settings">Eksporter innstillinger</string>
     <string name="title_pref_import_settings">Importer innstillinger</string>
@@ -1794,4 +1786,12 @@
         <item>1 minutt</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automatisk stopp etter stillhet</string>
+    <string name="dictation_ai_same">Samme som Bilde- og skjermbeskrivelser</string>
+    <string name="navigation_settings_link">SandFly-innstillinger &gt; Navigering</string>
+    <string name="navigation_settings_link_tts">SandFly-innstillinger og så Navigering</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reservert for Vibration Watch under Bevegelser</string>
+    <string name="speech_control_ask_text">Appen kan lese opp tekst med SandFly-stemmen din. Du kan endre dette under Innstillinger, Tale, La andre apper snakke.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly er på. Hold to fingre på skjermen i 5 sekunder for å slå av. For å slutte å vise denne meldingen, slå av SandFly-innstillinger &gt; Pause og avslåing &gt; Vis veiledning om hvordan du slår av SandFly.</string>
+    <string name="tutorial_link">SandFly-innstillinger &gt; Hjelp og tilbakemelding &gt; SandFly-veiledning</string>
+    <string name="tutorial_link_tts">SandFly-innstillinger, deretter Hjelp og tilbakemelding og så SandFly-veiledning</string>
 </resources>

@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">مدل</string>
     <string name="ai_service_address_invalid">نشانی باید با https:// شروع شود. چیزی ذخیره نشد.</string>
     <string name="dialog_message_ai_service_consent">تصاویر و نماگرفت‌ها برای توصیف به <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ارسال می‌شوند که چند ثانیه طول می‌کشد. شرایط و خط‌مشی حریم خصوصی خود این سرویس اعمال می‌شود. هوش مصنوعی مولد آزمایشی است، بنابراین اشتباه خواهد کرد.</string>
-    <string name="ai_service_error_api_key">سرویس هوش مصنوعی کلید API را نپذیرفت. تنظیمات آن را در توضیحات خودکار بررسی کنید.</string>
+    <string name="ai_service_error_api_key">سرویس هوش مصنوعی کلید API را نپذیرفت. تنظیمات آن را در «توصیف تصویر و صفحه» بررسی کنید.</string>
     <string name="ai_service_error_quota">محدودیت استفاده از سرویس هوش مصنوعی رسیده است. بعداً دوباره امتحان کنید.</string>
     <string name="ai_service_error_busy">سرویس هوش مصنوعی در حال حاضر مشغول است. یک لحظه دیگر دوباره امتحان کنید.</string>
     <string name="ai_service_error_timeout">پاسخگویی سرویس هوش مصنوعی خیلی طول کشید. دوباره امتحان کنید.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">هیچ‌کدام</string>
-    <string name="ai_service_not_set_up">هیچ سرویس هوش مصنوعی در حال استفاده نیست. یکی را تنظیم کنید یا در تنظیمات توضیحات خودکار یکی را انتخاب کنید.</string>
+    <string name="ai_service_not_set_up">هیچ سرویس هوش مصنوعی در حال استفاده نیست. یکی را تنظیم کنید یا در تنظیمات «توصیف تصویر و صفحه» یکی را انتخاب کنید.</string>
     <string name="ai_provider_none_set_up">هیچ سرویس هوش مصنوعی راه اندازی نشده است. یکی را در تنظیمات آن در زیر تنظیم کنید.</string>
     <string name="ai_provider_other">سرویس دیگر</string>
     <string name="title_pref_category_ai_services">خدمات هوش مصنوعی</string>

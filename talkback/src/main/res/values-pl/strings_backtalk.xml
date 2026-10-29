@@ -58,8 +58,7 @@
   <string name="title_pref_category_typing_and_braille">Pisanie i brajl</string>
   <string name="title_pref_category_more">Więcej</string>
   <string name="title_pref_reserve_vibration_watch_gestures">Zarezerwuj gesty dla Vibration Watch</string>
-  <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nie obsługuje pojedynczego ani dwukrotnego kliknięcia dwoma palcami, aby mogła ich używać funkcja „Zegar wibracyjny” firmy Samsung. Włącz ją w ustawieniach ułatwień dostępu zegarka.</string>
-  <string name="shortcut_reserved_for_vibration_watch">Zarezerwowany dla Vibration Watch w ustawieniach zaawansowanych</string>
+  <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nie obsługuje pojedynczego ani dwukrotnego kliknięcia dwoma palcami, aby mogła ich używać funkcja Vibration Watch firmy Samsung. Włącz Vibration Watch w ustawieniach ułatwień dostępu zegarka.</string>
   <string name="title_pref_speakerphone_away_from_ear">Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha</string>
   <string name="summary_pref_speakerphone_away_from_ear">Podczas rozmowy włącza tryb głośnomówiący po odsunięciu telefonu od ucha i wyłącza go po ponownym przyłożeniu.</string>
   <string name="summary_pref_speakerphone_needs_permission">Wymaga uprawnienia, którego Android nie przyznaje czytnikom ekranu. Aby je przyznać, wykonaj poniższe polecenie za pomocą adb lub Shizuku, a następnie wróć do tego ekranu: %1$s</string>
@@ -69,7 +68,6 @@
   <string name="speech_control_apps_category">Aplikacje</string>
   <string name="speech_control_no_apps">Żadna aplikacja nie poprosiła jeszcze o odczytywanie tekstu przez SandFly.</string>
   <string name="speech_control_ask_title">Zezwolić aplikacji <xliff:g id="app" example="Tasker">%1$s</xliff:g> na odczytywanie tekstu przez SandFly?</string>
-  <string name="speech_control_ask_text">Może odczytywać tekst głosem używanym w SandFly. Możesz zmienić to uprawnienie w ustawieniach zaawansowanych.</string>
   <string name="speech_control_allow">Zezwól</string>
   <string name="speech_control_deny">Nie zezwalaj</string>
   <string name="permission_speak_label">odczytywanie tekstu przez SandFly</string>
@@ -98,7 +96,6 @@
   <string name="summary_pref_speak_volume_changes">Podawaj nowy poziom po naciśnięciu przycisków głośności</string>
   <string name="title_pref_speak_notifications">Odczytuj powiadomienia</string>
   <string name="summary_pref_speak_notifications">Odczytuj nowe powiadomienia, gdy się pojawią. Informacje o połączeniach przychodzących są zawsze odczytywane.</string>
-  <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly jest włączony. Aby go wyłączyć, przytrzymaj 2 palce na ekranie przez 5 sekund. Aby ukryć ten komunikat, w ustawieniach zaawansowanych SandFly wyłącz opcję pokazywania instrukcji jego wyłączania.</string>
   <string name="title_pref_audio_output_device">Urządzenie odtwarzające</string>
   <string name="dialog_title_audio_output_device">Wybierz, gdzie odtwarzać dźwięk SandFly</string>
   <string name="value_audio_output_device_default">Domyślne urządzenie systemowe</string>
@@ -168,7 +165,7 @@
   <string name="template_item_details_order_dropped">Zakończono przeciąganie: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
   <string name="item_details_order_footer">SandFly odczytuje informacje o elemencie w tej kolejności. Aby ją zmienić, dotknij wybranej pozycji i przytrzymaj, a następnie przeciągnij ją w górę lub w dół. Gdy SandFly jest włączony, kliknij dwukrotnie, przytrzymaj i przeciągnij. Możesz też użyć czynności „Przenieś w górę” i „Przenieś w dół”.</string>
   <string name="title_pref_speak_items_before_scroll">Odczytuj elementy, zanim przewinięcie pokaże je na ekranie</string>
-  <string name="gemini_error_api_key">Usługa Gemini nie zaakceptowała klucza API. Sprawdź go w ustawieniach automatycznych opisów.</string>
+  <string name="gemini_error_api_key">Usługa Gemini nie zaakceptowała klucza API. Sprawdź go w sekcji „Opisy obrazów i ekranu”.</string>
   <string name="gemini_error_quota">Osiągnięto limit użycia Twojego klucza API Gemini. Spróbuj ponownie później.</string>
   <string name="gemini_error_busy">Usługa Gemini jest teraz zajęta. Spróbuj ponownie za chwilę.</string>
   <string name="gemini_error_timeout">Usługa Gemini nie odpowiedziała w wyznaczonym czasie. Spróbuj ponownie.</string>
@@ -273,7 +270,7 @@
   <string name="on_device_ai_import_done">Model zainstalowany</string>
   <string name="on_device_ai_import_failed">Wybrany plik nie jest obsługiwanym plikiem modelu.</string>
   <string name="pref_on_device_ai_timeout">Limit czasu oczekiwania na odpowiedź</string>
-  <string name="pref_on_device_ai_timeout_summary">%1$s. Po upływie tego czasu SandFly przestaje czekać. Opisywanie ekranu trwa dłużej niż opisywanie obrazu.</string>
+  <string name="pref_on_device_ai_timeout_summary">%1$s. Po upływie tego czasu SandFly przestaje czekać. „Opisz ekran” trwa dłużej niż „Opisz obraz”.</string>
   <string name="on_device_ai_choose_timeout">Limit czasu oczekiwania na odpowiedź</string>
   <string name="pref_on_device_ai_processor">Procesor</string>
   <string name="pref_on_device_ai_short_prompts">Krótsze opisy ekranu</string>
@@ -585,5 +582,5 @@
   <string name="alternate_tos">Możesz też otworzyć stronę https://www.google.pl/mobile/tospage/index.html?dc=gorganic&amp;gl=PL</string>
   <string xmlns:tools="http://schemas.android.com/tools" name="alternate_help" tools:ignore="HardCodedNumber">Możesz też otworzyć stronę https://support.google.com/accessibility/android/answer/6283677?hl=pl</string>
   <string name="title_pref_mute_speech_while_recording">Wyłączaj mowę podczas nagrywania</string>
-  <string name="summary_pref_mute_speech_while_recording">Gdy aplikacja rozpocznie nagrywanie bez podłączonych słuchawek, mowa zostanie wyłączona, aby nie trafiła do nagrania. Włączy się ponownie po jego zakończeniu. Możesz przywrócić ją wcześniej gestem włączania lub wyłączania mowy.</string>
+  <string name="summary_pref_mute_speech_while_recording">Gdy aplikacja nagrywa bez podłączonych słuchawek, SandFly mówi tylko w odpowiedzi na Twoje gesty, klawisze i pisanie, a w przypadku np. powiadomień milczy, aby nie trafiły do nagrania.</string>
 </resources>

@@ -13,7 +13,7 @@
   <string name="label_manager_summary_title">Арнаулы белгілерді басқару</string>
   <string name="label_manager_package_title">%1$s үшін белгілерді басқару</string>
   <string name="manage_label">Белгілерді басқару</string>
-  <string name="label_manager_no_packages_message">Қазір теңшелетін белгілер жоқ\n\n<b>Теңшелетін белгіні қалай жасауға болады</b>\nБелгісіз кескінге өтіп, SandFly мәзірінен белгі қосыңыз</string>
+  <string name="label_manager_no_packages_message">Қазір арнаулы белгілер жоқ\n\n<b>Арнаулы белгіні қалай жасауға болады</b>\nБелгісіз кескінге өтіп, SandFly мәзірінен белгі қосыңыз</string>
   <string name="label_manager_timestamp_text">Соңғы өзгерту: %1$s</string>
   <string name="search_mode_cancel">Іздеуден бас тартылды.</string>
   <string name="notification_type_status_started">Басталды</string>
@@ -107,7 +107,7 @@
   <string name="pref_verbosity_preset_entry_custom">Басқа</string>
   <string name="pref_verbosity_preset_entry_low">Төмен</string>
   <string name="pref_verbosity_category_preset_settings_title">Сөз мөлшерін басқару</string>
-  <string name="pref_verbosity_preset_change">%1$s толық мәліметтері қазір қосулы.</string>
+  <string name="pref_verbosity_preset_change"><xliff:g id="preset_name" example="High">%1$s</xliff:g> сөз мөлшері қазір қосулы.</string>
   <string name="pref_gesture_set_entry_0">0</string>
   <string name="pref_gesture_set_entry_1">1</string>
   <string name="keycombo_keymap_changes_instruction_title">SandFly пернетақта схемасын жаңартыңыз</string>
@@ -668,7 +668,7 @@
   <string name="label_dialog_text">Осы элементтің белгісі ретінде пайдаланылатын мәтінді енгізіңіз.\nІшкі көрініс атауы: %1$s</string>
   <string name="label_dialog_edit_hint">Белгінің мәтіні</string>
   <string name="label_import">Арнаулы белгілерді импорттау</string>
-  <string name="label_import_dialog_title">Арнайы айдарларды SandFly ішіне импорттау</string>
+  <string name="label_import_dialog_title">Арнаулы белгілерді SandFly ішіне импорттау</string>
   <string name="label_import_dialog_message">Қайшы келген жағдайда бар белгілердің орнын басуды не олардың өткізіп жіберуді таңдау</string>
   <string name="label_import_dialog_skip">Өткізіп жіберу</string>
   <string name="label_import_dialog_override">Қайта анықтау</string>
@@ -851,7 +851,7 @@
   <string name="keep_reviewing_tutorial_button">Көре беру</string>
   <string name="welcome_to_updated_talkback_title">SandFly функциясының жаңа нұсқасына қош келдіңіз</string>
   <string name="navigation_heading">Навигация</string>
-  <string name="setting_selector_heading">Оқуды басқару</string>
+  <string name="setting_selector_heading">Оқуды басқару элементтері</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Мультимедиалық файлдарды бейне немесе музыка қолданбасынан ойнату немесе кідірту үшін 2 саусақпен екі рет түртіңіз. Қазір байқап көріңіз.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Басқа қолданбаларда бұл қимыл қоңырауға жауап беру немесе аяқтау сияқты әрекеттерге қолданылуы мүмкін. Бұл қимыл барлық қолданбада болмауы мүмкін.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Медиамазмұн кідіртілген не ойнатылып жатыр. Әдетте бұл – ағымдағы бейнені не музыканы кідіртеді не ойнатады. Жалғастыру үшін оңға сырғытыңыз.</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">SandFly-ті жаңа қимылдар арқылы жылдамырақ пайдалану туралы толығырақ ақпарат алу үшін түртіңіз.</string>
   <string name="dump_node_tree_description">Түйін ағашы журналдарға басып шығарылды.</string>
   <string name="report_gesture_description">Мұнда жақында қолданылған қимылдар көрсетілген. Олардың қайсысында қате шыққанын және ол нені білдіруі керек болғанын хабарлаңыз.</string>
-  <string name="update_welcome_talkback_16.1">SandFly-тың бұл жаңа нұсқасында экранды сипаттауға арналған көбірек тіл және SandFly-ты пайдалануды жеңілдететін, сапаға қатысты басқа да жаңа мүмкіндіктер енгізілді.\n\nБұл өзгерістер туралы ақпарат келесі бірнеше экранда берілген.\n\nБұл ақпаратты кейінірек SandFly-тағы \"SandFly параметрлері &gt; Жаңа функциялар\" бөліміне өтіп, көруге болады.</string>
-  <string name="update_welcome_talkback_16.1_tts">SandFly-тың бұл жаңа нұсқасында экранды сипаттауға арналған көбірек тіл және SandFly-ты пайдалануды жеңілдететін, сапаға қатысты басқа да жаңа мүмкіндіктер енгізілді.\n\nБұл өзгерістер туралы ақпарат келесі бірнеше экранда берілген.\n\nБұл ақпаратты кейінірек SandFly-тағы \"SandFly параметрлері &gt; Жаңа функциялар\" бөліміне өтіп, көруге болады.</string>
+  <string name="update_welcome_talkback_16.1">SandFly-тың бұл жаңа нұсқасында «Экранды сипаттаңыз» функциясы үшін көбірек тіл және SandFly-ты пайдалануды жеңілдететін, сапаға қатысты басқа да жаңа мүмкіндіктер енгізілді.\n\nБұл өзгерістер туралы ақпарат келесі бірнеше экранда берілген.\n\nБұл ақпаратты кейінірек SandFly-тағы \"SandFly параметрлері &gt; SandFly-тегі жаңа функциялар\" бөліміне өтіп, көруге болады.</string>
+  <string name="update_welcome_talkback_16.1_tts">SandFly-тың бұл жаңа нұсқасында «Экранды сипаттаңыз» функциясы үшін көбірек тіл және SandFly-ты пайдалануды жеңілдететін, сапаға қатысты басқа да жаңа мүмкіндіктер енгізілді.\n\nБұл өзгерістер туралы ақпарат келесі бірнеше экранда берілген.\n\nБұл ақпаратты кейінірек SandFly-тағы \"SandFly параметрлері, содан кейін SandFly-тегі жаңа функциялар\" бөліміне өтіп, көруге болады.</string>
   <string name="shortcut_for_dictation_title">Дауыспен теруге арналған жылдам пәрмен</string>
   <string name="shortcut_for_dictation_content">Gboard пайдаланған кезде, дауыспен теруді бастау немесе тоқтату үшін екі саусақпен екі рет түртуге болады.
 &lt;br&gt;
@@ -886,7 +886,7 @@
   <string name="announcing_text_formatting_middle">Пайдалануға дайын болғанда, форматталған мәтіннің мысалын көріңіз:</string>
   <string name="announcing_text_formatting_tail">Форматталған мәтіннің қалай хабарланатынын өзгерткіңіз келсе, %1$s бөліміне өтуіңізге болады.</string>
   <string name="text_formatting_options_settings_path">SandFly параметрлері &gt; Сөз мөлшері &gt; Мәтінді форматтау опциялары</string>
-  <string name="text_formatting_options_settings_path_tts">SandFly параметрлері &gt; Сөз мөлшері &gt; Мәтінді форматтау опциялары</string>
+  <string name="text_formatting_options_settings_path_tts">SandFly параметрлері, содан кейін Сөз мөлшері, содан кейін Мәтінді форматтау опциялары</string>
   <string name="announcing_text_formatiing_sample">Бұл мәтін &lt;b&gt;жуан&lt;/b&gt;, сенімді үн қатады,
 &lt;br&gt;&lt;u&gt;Астыңғы сызығы&lt;/u&gt; саябырлап батады.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;Раушан қызыл&lt;/span&gt; екені айдан анық,
@@ -906,16 +906,12 @@
   <string name="keyboard_enhanced_keymap_title">Пернетақта: жақсартылған пернетақта схемасы</string>
   <string name="keyboard_enhanced_keymap_text">SandFly енді физикалық пернетақталарға арналған әртүрлі жаңа пәрмендер мен төте жолдарды қамтитын \"Жетілдірілген пернелер картасы\" бар. Бұл жақсарту физикалық пернетақталарды пайдаланатын SandFly пайдаланушылары үшін тиімдірек веб шарлау, навигацияны және өзара әрекеттесу үшін \"шолу режимін\" қамтиды. <xliff:g id="settings_path">%1$s</xliff:g> ішінде \"Жетілдірілген пернелер картасына\" ауысуға болады.\n\nЕгер Брайль дисплейін пайдалансаңыз, мазмұнды Брайль дисплейінен тікелей өту үшін жаңа шолу режимінің таңбашаларын да пайдалануға болады. Кейбір Брайль дисплейінің таңбашалары осы өзгерісті қанағаттандыру үшін өзгертілді. Барлық Брайль дисплей таңбашаларының тізімін <xliff:g id="braille_display_settings_path">%2$s</xliff:g> ішінде көре аласыз.</string>
   <string name="keyboard_shortcuts_link">SandFly параметрлері &gt; Перне тіркесімдері</string>
-  <string name="keyboard_shortcuts_link_tts">SandFly параметрлері &gt; Перне тіркесімдері</string>
+  <string name="keyboard_shortcuts_link_tts">SandFly параметрлері, содан кейін Перне тіркесімдері</string>
   <string name="braille_display_settings_link">Брайль дисплейі параметрлері</string>
   <string name="keyboard_smart_browse_mode_title">Пернетақта: смарт шолу режимі</string>
   <string name="keyboard_smart_browse_mode_text">SandFly смарт шолу режимі интернетті шолу кезінде физикалық пернетақтамен теруге көмектесу үшін өзгерту өрісіндегі шолу режимін өшіреді. Содан кейін интернетте өзгертілмейтін өріске өткен кезде, қайта қосады, осылайша шолуды тиімді жалғастыра аласыз. \"Смарт шолу режимін\" <xliff:g id="settings_path">%1$s</xliff:g> бөлімінде қосуға немесе өшіруге болады.</string>
-  <string name="advanced_settings_link">SandFly параметрлері &gt; Қосымша параметрлер</string>
-  <string name="advanced_settings_link_tts">SandFly параметрлері &gt; Қосымша параметрлер</string>
   <string name="keyboard_tutorial_title">Пернетақта оқулығы</string>
   <string name="keyboard_tutorial_text">Енді SandFly функциясында физикалық пернетақтаны пайдаланған кезде, жақсартылған пернетақта схемасының пернелер тіркесімдері мен пәрмендерін үйренуге көмектесетін пернетақта оқулығы бар. Оқулыққа мына сілтеме арқылы өтіңіз: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFly параметрлері &gt; SandFly оқулығы</string>
-  <string name="tutorial_link_tts">SandFly параметрлері &gt; SandFly оқулығы</string>
   <string name="tutorial_entry_point_title">Оқулық</string>
   <string name="welcome_to_talkback_title">SandFly-ке қош келдіңіз!</string>
   <string name="talkback_is_on">SandFly қосулы</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Басқа</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch үшін қимылдарды резервтеу</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly екі саусақпен бір рет және екі рет түртуді өңдемейді, сонда Samsung Vibration Watch оларды пайдалана алады. Vibration Watch функциясын сағаттың арнайы мүмкіндіктер параметрлерінен қосыңыз.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Қосымша параметрлерде Vibration Watch үшін сақталған</string>
     <string name="title_pref_speakerphone_away_from_ear">Телефон құлақтан алыс болғанда динамик</string>
     <string name="summary_pref_speakerphone_away_from_ear">Қоңырау кезінде телефонды құлақтан алыстатқанда динамикке ауысады, ал қайта құлаққа тосқанда сөйлесу динамигіне қайтады.</string>
     <string name="summary_pref_speakerphone_needs_permission">Android экраннан оқу құралдарына бермейтін рұқсат қажет. Оны беру үшін осы пәрменді adb немесе Shizuku арқылы орындаңыз, содан кейін осы экранға оралыңыз: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Қолданбалар</string>
     <string name="speech_control_no_apps">Әзірге ешбір қолданба сөйлеуді сұраған жоқ.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> SandFly арқылы сөйлеуге рұқсат етілсін бе?</string>
-    <string name="speech_control_ask_text">Ол мәтінді SandFly дауысыңызбен айта алады. Мұны Кеңейтілген параметрлерде өзгертуге болады.</string>
     <string name="speech_control_allow">Рұқсат ету</string>
     <string name="speech_control_deny">Рұқсат етпеу</string>
     <string name="permission_speak_label">SandFly арқылы сөйлеу</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Жою</string>
     <string name="quick_settings_added">%1$s қосылды</string>
     <string name="quick_settings_removed">%1$s жойылды</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly қосулы. Өшіру үшін экранда 2 саусақты 5 секунд ұстап тұрыңыз. Бұл хабарды көрсетуді тоқтату үшін SandFly параметрлері &gt; Қосымша параметрлер &gt; SandFly өшіру нұсқауларын көрсету тармағын өшіріңіз.</string>
     <string name="edge_gestures_title">Жиектер</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Шолу режимін қосу немесе өшіру үшін тағы бір төте жол</string>
     <string name="title_pref_vibration_strength">Діріл күші</string>
@@ -1746,7 +1739,7 @@
     <string name="image_qna_stop_listening">Тыңдауды тоқтату</string>
     <string name="image_qna_type_question">Сұрақты теріңіз</string>
     <string name="shortcut_dictate">Ауызша айту</string>
-    <string name="title_pref_ai_dictation">Диктовканы AI көмегімен түзету</string>
+    <string name="title_pref_ai_dictation">Ауызша айтып жазуды AI көмегімен түзету</string>
     <string name="dictation_not_corrected">Түзетілмеген. Танылғандай терілді.</string>
     <string name="dictation_nothing_recognized">Ештеңе танылмады</string>
     <string name="dictation_unavailable">Сөйлеуді тану қолжетімсіз</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper модельдері</string>
     <string name="dictation_whisper_use">Пайдалану</string>
     <string name="title_pref_dictation_ai_service">Ауызша айтып жазуға арналған AI қызметі</string>
-    <string name="dictation_ai_same">Автоматты сипаттамалардағыдай</string>
     <string name="title_pref_browse_mode_per_app">Әр қолданбадағы шолу режимін есте сақтау</string>
     <string name="title_pref_export_settings">Параметрлерді экспорттау</string>
     <string name="title_pref_import_settings">Параметрлерді импорттау</string>
@@ -1794,4 +1786,12 @@
         <item>1 минут</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Үнсіздіктен кейін автоматты тоқтату</string>
+    <string name="dictation_ai_same">«Сурет және экран сипаттамалары» бөліміндегідей</string>
+    <string name="navigation_settings_link">SandFly параметрлері &gt; Навигация</string>
+    <string name="navigation_settings_link_tts">SandFly параметрлері, содан кейін Навигация</string>
+    <string name="shortcut_reserved_for_vibration_watch">«Қимылдар» бөлімінде Vibration Watch үшін резервтелген</string>
+    <string name="speech_control_ask_text">Ол мәтінді SandFly дауысымен айта алады. Мұны «Параметрлер», «Сөйлеу», «Басқа қолданбаларға сөйлеуге рұқсат беру» бөлімінде өзгертуге болады.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly қосулы. Өшіру үшін 2 саусақты экранда 5 секунд ұстап тұрыңыз. Бұл хабарды көрсетуді тоқтату үшін SandFly параметрлері &gt; Кідірту және өшіру &gt; SandFly функциясын өшіру нұсқауларын көрсету параметрін өшіріңіз.</string>
+    <string name="tutorial_link">SandFly параметрлері &gt; Анықтама және пікір &gt; SandFly оқулығы</string>
+    <string name="tutorial_link_tts">SandFly параметрлері, содан кейін Анықтама және пікір, содан кейін SandFly оқулығы</string>
 </resources>

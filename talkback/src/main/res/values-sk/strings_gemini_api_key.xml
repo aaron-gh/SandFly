@@ -12,13 +12,13 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, potom Flash-Lite, keď je preťažený</string>
     <string name="gemini_model_loading">Získavanie modelov…</string>
     <string name="gemini_model_list_failed">Nepodarilo sa získať modely: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Najprv nastavte kľúč API Gemini</string>
+    <string name="gemini_model_needs_key">Najprv nastavte Gemini API kľúč</string>
     <string name="gemini_api_terms_link">Dodatočné zmluvné podmienky rozhrania Gemini API</string>
     <string name="ai_service_address_hint">Adresa, napríklad https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Adresa musí začínať https://. Nič sa neuložilo.</string>
     <string name="dialog_message_ai_service_consent">Obrázky a snímky obrazovky sa na opis odosielajú do služby <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, čo trvá niekoľko sekúnd. Platia vlastné podmienky a pravidlá ochrany súkromia tejto služby. Generatívna AI je experimentálna, takže bude robiť chyby.</string>
-    <string name="ai_service_error_api_key">Služba AI neprijala kľúč API. Skontrolujte jej nastavenia v sekcii Automatické opisy.</string>
+    <string name="ai_service_error_api_key">Služba AI neprijala kľúč API. Skontrolujte jej nastavenia v sekcii „Opisy obrázkov a obrazovky“.</string>
     <string name="ai_service_error_quota">Bol dosiahnutý limit používania služby AI. Skúste to znova neskôr.</string>
     <string name="ai_service_error_busy">Služba AI je momentálne zaneprázdnená. Skúste to znova o chvíľu.</string>
     <string name="ai_service_error_timeout">Službe AI trvalo odpoveď príliš dlho. Skúste to znova.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Žiadne</string>
-    <string name="ai_service_not_set_up">Nepoužíva sa žiadna služba AI. Nastavte alebo vyberte jednu v nastaveniach Automatické opisy.</string>
+    <string name="ai_service_not_set_up">Nepoužíva sa žiadna služba AI. Nastavte alebo vyberte jednu v sekcii „Opisy obrázkov a obrazovky“.</string>
     <string name="ai_provider_none_set_up">Nie je nastavená žiadna služba AI. Nastavte jednu v jej nastaveniach nižšie.</string>
     <string name="ai_provider_other">Iná služba</string>
     <string name="title_pref_category_ai_services">Služby AI</string>

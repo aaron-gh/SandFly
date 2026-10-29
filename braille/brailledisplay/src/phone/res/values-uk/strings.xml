@@ -42,7 +42,7 @@
   <string name="bd_preference_languages_and_commands_category_title">Мови й команди</string>
   <string name="pref_codes_title">Мови</string>
   <string name="pref_preferred_output_codes_title">Вибрана мова читання</string>
-  <string name="pref_preferred_input_codes_title">Вибрана мова введення</string>
+  <string name="pref_preferred_input_codes_title">Бажана мова введення</string>
   <string name="pref_preferred_braille_grade_title">Бажаний рівень шрифту Брайля</string>
   <string name="bd_switch_input_code_gesture_tip_dialog_title">Швидко змінювати мову введення</string>
   <string name="bd_switch_output_code_gesture_tip_dialog_title">Швидко змінювати мову читання</string>
@@ -62,7 +62,7 @@
   <string name="bd_preference_braille_contracted">Скорочена брайлівська розкладка</string>
   <string name="bd_preference_braille_uncontracted">Розширена брайлівська розкладка</string>
   <string name="bd_braille_grade_tips">Щоб швидко перемикатися між скороченою і розширеною розкладкою за допомогою брайлівського дисплея, натисніть пробіл і крапки 1, 2, 4 й 5.\n\nЦя команда працює, якщо ви використовуєте мову з обома рівнями шрифту Брайля.</string>
-  <string name="bd_preference_key_bindings_title">Команди для дисплея Брайля</string>
+  <string name="bd_preference_key_bindings_title">Команди для брайлівського дисплея</string>
   <string name="bd_preference_key_bindings_summary">Переглянути команди клавіш для брайлівського дисплея</string>
   <string name="bd_commands_bindings_instructions">Переміщуватись екраном можна за допомогою навігаційних клавіш. Вводити текст у текстове поле можна за допомогою брайлівських клавіш.\n\nНижче наведено всі команди, які підтримує ваш пристрій.</string>
   <string name="bd_commands_bindings_category_basic_controls_title">Основні елементи керування</string>
@@ -79,7 +79,7 @@
   <string name="bd_commands_bindings_category_text_editing_summary">Переміщення курсора й видалення тексту</string>
   <string name="bd_commands_bindings_category_web_navigation_title">Навігація в мережі</string>
   <string name="bd_commands_bindings_category_web_navigation_summary">Комбінації клавіш для переходу між елементами вебконтенту, наприклад заголовками</string>
-  <string name="bd_preference_key_braille_elements_title">Елементи дисплея Брайля</string>
+  <string name="bd_preference_key_braille_elements_title">Елементи брайлівського дисплея</string>
   <string name="bd_preference_key_braille_elements_summary">Дізнайтесь, як відображаються екранні елементи на брайлівському дисплеї</string>
   <string name="bd_braille_elements_instructions">Екранні елементи представлено на брайлівському дисплеї вказаними нижче скороченнями або символами</string>
   <string name="bd_braille_elements_category_interacting_with_screen">Взаємодія з екраном</string>
@@ -324,15 +324,15 @@
   <string name="popup_message_history_consent_dialog_msg">Деякі повідомлення, зокрема сповіщення й сигнали будильника, зберігатимуться в SandFly. Це налаштування можна будь-коли змінити.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Увімкнути</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Ні, дякую</string>
-    <string name="external_display_channel">Дисплеї Брайля з інших програм</string>
-    <string name="external_display_ask_title">Дозволити <xliff:g id="app" example="Notetaker">%1$s</xliff:g> бути дисплеєм Брайля для SandFly?</string>
+    <string name="external_display_channel">Брайлівські дисплеї з інших програм</string>
+    <string name="external_display_ask_title">Дозволити <xliff:g id="app" example="Notetaker">%1$s</xliff:g> бути брайлівським дисплеєм для SandFly?</string>
     <string name="external_display_ask_text">SandFly не використовуватиме його, доки ви не дозволите.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> зможе читати все, що SandFly показує шрифтом Брайля, а це може бути будь-що на екрані, зокрема повідомлення й те, що ви вводите. Програма також зможе керувати пристроєм так само, як ви за допомогою дисплея Брайля: вводити текст, відкривати програми й виконувати будь-які команди SandFly. Дозволяйте це лише програмам, яким довіряєте.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> зможе читати все, що SandFly показує шрифтом Брайля, а це може бути будь-що на екрані, зокрема повідомлення й те, що ви вводите. Програма також зможе керувати пристроєм так само, як ви за допомогою брайлівського дисплея: вводити текст, відкривати програми й виконувати будь-які команди SandFly. Дозволяйте це лише програмам, яким довіряєте.</string>
     <string name="external_display_allow">Дозволити</string>
     <string name="external_display_deny">Не дозволяти</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> – ваш дисплей Брайля</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> – ваш брайлівський дисплей</string>
     <string name="external_display_in_use_text">Поки SandFly використовує його, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> може читати екран і керувати пристроєм.</string>
     <string name="external_displays_title">Дисплеї з інших програм</string>
-    <string name="external_displays_summary">Програми, які ви дозволите, можуть бути дисплеями Брайля для SandFly. Програма, яка є дисплеєм Брайля, може читати екран і керувати пристроєм.</string>
-    <string name="external_displays_none">Жодна програма не може бути дисплеєм Брайля.</string>
+    <string name="external_displays_summary">Програми, які ви дозволите, можуть бути брайлівськими дисплеями для SandFly. Програма, яка є брайлівським дисплеєм, може читати екран і керувати пристроєм.</string>
+    <string name="external_displays_none">Жодна програма не може бути брайлівським дисплеєм.</string>
 </resources>

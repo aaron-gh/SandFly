@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">Модель</string>
     <string name="ai_service_address_invalid">Адреса має починатися з https://. Нічого не збережено.</string>
     <string name="dialog_message_ai_service_consent">Зображення та знімки екрана надсилаються в <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для опису, це триває кілька секунд. Діють власні умови й політика конфіденційності цього сервісу. Генеративний ШІ експериментальний, тому помилятиметься.</string>
-    <string name="ai_service_error_api_key">Сервіс AI не прийняв ключ API. Перевірте його налаштування в автоматичних описах.</string>
-    <string name="ai_service_error_quota">Досягнуто ліміту використання служби ШІ. Повторіть спробу пізніше.</string>
-    <string name="ai_service_error_busy">Служба ШІ зараз зайнята. Повторіть спробу за мить.</string>
-    <string name="ai_service_error_timeout">Служба ШІ надто довго відповідала. Спробуйте знову.</string>
+    <string name="ai_service_error_api_key">Сервіс ШІ не прийняв ключ API. Перевірте його налаштування в розділі «Описи зображень і екрана».</string>
+    <string name="ai_service_error_quota">Досягнуто ліміту використання сервісу ШІ. Повторіть спробу пізніше.</string>
+    <string name="ai_service_error_busy">Сервіс ШІ зараз зайнятий. Повторіть спробу за мить.</string>
+    <string name="ai_service_error_timeout">Сервіс ШІ надто довго відповідав. Спробуйте знову.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Немає</string>
-    <string name="ai_service_not_set_up">Не використовується жоден сервіс ШІ. Налаштуйте або виберіть його в налаштуваннях «Автоматичні описи».</string>
+    <string name="ai_service_not_set_up">Не використовується жоден сервіс ШІ. Налаштуйте або виберіть його в розділі «Описи зображень і екрана».</string>
     <string name="ai_provider_none_set_up">Сервіс ШІ не налаштовано. Налаштуйте його в налаштуваннях нижче.</string>
     <string name="ai_provider_other">Інший сервіс</string>
     <string name="title_pref_category_ai_services">Сервіси ШІ</string>

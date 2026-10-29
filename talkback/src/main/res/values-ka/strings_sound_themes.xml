@@ -40,14 +40,14 @@
     <string name="summary_pref_sound_theme_install_link">ბმული თემის ფაილზე ან GitHub-ის საცავზე, რომელშიც თემაა. ბმულის SandFly-ისთვის გაზიარება ბრაუზერიდანაც შეგიძლიათ.</string>
     <string name="title_pref_sound_theme_install_source">წყაროდან</string>
     <string name="summary_pref_sound_theme_install_source">თემის ფაილები საცავში GitHub, GitLab, Codeberg, Gitea ან Bitbucket-ზე.</string>
-    <string name="sound_theme_sources">ხმის თემის წყაროები</string>
+    <string name="sound_theme_sources">ხმოვანი თემის წყაროები</string>
     <string name="sound_theme_source_empty">ამ წყაროში ხმოვანი თემები არ არის</string>
     <string name="sound_theme_source_failed">ხმოვანი თემების ჩატვირთვა ვერ მოხერხდა. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
-    <string name="sound_theme_source_remove_message">მისგან დაინსტალირებული ხმის თემები რჩება დაინსტალირებული.</string>
+    <string name="sound_theme_source_remove_message">მისგან დაინსტალირებული ხმოვანი თემები რჩება დაინსტალირებული.</string>
     <string name="sound_theme_link_message">შეიყვანეთ ან ჩასვით ბმული თემის ფაილზე ან GitHub-ის საცავზე, რომელშიც თემაა.</string>
     <string name="sound_theme_link_hint">https://</string>
-    <string name="sound_theme_install_label">ხმის თემის ინსტალაცია</string>
-    <string name="sound_theme_install_reading">მიმდინარეობს ხმის თემის წაკითხვა</string>
+    <string name="sound_theme_install_label">ხმოვანი თემის ინსტალაცია</string>
+    <string name="sound_theme_install_reading">მიმდინარეობს ხმოვანი თემის წაკითხვა</string>
     <string name="sound_theme_install_title">დაინსტალირდეს <xliff:g id="theme" example="Unspoken">%1$s</xliff:g>?</string>
     <string name="sound_theme_install_and_use">ინსტალაცია და გამოყენება</string>
     <string name="sound_theme_install">ინსტალაცია</string>
@@ -55,9 +55,9 @@
     <string name="sound_theme_install_skipped">გამოტოვებული:\n<xliff:g id="files" example="beep.wav: there is no sound called beep">%1$s</xliff:g></string>
     <string name="sound_theme_installed"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> დაინსტალირდა.</string>
     <string name="sound_theme_installed_in_use"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> დაყენდა და ახლა გამოიყენება.</string>
-    <string name="sound_theme_install_nothing">არ არის დასაყენებელი ხმის თემა.</string>
-    <string name="sound_theme_install_not_a_theme">ეს არ არის ხმის თემა, რომელსაც SandFly გამოიყენებს: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
-    <string name="sound_theme_install_failed">SandFly ხმის თემის დაყენება ვერ მოხერხდა. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
+    <string name="sound_theme_install_nothing">არ არის დასაყენებელი ხმოვანი თემა.</string>
+    <string name="sound_theme_install_not_a_theme">ეს არ არის ხმოვანი თემა, რომელსაც SandFly გამოიყენებს: <xliff:g id="reason" example="it has no theme.json">%1$s</xliff:g>.</string>
+    <string name="sound_theme_install_failed">SandFly ხმოვანი თემის დაყენება ვერ მოხერხდა. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_install_https_only">ხმოვანი თემების ბმულები უნდა დაიწყოს https-ით.</string>
     <string name="title_pref_theme_sounds_of"><xliff:g id="theme" example="Unspoken">%1$s</xliff:g> ხმები</string>
     <string name="title_pref_theme_sounds_reset">SandFly-ის ხმების გამოყენება ყველაფრისთვის</string>

@@ -7,7 +7,7 @@
   <string name="tts_preferences_title">ટેક્સ્ટ ટૂ સ્પીચ</string>
   <string name="language_options">ભાષાઓ</string>
   <string name="spoken_language">બોલવામાં આવતી ભાષા</string>
-  <string name="actions">ઍક્શન</string>
+  <string name="actions">ક્રિયાઓ</string>
   <string name="system_actions">સિસ્ટમની ક્રિયાઓ</string>
   <string name="talkback_preferences_subtitle">વર્ઝન %1$s</string>
   <string name="label_manager_summary_title">કસ્ટમ લેબલ મેનેજ કરો</string>
@@ -78,7 +78,7 @@
   <string name="title_pref_category_manage_focus_indicator">ફોકસ સૂચક</string>
   <string name="title_pref_category_manage_gestures">સંકેતો</string>
   <string name="title_pref_manage_labels">કસ્ટમ લેબલ</string>
-  <string name="title_pref_category_context_menu">SandFly મેનુ</string>
+  <string name="title_pref_category_context_menu">SandFly મેનૂ</string>
   <string name="title_pref_category_selector_menu">વાંચનના નિયંત્રણો</string>
   <string name="title_pref_category_navigation_menu">નૅવિગેટશનના વિકલ્પોમાં ફેરફાર કરો</string>
   <string name="title_pref_manage_keyboard_shortcuts">કીબોર્ડ શૉર્ટકટ</string>
@@ -94,7 +94,7 @@
   <string name="title_pref_show_exit_watermark">SandFly બંધ કરવા માટેની સૂચનાઓ બતાવો</string>
   <string name="summary_pref_show_exit_watermark">SandFly ચાલુ થાય ત્યારે તેને કેવી રીતે બંધ કરવું તે બતાવે છે</string>
   <string name="talkback_exit_watermark_text">SandFly ચાલુ છે. બંધ કરવા માટે સ્ક્રીન પર 2 આંગળી વડે 5 સેકન્ડ સુધી હોલ્ડ કરો. આ મેસેજ બતાવવાનું બંધ કરવા, SandFly મેનૂ ખોલવા માટે 3 આંગળી વડે ટૅપ કરો.</string>
-  <string name="talkback_exit_watermark_hint_text">SandFlyની સુવિધા ચાલુ છે, દર્શાવતું કોઈ બૅનર. SandFlyની સુવિધા બંધ કરવા માટે, 5 સેકન્ડ માટે સ્ક્રીન પર 2 આંગળી પકડી રાખો. આ બૅનર કાઢી નાખવા માટે, SandFly સેટિંગ પર જાઓ.</string>
+  <string name="talkback_exit_watermark_hint_text">SandFlyની સુવિધા ચાલુ છે, દર્શાવતું કોઈ બૅનર. SandFlyની સુવિધા બંધ કરવા માટે, 5 સેકન્ડ માટે સ્ક્રીન પર 2 આંગળી પકડી રાખો. આ બૅનર કાઢી નાખવા માટે, SandFlyના સેટિંગ પર જાઓ.</string>
   <string name="reset_gesture_settings_title">સંકેત માટેના સેટિંગને રીસેટ કરો</string>
   <string name="one_finger_gestures_title">એક આંગળી વડે કરવાના સંકેતો</string>
   <string name="one_finger_back_forth_gestures_title">એક આંગળી વડે પાછળ અને આગળ કરવાના સંકેતો</string>
@@ -192,7 +192,7 @@
   <string name="keycombo_menu_other_language_options">ઇન્સ્ટૉલ કરેલ ભાષાઓ બતાવો</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">છેલ્લે બોલવામાં આવેલો શબ્દસમૂહ કૉપિ કરો</string>
   <string name="keycombo_menu_other_open_tts_settings">ટેક્સ્ટ ટૂ સ્પીચ સેટિંગ ખોલો</string>
-  <string name="keycombo_menu_other_open_talkback_settings">SandFly સેટિંગ ખોલો</string>
+  <string name="keycombo_menu_other_open_talkback_settings">SandFlyના સેટિંગ ખોલો</string>
   <string name="keycombo_menu_other_report_issue">પ્રતિસાદ મોકલો</string>
   <string name="keycombo_menu_other_cycle_typing_echo">લખાણ પડઘાની સાઇકલ</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">કીબોર્ડ શૉર્ટકટની સૂચિ બતાવો</string>
@@ -473,7 +473,7 @@
   <string name="title_labeling_controls">લેબલ્સ</string>
   <string name="title_labeling_show_or_hide_controls">લેબલ ઉમેરો અથવા તેમાં ફેરફાર કરો</string>
   <string name="title_granularity">નૅવિગેશન</string>
-  <string name="title_read_from_top">ઉપરથી વાંચો</string>
+  <string name="title_read_from_top">ટોચથી વાંચો</string>
   <string name="title_copy_last_spoken_phrase">છેલ્લે બોલવામાં આવેલો શબ્દસમૂહ કૉપિ કરો</string>
   <string name="title_spell_last_spoken_phrase">છેલ્લે બોલવામાં આવેલો શબ્દસમૂહ લખો</string>
   <string name="title_repeat_last_spoken_phrase">છેલ્લે બોલવામાં આવેલો શબ્દસમૂહ રિપીટ કરો</string>
@@ -684,8 +684,8 @@
   <string name="dialog_message_dim_screen">આ પ્રાઇવસીને બહેતર બનાવવા માટે ડિસ્પ્લેને બંધ કરે છે. ડિસ્પ્લેને ફરીથી ચાલુ કરવા માટેના મેસેજ અથવા SandFly જેવી ઍક્સેસિબિલિટી સુવિધાઓ માટેના મેનૂ જેવું અમુક કન્ટેન્ટ હજી પણ બતાવવામાં આવી શકે છે.</string>
   <string name="button_disable_all_events">બધીને અક્ષમ કરો</string>
   <string name="button_enable_all_events">બધીને સક્ષમ કરો</string>
-  <string name="dialog_title_disable_exploration">સ્પર્શ કરીને શોધખોળ કરવું અક્ષમ કરીએ?</string>
-  <string name="dialog_message_disable_exploration">શું તમે ખરેખર ટચ કરીને અન્વેષણ કરોને બંધ કરવા માંગો છો?\n\nતમારું ઉપકરણ જ્યારે તમે સ્ક્રીનને ટચ કરશો ત્યારે શોર્ટકટ હાવભાવ અથવા બોલેલ આઇટમ્સને પ્રતિસાદ આપશે નહીં.</string>
+  <string name="dialog_title_disable_exploration">“સ્પર્શ કરીને શોધખોળ કરો” અક્ષમ કરીએ?</string>
+  <string name="dialog_message_disable_exploration">શું તમે ખરેખર “સ્પર્શ કરીને શોધખોળ કરો” બંધ કરવા માંગો છો?\n\nતમારું ઉપકરણ જ્યારે તમે સ્ક્રીનને ટચ કરશો ત્યારે શોર્ટકટ હાવભાવ અથવા બોલેલ આઇટમ્સને પ્રતિસાદ આપશે નહીં.</string>
   <string name="dialog_title_enable_tree_debug">નોડ ટ્રી ડિબગિંગ સક્ષમ કરીએ?</string>
   <string name="dialog_message_enable_tree_debug">શું તમે ખરેખર નોડ ટ્રી ડિબગિંગ ચાલુ કરવા માંગો છો?\n\nનોડ ટ્રી ડિબગિંગ તમારી સ્ક્રીન પરની સામગ્રીને તમારા ઉપકરણનાં લૉગ્સ પર પ્રદર્શિત કરે છે, જે અન્ય ઍપ્લિકેશનો દ્વારા વાંચી શકાય છે.</string>
   <string name="dialog_title_enable_tree_debug_gesture">શું 4 આંગળી વડે ત્રણ વાર ટૅપ કરો સંકેત ફરીથી અસાઇન કરીએ?</string>
@@ -819,12 +819,12 @@
   <string name="adjust_typo_hint">સૂચનો માટે %1$s.</string>
   <string name="use_action_hint">ક્રિયા કરવા માટે બે વાર ટૅપ કરો</string>
   <string name="no_adjust_setting_gesture">આનો ઉપયોગ કરવા માટે, SandFlyના સેટિંગ પર જાઓ અને \'<xliff:g example="selected setting next action">%1$s</xliff:g>\' માટે સંકેત ઉમેરો</string>
-  <string name="no_navigate_typo_gesture">આનો ઉપયોગ કરવા માટે, SandFly સેટિંગ પર જાઓ અને જોડણીની તપાસ માટે સંકેત ઉમેરો</string>
+  <string name="no_navigate_typo_gesture">આનો ઉપયોગ કરવા માટે, SandFlyના સેટિંગ પર જાઓ અને જોડણીની તપાસ માટે સંકેત ઉમેરો</string>
   <string name="use_spelling_suggestion_hint">ટેક્સ્ટ બદલવા માટે બે વાર ટૅપ કરો</string>
   <string name="screen_search_keyword_hint">કીવર્ડ %1$s છે</string>
   <string name="screen_search_no_keyword_hint">હજી સુધી કોઈ કીવર્ડ નથી. કોઈ નવી શોધ શરૂ કરવા માટે, 3 આંગળી વડે ટૅપ કરીને દબાવી રાખો અથવા SandFly મેનૂમાંથી \'સ્ક્રીન પર શોધો\' સુવિધા ખોલો.</string>
   <string name="screen_search_no_keyword_hint_pre_r">હજી સુધી કોઈ કીવર્ડ નથી. કોઈ નવી શોધ શરૂ કરવા માટે, પહેલાં ડાબી બાજુ પછી નીચેની બાજુ સ્વાઇપ કરો અથવા SandFly મેનૂમાંથી \'સ્ક્રીન પર શોધો\' સુવિધા ખોલો.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">બ્રેઇલ કીબોર્ડ ચાલુ કરેલું નથી. SandFly સેટિંગ પર જાઓ, બ્રેઇલ કીબોર્ડ સેટઅપ કરીને ફરી પ્રયાસ કરો.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">બ્રેઇલ કીબોર્ડ ચાલુ કરેલું નથી. SandFlyના સેટિંગ પર જાઓ, બ્રેઇલ કીબોર્ડ સેટઅપ કરીને ફરી પ્રયાસ કરો.</string>
   <string name="suggestions_window_available">સૂચનો ઉપલબ્ધ છે</string>
   <string name="suggestions_window_available_with_gesture">સૂચનો ઉપલબ્ધ છે. ઍક્સેસ કરવા માટે, %1$s</string>
   <string name="heads_up_window_available">નોટિફિકેશન ઉપલબ્ધ છે</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">નવા હાવભાવ સાથે SandFly નો ઝડપથી ઉપયોગ કેવી રીતે કરવો તે જાણવા માટે ટૅપ કરો.</string>
   <string name="dump_node_tree_description">નોડ ટ્રી લૉગ પર પ્રિન્ટ કરવામાં આવ્યું છે.</string>
   <string name="report_gesture_description">અહીં તાજેતરમાં કરાયેલા સંકેતો આપવામાં આવ્યા છે, કૃપા કરીને કયા સંકેત અયોગ્ય છે અને શું અપેક્ષિત છે તે જણાવો.</string>
-  <string name="update_welcome_talkback_16.1">SandFly સંબંધિત આ અપડેટ \'સ્ક્રીનનું વર્ણન કરો\' માટે વધુ ભાષાઓમાં સપોર્ટ અને ક્વૉલિટી સંબંધિત અન્ય સુધારણાઓ રજૂ કરે છે જે SandFlyનો ઉપયોગ કરવાનું સરળ બનાવે છે.\n\nઆગામી કેટલીક સ્ક્રીન પર તમે આ ફેરફારો વિશે વધુ જાણી શકશો.\n\nતમે પછીથી SandFlyના સેટિંગ &gt; SandFlyની નવી સુવિધાઓમાં જઈને આ માહિતીનો રિવ્યૂ કરી શકો છો.</string>
-  <string name="update_welcome_talkback_16.1_tts">SandFly સંબંધિત આ અપડેટ \'સ્ક્રીનનું વર્ણન કરો\' માટે વધુ ભાષાઓમાં સપોર્ટ અને ક્વૉલિટી સંબંધિત અન્ય સુધારણાઓ રજૂ કરે છે જે SandFlyનો ઉપયોગ કરવાનું સરળ બનાવે છે.\n\nઆગામી કેટલીક સ્ક્રીન પર તમે આ ફેરફારો વિશે વધુ જાણી શકશો.\n\nતમે પછીથી SandFlyના સેટિંગ અને ત્યારબાદ SandFlyની નવી સુવિધાઓમાં જઈને આ માહિતીનો રિવ્યૂ કરી શકો છો.</string>
+  <string name="update_welcome_talkback_16.1">SandFly સંબંધિત આ અપડેટ \'સ્ક્રીનનું વર્ણન કરો\' માટે વધુ ભાષાઓમાં સપોર્ટ અને ક્વૉલિટી સંબંધિત અન્ય સુધારણાઓ રજૂ કરે છે જે SandFlyનો ઉપયોગ કરવાનું સરળ બનાવે છે.\n\nઆગામી કેટલીક સ્ક્રીન પર તમે આ ફેરફારો વિશે વધુ જાણી શકશો.\n\nતમે પછીથી SandFlyના સેટિંગ &gt; SandFlyમાં નવી સુવિધાઓમાં જઈને આ માહિતીનો રિવ્યૂ કરી શકો છો.</string>
+  <string name="update_welcome_talkback_16.1_tts">SandFly સંબંધિત આ અપડેટ \'સ્ક્રીનનું વર્ણન કરો\' માટે વધુ ભાષાઓમાં સપોર્ટ અને ક્વૉલિટી સંબંધિત અન્ય સુધારણાઓ રજૂ કરે છે જે SandFlyનો ઉપયોગ કરવાનું સરળ બનાવે છે.\n\nઆગામી કેટલીક સ્ક્રીન પર તમે આ ફેરફારો વિશે વધુ જાણી શકશો.\n\nતમે પછીથી SandFlyના સેટિંગ અને ત્યારબાદ SandFlyમાં નવી સુવિધાઓમાં જઈને આ માહિતીનો રિવ્યૂ કરી શકો છો.</string>
   <string name="shortcut_for_dictation_title">વૉઇસ ટાઇપિંગ માટે શૉર્ટકટ</string>
   <string name="shortcut_for_dictation_content">Gboardનો ઉપયોગ કરતી વખતે, હવે તમે વૉઇસ ટાઇપિંગ શરૂ કરવા અથવા રોકવા માટે બે આંગળી વડે બે વાર ટૅપ કરી શકો છો.
 &lt;br&gt;
@@ -897,8 +897,8 @@
 &lt;br&gt;
 &lt;br&gt;રંગો એક જીવંતપણું, આગવો દેખાવ ભરી દે છે,
 &lt;br&gt;&lt;font color=\"#db372d\"&gt;ભડકા જેવા લાલ&lt;/font&gt;થી માંડીને &lt;font color=\"#128937\"&gt;લીલાછમ લીલા&lt;/font&gt; રંગના સૌમ્ય સ્પર્શ સુધી.</string>
-  <string name="update_welcome_talkback_16.2">SandFlyની આ અપડેટમાં ભૌતિક કીબોર્ડ માટે નવું \"બહેતર કીમૅપ\", ટેક્સ્ટ ફૉર્મેટિંગની ઘોષણાઓ માટે સપોર્ટ અને સેટિંગનો ફરીથી ડિઝાઇન કરેલો લેઆઉટ રજૂ કરવામાં આવ્યો છે, આ ઉપરાંત SandFlyનો ઉપયોગ કરવાનું સરળ બનાવવા માટે અન્ય સુધારણાઓ પણ કરવામાં આવી છે.\n\nઆગલી કેટલીક સ્ક્રીનમાં આ ફેરફારો વિશે તમે વધુ જાણશો.\n\nતમે પછીથી SandFly સેટિંગ &gt; નવી સુવિધાઓમાંથી આ માહિતીનો રિવ્યૂ કરી શકશો.</string>
-  <string name="update_welcome_talkback_16.2_tts">SandFlyની આ અપડેટમાં શારીરિક કીબોર્ડ માટે નવું \"વધારેલું કીમૅપ\", ટેક્સ્ટ ફૉર્મેટિંગની ઘોષણાઓ માટે સપોર્ટ અને સેટિંગના લેઆઉટને ફરીથી ડિઝાઇન કરવાની સુવિધા રજૂ કરવામાં આવી છે, આ ઉપરાંત SandFlyનો ઉપયોગ કરવાનું સરળ બનાવવા માટે અન્ય સુધારણાઓ પણ કરવામાં આવી છે.\n\nઆગલી કેટલીક સ્ક્રીનમાં આ ફેરફારો વિશે તમે વધુ જાણશો.\n\nતમે પછીથી SandFly સેટિંગ પછી નવી સુવિધાઓમાંથી આ માહિતીનો રિવ્યૂ કરી શકશો.</string>
+  <string name="update_welcome_talkback_16.2">SandFlyની આ અપડેટમાં ભૌતિક કીબોર્ડ માટે નવું \"બહેતર કીમૅપ\", ટેક્સ્ટ ફૉર્મેટિંગની ઘોષણાઓ માટે સપોર્ટ અને સેટિંગનો ફરીથી ડિઝાઇન કરેલો લેઆઉટ રજૂ કરવામાં આવ્યો છે, આ ઉપરાંત SandFlyનો ઉપયોગ કરવાનું સરળ બનાવવા માટે અન્ય સુધારણાઓ પણ કરવામાં આવી છે.\n\nઆગલી કેટલીક સ્ક્રીનમાં આ ફેરફારો વિશે તમે વધુ જાણશો.\n\nતમે પછીથી SandFlyના સેટિંગ &gt; SandFlyમાં નવી સુવિધાઓમાંથી આ માહિતીનો રિવ્યૂ કરી શકશો.</string>
+  <string name="update_welcome_talkback_16.2_tts">SandFlyની આ અપડેટમાં શારીરિક કીબોર્ડ માટે નવું \"વધારેલું કીમૅપ\", ટેક્સ્ટ ફૉર્મેટિંગની ઘોષણાઓ માટે સપોર્ટ અને સેટિંગના લેઆઉટને ફરીથી ડિઝાઇન કરવાની સુવિધા રજૂ કરવામાં આવી છે, આ ઉપરાંત SandFlyનો ઉપયોગ કરવાનું સરળ બનાવવા માટે અન્ય સુધારણાઓ પણ કરવામાં આવી છે.\n\nઆગલી કેટલીક સ્ક્રીનમાં આ ફેરફારો વિશે તમે વધુ જાણશો.\n\nતમે પછીથી SandFlyના સેટિંગ પછી SandFlyમાં નવી સુવિધાઓમાંથી આ માહિતીનો રિવ્યૂ કરી શકશો.</string>
   <string name="new_settings_layout_title">સેટિંગનો નવો લેઆઉટ</string>
   <string name="new_settings_layout_text">સુવિધાઓ શોધવાનું સરળ બનાવવા માટે સેટિંગ ગ્રૂપ અપડેટ કરવામાં આવ્યા છે. સેટિંગની નવી કૅટેગરી પણ ઉપલબ્ધ છે, જેમ કે કીબોર્ડ સેટિંગ.</string>
   <string name="split_tap_everywhere_title">દરેક જગ્યાએ સ્પ્લિટ-ટૅપ</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">બ્રેઇલ ડિસ્પ્લેના સેટિંગ</string>
   <string name="keyboard_smart_browse_mode_title">કીબોર્ડ: સ્માર્ટ બ્રાઉઝ મોડ</string>
   <string name="keyboard_smart_browse_mode_text">SandFlyનો સ્માર્ટ બ્રાઉઝ મોડ ફેરફાર કરવાના ફીલ્ડ પર બ્રાઉઝ મોડ બંધ કરે છે, જેથી જ્યારે તમે વેબ બ્રાઉઝ કરો ત્યારે તમને ભૌતિક કીબોર્ડ વડે ટાઇપ કરવામાં મદદ મળે. પછી જ્યારે તમે સીધા વેબ પર ફેરફાર ન કરી શકાય તેવા કોઈ ફીલ્ડ પર જાઓ, ત્યારે તે તેને ફરીથી ચાલુ કરે છે, જેથી તમે કાર્યક્ષમ રીતે બ્રાઉઝ કરવાનું ચાલુ રાખી શકો. તમે <xliff:g id="settings_path">%1$s</xliff:g>માં જઈને \"સ્માર્ટ બ્રાઉઝ મોડ\" ચાલુ કે બંધ કરી શકો છો.</string>
-  <string name="advanced_settings_link">SandFlyના સેટિંગ &gt; અડ્વાન્સડ સેટિંગ</string>
-  <string name="advanced_settings_link_tts">SandFlyના સેટિંગ પછી અડ્વાન્સડ સેટિંગ</string>
   <string name="keyboard_tutorial_title">કીબોર્ડ ટ્યૂટૉરિઅલ</string>
   <string name="keyboard_tutorial_text">SandFlyમાં હવે કીબોર્ડ ટ્યૂટૉરિઅલ શામેલ છે, જે ભૌતિક કીબોર્ડનો ઉપયોગ કરતી વખતે બહેતર કીમૅપ માટે કીબોર્ડ શૉર્ટકટ અને આદેશો શીખવામાં તમારી મદદ કરવા માટે ડિઝાઇન કરવામાં આવ્યું છે. ટ્યૂટૉરિઅલ ઍક્સેસ કરવા માટે, આના પર નૅવિગેટ કરો: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFlyના સેટિંગ &gt; SandFly ટ્યૂટૉરિઅલ</string>
-  <string name="tutorial_link_tts">SandFlyના સેટિંગ પછી SandFly ટ્યૂટૉરિઅલ</string>
   <string name="tutorial_entry_point_title">ટ્યૂટૉરિઅલ</string>
   <string name="welcome_to_talkback_title">SandFlyમાં આપનું સ્વાગત છે</string>
   <string name="talkback_is_on">SandFly ચાલુ છે</string>
@@ -924,7 +920,7 @@
   <string name="tap_again_to_turn_off">બંધ કરવા માટે, ફરીથી ટૅપ કરો</string>
   <string name="talkback_turn_off_description_pointer_and_touch">SandFly તમારી સ્ક્રીન પરના કન્ટેન્ટને મોટેથી વાંચે છે અને તમારા ડિવાઇસ પર નૅવિગેશનની કામ કરવાની રીતને બદલે છે. તેને બંધ કરવા માટે, \"SandFly બંધ કરો\" અથવા તેના પર 2 વાર ટૅપ કરો.</string>
   <string name="welcome_to_talkback_text">SandFly બોલાયેલો પ્રતિસાદ આપે છે, જેથી તમે તમારી સ્ક્રીન પર નજર કર્યા વિના તમારા ડિવાઇસનો ઉપયોગ કરી શકો. જે લોકોને સ્ક્રીન જોવામાં મુશ્કેલી આવતી હોય, તેવા લોકો માટે SandFly મદદરૂપી થઈ શકે છે. \n\nજો તમે તમારી વૉલ્યૂમ કીનો ઉપયોગ કરીને SandFlyને ઝડપથી ચાલુ અથવા બંધ કરવા માગતા હો, તો તમે SandFlyના સેટિંગ &gt; SandFly શૉર્ટકટમાં જાઈને શૉર્ટકટનું સેટઅપ કરી શકો છો.\n\nજ્યારે SandFly ચાલુ હોય, ત્યારે સ્ક્રીન પર ફોકસ કરેલી આઇટમ વિશે મોટેથી બોલવામાં આવે છે.\n\nસ્ક્રીન પર જમણી બાજુ સ્વાઇપ કરવાથી આગળની આઇટમ પર જવાય છે અને ડાબી બાજુ સ્વાઇપ કરવાથી પાછલી આઇટમ પર જવાય છે.\n\nહવે \'આગળ\' બટન શોધવા માટે જમણી બાજુ સ્વાઇપ કરો.</string>
-  <string name="welcome_to_talkback_text_tts">SandFly બોલાયેલો પ્રતિસાદ આપે છે, જેથી તમે તમારી સ્ક્રીન પર નજર કર્યા વિના તમારા ડિવાઇસનો ઉપયોગ કરી શકો. જે લોકોને સ્ક્રીન જોવામાં મુશ્કેલી આવતી હોય, તેવા લોકો માટે SandFly સહાયરૂપ થઈ શકે છે. \n\nજો તમે તમારી વૉલ્યૂમ કીનો ઉપયોગ કરીને SandFlyને ઝડપથી ચાલુ અથવા બંધ કરવા માગતા હો, તો તમે SandFlyમાં સેટિંગ પછી SandFly શૉર્ટકટના શૉર્ટકટને સેટઅપ કરી શકો છો.\n\nજ્યારે SandFly ચાલુ હોય, ત્યારે સ્ક્રીન પર ફોકસ કરેલી આઇટમ વિશે મોટેથી બોલવામાં આવે છે.\n\nસ્ક્રીન પર જમણી બાજુ સ્વાઇપ કરવાથી આગળની આઇટમ પર જવાય છે અને ડાબી બાજુ સ્વાઇપ કરવાથી પાછલી આઇટમ પર જવાય છે.\n\nહવે \'આગળ\' બટન શોધવા માટે જમણી બાજુ સ્વાઇપ કરો.</string>
+  <string name="welcome_to_talkback_text_tts">SandFly બોલાયેલો પ્રતિસાદ આપે છે, જેથી તમે તમારી સ્ક્રીન પર નજર કર્યા વિના તમારા ડિવાઇસનો ઉપયોગ કરી શકો. જે લોકોને સ્ક્રીન જોવામાં મુશ્કેલી આવતી હોય, તેવા લોકો માટે SandFly સહાયરૂપ થઈ શકે છે. \n\nજો તમે તમારી વૉલ્યૂમ કીનો ઉપયોગ કરીને SandFlyને ઝડપથી ચાલુ અથવા બંધ કરવા માગતા હો, તો તમે SandFlyના સેટિંગ પછી “SandFlyનો શૉર્ટકટ”માં શૉર્ટકટ સેટઅપ કરી શકો છો.\n\nજ્યારે SandFly ચાલુ હોય, ત્યારે સ્ક્રીન પર ફોકસ કરેલી આઇટમ વિશે મોટેથી બોલવામાં આવે છે.\n\nસ્ક્રીન પર જમણી બાજુ સ્વાઇપ કરવાથી આગળની આઇટમ પર જવાય છે અને ડાબી બાજુ સ્વાઇપ કરવાથી પાછલી આઇટમ પર જવાય છે.\n\nહવે \'આગળ\' બટન શોધવા માટે જમણી બાજુ સ્વાઇપ કરો.</string>
   <string name="welcome_to_talkback_page_idle_announcement">\'આગળ\' બટન શોધવા માટે, જમણે સ્વાઇપ કરો</string>
   <string name="explore_by_touch_title">શોધખોળ કરવા માટે, તમારી આંગળી ખેંચો</string>
   <string name="explore_by_touch_text">તમે તમારી આંગળીને સ્ક્રીન પર ખેંચીને કોઈ આઇટમ પર ફોકસ પણ કરી શકો છો.\n\nસ્ક્રીનને ટચ કરીને અને તમને \"આગળ\" બટન ન મળે ત્યાં સુધી તમારી આંગળીને નીચેના ડાબા ખૂણા તરફ ખેંચીને હમણાં આ અજમાવી જુઓ.</string>
@@ -948,10 +944,10 @@
   <string name="menus_title">મેનૂ અને નિયંત્રણોનો ઉપયોગ કરો</string>
   <string name="menus_talkback_menu_text">SandFly મેનૂમાં સેટિંગ અને નિયંત્રણો શામેલ છે, જેની તમને વારંવાર જરૂર પડી શકે છે.\n\n3 આંગળી વડે સ્ક્રીન પર ટૅપ કરીને હવે SandFly મેનૂ ખોલો.</string>
   <string name="menus_talkback_menu_text_pre_r">SandFly મેનૂમાં સેટિંગ અને નિયંત્રણો શામેલ છે, જેની તમને વારંવાર જરૂર પડી શકે છે.\n\nપહેલા નીચે અને પછી જમણે સ્વાઇપ કરીને હવે SandFly મેનૂ ખોલો.</string>
-  <string name="menus_selector_text">આ શૉર્ટકટ તમને સેટિંગમાં ઝડપથી ફેરફાર કરવામાં સહાય કરી શકે છે, જેમ કે તમારા નૅવિગેશનને અક્ષરો પરથી શબ્દો પર સ્વિચ કરવામાં અથવા SandFlyના સ્પીચ રેટમાં ફેરફાર કરવામાં.\n\nતમારા વાંચન નિયંત્રણોમાં ઝડપથી ફેરફાર કરવા માટે, 3 આંગળી વડે ડાબે અથવા 3 આંગળી વડે જમણે સ્વાઇપ કરો.\n\nતમે પછીથી SandFly સેટિંગમાં જઈને SandFly મેનૂ અને તમારા વાંચનના નિયંત્રણોને કસ્ટમાઇઝ કરી શકો છો.</string>
-  <string name="menus_selector_text_pre_r">આ શૉર્ટકટ તમને સેટિંગમાં ઝડપથી ફેરફાર કરવામાં સહાય કરી શકે છે, જેમ કે તમારા નૅવિગેશનને અક્ષરો પરથી શબ્દો પર સ્વિચ કરવામાં અથવા SandFlyના સ્પીચ રેટમાં ફેરફાર કરવામાં.\n\nતમારા વાંચન નિયંત્રણોમાં ઝડપથી ફેરફાર કરવા માટે, નીચે પછી પાછા ઉપર સ્વાઇપ કરો.\n\nતમે પછીથી SandFly સેટિંગમાં જઈને SandFly મેનૂ અને તમારા વાંચનના નિયંત્રણોને કસ્ટમાઇઝ કરી શકો છો.</string>
+  <string name="menus_selector_text">આ શૉર્ટકટ તમને સેટિંગમાં ઝડપથી ફેરફાર કરવામાં સહાય કરી શકે છે, જેમ કે તમારા નૅવિગેશનને અક્ષરો પરથી શબ્દો પર સ્વિચ કરવામાં અથવા SandFlyના સ્પીચ રેટમાં ફેરફાર કરવામાં.\n\nતમારા વાંચનના નિયંત્રણોમાં ઝડપથી ફેરફાર કરવા માટે, 3 આંગળી વડે ડાબે અથવા 3 આંગળી વડે જમણે સ્વાઇપ કરો.\n\nતમે પછીથી SandFlyના સેટિંગમાં જઈને SandFly મેનૂ અને તમારા વાંચનના નિયંત્રણોને કસ્ટમાઇઝ કરી શકો છો.</string>
+  <string name="menus_selector_text_pre_r">આ શૉર્ટકટ તમને સેટિંગમાં ઝડપથી ફેરફાર કરવામાં સહાય કરી શકે છે, જેમ કે તમારા નૅવિગેશનને અક્ષરો પરથી શબ્દો પર સ્વિચ કરવામાં અથવા SandFlyના સ્પીચ રેટમાં ફેરફાર કરવામાં.\n\nતમારા વાંચનના નિયંત્રણોમાં ઝડપથી ફેરફાર કરવા માટે, નીચે પછી પાછા ઉપર સ્વાઇપ કરો.\n\nતમે પછીથી SandFlyના સેટિંગમાં જઈને SandFly મેનૂ અને તમારા વાંચનના નિયંત્રણોને કસ્ટમાઇઝ કરી શકો છો.</string>
   <string name="all_set_title">બધું સેટ થઈ ગયું!</string>
-  <string name="all_set_text">તમે SandFlyનો ઉપયોગ કરવા માટે તૈયાર છો.\n\nહવે અન્ય વિષયો અંગે જાણકારી મેળવતા રહો અથવા કોઈપણ સમયે SandFly સેટિંગમાં જઈને આ માહિતીનો રિવ્યૂ કરો.</string>
+  <string name="all_set_text">તમે SandFlyનો ઉપયોગ કરવા માટે તૈયાર છો.\n\nહવે અન્ય વિષયો અંગે જાણકારી મેળવતા રહો અથવા કોઈપણ સમયે SandFlyના સેટિંગમાં જઈને આ માહિતીનો રિવ્યૂ કરો.</string>
   <string name="talkback_tutorial_text">કોઈ વિષય પસંદ કરવા માટે જમણી બાજુએ સ્વાઇપ કરો. શ્રેષ્ઠ અનુભવ માટે, શરૂઆત કરતા પહેલાં SandFly સુવિધા ચાલુ કરો.</string>
   <string name="basic_navigation_link_text">મૂળભૂત નૅવિગેશન</string>
   <string name="basic_navigation_link_subtext">એક આઇટમ પરથી બીજી આઇટમ પર જાઓ, સ્ક્રોલ કરો, મેનૂનો ઉપયોગ કરો અને બીજું ઘણું</string>
@@ -979,7 +975,7 @@
   <string name="typing_text_title">ટેક્સ્ટ ટાઇપ કરવા વિશે</string>
   <string name="basic_typing_text_text">જ્યારે તમે ટેક્સ્ટ બૉક્સમાં હો, ત્યારે તમારી સ્ક્રીનની સૌથી નીચેની બાજુએ કીબોર્ડ ખુલશે.</string>
   <string name="typing_text_text">તમારી આંગળીને સમગ્ર કીબોર્ડ પર ફેરવો. જ્યારે તમે ટાઇપ કરવા માગતા હોય તે અક્ષર તમને સંભળાય, ત્યારે તમારી આંગળી ઉઠાવી લો.\n\nનીચે આપેલા ટેક્સ્ટ બૉક્સને સક્રિય કરવાનો પ્રયાસ કરો અને તમારું નામ ટાઇપ કરો.</string>
-  <string name="typing_text_with_braille_keyboard_text">તમે બ્રેઇલ કીબોર્ડ વડે પણ ટાઇપ કરી શકો છો. તેને SandFly સેટિંગમાં શોધો.</string>
+  <string name="typing_text_with_braille_keyboard_text">તમે બ્રેઇલ કીબોર્ડ વડે પણ ટાઇપ કરી શકો છો. તેને SandFlyના સેટિંગમાં શોધો.</string>
   <string name="other_ways_to_type_title">ટાઇપ કરવાની અન્ય રીતો</string>
   <string name="other_ways_to_type_text">SandFlyમાં ટાઇપ કરવાની અન્ય રીતો છે. ઉદાહરણ તરીકે, અક્ષર ટાઇપ કરવા માટે તમે \"બે વાર ટૅપ કરો\" સુવિધાનો ઉપયોગ કરી શકો છો.</string>
   <string name="basic_other_ways_to_type_text">SandFly માં ટાઇપ કરવાની અન્ય રીતો પણ છે. ઉદાહરણ તરીકે, તમે અક્ષર દાખલ કરવા માટે બે વાર ટૅપ કરી શકો છો. તમે આને પછીથી SandFlyના સેટિંગ &gt; ઑન-સ્ક્રીન કીબોર્ડ &gt; ટાઇપિંગ પદ્ધતિમાં બદલી શકો છો.</string>
@@ -1069,8 +1065,8 @@
   <string name="checking_notifications_tips">તમારો નોટિફિકેશન ઇતિહાસ ચેક કરવા માટે, તમારી સ્ક્રીનની સૌથી ઉપરથી 2 આંગળી વડે નીચેની તરફ સ્વાઇપ કરો</string>
   <string name="image_description_playground_title">છબીના વર્ણનો મેળવવાનો પ્રયાસ કરો</string>
   <string name="image_description_playground_content_one">જ્યારે તમે કોઈ છબી પર ફોકસ કર્યું હોય, ત્યારે SandFly મેનૂ ખોલો અને “છબીનું વર્ણન કરો” પસંદ કરો.\n\nનીચે એક ફોટો છે. તેની માટે વર્ણન મેળવવાનો પ્રયાસ કરી જુઓ.</string>
-  <string name="image_description_playground_content_two">તમે ગમે ત્યારે SandFlyના સેટિંગ &gt; ઑટોમૅટિક વર્ણનોમાં છબી વર્ણનના સેટિંગ બદલી શકો છો.</string>
-  <string name="image_description_playground_content_two_tts">તમે SandFly સેટિંગ્સ પછી સ્વચાલિત વર્ણનોમાં કોઈપણ સમયે છબી વર્ણન સેટિંગ્સ બદલી શકો છો.</string>
+  <string name="image_description_playground_content_two">તમે ગમે ત્યારે SandFlyના સેટિંગ &gt; છબી અને સ્ક્રીનના વર્ણનોમાં છબી વર્ણનના સેટિંગ બદલી શકો છો.</string>
+  <string name="image_description_playground_content_two_tts">તમે SandFlyના સેટિંગ પછી છબી અને સ્ક્રીનના વર્ણનોમાં કોઈપણ સમયે છબી વર્ણન સેટિંગ્સ બદલી શકો છો.</string>
   <string name="image_description_sample_image_content_description">નમૂના માટેની છબી; SandFly મેનૂ ખોલવા માટે 3 આંગળી વડે ટૅપ કરો અને વર્ણન સાંભળવા માટે \"છબીનું વર્ણન કરો\" પસંદ કરો.</string>
   <string name="practice_gestures_title">સંકેતોનો ઉપયોગ કરો</string>
   <string name="practice_keyboard_gestures_title">કીબોર્ડ શૉર્ટકટનો અભ્યાસ કરો</string>
@@ -1221,8 +1217,8 @@
   <string name="delete_icon_detection_dialog_title">શું આઇકનના ઑટોમૅટિક વર્ણનો ડિલીટ કરીએ?</string>
   <string name="delete_image_description_dialog_title">શું છબીના ઑટોમૅટિક વર્ણનો ડિલીટ કરીએ?</string>
   <string name="delete_all_image_captioning_dialog_title">શું છબીના અને આઇકનના ઑટોમૅટિક વર્ણનો ડિલીટ કરીએ?</string>
-  <string name="delete_dialog_message">પછીથી વર્ણનો ફરી મેળવવા માટે, તમે SandFly સેટિંગમાંથી આ સુવિધા ડાઉનલોડ કરી શકો છો</string>
-  <string name="delete_all_dialog_message">આમ કરવાથી આઇકન અને છબીઓ બન્નેના ઑટોમૅટિક વર્ણનો ડિલીટ થાય છે.\n\nથોડા સમય પછી ફરીથી વર્ણનો મેળવવા માટે, તમે આ સુવિધાઓ SandFly સેટિંગમાંથી ડાઉનલોડ કરી શકો છો.</string>
+  <string name="delete_dialog_message">પછીથી વર્ણનો ફરી મેળવવા માટે, તમે SandFlyના સેટિંગમાંથી આ સુવિધા ડાઉનલોડ કરી શકો છો</string>
+  <string name="delete_all_dialog_message">આમ કરવાથી આઇકન અને છબીઓ બન્નેના ઑટોમૅટિક વર્ણનો ડિલીટ થાય છે.\n\nથોડા સમય પછી ફરીથી વર્ણનો મેળવવા માટે, તમે આ સુવિધાઓ SandFlyના સેટિંગમાંથી ડાઉનલોડ કરી શકો છો.</string>
   <string name="delete_dialog_positive_button_text">ડિલીટ કરો</string>
   <string name="delete_dialog_negative_button_text">રદ કરો</string>
   <string name="delete_icon_description_hint">આઇકનના ઑટોમૅટિક વર્ણનો ડિલીટ કર્યા</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">વધુ</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch માટે સંકેતો અનામત રાખો</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly બે આંગળી વડે એક વાર અને બે વાર ટૅપ કરવાના સંકેતો હૅન્ડલ કરવાનું બંધ કરે છે, જેથી Samsung Vibration Watch તેનો ઉપયોગ કરી શકે. તમારી વૉચના ઍક્સેસિબિલિટી સેટિંગમાં Vibration Watch ચાલુ કરો.</string>
-    <string name="shortcut_reserved_for_vibration_watch">વિગતવાર સેટિંગમાં Vibration Watch માટે અનામત રાખેલું છે</string>
     <string name="title_pref_speakerphone_away_from_ear">કાનથી દૂર હોય ત્યારે સ્પીકર</string>
     <string name="summary_pref_speakerphone_away_from_ear">કૉલ દરમિયાન, તમે ફોનને કાનથી દૂર લઈ જાઓ ત્યારે સ્પીકર પર સ્વિચ કરે છે અને તમે તેને ફરી કાન પાસે લાવો ત્યારે ઇયરપીસ પર પાછું સ્વિચ કરે છે.</string>
     <string name="summary_pref_speakerphone_needs_permission">એવી પરવાનગીની જરૂર છે જે Android સ્ક્રીન રીડરને આપતું નથી. તે આપવા માટે, adb અથવા Shizuku વડે આ આદેશ ચલાવો, પછી આ સ્ક્રીન પર પાછા આવો: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">ઍપ</string>
     <string name="speech_control_no_apps">હજી સુધી કોઈ ઍપે બોલવાની વિનંતી કરી નથી.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g>ને SandFly દ્વારા બોલવાની મંજૂરી આપીએ?</string>
-    <string name="speech_control_ask_text">તે તમારા SandFly વૉઇસમાં ટેક્સ્ટ બોલાવી શકે છે. તમે આને વિગતવાર સેટિંગમાં બદલી શકો છો.</string>
     <string name="speech_control_allow">મંજૂરી આપો</string>
     <string name="speech_control_deny">મંજૂરી આપશો નહીં</string>
     <string name="permission_speak_label">SandFly દ્વારા બોલવું</string>
@@ -1461,7 +1455,7 @@
     </plurals>
     <string name="title_pref_quick_settings">SandFly ના ઝડપી સેટિંગ્સનો ઉપયોગ કરો</string>
     <string name="title_pref_quick_settings_items">ઝડપી સેટિંગ્સ પેનલ</string>
-    <string name="quick_settings_title">ઝડપી સેટિંગ્સ</string>
+    <string name="quick_settings_title">ઝડપી સેટિંગ</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">મોબાઇલ ડેટા</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">દૂર કરો</string>
     <string name="quick_settings_added">%1$s ઉમેર્યું</string>
     <string name="quick_settings_removed">%1$s દૂર કર્યું</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ચાલુ છે. બંધ કરવા માટે સ્ક્રીન પર 2 આંગળી વડે 5 સેકન્ડ સુધી હોલ્ડ કરો. આ મેસેજ બતાવવાનું બંધ કરવા માટે, SandFlyના સેટિંગ &gt; વિગતવાર સેટિંગ &gt; SandFly બંધ કરવા માટેની સૂચનાઓ બતાવો બંધ કરો.</string>
     <string name="edge_gestures_title">કિનારીઓ</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">બ્રાઉઝ મોડ ચાલુ અથવા બંધ કરવા માટેનો બીજો શોર્ટકટ</string>
     <string name="title_pref_vibration_strength">કંપન શક્તિ</string>
@@ -1735,7 +1728,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> મૂક્યું. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly આ ક્રમમાં આઇટમની વિગતો કહે છે. તેને બદલવા માટે, વિગતને ટચ કરો અને પકડી રાખો, પછી તેને ઉપર અથવા નીચે ખેંચો. SandFly ચાલુ રાખીને, બે વાર ટેપ કરો અને પકડી રાખો, પછી ખેંચો. તમે ઉપર ખસેડો અને નીચે ખસેડો ક્રિયાઓનો પણ ઉપયોગ કરી શકો છો.</string>
     <string name="title_pref_speak_items_before_scroll">આઇટમ્સ દૃશ્યમાં સ્ક્રોલ થાય તે પહેલાં બોલો</string>
-    <string name="gemini_error_api_key">Gemini એ API કી સ્વીકારી નથી. સ્વચાલિત વર્ણન સેટિંગ્સમાં કી તપાસો.</string>
+    <string name="gemini_error_api_key">Gemini એ API કી સ્વીકારી નથી. “છબી અને સ્ક્રીનના વર્ણનો” સેટિંગ્સમાં કી તપાસો.</string>
     <string name="gemini_error_quota">તમારી Gemini API કી માટેની વપરાશ મર્યાદા પહોંચી ગઈ છે. પછીથી ફરી પ્રયાસ કરો.</string>
     <string name="gemini_error_busy">Gemini અત્યારે વ્યસ્ત છે. થોડીવારમાં ફરી પ્રયાસ કરો.</string>
     <string name="gemini_error_timeout">Gemini ને જવાબ આપવામાં ઘણો સમય લાગ્યો. ફરી પ્રયાસ કરો.</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper મૉડલ</string>
     <string name="dictation_whisper_use">ઉપયોગ કરો</string>
     <string name="title_pref_dictation_ai_service">ડિક્ટેશન માટે AI સેવા</string>
-    <string name="dictation_ai_same">ઑટોમૅટિક વર્ણનો જેવી જ</string>
     <string name="title_pref_browse_mode_per_app">દરેક એપ્લિકેશનમાં બ્રાઉઝ મોડ યાદ રાખો</string>
     <string name="title_pref_export_settings">સેટિંગ નિકાસ કરો</string>
     <string name="title_pref_import_settings">સેટિંગ આયાત કરો</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">પાછલો ટ્રૅક</string>
     <string name="sound_mode_needs_access">મ્યૂટ ચાલુ અથવા બંધ કરવા માટે “ખલેલ પાડશો નહીં” ઍક્સેસની મંજૂરી આપો.</string>
     <string name="title_pref_dictation_auto_stop">મૌન પછી ઑટોમૅટિક રીતે રોકો</string>
+    <string name="dictation_ai_same">“છબી અને સ્ક્રીનના વર્ણનો” જેવું જ</string>
+    <string name="navigation_settings_link">SandFlyના સેટિંગ &gt; નૅવિગેશન</string>
+    <string name="navigation_settings_link_tts">SandFlyના સેટિંગ પછી નૅવિગેશન</string>
+    <string name="shortcut_reserved_for_vibration_watch">“સંકેતો”માં Vibration Watch માટે અનામત</string>
+    <string name="speech_control_ask_text">તે તમારા SandFly વૉઇસમાં ટેક્સ્ટ બોલી શકે છે. તમે આને “સેટિંગ”, “સ્પીચ”, “અન્ય ઍપને બોલવા દો”માં બદલી શકો છો.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ચાલુ છે. બંધ કરવા માટે સ્ક્રીન પર 2 આંગળી વડે 5 સેકન્ડ સુધી હોલ્ડ કરો. આ મેસેજ બતાવવાનું બંધ કરવા, SandFlyના સેટિંગ &gt; થોભાવો અને બંધ કરો &gt; “SandFly બંધ કરવા માટેની સૂચનાઓ બતાવો” બંધ કરો.</string>
+    <string name="tutorial_link">SandFlyના સેટિંગ &gt; મદદ અને પ્રતિસાદ &gt; SandFly ટ્યૂટૉરિઅલ</string>
+    <string name="tutorial_link_tts">SandFlyના સેટિંગ પછી મદદ અને પ્રતિસાદ પછી SandFly ટ્યૂટૉરિઅલ</string>
 </resources>

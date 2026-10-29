@@ -74,11 +74,11 @@
   <string name="title_pref_single_tap">シングルタップで有効化</string>
   <string name="summary_pref_single_tap">フォーカスのあるアイテムを 1 回タップすると有効にできます。ダブルタップよりもすばやく操作できます。</string>
   <string name="pref_verbosity_title">読み上げの詳細設定</string>
-  <string name="pref_punctuation_title">句読点と記号の読み上げ</string>
+  <string name="pref_punctuation_title">句読点と記号を読み上げる</string>
   <string name="title_pref_category_manage_focus_indicator">フォーカスインジケーター</string>
   <string name="title_pref_category_manage_gestures">ジェスチャー</string>
   <string name="title_pref_manage_labels">カスタムラベル</string>
-  <string name="title_pref_category_context_menu">SandFlyメニュー</string>
+  <string name="title_pref_category_context_menu">SandFly メニュー</string>
   <string name="title_pref_category_selector_menu">読み上げコントロール</string>
   <string name="title_pref_category_navigation_menu">ナビゲーション オプションを編集</string>
   <string name="title_pref_manage_keyboard_shortcuts">キーボード ショートカット</string>
@@ -87,7 +87,7 @@
   <string name="title_pref_help">ヘルプ</string>
   <string name="title_pref_show_tos">利用規約</string>
   <string name="title_pref_show_privacy_policy">プライバシー ポリシー</string>
-  <string name="title_pref_category_fingerprint_touch_shortcuts">指紋認証センサーでの操作</string>
+  <string name="title_pref_category_fingerprint_touch_shortcuts">指紋認証センサーのジェスチャー</string>
   <string name="title_pref_category_tutorial">SandFly チュートリアル</string>
   <string name="title_pref_category_help_no_tutorial">ヘルプ</string>
   <string name="title_pref_advanced_settings">詳細設定</string>
@@ -186,12 +186,12 @@
   <string name="keycombo_menu_other_show_link_list">リンク リストを表示</string>
   <string name="keycombo_menu_other_show_control_list">コントロール リストを表示</string>
   <string name="keycombo_menu_other_show_table_list">表リストを表示</string>
-  <string name="keycombo_menu_other_talkback_context_menu">SandFlyメニューを表示</string>
+  <string name="keycombo_menu_other_talkback_context_menu">SandFly メニューを表示</string>
   <string name="keycombo_menu_other_custom_actions">操作の表示</string>
   <string name="keycombo_menu_other_language_options">インストールした言語を表示</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">最後に読み上げたフレーズをコピー</string>
   <string name="keycombo_menu_other_open_tts_settings">テキスト読み上げの設定が表示されます</string>
-  <string name="keycombo_menu_other_open_talkback_settings">SandFly 設定を開く</string>
+  <string name="keycombo_menu_other_open_talkback_settings">SandFly の設定を開く</string>
   <string name="keycombo_menu_other_report_issue">フィードバックを送信</string>
   <string name="keycombo_menu_other_cycle_typing_echo">入力読み上げを切り替える</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">キーボード ショートカットのリストを表示</string>
@@ -255,7 +255,7 @@
   <string name="keycombo_menu_web_navigate_to_previous_column_bounds">現在の列の先頭に移動する</string>
   <string name="keycombo_menu_web_navigate_to_next_table_bounds">表の末尾に移動する</string>
   <string name="keycombo_menu_web_navigate_to_previous_table_bounds">表の先頭に移動する</string>
-  <string name="keycombo_assign_dialog_message">キーボードショートカット:</string>
+  <string name="keycombo_assign_dialog_message">キーボード ショートカット:</string>
   <string name="keycombo_assign_dialog_navigation_reminder">ショートカットを消去するにはBackspaceキー、保存するにはEnterキー、キャンセルするにはEscキーを押します。</string>
   <string name="keycombo_assign_dialog_clear">ショートカットを消去</string>
   <string name="cannot_copy_feedback">コピーするテキストがありません。まずテキストを選択してください。</string>
@@ -366,7 +366,7 @@
   <string name="shortcut_title_special_features">その他</string>
   <string name="shortcut_unassigned">タップして割り当て</string>
   <string name="shortcut_not_customizable">%1$s（カスタマイズ不可）</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">バイブレーション ウォッチが ON のときは利用できません</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Vibration Watch が ON のときは利用できません</string>
   <string name="shortcut_next">次の項目</string>
   <string name="shortcut_previous">前の項目</string>
   <string name="shortcut_scroll_forward">前方スクロール</string>
@@ -430,7 +430,7 @@
   <string name="shortcut_disable_speak_time">時刻を読み上げない</string>
   <string name="speak_time_off">時刻を読み上げる OFF</string>
   <string name="shortcut_practice_gestures">ジェスチャーの練習</string>
-  <string name="shortcut_report_gesture">操作の問題を報告</string>
+  <string name="shortcut_report_gesture">ジェスチャーの問題を報告</string>
   <string name="shortcut_toggle_braille_display">点字ディスプレイを ON または OFF にする</string>
   <string name="shortcut_announce_current_time_and_date">現在の日時を読み上げる</string>
   <string name="shortcut_announce_battery_state">バッテリー残量の読み上げ</string>
@@ -619,7 +619,7 @@
   <string name="title_pref_shortcut_3finger_1tap_hold">3 本の指で長押し</string>
   <string name="title_pref_shortcut_2finger_3tap_hold">2 本の指でトリプルタップして長押し</string>
   <string name="title_pref_shortcut_3finger_3tap_hold">3 本の指でトリプルタップして長押し</string>
-  <string name="gesture_name_unknown">不明な操作</string>
+  <string name="gesture_name_unknown">不明なジェスチャー</string>
   <string name="gesture_name_pass_through">スキップしてシステム ジェスチャーにする</string>
   <string name="gesture_name_touch_explore">タッチガイド</string>
   <string name="gesture_name_double_tap">ダブルタップ</string>
@@ -787,7 +787,7 @@
   <string name="dialog_message_continuous_reading_mode">[最上部から読み上げる] または [フォーカスした項目から読み上げ] を選択すると、テキストの読み上げ中に前または次の項目に移動でき、簡単に前に戻ったり先に進んだりできます。\n\nSandFly の読み上げ中に音量を調整するには、音量大または音量小ボタンを押します。</string>
   <string name="always_show_this_message_label">このメッセージを常に表示</string>
   <string name="dialog_title_voice_commands">音声コマンドを使って SandFly を制御する</string>
-  <string name="dialog_message_voice_commands">音声で次のような操作を行えます。\n\n• コピーする\n• フォーカスした項目以降を読み上げる\n• [保存したものを] 探す\n• [速く] 話す\n• SandFly の設定\n\n 「<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>」と言うと、利用できるすべての音声コマンドが表示されます</string>
+  <string name="dialog_message_voice_commands">音声で次のような操作を行えます。\n\n• コピーする\n• フォーカスした項目から読み上げ\n• [保存したものを] 探す\n• [速く] 話す\n• SandFly の設定\n\n 「<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>」と言うと、利用できるすべての音声コマンドが表示されます</string>
   <string name="start_voice_command">音声コマンドを使用する</string>
   <string name="dialog_title_pass_through_mode">SandFly のジェスチャーをスキップしてシステム ジェスチャーを使用</string>
   <string name="dialog_message_pass_through_mode">チャイムが聞こえたら、SandFly でサポートされていないシステム ジェスチャーを使用できます。これは、パススルー ジェスチャーとも呼ばれています。</string>
@@ -818,7 +818,7 @@
   <string name="adjust_typo_hint">%1$sすると、候補が表示されます。</string>
   <string name="use_action_hint">ダブルタップするとアクションを実行します</string>
   <string name="no_adjust_setting_gesture">これを使用するには、SandFly の設定に移動し、「<xliff:g example="selected setting next action">%1$s</xliff:g>」のジェスチャーを追加します</string>
-  <string name="no_navigate_typo_gesture">これを使用するには、SandFlyの設定に移動し、スペルチェックのジェスチャーを追加してください</string>
+  <string name="no_navigate_typo_gesture">これを使用するには、SandFly の設定に移動し、スペルチェックのジェスチャーを追加してください</string>
   <string name="use_spelling_suggestion_hint">テキストを置き換えるにはダブルタップします</string>
   <string name="screen_search_keyword_hint">キーワードは「%1$s」です</string>
   <string name="screen_search_no_keyword_hint">まだキーワードはありません。新しい検索を開始するには、3 本の指で長押しするか、SandFly メニューから画面検索を開きます。</string>
@@ -870,7 +870,7 @@
   <string name="new_gesture_notification_title">SandFly の新しいジェスチャー</string>
   <string name="new_gesture_notification_content">タップして、新しいジェスチャーで SandFly をすばやく使用する方法を確認しましょう。</string>
   <string name="dump_node_tree_description">ノードツリーをログにダンプしました。</string>
-  <string name="report_gesture_description">最近行われた操作は次のとおりです。正しくない操作と本来の操作をお知らせください。</string>
+  <string name="report_gesture_description">最近行われたジェスチャーは次のとおりです。正しくないジェスチャーと本来のジェスチャーをお知らせください。</string>
   <string name="update_welcome_talkback_16.1">この SandFly の更新では、「画面の説明」機能がより多くの言語に対応しました。また、SandFly の利便性を高めるさまざまな品質改善も加えられています。\n\n以降の画面では、これらの変更点について説明します。\n\nこの情報は、後から [SandFly の設定] &gt; [SandFly の新機能] で確認できます。</string>
   <string name="update_welcome_talkback_16.1_tts">この SandFly の更新では、「画面の説明」機能がより多くの言語に対応しました。また、SandFly の利便性を高めるさまざまな品質改善も加えられています。\n\n以降の画面では、これらの変更点について説明します。\n\nこの情報は、後から [SandFly の設定] &gt; [SandFly の新機能] で確認できます。</string>
   <string name="shortcut_for_dictation_title">音声入力のショートカット</string>
@@ -909,12 +909,8 @@
   <string name="braille_display_settings_link">点字ディスプレイの設定</string>
   <string name="keyboard_smart_browse_mode_title">キーボード: スマート ブラウズモード</string>
   <string name="keyboard_smart_browse_mode_text">SandFly のスマート ブラウズモードを使用すると、編集項目ではブラウズモードがオフになるため、ウェブ ブラウジング中も物理キーボードで入力できます。ウェブ上の編集以外の項目に移動すると、ブラウズモードが再びオンになり、効率よくブラウジングを続けられます。[スマート ブラウズモード] は、<xliff:g id="settings_path">%1$s</xliff:g> ON / OFF を切り替えられます。</string>
-  <string name="advanced_settings_link">[SandFly の設定] &gt; [詳細設定] で</string>
-  <string name="advanced_settings_link_tts">[SandFly の設定]、[詳細設定] の順に選択して</string>
   <string name="keyboard_tutorial_title">キーボード操作のチュートリアル</string>
   <string name="keyboard_tutorial_text">SandFly にキーボード操作のチュートリアルが追加されました。物理キーボードを使用する際の拡張キーマップのキーボード ショートカットとコマンドを学習できます。チュートリアルを利用するには、<xliff:g id="settings_path">%1$s</xliff:g>。</string>
-  <string name="tutorial_link">[SandFly の設定] &gt; [SandFly チュートリアル] に移動してください</string>
-  <string name="tutorial_link_tts">[SandFly の設定]、[SandFly チュートリアル] の順に選択してください</string>
   <string name="tutorial_entry_point_title">チュートリアル</string>
   <string name="welcome_to_talkback_title">SandFly へようこそ</string>
   <string name="talkback_is_on">SandFly は ON です</string>
@@ -1378,7 +1374,6 @@
     <string name="title_pref_category_more">その他</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch 用にジェスチャーを確保</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly による 2 本指のシングルタップとダブルタップの処理を停止し、Samsung Vibration Watch が使用できるようにします。ウォッチのアクセシビリティ設定で Vibration Watch を有効にします。</string>
-    <string name="shortcut_reserved_for_vibration_watch">詳細設定の Vibration Watch 用に予約されています</string>
     <string name="title_pref_speakerphone_away_from_ear">耳から離したときにスピーカー</string>
     <string name="summary_pref_speakerphone_away_from_ear">通話中に電話機を耳から離すとスピーカーに切り替わり、再び持ち上げると受話口に戻ります。</string>
     <string name="summary_pref_speakerphone_needs_permission">Android がスクリーン リーダーに付与しない権限が必要です。付与するには、adb または Shizuku で次のコマンドを実行してから、この画面に戻ってください: %1$s</string>
@@ -1390,7 +1385,6 @@
     <string name="speech_control_apps_category">アプリ</string>
     <string name="speech_control_no_apps">まだ読み上げをリクエストしたアプリはありません。</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> が SandFly を通して話すことを許可しますか?</string>
-    <string name="speech_control_ask_text">SandFly の音声でテキストを読み上げることができます。これは詳細設定で変更できます。</string>
     <string name="speech_control_allow">許可する</string>
     <string name="speech_control_deny">許可しない</string>
     <string name="permission_speak_label">SandFly を通して読み上げる</string>
@@ -1539,7 +1533,6 @@
     <string name="quick_settings_remove">削除</string>
     <string name="quick_settings_added">%1$s を追加しました</string>
     <string name="quick_settings_removed">%1$s が削除されました</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly オン。 2 本の指を画面上で 5 秒間押し続けると、電源がオフになります。このメッセージの表示を停止するには、「SandFly 設定」&gt;「詳細設定」&gt;「SandFly をオフにする手順を表示」をオフにします。</string>
     <string name="edge_gestures_title">エッジ</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ブラウズ モードをオンまたはオフにする別のショートカット</string>
     <string name="title_pref_vibration_strength">振動強度</string>
@@ -1712,7 +1705,7 @@
     <string name="title_keyboard_echo_physical">物理キーボードエコー</string>
     <string name="title_keyboard_echo_braille_keyboard">点字キーボードのエコー</string>
     <string name="title_keyboard_echo_handwriting_keyboard">手書きキーボードエコー</string>
-    <string name="title_keyboard_echo_braille_display">点字表示エコー</string>
+    <string name="title_keyboard_echo_braille_display">点字ディスプレイ エコー</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">入力中に音声を中断する</string>
     <string name="pref_interrupt_typing_entry_always">常に</string>
@@ -1763,7 +1756,6 @@
     <string name="title_pref_whisper_models">Whisper モデル</string>
     <string name="dictation_whisper_use">使用</string>
     <string name="title_pref_dictation_ai_service">音声入力用の AI サービス</string>
-    <string name="dictation_ai_same">説明の自動読み上げと同じ</string>
     <string name="title_pref_browse_mode_per_app">各アプリのブラウズモードを記憶する</string>
     <string name="title_pref_export_settings">設定のエクスポート</string>
     <string name="title_pref_import_settings">設定のインポート</string>
@@ -1791,4 +1783,12 @@
         <item>1 分</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">無音で自動停止</string>
+    <string name="dictation_ai_same">[画像と画面の説明] と同じ</string>
+    <string name="navigation_settings_link">[SandFly の設定] &gt; [ナビゲーション] で</string>
+    <string name="navigation_settings_link_tts">[SandFly の設定]、[ナビゲーション] の順に選択して</string>
+    <string name="shortcut_reserved_for_vibration_watch">[ジェスチャー] で Vibration Watch 用に予約済み</string>
+    <string name="speech_control_ask_text">SandFly の音声でテキストを読み上げることができます。これは [設定]、[読み上げ]、[他のアプリの読み上げを許可] で変更できます。</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly が ON になっています。OFF にするには、2 本の指で画面を 5 秒間長押しします。このメッセージを表示しないようにするには、[SandFly の設定] &gt; [一時停止とオフ] &gt; [SandFly を OFF にする手順を表示する] を OFF にします。</string>
+    <string name="tutorial_link">[SandFly の設定] &gt; [ヘルプとフィードバック] &gt; [SandFly チュートリアル] に移動してください</string>
+    <string name="tutorial_link_tts">[SandFly の設定]、[ヘルプとフィードバック]、[SandFly チュートリアル] の順に選択してください</string>
 </resources>

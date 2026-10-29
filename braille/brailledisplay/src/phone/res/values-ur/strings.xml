@@ -55,7 +55,7 @@
   <string name="bd_bt_connect_fail_dialog_message">‏یقینی بنائیں کہ یہ بریل ڈسپلے آن ہے اور آس پاس ہے۔\n\nاگر یہ اب بھی منسلک نہیں ہوتا ہے، تو دیگر ٹربل شوٹنگ کی تجاویز کے لیے \"مزید جانیں\" پر دو بار تھپتھپائیں۔</string>
   <string name="bd_bt_connect_fail_positive_button">مزید جانیں</string>
   <string name="bd_enhanced_keymap_dialog_title">براؤز وضع استعمال کرنے کیلئے بہتر کردہ کی میپ پر سوئچ کریں</string>
-  <string name="bd_enhanced_keymap_dialog_message">براؤز وضع استعمال کرنے کیلئے، آپ کو ڈیفالٹ کی میپ سے بہتر کردہ کی میپ پر سوئچ کرنا ہوگا۔ اس تبدیلی سے آپ کی کچھ بریل ڈسپلے کی ہدایات اپ ڈیٹ ہو جائیں گی</string>
+  <string name="bd_enhanced_keymap_dialog_message">براؤز وضع استعمال کرنے کیلئے، آپ کو ڈیفالٹ کی میپ سے بہتر کردہ کی میپ پر سوئچ کرنا ہوگا۔ اس تبدیلی سے آپ کی کچھ بریل ڈسپلے کی کمانڈز اپ ڈیٹ ہو جائیں گی</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">ترتیبات</string>
   <string name="bd_command_change_dialog_title">کچھ کمانڈز کو اپ ڈیٹ کر دیا گیا ہے</string>
   <string name="bd_command_change_dialog_message">‏بریل ڈسپلے کے ان کمانڈز کو SandFly کے اس ورژن میں اپ ڈیٹ کیا گیا ہے:\n\n• پچھلا آئٹم: ڈاٹس 1، 7 دبائیں\n\n• اگلا آئٹم: ڈاٹس 4، 8 دبائیں\n\n• پچھلا ریڈنگ کنٹرول: ڈاٹس 2، 3، 7، 8 دبائیں\n\n• اگلا ریڈنگ کنٹرول: ڈاٹس 5، 6، 7، 8 دبائیں</string>
@@ -205,8 +205,8 @@
   <string name="bd_cmd_control_previous">پچھلا کنٹرول</string>
   <string name="bd_cmd_list_next">اگلا لنک</string>
   <string name="bd_cmd_list_previous">پچھلا لنک</string>
-  <string name="bd_cmd_next_reading_control">پڑھنے سے متعلق اگلا کنٹرول</string>
-  <string name="bd_cmd_previous_reading_control">پڑھنے سے متعلق پچھلا کنٹرول</string>
+  <string name="bd_cmd_next_reading_control">اگلا ریڈنگ کنٹرول</string>
+  <string name="bd_cmd_previous_reading_control">پچھلا ریڈنگ کنٹرول</string>
   <string name="bd_cmd_toggle_auto_scroll">خودکار اسکرول کو آن یا آف کریں</string>
   <string name="bd_cmd_increase_auto_scroll_duration">ڈسپلے کا دورانیہ بڑھائیں</string>
   <string name="bd_cmd_decrease_auto_scroll_duration">ڈسپلے کا دورانیہ کم کریں</string>
@@ -221,7 +221,7 @@
   <string name="bd_cmd_global_all_apps">سبھی ایپس کھولیں</string>
   <string name="bd_cmd_toggle_screen_search">اسکرین پر تلاش کھولیں</string>
   <string name="bd_cmd_edit_custom_label">حسب ضرورت لیبل میں ترمیم کریں</string>
-  <string name="bd_cmd_open_talkback_menu">‏SandFly مینیو کھولیں</string>
+  <string name="bd_cmd_open_talkback_menu">‏SandFly مینو کھولیں</string>
   <string name="bd_cmd_toggle_voice_feedback">‏SandFly اسپیچ کو آن یا آف کریں</string>
   <string name="bd_cmd_read_stop">پڑھنا بند کریں</string>
   <string name="bd_cmd_talkback_settings">‏SandFly کی ترتیبات کھولیں</string>

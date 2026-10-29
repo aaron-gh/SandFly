@@ -107,7 +107,7 @@
   <string name="pref_verbosity_preset_entry_custom">Personalitzat</string>
   <string name="pref_verbosity_preset_entry_low">Baixa</string>
   <string name="pref_verbosity_category_preset_settings_title">Detalls de verbositat</string>
-  <string name="pref_verbosity_preset_change">S\'ha activat l\'exhaustivitat %1$s.</string>
+  <string name="pref_verbosity_preset_change">S\'ha activat la verbositat <xliff:g id="preset_name" example="High">%1$s</xliff:g>.</string>
   <string name="pref_gesture_set_entry_0">0</string>
   <string name="pref_gesture_set_entry_1">1</string>
   <string name="keycombo_keymap_changes_instruction_title">Actualitza el mapa de teclat de SandFly</string>
@@ -272,7 +272,7 @@
   <string name="clear_button_in_keycombo_assign_dialog">Esborra</string>
   <string name="already_in_use_error_message">Actualment està assignada a %1$s</string>
   <string name="invalid_shortcut_message">No es pot utilitzar aquesta drecera. Prova una altra combinació de tecles.</string>
-  <string name="keyboard_assignment_dialog_title">Tecles de drecera per a %1$s</string>
+  <string name="keyboard_assignment_dialog_title">Tecla de drecera per a «<xliff:g>%1$s</xliff:g>»</string>
   <string name="keycombo_assign_dialog_new_instruction">Per definir una drecera nova, prem %1$s+una tecla. També pots prémer %1$s+Control o Maj+una tecla. Si prems %1$s+O o R, has de prémer una tercera tecla poc després. Prem Retrocés per esborrar la drecera, i Ctrl+Retrocés per restablir la configuració predeterminada. Prem Retorn per desar o prem la tecla d\'escapada per cancel·lar.</string>
   <string name="keycombo_sequence_key_assignment_instruction">Si utilitzes %1$s+O o R, has de prémer una tercera tecla</string>
   <string name="invalid_modifier_key_as_third_key_message">Si utilitzes %1$s+O o R, has de prémer una tercera tecla. La tercera tecla no pot ser Esc, Retrocés, Retorn ni una tecla modificadora.</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Configuració de la pantalla braille</string>
   <string name="keyboard_smart_browse_mode_title">Teclat: mode de navegació intel·ligent</string>
   <string name="keyboard_smart_browse_mode_text">El mode de navegació intel·ligent de SandFly desactiva el mode de navegació en un camp d\'edició per ajudar-te a escriure amb un teclat físic quan navegues pel web. Després, torna a activar-lo quan et mous a un camp que no és d\'edició al web perquè puguis continuar navegant de manera eficient. Pots activar o desactivar el mode de navegació intel·ligent a <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Configuració de SandFly &gt; Configuració avançada</string>
-  <string name="advanced_settings_link_tts">Configuració de SandFly i, a continuació, Configuració avançada</string>
   <string name="keyboard_tutorial_title">Tutorial sobre el teclat</string>
   <string name="keyboard_tutorial_text">Ara SandFly inclou un tutorial sobre el teclat dissenyat per ajudar-te a aprendre les tecles de drecera i les ordres del mapa de teclat millorat quan utilitzes un teclat físic. Per accedir al tutorial, navega fins a <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Configuració de SandFly &gt; Tutorial de SandFly</string>
-  <string name="tutorial_link_tts">Configuració de SandFly i, a continuació, Tutorial de SandFly</string>
   <string name="tutorial_entry_point_title">Tutorial</string>
   <string name="welcome_to_talkback_title">Et donem la benvinguda a SandFly</string>
   <string name="talkback_is_on">SandFly està activat</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Més</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reserva gestos per a Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly deixa de gestionar els tocs i els dobles tocs amb dos dits perquè Samsung Vibration Watch els pugui utilitzar. Activa Vibration Watch a la configuració d\'accessibilitat del rellotge.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Reservat per a Vibration Watch a Configuració avançada</string>
     <string name="title_pref_speakerphone_away_from_ear">Altaveu en allunyar el telèfon de l\'orella</string>
     <string name="summary_pref_speakerphone_away_from_ear">Durant una trucada, canvia a l\'altaveu quan allunyes el telèfon de l\'orella, i torna a l\'auricular quan te l\'hi tornes a acostar.</string>
     <string name="summary_pref_speakerphone_needs_permission">Necessita un permís que Android no concedeix als lectors de pantalla. Per concedir-lo, executa aquesta ordre amb adb o Shizuku i torna a aquesta pantalla: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Aplicacions</string>
     <string name="speech_control_no_apps">Encara no hi ha cap aplicació que hagi sol·licitat parlar.</string>
     <string name="speech_control_ask_title">Vols permetre que <xliff:g id="app" example="Tasker">%1$s</xliff:g> parli mitjançant SandFly?</string>
-    <string name="speech_control_ask_text">Pot enunciar text amb la veu de SandFly. Pots canviar-ho a Configuració avançada.</string>
     <string name="speech_control_allow">Permet</string>
     <string name="speech_control_deny">No permetis</string>
     <string name="permission_speak_label">parlar mitjançant SandFly</string>
@@ -1441,7 +1435,6 @@
         <item quantity="many">%d notificacions</item>
         <item quantity="other">%d notificacions</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly està activat. Mantén dos dits premuts a la pantalla durant 5 segons per desactivar-lo. Per deixar de mostrar aquest missatge, desactiva Configuració de SandFly &gt; Configuració avançada &gt; Mostra les instruccions per desactivar SandFly.</string>
     <string name="edge_gestures_title">Vores</string>
     <string name="title_pref_audio_output_device">Dispositiu de sortida d\'àudio</string>
     <string name="dialog_title_audio_output_device">Tria on es reprodueix el so de SandFly</string>
@@ -1524,7 +1517,7 @@
     <string name="summary_support_wrap_around">Activa o desactiva el pas del darrer element al primer</string>
     <string name="wrap_around_on">Navegació circular activada</string>
     <string name="wrap_around_off">Navegació circular desactivada</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tauleta aixecada orientada cap enfora</string>
+    <string name="title_selector_tablet_held_up_faces_away">Pantalla de la tauleta en posició vertical orientada en direcció contrària a tu</string>
     <string name="summary_support_tablet_held_up_faces_away">Per al teclat braille en una tauleta o un telèfon desplegat</string>
     <string name="tablet_held_up_faces_away_on">Tauleta aixecada orientada cap enfora activat</string>
     <string name="tablet_held_up_faces_away_off">Tauleta aixecada orientada cap enfora desactivat</string>
@@ -1770,7 +1763,6 @@
     <string name="title_pref_whisper_models">Models de Whisper</string>
     <string name="dictation_whisper_use">Utilitza</string>
     <string name="title_pref_dictation_ai_service">Servei d’IA per al dictat</string>
-    <string name="dictation_ai_same">El mateix que les descripcions automàtiques</string>
     <string name="title_pref_browse_mode_per_app">Recorda el mode de navegació a cada aplicació</string>
     <string name="title_pref_export_settings">Exporta la configuració</string>
     <string name="title_pref_import_settings">Importa la configuració</string>
@@ -1780,7 +1772,7 @@
     <string name="settings_import_failed">Aquest fitxer no és un fitxer de configuració SandFly o Backtalk o no es pot llegir</string>
     <string name="sound_mode_needs_access">Permet l\'accés a No molestis per activar o desactivar el mode Silenci.</string>
     <string name="keycombo_menu_category_arrow_key_nav">Navegació amb les tecles de fletxa</string>
-    <string name="arrow_key_nav_toggle">Activa/desactiva navegació amb fletxes</string>
+    <string name="arrow_key_nav_toggle">Activa o desactiva la navegació amb les tecles de fletxa</string>
     <string name="arrow_key_nav_on">Navegació amb les tecles de fletxa activada</string>
     <string name="arrow_key_nav_off">Navegació amb les tecles de fletxa desactivada</string>
     <string name="arrow_key_nav_page_left">Pàgina a l\'esquerra</string>
@@ -1798,4 +1790,12 @@
         <item>1 minut</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Aturada automàtica després d\'un silenci</string>
+    <string name="dictation_ai_same">Igual que a «Descripcions d\'imatges i pantalla»</string>
+    <string name="navigation_settings_link">Configuració de SandFly &gt; Navegació</string>
+    <string name="navigation_settings_link_tts">Configuració de SandFly i després Navegació</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reservat per a Vibration Watch a «Gestos»</string>
+    <string name="speech_control_ask_text">Pot dir text amb la teva veu de SandFly. Pots canviar-ho a Configuració, Veu, Permet que altres aplicacions parlin.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly està activat. Mantén dos dits premuts a la pantalla durant 5 segons per desactivar-lo. Per deixar de mostrar aquest missatge, desactiva Configuració de SandFly &gt; Pausa i desactivació &gt; Mostra les instruccions per desactivar SandFly.</string>
+    <string name="tutorial_link">Configuració de SandFly &gt; Ajuda i suggeriments &gt; Tutorial de SandFly</string>
+    <string name="tutorial_link_tts">Configuració de SandFly, després Ajuda i suggeriments i després Tutorial de SandFly</string>
 </resources>

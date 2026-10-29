@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">Загвар</string>
     <string name="ai_service_address_invalid">Хаяг https://-ээр эхлэх ёстой. Юу ч хадгалагдаагүй.</string>
     <string name="dialog_message_ai_service_consent">Зураг болон дэлгэцийн агшныг тайлбарлуулахаар <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> руу илгээдэг бөгөөд хэдэн секунд зарцуулна. Тухайн үйлчилгээний өөрийн нөхцөл, нууцлалын бодлого үйлчилнэ. Үүсгэгч хиймэл оюун туршилтын шатанд байгаа тул алдаа гаргана.</string>
-    <string name="ai_service_error_api_key">Хиймэл оюуны үйлчилгээ API түлхүүрийг хүлээн аваагүй. Тохиргоог нь «Автомат тайлбарууд» хэсгээс шалгана уу.</string>
-    <string name="ai_service_error_quota">Хиймэл оюуны үйлчилгээний ашиглалтын хязгаарт хүрсэн байна. Дараа дахин оролдоно уу.</string>
-    <string name="ai_service_error_busy">Хиймэл оюуны үйлчилгээ одоо ачаалалтай байна. Хэсэг хугацааны дараа дахин оролдоно уу.</string>
-    <string name="ai_service_error_timeout">Хиймэл оюуны үйлчилгээ хариулахад хэт удсан. Дахин оролдоно уу.</string>
+    <string name="ai_service_error_api_key">AI үйлчилгээ API түлхүүрийг хүлээн аваагүй. Тохиргоог нь «Зураг ба дэлгэцийн тайлбар» хэсгээс шалгана уу.</string>
+    <string name="ai_service_error_quota">AI үйлчилгээний ашиглалтын хязгаарт хүрсэн байна. Дараа дахин оролдоно уу.</string>
+    <string name="ai_service_error_busy">AI үйлчилгээ одоо ачаалалтай байна. Хэсэг хугацааны дараа дахин оролдоно уу.</string>
+    <string name="ai_service_error_timeout">AI үйлчилгээ хариулахад хэт удсан. Дахин оролдоно уу.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Байхгүй</string>
-    <string name="ai_service_not_set_up">Хиймэл оюуны үйлчилгээ ашиглагдаагүй байна. «Автомат тайлбарууд» тохиргооноос аль нэгийг тохируулах эсвэл сонгоно уу.</string>
-    <string name="ai_provider_none_set_up">Хиймэл оюуны үйлчилгээ тохируулаагүй байна. Доорх тохиргооноос аль нэгийг нь тохируулна уу.</string>
+    <string name="ai_service_not_set_up">AI үйлчилгээ ашиглагдаагүй байна. «Зураг ба дэлгэцийн тайлбар» тохиргооноос аль нэгийг тохируулах эсвэл сонгоно уу.</string>
+    <string name="ai_provider_none_set_up">AI үйлчилгээ тохируулаагүй байна. Доорх тохиргооноос аль нэгийг нь тохируулна уу.</string>
     <string name="ai_provider_other">Бусад үйлчилгээ</string>
     <string name="title_pref_category_ai_services">AI үйлчилгээ</string>
     <string name="title_pref_ai_provider">AI үйлчилгээ</string>

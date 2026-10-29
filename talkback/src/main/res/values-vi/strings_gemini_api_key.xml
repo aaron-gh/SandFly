@@ -11,7 +11,7 @@
     <string name="ai_service_model_hint">Mô hình</string>
     <string name="ai_service_address_invalid">Địa chỉ phải bắt đầu bằng https://. Chưa lưu nội dung nào.</string>
     <string name="dialog_message_ai_service_consent">Hình ảnh và ảnh chụp màn hình sẽ được gửi đến <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> để mô tả, việc này mất vài giây. Điều khoản và chính sách quyền riêng tư của dịch vụ đó được áp dụng. AI tạo sinh đang trong giai đoạn thử nghiệm nên sẽ có sai sót.</string>
-    <string name="ai_service_error_api_key">Dịch vụ AI không chấp nhận khoá API. Hãy kiểm tra phần cài đặt của dịch vụ đó trong Mô tả tự động.</string>
+    <string name="ai_service_error_api_key">Dịch vụ AI không chấp nhận khoá API. Hãy kiểm tra phần cài đặt của dịch vụ đó trong Mô tả hình ảnh và màn hình.</string>
     <string name="ai_service_error_quota">Đã đạt đến giới hạn sử dụng của dịch vụ AI. Hãy thử lại sau.</string>
     <string name="ai_service_error_busy">Dịch vụ AI hiện đang bận. Hãy thử lại sau giây lát.</string>
     <string name="ai_service_error_timeout">Dịch vụ AI phản hồi quá lâu. Hãy thử lại.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Không có</string>
-    <string name="ai_service_not_set_up">Chưa có dịch vụ AI nào được sử dụng. Hãy thiết lập hoặc chọn một dịch vụ trong phần cài đặt Mô tả tự động.</string>
+    <string name="ai_service_not_set_up">Chưa có dịch vụ AI nào được sử dụng. Hãy thiết lập hoặc chọn một dịch vụ trong phần cài đặt Mô tả hình ảnh và màn hình.</string>
     <string name="ai_provider_none_set_up">Chưa thiết lập dịch vụ AI nào. Hãy thiết lập một dịch vụ trong phần cài đặt bên dưới.</string>
     <string name="ai_provider_other">Dịch vụ khác</string>
     <string name="title_pref_category_ai_services">Dịch vụ AI</string>

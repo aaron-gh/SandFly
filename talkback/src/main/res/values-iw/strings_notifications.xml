@@ -40,7 +40,7 @@
     <string name="notification_voice_sandfly">הקול של SandFly</string>
     <string name="notification_detect_language_title">זיהוי שפה</string>
     <string name="notification_detect_language_summary">כל התראה מוקראת בשפה שבה היא כתובה. נדרש ״החלפת שפה אוטומטית״ בהמרת טקסט לדיבור (TTS).</string>
-    <string name="notification_sound_before_title">צליל לפני הודעות</string>
+    <string name="notification_sound_before_title">צליל לפני התראות</string>
     <string name="notification_category_text">טקסט</string>
     <string name="notification_remove_emoji_title">השמטת אימוג\'י</string>
     <string name="notification_lowercase_title">הקראת אותיות רישיות כמילים</string>
@@ -65,7 +65,7 @@
     <string name="notification_skip_ongoing_summary">כגון ניווט וטיימרים</string>
     <string name="notification_skip_foreground_title">דילוג על התראות של אפליקציות פועלות</string>
     <string name="notification_skip_foreground_summary">כגון VPN או מקליט שמע</string>
-    <string name="notification_skip_progress_title">דלג על הודעות התקדמות</string>
+    <string name="notification_skip_progress_title">דילוג על התראות התקדמות</string>
     <string name="notification_skip_group_summaries_title">דילוג על סיכומי קבוצות</string>
     <string name="notification_skip_group_summaries_summary">כמו \"3 הודעות חדשות\"</string>
     <string name="notification_skip_low_priority_title">דילוג על התראות בעדיפות נמוכה</string>
@@ -75,7 +75,7 @@
     <string name="notification_locked_title">בזמן שהטלפון נעול</string>
     <string name="notification_headphones_title">אוזניות</string>
     <string name="notification_media_title">בזמן שהמדיה מתנגנת</string>
-    <string name="notification_dnd_title">אל תפריע</string>
+    <string name="notification_dnd_title">נא לא להפריע</string>
     <string name="notification_dnd_none">לא להקריא אף אחת</string>
     <string name="notification_dnd_allowed">להקריא את מה שמצב \'נא לא להפריע\' מתיר</string>
     <string name="notification_dnd_all">הקראת הכול</string>
@@ -95,7 +95,7 @@
     <string name="notification_repeat_seconds_title">דילוג על אותה התראה למשך</string>
     <string name="notification_numbers_alike_title">מספרים נחשבים זהים</string>
     <string name="notification_numbers_alike_summary">כמו אחוז הורדה</string>
-    <string name="notification_cooldown_title">זמן בין הודעות של אפליקציה</string>
+    <string name="notification_cooldown_title">זמן בין התראות של אפליקציה</string>
     <string name="notification_skip_prefix_title">השמטת התחלה חוזרת</string>
     <string name="notification_skip_prefix_summary">כמו שם קבוצה בצ\'אט</string>
     <string name="notification_prefix_memory_title">זכירת ההתחלה למשך</string>
@@ -240,7 +240,7 @@
     <string name="notification_type_locked">הטלפון נעול</string>
     <string name="notification_type_from_app">התראה מאפליקציה</string>
     <string name="notification_type_foreground">אפליקציה בחזית</string>
-    <string name="notification_type_contains">הודעה מכילה</string>
+    <string name="notification_type_contains">התראה מכילה</string>
     <string name="notification_type_battery">רמת הסוללה מתחת</string>
     <string name="notification_type_charging">טעינה</string>
     <string name="notification_type_landscape">לרוחב</string>

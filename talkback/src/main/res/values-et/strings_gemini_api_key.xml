@@ -21,7 +21,7 @@
     <string name="ai_service_error_api_key">AI-teenus ei aktsepteerinud API-võtit. Kontrollige selle seadeid jaotises Pildi- ja ekraanikirjeldused.</string>
     <string name="ai_service_error_quota">AI-teenuse kasutuslimiit on täis. Proovige hiljem uuesti.</string>
     <string name="ai_service_error_busy">AI-teenus on praegu hõivatud. Proovige hetke pärast uuesti.</string>
-    <string name="ai_service_error_timeout">AI-teenusel võttis vastamine liiga kaua aega. Proovi uuesti.</string>
+    <string name="ai_service_error_timeout">AI-teenusel võttis vastamine liiga kaua aega. Proovige uuesti.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -34,7 +34,7 @@
     <string name="ai_provider_none_set_up">AI-teenust pole seadistatud. Seadistage see allolevates seadetes.</string>
     <string name="ai_provider_other">Muu teenus</string>
     <string name="title_pref_category_ai_services">AI teenused</string>
-    <string name="title_pref_ai_provider">Tehisintellekti teenus</string>
+    <string name="title_pref_ai_provider">AI-teenus</string>
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> seaded</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, pole seadistatud</string>
     <string name="ai_provider_in_use">Kasutusel</string>

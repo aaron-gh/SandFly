@@ -38,7 +38,7 @@ import androidx.annotation.StringRes;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
-import com.google.android.accessibility.talkback.preference.base.AdvancedSettingFragment;
+import com.google.android.accessibility.talkback.preference.base.NavigationPrefFragment;
 import com.google.android.accessibility.talkback.preference.base.TalkBackKeyboardShortcutPreferenceFragment;
 import com.google.android.accessibility.talkback.preference.base.TextFormattingDetailFragment;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
@@ -180,7 +180,7 @@ public abstract class PageConfig {
     BRAILLE_DISPLAY(
         "com.google.android.accessibility.braille.brailledisplay.settings.BrailleDisplaySettingsFragment",
         TYPE_BRAILLE_DISPLAY_SETTINGS),
-    ADVANCED_SETTING(AdvancedSettingFragment.class.getName(), TYPE_TALKBACK_SETTINGS),
+    NAVIGATION_SETTINGS(NavigationPrefFragment.class.getName(), TYPE_TALKBACK_SETTINGS),
     TUTORIAL();
 
     private final String fragmentName;
