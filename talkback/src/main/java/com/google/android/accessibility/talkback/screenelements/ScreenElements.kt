@@ -115,6 +115,9 @@ object ScreenElements {
   private var anchors: List<AccessibilityNodeInfoCompat?>? = null
   private var firstAppNode: AccessibilityNodeInfoCompat? = null
 
+  /** The host window's nodes in reading order, from [setOrder]. */
+  private var appNodes: List<AccessibilityNodeInfoCompat> = emptyList()
+
   /** Where the focused element was, while accessibility focus is on one. */
   private var focusedBounds: Rect? = null
 
@@ -170,10 +173,11 @@ object ScreenElements {
     hostPackage = packageName
     this.labels.putAll(labels)
     val current = windows ?: return
-    current.show(elements)
+    val sorted = inReadingOrder(elements)
+    current.show(sorted)
     LogUtils.d(TAG, "Showing %d elements and %d labels over window %d of %s", elements.size, labels.size, windowId, packageName)
     if (focused != null) {
-      val index = elements.indices.firstOrNull { elements[it].bounds.contains(focused.centerX(), focused.centerY()) }
+      val index = sorted.indices.firstOrNull { sorted[it].bounds.contains(focused.centerX(), focused.centerY()) }
       // The new windows take a moment to reach accessibility services.
       if (index != null) handler.postDelayed({ current.focus(index) }, REFOCUS_DELAY_MS)
     }
@@ -193,6 +197,7 @@ object ScreenElements {
     elementWindowIds.clear()
     anchors = null
     firstAppNode = null
+    appNodes = emptyList()
     hostWindowId = -1
   }
 
@@ -242,6 +247,27 @@ object ScreenElements {
     }
   }
 
+  /**
+   * Whether [node] is an app node with nothing of its own to read that the elements cover, such as a
+   * game's full-screen view: a node without children that holds the centres of two or more
+   * elements. Touch skips it, and swipes go to its elements instead.
+   */
+  @JvmStatic
+  fun isCoveredHost(node: AccessibilityNodeInfoCompat): Boolean {
+    val elements = windows?.elements ?: return false
+    if (elements.size < 2 || node.windowId != hostWindowId || node.childCount > 0) return false
+    val bounds = Rect().also(node::getBoundsInScreen)
+    return elements.count { bounds.contains(it.bounds.centerX(), it.bounds.centerY()) } >= 2
+  }
+
+  /** Whether the window with the elements is still the app window in front. */
+  private fun hostInFront(): Boolean {
+    val service = windows?.service ?: return true
+    val apps = service.windows.filter { it.type == AccessibilityWindowInfo.TYPE_APPLICATION }
+    val front = apps.firstOrNull { it.isActive } ?: apps.maxByOrNull { it.layer } ?: return true
+    return front.id == hostWindowId
+  }
+
   /** Whether the elements still need their anchors: call [setOrder] before navigating. */
   @JvmStatic
   val needsOrder: Boolean
@@ -258,7 +284,31 @@ object ScreenElements {
     val nodeBounds = nodes.map { Rect().also(it::getBoundsInScreen) }
     anchors = elements.map { element -> nodes.getOrNull(anchorIndex(element.bounds, nodeBounds)) }
     firstAppNode = nodes.firstOrNull()
+    appNodes = nodes
+    LogUtils.d(
+      TAG,
+      "Anchors among %d nodes: %s",
+      nodes.size,
+      elements.indices.joinToString { i -> "${elements[i].label} -> ${anchors?.get(i)?.let(::describe)}" },
+    )
   }
+
+  private fun describe(node: AccessibilityNodeInfoCompat): String {
+    val bounds = Rect().also(node::getBoundsInScreen)
+    val name = node.contentDescription ?: node.text ?: node.className
+    return "$name $bounds children=${node.childCount}"
+  }
+
+  /**
+   * [elements] sorted as they are read: rows from top to bottom, left to right within a row. Two
+   * elements are in one row when they overlap vertically by at least half the smaller one's height.
+   */
+  internal fun inReadingOrder(elements: List<ScreenElement>): List<ScreenElement> =
+    elements.sortedWith { a, b ->
+      val overlap = minOf(a.bounds.bottom, b.bounds.bottom) - maxOf(a.bounds.top, b.bounds.top)
+      val sameRow = overlap * 2 >= minOf(a.bounds.height(), b.bounds.height())
+      if (sameRow) a.bounds.left.compareTo(b.bounds.left) else a.bounds.top.compareTo(b.bounds.top)
+    }
 
   /** The index in [nodes] of the anchor of an element with [bounds], or -1. */
   internal fun anchorIndex(bounds: Rect, nodes: List<Rect>): Int {
@@ -328,6 +378,18 @@ object ScreenElements {
 
   @JvmStatic fun anchor(index: Int): AccessibilityNodeInfoCompat? = anchorOf(index)
 
+  /**
+   * Where a swipe goes from a view the elements cover, once past its elements: the next app node, or
+   * going backward the previous one or the last element anchored to it. Null at either end.
+   */
+  @JvmStatic
+  fun pastCoveredHost(host: AccessibilityNodeInfoCompat, forward: Boolean): AccessibilityNodeInfoCompat? {
+    val at = appNodes.indexOf(host)
+    if (at < 0) return null
+    val next = appNodes.getOrNull(if (forward) at + 1 else at - 1) ?: return null
+    return if (forward) next else lastBefore(next) ?: next
+  }
+
   @JvmStatic fun firstAppNodeOrNull(): AccessibilityNodeInfoCompat? = firstAppNode
 
   /**
@@ -350,7 +412,16 @@ object ScreenElements {
             null
           }
       }
+      AccessibilityEvent.TYPE_WINDOWS_CHANGED -> {
+        if (showing && !hostInFront()) clear("window $hostWindowId no longer in front")
+      }
       AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> {
+        // SandFly's own screens, such as its settings, cover the app; its menu and dialogs don't.
+        if (showing && !hostInFront()) {
+          clear("window $hostWindowId no longer in front")
+          if (pkg != own) scheduleChange(pkg, Change.WINDOW)
+          return
+        }
         if (pkg == own) return
         // Apps, games above all, report state changes of their own window all the time, so those
         // only lead to a check of the screen.
