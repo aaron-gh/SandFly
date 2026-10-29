@@ -16,8 +16,6 @@
 
 package com.google.android.accessibility.talkback.granularediting
 
-import android.content.ClipData
-import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -26,6 +24,7 @@ import android.os.Looper
 import android.widget.Toast
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.ClipboardHistory
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Role
 
@@ -105,9 +104,7 @@ object GranularEditing {
   }
 
   fun copy(context: Context, copied: String) {
-    context
-      .getSystemService(ClipboardManager::class.java)
-      ?.setPrimaryClip(ClipData.newPlainText(context.getString(R.string.granular_editing_title), copied))
+    ClipboardHistory.copy(context, copied)
   }
 
   private fun write(field: AccessibilityNodeInfoCompat, newText: String): Boolean {

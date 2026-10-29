@@ -1260,6 +1260,8 @@
         <item>@string/shortcut_value_select_all</item>
         <item>@string/shortcut_value_clear_selection</item>
         <item>@string/shortcut_value_copy</item>
+        <item>@string/shortcut_value_add_to_clipboard</item>
+        <item>@string/shortcut_value_clipboard_history</item>
         <item>@string/shortcut_value_cut</item>
         <item>@string/shortcut_value_paste</item>
         <item>@string/shortcut_value_copy_last_spoken_phrase</item>
@@ -1385,6 +1387,8 @@
   <string name="shortcut_value_select_all" translatable="false">SELECT_ALL</string>
   <string name="shortcut_value_clear_selection" translatable="false">CLEAR_SELECTION</string>
   <string name="shortcut_value_copy" translatable="false">COPY</string>
+  <string name="shortcut_value_add_to_clipboard" translatable="false">ADD_TO_CLIPBOARD</string>
+  <string name="shortcut_value_clipboard_history" translatable="false">CLIPBOARD_HISTORY</string>
   <string name="shortcut_value_cut" translatable="false">CUT</string>
   <string name="shortcut_value_paste" translatable="false">PASTE</string>
   <string name="shortcut_value_copy_last_spoken_phrase" translatable="false">COPY_LAST_SPOKEN_UTTERANCE</string>
@@ -1775,6 +1779,7 @@
     <bool name="pref_show_context_menu_show_keyboard_shortcuts_default">false</bool>
     <bool name="pref_show_context_menu_talkback_settings_default">true</bool>
     <bool name="pref_show_context_menu_send_feedback_default">true</bool>
+    <bool name="pref_show_context_menu_clipboard_history_default">false</bool>
     <bool name="pref_show_context_menu_system_action_default">false</bool>
     <bool name="pref_show_context_menu_tts_settings_default">true</bool>
     <bool name="pref_show_context_menu_image_caption_default">true</bool>
@@ -1985,6 +1990,7 @@
     <string name="pref_show_context_menu_show_keyboard_shortcuts_setting_key" translatable="false">pref_show_keyboard_shortcuts_menu_setting_key</string>
     <string name="pref_show_context_menu_talkback_settings_setting_key" translatable="false">pref_talkback_settings_menu_setting_key</string>
     <string name="pref_show_context_menu_send_feedback_setting_key" translatable="false">pref_send_feedback_menu_setting_key</string>
+    <string name="pref_show_context_menu_clipboard_history_setting_key" translatable="false">pref_clipboard_history_menu_setting_key</string>
     <string name="pref_show_context_menu_system_action_setting_key" translatable="false">pref_system_action_menu_setting_key</string>
     <string name="pref_show_context_menu_tts_settings_setting_key" translatable="false">pref_tts_settings_menu_setting_key</string>
     <string name="pref_show_context_menu_image_caption_setting_key" translatable="false">pref_image_caption_menu_setting_key</string>

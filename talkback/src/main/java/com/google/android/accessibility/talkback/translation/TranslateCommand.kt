@@ -16,15 +16,13 @@
 
 package com.google.android.accessibility.talkback.translation
 
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
 import android.icu.text.ListFormatter
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.LocaleSpan
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.ClipboardHistory
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.translation.TranslationFailure.Kind
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
@@ -101,8 +99,7 @@ class TranslateCommand(private val service: TalkBackService) {
     original = source
     spoken = speech.toString()
     if (TranslationSettings.copy(prefs)) {
-      (service.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager)
-        .setPrimaryClip(ClipData.newPlainText(null, translation.text))
+      ClipboardHistory.copy(service, translation.text)
     }
     // Kept in the speech history, so that Repeat, Spell and Copy last spoken phrase have it.
     service.speechController.speak(speech, EVENT_ID_UNTRACKED, options(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL))
