@@ -30,6 +30,7 @@ import androidx.preference.PreferenceViewHolder;
 import com.google.android.accessibility.braille.common.BrailleUserPreferences;
 import com.google.android.accessibility.braille.common.R;
 import com.google.android.accessibility.braille.common.translate.BrailleLanguages.Code;
+import com.google.android.accessibility.braille.translate.japanese.JapaneseDictionary;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.preference.PreferencesActivity;
 import java.util.ArrayList;
@@ -58,6 +59,7 @@ public class BrailleLanguagesActivity extends PreferencesActivity {
     public static class BrailleLanguageFragment extends PreferenceFragmentCompat {
 
     private PreferenceCategory languagesPreferenceCategory;
+    private final Runnable dictionaryChanged = this::refresh;
 
     @Override
     public void onCreatePreferences(Bundle bundle, String rootKey) {
@@ -77,7 +79,14 @@ public class BrailleLanguagesActivity extends PreferencesActivity {
     @Override
     public void onResume() {
       super.onResume();
+      JapaneseDictionary.addListener(dictionaryChanged);
       refresh();
+    }
+
+    @Override
+    public void onPause() {
+      JapaneseDictionary.removeListener(dictionaryChanged);
+      super.onPause();
     }
 
     private void refresh() {
@@ -95,6 +104,36 @@ public class BrailleLanguagesActivity extends PreferencesActivity {
       for (int i = languagesPreferenceCategory.getPreferenceCount() - 1; i >= codes.size(); i--) {
         languagesPreferenceCategory.removePreference(languagesPreferenceCategory.getPreference(i));
       }
+      Preference japanese = languagesPreferenceCategory.findPreference(Code.JAPANESE_KANA.name());
+      if (japanese != null) {
+        showDictionary(japanese);
+      }
+    }
+
+    /** Shows the state of the dictionary that Japanese braille needs; a click downloads it. */
+    private void showDictionary(Preference preference) {
+      JapaneseDictionary.State state = JapaneseDictionary.state(getContext());
+      if (state == JapaneseDictionary.State.MISSING) {
+        JapaneseDictionary.download(getContext(), /* retryNow= */ false);
+        state = JapaneseDictionary.state(getContext());
+      }
+      preference.setSummary(
+          switch (state) {
+            case MISSING -> getString(R.string.japanese_dictionary_missing);
+            case DOWNLOADING -> getString(R.string.japanese_dictionary_downloading);
+            case FAILED -> getString(R.string.japanese_dictionary_failed);
+            case READY -> null;
+          });
+      boolean retry =
+          state == JapaneseDictionary.State.MISSING || state == JapaneseDictionary.State.FAILED;
+      preference.setSelectable(retry);
+      preference.setOnPreferenceClickListener(
+          retry
+              ? p -> {
+                JapaneseDictionary.download(getContext(), /* retryNow= */ true);
+                return true;
+              }
+              : null);
     }
 
     private Preference createLanguagePreference(Code code) {
@@ -107,6 +146,9 @@ public class BrailleLanguagesActivity extends PreferencesActivity {
     private void updateLanguagePreference(Preference preference, Code code) {
       preference.setTitle(code.getUserFacingName(getContext()));
       preference.setKey(code.name());
+      preference.setSummary(null);
+      preference.setSelectable(false);
+      preference.setOnPreferenceClickListener(null);
     }
 
     private List<Preference> getLanguagesCategoryList() {

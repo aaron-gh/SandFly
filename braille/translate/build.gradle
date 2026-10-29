@@ -18,6 +18,8 @@ dependencies {
     implementation project(':brailleinterfaces')
     implementation project(':proguard')
     implementation project(':utils')
+    testImplementation libs.junit
+    testImplementation libs.json
 }
 
 def createTranslationTablesZip = tasks.register("createTranslationTablesZip", Zip) {

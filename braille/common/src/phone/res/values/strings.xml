@@ -124,6 +124,14 @@
   <string name="code_user_facing_name_italian_comp8">Italian 8-dot Computer Braille</string>
   <!-- Language list preference item for the Japanese braille language. [CHAR_LIMIT=60] -->
   <string name="code_user_facing_name_japanese">Japanese</string>
+  <!-- Language list preference item for Japanese kantenji, the 8-dot braille for kanji. [CHAR_LIMIT=60] -->
+  <string name="code_user_facing_name_japanese_kantenji">Japanese Kantenji</string>
+  <!-- Summary of the Japanese braille language when the dictionary it needs to read kanji isn't downloaded. [CHAR_LIMIT=60] -->
+  <string name="japanese_dictionary_missing">Dictionary not downloaded</string>
+  <!-- Summary of the Japanese braille language while the dictionary it needs to read kanji is downloading. [CHAR_LIMIT=60] -->
+  <string name="japanese_dictionary_downloading">Downloading dictionary, 15 MB</string>
+  <!-- Summary of the Japanese braille language when downloading its dictionary failed; a click tries again. [CHAR_LIMIT=60] -->
+  <string name="japanese_dictionary_failed">Dictionary download failed</string>
   <!-- Language list preference item for the Kannada braille language. [CHAR_LIMIT=40] -->
   <string name="code_user_facing_name_kannada">Kannada</string>
   <!-- Language list preference item for the Khmer braille language. [CHAR_LIMIT=40] -->
