@@ -24,8 +24,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.CheckedTextView
 import android.widget.EditText
+import android.view.inputmethod.EditorInfo
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import android.widget.SeekBar
 import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.AccessibilityDelegateCompat
@@ -37,8 +39,9 @@ import androidx.core.view.isVisible
 import androidx.core.view.setPadding
 import androidx.core.widget.doAfterTextChanged
 import org.json.JSONArray
-import org.json.JSONObject
 import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
+import kotlin.math.roundToInt
+import org.json.JSONObject
 
 class ScriptForm(
   private val context: Context,
@@ -47,22 +50,22 @@ class ScriptForm(
   private val close: () -> Unit,
 ) {
   private val controls = LinkedHashMap<String, Control>()
+  private val column =
+    LinearLayout(context).apply {
+      orientation = LinearLayout.VERTICAL
+      setPadding(dp(PADDING_DP))
+    }
 
   val view: View =
     ScrollView(context).apply {
-      val column =
-        LinearLayout(context).apply {
-          orientation = LinearLayout.VERTICAL
-          setPadding(dp(PADDING_DP))
-        }
       for (spec in items.items().filterIsInstance<JSONObject>()) {
-        val control = controlOf(spec)
-        controls[control.id] = control
-        column.addView(control.view)
-        control.update(spec)
+        add(spec, after = null)
       }
       addView(column)
     }
+
+  val size: Int
+    get() = controls.size
 
   fun values(): JSONObject =
     JSONObject().apply {
@@ -71,10 +74,35 @@ class ScriptForm(
 
   fun update(id: String, props: JSONObject) = controls[id]?.update(props)
 
+  /** Adds an item after the one with id [after], or at the end. Ignores an id already used. */
+  fun add(spec: JSONObject, after: String?) {
+    val control = controlOf(spec)
+    if (control.id in controls) return
+    val index = after?.let { controls[it] }?.let { column.indexOfChild(it.view) + 1 } ?: -1
+    controls[control.id] = control
+    column.addView(control.view, index)
+    control.update(spec)
+  }
+
+  fun remove(id: String) {
+    controls.remove(id)?.let { column.removeView(it.view) }
+  }
+
+  /** Moves SandFly's focus to the item, or to its first row. */
+  fun focus(id: String) {
+    val target = controls[id]?.focusTarget() ?: return
+    target.post {
+      target.performAccessibilityAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS, null)
+    }
+  }
+
   private fun controlOf(spec: JSONObject): Control {
     val id = spec.optString("id")
     return when (val type = spec.optString("type")) {
-      "label" -> Label(id)
+      "label" -> Label(id, spec)
+      "heading" -> Label(id, spec, heading = true)
+      "items" -> Rows(id)
+      "slider" -> Slider(id)
       "edit" -> Edit(id, spec)
       "switch" -> Switch(id)
       "button" -> Action(id, spec.optBoolean("close"))
@@ -95,6 +123,8 @@ class ScriptForm(
     protected var updating = false
 
     open fun value(): Any? = null
+
+    open fun focusTarget(): View = view
 
     protected abstract fun apply(props: JSONObject)
 
@@ -121,8 +151,17 @@ class ScriptForm(
     }
   }
 
-  private inner class Label(id: String) : Control(id) {
-    override val view = TextView(context).apply { setPadding(0, dp(GAP_DP), 0, dp(GAP_DP)) }
+  private inner class Label(id: String, spec: JSONObject, heading: Boolean = false) : Control(id) {
+    override val view =
+      TextView(context).apply {
+        setPadding(0, dp(GAP_DP), 0, dp(GAP_DP))
+        if (heading) {
+          ViewCompat.setAccessibilityHeading(this, true)
+          setTextAppearance(AndroidR.style.TextAppearance_Medium)
+        }
+        // Text to read by character, word or line, and to select and copy.
+        if (spec.optBoolean("selectable")) setTextIsSelectable(true)
+      }
 
     override fun apply(props: JSONObject) {
       props.text("label")?.let { view.text = it }
@@ -142,6 +181,13 @@ class ScriptForm(
           setTextIsSelectable(true)
         }
         if (spec.optBoolean("notify")) doAfterTextChanged { changed(it?.toString().orEmpty()) }
+        if (spec.optBoolean("submit")) {
+          if (!spec.optBoolean("multiline")) imeOptions = EditorInfo.IME_ACTION_DONE
+          setOnEditorActionListener { _, _, _ ->
+            emit(this@Edit.id, "submit", text.toString())
+            true
+          }
+        }
       }
     override val view =
       LinearLayout(context).apply {
@@ -152,6 +198,8 @@ class ScriptForm(
       }
 
     override fun value(): Any = field.text.toString()
+
+    override fun focusTarget(): View = field
 
     override fun apply(props: JSONObject) {
       props.text("label")?.let { label.text = it }
@@ -170,6 +218,155 @@ class ScriptForm(
         spec.optBoolean("multiline") ->
           InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
         else -> InputType.TYPE_CLASS_TEXT
+      }
+  }
+
+  /** A slider from min to max in steps. */
+  private inner class Slider(id: String) : Control(id) {
+    private val label = TextView(context)
+    private var min = 0.0
+    private var max = 100.0
+    private var step = 1.0
+    private val bar =
+      SeekBar(context).apply {
+        this.id = View.generateViewId()
+        setOnSeekBarChangeListener(
+          object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(bar: SeekBar, progress: Int, fromUser: Boolean) {
+              if (fromUser) changed(value())
+            }
+
+            override fun onStartTrackingTouch(bar: SeekBar) {}
+
+            override fun onStopTrackingTouch(bar: SeekBar) {}
+          }
+        )
+      }
+    override val view =
+      LinearLayout(context).apply {
+        orientation = LinearLayout.VERTICAL
+        setPadding(0, dp(GAP_DP), 0, dp(GAP_DP))
+        label.labelFor = bar.id
+        addView(label)
+        addView(bar)
+      }
+
+    override fun value(): Any = min + bar.progress * step
+
+    override fun focusTarget(): View = bar
+
+    override fun apply(props: JSONObject) {
+      props.text("label")?.let { label.text = it }
+      val current = value() as Double
+      if (props.has("min")) min = props.optDouble("min", min)
+      if (props.has("max")) max = props.optDouble("max", max)
+      if (props.has("step")) step = props.optDouble("step", step).takeIf { it > 0 } ?: 1.0
+      bar.max = ((max - min) / step).toInt().coerceIn(1, MAX_STEPS)
+      bar.keyProgressIncrement = 1
+      val wanted = if (props.has("value")) props.optDouble("value", current) else current
+      bar.progress = ((wanted - min) / step).roundToInt().coerceIn(0, bar.max)
+    }
+  }
+
+  /**
+   * Rows to activate, such as the notes of a notepad. Double-tapping a row sends its value, and
+   * the row's actions are in SandFly's Actions menu.
+   */
+  private inner class Rows(id: String) : Control(id) {
+    private val label = TextView(context).apply { isVisible = false }
+    private val rows = LinearLayout(context).apply { orientation = LinearLayout.VERTICAL }
+    private var options: List<Pair<String, String>> = emptyList()
+    private var actions: List<String> = emptyList()
+    private var empty = ""
+    override val view =
+      LinearLayout(context).apply {
+        orientation = LinearLayout.VERTICAL
+        setPadding(0, dp(GAP_DP), 0, dp(GAP_DP))
+        addView(label)
+        addView(rows)
+      }
+
+    init {
+      ViewCompat.setAccessibilityDelegate(
+        rows,
+        object : AccessibilityDelegateCompat() {
+          override fun onInitializeAccessibilityNodeInfo(
+            host: View,
+            info: AccessibilityNodeInfoCompat,
+          ) {
+            super.onInitializeAccessibilityNodeInfo(host, info)
+            info.setCollectionInfo(
+              CollectionInfoCompat.obtain(
+                options.size,
+                1,
+                false,
+                CollectionInfoCompat.SELECTION_MODE_NONE,
+              )
+            )
+          }
+        },
+      )
+    }
+
+    override fun focusTarget(): View = rows.getChildAt(0) ?: view
+
+    override fun apply(props: JSONObject) {
+      props.text("label")?.let {
+        label.text = it
+        label.isVisible = it.isNotEmpty()
+      }
+      props.text("empty")?.let { empty = it }
+      if (props.has("actions")) actions = props.optJSONArray("actions").strings()
+      if (props.has("items")) options = props.optJSONArray("items").options()
+      if (props.has("items") || props.has("actions") || props.has("empty")) showRows()
+    }
+
+    private fun showRows() {
+      rows.removeAllViews()
+      if (options.isEmpty() && empty.isNotEmpty()) {
+        rows.addView(TextView(context).apply { text = empty })
+        return
+      }
+      options.forEachIndexed { index, (value, text) -> rows.addView(row(index, value, text)) }
+    }
+
+    private fun row(index: Int, value: String, text: String): View =
+      TextView(context).apply {
+        this.text = text
+        isFocusable = true
+        setPadding(dp(GAP_DP), dp(ROW_DP), dp(GAP_DP), dp(ROW_DP))
+        setBackgroundResource(
+          TypedValue()
+            .also {
+              context.theme.resolveAttribute(AndroidR.attr.selectableItemBackground, it, true)
+            }
+            .resourceId
+        )
+        setOnClickListener { emit(this@Rows.id, "select", value) }
+        setOnLongClickListener {
+          emit(this@Rows.id, "longPress", value)
+          true
+        }
+        ViewCompat.setAccessibilityDelegate(
+          this,
+          object : AccessibilityDelegateCompat() {
+            override fun onInitializeAccessibilityNodeInfo(
+              host: View,
+              info: AccessibilityNodeInfoCompat,
+            ) {
+              super.onInitializeAccessibilityNodeInfo(host, info)
+              info.setCollectionItemInfo(
+                CollectionItemInfoCompat.obtain(index, 1, 0, 1, false, false)
+              )
+            }
+          },
+        )        // After the delegate, which would otherwise replace them.
+        for (action in actions) {
+          ViewCompat.addAccessibilityAction(this, action) { _, _ ->
+            emit(this@Rows.id, "action", jsonObject("value" to value, "action" to action))
+            true
+          }
+        }
       }
   }
 
@@ -292,15 +489,24 @@ class ScriptForm(
     private const val PADDING_DP = 16
     private const val GAP_DP = 8
     private const val ROW_DP = 12
-    private val TYPES = setOf("label", "edit", "switch", "button", "list")
+    private const val MAX_STEPS = 10_000
+    private const val MAX_ROWS = 500
+    private val TYPES = setOf("label", "heading", "edit", "switch", "button", "list", "items", "slider")
 
     fun check(items: JSONArray?) {
       val ids = HashSet<String>()
       for (item in items.items()) {
-        apiCheck(item is JSONObject) { "Each dialog item is an object" }
-        val type = (item as JSONObject).optString("type")
-        apiCheck(type in TYPES) { "Unknown dialog item type $type. Types: ${TYPES.joinToString()}" }
-        apiCheck(ids.add(item.optString("id"))) { "Dialog item ids must be unique" }
+        checkItem(item)
+        apiCheck(ids.add((item as JSONObject).optString("id"))) { "Dialog item ids must be unique" }
+      }
+    }
+
+    fun checkItem(item: Any?) {
+      apiCheck(item is JSONObject) { "Each dialog item is an object" }
+      val type = (item as JSONObject).optString("type")
+      apiCheck(type in TYPES) { "Unknown dialog item type $type. Types: ${TYPES.joinToString()}" }
+      apiCheck(item.optJSONArray("items").items().size <= MAX_ROWS) {
+        "A list has at most $MAX_ROWS items"
       }
     }
 

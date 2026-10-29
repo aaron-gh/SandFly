@@ -97,7 +97,9 @@ class ScriptDialogs(private val context: Context) {
   )
 
   private val mainHandler = Handler(Looper.getMainLooper())
-  private var open: Open? = null
+  // Dialogs and windows on screen, the top one last. A script's confirm or prompt opens over its
+  // own window, which stays open under it.
+  private val open = ArrayList<Open>()
 
   fun choose(
     owner: String,
@@ -141,11 +143,18 @@ class ScriptDialogs(private val context: Context) {
       setPositiveButton(AndroidR.string.ok) { _, _ -> finish(true) }
     }
 
-  fun form(owner: String, id: Int, title: String, items: JSONArray?, emit: (JSONObject) -> Unit) {
+  fun form(
+    owner: String,
+    id: Int,
+    title: String,
+    items: JSONArray?,
+    fullScreen: Boolean,
+    emit: (JSONObject) -> Unit,
+  ) {
     lateinit var form: ScriptForm
     val send = { event: JSONObject -> emit(event.put("dialog", id).put("values", form.values())) }
     val closed = { _: Unit? -> send(jsonObject("event" to "close")) }
-    show(owner, id, title, null, null, closed, { form }) { finish ->
+    show(owner, id, title, null, null, closed, { form }, fullScreen) { finish ->
       form =
         ScriptForm(
           context,
@@ -160,15 +169,30 @@ class ScriptDialogs(private val context: Context) {
   }
 
   fun update(owner: String, id: Int, item: String, props: JSONObject) = onMain {
-    open?.takeIf { it.owner == owner && it.id == id }?.form?.update(item, props)
+    formOf(owner, id)?.update(item, props)
+  }
+
+  fun add(owner: String, id: Int, item: JSONObject, after: String?) = onMain {
+    formOf(owner, id)?.takeIf { it.size < MAX_ITEMS }?.add(item, after)
+  }
+
+  fun remove(owner: String, id: Int, item: String) = onMain { formOf(owner, id)?.remove(item) }
+
+  fun focus(owner: String, id: Int, item: String) = onMain { formOf(owner, id)?.focus(item) }
+
+  fun setTitle(owner: String, id: Int, title: String) = onMain {
+    open.firstOrNull { it.owner == owner && it.id == id }?.dialog?.setTitle(title)
   }
 
   fun close(owner: String? = null, id: Int? = null) = onMain {
     open
-      ?.takeIf { (owner == null || it.owner == owner) && (id == null || it.id == id) }
-      ?.dialog
-      ?.dismiss()
+      .filter { (owner == null || it.owner == owner) && (id == null || it.id == id) }
+      .asReversed()
+      .forEach { it.dialog.dismiss() }
   }
+
+  private fun formOf(owner: String, id: Int): ScriptForm? =
+    open.firstOrNull { it.owner == owner && it.id == id }?.form
 
   private fun cancel(): String = context.getString(AndroidR.string.cancel)
 
@@ -184,9 +208,11 @@ class ScriptDialogs(private val context: Context) {
     cancel: String?,
     done: (T?) -> Unit,
     form: () -> ScriptForm? = { null },
+    fullScreen: Boolean = false,
     build: AlertDialog.Builder.(finish: (T) -> Unit) -> Unit,
   ) = onMain {
-    open?.dialog?.dismiss()
+    // Scripts that open dialogs without closing them can't fill the screen with windows.
+    if (open.size >= MAX_OPEN) open.first().dialog.dismiss()
     var result: T? = null
     lateinit var dialog: AlertDialog
     val builder =
@@ -197,12 +223,18 @@ class ScriptDialogs(private val context: Context) {
     }
     cancel?.let { builder.setNegativeButton(it, null) }
     builder.setOnDismissListener {
-      if (open?.dialog == dialog) open = null
+      open.removeAll { it.dialog == dialog }
       done(result)
     }
     dialog = builder.create()
     dialog.window?.let(DialogUtils::setWindowTypeToDialog)
-    open = Open(owner, id, dialog, form())
+    open.add(Open(owner, id, dialog, form()))
     dialog.show()
+    if (fullScreen) dialog.window?.setLayout(MATCH_PARENT, MATCH_PARENT)
+  }
+
+  private companion object {
+    const val MAX_OPEN = 8
+    const val MAX_ITEMS = 50
   }
 }
