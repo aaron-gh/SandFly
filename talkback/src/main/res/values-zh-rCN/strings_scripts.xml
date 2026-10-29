@@ -86,13 +86,13 @@
     <!-- What the passwords permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_passwords">读取密码框</string>
     <!-- What the input permission lets a script do. [CHAR LIMIT=NONE] -->
-    <string name="script_permission_input">添加手势、按键、菜单项和朗读控件</string>
+    <string name="script_permission_input">添加手势、按键、菜单项和朗读控件，以及运行 SandFly 的命令</string>
     <!-- What the network permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_network">使用互联网</string>
     <!-- What the clipboard permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_clipboard">读取和更改剪贴板</string>
     <!-- What the system permission lets a script do. [CHAR LIMIT=NONE] -->
-    <string name="script_permission_system">返回、回到主屏幕、打开通知和应用</string>
+    <string name="script_permission_system">返回、回到主屏幕、打开通知、列出并打开应用、打开设置和链接、向应用发送 intent、更改音量和铃声模式</string>
     <!-- What the notifications permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_notifications">读取和更改朗读的通知</string>
     <!-- What the events permission lets a script do. [CHAR LIMIT=NONE] -->
