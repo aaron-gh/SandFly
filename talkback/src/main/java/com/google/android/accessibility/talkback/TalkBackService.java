@@ -233,6 +233,7 @@ import com.google.android.accessibility.talkback.notificationlist.NotificationLi
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.notifications.NotificationSettings;
 import com.google.android.accessibility.talkback.speechdictionary.SpeechDictionary;
+import com.google.android.accessibility.talkback.gesture.AppGestures;
 import com.google.android.accessibility.talkback.pause.PauseController;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.quicksettings.SystemPanelClicker;
@@ -1187,6 +1188,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
       lastWindowPackage = event.getPackageName();
       SpeechDictionary.onWindowShown(lastWindowPackage);
+      AppGestures.onWindowShown(lastWindowPackage);
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
@@ -3590,6 +3592,7 @@ public class TalkBackService extends AccessibilityServiceCompat
         getBooleanPref(R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default));
     AutomaticTranslation.update(this);
     SpeechDictionary.load(this, prefs);
+    AppGestures.load(prefs);
     FocusFeedbackMapper.setTouchStopsSpeech(
         getBooleanPref(
             R.string.pref_touch_stops_speech_key, R.bool.pref_touch_stops_speech_default));

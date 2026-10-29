@@ -26,6 +26,14 @@
     <string name="command_no_gestures">No gestures</string>
     <!-- Title of the list of gestures to choose from when adding a gesture to a command. [CHAR LIMIT=40] -->
     <string name="command_choose_gesture">Choose gesture</string>
+    <!-- Title of the settings screen of the apps in which gestures run other commands than elsewhere. [CHAR LIMIT=40] -->
+    <string name="title_pref_app_gestures">Gestures in apps</string>
+    <!-- Action on the Gestures in apps screen that chooses an app to give gestures of its own. [CHAR LIMIT=40] -->
+    <string name="app_gestures_add_app">Add app</string>
+    <!-- Action on an app's screen in Gestures in apps that makes its gestures the same as elsewhere again. [CHAR LIMIT=40] -->
+    <string name="app_gestures_remove_app">Remove app</string>
+    <!-- Title of the list of commands a gesture can run in an app. [CHAR LIMIT=40] -->
+    <string name="app_gestures_choose_command">Choose command</string>
     <!-- Button in the dialog for a gesture of a command: removes the gesture from the command. [CHAR LIMIT=40] -->
     <string name="command_remove_gesture">Remove gesture</string>
     <!-- Dialog message when the chosen gesture runs another command. %1$s is the gesture, %2$s the command it runs now, %3$s the command it will run. [CHAR LIMIT=NONE] -->

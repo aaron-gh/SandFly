@@ -799,6 +799,9 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
   private final List<HashMap<Integer, String>> gestureIdToActionKey = new ArrayList<>();
   private HashMap<Integer, String> fingerprintGestureIdToActionKey = new HashMap<>();
 
+  // The preference key of each gesture, which names it in the gestures of each app.
+  private volatile Map<Integer, String> gestureIdToKey = new HashMap<>();
+
   /** Reloads preferences whenever their values change. */
   private final OnSharedPreferenceChangeListener sharedPreferenceChangeListener =
       (prefs, key) -> {
@@ -839,6 +842,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
     prefs.registerOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
     loadGestureIdToActionKeyMap();
+    loadGestureKeys();
     gestureSetEnabled =
         isGestureSetEnabled(
             context,
@@ -858,6 +862,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
   public void onConfigurationChanged(Configuration newConfig) {
     if (newConfig != null && newConfig.screenLayout != previousScreenLayout) {
       loadGestureIdToActionKeyMap();
+      loadGestureKeys();
       previousScreenLayout = newConfig.screenLayout;
     }
   }
@@ -951,7 +956,23 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
    * @return action key string
    */
   public String getActionKeyFromGestureId(int gestureId) {
+    @Nullable String appAction = AppGestures.action(gestureIdToKey.get(gestureId));
+    if (appAction != null) {
+      return appAction;
+    }
     return getActionKeyFromGestureId(currentGestureSet, gestureId);
+  }
+
+  private void loadGestureKeys() {
+    Map<Integer, String> keys = new HashMap<>();
+    for (TalkBackGesture gesture : TalkBackGesture.values()) {
+      // Fingerprint gesture IDs are numbered apart from the others.
+      if (gesture.gestureType == FINGERPRINT || skipGestureForRTL(gesture)) {
+        continue;
+      }
+      keys.put(gesture.gestureId, context.getString(gesture.keyId));
+    }
+    gestureIdToKey = keys;
   }
 
   private String getActionKeyFromGestureId(int index, int gestureId) {
