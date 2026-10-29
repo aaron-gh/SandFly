@@ -118,6 +118,7 @@ import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
 import com.google.android.accessibility.talkback.translation.TranslateCommand;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.AnnounceType;
@@ -863,6 +864,10 @@ public class GestureController {
     } else if (action.equals(
         service.getString(R.string.shortcut_value_translate_last_spoken_phrase))) {
       translateCommand.translateLast();
+      result = true;
+    } else if (SandflyAi.getFeatures() != null
+        && action.equals(service.getString(R.string.shortcut_value_ai_agent))) {
+      SandflyAi.getFeatures().startAgent(service);
       result = true;
     } else if (FeatureFlagReader.enableSpeechPitchKeyboard(service)
         && action.equals(service.getString(R.string.shortcut_value_speech_pitch_decrease))) {

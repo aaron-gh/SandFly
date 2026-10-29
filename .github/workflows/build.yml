@@ -18,11 +18,25 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HAS_SANDFLY_AI: ${{ secrets.SANDFLY_AI_TOKEN != '' }}
     steps:
       # The full history gives the build number (commits since buildNumberBase in version.gradle) and the release notes.
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
+
+      # SandFly AI, the paid features, from the private repository aaron-gh/sandfly-ai.
+      # SANDFLY_AI_TOKEN is a fine-grained token that can read only that repository. Builds without
+      # it, such as pull requests from forks, have no AI features.
+      - name: Check out SandFly AI
+        if: env.HAS_SANDFLY_AI == 'true'
+        uses: actions/checkout@v7
+        with:
+          repository: aaron-gh/sandfly-ai
+          token: ${{ secrets.SANDFLY_AI_TOKEN }}
+          path: sandfly-ai
+          persist-credentials: false
 
       - uses: actions/setup-java@v6
         with:

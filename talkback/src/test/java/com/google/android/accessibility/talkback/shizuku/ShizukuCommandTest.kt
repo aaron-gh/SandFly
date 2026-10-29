@@ -64,4 +64,24 @@ class ShizukuCommandTest {
     assertNull(ShizukuCommand.CLICK_TILE.shellCommand("com.example/.Tile extra"))
     assertNull(ShizukuCommand.CLICK_TILE.shellCommand(""))
   }
+
+  @Test
+  fun inputTextTypesSpacesAsPercentS() {
+    assertEquals(
+      listOf("input", "text", "new%sgame;%sreboot"),
+      ShizukuCommand.INPUT_TEXT.shellCommand("new game; reboot"),
+    )
+    assertNull(ShizukuCommand.INPUT_TEXT.shellCommand(""))
+    assertNull(ShizukuCommand.INPUT_TEXT.shellCommand("a\nb"))
+  }
+
+  @Test
+  fun inputKeyeventTakesOnlyKeyCodes() {
+    assertEquals(
+      listOf("input", "keyevent", "KEYCODE_ENTER", "KEYCODE_DEL"),
+      ShizukuCommand.INPUT_KEYEVENT.shellCommand("KEYCODE_ENTER KEYCODE_DEL"),
+    )
+    assertNull(ShizukuCommand.INPUT_KEYEVENT.shellCommand("KEYCODE_ENTER; reboot"))
+    assertNull(ShizukuCommand.INPUT_KEYEVENT.shellCommand("66"))
+  }
 }

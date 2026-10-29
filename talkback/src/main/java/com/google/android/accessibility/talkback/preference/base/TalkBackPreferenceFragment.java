@@ -29,6 +29,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceGroup;
+import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity.HatsRequesterViewModel;
@@ -42,11 +43,14 @@ import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
 import com.google.android.accessibility.talkback.preference.base.PreferenceActionHelper.WebPage;
 import com.google.android.accessibility.talkback.recognition.LiveRecognition;
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
+import com.google.android.accessibility.talkback.sandflyai.SandflyAiFeatures;
 import com.google.android.accessibility.talkback.training.OnboardingInitiator;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.TvTutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.VendorConfigReader;
 import com.google.android.accessibility.talkback.update.Updater;
+import com.google.android.accessibility.material.preference.AccessibilitySuitePreference;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.NetworkUtils;
@@ -114,6 +118,33 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
     if (!ImageCaptioner.supportsImageCaption(context)) {
       hidePreference(R.string.pref_auto_image_captioning_key);
     }
+
+    addSandflyAi();
+  }
+
+  /** Adds SandFly AI's screen after Automatic descriptions, in builds that include it. */
+  private void addSandflyAi() {
+    SandflyAiFeatures features = SandflyAi.getFeatures();
+    if (features == null) {
+      return;
+    }
+    PreferenceScreen screen = getPreferenceScreen();
+    Preference descriptions = findPreference(getString(R.string.pref_auto_image_captioning_key));
+    int order = descriptions != null ? descriptions.getOrder() + 1 : Preference.DEFAULT_ORDER;
+    for (int i = 0; i < screen.getPreferenceCount(); i++) {
+      Preference preference = screen.getPreference(i);
+      if (order != Preference.DEFAULT_ORDER && preference.getOrder() >= order) {
+        preference.setOrder(preference.getOrder() + 1);
+      }
+    }
+    AccessibilitySuitePreference ai = new AccessibilitySuitePreference(context);
+    ai.setKey("pref_sandfly_ai_screen");
+    ai.setPersistent(false);
+    ai.setIconSpaceReserved(false);
+    ai.setTitle(features.settingsTitle(context));
+    ai.setFragment(features.getSettingsFragment());
+    ai.setOrder(order);
+    screen.addPreference(ai);
   }
 
   @Override
