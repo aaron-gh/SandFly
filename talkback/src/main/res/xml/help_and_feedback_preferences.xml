@@ -10,4 +10,7 @@
       android:fragment="com.google.android.accessibility.talkback.report.ReportsFragment"
       android:key="@string/pref_problem_report_key"
       android:title="@string/title_pref_problem_report" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="@string/pref_privacy_policy_key"
+      android:title="@string/title_pref_privacy_policy" />
 </PreferenceScreen>
