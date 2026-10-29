@@ -55,6 +55,20 @@ class LowLatencyAudioRouteTest {
   }
 
   @Test
+  fun keptWhileOtherAudioTakesAccessibilityAudioToMedia() {
+    assertTrue(
+      sendToMedia(MODE_NORMAL, TYPE_BLUETOOTH_A2DP, TYPE_BLUETOOTH_A2DP, TYPE_BLUETOOTH_A2DP, false, true)
+    )
+  }
+
+  @Test
+  fun detouredButAndroidRoutesElsewhere_leftAlone() {
+    assertFalse(
+      sendToMedia(MODE_NORMAL, TYPE_BUILTIN_SPEAKER, TYPE_BLUETOOTH_A2DP, TYPE_BLUETOOTH_A2DP, false, true)
+    )
+  }
+
+  @Test
   fun androidRoutesToMedia_leftAlone() {
     assertFalse(sendToMedia(MODE_NORMAL, TYPE_BLUETOOTH_A2DP, TYPE_BLUETOOTH_A2DP, TYPE_BLUETOOTH_A2DP, false))
     assertFalse(sendToMedia(MODE_NORMAL, TYPE_BUILTIN_SPEAKER, null, TYPE_BUILTIN_SPEAKER, false))
