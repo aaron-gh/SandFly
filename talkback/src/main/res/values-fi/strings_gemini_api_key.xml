@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Malli</string>
     <string name="ai_service_address_invalid">Osoitteen tulee alkaa https://. Mitään ei tallennettu.</string>
     <string name="dialog_message_ai_service_consent">Kuvat ja kuvakaappaukset lähetetään kuvattaviksi palveluun <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, mikä kestää useita sekunteja. Palvelun omat ehdot ja tietosuojakäytäntö ovat voimassa. Generatiivinen tekoäly on kokeellinen, joten se tekee virheitä.</string>
-    <string name="ai_service_error_api_key">Tekoälypalvelu ei hyväksynyt API-avainta. Tarkista sen asetukset automaattisista kuvauksista.</string>
+    <string name="ai_service_error_api_key">Tekoälypalvelu ei hyväksynyt API-avainta. Tarkista sen asetukset kohdassa Kuvien ja näytön kuvaukset.</string>
     <string name="ai_service_error_quota">Tekoälypalvelun käyttöraja on saavutettu. Yritä myöhemmin uudelleen.</string>
     <string name="ai_service_error_busy">Tekoälypalvelu on tällä hetkellä kiireinen. Yritä hetken kuluttua uudelleen.</string>
     <string name="ai_service_error_timeout">Tekoälypalvelun vastaaminen kesti liian kauan. Yritä uudelleen.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Ei mitään</string>
-    <string name="ai_service_not_set_up">Tekoälypalvelu ei ole käytössä. Määritä tai valitse yksi automaattisten kuvausten asetuksista.</string>
+    <string name="ai_service_not_set_up">Tekoälypalvelu ei ole käytössä. Määritä tai valitse yksi kohdan Kuvien ja näytön kuvaukset asetuksista.</string>
     <string name="ai_provider_none_set_up">Tekoälypalvelua ei ole määritetty. Määritä se alla olevissa asetuksissa.</string>
     <string name="ai_provider_other">Muu palvelu</string>
     <string name="title_pref_category_ai_services">AI-palvelut</string>

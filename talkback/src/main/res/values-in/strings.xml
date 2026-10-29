@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Untuk memeriksa histori notifikasi, geser ke bawah dari bagian atas layar dengan 2 jari</string>
   <string name="image_description_playground_title">Coba dapatkan deskripsi gambar</string>
   <string name="image_description_playground_content_one">Saat Anda memfokuskan pada gambar, buka menu SandFly dan pilih “Deskripsikan gambar”.\n\nAda satu foto di bawah. Coba dapatkan deskripsinya.</string>
-  <string name="image_description_playground_content_two">Anda dapat mengubah setelan deskripsi gambar kapan saja di Setelan SandFly &gt; Deskripsi otomatis.</string>
-  <string name="image_description_playground_content_two_tts">Anda dapat mengubah setelan deskripsi gambar kapan saja di Setelan SandFly, lalu Deskripsi otomatis.</string>
+    <string name="image_description_playground_content_two">Anda dapat mengubah setelan deskripsi gambar kapan saja di Setelan SandFly &gt; Deskripsi gambar dan layar.</string>
+    <string name="image_description_playground_content_two_tts">Anda dapat mengubah setelan deskripsi gambar kapan saja di Setelan SandFly, lalu Deskripsi gambar dan layar.</string>
   <string name="image_description_sample_image_content_description">Contoh gambar; ketuk dengan 3 jari untuk membuka menu SandFly, lalu pilih \"Deskripsikan gambar\" untuk mendengarkan deskripsi.</string>
   <string name="practice_gestures_title">Berlatih gestur</string>
   <string name="practice_keyboard_gestures_title">Berlatih pintasan keyboard</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> dilepas. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly menyatakan detail item dalam urutan ini. Untuk mengubahnya, sentuh dan tahan suatu detail, lalu seret ke atas atau ke bawah. Dengan SandFly aktif, ketuk dua kali dan tahan, lalu seret. Anda juga dapat menggunakan tindakan Pindah ke atas dan Pindah ke bawah.</string>
     <string name="title_pref_speak_items_before_scroll">Ucapkan item sebelum digulir hingga terlihat</string>
-    <string name="gemini_error_api_key">Gemini tidak menerima kunci API. Periksa kunci di Pengaturan deskripsi otomatis.</string>
+    <string name="gemini_error_api_key">Gemini tidak menerima kunci API. Periksa kunci di Pengaturan deskripsi gambar dan layar.</string>
     <string name="gemini_error_quota">Batas penggunaan kunci API Gemini Anda telah tercapai. Coba lagi nanti.</string>
     <string name="gemini_error_busy">Gemini sedang sibuk saat ini. Coba lagi sebentar lagi.</string>
     <string name="gemini_error_timeout">Gemini butuh waktu terlalu lama untuk menjawab. Coba lagi.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Setelan tidak dapat diekspor</string>
     <string name="settings_import_done">Pengaturan diimpor</string>
     <string name="settings_import_failed">File ini bukan file pengaturan SandFly atau Backtalk, atau tidak dapat dibaca</string>
+    <string name="sound_mode_needs_access">Izinkan akses Jangan Ganggu untuk mengaktifkan atau menonaktifkan Senyap.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigasi tombol panah</string>
+    <string name="arrow_key_nav_toggle">Aktifkan atau nonaktifkan navigasi tombol panah</string>
+    <string name="arrow_key_nav_on">Navigasi tombol panah aktif</string>
+    <string name="arrow_key_nav_off">Navigasi tombol panah nonaktif</string>
+    <string name="arrow_key_nav_page_left">Halaman ke kiri</string>
+    <string name="arrow_key_nav_page_right">Halaman ke kanan</string>
+    <string name="arrow_key_nav_assign_instruction">Tekan satu tombol atau dua tombol bersamaan, dengan atau tanpa tombol pengubah. Tekan Backspace untuk menghapus, Ctrl + Backspace untuk mereset ke default, Enter untuk menyimpan, atau Escape untuk membatalkan.</string>
+    <string name="shortcut_next_track">Lagu berikutnya</string>
+    <string name="shortcut_previous_track">Lagu sebelumnya</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Nonaktif</item>
+        <item>3 detik</item>
+        <item>5 detik</item>
+        <item>10 detik</item>
+        <item>15 detik</item>
+        <item>30 detik</item>
+        <item>1 menit</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Berhenti otomatis setelah hening</string>
 </resources>

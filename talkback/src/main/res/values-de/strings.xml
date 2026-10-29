@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Wenn du deinen Benachrichtigungsverlauf ansehen möchtest, wische mit zwei Fingern nach unten</string>
   <string name="image_description_playground_title">Bildbeschreibungen ausprobieren</string>
   <string name="image_description_playground_content_one">Wenn du den Fokus auf ein Bild verschoben hast, öffne das SandFly-Menü und wähle „Bild beschreiben“ aus.\n\nUnten siehst du ein Foto. Lass dir eine Beschreibung dafür geben.</string>
-  <string name="image_description_playground_content_two">Du kannst die Einstellungen für Bildbeschreibungen jederzeit in den SandFly-Einstellungen unter „Automatische Beschreibungen“ ändern.</string>
-  <string name="image_description_playground_content_two_tts">Du kannst die Einstellungen für Bildbeschreibungen jederzeit in den SandFly-Einstellungen unter „Automatische Beschreibungen“ ändern.</string>
+    <string name="image_description_playground_content_two">Du kannst die Einstellungen für Bildbeschreibungen jederzeit in den SandFly-Einstellungen &gt; „Bild- und Bildschirmbeschreibungen“ ändern.</string>
+    <string name="image_description_playground_content_two_tts">Du kannst die Einstellungen für Bildbeschreibungen jederzeit in den SandFly-Einstellungen unter „Bild- und Bildschirmbeschreibungen“ ändern.</string>
   <string name="image_description_sample_image_content_description">Bildbeispiel: Tippe mit drei Fingern, um das SandFly-Menü zu öffnen, und wähle „Bild beschreiben“ aus, um eine Beschreibung zu hören.</string>
   <string name="practice_gestures_title">Touch-Gesten üben</string>
   <string name="practice_keyboard_gestures_title">Tastenkombinationen üben</string>
@@ -1550,7 +1550,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> abgelegt. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly sagt die Details eines Elements in dieser Reihenfolge an. Zum Ändern halte ein Detail gedrückt und ziehe es nach oben oder unten. Wenn SandFly aktiviert ist, tippe doppelt, halte und ziehe. Du kannst auch die Aktionen „Nach oben verschieben“ und „Nach unten verschieben“ verwenden.</string>
     <string name="title_pref_speak_items_before_scroll">Elemente ansagen, bevor sie in den sichtbaren Bereich scrollen</string>
-    <string name="gemini_error_api_key">Gemini hat den API-Schlüssel nicht akzeptiert. Prüfe den Schlüssel in den Einstellungen für automatische Beschreibungen.</string>
+    <string name="gemini_error_api_key">Gemini hat den API-Schlüssel nicht akzeptiert. Prüfe den Schlüssel in den Einstellungen für Bild- und Bildschirmbeschreibungen.</string>
     <string name="gemini_error_quota">Das Nutzungslimit für deinen Gemini API-Schlüssel ist erreicht. Versuche es später noch einmal.</string>
     <string name="gemini_error_busy">Gemini ist gerade ausgelastet. Versuche es gleich noch einmal.</string>
     <string name="gemini_error_timeout">Gemini hat zu lange für die Antwort gebraucht. Versuche es noch einmal.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Einstellungen konnten nicht exportiert werden</string>
     <string name="settings_import_done">Einstellungen importiert</string>
     <string name="settings_import_failed">Diese Datei ist keine SandFly- oder Backtalk-Einstellungsdatei oder konnte nicht gelesen werden</string>
+    <string name="sound_mode_needs_access">Erlaube den Zugriff auf „Bitte nicht stören“, um „Stumm“ ein- oder auszuschalten.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Pfeiltastennavigation</string>
+    <string name="arrow_key_nav_toggle">Pfeiltastennavigation ein- oder ausschalten</string>
+    <string name="arrow_key_nav_on">Pfeiltastennavigation ein</string>
+    <string name="arrow_key_nav_off">Pfeiltastennavigation aus</string>
+    <string name="arrow_key_nav_page_left">Seite nach links</string>
+    <string name="arrow_key_nav_page_right">Seite nach rechts</string>
+    <string name="arrow_key_nav_assign_instruction">Drücke eine Taste oder zwei Tasten gleichzeitig, mit oder ohne Modifikatortasten. Drücke die Rücktaste zum Löschen, Strg + Rücktaste zum Zurücksetzen auf den Standard, Eingabe zum Speichern oder Esc zum Abbrechen.</string>
+    <string name="shortcut_next_track">Nächster Titel</string>
+    <string name="shortcut_previous_track">Vorheriger Titel</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Aus</item>
+        <item>3 Sekunden</item>
+        <item>5 Sekunden</item>
+        <item>10 Sekunden</item>
+        <item>15 Sekunden</item>
+        <item>30 Sekunden</item>
+        <item>1 Minute</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Automatisch stoppen nach Stille</string>
 </resources>

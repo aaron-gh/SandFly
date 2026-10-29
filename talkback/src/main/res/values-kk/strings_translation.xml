@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Автоматты аударма</string>
+    <string name="title_pref_translation_auto_service">Автоматты аударма қызметі</string>
+    <string name="title_pref_translation_copy">Аудармаларды буферге көшіру</string>
+    <string name="title_pref_translation_download_all">Барлық тілдерді жүктеп алу</string>
+    <string name="title_pref_translation_languages">Құрылғыдағы тілдер</string>
+    <string name="title_pref_translation_notifications">Хабарландыруларды аудару</string>
+    <string name="title_pref_translation_region">Аймақ</string>
+    <string name="title_pref_translation_say_source">Бастапқы тілді айту</string>
+    <string name="title_pref_translation_second_target">Мақсатты тілдегі мәтінді аудару тілі</string>
+    <string name="title_pref_translation_service">Аударма қызметі</string>
+    <string name="title_pref_translation_source">Аударылатын тіл</string>
+    <string name="title_pref_translation_swap">Тілдерді ауыстыру</string>
+    <string name="title_pref_translation_target">Мақсатты тіл</string>
+    <string name="title_pref_translation_target_voice">Мақсатты тілге арналған дауысты пайдалану</string>
+    <string name="title_pref_translation_untranslated">Аударылмайтын тілдер</string>
+    <string name="title_pref_translation_wifi_only">Тілдерді тек Wi-Fi арқылы жүктеп алу</string>
+    <string name="title_translate_last_spoken_phrase">Соңғы айтылған фразаны аудару</string>
+    <string name="translation_address_hint">Мекенжай, мысалы, https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate серверінің мекенжайы, мысалы, https://libretranslate.com. Өз серверіңізден басқа серверлерге API кілті қажет болуы мүмкін.</string>
+    <string name="translation_all_downloaded">Барлық тілдер жүктеп алынды</string>
+    <string name="translation_already_in">Мәтін қазірдің өзінде <xliff:g id="language" example="English">%1$s</xliff:g> тілінде</string>
+    <string name="translation_auto_state">Автоматты аударма <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Сөйлеу</string>
+    <string name="translation_detect">Тілді анықтау</string>
+    <string name="translation_device_language">Құрылғы тілі (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> тіл жүктеп алынбады</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> тіл жүктеп алынбады</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> тіл, шамамен <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> тіл, шамамен <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Жүктеп алынуда, <xliff:g id="total" example="57">%2$d</xliff:g> ішінен <xliff:g id="done" example="12">%1$d</xliff:g></string>
+    <string name="translation_download_all_stop">Тоқтату</string>
+    <string name="translation_download_all_stop_title">Тілдерді жүктеп алу тоқтатылсын ба?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> жүктеп алынды</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> жүктеп алынбады</string>
+    <string name="translation_download_message">Шамамен 30 МБ.</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g> жүктеп алынсын ба?</string>
+    <string name="translation_downloading">Құрылғыдағы аударма үшін <xliff:g id="languages" example="German and English">%1$s</xliff:g> жүктеп алынуда</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> мәтінді аудара алмады.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> API кілтін қабылдамады.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> қызметіне қосылу мүмкін болмады.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> мәтінді аудара алмады: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Тілді анықтау құралы жүктеп алынуда. Сәлден соң қайталап көріңіз.</string>
+    <string name="translation_error_download">Құрылғыдағы аудармаға арналған тілдер жүктеп алынбады.</string>
+    <string name="translation_error_downloading">Құрылғыдағы аудармаға арналған тілдер әлі жүктеп алынуда</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g> аудармасы <xliff:g id="language" example="Klingon">%2$s</xliff:g> тілін қолдамайды.</string>
+    <string name="translation_error_no_address">Аударма параметрлерінде <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> мекенжайын енгізіңіз.</string>
+    <string name="translation_error_no_key">Аударма параметрлерінде <xliff:g id="service" example="DeepL">%1$s</xliff:g> API кілтін енгізіңіз.</string>
+    <string name="translation_error_not_detected">Тіл анықталмады</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> пайдалану шегіне жетті.</string>
+    <string name="translation_from"><xliff:g id="language" example="German">%1$s</xliff:g> тілінен:</string>
+    <string name="translation_key_message"><xliff:g id="service" example="DeepL">%1$s</xliff:g> API кілтін қойыңыз. Оны жою үшін өрісті тазалап, сақтаңыз. Сіз аударатын мәтін <xliff:g id="service" example="DeepL">%1$s</xliff:g> қызметіне жіберіледі.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, жүктеп алынған</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, жүктеп алынуда</string>
+    <string name="translation_languages_summary">Жүктеп алынған: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Аударатын ештеңе жоқ</string>
+    <string name="translation_region_global">Жаһандық</string>
+    <string name="translation_region_message">Azure-дағы Translator ресурсыңыздың аймағы, мысалы, westeurope. Жаһандық ресурс үшін бос қалдырыңыз.</string>
+    <string name="translation_second_none">Аудармау</string>
+    <string name="translation_service_ai">AI қызметі</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, реттелмеген</string>
+    <string name="translation_service_on_device">Құрылғыда</string>
+    <string name="translation_swapped"><xliff:g id="source" example="German">%1$s</xliff:g> тілінен <xliff:g id="target" example="English">%2$s</xliff:g> тіліне</string>
+    <string name="translation_title">Аударма</string>
+    <string name="translation_untranslated_none">Жоқ</string>
+</resources>

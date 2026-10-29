@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Para tingnan ang iyong history ng notification, mag-swipe pababa gamit ang 2 daliri mula sa itaas ng screen mo</string>
   <string name="image_description_playground_title">Subukang makakuha ng mga paglalarawan ng larawan</string>
   <string name="image_description_playground_content_one">Kapag naka-focus ka sa isang larawan, buksan ang menu ng SandFly at piliin ang “Ilarawan ang larawan.”\n\nMay isang larawan sa ibaba. Subukang makakuha ng paglalarawan para rito.</string>
-  <string name="image_description_playground_content_two">Puwede mong baguhin ang mga setting ng paglalarawan ng larawan anumang oras sa mga setting ng SandFly &gt; Mga awtomatikong paglalarawan.</string>
-  <string name="image_description_playground_content_two_tts">Puwede mong baguhin ang mga setting ng paglalarawan ng larawan anumang oras sa mga setting ng SandFly, pagkatapos ay Mga awtomatikong paglalarawan.</string>
+    <string name="image_description_playground_content_two">Puwede mong baguhin ang mga setting ng paglalarawan ng larawan anumang oras sa mga setting ng SandFly &gt; Mga paglalarawan ng larawan at screen.</string>
+    <string name="image_description_playground_content_two_tts">Puwede mong baguhin ang mga setting ng paglalarawan ng larawan anumang oras sa mga setting ng SandFly, pagkatapos ay Mga paglalarawan ng larawan at screen.</string>
   <string name="image_description_sample_image_content_description">Sample na larawan; mag-tap gamit ang 3 daliri para mabuksan ang menu ng SandFly at piliin ang \"Ilarawan ang larawan\" para marinig ang paglalarawan.</string>
   <string name="practice_gestures_title">Mag-ensayo ng mga galaw</string>
   <string name="practice_keyboard_gestures_title">Magsanay sa mga keyboard shortcut</string>
@@ -1550,7 +1550,7 @@
     <string name="template_item_details_order_dropped">Binitawan ang <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">Sinasabi ng SandFly ang mga detalye ng isang item sa ganitong pagkakasunud-sunod. Para baguhin ito, pindutin nang matagal ang isang detalye, pagkatapos ay i-drag ito pataas o pababa. Kapag naka-on ang SandFly, mag-double tap at i-hold, pagkatapos ay mag-drag. Puwede mo ring gamitin ang mga aksyong Ilipat pataas at Ilipat pababa.</string>
     <string name="title_pref_speak_items_before_scroll">Bigkasin ang mga item bago mag-scroll ang mga ito sa view</string>
-    <string name="gemini_error_api_key">Hindi tinanggap ng Gemini ang API key. Suriin ang key sa mga setting ng Mga awtomatikong paglalarawan.</string>
+    <string name="gemini_error_api_key">Hindi tinanggap ng Gemini ang API key. Suriin ang key sa mga setting ng Mga paglalarawan ng larawan at screen.</string>
     <string name="gemini_error_quota">Naabot na ang limitasyon sa paggamit ng iyong Gemini API key. Subukan ulit mamaya.</string>
     <string name="gemini_error_busy">Abala ang Gemini sa ngayon. Subukan ulit sa ilang sandali.</string>
     <string name="gemini_error_timeout">Masyadong natagalan ang Gemini sa pagsagot. Subukan ulit.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Hindi ma-export ang mga setting</string>
     <string name="settings_import_done">Na-import ang mga setting</string>
     <string name="settings_import_failed">Ang file na ito ay hindi SandFly o Backtalk settings file, o hindi mabasa</string>
+    <string name="sound_mode_needs_access">Payagan ang access sa Huwag Istorbohin para i-on o i-off ang I-mute.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigation gamit ang mga arrow key</string>
+    <string name="arrow_key_nav_toggle">I-on o i-off ang navigation gamit ang mga arrow key</string>
+    <string name="arrow_key_nav_on">Naka-on ang navigation gamit ang mga arrow key</string>
+    <string name="arrow_key_nav_off">Naka-off ang navigation gamit ang mga arrow key</string>
+    <string name="arrow_key_nav_page_left">Page pakaliwa</string>
+    <string name="arrow_key_nav_page_right">Page pakanan</string>
+    <string name="arrow_key_nav_assign_instruction">Pumindot ng isang key o dalawang key nang sabay, mayroon o walang modifier key. Pindutin ang Backspace para i-clear, Ctrl + Backspace para i-reset sa default, Enter para i-save, o Escape para kanselahin.</string>
+    <string name="shortcut_next_track">Susunod na track</string>
+    <string name="shortcut_previous_track">Nakaraang track</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Naka-off</item>
+        <item>3 segundo</item>
+        <item>5 segundo</item>
+        <item>10 segundo</item>
+        <item>15 segundo</item>
+        <item>30 segundo</item>
+        <item>1 minuto</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Awtomatikong ihinto kapag tahimik</string>
 </resources>

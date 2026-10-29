@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Itzulpen automatikoa</string>
+    <string name="title_pref_translation_auto_service">Itzulpen automatikoaren zerbitzua</string>
+    <string name="title_pref_translation_copy">Kopiatu itzulpenak arbelean</string>
+    <string name="title_pref_translation_download_all">Deskargatu hizkuntza guztiak</string>
+    <string name="title_pref_translation_languages">Gailuko hizkuntzak</string>
+    <string name="title_pref_translation_notifications">Itzuli jakinarazpenak</string>
+    <string name="title_pref_translation_region">Eskualdea</string>
+    <string name="title_pref_translation_say_source">Esan jatorrizko hizkuntza</string>
+    <string name="title_pref_translation_second_target">Helburu-hizkuntzan dagoen testua itzultzeko hizkuntza</string>
+    <string name="title_pref_translation_service">Itzulpen-zerbitzua</string>
+    <string name="title_pref_translation_source">Jatorrizko hizkuntza</string>
+    <string name="title_pref_translation_swap">Trukatu hizkuntzak</string>
+    <string name="title_pref_translation_target">Helburu-hizkuntza</string>
+    <string name="title_pref_translation_target_voice">Erabili helburu-hizkuntzako ahots bat</string>
+    <string name="title_pref_translation_untranslated">Itzultzen ez diren hizkuntzak</string>
+    <string name="title_pref_translation_wifi_only">Deskargatu hizkuntzak Wi-Fi bidez soilik</string>
+    <string name="title_translate_last_spoken_phrase">Itzuli esandako azken esaldia</string>
+    <string name="translation_address_hint">Helbidea; adibidez, https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate zerbitzari baten helbidea; adibidez, https://libretranslate.com. Zureak ez diren zerbitzariek API gako bat behar izan dezakete.</string>
+    <string name="translation_all_downloaded">Hizkuntza guztiak deskargatu dira</string>
+    <string name="translation_already_in">Dagoeneko hizkuntza honetan dago: <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Itzulpen automatikoa: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Hizketa</string>
+    <string name="translation_detect">Hizkuntza detektatu</string>
+    <string name="translation_device_language">Gailuaren hizkuntza (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> hizkuntza ez da deskargatu</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> hizkuntza ez dira deskargatu</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> hizkuntza, <xliff:g id="size" example="30 MB">%2$s</xliff:g> inguru.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> hizkuntza, <xliff:g id="size" example="1.7 GB">%2$s</xliff:g> inguru.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Deskargatzen, <xliff:g id="done" example="12">%1$d</xliff:g>/<xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Gelditu</string>
+    <string name="translation_download_all_stop_title">Hizkuntzak deskargatzeari utzi nahi diozu?</string>
+    <string name="translation_download_done">Deskargatu da: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">Ez da deskargatu: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">30 MB inguru.</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g> deskargatu nahi duzu?</string>
+    <string name="translation_downloading">Gailuko itzulpenerako hizkuntzak deskargatzen: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> zerbitzuak ezin izan du itzuli testua.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> zerbitzuak ez du onartu API gakoa.</string>
+    <string name="translation_error_connection">Ezin izan da konektatu <xliff:g id="service" example="DeepL">%1$s</xliff:g> zerbitzarekin.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> zerbitzuak ezin izan du itzuli testua: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Hizkuntza-detekzioa deskargatzen ari da. Saiatu berriro laster.</string>
+    <string name="translation_error_download">Ezin izan dira deskargatu gailuko itzulpenerako hizkuntzak.</string>
+    <string name="translation_error_downloading">Gailuko itzulpenerako hizkuntzak deskargatzen ari dira oraindik</string>
+    <string name="translation_error_language">Itzulpen-zerbitzua: <xliff:g id="service" example="On-device">%1$s</xliff:g>. Ez da onartzen hizkuntza hau: <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Idatzi <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> zerbitzuaren helbidea Itzulpena ataleko ezarpenetan.</string>
+    <string name="translation_error_no_key">Idatzi <xliff:g id="service" example="DeepL">%1$s</xliff:g> zerbitzuaren API gakoa Itzulpena ataleko ezarpenetan.</string>
+    <string name="translation_error_not_detected">Ez da detektatu hizkuntza</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> zerbitzuaren erabilera-mugara iritsi zara.</string>
+    <string name="translation_from">Jatorrizko hizkuntza: <xliff:g id="language" example="German">%1$s</xliff:g>.</string>
+    <string name="translation_key_message">Itsatsi <xliff:g id="service" example="DeepL">%1$s</xliff:g> zerbitzuaren API gakoa. Kentzeko, garbitu eremua eta gorde. Itzultzen duzun testua <xliff:g id="service" example="DeepL">%1$s</xliff:g> zerbitzura bidaltzen da.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, deskargatuta</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, deskargatzen</string>
+    <string name="translation_languages_summary">Deskargatuta: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Ez dago itzultzeko ezer</string>
+    <string name="translation_region_global">Orokorra</string>
+    <string name="translation_region_message">Translator baliabidearen Azure-ko eskualdea; adibidez, westeurope. Utzi hutsik baliabide orokor baterako.</string>
+    <string name="translation_second_none">Ez itzuli</string>
+    <string name="translation_service_ai">Adimen artifizialeko zerbitzua</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, konfiguratu gabe</string>
+    <string name="translation_service_on_device">Gailuan</string>
+    <string name="translation_swapped">Jatorrizkoa: <xliff:g id="source" example="German">%1$s</xliff:g>. Helburua: <xliff:g id="target" example="English">%2$s</xliff:g>.</string>
+    <string name="translation_title">Itzulpena</string>
+    <string name="translation_untranslated_none">Bat ere ez</string>
+</resources>

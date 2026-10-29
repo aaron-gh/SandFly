@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Бағыт пернелерін қосу</string>
+    <string name="command_add_gesture">Қимыл қосу</string>
+    <string name="command_choose_arrow_keys">Бағыт пернелерін таңдаңыз</string>
+    <string name="command_choose_gesture">Қимылды таңдаңыз</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Қимылдар</string>
+    <string name="command_keyboard_shortcut">Перне тіркесімі</string>
+    <string name="command_no_arrow_keys">Бағыт пернелері жоқ</string>
+    <string name="command_no_gestures">Қимылдар жоқ</string>
+    <string name="command_remove_arrow_keys">Бағыт пернелерін жою</string>
+    <string name="command_remove_gesture">Қимылды жою</string>
+    <string name="command_replace">Ауыстыру</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> қазір <xliff:g id="old_command" example="Read from top">%2$s</xliff:g> командасын орындайды. Оның орнына <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> үшін қолданылсын ба?</string>
+    <string name="commands_category_activation">Іске қосу</string>
+    <string name="commands_category_media">Мультимедиа және дыбыс деңгейі</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Айналдыру</string>
+    <string name="commands_category_speech">Сөйлеу</string>
+    <string name="commands_category_tables">Кестелер</string>
+    <string name="commands_category_web">Веб</string>
+    <string name="item_list_current">Ағымдағы</string>
+    <string name="item_list_not_in_reading_controls">Оқуды басқару элементтерінде жоқтар</string>
+    <string name="item_list_not_in_sandfly_menu">SandFly мәзірінде жоқтар</string>
+    <string name="item_list_options">Опциялар</string>
+    <string name="sounds_category_sounds">Дыбыстар</string>
+    <string name="sounds_category_vibration">Діріл</string>
+    <string name="speech_category_languages">Тілдер</string>
+    <string name="speech_category_other_apps">Басқа қолданбалар</string>
+    <string name="speech_category_pronunciation">Айтылуы</string>
+    <string name="speech_category_stopping">Сөйлеуді тоқтату</string>
+    <string name="speech_category_voice">Дауыс</string>
+    <string name="title_pref_audio_output">Аудио шығысы</string>
+    <string name="title_pref_backup">Сақтық көшірме және қалпына келтіру</string>
+    <string name="title_pref_braille">Брайль</string>
+    <string name="title_pref_commands">Командалар</string>
+    <string name="title_pref_display">Дисплей</string>
+    <string name="title_pref_image_and_screen_descriptions">Сурет және экран сипаттамалары</string>
+    <string name="title_pref_pause">Кідірту және өшіру</string>
+    <string name="title_pref_quick_settings_screen">Жылдам параметрлер</string>
+    <string name="title_pref_speech">Сөйлеу</string>
+    <string name="title_pref_speech_stream_control">Сөйлеу дыбысын реттеу</string>
+    <string name="title_pref_touch">Түрту</string>
+    <string name="title_pref_typing">Теру</string>
+    <string name="title_pref_updates">Жаңартулар және орнату</string>
+    <string name="title_pref_volume_keys">Дыбыс пернелері</string>
+    <string name="typing_category_other_input">Терудің басқа тәсілдері</string>
+    <string name="verbosity_category_announcements">Хабарлар</string>
+    <string name="verbosity_category_items">Элементтер</string>
+    <string name="verbosity_category_text">Мәтін және таңбалар</string>
+</resources>

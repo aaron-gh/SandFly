@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">அமைப்புகளை ஏற்றுமதி செய்ய முடியவில்லை</string>
     <string name="settings_import_done">அமைப்புகள் இறக்குமதி செய்யப்பட்டன</string>
     <string name="settings_import_failed">இந்தக் கோப்பு SandFly அல்லது Backtalk அமைப்புக் கோப்பு அல்ல, அல்லது படிக்க முடியவில்லை</string>
+    <string name="arrow_key_nav_assign_instruction">ஒரு விசையை அல்லது இரண்டு விசைகளைச் சேர்த்து அழுத்தவும், மாற்றி விசைகளுடனோ அவை இல்லாமலோ. அழிக்க Backspace, இயல்புநிலைக்கு மீட்டமைக்க Ctrl + Backspace, சேமிக்க Enter, ரத்துசெய்ய Escape அழுத்தவும்.</string>
+    <string name="arrow_key_nav_off">அம்புக்குறி விசை வழிசெலுத்தல் முடக்கப்பட்டது</string>
+    <string name="arrow_key_nav_on">அம்புக்குறி விசை வழிசெலுத்தல் இயக்கப்பட்டது</string>
+    <string name="arrow_key_nav_page_left">இடப்புறம் செல்லும்</string>
+    <string name="arrow_key_nav_page_right">வலப்புறம் செல்லும்</string>
+    <string name="arrow_key_nav_toggle">அம்புக்குறி விசை வழிசெலுத்தலை ஆன்/ஆஃப் செய்</string>
+    <string name="keycombo_menu_category_arrow_key_nav">அம்புக்குறி விசை வழிசெலுத்தல்</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>ஆஃப்</item>
+        <item>3 வினாடிகள்</item>
+        <item>5 வினாடிகள்</item>
+        <item>10 வினாடிகள்</item>
+        <item>15 வினாடிகள்</item>
+        <item>30 வினாடிகள்</item>
+        <item>1 நிமிடம்</item>
+    </string-array>
+    <string name="shortcut_next_track">அடுத்த டிராக்</string>
+    <string name="shortcut_previous_track">முந்தைய டிராக்</string>
+    <string name="sound_mode_needs_access">ஒலியடக்கத்தை ஆன்/ஆஃப் செய்ய “தொந்தரவு செய்ய வேண்டாம்” அணுகலை அனுமதிக்கவும்.</string>
+    <string name="title_pref_dictation_auto_stop">அமைதிக்குப் பிறகு தானாக நிறுத்து</string>
 </resources>

@@ -1790,4 +1790,24 @@
     <string name="settings_export_failed">لا يمكن تصدير الإعدادات</string>
     <string name="settings_import_done">تم استيراد الإعدادات</string>
     <string name="settings_import_failed">هذا الملف ليس ملف إعدادات SandFly أو Backtalk، أو لا يمكن قراءته</string>
+    <string name="arrow_key_nav_assign_instruction">اضغط على مفتاح أو مفتاحين معًا، مع مفاتيح التعديل أو بدونها. اضغط على Backspace للمحو، أو Ctrl + Backspace للعودة إلى الإعداد التلقائي، أو Enter للحفظ، أو Escape للإلغاء.</string>
+    <string name="arrow_key_nav_off">تم إيقاف التنقّل بمفاتيح الأسهم</string>
+    <string name="arrow_key_nav_on">تم تفعيل التنقّل بمفاتيح الأسهم</string>
+    <string name="arrow_key_nav_page_left">صفحة لليسار</string>
+    <string name="arrow_key_nav_page_right">صفحة لليمين</string>
+    <string name="arrow_key_nav_toggle">تفعيل التنقّل بمفاتيح الأسهم أو إيقافه</string>
+    <string name="keycombo_menu_category_arrow_key_nav">التنقّل بمفاتيح الأسهم</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>غير مفعَّل</item>
+        <item>3 ثوانٍ</item>
+        <item>5 ثوانٍ</item>
+        <item>10 ثوانٍ</item>
+        <item>15 ثانية</item>
+        <item>30 ثانية</item>
+        <item>دقيقة واحدة</item>
+    </string-array>
+    <string name="shortcut_next_track">المقطع التالي</string>
+    <string name="shortcut_previous_track">المقطع السابق</string>
+    <string name="sound_mode_needs_access">اسمح بالوصول إلى «عدم الإزعاج» لتفعيل «كتم الصوت» أو إيقافه.</string>
+    <string name="title_pref_dictation_auto_stop">الإيقاف التلقائي بعد الصمت</string>
 </resources>

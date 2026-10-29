@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Автоматический перевод</string>
+    <string name="title_pref_translation_auto_service">Сервис автоматического перевода</string>
+    <string name="title_pref_translation_copy">Копировать переводы в буфер обмена</string>
+    <string name="title_pref_translation_download_all">Скачать все языки</string>
+    <string name="title_pref_translation_languages">Языки на устройстве</string>
+    <string name="title_pref_translation_notifications">Переводить уведомления</string>
+    <string name="title_pref_translation_region">Регион</string>
+    <string name="title_pref_translation_say_source">Называть исходный язык</string>
+    <string name="title_pref_translation_second_target">Текст на целевом языке переводить на</string>
+    <string name="title_pref_translation_service">Сервис перевода</string>
+    <string name="title_pref_translation_source">Переводить с</string>
+    <string name="title_pref_translation_swap">Поменять языки местами</string>
+    <string name="title_pref_translation_target">Переводить на</string>
+    <string name="title_pref_translation_target_voice">Голос для целевого языка</string>
+    <string name="title_pref_translation_untranslated">Языки без перевода</string>
+    <string name="title_pref_translation_wifi_only">Скачивать языки только по Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Перевести последнюю фразу</string>
+    <string name="translation_address_hint">Адрес, например https://libretranslate.com</string>
+    <string name="translation_address_message">Адрес сервера LibreTranslate, например https://libretranslate.com. Для серверов, кроме вашего собственного, может потребоваться ключ API.</string>
+    <string name="translation_all_downloaded">Все языки скачаны</string>
+    <string name="translation_already_in">Текст уже на языке «<xliff:g id="language" example="English">%1$s</xliff:g>»</string>
+    <string name="translation_auto_state">Автоматический перевод: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Речь</string>
+    <string name="translation_detect">Определять язык</string>
+    <string name="translation_device_language">Язык устройства (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one">Не скачан <xliff:g id="count" example="1">%1$d</xliff:g> язык</item>
+        <item quantity="few">Не скачано <xliff:g id="count" example="3">%1$d</xliff:g> языка</item>
+        <item quantity="many">Не скачано <xliff:g id="count" example="3">%1$d</xliff:g> языков</item>
+        <item quantity="other">Не скачано <xliff:g id="count" example="3">%1$d</xliff:g> языка</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> язык, около <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="few"><xliff:g id="count" example="57">%1$d</xliff:g> языка, около <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="many"><xliff:g id="count" example="57">%1$d</xliff:g> языков, около <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> языка, около <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Скачивание: <xliff:g id="done" example="12">%1$d</xliff:g> из <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Остановить</string>
+    <string name="translation_download_all_stop_title">Остановить скачивание языков?</string>
+    <string name="translation_download_done">Язык «<xliff:g id="language" example="German">%1$s</xliff:g>» скачан</string>
+    <string name="translation_download_failed">Язык «<xliff:g id="language" example="German">%1$s</xliff:g>» не скачан</string>
+    <string name="translation_download_message">Около 30 МБ.</string>
+    <string name="translation_download_title">Скачать язык «<xliff:g id="language" example="German">%1$s</xliff:g>»?</string>
+    <string name="translation_downloading">Скачивание языков для перевода на устройстве: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: не удалось перевести текст.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: ключ API не принят.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: нет соединения с сервисом.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: не удалось перевести текст: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Определение языка ещё скачивается. Повторите попытку через минуту.</string>
+    <string name="translation_error_download">Не удалось скачать языки для перевода на устройстве.</string>
+    <string name="translation_error_downloading">Языки для перевода на устройстве ещё скачиваются</string>
+    <string name="translation_error_language">Перевод «<xliff:g id="service" example="On-device">%1$s</xliff:g>» не поддерживает язык «<xliff:g id="language" example="Klingon">%2$s</xliff:g>».</string>
+    <string name="translation_error_no_address">Введите адрес <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> в настройках перевода.</string>
+    <string name="translation_error_no_key">Введите ключ API <xliff:g id="service" example="DeepL">%1$s</xliff:g> в настройках перевода.</string>
+    <string name="translation_error_not_detected">Язык не определён</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g>: достигнут лимит использования.</string>
+    <string name="translation_from">С языка «<xliff:g id="language" example="German">%1$s</xliff:g>»:</string>
+    <string name="translation_key_message">Вставьте ключ API <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Чтобы удалить его, очистите поле и сохраните. Переводимый текст отправляется в <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, скачан</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, скачивается</string>
+    <string name="translation_languages_summary">Скачаны: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Нечего переводить</string>
+    <string name="translation_region_global">Глобальный</string>
+    <string name="translation_region_message">Регион ресурса Translator в Azure, например westeurope. Для глобального ресурса оставьте поле пустым.</string>
+    <string name="translation_second_none">Не переводить</string>
+    <string name="translation_service_ai">ИИ-сервис</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, не настроен</string>
+    <string name="translation_service_on_device">На устройстве</string>
+    <string name="translation_swapped">С языка «<xliff:g id="source" example="German">%1$s</xliff:g>» на «<xliff:g id="target" example="English">%2$s</xliff:g>»</string>
+    <string name="translation_title">Перевод</string>
+    <string name="translation_untranslated_none">Нет</string>
+</resources>

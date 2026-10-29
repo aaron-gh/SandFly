@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">自動翻譯</string>
+    <string name="title_pref_translation_auto_service">自動翻譯服務</string>
+    <string name="title_pref_translation_copy">將翻譯複製到剪貼簿</string>
+    <string name="title_pref_translation_download_all">下載所有語言</string>
+    <string name="title_pref_translation_languages">裝置端語言</string>
+    <string name="title_pref_translation_notifications">翻譯通知</string>
+    <string name="title_pref_translation_region">區域</string>
+    <string name="title_pref_translation_say_source">說出原文語言</string>
+    <string name="title_pref_translation_second_target">將目標語言的文字翻譯成</string>
+    <string name="title_pref_translation_service">翻譯服務</string>
+    <string name="title_pref_translation_source">原文語言</string>
+    <string name="title_pref_translation_swap">交換語言</string>
+    <string name="title_pref_translation_target">目標語言</string>
+    <string name="title_pref_translation_target_voice">使用目標語言的語音</string>
+    <string name="title_pref_translation_untranslated">不翻譯的語言</string>
+    <string name="title_pref_translation_wifi_only">僅透過 Wi-Fi 下載語言</string>
+    <string name="title_translate_last_spoken_phrase">翻譯系統最後唸出的詞組</string>
+    <string name="translation_address_hint">位址，例如 https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate 伺服器的位址，例如 https://libretranslate.com。非自行架設的伺服器可能需要 API 金鑰。</string>
+    <string name="translation_all_downloaded">已下載所有語言</string>
+    <string name="translation_already_in">已經是<xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">自動翻譯<xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">語音</string>
+    <string name="translation_detect">偵測語言</string>
+    <string name="translation_device_language">裝置語言 (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> 種語言未下載</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> 種語言，約 <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>。</item>
+    </plurals>
+    <string name="translation_download_all_progress">下載中，已完成 <xliff:g id="done" example="12">%1$d</xliff:g> 個，共 <xliff:g id="total" example="57">%2$d</xliff:g> 個</string>
+    <string name="translation_download_all_stop">停止</string>
+    <string name="translation_download_all_stop_title">要停止下載語言嗎？</string>
+    <string name="translation_download_done">已下載<xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">未下載<xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">約 30 MB。</string>
+    <string name="translation_download_title">要下載<xliff:g id="language" example="German">%1$s</xliff:g>嗎？</string>
+    <string name="translation_downloading">正在下載<xliff:g id="languages" example="German and English">%1$s</xliff:g>，用於裝置端翻譯</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g>無法翻譯這段文字。</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g>不接受這個 API 金鑰。</string>
+    <string name="translation_error_connection">無法連線至<xliff:g id="service" example="DeepL">%1$s</xliff:g>。</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g>無法翻譯這段文字：<xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">正在下載語言偵測模型。請稍後再試。</string>
+    <string name="translation_error_download">無法下載裝置端翻譯所需的語言。</string>
+    <string name="translation_error_downloading">裝置端翻譯所需的語言仍在下載中</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g>翻譯不支援<xliff:g id="language" example="Klingon">%2$s</xliff:g>。</string>
+    <string name="translation_error_no_address">請在翻譯設定中輸入 <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> 位址。</string>
+    <string name="translation_error_no_key">請在翻譯設定中輸入 <xliff:g id="service" example="DeepL">%1$s</xliff:g> API 金鑰。</string>
+    <string name="translation_error_not_detected">未偵測到語言</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g>已達使用量上限。</string>
+    <string name="translation_from">從<xliff:g id="language" example="German">%1$s</xliff:g>翻譯：</string>
+    <string name="translation_key_message">貼上你的 <xliff:g id="service" example="DeepL">%1$s</xliff:g> API 金鑰。如要移除金鑰，請清除欄位並儲存。你翻譯的文字會傳送至 <xliff:g id="service" example="DeepL">%1$s</xliff:g>。</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>，已下載</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>，下載中</string>
+    <string name="translation_languages_summary">已下載：<xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">沒有可翻譯的內容</string>
+    <string name="translation_region_global">全球</string>
+    <string name="translation_region_message">你在 Azure 中的 Translator 資源所在區域，例如 westeurope。如果是全球資源，請留空。</string>
+    <string name="translation_second_none">不要翻譯</string>
+    <string name="translation_service_ai">AI 服務</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>，尚未設定</string>
+    <string name="translation_service_on_device">裝置端</string>
+    <string name="translation_swapped">從<xliff:g id="source" example="German">%1$s</xliff:g>翻譯成<xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">翻譯</string>
+    <string name="translation_untranslated_none">無</string>
+</resources>

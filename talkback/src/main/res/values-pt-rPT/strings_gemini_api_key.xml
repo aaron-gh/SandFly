@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Modelo</string>
     <string name="ai_service_address_invalid">O endereço deve começar com https://. Nada foi salvo.</string>
     <string name="dialog_message_ai_service_consent">As imagens e capturas de ecrã são enviadas para <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> para serem descritas, o que demora alguns segundos. Aplicam-se os termos e a política de privacidade do próprio serviço. A IA generativa é experimental, por isso vai cometer erros.</string>
-    <string name="ai_service_error_api_key">O serviço de IA não aceitou a chave de API. Verifique suas configurações em Descrições automáticas.</string>
+    <string name="ai_service_error_api_key">O serviço de IA não aceitou a chave de API. Verifique as respetivas definições em Descrições de imagens e do ecrã.</string>
     <string name="ai_service_error_quota">O limite de utilização do serviço de IA foi atingido. Tente novamente mais tarde.</string>
     <string name="ai_service_error_busy">O serviço de IA está ocupado no momento. Tente novamente em alguns instantes.</string>
     <string name="ai_service_error_timeout">O serviço de IA demorou muito para responder. Tente novamente.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Nenhum</string>
-    <string name="ai_service_not_set_up">Nenhum serviço de IA está em uso. Configure um ou escolha um nas configurações de descrições automáticas.</string>
+    <string name="ai_service_not_set_up">Nenhum serviço de IA está em utilização. Configure um ou escolha um nas definições de Descrições de imagens e do ecrã.</string>
     <string name="ai_provider_none_set_up">Nenhum serviço de IA está configurado. Configure um nas configurações abaixo.</string>
     <string name="ai_provider_other">Outro serviço</string>
     <string name="title_pref_category_ai_services">Serviços de IA</string>

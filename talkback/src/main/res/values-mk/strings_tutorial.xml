@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_tutorial_actions_archive">Преминете на пораката. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> или <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> – минување низ нејзините дејства. <xliff:g id="gesture" example="Double-tap">%3$s</xliff:g> – извршување на дејството што го слушате. Извршете „<xliff:g id="action" example="Archive">%4$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_actions_intro">Некои ставки имаат дејства покрај активирањето, на пример „Архивирај“ или „Избриши“ за порака. Додека таква ставка е во фокус, контролата за читање „Дејства“ минува низ нив.</string>
+    <string name="sandfly_tutorial_actions_title">Дејства</string>
+    <string name="sandfly_tutorial_activate_button">Преминете на „<xliff:g id="button" example="Ring the bell">%2$s</xliff:g>“. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> – активирање.</string>
+    <string name="sandfly_tutorial_activate_check_box">На ист начин штиклирајте „<xliff:g id="check_box" example="Extra cheese">%1$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_activate_hold">Некои ставки прават нешто друго кога се држат. Преминете на „<xliff:g id="button" example="Details">%2$s</xliff:g>“. <xliff:g id="gesture" example="Double-tap and hold">%1$s</xliff:g> – држење.</string>
+    <string name="sandfly_tutorial_activate_intro">Активирањето работи на ставката во фокус, каде и да го допрете екранот.</string>
+    <string name="sandfly_tutorial_activate_title">Активирање ставки</string>
+    <string name="sandfly_tutorial_back_in_lesson">„Назад“ не ја напушта лекцијата. За да изберете друга лекција, користете „Содржина“.</string>
+    <string name="sandfly_tutorial_bell">Ѕвони со ѕвончето</string>
+    <string name="sandfly_tutorial_bell_rung">Ѕвонења: <xliff:g id="count" example="1">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_brightness">Осветленост</string>
+    <string name="sandfly_tutorial_chapter_basics">Основи</string>
+    <string name="sandfly_tutorial_chapter_controls">Контроли и текст</string>
+    <string name="sandfly_tutorial_chapter_getting_around">Движење низ екранот</string>
+    <string name="sandfly_tutorial_chapter_practice">Вежбање</string>
+    <string name="sandfly_tutorial_chapter_reading">Читање</string>
+    <string name="sandfly_tutorial_choose_reading_control"><xliff:g id="gesture" example="Swipe down then up">%1$s</xliff:g> или <xliff:g id="gesture" example="Swipe up then down">%2$s</xliff:g> – менување на контролата за читање. Изберете „<xliff:g id="reading_control" example="Words">%3$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_close">Затвори го упатството</string>
+    <string name="sandfly_tutorial_commands_copy"><xliff:g id="gesture" example="Triple-tap with 3 fingers">%1$s</xliff:g> – копирање на последниот текст што го изговори SandFly во привремената меморија.</string>
+    <string name="sandfly_tutorial_commands_intro">Овие наредби работат на секој екран.</string>
+    <string name="sandfly_tutorial_commands_search"><xliff:g id="gesture" example="Swipe left then down">%1$s</xliff:g> – пребарување текст на екранот. Во оваа лекција, упатството наместо тоа кажува што прави наредбата.</string>
+    <string name="sandfly_tutorial_commands_speech_off"><xliff:g id="gesture" example="Double-tap with 3 fingers">%1$s</xliff:g> – исклучување на говорот, повторно – вклучување. Во оваа лекција, упатството наместо тоа кажува што прави наредбата.</string>
+    <string name="sandfly_tutorial_commands_status"><xliff:g id="gesture" example="Triple-tap with 2 fingers">%1$s</xliff:g> – слушање на времето, нивото на батеријата и друг статус.</string>
+    <string name="sandfly_tutorial_commands_title">Корисни наредби</string>
+    <string name="sandfly_tutorial_contents">Содржина</string>
+    <string name="sandfly_tutorial_contents_intro">Лекции по редослед. Секоја може да се отвори посебно.</string>
+    <string name="sandfly_tutorial_continuous_intro">SandFly може да чита од ставката во фокус до крајот на екранот без повлекување. Допирот на екранот го запира читањето.</string>
+    <string name="sandfly_tutorial_continuous_move">Преминете на првиот ред од рецептот.</string>
+    <string name="sandfly_tutorial_continuous_read"><xliff:g id="gesture" example="Swipe down then right">%1$s</xliff:g> – читање од ставката во фокус.</string>
+    <string name="sandfly_tutorial_continuous_read_from_menu"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> – отворање на менито на SandFly. Потоа изберете „<xliff:g id="command" example="Read from focused item">%2$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_continuous_title">Непрекинато читање</string>
+    <string name="sandfly_tutorial_details">Детали</string>
+    <string name="sandfly_tutorial_details_shown">Маса за двајца во 19:00, покрај прозорецот.</string>
+    <string name="sandfly_tutorial_done">Завршено</string>
+    <string name="sandfly_tutorial_end_practice">Заврши го вежбањето</string>
+    <string name="sandfly_tutorial_explore_activate">Допрете „Ѕвезда“ и кренете го прстот. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> каде било на екранот – активирање.</string>
+    <string name="sandfly_tutorial_explore_find">Лизгајте со еден прст по екранот и пронајдете ги четирите квадрати: Сонце, Месечина, Ѕвезда и Облак.</string>
+    <string name="sandfly_tutorial_explore_intro">Допирот на екранот ја изговара ставката под прстот. Допирот на ставка не ја активира.</string>
+    <string name="sandfly_tutorial_explore_title">Истражување со допир</string>
+    <string name="sandfly_tutorial_extra_cheese">Дополнително сирење</string>
+    <string name="sandfly_tutorial_finish">Заврши го упатството</string>
+    <string name="sandfly_tutorial_forecast_today">Денес</string>
+    <string name="sandfly_tutorial_forecast_today_text">Сончево и топло, со слаб ветер.</string>
+    <string name="sandfly_tutorial_forecast_tomorrow">Утре</string>
+    <string name="sandfly_tutorial_forecast_tomorrow_text">Облачно наутро, со дожд од пладне.</string>
+    <string name="sandfly_tutorial_forecast_weekend">Викенд</string>
+    <string name="sandfly_tutorial_forecast_weekend_text">Ветровито во сабота, ведро во недела.</string>
+    <string name="sandfly_tutorial_headings_intro">Екраните и веб-страниците ја делат содржината со наслови. Контролата за читање „Наслови“ скока од еден наслов на следниот.</string>
+    <string name="sandfly_tutorial_headings_jump"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> – скокање на следниот наслов. Скокнете на „<xliff:g id="heading" example="Weekend">%2$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_headings_title">Наслови</string>
+    <string name="sandfly_tutorial_item_apples">Јаболка</string>
+    <string name="sandfly_tutorial_item_bread">Леб</string>
+    <string name="sandfly_tutorial_item_cheese">Сирење</string>
+    <string name="sandfly_tutorial_item_dates">Урми</string>
+    <string name="sandfly_tutorial_item_eggs">Јајца</string>
+    <string name="sandfly_tutorial_lesson_complete">Лекцијата е завршена.</string>
+    <string name="sandfly_tutorial_lesson_complete_last">Лекцијата е завршена. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> – завршување на упатството.</string>
+    <string name="sandfly_tutorial_lesson_complete_next">Лекцијата е завршена. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> – започнување на следната лекција.</string>
+    <string name="sandfly_tutorial_lesson_heading"><xliff:g id="lesson" example="Moving between items">%1$s</xliff:g>, лекција <xliff:g id="number" example="3">%2$d</xliff:g> од <xliff:g id="count" example="17">%3$d</xliff:g></string>
+    <string name="sandfly_tutorial_list_item">Ставка <xliff:g id="number" example="15">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_menu_close"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> – затворање на менито.</string>
+    <string name="sandfly_tutorial_menu_intro">Менито на SandFly има наредби за ставката во фокус и за тековниот екран.</string>
+    <string name="sandfly_tutorial_menu_open"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> – отворање на менито на SandFly. Минете низ неговите наредби. <xliff:g id="gesture" example="Swipe down then left">%2$s</xliff:g> го затвора менито.</string>
+    <string name="sandfly_tutorial_menu_title">Мени на SandFly</string>
+    <string name="sandfly_tutorial_message">Порака од Сашо: Ручек на пладне?</string>
+    <string name="sandfly_tutorial_message_archive">Архивирај</string>
+    <string name="sandfly_tutorial_message_delete">Избриши</string>
+    <string name="sandfly_tutorial_message_reply">Одговори</string>
+    <string name="sandfly_tutorial_move_intro">Повлекувањето преминува на следната или претходната ставка на екранот, по редоследот на читање.</string>
+    <string name="sandfly_tutorial_move_next"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> – преминување на следната ставка. Продолжете додека не стигнете до „<xliff:g id="item" example="Eggs">%2$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_move_previous"><xliff:g id="gesture" example="Swipe left">%1$s</xliff:g> – преминување на претходната ставка. Вратете се на „<xliff:g id="item" example="Bread">%2$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_move_title">Движење меѓу ставки</string>
+    <string name="sandfly_tutorial_name">Име</string>
+    <string name="sandfly_tutorial_next_lesson">Следна лекција: <xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
+    <string name="sandfly_tutorial_no_gesture">„<xliff:g id="action" example="Next item">%1$s</xliff:g>“ нема гест. Доделете гест во „Наредби“ или користете „Прескокни чекор“.</string>
+    <string name="sandfly_tutorial_not_in_lesson">„<xliff:g id="action" example="Home">%1$s</xliff:g>“ не се извршува во лекција. За да го напуштите упатството, користете „Затвори го упатството“ во „Содржина“.</string>
+    <string name="sandfly_tutorial_not_in_lesson_short">„<xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g>“ не се извршува во лекција.</string>
+    <string name="sandfly_tutorial_pause_intro">Говорот може да се паузира среде ставка и да продолжи од местото каде што запрел.</string>
+    <string name="sandfly_tutorial_pause_pause">Преминете на приказната подолу. <xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> додека се чита – паузирање на говорот, повторно – продолжување.</string>
+    <string name="sandfly_tutorial_pause_resume"><xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> повторно – продолжување на говорот.</string>
+    <string name="sandfly_tutorial_pause_title">Паузирање на говорот</string>
+    <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: <xliff:g id="action" example="Next item">%2$s</xliff:g></string>
+    <string name="sandfly_tutorial_practice_intro">Секој гест го кажува своето име и дејство наместо да го изврши. Преминувањето на следната и претходната ставка и активирањето сѐ уште работат.</string>
+    <string name="sandfly_tutorial_practice_step">Направете кој било гест за да слушнете што прави. За да запрете, активирајте „<xliff:g id="button" example="End practice">%1$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_practice_title">Вежбање гестови</string>
+    <string name="sandfly_tutorial_progress"><xliff:g id="done" example="2">%1$d</xliff:g> од <xliff:g id="count" example="4">%2$d</xliff:g>.</string>
+    <string name="sandfly_tutorial_reading_controls_characters">Сменете ја контролата за читање на „<xliff:g id="reading_control" example="Characters">%2$s</xliff:g>“. <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> – поместување за еден знак.</string>
+    <string name="sandfly_tutorial_reading_controls_intro">Контролите за читање одредуваат што прави повлекувањето нагоре и надолу, на пример поместување по збор или по знак или менување на брзината на говорот. Повлекувањето надесно и налево и понатаму преминува меѓу ставки.</string>
+    <string name="sandfly_tutorial_reading_controls_move">Преминете на реченицата подолу.</string>
+    <string name="sandfly_tutorial_reading_controls_next_word"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> – преминување на следниот збор. Поместете се три збора.</string>
+    <string name="sandfly_tutorial_reading_controls_title">Контроли за читање</string>
+    <string name="sandfly_tutorial_recipe_1">Палачинки: измешајте брашно, јајца и млеко во мазно тесто.</string>
+    <string name="sandfly_tutorial_recipe_2">Загрејте малку путер во тава.</string>
+    <string name="sandfly_tutorial_recipe_3">Истурете доволно тесто за тенко да го покрие дното на тавата.</string>
+    <string name="sandfly_tutorial_recipe_4">Свртете ја палачинката кога долната страна ќе стане златна.</string>
+    <string name="sandfly_tutorial_recipe_5">Послужете со лимон и шеќер.</string>
+    <string name="sandfly_tutorial_scrolling_intro">Списоците прикажуваат само дел од ставките одеднаш. Повлекувањето по последната прикажана ставка го лизга списокот.</string>
+    <string name="sandfly_tutorial_scrolling_page"><xliff:g id="gesture" example="Swipe right then left">%1$s</xliff:g> – лизгање напред за една страница.</string>
+    <string name="sandfly_tutorial_scrolling_swipe"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> – минување низ списокот. Продолжете додека не стигнете до „<xliff:g id="item" example="Item 15">%2$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_scrolling_title">Лизгање списоци</string>
+    <string name="sandfly_tutorial_sentence">Брзата кафеава лисица скока преку мрзливото куче.</string>
+    <string name="sandfly_tutorial_skip_step">Прескокни чекор</string>
+    <string name="sandfly_tutorial_sliders_change">Преминете на лизгачот „<xliff:g id="slider" example="Brightness">%3$s</xliff:g>“. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> или <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> – менување на неговата вредност.</string>
+    <string name="sandfly_tutorial_sliders_highest">Поставете го „<xliff:g id="slider" example="Brightness">%1$s</xliff:g>“ на 100 проценти, неговата највисока вредност.</string>
+    <string name="sandfly_tutorial_sliders_intro">Кога лизгач е во фокус, повлекувањето нагоре и надолу ја менува неговата вредност.</string>
+    <string name="sandfly_tutorial_sliders_title">Лизгачи</string>
+    <string name="sandfly_tutorial_step">Чекор <xliff:g id="number" example="1">%1$d</xliff:g> од <xliff:g id="count" example="2">%2$d</xliff:g>: <xliff:g id="instruction" example="Swipe right to move to the next item.">%3$s</xliff:g></string>
+    <string name="sandfly_tutorial_story">Песочните муви се мали муви што живеат на плажи, на речни брегови и во шуми. Најактивни се во зори и во самрак, кога воздухот мирува. Каснуваат само женките, бидејќи им треба крв за да произведат јајца. Каснувањата чешаат со денови, па луѓето што одат во краевите на песочните муви носат средство против инсекти. Песочните муви се слаби летачи, и дури и лесен ветер ги држи настрана.</string>
+    <string name="sandfly_tutorial_system_back"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> – враќање назад.</string>
+    <string name="sandfly_tutorial_system_home"><xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g> – одење на почетниот екран.</string>
+    <string name="sandfly_tutorial_system_intro">Овие гестови работат на секој екран. Во оваа лекција, упатството кажува што прави секој од нив наместо да го направи.</string>
+    <string name="sandfly_tutorial_system_notifications"><xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g> – отворање на известувањата.</string>
+    <string name="sandfly_tutorial_system_overview"><xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g> – прикажување на неодамнешните апликации.</string>
+    <string name="sandfly_tutorial_system_title">Назад, почетен екран и известувања</string>
+    <string name="sandfly_tutorial_tile_cloud">Облак</string>
+    <string name="sandfly_tutorial_tile_moon">Месечина</string>
+    <string name="sandfly_tutorial_tile_star">Ѕвезда</string>
+    <string name="sandfly_tutorial_tile_sun">Сонце</string>
+    <string name="sandfly_tutorial_title">Упатство за SandFly</string>
+    <string name="sandfly_tutorial_typing_delete">Избришете ја последната буква со копчето за бришење на тастатурата.</string>
+    <string name="sandfly_tutorial_typing_intro">Активирањето текстуално поле ја отвора тастатурата. Допрете копче за да го слушнете и кренете го прстот за да го напишете.</string>
+    <string name="sandfly_tutorial_typing_open">Преминете на полето „<xliff:g id="field" example="Name">%2$s</xliff:g>“. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> – започнување со пишување.</string>
+    <string name="sandfly_tutorial_typing_title">Пишување</string>
+    <string name="sandfly_tutorial_typing_type">Напишете го зборот „<xliff:g id="word" example="cat">%1$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_typing_word">мачка</string>
+    <string name="sandfly_tutorial_welcome_intro">Ова упатство ги учи гестовите на SandFly. Секоја лекција дава упатство, чека додека не го извршите со свои гестови, а потоа го дава следното. Упатството е првата ставка по името на лекцијата. „Содржина“ ги наведува сите лекции, а упатството повторно се отвора на лекцијата на која сте застанале.</string>
+    <string name="sandfly_tutorial_welcome_start"><xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> каде било на екранот – започнување.</string>
+    <string name="sandfly_tutorial_welcome_title">Добре дојдовте</string>
+</resources>

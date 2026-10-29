@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_tutorial_actions_archive">संदेश पर जाएं. इसकी कार्रवाइयों पर जाने के लिए <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> या <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g>. बोली गई कार्रवाई करने के लिए <xliff:g id="gesture" example="Double-tap">%3$s</xliff:g>. <xliff:g id="action" example="Archive">%4$s</xliff:g> कार्रवाई करें.</string>
+    <string name="sandfly_tutorial_actions_intro">कुछ आइटम में चालू करने के अलावा दूसरी कार्रवाइयां भी होती हैं, जैसे किसी संदेश के लिए \'संग्रहित करें\' या \'मिटाएं\'. ऐसे आइटम पर फ़ोकस होने पर, \'कार्रवाइयां\' कंट्रोल इन कार्रवाइयों पर एक-एक करके जाता है.</string>
+    <string name="sandfly_tutorial_actions_title">कार्रवाइयां</string>
+    <string name="sandfly_tutorial_activate_button"><xliff:g id="button" example="Ring the bell">%2$s</xliff:g> पर जाएं. इसे चालू करने के लिए <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_activate_check_box">इसी तरह <xliff:g id="check_box" example="Extra cheese">%1$s</xliff:g> को चेक करें.</string>
+    <string name="sandfly_tutorial_activate_hold">कुछ आइटम दबाकर रखने पर कुछ और करते हैं. <xliff:g id="button" example="Details">%2$s</xliff:g> पर जाएं. इसे दबाकर रखने के लिए <xliff:g id="gesture" example="Double-tap and hold">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_activate_intro">स्क्रीन पर कहीं भी टैप करें, चालू करने की कार्रवाई फ़ोकस वाले आइटम पर होती है.</string>
+    <string name="sandfly_tutorial_activate_title">आइटम चालू करना</string>
+    <string name="sandfly_tutorial_back_in_lesson">\'वापस जाएं\' से पाठ बंद नहीं होता. दूसरा पाठ चुनने के लिए, \'विषय-सूची\' का इस्तेमाल करें.</string>
+    <string name="sandfly_tutorial_bell">घंटी बजाएं</string>
+    <string name="sandfly_tutorial_bell_rung">घंटी कितनी बार बजी: <xliff:g id="count" example="1">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_brightness">चमक</string>
+    <string name="sandfly_tutorial_chapter_basics">बुनियादी बातें</string>
+    <string name="sandfly_tutorial_chapter_controls">कंट्रोल और टेक्स्ट</string>
+    <string name="sandfly_tutorial_chapter_getting_around">स्क्रीन पर नेविगेट करना</string>
+    <string name="sandfly_tutorial_chapter_practice">अभ्यास</string>
+    <string name="sandfly_tutorial_chapter_reading">पढ़ना</string>
+    <string name="sandfly_tutorial_choose_reading_control">टेक्स्ट पढ़ने से जुड़ा कंट्रोल बदलने के लिए <xliff:g id="gesture" example="Swipe down then up">%1$s</xliff:g> या <xliff:g id="gesture" example="Swipe up then down">%2$s</xliff:g>. <xliff:g id="reading_control" example="Words">%3$s</xliff:g> चुनें.</string>
+    <string name="sandfly_tutorial_close">ट्यूटोरियल बंद करें</string>
+    <string name="sandfly_tutorial_commands_copy">SandFly का बोला गया पिछला टेक्स्ट क्लिपबोर्ड पर कॉपी करने के लिए <xliff:g id="gesture" example="Triple-tap with 3 fingers">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_commands_intro">ये निर्देश हर स्क्रीन पर काम करते हैं.</string>
+    <string name="sandfly_tutorial_commands_search">स्क्रीन पर टेक्स्ट खोजने के लिए <xliff:g id="gesture" example="Swipe left then down">%1$s</xliff:g>. इस पाठ में, यह कार्रवाई होने के बजाय ट्यूटोरियल बताता है कि यह क्या करती है.</string>
+    <string name="sandfly_tutorial_commands_speech_off">बोली बंद करने के लिए <xliff:g id="gesture" example="Double-tap with 3 fingers">%1$s</xliff:g>, और फिर से चालू करने के लिए दोबारा. इस पाठ में, यह कार्रवाई होने के बजाय ट्यूटोरियल बताता है कि यह क्या करती है.</string>
+    <string name="sandfly_tutorial_commands_status">समय, बैटरी लेवल और दूसरी स्थिति सुनने के लिए <xliff:g id="gesture" example="Triple-tap with 2 fingers">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_commands_title">काम के निर्देश</string>
+    <string name="sandfly_tutorial_contents">विषय-सूची</string>
+    <string name="sandfly_tutorial_contents_intro">पाठ, क्रम से. हर पाठ को अलग से खोला जा सकता है.</string>
+    <string name="sandfly_tutorial_continuous_intro">SandFly बिना स्वाइप किए, फ़ोकस वाले आइटम से स्क्रीन के आखिर तक पढ़ सकता है. स्क्रीन छूने पर पढ़ना बंद हो जाता है.</string>
+    <string name="sandfly_tutorial_continuous_move">रेसिपी की पहली लाइन पर जाएं.</string>
+    <string name="sandfly_tutorial_continuous_read">फ़ोकस वाले आइटम से पढ़ने के लिए <xliff:g id="gesture" example="Swipe down then right">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_continuous_read_from_menu">SandFly मेन्यू खोलने के लिए <xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g>, फिर <xliff:g id="command" example="Read from focused item">%2$s</xliff:g> चुनें.</string>
+    <string name="sandfly_tutorial_continuous_title">लगातार पढ़ना</string>
+    <string name="sandfly_tutorial_details">विवरण</string>
+    <string name="sandfly_tutorial_details_shown">शाम 7 बजे, 2 लोगों के लिए खिड़की के पास टेबल.</string>
+    <string name="sandfly_tutorial_done">पूरा हुआ</string>
+    <string name="sandfly_tutorial_end_practice">अभ्यास खत्म करें</string>
+    <string name="sandfly_tutorial_explore_activate">\'तारा\' को छुएं और उंगली हटाएं. इसे चालू करने के लिए कहीं भी <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_explore_find">स्क्रीन पर एक उंगली घुमाएं और चार वर्ग ढूंढें: सूरज, चांद, तारा और बादल.</string>
+    <string name="sandfly_tutorial_explore_intro">स्क्रीन छूने पर उंगली के नीचे का आइटम बोला जाता है. किसी आइटम को छूने से वह चालू नहीं होता.</string>
+    <string name="sandfly_tutorial_explore_title">छूकर सुनना</string>
+    <string name="sandfly_tutorial_extra_cheese">एक्स्ट्रा चीज़</string>
+    <string name="sandfly_tutorial_finish">ट्यूटोरियल पूरा करें</string>
+    <string name="sandfly_tutorial_forecast_today">आज</string>
+    <string name="sandfly_tutorial_forecast_today_text">धूप और गर्मी, हल्की हवा के साथ.</string>
+    <string name="sandfly_tutorial_forecast_tomorrow">कल</string>
+    <string name="sandfly_tutorial_forecast_tomorrow_text">सुबह बादल, दोपहर से बारिश.</string>
+    <string name="sandfly_tutorial_forecast_weekend">वीकेंड</string>
+    <string name="sandfly_tutorial_forecast_weekend_text">शनिवार को तेज़ हवा, रविवार को आसमान साफ़.</string>
+    <string name="sandfly_tutorial_headings_intro">स्क्रीन और वेब पेज अपने कॉन्टेंट को हेडिंग से बांटते हैं. \'हेडिंग\' कंट्रोल एक हेडिंग से अगली हेडिंग पर जाता है.</string>
+    <string name="sandfly_tutorial_headings_jump">अगली हेडिंग पर जाने के लिए <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>. <xliff:g id="heading" example="Weekend">%2$s</xliff:g> पर जाएं.</string>
+    <string name="sandfly_tutorial_headings_title">हेडिंग</string>
+    <string name="sandfly_tutorial_item_apples">सेब</string>
+    <string name="sandfly_tutorial_item_bread">ब्रेड</string>
+    <string name="sandfly_tutorial_item_cheese">चीज़</string>
+    <string name="sandfly_tutorial_item_dates">खजूर</string>
+    <string name="sandfly_tutorial_item_eggs">अंडे</string>
+    <string name="sandfly_tutorial_lesson_complete">पाठ पूरा हुआ.</string>
+    <string name="sandfly_tutorial_lesson_complete_last">पाठ पूरा हुआ. ट्यूटोरियल पूरा करने के लिए <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_lesson_complete_next">पाठ पूरा हुआ. अगला पाठ शुरू करने के लिए <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_lesson_heading"><xliff:g id="lesson" example="Moving between items">%1$s</xliff:g>, <xliff:g id="count" example="17">%3$d</xliff:g> में से पाठ <xliff:g id="number" example="3">%2$d</xliff:g></string>
+    <string name="sandfly_tutorial_list_item">आइटम <xliff:g id="number" example="15">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_menu_close">मेन्यू बंद करने के लिए <xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_menu_intro">SandFly मेन्यू में फ़ोकस वाले आइटम और मौजूदा स्क्रीन के लिए निर्देश होते हैं.</string>
+    <string name="sandfly_tutorial_menu_open">SandFly मेन्यू खोलने के लिए <xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g>. इसके निर्देशों पर स्वाइप करें. मेन्यू बंद करने के लिए <xliff:g id="gesture" example="Swipe down then left">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_menu_title">SandFly मेन्यू</string>
+    <string name="sandfly_tutorial_message">सैम का संदेश: दोपहर 12 बजे लंच करें?</string>
+    <string name="sandfly_tutorial_message_archive">संग्रहित करें</string>
+    <string name="sandfly_tutorial_message_delete">मिटाएं</string>
+    <string name="sandfly_tutorial_message_reply">जवाब दें</string>
+    <string name="sandfly_tutorial_move_intro">स्वाइप करने पर स्क्रीन पर पढ़ने के क्रम में अगले या पिछले आइटम पर जाते हैं.</string>
+    <string name="sandfly_tutorial_move_next">अगले आइटम पर जाने के लिए <xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>. <xliff:g id="item" example="Eggs">%2$s</xliff:g> तक पहुंचने तक ऐसा करते रहें.</string>
+    <string name="sandfly_tutorial_move_previous">पिछले आइटम पर जाने के लिए <xliff:g id="gesture" example="Swipe left">%1$s</xliff:g>. वापस <xliff:g id="item" example="Bread">%2$s</xliff:g> पर जाएं.</string>
+    <string name="sandfly_tutorial_move_title">एक आइटम से दूसरे आइटम पर जाना</string>
+    <string name="sandfly_tutorial_name">नाम</string>
+    <string name="sandfly_tutorial_next_lesson">अगला पाठ: <xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
+    <string name="sandfly_tutorial_no_gesture"><xliff:g id="action" example="Next item">%1$s</xliff:g> के लिए कोई जेस्चर नहीं है. \'निर्देश\' में कोई जेस्चर असाइन करें या \'चरण छोड़ें\' का इस्तेमाल करें.</string>
+    <string name="sandfly_tutorial_not_in_lesson">पाठ में <xliff:g id="action" example="Home">%1$s</xliff:g> नहीं किया जाता. ट्यूटोरियल से बाहर निकलने के लिए, \'विषय-सूची\' में \'ट्यूटोरियल बंद करें\' का इस्तेमाल करें.</string>
+    <string name="sandfly_tutorial_not_in_lesson_short">पाठ में <xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g> नहीं किया जाता.</string>
+    <string name="sandfly_tutorial_pause_intro">किसी आइटम के बीच में बोली रोकी जा सकती है, और जहां रुकी थी वहीं से फिर शुरू की जा सकती है.</string>
+    <string name="sandfly_tutorial_pause_pause">नीचे दी गई कहानी पर जाएं. इसके पढ़े जाने के दौरान, बोली रोकने के लिए <xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g>, और फिर से शुरू करने के लिए दोबारा.</string>
+    <string name="sandfly_tutorial_pause_resume">बोली फिर से शुरू करने के लिए दोबारा <xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_pause_title">बोली रोकना</string>
+    <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: <xliff:g id="action" example="Next item">%2$s</xliff:g></string>
+    <string name="sandfly_tutorial_practice_intro">हर जेस्चर पर उसकी कार्रवाई होने के बजाय, उसका नाम और कार्रवाई बोली जाती है. अगले और पिछले आइटम पर जाना और चालू करना अब भी काम करते हैं.</string>
+    <string name="sandfly_tutorial_practice_step">कोई भी जेस्चर करके सुनें कि वह क्या करता है. बंद करने के लिए, <xliff:g id="button" example="End practice">%1$s</xliff:g> को चालू करें.</string>
+    <string name="sandfly_tutorial_practice_title">जेस्चर का अभ्यास</string>
+    <string name="sandfly_tutorial_progress"><xliff:g id="count" example="4">%2$d</xliff:g> में से <xliff:g id="done" example="2">%1$d</xliff:g>.</string>
+    <string name="sandfly_tutorial_reading_controls_characters">टेक्स्ट पढ़ने से जुड़े कंट्रोल को <xliff:g id="reading_control" example="Characters">%2$s</xliff:g> पर सेट करें. एक वर्ण आगे जाने के लिए <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_reading_controls_intro">टेक्स्ट पढ़ने से जुड़े कंट्रोल तय करते हैं कि ऊपर और नीचे स्वाइप करने पर क्या होगा, जैसे शब्द या वर्ण के हिसाब से आगे बढ़ना या बोलने की स्पीड बदलना. दाएं और बाएं स्वाइप करने पर अब भी एक आइटम से दूसरे आइटम पर जाते हैं.</string>
+    <string name="sandfly_tutorial_reading_controls_move">नीचे दिए गए वाक्य पर जाएं.</string>
+    <string name="sandfly_tutorial_reading_controls_next_word">अगले शब्द पर जाने के लिए <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g>. तीन शब्द आगे जाएं.</string>
+    <string name="sandfly_tutorial_reading_controls_title">टेक्स्ट पढ़ने से जुड़े कंट्रोल</string>
+    <string name="sandfly_tutorial_recipe_1">पैनकेक: आटा, अंडे और दूध मिलाकर चिकना घोल बनाएं.</string>
+    <string name="sandfly_tutorial_recipe_2">फ़्राइंग पैन में थोड़ा मक्खन गर्म करें.</string>
+    <string name="sandfly_tutorial_recipe_3">पैन पर पतली परत फैलाने जितना घोल डालें.</string>
+    <string name="sandfly_tutorial_recipe_4">नीचे की सतह सुनहरी होने पर पैनकेक पलट दें.</string>
+    <string name="sandfly_tutorial_recipe_5">नींबू और चीनी के साथ परोसें.</string>
+    <string name="sandfly_tutorial_scrolling_intro">सूचियां एक बार में अपने कुछ ही आइटम दिखाती हैं. दिखाए गए आखिरी आइटम से आगे स्वाइप करने पर सूची स्क्रोल होती है.</string>
+    <string name="sandfly_tutorial_scrolling_page">एक पेज आगे स्क्रोल करने के लिए <xliff:g id="gesture" example="Swipe right then left">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_scrolling_swipe"><xliff:g id="item" example="Item 15">%2$s</xliff:g> तक पहुंचने तक सूची में <xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_scrolling_title">सूचियां स्क्रोल करना</string>
+    <string name="sandfly_tutorial_sentence">फुर्तीली भूरी लोमड़ी आलसी कुत्ते के ऊपर से कूदती है.</string>
+    <string name="sandfly_tutorial_skip_step">चरण छोड़ें</string>
+    <string name="sandfly_tutorial_sliders_change"><xliff:g id="slider" example="Brightness">%3$s</xliff:g> स्लाइडर पर जाएं. इसकी वैल्यू बदलने के लिए <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> या <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_sliders_highest"><xliff:g id="slider" example="Brightness">%1$s</xliff:g> को 100 प्रतिशत पर सेट करें, जो इसकी सबसे ज़्यादा वैल्यू है.</string>
+    <string name="sandfly_tutorial_sliders_intro">किसी स्लाइडर पर फ़ोकस होने पर, ऊपर और नीचे स्वाइप करने से उसकी वैल्यू बदलती है.</string>
+    <string name="sandfly_tutorial_sliders_title">स्लाइडर</string>
+    <string name="sandfly_tutorial_step"><xliff:g id="count" example="2">%2$d</xliff:g> में से चरण <xliff:g id="number" example="1">%1$d</xliff:g>: <xliff:g id="instruction" example="Swipe right to move to the next item.">%3$s</xliff:g></string>
+    <string name="sandfly_tutorial_story">सैंडफ़्लाई छोटी मक्खियां हैं जो समुद्र तटों पर, नदी किनारों पर और जंगलों में रहती हैं. ये सुबह और शाम के समय सबसे ज़्यादा सक्रिय होती हैं, जब हवा थमी हुई होती है. सिर्फ़ मादाएं काटती हैं, क्योंकि उन्हें अंडे बनाने के लिए खून की ज़रूरत होती है. काटने की खुजली कई दिनों तक रहती है, इसलिए सैंडफ़्लाई वाले इलाकों में जाने वाले लोग कीट भगाने वाली दवा साथ रखते हैं. सैंडफ़्लाई ठीक से उड़ नहीं पातीं, और हल्की हवा भी उन्हें दूर रखती है.</string>
+    <string name="sandfly_tutorial_system_back">वापस जाने के लिए <xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_system_home">होम स्क्रीन पर जाने के लिए <xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_system_intro">ये जेस्चर हर स्क्रीन पर काम करते हैं. इस पाठ में, हर जेस्चर की कार्रवाई होने के बजाय ट्यूटोरियल बताता है कि वह क्या करता है.</string>
+    <string name="sandfly_tutorial_system_notifications">सूचनाएं खोलने के लिए <xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_system_overview">हाल ही में इस्तेमाल किए गए ऐप्लिकेशन दिखाने के लिए <xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_system_title">वापस जाएं, होम और सूचनाएं</string>
+    <string name="sandfly_tutorial_tile_cloud">बादल</string>
+    <string name="sandfly_tutorial_tile_moon">चांद</string>
+    <string name="sandfly_tutorial_tile_star">तारा</string>
+    <string name="sandfly_tutorial_tile_sun">सूरज</string>
+    <string name="sandfly_tutorial_title">SandFly ट्यूटोरियल</string>
+    <string name="sandfly_tutorial_typing_delete">कीबोर्ड की Delete कुंजी से आखिरी अक्षर मिटाएं.</string>
+    <string name="sandfly_tutorial_typing_intro">टेक्स्ट फ़ील्ड चालू करने पर कीबोर्ड खुलता है. कोई कुंजी सुनने के लिए उसे छुएं, और उसे टाइप करने के लिए उंगली हटाएं.</string>
+    <string name="sandfly_tutorial_typing_open"><xliff:g id="field" example="Name">%2$s</xliff:g> फ़ील्ड पर जाएं. टाइप करना शुरू करने के लिए <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_typing_title">टाइपिंग</string>
+    <string name="sandfly_tutorial_typing_type"><xliff:g id="word" example="cat">%1$s</xliff:g> शब्द टाइप करें.</string>
+    <string name="sandfly_tutorial_typing_word">घर</string>
+    <string name="sandfly_tutorial_welcome_intro">यह ट्यूटोरियल SandFly के जेस्चर सिखाता है. हर पाठ एक निर्देश देता है, आपके अपने जेस्चर से उसे पूरा करने तक इंतज़ार करता है, फिर अगला निर्देश देता है. निर्देश, पाठ के नाम के बाद पहला आइटम है. \'विषय-सूची\' में हर पाठ है, और ट्यूटोरियल उसी पाठ पर फिर से खुलता है जिस पर आप थे.</string>
+    <string name="sandfly_tutorial_welcome_start">शुरू करने के लिए स्क्रीन पर कहीं भी <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_welcome_title">स्वागत है</string>
+</resources>

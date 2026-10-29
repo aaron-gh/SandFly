@@ -1068,8 +1068,8 @@
   <string name="checking_notifications_tips">通知の履歴を確認するには、2 本の指で画面の上部から下にスワイプします</string>
   <string name="image_description_playground_title">画像の説明を聞いてみる</string>
   <string name="image_description_playground_content_one">画像にフォーカスを合わせたら、SandFly メニューを開いて [画像の説明] を選択します。\n\n下の写真を例に、説明を取得してみましょう。</string>
-  <string name="image_description_playground_content_two">画像の説明の設定は [SandFly の設定] &gt; [説明の自動読み上げ] でいつでも変更できます。</string>
-  <string name="image_description_playground_content_two_tts">画像の説明の設定は、SandFly の設定、説明の自動読み上げの順に開いていつでも変更できます。</string>
+    <string name="image_description_playground_content_two">画像の説明の設定は [SandFly の設定] &gt; [画像と画面の説明] でいつでも変更できます。</string>
+    <string name="image_description_playground_content_two_tts">画像の説明の設定は、SandFly の設定、画像と画面の説明の順に開いていつでも変更できます。</string>
   <string name="image_description_sample_image_content_description">サンプル画像: 3 本の指でタップして SandFly メニューを開き、[画像の説明] を選択すると、説明が読み上げられます。</string>
   <string name="practice_gestures_title">ジェスチャーの練習</string>
   <string name="practice_keyboard_gestures_title">キーボード ショートカットの練習</string>
@@ -1732,7 +1732,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> をドロップしました。<xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly は項目の詳細をこの順序で読み上げます。順序を変更するには、詳細を長押しして上下にドラッグします。SandFly がオンの場合は、ダブルタップして長押ししてからドラッグします。[上に移動] と [下に移動] の操作も使用できます。</string>
     <string name="title_pref_speak_items_before_scroll">スクロールして表示される前に項目を読み上げる</string>
-    <string name="gemini_error_api_key">Gemini は API キーを受け入れませんでした。自動説明設定でキーを確認してください。</string>
+    <string name="gemini_error_api_key">Gemini は API キーを受け入れませんでした。画像と画面の説明の設定でキーを確認してください。</string>
     <string name="gemini_error_quota">Gemini API キーの使用制限に達しました。後でもう一度試してください。</string>
     <string name="gemini_error_busy">Gemini は現在混み合っています。しばらくしてからもう一度お試しください。</string>
     <string name="gemini_error_timeout">Gemini の応答に時間がかかりすぎました。もう一度お試しください。</string>
@@ -1771,4 +1771,24 @@
     <string name="settings_export_failed">設定をエクスポートできませんでした</string>
     <string name="settings_import_done">設定をインポートしました</string>
     <string name="settings_import_failed">このファイルは SandFly または Backtalk の設定ファイルではないか、読み取れませんでした</string>
+    <string name="sound_mode_needs_access">ミュートをオンまたはオフにするには、サイレント モードへのアクセスを許可してください。</string>
+    <string name="keycombo_menu_category_arrow_key_nav">矢印キー ナビゲーション</string>
+    <string name="arrow_key_nav_toggle">矢印キー ナビゲーションのオン / オフ</string>
+    <string name="arrow_key_nav_on">矢印キー ナビゲーション オン</string>
+    <string name="arrow_key_nav_off">矢印キー ナビゲーション オフ</string>
+    <string name="arrow_key_nav_page_left">左にページ移動</string>
+    <string name="arrow_key_nav_page_right">右にページ移動</string>
+    <string name="arrow_key_nav_assign_instruction">キーを 1 つ、または 2 つ同時に押します。修飾キーは押しても押さなくてもかまいません。Backspace でクリア、Ctrl + Backspace でデフォルトにリセット、Enter で保存、Esc でキャンセルします。</string>
+    <string name="shortcut_next_track">次のトラック</string>
+    <string name="shortcut_previous_track">前のトラック</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>オフ</item>
+        <item>3 秒</item>
+        <item>5 秒</item>
+        <item>10 秒</item>
+        <item>15 秒</item>
+        <item>30 秒</item>
+        <item>1 分</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">無音で自動停止</string>
 </resources>

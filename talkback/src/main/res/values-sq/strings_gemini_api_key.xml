@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Adresa duhet të fillojë me https://. Asgjë nuk u ruajt.</string>
     <string name="dialog_message_ai_service_consent">Imazhet dhe pamjet e ekranit dërgohen te <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> për t’u përshkruar, gjë që zgjat disa sekonda. Zbatohen kushtet dhe politika e privatësisë së vetë shërbimit. IA gjeneruese është eksperimentale, prandaj do të bëjë gabime.</string>
-    <string name="ai_service_error_api_key">Shërbimi i AI nuk e pranoi çelësin API. Kontrolloni cilësimet e tij te Përshkrimet automatike.</string>
+    <string name="ai_service_error_api_key">Shërbimi i AI nuk e pranoi çelësin API. Kontrolloni cilësimet e tij te Përshkrimet e imazheve dhe ekranit.</string>
     <string name="ai_service_error_quota">Është arritur kufiri i përdorimit të shërbimit AI. Provo sërish më vonë.</string>
     <string name="ai_service_error_busy">Shërbimi i AI është i zënë tani. Provo sërish pas një momenti.</string>
     <string name="ai_service_error_timeout">Shërbimit të AI iu desh shumë kohë për t\'u përgjigjur. Provo sërish.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Asnjë</string>
-    <string name="ai_service_not_set_up">Asnjë shërbim AI nuk është në përdorim. Vendosni një ose zgjidhni një te cilësimet e përshkrimeve automatike.</string>
+    <string name="ai_service_not_set_up">Asnjë shërbim AI nuk është në përdorim. Vendosni një ose zgjidhni një te cilësimet e përshkrimeve të imazheve dhe ekranit.</string>
     <string name="ai_provider_none_set_up">Nuk është konfiguruar asnjë shërbim AI. Vendosni një në cilësimet e tij më poshtë.</string>
     <string name="ai_provider_other">Shërbim tjetër</string>
     <string name="title_pref_category_ai_services">Shërbimet e AI</string>

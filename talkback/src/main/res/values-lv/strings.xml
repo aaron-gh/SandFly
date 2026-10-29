@@ -1070,8 +1070,8 @@
   <string name="checking_notifications_tips">Lai pārbaudītu paziņojumu vēsturi, no ekrāna augšdaļas ar diviem pirkstiem velciet lejup.</string>
   <string name="image_description_playground_title">Mēģiniet iegūt attēlu aprakstus</string>
   <string name="image_description_playground_content_one">Kad ir izcelts attēls, atveriet SandFly izvēlni un atlasiet vienumu “Aprakstīt attēlu”.\n\nTālāk ir sniegts viens fotoattēls. Mēģiniet iegūt tā aprakstu.</string>
-  <string name="image_description_playground_content_two">Jebkurā laikā varat mainīt attēla apraksta iestatījumus sadaļā SandFly iestatījumi &gt; Automātiskie apraksti.</string>
-  <string name="image_description_playground_content_two_tts">Jebkurā laikā varat mainīt attēla apraksta iestatījumus sadaļā SandFly iestatījumi un pēc tam — Automātiskie apraksti.</string>
+    <string name="image_description_playground_content_two">Jebkurā laikā varat mainīt attēla apraksta iestatījumus sadaļā SandFly iestatījumi &gt; Attēlu un ekrāna apraksti.</string>
+    <string name="image_description_playground_content_two_tts">Jebkurā laikā varat mainīt attēla apraksta iestatījumus sadaļā SandFly iestatījumi un pēc tam — Attēlu un ekrāna apraksti.</string>
   <string name="image_description_sample_image_content_description">Attēla paraugs; pieskarieties ar trim pirkstiem, lai atvērtu SandFly izvēlni, un atlasiet vienumu “Aprakstīt attēlu”, lai klausītos aprakstu.</string>
   <string name="practice_gestures_title">Žestu izmēģināšana</string>
   <string name="practice_keyboard_gestures_title">Trenēties izmantot īsinājumtaustiņus</string>
@@ -1740,7 +1740,7 @@
     <string name="template_item_details_order_dropped">Nomests: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly nosauc vienuma informāciju šādā secībā. Lai to mainītu, pieskarieties informācijas daļai un turiet, pēc tam velciet to uz augšu vai uz leju. Kad SandFly ir ieslēgts, veiciet dubultskārienu un turiet, pēc tam velciet. Varat izmantot arī darbības “Pārvietot uz augšu” un “Pārvietot uz leju”.</string>
     <string name="title_pref_speak_items_before_scroll">Izrunāt vienumus, pirms tie tiek ritināti skatā</string>
-    <string name="gemini_error_api_key">Gemini nepieņēma API atslēgu. Pārbaudiet atslēgu sadaļā Automātiskie apraksti.</string>
+    <string name="gemini_error_api_key">Gemini nepieņēma API atslēgu. Pārbaudiet atslēgu sadaļā Attēlu un ekrāna apraksti.</string>
     <string name="gemini_error_quota">Ir sasniegts jūsu Gemini API atslēgas lietošanas ierobežojums. Vēlāk mēģiniet vēlreiz.</string>
     <string name="gemini_error_busy">Gemini šobrīd ir aizņemts. Pēc brīža mēģiniet vēlreiz.</string>
     <string name="gemini_error_timeout">Gemini pārāk ilgi neatbildēja. Mēģiniet vēlreiz.</string>
@@ -1779,4 +1779,24 @@
     <string name="settings_export_failed">Iestatījumus nevarēja eksportēt</string>
     <string name="settings_import_done">Iestatījumi importēti</string>
     <string name="settings_import_failed">Šis fails nav SandFly vai Backtalk iestatījumu fails, vai arī to nevarēja nolasīt</string>
+    <string name="sound_mode_needs_access">Atļaujiet piekļuvi režīmam “Netraucēt”, lai ieslēgtu vai izslēgtu režīmu “Bez skaņas”.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigācija ar bulttaustiņiem</string>
+    <string name="arrow_key_nav_toggle">Ieslēgt vai izslēgt navigāciju ar bulttaustiņiem</string>
+    <string name="arrow_key_nav_on">Navigācija ar bulttaustiņiem ieslēgta</string>
+    <string name="arrow_key_nav_off">Navigācija ar bulttaustiņiem izslēgta</string>
+    <string name="arrow_key_nav_page_left">Lapa pa kreisi</string>
+    <string name="arrow_key_nav_page_right">Lapa pa labi</string>
+    <string name="arrow_key_nav_assign_instruction">Nospiediet taustiņu vai divus taustiņus vienlaikus, ar modificētājtaustiņiem vai bez tiem. Nospiediet Backspace, lai notīrītu, Ctrl + Backspace, lai atiestatītu noklusējumu, Enter, lai saglabātu, vai Escape, lai atceltu.</string>
+    <string name="shortcut_next_track">Nākamais ieraksts</string>
+    <string name="shortcut_previous_track">Iepriekšējais ieraksts</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Izslēgta</item>
+        <item>3 sekundes</item>
+        <item>5 sekundes</item>
+        <item>10 sekundes</item>
+        <item>15 sekundes</item>
+        <item>30 sekundes</item>
+        <item>1 minūte</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Automātiska apturēšana pēc klusuma</string>
 </resources>

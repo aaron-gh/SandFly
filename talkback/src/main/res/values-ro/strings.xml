@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Pentru a consulta istoricul notificărilor, glisează în jos cu două degete din partea de sus a ecranului</string>
   <string name="image_description_playground_title">Încearcă să obții descrieri ale imaginilor</string>
   <string name="image_description_playground_content_one">Când focalizezi pe o imagine, deschide meniul SandFly și selectează Descrie imaginea.\n\nMai jos este o fotografie. Solicită o descriere a acesteia.</string>
-  <string name="image_description_playground_content_two">Puteți modifica oricând setările pentru descrierea imaginilor în Setări SandFly &gt; Descrieri automate.</string>
-  <string name="image_description_playground_content_two_tts">Puteți modifica oricând setările pentru descrierea imaginii în setările SandFly, apoi în Descrieri automate.</string>
+    <string name="image_description_playground_content_two">Puteți modifica oricând setările pentru descrierea imaginilor în Setări SandFly &gt; Descrieri de imagini și ecran.</string>
+    <string name="image_description_playground_content_two_tts">Puteți modifica oricând setările pentru descrierea imaginii în setările SandFly, apoi în Descrieri de imagini și ecran.</string>
   <string name="image_description_sample_image_content_description">Imagine de testare; atinge cu trei degete pentru a deschide meniul SandFly și selectează Descrie imaginea ca să auzi o descriere.</string>
   <string name="practice_gestures_title">Exersarea gesturilor</string>
   <string name="practice_keyboard_gestures_title">Exersează comenzi rapide de la tastatură</string>
@@ -1739,7 +1739,7 @@
     <string name="template_item_details_order_dropped">Plasat: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly spune detaliile unui articol în această ordine. Pentru a-l schimba, atingeți lung un detaliu, apoi trageți-l în sus sau în jos. Cu SandFly activat, atingeți de două ori și mențineți apăsat, apoi trageți. De asemenea, puteți utiliza acțiunile Mutare în sus și Mutare în jos.</string>
     <string name="title_pref_speak_items_before_scroll">Rostește elementele înainte să fie derulate în vizualizare</string>
-    <string name="gemini_error_api_key">Gemini nu a acceptat cheia API. Verificați cheia în setările descrierilor automate.</string>
+    <string name="gemini_error_api_key">Gemini nu a acceptat cheia API. Verificați cheia în setările Descrieri de imagini și ecran.</string>
     <string name="gemini_error_quota">Limita de utilizare pentru cheia dvs. API Gemini a fost atinsă. Încercați din nou mai târziu.</string>
     <string name="gemini_error_busy">Gemini este ocupat acum. Încercați din nou peste un moment.</string>
     <string name="gemini_error_timeout">Gemini a durat prea mult să răspundă. Încearcă din nou.</string>
@@ -1778,4 +1778,24 @@
     <string name="settings_export_failed">Setările nu au putut fi exportate</string>
     <string name="settings_import_done">Setări importate</string>
     <string name="settings_import_failed">Acest fișier nu este un fișier de setări SandFly sau Backtalk sau nu a putut fi citit</string>
+    <string name="sound_mode_needs_access">Permiteți accesul la Nu deranja pentru a activa sau dezactiva modul Silențios.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigare cu săgeți</string>
+    <string name="arrow_key_nav_toggle">Activează sau dezactivează navigarea cu săgeți</string>
+    <string name="arrow_key_nav_on">Navigare cu săgeți activată</string>
+    <string name="arrow_key_nav_off">Navigare cu săgeți dezactivată</string>
+    <string name="arrow_key_nav_page_left">Pagina la stânga</string>
+    <string name="arrow_key_nav_page_right">Pagina la dreapta</string>
+    <string name="arrow_key_nav_assign_instruction">Apăsați o tastă sau două taste împreună, cu sau fără taste de modificare. Apăsați Backspace pentru a șterge, Ctrl + Backspace pentru a reveni la valoarea prestabilită, Enter pentru a salva sau Escape pentru a anula.</string>
+    <string name="shortcut_next_track">Piesa următoare</string>
+    <string name="shortcut_previous_track">Piesa anterioară</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Dezactivată</item>
+        <item>3 secunde</item>
+        <item>5 secunde</item>
+        <item>10 secunde</item>
+        <item>15 secunde</item>
+        <item>30 de secunde</item>
+        <item>1 minut</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Oprire automată după liniște</string>
 </resources>

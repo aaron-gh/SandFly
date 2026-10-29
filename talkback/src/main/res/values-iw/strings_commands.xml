@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">הוספת מקשי חיצים</string>
+    <string name="command_add_gesture">הוספת תנועה</string>
+    <string name="command_choose_arrow_keys">בחירת מקשי חיצים</string>
+    <string name="command_choose_gesture">בחירת תנועה</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">תנועות</string>
+    <string name="command_keyboard_shortcut">מקש קיצור</string>
+    <string name="command_no_arrow_keys">אין מקשי חיצים</string>
+    <string name="command_no_gestures">אין תנועות</string>
+    <string name="command_remove_arrow_keys">הסרת מקשי החיצים</string>
+    <string name="command_remove_gesture">הסרת התנועה</string>
+    <string name="command_replace">החלפה</string>
+    <string name="command_replace_gesture">התנועה \"<xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>\" מפעילה את \"<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>\". להשתמש בה במקום זאת עבור \"<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>\"?</string>
+    <string name="commands_category_activation">הפעלה</string>
+    <string name="commands_category_media">מדיה ועוצמת קול</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">גלילה</string>
+    <string name="commands_category_speech">דיבור</string>
+    <string name="commands_category_tables">טבלאות</string>
+    <string name="commands_category_web">אינטרנט</string>
+    <string name="item_list_current">נוכחיים</string>
+    <string name="item_list_not_in_reading_controls">לא בכפתורי ההקראה</string>
+    <string name="item_list_not_in_sandfly_menu">לא בתפריט SandFly</string>
+    <string name="item_list_options">אפשרויות</string>
+    <string name="sounds_category_sounds">צלילים</string>
+    <string name="sounds_category_vibration">רטט</string>
+    <string name="speech_category_languages">שפות</string>
+    <string name="speech_category_other_apps">אפליקציות אחרות</string>
+    <string name="speech_category_pronunciation">הגייה</string>
+    <string name="speech_category_stopping">עצירת הדיבור</string>
+    <string name="speech_category_voice">קול</string>
+    <string name="title_pref_audio_output">פלט אודיו</string>
+    <string name="title_pref_backup">גיבוי ושחזור</string>
+    <string name="title_pref_braille">ברייל</string>
+    <string name="title_pref_commands">פקודות</string>
+    <string name="title_pref_display">תצוגה</string>
+    <string name="title_pref_image_and_screen_descriptions">תיאורי תמונות ומסך</string>
+    <string name="title_pref_pause">השהיה והשבתה</string>
+    <string name="title_pref_quick_settings_screen">הגדרות מהירות</string>
+    <string name="title_pref_speech">דיבור</string>
+    <string name="title_pref_speech_stream_control">בקרת עוצמת הקול של הדיבור</string>
+    <string name="title_pref_touch">מגע</string>
+    <string name="title_pref_typing">הקלדה</string>
+    <string name="title_pref_updates">עדכונים והתקנה</string>
+    <string name="title_pref_volume_keys">מקשי עוצמת הקול</string>
+    <string name="typing_category_other_input">דרכים אחרות להקליד</string>
+    <string name="verbosity_category_announcements">הודעות</string>
+    <string name="verbosity_category_items">פריטים</string>
+    <string name="verbosity_category_text">טקסט וסמלים</string>
+</resources>

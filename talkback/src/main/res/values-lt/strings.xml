@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Jei norite patikrinti pranešimų istoriją, perbraukite žemyn dviem pirštais nuo ekrano viršaus</string>
   <string name="image_description_playground_title">Pabandykite gauti vaizdų aprašus</string>
   <string name="image_description_playground_content_one">Suaktyvinę vaizdą, atidarykite „SandFly“ meniu ir pasirinkite „Apibūdinti vaizdą“.\n\nToliau pateikta viena nuotrauka. Pabandykite gauti jos aprašą.</string>
-  <string name="image_description_playground_content_two">Vaizdo aprašymo nustatymus galite bet kada pakeisti skiltyje SandFly nustatymai &gt; Automatiniai aprašai.</string>
-  <string name="image_description_playground_content_two_tts">Vaizdų aprašų nustatymus galite bet kada pakeisti skiltyje „SandFly“ nustatymai, tada – Automatiniai aprašai.</string>
+    <string name="image_description_playground_content_two">Vaizdo aprašymo nustatymus galite bet kada pakeisti skiltyje SandFly nustatymai &gt; Vaizdų ir ekrano aprašai.</string>
+    <string name="image_description_playground_content_two_tts">Vaizdų aprašų nustatymus galite bet kada pakeisti skiltyje „SandFly“ nustatymai, tada – Vaizdų ir ekrano aprašai.</string>
   <string name="image_description_sample_image_content_description">Bandomasis vaizdas; palieskite trimis pirštais, kad atidarytumėte „SandFly“ meniu, ir pasirinkite „Apibūdinti vaizdą“, kad išgirstumėte aprašą.</string>
   <string name="practice_gestures_title">Gestų mokymasis</string>
   <string name="practice_keyboard_gestures_title">Sparčiųjų klavišų naudojimo praktika</string>
@@ -1743,7 +1743,7 @@
     <string name="template_item_details_order_dropped">Paleista: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly elemento informaciją sako šia tvarka. Norėdami ją pakeisti, palieskite ir palaikykite informacijos dalį, tada vilkite ją aukštyn arba žemyn. Kai SandFly įjungtas, dukart bakstelėkite ir palaikykite, tada vilkite. Taip pat galite naudoti veiksmus „Perkelti aukštyn“ ir „Perkelti žemyn“.</string>
     <string name="title_pref_speak_items_before_scroll">Ištarti elementus, kol jie dar neslinkti į rodinį</string>
-    <string name="gemini_error_api_key">Gemini nepriėmė API rakto. Patikrinkite raktą automatinių aprašų nustatymuose.</string>
+    <string name="gemini_error_api_key">Gemini nepriėmė API rakto. Patikrinkite raktą vaizdų ir ekrano aprašų nustatymuose.</string>
     <string name="gemini_error_quota">Pasiektas jūsų Gemini API rakto naudojimo limitas. Vėliau bandykite dar kartą.</string>
     <string name="gemini_error_busy">Gemini šiuo metu yra užimtas. Po akimirkos bandykite dar kartą.</string>
     <string name="gemini_error_timeout">Gemini užtruko per ilgai atsakyti. Bandykite dar kartą.</string>
@@ -1782,4 +1782,24 @@
     <string name="settings_export_failed">Nepavyko eksportuoti nustatymų</string>
     <string name="settings_import_done">Nustatymai importuoti</string>
     <string name="settings_import_failed">Šis failas nėra SandFly arba Backtalk nustatymų failas arba jo negalima nuskaityti</string>
+    <string name="sound_mode_needs_access">Leiskite prieigą prie režimo „Netrukdyti“, kad galėtumėte įjungti arba išjungti režimą „Begarsis“.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Naršymas rodyklių klavišais</string>
+    <string name="arrow_key_nav_toggle">Įjungti arba išjungti naršymą rodyklių klavišais</string>
+    <string name="arrow_key_nav_on">Naršymas rodyklių klavišais įjungtas</string>
+    <string name="arrow_key_nav_off">Naršymas rodyklių klavišais išjungtas</string>
+    <string name="arrow_key_nav_page_left">Puslapis kairėn</string>
+    <string name="arrow_key_nav_page_right">Puslapis dešinėn</string>
+    <string name="arrow_key_nav_assign_instruction">Paspauskite klavišą arba du klavišus kartu, su modifikavimo klavišais arba be jų. Paspauskite Backspace, kad išvalytumėte, Ctrl + Backspace, kad atkurtumėte numatytuosius, Enter, kad išsaugotumėte, arba Escape, kad atšauktumėte.</string>
+    <string name="shortcut_next_track">Kitas takelis</string>
+    <string name="shortcut_previous_track">Ankstesnis takelis</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Išjungta</item>
+        <item>3 sekundės</item>
+        <item>5 sekundės</item>
+        <item>10 sekundžių</item>
+        <item>15 sekundžių</item>
+        <item>30 sekundžių</item>
+        <item>1 minutė</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Automatinis sustabdymas po tylos</string>
 </resources>

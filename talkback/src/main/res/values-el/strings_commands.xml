@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Προσθήκη πλήκτρων βέλους</string>
+    <string name="command_add_gesture">Προσθήκη κίνησης</string>
+    <string name="command_choose_arrow_keys">Επιλογή πλήκτρων βέλους</string>
+    <string name="command_choose_gesture">Επιλογή κίνησης</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Κινήσεις</string>
+    <string name="command_keyboard_shortcut">Συντόμευση πληκτρολογίου</string>
+    <string name="command_no_arrow_keys">Χωρίς πλήκτρα βέλους</string>
+    <string name="command_no_gestures">Χωρίς κινήσεις</string>
+    <string name="command_remove_arrow_keys">Κατάργηση πλήκτρων βέλους</string>
+    <string name="command_remove_gesture">Κατάργηση κίνησης</string>
+    <string name="command_replace">Αντικατάσταση</string>
+    <string name="command_replace_gesture">Η κίνηση <xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> εκτελεί την εντολή «<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>». Να χρησιμοποιηθεί για την εντολή «<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>»;</string>
+    <string name="commands_category_activation">Ενεργοποίηση</string>
+    <string name="commands_category_media">Πολυμέσα και ένταση</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Κύλιση</string>
+    <string name="commands_category_speech">Ομιλία</string>
+    <string name="commands_category_tables">Πίνακες</string>
+    <string name="commands_category_web">Ιστός</string>
+    <string name="item_list_current">Τρέχοντα</string>
+    <string name="item_list_not_in_reading_controls">Εκτός στοιχείων ελέγχου ανάγνωσης</string>
+    <string name="item_list_not_in_sandfly_menu">Εκτός μενού SandFly</string>
+    <string name="item_list_options">Επιλογές</string>
+    <string name="sounds_category_sounds">Ήχοι</string>
+    <string name="sounds_category_vibration">Δόνηση</string>
+    <string name="speech_category_languages">Γλώσσες</string>
+    <string name="speech_category_other_apps">Άλλες εφαρμογές</string>
+    <string name="speech_category_pronunciation">Προφορά</string>
+    <string name="speech_category_stopping">Διακοπή ομιλίας</string>
+    <string name="speech_category_voice">Φωνή</string>
+    <string name="title_pref_audio_output">Έξοδος ήχου</string>
+    <string name="title_pref_backup">Αντίγραφο ασφαλείας και επαναφορά</string>
+    <string name="title_pref_braille">Μπράιγ</string>
+    <string name="title_pref_commands">Εντολές</string>
+    <string name="title_pref_display">Οθόνη</string>
+    <string name="title_pref_image_and_screen_descriptions">Περιγραφές εικόνας και οθόνης</string>
+    <string name="title_pref_pause">Παύση και απενεργοποίηση</string>
+    <string name="title_pref_quick_settings_screen">Γρήγορες ρυθμίσεις</string>
+    <string name="title_pref_speech">Ομιλία</string>
+    <string name="title_pref_speech_stream_control">Έλεγχος έντασης για την ομιλία</string>
+    <string name="title_pref_touch">Αφή</string>
+    <string name="title_pref_typing">Πληκτρολόγηση</string>
+    <string name="title_pref_updates">Ενημερώσεις και εγκατάσταση</string>
+    <string name="title_pref_volume_keys">Πλήκτρα έντασης</string>
+    <string name="typing_category_other_input">Άλλοι τρόποι πληκτρολόγησης</string>
+    <string name="verbosity_category_announcements">Ανακοινώσεις</string>
+    <string name="verbosity_category_items">Στοιχεία</string>
+    <string name="verbosity_category_text">Κείμενο και σύμβολα</string>
+</resources>

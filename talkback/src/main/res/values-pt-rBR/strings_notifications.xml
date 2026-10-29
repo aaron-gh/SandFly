@@ -39,7 +39,7 @@
     <string name="notification_voice_title">Voz</string>
     <string name="notification_voice_sandfly">Voz do SandFly</string>
     <string name="notification_detect_language_title">Detectar idioma</string>
-    <string name="notification_detect_language_summary">Fala cada notificação no idioma em que ela está escrita. Requer “Alternar idioma automaticamente” em Conversão de texto em voz.</string>
+    <string name="notification_detect_language_summary">Fala cada notificação no idioma em que ela está escrita. Requer “Alternar idioma automaticamente” nas configurações de Fala.</string>
     <string name="notification_sound_before_title">Som antes das notificações</string>
     <string name="notification_category_text">Texto</string>
     <string name="notification_remove_emoji_title">Omitir emojis</string>
@@ -326,34 +326,42 @@
     <plurals name="notification_seconds">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> segundo</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> segundos</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> segundos</item>
     </plurals>
     <plurals name="notification_minutes">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuto</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> minutos</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> minutos</item>
     </plurals>
     <plurals name="notification_hours">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> hora</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> horas</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> horas</item>
     </plurals>
     <plurals name="notification_words">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> palavra</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> palavras</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> palavras</item>
     </plurals>
     <plurals name="notification_sentences">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> frase</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> sentenças</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> sentenças</item>
     </plurals>
     <plurals name="notification_characters">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> caractere de texto</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> caracteres de texto</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> caracteres de texto</item>
     </plurals>
     <plurals name="notification_digits">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> dígito</item>
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> dígitos</item>
+        <item quantity="many"><xliff:g id="count" example="5">%d</xliff:g> dígitos</item>
     </plurals>
     <plurals name="notification_summary_count">
         <item quantity="one">Você tem <xliff:g id="count" example="1">%d</xliff:g> notificação.</item>
         <item quantity="other">Você tem <xliff:g id="count" example="5">%d</xliff:g> notificações.</item>
+        <item quantity="many">Você tem <xliff:g id="count" example="5">%d</xliff:g> notificações.</item>
     </plurals>
     <string-array name="notification_url_entries">
         <item>@string/notification_url_full</item>

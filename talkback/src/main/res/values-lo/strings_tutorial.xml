@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_tutorial_actions_archive">ໄປທີ່ຂໍ້ຄວາມ. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> ຫຼື <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> ເພື່ອໄລ່ເບິ່ງການດຳເນີນການຂອງມັນ. <xliff:g id="gesture" example="Double-tap">%3$s</xliff:g> ເພື່ອດຳເນີນການທີ່ທ່ານໄດ້ຍິນ. ດຳເນີນການ <xliff:g id="action" example="Archive">%4$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_actions_intro">ບາງລາຍການມີການດຳເນີນການອື່ນນອກຈາກການເປີດນຳໃຊ້ ເຊັ່ນ: ເກັບໄວ້ ຫຼື ລຶບ ສຳລັບຂໍ້ຄວາມ. ໃນຂະນະທີ່ລາຍການດັ່ງກ່າວມີໂຟກັສ, ຕົວຄວບຄຸມການອ່ານ “ການດຳເນີນການ” ຈະໄລ່ຜ່ານພວກມັນ.</string>
+    <string name="sandfly_tutorial_actions_title">ການດຳເນີນການ</string>
+    <string name="sandfly_tutorial_activate_button">ໄປທີ່ <xliff:g id="button" example="Ring the bell">%2$s</xliff:g>. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> ເພື່ອເປີດນຳໃຊ້ມັນ.</string>
+    <string name="sandfly_tutorial_activate_check_box">ໝາຍ <xliff:g id="check_box" example="Extra cheese">%1$s</xliff:g> ດ້ວຍວິທີດຽວກັນ.</string>
+    <string name="sandfly_tutorial_activate_hold">ບາງລາຍການເຮັດສິ່ງອື່ນເມື່ອກົດຄ້າງໄວ້. ໄປທີ່ <xliff:g id="button" example="Details">%2$s</xliff:g>. <xliff:g id="gesture" example="Double-tap and hold">%1$s</xliff:g> ເພື່ອກົດຄ້າງໄວ້.</string>
+    <string name="sandfly_tutorial_activate_intro">ການເປີດນຳໃຊ້ມີຜົນກັບລາຍການທີ່ມີໂຟກັສ ບໍ່ວ່າທ່ານຈະແຕະບ່ອນໃດຂອງໜ້າຈໍ.</string>
+    <string name="sandfly_tutorial_activate_title">ການເປີດນຳໃຊ້ລາຍການ</string>
+    <string name="sandfly_tutorial_back_in_lesson">ກັບຄືນບໍ່ອອກຈາກບົດຮຽນ. ເພື່ອເລືອກບົດຮຽນອື່ນ, ໃຊ້ “ສາລະບານ”.</string>
+    <string name="sandfly_tutorial_bell">ກົດກະດິ່ງ</string>
+    <string name="sandfly_tutorial_bell_rung">ຈຳນວນເທື່ອທີ່ກົດກະດິ່ງ: <xliff:g id="count" example="1">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_brightness">ຄວາມສະຫວ່າງ</string>
+    <string name="sandfly_tutorial_chapter_basics">ພື້ນຖານ</string>
+    <string name="sandfly_tutorial_chapter_controls">ຕົວຄວບຄຸມ ແລະ ຂໍ້ຄວາມ</string>
+    <string name="sandfly_tutorial_chapter_getting_around">ການເຄື່ອນທີ່</string>
+    <string name="sandfly_tutorial_chapter_practice">ຝຶກຊ້ອມ</string>
+    <string name="sandfly_tutorial_chapter_reading">ການອ່ານ</string>
+    <string name="sandfly_tutorial_choose_reading_control"><xliff:g id="gesture" example="Swipe down then up">%1$s</xliff:g> ຫຼື <xliff:g id="gesture" example="Swipe up then down">%2$s</xliff:g> ເພື່ອປ່ຽນຕົວຄວບຄຸມການອ່ານ. ເລືອກ <xliff:g id="reading_control" example="Words">%3$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_close">ປິດບົດສອນ</string>
+    <string name="sandfly_tutorial_commands_copy"><xliff:g id="gesture" example="Triple-tap with 3 fingers">%1$s</xliff:g> ເພື່ອສຳເນົາຂໍ້ຄວາມຫຼ້າສຸດທີ່ SandFly ເວົ້າໄປໃສ່ຄລິບບອດ.</string>
+    <string name="sandfly_tutorial_commands_intro">ຄຳສັ່ງເຫຼົ່ານີ້ໃຊ້ໄດ້ໃນທຸກໜ້າຈໍ.</string>
+    <string name="sandfly_tutorial_commands_search"><xliff:g id="gesture" example="Swipe left then down">%1$s</xliff:g> ເພື່ອຊອກຫາຂໍ້ຄວາມໃນໜ້າຈໍ. ໃນບົດຮຽນນີ້, ບົດສອນຈະບອກວ່າມັນເຮັດຫຍັງແທນການເຮັດແທ້.</string>
+    <string name="sandfly_tutorial_commands_speech_off"><xliff:g id="gesture" example="Double-tap with 3 fingers">%1$s</xliff:g> ເພື່ອປິດສຽງເວົ້າ, ແລະ ເຮັດອີກຄັ້ງເພື່ອເປີດ. ໃນບົດຮຽນນີ້, ບົດສອນຈະບອກວ່າມັນເຮັດຫຍັງແທນການເຮັດແທ້.</string>
+    <string name="sandfly_tutorial_commands_status"><xliff:g id="gesture" example="Triple-tap with 2 fingers">%1$s</xliff:g> ເພື່ອຟັງເວລາ, ລະດັບແບັດເຕີຣີ ແລະ ສະຖານະອື່ນໆ.</string>
+    <string name="sandfly_tutorial_commands_title">ຄຳສັ່ງທີ່ເປັນປະໂຫຍດ</string>
+    <string name="sandfly_tutorial_contents">ສາລະບານ</string>
+    <string name="sandfly_tutorial_contents_intro">ບົດຮຽນຕາມລຳດັບ. ເປີດແຕ່ລະບົດແຍກກັນໄດ້.</string>
+    <string name="sandfly_tutorial_continuous_intro">SandFly ອ່ານຈາກລາຍການທີ່ໂຟກັສໄປຈົນຮອດທ້າຍໜ້າຈໍໄດ້ໂດຍບໍ່ຕ້ອງປັດ. ການແຕະໜ້າຈໍຈະຢຸດການອ່ານ.</string>
+    <string name="sandfly_tutorial_continuous_move">ໄປທີ່ແຖວທຳອິດຂອງສູດອາຫານ.</string>
+    <string name="sandfly_tutorial_continuous_read"><xliff:g id="gesture" example="Swipe down then right">%1$s</xliff:g> ເພື່ອອ່ານຈາກລາຍການທີ່ໂຟກັສ.</string>
+    <string name="sandfly_tutorial_continuous_read_from_menu"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> ເພື່ອເປີດເມນູ SandFly, ແລ້ວເລືອກ <xliff:g id="command" example="Read from focused item">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_continuous_title">ການອ່ານຕໍ່ເນື່ອງ</string>
+    <string name="sandfly_tutorial_details">ລາຍລະອຽດ</string>
+    <string name="sandfly_tutorial_details_shown">ໂຕະສຳລັບ 2 ຄົນ ເວລາ 19:00, ຢູ່ຂ້າງປ່ອງຢ້ຽມ.</string>
+    <string name="sandfly_tutorial_done">ແລ້ວໆ</string>
+    <string name="sandfly_tutorial_end_practice">ຈົບການຝຶກຊ້ອມ</string>
+    <string name="sandfly_tutorial_explore_activate">ແຕະ “ດາວ” ແລ້ວຍົກນິ້ວຂຶ້ນ. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> ບ່ອນໃດກໍໄດ້ເພື່ອເປີດນຳໃຊ້ມັນ.</string>
+    <string name="sandfly_tutorial_explore_find">ເລື່ອນນິ້ວດຽວໄປທົ່ວໜ້າຈໍ ແລະ ຊອກຫາສີ່ຫຼ່ຽມທັງສີ່: ຕາເວັນ, ເດືອນ, ດາວ ແລະ ເມກ.</string>
+    <string name="sandfly_tutorial_explore_intro">ການແຕະໜ້າຈໍຈະເວົ້າລາຍການທີ່ຢູ່ກ້ອງນິ້ວຂອງທ່ານ. ການແຕະລາຍການບໍ່ໄດ້ເປີດນຳໃຊ້ມັນ.</string>
+    <string name="sandfly_tutorial_explore_title">ການສຳຫຼວດໂດຍການສຳຜັດ</string>
+    <string name="sandfly_tutorial_extra_cheese">ເພີ່ມຊີສ</string>
+    <string name="sandfly_tutorial_finish">ຈົບບົດສອນ</string>
+    <string name="sandfly_tutorial_forecast_today">ມື້ນີ້</string>
+    <string name="sandfly_tutorial_forecast_today_text">ແດດອອກ ແລະ ອົບອຸ່ນ, ມີລົມອ່ອນໆ.</string>
+    <string name="sandfly_tutorial_forecast_tomorrow">ມື້ອື່ນ</string>
+    <string name="sandfly_tutorial_forecast_tomorrow_text">ມີເມກໃນຕອນເຊົ້າ, ມີຝົນຕັ້ງແຕ່ທ່ຽງ.</string>
+    <string name="sandfly_tutorial_forecast_weekend">ທ້າຍອາທິດ</string>
+    <string name="sandfly_tutorial_forecast_weekend_text">ລົມແຮງໃນວັນເສົາ, ທ້ອງຟ້າແຈ່ມໃສໃນວັນອາທິດ.</string>
+    <string name="sandfly_tutorial_headings_intro">ໜ້າຈໍ ແລະ ໜ້າເວັບແບ່ງເນື້ອຫາດ້ວຍຫົວຂໍ້. ຕົວຄວບຄຸມການອ່ານ “ຫົວຂໍ້” ຈະຂ້າມຈາກຫົວຂໍ້ໜຶ່ງໄປຫາຫົວຂໍ້ຕໍ່ໄປ.</string>
+    <string name="sandfly_tutorial_headings_jump"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> ເພື່ອຂ້າມໄປຫາຫົວຂໍ້ຕໍ່ໄປ. ຂ້າມໄປທີ່ <xliff:g id="heading" example="Weekend">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_headings_title">ຫົວຂໍ້</string>
+    <string name="sandfly_tutorial_item_apples">ໝາກແອັບເປີ້ນ</string>
+    <string name="sandfly_tutorial_item_bread">ເຂົ້າຈີ່</string>
+    <string name="sandfly_tutorial_item_cheese">ຊີສ</string>
+    <string name="sandfly_tutorial_item_dates">ໝາກອິນທະຜາລຳ</string>
+    <string name="sandfly_tutorial_item_eggs">ໄຂ່</string>
+    <string name="sandfly_tutorial_lesson_complete">ຈົບບົດຮຽນແລ້ວ.</string>
+    <string name="sandfly_tutorial_lesson_complete_last">ຈົບບົດຮຽນແລ້ວ. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> ເພື່ອຈົບບົດສອນ.</string>
+    <string name="sandfly_tutorial_lesson_complete_next">ຈົບບົດຮຽນແລ້ວ. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> ເພື່ອເລີ່ມບົດຮຽນຕໍ່ໄປ.</string>
+    <string name="sandfly_tutorial_lesson_heading"><xliff:g id="lesson" example="Moving between items">%1$s</xliff:g>, ບົດຮຽນທີ <xliff:g id="number" example="3">%2$d</xliff:g> ຈາກ <xliff:g id="count" example="17">%3$d</xliff:g></string>
+    <string name="sandfly_tutorial_list_item">ລາຍການ <xliff:g id="number" example="15">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_menu_close"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> ເພື່ອປິດເມນູ.</string>
+    <string name="sandfly_tutorial_menu_intro">ເມນູ SandFly ມີຄຳສັ່ງສຳລັບລາຍການທີ່ໂຟກັສ ແລະ ໜ້າຈໍປັດຈຸບັນ.</string>
+    <string name="sandfly_tutorial_menu_open"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> ເພື່ອເປີດເມນູ SandFly. ປັດໄລ່ຜ່ານຄຳສັ່ງຂອງມັນ. <xliff:g id="gesture" example="Swipe down then left">%2$s</xliff:g> ຈະປິດເມນູ.</string>
+    <string name="sandfly_tutorial_menu_title">ເມນູ SandFly</string>
+    <string name="sandfly_tutorial_message">ຂໍ້ຄວາມຈາກ Sam: ກິນເຂົ້າສວຍຕອນທ່ຽງບໍ?</string>
+    <string name="sandfly_tutorial_message_archive">ເກັບໄວ້</string>
+    <string name="sandfly_tutorial_message_delete">ລຶບ</string>
+    <string name="sandfly_tutorial_message_reply">ຕອບກັບ</string>
+    <string name="sandfly_tutorial_move_intro">ການປັດຈະຍ້າຍໄປຫາລາຍການຕໍ່ໄປ ຫຼື ກ່ອນໜ້າໃນໜ້າຈໍ ຕາມລຳດັບການອ່ານ.</string>
+    <string name="sandfly_tutorial_move_next"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> ເພື່ອຍ້າຍໄປຫາລາຍການຕໍ່ໄປ. ສືບຕໍ່ຈົນກວ່າຈະຮອດ <xliff:g id="item" example="Eggs">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_move_previous"><xliff:g id="gesture" example="Swipe left">%1$s</xliff:g> ເພື່ອຍ້າຍໄປຫາລາຍການກ່ອນໜ້າ. ກັບໄປທີ່ <xliff:g id="item" example="Bread">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_move_title">ການຍ້າຍລະຫວ່າງລາຍການ</string>
+    <string name="sandfly_tutorial_name">ຊື່</string>
+    <string name="sandfly_tutorial_next_lesson">ບົດຮຽນຕໍ່ໄປ: <xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
+    <string name="sandfly_tutorial_no_gesture"><xliff:g id="action" example="Next item">%1$s</xliff:g> ບໍ່ມີທ່າທາງ. ກຳນົດໄດ້ໃນ “ຄໍາສັ່ງ”, ຫຼື ໃຊ້ “ຂ້າມຂັ້ນຕອນ”.</string>
+    <string name="sandfly_tutorial_not_in_lesson"><xliff:g id="action" example="Home">%1$s</xliff:g> ບໍ່ເຮັດວຽກໃນບົດຮຽນ. ເພື່ອອອກຈາກບົດສອນ, ໃຊ້ “ປິດບົດສອນ” ໃນ “ສາລະບານ”.</string>
+    <string name="sandfly_tutorial_not_in_lesson_short"><xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g> ບໍ່ເຮັດວຽກໃນບົດຮຽນ.</string>
+    <string name="sandfly_tutorial_pause_intro">ສາມາດຢຸດສຽງເວົ້າຊົ່ວຄາວລະຫວ່າງລາຍການ ແລະ ສືບຕໍ່ຈາກບ່ອນທີ່ມັນຢຸດໄດ້.</string>
+    <string name="sandfly_tutorial_pause_pause">ໄປທີ່ເລື່ອງຂ້າງລຸ່ມ. <xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> ໃນຂະນະທີ່ມັນກຳລັງອ່ານເພື່ອຢຸດສຽງເວົ້າຊົ່ວຄາວ, ແລະ ເຮັດອີກຄັ້ງເພື່ອສືບຕໍ່.</string>
+    <string name="sandfly_tutorial_pause_resume"><xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> ອີກຄັ້ງເພື່ອສືບຕໍ່ສຽງເວົ້າ.</string>
+    <string name="sandfly_tutorial_pause_title">ການຢຸດສຽງເວົ້າຊົ່ວຄາວ</string>
+    <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: <xliff:g id="action" example="Next item">%2$s</xliff:g></string>
+    <string name="sandfly_tutorial_practice_intro">ແຕ່ລະທ່າທາງຈະບອກຊື່ ແລະ ການດຳເນີນການຂອງມັນແທນການເຮັດແທ້. ການຍ້າຍໄປຫາລາຍການຕໍ່ໄປ ແລະ ກ່ອນໜ້າ ແລະ ການເປີດນຳໃຊ້ຍັງໃຊ້ໄດ້.</string>
+    <string name="sandfly_tutorial_practice_step">ເຮັດທ່າທາງໃດກໍໄດ້ເພື່ອຟັງວ່າມັນເຮັດຫຍັງ. ເພື່ອຢຸດ, ເປີດນຳໃຊ້ <xliff:g id="button" example="End practice">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_practice_title">ຝຶກຊ້ອມທ່າທາງ</string>
+    <string name="sandfly_tutorial_progress"><xliff:g id="done" example="2">%1$d</xliff:g> ຈາກ <xliff:g id="count" example="4">%2$d</xliff:g>.</string>
+    <string name="sandfly_tutorial_reading_controls_characters">ປ່ຽນຕົວຄວບຄຸມການອ່ານເປັນ <xliff:g id="reading_control" example="Characters">%2$s</xliff:g>. <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> ເພື່ອຍ້າຍເທື່ອລະຕົວອັກສອນ.</string>
+    <string name="sandfly_tutorial_reading_controls_intro">ຕົວຄວບຄຸມການອ່ານກຳນົດວ່າການປັດຂຶ້ນ ແລະ ລົງຈະເຮັດຫຍັງ ເຊັ່ນ: ຍ້າຍເທື່ອລະຄຳສັບ ຫຼື ເທື່ອລະຕົວອັກສອນ, ຫຼື ປ່ຽນອັດຕາການເວົ້າ. ການປັດໄປທາງຂວາ ແລະ ຊ້າຍຍັງຍ້າຍລະຫວ່າງລາຍການຄືເກົ່າ.</string>
+    <string name="sandfly_tutorial_reading_controls_move">ໄປທີ່ປະໂຫຍກຂ້າງລຸ່ມ.</string>
+    <string name="sandfly_tutorial_reading_controls_next_word"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> ເພື່ອຍ້າຍໄປຫາຄຳສັບຕໍ່ໄປ. ຍ້າຍໄປສາມຄຳສັບ.</string>
+    <string name="sandfly_tutorial_reading_controls_title">ຕົວຄວບຄຸມການອ່ານ</string>
+    <string name="sandfly_tutorial_recipe_1">ແພນເຄັກ: ປະສົມແປ້ງ, ໄຂ່ ແລະ ນົມໃຫ້ເປັນແປ້ງທີ່ລຽບນຽນ.</string>
+    <string name="sandfly_tutorial_recipe_2">ຂົ້ວເບີໜ້ອຍໜຶ່ງໃນໝໍ້ຂົ້ວໃຫ້ຮ້ອນ.</string>
+    <string name="sandfly_tutorial_recipe_3">ຖອກແປ້ງລົງພໍໃຫ້ປົກໝໍ້ຂົ້ວເປັນຊັ້ນບາງໆ.</string>
+    <string name="sandfly_tutorial_recipe_4">ປີ້ນແພນເຄັກເມື່ອດ້ານລຸ່ມເປັນສີເຫຼືອງທອງ.</string>
+    <string name="sandfly_tutorial_recipe_5">ເສີບກັບໝາກນາວ ແລະ ນ້ຳຕານ.</string>
+    <string name="sandfly_tutorial_scrolling_intro">ລາຍຊື່ສະແດງລາຍການພຽງບາງສ່ວນໃນແຕ່ລະເທື່ອ. ການປັດຜ່ານລາຍການສຸດທ້າຍທີ່ສະແດງຢູ່ຈະເລື່ອນລາຍຊື່.</string>
+    <string name="sandfly_tutorial_scrolling_page"><xliff:g id="gesture" example="Swipe right then left">%1$s</xliff:g> ເພື່ອເລື່ອນໄປໜ້າໜຶ່ງໜ້າ.</string>
+    <string name="sandfly_tutorial_scrolling_swipe"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> ຜ່ານລາຍຊື່ຈົນກວ່າຈະຮອດ <xliff:g id="item" example="Item 15">%2$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_scrolling_title">ການເລື່ອນລາຍຊື່</string>
+    <string name="sandfly_tutorial_sentence">ໝາຈອກສີນ້ຳຕານທີ່ວ່ອງໄວກະໂດດຂ້າມໝາທີ່ຂີ້ຄ້ານ.</string>
+    <string name="sandfly_tutorial_skip_step">ຂ້າມຂັ້ນຕອນ</string>
+    <string name="sandfly_tutorial_sliders_change">ໄປທີ່ແຖບເລື່ອນ <xliff:g id="slider" example="Brightness">%3$s</xliff:g>. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> ຫຼື <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> ເພື່ອປ່ຽນຄ່າຂອງມັນ.</string>
+    <string name="sandfly_tutorial_sliders_highest">ຕັ້ງ <xliff:g id="slider" example="Brightness">%1$s</xliff:g> ເປັນ 100 ເປີເຊັນ, ເຊິ່ງເປັນຄ່າສູງສຸດ.</string>
+    <string name="sandfly_tutorial_sliders_intro">ເມື່ອແຖບເລື່ອນມີໂຟກັສ, ການປັດຂຶ້ນ ແລະ ລົງຈະປ່ຽນຄ່າຂອງມັນ.</string>
+    <string name="sandfly_tutorial_sliders_title">ແຖບເລື່ອນ</string>
+    <string name="sandfly_tutorial_step">ຂັ້ນຕອນທີ <xliff:g id="number" example="1">%1$d</xliff:g> ຈາກ <xliff:g id="count" example="2">%2$d</xliff:g>: <xliff:g id="instruction" example="Swipe right to move to the next item.">%3$s</xliff:g></string>
+    <string name="sandfly_tutorial_story">ແມງຫວີ່ຊາຍແມ່ນແມງວັນນ້ອຍໆທີ່ອາໄສຢູ່ຕາມຫາດຊາຍ, ຕາມແຄມແມ່ນ້ຳ ແລະ ໃນປ່າ. ພວກມັນເຄື່ອນໄຫວຫຼາຍທີ່ສຸດໃນຕອນເຊົ້າມືດ ແລະ ຕອນແລງ, ເມື່ອບໍ່ມີລົມ. ມີແຕ່ໂຕແມ່ເທົ່ານັ້ນທີ່ກັດ, ເພາະພວກມັນຕ້ອງການເລືອດເພື່ອສ້າງໄຂ່. ຮອຍກັດຈະຄັນຫຼາຍມື້, ສະນັ້ນຄົນທີ່ໄປຢ້ຽມຢາມເຂດທີ່ມີແມງຫວີ່ຊາຍຈຶ່ງພົກຢາກັນແມງໄມ້ໄປນຳ. ແມງຫວີ່ຊາຍບິນບໍ່ເກັ່ງ, ແມ່ນແຕ່ລົມອ່ອນໆກໍເຮັດໃຫ້ພວກມັນບໍ່ເຂົ້າໃກ້.</string>
+    <string name="sandfly_tutorial_system_back"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> ເພື່ອກັບຄືນ.</string>
+    <string name="sandfly_tutorial_system_home"><xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g> ເພື່ອໄປທີ່ໜ້າຈໍຫຼັກ.</string>
+    <string name="sandfly_tutorial_system_intro">ທ່າທາງເຫຼົ່ານີ້ໃຊ້ໄດ້ໃນທຸກໜ້າຈໍ. ໃນບົດຮຽນນີ້, ບົດສອນຈະບອກວ່າແຕ່ລະທ່າເຮັດຫຍັງແທນການເຮັດແທ້.</string>
+    <string name="sandfly_tutorial_system_notifications"><xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g> ເພື່ອເປີດການແຈ້ງເຕືອນ.</string>
+    <string name="sandfly_tutorial_system_overview"><xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g> ເພື່ອສະແດງແອັບຯຫຼ້າສຸດ.</string>
+    <string name="sandfly_tutorial_system_title">ກັບຄືນ, ໜ້າຫຼັກ ແລະ ການແຈ້ງເຕືອນ</string>
+    <string name="sandfly_tutorial_tile_cloud">ເມກ</string>
+    <string name="sandfly_tutorial_tile_moon">ເດືອນ</string>
+    <string name="sandfly_tutorial_tile_star">ດາວ</string>
+    <string name="sandfly_tutorial_tile_sun">ຕາເວັນ</string>
+    <string name="sandfly_tutorial_title">ບົດສອນການນຳໃຊ້ SandFly</string>
+    <string name="sandfly_tutorial_typing_delete">ລຶບຕົວອັກສອນສຸດທ້າຍດ້ວຍປຸ່ມລຶບຂອງແປ້ນພິມ.</string>
+    <string name="sandfly_tutorial_typing_intro">ການເປີດນຳໃຊ້ຊ່ອງຂໍ້ຄວາມຈະເປີດແປ້ນພິມ. ແຕະປຸ່ມເພື່ອຟັງມັນ, ແລະ ຍົກນິ້ວຂຶ້ນເພື່ອພິມມັນ.</string>
+    <string name="sandfly_tutorial_typing_open">ໄປທີ່ຊ່ອງ <xliff:g id="field" example="Name">%2$s</xliff:g>. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> ເພື່ອເລີ່ມພິມ.</string>
+    <string name="sandfly_tutorial_typing_title">ການພິມ</string>
+    <string name="sandfly_tutorial_typing_type">ພິມຄຳວ່າ <xliff:g id="word" example="cat">%1$s</xliff:g>.</string>
+    <string name="sandfly_tutorial_typing_word">ແມວ</string>
+    <string name="sandfly_tutorial_welcome_intro">ບົດສອນນີ້ສອນທ່າທາງຂອງ SandFly. ແຕ່ລະບົດຮຽນຈະໃຫ້ຄຳແນະນຳ, ລໍຖ້າຈົນກວ່າທ່ານເຮັດຕາມດ້ວຍທ່າທາງຂອງທ່ານເອງ, ແລ້ວຈຶ່ງໃຫ້ຄຳແນະນຳຕໍ່ໄປ. ຄຳແນະນຳແມ່ນລາຍການທຳອິດຫຼັງຈາກຊື່ຂອງບົດຮຽນ. “ສາລະບານ” ສະແດງທຸກບົດຮຽນ, ແລະ ບົດສອນຈະເປີດຄືນທີ່ບົດຮຽນທີ່ທ່ານຮຽນຢູ່.</string>
+    <string name="sandfly_tutorial_welcome_start"><xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> ບ່ອນໃດກໍໄດ້ໃນໜ້າຈໍເພື່ອເລີ່ມ.</string>
+    <string name="sandfly_tutorial_welcome_title">ຍິນດີຕ້ອນຮັບ</string>
+</resources>

@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Per consultar l\'historial de notificacions, llisca cap avall amb 2 dits des de la part superior de la pantalla</string>
   <string name="image_description_playground_title">Prova d\'obtenir descripcions d\'imatges</string>
   <string name="image_description_playground_content_one">Quan posis el focus en una imatge, obre el menú de SandFly i selecciona Descriu la imatge.\n\nHi ha una foto més avall. Prova d\'obtenir-ne una descripció.</string>
-  <string name="image_description_playground_content_two">Pots canviar la configuració de descripcions d\'imatges en qualsevol moment a la configuració de SandFly &gt; Descripcions automàtiques.</string>
-  <string name="image_description_playground_content_two_tts">Pots canviar la configuració de descripcions d\'imatges en qualsevol moment a la configuració de SandFly i, a continuació, a Descripcions automàtiques.</string>
+    <string name="image_description_playground_content_two">Pots canviar la configuració de descripcions d\'imatges en qualsevol moment a la configuració de SandFly &gt; Descripcions d\'imatges i pantalla.</string>
+    <string name="image_description_playground_content_two_tts">Pots canviar la configuració de descripcions d\'imatges en qualsevol moment a la configuració de SandFly i, a continuació, a Descripcions d\'imatges i pantalla.</string>
   <string name="image_description_sample_image_content_description">Imatge de prova; toca amb 3 dits per obrir el menú de SandFly i selecciona Descriu la imatge per escoltar una descripció.</string>
   <string name="practice_gestures_title">Practica els gestos</string>
   <string name="practice_keyboard_gestures_title">Practica les tecles de drecera</string>
@@ -1551,7 +1551,7 @@
     <string name="template_item_details_order_dropped">S\'ha deixat anar <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly enuncia els detalls d\'un element en aquest ordre. Per canviar-lo, mantén premut un detall i arrossega\'l cap amunt o cap avall. Amb SandFly activat, fes doble toc, mantén premut i arrossega. També pots utilitzar les accions Mou amunt i Mou avall.</string>
     <string name="title_pref_speak_items_before_scroll">Enuncia els elements abans que es desplacin a la vista</string>
-    <string name="gemini_error_api_key">Gemini no ha acceptat la clau d\'API. Comprova la clau a la configuració de Descripcions automàtiques.</string>
+    <string name="gemini_error_api_key">Gemini no ha acceptat la clau d\'API. Comprova la clau a la configuració de Descripcions d\'imatges i pantalla.</string>
     <string name="gemini_error_quota">S\'ha arribat al límit d\'ús de la clau d\'API de Gemini. Torna-ho a provar més tard.</string>
     <string name="gemini_error_busy">Ara mateix Gemini està ocupat. Torna-ho a provar d\'aquí a un moment.</string>
     <string name="gemini_error_timeout">Gemini ha tardat massa a respondre. Torna-ho a provar.</string>
@@ -1778,4 +1778,24 @@
     <string name="settings_export_failed">No s\'ha pogut exportar la configuració</string>
     <string name="settings_import_done">S\'ha importat la configuració</string>
     <string name="settings_import_failed">Aquest fitxer no és un fitxer de configuració SandFly o Backtalk o no es pot llegir</string>
+    <string name="sound_mode_needs_access">Permet l\'accés a No molestis per activar o desactivar el mode Silenci.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navegació amb les tecles de fletxa</string>
+    <string name="arrow_key_nav_toggle">Activa/desactiva navegació amb fletxes</string>
+    <string name="arrow_key_nav_on">Navegació amb les tecles de fletxa activada</string>
+    <string name="arrow_key_nav_off">Navegació amb les tecles de fletxa desactivada</string>
+    <string name="arrow_key_nav_page_left">Pàgina a l\'esquerra</string>
+    <string name="arrow_key_nav_page_right">Pàgina a la dreta</string>
+    <string name="arrow_key_nav_assign_instruction">Prem una tecla o dues tecles alhora, amb tecles modificadores o sense. Prem Retrocés per esborrar, Ctrl + Retrocés per restablir el valor predeterminat, Retorn per desar o Esc per cancel·lar.</string>
+    <string name="shortcut_next_track">Pista següent</string>
+    <string name="shortcut_previous_track">Pista anterior</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Desactivat</item>
+        <item>3 segons</item>
+        <item>5 segons</item>
+        <item>10 segons</item>
+        <item>15 segons</item>
+        <item>30 segons</item>
+        <item>1 minut</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Aturada automàtica després d\'un silenci</string>
 </resources>

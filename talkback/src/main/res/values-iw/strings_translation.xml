@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">תרגום אוטומטי</string>
+    <string name="title_pref_translation_auto_service">שירות התרגום האוטומטי</string>
+    <string name="title_pref_translation_copy">העתקת תרגומים ללוח</string>
+    <string name="title_pref_translation_download_all">הורדת כל השפות</string>
+    <string name="title_pref_translation_languages">שפות במכשיר</string>
+    <string name="title_pref_translation_notifications">תרגום התראות</string>
+    <string name="title_pref_translation_region">אזור</string>
+    <string name="title_pref_translation_say_source">אמירת שפת המקור</string>
+    <string name="title_pref_translation_second_target">תרגום טקסט שכבר בשפת היעד אל</string>
+    <string name="title_pref_translation_service">שירות התרגום</string>
+    <string name="title_pref_translation_source">תרגום משפה</string>
+    <string name="title_pref_translation_swap">החלפת השפות</string>
+    <string name="title_pref_translation_target">תרגום לשפה</string>
+    <string name="title_pref_translation_target_voice">שימוש בקול של שפת היעד</string>
+    <string name="title_pref_translation_untranslated">שפות שלא מתורגמות</string>
+    <string name="title_pref_translation_wifi_only">הורדת שפות רק ב-Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">תרגום האמירה האחרונה</string>
+    <string name="translation_address_hint">כתובת, למשל https://libretranslate.com</string>
+    <string name="translation_address_message">הכתובת של שרת LibreTranslate, למשל https://libretranslate.com. שרתים שאינם שלך עשויים לדרוש מפתח API.</string>
+    <string name="translation_all_downloaded">כל השפות הורדו</string>
+    <string name="translation_already_in">כבר ב<xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">תרגום אוטומטי <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">דיבור</string>
+    <string name="translation_detect">זיהוי שפה</string>
+    <string name="translation_device_language">שפת המכשיר (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one">שפה אחת (<xliff:g id="count" example="3">%1$d</xliff:g>) לא הורדה</item>
+        <item quantity="two"><xliff:g id="count" example="3">%1$d</xliff:g> שפות לא הורדו</item>
+        <item quantity="many"><xliff:g id="count" example="3">%1$d</xliff:g> שפות לא הורדו</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> שפות לא הורדו</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one">שפה אחת (<xliff:g id="count" example="57">%1$d</xliff:g>), בערך <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="two"><xliff:g id="count" example="57">%1$d</xliff:g> שפות, בערך <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="many"><xliff:g id="count" example="57">%1$d</xliff:g> שפות, בערך <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> שפות, בערך <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">מתבצעת הורדה, <xliff:g id="done" example="12">%1$d</xliff:g> מתוך <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">עצירה</string>
+    <string name="translation_download_all_stop_title">לעצור את הורדת השפות?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> הורדה</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> לא הורדה</string>
+    <string name="translation_download_message">בערך 30MB.</string>
+    <string name="translation_download_title">להוריד את <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">מתבצעת הורדה של <xliff:g id="languages" example="German and English">%1$s</xliff:g> לתרגום במכשיר</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> לא הצליח לתרגם את הטקסט.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> לא קיבל את מפתח ה-API.</string>
+    <string name="translation_error_connection">אין גישה אל <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> לא הצליח לתרגם את הטקסט: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">זיהוי השפה בהורדה. כדאי לנסות שוב בעוד רגע.</string>
+    <string name="translation_error_download">לא ניתן היה להוריד את השפות לתרגום במכשיר.</string>
+    <string name="translation_error_downloading">השפות לתרגום במכשיר עדיין בהורדה</string>
+    <string name="translation_error_language">תרגום <xliff:g id="service" example="On-device">%1$s</xliff:g> לא תומך ב<xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">צריך להזין את הכתובת של <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> בהגדרות \"תרגום\".</string>
+    <string name="translation_error_no_key">צריך להזין את מפתח ה-API של <xliff:g id="service" example="DeepL">%1$s</xliff:g> בהגדרות \"תרגום\".</string>
+    <string name="translation_error_not_detected">השפה לא זוהתה</string>
+    <string name="translation_error_quota">הגעת למגבלת השימוש של <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">מ<xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">מדביקים את מפתח ה-API של <xliff:g id="service" example="DeepL">%1$s</xliff:g>. כדי להסיר אותו, מנקים את השדה ושומרים. טקסט שמתרגמים נשלח אל <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, הורדה</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, בהורדה</string>
+    <string name="translation_languages_summary">הורדו: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">אין מה לתרגם</string>
+    <string name="translation_region_global">גלובלי</string>
+    <string name="translation_region_message">האזור של משאב Translator שלך ב-Azure, למשל westeurope. משאירים ריק למשאב גלובלי.</string>
+    <string name="translation_second_none">לא לתרגם</string>
+    <string name="translation_service_ai">שירות AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, לא מוגדר</string>
+    <string name="translation_service_on_device">במכשיר</string>
+    <string name="translation_swapped">מ<xliff:g id="source" example="German">%1$s</xliff:g> ל<xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">תרגום</string>
+    <string name="translation_untranslated_none">ללא</string>
+</resources>

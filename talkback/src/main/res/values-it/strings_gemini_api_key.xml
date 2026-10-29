@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Modello</string>
     <string name="ai_service_address_invalid">L\'indirizzo deve iniziare con https://. Non è stato salvato nulla.</string>
     <string name="dialog_message_ai_service_consent">Immagini e screenshot vengono inviati a <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> per essere descritti, il che richiede diversi secondi. Si applicano i suoi termini e la sua politica sulla privacy. L’intelligenza artificiale generativa è sperimentale, quindi commetterà errori.</string>
-    <string name="ai_service_error_api_key">Il servizio AI non ha accettato la chiave API. Controlla le sue impostazioni in Descrizioni automatiche.</string>
+    <string name="ai_service_error_api_key">Il servizio AI non ha accettato la chiave API. Controlla le sue impostazioni in Descrizioni di immagini e schermo.</string>
     <string name="ai_service_error_quota">È stato raggiunto il limite di utilizzo del servizio AI. Riprova più tardi.</string>
     <string name="ai_service_error_busy">Il servizio AI è occupato in questo momento. Riprova tra un attimo.</string>
     <string name="ai_service_error_timeout">Il servizio AI ha impiegato troppo tempo per rispondere. Riprova.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Nessuno</string>
-    <string name="ai_service_not_set_up">Nessun servizio AI è in uso. Configurane uno o scegline uno nelle Impostazioni descrizioni automatiche.</string>
+    <string name="ai_service_not_set_up">Nessun servizio AI è in uso. Configurane uno o scegline uno nelle impostazioni Descrizioni di immagini e schermo.</string>
     <string name="ai_provider_none_set_up">Nessun servizio AI è impostato. Configurane uno nelle relative impostazioni di seguito.</string>
     <string name="ai_provider_other">Altro servizio</string>
     <string name="title_pref_category_ai_services">Servizi di intelligenza artificiale</string>

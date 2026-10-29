@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Da provjerite historiju obavještenja, prevucite s vrha ekrana nadolje s 2 prsta</string>
   <string name="image_description_playground_title">Pokušajte preuzeti opise slika</string>
   <string name="image_description_playground_content_one">Kada fokusirate sliku, otvorite meni SandFlya i odaberite \"Opiši sliku\".\n\nJedna slika se nalazi u nastavku. Pokušajte dobiti njen opis.</string>
-  <string name="image_description_playground_content_two">Postavke za opise slika možete promijeniti bilo kada u Postavkama SandFlya &gt; Automatski opisi.</string>
-  <string name="image_description_playground_content_two_tts">Postavke za opise slika možete promijeniti bilo kada u Postavkama SandFlya, a zatim Automatski opisi.</string>
+    <string name="image_description_playground_content_two">Postavke za opise slika možete promijeniti bilo kada u Postavkama SandFlya &gt; Opisi slika i ekrana.</string>
+    <string name="image_description_playground_content_two_tts">Postavke za opise slika možete promijeniti bilo kada u Postavkama SandFlya, a zatim Opisi slika i ekrana.</string>
   <string name="image_description_sample_image_content_description">Slika primjera; otvaranje menija SandFlya dodirom s 3 prsta i odabir \"Opiši sliku\" radi slušanja opisa.</string>
   <string name="practice_gestures_title">Vježbanje pokreta</string>
   <string name="practice_keyboard_gestures_title">Vježbajte prečice na tastaturi</string>
@@ -1551,7 +1551,7 @@
     <string name="template_item_details_order_dropped">Spušteno: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly izgovara detalje stavke ovim redoslijedom. Da ga promijenite, dodirnite i zadržite detalj, a zatim ga prevucite nagore ili nadolje. Kada je SandFly uključen, dvaput dodirnite i zadržite, a zatim prevucite. Možete koristiti i radnje Pomjeri nagore i Pomjeri nadolje.</string>
     <string name="title_pref_speak_items_before_scroll">Izgovaraj stavke prije nego što se pomaknu u prikaz</string>
-    <string name="gemini_error_api_key">Gemini nije prihvatio API ključ. Provjerite ključ u postavkama Automatskih opisa.</string>
+    <string name="gemini_error_api_key">Gemini nije prihvatio API ključ. Provjerite ključ u postavkama Opisi slika i ekrana.</string>
     <string name="gemini_error_quota">Dostignuto je ograničenje korištenja za vaš Gemini API ključ. Pokušajte ponovo kasnije.</string>
     <string name="gemini_error_busy">Gemini je trenutno zauzet. Pokušajte ponovo za trenutak.</string>
     <string name="gemini_error_timeout">Gemini je predugo odgovarao. Pokušajte ponovo.</string>
@@ -1778,4 +1778,24 @@
     <string name="settings_export_failed">Postavke nije moguće izvesti</string>
     <string name="settings_import_done">Postavke su uvezene</string>
     <string name="settings_import_failed">Ovaj fajl nije datoteka postavki SandFly ili Backtalk ili se ne može pročitati</string>
+    <string name="sound_mode_needs_access">Dozvolite pristup načinu rada Ne ometaj za uključivanje i isključivanje nečujnog načina.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigacija strelicama</string>
+    <string name="arrow_key_nav_toggle">Uključi ili isključi navigaciju strelicama</string>
+    <string name="arrow_key_nav_on">Navigacija strelicama uključena</string>
+    <string name="arrow_key_nav_off">Navigacija strelicama isključena</string>
+    <string name="arrow_key_nav_page_left">Stranica ulijevo</string>
+    <string name="arrow_key_nav_page_right">Stranica udesno</string>
+    <string name="arrow_key_nav_assign_instruction">Pritisnite tipku ili dvije tipke zajedno, s modifikatorskim tipkama ili bez njih. Pritisnite Backspace za brisanje, Ctrl + Backspace za vraćanje zadane vrijednosti, Enter za čuvanje ili Escape za otkazivanje.</string>
+    <string name="shortcut_next_track">Sljedeća pjesma</string>
+    <string name="shortcut_previous_track">Prethodna pjesma</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Isključeno</item>
+        <item>3 sekunde</item>
+        <item>5 sekundi</item>
+        <item>10 sekundi</item>
+        <item>15 sekundi</item>
+        <item>30 sekundi</item>
+        <item>1 minuta</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Automatsko zaustavljanje nakon tišine</string>
 </resources>

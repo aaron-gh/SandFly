@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Stryg nedad fra toppen af skærmen med 2 fingre for at se din notifikationshistorik</string>
   <string name="image_description_playground_title">Prøv at hente billedbeskrivelser</string>
   <string name="image_description_playground_content_one">Når du fokuserer på et billede, kan du åbne SandFly-menuen og vælge \"Beskriv billedet\".\n\nDer er ét billede nedenfor. Prøv at få en beskrivelse af det.</string>
-  <string name="image_description_playground_content_two">Du kan til enhver tid ændre indstillingerne for billedbeskrivelser under SandFly-indstillinger &gt; Automatiske beskrivelser.</string>
-  <string name="image_description_playground_content_two_tts">Du kan til enhver tid ændre indstillingerne for billedbeskrivelser under SandFly-indstillinger efterfulgt af Automatiske beskrivelser.</string>
+    <string name="image_description_playground_content_two">Du kan til enhver tid ændre indstillingerne for billedbeskrivelser under SandFly-indstillinger &gt; Billed- og skærmbeskrivelser.</string>
+    <string name="image_description_playground_content_two_tts">Du kan til enhver tid ændre indstillingerne for billedbeskrivelser under SandFly-indstillinger efterfulgt af Billed- og skærmbeskrivelser.</string>
   <string name="image_description_sample_image_content_description">Eksempelbillede. Tryk med 3 fingre for at åbne SandFly-menuen, og vælg \"Beskriv billedet\" for at høre en beskrivelse.</string>
   <string name="practice_gestures_title">Afprøv bevægelser</string>
   <string name="practice_keyboard_gestures_title">Øv dig på tastaturgenveje</string>
@@ -1550,7 +1550,7 @@
     <string name="template_item_details_order_dropped">Har sluppet <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly siger et elements detaljer i denne rækkefølge. Hvis du vil ændre den, skal du holde fingeren på en detalje og derefter trække den op eller ned. Når SandFly er aktiveret, skal du trykke to gange og holde og derefter trække. Du kan også bruge handlingerne Flyt op og Flyt ned.</string>
     <string name="title_pref_speak_items_before_scroll">Oplæs elementer, før de rulles frem på skærmen</string>
-    <string name="gemini_error_api_key">Gemini accepterede ikke API-nøglen. Tjek nøglen i indstillingerne for Automatiske beskrivelser.</string>
+    <string name="gemini_error_api_key">Gemini accepterede ikke API-nøglen. Tjek nøglen i indstillingerne for Billed- og skærmbeskrivelser.</string>
     <string name="gemini_error_quota">Forbrugsgrænsen for din Gemini API-nøgle er nået. Prøv igen senere.</string>
     <string name="gemini_error_busy">Gemini er optaget lige nu. Prøv igen om et øjeblik.</string>
     <string name="gemini_error_timeout">Gemini var for længe om at svare. Prøv igen.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Indstillinger kunne ikke eksporteres</string>
     <string name="settings_import_done">Indstillinger importeret</string>
     <string name="settings_import_failed">Denne fil er ikke en SandFly- eller Backtalk-indstillingsfil, eller den kunne ikke læses</string>
+    <string name="sound_mode_needs_access">Giv adgang til Forstyr ikke for at slå Lydløs til eller fra.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigation med piletaster</string>
+    <string name="arrow_key_nav_toggle">Slå navigation med piletaster til eller fra</string>
+    <string name="arrow_key_nav_on">Navigation med piletaster til</string>
+    <string name="arrow_key_nav_off">Navigation med piletaster fra</string>
+    <string name="arrow_key_nav_page_left">Side til venstre</string>
+    <string name="arrow_key_nav_page_right">Side til højre</string>
+    <string name="arrow_key_nav_assign_instruction">Tryk på en tast eller to taster samtidig, med eller uden ændringstaster. Tryk på Backspace for at rydde, Ctrl + Backspace for at nulstille til standard, Enter for at gemme eller Escape for at annullere.</string>
+    <string name="shortcut_next_track">Næste nummer</string>
+    <string name="shortcut_previous_track">Forrige nummer</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Fra</item>
+        <item>3 sekunder</item>
+        <item>5 sekunder</item>
+        <item>10 sekunder</item>
+        <item>15 sekunder</item>
+        <item>30 sekunder</item>
+        <item>1 minut</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Automatisk stop efter stilhed</string>
 </resources>

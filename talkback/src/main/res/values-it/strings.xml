@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Per controllare la cronologia delle notifiche, scorri verso il basso con 2 dita dalla parte superiore dello schermo</string>
   <string name="image_description_playground_title">Prova a chiedere le descrizioni delle immagini</string>
   <string name="image_description_playground_content_one">Quando selezioni un\'immagine, apri il menu di SandFly e seleziona \"Descrivi immagine\".\n\nDi seguito è mostrata una foto. Prova a chiedere una descrizione.</string>
-  <string name="image_description_playground_content_two">Puoi modificare le impostazioni della descrizione delle immagini in qualsiasi momento in Impostazioni di SandFly &gt; Descrizioni automatiche.</string>
-  <string name="image_description_playground_content_two_tts">Puoi modificare le impostazioni della descrizione delle immagini in qualsiasi momento in Impostazioni di SandFly, poi Descrizioni automatiche.</string>
+    <string name="image_description_playground_content_two">Puoi modificare le impostazioni della descrizione delle immagini in qualsiasi momento in Impostazioni di SandFly &gt; Descrizioni di immagini e schermo.</string>
+    <string name="image_description_playground_content_two_tts">Puoi modificare le impostazioni della descrizione delle immagini in qualsiasi momento in Impostazioni di SandFly, poi Descrizioni di immagini e schermo.</string>
   <string name="image_description_sample_image_content_description">Immagine di esempio; tocca con 3 dita per aprire il menu di SandFly e seleziona \"Descrivi immagine\" per ascoltare una descrizione.</string>
   <string name="practice_gestures_title">Esercitati con i gesti</string>
   <string name="practice_keyboard_gestures_title">Prova le scorciatoie da tastiera</string>
@@ -1458,6 +1458,7 @@
     <plurals name="notification_list_group_count">
         <item quantity="one">%d notifica</item>
         <item quantity="other">%d notifiche</item>
+        <item quantity="many">%d notifiche</item>
     </plurals>
     <string name="title_pref_quick_settings">Utilizza le impostazioni rapide di SandFly</string>
     <string name="title_pref_quick_settings_items">Pannello delle impostazioni rapide</string>
@@ -1508,10 +1509,12 @@
     <plurals name="quick_settings_seconds">
         <item quantity="one">%d secondo</item>
         <item quantity="other">%d secondi</item>
+        <item quantity="many">%d secondi</item>
     </plurals>
     <plurals name="quick_settings_minutes">
         <item quantity="one">%d minuto</item>
         <item quantity="other">%d minuti</item>
+        <item quantity="many">%d minuti</item>
     </plurals>
     <string name="quick_settings_connected">Connesso</string>
     <string name="quick_settings_battery">Batteria</string>
@@ -1538,6 +1541,7 @@
     <plurals name="quick_settings_others_moved">
         <item quantity="one">%d altro elemento spostato</item>
         <item quantity="other">%d altri elementi spostati</item>
+        <item quantity="many">%d altri elementi spostati</item>
     </plurals>
     <string name="quick_settings_remove">Rimuovi</string>
     <string name="quick_settings_added">%1$s aggiunto</string>
@@ -1735,7 +1739,7 @@
     <string name="template_item_details_order_dropped">Rilasciato: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly legge i dettagli di un elemento in quest\'ordine. Per modificarlo, tocca e tieni premuto un dettaglio, quindi trascinalo verso l\'alto o verso il basso. Con SandFly attivo, tocca due volte e tieni premuto, quindi trascina. Puoi anche utilizzare le azioni Sposta su e Sposta giù.</string>
     <string name="title_pref_speak_items_before_scroll">Pronuncia gli elementi prima che compaiano scorrendo</string>
-    <string name="gemini_error_api_key">Gemini non ha accettato la chiave API. Controlla la chiave in Impostazioni descrizioni automatiche.</string>
+    <string name="gemini_error_api_key">Gemini non ha accettato la chiave API. Controlla la chiave nelle impostazioni Descrizioni di immagini e schermo.</string>
     <string name="gemini_error_quota">È stato raggiunto il limite di utilizzo per la tua chiave API Gemini. Riprova più tardi.</string>
     <string name="gemini_error_busy">Gemini è occupato in questo momento. Riprova tra un attimo.</string>
     <string name="gemini_error_timeout">Gemini ha impiegato troppo tempo per rispondere. Riprova.</string>
@@ -1774,4 +1778,24 @@
     <string name="settings_export_failed">Impossibile esportare le impostazioni</string>
     <string name="settings_import_done">Impostazioni importate</string>
     <string name="settings_import_failed">Questo file non è un file di impostazioni SandFly o Backtalk oppure non può essere letto</string>
+    <string name="sound_mode_needs_access">Consenti l\'accesso a Non disturbare per attivare o disattivare Silenzioso.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigazione con i tasti freccia</string>
+    <string name="arrow_key_nav_toggle">Attiva/disattiva navigazione con frecce</string>
+    <string name="arrow_key_nav_on">Navigazione con i tasti freccia attivata</string>
+    <string name="arrow_key_nav_off">Navigazione con i tasti freccia disattivata</string>
+    <string name="arrow_key_nav_page_left">Pagina a sinistra</string>
+    <string name="arrow_key_nav_page_right">Pagina a destra</string>
+    <string name="arrow_key_nav_assign_instruction">Premi un tasto o due tasti insieme, con o senza tasti modificatori. Premi Backspace per cancellare, Ctrl + Backspace per ripristinare il valore predefinito, Invio per salvare o Esc per annullare.</string>
+    <string name="shortcut_next_track">Brano successivo</string>
+    <string name="shortcut_previous_track">Brano precedente</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Disattivata</item>
+        <item>3 secondi</item>
+        <item>5 secondi</item>
+        <item>10 secondi</item>
+        <item>15 secondi</item>
+        <item>30 secondi</item>
+        <item>1 minuto</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Interruzione automatica dopo il silenzio</string>
 </resources>

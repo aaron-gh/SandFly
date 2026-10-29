@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Terjemahan otomatis</string>
+    <string name="title_pref_translation_auto_service">Layanan terjemahan otomatis</string>
+    <string name="title_pref_translation_copy">Salin terjemahan ke papan klip</string>
+    <string name="title_pref_translation_download_all">Download semua bahasa</string>
+    <string name="title_pref_translation_languages">Bahasa di perangkat</string>
+    <string name="title_pref_translation_notifications">Terjemahkan notifikasi</string>
+    <string name="title_pref_translation_region">Region</string>
+    <string name="title_pref_translation_say_source">Ucapkan bahasa asli</string>
+    <string name="title_pref_translation_second_target">Terjemahkan teks dalam bahasa target ke</string>
+    <string name="title_pref_translation_service">Layanan terjemahan</string>
+    <string name="title_pref_translation_source">Terjemahkan dari</string>
+    <string name="title_pref_translation_swap">Tukar bahasa</string>
+    <string name="title_pref_translation_target">Terjemahkan ke</string>
+    <string name="title_pref_translation_target_voice">Gunakan suara untuk bahasa target</string>
+    <string name="title_pref_translation_untranslated">Bahasa yang tidak diterjemahkan</string>
+    <string name="title_pref_translation_wifi_only">Download bahasa hanya melalui Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Terjemahkan frasa terakhir yang diucapkan</string>
+    <string name="translation_address_hint">Alamat, seperti https://libretranslate.com</string>
+    <string name="translation_address_message">Alamat server LibreTranslate, seperti https://libretranslate.com. Server selain milik Anda sendiri mungkin memerlukan kunci API.</string>
+    <string name="translation_all_downloaded">Semua bahasa telah didownload</string>
+    <string name="translation_already_in">Sudah dalam bahasa <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Terjemahan otomatis <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Ucapan</string>
+    <string name="translation_detect">Deteksi bahasa</string>
+    <string name="translation_device_language">Bahasa perangkat (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> bahasa tidak didownload</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> bahasa, sekitar <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Mendownload, <xliff:g id="done" example="12">%1$d</xliff:g> dari <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Berhenti</string>
+    <string name="translation_download_all_stop_title">Berhenti mendownload bahasa?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> telah didownload</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> tidak didownload</string>
+    <string name="translation_download_message">Sekitar 30 MB.</string>
+    <string name="translation_download_title">Download <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Mendownload <xliff:g id="languages" example="German and English">%1$s</xliff:g> untuk terjemahan di perangkat</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> tidak dapat menerjemahkan teks.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> tidak menerima kunci API.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> tidak dapat dihubungi.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> tidak dapat menerjemahkan teks: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Deteksi bahasa sedang didownload. Coba lagi sebentar lagi.</string>
+    <string name="translation_error_download">Bahasa untuk terjemahan di perangkat tidak dapat didownload.</string>
+    <string name="translation_error_downloading">Bahasa untuk terjemahan di perangkat masih didownload</string>
+    <string name="translation_error_language">Terjemahan <xliff:g id="service" example="On-device">%1$s</xliff:g> tidak mendukung <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Masukkan alamat <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> di setelan Terjemahan.</string>
+    <string name="translation_error_no_key">Masukkan kunci API <xliff:g id="service" example="DeepL">%1$s</xliff:g> di setelan Terjemahan.</string>
+    <string name="translation_error_not_detected">Bahasa tidak terdeteksi</string>
+    <string name="translation_error_quota">Batas penggunaan <xliff:g id="service" example="DeepL">%1$s</xliff:g> tercapai.</string>
+    <string name="translation_from">Dari <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Tempel kunci API <xliff:g id="service" example="DeepL">%1$s</xliff:g> Anda. Untuk menghapusnya, kosongkan kolom lalu simpan. Teks yang Anda terjemahkan dikirim ke <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, telah didownload</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, sedang didownload</string>
+    <string name="translation_languages_summary">Telah didownload: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Tidak ada yang perlu diterjemahkan</string>
+    <string name="translation_region_global">Global</string>
+    <string name="translation_region_message">Region resource Translator Anda di Azure, seperti westeurope. Biarkan kosong untuk resource global.</string>
+    <string name="translation_second_none">Jangan terjemahkan</string>
+    <string name="translation_service_ai">Layanan AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, belum disiapkan</string>
+    <string name="translation_service_on_device">Di perangkat</string>
+    <string name="translation_swapped">Dari <xliff:g id="source" example="German">%1$s</xliff:g> ke <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Terjemahan</string>
+    <string name="translation_untranslated_none">Tidak ada</string>
+</resources>

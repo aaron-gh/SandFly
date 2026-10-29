@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Lisa nooleklahvid</string>
+    <string name="command_add_gesture">Lisa liigutus</string>
+    <string name="command_choose_arrow_keys">Valige nooleklahvid</string>
+    <string name="command_choose_gesture">Valige liigutus</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Liigutused</string>
+    <string name="command_keyboard_shortcut">Klaviatuuri otsetee</string>
+    <string name="command_no_arrow_keys">Nooleklahve pole</string>
+    <string name="command_no_gestures">Liigutusi pole</string>
+    <string name="command_remove_arrow_keys">Eemalda nooleklahvid</string>
+    <string name="command_remove_gesture">Eemalda liigutus</string>
+    <string name="command_replace">Asenda</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> käivitab käsu <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Kas kasutada seda hoopis käsu <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> jaoks?</string>
+    <string name="commands_category_activation">Aktiveerimine</string>
+    <string name="commands_category_media">Meedia ja helitugevus</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Kerimine</string>
+    <string name="commands_category_speech">Kõne</string>
+    <string name="commands_category_tables">Tabelid</string>
+    <string name="commands_category_web">Veeb</string>
+    <string name="item_list_current">Praegused</string>
+    <string name="item_list_not_in_reading_controls">Pole lugemise juhtelementides</string>
+    <string name="item_list_not_in_sandfly_menu">Pole SandFlyi menüüs</string>
+    <string name="item_list_options">Valikud</string>
+    <string name="sounds_category_sounds">Helid</string>
+    <string name="sounds_category_vibration">Vibreerimine</string>
+    <string name="speech_category_languages">Keeled</string>
+    <string name="speech_category_other_apps">Muud rakendused</string>
+    <string name="speech_category_pronunciation">Hääldus</string>
+    <string name="speech_category_stopping">Kõne peatamine</string>
+    <string name="speech_category_voice">Hääl</string>
+    <string name="title_pref_audio_output">Heliväljund</string>
+    <string name="title_pref_backup">Varundamine ja taastamine</string>
+    <string name="title_pref_braille">Braille</string>
+    <string name="title_pref_commands">Käsud</string>
+    <string name="title_pref_display">Ekraan</string>
+    <string name="title_pref_image_and_screen_descriptions">Pildi- ja ekraanikirjeldused</string>
+    <string name="title_pref_pause">Peatamine ja väljalülitamine</string>
+    <string name="title_pref_quick_settings_screen">Kiirseaded</string>
+    <string name="title_pref_speech">Kõne</string>
+    <string name="title_pref_speech_stream_control">Kõne helitugevuse juhtimine</string>
+    <string name="title_pref_touch">Puudutus</string>
+    <string name="title_pref_typing">Sisestamine</string>
+    <string name="title_pref_updates">Värskendused ja installimine</string>
+    <string name="title_pref_volume_keys">Helitugevuse klahvid</string>
+    <string name="typing_category_other_input">Muud sisestusviisid</string>
+    <string name="verbosity_category_announcements">Teadaanded</string>
+    <string name="verbosity_category_items">Üksused</string>
+    <string name="verbosity_category_text">Tekst ja sümbolid</string>
+</resources>

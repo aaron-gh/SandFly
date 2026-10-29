@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Thêm phím mũi tên</string>
+    <string name="command_add_gesture">Thêm cử chỉ</string>
+    <string name="command_choose_arrow_keys">Chọn phím mũi tên</string>
+    <string name="command_choose_gesture">Chọn cử chỉ</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Cử chỉ</string>
+    <string name="command_keyboard_shortcut">Phím tắt</string>
+    <string name="command_no_arrow_keys">Không có phím mũi tên</string>
+    <string name="command_no_gestures">Không có cử chỉ</string>
+    <string name="command_remove_arrow_keys">Xoá phím mũi tên</string>
+    <string name="command_remove_gesture">Xoá cử chỉ</string>
+    <string name="command_replace">Thay thế</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> đang chạy lệnh <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Dùng cử chỉ này cho <xliff:g id="new_command" example="Describe image">%3$s</xliff:g>?</string>
+    <string name="commands_category_activation">Kích hoạt</string>
+    <string name="commands_category_media">Nội dung nghe nhìn và âm lượng</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Cuộn</string>
+    <string name="commands_category_speech">Lời nói</string>
+    <string name="commands_category_tables">Bảng</string>
+    <string name="commands_category_web">Web</string>
+    <string name="item_list_current">Hiện tại</string>
+    <string name="item_list_not_in_reading_controls">Không có trong Chế độ điều khiển chức năng đọc</string>
+    <string name="item_list_not_in_sandfly_menu">Không có trong Trình đơn SandFly</string>
+    <string name="item_list_options">Tuỳ chọn</string>
+    <string name="sounds_category_sounds">Âm thanh</string>
+    <string name="sounds_category_vibration">Rung</string>
+    <string name="speech_category_languages">Ngôn ngữ</string>
+    <string name="speech_category_other_apps">Ứng dụng khác</string>
+    <string name="speech_category_pronunciation">Cách phát âm</string>
+    <string name="speech_category_stopping">Dừng lời nói</string>
+    <string name="speech_category_voice">Giọng nói</string>
+    <string name="title_pref_audio_output">Đầu ra âm thanh</string>
+    <string name="title_pref_backup">Sao lưu và khôi phục</string>
+    <string name="title_pref_braille">Chữ nổi</string>
+    <string name="title_pref_commands">Lệnh</string>
+    <string name="title_pref_display">Hiển thị</string>
+    <string name="title_pref_image_and_screen_descriptions">Mô tả hình ảnh và màn hình</string>
+    <string name="title_pref_pause">Tạm dừng và tắt</string>
+    <string name="title_pref_quick_settings_screen">Cài đặt nhanh</string>
+    <string name="title_pref_speech">Lời nói</string>
+    <string name="title_pref_speech_stream_control">Điều khiển âm lượng cho lời nói</string>
+    <string name="title_pref_touch">Chạm</string>
+    <string name="title_pref_typing">Nhập</string>
+    <string name="title_pref_updates">Cập nhật và cài đặt</string>
+    <string name="title_pref_volume_keys">Phím âm lượng</string>
+    <string name="typing_category_other_input">Cách nhập khác</string>
+    <string name="verbosity_category_announcements">Thông báo bằng lời nói</string>
+    <string name="verbosity_category_items">Mục</string>
+    <string name="verbosity_category_text">Văn bản và ký hiệu</string>
+</resources>

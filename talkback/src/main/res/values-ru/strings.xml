@@ -1783,4 +1783,24 @@
     <string name="settings_export_failed">Настройки не удалось экспортировать</string>
     <string name="settings_import_done">Настройки импортированы</string>
     <string name="settings_import_failed">Этот файл не является файлом настроек SandFly или Backtalk или не может быть прочитан</string>
+    <string name="arrow_key_nav_assign_instruction">Нажмите клавишу или две клавиши вместе, с клавишами-модификаторами или без них. Backspace – очистить, Ctrl + Backspace – восстановить значение по умолчанию, Enter – сохранить, Escape – отменить.</string>
+    <string name="arrow_key_nav_off">Навигация стрелками отключена</string>
+    <string name="arrow_key_nav_on">Навигация стрелками включена</string>
+    <string name="arrow_key_nav_page_left">На страницу влево</string>
+    <string name="arrow_key_nav_page_right">На страницу вправо</string>
+    <string name="arrow_key_nav_toggle">Переключить навигацию стрелками</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Навигация стрелками</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Отключено</item>
+        <item>3 секунды</item>
+        <item>5 секунд</item>
+        <item>10 секунд</item>
+        <item>15 секунд</item>
+        <item>30 секунд</item>
+        <item>1 минута</item>
+    </string-array>
+    <string name="shortcut_next_track">Следующий трек</string>
+    <string name="shortcut_previous_track">Предыдущий трек</string>
+    <string name="sound_mode_needs_access">Разрешите доступ к режиму «Не беспокоить», чтобы включать и отключать режим «Без звука».</string>
+    <string name="title_pref_dictation_auto_stop">Автоостановка после тишины</string>
 </resources>

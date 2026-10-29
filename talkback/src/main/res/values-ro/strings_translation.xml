@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Traducere automată</string>
+    <string name="title_pref_translation_auto_service">Serviciul de traducere automată</string>
+    <string name="title_pref_translation_copy">Copiază traducerile în clipboard</string>
+    <string name="title_pref_translation_download_all">Descarcă toate limbile</string>
+    <string name="title_pref_translation_languages">Limbi pe dispozitiv</string>
+    <string name="title_pref_translation_notifications">Tradu notificările</string>
+    <string name="title_pref_translation_region">Regiune</string>
+    <string name="title_pref_translation_say_source">Rostește limba originală</string>
+    <string name="title_pref_translation_second_target">Tradu textul aflat deja în limba țintă în</string>
+    <string name="title_pref_translation_service">Serviciu de traducere</string>
+    <string name="title_pref_translation_source">Tradu din</string>
+    <string name="title_pref_translation_swap">Inversează limbile</string>
+    <string name="title_pref_translation_target">Tradu în</string>
+    <string name="title_pref_translation_target_voice">Folosește o voce pentru limba țintă</string>
+    <string name="title_pref_translation_untranslated">Limbi netraduse</string>
+    <string name="title_pref_translation_wifi_only">Descarcă limbile numai prin Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Tradu ultima expresie rostită</string>
+    <string name="translation_address_hint">Adresă, de exemplu https://libretranslate.com</string>
+    <string name="translation_address_message">Adresa unui server LibreTranslate, de exemplu https://libretranslate.com. Serverele care nu sunt ale tale pot necesita o cheie API.</string>
+    <string name="translation_all_downloaded">Toate limbile au fost descărcate</string>
+    <string name="translation_already_in">Este deja în <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Traducere automată <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Vorbire</string>
+    <string name="translation_detect">Detectează limba</string>
+    <string name="translation_device_language">Limba dispozitivului (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> limbă nu a fost descărcată</item>
+        <item quantity="few"><xliff:g id="count" example="3">%1$d</xliff:g> limbi nu au fost descărcate</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> de limbi nu au fost descărcate</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> limbă, aproximativ <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="few"><xliff:g id="count" example="57">%1$d</xliff:g> limbi, aproximativ <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> de limbi, aproximativ <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Se descarcă, <xliff:g id="done" example="12">%1$d</xliff:g> din <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Oprește</string>
+    <string name="translation_download_all_stop_title">Oprești descărcarea limbilor?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> a fost descărcată</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> nu a fost descărcată</string>
+    <string name="translation_download_message">Aproximativ 30 MB.</string>
+    <string name="translation_download_title">Descarci <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Se descarcă <xliff:g id="languages" example="German and English">%1$s</xliff:g> pentru traducerea pe dispozitiv</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nu a putut traduce textul.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nu a acceptat cheia API.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nu poate fi accesat.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> nu a putut traduce textul: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Detectarea limbii se descarcă. Încearcă din nou în câteva momente.</string>
+    <string name="translation_error_download">Limbile pentru traducerea pe dispozitiv nu au putut fi descărcate.</string>
+    <string name="translation_error_downloading">Limbile pentru traducerea pe dispozitiv încă se descarcă</string>
+    <string name="translation_error_language">Traducere <xliff:g id="service" example="On-device">%1$s</xliff:g>: <xliff:g id="language" example="Klingon">%2$s</xliff:g> nu este acceptată.</string>
+    <string name="translation_error_no_address">Introdu adresa <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> în setările Traducere.</string>
+    <string name="translation_error_no_key">Introdu cheia API <xliff:g id="service" example="DeepL">%1$s</xliff:g> în setările Traducere.</string>
+    <string name="translation_error_not_detected">Limba nu a fost detectată</string>
+    <string name="translation_error_quota">S-a atins limita de utilizare <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">Din <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Inserează cheia API <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Pentru a o elimina, golește câmpul și salvează. Textul pe care îl traduci este trimis la <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, descărcată</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, se descarcă</string>
+    <string name="translation_languages_summary">Descărcate: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Nimic de tradus</string>
+    <string name="translation_region_global">Global</string>
+    <string name="translation_region_message">Regiunea resursei Translator din Azure, de exemplu westeurope. Las-o goală pentru o resursă globală.</string>
+    <string name="translation_second_none">Nu traduce</string>
+    <string name="translation_service_ai">Serviciu AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, neconfigurat</string>
+    <string name="translation_service_on_device">Pe dispozitiv</string>
+    <string name="translation_swapped">Din <xliff:g id="source" example="German">%1$s</xliff:g> în <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Traducere</string>
+    <string name="translation_untranslated_none">Niciuna</string>
+</resources>

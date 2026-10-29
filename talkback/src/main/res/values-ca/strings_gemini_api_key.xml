@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">L\'adreça ha de començar per https://. No s\'ha desat res.</string>
     <string name="dialog_message_ai_service_consent">Les imatges i les captures de pantalla s\'envien a <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> per ser descrites, cosa que triga uns quants segons. S\'apliquen els seus propis termes i política de privadesa. La IA generativa és experimental, per la qual cosa cometrà errors.</string>
-    <string name="ai_service_error_api_key">El servei d\'IA no va acceptar la clau de l\'API. Comproveu la seva configuració a Descripcions automàtiques.</string>
+    <string name="ai_service_error_api_key">El servei d\'IA no ha acceptat la clau d\'API. Comprova\'n la configuració a Descripcions d\'imatges i pantalla.</string>
     <string name="ai_service_error_quota">S\'ha assolit el límit d\'ús del servei d\'IA. Torna-ho a provar més tard.</string>
     <string name="ai_service_error_busy">El servei d\'IA està ocupat ara mateix. Torna-ho a provar d\'aquí a un moment.</string>
     <string name="ai_service_error_timeout">El servei d\'IA va trigar massa a respondre. Torna-ho a provar.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Cap</string>
-    <string name="ai_service_not_set_up">No s\'utilitza cap servei d\'IA. Configureu-ne un o trieu-ne un a la configuració de descripcions automàtiques.</string>
+    <string name="ai_service_not_set_up">No s\'utilitza cap servei d\'IA. Configura\'n un o tria\'n un a la configuració de Descripcions d\'imatges i pantalla.</string>
     <string name="ai_provider_none_set_up">No s\'ha configurat cap servei d\'IA. Configureu-ne un a la seva configuració a continuació.</string>
     <string name="ai_provider_other">Un altre servei</string>
     <string name="title_pref_category_ai_services">Serveis d\'IA</string>

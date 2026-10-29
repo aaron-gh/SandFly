@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automaatne tõlkimine</string>
+    <string name="title_pref_translation_auto_service">Automaatse tõlkimise teenus</string>
+    <string name="title_pref_translation_copy">Kopeeri tõlked lõikelauale</string>
+    <string name="title_pref_translation_download_all">Laadi alla kõik keeled</string>
+    <string name="title_pref_translation_languages">Seadmesisesed keeled</string>
+    <string name="title_pref_translation_notifications">Tõlgi märguanded</string>
+    <string name="title_pref_translation_region">Piirkond</string>
+    <string name="title_pref_translation_say_source">Ütle algkeel</string>
+    <string name="title_pref_translation_second_target">Sihtkeeles oleva teksti tõlkimise keel</string>
+    <string name="title_pref_translation_service">Tõlketeenus</string>
+    <string name="title_pref_translation_source">Lähtekeel</string>
+    <string name="title_pref_translation_swap">Vaheta keeled</string>
+    <string name="title_pref_translation_target">Sihtkeel</string>
+    <string name="title_pref_translation_target_voice">Kasuta sihtkeele häält</string>
+    <string name="title_pref_translation_untranslated">Keeled, mida ei tõlgita</string>
+    <string name="title_pref_translation_wifi_only">Laadi keeled alla ainult Wi-Fi kaudu</string>
+    <string name="title_translate_last_spoken_phrase">Viimasena öeldud fraasi tõlkimine</string>
+    <string name="translation_address_hint">Aadress, näiteks https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate\'i serveri aadress, näiteks https://libretranslate.com. Muud kui teie oma serverid võivad nõuda API võtit.</string>
+    <string name="translation_all_downloaded">Kõik keeled on alla laaditud</string>
+    <string name="translation_already_in">Juba keeles <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automaatne tõlkimine: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Kõne</string>
+    <string name="translation_detect">Tuvasta keel</string>
+    <string name="translation_device_language">Seadme keel (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> keel jäi alla laadimata</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> keelt jäi alla laadimata</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> keel, umbes <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> keelt, umbes <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Allalaadimine, <xliff:g id="done" example="12">%1$d</xliff:g>/<xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Peata</string>
+    <string name="translation_download_all_stop_title">Kas peatada keelte allalaadimine?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> on alla laaditud</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> jäi alla laadimata</string>
+    <string name="translation_download_message">Umbes 30 MB.</string>
+    <string name="translation_download_title">Kas laadida alla <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Seadmesisese tõlke jaoks laaditakse alla: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ei saanud teksti tõlkida.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ei aktsepteerinud API võtit.</string>
+    <string name="translation_error_connection">Teenusega <xliff:g id="service" example="DeepL">%1$s</xliff:g> ei saadud ühendust.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ei saanud teksti tõlkida: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Keeletuvastust laaditakse alla. Proovige hetke pärast uuesti.</string>
+    <string name="translation_error_download">Seadmesisese tõlke keeli ei saanud alla laadida.</string>
+    <string name="translation_error_downloading">Seadmesisese tõlke keeli laaditakse veel alla</string>
+    <string name="translation_error_language">Tõlketeenus <xliff:g id="service" example="On-device">%1$s</xliff:g> ei toeta keelt <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Sisestage teenuse <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> aadress tõlkimise seadetes.</string>
+    <string name="translation_error_no_key">Sisestage teenuse <xliff:g id="service" example="DeepL">%1$s</xliff:g> API võti tõlkimise seadetes.</string>
+    <string name="translation_error_not_detected">Keelt ei tuvastatud</string>
+    <string name="translation_error_quota">Teenuse <xliff:g id="service" example="DeepL">%1$s</xliff:g> kasutuslimiit on täis.</string>
+    <string name="translation_from">Keelest <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Kleepige teenuse <xliff:g id="service" example="DeepL">%1$s</xliff:g> API võti. Selle eemaldamiseks tühjendage väli ja salvestage. Tekst, mida tõlgite, saadetakse teenusele <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, alla laaditud</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, allalaadimisel</string>
+    <string name="translation_languages_summary">Alla laaditud: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Pole midagi tõlkida</string>
+    <string name="translation_region_global">Globaalne</string>
+    <string name="translation_region_message">Teie Azure\'i Translatori ressursi piirkond, näiteks westeurope. Globaalse ressursi korral jätke tühjaks.</string>
+    <string name="translation_second_none">Ära tõlgi</string>
+    <string name="translation_service_ai">AI-teenus</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, pole seadistatud</string>
+    <string name="translation_service_on_device">Seadmesisene</string>
+    <string name="translation_swapped">Keelest <xliff:g id="source" example="German">%1$s</xliff:g> keelde <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Tõlkimine</string>
+    <string name="translation_untranslated_none">Puudub</string>
+</resources>

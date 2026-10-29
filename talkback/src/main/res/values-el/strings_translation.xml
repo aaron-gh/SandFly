@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Αυτόματη μετάφραση</string>
+    <string name="title_pref_translation_auto_service">Υπηρεσία αυτόματης μετάφρασης</string>
+    <string name="title_pref_translation_copy">Αντιγραφή μεταφράσεων στο πρόχειρο</string>
+    <string name="title_pref_translation_download_all">Λήψη όλων των γλωσσών</string>
+    <string name="title_pref_translation_languages">Γλώσσες στη συσκευή</string>
+    <string name="title_pref_translation_notifications">Μετάφραση ειδοποιήσεων</string>
+    <string name="title_pref_translation_region">Περιοχή</string>
+    <string name="title_pref_translation_say_source">Εκφώνηση της αρχικής γλώσσας</string>
+    <string name="title_pref_translation_second_target">Μετάφραση κειμένου στη γλώσσα-στόχο σε</string>
+    <string name="title_pref_translation_service">Υπηρεσία μετάφρασης</string>
+    <string name="title_pref_translation_source">Μετάφραση από</string>
+    <string name="title_pref_translation_swap">Εναλλαγή γλωσσών</string>
+    <string name="title_pref_translation_target">Μετάφραση σε</string>
+    <string name="title_pref_translation_target_voice">Χρήση φωνής για τη γλώσσα-στόχο</string>
+    <string name="title_pref_translation_untranslated">Γλώσσες που δεν μεταφράζονται</string>
+    <string name="title_pref_translation_wifi_only">Λήψη γλωσσών μόνο μέσω Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Μετάφραση τελευταίας φράσης που εκφωνήθηκε</string>
+    <string name="translation_address_hint">Διεύθυνση, π.χ. https://libretranslate.com</string>
+    <string name="translation_address_message">Η διεύθυνση ενός διακομιστή LibreTranslate, π.χ. https://libretranslate.com. Διακομιστές εκτός από τους δικούς σας μπορεί να απαιτούν κλειδί API.</string>
+    <string name="translation_all_downloaded">Έγινε λήψη όλων των γλωσσών</string>
+    <string name="translation_already_in">Ήδη στα <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Αυτόματη μετάφραση: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Ομιλία</string>
+    <string name="translation_detect">Εντοπισμός γλώσσας</string>
+    <string name="translation_device_language">Γλώσσα συσκευής (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one">Δεν έγινε λήψη <xliff:g id="count" example="1">%1$d</xliff:g> γλώσσας</item>
+        <item quantity="other">Δεν έγινε λήψη <xliff:g id="count" example="3">%1$d</xliff:g> γλωσσών</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> γλώσσα, περίπου <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> γλώσσες, περίπου <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Λήψη, <xliff:g id="done" example="12">%1$d</xliff:g> από <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Διακοπή</string>
+    <string name="translation_download_all_stop_title">Διακοπή λήψης γλωσσών;</string>
+    <string name="translation_download_done">Έγινε λήψη: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">Δεν έγινε λήψη: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">Περίπου 30 MB.</string>
+    <string name="translation_download_title">Λήψη: <xliff:g id="language" example="German">%1$s</xliff:g>;</string>
+    <string name="translation_downloading">Λήψη για μετάφραση στη συσκευή: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error">Η υπηρεσία <xliff:g id="service" example="DeepL">%1$s</xliff:g> δεν μπόρεσε να μεταφράσει το κείμενο.</string>
+    <string name="translation_error_api_key">Η υπηρεσία <xliff:g id="service" example="DeepL">%1$s</xliff:g> δεν αποδέχτηκε το κλειδί API.</string>
+    <string name="translation_error_connection">Δεν ήταν δυνατή η σύνδεση με την υπηρεσία <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details">Η υπηρεσία <xliff:g id="service" example="DeepL">%1$s</xliff:g> δεν μπόρεσε να μεταφράσει το κείμενο: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Γίνεται λήψη του εντοπισμού γλώσσας. Δοκιμάστε ξανά σε λίγο.</string>
+    <string name="translation_error_download">Δεν ήταν δυνατή η λήψη των γλωσσών για μετάφραση στη συσκευή.</string>
+    <string name="translation_error_downloading">Η λήψη των γλωσσών για μετάφραση στη συσκευή συνεχίζεται</string>
+    <string name="translation_error_language">Η μετάφραση «<xliff:g id="service" example="On-device">%1$s</xliff:g>» δεν υποστηρίζει τα <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Εισαγάγετε τη διεύθυνση του <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> στις ρυθμίσεις Μετάφρασης.</string>
+    <string name="translation_error_no_key">Εισαγάγετε το κλειδί API του <xliff:g id="service" example="DeepL">%1$s</xliff:g> στις ρυθμίσεις Μετάφρασης.</string>
+    <string name="translation_error_not_detected">Δεν εντοπίστηκε γλώσσα</string>
+    <string name="translation_error_quota">Συμπληρώθηκε το όριο χρήσης της υπηρεσίας <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">Από τα <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Επικολλήστε το κλειδί API του <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Για να το καταργήσετε, αδειάστε το πεδίο και αποθηκεύστε. Το κείμενο που μεταφράζετε αποστέλλεται στην υπηρεσία <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, έγινε λήψη</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, λήψη σε εξέλιξη</string>
+    <string name="translation_languages_summary">Έγινε λήψη: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Τίποτα για μετάφραση</string>
+    <string name="translation_region_global">Καθολική</string>
+    <string name="translation_region_message">Η περιοχή του πόρου Translator στο Azure, π.χ. westeurope. Αφήστε το κενό για καθολικό πόρο.</string>
+    <string name="translation_second_none">Χωρίς μετάφραση</string>
+    <string name="translation_service_ai">Υπηρεσία AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, δεν έχει ρυθμιστεί</string>
+    <string name="translation_service_on_device">Στη συσκευή</string>
+    <string name="translation_swapped">Από τα <xliff:g id="source" example="German">%1$s</xliff:g> στα <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Μετάφραση</string>
+    <string name="translation_untranslated_none">Καμία</string>
+</resources>

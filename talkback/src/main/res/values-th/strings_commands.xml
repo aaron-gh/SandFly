@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">เพิ่มแป้นลูกศร</string>
+    <string name="command_add_gesture">เพิ่มท่าทางสัมผัส</string>
+    <string name="command_choose_arrow_keys">เลือกแป้นลูกศร</string>
+    <string name="command_choose_gesture">เลือกท่าทางสัมผัส</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">ท่าทางสัมผัส</string>
+    <string name="command_keyboard_shortcut">แป้นพิมพ์ลัด</string>
+    <string name="command_no_arrow_keys">ไม่มีแป้นลูกศร</string>
+    <string name="command_no_gestures">ไม่มีท่าทางสัมผัส</string>
+    <string name="command_remove_arrow_keys">นำแป้นลูกศรออก</string>
+    <string name="command_remove_gesture">นำท่าทางสัมผัสออก</string>
+    <string name="command_replace">แทนที่</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> เรียกใช้ <xliff:g id="old_command" example="Read from top">%2$s</xliff:g> อยู่ ใช้ท่าทางสัมผัสนี้สำหรับ <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> แทนไหม</string>
+    <string name="commands_category_activation">การเปิดใช้งาน</string>
+    <string name="commands_category_media">สื่อและระดับเสียง</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">การเลื่อน</string>
+    <string name="commands_category_speech">การพูด</string>
+    <string name="commands_category_tables">ตาราง</string>
+    <string name="commands_category_web">เว็บ</string>
+    <string name="item_list_current">ปัจจุบัน</string>
+    <string name="item_list_not_in_reading_controls">ไม่ได้อยู่ในการควบคุมการอ่าน</string>
+    <string name="item_list_not_in_sandfly_menu">ไม่ได้อยู่ในเมนู SandFly</string>
+    <string name="item_list_options">ตัวเลือก</string>
+    <string name="sounds_category_sounds">เสียง</string>
+    <string name="sounds_category_vibration">การสั่น</string>
+    <string name="speech_category_languages">ภาษา</string>
+    <string name="speech_category_other_apps">แอปอื่นๆ</string>
+    <string name="speech_category_pronunciation">การออกเสียง</string>
+    <string name="speech_category_stopping">การหยุดเสียงพูด</string>
+    <string name="speech_category_voice">เสียง</string>
+    <string name="title_pref_audio_output">เอาต์พุตเสียง</string>
+    <string name="title_pref_backup">สำรองและกู้คืน</string>
+    <string name="title_pref_braille">อักษรเบรลล์</string>
+    <string name="title_pref_commands">คำสั่ง</string>
+    <string name="title_pref_display">การแสดงผล</string>
+    <string name="title_pref_image_and_screen_descriptions">คำอธิบายรูปภาพและหน้าจอ</string>
+    <string name="title_pref_pause">หยุดชั่วคราวและปิด</string>
+    <string name="title_pref_quick_settings_screen">การตั้งค่าด่วน</string>
+    <string name="title_pref_speech">การพูด</string>
+    <string name="title_pref_speech_stream_control">การควบคุมระดับเสียงสำหรับเสียงพูด</string>
+    <string name="title_pref_touch">การแตะ</string>
+    <string name="title_pref_typing">การพิมพ์</string>
+    <string name="title_pref_updates">การอัปเดตและการติดตั้ง</string>
+    <string name="title_pref_volume_keys">ปุ่มปรับระดับเสียง</string>
+    <string name="typing_category_other_input">วิธีพิมพ์อื่นๆ</string>
+    <string name="verbosity_category_announcements">การประกาศ</string>
+    <string name="verbosity_category_items">รายการ</string>
+    <string name="verbosity_category_text">ข้อความและสัญลักษณ์</string>
+</resources>

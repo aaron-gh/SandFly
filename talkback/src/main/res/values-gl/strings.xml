@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Para revisar o historial de notificacións, pasa dous dedos cara abaixo desde a parte superior da pantalla</string>
   <string name="image_description_playground_title">Probar as descricións de imaxes</string>
   <string name="image_description_playground_content_one">Despois de enfocar unha imaxe, abre o menú de SandFly e selecciona Describir imaxe.\n\nTes unha foto abaixo. Proba a facer o que che acabamos de indicar.</string>
-  <string name="image_description_playground_content_two">Podes cambiar a opción de descrición de imaxes en calquera momento na configuración de SandFly &gt; Descricións automáticas.</string>
-  <string name="image_description_playground_content_two_tts">Podes cambiar a opción de descrición de imaxes en calquera momento na configuración de SandFly, na opción Descricións automáticas.</string>
+    <string name="image_description_playground_content_two">Podes cambiar a opción de descrición de imaxes en calquera momento na configuración de SandFly &gt; Descricións de imaxes e pantalla.</string>
+    <string name="image_description_playground_content_two_tts">Podes cambiar a opción de descrición de imaxes en calquera momento na configuración de SandFly, na opción Descricións de imaxes e pantalla.</string>
   <string name="image_description_sample_image_content_description">Imaxe de proba: Toca a pantalla con 3 dedos para abrir o menú de SandFly e selecciona a opción Describir imaxe para oír a descrición.</string>
   <string name="practice_gestures_title">Practicar xestos</string>
   <string name="practice_keyboard_gestures_title">Practicar os atallos de teclado</string>
@@ -1550,7 +1550,7 @@
     <string name="template_item_details_order_dropped">Soltouse <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly le os detalles dun elemento nesta orde. Para cambiala, mantén premido un detalle e arrástrao cara arriba ou cara abaixo. Con SandFly activado, toca dúas veces e mantén premido, e despois arrastra. Tamén podes usar as accións Mover cara arriba e Mover cara abaixo.</string>
     <string name="title_pref_speak_items_before_scroll">Ler os elementos antes de que se despracen á vista</string>
-    <string name="gemini_error_api_key">Gemini non aceptou a clave da API. Comproba a clave na configuración de Descricións automáticas.</string>
+    <string name="gemini_error_api_key">Gemini non aceptou a clave da API. Comproba a clave na configuración de Descricións de imaxes e pantalla.</string>
     <string name="gemini_error_quota">Alcanzouse o límite de uso da túa clave da API de Gemini. Téntao de novo máis tarde.</string>
     <string name="gemini_error_busy">Gemini está ocupado agora mesmo. Téntao de novo nun momento.</string>
     <string name="gemini_error_timeout">Gemini tardou demasiado en responder. Téntao de novo.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Non se puido exportar a configuración</string>
     <string name="settings_import_done">Configuración importada</string>
     <string name="settings_import_failed">Este ficheiro non é un ficheiro de configuración SandFly ou Backtalk ou non se puido ler</string>
+    <string name="sound_mode_needs_access">Permite o acceso a Non molestar para activar ou desactivar Silencio.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navegación coas frechas</string>
+    <string name="arrow_key_nav_toggle">Activar ou desactivar a navegación coas frechas</string>
+    <string name="arrow_key_nav_on">Navegación coas frechas activada</string>
+    <string name="arrow_key_nav_off">Navegación coas frechas desactivada</string>
+    <string name="arrow_key_nav_page_left">Páxina á esquerda</string>
+    <string name="arrow_key_nav_page_right">Páxina á dereita</string>
+    <string name="arrow_key_nav_assign_instruction">Preme unha tecla ou dúas teclas á vez, con ou sen teclas modificadoras. Preme Retroceso para borrar, Ctrl + Retroceso para restablecer o valor predeterminado, Intro para gardar ou Escape para cancelar.</string>
+    <string name="shortcut_next_track">Pista seguinte</string>
+    <string name="shortcut_previous_track">Pista anterior</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Desactivado</item>
+        <item>3 segundos</item>
+        <item>5 segundos</item>
+        <item>10 segundos</item>
+        <item>15 segundos</item>
+        <item>30 segundos</item>
+        <item>1 minuto</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Detención automática tras silencio</string>
 </resources>

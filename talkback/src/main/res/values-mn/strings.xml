@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Тохиргоог экспорт хийж чадсангүй</string>
     <string name="settings_import_done">Тохиргоог импортолсон</string>
     <string name="settings_import_failed">Энэ файл нь SandFly эсвэл Backtalk тохиргооны файл биш эсвэл унших боломжгүй</string>
+    <string name="arrow_key_nav_assign_instruction">Нэг товч эсвэл хоёр товчийг хамт, тусгай товчтой эсвэл тусгай товчгүйгээр дарна уу. Арилгах бол Backspace, өгөгдмөл рүү буцаах бол Ctrl + Backspace, хадгалах бол Enter, цуцлах бол Escape дарна уу.</string>
+    <string name="arrow_key_nav_off">Сум товчоор шилжих унтраалттай</string>
+    <string name="arrow_key_nav_on">Сум товчоор шилжих асаалттай</string>
+    <string name="arrow_key_nav_page_left">Зүүн тийш хуудас</string>
+    <string name="arrow_key_nav_page_right">Баруун тийш хуудас</string>
+    <string name="arrow_key_nav_toggle">Сум товчоор шилжихийг асаах эсвэл унтраах</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Сум товчоор шилжих</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Унтраалттай</item>
+        <item>3 секунд</item>
+        <item>5 секунд</item>
+        <item>10 секунд</item>
+        <item>15 секунд</item>
+        <item>30 секунд</item>
+        <item>1 минут</item>
+    </string-array>
+    <string name="shortcut_next_track">Дараагийн дуу</string>
+    <string name="shortcut_previous_track">Өмнөх дуу</string>
+    <string name="sound_mode_needs_access">Дууг хаах горимыг асаах эсвэл унтраахын тулд «Бүү саад бол»-ын хандалтыг зөвшөөрнө үү.</string>
+    <string name="title_pref_dictation_auto_stop">Чимээгүй болсны дараа автоматаар зогсоох</string>
 </resources>

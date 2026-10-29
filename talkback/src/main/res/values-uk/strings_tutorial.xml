@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_tutorial_actions_archive">Перейдіть до повідомлення. <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> або <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> — переглянути його дії. <xliff:g id="gesture" example="Double-tap">%3$s</xliff:g> — виконати озвучену дію. Виконайте дію «<xliff:g id="action" example="Archive">%4$s</xliff:g>».</string>
+    <string name="sandfly_tutorial_actions_intro">Деякі елементи мають дії, крім активації, наприклад «Архівувати» або «Видалити» для повідомлення. Коли такий елемент у фокусі, елемент керування читанням «Дії» перебирає їх.</string>
+    <string name="sandfly_tutorial_actions_title">Дії</string>
+    <string name="sandfly_tutorial_activate_button">Перейдіть до елемента «<xliff:g id="button" example="Ring the bell">%2$s</xliff:g>». <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> — активувати його.</string>
+    <string name="sandfly_tutorial_activate_check_box">Так само встановіть прапорець «<xliff:g id="check_box" example="Extra cheese">%1$s</xliff:g>».</string>
+    <string name="sandfly_tutorial_activate_hold">Деякі елементи виконують іншу дію, якщо їх утримувати. Перейдіть до елемента «<xliff:g id="button" example="Details">%2$s</xliff:g>». <xliff:g id="gesture" example="Double-tap and hold">%1$s</xliff:g> — утримати його.</string>
+    <string name="sandfly_tutorial_activate_intro">Активація діє на елемент у фокусі, де б ви не торкнулися екрана.</string>
+    <string name="sandfly_tutorial_activate_title">Активація елементів</string>
+    <string name="sandfly_tutorial_back_in_lesson">«Назад» не закриває урок. Щоб вибрати інший урок, скористайтеся кнопкою «Зміст».</string>
+    <string name="sandfly_tutorial_bell">Подзвонити в дзвоник</string>
+    <string name="sandfly_tutorial_bell_rung">Кількість дзвінків: <xliff:g id="count" example="1">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_brightness">Яскравість</string>
+    <string name="sandfly_tutorial_chapter_basics">Основи</string>
+    <string name="sandfly_tutorial_chapter_controls">Елементи керування й текст</string>
+    <string name="sandfly_tutorial_chapter_getting_around">Переміщення</string>
+    <string name="sandfly_tutorial_chapter_practice">Практика</string>
+    <string name="sandfly_tutorial_chapter_reading">Читання</string>
+    <string name="sandfly_tutorial_choose_reading_control"><xliff:g id="gesture" example="Swipe down then up">%1$s</xliff:g> або <xliff:g id="gesture" example="Swipe up then down">%2$s</xliff:g> — змінити елемент керування читанням. Виберіть «<xliff:g id="reading_control" example="Words">%3$s</xliff:g>».</string>
+    <string name="sandfly_tutorial_close">Закрити посібник</string>
+    <string name="sandfly_tutorial_commands_copy"><xliff:g id="gesture" example="Triple-tap with 3 fingers">%1$s</xliff:g> — скопіювати в буфер обміну останній текст, озвучений SandFly.</string>
+    <string name="sandfly_tutorial_commands_intro">Ці команди працюють на кожному екрані.</string>
+    <string name="sandfly_tutorial_commands_search"><xliff:g id="gesture" example="Swipe left then down">%1$s</xliff:g> — шукати текст на екрані. У цьому уроці посібник замість виконання озвучує, що робить команда.</string>
+    <string name="sandfly_tutorial_commands_speech_off"><xliff:g id="gesture" example="Double-tap with 3 fingers">%1$s</xliff:g> — вимкнути мовлення, ще раз — увімкнути його. У цьому уроці посібник замість виконання озвучує, що робить команда.</string>
+    <string name="sandfly_tutorial_commands_status"><xliff:g id="gesture" example="Triple-tap with 2 fingers">%1$s</xliff:g> — почути час, рівень заряду акумулятора й інші відомості про стан.</string>
+    <string name="sandfly_tutorial_commands_title">Корисні команди</string>
+    <string name="sandfly_tutorial_contents">Зміст</string>
+    <string name="sandfly_tutorial_contents_intro">Уроки по порядку. Кожен можна відкрити окремо.</string>
+    <string name="sandfly_tutorial_continuous_intro">SandFly може читати від елемента у фокусі до кінця екрана без проведень пальцем. Дотик до екрана зупиняє читання.</string>
+    <string name="sandfly_tutorial_continuous_move">Перейдіть до першого рядка рецепта.</string>
+    <string name="sandfly_tutorial_continuous_read"><xliff:g id="gesture" example="Swipe down then right">%1$s</xliff:g> — читати від елемента у фокусі.</string>
+    <string name="sandfly_tutorial_continuous_read_from_menu"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> — відкрити меню SandFly. Потім виберіть «<xliff:g id="command" example="Read from focused item">%2$s</xliff:g>».</string>
+    <string name="sandfly_tutorial_continuous_title">Безперервне читання</string>
+    <string name="sandfly_tutorial_details">Деталі</string>
+    <string name="sandfly_tutorial_details_shown">Столик на 2 особи на 19:00, біля вікна.</string>
+    <string name="sandfly_tutorial_done">Пройдено</string>
+    <string name="sandfly_tutorial_end_practice">Завершити практику</string>
+    <string name="sandfly_tutorial_explore_activate">Торкніться елемента «Зірка» й підніміть палець. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> будь-де — активувати його.</string>
+    <string name="sandfly_tutorial_explore_find">Ведіть одним пальцем по екрану й знайдіть чотири квадрати: «Сонце», «Місяць», «Зірка» і «Хмара».</string>
+    <string name="sandfly_tutorial_explore_intro">Під час дотику до екрана озвучується елемент під пальцем. Дотик до елемента не активує його.</string>
+    <string name="sandfly_tutorial_explore_title">Дослідження дотиком</string>
+    <string name="sandfly_tutorial_extra_cheese">Додатковий сир</string>
+    <string name="sandfly_tutorial_finish">Завершити посібник</string>
+    <string name="sandfly_tutorial_forecast_today">Сьогодні</string>
+    <string name="sandfly_tutorial_forecast_today_text">Сонячно й тепло, слабкий вітер.</string>
+    <string name="sandfly_tutorial_forecast_tomorrow">Завтра</string>
+    <string name="sandfly_tutorial_forecast_tomorrow_text">Зранку хмарно, з полудня дощ.</string>
+    <string name="sandfly_tutorial_forecast_weekend">Вихідні</string>
+    <string name="sandfly_tutorial_forecast_weekend_text">У суботу вітряно, у неділю ясно.</string>
+    <string name="sandfly_tutorial_headings_intro">Екрани й вебсторінки поділяють свій вміст заголовками. Елемент керування читанням «Заголовки» переходить від одного заголовка до наступного.</string>
+    <string name="sandfly_tutorial_headings_jump"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> — перейти до наступного заголовка. Перейдіть до заголовка «<xliff:g id="heading" example="Weekend">%2$s</xliff:g>».</string>
+    <string name="sandfly_tutorial_headings_title">Заголовки</string>
+    <string name="sandfly_tutorial_item_apples">Яблука</string>
+    <string name="sandfly_tutorial_item_bread">Хліб</string>
+    <string name="sandfly_tutorial_item_cheese">Сир</string>
+    <string name="sandfly_tutorial_item_dates">Фініки</string>
+    <string name="sandfly_tutorial_item_eggs">Яйця</string>
+    <string name="sandfly_tutorial_lesson_complete">Урок завершено.</string>
+    <string name="sandfly_tutorial_lesson_complete_last">Урок завершено. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> — завершити посібник.</string>
+    <string name="sandfly_tutorial_lesson_complete_next">Урок завершено. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> — почати наступний урок.</string>
+    <string name="sandfly_tutorial_lesson_heading"><xliff:g id="lesson" example="Moving between items">%1$s</xliff:g>, урок <xliff:g id="number" example="3">%2$d</xliff:g> з <xliff:g id="count" example="17">%3$d</xliff:g></string>
+    <string name="sandfly_tutorial_list_item">Елемент <xliff:g id="number" example="15">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_menu_close"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> — закрити меню.</string>
+    <string name="sandfly_tutorial_menu_intro">Меню SandFly містить команди для елемента у фокусі й поточного екрана.</string>
+    <string name="sandfly_tutorial_menu_open"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> — відкрити меню SandFly. Переглядайте його команди проведеннями пальцем. <xliff:g id="gesture" example="Swipe down then left">%2$s</xliff:g> — закрити меню.</string>
+    <string name="sandfly_tutorial_menu_title">Меню SandFly</string>
+    <string name="sandfly_tutorial_message">Повідомлення від Сема: обідаємо опівдні?</string>
+    <string name="sandfly_tutorial_message_archive">Архівувати</string>
+    <string name="sandfly_tutorial_message_delete">Видалити</string>
+    <string name="sandfly_tutorial_message_reply">Відповісти</string>
+    <string name="sandfly_tutorial_move_intro">Проведення пальцем переходить до наступного або попереднього елемента на екрані в порядку читання.</string>
+    <string name="sandfly_tutorial_move_next"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> — перейти до наступного елемента. Продовжуйте, доки не дійдете до елемента «<xliff:g id="item" example="Eggs">%2$s</xliff:g>».</string>
+    <string name="sandfly_tutorial_move_previous"><xliff:g id="gesture" example="Swipe left">%1$s</xliff:g> — перейти до попереднього елемента. Поверніться до елемента «<xliff:g id="item" example="Bread">%2$s</xliff:g>».</string>
+    <string name="sandfly_tutorial_move_title">Переміщення між елементами</string>
+    <string name="sandfly_tutorial_name">Ім’я</string>
+    <string name="sandfly_tutorial_next_lesson">Наступний урок: <xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
+    <string name="sandfly_tutorial_no_gesture">Для дії «<xliff:g id="action" example="Next item">%1$s</xliff:g>» немає жесту. Призначте його в розділі «Команди» або скористайтеся кнопкою «Пропустити крок».</string>
+    <string name="sandfly_tutorial_not_in_lesson">Дія «<xliff:g id="action" example="Home">%1$s</xliff:g>» не виконується в уроці. Щоб вийти з посібника, скористайтеся кнопкою «Закрити посібник» у розділі «Зміст».</string>
+    <string name="sandfly_tutorial_not_in_lesson_short">Дія «<xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g>» не виконується в уроці.</string>
+    <string name="sandfly_tutorial_pause_intro">Мовлення можна призупинити посеред елемента й відновити з місця зупинки.</string>
+    <string name="sandfly_tutorial_pause_pause">Перейдіть до історії нижче. <xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> під час її читання — призупинити мовлення, ще раз — відновити його.</string>
+    <string name="sandfly_tutorial_pause_resume"><xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> ще раз — відновити мовлення.</string>
+    <string name="sandfly_tutorial_pause_title">Призупинення мовлення</string>
+    <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: <xliff:g id="action" example="Next item">%2$s</xliff:g></string>
+    <string name="sandfly_tutorial_practice_intro">Кожен жест озвучує свою назву й дію замість її виконання. Перехід до наступного й попереднього елемента та активація працюють як завжди.</string>
+    <string name="sandfly_tutorial_practice_step">Виконайте будь-який жест, щоб почути, що він робить. Щоб зупинитися, активуйте кнопку «<xliff:g id="button" example="End practice">%1$s</xliff:g>».</string>
+    <string name="sandfly_tutorial_practice_title">Практика жестів</string>
+    <string name="sandfly_tutorial_progress"><xliff:g id="done" example="2">%1$d</xliff:g> з <xliff:g id="count" example="4">%2$d</xliff:g>.</string>
+    <string name="sandfly_tutorial_reading_controls_characters">Змініть елемент керування читанням на «<xliff:g id="reading_control" example="Characters">%2$s</xliff:g>». <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> — перейти на один символ.</string>
+    <string name="sandfly_tutorial_reading_controls_intro">Елементи керування читанням визначають, що роблять проведення пальцем угору й униз, наприклад переміщення по словах або символах чи зміну темпу мовлення. Проведення праворуч і ліворуч, як і раніше, переходять між елементами.</string>
+    <string name="sandfly_tutorial_reading_controls_move">Перейдіть до речення нижче.</string>
+    <string name="sandfly_tutorial_reading_controls_next_word"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> — перейти до наступного слова. Перейдіть на три слова.</string>
+    <string name="sandfly_tutorial_reading_controls_title">Елементи керування читанням</string>
+    <string name="sandfly_tutorial_recipe_1">Млинці: змішайте борошно, яйця й молоко в однорідне тісто.</string>
+    <string name="sandfly_tutorial_recipe_2">Розігрійте трохи масла на сковороді.</string>
+    <string name="sandfly_tutorial_recipe_3">Налийте стільки тіста, щоб тонким шаром покрити сковороду.</string>
+    <string name="sandfly_tutorial_recipe_4">Переверніть млинець, коли нижній бік стане золотистим.</string>
+    <string name="sandfly_tutorial_recipe_5">Подавайте з лимоном і цукром.</string>
+    <string name="sandfly_tutorial_scrolling_intro">Списки показують лише частину своїх елементів одночасно. Проведення пальцем за останній показаний елемент прокручує список.</string>
+    <string name="sandfly_tutorial_scrolling_page"><xliff:g id="gesture" example="Swipe right then left">%1$s</xliff:g> — прокрутити вперед на сторінку.</string>
+    <string name="sandfly_tutorial_scrolling_swipe"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> — переходити по списку, доки не дійдете до елемента «<xliff:g id="item" example="Item 15">%2$s</xliff:g>».</string>
+    <string name="sandfly_tutorial_scrolling_title">Прокручування списків</string>
+    <string name="sandfly_tutorial_sentence">Чуєш їх, доцю, га? Кумедна ж ти, прощайся без ґольфів!</string>
+    <string name="sandfly_tutorial_skip_step">Пропустити крок</string>
+    <string name="sandfly_tutorial_sliders_change">Перейдіть до повзунка «<xliff:g id="slider" example="Brightness">%3$s</xliff:g>». <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> або <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> — змінити його значення.</string>
+    <string name="sandfly_tutorial_sliders_highest">Установіть для повзунка «<xliff:g id="slider" example="Brightness">%1$s</xliff:g>» значення 100 відсотків — найвище.</string>
+    <string name="sandfly_tutorial_sliders_intro">Коли повзунок у фокусі, проведення пальцем угору й униз змінюють його значення.</string>
+    <string name="sandfly_tutorial_sliders_title">Повзунки</string>
+    <string name="sandfly_tutorial_step">Крок <xliff:g id="number" example="1">%1$d</xliff:g> з <xliff:g id="count" example="2">%2$d</xliff:g>: <xliff:g id="instruction" example="Swipe right to move to the next item.">%3$s</xliff:g></string>
+    <string name="sandfly_tutorial_story">Піщані мушки — це маленькі мухи, що живуть на пляжах, берегах річок і в лісах. Найактивніші вони на світанку й у сутінках, коли повітря нерухоме. Кусають лише самиці, бо їм потрібна кров, щоб відкладати яйця. Укуси сверблять кілька днів, тому люди, які їдуть у краї піщаних мушок, беруть із собою засіб від комах. Піщані мушки погано літають, і навіть легкий вітерець відганяє їх.</string>
+    <string name="sandfly_tutorial_system_back"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> — повернутися назад.</string>
+    <string name="sandfly_tutorial_system_home"><xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g> — перейти на головний екран.</string>
+    <string name="sandfly_tutorial_system_intro">Ці жести працюють на кожному екрані. У цьому уроці посібник озвучує, що робить кожен із них, замість того щоб виконувати дію.</string>
+    <string name="sandfly_tutorial_system_notifications"><xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g> — відкрити сповіщення.</string>
+    <string name="sandfly_tutorial_system_overview"><xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g> — показати останні додатки.</string>
+    <string name="sandfly_tutorial_system_title">Назад, головний екран і сповіщення</string>
+    <string name="sandfly_tutorial_tile_cloud">Хмара</string>
+    <string name="sandfly_tutorial_tile_moon">Місяць</string>
+    <string name="sandfly_tutorial_tile_star">Зірка</string>
+    <string name="sandfly_tutorial_tile_sun">Сонце</string>
+    <string name="sandfly_tutorial_title">Навчальний посібник SandFly</string>
+    <string name="sandfly_tutorial_typing_delete">Видаліть останню літеру клавішею видалення на клавіатурі.</string>
+    <string name="sandfly_tutorial_typing_intro">Активація текстового поля відкриває клавіатуру. Торкніться клавіші, щоб почути її, і підніміть палець, щоб ввести її.</string>
+    <string name="sandfly_tutorial_typing_open">Перейдіть до поля «<xliff:g id="field" example="Name">%2$s</xliff:g>». <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> — почати введення.</string>
+    <string name="sandfly_tutorial_typing_title">Введення тексту</string>
+    <string name="sandfly_tutorial_typing_type">Введіть слово «<xliff:g id="word" example="cat">%1$s</xliff:g>».</string>
+    <string name="sandfly_tutorial_typing_word">кіт</string>
+    <string name="sandfly_tutorial_welcome_intro">Цей посібник навчає жестів SandFly. Кожен урок дає інструкцію, чекає, доки ви виконаєте її своїми жестами, а потім дає наступну. Інструкція — перший елемент після назви уроку. «Зміст» містить усі уроки, а посібник знову відкривається на уроці, на якому ви зупинилися.</string>
+    <string name="sandfly_tutorial_welcome_start"><xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> будь-де на екрані — почати.</string>
+    <string name="sandfly_tutorial_welcome_title">Вітаємо</string>
+</resources>

@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Märguannete ajaloo vaatamiseks tõmmake kahe sõrmega ekraani ülaservast alla</string>
   <string name="image_description_playground_title">Proovige hankida pildikirjeldused</string>
   <string name="image_description_playground_content_one">Kui pilt on esile tõstetud, avage SandFlyi menüü ja tehke valik „Kirjelda pilti“.\n\nAllpool on üks foto. Proovige hankida selle kirjeldus.</string>
-  <string name="image_description_playground_content_two">Pildikirjelduse seadeid saate igal ajal muuta menüüs SandFlyi seaded &gt; Automaatsed kirjeldused.</string>
-  <string name="image_description_playground_content_two_tts">Pildikirjelduse seadeid saate igal ajal muuta, valides „SandFlyi seaded“ ning seejärel „Automaatsed kirjeldused“.</string>
+    <string name="image_description_playground_content_two">Pildikirjelduse seadeid saate igal ajal muuta menüüs SandFlyi seaded &gt; Pildi- ja ekraanikirjeldused.</string>
+    <string name="image_description_playground_content_two_tts">Pildikirjelduse seadeid saate igal ajal muuta, valides „SandFlyi seaded“ ning seejärel „Pildi- ja ekraanikirjeldused“.</string>
   <string name="image_description_sample_image_content_description">Näidispilt; puudutage kolme sõrmega ekraani, et avada SandFlyi menüü, ja tehke kirjelduse kuulamiseks valik „Pildi kirjeldamine“.</string>
   <string name="practice_gestures_title">Liigutuste harjutamine</string>
   <string name="practice_keyboard_gestures_title">Klaviatuuri otseteede harjutamine</string>
@@ -1550,7 +1550,7 @@
     <string name="template_item_details_order_dropped">Asetati: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ütleb üksuse üksikasjad selles järjekorras. Muutmiseks puudutage üksikasja pikalt ja lohistage see üles või alla. Kui SandFly on sees, topeltpuudutage ja hoidke, seejärel lohistage. Võite kasutada ka toiminguid Teisalda üles ja Teisalda alla.</string>
     <string name="title_pref_speak_items_before_scroll">Loe üksused ette enne, kui need kuvale keritakse</string>
-    <string name="gemini_error_api_key">Gemini ei aktsepteerinud API võtit. Kontrollige võtit automaatsete kirjelduste seadetes.</string>
+    <string name="gemini_error_api_key">Gemini ei aktsepteerinud API-võtit. Kontrollige võtit jaotise Pildi- ja ekraanikirjeldused seadetes.</string>
     <string name="gemini_error_quota">Teie Gemini API võtme kasutuslimiit on täis. Proovige hiljem uuesti.</string>
     <string name="gemini_error_busy">Gemini on praegu hõivatud. Proovige mõne aja pärast uuesti.</string>
     <string name="gemini_error_timeout">Gemini vastus võttis liiga kaua aega. Proovige uuesti.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Seadeid ei saanud eksportida</string>
     <string name="settings_import_done">Seaded imporditud</string>
     <string name="settings_import_failed">See fail ei ole SandFly või Backtalk seadete fail või seda ei saa lugeda</string>
+    <string name="sound_mode_needs_access">Vaigistuse sisse- või väljalülitamiseks lubage juurdepääs funktsioonile Mitte segada.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Nooleklahvinavigeerimine</string>
+    <string name="arrow_key_nav_toggle">Nooleklahvinavigeerimine sisse/välja</string>
+    <string name="arrow_key_nav_on">Nooleklahvinavigeerimine sees</string>
+    <string name="arrow_key_nav_off">Nooleklahvinavigeerimine väljas</string>
+    <string name="arrow_key_nav_page_left">Leht vasakule</string>
+    <string name="arrow_key_nav_page_right">Leht paremale</string>
+    <string name="arrow_key_nav_assign_instruction">Vajutage ühte klahvi või kahte klahvi korraga, muuteklahvidega või ilma. Tühjendamiseks vajutage Backspace, vaikeväärtuse taastamiseks Ctrl + Backspace, salvestamiseks Enter või tühistamiseks Escape.</string>
+    <string name="shortcut_next_track">Järgmine lugu</string>
+    <string name="shortcut_previous_track">Eelmine lugu</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Väljas</item>
+        <item>3 sekundit</item>
+        <item>5 sekundit</item>
+        <item>10 sekundit</item>
+        <item>15 sekundit</item>
+        <item>30 sekundit</item>
+        <item>1 minut</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Automaatne peatamine pärast vaikust</string>
 </resources>

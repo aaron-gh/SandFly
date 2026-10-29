@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">ઑટોમૅટિક અનુવાદ</string>
+    <string name="title_pref_translation_auto_service">ઑટોમૅટિક અનુવાદની સેવા</string>
+    <string name="title_pref_translation_copy">અનુવાદો ક્લિપબોર્ડ પર કૉપિ કરો</string>
+    <string name="title_pref_translation_download_all">બધી ભાષાઓ ડાઉનલોડ કરો</string>
+    <string name="title_pref_translation_languages">ડિવાઇસ પરની ભાષાઓ</string>
+    <string name="title_pref_translation_notifications">નોટિફિકેશનનો અનુવાદ કરો</string>
+    <string name="title_pref_translation_region">પ્રદેશ</string>
+    <string name="title_pref_translation_say_source">મૂળ ભાષા બોલો</string>
+    <string name="title_pref_translation_second_target">લક્ષ્ય ભાષામાંના ટેક્સ્ટનો અનુવાદ આમાં કરો</string>
+    <string name="title_pref_translation_service">અનુવાદ સેવા</string>
+    <string name="title_pref_translation_source">આમાંથી અનુવાદ કરો</string>
+    <string name="title_pref_translation_swap">ભાષાઓ અદલાબદલી કરો</string>
+    <string name="title_pref_translation_target">આમાં અનુવાદ કરો</string>
+    <string name="title_pref_translation_target_voice">લક્ષ્ય ભાષા માટેના વૉઇસનો ઉપયોગ કરો</string>
+    <string name="title_pref_translation_untranslated">અનુવાદ ન કરવાની ભાષાઓ</string>
+    <string name="title_pref_translation_wifi_only">ભાષાઓ માત્ર Wi-Fi પર ડાઉનલોડ કરો</string>
+    <string name="title_translate_last_spoken_phrase">છેલ્લે બોલાયેલા શબ્દસમૂહનો અનુવાદ કરો</string>
+    <string name="translation_address_hint">સરનામું, જેમ કે https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate સર્વરનું સરનામું, જેમ કે https://libretranslate.com. તમારા પોતાના સિવાયના સર્વરને API કીની જરૂર પડી શકે છે.</string>
+    <string name="translation_all_downloaded">બધી ભાષાઓ ડાઉનલોડ કરી</string>
+    <string name="translation_already_in">પહેલેથી <xliff:g id="language" example="English">%1$s</xliff:g>માં છે</string>
+    <string name="translation_auto_state">ઑટોમૅટિક અનુવાદ <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">સ્પીચ</string>
+    <string name="translation_detect">ભાષા શોધો</string>
+    <string name="translation_device_language">ડિવાઇસની ભાષા (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ભાષા ડાઉનલોડ થઈ નથી</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> ભાષાઓ ડાઉનલોડ થઈ નથી</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> ભાષા, આશરે <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> ભાષાઓ, આશરે <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">ડાઉનલોડ કરી રહ્યાં છીએ, <xliff:g id="done" example="12">%1$d</xliff:g>/<xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">રોકો</string>
+    <string name="translation_download_all_stop_title">ભાષાઓ ડાઉનલોડ કરવાનું રોકીએ?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> ડાઉનલોડ કરી</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> ડાઉનલોડ થઈ નથી</string>
+    <string name="translation_download_message">આશરે 30 MB.</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g> ડાઉનલોડ કરીએ?</string>
+    <string name="translation_downloading">ડિવાઇસ પરના અનુવાદ માટે <xliff:g id="languages" example="German and English">%1$s</xliff:g> ડાઉનલોડ કરી રહ્યાં છીએ</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ટેક્સ્ટનો અનુવાદ કરી શક્યું નથી.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g>એ API કી સ્વીકારી નથી.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> સુધી પહોંચી શકાયું નથી.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ટેક્સ્ટનો અનુવાદ કરી શક્યું નથી: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">ભાષા શોધવાની સુવિધા ડાઉનલોડ થઈ રહી છે. થોડી વારમાં ફરી પ્રયાસ કરો.</string>
+    <string name="translation_error_download">ડિવાઇસ પરના અનુવાદ માટેની ભાષાઓ ડાઉનલોડ કરી શકાઈ નથી.</string>
+    <string name="translation_error_downloading">ડિવાઇસ પરના અનુવાદ માટેની ભાષાઓ હજુ ડાઉનલોડ થઈ રહી છે</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g> અનુવાદ <xliff:g id="language" example="Klingon">%2$s</xliff:g>ને સપોર્ટ કરતો નથી.</string>
+    <string name="translation_error_no_address">“અનુવાદ” સેટિંગમાં <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g>નું સરનામું દાખલ કરો.</string>
+    <string name="translation_error_no_key">“અનુવાદ” સેટિંગમાં <xliff:g id="service" example="DeepL">%1$s</xliff:g> API કી દાખલ કરો.</string>
+    <string name="translation_error_not_detected">ભાષા શોધી શકાઈ નથી</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g>ની વપરાશ મર્યાદા પૂરી થઈ.</string>
+    <string name="translation_from"><xliff:g id="language" example="German">%1$s</xliff:g>માંથી:</string>
+    <string name="translation_key_message">તમારી <xliff:g id="service" example="DeepL">%1$s</xliff:g> API કી પેસ્ટ કરો. તેને દૂર કરવા માટે ફીલ્ડ ખાલી કરો અને સાચવો. તમે જે ટેક્સ્ટનો અનુવાદ કરો છો તે <xliff:g id="service" example="DeepL">%1$s</xliff:g>ને મોકલવામાં આવે છે.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, ડાઉનલોડ કરેલી</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, ડાઉનલોડ થઈ રહી છે</string>
+    <string name="translation_languages_summary">ડાઉનલોડ કરેલી: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">અનુવાદ કરવા માટે કંઈ નથી</string>
+    <string name="translation_region_global">વૈશ્વિક</string>
+    <string name="translation_region_message">Azureમાં તમારા Translator રિસોર્સનો પ્રદેશ, જેમ કે westeurope. વૈશ્વિક રિસોર્સ માટે તેને ખાલી રાખો.</string>
+    <string name="translation_second_none">અનુવાદ કરશો નહીં</string>
+    <string name="translation_service_ai">AI સેવા</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, સેટઅપ કરેલું નથી</string>
+    <string name="translation_service_on_device">ડિવાઇસ પર</string>
+    <string name="translation_swapped"><xliff:g id="source" example="German">%1$s</xliff:g>માંથી <xliff:g id="target" example="English">%2$s</xliff:g>માં</string>
+    <string name="translation_title">અનુવાદ</string>
+    <string name="translation_untranslated_none">કોઈ નહીં</string>
+</resources>

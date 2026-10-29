@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automatic translation</string>
+    <string name="title_pref_translation_auto_service">Automatic translation service</string>
+    <string name="title_pref_translation_copy">Copy translations to the clipboard</string>
+    <string name="title_pref_translation_download_all">Download all languages</string>
+    <string name="title_pref_translation_languages">On-device languages</string>
+    <string name="title_pref_translation_notifications">Translate notifications</string>
+    <string name="title_pref_translation_region">Region</string>
+    <string name="title_pref_translation_say_source">Say the original language</string>
+    <string name="title_pref_translation_second_target">Translate text in the target language into</string>
+    <string name="title_pref_translation_service">Translation service</string>
+    <string name="title_pref_translation_source">Translate from</string>
+    <string name="title_pref_translation_swap">Swap languages</string>
+    <string name="title_pref_translation_target">Translate into</string>
+    <string name="title_pref_translation_target_voice">Use a voice for the target language</string>
+    <string name="title_pref_translation_untranslated">Languages not translated</string>
+    <string name="title_pref_translation_wifi_only">Download languages on Wi-Fi only</string>
+    <string name="title_translate_last_spoken_phrase">Translate last spoken phrase</string>
+    <string name="translation_address_hint">Address, such as https://libretranslate.com</string>
+    <string name="translation_address_message">The address of a LibreTranslate server, such as https://libretranslate.com. Servers other than your own may need an API key.</string>
+    <string name="translation_all_downloaded">All languages downloaded</string>
+    <string name="translation_already_in">Already in <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automatic translation <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Speech</string>
+    <string name="translation_detect">Detect language</string>
+    <string name="translation_device_language">Device language (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> language not downloaded</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> languages not downloaded</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> language, about <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> languages, about <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Downloading, <xliff:g id="done" example="12">%1$d</xliff:g> of <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Stop</string>
+    <string name="translation_download_all_stop_title">Stop downloading languages?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> downloaded</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> not downloaded</string>
+    <string name="translation_download_message">About 30 MB.</string>
+    <string name="translation_download_title">Download <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Downloading <xliff:g id="languages" example="German and English">%1$s</xliff:g> for on-device translation</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> could not translate the text.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> did not accept the API key.</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> could not be reached.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> could not translate the text: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Language detection is downloading. Try again in a moment.</string>
+    <string name="translation_error_download">Languages for on-device translation could not be downloaded.</string>
+    <string name="translation_error_downloading">Languages for on-device translation are still downloading</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g> translation does not support <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Enter the <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> address in Translation settings.</string>
+    <string name="translation_error_no_key">Enter the <xliff:g id="service" example="DeepL">%1$s</xliff:g> API key in Translation settings.</string>
+    <string name="translation_error_not_detected">Language not detected</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> usage limit reached.</string>
+    <string name="translation_from">From <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Paste your <xliff:g id="service" example="DeepL">%1$s</xliff:g> API key. To remove it, clear the field and save. Text that you translate is sent to <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, downloaded</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, downloading</string>
+    <string name="translation_languages_summary">Downloaded: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Nothing to translate</string>
+    <string name="translation_region_global">Global</string>
+    <string name="translation_region_message">The region of your Translator resource in Azure, such as westeurope. Leave it empty for a global resource.</string>
+    <string name="translation_second_none">Don\'t translate</string>
+    <string name="translation_service_ai">AI service</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, not set up</string>
+    <string name="translation_service_on_device">On-device</string>
+    <string name="translation_swapped">From <xliff:g id="source" example="German">%1$s</xliff:g> into <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Translation</string>
+    <string name="translation_untranslated_none">None</string>
+</resources>

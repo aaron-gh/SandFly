@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Ukuhumusha okuzenzakalelayo</string>
+    <string name="title_pref_translation_auto_service">Isevisi yokuhumusha okuzenzakalelayo</string>
+    <string name="title_pref_translation_copy">Kopisha ukuhumusha kubhodi yokunamathisela</string>
+    <string name="title_pref_translation_download_all">Landa zonke izilimi</string>
+    <string name="title_pref_translation_languages">Izilimi ezisekudivayisi</string>
+    <string name="title_pref_translation_notifications">Humusha izaziso</string>
+    <string name="title_pref_translation_region">Isifunda</string>
+    <string name="title_pref_translation_say_source">Isho ulimi lwangempela</string>
+    <string name="title_pref_translation_second_target">Humusha umbhalo osolimini oluqondiwe ube</string>
+    <string name="title_pref_translation_service">Isevisi yokuhumusha</string>
+    <string name="title_pref_translation_source">Humusha kusuka ku</string>
+    <string name="title_pref_translation_swap">Shintshanisa izilimi</string>
+    <string name="title_pref_translation_target">Humushela ku</string>
+    <string name="title_pref_translation_target_voice">Sebenzisa izwi lolimi oluqondiwe</string>
+    <string name="title_pref_translation_untranslated">Izilimi ezingahunyushwa</string>
+    <string name="title_pref_translation_wifi_only">Landa izilimi nge-Wi-Fi kuphela</string>
+    <string name="title_translate_last_spoken_phrase">Humusha umshwana wokugcina okhulunyiwe</string>
+    <string name="translation_address_hint">Ikheli, njenge-https://libretranslate.com</string>
+    <string name="translation_address_message">Ikheli leseva ye-LibreTranslate, njenge-https://libretranslate.com. Amaseva angewona owakho angase adinge ukhiye we-API.</string>
+    <string name="translation_all_downloaded">Zonke izilimi zilandiwe</string>
+    <string name="translation_already_in">Sekuvele kusolimini lwesi-<xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Ukuhumusha okuzenzakalelayo <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Inkulumo</string>
+    <string name="translation_detect">Thola ulimi</string>
+    <string name="translation_device_language">Ulimi lwedivayisi (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one">Ulimi olu-<xliff:g id="count" example="1">%1$d</xliff:g> alulandwanga</item>
+        <item quantity="other">Izilimi ezi-<xliff:g id="count" example="3">%1$d</xliff:g> azilandwanga</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one">Ulimi olu-<xliff:g id="count" example="1">%1$d</xliff:g>, cishe <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other">Izilimi ezi-<xliff:g id="count" example="57">%1$d</xliff:g>, cishe <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Iyalanda, <xliff:g id="done" example="12">%1$d</xliff:g> kokungu-<xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Misa</string>
+    <string name="translation_download_all_stop_title">Misa ukulanda izilimi?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> kulandiwe</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> akulandwanga</string>
+    <string name="translation_download_message">Cishe ku-30 MB.</string>
+    <string name="translation_download_title">Landa okuthi <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Iyalanda okuthi <xliff:g id="languages" example="German and English">%1$s</xliff:g> ukuze kuhunyushwe ekudivayisi</string>
+    <string name="translation_error">I-<xliff:g id="service" example="DeepL">%1$s</xliff:g> ayikwazanga ukuhumusha umbhalo.</string>
+    <string name="translation_error_api_key">I-<xliff:g id="service" example="DeepL">%1$s</xliff:g> ayizange yamukele ukhiye we-API.</string>
+    <string name="translation_error_connection">I-<xliff:g id="service" example="DeepL">%1$s</xliff:g> ayitholakalanga.</string>
+    <string name="translation_error_details">I-<xliff:g id="service" example="DeepL">%1$s</xliff:g> ayikwazanga ukuhumusha umbhalo: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Ukuthola ulimi kuyalandwa. Zama futhi ngemva kwesikhashana.</string>
+    <string name="translation_error_download">Izilimi zokuhumusha ekudivayisi azikwazanga ukulandwa.</string>
+    <string name="translation_error_downloading">Izilimi zokuhumusha ekudivayisi zisalandwa</string>
+    <string name="translation_error_language">Ukuhumusha kwe-<xliff:g id="service" example="On-device">%1$s</xliff:g> akusekeli okuthi <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Faka ikheli le-<xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> kumasethingi okuthi Ukuhumusha.</string>
+    <string name="translation_error_no_key">Faka ukhiye we-API we-<xliff:g id="service" example="DeepL">%1$s</xliff:g> kumasethingi okuthi Ukuhumusha.</string>
+    <string name="translation_error_not_detected">Ulimi alutholakalanga</string>
+    <string name="translation_error_quota">Umkhawulo wokusetshenziswa kwe-<xliff:g id="service" example="DeepL">%1$s</xliff:g> ufinyelelwe.</string>
+    <string name="translation_from">Kusuka ku-<xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Namathisela ukhiye wakho we-API we-<xliff:g id="service" example="DeepL">%1$s</xliff:g>. Ukuze uwususe, sula inkambu bese ulondoloza. Umbhalo owuhumushayo uthunyelwa ku-<xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, kulandiwe</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, kuyalandwa</string>
+    <string name="translation_languages_summary">Okulandiwe: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Akukho okuzohunyushwa</string>
+    <string name="translation_region_global">Umhlaba wonke</string>
+    <string name="translation_region_message">Isifunda sensiza yakho ye-Translator ku-Azure, njenge-westeurope. Yishiye ingenalutho ukuze uthole insiza yomhlaba wonke.</string>
+    <string name="translation_second_none">Ungahumushi</string>
+    <string name="translation_service_ai">Isevisi ye-AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, akusethiwe</string>
+    <string name="translation_service_on_device">Ekudivayisi</string>
+    <string name="translation_swapped">Kusuka ku-<xliff:g id="source" example="German">%1$s</xliff:g> kuya ku-<xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Ukuhumusha</string>
+    <string name="translation_untranslated_none">Lutho</string>
+</resources>

@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Modelis</string>
     <string name="ai_service_address_invalid">Adresas turi prasidėti https://. Nieko neišsaugota.</string>
     <string name="dialog_message_ai_service_consent">Vaizdai ir ekrano kopijos aprašyti siunčiami į <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>; tai trunka kelias sekundes. Taikomos šios paslaugos sąlygos ir privatumo politika. Generatyvusis DI yra eksperimentinis, todėl darys klaidų.</string>
-    <string name="ai_service_error_api_key">DI paslauga nepriėmė API rakto. Patikrinkite jos nustatymus skiltyje „Automatiniai aprašai“.</string>
+    <string name="ai_service_error_api_key">DI paslauga nepriėmė API rakto. Patikrinkite jos nustatymus skiltyje „Vaizdų ir ekrano aprašai“.</string>
     <string name="ai_service_error_quota">Pasiektas AI paslaugos naudojimo limitas. Vėliau bandykite dar kartą.</string>
     <string name="ai_service_error_busy">AI paslauga šiuo metu užimta. Po akimirkos bandykite dar kartą.</string>
     <string name="ai_service_error_timeout">AI paslauga per ilgai atsakė. Bandykite dar kartą.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Nėra</string>
-    <string name="ai_service_not_set_up">Nenaudojama jokia DI paslauga. Nustatykite arba pasirinkite vieną „Automatinių aprašų“ nustatymuose.</string>
+    <string name="ai_service_not_set_up">Nenaudojama jokia DI paslauga. Nustatykite arba pasirinkite vieną „Vaizdų ir ekrano aprašų“ nustatymuose.</string>
     <string name="ai_provider_none_set_up">Nenustatyta jokia DI paslauga. Nustatykite vieną jos nustatymuose toliau.</string>
     <string name="ai_provider_other">Kita paslauga</string>
     <string name="title_pref_category_ai_services">AI paslaugos</string>

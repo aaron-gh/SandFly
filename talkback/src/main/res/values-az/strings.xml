@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Bildiriş tarixçəsini yoxlamaq üçün ekranın yuxarısından 2 barmaqla aşağı çəkin</string>
   <string name="image_description_playground_title">Şəkil təsvirlərini əldə etməyə çalışın</string>
   <string name="image_description_playground_content_one">Diqqətinizi şəklə cəmlədiyiniz zaman SandFly menyusunu açın və \"Şəkli təsvir edin\" seçiminə toxunun.\n\nAşağıda bir foto var. Bunun üçün təsvir əldə edin.</string>
-  <string name="image_description_playground_content_two">Şəkil təsviri ayarlarını istənilən vaxt SandFly ayarları &gt; Avtomatik təsvirlər bölməsində dəyişə bilərsiniz.</string>
-  <string name="image_description_playground_content_two_tts">Şəkil təsviri ayarlarını istənilən vaxt SandFly ayarları, sonra isə Avtomatik təsvirlər bölməsində dəyişə bilərsiniz.</string>
+    <string name="image_description_playground_content_two">Şəkil təsviri ayarlarını istənilən vaxt SandFly ayarları &gt; Şəkil və ekran təsvirləri bölməsində dəyişə bilərsiniz.</string>
+    <string name="image_description_playground_content_two_tts">Şəkil təsviri ayarlarını istənilən vaxt SandFly ayarları, sonra isə Şəkil və ekran təsvirləri bölməsində dəyişə bilərsiniz.</string>
   <string name="image_description_sample_image_content_description">Nümunə şəkil; SandFly menyusunu açmaq üçün 3 barmağınızla toxunun və təsviri eşitmək üçün \"Şəkli təsvir edin\" seçimini edin.</string>
   <string name="practice_gestures_title">Jestlər üzərində məşq edin</string>
   <string name="practice_keyboard_gestures_title">Klaviatura qısayollarını məşq edin</string>
@@ -1550,7 +1550,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> buraxıldı. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly elementin detallarını bu sıra ilə səsləndirir. Sıranı dəyişmək üçün detala toxunub saxlayın, sonra onu yuxarı və ya aşağı sürüşdürün. SandFly aktiv olduqda iki dəfə toxunub saxlayın, sonra sürüşdürün. Həmçinin Yuxarı köçürün və Aşağı köçürün əməliyyatlarından istifadə edə bilərsiniz.</string>
     <string name="title_pref_speak_items_before_scroll">Elementləri görünən sahəyə sürüşmədən əvvəl səsləndir</string>
-    <string name="gemini_error_api_key">Gemini API açarını qəbul etmədi. Açarı Avtomatik təsvirlər ayarlarında yoxlayın.</string>
+    <string name="gemini_error_api_key">Gemini API açarını qəbul etmədi. Açarı Şəkil və ekran təsvirləri ayarlarında yoxlayın.</string>
     <string name="gemini_error_quota">Gemini API açarınız üçün istifadə limitinə çatılıb. Sonra yenidən cəhd edin.</string>
     <string name="gemini_error_busy">Gemini hazırda məşğuldur. Bir azdan yenidən cəhd edin.</string>
     <string name="gemini_error_timeout">Gemini çox gec cavab verdi. Yenidən cəhd edin.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Parametrləri ixrac etmək mümkün olmadı</string>
     <string name="settings_import_done">Parametrlər idxal edildi</string>
     <string name="settings_import_failed">Bu fayl SandFly və ya Backtalk parametrlər faylı deyil və ya oxuna bilməz</string>
+    <string name="sound_mode_needs_access">Səssiz rejimi yandırıb-söndürmək üçün Narahat etməyin girişinə icazə verin.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Ox düymələri ilə naviqasiya</string>
+    <string name="arrow_key_nav_toggle">Ox düymələri ilə naviqasiyanı yandır və ya söndür</string>
+    <string name="arrow_key_nav_on">Ox düymələri ilə naviqasiya aktivdir</string>
+    <string name="arrow_key_nav_off">Ox düymələri ilə naviqasiya deaktivdir</string>
+    <string name="arrow_key_nav_page_left">Səhifə sola</string>
+    <string name="arrow_key_nav_page_right">Səhifə sağa</string>
+    <string name="arrow_key_nav_assign_instruction">Modifikator düymələri ilə və ya onlarsız bir düyməni və ya iki düyməni birlikdə basın. Təmizləmək üçün Backspace, defolta sıfırlamaq üçün Ctrl + Backspace, yadda saxlamaq üçün Enter, ləğv etmək üçün Escape basın.</string>
+    <string name="shortcut_next_track">Növbəti trek</string>
+    <string name="shortcut_previous_track">Əvvəlki trek</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Deaktiv</item>
+        <item>3 saniyə</item>
+        <item>5 saniyə</item>
+        <item>10 saniyə</item>
+        <item>15 saniyə</item>
+        <item>30 saniyə</item>
+        <item>1 dəqiqə</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Sükutdan sonra avtomatik dayandır</string>
 </resources>

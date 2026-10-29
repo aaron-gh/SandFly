@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">პარამეტრების ექსპორტი ვერ მოხერხდა</string>
     <string name="settings_import_done">პარამეტრები იმპორტირებულია</string>
     <string name="settings_import_failed">ეს ფაილი არ არის SandFly ან Backtalk პარამეტრების ფაილი, ან მისი წაკითხვა შეუძლებელია</string>
+    <string name="arrow_key_nav_assign_instruction">დააჭირეთ ერთ კლავიშს ან ორ კლავიშს ერთად, მოდიფიკატორი კლავიშებით ან მათ გარეშე. დააჭირეთ Backspace-ს გასასუფთავებლად, Ctrl + Backspace-ს ნაგულისხმევზე დასაბრუნებლად, Enter-ს შესანახად ან Escape-ს გასაუქმებლად.</string>
+    <string name="arrow_key_nav_off">ისრებით ნავიგაცია გამორთულია</string>
+    <string name="arrow_key_nav_on">ისრებით ნავიგაცია ჩართულია</string>
+    <string name="arrow_key_nav_page_left">გვერდი მარცხნივ</string>
+    <string name="arrow_key_nav_page_right">გვერდი მარჯვნივ</string>
+    <string name="arrow_key_nav_toggle">ისრებით ნავიგაციის ჩართვა ან გამორთვა</string>
+    <string name="keycombo_menu_category_arrow_key_nav">ისრებით ნავიგაცია</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>გამორთული</item>
+        <item>3 წამი</item>
+        <item>5 წამი</item>
+        <item>10 წამი</item>
+        <item>15 წამი</item>
+        <item>30 წამი</item>
+        <item>1 წუთი</item>
+    </string-array>
+    <string name="shortcut_next_track">შემდეგი ტრეკი</string>
+    <string name="shortcut_previous_track">წინა ტრეკი</string>
+    <string name="sound_mode_needs_access">დაუშვით „არ შემაწუხოთ“ რეჟიმზე წვდომა დადუმების ჩასართავად ან გამოსართავად.</string>
+    <string name="title_pref_dictation_auto_stop">ავტომატური შეჩერება სიჩუმის შემდეგ</string>
 </resources>

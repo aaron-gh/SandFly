@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Tambahkan tombol panah</string>
+    <string name="command_add_gesture">Tambahkan gestur</string>
+    <string name="command_choose_arrow_keys">Pilih tombol panah</string>
+    <string name="command_choose_gesture">Pilih gestur</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Gestur</string>
+    <string name="command_keyboard_shortcut">Pintasan keyboard</string>
+    <string name="command_no_arrow_keys">Tidak ada tombol panah</string>
+    <string name="command_no_gestures">Tidak ada gestur</string>
+    <string name="command_remove_arrow_keys">Hapus tombol panah</string>
+    <string name="command_remove_gesture">Hapus gestur</string>
+    <string name="command_replace">Ganti</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> menjalankan <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Gunakan untuk <xliff:g id="new_command" example="Describe image">%3$s</xliff:g>?</string>
+    <string name="commands_category_activation">Aktivasi</string>
+    <string name="commands_category_media">Media dan volume</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Scroll</string>
+    <string name="commands_category_speech">Ucapan</string>
+    <string name="commands_category_tables">Tabel</string>
+    <string name="commands_category_web">Web</string>
+    <string name="item_list_current">Saat ini</string>
+    <string name="item_list_not_in_reading_controls">Tidak ada di kontrol pembacaan</string>
+    <string name="item_list_not_in_sandfly_menu">Tidak ada di menu SandFly</string>
+    <string name="item_list_options">Opsi</string>
+    <string name="sounds_category_sounds">Suara</string>
+    <string name="sounds_category_vibration">Getaran</string>
+    <string name="speech_category_languages">Bahasa</string>
+    <string name="speech_category_other_apps">Aplikasi lain</string>
+    <string name="speech_category_pronunciation">Pengucapan</string>
+    <string name="speech_category_stopping">Menghentikan ucapan</string>
+    <string name="speech_category_voice">Suara</string>
+    <string name="title_pref_audio_output">Output audio</string>
+    <string name="title_pref_backup">Cadangkan dan pulihkan</string>
+    <string name="title_pref_braille">Braille</string>
+    <string name="title_pref_commands">Perintah</string>
+    <string name="title_pref_display">Tampilan</string>
+    <string name="title_pref_image_and_screen_descriptions">Deskripsi gambar dan layar</string>
+    <string name="title_pref_pause">Jeda dan nonaktifkan</string>
+    <string name="title_pref_quick_settings_screen">Setelan cepat</string>
+    <string name="title_pref_speech">Ucapan</string>
+    <string name="title_pref_speech_stream_control">Kontrol volume untuk ucapan</string>
+    <string name="title_pref_touch">Sentuhan</string>
+    <string name="title_pref_typing">Mengetik</string>
+    <string name="title_pref_updates">Update dan penginstalan</string>
+    <string name="title_pref_volume_keys">Tombol volume</string>
+    <string name="typing_category_other_input">Cara lain untuk mengetik</string>
+    <string name="verbosity_category_announcements">Pengumuman</string>
+    <string name="verbosity_category_items">Item</string>
+    <string name="verbosity_category_text">Teks dan simbol</string>
+</resources>

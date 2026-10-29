@@ -1782,4 +1782,24 @@
     <string name="settings_export_failed">Не вдалося експортувати налаштування</string>
     <string name="settings_import_done">Налаштування імпортовано</string>
     <string name="settings_import_failed">Цей файл не є файлом налаштувань SandFly або Backtalk або його неможливо прочитати</string>
+    <string name="arrow_key_nav_assign_instruction">Натисніть клавішу або дві клавіші разом, із клавішами-модифікаторами або без них. Натисніть Backspace, щоб очистити, Ctrl + Backspace, щоб відновити значення за умовчанням, Enter, щоб зберегти, або Escape, щоб скасувати.</string>
+    <string name="arrow_key_nav_off">Навігацію стрілками вимкнено</string>
+    <string name="arrow_key_nav_on">Навігацію стрілками ввімкнено</string>
+    <string name="arrow_key_nav_page_left">На сторінку ліворуч</string>
+    <string name="arrow_key_nav_page_right">На сторінку праворуч</string>
+    <string name="arrow_key_nav_toggle">Перемкнути навігацію стрілками</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Навігація стрілками</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Вимкнено</item>
+        <item>3 секунди</item>
+        <item>5 секунд</item>
+        <item>10 секунд</item>
+        <item>15 секунд</item>
+        <item>30 секунд</item>
+        <item>1 хвилина</item>
+    </string-array>
+    <string name="shortcut_next_track">Наступний трек</string>
+    <string name="shortcut_previous_track">Попередній трек</string>
+    <string name="sound_mode_needs_access">Надайте доступ до режиму «Не турбувати», щоб вмикати й вимикати режим «Без звуку».</string>
+    <string name="title_pref_dictation_auto_stop">Автоматична зупинка після тиші</string>
 </resources>

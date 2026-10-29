@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Ok tuşu ekle</string>
+    <string name="command_add_gesture">Hareket ekle</string>
+    <string name="command_choose_arrow_keys">Ok tuşlarını seçin</string>
+    <string name="command_choose_gesture">Hareket seçin</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Hareketler</string>
+    <string name="command_keyboard_shortcut">Klavye kısayolu</string>
+    <string name="command_no_arrow_keys">Ok tuşu yok</string>
+    <string name="command_no_gestures">Hareket yok</string>
+    <string name="command_remove_arrow_keys">Ok tuşlarını kaldır</string>
+    <string name="command_remove_gesture">Hareketi kaldır</string>
+    <string name="command_replace">Değiştir</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> şu anda <xliff:g id="old_command" example="Read from top">%2$s</xliff:g> komutunu çalıştırıyor. Bunun yerine <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> için kullanılsın mı?</string>
+    <string name="commands_category_activation">Etkinleştirme</string>
+    <string name="commands_category_media">Medya ve ses düzeyi</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Kaydırma</string>
+    <string name="commands_category_speech">Konuşma</string>
+    <string name="commands_category_tables">Tablolar</string>
+    <string name="commands_category_web">Web</string>
+    <string name="item_list_current">Geçerli</string>
+    <string name="item_list_not_in_reading_controls">Okuma kontrollerinde olmayanlar</string>
+    <string name="item_list_not_in_sandfly_menu">SandFly menüsünde olmayanlar</string>
+    <string name="item_list_options">Seçenekler</string>
+    <string name="sounds_category_sounds">Sesler</string>
+    <string name="sounds_category_vibration">Titreşim</string>
+    <string name="speech_category_languages">Diller</string>
+    <string name="speech_category_other_apps">Diğer uygulamalar</string>
+    <string name="speech_category_pronunciation">Telaffuz</string>
+    <string name="speech_category_stopping">Konuşmayı durdurma</string>
+    <string name="speech_category_voice">Ses</string>
+    <string name="title_pref_audio_output">Ses çıkışı</string>
+    <string name="title_pref_backup">Yedekleme ve geri yükleme</string>
+    <string name="title_pref_braille">Braille</string>
+    <string name="title_pref_commands">Komutlar</string>
+    <string name="title_pref_display">Ekran</string>
+    <string name="title_pref_image_and_screen_descriptions">Görsel ve ekran açıklamaları</string>
+    <string name="title_pref_pause">Duraklatma ve kapatma</string>
+    <string name="title_pref_quick_settings_screen">Hızlı ayarlar</string>
+    <string name="title_pref_speech">Konuşma</string>
+    <string name="title_pref_speech_stream_control">Konuşma için ses düzeyi kontrolü</string>
+    <string name="title_pref_touch">Dokunma</string>
+    <string name="title_pref_typing">Yazma</string>
+    <string name="title_pref_updates">Güncellemeler ve yükleme</string>
+    <string name="title_pref_volume_keys">Ses tuşları</string>
+    <string name="typing_category_other_input">Diğer yazma yöntemleri</string>
+    <string name="verbosity_category_announcements">Duyurular</string>
+    <string name="verbosity_category_items">Öğeler</string>
+    <string name="verbosity_category_text">Metin ve simgeler</string>
+</resources>

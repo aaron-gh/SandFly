@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Til að skoða tilkynningaferilinn skaltu strjúka niður efst á skjánum með tveimur fingrum</string>
   <string name="image_description_playground_title">Prófaðu að fá myndlýsingar</string>
   <string name="image_description_playground_content_one">Ýttu á mynd í fókus, opnaðu SandFly-valmyndina og veldu „Lýsa mynd“.\n\nÞað er ein mynd fyrir neðan. Reyndu að fá lýsingu fyrir hana.</string>
-  <string name="image_description_playground_content_two">Þú getur breytt stillingum myndlýsingar hvenær sem er í SandFly stillingum &gt; Sjálfvirkar lýsingar.</string>
-  <string name="image_description_playground_content_two_tts">Þú getur breytt stillingum myndlýsingar hvenær sem er í SandFly stillingum og síðan Sjálfvirkum lýsingum.</string>
+    <string name="image_description_playground_content_two">Þú getur breytt stillingum myndlýsingar hvenær sem er í SandFly stillingum &gt; Mynd- og skjálýsingar.</string>
+    <string name="image_description_playground_content_two_tts">Þú getur breytt stillingum myndlýsingar hvenær sem er í SandFly stillingum og síðan Mynd- og skjálýsingum.</string>
   <string name="image_description_sample_image_content_description">Mynddæmi: Ýttu með þremur fingrum til að opna valmynd SandFly og veldu „Lýsa mynd“ til að heyra lýsingu.</string>
   <string name="practice_gestures_title">Æfingabendingar</string>
   <string name="practice_keyboard_gestures_title">Flýtilyklar æfingalyklaborðs</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_dropped">Sleppt: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly les upplýsingar um atriði í þessari röð. Til að breyta henni skaltu halda fingri á upplýsingum og draga þær upp eða niður. Þegar kveikt er á SandFly skaltu ýta tvisvar og halda inni og draga síðan. Þú getur líka notað aðgerðirnar Færa upp og Færa niður.</string>
     <string name="title_pref_speak_items_before_scroll">Lesa upp atriði áður en þau flettast inn á skjáinn</string>
-    <string name="gemini_error_api_key">Gemini samþykkti ekki API lykilinn. Athugaðu lykilinn í stillingum fyrir sjálfvirkar lýsingar.</string>
+    <string name="gemini_error_api_key">Gemini samþykkti ekki API lykilinn. Athugaðu lykilinn í stillingum fyrir mynd- og skjálýsingar.</string>
     <string name="gemini_error_quota">Notkunarmörkum fyrir Gemini API lykilinn þinn hefur verið náð. Reyndu aftur síðar.</string>
     <string name="gemini_error_busy">Gemini er upptekið núna. Reyndu aftur eftir augnablik.</string>
     <string name="gemini_error_timeout">Gemini tók of langan tíma að svara. Reyndu aftur.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Ekki var hægt að flytja út stillingar</string>
     <string name="settings_import_done">Stillingar fluttar inn</string>
     <string name="settings_import_failed">Þessi skrá er ekki SandFly- eða Backtalk-stillingaskrá, eða ekki var hægt að lesa hana</string>
+    <string name="sound_mode_needs_access">Veittu aðgang að Ónáðið ekki til að kveikja eða slökkva á Þöggun.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Örvalyklafletting</string>
+    <string name="arrow_key_nav_toggle">Kveikja eða slökkva á örvalyklaflettingu</string>
+    <string name="arrow_key_nav_on">Kveikt á örvalyklaflettingu</string>
+    <string name="arrow_key_nav_off">Slökkt á örvalyklaflettingu</string>
+    <string name="arrow_key_nav_page_left">Síða til vinstri</string>
+    <string name="arrow_key_nav_page_right">Síða til hægri</string>
+    <string name="arrow_key_nav_assign_instruction">Ýttu á einn lykil eða tvo lykla saman, með eða án breytilykla. Ýttu á Backspace til að hreinsa, Ctrl + Backspace til að endurstilla á sjálfgefið, Enter til að vista eða Escape til að hætta við.</string>
+    <string name="shortcut_next_track">Næsta lag</string>
+    <string name="shortcut_previous_track">Fyrra lag</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Slökkt</item>
+        <item>3 sekúndur</item>
+        <item>5 sekúndur</item>
+        <item>10 sekúndur</item>
+        <item>15 sekúndur</item>
+        <item>30 sekúndur</item>
+        <item>1 mínúta</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Sjálfvirk stöðvun eftir þögn</string>
 </resources>

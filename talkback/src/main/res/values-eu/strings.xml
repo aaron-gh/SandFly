@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Jakinarazpenen historia ikusteko, pasatu 2 hatz pantailaren goialdetik beherantz</string>
   <string name="image_description_playground_title">Lortu irudien azalpenak</string>
   <string name="image_description_playground_content_one">Irudi bat fokuratuta daukazula, ireki SandFly-en menua eta hautatu \"Azaldu irudia\".\n\nArgazki bat dago behean. Lortu haren azalpena.</string>
-  <string name="image_description_playground_content_two">Irudien azalpenen ezarpenak aldatzeko, joan SandFly-en ezarpenak &gt; Azalpen automatikoak atalera.</string>
-  <string name="image_description_playground_content_two_tts">Irudien azalpenen ezarpenak aldatzeko, joan SandFly-en ezarpenetako Azalpen automatikoak atalera.</string>
+    <string name="image_description_playground_content_two">Irudien azalpenen ezarpenak aldatzeko, joan SandFly-en ezarpenak &gt; Irudien eta pantailaren azalpenak atalera.</string>
+    <string name="image_description_playground_content_two_tts">Irudien azalpenen ezarpenak aldatzeko, joan SandFly-en ezarpenetako Irudien eta pantailaren azalpenak atalera.</string>
   <string name="image_description_sample_image_content_description">Probako irudia. Sakatu 3 hatzekin SandFly-en menua irekitzeko eta hautatu \"Azaldu irudia\" azalpen bat entzuteko.</string>
   <string name="practice_gestures_title">Praktikatu keinuak</string>
   <string name="practice_keyboard_gestures_title">Praktikatu lasterbideak</string>
@@ -1550,7 +1550,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> utzi da. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly-ek ordena honetan esaten ditu elementuen xehetasunak. Aldatzeko, eduki sakatuta xehetasun bat eta arrastatu gora edo behera. SandFly aktibatuta dagoela, sakatu birritan eta eduki sakatuta, eta arrastatu. Eraman gora eta Eraman behera ekintzak ere erabil ditzakezu.</string>
     <string name="title_pref_speak_items_before_scroll">Irakurri ozen elementuak ikusgai egon aurretik</string>
-    <string name="gemini_error_api_key">Gemini-k ez du onartu API gakoa. Egiaztatu gakoa Azalpen automatikoak ataleko ezarpenetan.</string>
+    <string name="gemini_error_api_key">Gemini-k ez du onartu API gakoa. Egiaztatu gakoa Irudien eta pantailaren azalpenak ataleko ezarpenetan.</string>
     <string name="gemini_error_quota">Gemini-ren API gakoaren erabilera-mugara iritsi zara. Saiatu berriro geroago.</string>
     <string name="gemini_error_busy">Gemini lanpetuta dago une honetan. Saiatu berriro geroxeago.</string>
     <string name="gemini_error_timeout">Gemini-k denbora gehiegi behar izan du erantzuteko. Saiatu berriro.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Ezin izan dira ezarpenak esportatu</string>
     <string name="settings_import_done">Ezarpenak inportatu dira</string>
     <string name="settings_import_failed">Fitxategi hau ez da SandFly edo Backtalk ezarpen fitxategi bat, edo ezin izan da irakurri</string>
+    <string name="sound_mode_needs_access">Eman Ez molestatu modurako sarbidea Isilik aktibatzeko edo desaktibatzeko.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Gezi-teklen bidezko nabigazioa</string>
+    <string name="arrow_key_nav_toggle">Aktibatu edo desaktibatu gezi-teklen bidezko nabigazioa</string>
+    <string name="arrow_key_nav_on">Gezi-teklen bidezko nabigazioa aktibatuta</string>
+    <string name="arrow_key_nav_off">Gezi-teklen bidezko nabigazioa desaktibatuta</string>
+    <string name="arrow_key_nav_page_left">Orria ezkerrera</string>
+    <string name="arrow_key_nav_page_right">Orria eskuinera</string>
+    <string name="arrow_key_nav_assign_instruction">Sakatu tekla bat edo bi tekla batera, tekla aldatzaileekin edo gabe. Sakatu Atzera-tekla garbitzeko, Ctrl + Atzera-tekla balio lehenetsia berrezartzeko, Sartu gordetzeko edo Ihes uzteko.</string>
+    <string name="shortcut_next_track">Hurrengo pista</string>
+    <string name="shortcut_previous_track">Aurreko pista</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Desaktibatuta</item>
+        <item>3 segundo</item>
+        <item>5 segundo</item>
+        <item>10 segundo</item>
+        <item>15 segundo</item>
+        <item>30 segundo</item>
+        <item>1 minutu</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Isilunearen ondoren automatikoki gelditu</string>
 </resources>

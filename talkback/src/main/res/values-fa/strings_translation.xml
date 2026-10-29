@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">ترجمه خودکار</string>
+    <string name="title_pref_translation_auto_service">سرویس ترجمه خودکار</string>
+    <string name="title_pref_translation_copy">کپی کردن ترجمه‌ها در بریده‌دان</string>
+    <string name="title_pref_translation_download_all">بارگیری همه زبان‌ها</string>
+    <string name="title_pref_translation_languages">زبان‌های روی دستگاه</string>
+    <string name="title_pref_translation_notifications">ترجمه اعلان‌ها</string>
+    <string name="title_pref_translation_region">منطقه</string>
+    <string name="title_pref_translation_say_source">گفتن زبان اصلی</string>
+    <string name="title_pref_translation_second_target">ترجمه متنِ به زبان مقصد به</string>
+    <string name="title_pref_translation_service">سرویس ترجمه</string>
+    <string name="title_pref_translation_source">ترجمه از</string>
+    <string name="title_pref_translation_swap">جابه‌جا کردن زبان‌ها</string>
+    <string name="title_pref_translation_target">ترجمه به</string>
+    <string name="title_pref_translation_target_voice">استفاده از صدای زبان مقصد</string>
+    <string name="title_pref_translation_untranslated">زبان‌هایی که ترجمه نمی‌شوند</string>
+    <string name="title_pref_translation_wifi_only">بارگیری زبان‌ها فقط با Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">ترجمه آخرین عبارت گفته‌شده</string>
+    <string name="translation_address_hint">نشانی، مانند https://libretranslate.com</string>
+    <string name="translation_address_message">نشانی سرور LibreTranslate، مانند https://libretranslate.com. سرورهایی غیر از سرور خودتان ممکن است کلید API لازم داشته باشند.</string>
+    <string name="translation_all_downloaded">همه زبان‌ها بارگیری شدند</string>
+    <string name="translation_already_in">از قبل به <xliff:g id="language" example="English">%1$s</xliff:g> است</string>
+    <string name="translation_auto_state">ترجمه خودکار <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">گفتار</string>
+    <string name="translation_detect">تشخیص زبان</string>
+    <string name="translation_device_language">زبان دستگاه (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="3">%1$d</xliff:g> زبان بارگیری نشد</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> زبان بارگیری نشد</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="57">%1$d</xliff:g> زبان، حدود <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> زبان، حدود <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">درحال بارگیری، <xliff:g id="done" example="12">%1$d</xliff:g> از <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">توقف</string>
+    <string name="translation_download_all_stop_title">بارگیری زبان‌ها متوقف شود؟</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> بارگیری شد</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> بارگیری نشد</string>
+    <string name="translation_download_message">حدود ۳۰ مگابایت.</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g> بارگیری شود؟</string>
+    <string name="translation_downloading">درحال بارگیری <xliff:g id="languages" example="German and English">%1$s</xliff:g> برای ترجمه روی دستگاه</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> نتوانست متن را ترجمه کند.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> کلید API را نپذیرفت.</string>
+    <string name="translation_error_connection">دسترسی به <xliff:g id="service" example="DeepL">%1$s</xliff:g> ممکن نشد.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> نتوانست متن را ترجمه کند: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">تشخیص زبان درحال بارگیری است. چند لحظه دیگر دوباره امتحان کنید.</string>
+    <string name="translation_error_download">زبان‌های ترجمه روی دستگاه بارگیری نشدند.</string>
+    <string name="translation_error_downloading">زبان‌های ترجمه روی دستگاه هنوز درحال بارگیری هستند</string>
+    <string name="translation_error_language">ترجمه <xliff:g id="service" example="On-device">%1$s</xliff:g> از <xliff:g id="language" example="Klingon">%2$s</xliff:g> پشتیبانی نمی‌کند.</string>
+    <string name="translation_error_no_address">نشانی <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> را در تنظیمات «ترجمه» وارد کنید.</string>
+    <string name="translation_error_no_key">کلید API ‏<xliff:g id="service" example="DeepL">%1$s</xliff:g> را در تنظیمات «ترجمه» وارد کنید.</string>
+    <string name="translation_error_not_detected">زبان تشخیص داده نشد</string>
+    <string name="translation_error_quota">سقف استفاده از <xliff:g id="service" example="DeepL">%1$s</xliff:g> پر شد.</string>
+    <string name="translation_from">از <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">کلید API ‏<xliff:g id="service" example="DeepL">%1$s</xliff:g> را جای‌گذاری کنید. برای برداشتن آن، فیلد را پاک و ذخیره کنید. متنی که ترجمه می‌کنید به <xliff:g id="service" example="DeepL">%1$s</xliff:g> ارسال می‌شود.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>، بارگیری‌شده</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>، درحال بارگیری</string>
+    <string name="translation_languages_summary">بارگیری‌شده: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">چیزی برای ترجمه نیست</string>
+    <string name="translation_region_global">سراسری</string>
+    <string name="translation_region_message">منطقه منبع Translator شما در Azure، مانند westeurope. برای منبع سراسری، آن را خالی بگذارید.</string>
+    <string name="translation_second_none">ترجمه نشود</string>
+    <string name="translation_service_ai">سرویس هوش مصنوعی</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>، راه‌اندازی نشده</string>
+    <string name="translation_service_on_device">روی دستگاه</string>
+    <string name="translation_swapped">از <xliff:g id="source" example="German">%1$s</xliff:g> به <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">ترجمه</string>
+    <string name="translation_untranslated_none">هیچ‌کدام</string>
+</resources>

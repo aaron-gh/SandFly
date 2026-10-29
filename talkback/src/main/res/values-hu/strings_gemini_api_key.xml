@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Modell</string>
     <string name="ai_service_address_invalid">A címnek https:// előtaggal kell kezdődnie. Semmi sem lett mentve.</string>
     <string name="dialog_message_ai_service_consent">A képeket és képernyőképeket leírás céljából a(z) <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> kapja meg, ami néhány másodpercig tart. A szolgáltatás saját feltételei és adatvédelmi irányelvei érvényesek. A generatív MI kísérleti jellegű, ezért hibázni fog.</string>
-    <string name="ai_service_error_api_key">Az AI-szolgáltatás nem fogadta el az API-kulcsot. Ellenőrizze a beállításait az Automatikus leírásokban.</string>
+    <string name="ai_service_error_api_key">Az AI-szolgáltatás nem fogadta el az API-kulcsot. Ellenőrizze a beállításait a Kép- és képernyőleírások menüpontban.</string>
     <string name="ai_service_error_quota">Elérte az AI szolgáltatás használati korlátját. Próbálja újra később.</string>
     <string name="ai_service_error_busy">Az AI szolgáltatás jelenleg foglalt. Próbálja újra egy pillanat múlva.</string>
     <string name="ai_service_error_timeout">Az AI-szolgáltatás túl sokáig tartott a válaszadáshoz. Próbáld újra.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Nincs</string>
-    <string name="ai_service_not_set_up">Nincs AI-szolgáltatás használatban. Állítson be egyet, vagy válasszon egyet az Automatikus leírások beállításainál.</string>
+    <string name="ai_service_not_set_up">Nincs AI-szolgáltatás használatban. Állítson be egyet, vagy válasszon egyet a Kép- és képernyőleírások beállításainál.</string>
     <string name="ai_provider_none_set_up">Nincs AI-szolgáltatás beállítva. Állítson be egyet az alábbi beállításokban.</string>
     <string name="ai_provider_other">Egyéb szolgáltatás</string>
     <string name="title_pref_category_ai_services">AI szolgáltatások</string>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">အလိုအလျောက် ဘာသာပြန်ခြင်း</string>
+    <string name="title_pref_translation_auto_service">အလိုအလျောက် ဘာသာပြန်ခြင်း ဝန်ဆောင်မှု</string>
+    <string name="title_pref_translation_copy">ဘာသာပြန်ချက်များကို ကလစ်ဘုတ်သို့ ကူးရန်</string>
+    <string name="title_pref_translation_download_all">ဘာသာစကားအားလုံး ဒေါင်းလုဒ်လုပ်ရန်</string>
+    <string name="title_pref_translation_languages">စက်ပေါ်ရှိ ဘာသာစကားများ</string>
+    <string name="title_pref_translation_notifications">အကြောင်းကြားချက်များကို ဘာသာပြန်ရန်</string>
+    <string name="title_pref_translation_region">ဒေသ</string>
+    <string name="title_pref_translation_say_source">မူရင်းဘာသာစကားကို ပြောရန်</string>
+    <string name="title_pref_translation_second_target">ပစ်မှတ်ဘာသာစကားဖြင့်ရှိသော စာသားကို ဘာသာပြန်မည့် ဘာသာစကား</string>
+    <string name="title_pref_translation_service">ဘာသာပြန် ဝန်ဆောင်မှု</string>
+    <string name="title_pref_translation_source">ဘာသာပြန်မည့် မူရင်းဘာသာ</string>
+    <string name="title_pref_translation_swap">ဘာသာစကားများ ဖလှယ်ရန်</string>
+    <string name="title_pref_translation_target">ဘာသာပြန်မည့် ဘာသာစကား</string>
+    <string name="title_pref_translation_target_voice">ပစ်မှတ်ဘာသာစကားအတွက် စကားသံ သုံးရန်</string>
+    <string name="title_pref_translation_untranslated">ဘာသာမပြန်သော ဘာသာစကားများ</string>
+    <string name="title_pref_translation_wifi_only">ဘာသာစကားများကို Wi-Fi ဖြင့်သာ ဒေါင်းလုဒ်လုပ်ရန်</string>
+    <string name="title_translate_last_spoken_phrase">နောက်ဆုံးပြောခဲ့သည့် စကားရပ်ကို ဘာသာပြန်ရန်</string>
+    <string name="translation_address_hint">လိပ်စာ၊ ဥပမာ https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate ဆာဗာ၏ လိပ်စာ၊ ဥပမာ https://libretranslate.com။ သင့်ကိုယ်ပိုင်မဟုတ်သော ဆာဗာများတွင် API သော့ လိုနိုင်သည်။</string>
+    <string name="translation_all_downloaded">ဘာသာစကားအားလုံး ဒေါင်းလုဒ်လုပ်ပြီးပြီ</string>
+    <string name="translation_already_in"><xliff:g id="language" example="English">%1$s</xliff:g> ဖြင့် ရှိပြီးသား</string>
+    <string name="translation_auto_state">အလိုအလျောက် ဘာသာပြန်ခြင်း <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">စကားပြော</string>
+    <string name="translation_detect">ဘာသာစကားကို ရှာဖော်ရန်</string>
+    <string name="translation_device_language">စက်၏ ဘာသာစကား (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="other">ဘာသာစကား <xliff:g id="count" example="3">%1$d</xliff:g> ခု ဒေါင်းလုဒ် မလုပ်ရသေးပါ</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="other">ဘာသာစကား <xliff:g id="count" example="57">%1$d</xliff:g> ခု၊ ခန့်မှန်း <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>။</item>
+    </plurals>
+    <string name="translation_download_all_progress">ဒေါင်းလုဒ်လုပ်နေသည်၊ <xliff:g id="total" example="57">%2$d</xliff:g> ခုအနက် <xliff:g id="done" example="12">%1$d</xliff:g></string>
+    <string name="translation_download_all_stop">ရပ်ရန်</string>
+    <string name="translation_download_all_stop_title">ဘာသာစကားများ ဒေါင်းလုဒ်လုပ်ခြင်းကို ရပ်မလား။</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> ဒေါင်းလုဒ်လုပ်ပြီးပြီ</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> ဒေါင်းလုဒ် မလုပ်ရပါ</string>
+    <string name="translation_download_message">ခန့်မှန်း 30 MB။</string>
+    <string name="translation_download_title"><xliff:g id="language" example="German">%1$s</xliff:g> ကို ဒေါင်းလုဒ်လုပ်မလား။</string>
+    <string name="translation_downloading">စက်ပေါ်ရှိ ဘာသာပြန်ခြင်းအတွက် <xliff:g id="languages" example="German and English">%1$s</xliff:g> ကို ဒေါင်းလုဒ်လုပ်နေသည်</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> က စာသားကို ဘာသာမပြန်နိုင်ပါ။</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> က API သော့ကို လက်မခံပါ။</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ကို ချိတ်ဆက်၍ မရပါ။</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> က စာသားကို ဘာသာမပြန်နိုင်ပါ- <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">ဘာသာစကား ရှာဖော်ခြင်းကို ဒေါင်းလုဒ်လုပ်နေသည်။ ခဏနေမှ ထပ်စမ်းပါ။</string>
+    <string name="translation_error_download">စက်ပေါ်ရှိ ဘာသာပြန်ခြင်းအတွက် ဘာသာစကားများကို ဒေါင်းလုဒ်လုပ်၍ မရပါ။</string>
+    <string name="translation_error_downloading">စက်ပေါ်ရှိ ဘာသာပြန်ခြင်းအတွက် ဘာသာစကားများကို ဒေါင်းလုဒ်လုပ်နေဆဲ</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g> ဘာသာပြန်ခြင်းသည် <xliff:g id="language" example="Klingon">%2$s</xliff:g> ကို မပံ့ပိုးပါ။</string>
+    <string name="translation_error_no_address">“ဘာသာပြန်ခြင်း” ဆက်တင်များတွင် <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> လိပ်စာကို ထည့်ပါ။</string>
+    <string name="translation_error_no_key">“ဘာသာပြန်ခြင်း” ဆက်တင်များတွင် <xliff:g id="service" example="DeepL">%1$s</xliff:g> API သော့ကို ထည့်ပါ။</string>
+    <string name="translation_error_not_detected">ဘာသာစကား ရှာမတွေ့ပါ</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> အသုံးပြုမှု ကန့်သတ်ချက် ပြည့်သွားပြီ။</string>
+    <string name="translation_from"><xliff:g id="language" example="German">%1$s</xliff:g> မှ-</string>
+    <string name="translation_key_message">သင့် <xliff:g id="service" example="DeepL">%1$s</xliff:g> API သော့ကို ကူးထည့်ပါ။ ၎င်းကို ဖယ်ရှားရန် အကွက်ကို ရှင်းပြီး သိမ်းပါ။ သင်ဘာသာပြန်သော စာသားကို <xliff:g id="service" example="DeepL">%1$s</xliff:g> သို့ ပို့သည်။</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>၊ ဒေါင်းလုဒ်လုပ်ပြီး</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>၊ ဒေါင်းလုဒ်လုပ်နေသည်</string>
+    <string name="translation_languages_summary">ဒေါင်းလုဒ်လုပ်ပြီး- <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">ဘာသာပြန်စရာ မရှိပါ</string>
+    <string name="translation_region_global">ကမ္ဘာလုံးဆိုင်ရာ</string>
+    <string name="translation_region_message">Azure ရှိ သင့် Translator ရင်းမြစ်၏ ဒေသ၊ ဥပမာ westeurope။ ကမ္ဘာလုံးဆိုင်ရာ ရင်းမြစ်အတွက် အလွတ်ထားပါ။</string>
+    <string name="translation_second_none">ဘာသာမပြန်ပါနှင့်</string>
+    <string name="translation_service_ai">AI ဝန်ဆောင်မှု</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>၊ စနစ်ထည့်သွင်းမထားပါ</string>
+    <string name="translation_service_on_device">စက်ပေါ်တွင်</string>
+    <string name="translation_swapped"><xliff:g id="source" example="German">%1$s</xliff:g> မှ <xliff:g id="target" example="English">%2$s</xliff:g> သို့</string>
+    <string name="translation_title">ဘာသာပြန်ခြင်း</string>
+    <string name="translation_untranslated_none">မရှိ</string>
+</resources>

@@ -54,6 +54,7 @@
     <plurals name="report_new_replies">
         <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> nova resposta</item>
         <item quantity="other"><xliff:g id="count" example="2">%1$d</xliff:g> novas respostas</item>
+        <item quantity="many"><xliff:g id="count" example="2">%1$d</xliff:g> novas respostas</item>
     </plurals>
     <string name="report_status_changed">status alterado</string>
     <string name="report_status_open">Aberto</string>
@@ -81,4 +82,5 @@
     <string name="notification_channel_problem_reports">Respostas ao feedback</string>
     <string name="report_notification_reply">Resposta a <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
+    <string name="title_pref_privacy_policy">Política de Privacidade</string>
 </resources>

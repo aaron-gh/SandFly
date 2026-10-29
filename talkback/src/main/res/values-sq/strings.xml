@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Për të kontrolluar historikun e njoftimeve, rrëshqit shpejt poshtë me 2 gishta nga kreu i ekranit</string>
   <string name="image_description_playground_title">Provo të marrësh përshkrimet e imazheve</string>
   <string name="image_description_playground_content_one">Kur je i fokusuar te një imazh, hap menynë e SandFly dhe zgjidh \"Përshkruaj imazhin\".\n\nKa një fotografi më poshtë. Provo të marrësh përshkrimin e saj.</string>
-  <string name="image_description_playground_content_two">Mund t\'i ndryshoni cilësimet e përshkrimit të imazheve në çdo kohë te Cilësimet e SandFly &gt; Përshkrimet automatike.</string>
-  <string name="image_description_playground_content_two_tts">Mund t\'i ndryshoni cilësimet e përshkrimit të imazheve në çdo kohë te Cilësimet e SandFly, më pas te Përshkrimet automatike.</string>
+    <string name="image_description_playground_content_two">Mund t\'i ndryshoni cilësimet e përshkrimit të imazheve në çdo kohë te Cilësimet e SandFly &gt; Përshkrimet e imazheve dhe ekranit.</string>
+    <string name="image_description_playground_content_two_tts">Mund t\'i ndryshoni cilësimet e përshkrimit të imazheve në çdo kohë te Cilësimet e SandFly, më pas te Përshkrimet e imazheve dhe ekranit.</string>
   <string name="image_description_sample_image_content_description">Shembull i imazhit; trokit me 3 gishta për të hapur menynë e SandFly dhe zgjidh \"Përshkruaj imazhin\" për të dëgjuar një përshkrim.</string>
   <string name="practice_gestures_title">Praktiko gjestet</string>
   <string name="practice_keyboard_gestures_title">Praktiko shkurtoret e tastierës</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_dropped">U lëshua <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly thotë detajet e një artikulli në këtë renditje. Për ta ndryshuar, prekni dhe mbani një detaj dhe më pas tërhiqeni lart ose poshtë. Me SandFly të aktivizuar, prekni dy herë dhe mbani, më pas zvarriteni. Mund të përdorni gjithashtu veprimet Lëviz lart dhe Lëviz poshtë.</string>
     <string name="title_pref_speak_items_before_scroll">Thuaj artikujt përpara se të lëvizin në pamje</string>
-    <string name="gemini_error_api_key">Gemini nuk e pranoi çelësin API. Kontrolloni çelësin te cilësimet e përshkrimeve automatike.</string>
+    <string name="gemini_error_api_key">Gemini nuk e pranoi çelësin API. Kontrolloni çelësin te cilësimet e përshkrimeve të imazheve dhe ekranit.</string>
     <string name="gemini_error_quota">Kufiri i përdorimit për çelësin tuaj API Gemini është arritur. Provo sërish më vonë.</string>
     <string name="gemini_error_busy">Gemini është i zënë për momentin. Provo sërish pas një momenti.</string>
     <string name="gemini_error_timeout">Gemini iu desh shumë kohë për t\'u përgjigjur. Provo sërish.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Cilësimet nuk mund të eksportoheshin</string>
     <string name="settings_import_done">Cilësimet u importuan</string>
     <string name="settings_import_failed">Ky skedar nuk është skedar i cilësimeve SandFly ose Backtalk, ose nuk mund të lexohej</string>
+    <string name="sound_mode_needs_access">Lejoni qasjen te “Mos shqetëso” për të aktivizuar ose çaktivizuar Heshtjen.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Navigimi me tastet e shigjetave</string>
+    <string name="arrow_key_nav_toggle">Aktivizo/çaktivizo navigimin me shigjeta</string>
+    <string name="arrow_key_nav_on">Navigimi me tastet e shigjetave aktiv</string>
+    <string name="arrow_key_nav_off">Navigimi me tastet e shigjetave joaktiv</string>
+    <string name="arrow_key_nav_page_left">Faqe majtas</string>
+    <string name="arrow_key_nav_page_right">Faqe djathtas</string>
+    <string name="arrow_key_nav_assign_instruction">Shtypni një tast ose dy taste njëkohësisht, me ose pa tastet modifikuese. Shtypni Backspace për të pastruar, Ctrl + Backspace për të rivendosur parazgjedhjen, Enter për të ruajtur ose Escape për të anuluar.</string>
+    <string name="shortcut_next_track">Pista tjetër</string>
+    <string name="shortcut_previous_track">Pista e mëparshme</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Joaktiv</item>
+        <item>3 sekonda</item>
+        <item>5 sekonda</item>
+        <item>10 sekonda</item>
+        <item>15 sekonda</item>
+        <item>30 sekonda</item>
+        <item>1 minutë</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Ndalimi automatik pas heshtjes</string>
 </resources>

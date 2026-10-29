@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automaattinen kääntäminen</string>
+    <string name="title_pref_translation_auto_service">Automaattisen kääntämisen palvelu</string>
+    <string name="title_pref_translation_copy">Kopioi käännökset leikepöydälle</string>
+    <string name="title_pref_translation_download_all">Lataa kaikki kielet</string>
+    <string name="title_pref_translation_languages">Laitekäännöksen kielet</string>
+    <string name="title_pref_translation_notifications">Käännä ilmoitukset</string>
+    <string name="title_pref_translation_region">Alue</string>
+    <string name="title_pref_translation_say_source">Sano alkuperäinen kieli</string>
+    <string name="title_pref_translation_second_target">Kohdekielellä olevan tekstin käännöskieli</string>
+    <string name="title_pref_translation_service">Käännöspalvelu</string>
+    <string name="title_pref_translation_source">Lähdekieli</string>
+    <string name="title_pref_translation_swap">Vaihda kielet</string>
+    <string name="title_pref_translation_target">Kohdekieli</string>
+    <string name="title_pref_translation_target_voice">Käytä kohdekielen ääntä</string>
+    <string name="title_pref_translation_untranslated">Kielet, joita ei käännetä</string>
+    <string name="title_pref_translation_wifi_only">Lataa kielet vain Wi-Fi-yhteydellä</string>
+    <string name="title_translate_last_spoken_phrase">Käännä viimeksi sanottu lause</string>
+    <string name="translation_address_hint">Osoite, esim. https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate-palvelimen osoite, esim. https://libretranslate.com. Muut kuin omat palvelimet voivat vaatia API-avaimen.</string>
+    <string name="translation_all_downloaded">Kaikki kielet ladattu</string>
+    <string name="translation_already_in">Jo kielellä <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automaattinen kääntäminen <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Puhe</string>
+    <string name="translation_detect">Tunnista kieli</string>
+    <string name="translation_device_language">Laitteen kieli (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> kieli jäi lataamatta</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> kieltä jäi lataamatta</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> kieli, noin <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> kieltä, noin <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Ladataan, <xliff:g id="done" example="12">%1$d</xliff:g>/<xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Lopeta</string>
+    <string name="translation_download_all_stop_title">Lopetetaanko kielten lataus?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> ladattu</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> jäi lataamatta</string>
+    <string name="translation_download_message">Noin 30 Mt.</string>
+    <string name="translation_download_title">Ladataanko <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Ladataan laitteella tehtävää käännöstä varten: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ei voinut kääntää tekstiä.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ei hyväksynyt API-avainta.</string>
+    <string name="translation_error_connection">Palveluun <xliff:g id="service" example="DeepL">%1$s</xliff:g> ei saatu yhteyttä.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ei voinut kääntää tekstiä: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Kielentunnistusta ladataan. Yritä hetken kuluttua uudelleen.</string>
+    <string name="translation_error_download">Laitteella tehtävän käännöksen kieliä ei voitu ladata.</string>
+    <string name="translation_error_downloading">Laitteella tehtävän käännöksen kieliä ladataan vielä</string>
+    <string name="translation_error_language">Käännöspalvelu <xliff:g id="service" example="On-device">%1$s</xliff:g> ei tue kieltä <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Syötä palvelun <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> osoite Kääntäminen-asetuksissa.</string>
+    <string name="translation_error_no_key">Syötä palvelun <xliff:g id="service" example="DeepL">%1$s</xliff:g> API-avain Kääntäminen-asetuksissa.</string>
+    <string name="translation_error_not_detected">Kieltä ei tunnistettu</string>
+    <string name="translation_error_quota">Palvelun <xliff:g id="service" example="DeepL">%1$s</xliff:g> käyttöraja saavutettu.</string>
+    <string name="translation_from">Kielestä <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Liitä palvelun <xliff:g id="service" example="DeepL">%1$s</xliff:g> API-avain. Voit poistaa sen tyhjentämällä kentän ja tallentamalla. Kääntämäsi teksti lähetetään palveluun <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, ladattu</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, ladataan</string>
+    <string name="translation_languages_summary">Ladattu: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Ei käännettävää</string>
+    <string name="translation_region_global">Maailmanlaajuinen</string>
+    <string name="translation_region_message">Azuren Translator-resurssisi alue, esim. westeurope. Jätä tyhjäksi, jos resurssi on maailmanlaajuinen.</string>
+    <string name="translation_second_none">Älä käännä</string>
+    <string name="translation_service_ai">Tekoälypalvelu</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, ei määritetty</string>
+    <string name="translation_service_on_device">Laitteella</string>
+    <string name="translation_swapped">Kielestä <xliff:g id="source" example="German">%1$s</xliff:g> kielelle <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Kääntäminen</string>
+    <string name="translation_untranslated_none">Ei mitään</string>
+</resources>

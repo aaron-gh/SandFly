@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sandfly_tutorial_actions_archive">Мессеж рүү шилжинэ үү. Түүний үйлдлүүдээр гүйлгэхийн тулд <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> эсвэл <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> зангааг хийнэ үү. Сонссон үйлдлээ гүйцэтгэхийн тулд <xliff:g id="gesture" example="Double-tap">%3$s</xliff:g> зангааг хийнэ үү. <xliff:g id="action" example="Archive">%4$s</xliff:g> үйлдлийг гүйцэтгэнэ үү.</string>
+    <string name="sandfly_tutorial_actions_intro">Зарим зүйл идэвхжүүлэхээс гадна өөр үйлдэлтэй байдаг, жишээ нь мессежийн Архивлах эсвэл Устгах. Ийм зүйл дээр фокус байх үед «Үйлдлүүд» уншилтын хяналт тэдгээрээр гүйлгэнэ.</string>
+    <string name="sandfly_tutorial_actions_title">Үйлдлүүд</string>
+    <string name="sandfly_tutorial_activate_button"><xliff:g id="button" example="Ring the bell">%2$s</xliff:g> руу шилжинэ үү. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> зангаагаар үүнийг идэвхжүүлнэ үү.</string>
+    <string name="sandfly_tutorial_activate_check_box"><xliff:g id="check_box" example="Extra cheese">%1$s</xliff:g>-г мөн адил тэмдэглэнэ үү.</string>
+    <string name="sandfly_tutorial_activate_hold">Зарим зүйл удаан дарахад өөр үйлдэл хийдэг. <xliff:g id="button" example="Details">%2$s</xliff:g> руу шилжинэ үү. <xliff:g id="gesture" example="Double-tap and hold">%1$s</xliff:g> зангаагаар үүнийг удаан дарна уу.</string>
+    <string name="sandfly_tutorial_activate_intro">Идэвхжүүлэлт нь дэлгэцийн хаана ч товшсон фокустай зүйл дээр ажиллана.</string>
+    <string name="sandfly_tutorial_activate_title">Зүйлсийг идэвхжүүлэх</string>
+    <string name="sandfly_tutorial_back_in_lesson">Буцах зангаа хичээлээс гаргахгүй. Өөр хичээл сонгохын тулд «Агуулга»-г ашиглана уу.</string>
+    <string name="sandfly_tutorial_bell">Хонх дуугаргах</string>
+    <string name="sandfly_tutorial_bell_rung">Дуугаргасан тоо: <xliff:g id="count" example="1">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_brightness">Гэрэлтүүлэг</string>
+    <string name="sandfly_tutorial_chapter_basics">Үндэс</string>
+    <string name="sandfly_tutorial_chapter_controls">Удирдлага ба текст</string>
+    <string name="sandfly_tutorial_chapter_getting_around">Шилжих</string>
+    <string name="sandfly_tutorial_chapter_practice">Дадлага</string>
+    <string name="sandfly_tutorial_chapter_reading">Унших</string>
+    <string name="sandfly_tutorial_choose_reading_control">Уншилтын хяналтыг өөрчлөхийн тулд <xliff:g id="gesture" example="Swipe down then up">%1$s</xliff:g> эсвэл <xliff:g id="gesture" example="Swipe up then down">%2$s</xliff:g> зангааг хийнэ үү. <xliff:g id="reading_control" example="Words">%3$s</xliff:g>-г сонгоно уу.</string>
+    <string name="sandfly_tutorial_close">Зааврыг хаах</string>
+    <string name="sandfly_tutorial_commands_copy"><xliff:g id="gesture" example="Triple-tap with 3 fingers">%1$s</xliff:g> зангаа нь SandFly-н сүүлд хэлсэн текстийг санах ойд хуулна.</string>
+    <string name="sandfly_tutorial_commands_intro">Эдгээр тушаал дэлгэц бүр дээр ажиллана.</string>
+    <string name="sandfly_tutorial_commands_search"><xliff:g id="gesture" example="Swipe left then down">%1$s</xliff:g> зангаа нь дэлгэц дээрх текстийг хайна. Энэ хичээлд заавар үүнийг гүйцэтгэхийн оронд юу хийдгийг хэлнэ.</string>
+    <string name="sandfly_tutorial_commands_speech_off"><xliff:g id="gesture" example="Double-tap with 3 fingers">%1$s</xliff:g> зангаа нь яриаг унтраах ба дахин хийвэл асаана. Энэ хичээлд заавар үүнийг гүйцэтгэхийн оронд юу хийдгийг хэлнэ.</string>
+    <string name="sandfly_tutorial_commands_status"><xliff:g id="gesture" example="Triple-tap with 2 fingers">%1$s</xliff:g> зангаа нь цаг, батерейн түвшин болон бусад төлөвийг хэлнэ.</string>
+    <string name="sandfly_tutorial_commands_title">Хэрэгтэй тушаалууд</string>
+    <string name="sandfly_tutorial_contents">Агуулга</string>
+    <string name="sandfly_tutorial_contents_intro">Хичээлүүд дарааллаараа. Тус бүрийг тусад нь нээж болно.</string>
+    <string name="sandfly_tutorial_continuous_intro">SandFly шудрахгүйгээр фокустай зүйлээс дэлгэцийн төгсгөл хүртэл уншиж чадна. Дэлгэцэд хүрэхэд уншилт зогсоно.</string>
+    <string name="sandfly_tutorial_continuous_move">Жорын эхний мөр рүү шилжинэ үү.</string>
+    <string name="sandfly_tutorial_continuous_read"><xliff:g id="gesture" example="Swipe down then right">%1$s</xliff:g> зангаагаар фокустай зүйлээс уншина уу.</string>
+    <string name="sandfly_tutorial_continuous_read_from_menu"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> зангаагаар SandFly цэсийг нээгээд, <xliff:g id="command" example="Read from focused item">%2$s</xliff:g>-г сонгоно уу.</string>
+    <string name="sandfly_tutorial_continuous_title">Тасралтгүй унших</string>
+    <string name="sandfly_tutorial_details">Дэлгэрэнгүй</string>
+    <string name="sandfly_tutorial_details_shown">Оройн 19:00 цагт 2 хүний ширээ, цонхны дэргэд.</string>
+    <string name="sandfly_tutorial_done">Дууссан</string>
+    <string name="sandfly_tutorial_end_practice">Дадлагыг дуусгах</string>
+    <string name="sandfly_tutorial_explore_activate">Од-д хүрээд хуруугаа өргөнө үү. Үүнийг идэвхжүүлэхийн тулд хаана ч <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> зангааг хийнэ үү.</string>
+    <string name="sandfly_tutorial_explore_find">Нэг хуруугаа дэлгэц дээгүүр гулсуулж, дөрвөн дөрвөлжинг олно уу: Нар, Сар, Од, Үүл.</string>
+    <string name="sandfly_tutorial_explore_intro">Дэлгэцэд хүрэхэд хурууны доорх зүйлийг хэлнэ. Зүйлд хүрэх нь түүнийг идэвхжүүлэхгүй.</string>
+    <string name="sandfly_tutorial_explore_title">Хүрэлтээр судлах</string>
+    <string name="sandfly_tutorial_extra_cheese">Нэмэлт бяслаг</string>
+    <string name="sandfly_tutorial_finish">Зааврыг дуусгах</string>
+    <string name="sandfly_tutorial_forecast_today">Өнөөдөр</string>
+    <string name="sandfly_tutorial_forecast_today_text">Нартай, дулаан, сул салхитай.</string>
+    <string name="sandfly_tutorial_forecast_tomorrow">Маргааш</string>
+    <string name="sandfly_tutorial_forecast_tomorrow_text">Өглөө үүлэрхэг, үдээс хойш бороотой.</string>
+    <string name="sandfly_tutorial_forecast_weekend">Амралтын өдрүүд</string>
+    <string name="sandfly_tutorial_forecast_weekend_text">Бямба гарагт салхитай, ням гарагт цэлмэг.</string>
+    <string name="sandfly_tutorial_headings_intro">Дэлгэц болон вэб хуудас агуулгаа гарчгаар хуваадаг. «Гарчиг» уншилтын хяналт нэг гарчгаас дараагийнх руу үсэрнэ.</string>
+    <string name="sandfly_tutorial_headings_jump"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> зангаагаар дараагийн гарчиг руу үсэрнэ үү. <xliff:g id="heading" example="Weekend">%2$s</xliff:g> гарчиг руу үсэрнэ үү.</string>
+    <string name="sandfly_tutorial_headings_title">Гарчиг</string>
+    <string name="sandfly_tutorial_item_apples">Алим</string>
+    <string name="sandfly_tutorial_item_bread">Талх</string>
+    <string name="sandfly_tutorial_item_cheese">Бяслаг</string>
+    <string name="sandfly_tutorial_item_dates">Огноо жимс</string>
+    <string name="sandfly_tutorial_item_eggs">Өндөг</string>
+    <string name="sandfly_tutorial_lesson_complete">Хичээл дууслаа.</string>
+    <string name="sandfly_tutorial_lesson_complete_last">Хичээл дууслаа. Зааврыг дуусгахын тулд <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> зангааг хийнэ үү.</string>
+    <string name="sandfly_tutorial_lesson_complete_next">Хичээл дууслаа. Дараагийн хичээлийг эхлүүлэхийн тулд <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> зангааг хийнэ үү.</string>
+    <string name="sandfly_tutorial_lesson_heading"><xliff:g id="lesson" example="Moving between items">%1$s</xliff:g>, хичээл <xliff:g id="number" example="3">%2$d</xliff:g>/<xliff:g id="count" example="17">%3$d</xliff:g></string>
+    <string name="sandfly_tutorial_list_item">Зүйл <xliff:g id="number" example="15">%1$d</xliff:g></string>
+    <string name="sandfly_tutorial_menu_close"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> зангаагаар цэсийг хаана уу.</string>
+    <string name="sandfly_tutorial_menu_intro">SandFly цэсэд фокустай зүйл болон одоогийн дэлгэцэд зориулсан тушаалууд бий.</string>
+    <string name="sandfly_tutorial_menu_open"><xliff:g id="gesture" example="Tap with 3 fingers">%1$s</xliff:g> зангаагаар SandFly цэсийг нээнэ үү. Түүний тушаалуудаар шударна уу. <xliff:g id="gesture" example="Swipe down then left">%2$s</xliff:g> зангаа цэсийг хаана.</string>
+    <string name="sandfly_tutorial_menu_title">SandFly цэс</string>
+    <string name="sandfly_tutorial_message">Сэмээс ирсэн мессеж: Үд дунд хамт хооллох уу?</string>
+    <string name="sandfly_tutorial_message_archive">Архивлах</string>
+    <string name="sandfly_tutorial_message_delete">Устгах</string>
+    <string name="sandfly_tutorial_message_reply">Хариулах</string>
+    <string name="sandfly_tutorial_move_intro">Шудрахад дэлгэц дээрх дараагийн эсвэл өмнөх зүйл рүү унших дарааллаар шилжинэ.</string>
+    <string name="sandfly_tutorial_move_next"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> зангаагаар дараагийн зүйл рүү шилжинэ үү. <xliff:g id="item" example="Eggs">%2$s</xliff:g> хүртэл үргэлжлүүлнэ үү.</string>
+    <string name="sandfly_tutorial_move_previous"><xliff:g id="gesture" example="Swipe left">%1$s</xliff:g> зангаагаар өмнөх зүйл рүү шилжинэ үү. <xliff:g id="item" example="Bread">%2$s</xliff:g> руу буцна уу.</string>
+    <string name="sandfly_tutorial_move_title">Зүйлсийн хооронд шилжих</string>
+    <string name="sandfly_tutorial_name">Нэр</string>
+    <string name="sandfly_tutorial_next_lesson">Дараагийн хичээл: <xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
+    <string name="sandfly_tutorial_no_gesture"><xliff:g id="action" example="Next item">%1$s</xliff:g>-д зангаа байхгүй. «Тушаалууд» хэсэгт зангаа онооно уу эсвэл «Алхмыг алгасах»-ыг ашиглана уу.</string>
+    <string name="sandfly_tutorial_not_in_lesson"><xliff:g id="action" example="Home">%1$s</xliff:g> хичээлийн үеэр гүйцэтгэгдэхгүй. Заавраас гарахын тулд «Агуулга» доторх «Зааврыг хаах»-ыг ашиглана уу.</string>
+    <string name="sandfly_tutorial_not_in_lesson_short"><xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g> хичээлийн үеэр гүйцэтгэгдэхгүй.</string>
+    <string name="sandfly_tutorial_pause_intro">Яриаг зүйлийн дундуур түр зогсоож, зогссон газраас нь үргэлжлүүлж болно.</string>
+    <string name="sandfly_tutorial_pause_pause">Доорх өгүүллэг рүү шилжинэ үү. Үүнийг уншиж байх үед яриаг түр зогсоохын тулд <xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> зангааг хийж, үргэлжлүүлэхийн тулд дахин хийнэ үү.</string>
+    <string name="sandfly_tutorial_pause_resume"><xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> зангааг дахин хийж яриаг үргэлжлүүлнэ үү.</string>
+    <string name="sandfly_tutorial_pause_title">Яриаг түр зогсоох</string>
+    <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: <xliff:g id="action" example="Next item">%2$s</xliff:g></string>
+    <string name="sandfly_tutorial_practice_intro">Зангаа бүр гүйцэтгэгдэхийн оронд өөрийн нэр болон үйлдлийг хэлнэ. Дараагийн болон өмнөх зүйл рүү шилжих, идэвхжүүлэх нь ажилласаар байна.</string>
+    <string name="sandfly_tutorial_practice_step">Юу хийдгийг сонсохын тулд дурын зангаа хийнэ үү. Зогсоохын тулд <xliff:g id="button" example="End practice">%1$s</xliff:g>-г идэвхжүүлнэ үү.</string>
+    <string name="sandfly_tutorial_practice_title">Зангааны дадлага</string>
+    <string name="sandfly_tutorial_progress"><xliff:g id="done" example="2">%1$d</xliff:g>/<xliff:g id="count" example="4">%2$d</xliff:g>.</string>
+    <string name="sandfly_tutorial_reading_controls_characters">Уншилтын хяналтыг <xliff:g id="reading_control" example="Characters">%2$s</xliff:g> болгож өөрчилнө үү. <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> зангаагаар нэг тэмдэгтээр шилжинэ үү.</string>
+    <string name="sandfly_tutorial_reading_controls_intro">Уншилтын хяналт нь дээш доош шудрах үйлдэл юу хийхийг сонгоно, жишээ нь үг эсвэл тэмдэгтээр шилжих, ярианы хурдыг өөрчлөх. Баруун, зүүн тийш шудрахад зүйлсийн хооронд шилжсээр байна.</string>
+    <string name="sandfly_tutorial_reading_controls_move">Доорх өгүүлбэр рүү шилжинэ үү.</string>
+    <string name="sandfly_tutorial_reading_controls_next_word"><xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> зангаагаар дараагийн үг рүү шилжинэ үү. Гурван үгээр шилжинэ үү.</string>
+    <string name="sandfly_tutorial_reading_controls_title">Уншилтын хяналт</string>
+    <string name="sandfly_tutorial_recipe_1">Хуушуурын зуурмаг: гурил, өндөг, сүүг холиод жигд зуурмаг болгоно.</string>
+    <string name="sandfly_tutorial_recipe_2">Хайруулын тавганд бага зэрэг цөцгийн тос халаана.</string>
+    <string name="sandfly_tutorial_recipe_3">Хайруулын тавгийг нимгэн бүрхэхүйц хэмжээний зуурмаг хийнэ.</string>
+    <string name="sandfly_tutorial_recipe_4">Доод тал нь шаргал болоход хуушуураа эргүүлнэ.</string>
+    <string name="sandfly_tutorial_recipe_5">Нимбэг, элсэн чихэртэй хамт идэнэ.</string>
+    <string name="sandfly_tutorial_scrolling_intro">Жагсаалт нь нэг удаад зүйлсийнхээ зөвхөн хэсгийг харуулдаг. Харагдаж буй сүүлийн зүйлээс цааш шудрахад жагсаалт гүйлгэгдэнэ.</string>
+    <string name="sandfly_tutorial_scrolling_page"><xliff:g id="gesture" example="Swipe right then left">%1$s</xliff:g> зангаагаар нэг хуудсаар урагш гүйлгэнэ үү.</string>
+    <string name="sandfly_tutorial_scrolling_swipe"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g> зангаагаар жагсаалтаар <xliff:g id="item" example="Item 15">%2$s</xliff:g> хүртэл шилжинэ үү.</string>
+    <string name="sandfly_tutorial_scrolling_title">Жагсаалт гүйлгэх</string>
+    <string name="sandfly_tutorial_sentence">Хурдан бор үнэг залхуу нохойн дээгүүр үсэрнэ.</string>
+    <string name="sandfly_tutorial_skip_step">Алхмыг алгасах</string>
+    <string name="sandfly_tutorial_sliders_change"><xliff:g id="slider" example="Brightness">%3$s</xliff:g> гулсуулагч руу шилжинэ үү. Утгыг нь өөрчлөхийн тулд <xliff:g id="gesture" example="Swipe up">%1$s</xliff:g> эсвэл <xliff:g id="gesture" example="Swipe down">%2$s</xliff:g> зангааг хийнэ үү.</string>
+    <string name="sandfly_tutorial_sliders_highest"><xliff:g id="slider" example="Brightness">%1$s</xliff:g>-г хамгийн өндөр утга болох 100 хувьд тохируулна уу.</string>
+    <string name="sandfly_tutorial_sliders_intro">Гулсуулагч дээр фокус байх үед дээш доош шудрахад утга нь өөрчлөгдөнө.</string>
+    <string name="sandfly_tutorial_sliders_title">Гулсуулагч</string>
+    <string name="sandfly_tutorial_step">Алхам <xliff:g id="number" example="1">%1$d</xliff:g>/<xliff:g id="count" example="2">%2$d</xliff:g>: <xliff:g id="instruction" example="Swipe right to move to the next item.">%3$s</xliff:g></string>
+    <string name="sandfly_tutorial_story">Элсний ялаа бол далайн эрэг, голын эрэг, ойд амьдардаг жижиг ялаа юм. Тэд агаар нам гүм байдаг үүр цайх, бүрэнхий үед хамгийн идэвхтэй байдаг. Зөвхөн эм нь хаздаг, учир нь өндгөө гаргахад цус хэрэгтэй. Хазуулсан газар хэдэн өдөр загатнадаг тул элсний ялаатай нутагт очдог хүмүүс шавж үргээгч авч явдаг. Элсний ялаа муу нисдэг бөгөөд сул сэвэлзүүр салхи ч тэднийг ойртуулдаггүй.</string>
+    <string name="sandfly_tutorial_system_back"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> зангаагаар буцна уу.</string>
+    <string name="sandfly_tutorial_system_home"><xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g> зангаагаар Нүүр дэлгэц рүү очно уу.</string>
+    <string name="sandfly_tutorial_system_intro">Эдгээр зангаа дэлгэц бүр дээр ажиллана. Энэ хичээлд заавар зангаа бүрийг гүйцэтгэхийн оронд юу хийдгийг хэлнэ.</string>
+    <string name="sandfly_tutorial_system_notifications"><xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g> зангаагаар мэдэгдлүүдийг нээнэ үү.</string>
+    <string name="sandfly_tutorial_system_overview"><xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g> зангаагаар сүүлийн аппуудыг харуулна уу.</string>
+    <string name="sandfly_tutorial_system_title">Буцах, Нүүр ба мэдэгдлүүд</string>
+    <string name="sandfly_tutorial_tile_cloud">Үүл</string>
+    <string name="sandfly_tutorial_tile_moon">Сар</string>
+    <string name="sandfly_tutorial_tile_star">Од</string>
+    <string name="sandfly_tutorial_tile_sun">Нар</string>
+    <string name="sandfly_tutorial_title">SandFly заавар</string>
+    <string name="sandfly_tutorial_typing_delete">Сүүлийн үсгийг гарын Устгах товчоор устгана уу.</string>
+    <string name="sandfly_tutorial_typing_intro">Текстийн талбарыг идэвхжүүлэхэд гар нээгдэнэ. Товчийг сонсохын тулд түүнд хүрч, бичихийн тулд хуруугаа өргөнө үү.</string>
+    <string name="sandfly_tutorial_typing_open"><xliff:g id="field" example="Name">%2$s</xliff:g> талбар руу шилжинэ үү. <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> зангаагаар бичиж эхэлнэ үү.</string>
+    <string name="sandfly_tutorial_typing_title">Бичих</string>
+    <string name="sandfly_tutorial_typing_type"><xliff:g id="word" example="cat">%1$s</xliff:g> гэдэг үгийг бичнэ үү.</string>
+    <string name="sandfly_tutorial_typing_word">муур</string>
+    <string name="sandfly_tutorial_welcome_intro">Энэ заавар SandFly-н зангааг заана. Хичээл бүр нэг заавар өгч, та өөрийн зангаагаар гүйцэтгэх хүртэл хүлээгээд, дараагийнхыг өгнө. Заавар нь хичээлийн нэрийн дараах эхний зүйл юм. «Агуулга» бүх хичээлийг жагсаах ба заавар таны зогссон хичээлээс дахин нээгдэнэ.</string>
+    <string name="sandfly_tutorial_welcome_start">Эхлэхийн тулд дэлгэцийн хаана ч <xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> зангааг хийнэ үү.</string>
+    <string name="sandfly_tutorial_welcome_title">Тавтай морил</string>
+</resources>

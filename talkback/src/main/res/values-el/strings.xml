@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Για να ελέγξετε το ιστορικό ειδοποιήσεων, σύρετε προς τα κάτω με 2 δάχτυλα από το πάνω μέρος της οθόνης</string>
   <string name="image_description_playground_title">Δοκιμάστε να λάβετε περιγραφές εικόνων</string>
   <string name="image_description_playground_content_one">Όταν εστιάζετε σε μια εικόνα, ανοίξτε το μενού SandFly και επιλέξτε το στοιχείο Περιγραφή εικόνας.\n\nΠαρακάτω υπάρχει μια φωτογραφία. Δοκιμάστε να λάβετε μια περιγραφή για αυτή.</string>
-  <string name="image_description_playground_content_two">Μπορείτε να αλλάξετε τις ρυθμίσεις περιγραφής εικόνας ανά πάσα στιγμή στις Ρυθμίσεις SandFly &gt; Αυτόματες περιγραφές.</string>
-  <string name="image_description_playground_content_two_tts">Μπορείτε να αλλάξετε τις ρυθμίσεις περιγραφής εικόνας ανά πάσα στιγμή στις Ρυθμίσεις SandFly και, στη συνέχεια, στις Αυτόματες περιγραφές.</string>
+    <string name="image_description_playground_content_two">Μπορείτε να αλλάξετε τις ρυθμίσεις περιγραφής εικόνας ανά πάσα στιγμή στις Ρυθμίσεις SandFly &gt; Περιγραφές εικόνας και οθόνης.</string>
+    <string name="image_description_playground_content_two_tts">Μπορείτε να αλλάξετε τις ρυθμίσεις περιγραφής εικόνας ανά πάσα στιγμή στις Ρυθμίσεις SandFly και, στη συνέχεια, στις Περιγραφές εικόνας και οθόνης.</string>
   <string name="image_description_sample_image_content_description">Δείγμα εικόνας: Πατήστε με 3 δάχτυλα για να ανοίξετε το μενού του SandFly και επιλέξτε Περιγραφή εικόνας για να ακούσετε μια περιγραφή.</string>
   <string name="practice_gestures_title">Εξάσκηση κινήσεων</string>
   <string name="practice_keyboard_gestures_title">Εξάσκηση στις συντομεύσεις πληκτρολογίου</string>
@@ -1550,7 +1550,7 @@
     <string name="template_item_details_order_dropped">Αφέθηκε: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">Το SandFly εκφωνεί τις λεπτομέρειες ενός στοιχείου με αυτή τη σειρά. Για να την αλλάξετε, αγγίξτε παρατεταμένα μια λεπτομέρεια και σύρετέ τη προς τα πάνω ή προς τα κάτω. Με ενεργό το SandFly, πατήστε δύο φορές παρατεταμένα και σύρετε. Μπορείτε επίσης να χρησιμοποιήσετε τις ενέργειες «Μετακίνηση προς τα πάνω» και «Μετακίνηση προς τα κάτω».</string>
     <string name="title_pref_speak_items_before_scroll">Εκφώνηση στοιχείων πριν εμφανιστούν με κύλιση</string>
-    <string name="gemini_error_api_key">Το Gemini δεν αποδέχτηκε το κλειδί API. Ελέγξτε το κλειδί στις ρυθμίσεις Αυτόματες περιγραφές.</string>
+    <string name="gemini_error_api_key">Το Gemini δεν αποδέχτηκε το κλειδί API. Ελέγξτε το κλειδί στις ρυθμίσεις Περιγραφές εικόνας και οθόνης.</string>
     <string name="gemini_error_quota">Συμπληρώθηκε το όριο χρήσης για το κλειδί API του Gemini. Δοκιμάστε ξανά αργότερα.</string>
     <string name="gemini_error_busy">Το Gemini είναι απασχολημένο αυτή τη στιγμή. Δοκιμάστε ξανά σε λίγο.</string>
     <string name="gemini_error_timeout">Το Gemini άργησε πολύ να απαντήσει. Δοκιμάστε ξανά.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Δεν ήταν δυνατή η εξαγωγή των ρυθμίσεων</string>
     <string name="settings_import_done">Οι ρυθμίσεις εισήχθησαν</string>
     <string name="settings_import_failed">Αυτό το αρχείο δεν είναι αρχείο ρυθμίσεων SandFly ή Backtalk ή δεν ήταν δυνατό να διαβαστεί</string>
+    <string name="sound_mode_needs_access">Επιτρέψτε την πρόσβαση στη λειτουργία «Μην ενοχλείτε» για ενεργοποίηση ή απενεργοποίηση της Σίγασης.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Πλοήγηση με πλήκτρα βέλους</string>
+    <string name="arrow_key_nav_toggle">Εναλλαγή πλοήγησης με πλήκτρα βέλους</string>
+    <string name="arrow_key_nav_on">Πλοήγηση με πλήκτρα βέλους ενεργή</string>
+    <string name="arrow_key_nav_off">Πλοήγηση με πλήκτρα βέλους ανενεργή</string>
+    <string name="arrow_key_nav_page_left">Σελίδα αριστερά</string>
+    <string name="arrow_key_nav_page_right">Σελίδα δεξιά</string>
+    <string name="arrow_key_nav_assign_instruction">Πατήστε ένα πλήκτρο ή δύο πλήκτρα μαζί, με ή χωρίς πλήκτρα τροποποίησης. Πατήστε Backspace για απαλοιφή, Ctrl + Backspace για επαναφορά της προεπιλογής, Enter για αποθήκευση ή Escape για ακύρωση.</string>
+    <string name="shortcut_next_track">Επόμενο κομμάτι</string>
+    <string name="shortcut_previous_track">Προηγούμενο κομμάτι</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Απενεργοποίηση</item>
+        <item>3 δευτερόλεπτα</item>
+        <item>5 δευτερόλεπτα</item>
+        <item>10 δευτερόλεπτα</item>
+        <item>15 δευτερόλεπτα</item>
+        <item>30 δευτερόλεπτα</item>
+        <item>1 λεπτό</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Αυτόματη διακοπή μετά από σιωπή</string>
 </resources>

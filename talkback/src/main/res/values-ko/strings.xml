@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">알림 기록을 확인하려면 화면 상단에서 두 손가락을 사용하여 아래로 스와이프합니다.</string>
   <string name="image_description_playground_title">이미지 설명 사용해 보기</string>
   <string name="image_description_playground_content_one">이미지에 포커스 시 SandFly 메뉴를 열고 \'이미지 설명\'을 선택합니다.\n\n아래에 사진 한 장이 있습니다. 이미지의 설명을 확인해 보세요.</string>
-  <string name="image_description_playground_content_two">SandFly 설정 &gt; 자동 설명에서 언제든지 이미지 설명 설정을 변경할 수 있습니다.</string>
-  <string name="image_description_playground_content_two_tts">SandFly 설정에서 자동 설명으로 이동하면 언제든지 이미지 설명 설정을 변경할 수 있습니다.</string>
+    <string name="image_description_playground_content_two">SandFly 설정 &gt; 이미지 및 화면 설명에서 언제든지 이미지 설명 설정을 변경할 수 있습니다.</string>
+    <string name="image_description_playground_content_two_tts">SandFly 설정에서 이미지 및 화면 설명으로 이동하면 언제든지 이미지 설명 설정을 변경할 수 있습니다.</string>
   <string name="image_description_sample_image_content_description">샘플 이미지: 세 손가락으로 탭하여 SandFly 메뉴를 연 후 \'이미지 설명\'을 선택하여 설명을 들으세요.</string>
   <string name="practice_gestures_title">동작 연습</string>
   <string name="practice_keyboard_gestures_title">단축키 연습</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> 놓음. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly는 항목의 세부정보를 이 순서대로 말합니다. 순서를 변경하려면 세부정보를 길게 터치한 다음 위나 아래로 드래그하세요. SandFly가 켜져 있으면 두 번 탭하고 길게 누른 다음 드래그합니다. 위로 이동 및 아래로 이동 작업을 사용할 수도 있습니다.</string>
     <string name="title_pref_speak_items_before_scroll">스크롤되어 표시되기 전에 항목 말하기</string>
-    <string name="gemini_error_api_key">Gemini에서 API 키를 수락하지 않았습니다. 자동 설명 설정에서 키를 확인하세요.</string>
+    <string name="gemini_error_api_key">Gemini에서 API 키를 수락하지 않았습니다. 이미지 및 화면 설명 설정에서 키를 확인하세요.</string>
     <string name="gemini_error_quota">Gemini API 키의 사용 제한에 도달했습니다. 나중에 다시 시도하세요.</string>
     <string name="gemini_error_busy">현재 Gemini 사용량이 많습니다. 잠시 후 다시 시도하세요.</string>
     <string name="gemini_error_timeout">Gemini의 답변 시간이 너무 오래 걸렸습니다. 다시 시도해 보세요.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">설정을 내보낼 수 없습니다.</string>
     <string name="settings_import_done">설정을 가져왔습니다</string>
     <string name="settings_import_failed">이 파일은 SandFly 또는 Backtalk 설정 파일이 아니거나 읽을 수 없습니다</string>
+    <string name="sound_mode_needs_access">음소거를 켜거나 끄려면 방해 금지 모드 액세스를 허용하세요.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">화살표 키 탐색</string>
+    <string name="arrow_key_nav_toggle">화살표 키 탐색 켜기 또는 끄기</string>
+    <string name="arrow_key_nav_on">화살표 키 탐색 사용</string>
+    <string name="arrow_key_nav_off">화살표 키 탐색 사용 안함</string>
+    <string name="arrow_key_nav_page_left">왼쪽 페이지</string>
+    <string name="arrow_key_nav_page_right">오른쪽 페이지</string>
+    <string name="arrow_key_nav_assign_instruction">키 하나 또는 두 개를 함께 누르세요. 보조키는 함께 눌러도 되고 누르지 않아도 됩니다. 지우려면 Backspace, 기본값으로 재설정하려면 Ctrl + Backspace, 저장하려면 Enter, 취소하려면 Esc를 누르세요.</string>
+    <string name="shortcut_next_track">다음 트랙</string>
+    <string name="shortcut_previous_track">이전 트랙</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>사용 안함</item>
+        <item>3초</item>
+        <item>5초</item>
+        <item>10초</item>
+        <item>15초</item>
+        <item>30초</item>
+        <item>1분</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">무음 후 자동 중지</string>
 </resources>

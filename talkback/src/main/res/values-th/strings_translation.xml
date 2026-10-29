@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">การแปลอัตโนมัติ</string>
+    <string name="title_pref_translation_auto_service">บริการการแปลอัตโนมัติ</string>
+    <string name="title_pref_translation_copy">คัดลอกคำแปลไปยังคลิปบอร์ด</string>
+    <string name="title_pref_translation_download_all">ดาวน์โหลดทุกภาษา</string>
+    <string name="title_pref_translation_languages">ภาษาบนอุปกรณ์</string>
+    <string name="title_pref_translation_notifications">แปลการแจ้งเตือน</string>
+    <string name="title_pref_translation_region">ภูมิภาค</string>
+    <string name="title_pref_translation_say_source">พูดภาษาต้นฉบับ</string>
+    <string name="title_pref_translation_second_target">แปลข้อความที่เป็นภาษาเป้าหมายเป็น</string>
+    <string name="title_pref_translation_service">บริการแปล</string>
+    <string name="title_pref_translation_source">แปลจาก</string>
+    <string name="title_pref_translation_swap">สลับภาษา</string>
+    <string name="title_pref_translation_target">แปลเป็น</string>
+    <string name="title_pref_translation_target_voice">ใช้เสียงสำหรับภาษาเป้าหมาย</string>
+    <string name="title_pref_translation_untranslated">ภาษาที่ไม่แปล</string>
+    <string name="title_pref_translation_wifi_only">ดาวน์โหลดภาษาผ่าน Wi-Fi เท่านั้น</string>
+    <string name="title_translate_last_spoken_phrase">แปลวลีที่พูดล่าสุด</string>
+    <string name="translation_address_hint">ที่อยู่ เช่น https://libretranslate.com</string>
+    <string name="translation_address_message">ที่อยู่ของเซิร์ฟเวอร์ LibreTranslate เช่น https://libretranslate.com เซิร์ฟเวอร์ที่ไม่ใช่ของคุณเองอาจต้องใช้คีย์ API</string>
+    <string name="translation_all_downloaded">ดาวน์โหลดทุกภาษาแล้ว</string>
+    <string name="translation_already_in">เป็น<xliff:g id="language" example="English">%1$s</xliff:g>อยู่แล้ว</string>
+    <string name="translation_auto_state">การแปลอัตโนมัติ <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">เสียงพูด</string>
+    <string name="translation_detect">ตรวจหาภาษา</string>
+    <string name="translation_device_language">ภาษาของอุปกรณ์ (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="other">ดาวน์โหลดไม่สำเร็จ <xliff:g id="count" example="3">%1$d</xliff:g> ภาษา</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> ภาษา ประมาณ <xliff:g id="size" example="1.7 GB">%2$s</xliff:g></item>
+    </plurals>
+    <string name="translation_download_all_progress">กำลังดาวน์โหลด <xliff:g id="done" example="12">%1$d</xliff:g> จาก <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">หยุด</string>
+    <string name="translation_download_all_stop_title">หยุดดาวน์โหลดภาษาไหม</string>
+    <string name="translation_download_done">ดาวน์โหลด<xliff:g id="language" example="German">%1$s</xliff:g>แล้ว</string>
+    <string name="translation_download_failed">ดาวน์โหลด<xliff:g id="language" example="German">%1$s</xliff:g>ไม่สำเร็จ</string>
+    <string name="translation_download_message">ประมาณ 30 MB</string>
+    <string name="translation_download_title">ดาวน์โหลด<xliff:g id="language" example="German">%1$s</xliff:g>ไหม</string>
+    <string name="translation_downloading">กำลังดาวน์โหลด<xliff:g id="languages" example="German and English">%1$s</xliff:g>สำหรับการแปลบนอุปกรณ์</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> แปลข้อความไม่ได้</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ไม่ยอมรับคีย์ API</string>
+    <string name="translation_error_connection">เชื่อมต่อ <xliff:g id="service" example="DeepL">%1$s</xliff:g> ไม่ได้</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> แปลข้อความไม่ได้: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">กำลังดาวน์โหลดการตรวจหาภาษา โปรดลองอีกครั้งในอีกสักครู่</string>
+    <string name="translation_error_download">ดาวน์โหลดภาษาสำหรับการแปลบนอุปกรณ์ไม่ได้</string>
+    <string name="translation_error_downloading">ภาษาสำหรับการแปลบนอุปกรณ์ยังดาวน์โหลดอยู่</string>
+    <string name="translation_error_language">การแปลแบบ<xliff:g id="service" example="On-device">%1$s</xliff:g>ไม่รองรับ<xliff:g id="language" example="Klingon">%2$s</xliff:g></string>
+    <string name="translation_error_no_address">ป้อนที่อยู่ <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> ในการตั้งค่าการแปล</string>
+    <string name="translation_error_no_key">ป้อนคีย์ API ของ <xliff:g id="service" example="DeepL">%1$s</xliff:g> ในการตั้งค่าการแปล</string>
+    <string name="translation_error_not_detected">ตรวจไม่พบภาษา</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g> ถึงขีดจำกัดการใช้งานแล้ว</string>
+    <string name="translation_from">จาก<xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">วางคีย์ API ของ <xliff:g id="service" example="DeepL">%1$s</xliff:g> หากต้องการนำออก ให้ล้างช่องแล้วบันทึก ข้อความที่คุณแปลจะส่งไปยัง <xliff:g id="service" example="DeepL">%1$s</xliff:g></string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, ดาวน์โหลดแล้ว</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, กำลังดาวน์โหลด</string>
+    <string name="translation_languages_summary">ดาวน์โหลดแล้ว: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">ไม่มีสิ่งที่จะแปล</string>
+    <string name="translation_region_global">ทั่วโลก</string>
+    <string name="translation_region_message">ภูมิภาคของทรัพยากร Translator ใน Azure เช่น westeurope เว้นว่างไว้สำหรับทรัพยากรแบบทั่วโลก</string>
+    <string name="translation_second_none">ไม่แปล</string>
+    <string name="translation_service_ai">บริการ AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, ยังไม่ได้ตั้งค่า</string>
+    <string name="translation_service_on_device">บนอุปกรณ์</string>
+    <string name="translation_swapped">จาก<xliff:g id="source" example="German">%1$s</xliff:g>เป็น<xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">การแปล</string>
+    <string name="translation_untranslated_none">ไม่มี</string>
+</resources>

@@ -1605,4 +1605,24 @@
     <string name="settings_export_failed">Nie można wyeksportować ustawień</string>
     <string name="settings_import_done">Ustawienia zaimportowane</string>
     <string name="settings_import_failed">Ten plik nie jest plikiem ustawień SandFly ani Backtalk lub nie można go odczytać</string>
+    <string name="arrow_key_nav_assign_instruction">Naciśnij klawisz lub dwa klawisze naraz, z klawiszami modyfikującymi lub bez nich. Naciśnij Backspace, aby wyczyścić, Ctrl + Backspace, aby przywrócić domyślne, Enter, aby zapisać, lub Escape, aby anulować.</string>
+    <string name="arrow_key_nav_off">Nawigacja strzałkami wyłączona</string>
+    <string name="arrow_key_nav_on">Nawigacja strzałkami włączona</string>
+    <string name="arrow_key_nav_page_left">Strona w lewo</string>
+    <string name="arrow_key_nav_page_right">Strona w prawo</string>
+    <string name="arrow_key_nav_toggle">Włącz lub wyłącz nawigację strzałkami</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Nawigacja strzałkami</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Wyłączone</item>
+        <item>3 sekundy</item>
+        <item>5 sekund</item>
+        <item>10 sekund</item>
+        <item>15 sekund</item>
+        <item>30 sekund</item>
+        <item>1 minuta</item>
+    </string-array>
+    <string name="shortcut_next_track">Następny utwór</string>
+    <string name="shortcut_previous_track">Poprzedni utwór</string>
+    <string name="sound_mode_needs_access">Zezwól na dostęp do trybu Nie przeszkadzać, aby włączać i wyłączać wyciszenie.</string>
+    <string name="title_pref_dictation_auto_stop">Automatyczne zatrzymanie po ciszy</string>
 </resources>

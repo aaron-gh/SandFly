@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Tafsiri ya kiotomatiki</string>
+    <string name="title_pref_translation_auto_service">Huduma ya tafsiri ya kiotomatiki</string>
+    <string name="title_pref_translation_copy">Nakili tafsiri kwenye ubao wa kunakili</string>
+    <string name="title_pref_translation_download_all">Pakua lugha zote</string>
+    <string name="title_pref_translation_languages">Lugha zilizo kwenye kifaa</string>
+    <string name="title_pref_translation_notifications">Tafsiri arifa</string>
+    <string name="title_pref_translation_region">Eneo</string>
+    <string name="title_pref_translation_say_source">Tamka lugha asili</string>
+    <string name="title_pref_translation_second_target">Tafsiri maandishi yaliyo katika lugha lengwa kuwa</string>
+    <string name="title_pref_translation_service">Huduma ya tafsiri</string>
+    <string name="title_pref_translation_source">Tafsiri kutoka</string>
+    <string name="title_pref_translation_swap">Badilisha lugha</string>
+    <string name="title_pref_translation_target">Tafsiri kuwa</string>
+    <string name="title_pref_translation_target_voice">Tumia sauti ya lugha lengwa</string>
+    <string name="title_pref_translation_untranslated">Lugha zisizotafsiriwa</string>
+    <string name="title_pref_translation_wifi_only">Pakua lugha kupitia Wi-Fi pekee</string>
+    <string name="title_translate_last_spoken_phrase">Tafsiri kauli ya mwisho iliyotamkwa</string>
+    <string name="translation_address_hint">Anwani, kama vile https://libretranslate.com</string>
+    <string name="translation_address_message">Anwani ya seva ya LibreTranslate, kama vile https://libretranslate.com. Seva ambazo si zako zinaweza kuhitaji ufunguo wa API.</string>
+    <string name="translation_all_downloaded">Lugha zote zimepakuliwa</string>
+    <string name="translation_already_in">Tayari iko katika <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Tafsiri ya kiotomatiki <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Matamshi</string>
+    <string name="translation_detect">Tambua lugha</string>
+    <string name="translation_device_language">Lugha ya kifaa (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one">Lugha <xliff:g id="count" example="1">%1$d</xliff:g> haijapakuliwa</item>
+        <item quantity="other">Lugha <xliff:g id="count" example="3">%1$d</xliff:g> hazijapakuliwa</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one">Lugha <xliff:g id="count" example="1">%1$d</xliff:g>, takriban <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="other">Lugha <xliff:g id="count" example="57">%1$d</xliff:g>, takriban <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Inapakua, <xliff:g id="done" example="12">%1$d</xliff:g> kati ya <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Acha</string>
+    <string name="translation_download_all_stop_title">Ungependa kuacha kupakua lugha?</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g> imepakuliwa</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g> haijapakuliwa</string>
+    <string name="translation_download_message">Takriban MB 30.</string>
+    <string name="translation_download_title">Ungependa kupakua <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Inapakua <xliff:g id="languages" example="German and English">%1$s</xliff:g> kwa ajili ya tafsiri kwenye kifaa</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g> haikuweza kutafsiri maandishi.</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g> haikukubali ufunguo wa API.</string>
+    <string name="translation_error_connection">Imeshindwa kufikia <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g> haikuweza kutafsiri maandishi: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Utambuzi wa lugha unapakuliwa. Jaribu tena baada ya muda mfupi.</string>
+    <string name="translation_error_download">Imeshindwa kupakua lugha za tafsiri kwenye kifaa.</string>
+    <string name="translation_error_downloading">Lugha za tafsiri kwenye kifaa bado zinapakuliwa</string>
+    <string name="translation_error_language">Tafsiri ya <xliff:g id="service" example="On-device">%1$s</xliff:g> haitumii <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Weka anwani ya <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> katika mipangilio ya Tafsiri.</string>
+    <string name="translation_error_no_key">Weka ufunguo wa API wa <xliff:g id="service" example="DeepL">%1$s</xliff:g> katika mipangilio ya Tafsiri.</string>
+    <string name="translation_error_not_detected">Lugha haikutambuliwa</string>
+    <string name="translation_error_quota">Kikomo cha matumizi ya <xliff:g id="service" example="DeepL">%1$s</xliff:g> kimefikiwa.</string>
+    <string name="translation_from">Kutoka <xliff:g id="language" example="German">%1$s</xliff:g>:</string>
+    <string name="translation_key_message">Bandika ufunguo wako wa API wa <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Ili uuondoe, futa sehemu hii kisha uhifadhi. Maandishi unayotafsiri hutumwa kwa <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, imepakuliwa</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, inapakuliwa</string>
+    <string name="translation_languages_summary">Zilizopakuliwa: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Hakuna cha kutafsiri</string>
+    <string name="translation_region_global">Kimataifa</string>
+    <string name="translation_region_message">Eneo la nyenzo yako ya Translator katika Azure, kama vile westeurope. Iache wazi kwa nyenzo ya kimataifa.</string>
+    <string name="translation_second_none">Usitafsiri</string>
+    <string name="translation_service_ai">Huduma ya AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, haijawekwa</string>
+    <string name="translation_service_on_device">Kwenye kifaa</string>
+    <string name="translation_swapped">Kutoka <xliff:g id="source" example="German">%1$s</xliff:g> kuwa <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Tafsiri</string>
+    <string name="translation_untranslated_none">Hamna</string>
+</resources>

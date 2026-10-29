@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Het adres moet beginnen met https://. Er is niets opgeslagen.</string>
     <string name="dialog_message_ai_service_consent">Afbeeldingen en schermafbeeldingen worden ter beschrijving naar <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> gestuurd, wat enkele seconden duurt. De eigen voorwaarden en het privacybeleid zijn van toepassing. Generatieve AI is experimenteel en zal dus fouten maken.</string>
-    <string name="ai_service_error_api_key">De AI-service heeft de API-sleutel niet geaccepteerd. Controleer de instellingen in Automatische beschrijvingen.</string>
+    <string name="ai_service_error_api_key">De AI-service heeft de API-sleutel niet geaccepteerd. Controleer de instellingen in Afbeeldings- en schermbeschrijvingen.</string>
     <string name="ai_service_error_quota">De gebruikslimiet van de AI-service is bereikt. Probeer het later opnieuw.</string>
     <string name="ai_service_error_busy">De AI-service is op dit moment overbelast. Probeer het zo opnieuw.</string>
     <string name="ai_service_error_timeout">Het duurde te lang voordat de AI-service antwoordde. Probeer het opnieuw.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Geen</string>
-    <string name="ai_service_not_set_up">Er is geen AI-service in gebruik. Stel er een in of kies er een in de instellingen voor Automatische beschrijvingen.</string>
+    <string name="ai_service_not_set_up">Er is geen AI-service in gebruik. Stel er een in of kies er een in de instellingen voor Afbeeldings- en schermbeschrijvingen.</string>
     <string name="ai_provider_none_set_up">Er is geen AI-service ingesteld. Stel er een in via de onderstaande instellingen.</string>
     <string name="ai_provider_other">Andere dienst</string>
     <string name="title_pref_category_ai_services">AI-diensten</string>

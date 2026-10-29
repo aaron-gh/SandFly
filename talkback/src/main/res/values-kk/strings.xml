@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Хабарландыру тарихын тексеру үшін 2 саусағыңызбен экранның жоғарғы жағынан төмен сырғытыңыз.</string>
   <string name="image_description_playground_title">Сурет сипаттамаларын алып көріңіз</string>
   <string name="image_description_playground_content_one">Суретті ерекшелеп, SandFly мәзірін ашып, \"Суретті сипаттау\" параметрін таңдаңыз.\n\nТөменде бір фотосурет бар. Оның сипаттамасын шығарып көріңіз.</string>
-  <string name="image_description_playground_content_two">Кескін сипаттамасы параметрлерін кез келген уақытта SandFly параметрлері &gt; Автоматты сипаттамалар тармағында өзгертуге болады.</string>
-  <string name="image_description_playground_content_two_tts">Кескін сипаттамасы параметрлерін кез келген уақытта SandFly параметрлерінен, содан кейін Автоматты сипаттамаларда өзгертуге болады.</string>
+    <string name="image_description_playground_content_two">Кескін сипаттамасы параметрлерін кез келген уақытта SandFly параметрлері &gt; Сурет және экран сипаттамалары тармағында өзгертуге болады.</string>
+    <string name="image_description_playground_content_two_tts">Кескін сипаттамасы параметрлерін кез келген уақытта SandFly параметрлерінен, содан кейін Сурет және экран сипаттамаларында өзгертуге болады.</string>
   <string name="image_description_sample_image_content_description">Сурет үлгісі; SandFly мәзірін ашу үшін 3 саусақпен түртіңіз де, сипаттаманы есту үшін \"Суретті сипаттау\" опциясын таңдаңыз.</string>
   <string name="practice_gestures_title">Қимылдарды үйрену</string>
   <string name="practice_keyboard_gestures_title">Пернелер тіркесімдерін пайдалану</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> қойылды. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly элемент мәліметтерін осы ретпен айтады. Оны өзгерту үшін детальді түртіп, ұстап тұрыңыз, содан кейін оны жоғары немесе төмен сүйреңіз. SandFly қосулы кезде екі рет түртіп, ұстап тұрыңыз, содан кейін сүйреңіз. Сондай-ақ, жоғары жылжыту және төмен жылжыту әрекеттерін пайдалануға болады.</string>
     <string name="title_pref_speak_items_before_scroll">Элементтерді көрініске айналмай тұрып айту</string>
-    <string name="gemini_error_api_key">Gemini API кілтін қабылдамады. Кілтті автоматты сипаттамалар параметрлерінен тексеріңіз.</string>
+    <string name="gemini_error_api_key">Gemini API кілтін қабылдамады. Кілтті «Сурет және экран сипаттамалары» параметрлерінен тексеріңіз.</string>
     <string name="gemini_error_quota">Gemini API кілтінің пайдалану шегіне жетті. Әрекетті кейінірек қайталаңыз.</string>
     <string name="gemini_error_busy">Gemini қазір бос емес. Біраз уақыттан кейін қайталап көріңіз.</string>
     <string name="gemini_error_timeout">Gemini тым ұзақ жауап бермеді. Қайталап көріңіз.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Параметрлерді экспорттау мүмкін болмады</string>
     <string name="settings_import_done">Параметрлер импортталды</string>
     <string name="settings_import_failed">Бұл файл SandFly немесе Backtalk параметрлер файлы емес немесе оқу мүмкін емес</string>
+    <string name="sound_mode_needs_access">Дыбыссыз режимді қосу не өшіру үшін «Мазаламау» режиміне кіруге рұқсат беріңіз.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Бағыт пернелерімен навигация</string>
+    <string name="arrow_key_nav_toggle">Бағыт пернелерімен навигацияны қосу/өшіру</string>
+    <string name="arrow_key_nav_on">Бағыт пернелерімен навигация қосулы</string>
+    <string name="arrow_key_nav_off">Бағыт пернелерімен навигация өшірулі</string>
+    <string name="arrow_key_nav_page_left">Бір бет солға</string>
+    <string name="arrow_key_nav_page_right">Бір бет оңға</string>
+    <string name="arrow_key_nav_assign_instruction">Бір пернені немесе екі пернені бірге басыңыз, түрлендіргіш пернелермен немесе оларсыз. Тазалау үшін Backspace, әдепкі мәнге қайтару үшін Ctrl + Backspace, сақтау үшін Enter, бас тарту үшін Escape пернесін басыңыз.</string>
+    <string name="shortcut_next_track">Келесі трек</string>
+    <string name="shortcut_previous_track">Алдыңғы трек</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Өшірулі</item>
+        <item>3 секунд</item>
+        <item>5 секунд</item>
+        <item>10 секунд</item>
+        <item>15 секунд</item>
+        <item>30 секунд</item>
+        <item>1 минут</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Үнсіздіктен кейін автоматты тоқтату</string>
 </resources>

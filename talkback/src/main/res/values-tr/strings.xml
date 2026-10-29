@@ -1069,8 +1069,8 @@
   <string name="checking_notifications_tips">Bildirim geçmişinize göz atmak için iki parmağınızla ekranınızın üst kısmından aşağı doğru kaydırın</string>
   <string name="image_description_playground_title">Resim açıklamaları almayı deneyin</string>
   <string name="image_description_playground_content_one">Bir resme odaklandığınızda SandFly menüsünü açıp \"Resmi açıkla\"yı seçin.\n\nAşağıda bir fotoğraf bulunmaktadır. Bu fotoğrafın açıklamasını almayı deneyin.</string>
-  <string name="image_description_playground_content_two">Görsel açıklaması ayarlarını istediğiniz zaman SandFly ayarları &gt; Otomatik açıklamalar bölümünden değiştirebilirsiniz.</string>
-  <string name="image_description_playground_content_two_tts">Görüntü açıklaması ayarlarını istediğiniz zaman SandFly ayarlarından, ardından Otomatik açıklamalar bölümünden değiştirebilirsiniz.</string>
+    <string name="image_description_playground_content_two">Görsel açıklaması ayarlarını istediğiniz zaman SandFly ayarları &gt; Görsel ve ekran açıklamaları bölümünden değiştirebilirsiniz.</string>
+    <string name="image_description_playground_content_two_tts">Görüntü açıklaması ayarlarını istediğiniz zaman SandFly ayarlarından, ardından Görsel ve ekran açıklamaları bölümünden değiştirebilirsiniz.</string>
   <string name="image_description_sample_image_content_description">Örnek resim; SandFly menüsünü açmak için 3 parmakla dokunun, ardından açıklamayı dinlemek için \"Resmi açıkla\"yı seçin.</string>
   <string name="practice_gestures_title">Hareketler için alıştırma yapma</string>
   <string name="practice_keyboard_gestures_title">Klavye kısayollarını deneyin</string>
@@ -1735,7 +1735,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> bırakıldı. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly bir öğenin ayrıntılarını bu sırayla söyler. Sırayı değiştirmek için bir ayrıntıya dokunup basılı tutun, ardından yukarı veya aşağı sürükleyin. SandFly açıkken iki kez dokunup basılı tutun, ardından sürükleyin. Yukarı taşı ve Aşağı taşı işlemlerini de kullanabilirsiniz.</string>
     <string name="title_pref_speak_items_before_scroll">Öğeleri görünüme kaydırılmadan önce söyle</string>
-    <string name="gemini_error_api_key">Gemini API anahtarını kabul etmedi. Otomatik açıklama ayarlarındaki anahtarı kontrol edin.</string>
+    <string name="gemini_error_api_key">Gemini API anahtarını kabul etmedi. Görsel ve ekran açıklamaları ayarlarındaki anahtarı kontrol edin.</string>
     <string name="gemini_error_quota">Gemini API anahtarınızın kullanım sınırına ulaşıldı. Daha sonra tekrar deneyin.</string>
     <string name="gemini_error_busy">Gemini şu anda meşgul. Birazdan tekrar deneyin.</string>
     <string name="gemini_error_timeout">Gemini\'nin yanıt vermesi çok uzun sürdü. Tekrar deneyin.</string>
@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Ayarlar dışa aktarılamadı</string>
     <string name="settings_import_done">Ayarlar içe aktarıldı</string>
     <string name="settings_import_failed">Bu dosya bir SandFly veya Backtalk ayar dosyası değil ya da okunamıyor</string>
+    <string name="sound_mode_needs_access">Sessiz modunu açıp kapatmak için Rahatsız Etmeyin erişimine izin verin.</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Ok tuşlarıyla gezinme</string>
+    <string name="arrow_key_nav_toggle">Ok tuşlarıyla gezinmeyi aç veya kapat</string>
+    <string name="arrow_key_nav_on">Ok tuşlarıyla gezinme açık</string>
+    <string name="arrow_key_nav_off">Ok tuşlarıyla gezinme kapalı</string>
+    <string name="arrow_key_nav_page_left">Sayfa sola</string>
+    <string name="arrow_key_nav_page_right">Sayfa sağa</string>
+    <string name="arrow_key_nav_assign_instruction">Değiştirici tuşlarla veya değiştirici tuş olmadan bir tuşa ya da iki tuşa birlikte basın. Temizlemek için Backspace, varsayılana sıfırlamak için Ctrl + Backspace, kaydetmek için Enter, iptal etmek için Escape tuşuna basın.</string>
+    <string name="shortcut_next_track">Sonraki parça</string>
+    <string name="shortcut_previous_track">Önceki parça</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Kapalı</item>
+        <item>3 saniye</item>
+        <item>5 saniye</item>
+        <item>10 saniye</item>
+        <item>15 saniye</item>
+        <item>30 saniye</item>
+        <item>1 dakika</item>
+    </string-array>
+    <string name="title_pref_dictation_auto_stop">Sessizlikten sonra otomatik durdur</string>
 </resources>

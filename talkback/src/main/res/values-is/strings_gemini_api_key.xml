@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">Líkan</string>
     <string name="ai_service_address_invalid">Heimilisfangið verður að byrja á https://. Ekkert var vistað.</string>
     <string name="dialog_message_ai_service_consent">Myndir og skjámyndir eru sendar til <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> til lýsingar, sem tekur nokkrar sekúndur. Skilmálar og persónuverndarstefna þjónustunnar gilda. Gervigreind sem býr til efni er á tilraunastigi og gerir því mistök.</string>
-    <string name="ai_service_error_api_key">AI þjónustan samþykkti ekki API lykilinn. Athugaðu stillingar þess í Sjálfvirkar lýsingar.</string>
+    <string name="ai_service_error_api_key">AI þjónustan samþykkti ekki API lykilinn. Athugaðu stillingar hennar í Mynd- og skjálýsingar.</string>
     <string name="ai_service_error_quota">Notkunarmörkum gervigreindarþjónustunnar hefur verið náð. Reyndu aftur síðar.</string>
     <string name="ai_service_error_busy">Gervigreindarþjónustan er upptekin núna. Reyndu aftur eftir augnablik.</string>
     <string name="ai_service_error_timeout">Gervigreindarþjónustan tók of langan tíma að svara. Reyndu aftur.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Engin</string>
-    <string name="ai_service_not_set_up">Engin gervigreindarþjónusta er í notkun. Settu eina upp eða veldu eina í stillingum sjálfvirkra lýsinga.</string>
+    <string name="ai_service_not_set_up">Engin gervigreindarþjónusta er í notkun. Settu eina upp eða veldu eina í stillingum mynd- og skjálýsinga.</string>
     <string name="ai_provider_none_set_up">Engin gervigreindarþjónusta er uppsett. Settu eina upp í stillingum hennar hér fyrir neðan.</string>
     <string name="ai_provider_other">Önnur þjónusta</string>
     <string name="title_pref_category_ai_services">AI-þjónustur</string>

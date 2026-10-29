@@ -1774,4 +1774,24 @@
     <string name="settings_export_failed">Կարգավորումները չհաջողվեց արտահանել</string>
     <string name="settings_import_done">Կարգավորումները ներմուծված են</string>
     <string name="settings_import_failed">Այս ֆայլը SandFly կամ Backtalk կարգավորումների ֆայլ չէ կամ հնարավոր չէ կարդալ</string>
+    <string name="arrow_key_nav_assign_instruction">Սեղմեք մեկ ստեղն կամ երկու ստեղն միասին՝ կերպափոխիչ ստեղներով կամ առանց դրանց։ Մաքրելու համար սեղմեք Backspace, կանխադրվածը վերականգնելու համար՝ Ctrl + Backspace, պահելու համար՝ Enter, չեղարկելու համար՝ Escape։</string>
+    <string name="arrow_key_nav_off">Սլաքներով նավիգացիան անջատված է</string>
+    <string name="arrow_key_nav_on">Սլաքներով նավիգացիան միացված է</string>
+    <string name="arrow_key_nav_page_left">Էջը ձախ</string>
+    <string name="arrow_key_nav_page_right">Էջը աջ</string>
+    <string name="arrow_key_nav_toggle">Միացնել կամ անջատել սլաքներով նավիգացիան</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Սլաքներով նավիգացիա</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Անջատված</item>
+        <item>3 վայրկյան</item>
+        <item>5 վայրկյան</item>
+        <item>10 վայրկյան</item>
+        <item>15 վայրկյան</item>
+        <item>30 վայրկյան</item>
+        <item>1 րոպե</item>
+    </string-array>
+    <string name="shortcut_next_track">Հաջորդ կատարումը</string>
+    <string name="shortcut_previous_track">Նախորդ կատարումը</string>
+    <string name="sound_mode_needs_access">Թույլատրեք «Չանհանգստացնել» ռեժիմի մուտքը՝ «Խլացնել» ռեժիմը միացնելու կամ անջատելու համար։</string>
+    <string name="title_pref_dictation_auto_stop">Ավտոմատ կանգ լռությունից հետո</string>
 </resources>

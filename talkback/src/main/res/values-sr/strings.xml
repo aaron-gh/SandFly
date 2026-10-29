@@ -1778,4 +1778,24 @@
     <string name="settings_export_failed">Подешавања нису могла да се извезу</string>
     <string name="settings_import_done">Подешавања су увезена</string>
     <string name="settings_import_failed">Ова датотека није датотека за подешавања SandFly или Backtalk или није могла да се прочита</string>
+    <string name="arrow_key_nav_assign_instruction">Притисните тастер или два тастера заједно, са модификаторским тастерима или без њих. Backspace – брисање, Ctrl + Backspace – враћање на подразумевано, Enter – чување, Escape – отказивање.</string>
+    <string name="arrow_key_nav_off">Навигација стрелицама је искључена</string>
+    <string name="arrow_key_nav_on">Навигација стрелицама је укључена</string>
+    <string name="arrow_key_nav_page_left">Страница улево</string>
+    <string name="arrow_key_nav_page_right">Страница удесно</string>
+    <string name="arrow_key_nav_toggle">Укључи или искључи навигацију стрелицама</string>
+    <string name="keycombo_menu_category_arrow_key_nav">Навигација стрелицама</string>
+    <string-array name="pref_dictation_auto_stop_entries">
+        <item>Искључено</item>
+        <item>3 секунде</item>
+        <item>5 секунди</item>
+        <item>10 секунди</item>
+        <item>15 секунди</item>
+        <item>30 секунди</item>
+        <item>1 минут</item>
+    </string-array>
+    <string name="shortcut_next_track">Следећа песма</string>
+    <string name="shortcut_previous_track">Претходна песма</string>
+    <string name="sound_mode_needs_access">Дозволите приступ режиму „Не узнемиравај“ да бисте укључивали и искључивали „Без звука“.</string>
+    <string name="title_pref_dictation_auto_stop">Аутоматско заустављање после тишине</string>
 </resources>

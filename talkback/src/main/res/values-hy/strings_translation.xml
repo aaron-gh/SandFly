@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Ավտոմատ թարգմանություն</string>
+    <string name="title_pref_translation_auto_service">Ավտոմատ թարգմանության ծառայություն</string>
+    <string name="title_pref_translation_copy">Պատճենել թարգմանությունները սեղմատախտակին</string>
+    <string name="title_pref_translation_download_all">Ներբեռնել բոլոր լեզուները</string>
+    <string name="title_pref_translation_languages">Սարքում ներբեռնված լեզուներ</string>
+    <string name="title_pref_translation_notifications">Թարգմանել ծանուցումները</string>
+    <string name="title_pref_translation_region">Տարածաշրջան</string>
+    <string name="title_pref_translation_say_source">Հնչեցնել բնօրինակի լեզուն</string>
+    <string name="title_pref_translation_second_target">Թիրախային լեզվով տեքստի թարգմանության լեզու</string>
+    <string name="title_pref_translation_service">Թարգմանության ծառայություն</string>
+    <string name="title_pref_translation_source">Թարգմանել լեզվից</string>
+    <string name="title_pref_translation_swap">Փոխել լեզուների տեղերը</string>
+    <string name="title_pref_translation_target">Թարգմանության լեզու</string>
+    <string name="title_pref_translation_target_voice">Օգտագործել թիրախային լեզվի ձայն</string>
+    <string name="title_pref_translation_untranslated">Չթարգմանվող լեզուներ</string>
+    <string name="title_pref_translation_wifi_only">Ներբեռնել լեզուները միայն Wi-Fi-ով</string>
+    <string name="title_translate_last_spoken_phrase">Թարգմանել վերջին հնչեցված արտահայտությունը</string>
+    <string name="translation_address_hint">Հասցե, օրինակ՝ https://libretranslate.com</string>
+    <string name="translation_address_message">LibreTranslate սերվերի հասցեն, օրինակ՝ https://libretranslate.com։ Ձերից տարբեր սերվերները կարող են API բանալի պահանջել։</string>
+    <string name="translation_all_downloaded">Բոլոր լեզուները ներբեռնված են</string>
+    <string name="translation_already_in">Տեքստն արդեն <xliff:g id="language" example="English">%1$s</xliff:g> է</string>
+    <string name="translation_auto_state">Ավտոմատ թարգմանություն՝ <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Խոսք</string>
+    <string name="translation_detect">Հայտնաբերել լեզուն</string>
+    <string name="translation_device_language">Սարքի լեզու (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one"><xliff:g id="count" example="3">%1$d</xliff:g> լեզու չի ներբեռնվել</item>
+        <item quantity="other"><xliff:g id="count" example="3">%1$d</xliff:g> լեզու չի ներբեռնվել</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="57">%1$d</xliff:g> լեզու, մոտ <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>։</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> լեզու, մոտ <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>։</item>
+    </plurals>
+    <string name="translation_download_all_progress">Ներբեռնում, <xliff:g id="done" example="12">%1$d</xliff:g>՝ <xliff:g id="total" example="57">%2$d</xliff:g>-ից</string>
+    <string name="translation_download_all_stop">Կանգնեցնել</string>
+    <string name="translation_download_all_stop_title">Կանգնեցնե՞լ լեզուների ներբեռնումը</string>
+    <string name="translation_download_done"><xliff:g id="language" example="German">%1$s</xliff:g>՝ ներբեռնված է</string>
+    <string name="translation_download_failed"><xliff:g id="language" example="German">%1$s</xliff:g>՝ չի ներբեռնվել</string>
+    <string name="translation_download_message">Մոտ 30 ՄԲ։</string>
+    <string name="translation_download_title">Ներբեռնե՞լ <xliff:g id="language" example="German">%1$s</xliff:g> լեզուն</string>
+    <string name="translation_downloading"><xliff:g id="languages" example="German and English">%1$s</xliff:g> ներբեռնվում է սարքում թարգմանության համար</string>
+    <string name="translation_error"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-ը չկարողացավ թարգմանել տեքստը։</string>
+    <string name="translation_error_api_key"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-ը չընդունեց API բանալին։</string>
+    <string name="translation_error_connection"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-ին հնարավոր չէ միանալ։</string>
+    <string name="translation_error_details"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-ը չկարողացավ թարգմանել տեքստը՝ <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Լեզվի հայտնաբերումը ներբեռնվում է։ Մի քիչ հետո նորից փորձեք։</string>
+    <string name="translation_error_download">Չհաջողվեց ներբեռնել սարքում թարգմանության լեզուները։</string>
+    <string name="translation_error_downloading">Սարքում թարգմանության լեզուները դեռ ներբեռնվում են</string>
+    <string name="translation_error_language"><xliff:g id="service" example="On-device">%1$s</xliff:g> թարգմանությունը չի աջակցում <xliff:g id="language" example="Klingon">%2$s</xliff:g> լեզուն։</string>
+    <string name="translation_error_no_address">Մուտքագրեք <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g>-ի հասցեն թարգմանության կարգավորումներում։</string>
+    <string name="translation_error_no_key">Մուտքագրեք <xliff:g id="service" example="DeepL">%1$s</xliff:g>-ի API բանալին թարգմանության կարգավորումներում։</string>
+    <string name="translation_error_not_detected">Լեզուն չի հայտնաբերվել</string>
+    <string name="translation_error_quota"><xliff:g id="service" example="DeepL">%1$s</xliff:g>-ի օգտագործման սահմանաչափը սպառված է։</string>
+    <string name="translation_from">Բնօրինակի լեզուն՝ <xliff:g id="language" example="German">%1$s</xliff:g>։</string>
+    <string name="translation_key_message">Տեղադրեք ձեր <xliff:g id="service" example="DeepL">%1$s</xliff:g> API բանալին։ Այն հեռացնելու համար մաքրեք դաշտը և պահեք։ Ձեր թարգմանած տեքստն ուղարկվում է <xliff:g id="service" example="DeepL">%1$s</xliff:g>-ին։</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, ներբեռնված</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, ներբեռնվում է</string>
+    <string name="translation_languages_summary">Ներբեռնված՝ <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Թարգմանելու բան չկա</string>
+    <string name="translation_region_global">Գլոբալ</string>
+    <string name="translation_region_message">Ձեր Translator ռեսուրսի տարածաշրջանը Azure-ում, օրինակ՝ westeurope։ Գլոբալ ռեսուրսի համար թողեք դատարկ։</string>
+    <string name="translation_second_none">Չթարգմանել</string>
+    <string name="translation_service_ai">AI ծառայություն</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, կարգավորված չէ</string>
+    <string name="translation_service_on_device">Սարքում</string>
+    <string name="translation_swapped">Լեզվից՝ <xliff:g id="source" example="German">%1$s</xliff:g>, լեզվով՝ <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Թարգմանություն</string>
+    <string name="translation_untranslated_none">Ոչ մեկը</string>
+</resources>

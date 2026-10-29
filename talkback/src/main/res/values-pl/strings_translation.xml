@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_translation_auto">Automatyczne tłumaczenie</string>
+    <string name="title_pref_translation_auto_service">Usługa automatycznego tłumaczenia</string>
+    <string name="title_pref_translation_copy">Kopiuj tłumaczenia do schowka</string>
+    <string name="title_pref_translation_download_all">Pobierz wszystkie języki</string>
+    <string name="title_pref_translation_languages">Języki na urządzeniu</string>
+    <string name="title_pref_translation_notifications">Tłumacz powiadomienia</string>
+    <string name="title_pref_translation_region">Region</string>
+    <string name="title_pref_translation_say_source">Podawaj język oryginału</string>
+    <string name="title_pref_translation_second_target">Tekst w języku docelowym tłumacz na</string>
+    <string name="title_pref_translation_service">Usługa tłumaczenia</string>
+    <string name="title_pref_translation_source">Tłumacz z</string>
+    <string name="title_pref_translation_swap">Zamień języki</string>
+    <string name="title_pref_translation_target">Tłumacz na</string>
+    <string name="title_pref_translation_target_voice">Używaj głosu dla języka docelowego</string>
+    <string name="title_pref_translation_untranslated">Języki bez tłumaczenia</string>
+    <string name="title_pref_translation_wifi_only">Pobieraj języki tylko przez Wi-Fi</string>
+    <string name="title_translate_last_spoken_phrase">Przetłumacz ostatnią wypowiedź</string>
+    <string name="translation_address_hint">Adres, np. https://libretranslate.com</string>
+    <string name="translation_address_message">Adres serwera LibreTranslate, np. https://libretranslate.com. Serwery inne niż twój własny mogą wymagać klucza API.</string>
+    <string name="translation_all_downloaded">Wszystkie języki pobrane</string>
+    <string name="translation_already_in">Już w języku: <xliff:g id="language" example="English">%1$s</xliff:g></string>
+    <string name="translation_auto_state">Automatyczne tłumaczenie: <xliff:g id="state" example="on">%1$s</xliff:g></string>
+    <string name="translation_category_speech">Mowa</string>
+    <string name="translation_detect">Wykryj język</string>
+    <string name="translation_device_language">Język urządzenia (<xliff:g id="language" example="English">%1$s</xliff:g>)</string>
+    <plurals name="translation_download_all_failed">
+        <item quantity="one">Nie pobrano <xliff:g id="count" example="1">%1$d</xliff:g> języka</item>
+        <item quantity="few">Nie pobrano <xliff:g id="count" example="3">%1$d</xliff:g> języków</item>
+        <item quantity="many">Nie pobrano <xliff:g id="count" example="3">%1$d</xliff:g> języków</item>
+        <item quantity="other">Nie pobrano <xliff:g id="count" example="3">%1$d</xliff:g> języka</item>
+    </plurals>
+    <plurals name="translation_download_all_message">
+        <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> język, około <xliff:g id="size" example="30 MB">%2$s</xliff:g>.</item>
+        <item quantity="few"><xliff:g id="count" example="57">%1$d</xliff:g> języki, około <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="many"><xliff:g id="count" example="57">%1$d</xliff:g> języków, około <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+        <item quantity="other"><xliff:g id="count" example="57">%1$d</xliff:g> języka, około <xliff:g id="size" example="1.7 GB">%2$s</xliff:g>.</item>
+    </plurals>
+    <string name="translation_download_all_progress">Pobieranie, <xliff:g id="done" example="12">%1$d</xliff:g> z <xliff:g id="total" example="57">%2$d</xliff:g></string>
+    <string name="translation_download_all_stop">Zatrzymaj</string>
+    <string name="translation_download_all_stop_title">Zatrzymać pobieranie języków?</string>
+    <string name="translation_download_done">Pobrano: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_failed">Nie pobrano: <xliff:g id="language" example="German">%1$s</xliff:g></string>
+    <string name="translation_download_message">Około 30 MB.</string>
+    <string name="translation_download_title">Pobrać <xliff:g id="language" example="German">%1$s</xliff:g>?</string>
+    <string name="translation_downloading">Pobieranie języków do tłumaczenia na urządzeniu: <xliff:g id="languages" example="German and English">%1$s</xliff:g></string>
+    <string name="translation_error">Usługa <xliff:g id="service" example="DeepL">%1$s</xliff:g> nie przetłumaczyła tekstu.</string>
+    <string name="translation_error_api_key">Usługa <xliff:g id="service" example="DeepL">%1$s</xliff:g> nie zaakceptowała klucza API.</string>
+    <string name="translation_error_connection">Nie można połączyć się z usługą <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_error_details">Usługa <xliff:g id="service" example="DeepL">%1$s</xliff:g> nie przetłumaczyła tekstu: <xliff:g id="details" example="Wrong endpoint">%2$s</xliff:g></string>
+    <string name="translation_error_detection_downloading">Trwa pobieranie wykrywania języka. Spróbuj ponownie za chwilę.</string>
+    <string name="translation_error_download">Nie udało się pobrać języków do tłumaczenia na urządzeniu.</string>
+    <string name="translation_error_downloading">Języki do tłumaczenia na urządzeniu wciąż się pobierają</string>
+    <string name="translation_error_language">Usługa tłumaczenia <xliff:g id="service" example="On-device">%1$s</xliff:g> nie obsługuje języka: <xliff:g id="language" example="Klingon">%2$s</xliff:g>.</string>
+    <string name="translation_error_no_address">Wpisz adres usługi <xliff:g id="service" example="LibreTranslate">%1$s</xliff:g> w ustawieniach tłumaczenia.</string>
+    <string name="translation_error_no_key">Wpisz klucz API usługi <xliff:g id="service" example="DeepL">%1$s</xliff:g> w ustawieniach tłumaczenia.</string>
+    <string name="translation_error_not_detected">Nie wykryto języka</string>
+    <string name="translation_error_quota">Osiągnięto limit wykorzystania usługi <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_from">Język oryginału: <xliff:g id="language" example="German">%1$s</xliff:g>.</string>
+    <string name="translation_key_message">Wklej klucz API usługi <xliff:g id="service" example="DeepL">%1$s</xliff:g>. Aby go usunąć, wyczyść pole i zapisz. Tłumaczony tekst jest wysyłany do usługi <xliff:g id="service" example="DeepL">%1$s</xliff:g>.</string>
+    <string name="translation_language_downloaded"><xliff:g id="language" example="German">%1$s</xliff:g>, pobrany</string>
+    <string name="translation_language_downloading"><xliff:g id="language" example="German">%1$s</xliff:g>, pobieranie</string>
+    <string name="translation_languages_summary">Pobrane: <xliff:g id="languages" example="English, German">%1$s</xliff:g></string>
+    <string name="translation_nothing">Brak tekstu do przetłumaczenia</string>
+    <string name="translation_region_global">Globalny</string>
+    <string name="translation_region_message">Region zasobu Translator w Azure, np. westeurope. Pozostaw puste dla zasobu globalnego.</string>
+    <string name="translation_second_none">Nie tłumacz</string>
+    <string name="translation_service_ai">Usługa AI</string>
+    <string name="translation_service_deepl">DeepL</string>
+    <string name="translation_service_google_cloud">Google Cloud Translation</string>
+    <string name="translation_service_libretranslate">LibreTranslate</string>
+    <string name="translation_service_microsoft">Microsoft Translator</string>
+    <string name="translation_service_not_set_up"><xliff:g id="service" example="DeepL">%1$s</xliff:g>, nie skonfigurowano</string>
+    <string name="translation_service_on_device">Na urządzeniu</string>
+    <string name="translation_swapped">Z języka: <xliff:g id="source" example="German">%1$s</xliff:g>, na język: <xliff:g id="target" example="English">%2$s</xliff:g></string>
+    <string name="translation_title">Tłumaczenie</string>
+    <string name="translation_untranslated_none">Brak</string>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="command_add_arrow_keys">Додати клавіші зі стрілками</string>
+    <string name="command_add_gesture">Додати жест</string>
+    <string name="command_choose_arrow_keys">Виберіть клавіші зі стрілками</string>
+    <string name="command_choose_gesture">Виберіть жест</string>
+    <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <string name="command_gestures">Жести</string>
+    <string name="command_keyboard_shortcut">Комбінація клавіш</string>
+    <string name="command_no_arrow_keys">Немає клавіш зі стрілками</string>
+    <string name="command_no_gestures">Немає жестів</string>
+    <string name="command_remove_arrow_keys">Видалити клавіші зі стрілками</string>
+    <string name="command_remove_gesture">Видалити жест</string>
+    <string name="command_replace">Замінити</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> виконує команду «<xliff:g id="old_command" example="Read from top">%2$s</xliff:g>». Використовувати цей жест для команди «<xliff:g id="new_command" example="Describe image">%3$s</xliff:g>»?</string>
+    <string name="commands_category_activation">Активація</string>
+    <string name="commands_category_media">Медіа й гучність</string>
+    <string name="commands_category_sandfly">SandFly</string>
+    <string name="commands_category_scrolling">Прокручування</string>
+    <string name="commands_category_speech">Мовлення</string>
+    <string name="commands_category_tables">Таблиці</string>
+    <string name="commands_category_web">Веб</string>
+    <string name="item_list_current">Поточні</string>
+    <string name="item_list_not_in_reading_controls">Немає в елементах керування читанням</string>
+    <string name="item_list_not_in_sandfly_menu">Немає в меню SandFly</string>
+    <string name="item_list_options">Опції</string>
+    <string name="sounds_category_sounds">Звуки</string>
+    <string name="sounds_category_vibration">Вібрація</string>
+    <string name="speech_category_languages">Мови</string>
+    <string name="speech_category_other_apps">Інші додатки</string>
+    <string name="speech_category_pronunciation">Вимова</string>
+    <string name="speech_category_stopping">Зупинка мовлення</string>
+    <string name="speech_category_voice">Голос</string>
+    <string name="title_pref_audio_output">Виведення звуку</string>
+    <string name="title_pref_backup">Резервне копіювання й відновлення</string>
+    <string name="title_pref_braille">Шрифт Брайля</string>
+    <string name="title_pref_commands">Команди</string>
+    <string name="title_pref_display">Екран</string>
+    <string name="title_pref_image_and_screen_descriptions">Описи зображень і екрана</string>
+    <string name="title_pref_pause">Пауза й вимкнення</string>
+    <string name="title_pref_quick_settings_screen">Швидкі налаштування</string>
+    <string name="title_pref_speech">Мовлення</string>
+    <string name="title_pref_speech_stream_control">Регулятор гучності мовлення</string>
+    <string name="title_pref_touch">Дотик</string>
+    <string name="title_pref_typing">Введення тексту</string>
+    <string name="title_pref_updates">Оновлення й установлення</string>
+    <string name="title_pref_volume_keys">Клавіші гучності</string>
+    <string name="typing_category_other_input">Інші способи введення</string>
+    <string name="verbosity_category_announcements">Оголошення</string>
+    <string name="verbosity_category_items">Елементи</string>
+    <string name="verbosity_category_text">Текст і символи</string>
+</resources>
