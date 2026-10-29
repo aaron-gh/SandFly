@@ -42,7 +42,7 @@ public class OnboardingInitiator {
 
   // LINT.IfChange(onboarding_update)
   @StringRes @VisibleForTesting
-  public static final int NEW_FEATURE_SHOWN_KEY = R.string.pref_update_welcome_16_2_shown_key;
+  public static final int NEW_FEATURE_SHOWN_KEY = R.string.pref_update_welcome_sandfly_0_2_0_shown_key;
 
   /** A list of legacy preferences for old onboardings. */
   @VisibleForTesting
@@ -59,6 +59,7 @@ public class OnboardingInitiator {
     R.string.pref_update_welcome_15_2_shown_key,
     R.string.pref_update_welcome_16_0_shown_key,
     R.string.pref_update_welcome_16_1_shown_key,
+    R.string.pref_update_welcome_16_2_shown_key,
   };
 
   // LINT.ThenChange(
@@ -91,8 +92,6 @@ public class OnboardingInitiator {
    * @return {@code true} if the onboarding for new features is initiated
    */
   public static boolean showOnboardingIfNecessary(Context context) {
-    // The onboarding pages describe Google's TalkBack releases, not Backtalk's changes.
-    markAllOnboardingAsShown(context);
     if (FormFactorUtils.isAndroidTv() || FormFactorUtils.isAndroidWear()) {
       return false;
     }

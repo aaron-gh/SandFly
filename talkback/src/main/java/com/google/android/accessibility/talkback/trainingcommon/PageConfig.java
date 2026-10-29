@@ -35,6 +35,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.IntDef;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.preference.base.AdvancedSettingFragment;
@@ -142,6 +143,7 @@ public abstract class PageConfig {
         (data) -> TalkbackFeatureSupport.supportTalkBackExitBanner(data.getContext())),
     SUPPORT_GOOGLE_PLAY((data) -> PackageManagerUtils.hasGmsCorePackage(data.getContext())),
     SUPPORT_SPLIT_TAP_EVERYWHERE((data) -> FeatureSupport.supportSplitTapEverywhere()),
+    SANDFLY_PRO((data) -> SandflyAi.isAvailable()),
     SUPPORT_KEYBOARD_ENHANCED_KEYMAP(
         (data) -> FeatureFlagReader.enableNewKeymap(data.getContext())),
     SUPPORT_KEYBOARD_TUTORIAL(
@@ -280,6 +282,13 @@ public abstract class PageConfig {
     PAGE_ID_IMAGE_DESCRIPTION_PLAYGROUND,
     // For TB 16.2
     PAGE_ID_UPDATE_WELCOME,
+    PAGE_ID_SANDFLY_WELCOME,
+    PAGE_ID_SANDFLY_TUTORIAL,
+    PAGE_ID_SANDFLY_SETTINGS,
+    PAGE_ID_SANDFLY_TRANSLATION,
+    PAGE_ID_SANDFLY_ARROW_KEYS,
+    PAGE_ID_SANDFLY_COMMANDS,
+    PAGE_ID_SANDFLY_PRO,
     PAGE_ID_NEW_SETTINGS_LAYOUT,
     PAGE_ID_ANNOUNCING_TEXT_FORMATTING,
     PAGE_ID_SHORTCUT_FOR_DICTATION,
