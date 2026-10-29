@@ -87,7 +87,10 @@ open class ScriptSourceFragment : ScriptInstallFragment() {
 
   protected open fun install(script: SourceScript) {
     toast(getString(R.string.script_source_downloading, script.name))
-    read(origin = source?.let { ScriptUpdater.originOf(it, script.file) }) { ScriptSources.download(script) }
+    val from = source ?: return
+    read(ScriptFrom.Source(from.title), ScriptUpdater.originOf(from, script.file)) {
+      ScriptSources.download(script)
+    }
   }
 
   private companion object {

@@ -27,6 +27,13 @@
     <string name="script_author">Szerző: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">Telepíti a következőt: <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Lehetőségei:</string>
+    <string name="script_signed">SandFly által aláírva.</string>
+    <string name="script_signature_changed">A SandFly-aláírás nem egyezik: az aláírás után módosították, vagy nem a SandFly írta alá.</string>
+    <string name="script_unsigned">Nincs SandFly-aláírása.</string>
+    <string name="script_from_file">Fájlból.</string>
+    <string name="script_from_link">Innen: <xliff:g id="link">%1$s</xliff:g>.</string>
+    <string name="script_from_source">A(z) <xliff:g id="source">%1$s</xliff:g> szkriptforrásból.</string>
+    <string name="script_from_sandfly">A SandFly része.</string>
     <string name="script_install_no_permissions">Nincs szükség engedélyekre.</string>
     <string name="script_install_button">Telepítés</string>
     <string name="script_update_title">Frissíti a következőt: <xliff:g id="name">%1$s</xliff:g>, erre a verzióra: <xliff:g id="version">%2$s</xliff:g>?</string>

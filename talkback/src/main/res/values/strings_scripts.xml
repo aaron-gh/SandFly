@@ -55,6 +55,20 @@
     <string name="script_install_title">Install <xliff:g id="name">%1$s</xliff:g>?</string>
     <!-- In the install dialog, before the list of what the script may do. [CHAR LIMIT=NONE] -->
     <string name="script_install_can">It can:</string>
+    <!-- In the install dialog, for a script signed with SandFly's script signing key. Followed by where it came from. [CHAR LIMIT=NONE] -->
+    <string name="script_signed">Signed by SandFly.</string>
+    <!-- In the install dialog, for a script whose SandFly signature doesn't match its files. Followed by where it came from. [CHAR LIMIT=NONE] -->
+    <string name="script_signature_changed">The SandFly signature doesn\'t match: changed after signing, or not signed by SandFly.</string>
+    <!-- In the install dialog, for a script with no SandFly signature. Followed by where it came from. [CHAR LIMIT=NONE] -->
+    <string name="script_unsigned">Not signed by SandFly.</string>
+    <!-- In the install dialog, for a script opened from a file. [CHAR LIMIT=NONE] -->
+    <string name="script_from_file">From a file.</string>
+    <!-- In the install dialog, for a script downloaded from a shared link. [CHAR LIMIT=NONE] -->
+    <string name="script_from_link">From <xliff:g id="link">%1$s</xliff:g>.</string>
+    <!-- In the install dialog, for a script from a script source, named owner/repository. [CHAR LIMIT=NONE] -->
+    <string name="script_from_source">From the script source <xliff:g id="source">%1$s</xliff:g>.</string>
+    <!-- In the install dialog, for the example script that comes with SandFly. [CHAR LIMIT=NONE] -->
+    <string name="script_from_sandfly">Included with SandFly.</string>
     <!-- In the install dialog, for a script that asks for no permissions. [CHAR LIMIT=NONE] -->
     <string name="script_install_no_permissions">No permissions needed.</string>
     <!-- Button that installs a script. [CHAR LIMIT=20] -->

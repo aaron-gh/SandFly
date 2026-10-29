@@ -27,6 +27,13 @@
     <string name="script_author">作者：<xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">安裝<xliff:g id="name">%1$s</xliff:g>？</string>
     <string name="script_install_can">它可以：</string>
+    <string name="script_signed">已由 SandFly 簽署。</string>
+    <string name="script_signature_changed">SandFly 簽章不符：簽署後遭到修改，或並非由 SandFly 簽署。</string>
+    <string name="script_unsigned">未經 SandFly 簽署。</string>
+    <string name="script_from_file">來自檔案。</string>
+    <string name="script_from_link">來自 <xliff:g id="link">%1$s</xliff:g>。</string>
+    <string name="script_from_source">來自指令碼來源 <xliff:g id="source">%1$s</xliff:g>。</string>
+    <string name="script_from_sandfly">SandFly 內建。</string>
     <string name="script_install_no_permissions">無需任何權限。</string>
     <string name="script_install_button">安裝</string>
     <string name="script_update_title">將 <xliff:g id="name">%1$s</xliff:g> 更新為 <xliff:g id="version">%2$s</xliff:g>？</string>

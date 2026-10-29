@@ -80,7 +80,10 @@ class ScriptImportActivity : Activity() {
               .putExtra(FRAGMENT_NAME, ScriptsFragment::class.java.name)
               .putExtra(
                 FRAGMENT_ARGS,
-                Bundle().apply { putString(ScriptsFragment.ARG_IMPORT_FILE, file.path) },
+                Bundle().apply {
+                  putString(ScriptsFragment.ARG_IMPORT_FILE, file.path)
+                  if (source is Source.FromLink) putString(ScriptsFragment.ARG_IMPORT_LINK, source.url)
+                },
               )
               .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
           )

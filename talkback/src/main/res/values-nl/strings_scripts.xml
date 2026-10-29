@@ -27,6 +27,13 @@
     <string name="script_author">Door <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g> installeren?</string>
     <string name="script_install_can">Het kan:</string>
+    <string name="script_signed">Ondertekend door SandFly.</string>
+    <string name="script_signature_changed">De SandFly-handtekening klopt niet: gewijzigd na ondertekening, of niet ondertekend door SandFly.</string>
+    <string name="script_unsigned">Niet ondertekend door SandFly.</string>
+    <string name="script_from_file">Uit een bestand.</string>
+    <string name="script_from_link">Van <xliff:g id="link">%1$s</xliff:g>.</string>
+    <string name="script_from_source">Uit de scriptbron <xliff:g id="source">%1$s</xliff:g>.</string>
+    <string name="script_from_sandfly">Meegeleverd met SandFly.</string>
     <string name="script_install_no_permissions">Geen machtigingen nodig.</string>
     <string name="script_install_button">Installeren</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> bijwerken naar <xliff:g id="version">%2$s</xliff:g>?</string>

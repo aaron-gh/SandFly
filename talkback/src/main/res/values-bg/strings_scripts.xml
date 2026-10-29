@@ -27,6 +27,13 @@
     <string name="script_author">Автор: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">Да се инсталира ли <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Може да:</string>
+    <string name="script_signed">Подписан от SandFly.</string>
+    <string name="script_signature_changed">Подписът на SandFly не съвпада: скриптът е променен след подписването или не е подписан от SandFly.</string>
+    <string name="script_unsigned">Не е подписан от SandFly.</string>
+    <string name="script_from_file">От файл.</string>
+    <string name="script_from_link">От <xliff:g id="link">%1$s</xliff:g>.</string>
+    <string name="script_from_source">От източника на скриптове <xliff:g id="source">%1$s</xliff:g>.</string>
+    <string name="script_from_sandfly">Включен в SandFly.</string>
     <string name="script_install_no_permissions">Не са необходими разрешения.</string>
     <string name="script_install_button">Инсталиране</string>
     <string name="script_update_title">Да се актуализира ли <xliff:g id="name">%1$s</xliff:g> до <xliff:g id="version">%2$s</xliff:g>?</string>

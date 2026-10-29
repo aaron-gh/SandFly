@@ -27,6 +27,13 @@
     <string name="script_author">Tekijä: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">Asennetaanko <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Se voi:</string>
+    <string name="script_signed">SandFlyn allekirjoittama.</string>
+    <string name="script_signature_changed">SandFly-allekirjoitus ei täsmää: muutettu allekirjoittamisen jälkeen tai ei SandFlyn allekirjoittama.</string>
+    <string name="script_unsigned">Ei SandFlyn allekirjoittama.</string>
+    <string name="script_from_file">Tiedostosta.</string>
+    <string name="script_from_link">Linkistä <xliff:g id="link">%1$s</xliff:g>.</string>
+    <string name="script_from_source">Skriptilähteestä <xliff:g id="source">%1$s</xliff:g>.</string>
+    <string name="script_from_sandfly">Sisältyy SandFlyhin.</string>
     <string name="script_install_no_permissions">Lupia ei tarvita.</string>
     <string name="script_install_button">Asenna</string>
     <string name="script_update_title">Päivitetäänkö <xliff:g id="name">%1$s</xliff:g> versioon <xliff:g id="version">%2$s</xliff:g>?</string>

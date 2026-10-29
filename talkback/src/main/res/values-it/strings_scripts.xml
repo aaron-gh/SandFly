@@ -27,6 +27,13 @@
     <string name="script_author">Di <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title">Installare <xliff:g id="name">%1$s</xliff:g>?</string>
     <string name="script_install_can">Può:</string>
+    <string name="script_signed">Firmato da SandFly.</string>
+    <string name="script_signature_changed">La firma di SandFly non corrisponde: modificato dopo la firma o non firmato da SandFly.</string>
+    <string name="script_unsigned">Non firmato da SandFly.</string>
+    <string name="script_from_file">Da un file.</string>
+    <string name="script_from_link">Da <xliff:g id="link">%1$s</xliff:g>.</string>
+    <string name="script_from_source">Dall\'origine degli script <xliff:g id="source">%1$s</xliff:g>.</string>
+    <string name="script_from_sandfly">Incluso in SandFly.</string>
     <string name="script_install_no_permissions">Nessuna autorizzazione necessaria.</string>
     <string name="script_install_button">Installa</string>
     <string name="script_update_title">Aggiornare <xliff:g id="name">%1$s</xliff:g> alla versione <xliff:g id="version">%2$s</xliff:g>?</string>

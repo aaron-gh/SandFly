@@ -27,6 +27,13 @@
     <string name="script_author">作成者: <xliff:g id="author">%1$s</xliff:g></string>
     <string name="script_install_title"><xliff:g id="name">%1$s</xliff:g>をインストールしますか?</string>
     <string name="script_install_can">次のことが可能です。</string>
+    <string name="script_signed">SandFly による署名があります。</string>
+    <string name="script_signature_changed">SandFly の署名が一致しません。署名後に変更されたか、SandFly による署名ではありません。</string>
+    <string name="script_unsigned">SandFly による署名はありません。</string>
+    <string name="script_from_file">ファイルから取得。</string>
+    <string name="script_from_link"><xliff:g id="link">%1$s</xliff:g> から取得。</string>
+    <string name="script_from_source">スクリプトソース <xliff:g id="source">%1$s</xliff:g> から取得。</string>
+    <string name="script_from_sandfly">SandFly に付属。</string>
     <string name="script_install_no_permissions">権限は必要ありません。</string>
     <string name="script_install_button">インストール</string>
     <string name="script_update_title"><xliff:g id="name">%1$s</xliff:g> を <xliff:g id="version">%2$s</xliff:g> に更新しますか?</string>

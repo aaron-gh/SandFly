@@ -20,20 +20,35 @@ import com.google.android.accessibility.talkback.R
 import java.io.IOException
 import java.util.concurrent.Executors
 
+/** Where a script to install came from, as the question before installing says. */
+sealed class ScriptFrom {
+  object File : ScriptFrom()
+
+  data class Link(val url: String) : ScriptFrom()
+
+  data class Source(val title: String) : ScriptFrom()
+
+  /** The example script that comes with SandFly. */
+  object BuiltIn : ScriptFrom()
+}
+
 /** A screen that installs scripts, after listing what each one can do. */
 abstract class ScriptInstallFragment : ScriptScreenFragment() {
 
-  /** Reads a script and asks before installing it. [origin] is where it came from, if from a source. */
-  protected fun read(origin: String? = null, bytes: () -> ByteArray) {
+  /**
+   * Reads a script and asks before installing it. [from] is where it came from, and [origin] the
+   * source and file kept with it for updates, if from a source.
+   */
+  protected fun read(from: ScriptFrom, origin: String? = null, bytes: () -> ByteArray) {
     executor.execute {
       val result = runCatching { ScriptPackage.read(bytes()) }
       view?.post {
-        if (isAdded) result.fold({ confirmInstall(it, origin) }) { importFailed(it.message) }
+        if (isAdded) result.fold({ confirmInstall(it, from, origin) }) { importFailed(it.message) }
       }
     }
   }
 
-  private fun confirmInstall(pkg: ScriptPackage, origin: String?) {
+  private fun confirmInstall(pkg: ScriptPackage, from: ScriptFrom, origin: String?) {
     val context = requireContext()
     val translations =
       ScriptTranslations.load(ScriptTranslations.languageOf(context)) { pkg.files[it] }
@@ -57,9 +72,34 @@ abstract class ScriptInstallFragment : ScriptScreenFragment() {
         else -> R.string.script_update_anyway
       }
     val message =
-      if (existing == null) installMessage(manifest, warning)
-      else updateMessage(existing.manifest, manifest, added, warning)
+      listOf(
+          fromText(pkg.signature, from),
+          if (existing == null) installMessage(manifest, warning)
+          else updateMessage(existing.manifest, manifest, added, warning),
+        )
+        .joinToString("\n\n")
     confirm(title, message, button) { install(pkg, granted, done, origin) }
+  }
+
+  /**
+   * Whether SandFly signed the script, and where it came from. A script's author is whatever its
+   * manifest says, so only the signature shows that a script is SandFly's own.
+   */
+  private fun fromText(signature: ScriptSignature.Status, from: ScriptFrom): String {
+    val where =
+      when (from) {
+        ScriptFrom.File -> getString(R.string.script_from_file)
+        is ScriptFrom.Link -> getString(R.string.script_from_link, from.url)
+        is ScriptFrom.Source -> getString(R.string.script_from_source, from.title)
+        ScriptFrom.BuiltIn -> return getString(R.string.script_from_sandfly)
+      }
+    val signed =
+      when (signature) {
+        ScriptSignature.Status.SIGNED -> R.string.script_signed
+        ScriptSignature.Status.CHANGED -> R.string.script_signature_changed
+        ScriptSignature.Status.UNSIGNED -> R.string.script_unsigned
+      }
+    return getString(signed) + " " + where
   }
 
   private fun installMessage(manifest: ScriptManifest, warning: String?): String {
