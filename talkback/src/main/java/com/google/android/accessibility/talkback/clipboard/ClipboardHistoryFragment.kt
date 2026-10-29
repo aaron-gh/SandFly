@@ -24,6 +24,7 @@ import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity
+import com.google.android.accessibility.talkback.shizuku.ShizukuClipboard
 import com.google.android.accessibility.utils.ClipboardHistory
 import com.google.android.accessibility.utils.preference.PreferencesActivity.FRAGMENT_NAME
 
@@ -33,16 +34,17 @@ class ClipboardHistoryFragment : NotificationCodeFragment(R.string.title_clipboa
   private val onChange: () -> Unit = { if (isResumed) rebuild() }
 
   // The clipboard can be read once the screen has focus, which it doesn't have yet on resume.
+  // While Shizuku adds each copy, the history has the clipboard's text already.
   private val onFocus =
     ViewTreeObserver.OnWindowFocusChangeListener { hasFocus ->
-      if (hasFocus) context?.let(ClipboardHistory::recordClipboard)
+      if (hasFocus && !ShizukuClipboard.isWatching()) context?.let(ClipboardHistory::recordClipboard)
     }
 
   override fun onResume() {
     super.onResume()
     ClipboardHistory.addListener(onChange)
     view?.viewTreeObserver?.addOnWindowFocusChangeListener(onFocus)
-    if (view?.hasWindowFocus() == true) {
+    if (view?.hasWindowFocus() == true && !ShizukuClipboard.isWatching()) {
       ClipboardHistory.recordClipboard(requireContext())
     }
   }
