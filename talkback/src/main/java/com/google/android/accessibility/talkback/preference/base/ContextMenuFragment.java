@@ -28,6 +28,8 @@ import com.google.android.accessibility.talkback.contextmenu.TalkbackMenuProcess
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
+import com.google.android.accessibility.talkback.sandflyai.SandflyAiFeatures;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import java.util.List;
 
@@ -87,7 +89,30 @@ public class ContextMenuFragment extends ItemListFragment {
         screen,
         R.string.pref_show_context_menu_show_keyboard_shortcuts_setting_key,
         FeatureFlagReader.enableShowKeyboardShortcutsDialog(context));
+    titleSandflyProItem(
+        screen,
+        R.string.pref_show_context_menu_recognize_screen_setting_key,
+        SandflyAi.COMMAND_RECOGNIZE_SCREEN);
+    titleSandflyProItem(
+        screen,
+        R.string.pref_show_context_menu_screen_recognition_app_setting_key,
+        SandflyAi.COMMAND_SCREEN_RECOGNITION_IN_APP);
     updateNavigationOptions(screen);
+  }
+
+  /** Gives a SandFly Pro item the name of its command, or hides it in builds without SandFly Pro. */
+  private void titleSandflyProItem(PreferenceScreen screen, int keyResId, String command) {
+    Preference preference = screen.findPreference(getString(keyResId));
+    if (preference == null) {
+      return;
+    }
+    SandflyAiFeatures features = SandflyAi.getFeatures();
+    String title = features == null ? null : features.commands(requireContext()).get(command);
+    if (title == null) {
+      preference.setVisible(false);
+    } else {
+      preference.setTitle(title);
+    }
   }
 
   private void hide(PreferenceScreen screen, int keyResId, boolean visible) {

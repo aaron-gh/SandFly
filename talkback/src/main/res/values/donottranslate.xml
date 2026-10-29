@@ -1776,6 +1776,8 @@
     <bool name="pref_show_context_menu_system_action_default">false</bool>
     <bool name="pref_show_context_menu_tts_settings_default">true</bool>
     <bool name="pref_show_context_menu_image_caption_default">true</bool>
+    <bool name="pref_show_context_menu_recognize_screen_default">true</bool>
+    <bool name="pref_show_context_menu_screen_recognition_app_default">true</bool>
     <bool name="pref_show_context_menu_summarize_view_default">true</bool>
     <bool name="pref_show_context_menu_typo_suggestions_default">true</bool>
     <bool name="pref_show_context_menu_braille_display_settings_default">false</bool>
@@ -1984,6 +1986,8 @@
     <string name="pref_show_context_menu_system_action_setting_key" translatable="false">pref_system_action_menu_setting_key</string>
     <string name="pref_show_context_menu_tts_settings_setting_key" translatable="false">pref_tts_settings_menu_setting_key</string>
     <string name="pref_show_context_menu_image_caption_setting_key" translatable="false">pref_image_caption_menu_setting_key</string>
+    <string name="pref_show_context_menu_recognize_screen_setting_key" translatable="false">pref_recognize_screen_menu_setting_key</string>
+    <string name="pref_show_context_menu_screen_recognition_app_setting_key" translatable="false">pref_screen_recognition_app_menu_setting_key</string>
     <string name="pref_show_context_menu_summarize_view_setting_key" translatable="false">pref_summarize_view_menu_setting_key</string>
     <string name="pref_show_context_menu_typo_suggestions_setting_key" translatable="false">pref_show_context_menu_typo_suggestions_setting_key</string>
     <string name="pref_show_context_menu_braille_display_settings_setting_key" translatable="false">pref_braille_dispaly_settings_menu_setting_key</string>
@@ -2180,7 +2184,8 @@
   <bool name="pref_show_context_menu_copy_screen_tree_default">false</bool>
   <item type="id" name="copy_screen_tree" />
   <item type="id" name="script_command" />
-  <item type="id" name="sandfly_pro_command" />
+  <item type="id" name="recognize_screen_menu" />
+  <item type="id" name="screen_recognition_app_menu" />
 
   <!-- Voice profile menu and shortcuts. -->
   <string name="keycombo_shortcut_other_voice_profiles">keycombo_shortcut_other_voice_profiles</string>

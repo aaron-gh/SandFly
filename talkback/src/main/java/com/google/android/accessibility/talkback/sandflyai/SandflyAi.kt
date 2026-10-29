@@ -36,12 +36,19 @@ interface SandflyAiFeatures {
     /** Runs the command [value] from [commands]. Returns false for any other value. */
     fun runCommand(service: TalkBackService, value: String): Boolean
 
-    /** Items for the SandFly menu: title and what it does, run after the menu closes. */
-    fun menuItems(service: TalkBackService): List<Pair<CharSequence, Runnable>>
+    /**
+     * The SandFly menu item for the command [value] from [commands]: its title and what it does,
+     * run after the menu closes. Null leaves it out of the menu.
+     */
+    fun menuItem(service: TalkBackService, value: String): Pair<CharSequence, Runnable>?
 }
 
 object SandflyAi {
     private const val TAG = "SandflyAi"
+
+    /** SandFly Pro's commands that have SandFly menu items. */
+    const val COMMAND_RECOGNIZE_SCREEN = "SFPRO_RECOGNIZE_SCREEN"
+    const val COMMAND_SCREEN_RECOGNITION_IN_APP = "SFPRO_SCREEN_RECOGNITION_IN_APP"
     private const val ENTRY = "io.github.aaron_gh.sandfly.ai.SandflyAiEntry"
 
     @JvmStatic
