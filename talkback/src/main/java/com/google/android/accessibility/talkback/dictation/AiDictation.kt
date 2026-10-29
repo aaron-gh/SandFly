@@ -85,6 +85,12 @@ class AiDictation(
     )
   private var phase = Phase.IDLE
   private var field: AccessibilityNodeInfoCompat? = null
+  /** Gets the text instead of a field, for [listen], or null. */
+  private var onText: ((String?) -> Unit)? = null
+
+  init {
+    SandflyDictation.instance = this
+  }
   private var recognition = Recognition.ANDROID
   private var capture: AudioCapture? = null
   private var continuous: ContinuousRecognition? = null
@@ -137,6 +143,38 @@ class AiDictation(
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(SILENCE))
     return true
   }
+
+  /**
+   * Starts recording for text to give to [callback] instead of typing it, or stops recording when
+   * it is on, as [start] does for a field. [callback] gets the recognized and, when that is on,
+   * corrected text, or null when nothing was recognized or recording could not start.
+   */
+  fun listen(callback: (String?) -> Unit): Boolean {
+    if (phase != Phase.IDLE) return start(null)
+    if (
+      ContextCompat.checkSelfPermission(service, Manifest.permission.RECORD_AUDIO) !=
+        PackageManager.PERMISSION_GRANTED
+    ) {
+      PermissionUtils.requestPermissions(service, Manifest.permission.RECORD_AUDIO)
+      callback(null)
+      return false
+    }
+    if (!startRecording(DictationSettings.effectiveRecognition(service, prefs))) {
+      speak(service.getString(R.string.dictation_unavailable))
+      callback(null)
+      return false
+    }
+    field = null
+    onText = callback
+    phase = Phase.RECORDING
+    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_up))
+    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(SILENCE))
+    return true
+  }
+
+  /** Whether [listen] is recording, or recognizing what it recorded. */
+  val isListening: Boolean
+    get() = phase != Phase.IDLE && onText != null
 
   /** Starts recording for [used]. Returns false when it can't. */
   private fun startRecording(used: Recognition): Boolean {
@@ -232,6 +270,7 @@ class AiDictation(
         if (result == null) {
           finish()
           speak(service.getString(R.string.dictation_transcription_failed))
+          deliver(null)
         } else {
           recognized(result.first, cleaned = result.second)
         }
@@ -304,20 +343,25 @@ class AiDictation(
         }
       )
     )
+    deliver(null)
   }
 
-  /** Types [text], recognized from the user's speech, after correcting it when that is on. */
+  /**
+   * Types [text], recognized from the user's speech, after correcting it when that is on, or gives
+   * it to the [listen] callback.
+   */
   private fun recognized(text: String, cleaned: Boolean) {
     val target = field
     val heard = text.trim()
-    if (target == null || heard.isEmpty()) {
+    if ((target == null && onText == null) || heard.isEmpty()) {
       finish()
       speak(service.getString(R.string.dictation_nothing_recognized))
+      deliver(null)
       return
     }
     // A dictated password stays on the phone.
     val corrector =
-      if (cleaned || target.isPassword || !DictationSettings.correctsWithAi(service, prefs)) null
+      if (cleaned || target?.isPassword == true || !DictationSettings.correctsWithAi(service, prefs)) null
       else DictationSettings.correctingService(service, prefs)
     if (corrector == null) {
       finish()
@@ -336,7 +380,7 @@ class AiDictation(
     giveUp = fallback
     handler.postDelayed(fallback, correctionTimeoutMs(corrector))
     tones.play(/* playTone= */ true, /* delayPlayTone= */ false)
-    val prompt = prompt(textBeforeCursor(target), heard)
+    val prompt = prompt(target?.let { textBeforeCursor(it) }.orEmpty(), heard)
     worker.execute {
       val start = SystemClock.elapsedRealtime()
       val answer =
@@ -420,7 +464,16 @@ class AiDictation(
     transcriber?.cancel()
     if (phase == Phase.RECORDING) pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
     field = null
+    deliver(null)
     finish()
+    if (SandflyDictation.instance === this) SandflyDictation.instance = null
+  }
+
+  /** Gives [text] to the [listen] callback, if one waits. */
+  private fun deliver(text: String?) {
+    val callback = onText ?: return
+    onText = null
+    callback(text)
   }
 
   /** The language Whisper is told the speech is in: the phone's. */
@@ -434,9 +487,16 @@ class AiDictation(
       else -> language
     }
 
-  /** Types [text] at the cursor, with the spaces it needs beside the text around it. */
-  private fun type(target: AccessibilityNodeInfoCompat, text: String) {
+  /**
+   * Types [text] at the cursor of [target], with the spaces it needs beside the text around it, or
+   * gives it to the [listen] callback.
+   */
+  private fun type(target: AccessibilityNodeInfoCompat?, text: String) {
     field = null
+    if (target == null) {
+      deliver(text.ifEmpty { null })
+      return
+    }
     if (text.isEmpty()) return
     if (
       !target.refresh() ||
