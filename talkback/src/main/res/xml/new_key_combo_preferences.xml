@@ -18,5 +18,12 @@
             android:key="@string/pref_view_system_keyboard_shortcuts_key"
             android:title="@string/keycombo_menu_view_system_keyboard_shortcuts" />
     </PreferenceCategory>
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.commands.AppGesturesFragment"
+        android:key="pref_app_keyboard_shortcuts_screen"
+        android:persistent="false"
+        android:title="@string/title_pref_app_keyboard_shortcuts">
+        <extra android:name="shown_from" android:value="keyboard_shortcuts" />
+    </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
 
 </PreferenceScreen>
