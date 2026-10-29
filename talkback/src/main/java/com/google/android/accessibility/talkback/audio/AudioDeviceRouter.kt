@@ -118,6 +118,16 @@ class AudioDeviceRouter @JvmOverloads constructor(
   // Android pick the communication route again, which during a call could move the call to a
   // watch whose phone calls setting is off.
   private var communicationDeviceSetByUs = false
+  // Whether the request above only keeps accessibility audio off the earpiece after a call.
+  private var holdingOffEarpiece = false
+  private var earpieceRequests = 0
+  private val afterCallCheck =
+    Runnable {
+      val am = audioManager
+      if (am != null && currentTarget == AudioTarget.SystemDefault && !stepsAside) {
+        keepAccessibilityOffEarpiece(am)
+      }
+    }
   private var otherPlaybackCount = 0
   private val playbackCallback =
     object : AudioManager.AudioPlaybackCallback() {
@@ -271,7 +281,7 @@ class AudioDeviceRouter @JvmOverloads constructor(
     when (val target = currentTarget) {
       is AudioTarget.SystemDefault -> {
         stopKeepAlive()
-        clearDeviceRouting(am)
+        if (!keepAccessibilityOffEarpiece(am)) clearDeviceRouting(am)
       }
       is AudioTarget.PhoneSpeaker -> {
         val speaker = speakerToForce(am)
@@ -522,9 +532,12 @@ class AudioDeviceRouter @JvmOverloads constructor(
   }
 
   private fun handleCommunicationDeviceChanged(device: AudioDeviceInfo?) {
-    if (currentTarget == AudioTarget.SystemDefault) return
     if (stepsAside) return
     val am = audioManager ?: return
+    if (currentTarget == AudioTarget.SystemDefault) {
+      keepAccessibilityOffEarpiece(am)
+      return
+    }
     val targetDevice = getTargetAudioDevice()
     if (targetDevice != null && (device == null || device.id != targetDevice.id)) {
       Log.i(
@@ -571,6 +584,8 @@ class AudioDeviceRouter @JvmOverloads constructor(
               return
             } else {
               applyRouting()
+              mainHandler.removeCallbacks(afterCallCheck)
+              for (delay in AFTER_CALL_CHECKS_MS) mainHandler.postDelayed(afterCallCheck, delay)
               return
             }
           }
@@ -638,6 +653,8 @@ class AudioDeviceRouter @JvmOverloads constructor(
   }
 
   private fun setDeviceRouting(am: AudioManager, device: AudioDeviceInfo, forceSpeakerOn: Boolean) {
+    holdingOffEarpiece = false
+    earpieceRequests = 0
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
       // Do not touch isSpeakerphoneOn here. On Android 12+ setSpeakerphoneOn(false) removes this
       // app's communication-device request, which undoes the call below and lets the sound fall
@@ -687,8 +704,59 @@ class AudioDeviceRouter @JvmOverloads constructor(
     }
   }
 
+  /**
+   * After a call on One UI, Telecom keeps its request for the earpiece as the communication device,
+   * and Android sends accessibility audio to the communication device. A request of Backtalk's own
+   * goes first; while Backtalk plays no call audio it is inactive, so no communication device is
+   * chosen and accessibility audio follows media again. It is kept until a call starts, as clearing
+   * it brings Telecom's request back. Returns whether the request is in place.
+   */
+  private fun keepAccessibilityOffEarpiece(am: AudioManager): Boolean {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) return false
+    // A call is starting: the phone state change clears the request.
+    if (am.mode != AudioManager.MODE_NORMAL) return holdingOffEarpiece
+    // Speech on the call stream follows the communication device, which this request would choose.
+    if (FailoverTextToSpeech.speechUsage(context) == AudioAttributes.USAGE_VOICE_COMMUNICATION) {
+      return false
+    }
+    return try {
+      val ours = am.getAudioDevicesForAttributes(ACCESSIBILITY_ATTRIBUTES).firstOrNull()?.type
+      val media = am.getAudioDevicesForAttributes(MEDIA_ATTRIBUTES).firstOrNull()?.type
+      if (ours != AudioDeviceInfo.TYPE_BUILTIN_EARPIECE ||
+          media == null ||
+          media == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE ||
+          earpieceRequests >= MAX_EARPIECE_REQUESTS) {
+        return holdingOffEarpiece
+      }
+      // The earpiece, so that if Android did choose this request, nothing would move.
+      val earpiece =
+        am.availableCommunicationDevices.find { it.type == AudioDeviceInfo.TYPE_BUILTIN_EARPIECE }
+          ?: return holdingOffEarpiece
+      // Made again, it goes in front of Telecom's again.
+      val success = am.setCommunicationDevice(earpiece)
+      earpieceRequests++
+      if (success) {
+        communicationDeviceSetByUs = true
+        holdingOffEarpiece = true
+      }
+      LogUtils.d(
+        TAG,
+        "Accessibility audio is on the earpiece outside a call, media on type %d; own communication device request %d: %b",
+        media,
+        earpieceRequests,
+        success,
+      )
+      holdingOffEarpiece
+    } catch (e: RuntimeException) {
+      Log.w(TAG, "Cannot move accessibility audio off the earpiece", e)
+      holdingOffEarpiece
+    }
+  }
+
   private fun clearDeviceRouting(am: AudioManager) {
     isRoutingActive = false
+    holdingOffEarpiece = false
+    earpieceRequests = 0
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
       if (communicationDeviceSetByUs) {
         am.clearCommunicationDevice()
@@ -799,6 +867,24 @@ class AudioDeviceRouter @JvmOverloads constructor(
     private const val TAG = "AudioDeviceRouter"
     // Gaps between re-assertion passes, covering slow Bluetooth profile switches.
     private val REASSERTION_DELAYS_MS = longArrayOf(150L, 300L, 500L, 800L, 1200L, 2000L)
+    // When accessibility audio is checked for the earpiece after a call ends. Telecom asks for the
+    // earpiece again for up to a few seconds after the call.
+    private val AFTER_CALL_CHECKS_MS = longArrayOf(1_000L, 2_000L, 4_000L, 8_000L)
+    // How often the earpiece request is made again after Telecom's came back in front of it.
+    private const val MAX_EARPIECE_REQUESTS = 4
+
+    private val ACCESSIBILITY_ATTRIBUTES by lazy {
+      AudioAttributes.Builder()
+        .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+        .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+        .build()
+    }
+    private val MEDIA_ATTRIBUTES by lazy {
+      AudioAttributes.Builder()
+        .setUsage(AudioAttributes.USAGE_MEDIA)
+        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+        .build()
+    }
 
     @Volatile
     @JvmStatic
