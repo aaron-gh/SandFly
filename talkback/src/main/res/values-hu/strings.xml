@@ -187,7 +187,7 @@
   <string name="keycombo_menu_other_show_link_list">Linklista megjelenítése</string>
   <string name="keycombo_menu_other_show_control_list">Vezérlőlista megjelenítése</string>
   <string name="keycombo_menu_other_show_table_list">Táblázatlista megjelenítése</string>
-  <string name="keycombo_menu_other_talkback_context_menu">SandFly menü megjelenítése</string>
+  <string name="keycombo_menu_other_talkback_context_menu">SandFly-menü megjelenítése</string>
   <string name="keycombo_menu_other_custom_actions">Műveletek megjelenítése</string>
   <string name="keycombo_menu_other_language_options">Telepített nyelvek megjelenítése</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Az utolsó felolvasott mondat másolása</string>
@@ -358,7 +358,7 @@
   <string name="screen_dimmed">Képernyő elrejtve</string>
   <string name="screen_brightness_restored">Képernyő megjelenítve</string>
   <string name="screen_dimming_exit_instruction_line1">A SandFly kisegítő szolgáltatás elrejtette a képernyőt</string>
-  <string name="screen_dimming_exit_instruction_line2">Ennek módosításához nyissa meg a SandFly menüt ezzel: <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g>, válassza a „<xliff:g id="menu item" example="show screen">%2$s</xliff:g>” lehetőséget, majd koppintson duplán.</string>
+  <string name="screen_dimming_exit_instruction_line2">Ennek módosításához nyissa meg a SandFly-menüt ezzel: <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g>, válassza a „<xliff:g id="menu item" example="show screen">%2$s</xliff:g>” lehetőséget, majd koppintson duplán.</string>
   <string name="shortcut_title_basic_navigation">Alapvető navigáció</string>
   <string name="shortcut_title_system_actions">Rendszerműveletek</string>
   <string name="shortcut_title_reading_control">Olvasás</string>
@@ -406,8 +406,8 @@
   <string name="talkback_menu_more_options_text">A beállítás vagy az eszköz zárolásának feloldása után új menüpontokat láthat.</string>
   <string name="talkback_menu_title_content_description">SandFly-menü. A SandFly-menü lehetőségeinek felfedezéséhez csúsztasson jobbra.\n\nAz útmutatóhoz való visszalépéshez csúsztasson gyorsan két ujjal jobbra vagy balra a képernyő széléről.</string>
   <string name="shortcut_show_language_options">Beszélt nyelv módosítása</string>
-  <string name="shortcut_select_next_setting">Következő olvasási vezérlő</string>
-  <string name="shortcut_select_previous_setting">Előző olvasási vezérlő</string>
+  <string name="shortcut_select_next_setting">Következő felolvasásvezérlő</string>
+  <string name="shortcut_select_previous_setting">Előző felolvasásvezérlő</string>
   <string name="shortcut_pass_through_next">A rendszerkézmozdulatok átadása</string>
   <string name="shortcut_a11y_button">Kisegítő lehetőségek gyorsparancsa</string>
   <string name="shortcut_a11y_button_long_press">Tartsa lenyomva a kisegítő lehetőségek gyorsparancsát</string>
@@ -851,7 +851,7 @@
   <string name="keep_reviewing_tutorial_button">Áttekintés folytatása</string>
   <string name="welcome_to_updated_talkback_title">Üdvözli a frissített SandFly!</string>
   <string name="navigation_heading">Navigáció</string>
-  <string name="setting_selector_heading">Olvasási vezérlők</string>
+  <string name="setting_selector_heading">Felolvasásvezérlés</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Videó- vagy zenealkalmazásban lejátszott médiatartalom szüneteltetéséhez koppintson duplán két ujjal. Próbálja ki most.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Más alkalmazások is használhatják ezt a kézmozdulatot, például telefonhívás fogadására vagy befejezésére. Nem biztos, hogy minden alkalmazás támogatja.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Médiatartalom szüneteltetve vagy lejátszás alatt. Ez általában szünetelteti vagy lejátssza az adott videót vagy zenét. A folytatáshoz csúsztasson jobbra.</string>
@@ -865,7 +865,7 @@
   <string name="new_shortcut_gesture_cut_text_announcement">Szöveg kivágva. Ez az esetek többségében kivágja a kijelölt szöveget. A folytatáshoz csúsztasson jobbra.</string>
   <string name="new_shortcut_gesture_selection_mode_text">A szövegkijelölési mód indításához vagy befejezéséhez koppintson duplán két ujjal, és tartsa lenyomva ujjait.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Kijelölési mód be- vagy kikapcsolva. Ez általában elindítja vagy leállítja a szövegkijelölési módot, amikor beviteli mező van fókuszban. A folytatáshoz csúsztasson jobbra.</string>
-  <string name="new_shortcut_gesture_reading_menu_text">Az olvasási vezérlők használatához csúsztasson balra vagy jobbra három ujjal. Felfelé vagy lefelé is csúsztathat három ujjal.</string>
+  <string name="new_shortcut_gesture_reading_menu_text">A felolvasásvezérlés használatához csúsztasson balra vagy jobbra három ujjal. Felfelé vagy lefelé is csúsztathat három ujjal.</string>
   <string name="new_shortcut_gesture_note">Megjegyzés: Ön személyre szabott egyes kézmozdulatokat, ezért előfordulhat, hogy ezek az információk nem pontosak. A saját kézmozdulatok áttekintéséhez nyissa meg a SandFly beállításait.</string>
   <string name="welcome_to_android11_text">Az új kézmozdulatok segítségével a SandFly még gyorsabban és könnyebben használható.\n\nEzen a képernyőn kipróbálhatja őket. Ezeket az információkat bármikor újra megtekintheti a SandFly beállításaiban.</string>
   <string name="new_gesture_notification_title">Új kézmozdulatok a SandFlyben</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">A Braille-kijelző beállításai</string>
   <string name="keyboard_smart_browse_mode_title">Billentyűzet: Intelligens böngészés mód</string>
   <string name="keyboard_smart_browse_mode_text">A SandFly intelligens böngészés módja kikapcsolja a böngészés módot a szerkesztőmezőkben, hogy segítsen a fizikai billentyűzettel való gépelésben az interneten való böngészéskor. Ezután újra bekapcsolja, amikor egy nem szerkeszthető mezőre ugrik, hogy hatékonyan folytathassa a böngészést. Az „Intelligens böngészés mód” a következő helyen kapcsolható be és ki: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">A SandFly beállításai &gt; Speciális beállítások</string>
-  <string name="advanced_settings_link_tts">A SandFly beállításai, majd Speciális beállítások</string>
   <string name="keyboard_tutorial_title">Billentyűzetes útmutató</string>
   <string name="keyboard_tutorial_text">A SandFly mostantól tartalmaz egy billentyűzetes útmutatót, amely segít a fizikai billentyűzet használatakor a Továbbfejlesztett billentyűzetkiosztás billentyűparancsainak és parancsainak elsajátításában. Az útmutatót itt találja: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">A SandFly beállításai &gt; SandFly-útmutató</string>
-  <string name="tutorial_link_tts">A SandFly beállításai, majd SandFly-útmutató</string>
   <string name="tutorial_entry_point_title">Útmutató</string>
   <string name="welcome_to_talkback_title">Üdvözli a SandFly</string>
   <string name="talkback_is_on">A SandFly be van kapcsolva</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">Menük és vezérlőelemek használata</string>
   <string name="menus_talkback_menu_text">A SandFly-menü gyakran használt beállításokat és vezérlőket tartalmaz.\n\nNyissa meg most a SandFly-menüt, koppintson három ujjával a képernyőn.</string>
   <string name="menus_talkback_menu_text_pre_r">A SandFly-menü gyakran használt beállításokat és vezérlőket tartalmaz.\n\nNyissa meg most a SandFly-menüt úgy, hogy lefelé, majd jobbra csúsztatja ujját.</string>
-  <string name="menus_selector_text">A billentyűparancsok segítségével gyorsan módosíthatja a beállításokat (pl. a karakterek szerinti navigációról szavak szerinti navigációra válthat, illetve módosíthatja a SandFly beszédsebességét).\n\nAz olvasási vezérlők gyors módosításához csúsztasson balra vagy jobbra három ujjal.\n\nA SandFly-menüt és az olvasási vezérlőket később a SandFly beállításai között szabhatja személyre.</string>
-  <string name="menus_selector_text_pre_r">A billentyűparancsok segítségével gyorsan módosíthatja a beállításokat (pl. a karakterek szerinti navigációról szavak szerinti navigációra válthat, illetve módosíthatja a SandFly beszédsebességét).\n\nAz olvasási vezérlők gyors módosításához csúsztasson lefelé, majd felfelé.\n\nA SandFly-menüt és az olvasási vezérlőket később a SandFly beállításai között szabhatja személyre.</string>
+  <string name="menus_selector_text">A billentyűparancsok segítségével gyorsan módosíthatja a beállításokat (pl. a karakterek szerinti navigációról szavak szerinti navigációra válthat, illetve módosíthatja a SandFly beszédsebességét).\n\nA felolvasásvezérlés gyors módosításához csúsztasson balra vagy jobbra három ujjal.\n\nA SandFly-menüt és a felolvasásvezérlést később a SandFly beállításai között szabhatja személyre.</string>
+  <string name="menus_selector_text_pre_r">A billentyűparancsok segítségével gyorsan módosíthatja a beállításokat (pl. a karakterek szerinti navigációról szavak szerinti navigációra válthat, illetve módosíthatja a SandFly beszédsebességét).\n\nA felolvasásvezérlés gyors módosításához csúsztasson lefelé, majd felfelé.\n\nA SandFly-menüt és a felolvasásvezérlést később a SandFly beállításai között szabhatja személyre.</string>
   <string name="all_set_title">Kész is!</string>
   <string name="all_set_text">Készen áll a SandFly használatára.\n\nTájékozódhat most a többi témáról, vagy bármikor újra áttekintheti ezeket az információkat a SandFly beállításaiban.</string>
   <string name="talkback_tutorial_text">Csúsztasson jobbra a kívánt téma kiválasztásához. A legjobb élmény elérése érdekében kapcsolja be a kezdés előtt a SandFly szolgáltatást.</string>
@@ -1070,14 +1066,14 @@
   <string name="image_description_playground_title">A képleírások kérésének kipróbálása</string>
   <string name="image_description_playground_content_one">Amikor a fókusz egy képen van, nyissa meg a SandFly-menüt, és válassza a „Képleírás” lehetőséget.\n\nAlább egy fotó található. Próbáljon meg leírást kérni hozzá.</string>
     <string name="image_description_playground_content_two">A képleírás beállításait bármikor módosíthatja itt: A SandFly beállításai &gt; Kép- és képernyőleírások.</string>
-    <string name="image_description_playground_content_two_tts">A képleírás beállításait bármikor módosíthatja a SandFly beállítások, majd a Kép- és képernyőleírások menüpontban.</string>
+    <string name="image_description_playground_content_two_tts">A képleírás beállításait bármikor módosíthatja itt: A SandFly beállításai, majd Kép- és képernyőleírások.</string>
   <string name="image_description_sample_image_content_description">Mintakép. Koppintson három ujjal a SandFly-menü megnyitásához, és válassza a „Képleírás” lehetőséget a leírás meghallgatásához.</string>
   <string name="practice_gestures_title">Kézmozdulatok gyakorlása</string>
   <string name="practice_keyboard_gestures_title">Billentyűparancsok gyakorlása</string>
   <string name="pref_gesture_set_key_title">Kézmozdulatkészlet</string>
   <string name="practice_gestures_text">Ezen a képernyőn bármelyik SandFly-kézmozdulatot kipróbálhatja, és meghallgathatja, hogy mihez tartozik az adott kézmozdulat.\n\nKoppintson a képernyőre két ujjával. Folytassa a gyakorlást. Koppintson egyszer, kétszer vagy háromszor a képernyőn egy, két, három vagy négy ujjával.\n\nDuplán is koppinthat, és nyomva tarthatja a képernyőt két, három vagy négy ujjával.</string>
   <string name="practice_gestures_text_pre_r">Ezen a képernyőn bármelyik SandFly-kézmozdulatot kipróbálhatja, és meghallgathatja, hogy mihez tartozik az adott kézmozdulat.\n\nKipróbálhatja bármelyik olyan kézmozdulatot, ahol két csúsztatás derékszöget zár be egymással. Csúsztasson például lefelé, majd jobbra, anélkül hogy a két csúsztatás között elengedné a képernyőt.</string>
-  <string name="practice_keyboard_gestures_text">Nyomja le a fizikai billentyűzet valamelyik billentyűjét vagy billentyűkombinációját, hogy meghallgathassa, mit csinál. A kilépéshez nyomja meg a Ctrl + W vagy az Escape billentyűt.\n\nItt a SandFly-gesztusokat is gyakorolhatja.</string>
+  <string name="practice_keyboard_gestures_text">Nyomja le a fizikai billentyűzet valamelyik billentyűjét vagy billentyűkombinációját, hogy meghallgathassa, mit csinál. A kilépéshez nyomja meg a Ctrl + W vagy az Escape billentyűt.\n\nItt a SandFly-kézmozdulatokat is gyakorolhatja.</string>
   <string name="button_1">1. gomb</string>
   <string name="button_2">2. gomb</string>
   <string name="button_3">3. gomb</string>
@@ -1179,7 +1175,7 @@
   <string name="screen_overview_top_images_header">Főbb képek:</string>
   <string name="screen_overview_heres_the_elements">Ezeket az elemeket találtam az alkalmazásban:</string>
   <string name="screen_overview_no_result">Nem sikerült összefoglalni a képernyő tartalmát</string>
-  <string name="image_caption_no_result">Nem sikerült leírni a szöveget</string>
+  <string name="image_caption_no_result">Nem sikerült leírni a képet</string>
   <string name="image_caption_with_hide_screen">A képleírások nem állnak rendelkezésre, ha a képernyő el van rejtve. Mutassa meg a képernyőt, és próbálja újra.</string>
   <string name="action_text_like_button">Megjelölés jó válaszként</string>
   <string name="action_text_dislike_button">Megjelölés rossz válaszként</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Továbbiak</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Kézmozdulatok fenntartása a Vibration Watch számára</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">A SandFly nem kezeli a kétujjas koppintást és dupla koppintást, hogy a Samsung Vibration Watch használhassa őket. Kapcsolja be a Vibration Watch funkciót az óra kisegítő lehetőségeinek beállításaiban.</string>
-    <string name="shortcut_reserved_for_vibration_watch">A Speciális beállításokban fenntartva a Vibration Watch számára</string>
     <string name="title_pref_speakerphone_away_from_ear">Kihangosító, ha nincs a füle mellett</string>
     <string name="summary_pref_speakerphone_away_from_ear">Hívás közben kihangosítóra vált, amikor eltávolítja a telefont a fülétől, és vissza a fülhallgatóra, amikor újra a füléhez emeli.</string>
     <string name="summary_pref_speakerphone_needs_permission">Olyan engedély szükséges hozzá, amelyet az Android nem ad meg a képernyőolvasóknak. A megadásához futtassa ezt a parancsot adb-vel vagy Shizukuval, majd térjen vissza erre a képernyőre: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Alkalmazások</string>
     <string name="speech_control_no_apps">Még egyetlen alkalmazás sem kért engedélyt a beszédre.</string>
     <string name="speech_control_ask_title">Engedélyezi a(z) <xliff:g id="app" example="Tasker">%1$s</xliff:g> számára, hogy a SandFlyon keresztül beszéljen?</string>
-    <string name="speech_control_ask_text">Szöveget tud mondani az Ön SandFly hangján. Ezt a Speciális beállításokban módosíthatja.</string>
     <string name="speech_control_allow">Engedélyezés</string>
     <string name="speech_control_deny">Tiltás</string>
     <string name="permission_speak_label">beszéd a SandFly segítségével</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Eltávolítás</string>
     <string name="quick_settings_added">%1$s hozzáadva</string>
     <string name="quick_settings_removed">%1$s eltávolítva</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly bekapcsolva. A kikapcsoláshoz tartsa két ujját a képernyőn 5 másodpercig. Az üzenet megjelenítésének leállításához kapcsolja ki a SandFly beállítások &gt; Speciális beállítások &gt; Útmutató a SandFly kikapcsolásához.</string>
     <string name="edge_gestures_title">Szélek</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Egy másik parancsikon a böngészési mód be- és kikapcsolásához</string>
     <string name="title_pref_vibration_strength">Rezgés erőssége</string>
@@ -1765,8 +1758,7 @@
     <string name="dictation_whisper_needs_model">Whisper, letöltött modell szükséges</string>
     <string name="title_pref_whisper_models">Whisper-modellek</string>
     <string name="dictation_whisper_use">Használat</string>
-    <string name="title_pref_dictation_ai_service">AI szolgáltatás diktáláshoz</string>
-    <string name="dictation_ai_same">Ugyanaz, mint az automatikus leírásoknál</string>
+    <string name="title_pref_dictation_ai_service">AI-szolgáltatás diktáláshoz</string>
     <string name="title_pref_browse_mode_per_app">Böngészési mód megjegyzése alkalmazásonként</string>
     <string name="title_pref_export_settings">Beállítások exportálása</string>
     <string name="title_pref_import_settings">Beállítások importálása</string>
@@ -1794,4 +1786,12 @@
         <item>1 perc</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automatikus leállítás csend után</string>
+    <string name="dictation_ai_same">Ugyanaz, mint itt: Kép- és képernyőleírások</string>
+    <string name="navigation_settings_link">A SandFly beállításai &gt; Navigáció</string>
+    <string name="navigation_settings_link_tts">A SandFly beállításai, majd Navigáció</string>
+    <string name="shortcut_reserved_for_vibration_watch">A Vibration Watch számára fenntartva, itt: Kézmozdulatok</string>
+    <string name="speech_control_ask_text">Szöveget mondhat ki a SandFly hangján. Ezt itt módosíthatja: Beállítások, „Beszéd”, „Más alkalmazások beszédének engedélyezése”.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">A SandFly be van kapcsolva. A kikapcsolásához tartsa két ujját a képernyőn öt másodpercig. Ha a továbbiakban nem szeretné látni ezt az üzenetet, kapcsolja ki ezt: A SandFly beállításai &gt; Szüneteltetés és kikapcsolás &gt; Utasítások megjelenítése a SandFly kikapcsolásához.</string>
+    <string name="tutorial_link">A SandFly beállításai &gt; Súgó és visszajelzés &gt; SandFly-útmutató</string>
+    <string name="tutorial_link_tts">A SandFly beállításai, majd Súgó és visszajelzés, majd SandFly-útmutató</string>
 </resources>

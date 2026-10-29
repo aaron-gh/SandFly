@@ -17,7 +17,7 @@
     <string name="notification_url_domain">قراءة الموقع فقط</string>
     <string name="notification_url_full">قراءة الرابط كاملاً</string>
     <string name="notification_category_title">الإشعارات</string>
-    <string name="notification_reading_title">قراءة الإخطارات بصوت عال</string>
+    <string name="notification_reading_title">قراءة الإشعارات بصوت عال</string>
     <string name="notification_apps_title">التطبيقات</string>
     <string name="notification_words_title">الكلمات والبدائل</string>
     <string name="notification_kinds_title">أنواع الإشعارات</string>
@@ -40,7 +40,7 @@
     <string name="notification_voice_sandfly">صوت SandFly</string>
     <string name="notification_detect_language_title">كشف اللغة</string>
     <string name="notification_detect_language_summary">ينطق كل إشعار باللغة المكتوب بها. يتطلّب «تبديل اللغة تلقائيًا» في تحويل النص إلى كلام.</string>
-    <string name="notification_sound_before_title">الصوت قبل الإخطارات</string>
+    <string name="notification_sound_before_title">الصوت قبل الإشعارات</string>
     <string name="notification_category_text">النص</string>
     <string name="notification_remove_emoji_title">اترك الرموز التعبيرية</string>
     <string name="notification_lowercase_title">قراءة الكلمات بالأحرف الكبيرة ككلمات</string>
@@ -61,14 +61,14 @@
     <string name="notification_queue_title">عند قراءة إشعار آخر</string>
     <string name="notification_repeat_minutes_title">إعادة القراءة حتى تعمل الشاشة</string>
     <string name="notification_skip_media_title">تخطي مشغلات الوسائط</string>
-    <string name="notification_skip_ongoing_title">تخطي الإخطارات الجارية</string>
+    <string name="notification_skip_ongoing_title">تخطي الإشعارات الجارية</string>
     <string name="notification_skip_ongoing_summary">مثل الملاحة والموقتات</string>
     <string name="notification_skip_foreground_title">تخطي إشعارات التطبيقات قيد التشغيل</string>
     <string name="notification_skip_foreground_summary">مثل VPN أو المسجل</string>
     <string name="notification_skip_progress_title">تخطي إشعارات التقدم</string>
     <string name="notification_skip_group_summaries_title">تخطي ملخصات المجموعة</string>
     <string name="notification_skip_group_summaries_summary">مثل \"3 رسائل جديدة\"</string>
-    <string name="notification_skip_low_priority_title">تخطي الإخطارات ذات الأولوية المنخفضة</string>
+    <string name="notification_skip_low_priority_title">تخطي الإشعارات ذات الأولوية المنخفضة</string>
     <string name="notification_skip_system_title">تخطي إشعارات النظام</string>
     <string name="notification_screen_on_title">أثناء تشغيل الشاشة</string>
     <string name="notification_screen_off_title">بينما الشاشة مغلقة</string>
@@ -111,12 +111,12 @@
     <string name="notification_watch_dismiss_title">أيضًا عند إغلاقه على الساعة</string>
     <string name="notification_app_cancel_title">التوقف عندما يزيل التطبيق الإشعار</string>
     <string name="notification_category_summary">ملخص</string>
-    <string name="notification_summary_now_title">قراءة الإخطارات الآن</string>
-    <string name="notification_summary_daily_title">قراءة الإخطارات كل يوم</string>
+    <string name="notification_summary_now_title">قراءة الإشعارات الآن</string>
+    <string name="notification_summary_daily_title">قراءة الإشعارات كل يوم</string>
     <string name="notification_summary_time_title">الوقت</string>
     <string name="notification_summary_newest_first_title">الأحدث أولاً</string>
     <string name="notification_summary_name_title">اسمك</string>
-    <string name="notification_summary_gap_title">وقفة بين الإخطارات</string>
+    <string name="notification_summary_gap_title">وقفة بين الإشعارات</string>
     <string name="notification_summary_needs_sandfly">قم بتشغيل SandFly لقراءة الإشعارات</string>
     <string name="notification_summary_no_access">الوصول إلى الإشعارات غير مفعَّل</string>
     <string name="notification_summary_morning">صباح الخير.</string>
@@ -240,7 +240,7 @@
     <string name="notification_type_locked">الهاتف مغلق</string>
     <string name="notification_type_from_app">إشعار من التطبيق</string>
     <string name="notification_type_foreground">التطبيق في المقدمة</string>
-    <string name="notification_type_contains">يحتوي الإخطار</string>
+    <string name="notification_type_contains">يحتوي الإشعار</string>
     <string name="notification_type_battery">مستوى البطارية أقل من</string>
     <string name="notification_type_charging">الشحن</string>
     <string name="notification_type_landscape">أفقي</string>
@@ -278,7 +278,7 @@
     <string name="notification_cond_wifi_any_not">غير متصل بـ Wi-Fi</string>
     <string name="notification_cond_foreground"><xliff:g id="app" example="Maps">%1$s</xliff:g> في المقدمة</string>
     <string name="notification_cond_foreground_not"><xliff:g id="app" example="Maps">%1$s</xliff:g> ليس في المقدمة</string>
-    <string name="notification_cond_from">الإخطار من <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_cond_from">الإشعار من <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_from_not">الإشعار ليس من <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_cond_contains">يحتوي الإشعار على <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
     <string name="notification_cond_contains_not">الإشعار لا يحتوي على <xliff:g id="text" example="urgent">%1$s</xliff:g></string>
@@ -296,7 +296,7 @@
     <string name="notification_action_keep_numbers">إبقاء الأرقام متصلة</string>
     <string name="notification_action_priority">القراءة أولاً</string>
     <string name="notification_action_always_read">القراءة حتى في الساعات الهادئة والأوقات الأخرى التي لا تُقرأ فيها الإشعارات</string>
-    <string name="notification_action_voice">القراءة بملف تعريف صوتي</string>
+    <string name="notification_action_voice">القراءة بملف صوتي</string>
     <string name="notification_action_voice_value">القراءة باستخدام <xliff:g id="profile" example="DECtalk">%1$s</xliff:g></string>
     <string name="notification_action_voice_sandfly">القراءة بصوت SandFly</string>
     <string name="notification_voice_removed">ملف صوتي محذوف</string>
@@ -306,7 +306,7 @@
     <string name="notification_on">مفعَّل</string>
     <string name="notification_never_again">حتى يتم إعادة تشغيل SandFly</string>
     <string name="notification_percent"><xliff:g id="percent" example="100">%1$d</xliff:g>%%</string>
-    <string name="notification_speech_tile_label">قراءة الإخطارات بصوت عال</string>
+    <string name="notification_speech_tile_label">قراءة الإشعارات بصوت عال</string>
     <string name="notification_speech_now_on">تم تفعيل قراءة الإشعارات</string>
     <string name="notification_speech_now_off">تم إيقاف قراءة الإشعارات</string>
     <string name="notification_no_last_notification">لم تتم قراءة أي إشعار</string>

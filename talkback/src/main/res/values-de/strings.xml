@@ -88,7 +88,7 @@
   <string name="title_pref_show_tos">Nutzungsbedingungen</string>
   <string name="title_pref_show_privacy_policy">Datenschutzerklärung</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Gesten auf dem Fingerabdrucksensor</string>
-  <string name="title_pref_category_tutorial">SandFly-Anleitung</string>
+  <string name="title_pref_category_tutorial">SandFly-Tutorial</string>
   <string name="title_pref_category_help_no_tutorial">Hilfe</string>
   <string name="title_pref_advanced_settings">Erweiterte Einstellungen</string>
   <string name="title_pref_show_exit_watermark">Anleitung zum Deaktivieren von SandFly anzeigen</string>
@@ -785,10 +785,10 @@
   <string name="msg_matches_found">{matches,plural, =0{Keine Übereinstimmungen auf diesem Bildschirm}=1{# Übereinstimmung}other{# Übereinstimmungen}}</string>
   <string name="msg_no_matches">Keine Übereinstimmungen auf diesem Bildschirm</string>
   <string name="dialog_title_continuous_reading_mode">So funktioniert kontinuierliches Lesen</string>
-  <string name="dialog_message_continuous_reading_mode">Nachdem du „Von oben lesen“ oder „Ab dem Element im Fokus vorlesen“ ausgewählt hast, kannst du weiterhin zum vorherigen oder nächsten Element wechseln, während der Text vorgelesen wird. So kannst du ganz einfach zurückgehen oder etwas überspringen.\n\nWenn du die Lautstärke anpassen möchtest, während SandFly spricht, drücke die Lauter- oder Leisertaste.</string>
+  <string name="dialog_message_continuous_reading_mode">Nachdem du „Von oben lesen“ oder „Ab dem Element im Fokus lesen“ ausgewählt hast, kannst du weiterhin zum vorherigen oder nächsten Element wechseln, während der Text vorgelesen wird. So kannst du ganz einfach zurückgehen oder etwas überspringen.\n\nWenn du die Lautstärke anpassen möchtest, während SandFly spricht, drücke die Lauter- oder Leisertaste.</string>
   <string name="always_show_this_message_label">Diese Nachricht immer anzeigen</string>
   <string name="dialog_title_voice_commands">Sprachbefehle für SandFly verwenden</string>
-  <string name="dialog_message_voice_commands">Hier sind einige Beispiele für Sprachbefehle:\n\n• Kopieren\n• Ab dem Element im Fokus vorlesen\n• Finde [gespeichertes Element]\n• Sprich [schneller]\n• SandFly-Einstellungen\n\nSag „<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>“, um eine Liste aller Sprachbefehle zu sehen</string>
+  <string name="dialog_message_voice_commands">Hier sind einige Beispiele für Sprachbefehle:\n\n• Kopieren\n• Ab dem Element im Fokus lesen\n• Finde [gespeichertes Element]\n• Sprich [schneller]\n• SandFly-Einstellungen\n\nSag „<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>“, um eine Liste aller Sprachbefehle zu sehen</string>
   <string name="start_voice_command">Sprachbefehle verwenden</string>
   <string name="dialog_title_pass_through_mode">SandFly-Touch-Gesten ignorieren und die des Systems verwenden</string>
   <string name="dialog_message_pass_through_mode">Wenn du einen Glockenton hörst, kannst du eine System-Geste verwenden, die nicht von SandFly unterstützt wird.</string>
@@ -909,13 +909,9 @@
   <string name="keyboard_shortcuts_link_tts">SandFly-Einstellungen unter „Tastenkombinationen“</string>
   <string name="braille_display_settings_link">Braillezeile-Einstellungen</string>
   <string name="keyboard_smart_browse_mode_title">Tastatur: Intelligenter Suchmodus</string>
-  <string name="keyboard_smart_browse_mode_text">Der intelligente SandFly-Suchmodus deaktiviert den Suchmodus in einem Bearbeitungsfeld, damit du beim Surfen im Web mit einer physischen Tastatur tippen kannst. Wenn du dann zu einem nicht bearbeitbaren Feld im Web wechselst, wird er wieder aktiviert, damit du problemlos weitersurfen kannst. Du kannst den intelligenten Suchmodus in den <xliff:g id="settings_path">%1$s</xliff:g> aktivieren oder deaktivieren.</string>
-  <string name="advanced_settings_link">SandFly-Einstellungen &gt; „Erweiterte Einstellungen“</string>
-  <string name="advanced_settings_link_tts">SandFly-Einstellungen unter „Erweiterte Einstellungen“</string>
+  <string name="keyboard_smart_browse_mode_text">Der intelligente SandFly-Suchmodus deaktiviert den Suchmodus in einem Bearbeitungsfeld, damit du beim Surfen im Web mit einer physischen Tastatur tippen kannst. Wenn du dann zu einem nicht bearbeitbaren Feld im Web wechselst, wird er wieder aktiviert, damit du problemlos weitersurfen kannst. Du kannst „Intelligenter Suchmodus“ in den <xliff:g id="settings_path">%1$s</xliff:g> aktivieren oder deaktivieren.</string>
   <string name="keyboard_tutorial_title">Anleitung zur Tastaturnutzung</string>
   <string name="keyboard_tutorial_text">SandFly enthält jetzt eine Anleitung zur Tastaturnutzung, mit der du die Tastenkombinationen und Befehle für die erweiterte Tastaturbelegung bei Verwendung einer physischen Tastatur lernen kannst. Du findest die Anleitung in den <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFly-Einstellungen &gt; „SandFly-Anleitung“</string>
-  <string name="tutorial_link_tts">SandFly-Einstellungen unter „SandFly-Anleitung“</string>
   <string name="tutorial_entry_point_title">Anleitung</string>
   <string name="welcome_to_talkback_title">Willkommen bei SandFly</string>
   <string name="talkback_is_on">SandFly ist aktiviert</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Mehr</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Gesten für Vibration Watch reservieren</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly verarbeitet Einmal- und Doppeltippen mit zwei Fingern nicht mehr, damit Samsung Vibration Watch sie verwenden kann. Aktiviere Vibration Watch in den Bedienungshilfen-Einstellungen deiner Smartwatch.</string>
-    <string name="shortcut_reserved_for_vibration_watch">In den erweiterten Einstellungen für Vibration Watch reserviert</string>
     <string name="title_pref_speakerphone_away_from_ear">Lautsprecher, wenn nicht am Ohr</string>
     <string name="summary_pref_speakerphone_away_from_ear">Wechselt während eines Anrufs zum Lautsprecher, wenn du das Smartphone vom Ohr nimmst, und zurück zur Hörmuschel, wenn du es wieder ans Ohr hältst.</string>
     <string name="summary_pref_speakerphone_needs_permission">Erfordert eine Berechtigung, die Android Screenreadern nicht erteilt. Führe zum Erteilen diesen Befehl mit adb oder Shizuku aus und öffne danach wieder diesen Bildschirm: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Apps</string>
     <string name="speech_control_no_apps">Bisher hat keine App angefragt, Text zu sprechen.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> erlauben, über SandFly zu sprechen?</string>
-    <string name="speech_control_ask_text">Die App kann Text mit deiner SandFly-Stimme sprechen. Du kannst das in den erweiterten Einstellungen ändern.</string>
     <string name="speech_control_allow">Zulassen</string>
     <string name="speech_control_deny">Nicht zulassen</string>
     <string name="permission_speak_label">über SandFly sprechen</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d Benachrichtigung</item>
         <item quantity="other">%d Benachrichtigungen</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ist aktiviert. Halte das Display mit zwei Fingern 5 Sekunden lang gedrückt, um SandFly zu deaktivieren. Wenn du diese Meldung nicht mehr sehen möchtest, deaktiviere SandFly-Einstellungen &gt; „Erweiterte Einstellungen“ &gt; „Anleitung zum Deaktivieren von SandFly anzeigen“.</string>
     <string name="edge_gestures_title">Ränder</string>
     <string name="title_pref_audio_output_device">Audioausgabegerät</string>
     <string name="dialog_title_audio_output_device">Audioausgabe für SandFly auswählen</string>
@@ -1523,10 +1516,10 @@
     <string name="summary_support_wrap_around">Springen vom letzten zum ersten Element aktivieren oder deaktivieren</string>
     <string name="wrap_around_on">Am Ende zum Anfang springen: an</string>
     <string name="wrap_around_off">Am Ende zum Anfang springen: aus</string>
-    <string name="title_selector_tablet_held_up_faces_away">Hochgehaltenes Tablet nach außen gerichtet</string>
+    <string name="title_selector_tablet_held_up_faces_away">Bildschirm beim Hochhalten des Tablets abgewandt</string>
     <string name="summary_support_tablet_held_up_faces_away">Für die Brailletastatur auf einem Tablet oder aufgeklappten Smartphone</string>
-    <string name="tablet_held_up_faces_away_on">Hochgehaltenes Tablet nach außen gerichtet: an</string>
-    <string name="tablet_held_up_faces_away_off">Hochgehaltenes Tablet nach außen gerichtet: aus</string>
+    <string name="tablet_held_up_faces_away_on">Bildschirm beim Hochhalten des Tablets abgewandt: an</string>
+    <string name="tablet_held_up_faces_away_off">Bildschirm beim Hochhalten des Tablets abgewandt: aus</string>
     <string name="title_keyboard_echo_on_screen">Tastatur-Echo der Bildschirmtastatur</string>
     <string name="title_keyboard_echo_physical">Tastatur-Echo der physischen Tastatur</string>
     <string name="title_keyboard_echo_braille_keyboard">Tastatur-Echo der Brailletastatur</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper-Modelle</string>
     <string name="dictation_whisper_use">Verwenden</string>
     <string name="title_pref_dictation_ai_service">KI-Dienst für das Diktieren</string>
-    <string name="dictation_ai_same">Wie bei automatischen Beschreibungen</string>
     <string name="title_pref_browse_mode_per_app">Suchmodus für jede App merken</string>
     <string name="title_pref_export_settings">Einstellungen exportieren</string>
     <string name="title_pref_import_settings">Einstellungen importieren</string>
@@ -1794,4 +1786,12 @@
         <item>1 Minute</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automatisch stoppen nach Stille</string>
+    <string name="dictation_ai_same">Wie bei „Bild- und Bildschirmbeschreibungen“</string>
+    <string name="navigation_settings_link">SandFly-Einstellungen &gt; „Navigation“</string>
+    <string name="navigation_settings_link_tts">SandFly-Einstellungen unter „Navigation“</string>
+    <string name="shortcut_reserved_for_vibration_watch">Unter „Touch-Gesten“ für Vibration Watch reserviert</string>
+    <string name="speech_control_ask_text">Die App kann Text mit deiner SandFly-Stimme sprechen. Du kannst das unter „Einstellungen“ &gt; „Sprachausgabe“ &gt; „Sprachausgabe für andere Apps zulassen“ ändern.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ist aktiviert. Halte das Display mit zwei Fingern 5 Sekunden lang gedrückt, um SandFly zu deaktivieren. Wenn du diese Meldung nicht mehr sehen möchtest, deaktiviere SandFly-Einstellungen &gt; „Pausieren und ausschalten“ &gt; „Anleitung zum Deaktivieren von SandFly anzeigen“.</string>
+    <string name="tutorial_link">SandFly-Einstellungen &gt; „Hilfe &amp; Feedback“ &gt; „SandFly-Tutorial“</string>
+    <string name="tutorial_link_tts">SandFly-Einstellungen unter „Hilfe &amp; Feedback“ und dann „SandFly-Tutorial“</string>
 </resources>

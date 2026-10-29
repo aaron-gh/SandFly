@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">ಮಾದರಿ</string>
     <string name="ai_service_address_invalid">ವಿಳಾಸವು https:// ನಿಂದ ಪ್ರಾರಂಭವಾಗಬೇಕು. ಏನನ್ನೂ ಉಳಿಸಲಾಗಿಲ್ಲ.</string>
     <string name="dialog_message_ai_service_consent">ವಿವರಣೆಗಾಗಿ ಚಿತ್ರಗಳು ಮತ್ತು ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ಗಳನ್ನು <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ಗೆ ಕಳುಹಿಸಲಾಗುತ್ತದೆ, ಇದಕ್ಕೆ ಕೆಲವು ಸೆಕೆಂಡುಗಳು ಬೇಕಾಗುತ್ತವೆ. ಆ ಸೇವೆಯ ಸ್ವಂತ ನಿಯಮಗಳು ಮತ್ತು ಗೌಪ್ಯತಾ ನೀತಿ ಅನ್ವಯಿಸುತ್ತವೆ. ಜನರೇಟಿವ್ AI ಪ್ರಾಯೋಗಿಕವಾಗಿದೆ, ಆದ್ದರಿಂದ ಅದು ತಪ್ಪುಗಳನ್ನು ಮಾಡುತ್ತದೆ.</string>
-    <string name="ai_service_error_api_key">AI ಸೇವೆಯು API ಕೀಯನ್ನು ಸ್ವೀಕರಿಸಲಿಲ್ಲ. ಸ್ವಯಂಚಾಲಿತ ವಿವರಣೆಗಳಲ್ಲಿ ಅದರ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.</string>
+    <string name="ai_service_error_api_key">AI ಸೇವೆಯು API ಕೀಯನ್ನು ಸ್ವೀಕರಿಸಲಿಲ್ಲ. “ಚಿತ್ರ ಮತ್ತು ಸ್ಕ್ರೀನ್ ವಿವರಣೆಗಳು” ನಲ್ಲಿ ಅದರ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.</string>
     <string name="ai_service_error_quota">AI ಸೇವೆಯ ಬಳಕೆಯ ಮಿತಿಯನ್ನು ತಲುಪಲಾಗಿದೆ. ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="ai_service_error_busy">AI ಸೇವೆಯು ಇದೀಗ ಕಾರ್ಯನಿರತವಾಗಿದೆ. ಒಂದು ಕ್ಷಣದಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="ai_service_error_timeout">AI ಸೇವೆಯು ಉತ್ತರಿಸಲು ತುಂಬಾ ಸಮಯ ತೆಗೆದುಕೊಂಡಿತು. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">ಯಾವುದೂ ಅಲ್ಲ</string>
-    <string name="ai_service_not_set_up">ಯಾವುದೇ AI ಸೇವೆಯು ಬಳಕೆಯಲ್ಲಿಲ್ಲ. ಸ್ವಯಂಚಾಲಿತ ವಿವರಣೆಗಳ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಒಂದನ್ನು ಹೊಂದಿಸಿ ಅಥವಾ ಒಂದನ್ನು ಆಯ್ಕೆಮಾಡಿ.</string>
+    <string name="ai_service_not_set_up">ಯಾವುದೇ AI ಸೇವೆಯು ಬಳಕೆಯಲ್ಲಿಲ್ಲ. “ಚಿತ್ರ ಮತ್ತು ಸ್ಕ್ರೀನ್ ವಿವರಣೆಗಳು” ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಒಂದನ್ನು ಹೊಂದಿಸಿ ಅಥವಾ ಒಂದನ್ನು ಆಯ್ಕೆಮಾಡಿ.</string>
     <string name="ai_provider_none_set_up">ಯಾವುದೇ AI ಸೇವೆಯನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ. ಕೆಳಗಿನ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಒಂದನ್ನು ಹೊಂದಿಸಿ.</string>
     <string name="ai_provider_other">ಇತರೆ ಸೇವೆ</string>
     <string name="title_pref_category_ai_services">AI ಸೇವೆಗಳು</string>

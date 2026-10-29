@@ -52,13 +52,13 @@
   <string name="bd_bt_cancel_button">Bekor qilish</string>
   <string name="bd_bt_connect_fail_dialog_title_with_name">%s bilan ulanmadi</string>
   <string name="bd_bt_connect_fail_dialog_title_without_name">Qurilmaga ulanmadi</string>
-  <string name="bd_bt_connect_fail_dialog_message">Bu brayl ekani yoqilganini va yaqin-atrofda ekanini tekshiring.\n\nAgar baribir ulanmasa, nosozlikni tuzatishga oid boshqa takliflar uchun “Batafsil” tugmasini ikki marta bosing.</string>
+  <string name="bd_bt_connect_fail_dialog_message">Bu brayl ekrani yoqilganini va yaqin-atrofda ekanini tekshiring.\n\nAgar baribir ulanmasa, nosozlikni tuzatishga oid boshqa takliflar uchun “Batafsil” tugmasini ikki marta bosing.</string>
   <string name="bd_bt_connect_fail_positive_button">Batafsil</string>
   <string name="bd_enhanced_keymap_dialog_title">Kezish rejimini ishlatish uchun yaxshilangan terilmaga almashing</string>
   <string name="bd_enhanced_keymap_dialog_message">Kezish rejimini ishlatish uchun birlamchi terilmadan yaxshilangan terilmaga almashishi kerak. Bunda ayrim brayl yozuvidagi displey buyruqlari yangilanadi</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Sozlamalar</string>
   <string name="bd_command_change_dialog_title">Ayrim buyruqlar yangilandi</string>
-  <string name="bd_command_change_dialog_message">Bu Brayl ekrani buyruqlari SandFly ilovasining ushbu versiyasida yangilangan:\n\n• Avvalgi element: 1, 7 nuqtalarni bosing\n\n• Keyingi element: 4, 8 nuqtalarni bosing\n\n• Avvalgi oʻqish boshqaruvi: 2, 3, 7, 8 nuqtalarni bosing\n\n• Keyingi oʻqish boshqaruvi: 5, 6, 7, 8 nuqtalarni bosing</string>
+  <string name="bd_command_change_dialog_message">Bu Brayl ekrani buyruqlari SandFly ilovasining ushbu versiyasida yangilangan:\n\n• Avvalgi element: 1, 7 nuqtalarni bosing\n\n• Keyingi element: 4, 8 nuqtalarni bosing\n\n• Avvalgi oʻqish boshqaruvi elementi: 2, 3, 7, 8 nuqtalarni bosing\n\n• Keyingi oʻqish boshqaruvi elementi: 5, 6, 7, 8 nuqtalarni bosing</string>
   <string name="bd_preference_braille_contracted">Qisqartirilgan brayl</string>
   <string name="bd_preference_braille_uncontracted">Qisqartirilmagan brayl</string>
   <string name="bd_braille_grade_tips">Brayl ekrani yordamida qisqartirilgan va qisqartirilmagan orasida tezkor almashtirish uchun boʻsh joy va 1, 2, 4, 5 nuqtalarini bosing.\n\nAgar ikkala brayl darajasiga ega tildan foydalansangiz, bu buyruq ishlaydi.</string>
@@ -230,7 +230,7 @@
   <string name="bd_cmd_toggle_contracted_mode">Qisqartirish tugmasi</string>
   <string name="bd_cmd_help">Brayl ekrani buyruqlarini ochish</string>
   <string name="bd_cmd_braille_display_settings">Brayl ekrani sozlamalarini ochish</string>
-  <string name="bd_cmd_turn_off_braille_display">Brayl ekanini faolsizlantirish</string>
+  <string name="bd_cmd_turn_off_braille_display">Brayl ekranini faolsizlantirish</string>
   <string name="bd_cmd_play_pause_media">Media ijrosi yoki pauza</string>
   <string name="bd_cmd_switch_to_next_input_method">Keyingi klaviaturaga almashish</string>
   <string name="bd_cmd_select_all">Barcha matnni tanlash</string>
@@ -302,7 +302,7 @@
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Ayrim buyruqlar ishlamaydi</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_message">Matn kirayotganda yoki tahrirlayotganda navigatsiya, brayl sozlamalari uchun buyruqlar va ayrim SandFly funksiyalari ishlamaydi.\n\nBu buyruqlardan foydalanish uchun oldin klaviaturani yoping.</string>
   <string name="bd_caption_tutorial_dialog_title">Brayl ekranidagi tagyozuvlar</string>
-  <string name="bd_caption_tutorial_dialog_message">Bu video uchun taglavhalarni koʻrsatish yoki berkitish uchun boʻsh joy va 1, 4, 7, 8 nuqtalarini bosing.\n\nMos multimedia uchun tagyozuvlarni avtomatik chiqarish uchun Sozlamalar orqali Brayl ekranida Tagyozuvlarni koʻrsatish sozlamasini yoqing.</string>
+  <string name="bd_caption_tutorial_dialog_message">Bu video uchun taglavhalarni koʻrsatish yoki berkitish uchun boʻsh joy va 1, 4, 7, 8 nuqtalarini bosing.\n\nMos multimedia uchun tagyozuvlarni avtomatik chiqarish uchun Sozlamalar orqali “Brayl ekranida tagyozuvlarni chiqarish” sozlamasini yoqing.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Tagyozuvlar mavjud boʻlganda doim bu xabar chiqarilsin</string>
   <string name="bd_usb_connect_dialog_title">Brayl ekrani USB orqali ulandi</string>
   <string name="bd_usb_connect_dialog_message">%s batareyasi brayl ekraniga quvvatlamoqda.\n\nBluetoothga oʻtishni istasangiz, USB yoki USB habni uzing va SandFly sozlamalari &gt; Brayl ekrani sahifasini oching.</string>
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">Bu SandFly funksiyasidagi bildirishnomalar va signallar kabi ayrim xabarlarni saqlaydi. Bu sozlamani istalgan vaqt oʻzgartirish mumkin.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Yoqish</string>
   <string name="popup_message_history_consent_dialog_negative_btn">Kerak emas</string>
-    <string name="external_display_channel">Boshqa ilovalardagi brayl displeylari</string>
-    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly uchun brayl displey boʻlishiga ruxsat berilsinmi?</string>
+    <string name="external_display_channel">Boshqa ilovalardagi brayl ekranlari</string>
+    <string name="external_display_ask_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly uchun brayl ekrani boʻlishiga ruxsat berilsinmi?</string>
     <string name="external_display_ask_text">SandFly siz ruxsat bermaguningizcha undan foydalanmaydi.</string>
     <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> SandFly brayl yozuvida koʻrsatadigan hamma narsani oʻqiy oladi, bu ekrandagi istalgan narsa, jumladan xabarlar va siz yozgan matn boʻlishi mumkin. U qurilmangizni xuddi siz brayl displey bilan boshqargandek boshqara ham oladi: matn yozish, ilovalarni ochish va istalgan SandFly buyrugʻini bajarish. Faqat ishonchli ilovalarga ruxsat bering.</string>
     <string name="external_display_allow">Ruxsat berish</string>
     <string name="external_display_deny">Ruxsat bermaslik</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> brayl displeyingiz sifatida ishlatilmoqda</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> brayl ekraningiz sifatida ishlatilmoqda</string>
     <string name="external_display_in_use_text">SandFly foydalanayotganda, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> ekranni oʻqiy oladi va qurilmani boshqara oladi.</string>
     <string name="external_displays_title">Boshqa ilovalardagi displeylar</string>
-    <string name="external_displays_summary">Siz ruxsat bergan ilovalar SandFly uchun brayl displeylari boʻlishi mumkin. Brayl displeyli ilova ekranni oʻqiy oladi va qurilmani boshqara oladi.</string>
-    <string name="external_displays_none">Hech bir ilova brayl displeyi boʻla olmaydi.</string>
+    <string name="external_displays_summary">Siz ruxsat bergan ilovalar SandFly uchun brayl ekranlari boʻlishi mumkin. Brayl ekrani boʻlgan ilova ekranni oʻqiy oladi va qurilmani boshqara oladi.</string>
+    <string name="external_displays_none">Hech bir ilova brayl ekrani boʻla olmaydi.</string>
 </resources>

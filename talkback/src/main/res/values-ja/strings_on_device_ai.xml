@@ -26,7 +26,7 @@
     <string name="on_device_ai_announce_done">モデルをダウンロードしました</string>
     <string name="on_device_ai_notification_channel">オンデバイス AI ダウンロード</string>
     <string name="on_device_ai_notification_downloading">モデルをダウンロード中、%1$d%%</string>
-    <string name="on_device_ai_notification_done">モデルをダウンロードしました。設定でデバイス上の AI をオンにしてください。</string>
+    <string name="on_device_ai_notification_done">モデルをダウンロードしました。設定でオンデバイスAI をオンにしてください。</string>
     <string name="on_device_ai_notification_failed">ダウンロードに失敗しました。設定を開いてもう一度試してください。</string>
     <string name="on_device_ai_notification_paused">Android はダウンロードを一時停止しました。続行するには設定を開いてください。</string>
     <string name="pref_on_device_ai_importing">モデル ファイルを確認中</string>
@@ -68,7 +68,7 @@
     <string name="on_device_ai_metered_message">モデルは数 GB あります。Wi-Fi の使用をおすすめします。</string>
     <string name="on_device_ai_metered_download">ダウンロード</string>
     <string name="on_device_ai_cancel">キャンセル</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">デバイス上の AI メモリ制限を無視する</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">オンデバイスAI メモリ制限を無視する</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">このスマートフォンのメモリより多くのメモリを必要とするモデルを選択でき、空きメモリを確認せずに読み込みます。Android がモデルを停止したときの動作をテストするためのものです。</string>
     <string name="on_device_ai_not_enough_memory">%1$s に必要な空きメモリが不足しています。一部のアプリを閉じるか、[オンデバイスAI] の設定で小さいモデルを選択してください。</string>
     <string name="on_device_ai_stopped">%1$s が停止しました。スマートフォンのメモリ不足が原因と考えられます。[オンデバイスAI] の設定で小さいモデルを選択してください。</string>

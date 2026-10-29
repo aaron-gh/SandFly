@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">मॉडेल</string>
     <string name="ai_service_address_invalid">पत्ता https:// ने सुरू व्हायला हवा. काहीही सेव्ह केले नाही.</string>
     <string name="dialog_message_ai_service_consent">वर्णनासाठी इमेज आणि स्क्रीनशॉट <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ला पाठवले जातात, यासाठी काही सेकंद लागतात. त्या सेवेच्या स्वतःच्या अटी आणि गोपनीयता धोरण लागू होतात. जनरेटिव्ह AI प्रायोगिक आहे, त्यामुळे ते चुका करेल.</string>
-    <string name="ai_service_error_api_key">AI सेवेने API की स्वीकारली नाही. स्वयंचलित वर्णनांमध्ये त्याची सेटिंग्ज तपासा.</string>
-    <string name="ai_service_error_quota">AI सेवेची वापर मर्यादा गाठली आहे. नंतर पुन्हा प्रयत्न करा.</string>
+    <string name="ai_service_error_api_key">एआय सेवेने API की स्वीकारली नाही. “इमेज आणि स्क्रीन वर्णने” मध्ये तिची सेटिंग्ज तपासा.</string>
+    <string name="ai_service_error_quota">एआय सेवेची वापर मर्यादा गाठली आहे. नंतर पुन्हा प्रयत्न करा.</string>
     <string name="ai_service_error_busy">एआय सेवा सध्या व्यस्त आहे. काही क्षणात पुन्हा प्रयत्न करा.</string>
-    <string name="ai_service_error_timeout">AI सेवेला उत्तर देण्यासाठी खूप वेळ लागला. पुन्हा प्रयत्न करा.</string>
+    <string name="ai_service_error_timeout">एआय सेवेला उत्तर देण्यासाठी खूप वेळ लागला. पुन्हा प्रयत्न करा.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">कोणतेही नाही</string>
-    <string name="ai_service_not_set_up">कोणतीही AI सेवा वापरात नाही. एक सेट करा किंवा स्वयंचलित वर्णन सेटिंग्जमध्ये एक निवडा.</string>
-    <string name="ai_provider_none_set_up">कोणतीही AI सेवा सेट केलेली नाही. खालील सेटिंग्जमध्ये एक सेट करा.</string>
+    <string name="ai_service_not_set_up">कोणतीही एआय सेवा वापरात नाही. “इमेज आणि स्क्रीन वर्णने” सेटिंग्जमध्ये एक सेट करा किंवा निवडा.</string>
+    <string name="ai_provider_none_set_up">कोणतीही एआय सेवा सेट केलेली नाही. खालील सेटिंग्जमध्ये एक सेट करा.</string>
     <string name="ai_provider_other">इतर सेवा</string>
     <string name="title_pref_category_ai_services">एआय सेवा</string>
     <string name="title_pref_ai_provider">एआय सेवा</string>

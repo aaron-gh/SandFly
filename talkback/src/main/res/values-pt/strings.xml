@@ -10,10 +10,10 @@
   <string name="actions">Ações</string>
   <string name="system_actions">Ações do sistema</string>
   <string name="talkback_preferences_subtitle">Versão %1$s</string>
-  <string name="label_manager_summary_title">Gerenciar marcadores personalizados</string>
+  <string name="label_manager_summary_title">Gerenciar rótulos personalizados</string>
   <string name="label_manager_package_title">Gerenciar marcadores de %1$s</string>
   <string name="manage_label">Gerenciar marcador</string>
-  <string name="label_manager_no_packages_message">Não há marcadores personalizados no momento\n\n<b>Como criar um marcador personalizado</b>\nNavegue até uma imagem sem marcador e o adicione pelo menu do SandFly</string>
+  <string name="label_manager_no_packages_message">Não há rótulos personalizados no momento\n\n<b>Como criar um rótulo personalizado</b>\nNavegue até uma imagem sem rótulo e adicione um rótulo pelo menu do SandFly</string>
   <string name="label_manager_timestamp_text">Última modificação: %1$s</string>
   <string name="search_mode_cancel">Pesquisa cancelada.</string>
   <string name="notification_type_status_started">Início em</string>
@@ -82,7 +82,7 @@
   <string name="title_pref_category_selector_menu">Controles de leitura</string>
   <string name="title_pref_category_navigation_menu">Editar opções de navegação</string>
   <string name="title_pref_manage_keyboard_shortcuts">Atalhos do teclado</string>
-  <string name="title_pref_export_custom_labels">Exportar marcadores personalizados</string>
+  <string name="title_pref_export_custom_labels">Exportar rótulos personalizados</string>
   <string name="title_pref_help_and_feedback">Ajuda e feedback</string>
   <string name="title_pref_help">Ajuda</string>
   <string name="title_pref_show_tos">Termos de Serviço</string>
@@ -93,7 +93,7 @@
   <string name="title_pref_advanced_settings">Configurações avançadas</string>
   <string name="title_pref_show_exit_watermark">Mostrar instruções para desativar o SandFly</string>
   <string name="summary_pref_show_exit_watermark">Quando o SandFly é ativado, mostra como desativá-lo</string>
-  <string name="talkback_exit_watermark_text">Talkback ativado. Segure a tela com 2 dedos por 5 segundos para desativar. Se não quiser ver esta mensagem, toque com 3 dedos para abrir o menu do SandFly.</string>
+  <string name="talkback_exit_watermark_text">SandFly ativado. Segure a tela com 2 dedos por 5 segundos para desativar. Se não quiser ver esta mensagem, toque com 3 dedos para abrir o menu do SandFly.</string>
   <string name="talkback_exit_watermark_hint_text">Mostrando banner indicando que o SandFly está ativado. Para desativar o SandFly, deixe dois dedos pressionados na tela por cinco segundos. Para remover o banner, acesse as Configurações do SandFly.</string>
   <string name="reset_gesture_settings_title">Redefinir configurações de gestos</string>
   <string name="one_finger_gestures_title">Um dedo</string>
@@ -187,7 +187,7 @@
   <string name="keycombo_menu_other_show_link_list">Mostrar lista de links</string>
   <string name="keycombo_menu_other_show_control_list">Mostrar lista de controles</string>
   <string name="keycombo_menu_other_show_table_list">Mostrar lista de tabelas</string>
-  <string name="keycombo_menu_other_talkback_context_menu">Mostrar menu SandFly</string>
+  <string name="keycombo_menu_other_talkback_context_menu">Mostrar menu do SandFly</string>
   <string name="keycombo_menu_other_custom_actions">Mostrar ações</string>
   <string name="keycombo_menu_other_language_options">Mostrar idiomas instalados</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Copiar última frase falada</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Outro</string>
   <string name="shortcut_unassigned">Tocar para atribuir</string>
   <string name="shortcut_not_customizable">%1$s (não personalizável)</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Indisponível quando a vibração do relógio está ativada</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Indisponível quando o Vibration Watch está ativado</string>
   <string name="shortcut_next">Próximo item</string>
   <string name="shortcut_previous">Item anterior</string>
   <string name="shortcut_scroll_forward">Rolar para a frente</string>
@@ -667,7 +667,7 @@
   <string name="label_dialog_confirm_label_remove">Marcador removido</string>
   <string name="label_dialog_text">Digite o texto que será usado como marcador para esse elemento\nNome de exibição interno: %1$s</string>
   <string name="label_dialog_edit_hint">Texto do marcador</string>
-  <string name="label_import">Importar marcadores personalizados</string>
+  <string name="label_import">Importar rótulos personalizados</string>
   <string name="label_import_dialog_title">Importar rótulos personalizados para o SandFly</string>
   <string name="label_import_dialog_message">Escolha se você quer modificar ou pular os rótulos já existentes em caso de conflito</string>
   <string name="label_import_dialog_skip">Pular</string>
@@ -824,7 +824,7 @@
   <string name="screen_search_keyword_hint">a palavra-chave é %1$s</string>
   <string name="screen_search_no_keyword_hint">Ainda não há palavra-chave. Para iniciar uma nova pesquisa, toque na tela e mantenha pressionada com 3 dedos ou abra a Pesquisa direta no menu do SandFly.</string>
   <string name="screen_search_no_keyword_hint_pre_r">Ainda não há palavra-chave. Para iniciar uma nova pesquisa, deslize da esquerda para a direita e depois para baixo ou abra a Pesquisa direta no menu do SandFly.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Teclado em braille desativado. Acesse as config. do SandFly, configure o teclado e tente novamente.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Teclado em braille desativado. Acesse as Configurações do SandFly, configure o Teclado em braille e tente novamente.</string>
   <string name="suggestions_window_available">Sugestões disponíveis</string>
   <string name="suggestions_window_available_with_gesture">Sugestões disponíveis. Para acessar, %1$s</string>
   <string name="heads_up_window_available">Notificação disponível</string>
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">Toque dividido em qualquer lugar</string>
   <string name="split_tap_everywhere_text">O toque dividido agora está disponível em qualquer lugar para ativar itens, mesmo fora do teclado. Para usar, coloque um dedo na tela e, sem levantar o primeiro, toque na tela com outro dedo para ativar o item com foco no momento.</string>
   <string name="keyboard_enhanced_keymap_title">Teclado: Mapa de Teclado Avançado</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly agora possui um \"mapa de teclado aprimorado\" para teclados físicos, apresentando uma variedade de novos comandos e atalhos. Este aprimoramento inclui um “modo de navegação” para uma navegação na web mais eficiente, simplificando a navegação e a interação para usuários SandFly que dependem de teclados físicos. Você pode mudar para o \"Mapa de teclado aprimorado\" em <xliff:g id="settings_path">%1$s</xliff:g>.\n\nSe você usa uma linha Braille, também pode usar os novos atalhos do modo de navegação para navegar pelo conteúdo diretamente da sua linha Braille. Alguns atalhos do display Braille foram alterados para acomodar essa mudança. Você pode ver uma lista de todos os atalhos do display Braille em <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly agora possui um \"Mapa de teclado avançado\" para teclados físicos, apresentando uma variedade de novos comandos e atalhos. Este aprimoramento inclui um “modo de navegação” para uma navegação na web mais eficiente, simplificando a navegação e a interação para usuários SandFly que dependem de teclados físicos. Você pode mudar para o \"Mapa de teclado avançado\" em <xliff:g id="settings_path">%1$s</xliff:g>.\n\nSe você usa uma linha braille, também pode usar os novos atalhos do modo de navegação para navegar pelo conteúdo diretamente da sua linha braille. Alguns atalhos da linha braille foram alterados para acomodar essa mudança. Você pode ver uma lista de todos os atalhos da linha braille em <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">Configurações do SandFly &gt; Atalhos do teclado</string>
   <string name="keyboard_shortcuts_link_tts">Configurações do SandFly e, depois, Atalhos do teclado</string>
   <string name="braille_display_settings_link">Configurações da linha braille</string>
   <string name="keyboard_smart_browse_mode_title">Teclado: Modo de Navegação Inteligente</string>
   <string name="keyboard_smart_browse_mode_text">Esse recurso do SandFly desativa o modo de navegação em campos de edição para que você possa digitar com mais facilidade usando um teclado físico ao navegar na web. Ele é reativado quando você pula para um campo na web que não é de edição para uma navegação mais eficiente. Você pode ativar ou desativar o Modo de Navegação Inteligente em <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Configurações do SandFly &gt; Configurações avançadas</string>
-  <string name="advanced_settings_link_tts">Configurações do SandFly e, depois, Configurações avançadas</string>
   <string name="keyboard_tutorial_title">Tutorial do teclado</string>
   <string name="keyboard_tutorial_text">O SandFly agora inclui um tutorial de teclado criado para você aprender os atalhos e comandos do Mapa de Teclado Avançado quando usar um teclado físico. Para acessar o tutorial, navegue até: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Configurações do SandFly &gt; Tutorial do SandFly</string>
-  <string name="tutorial_link_tts">Configurações do SandFly e, depois, Tutorial do SandFly</string>
   <string name="tutorial_entry_point_title">Tutorial</string>
   <string name="welcome_to_talkback_title">Conheça o SandFly</string>
   <string name="talkback_is_on">SandFly está ativado</string>
@@ -1068,7 +1064,7 @@
   <string name="checking_notifications_text_tail_tts">É possível conferir quais apps têm as notificações ativadas na seção \"Notificações\" nas Configurações.</string>
   <string name="checking_notifications_tips">Para conferir seu histórico de notificações, deslize a tela de cima para baixo com dois dedos</string>
   <string name="image_description_playground_title">Tente ouvir as descrições de imagens</string>
-  <string name="image_description_playground_content_one">Quando você focar em uma imagem, abra o menu do SandFly e selecione \"Descrever a imagem\".\n\nTente ouvir a descrição da foto mostrada abaixo.</string>
+  <string name="image_description_playground_content_one">Quando você focar em uma imagem, abra o menu do SandFly e selecione \"Descrever imagem\".\n\nTente ouvir a descrição da foto mostrada abaixo.</string>
     <string name="image_description_playground_content_two">Você pode alterar as configurações de descrição de imagens a qualquer momento em Configurações do SandFly &gt; Descrições de imagens e da tela.</string>
     <string name="image_description_playground_content_two_tts">Você pode alterar as configurações de descrição de imagens a qualquer momento em Configurações do SandFly e depois em Descrições de imagens e da tela.</string>
   <string name="image_description_sample_image_content_description">Imagem de amostra. Toque com 3 dedos para abrir o menu do SandFly e selecione \"Descrever imagem\" para ouvir uma descrição.</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Mais</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reservar gestos para Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">O SandFly deixa de processar toques simples e duplos com dois dedos para que o Samsung Vibration Watch possa usá-los. Ative o Vibration Watch nas configurações de acessibilidade do relógio.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch em Configurações Avançadas</string>
     <string name="title_pref_speakerphone_away_from_ear">Alto-falante quando longe do ouvido</string>
     <string name="summary_pref_speakerphone_away_from_ear">Durante uma ligação, muda para o alto-falante quando você afasta o telefone do ouvido e volta para o alto-falante auricular quando você o aproxima do ouvido de novo.</string>
     <string name="summary_pref_speakerphone_needs_permission">Precisa de uma permissão que o Android não concede a leitores de tela. Para concedê-la, execute este comando com adb ou Shizuku e volte para esta tela: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Aplicativos</string>
     <string name="speech_control_no_apps">Nenhum aplicativo pediu para falar ainda.</string>
     <string name="speech_control_ask_title">Permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale através do SandFly?</string>
-    <string name="speech_control_ask_text">O app pode falar texto com sua voz do SandFly. Você pode alterar isso nas configurações avançadas.</string>
     <string name="speech_control_allow">Permitir</string>
     <string name="speech_control_deny">Não permitir</string>
     <string name="permission_speak_label">falar pelo SandFly</string>
@@ -1546,7 +1540,6 @@
     <string name="quick_settings_remove">Remover</string>
     <string name="quick_settings_added">%1$s adicionado</string>
     <string name="quick_settings_removed">%1$s removido</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ativado. Mantenha 2 dedos na tela por 5 segundos para desativar. Para não mostrar mais esta mensagem, desative Configurações do SandFly &gt; Configurações avançadas &gt; Mostrar instruções para desativar o SandFly.</string>
     <string name="edge_gestures_title">Bordas</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Outro atalho para ativar ou desativar o modo de navegação</string>
     <string name="title_pref_vibration_strength">Força de vibração</string>
@@ -1712,14 +1705,14 @@
     <string name="wrap_around_on">Navegação circular: ativado</string>
     <string name="wrap_around_off">Navegação circular: desativado</string>
     <string name="title_selector_tablet_held_up_faces_away">Tablet levantado com a tela para fora</string>
-    <string name="summary_support_tablet_held_up_faces_away">Para o teclado braille em um tablet ou telefone aberto</string>
+    <string name="summary_support_tablet_held_up_faces_away">Para o teclado em braille em um tablet ou telefone aberto</string>
     <string name="tablet_held_up_faces_away_on">Tablet levantado com a tela para fora: ativado</string>
     <string name="tablet_held_up_faces_away_off">Tablet levantado com a tela para fora: desativado</string>
     <string name="title_keyboard_echo_on_screen">Eco do teclado na tela</string>
     <string name="title_keyboard_echo_physical">Eco do teclado físico</string>
-    <string name="title_keyboard_echo_braille_keyboard">Eco do teclado Braille</string>
+    <string name="title_keyboard_echo_braille_keyboard">Eco do teclado em braille</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Eco do teclado de escrita manual</string>
-    <string name="title_keyboard_echo_braille_display">Eco da tela Braille</string>
+    <string name="title_keyboard_echo_braille_display">Eco da linha braille</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Interromper a fala ao digitar</string>
     <string name="pref_interrupt_typing_entry_always">Sempre</string>
@@ -1770,7 +1763,6 @@
     <string name="title_pref_whisper_models">Modelos do Whisper</string>
     <string name="dictation_whisper_use">Usar</string>
     <string name="title_pref_dictation_ai_service">Serviço de IA para ditado</string>
-    <string name="dictation_ai_same">O mesmo das descrições automáticas</string>
     <string name="title_pref_browse_mode_per_app">Lembrar o modo de navegação em cada app</string>
     <string name="title_pref_export_settings">Exportar configurações</string>
     <string name="title_pref_import_settings">Importar configurações</string>
@@ -1798,4 +1790,12 @@
         <item>1 minuto</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Parada automática após silêncio</string>
+    <string name="dictation_ai_same">O mesmo de Descrições de imagens e da tela</string>
+    <string name="navigation_settings_link">Configurações do SandFly &gt; Navegação</string>
+    <string name="navigation_settings_link_tts">Configurações do SandFly e, depois, Navegação</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch em Gestos</string>
+    <string name="speech_control_ask_text">O app pode falar textos com a voz do SandFly. Você pode mudar isso em Configurações, Fala, Permitir que outros apps falem.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ativado. Segure a tela com 2 dedos por 5 segundos para desativar. Para não mostrar mais esta mensagem, desative Configurações do SandFly &gt; Pausar e desativar &gt; Mostrar instruções para desativar o SandFly.</string>
+    <string name="tutorial_link">Configurações do SandFly &gt; Ajuda e feedback &gt; Tutorial do SandFly</string>
+    <string name="tutorial_link_tts">Configurações do SandFly e, depois, Ajuda e feedback e, depois, Tutorial do SandFly</string>
 </resources>

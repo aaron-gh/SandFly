@@ -75,7 +75,7 @@
     <string name="sandfly_tutorial_move_title">Движење меѓу ставки</string>
     <string name="sandfly_tutorial_name">Име</string>
     <string name="sandfly_tutorial_next_lesson">Следна лекција: <xliff:g id="lesson" example="Activating items">%1$s</xliff:g></string>
-    <string name="sandfly_tutorial_no_gesture">„<xliff:g id="action" example="Next item">%1$s</xliff:g>“ нема гест. Доделете гест во „Наредби“ или користете „Прескокни чекор“.</string>
+    <string name="sandfly_tutorial_no_gesture">„<xliff:g id="action" example="Next item">%1$s</xliff:g>“ нема движење. Доделете движење во „Наредби“ или користете „Прескокни чекор“.</string>
     <string name="sandfly_tutorial_not_in_lesson">„<xliff:g id="action" example="Home">%1$s</xliff:g>“ не се извршува во лекција. За да го напуштите упатството, користете „Затвори го упатството“ во „Содржина“.</string>
     <string name="sandfly_tutorial_not_in_lesson_short">„<xliff:g id="action" example="Turn speech on or off">%1$s</xliff:g>“ не се извршува во лекција.</string>
     <string name="sandfly_tutorial_pause_intro">Говорот може да се паузира среде ставка и да продолжи од местото каде што запрел.</string>
@@ -83,9 +83,9 @@
     <string name="sandfly_tutorial_pause_resume"><xliff:g id="gesture" example="Tap with 2 fingers">%1$s</xliff:g> повторно – продолжување на говорот.</string>
     <string name="sandfly_tutorial_pause_title">Паузирање на говорот</string>
     <string name="sandfly_tutorial_practice_gesture"><xliff:g id="gesture" example="Swipe right">%1$s</xliff:g>: <xliff:g id="action" example="Next item">%2$s</xliff:g></string>
-    <string name="sandfly_tutorial_practice_intro">Секој гест го кажува своето име и дејство наместо да го изврши. Преминувањето на следната и претходната ставка и активирањето сѐ уште работат.</string>
-    <string name="sandfly_tutorial_practice_step">Направете кој било гест за да слушнете што прави. За да запрете, активирајте „<xliff:g id="button" example="End practice">%1$s</xliff:g>“.</string>
-    <string name="sandfly_tutorial_practice_title">Вежбање гестови</string>
+    <string name="sandfly_tutorial_practice_intro">Секое движење го кажува своето име и дејство наместо да го изврши. Преминувањето на следната и претходната ставка и активирањето сѐ уште работат.</string>
+    <string name="sandfly_tutorial_practice_step">Направете кое било движење за да слушнете што прави. За да запрете, активирајте „<xliff:g id="button" example="End practice">%1$s</xliff:g>“.</string>
+    <string name="sandfly_tutorial_practice_title">Вежбање движења</string>
     <string name="sandfly_tutorial_progress"><xliff:g id="done" example="2">%1$d</xliff:g> од <xliff:g id="count" example="4">%2$d</xliff:g>.</string>
     <string name="sandfly_tutorial_reading_controls_characters">Сменете ја контролата за читање на „<xliff:g id="reading_control" example="Characters">%2$s</xliff:g>“. <xliff:g id="gesture" example="Swipe down">%1$s</xliff:g> – поместување за еден знак.</string>
     <string name="sandfly_tutorial_reading_controls_intro">Контролите за читање одредуваат што прави повлекувањето нагоре и надолу, на пример поместување по збор или по знак или менување на брзината на говорот. Повлекувањето надесно и налево и понатаму преминува меѓу ставки.</string>
@@ -111,7 +111,7 @@
     <string name="sandfly_tutorial_story">Песочните муви се мали муви што живеат на плажи, на речни брегови и во шуми. Најактивни се во зори и во самрак, кога воздухот мирува. Каснуваат само женките, бидејќи им треба крв за да произведат јајца. Каснувањата чешаат со денови, па луѓето што одат во краевите на песочните муви носат средство против инсекти. Песочните муви се слаби летачи, и дури и лесен ветер ги држи настрана.</string>
     <string name="sandfly_tutorial_system_back"><xliff:g id="gesture" example="Swipe down then left">%1$s</xliff:g> – враќање назад.</string>
     <string name="sandfly_tutorial_system_home"><xliff:g id="gesture" example="Swipe up then left">%1$s</xliff:g> – одење на почетниот екран.</string>
-    <string name="sandfly_tutorial_system_intro">Овие гестови работат на секој екран. Во оваа лекција, упатството кажува што прави секој од нив наместо да го направи.</string>
+    <string name="sandfly_tutorial_system_intro">Овие движења работат на секој екран. Во оваа лекција, упатството кажува што прави секој од нив наместо да го направи.</string>
     <string name="sandfly_tutorial_system_notifications"><xliff:g id="gesture" example="Swipe right then down">%1$s</xliff:g> – отворање на известувањата.</string>
     <string name="sandfly_tutorial_system_overview"><xliff:g id="gesture" example="Swipe left then up">%1$s</xliff:g> – прикажување на неодамнешните апликации.</string>
     <string name="sandfly_tutorial_system_title">Назад, почетен екран и известувања</string>
@@ -126,7 +126,7 @@
     <string name="sandfly_tutorial_typing_title">Пишување</string>
     <string name="sandfly_tutorial_typing_type">Напишете го зборот „<xliff:g id="word" example="cat">%1$s</xliff:g>“.</string>
     <string name="sandfly_tutorial_typing_word">мачка</string>
-    <string name="sandfly_tutorial_welcome_intro">Ова упатство ги учи гестовите на SandFly. Секоја лекција дава упатство, чека додека не го извршите со свои гестови, а потоа го дава следното. Упатството е првата ставка по името на лекцијата. „Содржина“ ги наведува сите лекции, а упатството повторно се отвора на лекцијата на која сте застанале.</string>
+    <string name="sandfly_tutorial_welcome_intro">Ова упатство ги учи движењата на SandFly. Секоја лекција дава упатство, чека додека не го извршите со свои движења, а потоа го дава следното. Упатството е првата ставка по името на лекцијата. „Содржина“ ги наведува сите лекции, а упатството повторно се отвора на лекцијата на која сте застанале.</string>
     <string name="sandfly_tutorial_welcome_start"><xliff:g id="gesture" example="Double-tap">%1$s</xliff:g> каде било на екранот – започнување.</string>
     <string name="sandfly_tutorial_welcome_title">Добре дојдовте</string>
 </resources>

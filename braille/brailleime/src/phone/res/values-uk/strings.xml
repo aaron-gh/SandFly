@@ -28,10 +28,10 @@
   <string name="braille_keyboard">Брайлівська клавіатура</string>
   <string name="set_up_braille_keyboard">Налаштування брайлівської клавіатури</string>
   <string name="how_to_use_braille_keyboard">Як користуватися брайлівською клавіатурою</string>
-  <string name="use_brailleime_pref_dialog_case_ime_enabled">Щоб використовувати клавіатуру Брайля, відкрийте звичайну клавіатуру, а тоді натисніть значок %1$s (зазвичай він розташований у правому нижньому куті). Виберіть \"%2$s\".</string>
+  <string name="use_brailleime_pref_dialog_case_ime_enabled">Щоб використовувати брайлівську клавіатуру, відкрийте звичайну клавіатуру, а тоді натисніть значок %1$s (зазвичай він розташований у правому нижньому куті). Виберіть \"%2$s\".</string>
   <string name="use_brailleime_pref_dialog_case_ime_disabled_settings">1. Натисніть \"Налаштування\" нижче. На наступному екрані ввімкніть опцію \"%1$s\".\n\n2. Відкрийте звичайну клавіатуру, а тоді натисніть \"Змінити метод введення\" %2$s (зазвичай цей значок розташований у правому нижньому куті).\n\n3. Виберіть \"%1$s\".</string>
   <string name="use_brailleime_pref_dialog_case_ime_enabled_gboard">Якщо у вас немає варіанту вибору клавіатури, спробуйте встановити %s – клавіатуру Google.</string>
-  <string name="use_brailleime_pref_dialog_case_ime_disabled_turn_on">1. Увімкніть клавіатуру Брайля нижче.\n\n2. Відкрийте звичайну клавіатуру, а тоді натисніть \"Змінити метод введення\" %2$s (зазвичай цей значок розташований у правому нижньому куті).\n\n3. Виберіть \"%1$s\".</string>
+  <string name="use_brailleime_pref_dialog_case_ime_disabled_turn_on">1. Увімкніть брайлівську клавіатуру нижче.\n\n2. Відкрийте звичайну клавіатуру, а тоді натисніть \"Змінити метод введення\" %2$s (зазвичай цей значок розташований у правому нижньому куті).\n\n3. Виберіть \"%1$s\".</string>
   <string name="use_brailleime_pref_dialog_case_ime_disabled_turn_on_gboard">Якщо неможливо змінити клавіатуру, спробуйте встановити %s – клавіатуру Google.</string>
   <string name="use_brailleime_pref_button_case_ime_disabled_settings">Налаштування</string>
   <string name="use_brailleime_pref_button_case_ime_disabled_turn_on">Увімкнути</string>
@@ -74,7 +74,7 @@
   <string name="gesture1_or_gesture2">%1$s або %2$s</string>
   <string name="review_gesture_format">%1$s: %2$s</string>
   <string name="review_gestures_review_all_button">Усі жести</string>
-  <string name="braille_keyboard_gestures">Жести для клавіатури Брайля</string>
+  <string name="braille_keyboard_gestures">Жести для брайлівської клавіатури</string>
   <string name="braille_keyboard_basic_controls">Основні елементи керування</string>
   <string name="braille_keyboard_basic_controls_summary">Додати пробіли, видалити, приховати клавіатуру тощо</string>
   <string name="braille_keyboard_cursor_movement">Переміщення курсора</string>
@@ -106,10 +106,10 @@
   <string name="talkback_suspend_dialog_title">Активувати SandFly для використання брайлівської клавіатури</string>
   <string name="talkback_off_or_suspend_dialog_message">Коли ввімкнено SandFly, можна вводити брайлівські символи, торкаючись екрана.</string>
   <string name="talkback_off_custom_gestures_dialog_title">Щоб змінити жест, увімкніть SandFly</string>
-  <string name="talkback_off_custom_gestures_dialog_message">Функцію SandFly вимкнено. Увімкніть її, щоб змінити жести для клавіатури Брайля.</string>
+  <string name="talkback_off_custom_gestures_dialog_message">Функцію SandFly вимкнено. Увімкніть її, щоб змінити жести для брайлівської клавіатури.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Відкрити налаштування</string>
   <string name="reset_gestures_dialog_title">Скинути всі жести?</string>
-  <string name="reset_gestures_dialog_message">Для всіх жестів для клавіатури Брайля буде відновлено значення за умовчанням</string>
+  <string name="reset_gestures_dialog_message">Для всіх жестів для брайлівської клавіатури буде відновлено значення за умовчанням</string>
   <string name="reset_gestures_dialog_positive_button">Скинути</string>
   <string name="reset_to_default_dialog_title">Скинути дію для жесту?</string>
   <string name="reset_to_default_dialog_message">Для дії буде відновлено жест \"%s\".\n\nЯкщо цей жест використовується для іншої дії, її буде замінено.</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Відновити значення за умовчанням</string>
   <string name="custom_gestures_dialog_remove_button">Вилучити жест</string>
   <string name="change_gestures_dialog_message_title">Як змінити жест</string>
-  <string name="change_gestures_dialog_message">На наступному екрані відкриється клавіатура Брайля, і ви не зможете використовувати жести SandFly.\n\nКоли ця клавіатура відкриється, виконайте потрібний жест або проведіть двома пальцями вниз, щоб її закрити й скасувати зміну жесту.\n\nПереглянути доступні жести\n</string>
+  <string name="change_gestures_dialog_message">На наступному екрані відкриється брайлівська клавіатура, і ви не зможете використовувати жести SandFly.\n\nКоли ця клавіатура відкриється, виконайте потрібний жест або проведіть двома пальцями вниз, щоб її закрити й скасувати зміну жесту.\n\nПереглянути доступні жести\n</string>
   <string name="change_gestures_dialog_message_link">Переглянути доступні жести</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Більше не показувати це повідомлення</string>
   <string name="change_gestures_dialog_positive_button">Продовжити</string>
@@ -193,7 +193,7 @@
   <string name="index_of_spelling_suggestion">%1$d з %2$d</string>
   <string name="grammar_suggestion">Граматичне виправлення</string>
   <string name="spelling_suggestion">Виправлення правопису</string>
-  <string name="custom_gesture_hint_announcement">Відображається клавіатура Брайля. %1$s. %2$s.</string>
+  <string name="custom_gesture_hint_announcement">Відображається брайлівська клавіатура. <xliff:g id="layout">%1$s</xliff:g>. <xliff:g id="custom_gesture_hint_announcement_repeat">%2$s</xliff:g></string>
   <string name="custom_gesture_hint_announcement_repeat">%1$s. %2$s.</string>
   <string name="custom_gesture_perform">Виконайте жест, який хочете використовувати для такої дії: %s.</string>
   <string name="custom_gesture_action">\"%s\"</string>
@@ -203,7 +203,7 @@
   <string name="custom_gesture_conflict_try_another">Цей жест використовується для дії \"%1$s\", і його не можна змінити. Спробуйте інший жест. %2$s</string>
   <string name="custom_gesture_cannot_used">Цей жест не можна використовувати</string>
   <string name="custom_gesture_no_gesture">Жест не виконано</string>
-  <string name="custom_gesture_try_another">Спробуйте інший жест. Щоб переглянути список усіх доступних жестів, перейдіть у Довідковий центр клавіатури Брайля в SandFly. <xliff:g id="cancel">%s</xliff:g></string>
+  <string name="custom_gesture_try_another">Спробуйте інший жест. Щоб переглянути список усіх доступних жестів, перейдіть у Довідковий центр брайлівської клавіатури в SandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Жести не збігаються</string>
   <string name="custom_gesture_perform_again">Знову виконайте жест, який хочете використовувати. %s</string>
     <string name="tabletop_port_left_announcement">Настільний режим, порт зарядки зліва</string>

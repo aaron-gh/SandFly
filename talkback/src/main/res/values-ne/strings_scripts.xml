@@ -12,7 +12,7 @@
     <string name="scripts_category_global">ग्लोबल प्लगइनहरू</string>
     <string name="scripts_none">कुनै स्क्रिप्ट स्थापना गरिएको छैन</string>
     <string name="scripts_all_off">सबै स्क्रिप्टहरू बन्द गर्नुहोस्</string>
-    <string name="scripts_all_off_summary">स्क्रिप्टहरू इन्स्टल नै रहन्छन् र आफ्नै स्विचहरू राख्छन्। “सबै स्क्रिप्टहरू सक्रिय वा निष्क्रिय गर्नुहोस्” इसाराले पनि यही गर्छ।</string>
+    <string name="scripts_all_off_summary">स्क्रिप्टहरू इन्स्टल नै रहन्छन् र आफ्नै स्विचहरू राख्छन्। “सबै स्क्रिप्टहरू सक्रिय वा निष्क्रिय गर्नुहोस्” जेस्चरले पनि यही गर्छ।</string>
     <string name="shortcut_toggle_scripts">सबै स्क्रिप्टहरू सक्रिय वा निष्क्रिय गर्नुहोस्</string>
     <string name="scripts_now_off">स्क्रिप्ट बन्द</string>
     <string name="scripts_now_on">स्क्रिप्टहरू सक्रिय छन्</string>
@@ -42,7 +42,7 @@
     <string name="script_permission_actions">क्लिक गर्ने, स्क्रोल गर्ने, टाइप गर्ने र फोकस सार्ने</string>
     <string name="script_permission_speech">SandFly को बोली प्राप्त गर्ने र परिवर्तन गर्ने</string>
     <string name="script_permission_passwords">पासवर्ड फिल्डहरू पढ्ने</string>
-    <string name="script_permission_input">इसारा, कुञ्जी, मेनु वस्तु र पढाइ नियन्त्रणहरू थप्ने</string>
+    <string name="script_permission_input">जेस्चर, कुञ्जी, मेनु वस्तु र रिडिङ कन्ट्रोलहरू थप्ने</string>
     <string name="script_permission_network">इन्टरनेट प्रयोग गर्ने</string>
     <string name="script_permission_clipboard">क्लिपबोर्ड पढ्ने र परिवर्तन गर्ने</string>
     <string name="script_permission_system">पछाडि वा होममा जाने, सूचना र एपहरू खोल्ने</string>
@@ -102,8 +102,8 @@
     <string name="script_keys_backtalk_modifier">SandFly मोडिफायर कुञ्जी</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, त्यसपछि <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">आदेशहरू</string>
-    <string name="script_commands_summary">चलिरहेको स्क्रिप्टका इसारा र कुञ्जीहरूले SandFly का भन्दा प्राथमिकता पाउँछन्। SandFly को राख्न स्क्रिप्टको बन्द गर्नुहोस्।</string>
-    <string name="script_binding_gesture">इशारा: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_commands_summary">चलिरहेको स्क्रिप्टका जेस्चर र कुञ्जीहरूले SandFly का भन्दा प्राथमिकता पाउँछन्। SandFly को राख्न स्क्रिप्टको बन्द गर्नुहोस्।</string>
+    <string name="script_binding_gesture">जेस्चर: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">कुञ्जीहरू: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">SandFly मेनु</string>
     <string name="script_binding_control">रिडिङ कन्ट्रोलहरू</string>
@@ -112,12 +112,12 @@
     <string name="script_binding_turn_off">अफ गर्नुहोस्</string>
     <string name="script_binding_restore">पूर्वनिर्धारितहरू पुनर्स्थापित गर्नुहोस्</string>
     <string name="script_binding_restored">पूर्वनिर्धारितहरू पुनर्स्थापित गरियो</string>
-    <string name="script_binding_perform">इसारा गर्नुहोस् वा कुञ्जीहरू थिच्नुहोस्</string>
-    <string name="script_binding_perform_summary">अर्को इसारा वा SandFly मोडिफायर कुञ्जीसँग थिचिएका कुञ्जीहरू तोक्ने</string>
-    <string name="script_binding_perform_message">इशारा गर्नुहोस् वा कुञ्जीहरू थिच्नुहोस्।</string>
+    <string name="script_binding_perform">जेस्चर गर्नुहोस् वा कुञ्जीहरू थिच्नुहोस्</string>
+    <string name="script_binding_perform_summary">अर्को जेस्चर वा SandFly मोडिफायर कुञ्जीसँग थिचिएका कुञ्जीहरू तोक्ने</string>
+    <string name="script_binding_perform_message">जेस्चर गर्नुहोस् वा कुञ्जीहरू थिच्नुहोस्।</string>
     <string name="script_binding_assign_title"><xliff:g id="binding">%1$s</xliff:g> लाई <xliff:g id="command">%2$s</xliff:g> तोक्ने हो?</string>
     <string name="script_binding_assign">असाइन गर्नुहोस्</string>
-    <string name="script_binding_choose_gesture">इशारा छान्नुहोस्</string>
+    <string name="script_binding_choose_gesture">जेस्चर छान्नुहोस्</string>
     <string name="script_binding_type_keys">कुञ्जीहरू टाइप गर्नुहोस्</string>
     <string name="script_binding_type_keys_summary">जस्तै sf+shift+n, वा sf+t, s</string>
     <string name="script_binding_bad_keys">यी कुञ्जीहरू प्रयोग गर्न सकिँदैन। <xliff:g id="reason">%1$s</xliff:g></string>

@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Para usar el modo de navegación, deberás cambiar del mapa de teclas predeterminado al mejorado. Este cambio actualizará algunos de los comandos de la pantalla braille</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Configuración</string>
   <string name="bd_command_change_dialog_title">Se actualizaron algunos comandos</string>
-  <string name="bd_command_change_dialog_message">Estos comandos de la pantalla braille se actualizaron en esta versión de SandFly:\n\n• Elemento anterior: Presiona los puntos 1 y 7\n\n• Elemento siguiente: Presiona los puntos 4 y 8\n\n• Control de lectura anterior: Presiona los puntos 2, 3, 7 y 8\n\n• Control de lectura siguiente: Presiona los puntos 5, 6, 7 y 8</string>
+  <string name="bd_command_change_dialog_message">Estos comandos de la pantalla braille se actualizaron en esta versión de SandFly:\n\n• Elemento anterior: Presiona los puntos 1 y 7\n\n• Elemento siguiente: Presiona los puntos 4 y 8\n\n• Control de lectura anterior: Presiona los puntos 2, 3, 7 y 8\n\n• Siguiente control de lectura: Presiona los puntos 5, 6, 7 y 8</string>
   <string name="bd_preference_braille_contracted">Braille contraído</string>
   <string name="bd_preference_braille_uncontracted">Braille no contraído</string>
   <string name="bd_braille_grade_tips">Presiona la barra espaciadora y los puntos 1, 2, 4 y 5 para cambiar entre los modos contraído y no contraído rápidamente con una pantalla braille.\n\nEste comando funciona si usas un idioma con ambos grados de braille.</string>
@@ -320,15 +320,15 @@
   <string name="popup_message_history_consent_dialog_msg">Esto almacenará algunos mensajes, como notificaciones y alarmas, en SandFly. Puedes cambiar este parámetro de configuración en cualquier momento.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">Activar</string>
   <string name="popup_message_history_consent_dialog_negative_btn">No, gracias</string>
-    <string name="external_display_channel">Líneas braille de otras aplicaciones</string>
-    <string name="external_display_ask_title">¿Permitir que <xliff:g id="app" example="Notetaker">%1$s</xliff:g> funcione como línea braille para SandFly?</string>
+    <string name="external_display_channel">Pantallas braille de otras aplicaciones</string>
+    <string name="external_display_ask_title">¿Permitir que <xliff:g id="app" example="Notetaker">%1$s</xliff:g> funcione como pantalla braille para SandFly?</string>
     <string name="external_display_ask_text">SandFly no la usará hasta que lo permitas.</string>
-    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> podrá leer todo lo que SandFly muestre en braille, que puede ser cualquier contenido de la pantalla, incluidos los mensajes y lo que escribas. También podrá controlar el dispositivo como con una línea braille: escribir, abrir aplicaciones y ejecutar cualquier comando de SandFly. Permite el acceso solo a aplicaciones en las que confíes.</string>
+    <string name="external_display_warning"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> podrá leer todo lo que SandFly muestre en braille, que puede ser cualquier contenido de la pantalla, incluidos los mensajes y lo que escribas. También podrá controlar el dispositivo como con una pantalla braille: escribir, abrir aplicaciones y ejecutar cualquier comando de SandFly. Permite el acceso solo a aplicaciones en las que confíes.</string>
     <string name="external_display_allow">Permitir</string>
     <string name="external_display_deny">No permitir</string>
-    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> es tu línea braille</string>
+    <string name="external_display_in_use_title"><xliff:g id="app" example="Notetaker">%1$s</xliff:g> es tu pantalla braille</string>
     <string name="external_display_in_use_text">Mientras SandFly la use, <xliff:g id="app" example="Notetaker">%1$s</xliff:g> podrá leer la pantalla y controlar el dispositivo.</string>
-    <string name="external_displays_title">Líneas de otras aplicaciones</string>
-    <string name="external_displays_summary">Las aplicaciones que autorices pueden funcionar como líneas braille para SandFly. Una aplicación que funcione como línea braille puede leer la pantalla y controlar el dispositivo.</string>
-    <string name="external_displays_none">Ninguna aplicación puede funcionar como línea braille.</string>
+    <string name="external_displays_title">Pantallas de otras aplicaciones</string>
+    <string name="external_displays_summary">Las aplicaciones que autorices pueden funcionar como pantallas braille para SandFly. Una aplicación que funcione como pantalla braille puede leer la pantalla y controlar el dispositivo.</string>
+    <string name="external_displays_none">Ninguna aplicación puede funcionar como pantalla braille.</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">آن ڈیوائس AI</string>
-    <string name="summary_pref_on_device_ai">API کلید کے بغیر، اس فون پر موجود ماڈل سے “تصویر کی وضاحت کریں” اور “اسکرین کی وضاخت کریں”</string>
+    <string name="summary_pref_on_device_ai">API کلید کے بغیر، اس فون پر موجود ماڈل سے “تصویر کی وضاحت کریں” اور “اسکرین کی وضاحت کریں”</string>
     <string name="pref_on_device_ai_enable">آن ڈیوائس AI استعمال کریں</string>
     <string name="pref_on_device_ai_enable_summary">تصاویر اور اسکرین شاٹس کی وضاحت اسی فون پر کی جاتی ہے اور انہیں کبھی Google کو نہیں بھیجا جاتا۔ یہ کلاؤڈ سے سست ہے اور زیادہ بیٹری استعمال کرتا ہے۔</string>
     <string name="pref_on_device_ai_enable_needs_model">پہلے ماڈل ڈاؤن لوڈ یا درآمد کریں۔</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">ماڈل انسٹال ہوا</string>
     <string name="on_device_ai_import_failed">وہ فائل تعاون یافتہ Gemma 4 ماڈل فائل نہیں ہے۔</string>
     <string name="pref_on_device_ai_timeout">جوابات کے لیے وقت کی حد</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s۔ اتنی دیر کے بعد SandFly انتظار کرنا بند کر دیتا ہے۔ “اسکرین کی وضاخت کریں” میں “تصویر کی وضاحت کریں” سے زیادہ وقت لگتا ہے۔</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s۔ اتنی دیر کے بعد SandFly انتظار کرنا بند کر دیتا ہے۔ “اسکرین کی وضاحت کریں” میں “تصویر کی وضاحت کریں” سے زیادہ وقت لگتا ہے۔</string>
     <string name="on_device_ai_choose_timeout">جوابات کے لیے وقت کی حد</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d منٹ</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">پروسیسر</string>
     <string name="pref_on_device_ai_short_prompts">اسکرین کی مختصر تفصیل</string>
-    <string name="pref_on_device_ai_short_prompts_summary">“اسکرین کی وضاخت کریں” کم تفصیلات مانگتا ہے، اس لیے جلدی جواب دیتا ہے۔ مکمل وضاحتوں کے لیے اسے آف کریں۔</string>
+    <string name="pref_on_device_ai_short_prompts_summary">“اسکرین کی وضاحت کریں” کم تفصیلات مانگتا ہے، اس لیے جلدی جواب دیتا ہے۔ مکمل وضاحتوں کے لیے اسے آف کریں۔</string>
     <string name="on_device_ai_error_network">ڈاؤن لوڈ رک گیا۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔ یہ وہیں سے جاری ہوگا جہاں رکا تھا۔</string>
     <string name="on_device_ai_error_http">ڈاؤن لوڈ سرور نے درخواست قبول نہیں کی۔ بعد میں دوبارہ کوشش کریں، یا اس کے بجائے فائل درآمد کریں۔</string>
     <string name="on_device_ai_error_corrupt">فائل متوقع ماڈل سے مماثل نہیں تھی اور اسے حذف کر دیا گیا تھا۔ دوبارہ کوشش کریں۔</string>

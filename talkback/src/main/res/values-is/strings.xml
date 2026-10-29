@@ -13,7 +13,7 @@
   <string name="label_manager_summary_title">Stjórna sérsniðnum merkjum</string>
   <string name="label_manager_package_title">Stjórna skýringum fyrir %1$s</string>
   <string name="manage_label">Stjórna merki</string>
-  <string name="label_manager_no_packages_message">Engin sérsniðin merki eru til staðar sem stendur\n\n<b>Svona býrðu til sérsniðið merki</b>\nFarðu á ómerkta mynd og bættu við merki úr SandFly valmyndinni</string>
+  <string name="label_manager_no_packages_message">Engin sérsniðin merki eru til staðar sem stendur\n\n<b>Svona býrðu til sérsniðið merki</b>\nFarðu á ómerkta mynd og bættu við merki úr SandFly-valmyndinni</string>
   <string name="label_manager_timestamp_text">Síðast breytt %1$s</string>
   <string name="search_mode_cancel">Hætt við leit.</string>
   <string name="notification_type_status_started">Hófst</string>
@@ -77,7 +77,7 @@
   <string name="pref_punctuation_title">Lesa upp greinarmerki og tákn</string>
   <string name="title_pref_category_manage_focus_indicator">Fókusvísir</string>
   <string name="title_pref_category_manage_gestures">Bendingar</string>
-  <string name="title_pref_manage_labels">Sérsniðnir flokkar</string>
+  <string name="title_pref_manage_labels">Sérsniðin merki</string>
   <string name="title_pref_category_context_menu">SandFly-valmynd</string>
   <string name="title_pref_category_selector_menu">Lesstýringar</string>
   <string name="title_pref_category_navigation_menu">Breyta flettivalkostum</string>
@@ -88,13 +88,13 @@
   <string name="title_pref_show_tos">Þjónustuskilmálar</string>
   <string name="title_pref_show_privacy_policy">Persónuverndarstefna</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Fingrafarabendingar</string>
-  <string name="title_pref_category_tutorial">Leiðsögn í SandFly</string>
+  <string name="title_pref_category_tutorial">SandFly-leiðsögn</string>
   <string name="title_pref_category_help_no_tutorial">Hjálp</string>
   <string name="title_pref_advanced_settings">Ítarlegar stillingar</string>
   <string name="title_pref_show_exit_watermark">Sýna leiðbeiningar um hvernig slökkt er á SandFly</string>
   <string name="summary_pref_show_exit_watermark">Þegar kveikt er á SandFly birtist hvernig slökkt er á því</string>
   <string name="talkback_exit_watermark_text">Kveikt á SandFly. Haltu tveimur fingrum á skjánum í fimm sekúndur til að slökkva. Til að hætta að sýna þessi skilaboð skaltu ýta með þremur fingrum til að opna SandFly-valmyndina.</string>
-  <string name="talkback_exit_watermark_hint_text">Borði sem gefur til kynna að kveikt sé á SandFly er sýndur. Til að slökkva á SandFly skaltu halda tveimur fingrum á skjánum í 5 sekúndur. Opnaðu stillingar SandFly til að fjarlægja þennan borða.</string>
+  <string name="talkback_exit_watermark_hint_text">Borði sem gefur til kynna að kveikt sé á SandFly er sýndur. Til að slökkva á SandFly skaltu halda tveimur fingrum á skjánum í 5 sekúndur. Opnaðu SandFly-stillingar til að fjarlægja þennan borða.</string>
   <string name="reset_gesture_settings_title">Endurstilla bendistillingar</string>
   <string name="one_finger_gestures_title">1 fingur</string>
   <string name="one_finger_back_forth_gestures_title">1 fingur fram og til baka</string>
@@ -187,12 +187,12 @@
   <string name="keycombo_menu_other_show_link_list">Sýna lista yfir tengla</string>
   <string name="keycombo_menu_other_show_control_list">Sýna lista yfir stýringar</string>
   <string name="keycombo_menu_other_show_table_list">Sýna töflulista</string>
-  <string name="keycombo_menu_other_talkback_context_menu">Sýna SandFly valmynd</string>
+  <string name="keycombo_menu_other_talkback_context_menu">Sýna SandFly-valmynd</string>
   <string name="keycombo_menu_other_custom_actions">Sýna aðgerðir</string>
   <string name="keycombo_menu_other_language_options">Sýna uppsett tungumál</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Afrita síðustu setningu sem var sögð</string>
   <string name="keycombo_menu_other_open_tts_settings">Opna stillingar talgervils</string>
-  <string name="keycombo_menu_other_open_talkback_settings">Opna stillingar SandFly</string>
+  <string name="keycombo_menu_other_open_talkback_settings">Opna SandFly-stillingar</string>
   <string name="keycombo_menu_other_report_issue">Senda ábendingu</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Kveikja/slökkva á upplestri lykla</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Sýna lista yfir flýtilykla</string>
@@ -296,7 +296,7 @@
   <string name="summary_pref_intonation">Lesa upp stafi sem er eytt með rödd í hærri tón</string>
   <string name="title_pref_brailledisplay">Blindraletursskjár</string>
   <string name="title_pref_brailleime">Blindraleturslyklaborð</string>
-  <string name="summary_pref_brailleime_disabled">Tækið þitt styður ekki braille-lyklaborð</string>
+  <string name="summary_pref_brailleime_disabled">Tækið þitt styður ekki blindraleturslyklaborð</string>
   <string name="title_pref_speech_footer">Til að breyta hljóðstyrk aðgengis á hvaða skjá sem er skaltu halda einum fingri á skjánum og ýta á hækkunar- eða lækkunarhnapp hljóðstyrks.</string>
   <string name="title_pref_vibration">Svörun með titringi</string>
   <string name="title_pref_soundback">Hljóðsvörun</string>
@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">Sjálfvirkar lýsingar</string>
   <string name="title_pref_gemini_settings">Gemini-stillingar</string>
   <string name="title_pref_gemini_enabled">Raddskipanir Gemini</string>
-  <string name="title_pref_category_automatic_description_summary">Fáðu ítarlegar lýsingar á gervigreindarmyndum þegar þú velur \„Lýsa mynd\“ í valmynd SandFly.\n\nÞú getur einnig fengið sjálfvirkar lýsingar þegar þú setur mynd eða tákn í fókus. Sjálfvirkar lýsingar virka án nettengingar.</string>
+  <string name="title_pref_category_automatic_description_summary">Fáðu ítarlegar lýsingar á gervigreindarmyndum þegar þú velur \„Lýsa mynd\“ í SandFly-valmyndinni.\n\nÞú getur einnig fengið sjálfvirkar lýsingar þegar þú setur mynd eða tákn í fókus. Sjálfvirkar lýsingar virka án nettengingar.</string>
   <string name="title_pref_icon_detection">Sjálfvirkar lýsingar á táknum</string>
   <string name="title_pref_image_description">Sjálfvirkar lýsingar á myndum</string>
   <string name="title_pref_text_recognition">Sjálfvirkar lýsingar á texta á myndum</string>
@@ -358,7 +358,7 @@
   <string name="screen_dimmed">Skjár falinn</string>
   <string name="screen_brightness_restored">Sýnir skjá</string>
   <string name="screen_dimming_exit_instruction_line1">Aðgengisþjónusta SandFly hefur falið skjáinn</string>
-  <string name="screen_dimming_exit_instruction_line2">Til að breyta þessu skaltu <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> til að opna valmynd SandFly, veldu svo „<xliff:g id="menu item" example="show screen">%2$s</xliff:g>“ og ýttu svo tvisvar.</string>
+  <string name="screen_dimming_exit_instruction_line2">Til að breyta þessu skaltu <xliff:g id="gesture" example="tap with 3 fingers">%1$s</xliff:g> til að opna SandFly-valmyndina, veldu svo „<xliff:g id="menu item" example="show screen">%2$s</xliff:g>“ og ýttu svo tvisvar.</string>
   <string name="shortcut_title_basic_navigation">Grunnatriði flettingar</string>
   <string name="shortcut_title_system_actions">Kerfisaðgerðir</string>
   <string name="shortcut_title_reading_control">Lestur</string>
@@ -386,7 +386,7 @@
   <string name="shortcut_notifications">Tilkynningar</string>
   <string name="shortcut_quick_settings">Flýtistillingar</string>
   <string name="shortcut_show_custom_actions">Sýna sérsniðnar aðgerðir</string>
-  <string name="shortcut_talkback_breakout">Opna valmynd SandFly</string>
+  <string name="shortcut_talkback_breakout">Opna SandFly-valmynd</string>
   <string name="shortcut_pause_or_resume_feedback">Gera hlé á eða halda áfram með tal</string>
   <string name="shortcut_toggle_voice_feedback">Kveikja eða slökkva á tali</string>
   <string name="shortcut_read_from_top">Lesa frá byrjun</string>
@@ -401,10 +401,10 @@
   <string name="shortcut_perform_click_action">Virkja</string>
   <string name="shortcut_perform_double_click_action">Tvísmella</string>
   <string name="shortcut_perform_long_click_action">Halda inni</string>
-  <string name="talkback_menu_title">Valmynd SandFly</string>
+  <string name="talkback_menu_title">SandFly-valmynd</string>
   <string name="talkback_menu_close_button_text">@string/close_string</string>
   <string name="talkback_menu_more_options_text">Fleiri valkostir birtast á valmyndinni þegar þú hefur lokið við uppsetningu eða tekur tækið úr lás</string>
-  <string name="talkback_menu_title_content_description">Valmynd SandFly. Strjúktu til hægri til að skoða valkosti á valmynd SandFly.\n\nTil að fara aftur í leiðsögnina skaltu nota tvo fingur til að strjúka til vinstri eða hægri frá skjábrúninni.</string>
+  <string name="talkback_menu_title_content_description">SandFly-valmynd. Strjúktu til hægri til að skoða valkosti á SandFly-valmyndinni.\n\nTil að fara aftur í leiðsögnina skaltu nota tvo fingur til að strjúka til vinstri eða hægri frá skjábrúninni.</string>
   <string name="shortcut_show_language_options">Breyta töluðu tungumáli</string>
   <string name="shortcut_select_next_setting">Næsta lesstýring</string>
   <string name="shortcut_select_previous_setting">Fyrri lesstýring</string>
@@ -510,7 +510,7 @@
   <string name="summary_show_hide_screen">Feldu skjáinn svo hann sé ekki sýnilegur öðrum á almenningsstöðum. Þegar skjárinn hefur verið falinn er hægt að setja hann aftur í venjulega stillingu.</string>
   <string name="summary_control_speak_time">Breyttu því hvort þú heyrir hvað klukkan er þegar þú kveikir á skjánum</string>
   <string name="summary_show_keyboard_shortcuts_preferences">Opna lista yfir flýtilykla</string>
-  <string name="summary_talkback_preferences">Opna stillingar SandFly</string>
+  <string name="summary_talkback_preferences">Opna SandFly-stillingar</string>
   <string name="summary_braile_display_preferences">Opna stillingar blindraletursskjás</string>
   <string name="summary_system_actions">Opna „Öll forrit“ og „Flýtistillingar“</string>
   <string name="summary_tts_settings">Opna stillingar talgervils</string>
@@ -675,11 +675,11 @@
   <string name="label_export_empty">Ekkert til að flytja út. Þú hefur ekki bætt við neinum merkjum</string>
   <string name="label_export_failed">Ekki tókst að flytja út merki</string>
   <string name="label_import_failed">Ekki tókst að flytja inn merki</string>
-  <string name="label_import_succeeded">{count,plural, =0{Engin nýir flokkar}=1{# flokkur uppfærður}one{# flokkur uppfærður}other{# flokkar uppfærðir}}</string>
+  <string name="label_import_succeeded">{count,plural, =0{Engin ný merki}=1{# merki uppfært}one{# merki uppfært}other{# merki uppfærð}}</string>
   <string name="no_apps_to_import_labels">Engin forrit fundust til að flytja inn merki</string>
-  <string name="no_apps_to_export_labels">Engin forrit fundust til að flytja út flokka.</string>
-  <string name="label_choose_app_to_import">Veldu forrit til að flytja inn flokka:</string>
-  <string name="label_choose_app_to_export">Veldu forrit til að flytja út flokka:</string>
+  <string name="no_apps_to_export_labels">Engin forrit fundust til að flytja út merki.</string>
+  <string name="label_choose_app_to_import">Veldu forrit til að flytja inn merki:</string>
+  <string name="label_choose_app_to_export">Veldu forrit til að flytja út merki:</string>
   <string name="dialog_title_dim_screen">Fela skjá?</string>
   <string name="dialog_message_dim_screen">Slökkt verður á skjánum í kjölfarið til að auka persónuvernd. Sumt efni verður hugsanlega enn sýnilegt, s.s. skilaboð um að kveikja aftur á skjánum eða valmyndir aðgengiseiginleika, t.d. SandFly.</string>
   <string name="button_disable_all_events">Slökkva á öllu</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{Engar samsvaranir á þessum skjá}=1{# samsvörun}one{# samsvörun}other{# samsvaranir}}</string>
   <string name="msg_no_matches">Engar samsvaranir á þessum skjá</string>
   <string name="dialog_title_continuous_reading_mode">Hvernig samfelldur upplestur virkar</string>
-  <string name="dialog_message_continuous_reading_mode">Eftir að þú hefur valið „Lesa frá byrjun“ eða „Lesa frá atriði í fókus“ geturðu samt flett að fyrra eða næsta atriði á meðan textinn er lesinn. Þannig geturðu hoppað áfram eða aftur á bak á einfaldan hátt.\n\nTil að breyta hljóðstyrknum á meðan SandFly talar skaltu ýta á takkann hækka hljóðstyrk eða lækka hljóðstyrk.</string>
+  <string name="dialog_message_continuous_reading_mode">Eftir að þú hefur valið „Lesa frá byrjun“ eða „Lesa frá atriði sem er í fókus“ geturðu samt flett að fyrra eða næsta atriði á meðan textinn er lesinn. Þannig geturðu hoppað áfram eða aftur á bak á einfaldan hátt.\n\nTil að breyta hljóðstyrknum á meðan SandFly talar skaltu ýta á takkann hækka hljóðstyrk eða lækka hljóðstyrk.</string>
   <string name="always_show_this_message_label">Sýna alltaf þessi skilaboð</string>
   <string name="dialog_title_voice_commands">Notaðu raddskipanir til að stjórna SandFly</string>
   <string name="dialog_message_voice_commands">Þú getur til dæmis sagt:\n\n• „Copy“\n• „Read from focused item“\n• „Find“ [save]\n• „Speak“ [faster]\n• „SandFly settings“\n\nSegðu „<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>“ til að sjá lista yfir allar raddskipanir</string>
@@ -818,13 +818,13 @@
   <string name="adjust_granularity_hint">%1$s til að lesa eftir %2$s</string>
   <string name="adjust_typo_hint">%1$s til að fá tillögur.</string>
   <string name="use_action_hint">Ýttu tvisvar til að framkvæma aðgerðina</string>
-  <string name="no_adjust_setting_gesture">Til að nota þetta skaltu fara aftur í stillingar SandFly og bæta við bendingu fyrir „<xliff:g example="selected setting next action">%1$s</xliff:g>“</string>
-  <string name="no_navigate_typo_gesture">Til að nota þetta skaltu fara aftur í stillingar SandFly og bæta við bendingu fyrir villuleit</string>
+  <string name="no_adjust_setting_gesture">Til að nota þetta skaltu fara aftur í SandFly-stillingar og bæta við bendingu fyrir „<xliff:g example="selected setting next action">%1$s</xliff:g>“</string>
+  <string name="no_navigate_typo_gesture">Til að nota þetta skaltu fara aftur í SandFly-stillingar og bæta við bendingu fyrir villuleit</string>
   <string name="use_spelling_suggestion_hint">Ýttu tvisvar til að skipta út texta</string>
   <string name="screen_search_keyword_hint">leitarorðið er: %1$s</string>
   <string name="screen_search_no_keyword_hint">Ekkert leitarorð ennþá. Til að hefja nýja leit skaltu halda inni með þremur fingrum eða opna skjáleit í SandFly-valmyndinni.</string>
   <string name="screen_search_no_keyword_hint_pre_r">Ekkert leitarorð ennþá. Til að hefja nýja leit skaltu strjúka til vinstri og síðan niður eða opna skjáleit í SandFly-valmyndinni.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Ekki kveikt á blindraleturslyklaborði. Opnaðu stillingar SandFly, settu upp blindraleturslyklaborð og reyndu aftur.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Ekki kveikt á blindraleturslyklaborði. Opnaðu SandFly-stillingar, settu upp blindraleturslyklaborð og reyndu aftur.</string>
   <string name="suggestions_window_available">Tillögur í boði</string>
   <string name="suggestions_window_available_with_gesture">Tillögur í boði. Til að fá aðgang skaltu %1$s</string>
   <string name="heads_up_window_available">Tiltæk tilkynning</string>
@@ -846,8 +846,8 @@
   <string name="tv_training_shortcut_step_summary">Til að fá aðgang að SandFly-flýtileiðinni skaltu halda inni niður- og bakkhnöppunum samtímis í 3 sekúndur. Það kveikir eða slekkur á SandFly.\n\nÞú getur einnig nálgast þessa flýtileið í stillingum sjónvarpsins.\n\nÝttu á „Velja“ til að halda áfram.</string>
   <string name="new_feature_in_talkback_title">Nýir eiginleikar í SandFly</string>
   <string name="exit_tutorial_title">Er yfirferð lokið?</string>
-  <string name="exit_tutorial_content">Þú getur opnað leiðsögnina aftur hvenær sem er í stillingum SandFly.</string>
-  <string name="exit_onboarding_content">Þú getur komið aftur og farið yfir nýja eiginleika hvenær sem er í stillingum SandFly.</string>
+  <string name="exit_tutorial_content">Þú getur opnað leiðsögnina aftur hvenær sem er í SandFly-stillingum.</string>
+  <string name="exit_onboarding_content">Þú getur komið aftur og farið yfir nýja eiginleika hvenær sem er í SandFly-stillingum.</string>
   <string name="keep_reviewing_tutorial_button">Halda yfirferð áfram</string>
   <string name="welcome_to_updated_talkback_title">Velkomin(n) í uppfært SandFly</string>
   <string name="navigation_heading">Fletting</string>
@@ -866,14 +866,14 @@
   <string name="new_shortcut_gesture_selection_mode_text">Ýttu tvisvar og haltu inni með tveimur fingrum til að kveikja eða slökkva á textavalsstillingunni.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Slökkt eða kveikt á valstillingu. Almennt kveikir þetta eða slekkur á textavalsstillingunni þegar þú ert í innsláttarreit. Strjúktu til hægri til að halda áfram.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Strjúktu til vinstri eða hægri með 3 fingrum til að nota lesstýringar. Þú getur líka strokið upp eða niður með þremur fingrum.</string>
-  <string name="new_shortcut_gesture_note">Athugaðu: Þú hefur sérsniðið sumar bendingar svo þessar upplýsingar eru hugsanlega ekki réttar. Opnaðu stillingar SandFly til að skoða bendingarnar þínar.</string>
-  <string name="welcome_to_android11_text">Nýjum bendingum var bætt við til að auka hraða og einfalda notkun SandFly.\n\nÁ þessari skjámynd geturðu prófað nýju bendingarnar. Hægt er að fara yfir þessar upplýsingar í stillingum SandFly hvenær sem er.</string>
+  <string name="new_shortcut_gesture_note">Athugaðu: Þú hefur sérsniðið sumar bendingar svo þessar upplýsingar eru hugsanlega ekki réttar. Opnaðu SandFly-stillingar til að skoða bendingarnar þínar.</string>
+  <string name="welcome_to_android11_text">Nýjum bendingum var bætt við til að auka hraða og einfalda notkun SandFly.\n\nÁ þessari skjámynd geturðu prófað nýju bendingarnar. Hægt er að fara yfir þessar upplýsingar í SandFly-stillingum hvenær sem er.</string>
   <string name="new_gesture_notification_title">Nýjar bendingar í SandFly</string>
   <string name="new_gesture_notification_content">Ýttu til að kynna þér hvernig þú getur gert SandFly hraðvirkara með nýjum bendingum.</string>
   <string name="dump_node_tree_description">Hnútatré hefur verið prentað í annála.</string>
   <string name="report_gesture_description">Hér eru nýlega notaðar bendingar. Segðu okkur hver þeirra er röng og hvernig hún hefði átt að virka.</string>
-  <string name="update_welcome_talkback_16.1">Þessi SandFly-uppfærsla kynnir til sögunnar stuðning við „Lýstu skjánum“ á fleiri tungumálum og aðrar gæðaumbætur sem auðvelda notkun eiginleikans.\n\nÁ næstu síðum er að finna frekari upplýsingar um þessar breytingar.\n\nÞú getur nálgast þessar upplýsingar síðar með því að fara í „Stillingar SandFly &gt; Nýir eiginleikar í SandFly“.</string>
-  <string name="update_welcome_talkback_16.1_tts">Þessi SandFly-uppfærsla kynnir til sögunnar stuðning við „Lýstu skjánum“ á fleiri tungumálum og aðrar gæðaumbætur sem auðvelda notkun SandFly.\n\nÁ næstu síðum er að finna frekari upplýsingar um þessar breytingar.\n\nÞú getur nálgast þessar upplýsingar síðar með því að fara í „Nýir eiginleikar í SandFly“ í stillingum SandFly.</string>
+  <string name="update_welcome_talkback_16.1">Þessi SandFly-uppfærsla kynnir til sögunnar stuðning við „Lýsa skjánum“ á fleiri tungumálum og aðrar gæðaumbætur sem auðvelda notkun eiginleikans.\n\nÁ næstu síðum er að finna frekari upplýsingar um þessar breytingar.\n\nÞú getur nálgast þessar upplýsingar síðar með því að fara í „SandFly-stillingar &gt; Nýir eiginleikar í SandFly“.</string>
+  <string name="update_welcome_talkback_16.1_tts">Þessi SandFly-uppfærsla kynnir til sögunnar stuðning við „Lýsa skjánum“ á fleiri tungumálum og aðrar gæðaumbætur sem auðvelda notkun SandFly.\n\nÁ næstu síðum er að finna frekari upplýsingar um þessar breytingar.\n\nÞú getur nálgast þessar upplýsingar síðar með því að fara í „Nýir eiginleikar í SandFly“ í SandFly-stillingum.</string>
   <string name="shortcut_for_dictation_title">Flýtileið raddinnsláttar</string>
   <string name="shortcut_for_dictation_content">Nú þegar þú notar Gboard geturðu ýtt tvisvar með tveimur fingrum til að hefja eða stöðva raddinnslátt.
 &lt;br&gt;
@@ -881,12 +881,12 @@
   <string name="shortcut_for_dictation_content_without_google_play">Þegar þú notar Gboard á skjá geturðu nú ýtt tvisvar með tveimur fingrum til að hefja raddinnslátt og síðan tvisvar sinnum aftur til að hætta.</string>
   <string name="announcing_text_formatting_title">Tilkynningar um textasnið</string>
   <string name="announcing_text_formatting_header">SandFly getur nú tilkynnt þér breytingar á textasniði, t.d. þegar texti er feitletraður, skáletraður eða birtist í öðrum lit. Til að hefjast handa:</string>
-  <string name="announcing_text_formatting_option1">Fókusaðu á sniðna atriðið, opnaðu valmynd SandFly og veldu „Lýsa textasniði“ eða</string>
+  <string name="announcing_text_formatting_option1">Fókusaðu á sniðna atriðið, opnaðu SandFly-valmyndina og veldu „Lýsa textasniði“ eða</string>
   <string name="announcing_text_formatting_option2">Bættu við lesstýringu fyrir textasnið sem kveikir eða slekkur á tilkynningu um breytingar á sniði.</string>
   <string name="announcing_text_formatting_middle">Hér er dæmi um sniðinn texta þegar þú ert klár í að prófa:</string>
   <string name="announcing_text_formatting_tail">Ef þú vilt breyta því hvernig sniðinn texti er lesinn upp geturðu farið í %1$s.</string>
-  <string name="text_formatting_options_settings_path">Stillingar SandFly &gt; Nákvæmni &gt; Valkostir textasniðs</string>
-  <string name="text_formatting_options_settings_path_tts">Stillingar SandFly, „Nákvæmni“ og síðan „Valkostir textasniðs“</string>
+  <string name="text_formatting_options_settings_path">SandFly-stillingar &gt; Nákvæmni &gt; Valkostir textasniðs</string>
+  <string name="text_formatting_options_settings_path_tts">SandFly-stillingar, „Nákvæmni“ og síðan „Valkostir textasniðs“</string>
   <string name="announcing_text_formatiing_sample">Þessi texti er &lt;b&gt;feitletraður&lt;/b&gt;, sagður hátt og snjallt,
 &lt;br&gt;En þessi &lt;u&gt;undirstrikaður&lt;/u&gt; og röddin lækkar tvöfalt.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;Rósir eru rauðar&lt;/span&gt;, litur ástkær,
@@ -897,25 +897,21 @@
 &lt;br&gt;
 &lt;br&gt;Litadýrðin ríkir hér,
 &lt;br&gt;Úr &lt;font color=\"#ff0000\"&gt;eldrauðum&lt;/font&gt; í &lt;font color=\"#6aa84f\"&gt;grænan&lt;/font&gt; fer.</string>
-  <string name="update_welcome_talkback_16.2">Þessi SandFly-uppfærsla kynnir til sögunnar nýtt og endurbætt flýtilyklakort fyrir vélbúnaðarlyklaborð, stuðning við tilkynningar um textasnið og endurhannaða uppsetningu á stillingum, ásamt öðrum endurbótum sem auðvelda notkun SandFly.\n\nÞú fræðist betur um þessar breytingar á næstu síðum.\n\nÞú getur farið yfir þessar upplýsingar síðar með því að fara í „Stillingar SandFly &gt; Nýir eiginleikar í SandFly“.</string>
-  <string name="update_welcome_talkback_16.2_tts">Þessi SandFly-uppfærsla kynnir til sögunnar nýtt og endurbætt flýtilyklakort fyrir vélbúnaðarlyklaborð, stuðning við tilkynningar um textasnið og endurhannaða uppsetningu á stillingum, ásamt öðrum endurbótum sem auðvelda notkun SandFly.\n\nÞú fræðist betur um þessar breytingar á næstu síðum.\n\nÞú getur farið yfir þessar upplýsingar síðar með því að fara í stillingar SandFly og síðan „Nýir eiginleikar í SandFly“.</string>
+  <string name="update_welcome_talkback_16.2">Þessi SandFly-uppfærsla kynnir til sögunnar nýtt og endurbætt flýtilyklakort fyrir vélbúnaðarlyklaborð, stuðning við tilkynningar um textasnið og endurhannaða uppsetningu á stillingum, ásamt öðrum endurbótum sem auðvelda notkun SandFly.\n\nÞú fræðist betur um þessar breytingar á næstu síðum.\n\nÞú getur farið yfir þessar upplýsingar síðar með því að fara í „SandFly-stillingar &gt; Nýir eiginleikar í SandFly“.</string>
+  <string name="update_welcome_talkback_16.2_tts">Þessi SandFly-uppfærsla kynnir til sögunnar nýtt og endurbætt flýtilyklakort fyrir vélbúnaðarlyklaborð, stuðning við tilkynningar um textasnið og endurhannaða uppsetningu á stillingum, ásamt öðrum endurbótum sem auðvelda notkun SandFly.\n\nÞú fræðist betur um þessar breytingar á næstu síðum.\n\nÞú getur farið yfir þessar upplýsingar síðar með því að fara í SandFly-stillingar og síðan „Nýir eiginleikar í SandFly“.</string>
   <string name="new_settings_layout_title">Ný uppsetning stillinga</string>
   <string name="new_settings_layout_text">Stillingahópar hafa verið uppfærðir til að auðvelda leit að eiginleikum. Nýir stillingaflokkar eru einnig í boði, til dæmis lyklaborðsstillingar.</string>
   <string name="split_tap_everywhere_title">Tvískiptur innsláttur hvar sem er</string>
   <string name="split_tap_everywhere_text">Nú geturðu notað tvískiptan innslátt hvar sem er til að virkja atriði, jafnvel utan lyklaborðsins. Til að nota eiginleikann skaltu fletta á skjánum með einum fingri og ýta síðan á skjáinn með öðrum fingri án þess að lyfta fyrsta fingrinum til að virkja atriðið sem er í fókus.</string>
   <string name="keyboard_enhanced_keymap_title">Lyklaborð: Endurbætt flýtilyklakort</string>
   <string name="keyboard_enhanced_keymap_text">SandFly er nú með „Endurbætt flýtilyklakort“ fyrir lyklaborð, með ýmsum nýjum skipunum og flýtileiðum. Það inniheldur flettiham sem gerir vefleiðsögn og samskipti skilvirkari fyrir notendur SandFly sem nota lyklaborð. Þú getur skipt yfir í „Endurbætt flýtilyklakort“ í <xliff:g id="settings_path">%1$s</xliff:g>.\n\nEf þú notar blindraletursskjá geturðu líka notað nýjar flýtileiðir flettihams til að fara í gegnum efni beint úr blindraletursskjánum. Sumum flýtileiðum blindraletursskjásins var breytt vegna þessa. Þú getur séð lista yfir allar flýtileiðir blindraletursskjásins í <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
-  <string name="keyboard_shortcuts_link">Stillingar SandFly &gt; Flýtilyklar</string>
-  <string name="keyboard_shortcuts_link_tts">Stillingar SandFly og síðan „Flýtilyklar“</string>
+  <string name="keyboard_shortcuts_link">SandFly-stillingar &gt; Flýtilyklar</string>
+  <string name="keyboard_shortcuts_link_tts">SandFly-stillingar og síðan „Flýtilyklar“</string>
   <string name="braille_display_settings_link">Stillingar blindraletursskjás</string>
   <string name="keyboard_smart_browse_mode_title">Lyklaborð: Snjallflettihamur</string>
   <string name="keyboard_smart_browse_mode_text">Snjallflettihamur SandFly slekkur á flettiham í breytingareit til að hjálpa þér að slá inn texta með vélbúnaðarlyklaborði þegar þú flettir á vefnum. Hann kveikir síðan aftur á honum þegar þú ferð yfir í reit sem er ekki breytingareitur á vefnum svo að þú getir haldið áfram að skoða á skilvirkan hátt. Þú getur kveikt eða slökkt á snjallflettiham í <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Stillingar SandFly &gt; Ítarlegar stillingar</string>
-  <string name="advanced_settings_link_tts">Stillingar SandFly og síðan „Ítarlegar stillingar“</string>
   <string name="keyboard_tutorial_title">Kennsla á lyklaborð</string>
   <string name="keyboard_tutorial_text">SandFly felur nú í sér kennslu á lyklaborð sem er hönnuð til að hjálpa þér að læra flýtilykla og skipanir fyrir endurbætta flýtilyklakortið þegar þú notar vélbúnaðarlyklaborð. Til að opna kennsluna skaltu fara á: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Stillingar SandFly &gt; SandFly-kennsla</string>
-  <string name="tutorial_link_tts">Stillingar SandFly og síðan „SandFly-kennsla“</string>
   <string name="tutorial_entry_point_title">Leiðsögn</string>
   <string name="welcome_to_talkback_title">Velkomin(n) í SandFly</string>
   <string name="talkback_is_on">Kveikt er á SandFly</string>
@@ -924,7 +920,7 @@
   <string name="tap_again_to_turn_off">Ýttu aftur til að slökkva</string>
   <string name="talkback_turn_off_description_pointer_and_touch">SandFly les efni á skjánum þínum upphátt og breytir því hvernig þú flettir í tækinu þínu. Veldu „Slökkva á SandFly“ eða ýttu tvisvar á eiginleikann ef þú vilt slökkva á honum.</string>
   <string name="welcome_to_talkback_text">SandFly býður upp á raddsvörun svo þú getir notað tækið þitt án þess að horfa á skjáinn. SandFly getur gagnast fólki sem á erfitt með að sjá á skjáinn. \n\nEf þú vilt kveikja eða slökkva á SandFly í skyndi með hljóðstyrkstökkunum geturðu stillt flýtileið í SandFly-stillingum &gt; SandFly-flýtileið.\n\nÞegar kveikt er á SandFly er atriðið sem er í fókus á skjánum lesið upphátt.\n\nÞú ferð í næsta atriði með því að strjúka til hægri og í fyrra atriði með því að strjúka til vinstri.\n\nStrjúktu til hægri núna til að finna hnappinn til að fara áfram.</string>
-  <string name="welcome_to_talkback_text_tts">SandFly býður upp á raddsvörun svo þú getir notað tækið þitt án þess að horfa á skjáinn. SandFly getur gagnast fólki sem á erfitt með að sjá á skjáinn. \n\nEf þú vilt kveikja eða slökkva á SandFly í skyndi með hljóðstyrkstökkunum geturðu stillt flýtileið með því að opna stillingar SandFly og velja „SandFly-flýtileið“.\n\nÞegar kveikt er á SandFly er atriðið sem er í fókus á skjánum lesið upphátt.\n\nÞú ferð í næsta atriði með því að strjúka til hægri og í fyrra atriði með því að strjúka til vinstri.\n\nStrjúktu til hægri núna til að finna hnappinn til að fara áfram.</string>
+  <string name="welcome_to_talkback_text_tts">SandFly býður upp á raddsvörun svo þú getir notað tækið þitt án þess að horfa á skjáinn. SandFly getur gagnast fólki sem á erfitt með að sjá á skjáinn. \n\nEf þú vilt kveikja eða slökkva á SandFly í skyndi með hljóðstyrkstökkunum geturðu stillt flýtileið með því að opna SandFly-stillingar og velja „SandFly-flýtileið“.\n\nÞegar kveikt er á SandFly er atriðið sem er í fókus á skjánum lesið upphátt.\n\nÞú ferð í næsta atriði með því að strjúka til hægri og í fyrra atriði með því að strjúka til vinstri.\n\nStrjúktu til hægri núna til að finna hnappinn til að fara áfram.</string>
   <string name="welcome_to_talkback_page_idle_announcement">Strjúktu til hægri núna til að finna hnappinn „Áfram“</string>
   <string name="explore_by_touch_title">Dragðu fingurinn til að kanna</string>
   <string name="explore_by_touch_text">Þú getur einnig sett atriði í fókus með því að draga fingurinn yfir skjáinn.\n\nPrófaðu þetta núna með því að snerta skjáinn og draga í átt að neðra vinstra horninu þar til þú finnur hnappinn til að halda áfram.</string>
@@ -947,11 +943,11 @@
   <string name="adjusting_volume_tail">Þú heyrir nýjan hljóðstyrk aðgengis eftir nokkrar sekúndur.\n\nPrófaðu að stilla hljóðstyrk aðgengis núna.</string>
   <string name="menus_title">Notkun valmynda og stýringa</string>
   <string name="menus_talkback_menu_text">Á SandFly-valmyndinni eru stillingar og stýringar sem þú gætir þurft að nota oft.\n\nOpnaðu SandFly-valmyndina með því að ýta á skjáinn með 3 fingrum.</string>
-  <string name="menus_talkback_menu_text_pre_r">Á SandFly valmyndinni eru stillingar og stýringar sem þú gætir þurft að nota oft.\n\nOpnaðu SandFly valmyndina með því að strjúka niður og svo til hægri.</string>
-  <string name="menus_selector_text">Þessar flýtileiðir geta hjálpað þér að breyta stillingum með hraði, t.d. að leita eftir orðum frekar en stöfum eða breyta talhraða SandFly.\n\nStrjúktu til vinstri eða hægri með þremur fingrum til að breyta lesstýringunum á skjótan hátt.\n\nÞú getur sérsniðið SandFly valmyndina og lesstýringarnar síðar í stillingum SandFly.</string>
-  <string name="menus_selector_text_pre_r">Þessar flýtileiðir geta hjálpað þér að breyta stillingum með hraði, t.d. að leita eftir orðum frekar en stöfum eða breyta talhraða SandFly.\n\nStrjúktu niður og svo upp til að breyta lesstýringunum á skjótan hátt.\n\nÞú getur sérsniðið SandFly valmyndina og lesstýringarnar síðar í stillingum SandFly.</string>
+  <string name="menus_talkback_menu_text_pre_r">Á SandFly-valmyndinni eru stillingar og stýringar sem þú gætir þurft að nota oft.\n\nOpnaðu SandFly-valmyndina með því að strjúka niður og svo til hægri.</string>
+  <string name="menus_selector_text">Þessar flýtileiðir geta hjálpað þér að breyta stillingum með hraði, t.d. að leita eftir orðum frekar en stöfum eða breyta talhraða SandFly.\n\nStrjúktu til vinstri eða hægri með þremur fingrum til að breyta lesstýringunum á skjótan hátt.\n\nÞú getur sérsniðið SandFly-valmyndina og lesstýringarnar síðar í SandFly-stillingum.</string>
+  <string name="menus_selector_text_pre_r">Þessar flýtileiðir geta hjálpað þér að breyta stillingum með hraði, t.d. að leita eftir orðum frekar en stöfum eða breyta talhraða SandFly.\n\nStrjúktu niður og svo upp til að breyta lesstýringunum á skjótan hátt.\n\nÞú getur sérsniðið SandFly-valmyndina og lesstýringarnar síðar í SandFly-stillingum.</string>
   <string name="all_set_title">Allt til reiðu!</string>
-  <string name="all_set_text">Nú geturðu notað SandFly.\n\nHaltu áfram að kynna þér ný umfjöllunarefni núna eða skoðaðu þessar upplýsingar aftur hvenær sem er í stillingum SandFly.</string>
+  <string name="all_set_text">Nú geturðu notað SandFly.\n\nHaltu áfram að kynna þér ný umfjöllunarefni núna eða skoðaðu þessar upplýsingar aftur hvenær sem er í SandFly-stillingum.</string>
   <string name="talkback_tutorial_text">Strjúktu til hægri til að velja umfjöllunarefni. Til að bæta upplifunina skaltu kveikja á SandFly áður en þú byrjar.</string>
   <string name="basic_navigation_link_text">Einföld fletting</string>
   <string name="basic_navigation_link_subtext">Farðu á milli atriða, flettu, notaðu valmyndir og fleira</string>
@@ -979,7 +975,7 @@
   <string name="typing_text_title">Textainnsláttur</string>
   <string name="basic_typing_text_text">Þegar þú ert í textareit birtist lyklaborð neðst á skjánum.</string>
   <string name="typing_text_text">Renndu fingrinum yfir lyklaborðið. Þegar þú heyrir stafinn sem þú vilt slá inn skaltu lyfta fingrinum.\n\nPrófaðu að opna textareitinn hér fyrir neðan og slá inn nafnið þitt.</string>
-  <string name="typing_text_with_braille_keyboard_text">Þú getur líka slegið inn með blindraleturslyklaborðinu. Það má finna í stillingum SandFly.</string>
+  <string name="typing_text_with_braille_keyboard_text">Þú getur líka slegið inn með blindraleturslyklaborðinu. Það má finna í SandFly-stillingum.</string>
   <string name="other_ways_to_type_title">Aðrar innsláttarleiðir</string>
   <string name="other_ways_to_type_text">Aðrar innsláttarleiðir eru í boði í SandFly. Þú getur t.d. ýtt tvisvar til að færa inn staf.</string>
   <string name="basic_other_ways_to_type_text">Það eru fleiri leiðir til að skrifa í SandFly. Til dæmis geturðu ýtt tvisvar til að slá inn staf. Þú getur breytt þessu síðar í SandFly-stillingar &gt; Skjályklaborð &gt; Vélritunaraðferð.</string>
@@ -990,12 +986,12 @@
   <string name="edit_box_text">Velkomin(n) í SandFly</string>
   <string name="selecting_text_title">Textaval</string>
   <string name="selecting_text_text">Til að velja texta skaltu færa bendilinn fremst í textareit.\n\nÝttu tvisvar og haltu inni með 2 fingrum til að hefja valið. Færðu síðan bendilinn aftast í textann. Ýttu aftur tvisvar og haltu inni með 2 fingrum til að ljúka valinu.\n\nPrófaðu að velja orðið „Velkomin(n)“ í textareitnum hér fyrir neðan.</string>
-  <string name="selecting_text_text_pre_r">Til að velja texta skaltu færa bendilinn fremst í textann.\n\nStrjúktu niður og svo til hægri til að opna valmynd SandFly. Ýttu tvisvar á „aðgerðir“ og opnaðu valstillingu. Færðu bendilinn aftast í textann.\n\nOpnaðu valmynd SandFly aftur og ýttu svo tvisvar á „aðgerðir“ til að loka valstillingu.\n\nPrófaðu að velja orðið „Velkomin(n)“ í textareitnum hér fyrir neðan.</string>
+  <string name="selecting_text_text_pre_r">Til að velja texta skaltu færa bendilinn fremst í textann.\n\nStrjúktu niður og svo til hægri til að opna SandFly-valmyndina. Ýttu tvisvar á „aðgerðir“ og opnaðu valstillingu. Færðu bendilinn aftast í textann.\n\nOpnaðu valmynd SandFly aftur og ýttu svo tvisvar á „aðgerðir“ til að loka valstillingu.\n\nPrófaðu að velja orðið „Velkomin(n)“ í textareitnum hér fyrir neðan.</string>
   <string name="copy_cut_paste_title">Afrita, klippa og líma</string>
   <string name="copy_text">Þegar búið er að velja texta er hægt að afrita hann með því að ýta tvisvar með 3 fingrum.\n\nPrófaðu að afrita orð í textareitnum hér fyrir neðan.</string>
   <string name="cut_paste_text">Ýttu tvisvar og haltu inni með 3 fingrum til að klippa texta.\n\nÝttu þrisvar með 3 fingrum til að líma texta.\n\nPrófaðu að líma orð í textareitinn hér fyrir neðan.</string>
-  <string name="copy_text_pre_r">Þegar búið er að velja texta er hægt að afrita hann í valmynd SandFly. Strjúktu niður og til hægri til að opna valmynd SandFly. Ýttu tvisvar á aðgerðirnar og afritaðu svo.\n\nReyndu að afrita orð í textareitnum hér fyrir neðan.</string>
-  <string name="cut_paste_text_pre_r">Hægt er að klippa eða líma texta með því að opna valmynd SandFly og ýta tvisvar á aðgerðir.\n\nPrófaðu að líma orð í textareitinn hér fyrir neðan.</string>
+  <string name="copy_text_pre_r">Þegar búið er að velja texta er hægt að afrita hann í SandFly-valmyndinni. Strjúktu niður og til hægri til að opna SandFly-valmyndina. Ýttu tvisvar á aðgerðirnar og afritaðu svo.\n\nReyndu að afrita orð í textareitnum hér fyrir neðan.</string>
+  <string name="cut_paste_text_pre_r">Hægt er að klippa eða líma texta með því að opna SandFly-valmyndina og ýta tvisvar á aðgerðir.\n\nPrófaðu að líma orð í textareitinn hér fyrir neðan.</string>
   <string name="edit_box_hint_paste_text">Límdu texta hér</string>
   <string name="typo_correction_title">Yfirlestur</string>
   <string name="typo_correction_text">Þú getur notað yfirlestur til að athuga stafsetningu eða málfræði í textareit.\n\nSkoðaðu textareitinn sem inniheldur stafsetningarvillur hér að neðan til að prófa eiginleikann. Strjúktu síðan til hægri með þremur fingrum þar til þú finnur „Yfirlestur“.</string>
@@ -1040,7 +1036,7 @@
   <string name="voice_commands_title">Raddskipanir</string>
   <string name="voice_commands_text">Hægt er að nota röddina til að stjórna SandFly á fljótlegan hátt.\n\nÞú getur til dæmis notað raddskipanir til að breyta flettingunni, hoppa í næstu fyrirsögn, afrita texta og fleira.\n\nPrófaðu það núna með því að strjúka til hægri og svo upp.</string>
   <string name="using_screen_search_title">Notaðu skjáleit</string>
-  <string name="using_screen_search_text">Skjáleit gerir þér kleift að leita að tilteknu efni á skjánum.\n\nTil að prófa eiginleikann skaltu ýta með þremur fingrum til að opna valmynd SandFly og finna „Skjáleit“ á valmyndinni. Sláðu inn leitarorð, t.d. „áfram“, til að finna atriði á skjánum sem inniheldur orðið.\n\nPrófaðu að leita að „áfram“ núna til að finna hnappinn „Áfram“.</string>
+  <string name="using_screen_search_text">Skjáleit gerir þér kleift að leita að tilteknu efni á skjánum.\n\nTil að prófa eiginleikann skaltu ýta með þremur fingrum til að opna SandFly-valmyndina og finna „Skjáleit“ á valmyndinni. Sláðu inn leitarorð, t.d. „áfram“, til að finna atriði á skjánum sem inniheldur orðið.\n\nPrófaðu að leita að „áfram“ núna til að finna hnappinn „Áfram“.</string>
   <string name="screen_search_navigation_title">Notaðu skjáleit til að fletta</string>
   <string name="screen_search_navigation_text">Þú getur hoppað á milli leitarniðurstaðna skjáleitar eftir að hafa valið eina niðurstöðu.\n\nTil að gera það skaltu strjúka til hægri eða vinstri með þremur fingrum til að nota lesstýringar til að finna eiginleikann „Skjáleit“.\n\nPrófum þetta núna. Hér að neðan er listi yfir þrjá hnappa sem allir innihalda orðið „aðgerð“. Notaðu skjáleit til að leita að „aðgerð“ og notaðu skjáleitina síðan til að hoppa á milli niðurstaðna.</string>
   <string name="screen_search_action_button_1_text">Aðgerð 1</string>
@@ -1069,9 +1065,9 @@
   <string name="checking_notifications_tips">Til að skoða tilkynningaferilinn skaltu strjúka niður efst á skjánum með tveimur fingrum</string>
   <string name="image_description_playground_title">Prófaðu að fá myndlýsingar</string>
   <string name="image_description_playground_content_one">Ýttu á mynd í fókus, opnaðu SandFly-valmyndina og veldu „Lýsa mynd“.\n\nÞað er ein mynd fyrir neðan. Reyndu að fá lýsingu fyrir hana.</string>
-    <string name="image_description_playground_content_two">Þú getur breytt stillingum myndlýsingar hvenær sem er í SandFly stillingum &gt; Mynd- og skjálýsingar.</string>
-    <string name="image_description_playground_content_two_tts">Þú getur breytt stillingum myndlýsingar hvenær sem er í SandFly stillingum og síðan Mynd- og skjálýsingum.</string>
-  <string name="image_description_sample_image_content_description">Mynddæmi: Ýttu með þremur fingrum til að opna valmynd SandFly og veldu „Lýsa mynd“ til að heyra lýsingu.</string>
+    <string name="image_description_playground_content_two">Þú getur breytt stillingum myndlýsingar hvenær sem er í SandFly-stillingum &gt; Mynd- og skjálýsingar.</string>
+    <string name="image_description_playground_content_two_tts">Þú getur breytt stillingum myndlýsingar hvenær sem er í SandFly-stillingum og síðan „Mynd- og skjálýsingar“.</string>
+  <string name="image_description_sample_image_content_description">Mynddæmi: Ýttu með þremur fingrum til að opna SandFly-valmyndina og veldu „Lýsa mynd“ til að heyra lýsingu.</string>
   <string name="practice_gestures_title">Æfingabendingar</string>
   <string name="practice_keyboard_gestures_title">Flýtilyklar æfingalyklaborðs</string>
   <string name="pref_gesture_set_key_title">Bendingasett</string>
@@ -1104,9 +1100,9 @@
   <string name="wear_training_volume_up_text">Strjúktu til hægri og svo upp</string>
   <string name="wear_training_volume_down_title">Lækka hljóðstyrk</string>
   <string name="wear_training_volume_down_text">Strjúktu til hægri og svo niður</string>
-  <string name="wear_training_open_talkback_menu_title">Opna valmynd SandFly</string>
+  <string name="wear_training_open_talkback_menu_title">Opna SandFly-valmynd</string>
   <string name="wear_training_open_talkback_menu_text">Til að opna stillingar og stýringar sem þú þarft e.t.v. að nota oft skaltu strjúka niður og síðan til hægri</string>
-  <string name="wear_training_typing_title">Skrifar</string>
+  <string name="wear_training_typing_title">Innsláttur</string>
   <string name="wear_training_typing_text1">Renndu fingrinum yfir lyklaborðið til að hefja innslátt. Lyftu fingrinum þegar þú heyrir stafinn sem þú vilt slá inn.</string>
   <string name="wear_training_typing_text2">Strjúktu niður frá efsta hluta skjásins með tveimur fingrum til að fela lyklaborðið og sjá textann sem þú hefur slegið inn.</string>
   <string name="wear_training_typing_text3">Strjúktu niður frá neðsta hluta skjásins með tveimur fingrum til að opna lyklaborðið aftur.</string>
@@ -1221,7 +1217,7 @@
   <string name="delete_icon_detection_dialog_title">Eyða sjálfvirkum lýsingum á táknum?</string>
   <string name="delete_image_description_dialog_title">Eyða sjálfvirkum lýsingum á myndum?</string>
   <string name="delete_all_image_captioning_dialog_title">Eyða sjálfvirkum lýsingum á myndum og táknum?</string>
-  <string name="delete_dialog_message">Til að fá lýsingar aftur síðar geturðu sótt þennan eiginleika í stillingum SandFly</string>
+  <string name="delete_dialog_message">Til að fá lýsingar aftur síðar geturðu sótt þennan eiginleika í SandFly-stillingum</string>
   <string name="delete_all_dialog_message">Þetta eyðir sjálfvirkum lýsingum bæði fyrir myndir og tákn.\n\nTil að fá lýsingar aftur seinna geturðu sótt þessa eiginleika úr SandFly-stillingum.</string>
   <string name="delete_dialog_positive_button_text">Eyða</string>
   <string name="delete_dialog_negative_button_text">Hætta við</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">Skipta yfir í töfluleiðsögn í töflum</string>
   <string name="title_text_formatting_menu">Lýsa textasniði</string>
   <string name="summary_text_formatting_menu">Fyrir breytingar á borð við feitletrun, skáletrun, undirstrikun og fleira</string>
-  <string name="title_text_formatting_inline">Snið talaðs texta</string>
+  <string name="title_text_formatting_inline">Lesa upp textasnið</string>
   <string name="title_switch_text_formatting">Lesa upp textasnið</string>
   <string name="summary_text_formatting_verbosity">Fyrir breytingar á borð við feitletrun og skáletrun</string>
   <string name="summary_text_formatting_selector">Velja hvort snið, t.d. feitleitur og skáletur, er lesið upphátt</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Meira</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Taka frá bendingar fyrir Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly hættir að meðhöndla stakar og tvöfaldar snertingar með tveimur fingrum svo Samsung Vibration Watch geti notað þær. Kveiktu á Vibration Watch í aðgengisstillingum úrsins.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Tekið frá fyrir Vibration Watch í ítarlegum stillingum</string>
     <string name="title_pref_speakerphone_away_from_ear">Hátalari þegar síminn er tekinn frá eyranu</string>
     <string name="summary_pref_speakerphone_away_from_ear">Í símtali er skipt yfir í hátalara þegar þú tekur símann frá eyranu og aftur í eyrnahátalarann þegar þú berð hann upp að eyranu.</string>
     <string name="summary_pref_speakerphone_needs_permission">Þarf heimild sem Android veitir ekki skjálesurum. Til að veita hana skaltu keyra þessa skipun með adb eða Shizuku og opna svo þennan skjá aftur: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Forrit</string>
     <string name="speech_control_no_apps">Engin forrit hafa beðið um að tala ennþá.</string>
     <string name="speech_control_ask_title">Leyfa <xliff:g id="app" example="Tasker">%1$s</xliff:g> að tala í gegnum SandFly?</string>
-    <string name="speech_control_ask_text">Það getur sagt texta með SandFly röddinni þinni. Þú getur breytt þessu í Ítarlegri stillingum.</string>
     <string name="speech_control_allow">Leyfa</string>
     <string name="speech_control_deny">Ekki leyfa</string>
     <string name="permission_speak_label">tala í gegnum SandFly</string>
@@ -1467,7 +1461,7 @@
     <string name="quick_settings_mobile_data">Farsímagögn</string>
     <string name="quick_settings_hotspot">Hotspot</string>
     <string name="quick_settings_airplane_mode">Flugstilling</string>
-    <string name="quick_settings_do_not_disturb">Ekki trufla</string>
+    <string name="quick_settings_do_not_disturb">Ónáðið ekki</string>
     <string name="quick_settings_sound_mode">Hljóðstilling</string>
     <string name="quick_settings_flashlight">Vasaljós</string>
     <string name="quick_settings_flashlight_brightness">Ljósastyrkur vasaljóss</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Fjarlægja</string>
     <string name="quick_settings_added">%1$s bætt við</string>
     <string name="quick_settings_removed">%1$s fjarlægt</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly á. Haltu tveimur fingrum á skjánum í 5 sekúndur til að slökkva. Til að hætta að sýna þessi skilaboð skaltu slökkva á SandFly stillingum &gt; Ítarlegar stillingar &gt; Sýna leiðbeiningar um að slökkva á SandFly.</string>
     <string name="edge_gestures_title">Brúnir</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Önnur flýtileið til að kveikja eða slökkva á vafraham</string>
     <string name="title_pref_vibration_strength">Titringsstyrkur</string>
@@ -1736,7 +1729,7 @@
     <string name="item_details_order_footer">SandFly les upplýsingar um atriði í þessari röð. Til að breyta henni skaltu halda fingri á upplýsingum og draga þær upp eða niður. Þegar kveikt er á SandFly skaltu ýta tvisvar og halda inni og draga síðan. Þú getur líka notað aðgerðirnar Færa upp og Færa niður.</string>
     <string name="title_pref_speak_items_before_scroll">Lesa upp atriði áður en þau flettast inn á skjáinn</string>
     <string name="gemini_error_api_key">Gemini samþykkti ekki API lykilinn. Athugaðu lykilinn í stillingum fyrir mynd- og skjálýsingar.</string>
-    <string name="gemini_error_quota">Notkunarmörkum fyrir Gemini API lykilinn þinn hefur verið náð. Reyndu aftur síðar.</string>
+    <string name="gemini_error_quota">Notkunarmörkum fyrir API-lykil Gemini hefur verið náð. Reyndu aftur síðar.</string>
     <string name="gemini_error_busy">Gemini er upptekið núna. Reyndu aftur eftir augnablik.</string>
     <string name="gemini_error_timeout">Gemini tók of langan tíma að svara. Reyndu aftur.</string>
     <string name="gemini_error_with_code">Gemini gat ekki svarað, villa <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
@@ -1746,7 +1739,7 @@
     <string name="image_qna_stop_listening">Hættu að hlusta</string>
     <string name="image_qna_type_question">Sláðu inn spurningu</string>
     <string name="shortcut_dictate">Lesa fyrir</string>
-    <string name="title_pref_ai_dictation">Leiðrétta innlestur með gervigreind</string>
+    <string name="title_pref_ai_dictation">Leiðrétta talinnslátt með gervigreind</string>
     <string name="dictation_not_corrected">Ekki leiðrétt. Slegið inn eins og það var greint.</string>
     <string name="dictation_nothing_recognized">Ekkert greindist</string>
     <string name="dictation_unavailable">Talgreining ekki tiltæk</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper-líkön</string>
     <string name="dictation_whisper_use">Nota</string>
     <string name="title_pref_dictation_ai_service">Gervigreindarþjónusta fyrir talinnslátt</string>
-    <string name="dictation_ai_same">Sama og fyrir sjálfvirkar lýsingar</string>
     <string name="title_pref_browse_mode_per_app">Muna vafrastillingu í hverju forriti</string>
     <string name="title_pref_export_settings">Flytja út stillingar</string>
     <string name="title_pref_import_settings">Flytja inn stillingar</string>
@@ -1794,4 +1786,12 @@
         <item>1 mínúta</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Sjálfvirk stöðvun eftir þögn</string>
+    <string name="dictation_ai_same">Sama og „Mynd- og skjálýsingar“</string>
+    <string name="navigation_settings_link">SandFly-stillingar &gt; Fletting</string>
+    <string name="navigation_settings_link_tts">SandFly-stillingar og síðan „Fletting“</string>
+    <string name="shortcut_reserved_for_vibration_watch">Frátekið fyrir Vibration Watch undir „Bendingar“</string>
+    <string name="speech_control_ask_text">Forritið getur lesið upp texta með SandFly-röddinni þinni. Þú getur breytt þessu undir Stillingar, Tal, Leyfa öðrum forritum að tala.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">Kveikt á SandFly. Haltu tveimur fingrum á skjánum í fimm sekúndur til að slökkva. Til að hætta að sýna þessi skilaboð skaltu slökkva á „SandFly-stillingar &gt; Hlé og slökkt &gt; Sýna leiðbeiningar um hvernig slökkt er á SandFly“.</string>
+    <string name="tutorial_link">SandFly-stillingar &gt; Hjálp og ábendingar &gt; SandFly-leiðsögn</string>
+    <string name="tutorial_link_tts">SandFly-stillingar, „Hjálp og ábendingar“ og síðan „SandFly-leiðsögn“</string>
 </resources>

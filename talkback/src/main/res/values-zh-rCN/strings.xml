@@ -366,7 +366,7 @@
   <string name="shortcut_title_special_features">其他</string>
   <string name="shortcut_unassigned">点按即可分配操作</string>
   <string name="shortcut_not_customizable">%1$s，无法自定义</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">当振动手表功能处于开启状态时，此功能不可用</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">当 Vibration Watch 处于开启状态时，此功能不可用</string>
   <string name="shortcut_next">下一项</string>
   <string name="shortcut_previous">上一项</string>
   <string name="shortcut_scroll_forward">向前滚动</string>
@@ -871,8 +871,8 @@
   <string name="new_gesture_notification_content">点按即可了解如何通过新手势更快速地使用 SandFly。</string>
   <string name="dump_node_tree_description">系统已将节点树打印到日志中。</string>
   <string name="report_gesture_description">这些是您最近做过的手势，请报告出错的手势以及该手势应执行的操作。</string>
-  <string name="update_welcome_talkback_16.1">此 SandFly 更新引入了以下改进：将“描述屏幕内容”功能扩展到更多语言；进行了其他质量优化，让 SandFly 用起来更简单。\n\n接下来的几个界面将为您详细介绍这些更改。\n\n之后，您可以在 SandFly 中依次前往“SandFly 设置”&gt;“新功能”，查看这些信息。</string>
-  <string name="update_welcome_talkback_16.1_tts">此 SandFly 更新引入了以下改进：将“描述屏幕内容”功能扩展到更多语言；进行了其他质量优化，让 SandFly 用起来更简单。\n\n接下来的几个界面将为您详细介绍这些更改。\n\n之后，您可以在 SandFly 中依次前往“SandFly 设置”和“新功能”，查看这些信息。</string>
+  <string name="update_welcome_talkback_16.1">此 SandFly 更新引入了以下改进：将“描述屏幕内容”功能扩展到更多语言；进行了其他质量优化，让 SandFly 用起来更简单。\n\n接下来的几个界面将为您详细介绍这些更改。\n\n之后，您可以依次前往“SandFly 设置”&gt;“SandFly 中的新功能”，查看这些信息。</string>
+  <string name="update_welcome_talkback_16.1_tts">此 SandFly 更新引入了以下改进：将“描述屏幕内容”功能扩展到更多语言；进行了其他质量优化，让 SandFly 用起来更简单。\n\n接下来的几个界面将为您详细介绍这些更改。\n\n之后，您可以依次前往“SandFly 设置”和“SandFly 中的新功能”，查看这些信息。</string>
   <string name="shortcut_for_dictation_title">“语音输入”快捷方式</string>
   <string name="shortcut_for_dictation_content">使用 Gboard 时，您现在只需用双指点按两次，即可开始或停止语音输入。
 &lt;br&gt;
@@ -908,12 +908,8 @@
   <string name="braille_display_settings_link">盲文显示屏设置</string>
   <string name="keyboard_smart_browse_mode_title">键盘：智能浏览模式</string>
   <string name="keyboard_smart_browse_mode_text">在您浏览网页时，SandFly 智能浏览模式会在编辑字段中关闭浏览模式，以便您使用实体键盘输入内容。然后，当您跳转到网页上的非编辑字段时，浏览模式会重新开启，以便您继续顺畅浏览网页。您可以依次前往<xliff:g id="settings_path">%1$s</xliff:g>，开启或关闭“智能浏览模式”。</string>
-  <string name="advanced_settings_link">“SandFly 设置”&gt;“高级设置”</string>
-  <string name="advanced_settings_link_tts">“SandFly 设置”和“高级设置”</string>
   <string name="keyboard_tutorial_title">键盘教程</string>
   <string name="keyboard_tutorial_text">SandFly 现在提供了键盘教程，介绍如何使用实体键盘的增强型按键映射的键盘快捷键和命令。如需访问该教程，请依次前往：<xliff:g id="settings_path">%1$s</xliff:g>。</string>
-  <string name="tutorial_link">“SandFly 设置”&gt;“SandFly 教程”</string>
-  <string name="tutorial_link_tts">“SandFly 设置”和“SandFly 教程”</string>
   <string name="tutorial_entry_point_title">教程</string>
   <string name="welcome_to_talkback_title">欢迎使用 SandFly</string>
   <string name="talkback_is_on">SandFly 已开启</string>
@@ -1255,7 +1251,7 @@
   <string name="pref_auto_enter_table_navigation_title">进入表格时自动切换到表格导航朗读控件</string>
   <string name="title_text_formatting_menu">描述文字格式</string>
   <string name="summary_text_formatting_menu">读出不同的文字格式，例如粗体、斜体、下划线等</string>
-  <string name="title_text_formatting_inline">读出文字格式信息</string>
+  <string name="title_text_formatting_inline">朗读文本格式</string>
   <string name="title_switch_text_formatting">朗读文本格式</string>
   <string name="summary_text_formatting_verbosity">读出不同的文字样式，例如粗体和斜体</string>
   <string name="summary_text_formatting_selector">是否朗读粗体和斜体等格式</string>
@@ -1560,8 +1556,6 @@
     <!-- Summary of the Vibration Watch gesture switch. SandFly stops handling the two gestures; the user must separately enable Samsung's Vibration Watch feature in the watch's accessibility settings. [CHAR LIMIT=NONE] -->
     <string name="summary_pref_reserve_vibration_watch_gestures">停止 SandFly 处理两指单击和双击，以便三星 Vibration Watch 使用它们。请先在手表的无障碍设置中启用 Vibration Watch。</string>
 
-    <!-- Explanation shown instead of a gesture's assigned action when the Vibration Watch switch in Advanced Settings makes its two-finger single or double tap unavailable to SandFly. [CHAR LIMIT=NONE] -->
-    <string name="shortcut_reserved_for_vibration_watch">已在高级设置中为 Vibration Watch 保留</string>
 
     <!-- Title of the setting that moves calls to the speaker when the phone is away from the ear. [CHAR LIMIT=NONE] -->
     <string name="title_pref_speakerphone_away_from_ear">离开耳边时用扬声器</string>
@@ -1596,8 +1590,6 @@
     <!-- Title of the notification that asks whether an app may speak through SandFly. The app's name is filled in. [CHAR LIMIT=NONE] -->
     <string name="speech_control_ask_title">允许 <xliff:g id="app" example="Tasker">%1$s</xliff:g> 通过 SandFly 朗读吗？</string>
 
-    <!-- Text of that notification. [CHAR LIMIT=NONE] -->
-    <string name="speech_control_ask_text">它可以用你的 SandFly 声音朗读文本。你可以在高级设置中更改此项。</string>
 
     <!-- Button in that notification that lets the app speak. [CHAR LIMIT=30] -->
     <string name="speech_control_allow">允许</string>
@@ -1612,10 +1604,10 @@
     <string name="permission_speak_description">允许应用请求用你的 SandFly 声音朗读文本。应用朗读前 SandFly 会先询问你。</string>
 
     <!-- Name of the permission that an app needs to ask to be a braille display for SandFly, shown in the app's permission list. [CHAR LIMIT=NONE] -->
-    <string name="permission_braille_display_label">请求成为 SandFly 的盲文显示器</string>
+    <string name="permission_braille_display_label">请求成为 SandFly 的盲文显示屏</string>
 
     <!-- Description of that permission. [CHAR LIMIT=NONE] -->
-    <string name="permission_braille_display_description">允许应用请求成为 SandFly 的盲文显示器。如果你在 SandFly 中允许，它就能读取屏幕上的全部内容并控制你的设备。SandFly 会先询问你。</string>
+    <string name="permission_braille_display_description">允许应用请求成为 SandFly 的盲文显示屏。如果你在 SandFly 中允许，它就能读取屏幕上的全部内容并控制你的设备。SandFly 会先询问你。</string>
 
     <!-- Title of the setting for saying a word from a spelling alphabet, such as "hotel" for h, for letters such as keyboard keys and letters moved over by character. [CHAR LIMIT=40] -->
     <string name="title_pref_phonetic_letters_mode">以拼读单词朗读字母</string>
@@ -1730,8 +1722,6 @@
     -->
     <string name="summary_pref_speak_notifications">新通知到达时朗读。来电始终朗读。</string>
 
-    <!-- The text of the SandFly-on banner when no 3-finger tap opens the SandFly menu. [CHAR_LIMIT=NONE]-->
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly 已开启。用两根手指按住屏幕 5 秒可关闭。要停止显示此消息，请关闭 SandFly 设置 > 高级设置 > 显示关闭 SandFly 的说明。</string>
 
     <!-- Announce toggle sound feedback on or off -->
 
@@ -2283,10 +2273,10 @@
     <string name="value_distance_30mm">3厘米</string>
     <string name="value_distance_40mm">4厘米</string>
     <string name="value_distance_50mm">5厘米</string>
-    <string name="title_pref_fix_stuck_touch_exploration">修复触摸探索卡住的问题</string>
+    <string name="title_pref_fix_stuck_touch_exploration">修复触摸浏览卡住的问题</string>
     <string name="summary_pref_fix_stuck_touch_exploration_no_dump">如果没有 DUMP 权限，SandFly 只能提示触摸浏览可能卡住了。要让 SandFly 修复此问题，请运行：adb shell pm grant <xliff:g id="package" example="fyi.quin.backtalk">%1$s</xliff:g> android.permission.DUMP</string>
-    <string name="stuck_touch_exploration_fixing">修复触摸探索</string>
-    <string name="stuck_touch_exploration_fixed">触摸探索已修复</string>
+    <string name="stuck_touch_exploration_fixing">修复触摸浏览</string>
+    <string name="stuck_touch_exploration_fixed">触摸浏览已修复</string>
     <string name="stuck_touch_exploration_not_fixed">触摸浏览仍然卡住。请重启手机以修复。</string>
     <string name="stuck_touch_exploration_restart">触摸浏览可能卡住了。请重启手机以修复。</string>
     <string name="stuck_touch_exploration_grant_dump">触摸浏览可能卡住了。请重启手机以修复，或通过 ADB 向 SandFly 授予 DUMP 权限，以便 SandFly 进行修复。</string>
@@ -2304,9 +2294,9 @@
     <string name="title_keyboard_echo_physical">实体键盘输入回声</string>
     <string name="title_keyboard_echo_braille_keyboard">盲文键盘输入回声</string>
     <string name="title_keyboard_echo_handwriting_keyboard">手写键盘输入回声</string>
-    <string name="title_keyboard_echo_braille_display">盲文显示器输入回声</string>
+    <string name="title_keyboard_echo_braille_display">盲文显示屏输入回声</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
-    <string name="keyboard_enhanced_keymap_text">SandFly 现在为实体键盘提供“增强型按键映射”，其中包含多种新命令和快捷键。它包括“浏览模式”，可让使用实体键盘的 SandFly 用户更高效地浏览网页并与内容互动。您可以在 <xliff:g id="settings_path">%1$s</xliff:g> 中切换到“增强型按键映射”。\n\n如果您使用盲文显示器，还可以使用新的浏览模式快捷键直接从盲文显示器浏览内容。为配合此变化，部分盲文显示器快捷键已更改。您可以在 <xliff:g id="braille_display_settings_path">%2$s</xliff:g> 中查看所有盲文显示器快捷键的列表。</string>
+    <string name="keyboard_enhanced_keymap_text">SandFly 现在为实体键盘提供“增强型按键映射”，其中包含多种新命令和快捷键。它包括“浏览模式”，可让使用实体键盘的 SandFly 用户更高效地浏览网页并与内容互动。您可以在 <xliff:g id="settings_path">%1$s</xliff:g> 中切换到“增强型按键映射”。\n\n如果您使用盲文显示屏，还可以使用新的浏览模式快捷键直接从盲文显示屏浏览内容。为配合此变化，部分盲文显示屏快捷键已更改。您可以在 <xliff:g id="braille_display_settings_path">%2$s</xliff:g> 中查看所有盲文显示屏快捷键的列表。</string>
     <string name="image_qna_ask_by_voice">通过语音询问</string>
     <string name="image_qna_stop_listening">停止聆听</string>
     <string name="image_qna_type_question">输入问题</string>
@@ -2330,8 +2320,7 @@
     <string name="dictation_whisper_needs_model">Whisper，需要已下载的模型</string>
     <string name="title_pref_whisper_models">Whisper 模型</string>
     <string name="dictation_whisper_use">使用</string>
-    <string name="title_pref_dictation_ai_service">用于听写的人工智能服务</string>
-    <string name="dictation_ai_same">与自动描述相同</string>
+    <string name="title_pref_dictation_ai_service">用于听写的AI 服务</string>
     <string name="title_pref_browse_mode_per_app">记住各应用的浏览模式</string>
     <string name="title_pref_export_settings">导出设置</string>
     <string name="title_pref_import_settings">导入设置</string>
@@ -2359,4 +2348,12 @@
         <item>1 分钟</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">静音后自动停止</string>
+    <string name="dictation_ai_same">与“图片和屏幕描述”相同</string>
+    <string name="navigation_settings_link">“SandFly 设置”&gt;“导航”</string>
+    <string name="navigation_settings_link_tts">“SandFly 设置”和“导航”</string>
+    <string name="shortcut_reserved_for_vibration_watch">已在“手势”中为 Vibration Watch 保留</string>
+    <string name="speech_control_ask_text">它可以用你的 SandFly 语音朗读文本。你可以依次前往“设置”、“语音”和“允许其他应用朗读”更改此项。</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly 已开启。双指按住屏幕 5 秒即可将其关闭。如要停止显示此消息，请关闭“SandFly 设置”&gt;“暂停和关闭”&gt;“显示 SandFly 关闭说明”。</string>
+    <string name="tutorial_link">“SandFly 设置”&gt;“帮助和反馈”&gt;“SandFly 教程”</string>
+    <string name="tutorial_link_tts">“SandFly 设置”、“帮助和反馈”和“SandFly 教程”</string>
 </resources>

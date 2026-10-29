@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Axtarış rejimindən istifadə etmək üçün defolt klaviatura düzülüşündən təkmil klaviatura düzülüşünə keçməlisiniz. Bu dəyişikliyi etsəniz, bəzi brayl displeyi əmrləriniz güncəllənəcək</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Ayarlar</string>
   <string name="bd_command_change_dialog_title">Bəzi əmrlər güncəllənib</string>
-  <string name="bd_command_change_dialog_message">Brayl displeyi əmrləri bu SandFly-da yenilənib:\n\n• Nöqtələrə basın: Əvvəlki element: 1, 7\n\n• Növbəti element: 4, 8\n\n• Əvvəlki oxu nəzarəti: 2, 3, 7, 8\n\n• Növbəti oxu nəzarəti: 5, 6, 7, 8</string>
+  <string name="bd_command_change_dialog_message">Brayl displeyi əmrləri bu SandFly-da yenilənib:\n\n• Nöqtələrə basın: Əvvəlki element: 1, 7\n\n• Növbəti element: 4, 8\n\n• Əvvəlki oxuma kontrolu: 2, 3, 7, 8\n\n• Növbəti oxuma kontrolu: 5, 6, 7, 8</string>
   <string name="bd_preference_braille_contracted">Qısa brayl</string>
   <string name="bd_preference_braille_uncontracted">Tam brayl</string>
   <string name="bd_braille_grade_tips">Brayl displeyi ilə qısa və tam versiya arasında cəld keçid üçün boşluq və 1, 2, 4, 5 nöqtələrini basın.\n\nBu əmr hər iki brayl səviyyəsinə malik dildə işləyir.</string>
@@ -205,8 +205,8 @@
   <string name="bd_cmd_control_previous">Əvvəlki nizamlayıcı</string>
   <string name="bd_cmd_list_next">Növbəti keçid</string>
   <string name="bd_cmd_list_previous">Əvvəlki keçid</string>
-  <string name="bd_cmd_next_reading_control">Növbəti oxuma nizamlayıcısı</string>
-  <string name="bd_cmd_previous_reading_control">Əvvəlki oxuma nizamlayıcısı</string>
+  <string name="bd_cmd_next_reading_control">Növbəti oxuma kontrolu</string>
+  <string name="bd_cmd_previous_reading_control">Əvvəlki oxuma kontrolu</string>
   <string name="bd_cmd_toggle_auto_scroll">Avtomatik sürüşdürməni aktiv və ya deaktiv edin</string>
   <string name="bd_cmd_increase_auto_scroll_duration">Displey müddətini artırın</string>
   <string name="bd_cmd_decrease_auto_scroll_duration">Displey müddətini azaldın</string>
@@ -283,7 +283,7 @@
   <string name="bd_cmd_subcategory_title_window">Pəncərə</string>
   <string name="bd_cmd_subcategory_title_place_on_page">Səhifədə əlavə edin</string>
   <string name="bd_cmd_subcategory_title_web_content">Veb kontenti</string>
-  <string name="bd_cmd_subcategory_title_reading_controls">Oxuma kontrolu</string>
+  <string name="bd_cmd_subcategory_title_reading_controls">Oxuma kontrolları</string>
   <string name="bd_cmd_subcategory_title_auto_scroll">Avtomatik sürüşdürmə</string>
   <string name="bd_cmd_subcategory_title_move_cursor">Kursoru hərəkət etdirin</string>
   <string name="bd_cmd_subcategory_title_select">Seçin</string>

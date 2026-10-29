@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">બ્રાઉઝ મોડનો ઉપયોગ કરવા માટે, તમારે ડિફૉલ્ટ કીમૅપ પરથી બહેતર બનાવેલા કીમૅપ પર સ્વિચ કરવું જરૂરી રહેશે. આ ફેરફારથી બ્રેઇલ ડિસ્પ્લેના તમારા અમુક આદેશો અપડેટ થશે</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">સેટિંગ</string>
   <string name="bd_command_change_dialog_title">કેટલાક આદેશો અપડેટ કરવામાં આવ્યા છે</string>
-  <string name="bd_command_change_dialog_message">SandFlyના આ વર્ઝનમાં બ્રેઇલ ડિસ્પ્લેના આદેશો અપડેટ કરવામાં આવ્યા હતા:\n\n• પાછલી આઇટમ: ડૉટ 1, 7 દબાવો\n\n• આગલી આઇટમ: ડૉટ 4, 8 દબાવો\n\n• વાંચનનું પાછલું નિયંત્રણ: ડૉટ 2, 3, 7, 8 દબાવો\n\n• વાંચનનું આગલું નિયંત્રણ: ડૉટ 5, 6, 7, 8 દબાવો</string>
+  <string name="bd_command_change_dialog_message">SandFlyના આ વર્ઝનમાં બ્રેઇલ ડિસ્પ્લેના આદેશો અપડેટ કરવામાં આવ્યા હતા:\n\n• પહેલાંની આઇટમ: ડૉટ 1, 7 દબાવો\n\n• આગલી આઇટમ: ડૉટ 4, 8 દબાવો\n\n• વાંચનનું પાછલું નિયંત્રણ: ડૉટ 2, 3, 7, 8 દબાવો\n\n• વાંચનનું આગલું નિયંત્રણ: ડૉટ 5, 6, 7, 8 દબાવો</string>
   <string name="bd_preference_braille_contracted">કોન્ટ્રાક્ટેડ બ્રેઇલ</string>
   <string name="bd_preference_braille_uncontracted">અનકોન્ટ્રાક્ટેડ બ્રેઇલ</string>
   <string name="bd_braille_grade_tips">બ્રેઇલ ડિસ્પ્લેનો ઉપયોગ કરીને કોન્ટ્રાક્ટેડ અને અનકોન્ટ્રાક્ટેડ વચ્ચે ઝડપથી સ્વિચ કરવા માટે, સ્પેસબાર અને ડૉટ 1, 2, 4, 5 દબાવો.\n\nજો તમે બન્ને બ્રેઇલ ગ્રેડ સાથેની ભાષાનો ઉપયોગ કરો છો, તો આ આદેશ કામ કરે છે.</string>
@@ -224,7 +224,7 @@
   <string name="bd_cmd_open_talkback_menu">SandFly મેનૂ ખોલો</string>
   <string name="bd_cmd_toggle_voice_feedback">SandFly સ્પીચ ચાલુ કે બંધ કરો</string>
   <string name="bd_cmd_read_stop">વાંચવાનું રોકો</string>
-  <string name="bd_cmd_talkback_settings">SandFly સેટિંગ ખોલો</string>
+  <string name="bd_cmd_talkback_settings">SandFlyના સેટિંગ ખોલો</string>
   <string name="bd_cmd_switch_to_next_input_language">ટાઇપ કરવાની આગલી ભાષા પર સ્વિચ કરો</string>
   <string name="bd_cmd_switch_to_next_output_language">વાંચવાની આગલી ભાષા પર સ્વિચ કરો</string>
   <string name="bd_cmd_toggle_contracted_mode">સંક્ષિપ્ત અને અસંક્ષિપ્ત મોડ વચ્ચે સ્વિચ કરો</string>
@@ -305,7 +305,7 @@
   <string name="bd_caption_tutorial_dialog_message">આ વીડિયોના કૅપ્શન બતાવવા કે છુપાવવા માટે, સ્પેસબાર અને ડૉટ 1, 4, 7, 8 દબાવો.\n\nસપોર્ટેડ મીડિયા માટે ઑટોમૅટિક રીતે કૅપ્શન બતાવવા માટે, સેટિંગમાંથી \'બ્રેઇલ ડિસ્પ્લે પર કૅપ્શન બતાવો\' ચાલુ કરો.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">કૅપ્શન ઉપલબ્ધ હોય ત્યારે હંમેશાં આ મેસેજ બતાવો</string>
   <string name="bd_usb_connect_dialog_title">બ્રેઇલ ડિસ્પ્લે USB સાથે કનેક્ટ કર્યું</string>
-  <string name="bd_usb_connect_dialog_message">તમારા %sની બૅટરી તમારા બ્રેઇલ ડિસ્પ્લેને ચાર્જ કરી રહી છે.\n\nજો તમને બ્લૂટૂથ સાથે કનેક્ટ કરવાની જરૂર પડે, તો તમારું USB અથવા USB હબ ડિસ્કનેક્ટ કરો અને SandFly સેટિંગ &gt; બ્રેઇલ ડિસ્પ્લે પર જાઓ.</string>
+  <string name="bd_usb_connect_dialog_message">તમારા %sની બૅટરી તમારા બ્રેઇલ ડિસ્પ્લેને ચાર્જ કરી રહી છે.\n\nજો તમને બ્લૂટૂથ સાથે કનેક્ટ કરવાની જરૂર પડે, તો તમારું USB અથવા USB હબ ડિસ્કનેક્ટ કરો અને SandFlyના સેટિંગ &gt; બ્રેઇલ ડિસ્પ્લે પર જાઓ.</string>
   <string name="bd_device">ફોન</string>
   <string name="bd_battery_low_dialog_title">%sની બૅટરી ઓછી છે</string>
   <string name="bd_battery_low_dialog_message">તમારા %sની બૅટરી તમારા બ્રેઇલ ડિસ્પ્લેને ચાર્જ કરી રહી છે.\n\nબૅટરી બચાવવા માટે:\n\n

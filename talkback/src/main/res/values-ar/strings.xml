@@ -91,7 +91,6 @@
   <string name="title_pref_cover_proximity_sensor">تغطية أداة استشعار التقارب لإيقاف الكلام</string>
   <string name="title_pref_reserve_vibration_watch_gestures">‏حجز الإيماءات لتطبيق Vibration Watch</string>
   <string name="summary_pref_reserve_vibration_watch_gestures">‏يمنع SandFly من معالجة النقر مرة واحدة والنقر مرّتين بإصبعين كي يتمكّن تطبيق Samsung Vibration Watch من استخدامها. فعِّل Vibration Watch من إعدادات تسهيل الاستخدام في ساعتك.</string>
-  <string name="shortcut_reserved_for_vibration_watch">‏محجوز لتطبيق Vibration Watch في الإعدادات المتقدّمة</string>
   <string name="title_pref_speakerphone_away_from_ear">مكبّر الصوت عند إبعاد الهاتف عن أذنك</string>
   <string name="summary_pref_speakerphone_away_from_ear">أثناء المكالمة، يتم التبديل إلى مكبّر الصوت عند إبعاد الهاتف عن أذنك، والعودة إلى سمّاعة الأذن عند رفعه إليها مرة أخرى.</string>
   <string name="summary_pref_speakerphone_needs_permission">‏يتطلّب إذنًا لا يمنحه Android لقارئات الشاشة. لمنحه، نفِّذ هذا الأمر باستخدام adb أو Shizuku، ثم عُد إلى هذه الشاشة: %1$s</string>
@@ -100,7 +99,6 @@
   <string name="speech_control_apps_category">التطبيقات</string>
   <string name="speech_control_no_apps">لم يطلب أي تطبيق النطق حتى الآن.</string>
   <string name="speech_control_ask_title">‏هل تريد السماح لتطبيق %1$s بالنطق عبر SandFly؟</string>
-  <string name="speech_control_ask_text">‏يمكنه نطق نص بصوت SandFly. يمكنك تغيير ذلك من الإعدادات المتقدّمة.</string>
   <string name="speech_control_allow">سماح</string>
   <string name="speech_control_deny">عدم السماح</string>
   <string name="permission_speak_label">‏النطق عبر SandFly</string>
@@ -179,7 +177,7 @@
   <string name="title_pref_category_selector_menu">عناصر التحكّم في القراءة</string>
   <string name="title_pref_category_navigation_menu">تعديل خيارات التنقل</string>
   <string name="title_pref_manage_keyboard_shortcuts">اختصارات لوحة المفاتيح</string>
-  <string name="title_pref_export_custom_labels">تصدير فئات مخصصة</string>
+  <string name="title_pref_export_custom_labels">تصدير تصنيفات مخصصة</string>
   <string name="title_pref_help_and_feedback">المساعدة والملاحظات</string>
   <string name="title_pref_help">مساعدة</string>
   <string name="title_pref_show_tos">بنود الخدمة</string>
@@ -192,7 +190,6 @@
   <string name="summary_pref_show_exit_watermark">عند تفعيل SandFly، عرض طريقة إيقافه</string>
   <string name="talkback_exit_watermark_text">‏ميزة SandFly مفعَّلة. ويمكن إيقافها بالضغط مع الاستمرار على الشاشة بإصبعين لمدة ٥ ثوانٍ، ويمكن إيقاف عرض هذه الرسالة عن طريق النقر باستخدام ٣ أصابع لفتح قائمة SandFly.</string>
   <string name="talkback_exit_watermark_hint_text">‏يتم عرض بانر يوضِّح أنّ ميزة SandFly مفعَّلة. لإيقاف ميزة SandFly، اضغط مع الاستمرار بإصبعين على الشاشة لمدة 5 ثوانٍ. ولإزالة هذا البانر، يمكنك الانتقال إلى \"إعدادات SandFly\".</string>
-  <string name="talkback_exit_watermark_text_no_menu_gesture">‏ميزة SandFly مفعَّلة. اضغط مع الاستمرار بإصبعين على الشاشة لمدة 5 ثوانٍ لإيقافها. لإيقاف عرض هذه الرسالة، أوقِف الخيار في إعدادات SandFly ‏&gt; الإعدادات المتقدّمة ‏&gt; عرض تعليمات إيقاف SandFly.</string>
   <string name="reset_gesture_settings_title">إعادة ضبط إعدادات الإيماءات</string>
   <string name="one_finger_gestures_title">إصبع واحد</string>
   <string name="one_finger_back_forth_gestures_title">إيماءات يتم تنفيذها بالاتجاهين بإصبع واحد</string>
@@ -480,7 +477,7 @@
   <string name="shortcut_title_special_features">غير ذلك</string>
   <string name="shortcut_unassigned">النقر لتخصيص الاختصار</string>
   <string name="shortcut_not_customizable">%1$s غير قابل للتخصيص.</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">لا يمكن استخدام الاختصار لأنّ ميزة اهتزاز الساعة مفعَّلة</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">غير متاح عند تفعيل Vibration Watch</string>
   <string name="shortcut_next">العنصر التالي</string>
   <string name="shortcut_previous">العنصر السابق</string>
   <string name="shortcut_scroll_forward">الانتقال للأمام</string>
@@ -585,7 +582,7 @@
   <string name="title_viewpager_breakout_page_right">يسار الصفحة</string>
   <string name="title_labeling_controls">التصنيفات</string>
   <string name="title_labeling_show_or_hide_controls">إضافة تصنيفات أو تعديلها</string>
-  <string name="title_granularity">التنقل</string>
+  <string name="title_granularity">التنقّل</string>
   <string name="title_read_from_top">القراءة من أعلى الشاشة</string>
   <string name="title_copy_last_spoken_phrase">نسخ آخر عبارة محكية</string>
   <string name="title_spell_last_spoken_phrase">تهجئة آخر عبارة محكية</string>
@@ -593,7 +590,7 @@
   <string name="title_custom_action">الإجراءات</string>
   <string name="title_show_hide_screen">تعتيم الشاشة أو إظهارها</string>
   <string name="title_control_speak_time">قول الوقت بصوت عالٍ</string>
-  <string name="title_show_screen_search">البحث المباشر</string>
+  <string name="title_show_screen_search">بحث مباشر</string>
   <string name="title_show_voice_commands">الطلبات الصوتية</string>
   <string name="title_show_keyboard_shortcuts">اختصارات لوحة المفاتيح</string>
   <string name="talkback_show_talkback_settings">‏إعدادات SandFly</string>
@@ -833,7 +830,7 @@
   <string name="label_dialog_confirm_label_remove">تمت إزالة التصنيف.</string>
   <string name="label_dialog_text">‏يُرجى إدخال نص تسمية هذا العنصر\nالاسم الداخلي للعنصر المعروض: %1$s</string>
   <string name="label_dialog_edit_hint">نص التصنيف</string>
-  <string name="label_import">استيراد فئات مخصصة</string>
+  <string name="label_import">استيراد تصنيفات مخصصة</string>
   <string name="label_import_dialog_title">استيراد تصنيفات مخصّصة إلى SandFly</string>
   <string name="label_import_dialog_message">اختر ما إذا كنت تريد الإلغاء أو تخطي التسميات الحالية في حال وجود تعارض</string>
   <string name="label_import_dialog_skip">تخطي</string>
@@ -919,7 +916,7 @@
   <string name="title_pref_selector_audio_focus">تجنب التداخل مع أصوات أخرى</string>
   <string name="title_pref_support_scroll_seq">التنقّل</string>
   <string name="title_pref_a11y_volume">مستوى صوت \"تسهيل الاستخدام\"</string>
-  <string name="title_pref_touch_explore_latency">وقت الاستجابة للتركيز على الكتابة</string>
+  <string name="title_pref_touch_explore_latency">مهلة الاستجابة للتركيز على الكتابة</string>
   <string name="title_pref_touch_focus_latency">مهلة الاستجابة للتركيز</string>
   <string name="message_pref_touch_focus_latency">‏كلّما كانت المهلة أقصر، بدأ SandFly بالقراءة بشكل أسرع بعد لمس الشاشة</string>
   <string name="message_pref_typing_method_prefix">لتقليل زمن الاستجابة إلى أدنى حدّ عند اختيار المفاتيح أثناء الكتابة، يمكنك اختيار الإعداد \"اضغط بإصبعك مع الاستمرار لاختيار أي مفتاح ثم ارفعه\"</string>
@@ -952,10 +949,10 @@
   <string name="msg_matches_found">{matches,plural, =0{ما مِن نتائج مطابقة على هذه الشاشة}=1{نتيجة مطابقة واحدة}two{نتيجتان مطابقتان}few{‫# نتائج مطابقة}many{‫# نتيجة مطابقة}other{‫# نتيجة مطابقة}}</string>
   <string name="msg_no_matches">ما مِن نتائج متطابقة على هذه الشاشة.</string>
   <string name="dialog_title_continuous_reading_mode">كيف يعمل \"وضع القراءة بدون توقّف\"</string>
-  <string name="dialog_message_continuous_reading_mode">‏بعد النقر على \"القراءة من أعلى الشاشة\" أو \"القراءة من العنصر الذي تم التركيز عليه\"، سيظل بإمكانك الانتقال إلى العنصر السابق أو العنصر التالي أثناء قراءة النص. ويتيح لك ذلك الرجوع إلى العنصر السابق أو التخطّي إلى العنصر التالي بسهولة.\n\nلضبط مستوى الصوت أثناء تحدُّث SandFly، اضغط على أحد مفتاحَي رفع الصوت أو خفضه.</string>
+  <string name="dialog_message_continuous_reading_mode">‏بعد النقر على \"القراءة من أعلى الشاشة\" أو \"القراءة من العنصر المركَّز عليه\"، سيظل بإمكانك الانتقال إلى العنصر السابق أو العنصر التالي أثناء قراءة النص. ويتيح لك ذلك الرجوع إلى العنصر السابق أو التخطّي إلى العنصر التالي بسهولة.\n\nلضبط مستوى الصوت أثناء تحدُّث SandFly، اضغط على أحد مفتاحَي رفع الصوت أو خفضه.</string>
   <string name="always_show_this_message_label">عرض هذه الرسالة دائمًا</string>
   <string name="dialog_title_voice_commands">‏استخدام الطلبات الصوتية للتحكّم في SandFly</string>
-  <string name="dialog_message_voice_commands">‏إليك عبارات مقترَحة:\n\n• النسخ\n• القراءة من العنصر الذي تم التركيز عليه\n• البحث [الحفظ]\n• التحدث [أسرع]\n• إعدادات SandFly\n\nقُل \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" لعرض قائمة بجميع الطلبات الصوتية</string>
+  <string name="dialog_message_voice_commands">‏إليك عبارات مقترَحة:\n\n• النسخ\n• القراءة من العنصر المركَّز عليه\n• البحث [الحفظ]\n• التحدث [أسرع]\n• إعدادات SandFly\n\nقُل \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" لعرض قائمة بجميع الطلبات الصوتية</string>
   <string name="start_voice_command">استخدام الطلبات الصوتية</string>
   <string name="dialog_title_pass_through_mode">‏تخطي إيماءات SandFly لاستخدام إيماءات النظام</string>
   <string name="dialog_message_pass_through_mode">‏عند سماع رنين، يمكنك استخدام إيماءة نظام التشغيل غير المتاحة في SandFly. ‏وتُعرف هذه العملية بإيماءة تجاوز Talkback.</string>
@@ -1036,7 +1033,7 @@
   <string name="new_shortcut_gesture_note">‏ملاحظة: لقد خصّصت بعض الإيماءات، لذا قد لا تكون هذه المعلومات دقيقة. لمراجعة الإيماءات، انتقِل إلى إعدادات SandFly.</string>
   <string name="welcome_to_android11_text">‏تمت إضافة إيماءات جديدة لتسهيل وتسريع استخدام SandFly.\n\nيمكنك تجربة الإيماءات الجديدة على هذه الشاشة. يمكنك مراجعة هذه المعلومات في إعدادات SandFly في أي وقت.</string>
   <string name="new_gesture_notification_title">‏الإيماءات الجديدة في SandFly</string>
-  <string name="new_gesture_notification_content">‏انقر لمعرفة كيفية استخدام SandFly بشكلٍ أسرع باستخدام الميزات الجديدة.</string>
+  <string name="new_gesture_notification_content">‏انقر لمعرفة كيفية استخدام SandFly بشكلٍ أسرع باستخدام الإيماءات الجديدة.</string>
   <string name="dump_node_tree_description">تمت طباعة شجرة العُقَد إلى السجلات.</string>
   <string name="report_gesture_description">إليك الإيماءات التي تم تنفيذها مؤخرًا، يُرجى الإبلاغ عن الإيماءة الخاطئة وعما هو متوقع.</string>
   <string name="update_welcome_talkback_16.1">‏يتضمّن تحديث SandFly الأخير إضافة لغات جديدة إلى ميزة \"وصف محتوى الشاشة\"، وتحسينات أخرى على الجودة لتسهيل استخدامه.\n\nتعرض الصفحات القليلة التالية المزيد من التفاصيل حول هذه التغييرات.\n\nلمراجعة هذه المعلومات لاحقًا، يُرجى الانتقال إلى \"إعدادات SandFly\" &gt; \"الميزات الجديدة في SandFly\".</string>
@@ -1077,12 +1074,8 @@
   <string name="braille_display_settings_link">إعدادات جهاز العرض بلغة برايل</string>
   <string name="keyboard_smart_browse_mode_title">لوحة المفاتيح: وضع التصفّح الذكي</string>
   <string name="keyboard_smart_browse_mode_text">‏يوقف \"وضع التصفّح الذكي\" في SandFly \"وضع التصفّح\" عند الانتقال إلى حقل تعديل لمساعدتك في الكتابة باستخدام لوحة مفاتيح خارجية عند تصفّح الويب. ثم يعيد تفعيله عند الانتقال إلى حقل غير مخصّص للتعديل على الويب حتى يمكنك مواصلة التصفّح بكفاءة. يمكنك تفعيل \"وضع التصفّح الذكي\" أو إيقافه في \"<xliff:g id="settings_path">%1$s</xliff:g>\".</string>
-  <string name="advanced_settings_link">‏إعدادات SandFly &gt; الإعدادات المتقدّمة</string>
-  <string name="advanced_settings_link_tts">‏\"إعدادات SandFly\" ثم \"الإعدادات المتقدّمة\"</string>
   <string name="keyboard_tutorial_title">الدليل التعليمي لتفاعلات لوحة المفاتيح</string>
   <string name="keyboard_tutorial_text">‏يتضمّن SandFly الآن دليلاً تعليميًا لتفاعلات لوحة المفاتيح مصمّمًا لمساعدتك في التعرّف على اختصارات لوحة المفاتيح وأوامر \"خريطة المفاتيح المحسّنة\" عند استخدام لوحة مفاتيح خارجية. للوصول إلى الدليل التعليمي، يُرجى الانتقال إلى \"<xliff:g id="settings_path">%1$s</xliff:g>\".</string>
-  <string name="tutorial_link">‏إعدادات SandFly &gt; الدليل التوجيهي عن SandFly</string>
-  <string name="tutorial_link_tts">‏\"إعدادات SandFly\" ثم \"الدليل التوجيهي عن SandFly\"</string>
   <string name="tutorial_entry_point_title">الدليل التوجيهي</string>
   <string name="welcome_to_talkback_title">‏مرحبًا بك في SandFly</string>
   <string name="talkback_is_on">‏SandFly مفعَّل</string>
@@ -1236,8 +1229,8 @@
   <string name="checking_notifications_tips">للاطّلاع على سجلّ الإشعارات، مرِّر سريعًا من أعلى الشاشة إلى أسفلها باستخدام إصبعين</string>
   <string name="image_description_playground_title">الحصول على وصف للصور</string>
   <string name="image_description_playground_content_one">‏عند التركيز على صورة، افتح قائمة SandFly وانقر على \"وصف الصورة\".\n\nتتوفّر صورة واحدة أدناه. جرِّب الحصول على وصف لها.</string>
-  <string name="image_description_playground_content_two">‏يمكنك تغيير إعدادات وصف الصور متى شئت من \"إعدادات SandFly\" &gt; \"الأوصاف التلقائية\".</string>
-  <string name="image_description_playground_content_two_tts">‏يمكنك تغيير إعدادات وصف الصور في أي وقت من خلال الانتقال إلى \"إعدادات SandFly\" ثم \"الأوصاف التلقائية\".</string>
+  <string name="image_description_playground_content_two">‏يمكنك تغيير إعدادات وصف الصور متى شئت من \"إعدادات SandFly\" &gt; \"أوصاف الصور والشاشة\".</string>
+  <string name="image_description_playground_content_two_tts">‏يمكنك تغيير إعدادات وصف الصور في أي وقت من خلال الانتقال إلى \"إعدادات SandFly\" ثم \"أوصاف الصور والشاشة\".</string>
   <string name="image_description_sample_image_content_description">‏نموذج صورة: انقر باستخدام 3 أصابع لفتح قائمة SandFly، ثم اختَر \"وصف الصورة\" للاستماع إلى وصفها.</string>
   <string name="practice_gestures_title">التدريب على استخدام الإيماءات</string>
   <string name="practice_keyboard_gestures_title">التدرّب على اختصارات لوحة المفاتيح</string>
@@ -1403,7 +1396,7 @@
   <string name="gemini_network_error">‏لا يتوفّر اتصال بالإنترنت. يُرجى التحقّق من الاتصال بشبكة Wi-Fi أو شبكة الجوّال، ثم إعادة المحاولة.</string>
   <string name="gemini_screenshot_unavailable">إمكانية تصوير الشاشة غير متاحة</string>
   <string name="gemini_error_parsing_result">‏حدث خطأ في تحليل ردود Gemini</string>
-  <string name="gemini_error_api_key">‏لم يقبل Gemini مفتاح واجهة برمجة التطبيقات. تحقَّق من المفتاح في إعدادات الأوصاف التلقائية.</string>
+  <string name="gemini_error_api_key">‏لم يقبل Gemini مفتاح واجهة برمجة التطبيقات. تحقَّق من المفتاح في إعدادات «أوصاف الصور والشاشة».</string>
   <string name="gemini_error_quota">‏تم بلوغ حدّ الاستخدام لمفتاح Gemini API. أعِد المحاولة لاحقًا.</string>
   <string name="gemini_error_busy">‏Gemini مشغول حاليًا. أعِد المحاولة بعد قليل.</string>
   <string name="gemini_error_timeout">‏استغرق Gemini وقتًا طويلاً للردّ. أعِد المحاولة.</string>
@@ -1432,7 +1425,7 @@
   <string name="title_text_formatting_menu">وصف تنسيق النص</string>
   <string name="summary_text_formatting_menu">لإجراء تغييرات مثل جعل النص غامقًا أو مائلاً أو وضع خط تحته أو غير ذلك</string>
   <string name="title_text_formatting_inline">قراءة تنسيق النص</string>
-  <string name="title_switch_text_formatting">قول تنسيق النص</string>
+  <string name="title_switch_text_formatting">قراءة تنسيق النص</string>
   <string name="summary_text_formatting_verbosity">للتغييرات مثل الخط الغامق والمائل</string>
   <string name="summary_text_formatting_selector">تغيير إمكانية وصف التنسيق، مثل الخط الغامق والمائل، بصوت عالٍ</string>
   <string name="title_text_formatting_verbosity_options">خيارات تنسيق النص</string>
@@ -1485,8 +1478,8 @@
     <string name="action_copy_command">نسخ الأمر</string>
     <string name="command_copied">تم نسخ الأمر</string>
     <string name="title_pref_speech_control_sound">تشغيل صوت قبل نطق التطبيقات الأخرى</string>
-    <string name="permission_braille_display_label">طلب العمل كشاشة برايل لـ SandFly</string>
-    <string name="permission_braille_display_description">يسمح للتطبيق بطلب العمل كشاشة برايل لـ SandFly. إذا سمحت بذلك في SandFly، يمكن للتطبيق قراءة كل ما يظهر على الشاشة والتحكّم في جهازك. يطلب SandFly موافقتك أولاً.</string>
+    <string name="permission_braille_display_label">طلب العمل كجهاز عرض بلغة برايل لـ SandFly</string>
+    <string name="permission_braille_display_description">يسمح للتطبيق بطلب العمل كجهاز عرض بلغة برايل لـ SandFly. إذا سمحت بذلك في SandFly، يمكن للتطبيق قراءة كل ما يظهر على الشاشة والتحكّم في جهازك. يطلب SandFly موافقتك أولاً.</string>
     <string name="title_pref_phonetic_letters_mode">قول الحروف بالأبجدية الصوتية</string>
     <string name="phonetic_letters_mode_off">غير مفعَّل</string>
     <string name="phonetic_letters_mode_after_letter_delay">بعد الحرف مع تأخير، مثل \"ه، هرم\"</string>
@@ -1559,7 +1552,7 @@
     <string name="title_keyboard_echo_on_screen">صدى لوحة المفاتيح على الشاشة</string>
     <string name="title_keyboard_echo_physical">صدى لوحة المفاتيح الخارجية</string>
     <string name="title_keyboard_echo_braille_keyboard">صدى لوحة مفاتيح برايل</string>
-    <string name="title_keyboard_echo_braille_display">صدى شاشة برايل</string>
+    <string name="title_keyboard_echo_braille_display">صدى جهاز العرض بلغة برايل</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_selector_vertical_navigation">التنقّل العمودي</string>
     <string name="summary_selector_vertical_navigation">انتقل إلى العنصر الموجود أسفله أو أعلاه، متجاوزًا العناصر الأخرى في الصف</string>
@@ -1782,7 +1775,6 @@
     <string name="title_pref_whisper_models">نماذج Whisper</string>
     <string name="dictation_whisper_use">استخدام</string>
     <string name="title_pref_dictation_ai_service">خدمة الذكاء الاصطناعي للإملاء الصوتي</string>
-    <string name="dictation_ai_same">مثل الأوصاف التلقائية</string>
     <string name="title_pref_browse_mode_per_app">تذكر وضع التصفح في كل تطبيق</string>
     <string name="title_pref_export_settings">تصدير الإعدادات</string>
     <string name="title_pref_import_settings">استيراد الإعدادات</string>
@@ -1810,4 +1802,12 @@
     <string name="shortcut_previous_track">المقطع السابق</string>
     <string name="sound_mode_needs_access">اسمح بالوصول إلى «عدم الإزعاج» لتفعيل «كتم الصوت» أو إيقافه.</string>
     <string name="title_pref_dictation_auto_stop">الإيقاف التلقائي بعد الصمت</string>
+    <string name="dictation_ai_same">كما في «أوصاف الصور والشاشة»</string>
+    <string name="navigation_settings_link">‏إعدادات SandFly &gt; التنقّل</string>
+    <string name="navigation_settings_link_tts">‏\"إعدادات SandFly\" ثم \"التنقّل\"</string>
+    <string name="shortcut_reserved_for_vibration_watch">محجوز لتطبيق Vibration Watch في «الإيماءات»</string>
+    <string name="speech_control_ask_text">يمكنه نطق النص بصوت SandFly. يمكنك تغيير ذلك في «الإعدادات» ثم «الكلام» ثم «السماح للتطبيقات الأخرى بالنطق».</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">‏ميزة SandFly مفعَّلة. ويمكن إيقافها بالضغط مع الاستمرار على الشاشة بإصبعين لمدة ٥ ثوانٍ. لإيقاف عرض هذه الرسالة، أوقِف «إعدادات SandFly» &gt; «الإيقاف المؤقت والإيقاف» &gt; «عرض تعليمات لإيقاف SandFly».</string>
+    <string name="tutorial_link">‏إعدادات SandFly &gt; المساعدة والملاحظات &gt; الدليل التوجيهي عن SandFly</string>
+    <string name="tutorial_link_tts">‏\"إعدادات SandFly\" ثم \"المساعدة والملاحظات\" ثم \"الدليل التوجيهي عن SandFly\"</string>
 </resources>

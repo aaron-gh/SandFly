@@ -49,6 +49,8 @@
   <string name="voice_commands_dictate">Хэлж бичүүлэхийг эхлүүлэх</string>
   <string name="voice_commands_write">Бичих</string>
   <string name="voice_commands_Spell">Үсэглэх</string>
+  <string name="voice_commands_sandfly_settings">SandFly-н тохиргоо</string>
+  <string name="voice_commands_sandfly_setting">SandFly-н тохиргоо</string>
   <string name="voice_commands_talkback_settings">TalkBack-н тохиргоо</string>
   <string name="voice_commands_talkback_setting">TalkBack-н тохиргоо</string>
   <string name="voice_commands_screen_search">Дэлгэцийн хайлт</string>
@@ -59,9 +61,9 @@
   <string name="voice_commands_paste">@android:string/paste</string>
   <string name="voice_commands_notification">Мэдэгдэл</string>
   <string name="voice_commands_notifications">Мэдэгдлүүд</string>
-  <string name="voice_commands_verbosity_parameter">Нуршсан дэлгэрэнгүй байдал %s</string>
-  <string name="voice_commands_parameter_verbosity">%s нуршсан дэлгэрэнгүй байдал</string>
-  <string name="voice_commands_change_verbosity_to_parameter">Нуршсан дэлгэрэнгүй байдлыг %s руу өөрчлөх</string>
+  <string name="voice_commands_verbosity_parameter">Нуршуу %s</string>
+  <string name="voice_commands_parameter_verbosity">%s нуршуу</string>
+  <string name="voice_commands_change_verbosity_to_parameter">Нуршууг %s руу өөрчлөх</string>
   <string name="voice_commands_navigation_by_parameter">%s-р шилжих</string>
   <string name="voice_commands_parameter_navigation">%s-н навигац</string>
   <string name="voice_commands_parameter_granularity">%s түвшин</string>
@@ -104,7 +106,7 @@
   <string name="voice_commands_help_next">Дараагийн [heading]</string>
   <string name="voice_commands_help_navigation">[Word] навигац</string>
   <string name="voice_commands_help_speech_rate">Ярих [faster]</string>
-  <string name="voice_commands_help_verbosity">[Low] нуршсан дэлгэрэнгүй байдал</string>
+  <string name="voice_commands_help_verbosity">[Low] нуршуу</string>
   <string name="voice_commands_help_next_description">Дараагийн гарчиг, хяналт, жагсаалт эсвэл газрын тэмдэглэгээ рүү очно</string>
   <string name="voice_commands_help_navigation_description">Үг, тэмдэгт, мөр, цогцолбор, гарчиг, хяналт болон бусад зүйлээр шилжинэ</string>
   <string name="voice_commands_help_speech_rate_description">Та мөн \"илүү удаан ярина уу\" гэж хэлэх боломжтой</string>
@@ -128,11 +130,11 @@
   <string name="voice_commands_help_overview_description">Саяхны аппуудаа хараарай</string>
   <string name="voice_commands_help_assistant_description">Google Туслахыг нээнэ</string>
   <string name="voice_commands_help_other_commands_title">Бусад тушаал</string>
-  <string name="voice_commands_help_other_commands_description">SandFly-н тохиргоо руу очиж, дэлгэцийг нууж, үйлдлүүдийг харж, тусгай шошго нэмж, илүү ихийг хийнэ</string>
+  <string name="voice_commands_help_other_commands_description">SandFly-н тохиргоо руу очиж, дэлгэцийг нууж, үйлдлүүдийг харж, захиалгат шошго нэмж, илүү ихийг хийнэ</string>
   <string name="voice_commands_help_label">Шошголох [submit]</string>
   <string name="voice_commands_help_hide_screen_description">Дэлгэцийг нууснаар таны дэлгэц олон нийтийн газарт бусдад харагдахгүй</string>
   <string name="voice_commands_help_show_screen_description">Таны дэлгэцийг нуусны дараа хэвийн төлөвт нь буцаана</string>
   <string name="voice_commands_help_actions_description">Одоогийн зүйлд боломжтой үйлдлүүдийг харуулна</string>
-  <string name="voice_commands_help_label_description">\"Илгээх\" гэж хэлэхийн тулд тусгай шошго нэмж эсвэл засаарай</string>
+  <string name="voice_commands_help_label_description">\"Илгээх\" гэж хэлэхийн тулд захиалгат шошго нэмж эсвэл засаарай</string>
   <string name="voice_commands_help_stop_description">Одоогийн дуут тушаалыг зогсооно</string>
 </resources>

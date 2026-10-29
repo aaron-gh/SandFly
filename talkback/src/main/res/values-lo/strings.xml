@@ -7,7 +7,7 @@
   <string name="tts_preferences_title">ການປ່ຽນຂໍ້ຄວາມເປັນສຽງເວົ້າ</string>
   <string name="language_options">ພາສາ</string>
   <string name="spoken_language">ພາສາເວົ້າ</string>
-  <string name="actions">ຄຳສັ່ງ</string>
+  <string name="actions">ການດຳເນີນການ</string>
   <string name="system_actions">ຄຳສັ່ງລະບົບ</string>
   <string name="talkback_preferences_subtitle">ເວີ​ຊັນ %1$s</string>
   <string name="label_manager_summary_title">ຈັດການປ້າຍກຳກັບແບບກຳນົດເອງ</string>
@@ -106,8 +106,8 @@
   <string name="pref_verbosity_preset_entry_high">ສູງ</string>
   <string name="pref_verbosity_preset_entry_custom">ກຳນົດເອງ</string>
   <string name="pref_verbosity_preset_entry_low">ຕໍ່າ</string>
-  <string name="pref_verbosity_category_preset_settings_title">ລາຍລະອຽດການໃຊ້ຄຳຫຼາຍເກີນໄປ</string>
-  <string name="pref_verbosity_preset_change">ຕອນນີ້ເປີດໃຊ້ການໃຊ້ຄຳຫຼາຍເກີນໄປ %1$s ແລ້ວ.</string>
+  <string name="pref_verbosity_category_preset_settings_title">ລາຍລະອຽດຂອງການເວົ້າລາຍລະອຽດ</string>
+  <string name="pref_verbosity_preset_change">ຕອນນີ້ເປີດໃຊ້ການເວົ້າລາຍລະອຽດ <xliff:g id="preset_name" example="High">%1$s</xliff:g> ແລ້ວ.</string>
   <string name="pref_gesture_set_entry_0">0</string>
   <string name="pref_gesture_set_entry_1">1</string>
   <string name="keycombo_keymap_changes_instruction_title">ອັບເດດແຜນທີ່ປຸ່ມ SandFly ຂອງທ່ານ</string>
@@ -128,7 +128,7 @@
   <string name="keycombo_menu_category_select_keymap">ຄີແມັບ</string>
   <string name="keycombo_menu_select_keymap">ເລືອກຄີແມັບໜຶ່ງ</string>
   <string name="keycombo_menu_reset_keymap">ຣີເຊັດຄີແມັບ</string>
-  <string name="keycombo_menu_view_system_keyboard_shortcuts">ເບິ່ງຄີລັດຂອງລະບົບ</string>
+  <string name="keycombo_menu_view_system_keyboard_shortcuts">ເບິ່ງປຸ່ມລັດແປ້ນພິມຂອງລະບົບ</string>
   <string name="keycombo_menu_choose_trigger_modifier">ເລືອກປຸ່ມແກ້ໄຂ</string>
   <string name="keycombo_menu_alert_title_trigger_modifier">ໃຊ້ %1$s ເປັນປຸ່ມຕົວດັດແປງຂອງທ່ານບໍ?</string>
   <string name="keycombo_menu_alert_message_trigger_modifier">ປັດຈຸບັນ SandFly ໃຊ້ <xliff:g id="current_trigger_modifier" example="Alt">%1$s</xliff:g> ເປັນປຸ່ມຕົວດັດແປງ.</string>
@@ -195,7 +195,7 @@
   <string name="keycombo_menu_other_open_talkback_settings">ເປີດການຕັ້ງຄ່າ SandFly</string>
   <string name="keycombo_menu_other_report_issue">ສົ່ງຄຳຕິຊົມ</string>
   <string name="keycombo_menu_other_cycle_typing_echo">ຮອບການພິມສະທ້ອນ</string>
-  <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">ສະແດງລາຍຊື່ຄີລັດ</string>
+  <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">ສະແດງລາຍຊື່ປຸ່ມລັດແປ້ນພິມ</string>
   <string name="keycombo_menu_category_web">ຄຳສັ່ງການນຳທາງເວັບ</string>
   <string name="keycombo_menu_other_read_current_url">URL ໜ້າການເວົ້າ</string>
   <string name="keycombo_menu_other_read_link_url">ອ່ານ URL</string>
@@ -272,7 +272,7 @@
   <string name="clear_button_in_keycombo_assign_dialog">ລຶບລ້າງ</string>
   <string name="already_in_use_error_message">ຕອນນີ້ກຳນົດໃຫ້ກັບ \"%1$s\"</string>
   <string name="invalid_shortcut_message">ບໍ່ສາມາດໃຊ້ທາງລັດນີ້ໄດ້. ກະລຸນາລອງໃຊ້ຊຸດແປ້ນພິມອື່ນໆ.</string>
-  <string name="keyboard_assignment_dialog_title">ຄີລັດສຳລັບ \"%1$s\"</string>
+  <string name="keyboard_assignment_dialog_title">ປຸ່ມລັດແປ້ນພິມສຳລັບ \"<xliff:g>%1$s</xliff:g>\"</string>
   <string name="keycombo_assign_dialog_new_instruction">ເພື່ອຕັ້ງຄ່າທາງລັດໃໝ່, ໃຫ້ກົດ %1$s + ປຸ່ມໃດກໍໄດ້. ທ່ານຍັງສາມາດກົດ %1$s + Control ຫຼື Shift + ປຸ່ມໃດກໍໄດ້. ຫາກທ່ານກົດ %1$s + O ຫຼື R, ທ່ານຕ້ອງກົດປຸ່ມທີ 3 ຫຼັງຈາກນັ້ນບໍ່ດົນ. ກົດ Backspace ເພື່ອລຶບລ້າງທາງລັດ, ກົດ Ctrl + Backspace ເພື່ອຣີເຊັດເປັນຄ່າເລີ່ມຕົ້ນ. ກົດ Enter ເພື່ອບັນທຶກ ຫຼື ກົດ Escape ເພື່ອຍົກເລີກ.</string>
   <string name="keycombo_sequence_key_assignment_instruction">ຫາກໃຊ້ %1$s + O ຫຼື R, ທ່ານຕ້ອງກົດປຸ່ມທີ 3</string>
   <string name="invalid_modifier_key_as_third_key_message">ຫາກໃຊ້ %1$s + O ຫຼື R, ທ່ານຕ້ອງກົດປຸ່ມທີ 3. ປຸ່ມທີ 3 ບໍ່ສາມາດເປັນ Esc, Backspace, Enter ຫຼື ປຸ່ມຕົວດັດແປງໄດ້.</string>
@@ -406,8 +406,8 @@
   <string name="talkback_menu_more_options_text">ຕົວເລືອກເມນູເພີ່ມເຕີມຈະພ້ອມໃຫ້ນຳໃຊ້ຫຼັງຈາກຕັ້ງຄ່າສຳເລັດ ຫຼື ປົດລັອກອຸປະກອນຂອງທ່ານ</string>
   <string name="talkback_menu_title_content_description">ເມນູ SandFly. ປັດຂວາເພື່ອສຳຫຼວດຕົວເລືອກໃນເມນູ SandFly.\n\nເພື່ອກັບຄືນໄປຫາສອນການນຳໃຊ້, ໃຫ້ໃຊ້ມື 2 ນິ້ວເພື່ອປັດຊ້າຍ ຫຼື ຂວາຈາກຂອບໜ້າຈໍຂອງທ່ານ.</string>
   <string name="shortcut_show_language_options">ປ່ຽນພາສາເວົ້າ</string>
-  <string name="shortcut_select_next_setting">ການຄວບຄຸມການອ່ານຕໍ່ໄປ</string>
-  <string name="shortcut_select_previous_setting">ການຄວບຄຸມການອ່ານກ່ອນໜ້າ</string>
+  <string name="shortcut_select_next_setting">ຕົວຄວບຄຸມການອ່ານຕໍ່ໄປ</string>
+  <string name="shortcut_select_previous_setting">ຕົວຄວບຄຸມການອ່ານກ່ອນໜ້າ</string>
   <string name="shortcut_pass_through_next">ທ່າທາງລະບົບແບບສົ່ງຜ່ານ</string>
   <string name="shortcut_a11y_button">ທາງລັດສຳລັບການຊ່ວຍເຂົ້າເຖິງ</string>
   <string name="shortcut_a11y_button_long_press">ກົດທາງລັດການຊ່ວຍເຂົ້າເຖິງຄ້າງໄວ້</string>
@@ -423,7 +423,7 @@
   <string name="shortcut_decrease_volume">ຜ່ອນສຽງ</string>
   <string name="shortcut_all_apps">ແອັບທັງໝົດ</string>
   <string name="shortcut_braille_keyboard">ປ່ຽນໄປໃຊ້ແປ້ນພິມອັກສອນນູນ</string>
-  <string name="shortcut_braille_display_settings">ນຳທາງໄປຫາການຕັ້ງຄ່າຈໍສະແດງຜົນຕົວໜັງສືນູນ</string>
+  <string name="shortcut_braille_display_settings">ນຳທາງໄປຫາການຕັ້ງຄ່າຈໍສະແດງຜົນຕົວອັກສອນນູນ</string>
   <string name="shortcut_tutorial">ເປີດສອນການນຳໃຊ້</string>
   <string name="shortcut_control_speak_time">ບອກເວລາ ຫຼື ບໍ່ບອກເວລາ</string>
   <string name="shortcut_enable_speak_time">ບອກເວລາ</string>
@@ -445,7 +445,7 @@
   <string name="shortcut_toggle_braille_contracted_mode">ສະຫຼັບລະຫວ່າງແບບຫຍໍ້ (ເກຣດ 2) ແລະ ແບບເຕັມ (ເກຣດ 1)</string>
   <string name="shortcut_toggle_braille_on_screen_overlay">ສະແດງ ຫຼື ເຊື່ອງຕົວອັກສອນນູນເທິງໜ້າຈໍສຳລັບຈໍສະແດງຜົນຕົວອັກສອນນູນທີ່ເຊື່ອມຕໍ່</string>
   <string name="shortcut_toggle_sound_feedback">ເປີດ ຫຼື ປິດການຕອບສະໜອງດ້ວຍສຽງ (ເອຍຄອນ)</string>
-  <string name="shortcut_show_learn_mode_page">ຝຶກໃຊ້ຄີລັດ</string>
+  <string name="shortcut_show_learn_mode_page">ຝຶກໃຊ້ປຸ່ມລັດແປ້ນພິມ</string>
   <string name="shortcut_announce_phonetic_pronunciation">ເວົ້າຕົວໜັງສືພ້ອມການອອກສຽງສຳລັບລາຍການທີ່ຖືກເນັ້ນ</string>
   <string name="shortcut_cycle_punctuation_verbosity">ລະດັບເຄື່ອງໝາຍວັກຕອນຮອບວຽນ</string>
   <string name="title_local_breakout_no_items">ບໍ່ມີລາຍການເມນູ.</string>
@@ -482,7 +482,7 @@
   <string name="title_control_speak_time">ບອກເວລາ</string>
   <string name="title_show_screen_search">ຊອກຫາໃນໜ້າຈໍ</string>
   <string name="title_show_voice_commands">ຄຳສັ່ງສຽງ</string>
-  <string name="title_show_keyboard_shortcuts">ຄີລັດ</string>
+  <string name="title_show_keyboard_shortcuts">ປຸ່ມລັດແປ້ນພິມ</string>
   <string name="talkback_show_talkback_settings">ການຕັ້ງຄ່າ SandFly</string>
   <string name="title_show_braille_display_settings">ການຕັ້ງຄ່າຈໍສະແດງຜົນຕົວອັກສອນນູນ</string>
   <string name="title_granularity_default">ການນຳທາງເລີ່ມຕົ້ນ</string>
@@ -509,9 +509,9 @@
   <string name="summary_voice_commands">ຄວບຄຸມ SandFly ດ້ວຍສຽງຂອງທ່ານ</string>
   <string name="summary_show_hide_screen">ເຊື່ອງຈໍສະແດງຜົນເພື່ອບໍ່ໃຫ້ຄົນອື່ນເຫັນໜ້າຈໍຂອງທ່ານໃນສະຖານທີ່ສາທາລະນະ. ຫຼັງຈາກການເຊື່ອງໜ້າຈໍຂອງທ່ານແລ້ວ, ໃຫ້ນຳມັນກັບໄປສູ່ສະຖານະປົກກະຕິ.</string>
   <string name="summary_control_speak_time">ປ່ຽນວ່າຈະບອກເວລາແບບອ່ານອອກສຽງເມື່ອທ່ານເປີດໜ້າຈໍຫຼືບໍ່</string>
-  <string name="summary_show_keyboard_shortcuts_preferences">ເປີດລາຍຊື່ຄີລັດ</string>
+  <string name="summary_show_keyboard_shortcuts_preferences">ເປີດລາຍຊື່ປຸ່ມລັດແປ້ນພິມ</string>
   <string name="summary_talkback_preferences">ເປີດການຕັ້ງຄ່າ SandFly</string>
-  <string name="summary_braile_display_preferences">ເປີດການຕັ້ງຄ່າຈໍສະແດງຜົນຕົວໜັງສືນູນ</string>
+  <string name="summary_braile_display_preferences">ເປີດການຕັ້ງຄ່າຈໍສະແດງຜົນຕົວອັກສອນນູນ</string>
   <string name="summary_system_actions">ໄປຫາແອັບທັງໝົດ ແລະ ການ​ຕັ້ງ​ຄ່າ​ດ່ວນ</string>
   <string name="summary_tts_settings">ເປີດການຕັ້ງຄ່າການປ່ຽນຂໍ້ຄວາມເປັນສຽງເວົ້າ</string>
   <string name="not_editable">ບໍ່ສາມາດແກ້ໄຂໄດ້</string>
@@ -684,8 +684,8 @@
   <string name="dialog_message_dim_screen">ການດຳເນີນການນີ້ຈະປິດຈໍສະແດງຜົນເພື່ອປັບປຸງຄວາມເປັນສ່ວນຕົວ. ເນື້ອຫາບາງສ່ວນອາດຍັງຄົງສະແດງຢູ່ ເຊັ່ນ: ຂໍ້ຄວາມໃນການເປີດຈໍສະແດງຜົນຄືນໃໝ່ ຫຼື ເມນູສຳລັບຄຸນສົມບັດການຊ່ວຍເຂົ້າເຖິງ ເຊັ່ນ: SandFly.</string>
   <string name="button_disable_all_events">ປິດການນຳໃຊ້ທັງໝົດ</string>
   <string name="button_enable_all_events">ເປີດການນຳໃຊ້ທັງໝົດ</string>
-  <string name="dialog_title_disable_exploration">ປິດການ​ນຳໃຊ້ \'ການສຳຫຼວດ​ໂດຍການ​ສຳ​ຜັດ\' ຫຼືບໍ່?</string>
-  <string name="dialog_message_disable_exploration">ທ່ານ​ແນ່ໃຈ​ບໍ່ວ່າ​ຕ້ອງການ​ປິດ ການສຳຫຼວດ​ດ້ວຍການສຳ​ຜັດ?\n\nອຸປະກອນ​ຂອງທ່ານ​ຈະ​ບໍ່​ຕອບສະໜອງ​ກັບ​ທ່າ​ທາງ​ນິ້ວ​ມື​ລັດ ແລະ​ຈະ​ບໍ່​ເວົ້າ​ອອກ​ມາ​ເມື່ອ​ທ່ານ​ສຳຜັດ​ໜ້າຈໍ.</string>
+  <string name="dialog_title_disable_exploration">ປິດການ​ນຳໃຊ້ “ສຳຫຼວດໂດຍການສຳຜັດ” ຫຼືບໍ່?</string>
+  <string name="dialog_message_disable_exploration">ທ່ານ​ແນ່ໃຈ​ບໍ່ວ່າ​ຕ້ອງການ​ປິດ “ສຳຫຼວດໂດຍການສຳຜັດ”?\n\nອຸປະກອນ​ຂອງທ່ານ​ຈະ​ບໍ່​ຕອບສະໜອງ​ກັບ​ທ່າ​ທາງ​ນິ້ວ​ມື​ລັດ ແລະ​ຈະ​ບໍ່​ເວົ້າ​ອອກ​ມາ​ເມື່ອ​ທ່ານ​ສຳຜັດ​ໜ້າຈໍ.</string>
   <string name="dialog_title_enable_tree_debug">ເປີດ​ນຳ​ໃຊ້​ການ​ດີ​ບັກ​ໂນດ​ແຜງ​ຜັງ​ຕົ້ນ​ໄມ້​ຫຼືບໍ່?</string>
   <string name="dialog_message_enable_tree_debug">ທ່ານ​ແນ່​ໃຈ​ບໍ່​ວ່າ​ຕ້ອງ​ການ​ເປີດ​ນຳ​ໃຊ້​ການ​ດີ​ບັກ​ໂນດ​ແຜນ​ຜັງ​ຕົ້ນ​ໄມ້?\n\n​ການ​ດີ​ບັກ​ໂນດ​ແຜນ​ຜັງ​ຕົ້ນ​ໄມ້​ຈະ​ເປັນ​ການເປີດ​ເຜີຍ​ເນື້ອ​ຫາ​ຂອງ​ໜ້າ​ຈໍ​ຂອງ​ທ່ານ​ໄປ​ໃສ່​ບັນ​ທຶກ​ຂອງ​ອຸ​ປະ​ກອນ, ເຊິ່ງ​ອາດ​ສາ​ມາດ​ຖືກ​ອ່ານ​ໄດ້​ໂດຍ​ແອບ​ພລິ​ເຄ​ຊັນ​ອື່ນໆ.</string>
   <string name="dialog_title_enable_tree_debug_gesture">ກຳນົດທ່າທາງການໃຊ້ 4 ນິ້ວແຕະ 3 ເທື່ອຄືນໃໝ່ບໍ?</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{ບໍ່ພົບຂໍ້ມູນທີ່ກົງກັນຢູ່ໜ້າຈໍນີ້}=1{ກົງກັນ # ລາຍການ}other{ກົງກັນ # ລາຍການ}}</string>
   <string name="msg_no_matches">ບໍ່ພົບຂໍ້ມູນທີ່ກົງກັນຢູ່ໜ້າຈໍນີ້</string>
   <string name="dialog_title_continuous_reading_mode">ການອ່ານແບບຕໍ່ເນື່ອງເຮັດວຽກແນວໃດ</string>
-  <string name="dialog_message_continuous_reading_mode">ຫຼັງຈາກທີ່ເລືອກ \"ອ່ານຈາກເທິງສຸດ\" ຫຼື \"ອ່ານຈາກລາຍການທີ່ໂຟກັສ\", ທ່ານຍັງຄົງສາມາດນຳທາງໄປຫາລາຍການກ່ອນໜ້າ ຫຼື ຖັດໄປໄດ້ໃນລະຫວ່າງທີ່ລະບົບກຳລັງອ່ານຂໍ້ຄວາມ. ເຊິ່ງຊ່ວຍໃຫ້ທ່ານກັບຄືນ ຫຼື ຂ້າມໄປໜ້າໄດ້ງ່າຍໆ.\n\nເພື່ອປັບລະດັບສຽງໃນລະຫວ່າງທີ່ SandFly ເວົ້າ, ໃຫ້ກົດປຸ່ມເພີ່ມສຽງຂຶ້ນ ຫຼື ຫຼຸດສຽງລົງ.</string>
+  <string name="dialog_message_continuous_reading_mode">ຫຼັງຈາກທີ່ເລືອກ \"ອ່ານຈາກທາງເທິງ\" ຫຼື \"ອ່ານຈາກລາຍການທີ່ໂຟກັສ\", ທ່ານຍັງຄົງສາມາດນຳທາງໄປຫາລາຍການກ່ອນໜ້າ ຫຼື ຖັດໄປໄດ້ໃນລະຫວ່າງທີ່ລະບົບກຳລັງອ່ານຂໍ້ຄວາມ. ເຊິ່ງຊ່ວຍໃຫ້ທ່ານກັບຄືນ ຫຼື ຂ້າມໄປໜ້າໄດ້ງ່າຍໆ.\n\nເພື່ອປັບລະດັບສຽງໃນລະຫວ່າງທີ່ SandFly ເວົ້າ, ໃຫ້ກົດປຸ່ມເພີ່ມສຽງຂຶ້ນ ຫຼື ຫຼຸດສຽງລົງ.</string>
   <string name="always_show_this_message_label">ສະແດງຂໍ້ຄວາມນີ້ສະເໝີ</string>
   <string name="dialog_title_voice_commands">ໃຊ້ຄຳສັ່ງສຽງເພື່ອຄວບຄຸມ SandFly</string>
   <string name="dialog_message_voice_commands">ນີ້ແມ່ນຕົວຢ່າງສິ່ງທີ່ທ່ານສາມາດເວົ້າໄດ້:\n\n• ສຳເນົາ\n• ອ່ານຈາກລາຍການທີ່ໂຟກັສ\n• ຊອກຫາ [ບັນທຶກ]\n• ເວົ້າ [ໄວຂຶ້ນ]\n• ການຕັ້ງຄ່າ SandFly\n\nເວົ້າວ່າ \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" ເພື່ອເບິ່ງລາຍຊື່ຄຳສັ່ງສຽງທັງໝົດ</string>
@@ -818,7 +818,7 @@
   <string name="adjust_granularity_hint">%1$s ເພື່ອອ່ານ %2$s</string>
   <string name="adjust_typo_hint">%1$s ສຳລັບການແນະນຳ.</string>
   <string name="use_action_hint">ແຕະ​ສອງ​ເທື່ອເພື່ອເລີ່ມຄຳສັ່ງ</string>
-  <string name="no_adjust_setting_gesture">ເພື່ອໃຊ້ການຕັ້ງຄ່ານີ້, ໃຫ້ໄປທີ່ການຕັ້ງຄາ່ SandFly ແລ້ວເພີ່ມທ່າທາງສຳລັບ \'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
+  <string name="no_adjust_setting_gesture">ເພື່ອໃຊ້ການຕັ້ງຄ່ານີ້, ໃຫ້ໄປທີ່ການຕັ້ງຄ່າ SandFly ແລ້ວເພີ່ມທ່າທາງສຳລັບ \'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
   <string name="no_navigate_typo_gesture">ເພື່ອນຳໃຊ້ສິ່ງນີ້, ໃຫ້ໄປທີ່ການຕັ້ງຄ່າ SandFly ແລະ ເພີ່ມທ່າທາງສຳລັບກວດຄຳຜິດ</string>
   <string name="use_spelling_suggestion_hint">ແຕະສອງເທື່ອເພື່ອປ່ຽນແທນຂໍ້ຄວາມ</string>
   <string name="screen_search_keyword_hint">ຄີເວີດແມ່ນ %1$s</string>
@@ -851,7 +851,7 @@
   <string name="keep_reviewing_tutorial_button">ສືບຕໍ່ກວດສອບ</string>
   <string name="welcome_to_updated_talkback_title">ຍິນດີຕ້ອນຮັບສູ່ SandFly ທີ່ອັບເດດໃໝ່ແລ້ວ</string>
   <string name="navigation_heading">ການນຳທາງ</string>
-  <string name="setting_selector_heading">ການຄວບຄຸມຕົວອ່ານ</string>
+  <string name="setting_selector_heading">ຕົວຄວບຄຸມການອ່ານ</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">ເພື່ອຢຸດ ຫຼື ຫຼິ້ນມີເດຍໃນແອັບວິດີໂອ ຫຼື ແອັບເພງ, ໃຫ້ແຕະສອງເທື່ອດ້ວຍ 2 ນິ້ວ. ລອງໃຊ້ມັນດຽວນີ້.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">ແອັບອື່ນສາມາດໃຊ້ທ່າທາງນີ້ສຳລັບສິ່ງຕ່າງໆ ເຊັ່ນ: ການຮັບສາຍ ຫຼື ການວາງສາຍ. ບາງແອັບອາດບໍ່ຮອງຮັບທ່າທາງນີ້.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">ມີເດຍຢຸດຊົ່ວຄາວແລ້ວ ຫຼື ກຳລັງຫຼິ້ນ. ໂດຍປົກກະຕິ, ນີ້ຈະຢຸດຊົ່ວຄາວ ຫຼື ຫຼິ້ນວິດີໂອ ຫຼື ເພງປັດຈຸບັນ. ປັດຂວາເພື່ອສືບຕໍ່.</string>
@@ -865,15 +865,15 @@
   <string name="new_shortcut_gesture_cut_text_announcement">ຕັດຂໍ້ຄວາມ. ໂດຍປົກກະຕິ, ນີ້ຈະເປັນການຕັດຂໍ້ຄວາມທີ່ທ່ານເລືອກໄວ້ແລ້ວ. ປັດຂວາເພື່ອສືບຕໍ່.</string>
   <string name="new_shortcut_gesture_selection_mode_text">ເພື່ອເລີ່ມ ຫຼື ສິ້ນສຸດໂໝດການເລືອກຂໍ້ຄວາມ, ໃຫ້ແຕະສອງເທື່ອຄ້າງໄວ້ດ້ວຍ 2 ນິ້ວ.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">ໂໝດການເລືອກປິດ ຫຼື ເປີດ. ປົກກະຕິນີ້ຈະເລີ່ມ ຫຼື ຢຸດໂໝດການເລືອກຂໍ້ຄວາມເມື່ອທ່ານຢູ່ໃນຊ່ອງປ້ອນຂໍ້ມູນໃດໜຶ່ງ. ປັດຂວາເພື່ອສືບຕໍ່.</string>
-  <string name="new_shortcut_gesture_reading_menu_text">ເພື່ອໃຊ້ການຄວບຄຸມການອ່ານ, ໃຫ້ປັດຊ້າຍ ຫຼື ຂວາດ້ວຍ 3 ນິ້ວ. ທ່ານສາມາດປັດຂຶ້ນ ຫຼື ລົງດ້ວຍ 3 ນິ້ວນຳກໍໄດ້.</string>
+  <string name="new_shortcut_gesture_reading_menu_text">ເພື່ອໃຊ້ຕົວຄວບຄຸມການອ່ານ, ໃຫ້ປັດຊ້າຍ ຫຼື ຂວາດ້ວຍ 3 ນິ້ວ. ທ່ານສາມາດປັດຂຶ້ນ ຫຼື ລົງດ້ວຍ 3 ນິ້ວນຳກໍໄດ້.</string>
   <string name="new_shortcut_gesture_note">ໝາຍເຫດ: ທ່ານໄດ້ປັບແຕ່ງທ່າທາງບາງຢ່າງຂອງທ່ານແລ້ວ, ດັ່ງນັ້ນຂໍ້ມູນນີ້ອາດບໍ່ຖືກຕ້ອງ. ເພື່ອກວດສອບທ່າທາງຂອງທ່ານ, ໃຫ້ໄປທີ່ການຕັ້ງຄ່າ SandFly.</string>
   <string name="welcome_to_android11_text">ເພີ່ມທ່າທາງໃໝ່ໃສ່ແລ້ວເພື່ອເຮັດໃຫ້ໃຊ້ SandFly ໄດ້ໄວຂຶ້ນ ແລະ ງ່າຍຂຶ້ນ.\n\nຢູ່ໜ້າຈໍນີ້, ທ່ານສາມາດທົດລອງໃຊ້ທ່າທາງໃໝ່ໄດ້. ທ່ານສາມາດກວດສອບຂໍ້ມູນນີ້ໃນການຕັ້ງຄ່າ SandFly ຕອນໃດກໍໄດ້.</string>
   <string name="new_gesture_notification_title">ທ່າທາງໃໝ່ໃນ SandFly</string>
   <string name="new_gesture_notification_content">ແຕະເພື່ອຮຽນຮູ້ວິທີໃຊ້ SandFly ໃຫ້ໄວຂຶ້ນດ້ວຍທ່າທາງໃໝ່.</string>
   <string name="dump_node_tree_description">ຜັງໂໜດໄດ້ຖືກພິມໄປໃສ່ບັນທຶກແລ້ວ.</string>
   <string name="report_gesture_description">ນີ້ແມ່ນທ່າທາງທີ່ໃຊ້ໄປຫຼ້າສຸດ, ກະລຸນາລາຍງານວ່າທ່າທາງໃດບໍ່ຖືກຕ້ອງ ແລະ ຄວນແມ່ນຫຍັງ.</string>
-  <string name="update_welcome_talkback_16.1">ການອັບເດດ SandFly ນີ້ແນະນຳການຮອງຮັບໜ້າຈໍອະທິບາຍເປັນພາສາເພີ່ມເຕີມ ແລະ ການປັບປຸງຄຸນນະພາບອື່ນໆທີ່ເຮັດໃຫ້ SandFly ໃຊ້ງ່າຍຂຶ້ນ.\n\nທ່ານຈະໄດ້ສຶກສາເພີ່ມເຕີມກ່ຽວກັບການປ່ຽນແປງເຫຼົ່ານີ້ໃນສອງສາມໜ້າຈໍຕໍ່ໄປ.\n\nທ່ານສາມາດກວດເບິ່ງຂໍ້ມູນນີ້ໄດ້ພາຍຫຼັງໃນການຕັ້ງຄ່າ SandFly &gt; ຄຸນສົມບັດໃໝ່ໃນ SandFly.</string>
-  <string name="update_welcome_talkback_16.1_tts">ການອັບເດດ SandFly ນີ້ແນະນຳການຮອງຮັບໜ້າຈໍອະທິບາຍເປັນພາສາເພີ່ມເຕີມ ແລະ ການປັບປຸງຄຸນນະພາບອື່ນໆທີ່ເຮັດໃຫ້ SandFly ໃຊ້ງ່າຍຂຶ້ນ.\n\nທ່ານຈະໄດ້ສຶກສາເພີ່ມເຕີມກ່ຽວກັບການປ່ຽນແປງເຫຼົ່ານີ້ໃນສອງສາມໜ້າຈໍຕໍ່ໄປ.\n\nທ່ານສາມາດກວດເບິ່ງຂໍ້ມູນນີ້ໄດ້ພາຍຫຼັງໃນການຕັ້ງຄ່າ SandFly ຈາກນັ້ນເລືອກຄຸນສົມບັດໃໝ່ໃນ SandFly.</string>
+  <string name="update_welcome_talkback_16.1">ການອັບເດດ SandFly ນີ້ແນະນຳການຮອງຮັບ “ອະທິບາຍໜ້າຈໍ” ເປັນພາສາເພີ່ມເຕີມ ແລະ ການປັບປຸງຄຸນນະພາບອື່ນໆທີ່ເຮັດໃຫ້ SandFly ໃຊ້ງ່າຍຂຶ້ນ.\n\nທ່ານຈະໄດ້ສຶກສາເພີ່ມເຕີມກ່ຽວກັບການປ່ຽນແປງເຫຼົ່ານີ້ໃນສອງສາມໜ້າຈໍຕໍ່ໄປ.\n\nທ່ານສາມາດກວດເບິ່ງຂໍ້ມູນນີ້ໄດ້ພາຍຫຼັງໃນການຕັ້ງຄ່າ SandFly &gt; ຄຸນສົມບັດໃໝ່ໃນ SandFly.</string>
+  <string name="update_welcome_talkback_16.1_tts">ການອັບເດດ SandFly ນີ້ແນະນຳການຮອງຮັບ “ອະທິບາຍໜ້າຈໍ” ເປັນພາສາເພີ່ມເຕີມ ແລະ ການປັບປຸງຄຸນນະພາບອື່ນໆທີ່ເຮັດໃຫ້ SandFly ໃຊ້ງ່າຍຂຶ້ນ.\n\nທ່ານຈະໄດ້ສຶກສາເພີ່ມເຕີມກ່ຽວກັບການປ່ຽນແປງເຫຼົ່ານີ້ໃນສອງສາມໜ້າຈໍຕໍ່ໄປ.\n\nທ່ານສາມາດກວດເບິ່ງຂໍ້ມູນນີ້ໄດ້ພາຍຫຼັງໃນການຕັ້ງຄ່າ SandFly ຈາກນັ້ນເລືອກຄຸນສົມບັດໃໝ່ໃນ SandFly.</string>
   <string name="shortcut_for_dictation_title">ທາງລັດສຳລັບການພິມດ້ວຍສຽງ</string>
   <string name="shortcut_for_dictation_content">ໃນຂະນະທີ່ໃຊ້ Gboard, ຕອນນີ້ທ່ານສາມາດໃຊ້ 2 ນິ້ວແຕະສອງເທື່ອເພື່ອເລີ່ມ ຫຼື ຢຸດການພິມດ້ວຍສຽງໄດ້ແລ້ວ.
 &lt;br&gt;
@@ -885,8 +885,8 @@
   <string name="announcing_text_formatting_option2">ເພີ່ມຕົວຄວບຄຸມການອ່ານສຳລັບການຈັດຮູບແບບຂໍ້ຄວາມທີ່ຈະເປີດ ຫຼື ປິດການປະກາດການປ່ຽນແປງການຈັດຮູບແບບ.</string>
   <string name="announcing_text_formatting_middle">ເມື່ອທ່ານພ້ອມທີ່ຈະລອງໃຊ້ແລ້ວ, ນີ້ແມ່ນຕົວຢ່າງຂອງຂໍ້ຄວາມທີ່ຈັດຮູບແບບແລ້ວ:</string>
   <string name="announcing_text_formatting_tail">ຫາກທ່ານຕ້ອງການປ່ຽນວິທີປະກາດຂໍ້ຄວາມທີ່ຈັດຮູບແບບແລ້ວ, ທ່ານສາມາດເຂົ້າໄປ %1$s ໄດ້.</string>
-  <string name="text_formatting_options_settings_path">ການຕັ້ງຄ່າ SandFly &gt; ການໃຊ້ຄຳຫຼາຍເກີນໄປ &gt; ຕົວເລືອກການຈັດຮູບແບບຂໍ້ຄວາມ</string>
-  <string name="text_formatting_options_settings_path_tts">ການຕັ້ງຄ່າ SandFly ຈາກນັ້ນເລືອກການໃຊ້ຄຳຫຼາຍເກີນໄປ ແລ້ວເລືອກຕົວເລືອກການຈັດຮູບແບບຂໍ້ຄວາມ</string>
+  <string name="text_formatting_options_settings_path">ການຕັ້ງຄ່າ SandFly &gt; ການເວົ້າລາຍລະອຽດ &gt; ຕົວເລືອກການຈັດຮູບແບບຂໍ້ຄວາມ</string>
+  <string name="text_formatting_options_settings_path_tts">ການຕັ້ງຄ່າ SandFly ຈາກນັ້ນ ການເວົ້າລາຍລະອຽດ ຈາກນັ້ນ ຕົວເລືອກການຈັດຮູບແບບຂໍ້ຄວາມ</string>
   <string name="announcing_text_formatiing_sample">ຂໍ້ຄວາມນີ້ເປັນແບບ &lt;b&gt;ຕົວໜາ&lt;/b&gt;, ສະແດງເຖິງຄວາມໝັ້ນໃຈ,
 &lt;br&gt;ໃນລະຫວ່າງທີ່ຂໍ້ຄວາມນີ້ມີການ &lt;u&gt;ຂີດກ້ອງ&lt;/u&gt;, ສະແດງເຖິງຄວາມງຽບບໍ່ສົງໄສ.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;ດອກກຸຫຼາບເປັນສີແດງ&lt;/span&gt;, ສະແດງເຖິງຄວາມຄລາດສິກຢ່າງແນ່ນອນ,
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">ການແຍກພິມໄດ້ທຸກບ່ອນ</string>
   <string name="split_tap_everywhere_text">ຕອນນີ້ທ່ານສາມາດໃຊ້ການແຍກພິມໄດ້ທຸກບ່ອນເພື່ອເປີດນຳໃຊ້ລາຍການຕ່າງໆ, ເຖິງແມ່ນວ່າຈະເປັນລາຍການທີ່ຢູ່ນອກແປ້ນພິມກໍຕາມ. ເພື່ອໃຊ້ຄຸນສົມບັດນີ້, ໃຫ້ໃຊ້ນິ້ວໜຶ່ງເລື່ອນສຳຫຼວດໜ້າຈໍ, ຈາກນັ້ນໃຊ້ອີກນິ້ວໜຶ່ງແຕະໃສ່ໜ້າຈໍໂດຍບໍ່ຍົກນິ້ວທຳອິດຂຶ້ນເພື່ອເປີດນຳໃຊ້ລາຍການທີ່ໂຟກັສຢູ່ໃນປັດຈຸບັນ.</string>
   <string name="keyboard_enhanced_keymap_title">ແປ້ນພິມ: ແຜນທີ່ປຸ່ມທີ່ປັບປຸງໃຫ້ດີຂຶ້ນແລ້ວ</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly ຕອນນີ້ມີ \"ແຜນຜັງຄີທີ່ປັບປຸງ\" ສໍາລັບແປ້ນພິມຕົວຈິງ, ປະກອບດ້ວຍຄໍາສັ່ງ ແລະທາງລັດທີ່ຫຼາກຫຼາຍ. ການປັບປຸງນີ້ປະກອບມີ \"ຮູບແບບການທ່ອງເວັບ\" ສໍາລັບການນໍາທາງເວັບທີ່ມີປະສິດທິພາບຫຼາຍຂຶ້ນ, ປັບປຸງການນໍາທາງແລະການໂຕ້ຕອບສໍາລັບຜູ້ໃຊ້ SandFly ທີ່ອີງໃສ່ແປ້ນພິມຕົວຈິງ. ທ່ານສາມາດສະຫຼັບໄປໃຊ້ \"ແຜນທີ່ຫຼັກທີ່ປັບປຸງ\" ໃນ <xliff:g id="settings_path">%1$s</xliff:g>.\n\n ຖ້າທ່ານໃຊ້ຈໍສະແດງຜົນອັກສອນນູນ, ທ່ານຍັງສາມາດໃຊ້ປຸ່ມລັດຮູບແບບການທ່ອງເວັບໃໝ່ເພື່ອຂ້າມຜ່ານເນື້ອຫາໂດຍກົງຈາກຈໍສະແດງຜົນອັກສອນນູນຂອງທ່ານໄດ້. ບາງປຸ່ມລັດການສະແດງຜົນອັກສອນນູນໄດ້ຖືກປ່ຽນເພື່ອຮອງຮັບການປ່ຽນແປງນີ້. ທ່ານ​ສາ​ມາດ​ເບິ່ງ​ລາຍ​ການ​ທາງ​ລັດ​ການ​ສະ​ແດງ Braille ທັງ​ຫມົດ​ໃນ <xliff:g id="braille_display_settings_path">%2$s</xliff:g>​.</string>
-  <string name="keyboard_shortcuts_link">ການຕັ້ງຄ່າ SandFly &gt; ຄີລັດ</string>
-  <string name="keyboard_shortcuts_link_tts">ການຕັ້ງຄ່າ SandFly ຈາກນັ້ນເລືອກຄີລັດ</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly ຕອນນີ້ມີ \"ແຜນຜັງຄີທີ່ປັບປຸງ\" ສໍາລັບແປ້ນພິມຕົວຈິງ, ປະກອບດ້ວຍຄໍາສັ່ງ ແລະທາງລັດທີ່ຫຼາກຫຼາຍ. ການປັບປຸງນີ້ປະກອບມີ \"ຮູບແບບການທ່ອງເວັບ\" ສໍາລັບການນໍາທາງເວັບທີ່ມີປະສິດທິພາບຫຼາຍຂຶ້ນ, ປັບປຸງການນໍາທາງແລະການໂຕ້ຕອບສໍາລັບຜູ້ໃຊ້ SandFly ທີ່ອີງໃສ່ແປ້ນພິມຕົວຈິງ. ທ່ານສາມາດສະຫຼັບໄປໃຊ້ \"ແຜນທີ່ຫຼັກທີ່ປັບປຸງ\" ໃນ <xliff:g id="settings_path">%1$s</xliff:g>.\n\n ຖ້າທ່ານໃຊ້ຈໍສະແດງຜົນຕົວອັກສອນນູນ, ທ່ານຍັງສາມາດໃຊ້ປຸ່ມລັດຮູບແບບການທ່ອງເວັບໃໝ່ເພື່ອຂ້າມຜ່ານເນື້ອຫາໂດຍກົງຈາກຈໍສະແດງຜົນຕົວອັກສອນນູນຂອງທ່ານໄດ້. ບາງປຸ່ມລັດການສະແດງຜົນອັກສອນນູນໄດ້ຖືກປ່ຽນເພື່ອຮອງຮັບການປ່ຽນແປງນີ້. ທ່ານ​ສາ​ມາດ​ເບິ່ງ​ລາຍ​ການ​ທາງ​ລັດ​ການ​ສະ​ແດງ Braille ທັງ​ຫມົດ​ໃນ <xliff:g id="braille_display_settings_path">%2$s</xliff:g>​.</string>
+  <string name="keyboard_shortcuts_link">ການຕັ້ງຄ່າ SandFly &gt; ປຸ່ມລັດແປ້ນພິມ</string>
+  <string name="keyboard_shortcuts_link_tts">ການຕັ້ງຄ່າ SandFly ຈາກນັ້ນເລືອກປຸ່ມລັດແປ້ນພິມ</string>
   <string name="braille_display_settings_link">ການຕັ້ງຄ່າຈໍສະແດງຜົນຕົວອັກສອນນູນ</string>
   <string name="keyboard_smart_browse_mode_title">ແປ້ນພິມ: ໂໝດທ່ອງເວັບອັດສະລິຍະ</string>
   <string name="keyboard_smart_browse_mode_text">ໂໝດທ່ອງເວັບອັດສະລິຍະຂອງ SandFly ຈະປິດໂໝດທ່ອງເວັບໃນຊ່ອງແກ້ໄຂເພື່ອຊ່ວຍໃຫ້ທ່ານພິມດ້ວຍແປ້ນພິມແທ້ໄດ້ເມື່ອທ່ານທ່ອງເວັບ. ຈາກນັ້ນໂໝດນີ້ຈະເປີດອີກຄັ້ງເມື່ອທ່ານຂ້າມໄປຫາຊ່ອງທີ່ບໍ່ແມ່ນຊ່ອງແກ້ໄຂຢູ່ເວັບເພື່ອໃຫ້ທ່ານສາມາດເລືອກເບິ່ງໄດ້ຢ່າງມີປະສິດທິພາບຕໍ່ໄປ. ທ່ານສາມາດເປີດ ຫຼື ປິດ \"ໂໝດທ່ອງເວັບອັດສະລິຍະ\" ໄດ້ໃນ <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">ການຕັ້ງຄ່າ SandFly &gt; ການຕັ້ງຄ່າຂັ້ນສູງ</string>
-  <string name="advanced_settings_link_tts">ການຕັ້ງຄ່າ SandFly ຈາກນັ້ນເຂົ້າໄປການຕັ້ງຄ່າຂັ້ນສູງ</string>
   <string name="keyboard_tutorial_title">ສອນການນຳໃຊ້ແປ້ນພິມ</string>
-  <string name="keyboard_tutorial_text">ຕອນນີ້ SandFly ມີການສອນການນຳໃຊ້ແປ້ນພິມທີ່ອອກແບບມາເພື່ອຊ່ວຍໃຫ້ທ່ານຮຽນຮູ້ຄີລັດ ແລະ ຄຳສັ່ງສຳລັບແຜນທີ່ປຸ່ມທີ່ປັບປຸງໃຫ້ດີຂຶ້ນແລ້ວເມື່ອໃຊ້ແປ້ນພິມແທ້. ເພື່ອເຂົ້າເຖິງການສອນການນຳໃຊ້, ໃຫ້ເຂົ້າໄປ: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">ການຕັ້ງຄ່າ SandFly &gt; ການສອນການນຳໃຊ້ SandFly</string>
-  <string name="tutorial_link_tts">ການຕັ້ງຄ່າ SandFly ຈາກນັ້ນເລືອກການສອນການນຳໃຊ້ SandFly</string>
+  <string name="keyboard_tutorial_text">ຕອນນີ້ SandFly ມີການສອນການນຳໃຊ້ແປ້ນພິມທີ່ອອກແບບມາເພື່ອຊ່ວຍໃຫ້ທ່ານຮຽນຮູ້ປຸ່ມລັດແປ້ນພິມ ແລະ ຄຳສັ່ງສຳລັບແຜນທີ່ປຸ່ມທີ່ປັບປຸງໃຫ້ດີຂຶ້ນແລ້ວເມື່ອໃຊ້ແປ້ນພິມແທ້. ເພື່ອເຂົ້າເຖິງການສອນການນຳໃຊ້, ໃຫ້ເຂົ້າໄປ: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <string name="tutorial_entry_point_title">ສອນການນຳໃຊ້</string>
   <string name="welcome_to_talkback_title">ຍິນດີຕ້ອນຮັບສູ່ SandFly</string>
   <string name="talkback_is_on">SandFly ເປີດຢູ່</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">ໃຊ້ເມນູ ແລະ ການຄວບຄວບຄຸມ</string>
   <string name="menus_talkback_menu_text">ເມນູ SandFly ຮວມມີການຕັ້ງຄ່າ ແລະ ການຄວບຄຸມທີ່ທ່ານອາດຕ້ອງການໃຊ້ເລື້ອຍໆ.\n\nເປີດເມນູ SandFly ຕອນນີ້ໂດຍການແຕະໃສ່ໜ້າຈໍດ້ວຍ 3 ນິ້ວ.</string>
   <string name="menus_talkback_menu_text_pre_r">ເມນູ SandFly ຮວມມີການຕັ້ງຄ່າ ແລະ ການຄວບຄຸມທີ່ທ່ານອາດຕ້ອງການໃຊ້ເລື້ອຍໆ.\n\nເປີດເມນູ SandFly ຕອນນີ້ໂດຍການປັດລົງຈາກນັ້ນປັດຂວາ.</string>
-  <string name="menus_selector_text">ທາງລັດເຫຼົ່ານີ້ສາມາດຊ່ວຍທ່ານປ່ຽນການຕັ້ງຄ່າຕ່າງໆໄດ້ຢ່າງວ່ອງໄວ ເຊັ່ນ: ການສະຫຼັບການນຳທາງຂອງທ່ານຈາກຕົວອັກສອນເປັນຄຳສັບ ຫຼື ການປ່ຽນຄວາມໄວການເວົ້າຂອງ SandFly.\n\nເພື່ອປ່ຽນການຄວບຄຸມການອ່ານຂອງທ່ານແບບໄວໆ, ໃຫ້ປັດຊ້າຍດ້ວຍ 3 ນິ້ວ ຫຼື ປັດຂວາດ້ວຍ 3 ນິ້ວ.\n\nທ່ານສາມາດປັບແຕ່ງເມນູ SandFly ແລະ ການຄວບຄຸມການອ່ານຂອງທ່ານໃນພາຍຫຼັງໄດ້ໃນການຕັ້ງຄ່າ SandFly.</string>
-  <string name="menus_selector_text_pre_r">ທາງລັດເຫຼົ່ານີ້ສາມາດຊ່ວຍທ່ານປ່ຽນການຕັ້ງຄ່າຕ່າງໆໄດ້ຢ່າງວ່ອງໄວ ເຊັ່ນ: ການສະຫຼັບການນຳທາງຂອງທ່ານຈາກຕົວອັກສອນເປັນຄຳສັບ ຫຼື ການປ່ຽນຄວາມໄວການເວົ້າຂອງ SandFly.\n\nເພື່ອປ່ຽນການຄວບຄຸມການອ່ານຂອງທ່ານແບບໄວໆ, ໃຫ້ປັດລົງແລ້ວຈາກນັ້ນປັດຂຶ້ນ.\n\nທ່ານສາມາດປັບແຕ່ງເມນູ SandFly ແລະ ການຄວບຄຸມການອ່ານຂອງທ່ານໄດ້ພາຍຫຼັງໃນການຕັ້ງຄ່າ SandFly.</string>
+  <string name="menus_selector_text">ທາງລັດເຫຼົ່ານີ້ສາມາດຊ່ວຍທ່ານປ່ຽນການຕັ້ງຄ່າຕ່າງໆໄດ້ຢ່າງວ່ອງໄວ ເຊັ່ນ: ການສະຫຼັບການນຳທາງຂອງທ່ານຈາກຕົວອັກສອນເປັນຄຳສັບ ຫຼື ການປ່ຽນຄວາມໄວການເວົ້າຂອງ SandFly.\n\nເພື່ອປ່ຽນຕົວຄວບຄຸມການອ່ານຂອງທ່ານແບບໄວໆ, ໃຫ້ປັດຊ້າຍດ້ວຍ 3 ນິ້ວ ຫຼື ປັດຂວາດ້ວຍ 3 ນິ້ວ.\n\nທ່ານສາມາດປັບແຕ່ງເມນູ SandFly ແລະ ຕົວຄວບຄຸມການອ່ານຂອງທ່ານໃນພາຍຫຼັງໄດ້ໃນການຕັ້ງຄ່າ SandFly.</string>
+  <string name="menus_selector_text_pre_r">ທາງລັດເຫຼົ່ານີ້ສາມາດຊ່ວຍທ່ານປ່ຽນການຕັ້ງຄ່າຕ່າງໆໄດ້ຢ່າງວ່ອງໄວ ເຊັ່ນ: ການສະຫຼັບການນຳທາງຂອງທ່ານຈາກຕົວອັກສອນເປັນຄຳສັບ ຫຼື ການປ່ຽນຄວາມໄວການເວົ້າຂອງ SandFly.\n\nເພື່ອປ່ຽນຕົວຄວບຄຸມການອ່ານຂອງທ່ານແບບໄວໆ, ໃຫ້ປັດລົງແລ້ວຈາກນັ້ນປັດຂຶ້ນ.\n\nທ່ານສາມາດປັບແຕ່ງເມນູ SandFly ແລະ ຕົວຄວບຄຸມການອ່ານຂອງທ່ານໄດ້ພາຍຫຼັງໃນການຕັ້ງຄ່າ SandFly.</string>
   <string name="all_set_title">ຮຽບຮ້ອຍໝົດແລ້ວ!</string>
   <string name="all_set_text">ທ່ານພ້ອມໃຊ້ SandFly ແລ້ວ.\n\nສືບຕໍ່ສຶກສາກ່ຽວກັບຫົວຂໍ້ອື່ນໆຕອນນີ້ ຫຼື ກວດສອບຂໍ້ມູນນີ້ຕອນໃດກໍໄດ້ໃນການຕັ້ງຄ່າ SandFly.</string>
   <string name="talkback_tutorial_text">ປັດຂວາເພື່ອເລືອກຫົວຂໍ້. ເພື່ອປະສົບການທີ່ດີທີ່ສຸດ, ໃຫ້ເປີດ SandFly ກ່ອນເລີ່ມຕົ້ນ.</string>
@@ -1069,11 +1065,11 @@
   <string name="checking_notifications_tips">ເພື່ອກວດສອບປະຫວັດການແຈ້ງເຕືອນຂອງທ່ານ, ໃຫ້ໃຊ້ 2 ນິ້ວປັດລົງຈາກເທິງສຸດຂອງໜ້າຈໍຂອງທ່ານ</string>
   <string name="image_description_playground_title">ລອງຮັບຄຳອະທິບາຍຮູບ</string>
   <string name="image_description_playground_content_one">ເມື່ອທ່ານໂຟກັສຮູບພາບໃດໜຶ່ງ, ໃຫ້ເປີດເມນູ SandFly ແລະ ເລືອກ “ອະທິບາຍຮູບ”.\n\nມີໜຶ່ງຮູບຢູ່ລຸ່ມນີ້. ລອງໃສ່ຄຳອະທິບາຍໃຫ້ມັນ.</string>
-  <string name="image_description_playground_content_two">ທ່ານສາມາດປ່ຽນການຕັ້ງຄ່າຄໍາອະທິບາຍຮູບພາບໄດ້ທຸກເວລາໃນການຕັ້ງຄ່າ SandFly &gt; ຄໍາອະທິບາຍອັດຕະໂນມັດ.</string>
-  <string name="image_description_playground_content_two_tts">ທ່ານສາມາດປ່ຽນການຕັ້ງຄ່າຄຳອະທິບາຍຮູບພາບໄດ້ທຸກເວລາໃນການຕັ້ງຄ່າ SandFly ຈາກນັ້ນ ຄຳອະທິບາຍອັດຕະໂນມັດ.</string>
+  <string name="image_description_playground_content_two">ທ່ານສາມາດປ່ຽນການຕັ້ງຄ່າຄໍາອະທິບາຍຮູບພາບໄດ້ທຸກເວລາໃນການຕັ້ງຄ່າ SandFly &gt; ຄຳອະທິບາຍຮູບ ແລະ ໜ້າຈໍ.</string>
+  <string name="image_description_playground_content_two_tts">ທ່ານສາມາດປ່ຽນການຕັ້ງຄ່າຄຳອະທິບາຍຮູບພາບໄດ້ທຸກເວລາໃນການຕັ້ງຄ່າ SandFly ຈາກນັ້ນ ຄຳອະທິບາຍຮູບ ແລະ ໜ້າຈໍ.</string>
   <string name="image_description_sample_image_content_description">ຮູບຕົວຢ່າງ; ແຕະດ້ວຍມື 3 ນິ້ວເພື່ອເປີດເມນູ SandFly ແລ້ວເລືອກ \"ອະທິບາຍຮູບ\" ເພື່ອຟັງຄຳອະທິບາຍ.</string>
   <string name="practice_gestures_title">ເຝິກແອບທ່າທາງ</string>
-  <string name="practice_keyboard_gestures_title">ຝຶກໃຊ້ຄີລັດ</string>
+  <string name="practice_keyboard_gestures_title">ຝຶກໃຊ້ປຸ່ມລັດແປ້ນພິມ</string>
   <string name="pref_gesture_set_key_title">ຊຸດທ່າທາງ</string>
   <string name="practice_gestures_text">ລອງໃຊ້ທ່າທາງ SandFly ໃດກໍໄດ້ຢູ່ໜ້າຈໍນີ້ເພື່ອຟັງວ່າທ່າທາງນັ້ນເຮັດຫຍັງ.\n\nແຕະໃສ່ໜ້າຈໍດ້ວຍ 2 ນິ້ວ. ສືບຕໍ່ເຝິກແອບໂດຍການແຕະເທື່ອໜຶ່ງ, ສອງເທື່ອ ຫຼື ສາມເທື່ອດ້ວຍ 2, 3 ຫຼື 4 ນິ້ວ.\n\nທ່ານສາມາດແຕະສອງເທື່ອຄ້າງໄວ້ດ້ວຍ 2, 3 ຫຼື 4 ນິ້ວນຳກໍໄດ້.</string>
   <string name="practice_gestures_text_pre_r">ລອງໃຊ້ທ່າທາງ SandFly ໃດກໍໄດ້ຢູ່ໜ້າຈໍນີ້ເພື່ອຟັງວ່າທ່າທາງນັ້ນເຮັດຫຍັງ.\n\nລອງທ່າທາງໃດກໍໄດ້ທີ່ປັດສອງເທື່ອແລ້ວເປັນມຸມສາກ. ຕົວຢ່າງ: ປັດລົງແລ້ວປັດຂວາ, ໂດຍບໍ່ຕ້ອງຍົກນິ້ວຂອງທ່ານອອກໃນລະຫວ່າງນັ້ນ.</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">ສະຫຼັບໄປຫາການນໍາທາງຕາຕະລາງໃນຕາຕະລາງ</string>
   <string name="title_text_formatting_menu">ອະທິບາຍການຈັດຮູບແບບຂໍ້ຄວາມ</string>
   <string name="summary_text_formatting_menu">ສຳລັບການປ່ຽນແປງຕ່າງໆ ເຊັ່ນ: ຕົວໜາ, ຕົວອຽງ, ຂີດກ້ອງ ແລະ ອື່ນໆ</string>
-  <string name="title_text_formatting_inline">ການຈັດຮູບແບບຂໍ້ຄວາມເວົ້າ</string>
+  <string name="title_text_formatting_inline">ອ່ານການຈັດຮູບແບບຂໍ້ຄວາມ</string>
   <string name="title_switch_text_formatting">ອ່ານການຈັດຮູບແບບຂໍ້ຄວາມ</string>
   <string name="summary_text_formatting_verbosity">ເພື່ອປ່ຽນແປງ ເຊັ່ນ: ຕົວໜາ ແລະ ຕົວອຽງ</string>
   <string name="summary_text_formatting_selector">ປ່ຽນວ່າຈະອ່ານອອກສຽງການຈັດຮູບແບບ ເຊັ່ນ ຕົວໜາ ແລະ ຕົວອຽງ ຫຼື ບໍ່</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">ເພີ່ມເຕີມ</string>
     <string name="title_pref_reserve_vibration_watch_gestures">ສະຫງວນທ່າທາງໄວ້ສຳລັບ Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly ຈະບໍ່ຈັດການການແຕະໜຶ່ງເທື່ອ ແລະ ສອງເທື່ອດ້ວຍສອງນິ້ວ ເພື່ອໃຫ້ Samsung Vibration Watch ໃຊ້ໄດ້. ເປີດ Vibration Watch ໃນການຕັ້ງຄ່າການຊ່ວຍເຂົ້າເຖິງຂອງໂມງທ່ານ.</string>
-    <string name="shortcut_reserved_for_vibration_watch">ສະຫງວນໄວ້ສຳລັບ Vibration Watch ໃນການຕັ້ງຄ່າຂັ້ນສູງ</string>
     <string name="title_pref_speakerphone_away_from_ear">ລໍາໂພງໃນເວລາທີ່ຢູ່ຫ່າງຈາກຫູຂອງທ່ານ</string>
     <string name="summary_pref_speakerphone_away_from_ear">ໃນລະຫວ່າງການໂທ, ສະຫຼັບໄປລຳໂພງເມື່ອທ່ານເອົາໂທລະສັບອອກຈາກຫູ ແລະ ກັບໄປລຳໂພງຫູເມື່ອທ່ານຍົກມັນຂຶ້ນຫູອີກຄັ້ງ.</string>
     <string name="summary_pref_speakerphone_needs_permission">ຕ້ອງການສິດທີ່ Android ບໍ່ໃຫ້ກັບໂປຣແກຣມອ່ານໜ້າຈໍ. ເພື່ອໃຫ້ສິດນີ້, ໃຫ້ແລ່ນຄຳສັ່ງນີ້ດ້ວຍ adb ຫຼື Shizuku, ຈາກນັ້ນກັບມາໜ້າຈໍນີ້: %1$s</string>
@@ -1393,12 +1388,11 @@
     <string name="speech_control_apps_category">ແອັບ</string>
     <string name="speech_control_no_apps">ບໍ່ມີແອັບໃດທີ່ຂໍໃຫ້ເວົ້າເທື່ອ.</string>
     <string name="speech_control_ask_title">ອະນຸຍາດໃຫ້ <xliff:g id="app" example="Tasker">%1$s</xliff:g> ເວົ້າຜ່ານ SandFly ບໍ?</string>
-    <string name="speech_control_ask_text">ແອັບນີ້ສາມາດເວົ້າຂໍ້ຄວາມດ້ວຍສຽງ SandFly ຂອງທ່ານ. ທ່ານສາມາດປ່ຽນສິ່ງນີ້ໄດ້ໃນການຕັ້ງຄ່າຂັ້ນສູງ.</string>
     <string name="speech_control_allow">ອະນຸຍາດ</string>
     <string name="speech_control_deny">ບໍ່ອະນຸຍາດ</string>
     <string name="permission_speak_label">ເວົ້າຜ່ານ SandFly</string>
     <string name="permission_speak_description">ອະນຸຍາດໃຫ້ແອັບຂໍເວົ້າຂໍ້ຄວາມດ້ວຍສຽງ SandFly ຂອງທ່ານ. SandFly ຈະຖາມທ່ານກ່ອນທີ່ແອັບຈະເວົ້າໄດ້.</string>
-    <string name="permission_braille_display_label">ຂໍເປັນຈໍສະແດງຜົນອັກສອນນູນສຳລັບ SandFly</string>
+    <string name="permission_braille_display_label">ຂໍເປັນຈໍສະແດງຜົນຕົວອັກສອນນູນສຳລັບ SandFly</string>
     <string name="permission_braille_display_description">ອະນຸຍາດໃຫ້ແອັບຂໍເປັນຈໍສະແດງຜົນຕົວອັກສອນນູນສຳລັບ SandFly. ຖ້າທ່ານອະນຸຍາດໃນ SandFly, ແອັບຈະສາມາດອ່ານທຸກຢ່າງໃນໜ້າຈໍ ແລະ ຄວບຄຸມອຸປະກອນຂອງທ່ານໄດ້. SandFly ຈະຖາມທ່ານກ່ອນ.</string>
     <string name="title_pref_phonetic_letters_mode">ເວົ້າຕົວອັກສອນຕາມສຽງ</string>
     <string name="phonetic_letters_mode_off">ປິດ</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">ເອົາອອກ</string>
     <string name="quick_settings_added">ເພີ່ມ %1$s ແລ້ວ</string>
     <string name="quick_settings_removed">ເອົາ %1$s ອອກແລ້ວ</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ເປີດ. ຖື 2 ນິ້ວເທິງໜ້າຈໍເປັນເວລາ 5 ວິນາທີເພື່ອປິດ. ເພື່ອຢຸດການສະແດງຂໍ້ຄວາມນີ້, ປິດການຕັ້ງຄ່າ SandFly &gt; ການຕັ້ງຄ່າຂັ້ນສູງ &gt; ສະແດງຄໍາແນະນໍາສໍາລັບການປິດ SandFly.</string>
     <string name="edge_gestures_title">ຂອບ</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ທາງລັດອື່ນເພື່ອເປີດ ຫຼືປິດໂໝດທ່ອງເວັບ</string>
     <string name="title_pref_vibration_strength">ຄວາມແຮງສັ່ນສະເທືອນ</string>
@@ -1697,7 +1690,7 @@
     <string name="window_names_window_opens">ສະເພາະເມື່ອໜ້າຕ່າງເປີດ</string>
     <string name="window_names_never">ບໍ່ເຄີຍ</string>
     <string name="title_pref_selector_links_controls_web_only">ລິ້ງ ແລະ ຕົວຄວບຄຸມສະເພາະໃນເນື້ອຫາເວັບ</string>
-    <string name="title_pref_selector_auto_switch">ປ່ຽນການຄວບຄຸມການອ່ານອັດຕະໂນມັດ</string>
+    <string name="title_pref_selector_auto_switch">ປ່ຽນຕົວຄວບຄຸມການອ່ານອັດຕະໂນມັດ</string>
     <string name="title_pref_touch_stops_speech">ຢຸດສຽງເວົ້າເມື່ອແຕະໜ້າຈໍ</string>
     <string name="title_pref_focus_new_windows">ຍ້າຍໂຟກັສໄປທີ່ໜ້າຕ່າງໃໝ່</string>
     <string name="title_pref_volume_keys_adjust_sliders">ປຸ່ມລະດັບສຽງປັບຕົວເລື່ອນ</string>
@@ -1715,7 +1708,7 @@
     <string name="title_keyboard_echo_physical">ສຽງສະທ້ອນແປ້ນພິມພາຍນອກ</string>
     <string name="title_keyboard_echo_braille_keyboard">ສຽງແປ້ນພິມອັກສອນນູນ</string>
     <string name="title_keyboard_echo_handwriting_keyboard">ສຽງແປ້ນພິມລາຍມື</string>
-    <string name="title_keyboard_echo_braille_display">ສຽງສະທ້ອນຈໍສະແດງຜົນອັກສອນນູນ</string>
+    <string name="title_keyboard_echo_braille_display">ສຽງສະທ້ອນຈໍສະແດງຜົນຕົວອັກສອນນູນ</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">ຂັດຈັງຫວະສຽງເວົ້າໃນເວລາພິມ</string>
     <string name="pref_interrupt_typing_entry_always">ສະເໝີ</string>
@@ -1735,8 +1728,8 @@
     <string name="template_item_details_order_dropped">ວາງ <xliff:g id="detail" example="Name">%1$s</xliff:g> ແລ້ວ. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ອ່ານລາຍລະອຽດຂອງລາຍການຕາມລຳດັບນີ້. ເພື່ອປ່ຽນ, ໃຫ້ແຕະລາຍລະອຽດຄ້າງໄວ້ ຈາກນັ້ນລາກຂຶ້ນ ຫຼື ລົງ. ເມື່ອເປີດ SandFly ຢູ່, ໃຫ້ແຕະສອງເທື່ອຄ້າງໄວ້ ຈາກນັ້ນລາກ. ທ່ານຍັງສາມາດໃຊ້ຄຳສັ່ງ ຍ້າຍຂຶ້ນ ແລະ ຍ້າຍລົງ ໄດ້.</string>
     <string name="title_pref_speak_items_before_scroll">ອ່ານລາຍການກ່ອນທີ່ຈະເລື່ອນເຂົ້າມາໃນມຸມມອງ</string>
-    <string name="gemini_error_api_key">Gemini ບໍ່ຍອມຮັບລະຫັດ API. ກວດເບິ່ງລະຫັດໃນການຕັ້ງຄ່າຄໍາອະທິບາຍອັດຕະໂນມັດ.</string>
-    <string name="gemini_error_quota">ຮອດຂີດຈຳກັດການນຳໃຊ້ສຳລັບລະຫັດ API Gemini ຂອງທ່ານແລ້ວ. ລອງໃໝ່ໃນພາຍຫຼັງ.</string>
+    <string name="gemini_error_api_key">Gemini ບໍ່ຍອມຮັບລະຫັດ API. ກວດເບິ່ງລະຫັດໃນການຕັ້ງຄ່າຄຳອະທິບາຍຮູບ ແລະ ໜ້າຈໍ.</string>
+    <string name="gemini_error_quota">ຮອດຂີດຈຳກັດການນຳໃຊ້ສຳລັບລະຫັດ API ຂອງ Gemini ຂອງທ່ານແລ້ວ. ລອງໃໝ່ໃນພາຍຫຼັງ.</string>
     <string name="gemini_error_busy">Gemini ຕອນນີ້ບໍ່ຫວ່າງ. ກະລຸນາລອງໃໝ່ໃນອີກຈັກໜ່ອຍ.</string>
     <string name="gemini_error_timeout">Gemini ໃຊ້ເວລາຕອບດົນເກີນໄປ. ລອງໃໝ່.</string>
     <string name="gemini_error_with_code">Gemini ຕອບບໍ່ໄດ້, ຜິດພາດ <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">ໂມເດວ Whisper</string>
     <string name="dictation_whisper_use">ໃຊ້</string>
     <string name="title_pref_dictation_ai_service">ບໍລິການ AI ສຳລັບການພິມດ້ວຍສຽງ</string>
-    <string name="dictation_ai_same">ຄືກັນກັບຄຳອະທິບາຍອັດຕະໂນມັດ</string>
     <string name="title_pref_browse_mode_per_app">ຈື່ໂໝດທ່ອງເບິ່ງໃນແຕ່ລະແອັບ</string>
     <string name="title_pref_export_settings">ສົ່ງອອກການຕັ້ງຄ່າ</string>
     <string name="title_pref_import_settings">ນໍາເຂົ້າການຕັ້ງຄ່າ</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">ແທຣັກກ່ອນໜ້າ</string>
     <string name="sound_mode_needs_access">ອະນຸຍາດການເຂົ້າເຖິງ “ຫ້າມລົບກວນ” ເພື່ອເປີດ ຫຼື ປິດ “ປິດສຽງ”.</string>
     <string name="title_pref_dictation_auto_stop">ຢຸດອັດຕະໂນມັດຫຼັງຈາກງຽບ</string>
+    <string name="dictation_ai_same">ຄືກັບ “ຄຳອະທິບາຍຮູບ ແລະ ໜ້າຈໍ”</string>
+    <string name="navigation_settings_link">ການຕັ້ງຄ່າ SandFly > ການນຳທາງ</string>
+    <string name="navigation_settings_link_tts">ການຕັ້ງຄ່າ SandFly ຈາກນັ້ນ ການນຳທາງ</string>
+    <string name="shortcut_reserved_for_vibration_watch">ສະຫງວນໄວ້ສຳລັບ Vibration Watch ໃນ “ທ່າທາງ”</string>
+    <string name="speech_control_ask_text">ແອັບນີ້ສາມາດເວົ້າຂໍ້ຄວາມດ້ວຍສຽງ SandFly ຂອງທ່ານໄດ້. ທ່ານສາມາດປ່ຽນສິ່ງນີ້ໄດ້ທີ່ “ການຕັ້ງຄ່າ” > “ການເວົ້າ” > “ໃຫ້ແອັບຯອື່ນເວົ້າ”.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ເປີດ. ໃຊ້ 2 ນິ້ວກົດຄ້າງຢູ່ໜ້າຈໍໄວ້ 5 ວິນາທີເພື່ອປິດ. ເພື່ອຢຸດສະແດງຂໍ້ຄວາມນີ້, ໃຫ້ປິດ ການຕັ້ງຄ່າ SandFly &gt; ຢຸດຊົ່ວຄາວ ແລະ ປິດ &gt; ສະແດງຄຳແນະນຳສຳລັບການປິດ SandFly.</string>
+    <string name="tutorial_link">ການຕັ້ງຄ່າ SandFly > ຊ່ວຍເຫຼືອ ແລະ ຕິຊົມ > ບົດສອນການນຳໃຊ້ SandFly</string>
+    <string name="tutorial_link_tts">ການຕັ້ງຄ່າ SandFly ຈາກນັ້ນ ຊ່ວຍເຫຼືອ ແລະ ຕິຊົມ ຈາກນັ້ນ ບົດສອນການນຳໃຊ້ SandFly</string>
 </resources>

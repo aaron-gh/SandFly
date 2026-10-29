@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_on_device_ai">هوش مصنوعی روی دستگاه</string>
-    <string name="summary_pref_on_device_ai">‏«شرح تصویر» و «توصیف صفحه» با مدلی روی این تلفن، بدون کلید API</string>
+    <string name="summary_pref_on_device_ai">‏«شرح تصویر» و «شرح صفحه‌نمایش» با مدلی روی این تلفن، بدون کلید API</string>
     <string name="pref_on_device_ai_enable">استفاده از هوش مصنوعی روی دستگاه</string>
     <string name="pref_on_device_ai_enable_summary">‏تصاویر و نماگرفت‌ها در این تلفن توصیف می‌شوند و هرگز برای Google ارسال نمی‌شوند. از ابر کندتر است و باتری بیشتری مصرف می‌کند.</string>
     <string name="pref_on_device_ai_enable_needs_model">ابتدا مدلی را بارگیری یا وارد کنید.</string>
@@ -49,7 +49,7 @@
     <string name="on_device_ai_import_done">مدل نصب شد</string>
     <string name="on_device_ai_import_failed">‏این فایل، فایل مدل Gemma 4 پشتیبانی‌شده‌ای نیست.</string>
     <string name="pref_on_device_ai_timeout">محدودیت زمانی پاسخ‌ها</string>
-    <string name="pref_on_device_ai_timeout_summary">‏%1$s. SandFly پس‌از این مدت دیگر منتظر نمی‌ماند. «توصیف صفحه» بیشتر از «شرح تصویر» طول می‌کشد.</string>
+    <string name="pref_on_device_ai_timeout_summary">‏%1$s. SandFly پس‌از این مدت دیگر منتظر نمی‌ماند. «شرح صفحه‌نمایش» بیشتر از «شرح تصویر» طول می‌کشد.</string>
     <string name="on_device_ai_choose_timeout">محدودیت زمانی پاسخ‌ها</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">‏%1$d دقیقه</item>
@@ -57,7 +57,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">پردازنده</string>
     <string name="pref_on_device_ai_short_prompts">توصیف‌های کوتاه‌تر صفحه</string>
-    <string name="pref_on_device_ai_short_prompts_summary">«توصیف صفحه» جزئیات کمتری درخواست می‌کند تا زودتر پاسخ دهد. برای توصیف‌های کامل‌تر، این را خاموش کنید.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">«شرح صفحه‌نمایش» جزئیات کمتری درخواست می‌کند تا زودتر پاسخ دهد. برای توصیف‌های کامل‌تر، این را خاموش کنید.</string>
     <string name="on_device_ai_error_network">بارگیری متوقف شد. اتصالتان را بررسی و دوباره امتحان کنید. از جایی که متوقف شد ادامه می‌یابد.</string>
     <string name="on_device_ai_error_http">سرور بارگیری درخواست را نپذیرفت. بعداً دوباره امتحان کنید، یا به‌جای آن فایلی را وارد کنید.</string>
     <string name="on_device_ai_error_corrupt">فایل با مدل موردانتظار مطابقت نداشت و حذف شد. دوباره امتحان کنید.</string>

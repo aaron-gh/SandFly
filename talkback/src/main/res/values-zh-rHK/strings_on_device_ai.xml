@@ -26,7 +26,7 @@
     <string name="on_device_ai_announce_done">模型已下載</string>
     <string name="on_device_ai_notification_channel">裝置端 AI 下載</string>
     <string name="on_device_ai_notification_downloading">正在下載模型，%1$d%%</string>
-    <string name="on_device_ai_notification_done">模型已下載。在設定中開啟裝置上的 AI。</string>
+    <string name="on_device_ai_notification_done">模型已下載。在設定中開啟裝置端 AI。</string>
     <string name="on_device_ai_notification_failed">下載失敗。請開啟設定重試。</string>
     <string name="on_device_ai_notification_paused">Android 已暫停下載。開啟設定即可繼續。</string>
     <string name="pref_on_device_ai_importing">正在檢查模型檔案</string>
@@ -68,7 +68,7 @@
     <string name="on_device_ai_metered_message">模型大小為數 GB，建議使用 Wi-Fi。</string>
     <string name="on_device_ai_metered_download">下載</string>
     <string name="on_device_ai_cancel">取消</string>
-    <string name="title_pref_on_device_ai_ignore_memory_limits">忽略裝置上的 AI 記憶體限制</string>
+    <string name="title_pref_on_device_ai_ignore_memory_limits">忽略裝置端 AI 記憶體限制</string>
     <string name="summary_pref_on_device_ai_ignore_memory_limits">讓你選擇所需記憶體多於這部手機的模型，並在不檢查可用記憶體的情況下載入，用於測試 Android 停止該模型時的情況。</string>
     <string name="on_device_ai_not_enough_memory">可用記憶體不足以執行 %1$s。請關閉部分應用程式，或在「裝置端 AI」設定中選擇較小的模型。</string>
     <string name="on_device_ai_stopped">%1$s 已停止，可能是因為手機記憶體不足。請在「裝置端 AI」設定中選擇較小的模型。</string>

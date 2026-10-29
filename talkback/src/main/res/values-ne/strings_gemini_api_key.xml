@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">मोडेल</string>
     <string name="ai_service_address_invalid">ठेगाना https:// बाट सुरु हुनुपर्छ। केही पनि सेभ गरिएन।</string>
     <string name="dialog_message_ai_service_consent">वर्णनका लागि छवि र स्क्रिनसटहरू <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> मा पठाइन्छन्, यसमा केही सेकेन्ड लाग्छ। त्यो सेवाका आफ्नै सर्त र गोपनीयता नीति लागू हुन्छन्। जेनेरेटिभ AI प्रयोगात्मक भएकाले यसले गल्ती गर्नेछ।</string>
-    <string name="ai_service_error_api_key">AI सेवाले API कुञ्जी स्वीकार गरेन। स्वचालित विवरणहरूमा यसको सेटिङहरू जाँच गर्नुहोस्।</string>
+    <string name="ai_service_error_api_key">एआई सेवाले API कुञ्जी स्वीकार गरेन। “फोटो र स्क्रिनका विवरणहरू” मा यसको सेटिङहरू जाँच गर्नुहोस्।</string>
     <string name="ai_service_error_quota">एआई सेवाको उपयोग सीमा पुगेको छ। पछि फेरि प्रयास गर्नुहोस्।</string>
     <string name="ai_service_error_busy">एआई सेवा अहिले व्यस्त छ। केही क्षणमा पुन: प्रयास गर्नुहोस्।</string>
-    <string name="ai_service_error_timeout">AI सेवाले जवाफ दिन धेरै समय लियो। पुन: प्रयास गर्नुहोस्।</string>
+    <string name="ai_service_error_timeout">एआई सेवाले जवाफ दिन धेरै समय लियो। पुन: प्रयास गर्नुहोस्।</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">कुनै पनि होइन</string>
-    <string name="ai_service_not_set_up">कुनै AI सेवा प्रयोगमा छैन। एउटा सेट अप गर्नुहोस् वा स्वचालित विवरण सेटिङहरूमा एउटा छान्नुहोस्।</string>
-    <string name="ai_provider_none_set_up">कुनै AI सेवा सेटअप गरिएको छैन। तलको सेटिङहरूमा एउटा सेट अप गर्नुहोस्।</string>
+    <string name="ai_service_not_set_up">कुनै एआई सेवा प्रयोगमा छैन। “फोटो र स्क्रिनका विवरणहरू” का सेटिङमा एउटा सेट अप गर्नुहोस् वा छान्नुहोस्।</string>
+    <string name="ai_provider_none_set_up">कुनै एआई सेवा सेटअप गरिएको छैन। तलको सेटिङहरूमा एउटा सेट अप गर्नुहोस्।</string>
     <string name="ai_provider_other">अन्य सेवा</string>
     <string name="title_pref_category_ai_services">एआई सेवाहरू</string>
     <string name="title_pref_ai_provider">एआई सेवा</string>

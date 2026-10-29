@@ -13,7 +13,7 @@
   <string name="label_manager_summary_title">Upravljanje oznak po meri</string>
   <string name="label_manager_package_title">Upravljanje oznak za %1$s</string>
   <string name="manage_label">Upravljanje oznake</string>
-  <string name="label_manager_no_packages_message">Trenutno ni oznak po meri.\n\n<b>Kako ustvarite oznako po meri</b>\nPomaknite se do neoznačene slike in v meniju funkcije SandFly dodajte oznako.</string>
+  <string name="label_manager_no_packages_message">Trenutno ni oznak po meri.\n\n<b>Kako ustvarite oznako po meri</b>\nPomaknite se do neoznačene slike in v meniju SandFly dodajte oznako.</string>
   <string name="label_manager_timestamp_text">Zadnja sprememba: %1$s</string>
   <string name="search_mode_cancel">Iskanje preklicano.</string>
   <string name="notification_type_status_started">Začetek</string>
@@ -93,8 +93,8 @@
   <string name="title_pref_advanced_settings">Dodatne nastavitve</string>
   <string name="title_pref_show_exit_watermark">Prikaz navodil za izklop funkcije SandFly</string>
   <string name="summary_pref_show_exit_watermark">Ko se SandFly vklopi, je prikazano, kako ga izklopite</string>
-  <string name="talkback_exit_watermark_text">Funkcija SandFly je vklopljena. Če jo želite izklopiti, 5 sekund pridržite dva prsta na zaslonu. Če ne želite več videti tega sporočila, se s tremi prsti dotaknite zaslona, da odprete meni funkcije SandFly.</string>
-  <string name="talkback_exit_watermark_hint_text">Prikaz pasice, ki naznanja, da je funkcija SandFly vklopljena. Če želite funkcijo SandFly izklopiti, pet sekund pridržite dva prsta na zaslonu. Če želite odstraniti to pasico, odprite nastavitve za SandFly.</string>
+  <string name="talkback_exit_watermark_text">Funkcija SandFly je vklopljena. Če jo želite izklopiti, 5 sekund pridržite dva prsta na zaslonu. Če ne želite več videti tega sporočila, se s tremi prsti dotaknite zaslona, da odprete meni SandFly.</string>
+  <string name="talkback_exit_watermark_hint_text">Prikaz pasice, ki naznanja, da je funkcija SandFly vklopljena. Če želite funkcijo SandFly izklopiti, pet sekund pridržite dva prsta na zaslonu. Če želite odstraniti to pasico, odprite nastavitve funkcije SandFly.</string>
   <string name="reset_gesture_settings_title">Ponastavitev potez</string>
   <string name="one_finger_gestures_title">1 prst</string>
   <string name="one_finger_back_forth_gestures_title">Nazaj in naprej z 1 prstom</string>
@@ -107,7 +107,7 @@
   <string name="pref_verbosity_preset_entry_custom">Po meri</string>
   <string name="pref_verbosity_preset_entry_low">Nizka</string>
   <string name="pref_verbosity_category_preset_settings_title">Podrobnosti izgovarjanja</string>
-  <string name="pref_verbosity_preset_change">Prednastavitev %1$s za izgovarjanje je zdaj aktivna.</string>
+  <string name="pref_verbosity_preset_change">Raven podrobnosti <xliff:g id="preset_name" example="High">%1$s</xliff:g> je zdaj aktivna.</string>
   <string name="pref_gesture_set_entry_0">0</string>
   <string name="pref_gesture_set_entry_1">1</string>
   <string name="keycombo_keymap_changes_instruction_title">Posodobitev razporeditev tipk za SandFly</string>
@@ -192,7 +192,7 @@
   <string name="keycombo_menu_other_language_options">Prikaz nameščenih jezikov</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Kopiranje nazadnje izgovorjene besedne zveze</string>
   <string name="keycombo_menu_other_open_tts_settings">Odpiranje nastavitev pretvorbe besedila v govor</string>
-  <string name="keycombo_menu_other_open_talkback_settings">Odpiranje nastavitev SandFlya</string>
+  <string name="keycombo_menu_other_open_talkback_settings">Odpiranje nastavitev funkcije SandFly</string>
   <string name="keycombo_menu_other_report_issue">Pošiljanje povratnih informacij</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Kroženje med možnostmi odmeva vnosa</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Prikaz seznama bližnjičnih tipk</string>
@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">Samodejni opisi</string>
   <string name="title_pref_gemini_settings">Nastavitve Geminija</string>
   <string name="title_pref_gemini_enabled">Glasovni ukazi Gemini</string>
-  <string name="title_pref_category_automatic_description_summary">Ko v meniju funkcije SandFly izberete »Opis slike«, si lahko ogledate podrobne opise slik, generirane z umetno inteligenco.\n\nKo fokus premaknete na sliko ali ikono, si lahko ogledate tudi samodejne opise. Samodejni opisi delujejo brez internetne povezave.</string>
+  <string name="title_pref_category_automatic_description_summary">Ko v meniju SandFly izberete »Opis slike«, si lahko ogledate podrobne opise slik, generirane z umetno inteligenco.\n\nKo fokus premaknete na sliko ali ikono, si lahko ogledate tudi samodejne opise. Samodejni opisi delujejo brez internetne povezave.</string>
   <string name="title_pref_icon_detection">Samodejni opisi ikon</string>
   <string name="title_pref_image_description">Samodejni opisi slik</string>
   <string name="title_pref_text_recognition">Samodejni opisi za besedilo na slikah</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Drugo</string>
   <string name="shortcut_unassigned">Dotaknite se za dodelitev dejanja</string>
   <string name="shortcut_not_customizable">%1$s, ni prilagodljivo</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Ni na voljo, ko je vklopljeno vibriranje ure</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Ni na voljo, ko je vklopljena funkcija Vibration Watch</string>
   <string name="shortcut_next">Naslednji element</string>
   <string name="shortcut_previous">Prejšnji element</string>
   <string name="shortcut_scroll_forward">Pomik naprej</string>
@@ -401,10 +401,10 @@
   <string name="shortcut_perform_click_action">Aktiviraj</string>
   <string name="shortcut_perform_double_click_action">Dvoklik</string>
   <string name="shortcut_perform_long_click_action">Dotik in pridržanje</string>
-  <string name="talkback_menu_title">Meni funkcije SandFly</string>
+  <string name="talkback_menu_title">Meni SandFly</string>
   <string name="talkback_menu_close_button_text">@string/close_string</string>
   <string name="talkback_menu_more_options_text">Več možnosti menija je na voljo po končani nastavitvi ali odklepanju naprave</string>
-  <string name="talkback_menu_title_content_description">Meni funkcije SandFly. Če želite raziskati možnosti menija funkcije SandFly, povlecite v desno.\n\nČe se želite vrniti v vadnico, z dvema prstoma povlecite v levo ali desno z roba zaslona.</string>
+  <string name="talkback_menu_title_content_description">Meni SandFly. Če želite raziskati možnosti menija SandFly, povlecite v desno.\n\nČe se želite vrniti v vadnico, z dvema prstoma povlecite v levo ali desno z roba zaslona.</string>
   <string name="shortcut_show_language_options">Spremeni govorjeni jezik</string>
   <string name="shortcut_select_next_setting">Naslednji kontrolnik za branje</string>
   <string name="shortcut_select_previous_setting">Prejšnji kontrolnik za branje</string>
@@ -818,13 +818,13 @@
   <string name="adjust_granularity_hint">Za branje po »%2$s« uporabite potezo »%1$s«</string>
   <string name="adjust_typo_hint">%1$s za predloge.</string>
   <string name="use_action_hint">Dvakrat se dotaknite za izvedbo dejanja.</string>
-  <string name="no_adjust_setting_gesture">Če želite to uporabiti, pojdite na nastavitve SandFly in dodajte potezo za \'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
-  <string name="no_navigate_typo_gesture">Če želite to uporabljati, odprite nastavitve za SandFly in dodajte potezo za preverjanje črkovanja.</string>
+  <string name="no_adjust_setting_gesture">Če želite to uporabiti, pojdite na nastavitve funkcije SandFly in dodajte potezo za \'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
+  <string name="no_navigate_typo_gesture">Če želite to uporabljati, odprite nastavitve funkcije SandFly in dodajte potezo za preverjanje črkovanja.</string>
   <string name="use_spelling_suggestion_hint">Za zamenjavo besedila se dvakrat dotaknite</string>
   <string name="screen_search_keyword_hint">ključna beseda je %1$s</string>
-  <string name="screen_search_no_keyword_hint">Še nobene ključne besede ni. Če želite začeti novo iskanje, se s tremi prsti dotaknite in pridržite zaslon ali pa v meniju funkcije SandFly odprite pregled zaslona.</string>
-  <string name="screen_search_no_keyword_hint_pre_r">Še nobene ključne besede ni. Če želite začeti novo iskanje, povlecite levo in nato navzdol ali pa v meniju funkcije SandFly odprite pregled zaslona.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Braillova tipkovnica ni vklopljena. Pojdite v nastavitve za SandFly, nastavite braillovo tipkovnico in poskusite znova.</string>
+  <string name="screen_search_no_keyword_hint">Še nobene ključne besede ni. Če želite začeti novo iskanje, se s tremi prsti dotaknite in pridržite zaslon ali pa v meniju SandFly odprite pregled zaslona.</string>
+  <string name="screen_search_no_keyword_hint_pre_r">Še nobene ključne besede ni. Če želite začeti novo iskanje, povlecite levo in nato navzdol ali pa v meniju SandFly odprite pregled zaslona.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Braillova tipkovnica ni vklopljena. Pojdite v nastavitve funkcije SandFly, nastavite braillovo tipkovnico in poskusite znova.</string>
   <string name="suggestions_window_available">Na voljo so predlogi.</string>
   <string name="suggestions_window_available_with_gesture">Na voljo so predlogi. Do tega dostopate tako: %1$s</string>
   <string name="heads_up_window_available">Na voljo je obvestilo</string>
@@ -846,7 +846,7 @@
   <string name="tv_training_shortcut_step_summary">Za dostop do bližnjice za SandFly hkrati pritisnite in tri sekunde pridržite gumb za pomik navzdol in gumb za vrnitev. S tem boste vklopili ali izklopili SandFly.\n\nDo te bližnjice lahko dostopate tudi v nastavitvah televizorja.\n\nČe želite nadaljevati, pritisnite gumb za izbiro.</string>
   <string name="new_feature_in_talkback_title">Novosti funkcije SandFly</string>
   <string name="exit_tutorial_title">Ste končali ogled?</string>
-  <string name="exit_tutorial_content">Vadnico lahko kadar koli znova zaženete v nastavitvah za SandFly.</string>
+  <string name="exit_tutorial_content">Vadnico lahko kadar koli znova zaženete v nastavitvah funkcije SandFly.</string>
   <string name="exit_onboarding_content">Nove funkcije si lahko kadar koli znova ogledate v nastavitvah funkcije SandFly.</string>
   <string name="keep_reviewing_tutorial_button">Nadaljuj ogled</string>
   <string name="welcome_to_updated_talkback_title">Pozdravljeni v posodobljeni funkciji SandFly</string>
@@ -867,7 +867,7 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Način za izbiro je vklopljen ali izklopljen. Običajno se s tem zažene ali konča način za izbiro besedila, ko ste v polju za vnos. Povlecite v desno za nadaljevanje.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Meni s kontrolniki za branje odprete tako, da s tremi prsti povlečete v levo ali desno. Prav tako lahko s tremi prsti povlečete navzgor ali navzdol.</string>
   <string name="new_shortcut_gesture_note">Opomba: Ker ste prilagodili nekatere poteze, te informacije morda niso točne. Če želite pregledati svoje poteze, odprite nastavitve funkcije SandFly.</string>
-  <string name="welcome_to_android11_text">Dodali smo nove poteze, da je uporaba funkcije SandFly hitrejša in preprostejša.\n\nNa tem zaslonu lahko preizkusite nove poteze. Te informacije si lahko kadar koli ogledate v nastavitvah za SandFly.</string>
+  <string name="welcome_to_android11_text">Dodali smo nove poteze, da je uporaba funkcije SandFly hitrejša in preprostejša.\n\nNa tem zaslonu lahko preizkusite nove poteze. Te informacije si lahko kadar koli ogledate v nastavitvah funkcije SandFly.</string>
   <string name="new_gesture_notification_title">Nove poteze v funkciji SandFly</string>
   <string name="new_gesture_notification_content">Če želite izvedeti, kako z novimi potezami hitreje uporabljati funkcijo SandFly, se dotaknite.</string>
   <string name="dump_node_tree_description">Drevo vozlišč je bilo zabeleženo v dnevnike.</string>
@@ -881,7 +881,7 @@
   <string name="shortcut_for_dictation_content_without_google_play">Ko je na zaslonu prikazana tipkovnica Gboard, lahko z dvakratnim dotikom z dvema prstoma začnete glasovni narek in ga nato z dvakratnim dotikom z dvema prstoma tudi ustavite.</string>
   <string name="announcing_text_formatting_title">Najava oblikovanja besedila</string>
   <string name="announcing_text_formatting_header">SandFly lahko zdaj najavi spremembe oblikovanja besedila, na primer krepko in ležečo pisavo ter barvo besedila. Začnete tako:</string>
-  <string name="announcing_text_formatting_option1">Fokus premaknite na element z oblikovanjem, odprite meni funkcije SandFly in izberite »Opis oblikovanja besedila« ali</string>
+  <string name="announcing_text_formatting_option1">Fokus premaknite na element z oblikovanjem, odprite meni SandFly in izberite »Opis oblikovanja besedila« ali</string>
   <string name="announcing_text_formatting_option2">Dodajte kontrolnik za branje za oblikovanje besedila, ki vklopi ali izklopi najavo sprememb oblikovanja.</string>
   <string name="announcing_text_formatting_middle">Ko boste pripravljeni na preizkus, je tukaj primer oblikovanega besedila:</string>
   <string name="announcing_text_formatting_tail">Če želite spremeniti način najave oblikovanega besedila, lahko odprete %1$s.</string>
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">Deljeni dotik povsod</string>
   <string name="split_tap_everywhere_text">Deljeni dotik lahko zdaj povsod uporabljate za aktiviranje elementov, tudi zunaj tipkovnice. Če ga želite uporabiti, z enim prstom raziskujte zaslon, nato pa se z drugim prstom dotaknite zaslona, ne da bi dvignili prvega, da aktivirate trenutni element v fokusu.</string>
   <string name="keyboard_enhanced_keymap_title">Tipkovnica: Izboljšana razporeditev tipk</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly ima zdaj »Izboljšano razporeditev tipk« za fizične tipkovnice z vrsto novih ukazov in bližnjic. Vključuje »Brskalni način« za učinkovitejše premikanje po spletu ter enostavnejše krmarjenje in interakcijo za uporabnike SandFly, ki uporabljajo fizične tipkovnice. Na »Izboljšano razporeditev tipk« lahko preklopite v <xliff:g id="settings_path">%1$s</xliff:g>.\n\nČe uporabljate Braillov zaslon, lahko z novimi bližnjicami brskalnega načina vsebino pregledujete neposredno z Braillovega zaslona. Nekatere bližnjice Braillovega zaslona so bile zaradi tega spremenjene. Seznam vseh bližnjic Braillovega zaslona si lahko ogledate v <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly ima zdaj »Izboljšano razporeditev tipk« za fizične tipkovnice z vrsto novih ukazov in bližnjic. Vključuje »Brskalni način« za učinkovitejše premikanje po spletu ter enostavnejše krmarjenje in interakcijo za uporabnike SandFly, ki uporabljajo fizične tipkovnice. Na »Izboljšano razporeditev tipk« lahko preklopite v <xliff:g id="settings_path">%1$s</xliff:g>.\n\nČe uporabljate zaslon braille, lahko z novimi bližnjicami brskalnega načina vsebino pregledujete neposredno z zaslona braille. Nekatere bližnjice zaslona braille so bile zaradi tega spremenjene. Seznam vseh bližnjic zaslona braille si lahko ogledate v <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">»Nastavitve funkcije SandFly« &gt; »Bližnjične tipke«</string>
   <string name="keyboard_shortcuts_link_tts">»Nastavitve funkcije SandFly« in nato »Bližnjične tipke«</string>
   <string name="braille_display_settings_link">Nastavitve zaslona braille</string>
   <string name="keyboard_smart_browse_mode_title">Tipkovnica: Pametni brskalni način</string>
   <string name="keyboard_smart_browse_mode_text">Pametni brskalni način funkcije SandFly izklopi brskalni način v polju za urejanje, da vam pomaga tipkati s fizično tipkovnico med brskanjem po spletu. Ko v spletu preklopite na polje, ki ne omogoča urejanja, se nato znova vklopi brskalni način, da lahko učinkovito nadaljujete brskanje. »Pametni brskalni način« lahko vklopite ali izklopite v meniju <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">»Nastavitve funkcije SandFly« &gt; »Dodatne nastavitve«</string>
-  <string name="advanced_settings_link_tts">»Nastavitve funkcije SandFly« in nato »Dodatne nastavitve«</string>
   <string name="keyboard_tutorial_title">Vadnica za uporabo s tipkovnico</string>
   <string name="keyboard_tutorial_text">SandFly zdaj vključuje vadnico za uporabo s tipkovnico, ki vam pomaga pri učenju bližnjičnih tipk in ukazov za izboljšano razporeditev tipk pri uporabi fizične tipkovnice. Če želite dostopati do vadnice, se pomaknite v meni <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">»Nastavitve funkcije SandFly« &gt; »Vadnica za SandFly«</string>
-  <string name="tutorial_link_tts">»Nastavitve funkcije SandFly« in nato »Vadnica za SandFly«</string>
   <string name="tutorial_entry_point_title">Vadnica</string>
   <string name="welcome_to_talkback_title">Dobrodošli v funkciji SandFly</string>
   <string name="talkback_is_on">SandFly je vklopljen</string>
@@ -946,8 +942,8 @@
   <string name="adjusting_volume_second_instruction">Med držanjem prsta na zaslonu pritisnite tipko za povečanje ali zmanjšanje glasnosti ob strani naprave.</string>
   <string name="adjusting_volume_tail">Po nekaj sekundah boste zaslišali zvok pri novi glasnosti za funkcije dostopnosti.\n\nZdaj poskusite prilagoditi glasnost za funkcije dostopnosti.</string>
   <string name="menus_title">Uporaba menijev in kontrolnikov</string>
-  <string name="menus_talkback_menu_text">Meni funkcije SandFly vsebuje nastavitve in kontrolnike, ki jih boste morda pogosto potrebovali.\n\nOdprite meni funkcije SandFly zdaj tako, da se zaslona dotaknete s tremi prsti.</string>
-  <string name="menus_talkback_menu_text_pre_r">Meni funkcije SandFly vsebuje nastavitve in kontrolnike, ki jih boste morda pogosto potrebovali.\n\nOdprite meni funkcije SandFly zdaj tako, da povlečete navzdol in nato v desno.</string>
+  <string name="menus_talkback_menu_text">Meni SandFly vsebuje nastavitve in kontrolnike, ki jih boste morda pogosto potrebovali.\n\nOdprite meni SandFly zdaj tako, da se zaslona dotaknete s tremi prsti.</string>
+  <string name="menus_talkback_menu_text_pre_r">Meni SandFly vsebuje nastavitve in kontrolnike, ki jih boste morda pogosto potrebovali.\n\nOdprite meni SandFly zdaj tako, da povlečete navzdol in nato v desno.</string>
   <string name="menus_selector_text">S temi bližnjicami lahko hitro spremenite nastavitve, na primer preklopite s pomikanja po znakih na pomikanje po besedah ali spremenite hitrost govora funkcije SandFly.\n\nČe želite hitro spremeniti kontrolnike za branje, s tremi prsti povlecite v levo ali v desno.\n\nMeni funkcije SandFly in kontrolnike za branje lahko pozneje prilagodite v nastavitvah funkcije SandFly.</string>
   <string name="menus_selector_text_pre_r">S tema bližnjicama lahko hitro spreminjate nastavitve, na primer preklopite s pomikanja po znakih na pomikanje po besedah ali spremenite hitrost govora funkcije SandFly.\n\nČe želite hitro spremeniti kontrolnike za branje, povlecite navzdol in nato nazaj navzgor.\n\nMeni funkcije SandFly in kontrolnike za branje lahko pozneje prilagodite v nastavitvah funkcije SandFly.</string>
   <string name="all_set_title">Vse je pripravljeno.</string>
@@ -990,12 +986,12 @@
   <string name="edit_box_text">Dobrodošli v funkciji SandFly</string>
   <string name="selecting_text_title">Izbira besedila</string>
   <string name="selecting_text_text">V besedilnem polju premaknite kazalec na začetek besedila, ki ga želite izbrati.\n\nZ dvema prstoma se dvakrat dotaknite in pridržite, da začnete način za izbiro. Nato kazalec premaknite na konec besedila. Znova se z dvema prstoma dvakrat dotaknite in pridržite, da končate način za izbiro.\n\nPoskusite izbrati besedo »Dobrodošli« v spodnjem besedilnem polju.</string>
-  <string name="selecting_text_text_pre_r">V besedilnem polju premaknite kazalec na začetek besedila, ki ga želite izbrati.\n\nPovlecite navzdol in nato v desno, da odprete meni funkcije SandFly. Dvakrat se dotaknite dejanj in nato začnite način za izbiro. Kazalec premaknite na konec besedila.\n\nZnova odprite meni funkcije SandFly, nato pa se dvakrat dotaknite dejanj, da končate način za izbiro.\n\nPoskusite izbrati besedo »Dobrodošli« v spodnjem besedilnem polju.</string>
+  <string name="selecting_text_text_pre_r">V besedilnem polju premaknite kazalec na začetek besedila, ki ga želite izbrati.\n\nPovlecite navzdol in nato v desno, da odprete meni SandFly. Dvakrat se dotaknite dejanj in nato začnite način za izbiro. Kazalec premaknite na konec besedila.\n\nZnova odprite meni SandFly, nato pa se dvakrat dotaknite dejanj, da končate način za izbiro.\n\nPoskusite izbrati besedo »Dobrodošli« v spodnjem besedilnem polju.</string>
   <string name="copy_cut_paste_title">Kopiranje, izrezovanje in lepljenje</string>
   <string name="copy_text">Ko besedilo izberete, ga kopirate tako, da se dvakrat dotaknete s tremi prsti.\n\nPoskusite kopirati besedo v spodnjem besedilnem polju.</string>
   <string name="cut_paste_text">Če želite izrezati besedilo, se dvakrat dotaknite in pridržite s tremi prsti.\n\nČe želite prilepiti besedilo, se trikrat dotaknite s tremi prsti.\n\nPoskusite prilepiti besedo v spodnje besedilno polje.</string>
-  <string name="copy_text_pre_r">Ko besedilo izberete, ga lahko kopirate v meniju funkcije SandFly. Povlecite navzdol in nato v desno, da odprete meni funkcije SandFly. Dvakrat se dotaknite »Dejanja« in nato »Kopiraj«.\n\nPoskusite kopirati besedo v spodnjem besedilnem polju.</string>
-  <string name="cut_paste_text_pre_r">Če želite izrezati ali prilepiti besedilo, odprite meni funkcije SandFly in se dvakrat dotaknite »Dejanja«.\n\nPoskusite prilepiti besedo v spodnje besedilno polje.</string>
+  <string name="copy_text_pre_r">Ko besedilo izberete, ga lahko kopirate v meniju SandFly. Povlecite navzdol in nato v desno, da odprete meni SandFly. Dvakrat se dotaknite »Dejanja« in nato »Kopiraj«.\n\nPoskusite kopirati besedo v spodnjem besedilnem polju.</string>
+  <string name="cut_paste_text_pre_r">Če želite izrezati ali prilepiti besedilo, odprite meni SandFly in se dvakrat dotaknite »Dejanja«.\n\nPoskusite prilepiti besedo v spodnje besedilno polje.</string>
   <string name="edit_box_hint_paste_text">Tukaj prilepite besedilo.</string>
   <string name="typo_correction_title">Lektoriranje</string>
   <string name="typo_correction_text">Z lektoriranjem lahko preverite črkovanje ali slovnico v besedilnem polju.\n\nČe ga želite preizkusiti, premaknite fokus na spodnje besedilno polje, ki vsebuje črkovalne napake. Nato s tremi prsti povlecite desno, da se pomaknete do možnosti »Lektoriranje«.</string>
@@ -1040,7 +1036,7 @@
   <string name="voice_commands_title">Glasovni ukazi</string>
   <string name="voice_commands_text">Z glasom lahko hitro upravljate funkcijo SandFly.\n\nPrimer: Izgovorite ukaz, da spremenite nastavitev pomikanja, skočite na naslednji naslov, kopirate besedilo in izvedete druga dejanja.\n\nČe želite to preizkusiti zdaj, povlecite v desno in nato navzgor.</string>
   <string name="using_screen_search_title">Uporaba pregleda zaslona</string>
-  <string name="using_screen_search_text">Funkcija pregleda zaslona vam omogoča, da na zaslonu poiščete določeno vsebino.\n\nČe želite preizkusiti to funkcijo, odprite meni funkcije SandFly tako, da se s tremi prsti dotaknete zaslona, in v meniju poiščite možnost »Pregled zaslona«. Vnesite ključno besedo, na primer »naprej«, da najdete elemente s tem besedilom na zaslonu.\n\nZdaj poskusite poiskati »naprej«, da najdete gumb za naprej.</string>
+  <string name="using_screen_search_text">Funkcija pregleda zaslona vam omogoča, da na zaslonu poiščete določeno vsebino.\n\nČe želite preizkusiti to funkcijo, odprite meni SandFly tako, da se s tremi prsti dotaknete zaslona, in v meniju poiščite možnost »Pregled zaslona«. Vnesite ključno besedo, na primer »naprej«, da najdete elemente s tem besedilom na zaslonu.\n\nZdaj poskusite poiskati »naprej«, da najdete gumb za naprej.</string>
   <string name="screen_search_navigation_title">Krmarjenje s pregledom zaslona</string>
   <string name="screen_search_navigation_text">Ko izberete rezultat, se lahko hitro pomikate med različnimi rezultati iskanja v sklopu pregleda zaslona.\n\nTo storite z uporabo kontrolnikov za branje tako, da s tremi prsti povlečete v levo ali desno, in poiščite možnost, imenovano »Pregled zaslona«.\n\nPa poskusimo. Spodaj je seznam treh gumbov, ki vsi vsebujejo besedilo »dejanje«. S funkcijo pregleda zaslona poiščite ključno besedo »dejanje« in se nato pomikajte med rezultati v sklopu pregleda zaslona.</string>
   <string name="screen_search_action_button_1_text">1. dejanje</string>
@@ -1068,10 +1064,10 @@
   <string name="checking_notifications_text_tail_tts">Odprite »Nastavitve« in nato »Obvestila«, če želite preveriti, za katere aplikacije so vklopljena obvestila.</string>
   <string name="checking_notifications_tips">Če želite preveriti zgodovino obvestil, z vrha zaslona povlecite navzdol z dvema prstoma</string>
   <string name="image_description_playground_title">Poskusite pridobiti opise slik</string>
-  <string name="image_description_playground_content_one">Ko je fokus na sliki, odprite meni funkcije SandFly in izberite »Opis slike«.\n\nSpodaj je fotografija. Poskusite pridobiti njen opis.</string>
-  <string name="image_description_playground_content_two">Nastavitve opisa slike lahko kadar koli spremenite v nastavitvah SandFly &gt; Samodejni opisi.</string>
-  <string name="image_description_playground_content_two_tts">Nastavitve opisa slike lahko kadar koli spremenite v nastavitvah SandFly in nato Samodejni opisi.</string>
-  <string name="image_description_sample_image_content_description">Vzorčna slika: Če želite slišati opis, se dotaknite s tremi prsti, da odprete meni funkcije SandFly, in izberite »Opis slike«.</string>
+  <string name="image_description_playground_content_one">Ko je fokus na sliki, odprite meni SandFly in izberite »Opis slike«.\n\nSpodaj je fotografija. Poskusite pridobiti njen opis.</string>
+  <string name="image_description_playground_content_two">Nastavitve opisa slike lahko kadar koli spremenite v nastavitvah funkcije SandFly &gt; Opisi slik in zaslona.</string>
+  <string name="image_description_playground_content_two_tts">Nastavitve opisa slike lahko kadar koli spremenite v nastavitvah funkcije SandFly in nato Opisi slik in zaslona.</string>
+  <string name="image_description_sample_image_content_description">Vzorčna slika: Če želite slišati opis, se dotaknite s tremi prsti, da odprete meni SandFly, in izberite »Opis slike«.</string>
   <string name="practice_gestures_title">Vadba uporabe potez</string>
   <string name="practice_keyboard_gestures_title">Vaja uporabe bližnjičnih tipk</string>
   <string name="pref_gesture_set_key_title">Nabor potez</string>
@@ -1104,7 +1100,7 @@
   <string name="wear_training_volume_up_text">Povlecite desno in nato navzgor.</string>
   <string name="wear_training_volume_down_title">Zmanjšanje glasnosti</string>
   <string name="wear_training_volume_down_text">Povlecite desno in nato navzdol.</string>
-  <string name="wear_training_open_talkback_menu_title">Odpiranje menija funkcije SandFly</string>
+  <string name="wear_training_open_talkback_menu_title">Odpiranje menija SandFly</string>
   <string name="wear_training_open_talkback_menu_text">Če želite odpreti pogosto uporabne nastavitve in kontrolnike, povlecite navzdol in nato desno.</string>
   <string name="wear_training_typing_title">Tipkanje</string>
   <string name="wear_training_typing_text1">Če želite tipkati s tipkovnico, premaknite prst po tipkovnici. Ko zaslišite črko, ki jo želite vnesti, dvignite prst.</string>
@@ -1221,7 +1217,7 @@
   <string name="delete_icon_detection_dialog_title">Želite izbrisati samodejne opise ikon?</string>
   <string name="delete_image_description_dialog_title">Želite izbrisati samodejne opise slik?</string>
   <string name="delete_all_image_captioning_dialog_title">Želite izbrisati samodejne opise slik in ikon?</string>
-  <string name="delete_dialog_message">Če želite pozneje znova prejemati opise, lahko to funkcijo prenesete prek nastavitev za SandFly.</string>
+  <string name="delete_dialog_message">Če želite pozneje znova prejemati opise, lahko to funkcijo prenesete prek nastavitev funkcije SandFly.</string>
   <string name="delete_all_dialog_message">S tem izbrišete samodejne opise ikon in slik.\n\nČe želite pozneje znova prejemati opise, lahko te funkcije prenesete prek nastavitev funkcije SandFly.</string>
   <string name="delete_dialog_positive_button_text">Izbriši</string>
   <string name="delete_dialog_negative_button_text">Prekliči</string>
@@ -1352,7 +1348,7 @@
     <string name="battery_optimization_notification_title">Optimizacija baterije lahko ustavi SandFly</string>
     <string name="battery_optimization_notification_text">Na tem telefonu lahko varčevanje z energijo baterije po izklopu zaslona ustavi SandFly, ki nato molči, dokler ga znova ne zaženete. Dotaknite se, da odprete optimizacijo baterije, izberite Vse aplikacije, poiščite SandFly in izberite Ne optimiziraj.</string>
     <string name="title_pref_mute_speech_while_recording">Tiho med snemanjem</string>
-    <string name="summary_pref_mute_speech_while_recording">Medtem ko aplikacija snema brez priključenih slušalk, SandFly govori samo kot odgovor na vaše kretnje, tipke in tipkanje ter ostane tiho za stvari, kot so obvestila, tako da se ne snemajo.</string>
+    <string name="summary_pref_mute_speech_while_recording">Medtem ko aplikacija snema brez priključenih slušalk, SandFly govori samo kot odgovor na vaše poteze, tipke in tipkanje ter ostane tiho za stvari, kot so obvestila, tako da se ne snemajo.</string>
     <string name="title_pref_switch_languages">Samodejno preklopi jezik</string>
     <string name="title_pref_switch_dialects">Samodejno preklopi narečje</string>
     <string name="category_collapsed">Strnjen razdelek</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Več</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezerviraj poteze za Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly ne obdeluje več enojnih in dvojnih dotikov z dvema prstoma, da jih lahko uporablja Samsung Vibration Watch. Omogočite Vibration Watch v nastavitvah dostopnosti ure.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Rezervirano za Vibration Watch v naprednih nastavitvah</string>
     <string name="title_pref_speakerphone_away_from_ear">Zvočnik, ko je telefon stran od ušesa</string>
     <string name="summary_pref_speakerphone_away_from_ear">Med klicem preklopi na zvočnik, ko telefon odmaknete od ušesa, in nazaj na slušalko, ko ga ponovno dvignete.</string>
     <string name="summary_pref_speakerphone_needs_permission">Potrebuje dovoljenje, ki ga Android ne da bralnikom zaslona. Če ga želite odobriti, zaženite ta ukaz z adb ali Shizuku, nato se vrnite na ta zaslon: %1$s</string>
@@ -1393,13 +1388,12 @@
     <string name="speech_control_apps_category">Aplikacije</string>
     <string name="speech_control_no_apps">Nobena aplikacija še ni zahtevala govora.</string>
     <string name="speech_control_ask_title">Dovoliti <xliff:g id="app" example="Tasker">%1$s</xliff:g>, da govori prek SandFly?</string>
-    <string name="speech_control_ask_text">Lahko izgovori besedilo z vašim glasom SandFly. To lahko spremenite v naprednih nastavitvah.</string>
     <string name="speech_control_allow">Dovoli</string>
     <string name="speech_control_deny">Ne dovoli</string>
     <string name="permission_speak_label">govorjenje prek SandFlya</string>
     <string name="permission_speak_description">Omogoča, da aplikacija zahteva izgovor besedila z vašim glasom SandFly. SandFly vas vpraša, preden lahko aplikacija spregovori.</string>
-    <string name="permission_braille_display_label">zahteva za delovanje kot brajev zaslon za SandFly</string>
-    <string name="permission_braille_display_description">Omogoča, da aplikacija zahteva, da je Braillov zaslon za SandFly. Če mu dovolite v SandFly, lahko prebere vse na zaslonu in upravlja vašo napravo. SandFly vas najprej vpraša.</string>
+    <string name="permission_braille_display_label">zahteva za delovanje kot zaslon braille za SandFly</string>
+    <string name="permission_braille_display_description">Omogoča, da aplikacija zahteva, da je zaslon braille za SandFly. Če mu dovolite v SandFly, lahko prebere vse na zaslonu in upravlja vašo napravo. SandFly vas najprej vpraša.</string>
     <string name="title_pref_phonetic_letters_mode">Fonetično izgovarjanje črk</string>
     <string name="phonetic_letters_mode_off">Izklopljeno</string>
     <string name="phonetic_letters_mode_after_letter_delay">Po črki, s premorom, npr. »h, Helena«</string>
@@ -1550,7 +1544,6 @@
     <string name="quick_settings_remove">Odstrani</string>
     <string name="quick_settings_added">%1$s dodano</string>
     <string name="quick_settings_removed">%1$s odstranjen</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly vklopljeno. Za izklop držite 2 prsta na zaslonu 5 sekund. Če želite prenehati prikazovati to sporočilo, izklopite nastavitve SandFly &gt; Napredne nastavitve &gt; Pokaži navodila za izklop SandFly.</string>
     <string name="edge_gestures_title">Robovi</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Še ena bližnjica za vklop ali izklop načina brskanja</string>
     <string name="title_pref_vibration_strength">Moč vibracij</string>
@@ -1716,14 +1709,14 @@
     <string name="wrap_around_on">Krožno premikanje: vklopljeno</string>
     <string name="wrap_around_off">Krožno premikanje: izklopljeno</string>
     <string name="title_selector_tablet_held_up_faces_away">Dvignjena tablica, obrnjena stran</string>
-    <string name="summary_support_tablet_held_up_faces_away">Za brajevo tipkovnico na tabličnem računalniku ali razprtem telefonu</string>
+    <string name="summary_support_tablet_held_up_faces_away">Za braillovo tipkovnico na tabličnem računalniku ali razprtem telefonu</string>
     <string name="tablet_held_up_faces_away_on">Dvignjena tablica, obrnjena stran: vklopljeno</string>
     <string name="tablet_held_up_faces_away_off">Dvignjena tablica, obrnjena stran: izklopljeno</string>
     <string name="title_keyboard_echo_on_screen">Odmev tipkovnice na zaslonu</string>
     <string name="title_keyboard_echo_physical">Odmev fizične tipkovnice</string>
     <string name="title_keyboard_echo_braille_keyboard">Odmev Braillove tipkovnice</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Odmev rokopisne tipkovnice</string>
-    <string name="title_keyboard_echo_braille_display">Odmev Braillovega zaslona</string>
+    <string name="title_keyboard_echo_braille_display">Odmev zaslona braille</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Prekini govor med tipkanjem</string>
     <string name="pref_interrupt_typing_entry_always">Vedno</string>
@@ -1743,8 +1736,8 @@
     <string name="template_item_details_order_dropped">Spuščeno: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly pove podrobnosti o predmetu v tem vrstnem redu. Če ga želite spremeniti, se dotaknite podrobnosti in jo pridržite, nato pa jo povlecite navzgor ali navzdol. Ko je SandFly vklopljen, se dvakrat dotaknite in pridržite ter nato povlecite. Uporabite lahko tudi dejanji Premakni gor in Premakni navzdol.</string>
     <string name="title_pref_speak_items_before_scroll">Izgovori elemente, preden se pomaknejo v pogled</string>
-    <string name="gemini_error_api_key">Gemini ni sprejel ključa API. Preverite ključ v nastavitvah samodejnih opisov.</string>
-    <string name="gemini_error_quota">Omejitev uporabe za vaš ključ API Gemini je bila dosežena. Poskusite znova pozneje.</string>
+    <string name="gemini_error_api_key">Gemini ni sprejel ključa API. Preverite ključ v razdelku »Opisi slik in zaslona«.</string>
+    <string name="gemini_error_quota">Omejitev uporabe za vaš Gemini API ključ je bila dosežena. Poskusite znova pozneje.</string>
     <string name="gemini_error_busy">Gemini je trenutno zaseden. Poskusite znova čez trenutek.</string>
     <string name="gemini_error_timeout">Gemini se ni odzval pravočasno. Poskusite znova.</string>
     <string name="gemini_error_with_code">Gemini ni mogel odgovoriti, napaka <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
@@ -1769,12 +1762,11 @@
     <string name="dictation_google_download">Prenesi <xliff:g id="language" example="English">%1$s</xliff:g> za prepoznavanje v napravi</string>
     <string name="dictation_recognition_android">Prepoznavanje govora v Androidu</string>
     <string name="dictation_recognition_automatic_using">Samodejno: <xliff:g id="recognition" example="Rambler">%1$s</xliff:g></string>
-    <string name="dictation_rambler_needs_key">Rambler, potreben je ključ Gemini API</string>
+    <string name="dictation_rambler_needs_key">Rambler, potreben je Gemini API ključ</string>
     <string name="dictation_whisper_needs_model">Whisper, potreben je prenesen model</string>
     <string name="title_pref_whisper_models">Modeli Whisper</string>
     <string name="dictation_whisper_use">Uporabi</string>
     <string name="title_pref_dictation_ai_service">Storitev AI za narekovanje</string>
-    <string name="dictation_ai_same">Enako kot za samodejne opise</string>
     <string name="title_pref_browse_mode_per_app">Zapomni si način brskanja za vsako aplikacijo</string>
     <string name="title_pref_export_settings">Izvozi nastavitve</string>
     <string name="title_pref_import_settings">Uvozi nastavitve</string>
@@ -1802,4 +1794,12 @@
     <string name="shortcut_previous_track">Prejšnja skladba</string>
     <string name="sound_mode_needs_access">Za vklop ali izklop utišanja dovolite dostop do načina Ne moti.</string>
     <string name="title_pref_dictation_auto_stop">Samodejna ustavitev po tišini</string>
+    <string name="dictation_ai_same">Enaka kot v razdelku »Opisi slik in zaslona«</string>
+    <string name="navigation_settings_link">»Nastavitve funkcije SandFly« > »Pomikanje«</string>
+    <string name="navigation_settings_link_tts">»Nastavitve funkcije SandFly« in nato »Pomikanje«</string>
+    <string name="shortcut_reserved_for_vibration_watch">Rezervirano za Vibration Watch v razdelku »Poteze«</string>
+    <string name="speech_control_ask_text">Besedilo lahko izgovarja z vašim glasom SandFly. To lahko spremenite v razdelku »Nastavitve«, »Govor«, »Dovoli drugim aplikacijam govoriti«.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">Funkcija SandFly je vklopljena. Če jo želite izklopiti, 5 sekund pridržite dva prsta na zaslonu. Če ne želite več videti tega sporočila, izklopite »Nastavitve funkcije SandFly« &gt; »Začasna ustavitev in izklop« &gt; »Prikaz navodil za izklop funkcije SandFly«.</string>
+    <string name="tutorial_link">»Nastavitve funkcije SandFly« &gt; »Pomoč in povratne informacije« &gt; »Vadnica za SandFly«</string>
+    <string name="tutorial_link_tts">»Nastavitve funkcije SandFly«, nato »Pomoč in povratne informacije« in nato »Vadnica za SandFly«</string>
 </resources>

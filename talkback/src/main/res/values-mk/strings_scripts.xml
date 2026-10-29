@@ -42,7 +42,7 @@
     <string name="script_permission_actions">Кликање, лизгање, пишување и поместување на фокусот</string>
     <string name="script_permission_speech">Примање и менување на говорот на SandFly</string>
     <string name="script_permission_passwords">Читање на полињата за лозинка</string>
-    <string name="script_permission_input">Додавање гестови, копчиња, ставки од менито и контроли за читање</string>
+    <string name="script_permission_input">Додавање движења, копчиња, ставки од менито и контроли за читање</string>
     <string name="script_permission_network">Користење на интернетот</string>
     <string name="script_permission_clipboard">Читање и менување на привремената меморија</string>
     <string name="script_permission_system">Враќање назад или на почетниот екран, отворање известувања и апликации</string>
@@ -103,7 +103,7 @@
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, потоа <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Наредби</string>
     <string name="script_commands_summary">Движењата и копчињата на скрипта што работи имаат предност пред оние на SandFly. Исклучете го во скриптата за да го задржите она на SandFly.</string>
-    <string name="script_binding_gesture">Гест: <xliff:g id="gesture">%1$s</xliff:g></string>
+    <string name="script_binding_gesture">Движење: <xliff:g id="gesture">%1$s</xliff:g></string>
     <string name="script_binding_keys">Копчиња: <xliff:g id="keys">%1$s</xliff:g></string>
     <string name="script_binding_menu">Мени на SandFly</string>
     <string name="script_binding_control">Контроли за читање</string>
@@ -112,12 +112,12 @@
     <string name="script_binding_turn_off">Исклучи</string>
     <string name="script_binding_restore">Врати ги стандардните вредности</string>
     <string name="script_binding_restored">Стандардните вредности се обновени</string>
-    <string name="script_binding_perform">Изведете гест или притиснете копчиња</string>
+    <string name="script_binding_perform">Изведете движење или притиснете копчиња</string>
     <string name="script_binding_perform_summary">Доделување на следното движење или копчиња притиснати со модификаторското копче на SandFly</string>
-    <string name="script_binding_perform_message">Направете гест или притиснете ги копчињата.</string>
+    <string name="script_binding_perform_message">Направете движење или притиснете ги копчињата.</string>
     <string name="script_binding_assign_title">Да се додели <xliff:g id="binding">%1$s</xliff:g> на <xliff:g id="command">%2$s</xliff:g>?</string>
     <string name="script_binding_assign">Додели</string>
-    <string name="script_binding_choose_gesture">Избери гест</string>
+    <string name="script_binding_choose_gesture">Избери движење</string>
     <string name="script_binding_type_keys">Внеси копчиња</string>
     <string name="script_binding_type_keys_summary">Како sf+shift+n, или sf+t, s</string>
     <string name="script_binding_bad_keys">Овие копчиња не може да се користат. <xliff:g id="reason">%1$s</xliff:g></string>

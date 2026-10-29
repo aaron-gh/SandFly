@@ -88,7 +88,7 @@
   <string name="title_pref_show_tos">Paslaugų teikimo sąlygos</string>
   <string name="title_pref_show_privacy_policy">Privatumo politika</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Piršto antspaudo gestai</string>
-  <string name="title_pref_category_tutorial">„SandFly“ mokomoji medžiaga</string>
+  <string name="title_pref_category_tutorial">SandFly mokymo programa</string>
   <string name="title_pref_category_help_no_tutorial">Pagalba</string>
   <string name="title_pref_advanced_settings">Išplėstiniai nustatymai</string>
   <string name="title_pref_show_exit_watermark">Rodyti „SandFly“ išjungimo instrukcijas</string>
@@ -296,7 +296,7 @@
   <string name="summary_pref_intonation">Ištrintas raides tarti aukštesniu balso tonu</string>
   <string name="title_pref_brailledisplay">Brailio rašmenų ekranas</string>
   <string name="title_pref_brailleime">Brailio rašmenų klaviatūra</string>
-  <string name="summary_pref_brailleime_disabled">Įrenginyje nepalaikoma Brailio rašto klaviatūra</string>
+  <string name="summary_pref_brailleime_disabled">Įrenginyje nepalaikoma Brailio rašmenų klaviatūra</string>
   <string name="title_pref_speech_footer">Norėdami pakeisti pritaikymo neįgaliesiems garsumą bet kuriame ekrane, laikykite 1 pirštą ekrane ir paspauskite garsumo didinimo arba mažinimo klavišus.</string>
   <string name="title_pref_vibration">Atsakas vibruojant</string>
   <string name="title_pref_soundback">Garso atsakas</string>
@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">Automatiniai aprašai</string>
   <string name="title_pref_gemini_settings">„Gemini“ nustatymai</string>
   <string name="title_pref_gemini_enabled">Gemini balso komandos</string>
-  <string name="title_pref_category_automatic_description_summary">Gaukite išsamius DI vaizdų apibūdinimus „SandFly“ meniu pasirinkę „Apibūdinti vaizdą“.\n\nTaip pat galite gauti automatinius apibūdinimus paryškinę vaizdą ar piktogramą. Automatiniai apibūdinimai veikia be interneto ryšio.</string>
+  <string name="title_pref_category_automatic_description_summary">Gaukite išsamius DI vaizdų apibūdinimus „SandFly“ meniu pasirinkę „Vaizdo apibūdinimas“.\n\nTaip pat galite gauti automatinius apibūdinimus paryškinę vaizdą ar piktogramą. Automatiniai apibūdinimai veikia be interneto ryšio.</string>
   <string name="title_pref_icon_detection">Automatiniai piktogramų aprašymai</string>
   <string name="title_pref_image_description">Automatiniai vaizdų aprašymai</string>
   <string name="title_pref_text_recognition">Automatiniai teksto vaizduose aprašymai</string>
@@ -422,8 +422,8 @@
   <string name="shortcut_increase_volume">Padidinti garsumą</string>
   <string name="shortcut_decrease_volume">Sumažinti garsumą</string>
   <string name="shortcut_all_apps">Visos programos</string>
-  <string name="shortcut_braille_keyboard">Perjungti į Brailio klav.</string>
-  <string name="shortcut_braille_display_settings">Naršyti į Brailio r. ekrano nustatymus</string>
+  <string name="shortcut_braille_keyboard">Perjungti į Brailio rašmenų klaviatūrą</string>
+  <string name="shortcut_braille_display_settings">Naršyti į Brailio rašmenų ekrano nustatymus</string>
   <string name="shortcut_tutorial">Atidaryti mokymo programą</string>
   <string name="shortcut_control_speak_time">Sakyti laiką arba nesakyti laiko</string>
   <string name="shortcut_enable_speak_time">Sakyti laiką</string>
@@ -685,7 +685,7 @@
   <string name="button_disable_all_events">Išjungti viską</string>
   <string name="button_enable_all_events">Įgalinti viską</string>
   <string name="dialog_title_disable_exploration">Išjungti naršymą paliečiant?</string>
-  <string name="dialog_message_disable_exploration">Ar tikrai norite išjungti naršymą paliečiant?\n\nĮrenginys nebereaguos į sparčiuosius gestus ir neištars elementų, kai paliesite ekraną.</string>
+  <string name="dialog_message_disable_exploration">Ar tikrai norite išjungti funkciją „Naršyti paliečiant“?\n\nĮrenginys nebereaguos į sparčiuosius gestus ir neištars elementų, kai paliesite ekraną.</string>
   <string name="dialog_title_enable_tree_debug">Įjungti mazgų medžio derinimo režimą?</string>
   <string name="dialog_message_enable_tree_debug">Ar tikrai norite įjungti mazgų medžio derinimo režimą?\n\nJį įjungus, ekrano turinys pateikiamas įrenginio žurnaluose, kuriuos gali skaityti kitos programos.</string>
   <string name="dialog_title_enable_tree_debug_gesture">Iš naujo priskirti palietimo tris kartus keturiais pirštais gestą?</string>
@@ -696,7 +696,7 @@
   <string name="dialog_message_extend_log_level">Daugiažodis įrašymas į žurnalą padeda derinant, bet jį naudojant asmens informacija gali būti rodoma sistemos žurnalo buferyje.\n\n  Ar norite įgalinti daugiažodį įrašymą į žurnalą?</string>
   <string name="dialog_ok_buggon_extend_log_level">Taip, įgalinti daugiažodį įrašymą į žurnalą</string>
   <string name="dialog_title_diagnosis_mode">Įgalinti diagnostikos režimą?</string>
-  <string name="dialog_message_diagnosis_mode">Diagnostiko režimu galima atlikti derinimo procesą.  Norint užfiksuoti ekrano turinį sistemos žurnaluose, diagnostikos režimu nepaisoma palietimo keturiais pirštais gesto.  Ekrano turinyje gali būti asmens informacijos. \n\n Ar norite įgalinti diagnostikos režimą?</string>
+  <string name="dialog_message_diagnosis_mode">Diagnostikos režimu galima atlikti derinimo procesą.  Norint užfiksuoti ekrano turinį sistemos žurnaluose, diagnostikos režimu nepaisoma palietimo keturiais pirštais gesto.  Ekrano turinyje gali būti asmens informacijos. \n\n Ar norite įgalinti diagnostikos režimą?</string>
   <string name="title_request_phone_permission">Leisti pasiekti telefoną?</string>
   <string name="message_request_phone_permission">Tai padeda „SandFly“ sumažinti pranešimų, kai kalbate telefonu</string>
   <string name="continue_button">Tęsti</string>
@@ -824,7 +824,7 @@
   <string name="screen_search_keyword_hint">raktinis žodis yra „%1$s“</string>
   <string name="screen_search_no_keyword_hint">Dar nėra raktinių žodžių. Jei norite pradėti naują paiešką, palieskite ir palaikykite trimis pirštais arba eikite į „SandFly“ meniu ir atidarykite paiešką ekrane.</string>
   <string name="screen_search_no_keyword_hint_pre_r">Dar nėra raktinių žodžių. Jei norite pradėti naują paiešką, perbraukite kairėn, tada žemyn arba eikite į „SandFly“ meniu ir atidarykite paiešką ekrane.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Brailio r. klav. neįjungta. Eikite į „SandFly“ nust., nustatykite Brailio r. klav. ir band. dar k.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Brailio rašmenų klaviatūra neįjungta. Eikite į „SandFly“ nustatymus, nustatykite Brailio rašmenų klaviatūrą ir bandykite dar kartą.</string>
   <string name="suggestions_window_available">Pasiekiami pasiūlymai</string>
   <string name="suggestions_window_available_with_gesture">Pasiekiami pasiūlymai. Jei norite pasiekti, %1$s</string>
   <string name="heads_up_window_available">Pasiekiamas pranešimas</string>
@@ -846,7 +846,7 @@
   <string name="tv_training_shortcut_step_summary">Jei norite pasiekti „SandFly“ spartųjį klavišą, tuo pačiu metu paspauskite ir tris sekundes palaikykite mygtuką žemyn ir grįžimo mygtuką. Taip įjungsite arba išjungsite „SandFly“.\n\nŠį spartųjį klavišą galite pasiekti ir TV nustatymuose.\n\nPaspauskite „Pasirinkti“ ir tęskite.</string>
   <string name="new_feature_in_talkback_title">Naujos „SandFly“ funkcijos</string>
   <string name="exit_tutorial_title">Baigėte peržiūrėti?</string>
-  <string name="exit_tutorial_content">Galite bet kada pasiekti mokomąją medžiagą „SandFly“ nustatymuose.</string>
+  <string name="exit_tutorial_content">Galite bet kada pasiekti mokymo programą „SandFly“ nustatymuose.</string>
   <string name="exit_onboarding_content">Galite bet kada grįžti ir peržiūrėti naujas funkcijas „SandFly“ nustatymuose.</string>
   <string name="keep_reviewing_tutorial_button">Žiūrėti toliau</string>
   <string name="welcome_to_updated_talkback_title">Sveiki, tai – atnaujinta „SandFly“</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">Palieskite, kad sužinotumėte, kaip sparčiau naudoti „SandFly“ naudojant naujus gestus.</string>
   <string name="dump_node_tree_description">Mazgų medis pateiktas žurnaluose.</string>
   <string name="report_gesture_description">Čia pateikti neseniai atlikti gestai. Praneškite, kuris gestas netinkamas ir koks buvo numatytas.</string>
-  <string name="update_welcome_talkback_16.1">Šiame „SandFly“ atnaujinime pristatomas ekrano aprašymo palaikymas daugiau kalbų ir kiti kokybės patobulinimai, palengvinantys „SandFly“ naudojimą.\n\nDaugiau apie šiuos pakeitimus sužinosite keliuose kituose ekranuose.\n\nVėliau šią informaciją galėsite peržiūrėti skiltyje „SandFly“ nustatymai“ &gt; „Naujos „SandFly“ funkcijos“.</string>
-  <string name="update_welcome_talkback_16.1_tts">Šiame „SandFly“ atnaujinime pristatomas ekrano aprašymo palaikymas daugiau kalbų ir kiti kokybės patobulinimai, palengvinantys „SandFly“ naudojimą.\n\nDaugiau apie šiuos pakeitimus sužinosite keliuose kituose ekranuose.\n\nVėliau šią informaciją galėsite peržiūrėti skiltyje „SandFly“ nustatymai“, tada – „Naujos „SandFly“ funkcijos“.</string>
+  <string name="update_welcome_talkback_16.1">Šiame „SandFly“ atnaujinime pristatomas funkcijos „Aprašykite ekraną“ palaikymas daugiau kalbų ir kiti kokybės patobulinimai, palengvinantys „SandFly“ naudojimą.\n\nDaugiau apie šiuos pakeitimus sužinosite keliuose kituose ekranuose.\n\nVėliau šią informaciją galėsite peržiūrėti skiltyje „SandFly“ nustatymai“ &gt; „Naujos „SandFly“ funkcijos“.</string>
+  <string name="update_welcome_talkback_16.1_tts">Šiame „SandFly“ atnaujinime pristatomas funkcijos „Aprašykite ekraną“ palaikymas daugiau kalbų ir kiti kokybės patobulinimai, palengvinantys „SandFly“ naudojimą.\n\nDaugiau apie šiuos pakeitimus sužinosite keliuose kituose ekranuose.\n\nVėliau šią informaciją galėsite peržiūrėti skiltyje „SandFly“ nustatymai“, tada – „Naujos „SandFly“ funkcijos“.</string>
   <string name="shortcut_for_dictation_title">Spartusis rašymo balsu klavišas</string>
   <string name="shortcut_for_dictation_content">Naudodami „Gboard“ dabar galite dukart palietę ekraną dviem pirštais pradėti arba sustabdyti rašymą balsu.
 &lt;br&gt;
@@ -881,7 +881,7 @@
   <string name="shortcut_for_dictation_content_without_google_play">Kai „Gboard“ rodoma ekrane, galite dukart palietę ekraną dviem pirštais pradėti diktuoti balsu ir vėl dukart palietę dviem pirštais – sustabdyti.</string>
   <string name="announcing_text_formatting_title">Pranešimas apie teksto formatavimą</string>
   <string name="announcing_text_formatting_header">Dabar „SandFly“ gali pranešti apie teksto formatavimo pakeitimus, pvz., pusjuodį šriftą ar kursyvą, bei teksto spalvą. Jei norite pradėti, atlikite toliau nurodytus veiksmus.</string>
-  <string name="announcing_text_formatting_option1">Pasirinkite formatuotą elementą, atidarykite „SandFly“ meniu ir pasirinkite „Apibūdinti teksto formatavimą“ arba</string>
+  <string name="announcing_text_formatting_option1">Pasirinkite formatuotą elementą, atidarykite „SandFly“ meniu ir pasirinkite „Teksto formato apibūdinimas“ arba</string>
   <string name="announcing_text_formatting_option2">Pridėkite teksto formatavimo skaitymo valdymą, kuris įjungs arba išjungs formatavimo pakeitimų pranešimą.</string>
   <string name="announcing_text_formatting_middle">Kai būsite pasirengę tai išbandyti, toliau rasite formatuoto teksto pavyzdį.</string>
   <string name="announcing_text_formatting_tail">Jei norite pakeisti, kaip skelbiamas formatuotas tekstas, galite eiti į %1$s.</string>
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">Dvigubas palietimas visur</string>
   <string name="split_tap_everywhere_text">Dabar galite naudoti dvigubą palietimą visur, kad suaktyvintumėte elementus, net ir ne klaviatūroje. Jei norite jį naudoti, naršykite ekraną vienu pirštu, tada nepakeldami pirmojo piršto palieskite ekraną kitu pirštu, kad suaktyvintumėte šiuo metu paryškintą elementą.</string>
   <string name="keyboard_enhanced_keymap_title">Klaviatūra: patobulinta klavišų schema</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly dabar turi fizinių klaviatūrų „patobulintą klaviatūros schemą“, kurioje yra įvairių naujų komandų ir sparčiųjų klavišų. Šis patobulinimas apima „naršymo režimą“, kad būtų galima efektyviau naršyti žiniatinklyje, supaprastinti naršymą ir sąveiką SandFly naudotojams, kurie naudojasi fizine klaviatūra. Galite perjungti į „Patobulintą klavišų schemą“ <xliff:g id="settings_path">%1$s</xliff:g>.\n\nJei naudojate Brailio rašto ekraną, taip pat galite naudoti naujus naršymo režimo sparčiuosius klavišus, kad peržiūrėtumėte turinį tiesiai iš Brailio rašto ekrano. Kai kurie Brailio rašto ekrano spartieji klavišai buvo pakeisti, kad atitiktų šį pakeitimą. Visų Brailio rašto ekrano nuorodų sąrašą galite peržiūrėti <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly dabar turi fizinių klaviatūrų „patobulintą klaviatūros schemą“, kurioje yra įvairių naujų komandų ir sparčiųjų klavišų. Šis patobulinimas apima „naršymo režimą“, kad būtų galima efektyviau naršyti žiniatinklyje, supaprastinti naršymą ir sąveiką SandFly naudotojams, kurie naudojasi fizine klaviatūra. Galite perjungti į „Patobulintą klavišų schemą“ <xliff:g id="settings_path">%1$s</xliff:g>.\n\nJei naudojate Brailio rašmenų ekraną, taip pat galite naudoti naujus naršymo režimo sparčiuosius klavišus, kad peržiūrėtumėte turinį tiesiai iš Brailio rašmenų ekrano. Kai kurie Brailio rašmenų ekrano spartieji klavišai buvo pakeisti, kad atitiktų šį pakeitimą. Visų Brailio rašmenų ekrano nuorodų sąrašą galite peržiūrėti <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">„SandFly“ nustatymai“ &gt; „Spartieji klavišai“</string>
   <string name="keyboard_shortcuts_link_tts">„SandFly“ nustatymai, tada – „Spartieji klavišai“</string>
   <string name="braille_display_settings_link">Brailio rašmenų ekrano nustatymai</string>
   <string name="keyboard_smart_browse_mode_title">Klaviatūra: išmanusis naršymo režimas</string>
   <string name="keyboard_smart_browse_mode_text">„SandFly“ išmanusis naršymo režimas išjungia naršymo režimą redagavimo lauke, kad būtų galima įvesti tekstą fizine klaviatūra naršant žiniatinklį. Tada jis vėl įjungiamas, kai pereinate į neredaguojamą lauką žiniatinklyje, kad galėtumėte toliau efektyviai naršyti. „Išmanųjį naršymo režimą“ galite įjungti arba išjungti skiltyje „<xliff:g id="settings_path">%1$s</xliff:g>“.</string>
-  <string name="advanced_settings_link">„SandFly“ nustatymai“ &gt; „Išplėstiniai nustatymai“</string>
-  <string name="advanced_settings_link_tts">„SandFly“ nustatymai, tada – „Išplėstiniai nustatymai“</string>
   <string name="keyboard_tutorial_title">Klaviatūros mokomoji medžiaga</string>
   <string name="keyboard_tutorial_text">Dabar „SandFly“ apima klaviatūros mokomąją medžiagą, skirtą padėti išmokti patobulintos klavišų schemos sparčiuosius klavišus ir komandas naudojant fizinę klaviatūrą. Jei norite pasiekti mokomąją medžiagą, eikite adresu <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">„SandFly“ nustatymai &gt; „SandFly“ mokomoji medžiaga</string>
-  <string name="tutorial_link_tts">„SandFly“ nustatymai, tada – „SandFly“ mokomoji medžiaga</string>
   <string name="tutorial_entry_point_title">Mokymo programa</string>
   <string name="welcome_to_talkback_title">Sveiki, tai – „SandFly“</string>
   <string name="talkback_is_on">„SandFly“ funkcija įjungta</string>
@@ -979,7 +975,7 @@
   <string name="typing_text_title">Teksto įvedimas</string>
   <string name="basic_typing_text_text">Kai būsite teksto laukelyje, klaviatūra bus atidaryta ekrano apačioje.</string>
   <string name="typing_text_text">Veskite pirštu per klaviatūrą. Kai išgirsite norimą įvesti raidę, pakelkite pirštą.\n\nPabandykite suaktyvinti toliau pateiktą teksto laukelį ir įvesti savo vardą.</string>
-  <string name="typing_text_with_braille_keyboard_text">Be to, tekstą galite vesti naudodami Brailio rašto klaviatūrą. Ją rasite „SandFly“ nustatymų skiltyje.</string>
+  <string name="typing_text_with_braille_keyboard_text">Be to, tekstą galite vesti naudodami Brailio rašmenų klaviatūrą. Ją rasite „SandFly“ nustatymų skiltyje.</string>
   <string name="other_ways_to_type_title">Kiti rašymo būdai</string>
   <string name="other_ways_to_type_text">Yra ir kitų būdų, kaip rašyti naudojant „SandFly“. Pavyzdžiui, galite dukart palietę įvesti raidę.</string>
   <string name="basic_other_ways_to_type_text">Naudojant SandFly galima rašyti ir kitais būdais. Pavyzdžiui, raidę galite įvesti dukart bakstelėdami. Vėliau tai galite pakeisti skiltyje „SandFly“ nustatymai &gt; Ekrano klaviatūra &gt; Rašymo būdas.</string>
@@ -1068,10 +1064,10 @@
   <string name="checking_notifications_text_tail_tts">Patikrinti, kuriose programose pranešimai yra įjungti, galite skiltyje „Nustatymai“, „Pranešimai“.</string>
   <string name="checking_notifications_tips">Jei norite patikrinti pranešimų istoriją, perbraukite žemyn dviem pirštais nuo ekrano viršaus</string>
   <string name="image_description_playground_title">Pabandykite gauti vaizdų aprašus</string>
-  <string name="image_description_playground_content_one">Suaktyvinę vaizdą, atidarykite „SandFly“ meniu ir pasirinkite „Apibūdinti vaizdą“.\n\nToliau pateikta viena nuotrauka. Pabandykite gauti jos aprašą.</string>
+  <string name="image_description_playground_content_one">Suaktyvinę vaizdą, atidarykite „SandFly“ meniu ir pasirinkite „Vaizdo apibūdinimas“.\n\nToliau pateikta viena nuotrauka. Pabandykite gauti jos aprašą.</string>
     <string name="image_description_playground_content_two">Vaizdo aprašymo nustatymus galite bet kada pakeisti skiltyje SandFly nustatymai &gt; Vaizdų ir ekrano aprašai.</string>
     <string name="image_description_playground_content_two_tts">Vaizdų aprašų nustatymus galite bet kada pakeisti skiltyje „SandFly“ nustatymai, tada – Vaizdų ir ekrano aprašai.</string>
-  <string name="image_description_sample_image_content_description">Bandomasis vaizdas; palieskite trimis pirštais, kad atidarytumėte „SandFly“ meniu, ir pasirinkite „Apibūdinti vaizdą“, kad išgirstumėte aprašą.</string>
+  <string name="image_description_sample_image_content_description">Bandomasis vaizdas; palieskite trimis pirštais, kad atidarytumėte „SandFly“ meniu, ir pasirinkite „Vaizdo apibūdinimas“, kad išgirstumėte aprašą.</string>
   <string name="practice_gestures_title">Gestų mokymasis</string>
   <string name="practice_keyboard_gestures_title">Sparčiųjų klavišų naudojimo praktika</string>
   <string name="pref_gesture_set_key_title">Gestų rinkinys</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">Perjungti į lentelių naršymą lentelėse</string>
   <string name="title_text_formatting_menu">Teksto formato apibūdinimas</string>
   <string name="summary_text_formatting_menu">Jei reikia tokių pakeitimų kaip pusjuodis, kursyvas, pabraukimas ir kt.</string>
-  <string name="title_text_formatting_inline">Sakomo teksto formatavimas</string>
+  <string name="title_text_formatting_inline">Sakyti teksto formatavimą</string>
   <string name="title_switch_text_formatting">Sakyti teksto formatavimą</string>
   <string name="summary_text_formatting_verbosity">Jei norite keisti, pvz., pusjuodžiu ir kursyvu</string>
   <string name="summary_text_formatting_selector">Keiskite, ar formatavimas, pvz., pusjuodis ir kursyvas, bus skaitomas garsiai</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Daugiau</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezervuoti gestus Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nebeapdoroja vieno ir dvigubo bakstelėjimo dviem pirštais, kad juos galėtų naudoti „Samsung Vibration Watch“. Įjunkite „Vibration Watch“ laikrodžio pritaikymo neįgaliesiems nustatymuose.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Išplėstiniuose nustatymuose rezervuota Vibration Watch</string>
     <string name="title_pref_speakerphone_away_from_ear">Garsiakalbis toli nuo ausies</string>
     <string name="summary_pref_speakerphone_away_from_ear">Pokalbio metu, atitraukus telefoną nuo ausies, perjungia į garsiakalbį, o vėl priglaudus prie ausies – atgal į ausinį garsiakalbį.</string>
     <string name="summary_pref_speakerphone_needs_permission">Reikia leidimo, kurio Android nesuteikia ekrano skaitytuvams. Kad jį suteiktumėte, paleiskite šią komandą per adb arba Shizuku ir grįžkite į šį ekraną: %1$s</string>
@@ -1393,13 +1388,12 @@
     <string name="speech_control_apps_category">Programos</string>
     <string name="speech_control_no_apps">Jokia programa dar neprašė kalbėti.</string>
     <string name="speech_control_ask_title">Leisti <xliff:g id="app" example="Tasker">%1$s</xliff:g> kalbėti per SandFly?</string>
-    <string name="speech_control_ask_text">Jis gali pasakyti tekstą jūsų SandFly balsu. Tai galite pakeisti Išplėstiniuose nustatymuose.</string>
     <string name="speech_control_allow">Leisti</string>
     <string name="speech_control_deny">Neleisti</string>
     <string name="permission_speak_label">kalbėti per SandFly</string>
     <string name="permission_speak_description">Leidžia programai paprašyti pasakyti tekstą jūsų SandFly balsu. SandFly klausia jūsų prieš programai galint kalbėti.</string>
-    <string name="permission_braille_display_label">prašyti būti SandFly Brailio rašto ekranu</string>
-    <string name="permission_braille_display_description">Leidžia programai prašyti tapti SandFly Brailio ekranu. Jei tai leisite SandFly, programa galės skaityti viską ekrane ir valdyti įrenginį. SandFly pirmiausia jūsų paklausia.</string>
+    <string name="permission_braille_display_label">prašyti būti SandFly Brailio rašmenų ekranu</string>
+    <string name="permission_braille_display_description">Leidžia programai prašyti tapti SandFly Brailio rašmenų ekranu. Jei tai leisite SandFly, programa galės skaityti viską ekrane ir valdyti įrenginį. SandFly pirmiausia jūsų paklausia.</string>
     <string name="title_pref_phonetic_letters_mode">Tarti raides fonetiškai</string>
     <string name="phonetic_letters_mode_off">Išjungta</string>
     <string name="phonetic_letters_mode_after_letter_delay">Po raidės, su pauze, pvz., „h, Henrikas“</string>
@@ -1550,7 +1544,6 @@
     <string name="quick_settings_remove">Pašalinti</string>
     <string name="quick_settings_added">%1$s pridėta</string>
     <string name="quick_settings_removed">%1$s pašalinta</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly įjungta. Laikykite 2 pirštus ant ekrano 5 sekundes, kad išjungtumėte. Jei norite neberodyti šio pranešimo, išjunkite SandFly nustatymai &gt; Išplėstiniai nustatymai &gt; Rodyti instrukcijas, kaip išjungti SandFly.</string>
     <string name="edge_gestures_title">Kraštai</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Kitas spartusis klavišas, skirtas įjungti arba išjungti naršymo režimą</string>
     <string name="title_pref_vibration_strength">Vibracijos stiprumas</string>
@@ -1716,14 +1709,14 @@
     <string name="wrap_around_on">Ciklinis naršymas: įjungta</string>
     <string name="wrap_around_off">Ciklinis naršymas: išjungta</string>
     <string name="title_selector_tablet_held_up_faces_away">Pakelto planšetinio kompiuterio ekranas nukreiptas nuo jūsų</string>
-    <string name="summary_support_tablet_held_up_faces_away">Brailio rašto klaviatūrai planšetiniame kompiuteryje arba išskleistame telefone</string>
+    <string name="summary_support_tablet_held_up_faces_away">Brailio rašmenų klaviatūrai planšetiniame kompiuteryje arba išskleistame telefone</string>
     <string name="tablet_held_up_faces_away_on">Pakelto planšetinio kompiuterio ekranas nukreiptas nuo jūsų: įjungta</string>
     <string name="tablet_held_up_faces_away_off">Pakelto planšetinio kompiuterio ekranas nukreiptas nuo jūsų: išjungta</string>
     <string name="title_keyboard_echo_on_screen">Ekrano klaviatūros aidas</string>
     <string name="title_keyboard_echo_physical">Fizinės klaviatūros aidas</string>
-    <string name="title_keyboard_echo_braille_keyboard">Brailio rašto klaviatūros aidas</string>
+    <string name="title_keyboard_echo_braille_keyboard">Brailio rašmenų klaviatūros aidas</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Rašymo ranka klaviatūros aidas</string>
-    <string name="title_keyboard_echo_braille_display">Brailio rašto ekrano aidas</string>
+    <string name="title_keyboard_echo_braille_display">Brailio rašmenų ekrano aidas</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Pertraukti kalbą rašant</string>
     <string name="pref_interrupt_typing_entry_always">Visada</string>
@@ -1743,7 +1736,7 @@
     <string name="template_item_details_order_dropped">Paleista: <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly elemento informaciją sako šia tvarka. Norėdami ją pakeisti, palieskite ir palaikykite informacijos dalį, tada vilkite ją aukštyn arba žemyn. Kai SandFly įjungtas, dukart bakstelėkite ir palaikykite, tada vilkite. Taip pat galite naudoti veiksmus „Perkelti aukštyn“ ir „Perkelti žemyn“.</string>
     <string name="title_pref_speak_items_before_scroll">Ištarti elementus, kol jie dar neslinkti į rodinį</string>
-    <string name="gemini_error_api_key">Gemini nepriėmė API rakto. Patikrinkite raktą vaizdų ir ekrano aprašų nustatymuose.</string>
+    <string name="gemini_error_api_key">Gemini nepriėmė API rakto. Patikrinkite raktą skiltyje „Vaizdų ir ekrano aprašai“.</string>
     <string name="gemini_error_quota">Pasiektas jūsų Gemini API rakto naudojimo limitas. Vėliau bandykite dar kartą.</string>
     <string name="gemini_error_busy">Gemini šiuo metu yra užimtas. Po akimirkos bandykite dar kartą.</string>
     <string name="gemini_error_timeout">Gemini užtruko per ilgai atsakyti. Bandykite dar kartą.</string>
@@ -1774,7 +1767,6 @@
     <string name="title_pref_whisper_models">Whisper modeliai</string>
     <string name="dictation_whisper_use">Naudoti</string>
     <string name="title_pref_dictation_ai_service">AI paslauga diktavimui</string>
-    <string name="dictation_ai_same">Ta pati kaip automatiniams aprašams</string>
     <string name="title_pref_browse_mode_per_app">Įsiminti naršymo režimą kiekvienoje programoje</string>
     <string name="title_pref_export_settings">Eksportuoti nustatymus</string>
     <string name="title_pref_import_settings">Importuoti nustatymus</string>
@@ -1802,4 +1794,12 @@
         <item>1 minutė</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automatinis sustabdymas po tylos</string>
+    <string name="dictation_ai_same">Kaip skiltyje „Vaizdų ir ekrano aprašai“</string>
+    <string name="navigation_settings_link">„SandFly“ nustatymai &gt; „Naršymas“</string>
+    <string name="navigation_settings_link_tts">„SandFly“ nustatymai, tada – „Naršymas“</string>
+    <string name="shortcut_reserved_for_vibration_watch">Rezervuota „Vibration Watch“ skiltyje „Gestai“</string>
+    <string name="speech_control_ask_text">Ji gali sakyti tekstą jūsų SandFly balsu. Tai galite pakeisti skiltyje „Nustatymai“ &gt; „Kalba“ &gt; „Leisti kitoms programoms kalbėti“.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">„SandFly“ įjungta. Penkias sekundes laikykite du pirštus ant ekrano, kad išjungtumėte. Jei norite, kad šis pranešimas nebebūtų rodomas, išjunkite nustatymą „Rodyti „SandFly“ išjungimo instrukcijas“ skiltyje „SandFly“ nustatymai &gt; „Pristabdymas ir išjungimas“.</string>
+    <string name="tutorial_link">„SandFly“ nustatymai &gt; „Pagalba ir atsiliepimai“ &gt; „SandFly mokymo programa“</string>
+    <string name="tutorial_link_tts">„SandFly“ nustatymai, tada – „Pagalba ir atsiliepimai“, tada – „SandFly mokymo programa“</string>
 </resources>

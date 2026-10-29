@@ -94,7 +94,7 @@
   <string name="title_pref_show_exit_watermark">Visa anvisningar för att inaktivera SandFly</string>
   <string name="summary_pref_show_exit_watermark">När SandFly slås på visas hur den stängs av</string>
   <string name="talkback_exit_watermark_text">SandFly har aktiverats. Inaktivera genom att hålla två fingrar på skärmen i fem sekunder. Om du vill sluta visa det här meddelandet trycker du med tre fingrar för att öppna SandFly-menyn.</string>
-  <string name="talkback_exit_watermark_hint_text">Visar bannern som visar att SandFly är aktiverat. Inaktivera SandFly genom att hålla två fingrar på skärmen i fem sekunder. Du kan ta bort bannern i SandFly-inställningarna.</string>
+  <string name="talkback_exit_watermark_hint_text">Visar bannern som visar att SandFly är aktiverat. Inaktivera SandFly genom att hålla två fingrar på skärmen i fem sekunder. Du kan ta bort bannern i inställningarna för SandFly.</string>
   <string name="reset_gesture_settings_title">Återställ rörelse­inställningarna</string>
   <string name="one_finger_gestures_title">1 finger</string>
   <string name="one_finger_back_forth_gestures_title">1 finger fram och tillbaka</string>
@@ -422,7 +422,7 @@
   <string name="shortcut_increase_volume">Höj volymen</string>
   <string name="shortcut_decrease_volume">Sänk volymen</string>
   <string name="shortcut_all_apps">Alla appar</string>
-  <string name="shortcut_braille_keyboard">Byt till punktskrift</string>
+  <string name="shortcut_braille_keyboard">Byt till punktskriftstangentbordet</string>
   <string name="shortcut_braille_display_settings">Öppna inställningarna för punktskriftsskärm</string>
   <string name="shortcut_tutorial">Öppna vägledning</string>
   <string name="shortcut_control_speak_time">Läs upp eller läs inte upp tiden</string>
@@ -622,7 +622,7 @@
   <string name="title_pref_shortcut_3finger_3tap_hold">Trippeltryck med tre fingrar och håll kvar</string>
   <string name="gesture_name_unknown">Okänd rörelse</string>
   <string name="gesture_name_pass_through">Hoppa till systemrörelsen</string>
-  <string name="gesture_name_touch_explore">Explore by Touch</string>
+  <string name="gesture_name_touch_explore">Upptäck genom beröring</string>
   <string name="gesture_name_double_tap">Dubbeltryck</string>
   <string name="gesture_name_double_tap_xr">Nyp två gånger</string>
   <string name="gesture_name_double_tap_and_hold">Dubbeltryck och håll kvar</string>
@@ -684,8 +684,8 @@
   <string name="dialog_message_dim_screen">Alternativet inaktiverar skärmen för att förbättra integriteten. En del innehåll kan fortfarande visas, till exempel meddelanden om att aktivera skärmen eller menyer för tillgänglighetsfunktioner som SandFly.</string>
   <string name="button_disable_all_events">Inaktivera alla</string>
   <string name="button_enable_all_events">Aktivera alla</string>
-  <string name="dialog_title_disable_exploration">Vill du inaktivera Explore by touch?</string>
-  <string name="dialog_message_disable_exploration">Är du säker på att du vill inaktivera Explore by touch?\n\nEnheten kommer inte längre att reagera på rörelser för genvägar eller beskriva vad som finns på skärmen.</string>
+  <string name="dialog_title_disable_exploration">Vill du inaktivera Upptäck genom beröring?</string>
+  <string name="dialog_message_disable_exploration">Är du säker på att du vill inaktivera Upptäck genom beröring?\n\nEnheten kommer inte längre att reagera på rörelser för genvägar eller beskriva vad som finns på skärmen.</string>
   <string name="dialog_title_enable_tree_debug">Vill du aktivera felsökning av nodträd?</string>
   <string name="dialog_message_enable_tree_debug">Vill du aktivera felsökning av nodträd?\n\nMed felsökning av nodträd blir innehåll på din skärm tillgängligt i enhetens loggar som kan läsas av andra appar.</string>
   <string name="dialog_title_enable_tree_debug_gesture">Vill du ändra tilldelning för rörelsen där du trippeltrycker med fyra fingrar?</string>
@@ -824,7 +824,7 @@
   <string name="screen_search_keyword_hint">sökordet är %1$s</string>
   <string name="screen_search_no_keyword_hint">Inga sökord ännu. Om du vill starta en ny sökning kan du trycka länge med tre fingrar eller öppna skärmsökning via SandFly-menyn.</string>
   <string name="screen_search_no_keyword_hint_pre_r">Inga sökord ännu. Om du vill starta en ny sökning kan du svepa åt vänster och sedan nedåt eller öppna skärmsökning via SandFly-menyn.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Punktskriftstangentbordet är av. Konfigurera det i SandFly-inställningarna och försök igen.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Punktskriftstangentbordet är av. Konfigurera det i inställningarna för SandFly och försök igen.</string>
   <string name="suggestions_window_available">Förslag är tillgängliga</string>
   <string name="suggestions_window_available_with_gesture">Förslag är tillgängliga Så här får du åtkomst: %1$s</string>
   <string name="heads_up_window_available">Avisering tillgänglig</string>
@@ -847,7 +847,7 @@
   <string name="new_feature_in_talkback_title">Nya funktioner i SandFly</string>
   <string name="exit_tutorial_title">Är du klar?</string>
   <string name="exit_tutorial_content">Du kan när som helst öppna guiden igen via inställningarna för SandFly.</string>
-  <string name="exit_onboarding_content">Du kan återkomma och se nya funktioner när du vill via SandFly-inställningarna.</string>
+  <string name="exit_onboarding_content">Du kan återkomma och se nya funktioner när du vill via inställningarna för SandFly.</string>
   <string name="keep_reviewing_tutorial_button">Fortsätt</string>
   <string name="welcome_to_updated_talkback_title">Välkommen till den nya versionen av SandFly</string>
   <string name="navigation_heading">Navigering</string>
@@ -867,13 +867,13 @@
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Markeringsläget är av eller på. Detta aktiverar eller inaktiverar vanligtvis textmarkeringsläget när du har markerat ett inmatningsfält. Svep åt höger för att fortsätta.</string>
   <string name="new_shortcut_gesture_reading_menu_text">Du öppnar läsinställningarna genom att svepa åt vänster eller höger med tre fingrar. Du kan även svepa uppåt eller nedåt med tre fingrar.</string>
   <string name="new_shortcut_gesture_note">Obs! Eftersom du har anpassat vissa rörelser kanske den här informationen inte stämmer. Öppna inställningarna för SandFly om du vill granska dina rörelser.</string>
-  <string name="welcome_to_android11_text">Vi har lagt till nya rörelser som gör det snabbare och enklare att använda SandFly.\n\nDu kan testa de nya rörelserna på den här skärmen. Du kan när som helst granska detta i SandFly-inställningarna.</string>
+  <string name="welcome_to_android11_text">Vi har lagt till nya rörelser som gör det snabbare och enklare att använda SandFly.\n\nDu kan testa de nya rörelserna på den här skärmen. Du kan när som helst granska detta i inställningarna för SandFly.</string>
   <string name="new_gesture_notification_title">Nya rörelser i SandFly</string>
   <string name="new_gesture_notification_content">Tryck här för mer information om hur du kan använda SandFly snabbare med nya rörelser.</string>
   <string name="dump_node_tree_description">Nodträdet har skrivits ut i loggar.</string>
   <string name="report_gesture_description">Här är rörelser som gjorts nyligen. Rapportera vilken rörelse som är fel och hur det borde vara.</string>
-  <string name="update_welcome_talkback_16.1">Den här SandFly-uppdateringen introducerar stöd för Beskriv skärmen på fler språk och andra kvalitetsförbättringar som förenklar användningen av SandFly.\n\nDu får mer information om dessa ändringar på skärmarna som följer.\n\nDu kan granska den här informationen senare i SandFly-inställningarna &gt; Nya funktioner i SandFly.</string>
-  <string name="update_welcome_talkback_16.1_tts">Den här SandFly-uppdateringen introducerar stöd för Beskriv skärmen på fler språk och andra kvalitetsförbättringar som förenklar användningen av SandFly.\n\nDu får mer information om dessa ändringar på skärmarna som följer.\n\nDu kan granska den här informationen senare i SandFly-inställningarna följt av Nya funktioner i SandFly.</string>
+  <string name="update_welcome_talkback_16.1">Den här SandFly-uppdateringen introducerar stöd för Beskriv skärmen på fler språk och andra kvalitetsförbättringar som förenklar användningen av SandFly.\n\nDu får mer information om dessa ändringar på skärmarna som följer.\n\nDu kan granska den här informationen senare i inställningarna för SandFly &gt; Nya funktioner i SandFly.</string>
+  <string name="update_welcome_talkback_16.1_tts">Den här SandFly-uppdateringen introducerar stöd för Beskriv skärmen på fler språk och andra kvalitetsförbättringar som förenklar användningen av SandFly.\n\nDu får mer information om dessa ändringar på skärmarna som följer.\n\nDu kan granska den här informationen senare i inställningarna för SandFly följt av Nya funktioner i SandFly.</string>
   <string name="shortcut_for_dictation_title">Kortkommando för röstinmatning</string>
   <string name="shortcut_for_dictation_content">När du använder Gboard kan du nu starta eller stoppa röstinmatning genom att dubbeltrycka med två fingrar.
 &lt;br&gt;
@@ -885,8 +885,8 @@
   <string name="announcing_text_formatting_option2">Du kan även lägga till en läsinställning för textformatering som aktiverar eller inaktiverar uppläsning av formateringsändringar.</string>
   <string name="announcing_text_formatting_middle">När du är redo att testa finns ett exempel på formaterad text här:</string>
   <string name="announcing_text_formatting_tail">Om du vill ändra hur formaterad text läses upp kan du gå till %1$s.</string>
-  <string name="text_formatting_options_settings_path">SandFly-inställningar &gt; Detaljnivå &gt; Formateringsalternativ för text</string>
-  <string name="text_formatting_options_settings_path_tts">SandFly-inställningar, sedan Detaljnivå och sedan Formateringsalternativ för text</string>
+  <string name="text_formatting_options_settings_path">Inställningar för SandFly &gt; Detaljnivå &gt; Formateringsalternativ för text</string>
+  <string name="text_formatting_options_settings_path_tts">Inställningar för SandFly, sedan Detaljnivå och sedan Formateringsalternativ för text</string>
   <string name="announcing_text_formatiing_sample">Denna text är &lt;b&gt;fet&lt;/b&gt;, självsäker och vild,
 &lt;br&gt;men denna är &lt;u&gt;understruken&lt;/u&gt;, en viskning så mild.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;Rosor är röda&lt;/span&gt;, det är en klassisk fras
@@ -897,25 +897,21 @@
 &lt;br&gt;
 &lt;br&gt;Färger kan spraka som en livfull syn,
 &lt;br&gt;från &lt;font color=\"#db372d\"&gt;eldrött&lt;/font&gt; till &lt;font color=\"#128937\"&gt;grönt&lt;/font&gt;, likt norrsken i skyn.</string>
-  <string name="update_welcome_talkback_16.2">Den här SandFly-uppdateringen innehåller en ny förbättrad lista över kortkommandon för fysiska tangentbord, stöd för meddelanden om textformatering och en omdesignad inställningslayout, tillsammans med andra förbättringar som gör SandFly enklare att använda.\n\nDu får mer information om dessa ändringar på skärmarna som följer.\n\nDu kan granska den här informationen senare i SandFly-inställningarna &gt; Nya funktioner i SandFly.</string>
-  <string name="update_welcome_talkback_16.2_tts">Den här SandFly-uppdateringen innehåller en ny förbättrad lista över kortkommandon för fysiska tangentbord, stöd för meddelanden om textformatering och en omdesignad inställningslayout, tillsammans med andra förbättringar som gör SandFly enklare att använda.\n\nDu får mer information om dessa ändringar på de kommande skärmarna.\n\nDu kan se den här informationen senare i SandFly-inställningarna under Nya funktioner i SandFly.</string>
+  <string name="update_welcome_talkback_16.2">Den här SandFly-uppdateringen innehåller en ny förbättrad lista över kortkommandon för fysiska tangentbord, stöd för meddelanden om textformatering och en omdesignad inställningslayout, tillsammans med andra förbättringar som gör SandFly enklare att använda.\n\nDu får mer information om dessa ändringar på skärmarna som följer.\n\nDu kan granska den här informationen senare i inställningarna för SandFly &gt; Nya funktioner i SandFly.</string>
+  <string name="update_welcome_talkback_16.2_tts">Den här SandFly-uppdateringen innehåller en ny förbättrad lista över kortkommandon för fysiska tangentbord, stöd för meddelanden om textformatering och en omdesignad inställningslayout, tillsammans med andra förbättringar som gör SandFly enklare att använda.\n\nDu får mer information om dessa ändringar på de kommande skärmarna.\n\nDu kan se den här informationen senare i inställningarna för SandFly under Nya funktioner i SandFly.</string>
   <string name="new_settings_layout_title">Ny inställningslayout</string>
   <string name="new_settings_layout_text">Inställningsgrupperna har uppdaterats för att göra det enklare att hitta funktioner. Nya inställningskategorier är också tillgängliga, till exempel tangentbordsinställningar.</string>
   <string name="split_tap_everywhere_title">Använd delat tryck överallt</string>
   <string name="split_tap_everywhere_text">Nu kan du använda delat tryck överallt för att aktivera objekt, även utanför tangentbordet. Du använder det genom att utforska skärmen med ett finger och sedan aktivera objektet i fokus trycka på skärmen med ett annat finger utan att lyfta det första fingret.</string>
   <string name="keyboard_enhanced_keymap_title">Tangentbord: Förbättrad lista över kortkommandon</string>
   <string name="keyboard_enhanced_keymap_text">SandFly har nu en ”Förbättrad lista över kortkommandon” för fysiska tangentbord, med en rad nya kommandon och kortkommandon. Den innehåller ett läsläge för effektivare webbnavigering och enklare navigering och interaktion för SandFly-användare som använder fysiska tangentbord. Du kan byta till ”Förbättrad lista över kortkommandon” i <xliff:g id="settings_path">%1$s</xliff:g>.\n\nOm du använder en punktskriftsskärm kan du också använda nya kortkommandon för läsläget för att gå igenom innehåll direkt från punktskriftsskärmen. Vissa kortkommandon för punktskriftsskärmen har ändrats på grund av detta. Du hittar en lista över alla kortkommandon för punktskriftsskärmen i <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
-  <string name="keyboard_shortcuts_link">SandFly-inställningar &gt; Kortkommandon</string>
-  <string name="keyboard_shortcuts_link_tts">SandFly-inställningar och sedan Kortkommandon</string>
+  <string name="keyboard_shortcuts_link">Inställningar för SandFly &gt; Kortkommandon</string>
+  <string name="keyboard_shortcuts_link_tts">Inställningar för SandFly och sedan Kortkommandon</string>
   <string name="braille_display_settings_link">Inställningar för punktskriftsskärmen</string>
   <string name="keyboard_smart_browse_mode_title">Tangentbord: Smart läsläge</string>
   <string name="keyboard_smart_browse_mode_text">SandFlys smarta läsläge inaktiverar läsläget i ett redigeringsfält så att du kan skriva med ett fysiskt tangentbord när du surfar på webben. Sedan aktiveras den igen när du hoppar till ett fält som inte är ett redigeringsfält på webben så att du kan fortsätta surfa effektivt. Du kan aktivera eller inaktivera Smart läsläge i <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">SandFly-inställningar &gt; Avancerade inställningar</string>
-  <string name="advanced_settings_link_tts">SandFly-inställningar och sedan Avancerade inställningar</string>
   <string name="keyboard_tutorial_title">Tangentbordsguide</string>
   <string name="keyboard_tutorial_text">Nu finns det en tangentbordsguide i SandFly som är utformad för att hjälpa dig att lära dig kortkommandon och kommandon för den förbättrade tangentbordslayouten när du använder ett fysiskt tangentbord. Du hittar guiden på <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFly-inställningar &gt; SandFly-guiden</string>
-  <string name="tutorial_link_tts">SandFly-inställningar och sedan SandFly-guiden</string>
   <string name="tutorial_entry_point_title">Guide</string>
   <string name="welcome_to_talkback_title">Välkommen till SandFly</string>
   <string name="talkback_is_on">SandFly är på</string>
@@ -923,8 +919,8 @@
   <string name="turn_off_talkback">Inaktivera SandFly</string>
   <string name="tap_again_to_turn_off">Tryck igen för att inaktivera</string>
   <string name="talkback_turn_off_description_pointer_and_touch">SandFly läser upp innehåll på skärmen och ändrar hur navigering fungerar på enheten. Du kan inaktivera det genom att välja Inaktivera SandFly eller trycka på det två gånger.</string>
-  <string name="welcome_to_talkback_text">Med SandFly får du talad feedback så att du kan använda enheten utan att titta på skärmen. SandFly kan vara till hjälp för personer som har svårt att se skärmen. \n\nOm du vill kunna aktivera eller inaktivera SandFly snabbt med hjälp av volymknapparna kan du ställa in en genväg i SandFly-inställningarna &gt; SandFly-genväg.\n\nNär SandFly är aktiverat blir det objekt på skärmen som är i fokus uppläst.\n\nDu går vidare till nästa objekt genom att svepa till höger. Om du sveper till vänster går du tillbaka till föregående objekt.\n\nSvep till höger nu för att hitta knappen Nästa.</string>
-  <string name="welcome_to_talkback_text_tts">Med SandFly får du talad feedback så att du kan använda enheten utan att titta på skärmen. SandFly kan vara till hjälp för personer som har svårt att se skärmen. \n\nOm du vill kunna aktivera eller inaktivera SandFly snabbt med hjälp av volymknapparna kan du ställa in en genväg i SandFly-inställningarna, sedan SandFly-genväg.\n\nNär SandFly är aktiverat blir det objekt på skärmen som är i fokus uppläst.\n\nDu går vidare till nästa objekt genom att svepa till höger. Om du sveper till vänster går du tillbaka till föregående objekt.\n\nSvep till höger nu för att hitta knappen Nästa.</string>
+  <string name="welcome_to_talkback_text">Med SandFly får du talad feedback så att du kan använda enheten utan att titta på skärmen. SandFly kan vara till hjälp för personer som har svårt att se skärmen. \n\nOm du vill kunna aktivera eller inaktivera SandFly snabbt med hjälp av volymknapparna kan du ställa in en genväg i inställningarna för SandFly &gt; SandFly-genväg.\n\nNär SandFly är aktiverat blir det objekt på skärmen som är i fokus uppläst.\n\nDu går vidare till nästa objekt genom att svepa till höger. Om du sveper till vänster går du tillbaka till föregående objekt.\n\nSvep till höger nu för att hitta knappen Nästa.</string>
+  <string name="welcome_to_talkback_text_tts">Med SandFly får du talad feedback så att du kan använda enheten utan att titta på skärmen. SandFly kan vara till hjälp för personer som har svårt att se skärmen. \n\nOm du vill kunna aktivera eller inaktivera SandFly snabbt med hjälp av volymknapparna kan du ställa in en genväg i inställningarna för SandFly, sedan SandFly-genväg.\n\nNär SandFly är aktiverat blir det objekt på skärmen som är i fokus uppläst.\n\nDu går vidare till nästa objekt genom att svepa till höger. Om du sveper till vänster går du tillbaka till föregående objekt.\n\nSvep till höger nu för att hitta knappen Nästa.</string>
   <string name="welcome_to_talkback_page_idle_announcement">Svep åt höger nu för att hitta knappen Nästa.</string>
   <string name="explore_by_touch_title">Utforska genom att dra med fingret</string>
   <string name="explore_by_touch_text">Du kan fokusera på ett objekt genom att dra fingret över skärmen.\n\nTesta det nu genom att trycka på skärmen och dra mot det nedre vänstra hörnet tills du hittar knappen Nästa.</string>
@@ -951,7 +947,7 @@
   <string name="menus_selector_text">Med dessa kortkommandon kan du snabbt ändra inställningarna, t.ex. byta navigering från tecken till ord eller ändra talhastighet för SandFly.\n\nSvep åt vänster eller höger med tre fingrar om du snabbt vill ändra läsinställningarna.\n\nDu kan anpassa SandFly-menyn och läsinställningarna senare i inställningarna för SandFly.</string>
   <string name="menus_selector_text_pre_r">Med dessa kortkommandon kan du snabbt ändra inställningarna, t.ex. byta navigering från tecken till ord eller ändra talhastighet för SandFly.\n\nSvep nedåt och sedan uppåt om du snabbt vill ändra läsinställningarna.\n\nDu kan anpassa SandFly-menyn och läsinställningarna senare i inställningarna för SandFly.</string>
   <string name="all_set_title">Klart!</string>
-  <string name="all_set_text">Nu kan du börja använda SandFly.\n\nLäs mer om andra ämnen eller granska den här informationen när som helst i SandFly-inställningarna.</string>
+  <string name="all_set_text">Nu kan du börja använda SandFly.\n\nLäs mer om andra ämnen eller granska den här informationen när som helst i inställningarna för SandFly.</string>
   <string name="talkback_tutorial_text">Välj ett ämne genom att svepa åt höger. Aktivera SandFly innan du börjar för att få den bästa upplevelsen.</string>
   <string name="basic_navigation_link_text">Grundläggande navigering</string>
   <string name="basic_navigation_link_subtext">Flytta mellan objekt, scrolla, använd menyer och annat</string>
@@ -979,7 +975,7 @@
   <string name="typing_text_title">Skriva text</string>
   <string name="basic_typing_text_text">När du är i en textruta öppnas ett tangentbord längst ned på skärmen.</string>
   <string name="typing_text_text">Dra med fingret på tangentbordet. Lyft på fingret när du hör den bokstav som du vill skriva.\n\nTesta att aktivera textrutan nedan och skriva ditt namn.</string>
-  <string name="typing_text_with_braille_keyboard_text">Du kan även skriva med tangentbordet för punktskrift. Det finns i SandFly-inställningarna.</string>
+  <string name="typing_text_with_braille_keyboard_text">Du kan även skriva med punktskriftstangentbordet. Det finns i inställningarna för SandFly.</string>
   <string name="other_ways_to_type_title">Andra sätt att skriva</string>
   <string name="other_ways_to_type_text">Det finns andra sätt att skriva på i SandFly. Du kan till exempel dubbeltrycka för att skriva en bokstav.</string>
   <string name="basic_other_ways_to_type_text">Det finns andra sätt att skriva i SandFly. Du kan till exempel dubbeltrycka för att ange en bokstav. Du kan ändra detta senare under Inställningar för SandFly &gt; Skärmtangentbord &gt; Skrivningsmetod.</string>
@@ -1077,7 +1073,7 @@
   <string name="pref_gesture_set_key_title">Rörelseuppsättning</string>
   <string name="practice_gestures_text">Testa valfri SandFly-rörelse på skärmen för att höra vad som händer.\n\nTryck på skärmen med två fingrar. Fortsätt öva genom att trycka en, två eller tre gånger med två, tre eller fyra fingrar.\n\nDu kan även dubbeltrycka med två, tre eller fyra fingrar och hålla ned dem.</string>
   <string name="practice_gestures_text_pre_r">Testa valfri SandFly-rörelse på skärmen för att höra vad som händer.\n\nTesta en rörelse där du ritar en rät vinkel med två fingrar. Svep till exempel nedåt och sedan åt höger utan att lyfta fingret.</string>
-  <string name="practice_keyboard_gestures_text">Tryck på en tangent eller en tangentkombination på det fysiska tangentbordet om du vill höra vad den gör. Tryck på Ctrl + W eller Esc för att avsluta.\n\nDu kan även öva på SandFly-gester här.</string>
+  <string name="practice_keyboard_gestures_text">Tryck på en tangent eller en tangentkombination på det fysiska tangentbordet om du vill höra vad den gör. Tryck på Ctrl + W eller Esc för att avsluta.\n\nDu kan även öva på SandFly-rörelser här.</string>
   <string name="button_1">Knapp 1</string>
   <string name="button_2">Knapp 2</string>
   <string name="button_3">Knapp 3</string>
@@ -1106,7 +1102,7 @@
   <string name="wear_training_volume_down_text">Svep vänster och sedan nedåt</string>
   <string name="wear_training_open_talkback_menu_title">Öppna SandFly-menyn</string>
   <string name="wear_training_open_talkback_menu_text">Svep nedåt och sedan åt höger för att öppna inställningar och kontroller som du använder ofta.</string>
-  <string name="wear_training_typing_title">Skriver</string>
+  <string name="wear_training_typing_title">Skrivning</string>
   <string name="wear_training_typing_text1">Dra med fingret på tangentbordet för att skriva på det. Lyft på fingret när du hör den bokstav som du vill skriva.</string>
   <string name="wear_training_typing_text2">Svep nedåt från skärmens överkant med två fingrar för att dölja tangentbordet och kontrollera det du har matat in.</string>
   <string name="wear_training_typing_text3">Svep uppåt från skärmens nederkant med två fingrar för att återgå till tangentbordet.</string>
@@ -1221,8 +1217,8 @@
   <string name="delete_icon_detection_dialog_title">Vill du radera automatiska ikonbeskrivningar?</string>
   <string name="delete_image_description_dialog_title">Vill du radera automatiska bildbeskrivningar?</string>
   <string name="delete_all_image_captioning_dialog_title">Vill du radera automatiska bild- och ikonbeskrivningar?</string>
-  <string name="delete_dialog_message">Om du vill få beskrivningar igen senare kan du ladda ned den här funktionen via SandFly-inställningarna</string>
-  <string name="delete_all_dialog_message">Detta raderar automatiska beskrivningar för både ikoner och bilder.\n\nOm du vill få beskrivningar igen senare kan du ladda ned dessa funktioner via SandFly-inställningarna.</string>
+  <string name="delete_dialog_message">Om du vill få beskrivningar igen senare kan du ladda ned den här funktionen via inställningarna för SandFly</string>
+  <string name="delete_all_dialog_message">Detta raderar automatiska beskrivningar för både ikoner och bilder.\n\nOm du vill få beskrivningar igen senare kan du ladda ned dessa funktioner via inställningarna för SandFly.</string>
   <string name="delete_dialog_positive_button_text">Radera</string>
   <string name="delete_dialog_negative_button_text">Avbryt</string>
   <string name="delete_icon_description_hint">Automatiska ikonbeskrivningar har raderats</string>
@@ -1352,7 +1348,7 @@
     <string name="battery_optimization_notification_title">Batterioptimering kan stoppa SandFly</string>
     <string name="battery_optimization_notification_text">På den här telefonen kan batterisparläget stoppa SandFly efter att skärmen stängts av, så det blir tyst tills det startas om. Tryck för att öppna batterioptimering, välj Alla appar, hitta SandFly och välj Optimera inte.</string>
     <string name="title_pref_mute_speech_while_recording">Tyst under inspelning</string>
-    <string name="summary_pref_mute_speech_while_recording">Medan en app spelar in utan hörlurar anslutna talar SandFly bara som svar på dina gester, tangenter och skrivning, och förblir tyst för saker som aviseringar, så att de inte spelas in.</string>
+    <string name="summary_pref_mute_speech_while_recording">Medan en app spelar in utan hörlurar anslutna talar SandFly bara som svar på dina rörelser, tangenter och skrivning, och förblir tyst för saker som aviseringar, så att de inte spelas in.</string>
     <string name="title_pref_switch_languages">Byt språk automatiskt</string>
     <string name="title_pref_switch_dialects">Byt dialekt automatiskt</string>
     <string name="category_collapsed">Komprimerat avsnitt</string>
@@ -1379,9 +1375,8 @@
     <string name="title_pref_touch_activation">Beröring och aktivering</string>
     <string name="title_pref_navigation">Navigering</string>
     <string name="title_pref_category_more">Mer</string>
-    <string name="title_pref_reserve_vibration_watch_gestures">Reservera gester för Vibration Watch</string>
+    <string name="title_pref_reserve_vibration_watch_gestures">Reservera rörelser för Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly slutar hantera enkel- och dubbeltryck med två fingrar så att Samsung Vibration Watch kan använda dem. Aktivera Vibration Watch i klockans tillgänglighetsinställningar.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Reserverad för Vibration Watch i avancerade inställningar</string>
     <string name="title_pref_speakerphone_away_from_ear">Högtalare när telefonen inte är vid örat</string>
     <string name="summary_pref_speakerphone_away_from_ear">Växlar under ett samtal till högtalaren när du tar bort telefonen från örat, och tillbaka till hörluren när du håller den mot örat igen.</string>
     <string name="summary_pref_speakerphone_needs_permission">Kräver en behörighet som Android inte ger skärmläsare. Kör det här kommandot med adb eller Shizuku för att bevilja den och gå sedan tillbaka till den här skärmen: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Appar</string>
     <string name="speech_control_no_apps">Inga appar har bett om att få tala ännu.</string>
     <string name="speech_control_ask_title">Vill du tillåta <xliff:g id="app" example="Tasker">%1$s</xliff:g> att tala genom SandFly?</string>
-    <string name="speech_control_ask_text">Appen kan säga text med din SandFly-röst. Du kan ändra detta i Avancerade inställningar.</string>
     <string name="speech_control_allow">Tillåt</string>
     <string name="speech_control_deny">Tillåt inte</string>
     <string name="permission_speak_label">tala genom SandFly</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Ta bort</string>
     <string name="quick_settings_added">%1$s har lagts till</string>
     <string name="quick_settings_removed">%1$s borttagen</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly på. Håll två fingrar på skärmen i 5 sekunder för att stänga av. För att sluta visa det här meddelandet, stäng av SandFly-inställningar &gt; Avancerade inställningar &gt; Visa instruktioner för att stänga av SandFly.</string>
     <string name="edge_gestures_title">Kanter</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">En annan genväg för att slå på eller av bläddringsläget</string>
     <string name="title_pref_vibration_strength">Vibrationsstyrka</string>
@@ -1708,7 +1701,7 @@
     <string name="wrap_around_on">Börja om från början: på</string>
     <string name="wrap_around_off">Börja om från början: av</string>
     <string name="title_selector_tablet_held_up_faces_away">Upprätt surfplatta vänd bort</string>
-    <string name="summary_support_tablet_held_up_faces_away">För punktskrifttangentbordet på en surfplatta eller uppfälld telefon</string>
+    <string name="summary_support_tablet_held_up_faces_away">För punktskriftstangentbordet på en surfplatta eller uppfälld telefon</string>
     <string name="tablet_held_up_faces_away_on">Upprätt surfplatta vänd bort: på</string>
     <string name="tablet_held_up_faces_away_off">Upprätt surfplatta vänd bort: av</string>
     <string name="title_keyboard_echo_on_screen">Eko för skärmtangentbord</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper-modeller</string>
     <string name="dictation_whisper_use">Använd</string>
     <string name="title_pref_dictation_ai_service">AI-tjänst för diktering</string>
-    <string name="dictation_ai_same">Samma som för automatiska beskrivningar</string>
     <string name="title_pref_browse_mode_per_app">Kom ihåg bläddringsläget i varje app</string>
     <string name="title_pref_export_settings">Exportera inställningar</string>
     <string name="title_pref_import_settings">Importera inställningar</string>
@@ -1794,4 +1786,12 @@
         <item>1 minut</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Stoppa automatiskt efter tystnad</string>
+    <string name="dictation_ai_same">Samma som Bild- och skärmbeskrivningar</string>
+    <string name="navigation_settings_link">Inställningar för SandFly &gt; Navigering</string>
+    <string name="navigation_settings_link_tts">Inställningar för SandFly och sedan Navigering</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reserverad för Vibration Watch under Rörelser</string>
+    <string name="speech_control_ask_text">Appen kan läsa upp text med din SandFly-röst. Du kan ändra detta under Inställningar, Tal, Låt andra appar tala.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly har aktiverats. Inaktivera genom att hålla två fingrar på skärmen i fem sekunder. Om du vill sluta visa det här meddelandet inaktiverar du Inställningar för SandFly &gt; Pausa och stäng av &gt; Visa anvisningar för att inaktivera SandFly.</string>
+    <string name="tutorial_link">Inställningar för SandFly &gt; Hjälp och feedback &gt; SandFly-guiden</string>
+    <string name="tutorial_link_tts">Inställningar för SandFly, sedan Hjälp och feedback och sedan SandFly-guiden</string>
 </resources>

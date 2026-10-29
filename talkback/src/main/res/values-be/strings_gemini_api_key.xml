@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">Мадэль</string>
     <string name="ai_service_address_invalid">Адрас павінен пачынацца з https://. Нічога не захавалася.</string>
     <string name="dialog_message_ai_service_consent">Выявы і здымкі экрана адпраўляюцца ў <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> для апісання, гэта займае некалькі секунд. Дзейнічаюць умовы і палітыка прыватнасці гэтага сэрвісу. Генератыўны ШІ эксперыментальны, таму ён будзе памыляцца.</string>
-    <string name="ai_service_error_api_key">Сэрвіс ШІ не прыняў ключ API. Праверце яго налады ў раздзеле «Аўтаматычныя апісанні».</string>
-    <string name="ai_service_error_quota">Ліміт выкарыстання сэрвісу ШІ вычарпаны. Паўтарыце спробу пазней.</string>
-    <string name="ai_service_error_busy">Сэрвіс ШІ зараз заняты. Паўтарыце спробу крыху пазней.</string>
-    <string name="ai_service_error_timeout">Служба штучнага інтэлекту занадта доўга адказвала. Паспрабуйце яшчэ раз.</string>
+    <string name="ai_service_error_api_key">Сэрвіс штучнага інтэлекту не прыняў ключ API. Праверце яго налады ў раздзеле «Апісанні відарысаў і экрана».</string>
+    <string name="ai_service_error_quota">Ліміт выкарыстання сэрвісу штучнага інтэлекту вычарпаны. Паўтарыце спробу пазней.</string>
+    <string name="ai_service_error_busy">Сэрвіс штучнага інтэлекту зараз заняты. Паўтарыце спробу крыху пазней.</string>
+    <string name="ai_service_error_timeout">Сэрвіс штучнага інтэлекту занадта доўга адказваў. Паспрабуйце яшчэ раз.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Няма</string>
-    <string name="ai_service_not_set_up">Сэрвіс ШІ не выкарыстоўваецца. Наладзьце або выберыце адзін у наладах «Аўтаматычныя апісанні».</string>
-    <string name="ai_provider_none_set_up">Сэрвіс ШІ не наладжаны. Наладзьце адзін з іх у яго наладах ніжэй.</string>
+    <string name="ai_service_not_set_up">Сэрвіс штучнага інтэлекту не выкарыстоўваецца. Наладзьце або выберыце сэрвіс у раздзеле «Апісанні відарысаў і экрана».</string>
+    <string name="ai_provider_none_set_up">Ніводны сэрвіс штучнага інтэлекту не наладжаны. Наладзьце сэрвіс у яго наладах ніжэй.</string>
     <string name="ai_provider_other">Іншы сэрвіс</string>
     <string name="title_pref_category_ai_services">Паслугі штучнага інтэлекту</string>
     <string name="title_pref_ai_provider">Сэрвіс штучнага інтэлекту</string>

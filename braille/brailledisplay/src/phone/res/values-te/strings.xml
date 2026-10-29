@@ -42,7 +42,7 @@
   <string name="bd_preference_languages_and_commands_category_title">భాషలు, కమాండ్‌లు</string>
   <string name="pref_codes_title">భాషలు</string>
   <string name="pref_preferred_output_codes_title">చదవడం కోసం మీరు ప్రాధాన్యం ఇచ్చే భాష</string>
-  <string name="pref_preferred_input_codes_title">టైపింగ్ కోసం మీరు ప్రాధాన్యం ఇచ్చే భాష</string>
+  <string name="pref_preferred_input_codes_title">ప్రాధాన్య టైపింగ్ భాష</string>
   <string name="pref_preferred_braille_grade_title">ప్రాధాన్య బ్రెయిలీ గ్రేడ్</string>
   <string name="bd_switch_input_code_gesture_tip_dialog_title">టైపింగ్ భాషను త్వరగా మార్చండి</string>
   <string name="bd_switch_output_code_gesture_tip_dialog_title">చదివే భాషను త్వరగా మార్చండి</string>
@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">బ్రౌజింగ్ మోడ్‌ను ఉపయోగించడానికి, మీరు ఆటోమేటిక్‌గా సెట్ చేయబడిన కీ-మ్యాప్ నుండి మెరుగుపరచబడిన కీ-మ్యాప్‌కు స్విచ్ అవ్వాలి. ఈ మార్పు మీ బ్రెయిలీ డిస్‌ప్లే కమాండ్‌లలో కొన్నింటిని అప్‌డేట్ చేస్తుంది</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">సెట్టింగ్‌లు</string>
   <string name="bd_command_change_dialog_title">కొన్ని కమాండ్‌లు అప్‌డేట్ అయ్యాయి</string>
-  <string name="bd_command_change_dialog_message">SandFly ఈ వెర్షన్‌లో ఈ బ్రెయిలీ డిస్‌ప్లే కమాండ్‌లు అప్‌డేట్ చేయబడ్డాయి:\n\n• మునుపటి ఐటెమ్: డాట్స్ 1, 7ను నొక్కండి\n\n• తర్వాతి ఐటెమ్: డాట్స్ 4, 8ను నొక్కండి\n\n• మునుపటి రీడింగ్ కంట్రోల్: డాట్స్ 2, 3, 7, 8ను నొక్కండి\n\n• తర్వాతి రీడింగ్ కంట్రోల్: డాట్స్ 5, 6, 7, 8ను నొక్కండి</string>
+  <string name="bd_command_change_dialog_message">SandFly ఈ వెర్షన్‌లో ఈ బ్రెయిలీ డిస్‌ప్లే కమాండ్‌లు అప్‌డేట్ చేయబడ్డాయి:\n\n• మునుపటి అంశం: డాట్స్ 1, 7ను నొక్కండి\n\n• తర్వాత అంశం: డాట్స్ 4, 8ను నొక్కండి\n\n• మునుపటి రీడింగ్ కంట్రోల్: డాట్స్ 2, 3, 7, 8ను నొక్కండి\n\n• తర్వాతి రీడింగ్ కంట్రోల్: డాట్స్ 5, 6, 7, 8ను నొక్కండి</string>
   <string name="bd_preference_braille_contracted">కాంట్రాక్టెడ్ బ్రెయిలీ</string>
   <string name="bd_preference_braille_uncontracted">అన్‌కాంట్రాక్టెడ్ బ్రెయిలీ</string>
   <string name="bd_braille_grade_tips">బ్రెయిలీ డిస్‌ప్లేను ఉపయోగించి కాంట్రాక్టెడ్, అన్‌కాంట్రాక్టెడ్ మధ్య త్వరగా మారడానికి, spaceను, 1, 2, 4, 5 డాట్‌లను నొక్కండి.\n\nమీరు రెండూ బ్రెయిలీ గ్రేడ్‌లు ఉన్న భాషను ఉపయోగిస్తుంటే, ఈ కమాండ్ పని చేస్తుంది.</string>
@@ -217,7 +217,7 @@
   <string name="bd_cmd_global_home">వర్చువల్ హోమ్‌కు వెళ్లండి</string>
   <string name="bd_cmd_global_notifications">నోటిఫికేషన్‌లను తెరవండి</string>
   <string name="bd_cmd_global_recents">ఇటీవలి యాప్‌లను తెరవండి</string>
-  <string name="bd_cmd_quick_settings">క్విక్ సెట్టింగ్‌లను తెరవండి</string>
+  <string name="bd_cmd_quick_settings">త్వరిత సెట్టింగ్‌లను తెరవండి</string>
   <string name="bd_cmd_global_all_apps">అన్ని యాప్‌లను తెరవండి</string>
   <string name="bd_cmd_toggle_screen_search">స్క్రీన్ కంటెంట్ సెర్చ్‌ను తెరవండి</string>
   <string name="bd_cmd_edit_custom_label">అనుకూల లేబుల్‌ను ఎడిట్ చేయండి</string>
@@ -302,7 +302,7 @@
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">కొన్ని కమాండ్‌లు అందుబాటులో లేవు</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_message">టైప్ చేస్తున్నప్పుడు లేదా ఎడిట్ చేస్తున్నప్పుడు నావిగేషన్, బ్రెయిలీ సెట్టింగ్‌లు, ఇంకా కొన్ని SandFly ఫీచర్‌ల కోసం కమాండ్‌లు అందుబాటులో ఉండవు.\n\nఈ కమాండ్‌లను ఉపయోగించడానికి, ముందుగా కీబోర్డ్‌ను మూసివేయండి.</string>
   <string name="bd_caption_tutorial_dialog_title">మీ బ్రెయిలీ డిస్‌ప్లేలో క్యాప్షన్‌లు కనిపిస్తాయి</string>
-  <string name="bd_caption_tutorial_dialog_message">ఈ వీడియోకు క్యాప్షన్‌లు చాపడానికి లేదా దాచడానికి, స్పేస్, 1, 4, 7, 8 డాట్స్ నొక్కండి.\n\nసపోర్ట్ చేసే మీడియాకు ఆటోమేటిక్‌గా క్యాప్షన్‌లు చూపడానికి, సెట్టింగ్‌లలో బ్రెయిలీ డిస్‌ప్లేలో క్యాప్షన్‌లు ఆన్.</string>
+  <string name="bd_caption_tutorial_dialog_message">ఈ వీడియోకు క్యాప్షన్‌లు చూపడానికి లేదా దాచడానికి, స్పేస్, 1, 4, 7, 8 డాట్స్ నొక్కండి.\n\nసపోర్ట్ చేసే మీడియాకు ఆటోమేటిక్‌గా క్యాప్షన్‌లు చూపడానికి, సెట్టింగ్‌లలో “బ్రెయిలీ డిస్‌ప్లేలో క్యాప్షన్‌లు చూపండి”ను ఆన్ చేయండి.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">క్యాప్షన్‌లు అందుబాటులో ఉన్నప్పుడు ఎల్లప్పుడూ ఈ మెసేజ్‌ను చూడండి</string>
   <string name="bd_usb_connect_dialog_title">బ్రెయిలీ డిస్‌ప్లే USBకి కనెక్ట్ చేయబడింది</string>
   <string name="bd_usb_connect_dialog_message">మీ %s బ్యాటరీ మీ బ్రెయిలీ డిస్‌ప్లేను ఛార్జ్ చేస్తోంది.\n\nమీరు బ్లూటూత్‌కు స్విచ్ అవ్వాలనుకుంటే, మీ USB లేదా USB హబ్‌ని డిస్‌కనెక్ట్ చేసి, SandFly సెట్టింగ్‌లు&gt; బ్రెయిలీ డిస్‌ప్లేకి వెళ్లండి.</string>

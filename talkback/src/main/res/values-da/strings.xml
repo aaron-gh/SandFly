@@ -67,7 +67,7 @@
   <string name="summary_pref_speak_element_ids">Sig id\'et for knapper uden etiket</string>
   <string name="pref_allow_frequent_content_change_announcement_title">Oplæs alle opdateringer om fremskridt</string>
   <string name="summary_pref_allow_frequent_content_change_announcement">Omfatter opdateringer under download, brug af rutevejledning m.m. Når indstillingen er deaktiveret, får du stadig opdateringer, men færre af dem.</string>
-  <string name="title_pref_explore_by_touch">Tryk for at høre</string>
+  <string name="title_pref_explore_by_touch">Udforsk ved berøring</string>
   <string name="title_pref_category_controls">Styring</string>
   <string name="title_pref_category_reduce_latency_summary">Disse indstillinger får SandFly til at reagere hurtigere, når du rører ved skærmen</string>
   <string name="reset_latency_settings_title">Nulstil alle indstillinger for forsinkelse</string>
@@ -406,8 +406,8 @@
   <string name="talkback_menu_more_options_text">Der er flere menuvalg tilgængelige, når du har gennemført konfigurationen eller låst din enhed op</string>
   <string name="talkback_menu_title_content_description">SandFly-menu. Stryg til højre for at se mulighederne i SandFly-menuen.\n\nStryg til venstre eller højre med 2 fingre fra kanten af skærmen for at gå tilbage til vejledningen.</string>
   <string name="shortcut_show_language_options">Skift det sprog, der tales</string>
-  <string name="shortcut_select_next_setting">Næste styringselement til oplæsning</string>
-  <string name="shortcut_select_previous_setting">Forrige styringselement til oplæsning</string>
+  <string name="shortcut_select_next_setting">Næste indstilling for oplæsning</string>
+  <string name="shortcut_select_previous_setting">Forrige indstilling for oplæsning</string>
   <string name="shortcut_pass_through_next">Brug midlertidig standardbevægelse</string>
   <string name="shortcut_a11y_button">Genvej til hjælpefunktioner</string>
   <string name="shortcut_a11y_button_long_press">Hold genvejen til hjælpefunktioner nede</string>
@@ -818,7 +818,7 @@
   <string name="adjust_granularity_hint">%1$s for at læse en/et %2$s ad gangen</string>
   <string name="adjust_typo_hint">%1$s for at se forslag.</string>
   <string name="use_action_hint">Tryk to gange for at udføre handlingen</string>
-  <string name="no_adjust_setting_gesture">Hvis du vil bruge denne funktion, kan du gå til indstillingerne for SandFly og tilføje en bevægelse for \"<xliff:g example="selected setting next action">%1$s</xliff:g>\"</string>
+  <string name="no_adjust_setting_gesture">Hvis du vil bruge denne funktion, kan du gå til SandFly-indstillingerne og tilføje en bevægelse for \"<xliff:g example="selected setting next action">%1$s</xliff:g>\"</string>
   <string name="no_navigate_typo_gesture">Hvis du vil bruge denne funktion, kan du gå til SandFly-indstillingerne og tilføje en bevægelse for stavekontrol</string>
   <string name="use_spelling_suggestion_hint">Tryk to gange for at erstatte tekst</string>
   <string name="screen_search_keyword_hint">søgeordet er %1$s</string>
@@ -846,12 +846,12 @@
   <string name="tv_training_shortcut_step_summary">Du kan bruge genvejen til SandFly ved at holde retningsknappen Ned og knappen Tilbage nede på samme tid i 3 sekunder. Dette vil enten aktivere eller deaktivere SandFly.\n\nDu kan også tilgå denne genvej i indstillingerne for dit fjernsyn.\n\nTryk på Vælg for at fortsætte.</string>
   <string name="new_feature_in_talkback_title">Nye funktioner i SandFly</string>
   <string name="exit_tutorial_title">Er du færdig med gennemgangen?</string>
-  <string name="exit_tutorial_content">Du kan til enhver tid vende tilbage til vejledningen i indstillingerne for SandFly.</string>
-  <string name="exit_onboarding_content">Du kan til enhver tid vende tilbage og gennemgå nye funktioner i indstillingerne for SandFly.</string>
+  <string name="exit_tutorial_content">Du kan til enhver tid vende tilbage til vejledningen i SandFly-indstillingerne.</string>
+  <string name="exit_onboarding_content">Du kan til enhver tid vende tilbage og gennemgå nye funktioner i SandFly-indstillingerne.</string>
   <string name="keep_reviewing_tutorial_button">Fortsæt gennemgang</string>
   <string name="welcome_to_updated_talkback_title">Velkommen til det opdaterede SandFly</string>
   <string name="navigation_heading">Navigation</string>
-  <string name="setting_selector_heading">Læsestyring</string>
+  <string name="setting_selector_heading">Indstillinger for oplæsning</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Hvis du vil afspille medier eller sætte dem på pause i en video- eller musikapp, skal du trykke to gange med to fingre. Prøv det nu.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Andre apps bruger muligvis denne bevægelse til f.eks. at besvare eller afslutte telefonopkald. Bevægelsen understøttes muligvis ikke af alle apps.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Mediet er sat på pause eller afspiller indhold. Dette vil normalt starte eller stoppe afspilningen. Stryg mod højre for at fortsætte.</string>
@@ -865,9 +865,9 @@
   <string name="new_shortcut_gesture_cut_text_announcement">Teksten blev klippet. Denne handling klipper som regel den tekst, du har valgt. Stryg mod højre for at fortsætte.</string>
   <string name="new_shortcut_gesture_selection_mode_text">Hvis du vil starte eller afslutte tekstmarkeringstilstanden, skal du trykke to gange og holde nede med to fingre.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Markeringstilstanden er slået til eller fra. Dette vil normalt starte eller stoppe tekstmarkeringstilstanden, når du er i et indtastningsfelt. Stryg mod højre for at fortsætte.</string>
-  <string name="new_shortcut_gesture_reading_menu_text">Du kan åbne styringselementerne for læsning ved at stryge mod venstre eller højre med 3 fingre. Du kan også stryge opad eller nedad med 3 fingre.</string>
+  <string name="new_shortcut_gesture_reading_menu_text">Du kan bruge indstillingerne for oplæsning ved at stryge mod venstre eller højre med 3 fingre. Du kan også stryge opad eller nedad med 3 fingre.</string>
   <string name="new_shortcut_gesture_note">Bemærk! Du har tilpasset nogle af dine bevægelser, så disse oplysninger er muligvis ikke korrekte. Du kan se dine bevægelser i SandFly-indstillingerne.</string>
-  <string name="welcome_to_android11_text">Der er tilføjet nye bevægelser for at gøre SandFly hurtigere og nemmere at bruge.\n\nDu kan prøve de nye bevægelser på denne skærm. Du kan til enhver tid gennemgå disse oplysninger i indstillingerne for SandFly.</string>
+  <string name="welcome_to_android11_text">Der er tilføjet nye bevægelser for at gøre SandFly hurtigere og nemmere at bruge.\n\nDu kan prøve de nye bevægelser på denne skærm. Du kan til enhver tid gennemgå disse oplysninger i SandFly-indstillingerne.</string>
   <string name="new_gesture_notification_title">Nye bevægelser i SandFly</string>
   <string name="new_gesture_notification_content">Tryk for at få flere oplysninger om, hvordan du kan bruge SandFly hurtigere med nye bevægelser.</string>
   <string name="dump_node_tree_description">Træstrukturen er blevet gemt i de pågældende logs.</string>
@@ -882,11 +882,11 @@
   <string name="announcing_text_formatting_title">Meddelelse om tekstformatering</string>
   <string name="announcing_text_formatting_header">SandFly kan nu fortælle om ændringer i tekstformatering, f.eks. fed skrift, kursiv og tekstfarve. Sådan kommer du i gang:</string>
   <string name="announcing_text_formatting_option1">Fokuser på elementet med formateringen, åbn SandFly-menuen, og vælg \"Beskriv tekstformatering\" eller</string>
-  <string name="announcing_text_formatting_option2">Tilføj en oplæsningsindstilling for tekstformatering, som slår meddelelser om formateringsændringer til eller fra.</string>
+  <string name="announcing_text_formatting_option2">Tilføj en indstilling for oplæsning for tekstformatering, som slår meddelelser om formateringsændringer til eller fra.</string>
   <string name="announcing_text_formatting_middle">Når du er klar til at prøve det, kan du se et eksempel på formateret tekst her:</string>
   <string name="announcing_text_formatting_tail">Hvis du vil ændre, hvordan formateret tekst meddeles, kan du gå til %1$s.</string>
   <string name="text_formatting_options_settings_path">SandFly-indstillinger &gt; Detaljering &gt; Valgmuligheder for tekstformatering</string>
-  <string name="text_formatting_options_settings_path_tts">SandFly-indstillinger efterfulgt af Detaljering og derefter Indstillinger for tekstformatering</string>
+  <string name="text_formatting_options_settings_path_tts">SandFly-indstillinger efterfulgt af Detaljering og derefter Valgmuligheder for tekstformatering</string>
   <string name="announcing_text_formatiing_sample">Denne tekst er &lt;b&gt;fed&lt;/b&gt;, en råben, lidt vild,
 &lt;br&gt;mens denne er &lt;u&gt;understreget&lt;/u&gt;, en hvisken, så mild.&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;Roser er røde&lt;/span&gt;, klassiske og smukke,
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Indstillinger for brailleskærm</string>
   <string name="keyboard_smart_browse_mode_title">Tastatur: Smart browsertilstand</string>
   <string name="keyboard_smart_browse_mode_text">Smart browsertilstand i SandFly deaktiverer browsertilstand i et redigeringsfelt, så du nemmere kan skrive med et fysisk tastatur, når du browser på nettet. Derefter aktiveres den igen, når du går til et felt på nettet, der ikke kan redigeres, så du effektivt kan browse videre. Du kan aktivere eller deaktivere \"Smart browsertilstand\" i <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">SandFly-indstillinger &gt; Avancerede indstillinger</string>
-  <string name="advanced_settings_link_tts">SandFly-indstillinger efterfulgt af Avancerede indstillinger</string>
   <string name="keyboard_tutorial_title">Tastaturvejledning</string>
   <string name="keyboard_tutorial_text">SandFly indeholder nu en tastaturvejledning, der kan hjælpe dig med at lære tastaturgenvejene og -kommandoerne til den forbedrede tastaturoversigt, når du bruger et fysisk tastatur. Du finder vejledningen ved at gå til: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFly-indstillinger &gt; SandFly-vejledning</string>
-  <string name="tutorial_link_tts">SandFly-indstillinger efterfulgt af SandFly-vejledning</string>
   <string name="tutorial_entry_point_title">Vejledning</string>
   <string name="welcome_to_talkback_title">Velkommen til SandFly</string>
   <string name="talkback_is_on">SandFly er aktiveret</string>
@@ -948,10 +944,10 @@
   <string name="menus_title">Brug menuer og indstillinger</string>
   <string name="menus_talkback_menu_text">SandFly-menuen indeholder indstillinger og styring, som du ofte kan få brug for.\n\nÅbn SandFly-menuen nu ved at trykke på skærmen med 3 fingre.</string>
   <string name="menus_talkback_menu_text_pre_r">SandFly-menuen indeholder indstillinger og styring, som du ofte kan få brug for.\n\nÅbn SandFly-menuen nu ved at stryge nedad og derefter til højre.</string>
-  <string name="menus_selector_text">Disse genveje kan hjælpe dig med hurtigt at skifte indstillinger, f.eks. skifte din navigation fra tegn til ord eller ændre talehastigheden i SandFly.\n\nHvis du hurtigt vil skifte læsestyring, kan du stryge til venstre eller højre med 3 fingre.\n\nDu kan tilpasse SandFly-menuen og din læsestyring senere i SandFly-indstillingerne.</string>
-  <string name="menus_selector_text_pre_r">Disse genveje kan hjælpe dig med hurtigt at skifte indstillinger, f.eks. skifte din navigation fra tegn til ord eller ændre talehastigheden i SandFly.\n\nHvis du hurtigt vil skifte læsestyring, kan du stryge nedad og derefter opad.\n\nDu kan tilpasse SandFly-menuen og din læsestyring senere i SandFly-indstillingerne.</string>
+  <string name="menus_selector_text">Disse genveje kan hjælpe dig med hurtigt at skifte indstillinger, f.eks. skifte din navigation fra tegn til ord eller ændre talehastigheden i SandFly.\n\nHvis du hurtigt vil skifte indstilling for oplæsning, kan du stryge til venstre eller højre med 3 fingre.\n\nDu kan tilpasse SandFly-menuen og dine indstillinger for oplæsning senere i SandFly-indstillingerne.</string>
+  <string name="menus_selector_text_pre_r">Disse genveje kan hjælpe dig med hurtigt at skifte indstillinger, f.eks. skifte din navigation fra tegn til ord eller ændre talehastigheden i SandFly.\n\nHvis du hurtigt vil skifte indstilling for oplæsning, kan du stryge nedad og derefter opad.\n\nDu kan tilpasse SandFly-menuen og dine indstillinger for oplæsning senere i SandFly-indstillingerne.</string>
   <string name="all_set_title">Så er det klaret!</string>
-  <string name="all_set_text">Du er nu klar til at bruge SandFly.\n\nDu kan fortsætte med at lære om andre emner nu, eller du kan gennemgå disse oplysninger til enhver tid i indstillingerne for SandFly.</string>
+  <string name="all_set_text">Du er nu klar til at bruge SandFly.\n\nDu kan fortsætte med at lære om andre emner nu, eller du kan gennemgå disse oplysninger til enhver tid i SandFly-indstillingerne.</string>
   <string name="talkback_tutorial_text">Stryg til højre for at vælge et emne. Du får den bedste brugeroplevelse ved at aktivere SandFly, inden du går i gang.</string>
   <string name="basic_navigation_link_text">Grundlæggende navigation</string>
   <string name="basic_navigation_link_subtext">Skift mellem elementer, rul, brug menuer og meget mere</string>
@@ -979,7 +975,7 @@
   <string name="typing_text_title">Indtastning af tekst</string>
   <string name="basic_typing_text_text">Når du er i et tekstfelt, åbnes et tastatur nederst på skærmen.</string>
   <string name="typing_text_text">Flyt din finger over tastaturet. Løft fingeren, når du hører det bogstav, du vil skrive.\n\nPrøv at aktivere tekstfeltet nedenfor og skrive dit navn.</string>
-  <string name="typing_text_with_braille_keyboard_text">Du kan også skrive med brailletastatur. Find det i indstillingerne til SandFly.</string>
+  <string name="typing_text_with_braille_keyboard_text">Du kan også skrive med brailletastatur. Find det i SandFly-indstillingerne.</string>
   <string name="other_ways_to_type_title">Andre måder at skrive på</string>
   <string name="other_ways_to_type_text">Der er andre måder at skrive på i SandFly. Du kan f.eks. trykke to gange for at angive et bogstav.</string>
   <string name="basic_other_ways_to_type_text">Der er andre måder at skrive på i SandFly. Du kan f.eks. trykke to gange for at angive et bogstav. Du kan ændre dette senere under SandFly-indstillinger &gt; Skærmtastatur &gt; Indtastningsmetode.</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Mere</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reserver bevægelser til Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly håndterer ikke enkelt- og dobbelttryk med to fingre, så Samsung Vibration Watch kan bruge dem. Aktivér Vibration Watch i urets hjælpefunktioner.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Reserveret til Vibration Watch i Avancerede indstillinger</string>
     <string name="title_pref_speakerphone_away_from_ear">Højttaler, når telefonen ikke er ved øret</string>
     <string name="summary_pref_speakerphone_away_from_ear">Skifter under et opkald til højttaleren, når du fjerner telefonen fra øret, og tilbage til ørehøjttaleren, når du holder den op til øret igen.</string>
     <string name="summary_pref_speakerphone_needs_permission">Kræver en tilladelse, som Android ikke giver skærmlæsere. Kør denne kommando med adb eller Shizuku for at give tilladelsen, og vend derefter tilbage til denne skærm: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Apps</string>
     <string name="speech_control_no_apps">Ingen apps har anmodet om at tale endnu.</string>
     <string name="speech_control_ask_title">Vil du tillade, at <xliff:g id="app" example="Tasker">%1$s</xliff:g> taler via SandFly?</string>
-    <string name="speech_control_ask_text">Appen kan sige tekst med din SandFly-stemme. Du kan ændre dette i Avancerede indstillinger.</string>
     <string name="speech_control_allow">Tillad</string>
     <string name="speech_control_deny">Tillad ikke</string>
     <string name="permission_speak_label">tale via SandFly</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d notifikation</item>
         <item quantity="other">%d notifikationer</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly er aktiveret. Hold 2 fingre på skærmen i 5 sekunder for at deaktivere funktionen. Hvis du ikke længere vil se denne meddelelse, kan du deaktivere SandFly-indstillinger &gt; Avancerede indstillinger &gt; Vis vejledning i, hvordan du deaktiverer SandFly.</string>
     <string name="edge_gestures_title">Kanter</string>
     <string name="title_pref_audio_output_device">Lydudgangsenhed</string>
     <string name="dialog_title_audio_output_device">Vælg, hvor SandFly-lyd skal afspilles</string>
@@ -1523,10 +1516,10 @@
     <string name="summary_support_wrap_around">Slå fortsættelse fra det sidste element til det første til eller fra</string>
     <string name="wrap_around_on">Fortsæt fra start er aktiveret</string>
     <string name="wrap_around_off">Fortsæt fra start er deaktiveret</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tablet holdt oprejst vender væk</string>
+    <string name="title_selector_tablet_held_up_faces_away">Tabletskærmen vender væk, når tabletten holdes op</string>
     <string name="summary_support_tablet_held_up_faces_away">Til brailletastaturet på en tablet eller udfoldet telefon</string>
-    <string name="tablet_held_up_faces_away_on">Tablet holdt oprejst vender væk er aktiveret</string>
-    <string name="tablet_held_up_faces_away_off">Tablet holdt oprejst vender væk er deaktiveret</string>
+    <string name="tablet_held_up_faces_away_on">Tabletskærmen vender væk, når tabletten holdes op: aktiveret</string>
+    <string name="tablet_held_up_faces_away_off">Tabletskærmen vender væk, når tabletten holdes op: deaktiveret</string>
     <string name="title_keyboard_echo_on_screen">Tastaturekko for skærmtastatur</string>
     <string name="title_keyboard_echo_physical">Tastaturekko for fysisk tastatur</string>
     <string name="title_keyboard_echo_braille_keyboard">Tastaturekko for brailletastatur</string>
@@ -1662,7 +1655,7 @@
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Endnu en genvej til at slå browsetilstand til eller fra</string>
     <string name="title_pref_vibration_strength">Vibrationsstyrke</string>
     <string name="shortcut_scroll_to_top">Rul til toppen</string>
-    <string name="shortcut_write_reading_control">Skriv bogstavet for et styringselement til oplæsning</string>
+    <string name="shortcut_write_reading_control">Skriv bogstavet for en indstilling for oplæsning</string>
     <string name="title_pref_reading_control_letters">Håndskrevne bogstaver</string>
     <string name="reading_control_letter_none">Ingen</string>
     <string name="handwriting_prompt">Skriv et bogstav</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper-modeller</string>
     <string name="dictation_whisper_use">Brug</string>
     <string name="title_pref_dictation_ai_service">AI-tjeneste til diktering</string>
-    <string name="dictation_ai_same">Samme som automatiske beskrivelser</string>
     <string name="title_pref_browse_mode_per_app">Husk browse-tilstand i hver app</string>
     <string name="title_pref_export_settings">Eksporter indstillinger</string>
     <string name="title_pref_import_settings">Importer indstillinger</string>
@@ -1794,4 +1786,12 @@
         <item>1 minut</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automatisk stop efter stilhed</string>
+    <string name="dictation_ai_same">Samme som Billed- og skærmbeskrivelser</string>
+    <string name="navigation_settings_link">SandFly-indstillinger &gt; Navigation</string>
+    <string name="navigation_settings_link_tts">SandFly-indstillinger efterfulgt af Navigation</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reserveret til Vibration Watch under Bevægelser</string>
+    <string name="speech_control_ask_text">Appen kan oplæse tekst med din SandFly-stemme. Du kan ændre dette under Indstillinger, Tale, Tillad andre apps at tale.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly er aktiveret. Hold 2 fingre på skærmen i 5 sekunder for at deaktivere funktionen. Hvis du ikke længere vil se denne meddelelse, kan du deaktivere SandFly-indstillinger &gt; Pause og deaktivering &gt; Vis vejledning i, hvordan du deaktiverer SandFly.</string>
+    <string name="tutorial_link">SandFly-indstillinger &gt; Hjælp og feedback &gt; SandFly-vejledning</string>
+    <string name="tutorial_link_tts">SandFly-indstillinger efterfulgt af Hjælp og feedback og derefter SandFly-vejledning</string>
 </resources>

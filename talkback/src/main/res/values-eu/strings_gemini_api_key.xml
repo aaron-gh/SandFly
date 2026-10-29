@@ -13,15 +13,15 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, gero Flash-Lite okupatuta dagoenean</string>
     <string name="gemini_model_loading">Ereduak eskuratzen…</string>
     <string name="gemini_model_list_failed">Ezin izan dira ereduak eskuratu: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Ezarri lehenik Gemini API gako bat</string>
+    <string name="gemini_model_needs_key">Ezarri lehenik Gemini-ren API gako bat</string>
     <string name="ai_service_address_hint">Helbidea, adibidez https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Eredua</string>
     <string name="ai_service_address_invalid">Helbideak https:// aurrizkiarekin hasi behar du. Ez da ezer gorde.</string>
     <string name="dialog_message_ai_service_consent">Irudiak eta pantaila-argazkiak <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> zerbitzura bidaltzen dira deskribatzeko, eta segundo batzuk behar dira. Zerbitzuaren baldintzak eta pribatutasun-gidalerroak aplikatzen dira. AA sortzailea esperimentala da; beraz, akatsak egingo ditu.</string>
-    <string name="ai_service_error_api_key">AI zerbitzuak ez du onartu API gakoa. Egiaztatu bere ezarpenak Irudien eta pantailaren azalpenak atalean.</string>
-    <string name="ai_service_error_quota">AI zerbitzuaren erabilera mugara iritsi da. Saiatu berriro geroago.</string>
-    <string name="ai_service_error_busy">AI zerbitzua lanpetuta dago orain. Saiatu berriro une batean.</string>
-    <string name="ai_service_error_timeout">AI zerbitzuak denbora gehiegi behar izan zuen erantzuteko. Saiatu berriro.</string>
+    <string name="ai_service_error_api_key">Adimen artifizialeko zerbitzuak ez du onartu API gakoa. Egiaztatu bere ezarpenak Irudien eta pantailaren azalpenak atalean.</string>
+    <string name="ai_service_error_quota">Adimen artifizialeko zerbitzuaren erabilera mugara iritsi da. Saiatu berriro geroago.</string>
+    <string name="ai_service_error_busy">Adimen artifizialeko zerbitzua lanpetuta dago orain. Saiatu berriro une batean.</string>
+    <string name="ai_service_error_timeout">Adimen artifizialeko zerbitzuak denbora gehiegi behar izan zuen erantzuteko. Saiatu berriro.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Bat ere ez</string>
-    <string name="ai_service_not_set_up">Ez dago AI zerbitzurik erabiltzen. Konfiguratu bat edo aukeratu bat Irudien eta pantailaren azalpenak ataleko ezarpenetan.</string>
-    <string name="ai_provider_none_set_up">Ez dago AI zerbitzurik konfiguratuta. Konfiguratu bat beheko ezarpenetan.</string>
+    <string name="ai_service_not_set_up">Ez dago adimen artifizialeko zerbitzurik erabiltzen. Konfiguratu bat edo aukeratu bat Irudien eta pantailaren azalpenak ataleko ezarpenetan.</string>
+    <string name="ai_provider_none_set_up">Ez dago adimen artifizialeko zerbitzurik konfiguratuta. Konfiguratu bat beheko ezarpenetan.</string>
     <string name="ai_provider_other">Beste zerbitzu bat</string>
     <string name="title_pref_category_ai_services">AI zerbitzuak</string>
     <string name="title_pref_ai_provider">Adimen artifizialeko zerbitzua</string>

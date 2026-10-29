@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">मॉडल</string>
     <string name="ai_service_address_invalid">पता https:// से शुरू होना चाहिए। कुछ भी सहेजा नहीं गया।</string>
     <string name="dialog_message_ai_service_consent">ब्यौरे के लिए इमेज और स्क्रीनशॉट <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> को भेजे जाते हैं, जिसमें कुछ सेकंड लगते हैं। उस सेवा की अपनी शर्तें और निजता नीति लागू होती हैं। जनरेटिव AI प्रयोग के तौर पर है, इसलिए इससे गलतियां होंगी।</string>
-    <string name="ai_service_error_api_key">एआई सेवा ने एपीआई कुंजी स्वीकार नहीं की। स्वचालित विवरण में इसकी सेटिंग्स जांचें।</string>
-    <string name="ai_service_error_quota">AI सेवा की इस्तेमाल की सीमा पूरी हो गई है। बाद में फिर से कोशिश करें।</string>
-    <string name="ai_service_error_busy">AI सेवा अभी व्यस्त है. थोड़ी देर में पुनः प्रयास करें.</string>
-    <string name="ai_service_error_timeout">AI सेवा को उत्तर देने में बहुत अधिक समय लगा। पुनः प्रयास करें।</string>
+    <string name="ai_service_error_api_key">एआई सेवा ने API कुंजी स्वीकार नहीं की। \'इमेज और स्क्रीन के बारे में जानकारी\' में इसकी सेटिंग जांचें।</string>
+    <string name="ai_service_error_quota">एआई सेवा की इस्तेमाल की सीमा पूरी हो गई है। बाद में फिर से कोशिश करें।</string>
+    <string name="ai_service_error_busy">एआई सेवा अभी व्यस्त है. थोड़ी देर में पुनः प्रयास करें.</string>
+    <string name="ai_service_error_timeout">एआई सेवा को उत्तर देने में बहुत अधिक समय लगा। पुनः प्रयास करें।</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">कोई नहीं</string>
-    <string name="ai_service_not_set_up">कोई AI सेवा इस्तेमाल में नहीं है। अपने-आप मिलने वाली जानकारी की सेटिंग में कोई सेवा सेट अप करें या चुनें।</string>
-    <string name="ai_provider_none_set_up">कोई AI सेवा स्थापित नहीं है. नीचे इसकी सेटिंग में एक सेट अप करें।</string>
+    <string name="ai_service_not_set_up">कोई एआई सेवा इस्तेमाल में नहीं है। \'इमेज और स्क्रीन के बारे में जानकारी\' की सेटिंग में कोई सेवा सेट अप करें या चुनें।</string>
+    <string name="ai_provider_none_set_up">कोई एआई सेवा स्थापित नहीं है. नीचे इसकी सेटिंग में एक सेट अप करें।</string>
     <string name="ai_provider_other">अन्य सेवा</string>
     <string name="title_pref_category_ai_services">एआई सेवाएं</string>
     <string name="title_pref_ai_provider">एआई सेवा</string>

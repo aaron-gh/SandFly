@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">Αυτόματες περιγραφές</string>
   <string name="title_pref_gemini_settings">Ρυθμίσεις Gemini</string>
   <string name="title_pref_gemini_enabled">Φωνητικές εντολές Gemini</string>
-  <string name="title_pref_category_automatic_description_summary">Δείτε λεπτομερείς περιγραφές εικόνων AI επιλέγοντας \Περιγραφή εικόνας\ από το μενού του SandFly.\n\nΜπορείτε επίσης να λάβετε αυτόματες περιγραφές όταν εστιάζετε σε μια εικόνα ή σε ένα εικονίδιο. Οι αυτόματες περιγραφές λειτουργούν χωρίς σύνδεση στο διαδίκτυο.</string>
+  <string name="title_pref_category_automatic_description_summary">Δείτε λεπτομερείς περιγραφές εικόνων AI επιλέγοντας «Περιγραφή εικόνας» από το μενού του SandFly.\n\nΜπορείτε επίσης να λάβετε αυτόματες περιγραφές όταν εστιάζετε σε μια εικόνα ή σε ένα εικονίδιο. Οι αυτόματες περιγραφές λειτουργούν χωρίς σύνδεση στο διαδίκτυο.</string>
   <string name="title_pref_icon_detection">Αυτόματες περιγραφές εικονιδίων</string>
   <string name="title_pref_image_description">Αυτόματες περιγραφές εικόνων</string>
   <string name="title_pref_text_recognition">Αυτόματες περιγραφές κειμένου σε εικόνες</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Άλλο</string>
   <string name="shortcut_unassigned">Πατήστε για ανάθεση</string>
   <string name="shortcut_not_customizable">%1$s, χωρίς δυνατότητα προσαρμογής</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Μη διαθέσιμη όταν η δόνηση του ρολογιού είναι ενεργοποιημένη</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Μη διαθέσιμη όταν είναι ενεργό το Vibration Watch</string>
   <string name="shortcut_next">Επόμενο στοιχείο</string>
   <string name="shortcut_previous">Προηγούμενο στοιχείο</string>
   <string name="shortcut_scroll_forward">Κάντε κύλιση προς τα εμπρός</string>
@@ -473,7 +473,7 @@
   <string name="title_labeling_controls">Ετικέτες</string>
   <string name="title_labeling_show_or_hide_controls">Προσθήκη ή επεξεργασία ετικετών</string>
   <string name="title_granularity">Πλοήγηση</string>
-  <string name="title_read_from_top">Ανάγνωση από πάνω</string>
+  <string name="title_read_from_top">Ανάγνωση από την αρχή</string>
   <string name="title_copy_last_spoken_phrase">Αντιγραφή τελευταίας φράσης που εκφωνήθηκε</string>
   <string name="title_spell_last_spoken_phrase">Συλλαβισμός τελευταίας φράσης που εκφωνήθηκε</string>
   <string name="title_repeat_last_spoken_phrase">Επανάληψη τελευταίας φράσης που εκφωνήθηκε</string>
@@ -747,7 +747,7 @@
   <string name="value_tv_remote_mode_seek_control">Λειτουργία ρυθμιστικού</string>
   <string name="value_hint_tv_remote_mode_seek_control">Πατήστε τα κουμπιά βέλους για να αλλάξετε την τιμή ή πατήστε \"Επιλογή\" για να τελειώσετε.</string>
   <string name="reset_user_language_preference">Προεπιλογή</string>
-  <string name="title_pref_selector_speech_rate">Ρυθμός ομιλίας</string>
+  <string name="title_pref_selector_speech_rate">Ταχύτητα ομιλίας</string>
   <string name="title_pref_selector_verbosity">Έκταση</string>
   <string name="title_pref_selector_punctuation">Σημεία στίξης</string>
   <string name="title_pref_selector_audio_focus">Μείωση έντασης ήχου</string>
@@ -881,7 +881,7 @@
   <string name="shortcut_for_dictation_content_without_google_play">Όταν το Gboard εμφανίζεται στην οθόνη, μπορείτε πλέον να πατήσετε δύο φορές με δύο δάχτυλα για να ξεκινήσετε τη φωνητική υπαγόρευση και, στη συνέχεια, να πατήσετε δύο φορές με δύο δάχτυλα για να τη διακόψετε.</string>
   <string name="announcing_text_formatting_title">Ανακοίνωση μορφοποίησης του κειμένου</string>
   <string name="announcing_text_formatting_header">Το SandFly μπορεί πλέον να ανακοινώσει αλλαγές στη μορφοποίηση κειμένου, όπως η έντονη και η πλάγια γραφή, καθώς και το χρώμα κειμένου. Για να ξεκινήσετε:</string>
-  <string name="announcing_text_formatting_option1">Εστιάστε στο στοιχείο με τη μορφοποίηση, ανοίξτε το μενού του SandFly και επιλέξτε Περιγραφή της μορφοποίησης του κειμένου ή</string>
+  <string name="announcing_text_formatting_option1">Εστιάστε στο στοιχείο με τη μορφοποίηση, ανοίξτε το μενού του SandFly και επιλέξτε «Περιγραφή της μορφοποίησης του κειμένου» ή</string>
   <string name="announcing_text_formatting_option2">Προσθέστε ένα στοιχείο ελέγχου ανάγνωσης για τη μορφοποίηση κειμένου, το οποίο θα ενεργοποιεί ή θα απενεργοποιεί την ανακοίνωση των αλλαγών μορφοποίησης.</string>
   <string name="announcing_text_formatting_middle">Όταν είστε έτοιμοι να δοκιμάσετε τη λειτουργία, ακολουθεί ένα παράδειγμα μορφοποιημένου κειμένου:</string>
   <string name="announcing_text_formatting_tail">Εάν θέλετε να αλλάξετε τον τρόπο ανακοίνωσης του μορφοποιημένου κειμένου, μπορείτε να μεταβείτε στην ενότητα %1$s.</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Ρυθμίσεις συσκευής μπράιγ</string>
   <string name="keyboard_smart_browse_mode_title">Πληκτρολόγιο: Έξυπνη λειτουργία περιήγησης</string>
   <string name="keyboard_smart_browse_mode_text">Η έξυπνη λειτουργία περιήγησης του SandFly απενεργοποιεί τη λειτουργία περιήγησης σε ένα πεδίο επεξεργασίας, για να διευκολύνει την πληκτρολόγηση με φυσικό πληκτρολόγιο όταν περιηγείστε στον ιστό. Στη συνέχεια, την ενεργοποιεί ξανά όταν μεταβαίνετε σε ένα πεδίο που δεν είναι πεδίο επεξεργασίας στον ιστό, ώστε να μπορείτε να συνεχίσετε την αποτελεσματική περιήγηση. Μπορείτε να ενεργοποιήσετε ή να απενεργοποιήσετε την Έξυπνη λειτουργία περιήγησης από την ενότητα <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Ρυθμίσεις SandFly &gt; Σύνθετες ρυθμίσεις</string>
-  <string name="advanced_settings_link_tts">Ρυθμίσεις SandFly και έπειτα Σύνθετες ρυθμίσεις</string>
   <string name="keyboard_tutorial_title">Οδηγός πληκτρολογίου</string>
   <string name="keyboard_tutorial_text">Το SandFly περιλαμβάνει πλέον έναν Οδηγό πληκτρολογίου ο οποίος έχει σχεδιαστεί για να σας βοηθήσει να μάθετε τις συντομεύσεις και τις εντολές πληκτρολογίου για τη Βελτιωμένη αντιστοίχιση πλήκτρων όταν χρησιμοποιείτε φυσικό πληκτρολόγιο. Για να αποκτήσετε πρόσβαση στον οδηγό, μεταβείτε στην ενότητα: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Ρυθμίσεις SandFly &gt; Οδηγός SandFly</string>
-  <string name="tutorial_link_tts">Ρυθμίσεις SandFly και έπειτα Οδηγός SandFly</string>
   <string name="tutorial_entry_point_title">Οδηγός</string>
   <string name="welcome_to_talkback_title">Καλώς ήρθατε στο SandFly</string>
   <string name="talkback_is_on">Το SandFly είναι ενεργό</string>
@@ -1040,7 +1036,7 @@
   <string name="voice_commands_title">Φωνητικές εντολές</string>
   <string name="voice_commands_text">Μπορείτε να χρησιμοποιείτε τη φωνή σας για να ελέγχετε γρήγορα το SandFly.\n\nΓια παράδειγμα, πείτε μια εντολή για να αλλάξετε τρόπο πλοήγησης, να μεταβείτε στην επόμενη επικεφαλίδα, να αντιγράψετε κείμενο και πολλά άλλα.\n\nΓια να το δοκιμάσετε τώρα, σύρετε προς τα δεξιά και έπειτα προς τα επάνω.</string>
   <string name="using_screen_search_title">Χρήση αναζήτησης στην οθόνη</string>
-  <string name="using_screen_search_text">Η λειτουργία αναζήτησης στην οθόνη σάς επιτρέπει να αναζητάτε συγκεκριμένο περιεχόμενο σε αυτή.\n\nΓια να τη δοκιμάσετε, ανοίξτε το μενού του SandFly πατώντας με τρία δάχτυλα και βρείτε στο μενού την επιλογή αναζήτηση στην οθόνη. Πληκτρολογήστε μια λέξη-κλειδί, όπως \"επόμενο\", για να βρείτε στοιχεία με αυτό το κείμενο στην οθόνη.\n\nΔοκιμάστε τώρα να αναζητήσετε τη λέξη \"επόμενο\", για να βρείτε το κουμπί Επόμενο.</string>
+  <string name="using_screen_search_text">Η λειτουργία αναζήτησης στην οθόνη σάς επιτρέπει να αναζητάτε συγκεκριμένο περιεχόμενο σε αυτή.\n\nΓια να τη δοκιμάσετε, ανοίξτε το μενού του SandFly πατώντας με τρία δάχτυλα και βρείτε στο μενού την επιλογή «Αναζήτηση στην οθόνη». Πληκτρολογήστε μια λέξη-κλειδί, όπως \"επόμενο\", για να βρείτε στοιχεία με αυτό το κείμενο στην οθόνη.\n\nΔοκιμάστε τώρα να αναζητήσετε τη λέξη \"επόμενο\", για να βρείτε το κουμπί Επόμενο.</string>
   <string name="screen_search_navigation_title">Πλοήγηση με την αναζήτηση στην οθόνη</string>
   <string name="screen_search_navigation_text">Μπορείτε να μετακινηθείτε γρήγορα μεταξύ διαφορετικών αποτελεσμάτων αναζήτησης από την αναζήτηση στην οθόνη, αφού επιλέξετε ένα αποτέλεσμα.\n\nΓια να το κάνετε αυτό, χρησιμοποιήστε τα στοιχεία ελέγχου ανάγνωσης, σύροντας προς τα αριστερά ή προς τα δεξιά με τρία δάχτυλα, και βρείτε το στοιχείο που ονομάζεται αναζήτηση στην οθόνη.\n\nΑς το δοκιμάσουμε τώρα. Παρακάτω βρίσκεται μια λίστα με τρία κουμπιά, τα οποία περιέχουν όλα το κείμενο \"ενέργεια\". Αναζητήστε τη λέξη \"ενέργεια\" χρησιμοποιώντας την αναζήτηση στην οθόνη και, στη συνέχεια, πλοηγηθείτε με την αναζήτηση στην οθόνη, για να μετακινηθείτε μεταξύ τους.</string>
   <string name="screen_search_action_button_1_text">Ενέργεια 1</string>
@@ -1071,7 +1067,7 @@
   <string name="image_description_playground_content_one">Όταν εστιάζετε σε μια εικόνα, ανοίξτε το μενού SandFly και επιλέξτε το στοιχείο Περιγραφή εικόνας.\n\nΠαρακάτω υπάρχει μια φωτογραφία. Δοκιμάστε να λάβετε μια περιγραφή για αυτή.</string>
     <string name="image_description_playground_content_two">Μπορείτε να αλλάξετε τις ρυθμίσεις περιγραφής εικόνας ανά πάσα στιγμή στις Ρυθμίσεις SandFly &gt; Περιγραφές εικόνας και οθόνης.</string>
     <string name="image_description_playground_content_two_tts">Μπορείτε να αλλάξετε τις ρυθμίσεις περιγραφής εικόνας ανά πάσα στιγμή στις Ρυθμίσεις SandFly και, στη συνέχεια, στις Περιγραφές εικόνας και οθόνης.</string>
-  <string name="image_description_sample_image_content_description">Δείγμα εικόνας: Πατήστε με 3 δάχτυλα για να ανοίξετε το μενού του SandFly και επιλέξτε Περιγραφή εικόνας για να ακούσετε μια περιγραφή.</string>
+  <string name="image_description_sample_image_content_description">Δείγμα εικόνας: Πατήστε με 3 δάχτυλα για να ανοίξετε το μενού του SandFly και επιλέξτε «Περιγραφή εικόνας» για να ακούσετε μια περιγραφή.</string>
   <string name="practice_gestures_title">Εξάσκηση κινήσεων</string>
   <string name="practice_keyboard_gestures_title">Εξάσκηση στις συντομεύσεις πληκτρολογίου</string>
   <string name="pref_gesture_set_key_title">Σύνολο κινήσεων</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Περισσότερα</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Δέσμευση κινήσεων για το Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Το SandFly σταματά να χειρίζεται τα μονά και διπλά πατήματα με δύο δάχτυλα, ώστε να τα χρησιμοποιεί το Samsung Vibration Watch. Ενεργοποιήστε το Vibration Watch στις ρυθμίσεις προσβασιμότητας του ρολογιού σας.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Δεσμευμένο για το Vibration Watch στις Σύνθετες ρυθμίσεις</string>
     <string name="title_pref_speakerphone_away_from_ear">Ηχείο όταν το τηλέφωνο απομακρύνεται από το αυτί</string>
     <string name="summary_pref_speakerphone_away_from_ear">Κατά τη διάρκεια μιας κλήσης, γίνεται εναλλαγή στο ηχείο όταν απομακρύνετε το τηλέφωνο από το αυτί σας και ξανά στο ακουστικό όταν το φέρνετε πάλι στο αυτί.</string>
     <string name="summary_pref_speakerphone_needs_permission">Απαιτεί μια άδεια που το Android δεν παρέχει στους αναγνώστες οθόνης. Για να την παραχωρήσετε, εκτελέστε αυτή την εντολή με adb ή Shizuku και, στη συνέχεια, επιστρέψτε σε αυτή την οθόνη: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Εφαρμογές</string>
     <string name="speech_control_no_apps">Καμία εφαρμογή δεν έχει ζητήσει ακόμη εκφώνηση.</string>
     <string name="speech_control_ask_title">Να επιτρέπεται στην εφαρμογή <xliff:g id="app" example="Tasker">%1$s</xliff:g> η εκφώνηση μέσω του SandFly;</string>
-    <string name="speech_control_ask_text">Μπορεί να εκφωνεί κείμενο με τη φωνή του SandFly. Μπορείτε να το αλλάξετε στις Σύνθετες ρυθμίσεις.</string>
     <string name="speech_control_allow">Να επιτρέπεται</string>
     <string name="speech_control_deny">Να μην επιτρέπεται</string>
     <string name="permission_speak_label">εκφώνηση μέσω του SandFly</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d ειδοποίηση</item>
         <item quantity="other">%d ειδοποιήσεις</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">Το SandFly είναι ενεργό. Πατήστε με 2 δάχτυλα στην οθόνη για 5 δευτερόλεπτα για απενεργοποίηση. Για να σταματήσετε την εμφάνιση αυτού του μηνύματος, απενεργοποιήστε τη ρύθμιση Ρυθμίσεις SandFly &gt; Σύνθετες ρυθμίσεις &gt; Εμφάνιση οδηγιών για την απενεργοποίηση του SandFly.</string>
     <string name="edge_gestures_title">Άκρες</string>
     <string name="title_pref_audio_output_device">Συσκευή εξόδου ήχου</string>
     <string name="dialog_title_audio_output_device">Επιλογή συσκευής για τον ήχο του SandFly</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Μοντέλα Whisper</string>
     <string name="dictation_whisper_use">Χρήση</string>
     <string name="title_pref_dictation_ai_service">Υπηρεσία AI για υπαγόρευση</string>
-    <string name="dictation_ai_same">Ίδια με τις αυτόματες περιγραφές</string>
     <string name="title_pref_browse_mode_per_app">Απομνημόνευση λειτουργίας περιήγησης ανά εφαρμογή</string>
     <string name="title_pref_export_settings">Εξαγωγή ρυθμίσεων</string>
     <string name="title_pref_import_settings">Εισαγωγή ρυθμίσεων</string>
@@ -1794,4 +1786,12 @@
         <item>1 λεπτό</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Αυτόματη διακοπή μετά από σιωπή</string>
+    <string name="dictation_ai_same">Ίδια με «Περιγραφές εικόνας και οθόνης»</string>
+    <string name="navigation_settings_link">Ρυθμίσεις SandFly > Πλοήγηση</string>
+    <string name="navigation_settings_link_tts">Ρυθμίσεις SandFly και έπειτα Πλοήγηση</string>
+    <string name="shortcut_reserved_for_vibration_watch">Δεσμευμένη για το Vibration Watch στις «Κινήσεις»</string>
+    <string name="speech_control_ask_text">Μπορεί να εκφωνεί κείμενο με τη φωνή του SandFly. Μπορείτε να το αλλάξετε στις Ρυθμίσεις, Ομιλία, Εκφώνηση από άλλες εφαρμογές.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">Το SandFly είναι ενεργό. Πατήστε με 2 δάχτυλα στην οθόνη για 5 δευτερόλεπτα για απενεργοποίηση. Για να σταματήσετε την εμφάνιση αυτού του μηνύματος, απενεργοποιήστε την επιλογή Ρυθμίσεις SandFly &gt; Παύση και απενεργοποίηση &gt; Εμφάνιση οδηγιών για την απενεργοποίηση του SandFly.</string>
+    <string name="tutorial_link">Ρυθμίσεις SandFly &gt; Βοήθεια και σχόλια &gt; Οδηγός SandFly</string>
+    <string name="tutorial_link_tts">Ρυθμίσεις SandFly, έπειτα Βοήθεια και σχόλια, έπειτα Οδηγός SandFly</string>
 </resources>

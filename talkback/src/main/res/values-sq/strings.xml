@@ -78,11 +78,11 @@
   <string name="title_pref_category_manage_focus_indicator">Treguesi i fokusit</string>
   <string name="title_pref_category_manage_gestures">Gjestet</string>
   <string name="title_pref_manage_labels">Etiketat e personalizuara</string>
-  <string name="title_pref_category_context_menu">Menuja SandFly</string>
+  <string name="title_pref_category_context_menu">Menyja e SandFly</string>
   <string name="title_pref_category_selector_menu">Kontrollet e leximit</string>
   <string name="title_pref_category_navigation_menu">Modifiko opsionet e navigimit</string>
   <string name="title_pref_manage_keyboard_shortcuts">Shkurtoret e tastierës</string>
-  <string name="title_pref_export_custom_labels">Eksporto etiketat e importuara</string>
+  <string name="title_pref_export_custom_labels">Eksporto etiketat e personalizuara</string>
   <string name="title_pref_help_and_feedback">Ndihma dhe komentet</string>
   <string name="title_pref_help">Ndihma</string>
   <string name="title_pref_show_tos">Kushtet e shërbimit</string>
@@ -187,7 +187,7 @@
   <string name="keycombo_menu_other_show_link_list">Shfaq listën e lidhjeve</string>
   <string name="keycombo_menu_other_show_control_list">Shfaq listën e kontrolleve</string>
   <string name="keycombo_menu_other_show_table_list">Shfaq listën e tabelave</string>
-  <string name="keycombo_menu_other_talkback_context_menu">Shfaq menunë SandFly</string>
+  <string name="keycombo_menu_other_talkback_context_menu">Shfaq menynë e SandFly</string>
   <string name="keycombo_menu_other_custom_actions">Trego veprimet</string>
   <string name="keycombo_menu_other_language_options">Shfaq gjuhët e instaluara</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Kopjo frazën e fundit të shqiptuar</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Tjetër</string>
   <string name="shortcut_unassigned">Trokit për ta caktuar</string>
   <string name="shortcut_not_customizable">%1$s, nuk mund të personalizohet</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Nuk ofrohet kur dridhjet e orës janë aktive</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Nuk ofrohet kur Vibration Watch është aktiv</string>
   <string name="shortcut_next">Artikulli tjetër</string>
   <string name="shortcut_previous">Artikulli i mëparshëm</string>
   <string name="shortcut_scroll_forward">Lëviz përpara</string>
@@ -480,12 +480,12 @@
   <string name="title_custom_action">Veprimet</string>
   <string name="title_show_hide_screen">Fshih ose shfaq ekranin</string>
   <string name="title_control_speak_time">Lexo me zë orën</string>
-  <string name="title_show_screen_search">Kërkimi nga ekrani</string>
+  <string name="title_show_screen_search">Kërkimi i ekranit</string>
   <string name="title_show_voice_commands">Komandat zanore</string>
   <string name="title_show_keyboard_shortcuts">Shkurtoret e tastierës</string>
   <string name="talkback_show_talkback_settings">Cilësimet e SandFly</string>
   <string name="title_show_braille_display_settings">Cilësimet e ekranit breil</string>
-  <string name="title_granularity_default">Orientimi i parazgjedhur</string>
+  <string name="title_granularity_default">Navigimi i parazgjedhur</string>
   <string name="title_action_dismiss">Hiqe</string>
   <string name="title_action_expand">Zgjero</string>
   <string name="title_action_collapse">Palos</string>
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">Përdor kudo trokitjen e ndarë</string>
   <string name="split_tap_everywhere_text">Tani mund ta përdorësh kudo trokitjen e ndarë për të aktivizuar artikujt, edhe jashtë tastierës. Për ta përdorur atë, eksploro në ekran me një gisht dhe më pas, pa e ngritur gishtin e parë, trokit në ekran me një gisht tjetër për të aktivizuar artikullin e fokusuar aktualisht.</string>
   <string name="keyboard_enhanced_keymap_title">Tastiera: Harta e përmirësuar e tasteve</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly tani ka një \"hartë të përmirësuar të tastierës\" për tastierat fizike, duke shfaqur një sërë komandash dhe shkurtoresh të reja. Ky përmirësim përfshin një \"modalitet shfletimi\" për navigim më efikas në ueb, lundrim më efikas dhe ndërveprim për përdoruesit SandFly që mbështeten në tastierat fizike. Mund të kaloni te \"Harta e tastierës së përmirësuar\" në <xliff:g id="settings_path">%1$s</xliff:g>.\n\nNëse përdorni një ekran Braille, mund të përdorni gjithashtu shkurtore të reja të modalitetit të shfletimit për të përshkuar përmbajtjen direkt nga ekrani juaj Braille. Disa shkurtore të ekranit Braille u ndryshuan për të përshtatur këtë ndryshim. Mund të shihni një listë të të gjitha shkurtoreve të ekranit Braille në <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly tani ka një \"hartë të përmirësuar të tastierës\" për tastierat fizike, duke shfaqur një sërë komandash dhe shkurtoresh të reja. Ky përmirësim përfshin një \"modalitet shfletimi\" për navigim më efikas në ueb, lundrim më efikas dhe ndërveprim për përdoruesit SandFly që mbështeten në tastierat fizike. Mund të kaloni te \"Harta e tastierës së përmirësuar\" në <xliff:g id="settings_path">%1$s</xliff:g>.\n\nNëse përdorni një ekran breil, mund të përdorni gjithashtu shkurtore të reja të modalitetit të shfletimit për të përshkuar përmbajtjen direkt nga ekrani juaj breil. Disa shkurtore të ekranit breil u ndryshuan për të përshtatur këtë ndryshim. Mund të shihni një listë të të gjitha shkurtoreve të ekranit breil në <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">Cilësimet e SandFly &gt; Shkurtoret e tastierës</string>
   <string name="keyboard_shortcuts_link_tts">\"Cilësimet e SandFly\" dhe më pas \"Shkurtoret e tastierës\"</string>
   <string name="braille_display_settings_link">Cilësimet e ekranit breil</string>
   <string name="keyboard_smart_browse_mode_title">Tastiera: Modaliteti i shfletimit inteligjent</string>
   <string name="keyboard_smart_browse_mode_text">Modaliteti i shfletimit inteligjent i SandFly çaktivizon modalitetin e shfletimit në një fushë modifikimi për të të ndihmuar të shkruash me një tastierë fizike kur shfleton në ueb. Më pas ai e aktivizon përsëri kur kalon te një fushë jomodifikimi në ueb në mënyrë që të mund të vazhdosh të shfletosh me efikasitet. Mund ta aktivizosh ose çaktivizosh \"Modalitetin e shfletimit inteligjent\" te <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Cilësimet e SandFly &gt; Cilësimet e përparuara</string>
-  <string name="advanced_settings_link_tts">\"Cilësimet e SandFly\" dhe më pas \"Cilësimet e përparuara\"</string>
   <string name="keyboard_tutorial_title">Udhëzuesi i tastierës</string>
   <string name="keyboard_tutorial_text">SandFly tani përfshin një \"Udhëzues për tastierën\", të krijuar për të të ndihmuar të mësosh shkurtoret dhe komandat e tastierës për \"Hartën e përmirësuar të tasteve\" kur përdor një tastierë fizike. Për t\'u qasur tek udhëzuesi, navigo te: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Cilësimet e SandFly &gt; Udhëzuesi i SandFly</string>
-  <string name="tutorial_link_tts">\"Cilësimet e SandFly\" dhe më pas \"Udhëzuesi i SandFly\"</string>
   <string name="tutorial_entry_point_title">Udhëzuesi</string>
   <string name="welcome_to_talkback_title">Mirë se vjen në SandFly</string>
   <string name="talkback_is_on">SandFly është aktiv</string>
@@ -1306,17 +1302,17 @@
     <string name="title_pref_voice_profiles">Profilet e zërit</string>
     <string name="voice_profile_default">Parazgjedhja e SandFly</string>
     <string name="voice_profile_in_use">Në përdorim: <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
-    <string name="spoken_language_unavailable_with_profile">Gjuha e folur nuk ofrohet gjatë përdorimit të një profili zanor</string>
-    <string name="speech_engine_unavailable_with_profile">Motori i të folurit nuk ofrohet gjatë përdorimit të një profili zanor</string>
+    <string name="spoken_language_unavailable_with_profile">Gjuha e folur nuk ofrohet gjatë përdorimit të një profili zëri</string>
+    <string name="speech_engine_unavailable_with_profile">Motori i të folurit nuk ofrohet gjatë përdorimit të një profili zëri</string>
     <string name="voice_profile_menu_item_in_use"><xliff:g id="name" example="Reading">%1$s</xliff:g>, në përdorim</string>
-    <string name="no_voice_profiles">Nuk ka profile zanore</string>
+    <string name="no_voice_profiles">Nuk ka profile zëri</string>
     <string name="shortcut_voice_profiles">Zgjidh profilin e zërit</string>
     <string name="shortcut_previous_voice_profile">Profili i mëparshëm i zërit</string>
     <string name="shortcut_next_voice_profile">Profili tjetër i zërit</string>
-    <string name="title_pref_voice_profile_in_use">Profili zanor në përdorim</string>
+    <string name="title_pref_voice_profile_in_use">Profili i zërit në përdorim</string>
     <string name="title_pref_add_voice_profile">Shto profilin e zërit</string>
-    <string name="voice_profile_new_name">Profili zanor <xliff:g id="number" example="2">%1$d</xliff:g></string>
-    <string name="voice_profile_name_taken">Ekziston tashmë një profil zanor me emrin <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="voice_profile_new_name">Profili i zërit <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="voice_profile_name_taken">Ekziston tashmë një profil zëri me emrin <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
     <string name="title_pref_voice_profile_name">Emri</string>
     <string name="title_pref_voice_profile_language">Gjuha</string>
     <string name="title_pref_voice_profile_voice">Zëri</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Më shumë</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Rezervo gjestet për Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly nuk i trajton më prekjet e njëfishta dhe të dyfishta me dy gishta, që t\'i përdorë Samsung Vibration Watch. Aktivizoni Vibration Watch te cilësimet e qasshmërisë së orës.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Rezervuar për Vibration Watch te \"Cilësimet e avancuara\".</string>
     <string name="title_pref_speakerphone_away_from_ear">Altoparlanti kur është larg veshit tuaj</string>
     <string name="summary_pref_speakerphone_away_from_ear">Gjatë një telefonate, kalon në altoparlant kur e largoni telefonin nga veshi dhe kthehet te altoparlanti i veshit kur e afroni sërish te veshi.</string>
     <string name="summary_pref_speakerphone_needs_permission">Kërkon një leje që Android nuk ua jep lexuesve të ekranit. Për ta dhënë, ekzekutoni këtë komandë me adb ose Shizuku, pastaj kthehuni në këtë ekran: %1$s</string>
@@ -1393,13 +1388,12 @@
     <string name="speech_control_apps_category">Aplikacionet</string>
     <string name="speech_control_no_apps">Asnjë aplikacion nuk ka kërkuar ende të flasë.</string>
     <string name="speech_control_ask_title">Të lejohet <xliff:g id="app" example="Tasker">%1$s</xliff:g> të flasë përmes SandFly?</string>
-    <string name="speech_control_ask_text">Mund të thotë tekst me zërin tuaj SandFly. Këtë mund ta ndryshoni te Cilësimet e avancuara.</string>
     <string name="speech_control_allow">Lejo</string>
     <string name="speech_control_deny">Mos lejo</string>
     <string name="permission_speak_label">të folurit përmes SandFly</string>
     <string name="permission_speak_description">Lejon aplikacionin të kërkojë të thotë tekst me zërin tuaj SandFly. SandFly ju pyet përpara se aplikacioni të mund të flasë.</string>
-    <string name="permission_braille_display_label">kërkesë për të qenë ekran braille për SandFly</string>
-    <string name="permission_braille_display_description">Lejon aplikacionin të kërkojë të jetë ekran braille për SandFly. Nëse e lejoni në SandFly, mund të lexojë gjithçka në ekran dhe të kontrollojë pajisjen tuaj. SandFly ju pyet më parë.</string>
+    <string name="permission_braille_display_label">kërkesë për të qenë ekran breil për SandFly</string>
+    <string name="permission_braille_display_description">Lejon aplikacionin të kërkojë të jetë ekran breil për SandFly. Nëse e lejoni në SandFly, mund të lexojë gjithçka në ekran dhe të kontrollojë pajisjen tuaj. SandFly ju pyet më parë.</string>
     <string name="title_pref_phonetic_letters_mode">Fol shkronjat fonetikisht</string>
     <string name="phonetic_letters_mode_off">Joaktive</string>
     <string name="phonetic_letters_mode_after_letter_delay">Pas shkronjës, me pauzë, si “h, hotel”</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Hiq</string>
     <string name="quick_settings_added">%1$s u shtua</string>
     <string name="quick_settings_removed">%1$s u hoq</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aktiv. Mbani 2 gishta në ekran për 5 sekonda për ta fikur. Për të ndaluar shfaqjen e këtij mesazhi, çaktivizoni cilësimet SandFly &gt; Cilësimet e avancuara &gt; Shfaq udhëzimet për çaktivizimin e SandFly.</string>
     <string name="edge_gestures_title">Skajet</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Një tjetër shkurtore për të aktivizuar ose çaktivizuar modalitetin e shfletimit</string>
     <string name="title_pref_vibration_strength">Forca e dridhjeve</string>
@@ -1708,14 +1701,14 @@
     <string name="wrap_around_on">Navigim rrethor: aktive</string>
     <string name="wrap_around_off">Navigim rrethor: joaktive</string>
     <string name="title_selector_tablet_held_up_faces_away">Tableti i ngritur me ekranin nga jashtë</string>
-    <string name="summary_support_tablet_held_up_faces_away">Për tastierën braille në një tablet ose telefon të shpalosur</string>
+    <string name="summary_support_tablet_held_up_faces_away">Për tastierën breil në një tablet ose telefon të shpalosur</string>
     <string name="tablet_held_up_faces_away_on">Tableti i ngritur me ekranin nga jashtë: aktiv</string>
     <string name="tablet_held_up_faces_away_off">Tableti i ngritur me ekranin nga jashtë: joaktiv</string>
     <string name="title_keyboard_echo_on_screen">Jehona e tastierës në ekran</string>
     <string name="title_keyboard_echo_physical">Jehona e tastierës fizike</string>
-    <string name="title_keyboard_echo_braille_keyboard">Jehona e tastierës Braille</string>
+    <string name="title_keyboard_echo_braille_keyboard">Jehona e tastierës breil</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Jehonë e tastierës së shkrimit të dorës</string>
-    <string name="title_keyboard_echo_braille_display">Jehona e ekranit Braille</string>
+    <string name="title_keyboard_echo_braille_display">Jehona e ekranit breil</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Ndërprit të folurit gjatë shkrimit</string>
     <string name="pref_interrupt_typing_entry_always">Gjithmonë</string>
@@ -1735,8 +1728,8 @@
     <string name="template_item_details_order_dropped">U lëshua <xliff:g id="detail" example="Name">%1$s</xliff:g>. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly thotë detajet e një artikulli në këtë renditje. Për ta ndryshuar, prekni dhe mbani një detaj dhe më pas tërhiqeni lart ose poshtë. Me SandFly të aktivizuar, prekni dy herë dhe mbani, më pas zvarriteni. Mund të përdorni gjithashtu veprimet Lëviz lart dhe Lëviz poshtë.</string>
     <string name="title_pref_speak_items_before_scroll">Thuaj artikujt përpara se të lëvizin në pamje</string>
-    <string name="gemini_error_api_key">Gemini nuk e pranoi çelësin API. Kontrolloni çelësin te cilësimet e përshkrimeve të imazheve dhe ekranit.</string>
-    <string name="gemini_error_quota">Kufiri i përdorimit për çelësin tuaj API Gemini është arritur. Provo sërish më vonë.</string>
+    <string name="gemini_error_api_key">Gemini nuk e pranoi çelësin API. Kontrolloni çelësin te Përshkrimet e imazheve dhe ekranit.</string>
+    <string name="gemini_error_quota">Kufiri i përdorimit për çelësin tuaj Gemini API është arritur. Provo sërish më vonë.</string>
     <string name="gemini_error_busy">Gemini është i zënë për momentin. Provo sërish pas një momenti.</string>
     <string name="gemini_error_timeout">Gemini iu desh shumë kohë për t\'u përgjigjur. Provo sërish.</string>
     <string name="gemini_error_with_code">Gemini nuk mundi të përgjigjej, gabimi <xliff:g id="http_status" example="400">%1$d</xliff:g>.</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Modelet Whisper</string>
     <string name="dictation_whisper_use">Përdor</string>
     <string name="title_pref_dictation_ai_service">Shërbimi i AI për diktimin</string>
-    <string name="dictation_ai_same">I njëjti si për përshkrimet automatike</string>
     <string name="title_pref_browse_mode_per_app">Mbaj mend mënyrën e shfletimit në çdo aplikacion</string>
     <string name="title_pref_export_settings">Eksporto cilësimet</string>
     <string name="title_pref_import_settings">Importo cilësimet</string>
@@ -1776,7 +1768,7 @@
     <string name="settings_import_failed">Ky skedar nuk është skedar i cilësimeve SandFly ose Backtalk, ose nuk mund të lexohej</string>
     <string name="sound_mode_needs_access">Lejoni qasjen te “Mos shqetëso” për të aktivizuar ose çaktivizuar Heshtjen.</string>
     <string name="keycombo_menu_category_arrow_key_nav">Navigimi me tastet e shigjetave</string>
-    <string name="arrow_key_nav_toggle">Aktivizo/çaktivizo navigimin me shigjeta</string>
+    <string name="arrow_key_nav_toggle">Aktivizo/çaktivizo navigimin me tastet e shigjetave</string>
     <string name="arrow_key_nav_on">Navigimi me tastet e shigjetave aktiv</string>
     <string name="arrow_key_nav_off">Navigimi me tastet e shigjetave joaktiv</string>
     <string name="arrow_key_nav_page_left">Faqe majtas</string>
@@ -1794,4 +1786,12 @@
         <item>1 minutë</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Ndalimi automatik pas heshtjes</string>
+    <string name="dictation_ai_same">Njëlloj si te Përshkrimet e imazheve dhe ekranit</string>
+    <string name="navigation_settings_link">Cilësimet e SandFly &gt; Navigimi</string>
+    <string name="navigation_settings_link_tts">\"Cilësimet e SandFly\" dhe më pas \"Navigimi\"</string>
+    <string name="shortcut_reserved_for_vibration_watch">E rezervuar për Vibration Watch te Gjestet</string>
+    <string name="speech_control_ask_text">Mund të thotë tekst me zërin e SandFly. Mund ta ndryshosh këtë te Cilësimet, Ligjërimi, Lejo aplikacionet e tjera të flasin.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly është aktiv. Mbaj 2 gishta në ekran për 5 sekonda për ta çaktivizuar. Për të ndaluar shfaqjen e këtij mesazhi, çaktivizo Cilësimet e SandFly &gt; Pauza dhe çaktivizimi &gt; Shfaq udhëzimet për çaktivizimin e SandFly.</string>
+    <string name="tutorial_link">Cilësimet e SandFly &gt; Ndihma dhe komentet &gt; Udhëzuesi i SandFly</string>
+    <string name="tutorial_link_tts">\"Cilësimet e SandFly\" dhe më pas \"Ndihma dhe komentet\" dhe më pas \"Udhëzuesi i SandFly\"</string>
 </resources>

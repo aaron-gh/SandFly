@@ -106,8 +106,8 @@
   <string name="pref_verbosity_preset_entry_high">Tinggi</string>
   <string name="pref_verbosity_preset_entry_custom">Tersuai</string>
   <string name="pref_verbosity_preset_entry_low">Rendah</string>
-  <string name="pref_verbosity_category_preset_settings_title">Butiran bahasa berjela</string>
-  <string name="pref_verbosity_preset_change">Bahasa berjela %1$s kini aktif.</string>
+  <string name="pref_verbosity_category_preset_settings_title">Butiran maklumat berjela</string>
+  <string name="pref_verbosity_preset_change">Maklumat berjela <xliff:g id="preset_name" example="High">%1$s</xliff:g> kini aktif.</string>
   <string name="pref_gesture_set_entry_0">0</string>
   <string name="pref_gesture_set_entry_1">1</string>
   <string name="keycombo_keymap_changes_instruction_title">Kemas kinikan peta kekunci SandFly anda</string>
@@ -319,7 +319,7 @@
   <string name="title_pref_typing_long_tap_duration">Kelewatan sentuh dan tahan semasa penaipan</string>
   <string name="title_pref_touch_explore_timeout">Penangguhan fokus menaip</string>
   <string name="message_pref_touch_explore_latency">Kelewatan yang lebih singkat menjadikan SandFly bercakap lebih cepat selepas anda menyentuh papan kekunci.\n\nPilih kelewatan</string>
-  <string name="title_pref_touch_focus_timeout">Fokus penangguhan</string>
+  <string name="title_pref_touch_focus_timeout">Penangguhan fokus</string>
   <string name="title_pref_talkback_gesture_detection">Kendalikan gerak isyarat dalam SandFly</string>
   <string name="toast_pref_talkback_gesture_detection">Matikan SandFly kemudian hidupkan sekali lagi untuk mengaktifkan tetapan.</string>
   <string name="title_pref_auto_image_captioning">Perihalan automatik</string>
@@ -418,7 +418,7 @@
   <string name="label_search_result_table">Jadual</string>
   <string name="shortcut_media_control">Main atau jeda media</string>
   <string name="shortcut_voice_input">Mulakan atau tamatkan input suara</string>
-  <string name="shortcut_media_control_or_voice_input">Mainkan atau jeda media, mulakan atau tamatkan input suara</string>
+  <string name="shortcut_media_control_or_voice_input">Main atau jeda media, mulakan atau tamatkan input suara</string>
   <string name="shortcut_increase_volume">Tingkatkan kelantangan</string>
   <string name="shortcut_decrease_volume">Kurangkan kelantangan</string>
   <string name="shortcut_all_apps">Semua apl</string>
@@ -904,18 +904,14 @@
   <string name="split_tap_everywhere_title">Gunakan ketikan pisah di mana-mana sahaja</string>
   <string name="split_tap_everywhere_text">Kini anda boleh menggunakan ketikan pisah di mana-mana sahaja untuk mengaktifkan item, walaupun semasa tidak menggunakan papan kekunci. Untuk menggunakan ciri ini, terokai skrin dengan satu jari, kemudian tanpa mengangkat jari pertama, ketik skrin dengan jari yang lain untuk mengaktifkan item yang sedang difokuskan.</string>
   <string name="keyboard_enhanced_keymap_title">Papan kekunci: Peta kekunci dipertingkatkan</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly kini mempunyai \"Peta kekunci Dipertingkat\" untuk papan kekunci fizikal, menampilkan pelbagai arahan dan pintasan baharu. Peningkatan ini termasuk \"mod semak imbas\" untuk navigasi web yang lebih cekap, menyelaraskan navigasi dan interaksi untuk SandFly pengguna yang bergantung pada papan kekunci fizikal. Anda boleh bertukar kepada \"Peta kekunci Dipertingkat\" dalam <xliff:g id="settings_path">%1$s</xliff:g>.\n\nJika anda menggunakan paparan Braille, anda juga boleh menggunakan pintasan mod semak imbas baharu untuk melintasi kandungan terus daripada paparan Braille anda. Beberapa pintasan paparan Braille telah ditukar untuk menampung perubahan ini. Anda boleh melihat senarai semua pintasan paparan Braille dalam <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly kini mempunyai \"Peta kekunci dipertingkatkan\" untuk papan kekunci fizikal, menampilkan pelbagai perintah dan pintasan baharu. Peningkatan ini termasuk \"mod semak imbas\" untuk navigasi web yang lebih cekap, menyelaraskan navigasi dan interaksi untuk pengguna SandFly yang bergantung pada papan kekunci fizikal. Anda boleh bertukar kepada \"Peta kekunci dipertingkatkan\" dalam <xliff:g id="settings_path">%1$s</xliff:g>.\n\nJika anda menggunakan paparan Braille, anda juga boleh menggunakan pintasan mod semak imbas baharu untuk melintasi kandungan terus daripada paparan Braille anda. Beberapa pintasan paparan Braille telah ditukar untuk menampung perubahan ini. Anda boleh melihat senarai semua pintasan paparan Braille dalam <xliff:g id="braille_display_settings_path">%2$s</xliff:g>.</string>
   <string name="keyboard_shortcuts_link">Tetapan SandFly &gt; Pintasan papan kekunci</string>
   <string name="keyboard_shortcuts_link_tts">Tetapan SandFly, kemudian Pintasan papan kekunci</string>
   <string name="braille_display_settings_link">Tetapan paparan braille</string>
   <string name="keyboard_smart_browse_mode_title">Papan kekunci: Mod semak imbas pintar</string>
   <string name="keyboard_smart_browse_mode_text">Mod semak imbas pintar SandFly mematikan mod semak imbas pada medan edit untuk membantu anda menaip dengan papan kekunci fizikal apabila anda menyemak imbas web. Kemudian, ciri ini akan dihidupkan semula apabila anda melangkau kepada medan bukan edit pada web supaya anda boleh meneruskan penyemakan imbas dengan cekap. Anda boleh menghidupkan atau mematikan \"Mod semak imbas pintar\" dalam <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Tetapan SandFly &gt; Tetapan lanjutan</string>
-  <string name="advanced_settings_link_tts">Tetapan SandFly, kemudian Tetapan lanjutan</string>
   <string name="keyboard_tutorial_title">Tutorial papan kekunci</string>
-  <string name="keyboard_tutorial_text">Kini SandFly menyertakan Tutorial Papan Kekunci yang direka bentuk untuk membantu anda mempelajari pintasan dan perintah papan kekunci untuk Peta kekunci dipertingkatkan apabila menggunakan papan kekunci fizikal. Untuk mengakses tutorial, navigasi kepada: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Tetapan SandFly &gt; Tutorial SandFly</string>
-  <string name="tutorial_link_tts">Tetapan SandFly, kemudian tutorial SandFly</string>
+  <string name="keyboard_tutorial_text">Kini SandFly menyertakan Tutorial Papan Kekunci yang direka bentuk untuk membantu anda mempelajari pintasan papan kekunci dan perintah untuk Peta kekunci dipertingkatkan apabila menggunakan papan kekunci fizikal. Untuk mengakses tutorial, navigasi kepada: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <string name="tutorial_entry_point_title">Tutorial</string>
   <string name="welcome_to_talkback_title">Selamat datang ke SandFly</string>
   <string name="talkback_is_on">SandFly dihidupkan</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Lagi</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Khaskan gerak isyarat untuk Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly berhenti mengendalikan ketikan tunggal dan ketikan dua kali dengan dua jari supaya Samsung Vibration Watch boleh menggunakannya. Dayakan Vibration Watch dalam tetapan kebolehaksesan jam tangan anda.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Dikhaskan untuk Vibration Watch dalam Tetapan Lanjutan</string>
     <string name="title_pref_speakerphone_away_from_ear">Pembesar suara apabila jauh dari telinga anda</string>
     <string name="summary_pref_speakerphone_away_from_ear">Semasa panggilan, beralih kepada pembesar suara apabila anda menjauhkan telefon dari telinga, dan kembali kepada pembesar suara telinga apabila anda mendekatkannya semula.</string>
     <string name="summary_pref_speakerphone_needs_permission">Memerlukan kebenaran yang tidak diberikan oleh Android kepada pembaca skrin. Untuk memberikannya, jalankan arahan ini dengan adb atau Shizuku, kemudian kembali ke skrin ini: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Apl</string>
     <string name="speech_control_no_apps">Belum ada apl yang meminta untuk bercakap.</string>
     <string name="speech_control_ask_title">Benarkan <xliff:g id="app" example="Tasker">%1$s</xliff:g> bercakap melalui SandFly?</string>
-    <string name="speech_control_ask_text">Ia boleh menyebut teks dalam suara SandFly anda. Anda boleh menukar ini dalam tetapan Lanjutan.</string>
     <string name="speech_control_allow">Benarkan</string>
     <string name="speech_control_deny">Jangan benarkan</string>
     <string name="permission_speak_label">bercakap melalui SandFly</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Alih keluar</string>
     <string name="quick_settings_added">%1$s ditambah</string>
     <string name="quick_settings_removed">%1$s dikeluarkan</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly hidup. Tahan 2 jari pada skrin selama 5 saat untuk mematikannya. Untuk berhenti menunjukkan mesej ini, matikan Tetapan SandFly &gt; Tetapan terperinci &gt; Tunjukkan arahan untuk mematikan SandFly.</string>
     <string name="edge_gestures_title">Tepi</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Pintasan lain untuk menghidupkan atau mematikan mod semak imbas</string>
     <string name="title_pref_vibration_strength">Kekuatan getaran</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Model Whisper</string>
     <string name="dictation_whisper_use">Gunakan</string>
     <string name="title_pref_dictation_ai_service">Perkhidmatan AI untuk imlak</string>
-    <string name="dictation_ai_same">Sama seperti perihalan automatik</string>
     <string name="title_pref_browse_mode_per_app">Ingat mod semak imbas dalam setiap apl</string>
     <string name="title_pref_export_settings">Eksport tetapan</string>
     <string name="title_pref_import_settings">Import tetapan</string>
@@ -1794,4 +1786,12 @@
         <item>1 minit</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Henti automatik selepas senyap</string>
+    <string name="dictation_ai_same">Sama seperti Perihalan imej dan skrin</string>
+    <string name="navigation_settings_link">Tetapan SandFly &gt; Navigasi</string>
+    <string name="navigation_settings_link_tts">Tetapan SandFly, kemudian Navigasi</string>
+    <string name="shortcut_reserved_for_vibration_watch">Dikhaskan untuk Vibration Watch di bawah Gerak isyarat</string>
+    <string name="speech_control_ask_text">Apl ini boleh menyebut teks dengan suara SandFly anda. Anda boleh menukar tetapan ini di bawah Tetapan, Pertuturan, Biarkan apl lain bercakap.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly dihidupkan. Tahan 2 jari pada skrin selama 5 saat untuk mematikan SandFly. Untuk berhenti memaparkan mesej ini, matikan Tetapan SandFly &gt; Jeda dan matikan &gt; Tunjukkan arahan untuk mematikan SandFly.</string>
+    <string name="tutorial_link">Tetapan SandFly &gt; Bantuan &amp; maklum balas &gt; Tutorial SandFly</string>
+    <string name="tutorial_link_tts">Tetapan SandFly, kemudian Bantuan &amp; maklum balas, kemudian Tutorial SandFly</string>
 </resources>

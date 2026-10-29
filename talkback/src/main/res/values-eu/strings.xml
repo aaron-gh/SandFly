@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">Azalpen automatikoak</string>
   <string name="title_pref_gemini_settings">Gemini-ren ezarpenak</string>
   <string name="title_pref_gemini_enabled">Gemini-ren ahozko aginduak</string>
-  <string name="title_pref_category_automatic_description_summary">Lortu irudien AA bidezko azalpen xehatuak SandFly-en menuan \\"Azaldu irudi hau\\" hautatuta.\n\nHalaber, irudi edo ikono bat fokuratuta lor ditzakezu azalpen automatikoak. Azalpen automatikoek ez dute Interneteko konexiorik behar.</string>
+  <string name="title_pref_category_automatic_description_summary">Lortu irudien AA bidezko azalpen xehatuak SandFly-en menuan \\"Azaldu irudia\\" hautatuta.\n\nHalaber, irudi edo ikono bat fokuratuta lor ditzakezu azalpen automatikoak. Azalpen automatikoek ez dute Interneteko konexiorik behar.</string>
   <string name="title_pref_icon_detection">Ikonoen azalpen automatikoak</string>
   <string name="title_pref_image_description">Irudien azalpen automatikoak</string>
   <string name="title_pref_text_recognition">Irudietako testuaren azalpen automatikoak</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Beste batzuk</string>
   <string name="shortcut_unassigned">Sakatu esleitzeko</string>
   <string name="shortcut_not_customizable">%1$s, ezin da pertsonalizatu</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Ez dago erabilgarri erlojuaren dardara aktibatuta dagoenean</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Ez dago erabilgarri Vibration Watch aktibatuta dagoenean</string>
   <string name="shortcut_next">Hurrengo elementua</string>
   <string name="shortcut_previous">Aurreko elementua</string>
   <string name="shortcut_scroll_forward">Egin aurrera</string>
@@ -684,8 +684,8 @@
   <string name="dialog_message_dim_screen">Pantaila itzali egingo da pribatutasuna hobetzeko. Hala ere, baliteke eduki batzuk ikusgai egotea; adibidez, pantaila berriro pizteko mezuak edo SandFly eta beste erabilerraztasun-eginbide batzuk erabiltzeko menuak.</string>
   <string name="button_disable_all_events">Desgaitu guztiak</string>
   <string name="button_enable_all_events">Gaitu guztiak</string>
-  <string name="dialog_title_disable_exploration">\"Arakatu ukituta\" desgaitu?</string>
-  <string name="dialog_message_disable_exploration">Ziur \"Arakatu ukituta\" eginbidea desaktibatu nahi duzula?\n\nGailuak ezin izango ditu lasterbide-keinuak erabili edo pantaila ukitzen duzunean elementuak esan.</string>
+  <string name="dialog_title_disable_exploration">\"Arakatu sakatuta\" desgaitu?</string>
+  <string name="dialog_message_disable_exploration">Ziur \"Arakatu sakatuta\" eginbidea desaktibatu nahi duzula?\n\nGailuak ezin izango ditu lasterbide-keinuak erabili edo pantaila ukitzen duzunean elementuak esan.</string>
   <string name="dialog_title_enable_tree_debug">Nodo-zuhaitzak arazteko aukera gaitu nahi duzu?</string>
   <string name="dialog_message_enable_tree_debug">Ziur nodo-zuhaitza arazteko aukera aktibatu nahi duzula?\n\nNodo-zuhaitza arazteko aukerarekin, gailuaren erregistroek pantailako edukia hauteman ahal izango dute, eta beste aplikazioek erregistro hori irakurri ahal izango dute.</string>
   <string name="dialog_title_enable_tree_debug_gesture">4 hatzekin 3 aldiz sakatzeko keinua berriro esleitu nahi duzu?</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{Ez da aurkitu emaitzarik pantaila honetan}=1{# emaitza}other{# emaitza}}</string>
   <string name="msg_no_matches">Ez da aurkitu emaitzarik pantaila honetan</string>
   <string name="dialog_title_continuous_reading_mode">Nola funtzionatzen du guztia ozen irakurtzeko moduak?</string>
-  <string name="dialog_message_continuous_reading_mode">\"Irakurri hasieratik\" edo \"Irakurri fokuratutako elementutik hasita\" hautatu ondoren, aurreko edo hurrengo elementura joateko aukera izango duzu testua irakurri bitartean. Horrela, erraz egin dezakezu aurrera eta atzera.\n\nSandFly hitz egiten ari den bitartean bolumena doitzeko, sakatu bolumena igotzeko edo jaisteko botoiak.</string>
+  <string name="dialog_message_continuous_reading_mode">\"Irakurri goitik hasita\" edo \"Irakurri fokuratutako elementutik hasita\" hautatu ondoren, aurreko edo hurrengo elementura joateko aukera izango duzu testua irakurri bitartean. Horrela, erraz egin dezakezu aurrera eta atzera.\n\nSandFly hitz egiten ari den bitartean bolumena doitzeko, sakatu bolumena igotzeko edo jaisteko botoiak.</string>
   <string name="always_show_this_message_label">Erakutsi beti mezu hau</string>
   <string name="dialog_title_voice_commands">Erabili ahozko aginduak SandFly kontrolatzeko</string>
   <string name="dialog_message_voice_commands">Hona hemen eman ditzakezun zenbait agindu:\n\n• Kopiatu.\n• Irakurri fokuratutako elementutik hasita.\n• Bilatu [gorde].\n• Hitz egin [bizkorrago].\n• SandFly-en ezarpenak.\n\nEsan \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" ahozko agindu guztien zerrenda ikusteko.</string>
@@ -824,7 +824,7 @@
   <string name="screen_search_keyword_hint">gako-hitza %1$s da</string>
   <string name="screen_search_no_keyword_hint">Ez dago gako-hitzik oraindik. Beste bilaketa bat egiteko, eduki 3 hatz sakatuta edo ireki bilaketa zuzena SandFly-en menutik.</string>
   <string name="screen_search_no_keyword_hint_pre_r">Ez dago gako-hitzik oraindik. Beste bilaketa bat egiteko, pasatu hatza ezkerrera eta, jarraian, behera, edo ireki bilaketa zuzena SandFly-en menutik.</string>
-  <string name="switch_to_braille_keyboard_failure_msg">Braille-teklatua ez dago aktibatuta. Joan SandFly eginbidearen ezarpenetara, konfiguratu Braille-teklatua eta saiatu berriro.</string>
+  <string name="switch_to_braille_keyboard_failure_msg">Braille-teklatua ez dago aktibatuta. Joan SandFly-en ezarpenetara, konfiguratu Braille-teklatua eta saiatu berriro.</string>
   <string name="suggestions_window_available">Iradokizunak daude</string>
   <string name="suggestions_window_available_with_gesture">Iradokizunak daude. Haiek atzitzeko, %1$s</string>
   <string name="heads_up_window_available">Jakinarazpen bat daukazu</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">Sakatu hau SandFly keinu berriekin azkarrago erabiltzeko argibideak lortzeko.</string>
   <string name="dump_node_tree_description">Nodo-zuhaitza erregistrotan antolatuta inprimatu da.</string>
   <string name="report_gesture_description">Hona hemen berriki egindako keinuak. Adierazi zein dagoen oker eta zein izan beharko litzateke zuzena.</string>
-  <string name="update_welcome_talkback_16.1">SandFly-en eguneratze honekin, pantaila azaltzeko eginbiderako hizkuntza gehiago gehitu dira, baita SandFly-en erabilera errazten duten beste kalitate-hobekuntza batzuk ere.\n\nHurrengo pantailetan lortuko duzu aldaketa horiei buruzko informazio gehiago.\n\nOndoren informazioa berrikusi nahi baduzu, joan SandFly-en ezarpenak &gt; SandFly-en eginbide berriak atalera.</string>
-  <string name="update_welcome_talkback_16.1_tts">SandFly-en eguneratze honekin, pantaila azaltzeko eginbiderako hizkuntza gehiago gehitu dira, baita SandFly-en erabilera errazten duten beste kalitate-hobekuntza batzuk ere.\n\nHurrengo pantailetan lortuko duzu aldaketa horiei buruzko informazio gehiago.\n\nOndoren informazioa berrikusi nahi baduzu, joan SandFly-en ezarpenetako SandFly-en eginbide berriak atalera.</string>
+  <string name="update_welcome_talkback_16.1">SandFly-en eguneratze honekin, Azaldu pantaila eginbiderako hizkuntza gehiago gehitu dira, baita SandFly-en erabilera errazten duten beste kalitate-hobekuntza batzuk ere.\n\nHurrengo pantailetan lortuko duzu aldaketa horiei buruzko informazio gehiago.\n\nOndoren informazioa berrikusi nahi baduzu, joan SandFly-en ezarpenak &gt; SandFly-en eginbide berriak atalera.</string>
+  <string name="update_welcome_talkback_16.1_tts">SandFly-en eguneratze honekin, Azaldu pantaila eginbiderako hizkuntza gehiago gehitu dira, baita SandFly-en erabilera errazten duten beste kalitate-hobekuntza batzuk ere.\n\nHurrengo pantailetan lortuko duzu aldaketa horiei buruzko informazio gehiago.\n\nOndoren informazioa berrikusi nahi baduzu, joan SandFly-en ezarpenetako SandFly-en eginbide berriak atalera.</string>
   <string name="shortcut_for_dictation_title">Ahozko idazketarako lasterbidea</string>
   <string name="shortcut_for_dictation_content">Gboard erabiltzen ari zarela, 2 hatzekin birritan sakatuta ahozko idazketa abiarazi edo geldiaraz dezakezu.
 &lt;br&gt;
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Braille-pantailaren ezarpenak</string>
   <string name="keyboard_smart_browse_mode_title">Teklatua: arakatze modu adimenduna</string>
   <string name="keyboard_smart_browse_mode_text">SandFly-en arakatze modu adimendunak arakatze modua desaktibatzen du editatzeko eremuetan, sarean nabigatzean errazagoa izan dadin teklatu fisikoarekin idaztea. Webguneko eremu editaezin batera joaten zarenean, berriro aktibatzen du, eraginkortasunez arakatzen jarraitu ahal izan dezazun. \"Arakatze modu adimenduna\" aktibatu edo desaktibatzeko, joan <xliff:g id="settings_path">%1$s</xliff:g> atalera.</string>
-  <string name="advanced_settings_link">SandFly-en ezarpenak &gt; Ezarpen aurreratuak</string>
-  <string name="advanced_settings_link_tts">SandFly-en ezarpenak, Ezarpen aurreratuak</string>
   <string name="keyboard_tutorial_title">Teklatuari buruzko tutoriala</string>
   <string name="keyboard_tutorial_text">Orain, teklatu fisiko bat erabiltzean teklen mapa hobetuaren lasterbideak eta aginduak erabiltzen ikasteko tutorial bat dakar SandFly-ek. Tutoriala atzitzeko, joan hona: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFly-en ezarpenak &gt; SandFly-en tutoriala</string>
-  <string name="tutorial_link_tts">SandFly-en ezarpenak, SandFly-en tutoriala</string>
   <string name="tutorial_entry_point_title">Tutoriala</string>
   <string name="welcome_to_talkback_title">Ongi etorri SandFly-era</string>
   <string name="talkback_is_on">SandFly aktibatuta dago</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Gehiago</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Gorde keinuak Vibration Watch-erako</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly-ek ez ditu kudeatuko bi hatzekin behin eta birritan sakatzeko keinuak, Samsung Vibration Watch-ek erabil ditzan. Gaitu Vibration Watch erlojuaren erabilerraztasun-ezarpenetan.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Vibration Watch-erako gordeta Ezarpen aurreratuak atalean</string>
     <string name="title_pref_speakerphone_away_from_ear">Bozgorailua belarritik urruntzean</string>
     <string name="summary_pref_speakerphone_away_from_ear">Dei batean, bozgorailura aldatzen da telefonoa belarritik urruntzen duzunean, eta entzungailura itzultzen da berriro belarrira hurbiltzen duzunean.</string>
     <string name="summary_pref_speakerphone_needs_permission">Android-ek pantaila-irakurgailuei ematen ez dien baimen bat behar du. Baimena emateko, exekutatu agindu hau adb edo Shizuku erabilita, eta itzuli pantaila honetara: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Aplikazioak</string>
     <string name="speech_control_no_apps">Aplikaziorik ez da hitz egiteko baimena eskatu oraindik.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> aplikazioari SandFly-en bidez hitz egiteko baimena eman nahi diozu?</string>
-    <string name="speech_control_ask_text">Testua esan dezake SandFly-en ahotsarekin. Ezarpen aurreratuak atalean alda dezakezu hau.</string>
     <string name="speech_control_allow">Eman baimena</string>
     <string name="speech_control_deny">Ez eman baimenik</string>
     <string name="permission_speak_label">hitz egin SandFly-en bidez</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d jakinarazpen</item>
         <item quantity="other">%d jakinarazpen</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aktibatuta dago. Desaktibatzeko, eduki 2 hatz pantailan 5 segundoz. Mezu hau ez erakusteko, desaktibatu SandFly-en ezarpenak &gt; Ezarpen aurreratuak &gt; Erakutsi SandFly desaktibatzeko argibideak.</string>
     <string name="edge_gestures_title">Ertzak</string>
     <string name="title_pref_audio_output_device">Audio-irteerako gailua</string>
     <string name="dialog_title_audio_output_device">Aukeratu non erreproduzitu SandFly-en audioa</string>
@@ -1523,7 +1516,7 @@
     <string name="summary_support_wrap_around">Aktibatu edo desaktibatu azken elementutik lehenengora joatea</string>
     <string name="wrap_around_on">Nabigazio ziklikoa aktibatuta</string>
     <string name="wrap_around_off">Nabigazio ziklikoa desaktibatuta</string>
-    <string name="title_selector_tablet_held_up_faces_away">Zutik dagoen tabletaren pantaila kanpora begira</string>
+    <string name="title_selector_tablet_held_up_faces_away">Zutik eutsitako tabletaren pantaila kanporantz</string>
     <string name="summary_support_tablet_held_up_faces_away">Tabletetako edo telefono zabaldutako braille-teklaturako</string>
     <string name="tablet_held_up_faces_away_on">Zutik dagoen tabletaren pantaila kanpora begira: aktibatuta</string>
     <string name="tablet_held_up_faces_away_off">Zutik dagoen tabletaren pantaila kanpora begira: desaktibatuta</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper ereduak</string>
     <string name="dictation_whisper_use">Erabili</string>
     <string name="title_pref_dictation_ai_service">Diktaketarako adimen artifizialeko zerbitzua</string>
-    <string name="dictation_ai_same">Azalpen automatikoetakoa bera</string>
     <string name="title_pref_browse_mode_per_app">Gogoratu aplikazio bakoitzean arakatzeko modua</string>
     <string name="title_pref_export_settings">Esportatu ezarpenak</string>
     <string name="title_pref_import_settings">Inportatu ezarpenak</string>
@@ -1794,4 +1786,12 @@
         <item>1 minutu</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Isilunearen ondoren automatikoki gelditu</string>
+    <string name="dictation_ai_same">Irudien eta pantailaren azalpenak ataleko bera</string>
+    <string name="navigation_settings_link">SandFly-en ezarpenak &gt; Nabigazioa</string>
+    <string name="navigation_settings_link_tts">SandFly-en ezarpenak, Nabigazioa</string>
+    <string name="shortcut_reserved_for_vibration_watch">Vibration Watch-erako gordeta, Keinuak atalean</string>
+    <string name="speech_control_ask_text">Testua SandFly-en ahotsarekin esan dezake. Ezarpenak, Hizketa, Eman beste aplikazioei hitz egiteko baimena atalean alda dezakezu.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aktibatuta dago. Desaktibatzeko, eduki 2 hatz pantailan 5 segundoz. Mezu hau erakusteari uzteko, desaktibatu SandFly-en ezarpenak &gt; Pausatu eta desaktibatu &gt; Erakutsi SandFly desaktibatzeko argibideak.</string>
+    <string name="tutorial_link">SandFly-en ezarpenak &gt; Laguntza eta iritziak &gt; SandFly-en tutoriala</string>
+    <string name="tutorial_link_tts">SandFly-en ezarpenak, Laguntza eta iritziak, SandFly-en tutoriala</string>
 </resources>

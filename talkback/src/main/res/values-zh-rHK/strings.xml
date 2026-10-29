@@ -177,7 +177,7 @@
   <string name="keycombo_menu_granularity_increase">下一頁導覽設定</string>
   <string name="keycombo_menu_granularity_decrease">上一頁導覽設定</string>
   <string name="keycombo_menu_category_other">其他操作</string>
-  <string name="keycombo_menu_other_read_from_top">從頂端開始讀出</string>
+  <string name="keycombo_menu_other_read_from_top">從頂端開始朗讀</string>
   <string name="keycombo_menu_other_read_from_cursor_item">從焦點項目開始朗讀</string>
   <string name="keycombo_menu_other_announce_column_header">朗讀欄標題</string>
   <string name="keycombo_menu_other_announce_row_header">朗讀列標題</string>
@@ -187,7 +187,7 @@
   <string name="keycombo_menu_other_show_link_list">顯示連結清單</string>
   <string name="keycombo_menu_other_show_control_list">顯示控制項清單</string>
   <string name="keycombo_menu_other_show_table_list">顯示表格清單</string>
-  <string name="keycombo_menu_other_talkback_context_menu">顯示SandFly選單</string>
+  <string name="keycombo_menu_other_talkback_context_menu">顯示 SandFly 選單</string>
   <string name="keycombo_menu_other_custom_actions">顯示操作</string>
   <string name="keycombo_menu_other_language_options">顯示已安裝的語言</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">複製系統最後讀出的詞組</string>
@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">其他</string>
   <string name="shortcut_unassigned">輕按以指定</string>
   <string name="shortcut_not_customizable">%1$s，不可自訂</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">震動報時功能開啟時無法使用</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Vibration Watch 開啟時無法使用</string>
   <string name="shortcut_next">下一個項目</string>
   <string name="shortcut_previous">上一個項目</string>
   <string name="shortcut_scroll_forward">向前捲動</string>
@@ -389,8 +389,8 @@
   <string name="shortcut_talkback_breakout">開啟 SandFly 選單</string>
   <string name="shortcut_pause_or_resume_feedback">暫停或繼續讀出內容</string>
   <string name="shortcut_toggle_voice_feedback">開啟或關閉語音功能</string>
-  <string name="shortcut_read_from_top">從頂端開始讀出</string>
-  <string name="shortcut_read_from_current">從焦點項目開始讀出</string>
+  <string name="shortcut_read_from_top">從頂端開始朗讀</string>
+  <string name="shortcut_read_from_current">從焦點項目開始朗讀</string>
   <string name="shortcut_print_node_tree">列印節點樹狀結構</string>
   <string name="shortcut_print_performance_stats">列印成效統計資料</string>
   <string name="shortcut_first_in_screen">將焦點移至畫面上的第一個項目</string>
@@ -785,10 +785,10 @@
   <string name="msg_matches_found">{matches,plural, =0{此畫面沒有相符結果}=1{# 項相符結果}other{# 項相符結果}}</string>
   <string name="msg_no_matches">此畫面沒有相符結果</string>
   <string name="dialog_title_continuous_reading_mode">連續朗讀的運作方式</string>
-  <string name="dialog_message_continuous_reading_mode">選取 [從頂部開始朗讀] 或 [從焦點項目開始朗讀] 後，你仍可在系統朗讀文字期間導覽至上一個或下一個項目，以便你輕鬆返回或略過內容。\n\n按下調高或調低音量鍵，即可在 SandFly 說話時調整音量。</string>
+  <string name="dialog_message_continuous_reading_mode">選取 [從頂端開始朗讀] 或 [從焦點項目開始朗讀] 後，你仍可在系統朗讀文字期間導覽至上一個或下一個項目，以便你輕鬆返回或略過內容。\n\n按下調高或調低音量鍵，即可在 SandFly 說話時調整音量。</string>
   <string name="always_show_this_message_label">永遠顯示這則訊息</string>
   <string name="dialog_title_voice_commands">使用語音指令控制 SandFly</string>
-  <string name="dialog_message_voice_commands">你可以嘗試以下幾個指令：\n\n• 複製\n• 從下焦點項目開始朗讀\n• 尋找 [儲存]\n• [提升] 語速\n• SandFly 設定\n\n說出「<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>」即可查看所有語音指令的清單</string>
+  <string name="dialog_message_voice_commands">你可以嘗試以下幾個指令：\n\n• 複製\n• 從焦點項目開始朗讀\n• 尋找 [儲存]\n• [提升] 語速\n• SandFly 設定\n\n說出「<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>」即可查看所有語音指令的清單</string>
   <string name="start_voice_command">使用語音指令</string>
   <string name="dialog_title_pass_through_mode">略過 SandFly 手勢，使用系統手勢</string>
   <string name="dialog_message_pass_through_mode">聽到鈴聲後，請做出 SandFly 不支援的系統手勢。此手勢稱為「回到系統手勢」。</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">輕按即可瞭解新手勢如何讓 SandFly 更方便使用。</string>
   <string name="dump_node_tree_description">已經將節點樹狀結構印咗喺記錄度。</string>
   <string name="report_gesture_description">以下是你最近執行過的手勢，請報告錯誤的手勢，以及該手勢預期執行的功能。</string>
-  <string name="update_welcome_talkback_16.1">這次 SandFly 更新帶來支援更多語言的描述畫面功能，以及其他令 SandFly 更容易使用的品質改善項目。\n\n在接下來的幾個畫面中，我們將說明有關變更。\n\n你可稍後前往 SandFly 設定 &gt; [SandFly 新功能] 查看這些資料。</string>
-  <string name="update_welcome_talkback_16.1_tts">今次 SandFly 更新帶嚟支援更多語言嘅描述畫面功能，同埋其他令 SandFly 更易用嘅品質改善項目。\n\n喺跟住落嚟幾個畫面入面，我哋將會說明變動內容。\n\n你可以之後去 SandFly 設定㩒 SandFly 新功能重溫呢啲資料。</string>
+  <string name="update_welcome_talkback_16.1">這次 SandFly 更新帶來支援更多語言的描述畫面功能，以及其他令 SandFly 更容易使用的品質改善項目。\n\n在接下來的幾個畫面中，我們將說明有關變更。\n\n你可稍後前往 SandFly 設定 &gt; [SandFly 的新功能] 查看這些資料。</string>
+  <string name="update_welcome_talkback_16.1_tts">今次 SandFly 更新帶嚟支援更多語言嘅描述畫面功能，同埋其他令 SandFly 更易用嘅品質改善項目。\n\n喺跟住落嚟幾個畫面入面，我哋將會說明變動內容。\n\n你可以之後去 SandFly 設定㩒 SandFly 的新功能重溫呢啲資料。</string>
   <string name="shortcut_for_dictation_title">語音輸入快速鍵</string>
   <string name="shortcut_for_dictation_content">現在使用 Gboard 時，用兩指輕按兩下即可開始或停止語音輸入。
 &lt;br&gt;
@@ -896,8 +896,8 @@
 &lt;br&gt;
 &lt;br&gt;顯示屏上迸發五顏六色，
 &lt;br&gt;有&lt;font color=\"#db372d\"&gt;烈焰紅&lt;/font&gt;，有&lt;font color=\"#128937\"&gt;蒼翠綠&lt;/font&gt;，輕輕搖曳。</string>
-  <string name="update_welcome_talkback_16.2">這次 SandFly 更新帶來為實體鍵盤而設的全新「強化按鍵配置」、文字格式通知支援，以及重新設計的設定版面配置，以及其他令 SandFly 更容易使用的改善項目。\n\n在接下來的幾個畫面中，你將瞭解更多有關變更的詳情。\n\n你可稍後前往 SandFly 設定 &gt; [SandFly 新功能] 查看這些資料。</string>
-  <string name="update_welcome_talkback_16.2_tts">今次 SandFly 更新帶嚟為實體鍵盤而設嘅全新「強化按鍵配置」、文字格式通知支援，同埋重新設計嘅設定版面配置，仲有其他令 SandFly 更易用嘅改善項目。\n\n喺跟住落嚟幾個畫面入面，你將會了解更多有關變更嘅詳情。\n\n你可以之後去 SandFly 設定㩒 SandFly 新功能重溫呢啲資料。</string>
+  <string name="update_welcome_talkback_16.2">這次 SandFly 更新帶來為實體鍵盤而設的全新「強化按鍵配置」、文字格式通知支援，以及重新設計的設定版面配置，以及其他令 SandFly 更容易使用的改善項目。\n\n在接下來的幾個畫面中，你將瞭解更多有關變更的詳情。\n\n你可稍後前往 SandFly 設定 &gt; [SandFly 的新功能] 查看這些資料。</string>
+  <string name="update_welcome_talkback_16.2_tts">今次 SandFly 更新帶嚟為實體鍵盤而設嘅全新「強化按鍵配置」、文字格式通知支援，同埋重新設計嘅設定版面配置，仲有其他令 SandFly 更易用嘅改善項目。\n\n喺跟住落嚟幾個畫面入面，你將會了解更多有關變更嘅詳情。\n\n你可以之後去 SandFly 設定㩒 SandFly 的新功能重溫呢啲資料。</string>
   <string name="new_settings_layout_title">新設定版面配置</string>
   <string name="new_settings_layout_text">設定群組已更新，方便你尋找功能。此外亦提供新的設定類別，例如鍵盤設定。</string>
   <string name="split_tap_everywhere_title">在任何位置分指輕按</string>
@@ -909,12 +909,8 @@
   <string name="braille_display_settings_link">點字顯示器設定</string>
   <string name="keyboard_smart_browse_mode_title">鍵盤：智能瀏覽模式</string>
   <string name="keyboard_smart_browse_mode_text">當你瀏覽網絡時，SandFly 智能瀏覽模式會關閉編輯欄位的瀏覽模式，以便你使用實體鍵盤輸入。當你跳至網頁上的非編輯欄位時，瀏覽模式會重新開啟，讓你繼續流暢地瀏覽網頁。你可以前往 <xliff:g id="settings_path">%1$s</xliff:g> 開啟或關閉「智能瀏覽模式」。</string>
-  <string name="advanced_settings_link">SandFly 設定 &gt; [進階設定]</string>
-  <string name="advanced_settings_link_tts">SandFly 設定，然後㩒進階設定</string>
   <string name="keyboard_tutorial_title">鍵盤教學</string>
   <string name="keyboard_tutorial_text">SandFly 現在提供「鍵盤教學」，旨在助你學習實體鍵盤上強化按鍵配置的鍵盤快速鍵和指令。如要存取教學課程，請前往 <xliff:g id="settings_path">%1$s</xliff:g>。</string>
-  <string name="tutorial_link">SandFly 設定 &gt; [SandFly 教學]</string>
-  <string name="tutorial_link_tts">SandFly 設定，然後㩒 SandFly 教學</string>
   <string name="tutorial_entry_point_title">教學課程</string>
   <string name="welcome_to_talkback_title">歡迎使用 SandFly</string>
   <string name="talkback_is_on">SandFly 已開啟</string>
@@ -993,8 +989,8 @@
   <string name="copy_cut_paste_title">複製、剪下和貼上</string>
   <string name="copy_text">選取文字後，用三指輕按兩下即可複製。\n\n請嘗試複製下方文字框中的文字。</string>
   <string name="cut_paste_text">如要剪下文字，請用三指輕按兩下並按住。\n\n如要貼上文字，請用三指輕按三下。\n\n請嘗試在下方文字框中貼上文字。</string>
-  <string name="copy_text_pre_r">選取文字後，你可以在 SandFly 選單中複製所選文字。方法是先向下再向右滑動來開啟 SandFly 選單，然後輕按兩下「動作」並複製文字。\n\n請嘗試在下方文字框中複製文字。</string>
-  <string name="cut_paste_text_pre_r">如要剪下或貼上文字，請開啟 SandFly 選單並輕按兩下「動作」。\n\n請嘗試在下方文字框中貼上文字。</string>
+  <string name="copy_text_pre_r">選取文字後，你可以在 SandFly 選單中複製所選文字。方法是先向下再向右滑動來開啟 SandFly 選單，然後輕按兩下「操作」並複製文字。\n\n請嘗試在下方文字框中複製文字。</string>
+  <string name="cut_paste_text_pre_r">如要剪下或貼上文字，請開啟 SandFly 選單並輕按兩下「操作」。\n\n請嘗試在下方文字框中貼上文字。</string>
   <string name="edit_box_hint_paste_text">在這裡貼上文字</string>
   <string name="typo_correction_title">校對</string>
   <string name="typo_correction_text">你可在文字框中使用校對功能檢查拼字或文法。\n\n如要試用此功能，請將焦點移至下方含有拼字錯誤的文字框。然後用 3 隻手指向右滑動，直到找到「校對」為止。</string>
@@ -1022,8 +1018,8 @@
   <string name="link4_text">連結 4</string>
   <string name="link5_text">連結 5</string>
   <string name="jump_between_headings_title">在標題之間跳讀</string>
-  <string name="jump_between_headings_text">你亦可在頁面的標題之間跳轉。\n\n如要立即試用，請用 3 隻手指向右滑動，直至聽到「%1$s」為止，然後向下滑動尋找「導覽」標題。</string>
-  <string name="jump_between_headings_text_pre_r">你亦可在頁面的標題之間跳轉。\n\n如要立即試用，請向下再向上滑動，直至聽到「%1$s」為止，然後向下滑動尋找「導覽」標題。</string>
+  <string name="jump_between_headings_text">你亦可在頁面的標題之間跳轉。\n\n如要立即試用，請用 3 隻手指向右滑動，直至聽到「<xliff:g example="headings">%1$s</xliff:g>」為止，然後向下滑動尋找「導覽方式」標題。</string>
+  <string name="jump_between_headings_text_pre_r">你亦可在頁面的標題之間跳轉。\n\n如要立即試用，請向下再向上滑動，直至聽到「<xliff:g example="headings">%1$s</xliff:g>」為止，然後向下滑動尋找「導覽方式」標題。</string>
   <string name="content_heading">內容</string>
   <string name="content_text">繼續前往下一個標題。</string>
   <string name="find_next_button_text">向右滑動即可尋找下一個按鈕。</string>
@@ -1380,7 +1376,6 @@
     <string name="title_pref_category_more">更多</string>
     <string name="title_pref_reserve_vibration_watch_gestures">預留Vibration Watch的手勢</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly 會停止處理兩指輕按一下和兩下，讓 Samsung Vibration Watch 可以使用這些手勢。請在手錶的無障礙設定中啟用 Vibration Watch。</string>
-    <string name="shortcut_reserved_for_vibration_watch">為進階設定中的Vibration Watch保留</string>
     <string name="title_pref_speakerphone_away_from_ear">手機離開耳邊時使用揚聲器</string>
     <string name="summary_pref_speakerphone_away_from_ear">通話期間，將手機從耳邊移開時切換至揚聲器，再次貼近耳邊時切換回聽筒。</string>
     <string name="summary_pref_speakerphone_needs_permission">需要 Android 不會授予螢幕閱讀器的權限。如要授予，請使用 adb 或 Shizuku 執行此指令，然後返回此畫面：%1$s</string>
@@ -1392,7 +1387,6 @@
     <string name="speech_control_apps_category">應用程式</string>
     <string name="speech_control_no_apps">尚未有應用程式要求朗讀。</string>
     <string name="speech_control_ask_title">允許<xliff:g id="app" example="Tasker">%1$s</xliff:g>透過SandFly說話嗎？</string>
-    <string name="speech_control_ask_text">它可以用您的 SandFly 聲音說出文字。您可以在進階設定中變更此設定。</string>
     <string name="speech_control_allow">允許</string>
     <string name="speech_control_deny">不允許</string>
     <string name="permission_speak_label">透過 SandFly 朗讀</string>
@@ -1541,7 +1535,6 @@
     <string name="quick_settings_remove">移除</string>
     <string name="quick_settings_added">已新增%1$s</string>
     <string name="quick_settings_removed">%1$s 已刪除</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly 開啟。將 2 根手指按住螢幕 5 秒鐘即可關閉。若要停止顯示此訊息，請關閉 SandFly 設定 &gt; 進階設定 &gt; 顯示關閉 SandFly 的說明。</string>
     <string name="edge_gestures_title">邊緣</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">開啟或關閉瀏覽模式的另一個捷徑</string>
     <string name="title_pref_vibration_strength">振動強度</string>
@@ -1714,7 +1707,7 @@
     <string name="title_keyboard_echo_physical">實體鍵盤迴聲</string>
     <string name="title_keyboard_echo_braille_keyboard">點字鍵盤迴聲</string>
     <string name="title_keyboard_echo_handwriting_keyboard">手寫鍵盤迴聲</string>
-    <string name="title_keyboard_echo_braille_display">點字顯示迴聲</string>
+    <string name="title_keyboard_echo_braille_display">點字顯示器迴聲</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">打字時打斷語音</string>
     <string name="pref_interrupt_typing_entry_always">總是</string>
@@ -1764,8 +1757,7 @@
     <string name="dictation_whisper_needs_model">Whisper，需要已下載的模型</string>
     <string name="title_pref_whisper_models">Whisper 模型</string>
     <string name="dictation_whisper_use">使用</string>
-    <string name="title_pref_dictation_ai_service">口述使用的人工智慧服務</string>
-    <string name="dictation_ai_same">與自動描述相同</string>
+    <string name="title_pref_dictation_ai_service">口述使用的AI 服務</string>
     <string name="title_pref_browse_mode_per_app">記住每個應用程式中的瀏覽模式</string>
     <string name="title_pref_export_settings">匯出設定</string>
     <string name="title_pref_import_settings">匯入設定</string>
@@ -1793,4 +1785,12 @@
         <item>1 分鐘</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">靜音後自動停止</string>
+    <string name="dictation_ai_same">與「圖片和畫面描述」相同</string>
+    <string name="navigation_settings_link">SandFly 設定 &gt; [導覽方式]</string>
+    <string name="navigation_settings_link_tts">SandFly 設定，然後㩒導覽方式</string>
+    <string name="shortcut_reserved_for_vibration_watch">已在「手勢」中預留給 Vibration Watch</string>
+    <string name="speech_control_ask_text">它可以用你的 SandFly 語音朗讀文字。你可以前往「設定」&gt;「語音」&gt;「允許其他應用程式朗讀」變更此設定。</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly 已開啟。用兩隻手指按住螢幕 5 秒即可關閉。如要停止顯示此訊息，請關閉「SandFly 設定」&gt;「暫停和關閉」&gt;「顯示關閉 SandFly 的指示」。</string>
+    <string name="tutorial_link">SandFly 設定 &gt; [說明和意見反映] &gt; [SandFly 教學]</string>
+    <string name="tutorial_link_tts">SandFly 設定，然後㩒說明和意見反映，再㩒 SandFly 教學</string>
 </resources>

@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">ماڈل</string>
     <string name="ai_service_address_invalid">پتہ https:// سے شروع ہونا چاہیے۔ کچھ بھی محفوظ نہیں ہوا۔</string>
     <string name="dialog_message_ai_service_consent">وضاحت کے لیے تصاویر اور اسکرین شاٹس <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> کو بھیجے جاتے ہیں، جس میں کچھ سیکنڈ لگتے ہیں۔ اس سروس کی اپنی شرائط اور رازداری کی پالیسی لاگو ہوتی ہے۔ جنریٹو AI تجرباتی ہے، اس لیے اس سے غلطیاں ہوں گی۔</string>
-    <string name="ai_service_error_api_key">AI سروس نے API کلید کو قبول نہیں کیا۔ خودکار وضاحتوں میں اس کی ترتیبات چیک کریں۔</string>
+    <string name="ai_service_error_api_key">AI سروس نے API کلید کو قبول نہیں کیا۔ «تصویر اور اسکرین کی تفصیلات» میں اس کی ترتیبات چیک کریں۔</string>
     <string name="ai_service_error_quota">AI سروس کے استعمال کی حد پوری ہو گئی ہے۔ بعد میں دوبارہ کوشش کریں۔</string>
     <string name="ai_service_error_busy">AI سروس ابھی مصروف ہے۔ ایک لمحے میں دوبارہ کوشش کریں۔</string>
     <string name="ai_service_error_timeout">AI سروس نے جواب دینے میں بہت زیادہ وقت لیا۔ دوبارہ کوشش کریں۔</string>
@@ -30,11 +30,11 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">کوئی نہیں</string>
-    <string name="ai_service_not_set_up">کوئی AI سروس استعمال میں نہیں ہے۔ ایک سیٹ اپ کریں یا خودکار وضاحت کی ترتیبات میں ایک کا انتخاب کریں۔</string>
+    <string name="ai_service_not_set_up">کوئی AI سروس استعمال میں نہیں ہے۔ ایک سیٹ اپ کریں یا «تصویر اور اسکرین کی تفصیلات» کی ترتیبات میں ایک کا انتخاب کریں۔</string>
     <string name="ai_provider_none_set_up">کوئی AI سروس قائم نہیں ہے۔ ذیل میں اس کی ترتیبات میں ایک سیٹ اپ کریں۔</string>
     <string name="ai_provider_other">دوسری خدمت</string>
     <string name="title_pref_category_ai_services">AI خدمات</string>
-    <string name="title_pref_ai_provider">اے آئی سروس</string>
+    <string name="title_pref_ai_provider">AI سروس</string>
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> کی ترتیبات</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>، سیٹ اپ نہیں ہے</string>
     <string name="ai_provider_in_use">استعمال میں</string>

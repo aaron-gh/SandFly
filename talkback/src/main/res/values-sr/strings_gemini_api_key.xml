@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">Модел</string>
     <string name="ai_service_address_invalid">Адреса мора да почиње са https://. Ништа није сачувано.</string>
     <string name="dialog_message_ai_service_consent">Слике и снимци екрана шаљу се услузи <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ради описа, што траје неколико секунди. Важе услови и политика приватности те услуге. Генеративна вештачка интелигенција је експериментална, па ће грешити.</string>
-    <string name="ai_service_error_api_key">AI услуга није прихватила API кључ. Проверите њена подешавања у одељку Аутоматски описи.</string>
-    <string name="ai_service_error_quota">Достигнуто је ограничење коришћења услуге АИ. Покушајте поново касније.</string>
+    <string name="ai_service_error_api_key">АИ услуга није прихватила API кључ. Проверите њена подешавања у одељку „Описи слика и екрана“.</string>
+    <string name="ai_service_error_quota">Достигнуто је ограничење коришћења АИ услуге. Покушајте поново касније.</string>
     <string name="ai_service_error_busy">АИ услуга је тренутно заузета. Покушајте поново за тренутак.</string>
-    <string name="ai_service_error_timeout">Служби вештачке интелигенције је требало предуго да одговори. Покушајте поново.</string>
+    <string name="ai_service_error_timeout">АИ услузи је требало предуго да одговори. Покушајте поново.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Ништа</string>
-    <string name="ai_service_not_set_up">Ниједна AI услуга није у употреби. Подесите или изаберите једну у подешавањима Аутоматски описи.</string>
-    <string name="ai_provider_none_set_up">Ниједна AI услуга није подешена. Подесите једну у њеним подешавањима испод.</string>
+    <string name="ai_service_not_set_up">Ниједна АИ услуга није у употреби. Подесите или изаберите једну у подешавањима „Описи слика и екрана“.</string>
+    <string name="ai_provider_none_set_up">Ниједна АИ услуга није подешена. Подесите једну у њеним подешавањима испод.</string>
     <string name="ai_provider_other">Друга услуга</string>
     <string name="title_pref_category_ai_services">АИ услуге</string>
     <string name="title_pref_ai_provider">АИ услуга</string>
@@ -41,7 +41,7 @@
     <string name="ai_provider_not_set_up">Није постављено</string>
     <string name="ai_provider_not_ready">Прво изаберите модел</string>
     <string name="ai_provider_address">Адреса</string>
-    <string name="ai_provider_address_message">Адреса услуге са OpenAI-компатибилним АПИ-јем за ћаскање и уносом слике, као што је https://example.com/v1.</string>
+    <string name="ai_provider_address_message">Адреса услуге са OpenAI-компатибилним API-јем за ћаскање и уносом слике, као што је https://example.com/v1.</string>
     <string name="ai_provider_not_set">Није постављено</string>
     <string name="ai_provider_set">Конфигурисано</string>
     <string name="title_pref_gemini_api_key_of">API кључ за <xliff:g id="service" example="Claude">%1$s</xliff:g></string>

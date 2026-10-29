@@ -62,7 +62,7 @@
   <string name="bd_preference_braille_contracted">لغة برايل المختصرة</string>
   <string name="bd_preference_braille_uncontracted">لغة برايل غير المختصرة</string>
   <string name="bd_braille_grade_tips">‏للتبديل سريعًا بين لغة برايل المختصرة ولغة برايل غير المختصرة باستخدام جهاز عرض بلغة برايل، اضغط على مفتاح المسافة والنقاط 1 و2 و4 و5.\n\nيعمل هذا الأمر إذا كنت تستخدم لغة تتضمّن كلتا درجتَي لغة برايل.</string>
-  <string name="bd_preference_key_bindings_title">طلبات جهاز العرض بلغة برايل</string>
+  <string name="bd_preference_key_bindings_title">أوامر جهاز العرض بلغة برايل</string>
   <string name="bd_preference_key_bindings_summary">التعرّف على أوامر المفاتيح لجهاز العرض بلغة برايل</string>
   <string name="bd_commands_bindings_instructions">‏استخدِم مفاتيح التنقُّل لنقل منطقة التركيز على الشاشة. استخدِم مفاتيح برايل للإدخال في مربّع النص.\n\nتتوفّر أدناه جميع الأوامر المتاحة على جهازك.</string>
   <string name="bd_commands_bindings_category_basic_controls_title">عناصر التحكّم الأساسية</string>
@@ -227,7 +227,7 @@
   <string name="bd_cmd_global_recents">فتح التطبيقات المستخدمة مؤخرًا</string>
   <string name="bd_cmd_quick_settings">فتح \"الإعدادات السريعة\"</string>
   <string name="bd_cmd_global_all_apps">فتح كل التطبيقات</string>
-  <string name="bd_cmd_toggle_screen_search">فتح ميزة \"البحث المباشر\"</string>
+  <string name="bd_cmd_toggle_screen_search">فتح ميزة \"بحث مباشر\"</string>
   <string name="bd_cmd_edit_custom_label">تعديل التصنيف المخصّص</string>
   <string name="bd_cmd_open_talkback_menu">‏فتح قائمة SandFly</string>
   <string name="bd_cmd_toggle_voice_feedback">‏تفعيل كلام SandFly أو إيقافه</string>
@@ -236,7 +236,7 @@
   <string name="bd_cmd_switch_to_next_input_language">التبديل إلى لغة الكتابة التالية</string>
   <string name="bd_cmd_switch_to_next_output_language">التبديل إلى لغة القراءة التالية</string>
   <string name="bd_cmd_toggle_contracted_mode">التبديل بين الطريقة المختصرة وغير المختصرة</string>
-  <string name="bd_cmd_help">فتح طلبات جهاز العرض بلغة برايل</string>
+  <string name="bd_cmd_help">فتح أوامر جهاز العرض بلغة برايل</string>
   <string name="bd_cmd_braille_display_settings">فتح إعدادات جهاز العرض بلغة برايل</string>
   <string name="bd_cmd_turn_off_braille_display">إيقاف جهاز العرض بلغة برايل</string>
   <string name="bd_cmd_play_pause_media">تشغيل الوسائط أو إيقافها مؤقتًا</string>
@@ -307,13 +307,13 @@
   <string name="bd_turn_off_bd_confirm_dialog_title">هل تريد إيقاف إعدادات جهاز العرض بلغة برايل؟</string>
   <string name="bd_turn_off_bd_confirm_dialog_message">‏يمكنك تفعيل إعدادات جهاز العرض بلغة برايل مرة أخرى في أي وقت من خلال إعدادات SandFly.</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">إيقاف</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_title">بعض الطلبات غير متاحة</string>
-  <string name="bd_notify_navigation_commands_unavailable_dialog_message">‏لا تتوفّر طلبات التنقّل وإعدادات برايل وبعض ميزات SandFly أثناء الكتابة أو التعديل.\n\nلاستخدام هذه الطلبات، أغلِق لوحة المفاتيح أولاً.</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_title">بعض الأوامر غير متاحة</string>
+  <string name="bd_notify_navigation_commands_unavailable_dialog_message">‏لا تتوفّر أوامر التنقّل وإعدادات برايل وبعض ميزات SandFly أثناء الكتابة أو التعديل.\n\nلاستخدام هذه الأوامر، أغلِق لوحة المفاتيح أولاً.</string>
   <string name="bd_caption_tutorial_dialog_title">الترجمة والشرح على جهاز العرض بلغة برايل</string>
   <string name="bd_caption_tutorial_dialog_message">‏يرجى الضغط على مفتاح المسافة والنقاط 1 و4 و7 و8 لعرض أو إخفاء الترجمة والشرح للفيديو.\n\nلعرضهما تلقائيًا للوسائط المتوافقة، يجب تفعيل \"عرض الترجمة والشرح على جهاز العرض بلغة برايل\" ضِمن \"الإعدادات\".</string>
   <string name="bd_caption_tutorial_dialog_checkbox">عرض هذه الرسالة دائمًا عند توفُّر الترجمة والشرح</string>
   <string name="bd_usb_connect_dialog_title">‏جهاز العرض بلغة برايل متصل بمنفذ USB</string>
-  <string name="bd_usb_connect_dialog_message">‏تشحن بطارية %s جهاز العرض بلغة برايل.\n\nإذا أردت الانتقال إلى البلوتوث، عليك فصل وحدة USB أو موزّع USB والانتقال إلى إعدادات SandFly &gt; جهاز العرض بلغة برايل.</string>
+  <string name="bd_usb_connect_dialog_message">‏تشحن بطارية %s جهاز العرض بلغة برايل.\n\nإذا أردت الانتقال إلى البلوتوث، عليك فصل وحدة USB أو موزّع USB والانتقال إلى إعدادات SandFly &gt; جهاز عرض بلغة برايل.</string>
   <string name="bd_device">الهاتف</string>
   <string name="bd_battery_low_dialog_title">طاقة البطارية منخفضة في %s</string>
   <string name="bd_battery_low_dialog_message">‏تشحن بطارية %s جهاز العرض بلغة برايل.\n\nلتوفير استهلاك البطارية، اتّبِع الخطوات التالية:\n\n
@@ -328,15 +328,15 @@
   <string name="popup_message_history_consent_dialog_msg">‏سيؤدي هذا إلى تخزين بعض الرسائل، مثل الإشعارات والتنبيهات، في SandFly. يمكنك تغيير هذه الإعدادات متى شئت.</string>
   <string name="popup_message_history_consent_dialog_positive_btn">تفعيل</string>
   <string name="popup_message_history_consent_dialog_negative_btn">لا، شكرًا</string>
-    <string name="external_display_channel">شاشات برايل من تطبيقات أخرى</string>
-    <string name="external_display_ask_title">هل تريد السماح لتطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> بالعمل كشاشة برايل لتطبيق SandFly؟</string>
+    <string name="external_display_channel">أجهزة عرض بلغة برايل من تطبيقات أخرى</string>
+    <string name="external_display_ask_title">هل تريد السماح لتطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> بالعمل كجهاز عرض بلغة برايل لتطبيق SandFly؟</string>
     <string name="external_display_ask_text">لن يستخدمه SandFly إلا بعد السماح بذلك.</string>
-    <string name="external_display_warning">سيتمكّن تطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> من قراءة كل ما يعرضه SandFly بطريقة برايل، وقد يشمل ذلك أي محتوى على الشاشة، بما في ذلك الرسائل وما تكتبه. وسيتمكّن أيضًا من التحكّم في جهازك كما تفعل باستخدام شاشة برايل: الكتابة وفتح التطبيقات وتنفيذ أي أمر من أوامر SandFly. اسمح فقط للتطبيقات التي تثق بها.</string>
+    <string name="external_display_warning">سيتمكّن تطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> من قراءة كل ما يعرضه SandFly بطريقة برايل، وقد يشمل ذلك أي محتوى على الشاشة، بما في ذلك الرسائل وما تكتبه. وسيتمكّن أيضًا من التحكّم في جهازك كما تفعل باستخدام جهاز عرض بلغة برايل: الكتابة وفتح التطبيقات وتنفيذ أي أمر من أوامر SandFly. اسمح فقط للتطبيقات التي تثق بها.</string>
     <string name="external_display_allow">السماح</string>
     <string name="external_display_deny">عدم السماح</string>
-    <string name="external_display_in_use_title">تطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> هو شاشة برايل الخاصة بك</string>
+    <string name="external_display_in_use_title">تطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> هو جهاز العرض بلغة برايل الخاص بك</string>
     <string name="external_display_in_use_text">أثناء استخدام SandFly له، يمكن لتطبيق <xliff:g id="app" example="Notetaker">%1$s</xliff:g> قراءة الشاشة والتحكّم في الجهاز.</string>
     <string name="external_displays_title">شاشات من تطبيقات أخرى</string>
-    <string name="external_displays_summary">يمكن للتطبيقات التي تسمح لها أن تعمل كشاشات برايل لتطبيق SandFly. ويمكن للتطبيق الذي يعمل كشاشة برايل قراءة الشاشة والتحكّم في الجهاز.</string>
-    <string name="external_displays_none">لا يمكن لأي تطبيق أن يعمل كشاشة برايل.</string>
+    <string name="external_displays_summary">يمكن للتطبيقات التي تسمح لها أن تعمل كأجهزة عرض بلغة برايل لتطبيق SandFly. ويمكن للتطبيق الذي يعمل كجهاز عرض بلغة برايل قراءة الشاشة والتحكّم في الجهاز.</string>
+    <string name="external_displays_none">لا يمكن لأي تطبيق أن يعمل كجهاز عرض بلغة برايل.</string>
 </resources>

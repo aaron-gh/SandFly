@@ -473,7 +473,7 @@
   <string name="title_labeling_controls">லேபிள்கள்</string>
   <string name="title_labeling_show_or_hide_controls">லேபிள்களைச் சேர்/மாற்று</string>
   <string name="title_granularity">உலாவுதல்</string>
-  <string name="title_read_from_top">மேலிருந்து வாசி</string>
+  <string name="title_read_from_top">மேலிருந்து படி</string>
   <string name="title_copy_last_spoken_phrase">கடைசியாக வாசித்த சொற்றொடரை நகலெடு</string>
   <string name="title_spell_last_spoken_phrase">கடைசியாக வாசித்த சொற்றொடருக்கு ஸ்பெல்லிங் சொல்</string>
   <string name="title_repeat_last_spoken_phrase">கடைசியாக வாசித்த சொற்றொடரை மீண்டும் கூறு</string>
@@ -684,7 +684,7 @@
   <string name="dialog_message_dim_screen">தனியுரிமையை மேம்படுத்த இது திரையை முடக்கும். திரையை மீண்டும் இயக்குவதற்கான மெசேஜ்கள் அல்லது SandFly போன்ற மாற்றுத்திறன் அம்சங்களுக்கான மெனுக்கள் போன்று சில உள்ளடக்கம் இப்போதும் காட்டப்படலாம்.</string>
   <string name="button_disable_all_events">எல்லாவற்றையும் முடக்கு</string>
   <string name="button_enable_all_events">எல்லாவற்றையும் இயக்கு</string>
-  <string name="dialog_title_disable_exploration">தொடுவதன் மூலம் அறிவதை முடக்கவா?</string>
+  <string name="dialog_title_disable_exploration">“தொடுவதன் மூலம் அறிக” என்பதை முடக்கவா?</string>
   <string name="dialog_message_disable_exploration">தொடுவதன் மூலம் அறிக அம்சத்தை முடக்க விரும்புகிறீர்களா?\n\nஉங்கள் சாதனம் இனிமேல் ஷார்ட்கட் சைகைகளைச் செயல்படுத்தாது அல்லது திரையைத் தொடும்போது அதைக் கூறாது.</string>
   <string name="dialog_title_enable_tree_debug">நோடு ட்ரீ பிழைதிருத்தத்தை இயக்கவா?</string>
   <string name="dialog_message_enable_tree_debug">நோடு ட்ரீ பிழைதிருத்தத்தை நிச்சயமாக இயக்க விரும்புகிறீர்களா?\n\nநோடு ட்ரீ பிழைதிருத்தம் உங்கள் திரையின் உள்ளடக்கத்தை, உங்கள் சாதனத்தின் பதிவுகளில் சேர்க்கும், இதனைப் பிற ஆப்ஸ் படிக்கக்கூடும்.</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{இந்தத் திரையில் பொருத்தங்கள் எதுவுமில்லை}=1{# பொருத்தம்}other{# பொருத்தங்கள்}}</string>
   <string name="msg_no_matches">பொருத்தமானது எதுவும் இந்தத் திரையில் இல்லை</string>
   <string name="dialog_title_continuous_reading_mode">தொடர் வாசிப்புப் பயன்முறை செயல்படும் விதம்</string>
-  <string name="dialog_message_continuous_reading_mode">\"மேலிருந்து வாசித்தல்\" அல்லது \"குறிப்பிட்டதிலிருந்து வாசித்தல்\" என்பதைத் தேர்ந்தெடுத்த பிறகு, வார்த்தைகள் வாசிக்கப்பட்டுக் கொண்டிருக்கும்போதே நீங்கள் முந்தைய/அடுத்த பகுதிக்குச் செல்லலாம். இதனால் நீங்கள் எளிதாகப் பின்செல்லலாம்/முன்செல்லலாம்.\n\nஒலியளவை அதிகரிக்கும்/குறைக்கும் பட்டனை அழுத்தி SandFly பேசும்போது ஒலியளவை மாற்றலாம்.</string>
+  <string name="dialog_message_continuous_reading_mode">“மேலிருந்து படி” அல்லது “மையப்படுத்தியதிலிருந்து வாசி” என்பதைத் தேர்ந்தெடுத்த பிறகு, வார்த்தைகள் வாசிக்கப்பட்டுக் கொண்டிருக்கும்போதே நீங்கள் முந்தைய/அடுத்த பகுதிக்குச் செல்லலாம். இதனால் நீங்கள் எளிதாகப் பின்செல்லலாம்/முன்செல்லலாம்.\n\nஒலியளவை அதிகரிக்கும்/குறைக்கும் பட்டனை அழுத்தி SandFly பேசும்போது ஒலியளவை மாற்றலாம்.</string>
   <string name="always_show_this_message_label">இந்தச் செய்தியை எப்போதும் காட்டு</string>
   <string name="dialog_title_voice_commands">SandFlyகைக் கட்டுப்படுத்த குரல் கட்டளைகளைப் பயன்படுத்துங்கள்</string>
   <string name="dialog_message_voice_commands">இவற்றை நீங்கள் சொல்லிப் பார்க்கலாம்:\n\n• காப்பி பண்ணு\n• மையப்படுத்திய வார்த்தையிலிருந்து வாசி\n• [சேமி] எங்கே இருக்குன்னு கண்டுபிடி\n• [வேகமாக] பேசு\n• SandFly அமைப்புகள்\n\nஅனைத்துக் குரல் கட்டளைகளையும் கொண்ட பட்டியலைப் பார்க்க \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" எனச் சொல்லவும்</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">புதிய சைகைகளுடன் SandFlyகை எப்படி விரைவாகப் பயன்படுத்துவது என்பதை அறிய தட்டுங்கள்.</string>
   <string name="dump_node_tree_description">பதிவுகளில் நோடு ட்ரீ அச்சிடப்பட்டுள்ளது.</string>
   <string name="report_gesture_description">சமீபத்தில் பயன்படுத்திய சில சைகைகள் இங்கே உள்ளன, எந்தச் சைகை தவறானது, எது சரியாக இருக்கும் போன்றவற்றைக் குறித்துப் புகாரளியுங்கள்.</string>
-  <string name="update_welcome_talkback_16.1">இந்த SandFly புதுப்பிப்பு, கூடுதல் மொழிகளில் திரையில் உள்ளவற்றை விளக்குவதற்கான ஆதரவையும் SandFly பயன்படுத்துவதை எளிதாக்கும் பிற தர மேம்பாடுகளையும் வழங்குகிறது.\n\nஇந்த மாற்றங்களைப் பற்றி அடுத்த சில திரைகளில் மேலும் தெரிந்துகொள்வீர்கள்.\n\nஇந்தத் தகவல்களை \'SandFly அமைப்புகள் &gt; SandFlyகில் உள்ள புதிய அம்சங்கள்\' என்பதில் பின்னர் மீண்டும் பார்க்கலாம்.</string>
-  <string name="update_welcome_talkback_16.1_tts">இந்த SandFly புதுப்பிப்பு, கூடுதல் மொழிகளில் திரையில் உள்ளவற்றை விளக்குவதற்கான ஆதரவையும் SandFly பயன்படுத்துவதை எளிதாக்கும் பிற தர மேம்பாடுகளையும் வழங்குகிறது.\n\nஇந்த மாற்றங்களைப் பற்றி அடுத்த சில திரைகளில் மேலும் தெரிந்துகொள்வீர்கள்.\n\nஇந்தத் தகவல்களை SandFly அமைப்புகளுக்குச் சென்று \'SandFlyகில் உள்ள புதிய அம்சங்கள்\' என்பதில் பின்னர் மீண்டும் பார்க்கலாம்.</string>
+  <string name="update_welcome_talkback_16.1">இந்த SandFly புதுப்பிப்பு, கூடுதல் மொழிகளில் திரையில் உள்ளவற்றை விளக்குவதற்கான ஆதரவையும் SandFly பயன்படுத்துவதை எளிதாக்கும் பிற தர மேம்பாடுகளையும் வழங்குகிறது.\n\nஇந்த மாற்றங்களைப் பற்றி அடுத்த சில திரைகளில் மேலும் தெரிந்துகொள்வீர்கள்.\n\nஇந்தத் தகவல்களை \'SandFly அமைப்புகள் &gt; SandFlyகின் புதிய அம்சங்கள்\' என்பதில் பின்னர் மீண்டும் பார்க்கலாம்.</string>
+  <string name="update_welcome_talkback_16.1_tts">இந்த SandFly புதுப்பிப்பு, கூடுதல் மொழிகளில் திரையில் உள்ளவற்றை விளக்குவதற்கான ஆதரவையும் SandFly பயன்படுத்துவதை எளிதாக்கும் பிற தர மேம்பாடுகளையும் வழங்குகிறது.\n\nஇந்த மாற்றங்களைப் பற்றி அடுத்த சில திரைகளில் மேலும் தெரிந்துகொள்வீர்கள்.\n\nஇந்தத் தகவல்களை SandFly அமைப்புகளுக்குச் சென்று \'SandFlyகின் புதிய அம்சங்கள்\' என்பதில் பின்னர் மீண்டும் பார்க்கலாம்.</string>
   <string name="shortcut_for_dictation_title">வாய்ஸ் டைப்பிங்கிற்கான ஷார்ட்கட்</string>
   <string name="shortcut_for_dictation_content">Gboard பயன்படுத்தும்போது இரண்டு விரல்களால் இருமுறை தட்டி வாய்ஸ் டைப்பிங்கைத் தொடங்கலாம் நிறுத்தலாம்.
 &lt;br&gt;
@@ -881,7 +881,7 @@
   <string name="shortcut_for_dictation_content_without_google_play">திரையில் Gboard காட்டப்படும்போது, சொல்வதை எழுதும் வசதியைத் தொடங்க இரண்டு விரல்களால் இருமுறை தட்டவும், பின்பு அதை நிறுத்த இரண்டு விரல்களால் இருமுறை தட்டவும்.</string>
   <string name="announcing_text_formatting_title">வார்த்தை வடிவமைப்பை அறிவித்தல்</string>
   <string name="announcing_text_formatting_header">தடிமன், சாய்வு, வார்த்தைகளின் வண்ணம் போன்று வார்த்தை வடிவமைப்பில் செய்யப்படும் மாற்றங்களை SandFly அம்சத்தால் இப்போது அறிவிக்க முடியும். தொடங்குவதற்கு:</string>
-  <string name="announcing_text_formatting_option1">வடிவமைப்புடன் கூடிய வார்த்தையை ஃபோகஸ் செய்து, SandFly மெனுவைத் திறந்து \"வார்த்தை வடிவமைப்பை விவரி\" என்பதைத் தேர்ந்தெடுக்கவும் அல்லது</string>
+  <string name="announcing_text_formatting_option1">வடிவமைப்புடன் கூடிய வார்த்தையை ஃபோகஸ் செய்து, SandFly மெனுவைத் திறந்து “வார்த்தைகளின் வடிவமைப்பை விவரித்தல்” என்பதைத் தேர்ந்தெடுக்கவும் அல்லது</string>
   <string name="announcing_text_formatting_option2">வடிவமைப்பில் ஏற்படும் மாற்றங்களை அறிவிப்பதை ஆன்/ஆஃப் செய்ய, வார்த்தை வடிவமைப்பிற்கான வாசிப்புக் கட்டுப்பாட்டைச் சேர்க்கவும்.</string>
   <string name="announcing_text_formatting_middle">நீங்கள் பயன்படுத்தத் தயாராக இருக்கும்போது, வடிவமைக்கப்பட்ட வார்த்தைகளுக்கான உதாரணம் இதோ:</string>
   <string name="announcing_text_formatting_tail">வடிவமைக்கப்பட்ட வார்த்தைகள் எப்படி அறிவிக்கப்பட வேண்டும் என்பதை மாற்ற விரும்பினால், %1$s என்பதற்குச் செல்லலாம்.</string>
@@ -897,25 +897,21 @@
 &lt;br&gt;
 &lt;br&gt;வியப்பூட்டும் வர்ணஜாலம் காட்டும் வண்ணங்களைப் பாருங்கள்,
 &lt;br&gt;&lt;font color=\"#db372d\"&gt;தீயைப் போன்ற சிவப்பு&lt;/font&gt; முதல் இதமான உணர்வு அளிக்கும் &lt;font color=\"#128937\"&gt;அடர் பச்சை&lt;/font&gt; வரை.</string>
-  <string name="update_welcome_talkback_16.2">இந்த SandFly புதுப்பிப்பு, SandFly பயன்பாட்டை எளிதாக்கும் பிற மேம்பாடுகளுடன் சேர்த்து, கீபோர்டுகளுக்கான புதிய \"மேம்படுத்தப்பட்ட கீ-மேப்\", வார்த்தை வடிவமைப்பு அறிவிப்புகளுக்கான ஆதரவு, மறுவடிவமைக்கப்பட்ட அமைப்புகள் தளவமைப்பு ஆகியவற்றை அறிமுகப்படுத்துகிறது.\n\nஅடுத்த சில திரைகளில் இந்த மாற்றங்கள் குறித்து மேலும் அறிந்துகொள்வீர்கள்.\n\n\'SandFly அமைப்புகள் &gt; SandFlyகில் புதிய அம்சங்கள்\' என்பதற்குச் சென்று இந்தத் தகவல்களை நீங்கள் பிறகு பார்க்கலாம்.</string>
-  <string name="update_welcome_talkback_16.2_tts">இந்த SandFly புதுப்பிப்பு, SandFly பயன்பாட்டை எளிதாக்கும் பிற மேம்பாடுகளுடன் சேர்த்து, கீபோர்டுகளுக்கான புதிய \"மேம்படுத்தப்பட்ட கீ-மேப்\", வார்த்தை வடிவமைப்பு அறிவிப்புகளுக்கான ஆதரவு, மறுவடிவமைக்கப்பட்ட அமைப்புகள் தளவமைப்பு ஆகியவற்றை அறிமுகப்படுத்துகிறது.\n\nஅடுத்த சில திரைகளில் இந்த மாற்றங்கள் குறித்து மேலும் அறிந்துகொள்வீர்கள்.\n\n\'SandFly அமைப்புகள்\' பிரிவிலுள்ள \'SandFlyகில் புதிய அம்சங்கள்\' என்பதற்குச் சென்று இந்தத் தகவல்களை நீங்கள் பிறகு பார்க்கலாம்.</string>
+  <string name="update_welcome_talkback_16.2">இந்த SandFly புதுப்பிப்பு, SandFly பயன்பாட்டை எளிதாக்கும் பிற மேம்பாடுகளுடன் சேர்த்து, கீபோர்டுகளுக்கான புதிய \"மேம்படுத்தப்பட்ட கீ-மேப்\", வார்த்தை வடிவமைப்பு அறிவிப்புகளுக்கான ஆதரவு, மறுவடிவமைக்கப்பட்ட அமைப்புகள் தளவமைப்பு ஆகியவற்றை அறிமுகப்படுத்துகிறது.\n\nஅடுத்த சில திரைகளில் இந்த மாற்றங்கள் குறித்து மேலும் அறிந்துகொள்வீர்கள்.\n\n\'SandFly அமைப்புகள் &gt; SandFlyகின் புதிய அம்சங்கள்\' என்பதற்குச் சென்று இந்தத் தகவல்களை நீங்கள் பிறகு பார்க்கலாம்.</string>
+  <string name="update_welcome_talkback_16.2_tts">இந்த SandFly புதுப்பிப்பு, SandFly பயன்பாட்டை எளிதாக்கும் பிற மேம்பாடுகளுடன் சேர்த்து, கீபோர்டுகளுக்கான புதிய \"மேம்படுத்தப்பட்ட கீ-மேப்\", வார்த்தை வடிவமைப்பு அறிவிப்புகளுக்கான ஆதரவு, மறுவடிவமைக்கப்பட்ட அமைப்புகள் தளவமைப்பு ஆகியவற்றை அறிமுகப்படுத்துகிறது.\n\nஅடுத்த சில திரைகளில் இந்த மாற்றங்கள் குறித்து மேலும் அறிந்துகொள்வீர்கள்.\n\n\'SandFly அமைப்புகள்\' பிரிவிலுள்ள \'SandFlyகின் புதிய அம்சங்கள்\' என்பதற்குச் சென்று இந்தத் தகவல்களை நீங்கள் பிறகு பார்க்கலாம்.</string>
   <string name="new_settings_layout_title">புதிய அமைப்புகளின் தளவமைப்பு</string>
   <string name="new_settings_layout_text">அம்சங்களை எளிதாகக் கண்டறியும் வகையில் அமைப்புகளின் குழுக்கள் மாற்றப்பட்டுள்ளன. கீபோர்டு அமைப்புகள் போன்ற புதிய அமைப்பு வகைகளும் கிடைக்கின்றன.</string>
   <string name="split_tap_everywhere_title">எங்கே வேண்டுமானாலும் பிரித்துத் தட்டலாம்</string>
   <string name="split_tap_everywhere_text">கீபோர்டுக்கு வெளியே இருந்தாலும் திரையில் இருப்பவற்றைச் செயல்படுத்த இப்போது பிரித்துத் தட்டல் அம்சத்தை எங்கே வேண்டுமானாலும் பயன்படுத்தலாம். இதைப் பயன்படுத்த, ஒரு விரலைத் திரையில் வைத்து அதை எடுக்காமல் மற்றொரு விரலால் திரையில் தட்டி தற்போது ஃபோகஸ் செய்யப்பட்டுள்ளதைச் செயல்படுத்தவும்.</string>
   <string name="keyboard_enhanced_keymap_title">கீபோர்டு: மேம்படுத்தப்பட்ட கீ-மேப்</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly இப்போது இயற்பியல் விசைப்பலகைகளுக்கான \"மேம்படுத்தப்பட்ட விசைப்படம்\" உள்ளது, இதில் பல்வேறு புதிய கட்டளைகள் மற்றும் குறுக்குவழிகள் உள்ளன. இயற்பியல் விசைப்பலகைகளை நம்பியிருக்கும் SandFly பயனர்களுக்கு மிகவும் திறமையான இணைய வழிசெலுத்தல், நெறிப்படுத்துதல் வழிசெலுத்தல் மற்றும் ஊடாடலுக்கான \"உலாவல் பயன்முறை\" இந்த மேம்பாட்டில் அடங்கும். நீங்கள் <xliff:g id="settings_path">%1$s</xliff:g> இல் \"மேம்படுத்தப்பட்ட விசைப்படத்திற்கு\" மாறலாம்.\n\nநீங்கள் பிரெயில் டிஸ்ப்ளேவைப் பயன்படுத்தினால், உங்கள் பிரெயில் டிஸ்ப்ளேவிலிருந்து நேரடியாக உள்ளடக்கத்தைப் பார்க்க புதிய உலாவல் பயன்முறை குறுக்குவழிகளையும் பயன்படுத்தலாம். இந்த மாற்றத்திற்கு ஏற்ப சில பிரெய்லி காட்சி குறுக்குவழிகள் மாற்றப்பட்டன. அனைத்து பிரெய்லி காட்சி குறுக்குவழிகளின் பட்டியலை <xliff:g id="braille_display_settings_path">%2$s</xliff:g> இல் பார்க்கலாம்.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly இப்போது இயற்பியல் விசைப்பலகைகளுக்கான \"மேம்படுத்தப்பட்ட விசைப்படம்\" உள்ளது, இதில் பல்வேறு புதிய கட்டளைகள் மற்றும் குறுக்குவழிகள் உள்ளன. இயற்பியல் விசைப்பலகைகளை நம்பியிருக்கும் SandFly பயனர்களுக்கு மிகவும் திறமையான இணைய வழிசெலுத்தல், நெறிப்படுத்துதல் வழிசெலுத்தல் மற்றும் ஊடாடலுக்கான \"உலாவல் பயன்முறை\" இந்த மேம்பாட்டில் அடங்கும். நீங்கள் <xliff:g id="settings_path">%1$s</xliff:g> இல் \"மேம்படுத்தப்பட்ட விசைப்படத்திற்கு\" மாறலாம்.\n\nநீங்கள் பிரெய்ல் காட்சியைப் பயன்படுத்தினால், உங்கள் பிரெய்ல் காட்சியிலிருந்து நேரடியாக உள்ளடக்கத்தைப் பார்க்க புதிய உலாவல் பயன்முறை குறுக்குவழிகளையும் பயன்படுத்தலாம். இந்த மாற்றத்திற்கு ஏற்ப சில பிரெய்ல் காட்சி குறுக்குவழிகள் மாற்றப்பட்டன. அனைத்து பிரெய்ல் காட்சி குறுக்குவழிகளின் பட்டியலை <xliff:g id="braille_display_settings_path">%2$s</xliff:g> இல் பார்க்கலாம்.</string>
   <string name="keyboard_shortcuts_link">SandFly அமைப்புகள் &gt; கீபோர்டு ஷார்ட்கட்கள்</string>
   <string name="keyboard_shortcuts_link_tts">SandFly அமைப்புகள் பிறகு கீபோர்டு ஷார்ட்கட்கள்</string>
   <string name="braille_display_settings_link">பிரெய்ல் காட்சி அமைப்புகள்</string>
-  <string name="keyboard_smart_browse_mode_title">கீபோர்டு: ஸ்மார்ட் பிரவுசிங் மோட்</string>
-  <string name="keyboard_smart_browse_mode_text">இணையத்தில் பிரவுசிங் செய்யும்போது கீபோர்டு மூலம் டைப் செய்ய உங்களுக்கு உதவ, திருத்துதல் புலத்தில் SandFly ஸ்மார்ட் பிரவுசிங் மோட் பிரவுசிங் மோடை ஆஃப் செய்யும். இணையத்தில் திருத்த முடியாத புலத்திற்கு நீங்கள் செல்லும்போது அது மீண்டும் ஆன் செய்யப்படும். இதனால் நீங்கள் திறம்பட பிரவுசிங் செய்யலாம். <xliff:g id="settings_path">%1$s</xliff:g> என்பதில் \"ஸ்மார்ட் பிரவுசிங் மோடை\" ஆன் அல்லது ஆஃப் செய்யலாம்.</string>
-  <string name="advanced_settings_link">SandFly அமைப்புகள் &gt; மேம்பட்ட அமைப்புகள்</string>
-  <string name="advanced_settings_link_tts">SandFly அமைப்புகள் பிறகு மேம்பட்ட அமைப்புகள்</string>
+  <string name="keyboard_smart_browse_mode_title">கீபோர்டு: ஸ்மார்ட் பிரவுசிங் பயன்முறை</string>
+  <string name="keyboard_smart_browse_mode_text">இணையத்தில் பிரவுசிங் செய்யும்போது கீபோர்டு மூலம் டைப் செய்ய உங்களுக்கு உதவ, திருத்துதல் புலத்தில் SandFly-இன் “ஸ்மார்ட் பிரவுசிங் பயன்முறை” பிரவுசிங் மோடை ஆஃப் செய்யும். இணையத்தில் திருத்த முடியாத புலத்திற்கு நீங்கள் செல்லும்போது அது மீண்டும் ஆன் செய்யப்படும். இதனால் நீங்கள் திறம்பட பிரவுசிங் செய்யலாம். <xliff:g id="settings_path">%1$s</xliff:g> என்பதில் “ஸ்மார்ட் பிரவுசிங் பயன்முறை” என்பதை ஆன் அல்லது ஆஃப் செய்யலாம்.</string>
   <string name="keyboard_tutorial_title">கீபோர்டு பயிற்சி</string>
   <string name="keyboard_tutorial_text">கீபோர்டைப் பயன்படுத்தும்போது மேம்படுத்தப்பட்ட கீ-மேப்பிற்கான கீபோர்டு ஷார்ட்கட்களையும் கட்டளைகளையும் நீங்கள் கற்றுக்கொள்ள உதவும் வகையில் இப்போது SandFlyகில் கீபோர்டு பயிற்சி சேர்க்கப்பட்டுள்ளது. பயிற்சியை அணுக, <xliff:g id="settings_path">%1$s</xliff:g> என்பதற்குச் செல்லவும்.</string>
-  <string name="tutorial_link">SandFly அமைப்புகள் &gt; SandFly பயிற்சி</string>
-  <string name="tutorial_link_tts">SandFly அமைப்புகள் பிறகு SandFly பயிற்சி</string>
   <string name="tutorial_entry_point_title">பயிற்சி</string>
   <string name="welcome_to_talkback_title">SandFly அம்சத்திற்கு வரவேற்கிறோம்</string>
   <string name="talkback_is_on">SandFly அம்சம் இயக்கப்பட்டுள்ளது</string>
@@ -1040,7 +1036,7 @@
   <string name="voice_commands_title">குரல் கட்டளைகள்</string>
   <string name="voice_commands_text">SandFlyகை உடனடியாகக் கட்டுப்படுத்த உங்கள் குரலையே நீங்கள் பயன்படுத்தலாம்.\n\nஉதாரணமாக, வழிசெலுத்தலை மாற்றவும் அடுத்த தலைப்பிற்கு மாறவும் உரையை நகலெடுக்கவும் மற்றும் பலவற்றைச் செய்யவும் கட்டளையைச் சொல்லலாம்.\n\nஇப்போதே இதைச் செய்து பார்க்க, வலதுபுறமாக ஸ்வைப் செய்துவிட்டு மேல்நோக்கி ஸ்வைப் செய்யுங்கள்.</string>
   <string name="using_screen_search_title">திரைத் தேடலைப் பயன்படுத்துதல்</string>
-  <string name="using_screen_search_text">திரைத் தேடல் அம்சம் மூலம் திரையில் குறிப்பிட்ட உள்ளடக்கத்தைத் தேடலாம்.\n\nஇதைப் பயன்படுத்திப் பார்க்க, 3 விரல்களால் தட்டுவதன் மூலம் SandFlyகைத் திறந்து, மெனுவில் “திரைத் தேடல்” அம்சத்தைக் கண்டறியலாம். திரையில் குறிப்பிட்ட வார்த்தையைக் கொண்டுள்ளவற்றைக் கண்டறிய, தேடல் குறிப்பை (உதாரணமாக “அடுத்து”) டைப் செய்யுங்கள்.\n\nஅடுத்து பட்டனைக் கண்டறிய, இப்போது “அடுத்து” எனத் தேடிப் பாருங்கள்.</string>
+  <string name="using_screen_search_text">திரைத் தேடல் அம்சம் மூலம் திரையில் குறிப்பிட்ட உள்ளடக்கத்தைத் தேடலாம்.\n\nஇதைப் பயன்படுத்திப் பார்க்க, 3 விரல்களால் தட்டுவதன் மூலம் SandFly மெனுவைத் திறந்து, அதில் “திரைத் தேடல்” அம்சத்தைக் கண்டறியலாம். திரையில் குறிப்பிட்ட வார்த்தையைக் கொண்டுள்ளவற்றைக் கண்டறிய, தேடல் குறிப்பை (உதாரணமாக “அடுத்து”) டைப் செய்யுங்கள்.\n\nஅடுத்து பட்டனைக் கண்டறிய, இப்போது “அடுத்து” எனத் தேடிப் பாருங்கள்.</string>
   <string name="screen_search_navigation_title">திரைத் தேடல் மூலம் வழிசெலுத்துதல்</string>
   <string name="screen_search_navigation_text">நீங்கள் ஒரு முடிவைத் தேர்ந்தெடுத்த பிறகு, திரைத் தேடலில் வெவ்வேறு தேடல் முடிவுகளுக்கு இடையே விரைவாகச் செல்லலாம்.\n\nஇதைச் செய்ய, 3 விரல்களால் இடதுபுறமாகவோ வலதுபுறமாகவோ ஸ்வைப் செய்வதன் மூலம் வாசிப்புக் கட்டுப்பாடுகளைப் பயன்படுத்தி, திரைத் தேடல் என்பதைக் கண்டறியலாம்.\n\nஇப்போதே இதைச் செய்து பார்ப்போம். கீழே 3 பட்டன்களின் பட்டியல் உள்ளது. அவை அனைத்திலும் “செயல்” என்கிற வார்த்தை உள்ளது. திரைத் தேடல் அம்சத்தைப் பயன்படுத்தி “செயல்” என்பதைத் தேடவும். பின்னர் அவற்றுக்கு இடையே நகர்த்துவதற்கு \'திரைத் தேடல்\' அம்சம் மூலம் வழிசெலுத்தவும்.</string>
   <string name="screen_search_action_button_1_text">செயல் 1</string>
@@ -1069,8 +1065,8 @@
   <string name="checking_notifications_tips">இதுவரை வந்த அறிவிப்புகளைப் பார்க்க, 2 விரல்களால் உங்கள் திரையின் மேலிருந்து கீழ்நோக்கி ஸ்வைப் செய்யவும்</string>
   <string name="image_description_playground_title">பட விளக்கங்களைப் பெற முயலுங்கள்</string>
   <string name="image_description_playground_content_one">நீங்கள் ஒரு படத்தை மையப்படுத்தும்போது, SandFly மெனுவைத் திறந்து \"படத்தை விளக்கு\" என்பதைத் தேர்ந்தெடுக்கவும்.\n\nகீழே ஒரு படம் உள்ளது. அதற்கான விளக்கத்தைப் பெற முயலவும்.</string>
-  <string name="image_description_playground_content_two">SandFly அமைப்புகள் &gt; தானியங்கு விளக்கங்கள் என்பதில் எப்போது வேண்டுமானாலும் பட விளக்க அமைப்புகளை மாற்றலாம்.</string>
-  <string name="image_description_playground_content_two_tts">பட விளக்க அமைப்புகளை எப்போது வேண்டுமானாலும் SandFly அமைப்புகள், பிறகு தானியங்கு விளக்கங்கள் என்பதில் மாற்றலாம்.</string>
+  <string name="image_description_playground_content_two">SandFly அமைப்புகள் &gt; படம் மற்றும் திரை விளக்கங்கள் என்பதில் எப்போது வேண்டுமானாலும் பட விளக்க அமைப்புகளை மாற்றலாம்.</string>
+  <string name="image_description_playground_content_two_tts">பட விளக்க அமைப்புகளை எப்போது வேண்டுமானாலும் SandFly அமைப்புகள், பிறகு படம் மற்றும் திரை விளக்கங்கள் என்பதில் மாற்றலாம்.</string>
   <string name="image_description_sample_image_content_description">மாதிரிப் படம்; 3 விரல்களால் தட்டி SandFly மெனுவைத் திறந்து, விளக்கத்தைக் கேட்க “படத்தை விளக்கு” என்பதைத் தேர்ந்தெடுக்கவும்.</string>
   <string name="practice_gestures_title">சைகைகள் பயிற்சி</string>
   <string name="practice_keyboard_gestures_title">கீபோர்டு ஷார்ட்கட்களைப் பயிற்சி செய்யுங்கள்</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">மேலும்</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch-க்குச் சைகைகளை ஒதுக்கு</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch பயன்படுத்துவதற்காக, இரண்டு விரல் ஒற்றைத் தட்டல் மற்றும் இருமுறைத் தட்டலைக் கையாள்வதை SandFly நிறுத்தும். உங்கள் வாட்ச்சின் அணுகல்தன்மை அமைப்புகளில் Vibration Watchஐ இயக்கவும்.</string>
-    <string name="shortcut_reserved_for_vibration_watch">மேம்பட்ட அமைப்புகளில் Vibration Watch க்கு ஒதுக்கப்பட்டுள்ளது</string>
     <string name="title_pref_speakerphone_away_from_ear">உங்கள் காதில் இருந்து விலகி இருக்கும்போது ஸ்பீக்கர்</string>
     <string name="summary_pref_speakerphone_away_from_ear">அழைப்பின் போது, உங்கள் காதில் இருந்து ஃபோனை எடுக்கும்போது ஸ்பீக்கருக்கு மாறுகிறது, மீண்டும் அதை உயர்த்தும்போது இயர்பீஸுக்குத் திரும்பும்.</string>
     <string name="summary_pref_speakerphone_needs_permission">Android திரை வாசிப்பான்களுக்கு வழங்காத அனுமதி தேவை. அதை வழங்க, adb அல்லது Shizuku மூலம் இந்தக் கட்டளையை இயக்கி, பின்னர் இந்தத் திரைக்குத் திரும்பவும்: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">ஆப்ஸ்</string>
     <string name="speech_control_no_apps">இதுவரை எந்த ஆப்ஸும் பேசும்படி கேட்கவில்லை.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ஐ SandFly மூலம் பேச அனுமதிக்கவா?</string>
-    <string name="speech_control_ask_text">இது உங்கள் SandFly குரலில் உரையைக் கூறலாம். மேம்பட்ட அமைப்புகளில் இதை மாற்றலாம்.</string>
     <string name="speech_control_allow">அனுமதி</string>
     <string name="speech_control_deny">அனுமதிக்காதே</string>
     <string name="permission_speak_label">SandFly மூலம் பேசுதல்</string>
@@ -1461,7 +1455,7 @@
     </plurals>
     <string name="title_pref_quick_settings">SandFly இன் விரைவு அமைப்புகளைப் பயன்படுத்தவும்</string>
     <string name="title_pref_quick_settings_items">விரைவு அமைப்புகள் பேனல்</string>
-    <string name="quick_settings_title">விரைவான அமைப்புகள்</string>
+    <string name="quick_settings_title">விரைவு அமைப்புகள்</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">மொபைல் தரவு</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">அகற்று</string>
     <string name="quick_settings_added">%1$s சேர்க்கப்பட்டது</string>
     <string name="quick_settings_removed">%1$s அகற்றப்பட்டது</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly இயக்கத்தில் உள்ளது. முடக்க, திரையில் 2 விரல்களை 5 வினாடிகள் வைத்திருக்கவும். இந்தச் செய்தி காட்டப்படுவதை நிறுத்த, SandFly அமைப்புகள் &gt; மேம்பட்ட அமைப்புகள் &gt; SandFly-ஐ ஆஃப் செய்வதற்கான வழிமுறைகளைக் காட்டு என்பதை முடக்கவும்.</string>
     <string name="edge_gestures_title">விளிம்புகள்</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">உலாவல் பயன்முறையை இயக்க அல்லது முடக்க மற்றொரு குறுக்குவழி</string>
     <string name="title_pref_vibration_strength">அதிர்வு வலிமை</string>
@@ -1735,7 +1728,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> விடப்பட்டது. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly ஒரு பொருளின் விவரங்களை இந்த வரிசையில் சொல்லும். அதை மாற்ற, ஒரு விவரத்தைத் தொட்டுப் பிடித்து, மேலே அல்லது கீழே இழுக்கவும். SandFly இயக்கத்தில் இருக்கும்போது, இருமுறை தட்டிப் பிடித்து, பிறகு இழுக்கவும். மேலே நகர்த்தவும், கீழே நகர்த்தவும் ஆகிய செயல்களையும் பயன்படுத்தலாம்.</string>
     <string name="title_pref_speak_items_before_scroll">உருப்படிகள் உருட்டப்பட்டுத் தெரியும் முன் அவற்றைச் சொல்</string>
-    <string name="gemini_error_api_key">Gemini API விசையை ஏற்கவில்லை. தானியங்கு விளக்க அமைப்புகளில் விசையைச் சரிபார்க்கவும்.</string>
+    <string name="gemini_error_api_key">Gemini API விசையை ஏற்கவில்லை. “படம் மற்றும் திரை விளக்கங்கள்” அமைப்புகளில் விசையைச் சரிபார்க்கவும்.</string>
     <string name="gemini_error_quota">உங்கள் Gemini API விசைக்கான பயன்பாட்டு வரம்பை அடைந்து விட்டது. பிறகு முயற்சிக்கவும்.</string>
     <string name="gemini_error_busy">Gemini இப்போது பிஸியாக உள்ளது. சிறிது நேரத்தில் மீண்டும் முயற்சிக்கவும்.</string>
     <string name="gemini_error_timeout">Gemini பதிலளிக்க அதிக நேரம் எடுத்தது. மீண்டும் முயற்சிக்கவும்.</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper மாடல்கள்</string>
     <string name="dictation_whisper_use">பயன்படுத்து</string>
     <string name="title_pref_dictation_ai_service">சொல்வதை எழுதுவதற்கான AI சேவை</string>
-    <string name="dictation_ai_same">தானியங்கு விளக்கங்களுக்கானதே</string>
     <string name="title_pref_browse_mode_per_app">ஒவ்வொரு ஆப்ஸிலும் உலாவல் பயன்முறையை நினைவில் வை</string>
     <string name="title_pref_export_settings">அமைப்புகளை ஏற்றுமதி செய்</string>
     <string name="title_pref_import_settings">அமைப்புகளை இறக்குமதி செய்</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">முந்தைய டிராக்</string>
     <string name="sound_mode_needs_access">ஒலியடக்கத்தை ஆன்/ஆஃப் செய்ய “தொந்தரவு செய்ய வேண்டாம்” அணுகலை அனுமதிக்கவும்.</string>
     <string name="title_pref_dictation_auto_stop">அமைதிக்குப் பிறகு தானாக நிறுத்து</string>
+    <string name="dictation_ai_same">“படம் மற்றும் திரை விளக்கங்கள்” போலவே</string>
+    <string name="navigation_settings_link">SandFly அமைப்புகள் &gt; உலாவுதல்</string>
+    <string name="navigation_settings_link_tts">SandFly அமைப்புகள் பிறகு உலாவுதல்</string>
+    <string name="shortcut_reserved_for_vibration_watch">“சைகைகள்” என்பதில் Vibration Watch-க்கு ஒதுக்கப்பட்டது</string>
+    <string name="speech_control_ask_text">இது உங்கள் SandFly குரலில் உரையைப் பேசலாம். இதை அமைப்புகள், “பேச்சு”, “பிற ஆப்ஸைப் பேச அனுமதி” என்பதில் மாற்றலாம்.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ஆன் செய்யப்பட்டுள்ளது. ஆஃப் செய்ய, திரையில் 2 விரல்களை 5 வினாடிகளுக்குப் பிடித்திருக்கவும். இந்த மெசேஜ் காட்டப்படுவதை நிறுத்த, SandFly அமைப்புகள் &gt; இடைநிறுத்துதலும் முடக்குதலும் &gt; “SandFly-ஐ ஆஃப் செய்வதற்கான வழிமுறைகளைக் காட்டு” என்பதை ஆஃப் செய்யவும்.</string>
+    <string name="tutorial_link">SandFly அமைப்புகள் &gt; உதவி &amp; கருத்து &gt; SandFly பயிற்சி</string>
+    <string name="tutorial_link_tts">SandFly அமைப்புகள் பிறகு உதவி &amp; கருத்து பிறகு SandFly பயிற்சி</string>
 </resources>

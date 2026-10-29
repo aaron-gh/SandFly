@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="braille_ime_service_name">Ikhibhodi ye-SandFly braille</string>
+  <string name="braille_ime_service_name">Ikhibhodi ye-braille ye-SandFly</string>
   <string name="braille_ime_bd_mode_name">Okokufaka kwesibonisi se-braille</string>
   <string name="switch_to_tabletop_announcement">Imodi ye-tabletop. Beka idivayisi yakho nembobo yokushaja ngakwesokunxele.</string>
   <string name="calibration_tip_announcement">Ukuze ubuyekeze ukuma kwechashazi, cindezela iminwe engu-%d.</string>
@@ -28,10 +28,10 @@
   <string name="braille_keyboard">Ikhibhodi ye-braille</string>
   <string name="set_up_braille_keyboard">Setha ikhibhodi ye-braille</string>
   <string name="how_to_use_braille_keyboard">Indlela yokusebenzisa ikhibhodi ye-braille</string>
-  <string name="use_brailleime_pref_dialog_case_ime_enabled">Ukusebenzisa ikhibhodi yebhreyli, vula ikhibhodi yakho evamile, bese uthepha isithonjana esikuvumela ukuba ukhethe ikhibhodi %1$s (ngokujwayelekile ekhoneni elingezansi ngakwesokudla). Khetha okuthi \"%2$s.\"</string>
+  <string name="use_brailleime_pref_dialog_case_ime_enabled">Ukusebenzisa ikhibhodi ye-braille, vula ikhibhodi yakho evamile, bese uthepha isithonjana esikuvumela ukuba ukhethe ikhibhodi %1$s (ngokujwayelekile ekhoneni elingezansi ngakwesokudla). Khetha okuthi \"%2$s.\"</string>
   <string name="use_brailleime_pref_dialog_case_ime_disabled_settings">1. Thepha \"Amasethingi\" ngezansi. Esikrinini esilandelayo, vula okuthi \"%1$s\"\n\n2. Vula ikhibhodi yakho evamile, bese uthepha elithi shintsha indlela yokufaka okuthi %2$s (ngokujwayelekile ekhoneni elingezansi ngakwesokudla).\n\n3. Khetha okuthi \"%1$s.\"</string>
   <string name="use_brailleime_pref_dialog_case_ime_enabled_gboard">Uma ungakuboni ongakukhetha ukuze ushintsha amakhibhodi, zama ukufaka okuthi %s, ikhibhodi yeGoogle.</string>
-  <string name="use_brailleime_pref_dialog_case_ime_disabled_turn_on">1. Vula ikhibhodi yebhreyli ngezansi.\n\n2. Vula ikhibhodi evamile, bese uthepha okuthi shintsha indlela yokufaka okuthi %2$s (ngokujwayelekile ekhoneni elingezansi ngakwesokudla).\n\n3. Khetha okuthi \"%1$s\".</string>
+  <string name="use_brailleime_pref_dialog_case_ime_disabled_turn_on">1. Vula ikhibhodi ye-braille ngezansi.\n\n2. Vula ikhibhodi evamile, bese uthepha okuthi shintsha indlela yokufaka okuthi %2$s (ngokujwayelekile ekhoneni elingezansi ngakwesokudla).\n\n3. Khetha okuthi \"%1$s\".</string>
   <string name="use_brailleime_pref_dialog_case_ime_disabled_turn_on_gboard">Uma wehluleka ukushintsha amakhibhodi, zama ukufaka okuthi %s, ikhibhodi yeGoogle.</string>
   <string name="use_brailleime_pref_button_case_ime_disabled_settings">Amasethingi</string>
   <string name="use_brailleime_pref_button_case_ime_disabled_turn_on">Vula</string>
@@ -106,10 +106,10 @@
   <string name="talkback_suspend_dialog_title">Qhubeka ne-SandFly ukuze usebenzise ikhibhodi ye-braille</string>
   <string name="talkback_off_or_suspend_dialog_message">Uma i-SandFly ivuliwe, ungathepha isikrini sakho ukuze ufake amasimbuli e-braille.</string>
   <string name="talkback_off_custom_gestures_dialog_title">Vula i-SandFly ukuze ushintshe ukuthinta</string>
-  <string name="talkback_off_custom_gestures_dialog_message">ISandFly ivaliwe. Yivule ukuze uguqule ukunyakaziswa komzimba kwekhibhodi yebhrayli.</string>
+  <string name="talkback_off_custom_gestures_dialog_message">ISandFly ivaliwe. Yivule ukuze uguqule ukunyakaziswa komzimba kwekhibhodi ye-braille.</string>
   <string name="talkback_off_custom_gestures_dialog_positive_button">Iya Kumasethingi</string>
   <string name="reset_gestures_dialog_title">Setha kabusha konke ukunyakazisa umzimba?</string>
-  <string name="reset_gestures_dialog_message">Konke ukunyakaziswa komzimba kwekhibhodi yebhrayli kuzosethwa kabusha kube okuzenzakalelayo</string>
+  <string name="reset_gestures_dialog_message">Konke ukunyakaziswa komzimba kwekhibhodi ye-braille kuzosethwa kabusha kube okuzenzakalelayo</string>
   <string name="reset_gestures_dialog_positive_button">Setha kabusha</string>
   <string name="reset_to_default_dialog_title">Setha kabusha kube okuzenzakalelayo?</string>
   <string name="reset_to_default_dialog_message">Ukunyakaziswa komzimba kuzosethelwa kabusha ku-\"%s\".\n\nUma noma yisiphi esinye isenzo sisebenzisa lokhu kunyakaziswa komzimba, sizoshintshwa.</string>
@@ -121,7 +121,7 @@
   <string name="custom_gestures_dialog_reset_to_default_button">Setha kabusha kube okuzenzakalelayo</string>
   <string name="custom_gestures_dialog_remove_button">Susa ukunyakazisa umzimba</string>
   <string name="change_gestures_dialog_message_title">Indlela yokushintsha ukunyakaziswa komzimba</string>
-  <string name="change_gestures_dialog_message">Esikrinini esilandelayo, ikhibhodi yebhrayli izovuleka, futhi ngeke ukwazi ukusebenzisa amaSandFly gesture.\n\nLapho ikhibhodi yebhrayli ivuleka, yenza ukunyakazisa umzimba ofuna ukukusebenzisa, noma, ukuze uvale ikhibhodi yebhrayli uphinde ukhansele ushintsho lokunyakaza komzimba, swayiphela phansi ngeminwe emi-2.\n\nBona ukunyakazisa umzimba okutholakalayo\n</string>
+  <string name="change_gestures_dialog_message">Esikrinini esilandelayo, ikhibhodi ye-braille izovuleka, futhi ngeke ukwazi ukusebenzisa ukunyakaza kweSandFly.\n\nLapho ikhibhodi ye-braille ivuleka, yenza ukunyakazisa umzimba ofuna ukukusebenzisa, noma, ukuze uvale ikhibhodi ye-braille uphinde ukhansele ushintsho lokunyakaza komzimba, swayiphela phansi ngeminwe emi-2.\n\nBona ukunyakazisa umzimba okutholakalayo\n</string>
   <string name="change_gestures_dialog_message_link">Bona ukunyakazisa umzimba okutholakalayo</string>
   <string name="change_gestures_dialog_dont_show_checkbox">Ungabonisi lo mlayezo futhi</string>
   <string name="change_gestures_dialog_positive_button">Qhubeka</string>
@@ -136,8 +136,8 @@
   <string name="tutorial_intro_description">Ngekhibhodi ye-braille, ungathepha isikrini sakho ukuze ufake i-braille yamachashazi ayi-6.\n\nAwusebenzisi i-Unified English Braille. Ukuze ushintshe ulimi lwakho lokuthayipha, iya kumasethingi e-SandFly.\n\nUkuze uthayiphe i-braille, kudingeka ubambe futhi usebenzise ifoni yakho ngokwehlukile.</string>
   <string name="next_step">Okulandelayo</string>
   <string name="leave_keyboard">Shiya ikhibhodi ye-braille</string>
-  <string name="hold_six_fingers_description">Ngeke ukwazi ukusebenzisa ukuthinta kwe-SandFly okuvamile kwikhibhodi ye-braille.\n\nUkuze uqalise, asisethe ukuma kwamachashazi we-braille ayi-6 lapho uthayipha.</string>
-  <string name="rotate_orientation_description_1">Kusuka manje, ngeke ukwazi ukusebenzisa ukuthinta okuvamile kwe-SandFly. I-SandFly ayitholakali lapho usebenzisa ikhibhodi ye-braille.</string>
+  <string name="hold_six_fingers_description">Ngeke ukwazi ukusebenzisa ukunyakaza kwe-SandFly okuvamile kwikhibhodi ye-braille.\n\nUkuze uqalise, asisethe ukuma kwamachashazi we-braille ayi-6 lapho uthayipha.</string>
+  <string name="rotate_orientation_description_1">Kusuka manje, ngeke ukwazi ukusebenzisa ukunyakaza okuvamile kwe-SandFly. I-SandFly ayitholakali lapho usebenzisa ikhibhodi ye-braille.</string>
   <string name="rotate_orientation_description_2">Ukuqala, bamba ifoni yakho ngale ndlela, isikrini sibheke kude nawe.</string>
   <string name="tap_to_continue">Thepha kabili noma yikuphi ukuqhubeka</string>
   <string name="instruction_type_letter_a">Thepha ichashazi 1 ngomunwe wakho wenkomba ongakwesokunxele ukuthayipha uhlamvu \"A\"</string>
@@ -155,7 +155,7 @@
   <string name="result_swipe_down">I-CURSOR IHANJISWE PHAMBILI</string>
   <string name="result_swipe_down_2_fingers">FIHLA IKHIBHODI</string>
   <string name="result_swipe_down_3_fingers">IKHIBHODI ELANDELAYO</string>
-  <string name="rotate_orientation_announcement">Kusukela manje, ngeke ukwazi ukusebenzisa ukuthinta okuvamile kwe-SandFly. I-SandFly ayitholakali uma usebenzisa ikhibhodi ye-braille.\n\n%1$s</string>
+  <string name="rotate_orientation_announcement">Kusukela manje, ngeke ukwazi ukusebenzisa ukunyakaza okuvamile kwe-SandFly. I-SandFly ayitholakali uma usebenzisa ikhibhodi ye-braille.\n\n%1$s</string>
   <string name="rotate_orientation_inactive_announcement">Okokuqala, jikisa ifoni yakho ukuze isikrini sibheke kude nawe.\n\Okulandelayo, zungezisa ifoni ngokuvundlile ukuze ibe ukuma okundlaleke ngobubanzi. Izandla zakho kufanele zibambe amaphethelo amafushane wefoni. Isandla sakho sokudla kufanele sibambe ekugcineni ngembobo ye-USB. Phumuza iminwe yakho engaphakathi engu-3 kusikrini, futhi usebenzise ucikicane nesithupha sakho ukusekela ifoni.\n\nLapho usukulungele, thepha kabili kusikrini ukuze uqhubeke.\n\nUkuphuma kukhibhodi ye-braille, swayipha ngenzansi kuya phansi ngeminwe engu-3. Lokhu kushintshela kwikhibhodi yakho evamile.</string>
   <string name="rotate_orientation_continue_announcement">Ifoni yakho iqondile. Ukuze uqhubeke, zungezisa ifoni yakho ivundle ukuze uhlangothi olude lube ngenzansi. Lokhu kujikisa isikrini ukuze singabheki ngakuwe. Lapho usukulungele, thepha kabili isikrini ukuze uqhubeke.</string>
   <string name="type_letter_a_announcement">Gcina isikrini sibheke kude nawe. Bamba ifoni yakho ngazo zombili izandla, kunqenqema olufushane lwefoni, ukuze iminwe engu-3 emaphakathi yesandla ngasinye ikwazi ukuthinta isikrini.\n\nUmunwe wakho oyinkomba ongakwesokunxele kufanele ube echashazini 1. Manje, thepha ichashazi 1 ukuthayipha iletha “A”.</string>
@@ -171,7 +171,7 @@
   <string name="swipe_down_3_fingers_announcement">Ukushintshela kwenye ikhibhodi yakho, swayipha ngenzansi ngeminwe engu-3. Izame manje.</string>
   <string name="swipe_down_3_fingers_completed_announcement">Ikhibhodi elandelayo. Ngokuvamile, lokhu kushintshela kwibhodi elandelayo. Manje, uzohlala kukhibhodi ye-braille ngoba usephakathi nokokufundisa.</string>
   <string name="swipe_up_3_fingers_announcement">Ungase futhi uthayiphe kumodi ye-tabletop ngokubeka ifoni yakho phansi etafuleni. Ukuze uqedele okokufundisa, swayipha phezulu ngeminwe emi-3, bese uthola inketho yokokufundisa yokuqedela</string>
-  <string name="open_context_menu_announcement">Imenyu yezinketho ivuliwe. Jikisa ifoni yakho ibeke ngakuwe bese uyibamba ngendlela evamile. Manje usungakwazi ukusebenzisa ukuthinta kwe-SandFly ukuzulazula. Swayiphela ngakwesokudla ukuze ubone okunye okungakhethwa.</string>
+  <string name="open_context_menu_announcement">Imenyu yezinketho ivuliwe. Jikisa ifoni yakho ibeke ngakuwe bese uyibamba ngendlela evamile. Manje usungakwazi ukusebenzisa ukunyakaza kwe-SandFly ukuzulazula. Swayiphela ngakwesokudla ukuze ubone okunye okungakhethwa.</string>
   <string name="hold_six_fingers_announcement">%s\nBeka phansi idivayisi yakho etafuleni. Bese, uthinta uphinde ubambe isikrini ngeminwe emi-3 engaphakathi yesandla ngasinye ngokuma okhululeke ukuthayipha ngakho.</string>
   <string name="hold_six_fingers_inactive_announcement">Beka phansi idivayisi yakho etafuleni. Bese, uthinta uphinde ubambe isikrini ngeminwe emi-3 engaphakathi yesandla ngasinye ngokuma okhululeke ukuthayipha ngakho.</string>
   <string name="finish_tutorial_announcement">Ibonisa ikhibhodi ye-braille. Jikisa ifoni yakho ukuze isikrini sibheke kude nawe. Zungezisa ifoni ngokuvundlile ngokuma kokwakheka kwezwe. Bese uqala ukuthayipha.</string>
@@ -203,7 +203,7 @@
   <string name="custom_gesture_conflict_try_another">Le ndlela yokunyakazisa umzimba isetshenziselwa \"%1$s\" futhi awunakuyishintsha. Zama enye indlela yokunyakazisa umzimba. %2$s</string>
   <string name="custom_gesture_cannot_used">Lokhu kunyakaziswa komzimba akukwazi ukusetshenziswa</string>
   <string name="custom_gesture_no_gesture">Akukho ukunyakazisa umzimba okwenziwe</string>
-  <string name="custom_gesture_try_another">Zama enye indlela yokunyakazisa umzimba. Ukuze ubone uhlu lwazo zonke izindlela zokunyakazisa umzimba ezitholakalayo, ngena esikhungweni sosizo sekhibhodi yebhrayli yeSandFly. <xliff:g id="cancel">%s</xliff:g></string>
+  <string name="custom_gesture_try_another">Zama enye indlela yokunyakazisa umzimba. Ukuze ubone uhlu lwazo zonke izindlela zokunyakazisa umzimba ezitholakalayo, ngena esikhungweni sosizo sekhibhodi ye-braille yeSandFly. <xliff:g id="cancel">%s</xliff:g></string>
   <string name="custom_gesture_no_match">Ukunyakazisa umzimba akuzange kuqondane</string>
   <string name="custom_gesture_perform_again">Nyakazisa umzimba ngendlela ofuna ukuphinde uwunyakazise ngayo futhi. %s</string>
     <string name="tabletop_port_left_announcement">Imodi yetafula, imbobo yokushaja kwesokunxele</string>

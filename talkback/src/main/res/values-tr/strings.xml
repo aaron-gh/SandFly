@@ -473,7 +473,7 @@
   <string name="title_labeling_controls">Etiketler</string>
   <string name="title_labeling_show_or_hide_controls">Etiket ekle veya düzenle</string>
   <string name="title_granularity">Gezinme</string>
-  <string name="title_read_from_top">Baştan başlayarak oku</string>
+  <string name="title_read_from_top">Ekranın başından başlayarak oku</string>
   <string name="title_copy_last_spoken_phrase">Son söylenen ifadeyi kopyala</string>
   <string name="title_spell_last_spoken_phrase">Son söylenen ifadeyi harf harf kodla</string>
   <string name="title_repeat_last_spoken_phrase">Son söylenen ifadeyi tekrarla</string>
@@ -788,14 +788,14 @@
   <string name="dialog_message_continuous_reading_mode">\"Baştan başlayarak oku\" veya \"Odaklanan öğeden oku\" seçeneğini belirledikten sonra metin okunurken önceki ya da sonraki öğeye gidebilirsiniz. Bu şekilde kolaylıkla geri veya ileri atlayabilirsiniz.\n\nSandFly\'in konuşma ses düzeyini ayarlamak için sesi artırma veya sesi azaltma tuşuna basın.</string>
   <string name="always_show_this_message_label">Bu mesajı her zaman göster</string>
   <string name="dialog_title_voice_commands">SandFly\'i kontrol etmek için sesli komutları kullanın</string>
-  <string name="dialog_message_voice_commands">Söyleyebileceğiniz bazı komutlar:\n\n• Kopyala\n• Odaklanan öğeden itibaren oku\n• Bul [kaydet]\n• [Daha hızlı] konuş\n• SandFly ayarları\n\nTüm sesli komutların listesi için \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" deyin</string>
+  <string name="dialog_message_voice_commands">Söyleyebileceğiniz bazı komutlar:\n\n• Kopyala\n• Odaklanan öğeden oku\n• Bul [kaydet]\n• [Daha hızlı] konuş\n• SandFly ayarları\n\nTüm sesli komutların listesi için \"<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\" deyin</string>
   <string name="start_voice_command">Sesli komutları kullan</string>
   <string name="dialog_title_pass_through_mode">Sistem hareketlerini kullanmak için SandFly hareketlerini atlayın</string>
   <string name="dialog_message_pass_through_mode">Zil sesi duyduğunuzda SandFly tarafından desteklenmeyen sistem hareketini kullanabilirsiniz. Bu, geçiş hareketi olarak bilinir.</string>
   <string name="dialog_title_voice_input_download">Ses girişini kullanmak için Gboard\'u güncelleyin</string>
   <string name="dialog_message_voice_input_download">Gboard her etkin olduğunda iki parmağınızla iki kez dokunarak ses girişini açabilirsiniz. Bu hareketi kullanmak için Gboard\'u en yeni sürüme güncelleyin.</string>
   <string name="label_update_gboard">Google Play\'den güncelleyin</string>
-  <string name="announcement_voice_input_when_gboard_not_onscreen">Sesli komut özelliğini kullanmak için Gboard\'u göster</string>
+  <string name="announcement_voice_input_when_gboard_not_onscreen">Sesle yazmayı kullanmak için Gboard\'u göster</string>
   <string name="hint_pass_through_mode_on_for_keyboard_shortcuts">Basılacak bir sonraki tuş yoksayılacak</string>
   <string name="screen_search_hint_type_search_screen">Ekranda ara</string>
   <string name="screen_search_hint_type_search_headings">Başlıklarda ara</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Braille ekran ayarları</string>
   <string name="keyboard_smart_browse_mode_title">Klavye: Akıllı tarayıcı modu</string>
   <string name="keyboard_smart_browse_mode_text">SandFly akıllı tarayıcı modu, web\'de gezinirken fiziksel klavye ile yazmanıza yardımcı olmak için düzenleme alanında tarayıcı modunu devre dışı bırakır. Ardından, web\'de düzenleme yapılmayan bir alana geçtiğinizde verimli şekilde göz atmaya devam edebilmeniz için tekrar etkinleştirilir. \"Akıllı tarayıcı modu\"nu etkinleştirmek veya devre dışı bırakmak için <xliff:g id="settings_path">%1$s</xliff:g> bölümüne gidebilirsiniz.</string>
-  <string name="advanced_settings_link">SandFly ayarları &gt; Gelişmiş ayarlar</string>
-  <string name="advanced_settings_link_tts">SandFly ayarları ve ardından Gelişmiş ayarlar</string>
   <string name="keyboard_tutorial_title">Klavye eğitimi</string>
   <string name="keyboard_tutorial_text">SandFly\'te artık fiziksel klavye kullanırken \"Gelişmiş tuş eşleme\" özelliğinin klavye kısayollarını ve komutlarını öğrenmenize yardımcı olmak için tasarlanmış bir Klavye Eğitimi bulunuyor. Eğitime erişmek için <xliff:g id="settings_path">%1$s</xliff:g> bölümüne gidin.</string>
-  <string name="tutorial_link">SandFly ayarları &gt; SandFly eğitimi</string>
-  <string name="tutorial_link_tts">SandFly ayarları ve ardından SandFly eğitimi</string>
   <string name="tutorial_entry_point_title">Eğitim</string>
   <string name="welcome_to_talkback_title">SandFly\'e hoş geldiniz</string>
   <string name="talkback_is_on">SandFly açık</string>
@@ -1072,7 +1068,7 @@
     <string name="image_description_playground_content_two">Görsel açıklaması ayarlarını istediğiniz zaman SandFly ayarları &gt; Görsel ve ekran açıklamaları bölümünden değiştirebilirsiniz.</string>
     <string name="image_description_playground_content_two_tts">Görüntü açıklaması ayarlarını istediğiniz zaman SandFly ayarlarından, ardından Görsel ve ekran açıklamaları bölümünden değiştirebilirsiniz.</string>
   <string name="image_description_sample_image_content_description">Örnek resim; SandFly menüsünü açmak için 3 parmakla dokunun, ardından açıklamayı dinlemek için \"Resmi açıkla\"yı seçin.</string>
-  <string name="practice_gestures_title">Hareketler için alıştırma yapma</string>
+  <string name="practice_gestures_title">Hareketler için alıştırma yap</string>
   <string name="practice_keyboard_gestures_title">Klavye kısayollarını deneyin</string>
   <string name="pref_gesture_set_key_title">Hareket grubu</string>
   <string name="practice_gestures_text">Bu ekranda herhangi bir SandFly hareketini deneyerek hareketin ne yaptığını duyabilirsiniz.\n\nEkrana 2 parmakla dokunun. 2, 3 veya 4 parmakla bir, iki veya üç kere dokunarak alıştırma yapmaya devam edin.\n\n2, 3 veya 4 parmakla iki kez dokunup basılı da tutabilirsiniz.</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Diğer</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Hareketleri Vibration Watch için ayır</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly, Samsung Vibration Watch\'un kullanabilmesi için iki parmakla tek ve çift dokunmaları işlemeyi bırakır. Saatinizin erişilebilirlik ayarlarında Vibration Watch\'u etkinleştirin.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Gelişmiş Ayarlar\'da Vibration Watch için ayrılmıştır</string>
     <string name="title_pref_speakerphone_away_from_ear">Kulaktan uzaktayken hoparlör</string>
     <string name="summary_pref_speakerphone_away_from_ear">Arama sırasında, telefonu kulağınızdan uzaklaştırdığınızda hoparlöre, tekrar kaldırdığınızda ise kulaklığa geçer.</string>
     <string name="summary_pref_speakerphone_needs_permission">Android\'in ekran okuyuculara vermediği bir izin gerekir. Bu izni vermek için bu komutu adb veya Shizuku ile çalıştırın, ardından bu ekrana dönün: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Uygulamalar</string>
     <string name="speech_control_no_apps">Henüz hiçbir uygulama konuşmak istemedi.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g>\'nin SandFly aracılığıyla konuşmasına izin verilsin mi?</string>
-    <string name="speech_control_ask_text">SandFly sesinizle metin söyleyebilir. Bunu Gelişmiş ayarlarda değiştirebilirsiniz.</string>
     <string name="speech_control_allow">İzin ver</string>
     <string name="speech_control_deny">İzin verme</string>
     <string name="permission_speak_label">SandFly aracılığıyla konuşma</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Kaldır</string>
     <string name="quick_settings_added">%1$s eklendi</string>
     <string name="quick_settings_removed">%1$s kaldırıldı</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly açık. Kapatmak için 2 parmağınızı 5 saniye boyunca ekranda tutun. Bu mesajın gösterilmesini durdurmak için SandFly ayarlar &gt; Gelişmiş ayarlar &gt; SandFly kapatma talimatlarını göster seçeneğini kapatın.</string>
     <string name="edge_gestures_title">Kenarlar</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Göz atma modunu açmak veya kapatmak için başka bir kısayol</string>
     <string name="title_pref_vibration_strength">Titreşim gücü</string>
@@ -1746,7 +1739,7 @@
     <string name="image_qna_stop_listening">Dinlemeyi bırak</string>
     <string name="image_qna_type_question">Bir soru yazın</string>
     <string name="shortcut_dictate">Sesle yaz</string>
-    <string name="title_pref_ai_dictation">Dikteyi yapay zekâyla düzelt</string>
+    <string name="title_pref_ai_dictation">Sesle yazmayı yapay zekâyla düzelt</string>
     <string name="dictation_not_corrected">Düzeltilmedi. Tanındığı gibi yazıldı.</string>
     <string name="dictation_nothing_recognized">Hiçbir şey tanınmadı</string>
     <string name="dictation_unavailable">Konuşma tanıma kullanılamıyor</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper modelleri</string>
     <string name="dictation_whisper_use">Kullan</string>
     <string name="title_pref_dictation_ai_service">Sesle yazma için yapay zeka hizmeti</string>
-    <string name="dictation_ai_same">Otomatik açıklamalarla aynı</string>
     <string name="title_pref_browse_mode_per_app">Her uygulamada göz atma modunu hatırla</string>
     <string name="title_pref_export_settings">Ayarları dışa aktar</string>
     <string name="title_pref_import_settings">Ayarları içe aktar</string>
@@ -1794,4 +1786,12 @@
         <item>1 dakika</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Sessizlikten sonra otomatik durdur</string>
+    <string name="dictation_ai_same">Görsel ve ekran açıklamaları ile aynı</string>
+    <string name="navigation_settings_link">SandFly ayarları &gt; Gezinme</string>
+    <string name="navigation_settings_link_tts">SandFly ayarları, ardından Gezinme</string>
+    <string name="shortcut_reserved_for_vibration_watch">Hareketler bölümünde Vibration Watch için ayrıldı</string>
+    <string name="speech_control_ask_text">Metni SandFly sesinizle söyleyebilir. Bunu Ayarlar, Konuşma, Diğer uygulamaların konuşmasına izin ver bölümünden değiştirebilirsiniz.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly açık. Kapatmak için iki parmağınızı ekranda 5 saniye basılı tutun. Bu mesajın artık gösterilmemesi için SandFly ayarları &gt; Duraklatma ve kapatma &gt; SandFly\'i kapatma talimatlarını göster seçeneğini kapatın.</string>
+    <string name="tutorial_link">SandFly ayarları &gt; Yardım ve geri bildirim &gt; SandFly eğitimi</string>
+    <string name="tutorial_link_tts">SandFly ayarları, ardından Yardım ve geri bildirim, ardından SandFly eğitimi</string>
 </resources>

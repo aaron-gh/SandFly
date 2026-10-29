@@ -169,7 +169,7 @@
   <string name="template_fullscreen_magnification_scale_changed">Ingrandimento a schermo intero a %1$d%%</string>
   <string name="template_partial_magnification_scale_changed">Ingrandimento parziale a %1$d%%</string>
   <string name="magnification_off">Ingrandimento disattivato</string>
-  <string name="template_speech_rate_change">Velocità voce del %1$d%%</string>
+  <string name="template_speech_rate_change">Velocità del parlato: <xliff:g id="scaleInPercent" example="200">%1$d</xliff:g>%%</string>
   <string name="template_accessibility_volume_change_increase">Alza il volume accessibilità (+%1$d percento).</string>
   <string name="template_accessibility_volume_change_decrease">Abbassa il volume accessibilità (-%1$d percento).</string>
   <string name="template_touch_latency_reach_maximum">Massimo</string>

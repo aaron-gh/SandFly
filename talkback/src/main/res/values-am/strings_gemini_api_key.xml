@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">ሞዴል</string>
     <string name="ai_service_address_invalid">አድራሻው በ https:// መጀመር አለበት። ምንም አልተቀመጠም።</string>
     <string name="dialog_message_ai_service_consent">ምስሎች እና ቅጽበታዊ ገጽ እይታዎች ለመገለጽ ወደ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ይላካሉ፤ ይህ ብዙ ሰከንዶች ይወስዳል። የአገልግሎቱ የራሱ ውሎች እና የግላዊነት መመሪያ ተፈጻሚ ይሆናሉ። አመንጪ AI የሙከራ ደረጃ ላይ ስለሆነ ስህተቶችን ይሠራል።</string>
-    <string name="ai_service_error_api_key">የ AI አገልግሎቱ የኤፒአይ ቁልፍን አልተቀበለም። ቅንብሮቹን በራስ-ሰር መግለጫዎች ውስጥ ያረጋግጡ።</string>
+    <string name="ai_service_error_api_key">የ AI አገልግሎቱ የኤፒአይ ቁልፍን አልተቀበለም። ቅንብሮቹን በ«የምስል እና የማያ ገጽ መግለጫዎች» ውስጥ ያረጋግጡ።</string>
     <string name="ai_service_error_quota">የ AI አገልግሎት የአጠቃቀም ገደብ ላይ ደርሷል። ቆይተው እንደገና ይሞክሩ።</string>
     <string name="ai_service_error_busy">የ AI አገልግሎት አሁን ስራ በዝቶበታል። ከአፍታ በኋላ እንደገና ይሞክሩ።</string>
     <string name="ai_service_error_timeout">የ AI አገልግሎት መልስ ለመስጠት በጣም ረጅም ጊዜ ወስዷል። እንደገና ይሞክሩ።</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">ምንም</string>
-    <string name="ai_service_not_set_up">ምንም የ AI አገልግሎት ጥቅም ላይ አልዋለም። በራስ-ሰር መግለጫዎች ውስጥ አንዱን ያቀናብሩ ወይም አንዱን ይምረጡ።</string>
+    <string name="ai_service_not_set_up">ምንም የ AI አገልግሎት ጥቅም ላይ አልዋለም። በ«የምስል እና የማያ ገጽ መግለጫዎች» ውስጥ አንዱን ያቀናብሩ ወይም አንዱን ይምረጡ።</string>
     <string name="ai_provider_none_set_up">ምንም የ AI አገልግሎት አልተዘጋጀም። ከታች ባለው ቅንጅቶቹ ውስጥ አንዱን ያዘጋጁ።</string>
     <string name="ai_provider_other">ሌላ አገልግሎት</string>
     <string name="title_pref_category_ai_services">AI አገልግሎቶች</string>

@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">Kerfisaðgerðir</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Til baka, heim, tilkynningar og fleira</string>
   <string name="bd_commands_bindings_category_talkback_features_title">SandFly-eiginleikar</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">Valmyndir og stillingar SandFly</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">Valmyndir og SandFly-stillingar</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Blindraletursstillingar</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Tungumál og stillingar blindraleturs</string>
   <string name="bd_commands_bindings_category_text_editing_title">Breytingar á texta</string>
@@ -221,10 +221,10 @@
   <string name="bd_cmd_global_all_apps">Opna öll forrit</string>
   <string name="bd_cmd_toggle_screen_search">Opna skjáleit</string>
   <string name="bd_cmd_edit_custom_label">Breyta sérsniðnu merki</string>
-  <string name="bd_cmd_open_talkback_menu">Opna valmynd SandFly</string>
+  <string name="bd_cmd_open_talkback_menu">Opna SandFly-valmynd</string>
   <string name="bd_cmd_toggle_voice_feedback">Kveikja eða slökkva á tali SandFly</string>
   <string name="bd_cmd_read_stop">Hætta að lesa</string>
-  <string name="bd_cmd_talkback_settings">Opna stillingar SandFly</string>
+  <string name="bd_cmd_talkback_settings">Opna SandFly-stillingar</string>
   <string name="bd_cmd_switch_to_next_input_language">Skipta yfir í næsta innsláttartungumál</string>
   <string name="bd_cmd_switch_to_next_output_language">Skipta yfir í næsta lestungumál</string>
   <string name="bd_cmd_toggle_contracted_mode">Skipta á milli þess að nota stytt og óstytt</string>
@@ -297,7 +297,7 @@
   <string name="bd_cmd_subcategory_web_navigation_description">Þú getur skoðað vefsíður á fljótlegri hátt með því að nota skipunina um að fara í flettiham og slá síðan inn eftirfarandi stafa- eða talnaflýtileiðir\n\nÞú getur einnig notað þessar flýtileiðir án þess að fara í flettiham en þá þarftu að bæta punkti og 8 við skipanir um að fara áfram.</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Töflufletting</string>
   <string name="bd_turn_off_bd_confirm_dialog_title">Slökkva á stillingum blindraletursskjás?</string>
-  <string name="bd_turn_off_bd_confirm_dialog_message">Þú getur kveikt aftur á þessu hvenær sem er í stillingum SandFly</string>
+  <string name="bd_turn_off_bd_confirm_dialog_message">Þú getur kveikt aftur á þessu hvenær sem er í SandFly-stillingum</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Slökkva</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Tilteknar skipanir eru ekki í boði</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_message">Flettiskipanir, stillingar blindraleturs og tilteknir SandFly-eiginleikar eru ekki í boði á meðan þú skrifar eða breytir.\n\nTil að nota skipanirnar skaltu loka lyklaborðinu fyrst.</string>
@@ -305,7 +305,7 @@
   <string name="bd_caption_tutorial_dialog_message">Til að sýna eða fela skjátexta fyrir þetta vídeó skaltu ýta á bil og punkta 1, 4, 7, 8.\n\nKveiktu á Sýna skjátexta á blindraletursskjá í stillingum til að sýna skjátexta sjálfvirkt fyrir stutt efni.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Sýna alltaf þessi skilaboð þegar skjátextar eru í boði</string>
   <string name="bd_usb_connect_dialog_title">Blindraletursskjár tengdur við USB</string>
-  <string name="bd_usb_connect_dialog_message">Rafhlaðan í „%s“ hleður blindraletursskjáinn.\n\nEf þú þarft að skipta yfir í Bluetooth skaltu aftengja USB eða USB-fjöltengi og fara í „Stillingar SandFly &gt; Blindraletursskjár“.</string>
+  <string name="bd_usb_connect_dialog_message">Rafhlaðan í „%s“ hleður blindraletursskjáinn.\n\nEf þú þarft að skipta yfir í Bluetooth skaltu aftengja USB eða USB-fjöltengi og fara í „SandFly-stillingar &gt; Blindraletursskjár“.</string>
   <string name="bd_device">sími</string>
   <string name="bd_battery_low_dialog_title">Lítil rafhleðsla á %s</string>
   <string name="bd_battery_low_dialog_message">Rafhlaðan í „%s“ hleður blindraletursskjáinn.\n\nTil að spara rafhlöðu:\n\n

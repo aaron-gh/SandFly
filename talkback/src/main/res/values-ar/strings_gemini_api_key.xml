@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">النموذج</string>
     <string name="ai_service_address_invalid">يجب أن يبدأ العنوان بـ https://. لم يتم حفظ أي شيء.</string>
     <string name="dialog_message_ai_service_consent">تُرسَل الصور ولقطات الشاشة إلى <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> لوصفها، ويستغرق ذلك عدة ثوانٍ. تسري بنود الخدمة وسياسة الخصوصية الخاصة بها. الذكاء الاصطناعي التوليدي تجريبي، لذا سيرتكب أخطاء.</string>
-    <string name="ai_service_error_api_key">لم تقبل خدمة AI مفتاح API. تحقق من إعداداته في الأوصاف التلقائية.</string>
+    <string name="ai_service_error_api_key">لم تقبل خدمة الذكاء الاصطناعي مفتاح API. تحقق من إعداداتها في «أوصاف الصور والشاشة».</string>
     <string name="ai_service_error_quota">تم الوصول إلى الحد الأقصى لاستخدام خدمة الذكاء الاصطناعي. حاول مرة أخرى لاحقًا.</string>
     <string name="ai_service_error_busy">خدمة الذكاء الاصطناعي مشغولة الآن. حاول مرة أخرى بعد قليل.</string>
     <string name="ai_service_error_timeout">استغرقت خدمة الذكاء الاصطناعي وقتًا طويلاً للرد. حاول ثانية.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">لا شيء</string>
-    <string name="ai_service_not_set_up">لا توجد خدمة AI قيد الاستخدام. قم بإعداد واحد أو اختر واحدًا في إعدادات الأوصاف التلقائية.</string>
+    <string name="ai_service_not_set_up">لا توجد خدمة ذكاء اصطناعي قيد الاستخدام. أعِدّ خدمة أو اختر واحدة في إعدادات «أوصاف الصور والشاشة».</string>
     <string name="ai_provider_none_set_up">لم يتم إعداد خدمة الذكاء الاصطناعي. قم بإعداد واحد في إعداداته أدناه.</string>
     <string name="ai_provider_other">خدمة أخرى</string>
     <string name="title_pref_category_ai_services">خدمات الذكاء الاصطناعي</string>

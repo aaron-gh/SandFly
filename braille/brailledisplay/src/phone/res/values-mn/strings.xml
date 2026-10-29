@@ -58,7 +58,7 @@
   <string name="bd_enhanced_keymap_dialog_message">Үзэх горимыг ашиглахын тулд та өгөгдмөл гарын зургаас сайжруулсан гарын зураг руу сэлгэх хэрэгтэй. Энэ өөрчлөлт таны брайл дэлгэцийн зарим тушаалыг шинэчилнэ</string>
   <string name="bd_enhanced_keymap_dialog_positive_button">Тохиргоо</string>
   <string name="bd_command_change_dialog_title">Зарим тушаалыг шинэчилсэн байна</string>
-  <string name="bd_command_change_dialog_message">Брайл дэлгэцийн эдгээр тушаалыг SandFly-н энэ хувилбарт шинэчилсэн:\n\n• Өмнөх зүйл: 1, 7-р цэгийг дарна уу\n\n• Дараагийн зүйл: 4, 8-р цэгийг дарна уу\n\n• Уншилтын өмнөх хяналт: 2, 3, 7, 8-р цэгийг дарна уу\n\n• Уншилтын дараагийн хяналт: 5, 6, 7, 8-р цэгийг дарна уу</string>
+  <string name="bd_command_change_dialog_message">Брайл дэлгэцийн эдгээр тушаалыг SandFly-н энэ хувилбарт шинэчилсэн:\n\n• Өмнөх зүйл: 1, 7-р цэгийг дарна уу\n\n• Дараагийн зүйл: 4, 8-р цэгийг дарна уу\n\n• Өмнөх уншилтын хяналт: 2, 3, 7, 8-р цэгийг дарна уу\n\n• Дараагийн уншилтын хяналт: 5, 6, 7, 8-р цэгийг дарна уу</string>
   <string name="bd_preference_braille_contracted">Бичиглэлтэй брайл</string>
   <string name="bd_preference_braille_uncontracted">Бичиглэлгүй брайл</string>
   <string name="bd_braille_grade_tips">Брайл дэлгэц ашиглан бичиглэлтэй ба бичиглэлгүй брайл хооронд шуурхай сэлгэхийн тулд зай болон 1, 2, 4, 5-р цэгийг дарна уу.\n\nХэрэв та брайлын аль аль зэрэглэлтэй хэлийг ашиглаж байвал энэ тушаал ажиллана.</string>
@@ -72,7 +72,7 @@
   <string name="bd_commands_bindings_category_system_actions_title">Системийн үйлдлүүд</string>
   <string name="bd_commands_bindings_category_system_actions_summary">Буцах, нүүр, мэдэгдэл болон бусад</string>
   <string name="bd_commands_bindings_category_talkback_features_title">SandFly-н онцлогууд</string>
-  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly-н цэс болон тохиргоо</string>
+  <string name="bd_commands_bindings_category_talkback_features_summary">SandFly цэс болон тохиргоо</string>
   <string name="bd_commands_bindings_category_braille_settings_title">Брайлын тохиргоо</string>
   <string name="bd_commands_bindings_category_braille_settings_summary">Брайлын хэл болон тохиргоо</string>
   <string name="bd_commands_bindings_category_text_editing_title">Текст засах</string>
@@ -220,8 +220,8 @@
   <string name="bd_cmd_quick_settings">Шуурхай тохиргоог нээ</string>
   <string name="bd_cmd_global_all_apps">Бүх аппыг нээ</string>
   <string name="bd_cmd_toggle_screen_search">Дэлгэцийн хайлтыг нээх</string>
-  <string name="bd_cmd_edit_custom_label">Тусгай шошгыг зас</string>
-  <string name="bd_cmd_open_talkback_menu">SandFly-н цэсийг нээ</string>
+  <string name="bd_cmd_edit_custom_label">Захиалгат шошгыг зас</string>
+  <string name="bd_cmd_open_talkback_menu">SandFly цэсийг нээ</string>
   <string name="bd_cmd_toggle_voice_feedback">SandFly-н яриаг асаах болон унтраах</string>
   <string name="bd_cmd_read_stop">Уншихыг зогсоох</string>
   <string name="bd_cmd_talkback_settings">SandFly-н тохиргоог нээх</string>
@@ -305,7 +305,7 @@
   <string name="bd_caption_tutorial_dialog_message">Энэ видеонд тайлбар харуулах, нуухын тулд зай авах товч, 1, 4, 7, 8-р цэгийг дарна уу.\n\nДэмжигдсэн медианд автоматаар тайлбар харуулах бол Брайл дэлгэц дээр тайлбар харуулахыг Тохиргоонд асаана уу.</string>
   <string name="bd_caption_tutorial_dialog_checkbox">Тайлбар боломжтой үед энэ мессежийг үргэлж харуулна уу</string>
   <string name="bd_usb_connect_dialog_title">Брайл дэлгэц USB-д холбогдсон</string>
-  <string name="bd_usb_connect_dialog_message">Таны %s-н батарей таны брайл дэлгэцийг цэнэглэж байна.\n\nХэрэв та Bluetooth рүү сэлгэх шаардлагатай бол USB эсвэл USB hub-аа салгаад SandFly тохиргоо &gt; Брайл дэлгэц рүү очно уу.</string>
+  <string name="bd_usb_connect_dialog_message">Таны %s-н батарей таны брайл дэлгэцийг цэнэглэж байна.\n\nХэрэв та Bluetooth рүү сэлгэх шаардлагатай бол USB эсвэл USB hub-аа салгаад SandFly-н тохиргоо &gt; Брайл дэлгэц рүү очно уу.</string>
   <string name="bd_device">утас</string>
   <string name="bd_battery_low_dialog_title">%s батарейн цэнэг бага байна</string>
   <string name="bd_battery_low_dialog_message">Таны %s-н батарей таны брайл дэлгэцийг цэнэглэж байна.\n\nБатарейг хэмнэхийн тулд:\n\n

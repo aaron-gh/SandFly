@@ -12,15 +12,15 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g> បន្ទាប់មក Flash-Lite នៅពេលដែលវារវល់</string>
     <string name="gemini_model_loading">កំពុងទទួលម៉ូដែល…</string>
     <string name="gemini_model_list_failed">មិនអាចទទួលបានម៉ូដែល៖ <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">កំណត់សោ API Gemini ជាមុនសិន</string>
+    <string name="gemini_model_needs_key">កំណត់សោ API របស់ Gemini ជាមុនសិន</string>
     <string name="gemini_api_terms_link">លក្ខខណ្ឌប្រើប្រាស់បន្ថែមរបស់ Gemini API</string>
     <string name="ai_service_address_hint">អាសយដ្ឋាន ដូចជា https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">ម៉ូដែល</string>
     <string name="ai_service_address_invalid">អាសយដ្ឋានត្រូវតែចាប់ផ្ដើមដោយ https://។ គ្មានអ្វីត្រូវបានរក្សាទុកទេ។</string>
     <string name="dialog_message_ai_service_consent">រូបភាព និងរូបថតអេក្រង់ត្រូវបានផ្ញើទៅ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ដើម្បីពណ៌នា ដែលចំណាយពេលពីរបីវិនាទី។ លក្ខខណ្ឌ និងគោលការណ៍ឯកជនភាពផ្ទាល់ខ្លួនរបស់សេវាកម្មនោះត្រូវបានអនុវត្ត។ AI ជំនាន់ថ្មីនៅជាការសាកល្បង ដូច្នេះវានឹងមានកំហុស។</string>
-    <string name="ai_service_error_api_key">សេវាកម្ម AI មិនទទួលយកសោ API ទេ។ ពិនិត្យការកំណត់របស់វានៅក្នុងការពិពណ៌នាដោយស្វ័យប្រវត្តិ។</string>
+    <string name="ai_service_error_api_key">សេវាកម្ម AI មិនទទួលយកសោ API ទេ។ ពិនិត្យការកំណត់របស់វានៅក្នុងការពណ៌នារូបភាព និងអេក្រង់។</string>
     <string name="ai_service_error_quota">ដែនកំណត់នៃការប្រើប្រាស់សេវាកម្ម AI ត្រូវបានឈានដល់។ ព្យាយាមម្តងទៀតនៅពេលក្រោយ។</string>
-    <string name="ai_service_error_busy">សេវា AI រវល់នៅពេលនេះ។ ព្យាយាមម្តងទៀតក្នុងពេលបន្តិចទៀត។</string>
+    <string name="ai_service_error_busy">សេវាកម្ម AI រវល់នៅពេលនេះ។ ព្យាយាមម្តងទៀតក្នុងពេលបន្តិចទៀត។</string>
     <string name="ai_service_error_timeout">សេវាកម្ម AI ចំណាយពេលយូរពេកក្នុងការឆ្លើយ។ ព្យាយាមម្តងទៀត។</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">គ្មាន</string>
-    <string name="ai_service_not_set_up">គ្មានសេវា AI កំពុងប្រើប្រាស់ទេ។ ដំឡើងមួយ ឬជ្រើសរើសមួយនៅក្នុងការកំណត់ការពិពណ៌នាដោយស្វ័យប្រវត្តិ។</string>
+    <string name="ai_service_not_set_up">គ្មានសេវាកម្ម AI កំពុងប្រើប្រាស់ទេ។ ដំឡើងមួយ ឬជ្រើសរើសមួយនៅក្នុងការកំណត់ការពណ៌នារូបភាព និងអេក្រង់។</string>
     <string name="ai_provider_none_set_up">មិនមានសេវាកម្ម AI ត្រូវបានតំឡើងទេ។ ដំឡើងមួយនៅក្នុងការកំណត់របស់វាខាងក្រោម។</string>
     <string name="ai_provider_other">សេវាកម្មផ្សេងទៀត</string>
     <string name="title_pref_category_ai_services">សេវាកម្ម AI</string>

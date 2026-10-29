@@ -18,7 +18,7 @@
     <string name="ai_service_model_hint">ਮਾਡਲ</string>
     <string name="ai_service_address_invalid">ਪਤਾ https:// ਨਾਲ ਸ਼ੁਰੂ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ। ਕੁਝ ਵੀ ਰੱਖਿਅਤ ਨਹੀਂ ਕੀਤਾ ਗਿਆ।</string>
     <string name="dialog_message_ai_service_consent">ਵਰਣਨ ਲਈ ਚਿੱਤਰ ਅਤੇ ਸਕ੍ਰੀਨਸ਼ਾਟ <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> ਨੂੰ ਭੇਜੇ ਜਾਂਦੇ ਹਨ, ਜਿਸ ਵਿੱਚ ਕੁਝ ਸਕਿੰਟ ਲੱਗਦੇ ਹਨ। ਉਸ ਸੇਵਾ ਦੀਆਂ ਆਪਣੀਆਂ ਸ਼ਰਤਾਂ ਅਤੇ ਪਰਦੇਦਾਰੀ ਨੀਤੀ ਲਾਗੂ ਹੁੰਦੀ ਹੈ। ਜਨਰੇਟਿਵ AI ਪ੍ਰਯੋਗਾਤਮਕ ਹੈ, ਇਸ ਲਈ ਇਹ ਗਲਤੀਆਂ ਕਰੇਗਾ।</string>
-    <string name="ai_service_error_api_key">AI ਸੇਵਾ ਨੇ API ਕੁੰਜੀ ਨੂੰ ਸਵੀਕਾਰ ਨਹੀਂ ਕੀਤਾ। ਆਟੋਮੈਟਿਕ ਵਰਣਨ ਵਿੱਚ ਇਸ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਦੀ ਜਾਂਚ ਕਰੋ।</string>
+    <string name="ai_service_error_api_key">AI ਸੇਵਾ ਨੇ API ਕੁੰਜੀ ਨੂੰ ਸਵੀਕਾਰ ਨਹੀਂ ਕੀਤਾ। “ਚਿੱਤਰ ਅਤੇ ਸਕ੍ਰੀਨ ਵਰਣਨ” ਵਿੱਚ ਇਸ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਦੀ ਜਾਂਚ ਕਰੋ।</string>
     <string name="ai_service_error_quota">AI ਸੇਵਾ ਦੀ ਵਰਤੋਂ ਦੀ ਸੀਮਾ ਪੂਰੀ ਹੋ ਗਈ ਹੈ। ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
     <string name="ai_service_error_busy">AI ਸੇਵਾ ਇਸ ਸਮੇਂ ਵਿਅਸਤ ਹੈ। ਇੱਕ ਪਲ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
     <string name="ai_service_error_timeout">AI ਸੇਵਾ ਨੇ ਜਵਾਬ ਦੇਣ ਵਿੱਚ ਬਹੁਤ ਸਮਾਂ ਲਿਆ। ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
@@ -30,11 +30,11 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">ਕੋਈ ਨਹੀਂ</string>
-    <string name="ai_service_not_set_up">ਕੋਈ AI ਸੇਵਾ ਵਰਤੋਂ ਵਿੱਚ ਨਹੀਂ ਹੈ। ਇੱਕ ਸੈੱਟ ਕਰੋ ਜਾਂ ਸਵੈਚਲਿਤ ਵਰਣਨ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਇੱਕ ਚੁਣੋ।</string>
+    <string name="ai_service_not_set_up">ਕੋਈ AI ਸੇਵਾ ਵਰਤੋਂ ਵਿੱਚ ਨਹੀਂ ਹੈ। ਇੱਕ ਸੈੱਟ ਕਰੋ ਜਾਂ “ਚਿੱਤਰ ਅਤੇ ਸਕ੍ਰੀਨ ਵਰਣਨ” ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਇੱਕ ਚੁਣੋ।</string>
     <string name="ai_provider_none_set_up">ਕੋਈ AI ਸੇਵਾ ਸਥਾਪਤ ਨਹੀਂ ਕੀਤੀ ਗਈ ਹੈ। ਹੇਠਾਂ ਇਸ ਦੀਆਂ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਇੱਕ ਸੈੱਟਅੱਪ ਕਰੋ।</string>
     <string name="ai_provider_other">ਹੋਰ ਸੇਵਾ</string>
-    <string name="title_pref_category_ai_services">ਏਆਈ ਸੇਵਾਵਾਂ</string>
-    <string name="title_pref_ai_provider">ਏਆਈ ਸੇਵਾ</string>
+    <string name="title_pref_category_ai_services">AI ਸੇਵਾਵਾਂ</string>
+    <string name="title_pref_ai_provider">AI ਸੇਵਾ</string>
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> ਸੈਟਿੰਗਾਂ</string>
     <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, ਸੈੱਟਅੱਪ ਨਹੀਂ ਕੀਤਾ ਗਿਆ</string>
     <string name="ai_provider_in_use">ਵਰਤੋਂ ਵਿੱਚ ਹੈ</string>

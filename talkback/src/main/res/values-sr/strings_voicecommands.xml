@@ -49,6 +49,8 @@
   <string name="voice_commands_dictate">Диктирање</string>
   <string name="voice_commands_write">Пиши</string>
   <string name="voice_commands_Spell">Напиши</string>
+  <string name="voice_commands_sandfly_settings">Подешавања SandFly-а</string>
+  <string name="voice_commands_sandfly_setting">Подешавање SandFly-а</string>
   <string name="voice_commands_talkback_settings">Подешавања TalkBack-а</string>
   <string name="voice_commands_talkback_setting">Подешавање TalkBack-а</string>
   <string name="voice_commands_screen_search">Претрага екрана</string>
@@ -59,9 +61,9 @@
   <string name="voice_commands_paste">@android:string/paste</string>
   <string name="voice_commands_notification">Обавештење</string>
   <string name="voice_commands_notifications">Обавештења</string>
-  <string name="voice_commands_verbosity_parameter">опширност је %s</string>
-  <string name="voice_commands_parameter_verbosity">%s опширност</string>
-  <string name="voice_commands_change_verbosity_to_parameter">Промени опширност на %s</string>
+  <string name="voice_commands_verbosity_parameter">обим говора %s</string>
+  <string name="voice_commands_parameter_verbosity">%s обим говора</string>
+  <string name="voice_commands_change_verbosity_to_parameter">Промени обим говора на %s</string>
   <string name="voice_commands_navigation_by_parameter">Навигација помоћу %s</string>
   <string name="voice_commands_parameter_navigation">Навигација помоћу %s</string>
   <string name="voice_commands_parameter_granularity">прецизност за %s</string>
@@ -104,7 +106,7 @@
   <string name="voice_commands_help_next">Следеће [наслов]</string>
   <string name="voice_commands_help_navigation">Кретање [реч]</string>
   <string name="voice_commands_help_speech_rate">Говори [брже]</string>
-  <string name="voice_commands_help_verbosity">[Ниска] опширност говора</string>
+  <string name="voice_commands_help_verbosity">[Мали] обим говора</string>
   <string name="voice_commands_help_next_description">Идите на следеће заглавље, контролу, листу или оријентир</string>
   <string name="voice_commands_help_navigation_description">Навигација према речима, знаковима, редовима, пасусима, заглављима, контролама и другим ставкама</string>
   <string name="voice_commands_help_speech_rate_description">Можете да изговорите и „Говори спорије“</string>
@@ -128,7 +130,7 @@
   <string name="voice_commands_help_overview_description">Погледајте недавне апликације</string>
   <string name="voice_commands_help_assistant_description">Отворите Google помоћник</string>
   <string name="voice_commands_help_other_commands_title">Друге команде</string>
-  <string name="voice_commands_help_other_commands_description">Идите у SandFly подешавања да бисте сакрили екран, погледали радње, додали прилагођене ознаке и друго</string>
+  <string name="voice_commands_help_other_commands_description">Отварање подешавања SandFly-а, сакривање екрана, преглед радњи, додавање прилагођених ознака и друго</string>
   <string name="voice_commands_help_label">Ознака [пошаљи]</string>
   <string name="voice_commands_help_hide_screen_description">Сакрива екран да други људи не би могли да га виде на јавним местима</string>
   <string name="voice_commands_help_show_screen_description">После скривања екрана враћа га у нормално стање</string>

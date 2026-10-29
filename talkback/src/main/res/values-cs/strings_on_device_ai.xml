@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- SandFly-specific Czech translations for on-device AI. -->
     <string name="title_pref_on_device_ai">AI v zařízení</string>
-    <string name="summary_pref_on_device_ai">Popis obrázku a obrazovky modelem v tomto telefonu, bez klíče API</string>
+    <string name="summary_pref_on_device_ai">„Popsat obrázek“ a „Popsat obrazovku“ modelem v tomto telefonu, bez klíče API</string>
     <string name="pref_on_device_ai_enable">Používat AI v zařízení</string>
     <string name="pref_on_device_ai_enable_summary">Obrázky a snímky obrazovky se popisují v tomto telefonu a nikdy se neodesílají Googlu. Je to pomalejší než cloud a spotřebovává více baterie.</string>
     <string name="pref_on_device_ai_enable_needs_model">Nejprve stáhněte nebo importujte model.</string>
@@ -50,7 +50,7 @@
     <string name="on_device_ai_import_done">Model nainstalován</string>
     <string name="on_device_ai_import_failed">Tento soubor není podporovaným souborem modelu Gemma 4.</string>
     <string name="pref_on_device_ai_timeout">Časový limit odpovědí</string>
-    <string name="pref_on_device_ai_timeout_summary">%1$s. Po uplynutí této doby SandFly přestane čekat. Popis obrazovky trvá déle než popis obrázku.</string>
+    <string name="pref_on_device_ai_timeout_summary">%1$s. Po uplynutí této doby SandFly přestane čekat. „Popsat obrazovku“ trvá déle než „Popsat obrázek“.</string>
     <string name="on_device_ai_choose_timeout">Časový limit odpovědí</string>
     <plurals name="on_device_ai_timeout_minutes">
         <item quantity="one">%1$d minuta</item>
@@ -59,7 +59,7 @@
     </plurals>
     <string name="pref_on_device_ai_processor">Procesor</string>
     <string name="pref_on_device_ai_short_prompts">Kratší popisy obrazovky</string>
-    <string name="pref_on_device_ai_short_prompts_summary">Popis obrazovky žádá méně podrobností, takže odpoví dříve. Pro podrobnější popisy tuto možnost vypněte.</string>
+    <string name="pref_on_device_ai_short_prompts_summary">„Popsat obrazovku“ žádá méně podrobností, takže odpoví dříve. Pro podrobnější popisy tuto možnost vypněte.</string>
     <string name="on_device_ai_error_network">Stahování se zastavilo. Zkontrolujte připojení a zkuste to znovu. Bude pokračovat od místa, kde skončilo.</string>
     <string name="on_device_ai_error_http">Server pro stahování požadavek nepřijal. Zkuste to později nebo místo toho importujte soubor.</string>
     <string name="on_device_ai_error_corrupt">Soubor neodpovídal očekávanému modelu a byl smazán. Zkuste to znovu.</string>

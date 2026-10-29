@@ -10,7 +10,7 @@
   <string name="actions">လုပ်ဆောင်ချက်များ</string>
   <string name="system_actions">စနစ် လုပ်ဆောင်ချက်များ</string>
   <string name="talkback_preferences_subtitle">ဗားရှင်း %1$s</string>
-  <string name="label_manager_summary_title">စိတ်ကြိုက်အညွန်းများ စီမံခြင်း</string>
+  <string name="label_manager_summary_title">စိတ်ကြိုက်အညွှန်းများ စီမံခြင်း</string>
   <string name="label_manager_package_title">%1$s အတွက် တံဆိပ်များကို စီမံကွပ်ကဲပါ</string>
   <string name="manage_label">အညွှန်း စီမံခန့်ခွဲခြင်း</string>
   <string name="label_manager_no_packages_message">လောလောဆယ်တွင် စိတ်ကြိုက်အညွှန်းများမရှိသေးပါ\n\n<b>စိတ်ကြိုက်အညွှန်းများ ပြုလုပ်နည်း</b>\nအညွှန်းတပ်မထားသည့် ပုံသို့သွားပြီး SandFly မီနူးမှ အညွှန်းတပ်နိုင်သည်</string>
@@ -77,11 +77,11 @@
   <string name="pref_punctuation_title">ပုဒ်ဖြတ်ပုဒ်ရပ်နှင့် သင်္ကေတများ ပြောရန်</string>
   <string name="title_pref_category_manage_focus_indicator">ဖိုကပ်စ် ညွှန်ပြချက်</string>
   <string name="title_pref_category_manage_gestures">လက်ဟန်များ</string>
-  <string name="title_pref_manage_labels">စိတ်ကြိုက် အမည်များ</string>
+  <string name="title_pref_manage_labels">စိတ်ကြိုက်အညွှန်းများ</string>
   <string name="title_pref_category_context_menu">SandFly မီနူး</string>
   <string name="title_pref_category_selector_menu">စာဖတ်ခြင်းထိန်းချုပ်မှုများ</string>
   <string name="title_pref_category_navigation_menu">လမ်းညွှန်မှု နည်းလမ်းများကို တည်းဖြတ်ရန်</string>
-  <string name="title_pref_manage_keyboard_shortcuts">ကီးဘုတ် ဖြတ်လမ်းလင့်ခ်များ</string>
+  <string name="title_pref_manage_keyboard_shortcuts">လက်ကွက်ဖြတ်လမ်းများ</string>
   <string name="title_pref_export_custom_labels">စိတ်ကြိုက်အညွှန်းများ ထုတ်ရန်</string>
   <string name="title_pref_help_and_feedback">အကူအညီနှင့် အကြံပြုချက်</string>
   <string name="title_pref_help">အကူအညီ</string>
@@ -143,7 +143,7 @@
   <string name="keycombo_menu_navigate_next">နောက်တစ်ခုသို့ လမ်းညွှန်ရန်</string>
   <string name="keycombo_menu_navigate_previous">ယခင်တစ်ခုသို့ လမ်းညွှန်ရန်</string>
   <string name="keycombo_menu_navigate_up">ယခင်အမျိုးအစားသို့သွားရန် (စာဖတ်ခြင်းထိန်းချုပ်မှုပေါ် အခြေခံသည်)</string>
-  <string name="keycombo_menu_navigate_down">နောက်အမျိုးအစားသို့သွားရန် (စာဖတ်ထိန်းချုပ်မှုပေါ်အခြေခံသည်)</string>
+  <string name="keycombo_menu_navigate_down">နောက်အမျိုးအစားသို့သွားရန် (စာဖတ်ခြင်းထိန်းချုပ်မှုပေါ်အခြေခံသည်)</string>
   <string name="keycombo_menu_navigate_first">ပထမဆုံးအရာအား သွားရောက်စူးစမ်းရန်</string>
   <string name="keycombo_menu_navigate_last">နောက်ဆုံးအရာအား သွားရောက်စူးစမ်းရန်</string>
   <string name="keycombo_menu_navigate_next_window">နောက်ဝင်းဒိုး (သို့) စနစ်အပိုင်းသို့ သွားရန်</string>
@@ -296,7 +296,7 @@
   <string name="summary_pref_intonation">ဖျက်လိုက်သည့်စာကို အသံစူးစူးဖြင့် ပြောပေးသည်</string>
   <string name="title_pref_brailledisplay">မျက်မမြင်စာဖတ်ကိရိယာ</string>
   <string name="title_pref_brailleime">မျက်မမြင်စာရေးစနစ် လက်ကွက်</string>
-  <string name="summary_pref_brailleime_disabled">စက်က မျက်မမြင်စာရေးစနစ်ကီးဘုတ်ကို မပံ့ပိုးပါ</string>
+  <string name="summary_pref_brailleime_disabled">စက်က မျက်မမြင်စာရေးစနစ် လက်ကွက်ကို မပံ့ပိုးပါ</string>
   <string name="title_pref_speech_footer">မည်သည့် ဖန်သားပြင်မှမဆို အများသုံးစွဲနိုင်မှု အသံအတိုးအကျယ်ကို ပြောင်းရန် ဖန်သားပြင်ပေါ်တွင် လက်ချောင်း ၁ ချောင်းကို ဖိထားပြီး အသံချဲ့ သို့မဟုတ် အသံချုံ့ ခလုတ်ကို နှိပ်ပါ။</string>
   <string name="title_pref_vibration">တုန်ခါ တုံ့ပြန်ချက်</string>
   <string name="title_pref_soundback">အသံတုံ့ပြန်ချက်</string>
@@ -319,7 +319,7 @@
   <string name="title_pref_typing_long_tap_duration">စာရိုက်စဉ် တို့ထိ၍ ဖိထားမှု ကြာချိန်</string>
   <string name="title_pref_touch_explore_timeout">စာရိုက်သွင်းမှု ကြန့်ကြာချိန်</string>
   <string name="message_pref_touch_explore_latency">နှောင့်နှေးချိန် တိုလေ ကီးဘုတ်ကို ထိပြီးနောက် SandFly စောစော ပြောလေ ဖြစ်သည်။\n\nနှောင့်နှေးချိန် ရွေးပါ</string>
-  <string name="title_pref_touch_focus_timeout">ပြရန်စောင့်ရချိန်</string>
+  <string name="title_pref_touch_focus_timeout">ရွေးချယ်မှုနှောင့်နှေးခြင်း</string>
   <string name="title_pref_talkback_gesture_detection">SandFly ရှိ လက်ဟန်များ စီမံရန်</string>
   <string name="toast_pref_talkback_gesture_detection">ဆက်တင်စတင်ရန် SandFly ပိတ်၍ ပြန်ဖွင့်နိုင်သည်။</string>
   <string name="title_pref_auto_image_captioning">အလိုအလျောက် ရှင်းလင်းချက်များ</string>
@@ -422,7 +422,7 @@
   <string name="shortcut_increase_volume">အသံချဲ့ရန်</string>
   <string name="shortcut_decrease_volume">အသံတိုးရန်</string>
   <string name="shortcut_all_apps">အက်ပ်အားလုံး</string>
-  <string name="shortcut_braille_keyboard">မျက်မမြင်စာကီးဘုတ်သို့ ပြောင်းရန်</string>
+  <string name="shortcut_braille_keyboard">မျက်မမြင်စာရေးစနစ် လက်ကွက်သို့ ပြောင်းရန်</string>
   <string name="shortcut_braille_display_settings">မျက်မမြင်စာဖတ်ကိရိယာဆက်တင်သို့ သွားရန်</string>
   <string name="shortcut_tutorial">ရှင်းလင်းပို့ချချက်ကို ဖွင့်ရန်</string>
   <string name="shortcut_control_speak_time">အချိန်ပြောရန် (သို့) အချိန်မပြောပါနှင့်</string>
@@ -472,7 +472,7 @@
   <string name="title_viewpager_breakout_page_right">စာမျက်နှာ ညာဘက်</string>
   <string name="title_labeling_controls">အညွှန်းများ</string>
   <string name="title_labeling_show_or_hide_controls">အညွှန်းများ ထည့်သွင်း/တည်းဖြတ်ရန်</string>
-  <string name="title_granularity">လမ်းညွှန်ချက်</string>
+  <string name="title_granularity">လမ်းညွှန်မှု</string>
   <string name="title_read_from_top">ထိပ်မှ ဖတ်ရန်</string>
   <string name="title_copy_last_spoken_phrase">နောက်ဆုံးပြောခဲ့သည့် စကားရပ်ကို ကူးရန်</string>
   <string name="title_spell_last_spoken_phrase">နောက်ဆုံးပြောခဲ့သည့် စကားရပ်ကို စာလုံးပေါင်းရန်</string>
@@ -480,7 +480,7 @@
   <string name="title_custom_action">လုပ်ဆောင်ချက်များ</string>
   <string name="title_show_hide_screen">ဖန်သားပြင်ကို ဝှက်ရန် သို့မဟုတ် ပြရန်</string>
   <string name="title_control_speak_time">အချိန်ပြောရန်</string>
-  <string name="title_show_screen_search">မြင်လွှာတွင်ရှာရန်</string>
+  <string name="title_show_screen_search">စခရင်တွင်ရှာဖွေခြင်း</string>
   <string name="title_show_voice_commands">အသံကွန်မန်းများ</string>
   <string name="title_show_keyboard_shortcuts">လက်ကွက်ဖြတ်လမ်းများ</string>
   <string name="talkback_show_talkback_settings">SandFly ဆက်တင်များ</string>
@@ -668,7 +668,7 @@
   <string name="label_dialog_text">ဤအရာအတွက် အသုံးပြုမည့် အညွှန်းစာသားကို ထည့်ပါ\nစက်ပစ္စည်းအတွင်း မြင်ရသောအမည်− %1$s</string>
   <string name="label_dialog_edit_hint">အညွှန်းစာသား</string>
   <string name="label_import">စိတ်ကြိုက်အညွှန်းများ သွင်းရန်</string>
-  <string name="label_import_dialog_title">SandFly သို့ စိတ်ကြိုက် တံဆိပ်များ တင်သွင်းရန်</string>
+  <string name="label_import_dialog_title">SandFly သို့ စိတ်ကြိုက်အညွှန်းများ တင်သွင်းရန်</string>
   <string name="label_import_dialog_message">နှစ်ခုထပ်လာပါက လက်ရှိအမည်များကို အသစ်ပြောင်းရန် သို့မဟုတ် ယခင်အတိုင်းထားရန်တို့ကို ဆုံးဖြတ်ပါ</string>
   <string name="label_import_dialog_skip">ကျော်ရန်</string>
   <string name="label_import_dialog_override">အပေါ်မှထပ်ရေးမည်</string>
@@ -685,7 +685,7 @@
   <string name="button_disable_all_events">အားလုံးကို ပိတ်ရန်</string>
   <string name="button_enable_all_events">အားလုံးကို ဖွင့်ရန်</string>
   <string name="dialog_title_disable_exploration">တို့ထိလျက် စူးစမ်းမှုကို ပိတ်ရမလား?</string>
-  <string name="dialog_message_disable_exploration">တို့ထိလျက် စူးစမ်းမှုကို သင် ပိတ်လိုတာ သေချာသလား?\n\nသင်၏ ကိရိယာသည် ဖြတ်လမ်း လက်ဟန်များကို၎င်း၊ မျက်နှာပြင်ကို ထိရာတွင် ပြောဆိုမှု အရာများကို တုံ့ပြန်တော့မည် မဟုတ်ပါ။</string>
+  <string name="dialog_message_disable_exploration">‘တို့ထိလျက် စူးစမ်းပါ’ ကို သင် ပိတ်လိုတာ သေချာသလား?\n\nသင်၏ ကိရိယာသည် ဖြတ်လမ်း လက်ဟန်များကို၎င်း၊ မျက်နှာပြင်ကို ထိရာတွင် ပြောဆိုမှု အရာများကို တုံ့ပြန်တော့မည် မဟုတ်ပါ။</string>
   <string name="dialog_title_enable_tree_debug">Node Tree အမှားရှာပြင်ရန် ဖွင့်မည်လား?</string>
   <string name="dialog_message_enable_tree_debug">node tree အမှားရှာဖွင့်ရန် ဖွင့်လိုသည်မှာ သေချာပါသလား?\n\nNode tree အမှားရှာခြင်းသည် တစ်ခြား အက်ပ်များဖြင့် ဖတ်နိုင်သည့် သင့်စက်ကိရိယာ၏ မှတ်တမ်းများကို ထုတ်ဖော်ပြသလိုဖြစ်မည်။</string>
   <string name="dialog_title_enable_tree_debug_gesture">လက် ၄ ချောင်းလက်ဟန်ဖြင့် သုံးချက်တို့ခြင်းကို တာဝန်ပြန်ချမလား။</string>
@@ -785,7 +785,7 @@
   <string name="msg_matches_found">{matches,plural, =0{ဤစခရင်တွင် ကိုက်ညီမှု မရှိပါ}=1{ကိုက်ညီမှု # ခု}other{ကိုက်ညီမှု # ခု}}</string>
   <string name="msg_no_matches">ဤမျက်နှာပြင်တွင် ကိုက်ညီသည့်အရာများ မရှိပါ</string>
   <string name="dialog_title_continuous_reading_mode">ဆက်တိုက်ဖတ်ခြင်း လုပ်ဆောင်ပုံ</string>
-  <string name="dialog_message_continuous_reading_mode">“ထိပ်မှ စဖတ်ရန်” (သို့) “ရွေးထားသည်ကိုဖတ်မည်” ကိုရွေးပြီးနောက် စာသားကို ဖတ်နေစဉ်မှာပင် ယခင် (သို့) နောက်တစ်ခုသို့ သွားနိုင်သေးသည်။ ဤသို့ဖြင့် အလွယ်တကူ သင်ပြန်သွားနိုင်သည် (သို့) ရှေ့သို့ ကျော်နိုင်သည်။\n\nSandFly စကားပြောနေစဉ် အသံအတိုးအကျယ် ချိန်ညှိရန် အသံချဲ့ခလုတ် (သို့) အသံတိုးခလုတ်ကို နှိပ်ပါ။</string>
+  <string name="dialog_message_continuous_reading_mode">“ထိပ်မှ ဖတ်ရန်” (သို့) “ရွေးထားသည်ကိုဖတ်ရန်” ကိုရွေးပြီးနောက် စာသားကို ဖတ်နေစဉ်မှာပင် ယခင် (သို့) နောက်တစ်ခုသို့ သွားနိုင်သေးသည်။ ဤသို့ဖြင့် အလွယ်တကူ သင်ပြန်သွားနိုင်သည် (သို့) ရှေ့သို့ ကျော်နိုင်သည်။\n\nSandFly စကားပြောနေစဉ် အသံအတိုးအကျယ် ချိန်ညှိရန် အသံချဲ့ခလုတ် (သို့) အသံတိုးခလုတ်ကို နှိပ်ပါ။</string>
   <string name="always_show_this_message_label">ဤမက်ဆေ့ဂျ်ကို အမြဲပြရန်</string>
   <string name="dialog_title_voice_commands">SandFly ကို ထိန်းချုပ်ရန် အသံကွန်မန်းများ အသုံးပြုပါ</string>
   <string name="dialog_message_voice_commands">သင်ပြောနိုင်သော အရာအချို့မှာ-\n\n• မိတ္တူကူးရန် \"Copy\"\n• ရွေးထားသည်ကိုဖတ်ရန် \"Read from focused item\"\n• [သိမ်းထားသည်] ကို ရှာရန် \"Find [save]\"\n• [ပိုမိုမြန်ဆန်စွာ] ပြောရန် \"Speak [faster]\"\n• SandFly ဆက်တင်များ \"SandFly settings\"\n\nအသံကွန်မန်းအားလုံး၏ စာရင်းအတွက် “<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>” ဟု ပြောပါ</string>
@@ -822,9 +822,9 @@
   <string name="no_navigate_typo_gesture">၎င်းကိုအသုံးပြုရန် SandFly ဆက်တင်များသို့သွားပြီး စာလုံးပေါင်းစစ်ဆေးခြင်းအတွက် လက်ဟန်ထည့်ပါ</string>
   <string name="use_spelling_suggestion_hint">စာသားအစားထိုးရန် နှစ်ချက်တို့ပါ</string>
   <string name="screen_search_keyword_hint">အဓိကစကားလုံးမှာ %1$s ဖြစ်သည်</string>
-  <string name="screen_search_no_keyword_hint">အဓိကစကားလုံး မရှိသေးပါ။ ရှာဖွေမှုအသစ် စတင်ရန်အတွက် လက် ၃ ချောင်းဖြင့် တို့ပြီး ဖိထားပါ (သို့) SandFly မီနူးတွင် မြင်လွှာတွင်ရှာဖွေခြင်းကို ဖွင့်ပါ။</string>
-  <string name="screen_search_no_keyword_hint_pre_r">အဓိကစကားလုံး မရှိသေးပါ။ ရှာဖွေမှုအသစ် စတင်ရန်အတွက် ဘယ်ဘက်သို့ ပွတ်ဆွဲပြီးနောက် အောက်သို့ ပွတ်ဆွဲပါ (သို့) SandFly မီနူးတွင် မြင်လွှာတွင်ရှာဖွေခြင်းကို ဖွင့်ပါ။</string>
-  <string name="switch_to_braille_keyboard_failure_msg">မျက်မမြင်စာကီးဘုတ်ကို ဖွင့်မထားပါ။ SandFly ဆက်တင်များသို့သွား၍ မျက်မမြင်စာကီးဘုတ်ကို စနစ်ထည့်သွင်းကာ ထပ်စမ်းကြည့်ပါ။</string>
+  <string name="screen_search_no_keyword_hint">အဓိကစကားလုံး မရှိသေးပါ။ ရှာဖွေမှုအသစ် စတင်ရန်အတွက် လက် ၃ ချောင်းဖြင့် တို့ပြီး ဖိထားပါ (သို့) SandFly မီနူးတွင် စခရင်တွင်ရှာဖွေခြင်းကို ဖွင့်ပါ။</string>
+  <string name="screen_search_no_keyword_hint_pre_r">အဓိကစကားလုံး မရှိသေးပါ။ ရှာဖွေမှုအသစ် စတင်ရန်အတွက် ဘယ်ဘက်သို့ ပွတ်ဆွဲပြီးနောက် အောက်သို့ ပွတ်ဆွဲပါ (သို့) SandFly မီနူးတွင် စခရင်တွင်ရှာဖွေခြင်းကို ဖွင့်ပါ။</string>
+  <string name="switch_to_braille_keyboard_failure_msg">မျက်မမြင်စာရေးစနစ် လက်ကွက်ကို ဖွင့်မထားပါ။ SandFly ဆက်တင်များသို့သွား၍ မျက်မမြင်စာရေးစနစ် လက်ကွက်ကို စနစ်ထည့်သွင်းကာ ထပ်စမ်းကြည့်ပါ။</string>
   <string name="suggestions_window_available">အကြံပြုချက် ရယူနိုင်သည်</string>
   <string name="suggestions_window_available_with_gesture">အကြံပြုချက် ရယူနိုင်သည်။ သုံးခွင့်ရယူရန် %1$s</string>
   <string name="heads_up_window_available">အကြောင်းကြားချက် ရှိသည်</string>
@@ -851,7 +851,7 @@
   <string name="keep_reviewing_tutorial_button">ဆက်လက် စစ်ဆေးရန်</string>
   <string name="welcome_to_updated_talkback_title">အပ်ဒိတ်လုပ်ထားသော SandFly က ကြိုဆိုပါသည်</string>
   <string name="navigation_heading">လမ်းညွှန်မှု</string>
-  <string name="setting_selector_heading">စာဖတ်ခြင်း ထိန်းချုပ်မှုများ</string>
+  <string name="setting_selector_heading">စာဖတ်ခြင်းထိန်းချုပ်မှုများ</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">ဗီဒီယို သို့မဟုတ် သီချင်းအက်ပ်ရှိ မီဒီယာကို ရပ်ရန် သို့မဟုတ် ဖွင့်ရန် လက်ချောင်း ၂ ချောင်းဖြင့် နှစ်ချက်တို့ပါ။ ယခုပဲ စမ်းကြည့်လိုက်ပါ။</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">အခြားအက်ပ်များသည် ဖုန်းခေါ်ဆိုမှုကို ဖြေကြားခြင်း သို့မဟုတ် ဖုန်းချခြင်း ကဲ့သို့သောအရာများအတွက် ဤလက်ဟန်ကို အသုံးပြုနိုင်သည်။ ဤလက်ဟန်ကို အချို့အက်ပ်များက ပံ့ပိုးမထားပါ။</string>
   <string name="new_shortcut_gesture_pause_media_announcement">မီဒီယာကို ခဏရပ်သည် သို့မဟုတ် ဖွင့်သည်။ ပုံမှန်အားဖြင့် ၎င်းသည် လက်ရှိ ဗီဒီယို သို့မဟုတ် သီချင်းကို ခဏရပ်ပေးသည် သို့မဟုတ် ဖွင့်ပေးသည်။ ရှေ့ဆက်ရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
@@ -865,15 +865,15 @@
   <string name="new_shortcut_gesture_cut_text_announcement">စာသားကို ဖြတ်ယူပြီးပါပြီ။ ပုံမှန်အားဖြင့် ယင်းသည် သင်ရွေးချယ်လိုက်သော စာသားကို ဖြတ်ယူပေးသည်။ ရှေ့ဆက်ရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
   <string name="new_shortcut_gesture_selection_mode_text">စာသား ရွေးချယ်သောမုဒ်ကို စတင်ရန် သို့မဟုတ် ရပ်ရန် နှစ်ချက်တို့၍ လက်ချောင်း ၂ ချောင်းဖြင့် ဖိထားပါ။</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">စာသားရွေးချယ်သောမုဒ်ကို ဖွင့်သည် သို့မဟုတ် ပိတ်သည်။ ပုံမှန်အားဖြင့် ထည့်သွင်းသည့်အကွက်အတွင်း ရှိသောအခါ ယင်းက စာသားရွေးချယ်သောမုဒ်ကို စတင်သည် သို့မဟုတ် ရပ်ပေးသည်။ ရှေ့ဆက်ရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။</string>
-  <string name="new_shortcut_gesture_reading_menu_text">စာဖတ်ခြင်းဆိုင်ရာ ထိန်းချုပ်မှုများကို သုံးရန် ဘယ် သို့မဟုတ် ညာသို့ လက်ချောင်း ၃ ချောင်းဖြင့် ပွတ်ဆွဲပါ။ လက်ချောင်း ၃ ချောင်းဖြင့် အပေါ် သို့မဟုတ် အောက်သို့လည်း ပွတ်ဆွဲနိုင်သည်။</string>
+  <string name="new_shortcut_gesture_reading_menu_text">စာဖတ်ခြင်းထိန်းချုပ်မှုများကို သုံးရန် ဘယ် သို့မဟုတ် ညာသို့ လက်ချောင်း ၃ ချောင်းဖြင့် ပွတ်ဆွဲပါ။ လက်ချောင်း ၃ ချောင်းဖြင့် အပေါ် သို့မဟုတ် အောက်သို့လည်း ပွတ်ဆွဲနိုင်သည်။</string>
   <string name="new_shortcut_gesture_note">မှတ်ချက်- သင့်လက်ဟန်အချို့ကို စိတ်ကြိုက်လုပ်ထားသောကြောင့် ဤအချက်အလက်သည် မမှန်ကန်နိုင်ပါ။ သင်၏လက်ဟန်များကို ကြည့်ရန် SandFly ဆက်တင်များသို့ သွားပါ။</string>
   <string name="welcome_to_android11_text">SandFly ကို ပိုမိုလွယ်ကူလျင်မြန်စွာ သုံးနိုင်ရန် လက်ဟန်အသစ်များကို ထည့်ထားသည်။\n\nဤဖန်သားပြင်တွင် လက်ဟန်အသစ်များကို စမ်းကြည့်နိုင်သည်။ SandFly ဆက်တင်များတွင် ဤအချက်အလက်ကို အချိန်မရွေး ပြန်လည်စစ်ဆေးနိုင်သည်။</string>
   <string name="new_gesture_notification_title">SandFly ရှိ လက်ဟန်အသစ်များ</string>
   <string name="new_gesture_notification_content">လက်ဟန်အသစ်များဖြင့် SandFly အမြန်သုံးနည်းကို လေ့လာရန် တို့ပါ။</string>
   <string name="dump_node_tree_description">Node tree ကို မှတ်တမ်းများသို့ ပုံနှိပ်ထုတ်ယူလိုက်သည်။</string>
   <string name="report_gesture_description">၎င်းတို့သည် မကြာသေးမီက ပြုလုပ်ခဲ့သောလက်ဟန်များ ဖြစ်သည်။ မည်သည့်လက်ဟန်က မှားကြောင်းနှင့် မည်သည့်က မှန်ကြောင်းတို့ကို အစီရင်ခံပါ။</string>
-  <string name="update_welcome_talkback_16.1">ဤ SandFly အပ်ဒိတ်တွင် Describe စခရင်အတွက် အကူအညီကို ဘာသာစကားများစွာဖြင့် မိတ်ဆက်ထားပြီး Talkback အသုံးပြုရ ပိုလွယ်ကူစေရန် အခြားသော အရည်အသွေးမွမ်းမံမှုများလည်း ပါဝင်သည်။\n\nဤအပြောင်းအလဲများအကြောင်းကို နောက်စခရင်အချို့တွင် ပိုမိုလေ့လာနိုင်မည်။\n\nဤအချက်အလက်ကို နောင်တွင် SandFly ဆက်တင်များ &gt; SandFly ရှိ တူးလ်အသစ်များ၌ ကြည့်နိုင်သည်။</string>
-  <string name="update_welcome_talkback_16.1_tts">ဤ SandFly အပ်ဒိတ်တွင် Describe စခရင်အတွက် အကူအညီကို ဘာသာစကားများစွာဖြင့် မိတ်ဆက်ထားပြီး Talkback အသုံးပြုရ ပိုလွယ်ကူစေရန် အခြားသော အရည်အသွေးမွမ်းမံမှုများလည်း ပါဝင်သည်။\n\nဤအပြောင်းအလဲများအကြောင်းကို နောက်စခရင်အချို့တွင် ပိုမိုလေ့လာနိုင်မည်။\n\nဤအချက်အလက်ကို နောင်တွင် SandFly ဆက်တင်များ၊ ထို့နောက် SandFly ရှိ တူးလ်အသစ်များ၌ ကြည့်နိုင်သည်။</string>
+  <string name="update_welcome_talkback_16.1">ဤ SandFly အပ်ဒိတ်တွင် “စခရင်ကို ဖော်ပြရန်” အတွက် ပံ့ပိုးမှုကို ဘာသာစကားများစွာဖြင့် မိတ်ဆက်ထားပြီး SandFly အသုံးပြုရ ပိုလွယ်ကူစေရန် အခြားသော အရည်အသွေးမွမ်းမံမှုများလည်း ပါဝင်သည်။\n\nဤအပြောင်းအလဲများအကြောင်းကို နောက်စခရင်အချို့တွင် ပိုမိုလေ့လာနိုင်မည်။\n\nဤအချက်အလက်ကို နောင်တွင် SandFly ဆက်တင်များ &gt; SandFly ရှိ ဝန်ဆောင်မှုအသစ်များ၌ ကြည့်နိုင်သည်။</string>
+  <string name="update_welcome_talkback_16.1_tts">ဤ SandFly အပ်ဒိတ်တွင် “စခရင်ကို ဖော်ပြရန်” အတွက် ပံ့ပိုးမှုကို ဘာသာစကားများစွာဖြင့် မိတ်ဆက်ထားပြီး SandFly အသုံးပြုရ ပိုလွယ်ကူစေရန် အခြားသော အရည်အသွေးမွမ်းမံမှုများလည်း ပါဝင်သည်။\n\nဤအပြောင်းအလဲများအကြောင်းကို နောက်စခရင်အချို့တွင် ပိုမိုလေ့လာနိုင်မည်။\n\nဤအချက်အလက်ကို နောင်တွင် SandFly ဆက်တင်များ၊ ထို့နောက် SandFly ရှိ ဝန်ဆောင်မှုအသစ်များ၌ ကြည့်နိုင်သည်။</string>
   <string name="shortcut_for_dictation_title">အသံဖြင့်စာရိုက်ခြင်းအတွက် ဖြတ်လမ်း</string>
   <string name="shortcut_for_dictation_content">Gboard သုံးနေစဉ် အသံဖြင့်စာရိုက်ခြင်းကို စတင်ရန် (သို့) ရပ်ရန် လက်နှစ်ချောင်းဖြင့် နှစ်ချက်တို့ခြင်းကို သုံးနိုင်ပါပြီ။
 &lt;br&gt;
@@ -881,12 +881,12 @@
   <string name="shortcut_for_dictation_content_without_google_play">စခရင်တွင် Gboard ရှိနေသောအခါ ‘အသံဖြင့် နှုတ်တိုက်ချပေးခြင်း’ ကို စတင်ရန် လက်နှစ်ချောင်းဖြင့် နှစ်ချက်တို့ခြင်းကို သုံးနိုင်ပါပြီ။ ထို့နောက် ရပ်ဆိုင်းရန် လက်နှစ်ချောင်းဖြင့် နှစ်ချက်တို့နိုင်ပါသည်။</string>
   <string name="announcing_text_formatting_title">စာသားဖော်မက်လုပ်ခြင်းကို ကြေညာခြင်း</string>
   <string name="announcing_text_formatting_header">SandFly တွင် စာလုံးထူ၊ စာလုံးစောင်းနှင့် စာသားအရောင်ကဲ့သို့သော စာသားဖော်မက်လုပ်ခြင်းနှင့် ပတ်သက်သည့် ပြောင်းလဲမှုများကို ကြေညာနိုင်ပါပြီ။ စတင်ရန်-</string>
-  <string name="announcing_text_formatting_option1">ဖော်မက်လုပ်ထားသော ဖိုင်ကို အထူးပြသပြီး SandFly မီနူးဖွင့်ကာ “စာသားဖော်မက်လုပ်ခြင်းကို ဖော်ပြရန်” ကို ရွေးပါ (သို့)</string>
+  <string name="announcing_text_formatting_option1">ဖော်မက်လုပ်ထားသော ဖိုင်ကို အထူးပြသပြီး SandFly မီနူးဖွင့်ကာ “စာသားဖော်မက်လုပ်ခြင်း ဖော်ပြရန်” ကို ရွေးပါ (သို့)</string>
   <string name="announcing_text_formatting_option2">ဖော်မက်လုပ်ခြင်း အပြောင်းအလဲများဆိုင်ရာ ကြေညာချက်ကို ဖွင့် (သို့) ပိတ်မည့် စာသားဖော်မက်လုပ်ခြင်းအတွက် စာဖတ်ခြင်းထိန်းချုပ်မှုကို ထည့်ပါ။</string>
   <string name="announcing_text_formatting_middle">စမ်းကြည့်ရန် အသင့်ဖြစ်ပါက ဖော်မက်လုပ်ထားသော စာသားနမူနာကို ဖော်ပြထားပါသည်-</string>
   <string name="announcing_text_formatting_tail">ဖော်မက်လုပ်ထားသော စာသားကို ကြေညာပုံပြောင်းလိုပါက %1$s သို့ သွားနိုင်သည်။</string>
-  <string name="text_formatting_options_settings_path">SandFly ဆက်တင်များ &gt; အကျယ်ချဲ့ရှင်းပြခြင်း &gt; စာသားဖော်မက်လုပ်ခြင်းဆိုင်ရာ ရွေးစရာများ</string>
-  <string name="text_formatting_options_settings_path_tts">SandFly ဆက်တင်များ ထို့နောက် အကျယ်ချဲ့ရှင်းပြခြင်း ထို့နောက် စာသားဖော်မက်လုပ်ခြင်းဆိုင်ရာ ရွေးစရာများ</string>
+  <string name="text_formatting_options_settings_path">SandFly ဆက်တင်များ &gt; အကျယ်ချဲ့ရှင်းပြရန် &gt; စာသားဖော်မက်လုပ်ခြင်းဆိုင်ရာ ရွေးစရာများ</string>
+  <string name="text_formatting_options_settings_path_tts">SandFly ဆက်တင်များ ထို့နောက် အကျယ်ချဲ့ရှင်းပြရန် ထို့နောက် စာသားဖော်မက်လုပ်ခြင်းဆိုင်ရာ ရွေးစရာများ</string>
   <string name="announcing_text_formatiing_sample">ဤစာသားသည် &lt;b&gt;စာလုံးထူ&lt;/b&gt; ဖြင့် ဖြစ်သည်။ ယုံကြည်မှုရှိသော ဟစ်ကြွေးသံ
 &lt;br&gt;၎င်းကို &lt;u&gt;မျဉ်းသားထား&lt;/u&gt; သောအခါ တီးတိုးသံ ဖြစ်ကောင်းဖြစ်နိုင်သည်။&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;နှင်းဆီပန်းများသည် အနီရောင်ဖြစ်သည်&lt;/span&gt; မူရင်း၊ အမှန်ဖြစ်သည်။
@@ -897,8 +897,8 @@
 &lt;br&gt;
 &lt;br&gt;အရောင်များ အပြောက်အကွက်ခြယ်နိုင်သည်။ စိုလွင်သော ပြကွက်
 &lt;br&gt;&lt;font color=\"#db372d\"&gt;အနီရဲရဲ&lt;/font&gt; မှ &lt;font color=\"#128937\"&gt;အစိမ်းစိုစို&lt;/font&gt; သို့။</string>
-  <string name="update_welcome_talkback_16.2">ဤ SandFly အပ်ဒိတ်တွင် SandFly ပိုမိုလွယ်ကူစွာ အသုံးပြုနိုင်စေရန် အခြားမွမ်းမံမှုများနှင့်အတူ ပကတိကီးဘုတ်များအတွက် “အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံ” အသစ်၊ စာသားဖော်မက်လုပ်ခြင်း ကြေညာချက်များကို ပံ့ပိုးမှုနှင့် ပြန်လည်ဒီဇိုင်းဆွဲထားသောဆက်တင်များ အပြင်အဆင်တို့ကို မိတ်ဆက်ထားသည်။\n\nဤအပြောင်းအလဲများအကြောင်းကို လာမည့်စခရင်အချို့တွင် ပိုမိုလေ့လာနိုင်မည်။\n\nဤအချက်အလက်ကို နောင်တွင် SandFly ဆက်တင်များ &gt; SandFly ရှိ တူးလ်အသစ်များ၌ ကြည့်နိုင်သည်။</string>
-  <string name="update_welcome_talkback_16.2_tts">ဤ SandFly အပ်ဒိတ်တွင် SandFly ကို ပိုမိုလွယ်ကူစွာ အသုံးပြုနိုင်စေရန် အခြားမွမ်းမံမှုများနှင့်အတူ ပကတိကီးဘုတ်များအတွက် “အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံ” အသစ်၊ စာသားဖော်မက်လုပ်ခြင်း ကြေညာချက်များကို ပံ့ပိုးမှုနှင့် ပြန်လည်ဒီဇိုင်းဆွဲထားသောဆက်တင်များ အပြင်အဆင်တို့ကို မိတ်ဆက်ထားသည်။\n\nဤအပြောင်းအလဲများအကြောင်းကို လာမည့်စခရင်အချို့တွင် ပိုမိုလေ့လာနိုင်မည်။\n\nဤအချက်အလက်ကို နောင်တွင် SandFly ဆက်တင်များ ထို့နောက် SandFly ရှိ တူးလ်အသစ်များ၌ ကြည့်နိုင်သည်။</string>
+  <string name="update_welcome_talkback_16.2">ဤ SandFly အပ်ဒိတ်တွင် SandFly ပိုမိုလွယ်ကူစွာ အသုံးပြုနိုင်စေရန် အခြားမွမ်းမံမှုများနှင့်အတူ ပကတိကီးဘုတ်များအတွက် “အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံ” အသစ်၊ စာသားဖော်မက်လုပ်ခြင်း ကြေညာချက်များကို ပံ့ပိုးမှုနှင့် ပြန်လည်ဒီဇိုင်းဆွဲထားသောဆက်တင်များ အပြင်အဆင်တို့ကို မိတ်ဆက်ထားသည်။\n\nဤအပြောင်းအလဲများအကြောင်းကို လာမည့်စခရင်အချို့တွင် ပိုမိုလေ့လာနိုင်မည်။\n\nဤအချက်အလက်ကို နောင်တွင် SandFly ဆက်တင်များ &gt; SandFly ရှိ ဝန်ဆောင်မှုအသစ်များ၌ ကြည့်နိုင်သည်။</string>
+  <string name="update_welcome_talkback_16.2_tts">ဤ SandFly အပ်ဒိတ်တွင် SandFly ကို ပိုမိုလွယ်ကူစွာ အသုံးပြုနိုင်စေရန် အခြားမွမ်းမံမှုများနှင့်အတူ ပကတိကီးဘုတ်များအတွက် “အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံ” အသစ်၊ စာသားဖော်မက်လုပ်ခြင်း ကြေညာချက်များကို ပံ့ပိုးမှုနှင့် ပြန်လည်ဒီဇိုင်းဆွဲထားသောဆက်တင်များ အပြင်အဆင်တို့ကို မိတ်ဆက်ထားသည်။\n\nဤအပြောင်းအလဲများအကြောင်းကို လာမည့်စခရင်အချို့တွင် ပိုမိုလေ့လာနိုင်မည်။\n\nဤအချက်အလက်ကို နောင်တွင် SandFly ဆက်တင်များ ထို့နောက် SandFly ရှိ ဝန်ဆောင်မှုအသစ်များ၌ ကြည့်နိုင်သည်။</string>
   <string name="new_settings_layout_title">ဆက်တင်များ အပြင်အဆင်အသစ်</string>
   <string name="new_settings_layout_text">တူးလ်များကို ပိုမိုလွယ်ကူစွာ ရှာဖွေနိုင်ရန် ဆက်တင်အုပ်စုများကို အပ်ဒိတ်လုပ်ထားသည်။ ကီးဘုတ်ဆက်တင်များကဲ့သို့သော ဆက်တင်အမျိုးအစားအသစ်များကိုလည်း ရနိုင်သည်။</string>
   <string name="split_tap_everywhere_title">နေရာတိုင်းတွင် ဖိရွေးပြီး စာရိုက်ခြင်း</string>
@@ -910,19 +910,15 @@
   <string name="braille_display_settings_link">မျက်မမြင်စာဖတ်ကိရိယာ ဆက်တင်များ</string>
   <string name="keyboard_smart_browse_mode_title">ကီးဘုတ်- အဆင့်မြင့်ဘရောက်စ်မုဒ်</string>
   <string name="keyboard_smart_browse_mode_text">ဝဘ်ကို ဘရောက်စ်လုပ်သည့်အခါ ပကတိကီးဘုတ်ဖြင့် စာရိုက်နိုင်ရန် SandFly အဆင့်မြင့်ဘရောက်စ်မုဒ်က တည်းဖြတ်အကွက်တွင် ဘရောက်စ်မုဒ်ကို ပိတ်ပေးသည်။ ထို့နောက် ဝဘ်ပေါ်ရှိ တည်းဖြတ်၍မရသော အကွက်သို့ သင်ရောက်သွားသောအခါ ၎င်းကို ပြန်ဖွင့်ပေးသဖြင့် ဘရောက်စ်လုပ်ခြင်းကို ထိရောက်စွာ ဆက်လုပ်နိုင်သည်။ “အဆင့်မြင့်ဘရောက်စ်မုဒ်” ကို <xliff:g id="settings_path">%1$s</xliff:g> တွင် ဖွင့်နိုင်၊ ပိတ်နိုင်သည်။</string>
-  <string name="advanced_settings_link">SandFly ဆက်တင်များ &gt; အဆင့်မြင့် ဆက်တင်များ</string>
-  <string name="advanced_settings_link_tts">SandFly ဆက်တင်များ ထို့နောက် အဆင့်မြင့်ဆက်တင်များ</string>
   <string name="keyboard_tutorial_title">ကီးဘုတ် အသုံးပြုနည်း</string>
   <string name="keyboard_tutorial_text">SandFly တွင် ပကတိကီးဘုတ်သုံးသည့်အခါ ‘အရည်အသွေးမြှင့်တင်ထားသော ကီးမြေပုံ’ အတွက် လက်ကွက်ဖြတ်လမ်းနှင့် ကွန်မန်းများကို လေ့လာနိုင်ရန် ပြုလုပ်ထားသော ‘ကီးဘုတ် အသုံးပြုနည်း’ ပါဝင်လာပါပြီ။ အသုံးပြုနည်းကို ဝင်ကြည့်ရန် အောက်ပါသို့သွားပါ- <xliff:g id="settings_path">%1$s</xliff:g>။</string>
-  <string name="tutorial_link">SandFly ဆက်တင်များ &gt; SandFly အသုံးပြုနည်း</string>
-  <string name="tutorial_link_tts">SandFly ဆက်တင်များ ထို့နောက် SandFly အသုံးပြုနည်း</string>
   <string name="tutorial_entry_point_title">ရှင်းလင်းပို့ချချက်</string>
   <string name="welcome_to_talkback_title">SandFly က ကြိုဆိုပါသည်</string>
   <string name="talkback_is_on">SandFly ဖွင့်ထားသည်</string>
   <string name="talkback_turn_off_description">SandFly သည် သင့်ဖန်သားပြင်ပေါ်ရှိ အကြောင်းအရာကို အသံထွက်ဖတ်ပြီး သင့်စက်တွင် လမ်းညွှန်မှု အလုပ်လုပ်ပုံကို ပြောင်းလဲပေးသည်။ ၎င်းကို ပိတ်ရန်အတွက် “SandFly ပိတ်ရန်” ကို ၂ ချက်တို့ပါ။</string>
   <string name="turn_off_talkback">SandFly ပိတ်ပါ</string>
   <string name="tap_again_to_turn_off">ပိတ်ရန် ထပ်တို့ပါ</string>
-  <string name="talkback_turn_off_description_pointer_and_touch">SandFly သည် သင့်ဖန်သားပြင်ပေါ်ရှိ အကြောင်းအရာကို အသံထွက်ဖတ်ပြီး သင့်စက်တွင် လမ်းညွှန်မှု အလုပ်လုပ်ပုံကို ပြောင်းလဲပေးသည်။ ၎င်းကိုပိတ်ရန် “Talkback ပိတ်ရန်” ကို ရွေးပါ (သို့) ၂ ကြိမ်တို့ပါ။</string>
+  <string name="talkback_turn_off_description_pointer_and_touch">SandFly သည် သင့်ဖန်သားပြင်ပေါ်ရှိ အကြောင်းအရာကို အသံထွက်ဖတ်ပြီး သင့်စက်တွင် လမ်းညွှန်မှု အလုပ်လုပ်ပုံကို ပြောင်းလဲပေးသည်။ ၎င်းကိုပိတ်ရန် “SandFly ပိတ်ရန်” ကို ရွေးပါ (သို့) ၂ ကြိမ်တို့ပါ။</string>
   <string name="welcome_to_talkback_text">SandFly က တုံ့ပြန်မှုများ ပြောပေးသဖြင့် ဖန်သားပြင်ကိုမကြည့်ဘဲ သင့်စက်ကို သုံးနိုင်သည်။ SandFly သည် ဖန်သားပြင်ကိုကြည့်ရန် အခက်အခဲရှိသော လူများအတွက် အကူအညီဖြစ်စေသည်။ \n\nအသံထိန်းခလုတ်များသုံးပြီး SandFly ကို အမြန်ဖွင့်/ပိတ်လိုပါက ဖြတ်လမ်းလင့်ခ်တစ်ခုကို SandFly ဆက်တင်များ &gt; SandFly ဖြတ်လမ်းလင့်ခ်တွင် သတ်မှတ်နိုင်သည်။\n\nSandFly ဖွင့်ထားသည့်အခါ ဖန်သားပြင်ရှိ အထူးပြသထားသော အကြောင်းအရာကို အသံထွက်ဖတ်ပြသည်။\n\nညာဘက်သို့ ပွတ်ဆွဲပါက နောက်အကြောင်းအရာသို့ သွားပြီး ဘယ်ဘက်သို့ ပွတ်ဆွဲပါက ယခင်အကြောင်းအရာသို့ သွားပါမည်။\n\nရှေ့သို့ခလုတ်ကိုရှာရန် ညာဘက်သို့ ယခုပွတ်ဆွဲပါ။</string>
   <string name="welcome_to_talkback_text_tts">SandFly က တုံ့ပြန်မှုများပြောပေးသဖြင့် ဖန်သားပြင်မကြည့်ဘဲ သင့်စက်ကို သုံးနိုင်သည်။ SandFly သည် ဖန်သားပြင်ကိုကြည့်ရန် အခက်အခဲရှိသော လူများအတွက် အကူအညီဖြစ်စေသည်။ \n\nအသံထိန်းခလုတ်များသုံးပြီး SandFly ကို အမြန်ဖွင့်/ပိတ်လိုပါက SandFly ဆက်တင်များမှတစ်ဆင့် SandFly ဖြတ်လမ်းလင့်ခ်တွင် ဖြတ်လမ်းလင့်ခ် သတ်မှတ်နိုင်သည်။\n\nSandFly ဖွင့်ထားသည့်အခါ ဖန်သားပြင်ရှိ အထူးပြသထားသော အကြောင်းအရာကို အသံထွက်ဖတ်ပြသည်။\n\nညာဘက်သို့ ပွတ်ဆွဲပါက နောက်အကြောင်းအရာသို့ သွားပြီး ဘယ်ဘက်သို့ ပွတ်ဆွဲပါက ယခင်အကြောင်းအရာသို့ သွားပါမည်။\n\nရှေ့သို့ခလုတ်ကိုရှာရန် ညာဘက်သို့ ယခုပွတ်ဆွဲပါ။</string>
   <string name="welcome_to_talkback_page_idle_announcement">ရှေ့သို့ခလုတ်ကို ရှာရန် ညာဘက်သို့ ယခုပွတ်ဆွဲပါ</string>
@@ -948,8 +944,8 @@
   <string name="menus_title">မီနူးနှင့် သတ်မှတ်ချက်များသုံးရန်</string>
   <string name="menus_talkback_menu_text">SandFly မီနူးတွင် သင်မကြာခဏလိုအပ်နိုင်သည့် ဆက်တင်နှင့် ထိန်းချုပ်မှုများ ပါဝင်သည်။\n\nဖန်သားပြင်ကို လက်ချောင်း ၃ ချောင်းဖြင့် တို့၍ SandFly မီနူးကို ယခုဖွင့်ပါ။</string>
   <string name="menus_talkback_menu_text_pre_r">SandFly မီနူးတွင် သင်မကြာခဏလိုအပ်နိုင်သည့် ဆက်တင်နှင့် ထိန်းချုပ်မှုများ ပါဝင်သည်။\n\nအောက်သို့ ပွတ်ဆွဲပြီးနောက် ညာဘက်သို့ ပွတ်ဆွဲ၍ SandFly မီနူးကို ယခုဖွင့်ပါ။</string>
-  <string name="menus_selector_text">လမ်းညွှန်မှုကို အက္ခရာအရမှ စကားလုံးအရသို့ ပြောင်းခြင်း သို့မဟုတ် SandFly ၏ ပြောနှုန်းကို ပြောင်းခြင်းကဲ့သို့ ဆက်တင်များကို အမြန်ပြောင်းနိုင်ရန် ဤဖြတ်လမ်းလင့်ခ်များက ကူညီပေးနိုင်သည်။\n\nလက်ချောင်း ၃ ချောင်းဖြင့် ဘယ်ဘက် သို့မဟုတ် ညာဘက်သို့ ပွတ်ဆွဲ၍ စာဖတ်ခြင်း ထိန်းချုပ်မှုများကို အမြန်ပြောင်းနိုင်သည်။\n\nSandFly ဆက်တင်များတွင် SandFly မီနူးနှင့် စာဖတ်ခြင်းဆိုင်ရာ ထိန်းချုပ်မှုများကို နောက်မှ စိတ်ကြိုက်လုပ်နိုင်သည်။</string>
-  <string name="menus_selector_text_pre_r">လမ်းညွှန်မှုကို အက္ခရာအရမှ စကားလုံးအရသို့ ပြောင်းခြင်း သို့မဟုတ် SandFly ၏ ပြောနှုန်းကို ပြောင်းခြင်းကဲ့သို့ ဆက်တင်များကို အမြန်ပြောင်းနိုင်ရန် ဤဖြတ်လမ်းလင့်ခ်များက ကူညီပေးနိုင်သည်။\n\nအောက်သို့ ပွတ်ဆွဲပြီးနောက် အပေါ်သို့ ပြန်ပွတ်ဆွဲ၍ စာဖတ်ခြင်း ထိန်းချုပ်မှုများကို အမြန်ပြောင်းနိုင်သည်။\n\nSandFly ဆက်တင်များတွင် SandFly မီနူးနှင့် စာဖတ်ခြင်းဆိုင်ရာ ထိန်းချုပ်မှုများကို နောက်မှ စိတ်ကြိုက်လုပ်နိုင်သည်။</string>
+  <string name="menus_selector_text">လမ်းညွှန်မှုကို အက္ခရာအရမှ စကားလုံးအရသို့ ပြောင်းခြင်း သို့မဟုတ် SandFly ၏ ပြောနှုန်းကို ပြောင်းခြင်းကဲ့သို့ ဆက်တင်များကို အမြန်ပြောင်းနိုင်ရန် ဤဖြတ်လမ်းလင့်ခ်များက ကူညီပေးနိုင်သည်။\n\nလက်ချောင်း ၃ ချောင်းဖြင့် ဘယ်ဘက် သို့မဟုတ် ညာဘက်သို့ ပွတ်ဆွဲ၍ စာဖတ်ခြင်းထိန်းချုပ်မှုများကို အမြန်ပြောင်းနိုင်သည်။\n\nSandFly ဆက်တင်များတွင် SandFly မီနူးနှင့် စာဖတ်ခြင်းထိန်းချုပ်မှုများကို နောက်မှ စိတ်ကြိုက်လုပ်နိုင်သည်။</string>
+  <string name="menus_selector_text_pre_r">လမ်းညွှန်မှုကို အက္ခရာအရမှ စကားလုံးအရသို့ ပြောင်းခြင်း သို့မဟုတ် SandFly ၏ ပြောနှုန်းကို ပြောင်းခြင်းကဲ့သို့ ဆက်တင်များကို အမြန်ပြောင်းနိုင်ရန် ဤဖြတ်လမ်းလင့်ခ်များက ကူညီပေးနိုင်သည်။\n\nအောက်သို့ ပွတ်ဆွဲပြီးနောက် အပေါ်သို့ ပြန်ပွတ်ဆွဲ၍ စာဖတ်ခြင်းထိန်းချုပ်မှုများကို အမြန်ပြောင်းနိုင်သည်။\n\nSandFly ဆက်တင်များတွင် SandFly မီနူးနှင့် စာဖတ်ခြင်းထိန်းချုပ်မှုများကို နောက်မှ စိတ်ကြိုက်လုပ်နိုင်သည်။</string>
   <string name="all_set_title">အားလုံး အဆင်သင့်ပါ။</string>
   <string name="all_set_text">SandFly ကို အသုံးပြုရန် အဆင်သင့်ဖြစ်ပါပြီ။\n\nယခု အခြားခေါင်းစဉ်များအကြောင်း ဆက်လက်လေ့လာပါ သို့မဟုတ် ဤအချက်အလက်ကို SandFly ဆက်တင်များတွင် အချိန်မရွေး ပြန်ကြည့်ပါ။</string>
   <string name="talkback_tutorial_text">အကြောင်းအရာရွေးရန် ညာဘက်သို့ ပွတ်ဆွဲပါ။ အကောင်းဆုံးအသုံးပြုနိုင်ရန် မစတင်မီ SandFly ကို ဖွင့်ပါ။</string>
@@ -1039,9 +1035,9 @@
   <string name="container_item_exit_subtext_pre_r">ဤကွန်တိန်နာမှ ထွက်ရန် အောက်သို့ ပွတ်ဆွဲပါ</string>
   <string name="voice_commands_title">အသံကွန်မန်းများ</string>
   <string name="voice_commands_text">SandFly ကို အမြန်ထိန်းချုပ်ရန် သင့်အသံကို အသုံးပြုနိုင်သည်။\n\nဥပမာအားဖြင့် လမ်းညွှန်မှုကို ပြောင်းခြင်း၊ နောက်ခေါင်းစီးသို့ ကူးပြောင်းခြင်း၊ စာသားကို မိတ္တူကူးခြင်း စသည်တို့ကိုလုပ်ရန် အသံကွန်မန်းတစ်ခုကို ပြောပါ။\n\nယခုပဲ စမ်းကြည့်ရန် ညာဘက်သို့ ပွတ်ဆွဲပြီးနောက် အပေါ်သို့ ပွတ်ဆွဲပါ။</string>
-  <string name="using_screen_search_title">မြင်လွှာတွင်ရှာဖွေခြင်း သုံးပါ</string>
+  <string name="using_screen_search_title">စခရင်တွင်ရှာဖွေခြင်း သုံးပါ</string>
   <string name="using_screen_search_text">မျက်နှာပြင်ရှာဖွေမှု ဝန်ဆောင်မှုဖြင့် မျက်နှာပြင်ပေါ်ရှိ သတ်မှတ်ထားသော အကြောင်းအရာကို ရှာနိုင်သည်။\n\nစမ်းကြည့်ရန် လက် ၃ ချောင်းဖြင့် တို့၍ SandFly မီနူးကို ဖွင့်ပြီး မီနူးတွင် “မျက်နှာပြင်ရှာဖွေမှု” ကို ရှာပါ။ မျက်နှာပြင်ပေါ်တွင် ထိုစာသားပါသော အရာများကို ရှာရန် “နောက်တစ်ခု” ကဲ့သို့ သော့ချက်စာလုံးကို ရိုက်ထည့်ပါ။\n\n“နောက်တစ်ခု” ခလုတ်ကို ရှာရန် ယခု “နောက်တစ်ခု” ကို ရှာကြည့်ပါ။</string>
-  <string name="screen_search_navigation_title">မြင်လွှာတွင်ရှာဖွေခြင်းဖြင့် ရွှေ့ကြည့်ခြင်း</string>
+  <string name="screen_search_navigation_title">စခရင်တွင်ရှာဖွေခြင်းဖြင့် ရွှေ့ကြည့်ခြင်း</string>
   <string name="screen_search_navigation_text">ရှာဖွေမှုတစ်ခုကို ရွေးပြီးနောက် စခရင်တွင်ရှာဖွေခြင်းမှ ရှာဖွေမှုရလဒ်အမျိုးမျိုးကြား အမြန်ရွှေ့နိုင်သည်။\n\nထိုသို့လုပ်ဆောင်ရန် လက် ၃ ချောင်းဖြင့် ဘယ် (သို့) ညာသို့ ပွတ်ဆွဲ၍ စာဖတ်ခြင်းထိန်းချုပ်မှုများကို သုံးပြီး စခရင်တွင်ရှာဖွေခြင်း ဟုခေါ်သော အရာကို ရှာနိုင်သည်။\n\n၎င်းကို ယခုစမ်းကြည့်ရအောင်။ အောက်တွင် ခလုတ် ၃ ခုစာရင်းကို ဖော်ပြထားပြီး ၎င်းတို့အားလုံးတွင် “လုပ်ဆောင်ချက်” စာသား ပါဝင်နေသည်။ စခရင်တွင်ရှာဖွေခြင်းသုံး၍ “လုပ်ဆောင်ချက်” ကိုရှာပါ။ ထို့နောက် ၎င်းတို့ကြားရွှေ့ရန် စခရင်တွင်ရှာဖွေခြင်းဖြင့် ရွှေ့ကြည့်နိုင်သည်။</string>
   <string name="screen_search_action_button_1_text">လုပ်ဆောင်ချက် ၁</string>
   <string name="screen_search_action_button_2_text">လုပ်ဆောင်ချက် ၂</string>
@@ -1068,11 +1064,11 @@
   <string name="checking_notifications_text_tail_tts">အကြောင်းကြားချက်ဖွင့်ထားသော အက်ပ်များကို ဆက်တင်များရှိ အကြောင်းကြားချက်များတွင် ကြည့်နိုင်သည်။</string>
   <string name="checking_notifications_tips">အကြောင်းကြားချက်မှတ်တမ်း ကြည့်ရန် စခရင်၏ထိပ်ပိုင်းမှ အောက်သို့ လက် ၂ ချောင်းဖြင့် ပွတ်ဆွဲပါ</string>
   <string name="image_description_playground_title">ပုံရှင်းလင်းချက်များ ရယူကြည့်ပါ</string>
-  <string name="image_description_playground_content_one">ပုံတစ်ပုံကို အာရုံစိုက်ထားသည့်အခါ SandFlyမီနူးကိုဖွင့်ပြီး “ပုံဖော်ပြရန်” ကိုရွေးချယ်ပါ။\n\n အောက်တွင် ဓာတ်ပုံတစ်ပုံရှိသည်။ ၎င်းအတွက် ဖော်ပြချက်တစ်ခုကို ရယူကြည့်ပါ။</string>
-  <string name="image_description_playground_content_two">ပုံဖော်ပြချက် ဆက်တင်များကို SandFly ဆက်တင်များ &gt; အလိုအလျောက် ရှင်းလင်းချက်များ တွင် အချိန်မရွေး ပြောင်းနိုင်သည်။</string>
-  <string name="image_description_playground_content_two_tts">ပုံဖော်ပြချက် ဆက်တင်များကို SandFly ဆက်တင်များ၊ ထို့နောက် အလိုအလျောက် ရှင်းလင်းချက်များ တွင် အချိန်မရွေး ပြောင်းနိုင်သည်။</string>
+  <string name="image_description_playground_content_one">ပုံတစ်ပုံကို အာရုံစိုက်ထားသည့်အခါ SandFly မီနူးကိုဖွင့်ပြီး “ပုံကို ရှင်းပြရန်” ကိုရွေးချယ်ပါ။\n\n အောက်တွင် ဓာတ်ပုံတစ်ပုံရှိသည်။ ၎င်းအတွက် ဖော်ပြချက်တစ်ခုကို ရယူကြည့်ပါ။</string>
+  <string name="image_description_playground_content_two">ပုံဖော်ပြချက် ဆက်တင်များကို SandFly ဆက်တင်များ &gt; ပုံနှင့် စခရင် ရှင်းလင်းချက်များ တွင် အချိန်မရွေး ပြောင်းနိုင်သည်။</string>
+  <string name="image_description_playground_content_two_tts">ပုံဖော်ပြချက် ဆက်တင်များကို SandFly ဆက်တင်များ၊ ထို့နောက် ပုံနှင့် စခရင် ရှင်းလင်းချက်များ တွင် အချိန်မရွေး ပြောင်းနိုင်သည်။</string>
   <string name="image_description_sample_image_content_description">နမူနာ ပုံ။ SandFly မီနူးဖွင့်ရန် လက် ၃ ချောင်းဖြင့်တို့ပြီး ရှင်းလင်းချက်နားထောင်ရန်အတွက် “ပုံကို ရှင်းပြရန်” ကိုရွေးပါ။</string>
-  <string name="practice_gestures_title">လက်ဟန်များကို လေ့ကျင့်ပါ</string>
+  <string name="practice_gestures_title">လက်ဟန်များကို လေ့ကျင့်ရန်</string>
   <string name="practice_keyboard_gestures_title">လက်ကွက်ဖြတ်လမ်းများ လေ့ကျင့်ခြင်း</string>
   <string name="pref_gesture_set_key_title">လက်ဟန်အုပ်စု</string>
   <string name="practice_gestures_text">ဤဖန်သားပြင်တွင် SandFly လက်ဟန်တစ်ခုခုက မည်သည်ကိုဖြစ်စေကြောင်း ကြားသိရန် ၎င်းလက်ဟန်ကို စမ်းကြည့်ပါ။\n\nဖန်သားပြင်ကို လက်ချောင်း ၂ ချောင်းဖြင့် တို့ပါ။ လက်ချောင်း ၂ ချောင်း၊ ၃ ချောင်း သို့မဟုတ် ၄ ချောင်းဖြင့် ဖန်သားပြင်ကို တစ်ကြိမ်ဖြစ်စေ၊ နှစ်ကြိမ်ဖြစ်စေ၊ သုံးကြိမ်ဖြစ်စေ တို့၍ ဆက်လက်လေ့ကျင့်ပါ။\n\nလက်ချောင်း ၂ ချောင်း၊ ၃ ချောင်း သို့မဟုတ် ၄ ချောင်းဖြင့်လည်း နှစ်ချက်တို့၍ ဖိထားနိုင်သည်။</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">ဇယားများတွင် ဇယားလမ်းညွှန်မှုသို့ ပြောင်းရန်</string>
   <string name="title_text_formatting_menu">စာသားဖော်မက်လုပ်ခြင်း ဖော်ပြရန်</string>
   <string name="summary_text_formatting_menu">စာလုံးထူ၊ စာလုံးစောင်း၊ မျဉ်းသားခြင်း စသည်တို့ကဲ့သို့သော ပြောင်းလဲမှုများအတွက်</string>
-  <string name="title_text_formatting_inline">စကားပြော စာသား ဖော်မက်လုပ်ခြင်း</string>
+  <string name="title_text_formatting_inline">စာသား ဖော်မတ်ကို ဖတ်ပါ</string>
   <string name="title_switch_text_formatting">စာသား ဖော်မတ်ကို ဖတ်ပါ</string>
   <string name="summary_text_formatting_verbosity">စာလုံးထူနှင့် စာလုံးစောင်းကဲ့သို့ ပြောင်းလဲမှုများအတွက်</string>
   <string name="summary_text_formatting_selector">စာလုံးထူနှင့် စာလုံးစောင်းတို့ကဲ့သို့ ဖော်မက်လုပ်ခြင်းများကို အသံထွက် ဖတ်မဖတ် ပြောင်းနိုင်သည်</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">နောက်ထပ်</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch အတွက် လက်ဟန်များကို သီးသန့်ထားရန်</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch က သုံးနိုင်ရန် SandFly သည် လက်နှစ်ချောင်းဖြင့် တစ်ချက်တို့ခြင်းနှင့် နှစ်ချက်တို့ခြင်းကို ကိုင်တွယ်ခြင်း မပြုတော့ပါ။ သင့်နာရီ၏ အများသုံးစွဲနိုင်မှု ဆက်တင်များတွင် Vibration Watch ကို ဖွင့်ပါ။</string>
-    <string name="shortcut_reserved_for_vibration_watch">အဆင့်မြင့်ဆက်တင်များတွင် Vibration Watchအတွက် သီးသန့်ထားသည်</string>
     <string name="title_pref_speakerphone_away_from_ear">နားနှင့်ဝေးသောအခါတွင် စပီကာ</string>
     <string name="summary_pref_speakerphone_away_from_ear">ဖုန်းခေါ်ဆိုနေစဉ် ဖုန်းကို နားမှ ခွာလိုက်သည့်အခါ စပီကာသို့ ပြောင်းပြီး နားနားသို့ ပြန်ကပ်သည့်အခါ နားကြားစပီကာသို့ ပြန်ပြောင်းသည်။</string>
     <string name="summary_pref_speakerphone_needs_permission">Android က ဖန်သားပြင်ဖတ်စနစ်များကို မပေးသော ခွင့်ပြုချက် လိုအပ်သည်။ ခွင့်ပြုရန် adb သို့မဟုတ် Shizuku ဖြင့် ဤ command ကို လုပ်ဆောင်ပြီး ဤဖန်သားပြင်သို့ ပြန်လာပါ- %1$s</string>
@@ -1393,12 +1388,11 @@
     <string name="speech_control_apps_category">အက်ပ်များ</string>
     <string name="speech_control_no_apps">စကားပြောရန် ခွင့်တောင်းထားသော အက်ပ် မရှိသေးပါ။</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ကို SandFly မှတဆင့် ပြောခွင့်ပြုမလား။</string>
-    <string name="speech_control_ask_text">၎င်းသည် သင်၏ SandFly အသံဖြင့် စာသားကို ပြောနိုင်သည်။ ၎င်းကို အဆင့်မြင့်ဆက်တင်များတွင် သင်ပြောင်းနိုင်သည်။</string>
     <string name="speech_control_allow">ခွင့်ပြုပါ</string>
     <string name="speech_control_deny">ခွင့်မပြုပါ</string>
     <string name="permission_speak_label">SandFly မှတစ်ဆင့် ပြောဆိုခြင်း</string>
     <string name="permission_speak_description">အက်ပ်ကို သင်၏ SandFly အသံဖြင့် စာသား ပြောခွင့် တောင်းခွင့်ပေးသည်။ အက်ပ် မပြောမီ SandFly က သင့်ကို မေးသည်။</string>
-    <string name="permission_braille_display_label">SandFly အတွက် ဘရေးလ် ဖန်သားပြင်ဖြစ်ရန် တောင်းဆိုခြင်း</string>
+    <string name="permission_braille_display_label">SandFly အတွက် မျက်မမြင်စာဖတ်ကိရိယာဖြစ်ရန် တောင်းဆိုခြင်း</string>
     <string name="permission_braille_display_description">အက်ပ်ကို SandFly အတွက် မျက်မမြင်စာဖတ်ကိရိယာ ဖြစ်ခွင့် တောင်းခွင့်ပေးသည်။ SandFly တွင် ခွင့်ပြုလျှင် ၎င်းသည် မျက်နှာပြင်ပေါ်ရှိ အရာအားလုံးကို ဖတ်နိုင်ပြီး သင့်စက်ကို ထိန်းချုပ်နိုင်သည်။ SandFly က သင့်ကို အရင်မေးသည်။</string>
     <string name="title_pref_phonetic_letters_mode">စာလုံးများကို အသံထွက်ဥပမာဖြင့် ဖတ်ပါ</string>
     <string name="phonetic_letters_mode_off">ပိတ်</string>
@@ -1427,10 +1421,10 @@
     <string name="pref_table_speak_row_column_numbers_summary">ဇယားဆဲလ်များ၏ အတန်းနှင့် ကော်လံနံပါတ်များကို ပြောသည်</string>
     <string name="title_pref_speak_volume_changes">အသံအတိုးအကျယ် အပြောင်းအလဲများကို ပြောပါ</string>
     <string name="summary_pref_speak_volume_changes">အသံအတိုးအကျယ်ခလုတ်များ နှိပ်ပြီးနောက် အသံအတိုးအကျယ်အသစ်ကို ပြောသည်</string>
-    <string name="title_pref_speak_notifications">အသိပေးချက်များကိုပြောပါ</string>
+    <string name="title_pref_speak_notifications">အကြောင်းကြားချက်များကိုပြောပါ</string>
     <string name="summary_pref_speak_notifications">အကြောင်းကြားချက်အသစ်များ ရောက်လာသည့်အခါ အသံထွက်ဖတ်သည်။ အဝင်ခေါ်ဆိုမှုများကို အမြဲဖတ်သည်။</string>
     <string name="title_pref_notification_list">SandFly ၏ အကြောင်းကြားချက်စာရင်းကို သုံးရန်</string>
-    <string name="title_pref_notification_parts">အသိပေးချက်အသေးစိတ်</string>
+    <string name="title_pref_notification_parts">အကြောင်းကြားချက်အသေးစိတ်</string>
     <string name="title_pref_play_installer">Google Play မှ ထည့်သွင်းထားသကဲ့သို့ ပြရန်</string>
     <string name="summary_pref_play_installer">SandFly ကို Google Play မှ ထည့်သွင်းထားကြောင်း အခြားအက်ပ်များကို ပြောသည်။ ဘဏ်အက်ပ်အချို့ကဲ့သို့ အက်ပ်အချို့သည် အခြားနေရာမှ ထည့်သွင်းထားသော အများသုံးစွဲနိုင်မှု ဝန်ဆောင်မှုများကို ပိတ်သည်။ Shizuku လိုအပ်ပြီး SandFly ဘယ်ကလာသည်ကို အက်ပ်များအား ပြောသည့် အချက်ကိုသာ ပြောင်းသည်။</string>
     <string name="summary_pref_play_installer_pending">ဖွင့်ထားသော်လည်း Google Play ကို ထည့်သွင်းသူအဖြစ် မမှတ်တမ်းတင်ရသေးပါ။ SandFly Shizuku ရရှိသောအခါ ၎င်းကို သတ်မှတ်ပေးသည်။</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">ဖယ်ရှားပါ</string>
     <string name="quick_settings_added">%1$s ထပ်ဖြည့်ထားသည်</string>
     <string name="quick_settings_removed">%1$s ဖယ်ရှားခဲ့သည်</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ဖွင့်ထားသည်။ ပိတ်ရန် မျက်နှာပြင်ပေါ်တွင် လက် ၂ ချောင်းကို ၅ စက္ကန့် ဖိထားပါ။ ဤမက်ဆေ့ချ်ကို မပြစေလိုလျှင် SandFly ဆက်တင်များ &gt; အဆင့်မြင့် ဆက်တင်များ &gt; SandFly ပိတ်ခြင်းအတွက် ညွှန်ကြားချက်များ ပြပါ ကို ပိတ်ပါ။</string>
     <string name="edge_gestures_title">အနားများ</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">ဘရောင်ဇာမုဒ်ကို ဖွင့်ရန် သို့မဟုတ် ပိတ်ရန် အခြားဖြတ်လမ်း</string>
     <string name="title_pref_vibration_strength">တုန်ခါမှုအင်အား</string>
@@ -1572,7 +1565,7 @@
     <string name="reading_control_letter_none">မရှိ</string>
     <string name="handwriting_prompt">အက္ခရာတစ်လုံး ရေးပါ</string>
     <string name="handwriting_closed">လက်ရေးကို ပိတ်လိုက်သည်</string>
-    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> ဖြင့် စတင်သော စာဖတ်ခြင်း ထိန်းချုပ်မှု မရှိပါ</string>
+    <string name="handwriting_no_match"><xliff:g id="letter" example="Q">%1$s</xliff:g> ဖြင့် စတင်သော စာဖတ်ခြင်းထိန်းချုပ်မှု မရှိပါ</string>
     <string name="shortcut_write_app_name">အက်ပ်ဖွင့်ရန် ၎င်း၏အမည်ကို ရေးပါ</string>
     <string name="handwriting_app_prompt">အက်ပ်အမည်ကို ရေးပါ</string>
     <string name="handwriting_no_app"><xliff:g id="letters" example="WHA">%1$s</xliff:g> ဖြင့် စတင်သော အက်ပ် မရှိပါ</string>
@@ -1708,14 +1701,14 @@
     <string name="wrap_around_on">အစသို့ ပြန်ပတ်ပါ: ဖွင့်</string>
     <string name="wrap_around_off">အစသို့ ပြန်ပတ်ပါ: ပိတ်</string>
     <string name="title_selector_tablet_held_up_faces_away">မြှောက်ကိုင်ထားသော တက်ဘလက်၏ ဖန်သားပြင် အပြင်ဘက်သို့</string>
-    <string name="summary_support_tablet_held_up_faces_away">တက်ဘလက် သို့မဟုတ် ဖြန့်ထားသောဖုန်းရှိ ဘရေးလ် ကီးဘုတ်အတွက်</string>
+    <string name="summary_support_tablet_held_up_faces_away">တက်ဘလက် သို့မဟုတ် ဖြန့်ထားသောဖုန်းရှိ မျက်မမြင်စာရေးစနစ် လက်ကွက်အတွက်</string>
     <string name="tablet_held_up_faces_away_on">မြှောက်ကိုင်ထားသော တက်ဘလက်၏ ဖန်သားပြင် အပြင်ဘက်သို့: ဖွင့်</string>
     <string name="tablet_held_up_faces_away_off">မြှောက်ကိုင်ထားသော တက်ဘလက်၏ ဖန်သားပြင် အပြင်ဘက်သို့: ပိတ်</string>
     <string name="title_keyboard_echo_on_screen">မျက်နှာပြင်ပေါ်ရှိ ကီးဘုတ် ပဲ့တင်သံ</string>
     <string name="title_keyboard_echo_physical">ရုပ်ပိုင်းဆိုင်ရာကီးဘုတ် ပဲ့တင်သံ</string>
     <string name="title_keyboard_echo_braille_keyboard">မျက်မမြင်စာရေးစနစ် လက်ကွက် ပဲ့တင်သံ</string>
     <string name="title_keyboard_echo_handwriting_keyboard">လက်ရေးကီးဘုတ် ပဲ့တင်သံ</string>
-    <string name="title_keyboard_echo_braille_display">မျက်မမြင်ပြသမှု ပဲ့တင်သံ</string>
+    <string name="title_keyboard_echo_braille_display">မျက်မမြင်စာဖတ်ကိရိယာ ပဲ့တင်သံ</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">စာရိုက်သည့်အခါ စကားပြောခြင်းကို ရပ်ရန်</string>
     <string name="pref_interrupt_typing_entry_always">အမြဲတမ်း</string>
@@ -1735,7 +1728,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ကို ချထားသည်။ <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly သည် အကြောင်းအရာ၏ အသေးစိတ်များကို ဤအစီအစဉ်အတိုင်း ပြောသည်။ ပြောင်းရန် အသေးစိတ်တစ်ခုကို ထိ၍ ဖိထားပြီး အပေါ် သို့မဟုတ် အောက်သို့ ဆွဲပါ။ SandFly ဖွင့်ထားလျှင် နှစ်ချက်တို့ပြီး ဖိထားကာ ဆွဲပါ။ အပေါ်ကိုရွှေ့ပါ နှင့် အောက်သို့ရွှေ့ပါ လုပ်ဆောင်ချက်များကိုလည်း သုံးနိုင်သည်။</string>
     <string name="title_pref_speak_items_before_scroll">မြင်ကွင်းထဲ မရွေ့မီ အရာများကို ပြောရန်</string>
-    <string name="gemini_error_api_key">Gemini က API ကီးကို လက်မခံပါ။ အလိုအလျောက်ဖော်ပြချက် ဆက်တင်များတွင် ကီးကို စစ်ဆေးပါ။</string>
+    <string name="gemini_error_api_key">Gemini က API သော့ကို လက်မခံပါ။ ‘ပုံနှင့် စခရင် ရှင်းလင်းချက်များ’ ဆက်တင်များတွင် သော့ကို စစ်ဆေးပါ။</string>
     <string name="gemini_error_quota">သင်၏ Gemini API သော့အတွက် အသုံးပြုမှုကန့်သတ်ချက် ပြည့်သွားပါပြီ။ နောက်မှ ထပ်စမ်းကြည့်ပါ။</string>
     <string name="gemini_error_busy">Gemini သည် ယခု အလုပ်များနေသည်။ ခဏနေမှ ထပ်စမ်းကြည့်ပါ။</string>
     <string name="gemini_error_timeout">Gemini ဖြေရန် အချိန်အလွန်ကြာသွားသည်။ ထပ်စမ်းကြည့်ပါ။</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper မော်ဒယ်များ</string>
     <string name="dictation_whisper_use">သုံးရန်</string>
     <string name="title_pref_dictation_ai_service">နှုတ်တိုက်ချရေးခြင်းအတွက် AI ဝန်ဆောင်မှု</string>
-    <string name="dictation_ai_same">အလိုအလျောက် ရှင်းလင်းချက်များနှင့် အတူတူ</string>
     <string name="title_pref_browse_mode_per_app">အက်ပ်တစ်ခုစီတွင် ကြည့်ရှုမုဒ်ကို မှတ်ထားရန်</string>
     <string name="title_pref_export_settings">ဆက်တင်များကို ထုတ်ယူပါ</string>
     <string name="title_pref_import_settings">ဆက်တင်များကို တင်သွင်းပါ</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">ယခင်တစ်ပုဒ်</string>
     <string name="sound_mode_needs_access">“အသံတိတ်” ကို ဖွင့်ရန် သို့မဟုတ် ပိတ်ရန် “မနှောင့်ယှက်ရ” ဝင်ခွင့်ကို ခွင့်ပြုပါ။</string>
     <string name="title_pref_dictation_auto_stop">အသံတိတ်ပြီးနောက် အလိုအလျောက် ရပ်ရန်</string>
+    <string name="dictation_ai_same">‘ပုံနှင့် စခရင် ရှင်းလင်းချက်များ’ နှင့် အတူတူ</string>
+    <string name="navigation_settings_link">SandFly ဆက်တင်များ > လမ်းညွှန်မှု</string>
+    <string name="navigation_settings_link_tts">SandFly ဆက်တင်များ ထို့နောက် လမ်းညွှန်မှု</string>
+    <string name="shortcut_reserved_for_vibration_watch">‘လက်ဟန်များ’ တွင် Vibration Watch အတွက် သီးသန့်ထားသည်</string>
+    <string name="speech_control_ask_text">၎င်းသည် သင်၏ SandFly အသံဖြင့် စာသားကို ပြောနိုင်သည်။ ၎င်းကို “ဆက်တင်များ” > “စကားပြော” > “အခြားအက်ပ်များကို စကားပြောခွင့်ပြုရန်” တွင် ပြောင်းနိုင်သည်။</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly ဖွင့်ထားသည်။ ပိတ်ရန်အတွက် စခရင်တွင် လက် ၂ ချောင်းဖြင့် ၅ စက္ကန့်ကြာ ဖိထားပါ။ ဤမက်ဆေ့ဂျ်ကို မပြတော့ရန်အတွက် SandFly ဆက်တင်များ &gt; ခဏရပ်ခြင်းနှင့် ပိတ်ခြင်း &gt; SandFly ပိတ်ခြင်းအတွက် ညွှန်ကြားချက်များ ပြပါ ကို ပိတ်ပါ။</string>
+    <string name="tutorial_link">SandFly ဆက်တင်များ > အကူအညီနှင့် အကြံပြုချက် > SandFly အသုံးပြုနည်း</string>
+    <string name="tutorial_link_tts">SandFly ဆက်တင်များ ထို့နောက် အကူအညီနှင့် အကြံပြုချက် ထို့နောက် SandFly အသုံးပြုနည်း</string>
 </resources>

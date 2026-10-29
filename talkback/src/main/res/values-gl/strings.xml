@@ -367,7 +367,7 @@
   <string name="shortcut_title_special_features">Outros</string>
   <string name="shortcut_unassigned">Tocar para asignar</string>
   <string name="shortcut_not_customizable">%1$s (non se pode personalizar)</string>
-  <string name="shortcut_disabled_due_to_vibration_watch">Non dispoñible cando está activada a vibración do teléfono</string>
+  <string name="shortcut_disabled_due_to_vibration_watch">Non dispoñible cando está activado Vibration Watch</string>
   <string name="shortcut_next">Seguinte elemento</string>
   <string name="shortcut_previous">Elemento anterior</string>
   <string name="shortcut_scroll_forward">Desprazarse cara adiante</string>
@@ -430,7 +430,7 @@
   <string name="speak_time_on">A opción de dicir a hora está activada</string>
   <string name="shortcut_disable_speak_time">Non dicir a hora</string>
   <string name="speak_time_off">A opción de dicir a hora está desactivada</string>
-  <string name="shortcut_practice_gestures">Prácticas cos xestos</string>
+  <string name="shortcut_practice_gestures">Practicar xestos</string>
   <string name="shortcut_report_gesture">Informar dun problema cos xestos</string>
   <string name="shortcut_toggle_braille_display">Activar ou desactivar liña braille</string>
   <string name="shortcut_announce_current_time_and_date">Ler en voz alta a data e a hora actuais</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">Toca para consultar como usar SandFly máis rápido cos novos xestos.</string>
   <string name="dump_node_tree_description">A árbore de nós engadiuse aos rexistros.</string>
   <string name="report_gesture_description">Aquí tes xestos que realizaches recentemente. Indica cal está mal e cal sería o correcto.</string>
-  <string name="update_welcome_talkback_16.1">Esta actualización de SandFly inclúe asistencia en máis idiomas para a opción de describir a pantalla e outras melloras na calidade que facilitan o uso.\n\nNas seguintes pantallas terás máis información sobre estes cambios.\n\nPodes consultala máis adiante na configuración de SandFly &gt; sección Funcións novas de SandFly.</string>
-  <string name="update_welcome_talkback_16.1_tts">Esta actualización de SandFly inclúe asistencia en máis idiomas para a opción de describir a pantalla e outras melloras na calidade que facilitan o uso da función.\n\nNas seguintes pantallas terás máis información sobre estes cambios.\n\nPodes consultala máis adiante na configuración de SandFly, na sección Funcións novas de SandFly.</string>
+  <string name="update_welcome_talkback_16.1">Esta actualización de SandFly inclúe asistencia en máis idiomas para Describir pantalla e outras melloras na calidade que facilitan o uso.\n\nNas seguintes pantallas terás máis información sobre estes cambios.\n\nPodes consultala máis adiante na configuración de SandFly &gt; sección Funcións novas de SandFly.</string>
+  <string name="update_welcome_talkback_16.1_tts">Esta actualización de SandFly inclúe asistencia en máis idiomas para Describir pantalla e outras melloras na calidade que facilitan o uso da función.\n\nNas seguintes pantallas terás máis información sobre estes cambios.\n\nPodes consultala máis adiante na configuración de SandFly, na sección Funcións novas de SandFly.</string>
   <string name="shortcut_for_dictation_title">Atallo da escritura por voz</string>
   <string name="shortcut_for_dictation_content">Agora, cando uses Gboard, poderás iniciar (ou deter) a función de escritura por voz tocando dúas veces a pantalla con dous dedos.
 &lt;br&gt;
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">Configuración da liña braille</string>
   <string name="keyboard_smart_browse_mode_title">Teclado: Modo de navegación intelixente</string>
   <string name="keyboard_smart_browse_mode_text">O modo de navegación intelixente de SandFly desactiva o modo de navegación nun campo de edición para axudarche a escribir cun teclado físico cando navegas pola Web. Despois, actívao de novo cando pasas a un campo que non é de edición na Web para que poidas seguir navegando de forma eficiente. Podes activar ou desactivar o modo de navegación intelixente en <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Configuración de SandFly &gt; Configuración avanzada</string>
-  <string name="advanced_settings_link_tts">Configuración de SandFly e, a continuación, Configuración avanzada</string>
   <string name="keyboard_tutorial_title">Titorial do teclado</string>
   <string name="keyboard_tutorial_text">Agora SandFly inclúe un titorial deseñado para axudarche a aprender os atallos de teclado e os comandos do mapa de teclas mellorado cando uses un teclado físico. Para acceder ao titorial, vai a <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">Configuración de SandFly &gt; Titorial de SandFly</string>
-  <string name="tutorial_link_tts">Configuración de SandFly e, a continuación, Titorial de SandFly</string>
   <string name="tutorial_entry_point_title">Titorial</string>
   <string name="welcome_to_talkback_title">Dámosche a benvida a SandFly</string>
   <string name="talkback_is_on">A función SandFly está activada</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">Cambiar á navegación por táboas nas táboas</string>
   <string name="title_text_formatting_menu">Describir formato do texto</string>
   <string name="summary_text_formatting_menu">Comunicaránseche os cambios de formato (grosa, cursiva, subliñado…)</string>
-  <string name="title_text_formatting_inline">Dicir o formato do texto</string>
+  <string name="title_text_formatting_inline">Ler formato do texto</string>
   <string name="title_switch_text_formatting">Ler formato do texto</string>
   <string name="summary_text_formatting_verbosity">Para cambios como grosa ou cursiva</string>
   <string name="summary_text_formatting_selector">Cambia se se le en voz alta o formato, como a grosa ou a cursiva</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">Máis</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Reservar xestos para Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly deixa de xestionar os toques únicos e dobres con dous dedos para que Samsung Vibration Watch poida usalos. Activa Vibration Watch na configuración de accesibilidade do reloxo.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch en Configuración avanzada</string>
     <string name="title_pref_speakerphone_away_from_ear">Altofalante ao afastar o teléfono da orella</string>
     <string name="summary_pref_speakerphone_away_from_ear">Durante unha chamada, cambia ao altofalante cando afastas o teléfono da orella e volve ao auricular cando o achegas de novo.</string>
     <string name="summary_pref_speakerphone_needs_permission">Necesita un permiso que Android non concede aos lectores de pantalla. Para concedelo, executa este comando con adb ou Shizuku e despois volve a esta pantalla: %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">Aplicacións</string>
     <string name="speech_control_no_apps">Aínda non hai aplicacións que solicitasen falar.</string>
     <string name="speech_control_ask_title">Queres permitir que <xliff:g id="app" example="Tasker">%1$s</xliff:g> fale a través de SandFly?</string>
-    <string name="speech_control_ask_text">Pode ler texto coa voz de SandFly. Podes cambiar isto en Configuración avanzada.</string>
     <string name="speech_control_allow">Permitir</string>
     <string name="speech_control_deny">Non permitir</string>
     <string name="permission_speak_label">falar a través de SandFly</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d notificación</item>
         <item quantity="other">%d notificacións</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly está activado. Para desactivalo, mantén 2 dedos na pantalla durante 5 segundos. Para non mostrar máis esta mensaxe, desactiva Configuración de SandFly &gt; Configuración avanzada &gt; Mostrar instrucións para desactivar SandFly.</string>
     <string name="edge_gestures_title">Bordos</string>
     <string name="title_pref_audio_output_device">Dispositivo de saída de audio</string>
     <string name="dialog_title_audio_output_device">Escolle onde reproducir o son de SandFly</string>
@@ -1523,7 +1516,7 @@
     <string name="summary_support_wrap_around">Activa ou desactiva o paso do último elemento ao primeiro</string>
     <string name="wrap_around_on">Navegación circular activada</string>
     <string name="wrap_around_off">Navegación circular desactivada</string>
-    <string name="title_selector_tablet_held_up_faces_away">Tableta levantada mirando cara a fóra</string>
+    <string name="title_selector_tablet_held_up_faces_away">Pantalla da tableta en posición vertical orientada en dirección contraria a ti</string>
     <string name="summary_support_tablet_held_up_faces_away">Para o teclado braille nunha tableta ou nun teléfono despregado</string>
     <string name="tablet_held_up_faces_away_on">Tableta levantada mirando cara a fóra activado</string>
     <string name="tablet_held_up_faces_away_off">Tableta levantada mirando cara a fóra desactivado</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Modelos de Whisper</string>
     <string name="dictation_whisper_use">Usar</string>
     <string name="title_pref_dictation_ai_service">Servizo de IA para o ditado</string>
-    <string name="dictation_ai_same">O mesmo que as descricións automáticas</string>
     <string name="title_pref_browse_mode_per_app">Lembra o modo de navegación en cada aplicación</string>
     <string name="title_pref_export_settings">Exportar a configuración</string>
     <string name="title_pref_import_settings">Importar configuración</string>
@@ -1794,4 +1786,12 @@
         <item>1 minuto</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Detención automática tras silencio</string>
+    <string name="dictation_ai_same">O mesmo que en Descricións de imaxes e pantalla</string>
+    <string name="navigation_settings_link">Configuración de SandFly &gt; Navegación</string>
+    <string name="navigation_settings_link_tts">Configuración de SandFly e, a continuación, Navegación</string>
+    <string name="shortcut_reserved_for_vibration_watch">Reservado para Vibration Watch en Xestos</string>
+    <string name="speech_control_ask_text">A aplicación pode dicir texto coa voz de SandFly. Podes cambialo en Configuración, Fala, Permitir que outras aplicacións falen.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly está activado. Para desactivalo, mantén dous dedos na pantalla durante 5 segundos. Para non mostrar máis esta mensaxe, desactiva Configuración de SandFly &gt; Pausa e desactivación &gt; Mostrar instrucións para desactivar SandFly.</string>
+    <string name="tutorial_link">Configuración de SandFly &gt; Axuda e comentarios &gt; Titorial de SandFly</string>
+    <string name="tutorial_link_tts">Configuración de SandFly e, a continuación, Axuda e comentarios e, a continuación, Titorial de SandFly</string>
 </resources>

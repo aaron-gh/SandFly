@@ -76,11 +76,11 @@
   <string name="pref_verbosity_title">ብዙ ቃላት</string>
   <string name="pref_punctuation_title">ሥርዓተ ነጥብን እና ምልክቶችን ተናገር</string>
   <string name="title_pref_category_manage_focus_indicator">የትኩረት አመልካች</string>
-  <string name="title_pref_category_manage_gestures">የጣት ሸርተቴዎች</string>
+  <string name="title_pref_category_manage_gestures">የእጅ ምልክቶች</string>
   <string name="title_pref_manage_labels">ብጁ መሰየሚያዎች</string>
   <string name="title_pref_category_context_menu">የSandFly ምናሌ</string>
   <string name="title_pref_category_selector_menu">የንባብ መቆጣጠሪያዎች</string>
-  <string name="title_pref_category_navigation_menu">የዳሰሳ አማራጮችን አርትዕ</string>
+  <string name="title_pref_category_navigation_menu">የአሰሳ አማራጮችን አርትዕ</string>
   <string name="title_pref_manage_keyboard_shortcuts">የቁልፍ ሰሌዳ አቋራጮች</string>
   <string name="title_pref_export_custom_labels">ብጁ መሰየሚያዎችን ወደ ውጭ ላክ</string>
   <string name="title_pref_help_and_feedback">እገዛ እና ግብረመልስ</string>
@@ -174,8 +174,8 @@
   <string name="keycombo_menu_global_speech_volume_increase">የንግግር ድምፅ መጠንን ይጨምሩ</string>
   <string name="keycombo_menu_global_speech_volume_decrease">የንግግር ድምፅ መጠንን ይቀንሱ</string>
   <string name="keycombo_menu_global_refocus_current_node">የተናገር የአሁን ትኩረት</string>
-  <string name="keycombo_menu_granularity_increase">ቀጣይ የዳሰሳ ቅንብር</string>
-  <string name="keycombo_menu_granularity_decrease">ቀዳሚው የዳሰሳ ቅንብር</string>
+  <string name="keycombo_menu_granularity_increase">ቀጣይ የአሰሳ ቅንብር</string>
+  <string name="keycombo_menu_granularity_decrease">ቀዳሚው የአሰሳ ቅንብር</string>
   <string name="keycombo_menu_category_other">ሌሎች እርምጃዎች</string>
   <string name="keycombo_menu_other_read_from_top">ከላይ ጀምሮ አንብብ</string>
   <string name="keycombo_menu_other_read_from_cursor_item">ትኩረት ከተሰጠው ንጥል ጀምረህ አንብብ</string>
@@ -294,7 +294,7 @@
   <string name="title_pref_latency_reduction">መዘግየትን ቀንስ</string>
   <string name="talkback_latency_reduction_summary">ማያ ገፁን ከነኩ በኋላ SandFly በፍጥነት ምላሽ እንዲሰጥ ያድርጉ</string>
   <string name="summary_pref_intonation">ቀጠን ባለ ድምፅ የተሰረዙ ፊደላትን ተናገር</string>
-  <string name="title_pref_brailledisplay">የብሬይል ማሳያ ምርጫዎች</string>
+  <string name="title_pref_brailledisplay">የብሬይል ማሳያ</string>
   <string name="title_pref_brailleime">የብሬይል ቁልፍ ሰሌዳ</string>
   <string name="summary_pref_brailleime_disabled">መሣሪያዎ የብሬይል ቁልፍ ሰሌዳን አይደግፍም</string>
   <string name="title_pref_speech_footer">ከማንኛውም ማያ ገፅ የተደራሽነት ድምፅ መጠንን ለመቀየር በማያ ገፁ ላይ 1 ጣት ይያዙ እና ድምፅ ጨምር ወይም ድምፅ ቀንስ ቁልፍ ይጫኑ።</string>
@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">ራስ-ሰር መግለጫዎች</string>
   <string name="title_pref_gemini_settings">የGemini ቅንብሮች</string>
   <string name="title_pref_gemini_enabled">የGemini የድምፅ ትዕዛዞች</string>
-  <string name="title_pref_category_automatic_description_summary">ከSandFly ምናሌ \«ምስልን ግለጽ» የሚለውን ሲመርጡ ዝርዝር የሰው ሠራሽ አስተውሎት ምስል መግለጫዎችን ያግኙ።\n\nnእንዲሁም በምስል ወይም አዶ ላይ ትኩረት ሲያደርጉ ራስ ሰር መግለጫዎችን ማግኘት ይችላሉ። ራስ ሰር መግለጫዎች ከበይነመረብ ግንኙነት ውጪ ይሠራሉ።</string>
+  <string name="title_pref_category_automatic_description_summary">ከSandFly ምናሌ \«ምስሉን ይግለጹት» የሚለውን ሲመርጡ ዝርዝር የሰው ሠራሽ አስተውሎት ምስል መግለጫዎችን ያግኙ።\n\nእንዲሁም በምስል ወይም አዶ ላይ ትኩረት ሲያደርጉ ራስ ሰር መግለጫዎችን ማግኘት ይችላሉ። ራስ ሰር መግለጫዎች ከበይነመረብ ግንኙነት ውጪ ይሠራሉ።</string>
   <string name="title_pref_icon_detection">ራስ-ሰር የአዶ መግለጫዎች</string>
   <string name="title_pref_image_description">ራስ-ሰር የምስል መግለጫዎች</string>
   <string name="title_pref_text_recognition">ራስ-ሰር መግለጫዎች ለጽሁፍ በምስሎች ውስጥ</string>
@@ -406,8 +406,8 @@
   <string name="talkback_menu_more_options_text">ውቅረትን ከጨረሱ ወይም መሣሪያዎን ከከፈቱ በኋላ ተጨማሪ የምናሌ አማራጮች ይገኛሉ</string>
   <string name="talkback_menu_title_content_description">የSandFly ምናሌ። በSandFly ምናሌ ውስጥ አማራጮችን ለመዳሰስ ወደ ቀኝ ያንሸራትቱ።\n\nወደ አጋዥ ሥልጠናው ለመመለስ፣ ማያ ገጽዎ ጠርዝ ወደ ግራ ወይም ወደ ቀኝ ለማንሸራተት 2 ጣቶችን ይጠቀሙ።</string>
   <string name="shortcut_show_language_options">የሚነገረውን ቋንቋ ይቀይሩ</string>
-  <string name="shortcut_select_next_setting">ቀጣይ የንባብ ቁጥጥር</string>
-  <string name="shortcut_select_previous_setting">ቀዳሚ የንባብ ቁጥጥር</string>
+  <string name="shortcut_select_next_setting">ቀጣይ የንባብ መቆጣጠሪያ</string>
+  <string name="shortcut_select_previous_setting">ቀዳሚ የንባብ መቆጣጠሪያ</string>
   <string name="shortcut_pass_through_next">በስርዓት ምልክቱ ይለፉ</string>
   <string name="shortcut_a11y_button">የተደራሽነት አቋራጭ</string>
   <string name="shortcut_a11y_button_long_press">የተደራሽነት አቋራጭን ይያዙ</string>
@@ -418,7 +418,7 @@
   <string name="label_search_result_table">ሠንጠረዥ</string>
   <string name="shortcut_media_control">ማህደረ መረጃን አጫውት ወይም ለአፍታ አቁም</string>
   <string name="shortcut_voice_input">የድምፅ ግቤትን አስጀምር ወይም አብቃ</string>
-  <string name="shortcut_media_control_or_voice_input">ሚዲያ አጫውት ወይም ባለበት አቁም፣ የድምፅ ግቤትን አስጀምር ወይም አብቃ</string>
+  <string name="shortcut_media_control_or_voice_input">ማህደረ መረጃን አጫውት ወይም ለአፍታ አቁም፣ የድምፅ ግቤትን አስጀምር ወይም አብቃ</string>
   <string name="shortcut_increase_volume">ድምፅ ጨምር</string>
   <string name="shortcut_decrease_volume">ድምፅ ቀንስ</string>
   <string name="shortcut_all_apps">ሁሉም መተግበሪያዎች</string>
@@ -485,7 +485,7 @@
   <string name="title_show_keyboard_shortcuts">የቁልፍ ሰሌዳ አቋራጮች</string>
   <string name="talkback_show_talkback_settings">የSandFly ቅንብሮች</string>
   <string name="title_show_braille_display_settings">የብሬይል ማሳያ ቅንብሮች</string>
-  <string name="title_granularity_default">ነባሪ ዳሰሳ</string>
+  <string name="title_granularity_default">ነባሪ አሰሳ</string>
   <string name="title_action_dismiss">አስወግድ</string>
   <string name="title_action_expand">ዘርጋ</string>
   <string name="title_action_collapse">ሰብስብ</string>
@@ -524,7 +524,7 @@
   <string name="summary_paragraphs">በአንድ ጊዜ አንድ አንቀጽ ያንብቡ</string>
   <string name="summary_windows">ወደ ሌሎች መስኮቶች ዘልለው ይሂዱ፣ ለምሳሌ የድምጽ መቆጣጠሪያ ወይም የአሰሳ አሞሌ</string>
   <string name="summary_containers">እንደ ዝርዝር ወይም ፍርግርግ ካለ መያዣ ውስጥ ይውጡ</string>
-  <string name="summary_headings">በአርዕስቶች መካከል ዝለል</string>
+  <string name="summary_headings">በርዕሶች መካከል ዝለል</string>
   <string name="summary_controls">እንደ አዝራሮች ወይም የጽሑፍ መስኮች ባሉ መስተጋብራዊ ንጥሎች መካከል ይዝለሉ</string>
   <string name="summary_links">በአገናኞች መካከል ዝለል</string>
   <string name="summary_landmarks">እንደ «ዋና» ወይም «አሰሳ» ባሉ ድረ-ገጾች ላይ ባሉ የድንበር ምልክቶች መካከል ይዝለሉ</string>
@@ -684,8 +684,8 @@
   <string name="dialog_message_dim_screen">ይህ ግላዊነትን ለማሻሻል ማሳያውን ያጠፋል። እንደ ማሳያውን መልሶ ለማብራት ያሉ መልዕክቶች ወይም እንደ SandFly ላሉ የተደራሽነት ባህሪያት ምናሌዎች ያለ አንዳንድ ይዘት አሁንም ድረስ ሊታይ ይችላል።</string>
   <string name="button_disable_all_events">ሁሉንም አሰናክል</string>
   <string name="button_enable_all_events">ሁሉንም አንቃ</string>
-  <string name="dialog_title_disable_exploration">በንኪኪ ማስስ ይሰናከል?</string>
-  <string name="dialog_message_disable_exploration">እርግጠኛ ነዎት በንኪኪ ማስስን ማጥፋት ይፈልጋሉ?\n\nመሣሪያዎ ከአሁን በኋላ ለአቋራጭ ምልክቶች ምላሽ አይሰጡም ወይም ማያ ገጹን ሲነኩ ንጥሎችን አይናገሩም።</string>
+  <string name="dialog_title_disable_exploration">«በመንካት አስስ» ይሰናከል?</string>
+  <string name="dialog_message_disable_exploration">እርግጠኛ ነዎት «በመንካት አስስ»ን ማጥፋት ይፈልጋሉ?\n\nመሣሪያዎ ከአሁን በኋላ ለአቋራጭ ምልክቶች ምላሽ አይሰጡም ወይም ማያ ገጹን ሲነኩ ንጥሎችን አይናገሩም።</string>
   <string name="dialog_title_enable_tree_debug">የአንጓ ዛፍ ማረም ይንቃ?</string>
   <string name="dialog_message_enable_tree_debug">እርግጠኛ ነዎት የአንጓ ዛፉን ማረም ማብራት ይፈልጋሉ?\n\nየአንጓ ዛፍ ማረም የማያ ገፅ ይዘትዎን ለመሣሪያዎ ምዝግብ ማስታወሻዎች ያጋልጣቸዋል፣ እና ሌሎች መተግበሪያዎች ሊያነብቡት ይችላሉ።</string>
   <string name="dialog_title_enable_tree_debug_gesture">ሦስቴ መታ ማድረግ በ4 ጣቶች ምልክት እንደገና ይመደብ?</string>
@@ -776,7 +776,7 @@
   <string name="title_clear_keyword">ግቤትን አጽዳ</string>
   <string name="title_previous_screen">ቀደሚ ማያ ገፅ</string>
   <string name="title_next_screen">ቀጣዩ ማያ ገፅ</string>
-  <string name="title_heading_list_button">አርዕስቶች</string>
+  <string name="title_heading_list_button">ርዕሶች</string>
   <string name="title_link_list_button">አገናኞች</string>
   <string name="title_table_list_button">ሠንጠረዦች</string>
   <string name="title_landmark_list_button">የመሬት ምልክቶች</string>
@@ -785,10 +785,10 @@
   <string name="msg_matches_found">{matches,plural, =0{በዚህ ማያ ገፅ ላይ ምንም ተዛማጆች የሉም}=1{# ተዛማጅ}one{# ተዛማጅ}other{# ተዛማጆች}}</string>
   <string name="msg_no_matches">በዚህ ማያ ገፅ ላይ ምንም ተዛማጆች የሉም</string>
   <string name="dialog_title_continuous_reading_mode">ቀጣይነት ያለው ንባብ እንዴት እንደሚሰራ</string>
-  <string name="dialog_message_continuous_reading_mode">«ከላይ አንብብ» ወይም «ከተተኮረው ንጥል ጀምሮ አንብብ» ከመረጡ በኋላ አሁንም ጽሑፉ እየተነበበ ሳለ ወደ ቀዳሚው ወይም ቀጣዩ ንጥል መሄድ ይችላሉ። ይህ በቀላሉ ወደኋላ እንዲመለሱ ወይም ወደፊት እንዲዘልሉ ያስችልዎታል።\n\nSandFly በሚናገርበት ጊዜ የድምጹን መጠን ለማስተካከል ድምፅ ጨምር ወይም ድምፅ ቀንስ የሚለውን ቁልፍ ይጫኑ።</string>
+  <string name="dialog_message_continuous_reading_mode">«ከላይ ጀምሮ አንብብ» ወይም «ትኩረት ከተሰጠው ንጥል ጀምረህ አንብብ» ከመረጡ በኋላ አሁንም ጽሑፉ እየተነበበ ሳለ ወደ ቀዳሚው ወይም ቀጣዩ ንጥል መሄድ ይችላሉ። ይህ በቀላሉ ወደኋላ እንዲመለሱ ወይም ወደፊት እንዲዘልሉ ያስችልዎታል።\n\nSandFly በሚናገርበት ጊዜ የድምጹን መጠን ለማስተካከል ድምፅ ጨምር ወይም ድምፅ ቀንስ የሚለውን ቁልፍ ይጫኑ።</string>
   <string name="always_show_this_message_label">ይህን መልዕክት ሁልጊዜ አሳይ</string>
   <string name="dialog_title_voice_commands">SandFlyን ለመቆጣጠር የድምፅ ትዕዛዞችን ይጠቀሙ</string>
-  <string name="dialog_message_voice_commands">ሊሏቸው የሚችሏቸው አንዳንድ ነገሮች እነሆ፦\n\n• ቅዳ\n• ትኩረት ከተሰጠው ንጥል ጀምሮ አንብብ\n• [አስቀምጥ]ን ያግኙ\n• [በፍጥነት] ተናገር\n• የSandFly ቅንብሮች\n\nለሁሉም የድምፅ ትዕዛዞች ዝርዝር «<xliff:g id="voice_help_cmd" example="help">%1$s</xliff:g>» ይበሉ</string>
+  <string name="dialog_message_voice_commands">ሊሏቸው የሚችሏቸው አንዳንድ ነገሮች እነሆ፦\n\n• ቅዳ\n• ትኩረት ከተሰጠው ንጥል ጀምረህ አንብብ\n• [አስቀምጥ]ን ያግኙ\n• [በፍጥነት] ተናገር\n• የSandFly ቅንብሮች\n\nለሁሉም የድምፅ ትዕዛዞች ዝርዝር «<xliff:g id="voice_help_cmd" example="help">%1$s</xliff:g>» ይበሉ</string>
   <string name="start_voice_command">የድምፅ ትዕዛዞችን ይጠቀሙ</string>
   <string name="dialog_title_pass_through_mode">የሥርዓቱን ምልክቶች ለመጠቀም የSandFly ምልክቶችን ይዝለሉ</string>
   <string name="dialog_message_pass_through_mode">ቃጭል ሲሰሙ በSandFly የማይደገፍ የስርዓት ምልክትን መጠቀም ይችላሉ። ይህ በምልክት ማለፍ በመባል ይታወቃል።</string>
@@ -822,8 +822,8 @@
   <string name="no_navigate_typo_gesture">ይህን ለመጠቀም ወደ SandFly ቅንብሮች ይሂዱ እና ለፊደል ማረም ምልክት ያክሉ</string>
   <string name="use_spelling_suggestion_hint">ጽሑፍን ለመተካት ሁለቴ መታ ያድርጉ</string>
   <string name="screen_search_keyword_hint">ቁልፍ ቃል %1$s ነው</string>
-  <string name="screen_search_no_keyword_hint">እስካሁን ምንም ቁልፍ ቃል የለም። አዲስ ፍለጋ ለመጀመር በ3 ጣቶች መታ አድርገው ይያዙ ወይም ከSandFly ምናሌ የቀጥታ ፍለጋ ይክፈቱ።</string>
-  <string name="screen_search_no_keyword_hint_pre_r">እስካሁን ምንም ቁልፍ ቃል የለም። አዲስ ፍለጋ ለመጀመር ወደ ግራ ያንሸራትቱ ከዚያ ወደታች ወይም ከSandFly ምናሌ የቀጥታ ፍለጋ ይክፈቱ።</string>
+  <string name="screen_search_no_keyword_hint">እስካሁን ምንም ቁልፍ ቃል የለም። አዲስ ፍለጋ ለመጀመር በ3 ጣቶች መታ አድርገው ይያዙ ወይም ከSandFly ምናሌ የማያ ገፅ ፍለጋ ይክፈቱ።</string>
+  <string name="screen_search_no_keyword_hint_pre_r">እስካሁን ምንም ቁልፍ ቃል የለም። አዲስ ፍለጋ ለመጀመር ወደ ግራ ያንሸራትቱ ከዚያ ወደታች ወይም ከSandFly ምናሌ የማያ ገፅ ፍለጋ ይክፈቱ።</string>
   <string name="switch_to_braille_keyboard_failure_msg">የብሬይል ቁልፍ ሰሌዳ አልበራም። ወደ የSandFly ቅንብሮች ይሂዱ፣ የብሬይል ቁልፍ ሰሌዳን ያዋቅሩ እና እንደገና ይሞክሩ።</string>
   <string name="suggestions_window_available">የአስተያየት ጥቆማዎች ይገኛሉ</string>
   <string name="suggestions_window_available_with_gesture">የአስተያየት ጥቆማዎች ይገኛሉ። %1$s ዘንድ ለመድረስ</string>
@@ -865,15 +865,15 @@
   <string name="new_shortcut_gesture_cut_text_announcement">የተቆረጠ ጽሁፍ። ብዙውን ጊዜ ይህ እርስዎ የመረጡትን ጽሁፍ ይቆርጣል። ለመቀጠል ወደቀኝ ያንሸራትቱ።</string>
   <string name="new_shortcut_gesture_selection_mode_text">የጽሑፍ ምርጫ ሁነታን ለመጀመር ወይም ለማጠናቀቅ፣ ሁለቴ መታ ያድርጉ እና በ2 ጣቶች ይያዙ።</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">የምርጫ ሁነታ በርቷል ወይም ጠፍቷል። ብዙውን ጊዜ ይህ በግብዓት መስክ ውስጥ ሲሆኑ የጽሑፍ መምረጫ ሁነታን ይጀምራል ወይም ያቆማል። ለመቀጠል ወደቀኝ ያንሸራትቱ።</string>
-  <string name="new_shortcut_gesture_reading_menu_text">የንባብ ምናሌውን ለመጠቀም በ3 ጣቶች ወደ ግራ ወይም ወደ ቀኝ ያንሸራትቱ። እንዲሁም በ3 ጣቶች ወደ ላይ ወይም ወደ ታች ማንሸራተት ይችላሉ።</string>
+  <string name="new_shortcut_gesture_reading_menu_text">የንባብ መቆጣጠሪያዎቹን ለመጠቀም በ3 ጣቶች ወደ ግራ ወይም ወደ ቀኝ ያንሸራትቱ። እንዲሁም በ3 ጣቶች ወደ ላይ ወይም ወደ ታች ማንሸራተት ይችላሉ።</string>
   <string name="new_shortcut_gesture_note">ማስታወሻ፦ አንዳንድ ምልክቶችዎን ብጁ አድርገዋል፣ ስለዚህ ይህ መረጃ ትክክል ላይሆን ይችላል። የእርስዎን ምልክቶች ለመገምገም፣ ወደ SandFly ቅንብሮች ይሂዱ።</string>
   <string name="welcome_to_android11_text">SandFlyን መጠቀም ይበልጥ ፈጣን እና ቀላል ለማድረግ አዲስ የእጅ ምልክቶች ታክለዋል።\n\nበዚህ ማያ ገፅ ላይ አዲሶቹን የእጅ ምልክቶች መሞከር ይችላሉ። ይህንን መረጃ በSandFly ቅንብሮች ውስጥ በማንኛውም ጊዜ መገምገም ይችላሉ።</string>
   <string name="new_gesture_notification_title">አዳዲስ ምልክቶች በSandFly ውስጥ</string>
   <string name="new_gesture_notification_content">በአዲስ የእጅ ምልክቶች አማካኝነት SandFlyን እንዴት በበለጠ ፍጥነት መጠቀም እንደሚችሉ ለማወቅ መታ ያድርጉ።</string>
   <string name="dump_node_tree_description">የዛፍ አንጓ ዛፍ በምዝግብ ማስታወሻዎች ላይ ታትሟል።</string>
   <string name="report_gesture_description">በቅርብ ጊዜ የተከናወኑ ምልክቶች እነሆ፣ እባክዎ የትኛው ምልክት የተሳሳተ እንደሆነ እና ምን እንደሚጠበቅ ሪፖርት ያድርጉ።</string>
-  <string name="update_welcome_talkback_16.1">ይህ የSandFly ዝማኔ ለመግለጫ ማያ ገፅ በተጨማሪ ቋንቋዎች እና SandFlyን ለአጠቃቀም ቀላል ለሚያደርጉት ሌሎች የጥራት ማሻሻያዎች ድጋፍን ያስተዋውቃል።\n\nበቀጣዮቹ ጥቂት ማያ ገፆች ስለእነዚህ ለውጦች የበለጠ ያውቃሉ።\n\nይህን መረጃ በኋላ ላይ SandFly ቅንብሮች &gt; SandFly ውስጥ አዳዲስ ባህሪያት ውስጥ ሊገመግሟቸው ይችላሉ።</string>
-  <string name="update_welcome_talkback_16.1_tts">ይህ የSandFly ዝማኔ ለመግለጫ ማያ ገፅ በተጨማሪ ቋንቋዎች እና SandFlyን ለአጠቃቀም ቀላል ለሚያደርጉት ሌሎች የጥራት ማሻሻያዎች ድጋፍን ያስተዋውቃል።\n\nበቀጣዮቹ ጥቂት ማያ ገፆች ስለነዚህ ለውጦች የበለጠ ያውቃሉ።\n\nይህን መረጃ በኋላ ላይ SandFly ቅንብሮች ከዚያም SandFly ውስጥ አዳዲስ ባህሪያት ውስጥ ሊገመግሟቸው ይችላሉ።</string>
+  <string name="update_welcome_talkback_16.1">ይህ የSandFly ዝማኔ ለ«ማያ ገፅን ይግለፁ» በተጨማሪ ቋንቋዎች እና SandFlyን ለአጠቃቀም ቀላል ለሚያደርጉት ሌሎች የጥራት ማሻሻያዎች ድጋፍን ያስተዋውቃል።\n\nበቀጣዮቹ ጥቂት ማያ ገፆች ስለእነዚህ ለውጦች የበለጠ ያውቃሉ።\n\nይህን መረጃ በኋላ ላይ SandFly ቅንብሮች &gt; በSandFly ውስጥ አዲስ ባህሪዎች ውስጥ ሊገመግሟቸው ይችላሉ።</string>
+  <string name="update_welcome_talkback_16.1_tts">ይህ የSandFly ዝማኔ ለ«ማያ ገፅን ይግለፁ» በተጨማሪ ቋንቋዎች እና SandFlyን ለአጠቃቀም ቀላል ለሚያደርጉት ሌሎች የጥራት ማሻሻያዎች ድጋፍን ያስተዋውቃል።\n\nበቀጣዮቹ ጥቂት ማያ ገፆች ስለነዚህ ለውጦች የበለጠ ያውቃሉ።\n\nይህን መረጃ በኋላ ላይ SandFly ቅንብሮች ከዚያም በSandFly ውስጥ አዲስ ባህሪዎች ውስጥ ሊገመግሟቸው ይችላሉ።</string>
   <string name="shortcut_for_dictation_title">ለድምፅ ትየባ አቋራጭ</string>
   <string name="shortcut_for_dictation_content">Gboard እየተጠቀሙ ሳለ፣ አሁን የድምፅ ትየባን ለመጀመር ወይም ለማቆም የሁለት ጣት ሁለቴ መታ ማድረግን መጠቀም ይችላሉ።
 &lt;br&gt;
@@ -881,12 +881,12 @@
   <string name="shortcut_for_dictation_content_without_google_play">Gboard ማያ ገፅ ላይ ሲሆን፣ አሁን በቃል ማስጻፍ ለማስጀመር የሁለት ጣት ሁለቴ መታ ማድረግን ከዚያም ለማቆም የሁለት ጣት ሁለቴ መታ ማድረግን መጠቀም ይችላሉ።</string>
   <string name="announcing_text_formatting_title">የጽሑፍ ቅርጸትን በማስተዋወቅ ላይ</string>
   <string name="announcing_text_formatting_header">SandFly አሁን እንደ ደማቅ፣ ሰያፍ እና የጽሑፍ ቀለም ባሉ የጽሑፍ ቅርጸቶች ላይ ለውጦችን ማወጅ ይችላል። ለመጀመር፦</string>
-  <string name="announcing_text_formatting_option1">ቅርጸት ባለው ንጥል ላይ ያተኩሩ፣ የSandFly ምናሌን ይክፈቱ እና «የጽሑፍ ቅርጸትን ግለጽ» የሚለውን ይምረጡ ወይም</string>
+  <string name="announcing_text_formatting_option1">ቅርጸት ባለው ንጥል ላይ ያተኩሩ፣ የSandFly ምናሌን ይክፈቱ እና «የጽሁፍ ቅርጸትን ይግለፁ» የሚለውን ይምረጡ ወይም</string>
   <string name="announcing_text_formatting_option2">የቅርጸት ለውጦችን ማስታወቂያ ለሚያበራ ወይም ለሚያጠፋ የጽሑፍ ቅርጸት የንባብ መቆጣጠሪያ ያክሉ።</string>
   <string name="announcing_text_formatting_middle">ለመሞከር ዝግጁ ሲሆኑ ቅርጸት የተሠራለት ጽሑፍ ምሳሌ እነሆ፦</string>
   <string name="announcing_text_formatting_tail">ቅርጸት የተሠራለት ጽሑፍ እንዴት እንደሚተዋወቅ መለወጥ ከፈለጉ ወደ %1$s መሄድ ይችላሉ።</string>
-  <string name="text_formatting_options_settings_path">የSandFly ቅንብሮች &gt; የቃላት አጠቃቀም &gt; የጽሑፍ ቅርጸት አማራጮች</string>
-  <string name="text_formatting_options_settings_path_tts">የSandFly ቅንብሮች ከዚያም የቃላት አጠቃቀም ከዚያም የጽሑፍ ቅርጸት አማራጮች</string>
+  <string name="text_formatting_options_settings_path">የSandFly ቅንብሮች &gt; ብዙ ቃላት &gt; የጽሑፍ ቅርጸት አማራጮች</string>
+  <string name="text_formatting_options_settings_path_tts">የSandFly ቅንብሮች ከዚያም ብዙ ቃላት ከዚያም የጽሑፍ ቅርጸት አማራጮች</string>
   <string name="announcing_text_formatiing_sample">ይህ ጽሑፍ &lt;b&gt;ደማቅ&lt;/b&gt; ነው፣ በራስ መተማመን ያለው ጩኸት፣
 &lt;br&gt;ይህ ደግሞ &lt;u&gt;የተሰመረ&lt;/u&gt; ነው፣ ሹክሹክታ ነው አያጠራጥርም።&lt;br&gt;
 &lt;br&gt;&lt;span style=\"background-color:#f08080;\"&gt;ጽጌረዳዎች ቀይ ናቸው&lt;/span&gt;ታዋቂ፣ እውነት ነው፣
@@ -897,8 +897,8 @@
 &lt;br&gt;
 &lt;br&gt;ቀለማት ሊፈናጠቁ ይችላሉ፣ ያሸበረቀ ዕይታ፣
 &lt;br&gt;&lt;font color=\"#db372d\"&gt;ከጠንካራ ቀይ&lt;/font&gt; እስከ &lt;font color=\"#128937\"&gt;ደማቅ አረንጓዴዎች&lt;/font&gt; የተረጋጋ ውዝዋዜ።</string>
-  <string name="update_welcome_talkback_16.2">ይህ የSandFly ዝማኔ ለተጨባጭ የቁልፍ ሰሌዳዎች አዲስ «የተሻሻለ የቁልፍ ካርታ»፣ ለጽሑፍ ቅርጸት ማስታወቂያዎች ድጋፍ እና እንደገና የተነደፈ የቅንብሮች አቀማመጥን፣ SandFlyን ለመጠቀም ቀላል ለማድረግ ከሌሎች ማሻሻያዎች ጋር ያስተዋውቃል።\n\nበሚቀጥሉት ጥቂት ማያ ገጾች ላይ ስለ እነዚህ ለውጦች የበለጠ ያውቃሉ።\n\nይህን መረጃ በኋላ SandFly ቅንብሮች &gt; SandFly ውስጥ ያሉ አዳዲስ ባህሪያት ውስጥ መገምገም ይችላሉ።</string>
-  <string name="update_welcome_talkback_16.2_tts">ይህ የSandFly ዝማኔ ለተጨባጭ የቁልፍ ሰሌዳዎች አዲስ «የተሻሻለ የቁልፍ ካርታ»፣ የጽሑፍ ቅርጸት ማስታወቂያዎች ድጋፍ እና እንደገና የተነደፈ የቅንብሮች አቀማመጥን ከሌሎች ማሻሻያዎች ጋር SandFlyን ለመጠቀም ቀላል ያደርገዋል።\n\nበሚቀጥሉት ጥቂት ማያ ገጾች ላይ ስለ እነዚህ ለውጦች የበለጠ ያውቃሉ።\n\nይህን መረጃ በኋላ SandFly ቅንብሮች ከዚያ SandFly ውስጥ ያሉ አዲስ ባህሪያት ውስጥ መገምገም ይችላሉ።</string>
+  <string name="update_welcome_talkback_16.2">ይህ የSandFly ዝማኔ ለተጨባጭ የቁልፍ ሰሌዳዎች አዲስ «የተሻሻለ የቁልፍ ካርታ»፣ ለጽሑፍ ቅርጸት ማስታወቂያዎች ድጋፍ እና እንደገና የተነደፈ የቅንብሮች አቀማመጥን፣ SandFlyን ለመጠቀም ቀላል ለማድረግ ከሌሎች ማሻሻያዎች ጋር ያስተዋውቃል።\n\nበሚቀጥሉት ጥቂት ማያ ገጾች ላይ ስለ እነዚህ ለውጦች የበለጠ ያውቃሉ።\n\nይህን መረጃ በኋላ SandFly ቅንብሮች &gt; በSandFly ውስጥ አዲስ ባህሪዎች ውስጥ መገምገም ይችላሉ።</string>
+  <string name="update_welcome_talkback_16.2_tts">ይህ የSandFly ዝማኔ ለተጨባጭ የቁልፍ ሰሌዳዎች አዲስ «የተሻሻለ የቁልፍ ካርታ»፣ የጽሑፍ ቅርጸት ማስታወቂያዎች ድጋፍ እና እንደገና የተነደፈ የቅንብሮች አቀማመጥን ከሌሎች ማሻሻያዎች ጋር SandFlyን ለመጠቀም ቀላል ያደርገዋል።\n\nበሚቀጥሉት ጥቂት ማያ ገጾች ላይ ስለ እነዚህ ለውጦች የበለጠ ያውቃሉ።\n\nይህን መረጃ በኋላ SandFly ቅንብሮች ከዚያ በSandFly ውስጥ አዲስ ባህሪዎች ውስጥ መገምገም ይችላሉ።</string>
   <string name="new_settings_layout_title">አዲስ የቅንብሮች አቀማመጥ</string>
   <string name="new_settings_layout_text">ባህሪያትን ለማግኘት ቀላል ለማድረግ የቅንብሮች ቡድኖች ተዘምነዋል። እንዲሁም እንደ የቁልፍ ሰሌዳ ቅንብሮች ያሉ አዳዲስ የቅንብሮች ምድቦች ይገኛሉ።</string>
   <string name="split_tap_everywhere_title">በሁሉም ቦታ በሁለት መታ ያድርጉ</string>
@@ -910,12 +910,8 @@
   <string name="braille_display_settings_link">የብሬይል ማሳያ ቅንብሮች</string>
   <string name="keyboard_smart_browse_mode_title">የቁልፍ ሰሌዳ፦ ዘመናዊ የአሰሳ ሁነታ</string>
   <string name="keyboard_smart_browse_mode_text">የSandFly ዘመናዊ የአሰሳ ሁነታ ድሩን ሲያስሱ በአካላዊ የቁልፍ ሰሌዳ እንዲተይቡ ለማገዝ በአርትዖት መስክ ላይ የአሰሳ ሁነታን ያጠፋል። ከዚያም በድር ላይ ወደ አርትዖት ያልሆነ መስክ ሲዘሉ በብቃት ማሰስዎን መቀጠል እንዲችሉ መልሶ ያበራዋል። <xliff:g id="settings_path">%1$s</xliff:g> ውስጥ «ዘመናዊ የአሰሳ ሁነታ»ን ማብራት ወይም ማጥፋት ይችላሉ።</string>
-  <string name="advanced_settings_link">የSandFly ቅንብሮች &gt; የላቁ ቅንብሮች</string>
-  <string name="advanced_settings_link_tts">የSandFly ቅንብሮች ከዚያም የላቁ ቅንብሮች</string>
   <string name="keyboard_tutorial_title">የቁልፍ ሰሌዳ አጋዥ ሥልጠና</string>
   <string name="keyboard_tutorial_text">SandFly አሁን አካላዊ ቁልፍ ሰሌዳ ሲጠቀሙ ለተሻሻለው የቁልፍ ካርታ የቁልፍ ሰሌዳ አቋራጮችን እና ትዕዛዞችን እንዲማሩ ለማገዝ የተነደፈ የቁልፍ ሰሌዳ አጋዥ ሥልጠናን ያካትታል። አጋዥ ሥልጠናውን ለመድረስ ወደሚከተለው ያስሱ፦ <xliff:g id="settings_path">%1$s</xliff:g>።</string>
-  <string name="tutorial_link">የSandFly ቅንብሮች &gt; የSandFly አጋዥ ሥልጠና</string>
-  <string name="tutorial_link_tts">የSandFly ቅንብሮች ከዚያም የSandFly አጋዥ ሥልጠና</string>
   <string name="tutorial_entry_point_title">አጋዥ ሥልጠና</string>
   <string name="welcome_to_talkback_title">እንኳን ወደ SandFly በደህና መጡ</string>
   <string name="talkback_is_on">SandFly በርቷል</string>
@@ -1039,10 +1035,10 @@
   <string name="container_item_exit_subtext_pre_r">ከዚህ መያዣ ለመውጣት ወደ ታች ያንሸራትቱ</string>
   <string name="voice_commands_title">የድምፅ ትዕዛዞች</string>
   <string name="voice_commands_text">በፍጥነት SandFlyን ለመቆጣጠር የእርስዎን ድምፅ መጠቀም ይችላሉ።\n\nለምሳሌ፣ ዳሰሳን ለመለወጥ ትዕዛዝ ይናገሩ፣ ወደ ቀጣዩ ርዕስ ይዝለሉ፣ ጽሁፍ ይቅዱ እና ተጨማሪ ያድርጉ።\n\nአሁኑኑ ለመሞከር ወደ ቀኝ ከዚያ ወደ ላይ ያንሸራትቱ።</string>
-  <string name="using_screen_search_title">የቀጥታ ፍለጋን በመጠቀም ላይ</string>
-  <string name="using_screen_search_text">የቀጥታ ፍለጋ ባህሪው በማያ ገፅ ላይ የተወሰነ ይዘት እንዲፈልጉ ይፈቅድልዎታል።\n\nእሱን ለመሞከር፣ በ3 ጣቶች መታ በማድረግ የSandFly ምናሌን ይክፈቱ እና በምናሌው ውስጥ «የቀጥታ ፍለጋ» የሚለውን ያግኙ። ያን ጽሑፍ በማያ ገፁ ላይ ለማግኘት እንደ «ቀጣይ» ያለ ቁልፍ ቃል ይተይቡ።\n\nየሚቀጥለውን አዝራር ለማግኘት አሁን «ቀጣይ» የሚለውን ለመፈለግ ይሞክሩ።</string>
+  <string name="using_screen_search_title">የማያ ገፅ ፍለጋን በመጠቀም ላይ</string>
+  <string name="using_screen_search_text">የማያ ገፅ ፍለጋ ባህሪው በማያ ገፅ ላይ የተወሰነ ይዘት እንዲፈልጉ ይፈቅድልዎታል።\n\nእሱን ለመሞከር፣ በ3 ጣቶች መታ በማድረግ የSandFly ምናሌን ይክፈቱ እና በምናሌው ውስጥ «የማያ ገፅ ፍለጋ» የሚለውን ያግኙ። ያን ጽሑፍ በማያ ገፁ ላይ ለማግኘት እንደ «ቀጣይ» ያለ ቁልፍ ቃል ይተይቡ።\n\nየሚቀጥለውን አዝራር ለማግኘት አሁን «ቀጣይ» የሚለውን ለመፈለግ ይሞክሩ።</string>
   <string name="screen_search_navigation_title">በቀጥታ ፍለጋ ያስሱ</string>
-  <string name="screen_search_navigation_text">ውጤት ከመረጡ በኋላ ከቀጥታ ፍለጋ በተለያዩ የፍለጋ ውጤቶች መካከል በፍጥነት መንቀሳቀስ ይችላሉ።\n\nይህን ለማድረግ በ3 ጣቶች ወደ ግራ ወይም ቀኝ በማንሸራተት የንባብ መቆጣጠሪያዎችን ይጠቀሙ እና የቀጥታ ፍለጋ የሚባለውን ንጥል ያግኙ።\n\nአሁን ይሞክሩት። ከታች ያሉት የ3 አዝራሮች ዝርዝር ነው፣ ሁሉም «እርምጃ» የሚለውን ጽሑፍ ይይዛሉ። የቀጥታ ፍለጋን በመጠቀም «እርምጃ»ን ይፈልጉ፣ ከዚያም በእነሱ መካከል ለመንቀሳቀስ በቀጥታ ፍለጋ ያስሱ።</string>
+  <string name="screen_search_navigation_text">ውጤት ከመረጡ በኋላ ከማያ ገፅ ፍለጋ በተለያዩ የፍለጋ ውጤቶች መካከል በፍጥነት መንቀሳቀስ ይችላሉ።\n\nይህን ለማድረግ በ3 ጣቶች ወደ ግራ ወይም ቀኝ በማንሸራተት የንባብ መቆጣጠሪያዎችን ይጠቀሙ እና የማያ ገፅ ፍለጋ የሚባለውን ንጥል ያግኙ።\n\nአሁን ይሞክሩት። ከታች ያሉት የ3 አዝራሮች ዝርዝር ነው፣ ሁሉም «እርምጃ» የሚለውን ጽሑፍ ይይዛሉ። የማያ ገፅ ፍለጋን በመጠቀም «እርምጃ»ን ይፈልጉ፣ ከዚያም በእነሱ መካከል ለመንቀሳቀስ በማያ ገፅ ፍለጋ ያስሱ።</string>
   <string name="screen_search_action_button_1_text">እርምጃ 1</string>
   <string name="screen_search_action_button_2_text">እርምጃ 2</string>
   <string name="screen_search_action_button_3_text">እርምጃ 3</string>
@@ -1068,10 +1064,10 @@
   <string name="checking_notifications_text_tail_tts">በቅንብሮች ከዚያ ማሳወቂያዎች ውስጥ የትኛዎቹ መተግበሪያዎች ማሳወቂያ እንደበራላቸው ማጣራት ይችላሉ።</string>
   <string name="checking_notifications_tips">የማሳወቂያ ታሪክዎን ለመፈተሽ በማያ ገጽዎ አናት ላይ በ2 ጣቶች ወደ ታች ያንሸራትቱ</string>
   <string name="image_description_playground_title">የምስል መግለጫዎችን ለማግኘት ይሞክሩ</string>
-  <string name="image_description_playground_content_one">በአንድ ምስል ላይ በሚያተኩሩበት ጊዜ SandFly ምናሌን ይክፈቱ እና «ምስልን ግለፅ» የሚለውን ይምረጡ።\n\nከታች አንድ ፎቶ አለ። ለእሱ መግለጫ ለማግኘት ይሞክሩ።</string>
-  <string name="image_description_playground_content_two">በማንኛውም ጊዜ SandFly ቅንብሮች &gt; ራስ-ሰር መግለጫዎች ውስጥ የምስል መግለጫ ቅንብሮችን መለወጥ ይችላሉ።</string>
-  <string name="image_description_playground_content_two_tts">በማንኛውም ጊዜ SandFly ቅንብሮች ከዚያም ራስ-ሰር መግለጫዎች ውስጥ የምስል መግለጫ ቅንብሮችን መለወጥ ይችላሉ።</string>
-  <string name="image_description_sample_image_content_description">የናሙና ምስል፤ SandFly ምናሌን ለመክፈት በ3 ጣቶች መታ ያድርጉ እና መግለጫ ለማዳመጥ «ምስልን ግለጽ» የሚለውን ይምረጡ።</string>
+  <string name="image_description_playground_content_one">በአንድ ምስል ላይ በሚያተኩሩበት ጊዜ SandFly ምናሌን ይክፈቱ እና «ምስሉን ይግለጹት» የሚለውን ይምረጡ።\n\nከታች አንድ ፎቶ አለ። ለእሱ መግለጫ ለማግኘት ይሞክሩ።</string>
+  <string name="image_description_playground_content_two">በማንኛውም ጊዜ SandFly ቅንብሮች &gt; የምስል እና የማያ ገጽ መግለጫዎች ውስጥ የምስል መግለጫ ቅንብሮችን መለወጥ ይችላሉ።</string>
+  <string name="image_description_playground_content_two_tts">በማንኛውም ጊዜ SandFly ቅንብሮች ከዚያም የምስል እና የማያ ገጽ መግለጫዎች ውስጥ የምስል መግለጫ ቅንብሮችን መለወጥ ይችላሉ።</string>
+  <string name="image_description_sample_image_content_description">የናሙና ምስል፤ SandFly ምናሌን ለመክፈት በ3 ጣቶች መታ ያድርጉ እና መግለጫ ለማዳመጥ «ምስሉን ይግለጹት» የሚለውን ይምረጡ።</string>
   <string name="practice_gestures_title">የልምምድ እጅ ምልክቶች</string>
   <string name="practice_keyboard_gestures_title">የቁልፍ ሰሌዳ አቋራጮችን ይለማመዱ</string>
   <string name="pref_gesture_set_key_title">የምልክት ስብስብ</string>
@@ -1106,7 +1102,7 @@
   <string name="wear_training_volume_down_text">ወደ ቀኝ እና ከዚያ ወደ ታች ያንሸራትቱ</string>
   <string name="wear_training_open_talkback_menu_title">የSandFly ምናሌን መክፈት</string>
   <string name="wear_training_open_talkback_menu_text">ቅንብሮች እና መቆጣጠሪያዎችን ለመክፈት አብዛኛውን ጊዜ ወደታች እና በመቀጠል ወደ ቀኝ ማሸብለል ይኖርብዎታል</string>
-  <string name="wear_training_typing_title">በመተየብ ላይ</string>
+  <string name="wear_training_typing_title">መተየብ</string>
   <string name="wear_training_typing_text1">በቁልፍ ሰሌዳ ለመተየብ ጣትዎን በቁልፍ ሰሌዳው ላይ ያንቀሳቅሱ። መተየብ የሚፈልጉትን ፊደል ሲሰሙ ጣትዎን ያንሱ።</string>
   <string name="wear_training_typing_text2">ቁልፍ ሰሌዳውን ለመደበቅ እና ግቤትዎን ለመፈተሽ በ2 ጣቶች ከማያ ገጽዎ አናት ወደ ታች ያንሸራትቱ።</string>
   <string name="wear_training_typing_text3">ወደ የቁልፍ ሰሌዳ ለመመለስ በ2 ጣቶች ከማያ ገጽዎ ስር ወደ ላይ ያንሸራትቱ።</string>
@@ -1367,7 +1363,6 @@
     <string name="title_pref_category_more">ተጨማሪ</string>
     <string name="title_pref_reserve_vibration_watch_gestures">የእጅ ምልክቶችን ለVibration Watch አስቀምጥ</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch እንዲጠቀምባቸው SandFly የሁለት ጣት ነጠላ እና ድርብ መታ ማድረጎችን እንዳያስተናግድ ያደርጋል። በሰዓትዎ የተደራሽነት ቅንብሮች ውስጥ Vibration Watchን ያንቁ።</string>
-    <string name="shortcut_reserved_for_vibration_watch">በላቁ ቅንብሮች ውስጥ ለVibration Watch ተይዟል</string>
     <string name="title_pref_speakerphone_away_from_ear">ከጆሮዎ ሲርቅ የድምፅ ማጉያ</string>
     <string name="summary_pref_speakerphone_away_from_ear">በጥሪ ጊዜ ስልኩን ከጆሮዎ ሲያርቁ ወደ ድምፅ ማጉያ ይቀይራል፣ እና እንደገና ሲያስጠጉት ወደ የጆሮ ማዳመጫው ይመለሳል።</string>
     <string name="summary_pref_speakerphone_needs_permission">Android ለማያ ገፅ አንባቢዎች የማይሰጠው ፈቃድ ያስፈልገዋል። ለመስጠት ይህን ትዕዛዝ በadb ወይም በShizuku ያሂዱ፣ ከዚያ ወደዚህ ማያ ገፅ ይመለሱ፦ %1$s</string>
@@ -1379,7 +1374,6 @@
     <string name="speech_control_apps_category">መተግበሪያዎች</string>
     <string name="speech_control_no_apps">እስካሁን ምንም መተግበሪያዎች ለመናገር አልጠየቁም።</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> በSandFly በኩል እንዲናገር ይፈቀድለት?</string>
-    <string name="speech_control_ask_text">ጽሑፍን በSandFly ድምፅዎ መናገር ይችላል። ይህን በላቁ ቅንብሮች ውስጥ መቀየር ይችላሉ።</string>
     <string name="speech_control_allow">ፍቀድ</string>
     <string name="speech_control_deny">አትፍቀድ</string>
     <string name="permission_speak_label">በSandFly በኩል መናገር</string>
@@ -1440,7 +1434,6 @@
         <item quantity="one">%d ማሳወቂያ</item>
         <item quantity="other">%d ማሳወቂያዎች</item>
     </plurals>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly በርቷል። ለማጥፋት 2 ጣቶችን በማያ ገፁ ላይ ለ5 ሰከንዶች ይያዙ። ይህን መልዕክት ማሳየት ለማቆም SandFly ቅንብሮች &gt; የላቁ ቅንብሮች &gt; SandFlyን ለማጥፋት መመሪያዎችን አሳይ የሚለውን ያጥፉ።</string>
     <string name="edge_gestures_title">ጠርዞች</string>
     <string name="title_pref_audio_output_device">የኦዲዮ ውጽዓት መሣሪያ</string>
     <string name="dialog_title_audio_output_device">የSandFly ድምፅ የሚጫወትበትን ይምረጡ</string>
@@ -1550,7 +1543,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> ተቀምጧል። <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly የንጥል ዝርዝሮችን በዚህ ቅደም ተከተል ይናገራል። ለመቀየር አንድ ዝርዝርን ነክተው ይያዙ፣ ከዚያ ወደ ላይ ወይም ወደ ታች ይጎትቱት። SandFly በርቶ ሳለ ሁለቴ መታ አድርገው ይያዙ፣ ከዚያ ይጎትቱ። እንዲሁም ወደ ላይ ውሰድ እና ወደ ታች ውሰድ እርምጃዎችን መጠቀም ይችላሉ።</string>
     <string name="title_pref_speak_items_before_scroll">ንጥሎችን ወደ እይታ ከመሸብለላቸው በፊት ተናገር</string>
-    <string name="gemini_error_api_key">Gemini የAPI ቁልፉን አልተቀበለም። በራስ-ሰር መግለጫዎች ቅንብሮች ውስጥ ቁልፉን ይፈትሹ።</string>
+    <string name="gemini_error_api_key">Gemini የAPI ቁልፉን አልተቀበለም። በ«የምስል እና የማያ ገጽ መግለጫዎች» ቅንብሮች ውስጥ ቁልፉን ይፈትሹ።</string>
     <string name="gemini_error_quota">የGemini API ቁልፍዎ የአጠቃቀም ገደብ ደርሷል። ቆይተው እንደገና ይሞክሩ።</string>
     <string name="gemini_error_busy">Gemini አሁን ሥራ በዝቶበታል። ትንሽ ቆይተው እንደገና ይሞክሩ።</string>
     <string name="gemini_error_timeout">Gemini ለመመለስ በጣም ረጅም ጊዜ ወስዷል። እንደገና ይሞክሩ።</string>
@@ -1746,7 +1739,7 @@
     <string name="image_qna_stop_listening">ማዳመጥ አቁም</string>
     <string name="image_qna_type_question">ጥያቄ ይተይቡ</string>
     <string name="shortcut_dictate">በቃል አስጽፍ</string>
-    <string name="title_pref_ai_dictation">መግለጫን በAI አስተካክል</string>
+    <string name="title_pref_ai_dictation">በቃል ማስጻፍን በAI አስተካክል</string>
     <string name="dictation_not_corrected">አልተስተካከለም። እንደተለየው ተተይቧል።</string>
     <string name="dictation_nothing_recognized">ምንም የታወቀ ነገር የለም</string>
     <string name="dictation_unavailable">የንግግር ማወቂያ የለም</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">የWhisper ሞዴሎች</string>
     <string name="dictation_whisper_use">ተጠቀም</string>
     <string name="title_pref_dictation_ai_service">ለበቃል ማስጻፍ የAI አገልግሎት</string>
-    <string name="dictation_ai_same">ከራስ-ሰር መግለጫዎች ጋር ተመሳሳይ</string>
     <string name="title_pref_browse_mode_per_app">በእያንዳንዱ መተግበሪያ ውስጥ የአሰሳ ሁነታን ያስታውሱ</string>
     <string name="title_pref_export_settings">ቅንጅቶችን ወደ ውጪ ላክ</string>
     <string name="title_pref_import_settings">ቅንብሮችን አስመጣ</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">ቀዳሚ ትራክ</string>
     <string name="sound_mode_needs_access">ድምጸ-ከልን ለማብራት ወይም ለማጥፋት የአትረብሽ መዳረሻን ይፍቀዱ።</string>
     <string name="title_pref_dictation_auto_stop">ከጸጥታ በኋላ በራስ-ሰር አቁም</string>
+    <string name="dictation_ai_same">ከ«የምስል እና የማያ ገጽ መግለጫዎች» ጋር ተመሳሳይ</string>
+    <string name="navigation_settings_link">የSandFly ቅንብሮች &gt; አሰሳ</string>
+    <string name="navigation_settings_link_tts">የSandFly ቅንብሮች ከዚያም አሰሳ</string>
+    <string name="shortcut_reserved_for_vibration_watch">በ«የእጅ ምልክቶች» ስር ለVibration Watch የተያዘ</string>
+    <string name="speech_control_ask_text">ጽሑፍን በSandFly ድምፅዎ መናገር ይችላል። ይህን በቅንብሮች፣ ንግግር፣ ሌሎች መተግበሪያዎች እንዲናገሩ ፍቀድ ስር መለወጥ ይችላሉ።</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly በርቷል። ለማጥፋት ማያ ገጽ ላይ 2 ጣቶችን ለ5 ሰከንዶች ይያዙ። ይህን መልዕክት ማሳየት ለማቆም የSandFly ቅንብሮች &gt; ለአፍታ አቁም እና አጥፋ &gt; «SandFly ለማጥፋት መመሪያዎችን አሳይ»ን ያጥፉ።</string>
+    <string name="tutorial_link">የSandFly ቅንብሮች &gt; እገዛ እና ግብረመልስ &gt; SandFly አጋዥ ስልጠና</string>
+    <string name="tutorial_link_tts">የSandFly ቅንብሮች ከዚያም እገዛ እና ግብረመልስ ከዚያም SandFly አጋዥ ስልጠና</string>
 </resources>

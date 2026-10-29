@@ -30,7 +30,7 @@
   <string name="bd_preferences_banner_bluetooth_off_subtitle">Ili utumie skrini ya nukta nundu, kwanza washa Bluetooth</string>
   <string name="bd_preferences_banner_bluetooth_off_button">Washa Bluetooth</string>
   <string name="bd_preferences_banner_nearby_devices_permission_not_granted_subtitle">Ili utumie skrini ya nukta nundu, %s zinahitaji uwezo wa kufikia vifaa vilivyo karibu</string>
-  <string name="bd_preferences_banner_location_permission_not_granted_subtitle">Unahitaji uwashe ruhusa ya \"Mahali\" kwa %s kabla ya kuanza kutumia onyesho la braille</string>
+  <string name="bd_preferences_banner_location_permission_not_granted_subtitle">Unahitaji uwashe ruhusa ya \"Mahali\" kwa %s kabla ya kuanza kutumia skrini ya nukta nundu</string>
   <string name="bd_preferences_banner_permission_not_granted_button">Mipangilio ya ruhusa</string>
   <string name="bd_preferences_banner_permission_not_granted_system_dialog_button">Sasisha ruhusa</string>
   <string name="bd_preferences_banner_location_settings_not_enabled_subtitle">Ili utumie skrini ya nukta nundu, %s zinahitaji uwezo wa kufikia mahali kifaa kilipo</string>
@@ -153,8 +153,8 @@
   <string name="bd_preference_caption_title">Onyesha manukuu kwenye skrini ya nukta nundu</string>
   <string name="bd_preference_caption_summary">Kwa video na maudhui mengine</string>
   <string name="bd_bt_connection_with_device_failed_message">Imeshindwa kuunganisha kwenye %s. Jaribu tena.</string>
-  <string name="bd_bt_connection_failed_message">Imeshindwa kuunganisha kwenye onyesho la braille. Jaribu tena.</string>
-  <string name="bd_bt_connection_disconnected_message">Onyesho la braille limeondolewa</string>
+  <string name="bd_bt_connection_failed_message">Imeshindwa kuunganisha kwenye skrini ya nukta nundu. Jaribu tena.</string>
+  <string name="bd_bt_connection_disconnected_message">Skrini ya nukta nundu imeondolewa</string>
   <string name="bd_switch_to_braille_hardware_message">Unabadilisha kwenda kwenye skrini ya nukta nundu ya nje</string>
   <string name="bd_affix_label_disabled">imezimwa</string>
   <string name="duration_short">Muda mfupi</string>
@@ -230,7 +230,7 @@
   <string name="bd_cmd_toggle_contracted_mode">Badilisha kati ya nukta nundu ya daraja la pili na nukta nundu ya daraja la kwanza</string>
   <string name="bd_cmd_help">Fungua amri za skrini ya nukta nundu</string>
   <string name="bd_cmd_braille_display_settings">Fungua mipangilio ya skrini ya nukta nundu</string>
-  <string name="bd_cmd_turn_off_braille_display">Zima onyesho la braille</string>
+  <string name="bd_cmd_turn_off_braille_display">Zima skrini ya nukta nundu</string>
   <string name="bd_cmd_play_pause_media">Cheza au sitisha maudhui</string>
   <string name="bd_cmd_switch_to_next_input_method">Nenda kwenye kibodi inayofuata</string>
   <string name="bd_cmd_select_all">Chagua maandishi yote</string>
@@ -296,7 +296,7 @@
   <string name="bd_cmd_subcategory_title_controls">Vidhibiti</string>
   <string name="bd_cmd_subcategory_web_navigation_description">Unaweza kusogeza haraka kurasa za wavuti kwa kutumia amri ili kuingia kwenye hali ya kuvinjari, kisha uandike njia za mkato za herufi au namba zifuatazo\n\nNjia hizi za mkato zinaweza pia kutumika bila kuingia katika hali ya kuvinjari, lakini utahitaji kubofya nukta ya 8 pamoja na amri za \"inayofuata\"</string>
   <string name="bd_cmd_subcategory_title_web_navigation">Usogezaji katika jedwali</string>
-  <string name="bd_turn_off_bd_confirm_dialog_title">Ungependa kuzima mipangilio ya onyesho la braille?</string>
+  <string name="bd_turn_off_bd_confirm_dialog_title">Ungependa kuzima mipangilio ya skrini ya nukta nundu?</string>
   <string name="bd_turn_off_bd_confirm_dialog_message">Unaweza kuiwasha tena kwenye mipangilio ya SandFly wakati wowote</string>
   <string name="bd_turn_off_bd_confirm_dialog_positive_button">Zima</string>
   <string name="bd_notify_navigation_commands_unavailable_dialog_title">Baadhi ya amri hazipatikani</string>

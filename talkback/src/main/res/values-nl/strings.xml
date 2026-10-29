@@ -94,7 +94,7 @@
   <string name="title_pref_show_exit_watermark">Instructies tonen om SandFly uit te zetten</string>
   <string name="summary_pref_show_exit_watermark">Als SandFly wordt ingeschakeld, wordt getoond hoe je het uitschakelt</string>
   <string name="talkback_exit_watermark_text">SandFly staat aan. Houd 2 vingers 5 seconden op het scherm om deze functie uit te zetten. Als je dit bericht niet meer wilt weergeven, tik je met 3 vingers om het SandFly-menu te openen.</string>
-  <string name="talkback_exit_watermark_hint_text">Er wordt een banner getoond die aangeeft dat SandFly aanstaat. Als je SandFly wilt uitzetten, houd je 2 vingers 5 seconden op het scherm. Ga naar de SandFly-instellingen om deze banner te verwijderen.</string>
+  <string name="talkback_exit_watermark_hint_text">Er wordt een banner getoond die aangeeft dat SandFly aanstaat. Als je SandFly wilt uitzetten, houd je 2 vingers 5 seconden op het scherm. Ga naar Instellingen voor SandFly om deze banner te verwijderen.</string>
   <string name="reset_gesture_settings_title">Instellingen voor gebaren resetten</string>
   <string name="one_finger_gestures_title">1 vinger</string>
   <string name="one_finger_back_forth_gestures_title">Heen en weer met 1 vinger</string>
@@ -192,7 +192,7 @@
   <string name="keycombo_menu_other_language_options">Geïnstalleerde talen tonen</string>
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Laatst uitgesproken woordgroep kopiëren</string>
   <string name="keycombo_menu_other_open_tts_settings">Instellingen voor tekst-naar-spraak openen</string>
-  <string name="keycombo_menu_other_open_talkback_settings">SandFly-instellingen openen</string>
+  <string name="keycombo_menu_other_open_talkback_settings">Instellingen voor SandFly openen</string>
   <string name="keycombo_menu_other_report_issue">Feedback sturen</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Typecho doorlopen</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Lijst met sneltoetsen tonen</string>
@@ -406,8 +406,8 @@
   <string name="talkback_menu_more_options_text">Er zijn meer menuopties beschikbaar nadat je het instellen hebt afgerond of je apparaat hebt ontgrendeld</string>
   <string name="talkback_menu_title_content_description">SandFly-menu. Swipe naar rechts om de opties in het SandFly-menu te verkennen.\n\nAls je wilt teruggaan naar de tutorial, swipe je met 2 vingers naar links of rechts vanaf de rand van het scherm.</string>
   <string name="shortcut_show_language_options">Gesproken taal wijzigen</string>
-  <string name="shortcut_select_next_setting">Volgende leesoptie</string>
-  <string name="shortcut_select_previous_setting">Vorige leesoptie</string>
+  <string name="shortcut_select_next_setting">Volgende leesinstelling</string>
+  <string name="shortcut_select_previous_setting">Vorige leesinstelling</string>
   <string name="shortcut_pass_through_next">Systeemgebaar voor doorgeven</string>
   <string name="shortcut_a11y_button">Snelkoppeling voor toegankelijkheid</string>
   <string name="shortcut_a11y_button_long_press">Snelkoppeling voor toegankelijkheid vasthouden</string>
@@ -473,7 +473,7 @@
   <string name="title_labeling_controls">Labels</string>
   <string name="title_labeling_show_or_hide_controls">Labels toevoegen of bewerken</string>
   <string name="title_granularity">Navigatie</string>
-  <string name="title_read_from_top">Lezen vanaf boven</string>
+  <string name="title_read_from_top">Lezen vanaf het begin</string>
   <string name="title_copy_last_spoken_phrase">Laatst uitgesproken woordgroep kopiëren</string>
   <string name="title_spell_last_spoken_phrase">Laatst uitgesproken woordgroep spellen</string>
   <string name="title_repeat_last_spoken_phrase">Laatst uitgesproken woordgroep herhalen</string>
@@ -510,7 +510,7 @@
   <string name="summary_show_hide_screen">Scherm verbergen zodat anderen het niet kunnen bekijken in openbare ruimtes. Zet het daarna terug naar normale status.</string>
   <string name="summary_control_speak_time">Wijzig of de tijd wordt uitgesproken als je het scherm aanzet</string>
   <string name="summary_show_keyboard_shortcuts_preferences">De lijst met sneltoetsen openen</string>
-  <string name="summary_talkback_preferences">SandFly-instellingen openen</string>
+  <string name="summary_talkback_preferences">Instellingen voor SandFly openen</string>
   <string name="summary_braile_display_preferences">Instellingen voor brailleleesregel openen</string>
   <string name="summary_system_actions">Ga naar Alle apps en Snelle instellingen</string>
   <string name="summary_tts_settings">Tekst-naar-­spraak-instellingen openen</string>
@@ -785,10 +785,10 @@
   <string name="msg_matches_found">{matches,plural, =0{Geen overeenkomsten op dit scherm}=1{# overeenkomst}other{# overeenkomsten}}</string>
   <string name="msg_no_matches">Geen overeenkomsten op dit scherm</string>
   <string name="dialog_title_continuous_reading_mode">Hoe doorlopend lezen werkt</string>
-  <string name="dialog_message_continuous_reading_mode">Nadat je Lezen vanaf boven of Lezen vanaf item waarop is gefocust hebt geselecteerd, kun je nog steeds naar het volgende of vorige item navigeren terwijl de tekst wordt voorgelezen. Zo kun je makkelijk terug- of verdergaan.\n\nAls je het volume wilt aanpassen terwijl SandFly spreekt, druk je op de knop Volume omhoog of Volume omlaag.</string>
+  <string name="dialog_message_continuous_reading_mode">Nadat je Lezen vanaf het begin of Lezen vanaf item waarop is gefocust hebt geselecteerd, kun je nog steeds naar het volgende of vorige item navigeren terwijl de tekst wordt voorgelezen. Zo kun je makkelijk terug- of verdergaan.\n\nAls je het volume wilt aanpassen terwijl SandFly spreekt, druk je op de knop Volume omhoog of Volume omlaag.</string>
   <string name="always_show_this_message_label">Dit bericht altijd tonen</string>
   <string name="dialog_title_voice_commands">Bedien SandFly met spraakopdrachten</string>
-  <string name="dialog_message_voice_commands">Hier zijn voorbeelden van wat je kunt proberen:\n\n• Kopieer\n• Lees vanaf item waarop is gefocust\n• Zoek [Opslaan]\n• Spreek [sneller]\n• SandFly-instellingen\n\nZeg \'<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\' voor een lijst van alle spraakopdrachten</string>
+  <string name="dialog_message_voice_commands">Hier zijn voorbeelden van wat je kunt proberen:\n\n• Kopieer\n• Lezen vanaf item waarop is gefocust\n• Zoek [Opslaan]\n• Spreek [sneller]\n• SandFly-instellingen\n\nZeg \'<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>\' voor een lijst van alle spraakopdrachten</string>
   <string name="start_voice_command">Spraakopdrachten gebruiken</string>
   <string name="dialog_title_pass_through_mode">SandFly-gebaren overslaan om systeemgebaren te gebruiken</string>
   <string name="dialog_message_pass_through_mode">Als je een bel hoort, kun je een systeemgebaar gebruiken dat niet wordt ondersteund door SandFly. Dit wordt een SandFly-onderbrekingsgebaar genoemd.</string>
@@ -818,8 +818,8 @@
   <string name="adjust_granularity_hint">%1$s om te lezen per %2$s</string>
   <string name="adjust_typo_hint">%1$s voor suggesties.</string>
   <string name="use_action_hint">Dubbeltik om de actie uit te voeren</string>
-  <string name="no_adjust_setting_gesture">Als je dit wilt gebruiken, ga je naar de SandFly-instellingen en voeg je een gebaar toe voor \'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
-  <string name="no_navigate_typo_gesture">Als je dit wilt gebruiken, ga je naar de SandFly-instellingen en voeg je een gebaar toe voor spellingcontrole</string>
+  <string name="no_adjust_setting_gesture">Als je dit wilt gebruiken, ga je naar Instellingen voor SandFly en voeg je een gebaar toe voor \'<xliff:g example="selected setting next action">%1$s</xliff:g>\'</string>
+  <string name="no_navigate_typo_gesture">Als je dit wilt gebruiken, ga je naar Instellingen voor SandFly en voeg je een gebaar toe voor spellingcontrole</string>
   <string name="use_spelling_suggestion_hint">Dubbeltik om de tekst te vervangen</string>
   <string name="screen_search_keyword_hint">zoekwoord is %1$s</string>
   <string name="screen_search_no_keyword_hint">Nog geen zoekwoord. Als je een nieuwe zoekopdracht wilt starten, tik je met 3 vingers en houd je vast of open je schermzoeken via het SandFly-menu.</string>
@@ -846,12 +846,12 @@
   <string name="tv_training_shortcut_step_summary">Als je de snelkoppeling voor SandFly wilt openen, druk je 3 seconden lang tegelijk op de knop Omlaag en de knop Terug. Je zet SandFly dan aan of uit.\n\nJe vindt deze sneltoets ook in de instellingen van je tv.\n\nDruk op Selecteren om door te gaan.</string>
   <string name="new_feature_in_talkback_title">Nieuwe functies in SandFly</string>
   <string name="exit_tutorial_title">Klaar met het doornemen van de tutorial?</string>
-  <string name="exit_tutorial_content">Je kunt de tutorial altijd openen via de SandFly-instellingen.</string>
-  <string name="exit_onboarding_content">Je kunt altijd terugkomen om nieuwe functies te ontdekken via de SandFly-instellingen.</string>
+  <string name="exit_tutorial_content">Je kunt de tutorial altijd openen via Instellingen voor SandFly.</string>
+  <string name="exit_onboarding_content">Je kunt altijd terugkomen om nieuwe functies te ontdekken via Instellingen voor SandFly.</string>
   <string name="keep_reviewing_tutorial_button">Doorgaan met doornemen</string>
   <string name="welcome_to_updated_talkback_title">Welkom bij het geüpdatete SandFly</string>
   <string name="navigation_heading">Navigatie</string>
-  <string name="setting_selector_heading">Leesopties</string>
+  <string name="setting_selector_heading">Leesinstellingen</string>
   <string name="new_shortcut_gesture_pause_or_play_media_text">Als je media in een muziek- of video-app wilt onderbreken of afspelen, dubbeltik je met 2 vingers. Probeer het nu.</string>
   <string name="new_shortcut_gesture_pause_or_play_media_subtext">Andere apps kunnen dit gebaar gebruiken voor handelingen als een telefoongesprek beantwoorden of beëindigen. Dit gebaar wordt mogelijk niet ondersteund door alle apps.</string>
   <string name="new_shortcut_gesture_pause_media_announcement">Media is gepauzeerd of wordt afgespeeld. Meestal kun je hiermee de huidige video of muziek pauzeren of afspelen. Swipe naar rechts om door te gaan.</string>
@@ -865,9 +865,9 @@
   <string name="new_shortcut_gesture_cut_text_announcement">Tekst geknipt. Hiermee wordt doorgaans de geselecteerde tekst geknipt. Swipe naar rechts om door te gaan.</string>
   <string name="new_shortcut_gesture_selection_mode_text">Dubbeltik met 2 vingers en houd vast om de tekstselectiemodus te starten of te beëindigen.</string>
   <string name="new_shortcut_gesture_selection_mode_on_announcement">Selectiemodus aan of uit. Hiermee wordt meestal de tekstselectiemodus gestart of gestopt als je in een tekstinvoerveld zit. Swipe naar rechts om door te gaan.</string>
-  <string name="new_shortcut_gesture_reading_menu_text">Swipe met 3 vingers naar links of rechts om de leesopties te gebruiken. Je kunt ook met 3 vingers omhoog of omlaag swipen.</string>
-  <string name="new_shortcut_gesture_note">Opmerking: Je hebt sommige gebaren aangepast, dus deze informatie klopt misschien niet voor jou. Ga naar de SandFly-instellingen om je gebaren te bekijken.</string>
-  <string name="welcome_to_android11_text">Er zijn nieuwe gebaren toegevoegd zodat je SandFly sneller en makkelijker kunt gebruiken.\n\nOp dit scherm kun je de nieuwe gebaren uitproberen. Je kunt deze informatie ook altijd bekijken in de SandFly-instellingen.</string>
+  <string name="new_shortcut_gesture_reading_menu_text">Swipe met 3 vingers naar links of rechts om de leesinstellingen te gebruiken. Je kunt ook met 3 vingers omhoog of omlaag swipen.</string>
+  <string name="new_shortcut_gesture_note">Opmerking: Je hebt sommige gebaren aangepast, dus deze informatie klopt misschien niet voor jou. Ga naar Instellingen voor SandFly om je gebaren te bekijken.</string>
+  <string name="welcome_to_android11_text">Er zijn nieuwe gebaren toegevoegd zodat je SandFly sneller en makkelijker kunt gebruiken.\n\nOp dit scherm kun je de nieuwe gebaren uitproberen. Je kunt deze informatie ook altijd bekijken in Instellingen voor SandFly.</string>
   <string name="new_gesture_notification_title">Nieuwe gebaren in SandFly</string>
   <string name="new_gesture_notification_content">Tik voor meer informatie over hoe je SandFly sneller gebruikt met nieuwe gebaren.</string>
   <string name="dump_node_tree_description">Nodestructuur is afgedrukt naar logboeken.</string>
@@ -909,13 +909,9 @@
   <string name="keyboard_shortcuts_link_tts">Instellingen voor SandFly en dan Sneltoetsen</string>
   <string name="braille_display_settings_link">Instellingen voor brailleleesregel</string>
   <string name="keyboard_smart_browse_mode_title">Toetsenbord: slimme browsemodus</string>
-  <string name="keyboard_smart_browse_mode_text">De slimme browsemodus van SandFly zet de browsemodus uit in een bewerkingsveld, zodat je met een fysiek toetsenbord kunt typen als je op het web browst. Daarna wordt de functie weer aangezet als je naar een niet-bewerkingsveld op het web gaat, zodat je efficiënt kunt blijven browsen. Je kunt de slimme browsemodus aan- of uitzetten in <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="advanced_settings_link">Instellingen voor SandFly &gt; Geavanceerde instellingen</string>
-  <string name="advanced_settings_link_tts">SandFly-instellingen en dan Geavanceerde instellingen</string>
+  <string name="keyboard_smart_browse_mode_text">De slimme browsemodus van SandFly zet de browsemodus uit in een bewerkingsveld, zodat je met een fysiek toetsenbord kunt typen als je op het web browst. Daarna wordt de functie weer aangezet als je naar een niet-bewerkingsveld op het web gaat, zodat je efficiënt kunt blijven browsen. Je kunt Slimme browsemodus aan- of uitzetten in <xliff:g id="settings_path">%1$s</xliff:g>.</string>
   <string name="keyboard_tutorial_title">Tutorial over toetsenbordbediening</string>
   <string name="keyboard_tutorial_text">SandFly bevat nu een tutorial over toetsenbordbediening waarmee je de sneltoetsen en opdrachten voor de verbeterde keymap kunt leren als je een fysiek toetsenbord gebruikt. Ga naar <xliff:g id="settings_path">%1$s</xliff:g> om de tutorial te openen.</string>
-  <string name="tutorial_link">SandFly-instellingen &gt; SandFly-tutorial</string>
-  <string name="tutorial_link_tts">SandFly-instellingen en dan SandFly-tutorial</string>
   <string name="tutorial_entry_point_title">Tutorial</string>
   <string name="welcome_to_talkback_title">Welkom bij SandFly</string>
   <string name="talkback_is_on">SandFly staat aan</string>
@@ -948,10 +944,10 @@
   <string name="menus_title">Menu\'s en bedieningselementen gebruiken</string>
   <string name="menus_talkback_menu_text">Het SandFly-menu bevat vaak gebruikte instellingen en bedieningsopties.\n\nOpen het SandFly-menu nu door met 3 vingers op het scherm te tikken.</string>
   <string name="menus_talkback_menu_text_pre_r">Het SandFly-menu bevat vaakgebruikte instellingen en bedieningsopties.\n\nOpen het SandFly-menu nu door omlaag en dan naar rechts te swipen.</string>
-  <string name="menus_selector_text">Met deze snelkoppelingen kun je snel instellingen wijzigen, zoals schakelen van tekens naar woorden in je navigatie of de spreeksnelheid van SandFly aanpassen.\n\nAls je snel de leesopties wilt wijzigen, swipe je met 3 vingers naar links of naar rechts.\n\nJe kunt het SandFly-menu en je leesopties later aanpassen via de SandFly-instellingen.</string>
-  <string name="menus_selector_text_pre_r">Met deze snelle acties kun je snel instellingen wijzigen, zoals schakelen van tekens naar woorden in je navigatie of de spreeksnelheid van SandFly aanpassen.\n\nAls je snel de leesopties wilt wijzigen, swipe je omlaag en dan omhoog.\n\nJe kunt het SandFly-menu en je leesopties later aanpassen via de SandFly-instellingen.</string>
+  <string name="menus_selector_text">Met deze snelkoppelingen kun je snel instellingen wijzigen, zoals schakelen van tekens naar woorden in je navigatie of de spreeksnelheid van SandFly aanpassen.\n\nAls je snel de leesinstellingen wilt wijzigen, swipe je met 3 vingers naar links of naar rechts.\n\nJe kunt het SandFly-menu en je leesinstellingen later aanpassen via Instellingen voor SandFly.</string>
+  <string name="menus_selector_text_pre_r">Met deze snelle acties kun je snel instellingen wijzigen, zoals schakelen van tekens naar woorden in je navigatie of de spreeksnelheid van SandFly aanpassen.\n\nAls je snel de leesinstellingen wilt wijzigen, swipe je omlaag en dan omhoog.\n\nJe kunt het SandFly-menu en je leesinstellingen later aanpassen via Instellingen voor SandFly.</string>
   <string name="all_set_title">Dat was het!</string>
-  <string name="all_set_text">Je bent klaar om SandFly te gebruiken.\n\nJe kunt nu meer te weten komen over andere onderwerpen of deze informatie later nog eens teruglezen via de SandFly-instellingen.</string>
+  <string name="all_set_text">Je bent klaar om SandFly te gebruiken.\n\nJe kunt nu meer te weten komen over andere onderwerpen of deze informatie later nog eens teruglezen via Instellingen voor SandFly.</string>
   <string name="talkback_tutorial_text">Swipe naar rechts om een onderwerp te selecteren. Voor de beste gebruikerservaring zet je SandFly aan voordat je aan de slag gaat.</string>
   <string name="basic_navigation_link_text">Basisnavigatie</string>
   <string name="basic_navigation_link_subtext">Navigeer door items, scroll, gebruik menu\'s en meer</string>
@@ -979,7 +975,7 @@
   <string name="typing_text_title">Tekst typen</string>
   <string name="basic_typing_text_text">Wanneer je in een tekstvak staat, wordt er onderaan je scherm een toetsenbord geopend.</string>
   <string name="typing_text_text">Beweeg je vinger over het toetsenbord. Als je de letter hoort die je wilt typen, til je je vinger op.\n\nProbeer het onderstaande tekstvak te activeren en je naam te typen.</string>
-  <string name="typing_text_with_braille_keyboard_text">Je kunt ook typen met het brailletoetsenbord. Je vindt dit toetsenbord in de SandFly-instellingen.</string>
+  <string name="typing_text_with_braille_keyboard_text">Je kunt ook typen met het brailletoetsenbord. Je vindt dit toetsenbord in Instellingen voor SandFly.</string>
   <string name="other_ways_to_type_title">Andere manieren om te typen</string>
   <string name="other_ways_to_type_text">Er zijn andere manieren om te typen in SandFly. Je kunt bijvoorbeeld dubbeltikken om een letter in te voeren.</string>
   <string name="basic_other_ways_to_type_text">Er zijn andere manieren om te typen in SandFly. Je kunt bijvoorbeeld dubbeltikken om een letter in te voeren. Je kunt dit later wijzigen via Instellingen voor SandFly &gt; Schermtoetsenbord &gt; Typemethode.</string>
@@ -1221,8 +1217,8 @@
   <string name="delete_icon_detection_dialog_title">Automatische icoonbeschrijvingen verwijderen?</string>
   <string name="delete_image_description_dialog_title">Automatische afbeeldingsbeschrijvingen verwijderen?</string>
   <string name="delete_all_image_captioning_dialog_title">Automatische afbeeldings- en icoonbeschrijvingen verwijderen?</string>
-  <string name="delete_dialog_message">Als je later opnieuw beschrijvingen wilt, kun je deze functie downloaden via de SandFly-instellingen</string>
-  <string name="delete_all_dialog_message">Hierdoor worden automatische beschrijvingen voor zowel iconen als afbeeldingen verwijderd.\n\nAls je later weer beschrijvingen wilt, kun je deze functies downloaden via de SandFly-instellingen.</string>
+  <string name="delete_dialog_message">Als je later opnieuw beschrijvingen wilt, kun je deze functie downloaden via Instellingen voor SandFly</string>
+  <string name="delete_all_dialog_message">Hierdoor worden automatische beschrijvingen voor zowel iconen als afbeeldingen verwijderd.\n\nAls je later weer beschrijvingen wilt, kun je deze functies downloaden via Instellingen voor SandFly.</string>
   <string name="delete_dialog_positive_button_text">Verwijderen</string>
   <string name="delete_dialog_negative_button_text">Annuleren</string>
   <string name="delete_icon_description_hint">Automatische icoonbeschrijvingen verwijderd</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Meer</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Gebaren reserveren voor Vibration Watch</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">SandFly verwerkt geen enkele en dubbele tikken met twee vingers meer, zodat Samsung Vibration Watch ze kan gebruiken. Zet Vibration Watch aan in de toegankelijkheidsinstellingen van je horloge.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Gereserveerd voor Vibration Watch in Geavanceerde instellingen</string>
     <string name="title_pref_speakerphone_away_from_ear">Luidspreker wanneer de telefoon niet bij je oor is</string>
     <string name="summary_pref_speakerphone_away_from_ear">Schakelt tijdens een gesprek over naar de luidspreker als u de telefoon van uw oor haalt, en terug naar het oorstuk als u hem weer omhoog houdt.</string>
     <string name="summary_pref_speakerphone_needs_permission">Vereist een recht dat Android niet aan schermlezers geeft. Voer deze opdracht uit met adb of Shizuku om het te verlenen en ga daarna terug naar dit scherm: %1$s</string>
@@ -1393,7 +1388,6 @@
     <string name="speech_control_apps_category">Apps</string>
     <string name="speech_control_no_apps">Nog geen apps hebben gevraagd om te spreken.</string>
     <string name="speech_control_ask_title">Toestaan dat <xliff:g id="app" example="Tasker">%1$s</xliff:g> via SandFly spreekt?</string>
-    <string name="speech_control_ask_text">De app kan tekst uitspreken met je SandFly-stem. Je kunt dit wijzigen in Geavanceerde instellingen.</string>
     <string name="speech_control_allow">Toestaan</string>
     <string name="speech_control_deny">Niet toestaan</string>
     <string name="permission_speak_label">spreken via SandFly</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">Verwijderen</string>
     <string name="quick_settings_added">%1$s toegevoegd</string>
     <string name="quick_settings_removed">%1$s verwijderd</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly aan. Houd 2 vingers 5 seconden op het scherm om het uit te schakelen. Als je dit bericht niet meer wilt zien, zet je Instellingen voor SandFly &gt; Geavanceerde instellingen &gt; Instructies tonen om SandFly uit te zetten uit.</string>
     <string name="edge_gestures_title">Randen</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Nog een snelkoppeling om de bladermodus in of uit te schakelen</string>
     <string name="title_pref_vibration_strength">Trillingssterkte</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper-modellen</string>
     <string name="dictation_whisper_use">Gebruiken</string>
     <string name="title_pref_dictation_ai_service">AI-service voor dicteren</string>
-    <string name="dictation_ai_same">Dezelfde als voor automatische beschrijvingen</string>
     <string name="title_pref_browse_mode_per_app">Bladermodus per app onthouden</string>
     <string name="title_pref_export_settings">Instellingen exporteren</string>
     <string name="title_pref_import_settings">Instellingen importeren</string>
@@ -1794,4 +1786,12 @@
         <item>1 minuut</item>
     </string-array>
     <string name="title_pref_dictation_auto_stop">Automatisch stoppen na stilte</string>
+    <string name="dictation_ai_same">Zelfde als Afbeeldings- en schermbeschrijvingen</string>
+    <string name="navigation_settings_link">Instellingen voor SandFly &gt; Navigatie</string>
+    <string name="navigation_settings_link_tts">Instellingen voor SandFly en dan Navigatie</string>
+    <string name="shortcut_reserved_for_vibration_watch">Gereserveerd voor Vibration Watch in Gebaren</string>
+    <string name="speech_control_ask_text">De app kan tekst uitspreken met je SandFly-stem. Je kunt dit wijzigen in Instellingen, ‘Spraak’, ‘Andere apps laten spreken’.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly staat aan. Houd 2 vingers 5 seconden op het scherm om deze functie uit te zetten. Als je dit bericht niet meer wilt weergeven, zet je Instellingen voor SandFly &gt; Pauzeren en uitzetten &gt; Instructies tonen om SandFly uit te zetten uit.</string>
+    <string name="tutorial_link">Instellingen voor SandFly &gt; Hulp en feedback &gt; SandFly-tutorial</string>
+    <string name="tutorial_link_tts">Instellingen voor SandFly, dan Hulp en feedback en dan SandFly-tutorial</string>
 </resources>

@@ -18,10 +18,10 @@
     <string name="ai_service_model_hint">মডেল</string>
     <string name="ai_service_address_invalid">ঠিকানাটি https:// দিয়ে শুরু হতে হবে। কিছুই সেভ করা হয়নি।</string>
     <string name="dialog_message_ai_service_consent">বর্ণনার জন্য ছবি ও স্ক্রিনশট <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>-এ পাঠানো হয়, এতে কয়েক সেকেন্ড সময় লাগে। পরিষেবাটির নিজস্ব শর্তাবলি ও গোপনীয়তা নীতি প্রযোজ্য। জেনারেটিভ AI পরীক্ষামূলক, তাই এটি ভুল করবে।</string>
-    <string name="ai_service_error_api_key">AI পরিষেবা API কী গ্রহণ করেনি। স্বয়ংক্রিয় বিবরণে এর সেটিংস পরীক্ষা করুন।</string>
-    <string name="ai_service_error_quota">AI পরিষেবার ব্যবহারের সীমা পৌঁছে গেছে। পরে আবার চেষ্টা করুন.</string>
+    <string name="ai_service_error_api_key">এআই পরিষেবা API কী গ্রহণ করেনি। “ছবি ও স্ক্রিনের বিবরণ”-এ এর সেটিংস পরীক্ষা করুন।</string>
+    <string name="ai_service_error_quota">এআই পরিষেবার ব্যবহারের সীমা পৌঁছে গেছে। পরে আবার চেষ্টা করুন.</string>
     <string name="ai_service_error_busy">এআই পরিষেবা এখন ব্যস্ত। কিছুক্ষণের মধ্যে আবার চেষ্টা করুন।</string>
-    <string name="ai_service_error_timeout">AI পরিষেবাটি উত্তর দিতে খুব বেশি সময় নিয়েছে। আবার চেষ্টা করুন।</string>
+    <string name="ai_service_error_timeout">এআই পরিষেবাটি উত্তর দিতে খুব বেশি সময় নিয়েছে। আবার চেষ্টা করুন।</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
@@ -30,8 +30,8 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">কোনওটিই নয়</string>
-    <string name="ai_service_not_set_up">কোনো AI পরিষেবা ব্যবহার করা হচ্ছে না। একটি সেট আপ করুন বা স্বয়ংক্রিয় বিবরণ সেটিংসে একটি চয়ন করুন৷</string>
-    <string name="ai_provider_none_set_up">কোনো AI পরিষেবা সেট আপ করা হয়নি। নিচের সেটিংসে একটি সেট আপ করুন।</string>
+    <string name="ai_service_not_set_up">কোনো এআই পরিষেবা ব্যবহার করা হচ্ছে না। “ছবি ও স্ক্রিনের বিবরণ” সেটিংসে একটি সেট আপ করুন বা বেছে নিন।</string>
+    <string name="ai_provider_none_set_up">কোনো এআই পরিষেবা সেট আপ করা হয়নি। নিচের সেটিংসে একটি সেট আপ করুন।</string>
     <string name="ai_provider_other">অন্যান্য পরিষেবা</string>
     <string name="title_pref_category_ai_services">এআই পরিষেবা</string>
     <string name="title_pref_ai_provider">এআই পরিষেবা</string>

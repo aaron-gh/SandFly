@@ -10,7 +10,7 @@
   <string name="actions">Amallar</string>
   <string name="system_actions">Tizim amallari</string>
   <string name="talkback_preferences_subtitle">%1$s versiya</string>
-  <string name="label_manager_summary_title">Moslashtirilgan yorliqlarni boshqarish</string>
+  <string name="label_manager_summary_title">Maxsus yorliqlarni boshqarish</string>
   <string name="label_manager_package_title">%1$s yorliqlarini boshqarish</string>
   <string name="manage_label">Yorliqni boshqarish</string>
   <string name="label_manager_no_packages_message">Hozir hech qanday maxsus yorliq yaratilmagan\n\n<b>Maxsus yorliq qanday yaratiladi</b>\nYorliq yaratish uchun keraklil rasmni oching va SandFly menyusidan mos bandni tanlang</string>
@@ -82,13 +82,13 @@
   <string name="title_pref_category_selector_menu">Oʻqish boshqaruvi</string>
   <string name="title_pref_category_navigation_menu">Navigatsiya parametrlarini tahrirlash</string>
   <string name="title_pref_manage_keyboard_shortcuts">Tezkor tugmalar</string>
-  <string name="title_pref_export_custom_labels">Shaxsiy yorliqlarni eksport qilish</string>
+  <string name="title_pref_export_custom_labels">Maxsus yorliqlarni eksport qilish</string>
   <string name="title_pref_help_and_feedback">Yordam/fikr-mulohaza</string>
   <string name="title_pref_help">Yordam</string>
   <string name="title_pref_show_tos">Xizmat shartlari</string>
   <string name="title_pref_show_privacy_policy">Maxfiylik siyosati</string>
   <string name="title_pref_category_fingerprint_touch_shortcuts">Barmoq izi ishoralari</string>
-  <string name="title_pref_category_tutorial">SandFly qoʻllanmasi</string>
+  <string name="title_pref_category_tutorial">SandFly darsligi</string>
   <string name="title_pref_category_help_no_tutorial">Yordam</string>
   <string name="title_pref_advanced_settings">Kengaytirilgan sozlamalar</string>
   <string name="title_pref_show_exit_watermark">SandFly qulayligini faolsizlantirish tartibi</string>
@@ -107,7 +107,7 @@
   <string name="pref_verbosity_preset_entry_custom">Maxsus</string>
   <string name="pref_verbosity_preset_entry_low">Past</string>
   <string name="pref_verbosity_category_preset_settings_title">Tafsilotlarni boshqarish</string>
-  <string name="pref_verbosity_preset_change">%1$s darajali tekshiruv faollashtirildi.</string>
+  <string name="pref_verbosity_preset_change"><xliff:g id="preset_name" example="High">%1$s</xliff:g> tafsilotlar darajasi faollashtirildi.</string>
   <string name="pref_gesture_set_entry_0">0</string>
   <string name="pref_gesture_set_entry_1">1</string>
   <string name="keycombo_keymap_changes_instruction_title">SandFly terilmasini yangilang</string>
@@ -193,7 +193,7 @@
   <string name="keycombo_menu_other_copy_last_spoken_phrase">Oxirgi iborani nusxalash</string>
   <string name="keycombo_menu_other_open_tts_settings">Nutq sintezatori sozlamalarini ochish</string>
   <string name="keycombo_menu_other_open_talkback_settings">SandFly sozlamalarini ochish</string>
-  <string name="keycombo_menu_other_report_issue">Fikr-mulohaza</string>
+  <string name="keycombo_menu_other_report_issue">Fikr-mulohaza yuborish</string>
   <string name="keycombo_menu_other_cycle_typing_echo">Terishda aytilish turini almashtirish</string>
   <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Tezkor tugmalar roʻyxatini chiqarish</string>
   <string name="keycombo_menu_category_web">Veb-navigatsiya amallari</string>
@@ -325,7 +325,7 @@
   <string name="title_pref_auto_image_captioning">Avtomatik tavsiflar</string>
   <string name="title_pref_gemini_settings">Gemini sozlamalari</string>
   <string name="title_pref_gemini_enabled">Gemini ovozli buyruqlari</string>
-  <string name="title_pref_category_automatic_description_summary">SandFly menyusidagi \“Rasmni tavsiflash\” bandini tanlab, AI yordamida batafsil rasm tavsiflarini oling.\n\nShuningdek, rasm yoki belgini fokuslab, avtomatik tavsiflarni olish mumkin. Avtomatik tavsiflar ishlashida internet aloqasi kerak emas.</string>
+  <string name="title_pref_category_automatic_description_summary">SandFly menyusidagi \“Rasmga tavsif berish\” bandini tanlab, AI yordamida batafsil rasm tavsiflarini oling.\n\nShuningdek, rasm yoki belgini fokuslab, avtomatik tavsiflarni olish mumkin. Avtomatik tavsiflar ishlashida internet aloqasi kerak emas.</string>
   <string name="title_pref_icon_detection">Avtomatik belgi tavsiflari</string>
   <string name="title_pref_image_description">Avtomatik rasm tavsiflari</string>
   <string name="title_pref_text_recognition">Rasmlardagi matn uchun avtomatik tavsiflar</string>
@@ -389,7 +389,7 @@
   <string name="shortcut_talkback_breakout">SandFly menyusini ochish</string>
   <string name="shortcut_pause_or_resume_feedback">Nutqni pauza qilish yoki davom ettirish</string>
   <string name="shortcut_toggle_voice_feedback">Nutqni yoqish yoki oʻchirish</string>
-  <string name="shortcut_read_from_top">Boshidan boshlab o‘qish</string>
+  <string name="shortcut_read_from_top">Boshidan boshlab oʻqish</string>
   <string name="shortcut_read_from_current">Fokusga olingan elementdan oʻqish</string>
   <string name="shortcut_print_node_tree">Tugunli daraxtni chop qilish</string>
   <string name="shortcut_print_performance_stats">Unumdorlik bo‘yicha statistikani chop etish</string>
@@ -512,7 +512,7 @@
   <string name="summary_show_keyboard_shortcuts_preferences">Tezkor tugmalar roʻyxatini ochish</string>
   <string name="summary_talkback_preferences">SandFly sozlamalarini ochish</string>
   <string name="summary_braile_display_preferences">Brayl ekrani sozlamalarini ochish</string>
-  <string name="summary_system_actions">Barcha ilovalar va tezkor solzamalarga oʻtish</string>
+  <string name="summary_system_actions">Barcha ilovalar va tezkor sozlamalarga oʻtish</string>
   <string name="summary_tts_settings">Nutq sintezatori sozlamalarini ochish</string>
   <string name="not_editable">Tahrirlash imkonsiz</string>
   <string name="not_selectable">Belgilanmaydi</string>
@@ -667,8 +667,8 @@
   <string name="label_dialog_confirm_label_remove">Yorliq olib tashlandi</string>
   <string name="label_dialog_text">Yorliq sifatida ishlatiladigan matnni kiriting\nElementning ichki nomi: %1$s</string>
   <string name="label_dialog_edit_hint">Yorliq matni</string>
-  <string name="label_import">Shaxsiy yorliqlarni import qilish</string>
-  <string name="label_import_dialog_title">SandFly xizmatiga shaxsiy yorliqlarni import qilish</string>
+  <string name="label_import">Maxsus yorliqlarni import qilish</string>
+  <string name="label_import_dialog_title">SandFly xizmatiga maxsus yorliqlarni import qilish</string>
   <string name="label_import_dialog_message">Ziddiyat yuz berganda takroriy yorliqlarni almashtirishni yoki o‘tkazib yuborishni tanlang</string>
   <string name="label_import_dialog_skip">Tashlab ketish</string>
   <string name="label_import_dialog_override">Almashtirish</string>
@@ -788,7 +788,7 @@
   <string name="dialog_message_continuous_reading_mode">“Boshidan boshlab oʻqish” yoki “Fokusga olingan elementdan oʻqish” tanlangandan keyin ham matn oʻqilayotganda oldingi yoki keyingi elementga oʻtishingiz mumkin. Bu bilan osongina orqaga qaytish yoki oldinga oʻtib ketish mumkin.\n\nSandFly gapirayotganda ovoz balandligini sozlash uchun ovozni oshirish yoki pasaytirish tugmasini bosing.</string>
   <string name="always_show_this_message_label">Bu xabar doim chiqsin</string>
   <string name="dialog_title_voice_commands">SandFly xizmatini ovozli buyruqlar bilan boshqaring</string>
-  <string name="dialog_message_voice_commands">Quyidagi narsalarni aytishga urining:\n\n• Nusxalash\n• Fokusga olinganini oʻqish\n• [Saqlangan narsani] qidirish\n• [Tezroq] gapirish\n• SandFly sozlamalari\n\nBajariladigan barcha buyruqlar bilan “<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>” deb aytish orqali tanishing</string>
+  <string name="dialog_message_voice_commands">Quyidagi narsalarni aytishga urining:\n\n• Nusxalash\n• Fokusga olingan elementdan oʻqish\n• [Saqlangan narsani] qidirish\n• [Tezroq] gapirish\n• SandFly sozlamalari\n\nBajariladigan barcha buyruqlar bilan “<xliff:g example="help" id="voice_help_cmd">%1$s</xliff:g>” deb aytish orqali tanishing</string>
   <string name="start_voice_command">Ovozli buyruqlar ishlatish</string>
   <string name="dialog_title_pass_through_mode">SandFly ishoralari oʻrniga tizim ishoralaridan foydalanish</string>
   <string name="dialog_message_pass_through_mode">Jiringlash eshitsangiz, SandFly bilan ishlamaydigan tizim ishorasidan foydalanishingiz mumkin. Bu asl ishora hisoblanadi.</string>
@@ -812,7 +812,7 @@
   <string name="audio_focus_state">Boshqa ilovalar tovushini pasaytirish %1$s</string>
   <string name="sound_feedback_state">Ovozli signal %1$s</string>
   <string name="vibration_feedback_state">Tebranishli signal %1$s</string>
-  <string name="text_formatting_state">Oʻqiladigan matn formati %1$s</string>
+  <string name="text_formatting_state">Matn formatini aytish: <xliff:g example="on" id="state">%1$s</xliff:g></string>
   <string name="typing_echo_change">%1$s aytilishi jismoniy klaviatura</string>
   <string name="gesture_1_or_2">%1$s yoki %2$s</string>
   <string name="adjust_granularity_hint">%2$s bilan oʻqish uchun %1$s</string>
@@ -872,8 +872,8 @@
   <string name="new_gesture_notification_content">Yangi ishoralar bilan SandFlyni tezroq ishlatish haqida batafsil axborot olish uchun bosing.</string>
   <string name="dump_node_tree_description">Tugunlar daraxti jurnalga chop etildi.</string>
   <string name="report_gesture_description">Quyida oxirgi bajarilgan ishoralar keltirilgan, qaysi biri xato va yaxshi ishlamagani haqida xabar qiling.</string>
-  <string name="update_welcome_talkback_16.1">Bu SandFly yangilanishida qoʻshimcha tillarda Ekranni tavsiflash, shuningdek, SandFly funksiyasidan foydalanishni oson qiladigan boshqa tuzatishlar kiritildi.\n\nBu oʻzgarishlar haqida keyingi ekranlarda batafsil bilib olasiz.\n\nBu axborotni keyinroq SandFly sozlamalari &gt; SandFly yangi funksiyalari ruknida tekshirish mumkin.</string>
-  <string name="update_welcome_talkback_16.1_tts">Bu SandFly yangilanishida qoʻshimcha tillarda Ekranni tavsiflash, shuningdek, SandFly funksiyasidan foydalanishni oson qiladigan boshqa tuzatishlar kiritildi.\n\nBu oʻzgarishlar haqida keyingi ekranlarda batafsil bilib olasiz.\n\nBu axborotni keyinroq SandFly sozlamalari &gt; SandFly yangi funksiyalari ruknida tekshirish mumkin.</string>
+  <string name="update_welcome_talkback_16.1">Bu SandFly yangilanishida qoʻshimcha tillarda “Ekran sarhisobi” funksiyasi, shuningdek, SandFly funksiyasidan foydalanishni oson qiladigan boshqa tuzatishlar kiritildi.\n\nBu oʻzgarishlar haqida keyingi ekranlarda batafsil bilib olasiz.\n\nBu axborotni keyinroq SandFly sozlamalari &gt; SandFlydagi yangi xususiyatlar ruknida tekshirish mumkin.</string>
+  <string name="update_welcome_talkback_16.1_tts">Bu SandFly yangilanishida qoʻshimcha tillarda “Ekran sarhisobi” funksiyasi, shuningdek, SandFly funksiyasidan foydalanishni oson qiladigan boshqa tuzatishlar kiritildi.\n\nBu oʻzgarishlar haqida keyingi ekranlarda batafsil bilib olasiz.\n\nBu axborotni keyinroq SandFly sozlamalari, keyin SandFlydagi yangi xususiyatlar ruknida tekshirish mumkin.</string>
   <string name="shortcut_for_dictation_title">Ovoz bilan yozish uchun yorliq</string>
   <string name="shortcut_for_dictation_content">Gboard ishlatishda ovozli buyruq yozishni boshlash yoki toʻxtatish uchun ikki barmoq bilan ikki marta bosishingiz mumkin.
 &lt;br&gt;
@@ -881,7 +881,7 @@
   <string name="shortcut_for_dictation_content_without_google_play">Gboard ekranda payti ovoz bilan yozishni boshlash uchun ikki barmoq bilan ikki marta tegining, keyin toʻxtatish uchun ham ikki barmoq bilan ikki marta tegining.</string>
   <string name="announcing_text_formatting_title">Matn formati haqida xabar</string>
   <string name="announcing_text_formatting_header">SandFly endi qalin, qiya va matn rangi kabi matn formatidagi oʻzgarishlar haqida xabar qilishi mumkin. Boshlash uchun:</string>
-  <string name="announcing_text_formatting_option1">Formatlangan elementga fokusni qarating, SandFly menyusini oching va “Matn formatini tavsiflash” bandini tanlang yoki</string>
+  <string name="announcing_text_formatting_option1">Formatlangan elementga fokusni qarating, SandFly menyusini oching va “Matnni formatlashni tavsiflash” bandini tanlang yoki</string>
   <string name="announcing_text_formatting_option2">Formatlash oʻzgarishlari haqida eʼlon qilishni yoqadigan yoki oʻchiradigan matnni formatlash uchun oʻqish boshqaruvini qoʻshing.</string>
   <string name="announcing_text_formatting_middle">Uni sinashga tayyor boʻlsangiz, quyida formatlangan matn namunasi keltirilgan:</string>
   <string name="announcing_text_formatting_tail">Agar formatlangan matn qanday eʼlon qilinishini oʻzgartirmoqchi boʻlsangiz, %1$s sahifasiga kirishingiz mumkin.</string>
@@ -897,25 +897,21 @@
 &lt;br&gt;
 &lt;br&gt;Ranglar sachrashi mumkin, yorqin displey,
 &lt;br&gt;&lt;font color=\"#db372d\"&gt;Olovrangdan&lt;/font&gt; tortib, to &lt;font color=\"#128937\"&gt;yam-yashil&lt;/font&gt; ranggacha.</string>
-  <string name="update_welcome_talkback_16.2">Bu SandFly yangilanishida fizik klaviaturalar uchun yangi “Kengaytirilgan terilma”, matnli formatlash eʼlonlarini dastaklash hamda SandFly ishlatishni osonlashtirish uchun qayta ishlangan sozlamalar maketi va boshqa yaxshilanishlar taqdim etildi.\n\nBu oʻzgarishlar haqida keyingi bir nechta ekranda batafsil bilib olasiz.\n\nBu maʼlumot bilan keyinroq SandFly sozlamalari &gt; SandFly sahifasidagi yangi funksiyalar ruknida tanishishingiz mumkin.</string>
-  <string name="update_welcome_talkback_16.2_tts">Bu SandFly yangilanishida fizik klaviaturalar uchun yangi “Kengaytirilgan terilma”, matnli formatlash eʼlonlarini dastaklash hamda SandFly ishlatishni osonlashtirish uchun qayta ishlangan sozlamalar maketi va boshqa yaxshilanishlar taqdim etildi.\n\nBu oʻzgarishlar haqida keyingi bir nechta ekranda batafsil bilib olasiz.\n\nBu maʼlumot bilan keyinroq SandFly sozlamalari &gt; SandFly sahifasidagi yangi funksiyalar ruknida tanishishingiz mumkin.</string>
+  <string name="update_welcome_talkback_16.2">Bu SandFly yangilanishida fizik klaviaturalar uchun yangi “Kengaytirilgan terilma”, matnli formatlash eʼlonlarini dastaklash hamda SandFly ishlatishni osonlashtirish uchun qayta ishlangan sozlamalar maketi va boshqa yaxshilanishlar taqdim etildi.\n\nBu oʻzgarishlar haqida keyingi bir nechta ekranda batafsil bilib olasiz.\n\nBu maʼlumot bilan keyinroq SandFly sozlamalari &gt; SandFlydagi yangi xususiyatlar ruknida tanishishingiz mumkin.</string>
+  <string name="update_welcome_talkback_16.2_tts">Bu SandFly yangilanishida fizik klaviaturalar uchun yangi “Kengaytirilgan terilma”, matnli formatlash eʼlonlarini dastaklash hamda SandFly ishlatishni osonlashtirish uchun qayta ishlangan sozlamalar maketi va boshqa yaxshilanishlar taqdim etildi.\n\nBu oʻzgarishlar haqida keyingi bir nechta ekranda batafsil bilib olasiz.\n\nBu maʼlumot bilan keyinroq SandFly sozlamalari, keyin SandFlydagi yangi xususiyatlar ruknida tanishishingiz mumkin.</string>
   <string name="new_settings_layout_title">Sozlamalar yangi maketi</string>
   <string name="new_settings_layout_text">Funksiyalarni oson topish uchun sozlamalar guruhlari yangilandi. Klaviatura sozlamalari kabi yangi sozlamalar turkumlari ham mavjud.</string>
   <string name="split_tap_everywhere_title">Hamma joyda ajratib bosish</string>
   <string name="split_tap_everywhere_text">Endi klaviaturadan tashqarida ham elementlarni faollashtirish uchun istalgan joyda ajratib bosishingiz mumkin. Funksiyadan foydalanish uchun ekranni bitta barmoq bilan tekshiring, keyin birinchi barmoqni koʻtarmasdan, hozir fokuslangan elementni faollashtirish uchun boshqa barmoq bilan ekranga tegining.</string>
   <string name="keyboard_enhanced_keymap_title">Klaviatura: Yaxshilangan terilma</string>
-  <string name="keyboard_enhanced_keymap_text">SandFly’da endi jismoniy klaviaturalar uchun “Yaxshilangan terilma” bor, unda koʻplab yangi buyruqlar va tezkor tugmalar mavjud. Unga “Kezish rejimi” ham kiradi, u jismoniy klaviaturadan foydalanadigan SandFly foydalanuvchilari uchun vebda harakatlanish va oʻzaro ishlashni samaraliroq va soddaroq qiladi. “Yaxshilangan terilma”ga <xliff:g id="settings_path">%1$s</xliff:g> boʻlimida oʻtishingiz mumkin.\n\nAgar brayl displeydan foydalansangiz, kezish rejimining yangi tezkor tugmalari bilan kontent boʻylab toʻgʻridan-toʻgʻri brayl displeydan harakatlanishingiz ham mumkin. Shu oʻzgarish tufayli brayl displeyning ayrim tezkor tugmalari oʻzgartirildi. Brayl displeyning barcha tezkor tugmalari roʻyxatini <xliff:g id="braille_display_settings_path">%2$s</xliff:g> boʻlimida koʻrishingiz mumkin.</string>
+  <string name="keyboard_enhanced_keymap_text">SandFly’da endi jismoniy klaviaturalar uchun “Yaxshilangan terilma” bor, unda koʻplab yangi buyruqlar va tezkor tugmalar mavjud. Unga “Kezish rejimi” ham kiradi, u jismoniy klaviaturadan foydalanadigan SandFly foydalanuvchilari uchun vebda harakatlanish va oʻzaro ishlashni samaraliroq va soddaroq qiladi. “Yaxshilangan terilma”ga <xliff:g id="settings_path">%1$s</xliff:g> boʻlimida oʻtishingiz mumkin.\n\nAgar brayl ekranidan foydalansangiz, kezish rejimining yangi tezkor tugmalari bilan kontent boʻylab toʻgʻridan-toʻgʻri brayl ekranidan harakatlanishingiz ham mumkin. Shu oʻzgarish tufayli brayl ekranining ayrim tezkor tugmalari oʻzgartirildi. Brayl ekranining barcha tezkor tugmalari roʻyxatini <xliff:g id="braille_display_settings_path">%2$s</xliff:g> boʻlimida koʻrishingiz mumkin.</string>
   <string name="keyboard_shortcuts_link">SandFly sozlamalari &gt; Tezkor tugmalar</string>
   <string name="keyboard_shortcuts_link_tts">SandFly sozlamalari, Tezkor tugmalar</string>
   <string name="braille_display_settings_link">Brayl ekrani sozlamalari</string>
   <string name="keyboard_smart_browse_mode_title">Klaviatura: Smart kezish rejimi</string>
   <string name="keyboard_smart_browse_mode_text">SandFly smart kezish rejimi veb-saytlarni kezishda jismoniy klaviatura bilan yozishga yordam berish uchun tahrirlash maydonida kezish rejimini faolsizlantiradi. Keyin internetdagi tahrirlanmagan maydon ochilganda uni qayta yoqadi va samarali kezishda davom etish imkonini beradi. “Smart kezish rejimi” <xliff:g id="settings_path">%1$s</xliff:g> orqali yoqilishi yoki faolsizlantirilishi mumkin.</string>
-  <string name="advanced_settings_link">SandFly sozlamalari &gt; Kengaytirilgan sozlamalar</string>
-  <string name="advanced_settings_link_tts">SandFly sozlamalari, Kengaytirilgan sozlamalar</string>
   <string name="keyboard_tutorial_title">Klaviatura qoʻllanmasi</string>
   <string name="keyboard_tutorial_text">SandFly tarkibida endi jismoniy klaviatura ishlatishda Kengaytirilgan klaviatura terilmasi uchun klaviatura tezkor tugmalari va buyruqlarini oʻrganishga yordam beradigan Klaviatura qoʻllanmasi mavjud. Qoʻllanmani quyidagi sahifa orqali ochish mumkin: <xliff:g id="settings_path">%1$s</xliff:g>.</string>
-  <string name="tutorial_link">SandFly sozlamalari &gt; SandFly qoʻllanmasi</string>
-  <string name="tutorial_link_tts">SandFly sozlamalari, SandFly qoʻllanmasi</string>
   <string name="tutorial_entry_point_title">Darslik</string>
   <string name="welcome_to_talkback_title">SandFly xizmatiga xush kelibsiz</string>
   <string name="talkback_is_on">SandFly yoniq</string>
@@ -979,7 +975,7 @@
   <string name="typing_text_title">Matn yozish</string>
   <string name="basic_typing_text_text">Matn maydoniga bossangiz, ekranning pastki qismida klaviatura ochiladi.</string>
   <string name="typing_text_text">Barmogʻingizni klaviatura boʻylab harakatlantiring. Kerakli harfni eshitganda barmoqni oling.\n\nQuyida matn maydonini chiqaring va ismingizni yozing.</string>
-  <string name="typing_text_with_braille_keyboard_text">Shuningdek, breyl klaviaturasida ham yozish mumkin. Uni SandFly sozlamalaridan toping.</string>
+  <string name="typing_text_with_braille_keyboard_text">Shuningdek, brayl klaviaturasida ham yozish mumkin. Uni SandFly sozlamalaridan toping.</string>
   <string name="other_ways_to_type_title">Yozishning boshqa usullari</string>
   <string name="other_ways_to_type_text">SandFly ichida yozishning boshqa usullari ham mavjud. Masalan, harfni kiritish uchun ikki marta teginishdan foydalanish mumkin.</string>
   <string name="basic_other_ways_to_type_text">SandFly’da yozishning boshqa usullari ham bor. Masalan, harfni ikki marta bosib kiritish mumkin. Buni keyinroq SandFly sozlamalari &gt; Ekrandagi klaviatura &gt; Yozish usuli orqali oʻzgartirishingiz mumkin.</string>
@@ -1068,10 +1064,10 @@
   <string name="checking_notifications_text_tail_tts">Qaysi ilovalarda bildirishnomalar yoqilganini Sozlamalar, keyin Bildirishnomalar orqali tekshirish mumkin.</string>
   <string name="checking_notifications_tips">Bildirishnomalar tarixini tekshirish uchun ekran tepasidan 2 barmoq bilan pastga suring</string>
   <string name="image_description_playground_title">Rasm tavsiflarini olishga urining</string>
-  <string name="image_description_playground_content_one">Tasvirni fokusda tutsangiz, SandFly menyusini oching va “Rasmni tavsiflash” bandini tanlang.\n\nQuyida bitta surat bor. Bunga tavsif olishga harakat qiling.</string>
-  <string name="image_description_playground_content_two">Rasm tavsifi sozlamalarini istalgan vaqtda SandFly sozlamalari &gt; Avtomatik tavsiflar orqali oʻzgartirishingiz mumkin.</string>
-  <string name="image_description_playground_content_two_tts">Tasvir tavsifi sozlamalarini istalgan vaqtda SandFly sozlamalari, keyin Avtomatik tavsiflar orqali oʻzgartirishingiz mumkin.</string>
-  <string name="image_description_sample_image_content_description">Rasm namunasi. SandFly menyusini ochish uchun 3 barmoqni bosib turing va tavsifni tinglash uchun \"Rasmni tavsiflash\" bandini tanlang.</string>
+  <string name="image_description_playground_content_one">Tasvirni fokusda tutsangiz, SandFly menyusini oching va “Rasmga tavsif berish” bandini tanlang.\n\nQuyida bitta surat bor. Bunga tavsif olishga harakat qiling.</string>
+  <string name="image_description_playground_content_two">Rasm tavsifi sozlamalarini istalgan vaqtda SandFly sozlamalari &gt; Rasm va ekran tavsiflari orqali oʻzgartirishingiz mumkin.</string>
+  <string name="image_description_playground_content_two_tts">Tasvir tavsifi sozlamalarini istalgan vaqtda SandFly sozlamalari, keyin Rasm va ekran tavsiflari orqali oʻzgartirishingiz mumkin.</string>
+  <string name="image_description_sample_image_content_description">Rasm namunasi. SandFly menyusini ochish uchun 3 barmoqni bosib turing va tavsifni tinglash uchun \"Rasmga tavsif berish\" bandini tanlang.</string>
   <string name="practice_gestures_title">Ishoralardan foydalanish amaliyoti</string>
   <string name="practice_keyboard_gestures_title">Tezkor tugmalarni mashq qilish</string>
   <string name="pref_gesture_set_key_title">Ishoralar toʻplami</string>
@@ -1257,7 +1253,7 @@
   <string name="pref_auto_enter_table_navigation_title">Jadvallarda jadval navigatsiyasiga o\'tish</string>
   <string name="title_text_formatting_menu">Matnni formatlashni tavsiflash</string>
   <string name="summary_text_formatting_menu">Qalin, qiya, tagchiziq va boshqalar kabi oʻzgarishlar uchun</string>
-  <string name="title_text_formatting_inline">Oʻqiladigan matn formati</string>
+  <string name="title_text_formatting_inline">Matn formatini aytish</string>
   <string name="title_switch_text_formatting">Matn formatini aytish</string>
   <string name="summary_text_formatting_verbosity">Qalin va qiya kabi oʻzgarishlar uchun</string>
   <string name="summary_text_formatting_selector">Qalin va kursiv kabi formatlash ovoz chiqarib oʻqilishini oʻzgartirish</string>
@@ -1381,7 +1377,6 @@
     <string name="title_pref_category_more">Boshqa</string>
     <string name="title_pref_reserve_vibration_watch_gestures">Vibration Watch uchun imo-ishoralarni zaxiralash</string>
     <string name="summary_pref_reserve_vibration_watch_gestures">Samsung Vibration Watch ulardan foydalanishi uchun SandFly ikki barmoq bilan bir va ikki marta teginishni toʻxtatadi. Soatingizning maxsus imkoniyatlar sozlamalarida Vibration Watch ni yoqing.</string>
-    <string name="shortcut_reserved_for_vibration_watch">Kengaytirilgan sozlamalarda Vibration Watch uchun band qilingan</string>
     <string name="title_pref_speakerphone_away_from_ear">Telefon quloqdan uzoqlashganda dinamik</string>
     <string name="summary_pref_speakerphone_away_from_ear">Qoʻngʻiroq paytida telefonni quloqdan uzoqlashtirganingizda karnayga, yana qulogʻingizga tutganingizda suhbat dinamigiga oʻtadi.</string>
     <string name="summary_pref_speakerphone_needs_permission">Android ekrandan oʻqish dasturlariga bermaydigan ruxsat kerak. Uni berish uchun bu buyruqni adb yoki Shizuku orqali bajaring, keyin shu ekranga qayting: %1$s</string>
@@ -1393,13 +1388,12 @@
     <string name="speech_control_apps_category">Ilovalar</string>
     <string name="speech_control_no_apps">Hech qanday ilova hali gapirishni soʻramagan.</string>
     <string name="speech_control_ask_title"><xliff:g id="app" example="Tasker">%1$s</xliff:g> ga SandFly orqali gapirishga ruxsat berilsinmi?</string>
-    <string name="speech_control_ask_text">U SandFly ovozingiz bilan matnni aytishi mumkin. Buni Kengaytirilgan sozlamalarda oʻzgartirishingiz mumkin.</string>
     <string name="speech_control_allow">Ruxsat berish</string>
     <string name="speech_control_deny">Ruxsat bermaslik</string>
     <string name="permission_speak_label">SandFly orqali gapirish</string>
     <string name="permission_speak_description">Ilovaga SandFly ovozingiz bilan matn aytishni soʻrashiga ruxsat beradi. SandFly ilova gapirishdan oldin sizdan soʻraydi.</string>
-    <string name="permission_braille_display_label">SandFly uchun brayl displeyi boʻlishni soʻrash</string>
-    <string name="permission_braille_display_description">Ilovaga SandFly uchun brayl displeyi boʻlishni soʻrashiga ruxsat beradi. Agar SandFly’da ruxsat bersangiz, u ekrandagi hamma narsani oʻqiy oladi va qurilmangizni boshqara oladi. SandFly avval sizdan soʻraydi.</string>
+    <string name="permission_braille_display_label">SandFly uchun brayl ekrani boʻlishni soʻrash</string>
+    <string name="permission_braille_display_description">Ilovaga SandFly uchun brayl ekrani boʻlishni soʻrashiga ruxsat beradi. Agar SandFly’da ruxsat bersangiz, u ekrandagi hamma narsani oʻqiy oladi va qurilmangizni boshqara oladi. SandFly avval sizdan soʻraydi.</string>
     <string name="title_pref_phonetic_letters_mode">Harflarni fonetik aytish</string>
     <string name="phonetic_letters_mode_off">Oʻchiq</string>
     <string name="phonetic_letters_mode_after_letter_delay">Harfdan keyin, pauza bilan, masalan “h, hovli”</string>
@@ -1461,7 +1455,7 @@
     </plurals>
     <string name="title_pref_quick_settings">SandFly tezkor sozlamalaridan foydalanish</string>
     <string name="title_pref_quick_settings_items">Tez sozlamalar paneli</string>
-    <string name="quick_settings_title">Tez sozlamalar</string>
+    <string name="quick_settings_title">Tezkor sozlamalar</string>
     <string name="quick_settings_wifi">Wi-Fi</string>
     <string name="quick_settings_bluetooth">Bluetooth</string>
     <string name="quick_settings_mobile_data">Mobil ma\'lumotlar</string>
@@ -1542,7 +1536,6 @@
     <string name="quick_settings_remove">O\'chirish</string>
     <string name="quick_settings_added">%1$s qo\'shildi</string>
     <string name="quick_settings_removed">%1$s olib tashlandi</string>
-    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly yoqilgan. Oʻchirish uchun 2 barmogʻingizni ekranda 5 soniya ushlab turing. Bu xabarni koʻrsatishni toʻxtatish uchun SandFly sozlamalari &gt; Qoʻshimcha sozlamalar &gt; SandFly oʻchirish boʻyicha koʻrsatmalarni koʻrsatish-ni oʻchiring.</string>
     <string name="edge_gestures_title">Chetlar</string>
     <string name="keycombo_menu_other_toggle_browse_mode_extra">Koʻrib chiqish rejimini yoqish yoki oʻchirish uchun yana bir tezkor tugma</string>
     <string name="title_pref_vibration_strength">Tebranish kuchi</string>
@@ -1715,7 +1708,7 @@
     <string name="title_keyboard_echo_physical">Jismoniy klaviatura aks-sadosi</string>
     <string name="title_keyboard_echo_braille_keyboard">Brayl klaviaturasi aks sadosi</string>
     <string name="title_keyboard_echo_handwriting_keyboard">Qo\'l yozuvi klaviaturasi aks-sadosi</string>
-    <string name="title_keyboard_echo_braille_display">Brayl displey aks-sadosi</string>
+    <string name="title_keyboard_echo_braille_display">Brayl ekrani aks-sadosi</string>
     <string name="template_keyboard_echo_state"><xliff:g example="Physical keyboard echo" id="setting">%1$s</xliff:g>: <xliff:g example="Words" id="value">%2$s</xliff:g></string>
     <string name="title_pref_interrupt_typing">Yozish paytida nutqni toʻxtatish</string>
     <string name="pref_interrupt_typing_entry_always">Har doim</string>
@@ -1735,7 +1728,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> qoʻyildi. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly bu tartibda element tafsilotlarini aytadi. Uni oʻzgartirish uchun tafsilotni bosing va ushlab turing, soʻng uni yuqoriga yoki pastga torting. SandFly yoqilgan boʻlsa, ikki marta bosing va ushlab turing, soʻngra sudrab turing. Yuqoriga siljitish va pastga siljitish amallaridan ham foydalanishingiz mumkin.</string>
     <string name="title_pref_speak_items_before_scroll">Elementlarni koʻrinishga aylantirilishidan oldin aytish</string>
-    <string name="gemini_error_api_key">Gemini API kalitini qabul qilmadi. Avtomatik tavsiflar sozlamalarida kalitni tekshiring.</string>
+    <string name="gemini_error_api_key">Gemini API kalitini qabul qilmadi. “Rasm va ekran tavsiflari” sozlamalarida kalitni tekshiring.</string>
     <string name="gemini_error_quota">Gemini API kalitingizning foydalanish chegarasiga yetildi. Keyinroq qayta urinib koʻring.</string>
     <string name="gemini_error_busy">Gemini hozir band. Birozdan keyin qayta urinib koʻring.</string>
     <string name="gemini_error_timeout">Gemini juda uzoq javob bermadi. Qayta urinib koʻring.</string>
@@ -1766,7 +1759,6 @@
     <string name="title_pref_whisper_models">Whisper modellari</string>
     <string name="dictation_whisper_use">Foydalanish</string>
     <string name="title_pref_dictation_ai_service">Diktovka uchun AI xizmati</string>
-    <string name="dictation_ai_same">Avtomatik tavsiflardagi bilan bir xil</string>
     <string name="title_pref_browse_mode_per_app">Har bir ilovada koʻrish rejimini eslab qolish</string>
     <string name="title_pref_export_settings">Sozlamalarni eksport qilish</string>
     <string name="title_pref_import_settings">Sozlamalarni import qilish</string>
@@ -1794,4 +1786,12 @@
     <string name="shortcut_previous_track">Avvalgi trek</string>
     <string name="sound_mode_needs_access">Ovozsiz rejimni yoqish yoki oʻchirish uchun “Bezovta qilinmasin” ruxsatini bering.</string>
     <string name="title_pref_dictation_auto_stop">Sukutdan keyin avtomatik toʻxtatish</string>
+    <string name="dictation_ai_same">“Rasm va ekran tavsiflari” bilan bir xil</string>
+    <string name="navigation_settings_link">SandFly sozlamalari &gt; Navigatsiya</string>
+    <string name="navigation_settings_link_tts">SandFly sozlamalari, keyin Navigatsiya</string>
+    <string name="shortcut_reserved_for_vibration_watch">“Imo-ishoralar” boʻlimida Vibration Watch uchun zaxiralangan</string>
+    <string name="speech_control_ask_text">U matnni SandFly ovozingiz bilan aytishi mumkin. Buni “Sozlamalar”, “Nutq”, “Boshqa ilovalarga gapirishga ruxsat berish” boʻlimida oʻzgartirishingiz mumkin.</string>
+    <string name="talkback_exit_watermark_text_no_menu_gesture">SandFly yoqildi. Faolsizlantirish uchun ekranda 2 ta barmoq bilan 5 soniya bosib turing. Bu xabar chiqmasligi uchun SandFly sozlamalari &gt; Pauza va oʻchirish &gt; SandFly qulayligini faolsizlantirish tartibi sozlamasini oʻchiring.</string>
+    <string name="tutorial_link">SandFly sozlamalari &gt; Yordam/fikr-mulohaza &gt; SandFly darsligi</string>
+    <string name="tutorial_link_tts">SandFly sozlamalari, keyin Yordam/fikr-mulohaza, keyin SandFly darsligi</string>
 </resources>

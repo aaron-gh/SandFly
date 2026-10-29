@@ -12,13 +12,13 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, nato Flash-Lite, ko je zaseden</string>
     <string name="gemini_model_loading">Pridobivanje modelov …</string>
     <string name="gemini_model_list_failed">Ni bilo mogoče dobiti modelov: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Najprej nastavite ključ API Gemini</string>
+    <string name="gemini_model_needs_key">Najprej nastavite Gemini API ključ</string>
     <string name="gemini_api_terms_link">Dodatni pogoji storitve za Gemini API</string>
     <string name="ai_service_address_hint">Naslov, kot je https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Naslov se mora začeti z https://. Nič ni bilo shranjeno.</string>
     <string name="dialog_message_ai_service_consent">Slike in posnetki zaslona se za opis pošljejo storitvi <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g>, kar traja nekaj sekund. Veljajo pogoji in pravilnik o zasebnosti te storitve. Generativna umetna inteligenca je poskusna, zato bo delala napake.</string>
-    <string name="ai_service_error_api_key">Storitev AI ni sprejela ključa API. Preverite njene nastavitve v razdelku Samodejni opisi.</string>
+    <string name="ai_service_error_api_key">Storitev AI ni sprejela ključa API. Preverite njene nastavitve v razdelku »Opisi slik in zaslona«.</string>
     <string name="ai_service_error_quota">Omejitev uporabe storitve AI je bila dosežena. Poskusite znova pozneje.</string>
     <string name="ai_service_error_busy">Storitev AI je trenutno zasedena. Poskusite znova čez trenutek.</string>
     <string name="ai_service_error_timeout">Storitev AI je za odgovor potrebovala predolgo. Poskusite znova.</string>
@@ -30,7 +30,7 @@
     <string name="ai_provider_openrouter">OpenRouter</string>
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Brez</string>
-    <string name="ai_service_not_set_up">V uporabi ni nobena storitev AI. Nastavite ali izberite eno v nastavitvah Samodejni opisi.</string>
+    <string name="ai_service_not_set_up">V uporabi ni nobena storitev AI. Nastavite ali izberite eno v razdelku »Opisi slik in zaslona«.</string>
     <string name="ai_provider_none_set_up">Nastavljena ni nobena storitev AI. Nastavite eno v njenih nastavitvah spodaj.</string>
     <string name="ai_provider_other">Druga storitev</string>
     <string name="title_pref_category_ai_services">Storitve AI</string>
