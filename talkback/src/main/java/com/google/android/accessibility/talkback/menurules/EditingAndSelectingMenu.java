@@ -80,7 +80,9 @@ public class EditingAndSelectingMenu implements NodeMenu {
 
   private static boolean acceptEditingAndSelectingMenu(
       AccessibilityNodeInfoCompat node, AccessibilityNodeInfoCompat editingNode) {
-    return (node.isFocused() && Role.getRole(node) == Role.ROLE_EDIT_TEXT)
+    // An edit box offers its editing options while it has accessibility focus, without having to
+    // be in it first.
+    return Role.getRole(node) == Role.ROLE_EDIT_TEXT
         || AccessibilityNodeInfoUtils.isNonEditableSelectableText(node)
         || (editingNode != null);
   }
@@ -157,9 +159,11 @@ public class EditingAndSelectingMenu implements NodeMenu {
       items.add(cut);
     }
 
+    // An edit box with no selection copies all its text.
     if (!isAndroidWear
-        && AccessibilityNodeInfoUtils.supportsAnyAction(
-            node, AccessibilityNodeInfoCompat.ACTION_COPY)) {
+        && (AccessibilityNodeInfoUtils.supportsAnyAction(
+                node, AccessibilityNodeInfoCompat.ACTION_COPY)
+            || hasCopyableText(node))) {
       ContextMenuItem copy =
           ContextMenu.createMenuItem(
               context,
@@ -170,10 +174,12 @@ public class EditingAndSelectingMenu implements NodeMenu {
       items.add(copy);
     }
 
+    // Apps offer Paste only in the field with input focus, which Paste gives the edit box first.
     if (!isAndroidWear
         && Role.getRole(node) == Role.ROLE_EDIT_TEXT
-        && AccessibilityNodeInfoUtils.supportsAnyAction(
-            node, AccessibilityNodeInfoCompat.ACTION_PASTE)) {
+        && (AccessibilityNodeInfoUtils.supportsAnyAction(
+                node, AccessibilityNodeInfoCompat.ACTION_PASTE)
+            || (node.isEditable() && !node.isFocused()))) {
       ContextMenuItem paste =
           ContextMenu.createMenuItem(
               context,
@@ -242,6 +248,15 @@ public class EditingAndSelectingMenu implements NodeMenu {
     }
   }
 
+  /** Returns whether {@code node} is an edit box with text of its own that may be copied. */
+  private static boolean hasCopyableText(AccessibilityNodeInfoCompat node) {
+    return Role.getRole(node) == Role.ROLE_EDIT_TEXT
+        && !node.isPassword()
+        && !node.isShowingHintText()
+        && !AccessibilityNodeInfoUtils.isEmptyEditTextRegardlessOfHint(node)
+        && !TextUtils.isEmpty(AccessibilityNodeInfoUtils.getText(node));
+  }
+
   /** Listener may be shared by multi-contextItems. */
   private static class EditingMenuItemClickListener extends AbstractOnContextMenuItemClickListener {
 
@@ -261,6 +276,9 @@ public class EditingAndSelectingMenu implements NodeMenu {
 
         final int itemId = item.getItemId();
         analytics.onLocalContextMenuAction(MENU_TYPE_EDIT_OPTIONS, itemId);
+        if (needsInputFocus(itemId)) {
+          focusInput();
+        }
         final boolean result;
         EventId eventId = EVENT_ID_UNTRACKED; // Not tracking performance for menu events.
         if (itemId == R.id.edittext_breakout_move_to_beginning) {
@@ -293,6 +311,26 @@ public class EditingAndSelectingMenu implements NodeMenu {
         return true;
       } finally {
         clear();
+      }
+    }
+
+    /**
+     * Returns whether the option acts on the edit box's selection or cursor, which the app only
+     * changes or uses in the field with input focus.
+     */
+    private static boolean needsInputFocus(int itemId) {
+      return itemId == R.id.edittext_breakout_move_to_beginning
+          || itemId == R.id.edittext_breakout_move_to_end
+          || itemId == R.id.edittext_breakout_cut
+          || itemId == R.id.edittext_breakout_paste
+          || itemId == R.id.edittext_breakout_select_all
+          || itemId == R.id.edittext_breakout_start_selection_mode;
+    }
+
+    /** Gives an edit box that only has accessibility focus input focus as well. */
+    private void focusInput() {
+      if (Role.getRole(node) == Role.ROLE_EDIT_TEXT && node.isEditable() && !node.isFocused()) {
+        node.performAction(AccessibilityNodeInfoCompat.ACTION_FOCUS);
       }
     }
   }

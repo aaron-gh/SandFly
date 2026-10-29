@@ -363,7 +363,8 @@ public class TextEditActor implements VoiceDictationDelegate {
 
     editTextActionHistory.beforeSelectAll();
     boolean result = false;
-    if (FeatureSupport.supportInputConnectionByA11yService()) {
+    // The input connection belongs to the field with input focus, which may be another one.
+    if (FeatureSupport.supportInputConnectionByA11yService() && node.isFocused()) {
       result = performSelectText(0, nodeText.length());
       if (result && !stateReader.isSelectionModeActive()) {
         pipeline.returnFeedback(eventId, Feedback.selectionModeOn(node));
@@ -493,7 +494,7 @@ public class TextEditActor implements VoiceDictationDelegate {
           PerformActionUtils.performAction(node, AccessibilityNodeInfoCompat.ACTION_COPY, eventId);
     } else if (!TextUtils.isEmpty(nodeText)) {
       copyData = nodeText;
-      return copyToClipboard(clipboard, copyData);
+      result = copyToClipboard(clipboard, copyData);
     }
     turnOffSelectionMode(node, eventId, /* clearSelection= */ true);
     CharSequence copiedText = CompositorUtils.refineInputText(service, copyData);
@@ -741,6 +742,7 @@ public class TextEditActor implements VoiceDictationDelegate {
       int cursor = node.getTextSelectionStart();
       if (FeatureSupport.supportInputConnectionByA11yService()
           && stateReader.isSelectionModeActive()
+          && node.isFocused()
           && cursorIndex != cursor) {
         result = performSelectText(cursor, cursorIndex);
       }
