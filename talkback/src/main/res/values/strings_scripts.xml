@@ -87,13 +87,13 @@
     <!-- What the passwords permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_passwords">Read password fields</string>
     <!-- What the input permission lets a script do. [CHAR LIMIT=NONE] -->
-    <string name="script_permission_input">Add gestures, keys, menu items and reading controls</string>
+    <string name="script_permission_input">Add gestures, keys, menu items and reading controls, and run SandFly\'s commands</string>
     <!-- What the network permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_network">Use the internet</string>
     <!-- What the clipboard permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_clipboard">Read and change the clipboard</string>
     <!-- What the system permission lets a script do. [CHAR LIMIT=NONE] -->
-    <string name="script_permission_system">Go back or home, open notifications and apps</string>
+    <string name="script_permission_system">Go back or home, open notifications, list and open apps, settings and links, send intents to apps, and change the volume and ringer mode</string>
     <!-- What the notifications permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_notifications">Read and change spoken notifications</string>
     <!-- What the events permission lets a script do. [CHAR LIMIT=NONE] -->
