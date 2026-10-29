@@ -451,6 +451,10 @@ public class GestureController {
       result = dispatchMediaKey(KeyEvent.KEYCODE_MEDIA_NEXT);
     } else if (action.equals(service.getString(R.string.shortcut_value_previous_track))) {
       result = dispatchMediaKey(KeyEvent.KEYCODE_MEDIA_PREVIOUS);
+    } else if (action.equals(service.getString(R.string.shortcut_value_rewind))) {
+      result = MediaSeek.seek(service, /* forward= */ false);
+    } else if (action.equals(service.getString(R.string.shortcut_value_fast_forward))) {
+      result = MediaSeek.seek(service, /* forward= */ true);
     } else if (action.equals(service.getString(R.string.shortcut_value_back))) {
       result =
           pipeline.returnFeedback(
