@@ -195,7 +195,8 @@ data class Replacement(
   val regex: Boolean = false,
   val wholeWord: Boolean = true,
 ) {
-  private val pattern: Regex? by lazy {
+  /** What [find] matches, or null when it is not a valid regular expression. */
+  val pattern: Regex? by lazy {
     try {
       when {
         regex -> Regex(find)
