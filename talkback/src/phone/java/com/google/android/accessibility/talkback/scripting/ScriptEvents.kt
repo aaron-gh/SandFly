@@ -17,8 +17,10 @@
 package com.google.android.accessibility.talkback.scripting
 
 import android.app.Notification
+import android.os.Build
 import android.os.Handler
 import android.view.accessibility.AccessibilityEvent
+import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import java.util.concurrent.atomic.AtomicInteger
 import org.json.JSONObject
@@ -166,8 +168,8 @@ class ScriptEventDelivery(
         "count" to event.itemCount.takeIf { it >= 0 },
         "scrollX" to event.scrollX,
         "scrollY" to event.scrollY,
-        "deltaX" to event.scrollDeltaX,
-        "deltaY" to event.scrollDeltaY,
+        "deltaX" to if (DELTAS) event.scrollDeltaX else null,
+        "deltaY" to if (DELTAS) event.scrollDeltaY else null,
       )
     }
   }
@@ -218,6 +220,8 @@ class ScriptEventDelivery(
   private companion object {
     const val CONTENT_DELAY_MS = 200L
     const val SCROLL_DELAY_MS = 150L
+    @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.P)
+    val DELTAS = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
     const val MAX_QUEUED = 100
     val HOOKS =
       setOf(

@@ -96,7 +96,7 @@ class ScriptDevice(private val context: Context) {
     return jsonObject(
       "level" to audio.getStreamVolume(stream),
       "max" to audio.getStreamMaxVolume(stream),
-      "min" to audio.getStreamMinVolume(stream),
+      "min" to minVolume(audio, stream),
       "muted" to audio.isStreamMute(stream),
     )
   }
@@ -105,7 +105,7 @@ class ScriptDevice(private val context: Context) {
     val audio = audio()
     val stream = stream(args)
     val level =
-      args.optInt("level").coerceIn(audio.getStreamMinVolume(stream), audio.getStreamMaxVolume(stream))
+      args.optInt("level").coerceIn(minVolume(audio, stream), audio.getStreamMaxVolume(stream))
     permitted { audio.setStreamVolume(stream, level, 0) }
   }
 
@@ -253,6 +253,9 @@ class ScriptDevice(private val context: Context) {
       apiError(e.message ?: "Android refused to open it")
     }
   }
+
+  private fun minVolume(audio: AudioManager, stream: Int): Int =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) audio.getStreamMinVolume(stream) else 0
 
   // Do Not Disturb keeps apps without its access from changing some volumes and ringer modes.
   private inline fun permitted(block: () -> Unit) =

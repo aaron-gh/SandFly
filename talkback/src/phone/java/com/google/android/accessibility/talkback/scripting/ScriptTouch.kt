@@ -118,17 +118,23 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     val end = node.textSelectionEnd.takeIf { it in start..current.length } ?: start
     val updated = current.substring(0, start) + text + current.substring(end)
     val cursor = start + text.length
-    return node.performAction(
-      AccessibilityNodeInfo.ACTION_SET_TEXT,
-      bundleOf(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE to updated),
-    ) &&
-      node.performAction(
-        AccessibilityNodeInfo.ACTION_SET_SELECTION,
-        bundleOf(
-          AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_START_INT to cursor,
-          AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_END_INT to cursor,
-        ),
+    if (
+      !node.performAction(
+        AccessibilityNodeInfo.ACTION_SET_TEXT,
+        bundleOf(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE to updated),
       )
+    ) {
+      return false
+    }
+    // Some fields, such as search boxes, put the cursor at the end themselves and refuse this.
+    node.performAction(
+      AccessibilityNodeInfo.ACTION_SET_SELECTION,
+      bundleOf(
+        AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_START_INT to cursor,
+        AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_END_INT to cursor,
+      ),
+    )
+    return true
   }
 
   private fun requireShizuku(what: String) =

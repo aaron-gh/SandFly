@@ -4518,7 +4518,8 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (brailleDisplay == null) {
         return;
       }
-      AccessibilityEvent event = new AccessibilityEvent(AccessibilityEvent.TYPE_ANNOUNCEMENT);
+      @SuppressWarnings("deprecation") // The constructor that replaces it needs Android 11.
+      AccessibilityEvent event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_ANNOUNCEMENT);
       event.setPackageName(getPackageName());
       event.setEventTime(SystemClock.uptimeMillis());
       event.getText().add(text);

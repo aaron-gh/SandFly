@@ -123,7 +123,8 @@ class ScriptScreen(private val service: AccessibilityService) {
             .addOnSuccessListener { text -> done(textJson(text, bounds), null) }
             .addOnFailureListener { e ->
               LogUtils.w(TAG, "Text recognition failed: %s", e)
-              done(null, "Text recognition failed")
+              // Such as Google Play services still downloading the recognizer.
+              done(null, "Text recognition failed: ${e.message}")
             }
             .addOnCompleteListener { bitmap.recycle() }
         }
