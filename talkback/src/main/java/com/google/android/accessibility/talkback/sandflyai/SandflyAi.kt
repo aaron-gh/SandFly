@@ -29,6 +29,15 @@ interface SandflyAiFeatures {
 
     /** Handles a sandfly://ai/... link. Returns false when the link isn't one it knows. */
     fun handleLink(context: Context, uri: Uri): Boolean
+
+    /** SandFly Pro's other commands for command lists: value to label. */
+    fun commands(context: Context): Map<String, String>
+
+    /** Runs the command [value] from [commands]. Returns false for any other value. */
+    fun runCommand(service: TalkBackService, value: String): Boolean
+
+    /** Items for the SandFly menu: title and what it does, run after the menu closes. */
+    fun menuItems(service: TalkBackService): List<Pair<CharSequence, Runnable>>
 }
 
 object SandflyAi {

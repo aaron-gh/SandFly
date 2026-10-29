@@ -33,6 +33,7 @@ import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.StringRes;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.screenelements.ScreenElements;
 import com.google.android.accessibility.talkback.compositor.parsetree.ParseTree;
 import com.google.android.accessibility.talkback.compositor.parsetree.ParseTree.VariableDelegate;
 import com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.DescriptionOrder;
@@ -451,6 +452,10 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
    */
   public void updateCollectionStateFromFocusedNode(
       AccessibilityNodeInfoCompat node, AccessibilityEvent event) {
+    // A recognised screen element sits over the app's nodes, so focus on one stays in their list.
+    if (ScreenElements.isElementWindow(node.getWindowId())) {
+      return;
+    }
     collectionState.updateCollectionInformation(node, event);
   }
 
