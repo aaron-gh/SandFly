@@ -36,6 +36,25 @@ object IndividualFeedbackSettings {
   const val PREF_MUTED_SOUNDS = "pref_individual_muted_sounds"
   const val PREF_MUTED_VIBRATIONS = "pref_individual_muted_vibrations"
 
+  /** SandFly AI's agent sounds, which builds without SandFly AI leave out. */
+  val AGENT_SOUNDS =
+    listOf(
+      FeedbackItem("agentic_interaction_start", R.string.individual_sound_agentic_interaction_start),
+      FeedbackItem(
+        "agentic_interaction_complete",
+        R.string.individual_sound_agentic_interaction_complete,
+      ),
+      FeedbackItem("agentic_interaction_ask", R.string.individual_sound_agentic_interaction_ask),
+      FeedbackItem(
+        "agentic_interaction_sensitive_stop",
+        R.string.individual_sound_agentic_interaction_sensitive_stop,
+      ),
+      FeedbackItem("agentic_interaction_fail", R.string.individual_sound_agentic_interaction_fail),
+    )
+
+  /** The vibrations of the agent sounds, which come only from sound themes. */
+  val AGENT_SOUND_VIBRATIONS = AGENT_SOUNDS.map { FeedbackItem("${it.key}_pattern", it.title) }
+
   val SOUNDS =
     listOf(
       FeedbackItem("focus", R.string.individual_sound_focus),
@@ -59,6 +78,7 @@ object IndividualFeedbackSettings {
       FeedbackItem("insertion_point_moved", R.string.individual_sound_insertion_point_moved),
       FeedbackItem("column_wrap", R.string.individual_sound_column_wrap),
       FeedbackItem("column_wrap_back", R.string.individual_sound_column_wrap_back),
+      *AGENT_SOUNDS.toTypedArray(),
       FeedbackItem("typo", R.string.individual_sound_typo),
       FeedbackItem("hyperlink", R.string.individual_sound_hyperlink),
       FeedbackItem("formatting", R.string.individual_sound_formatting),
@@ -167,6 +187,7 @@ object IndividualFeedbackSettings {
       ),
       FeedbackItem("column_wrap_pattern", R.string.individual_sound_column_wrap),
       FeedbackItem("column_wrap_back_pattern", R.string.individual_sound_column_wrap_back),
+      *AGENT_SOUND_VIBRATIONS.toTypedArray(),
       FeedbackItem("typo_pattern", R.string.individual_vibration_typo),
       FeedbackItem("hyperlink_pattern", R.string.individual_sound_hyperlink),
       FeedbackItem("formatting_pattern", R.string.individual_sound_formatting),

@@ -157,6 +157,11 @@ play is left out when the theme is installed, and SandFly says so.
 | `insertion_point_moved` | Moving by character, word, line or paragraph moves the cursor in a text field being edited (plays no sound in the SandFly theme) |
 | `column_wrap` | Swiping forward to an item on a row below (plays no sound in the SandFly theme) |
 | `column_wrap_back` | Swiping back to an item on a row above (plays no sound in the SandFly theme) |
+| `agentic_interaction_start` | SandFly AI's agent starts a task (plays no sound in the SandFly theme) |
+| `agentic_interaction_complete` | The agent finishes a task (plays no sound in the SandFly theme) |
+| `agentic_interaction_ask` | The agent asks a question or asks to confirm an action (plays no sound in the SandFly theme) |
+| `agentic_interaction_sensitive_stop` | The safety check stops an action of the agent (plays no sound in the SandFly theme) |
+| `agentic_interaction_fail` | The agent can't finish a task (plays no sound in the SandFly theme) |
 | `typo` | Spelling error |
 | `hyperlink` | Link |
 | `formatting` | Formatted text |
@@ -231,8 +236,8 @@ sounds (`display_connected`, `display_disconnected`, `double_beep`, `turn_on`, `
 `calibration_done`) have no vibration, so they can't have one in a theme either.
 
 SandFly has no vibrations of its own for `next_reading_control`, `previous_reading_control`,
-`edge_gesture_bottom`, `insertion_point_moved`, `column_wrap` and `column_wrap_back`, so they vibrate
-only with the theme's. `column_wrap` and `column_wrap_back` play with the focus sound, and their
+`edge_gesture_bottom`, `insertion_point_moved`, `column_wrap`, `column_wrap_back` and the
+`agentic_interaction` sounds, so they vibrate only with the theme's. `column_wrap` and `column_wrap_back` play with the focus sound, and their
 vibrations play in place of the focus vibration.
 
 These vibrations have no sound, and a theme replaces them by these names:

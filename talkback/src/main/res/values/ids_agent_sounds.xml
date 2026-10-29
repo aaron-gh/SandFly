@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SandFly AI's agent sounds have no sound of their own, only the one a sound theme gives each. These
+  IDs stand for them where the other sounds use their raw resource IDs, and their names are the
+  names of the theme sounds.
+-->
+<resources>
+    <item name="agentic_interaction_start" type="id" />
+    <item name="agentic_interaction_complete" type="id" />
+    <item name="agentic_interaction_ask" type="id" />
+    <item name="agentic_interaction_sensitive_stop" type="id" />
+    <item name="agentic_interaction_fail" type="id" />
+</resources>
