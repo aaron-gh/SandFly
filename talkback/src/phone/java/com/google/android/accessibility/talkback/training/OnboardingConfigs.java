@@ -23,6 +23,7 @@ import static com.google.android.accessibility.talkback.trainingcommon.PageConfi
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.LinkInfo.KEYBOARD_SHORTCUT;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.LinkInfo.TEXT_FORMATTING_OPTIONS;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.LinkInfo.TUTORIAL;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageAndContentPredicate.SANDFLY_PRO;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageAndContentPredicate.SUPPORT_EXIT_BANNER;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageAndContentPredicate.SUPPORT_KEYBOARD_ENHANCED_KEYMAP;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageAndContentPredicate.SUPPORT_KEYBOARD_TUTORIAL;
@@ -38,6 +39,13 @@ import static com.google.android.accessibility.talkback.trainingcommon.PageConfi
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SHORTCUT_FOR_DICTATION;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SHORTCUT_FOR_DICTATION_WITHOUT_GOOGLE_PLAY;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SPLIT_TAP_EVERYWHERE;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_WELCOME;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_TUTORIAL;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_SETTINGS;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_TRANSLATION;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_ARROW_KEYS;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_COMMANDS;
+import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_SANDFLY_PRO;
 import static com.google.android.accessibility.talkback.trainingcommon.PageConfig.PageId.PAGE_ID_UPDATE_WELCOME;
 
 import android.accessibilityservice.AccessibilityService;
@@ -97,6 +105,38 @@ final class OnboardingConfigs {
           .captureGesture(
               AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP_AND_HOLD,
               R.string.new_shortcut_gesture_selection_mode_on_announcement);
+  // SandFly 0.2.0. Each release replaces these pages and raises NEW_FEATURE_SHOWN_KEY in
+  // OnboardingInitiator, so that they show once after the update.
+  static final PageConfig.Builder sandflyWelcome =
+      PageConfig.builder(PAGE_ID_SANDFLY_WELCOME, R.string.welcome_to_updated_talkback_title)
+          .addText(R.string.new_features_0_2_0_welcome);
+
+  static final PageConfig.Builder sandflyTutorial =
+      PageConfig.builder(PAGE_ID_SANDFLY_TUTORIAL, R.string.new_features_0_2_0_tutorial_title)
+          .addText(R.string.new_features_0_2_0_tutorial);
+
+  static final PageConfig.Builder sandflySettings =
+      PageConfig.builder(PAGE_ID_SANDFLY_SETTINGS, R.string.new_features_0_2_0_settings_title)
+          .addText(R.string.new_features_0_2_0_settings);
+
+  static final PageConfig.Builder sandflyTranslation =
+      PageConfig.builder(
+              PAGE_ID_SANDFLY_TRANSLATION, R.string.new_features_0_2_0_translation_title)
+          .addText(R.string.new_features_0_2_0_translation);
+
+  static final PageConfig.Builder sandflyArrowKeys =
+      PageConfig.builder(PAGE_ID_SANDFLY_ARROW_KEYS, R.string.new_features_0_2_0_arrow_keys_title)
+          .addText(R.string.new_features_0_2_0_arrow_keys);
+
+  static final PageConfig.Builder sandflyCommands =
+      PageConfig.builder(PAGE_ID_SANDFLY_COMMANDS, R.string.new_features_0_2_0_commands_title)
+          .addText(R.string.new_features_0_2_0_commands);
+
+  static final PageConfig.Builder sandflyPro =
+      PageConfig.builder(PAGE_ID_SANDFLY_PRO, R.string.new_features_0_2_0_pro_title)
+          .setShowingPredicate(SANDFLY_PRO)
+          .addText(R.string.new_features_0_2_0_pro);
+
   // For TB 16.2
   static final PageConfig.Builder updateWelcome =
       PageConfig.builder(PAGE_ID_UPDATE_WELCOME, R.string.welcome_to_updated_talkback_title)
@@ -191,15 +231,13 @@ final class OnboardingConfigs {
     return TrainingConfig.builder(R.string.new_feature_in_talkback_title)
         .setPages(
             ImmutableList.of(
-                updateWelcome,
-                newSettingsLayout,
-                shortcutForDictation,
-                shortcutForDictationWithoutGooglePlay,
-                announcingTextFormatting,
-                splitTapEverywhere,
-                enhancedKeymap,
-                smartBrowseMode))
-        .addPageEndOfSection(keyboardTutorial)
+                sandflyWelcome,
+                sandflyTutorial,
+                sandflySettings,
+                sandflyTranslation,
+                sandflyArrowKeys,
+                sandflyCommands))
+        .addPageEndOfSection(sandflyPro)
         .setButtons(DEFAULT_BUTTONS);
   }
 }

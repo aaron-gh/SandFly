@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The pages about SandFly's new features, shown once after an update and from "New features in
+     SandFly" at the top of the settings. Rewrite them, and raise the "shown" key, for each release. -->
+<resources>
+    <!-- Text of the first page about SandFly 0.2.0's new features. [CHAR_LIMIT=NONE] -->
+    <string name="new_features_0_2_0_welcome">SandFly 0.2.0 has the new features on the following pages. To read them again later, open New features in SandFly at the top of SandFly settings.</string>
+    <!-- Title of the page about the interactive tutorial. [CHAR_LIMIT=60] -->
+    <string name="new_features_0_2_0_tutorial_title">Interactive tutorial</string>
+    <!-- Text of the page about the interactive tutorial. "Help & feedback" and "SandFly tutorial" are setting names. [CHAR_LIMIT=NONE] -->
+    <string name="new_features_0_2_0_tutorial">A new tutorial teaches SandFly step by step: you try each gesture, and SandFly checks it and says what happened. Open it under Settings, Help &amp; feedback, SandFly tutorial.</string>
+    <!-- Title of the page about the rearranged settings. [CHAR_LIMIT=60] -->
+    <string name="new_features_0_2_0_settings_title">Settings by topic</string>
+    <!-- Text of the page about the rearranged settings. "Commands", "Reading controls" and "SandFly menu" are setting names. [CHAR_LIMIT=NONE] -->
+    <string name="new_features_0_2_0_settings">Each setting is now on the screen named after what it changes, and the main screen is shorter. Commands lists every command with its gestures and keyboard shortcut, and assigns them in one place. Reading controls and SandFly menu list their current items in order, to move or remove.</string>
+    <!-- Title of the page about translation. [CHAR_LIMIT=60] -->
+    <string name="new_features_0_2_0_translation_title">Translation</string>
+    <!-- Text of the page about translation. "Translate last spoken phrase", "Commands", "Translation" and "Automatic translation" are setting and command names. [CHAR_LIMIT=NONE] -->
+    <string name="new_features_0_2_0_translation">SandFly can translate what it says. Assign Translate last spoken phrase to a gesture or key under Settings, Commands. Under Settings, Translation, choose the service and the languages, and turn on Automatic translation of speech in another language, or translation of notifications. On-device translation downloads each language once and then works offline.</string>
+    <!-- Title of the page about arrow key navigation. [CHAR_LIMIT=60] -->
+    <string name="new_features_0_2_0_arrow_keys_title">Arrow key navigation</string>
+    <!-- Text of the page about arrow key navigation. "Keyboard shortcuts" is a setting name. [CHAR_LIMIT=NONE] -->
+    <string name="new_features_0_2_0_arrow_keys">With a keyboard, press Left and Right arrow together to turn arrow key navigation on or off. While it\'s on, the arrow keys run commands, as in VoiceOver on iOS. Change each arrow key\'s command under Settings, Keyboard shortcuts.</string>
+    <!-- Title of the page about new commands and reading controls. [CHAR_LIMIT=60] -->
+    <string name="new_features_0_2_0_commands_title">New commands</string>
+    <!-- Text of the page about new commands and reading controls. "Next track", "Previous track", "Commands", "Sound mode" and "Reading controls" are command and setting names. [CHAR_LIMIT=NONE] -->
+    <string name="new_features_0_2_0_commands">Next track and Previous track control media, and can be assigned to gestures or keys under Settings, Commands. The Sound mode reading control switches between Sound, Vibrate and Mute; add it under Settings, Reading controls.</string>
+    <!-- Title of the page about SandFly Pro, the paid add-on. "SandFly Pro" is a product name. [CHAR_LIMIT=60] -->
+    <string name="new_features_0_2_0_pro_title">SandFly Pro</string>
+    <!-- Text of the page about SandFly Pro. "Start or stop AI agent task", "Commands" and "SandFly Pro" are command and setting names. [CHAR_LIMIT=NONE] -->
+    <string name="new_features_0_2_0_pro">SandFly Pro is a paid add-on. Its AI agent operates apps for you, including apps and games that don\'t work with screen readers. Assign Start or stop AI agent task to a gesture or key under Settings, Commands, then say or type the task. A safety check asks before sensitive actions, and in banking apps the agent only reads. Buy a code or enter one under Settings, SandFly Pro.</string>
+</resources>

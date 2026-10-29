@@ -4,6 +4,9 @@
       android:key="@string/pref_survey_setting_entry_point_key"
       android:title="@string/survey_setting_title" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="@string/pref_new_feature_in_talkback_entry_point_key"
+      android:title="@string/new_feature_in_talkback_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.preference.base.TextToSpeechSettingsFragment"
       android:key="@string/pref_tts_settings_key"
       android:title="@string/title_pref_speech" />
