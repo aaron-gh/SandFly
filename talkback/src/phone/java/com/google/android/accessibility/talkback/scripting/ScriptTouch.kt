@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.scripting
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.GestureDescription
 import android.graphics.Path
+import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.view.KeyEvent
@@ -30,8 +31,10 @@ import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import org.json.JSONArray
 
 /** Touches the screen, presses keys and types text for scripts. */
-class ScriptTouch(private val service: AccessibilityService) {
+class ScriptTouch(private val service: AccessibilityService, private val feedback: ScriptFeedback) {
   private val mainHandler = Handler(Looper.getMainLooper())
+  // Gestures under way, counted on the main thread, which share the pass-through region.
+  private var gestures = 0
 
   /**
    * Performs strokes on the screen. Each stroke is `{ points, start, duration }`: a list of
@@ -39,6 +42,9 @@ class ScriptTouch(private val service: AccessibilityService) {
    * after the gesture begins.
    */
   fun gesture(strokes: JSONArray?, done: (Boolean) -> Unit) {
+    apiCheck(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      "Touching the screen needs Android 11 or later"
+    }
     val list = strokes.items()
     apiCheck(list.size in 1..MAX_STROKES) { "A gesture has 1 to $MAX_STROKES strokes" }
     val builder = GestureDescription.Builder()
@@ -63,13 +69,24 @@ class ScriptTouch(private val service: AccessibilityService) {
     }
     val description = asApiError { builder.build() }
     mainHandler.post {
+      // Touch exploration would take the strokes as SandFly gestures, so touch passes through to
+      // apps until the gesture ends.
+      if (gestures++ == 0) feedback.passThrough(true)
+      val finish = { performed: Boolean ->
+        if (--gestures == 0) feedback.passThrough(false)
+        done(performed)
+      }
       val callback =
         object : AccessibilityService.GestureResultCallback() {
-          override fun onCompleted(gestureDescription: GestureDescription?) = done(true)
+          override fun onCompleted(gestureDescription: GestureDescription?) = finish(true)
 
-          override fun onCancelled(gestureDescription: GestureDescription?) = done(false)
+          override fun onCancelled(gestureDescription: GestureDescription?) = finish(false)
         }
-      if (!service.dispatchGesture(description, callback, mainHandler)) done(false)
+      // Android applies the pass-through region a moment later.
+      mainHandler.postDelayed(
+        { if (!service.dispatchGesture(description, callback, mainHandler)) finish(false) },
+        PASS_THROUGH_WAIT_MS,
+      )
     }
   }
 
@@ -133,6 +150,7 @@ class ScriptTouch(private val service: AccessibilityService) {
     const val MAX_TYPED = 2000
     const val DEFAULT_DURATION_MS = 50L
     const val MAX_DURATION_MS = 10_000L
+    const val PASS_THROUGH_WAIT_MS = 350L
 
     val KEY_ALIASES =
       mapOf(

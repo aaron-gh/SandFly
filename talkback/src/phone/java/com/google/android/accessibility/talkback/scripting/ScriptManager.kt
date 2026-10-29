@@ -39,7 +39,7 @@ class ScriptManager(
   val store: ScriptStore = ScriptStore.get(service)
   val dialogs = ScriptDialogs(service)
   val device = ScriptDevice(service)
-  val touch = ScriptTouch(service)
+  val touch = ScriptTouch(service, feedback)
   val screen = ScriptScreen(service)
   /** Used on the main thread only. */
   val translator by lazy { Translator(service) }

@@ -169,7 +169,8 @@ class ScriptRuntime(
     apiCheck(call.permission !in REFUSED_IN_BACKTALK || !manager.inBacktalk) {
       "Scripts can't use ${call.permission?.key} on SandFly's own screens"
     }
-    val result = call.handle(json?.let { JSONObject(it) } ?: JSONObject())
+    // An empty Lua table is encoded as [].
+    val result = call.handle(json?.takeUnless { it == "[]" }?.let { JSONObject(it) } ?: JSONObject())
     return result.takeUnless { it == Unit }?.let(::jsonOf)
   }
 

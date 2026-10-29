@@ -367,7 +367,7 @@ Sounds and vibration follow the user's **Sound feedback** and **Vibration feedba
 
 ### Touch and keys
 
-*Version 2.* These need the `actions` permission. They [wait](#waiting) for the result where they can, and give whether it worked.
+*Version 2.* These need the `actions` permission. They [wait](#waiting) for the result where they can, and give whether it worked. Touching the screen needs Android 11 or later. While a script's touch is under way, touches on the screen pass through to apps, so SandFly doesn't take the script's touches as its own gestures.
 
 *   `sf.touch.tap(x, y)`, `sf.touch.doubleTap(x, y)` and `sf.touch.longPress(x, y, ms)` touch a point on the screen, in pixels. `ms` is 1,000 if left out.
 *   `sf.touch.swipe(x1, y1, x2, y2, ms)` moves a finger from one point to the other in `ms` milliseconds, 300 if left out.

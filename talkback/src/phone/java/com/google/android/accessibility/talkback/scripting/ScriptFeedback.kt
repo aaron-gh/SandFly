@@ -22,6 +22,7 @@ import android.media.AudioAttributes
 import android.media.AudioFormat
 import android.media.AudioTrack
 import android.media.MediaPlayer
+import android.graphics.Region
 import android.os.Handler
 import android.os.Looper
 import android.os.VibrationEffect
@@ -31,6 +32,7 @@ import android.text.Spanned
 import android.text.style.LocaleSpan
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.Feedback
+import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.LOCK_PASS_THROUGH
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
@@ -92,6 +94,16 @@ class ScriptFeedback(
   fun runCommand(value: String, done: (Boolean) -> Unit) = onMain { done(services.runCommand(value)) }
 
   fun lastSpeech(done: (String?) -> Unit) = onMain { done(services.lastSpeech()) }
+
+  /**
+   * Passes touches anywhere on the screen through to apps, or stops when [on] is false, so that
+   * touch exploration doesn't take a script's gestures as SandFly gestures. Call on the main thread.
+   */
+  fun passThrough(on: Boolean) {
+    val metrics = service.resources.displayMetrics
+    val region = if (on) Region(0, 0, metrics.widthPixels, metrics.heightPixels) else null
+    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, region))
+  }
 
   fun playAudio(samples: FloatArray, sampleRate: Int, volume: Float) {
     if (!soundOn() || !startPlaying()) return
