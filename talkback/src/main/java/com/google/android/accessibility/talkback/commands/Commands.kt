@@ -758,6 +758,9 @@ object Commands {
         SandflyAi.features?.let {
           val value = context.getString(R.string.shortcut_value_ai_agent)
           commands.add(Command(value, it.agentCommandLabel(context), null))
+          for ((proValue, label) in it.commands(context)) {
+            commands.add(Command(proValue, label, null))
+          }
         }
         gesture(R.string.shortcut_value_toggle_arrow_key_nav, R.string.arrow_key_nav_toggle)
         gesture(R.string.shortcut_value_toggle_scripts, R.string.shortcut_toggle_scripts)

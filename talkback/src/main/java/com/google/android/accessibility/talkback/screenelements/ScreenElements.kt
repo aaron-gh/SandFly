@@ -31,7 +31,10 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewConfiguration
 import android.view.WindowManager
+import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
+import android.view.accessibility.AccessibilityWindowInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.LOCK_PASS_THROUGH
 import com.google.android.accessibility.talkback.Pipeline
@@ -68,15 +71,318 @@ data class ScreenElement(
 }
 
 /**
+ * The elements shown for the current screen, with the labels given to the app's own unlabelled
+ * nodes. Elements are read, found by touch and navigated like the app's nodes; swipes visit them
+ * between the app's nodes, after the node each is anchored to (see [setOrder]). Main thread only.
+ */
+object ScreenElements {
+  private const val TAG = "ScreenElements"
+
+  /** Why the screen may have changed under the elements. */
+  enum class Change {
+    /** A new window or screen: the elements are gone. */
+    WINDOW,
+    /** The app's nodes changed, or an element was tapped: the elements may be out of date. */
+    CONTENT,
+  }
+
+  interface Listener {
+    /** Called on the main thread, at most once per [SETTLE_MS], after things settle. */
+    fun onScreenChanged(packageName: String, change: Change)
+  }
+
+  /** Told about screen changes, for recognising new screens. */
+  @JvmStatic var listener: Listener? = null
+
+  private var windows: ScreenElementWindows? = null
+  private val handler = Handler(Looper.getMainLooper())
+
+  private var hostWindowId = -1
+  private var hostPackage: String? = null
+  private val labels = HashMap<AccessibilityNodeInfoCompat, CharSequence>()
+
+  /** Accessibility window IDs of the element windows, by element index. */
+  private val elementWindowIds = HashMap<Int, Int>()
+
+  /** The anchor of each element, once [setOrder] has worked it out. */
+  private var anchors: List<AccessibilityNodeInfoCompat?>? = null
+  private var firstAppNode: AccessibilityNodeInfoCompat? = null
+
+  /** Where the focused element was, while accessibility focus is on one. */
+  private var focusedBounds: Rect? = null
+
+  private var pendingPackage: String? = null
+  private var pendingChange: Change? = null
+  private val notify = Runnable {
+    val pkg = pendingPackage
+    val change = pendingChange
+    pendingPackage = null
+    pendingChange = null
+    if (pkg != null && change != null) listener?.onScreenChanged(pkg, change)
+  }
+
+  @JvmStatic
+  fun attach(service: AccessibilityService, pipeline: () -> Pipeline.FeedbackReturner?) {
+    windows = ScreenElementWindows(service, pipeline) { scheduleChange(hostPackage, Change.CONTENT) }
+  }
+
+  @JvmStatic
+  fun detach() {
+    clear()
+    windows = null
+    listener = null
+    handler.removeCallbacksAndMessages(null)
+  }
+
+  @JvmStatic
+  val isShowing: Boolean
+    get() = windows?.isShowing() == true || labels.isNotEmpty()
+
+  /** The window whose nodes the elements belong to, or -1. */
+  @JvmStatic
+  val hostWindow: Int
+    get() = hostWindowId
+
+  /**
+   * Shows [elements] over the window [windowId] of [packageName], in reading order, and the
+   * [labels] for its nodes, in place of what was shown before. With [keepFocus], focus that was on
+   * an element goes to the new element at the same place.
+   */
+  @JvmStatic
+  fun show(
+    windowId: Int,
+    packageName: String,
+    elements: List<ScreenElement>,
+    labels: Map<AccessibilityNodeInfoCompat, CharSequence>,
+    keepFocus: Boolean,
+  ) {
+    val focused = if (keepFocus) focusedBounds else null
+    clear()
+    hostWindowId = windowId
+    hostPackage = packageName
+    this.labels.putAll(labels)
+    val current = windows ?: return
+    current.show(elements)
+    if (focused != null) {
+      val index = elements.indices.firstOrNull { elements[it].bounds.contains(focused.centerX(), focused.centerY()) }
+      // The new windows take a moment to reach accessibility services.
+      if (index != null) handler.postDelayed({ current.focus(index) }, REFOCUS_DELAY_MS)
+    }
+  }
+
+  @JvmStatic
+  fun clear() {
+    windows?.clear()
+    labels.clear()
+    elementWindowIds.clear()
+    anchors = null
+    firstAppNode = null
+    hostWindowId = -1
+  }
+
+  /** The label given to the app's [node], or null. */
+  @JvmStatic
+  fun label(node: AccessibilityNodeInfoCompat): CharSequence? =
+    if (labels.isEmpty()) null else labels[node]
+
+  @JvmStatic
+  fun isElementWindow(windowId: Int): Boolean {
+    if (windows?.isShowing() != true || windowId < 0) return false
+    if (elementWindowIds.containsValue(windowId)) return true
+    findWindows()
+    return elementWindowIds.containsValue(windowId)
+  }
+
+  /** The index of the element [node] is, or -1 when it isn't one. */
+  @JvmStatic
+  fun indexOf(node: AccessibilityNodeInfoCompat): Int {
+    if (!isElementWindow(node.windowId)) return -1
+    return elementWindowIds.entries.firstOrNull { it.value == node.windowId }?.key ?: -1
+  }
+
+  /** The node of the element at [index], or null when its window has gone. */
+  @JvmStatic
+  fun nodeOf(index: Int): AccessibilityNodeInfoCompat? {
+    val service = windows?.service ?: return null
+    if (!elementWindowIds.containsKey(index)) findWindows()
+    val id = elementWindowIds[index] ?: return null
+    val window = service.windows.firstOrNull { it.id == id } ?: return null
+    return window.root?.let { AccessibilityNodeInfoCompat.wrap(it) }
+  }
+
+  /** Matches each element window to its element by its bounds. */
+  private fun findWindows() {
+    val current = windows ?: return
+    val elements = current.elements
+    val bounds = Rect()
+    for (window in current.service.windows) {
+      if (window.type != AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY) continue
+      if (window.title?.toString() != ScreenElementWindows.WINDOW_TITLE) continue
+      window.getBoundsInScreen(bounds)
+      val index = elements.indices.firstOrNull { i ->
+        !elementWindowIds.containsKey(i) && elements[i].bounds == bounds
+      } ?: continue
+      elementWindowIds[index] = window.id
+    }
+  }
+
+  /** Whether the elements still need their anchors: call [setOrder] before navigating. */
+  @JvmStatic
+  val needsOrder: Boolean
+    get() = windows?.isShowing() == true && anchors == null
+
+  /**
+   * Anchors each element to one of [nodes], the host window's nodes in reading order: the smallest
+   * node that holds the element's centre, or else the last node before it on screen (rows top to
+   * bottom, left to right in a row). Elements before every node have no anchor.
+   */
+  @JvmStatic
+  fun setOrder(nodes: List<AccessibilityNodeInfoCompat>) {
+    val elements = windows?.elements ?: return
+    val nodeBounds = nodes.map { Rect().also(it::getBoundsInScreen) }
+    anchors = elements.map { element -> nodes.getOrNull(anchorIndex(element.bounds, nodeBounds)) }
+    firstAppNode = nodes.firstOrNull()
+  }
+
+  /** The index in [nodes] of the anchor of an element with [bounds], or -1. */
+  internal fun anchorIndex(bounds: Rect, nodes: List<Rect>): Int {
+    val x = bounds.centerX()
+    val y = bounds.centerY()
+    var holder = -1
+    var holderArea = Long.MAX_VALUE
+    for ((i, b) in nodes.withIndex()) {
+      if (b.contains(x, y)) {
+        val area = b.width().toLong() * b.height()
+        if (area < holderArea) {
+          holder = i
+          holderArea = area
+        }
+      }
+    }
+    if (holder >= 0) return holder
+    var before = -1
+    for ((i, b) in nodes.withIndex()) {
+      val sameRow = b.top < bounds.bottom && b.bottom > bounds.top
+      val precedes = b.bottom <= bounds.top || (sameRow && b.centerX() < x)
+      if (precedes && (before < 0 || readsAfter(b, nodes[before]))) before = i
+    }
+    return before
+  }
+
+  /** Whether [a] comes after [b] in reading order. */
+  private fun readsAfter(a: Rect, b: Rect): Boolean =
+    if (a.top < b.bottom && a.bottom > b.top) a.left > b.left else a.top > b.top
+
+  private fun anchorOf(index: Int): AccessibilityNodeInfoCompat? = anchors?.getOrNull(index)
+
+  /** The elements anchored to [node] (null: before every node), in reading order. */
+  private fun group(node: AccessibilityNodeInfoCompat?): List<Int> {
+    val all = anchors ?: return emptyList()
+    return all.indices.filter { all[it] == node }
+  }
+
+  /** The element a forward swipe from app [node] goes to, or null for the app's next node. */
+  @JvmStatic
+  fun firstAfter(node: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? =
+    group(node).firstOrNull()?.let(::nodeOf)
+
+  /**
+   * The element a backward swipe goes to instead of app node [target], or null. Elements anchored
+   * to the target come between it and where the swipe started.
+   */
+  @JvmStatic
+  fun lastBefore(target: AccessibilityNodeInfoCompat?): AccessibilityNodeInfoCompat? =
+    group(target).lastOrNull()?.let(::nodeOf)
+
+  /** Whether [node] is the host window's first node, before which unanchored elements come. */
+  @JvmStatic
+  fun isFirstAppNode(node: AccessibilityNodeInfoCompat): Boolean = firstAppNode == node
+
+  /**
+   * Where a swipe from the element at [index] goes: the next or previous element of its group, or
+   * null when the swipe leaves the group (see [anchorOf] and [firstAppNodeOrNull]).
+   */
+  @JvmStatic
+  fun neighbour(index: Int, forward: Boolean): AccessibilityNodeInfoCompat? {
+    val members = group(anchorOf(index))
+    val at = members.indexOf(index)
+    val next = if (forward) members.getOrNull(at + 1) else members.getOrNull(at - 1)
+    return next?.let(::nodeOf)
+  }
+
+  @JvmStatic fun anchor(index: Int): AccessibilityNodeInfoCompat? = anchorOf(index)
+
+  @JvmStatic fun firstAppNodeOrNull(): AccessibilityNodeInfoCompat? = firstAppNode
+
+  /**
+   * Clears the elements when the screen under them changes, and tells [listener]. Called for every
+   * event before SandFly handles it.
+   */
+  @JvmStatic
+  fun onAccessibilityEvent(event: AccessibilityEvent) {
+    val showing = isShowing
+    if (!showing && listener == null) return
+    val pkg = event.packageName?.toString() ?: return
+    val own = windows?.service?.packageName
+    when (event.eventType) {
+      AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED -> {
+        focusedBounds =
+          if (showing && isElementWindow(event.windowId)) {
+            val index = elementWindowIds.entries.firstOrNull { it.value == event.windowId }?.key
+            index?.let { windows?.elements?.getOrNull(it)?.bounds }
+          } else {
+            null
+          }
+      }
+      AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> {
+        if (pkg == own) return
+        if (showing) clear()
+        scheduleChange(pkg, Change.WINDOW)
+      }
+      AccessibilityEvent.TYPE_VIEW_SCROLLED -> {
+        if (showing && event.windowId == hostWindowId) {
+          clear()
+          scheduleChange(pkg, Change.WINDOW)
+        }
+      }
+      AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED -> {
+        if (
+          showing &&
+            event.windowId == hostWindowId &&
+            (event.contentChangeTypes and AccessibilityEvent.CONTENT_CHANGE_TYPE_SUBTREE) != 0
+        ) {
+          scheduleChange(pkg, Change.CONTENT)
+        }
+      }
+    }
+  }
+
+  private fun scheduleChange(pkg: String?, change: Change) {
+    if (pkg == null || listener == null) return
+    // A window change outweighs a content change that is still waiting.
+    if (pendingChange != Change.WINDOW || pendingPackage != pkg) pendingChange = change
+    pendingPackage = pkg
+    handler.removeCallbacks(notify)
+    handler.postDelayed(notify, SETTLE_MS)
+  }
+
+  private const val SETTLE_MS = 800L
+  private const val REFOCUS_DELAY_MS = 300L
+}
+
+/**
  * Shows [ScreenElement]s as accessibility nodes: each in a transparent accessibility overlay
  * window at the element's bounds. Android reports only touchable windows to accessibility services,
  * so the windows are touchable, which also lets touch exploration find them. A click on one taps
  * the screen at its centre, with the windows made untouchable for the tap so that it reaches the
  * app.
+ *
+ * @param onTapped called once the app has had time to respond to a tap.
  */
 class ScreenElementWindows(
-  private val service: AccessibilityService,
+  val service: AccessibilityService,
   private val pipeline: () -> Pipeline.FeedbackReturner?,
+  private val onTapped: () -> Unit,
 ) {
   private val windowManager = service.getSystemService(WindowManager::class.java)
   private val handler = Handler(Looper.getMainLooper())
@@ -115,6 +421,11 @@ class ScreenElementWindows(
 
   fun isShowing(): Boolean = shown.isNotEmpty()
 
+  /** Puts accessibility focus on the element at [index]. */
+  fun focus(index: Int) {
+    shown.getOrNull(index)?.first?.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
+  }
+
   private fun layoutParams(bounds: Rect): WindowManager.LayoutParams =
     WindowManager.LayoutParams().apply {
       type = WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY
@@ -152,7 +463,7 @@ class ScreenElementWindows(
     }
   }
 
-  /** Taps the screen at the centre of [element], or holds there when [long] is set. */
+  /** Taps the screen at the centre of [view]'s element, or holds there when [long] is set. */
   private fun tap(view: ElementView, long: Boolean): Boolean {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return false
     val bounds = view.element.bounds
@@ -186,7 +497,7 @@ class ScreenElementWindows(
   private fun afterTap(view: ElementView) {
     pipeline()?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
     // The app gets time to respond. If the screen changed, whoever showed the elements replaces
-    // them; until then, focus returns to the element that was clicked.
+    // them; until then, focus returns to the element that was tapped.
     handler.postDelayed(
       {
         if (shown.any { it.first === view }) {
@@ -195,6 +506,7 @@ class ScreenElementWindows(
             { view.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null) },
             REFOCUS_DELAY_MS,
           )
+          onTapped()
         }
       },
       SETTLE_MS,

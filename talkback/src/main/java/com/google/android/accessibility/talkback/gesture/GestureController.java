@@ -869,6 +869,9 @@ public class GestureController {
         && action.equals(service.getString(R.string.shortcut_value_ai_agent))) {
       SandflyAi.getFeatures().startAgent(service);
       result = true;
+    } else if (SandflyAi.getFeatures() != null
+        && SandflyAi.getFeatures().runCommand(service, action)) {
+      result = true;
     } else if (FeatureFlagReader.enableSpeechPitchKeyboard(service)
         && action.equals(service.getString(R.string.shortcut_value_speech_pitch_decrease))) {
       result = speechRateAndPitchActor.changeSpeechPitch(false);

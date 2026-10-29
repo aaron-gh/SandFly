@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.commands
 import android.content.Context
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
+import com.google.android.accessibility.utils.FormFactorUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
@@ -38,6 +39,8 @@ class CommandsTest {
   @Before
   fun setUp() {
     context = RuntimeEnvironment.getApplication()
+    // Other tests may or may not have done this already, depending on the order they run in.
+    FormFactorUtils.initialize(context)
   }
 
   private fun allCommands() = Commands.categories(context).flatMap { it.commands }

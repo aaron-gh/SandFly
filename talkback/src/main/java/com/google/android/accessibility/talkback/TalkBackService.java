@@ -242,6 +242,7 @@ import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.SelectorEventNotifier;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
+import com.google.android.accessibility.talkback.screenelements.ScreenElements;
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
 import com.google.android.accessibility.talkback.soundthemes.SoundThemes;
 import com.google.android.accessibility.talkback.soundthemes.ThemeFeedback;
@@ -1053,6 +1054,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     ReportInbox.stopFollowing();
     ExitAfterTurnOff.schedule(getApplication());
     ShizukuGrants.onServiceDestroyed();
+    ScreenElements.detach();
     if (SandflyAi.getFeatures() != null) {
       SandflyAi.getFeatures().onServiceDestroyed(this);
     }
@@ -1164,6 +1166,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (scriptHost != null) {
       scriptHost.onAccessibilityEvent(event);
     }
+    ScreenElements.onAccessibilityEvent(event);
     if (audioDeviceRouter != null) {
       audioDeviceRouter.ensureRouting();
     }
@@ -2048,6 +2051,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     Updater.startAutomaticChecks(this);
     ReportInbox.startFollowing(this);
     ShizukuGrants.onServiceConnected(this);
+    ScreenElements.attach(this, () -> pipeline == null ? null : pipeline.getFeedbackReturner());
     if (SandflyAi.getFeatures() != null) {
       SandflyAi.getFeatures().onServiceConnected(this);
     }

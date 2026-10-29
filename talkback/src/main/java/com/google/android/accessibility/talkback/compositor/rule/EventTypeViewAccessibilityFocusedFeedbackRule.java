@@ -31,6 +31,7 @@ import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.annotation.VisibleForTesting;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.screenelements.ScreenElements;
 import com.google.android.accessibility.talkback.compositor.AccessibilityEventFeedbackUtils;
 import com.google.android.accessibility.talkback.compositor.AccessibilityFocusEventInterpretation;
 import com.google.android.accessibility.talkback.compositor.AccessibilityInterpretationFeedbackUtils;
@@ -395,7 +396,12 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
       Context context,
       GlobalVariables globalVariables) {
     boolean isSplitScreenMode = globalVariables.isSplitScreenMode();
-    boolean isWindowIdChanged = globalVariables.getLastWindowId() != node.getWindowId();
+    // Recognised screen elements each have a window of their own, but belong to the window under
+    // them.
+    boolean isWindowIdChanged =
+        globalVariables.getLastWindowId() != node.getWindowId()
+            && !ScreenElements.isElementWindow(node.getWindowId())
+            && !ScreenElements.isElementWindow(globalVariables.getLastWindowId());
 
     StringBuilder logString = new StringBuilder();
     logString

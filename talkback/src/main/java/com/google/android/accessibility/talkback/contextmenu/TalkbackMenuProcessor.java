@@ -41,6 +41,7 @@ import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettin
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleProcessor;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.ScriptMenuItem;
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FormFactorUtils;
@@ -58,6 +59,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import kotlin.Pair;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Configure dynamic menu items on the talkback context menu. */
@@ -215,6 +217,7 @@ public class TalkbackMenuProcessor {
     // System Action
     addWindowActionMenu(menu);
     addScriptCommands(menu);
+    addSandflyProItems(menu);
     addScriptTool(
         menu,
         R.id.inspect_item,
@@ -866,6 +869,16 @@ public class TalkbackMenuProcessor {
             /* title= */ service.getString(R.string.system_actions));
     if (!WindowNavigationMenuProcessor.prepareWindowSubMenu(service, subMenu, pipeline)) {
       menu.removeItem(R.id.window_menu);
+    }
+  }
+
+  private void addSandflyProItems(ContextMenu menu) {
+    if (SandflyAi.getFeatures() == null) {
+      return;
+    }
+    for (Pair<CharSequence, Runnable> item : SandflyAi.getFeatures().menuItems(service)) {
+      addAfterMenuCloses(
+          menu, R.id.sandfly_pro_command, ORDER_IMAGE_CAPTION, item.getFirst(), node -> item.getSecond().run());
     }
   }
 
