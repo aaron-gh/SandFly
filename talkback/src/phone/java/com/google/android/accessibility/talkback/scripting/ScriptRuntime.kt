@@ -424,10 +424,19 @@ class ScriptRuntime(
         "A dialog has 1 to $MAX_DIALOG_ITEMS items"
       }
       ScriptForm.check(items)
-      dialogs.form(id, args.getInt("dialog"), title(args), items) { event ->
+      dialogs.form(id, args.getInt("dialog"), title(args), items, args.optBoolean("fullScreen")) {
+        event ->
         handler.post { dispatch("dialogEvent", event) }
       }
     }
+    on("ui.add", DIALOGS) { args ->
+      val item = args.optJSONObject("item")
+      ScriptForm.checkItem(item)
+      dialogs.add(id, args.getInt("dialog"), item!!, args.optString("after").ifEmpty { null })
+    }
+    on("ui.remove", DIALOGS) { dialogs.remove(id, it.getInt("dialog"), it.optString("item")) }
+    on("ui.focus", DIALOGS) { dialogs.focus(id, it.getInt("dialog"), it.optString("item")) }
+    on("ui.setTitle", DIALOGS) { dialogs.setTitle(id, it.getInt("dialog"), title(it)) }
     on("ui.update", DIALOGS) { args ->
       val props = args.optJSONObject("props") ?: JSONObject()
       apiCheck(props.optJSONArray("items").items().size <= MAX_OPTIONS) {

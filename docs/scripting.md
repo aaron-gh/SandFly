@@ -413,31 +413,45 @@ settings = {
 
 Settings appear on their own screen on the script's page. `sf.settings.get(key)` reads one, `sf.settings.all()` reads them all, and `sf.settings.set(key, value)` changes one. `sf.settings.setOptions(key, options)` replaces the options of a list. A setting's value can be up to 16,384 characters.
 
-### Dialogs
+### Dialogs and windows
 
-All of these need the `dialogs` permission, and all but `dialog` [wait](#waiting). Every dialog's title starts with the script's name, so that it can't be taken for the app's own or the system's.
+All of these need the `dialogs` permission, and all but `dialog` and `window` [wait](#waiting). Every dialog's and window's title starts with the script's name, so that it can't be taken for the app's own or the system's.
 
 *   `sf.ui.alert(message, { title })`
 *   `sf.ui.confirm(message, { title, ok, cancel })` gives `true` or `false`.
 *   `sf.ui.prompt(title, { text, hint })` gives the text, or `nil` if cancelled.
 *   `sf.ui.choose(title, options, { selected })` gives the chosen value, or `nil`.
 *   `sf.ui.dialog({ title, items, onClose })` shows a form with up to 50 items, and gives the form at once.
+*   `sf.ui.window({ title, items, onClose })` *Version 2* does the same in a window that fills the screen, for a script that is an app of its own, such as a notepad. Back closes it.
+*   `sf.ui.text(title, text)` *Version 2* shows text that can be read by line, word or character and selected, and waits until it's closed. Use it for results too long to say.
+
+*Version 2:* dialogs and windows open over the ones already open, so a script can ask `sf.ui.confirm` from a window and the window stays open under it. Up to 8 are open at once; opening another closes the oldest. They close when the script is unloaded, such as when the app the script runs in leaves the screen, so keep what the user typed in [`sf.storage`](#storage).
 
 Each form item has a `type`, an `id`, and usually a `label`:
 
 | Type | Other fields |
 |---|---|
-| `label` | |
-| `edit` | `value`, `hint`, `number`, `password`, `multiline`, `onChange` |
+| `label` | *Version 2:* `selectable = true` makes the text readable by character, word and line, and selectable. |
+| `heading` | *Version 2.* A label that is a heading, for moving between parts of a window. |
+| `edit` | `value`, `hint`, `number`, `password`, `multiline`, `onChange`. *Version 2:* `readOnly = true` holds text to read and select, not to change; `onSubmit` is called with the text when the keyboard's Done or Enter key is pressed in a field of one line. |
 | `switch` | `value`, `onChange` |
-| `list` | `items`, `value`, `onChange` |
+| `list` | `items`, `value`, `onChange`. One of the items can be chosen. |
+| `items` | *Version 2.* Rows to open, such as the notes of a notepad: `items`, a list of values or `{ value, label }`, up to 500; `empty`, the text shown when there are none; and `actions`, names of actions on each row, which are in SandFly's **Actions** menu. `onSelect` is called with the row's value when it's double-tapped, `onLongPress` when it's long-pressed, and `onAction` with the action's name and the row's value. |
+| `slider` | *Version 2.* `min`, `max`, `step` and `value`, 0, 100 and 1 if left out; `onChange`. |
 | `button` | `close = true` closes the form; `onClick` |
 
-*Version 2:* an `edit` item with `readOnly = true` holds text to read and select, not to change.
+`onChange` is called with the new value and the form, and `onClick` with the form. `onSelect`, `onLongPress` and `onSubmit` get the form after the value, and `onAction` after the action and value. All of them can [wait](#waiting).
 
-`sf.ui.text(title, text)` *Version 2* shows text in a dialog where it can be read by line, word or character and selected, and waits until it's closed. Use it for results too long to say, as NVDA's and JAWS's text viewers.
+The form has `form:get(id)`, `form:values()`, `form:set(id, { value, label, items, enabled, visible })`, `form:close()`, and `form:wait()`, which waits until the form closes and gives the final values. *Version 2* adds:
 
-`onChange` is called with the new value and the form, and `onClick` with the form. The form has `form:get(id)`, `form:values()`, `form:set(id, { value, label, items, enabled, visible })`, `form:close()`, and `form:wait()`, which waits until the form closes and gives the final values.
+*   `form:add(item, { after })` adds an item at the end, or after the item with the id `after`, and gives its id.
+*   `form:remove(id)` removes an item.
+*   `form:focus(id)` moves SandFly's focus to an item, or to the first row of an `items` list.
+*   `form:setTitle(title)` changes the title.
+
+`set` with `items` changes the rows of an `items` list too, and with `actions` its actions.
+
+[examples/notepad.lua](scripting/examples/notepad.lua) is a notepad: a window lists the notes, double-tapping one opens it in a window of its own, and the Actions menu copies or deletes one.
 
 ### Clipboard, system and network
 

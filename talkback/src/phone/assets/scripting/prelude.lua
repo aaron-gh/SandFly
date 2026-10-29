@@ -1007,6 +1007,7 @@ local function form_item(item, index)
   end
   sent.id = tostring(item.id or ('item' .. index))
   sent.notify = type(item.onChange) == 'function'
+  sent.submit = type(item.onSubmit) == 'function'
   if type(item.items) == 'table' then
     sent.items = options_of(item.items)
   end
@@ -1021,7 +1022,7 @@ local function copy(t)
   return result
 end
 
-local function open_form(spec)
+local function open_form(spec, full_screen)
   spec = spec or {}
   local id = next_form
   next_form = next_form + 1
@@ -1036,6 +1037,7 @@ local function open_form(spec)
     end
   end
   local form = { closed = false }
+  local added = 0
   function form:get(item)
     return values[item]
   end
@@ -1055,6 +1057,29 @@ local function open_form(spec)
   function form:close()
     send('ui.close', { dialog = id })
   end
+  -- Adds an item at the end, or after the item with the id in opts.after.
+  function form:add(item, opts)
+    added = added + 1
+    local s = form_item(item, 'added' .. added)
+    by_id[s.id] = item
+    if s.value ~= nil then
+      values[s.id] = s.value
+    end
+    send('ui.add', { dialog = id, item = s, after = text_or_nil((opts or {}).after) })
+    return s.id
+  end
+  function form:remove(item)
+    item = tostring(item)
+    by_id[item] = nil
+    values[item] = nil
+    send('ui.remove', { dialog = id, item = item })
+  end
+  function form:focus(item)
+    send('ui.focus', { dialog = id, item = tostring(item) })
+  end
+  function form:setTitle(title)
+    send('ui.setTitle', { dialog = id, title = text_or_nil(title) })
+  end
   function form:wait()
     if self.closed then
       return copy(values)
@@ -1062,7 +1087,9 @@ local function open_form(spec)
     return wait_for('form:' .. id)
   end
   forms[id] = { form = form, by_id = by_id, values = values, on_close = spec.onClose }
-  send('ui.dialog', { dialog = id, title = text_or_nil(spec.title), items = sent })
+  send('ui.dialog', {
+    dialog = id, title = text_or_nil(spec.title), items = sent, fullScreen = full_screen == true,
+  })
   return form
 end
 
@@ -1084,10 +1111,23 @@ local function form_event(data)
     return
   end
   local item = open.by_id[data.item]
-  if data.event == 'click' and item and type(item.onClick) == 'function' then
-    spawn('onClick ' .. data.item, item.onClick, open.form)
-  elseif data.event == 'change' and item and type(item.onChange) == 'function' then
-    spawn('onChange ' .. data.item, item.onChange, data.value, open.form)
+  if not item then
+    return
+  end
+  local handlers_of = {
+    click = { item.onClick, open.form },
+    change = { item.onChange, data.value, open.form },
+    select = { item.onSelect, data.value, open.form },
+    longPress = { item.onLongPress, data.value, open.form },
+    submit = { item.onSubmit, data.value, open.form },
+  }
+  if data.event == 'action' and type(item.onAction) == 'function' and type(data.value) == 'table' then
+    spawn('onAction ' .. data.item, item.onAction, data.value.action, data.value.value, open.form)
+    return
+  end
+  local h = handlers_of[data.event]
+  if h and type(h[1]) == 'function' then
+    spawn(data.event .. ' ' .. data.item, h[1], unpack(h, 2, 3))
   end
 end
 
@@ -1096,7 +1136,8 @@ local function dialog(method, args)
 end
 
 local ui = {
-  dialog = open_form,
+  dialog = function(spec) return open_form(spec, false) end,
+  window = function(spec) return open_form(spec, true) end,
   choose = function(title, options, opts)
     opts = opts or {}
     return dialog('ui.choose', {

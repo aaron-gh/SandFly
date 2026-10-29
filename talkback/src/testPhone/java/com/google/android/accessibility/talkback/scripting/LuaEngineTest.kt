@@ -470,6 +470,78 @@ class LuaEngineTest {
     assertTrue(move.getJSONObject("args").getBoolean("extend"))
   }
 
+  @Test
+  fun aWindowsRowsAndActionsReachTheScript() {
+    run(
+      """
+      sf.ui.window({
+        title = 'Notes',
+        items = {
+          { type = 'items', id = 'notes', items = { { value = '7', label = 'Shopping' } },
+            actions = { 'Delete' },
+            onSelect = function(id) sf.speak('open ' .. id) end,
+            onAction = function(action, id) sf.speak(action .. ' ' .. id) end },
+          { type = 'edit', id = 'text', onSubmit = function(text) sf.speak('submit ' .. text) end },
+        },
+      })
+      """
+    )
+    val dialog = host.calls.single { it.first == "ui.dialog" }.second!!
+    assertTrue(dialog.getBoolean("fullScreen"))
+    assertTrue(dialog.getJSONArray("items").getJSONObject(1).getBoolean("submit"))
+    val id = dialog.getInt("dialog")
+    fun event(item: String, name: String, value: Any) =
+      dispatch(
+        "dialogEvent",
+        JSONObject().put("dialog", id).put("item", item).put("event", name).put("value", value),
+      )
+    event("notes", "select", "7")
+    event("notes", "action", JSONObject().put("action", "Delete").put("value", "7"))
+    event("text", "submit", "milk")
+    assertEquals(listOf("open 7", "Delete 7", "submit milk"), host.spoken())
+  }
+
+  @Test
+  fun aFormAddsRemovesAndFocusesItems() {
+    run(
+      """
+      local form = sf.ui.dialog({ items = { { type = 'label', id = 'a', label = 'A' } } })
+      local added = form:add({ type = 'button', label = 'B', onClick = function() sf.speak('b') end },
+        { after = 'a' })
+      form:focus(added)
+      form:remove('a')
+      sf.speak(added)
+      """
+    )
+    val add = host.calls.single { it.first == "ui.add" }.second!!
+    assertEquals("a", add.getString("after"))
+    val added = add.getJSONObject("item").getString("id")
+    assertEquals(added, host.calls.single { it.first == "ui.focus" }.second!!.getString("item"))
+    assertEquals("a", host.calls.single { it.first == "ui.remove" }.second!!.getString("item"))
+    val id = host.calls.single { it.first == "ui.dialog" }.second!!.getInt("dialog")
+    dispatch(
+      "dialogEvent",
+      JSONObject().put("dialog", id).put("item", added).put("event", "click"),
+    )
+    assertEquals(listOf(added, "b"), host.spoken())
+  }
+
+  @Test
+  fun theNotepadExampleReadsAndOpens() {
+    val source = File("../docs/scripting/examples/notepad.lua").readText()
+    // Parsing the keys needs Android, so the manifest goes to the script as read.
+    val manifest = ManifestReader.read(source)
+    assertEquals("notepad", JSONObject(manifest).getString("id"))
+    host.answers["manifest"] = { manifest }
+    host.answers["storage.get"] = { """{"value":[{"id":1,"text":"Milk\nEggs","time":0}]}""" }
+    run(source)
+    dispatch("command", JSONObject().put("id", "open").put("via", "menu"))
+    val rows =
+      host.calls.single { it.first == "ui.dialog" }.second!!.getJSONArray("items")
+        .getJSONObject(2).getJSONArray("items")
+    assertTrue(rows.getJSONObject(0).getString("label").startsWith("Milk, "))
+  }
+
   private fun assertInterrupted(block: () -> Unit) {
     try {
       block()
