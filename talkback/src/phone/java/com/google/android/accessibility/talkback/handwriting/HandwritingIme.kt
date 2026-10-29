@@ -15,6 +15,7 @@
  */
 package com.google.android.accessibility.talkback.handwriting
 
+import com.google.android.accessibility.utils.OwnKeyboards
 import android.annotation.SuppressLint
 import android.graphics.Region
 import android.inputmethodservice.InputMethodService
@@ -120,6 +121,10 @@ class HandwritingIme : InputMethodService() {
     // Leaves the app its whole height to lay out in, as the braille keyboard does.
     outInsets.contentTopInsets = resources.displayMetrics.heightPixels
   }
+
+  /** Stays closed while the SandFly Pro agent acts, as the braille keyboard does. */
+  override fun onShowInputRequested(flags: Int, configChange: Boolean): Boolean =
+    !OwnKeyboards.held && super.onShowInputRequested(flags, configChange)
 
   override fun onStartInputView(info: EditorInfo, restarting: Boolean) {
     super.onStartInputView(info, restarting)

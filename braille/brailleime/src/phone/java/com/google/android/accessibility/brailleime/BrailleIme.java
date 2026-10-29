@@ -113,6 +113,7 @@ import com.google.android.accessibility.brailleime.settings.BrailleImeGestureCom
 import com.google.android.accessibility.brailleime.settings.BrailleImePreferencesActivity;
 import com.google.android.accessibility.brailleime.tutorial.TutorialView.TutorialCallback;
 import com.google.android.accessibility.brailleime.tutorial.TutorialView.TutorialState.State;
+import com.google.android.accessibility.utils.OwnKeyboards;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils.Constants;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
@@ -384,6 +385,10 @@ public class BrailleIme extends InputMethodService {
 
   @Override
   public boolean onShowInputRequested(int flags, boolean configChange) {
+    if (OwnKeyboards.held) {
+      BrailleImeLog.d(TAG, "Held closed while the SandFly Pro agent acts.");
+      return false;
+    }
     if (talkBackForBrailleIme != null) {
       if (talkBackForBrailleIme.isContextMenuExist()) {
         BrailleImeLog.d(TAG, "TalkBack context menu is running.");
