@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.commands
 
 import android.content.Intent
+import android.os.Bundle
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.AppGestures
@@ -75,12 +76,13 @@ class AppGestureFragment : NotificationCodeFragment(R.string.title_pref_app_gest
   private val packageName: String by lazy { requireArguments().getString(ARG_PACKAGE).orEmpty() }
 
   // The gestures that can be assigned, named and in order as on the Gestures screen.
-  private val slots: List<CommandBindings.GestureSlot> by lazy {
-    val context = requireContext()
-    CommandBindings.gestures(
-      context,
-      preferenceManager.inflateFromResource(context, R.xml.gesture_preferences, null),
-    )
+  private var slots: List<CommandBindings.GestureSlot> = emptyList()
+
+  override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+    preferenceManager.setStorageDeviceProtected()
+    // Read from the Gestures screen, which the screen built in code then replaces.
+    slots = readGestures(this)
+    super.onCreatePreferences(savedInstanceState, rootKey)
   }
 
   private val app: AppGestures.App?
