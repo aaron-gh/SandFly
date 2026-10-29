@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.utils;
 
+import kotlin.Unit;
+import com.google.android.accessibility.talkback.dictation.SandflyDictation;
 import static android.speech.SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS;
 import static android.speech.SpeechRecognizer.ERROR_NO_MATCH;
 import static android.speech.SpeechRecognizer.ERROR_RECOGNIZER_BUSY;
@@ -89,6 +91,11 @@ public class SpeechRecognizerPerformer {
       };
   public @Nullable SpeechRecognizer speechRecognizer;
   private boolean isListening = false;
+  /** Whether SandFly's dictation is recording or recognizing for this performer. */
+  private boolean dictating = false;
+  /** Dictation is stopped after this long at least, if nothing stops it before. */
+  private static final int MIN_DICTATION_MS = 60_000;
+  private final Runnable stopDictation = SandflyDictation::stop;
   private boolean sessionActive = false;
   private final boolean partialResultFastFeedback;
   private String cachedResult = "";
@@ -343,6 +350,10 @@ public class SpeechRecognizerPerformer {
       LogUtils.e(TAG, "doListening:Speech listener's not set.");
       return;
     }
+    if (SandflyDictation.isAvailable()) {
+      listenWithDictation();
+      return;
+    }
     if (!SpeechRecognizer.isRecognitionAvailable(context)) {
       LogUtils.e(TAG, "Platform does not support voice command.");
       speechRecognizerRequester.onFeedbackEvent(
@@ -371,6 +382,10 @@ public class SpeechRecognizerPerformer {
   }
 
   public void stopListening() {
+    if (dictating) {
+      SandflyDictation.stop();
+      return;
+    }
     sessionActive = false;
     if (speechRecognizer != null) {
       speechRecognizer.stopListening();
@@ -378,6 +393,33 @@ public class SpeechRecognizerPerformer {
     if (executeCommandDelayHandler.hasCallbacks(speechRecognitionDelayedSender)) {
       executeCommandDelayHandler.removeCallbacks(speechRecognitionDelayedSender);
     }
+  }
+
+  /**
+   * Records with SandFly's dictation, which uses the engine and AI correction chosen in Dictation
+   * settings, until listening is asked for again, [stopListening] is called, or the time limit.
+   */
+  private void listenWithDictation() {
+    if (dictating) {
+      SandflyDictation.stop();
+      return;
+    }
+    dictating = true;
+    speechRecognizerRequester.onFeedbackEvent(SpeechRecognizerRequester.EVENT_START_LISTENING);
+    executeCommandDelayHandler.postDelayed(
+        stopDictation, Math.max(maxRecognitionDelayMs, MIN_DICTATION_MS));
+    SandflyDictation.listen(
+        text -> {
+          dictating = false;
+          executeCommandDelayHandler.removeCallbacks(stopDictation);
+          speechRecognizerRequester.onFeedbackEvent(SpeechRecognizerRequester.EVENT_STOP_LISTENING);
+          if (text == null) {
+            speechRecognizerRequester.onError(SpeechRecognizer.ERROR_NO_MATCH);
+          } else {
+            speechRecognizerRequester.onResult(text, /* isPartialResult= */ false);
+          }
+          return Unit.INSTANCE;
+        });
   }
 
   /** Start the speech recognition session. */
