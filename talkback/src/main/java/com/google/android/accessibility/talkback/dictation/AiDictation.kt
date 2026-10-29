@@ -85,13 +85,16 @@ class AiDictation(
     )
   private var phase = Phase.IDLE
   private var field: AccessibilityNodeInfoCompat? = null
-  /** When speech was last heard while recording, for Auto stop after silence. */
+  /** When recording started, and when speech was last heard, for stopping after silence. */
+  @Volatile private var recordingStartedAt = 0L
   @Volatile private var lastSpeechAt = 0L
+  /** Whether speech was heard since recording started. */
+  @Volatile private var speechHeard = false
   private val autoStop =
     object : Runnable {
       override fun run() {
         if (phase != Phase.RECORDING) return
-        val wait = DictationSettings.autoStopMs(prefs)
+        val wait = silenceLimitMs(onText != null, speechHeard, DictationSettings.autoStopMs(prefs))
         if (wait <= 0) return
         val silent = SystemClock.elapsedRealtime() - lastSpeechAt
         if (silent >= wait) stopRecording() else handler.postDelayed(this, minOf(wait - silent, AUTO_STOP_CHECK_MS))
@@ -158,8 +161,10 @@ class AiDictation(
 
   /**
    * Starts recording for text to give to [callback] instead of typing it, or stops recording when
-   * it is on, as [start] does for a field. [callback] gets the recognized and, when that is on,
-   * corrected text, or null when nothing was recognized or recording could not start.
+   * it is on, as [start] does for a field. Recording also stops after a pause in speech, or when
+   * nothing is said; Auto stop after silence applies to Dictate only. [callback] gets the
+   * recognized and, when that is on, corrected text, or null when nothing was recognized or
+   * recording could not start.
    */
   fun listen(callback: (String?) -> Unit): Boolean {
     if (phase != Phase.IDLE) return start(null)
@@ -171,13 +176,14 @@ class AiDictation(
       callback(null)
       return false
     }
+    field = null
+    onText = callback
     if (!startRecording(DictationSettings.effectiveRecognition(service, prefs))) {
+      onText = null
       speak(service.getString(R.string.dictation_unavailable))
       callback(null)
       return false
     }
-    field = null
-    onText = callback
     phase = Phase.RECORDING
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_up))
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(SILENCE))
@@ -191,10 +197,14 @@ class AiDictation(
   /** Starts recording for [used]. Returns false when it can't. */
   private fun startRecording(used: Recognition): Boolean {
     recognition = used
-    // Counts from the start too, so that recording stops when nothing is said.
-    heardSpeech()
+    // Silence counts from the start too, so that recording stops when nothing is said.
+    recordingStartedAt = SystemClock.elapsedRealtime()
+    lastSpeechAt = recordingStartedAt
+    speechHeard = false
     handler.removeCallbacks(autoStop)
-    if (DictationSettings.autoStopMs(prefs) > 0) handler.postDelayed(autoStop, AUTO_STOP_CHECK_MS)
+    if (silenceLimitMs(onText != null, false, DictationSettings.autoStopMs(prefs)) > 0) {
+      handler.postDelayed(autoStop, AUTO_STOP_CHECK_MS)
+    }
     if (used == Recognition.GOOGLE || used == Recognition.ANDROID) {
       val request = generation
       val recognizer =
@@ -232,7 +242,10 @@ class AiDictation(
   }
 
   private fun heardSpeech() {
-    lastSpeechAt = SystemClock.elapsedRealtime()
+    val now = SystemClock.elapsedRealtime()
+    lastSpeechAt = now
+    // The start chime isn't speech.
+    if (now - recordingStartedAt >= CHIME_MS) speechHeard = true
   }
 
   private fun stopRecording() {
@@ -548,8 +561,14 @@ class AiDictation(
 
   internal companion object {
     private const val TAG = "AiDictation"
-    /** How often Auto stop after silence checks, at most. */
+    /** How often stopping after silence checks, at most. */
     private const val AUTO_STOP_CHECK_MS = 250L
+    /** Speech input for [listen] stops after a pause this long once speech was heard. */
+    const val LISTEN_PAUSE_MS = 2_000L
+    /** Speech input for [listen] stops when nothing is said for this long from the start. */
+    const val LISTEN_NOTHING_SAID_MS = 8_000L
+    /** Sound this soon after recording starts is the start chime, not speech. */
+    private const val CHIME_MS = 600L
     /** How long progress tones play while speech is recognized or corrected. */
     private const val WORK_TONES_MS = 10 * 60_000L
     private const val HTTP_TOO_MANY_REQUESTS = 429
@@ -563,6 +582,17 @@ class AiDictation(
     /** A model on the phone is slower than one in the cloud. */
     private const val DEVICE_CORRECTION_TIMEOUT_MS = 60_000L
     private const val SPEECH_DELAY_MS = 100
+
+    /**
+     * How long silence lasts before recording stops by itself, or 0 for never: for [listen], a
+     * pause after speech or a longer wait for any; for Dictate, Auto stop after silence, [setting].
+     */
+    fun silenceLimitMs(listening: Boolean, speechHeard: Boolean, setting: Long): Long =
+      when {
+        !listening -> setting
+        speechHeard -> LISTEN_PAUSE_MS
+        else -> LISTEN_NOTHING_SAID_MS
+      }
 
     fun textBeforeCursor(node: AccessibilityNodeInfoCompat): String {
       if (node.isShowingHintText || AccessibilityNodeInfoUtils.isEmptyEditTextRegardlessOfHint(node)) return ""

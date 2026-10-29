@@ -397,7 +397,8 @@ public class SpeechRecognizerPerformer {
 
   /**
    * Records with SandFly's dictation, which uses the engine and AI correction chosen in Dictation
-   * settings, until listening is asked for again, [stopListening] is called, or the time limit.
+   * settings, until the speech pauses, listening is asked for again, [stopListening] is called, or
+   * the time limit.
    */
   private void listenWithDictation() {
     if (dictating) {
