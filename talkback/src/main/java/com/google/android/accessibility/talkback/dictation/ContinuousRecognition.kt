@@ -40,6 +40,8 @@ internal class ContinuousRecognition(
   private val service: ComponentName?,
   private val onDone: (String) -> Unit,
   private val onFailed: (Int) -> Unit,
+  /** Runs on the main thread whenever the recognizer hears speech. */
+  private val onSpeech: () -> Unit = {},
 ) : RecognitionListener {
   private var recognizer: SpeechRecognizer? = null
   private val parts = mutableListOf<String>()
@@ -128,13 +130,19 @@ internal class ContinuousRecognition(
         ?: partial.trim()
     partial = ""
     errors = 0
-    if (text.isNotEmpty()) parts.add(text)
+    if (text.isNotEmpty()) {
+      parts.add(text)
+      onSpeech()
+    }
     if (stopping) finish() else listen()
   }
 
   override fun onPartialResults(partialResults: Bundle?) {
     partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)?.firstOrNull()?.let {
-      if (it.isNotBlank()) partial = it
+      if (it.isNotBlank()) {
+        partial = it
+        onSpeech()
+      }
     }
   }
 
@@ -172,13 +180,13 @@ internal class ContinuousRecognition(
 
   override fun onReadyForSpeech(params: Bundle?) {}
 
-  override fun onBeginningOfSpeech() {}
+  override fun onBeginningOfSpeech() = onSpeech()
 
   override fun onRmsChanged(rmsdB: Float) {}
 
   override fun onBufferReceived(buffer: ByteArray?) {}
 
-  override fun onEndOfSpeech() {}
+  override fun onEndOfSpeech() = onSpeech()
 
   override fun onEvent(eventType: Int, params: Bundle?) {}
 

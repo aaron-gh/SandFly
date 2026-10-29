@@ -33,7 +33,11 @@ import java.nio.ByteOrder
 class AudioCapture(
   private val onLimit: () -> Unit,
   private val onChunk: ((ByteArray) -> Unit)? = null,
+  /** Runs on the recording thread for each tenth of a second that sounds like speech. */
+  private val onSpeech: (() -> Unit)? = null,
 ) {
+  /** The level of the room's background noise, which speech must be well above. */
+  private var noiseFloor = 0.0
   private val audio = ByteArrayOutputStream()
   @Volatile private var recording = false
   private var thread: Thread? = null
@@ -92,6 +96,7 @@ class AudioCapture(
         }
         synchronized(audio) { audio.write(buffer, 0, read) }
         onChunk?.invoke(buffer.copyOf(read))
+        if (onSpeech != null && isSpeech(buffer, read)) onSpeech.invoke()
         if (audio.size() >= MAX_BYTES) {
           recording = false
           onLimit()
@@ -104,6 +109,31 @@ class AudioCapture(
   }
 
   /** Stops recording and returns the 16-bit samples recorded, little-endian. */
+  /**
+   * Whether [read] bytes of 16-bit audio are loud enough to be speech: well above the background
+   * noise, which follows quiet stretches quickly and loud ones slowly.
+   */
+  private fun isSpeech(buffer: ByteArray, read: Int): Boolean {
+    var sum = 0.0
+    var count = 0
+    var i = 0
+    while (i + 1 < read) {
+      val sample = ((buffer[i + 1].toInt() shl 8) or (buffer[i].toInt() and 0xff)).toShort().toDouble()
+      sum += sample * sample
+      count++
+      i += 2
+    }
+    if (count == 0) return false
+    val level = Math.sqrt(sum / count)
+    noiseFloor =
+      when {
+        noiseFloor == 0.0 -> level
+        level < noiseFloor -> noiseFloor * 0.7 + level * 0.3
+        else -> noiseFloor * 0.98 + level * 0.02
+      }
+    return level > maxOf(noiseFloor * SPEECH_OVER_NOISE, MIN_SPEECH_LEVEL)
+  }
+
   fun stop(): ByteArray {
     recording = false
     thread?.join(STOP_WAIT_MS)
@@ -112,6 +142,10 @@ class AudioCapture(
   }
 
   companion object {
+    /** How many times louder than the background noise speech is. */
+    private const val SPEECH_OVER_NOISE = 3.0
+    /** The quietest level counted as speech, out of 32767. */
+    private const val MIN_SPEECH_LEVEL = 300.0
     private const val TAG = "AudioCapture"
     const val SAMPLE_RATE = 16_000
     /** Fifteen minutes. Gemini 3.5 Transcribe takes up to an hour; longer would be slow to send. */

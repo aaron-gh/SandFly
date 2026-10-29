@@ -16,6 +16,14 @@
       android:order="2"
       android:persistent="false"
       android:title="@string/dictation_google_download" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="0"
+      android:entries="@array/pref_dictation_auto_stop_entries"
+      android:entryValues="@array/pref_dictation_auto_stop_values"
+      android:key="pref_dictation_auto_stop_ms"
+      android:order="3"
+      android:summary="%s"
+      android:title="@string/title_pref_dictation_auto_stop" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_dictation_ai"
       android:order="4"
