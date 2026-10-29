@@ -562,9 +562,16 @@ public class BrailleLanguages {
         R.string.code_user_facing_name_italian_comp8,
         /* supportedContracted= */ false,
         /* eightDot= */ true),
-    JAPANESE(
+    // Standard Japanese braille, which reads kanji with the JTalk dictionary. First of the
+    // Japanese codes, so that it is the default for Japanese.
+    JAPANESE_KANA(
         LOCALE_JP,
         R.string.code_user_facing_name_japanese,
+        /* supportedContracted= */ false,
+        /* eightDot= */ false),
+    JAPANESE(
+        LOCALE_JP,
+        R.string.code_user_facing_name_japanese_kantenji,
         /* supportedContracted= */ false,
         /* eightDot= */ true),
     KANNADA(

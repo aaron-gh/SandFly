@@ -19,6 +19,7 @@ package com.google.android.accessibility.braille.translate.liblouis;
 import android.content.Context;
 import com.google.android.accessibility.braille.translate.BrailleTranslator;
 import com.google.android.accessibility.braille.translate.TranslatorFactory;
+import com.google.android.accessibility.braille.translate.japanese.JapaneseBrailleTranslator;
 
 /** Creates Translator instances that delegate to the LibLouis braille translation library. */
 public class LibLouis implements TranslatorFactory {
@@ -174,6 +175,11 @@ public class LibLouis implements TranslatorFactory {
       }
       case "JAPANESE" -> {
         return new LibLouisTranslator(context, "ja-kantenji-ucs2.utb");
+      }
+      case "JAPANESE_KANA" -> {
+        // Kana cells are the same in kantenji, so input is read back with its table.
+        return new JapaneseBrailleTranslator(
+            context, new LibLouisTranslator(context, "ja-kantenji-ucs2.utb"));
       }
       case "KANNADA" -> {
         return new LibLouisTranslator(context, "kn.tbl");
