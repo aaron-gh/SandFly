@@ -23,6 +23,7 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
@@ -44,7 +45,7 @@ object AiProviderPreferences {
       true
     }
     for (provider in AiProvider.entries) {
-      if (provider == AiProvider.NONE) continue
+      if (provider == AiProvider.NONE || !provider.isOffered) continue
       if (category.findPreference<Preference>(KEY_PREFIX + provider.id) != null) continue
       category.addPreference(
         AccessibilitySuitePreference(context).apply {
@@ -52,8 +53,12 @@ object AiProviderPreferences {
           isPersistent = false
           title = context.getString(R.string.title_ai_provider_settings, context.getString(provider.label))
           setFragment(
-            if (provider == AiProvider.GEMINI) GeminiSettingsFragment::class.java.name
-            else AiProviderFragment::class.java.name
+            when (provider) {
+              AiProvider.GEMINI -> GeminiSettingsFragment::class.java.name
+              // Codes, renewal and the licence are on SandFly Pro's own screen.
+              AiProvider.SANDFLY_PRO -> SandflyAi.features?.settingsFragment
+              else -> AiProviderFragment::class.java.name
+            }
           )
           extras.putString(AiProviderFragment.ARG_PROVIDER, provider.id)
         }
