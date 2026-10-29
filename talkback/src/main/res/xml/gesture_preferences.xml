@@ -24,6 +24,11 @@
       android:key="@string/pref_multi_tap_timeout_key"
       android:summary="%s"
       android:title="@string/title_pref_multi_tap_timeout" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.commands.AppGesturesFragment"
+      android:key="pref_app_gestures_screen"
+      android:persistent="false"
+      android:title="@string/title_pref_app_gestures" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="false"
       android:key="@string/pref_reserve_vibration_watch_gestures_key"
