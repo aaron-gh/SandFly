@@ -21,11 +21,14 @@ import androidx.annotation.StringRes
 import androidx.core.content.edit
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.sandflyai.SandflyAi
 
 /**
  * The AI services that Describe image and Describe screen can use. Gemini is asked through its own
  * API; the others through their OpenAI-compatible chat API, at [address]. Each keeps its own key
- * and model, so that switching between them loses neither.
+ * and model, so that switching between them loses neither. SandFly Pro is offered only in builds
+ * with it; its key is the device's licence, which SandFly Pro keeps up to date, and its model is
+ * chosen by SandFly Pro's server.
  */
 enum class AiProvider(
   val id: String,
@@ -35,6 +38,7 @@ enum class AiProvider(
   /** Where to get an API key, or empty. */
   val keyUrl: String,
 ) {
+  SANDFLY_PRO("sandfly_pro", R.string.ai_provider_sandfly_pro, "https://sandfly-ai.aaron-graham-hewitt.workers.dev/v1", ""),
   GEMINI("gemini", R.string.ai_provider_gemini, "", GeminiApiKey.GET_KEY_URL),
   CLAUDE(
     "claude",
@@ -81,7 +85,15 @@ enum class AiProvider(
     }
 
   fun model(prefs: SharedPreferences): String =
-    if (this == GEMINI) GeminiModel.chosen(prefs) else prefs.getString(modelPref, null)?.trim().orEmpty()
+    when (this) {
+      GEMINI -> GeminiModel.chosen(prefs)
+      SANDFLY_PRO -> SANDFLY_PRO_MODEL
+      else -> prefs.getString(modelPref, null)?.trim().orEmpty()
+    }
+
+  /** Whether the service is offered: SandFly Pro only in builds with it. */
+  val isOffered: Boolean
+    get() = this != SANDFLY_PRO || SandflyAi.isAvailable
 
   /** The address requests go to: [address], or the one the user entered for [OTHER]. */
   fun addressOf(prefs: SharedPreferences): String =
@@ -106,6 +118,8 @@ enum class AiProvider(
   fun missing(prefs: SharedPreferences): Missing? =
     when {
       this == NONE -> null
+      // Without SandFly Pro, or without an active code, there is no licence to send.
+      this == SANDFLY_PRO -> if (!isOffered || apiKey(prefs).isEmpty()) Missing.API_KEY else null
       // A key built into the app, from local.properties, serves as the user's.
       this == GEMINI ->
         if (GeminiApiKey.effectiveKey(prefs, BuildConfig.GEMINI_API_KEY).isEmpty()) Missing.API_KEY else null
@@ -121,6 +135,7 @@ enum class AiProvider(
   companion object {
     const val PREF_ACTIVE = "pref_ai_provider"
     const val PREF_OTHER_ADDRESS = "pref_ai_other_address"
+    private const val SANDFLY_PRO_MODEL = "sandfly-pro"
 
     // The single "Other AI service" of earlier versions.
     private const val OLD_ADDRESS = "pref_ai_service_address"

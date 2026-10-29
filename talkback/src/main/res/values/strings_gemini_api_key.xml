@@ -47,6 +47,8 @@
     <string name="ai_service_error_timeout">The AI service took too long to answer. Try again.</string>
 
     <!-- Names of the AI services that Describe image and Describe screen can use. [CHAR LIMIT=40] -->
+    <!-- AI service: SandFly Pro, SandFly's paid add-on. Product name. [CHAR LIMIT=40] -->
+    <string name="ai_provider_sandfly_pro" translatable="false">SandFly Pro</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
     <string name="ai_provider_openai">OpenAI (ChatGPT)</string>
