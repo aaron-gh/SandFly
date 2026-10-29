@@ -40,4 +40,18 @@ class AiDictationTest {
     assertTrue(prompt.contains("filler words"))
     assertTrue(prompt.contains("keep only the correction"))
   }
+
+  @Test
+  fun speechInputStopsAfterSilenceWhateverTheSetting() {
+    assertEquals(AiDictation.LISTEN_NOTHING_SAID_MS, AiDictation.silenceLimitMs(true, false, 0))
+    assertEquals(AiDictation.LISTEN_PAUSE_MS, AiDictation.silenceLimitMs(true, true, 0))
+    assertEquals(AiDictation.LISTEN_PAUSE_MS, AiDictation.silenceLimitMs(true, true, 30_000))
+  }
+
+  @Test
+  fun dictateStopsAfterSilenceOnlyAsSet() {
+    assertEquals(0L, AiDictation.silenceLimitMs(false, true, 0))
+    assertEquals(5_000L, AiDictation.silenceLimitMs(false, true, 5_000))
+    assertEquals(5_000L, AiDictation.silenceLimitMs(false, false, 5_000))
+  }
 }

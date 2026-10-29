@@ -19,7 +19,8 @@ package com.google.android.accessibility.talkback.dictation
 /**
  * SandFly's dictation for speech input that isn't typed into a field: questions about images and
  * the screen, voice commands, the SandFly Pro agent's prompt. It records with the engine and AI
- * correction chosen in Dictation settings, until [listen] is called again. Main thread only.
+ * correction chosen in Dictation settings, until the speech pauses or [listen] is called again.
+ * Main thread only.
  */
 object SandflyDictation {
   /** The dictation of the running screen reader, or null when it isn't running. */
