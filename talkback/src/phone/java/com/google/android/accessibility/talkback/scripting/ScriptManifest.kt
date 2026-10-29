@@ -239,7 +239,7 @@ data class ScriptManifest(
     get() =
       when {
         API_VERSION < minApiVersion -> ApiCompatibility.SANDFLY_TOO_OLD
-        API_VERSION > testedApiVersion -> ApiCompatibility.UNTESTED
+        BREAKING_API_VERSION > testedApiVersion -> ApiCompatibility.UNTESTED
         else -> ApiCompatibility.COMPATIBLE
       }
 
@@ -284,7 +284,13 @@ data class ScriptManifest(
     }
 
   companion object {
-    const val API_VERSION = 1
+    const val API_VERSION = 2
+
+    /**
+     * The last version that changed what scripts already used. A script tested with it or later
+     * works with [API_VERSION], since the versions since then only added to the API.
+     */
+    const val BREAKING_API_VERSION = 1
 
     fun parse(json: String, strict: Boolean = true): ScriptManifest =
       ManifestParser(strict).parse(json)

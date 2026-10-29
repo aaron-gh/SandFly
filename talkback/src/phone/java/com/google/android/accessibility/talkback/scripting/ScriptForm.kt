@@ -135,6 +135,12 @@ class ScriptForm(
       KeyboardSafeEditText(context).apply {
         this.id = View.generateViewId()
         inputType = inputTypeOf(spec)
+        if (spec.optBoolean("readOnly")) {
+          // Text to read and select, not to change.
+          showSoftInputOnFocus = false
+          keyListener = null
+          setTextIsSelectable(true)
+        }
         if (spec.optBoolean("notify")) doAfterTextChanged { changed(it?.toString().orEmpty()) }
       }
     override val view =

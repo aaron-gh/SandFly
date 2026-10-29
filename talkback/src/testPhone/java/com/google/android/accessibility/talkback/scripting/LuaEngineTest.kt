@@ -46,7 +46,7 @@ class LuaEngineTest {
       calls += method to args
       answers[method]?.let { return it(args) }
       return when (method) {
-        "apiVersion" -> "1"
+        "apiVersion" -> "2"
         "manifest" -> """{"commands":[]}"""
         else -> null
       }
@@ -316,6 +316,158 @@ class LuaEngineTest {
     run(source)
     dispatch("appEnter", JSONObject().put("package", "com.example.mail"))
     assertEquals(listOf("mail, opened 1 time"), host.spoken())
+  }
+
+  @Test
+  fun anItemTapsItsMiddle() {
+    host.answers["screen.focused"] = {
+      """{"handle":4,"bounds":{"left":100,"top":200,"right":300,"bottom":400}}"""
+    }
+    host.answers["touch.gesture"] = { """{"promise":2}""" }
+    run("sf.run(function() sf.speak(tostring(sf.screen.focused():tap())) end)")
+    val stroke = host.calls.single { it.first == "touch.gesture" }.second!!
+      .getJSONArray("strokes").getJSONObject(0)
+    val point = stroke.getJSONArray("points").getJSONObject(0)
+    assertEquals(200, point.getInt("x"))
+    assertEquals(300, point.getInt("y"))
+    dispatch("settle", JSONObject().put("id", 2).put("ok", true).put("value", true))
+    assertEquals(listOf("true"), host.spoken())
+  }
+
+  @Test
+  fun aSwipeIsOneStrokeThroughTwoPoints() {
+    host.answers["touch.gesture"] = { """{"promise":1}""" }
+    run("sf.run(function() sf.touch.swipe(10, 20, 30, 40, 500) end)")
+    val stroke = host.calls.single { it.first == "touch.gesture" }.second!!
+      .getJSONArray("strokes").getJSONObject(0)
+    assertEquals(2, stroke.getJSONArray("points").length())
+    assertEquals(500, stroke.getInt("duration"))
+  }
+
+  @Test
+  fun keysAreSplitIntoNames() {
+    host.answers["keys.press"] = { """{"promise":1}""" }
+    run("sf.run(function() sf.keys.press('ctrl_left enter') end)")
+    assertEquals(
+      "[\"ctrl_left\",\"enter\"]",
+      host.calls.single { it.first == "keys.press" }.second!!.getJSONArray("keys").toString(),
+    )
+  }
+
+  @Test
+  fun speakCanWaitUntilSpoken() {
+    host.answers["speak"] = { args -> if (args!!.optBoolean("wait")) """{"promise":5}""" else null }
+    run(
+      """
+      sf.run(function()
+        local spoken = sf.speak('one', { wait = true })
+        sf.speak('after ' .. tostring(spoken))
+      end)
+      """
+    )
+    assertEquals(listOf("one"), host.spoken())
+    dispatch("settle", JSONObject().put("id", 5).put("ok", true).put("value", true))
+    assertEquals(listOf("one", "after true"), host.spoken())
+  }
+
+  @Test
+  fun messageSpeaksAndShowsBraille() {
+    run("sf.message('Saved')")
+    assertEquals(listOf("Saved"), host.spoken())
+    assertEquals("Saved", host.calls.single { it.first == "braille.show" }.second!!.getString("text"))
+  }
+
+  @Test
+  fun waitForLooksAgainUntilTheItemAppears() {
+    var finds = 0
+    var clock = 0
+    host.answers["screen.find"] = { if (++finds < 3) "[]" else """[{"handle":9,"text":"Done"}]""" }
+    host.answers["clock"] = { (clock++ * 100).toString() }
+    host.answers["timer.set"] = { null }
+    run(
+      """
+      sf.run(function()
+        local item = sf.screen.waitFor({ text = 'Done' }, 5000, 100)
+        sf.speak(item and item.text or 'none')
+      end)
+      """
+    )
+    repeat(2) {
+      val timer = host.calls.last { it.first == "timer.set" }.second!!.getInt("id")
+      dispatch("timer", JSONObject().put("id", timer))
+    }
+    assertEquals(listOf("Done"), host.spoken())
+  }
+
+  @Test
+  fun waitForGivesNilAfterTheTimeout() {
+    var clock = 0
+    host.answers["screen.find"] = { "[]" }
+    host.answers["clock"] = { (clock++ * 1000).toString() }
+    run(
+      """
+      sf.run(function()
+        sf.speak(tostring(sf.screen.waitFor('missing', 1500, 100)))
+      end)
+      """
+    )
+    val timer = host.calls.last { it.first == "timer.set" }.second!!.getInt("id")
+    dispatch("timer", JSONObject().put("id", timer))
+    assertEquals(listOf("nil"), host.spoken())
+  }
+
+  @Test
+  fun screenClickTapsAnItemThatCannotBeClicked() {
+    host.answers["screen.find"] = {
+      """[{"handle":3,"bounds":{"left":0,"top":0,"right":10,"bottom":10}}]"""
+    }
+    host.answers["node.action"] = { """{"promise":1}""" }
+    host.answers["touch.gesture"] = { """{"promise":2}""" }
+    run("sf.run(function() sf.speak(tostring(sf.screen.click('send'))) end)")
+    dispatch("settle", JSONObject().put("id", 1).put("ok", true).put("value", false))
+    assertTrue(host.calls.any { it.first == "touch.gesture" })
+    dispatch("settle", JSONObject().put("id", 2).put("ok", true).put("value", true))
+    assertEquals(listOf("true"), host.spoken())
+  }
+
+  @Test
+  fun newHooksReachTheScript() {
+    run(
+      """
+      sf.onScroll(function(e) sf.speak('scroll ' .. e.from .. ' ' .. e.node.text) end)
+      sf.onSelectionChange(function(e) sf.speak('cursor ' .. e.start) end)
+      sf.onClick(function(e) sf.speak('click ' .. e.package) end)
+      """
+    )
+    val hooks = host.calls.last { it.first == "hooks" }.second!!.getJSONArray("names").toString()
+    assertTrue(hooks, "scroll" in hooks && "selectionChange" in hooks && "click" in hooks)
+    dispatch("scroll", JSONObject().put("from", 3).put("node", JSONObject().put("handle", 1).put("text", "List")))
+    dispatch("selectionChange", JSONObject().put("start", 5))
+    dispatch("click", JSONObject().put("package", "com.example"))
+    assertEquals(listOf("scroll 3 List", "cursor 5", "click com.example"), host.spoken())
+  }
+
+  @Test
+  fun itemActionsPassTheirArguments() {
+    host.answers["screen.focused"] = { """{"handle":4}""" }
+    host.answers["node.action"] = { """{"promise":1}""" }
+    run(
+      """
+      sf.run(function()
+        local item = sf.screen.focused()
+        item:setSelection(2, 5)
+        item:moveCursor('word', 'previous', true)
+      end)
+      """
+    )
+    val actions = host.calls.filter { it.first == "node.action" }.map { it.second!! }
+    assertEquals("setSelection", actions[0].getString("action"))
+    assertEquals(5, actions[0].getJSONObject("args").getInt("end"))
+    dispatch("settle", JSONObject().put("id", 1).put("ok", true).put("value", true))
+    val move = host.calls.filter { it.first == "node.action" }.map { it.second!! }[1]
+    assertEquals("previousAtGranularity", move.getString("action"))
+    assertEquals("word", move.getJSONObject("args").getString("unit"))
+    assertTrue(move.getJSONObject("args").getBoolean("extend"))
   }
 
   private fun assertInterrupted(block: () -> Unit) {

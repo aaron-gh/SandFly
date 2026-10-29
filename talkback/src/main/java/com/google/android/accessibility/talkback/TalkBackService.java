@@ -238,6 +238,7 @@ import com.google.android.accessibility.talkback.quicksettings.SystemPanelClicke
 import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.scripting.ScriptHost;
 import com.google.android.accessibility.talkback.scripting.ScriptHostFactory;
+import com.google.android.accessibility.talkback.scripting.ScriptServices;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.SelectorEventNotifier;
@@ -290,6 +291,7 @@ import com.google.android.accessibility.utils.ServiceKeyEventListener;
 import com.google.android.accessibility.utils.ServiceStateListener;
 import com.google.android.accessibility.utils.SettingsUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
+import com.google.android.accessibility.utils.SpannableUtils;
 import com.google.android.accessibility.utils.SpellChecker;
 import com.google.android.accessibility.utils.Statistics;
 import com.google.android.accessibility.utils.TreeDebug;
@@ -320,6 +322,7 @@ import com.google.android.accessibility.utils.monitor.TouchMonitor;
 import com.google.android.accessibility.utils.output.ActorStateProvider;
 import com.google.android.accessibility.utils.output.EditTextActionHistory;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
+import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
 import com.google.android.accessibility.utils.output.FeedbackController;
 import com.google.android.accessibility.utils.output.FeedbackProcessingUtils;
@@ -4468,10 +4471,59 @@ public class TalkBackService extends AccessibilityServiceCompat
               if (pauseController != null) {
                 pauseController.resume();
               }
-            });
+            },
+            new ScriptServicesImpl());
     Scripts.setHost(scriptHost);
     if (scriptHost != null) {
       scriptHost.onPausedChanged(PauseController.isPaused());
+    }
+  }
+
+  /** What scripts reach in SandFly beyond feedback. */
+  private class ScriptServicesImpl implements ScriptServices {
+    @Override
+    public boolean runCommand(String value) {
+      if (gestureController == null) {
+        return false;
+      }
+      gestureController.performAction(value, EVENT_ID_UNTRACKED);
+      return true;
+    }
+
+    @Override
+    public void stopSpeech() {
+      if (speechController != null) {
+        speechController.interrupt(/* stopTtsSpeechCompletely= */ true);
+      }
+    }
+
+    @Override
+    public boolean isSpeaking() {
+      return speechController != null && speechController.isSpeaking();
+    }
+
+    @Override
+    public @Nullable String lastSpeech() {
+      FeedbackItem last = speechController == null ? null : speechController.getLastUtterance();
+      if (last == null) {
+        return null;
+      }
+      CharSequence text =
+          EmojiSpeech.restoreOriginalText(SpannableUtils.getCopyableText(last.getAggregateText()));
+      return text == null ? null : text.toString().trim();
+    }
+
+    @Override
+    public void showBraille(CharSequence text) {
+      if (brailleDisplay == null) {
+        return;
+      }
+      @SuppressWarnings("deprecation") // The constructor that replaces it needs Android 11.
+      AccessibilityEvent event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_ANNOUNCEMENT);
+      event.setPackageName(getPackageName());
+      event.setEventTime(SystemClock.uptimeMillis());
+      event.getText().add(text);
+      brailleDisplay.onAccessibilityEvent(event);
     }
   }
 

@@ -1,6 +1,6 @@
 # Writing SandFly scripts
 
-A script is a Lua file that changes how SandFly works in one app, or in every app. This document describes the whole script API, version 1.
+A script is a Lua file that changes how SandFly works in one app, or in every app. This document describes the whole script API, version 2.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -36,7 +36,7 @@ local manifest = {
   version = '1.0',
   author = 'You',
   minApiVersion = 1,
-  testedApiVersion = 1,
+  testedApiVersion = 2,
   apps = { 'com.android.settings' },
   permissions = { 'speech' },
 }
@@ -59,8 +59,8 @@ A table with only listed values, such as `{ 'speech', 'screen' }`, is a list. A 
 | `id` | Required. Lowercase letters, digits, dots, dashes and underscores, starting with a letter or digit, up to 64 characters. A script with the same id replaces the installed one. |
 | `name` | Required. Shown in the Scripts list, and at the start of the title of every dialog the script shows. |
 | `author` | Required. |
-| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 1. |
-| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with an older version. |
+| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 2. Use 2 for a script that uses anything marked *Version 2*. |
+| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with a version older than the last one that changed existing calls. Version 2 only adds to version 1, so scripts tested with 1 get no warning. |
 | `version` | The script's own version, as text, such as `'1.2'`. The default is `'1'`. SandFly updates installed scripts from their source when this is higher, compared number by number, so raise it with each change. |
 | `description` | Shown on the script's page and before it's installed. |
 | `homepage` | An `http` or `https` address. The script's page has a button that opens it. |
@@ -100,14 +100,14 @@ A script can only use what its manifest asks for. The user sees the list before 
 
 | Permission | What it allows |
 |---|---|
-| `screen` | Reading the screen: `sf.screen`, the items given to hooks, commands and actions, and the `onFocus`, `onAnnouncement`, `onTextChange` and `onContentChange` hooks. A script for all apps also needs it to learn which app is in front: `sf.app()`, `onAppEnter`, `onAppLeave` and `onWindowChange`. |
-| `actions` | Clicking, scrolling, typing and moving focus: `item:click()`, `item:perform()`, `item:focus()`, `item:setText()`, and rule actions other than `speak`. |
-| `speech` | Speaking with `sf.speak`, rules that change an item, `sf.rules`, changing what a hook was given to say, and the `onSpeech` hook. |
+| `screen` | Reading the screen: `sf.screen`, the items given to hooks, commands and actions, `sf.speech.last()`, recognizing text, and the `onFocus`, `onAnnouncement`, `onTextChange`, `onContentChange`, `onScroll`, `onSelectionChange`, `onClick`, `onLongClick` and `onInputFocus` hooks. A script for all apps also needs it to learn which app is in front: `sf.app()`, `onAppEnter`, `onAppLeave` and `onWindowChange`. |
+| `actions` | Clicking, scrolling, typing and moving focus: `item:click()`, `item:perform()`, `item:focus()`, `item:setText()` and the other item actions, `sf.touch`, `sf.keys`, and rule actions other than `speak`. |
+| `speech` | Speaking with `sf.speak` and `sf.message`, `sf.speech.stop()`, `sf.braille`, rules that change an item, `sf.rules`, changing what a hook was given to say, and the `onSpeech` hook. |
 | `passwords` | The text of password fields. Without it, that text is left out. |
-| `input` | Commands, `sf.bind`, `navigation`, the `onActions` hook, and actions in rules. |
-| `network` | `sf.fetch`. |
+| `input` | Commands, `sf.bind`, `navigation`, `sf.commands.run`, the `onActions` hook, and actions in rules. |
+| `network` | `sf.fetch` and `sf.translate`. |
 | `clipboard` | `sf.clipboard`. |
-| `system` | `sf.system` and `sf.resume`. |
+| `system` | `sf.system`, `sf.resume`, `sf.device.setVolume` and `sf.device.setRingerMode`. |
 | `notifications` | The `onNotification` hook. |
 | `events` | The `onEvent` hook, which sees every accessibility event in every app. |
 | `dialogs` | `sf.ui`. |
@@ -200,6 +200,7 @@ A query finds items. It's an id as text, or a record with any of these; an item 
 | `parentId` | The view id of the item's parent. |
 | `inside` | A query that one of the items around it must match: its parent, the parent's parent, and so on. `{ className = 'Button', inside = { textContains = 'play video' } }` matches every button in a video's row, and not the row itself. `inside` can't hold another `inside`. |
 | `has` | A query that one of the items inside it must match, up to 6 levels down and 60 items. `{ parentId = 'results', has = { textContains = 'Subscribe to' } }` matches a row in a list that holds a Subscribe button. `has` can't hold `has` or `inside`. |
+| `checkable`, `checked`, `longClickable`, `focusable`, `focused`, `selected`, `enabled`, `editable`, `scrollable`, `visible`, `heading`, `password` | *Version 2.* `true` or `false`. `{ className = 'CheckBox', checked = false }` matches unchecked check boxes. |
 
 ## Items
 
@@ -207,15 +208,39 @@ Hooks, commands and `sf.screen` give you items. An item is a snapshot: its field
 
 Fields: `text`, `contentDescription`, `hint`, `stateDescription`, `id`, `className`, `role`, `packageName`, `windowId`, `bounds` (`left`, `top`, `right`, `bottom`), `childCount`, `selectionStart`, `selectionEnd`, `checkable`, `checked`, `clickable`, `longClickable`, `focusable`, `focused`, `accessibilityFocused`, `selected`, `enabled`, `editable`, `password`, `scrollable`, `visible`, `heading`, and `actions`, a list of `{ id, label }`. A field the item doesn't have is `nil`.
 
+*Version 2* adds:
+
+| Field | Value |
+|---|---|
+| `roleDescription` | The role the app names itself, such as a web page's `"tab"`. |
+| `error` | The error text of a field. |
+| `tooltip`, `paneTitle`, `containerTitle` | Text. |
+| `uniqueId` | An id that stays the same while the item exists, on Android 13 and later. |
+| `multiLine`, `dismissable`, `contentInvalid`, `textSelectable`, `importantForAccessibility`, `screenReaderFocusable` | `true` or `false`. |
+| `maxTextLength`, `inputType`, `drawingOrder` | Numbers. |
+| `liveRegion` | `'polite'`, `'assertive'` or `nil`. |
+| `range` | For sliders and progress bars: `{ min, max, current, type }`, where `type` is `'integer'`, `'float'`, `'percent'` or `'indeterminate'`. |
+| `collection` | For lists, grids and tables: `{ rows, columns, hierarchical }`. |
+| `collectionItem` | For their rows and cells: `{ row, column, rowSpan, columnSpan, heading, rowTitle, columnTitle }`. `row` and `column` count from 1. |
+
 | Method | Does |
 |---|---|
 | `item:parent()`, `item:children()`, `item:child(index)` | The items around it. `child(1)` is the first. |
 | `item:find(query)`, `item:findAll(query, limit)` | Items inside it. `find` gives the first, or `nil`. `limit` is 50 if left out. |
 | `item:refresh()` | A new snapshot, or `nil` if the item is gone. |
 | `item:click()`, `item:longClick()`, `item:scrollForward()`, `item:scrollBackward()` | Performs the action, and gives whether it worked. |
-| `item:perform(action, args)` | Performs `click`, `longClick`, `scrollForward`, `scrollBackward`, `expand`, `collapse`, `dismiss`, `copy`, `cut`, `paste`, `select`, a custom action by its label, or any action by its number. |
+| `item:perform(action, args)` | Performs `click`, `longClick`, `scrollForward`, `scrollBackward`, `expand`, `collapse`, `dismiss`, `copy`, `cut`, `paste`, `select`, a custom action by its label, or any action by its number. *Version 2* adds `clearSelection`, `focusInput`, `clearFocus`, `showOnScreen`, `scrollUp`, `scrollDown`, `scrollLeft`, `scrollRight`, `pageUp`, `pageDown`, `pageLeft`, `pageRight`, `contextClick`, `imeEnter`, `pressAndHold`, `showTooltip`, `hideTooltip` and `showTextSuggestions`, and these, which take `args`: `setText` (`text`), `setSelection` (`start`, `end`), `setProgress` (`value`), `scrollToPosition` (`row`, `column`), `nextAtGranularity` and `previousAtGranularity` (`unit`, `extend`), and `nextHtmlElement` and `previousHtmlElement` (`element`). |
 | `item:setText(text)` | Replaces the text of an edit field. |
 | `item:focus()` | Moves SandFly's focus to the item. |
+| `item:showOnScreen()`, `item:expand()`, `item:collapse()`, `item:dismiss()` | *Version 2.* Performs the action. |
+| `item:setSelection(start, end)` | *Version 2.* Selects text in an edit field, or moves its cursor when `end` is left out. Positions count from 0. |
+| `item:moveCursor(unit, direction, extend)` | *Version 2.* Moves the cursor by `'character'`, `'word'`, `'line'`, `'paragraph'` or `'page'`. `direction` is `'next'` or `'previous'`; `extend = true` selects the text passed over. |
+| `item:setProgress(value)` | *Version 2.* Sets a slider to a value between its `range.min` and `range.max`. |
+| `item:scrollTo(row, column)` | *Version 2.* Scrolls a list or grid to a row and column, counted from 1. |
+| `item:nextHtmlElement(element, direction)` | *Version 2.* Moves in web content to the next or previous element of a kind, such as `'HEADING'`, `'LINK'`, `'BUTTON'`, `'LANDMARK'` or `'TABLE'`. |
+| `item:tap()`, `item:doubleTap()`, `item:longPress(ms)` | *Version 2.* Touches the middle of the item, as a finger would, for items with no click action. Needs `actions`. |
+| `item:labeledBy()`, `item:labelFor()` | *Version 2.* The item that labels this one, or that this one labels, or `nil`. |
+| `item:recognizeText()` | *Version 2.* [Recognizes text](#recognizing-text) in the item's part of the screen. |
 
 `a == b` is true when two snapshots are the same item, and `tostring(item)` gives its text, description, id or class.
 
@@ -225,7 +250,7 @@ SandFly keeps the last 500 items a script was given. Using an older one raises "
 
 ## Waiting
 
-Some calls wait for an answer: dialogs, `sf.fetch`, `sf.sleep`, and an item's actions. A script waits only where SandFly runs it as a task: the main file, hooks other than the four speech hooks and `onActions`, commands, actions, timers, dialog callbacks, and functions given to `sf.run`. While one task waits, others run. The script's own coroutines can wait too, inside a task.
+Some calls wait for an answer: dialogs, `sf.fetch`, `sf.sleep`, an item's actions, touches and keys, `sf.commands.run`, `sf.screen.waitFor`, recognizing text, `sf.translate`, `sf.speech.last` and `sf.speak` with `wait`. A script waits only where SandFly runs it as a task: the main file, hooks other than the four speech hooks and `onActions`, commands, actions, timers, dialog callbacks, and functions given to `sf.run`. While one task waits, others run. The script's own coroutines can wait too, inside a task.
 
 ```lua
 sf.onCommand('delete', function()
@@ -257,6 +282,10 @@ Each of these takes a function and returns a function that removes it again.
 | `sf.onSettingChange` | When the user changes one of the script's settings. | The key and the new value. |
 | `sf.onButton` | When the user presses a button setting. | The key. |
 | `sf.onActions` | When SandFly builds the Actions menu for an item. | The item. Return a list of `{ title, run }`; `run` is called with the item, and can wait. |
+| `sf.onScroll` | *Version 2.* Shortly after a list or page scrolls. | `{ package, node, from, to, count, scrollX, scrollY, deltaX, deltaY }`. `from` and `to` are the first and last items shown, counted from 1, and `count` the number of items, where the app gives them. |
+| `sf.onSelectionChange` | *Version 2.* When the cursor moves or the selection changes in a text. | `{ package, node, text, start, end, length, password }`. |
+| `sf.onClick`, `sf.onLongClick` | *Version 2.* When an item is clicked or long-clicked, by anyone. | `{ package, node }`. |
+| `sf.onInputFocus` | *Version 2.* When an item gets input focus, such as an edit field the keyboard types into. | `{ package, node }`. |
 
 The first four can change what's said. Return:
 
@@ -306,7 +335,12 @@ Each entry becomes a reading control that moves to the next or previous item mat
 
 ### Speech, sound and vibration
 
-*   `sf.speak(text, { interrupt, rate, pitch, language })`. `rate` and `pitch` are from 0.25 to 4, where 1 is the user's own setting. `language` is a tag such as `'de'`.
+*   `sf.speak(text, { interrupt, rate, pitch, language, wait })`. `rate` and `pitch` are from 0.25 to 4, where 1 is the user's own setting. `language` is a tag such as `'de'`. With `wait = true`, it [waits](#waiting) until the text is said, and gives `true`, or `false` if it was interrupted or not said within 2 minutes.
+*   `sf.message(text, { interrupt })` *Version 2.* Says the text, interrupting by default, and shows it on a connected braille display.
+*   `sf.speech.stop()` *Version 2.* Stops what SandFly is saying.
+*   `sf.speech.isSpeaking()` *Version 2.* Whether SandFly is speaking.
+*   `sf.speech.last()` *Version 2.* [Waits](#waiting), and gives the text of the last thing SandFly said. Needs `screen`.
+*   `sf.braille.show(text)` *Version 2.* Shows text on a connected braille display for a while, as SandFly shows an app's announcements. Needs `speech`.
 *   `sf.playSound(name)` plays one of SandFly's sounds (`focus`, `actionable`, `click`, `longClick`, `scroll`, `listEnter`, `listExit`, `end`, `enter`, `typo`, `beep`) or a sound file in the script's zip, such as `'sounds/chime.wav'`.
 *   `sf.playTone(frequency, ms, { volume })` plays a tone. `ms` is 100 if left out.
 *   `sf.playAudio(samples, { sampleRate, volume })` plays a list of samples from -1 to 1, up to 10 seconds.
@@ -319,7 +353,43 @@ Sounds and vibration follow the user's **Sound feedback** and **Vibration feedba
 *   `sf.screen.focused()` is the item with SandFly's focus.
 *   `sf.screen.root()` is the top item of the active window.
 *   `sf.screen.find(query)` and `sf.screen.findAll(query, limit)` search the active window. A search looks at up to 3,000 items, returns up to 200, and stops when the script runs out of [time](#limits).
-*   `sf.app()` is `{ package, activity, window, meta }` for the app in front. `activity` is `nil` until SandFly has seen the app change window. `meta` holds the meta-data in the app's manifest that has a true or false, number or text value, such as `sf.app().meta['com.example.flag']`.
+*   `sf.screen.inputFocused()` *Version 2* is the item with input focus, such as the edit field the keyboard types into, or `nil`.
+*   `sf.screen.at(x, y)` *Version 2* is the innermost visible item at a point on the screen, in pixels, in the top window there.
+*   `sf.screen.windows()` *Version 2* lists the windows on screen, top first: `{ id, type, title, layer, active, focused, bounds, root }`. `type` is `'application'`, `'inputMethod'`, `'system'`, `'accessibilityOverlay'`, `'splitScreenDivider'` or `'magnificationOverlay'`, and `root` is the window's top item. `window.root:find(query)` searches a window that isn't active, such as the keyboard. SandFly's own windows, such as its menu, are not listed.
+*   `sf.screen.waitFor(query, timeout, interval)` *Version 2* [waits](#waiting) until an item matching the query is on screen and gives it, or gives `nil` after `timeout` milliseconds, 5,000 if left out. It looks every `interval` milliseconds, at least 100, and 250 if left out.
+*   `sf.screen.click(query)` *Version 2* finds an item and clicks it, or taps it if it has no click action. It gives whether that worked, and needs `actions` too.
+*   `sf.screen.recognizeText()` *Version 2.* [Recognizes text](#recognizing-text) on the whole screen.
+*   `sf.app()` is `{ package, label, activity, window, meta }` for the app in front. `label` is the app's name. `activity` is `nil` until SandFly has seen the app change window. `meta` holds the meta-data in the app's manifest that has a true or false, number or text value, such as `sf.app().meta['com.example.flag']`.
+
+### Recognizing text
+
+*Version 2.* `sf.screen.recognizeText()` and `item:recognizeText()` take a screenshot and recognize the Latin-script text in it, on the device. They [wait](#waiting), need `screen` and Android 11 or later, and give `{ text, blocks }`. Each block is `{ text, bounds, lines }`, and each line `{ text, bounds }`, in screen pixels, so a script can tap a line with `sf.touch.tap`. A script can recognize text twice at once. Android allows only a few screenshots a second, so SandFly tries again twice when it refuses one, and raises an error after that.
+
+### Touch and keys
+
+*Version 2.* These need the `actions` permission. They [wait](#waiting) for the result where they can, and give whether it worked. Touching the screen needs Android 11 or later. While a script's touch is under way, touches on the screen pass through to apps, so SandFly doesn't take the script's touches as its own gestures.
+
+*   `sf.touch.tap(x, y)`, `sf.touch.doubleTap(x, y)` and `sf.touch.longPress(x, y, ms)` touch a point on the screen, in pixels. `ms` is 1,000 if left out.
+*   `sf.touch.swipe(x1, y1, x2, y2, ms)` moves a finger from one point to the other in `ms` milliseconds, 300 if left out.
+*   `sf.touch.gesture(strokes)` performs up to 10 strokes at once, for gestures with more fingers. Each stroke is `{ points, start, duration }`: a list of up to 100 `{ x, y }` points, followed in `duration` milliseconds, starting `start` milliseconds after the gesture begins. A gesture lasts up to 10 seconds.
+*   `sf.keys.type(text)` types text where the cursor is in the edit field with input focus, replacing any selection. Into a password field, or with no edit field, it types through Shizuku, which takes only text without line breaks, up to 1,000 characters.
+*   `sf.keys.press(keys)` presses keys through Shizuku, one after another. `keys` is a list, or names separated by spaces: Android's key names with or without `KEYCODE_`, such as `'enter'`, `'tab'`, `'KEYCODE_MEDIA_PLAY_PAUSE'`, and `up`, `down`, `left`, `right`, `backspace`, `delete`, `esc`, `home`, `end`, `pageup`, `pagedown`, `playpause`, `next`, `previous`, `volumeup` and `volumedown`.
+
+Keys and typing through Shizuku need Shizuku running, with SandFly allowed in it. Otherwise they raise an error.
+
+### SandFly's commands
+
+*Version 2.* A script can run any command that a gesture or keys can be assigned to in SandFly, such as moving to the next heading, reading from the top or changing the reading control.
+
+*   `sf.commands.list()` lists them: `{ id, title, category }`, in the order of **Commands** in SandFly settings.
+*   `sf.commands.run(id)` runs one, as its gesture would, and gives whether it ran. It needs the `input` permission, and doesn't work on SandFly's own screens.
+
+```lua
+sf.commands.run('NEXT')          -- Next item
+sf.commands.run('READ_FROM_TOP') -- Read from top
+```
+
+**Turn all scripts on or off** and **Open app** commands are not in the list.
 
 ### Rules from code
 
@@ -363,6 +433,10 @@ Each form item has a `type`, an `id`, and usually a `label`:
 | `list` | `items`, `value`, `onChange` |
 | `button` | `close = true` closes the form; `onClick` |
 
+*Version 2:* an `edit` item with `readOnly = true` holds text to read and select, not to change.
+
+`sf.ui.text(title, text)` *Version 2* shows text in a dialog where it can be read by line, word or character and selected, and waits until it's closed. Use it for results too long to say, as NVDA's and JAWS's text viewers.
+
 `onChange` is called with the new value and the form, and `onClick` with the form. The form has `form:get(id)`, `form:values()`, `form:set(id, { value, label, items, enabled, visible })`, `form:close()`, and `form:wait()`, which waits until the form closes and gives the final values.
 
 ### Clipboard, system and network
@@ -370,8 +444,27 @@ Each form item has a `type`, an `id`, and usually a `label`:
 *   `sf.clipboard.get()` and `sf.clipboard.set(text)`.
 *   `sf.system.back()`, `home()`, `recents()`, `notifications()`, `quickSettings()`, `powerDialog()`, `lockScreen()`, `takeScreenshot()` and `allApps()`.
 *   `sf.system.openApp(packageName)`.
+*   `sf.system.apps()` *Version 2* lists the apps with a launcher icon: `{ package, label }`, by name.
+*   `sf.system.openUrl(url)` *Version 2* opens an `http`, `https`, `mailto`, `tel`, `sms`, `smsto`, `geo` or `market` address in the app for it.
+*   `sf.system.share(text, { title, subject })` *Version 2* opens Android's share sheet with the text.
+*   `sf.system.openSettings(page, packageName)` *Version 2* opens a page of Android's settings: `settings`, `wifi`, `bluetooth`, `mobileData`, `airplaneMode`, `nfc`, `location`, `sound`, `display`, `battery`, `batterySaver`, `accessibility`, `apps`, `defaultApps`, `notifications`, `doNotDisturb`, `dateTime`, `language`, `keyboard`, `storage`, `security`, `privacy`, `developer`, `about`, `castScreen` or `hotspot`, or, with a package name, `app` or `appNotifications` for one app.
+*   `sf.system.startActivity(intent)` and `sf.system.sendBroadcast(intent)` *Version 2* send an intent: `{ action, data, type, package, className, categories, extras }`. `extras` holds text, numbers, `true` and `false`. A broadcast needs `package`. Neither can reach SandFly itself. `startActivity` gives whether an app opened it.
 *   `sf.resume()` resumes a paused SandFly. It needs the `system` permission.
 *   `sf.fetch(url, { method, headers, body, timeout })` [waits](#waiting) for an `https` address and gives the response. `method` is `GET`, `POST`, `PUT`, `DELETE`, `HEAD` or `OPTIONS`. A `body` that isn't text is sent as JSON. The response has `status`, `statusText`, `ok`, `url`, `headers` (with lowercase names), `body`, and `response:json()`. A request body can be 1 MB and a response 5 MB, the timeout is at most 60 seconds, and a script can have 8 requests going at once.
+
+### Device
+
+*Version 2.* Reading these needs no permission.
+
+*   `sf.device.info()` is `{ manufacturer, model, androidVersion, sdk, sandflyVersion, screen }`, where `screen` is `{ width, height, density, orientation }` and `orientation` is `'portrait'` or `'landscape'`.
+*   `sf.device.battery()` is `{ level, charging, full, plugged }`. `level` is a percentage, and `plugged` is `'ac'`, `'usb'`, `'wireless'`, `'dock'` or `nil`.
+*   `sf.device.network()` is `{ connected, wifi, cellular, ethernet, vpn, metered }`.
+*   `sf.device.volume(stream)` is `{ level, min, max, muted }` for `'media'`, `'ring'`, `'notification'`, `'alarm'`, `'call'`, `'system'` or `'accessibility'`. The stream is `'media'` if left out. `sf.device.setVolume(stream, level)` changes it, and needs `system`.
+*   `sf.device.ringerMode()` is `'normal'`, `'vibrate'` or `'silent'`. `sf.device.setRingerMode(mode)` changes it, and needs `system`. Android refuses some changes while Do Not Disturb is on, and the call raises an error then.
+
+### Translating text
+
+*Version 2.* `sf.translate(text, { from, to })` [waits](#waiting), and gives `{ text, from, to }`, with the service chosen in SandFly's **Translation** settings. `from` and `to` are language tags such as `'fr'`. Without `from`, the service finds the language; without `to`, the text is translated into the language chosen there. It needs the `network` permission, and raises an error if the service isn't set up or fails. With on-device translation, it waits for the languages to download.
 
 ### Translations
 
@@ -397,12 +490,14 @@ SandFly translates the manifest's names, titles, labels and hints with it. In co
 *   `print(...)` and `sf.log(...)` write to the script's **Log**, as do `sf.log.debug`, `sf.log.info`, `sf.log.warn` and `sf.log.error`. They reach Android's log only at the level set in SandFly's developer settings.
 *   `sf.setTimeout(fn, ms, ...)` and `sf.setInterval(fn, ms, ...)` run a function later, or again and again, and give a number for `sf.clearTimer`. `sf.sleep(ms)` [waits](#waiting). A script can have 100 timers at once.
 *   `sf.run(fn, ...)` runs a function as a task, so that it can wait.
+*   `sf.clock()` *Version 2* is a count of milliseconds that only goes up, for timing. `os.time()` gives the date and time.
+*   `sf.readFile(path)` *Version 2* gives the text of a file in the script's zip, such as `'data/words.txt'`, up to 1 MB, or `nil` if there is none.
 *   `json.encode(value)` and `json.decode(text)`, also as `sf.json`. An empty table is encoded as `[]`, and `json.null` stands for `null`.
 *   `require(name)` loads another Lua file in the script's zip, once: `require('lib.words')` loads `lib/words.lua`.
 
 ## Gestures
 
-`swipeUp`, `swipeDown`, `swipeLeft`, `swipeRight`, `swipeUpThenDown`, `swipeDownThenUp`, `swipeLeftThenRight`, `swipeRightThenLeft`, `swipeUpThenLeft`, `swipeUpThenRight`, `swipeDownThenLeft`, `swipeDownThenRight`, `swipeLeftThenUp`, `swipeLeftThenDown`, `swipeRightThenUp`, `swipeRightThenDown`, `doubleTap`, `doubleTapAndHold`, `twoFingerTap`, `twoFingerDoubleTap`, `twoFingerTripleTap`, `twoFingerDoubleTapAndHold`, `twoFingerTripleTapAndHold`, `twoFingerSwipeUp`, `twoFingerSwipeDown`, `twoFingerSwipeLeft`, `twoFingerSwipeRight`, `threeFingerTap`, `threeFingerDoubleTap`, `threeFingerTripleTap`, `threeFingerQuadrupleTap`, `threeFingerTapAndHold`, `threeFingerDoubleTapAndHold`, `threeFingerTripleTapAndHold`, `threeFingerSwipeUp`, `threeFingerSwipeDown`, `threeFingerSwipeLeft`, `threeFingerSwipeRight`, `fourFingerTap`, `fourFingerDoubleTap`, `fourFingerTripleTap`, `fourFingerDoubleTapAndHold`, `fourFingerSwipeUp`, `fourFingerSwipeDown`, `fourFingerSwipeLeft`, `fourFingerSwipeRight`, `fingerprintSwipeUp`, `fingerprintSwipeDown`, `fingerprintSwipeLeft` and `fingerprintSwipeRight`.
+`swipeUp`, `swipeDown`, `swipeLeft`, `swipeRight`, `swipeUpThenDown`, `swipeDownThenUp`, `swipeLeftThenRight`, `swipeRightThenLeft`, `swipeUpThenLeft`, `swipeUpThenRight`, `swipeDownThenLeft`, `swipeDownThenRight`, `swipeLeftThenUp`, `swipeLeftThenDown`, `swipeRightThenUp`, `swipeRightThenDown`, `doubleTap`, `doubleTapAndHold`, `twoFingerTap`, `twoFingerDoubleTap`, `twoFingerTripleTap`, `twoFingerTapAndHold`, `twoFingerDoubleTapAndHold`, `twoFingerTripleTapAndHold`, `twoFingerSwipeUp`, `twoFingerSwipeDown`, `twoFingerSwipeLeft`, `twoFingerSwipeRight`, `twoFingerRotateClockwise`, `twoFingerRotateCounterclockwise`, `threeFingerTap`, `threeFingerDoubleTap`, `threeFingerTripleTap`, `threeFingerQuadrupleTap`, `threeFingerTapAndHold`, `threeFingerDoubleTapAndHold`, `threeFingerTripleTapAndHold`, `threeFingerSwipeUp`, `threeFingerSwipeDown`, `threeFingerSwipeLeft`, `threeFingerSwipeRight`, `fourFingerTap`, `fourFingerDoubleTap`, `fourFingerTripleTap`, `fourFingerDoubleTapAndHold`, `fourFingerSwipeUp`, `fourFingerSwipeDown`, `fourFingerSwipeLeft`, `fourFingerSwipeRight`, `fingerprintSwipeUp`, `fingerprintSwipeDown`, `fingerprintSwipeLeft` and `fingerprintSwipeRight`.
 
 ## Limits
 

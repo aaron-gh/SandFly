@@ -94,6 +94,13 @@ class Translator(context: Context) {
   }
 
   /**
+   * Translates [text] into [to], from [from] or the language it's found to be in, with the chosen
+   * service, waiting for on-device models to download. For scripts.
+   */
+  fun translateTo(text: String, from: String?, to: String?, onResult: (Result) -> Unit) =
+    run(text, service(), from, to ?: TranslationSettings.target(prefs), second = null, Downloads.WAIT, report = onResult)
+
+  /**
    * Translates [text] from [from] into [to] with [service], for Automatic translation, alongside
    * [translate]. [downloads] says what happens when a language model isn't downloaded;
    * [onDownloaded] is told when models that [Downloads.START] started have all downloaded.

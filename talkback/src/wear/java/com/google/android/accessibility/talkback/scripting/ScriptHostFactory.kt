@@ -26,5 +26,6 @@ object ScriptHostFactory {
     service: AccessibilityService,
     feedback: Pipeline.FeedbackReturner,
     resume: Runnable,
+    services: ScriptServices,
   ): ScriptHost? = null
 }

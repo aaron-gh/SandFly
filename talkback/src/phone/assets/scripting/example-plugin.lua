@@ -5,7 +5,7 @@ local manifest = {
   author = 'SandFly',
   homepage = 'https://github.com/aaron-gh/SandFly/blob/master/docs/scripting/examples/example-plugin.lua',
   minApiVersion = 1,
-  testedApiVersion = 1,
+  testedApiVersion = 2,
   description = 'Says the name of each app you switch to, and counts how often you open each one.',
   -- screen: a script for all apps is told which app is in front. speech: sf.speak.
   permissions = { 'screen', 'speech' },
